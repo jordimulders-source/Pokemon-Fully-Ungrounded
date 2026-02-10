@@ -1,62 +1,59 @@
-# Pokeemerald-Expansion Changelogs
+# Changelog - Project Grounded
 
-## 1.10.x
-- **[Version 1.10.2](docs/changelogs/1.10.x/1.10.2.md) - 🧹 Bugfix Release**
-- **[Version 1.10.1](docs/changelogs/1.10.x/1.10.1.md) - 🧹 Bugfix Release**
-- **[Version 1.10.0](docs/changelogs/1.10.x/1.10.0.md) - ✨ Feature Release**
+## [0.1.0] - Grounded Fundering
 
-## 1.9.x
-- **[Version 1.9.4](docs/changelogs/1.9.x/1.9.4.md) - 🧹 Bugfix Release**
-- **[Version 1.9.3](docs/changelogs/1.9.x/1.9.3.md) - 🧹 Bugfix Release**
-- **[Version 1.9.2](docs/changelogs/1.9.x/1.9.2.md) - 🧹 Bugfix Release**
-- **[Version 1.9.1](docs/changelogs/1.9.x/1.9.1.md) - 🧹 Bugfix Release**
-- **[Version 1.9.0](docs/changelogs/1.9.x/1.9.0.md) - ✨ Feature Release**
+### Engine & Systeem
+- **Physical/Special Split:** AAN (Gen 4+ stijl).
+- **Scaled XP:** AAN (Gen 5 stijl - level afhankelijk).
+- **Catch XP:** AAN (Ervaring bij vangen).
+- **Battle Style:** Geforceerd op 'Set' mode voor maximale uitdaging.
+- **Fusion Forms:** AAN (Behouden voor narratieve doeleinden).
 
-## 1.8.x
-- **[Version 1.8.6](docs/changelogs/1.8.x/1.8.6.md) - 🧹 Bugfix Release**
-- **[Version 1.8.5](docs/changelogs/1.8.x/1.8.5.md) - 🧹 Bugfix Release**
-- **[Version 1.8.4](docs/changelogs/1.8.x/1.8.4.md) - 🧹 Bugfix Release**
-- **[Version 1.8.3](docs/changelogs/1.8.x/1.8.3.md) - 🧹 Bugfix Release**
-- **[Version 1.8.2](docs/changelogs/1.8.x/1.8.2.md) - 🧹 Bugfix Release**
-- **[Version 1.8.1](docs/changelogs/1.8.x/1.8.1.md) - 🔥 HOTFIX Release**
-- **[Version 1.8.0](docs/changelogs/1.8.x/1.8.0.md) - ✨ Feature Release**
+### Gimmick Control
+- **Verwijderd:** Mega Evolution, Z-Moves, Dynamax/Gigantamax en Terastallization zijn volledig uitgeschakeld om de focus op de basisbiologie te houden.
 
-## 1.7.x
-- **[Version 1.7.4](docs/changelogs/1.7.x/1.7.4.md) - 🧹 Bugfix Release**
-- **[Version 1.7.3](docs/changelogs/1.7.x/1.7.3.md) - 🧹 Bugfix Release**
-- **[Version 1.7.2](docs/changelogs/1.7.x/1.7.2.md) - 🧹 Bugfix Release**
-- **[Version 1.7.1](docs/changelogs/1.7.x/1.7.1.md) - 🧹 Bugfix Release**
-- **[Version 1.7.0](docs/changelogs/1.7.x/1.7.0.md) - ✨ Feature Release**
+### Initial Pokémon Changes
+- **Torchic:** Type veranderd naar **Fire/Flying** (Vroege build-test; erkend als uitzondering).
 
-## 1.6.x
-- **[Version 1.6.2](docs/changelogs/1.6.x/1.6.2.md) - 🧹 Bugfix Release**
-- **[Version 1.6.1](docs/changelogs/1.6.x/1.6.1.md) - 🔥 HOTFIX Release**
-- **[Version 1.6.0](docs/changelogs/1.6.x/1.6.0.md) - ✨ Feature Release**
+---
 
-## 1.5.x
-- **[Version 1.5.3](docs/changelogs/1.5.x/1.5.3.md) - 🔥 HOTFIX Release**
-- **[Version 1.5.2](docs/changelogs/1.5.x/1.5.2.md) - 🧹 Bugfix Release**
-- **[Version 1.5.1](docs/changelogs/1.5.x/1.5.1.md) - 🧹 Bugfix Release**
-- **[Version 1.5.0](docs/changelogs/1.5.x/1.5.0.md) - ✨ Feature Release**
+## [0.2.0] - Battle & Mechanics Update
 
-## 1.4.x
-- **[Version 1.4.3](docs/changelogs/1.4.x/1.4.3.md) - 🧹 Bugfix Release**
-- **[Version 1.4.2](docs/changelogs/1.4.x/1.4.2.md) - 🧹 Bugfix Release**
-- **[Version 1.4.1](docs/changelogs/1.4.x/1.4.1.md) - 🔥 HOTFIX Release**
-- **[Version 1.4.0](docs/changelogs/1.4.x/1.4.0.md) - ✨ Feature Release**
+### Battle Mechanics (Tuned)
+- **Confusion Self-Damage:** Verhoogd naar 50% (Gen 5 regels).
+- **Hidden Power:** Schade weer gebaseerd op IVs (Gen 5 regels).
+- **Uproar:** Duur hersteld naar 2-5 beurten; wordt geblokkeerd door Soundproof.
+- **Trainer Battles:** Vluchten uit trainergevechten uitgeschakeld.
+- **Catch Management:** Gevangen Pokémon bij vol team direct naar PC (Gen 5).
+- **Pokédex:** Pokémon van partners in double battles worden nu als 'Seen' gemarkeerd.
+- **Weather Hybrid:** Hail/Snow (Hagel doet schade zoals in Gen 5, maar Ice-types behouden de Defense-boost uit Gen 9).
 
-## 1.3.x
-- **[Version 1.3.0](docs/changelogs/1.3.x/1.3.0.md) - ✨ Feature Release**
+### Visuals & Polish
+- **Modern Particles:** Nieuwe animaties voor o.a. Swords Dance, Leech Seed, Curse, Morning Sun en specifieke fysieke attacks (Kicks/Punches).
+- **Enhanced Palettes:** Verbeterde kleurverzadiging voor impacts en de Surf-golf.
 
-## 1.2.x
-- **[Version 1.2.0](docs/changelogs/1.2.x/1.2.0.md) - ✨ Feature Release**
+---
 
-## 1.1.x
-- **[Version 1.1.1](docs/changelogs/1.1.x/1.1.1.md) - 🧹 Bugfix Release**
-- **[Version 1.1.0](docs/changelogs/1.1.x/1.1.0.md) - ✨ Feature Release**
+## [0.2.0-TYPES] - Biologische Reconstructie
 
-## 1.0.x
-- **[Version 1.0.0](docs/changelogs/1.0.x/1.0.0.md) - ✨ Feature Release**
+### De "Mentale & Mystieke" Lijn
+- **Psyduck-lijn:** Water -> **Water/Psychic** (Erkenning van latente krachten).
+- **Celebi:** Psychic/Grass -> **Fairy/Grass** (Folklore-correctie naar bosgeest).
+- **Noctowl:** Normal/Flying -> **Flying/Dark** (Nachtelijke jager).
+- **Lugia:** Psychic/Flying -> **Water/Psychic** (Koning van de diepzee).
+- **Castform-lijn:** Basisvorm is **Pure Psychic**; alle weervormen worden **Part-Psychic**.
+- **Chingling-lijn:** Chingling & Chimecho worden **Psychic/Steel** (Resonerend metaal).
 
-## Pre-1.0.x:
-- **[Version 0.9.0](docs/changelogs/0.9.x/0.9.0.md) - 🦕 Retroactive Version**
+### De "Biologische & Terrestrische" Lijn
+- **Pinsir:** Bug -> **Bug/Ground** (Stag beetle anatomie).
+- **Dunsparce:** Normal -> **Normal/Ground** (Gravende Tsuchinoko).
+- **Masquerain:** Bug/Flying -> **Bug/Water** (Behoudt Surskit's biologie).
+- **Doduo-lijn:** Normal/Flying -> **Flying/Ground** (Loopvogel-fysiologie).
+- **Parasect:** Bug/Grass -> **Grass/Ghost** (Zombificatie door schimmel).
+- **Kecleon:** Normal -> **Grass** (Fotosynthetische huid; jungle-bewoner).
+- **Dewgong:** Water/Ice -> **Ice/Fairy** (Selkie-folklore).
+
+### De "Digitale & Geestelijke" Lijn
+- **Porygon-lijn:** Porygon (**Electric**), Porygon2 (**Elec/Psychic**), Porygon-Z (**Elec/Ghost**).
+- **Haunter & Gengar:** Ghost/Poison -> **Pure Ghost** (Zuivere schaduwvorm).
+- **Shuppet-lijn:** Shuppet (**Pure Ghost**) -> Ban

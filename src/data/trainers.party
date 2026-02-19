@@ -4789,114 +4789,214 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 
 === TRAINER_ROXANNE_1 ===
-Name: ROXANNE
+Name: Roxanne
 Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
+Items: Potion, Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart, Check Bad Move, Try To Low HP, HP Aware
 
 Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
+Level: 14
+IVs: 31
+Ability: Solid Rock
+Held Item: Focus Sash
+- Stealth Rock
+- Mirror Coat
 - Rock Tomb
+- Explosion
 
-Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Geodude (Alolan)
+Level: 14
+IVs: 31
+Ability: Galvanize
+Held Item: Focus Sash
+- Self Destruct
+- Rock Polish
+- Smack Down
+- Spark
 
-Nosepass @ Oran Berry
+Lileep
 Level: 15
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
+IVs: 31
+Ability: Storm Drain
+Held Item: Absorb Bulb
+- Leech Seed
+- Confuse Ray
+- Mega Drain
+- Recover
+
+Sableye
+Level: 15
+IVs: 31
+Ability: Prankster
+Held Item: Rocky Helmet
+- Fake Out
+- Will O Wisp
+- Confuse Ray
+- Shadow Sneak
+
+Shuckle
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+Ability: Sap Sipper
+Held Item: Leftovers
+- Power Swap
+- Encore
+- Bug Bite
+- Protect
+
+Nosepass
+Level: 15
+IVs: 31
+Ability: Earth Eater
+Held Item: Air Balloon
+- Nuzzle
+- Magnet Rise
 - Rock Tomb
+- Pain Split
 
 === TRAINER_BRAWLY_1 ===
-Name: BRAWLY
+Name: Brawly
 Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion, Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart, Check Bad Move, Try To Low HP
+
+Spinda
+Level: 18
+IVs: 31
+Ability: Huge Power
+Held Item: Silk Scarf
+- Dizzy Punch
+- Drain Punch
+- Teeter Dance
+- Sucker Punch
+
+Farfetch’d
+Level: 18
+IVs: 31
+Ability: Defiant
+Held Item: Leek
+- Aerial Ace
+- Brick Break
+- Knock Off
+- Quick Attack
 
 Machop
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Karate Chop
-- Low Kick
-- Seismic Toss
+Level: 19
+IVs: 31
+Ability: No Guard
+Held Item: Eviolite
+- Dynamic Punch
+- Rock Tomb
 - Bulk Up
+- Knock Off
 
 Meditite
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Bulk Up
-
-Makuhita @ Sitrus Berry
 Level: 19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31
+Ability: Pure Power
+Held Item: Expert Belt
+- Fake Out
+- Force Palm
+- Zen Headbutt
+- Ice Punch
+
+Hitmontop
+Level: 20
+IVs: 31
+Ability: Technician
+Held Item: Black Belt
+- Triple Kick
+- Mach Punch
+- Rapid Spin
+- Aerial Ace
+
+Makuhita
+Level: 21
+IVs: 31
+Ability: Technician
+Held Item: Sitrus Berry
+- Belly Drum
 - Arm Thrust
-- Vital Throw
-- Reversal
-- Bulk Up
+- Force Palm
+- Sand Attack
 
 === TRAINER_WATTSON_1 ===
-Name: WATTSON
+Name: Wattson
 Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion, Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart, Check Bad Move, Try To Low HP, Complex Switch, HP Aware
+
+Volbeat
+Level: 22
+IVs: 31
+Ability: Levitate
+Held Item: Charcoal
+- Tail Glow
+- Charge Beam
+- Flame Burst
+- Confuse Ray
+
+Illumise
+Level: 22
+IVs: 31
+Ability: Prankster
+Held Item: Bright Powder
+- Encore
+- Moonlight
+- Struggle Bug
+- Charge Beam
 
 Voltorb
-Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
-- Spark
-- Self Destruct
+Level: 23
+IVs: 31
+Ability: Soundproof
+Held Item: Air Balloon
+- Psybeam
 - Shock Wave
-
-Electrike
-Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
-
-Magneton
-Level: 22
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
-- Shock Wave
-- Thunder Wave
+- Light Screen
 - Sonic Boom
 
-Manectric @ Sitrus Berry
+Magneton
 Level: 24
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
+IVs: 31
+Ability: Magnet Pull
+Held Item: Eviolite
+- Tri Attack
 - Thunder Wave
+- Sonic Boom
+- Metal Sound
+
+Loudred
+Level: 24
+IVs: 31
+Ability: Galvanize
+Held Item: Silk Scarf
+- Nuzzle
+- Chilling Water
+- Echoed Voice
+- Swift
+
+Manectric
+Level: 25
+IVs: 31
+Ability: Transistor
+Held Item: Magnet
+- Electric Terrain
 - Shock Wave
-- Howl
+- Bite
+- Volt Switch
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY

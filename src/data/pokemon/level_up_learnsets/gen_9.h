@@ -3990,7 +3990,6 @@ static const struct LevelUpMove sMagikarpLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGyaradosLevelUpLearnset[] = {
-    **Level-up Learnset:**
     LEVEL_UP_MOVE( 0, MOVE_BITE),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE( 1, MOVE_THRASH),
@@ -7297,28 +7296,6 @@ static const struct LevelUpMove sSilcoonLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBeautiflyLevelUpLearnset[] = {
-    Prima, Competitive is een uitstekende keuze. Het past biologisch bij de trotse en agressieve aard van Beautifly: als je hem probeert te intimideren of zijn stats verlaagt (bijvoorbeeld met Intimidate of Icy Wind), wakkert dat zijn vechtlust aan en krijgt zijn Special Attack een enorme boost (+2).
-
-    Hier is de definitieve changelog-tekst voor Beautifly, klaar voor je document:
-    
-    C
-    ### [v0.2.1] - Pokémon Revisie: Beautifly
-    
-    **Biologische Focus:** Beautifly is een agressieve predator die zijn sierlijke uiterlijk gebruikt als camouflage. Met zijn naaldscherpe proboscis injecteert hij verteringssappen in zijn prooi om deze vervolgens leeg te zuigen. Hij is berucht om zijn territoriale trots (Competitive); pogingen om hem te verzwakken resulteren in een felle tegenaanval. Door een hyper-agressieve paringsdans (Quiver Dance) tilt hij zijn zintuigen naar een onnatuurlijk niveau, terwijl hij met Tailwind de windkracht beheerst en explosief stuifmeel (Pollen Puff) verspreidt.
-    
-    * Type: Bug/Flying
-    * Ability (Slot 1): Competitive (Verhoogt Sp. Atk scherp als een stat wordt verlaagd)
-    * Ability (Slot 2): Rivalry (Deelt meer schade uit aan Pokémon van hetzelfde geslacht)
-    * Base Stats (Agressive Special):
-        * HP: 60
-        * Atk: 70
-        * Def: 50
-        * SpAtk: 100 (+10)
-        * SpDef: 50
-        * Speed: 75 (+10)
-        * *Totaal: 405*
-    
-    **Level-up Learnset:**
         LEVEL_UP_MOVE( 0, MOVE_GUST),
         LEVEL_UP_MOVE( 1, MOVE_GUST),
         LEVEL_UP_MOVE( 1, MOVE_TACKLE),
@@ -7462,7 +7439,6 @@ static const struct LevelUpMove sNuzleafLevelUpLearnset[] = {
     LEVEL_UP_MOVE(14, MOVE_GRASS_WHISTLE),
     LEVEL_UP_MOVE(17, MOVE_FAIRY_WIND),
     LEVEL_UP_MOVE(20, MOVE_NATURE_POWER),
-    LEVEL_UP_MOVE(23, MOVE_NATURE_MADNESS),
     LEVEL_UP_MOVE(26, MOVE_DRAINING_KISS),
     LEVEL_UP_MOVE(30, MOVE_TEETER_DANCE),
     LEVEL_UP_MOVE(34, MOVE_LEAF_BLADE),
@@ -7972,7 +7948,7 @@ static const struct LevelUpMove sHariyamaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(48, MOVE_SLEEP_TALK),
     LEVEL_UP_MOVE(55, MOVE_CLOSE_COMBAT),
     LEVEL_UP_MOVE(62, MOVE_REVERSAL),
-    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH,
+    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_MAKUHITA
@@ -8238,7 +8214,7 @@ static const struct LevelUpMove sMedichamLevelUpLearnset[] = {
     LEVEL_UP_MOVE(39, MOVE_REVERSAL),
     LEVEL_UP_MOVE(42, MOVE_RECOVER),
     LEVEL_UP_MOVE(46, MOVE_PSYCHO_CUT),
-    LEVEL_UP_MOVE(50, MOVE_PURE_PULSE),
+    LEVEL_UP_MOVE(50, MOVE_DRAGON_PULSE),
     LEVEL_UP_MOVE(55, MOVE_FOCUS_BLAST),
     LEVEL_UP_MOVE(60, MOVE_FOCUS_PUNCH),
     LEVEL_UP_MOVE(65, MOVE_COUNTER),

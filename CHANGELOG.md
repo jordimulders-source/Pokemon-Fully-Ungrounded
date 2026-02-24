@@ -3449,3 +3449,355 @@ Golem is een levende vesting. Zijn pantser is zo dik dat hij vrijwel immuun is v
     LEVEL_UP_MOVE(48, MOVE_AGILITY),
     LEVEL_UP_MOVE(54, MOVE_CLOSE_COMBAT),
     LEVEL_UP_MOVE(60, MOVE_HYDRO_PUMP),
+
+    === TRAINER_ROXANNE_1 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: POTION, POTION
+Double Battle: No
+# AI_FLAG_HP_AWARE en AI_FLAG_RISKY zorgen voor de Selfdestruct drang
+AI: SMART_LEARNING, CHECK_BAD_MOVE, TRY_TO_LOW_HP, HP_AWARE
+
+Geodude
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: SOLID_ROCK
+Held Item: FOCUS_SASH
+- STEALTH_ROCK
+- MIRROR_COAT
+- ROCK_TOMB
+- EXPLOSION
+# Notitie: Mirror Coat en Stealth Rock hebben hoge prioriteit voor de Smart AI bij een lead.
+
+Geodude (Alolan)
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: GALVANIZE
+Held Item: FOCUS_SASH
+- SELF_DESTRUCT
+- ROCK_POLISH
+- SMACK_DOWN
+- SPARK
+
+Lileep
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: STORM_DRAIN
+Held Item: ABSORB_BULB
+- LEECH_SEED
+- CONFUSE_RAY
+- MEGA_DRAIN
+- RECOVER
+
+Nosepass
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: SAND_SPIT
+Held Item: AIR_BALLOON
+- NUZZLE
+- MAGNET_RISE
+- ROCK_TOMB
+- PAIN_SPLIT
+
+Sableye
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: PRANKSTER
+Held Item: ROCKY_HELMET
+- FAKE_OUT
+- WILL_O_WISP
+- CONFUSE_RAY
+- SHADOW_SNEAK
+
+Shuckle
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+Ability: SAP_SIPPER
+Held Item: LEFTOVERS
+- POWER_SWAP
+- ENCORE
+- BUG_BITE
+- PROTECT
+
+=== TRAINER_BRAWLY_1 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: SUPER_POTION, SUPER_POTION
+Double Battle: No
+AI: SMART_LEARNING, CHECK_BAD_MOVE, TRY_TO_LOW_HP
+
+Spinda
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: HUGE_POWER
+Held Item: SILK_SCARF
+- DIZZY_PUNCH
+- DRAIN_PUNCH
+- TEETER_DANCE
+- SUCKER_PUNCH
+
+Farfetch’d
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: DEFIANT
+Held Item: LEEK
+- AERIAL_ACE
+- BRICK_BREAK
+- KNOCK_OFF
+- QUICK_ATTACK
+
+Machop
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: NO_GUARD
+Held Item: EVIOLITE
+- DYNAMIC_PUNCH
+- ROCK_TOMB
+- BULK_UP
+- KNOCK_OFF
+
+Meditite
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: PURE_POWER
+Held Item: EXPERT_BELT
+- FAKE_OUT
+- FORCE_PALM
+- ZEN_HEADBUTT
+- ICE_PUNCH
+
+Hitmontop
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: TECHNICIAN
+Held Item: BLACK_BELT
+- TRIPLE_KICK
+- MACH_PUNCH
+- RAPID_SPIN
+- AERIAL_ACE
+
+Makuhita
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: TECHNICIAN
+Held Item: SITRUS_BERRY
+- BELLY_DRUM
+- ARM_THRUST
+- FORCE_PALM
+- SAND_ATTACK
+
+=== TRAINER_WATTSON_1 ===
+Name: Wattson
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Super Potion, Super Potion
+Double Battle: No
+AI: Smart, Check Bad Move, Try To Low HP, Complex Switch, HP Aware
+
+Volbeat
+Level: 22
+IVs: 31
+Ability: Levitate
+Held Item: Charcoal
+- Tail Glow
+- Charge Beam
+- Flame Burst
+- Confuse Ray
+
+Illumise
+Level: 22
+IVs: 31
+Ability: Prankster
+Held Item: Bright Powder
+- Encore
+- Moonlight
+- Struggle Bug
+- Charge Beam
+
+Voltorb
+Level: 23
+IVs: 31
+Ability: Soundproof
+Held Item: Air Balloon
+- Psybeam
+- Shock Wave
+- Light Screen
+- Sonic Boom
+
+Magneton
+Level: 24
+IVs: 31
+Ability: Magnet Pull
+Held Item: Eviolite
+- Tri Attack
+- Thunder Wave
+- Sonic Boom
+- Metal Sound
+
+Loudred
+Level: 24
+IVs: 31
+Ability: Galvanize
+Held Item: Silk Scarf
+- Nuzzle
+- Chilling Water
+- Echoed Voice
+- Swift
+
+Manectric
+Level: 25
+IVs: 31
+Ability: Transistor
+Held Item: Magnet
+- Electric Terrain
+- Shock Wave
+- Bite
+- Volt Switch
+
+{
+  "map": "MAP_PETALBURG_WOODS",
+  "base_label": "gPetalburgWoods",
+  "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_POOCHYENA"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_WURMPLE"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_SHROOMISH"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_BLIPBUG"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_SILCOON"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_CASCOON"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_TOEDSCOOL"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_TAILLOW"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_SLAKOTH"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_TAILLOW"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_SLAKOTH"
+      }
+    ]
+  }
+}
+
+{
+  "map": "MAP_RUSTURF_TUNNEL",
+  "base_label": "gRusturfTunnel",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 6,
+        "max_level": 8,
+        "species": "SPECIES_WHISMUR"
+      },
+      {
+        "min_level": 6,
+        "max_level": 8,
+        "species": "SPECIES_ROLYCOLY"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_SANDSHREW"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_BUNNELBY"
+      },
+      {
+        "min_level": 7,
+        "max_level": 9,
+        "species": "SPECIES_WHISMUR"
+      },
+      {
+        "min_level": 8,
+        "max_level": 8,
+        "species": "SPECIES_DRILBUR"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_ROLYCOLY"
+      },
+      {
+        "min_level": 8,
+        "max_level": 8,
+        "species": "SPECIES_SANDSHREW"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_FERROSEED"
+      },
+      {
+        "min_level": 8,
+        "max_level": 8,
+        "species": "SPECIES_DRILBUR"
+      },
+      {
+        "min_level": 9,
+        "max_level": 9,
+        "species": "SPECIES_FERROSEED"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DRILBUR"
+      }
+    ]
+  }
+}

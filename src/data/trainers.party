@@ -4794,65 +4794,59 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion, Potion
+Items: Potion / Potion
 Double Battle: No
-AI: Smart, Check Bad Move, Try To Low HP, HP Aware
+AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / HP_AWARE / WILL_SUICIDE
 
-Geodude
+Geodude @ Focus Sash
 Level: 14
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Solid Rock
-Held Item: Focus Sash
 - Stealth Rock
 - Mirror Coat
 - Rock Tomb
 - Explosion
 
-Geodude (Alolan)
+Geodude_Alola @ Focus Sash
 Level: 14
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Galvanize
-Held Item: Focus Sash
 - Self Destruct
 - Rock Polish
 - Smack Down
 - Spark
 
-Lileep
+Lileep @ Absorb Bulb
 Level: 15
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Storm Drain
-Held Item: Absorb Bulb
 - Leech Seed
 - Confuse Ray
 - Mega Drain
 - Recover
 
-Sableye
+Sableye @ Rocky Helmet
 Level: 15
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Prankster
-Held Item: Rocky Helmet
 - Fake Out
 - Will O Wisp
 - Confuse Ray
 - Shadow Sneak
 
-Shuckle
+Shuckle @ Leftovers
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 Ability: Sap Sipper
-Held Item: Leftovers
 - Power Swap
 - Encore
 - Bug Bite
 - Protect
 
-Nosepass
+Nosepass @ Sitrus Berry
 Level: 15
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Earth Eater
-Held Item: Air Balloon
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
@@ -4864,65 +4858,59 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion, Super Potion
+Items: Super Potion / Super Potion
 Double Battle: No
-AI: Smart, Check Bad Move, Try To Low HP
+AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / SMART_MON_CHOICES
 
-Spinda
+Spinda @ Silk Scarf
 Level: 18
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Huge Power
-Held Item: Silk Scarf
 - Dizzy Punch
 - Drain Punch
 - Teeter Dance
 - Sucker Punch
 
-Farfetch’d
+Farfetchd @ Leek
 Level: 18
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Defiant
-Held Item: Leek
 - Aerial Ace
 - Brick Break
 - Knock Off
 - Quick Attack
 
-Machop
+Machop @ Eviolite
 Level: 19
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: No Guard
-Held Item: Eviolite
 - Dynamic Punch
 - Rock Tomb
 - Bulk Up
 - Knock Off
 
-Meditite
+Meditite @ Expert Belt
 Level: 19
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
-Held Item: Expert Belt
 - Fake Out
 - Force Palm
 - Zen Headbutt
 - Ice Punch
 
-Hitmontop
+Hitmontop @ Black Belt
 Level: 20
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Technician
-Held Item: Black Belt
 - Triple Kick
 - Mach Punch
 - Rapid Spin
 - Aerial Ace
 
-Makuhita
+Makuhita @ Sitrus Berry
 Level: 21
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Technician
-Held Item: Sitrus Berry
 - Belly Drum
 - Arm Thrust
 - Force Palm
@@ -4934,65 +4922,59 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion, Super Potion
+Items: Super Potion / Super Potion
 Double Battle: No
-AI: Smart, Check Bad Move, Try To Low HP, Complex Switch, HP Aware
+AI: SMART_TRAINER / HP_AWARE
 
-Volbeat
+Volbeat @ Charcoal
 Level: 22
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Levitate
-Held Item: Charcoal
 - Tail Glow
 - Charge Beam
 - Flame Burst
 - Confuse Ray
 
-Illumise
+Illumise @ Bright Powder
 Level: 22
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Prankster
-Held Item: Bright Powder
 - Encore
 - Moonlight
 - Struggle Bug
 - Charge Beam
 
-Voltorb
+Voltorb @ Air Balloon
 Level: 23
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Soundproof
-Held Item: Air Balloon
 - Psybeam
 - Shock Wave
 - Light Screen
 - Sonic Boom
 
-Magneton
+Magneton @ Eviolite
 Level: 24
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Magnet Pull
-Held Item: Eviolite
 - Tri Attack
 - Thunder Wave
 - Sonic Boom
 - Metal Sound
 
-Loudred
+Loudred @ Magnet
 Level: 24
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Galvanize
-Held Item: Silk Scarf
 - Nuzzle
 - Chilling Water
 - Echoed Voice
 - Swift
 
-Manectric
+Manectric @ Sitrus Berry
 Level: 25
-IVs: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Transistor
-Held Item: Magnet
 - Electric Terrain
 - Shock Wave
 - Bite

@@ -3801,3 +3801,17 @@ Held Item: Magnet
     ]
   }
 }
+### [v.0.2.2] - Algemene wijzigingen en tests
+## [Update - 24-02-2026] - Project Grounded
+
+### Toegevoegd
+- **Tools:** Poryscript-ondersteuning geactiveerd in de Makefile voor geavanceerde scripting.
+- **Backups:** Originele Shiny Electrode palette veiliggesteld als `shiny_original.pal`.
+
+### Gewijzigd
+- **Graphics:** Shiny Electrode getransformeerd naar "Masterball-paars" met een handmatig 8-traps kleurverloop voor realistische shading.
+
+### Technisch
+- **Palettes:** `graphics/pokemon/electrode/shiny.pal` bijgewerkt met nieuwe RGB-waarden.
+- **Build System:** Makefile configuratie aangepast voor Poryscript compiler integratie.
+

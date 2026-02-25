@@ -131,7 +131,25 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 3, 10);
+    // Bepaal de spawnlocatie voor de deur van het linkerhuis
+    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 14, 9);
+
+    // Identiteit van de huisjes vastleggen op basis van geslacht
+    if (gSaveBlock2Ptr->playerGender == MALE)
+    {
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1);
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 0);
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
+    }
+    else
+    {
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 0);
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
+    }
+
     WarpIntoMap();
 }
 

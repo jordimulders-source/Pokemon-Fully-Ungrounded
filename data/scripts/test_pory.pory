@@ -1,0 +1,9 @@
+script EventScript_TestSyntax {
+    lock
+    faceplayer
+    message("Dit is een syntax test.")
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}

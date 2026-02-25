@@ -48,73 +48,73 @@
  * Note: States advance sequentially unless otherwise stated.
  *
  * CB2_InitMainMenu / CB2_ReinitMainMenu
- *  - Both of these states call InitMainMenu, which does all the work.
- *  - In the Reinit case, the init code will check if the user came from
- *    the options screen. If they did, then the options menu item is
- *    pre-selected.
+ * - Both of these states call InitMainMenu, which does all the work.
+ * - In the Reinit case, the init code will check if the user came from
+ * the options screen. If they did, then the options menu item is
+ * pre-selected.
  *
  * Task_MainMenuCheckSaveFile
- *  - Determines how many menu options to show based on whether
- *    the save file is Ok, empty, corrupted, etc.
- *  - If there was an error loading the save file, advance to
- *    Task_WaitForSaveFileErrorWindow.
- *  - If there were no errors, advance to Task_MainMenuCheckBattery.
- *  - Note that the check to enable Mystery Events would normally happen
- *    here, but this version of Emerald has them disabled.
+ * - Determines how many menu options to show based on whether
+ * the save file is Ok, empty, corrupted, etc.
+ * - If there was an error loading the save file, advance to
+ * Task_WaitForSaveFileErrorWindow.
+ * - If there were no errors, advance to Task_MainMenuCheckBattery.
+ * - Note that the check to enable Mystery Events would normally happen
+ * here, but this version of Emerald has them disabled.
  *
  * Task_WaitForSaveFileErrorWindow
- *  - Wait for the text to finish printing and then for the A button
- *    to be pressed.
+ * - Wait for the text to finish printing and then for the A button
+ * to be pressed.
  *
  * Task_MainMenuCheckBattery
- *  - If the battery is OK, advance to Task_DisplayMainMenu.
- *  - If the battery is dry, advance to Task_WaitForBatteryDryErrorWindow.
+ * - If the battery is OK, advance to Task_DisplayMainMenu.
+ * - If the battery is dry, advance to Task_WaitForBatteryDryErrorWindow.
  *
  * Task_WaitForBatteryDryErrorWindow
- *  - Wait for the text to finish printing and then for the A button
- *    to be pressed.
+ * - Wait for the text to finish printing and then for the A button
+ * to be pressed.
  *
  * Task_DisplayMainWindow
- *  - Display the buttons to the user. If the menu is in HAS_MYSTERY_EVENTS
- *    mode, there are too many buttons for one screen and a scrollbar is added,
- *    and the scrollbar task is spawned (Task_ScrollIndicatorArrowPairOnMainMenu).
+ * - Display the buttons to the user. If the menu is in HAS_MYSTERY_EVENTS
+ * mode, there are too many buttons for one screen and a scrollbar is added,
+ * and the scrollbar task is spawned (Task_ScrollIndicatorArrowPairOnMainMenu).
  *
  * Task_HighlightSelectedMainMenuItem
- *  - Update the UI to match the currently selected item.
+ * - Update the UI to match the currently selected item.
  *
  * Task_HandleMainMenuInput
- *  - If A is pressed, advance to Task_HandleMainMenuAPressed.
- *  - If B is pressed, return to the title screen via CB2_InitTitleScreen.
- *  - If Up or Down is pressed, handle scrolling if there is a scroll bar, change
- *    the selection, then go back to Task_HighlightSelectedMainMenuItem.
+ * - If A is pressed, advance to Task_HandleMainMenuAPressed.
+ * - If B is pressed, return to the title screen via CB2_InitTitleScreen.
+ * - If Up or Down is pressed, handle scrolling if there is a scroll bar, change
+ * the selection, then go back to Task_HighlightSelectedMainMenuItem.
  *
  * Task_HandleMainMenuAPressed
- *  - If the user selected New Game, advance to Task_NewGameBirchSpeech_Init.
- *  - If the user selected Continue, advance to CB2_ContinueSavedGame.
- *  - If the user selected the Options menu, advance to CB2_InitOptionMenu.
- *  - If the user selected Mystery Gift, advance to CB2_InitMysteryGift. However,
- *    if the wireless adapter was removed, instead advance to
- *    Task_DisplayMainMenuInvalidActionError.
- *  - Code to start a Mystery Event is present here, but is unreachable in this
- *    version.
+ * - If the user selected New Game, advance to Task_NewGameBirchSpeech_Init.
+ * - If the user selected Continue, advance to CB2_ContinueSavedGame.
+ * - If the user selected the Options menu, advance to CB2_InitOptionMenu.
+ * - If the user selected Mystery Gift, advance to CB2_InitMysteryGift. However,
+ * if the wireless adapter was removed, instead advance to
+ * Task_DisplayMainMenuInvalidActionError.
+ * - Code to start a Mystery Event is present here, but is unreachable in this
+ * version.
  *
  * Task_HandleMainMenuBPressed
- *  - Clean up the main menu and go back to CB2_InitTitleScreen.
+ * - Clean up the main menu and go back to CB2_InitTitleScreen.
  *
  * Task_DisplayMainMenuInvalidActionError
- *  - Print one of three different error messages, wait for the text to stop
- *    printing, and then wait for A or B to be pressed.
+ * - Print one of three different error messages, wait for the text to stop
+ * printing, and then wait for A or B to be pressed.
  * - Then advance to Task_HandleMainMenuBPressed.
  *
  * Task_NewGameBirchSpeech_Init
- *  - Load the sprites for the intro speech, start playing music
+ * - Load the sprites for the intro speech, start playing music
  * Task_NewGameBirchSpeech_WaitToShowBirch
- *  - Spawn Task_NewGameBirchSpeech_FadeInTarget1OutTarget2
- *  - Spawn Task_NewGameBirchSpeech_FadePlatformOut
- *  - Both of these tasks destroy themselves when done.
+ * - Spawn Task_NewGameBirchSpeech_FadeInTarget1OutTarget2
+ * - Spawn Task_NewGameBirchSpeech_FadePlatformOut
+ * - Both of these tasks destroy themselves when done.
  * Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome
  * Task_NewGameBirchSpeech_ThisIsAPokemon
- *  - When the text is done printing, spawns Task_NewGameBirchSpeechSub_InitPokeball
+ * - When the text is done printing, spawns Task_NewGameBirchSpeechSub_InitPokeball
  * Task_NewGameBirchSpeech_MainSpeech
  * Task_NewGameBirchSpeech_AndYouAre
  * Task_NewGameBirchSpeech_StartBirchLotadPlatformFade
@@ -125,27 +125,27 @@
  * Task_NewGameBirchSpeech_BoyOrGirl
  * Task_NewGameBirchSpeech_WaitToShowGenderMenu
  * Task_NewGameBirchSpeech_ChooseGender
- *  - Animates by advancing to Task_NewGameBirchSpeech_SlideOutOldGenderSprite
- *    whenever the player's selection changes.
- *  - Advances to Task_NewGameBirchSpeech_WhatsYourName when done.
+ * - Animates by advancing to Task_NewGameBirchSpeech_SlideOutOldGenderSprite
+ * whenever the player's selection changes.
+ * - Advances to Task_NewGameBirchSpeech_WhatsYourName when done.
  *
  * Task_NewGameBirchSpeech_SlideOutOldGenderSprite
  * Task_NewGameBirchSpeech_SlideInNewGenderSprite
- *  - Returns back to Task_NewGameBirchSpeech_ChooseGender.
+ * - Returns back to Task_NewGameBirchSpeech_ChooseGender.
  *
  * Task_NewGameBirchSpeech_WhatsYourName
  * Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint
  * Task_NewGameBirchSpeech_WaitPressBeforeNameChoice
  * Task_NewGameBirchSpeech_StartNamingScreen
  * C2_NamingScreen
- *  - Returns to CB2_NewGameBirchSpeech_ReturnFromNamingScreen when done
+ * - Returns to CB2_NewGameBirchSpeech_ReturnFromNamingScreen when done
  * CB2_NewGameBirchSpeech_ReturnFromNamingScreen
  * Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox
  * Task_NewGameBirchSpeech_SoItsPlayerName
  * Task_NewGameBirchSpeech_CreateNameYesNo
  * Task_NewGameBirchSpeech_ProcessNameYesNoMenu
- *  - If confirmed, advance to Task_NewGameBirchSpeech_SlidePlatformAway2.
- *  - Otherwise, return to Task_NewGameBirchSpeech_BoyOrGirl.
+ * - If confirmed, advance to Task_NewGameBirchSpeech_SlidePlatformAway2.
+ * - Otherwise, return to Task_NewGameBirchSpeech_BoyOrGirl.
  *
  * Task_NewGameBirchSpeech_SlidePlatformAway2
  * Task_NewGameBirchSpeech_ReshowBirchLotad
@@ -155,12 +155,12 @@
  * Task_NewGameBirchSpeech_WaitForPlayerShrink
  * Task_NewGameBirchSpeech_FadePlayerToWhite
  * Task_NewGameBirchSpeech_Cleanup
- *  - Advances to CB2_NewGame.
+ * - Advances to CB2_NewGame.
  *
  * Task_NewGameBirchSpeechSub_InitPokeball
- *  - Advances to Task_NewGameBirchSpeechSub_WaitForLotad
+ * - Advances to Task_NewGameBirchSpeechSub_WaitForLotad
  * Task_NewGameBirchSpeechSub_WaitForLotad
- *  - Destroys itself when done.
+ * - Destroys itself when done.
  */
 
 #define OPTION_MENU_FLAG (1 << 15)
@@ -1310,7 +1310,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_ROUTE122);
+    PlayBGM(MUS_ROUTE113);
     ShowBg(0);
     ShowBg(1);
 }
@@ -1319,22 +1319,16 @@ static void Task_NewGameBirchSpeech_WaitToShowBirch(u8 taskId)
 {
     u8 spriteId;
 
-    if (gTasks[taskId].tTimer)
-    {
-        gTasks[taskId].tTimer--;
-    }
-    else
-    {
-        spriteId = gTasks[taskId].tBirchSpriteId;
-        gSprites[spriteId].x = 136;
-        gSprites[spriteId].y = 60;
-        gSprites[spriteId].invisible = FALSE;
-        gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-        NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 10);
-        NewGameBirchSpeech_StartFadePlatformOut(taskId, 20);
-        gTasks[taskId].tTimer = 80;
-        gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome;
-    }
+    // GEWIJZIGD: Geen timer, instant Birch
+    spriteId = gTasks[taskId].tBirchSpriteId;
+    gSprites[spriteId].x = 136;
+    gSprites[spriteId].y = 60;
+    gSprites[spriteId].invisible = FALSE;
+    gSprites[spriteId].oam.objMode = ST_OAM_OBJ_NORMAL; // Geen blend
+    
+    gTasks[taskId].tIsDoneFadingSprites = TRUE;
+    gTasks[taskId].tTimer = 0;
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome;
 }
 
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
@@ -1342,23 +1336,18 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
     if (gTasks[taskId].tIsDoneFadingSprites)
     {
         gSprites[gTasks[taskId].tBirchSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
-        if (gTasks[taskId].tTimer)
-        {
-            gTasks[taskId].tTimer--;
-        }
-        else
-        {
-            InitWindows(sNewGameBirchSpeechTextWindows);
-            LoadMainMenuWindowFrameTiles(0, 0xF3);
-            LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
-            NewGameBirchSpeech_ShowDialogueWindow(0, 1);
-            PutWindowTilemap(0);
-            CopyWindowToVram(0, COPYWIN_GFX);
-            NewGameBirchSpeech_ClearWindow(0);
-            StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
-            AddTextPrinterForMessage(TRUE);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_ThisIsAPokemon;
-        }
+        
+        // GEWIJZIGD: Timer-check weggehaald zodat hij direct start met praten
+        InitWindows(sNewGameBirchSpeechTextWindows);
+        LoadMainMenuWindowFrameTiles(0, 0xF3);
+        LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
+        NewGameBirchSpeech_ShowDialogueWindow(0, 1);
+        PutWindowTilemap(0);
+        CopyWindowToVram(0, COPYWIN_GFX);
+        NewGameBirchSpeech_ClearWindow(0);
+        StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_ThisIsAPokemon;
     }
 }
 
@@ -1394,7 +1383,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_ELECTRODE);
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -1896,7 +1885,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_LOTAD, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(SPECIES_ELECTRODE, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddBirchSpeechObjects(u8 taskId)

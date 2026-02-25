@@ -3815,3 +3815,37 @@ Held Item: Magnet
 - **Palettes:** `graphics/pokemon/electrode/shiny.pal` bijgewerkt met nieuwe RGB-waarden.
 - **Build System:** Makefile configuratie aangepast voor Poryscript compiler integratie.
 
+## [v.0.2.2] - Project Fast-Track Littleroot
+
+### Toegevoegd
+- Nieuw Intro Thema: Professor Birch's intro-muziek is vervangen door Route 113.
+- Custom Intro Sprite: Lotad is vervangen door Electrode (inclusief bijbehorende Cry).
+- Directe Snelloopschoenen: FLAG_SYS_B_DASH wordt nu onmiddellijk geactiveerd bij het starten van een nieuw spel.
+
+### Gewijzigd
+- Truck Skip: De speler spawnt nu direct in Littleroot Town (coördinaten 3, 10) in plaats van in de verhuiswagen.
+- Intro Tekst Herziening: Alle dialogen van Birch zijn ingekort en voorzien van \p commando's voor betere controle.
+- Geforceerde Game State: VAR_LITTLEROOT_INTRO_STATE wordt bij start op 7 gezet om alle verhuis-tussen-scènes over te slaan.
+- Map Opschoning: HIDE_TRUCK vlaggen worden geforceerd om dubbele trucks en collision-glitches te voorkomen.
+
+### Verwijderd
+- Trap Blokkade: De script-blokkade die voorkomt dat je de slaapkamer verlaat voordat de klok is gezet, is verwijderd.
+- Klok Vertraging: De pauze van 30 frames na interactie met de wandklok is verwijderd.
+- TV Tussen-scène: De Petalburg Gym/Vader-op-TV sequentie is gestript; het script springt nu direct naar de eindstatus.
+- NPC Dialoog: De teksten van Moeder, May/Brendan en de buren in Littleroot zijn geminimaliseerd naar korte strings.
+
+### [v.0.2.3] - Introductie & Flow: Deep Clean
+De overbodige menselijke interacties en mechanische verhuis-elementen zijn verwijderd om de speler sneller in de natuurlijke wereld van Hoenn te plaatsen. De focus ligt op een directe start en technische stabiliteit.
+
+* Type: N/A (Script Update)
+* Ability (Slot 1): N/A
+* Ability (Slot 2): N/A
+
+* Base Stats (Intro Flow):
+    - Truck Bypass: ExecuteTruckSequence verwijderd uit overworld.c.
+    - House Scripts: LittlerootTown_BrendansHouse en MaysHouse gestript van alle "clock-lock" events en verhuis-NPC's.
+    - Birch Lab: Introductie-dialoog ingekort naar de essentie; endgame hooks (National Dex/Johto Starters) behouden voor stabiliteit.
+    - Wild Encounters: Route 101 gebalanceerd voor realistische vroege game-ervaring (Levels 2-5).
+
+Level-up Learnset:
+LEVEL_UP_MOVE( 1, MOVE_NONE),

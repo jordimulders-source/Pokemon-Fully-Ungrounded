@@ -92,7 +92,6 @@ static void InitPlayerTrainerId(void)
     SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId);
 }
 
-// L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
@@ -113,10 +112,7 @@ static void ClearPokedexFlags(void)
 void ClearAllContestWinnerPics(void)
 {
     s32 i;
-
     ClearContestWinnerPicsInContestHall();
-
-    // Clear Museum paintings
     for (i = MUSEUM_CONTEST_WINNERS_START; i < NUM_CONTEST_WINNERS; i++)
         gSaveBlock1Ptr->contestWinners[i] = sContestWinnerPicDummy;
 }
@@ -124,32 +120,14 @@ void ClearAllContestWinnerPics(void)
 static void ClearFrontierRecord(void)
 {
     CpuFill32(0, &gSaveBlock2Ptr->frontier, sizeof(gSaveBlock2Ptr->frontier));
-
     gSaveBlock2Ptr->frontier.opponentNames[0][0] = EOS;
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
 static void WarpToTruck(void)
 {
-    // Bepaal de spawnlocatie voor de deur van het linkerhuis
-    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 14, 9);
-
-    // Identiteit van de huisjes vastleggen op basis van geslacht
-    if (gSaveBlock2Ptr->playerGender == MALE)
-    {
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1);
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 0);
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
-    }
-    else
-    {
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 0);
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
-    }
-
+    // Spawn direct voor het LINKER huis (X:5, Y:9)
+    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 5, 9);
     WarpIntoMap();
 }
 
@@ -216,13 +194,49 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
 
-    VarSet(VAR_LITTLEROOT_INTRO_STATE, 7);
+    // 1. Eerst de basis resetten
+    RunScriptImmediately(EventScript_ResetAllMapFlags);
+
+    // 2. Wie woont waar en verberg de spook-moeders
+    if (gSaveBlock2Ptr->playerGender == MALE)
+    {
+        // Brendan (Links)
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1); 
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 0);     
+        
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
+        
+        // Weg met de familie van de rivaal in Brendan's huis
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING);
+    }
+    else
+    {
+        // May (Rechts)
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1); 
+        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 0);
+        
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+        
+        // Weg met de familie van de rivaal in May's huis
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM);
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING);
+    }
+
+    // 3. Wereldstatus: trucks weg, intro skippen
+    VarSet(VAR_LITTLEROOT_INTRO_STATE, 4); 
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK);
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK);
+    
+    // Klok vlag NIET zetten zodat je hem zelf kunt instellen
     FlagSet(FLAG_SYS_B_DASH);
+    FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
 
     WarpToTruck();
-    RunScriptImmediately(EventScript_ResetAllMapFlags);
+
+    // 4. Overige initialisaties
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();

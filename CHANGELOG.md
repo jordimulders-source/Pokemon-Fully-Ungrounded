@@ -3837,15 +3837,16 @@ Held Item: Magnet
 ### [v.0.2.3] - Introductie & Flow: Deep Clean
 De overbodige menselijke interacties en mechanische verhuis-elementen zijn verwijderd om de speler sneller in de natuurlijke wereld van Hoenn te plaatsen. De focus ligt op een directe start en technische stabiliteit.
 
-* Type: N/A (Script Update)
-* Ability (Slot 1): N/A
-* Ability (Slot 2): N/A
-
 * Base Stats (Intro Flow):
     - Truck Bypass: ExecuteTruckSequence verwijderd uit overworld.c.
-    - House Scripts: LittlerootTown_BrendansHouse en MaysHouse gestript van alle "clock-lock" events en verhuis-NPC's.
     - Birch Lab: Introductie-dialoog ingekort naar de essentie; endgame hooks (National Dex/Johto Starters) behouden voor stabiliteit.
     - Wild Encounters: Route 101 gebalanceerd voor realistische vroege game-ervaring (Levels 2-5).
 
-Level-up Learnset:
-LEVEL_UP_MOVE( 1, MOVE_NONE),
+### 🛠 Systeem & Flow
+* **Introductie Versnelling:** De introductie-sequentie (Truck/Birch intro) is geoptimaliseerd en versneld voor een betere flow.
+* **Map Fixes:** Integriteit van de Littleroot Town huisjes hersteld. Duplicatie-fouten in de map-scripts en tileset-verwijzingen gecorrigeerd, waardoor elk huis nu uniek en correct toegankelijk is.
+
+### ✍️ Tekst & Dialoog
+* **Narratieve Revisie:** Dialoog vanaf de start van de game tot en met het verkrijgen van de Starter Pokémon herschreven.
+* **Toon:** De teksten zijn aangepast naar een humoristische, cynische stijl die breekt met de traditionele Pokémon-conventies (o.a. Professor Birch's nieuwe persoonlijkheid en de meta-commentaar van de rivaal).
+* **Fixes:** Alle nieuwe dialogen zijn geformatteerd binnen de GBA text-box limieten (max 35-40 karakters per regel) met correct gebruik van `\n`, `\l`, en `\p` markers.

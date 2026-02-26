@@ -126,7 +126,6 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    // Spawn direct voor het LINKER huis (X:5, Y:9)
     SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 5, 9);
     WarpIntoMap();
 }
@@ -194,49 +193,43 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
 
-    // 1. Eerst de basis resetten
     RunScriptImmediately(EventScript_ResetAllMapFlags);
 
-    // 2. Wie woont waar en verberg de spook-moeders
     if (gSaveBlock2Ptr->playerGender == MALE)
     {
-        // Brendan (Links)
         VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1); 
         VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 0);     
         
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL);
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL);
+
         FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
-        
-        // Weg met de familie van de rivaal in Brendan's huis
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING);
     }
     else
     {
-        // May (Rechts)
         VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1); 
         VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 0);
         
+        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL);
+        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL);
+
         FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
-        
-        // Weg met de familie van de rivaal in May's huis
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING);
     }
 
-    // 3. Wereldstatus: trucks weg, intro skippen
     VarSet(VAR_LITTLEROOT_INTRO_STATE, 4); 
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK);
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK);
-    
-    // Klok vlag NIET zetten zodat je hem zelf kunt instellen
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
 
     WarpToTruck();
 
-    // 4. Overige initialisaties
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();

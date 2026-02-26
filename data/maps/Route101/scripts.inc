@@ -258,34 +258,37 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "H-help me!$"
+	.string "AIEEEEEE!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+	.string "Hello! You, with the ugly clothes\n"
+	.string "and the shit faced smug!\p"
+	.string "Please! Help! Don't leave me getting\n"
+	.string "chased by a super low level POKéMON\l"
+	.string "you will destroy in one hit!$"
 
 Route101_Text_DontLeaveMe:
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+	.string "- 404 ERROR -\n"
+	.string "You must help the PROFESSOR to\l"
+	.string "continue your nomadic quest.\p"
+	.string "This is not Breath of the Wild!$"
 
 Route101_Text_YouSavedMe:
 	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "I was in the tall grass studying\n"
+	.string "shit... literally.\p"
+	.string "When I was attacked by territorial\n"
+	.string "POKéMON who don't like fat old men\l"
+	.string "touching their fresh feces.\p"
+	.string "GET TO THE CHOPPER!\p"
+	.string "I'll show you some cool shit and\n"
+	.string "treat you to some chocolate.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+	.string "If POKéMON get tired, just tell\n"
+	.string "them to man up.\p"
+	.string "That's how we did it back in the\n"
+	.string "day! No POKé CENTERS for us.$"
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Wild POKéMON will jump out at you in\n"

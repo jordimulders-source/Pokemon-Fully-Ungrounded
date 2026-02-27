@@ -3850,3 +3850,57 @@ De overbodige menselijke interacties en mechanische verhuis-elementen zijn verwi
 * **Narratieve Revisie:** Dialoog vanaf de start van de game tot en met het verkrijgen van de Starter Pokémon herschreven.
 * **Toon:** De teksten zijn aangepast naar een humoristische, cynische stijl die breekt met de traditionele Pokémon-conventies (o.a. Professor Birch's nieuwe persoonlijkheid en de meta-commentaar van de rivaal).
 * **Fixes:** Alle nieuwe dialogen zijn geformatteerd binnen de GBA text-box limieten (max 35-40 karakters per regel) met correct gebruik van `\n`, `\l`, en `\p` markers.
+
+# Changelog - Project Grounded
+
+## [0.2.2] - 2026-02-27
+
+### Added
+- **Galar-Bioloog NPC**: Een nieuwe Gentleman-sprite toegevoegd aan de noordoostkant van Littleroot Town.
+- **Gift Pokémon Event**: Werkend Galar-Zigzagoon (Lv. 5) giveaway-event geïmplementeerd.
+    - Inclusief controle op party-grootte en unieke fanfare.
+    - Gekoppeld aan `FLAG_UNUSED_0x020` voor permanente verwijdering na ontvangst.
+- **Story Trigger**: De Bioloog-gift is nu vergrendeld achter `FLAG_RESCUED_BIRCH`.
+- **Galar Lore Placeholder**: Nieuwe dialoog toegevoegd over "Max Raid Den" energie die de speler eerst naar Route 101 dwingt.
+
+### Changed
+- **Fat Man NPC Dialogue**: De standaardtekst over PC-opslag vervangen door een meta-commentaar over het bouwen van romhacks met behulp van AI.
+- **Object Elevation**: Alle handmatig toegevoegde objecten in `map.json` gecorrigeerd naar `elevation: 3` voor correcte interactie en collision.
+- **Removal Logic**: De Zigzagoon-sprite verdwijnt nu direct (`removeobject`) na dialoog, wat animatie-clipping over map-borders voorkomt.
+
+### Fixed
+- **Linker Errors**: `undefined reference` foutmeldingen opgelost door over te stappen op lokale tekst-labels binnen `scripts.inc`.
+- **Interactiviteit**: Probleem verholpen waarbij de Bioloog en Zigzagoon niet aanspreekbaar waren door ontbrekende script-links in de map-data.
+
+# Changelog - Project Grounded
+
+## [Wild Encounters Update - Vroege Routes]
+
+### Algemene Wijzigingen
+- **Ecologische Opschoning:** De dominantie van vroege-route "fillers" (Poochyena, Wurmple) drastisch verlaagd ten gunste van biome-specifieke Pokémon.
+- **QoL Balancing:** Encounter rates voor zeldzame/interessante Pokémon (Ralts, Surskit, Snom) verhoogd om rekening te houden met de "dertiger-met-weinig-tijd" doelgroep.
+- **Syntax Fix:** Alle encounters gestandaardiseerd naar `min_level` en `max_level` om level-glitches te voorkomen.
+
+### Route Aanpassingen
+
+#### Route 101 (The Galar Entry)
+- **Toegevoegd:** Kricketot, Hoppip, Pachirisu, Snom.
+- **Focus:** Vroege "underutilized" Pokémon die normaal te laat verschijnen om impact te maken. Snom fungeert als zeldzame "refugee" uit de koffer van de Bioloog.
+
+#### Route 102 (Birch's Field Research)
+- **Toegevoegd:** Rellor (Mestkever).
+- **Verhoogde Kans:** Surskit (14%), Seedot (14%), Ralts (10%).
+- **Focus:** Versterken van de ecologische link met Professor Birch's onderzoek. Rellor toegevoegd als logische bewoner van de route.
+
+#### Route 103 (Riverbank Update)
+- **Toegevoegd:** Bidoof, Corphish, Lechonk, Grubbin.
+- **Verwijderd:** De 60% Poochyena-overheersing is opgeheven.
+- **Focus:** Een geloofwaardige rivieroever-omgeving met Bidoof en Corphish als kernsoorten.
+
+#### Route 104 (Coastal Breeze)
+- **Toegevoegd:** Seel, Mareanie, Wooper (Johto & Paldea), Tadbulb.
+- **Verwijderd:** Poochyena (volledig verwijderd van deze route).
+- **Focus:** 40% Wingull-ratio voor een echt kustgevoel. Seel geïntroduceerd als opzet voor de nieuwe Water/Fairy Dewgong.
+
+---
+*Status: Build Ready. Volgende stap: Stat-buffs voor Kricketune & Dewgong en Rellor-evolutie aanpassing.*

@@ -242,8 +242,16 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
 	end
 
 LittlerootTown_EventScript_FatMan::
-	msgbox LittlerootTown_Text_CanUsePCToStoreItems, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_GroundedFatMan, MSGBOX_DEFAULT
+	release
 	end
+
+LittlerootTown_Text_GroundedFatMan:
+	.string "Technology is perplexing!!\n"
+	.string "You can use AI to build\l"
+	.string "Your own romhack!$"
 
 LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
@@ -953,53 +961,67 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "The power of science is amazing!\n"
-	.string "You can now use AI to build your\l"
-	.string "own romhacks.\p"
-	.string "A dream come true!$"
+	.string "If you use a PC, you can store items\n"
+	.string "and POKéMON.\p"
+	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "PROF. BIRCH spends days on the toilet\n"
+	.string "reading magazines and laughing...\p"
+	.string "He's playing Solitaire, Minesweeper,\n"
+	.string "recently even POKéMON SLEEP...\l"
+	.string "What a boomer!\p"
+	.string "When does PROF. BIRCH actually spend\n"
+	.string "time at home?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
-	.string "Um, um, um!\p"
-	.string "If you go outside and go in the grass,\n"
-	.string "wild POKéMON will jump out!$"
+	.string "Um, ma, ma, ma, ma!\p"
+	.string "Can't read my, can't read my,\n"
+	.string "no, he can't read my POKER FACE!$"
 
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
 	.string "It's dangerous if you don't have\n"
-	.string "your own POKéMON.$"
+	.string "a certified, dual-layered, stainless\p"
+	.string "steel thermal insulation element for\n"
+	.string "lukewarm beverages at exactly 38C!\l"
+	.string "Think of the logistical liability!\p"
+	.string "If you were to experience a marginal\n"
+	.string "fluctuation in your hydration-to-\p"
+	.string "electrolyte ratio without a spill-\n"
+	.string "proof nozzle, the audit would be\l"
+	.string "absolutely devastating!\p"
+	.string "No thermal element, no entry!\n"
+	.string "Safety is a lifestyle, not a choice!$"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "Um, hi!\p"
-	.string "There are scary POKéMON outside!\n"
-	.string "I can hear their cries!\p"
+	.string "There are SCARY MONSTERS outside!\n"
+	.string "And SUPER CREEPS!\p"
+	.string "I can hear them... they're keeping me\n"
+	.string "running, running scared!\p"
 	.string "I want to go see what's going on,\n"
-	.string "but I don't have any POKéMON…\p"
-	.string "Can you go see what's happening\n"
-	.string "for me?$"
+	.string "but I don't have a POKéMON...\p"
+	.string "Can you go see if it's the horror\n"
+	.string "of some giant star for me?$"
 
 LittlerootTown_Text_YouSavedBirch:
 	.string "You saved PROF. BIRCH!\n"
-	.string "I'm so glad!$"
+	.string "Ughhhhh, why?$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
-	.string "Are you going to catch POKéMON?\n"
+	.string "Are you going to catch HIV?\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
 	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "“TBH nobody cares.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "PROF. BIRCH'S POKéMON FECES LAB$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s HOUSE...\n"
+	.string "IN THE MIDDLE OF THE STREET!$"
 
 LittlerootTown_Text_ProfBirchsHouse:
 	.string "PROF. BIRCH'S HOUSE$"
@@ -1015,3 +1037,93 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+@ Definities voor de Giveaway sprites
+.set LOCALID_ZIGZAGOON, 9
+.set LOCALID_GENTLEMAN, 10
+
+LittlerootTown_EventScript_GalarBiologist::
+	lock
+	faceplayer
+	@ Check of Birch al gered is (Punt 2)
+	goto_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_GalarTooBusy
+	
+	goto_if_set FLAG_UNUSED_0x020, LittlerootTown_EventScript_GalarGaveMon
+	msgbox LittlerootTown_Text_GalarIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_GalarDeclined
+	
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, LittlerootTown_EventScript_GalarNoRoom
+	
+	@ Pokémon geven
+	givemon SPECIES_ZIGZAGOON_GALAR, 5, ITEM_NONE
+	
+	@ Fanfare
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_Text_ReceivedGalarZigzagoon
+	waitmessage
+	waitfanfare
+	
+	msgbox LittlerootTown_Text_GalarFarewell, MSGBOX_DEFAULT
+	closemessage
+	
+	@ Instant verdwijnen (Punt 3)
+	removeobject LOCALID_ZIGZAGOON
+	setflag FLAG_UNUSED_0x020
+	release
+	end
+
+LittlerootTown_EventScript_GalarTooBusy::
+	msgbox LittlerootTown_Text_GalarTooBusy, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_GalarGaveMon::
+	msgbox LittlerootTown_Text_GalarFarewell, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_GalarDeclined::
+	msgbox LittlerootTown_Text_GalarDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_GalarNoRoom::
+	msgbox LittlerootTown_Text_GalarNoRoom, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_Text_GalarTooBusy:
+	.string "Gentleman: OH-OH-HOH-OH-OH-OH-OH-OH!\n"
+	.string "OH-OH-HOH-OH-OH-OH-OH-OH-OH-OH!\p"
+	.string "Oh, sorry, I was distracted. There's a\n"
+	.string "MAX RAID DEN on ROUTE 101!\p"
+	.string "Ch-ch-ch-check it out! But you'd\n"
+	.string "better watch out for frame drops...$"
+
+LittlerootTown_Text_GalarIntro:
+	.string "Biologist: You! You look like you need\n"
+	.string "a SWORD and/or SHIELD!\p"
+	.string "No WILD AREA is too wild for you!\p"
+	.string "I am a BIOLOGIST and I've just returned\n"
+	.string "from GALAR. It's great to be back in a\l"
+	.string "world where everything runs at a\l"
+	.string "consistent 60fps and you can actually\l"
+	.string "interact with buildings!\p"
+	.string "Anyways, you know ZIGZAGOON? GALAR\n"
+	.string "has really cool ones! They grow even\l"
+	.string "further after becoming a LINOONE.\p"
+	.string "They like to stand in front of places\n"
+	.string "and obstruct. What rowdy behavior!\p"
+	.string "Would you like to take this one?$"
+
+LittlerootTown_Text_ReceivedGalarZigzagoon:
+	.string "{PLAYER} got a Galar Zigzagoon!$"
+
+LittlerootTown_Text_GalarFarewell:
+	.string "Gentleman: OBSTRUCTION!$"
+
+LittlerootTown_Text_GalarDeclined:
+	.string "Gentleman: Haha, loser!$"
+
+LittlerootTown_Text_GalarNoRoom:
+	.string "Crazy that you made this happen!$"

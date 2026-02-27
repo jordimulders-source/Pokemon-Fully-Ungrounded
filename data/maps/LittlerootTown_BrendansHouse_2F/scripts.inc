@@ -291,5 +291,8 @@ Common_Text_LookCloserAtMap:
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
+	.string "You're playing Double Dash, 150cc\n"
+	.string "Mirror Mode. Mitch is already\l"
+	.string "trailing you by 32 points after\l"
+	.string "10 races. And you didn't even\l"
+	.string "play Dry Dry Desert yet!$"

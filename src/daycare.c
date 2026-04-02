@@ -245,20 +245,6 @@ static void TransferEggMoves(void)
 
 void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
 {
-    if (MonHasMail(mon))
-    {
-        u8 mailId;
-
-        StringCopy(daycareMon->mail.otName, gSaveBlock2Ptr->playerName);
-        GetMonNicknameVanilla(mon, daycareMon->mail.monName);
-        StripExtCtrlCodes(daycareMon->mail.monName);
-        daycareMon->mail.gameLanguage = GAME_LANGUAGE;
-        daycareMon->mail.monLanguage = GetMonData(mon, MON_DATA_LANGUAGE);
-        mailId = GetMonData(mon, MON_DATA_MAIL);
-        daycareMon->mail.message = gSaveBlock1Ptr->mail[mailId];
-        TakeMailFromMon(mon);
-    }
-
     u32 newSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_DEPOSIT, 0);
     if (newSpecies != GetMonData(mon, MON_DATA_SPECIES))
     {

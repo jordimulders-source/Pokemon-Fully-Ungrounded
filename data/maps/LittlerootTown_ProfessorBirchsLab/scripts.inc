@@ -544,6 +544,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
+	special EnableNationalPokedex    @ DIT ACTIVEERT DE NATIONAL DATA
+	setflag FLAG_SYS_NATIONAL_DEX    @ DIT FORCEERT DE UI NAAR NATIONAL MODE
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1

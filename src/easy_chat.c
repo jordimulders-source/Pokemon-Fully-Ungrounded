@@ -1475,7 +1475,7 @@ void ShowEasyChatScreen(void)
         words = gSaveBlock1Ptr->easyChatBattleLost;
         break;
     case EASY_CHAT_TYPE_MAIL:
-        words = gSaveBlock1Ptr->mail[gSpecialVar_0x8005].words;
+        words = NULL; 
         break;
     case EASY_CHAT_TYPE_BARD_SONG:
         bard = &gSaveBlock1Ptr->oldMan.bard;

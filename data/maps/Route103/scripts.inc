@@ -287,67 +287,78 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "MAY: Let's see… The POKéMON found\n"
-	.string "on ROUTE 103 include…$"
+	.string "MAY: BURP, BARF! Ugh I really\n"
+	.string "shouldn't have gone for that\l"
+	.string "second bottle of wine....\n"
+	.string "Oh, hi {PLAYER}...$"
 
 Route103_Text_MayLetsBattle:
-	.string "Oh, hi, {PLAYER}{KUN}!\p"
-	.string "…Oh, I see, my dad gave you\n"
-	.string "a POKéMON as a gift.\p"
-	.string "Since we're here, let's have a quick\n"
-	.string "battle!\p"
-	.string "I'll give you a taste of what being\n"
-	.string "a TRAINER is like.$"
+	.string "Listen. I have a lvl 5 starter\n"
+	.string "Pokemon that normally would be a\l"
+	.string "pushover, but now it has an\p"
+	.string "elemental move. So you'd better use\n"
+	.string "that Galarian Zigzagoon, otherwise\l"
+	.string "you'll have to do this fight many\l"
+	.string "many times.$"
 
 Route103_Text_MayDefeated:
-	.string "Wow! That's great!\n"
-	.string "{PLAYER}{KUN}, you're pretty good!$"
+	.string "Would've been hilarious if you\n"
+	.string "had lost!$"
 
 Route103_Text_MayTimeToHeadBack:
-	.string "MAY: I think I know why my dad has\n"
-	.string "an eye out for you now.\p"
-	.string "I mean, you just got that POKéMON,\n"
-	.string "but it already likes you.\p"
-	.string "You might be able to befriend any\n"
-	.string "kind of POKéMON easily.\p"
-	.string "Well, it's time to head back to\n"
-	.string "the LAB.$"
+	.string "MAY: I think I know why Italians\n"
+	.string "are so picky when it comes to\l"
+	.string "pizza. The stuff these suckers\p"
+	.string "put on it these days. Towers and\n"
+	.string "towers of toppings. You don't\l"
+	.string "even taste the dough anymore.\p"
+	.string "well, I'm done with this shit,\n"
+	.string "gonna bother that lowlife of a\l"
+	.string "dad now. Ciaociao!$"
 
 Route103_Text_BrendanRoute103Pokemon:
-	.string "BRENDAN: Okay, so it's this one and\n"
-	.string "that one that live on ROUTE 103…$"
+	.string "BRENDAN: These trees…\p"
+	.string "Last generation there were POKéMON\n"
+	.string "in there. I've been headbutting them\l"
+	.string "for hours now and the only thing\l"
+	.string "I've received is temporary memory loss…$"
 
 Route103_Text_BrendanLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
-	.string "…Oh, yeah, Dad gave you a POKéMON.\p"
+	.string "…Oh, yeah, Dad gave you a headache.\p"
 	.string "Since we're here, how about a little\n"
-	.string "battle?\p"
-	.string "I'll teach you what being a TRAINER's\n"
-	.string "about!$"
+	.string "discussion about age discrimination\l"
+	.string "on the job market?\p"
+	.string "How come that once you are above 55\n"
+	.string "it's more difficult to find a job?\p"
+	.string "Actually I know what you're going\n"
+	.string "to say: 'POKéMON TRAINERS ARE WORSE\l"
+	.string "WHEN THEY GET OLDER!', but I think\l"
+	.string "you're making the point wrong.\p"
+	.string "Oh snap I'm running out of dialo-$"
 
 Route103_Text_BrendanDefeated:
-	.string "Huh, {PLAYER}, you're not too shabby.$"
+	.string "…gue!$"
 
 Route103_Text_BrendanTimeToHeadBack:
-	.string "BRENDAN: I think I get it.\n"
-	.string "I think I know why my dad has his eye\l"
-	.string "out for you now.\p"
-	.string "Look, your POKéMON already likes you,\n"
-	.string "even though you just got it.\p"
-	.string "{PLAYER}, I get the feeling that you\n"
-	.string "could befriend any POKéMON with ease.\p"
-	.string "We should head back to the LAB.$"
-
+	.string "BRENDAN: I think I get it.\p"
+	.string "I think I know why my dad has\n"
+	.string "diarrhea a lot. All the McDonalds…\p"
+	.string "Oh well, Paris is still far away and\n"
+	.string "the Tour waits for no one!\l"
+	.string "Au revoir!$"
+	
 Route103_Text_ShouldHaveBroughtPotion:
-	.string "My POKéMON is staggeringly tired…\n"
-	.string "I should have brought a POTION…$"
+	.string "My POKéMON is staggeringly groovy…\n"
+	.string "Bachata, salsa, disco, funk.\p"
+	.string "It can dance in any style you like.\n"
+	.string "The Dancing Queen!$"
 
 Route103_Text_ShortcutToOldale:
-	.string "If you cross the sea from here,\n"
-	.string "it'll be a shortcut to OLDALE TOWN.\p"
-	.string "Fufufu, that's useful, isn't it?$"
+	.string "Down by the river,\n"
+	.string "I shot my baby.$"
 
 Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
-	.string "{DOWN_ARROW} OLDALE TOWN$"
+	.string "{DOWN_ARROW} HELL!$"
 

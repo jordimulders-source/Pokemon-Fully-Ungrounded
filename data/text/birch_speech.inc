@@ -24,4 +24,5 @@ gText_Birch_YourePlayer::
 
 gText_Birch_AreYouReady::
 	.string "VAMOS!\p$"
+
 	

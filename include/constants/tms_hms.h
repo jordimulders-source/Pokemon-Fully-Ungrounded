@@ -4,12 +4,12 @@
 #define FOREACH_TM(F) \
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(SCALD) \
     F(CALM_MIND) \
-    F(ROAR) \
+    F(STORED_POWER) \
     F(TOXIC) \
     F(HAIL) \
-    F(BULK_UP) \
+    F(DRAIN_PUNCH) \
     F(BULLET_SEED) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
@@ -21,10 +21,10 @@
     F(PROTECT) \
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
-    F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(U_TURN) \
+    F(DAZZLING_GLEAM) \
     F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(IRON_HEAD) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
@@ -35,22 +35,22 @@
     F(BRICK_BREAK) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(VOLT_SWITCH) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
     F(SANDSTORM) \
     F(FIRE_BLAST) \
-    F(ROCK_TOMB) \
-    F(AERIAL_ACE) \
-    F(TORMENT) \
+    F(STEALTH_ROCK) \
+    F(BRAVE_BIRD) \
+    F(NASTY_PLOT) \
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \
     F(ATTRACT) \
-    F(THIEF) \
-    F(STEEL_WING) \
-    F(SKILL_SWAP) \
-    F(SNATCH) \
+    F(TRICK_ROOM) \
+    F(FLASH_CANNON) \
+    F(DARK_PULSE) \
+    F(PLAY_ROUGH) \
     F(OVERHEAT)
 
 #define FOREACH_HM(F) \

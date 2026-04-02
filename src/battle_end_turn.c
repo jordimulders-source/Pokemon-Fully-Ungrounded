@@ -488,6 +488,7 @@ static bool32 HandleEndTurnPoison(u32 battler)
 
     if ((gBattleMons[battler].status1 & STATUS1_POISON || gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
      && IsBattlerAlive(battler)
+     && !IsAbilityAndRecord(battler, ability, ABILITY_TOXIC_BOOST)
      && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
     {
         if (ability == ABILITY_POISON_HEAL)

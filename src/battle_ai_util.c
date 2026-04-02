@@ -3140,8 +3140,9 @@ static u32 GetPoisonDamage(u32 battlerId)
 {
     u32 damage = 0;
 
-    if (gAiLogicData->abilities[battlerId] == ABILITY_POISON_HEAL)
-        return damage;
+    if (gAiLogicData->abilities[battlerId] == ABILITY_POISON_HEAL 
+        || gAiLogicData->abilities[battlerId] == ABILITY_TOXIC_BOOST)
+           return damage;
 
     if (gBattleMons[battlerId].status1 & STATUS1_POISON)
     {
@@ -6135,6 +6136,13 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
             return BEST_EFFECT;
         if (gBattleMons[battler].status1 & STATUS1_ANY)
             return NO_INCREASE;
+        break;
+        case ABILITY_TOXIC_BOOST:
+        if (gBattleMons[battler].status1 & (STATUS1_POISON | STATUS1_TOXIC_POISON))
+        {
+            // Het is zeer nadelig om deze ability te verliezen als je vergiftigd bent!
+            return BEST_EFFECT; 
+        }
         break;
     // Also used to Simple Beam SIMPLE_BEAM.
     case ABILITY_SIMPLE:

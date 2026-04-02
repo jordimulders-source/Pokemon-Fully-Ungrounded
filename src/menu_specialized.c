@@ -246,18 +246,15 @@ static u8 UNUSED MailboxMenu_GetWindowId(u8 windowIdx)
 
 static void MailboxMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 {
-    u8 buffer[30];
-    u16 length;
-
+    // Deze functie deed voorheen gSaveBlock1Ptr->mail[...].playerName
+    // Maar aangezien MAIL_COUNT 0 is, printen we nu niets.
+    
     if (itemId == LIST_CANCEL)
         return;
 
-    StringCopy(buffer, gSaveBlock1Ptr->mail[PARTY_SIZE + itemId].playerName);
-    ConvertInternationalPlayerName(buffer);
-    length = StringLength(buffer);
-    if (length < PLAYER_NAME_LENGTH - 1)
-        ConvertInternationalString(buffer, LANGUAGE_JAPANESE);
-    AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y, 0, 0, sPlayerNameTextColors, TEXT_SKIP_DRAW, buffer);
+    // We printen simpelweg een lege string om de compiler 
+    // en de speler niet lastig te vallen met data die er niet is.
+    AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y, 0, 0, sPlayerNameTextColors, TEXT_SKIP_DRAW, sEmptyItemName);
 }
 
 u8 MailboxMenu_CreateList(struct PlayerPCItemPageStruct *page)

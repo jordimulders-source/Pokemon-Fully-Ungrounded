@@ -182,6 +182,16 @@
       "blockdata_filepath": "data/layouts/Route102/map.bin"
     },
     {
+      "id": "LAYOUT_ROUTE102_MINI_FOREST",
+      "name": "Route102_MiniForest_Layout",
+      "width": 50,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route102_MiniForest/border.bin",
+      "blockdata_filepath": "data/layouts/Route102_MiniForest/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
       "width": 80,

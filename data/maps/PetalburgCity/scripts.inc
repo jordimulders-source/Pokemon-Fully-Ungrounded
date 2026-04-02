@@ -699,46 +699,61 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
-	.string "very soon…$"
+	.string "Where's Waldo... Uh, I mean Wally?\p"
+	.string "We're going to Ibiza!\n"
+	.string "Back to the island!$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
-	.string "is in the town.$"
+	.string "Hiya! Are you maybe...\n"
+	.string "Interested in a subscription for\l"
+	.string "an all-in-one TV and streaming unit?\p"
+	.string "6000 channels from 78 countries,\n"
+	.string "free Netflix, Hulu, Prime, Disney+...\l"
+	.string "Every movie you can think of!\p"
+	.string "Just 20,000 Pokedollars a month.\p"
+	.string "Wait, where are you going?\n"
+	.string "To the GYM? Come back!$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is PETALBURG CITY'S GYM.\n"
+	.string "Infested by lazy assholes who sit\p"
+	.string "in front of the TV all day binge-\n"
+	.string "watching mediocre Netflix originals.\p"
+	.string "50% of a conversation in here starts\n"
+	.string "with 'Have you watched... already?'$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "This is the GYM's sign. You can't\n"
+	.string "miss it, it's the only non-moving\l"
+	.string "screen in this god-forsaken town.$"
 
 PetalburgCity_Text_WaterReflection:
 	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+	.string "It reminds me of that scene in\n"
+	.string "'The Witcher' Season 3...\p"
+	.string "You know, the one where the CGI looks\n"
+	.string "like a wet Poochyena dingleberry?\p"
+	.string "Is my life just a mid-tier Netflix\n"
+	.string "original with a 40% Rotten Tomatoes score?$"
 
 PetalburgCity_Text_FullPartyExplanation:
 	.string "Let's say you have six POKéMON.\n"
 	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "Now you have seven POKéMON!\n"
+	.string "2 plus 2 is 4, minus 1 that's 3...\p"
+	.string "QUICK MATHS!$"
 
 PetalburgCity_Text_GymSign:
 	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
-	.string "“A man in pursuit of power!”$"
+	.string "LEADER: NORMAN\p"
+	.string "“The Netflix-addicted binge watching\n"
+	.string "series encyclopedia!”$"
 
 PetalburgCity_Text_CitySign:
 	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "“Where people mingle with binge\p"
+	.string "watching mediocre Netflix\n"
+	.string "originals.”$"
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
@@ -746,16 +761,25 @@ PetalburgCity_Text_WallyHouseSign:
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"
 	.string "Let me guess, from the way you're\n"
-	.string "dressed, are you a POKéMON TRAINER?$"
+	.string "dressed... The ridiculous look,\p"
+	.string "overabundance of accessories, and\n"
+	.string "a color scheme tied to the title...\p"
+	.string "You must be the PROTAG?\p"
+	.string "Ok, here's the deal: You're gonna\n"
+	.string "meet me 4 times this game.\p"
+	.string "Normally I'm useless, but now I'll\n"
+	.string "try to be a bit more useful.\l"
+	.string "But not this time.$"
 
 PetalburgCity_Text_WellMaybeNot:
-	.string "… … … … … …\p"
-	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "Because, let's be honest, it would\n"
+	.string "be a bunch of effort to remove\p"
+	.string "all my scripts. And for what\n"
+	.string "reason, exactly?$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "So what we will do, we will do\n"
+	.string "cross-dressing!\p"
+	.string "Next time you see me, I'll be\n"
+	.string "dressed like ROXANNE!$"
+	

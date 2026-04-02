@@ -75,30 +75,29 @@ Route102_EventScript_Allen::
 
 Route102_Text_WatchMeCatchPokemon:
 	.string "WALLY: {PLAYER}…\n"
-	.string "POKéMON hide in tall grass like this,\l"
+	.string "POKéMON, gotta catch 'em all,\l"
 	.string "don't they?\p"
-	.string "Please watch me and see if I can\n"
-	.string "catch one properly.\p"
-	.string "…Whoa!$"
+	.string "See I can if what I try to maybe catch\n"
+	.string "Maybe can huhuh\p"
+	.string "…Whoa, appear wild!$"
 
 Route102_Text_WallyIDidIt:
-	.string "WALLY: I did it… It's my…\n"
-	.string "My POKéMON!$"
+	.string "WALLY: My it is now really my\n"
+	.string "Is my!, POKéMON now is!$"
 
 Route102_Text_LetsGoBack:
-	.string "{PLAYER}, thank you!\n"
-	.string "Let's go back to the GYM!$"
+	.string "WALLY: {PLAYER}, thank.\n"
+	.string "GYM Go! Go back I want now yes maybe!$"
 
 Route102_Text_ImNotVeryTall:
 	.string "I'm…not very tall, so I sink right\n"
 	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
+	.string "The grass goes up and…\n"
+	.string "SMOKE WEED EVERYDAY\p"
 
 Route102_Text_CatchWholeBunchOfPokemon:
 	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+	.string "diseases!$"
 
 Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"
@@ -107,3 +106,66 @@ Route102_Text_RouteSignOldale:
 Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+Route102_EventScript_RellorBirch::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_RELLOR, Route102_EventScript_RellorBirchPostItem
+	
+	msgbox Route102_Text_RellorBirchIntro, MSGBOX_DEFAULT
+	
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, Route102_EventScript_NoRoomForRellor
+	
+	givemon SPECIES_RELLOR, 7, ITEM_HARD_STONE
+	
+	playfanfare MUS_OBTAIN_ITEM
+	message Route102_Text_PlayerReceivedRellor
+	waitmessage
+	waitfanfare
+	
+Route102_EventScript_FinishRellorGift::
+	setflag FLAG_RECEIVED_RELLOR
+	msgbox Route102_Text_RellorBirchPostItem, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_RellorBirchPostItem::
+	msgbox Route102_Text_RellorBirchPostItem, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_NoRoomForRellor::
+	msgbox Route102_Text_NoRoomForRellor, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_Text_RellorBirchIntro:
+	.string "PROF. BIRCH: {PLAYER}{KUN}!\n"
+	.string "Don't mind me.\p"
+	.string "I'm just documenting the structural\n"
+	.string "integrity of this POOCHYENA turd.\p"
+	.string "Fascinating… the fibers suggest a\n"
+	.string "diet of strictly RATTATA.\p"
+	.string "Maybe that's why we haven't seen\n"
+	.string "those in HOENN in a while.\p"
+	.string "Anyway, I found this little guy\n"
+	.string "rolling a massive dump earlier.\p"
+	.string "Might have been my own, actually.\n"
+	.string "Take it, it's a personal gift!$"
+
+Route102_Text_PlayerReceivedRellor:
+	.string "{PLAYER} reluctantly received\n"
+	.string "the RELLOR!$"
+
+Route102_Text_RellorBirchPostItem:
+	.string "PROF. BIRCH: Don't look at me like\n"
+	.string "that. It's all in the name of research.\p"
+	.string "Now go away, I think I see a\n"
+	.string "fresh one over there!$"
+
+Route102_Text_NoRoomForRellor:
+	.string "PROF. BIRCH: Your pockets are full of\n"
+	.string "balls, but your party is full of junk.\l"
+	.string "Make some room!$"
+	

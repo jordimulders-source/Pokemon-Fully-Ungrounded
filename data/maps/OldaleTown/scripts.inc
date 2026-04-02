@@ -71,7 +71,7 @@ OldaleTown_EventScript_GoToMartEast::
 
 OldaleTown_EventScript_ExplainPokemonMart::
 	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
-	giveitem ITEM_POTION
+	giveitem ITEM_SHELL_BELL
 	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_POTION_OLDALE
@@ -340,58 +340,78 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "I want to take a rest, so I'm calling\n"
+	.string "in sick even though I'm not.\p"
+	.string "Free money!$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
-	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
-	.string "Can I get you to come with me?$"
+	.string "Hi!\p"
+	.string "I work from home, like 24/7.\n"
+	.string "Post-COVID made my life way easier!\p"
+	.string "Now I can do laundry all day,\n"
+	.string "pretend like I'm working, avoid\l"
+	.string "casual conversations and doomscroll\l"
+	.string "even more.\p"
+	.string "Can you believe management thinks\n"
+	.string "we're even more productive?\p"
+	.string "Can I get you to come with me?\n"
+	.string "I'll show the wonders of working\l"
+	.string "from home!$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
-	.string "Just look for our blue roof.\p"
+	.string "This is a POKéMON MART.\p"
+	.string "What? You've been playing POKéMON\n"
+	.string "for 20 years already?\l"
+	.string "Well, in some regions they don't\l"
+	.string "look like this anymore!\p"
 	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
-	.string "Here, I'd like you to have this as\n"
-	.string "a promotional item.$"
+	.string "POKé BALLS, but also fake sushi,\l"
+	.string "GORGONZOLA and soggy fries.\p"
+	.string "Ok you know what, I'll give you\n"
+	.string "sumthin' useful for all my yapping.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
-	.string "in certain situations.$"
+	.string "I mean, normally you wouldn't use\n"
+	.string "this, so now it's suddenly useful\l"
+	.string "because you're still in Oldale.$"
 
 OldaleTown_Text_WaitDontComeInHere:
-	.string "Aaaaah! Wait!\n"
-	.string "Please don't come in here.\p"
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
+	.string "Aaaaah! Wait!\p"
+	.string "There's nothing going on here…\n"
+	.string "… … …DUNDUNDUN… … …\p"
+	.string "What? A rave? In this forest?\n"
+	.string "… … …DUNDUNDUN… … …\p"
+	.string "No, you're hearing that wrong.\n"
+	.string "Now piss off!$"
 
 OldaleTown_Text_DiscoveredFootprints:
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
+	.string "Ahhhhhhhhh, I'll take another\n"
+	.string "POKéBLOCK…\p"
+	.string "… … …DUNDUNDUN… … …\p"
+	.string "Damn, DJ SPINNY SPINDA is\n"
+	.string "really good!$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
-	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
+	.string "I… have been awake for 28+ hours…\p"
+	.string "I'm depressed…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
-	.string "Let's hurry home!$"
+	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "Over here!\p"
+	.string "Last one home has to listen to\n"
+	.string "BIRCH talk about RHYHORN feces\l"
+	.string "for 2 hours straight!!!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
-	.string "{PLAYER}, you should hustle back, too.$"
+	.string "BRENDAN: I'm heading back to my\n"
+	.string "dad's 'LAB' now.\p"
+	.string "I don't want to, but he'll 'ground'\n"
+	.string "me otherwise.\p"
+	.string "{PLAYER}, you should hustle back,\n"
+	.string "too. He will follow you around\l"
+	.string "forever otherwise!$"
 
 OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
-	.string "“Where things start off scarce.”$"
+	.string "“Where things start off young.”$"
 

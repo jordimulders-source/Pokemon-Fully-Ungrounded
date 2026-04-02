@@ -53,16 +53,21 @@ OldaleTown_Mart_EventScript_Boy::
 	end
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut:
-	.string "The clerk says they're all sold out.\n"
-	.string "I can't buy any POKé BALLS.$"
+	.string "I always used to think of\n"
+	.string "MART SMEETS when I saw MART.\p"
+	.string "Senk joe.$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
-	.string "I'm going to buy a bunch of POKé BALLS\n"
-	.string "and catch a bunch of POKéMON!$"
+	.string "I'm going to buy a bunch of BALLS!\p"
+	.string "MeatBALLS, GolfBALLS, BeachBALLS,\n"
+	.string "SpeedBALLS, CueBALLS, GoofBALLS,\l"
+	.string "BALLS BALLS BALLS BALLS\l"
+	.string "BAAAAAAAAAAAAAAAAAAAAALLS!$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion:
-	.string "If a POKéMON gets hurt and loses its HP\n"
-	.string "and faints, it won't be able to battle.\p"
-	.string "To prevent your POKéMON from fainting,\n"
-	.string "restore its HP with a POTION.$"
-
+	.string "If a POKéMON gets hurt and loses\n"
+	.string "its HP, it might lose its faith…\p"
+	.string "In the hypercapitalist fake system\n"
+	.string "that this world is held together by.\p"
+	.string "It's up to you if you want\n"
+	.string "this or not.$"

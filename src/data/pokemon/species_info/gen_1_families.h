@@ -13150,8 +13150,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sExeggcuteLevelUpLearnset,
         .teachableLearnset = sExeggcuteTeachableLearnset,
         .eggMoveLearnset = sExeggcuteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR, CONDITIONS({IF_NOT_REGION, REGION_ALOLA})},
-                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA})}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR},
+                                {EVO_LEVEL, 0, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_IN_MAPSEC, MAPSEC_ROUTE_119})}),
     },
 
     [SPECIES_EXEGGUTOR] =
@@ -13376,9 +13376,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sCuboneLevelUpLearnset,
         .teachableLearnset = sCuboneTeachableLearnset,
         .eggMoveLearnset = sCuboneEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MAROWAK, CONDITIONS({IF_NOT_REGION, REGION_ALOLA})},
-        {EVO_LEVEL, 28, SPECIES_MAROWAK_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA}, {IF_TIME, TIME_NIGHT})},
-},
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MAROWAK},
+                                {EVO_LEVEL, 0, SPECIES_MAROWAK_ALOLA, CONDITIONS({IF_IN_MAPSEC, MAPSEC_MT_PYRE})}),
+    },
 
     [SPECIES_MAROWAK] =
     {
@@ -14110,8 +14110,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sKoffingLevelUpLearnset,
         .teachableLearnset = sKoffingTeachableLearnset,
         .eggMoveLearnset = sKoffingEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_WEEZING)},
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MOON_STONE, SPECIES_WEEZING_GALAR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_WEEZING},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_WEEZING_GALAR}),
     },
 
     [SPECIES_WEEZING] =
@@ -15750,7 +15750,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMimeJrTeachableLearnset,
         .eggMoveLearnset = sMimeJrEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MR_MIME, CONDITIONS({IF_KNOWS_MOVE, MOVE_MIMIC}, {IF_NOT_REGION, REGION_GALAR})},
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_MR_MIME_GALAR},
+                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_MR_MIME_GALAR}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 

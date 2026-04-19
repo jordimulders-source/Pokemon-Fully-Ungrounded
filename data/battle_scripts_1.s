@@ -8947,3 +8947,11 @@ BattleScript_SwapToSubstituteContinue:
 	waitanimation
 BattleScript_SwapToSubstituteReturn:
 	return
+
+BattleScript_DimensionalWarpActivates::
+    pause B_WAIT_TIME_SHORT
+    call BattleScript_AbilityPopUp
+    printstring  STRINGID_PKMNTWISTEDDIMENSIONS
+    waitmessage B_WAIT_TIME_LONG
+    playanimation BS_BATTLER_0, B_ANIM_TRICK_ROOM
+    end3

@@ -2403,6 +2403,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
+    [ABILITY_DIMENSIONAL_WARP] =
+    {
+        .name = _("Dimensional Warp"),
+        .description = COMPOUND_STRING("Summons Trick Room in battle."),
+        .aiRating = 9,
+    },
+
     [ABILITY_POISON_PUPPETEER] =
     {
         .name = _("Poison Puppeteer"),

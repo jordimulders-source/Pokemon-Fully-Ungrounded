@@ -4531,6 +4531,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_DIMENSIONAL_WARP:
+            if (!(gFieldStatuses & STATUS_FIELD_TRICK_ROOM))
+            {
+                gFieldStatuses |= STATUS_FIELD_TRICK_ROOM;
+                gFieldTimers.trickRoomTimer = 5;
+                BattleScriptPushCursorAndCallback(BattleScript_DimensionalWarpActivates);
+                effect++;
+            }
+            break;
         case ABILITY_SUPREME_OVERLORD:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {

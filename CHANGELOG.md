@@ -3588,7 +3588,7 @@ Ability: TECHNICIAN
 Held Item: SITRUS_BERRY
 - BELLY_DRUM
 - ARM_THRUST
-- FORCE_PALM
+- KNOCK_OFF
 - SAND_ATTACK
 
 === TRAINER_WATTSON_1 ===
@@ -13913,11 +13913,16 @@ Mirage Tower collapsed niet meer na pakken fossiel. Beide fossielen nu beschikba
 ### [v.0.4.0] - Quality of Life
 O.a. tekstversnelling doorgevoerd en evolution methods.
 
+Gen 1:
 Alola Sandshrew -> lvl 22
 Rattata -> Lvl 20
 Alola Vulpix -> lvl 30
 Meowth Alola -> lvl 27
 Ponyta -> lvl 32
+Golbat -> lvl 35
+Machoke -> lvl 37
+Kadabra -> lvl 37
+Graveler -> lvl 37
 Galar Ponyta -> lvl 32
 Galar Slowpoke -> 33 Slowbro en Kings Rock Slowking
 Magneton evolved in New Mauville
@@ -13925,6 +13930,123 @@ Exeggcute evolved in alola Exeggutor op Route 119
 Cubone evolved in alola Marowak op Mt Pyre
 Koffing wordt Galar Weezing na Moon Stone
 Chansey wordt Blissey op lvl 36
-Mime Jr wordt Mr Mime met ice Stone
+Mime Jr wordt Mr Mime Galar met ice Stone
 Eevee evolved in Sylveon, Espeon of Umbreon als die een aanval van een van deze moves leert. Op lvl 24 Baby Doll Eyes, op lvl 25 Bite en op lvl 26 Trick. Ben wel benieuwd wat er gebeurt als Eevee alle drie de moves kan. Of je dan 3 evolutions per level moet gaan cancellen.
 Munchlax evolved op lvl 30
+Dragonair -> lvl 51
+
+Gen 2:
+Sentret -> lvl 18
+Ledyba -> Lvl 20
+Togepi -> lvl 20
+Azurill -> lvl 15
+Marill -> lvl 25
+Wynaut -> Lvl 20
+Pineco -> lvl 27
+Ursaring met Moon Stone Ursaluna en met Dusk Stone Ursaluna Bloodmoon
+Slugma -> lvl 28
+Swinub -> lvl 27
+Stantler -> 10x Psyshield Bash gebruiken ipv 20
+Larvitar -> lvl 26
+Pupitar -> lvl 51
+
+Gen 3:
+Poochyena -> lvl 21
+Surskit -> lvl 20
+Slakoth -> lvl 22
+Skitty -> lvl 23
+Aron -> lvl 24
+Lairon -> lvl 37
+Carvanha -> lvl 28
+Wailmer -> lvl 32
+Numel -> lvl 29
+Trapinch -> lvl 25
+Vibrava -> lvl 38
+Barboach -> lvl 28
+Spheal -> lvl 28
+Sealeo -> lvl 40
+
+Gen 4:
+Buneary -> lvl 22
+Stunky -> lvl 28
+Bronzor -> lvl 30
+Riolu -> lvl 30
+Hippopotas -> lvl 28
+Skorupi -> lvl 30
+Croagunk -> lvl 31
+Snover -> lvl 31
+
+Gen 5:
+Woobat -> Lvl 28
+Gurdurr > lvl 37
+Boldore -> lvl 37
+Swadloon -> lvl 34
+
+Dimensional Warp ability toegevoegd. Automatic Trick Room setup. Gegeven aan Elgyem line.
+
+Sandile -> lvl 24
+Krokorok -> lvl 35
+Darumaka -> lvl 30
+Dwebble -> lvl 28
+Scraggy -> lvl 31
+Yamask -> lvl 27
+Tirtouga -> lvl 30
+Archen -> lvl 30
+Trubbish -> lvl 28
+Gothita -> lvl 22
+Gothorita -> lvl 36
+Solosis -> lvl 23
+Duosion -> lvl 37
+Ducklett -> lvl 27
+Vanillite -> lvl 24
+Vanillish -> lvl 34
+Deerling -> lvl 26
+Foongus -> lvl 30
+Frillish -> lvl 28
+Joltik -> lvl 28
+Ferroseed -> lvl 30
+Klink -> lvl 22
+Klang -> lvl 36
+Tyanamo -> lvl 24
+Elgyem -> lvl 25
+Litwick -> lvl 30
+Axew -> lvl 32
+Fraxure -> lvl 43
+Cubchoo -> lvl 28
+Cryogonal -> Snow Warning
+Shelmet -> lvl 30
+Mienfoo -> lvl 30
+Golett -> lvl 38
+Pawniard -> lvl 34
+Bisharp -> lvl 49
+Rufflet -> lvl 34
+Vullaby -> lvl 34
+Deino -> lvl 32
+Zweilous -> lvl 53
+Larvesta -> lvl 40
+
+Gen 6:
+
+Litleo -> lvl 30
+Skiddo -> lvl 26
+Inkay -> lvl 30
+Binacle -> lvl 33
+Skrelp -> lvl 36
+Clauncher -> lvl 31
+Phantump -> lvl 30
+Pumpkaboo -> lvl 30
+Noibat -> lvl 38
+
+Gen 7:
+
+Mareanie -> lvl 33
+Sandygast -> lvl 30
+
+Gen 8:
+
+Silicobra -> lvl 32
+Snom -> lvl 25
+Duraludon -> lvl 50
+Dreepy -> lvl 30
+Drakloak -> lvl 50
+Gimmighoul -> lvl 45

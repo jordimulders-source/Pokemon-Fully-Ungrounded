@@ -5201,7 +5201,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Technician
 - Belly Drum
 - Arm Thrust
-- Force Palm
+- Knock Off
 - Sand Attack
 
 === TRAINER_WATTSON_1 ===
@@ -5517,10 +5517,10 @@ Ability: Levitate
 - Psychic
 - Lunar Blessing
 
-=== TRAINER_JUAN_1 ===
-Name: Juan
+=== TRAINER_WALLACE_1 ===
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
@@ -17508,10 +17508,10 @@ Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CHAMPION_BIRCH ===
-Name: BIRCH
+=== TRAINER_CHAMPION_STEVEN ===
+Name: STEVEN
 Class: Champion
-Pic: Birch
+Pic: Steven
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
@@ -17519,53 +17519,56 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Green
 
-Breloom @ Toxic Orb
+Skarmory @ Wacan Berry
 Level: 57
-Ability: Poison Heal
+Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Spore
-- Substitute
-- Focus Punch
-- Mach Punch
-
-Clodsire @ Black Sludge
-Level: 57
-Ability: Water Absorb
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Toxic
 - Stealth Rock
+- Swords Dance
+- Baton Pass
+- Brave Bird
+
+Corviknight @ Leftovers
+Level: 57
+Ability: Mirror Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Body Press
+- Roost
+- Iron Defense
+
+Gholdengo @ Air Balloon
+Level: 58
+Ability: Good as Gold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Make It Rain
+- Shadow Ball
+- Nasty Plot
 - Recover
 
-Swalot @ Sitrus Berry
+Orthworm @ Sitrus Berry
 Level: 58
-Ability: Unaware
+Ability: Earth Eater
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gunk Shot
-- Strength Sap
-- Ice Beam
-- Earth Power
+- Shed Tail
+- Curse
+- Iron Head
+- Body Press
 
-Rabsca @ Leppa Berry
+Kingambit @ Focus Sash
 Level: 58
-Ability: Synchronize
+Ability: Supreme Overlord
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Revival Blessing
-- Psychic
-- Bug Buzz
-- Earth Power
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
 
-Goodra @ Assault Vest
-Level: 58
-Ability: Gooey
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Muddy Water
-- Dragon Pulse
-- Sludge Wave
-- Flamethrower
-
-Ditto @ Choice Scarf
+Metagross @ Assault Vest
 Level: 59
-Ability: Imposter
+Ability: Clear Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Transform
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Explosion

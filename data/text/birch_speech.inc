@@ -1,26 +1,26 @@
 gText_Birch_Welcome::
-	.string "Buenas! Geen gelul!\p$"
+	.string "Hello, let's keep this short!\p$"
 
 gText_Birch_Pokemon::
-	.string "Electrode hier\p$"
+	.string "This is Electrode.\p$"
 
 gText_Birch_MainSpeech::
-	.string "Snel door.\p$"
+	.string "Let's continue.\p$"
 
 gText_Birch_AndYouAre::
-	.string "Kies ff\p$"
+	.string "Choose.\p$"
 
 gText_Birch_BoyOrGirl::
-	.string "Man of vrouw?$"
+	.string "Male or female?$"
 
 gText_Birch_WhatsYourName::
-	.string "Naam?$"
+	.string "Name?$"
 
 gText_Birch_SoItsPlayer::
 	.string "{PLAYER}?$"
 
 gText_Birch_YourePlayer::
-	.string "Duidelijk!\p$"
+	.string "Clear!\p$"
 
 gText_Birch_AreYouReady::
 	.string "VAMOS!\p$"

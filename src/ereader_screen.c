@@ -342,7 +342,7 @@ static void Task_EReader(u8 taskId)
         else if (JOY_NEW(B_BUTTON))
         {
             ResetTimer(&data->timer);
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             data->state = ER_STATE_CANCELED_CARD_READ;
         }
         break;
@@ -350,7 +350,7 @@ static void Task_EReader(u8 taskId)
         if (JOY_NEW(B_BUTTON))
         {
             // Canceled
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseLink();
             ResetTimer(&data->timer);
             data->state = ER_STATE_CANCELED_CARD_READ;
@@ -364,7 +364,7 @@ static void Task_EReader(u8 taskId)
         else if (ValidateEReaderConnection())
         {
             // Successful connection
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseLink();
             ResetTimer(&data->timer);
             data->state = ER_STATE_CONNECTING;
@@ -428,7 +428,7 @@ static void Task_EReader(u8 taskId)
             data->state = ER_STATE_WAIT_RECV_CARD;
             break;
         case RECV_CANCELED:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseLink();
             data->state = ER_STATE_CANCELED_CARD_READ;
             break;

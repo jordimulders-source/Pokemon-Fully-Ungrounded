@@ -40,6 +40,13 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayStarterTypeInfo::
 	release
 	end
 
+PetalburgCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox PetalburgCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 PetalburgCity_PokemonCenter_1F_EventScript_SayTreeckoType::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType, MSGBOX_DEFAULT
 	return
@@ -92,3 +99,14 @@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 	.string "But, it's weak against GRASS-type\n"
 	.string "and ELECTRIC-type POKéMON.$"
 
+PetalburgCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can talk to NPCs,\n"
+	.string "by pressing “A”, when you are\l"
+	.string "facing them.\p"
+	.string "People might give you very useful\n"
+	.string "tips. You should try it on me!$"
+	

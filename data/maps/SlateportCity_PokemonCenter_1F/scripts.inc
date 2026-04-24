@@ -8,6 +8,13 @@ SlateportCity_PokemonCenter_1F_OnTransition:
 	call Common_EventScript_UpdateBrineyLocation
 	end
 
+SlateportCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox SlateportCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 SlateportCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_SLATEPORT_NURSE
 	call Common_EventScript_PkmnCenterNurse
@@ -38,3 +45,15 @@ SlateportCity_PokemonCenter_1F_Text_TradedMonWithFriend:
 	.string "If a traded POKéMON is holding an\n"
 	.string "item, it makes me twice as happy!$"
 
+SlateportCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: POKéMON can learn new\n"
+	.string "moves! Either by levelling up,\l"
+	.string "evolving, relearning moves or\l"
+	.string "learning TMs.\p"
+	.string "No need to keep using TACKLE until\n"
+	.string "the end game. What a relief!$"
+	

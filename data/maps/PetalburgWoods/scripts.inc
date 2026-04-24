@@ -88,7 +88,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
-	giveitem ITEM_GREAT_BALL
+	giveitem ITEM_MOON_STONE
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_BagFull
 	goto PetalburgWoods_EventScript_DevonResearcherFinish
 	end
@@ -250,7 +250,7 @@ PetalburgWoods_EventScript_Girl::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainMiracleSeed
 	msgbox PetalburgWoods_Text_TryUsingThisItem, MSGBOX_DEFAULT
-	giveitem ITEM_MIRACLE_SEED
+	giveitem ITEM_ROCKY_HELMET
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_MIRACLE_SEED
 	release
@@ -320,89 +320,98 @@ PetalburgWoods_Text_NotAOneToBeFound:
 	.string "Not a one to be found…$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
-	.string "Hello, have you seen any POKéMON\n"
-	.string "called SHROOMISH around here?\p"
-	.string "I really love that POKéMON.$"
+	.string "Hello, have you seen any idiots\n"
+	.string "around here, all dressed in Blue\l"
+	.string "pirate cosplay suits, following\l"
+	.string "me? I'm scared of those!$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
-	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in PETALBURG WOODS\l"
-	.string "forever, didn't you?\p"
-	.string "I got sick of waiting, so here I am!$"
+	.string "HAHAHA, I am an idiot, all dressed\n"
+	.string "in Blue pirate cosplay, here to\l"
+	.string "scare you!$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "You! DEVON RESEARCHER!\p"
-	.string "Hand over those papers!$"
+	.string "WAAAH, be scared!$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
 	.string "Aiyeeeh!\p"
-	.string "You're a POKéMON TRAINER, aren't you?\n"
-	.string "You've got to help me, please!$"
+	.string "I'm so scared! It triggers my\n"
+	.string "idiot dressed in Blue pirate\l"
+	.string "cosplay-phobia.\p"
+	.string "Protect me, you noble warrior!$"
 
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
-	.string "Hunh? What do you think you're doing?\n"
-	.string "What, you're going to protect him?\p"
-	.string "No one who crosses TEAM AQUA\n"
-	.string "gets any mercy, not even a kid!\p"
-	.string "Come on and battle me!$"
+	.string "Hunh? What do you think you're\n"
+	.string "doing?\p"
+	.string "I am part of The Blue Men Group,\n"
+	.string "better known locally as TEAM AQUA.\p"
+	.string "Fear us! Fight my wimpy low level\n"
+	.string "POKéMON!$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-	.string "You're kidding me! You're tough!$"
+	.string "UNGH, but how?$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Grrr… You've got some nerve\n"
-	.string "meddling with TEAM AQUA!\l"
-	.string "Come on and battle me again!\p"
-	.string "I wish I could say that, but I'm out of\n"
-	.string "POKéMON…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
-	.string "after something in RUSTBORO.\p"
-	.string "I'll let you go today!$"
+	.string "meddling with TEAM BLUE MAN GROUP.\p"
+	.string "I have another trick up my sleeve:\n"
+	.string "'Starts drumming bombastically for\l"
+	.string "3 minutes'\p"
+	.string "Oh shit, I have a videocall in\n"
+	.string "5 min and I still need to pee!\l"
+	.string "Adios!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "Whew…\n"
 	.string "That was awfully close!\p"
-	.string "Thanks to you, he didn't rob me of\n"
-	.string "these important papers.\p"
-	.string "I know, I'll give you a GREAT BALL as\n"
-	.string "my thanks!$"
+	.string "I almost peed my pants.\p"
+	.string "Normally I would give you a\n"
+	.string "GREAT BALL, but I don't have\l"
+	.string "any balls... literally.\l"
+	.string "Have this.$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "Didn't that TEAM AQUA thug say\n"
-	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
+	.string "he had a video call scheduled?$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
-	.string "Uh-oh! It's a crisis!\n"
-	.string "I can't be wasting time!$"
+	.string "Uh-oh! It's a crisis!\p"
+	.string "I can't be wasting time.\n"
+	.string "I got an invitation too!$"
 
 PetalburgWoods_Text_YoureLoadedWithItems:
 	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "I can't give you this MOON STONE.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
-	.string "I caught a whole bunch of POKéMON!\p"
-	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "I got a whole bunch of BUG\n"
+	.string "POKéMON from my brother.\p"
+	.string "He even evolved a few of them.\n"
+	.string "I'm indestructible!$"
 
 PetalburgWoods_Text_ICouldntWin:
-	.string "I have all these POKéMON,\n"
-	.string "but I couldn't win…$"
+	.string "Maybe I should start levelling\n"
+	.string "these POKéMON... hmm.$"
 
 PetalburgWoods_Text_ImOutOfPokeBalls:
-	.string "I caught a bunch of POKéMON.\n"
-	.string "Now I'm out of POKé BALLS.$"
+	.string "Yeah, a level 3 YANMEGA defeats\n"
+	.string "the purpose of having one in the\l"
+	.string "first place, doesn't it?$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
 	.string "If you take BUG POKéMON to school,\n"
-	.string "you get to be instantly popular!$"
+	.string "all the girls get scared and think\l"
+	.string "you are a creep.\p"
+	.string "Well, I've embraced this role!$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
-	.string "I can't be popular if I lose.$"
+	.string "I wish I was special...$"
 
 PetalburgWoods_Text_PeopleRespectYou:
-	.string "If you have a big BUG POKéMON,\n"
-	.string "people respect you for it.$"
+	.string "But I'm a creep...\n"
+	.string "I'm a weirdo...\p"
+	.string "What the hell am I doin' here?\n"
+	.string "I don't belong here...$"
 
 PetalburgWoods_Text_IWantRematch1:
 	.string "I want a rematch when my BUG\n"
@@ -428,46 +437,48 @@ PetalburgWoods_Text_IveBeenTrainingHard:
 
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"
-	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "War is bad, okay?\p"
+	.string "When you get older, do not become\n"
+	.string "a tyrant!$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "Sometimes, there are things on the\n"
 	.string "ground even if you can't see them.\p"
 	.string "That's why I always check where I'm\n"
-	.string "walking.$"
+	.string "walking.\p"
+	.string "Before you know it, there is a\n"
+	.string "booby trap, and suddenly you're up\l"
+	.string "in the air hanging by your feet\l"
+	.string "tied to a rope in the Russian\l"
+	.string "jungle...$"
 
 PetalburgWoods_Text_TryUsingThisItem:
-	.string "Oh, neat!\n"
+	.string "Oh, sick!\n"
 	.string "That's the BADGE from RUSTBORO GYM!\p"
-	.string "You must be a TRAINER.\n"
+	.string "You must be a REAL ROCK 'N ROLLER.\n"
 	.string "You should try using this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
-	.string "It's a MIRACLE SEED.\n"
-	.string "If a POKéMON holds that item, its\l"
-	.string "GRASS-type moves become stronger.\p"
-	.string "Besides MIRACLE SEED, I think there are\n"
-	.string "other convenient items for POKéMON\l"
-	.string "to hold.$"
+	.string "It's a ROCKY HELMET.\p"
+	.string "If a POKéMON touches you, they get\n"
+	.string "hurt! So if you have good DEFENSE,\l"
+	.string "you should give them some nice free\l"
+	.string "recoil damage.$"
 
 PetalburgWoods_Text_TrainerTipsExperience:
 	.string "TRAINER TIPS\p"
-	.string "Any POKéMON that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak POKéMON, put it at the\n"
-	.string "left of the team list.\p"
-	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
-	.string "being exposed to any harm.$"
+	.string "Do not listen to that weirdo standing\n"
+	.string "to your right at the entrance of\l"
+	.string "POKéMON CENTERS.\p"
+	.string "While his information is factually\n"
+	.string "correct, it is completely utterly\l"
+	.string "useless.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
 	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), POKéMON\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a POKéMON runs out of PP, it must be\n"
-	.string "taken to a POKéMON CENTER.$"
+	.string "In addition to Hit Points (HP),\n"
+	.string "POKéMON have emotions, feelings\l"
+	.string "and other unnecessary thoughts.\p"
+	.string "Ignore these, POKéMON battles are\n"
+	.string "pure mathematics.$"
 

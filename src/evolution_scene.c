@@ -930,7 +930,7 @@ static void Task_EvolutionScene(u8 taskId)
             if (JOY_NEW(DPAD_UP) && sEvoCursorPos != 0)
             {
                 // Moved onto YES
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 BattleDestroyYesNoCursorAt(sEvoCursorPos);
                 sEvoCursorPos = 0;
                 BattleCreateYesNoCursorAt(0);
@@ -938,7 +938,7 @@ static void Task_EvolutionScene(u8 taskId)
             if (JOY_NEW(DPAD_DOWN) && sEvoCursorPos == 0)
             {
                 // Moved onto NO
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 BattleDestroyYesNoCursorAt(sEvoCursorPos);
                 sEvoCursorPos = 1;
                 BattleCreateYesNoCursorAt(1);
@@ -946,7 +946,7 @@ static void Task_EvolutionScene(u8 taskId)
             if (JOY_NEW(A_BUTTON))
             {
                 HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
 
                 if (sEvoCursorPos != 0)
                 {
@@ -965,7 +965,7 @@ static void Task_EvolutionScene(u8 taskId)
             {
                 // Equivalent to selecting NO
                 HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 gTasks[taskId].tLearnMoveState = gTasks[taskId].tLearnMoveNoState;
             }
             break;

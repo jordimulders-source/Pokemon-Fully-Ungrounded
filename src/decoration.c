@@ -612,7 +612,7 @@ static void HandleDecorationActionsMenuInput(u8 taskId)
         switch (Menu_ProcessInput())
         {
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sDecorationMainMenuActions[sDecorationActionsCursorPos].func.void_u8(taskId);
             break;
         case MENU_NOTHING_CHOSEN:
@@ -621,7 +621,7 @@ static void HandleDecorationActionsMenuInput(u8 taskId)
                 PrintCurMainMenuDescription();
             break;
         case MENU_B_PRESSED:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             DecorationMenuAction_Cancel(taskId);
             break;
         }
@@ -790,13 +790,13 @@ static void HandleDecorationCategoriesMenuInput(u8 taskId)
         {
         case MENU_B_PRESSED:
         case DECORCAT_COUNT: // CANCEL
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ExitDecorationCategoriesMenu(taskId);
             break;
         case MENU_NOTHING_CHOSEN:
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sCurDecorationCategory = input;
             SelectDecorationCategory(taskId);
             break;
@@ -923,7 +923,7 @@ static void CopyDecorationMenuItemName(u8 *dest, u16 decoration)
 static void DecorationItemsMenu_OnCursorMove(s32 itemIndex, bool8 flag, struct ListMenu *menu)
 {
     if (flag != TRUE)
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
     PrintDecorationItemDescription(itemIndex);
 }
@@ -1006,11 +1006,11 @@ static void HandleDecorationItemsMenuInput(u8 taskId)
         case LIST_NOTHING_CHOSEN:
             break;
         case LIST_CANCEL:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sSecretBasePC_SelectedDecorationActions[tDecorationMenuCommand][1](taskId);
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gCurDecorationIndex = input;
             RemoveDecorationItemsScrollIndicators();
             DestroyListMenuTask(tMenuTaskId, &sDecorationsScrollOffset, &sDecorationsCursorPos);

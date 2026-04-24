@@ -24,6 +24,13 @@ SootopolisCity_PokemonCenter_1F_EventScript_Gentleman::
 	release
 	end
 
+SootopolisCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox SootopolisCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries::
 	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn, MSGBOX_DEFAULT
 	release
@@ -68,3 +75,15 @@ SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
 	.string "Aren't POKéMON our friends?\p"
 	.string "Why are they going wild this way?$"
 
+SootopolisCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can use items in\n"
+	.string "battle. Like POTIONS!\p"
+	.string "They heal your POKéMON. I recommend\n"
+	.string "using X-ITEMS, like X ACCURACY.\p"
+	.string "It makes your FURY SWIPES easier\n"
+	.string "to hit!$"
+	

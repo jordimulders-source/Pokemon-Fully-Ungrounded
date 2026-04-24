@@ -190,7 +190,7 @@ static void FieldUpdateRegionMap(void)
                     if (sFieldRegionMapHandler->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY
                         && FlagGet(OW_FLAG_POKE_RIDER) && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
                     {
-                        PlaySE(SE_SELECT);
+                        PlaySE(SE_RG_BALL_CLICK);
                         SetFlyDestination(&sFieldRegionMapHandler->regionMap);
                         gSkipShowMonAnim = TRUE;
                         ReturnToFieldFromFlyMapSelect();

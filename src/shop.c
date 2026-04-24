@@ -401,7 +401,7 @@ static void Task_ShopMenu(u8 taskId)
     case MENU_NOTHING_CHOSEN:
         break;
     case MENU_B_PRESSED:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         Task_HandleShopMenuQuit(taskId);
         break;
     default:
@@ -595,7 +595,7 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
 {
     const u8 *description;
     if (onInit != TRUE)
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
     if (item != LIST_CANCEL)
         BuyMenuAddItemIcon(item, sShopData->iconSlot);
@@ -990,11 +990,11 @@ static void Task_BuyMenu(u8 taskId)
         case LIST_NOTHING_CHOSEN:
             break;
         case LIST_CANCEL:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ExitBuyMenu(taskId);
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             tItemId = itemId;
             ClearWindowTilemap(WIN_ITEM_DESCRIPTION);
             BuyMenuRemoveScrollIndicatorArrows();
@@ -1095,7 +1095,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
     {
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearStdWindowAndFrameToTransparent(WIN_QUANTITY_PRICE, FALSE);
             ClearStdWindowAndFrameToTransparent(WIN_QUANTITY_IN_BAG, FALSE);
             ClearWindowTilemap(WIN_QUANTITY_PRICE);
@@ -1108,7 +1108,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearStdWindowAndFrameToTransparent(WIN_QUANTITY_PRICE, FALSE);
             ClearStdWindowAndFrameToTransparent(WIN_QUANTITY_IN_BAG, FALSE);
             ClearWindowTilemap(WIN_QUANTITY_PRICE);
@@ -1191,7 +1191,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
             premierBallsToAdd = 0;
         }
 
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         AddBagItem(ITEM_PREMIER_BALL, premierBallsToAdd);
         if (premierBallsToAdd > 0)
         {
@@ -1209,7 +1209,7 @@ static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BuyMenuReturnToItemList(taskId);
     }
 }

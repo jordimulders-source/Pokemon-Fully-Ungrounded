@@ -8,6 +8,13 @@ DewfordTown_PokemonCenter_1F_OnTransition:
 	call Common_EventScript_UpdateBrineyLocation
 	end
 
+DewfordTown_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox DewfordTown_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 DewfordTown_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_DEWFORD_NURSE
 	call Common_EventScript_PkmnCenterNurse
@@ -35,3 +42,11 @@ DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
 	.string "battle, it can still use a move learned\l"
 	.string "from a HIDDEN MACHINE (HM).$"
 
+DewfordTown_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can do damage by\n"
+	.string "using attacks. If you do enough\l"
+	.string "damage, you will win fights!$"

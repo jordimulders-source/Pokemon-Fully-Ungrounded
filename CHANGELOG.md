@@ -14050,3 +14050,110 @@ Duraludon -> lvl 50
 Dreepy -> lvl 30
 Drakloak -> lvl 50
 Gimmighoul -> lvl 45
+
+#if P_FAMILY_ELGYEM
+static const struct LevelUpMove sElgyemLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 6, MOVE_IMPRISON),
+    LEVEL_UP_MOVE(12, MOVE_TELEPORT),
+    LEVEL_UP_MOVE(15, MOVE_POWER_GEM),
+    LEVEL_UP_MOVE(18, MOVE_PSYBEAM),
+    LEVEL_UP_MOVE(21, MOVE_DAZZLING_GLEAM),
+    LEVEL_UP_MOVE(24, MOVE_POWER_SPLIT),
+    LEVEL_UP_MOVE(24, MOVE_GUARD_SPLIT),
+    LEVEL_UP_MOVE(26, MOVE_NASTY_PLOT),
+    LEVEL_UP_MOVE(30, MOVE_DARK_PULSE),
+    LEVEL_UP_MOVE(32, MOVE_SIGNAL_BEAM),
+    LEVEL_UP_MOVE(36, MOVE_ZEN_HEADBUTT),
+    LEVEL_UP_MOVE(40, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(43, MOVE_RECOVER),
+    LEVEL_UP_MOVE(48, MOVE_CALM_MIND),
+    LEVEL_UP_MOVE(54, MOVE_WONDER_ROOM),
+    LEVEL_UP_MOVE(56, MOVE_STEEL_BEAM),
+    LEVEL_UP_MOVE(58, MOVE_METEOR_BEAM),
+    LEVEL_UP_MOVE(60, MOVE_PSYCHIC),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sBeheeyemLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_PHOTON_GEYSER),
+    LEVEL_UP_MOVE( 1, MOVE_PSYCHIC_TERRAIN),
+    LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_IMPRISON),
+    LEVEL_UP_MOVE( 1, MOVE_TELEPORT),
+    LEVEL_UP_MOVE(15, MOVE_POWER_GEM),
+    LEVEL_UP_MOVE(18, MOVE_PSYBEAM),
+    LEVEL_UP_MOVE(21, MOVE_DAZZLING_GLEAM),
+    LEVEL_UP_MOVE(24, MOVE_POWER_SPLIT),
+    LEVEL_UP_MOVE(24, MOVE_GUARD_SPLIT),
+    LEVEL_UP_MOVE(26, MOVE_NASTY_PLOT),
+    LEVEL_UP_MOVE(30, MOVE_DARK_PULSE),
+    LEVEL_UP_MOVE(32, MOVE_SIGNAL_BEAM),
+    LEVEL_UP_MOVE(36, MOVE_ZEN_HEADBUTT),
+    LEVEL_UP_MOVE(40, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(45, MOVE_RECOVER),
+    LEVEL_UP_MOVE(48, MOVE_METEOR_BEAM),
+    LEVEL_UP_MOVE(52, MOVE_CALM_MIND),
+    LEVEL_UP_MOVE(56, MOVE_STEEL_BEAM),
+    LEVEL_UP_MOVE(60, MOVE_WONDER_ROOM),
+    LEVEL_UP_MOVE(68, MOVE_PSYCHIC),
+    LEVEL_UP_END
+
+Protip Oracle in alle Pokemon Centers toegevoegd.
+
+### [v.0.4.1] - Routes, Locaties, Trainers en Scripts
+
+Applin apples toegevoegd aan Verdanturf.
+
+Poging gewaagd om Poke Center healen te versnellen, is gelukt! Je hoeft niet te wachten tot de animatie is afgelopen.
+
+'A' knop geluid veranderd en minder irritant.
+
+In Petalburg Woods krijg je van de Devon Corp man nu een Moon Stone en ipv een Miracle Seed krijg je een Rocky Helmet
+
+Kricketune 100BST erbij, Technician main ability, evolved op lvl 18 nu:
+
+#if P_FAMILY_KRICKETOT
+static const struct LevelUpMove sKricketotLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_BIDE),
+    LEVEL_UP_MOVE( 4, MOVE_INFESTATION),
+    LEVEL_UP_MOVE( 6, MOVE_FELL_STINGER),
+    LEVEL_UP_MOVE( 8, MOVE_STRUGGLE_BUG),
+    LEVEL_UP_MOVE(10, MOVE_FURY_CUTTER),
+    LEVEL_UP_MOVE(14, MOVE_POUNCE),
+    LEVEL_UP_MOVE(16, MOVE_BUG_BITE),
+    LEVEL_UP_MOVE(18, MOVE_SING),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sKricketuneLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_FURY_CUTTER),
+    LEVEL_UP_MOVE( 0, MOVE_PIN_MISSILE),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_FELL_STINGER),
+    LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE(14, MOVE_TRAILBLAZE),
+    LEVEL_UP_MOVE(18, MOVE_SING),
+    LEVEL_UP_MOVE(22, MOVE_FOCUS_ENERGY),
+    LEVEL_UP_MOVE(24, MOVE_POWER_UP_PUNCH),
+    LEVEL_UP_MOVE(25, MOVE_TWINEEDLE),
+    LEVEL_UP_MOVE(26, MOVE_SLASH),
+    LEVEL_UP_MOVE(28, MOVE_KNOCK_OFF),
+    LEVEL_UP_MOVE(30, MOVE_X_SCISSOR),
+    LEVEL_UP_MOVE(32, MOVE_DUAL_WINGBEAT),
+    LEVEL_UP_MOVE(34, MOVE_SCREECH),
+    LEVEL_UP_MOVE(36, MOVE_LEECH_LIFE),
+    LEVEL_UP_MOVE(38, MOVE_TAUNT),
+    LEVEL_UP_MOVE(42, MOVE_NIGHT_SLASH),
+    LEVEL_UP_MOVE(44, MOVE_STICKY_WEB),
+    LEVEL_UP_MOVE(46, MOVE_BUG_BUZZ),
+    LEVEL_UP_MOVE(50, MOVE_PERISH_SONG),
+    LEVEL_UP_END
+
+Wattson heeft een Hisui Voltorb, omdat uit tests blijkt dat Marshtomp te weinig moeite heeft in dit gevecht. Manectric heeft Ice Fang ipv Bite.
+
+Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
+

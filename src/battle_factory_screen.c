@@ -1540,7 +1540,7 @@ static void Select_Task_HandleYesNo(u8 taskId)
     case STATE_YESNO_HANDLE_INPUT:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sFactorySelectScreen->yesNoCursorPos == 0)
             {
                 // Selected Yes, confirmed selected Pokémon
@@ -1561,7 +1561,7 @@ static void Select_Task_HandleYesNo(u8 taskId)
         else if (JOY_NEW(B_BUTTON))
         {
             // Pressed B, Continue choosing Pokémon
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_ErasePopupMenu(SELECT_WIN_YES_NO);
             Select_DeclineChosenMons();
             sFactorySelectScreen->fadeSpeciesNameActive = TRUE;
@@ -1570,12 +1570,12 @@ static void Select_Task_HandleYesNo(u8 taskId)
         }
         else if (JOY_REPEAT(DPAD_UP))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateYesNoCursorPosition(-1);
         }
         else if (JOY_REPEAT(DPAD_DOWN))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateYesNoCursorPosition(1);
         }
         break;
@@ -1604,7 +1604,7 @@ static void Select_Task_HandleMenu(u8 taskId)
         if (JOY_NEW(A_BUTTON))
         {
             u8 retVal;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             retVal = Select_RunMenuOptionFunc();
             if (retVal == SELECT_CONTINUE_CHOOSING)
             {
@@ -1630,7 +1630,7 @@ static void Select_Task_HandleMenu(u8 taskId)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseMonPic(sFactorySelectScreen->monPics[1], &sFactorySelectScreen->monPicAnimating, FALSE);
             Select_ErasePopupMenu(SELECT_WIN_OPTIONS);
             sFactorySelectScreen->fadeSpeciesNameActive = TRUE;
@@ -1639,12 +1639,12 @@ static void Select_Task_HandleMenu(u8 taskId)
         }
         else if (JOY_REPEAT(DPAD_UP))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateMenuCursorPosition(-1);
         }
         else if (JOY_REPEAT(DPAD_DOWN))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateMenuCursorPosition(1);
         }
         break;
@@ -1685,21 +1685,21 @@ static void Select_Task_HandleChooseMons(u8 taskId)
     case STATE_CHOOSE_MONS_HANDLE_INPUT:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sFactorySelectScreen->fadeSpeciesNameActive = FALSE;
             gTasks[taskId].tState = STATE_MENU_INIT;
             gTasks[taskId].func = Select_Task_HandleMenu;
         }
         else if (JOY_REPEAT(DPAD_LEFT))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateBallCursorPosition(-1);
             Select_PrintMonCategory();
             Select_PrintMonSpecies();
         }
         else if (JOY_REPEAT(DPAD_RIGHT))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Select_UpdateBallCursorPosition(1);
             Select_PrintMonCategory();
             Select_PrintMonSpecies();
@@ -1708,7 +1708,7 @@ static void Select_Task_HandleChooseMons(u8 taskId)
     case STATE_CHOOSE_MONS_INVALID:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseMonPic(sFactorySelectScreen->monPics[1], &sFactorySelectScreen->monPicAnimating, FALSE);
             Select_PrintSelectMonString();
             sFactorySelectScreen->fadeSpeciesNameActive = TRUE;
@@ -2458,7 +2458,7 @@ static void Swap_Task_HandleYesNo(u8 taskId)
     case STATE_YESNO_HANDLE_INPUT:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sFactorySwapScreen->yesNoCursorPos == 0)
             {
                 // Selected Yes
@@ -2479,7 +2479,7 @@ static void Swap_Task_HandleYesNo(u8 taskId)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gTasks[taskId].tSaidYes = FALSE;
             Swap_ErasePopupMenu(SWAP_WIN_YES_NO);
             hiPtr = gTasks[taskId].tFollowUpTaskPtrHi;
@@ -2488,12 +2488,12 @@ static void Swap_Task_HandleYesNo(u8 taskId)
         }
         else if (JOY_REPEAT(DPAD_UP))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Swap_UpdateYesNoCursorPosition(-1);
         }
         else if (JOY_REPEAT(DPAD_DOWN))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Swap_UpdateYesNoCursorPosition(1);
         }
         break;
@@ -2583,12 +2583,12 @@ static void Swap_Task_HandleMenu(u8 taskId)
         {
             if (JOY_NEW(A_BUTTON))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 Swap_RunMenuOptionFunc(taskId);
             }
             else if (JOY_NEW(B_BUTTON))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 CloseMonPic(sFactorySwapScreen->monPic, &sFactorySwapScreen->monPicAnimating, TRUE);
                 Swap_ErasePopupMenu(SWAP_WIN_OPTIONS);
                 gTasks[taskId].tState = 0;
@@ -2626,7 +2626,7 @@ static void Swap_Task_HandleChooseMons(u8 taskId)
         if (JOY_NEW(A_BUTTON))
         {
             // Run whatever action is currently selected (a Poké Ball, the Cancel button, etc.)
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sFactorySwapScreen->fadeSpeciesNameActive = FALSE;
             Swap_PrintMonSpeciesAtFade();
             Swap_EraseSpeciesWindow();
@@ -2635,7 +2635,7 @@ static void Swap_Task_HandleChooseMons(u8 taskId)
         else if (JOY_NEW(B_BUTTON))
         {
             // Ask if player wants to quit swapping
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sFactorySwapScreen->fadeSpeciesNameActive = FALSE;
             Swap_PrintMonSpeciesAtFade();
             Swap_EraseSpeciesWindow();
@@ -3549,7 +3549,7 @@ static void Swap_HandleActionCursorChange(u8 cursorId)
 static void Swap_UpdateBallCursorPosition(s8 direction)
 {
     u8 cursorPos;
-    PlaySE(SE_SELECT);
+    PlaySE(SE_RG_BALL_CLICK);
     if (direction > 0) // Move cursor right.
     {
         if (sFactorySwapScreen->cursorPos + 1 != sFactorySwapScreen->actionsCount)
@@ -3572,7 +3572,7 @@ static void Swap_UpdateBallCursorPosition(s8 direction)
 static void Swap_UpdateActionCursorPosition(s8 direction)
 {
     u8 cursorPos;
-    PlaySE(SE_SELECT);
+    PlaySE(SE_RG_BALL_CLICK);
     if (direction > 0) // Move cursor down.
     {
         if (sFactorySwapScreen->cursorPos < FRONTIER_PARTY_SIZE)
@@ -3619,7 +3619,7 @@ static void Swap_UpdateYesNoCursorPosition(s8 direction)
 
 static void Swap_UpdateMenuCursorPosition(s8 direction)
 {
-    PlaySE(SE_SELECT);
+    PlaySE(SE_RG_BALL_CLICK);
     if (direction > 0) // Move cursor down.
     {
         if (sFactorySwapScreen->menuCursorPos != ARRAY_COUNT(sSwap_MenuOptionFuncs) - 1)
@@ -4109,7 +4109,7 @@ static void Swap_TaskCantHaveSameMons(u8 taskId)
     case 1:
         if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseMonPic(sFactorySwapScreen->monPic, &sFactorySwapScreen->monPicAnimating, TRUE);
             gTasks[taskId].tState++;
         }

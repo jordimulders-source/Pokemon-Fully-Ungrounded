@@ -661,7 +661,7 @@ static u32 LoopedTask_ExitRibbonsSummaryMenu(s32 state)
     switch (state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         PokenavFadeScreen(POKENAV_FADE_TO_BLACK);
         return LT_INC_AND_PAUSE;
     case 1:
@@ -678,7 +678,7 @@ static u32 LoopedTask_SwitchRibbonsSummaryMon(s32 state)
     switch (state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         SlideMonSpriteOff(menu);
         return LT_INC_AND_PAUSE;
     case 1:
@@ -717,7 +717,7 @@ static u32 LoopedTask_ExpandSelectedRibbon(s32 state)
     switch (state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         UpdateAndZoomInSelectedRibbon(menu);
         return LT_INC_AND_PAUSE;
     case 1:
@@ -741,7 +741,7 @@ static u32 LoopedTask_MoveRibbonsCursorExpanded(s32 state)
     switch (state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ZoomOutSelectedRibbon(menu);
         return LT_INC_AND_PAUSE;
     case 1:
@@ -771,7 +771,7 @@ static u32 LoopedTask_ShrinkExpandedRibbon(s32 state)
     switch (state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ZoomOutSelectedRibbon(menu);
         return LT_INC_AND_PAUSE;
     case 1:

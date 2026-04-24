@@ -613,26 +613,26 @@ static void UsePokeblockMenu(void)
     case STATE_HANDLE_INPUT:
         if (JOY_HELD(DPAD_UP))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             UpdateSelection(TRUE);
             DestroyConditionSparkleSprites(sMenu->sparkles);
             sInfo->mainState = STATE_UPDATE_SELECTION;
         }
         else if (JOY_HELD(DPAD_DOWN))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             UpdateSelection(FALSE);
             DestroyConditionSparkleSprites(sMenu->sparkles);
             sInfo->mainState = STATE_UPDATE_SELECTION;
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sInfo->mainState = STATE_CLOSE;
         }
         else if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             // If last item, selected Cancel. Otherwise selected mon
             if (sMenu->info.curSelection == sMenu->info.numSelections - 1)
@@ -889,7 +889,7 @@ static s8 HandleAskUsePokeblockInput(void)
         break;
     case MENU_B_PRESSED:
     case 1: // NO
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         rbox_fill_rectangle(2);
         ClearWindowTilemap(2);
         break;

@@ -21,6 +21,13 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+EverGrandeCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad, MSGBOX_NPC
 	end
@@ -97,3 +104,13 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "Okay, {PLAYER}{KUN}.\n"
 	.string "Go for greatness!$"
 
+EverGrandeCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can have a maximum\n"
+	.string "of 6 POKéMON in one team and you\l"
+	.string "have 4 move slots per POKéMON.\p"
+	.string "Choices, choices!$"
+	

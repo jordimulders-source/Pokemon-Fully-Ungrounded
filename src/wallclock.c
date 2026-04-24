@@ -845,12 +845,12 @@ static void Task_SetClock_HandleConfirmInput(u8 taskId)
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
     case 0: // YES
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gTasks[taskId].func = Task_SetClock_Confirmed;
         break;
     case 1: // NO
     case MENU_B_PRESSED:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
         ClearWindowTilemap(WIN_MSG);
         gTasks[taskId].func = Task_SetClock_HandleInput;

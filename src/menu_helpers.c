@@ -165,12 +165,12 @@ static void Task_CallYesOrNoCallback(u8 taskId)
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         sYesNo.yesFunc(taskId);
         break;
     case 1:
     case MENU_B_PRESSED:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         sYesNo.noFunc(taskId);
         break;
     }
@@ -193,7 +193,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *quantity, u16 max)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             return TRUE;
         }
     }
@@ -209,7 +209,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *quantity, u16 max)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             return TRUE;
         }
     }
@@ -225,7 +225,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *quantity, u16 max)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             return TRUE;
         }
     }
@@ -241,7 +241,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *quantity, u16 max)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             return TRUE;
         }
     }

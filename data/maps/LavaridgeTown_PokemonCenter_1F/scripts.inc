@@ -16,6 +16,13 @@ LavaridgeTown_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+LavaridgeTown_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 LavaridgeTown_PokemonCenter_1F_EventScript_Youngster::
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate, MSGBOX_NPC
 	end
@@ -46,3 +53,12 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo:
 	.string "If POKéMON are getting rest, so too\n"
 	.string "should their TRAINERS.$"
 
+LavaridgeTown_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You get money when\n"
+	.string "you win fights. Get Rich or Die\l"
+	.string "Trying, like my homeboy 50 used to say!$"
+	

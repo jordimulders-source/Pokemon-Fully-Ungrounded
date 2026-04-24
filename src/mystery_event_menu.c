@@ -165,7 +165,7 @@ static void CB2_MysteryEventMenu(void)
         }
         if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseLink();
             gMain.state = 15;
         }
@@ -179,7 +179,7 @@ static void CB2_MysteryEventMenu(void)
         {
             if (JOY_NEW(A_BUTTON))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 CheckShouldAdvanceLinkState();
                 DrawStdFrameWithCustomTileAndPalette(WIN_LOADING, TRUE, 1, 0xD);
                 PrintMysteryMenuText(WIN_LOADING, gText_LoadingEvent, 1, 2, 0);
@@ -189,7 +189,7 @@ static void CB2_MysteryEventMenu(void)
             }
             else if (JOY_NEW(B_BUTTON))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 CloseLink();
                 gMain.state = 15;
             }
@@ -229,7 +229,7 @@ static void CB2_MysteryEventMenu(void)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             CloseLink();
             gMain.state = 15;
         }
@@ -277,7 +277,7 @@ static void CB2_MysteryEventMenu(void)
     case 14:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gMain.state++;
         }
         break;

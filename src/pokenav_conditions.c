@@ -91,7 +91,7 @@ static u32 HandleConditionMenuInput(struct Pokenav_ConditionMenu *menu)
     {
         if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             menu->callback = GetConditionReturnCallback;
             ret = CONDITION_FUNC_RETURN;
         }
@@ -103,7 +103,7 @@ static u32 HandleConditionMenuInput(struct Pokenav_ConditionMenu *menu)
                 if (monListPtr->currIndex == monListPtr->listCount - 1)
                 {
                     // Cancel
-                    PlaySE(SE_SELECT);
+                    PlaySE(SE_RG_BALL_CLICK);
                     menu->callback = GetConditionReturnCallback;
                     ret = CONDITION_FUNC_RETURN;
                 }
@@ -111,7 +111,7 @@ static u32 HandleConditionMenuInput(struct Pokenav_ConditionMenu *menu)
             else
             {
                 // In Search mode pressing A brings up the markings menu
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ret = CONDITION_FUNC_ADD_MARKINGS;
                 menu->callback = OpenMarkingsMenu;
             }
@@ -174,7 +174,7 @@ static u8 ConditionGraphHandleDpadInput(struct Pokenav_ConditionMenu *menu)
         // Prevent input wrapping in search mode
         if (!menu->inSearchMode || monListPtr->currIndex != 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ret = SwitchConditionSummaryIndex(TRUE);
         }
     }
@@ -183,7 +183,7 @@ static u8 ConditionGraphHandleDpadInput(struct Pokenav_ConditionMenu *menu)
         // Prevent input wrapping in search mode
         if (!menu->inSearchMode || monListPtr->currIndex < monListPtr->listCount - 1)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ret = SwitchConditionSummaryIndex(FALSE);
         }
     }

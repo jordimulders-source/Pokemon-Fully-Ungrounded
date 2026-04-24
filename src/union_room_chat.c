@@ -1133,7 +1133,7 @@ static void Chat_Switch(void)
         case MENU_NOTHING_CHOSEN:
             if (JOY_NEW(SELECT_BUTTON))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 Menu_MoveCursor(1);
             }
             return;

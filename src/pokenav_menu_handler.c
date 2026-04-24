@@ -358,7 +358,7 @@ static u32 HandleConditionMenuInput(struct Pokenav_Menu *menu)
             SetMenuIdAndCB(menu, POKENAV_CONDITION_GRAPH_PARTY);
             return POKENAV_MENU_FUNC_OPEN_FEATURE;
         case POKENAV_MENUITEM_CONDITION_CANCEL:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ReturnToMainMenu(menu);
             return POKENAV_MENU_FUNC_RETURN_TO_MAIN;
         }
@@ -373,7 +373,7 @@ static u32 HandleConditionMenuInput(struct Pokenav_Menu *menu)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ReturnToMainMenu(menu);
             return POKENAV_MENU_FUNC_RETURN_TO_MAIN;
         }
@@ -399,7 +399,7 @@ static u32 HandleConditionSearchMenuInput(struct Pokenav_Menu *menu)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ReturnToConditionMenu(menu);
             return POKENAV_MENU_FUNC_RETURN_TO_CONDITION;
         }
@@ -414,7 +414,7 @@ static u32 HandleConditionSearchMenuInput(struct Pokenav_Menu *menu)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ReturnToConditionMenu(menu);
             return POKENAV_MENU_FUNC_RETURN_TO_CONDITION;
         }

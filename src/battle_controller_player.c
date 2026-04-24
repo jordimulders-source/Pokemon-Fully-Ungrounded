@@ -268,7 +268,7 @@ static void HandleInputChooseAction(u32 battler)
                 else
                     gBallToDisplay = nextBall;
                 SwapBallToDisplay(sameBall);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
             }
             else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_LEFT)))
             {
@@ -280,7 +280,7 @@ static void HandleInputChooseAction(u32 battler)
                 else
                     gBallToDisplay = prevBall;
                 SwapBallToDisplay(sameBall);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
             }
             else if (JOY_NEW(B_BUTTON) || (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && gBattleStruct->ballSwapped))
             {
@@ -291,7 +291,7 @@ static void HandleInputChooseAction(u32 battler)
             else if (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
             {
                 gBattleStruct->ackBallUseBtn = FALSE;
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ArrowsChangeColorLastBallCycle(FALSE);
                 TryHideLastUsedBall();
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
@@ -303,7 +303,7 @@ static void HandleInputChooseAction(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         TryHideLastUsedBall();
 
         switch (gActionSelectionCursor[battler])
@@ -327,7 +327,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -337,7 +337,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -347,7 +347,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -357,7 +357,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -375,7 +375,7 @@ static void HandleInputChooseAction(u32 battler)
             {
                 AddBagItem(itemId, 1);
             }
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_CANCEL_PARTNER, 0);
             BtlController_Complete(battler);
         }
@@ -383,7 +383,7 @@ static void HandleInputChooseAction(u32 battler)
         {
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) // If wild battle, pressing B moves cursor to "Run".
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
                 gActionSelectionCursor[battler] = 3;
                 ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -402,7 +402,7 @@ static void HandleInputChooseAction(u32 battler)
     else if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == FALSE
              && JOY_NEW(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         TryHideLastUsedBall();
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
         BtlController_Complete(battler);
@@ -430,7 +430,7 @@ void HandleInputChooseTarget(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
         if (gBattleStruct->gimmick.playerSelect)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | RET_GIMMICK | (gMultiUsePlayerCursor << 8));
@@ -443,7 +443,7 @@ void HandleInputChooseTarget(u32 battler)
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         if (gBattleStruct->gimmick.playerSelect == 1 && gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_Z_MOVE)
@@ -459,7 +459,7 @@ void HandleInputChooseTarget(u32 battler)
     }
     else if (JOY_NEW(DPAD_LEFT | DPAD_UP))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
 
         if (moveTarget == (MOVE_TARGET_USER | MOVE_TARGET_ALLY))
@@ -510,7 +510,7 @@ void HandleInputChooseTarget(u32 battler)
     }
     else if (JOY_NEW(DPAD_RIGHT | DPAD_DOWN))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
 
         if (moveTarget == (MOVE_TARGET_USER | MOVE_TARGET_ALLY))
@@ -597,7 +597,7 @@ void HandleInputShowEntireFieldTargets(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         HideAllTargets();
         if (gBattleStruct->gimmick.playerSelect)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | RET_GIMMICK | (gMultiUsePlayerCursor << 8));
@@ -608,7 +608,7 @@ void HandleInputShowEntireFieldTargets(u32 battler)
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         HideAllTargets();
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         DoBounceEffect(battler, BOUNCE_HEALTHBOX, 7, 1);
@@ -625,7 +625,7 @@ void HandleInputShowTargets(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         HideShownTargets(battler);
         if (gBattleStruct->gimmick.playerSelect)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | RET_GIMMICK | (gMultiUsePlayerCursor << 8));
@@ -637,7 +637,7 @@ void HandleInputShowTargets(u32 battler)
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         HideShownTargets(battler);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         DoBounceEffect(battler, BOUNCE_HEALTHBOX, 7, 1);
@@ -668,7 +668,7 @@ void HandleInputChooseMove(u32 battler)
     if (JOY_NEW(A_BUTTON) && !gBattleStruct->descriptionSubmenu)
     {
         TryToHideMoveInfoWindow();
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
         moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[gMoveSelectionCursor[battler]]);
 
@@ -763,7 +763,7 @@ void HandleInputChooseMove(u32 battler)
     }
     else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)  && !gBattleStruct->descriptionSubmenu)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gBattleStruct->gimmick.playerSelect = FALSE;
         if (gBattleStruct->zmove.viewing)
         {
@@ -784,7 +784,7 @@ void HandleInputChooseMove(u32 battler)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 1;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -801,7 +801,7 @@ void HandleInputChooseMove(u32 battler)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 1;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -817,7 +817,7 @@ void HandleInputChooseMove(u32 battler)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 2;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -834,7 +834,7 @@ void HandleInputChooseMove(u32 battler)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 2;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -874,7 +874,7 @@ void HandleInputChooseMove(u32 battler)
             FillWindowPixelBuffer(B_WIN_MOVE_DESCRIPTION, PIXEL_FILL(0));
             ClearStdWindowAndFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
             CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_GFX);
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
@@ -897,7 +897,7 @@ void HandleInputChooseMove(u32 battler)
             gBattleStruct->gimmick.playerSelect ^= 1;
             ReloadMoveNames(battler);
             ChangeGimmickTriggerSprite(gBattleStruct->gimmick.triggerSpriteId, gBattleStruct->gimmick.playerSelect);
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
         }
     }
 }
@@ -928,12 +928,12 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         var = 1;
     }
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gBattle_BG0_X = 0;
         gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
         var = 0xFF;
@@ -942,7 +942,7 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 1;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
     if (JOY_NEW(DPAD_RIGHT) && !(gMoveSelectionCursor[battler] & 1)
@@ -950,14 +950,14 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 1;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
     if (JOY_NEW(DPAD_UP) && gMoveSelectionCursor[battler] & 2)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 2;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
     if (JOY_NEW(DPAD_DOWN) && !(gMoveSelectionCursor[battler] & 2)
@@ -965,7 +965,7 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 2;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
 
@@ -981,7 +981,7 @@ void HandleMoveSwitching(u32 battler)
     if (JOY_NEW(A_BUTTON | SELECT_BUTTON))
     {
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
         if (gMoveSelectionCursor[battler] != gMultiUsePlayerCursor)
         {
@@ -1079,7 +1079,7 @@ void HandleMoveSwitching(u32 battler)
     }
     else if (JOY_NEW(B_BUTTON | SELECT_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
@@ -1100,7 +1100,7 @@ void HandleMoveSwitching(u32 battler)
                 MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
 
             gMultiUsePlayerCursor ^= 1;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
@@ -1118,7 +1118,7 @@ void HandleMoveSwitching(u32 battler)
                 MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
 
             gMultiUsePlayerCursor ^= 1;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
@@ -1136,7 +1136,7 @@ void HandleMoveSwitching(u32 battler)
                 MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
 
             gMultiUsePlayerCursor ^= 2;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
@@ -1154,7 +1154,7 @@ void HandleMoveSwitching(u32 battler)
                 MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
 
             gMultiUsePlayerCursor ^= 2;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
@@ -1590,14 +1590,14 @@ static void PlayerHandleYesNoInput(u32 battler)
 {
     if (JOY_NEW(DPAD_UP) && gMultiUsePlayerCursor != 0)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BattleDestroyYesNoCursorAt(gMultiUsePlayerCursor);
         gMultiUsePlayerCursor = 0;
         BattleCreateYesNoCursorAt(0);
     }
     if (JOY_NEW(DPAD_DOWN) && gMultiUsePlayerCursor == 0)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BattleDestroyYesNoCursorAt(gMultiUsePlayerCursor);
         gMultiUsePlayerCursor = 1;
         BattleCreateYesNoCursorAt(1);
@@ -1605,7 +1605,7 @@ static void PlayerHandleYesNoInput(u32 battler)
     if (JOY_NEW(A_BUTTON))
     {
         HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
         if (gMultiUsePlayerCursor != 0)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_UNK_14, 0);
@@ -1617,7 +1617,7 @@ static void PlayerHandleYesNoInput(u32 battler)
     if (JOY_NEW(B_BUTTON))
     {
         HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BtlController_Complete(battler);
     }
 }

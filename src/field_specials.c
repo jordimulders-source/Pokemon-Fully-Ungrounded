@@ -2657,7 +2657,7 @@ static void InitScrollableMultichoice(void)
 static void ScrollableMultichoice_MoveCursor(s32 itemIndex, bool8 onInit, struct ListMenu *list)
 {
     u8 taskId;
-    PlaySE(SE_SELECT);
+    PlaySE(SE_RG_BALL_CLICK);
     taskId = FindTaskIdByFunc(ScrollableMultichoice_ProcessInput);
     if (taskId != TASK_NONE)
     {
@@ -2684,12 +2684,12 @@ static void ScrollableMultichoice_ProcessInput(u8 taskId)
         break;
     case LIST_CANCEL:
         gSpecialVar_Result = MULTI_B_PRESSED;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         CloseScrollableMultichoice(taskId);
         break;
     default:
         gSpecialVar_Result = input;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         if (!task->tKeepOpenAfterSelect)
         {
             CloseScrollableMultichoice(taskId);

@@ -1784,22 +1784,22 @@ static u8 HandleChooseBoxMenuInput(void)
 {
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         return BOXID_CANCELED;
     }
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         return sChooseBoxMenu->curBox;
     }
     if (JOY_NEW(DPAD_LEFT))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ChooseBoxMenu_MoveLeft();
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ChooseBoxMenu_MoveRight();
     }
     return BOXID_NONE_CHOSEN;
@@ -2253,7 +2253,7 @@ static void Task_PokeStorageMain(u8 taskId)
         switch (HandleInput())
         {
         case INPUT_MOVE_CURSOR:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sStorage->state = MSTATE_MOVE_CURSOR;
             break;
         case INPUT_SHOW_PARTY:
@@ -2288,14 +2288,14 @@ static void Task_PokeStorageMain(u8 taskId)
             SetPokeStorageTask(Task_OnBPressed);
             break;
         case INPUT_BOX_OPTIONS:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_HandleBoxOptions);
             break;
         case INPUT_IN_MENU:
             SetPokeStorageTask(Task_OnSelectedMon);
             break;
         case INPUT_SCROLL_RIGHT:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sStorage->newCurrBoxId = StorageGetCurrentBox() + 1;
             if (sStorage->newCurrBoxId >= TOTAL_BOXES_COUNT)
                 sStorage->newCurrBoxId = 0;
@@ -2311,7 +2311,7 @@ static void Task_PokeStorageMain(u8 taskId)
             }
             break;
         case INPUT_SCROLL_LEFT:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sStorage->newCurrBoxId = StorageGetCurrentBox() - 1;
             if (sStorage->newCurrBoxId < 0)
                 sStorage->newCurrBoxId = TOTAL_BOXES_COUNT - 1;
@@ -2335,7 +2335,7 @@ static void Task_PokeStorageMain(u8 taskId)
                 }
                 else
                 {
-                    PlaySE(SE_SELECT);
+                    PlaySE(SE_RG_BALL_CLICK);
                     SetPokeStorageTask(Task_DepositMenu);
                 }
             }
@@ -2351,7 +2351,7 @@ static void Task_PokeStorageMain(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 SetPokeStorageTask(Task_MoveMon);
             }
             break;
@@ -2362,32 +2362,32 @@ static void Task_PokeStorageMain(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 SetPokeStorageTask(Task_ShiftMon);
             }
             break;
         case INPUT_WITHDRAW:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_WithdrawMon);
             break;
         case INPUT_PLACE_MON:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_PlaceMon);
             break;
         case INPUT_TAKE_ITEM:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_TakeItemForMoving);
             break;
         case INPUT_GIVE_ITEM:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_GiveMovingItemToMon);
             break;
         case INPUT_SWITCH_ITEMS:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_SwitchSelectedItem);
             break;
         case INPUT_MULTIMOVE_START:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MultiMove_SetFunction(MULTIMOVE_START);
             sStorage->state = MSTATE_MULTIMOVE_RUN;
             break;
@@ -2396,7 +2396,7 @@ static void Task_PokeStorageMain(u8 taskId)
             sStorage->state = MSTATE_MULTIMOVE_RUN_CANCEL;
             break;
         case INPUT_MULTIMOVE_CHANGE_SELECTION:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MultiMove_SetFunction(MULTIMOVE_CHANGE_SELECTION);
             sStorage->state = MSTATE_MULTIMOVE_RUN_MOVED;
             break;
@@ -2405,12 +2405,12 @@ static void Task_PokeStorageMain(u8 taskId)
             sStorage->state = MSTATE_MULTIMOVE_RUN;
             break;
         case INPUT_MULTIMOVE_MOVE_MONS:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MultiMove_SetFunction(MULTIMOVE_MOVE_MONS);
             sStorage->state = MSTATE_MULTIMOVE_RUN_MOVED;
             break;
         case INPUT_MULTIMOVE_PLACE_MONS:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MultiMove_SetFunction(MULTIMOVE_PLACE_MONS);
             sStorage->state = MSTATE_MULTIMOVE_RUN;
             break;
@@ -2533,7 +2533,7 @@ static void Task_HidePartyPokemon(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         SetUpHidePartyMenu();
         sStorage->state++;
         break;
@@ -2562,7 +2562,7 @@ static void Task_OnSelectedMon(u8 taskId)
     case 0:
         if (!IsDisplayMosaicActive())
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sStorage->boxOption != OPTION_MOVE_ITEMS)
                 PrintMessage(MSG_IS_SELECTED);
             else if (IsMovingItem() || sStorage->displayMonItemId != ITEM_NONE)
@@ -2593,13 +2593,13 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ClearBottomWindow();
                 SetPokeStorageTask(Task_MoveMon);
             }
             break;
         case MENU_PLACE:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearBottomWindow();
             SetPokeStorageTask(Task_PlaceMon);
             break;
@@ -2610,13 +2610,13 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ClearBottomWindow();
                 SetPokeStorageTask(Task_ShiftMon);
             }
             break;
         case MENU_WITHDRAW:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearBottomWindow();
             SetPokeStorageTask(Task_WithdrawMon);
             break;
@@ -2631,7 +2631,7 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ClearBottomWindow();
                 SetPokeStorageTask(Task_DepositMenu);
             }
@@ -2651,35 +2651,35 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             else
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 SetPokeStorageTask(Task_ReleaseMon);
             }
             break;
         case MENU_SUMMARY:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_ShowMonSummary);
             break;
         case MENU_MARK:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_ShowMarkMenu);
             break;
         case MENU_TAKE:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_TakeItemForMoving);
             break;
         case MENU_GIVE:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_GiveMovingItemToMon);
             break;
         case MENU_BAG:
             SetPokeStorageTask(Task_ItemToBag);
             break;
         case MENU_SWITCH:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_SwitchSelectedItem);
             break;
         case MENU_GIVE_2:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_GiveItemFromBag);
             break;
         case MENU_INFO:
@@ -3129,7 +3129,7 @@ static void Task_ItemToBag(u8 taskId)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             MoveItemFromMonToBag(sInPartyMenu ? CURSOR_AREA_IN_PARTY : CURSOR_AREA_IN_BOX, GetCursorPosition());
             sStorage->state = 1;
         }
@@ -3256,7 +3256,7 @@ static void Task_CloseBoxWhileHoldingItem(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         PrintMessage(MSG_PUT_IN_BAG);
         ShowYesNoWindow(0);
         sStorage->state = 1;
@@ -3377,16 +3377,16 @@ static void Task_HandleBoxOptions(u8 taskId)
             SetPokeStorageTask(Task_PokeStorageMain);
             break;
         case MENU_NAME:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             SetPokeStorageTask(Task_NameBox);
             break;
         case MENU_WALLPAPER:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearBottomWindow();
             SetPokeStorageTask(Task_HandleWallpapers);
             break;
         case MENU_JUMP:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearBottomWindow();
             SetPokeStorageTask(Task_JumpBox);
             break;
@@ -3421,14 +3421,14 @@ static void Task_HandleWallpapers(u8 taskId)
         case MENU_SCENERY_2:
         case MENU_SCENERY_3:
         case MENU_ETCETERA:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             RemoveMenu();
             sStorage->wallpaperSetId -= MENU_WALLPAPER_SETS_START;
             sStorage->state++;
             break;
         case MENU_FRIENDS:
             // New wallpaper from Walda.
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sStorage->wallpaperId = WALLPAPER_FRIENDS;
             RemoveMenu();
             ClearBottomWindow();
@@ -3455,7 +3455,7 @@ static void Task_HandleWallpapers(u8 taskId)
             sStorage->state = 0;
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ClearBottomWindow();
             sStorage->wallpaperId -= MENU_WALLPAPERS_START;
             SetWallpaperForCurrentBox(sStorage->wallpaperId);
@@ -3603,7 +3603,7 @@ static void Task_OnCloseBoxPressed(u8 taskId)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             PrintMessage(MSG_EXIT_BOX);
             ShowYesNoWindow(0);
             sStorage->state = 2;
@@ -3662,7 +3662,7 @@ static void Task_OnBPressed(u8 taskId)
             }
             else if (CanPlaceMon())
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 SetPokeStorageTask(Task_PlaceMon);
             }
             else
@@ -3676,7 +3676,7 @@ static void Task_OnBPressed(u8 taskId)
         }
         else
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             PrintMessage(MSG_CONTINUE_BOX);
             ShowYesNoWindow(0);
             sStorage->state = 2;
@@ -8099,18 +8099,18 @@ static s16 HandleMenuInput(void)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             input = MENU_B_PRESSED;
         }
 
         if (JOY_NEW(DPAD_UP))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Menu_MoveCursor(-1);
         }
         else if (JOY_NEW(DPAD_DOWN))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             Menu_MoveCursor(1);
         }
     } while (0);

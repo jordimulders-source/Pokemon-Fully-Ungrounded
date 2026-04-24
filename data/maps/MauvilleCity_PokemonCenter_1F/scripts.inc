@@ -21,6 +21,13 @@ MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+MauvilleCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox MauvilleCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 MauvilleCity_PokemonCenter_1F_EventScript_Woman1::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings, MSGBOX_NPC
 	end
@@ -52,3 +59,13 @@ MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 	.string "I don't know what it's about, but it\n"
 	.string "sounds fun. I'll go check it out!$"
 
+MauvilleCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can gamble at the\n"
+	.string "casino. You can win prizes there,\l"
+	.string "but you can also lose money.\p"
+	.string "“GOKKEN? WEES BEWUST 18+”$"
+	

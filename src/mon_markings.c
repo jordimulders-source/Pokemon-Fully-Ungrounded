@@ -396,7 +396,7 @@ bool8 HandleMonMarkingsMenuInput(void)
 
     if (JOY_NEW(DPAD_UP))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         if (--sMenu->cursorPos < 0)
             sMenu->cursorPos = SELECTION_CANCEL;
         return TRUE;
@@ -404,7 +404,7 @@ bool8 HandleMonMarkingsMenuInput(void)
 
     if (JOY_NEW(DPAD_DOWN))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         if (++sMenu->cursorPos > SELECTION_CANCEL)
             sMenu->cursorPos = 0;
         return TRUE;
@@ -412,7 +412,7 @@ bool8 HandleMonMarkingsMenuInput(void)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
         switch (sMenu->cursorPos)
         {
@@ -431,7 +431,7 @@ bool8 HandleMonMarkingsMenuInput(void)
 
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         return FALSE;
     }
 

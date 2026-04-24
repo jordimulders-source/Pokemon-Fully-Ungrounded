@@ -1444,7 +1444,7 @@ static void ProcessBetGridInput(u8 taskId)
         DrawGridBackground(gTasks[taskId].tSelectionId);
         UpdateGridSelection(taskId);
         gTasks[taskId].data[1] = 0;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         RouletteFlash_Stop(&sRoulette->flashUtil, 0xFFFF);
         sRoulette->flashUtil.palettes[FLASH_ICON].available = sRoulette->flashUtil.palettes[FLASH_ICON_2].available = sRoulette->flashUtil.palettes[FLASH_ICON_3].available = FALSE;
         FlashSelectionOnWheel(gTasks[taskId].tSelectionId);
@@ -2000,7 +2000,7 @@ static void Task_WaitForNextTask(u8 taskId)
     {
         gTasks[taskId].func = sRoulette->nextTask;
         if (sRoulette->taskWaitKey > 0)
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
         sRoulette->nextTask = NULL;
         sRoulette->taskWaitKey = 0;
         sRoulette->taskWaitDelay = 0;

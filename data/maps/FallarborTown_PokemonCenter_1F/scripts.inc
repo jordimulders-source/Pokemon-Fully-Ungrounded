@@ -16,6 +16,13 @@ FallarborTown_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+FallarborTown_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox FallarborTown_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 FallarborTown_PokemonCenter_1F_EventScript_Girl::
 	msgbox FallarborTown_PokemonCenter_1F_Text_FossilManiacEdgeOfTown, MSGBOX_NPC
 	end
@@ -109,3 +116,14 @@ FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees:
 	.string "seedlings of hardy trees that thrive\l"
 	.string "even in volcanic ash.$"
 
+FallarborTown_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: You can store POKéMON\n"
+	.string "in a PC. Oh wait, you want to solo\l"
+	.string "the whole game with your starter?\p"
+	.string "Then, there is no need for PCs!\n"
+	.string "You are fully analog!$"
+	

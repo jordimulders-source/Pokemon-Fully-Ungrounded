@@ -15,6 +15,13 @@ MossdeepCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+MossdeepCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox MossdeepCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 MossdeepCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable, MSGBOX_NPC
 	end
@@ -34,3 +41,16 @@ MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
 	.string "POKéMON, some moves might change\l"
 	.string "or not work at all.$"
 
+MossdeepCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: Like this loser girl over\n"
+	.string "here has been saying, ABILITIES might\l"
+	.string "change battles.\p"
+	.string "My favorite ABILITY is “RUN AWAY”.\n"
+	.string "You can run from wild POKéMON, but\l"
+	.string "not from TRAINERS.\p"
+	.string "I use it in all my VGC teams!$"
+	

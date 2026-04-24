@@ -635,7 +635,7 @@ static void BagCursorMoved(s32 itemIndex, bool8 onInit, struct ListMenu *list)
 {
     if (onInit != TRUE)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ShakePyramidBag();
     }
     if (gPyramidBagMenu->toSwapPos == POS_NONE)
@@ -906,7 +906,7 @@ static void Task_HandlePyramidBagInput(u8 taskId)
             ListMenuGetScrollAndRow(tListTaskId, &gPyramidBagMenuState.scrollPosition, &gPyramidBagMenuState.cursorPosition);
             if (gPyramidBagMenuState.scrollPosition + gPyramidBagMenuState.cursorPosition != gPyramidBagMenu->listMenuCount - 1)
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 Task_BeginItemSwap(taskId);
             }
         }
@@ -920,12 +920,12 @@ static void Task_HandlePyramidBagInput(u8 taskId)
         case LIST_NOTHING_CHOSEN:
             break;
         case LIST_CANCEL:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gSpecialVar_ItemId = ITEM_NONE;
             CloseBattlePyramidBag(taskId);
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gSpecialVar_ItemId = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode][listId];
             tListPos = listId;
             tQuantity = gSaveBlock2Ptr->frontier.pyramidBag.quantity[gSaveBlock2Ptr->frontier.lvlMode][listId];
@@ -1009,11 +1009,11 @@ static void HandleMenuActionInput_SingleRow(u8 taskId)
         case MENU_NOTHING_CHOSEN:
             break;
         case MENU_B_PRESSED:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sMenuActions[ACTION_CANCEL].func.void_u8(taskId);
             break;
         default:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sMenuActions[gPyramidBagMenu->menuActionIds[id]].func.void_u8 != NULL)
                 sMenuActions[gPyramidBagMenu->menuActionIds[id]].func.void_u8(taskId);
             break;
@@ -1030,7 +1030,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
         {
             if (id > 0 && IsValidMenuAction(id - 2))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_UP);
             }
         }
@@ -1038,7 +1038,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
         {
             if (id < gPyramidBagMenu->menuActionsCount - 2 && IsValidMenuAction(id + 2))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_DOWN);
             }
         }
@@ -1046,7 +1046,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
         {
             if (id & 1 && IsValidMenuAction(id - 1))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_LEFT, MENU_CURSOR_DELTA_NONE);
             }
         }
@@ -1054,19 +1054,19 @@ static void HandleMenuActionInput_2x2(u8 taskId)
         {
             if (!(id & 1) && IsValidMenuAction(id + 1))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_RIGHT, MENU_CURSOR_DELTA_NONE);
             }
         }
         else if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sMenuActions[gPyramidBagMenu->menuActionIds[id]].func.void_u8 != NULL)
                 sMenuActions[gPyramidBagMenu->menuActionIds[id]].func.void_u8(taskId);
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sMenuActions[ACTION_CANCEL].func.void_u8(taskId);
         }
     }
@@ -1205,7 +1205,7 @@ static void Task_ChooseHowManyToToss(u8 taskId)
     else if (JOY_NEW(A_BUTTON))
     {
         // Toss
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ClearStdWindowAndFrameToTransparent(WIN_TOSS_NUM, FALSE);
         ClearWindowTilemap(WIN_TOSS_NUM);
         ScheduleBgCopyTilemapToVram(1);
@@ -1214,7 +1214,7 @@ static void Task_ChooseHowManyToToss(u8 taskId)
     else if (JOY_NEW(B_BUTTON))
     {
         // Cancel tossing
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ClearStdWindowAndFrameToTransparent(WIN_TOSS_NUM, FALSE);
         ClearWindowTilemap(WIN_TOSS_NUM);
         ScheduleBgCopyTilemapToVram(1);
@@ -1242,7 +1242,7 @@ static void Task_TossItem(u8 taskId)
 
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         RemovePyramidBagItem(gSpecialVar_ItemId, tNumToToss);
         DestroyListMenuTask(tListTaskId, scrollOffset, selectedRow);
         UpdatePyramidBagList();
@@ -1283,7 +1283,7 @@ static void Task_WaitCloseErrorMessage(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         Task_CloseBattlePyramidBagMessage(taskId);
     }
 }
@@ -1347,7 +1347,7 @@ static void Task_ItemSwapHandleInput(u8 taskId)
     {
         if (JOY_NEW(SELECT_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ListMenuGetScrollAndRow(tListTaskId, &gPyramidBagMenuState.scrollPosition, &gPyramidBagMenuState.cursorPosition);
             PerformItemSwap(taskId);
         }
@@ -1362,14 +1362,14 @@ static void Task_ItemSwapHandleInput(u8 taskId)
             case LIST_NOTHING_CHOSEN:
                 break;
             case LIST_CANCEL:
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 if (JOY_NEW(A_BUTTON))
                     PerformItemSwap(taskId);
                 else
                     CancelItemSwap(taskId);
                 break;
             default:
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 PerformItemSwap(taskId);
                 break;
             }

@@ -367,7 +367,7 @@ static void Task_CloseTrainerHillRecordsOnButton(u8 taskId)
 
     if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         task->func = Task_BeginPaletteFade;
     }
 }

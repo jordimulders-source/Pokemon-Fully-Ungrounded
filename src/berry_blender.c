@@ -3731,7 +3731,7 @@ static bool8 PrintBlendingRanking(void)
     case 5:
         if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             sBerryBlender->mainState++;
         }
         break;

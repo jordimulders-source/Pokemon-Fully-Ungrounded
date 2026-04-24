@@ -23,6 +23,13 @@ FortreeCity_PokemonCenter_1F_EventScript_Man::
 	msgbox FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat, MSGBOX_NPC
 	end
 
+FortreeCity_PokemonCenter_1F_EventScript_Protipmaster::
+	lock
+	faceplayer
+	msgbox FortreeCity_PokemonCenter_1F_Text_ProtipMaster, MSGBOX_NPC
+	release
+	end
+
 FortreeCity_PokemonCenter_1F_EventScript_Boy::
 	msgbox FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav, MSGBOX_NPC
 	end
@@ -53,3 +60,13 @@ FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav:
 	.string "It's really nifty! Those DEVON guys\n"
 	.string "sure know what they're doing!$"
 
+FortreeCity_PokemonCenter_1F_Text_ProtipMaster:
+	.string "Hello, I am the PROTIP ORACLE!\p"
+	.string "I spread my knowledge around POKéMON\n"
+	.string "CENTERS teaching the younger\l"
+	.string "generation how to play.\p"
+	.string "Did you know: When your POKéMON falls\n"
+	.string "asleep, it will not do anything but\l"
+	.string "sleep. What a lazy bastard!\p"
+	.string "Wake 'em up! Before you Gogo!$"
+	

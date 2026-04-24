@@ -4,16 +4,13 @@ Common_EventScript_PkmnCenterNurse::
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, CountPlayerTrainerStars
 	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
-	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
-	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
+	goto EventScript_PkmnCenterNurse_HealPkmn
 	end
 
 EventScript_PkmnCenterNurse_Goodbye::
 	message gText_WeHopeToSeeYouAgain
 	return
 
-@ VAR_0x8004 is 1 when player has Gold Card; jumps are identical
 EventScript_PkmnCenterNurse_HealPkmn::
 	incrementgamestat GAME_STAT_USED_POKECENTER
 	call_if_eq VAR_0x8004, 0, EventScript_PkmnCenterNurse_IllTakeYourPkmn
@@ -42,7 +39,7 @@ EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 	call CableClub_OnResume
 	clearflag OW_FLAG_MOVE_UNION_ROOM_CHECK
 .endif
-	waitfieldeffect FLDEFF_POKECENTER_HEAL
+	delay 16
 	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	special HealPlayerParty
@@ -58,23 +55,16 @@ EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom::
 	goto_if_eq VAR_0x8008, 1, EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom
 	end
 
-@ VAR_0x8004 is 1 when player has Gold Card
 EventScript_PkmnCenterNurse_ReturnPkmn::
 	goto_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_ReturnPkmn2
-	message gText_RestoredPkmnToFullHealth
-	waitmessage
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	message gText_WeHopeToSeeYouAgain
-	return
+	msgbox gText_RestoredPkmnToFullHealth, MSGBOX_AUTOCLOSE
+	release
+	end
 
 EventScript_PkmnCenterNurse_ReturnPkmn2::
-	message gText_ThankYouForWaiting
-	waitmessage
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	message gText_WeHopeToSeeYouAgain2
-	return
+	msgbox gText_ThankYouForWaiting, MSGBOX_AUTOCLOSE
+	release
+	end
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	goto_if_set FLAG_NURSE_UNION_ROOM_REMINDER, EventScript_PkmnCenterNurse_ReturnPkmn
@@ -107,16 +97,12 @@ EventScript_PkmnCenterNurse_GoldCard::
 	waitmovement 0
 	applymovement VAR_0x800B, Common_Movement_Delay48
 	waitmovement 0
-	msgbox gText_NoticesGoldCard, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
-	message gText_WeHopeToSeeYouAgain2
-	return
+	goto EventScript_PkmnCenterNurse_GoldCardHealPkmn
+	end
 
 EventScript_PkmnCenterNurse_AskForUsual::
-	msgbox gText_YouWantTheUsual, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
-	message gText_WeHopeToSeeYouAgain2
-	return
+	goto EventScript_PkmnCenterNurse_GoldCardHealPkmn
+	end
 
 EventScript_PkmnCenterNurse_GoldCardHealPkmn::
 	setvar VAR_0x8004, 1
@@ -124,10 +110,10 @@ EventScript_PkmnCenterNurse_GoldCardHealPkmn::
 	end
 
 Movement_PkmnCenterNurse_Bow:
-	nurse_joy_bow
 	delay_4
 	step_end
 
 Movement_PkmnCenterNurse_Turn:
 	walk_in_place_faster_left
 	step_end
+	

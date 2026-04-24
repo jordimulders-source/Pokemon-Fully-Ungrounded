@@ -2597,7 +2597,7 @@ static void Task_RunUnionRoom(u8 taskId)
             {
                 if (TryInteractWithUnionRoomMember(uroom->playerList, &taskData[0], &taskData[1], uroom->spriteIds))
                 {
-                    PlaySE(SE_SELECT);
+                    PlaySE(SE_RG_BALL_CLICK);
                     StartScriptInteraction();
                     uroom->state = UR_STATE_INTERACT_WITH_PLAYER;
                     break;

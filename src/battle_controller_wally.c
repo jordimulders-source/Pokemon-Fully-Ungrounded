@@ -137,7 +137,7 @@ static void WallyHandleActions(u32 battler)
     case 1:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
             BtlController_Complete(battler);
             gBattleStruct->wallyBattleState++;
@@ -148,7 +148,7 @@ static void WallyHandleActions(u32 battler)
     case 2:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
             BtlController_Complete(battler);
             gBattleStruct->wallyBattleState++;
@@ -169,7 +169,7 @@ static void WallyHandleActions(u32 battler)
     case 4:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(0);
             ActionSelectionCreateCursorAt(1, 0);
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
@@ -179,7 +179,7 @@ static void WallyHandleActions(u32 battler)
     case 5:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_ITEM, 0);
             BtlController_Complete(battler);
         }
@@ -351,7 +351,7 @@ static void WallyHandleChooseMove(u32 battler)
     case 2:
         if (--gBattleStruct->wallyMoveFrames == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, 0x100);
             BtlController_Complete(battler);
         }

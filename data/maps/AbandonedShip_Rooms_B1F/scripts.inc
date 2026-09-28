@@ -14,7 +14,9 @@ AbandonedShip_Rooms_B1F_Text_GettingQueasy:
 	.string "Urrrrppp…\p"
 	.string "I'm getting queasy just being aboard\n"
 	.string "this ship…\p"
-	.string "It's not even moving, but…$"
+	.string "It's not even moving, but… I've barfed\n"
+	.string "all over the place. For days now, it\l"
+	.string "smells so rotten...BUUURRRRP$"
 
 
 @ Project Grounded: eenmalige Muk in de prullenbak naast de zeezieke man.

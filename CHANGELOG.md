@@ -14630,3 +14630,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.4] - Kira & Dan rematches
 - Kira & Dan rematch 2 t/m 5: + Clamperl en + Gimmighoul (Chest-vorm), op hetzelfde level als de rest van het team. In de laatste rematch (5) is Gimmighoul geëvolueerd tot Gholdengo.
 - Kira & Dan rematch 4 en 5: Clamperl is daar geëvolueerd tot Huntail.
+
+### [v.0.6.5] - Dialogen Abandoned Ship (Dialoogstudio)
+- 55 herschreven dialogen van het Abandoned Ship verwerkt (Captain's Office, gangen 1F/B1F, kamers 1F/B1F, Hidden Floor; trainers Charlie, Duncan, Demetrius, Thalia, Garrison, Jani, Kira & Dan incl. rematches), automatisch afgebroken voor het tekstvak.

@@ -133,23 +133,26 @@ AbandonedShip_HiddenFloorCorridors_EventScript_TheDoorIsOpen::
 
 AbandonedShip_HiddenFloorCorridors_Text_Rm1DoorIsLocked:
 	.string "The door is locked.\p"
-	.string "“RM. 1” is painted on the door.$"
+	.string "“RM. 1” is scratched on the door, with\n"
+	.string "some blood on the sides$"
 
 AbandonedShip_HiddenFloorCorridors_Text_Rm2DoorIsLocked:
 	.string "The door is locked.\p"
-	.string "“RM. 2” is painted on the door.$"
+	.string "“RM. 2” is very vaguely painted on the\n"
+	.string "door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_Rm4DoorIsLocked:
 	.string "The door is locked.\p"
-	.string "“RM. 4” is painted on the door.$"
+	.string "“RM. 4” is painted on the floor.\n"
+	.string "Surprisingly.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_Rm6DoorIsLocked:
-	.string "The door is locked.\p"
+	.string "The door is... What do you guess at this\n"
+	.string "point?\p"
 	.string "“RM. 6” is painted on the door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_InsertedKey:
-	.string "{PLAYER} inserted and turned the\n"
-	.string "KEY.\p"
-	.string "The inserted KEY stuck fast,\n"
-	.string "but the door opened.$"
+	.string "{PLAYER} inserted and turned the KEY.\p"
+	.string "KEYS OPEN DOORS, but this one broke.\n"
+	.string "Door is still open, lucky you!$"
 

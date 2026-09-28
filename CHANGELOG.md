@@ -14587,3 +14587,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Wilde encounters gecontroleerd: alle tabellen hebben het juiste aantal slots en geldige min/max-levels. Niets aangepast.
 - Tekst: May's dialoog op Route 103 had een `\n` na een `\l`, waardoor de laatste regel buiten het tekstvak viel; nu `\l`. Verder passen alle aangepaste dialoogregels in het tekstvak (max. 216 px).
 - Rivaal Rustboro (Brendan, Treecko-keuze): Lotad → Lombre (evolueert in dit project op lvl 14).
+
+### [v.0.5.7] - Beschrijvingen van TMs en moves gerepareerd
+- De 14 nieuwe TMs (Scald, Stored Power, Drain Punch, U-turn, Dazzling Gleam, Iron Head, Volt Switch, Stealth Rock, Brave Bird, Nasty Plot, Trick Room, Flash Cannon, Dark Pulse, Play Rough) hadden beschrijvingen die breder waren dan het beschrijvingsvak in de tas (tekst werd afgekapt). Ingekort zodat ze passen.
+- Move-beschrijvingen aangepast aan de gewijzigde effecten: Kinesis (verlaagt accuracy sterk), Rock Smash (verlaagt Defense altijd), Strength (verlaagt Defense), Rock Throw (kan flinchen), Fly/Dig/Dive (verhogen evasion/Defense/Sp. Def op de eerste beurt), Vise Grip (tegenstander kan niet vluchten).

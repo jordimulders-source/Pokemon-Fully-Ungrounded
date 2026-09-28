@@ -5172,9 +5172,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_DEF));
         break;
     case EFFECT_FLASH:
+        // Accuracy plus de relevantste van Attack / Sp. Atk, zodat Flash niet zwaarder weegt dan Tickle
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ACC));
-        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
-        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPATK));
+        ADJUST_SCORE(max(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK),
+                         IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPATK)));
         break;
     case EFFECT_COSMIC_POWER:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));

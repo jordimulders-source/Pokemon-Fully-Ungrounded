@@ -14253,3 +14253,12 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
 **Muziek:**
 - Het Juan-gevecht op Route 129 (`TRAINER_REED`) gebruikt nu de **FRLG Gym Leader battle-muziek** (`MUS_RG_VS_GYM_LEADER`) in plaats van de rivaal-muziek (Juan heeft trainer class Rival).
+
+### [v.0.4.6] - Kricketune-learnset en Flash-AI
+
+**Kricketune:**
+- Fixed: de learnset uit v0.4.1 stond niet in de code. Nu wel, met één wijziging: **Twineedle** van lvl 25 naar **lvl 40** (60 BP × 2 hits met Technician was te sterk rond lvl 25).
+- Learnset: Fury Cutter (evo), Pin Missile (evo), Tackle, Fell Stinger, Growl, 14 Trailblaze, 18 Sing, 22 Focus Energy, 24 Power-Up Punch, 26 Slash, 28 Knock Off, 30 X-Scissor, 32 Dual Wingbeat, 34 Screech, 36 Leech Life, 38 Taunt, 40 Twineedle, 42 Night Slash, 44 Sticky Web, 46 Bug Buzz, 50 Perish Song.
+
+**Flash (AI):**
+- De AI telt bij Flash de Accuracy-drop plus de relevantste van Attack/Sp. Atk, zodat Flash niet zwaarder weegt dan Tickle (anders koos de AI Flash ook als zijn partner al Helping Hand gebruikte).

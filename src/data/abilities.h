@@ -2406,7 +2406,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DIMENSIONAL_WARP] =
     {
         .name = _("Dimensional Warp"),
-        .description = COMPOUND_STRING("Summons Trick Room in battle."),
+        .description = COMPOUND_STRING("Summons Trick Room."),
         .aiRating = 9,
     },
 

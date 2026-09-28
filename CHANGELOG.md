@@ -14267,3 +14267,13 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
 - **Kricketot:** Fell Stinger (lvl 6) vervangen door **Struggle Bug** (lvl 6).
 - **Kricketune:** Fell Stinger niet meer op lvl 1, maar op **lvl 26** (80 BP + Atk +3 bij KO was te sterk zo vroeg).
+
+### [v.0.4.8] - Trainer parties uit Firebase Studio samengevoegd
+
+- `src/data/trainers.party` vervangen door de nieuwere versie uit Firebase Studio (370 aangepaste trainers; in de repo stonden er maar 50, o.a. alle rivaal-parties ontbraken).
+- Daarbovenop opnieuw toegepast:
+    - Route 104 en Petalburg Woods naar lvl 10–13 (Route 116 stond al op 12–13; Karen's lvl 9-mons naar 12). Grappen blijven: Magikarp ongewijzigd, Ivan's Gyarados lvl 3, Lyle's Scizor en Yanmega lvl 6.
+    - Jody's Grumpig: Thick Fat → Simple.
+    - Brawly's Spinda: Huge Power → Pure Power.
+    - Winona's Swellow (lvl 38): Wind Rider-set @ Focus Sash (Tailwind / Brave Bird / U-turn / Aqua Jet) i.p.v. Choice Band / Gale Wings.
+    - Steven's Skarmory: Sturdy → Rough Skin.

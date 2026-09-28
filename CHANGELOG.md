@@ -14620,3 +14620,4 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.2] - Hisuian Decidueye
 - Dartrix → Hisuian Decidueye: level 34 of hoger op Route 119 (elders gewone Decidueye op level 34).
 - Dimensional Warp: beschrijving ingekort naar "Summons Trick Room." (de oude tekst paste niet in het samenvattingsscherm).
+- Champion Steven: Empoleon krijgt Knock Off i.p.v. Roar.

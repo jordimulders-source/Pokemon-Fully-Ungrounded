@@ -14626,3 +14626,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Opslagruimte B1F (achter de deur met de Storage Key): de prullenbak verbergt een Spiritomb lv 45. Hij komt terug tot je hem vangt (FLAG_CAUGHT_SHIP_SPIRITOMB).
 - Kamer naast de zeezieke man (B1F): de prullenbak verbergt eenmalig een Muk lv 32 (FLAG_SHIP_MUK_ENCOUNTERED).
 - Placeholder-teksten: "Something inside the trash can is whispering…" en "The trash can is bubbling…".
+
+### [v.0.6.4] - Kira & Dan rematches
+- Kira & Dan rematch 2 t/m 5: + Clamperl en + Gimmighoul (Chest-vorm), op hetzelfde level als de rest van het team. In de laatste rematch (5) is Gimmighoul geëvolueerd tot Gholdengo.

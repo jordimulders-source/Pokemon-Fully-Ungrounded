@@ -14432,3 +14432,23 @@ Uitgangspunt: gelijk niveau aan de eigen trainers op dezelfde route, meer variat
 - Brandi (Psychic): Ralts, Natu, Solosis lv 21
 - Aisha (Battle Girl): Mienfoo, Stufful, Scraggy lv 21
 - Winona: levels +4 (nu 41–43); Fortree-gymtrainers +3 (Jared, Humberto, Edwardo, Flint, Ashley, Darius)
+
+### [v.0.5.4] - Trainer parties groep 1 bijgewerkt, groep 2, rematches geschaald
+**Groep 1 bijgewerkt**
+- Hailey: + Pawmo. Chandler: Sentret met Surf, Galar Zigzagoon met Surf, Horsea, Bibarel. Joseph: Drowzee i.p.v. Bonsly.
+- Evoluties passend bij level: Rhett Tyrogue → Hitmonlee, Kaleb Pawmi → Pawmo, Robin Flabébé → Floette, Isaac Wynaut → Wobbuffet en Chingling → Chimecho, Lydia Lechonk → Oinkologne en Rookidee → Corvisquire, Brandi Ralts → Kirlia.
+
+**Groep 2 (Route 111, 112, 113, 114, Jagged Pass)**
+- Irene: Steenee, Pumpkaboo, Teddiursa 22 · Tyron: Rockruff, Growlithe, Drilbur 22 · Celina: Comfey, Eldegoss, Skiploom 22 · Bianca: Cherubi, Trumbeak, Ledian 22 · Hayden: Sizzlipede, Fletchinder, Houndour 22
+- Heidi: Passimian, Greedent, Helioptile 28 · Becky: Azumarill, Mr. Mime, Skorupi 28 · Bryan: Golett, Cofagrigus, Naclstack 28 · Celia: Swirlix, Diggersby, Vespiquen 27 · Branden: Noctowl, Ariados, Zorua 27
+- Carol: Spidops, Lombre, Cottonee, Herdier 24 · Brice: Roggenrola, Cufant, Carkol 24 · Trent: Geodude, Alolan Geodude, 2× Graveler 24 · Bryant: Slugma, Litleo, Hisuian Growlithe 24 · Shayla: Petilil, Sunkern, Parasect 24
+- Diana: Swablu, Hattrem, Noibat 26 · Julio: Magnemite, Zebstrika, Galvantula 26 · Eric: Boldore, Rhyhorn, Donphan 26
+- Madeline: Lombre, Oricorio, Weepinbell 24 · Tori & Tia: 4× Spinda 24 · Sophie: Cubchoo, Snover, Bergmite 24 (dialoog: zij denkt dat het sneeuwt — nog te schrijven) · Coby: Corvisquire, Trumbeak, Rufflet 24 · Lawrence: Gumshoos, Thievul, Alolan Sandslash 24 · Wyatt: Tyrunt, Amaura, Shieldon 24
+- Nancy: Quagsire, Swadloon, Ivysaur 24 · Lenny: Sudowoodo, Naclstack, Mudbray 24 · Lucas: Hippopotas, Graveler, Swinub 24 · Tyra & Ivy: Roselia, Graveler, Clodsire, Sawk, Squawkabilly, Frosmoth 24–25 · Angelina: Frogadier, Tympole, Poliwag 24 · Kai: 3× Wishiwashi 19 (geen schooling; dialoog nog te schrijven) · Charlotte: Shroodle, Stantler, Pikachu 24
+
+**Rematches geschaald (281 teams)**
+- Elke rematch krijgt het team van de eerste versie, met evoluties passend bij het level en per ronde +1 Pokémon (max 6). Extra Pokémon komen uit de gymtrainers (bij gymleiders) of de wilde Pokémon van de route; legendaries/mythicals/paradox en veelvoorkomende soorten zijn uitgesloten.
+- Level = vanilla-rematchlevel + dezelfde marge als de eerste versie (4–8); gymleiders +12 (rematches zijn post-game).
+- Miguel_4: kattenteam (zoals Miguel_5) op lvl 36.
+- Behouden: Calvin, Gabby & Ty, Miguel_2/3/5, Isaiah_2, Amy & Liv_2 (eigen ontwerp).
+- Trainers waarvan de eerste versie nog vanilla is, krijgen hun rematches opnieuw zodra hun eerste versie is aangepast.

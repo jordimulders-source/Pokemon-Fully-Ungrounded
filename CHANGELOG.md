@@ -14629,3 +14629,4 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.4] - Kira & Dan rematches
 - Kira & Dan rematch 2 t/m 5: + Clamperl en + Gimmighoul (Chest-vorm), op hetzelfde level als de rest van het team. In de laatste rematch (5) is Gimmighoul geëvolueerd tot Gholdengo.
+- Kira & Dan rematch 4 en 5: Clamperl is daar geëvolueerd tot Huntail.

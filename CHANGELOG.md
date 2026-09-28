@@ -1976,7 +1976,7 @@ Golem is een levende vesting. Zijn pantser is zo dik dat hij vrijwel immuun is v
     LEVEL_UP_MOVE(48, MOVE_SLEEP_TALK),
     LEVEL_UP_MOVE(55, MOVE_CLOSE_COMBAT),
     LEVEL_UP_MOVE(62, MOVE_REVERSAL),
-    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH,
+    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH),
 
 ### [v0.2.1] - Pokémon Revisie: Goldeen
 **Biologische Focus:** Hoewel Goldeen bekend staat om zijn sierlijke vinnen, is het een uiterst agressieve vis. De hoorn op zijn kop is een verlengstuk van zijn schedel en wordt gebruikt om indringers te spietsen. Goldeen zijn zo territoriaal dat ze zelfs grotere Pokémon aanvallen als die te dicht bij hun nest komen. De hoorn heeft een unieke minerale samenstelling die statische elektriciteit uit de omgeving absorbeert.
@@ -8277,7 +8277,7 @@ Geen wijzigingen
 * **Type:** Flying / Fighting
 * **Ability 1:** Moxie (Nieuw: +1 Attack na elke kill) 
 * **Ability 2 ** Moody (Nieuw: De ultieme stat-gamble)
-* **Base Stats (463 BST):** HP: 62 | Atk: 115 | Def: 65 | SpAtk: 48 | SpDef: 72 | Speed: 101
+* **Base Stats (463 BST):** HP: 62 | Atk: 115 | Def: 65 | SpAtk: 48 | SpDef: 72 | Speed: 91*
 
 **Level-up Learnset (Full Gen IX + Warrior Update):**
     LEVEL_UP_MOVE( 1, MOVE_PECK),
@@ -14157,6 +14157,10 @@ Wattson heeft een Hisui Voltorb, omdat uit tests blijkt dat Marshtomp te weinig 
 
 Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
+Brawly balans changes:
+- Farfetchd geen Leek meer, -10 speed
+- Emolga Shock Wave op lvl 18 en Air Cutter lvl 20
+
 ### [v.0.4.2] - Bugfixes, Abilities, Mom en Levelcurve
 
 **Bugfixes:**
@@ -14284,3 +14288,118 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 - De Kricketune-learnset uit v0.4.1 stond al wél in `gen_9.h`; alleen deze wijzigingen zijn nieuw:
     - Kricketot: Fell Stinger (lvl 6) eruit, Struggle Bug van lvl 8 naar lvl 6.
     - Kricketune: Fell Stinger van lvl 1 naar lvl 26, Twineedle van lvl 25 naar lvl 40.
+
+### [v.0.5.0] - Code gelijkgetrokken met de changelog
+
+De Pokémon-revisies uit deze changelog zijn leidend. Alle verschillen tussen changelog en code zijn rechtgezet (abilities, base stats, level-up learnsets in `gen_9.h`):
+
+- BLAZIKEN baseSpAttack 95->90
+- MIGHTYENA abilities ['INTIMIDATE', 'STRONG_JAW', 'MOXIE'] -> ['STRONG_JAW', 'INTIMIDATE', 'MOXIE']
+- WURMPLE abilities ['SHIELD_DUST', 'NONE', 'RUN_AWAY'] -> ['SHIELD_DUST', 'RUN_AWAY', 'RUN_AWAY']
+- BEAUTIFLY baseSpeed 80->75
+- LOTAD abilities ['SWIFT_SWIM', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'SWIFT_SWIM', 'OWN_TEMPO']
+- LOMBRE abilities ['SWIFT_SWIM', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'SWIFT_SWIM', 'OWN_TEMPO']
+- LUDICOLO abilities ['DANCER', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'DANCER', 'WATER_COMPACTION']
+- SHIFTRY abilities ['WIND_RIDER', 'SNOW_WARNING', 'CHLOROPHYLL'] -> ['WIND_RIDER', 'SNOW_WARNING', 'EARLY_BIRD']
+- SHEDINJA baseSpAttack 80->30
+- SHEDINJA baseSpDefense 30->80
+- ABRA abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- KADABRA abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- ALAKAZAM abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- MAKUHITA abilities ['TECHNICIAN', 'GUTS', 'SHEER_FORCE'] -> ['GUTS', 'TECHNICIAN', 'SHEER_FORCE']
+- SKITTY abilities ['WONDER_SKIN', 'NORMALIZE', 'WONDER_SKIN'] -> ['NORMALIZE', 'WONDER_SKIN', 'WONDER_SKIN']
+- DELCATTY abilities ['WONDER_SKIN', 'NORMALIZE', 'WONDER_SKIN'] -> ['NORMALIZE', 'WONDER_SKIN', 'WONDER_SKIN']
+- ZUBAT abilities ['INNER_FOCUS', 'CORROSION', 'INFILTRATOR'] -> ['INNER_FOCUS', 'INFILTRATOR', 'INFILTRATOR']
+- CROBAT abilities ['INNER_FOCUS', 'CORROSION', 'INFILTRATOR'] -> ['INFILTRATOR', 'CORROSION', 'INFILTRATOR']
+- TENTACRUEL abilities ['MERCILESS', 'LIQUID_OOZE', 'RAIN_DISH'] -> ['LIQUID_OOZE', 'MERCILESS', 'RAIN_DISH']
+- SABLEYE baseSpeed 20->30
+- MAWILE abilities ['HYPER_CUTTER', 'INTIMIDATE', 'SHEER_FORCE'] -> ['INTIMIDATE', 'HYPER_CUTTER', 'SHEER_FORCE']
+- MEDICHAM baseHP 60->80
+- MANECTRIC abilities ['STATIC', 'TRANSISTOR', 'MINUS'] -> ['INTIMIDATE', 'TRANSISTOR', 'MINUS']
+- VILEPLUME abilities ['CHLOROPHYLL', 'CORROSION', 'EFFECT_SPORE'] -> ['EFFECT_SPORE', 'CORROSION', 'EFFECT_SPORE']
+- BELLOSSOM baseSpeed 50->55
+- BUDEW baseDefense 40->35
+- BUDEW baseSpeed 60->55
+- BUDEW abilities ['NATURAL_CURE', 'POISON_POINT', 'LEAF_GUARD'] -> ['NATURAL_CURE', 'MERCILESS', 'LEAF_GUARD']
+- ROSELIA baseDefense 45->50
+- ROSELIA baseSpeed 65->70
+- ROSERADE baseHP 60->65
+- ROSERADE baseSpeed 90->100
+- SWALOT baseHP 130->135
+- SWALOT abilities ['UNAWARE', 'STICKY_HOLD', 'GLUTTONY'] -> ['UNAWARE', 'GLUTTONY', 'GLUTTONY']
+- NUMEL abilities ['STORM_DRAIN', 'SIMPLE', 'OWN_TEMPO'] -> ['SIMPLE', 'STORM_DRAIN', 'OWN_TEMPO']
+- CAMERUPT abilities ['MAGMA_ARMOR', 'STORM_DRAIN', 'ANGER_POINT'] -> ['SOLID_ROCK', 'STORM_DRAIN', 'MAGMA_ARMOR']
+- WAILMER baseSpeed 60->55
+- WAILMER abilities ['UNAWARE', 'OBLIVIOUS', 'PRESSURE'] -> ['OBLIVIOUS', 'UNAWARE', 'PRESSURE']
+- SLUGMA abilities ['MAGMA_ARMOR', 'FLAME_BODY', 'WEAK_ARMOR'] -> ['MAGMA_ARMOR', 'FLAME_BODY', 'VITAL_SPIRIT']
+- MAGCARGO abilities ['DESOLATE_LAND', 'FLAME_BODY', 'WEAK_ARMOR'] -> ['FLAME_BODY', 'DESOLATE_LAND', 'WEAK_ARMOR']
+- GRIMER baseDefense 50->55
+- GRIMER baseSpDefense 50->55
+- GRIMER abilities ['STENCH', 'STICKY_HOLD', 'POISON_TOUCH'] -> ['STICKY_HOLD', 'POISON_TOUCH', 'TOXIC_CHAIN']
+- MUK baseAttack 105->115
+- MUK baseDefense 75->85
+- MUK baseSpDefense 100->120
+- MUK abilities ['TOXIC_CHAIN', 'STICKY_HOLD', 'POISON_TOUCH'] -> ['STICKY_HOLD', 'POISON_TOUCH', 'TOXIC_CHAIN']
+- GRUMPIG abilities ['SIMPLE', 'MAGIC_BOUNCE', 'GLUTTONY'] -> ['SIMPLE', 'MAGIC_BOUNCE', 'THICK_FAT']
+- SKARMORY abilities ['FILTER', 'ROUGH_SKIN', 'WEAK_ARMOR'] -> ['ROUGH_SKIN', 'FILTER', 'STURDY']
+- CLAYDOL baseSpeed 60->75
+- CRADILY baseSpDefense 107->117
+- ARMALDO baseSpAttack 70->60
+- MILOTIC baseAttack 70->60
+- STARYU abilities ['VOLT_ABSORB', 'NATURAL_CURE', 'ANALYTIC'] -> ['NATURAL_CURE', 'VOLT_ABSORB', 'ANALYTIC']
+- STARMIE baseAttack 75->60
+- STARMIE baseSpAttack 100->115
+- BANETTE abilities ['PRANKSTER', 'FRISK', 'CURSED_BODY'] -> ['PRANKSTER', 'INSOMNIA', 'CURSED_BODY']
+- DUSKULL baseSpAttack 30->50
+- DUSKNOIR baseAttack 100->120
+- PSYDUCK abilities ['SWIFT_SWIM', 'CLOUD_NINE', 'SWIFT_SWIM'] -> ['CLOUD_NINE', 'SWIFT_SWIM', 'SWIFT_SWIM']
+- GOLDUCK abilities ['SWIFT_SWIM', 'CLOUD_NINE', 'SWIFT_SWIM'] -> ['CLOUD_NINE', 'SWIFT_SWIM', 'SWIFT_SWIM']
+- FARIGIRAF abilities ['CUD_CHEW', 'ARMOR_TAIL', 'SAP_SIPPER'] -> ['ARMOR_TAIL', 'CUD_CHEW', 'SAP_SIPPER']
+- PHANPY abilities ['PICKUP', 'STURDY', 'SAND_VEIL'] -> ['STURDY', 'PICKUP', 'SAND_VEIL']
+- GLALIE abilities ['REFRIGERATE', 'ICE_BODY', 'MOODY'] -> ['ICE_BODY', 'REFRIGERATE', 'MOODY']
+- HUNTAIL baseAttack 104->114
+- RELICANTH abilities ['STURDY', 'ROCK_HEAD', 'STURDY'] -> ['ROCK_HEAD', 'STURDY', 'STAMINA']
+- CHINCHOU baseDefense 38->45
+- CHINCHOU baseSpDefense 56->55
+- LANTURN baseAttack 58->40
+- LANTURN abilities ['VOLT_ABSORB', 'ILLUMINATE', 'WATER_ABSORB'] -> ['VOLT_ABSORB', 'WATER_ABSORB', 'WATER_ABSORB']
+- METANG abilities ['CLEAR_BODY', 'NONE', 'LIGHT_METAL'] -> ['CLEAR_BODY', 'LIGHT_METAL', 'LIGHT_METAL']
+- METAGROSS abilities ['CLEAR_BODY', 'NONE', 'LIGHT_METAL'] -> ['CLEAR_BODY', 'LIGHT_METAL', 'LIGHT_METAL']
+- DEWGONG abilities ['THICK_FAT', 'PIXILATE', 'ICE_BODY'] -> ['THICK_FAT', 'ICE_BODY', 'PIXILATE']
+- DUDUNSPARCE_TWO_SEGMENT types -> ['TYPE_NORMAL', 'TYPE_GROUND']
+- DUDUNSPARCE_TWO_SEGMENT abilities ['SERENE_GRACE', 'RUN_AWAY', 'RATTLED'] -> ['SERENE_GRACE', 'INFILTRATOR', 'RATTLED']
+- HYPNO baseDefense 70->85
+- HYPNO baseSpeed 67->52
+- HYPNO abilities ['BAD_DREAMS', 'FOREWARN', 'INNER_FOCUS'] -> ['FOREWARN', 'BAD_DREAMS', 'DARK_AURA']
+- VENOMOTH abilities ['SHIELD_DUST', 'TINTED_LENS', 'WONDER_SKIN'] -> ['SHIELD_DUST', 'TINTED_LENS', 'MAGIC_GUARD']
+- FARFETCHD baseSpAttack 58->48
+- FARFETCHD baseSpeed 101->91
+- LEDIAN baseSpAttack 55->35
+- LEDIAN baseSpeed 85->100
+- POLITOED baseSpeed 70->65
+- DUDUNSPARCE_THREE_SEGMENT types -> ['TYPE_NORMAL', 'TYPE_GROUND']
+- DUDUNSPARCE_THREE_SEGMENT abilities ['SERENE_GRACE', 'RUN_AWAY', 'RATTLED'] -> ['SERENE_GRACE', 'INFILTRATOR', 'RATTLED']
+- GENGAR abilities -> Cursed Body, Perish Body
+- NUZLEAF learnset vervangen (16 moves)
+- LOUDRED learnset vervangen (15 moves)
+- LAIRON learnset vervangen (14 moves)
+- LINOONE_GALAR learnset vervangen (20 moves)
+- OBSTAGOON learnset vervangen (25 moves)
+- ZIGZAGOON_GALAR learnset vervangen (16 moves)
+- TRAPINCH learnset vervangen (14 moves)
+- CACNEA learnset vervangen (15 moves)
+- ZANGOOSE learnset vervangen (17 moves)
+- CORPHISH learnset vervangen (16 moves)
+- CRAWDAUNT learnset vervangen (21 moves)
+- SNORUNT learnset vervangen (12 moves)
+- GLALIE learnset vervangen (23 moves)
+- FARFETCHD learnset vervangen (23 moves)- Emolga (Brawly-balans): Shock Wave op lvl 18 en Air Cutter op lvl 20.
+- Tikfouten in de changelog-learnsets omgezet: `MOVE_LEAR` → Leer (Zangoose), `MOVE_NATURE_MADNESS` → Nature's Madness (Nuzleaf).
+- Niet aangepast (vraag open): Medicham lvl 50 "Pure Pulse" bestaat niet als move (code heeft Dragon Pulse); Spoink staat in de revisie als pure Psychic, maar in v0.2.0-TYPES als Psychic/Normal (code: Psychic/Normal).
+- Castform klopte al (normale vorm SpAtk/Speed 80, weervormen 110 — bewust).
+
+**Trainer-abilities gerepareerd** (ability bestond niet voor de soort, viel stil terug op slot 1):
+- Virgil's Sigilyph: Magic Bounce → Magic Guard.
+- Sylvia's Venomoth: Magic Guard is nu geldig (Venomoth hidden ability = Magic Guard volgens de revisie).
+- Karen's Tandemaus: Technician → Pickup.
+- Maxie's Tyranitar (Mossdeep): Sand Rush → Sand Stream.

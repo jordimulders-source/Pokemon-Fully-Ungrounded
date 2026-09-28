@@ -5915,7 +5915,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Sigilyph
 Level: 43
-Ability: Magic Bounce
+Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
 - Tailwind
@@ -7492,7 +7492,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Tandemaus @ Loaded Dice
 Level: 13
-Ability: Technician
+Ability: Pickup
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Population Bomb
 - Bullet Seed
@@ -17535,7 +17535,7 @@ AI: Basic Trainer
 
 Tyranitar
 Level: 51
-Ability: Sand Rush
+Ability: Sand Stream
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Orthworm

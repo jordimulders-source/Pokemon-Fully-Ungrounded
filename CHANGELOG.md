@@ -14452,3 +14452,133 @@ Uitgangspunt: gelijk niveau aan de eigen trainers op dezelfde route, meer variat
 - Miguel_4: kattenteam (zoals Miguel_5) op lvl 36.
 - Behouden: Calvin, Gabby & Ty, Miguel_2/3/5, Isaiah_2, Amy & Liv_2 (eigen ontwerp).
 - Trainers waarvan de eerste versie nog vanilla is, krijgen hun rematches opnieuw zodra hun eerste versie is aangepast.
+
+### [v.0.5.5] - Alle overige trainers aangepast
+Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route, evoluties passend bij het level, variatie, serieus; grappen blijven voor Jordi). Grap-trainers ongemoeid: Colton, Roger, Darian. Magikarp-levels ongewijzigd (Chris).
+
+- Duncan: Gurdurr, Sealeo, Clawitzer lv 31
+- Garrison: Onix, Crustle, Bronzong lv 31
+- Kira And Dan: Volbeat, Illumise, Nidorina, Nidorino lv 31
+- John And Jay: Medicham, Hariyama, Gallade, Pangoro lv 42
+- Dez And Luke: Delcatty, Mightyena, Dewgong, Whimsicott lv 35
+- Cedric: Wobbuffet, Bronzong, Gothitelle, Hattrem lv 37
+- Beverly: Floatzel, Lumineon, Jellicent lv 31
+- Imani: Lanturn, Shellder, Bruxish lv 31
+- Andres: Baltoy, Krokorok, Hippowdon lv 31
+- Josue: Tranquill, Staravia, Fletchinder lv 31
+- Kyla: Seel, Quagsire, Octillery lv 30
+- Denise: Shellos, Horsea, Corsola lv 30
+- Beth: Poliwhirl, Palpitoad, Masquerain lv 30
+- Lisa And Ray: Clauncher, Kingler, Crawdaunt, Binacle lv 30
+- Camron: Staryu, Finizen, Barraskewda lv 30
+- Tara: Seel, Clamperl, Sealeo lv 31
+- Missy: Jellicent, Mareanie, Qwilfish lv 31
+- Cory: Toxicroak, Golisopod, Crabominable lv 31
+- Carolina: Luxray, Staravia, Growlithe, Mudsdale lv 31
+- Alice: Golduck, Finneon, Slowpoke lv 30
+- Mel And Paul: Dustox, Beautifly, Vivillon, Ribombee lv 30
+- Elijah: Skarmory, Murkrow, Doduo lv 30
+- Alyssa: Magnemite, Luxio, Flaaffy lv 20
+- Martha: Swablu, Fomantis, Shiinotic lv 29
+- Alan: Nosepass, Rhyhorn, Boldore, Krokorok lv 29
+- Cora: Mienshao, Pancham, Hawlucha lv 31
+- Paula: Breloom, Scrafty, Hitmontop lv 31
+- Benny: Swanna, Staraptor, Toucannon, Honchkrow lv 44
+- Sebastian: Cacturne, Leavanny, Tsareena, Trevenant lv 44
+- Sophia: Altaria, Lilligant, Whimsicott, Bellossom lv 44
+- Patricia: Banette, Mismagius, Gourgeist, Polteageist lv 46
+- Mariela: Chimecho, Espeon, Musharna lv 46
+- Alvaro: Bronzong, Gallade, Metagross lv 46
+- Everett: Wobbuffet, Persian, Arcanine, Farigiraf lv 46
+- Vincent: Sableye, Medicham, Sharpedo, Krookodile, Toxicroak lv 52
+- Leroy: Mawile, Starmie, Heracross, Excadrill, Chandelure lv 52
+- Keira: Aggron, Luxray, Steelix, Salamence lv 52
+- Cyndy: Mankey, Hawlucha, Timburr lv 24
+- Hector: Seviper, Mawile, Carbink, Stunfisk lv 24
+- Marlene: Spoink, Espurr, Munna lv 24
+- Kyra: Dodrio, Rapidash, Scolipede lv 33
+- Jaiden: Frogadier, Weavile, Swalot lv 33
+- Alix: Gardevoir, Gothorita, Duosion lv 33
+- Helene: Scrafty, Throh, Bewear lv 33
+- Deandre: Raticate, Aron, Trumbeak lv 21
+- Jackson: Breloom, Gogoat, Tangrowth lv 33
+- Catherine: Vileplume, Venomoth, Whimsicott lv 33
+- Doug: Escavalier, Araquanid, Beedrill lv 33
+- Greg: Galvantula, Swadloon, Vikavolt lv 33
+- Kent: Drapion, Larvesta, Armaldo lv 33
+- Hideo: Skrelp, Skuntank, Accelgor lv 33
+- Chris: Magikarp, Whiscash, Octillery, Poliwrath lv 33
+- Fabian: Toxtricity_Amped, Kricketune, Noibat lv 33
+- Dayton: Arcanine, Darmanitan_Standard, Salazzle lv 33
+- Rachel: Jumpluff, Castform, Swanna lv 33
+- Clarissa: Cherrim_Overcast, Sealeo, Tropius lv 35
+- Angelica: Castform, Sunflora, Torkoal lv 35
+- Lorenzo: Shiftry, Leavanny, Deerling lv 35
+- Jenna: Ludicolo, Tropius, Torterra lv 35
+- Keigo: Bisharp, Liepard, Weezing lv 35
+- Riley: Shedinja, Gliscor, Zoroark lv 35
+- Leonel: Magnezone, Tinkatuff, Tauros, Heliolisk lv 35
+- Callie: Annihilape, Toxicroak, Gurdurr lv 35
+- Cale: Durant, Kricketune, Butterfree lv 35
+- Myles: Tauros, Miltank, Mudsdale, Dubwool, Wyrdeer, Oinkologne_M lv 33
+- Pat: Stoutland, Jolteon, Furret, Delcatty, Liepard, Cinccino lv 33
+- Cristin: Exploud, Vigoroth, Ursaluna, Farigiraf lv 35
+- Braxton: Staraptor, Vibrava, Magnezone, Shiftry, Poliwrath lv 35
+- Wendy: Mawile, Florges, Swanna, Lurantis lv 35
+- Miu And Yuki: Beautifly, Dustox, Lokix, Vespiquen lv 35
+- Jazmyn: Houndoom, Zoroark, Honchkrow lv 35
+- Jonas: Frogadier, Scizor, Weezing lv 35
+- Kayley: Castform, Politoed, Bellossom lv 35
+- Davis: Pinsir, Escavalier, Crustle lv 35
+- Jenny: Lapras, Huntail, Mantine lv 39
+- Grace: Seismitoad, Dewgong, Shellos lv 39
+- Isabella: Starmie, Palafin_Zero, Drednaw lv 39
+- Lila And Roy: Lanturn, Sharpedo, Kingdra, Relicanth lv 39
+- Tanya: Alomomola, Lumineon, Bruxish lv 39
+- Sharon: Shellos, Whiscash, Clawitzer lv 39
+- Ernest: Conkeldurr, Sealeo, Barbaracle lv 39
+- Auron: Machamp, Ampharos, Excadrill, Tauros lv 39
+- Kim And Iris: Altaria, Camerupt, Togekiss, Wigglytuff lv 39
+- Nikki: Walrein, Dewgong, Cloyster lv 40
+- Brenda: Kingler, Octillery, Lumineon lv 40
+- Sienna: Alomomola, Corsola, Mantine lv 40
+- Leonardo: Sharpedo, Barraskewda, Floatzel lv 40
+- Athena: Luxray, Obstagoon, Umbreon, Heliolisk lv 39
+- Jonah: Sharpedo, Whiscash, Qwilfish, Relicanth lv 39
+- Henry: Barraskewda, Huntail, Stunfisk_Galar lv 39
+- Koji: Machamp, Hitmonlee, Pangoro lv 39
+- Aidan: Skarmory, Staraptor, Talonflame, Unfezant lv 39
+- Carlee: Cloyster, Eiscue, Frosmoth lv 41
+- Harrison: Tentacruel, Golisopod, Dhelmise lv 41
+- Alexa: Vileplume, Azumarill, Florges, Toxapex lv 41
+- Ruben: Shiftry, Probopass, Krookodile, Mamoswine lv 41
+- Wayne: Wailord, Drednaw, Basculin lv 41
+- Clarence: Sharpedo, Crawdaunt, Samurott lv 40
+- Tisha: Lanturn, Starmie, Milotic lv 40
+- Katie: Dewgong, Gorebyss, Lumineon lv 40
+- Susie: Jellicent, Clawitzer, Pyukumuku lv 40
+- Kara: Tentacruel, Bruxish, Cramorant lv 40
+- Reli And Ian: Azumarill, Pelipper, Swanna, Golduck lv 40
+- Dana: Azumarill, Lumineon, Palafin_Zero lv 40
+- Paxton: Breloom, Lucario, Heracross, Hitmonchan lv 40
+- Jonathan: Kecleon, Exploud, Toxtricity_Amped, Morgrem lv 40
+- Darcy: Pelipper, Camerupt, Rotom, Flygon lv 40
+- Makayla: Roserade, Medicham, Bewear, Primarina lv 40
+- Debra: Cloyster, Wugtrio, Eelektross lv 39
+- Linda: Kingdra, Dragalge, Clawitzer lv 39
+- Conor: Hariyama, Ampharos, Conkeldurr, Deerling lv 39
+- Laurel: Starmie, Lapras, Veluza lv 40
+- Kelvin: Machamp, Walrein, Grapploct lv 40
+- Marley: Electivire, Arcanine, Scizor, Sylveon lv 40
+- Reyna: Medicham, Hariyama, Lucario, Hawlucha lv 40
+- Hudson: Wailord, Throh, Bibarel lv 40
+- Mike 2: Geodude, Nacli, Timburr lv 17
+- Leonard: Conkeldurr, Pelipper, Kingler, Hariyama lv 47
+- Naomi: Roserade, Florges, Milotic, Togekiss lv 47
+- Lea And Jed: Gardevoir, Gallade, Florges, Clefable lv 47
+- Mitchell: Lunatone, Solrock, Metagross, Reuniclus, Starmie lv 51
+- Halle: Sableye, Absol, Weavile, Krookodile, Spiritomb lv 51
+- Dianne: Claydol, Lanturn, Glalie, Froslass, Mamoswine lv 50
+- Wally Victory Road (post-game, WALLY_VR_2): zelfde team als bij de ingang, +7 levels (62–63). Rematches VR_3 t/m VR_5 volgen.
+- Rivaal Rustboro: 3 Pokémon (voorlopers van zijn/haar Route 110-team + starter lv 15), bijv. Brendan (Mudkip-keuze): Houndour, Whismur, Treecko; May (Mudkip-keuze): Vulpix, Buneary, Treecko.
+- Rematches opnieuw gegenereerd op basis van de nieuwe eerste versies.

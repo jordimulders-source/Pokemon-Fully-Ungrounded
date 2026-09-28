@@ -14616,3 +14616,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.1] - TM-beschrijvingen passen nu ook in de winkel
 - Scald, U-turn, Iron Head, Volt Switch, Stealth Rock en Nasty Plot nog iets korter gemaakt: het beschrijvingsvak in de winkel is smaller (102 px) dan in de tas. De test "Item descriptions fit on Bag and Shop Screen" slaagt nu weer.
+
+### [v.0.6.2] - Hisuian Decidueye
+- Dartrix → Hisuian Decidueye: level 34 of hoger op Route 119 (elders gewone Decidueye op level 34).

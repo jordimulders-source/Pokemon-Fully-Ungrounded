@@ -52,6 +52,7 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_PRISM_SCALE
 	.2byte ITEM_REAPER_CLOTH
+	.2byte ITEM_PSYCHIC_SEED
 	.2byte ITEM_OVAL_STONE
 	.2byte ITEM_SACHET
 	.2byte ITEM_WHIPPED_DREAM

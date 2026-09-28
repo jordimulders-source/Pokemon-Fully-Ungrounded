@@ -4325,8 +4325,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPetililLevelUpLearnset,
         .teachableLearnset = sPetililTeachableLearnset,
         .eggMoveLearnset = sPetililEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT, CONDITIONS({IF_NOT_REGION, REGION_HISUI})},
-                                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_LILLIGANT_HISUI, CONDITIONS({IF_KNOWS_MOVE, MOVE_VICTORY_DANCE})},
+                                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT}),
     },
 
     [SPECIES_LILLIGANT] =
@@ -11662,8 +11662,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sRuffletLevelUpLearnset,
         .teachableLearnset = sRuffletTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_BRAVIARY, CONDITIONS({IF_NOT_REGION, REGION_HISUI})},
-                                {EVO_LEVEL, 54, SPECIES_BRAVIARY_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_PSYCHIC_SEED, SPECIES_BRAVIARY_HISUI},
+                                {EVO_LEVEL, 34, SPECIES_BRAVIARY}),
     },
 
     [SPECIES_BRAVIARY] =

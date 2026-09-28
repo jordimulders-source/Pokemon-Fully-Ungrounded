@@ -7973,13 +7973,13 @@ Ability: Thick Fat
 - Leech Seed
 - Roost
 
-Cyclizar @ Leftovers
+Turtonator @ Leftovers
 Level: 64
-Ability: Regenerator
-- Shed Tail
+Ability: Shell Armor
+- Shell Trap
 - Dragon Pulse
-- Knock Off
-- Rapid Spin
+- Flamethrower
+- Protect
 
 Archaludon @ Assault Vest
 Level: 65
@@ -17229,7 +17229,7 @@ Class: Gentleman
 Pic: Gentleman
 Gender: Male
 Music: Rich
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
 Oranguru @ Choice Specs
@@ -25381,14 +25381,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Baton Pass
 - Brave Bird
 
-Corviknight @ Leftovers
+Empoleon @ Leftovers
 Level: 67
-Ability: Mirror Armor
+Ability: Competitive
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Head
-- Body Press
-- Roost
-- Iron Defense
+- Hydro Pump
+- Flash Cannon
+- Ice Beam
+- Roar
 
 Gholdengo @ Air Balloon
 Level: 68
@@ -25408,14 +25408,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Head
 - Body Press
 
-Kingambit @ Focus Sash
+Goodra_Hisui @ Rocky Helmet
 Level: 68
-Ability: Supreme Overlord
+Ability: Gooey
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Kowtow Cleave
-- Iron Head
-- Sucker Punch
-- Swords Dance
+- Draco Meteor
+- Heavy Slam
+- Fire Blast
+- Thunderbolt
 
 Metagross @ Assault Vest
 Level: 70

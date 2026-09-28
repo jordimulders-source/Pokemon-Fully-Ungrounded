@@ -14601,3 +14601,15 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.5.9] - Dialoogstudio
 - Nieuwe webpagina om alle 5529 dialogen per kaart te bewerken, met live voorbeeld van het GBA-tekstvak: https://claude.ai/artifact/LP3qyGyvhaj6p5GS32Gjxz
 - `tools/dialogen/export.py` haalt alle teksten (met NPC/trainer/script-context) uit de scripts; `tools/dialogen/import.py` zet bewerkte teksten terug met automatische regelafbreking (`\n`, `\l`, `\p`).
+
+### [v.0.6.0] - Drake, Steven, Clifford en Hisui-evoluties
+- Drake: Cyclizar → Turtonator lv 64 (@ Leftovers, Shell Armor: Shell Trap, Dragon Pulse, Flamethrower, Protect). Team nog 4× zwak voor Fairy en 3× voor Ice.
+- Champion Steven: Corviknight → Empoleon lv 67 (@ Leftovers, Competitive: Hydro Pump, Flash Cannon, Ice Beam, Roar); Kingambit → Hisuian Goodra lv 68 (@ Rocky Helmet, Gooey: Draco Meteor, Heavy Slam, Fire Blast, Thunderbolt).
+- Clifford (Mossdeep Gym) is nu een double battle (Oranguru's Instruct werkt dan); placeholder-tekst toegevoegd voor als je maar één Pokémon hebt.
+- Hisui-evoluties haalbaar gemaakt (voorheen alleen "in de regio Hisui", dus nooit):
+  - Quilava → Hisuian Typhlosion: level 36 op Mt. Pyre (elders gewone Typhlosion).
+  - Rufflet → Hisuian Braviary: Psychic Seed gebruiken (Psychic Seed toegevoegd aan Lilycove Dept Store 2F). Gewone Braviary blijft level 34.
+  - Goomy → Hisuian Sliggoo: Metal Coat gebruiken. Gewone Sliggoo blijft level 40.
+  - Bergmite → Hisuian Avalugg: level 37 in Shoal Cave (elders gewone Avalugg).
+  - Petilil → Hisuian Lilligant: level-up terwijl hij Victory Dance kent; Petilil leert Victory Dance op level 28. Gewone Lilligant blijft Sun Stone.
+- Bugfix Cubone: de Mt. Pyre-evolutie (Alolan Marowak) staat nu bovenaan. Voorheen won de gewone evolutie (level 28) altijd, ook op Mt. Pyre.

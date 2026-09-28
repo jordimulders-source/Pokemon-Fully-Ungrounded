@@ -6113,6 +6113,11 @@ u16 GetBattleBGM(void)
         else
             trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
+        // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+         && TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED)
+            return MUS_RG_VS_GYM_LEADER;
+
         switch (trainerClass)
         {
         case TRAINER_CLASS_AQUA_LEADER:

@@ -14250,3 +14250,6 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
 **Mini Forest:**
 - Muziek is nu **Viridian Forest** uit FireRed/LeafGreen (`MUS_RG_VIRIDIAN_FOREST`).
+
+**Muziek:**
+- Het Juan-gevecht op Route 129 (`TRAINER_REED`) gebruikt nu de **FRLG Gym Leader battle-muziek** (`MUS_RG_VS_GYM_LEADER`) in plaats van de rivaal-muziek (Juan heeft trainer class Rival).

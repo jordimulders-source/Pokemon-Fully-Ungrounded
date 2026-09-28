@@ -14591,3 +14591,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.5.7] - Beschrijvingen van TMs en moves gerepareerd
 - De 14 nieuwe TMs (Scald, Stored Power, Drain Punch, U-turn, Dazzling Gleam, Iron Head, Volt Switch, Stealth Rock, Brave Bird, Nasty Plot, Trick Room, Flash Cannon, Dark Pulse, Play Rough) hadden beschrijvingen die breder waren dan het beschrijvingsvak in de tas (tekst werd afgekapt). Ingekort zodat ze passen.
 - Move-beschrijvingen aangepast aan de gewijzigde effecten: Kinesis (verlaagt accuracy sterk), Rock Smash (verlaagt Defense altijd), Strength (verlaagt Defense), Rock Throw (kan flinchen), Fly/Dig/Dive (verhogen evasion/Defense/Sp. Def op de eerste beurt), Vise Grip (tegenstander kan niet vluchten).
+
+### [v.0.5.8] - Ability Capsule en ontbrekende evolutie-items
+- Pacifidlog (Fan Club-huis): de tweede TM Return (dubbel met Cozmo, TMs zijn herbruikbaar) is tijdelijk vervangen door een Ability Capsule (placeholder). Let op: dit is de wekelijkse beloning, dus hij is elke week opnieuw te halen; de tekst noemt nog "a TM".
+- Lilycove Department Store 2F: evolutie-items toegevoegd die nergens in het spel te krijgen waren, zodat alle evoluties haalbaar zijn:
+  - Reaper Cloth (Dusclops → Dusknoir), Oval Stone (Happiny → Chansey), Sachet (Spritzee → Aromatisse), Whipped Dream (Swirlix → Slurpuff), alle 7 Sweets (Milcery → Alcremie).
+  - Shiny Stone (Togetic → Togekiss, Minccino → Cinccino, Floette → Florges, Roselia → Roserade).

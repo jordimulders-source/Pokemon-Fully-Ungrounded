@@ -14225,3 +14225,16 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
 **Overig:**
 - `CLAUDE.md` toegevoegd met de vaste designregels, zodat een nieuwe Claude-sessie die automatisch kent.
+
+### [v.0.4.4] - Route 116 fix en Acid fix
+
+**Route 116:**
+- Fixed: de tabel had 14 land-encounters voor 12 slots, waardoor Smeargle en de tweede Abra nooit verschenen.
+- Poochyena verwijderd (is op genoeg andere plekken te vangen); de rest schuift door.
+- Smeargle is nu de een na zeldzaamste (4%); Volbeat en Illumise blijven de zeldzaamste (1%).
+- Nieuwe verdeling: Whismur 20%, Nincada 20%, Ledyba 10%, Burmy 10%, Skitty 10%, Cottonee 10%, Pichu 5%, Abra 5%, Ekans 4%, Smeargle 4%, Volbeat 1%, Illumise 1%.
+
+**Moves:**
+- Fixed: **Acid** verlaagde Def en Sp. Def van de gebruiker in plaats van de tegenstander. Oorzaak: `MOVE_EFFECT_DEF_SPDEF_DOWN` is het Close Combat-effect en werkt altijd op de gebruiker. Acid gebruikt nu twee losse effecten (`DEF_MINUS_1` + `SP_DEF_MINUS_1`, beide 100%) op het doelwit.
+- Acid-beschrijving: "Lowers Def. and Sp. Def."
+- Test toegevoegd: `test/battle/grounded/acid.c`.

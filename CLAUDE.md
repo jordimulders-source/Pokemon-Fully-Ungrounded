@@ -12,16 +12,25 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) zijn bewust weggelaten.
 - **National Dex** is vanaf het begin beschikbaar.
 
+## Samenwerken
+- Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
+
 ## Wilde encounters (`src/data/wild_encounters.json`)
 - Land heeft precies **12 slots** met kansen 20/20/10/10/10/10/5/5/4/4/1/1. Meer of minder entries = bug (extra entries komen nooit voor).
 - **Design-filosofie:** bijna geen super zeldzame (1%) encounters. Voeg je een soort toe, geef die minimaal ~5%, bij voorkeur door twee slots te combineren (bijv. 4% + 1%).
 - Vervang bij voorkeur een slot van een soort die **dubbel** in de tabel staat, zodat er geen soort verdwijnt.
 - Elke entry heeft `min_level` én `max_level` (ontbrekende `max_level` gaf eerder lv 100-encounters).
+- Schuif je slots door, behoud dan de zeldzaamheidsvolgorde (wie het zeldzaamst was, blijft dat).
 - Houd rekening met evolutielevels (bijv. Deino evolueert op 32, Zweilous op 53).
 
 ## Pokémon-revisies
 - Types, stats, abilities en learnsets van veel soorten zijn aangepast; dat staat per soort in `CHANGELOG.md` ("Pokémon Revisie: ..."). De code in `src/data/pokemon/species_info/` moet overeenkomen met de changelog. Controleer dat bij twijfel (Swellow had Wind Rider in de changelog maar niet in de code).
 - Een `Ability:` in `src/data/trainers.party` moet in de abilitylijst van die soort staan.
+
+## Moves (`src/data/moves_info.h`)
+- Stat-drops op de tegenstander: gebruik losse effecten per stat (`MOVE_EFFECT_DEF_MINUS_1`, `MOVE_EFFECT_SP_DEF_MINUS_1`, ...). Gecombineerde effecten zoals `MOVE_EFFECT_DEF_SPDEF_DOWN` (Close Combat) en `MOVE_EFFECT_ATK_DEF_DOWN` (Superpower) werken altijd op de gebruiker.
+- `additionalEffects` worden alleen uitgevoerd bij aanvallende moves (en bij `onChargeTurnOnly` op de laadbeurt van two-turn moves), niet bij statusmoves zoals Flash.
+- Eigen tests staan in `test/battle/grounded/`.
 
 ## Bouwen en testen
 - Bouwen: `make -j4` (moet zonder fouten slagen vóór elke push).

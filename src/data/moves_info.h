@@ -1459,16 +1459,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-[MOVE_ACID] =
+    [MOVE_ACID] =
     {
         .name = COMPOUND_STRING("Acid"),
         .description = COMPOUND_STRING(
             "Sprays a hide-melting acid.\n"
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            "May lower Defenses."),
-        #else
-            "May lower Defense."),
-        #endif
+            "Lowers Def. and Sp. Def."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_POISON,
@@ -1477,10 +1473,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-            .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = B_UPDATED_MOVE_DATA >= GEN_4 ? MOVE_EFFECT_DEF_SPDEF_DOWN: MOVE_EFFECT_DEF_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-        }),
+        // Project Grounded: verlaagt Def en Sp. Def van het doelwit.
+        // Niet MOVE_EFFECT_DEF_SPDEF_DOWN gebruiken: dat is het Close Combat-effect en verlaagt altijd de stats van de gebruiker zelf.
+        .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
+                .chance = 100,
+            },
+            {
+                .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+                .chance = 100,
+            }
+        ),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,

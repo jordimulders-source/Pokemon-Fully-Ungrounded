@@ -854,16 +854,7 @@
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_POOCHYENA"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_WHISMUR"
-              },
+              { "min_level": 10, "max_level": 10, "species": "SPECIES_WHISMUR" },
               { "min_level": 10, "max_level": 11, "species": "SPECIES_NINCADA" },
               { "min_level": 10, "max_level": 11, "species": "SPECIES_LEDYBA" },
               { "min_level": 11, "max_level": 12, "species": "SPECIES_BURMY" },
@@ -872,10 +863,9 @@
               { "min_level": 11, "max_level": 12, "species": "SPECIES_PICHU" },
               { "min_level": 11, "max_level": 12, "species": "SPECIES_ABRA" },
               { "min_level": 12, "max_level": 13, "species": "SPECIES_EKANS" },
-              { "min_level": 12, "max_level": 12, "species": "SPECIES_VOLBEAT" },
-              { "min_level": 12, "max_level": 12, "species": "SPECIES_ILLUMISE" },
               { "min_level": 13, "max_level": 13, "species": "SPECIES_SMEARGLE" },
-              { "min_level": 13, "max_level": 13, "species": "SPECIES_ABRA" }
+              { "min_level": 12, "max_level": 12, "species": "SPECIES_VOLBEAT" },
+              { "min_level": 12, "max_level": 12, "species": "SPECIES_ILLUMISE" }
             ]
           }
         },

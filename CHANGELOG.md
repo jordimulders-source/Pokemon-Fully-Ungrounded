@@ -14410,3 +14410,25 @@ De Pokémon-revisies uit deze changelog zijn leidend. Alle verschillen tussen ch
 
 ### [v.0.5.2] - Trainerkop Marcos gerepareerd
 - `=== TRAINER_MARCOS===` → `=== TRAINER_MARCOS ===` in `trainers.party` (spatie ontbrak).
+
+### [v.0.5.3] - Trainer parties groep 1 (Route 103-oost, 109, 110, 117) + Winona
+Uitgangspunt: gelijk niveau aan de eigen trainers op dezelfde route, meer variatie (weinig gebruikte soorten erbij, veelgebruikte zoals Wingull/Marill/Tentacool/Machop/Meditite/Makuhita eruit), thema grounded maar mag out of the box. Trainers die al niet-Emerald Pokémon hadden (Daisy, Miguel, Amy & Liv) blijven zoals ze zijn.
+- Rhett (Black Belt): Timburr, Tyrogue, Crabrawler lv 21
+- Pete (Swimmer): Floatzel, Clawitzer, Cramorant lv 30 (Surf-gebied)
+- Isabelle (Swimmer): Swanna, Lumineon, Palpitoad lv 30 (Surf-gebied)
+- Huey (Sailor): Wingull, Binacle, Mareanie lv 17
+- Edmond (Sailor): Buizel, Chewtle, Clauncher lv 17
+- Hailey (Tuber): Psyduck, Munchlax (drijft toch wel), Dewpider lv 16
+- Chandler (Tuber): Zigzagoon met Surf, Horsea, Bidoof lv 16
+- Dwayne (Sailor, Seashore House): Slowpoke, Wishiwashi, Mudbray lv 17
+- Edwin (Collector): Sinistea, Sandygast, Tinkatink lv 20
+- Kaleb (Pokéfan): Minun/Plusle lv 20 + Pawmi lv 20
+- Joseph (Guitarist): Tynamo, Voltorb en een amuzikale Bonsly lv 20
+- Sally (Lass, Trick House 1): Oddish, Fomantis, Cutiefly lv 19
+- Robin (Lass, Trick House 1): Skitty, Fidough, Flabébé lv 19
+- Isaac (Breeder): babyteam Elekid, Magby, Smoochum, Wynaut, Mime Jr., Chingling lv 20
+- Lydia (Breeder): Wooloo, Lechonk, Smoliv, Nymble, Skwovet, Rookidee lv 20
+- Melina (Triathlete): Doduo, Blitzle, Ponyta lv 21
+- Brandi (Psychic): Ralts, Natu, Solosis lv 21
+- Aisha (Battle Girl): Mienfoo, Stufful, Scraggy lv 21
+- Winona: levels +4 (nu 41–43); Fortree-gymtrainers +3 (Jared, Humberto, Edwardo, Flint, Ashley, Darius)

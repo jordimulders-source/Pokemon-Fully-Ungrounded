@@ -14407,3 +14407,6 @@ De Pokémon-revisies uit deze changelog zijn leidend. Alle verschillen tussen ch
 ### [v.0.5.1] - Open vragen v.0.5.0 beantwoord
 - Medicham: "Pure Pulse" in de changelog was een fout (bestaat niet); lvl 50 blijft Dragon Pulse.
 - Spoink: definitief Psychic/Normal (zoals in de code).
+
+### [v.0.5.2] - Trainerkop Marcos gerepareerd
+- `=== TRAINER_MARCOS===` → `=== TRAINER_MARCOS ===` in `trainers.party` (spatie ontbrak).

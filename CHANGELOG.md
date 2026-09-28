@@ -14277,3 +14277,10 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
     - Brawly's Spinda: Huge Power → Pure Power.
     - Winona's Swellow (lvl 38): Wind Rider-set @ Focus Sash (Tailwind / Brave Bird / U-turn / Aqua Jet) i.p.v. Choice Band / Gale Wings.
     - Steven's Skarmory: Sturdy → Rough Skin.
+
+### [v.0.4.9] - Correctie Kricketot/Kricketune (gen_9.h)
+
+- De game gebruikt de learnsets uit `src/data/pokemon/level_up_learnsets/gen_9.h` (`P_LVL_UP_LEARNSETS` = GEN_LATEST). De wijzigingen van v0.4.6/v0.4.7 stonden per ongeluk in `gen_4.h` (heeft geen effect); die zijn teruggedraaid en nu in `gen_9.h` gezet.
+- De Kricketune-learnset uit v0.4.1 stond al wél in `gen_9.h`; alleen deze wijzigingen zijn nieuw:
+    - Kricketot: Fell Stinger (lvl 6) eruit, Struggle Bug van lvl 8 naar lvl 6.
+    - Kricketune: Fell Stinger van lvl 1 naar lvl 26, Twineedle van lvl 25 naar lvl 40.

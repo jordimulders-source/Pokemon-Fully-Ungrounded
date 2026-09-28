@@ -14262,3 +14262,8 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
 **Flash (AI):**
 - De AI telt bij Flash de Accuracy-drop plus de relevantste van Attack/Sp. Atk, zodat Flash niet zwaarder weegt dan Tickle (anders koos de AI Flash ook als zijn partner al Helping Hand gebruikte).
+
+### [v.0.4.7] - Fell Stinger later
+
+- **Kricketot:** Fell Stinger (lvl 6) vervangen door **Struggle Bug** (lvl 6).
+- **Kricketune:** Fell Stinger niet meer op lvl 1, maar op **lvl 26** (80 BP + Atk +3 bij KO was te sterk zo vroeg).

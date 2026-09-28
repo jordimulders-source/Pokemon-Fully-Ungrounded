@@ -892,11 +892,11 @@
               { "min_level": 13, "max_level": 14, "species": "SPECIES_APPLIN" },
               { "min_level": 14, "max_level": 15, "species": "SPECIES_PANCHAM" },
               { "min_level": 13, "max_level": 14, "species": "SPECIES_FARFETCHD" },
-              { "min_level": 14, "level": 15, "species": "SPECIES_FALINKS" },
-              { "min_level": 15, "level": 15, "species": "SPECIES_ROSELIA" },
-              { "min_level": 14, "level": 15, "species": "SPECIES_POLTCHAGEIST" },
-              { "min_level": 15, "level": 15, "species": "SPECIES_FALINKS" },
-              { "min_level": 15, "level": 15, "species": "SPECIES_POLTCHAGEIST" }
+              { "min_level": 14, "max_level": 15, "species": "SPECIES_FALINKS" },
+              { "min_level": 15, "max_level": 15, "species": "SPECIES_ROSELIA" },
+              { "min_level": 14, "max_level": 15, "species": "SPECIES_POLTCHAGEIST" },
+              { "min_level": 15, "max_level": 15, "species": "SPECIES_FALINKS" },
+              { "min_level": 15, "max_level": 15, "species": "SPECIES_POLTCHAGEIST" }
             ]
           },
           "water_mons": {

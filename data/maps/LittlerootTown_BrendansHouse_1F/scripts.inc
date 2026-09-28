@@ -24,6 +24,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
 	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
+	call LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouse
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV
@@ -47,6 +48,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
 LittlerootTown_BrendansHouse_1F_OnFrame:
+	map_script_2 VAR_TEMP_2, 1, LittlerootTown_BrendansHouse_1F_EventScript_LeaveWrongHouse
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
@@ -433,3 +435,25 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+@ Project Grounded: zonder truck-intro kan de speler het huis van de rivaal binnenlopen
+@ voordat de intro klaar is. Dan zou dit huis zich als het eigen huis gedragen.
+@ Zolang de intro loopt (VAR_LITTLEROOT_INTRO_STATE 1-6) sturen we de speler terug naar buiten.
+LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouse::
+	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 0, LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouseDone
+	goto_if_ge VAR_LITTLEROOT_INTRO_STATE, 7, LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouseDone
+	checkplayergender
+	goto_if_ne VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouseDone
+	setvar VAR_TEMP_2, 1
+LittlerootTown_BrendansHouse_1F_EventScript_CheckWrongHouseDone::
+	return
+
+LittlerootTown_BrendansHouse_1F_EventScript_LeaveWrongHouse::
+	lockall
+	setvar VAR_TEMP_2, 0
+	msgbox LittlerootTown_Text_WrongHouse, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_LITTLEROOT_TOWN, 5, 9
+	waitstate
+	releaseall
+	end

@@ -14613,3 +14613,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Bergmite → Hisuian Avalugg: level 37 in Shoal Cave (elders gewone Avalugg).
   - Petilil → Hisuian Lilligant: level-up terwijl hij Victory Dance kent; Petilil leert Victory Dance op level 28. Gewone Lilligant blijft Sun Stone.
 - Bugfix Cubone: de Mt. Pyre-evolutie (Alolan Marowak) staat nu bovenaan. Voorheen won de gewone evolutie (level 28) altijd, ook op Mt. Pyre.
+
+### [v.0.6.1] - TM-beschrijvingen passen nu ook in de winkel
+- Scald, U-turn, Iron Head, Volt Switch, Stealth Rock en Nasty Plot nog iets korter gemaakt: het beschrijvingsvak in de winkel is smaller (102 px) dan in de tas. De test "Item descriptions fit on Bag and Shop Screen" slaagt nu weer.

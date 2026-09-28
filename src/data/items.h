@@ -11863,9 +11863,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM03"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Shoots boiling water\n"
-            "that may cause a\n"
-            "burn."),
+            "Shoots boiling\n"
+            "water. May cause\n"
+            "a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12119,7 +12119,7 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "Attacks, then\n"
-            "switches places with\n"
+            "swaps places with\n"
             "a party Pokémon."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12160,9 +12160,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM23"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Slams the foe with a\n"
-            "steel-hard head.\n"
-            "May cause flinching."),
+            "Slams the foe with\n"
+            "a steel-hard head.\n"
+            "It may flinch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12315,7 +12315,7 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "Attacks, then\n"
-            "switches places with\n"
+            "swaps places with\n"
             "a party Pokémon."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
@@ -12384,9 +12384,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM39"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Lays floating rocks\n"
-            "that hurt foes when\n"
-            "they switch in."),
+            "Sets floating\n"
+            "rocks that hurt\n"
+            "foes on switch-in."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12412,9 +12412,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM41"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Thinks bad thoughts\n"
-            "to sharply raise\n"
-            "Sp. Atk."),
+            "Thinks bad\n"
+            "thoughts. Sharply\n"
+            "raises Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

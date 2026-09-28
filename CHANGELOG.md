@@ -14189,3 +14189,39 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 - Trainers op Route 104, Route 116 en in Petalburg Woods zitten nu op lvl 10–13.
 - Uitzonderingen (grappen die blijven): Magikarp-levels ongewijzigd, Ivan's Gyarados blijft lvl 3, Lyle's Scizor en Yanmega op lvl 6.
 
+
+### [v.0.4.3] - Mini Forest, nieuwe Pokémon en Winona's Swellow
+
+**Winona's Swellow (Wind Rider-set):**
+- **Swellow @ Focus Sash**, Wind Rider: Tailwind / Brave Bird / U-turn / Aqua Jet (vervangt de Sharp Beak / Gale Wings-set uit v0.4.2).
+- Tailwind geeft via Wind Rider +1 Atk; U-turn laat de Tailwind voor de rest van het team staan (Altaria kan ook Tailwind zetten).
+
+**Route102_MiniForest:**
+- Fixed: Route 102 had een warp op (38,1) naar Mini Forest warp 0, maar Mini Forest heeft geen warps. Warp verwijderd; de naadloze verbinding blijft.
+- Sfeer zoals Petalburg Woods: `WEATHER_SHADE` en `MUS_PETALBURG_WOODS`. Route 102 zelf blijft ongewijzigd.
+- Escape Rope uit (`allow_escaping: false`), net als Route 102.
+- Fixed: Maushold vervangen door **Tandemaus** (20%).
+- Wilde levels +3 (nu lvl 6–10).
+- Nieuw: **Rookidee** (5%, lvl 8–10) en **Nymble** (5%, lvl 8–10), op de plek van dubbele Chatot/Karrablast/Emolga/Tandemaus-slots.
+
+**Nieuwe Pokémon in het wild** (steeds in een slot van een soort die dubbel stond, zodat geen soort verdwijnt; geen nieuwe 1%-encounters):
+| Pokémon | Locatie | Kans | Level |
+|---|---|---|---|
+| Deino | Meteor Falls B1F (2R) | 10% (i.p.v. Kabuto op land; Kabuto blijft via hengelen) | 30–32 |
+| Dunsparce | Route 113 | 5% | 15–18 |
+| Pikachu | Safari Zone South | 5% | 27–31 |
+| Timburr | Rusturf Tunnel | 10% | 11–13 |
+| Roggenrola | Granite Cave 1F | 9% | 8–10 |
+| Rockruff | Route 112 | 5% | 15–17 |
+| Mudbray | Route 117 | 5% | 13–15 |
+| Stufful | Route 118 | 5% | 24–26 |
+| Croagunk | Route 119 | 5% | 26–28 |
+| Shroodle | Route 104 | 20% (tweede Wingull-slot; Wingull nu 20%) | 6–8 |
+
+- Deino-lijn compleet: Deino (Meteor Falls B1F) → Zweilous (Meteor Falls 1F, Victory Road) → Hydreigon (Steven's Cave).
+
+**Bekend, nog niet opgelost:**
+- Route 116 heeft 14 land-encounters, maar er zijn maar 12 slots. Smeargle (lvl 13) en de tweede Abra (lvl 13) komen daardoor nooit voor.
+
+**Overig:**
+- `CLAUDE.md` toegevoegd met de vaste designregels, zodat een nieuwe Claude-sessie die automatisch kent.

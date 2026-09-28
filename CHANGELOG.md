@@ -14403,3 +14403,7 @@ De Pokémon-revisies uit deze changelog zijn leidend. Alle verschillen tussen ch
 - Sylvia's Venomoth: Magic Guard is nu geldig (Venomoth hidden ability = Magic Guard volgens de revisie).
 - Karen's Tandemaus: Technician → Pickup.
 - Maxie's Tyranitar (Mossdeep): Sand Rush → Sand Stream.
+
+### [v.0.5.1] - Open vragen v.0.5.0 beantwoord
+- Medicham: "Pure Pulse" in de changelog was een fout (bestaat niet); lvl 50 blijft Dragon Pulse.
+- Spoink: definitief Psychic/Normal (zoals in de code).

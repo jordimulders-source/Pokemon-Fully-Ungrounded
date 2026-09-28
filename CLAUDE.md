@@ -52,3 +52,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - `make check` (CI-job `build`) faalt ook op `master`, met honderd-en-zoveel tests die de bewust gewijzigde mechanics en soorten niet meer verwachten. Nieuwe failures ten opzichte van master zijn wel een probleem.
 - Werk op een branch en open een PR naar `master`.
 - Meld de bekende, al bestaande `make check`-failures niet aan Jordi; alleen nieuwe failures die door een wijziging komen zijn het vermelden waard.
+
+## Dialogen (Dialoogstudio)
+- Jordi schrijft dialogen in de Dialoogstudio: https://claude.ai/artifact/LP3qyGyvhaj6p5GS32Gjxz (bewerkingen staan in de database van die pagina: collectie `edits`, per tekstlabel `{text, note, status, map}`; wensen per kaart in `verzoeken`).
+- "Verwerk de dialogen": lees `edits` met status `klaar` (ArtifactData), schrijf `{label: text}` naar een JSON-bestand en draai `python3 tools/dialogen/import.py <bestand>`. Dat breekt de tekst automatisch af (zelfde regels als het voorbeeld in de editor). Bouw, controleer, commit, zet de verwerkte documenten op status `verwerkt` en voer de notities/wensen uit.
+- Na wijzigingen in de scripts: `python3 tools/dialogen/export.py <dialogen.json>` en publiceer dat bestand opnieuw bij de pagina, zodat de editor de actuele game-tekst toont.

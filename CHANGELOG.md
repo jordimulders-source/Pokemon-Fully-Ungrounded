@@ -14597,3 +14597,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Lilycove Department Store 2F: evolutie-items toegevoegd die nergens in het spel te krijgen waren, zodat alle evoluties haalbaar zijn:
   - Reaper Cloth (Dusclops → Dusknoir), Oval Stone (Happiny → Chansey), Sachet (Spritzee → Aromatisse), Whipped Dream (Swirlix → Slurpuff), alle 7 Sweets (Milcery → Alcremie).
   - Shiny Stone (Togetic → Togekiss, Minccino → Cinccino, Floette → Florges, Roselia → Roserade).
+
+### [v.0.5.9] - Dialoogstudio
+- Nieuwe webpagina om alle 5529 dialogen per kaart te bewerken, met live voorbeeld van het GBA-tekstvak: https://claude.ai/artifact/LP3qyGyvhaj6p5GS32Gjxz
+- `tools/dialogen/export.py` haalt alle teksten (met NPC/trainer/script-context) uit de scripts; `tools/dialogen/import.py` zet bewerkte teksten terug met automatische regelafbreking (`\n`, `\l`, `\p`).

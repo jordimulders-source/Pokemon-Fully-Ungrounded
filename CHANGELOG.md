@@ -14582,3 +14582,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Wally Victory Road (post-game, WALLY_VR_2): zelfde team als bij de ingang, +7 levels (62–63). Rematches VR_3 t/m VR_5 volgen.
 - Rivaal Rustboro: 3 Pokémon (voorlopers van zijn/haar Route 110-team + starter lv 15), bijv. Brendan (Mudkip-keuze): Houndour, Whismur, Treecko; May (Mudkip-keuze): Vulpix, Buneary, Treecko.
 - Rematches opnieuw gegenereerd op basis van de nieuwe eerste versies.
+
+### [v.0.5.6] - Controles: encounters, tekst, evoluties
+- Wilde encounters gecontroleerd: alle tabellen hebben het juiste aantal slots en geldige min/max-levels. Niets aangepast.
+- Tekst: May's dialoog op Route 103 had een `\n` na een `\l`, waardoor de laatste regel buiten het tekstvak viel; nu `\l`. Verder passen alle aangepaste dialoogregels in het tekstvak (max. 216 px).
+- Rivaal Rustboro (Brendan, Treecko-keuze): Lotad → Lombre (evolueert in dit project op lvl 14).

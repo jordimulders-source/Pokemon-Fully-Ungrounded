@@ -14157,3 +14157,35 @@ Wattson heeft een Hisui Voltorb, omdat uit tests blijkt dat Marshtomp te weinig 
 
 Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
+### [v.0.4.2] - Bugfixes, Abilities, Mom en Levelcurve
+
+**Bugfixes:**
+- Route 117: bij 5 encounters ontbrak `max_level`, waardoor wilde Pokémon tot lvl 100 konden gaan. Opgelost.
+- National Dex is vanaf een nieuw spel beschikbaar. Celebi is toegevoegd aan de Hoenn → National vertaaltabel.
+- Nieuw spel start voor de deur van je eigen huis (Brendan links, May rechts).
+- Littleroot: loop je tijdens de intro het huis van de rivaal binnen, dan word je vriendelijk terug naar buiten gestuurd ("This is the neighbor's house!").
+- Galar Zigzagoon-event gebruikt nu de juiste local ID en een eigen flag (`FLAG_RECEIVED_GALAR_ZIGZAGOON`).
+- Prof. Birch trainer-sprite geregistreerd in `gTrainerSprites`; het gevecht tegen Birch crasht niet meer.
+- Te lange tekstregels afgebroken (Birch's Lab, Petalburg City, Miguel op Route 103).
+
+**Abilities:**
+- Shuckle: Gluttony vervangen door **Sap Sipper** (Sturdy / Sap Sipper / Contrary).
+- Swellow: abilities zijn nu **Gale Wings / Wind Rider** (Scrappy verwijderd), zoals bedoeld in de Swellow-revisie.
+- Trainers met een ability die de soort niet heeft, gecorrigeerd:
+    - Grumpig (Belly Drum, Sitrus Berry): Thick Fat → **Simple**
+    - Spinda (Brawly): Huge Power → **Pure Power**
+    - Skarmory (Wacan Berry): Sturdy → **Rough Skin**
+- Winona's Swellow heeft een nieuwe set: **Swellow @ Sharp Beak**, Gale Wings: Brave Bird / Roost / U-turn / Aqua Jet (priority Roost houdt Gale Wings actief).
+
+**Mom (Players House):**
+- Mom healt je team weer, registreert zich in de PokéNav (en geeft de Amulet Coin na de 5e badge) en heeft haar post-game dialoog terug.
+- De intro blijft kort: geen tv-scène en ze behoudt haar humoristische standaard-dialoog.
+
+**Levelcurve (wilde Pokémon, gras/grot):**
+- Route 102 en Route 104: +3 levels.
+- Route 116, Petalburg Woods en Rusturf Tunnel: +4 levels.
+
+**Levelcurve (trainers):**
+- Trainers op Route 104, Route 116 en in Petalburg Woods zitten nu op lvl 10–13.
+- Uitzonderingen (grappen die blijven): Magikarp-levels ongewijzigd, Ivan's Gyarados blijft lvl 3, Lyle's Scizor en Yanmega op lvl 6.
+

@@ -1027,17 +1027,13 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
-@ Definities voor de Giveaway sprites
-.set LOCALID_ZIGZAGOON, 9
-.set LOCALID_GENTLEMAN, 10
-
 LittlerootTown_EventScript_GalarBiologist::
 	lock
 	faceplayer
 	@ Check of Birch al gered is (Punt 2)
 	goto_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_GalarTooBusy
 	
-	goto_if_set FLAG_UNUSED_0x020, LittlerootTown_EventScript_GalarGaveMon
+	goto_if_set FLAG_RECEIVED_GALAR_ZIGZAGOON, LittlerootTown_EventScript_GalarGaveMon
 	msgbox LittlerootTown_Text_GalarIntro, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_GalarDeclined
 	
@@ -1057,8 +1053,8 @@ LittlerootTown_EventScript_GalarBiologist::
 	closemessage
 	
 	@ Instant verdwijnen (Punt 3)
-	removeobject LOCALID_ZIGZAGOON
-	setflag FLAG_UNUSED_0x020
+	removeobject LOCALID_GALAR_ZIGZAGOON
+	setflag FLAG_RECEIVED_GALAR_ZIGZAGOON
 	release
 	end
 
@@ -1117,3 +1113,8 @@ LittlerootTown_Text_GalarDeclined:
 
 LittlerootTown_Text_GalarNoRoom:
 	.string "Crazy that you made this happen!$"
+
+LittlerootTown_Text_WrongHouse:
+	.string "Huh? These boxes aren't yours…\p"
+	.string "This is the neighbor's house!\n"
+	.string "Your MOM is waiting next door.$"

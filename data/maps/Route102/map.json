@@ -161,15 +161,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 38,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE102_MINI_FOREST",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": [
     {

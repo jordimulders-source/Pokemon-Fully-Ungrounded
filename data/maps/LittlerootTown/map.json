@@ -139,8 +139,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_UNUSED_0x020"
+      "script": "0x0",
+      "flag": "FLAG_RECEIVED_GALAR_ZIGZAGOON"
     },
     {
       "local_id": "LOCALID_GALAR_BIOLOGIST",

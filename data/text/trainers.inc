@@ -175,19 +175,25 @@ Route103_Text_AndrewPostBattle:
 	.string "Nosejobs ain't cheap these days.$"
 
 Route103_Text_MiguelIntro:
-	.string "My POKéMON is delightfully pleasantly charmingly enchantingly refreshingly lovely lusciously enjoyably beautifully adorable!\n"
+	.string "My POKéMON is delightfully\n"
+	.string "pleasantly charmingly enchantingly\l"
+	.string "refreshingly lovely lusciously\l"
+	.string "enjoyably beautifully adorable!\p"
 	.string "I'll show youuuuuuuuuuuuuuuuuuuuuuuu!$"
 
 Route103_Text_MiguelDefeated:
 	.string "Oh, my gosh, I'm hurt, you bully!!\n"
-	.string "My darling POKéMON! It's bleeding, mortal wound! It won't make it, thanks to you!$"
+	.string "My darling POKéMON! It's bleeding,\l"
+	.string "mortal wound! It won't make it,\l"
+	.string "thanks to you!$"
 
 Route103_Text_MiguelPostBattle:
 	.string "My delightful POKéMON looks darling\n"
 	.string "even when it's dead!$"
 
 Route103_Text_MiguelRegister:
-	.string "I'll get new Pokémon and then I'll get revenge!$"
+	.string "I'll get new POKéMON and then\n"
+	.string "I'll get revenge!$"
 
 Route103_Text_MiguelRematchIntro:
 	.string "Hi, you! I got some more\n"

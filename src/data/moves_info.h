@@ -1459,16 +1459,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-[MOVE_ACID] =
+    [MOVE_ACID] =
     {
         .name = COMPOUND_STRING("Acid"),
         .description = COMPOUND_STRING(
             "Sprays a hide-melting acid.\n"
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            "May lower Defenses."),
-        #else
-            "May lower Defense."),
-        #endif
+            "Lowers Def. and Sp. Def."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_POISON,
@@ -1477,10 +1473,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-            .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = B_UPDATED_MOVE_DATA >= GEN_4 ? MOVE_EFFECT_DEF_SPDEF_DOWN: MOVE_EFFECT_DEF_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-        }),
+        // Project Grounded: verlaagt Def en Sp. Def van het doelwit.
+        // Niet MOVE_EFFECT_DEF_SPDEF_DOWN gebruiken: dat is het Close Combat-effect en verlaagt altijd de stats van de gebruiker zelf.
+        .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
+                .chance = 100,
+            },
+            {
+                .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+                .chance = 100,
+            }
+        ),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -1756,7 +1760,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Aurora Beam"),
         .description = COMPOUND_STRING(
             "Fires a rainbow-colored\n"
-            "beam that may lower Attack."),
+            "beam that lowers Attack."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ICE,
@@ -3602,7 +3606,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Constrict"),
         .description = COMPOUND_STRING(
             "Constricts to inflict pain.\n"
-            "May lower Speed."),
+            "Sharply lowers Speed."),
         .effect = EFFECT_HIT,
         .power = 10,
         .type = TYPE_NORMAL,
@@ -4047,24 +4051,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Blinds the foe to cut\n"
             "Acc, Atk, and Sp. Atk."),
-        .effect = EFFECT_ACCURACY_DOWN,
+        .effect = EFFECT_FLASH, // Project Grounded: verlaagt Accuracy, Attack en Sp. Atk
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS(
-            {
-                .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-                .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-            },
-            {
-                .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-                .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-            }
-        ),
+        .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,

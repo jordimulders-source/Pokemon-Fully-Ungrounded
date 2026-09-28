@@ -1976,7 +1976,7 @@ Golem is een levende vesting. Zijn pantser is zo dik dat hij vrijwel immuun is v
     LEVEL_UP_MOVE(48, MOVE_SLEEP_TALK),
     LEVEL_UP_MOVE(55, MOVE_CLOSE_COMBAT),
     LEVEL_UP_MOVE(62, MOVE_REVERSAL),
-    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH,
+    LEVEL_UP_MOVE(65, MOVE_HEADLONG_RUSH),
 
 ### [v0.2.1] - Pokémon Revisie: Goldeen
 **Biologische Focus:** Hoewel Goldeen bekend staat om zijn sierlijke vinnen, is het een uiterst agressieve vis. De hoorn op zijn kop is een verlengstuk van zijn schedel en wordt gebruikt om indringers te spietsen. Goldeen zijn zo territoriaal dat ze zelfs grotere Pokémon aanvallen als die te dicht bij hun nest komen. De hoorn heeft een unieke minerale samenstelling die statische elektriciteit uit de omgeving absorbeert.
@@ -8277,7 +8277,7 @@ Geen wijzigingen
 * **Type:** Flying / Fighting
 * **Ability 1:** Moxie (Nieuw: +1 Attack na elke kill) 
 * **Ability 2 ** Moody (Nieuw: De ultieme stat-gamble)
-* **Base Stats (463 BST):** HP: 62 | Atk: 115 | Def: 65 | SpAtk: 48 | SpDef: 72 | Speed: 101
+* **Base Stats (463 BST):** HP: 62 | Atk: 115 | Def: 65 | SpAtk: 48 | SpDef: 72 | Speed: 91*
 
 **Level-up Learnset (Full Gen IX + Warrior Update):**
     LEVEL_UP_MOVE( 1, MOVE_PECK),
@@ -14157,3 +14157,278 @@ Wattson heeft een Hisui Voltorb, omdat uit tests blijkt dat Marshtomp te weinig 
 
 Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 
+Brawly balans changes:
+- Farfetchd geen Leek meer, -10 speed
+- Emolga Shock Wave op lvl 18 en Air Cutter lvl 20
+
+### [v.0.4.2] - Bugfixes, Abilities, Mom en Levelcurve
+
+**Bugfixes:**
+- Route 117: bij 5 encounters ontbrak `max_level`, waardoor wilde Pokémon tot lvl 100 konden gaan. Opgelost.
+- National Dex is vanaf een nieuw spel beschikbaar. Celebi is toegevoegd aan de Hoenn → National vertaaltabel.
+- Nieuw spel start voor de deur van je eigen huis (Brendan links, May rechts).
+- Littleroot: loop je tijdens de intro het huis van de rivaal binnen, dan word je vriendelijk terug naar buiten gestuurd ("This is the neighbor's house!").
+- Galar Zigzagoon-event gebruikt nu de juiste local ID en een eigen flag (`FLAG_RECEIVED_GALAR_ZIGZAGOON`).
+- Prof. Birch trainer-sprite geregistreerd in `gTrainerSprites`; het gevecht tegen Birch crasht niet meer.
+- Te lange tekstregels afgebroken (Birch's Lab, Petalburg City, Miguel op Route 103).
+
+**Abilities:**
+- Shuckle: Gluttony vervangen door **Sap Sipper** (Sturdy / Sap Sipper / Contrary).
+- Swellow: abilities zijn nu **Gale Wings / Wind Rider** (Scrappy verwijderd), zoals bedoeld in de Swellow-revisie.
+- Trainers met een ability die de soort niet heeft, gecorrigeerd:
+    - Grumpig (Belly Drum, Sitrus Berry): Thick Fat → **Simple**
+    - Spinda (Brawly): Huge Power → **Pure Power**
+    - Skarmory (Wacan Berry): Sturdy → **Rough Skin**
+- Winona's Swellow heeft een nieuwe set: **Swellow @ Sharp Beak**, Gale Wings: Brave Bird / Roost / U-turn / Aqua Jet (priority Roost houdt Gale Wings actief).
+
+**Mom (Players House):**
+- Mom healt je team weer, registreert zich in de PokéNav (en geeft de Amulet Coin na de 5e badge) en heeft haar post-game dialoog terug.
+- De intro blijft kort: geen tv-scène en ze behoudt haar humoristische standaard-dialoog.
+
+**Levelcurve (wilde Pokémon, gras/grot):**
+- Route 102 en Route 104: +3 levels.
+- Route 116, Petalburg Woods en Rusturf Tunnel: +4 levels.
+
+**Levelcurve (trainers):**
+- Trainers op Route 104, Route 116 en in Petalburg Woods zitten nu op lvl 10–13.
+- Uitzonderingen (grappen die blijven): Magikarp-levels ongewijzigd, Ivan's Gyarados blijft lvl 3, Lyle's Scizor en Yanmega op lvl 6.
+
+
+### [v.0.4.3] - Mini Forest, nieuwe Pokémon en Winona's Swellow
+
+**Winona's Swellow (Wind Rider-set):**
+- **Swellow @ Focus Sash**, Wind Rider: Tailwind / Brave Bird / U-turn / Aqua Jet (vervangt de Sharp Beak / Gale Wings-set uit v0.4.2).
+- Tailwind geeft via Wind Rider +1 Atk; U-turn laat de Tailwind voor de rest van het team staan (Altaria kan ook Tailwind zetten).
+
+**Route102_MiniForest:**
+- Fixed: Route 102 had een warp op (38,1) naar Mini Forest warp 0, maar Mini Forest heeft geen warps. Warp verwijderd; de naadloze verbinding blijft.
+- Sfeer zoals Petalburg Woods: `WEATHER_SHADE` en `MUS_PETALBURG_WOODS`. Route 102 zelf blijft ongewijzigd.
+- Escape Rope uit (`allow_escaping: false`), net als Route 102.
+- Fixed: Maushold vervangen door **Tandemaus** (20%).
+- Wilde levels +3 (nu lvl 6–10).
+- Nieuw: **Rookidee** (5%, lvl 8–10) en **Nymble** (5%, lvl 8–10), op de plek van dubbele Chatot/Karrablast/Emolga/Tandemaus-slots.
+
+**Nieuwe Pokémon in het wild** (steeds in een slot van een soort die dubbel stond, zodat geen soort verdwijnt; geen nieuwe 1%-encounters):
+| Pokémon | Locatie | Kans | Level |
+|---|---|---|---|
+| Deino | Meteor Falls B1F (2R) | 10% (i.p.v. Kabuto op land; Kabuto blijft via hengelen) | 30–32 |
+| Dunsparce | Route 113 | 5% | 15–18 |
+| Pikachu | Safari Zone South | 5% | 27–31 |
+| Timburr | Rusturf Tunnel | 10% | 11–13 |
+| Roggenrola | Granite Cave 1F | 9% | 8–10 |
+| Rockruff | Route 112 | 5% | 15–17 |
+| Mudbray | Route 117 | 5% | 13–15 |
+| Stufful | Route 118 | 5% | 24–26 |
+| Croagunk | Route 119 | 5% | 26–28 |
+| Shroodle | Route 104 | 20% (tweede Wingull-slot; Wingull nu 20%) | 6–8 |
+
+- Deino-lijn compleet: Deino (Meteor Falls B1F) → Zweilous (Meteor Falls 1F, Victory Road) → Hydreigon (Steven's Cave).
+
+**Bekend, nog niet opgelost:**
+- Route 116 heeft 14 land-encounters, maar er zijn maar 12 slots. Smeargle (lvl 13) en de tweede Abra (lvl 13) komen daardoor nooit voor.
+
+**Overig:**
+- `CLAUDE.md` toegevoegd met de vaste designregels, zodat een nieuwe Claude-sessie die automatisch kent.
+
+### [v.0.4.4] - Route 116 fix en Acid fix
+
+**Route 116:**
+- Fixed: de tabel had 14 land-encounters voor 12 slots, waardoor Smeargle en de tweede Abra nooit verschenen.
+- Poochyena verwijderd (is op genoeg andere plekken te vangen); de rest schuift door.
+- Smeargle is nu de een na zeldzaamste (4%); Volbeat en Illumise blijven de zeldzaamste (1%).
+- Nieuwe verdeling: Whismur 20%, Nincada 20%, Ledyba 10%, Burmy 10%, Skitty 10%, Cottonee 10%, Pichu 5%, Abra 5%, Ekans 4%, Smeargle 4%, Volbeat 1%, Illumise 1%.
+
+**Moves:**
+- Fixed: **Acid** verlaagde Def en Sp. Def van de gebruiker in plaats van de tegenstander. Oorzaak: `MOVE_EFFECT_DEF_SPDEF_DOWN` is het Close Combat-effect en werkt altijd op de gebruiker. Acid gebruikt nu twee losse effecten (`DEF_MINUS_1` + `SP_DEF_MINUS_1`, beide 100%) op het doelwit.
+- Acid-beschrijving: "Lowers Def. and Sp. Def."
+- Test toegevoegd: `test/battle/grounded/acid.c`.
+
+### [v.0.4.5] - Flash, move-teksten en Mini Forest-muziek
+
+**Moves:**
+- Fixed: **Flash** verlaagde alleen Accuracy. De Atk- en Sp. Atk-drops werkten niet, omdat statusmoves geen `additionalEffects` uitvoeren; daarnaast stond de categorie op Special met 0 power (Ghost-types waren dan immuun en Taunt blokkeerde hem niet).
+- Flash is weer een statusmove met een eigen effect `EFFECT_FLASH` (naar het voorbeeld van Tickle): verlaagt Accuracy, Attack en Sp. Atk van het doelwit met 1. De AI kent het nieuwe effect ook.
+- Aurora Beam-beschrijving: "beam that lowers Attack." (effect is 100%).
+- Constrict-beschrijving: "Sharply lowers Speed." (Speed −2, 100%).
+- Tests toegevoegd: `test/battle/grounded/flash.c`.
+
+**Mini Forest:**
+- Muziek is nu **Viridian Forest** uit FireRed/LeafGreen (`MUS_RG_VIRIDIAN_FOREST`).
+
+**Muziek:**
+- Het Juan-gevecht op Route 129 (`TRAINER_REED`) gebruikt nu de **FRLG Gym Leader battle-muziek** (`MUS_RG_VS_GYM_LEADER`) in plaats van de rivaal-muziek (Juan heeft trainer class Rival).
+
+### [v.0.4.6] - Kricketune-learnset en Flash-AI
+
+**Kricketune:**
+- Fixed: de learnset uit v0.4.1 stond niet in de code. Nu wel, met één wijziging: **Twineedle** van lvl 25 naar **lvl 40** (60 BP × 2 hits met Technician was te sterk rond lvl 25).
+- Learnset: Fury Cutter (evo), Pin Missile (evo), Tackle, Fell Stinger, Growl, 14 Trailblaze, 18 Sing, 22 Focus Energy, 24 Power-Up Punch, 26 Slash, 28 Knock Off, 30 X-Scissor, 32 Dual Wingbeat, 34 Screech, 36 Leech Life, 38 Taunt, 40 Twineedle, 42 Night Slash, 44 Sticky Web, 46 Bug Buzz, 50 Perish Song.
+
+**Flash (AI):**
+- De AI telt bij Flash de Accuracy-drop plus de relevantste van Attack/Sp. Atk, zodat Flash niet zwaarder weegt dan Tickle (anders koos de AI Flash ook als zijn partner al Helping Hand gebruikte).
+
+### [v.0.4.7] - Fell Stinger later
+
+- **Kricketot:** Fell Stinger (lvl 6) vervangen door **Struggle Bug** (lvl 6).
+- **Kricketune:** Fell Stinger niet meer op lvl 1, maar op **lvl 26** (80 BP + Atk +3 bij KO was te sterk zo vroeg).
+
+### [v.0.4.8] - Trainer parties uit Firebase Studio samengevoegd
+
+- `src/data/trainers.party` vervangen door de nieuwere versie uit Firebase Studio (370 aangepaste trainers; in de repo stonden er maar 50, o.a. alle rivaal-parties ontbraken).
+- Daarbovenop opnieuw toegepast:
+    - Route 104 en Petalburg Woods naar lvl 10–13 (Route 116 stond al op 12–13; Karen's lvl 9-mons naar 12). Grappen blijven: Magikarp ongewijzigd, Ivan's Gyarados lvl 3, Lyle's Scizor en Yanmega lvl 6.
+    - Jody's Grumpig: Thick Fat → Simple.
+    - Brawly's Spinda: Huge Power → Pure Power.
+    - Winona's Swellow (lvl 38): Wind Rider-set @ Focus Sash (Tailwind / Brave Bird / U-turn / Aqua Jet) i.p.v. Choice Band / Gale Wings.
+    - Steven's Skarmory: Sturdy → Rough Skin.
+
+### [v.0.4.9] - Correctie Kricketot/Kricketune (gen_9.h)
+
+- De game gebruikt de learnsets uit `src/data/pokemon/level_up_learnsets/gen_9.h` (`P_LVL_UP_LEARNSETS` = GEN_LATEST). De wijzigingen van v0.4.6/v0.4.7 stonden per ongeluk in `gen_4.h` (heeft geen effect); die zijn teruggedraaid en nu in `gen_9.h` gezet.
+- De Kricketune-learnset uit v0.4.1 stond al wél in `gen_9.h`; alleen deze wijzigingen zijn nieuw:
+    - Kricketot: Fell Stinger (lvl 6) eruit, Struggle Bug van lvl 8 naar lvl 6.
+    - Kricketune: Fell Stinger van lvl 1 naar lvl 26, Twineedle van lvl 25 naar lvl 40.
+
+### [v.0.5.0] - Code gelijkgetrokken met de changelog
+
+De Pokémon-revisies uit deze changelog zijn leidend. Alle verschillen tussen changelog en code zijn rechtgezet (abilities, base stats, level-up learnsets in `gen_9.h`):
+
+- BLAZIKEN baseSpAttack 95->90
+- MIGHTYENA abilities ['INTIMIDATE', 'STRONG_JAW', 'MOXIE'] -> ['STRONG_JAW', 'INTIMIDATE', 'MOXIE']
+- WURMPLE abilities ['SHIELD_DUST', 'NONE', 'RUN_AWAY'] -> ['SHIELD_DUST', 'RUN_AWAY', 'RUN_AWAY']
+- BEAUTIFLY baseSpeed 80->75
+- LOTAD abilities ['SWIFT_SWIM', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'SWIFT_SWIM', 'OWN_TEMPO']
+- LOMBRE abilities ['SWIFT_SWIM', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'SWIFT_SWIM', 'OWN_TEMPO']
+- LUDICOLO abilities ['DANCER', 'RAIN_DISH', 'OWN_TEMPO'] -> ['RAIN_DISH', 'DANCER', 'WATER_COMPACTION']
+- SHIFTRY abilities ['WIND_RIDER', 'SNOW_WARNING', 'CHLOROPHYLL'] -> ['WIND_RIDER', 'SNOW_WARNING', 'EARLY_BIRD']
+- SHEDINJA baseSpAttack 80->30
+- SHEDINJA baseSpDefense 30->80
+- ABRA abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- KADABRA abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- ALAKAZAM abilities ['SYNCHRONIZE', 'MAGIC_GUARD', 'MAGIC_GUARD'] -> ['MAGIC_GUARD', 'SYNCHRONIZE', 'MAGIC_GUARD']
+- MAKUHITA abilities ['TECHNICIAN', 'GUTS', 'SHEER_FORCE'] -> ['GUTS', 'TECHNICIAN', 'SHEER_FORCE']
+- SKITTY abilities ['WONDER_SKIN', 'NORMALIZE', 'WONDER_SKIN'] -> ['NORMALIZE', 'WONDER_SKIN', 'WONDER_SKIN']
+- DELCATTY abilities ['WONDER_SKIN', 'NORMALIZE', 'WONDER_SKIN'] -> ['NORMALIZE', 'WONDER_SKIN', 'WONDER_SKIN']
+- ZUBAT abilities ['INNER_FOCUS', 'CORROSION', 'INFILTRATOR'] -> ['INNER_FOCUS', 'INFILTRATOR', 'INFILTRATOR']
+- CROBAT abilities ['INNER_FOCUS', 'CORROSION', 'INFILTRATOR'] -> ['INFILTRATOR', 'CORROSION', 'INFILTRATOR']
+- TENTACRUEL abilities ['MERCILESS', 'LIQUID_OOZE', 'RAIN_DISH'] -> ['LIQUID_OOZE', 'MERCILESS', 'RAIN_DISH']
+- SABLEYE baseSpeed 20->30
+- MAWILE abilities ['HYPER_CUTTER', 'INTIMIDATE', 'SHEER_FORCE'] -> ['INTIMIDATE', 'HYPER_CUTTER', 'SHEER_FORCE']
+- MEDICHAM baseHP 60->80
+- MANECTRIC abilities ['STATIC', 'TRANSISTOR', 'MINUS'] -> ['INTIMIDATE', 'TRANSISTOR', 'MINUS']
+- VILEPLUME abilities ['CHLOROPHYLL', 'CORROSION', 'EFFECT_SPORE'] -> ['EFFECT_SPORE', 'CORROSION', 'EFFECT_SPORE']
+- BELLOSSOM baseSpeed 50->55
+- BUDEW baseDefense 40->35
+- BUDEW baseSpeed 60->55
+- BUDEW abilities ['NATURAL_CURE', 'POISON_POINT', 'LEAF_GUARD'] -> ['NATURAL_CURE', 'MERCILESS', 'LEAF_GUARD']
+- ROSELIA baseDefense 45->50
+- ROSELIA baseSpeed 65->70
+- ROSERADE baseHP 60->65
+- ROSERADE baseSpeed 90->100
+- SWALOT baseHP 130->135
+- SWALOT abilities ['UNAWARE', 'STICKY_HOLD', 'GLUTTONY'] -> ['UNAWARE', 'GLUTTONY', 'GLUTTONY']
+- NUMEL abilities ['STORM_DRAIN', 'SIMPLE', 'OWN_TEMPO'] -> ['SIMPLE', 'STORM_DRAIN', 'OWN_TEMPO']
+- CAMERUPT abilities ['MAGMA_ARMOR', 'STORM_DRAIN', 'ANGER_POINT'] -> ['SOLID_ROCK', 'STORM_DRAIN', 'MAGMA_ARMOR']
+- WAILMER baseSpeed 60->55
+- WAILMER abilities ['UNAWARE', 'OBLIVIOUS', 'PRESSURE'] -> ['OBLIVIOUS', 'UNAWARE', 'PRESSURE']
+- SLUGMA abilities ['MAGMA_ARMOR', 'FLAME_BODY', 'WEAK_ARMOR'] -> ['MAGMA_ARMOR', 'FLAME_BODY', 'VITAL_SPIRIT']
+- MAGCARGO abilities ['DESOLATE_LAND', 'FLAME_BODY', 'WEAK_ARMOR'] -> ['FLAME_BODY', 'DESOLATE_LAND', 'WEAK_ARMOR']
+- GRIMER baseDefense 50->55
+- GRIMER baseSpDefense 50->55
+- GRIMER abilities ['STENCH', 'STICKY_HOLD', 'POISON_TOUCH'] -> ['STICKY_HOLD', 'POISON_TOUCH', 'TOXIC_CHAIN']
+- MUK baseAttack 105->115
+- MUK baseDefense 75->85
+- MUK baseSpDefense 100->120
+- MUK abilities ['TOXIC_CHAIN', 'STICKY_HOLD', 'POISON_TOUCH'] -> ['STICKY_HOLD', 'POISON_TOUCH', 'TOXIC_CHAIN']
+- GRUMPIG abilities ['SIMPLE', 'MAGIC_BOUNCE', 'GLUTTONY'] -> ['SIMPLE', 'MAGIC_BOUNCE', 'THICK_FAT']
+- SKARMORY abilities ['FILTER', 'ROUGH_SKIN', 'WEAK_ARMOR'] -> ['ROUGH_SKIN', 'FILTER', 'STURDY']
+- CLAYDOL baseSpeed 60->75
+- CRADILY baseSpDefense 107->117
+- ARMALDO baseSpAttack 70->60
+- MILOTIC baseAttack 70->60
+- STARYU abilities ['VOLT_ABSORB', 'NATURAL_CURE', 'ANALYTIC'] -> ['NATURAL_CURE', 'VOLT_ABSORB', 'ANALYTIC']
+- STARMIE baseAttack 75->60
+- STARMIE baseSpAttack 100->115
+- BANETTE abilities ['PRANKSTER', 'FRISK', 'CURSED_BODY'] -> ['PRANKSTER', 'INSOMNIA', 'CURSED_BODY']
+- DUSKULL baseSpAttack 30->50
+- DUSKNOIR baseAttack 100->120
+- PSYDUCK abilities ['SWIFT_SWIM', 'CLOUD_NINE', 'SWIFT_SWIM'] -> ['CLOUD_NINE', 'SWIFT_SWIM', 'SWIFT_SWIM']
+- GOLDUCK abilities ['SWIFT_SWIM', 'CLOUD_NINE', 'SWIFT_SWIM'] -> ['CLOUD_NINE', 'SWIFT_SWIM', 'SWIFT_SWIM']
+- FARIGIRAF abilities ['CUD_CHEW', 'ARMOR_TAIL', 'SAP_SIPPER'] -> ['ARMOR_TAIL', 'CUD_CHEW', 'SAP_SIPPER']
+- PHANPY abilities ['PICKUP', 'STURDY', 'SAND_VEIL'] -> ['STURDY', 'PICKUP', 'SAND_VEIL']
+- GLALIE abilities ['REFRIGERATE', 'ICE_BODY', 'MOODY'] -> ['ICE_BODY', 'REFRIGERATE', 'MOODY']
+- HUNTAIL baseAttack 104->114
+- RELICANTH abilities ['STURDY', 'ROCK_HEAD', 'STURDY'] -> ['ROCK_HEAD', 'STURDY', 'STAMINA']
+- CHINCHOU baseDefense 38->45
+- CHINCHOU baseSpDefense 56->55
+- LANTURN baseAttack 58->40
+- LANTURN abilities ['VOLT_ABSORB', 'ILLUMINATE', 'WATER_ABSORB'] -> ['VOLT_ABSORB', 'WATER_ABSORB', 'WATER_ABSORB']
+- METANG abilities ['CLEAR_BODY', 'NONE', 'LIGHT_METAL'] -> ['CLEAR_BODY', 'LIGHT_METAL', 'LIGHT_METAL']
+- METAGROSS abilities ['CLEAR_BODY', 'NONE', 'LIGHT_METAL'] -> ['CLEAR_BODY', 'LIGHT_METAL', 'LIGHT_METAL']
+- DEWGONG abilities ['THICK_FAT', 'PIXILATE', 'ICE_BODY'] -> ['THICK_FAT', 'ICE_BODY', 'PIXILATE']
+- DUDUNSPARCE_TWO_SEGMENT types -> ['TYPE_NORMAL', 'TYPE_GROUND']
+- DUDUNSPARCE_TWO_SEGMENT abilities ['SERENE_GRACE', 'RUN_AWAY', 'RATTLED'] -> ['SERENE_GRACE', 'INFILTRATOR', 'RATTLED']
+- HYPNO baseDefense 70->85
+- HYPNO baseSpeed 67->52
+- HYPNO abilities ['BAD_DREAMS', 'FOREWARN', 'INNER_FOCUS'] -> ['FOREWARN', 'BAD_DREAMS', 'DARK_AURA']
+- VENOMOTH abilities ['SHIELD_DUST', 'TINTED_LENS', 'WONDER_SKIN'] -> ['SHIELD_DUST', 'TINTED_LENS', 'MAGIC_GUARD']
+- FARFETCHD baseSpAttack 58->48
+- FARFETCHD baseSpeed 101->91
+- LEDIAN baseSpAttack 55->35
+- LEDIAN baseSpeed 85->100
+- POLITOED baseSpeed 70->65
+- DUDUNSPARCE_THREE_SEGMENT types -> ['TYPE_NORMAL', 'TYPE_GROUND']
+- DUDUNSPARCE_THREE_SEGMENT abilities ['SERENE_GRACE', 'RUN_AWAY', 'RATTLED'] -> ['SERENE_GRACE', 'INFILTRATOR', 'RATTLED']
+- GENGAR abilities -> Cursed Body, Perish Body
+- NUZLEAF learnset vervangen (16 moves)
+- LOUDRED learnset vervangen (15 moves)
+- LAIRON learnset vervangen (14 moves)
+- LINOONE_GALAR learnset vervangen (20 moves)
+- OBSTAGOON learnset vervangen (25 moves)
+- ZIGZAGOON_GALAR learnset vervangen (16 moves)
+- TRAPINCH learnset vervangen (14 moves)
+- CACNEA learnset vervangen (15 moves)
+- ZANGOOSE learnset vervangen (17 moves)
+- CORPHISH learnset vervangen (16 moves)
+- CRAWDAUNT learnset vervangen (21 moves)
+- SNORUNT learnset vervangen (12 moves)
+- GLALIE learnset vervangen (23 moves)
+- FARFETCHD learnset vervangen (23 moves)- Emolga (Brawly-balans): Shock Wave op lvl 18 en Air Cutter op lvl 20.
+- Tikfouten in de changelog-learnsets omgezet: `MOVE_LEAR` → Leer (Zangoose), `MOVE_NATURE_MADNESS` → Nature's Madness (Nuzleaf).
+- Niet aangepast (vraag open): Medicham lvl 50 "Pure Pulse" bestaat niet als move (code heeft Dragon Pulse); Spoink staat in de revisie als pure Psychic, maar in v0.2.0-TYPES als Psychic/Normal (code: Psychic/Normal).
+- Castform klopte al (normale vorm SpAtk/Speed 80, weervormen 110 — bewust).
+
+**Trainer-abilities gerepareerd** (ability bestond niet voor de soort, viel stil terug op slot 1):
+- Virgil's Sigilyph: Magic Bounce → Magic Guard.
+- Sylvia's Venomoth: Magic Guard is nu geldig (Venomoth hidden ability = Magic Guard volgens de revisie).
+- Karen's Tandemaus: Technician → Pickup.
+- Maxie's Tyranitar (Mossdeep): Sand Rush → Sand Stream.
+
+### [v.0.5.1] - Open vragen v.0.5.0 beantwoord
+- Medicham: "Pure Pulse" in de changelog was een fout (bestaat niet); lvl 50 blijft Dragon Pulse.
+- Spoink: definitief Psychic/Normal (zoals in de code).
+
+### [v.0.5.2] - Trainerkop Marcos gerepareerd
+- `=== TRAINER_MARCOS===` → `=== TRAINER_MARCOS ===` in `trainers.party` (spatie ontbrak).
+
+### [v.0.5.3] - Trainer parties groep 1 (Route 103-oost, 109, 110, 117) + Winona
+Uitgangspunt: gelijk niveau aan de eigen trainers op dezelfde route, meer variatie (weinig gebruikte soorten erbij, veelgebruikte zoals Wingull/Marill/Tentacool/Machop/Meditite/Makuhita eruit), thema grounded maar mag out of the box. Trainers die al niet-Emerald Pokémon hadden (Daisy, Miguel, Amy & Liv) blijven zoals ze zijn.
+- Rhett (Black Belt): Timburr, Tyrogue, Crabrawler lv 21
+- Pete (Swimmer): Floatzel, Clawitzer, Cramorant lv 30 (Surf-gebied)
+- Isabelle (Swimmer): Swanna, Lumineon, Palpitoad lv 30 (Surf-gebied)
+- Huey (Sailor): Wingull, Binacle, Mareanie lv 17
+- Edmond (Sailor): Buizel, Chewtle, Clauncher lv 17
+- Hailey (Tuber): Psyduck, Munchlax (drijft toch wel), Dewpider lv 16
+- Chandler (Tuber): Zigzagoon met Surf, Horsea, Bidoof lv 16
+- Dwayne (Sailor, Seashore House): Slowpoke, Wishiwashi, Mudbray lv 17
+- Edwin (Collector): Sinistea, Sandygast, Tinkatink lv 20
+- Kaleb (Pokéfan): Minun/Plusle lv 20 + Pawmi lv 20
+- Joseph (Guitarist): Tynamo, Voltorb en een amuzikale Bonsly lv 20
+- Sally (Lass, Trick House 1): Oddish, Fomantis, Cutiefly lv 19
+- Robin (Lass, Trick House 1): Skitty, Fidough, Flabébé lv 19
+- Isaac (Breeder): babyteam Elekid, Magby, Smoochum, Wynaut, Mime Jr., Chingling lv 20
+- Lydia (Breeder): Wooloo, Lechonk, Smoliv, Nymble, Skwovet, Rookidee lv 20
+- Melina (Triathlete): Doduo, Blitzle, Ponyta lv 21
+- Brandi (Psychic): Ralts, Natu, Solosis lv 21
+- Aisha (Battle Girl): Mienfoo, Stufful, Scraggy lv 21
+- Winona: levels +4 (nu 41–43); Fortree-gymtrainers +3 (Jared, Humberto, Edwardo, Flint, Ashley, Darius)

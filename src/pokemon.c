@@ -362,6 +362,7 @@ static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(RAYQUAZA),
     HOENN_TO_NATIONAL(JIRACHI),
     HOENN_TO_NATIONAL(DEOXYS),
+    HOENN_TO_NATIONAL(CELEBI),
 };
 
 const struct SpindaSpot gSpindaSpotGraphics[] =
@@ -6111,6 +6112,11 @@ u16 GetBattleBGM(void)
             trainerClass = TRAINER_CLASS_EXPERT;
         else
             trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+
+        // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+         && TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED)
+            return MUS_RG_VS_GYM_LEADER;
 
         switch (trainerClass)
         {

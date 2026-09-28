@@ -734,7 +734,8 @@ PetalburgCity_Text_WaterReflection:
 	.string "You know, the one where the CGI looks\n"
 	.string "like a wet Poochyena dingleberry?\p"
 	.string "Is my life just a mid-tier Netflix\n"
-	.string "original with a 40% Rotten Tomatoes score?$"
+	.string "original with a 40% Rotten\l"
+	.string "Tomatoes score?$"
 
 PetalburgCity_Text_FullPartyExplanation:
 	.string "Let's say you have six POKéMON.\n"

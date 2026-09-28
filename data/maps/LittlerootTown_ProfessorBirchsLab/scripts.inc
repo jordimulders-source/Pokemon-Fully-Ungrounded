@@ -696,7 +696,8 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "Wait, you don't have it?\n"
 	.string "CHEAPO! WELL, HERE YOU GO!\p"
 	.string "AREN'T YOU PROUD?\p"
-	.string "{PLAYER} reluctantly received the {STR_VAR_1}!$"
+	.string "{PLAYER} reluctantly received\n"
+	.string "the {STR_VAR_1}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 	.string "PROF. BIRCH: While you're at it, why\n"

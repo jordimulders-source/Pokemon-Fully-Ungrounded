@@ -16,3 +16,21 @@ AbandonedShip_Rooms_B1F_Text_GettingQueasy:
 	.string "this ship…\p"
 	.string "It's not even moving, but…$"
 
+
+@ Project Grounded: eenmalige Muk in de prullenbak naast de zeezieke man.
+AbandonedShip_Rooms_B1F_EventScript_TrashCan::
+	goto_if_set FLAG_SHIP_MUK_ENCOUNTERED, EventScript_EmptyTrashCan
+	lock
+	msgbox AbandonedShip_Rooms_B1F_Text_TrashCanBubbles, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SHIP_MUK_ENCOUNTERED
+	playmoncry SPECIES_MUK, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MUK, 32
+	dowildbattle
+	release
+	end
+
+AbandonedShip_Rooms_B1F_Text_TrashCanBubbles:
+	.string "The trash can is bubbling…$"

@@ -14621,3 +14621,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Dartrix → Hisuian Decidueye: level 34 of hoger op Route 119 (elders gewone Decidueye op level 34).
 - Dimensional Warp: beschrijving ingekort naar "Summons Trick Room." (de oude tekst paste niet in het samenvattingsscherm).
 - Champion Steven: Empoleon krijgt Knock Off i.p.v. Roar.
+
+### [v.0.6.3] - Verstopte Pokémon in prullenbakken op het Abandoned Ship
+- Opslagruimte B1F (achter de deur met de Storage Key): de prullenbak verbergt een Spiritomb lv 45. Hij komt terug tot je hem vangt (FLAG_CAUGHT_SHIP_SPIRITOMB).
+- Kamer naast de zeezieke man (B1F): de prullenbak verbergt eenmalig een Muk lv 32 (FLAG_SHIP_MUK_ENCOUNTERED).
+- Placeholder-teksten: "Something inside the trash can is whispering…" en "The trash can is bubbling…".

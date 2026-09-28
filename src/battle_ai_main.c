@@ -1625,6 +1625,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_DEF))
                 ADJUST_SCORE(-8);
             break;
+        case EFFECT_FLASH:
+            if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ACC)
+             && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
+             && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_VENOM_DRENCH:
             if (!(gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
             {
@@ -5165,6 +5171,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_DEF));
         break;
+    case EFFECT_FLASH:
+        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ACC));
+        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
+        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPATK));
+        break;
     case EFFECT_COSMIC_POWER:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
@@ -6102,6 +6113,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_INGRAIN:
     case EFFECT_IMPRISON:
     case EFFECT_TICKLE:
+    case EFFECT_FLASH:
     case EFFECT_COSMIC_POWER:
     case EFFECT_BULK_UP:
     case EFFECT_CALM_MIND:
@@ -6417,6 +6429,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_PSYCH_UP:
             case EFFECT_MIRROR_COAT:
             case EFFECT_TICKLE:
+            case EFFECT_FLASH:
             case EFFECT_SUNNY_DAY:
             case EFFECT_SANDSTORM:
             case EFFECT_HAIL:
@@ -6483,6 +6496,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_PERISH_SONG:
             case EFFECT_SAFEGUARD:
             case EFFECT_TICKLE:
+            case EFFECT_FLASH:
             case EFFECT_COSMIC_POWER:
             case EFFECT_BULK_UP:
             case EFFECT_CALM_MIND:

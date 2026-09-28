@@ -4338,6 +4338,36 @@ BattleScript_TickleTryLowerDef::
 BattleScript_TickleEnd::
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Flash verlaagt Accuracy, Attack en Sp. Atk van het doelwit (naar het voorbeeld van Tickle)
+BattleScript_EffectFlash::
+	attackcanceler
+	jumpifstat BS_TARGET, CMP_GREATER_THAN, STAT_ACC, MIN_STAT_STAGE, BattleScript_FlashDoMoveAnim
+	jumpifstat BS_TARGET, CMP_GREATER_THAN, STAT_ATK, MIN_STAT_STAGE, BattleScript_FlashDoMoveAnim
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPATK, MIN_STAT_STAGE, BattleScript_CantLowerMultipleStats
+BattleScript_FlashDoMoveAnim::
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	attackanimation
+	waitanimation
+	setstatchanger STAT_ACC, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_FlashTryLowerAtk, BIT_ATK | BIT_SPATK
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_FlashTryLowerAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FlashTryLowerAtk::
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_FlashTryLowerSpAtk, BIT_SPATK
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_FlashTryLowerSpAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FlashTryLowerSpAtk::
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_FlashEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_FlashEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FlashEnd::
+	goto BattleScript_MoveEnd
+
 BattleScript_CantLowerMultipleStats::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

@@ -1760,7 +1760,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Aurora Beam"),
         .description = COMPOUND_STRING(
             "Fires a rainbow-colored\n"
-            "beam that may lower Attack."),
+            "beam that lowers Attack."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ICE,
@@ -3606,7 +3606,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Constrict"),
         .description = COMPOUND_STRING(
             "Constricts to inflict pain.\n"
-            "May lower Speed."),
+            "Sharply lowers Speed."),
         .effect = EFFECT_HIT,
         .power = 10,
         .type = TYPE_NORMAL,
@@ -4051,24 +4051,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Blinds the foe to cut\n"
             "Acc, Atk, and Sp. Atk."),
-        .effect = EFFECT_ACCURACY_DOWN,
+        .effect = EFFECT_FLASH, // Project Grounded: verlaagt Accuracy, Attack en Sp. Atk
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS(
-            {
-                .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-                .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-            },
-            {
-                .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-                .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-            }
-        ),
+        .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,

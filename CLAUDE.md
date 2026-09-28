@@ -12,6 +12,10 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) zijn bewust weggelaten.
 - **National Dex** is vanaf het begin beschikbaar.
 
+## Speelervaring
+- Filosofie à la Shin Megami Tensei / Slay the Spire: gevechten mogen pittig zijn, maar de speler krijgt veel tools en mogelijkheden om ze op te lossen.
+- Move-aanpassingen gebeuren per move; er is geen algemene regel (zoals "altijd 100% bijeffect").
+
 ## Samenwerken
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
@@ -36,3 +40,4 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - Bouwen: `make -j4` (moet zonder fouten slagen vóór elke push).
 - `make check` (CI-job `build`) faalt ook op `master`, met honderd-en-zoveel tests die de bewust gewijzigde mechanics en soorten niet meer verwachten. Nieuwe failures ten opzichte van master zijn wel een probleem.
 - Werk op een branch en open een PR naar `master`.
+- Meld de bekende, al bestaande `make check`-failures niet aan Jordi; alleen nieuwe failures die door een wijziging komen zijn het vermelden waard.

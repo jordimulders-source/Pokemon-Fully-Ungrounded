@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE102_MINI_FOREST",
   "name": "Route102_MiniForest",
   "layout": "LAYOUT_ROUTE102_MINI_FOREST",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_ROUTE_102",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

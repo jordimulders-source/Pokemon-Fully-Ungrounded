@@ -14238,3 +14238,15 @@ Alle evolution items in Lilycove Dept Store toegevoegd, behalve de appels.
 - Fixed: **Acid** verlaagde Def en Sp. Def van de gebruiker in plaats van de tegenstander. Oorzaak: `MOVE_EFFECT_DEF_SPDEF_DOWN` is het Close Combat-effect en werkt altijd op de gebruiker. Acid gebruikt nu twee losse effecten (`DEF_MINUS_1` + `SP_DEF_MINUS_1`, beide 100%) op het doelwit.
 - Acid-beschrijving: "Lowers Def. and Sp. Def."
 - Test toegevoegd: `test/battle/grounded/acid.c`.
+
+### [v.0.4.5] - Flash, move-teksten en Mini Forest-muziek
+
+**Moves:**
+- Fixed: **Flash** verlaagde alleen Accuracy. De Atk- en Sp. Atk-drops werkten niet, omdat statusmoves geen `additionalEffects` uitvoeren; daarnaast stond de categorie op Special met 0 power (Ghost-types waren dan immuun en Taunt blokkeerde hem niet).
+- Flash is weer een statusmove met een eigen effect `EFFECT_FLASH` (naar het voorbeeld van Tickle): verlaagt Accuracy, Attack en Sp. Atk van het doelwit met 1. De AI kent het nieuwe effect ook.
+- Aurora Beam-beschrijving: "beam that lowers Attack." (effect is 100%).
+- Constrict-beschrijving: "Sharply lowers Speed." (Speed −2, 100%).
+- Tests toegevoegd: `test/battle/grounded/flash.c`.
+
+**Mini Forest:**
+- Muziek is nu **Viridian Forest** uit FireRed/LeafGreen (`MUS_RG_VIRIDIAN_FOREST`).

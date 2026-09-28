@@ -126,7 +126,11 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 5, 9);
+    // Project Grounded: start voor de deur van je eigen huis (Brendan links, May rechts)
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 5, 9);
+    else
+        SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 14, 9);
     WarpIntoMap();
 }
 
@@ -227,6 +231,7 @@ void NewGameInitData(void)
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK);
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
+    EnableNationalPokedex(); // Project Grounded: National Dex vanaf het begin
 
     WarpToTruck();
 

@@ -51,6 +51,18 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_MAGMARIZER
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_REAPER_CLOTH
+	.2byte ITEM_PSYCHIC_SEED
+	.2byte ITEM_OVAL_STONE
+	.2byte ITEM_SACHET
+	.2byte ITEM_WHIPPED_DREAM
+	.2byte ITEM_STRAWBERRY_SWEET
+	.2byte ITEM_BERRY_SWEET
+	.2byte ITEM_LOVE_SWEET
+	.2byte ITEM_STAR_SWEET
+	.2byte ITEM_CLOVER_SWEET
+	.2byte ITEM_FLOWER_SWEET
+	.2byte ITEM_RIBBON_SWEET
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight::
@@ -80,6 +92,7 @@ LilycoveCity_DepartmentStore_2F_Pokemart2:
 	.2byte ITEM_DUSK_STONE
 	.2byte ITEM_DAWN_STONE
 	.2byte ITEM_ICE_STONE
+	.2byte ITEM_SHINY_STONE
 	.2byte ITEM_UNREMARKABLE_TEACUP
 	.2byte ITEM_MASTERPIECE_TEACUP
 	.2byte ITEM_BLACK_AUGURITE

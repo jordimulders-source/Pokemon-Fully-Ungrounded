@@ -289,7 +289,7 @@ Route103_EventScript_Isabelle::
 Route103_Text_MayRoute103Pokemon:
 	.string "MAY: BURP, BARF! Ugh I really\n"
 	.string "shouldn't have gone for that\l"
-	.string "second bottle of wine....\n"
+	.string "second bottle of wine....\l"
 	.string "Oh, hi {PLAYER}...$"
 
 Route103_Text_MayLetsBattle:

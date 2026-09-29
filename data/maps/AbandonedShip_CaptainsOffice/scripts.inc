@@ -30,12 +30,13 @@ AbandonedShip_CaptainsOffice_Text_NoSuccessFindingScanner:
 
 AbandonedShip_CaptainsOffice_Text_OhCanYouDeliverScanner:
 	.string "Oh! That's a SCANNER!\p"
-	.string "Listen, can I get you to deliver that\n"
-	.string "to CAPT. STERN?\p"
-	.string "I want to investigate this ship a\n"
-	.string "little more.$"
+	.string "Listen, can I get you to deliver that to\n"
+	.string "CAPT. STERN?\p"
+	.string "I want to investigate this ship a little\n"
+	.string "more. Yaaaawn. ZZZZZ$"
 
 AbandonedShip_CaptainsOffice_Text_ThisIsSSCactus:
-	.string "This ship is called S.S. CACTUS.\n"
-	.string "It seems to be from an earlier era.$"
+	.string "This ship is called S.S. STURMMOBIL. It\n"
+	.string "seems to be from an earlier era.\l"
+	.string "Probably rightfully sunk.$"
 

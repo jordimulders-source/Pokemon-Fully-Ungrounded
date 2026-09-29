@@ -254,7 +254,7 @@ MossdeepCity_Gym_EventScript_Macey::
 	end
 
 MossdeepCity_Gym_EventScript_Clifford::
-	trainerbattle_single TRAINER_CLIFFORD, MossdeepCity_Gym_Text_CliffordIntro, MossdeepCity_Gym_Text_CliffordDefeat
+	trainerbattle_double TRAINER_CLIFFORD, MossdeepCity_Gym_Text_CliffordIntro, MossdeepCity_Gym_Text_CliffordDefeat, MossdeepCity_Gym_Text_CliffordNotEnoughMons
 	msgbox MossdeepCity_Gym_Text_CliffordPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -520,6 +520,10 @@ MossdeepCity_Gym_Text_CliffordIntro:
 MossdeepCity_Gym_Text_CliffordDefeat:
 	.string "Ah, you overflow with the power\n"
 	.string "of youth!$"
+
+MossdeepCity_Gym_Text_CliffordNotEnoughMons:
+	.string "A double battle with only one\n"
+	.string "POKéMON? Come back with two.$"
 
 MossdeepCity_Gym_Text_CliffordPostBattle:
 	.string "It seems that I could not overcome\n"

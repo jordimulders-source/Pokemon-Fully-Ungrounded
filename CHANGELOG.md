@@ -14432,3 +14432,204 @@ Uitgangspunt: gelijk niveau aan de eigen trainers op dezelfde route, meer variat
 - Brandi (Psychic): Ralts, Natu, Solosis lv 21
 - Aisha (Battle Girl): Mienfoo, Stufful, Scraggy lv 21
 - Winona: levels +4 (nu 41–43); Fortree-gymtrainers +3 (Jared, Humberto, Edwardo, Flint, Ashley, Darius)
+
+### [v.0.5.4] - Trainer parties groep 1 bijgewerkt, groep 2, rematches geschaald
+**Groep 1 bijgewerkt**
+- Hailey: + Pawmo. Chandler: Sentret met Surf, Galar Zigzagoon met Surf, Horsea, Bibarel. Joseph: Drowzee i.p.v. Bonsly.
+- Evoluties passend bij level: Rhett Tyrogue → Hitmonlee, Kaleb Pawmi → Pawmo, Robin Flabébé → Floette, Isaac Wynaut → Wobbuffet en Chingling → Chimecho, Lydia Lechonk → Oinkologne en Rookidee → Corvisquire, Brandi Ralts → Kirlia.
+
+**Groep 2 (Route 111, 112, 113, 114, Jagged Pass)**
+- Irene: Steenee, Pumpkaboo, Teddiursa 22 · Tyron: Rockruff, Growlithe, Drilbur 22 · Celina: Comfey, Eldegoss, Skiploom 22 · Bianca: Cherubi, Trumbeak, Ledian 22 · Hayden: Sizzlipede, Fletchinder, Houndour 22
+- Heidi: Passimian, Greedent, Helioptile 28 · Becky: Azumarill, Mr. Mime, Skorupi 28 · Bryan: Golett, Cofagrigus, Naclstack 28 · Celia: Swirlix, Diggersby, Vespiquen 27 · Branden: Noctowl, Ariados, Zorua 27
+- Carol: Spidops, Lombre, Cottonee, Herdier 24 · Brice: Roggenrola, Cufant, Carkol 24 · Trent: Geodude, Alolan Geodude, 2× Graveler 24 · Bryant: Slugma, Litleo, Hisuian Growlithe 24 · Shayla: Petilil, Sunkern, Parasect 24
+- Diana: Swablu, Hattrem, Noibat 26 · Julio: Magnemite, Zebstrika, Galvantula 26 · Eric: Boldore, Rhyhorn, Donphan 26
+- Madeline: Lombre, Oricorio, Weepinbell 24 · Tori & Tia: 4× Spinda 24 · Sophie: Cubchoo, Snover, Bergmite 24 (dialoog: zij denkt dat het sneeuwt — nog te schrijven) · Coby: Corvisquire, Trumbeak, Rufflet 24 · Lawrence: Gumshoos, Thievul, Alolan Sandslash 24 · Wyatt: Tyrunt, Amaura, Shieldon 24
+- Nancy: Quagsire, Swadloon, Ivysaur 24 · Lenny: Sudowoodo, Naclstack, Mudbray 24 · Lucas: Hippopotas, Graveler, Swinub 24 · Tyra & Ivy: Roselia, Graveler, Clodsire, Sawk, Squawkabilly, Frosmoth 24–25 · Angelina: Frogadier, Tympole, Poliwag 24 · Kai: 3× Wishiwashi 19 (geen schooling; dialoog nog te schrijven) · Charlotte: Shroodle, Stantler, Pikachu 24
+
+**Rematches geschaald (281 teams)**
+- Elke rematch krijgt het team van de eerste versie, met evoluties passend bij het level en per ronde +1 Pokémon (max 6). Extra Pokémon komen uit de gymtrainers (bij gymleiders) of de wilde Pokémon van de route; legendaries/mythicals/paradox en veelvoorkomende soorten zijn uitgesloten.
+- Level = vanilla-rematchlevel + dezelfde marge als de eerste versie (4–8); gymleiders +12 (rematches zijn post-game).
+- Miguel_4: kattenteam (zoals Miguel_5) op lvl 36.
+- Behouden: Calvin, Gabby & Ty, Miguel_2/3/5, Isaiah_2, Amy & Liv_2 (eigen ontwerp).
+- Trainers waarvan de eerste versie nog vanilla is, krijgen hun rematches opnieuw zodra hun eerste versie is aangepast.
+
+### [v.0.5.5] - Alle overige trainers aangepast
+Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route, evoluties passend bij het level, variatie, serieus; grappen blijven voor Jordi). Grap-trainers ongemoeid: Colton, Roger, Darian. Magikarp-levels ongewijzigd (Chris).
+
+- Duncan: Gurdurr, Sealeo, Clawitzer lv 31
+- Garrison: Onix, Crustle, Bronzong lv 31
+- Kira And Dan: Volbeat, Illumise, Nidorina, Nidorino lv 31
+- John And Jay: Medicham, Hariyama, Gallade, Pangoro lv 42
+- Dez And Luke: Delcatty, Mightyena, Dewgong, Whimsicott lv 35
+- Cedric: Wobbuffet, Bronzong, Gothitelle, Hattrem lv 37
+- Beverly: Floatzel, Lumineon, Jellicent lv 31
+- Imani: Lanturn, Shellder, Bruxish lv 31
+- Andres: Baltoy, Krokorok, Hippowdon lv 31
+- Josue: Tranquill, Staravia, Fletchinder lv 31
+- Kyla: Seel, Quagsire, Octillery lv 30
+- Denise: Shellos, Horsea, Corsola lv 30
+- Beth: Poliwhirl, Palpitoad, Masquerain lv 30
+- Lisa And Ray: Clauncher, Kingler, Crawdaunt, Binacle lv 30
+- Camron: Staryu, Finizen, Barraskewda lv 30
+- Tara: Seel, Clamperl, Sealeo lv 31
+- Missy: Jellicent, Mareanie, Qwilfish lv 31
+- Cory: Toxicroak, Golisopod, Crabominable lv 31
+- Carolina: Luxray, Staravia, Growlithe, Mudsdale lv 31
+- Alice: Golduck, Finneon, Slowpoke lv 30
+- Mel And Paul: Dustox, Beautifly, Vivillon, Ribombee lv 30
+- Elijah: Skarmory, Murkrow, Doduo lv 30
+- Alyssa: Magnemite, Luxio, Flaaffy lv 20
+- Martha: Swablu, Fomantis, Shiinotic lv 29
+- Alan: Nosepass, Rhyhorn, Boldore, Krokorok lv 29
+- Cora: Mienshao, Pancham, Hawlucha lv 31
+- Paula: Breloom, Scrafty, Hitmontop lv 31
+- Benny: Swanna, Staraptor, Toucannon, Honchkrow lv 44
+- Sebastian: Cacturne, Leavanny, Tsareena, Trevenant lv 44
+- Sophia: Altaria, Lilligant, Whimsicott, Bellossom lv 44
+- Patricia: Banette, Mismagius, Gourgeist, Polteageist lv 46
+- Mariela: Chimecho, Espeon, Musharna lv 46
+- Alvaro: Bronzong, Gallade, Metagross lv 46
+- Everett: Wobbuffet, Persian, Arcanine, Farigiraf lv 46
+- Vincent: Sableye, Medicham, Sharpedo, Krookodile, Toxicroak lv 52
+- Leroy: Mawile, Starmie, Heracross, Excadrill, Chandelure lv 52
+- Keira: Aggron, Luxray, Steelix, Salamence lv 52
+- Cyndy: Mankey, Hawlucha, Timburr lv 24
+- Hector: Seviper, Mawile, Carbink, Stunfisk lv 24
+- Marlene: Spoink, Espurr, Munna lv 24
+- Kyra: Dodrio, Rapidash, Scolipede lv 33
+- Jaiden: Frogadier, Weavile, Swalot lv 33
+- Alix: Gardevoir, Gothorita, Duosion lv 33
+- Helene: Scrafty, Throh, Bewear lv 33
+- Deandre: Raticate, Aron, Trumbeak lv 21
+- Jackson: Breloom, Gogoat, Tangrowth lv 33
+- Catherine: Vileplume, Venomoth, Whimsicott lv 33
+- Doug: Escavalier, Araquanid, Beedrill lv 33
+- Greg: Galvantula, Swadloon, Vikavolt lv 33
+- Kent: Drapion, Larvesta, Armaldo lv 33
+- Hideo: Skrelp, Skuntank, Accelgor lv 33
+- Chris: Magikarp, Whiscash, Octillery, Poliwrath lv 33
+- Fabian: Toxtricity_Amped, Kricketune, Noibat lv 33
+- Dayton: Arcanine, Darmanitan_Standard, Salazzle lv 33
+- Rachel: Jumpluff, Castform, Swanna lv 33
+- Clarissa: Cherrim_Overcast, Sealeo, Tropius lv 35
+- Angelica: Castform, Sunflora, Torkoal lv 35
+- Lorenzo: Shiftry, Leavanny, Deerling lv 35
+- Jenna: Ludicolo, Tropius, Torterra lv 35
+- Keigo: Bisharp, Liepard, Weezing lv 35
+- Riley: Shedinja, Gliscor, Zoroark lv 35
+- Leonel: Magnezone, Tinkatuff, Tauros, Heliolisk lv 35
+- Callie: Annihilape, Toxicroak, Gurdurr lv 35
+- Cale: Durant, Kricketune, Butterfree lv 35
+- Myles: Tauros, Miltank, Mudsdale, Dubwool, Wyrdeer, Oinkologne_M lv 33
+- Pat: Stoutland, Jolteon, Furret, Delcatty, Liepard, Cinccino lv 33
+- Cristin: Exploud, Vigoroth, Ursaluna, Farigiraf lv 35
+- Braxton: Staraptor, Vibrava, Magnezone, Shiftry, Poliwrath lv 35
+- Wendy: Mawile, Florges, Swanna, Lurantis lv 35
+- Miu And Yuki: Beautifly, Dustox, Lokix, Vespiquen lv 35
+- Jazmyn: Houndoom, Zoroark, Honchkrow lv 35
+- Jonas: Frogadier, Scizor, Weezing lv 35
+- Kayley: Castform, Politoed, Bellossom lv 35
+- Davis: Pinsir, Escavalier, Crustle lv 35
+- Jenny: Lapras, Huntail, Mantine lv 39
+- Grace: Seismitoad, Dewgong, Shellos lv 39
+- Isabella: Starmie, Palafin_Zero, Drednaw lv 39
+- Lila And Roy: Lanturn, Sharpedo, Kingdra, Relicanth lv 39
+- Tanya: Alomomola, Lumineon, Bruxish lv 39
+- Sharon: Shellos, Whiscash, Clawitzer lv 39
+- Ernest: Conkeldurr, Sealeo, Barbaracle lv 39
+- Auron: Machamp, Ampharos, Excadrill, Tauros lv 39
+- Kim And Iris: Altaria, Camerupt, Togekiss, Wigglytuff lv 39
+- Nikki: Walrein, Dewgong, Cloyster lv 40
+- Brenda: Kingler, Octillery, Lumineon lv 40
+- Sienna: Alomomola, Corsola, Mantine lv 40
+- Leonardo: Sharpedo, Barraskewda, Floatzel lv 40
+- Athena: Luxray, Obstagoon, Umbreon, Heliolisk lv 39
+- Jonah: Sharpedo, Whiscash, Qwilfish, Relicanth lv 39
+- Henry: Barraskewda, Huntail, Stunfisk_Galar lv 39
+- Koji: Machamp, Hitmonlee, Pangoro lv 39
+- Aidan: Skarmory, Staraptor, Talonflame, Unfezant lv 39
+- Carlee: Cloyster, Eiscue, Frosmoth lv 41
+- Harrison: Tentacruel, Golisopod, Dhelmise lv 41
+- Alexa: Vileplume, Azumarill, Florges, Toxapex lv 41
+- Ruben: Shiftry, Probopass, Krookodile, Mamoswine lv 41
+- Wayne: Wailord, Drednaw, Basculin lv 41
+- Clarence: Sharpedo, Crawdaunt, Samurott lv 40
+- Tisha: Lanturn, Starmie, Milotic lv 40
+- Katie: Dewgong, Gorebyss, Lumineon lv 40
+- Susie: Jellicent, Clawitzer, Pyukumuku lv 40
+- Kara: Tentacruel, Bruxish, Cramorant lv 40
+- Reli And Ian: Azumarill, Pelipper, Swanna, Golduck lv 40
+- Dana: Azumarill, Lumineon, Palafin_Zero lv 40
+- Paxton: Breloom, Lucario, Heracross, Hitmonchan lv 40
+- Jonathan: Kecleon, Exploud, Toxtricity_Amped, Morgrem lv 40
+- Darcy: Pelipper, Camerupt, Rotom, Flygon lv 40
+- Makayla: Roserade, Medicham, Bewear, Primarina lv 40
+- Debra: Cloyster, Wugtrio, Eelektross lv 39
+- Linda: Kingdra, Dragalge, Clawitzer lv 39
+- Conor: Hariyama, Ampharos, Conkeldurr, Deerling lv 39
+- Laurel: Starmie, Lapras, Veluza lv 40
+- Kelvin: Machamp, Walrein, Grapploct lv 40
+- Marley: Electivire, Arcanine, Scizor, Sylveon lv 40
+- Reyna: Medicham, Hariyama, Lucario, Hawlucha lv 40
+- Hudson: Wailord, Throh, Bibarel lv 40
+- Mike 2: Geodude, Nacli, Timburr lv 17
+- Leonard: Conkeldurr, Pelipper, Kingler, Hariyama lv 47
+- Naomi: Roserade, Florges, Milotic, Togekiss lv 47
+- Lea And Jed: Gardevoir, Gallade, Florges, Clefable lv 47
+- Mitchell: Lunatone, Solrock, Metagross, Reuniclus, Starmie lv 51
+- Halle: Sableye, Absol, Weavile, Krookodile, Spiritomb lv 51
+- Dianne: Claydol, Lanturn, Glalie, Froslass, Mamoswine lv 50
+- Wally Victory Road (post-game, WALLY_VR_2): zelfde team als bij de ingang, +7 levels (62–63). Rematches VR_3 t/m VR_5 volgen.
+- Rivaal Rustboro: 3 Pokémon (voorlopers van zijn/haar Route 110-team + starter lv 15), bijv. Brendan (Mudkip-keuze): Houndour, Whismur, Treecko; May (Mudkip-keuze): Vulpix, Buneary, Treecko.
+- Rematches opnieuw gegenereerd op basis van de nieuwe eerste versies.
+
+### [v.0.5.6] - Controles: encounters, tekst, evoluties
+- Wilde encounters gecontroleerd: alle tabellen hebben het juiste aantal slots en geldige min/max-levels. Niets aangepast.
+- Tekst: May's dialoog op Route 103 had een `\n` na een `\l`, waardoor de laatste regel buiten het tekstvak viel; nu `\l`. Verder passen alle aangepaste dialoogregels in het tekstvak (max. 216 px).
+- Rivaal Rustboro (Brendan, Treecko-keuze): Lotad → Lombre (evolueert in dit project op lvl 14).
+
+### [v.0.5.7] - Beschrijvingen van TMs en moves gerepareerd
+- De 14 nieuwe TMs (Scald, Stored Power, Drain Punch, U-turn, Dazzling Gleam, Iron Head, Volt Switch, Stealth Rock, Brave Bird, Nasty Plot, Trick Room, Flash Cannon, Dark Pulse, Play Rough) hadden beschrijvingen die breder waren dan het beschrijvingsvak in de tas (tekst werd afgekapt). Ingekort zodat ze passen.
+- Move-beschrijvingen aangepast aan de gewijzigde effecten: Kinesis (verlaagt accuracy sterk), Rock Smash (verlaagt Defense altijd), Strength (verlaagt Defense), Rock Throw (kan flinchen), Fly/Dig/Dive (verhogen evasion/Defense/Sp. Def op de eerste beurt), Vise Grip (tegenstander kan niet vluchten).
+
+### [v.0.5.8] - Ability Capsule en ontbrekende evolutie-items
+- Pacifidlog (Fan Club-huis): de tweede TM Return (dubbel met Cozmo, TMs zijn herbruikbaar) is tijdelijk vervangen door een Ability Capsule (placeholder). Let op: dit is de wekelijkse beloning, dus hij is elke week opnieuw te halen; de tekst noemt nog "a TM".
+- Lilycove Department Store 2F: evolutie-items toegevoegd die nergens in het spel te krijgen waren, zodat alle evoluties haalbaar zijn:
+  - Reaper Cloth (Dusclops → Dusknoir), Oval Stone (Happiny → Chansey), Sachet (Spritzee → Aromatisse), Whipped Dream (Swirlix → Slurpuff), alle 7 Sweets (Milcery → Alcremie).
+  - Shiny Stone (Togetic → Togekiss, Minccino → Cinccino, Floette → Florges, Roselia → Roserade).
+
+### [v.0.5.9] - Dialoogstudio
+- Nieuwe webpagina om alle 5529 dialogen per kaart te bewerken, met live voorbeeld van het GBA-tekstvak: https://claude.ai/artifact/LP3qyGyvhaj6p5GS32Gjxz
+- `tools/dialogen/export.py` haalt alle teksten (met NPC/trainer/script-context) uit de scripts; `tools/dialogen/import.py` zet bewerkte teksten terug met automatische regelafbreking (`\n`, `\l`, `\p`).
+
+### [v.0.6.0] - Drake, Steven, Clifford en Hisui-evoluties
+- Drake: Cyclizar → Turtonator lv 64 (@ Leftovers, Shell Armor: Shell Trap, Dragon Pulse, Flamethrower, Protect). Team nog 4× zwak voor Fairy en 3× voor Ice.
+- Champion Steven: Corviknight → Empoleon lv 67 (@ Leftovers, Competitive: Hydro Pump, Flash Cannon, Ice Beam, Roar); Kingambit → Hisuian Goodra lv 68 (@ Rocky Helmet, Gooey: Draco Meteor, Heavy Slam, Fire Blast, Thunderbolt).
+- Clifford (Mossdeep Gym) is nu een double battle (Oranguru's Instruct werkt dan); placeholder-tekst toegevoegd voor als je maar één Pokémon hebt.
+- Hisui-evoluties haalbaar gemaakt (voorheen alleen "in de regio Hisui", dus nooit):
+  - Quilava → Hisuian Typhlosion: level 36 op Mt. Pyre (elders gewone Typhlosion).
+  - Rufflet → Hisuian Braviary: Psychic Seed gebruiken (Psychic Seed toegevoegd aan Lilycove Dept Store 2F). Gewone Braviary blijft level 34.
+  - Goomy → Hisuian Sliggoo: Metal Coat gebruiken. Gewone Sliggoo blijft level 40.
+  - Bergmite → Hisuian Avalugg: level 37 in Shoal Cave (elders gewone Avalugg).
+  - Petilil → Hisuian Lilligant: level-up terwijl hij Victory Dance kent; Petilil leert Victory Dance op level 28. Gewone Lilligant blijft Sun Stone.
+- Bugfix Cubone: de Mt. Pyre-evolutie (Alolan Marowak) staat nu bovenaan. Voorheen won de gewone evolutie (level 28) altijd, ook op Mt. Pyre.
+
+### [v.0.6.1] - TM-beschrijvingen passen nu ook in de winkel
+- Scald, U-turn, Iron Head, Volt Switch, Stealth Rock en Nasty Plot nog iets korter gemaakt: het beschrijvingsvak in de winkel is smaller (102 px) dan in de tas. De test "Item descriptions fit on Bag and Shop Screen" slaagt nu weer.
+
+### [v.0.6.2] - Hisuian Decidueye
+- Dartrix → Hisuian Decidueye: level 34 of hoger op Route 119 (elders gewone Decidueye op level 34).
+- Dimensional Warp: beschrijving ingekort naar "Summons Trick Room." (de oude tekst paste niet in het samenvattingsscherm).
+- Champion Steven: Empoleon krijgt Knock Off i.p.v. Roar.
+
+### [v.0.6.3] - Verstopte Pokémon in prullenbakken op het Abandoned Ship
+- Opslagruimte B1F (achter de deur met de Storage Key): de prullenbak verbergt een Spiritomb lv 45. Hij komt terug tot je hem vangt (FLAG_CAUGHT_SHIP_SPIRITOMB).
+- Kamer naast de zeezieke man (B1F): de prullenbak verbergt eenmalig een Muk lv 32 (FLAG_SHIP_MUK_ENCOUNTERED).
+- Placeholder-teksten: "Something inside the trash can is whispering…" en "The trash can is bubbling…".
+
+### [v.0.6.4] - Kira & Dan rematches
+- Kira & Dan rematch 2 t/m 5: + Clamperl en + Gimmighoul (Chest-vorm), op hetzelfde level als de rest van het team. In de laatste rematch (5) is Gimmighoul geëvolueerd tot Gholdengo.
+- Kira & Dan rematch 4 en 5: Clamperl is daar geëvolueerd tot Huntail.
+
+### [v.0.6.5] - Dialogen Abandoned Ship (Dialoogstudio)
+- 55 herschreven dialogen van het Abandoned Ship verwerkt (Captain's Office, gangen 1F/B1F, kamers 1F/B1F, Hidden Floor; trainers Charlie, Duncan, Demetrius, Thalia, Garrison, Jani, Kira & Dan incl. rematches), automatisch afgebroken voor het tekstvak.

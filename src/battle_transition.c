@@ -1101,7 +1101,7 @@ static void Task_Intro(u8 taskId)
     if (gTasks[taskId].tState == 0)
     {
         gTasks[taskId].tState++;
-        CreateIntroTask(0, 0, 3, 2, 2);
+        CreateIntroTask(0, 0, 2, 4, 4); // Project Grounded: 2 snellere flitsen i.p.v. 3 (was 0, 0, 3, 2, 2)
     }
     else if (IsIntroTaskDone())
     {

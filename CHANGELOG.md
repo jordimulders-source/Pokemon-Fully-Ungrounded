@@ -14882,3 +14882,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Hengel uitgooien, half seconde wachten, klaar: óf "Not even a nibble…" óf direct "A POKéMON's on the hook!" en het gevecht start. Geen puntjes, geen A-drukken op het juiste moment, geen "It got away…" meer.
 - Beide teksten sluiten vanzelf (geen A-druk nodig).
 - De kans op beet is ongewijzigd (Old Rod 25%, Good Rod 50%, Super Rod 75%; Suction Cups/Sticky Hold vooraan verhoogt de kans).
+
+### [v.0.6.49] - Quality of life: sneller gevechten en wild encounters
+- Tekstsnelheid staat bij een nieuw spel standaard op Fast (was Mid). In het optiemenu blijft hij aan te passen; bestaande saves houden hun eigen instelling.
+- Bij wilde Pokémon zet B in het gevechtsmenu de cursor op Run (`B_QUICK_MOVE_CURSOR_TO_RUN`): wegrennen is B, A.
+- Het flitsen vóór de schermtransitie is korter: 2 snelle flitsen in plaats van 3 langzame (~16 frames i.p.v. ~48). De transities zelf zijn ongewijzigd.
+- "Got away safely!" staat korter in beeld (B_WAIT_TIME_SHORT i.p.v. LONG).
+- De Old Rod blijft bewust slecht (25% kans op beet).

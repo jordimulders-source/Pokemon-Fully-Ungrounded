@@ -4770,7 +4770,7 @@ BattleScript_RanAwayUsingMonAbility::
 
 BattleScript_GotAwaySafely::
 	printstring STRINGID_GOTAWAYSAFELY
-	waitmessage B_WAIT_TIME_LONG
+	waitmessage B_WAIT_TIME_SHORT @ Project Grounded: sneller terug na wegrennen (was B_WAIT_TIME_LONG)
 	end2
 
 BattleScript_WildMonFled::

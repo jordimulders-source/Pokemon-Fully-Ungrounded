@@ -455,32 +455,24 @@ MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "I'll make sparks fly from you!\n"
-	.string "Don't say I didn't warn you!$"
+	.string "WATTSON: Ah-ha! Here at last! I\n"
+	.string "launched my own coin: WATTCOIN! Want to\l"
+	.string "invest? No? Then battle! Wahahahaha!$"
 
 MauvilleCity_Gym_Text_WattsonRematchDefeat:
-	.string "Oof…\n"
-	.string "Our batteries ran dry…$"
+	.string "Oof… My server farm crashed…$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch:
-	.string "WATTSON: We'll have to recharge our\n"
-	.string "batteries again.\p"
-	.string "When we're fully charged up, we'll\n"
-	.string "gladly accept your challenge.\p"
-	.string "So, come back again sometime,\n"
+	.string "WATTSON: Time to reboot and restore\n"
+	.string "from backup.\p"
+	.string "Come back when my internet works again,\n"
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "Oops! Wait!\n"
-	.string "You've only one POKéMON with you!\p"
-	.string "Come see me with two or more\n"
-	.string "POKéMON, all right?$"
+	.string "WATTSON: Ah-ha! Here at last! I\n"
+	.string "launched my own coin: WATTCOIN! Want to\l"
+	.string "invest? No? Then battle! Wahahahaha!\p"
+	.string "Oops! Only one POKéMON? Even WATTCOIN\n"
+	.string "has more holders than that! Come back\l"
+	.string "with two.$"
 

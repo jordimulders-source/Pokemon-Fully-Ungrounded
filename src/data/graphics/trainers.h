@@ -407,22 +407,22 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_ProfessorBirch, gTrainerPalette_ProfessorBirch),
 };
 
-static const union AnimCmd sAnimCmd_Hoenn[] =
+static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)
 {
-    ANIMCMD_FRAME(0, 24),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(2, 24),
-    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_FRAME(0, 6),
     ANIMCMD_FRAME(3, 50),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnimCmd_Kanto[] =
+static const union AnimCmd sAnimCmd_Kanto[] = // Project Grounded: snellere worp (was 20/6/6/24)
 {
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(2, 6),
-    ANIMCMD_FRAME(3, 6),
-    ANIMCMD_FRAME(4, 24),
+    ANIMCMD_FRAME(1, 13),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(4, 16),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };

@@ -14988,3 +14988,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.66] - Giratina: geen partijen meer weggelaten
 - `prepare_auto` laat instrumenten die niet meer in de 10 sporen passen niet meer vallen, maar voegt ze samen met het meest verwante instrument dat wel een spoor heeft (koor/orgel → strijkers, hobo → fluit, tuba → hoorn, glockenspiel/xylofoon → piano, enz.).
 - Giratina: alle 199 eerder weggelaten noten klinken nu mee.
+
+### [v.0.6.67] - Snellere worp bij het uitsturen + Galar Zigzagoon
+- De worp van de speler aan het begin van een gevecht is ongeveer een derde sneller; de animatie zelf blijft.
+  - Worpanimatie van de achterkant-sprite (Hoenn: 24/9/24/9 → 16/6/16/6 frames, Kanto: 20/6/6/24 → 13/4/4/16).
+  - De bal vertrekt eerder (31 → 21 frames; partner 24 → 16) en de trainer schuift sneller weg (50 → 34 frames).
+  - De boog van de bal is korter (25 → 19 frames). Dat geldt ook bij het wisselen tijdens een gevecht.
+  - Getest in de emulator: geen grafische fouten.
+- Galar Zigzagoon: Leer uit de level-1-moves gehaald. Op lv 5 kent hij nu Tackle, Parting Shot, Baby-Doll Eyes en Sand Attack, in plaats van alleen stat-verlagende moves.

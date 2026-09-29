@@ -62,9 +62,12 @@ LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon:
 	.string "cow by name.$"
 
 LilycoveCity_PokemonCenter_1F_Text_HeardAboutRottenScoundrels:
-	.string "I've been hearing about some rotten\n"
-	.string "scoundrels who steal POKéMON and rip\l"
-	.string "off METEORITES.$"
+	.string "I heard if you surf along CINNABAR's\n"
+	.string "coast, you find MISSINGNO.\p"
+	.string "I surfed along every coast in HOENN.\p"
+	.string "No MISSINGNO. No RARE CANDIES.\p"
+	.string "Just a mass grave of TENTACOOL.\p"
+	.string "You're welcome for the variety.$"
 
 LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
 	.string "Those rotten scoundrels who steal\n"

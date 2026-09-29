@@ -43,5 +43,9 @@ MtPyre_1F_Text_ComeToPayRespects:
 
 MtPyre_1F_Text_RestingPlaceOfZigzagoon:
 	.string "This is the final resting place of my\n"
-	.string "ZIGZAGOON. I cherished it…$"
+	.string "RATICATE.\p"
+	.string "It fell in battle against some kid from\n"
+	.string "PALLET TOWN.\p"
+	.string "… … … … … …\p"
+	.string "Smell ya later, buddy.$"
 

@@ -31,10 +31,9 @@ MossdeepCity_PokemonCenter_1F_EventScript_Girl::
 	end
 
 MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
-	.string "The GYM LEADERS in this town are\n"
-	.string "a formidable duo.\p"
-	.string "Their combination attacks are, like,\n"
-	.string "excellent and wow!$"
+	.string "Did you see a girl in a white hat?\p"
+	.string "She keeps yelling at her bag.\p"
+	.string "“Get back in the bag, NEBBY!”$"
 
 MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
 	.string "The POKéSTOP here gave me three POKé\n"

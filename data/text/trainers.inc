@@ -1681,7 +1681,8 @@ Route113_Text_JaylenDefeat:
 	.string "POKéMON!$"
 
 Route113_Text_JaylenPostBattle:
-	.string "SMELL YA LATER!$"
+	.string "I'm heading to the POKéMON LEAGUE!\p"
+	.string "…After Gramps stops laughing.$"
 
 Route113_Text_DillonIntro:
 	.string "The volcano's eruption is proof that\n"
@@ -2977,9 +2978,7 @@ Route119_Text_FabianDefeat:
 	.string "ENJOY ALL THE WRONG MOVES!$"
 
 Route119_Text_FabianPostBattle:
-	.string "AERIALS, IN THE SKY!\p"
-	.string "WHEN YOU LOSE SMALL MIND, YOU FREE\n"
-	.string "YOUR LIFE!$"
+	.string "THE SHAPE OF POKéMON TO COME!$"
 
 Route119_Text_DaytonIntro:
 	.string "Hohoho!\n"

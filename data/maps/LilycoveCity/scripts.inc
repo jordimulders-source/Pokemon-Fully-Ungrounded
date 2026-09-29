@@ -590,12 +590,11 @@ LilycoveCity_Text_GoingToMoveDeleterForHMs:
 	.string "and make it forget HM moves.$"
 
 LilycoveCity_Text_ImFromKanto:
-	.string "I came from KANTO.\p"
-	.string "The HOENN region is beautiful with\n"
-	.string "all its water and verdant nature.\p"
-	.string "Hunh? Wait a second…\p"
-	.string "Could there be rare POKéMON that live\n"
-	.string "only in this area?$"
+	.string "Back in KANTO, they said MEW was under\n"
+	.string "the truck by the S.S. ANNE.\p"
+	.string "Since then, I've pushed every truck\n"
+	.string "I've seen in my life.\p"
+	.string "I only found BUG POKéMON and RATTATA.$"
 
 LilycoveCity_Text_TeamAquaBeenTrainingWailmer:
 	.string "TEAM AQUA's been training their\n"

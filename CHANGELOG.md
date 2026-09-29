@@ -14814,3 +14814,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Verhaal-vervolgteksten in de hot sauce/bruiswater-stijl: Meteor Falls, Rusturf Tunnel, Weather Institute, Oceanic Museum, Space Center.
 - S.S. Tidal: de TM-gever (Play Rough) sprak nog over Snatch; nu "I just like to play rough."
 - Nieuwe NPC-teksten: darter Edmond (Route 109, Ted Hankey), Kirby vs. 3D Mario (Rustboro PC), Pokémon Unite/Café (Lavaridge PC), Pokémon GO (Mauville, Petalburg, Mossdeep en Verdanturf PC), en de klager over de elemental monkeys (Petalburg PC).
+
+### [v.0.6.37] - Callbacks naar andere Pokémon-games
+- MissingNo. (Lilycove PC): geen Rare Candies, alleen een massagraf aan Tentacool — vandaar de grotere variatie.
+- Mew onder de truck (Lilycove, de jongen uit Kanto): duwt sindsdien elke truck weg, vindt alleen Bug-Pokémon en Rattata.
+- Blue's Raticate (Mt. Pyre 1F, graf): "Smell ya later, buddy." Jaylen zegt daarom geen "SMELL YA LATER" meer.
+- Nebby (Mossdeep PC): "Get back in the bag, NEBBY!"
+- Fabian: "THE SHAPE OF POKéMON TO COME!" (Refused).

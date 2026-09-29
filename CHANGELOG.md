@@ -14851,3 +14851,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - 177 NPC-teksten in Dewford Hall, Ever Grande, Fallarbor, Fortree, Lavaridge, Lilycove, Mauville, Mossdeep, Petalburg, Rustboro, Slateport en Sootopolis herschreven, in het thema van elke stad (Lilycove: mall, Mauville: datacenter, Mossdeep: ruimte, Sootopolis: Griekse goden en Wallace' wijn, Rustboro: Devon, Slateport: markt en nomads).
 - Met Jordi's aanpassingen: Victory Road vol "jerkoffs", Cozmo's sriracha, Serperior in de lucht, Mothim in de cereal, Jynx-mascotte, Deoxys, Whatsapp in plaats van Wingull-post, PEAKYCHU.
 - Verhaal- en functionele teksten (Stern, Gabby & Ty, Game Corner-kassa, ribbons, Beldum, Lotad/Seedot) zijn ongewijzigd.
+
+### [v.0.6.43] - Trainers vroege routes
+- 289 trainerteksten (intro, verlies, na het gevecht, registratie en rematches) op Jagged Pass, Mt. Chimney, Rusturf Tunnel en Route 104–112. Bestaande thema's lopen door in hun rematches (Haley: The Clash, Winston: Mo Money, Cindy: boerenkinkel-lady, Benjamin: Nederlands, Abigail: Strava).

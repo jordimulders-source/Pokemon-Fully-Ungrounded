@@ -721,100 +721,100 @@ MtChimney_Text_RouteSign:
 	.string "Wear shoes. Seriously.$"
 
 MtChimney_Text_ShelbyIntro:
-	.string "I've been to the hot springs and\n"
-	.string "refreshed my tired bones.\l"
-	.string "Right now I'm feeling strong!$"
+	.string "I soaked in the hot springs.\p"
+	.string "My bones feel 60 again! I'm 82!$"
 
 MtChimney_Text_ShelbyDefeat:
-	.string "Oh, my goodness.\n"
-	.string "Now, aren't you something!$"
+	.string "Oh, my goodness. Aren't you something!$"
 
 MtChimney_Text_ShelbyPostBattle:
-	.string "Well, well, I've lost. I can't call\n"
-	.string "myself an EXPERT now, can I?$"
+	.string "I lost. Can I still call myself an\n"
+	.string "EXPERT?\p"
+	.string "I'll call myself a SENIOR. That comes\n"
+	.string "with discounts.$"
 
 MtChimney_Text_ShelbyRegister:
-	.string "Thank you, child. It was fun, as if\n"
-	.string "I were battling my own grandchild.\p"
-	.string "Please, come see me again for\n"
-	.string "a rematch.$"
+	.string "That was fun, like battling my\n"
+	.string "grandchild.\p"
+	.string "My grandchild never visits. You will,\n"
+	.string "right?$"
 
 MtChimney_Text_ShelbyRematchIntro:
-	.string "If you can mesh your heart with those\n"
-	.string "of your POKéMON, why, you should be\l"
-	.string "able to achieve great things.$"
+	.string "Mesh your heart with your POKéMON and\n"
+	.string "you'll achieve great things.\p"
+	.string "Mesh your back with the hot springs and\n"
+	.string "you'll feel great too.$"
 
 MtChimney_Text_ShelbyRematchDefeat:
-	.string "Oh, my goodness.\n"
-	.string "Now, aren't you something!$"
+	.string "Oh, my goodness. Aren't you something!$"
 
 MtChimney_Text_ShelbyPostRematch:
-	.string "Perhaps your heart has become one\n"
-	.string "with the hearts of your POKéMON.$"
+	.string "Your heart and your POKéMON's are one.\p"
+	.string "My heart and my hip are not.$"
 
 MtChimney_Text_MelissaIntro:
-	.string "I've got the fire in me, baby.\n"
-	.string "I can't stand it! I have to battle!$"
+	.string "I've got the fire in me, baby!\p"
+	.string "It might be the chili from TEAM MAGMA.$"
 
 MtChimney_Text_MelissaDefeat:
-	.string "Ooh, that was a scorching-hot match!$"
+	.string "Ooh, scorching-hot match!$"
 
 MtChimney_Text_MelissaPostBattle:
-	.string "The heat of MT. CHIMNEY warms\n"
-	.string "me up, baby!$"
+	.string "MT. CHIMNEY warms me up, baby!\p"
+	.string "My makeup is melting, though.$"
 
 MtChimney_Text_SheilaIntro:
-	.string "I've finally made it to MT. CHIMNEY.\n"
-	.string "I want to make my POKéMON battle!$"
+	.string "I finally made it to MT. CHIMNEY!\p"
+	.string "The view is… grey. Everything is grey.$"
 
 MtChimney_Text_SheilaDefeat:
-	.string "The way you battle…\n"
-	.string "It's like a MT. CHIMNEY eruption!$"
+	.string "You battle like an eruption!$"
 
 MtChimney_Text_SheilaPostBattle:
-	.string "Like I said, I've finally made it to\n"
-	.string "MT. CHIMNEY. It would be a shame if\l"
-	.string "I only do a little sightseeing…\p"
-	.string "I want to get in some battles and buy\n"
-	.string "COOKIES as souvenirs.$"
+	.string "I came for sightseeing and battles.\p"
+	.string "And LAVA COOKIES. The cookies are the\n"
+	.string "real reason.$"
 
 MtChimney_Text_ShirleyIntro:
-	.string "Since I bathed in the hot springs,\n"
-	.string "I've been feeling great!\l"
-	.string "I'm sure I'm going to win!$"
+	.string "Since bathing in the hot springs, I feel\n"
+	.string "amazing!\p"
+	.string "My skin is glowing! Or burning. Hard to\n"
+	.string "tell.$"
 
 MtChimney_Text_ShirleyDefeat:
-	.string "Yowch!\n"
-	.string "I'm getting a chill out of the water.$"
+	.string "Yowch! I'm getting a chill!$"
 
 MtChimney_Text_ShirleyPostBattle:
-	.string "I'll have to take another dip in the\n"
-	.string "hot springs. Want to join me?\p"
-	.string "Just joking!$"
+	.string "I need another dip in the hot springs.\p"
+	.string "Want to join me?\p"
+	.string "Just kidding. Hotel rules.$"
 
 MtChimney_Text_SawyerIntro:
-	.string "This is one fine mountain! Plenty of\n"
-	.string "hot people around for company!$"
+	.string "Fine mountain! Plenty of hot people\n"
+	.string "around!\p"
+	.string "I mean the temperature. I'm a hiker, not\n"
+	.string "a creep.$"
 
 MtChimney_Text_SawyerDefeat:
-	.string "Oh, you're a real firebrand, too!$"
+	.string "Oh, you're a real firebrand!$"
 
 MtChimney_Text_SawyerPostBattle:
-	.string "I think I need a dip in LAVARIDGE\n"
-	.string "HOT SPRING with the locals!$"
+	.string "I need a dip in the LAVARIDGE HOT\n"
+	.string "SPRINGS.\p"
+	.string "The locals say I smell like a hiker.$"
 
 MtChimney_Text_SawyerRegister:
-	.string "I like little fireballs like you.\n"
-	.string "Let me register you in my POKéNAV.$"
+	.string "I like firebrands like you! Let's\n"
+	.string "register.$"
 
 MtChimney_Text_SawyerRematchIntro:
-	.string "I'm happily surrounded by hot people\n"
-	.string "around these parts. I won't lose!$"
+	.string "Still surrounded by hot people.\n"
+	.string "Temperature-wise!$"
 
 MtChimney_Text_SawyerRematchDefeat:
-	.string "Gosh, you're still the same\n"
-	.string "firebrand as before!$"
+	.string "Still a firebrand, huh!$"
 
 MtChimney_Text_SawyerPostRematch:
-	.string "Actually, it really is hot here.\n"
-	.string "I'm overdressed for these parts.$"
+	.string "It's really hot here. I'm wearing three\n"
+	.string "sweaters.\p"
+	.string "Hiker habit.$"

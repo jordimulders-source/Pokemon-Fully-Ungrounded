@@ -14672,3 +14672,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Cycling Road: Abigail is een Strava-fanaat, Jasmine komt niet meer uit haar klikpedalen.
 - Route 117: de triatleten Dylan, Maria en Melina zeuren alleen nog over blessures en ouderdom.
 - `tools/dialogen/import.py` zet rechte aanhalingstekens (") automatisch om naar “ en ” (het lettertype kent geen rechte).
+
+### [v.0.6.12] - Gitaristen, Palworld, Cuphead en meer
+- Gitaristen zingen echte nummers (regels aangeleverd door Jordi): Dalton (Enter Sandman / Master of Puppets; rematch: Life During Wartime), Fernando (Ace of Spades; rematch: Odyssey van Kyuss), Fabian (New Noise), Joseph (Feel Good Inc.).
+- Ronald (Route 132): Milotic als echte Incineroar-counter… tot hij merkt dat Milotic in deze game geen Competitive heeft.
+- Benjamin (Cycling Road): zingt "Op Fietse" van Skik.
+- Daisuke (Route 111): Cuphead ("A GREAT SLAM AND THEN SOME!" / "KNOCKOUT!", King Dice en de Devil).
+- Wyatt (Route 113): kraakt Palworld en de knockoffs van Lucario, Cobalion en Decidueye af.
+- Lavaridge Pokémon Center: de heer over heal, fight, faint. "What a life…"

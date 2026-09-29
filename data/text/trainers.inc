@@ -1072,11 +1072,15 @@ Route110_Text_AnthonyPostBattle:
 	.string "I need to reconsider this…$"
 
 Route110_Text_BenjaminIntro:
-	.string "Don't panic if your BIKE's going fast!$"
+	.string "Wie döt mij wat, wie döt mij wat, wie döt\n"
+	.string "mij wat vandage?\l"
+	.string "'k Heb de banden vol met wind, nee ik heb\l"
+	.string "ja niks te klagen!\p"
+	.string "…Sorry, Dutch song. Whenever I ride, I\n"
+	.string "can't help myself. Op fietse!$"
 
 Route110_Text_BenjaminDefeated:
-	.string "I shouldn't panic during POKéMON\n"
-	.string "battles…$"
+	.string "Lekke band… That's Dutch for “I lost.”$"
 
 Route110_Text_BenjaminPostBattle:
 	.string "There's no need to panic or stress.\n"
@@ -1087,11 +1091,12 @@ Route110_Text_BenjaminRegister:
 	.string "Give me a shout if you're up to it.$"
 
 Route110_Text_BenjaminRematchIntro:
-	.string "Aren't you going a little too fast?\n"
-	.string "Take it easy and let's battle.$"
+	.string "Ik wil fietsen, fietsen, fietsen!\p"
+	.string "…Don't look at me like that. Cycling IS\n"
+	.string "Dutch. Let's battle!$"
 
 Route110_Text_BenjaminRematchDefeated:
-	.string "I didn't panic, but I still lost…$"
+	.string "Tegenwind… Always tegenwind.$"
 
 Route110_Text_BenjaminRematchPostBattle:
 	.string "There's no need to panic or stress.\n"
@@ -1259,11 +1264,13 @@ Route110_Text_AlyssaPostBattle:
 	.string "This is so humiliating for me!$"
 
 Route110_Text_JosephIntro:
-	.string "Okay! Full-throttle time! If you can't\n"
-	.string "groove, you get left behind!$"
+	.string "Love forever, love is free\n"
+	.string "Let's turn forever, you and me\p"
+	.string "Windmill, windmill for the land\n"
+	.string "Is everybody in?$"
 
 Route110_Text_JosephDefeated:
-	.string "You got into the groove all right…$"
+	.string "HA-HA-HA-HA-HAAAA!$"
 
 Route110_Text_JosephPostBattle:
 	.string "This isn't going to bring me down!\n"
@@ -1396,16 +1403,18 @@ Route111_Text_IrenePostBattle:
 	.string "here is very nice, too.$"
 
 Route111_Text_DaisukeIntro:
-	.string "To train myself, I challenge all\n"
-	.string "whom I meet!$"
+	.string "A GREAT SLAM AND THEN SOME!$"
 
 Route111_Text_DaisukeDefeat:
-	.string "Uncle! I give up!$"
+	.string "KNOCKOUT!$"
 
 Route111_Text_DaisukePostBattle:
-	.string "All I can do is keep training until\n"
-	.string "I can defeat strong TRAINERS such\l"
-	.string "as yourself.$"
+	.string "I once made a deal with the DEVIL. KING\n"
+	.string "DICE said the contract was just a\l"
+	.string "formality.\p"
+	.string "Now I owe them my soul and a weekly\n"
+	.string "payment. Never sign anything in a\l"
+	.string "casino, kid.$"
 
 Route111_Text_WiltonIntro:
 	.string "Show me how much you've toughened\n"
@@ -1821,18 +1830,26 @@ Route113_Text_LawrencePostBattle:
 	.string "I ought to hide under the ashes, too.$"
 
 Route113_Text_WyattIntro:
-	.string "Y-you want to battle with me?\n"
-	.string "Even though I just caught my POKéMON?$"
+	.string "Do you play PALWORLD?\p"
+	.string "…Good. Don't. It's a soulless clone.\n"
+	.string "POKéMON with guns and factory shifts.\p"
+	.string "I caught my POKéMON the honest way.\n"
+	.string "Let's battle!$"
 
 Route113_Text_WyattDefeat:
-	.string "Y-you're all happy to win?\n"
-	.string "Even though it's only me?$"
+	.string "At least my POKéMON don't work\n"
+	.string "twelve-hour shifts in a mine.$"
 
 Route113_Text_WyattPostBattle:
-	.string "Oh, so now you want to say a word to\n"
-	.string "the loser?\p"
-	.string "Aren't you just the coolest?\n"
-	.string "Humph!$"
+	.string "You know who plays PALWORLD? People\n"
+	.string "who think LUCARIO as an Egyptian dog\l"
+	.string "god counts as a new idea.\p"
+	.string "And that knight horse? That's COBALION\n"
+	.string "in cosplay. The owl with the bow and the\l"
+	.string "hood? DECIDUEYE's lawyer is on the\l"
+	.string "phone.\p"
+	.string "PALWORLD players, go touch grass. Real\n"
+	.string "grass. With real POKéMON in it.$"
 
 Route114_Text_LennyIntro:
 	.string "Yodelayhihoo!\p"
@@ -2709,10 +2726,11 @@ Route118_Text_WadePostBattle:
 	.string "between a FISHERMAN and a POKéMON.$"
 
 Route118_Text_DaltonIntro:
-	.string "Let my melody rock your soul!$"
+	.string "EXIT LIGHT! ENTER NIGHT!$"
 
 Route118_Text_DaltonDefeat:
-	.string "La-lalala…$"
+	.string "Ah, you're more of a Master of Puppets\n"
+	.string "fan?$"
 
 Route118_Text_DaltonPostBattle:
 	.string "An electric guitar doesn't always\n"
@@ -2725,11 +2743,14 @@ Route118_Text_DaltonRegister:
 	.string "you have to come listen, okay?$"
 
 Route118_Text_DaltonRematchIntro:
-	.string "A melody from my POKéMON and me…\n"
-	.string "Let us deliver it to your soul.$"
+	.string "Transmit the message to the receiver\n"
+	.string "Hope for an answer some day\p"
+	.string "I got three passports, a couple of\n"
+	.string "visas\l"
+	.string "You don't even know my real name$"
 
 Route118_Text_DaltonRematchDefeat:
-	.string "La-lalala…$"
+	.string "Message received. Loud and clear.$"
 
 Route118_Text_DaltonPostRematch:
 	.string "When I play, my emotions should reach\n"
@@ -2956,13 +2977,12 @@ Route119_Text_ChrisPostBattle:
 	.string "It's an indescribably luxuriant moment!$"
 
 Route119_Text_FabianIntro:
-	.string "Hit me with a power chord!\n"
-	.string "Victory is mine!\l"
-	.string "It's our time to shine, whoa, yeah!$"
+	.string "Can I scream?\p"
+	.string "CAN I SCREEEEAM?!$"
 
 Route119_Text_FabianDefeat:
-	.string "You showed me who's the boss!\n"
-	.string "We'll have to take the loss, oh, no!$"
+	.string "WE DANCE TO ALL THE WRONG SONGS! WE\n"
+	.string "ENJOY ALL THE WRONG MOVES!$"
 
 Route119_Text_FabianPostBattle:
 	.string "Hit me with another power chord!\n"
@@ -3530,12 +3550,18 @@ Route123_Text_KindraPostBattle:
 	.string "soothes spirits…$"
 
 Route123_Text_FernandoIntro:
-	.string "I'll turn your lights out while\n"
-	.string "I rip through this tune!$"
+	.string "If you like to gamble, I tell you I'm your\n"
+	.string "man\l"
+	.string "You win some, lose some, it's all the\l"
+	.string "same to me\p"
+	.string "The pleasure is to play, it makes no\n"
+	.string "difference what you say\l"
+	.string "I don't share your greed, the only card\l"
+	.string "I need is\p"
+	.string "THE ACE OF SPADES!$"
 
 Route123_Text_FernandoDefeat:
-	.string "Hey, hold it!\n"
-	.string "I was still playing the intro!$"
+	.string "THE ACE OF SPADES!$"
 
 Route123_Text_FernandoPostBattle:
 	.string "You're rock steady.\n"
@@ -3546,13 +3572,13 @@ Route123_Text_FernandoRegister:
 	.string "the full tune, will you?$"
 
 Route123_Text_FernandoRematchIntro:
-	.string "Today's the day I'm going to do it!\n"
-	.string "I'll turn out your lights before\l"
-	.string "I finish singing my song!$"
+	.string "Take one to the mountain\n"
+	.string "Take one to the sea\p"
+	.string "Take one to the belly of the beast\n"
+	.string "And then you'll take one with me$"
 
 Route123_Text_FernandoRematchDefeat:
-	.string "Hey, hold it!\n"
-	.string "I haven't even hit the chorus!$"
+	.string "Shut it.$"
 
 Route123_Text_FernandoPostRematch:
 	.string "I thought you'd be so enthralled\n"
@@ -4570,12 +4596,18 @@ Route132_Text_DanaPostBattle:
 	.string "sense of place…$"
 
 Route132_Text_RonaldIntro:
-	.string "Win or lose, you'll never know until\n"
-	.string "you try!$"
+	.string "People say SNEASLER is the INCINEROAR\n"
+	.string "counter. Amateurs.\p"
+	.string "MILOTIC. That cat uses Intimidate,\n"
+	.string "Competitive kicks in, and then it's\l"
+	.string "WATER straight in his face.\p"
+	.string "…Wait. In this game MILOTIC only gets\n"
+	.string "scale abilities? Marvel Scale,\l"
+	.string "Multiscale… Who made this game?!$"
 
 Route132_Text_RonaldDefeat:
-	.string "Waah!\n"
-	.string "I sank in defeat!$"
+	.string "I don't care that I lost. At least I'll\n"
+	.string "never lose to INCINEROAR!$"
 
 Route132_Text_RonaldPostBattle:
 	.string "I never battle when I know I'll win.\n"

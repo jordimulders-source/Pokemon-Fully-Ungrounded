@@ -48,10 +48,14 @@ LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate:
 	.string "soak, too.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo:
-	.string "Hohoho! Hey, kid, you can reach\n"
-	.string "the hot springs from here.\p"
-	.string "If POKéMON are getting rest, so too\n"
-	.string "should their TRAINERS.$"
+	.string "Hohoho… You hear that jingle?\n"
+	.string "Ding-ding-dididing. Three seconds and\l"
+	.string "your POKéMON are good as new.\p"
+	.string "And then you send them right back out.\n"
+	.string "Burned, poisoned, frozen, thrown into\l"
+	.string "walls.\p"
+	.string "Heal, fight, faint. Heal, fight, faint.\p"
+	.string "What a life…$"
 
 LavaridgeTown_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

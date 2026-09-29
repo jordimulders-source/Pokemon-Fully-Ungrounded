@@ -14769,3 +14769,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.27] - Wegwijzers, Let's Groove, Africa
 - Alle 26 richtingbordjes (Route 101–123, Mt. Chimney) hebben na de richting één rare regel erbij.
 - Celina (Aroma Lady, Route 111) zingt Let's Groove; Rachel (Parasol Lady, Route 119) zingt Africa in de regen.
+
+### [v.0.6.28] - Timmy
+- Timmy (Youngster, Route 110) zingt "I WANNA BE THE VERY BEST, LIKE NO ONE EVER WAS!"

@@ -1239,11 +1239,12 @@ Route110_Text_IsabelRematchPostBattle:
 	.string "But I like to battle, too!$"
 
 Route110_Text_TimmyIntro:
-	.string "I found some cool POKéMON in the grass\n"
-	.string "around here!$"
+	.string "I WANNA BE THE VERY BEST, LIKE NO ONE\n"
+	.string "EVER WAS!$"
 
 Route110_Text_TimmyDefeated:
-	.string "Being cool isn't enough to win…$"
+	.string "…Like no one ever was. Especially not\n"
+	.string "today.$"
 
 Route110_Text_TimmyPostBattle:
 	.string "It's hard to battle with POKéMON you\n"

@@ -14697,3 +14697,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.15] - Rematch-teksten van de gymleiders
 - Roxanne (songregels + PokéNav-telefoontje), Wattson (WATTCOIN), Flannery (doet niet meer alsof), Winona (wil naar haar boomhut), Tate & Liza (Mercurius retrograde, tarot) en Wallace (sommelier): rematch-intro, verslagen, na de rematch en "maar één Pokémon".
+
+### [v.0.6.16] - Scott de stalker, de Winstrates, de Cable Club
+- Scott is een stalker in steeds een andere (opvallende) vermomming: nep-Birch (Rustboro School), je rivaal (Slateport, afhankelijk van je geslacht), wielrenner (Route 119), Beauty (Cove Lily Motel), jijzelf (Mossdeep, afhankelijk van je geslacht), Pokémon Center-verpleegster (Ever Grande). In Petalburg, Mauville en op de S.S. Tidal gewoon als Scott.
+- Scotts teksten in Slateport, Route 119, het motel, Birch's lab (telefoon), de S.S. Tidal en Ever Grande zijn veel creepier.
+- De Winstrates zijn een extreem fanatiek sportgezin.
+- Cable Club-receptioniste (in alle Pokémon Centers): weet dat ze nutteloos is.
+- `tools/dialogen/import.py` kan nu ook teksten in `data/text/*.inc` vervangen.

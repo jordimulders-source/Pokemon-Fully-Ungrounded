@@ -4,6 +4,7 @@ SlateportCity_MapScripts::
 	.byte 0
 
 SlateportCity_OnTransition:
+	call SlateportCity_EventScript_SetScottDisguise
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
@@ -1311,44 +1312,40 @@ SlateportCity_Text_ComeBackToTradeBerryPowder:
 	.string "Did you know?$"
 
 SlateportCity_Text_YouDroveTeamAquaAway:
-	.string "SCOTT: Huh?\n"
-	.string "I'm sure I met you somewhere before.\p"
-	.string "Have I introduced myself to you?\n"
-	.string "If not, my name's SCOTT.\p"
-	.string "I just saw TEAM AQUA run away from\n"
-	.string "here like they were stung.\p"
-	.string "Let me guess--you drove them away?$"
+	.string "SCOTT: It's me! Your rival! …No. It's\n"
+	.string "SCOTT. I borrowed the clothes. They\l"
+	.string "don't know yet.\p"
+	.string "TEAM AQUA ran away from you. I saw\n"
+	.string "everything. I always see everything.$"
 
 SlateportCity_Text_MaybeThisTrainer:
-	.string "SCOTT: Hmm…\n"
-	.string "Maybe, just maybe, this TRAINER…$"
+	.string "SCOTT: Hmm… You smell like PETALBURG.$"
 
 SlateportCity_Text_LetsRegisterEachOther:
-	.string "SCOTT: All right! I think you're going\n"
-	.string "to become a good friend.\p"
-	.string "So, let's register each other in our\n"
-	.string "POKéNAVS.\p"
+	.string "SCOTT: Let's register each other in our\n"
+	.string "POKéNAVS. I already had your number.\l"
+	.string "This just makes it official.\p"
 	.string "… … … … … …$"
 
 SlateportCity_Text_RegisteredScott:
-	.string "Registered this SCOTT person\n"
-	.string "in the POKéNAV.$"
+	.string "Registered this SCOTT person in the\n"
+	.string "POKéNAV. He was already in there.$"
 
 SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
-	.string "SCOTT: What I'd like to do is tag along\n"
-	.string "with you, but I do want to keep an eye\l"
-	.string "on the talents of other people, too.\p"
-	.string "So, I'll be off to roam other towns\n"
-	.string "a bit more.\p"
-	.string "Be seeing you, {PLAYER}{KUN}!$"
+	.string "SCOTT: I'd love to follow you around.\p"
+	.string "…I mean, I won't. Be seeing you, {PLAYER}{KUN}.$"
 
 SlateportCity_Text_TakingBattleTentChallenge:
-	.string "SCOTT: Oh, hey!\n"
-	.string "If it isn't {PLAYER}{KUN}!\p"
-	.string "{PLAYER}{KUN}, let me guess--you're going\n"
-	.string "to take the BATTLE TENT challenge?\p"
-	.string "Yeah! That's a good idea!\n"
-	.string "That's a really great idea!\p"
-	.string "After all, a tough TRAINER is\n"
-	.string "the perfect fit for the BATTLE TENT!\p"
-	.string "Give it your best effort!$"
+	.string "SCOTT: The BATTLE TENT! I'll be\n"
+	.string "watching. You won't know from where.$"
+
+@ Project Grounded: Scott is steeds vermomd. Hier als je rivaal.
+SlateportCity_EventScript_SetScottDisguise::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, SlateportCity_EventScript_SetScottDisguiseFemale
+	return
+
+SlateportCity_EventScript_SetScottDisguiseFemale::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	return

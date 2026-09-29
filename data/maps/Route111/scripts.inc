@@ -576,55 +576,45 @@ Route111_Text_IsThatSo:
 	.string "Drop in, if you change your mind!$"
 
 Route111_Text_VictorIntro:
-	.string "That's the spirit! I like you!$"
+	.string "That's the spirit! My daughter trains\n"
+	.string "six hours a day. She's five.$"
 
 Route111_Text_VictorDefeat:
-	.string "Aiyah!\n"
-	.string "You're a lot tougher than I expected!$"
+	.string "Aiyah! Don't tell my wife.$"
 
 Route111_Text_VictorPostBattle:
-	.string "Hey, all!\n"
-	.string "I've found a pretty strong TRAINER!$"
+	.string "HONEY! A strong one! Lock the door!$"
 
 Route111_Text_VictoriaIntro:
-	.string "Oh, my goodness! Aren't you young?\p"
-	.string "You must be quite the TRAINER to beat\n"
-	.string "my husband, though.\p"
-	.string "It's my turn to battle now!$"
+	.string "You beat my husband? He's useless, but\n"
+	.string "still.$"
 
 Route111_Text_VictoriaDefeat:
-	.string "Oh, gosh!\n"
-	.string "I can't get over how strong you are!$"
+	.string "You're stronger than my marriage!$"
 
 Route111_Text_VictoriaPostBattle:
-	.string "There's a strong TRAINER here!\n"
-	.string "This one's really strong!$"
+	.string "VIVI! Stop crying and get your POKéMON!$"
 
 Route111_Text_ViviIntro:
-	.string "You're stronger than Mommy? Wow!\p"
-	.string "But I'm strong, too!\n"
-	.string "Really! Honestly!$"
+	.string "You're stronger than Mommy? Daddy says\n"
+	.string "I can't have dinner if I lose.$"
 
 Route111_Text_ViviDefeat:
-	.string "Huh? Did I just lose?$"
+	.string "…No dinner tonight.$"
 
 Route111_Text_ViviPostBattle:
-	.string "This stinks…\p"
-	.string "…Snivel… Grandma!$"
+	.string "…Snivel… Grandma, kill them.$"
 
 Route111_Text_VickyIntro:
 	.string "How dare you make my granddaughter\n"
-	.string "cry!\p"
-	.string "For that, I'm going to smack you!\n"
-	.string "Prepare to lose!$"
+	.string "cry! That's MY job!$"
 
 Route111_Text_VickyDefeat:
-	.string "Kwah! You are strong…\n"
-	.string "My granddaughter was right…$"
+	.string "Kwah! You're strong… I'll make her train\n"
+	.string "harder.$"
 
 Route111_Text_VickyPostBattle:
-	.string "If you're not in any hurry,\n"
-	.string "visit with us awhile.$"
+	.string "Stay for dinner. VIVI isn't having any.$"
 
 Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "If you don't raise your POKéMON some\n"

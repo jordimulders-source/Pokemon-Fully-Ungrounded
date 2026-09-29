@@ -94,15 +94,12 @@ EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon:
 	.string "your very best!$"
 
 EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
-	.string "SCOTT: {PLAYER}{KUN}, you've clawed your\n"
-	.string "way up to face the POKéMON LEAGUE!\p"
-	.string "I'm happy for you!\n"
-	.string "You made my cheering worthwhile!\p"
-	.string "{PLAYER}{KUN}, if you were to become\n"
-	.string "the POKéMON LEAGUE CHAMPION…\p"
-	.string "I'll get in touch with you then.\p"
-	.string "Okay, {PLAYER}{KUN}.\n"
-	.string "Go for greatness!$"
+	.string "SCOTT: Welcome to the POKéMON CENTER.\n"
+	.string "Would you like me to hold your POKéMON?\l"
+	.string "Forever?\p"
+	.string "You made it to the LEAGUE. If you\n"
+	.string "become CHAMPION, I'll get in touch. I\l"
+	.string "always do.$"
 
 EverGrandeCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

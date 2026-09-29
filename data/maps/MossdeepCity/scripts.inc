@@ -3,6 +3,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call MossdeepCity_EventScript_SetScottDisguise
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
@@ -426,3 +427,14 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
 
+
+@ Project Grounded: Scott is steeds vermomd. Hier als de speler zelf.
+MossdeepCity_EventScript_SetScottDisguise::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_EventScript_SetScottDisguiseFemale
+	return
+
+MossdeepCity_EventScript_SetScottDisguiseFemale::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	return

@@ -113,24 +113,14 @@ LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy:
 	.string "my GAME BOY ADVANCE.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles:
-	.string "SCOTT: … … … … …\n"
-	.string "… … … … … Zzz…\p"
-	.string "… … … … … Huh?!\n"
-	.string "Oh, sorry, sorry! I was snoozing!\p"
-	.string "I came to check out this POKéMON\n"
-	.string "CONTEST thing.\p"
-	.string "I have to admit, it does look quite\n"
-	.string "entertaining, but…\p"
-	.string "Consider me a purist--I prefer\n"
-	.string "battles and tough TRAINERS.\p"
-	.string "But that's just me.\p"
-	.string "{PLAYER}{KUN}, I hope you'll enjoy everything\n"
-	.string "like the GYMS, CONTESTS, BATTLE TENT,\l"
-	.string "the whole works!$"
+	.string "SCOTT: … … … … … … … … … … Zzz…\p"
+	.string "Huh?! Don't look at me. I'm not here.\p"
+	.string "This is my room. Your room is next door.\n"
+	.string "The walls are very thin.\p"
+	.string "I'm not into CONTESTS, but I'll watch\n"
+	.string "anything.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_ContestsDoTakeStrategy:
-	.string "SCOTT: I think it does take strategy\n"
-	.string "to win a CONTEST.\p"
-	.string "Devising CONTEST strategies is one way\n"
-	.string "of becoming a better TRAINER, I'd say.$"
+	.string "SCOTT: Goodnight, {PLAYER}{KUN}. I'll be right\n"
+	.string "here.$"
 

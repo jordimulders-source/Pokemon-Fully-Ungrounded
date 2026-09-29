@@ -1,12 +1,10 @@
 CableClub_Text_WelcomeWhichCableClubService:
-	.string "Welcome to the POKéMON CABLE\n"
-	.string "CLUB.\p"
-	.string "Which of our services do you wish\n"
-	.string "to use?$"
+	.string "Welcome to the POKéMON CABLE CLUB.\p"
+	.string "Nobody has come up here since 2004.\n"
+	.string "Which service would you like to not use?$"
 
 CableClub_Text_WhichService:
-	.string "Which of our services do you wish\n"
-	.string "to use?$"
+	.string "Which service would you like to not use?$"
 
 CableClub_Text_TradeUsingLinkCable::
 	.string "Trade POKéMON with another player\n"
@@ -79,7 +77,7 @@ Text_PlayersMadeDifferentSelections:
 	.string "made different selections.$"
 
 CableClub_Text_PleaseVisitAgain:
-	.string "Please do visit again.$"
+	.string "Please don't visit again. I was napping.$"
 
 CableClub_Text_IncorrectNumberOfParticipants:
 	.string "The number of participants is\n"
@@ -170,8 +168,8 @@ CableClub_Text_CantMixWithJapaneseGame:
 	.string "or Sapphire games at the same time.$"
 
 CableClub_Text_AdapterNotConnected:
-	.string "The Wireless Adapter is not\n"
-	.string "connected properly.$"
+	.string "The Wireless Adapter is not connected.\n"
+	.string "It's also not 2004 anymore.$"
 
 CableClub_Text_ParticipantsStepUpToCounter:
 	.string "Participants are asked to step up\n"

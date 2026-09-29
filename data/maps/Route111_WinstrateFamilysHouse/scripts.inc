@@ -77,11 +77,11 @@ Route111_WinstrateFamilysHouse_Text_PassionateAboutBattles:
 	.string "we tend to be pretty passionate.$"
 
 Route111_WinstrateFamilysHouse_Text_StrongerFamilyMembers:
-	.string "Mommy is stronger than Daddy.\p"
-	.string "I'm stronger than Mommy.\p"
-	.string "And Grandma's stronger than me!\p"
-	.string "But my big brother is even stronger\n"
-	.string "than Grandma.$"
+	.string "Mommy is stronger than Daddy. I'm\n"
+	.string "stronger than Mommy. Grandma is\l"
+	.string "stronger than me.\p"
+	.string "Nobody is stronger than Grandma.\n"
+	.string "Nobody.$"
 
 Route111_WinstrateFamilysHouse_Text_GrandsonStrong:
 	.string "There's no question that you're strong.\p"

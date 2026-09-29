@@ -93,7 +93,7 @@ LABEL_RE = r'(?m)^({label}::?\n)((?:[ \t]*\.string[ \t]+".*"[ \t]*\n?)+)'
 
 
 def apply(edits):
-    files = sorted(glob.glob('data/maps/*/scripts.inc')) + ['data/text/trainers.inc']
+    files = sorted(glob.glob('data/maps/*/scripts.inc')) + sorted(glob.glob('data/text/*.inc'))
     contents = {f: open(f).read() for f in files}
     done, missing, too_wide = [], [], []
     for label, text in edits.items():

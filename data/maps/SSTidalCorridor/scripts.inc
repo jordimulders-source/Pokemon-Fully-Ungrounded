@@ -251,24 +251,13 @@ SSTidalCorridor_Movement_SailorReturn:
 	step_end
 
 SSTidalCorridor_Text_ScottBattleFrontierInvite:
-	.string "SCOTT: Well, hi, hi!\n"
-	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
-	.string "Something's come up, so I have to\n"
-	.string "disembark, but am I glad to see you!\p"
-	.string "Congratulations, LEAGUE CHAMPION!\p"
-	.string "There's a place I'd like to invite\n"
-	.string "someone like you.\p"
-	.string "It's the…\n"
-	.string "BATTLE FRONTIER!\p"
-	.string "What's the place like?\n"
-	.string "You'll understand when you see it!\p"
-	.string "I've spoken with the ship's CAPTAIN\n"
-	.string "about this.\p"
-	.string "The next time you take a ferry,\n"
-	.string "you should be able to sail to\l"
-	.string "the BATTLE FRONTIER.\p"
-	.string "Okay, {PLAYER}{KUN}, I'll be waiting for you\n"
-	.string "at the BATTLE FRONTIER!$"
+	.string "SCOTT: Congratulations, CHAMPION! I\n"
+	.string "cried. I still have the tissue.\p"
+	.string "Come to the BATTLE FRONTIER. I spoke\n"
+	.string "to the CAPTAIN. He won't be a problem\l"
+	.string "anymore.\p"
+	.string "…He's fine! Your next ferry can sail\n"
+	.string "there.$"
 
 SSTidal_Text_FastCurrentsHopeYouEnjoyVoyage:
 	.string "This ferry is built to plow through\n"

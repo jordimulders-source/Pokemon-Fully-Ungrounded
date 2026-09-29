@@ -20,17 +20,19 @@ PacifidlogTown_House5_EventScript_Gentleman::
 	end
 
 PacifidlogTown_House5_Text_CantSeeMirageIslandToday:
-	.string "I can't see MIRAGE ISLAND today…$"
+	.string "I can't see MIRAGE ISLAND today… What\n"
+	.string "a shock. I've only looked every day for\l"
+	.string "sixty years.$"
 
 PacifidlogTown_House5_Text_CanSeeMirageIslandToday:
-	.string "Oh! Oh my!\n"
-	.string "I can see MIRAGE ISLAND today!$"
+	.string "Oh! Oh my! I can see MIRAGE ISLAND\n"
+	.string "today!\p"
+	.string "…Wait, really? Quick, go, before it\n"
+	.string "vanishes. Like my hopes.$"
 
 PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather:
-	.string "MIRAGE ISLAND…\p"
-	.string "It must become visible and invisible\n"
-	.string "depending on the weather conditions\l"
-	.string "that make mirages appear.\p"
-	.string "Or is it really appearing and\n"
-	.string "disappearing?$"
+	.string "MIRAGE ISLAND… They say it depends on\n"
+	.string "the weather. Or the moon. Or a random\l"
+	.string "number.\p"
+	.string "Nobody knows. Just like my pension.$"
 

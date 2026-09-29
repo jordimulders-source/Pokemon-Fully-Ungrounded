@@ -360,29 +360,22 @@ Route120_EventScript_Callie::
 	end
 
 Route120_Text_StevenGreeting:
-	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
-	.string "It's been a while.\p"
-	.string "There's something here that you can't\n"
-	.string "see, right?\p"
-	.string "Now, if I were to use this device on\n"
-	.string "the invisible obstacle…\p"
-	.string "No, no. Rather than describing it,\n"
-	.string "I should just show you.\l"
-	.string "That would be more fun.\p"
-	.string "{PLAYER}{KUN}, are your POKéMON ready for\n"
-	.string "battle?$"
+	.string "STEVEN: {PLAYER}{KUN}! There's something\n"
+	.string "here you can't see, right?\p"
+	.string "I could explain this device. Or I could\n"
+	.string "just SHOW you. That's more METAL.\p"
+	.string "Are your POKéMON ready for battle?$"
 
 Route120_Text_StevenIllWaitHere:
-	.string "STEVEN: No?\p"
-	.string "I'll wait here, so you can get ready.$"
+	.string "STEVEN: No? Cool. I'll practice my air\n"
+	.string "guitar.$"
 
 Route120_Text_StevenReadyForBattle:
 	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
-	.string "ready for battle?$"
+	.string "ready to ROCK?$"
 
 Route120_Text_StevenShowMeYourPower:
-	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
-	.string "power as a TRAINER!$"
+	.string "STEVEN: Show me your power! SLAYEEEER!$"
 
 Route120_Text_StevenUsedDevonScope:
 	.string "STEVEN used the DEVON SCOPE.\p"
@@ -391,21 +384,16 @@ Route120_Text_StevenUsedDevonScope:
 	.string "The startled POKéMON attacked!$"
 
 Route120_Text_StevenGiveDevonScope:
-	.string "STEVEN: I see…\n"
-	.string "Your battle style is intriguing.\p"
-	.string "Your POKéMON have obviously grown\n"
-	.string "since I first met you in DEWFORD.\p"
-	.string "I'd like you to have this\n"
-	.string "DEVON SCOPE.\p"
-	.string "Who knows, there may be other\n"
-	.string "concealed POKéMON.$"
+	.string "STEVEN: Your battle style SHREDS, dude.\n"
+	.string "You've grown so much since DEWFORD.\p"
+	.string "Take this DEVON SCOPE. There may be\n"
+	.string "more hidden POKéMON. Like hidden tracks\l"
+	.string "on an album.$"
 
 Route120_Text_StevenGoodbye:
-	.string "STEVEN: {PLAYER}{KUN}.\p"
-	.string "I enjoy seeing POKéMON and TRAINERS\n"
-	.string "who strive together.\p"
-	.string "I think you're doing great.\p"
-	.string "Well, let's meet again somewhere.$"
+	.string "STEVEN: POKéMON and TRAINERS striving\n"
+	.string "together… That's a band, man.\p"
+	.string "You're doing great. ROCK ON!$"
 
 Kecleon_Text_SomethingUnseeable:
 	.string "Something unseeable is in the way.$"

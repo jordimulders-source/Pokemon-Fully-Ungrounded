@@ -41,9 +41,10 @@ SlateportCity_PokemonCenter_1F_Text_RaiseDifferentTypesOfPokemon:
 	.string "it might not stand a chance.$"
 
 SlateportCity_PokemonCenter_1F_Text_TradedMonWithFriend:
-	.string "I trade POKéMON with my friends.\p"
-	.string "If a traded POKéMON is holding an\n"
-	.string "item, it makes me twice as happy!$"
+	.string "Since POKOPIA, I don't battle anymore.\p"
+	.string "I just want to be friends with my\n"
+	.string "POKéMON and build a little house\l"
+	.string "together. Please don't make me battle.$"
 
 SlateportCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

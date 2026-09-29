@@ -428,9 +428,9 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
 	.string "Don't you dare interfere!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
-	.string "STEVEN: TEAM MAGMA…\p"
-	.string "What's the point of stealing rocket\n"
-	.string "fuel?$"
+	.string "STEVEN: TEAM MAGMA… Rocket fuel for a\n"
+	.string "hot sauce?! That's not METAL, that's\l"
+	.string "MEDIUM!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
 	.string "MAXIE: Fufufu… Since you're so\n"
@@ -444,14 +444,12 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
 	.string "It will be savage!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle:
-	.string "STEVEN: {PLAYER}{KUN}!\n"
-	.string "You're going to help me?\p"
-	.string "Let's go into battle together!\n"
-	.string "Are you ready?$"
+	.string "STEVEN: You're gonna help me? A DUET!\n"
+	.string "Are you ready to ROCK?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
-	.string "STEVEN: Then, hurry!\n"
-	.string "Get ready quickly!$"
+	.string "STEVEN: Then hurry! The crowd is\n"
+	.string "waiting!$"
 
 MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
 	.string "All I want…\n"
@@ -482,11 +480,8 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
 	.string "matters that I must examine…$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
-	.string "STEVEN: Whew, that was too tense.\n"
-	.string "{PLAYER}{KUN}, thank you.\p"
-	.string "I have something to give you as\n"
-	.string "thanks for your support.\p"
-	.string "Please come see me at home\n"
-	.string "after this.\p"
-	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
+	.string "STEVEN: Whew! EPIC encore! Thanks,\n"
+	.string "{PLAYER}{KUN}.\p"
+	.string "Come see me at home. Not in RUSTBORO,\n"
+	.string "that's my dad's. Dad's not METAL.\p"
 	.string "I live right here on this island.$"

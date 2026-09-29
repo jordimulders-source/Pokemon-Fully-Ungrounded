@@ -1608,55 +1608,44 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "to POKéMON…$"
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
-	.string "STEVEN: Those POKéMON fighting…\n"
-	.string "GROUDON… And KYOGRE…\p"
-	.string "The two super-ancient POKéMON\n"
-	.string "were awakened from a long sleep…\p"
-	.string "And now they are smashing each other\n"
-	.string "with their uncontrollable energy…\p"
-	.string "…{PLAYER}{KUN}.\p"
-	.string "You being here now I'll take to mean\n"
-	.string "that you're prepared to become\l"
-	.string "involved in this crisis.\p"
-	.string "Well, then, there's someone that\n"
-	.string "I'd like you to meet.\p"
-	.string "Come with me, please.$"
+	.string "STEVEN: GROUDON… KYOGRE… Two ancient\n"
+	.string "titans smashing each other! Greatest\l"
+	.string "metal show on earth!\p"
+	.string "…Also a crisis. {PLAYER}{KUN}, if you're here,\n"
+	.string "you're in.\p"
+	.string "There's someone I want you to meet.\n"
+	.string "Come with me.$"
 
 SootopolisCity_Text_DoesThisMakeYourFearPokemon:
-	.string "STEVEN: Listen, {PLAYER}{KUN}.\p"
-	.string "Does seeing GROUDON and KYOGRE make\n"
-	.string "you think POKéMON are to be feared?\p"
-	.string "But that's not true.\n"
-	.string "POKéMON are really more…\p"
-	.string "…Why am I asking you this?\n"
-	.string "You already know.$"
+	.string "STEVEN: Does this make you think\n"
+	.string "POKéMON are scary? It's not true.\l"
+	.string "POKéMON are more…\p"
+	.string "…Why am I asking? You already know.\n"
+	.string "METAL.$"
 
 SootopolisCity_Text_HereWereAreHelpWallace:
-	.string "STEVEN: Okay, here we are!\p"
-	.string "Inside here you'll find someone named\n"
-	.string "WALLACE.\p"
-	.string "I think you have what's needed to\n"
-	.string "help him…$"
+	.string "STEVEN: Here we are! Inside is WALLACE.\n"
+	.string "More of a wine guy than a metal guy.\p"
+	.string "I think you have what's needed to help\n"
+	.string "him…$"
 
 SootopolisCity_Text_KnowWhatsNeededToHelpHim:
-	.string "STEVEN: I think you have what's\n"
-	.string "needed to help him…$"
+	.string "STEVEN: Go on in. He's probably drunk.$"
 
 SootopolisCity_Text_NeverBeenToSkyPillar:
-	.string "STEVEN: The SKY PILLAR…\p"
-	.string "I've never been there.\n"
-	.string "I wonder where it could be?$"
+	.string "STEVEN: The SKY PILLAR… Never been\n"
+	.string "there. Sounds like a good spot for a\l"
+	.string "music video.$"
 
 SootopolisCity_Text_SoThatsRayquaza:
-	.string "STEVEN: So that's RAYQUAZA…\p"
-	.string "It's incredible how the two rampaging\n"
-	.string "POKéMON would flee from it in fear…$"
+	.string "STEVEN: So that's RAYQUAZA… It scared\n"
+	.string "off both of them with one ROAR. Most\l"
+	.string "METAL thing I've ever seen.$"
 
 SootopolisCity_Text_MaxieArchieLeft:
-	.string "STEVEN: It looks like both MAXIE and\n"
-	.string "ARCHIE have gone away somewhere.\p"
-	.string "Perhaps they've gone to MT. PYRE to\n"
-	.string "return those ORBS…$"
+	.string "STEVEN: MAXIE and ARCHIE are gone.\n"
+	.string "Maybe they went to MT. PYRE to return\l"
+	.string "the ORBS. Or to start a band.$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar:
 	.string "WALLACE: Oh?\n"

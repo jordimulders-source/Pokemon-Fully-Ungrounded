@@ -244,22 +244,14 @@ Route118_EventScript_Deandre::
 	end
 
 Route118_Text_StevenQuestions:
-	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
-	.string "It's me, STEVEN!\n"
-	.string "We met in the cave near DEWFORD.\p"
-	.string "Have you met many kinds of POKéMON\n"
-	.string "since I last saw you?\p"
-	.string "There are many, many kinds of POKéMON\n"
-	.string "in this wide world of ours.\p"
-	.string "If you wanted to raise only your\n"
-	.string "favorites, that's fine.\p"
-	.string "Perhaps you find it more fun to raise\n"
-	.string "all sorts of POKéMON.\p"
-	.string "As a TRAINER of POKéMON,\n"
-	.string "what do you think?\p"
-	.string "Of course, it's not any of my business.\p"
-	.string "It would be nice if we were to meet\n"
-	.string "again somewhere.$"
+	.string "STEVEN: {PLAYER}{KUN}! ROCK ON! We met in the\n"
+	.string "cave near DEWFORD!\p"
+	.string "There are SO many kinds of POKéMON.\n"
+	.string "Like metal subgenres.\p"
+	.string "Raise only your favorites, or all sorts?\n"
+	.string "Doom? Thrash? Black?\p"
+	.string "None of my business. HEAVY METAAAAAL!\n"
+	.string "See you!$"
 
 Route118_Text_YouAgreeGoodRodIsGood:
 	.string "Hmm!\n"

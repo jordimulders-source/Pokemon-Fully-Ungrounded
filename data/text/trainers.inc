@@ -642,9 +642,9 @@ Route106_Text_KylaPostBattle:
 	.string "I love it! Why don't you give it a try?$"
 
 Route107_Text_DarrinIntro:
-	.string "Yawn…\p"
-	.string "I must have drifted off to sleep while\n"
-	.string "I was drifting in the waves.$"
+	.string "Yawn… I fell asleep in the water again.\p"
+	.string "Look at my fingers! Like raisins! Is\n"
+	.string "that normal after six days?$"
 
 Route107_Text_DarrinDefeated:
 	.string "Ahaha, I lost…\n"
@@ -3688,9 +3688,10 @@ Route124_Text_SpencerPostBattle:
 	.string "to the POKéNAV's MAP.$"
 
 Route124_Text_RolandIntro:
-	.string "Hm! You're riding a POKéMON instead\n"
-	.string "of swimming yourself…\p"
-	.string "I am envious!$"
+	.string "You're riding a POKéMON? I want to surf\n"
+	.string "on a WAILORD. The biggest one.\p"
+	.string "Nobody lets me. Something about “sir,\n"
+	.string "that's a whale.”$"
 
 Route124_Text_RolandDefeat:
 	.string "Oh!\n"
@@ -4448,11 +4449,14 @@ Route130_Text_KatiePostBattle:
 	.string "the POKéMON CHAMPION.$"
 
 Route130_Text_SantiagoIntro:
-	.string "Floating on the open sea like this…\n"
-	.string "It's peaceful.$"
+	.string "Floating on the open sea… Why am I\n"
+	.string "always just floating here?\p"
+	.string "I never move. I've been in this exact\n"
+	.string "spot since the day this game came out.$"
 
 Route130_Text_SantiagoDefeat:
-	.string "I needed to be a little less peaceful!$"
+	.string "And now I'll just… stay here.\n"
+	.string "Motionless. Again.$"
 
 Route130_Text_SantiagoPostBattle:
 	.string "Swimming and battling like this…\n"
@@ -4789,8 +4793,10 @@ Route134_Text_LaurelPostBattle:
 	.string "the SCALES of LUVDISC.$"
 
 Route134_Text_AlexIntro:
-	.string "Okeydokey! That's enough rest, gang!\n"
-	.string "It's time for a match!$"
+	.string "I saw a golem. Flying. Made of rocks.\n"
+	.string "Then one made of ice.\p"
+	.string "…Am I going crazy? Don't answer that.\n"
+	.string "Battle me!$"
 
 Route134_Text_AlexDefeat:
 	.string "Tuckered out again…$"
@@ -4825,8 +4831,12 @@ Route134_Text_AaronPostBattle:
 	.string "It will definitely toughen you up!$"
 
 Route134_Text_KelvinIntro:
-	.string "O-our boat!\n"
-	.string "The tide carried it away!$"
+	.string "A PERSON?! A real PERSON?!\p"
+	.string "What year is it? How long has it been?\n"
+	.string "Twenty years?!\p"
+	.string "The tide took our boat and I've been\n"
+	.string "here ever since. Battle me! I forgot how\l"
+	.string "people work!$"
 
 Route134_Text_KelvinDefeat:
 	.string "Awawawawah!\n"

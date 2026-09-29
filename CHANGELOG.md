@@ -14722,3 +14722,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Direct Corner en Union Room (alle Pokémon Centers): over de top sarcastisch en overduidelijk nutteloos.
 - Devon Corporation 2F: een kapotte AI-assistent die tijdens het gesprek crasht.
 - `tools/dialogen/import.py` waarschuwt nu voor tekens die niet in het lettertype bestaan (zoals — en *).
+
+### [v.0.6.20] - Steven de metalhead, Devon, losse NPC's
+- Steven praat overal als een metalhead à la Jack Black (ROCK ON, SLAYEEEER, HEAVY METAAAAAL): Granite Cave, Route 118, Route 120, Space Center, zijn huis, Route 128, Sootopolis, Meteor Falls; ook de NPC's over Steven (Fortree, Mossdeep).
+- Devon Corporation: experimenten mislukken aan de lopende band; de fossielman is een miskend genie; Mr. Stone speelt Solitaire en vergeet je naam.
+- Losse NPC's: Mario Kart World zonder updates (Lilycove PC), na Pokopia wil iemand niet meer battlen (Slateport PC), Santiago drijft al sinds de release roerloos (Route 130), Darrin's vingers zijn rozijnen (Route 107), Roland wil op een Wailord surfen (Route 124), de gestrande Kelvin (Route 134), Alex ziet vliegende golems bij de Sealed Chamber (Route 134), de Mirage Island-opa is sarcastisch (Pacifidlog).

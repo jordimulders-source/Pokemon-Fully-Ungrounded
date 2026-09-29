@@ -80,11 +80,10 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	step_end
 
 GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "My name is STEVEN.\p"
-	.string "I'm interested in rare stones,\n"
-	.string "so I travel here and there.\p"
-	.string "Oh?\n"
-	.string "A LETTER for me?$"
+	.string "My name is STEVEN. ROCK ON!\p"
+	.string "I'm into rare stones. Get it? ROCK!\n"
+	.string "HEAVY METAAAAAL!\p"
+	.string "…Oh? A LETTER for me?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "STEVEN: Okay, thank you.\p"
@@ -96,14 +95,12 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "FLASH CANNON.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "STEVEN: Your POKéMON appear quite\n"
-	.string "capable.\p"
-	.string "If you keep training, you could even\n"
-	.string "become the CHAMPION of the POKéMON\l"
-	.string "LEAGUE one day. That's what I think.\p"
-	.string "I know, since we've gotten to know each\n"
-	.string "other, let's register one another in\l"
-	.string "our POKéNAVS.\p"
+	.string "STEVEN: Your POKéMON are sick, dude.\n"
+	.string "SLAYER sick.\p"
+	.string "Keep training and you could be\n"
+	.string "CHAMPION one day.\p"
+	.string "Let's register each other in our\n"
+	.string "POKéNAVS. We're a band now.\p"
 	.string "… … … … … …$"
 
 GraniteCave_StevensRoom_Text_RegisteredSteven:
@@ -111,9 +108,9 @@ GraniteCave_StevensRoom_Text_RegisteredSteven:
 	.string "in the POKéNAV.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
+	.string "Now I've got to hurry along. These rocks\n"
+	.string "won't headbang themselves!$"
 
 GraniteCave_StevensRoom_Text_OhBagIsFull:
-	.string "Oh, your BAG is full…\n"
-	.string "That's too bad, then.$"
+	.string "Oh, your BAG is full… Total bummer, man.$"
 

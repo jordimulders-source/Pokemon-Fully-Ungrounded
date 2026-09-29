@@ -14877,3 +14877,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - De Gold Card-dialoog en de Union Room-melding bij de verpleegster zijn vervallen. Alleen de eerste keer dat je team Pokérus heeft, komt er één uitlegtekst bij.
 - `OW_UNION_DISABLE_CHECK` staat aan: de game controleert bij het binnenlopen van een Pokémon Center niet meer op de Union Room (draadloze adapter), dus het laden gaat sneller.
 - Na een white-out gebruikt de verpleegster nog wel de oude animatie (komt zelden voor).
+
+### [v.0.6.48] - Quality of life: vissen zonder minigame
+- Hengel uitgooien, half seconde wachten, klaar: óf "Not even a nibble…" óf direct "A POKéMON's on the hook!" en het gevecht start. Geen puntjes, geen A-drukken op het juiste moment, geen "It got away…" meer.
+- Beide teksten sluiten vanzelf (geen A-druk nodig).
+- De kans op beet is ongewijzigd (Old Rod 25%, Good Rod 50%, Super Rod 75%; Suction Cups/Sticky Hold vooraan verhoogt de kans).

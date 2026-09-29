@@ -37,9 +37,9 @@ MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
 	.string "excellent and wow!$"
 
 MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
-	.string "Depending on the special abilities of\n"
-	.string "POKéMON, some moves might change\l"
-	.string "or not work at all.$"
+	.string "The POKéSTOP here gave me three POKé\n"
+	.string "BALLS and a sprained ankle.\p"
+	.string "I walked into the sea.$"
 
 MossdeepCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

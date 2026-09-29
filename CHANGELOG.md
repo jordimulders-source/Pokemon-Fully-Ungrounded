@@ -14808,3 +14808,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.35] - Trainer Hill
 - De eigenaar van de Trainer Hill heeft de toren alleen gebouwd om een tag-partner te vinden: een eenzame man met een datingshow. 20 teksten herschreven (receptie, NPC's bij de ingang, de eigenaar op het dak). Functionele teksten (opslaan, tijd, lift) zijn ongewijzigd.
+
+### [v.0.6.36] - Vervolgteksten en losse NPC's
+- Vervolgteksten (verlies/na het gevecht) van ~55 al herschreven trainers sluiten nu aan op hun nieuwe intro. Dalton: "MASTER OF PUPPETS IS PULLING YOUR STRINGS!", Fabian: "AERIALS, IN THE SKY!", Fernando: "Fuck, man. LEMMY, why did you have to go?"
+- Verhaal-vervolgteksten in de hot sauce/bruiswater-stijl: Meteor Falls, Rusturf Tunnel, Weather Institute, Oceanic Museum, Space Center.
+- S.S. Tidal: de TM-gever (Play Rough) sprak nog over Snatch; nu "I just like to play rough."
+- Nieuwe NPC-teksten: darter Edmond (Route 109, Ted Hankey), Kirby vs. 3D Mario (Rustboro PC), Pokémon Unite/Café (Lavaridge PC), Pokémon GO (Mauville, Petalburg, Mossdeep en Verdanturf PC), en de klager over de elemental monkeys (Petalburg PC).

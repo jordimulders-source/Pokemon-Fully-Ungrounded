@@ -101,8 +101,9 @@ SSTidalRooms_Text_ThomasDefeat:
 	.string "SOPRANOS. Four times.$"
 
 SSTidalRooms_Text_ThomasPostBattle:
-	.string "To be never ruffled in any situation is\n"
-	.string "the GENTLEMAN's code of conduct.$"
+	.string "To never be ruffled is the GENTLEMAN's\n"
+	.string "code.\p"
+	.string "Also TONY SOPRANO's. Different results.$"
 
 SSTidalRooms_Text_JedIntro:
 	.string "JED: I feel a little shy about this, but…\n"
@@ -165,11 +166,11 @@ SSTidalRooms_Text_NaomiPostBattle:
 	.string "side to touring HOENN by ferry.$"
 
 SSTidalRooms_Text_NotSuspiciousTakeThis:
-	.string "Uh… Hi! I… I'm not acting suspicious!\n"
-	.string "Uh… You can have this! For free!\p"
-	.string "It… Honestly, I didn't SNATCH it from\n"
-	.string "someone! I'd never do such a thing!\l"
-	.string "It's clean! You can use it!$"
+	.string "Uh… Hi! I… I'm not acting suspicious!\p"
+	.string "Take this! For free!\p"
+	.string "I just like to play rough. With POKéMON.\n"
+	.string "Only POKéMON.\p"
+	.string "It's clean! Honestly!$"
 
 SSTidalRooms_Text_ExplainSnatch:
 	.string "PLAY ROUGH. A FAIRY move. It hits hard.\n"

@@ -244,8 +244,9 @@ JaggedPass_Text_JulioDefeat:
 	.string "…They caught me ridin' dirty.$"
 
 JaggedPass_Text_JulioPostBattle:
-	.string "My bicycle bounced around so much,\n"
-	.string "my rear end's sore…$"
+	.string "My bike bounced so much, my rear end's\n"
+	.string "sore.\p"
+	.string "They see me limpin'…$"
 
 JaggedPass_Text_AutumnIntro:
 	.string "I climb this hill every day.\n"

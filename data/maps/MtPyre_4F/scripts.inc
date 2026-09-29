@@ -20,6 +20,6 @@ MtPyre_5F_Text_AtsushiDefeat:
 	.string "answer. What was the question?$"
 
 MtPyre_5F_Text_AtsushiPostBattle:
-	.string "Until I improve, my teacher, who rests\n"
-	.string "here, will never find true peace…$"
+	.string "Teacher rests here.\p"
+	.string "He would've used INCINEROAR, honestly.$"
 

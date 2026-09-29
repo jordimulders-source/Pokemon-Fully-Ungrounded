@@ -371,12 +371,12 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro:
 	.string "ALL YOUR BASE ARE BELONG TO US.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat:
-	.string "Grrr…\n"
-	.string "We should've used sneaky treachery…$"
+	.string "Grrr… We should've brought the ghost\n"
+	.string "peppers…$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1PostBattle:
-	.string "Okay, I get it already! The next time,\n"
-	.string "we'll come unannounced.$"
+	.string "Fine! Next time, we'll come unannounced.\p"
+	.string "And extra spicy.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro:
 	.string "The rocket fuel the SPACE CENTER has\n"

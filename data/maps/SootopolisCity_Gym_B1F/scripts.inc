@@ -139,7 +139,8 @@ SootopolisCity_Gym_B1F_Text_BridgetIntro:
 	.string "level, just like the SOOTOPOLIS GYM!$"
 
 SootopolisCity_Gym_B1F_Text_BridgetDefeat:
-	.string "What a high level you are!$"
+	.string "What a high level you are!\p"
+	.string "Like a Grand Cru.$"
 
 SootopolisCity_Gym_B1F_Text_BridgetPostBattle:
 	.string "Rather than being satisfied by being\n"

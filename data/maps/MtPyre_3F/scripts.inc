@@ -51,11 +51,8 @@ MtPyre_3F_Text_KaylaDefeat:
 	.string "The COSMOS lied to me…$"
 
 MtPyre_3F_Text_KaylaPostBattle:
-	.string "This means my training is still not\n"
-	.string "enough…\p"
-	.string "I've got to keep working toward the\n"
-	.string "summit…\p"
-	.string "Go, me!$"
+	.string "The COSMOS says I need more training.\p"
+	.string "The COSMOS also says I'm mid. Rude.$"
 
 MtPyre_3F_Text_GabrielleIntro:
 	.string "Why have you come here?$"

@@ -552,7 +552,8 @@ MossdeepCity_Gym_Text_KathleenIntro:
 	.string "YOU ARE BEWIIIIIIIIIITCHEEEED!\p"
 
 MossdeepCity_Gym_Text_KathleenDefeat:
-	.string "N-nooooo!$"
+	.string "N-nooooo!\p"
+	.string "The spell… it backfired!$"
 
 MossdeepCity_Gym_Text_KathleenPostBattle:
 	.string "Your vitality is contagious!\n"

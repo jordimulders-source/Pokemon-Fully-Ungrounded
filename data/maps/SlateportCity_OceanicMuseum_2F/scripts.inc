@@ -277,8 +277,8 @@ SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
 	.string "We can prepare for our expedition now.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
-	.string "Hehehe, hold it!\n"
-	.string "We'll take those parts!$"
+	.string "Hehehe, hold it! We'll take those parts!\n"
+	.string "For the bottling plant!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
 	.string "CAPT. STERN: Wh-what?\n"
@@ -293,27 +293,26 @@ SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat:
 	.string "Awaaaah! My fizz went flat!$"
 
 SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious:
-	.string "Oh, man, what a disaster…\n"
-	.string "The BOSS is going to be furious…$"
+	.string "Oh, man… The BOSS is going to be\n"
+	.string "furious…\p"
+	.string "No bubbles for a week…$"
 
 SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis:
-	.string "Humph, sniveling wimp!\n"
-	.string "Let me take care of this!$"
+	.string "Humph, flat-water wimp! Let me handle\n"
+	.string "this!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
 	.string "What?! I lost too!\p"
 	.string "Pour me a SPA!$"
 
 SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
-	.string "Now what? If we don't get the parts,\n"
-	.string "we're in for it!\p"
-	.string "Arrgh, I didn't count on being meddled\n"
-	.string "with by some meddling kid!$"
+	.string "If we don't get the parts, we're in for\n"
+	.string "it!\p"
+	.string "Meddling kid!$"
 
 SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
-	.string "I came to see what was taking so\n"
-	.string "long to snatch some parts, and you\l"
-	.string "simps are held up by a mere child?$"
+	.string "What's taking so long?\p"
+	.string "Held up by a child? You're all flat.$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "We are TEAM AQUA, and we love bubbles!\p"

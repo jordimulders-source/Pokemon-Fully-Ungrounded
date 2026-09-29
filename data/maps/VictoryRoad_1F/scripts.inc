@@ -168,8 +168,7 @@ VictoryRoad_1F_Text_AlbertDefeat:
 
 VictoryRoad_1F_Text_AlbertPostBattle:
 	.string "I lost here…\p"
-	.string "That means I lack the qualifications\n"
-	.string "to become the CHAMPION…$"
+	.string "Trust in my self-righteous suicide…$"
 
 VictoryRoad_1F_Text_HopeIntro:
 	.string "This seemingly infinite and harsh road\n"
@@ -189,11 +188,9 @@ VictoryRoad_1F_Text_QuincyDefeat:
 	.string "…Barbarisms by Barbaras.$"
 
 VictoryRoad_1F_Text_QuincyPostBattle:
-	.string "Getting through here safely--that's\n"
-	.string "the final test for any TRAINER aiming\l"
-	.string "to become the POKéMON CHAMPION.\p"
-	.string "That's why it's called the VICTORY\n"
-	.string "ROAD.$"
+	.string "Getting through here is the final test.\p"
+	.string "Everybody's going to the party. Have a\n"
+	.string "real good time.$"
 
 VictoryRoad_1F_Text_KatelynnIntro:
 	.string "FUCK YOU, I WON'T DO WHAT YOU TELL ME!$"

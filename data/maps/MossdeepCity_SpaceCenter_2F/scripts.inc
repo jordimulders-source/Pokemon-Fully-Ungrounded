@@ -449,8 +449,8 @@ MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
 	.string "waiting!$"
 
 MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
-	.string "All I want…\n"
-	.string "I just want to expand the land mass…$"
+	.string "All I want…\p"
+	.string "I just want the world's spiciest sauce…$"
 
 MossdeepCity_SpaceCenter_Text_TabithaDefeat:
 	.string "I'm with our leader…\p"

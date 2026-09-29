@@ -232,31 +232,24 @@ MeteorFalls_1F_1R_EventScript_MetCozmo::
 	end
 
 MeteorFalls_1F_1R_Text_WithThisMeteorite:
-	.string "Hehehe!\p"
-	.string "With this METEORITE, that thing in\n"
-	.string "MT. CHIMNEY will…$"
+	.string "Hehehe! With this METEORITE, the\n"
+	.string "peppers of MT. CHIMNEY will…$"
 
 MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
 	.string "Heh?\p"
-	.string "I don't know who you are, but if you get\n"
-	.string "in the way of TEAM MAGMA, don't\l"
-	.string "expect any mercy!$"
+	.string "Get in MAGMA's way and you'll taste the\n"
+	.string "heat!$"
 
 MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
-	.string "Hold it right there, TEAM MAGMA!\p"
-	.string "You're badly mistaken if you think you\n"
-	.string "can have your way with the world!$"
+	.string "Hold it right there, MAGMA!\p"
+	.string "Keep your chili off the world!$"
 
 MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
-	.string "Hehehe!\n"
-	.string "Even TEAM AQUA joins us!\p"
-	.string "But it's too much trouble to deal with\n"
-	.string "you all…\p"
-	.string "Heh, it doesn't matter!\p"
-	.string "We've got the METEORITE, so off to\n"
-	.string "MT. CHIMNEY we go!\p"
-	.string "Hehehe! Be seeing you, you TEAM\n"
-	.string "AQUA dingbats!$"
+	.string "Hehehe! Even AQUA shows up!\p"
+	.string "Too much trouble. We've got the\n"
+	.string "METEORITE!\p"
+	.string "Off to MT. CHIMNEY! See you, you\n"
+	.string "bubble-heads!$"
 
 MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
 	.string "ARCHIE: Didn't I see you at the MUSEUM?\p"
@@ -269,8 +262,8 @@ MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
 	.string "Classy.$"
 
 MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma:
-	.string "BOSS, we should give chase to\n"
-	.string "TEAM MAGMA…$"
+	.string "BOSS, we should chase MAGMA…\p"
+	.string "After this SPA.$"
 
 MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
 	.string "ARCHIE: Yes, yes! To MT. CHIMNEY!\p"

@@ -47,11 +47,10 @@ MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
 	.string "I doubt I'll forget about him!$"
 
 MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
-	.string "When I accessed the RECORD CORNER,\n"
-	.string "the data for what's hot in DEWFORD\l"
-	.string "got updated.\p"
-	.string "Now that bit of data is the same\n"
-	.string "as my friend's!$"
+	.string "Shh! I'm in a raid.\p"
+	.string "… … … … … …\p"
+	.string "Sorry, did you say something?\p"
+	.string "I didn't see you. I never see anyone.$"
 
 MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 	.string "I've spent ¥50,000 on EA FC packs.\p"

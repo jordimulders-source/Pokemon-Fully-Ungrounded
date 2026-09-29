@@ -67,15 +67,18 @@ PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
 	.string "I haven't won in six weeks.$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
-	.string "When my POKéMON ate an\n"
-	.string "ORAN BERRY, it regained HP!$"
+	.string "I walked 10 km to hatch an EGG.\p"
+	.string "It was a MAGIKARP.\p"
+	.string "Again.$"
 
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
-	.string "There are many types of POKéMON.\p"
-	.string "All types have their strengths and\n"
-	.string "weaknesses against other types.\p"
-	.string "Depending on the types of POKéMON,\n"
-	.string "a battle could be easy or hard.$"
+	.string "GRASS beats WATER, WATER beats FIRE,\n"
+	.string "FIRE beats GRASS.\p"
+	.string "So where are the monkeys?!\p"
+	.string "PANSAGE, PANSEAR, PANPOUR!\p"
+	.string "The whole triangle, in monkey form!\p"
+	.string "Somebody left them out on purpose. I\n"
+	.string "KNOW it.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
 	.string "For example, your TREECKO\n"

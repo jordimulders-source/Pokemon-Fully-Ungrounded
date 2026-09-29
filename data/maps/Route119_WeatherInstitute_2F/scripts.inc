@@ -255,18 +255,15 @@ Route119_WeatherInstitute_2F_Text_ShellyPostBattle:
 	.string "Go drink some tap water.$"
 
 Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
-	.string "We have a situation here!\p"
-	.string "A TEAM MAGMA mob just passed\n"
-	.string "the WEATHER INSTITUTE.\p"
-	.string "They appear to be headed for\n"
-	.string "MT. PYRE!$"
+	.string "We have a situation!\p"
+	.string "A MAGMA mob just passed by. Heading to\n"
+	.string "MT. PYRE!\p"
+	.string "They smelled like chili.$"
 
 Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
-	.string "What?!\p"
-	.string "We can't waste any more time here!\n"
-	.string "We have to hurry to MT. PYRE, too!\p"
-	.string "Ahahahaha!\n"
-	.string "TEAM MAGMA, just you wait!$"
+	.string "What?! No more time here! To MT. PYRE!\p"
+	.string "Ahahahaha! MAGMA, keep your sauce away\n"
+	.string "from that ORB!$"
 
 Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 	.string "Thanks! We're safe! Take this POKéMON.\p"

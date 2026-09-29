@@ -436,13 +436,10 @@ RusturfTunnel_Text_GruntDefeat:
 	.string "Flat as still water.$"
 
 RusturfTunnel_Text_GruntTakePackage:
-	.string "This is plain not right…\p"
-	.string "The BOSS told me this would be a\n"
-	.string "slick-and-easy job to pull.\p"
-	.string "All I had to do was steal some package\n"
-	.string "from DEVON.\p"
-	.string "Tch!\n"
-	.string "You want it back that badly, take it!$"
+	.string "This is not right…\p"
+	.string "The BOSS said: steal a package from\n"
+	.string "DEVON. Easy.\p"
+	.string "Tch! Take it! It's not even carbonated.$"
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 	.string "PEEKO!\n"

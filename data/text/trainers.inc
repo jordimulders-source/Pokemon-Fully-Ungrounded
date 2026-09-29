@@ -54,7 +54,7 @@ Route102_Text_RickIntro:
 	.string "Love at first sight!$"
 
 Route102_Text_RickDefeated:
-	.string "Ow! Down and out!$"
+	.string "Ow! Rejected!$"
 
 Route102_Text_RickPostBattle:
 	.string "If you lock eyes with a TRAINER,\n"
@@ -99,7 +99,8 @@ Route103_Text_AmyIntro:
 	.string "She has a bit of a handicap!$"
 
 Route103_Text_AmyDefeated:
-	.string "AMY: Uh-oh, we lost.$"
+	.string "AMY: Uh-oh, we lost.\p"
+	.string "LIV, stop licking the POKé BALL.$"
 
 Route103_Text_AmyPostBattle:
 	.string "AMY: You have to think about all\n"
@@ -229,8 +230,8 @@ Route103_Text_PetePostBattle:
 	.string "this wasn't a POKéMON move...$"
 
 Route103_Text_IsabelleIntro:
-	.string "Watch where you're going!\n"
-	.string "We're going to crash!$"
+	.string "Watch where you're going!\p"
+	.string "Eyes up here!$"
 
 Route103_Text_IsabelleDefeated:
 	.string "Groan…\n"
@@ -350,7 +351,7 @@ Route104_Text_HaleyIntro:
 	.string "Stay, or should I go...$"
 
 Route104_Text_HaleyDefeat:
-	.string "I shouldn't have battled…$"
+	.string "…I should have gone.$"
 
 Route104_Text_HaleyPostBattle:
 	.string "Wait a minute, London is Calling.\p"
@@ -647,13 +648,13 @@ Route107_Text_DarrinIntro:
 	.string "that normal after six days?$"
 
 Route107_Text_DarrinDefeated:
-	.string "Ahaha, I lost…\n"
-	.string "I'll take a snooze, I think…$"
+	.string "Ahaha, I lost…\p"
+	.string "I'll take a snooze. Day seven.$"
 
 Route107_Text_DarrinPostBattle:
-	.string "Floating and being rocked by\n"
-	.string "the waves--it's like sleeping in\l"
-	.string "a plush, comfy bed.$"
+	.string "Floating on the waves is like a plush\n"
+	.string "bed.\p"
+	.string "A wet, salty, never-ending bed.$"
 
 Route107_Text_TonyIntro:
 	.string "The sea is like my backyard.\n"
@@ -877,17 +878,20 @@ Route109_Text_HueyPostBattle:
 	.string "TRAINER…$"
 
 Route109_Text_EdmondIntro:
-	.string "Urrrrppp…\n"
-	.string "Battle? With me?$"
+	.string "Urrrrppp…\p"
+	.string "WHO'S IN CHARGE?!\p"
+	.string "ME OR THE DEVIL?!$"
 
 Route109_Text_EdmondDefeated:
-	.string "Urp… Ooooooohhhhhh…\n"
-	.string "Urrrrpppp…$"
+	.string "FUCK!\p"
+	.string "You fucking CUNT!\p"
+	.string "…Not you. My POKéMON.$"
 
 Route109_Text_EdmondPostBattle:
-	.string "I'm usually stronger than this!\n"
-	.string "I'm just seasick as a dog!\p"
-	.string "I'm a SAILOR, but…$"
+	.string "Darts is just POKéMON for pubs.\p"
+	.string "Pick a target, throw, pray for a critical\n"
+	.string "hit.\p"
+	.string "Treble twenty is basically a crit.$"
 
 Route109_Text_RickyIntro:
 	.string "I'm thirsty… I could go for a SODA POP\n"
@@ -1055,9 +1059,8 @@ Route110_Text_JacobDefeated:
 	.string "POKéDOLLARS late fee…$"
 
 Route110_Text_JacobPostBattle:
-	.string "Flat tires and brake problems can\n"
-	.string "cause serious injury!\l"
-	.string "Inspect your BIKE for problems!$"
+	.string "Inspect your BIKE!\p"
+	.string "I didn't. That's 40 POKéDOLLARS now.$"
 
 Route110_Text_AnthonyIntro:
 	.string "Can you keep up? I take vitamins.\n"
@@ -1068,8 +1071,8 @@ Route110_Text_AnthonyDefeated:
 	.string "blood.$"
 
 Route110_Text_AnthonyPostBattle:
-	.string "Speed alone won't let me win at POKéMON.\n"
-	.string "I need to reconsider this…$"
+	.string "Speed alone won't win.\p"
+	.string "Neither will the vitamins, apparently.$"
 
 Route110_Text_BenjaminIntro:
 	.string "Wie döt mij wat, wie döt mij wat, wie döt\n"
@@ -1083,8 +1086,9 @@ Route110_Text_BenjaminDefeated:
 	.string "Lekke band… That's Dutch for “I lost.”$"
 
 Route110_Text_BenjaminPostBattle:
-	.string "There's no need to panic or stress.\n"
-	.string "Take it easy. There's plenty of time.$"
+	.string "Rustig aan.\p"
+	.string "That's Dutch for “take it easy.”\n"
+	.string "There's plenty of time.$"
 
 Route110_Text_BenjaminRegister:
 	.string "I'll keep chugging on without stressing.\n"
@@ -1099,8 +1103,9 @@ Route110_Text_BenjaminRematchDefeated:
 	.string "Tegenwind… Always tegenwind.$"
 
 Route110_Text_BenjaminRematchPostBattle:
-	.string "There's no need to panic or stress.\n"
-	.string "Take it easy. There's plenty of time.$"
+	.string "Rustig aan.\p"
+	.string "That's Dutch for “take it easy.”\n"
+	.string "There's plenty of time.$"
 
 Route110_Text_AbigailIntro:
 	.string "Hold on, let me pause my STRAVA.\p"
@@ -1112,8 +1117,8 @@ Route110_Text_AbigailDefeated:
 	.string "gone!$"
 
 Route110_Text_AbigailPostBattle:
-	.string "I'm exhausted, so I need a break.\n"
-	.string "It's important to get proper rest.$"
+	.string "I need a rest.\p"
+	.string "Rest days don't get kudos, though.$"
 
 Route110_Text_AbigailRegister:
 	.string "You know, I like you!\n"
@@ -1129,8 +1134,8 @@ Route110_Text_AbigailRematchDefeated:
 	.string "So this didn't happen.$"
 
 Route110_Text_AbigailRematchPostBattle:
-	.string "Were you going after a record?\p"
-	.string "I'm sorry if I held you up!$"
+	.string "Were you going for a record?\p"
+	.string "Sorry. I was going for a selfie.$"
 
 Route110_Text_JasmineIntro:
 	.string "Clip-in pedals! Very pro, very fast.\p"
@@ -1142,8 +1147,8 @@ Route110_Text_JasmineDefeated:
 	.string "Help… I'm tipping over… very… slowly…$"
 
 Route110_Text_JasminePostBattle:
-	.string "Oh, you have some GYM BADGES?\n"
-	.string "No wonder you're so strong!$"
+	.string "You have GYM BADGES? No wonder.\p"
+	.string "Could you unclip me? Please?$"
 
 Route110_Text_EdwardIntro:
 	.string "I have foreseen your intentions! The\n"
@@ -1164,9 +1169,9 @@ Route110_Text_JaclynDefeated:
 	.string "I should've checked my horoscope first.$"
 
 Route110_Text_JaclynPostBattle:
-	.string "You managed to win only because it was\n"
-	.string "a wonder! Yes, a wonder!\l"
-	.string "Don't think you can win all the time!$"
+	.string "You only won because Venus was in your\n"
+	.string "house!\p"
+	.string "Don't think it'll happen again!$"
 
 Route110_Text_EdwinIntro:
 	.string "Could I see your POKéMON?\n"
@@ -1247,8 +1252,9 @@ Route110_Text_TimmyDefeated:
 	.string "today.$"
 
 Route110_Text_TimmyPostBattle:
-	.string "It's hard to battle with POKéMON you\n"
-	.string "just caught.$"
+	.string "It's hard to be the best with POKéMON\n"
+	.string "you just caught.\p"
+	.string "To catch them is my real test.$"
 
 Route110_Text_AlyssaIntro:
 	.string "I fell off CYCLING ROAD…\p"
@@ -1273,8 +1279,8 @@ Route110_Text_JosephDefeated:
 	.string "HA-HA-HA-HA-HAAAA!$"
 
 Route110_Text_JosephPostBattle:
-	.string "This isn't going to bring me down!\n"
-	.string "Losing has made me a better man!$"
+	.string "Losing made me a better man!\p"
+	.string "Windmill, windmill for the land…$"
 
 Route110_Text_KalebIntro:
 	.string "When cute POKéMON help each other…\n"
@@ -1539,8 +1545,8 @@ Route111_Text_CelinaDefeat:
 	.string "…Baby, slice it right…$"
 
 Route111_Text_CelinaPostBattle:
-	.string "My pulse is still racing.\n"
-	.string "You're one fabulous TRAINER.$"
+	.string "My pulse is still racing.\p"
+	.string "Let this groove get you to move!$"
 
 Route111_Text_HaydenIntro:
 	.string "When you're as famished as I am,\n"
@@ -1740,9 +1746,9 @@ Route113_Text_LaoRematchDefeat:
 	.string "SASUKE would have won…$"
 
 Route113_Text_LaoPostRematch:
-	.string "My flawless concealment was let down\n"
-	.string "by my immature battle skills…\p"
-	.string "I bid thee farewell.$"
+	.string "My flawless concealment failed…\p"
+	.string "It's fine. I'll train with a thousand\n"
+	.string "shadow clones.$"
 
 Route113_Text_LungIntro:
 	.string "You found me? OMAE WA MOU SHINDEIRU!$"
@@ -1948,10 +1954,8 @@ Route114_Text_BernieRematchDefeat:
 	.string "Tasted like chicken, by the way.$"
 
 Route114_Text_BerniePostRematch:
-	.string "You really do have to be careful with\n"
-	.string "any sort of fire in a forest.\p"
-	.string "Don't ever underestimate the power\n"
-	.string "of fire.$"
+	.string "Olive oil, PIDGEY and a forest fire.\p"
+	.string "Don't underestimate a good barbecue.$"
 
 Route114_Text_ClaudeIntro:
 	.string "If we were fishing, you wouldn't stand\n"
@@ -2209,8 +2213,8 @@ Route115_Text_AlixDefeat:
 	.string "Gah! Bad dharma!$"
 
 Route115_Text_AlixPostBattle:
-	.string "Oh, well.\n"
-	.string "I think I will TELEPORT home.$"
+	.string "Oh, well. I'll TELEPORT home.\p"
+	.string "You still owe me 300 POKéDOLLARS.$"
 
 Route115_Text_MarleneIntro:
 	.string "You've disturbed my meditation! I was\n"
@@ -2220,8 +2224,8 @@ Route115_Text_MarleneDefeat:
 	.string "My chakras are all over the floor now.$"
 
 Route115_Text_MarlenePostBattle:
-	.string "I was meditating with my POKéMON.\n"
-	.string "But this place isn't very peaceful…$"
+	.string "I was meditating.\p"
+	.string "Now I'm thinking about taxes. Thanks.$"
 
 Route116_Text_ClarkIntro:
 	.string "If the tunnel doesn't go through, then\n"
@@ -2457,9 +2461,8 @@ Route117_Text_DylanDefeat:
 	.string "hurts at 38.$"
 
 Route117_Text_DylanPostBattle:
-	.string "I may have blown it…\p"
-	.string "I might have dropped to last during\n"
-	.string "that battle…$"
+	.string "I might have dropped to last.\p"
+	.string "Also dropped my kneecap.$"
 
 Route117_Text_DylanRegister:
 	.string "POKéMON have to be strong, too?\n"
@@ -2475,9 +2478,8 @@ Route117_Text_DylanRematchDefeat:
 	.string "something always pops.$"
 
 Route117_Text_DylanPostRematch:
-	.string "I was tops in swimming and cycling,\n"
-	.string "but I'm not quite that confident with\l"
-	.string "POKéMON yet.$"
+	.string "Tops in swimming and cycling.\p"
+	.string "Bottom in walking.$"
 
 Route117_Text_MariaIntro:
 	.string "I've done 14 triathlons. My body has\n"
@@ -2489,10 +2491,9 @@ Route117_Text_MariaDefeat:
 	.string "the shins!$"
 
 Route117_Text_MariaPostBattle:
-	.string "Training is meaningful only if you\n"
-	.string "keep it up regularly.\p"
-	.string "Okay! I'll resume my training!\n"
-	.string "Tomorrow!$"
+	.string "Training only matters if you keep it up.\p"
+	.string "I'll resume tomorrow. My shins say next\n"
+	.string "year.$"
 
 Route117_Text_MariaRegister:
 	.string "You appear to be training properly…\n"
@@ -2507,8 +2508,8 @@ Route117_Text_MariaRematchDefeat:
 	.string "I need more practice. And a new spine.$"
 
 Route117_Text_MariaPostRematch:
-	.string "I'll resume training tomorrow.\n"
-	.string "Let's battle again sometime!$"
+	.string "Let's battle again sometime!\p"
+	.string "If my spine allows it.$"
 
 Route117_Text_DerekIntro:
 	.string "Once a BUG CATCHER!\n"
@@ -2609,8 +2610,9 @@ Route117_Text_MelinaDefeat:
 	.string "up?$"
 
 Route117_Text_MelinaPostBattle:
-	.string "It feels wonderful to go for a jog\n"
-	.string "while looking at flowers.$"
+	.string "Jogging among flowers is wonderful.\p"
+	.string "I've been lying here among the flowers\n"
+	.string "for an hour.$"
 
 Route117_Text_BrandiIntro:
 	.string "Behold the power of my THETANS! I've\n"
@@ -2620,8 +2622,9 @@ Route117_Text_BrandiDefeat:
 	.string "My E-METER is broken…$"
 
 Route117_Text_BrandiPostBattle:
-	.string "PSYCHIC POKéMON are complex.\n"
-	.string "You should try catching some.$"
+	.string "PSYCHIC POKéMON are complex.\p"
+	.string "Join us. The first course is only\n"
+	.string "¥10,000.$"
 
 Route117_Text_AishaIntro:
 	.string "Concentrate on getting the win.\n"
@@ -2678,8 +2681,9 @@ Route118_Text_PerryDefeat:
 	.string "common in this area.$"
 
 Route118_Text_PerryPostBattle:
-	.string "You've got great POKéMON.\n"
-	.string "I'll have to train mine better.$"
+	.string "Great POKéMON.\p"
+	.string "TAILLOW would say: tsip-tsip. That\n"
+	.string "means “respect.”$"
 
 Route118_Text_ChesterIntro:
 	.string "AAAAAARGH! My hair turned golden and\n"
@@ -2689,8 +2693,9 @@ Route118_Text_ChesterDefeat:
 	.string "…It was just hair gel.$"
 
 Route118_Text_ChesterPostBattle:
-	.string "If they'd get stronger, they'd be able\n"
-	.string "to fly more freely…$"
+	.string "If they got stronger, they'd fly more\n"
+	.string "freely…\p"
+	.string "Like my hair. Before I washed it.$"
 
 Route118_Text_BarnyIntro:
 	.string "I'm a FISHERMAN, but also a TRAINER.\n"
@@ -2725,10 +2730,9 @@ Route118_Text_DaltonDefeat:
 	.string "fan?$"
 
 Route118_Text_DaltonPostBattle:
-	.string "An electric guitar doesn't always\n"
-	.string "have to be noisy…\p"
-	.string "It can be strummed to squeeze out\n"
-	.string "this heart-stirring melody…$"
+	.string "MASTER! MASTER!\p"
+	.string "MASTER OF PUPPETS IS PULLING YOUR\n"
+	.string "STRINGS!$"
 
 Route118_Text_DaltonRegister:
 	.string "When I compose better melodies,\n"
@@ -2745,8 +2749,9 @@ Route118_Text_DaltonRematchDefeat:
 	.string "Message received. Loud and clear.$"
 
 Route118_Text_DaltonPostRematch:
-	.string "When I play, my emotions should reach\n"
-	.string "you through my electric guitar…$"
+	.string "This ain't no party…\p"
+	.string "This ain't no disco…\p"
+	.string "This ain't no fooling around.$"
 
 Route118_Text_DeandreIntro:
 	.string "Go, go, go!\n"
@@ -2903,7 +2908,8 @@ Route119_Text_HughDefeat:
 
 Route119_Text_HughPostBattle:
 	.string "My BIRD POKéMON made my dreams of\n"
-	.string "flying come true!$"
+	.string "flying come true!\p"
+	.string "I still can't fly, though.$"
 
 Route119_Text_PhilIntro:
 	.string "I'll show you the true potential of me\n"
@@ -2971,9 +2977,9 @@ Route119_Text_FabianDefeat:
 	.string "ENJOY ALL THE WRONG MOVES!$"
 
 Route119_Text_FabianPostBattle:
-	.string "Hit me with another power chord!\n"
-	.string "Leave me alone!\l"
-	.string "Your win you have to atone!$"
+	.string "AERIALS, IN THE SKY!\p"
+	.string "WHEN YOU LOSE SMALL MIND, YOU FREE\n"
+	.string "YOUR LIFE!$"
 
 Route119_Text_DaytonIntro:
 	.string "Hohoho!\n"
@@ -3451,8 +3457,8 @@ Route123_Text_CameronRematchDefeat:
 	.string "The universe is ghosting me.$"
 
 Route123_Text_CameronPostRematch:
-	.string "I should train at MT. PYRE…\n"
-	.string "I'll never beat you this way…$"
+	.string "I'll train at MT. PYRE.\p"
+	.string "And make a bigger vision board.$"
 
 Route123_Text_JackiIntro:
 	.string "Don't be happy if your POKéMON develop\n"
@@ -3462,8 +3468,9 @@ Route123_Text_JackiDefeat:
 	.string "My aura is beige now.$"
 
 Route123_Text_JackiPostBattle:
-	.string "We all have psychic powers.\n"
-	.string "We've just forgotten how to use them.$"
+	.string "We all have psychic powers.\p"
+	.string "Mine is knowing when POKéMON read my\n"
+	.string "diary.$"
 
 Route123_Text_JackiRegister:
 	.string "I would like to face you again.\n"
@@ -3477,8 +3484,9 @@ Route123_Text_JackiRematchDefeat:
 	.string "Bad karma for me, good dharma for you.$"
 
 Route123_Text_JackiPostRematch:
-	.string "Your power with POKéMON…\n"
-	.string "That could be a psychic power, too.$"
+	.string "Your power with POKéMON…\p"
+	.string "Maybe you're psychic too. Or just good.\n"
+	.string "Ugh.$"
 
 Route123_Text_MiuIntro:
 	.string "MIU: Hello, TRAINER. I hope your\n"
@@ -3539,8 +3547,8 @@ Route123_Text_FernandoDefeat:
 	.string "THE ACE OF SPADES!$"
 
 Route123_Text_FernandoPostBattle:
-	.string "You're rock steady.\n"
-	.string "I'd like to write a tune about you.$"
+	.string "Fuck, man.\p"
+	.string "LEMMY, why did you have to go?$"
 
 Route123_Text_FernandoRegister:
 	.string "The next time, lend your ears to\n"
@@ -3556,8 +3564,8 @@ Route123_Text_FernandoRematchDefeat:
 	.string "Shut it.$"
 
 Route123_Text_FernandoPostRematch:
-	.string "I thought you'd be so enthralled\n"
-	.string "by my tune, you'd lose.$"
+	.string "Take one with me…\p"
+	.string "…No? Fine. Shut it.$"
 
 Route123_Text_DavisIntro:
 	.string "This is my awesome BUG POKéMON!\n"
@@ -3664,13 +3672,12 @@ Route124_Text_RolandIntro:
 	.string "that's a whale.”$"
 
 Route124_Text_RolandDefeat:
-	.string "Oh!\n"
-	.string "I can't…$"
+	.string "Oh! I can't…$"
 
 Route124_Text_RolandPostBattle:
-	.string "I'm getting chilled…\n"
-	.string "I've been in the water too long…\p"
-	.string "I wish I could ride a POKéMON like you…$"
+	.string "I'm getting chilled.\p"
+	.string "Still no WAILORD. “Sir, that's a whale,”\n"
+	.string "they say.$"
 
 Route124_Text_JennyIntro:
 	.string "If you just float in the sea like\n"
@@ -4429,8 +4436,8 @@ Route130_Text_SantiagoDefeat:
 	.string "Motionless. Again.$"
 
 Route130_Text_SantiagoPostBattle:
-	.string "Swimming and battling like this…\n"
-	.string "I'm one happy guy…$"
+	.string "Swimming and battling…\p"
+	.string "No. Just floating. As always.$"
 
 Route131_Text_RichardIntro:
 	.string "The sea is teeming with POKéMON.\n"
@@ -4587,9 +4594,8 @@ Route132_Text_RonaldDefeat:
 	.string "never lose to INCINEROAR!$"
 
 Route132_Text_RonaldPostBattle:
-	.string "I never battle when I know I'll win.\n"
-	.string "I like to battle at the razor's edge of\l"
-	.string "victory and defeat!$"
+	.string "I only battle at the edge of victory.\p"
+	.string "Or against INCINEROAR. Same thing.$"
 
 Route132_Text_KiyoIntro:
 	.string "I contemplate POKéMON 24 hours a day.\n"
@@ -4769,11 +4775,12 @@ Route134_Text_AlexIntro:
 	.string "Battle me!$"
 
 Route134_Text_AlexDefeat:
-	.string "Tuckered out again…$"
+	.string "Tuckered out…\p"
+	.string "The golems are flying again.$"
 
 Route134_Text_AlexPostBattle:
-	.string "My BIRD POKéMON get tired quickly after\n"
-	.string "a long flight…$"
+	.string "My BIRD POKéMON get tired fast.\p"
+	.string "Rocks don't. How do rocks fly?!$"
 
 Route134_Text_HitoshiIntro:
 	.string "JUST DO IT!!!$"
@@ -4782,8 +4789,8 @@ Route134_Text_HitoshiDefeat:
 	.string "…Yesterday you said tomorrow.$"
 
 Route134_Text_HitoshiPostBattle:
-	.string "It was I who challenged you, and yet\n"
-	.string "I lost. I am deeply shamed…$"
+	.string "I challenged you and lost.\p"
+	.string "Don't let your dreams be dreams…$"
 
 Route134_Text_AaronIntro:
 	.string "The savage tide in this area serves to\n"
@@ -4807,14 +4814,12 @@ Route134_Text_KelvinIntro:
 	.string "people work!$"
 
 Route134_Text_KelvinDefeat:
-	.string "Awawawawah!\n"
-	.string "Please, stop! Please!$"
+	.string "Awawawah! Please, stop!\p"
+	.string "I just got used to people again!$"
 
 Route134_Text_KelvinPostBattle:
-	.string "If we can't SURF, how are we supposed\n"
-	.string "to get home?\p"
-	.string "Actually, I know a fainted POKéMON\n"
-	.string "can still SURF, but it feels wrong.$"
+	.string "If we can't SURF, how do we get home?\p"
+	.string "I've been asking since 2004.$"
 
 Route134_Text_MarleyIntro:
 	.string "Can your POKéMON dodge our\n"

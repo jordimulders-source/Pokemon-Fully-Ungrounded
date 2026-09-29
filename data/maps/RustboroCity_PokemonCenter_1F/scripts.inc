@@ -41,10 +41,12 @@ RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
 	.string "Who's next, LANCE?$"
 
 RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
-	.string "Just like people, there are male and\n"
-	.string "female POKéMON.\p"
-	.string "But no one seems to have any idea how\n"
-	.string "they're different.$"
+	.string "Since MARIO ODYSSEY, NINTENDO put out\n"
+	.string "nine KIRBY games.\p"
+	.string "Nine.\p"
+	.string "And zero 3D MARIOs.\p"
+	.string "Who's running that company? A pink\n"
+	.string "ball?$"
 
 RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
 	.string "The man next door gave me an HM!\p"

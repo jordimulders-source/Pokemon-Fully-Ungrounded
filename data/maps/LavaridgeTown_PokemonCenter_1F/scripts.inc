@@ -42,10 +42,11 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersPokemonSpendTimeTogether:
 	.string "That's what I think.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate:
-	.string "It's sort of magical how just sitting\n"
-	.string "in a hot-spring pool can invigorate.\p"
-	.string "I wish I could let my POKéMON\n"
-	.string "soak, too.$"
+	.string "POKéMON UNITE. A MOBA.\p"
+	.string "POKéMON CAFé. Serving lattes.\p"
+	.string "Who asked for this?!\p"
+	.string "I just want to throw balls at animals.\n"
+	.string "Like a normal person.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo:
 	.string "Hohoho… You hear that jingle?\n"

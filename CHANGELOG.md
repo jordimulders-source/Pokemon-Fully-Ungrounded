@@ -14975,3 +14975,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - George's Vigoroth: Truant → Vital Spirit (Vigoroth kan Truant niet hebben).
 - Bewust niet geëvolueerd (grappen): o.a. Magikarps, Edwards Abra's, Wally's Ralts, Whismur, Mareep, Azurill, Skitty.
 - `make check`: vergeleken met master is er één nieuwe failure, "SaveBlock3 is backwards compatible", door de bewuste save-wijziging voor itembeschrijvingen (+104 bytes). Verwachte grootte in `test/save.c` bijgewerkt naar 108; verder gelijk aan master.
+
+### [v.0.6.64] - Mom vóór de klok
+- Zolang je de klok boven nog niet hebt gezet, zegt Mom niet meer de A-Team-regel, maar: "Ugh, this move sucked. It took forever. / Your DAD caused a ton of trouble, and all he brought was a new clock. / It's upstairs. Go look at it." Daarna blijft ze bij "The A-Team will be on soon! YOU FOOL!".
+- Getest in de emulator.

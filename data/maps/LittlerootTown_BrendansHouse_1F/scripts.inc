@@ -285,6 +285,13 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2:
 	walk_up
 	step_end
 
+PlayersHouse_1F_Text_MoveWasAwful:
+	.string "MOM: Ugh, this move sucked.\n"
+	.string "It took forever.\p"
+	.string "Your DAD caused a ton of trouble,\n"
+	.string "and all he brought was a new clock.\p"
+	.string "It's upstairs. Go look at it.$"
+
 PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "MOM: The A-Team will be on soon!\n"
 	.string "YOU FOOL!$"

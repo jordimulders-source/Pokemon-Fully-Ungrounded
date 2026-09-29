@@ -261,7 +261,14 @@ PlayersHouse_1F_EventScript_Mom::
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
 	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
+	goto_if_unset FLAG_SET_WALL_CLOCK, PlayersHouse_1F_EventScript_MomBeforeClock @ Project Grounded
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
+	release
+	end
+
+@ Project Grounded: zolang de klok boven nog niet gezet is, klaagt Mom over de verhuizing.
+PlayersHouse_1F_EventScript_MomBeforeClock::
+	msgbox PlayersHouse_1F_Text_MoveWasAwful, MSGBOX_DEFAULT
 	release
 	end
 

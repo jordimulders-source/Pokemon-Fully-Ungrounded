@@ -14996,3 +14996,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - De boog van de bal is korter (25 → 19 frames). Dat geldt ook bij het wisselen tijdens een gevecht.
   - Getest in de emulator: geen grafische fouten.
 - Galar Zigzagoon: Leer uit de level-1-moves gehaald. Op lv 5 kent hij nu Tackle, Parting Shot, Baby-Doll Eyes en Sand Attack, in plaats van alleen stat-verlagende moves.
+
+### [v.0.6.68] - Mom's afscheid zonder running-shoes-melding
+- Bij het weggaan uit Littleroot geen "running shoes"-regel, fanfare of "{PLAYER} doesn't know what to do." meer (die had je al vanaf het begin). Mom's afscheidsspeech (Village People, Mongolen, geldcadeau) blijft.

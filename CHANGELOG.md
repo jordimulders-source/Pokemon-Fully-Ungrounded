@@ -14939,3 +14939,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - LEGEND DOGS is het ongebruikte Suicune/legendary beasts-nummer dat in de ROM zit (volgens de broncode een testtrack); kan ruw klinken.
 - Opgeslagen in `VAR_BATTLE_MUSIC_WILD` (0x408B) en `VAR_BATTLE_MUSIC_TRAINER` (0x4091). Lijst in `src/battle_music_options.c`.
 - Getest in de emulator: menu, bladeren en opslaan werken.
+
+### [v.0.6.58] - Wally-events getest; aces bewaard voor het laatst
+- Beide Wally-events in de emulator doorgespeeld: Meteor Falls (Wally ziet je, loopt op je af, dialoog, paarse mugshot, gevecht, daarna weg) en Mt. Chimney (Maxie's dialoog, Tabitha loopt naar Maxie, Wally rent binnen, 3 Pokémon kiezen, dubbele mugshot, tag battle, na afloop verdwijnen Magma en Wally). Annuleer je het kiezen, dan kom je gewoon terug in het keuzescherm.
+- Wally stuurde zonder AI zijn Pokémon in willekeurige volgorde in, waardoor Kirlia niet als laatste kwam. Nu hebben Wally (beide gevechten), Maxie (Camerupt) en Tabitha in de tag battle (Hisuian Arcanine) `AI_FLAG_ACE_POKEMON`: de laatste Pokémon komt pas als allerlaatste. Wally's moves blijven willekeurig.

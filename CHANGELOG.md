@@ -14633,3 +14633,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.5] - Dialogen Abandoned Ship (Dialoogstudio)
 - 55 herschreven dialogen van het Abandoned Ship verwerkt (Captain's Office, gangen 1F/B1F, kamers 1F/B1F, Hidden Floor; trainers Charlie, Duncan, Demetrius, Thalia, Garrison, Jani, Kira & Dan incl. rematches), automatisch afgebroken voor het tekstvak.
+
+### [v.0.6.6] - Na-beta-gebieden
+- Afgesproken: dialogen in het Trick House, de Battle Frontier en de Battle Tents blijven tot na de beta vanilla (vastgelegd in CLAUDE.md).
+- Dialoogstudio: nieuw vinkje "Na-beta-gebieden verbergen" (standaard aan) haalt deze kaarten uit de kaartlijst en de zoekresultaten.

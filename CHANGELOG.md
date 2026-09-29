@@ -14866,3 +14866,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Scripts die niet op een newline eindigden, gerepareerd (waarschuwingen bij het bouwen zijn weg).
 - Bewust vanilla gelaten: Mom (tekst van Jordi), Jeffrey (Route 120), de Yes Town-jongen, Deandre, de Regi-hints, de legendes op de Mt. Pyre-top, Maxie's stilte op Mt. Pyre en zijn verlies op Mt. Chimney/Route 128, Shelly's verlies, Archie's "Hold it right there"/"So it was you", RYDEL×50, Pokémon-kreten, functionele borden (hutnummers, bedden, records) en alles in Trick House, Battle Frontier en Battle Tents.
 - Nagekomen: de voorzitter-broer in Pacifidlog (vakantie in een dorp zonder wifi), New Mauville (iemand mint crypto op de generator), Mt. Pyre-trainers Luke & Dez, Tasha en Valerie, een Magma-grunt in het Space Center, de Lilycove-museumzaal en de Trainer Fan Club.
+
+### [v.0.6.46] - Pokémon Center en pc
+- Verpleegster in stijl: "We fix your POKéMON. No questions asked. No insurance needed." en "Do not ask what happens in the back." Ook de Gold Card-, "the usual"- en Pokérus-teksten.
+- Pc: draait nog op Windows XP; "Your data is safe. Probably." (sluit aan op de NPC met het datalek).
+- Te brede tekstregels gerepareerd: Wally in de Petalburg Gym, Harvey (Game of Thrones Room), Owen (Victory Road) en Liv's registratie.

@@ -994,11 +994,10 @@ gText_ComeBackWithSecretPower::
 gText_PokerusExplanation::
 	.string "Your POKéMON may be infected with\n"
 	.string "POKéRUS.\p"
-	.string "Little is known about the POKéRUS\n"
-	.string "except that they are microscopic life-\l"
-	.string "forms that attach to POKéMON.\p"
-	.string "While infected, POKéMON are said to\n"
-	.string "grow exceptionally well.$"
+	.string "Nobody really knows what POKéRUS is.\n"
+	.string "Tiny life-forms that stick to POKéMON.\p"
+	.string "Infected POKéMON grow exceptionally\n"
+	.string "well. Don't tell the ministry.$"
 
 	.include "data/text/surf.inc"
 

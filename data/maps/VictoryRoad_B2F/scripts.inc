@@ -52,7 +52,8 @@ VictoryRoad_B2F_Text_OwenIntro:
 
 VictoryRoad_B2F_Text_OwenDefeat:
 	.string "You are ready!\n"
-	.string "Hopefully you are good at team building!$"
+	.string "Hopefully you are good at team\l"
+	.string "building!$"
 
 VictoryRoad_B2F_Text_OwenPostBattle:
 	.string "Man, it's so fun to be able to make\n"

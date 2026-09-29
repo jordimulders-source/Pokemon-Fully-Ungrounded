@@ -401,7 +401,8 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro:
 	.string "Nobody!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat:
-	.string "Ack! Ack! Aaack!$"
+	.string "Ack! Ack! Aaack! The BOSS is going to\n"
+	.string "put hot sauce in my eyes!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2PostBattle:
 	.string "Tell the BOSS I never left my post.\p"

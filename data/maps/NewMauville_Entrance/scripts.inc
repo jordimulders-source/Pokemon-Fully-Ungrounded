@@ -47,7 +47,8 @@ NewMauville_Entrance_EventScript_DontOpenDoor::
 	end
 
 NewMauville_Entrance_Text_DoorIsLocked:
-	.string "The door is locked.$"
+	.string "The door is locked. A sticker says:\n"
+	.string "“MAUVILLE DATACENTER B. KEEP OUT.”$"
 
 NewMauville_Entrance_Text_UseBasementKey:
 	.string "Use the BASEMENT KEY?$"

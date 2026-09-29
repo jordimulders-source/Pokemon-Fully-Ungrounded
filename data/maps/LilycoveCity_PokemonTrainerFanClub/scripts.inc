@@ -743,7 +743,8 @@ LilycoveCity_PokemonTrainerFanClub_Text_NoOneCanKnockYouButTrainerStronger:
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouImpressive:
 	.string "You…\p"
-	.string "Impressive!$"
+	.string "Impressive! Can I have your autograph?\n"
+	.string "On my arm?$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_OnlyIRecognizeYourTrueWorth:
 	.string "Only I see your true worth.\p"

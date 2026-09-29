@@ -33,7 +33,8 @@ MtPyre_6F_Text_ValerieIntro:
 	.string "Or it's the incense. Hard to say.$"
 
 MtPyre_6F_Text_ValerieDefeat:
-	.string "The power is ebbing away…$"
+	.string "The power is ebbing away… Or the\n"
+	.string "incense ran out.$"
 
 MtPyre_6F_Text_ValeriePostBattle:
 	.string "Perhaps the power comes from the\n"
@@ -50,7 +51,8 @@ MtPyre_6F_Text_ValerieRematchIntro:
 	.string "Behind you… What is it…$"
 
 MtPyre_6F_Text_ValerieRematchDefeat:
-	.string "Something faded away…$"
+	.string "Something faded away… Probably my\n"
+	.string "dignity.$"
 
 MtPyre_6F_Text_ValeriePostRematch:
 	.string "The POKéMON at rest here… Sometimes,\n"

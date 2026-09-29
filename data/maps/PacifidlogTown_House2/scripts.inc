@@ -92,15 +92,14 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill::
 
 PacifidlogTown_House2_Text_ChairmansYoungerBrotherOnVacation:
 	.string "Er-hem!\p"
-	.string "I am the POKéMON FAN CLUB's most\n"
-	.string "important person, the CHAIRMAN's\l"
-	.string "younger brother.\p"
-	.string "I'm here enjoying my vacation with\n"
-	.string "POKéMON, yes, indeed.$"
+	.string "I am the most important person of the\n"
+	.string "POKéMON FAN CLUB. Well, the CHAIRMAN's\l"
+	.string "younger brother. Same thing.\p"
+	.string "I'm on vacation here. There's nothing to\n"
+	.string "do. It's wonderful.$"
 
 PacifidlogTown_House2_Text_AhYourPokemon:
-	.string "Ah!\n"
-	.string "Your POKéMON…$"
+	.string "Ah! Your POKéMON…$"
 
 PacifidlogTown_House2_Text_AdoringPokemonTakeThis:
 	.string "It clearly likes you. Here, an ABILITY\n"
@@ -109,10 +108,10 @@ PacifidlogTown_House2_Text_AdoringPokemonTakeThis:
 	.string "all it does.$"
 
 PacifidlogTown_House2_Text_PutInSomeMoreEffort:
-	.string "Hmm…\n"
-	.string "It's not bad, but it's also not good.\p"
-	.string "You, as the TRAINER, need to put in\n"
-	.string "some more effort.$"
+	.string "Hmm… Not bad, not good. Mediocre, like\n"
+	.string "this town's WiFi.\p"
+	.string "You, the TRAINER, need to put in more\n"
+	.string "effort.$"
 
 PacifidlogTown_House2_Text_ViciousPokemonTakeThis:
 	.string "It hates you. Here's DAZZLING GLEAM.\n"
@@ -129,13 +128,13 @@ PacifidlogTown_House2_Text_Rurii:
 	.string "AZURILL: Rurii.$"
 
 PacifidlogTown_House2_Text_VeryFriendlyWithTrainer:
-	.string "It appears to be very friendly with the\n"
-	.string "TRAINER.$"
+	.string "It seems very friendly with its\n"
+	.string "TRAINER. Disgustingly so.$"
 
 PacifidlogTown_House2_Text_Rururi:
 	.string "AZURILL: Rururi!$"
 
 PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch:
-	.string "It doesn't appear to like the TRAINER\n"
-	.string "very much.$"
+	.string "It doesn't seem to like its TRAINER\n"
+	.string "very much. Understandable.$"
 

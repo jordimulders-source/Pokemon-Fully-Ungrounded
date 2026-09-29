@@ -260,10 +260,10 @@ SSTidalCorridor_Text_ScottBattleFrontierInvite:
 	.string "there.$"
 
 SSTidal_Text_FastCurrentsHopeYouEnjoyVoyage:
-	.string "This ferry is built to plow through\n"
-	.string "fast-running currents.\p"
-	.string "We hope you enjoy your voyage with us.\n"
-	.string "Feel free to explore the ship.$"
+	.string "This ferry is built to plow through fast\n"
+	.string "currents.\p"
+	.string "Enjoy your voyage. Feel free to explore\n"
+	.string "the ship. Don't touch the captain's hat.$"
 
 SSTidal_Text_HopeYouEnjoyVoyage:
 	.string "Welcome aboard. Life jackets are under\n"

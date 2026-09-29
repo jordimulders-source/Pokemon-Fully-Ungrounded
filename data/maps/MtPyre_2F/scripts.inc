@@ -74,7 +74,8 @@ MtPyre_2F_Text_LukeIntro:
 	.string "I'll cream you!$"
 
 MtPyre_2F_Text_LukeDefeat:
-	.string "LUKE: Whoopsie!$"
+	.string "LUKE: Whoopsie! …She's not falling for\n"
+	.string "me, is she?$"
 
 MtPyre_2F_Text_LukePostBattle:
 	.string "LUKE: We lost, but I'm right here by your\n"
@@ -92,7 +93,8 @@ MtPyre_2F_Text_DezIntro:
 	.string "beating you!$"
 
 MtPyre_2F_Text_DezDefeat:
-	.string "DEZ: Waaaah! I'm scared!$"
+	.string "DEZ: Waaaah! I'm scared! Take me home,\n"
+	.string "LUKE!$"
 
 MtPyre_2F_Text_DezPostBattle:
 	.string "DEZ: We're lovey-dovey, so losing\n"

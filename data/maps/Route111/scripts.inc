@@ -566,14 +566,16 @@ Route111_EventScript_TrainerHillSign::
 	end
 
 Route111_Text_BattleOurFamily:
-	.string "Hello! I take it you're a traveler.\p"
-	.string "How's this? What do you say to taking\n"
-	.string "on our family of four in a series of\l"
-	.string "POKéMON battles?$"
+	.string "Hello! A traveler?\p"
+	.string "How about taking on our family of four?\n"
+	.string "One battle each!\p"
+	.string "We're the WINSTRATES. Our hearts beat\n"
+	.string "as one. Visitors must battle.$"
 
 Route111_Text_IsThatSo:
-	.string "Is that so?\n"
-	.string "Drop in, if you change your mind!$"
+	.string "Is that so? Drop in if you change your\n"
+	.string "mind!\p"
+	.string "We'll be watching. Always.$"
 
 Route111_Text_VictorIntro:
 	.string "That's the spirit! My daughter trains\n"
@@ -624,9 +626,10 @@ Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "have clients yet. Or a job.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
-	.string "I challenged the WINSTRATE family,\n"
-	.string "but four matches in a row is tough\l"
-	.string "going… They destroyed me.$"
+	.string "I challenged the WINSTRATES. Four\n"
+	.string "battles in a row…\p"
+	.string "They destroyed me.\p"
+	.string "Then they made me stay for dinner.$"
 
 Route111_Text_RouteSignMauville:
 	.string "ROUTE 111\n"
@@ -662,51 +665,47 @@ Route111_Text_TrainerTipsSpAtkSpDef:
 	.string "BULBAPEDIA.$"
 
 Route111_Text_ShouldBeMirageTowerAroundHere:
-	.string "There should be a tower made of sand\n"
-	.string "around here somewhere.\p"
-	.string "But for some reason, it can be seen\n"
-	.string "sometimes, and sometimes not.\p"
-	.string "That's why I call it the MIRAGE TOWER.$"
+	.string "There's supposed to be a tower of sand\n"
+	.string "around here.\p"
+	.string "Sometimes you see it, sometimes you\n"
+	.string "don't.\p"
+	.string "So I call it the MIRAGE TOWER. Or\n"
+	.string "heatstroke.$"
 
 Route111_Text_MirageTowerClearlyVisible:
-	.string "I see it!\n"
-	.string "The tower of sand!\p"
-	.string "The sand tower they called a mirage\n"
-	.string "is clearly visible!\p"
-	.string "But it looks so fragile…\n"
-	.string "It could crumble away anytime…\p"
-	.string "I want to go inside it, but I can't\n"
-	.string "get my courage up for it…$"
+	.string "I see it! The tower of sand!\p"
+	.string "It looks so fragile… It could crumble\n"
+	.string "any second…\p"
+	.string "I want to go in, but I'm scared. You go.$"
 
 Route111_Text_ThatWasShockingSandRainedDown:
-	.string "Whoa…\n"
-	.string "That was shocking.\p"
-	.string "Sand rained down in chunks all of\n"
-	.string "a sudden.\p"
-	.string "What was it like inside?\n"
-	.string "Were there sandy ghosts and such?$"
+	.string "Whoa… That was shocking.\p"
+	.string "Sand rained down in chunks.\p"
+	.string "What was inside? Sandy ghosts? Tell me\n"
+	.string "there were sandy ghosts.$"
 
 Route111_Text_MirageTowerHasntBeenSeenSince:
-	.string "Since I spoke to you, the tower of sand\n"
-	.string "hasn't been seen.\p"
-	.string "Perhaps it really was\n"
-	.string "the MIRAGE TOWER…$"
+	.string "The tower of sand hasn't been seen\n"
+	.string "since.\p"
+	.string "Maybe it really was a mirage…\p"
+	.string "Or it's buried. Like my hopes.$"
 
 Route111_Text_ClawFossilDisappeared:
-	.string "The CLAW FOSSIL disappeared into\n"
-	.string "the sand…$"
+	.string "The CLAW FOSSIL disappeared into the\n"
+	.string "sand…\p"
+	.string "The desert keeps what it wants.$"
 
 Route111_Text_RootFossilDisappeared:
-	.string "The ROOT FOSSIL disappeared into\n"
-	.string "the sand…$"
+	.string "The ROOT FOSSIL disappeared into the\n"
+	.string "sand…\p"
+	.string "The desert keeps what it wants.$"
 
 Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 	.string "Oh, no!\p"
-	.string "My uncle in MAUVILLE told me to take\n"
-	.string "ROCK SMASH with me if I was going to\l"
-	.string "ROUTE 111!\p"
-	.string "My uncle? He lives across from\n"
-	.string "the bike shop in MAUVILLE.$"
+	.string "My uncle in MAUVILLE told me to bring\n"
+	.string "ROCK SMASH!\p"
+	.string "He lives across from the bike shop. The\n"
+	.string "ROCK SMASH DUDE. Woohoo.$"
 
 Route111_Text_TrainerHillSign:
 	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"

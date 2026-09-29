@@ -277,7 +277,8 @@ Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
 	.string "the only thing that's cloudy.$"
 
 Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform:
-	.string "{PLAYER} received CASTFORM!$"
+	.string "{PLAYER} received CASTFORM!\p"
+	.string "Sandstorm.$"
 
 Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
 	.string "CASTFORM changes shape with the\n"
@@ -292,24 +293,19 @@ Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
 	.string "weather, but CASTFORM ignores it. Rude.$"
 
 Route119_WeatherInstitute_2F_Text_GroudonWeather:
-	.string "I track weather patterns over\n"
-	.string "the HOENN region.\p"
-	.string "Presently, a drought has been recorded\n"
-	.string "in {STR_VAR_1}.\p"
-	.string "Could that mean, somewhere near\n"
-	.string "{STR_VAR_1}…$"
+	.string "I track HOENN's weather.\p"
+	.string "A drought has been recorded in {STR_VAR_1}.\p"
+	.string "Could something be near {STR_VAR_1}…?\p"
+	.string "Something that makes it very, very hot?$"
 
 Route119_WeatherInstitute_2F_Text_KyogreWeather:
-	.string "I track weather patterns over\n"
-	.string "the HOENN region.\p"
-	.string "Presently, heavy rainfall has been\n"
-	.string "recorded over {STR_VAR_1}.\p"
-	.string "Could that mean, somewhere near\n"
-	.string "{STR_VAR_1}…$"
+	.string "I track HOENN's weather.\p"
+	.string "Heavy rain is falling over {STR_VAR_1}.\p"
+	.string "Could something be near {STR_VAR_1}…?\p"
+	.string "Something very, very wet?$"
 
 Route119_WeatherInstitute_2F_Text_NoAbnormalWeather:
-	.string "Abnormal weather conditions are\n"
-	.string "no longer being reported.\p"
-	.string "The occasional rainfall is a blessing,\n"
-	.string "really.$"
+	.string "No more abnormal weather reports.\p"
+	.string "A bit of rain now and then is a blessing.\p"
+	.string "A bit. Not a flood.$"
 

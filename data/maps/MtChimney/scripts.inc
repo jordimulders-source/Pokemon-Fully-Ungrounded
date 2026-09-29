@@ -612,32 +612,35 @@ MtChimney_Text_Grunt1PostBattle:
 	.string "A kid like you should stick to ketchup.$"
 
 MtChimney_Text_TeamAquaAlwaysMessingWithPlans:
-	.string "That annoying TEAM AQUA…\n"
-	.string "They always mess with our plans!$"
+	.string "That annoying TEAM AQUA… Always\n"
+	.string "ruining our plans!\p"
+	.string "And our sauce. They water it down!$"
 
 MtChimney_Text_MeteoritesPackAmazingPower:
-	.string "METEORITES pack amazing power!$"
+	.string "METEORITES pack amazing power!\p"
+	.string "Like a ghost pepper from space!$"
 
 MtChimney_Text_YouBetterNotMessWithUs:
-	.string "You'd better not mess with us!\p"
-	.string "We're trying to awaken that thing\n"
-	.string "for the benefit of everyone!$"
+	.string "Don't mess with us!\p"
+	.string "We're awakening that thing for\n"
+	.string "everyone's benefit!\p"
+	.string "Everyone who likes spicy food.$"
 
 MtChimney_Text_AquasNameSimilar:
 	.string "We're TEAM MAGMA!\p"
 	.string "They're TEAM AQUA!\p"
-	.string "It totally annoys me that they'd\n"
-	.string "use a name like ours!$"
+	.string "We sound like two flavors of the same\n"
+	.string "drink!$"
 
 MtChimney_Text_DouseThemInFire:
-	.string "Yeah!\n"
-	.string "Douse them in fire!$"
+	.string "Yeah! Douse them in sauce! Extra hot!$"
 
 MtChimney_Text_KeepMakingMoreLand:
-	.string "We're going to keep making more land!$"
+	.string "More land! More peppers! More sauce!$"
 
 MtChimney_Text_Bufoh:
-	.string "Bufoh!$"
+	.string "Bufoh!\p"
+	.string "(It's panting. The hot sauce got it.)$"
 
 MtChimney_Text_ArchieGoStopTeamMagma:
 	.string "ARCHIE: Grr, {PLAYER}! Of course you're\n"
@@ -661,59 +664,66 @@ MtChimney_Text_ArchieThankYou:
 	.string "We'll meet again!$"
 
 MtChimney_Text_MagmaOutnumbersUs:
-	.string "Darn… TEAM MAGMA outnumbers us!\n"
-	.string "We can't keep up with them!$"
+	.string "Darn… MAGMA outnumbers us!\p"
+	.string "They have free samples. That's how they\n"
+	.string "recruit.$"
 
 MtChimney_Text_LessHabitatForWaterPokemon:
-	.string "If they expand the land, there'll be\n"
-	.string "less habitats for WATER POKéMON!$"
+	.string "More land means less water!\p"
+	.string "Less water means fewer bubbles!$"
 
 MtChimney_Text_MagmasNameSimilar:
 	.string "We're TEAM AQUA!\p"
 	.string "They're TEAM MAGMA!\p"
-	.string "It burns me up that they'd use such\n"
-	.string "a confusing name!$"
+	.string "Who came up with this? Same marketing\n"
+	.string "agency?$"
 
 MtChimney_Text_Bushaa:
-	.string "Bushaa!$"
+	.string "Bushaa!\p"
+	.string "(It burps. Sparkling water.)$"
 
 MtChimney_Text_LavaCookiesJust200:
-	.string "LAVA COOKIES are MT. CHIMNEY's local\n"
-	.string "specialty.\p"
-	.string "Try one. It's just ¥200.$"
+	.string "LAVA COOKIES! MT. CHIMNEY's specialty!\p"
+	.string "Just ¥200. Only a little ash in them.$"
 
 MtChimney_Text_ThankYouDear:
-	.string "Thank you, dear!$"
+	.string "Thank you, dear!\p"
+	.string "Don't chew too hard. Some bits are\n"
+	.string "volcanic.$"
 
 MtChimney_Text_YouveNotGotTheMoney:
-	.string "Oh, dear. You can't buy a thing if\n"
-	.string "you've not got the money.$"
+	.string "Oh, dear. No money, no cookies.\p"
+	.string "That's capitalism, sweetie.$"
 
 MtChimney_Text_OhFineThen:
-	.string "Oh, fine then.$"
+	.string "Oh, fine then.\p"
+	.string "Your loss. Literally.$"
 
 MtChimney_Text_MetoriteFittedOnMachine:
-	.string "A METEORITE is fitted on a mysterious\n"
+	.string "A METEORITE is fitted into a mysterious\n"
 	.string "machine…\p"
-	.string "The machine seems to be storing\n"
-	.string "energy in the METEORITE.$"
+	.string "It's charging up the METEORITE.\p"
+	.string "There's a pepper plant taped to the\n"
+	.string "side.$"
 
 MtChimney_Text_RemoveTheMeteorite:
-	.string "A METEORITE is fitted on a mysterious\n"
+	.string "A METEORITE is fitted into a mysterious\n"
 	.string "machine…\p"
-	.string "Do you want to remove the METEORITE?$"
+	.string "Remove the METEORITE?$"
 
 MtChimney_Text_PlayerRemovedMeteorite:
 	.string "{PLAYER} removed the METEORITE from\n"
-	.string "the mysterious machine.$"
+	.string "the machine.\p"
+	.string "It's warm. And smells like chili.$"
 
 MtChimney_Text_PlayerLeftMeteorite:
-	.string "{PLAYER} left the METEORITE where\n"
-	.string "it was.$"
+	.string "{PLAYER} left the METEORITE where it\n"
+	.string "was.$"
 
 MtChimney_Text_MachineMakesNoResponse:
-	.string "This mysterious machine…\n"
-	.string "It makes no response whatsoever.$"
+	.string "The mysterious machine does nothing at\n"
+	.string "all.\p"
+	.string "Like most of DEVON's stuff.$"
 
 MtChimney_Text_RouteSign:
 	.string "{DOWN_ARROW} JAGGED PATH\n"

@@ -190,8 +190,9 @@ Route114_Text_Poochyena:
 	.string "Bow! Bowwow!$"
 
 Route114_Text_MeteorFallsSign:
-	.string "METEOR FALLS\n"
-	.string "RUSTBORO CITY THROUGH HERE$"
+	.string "METEOR FALLS\p"
+	.string "RUSTBORO CITY THROUGH HERE\p"
+	.string "Mind the dragons.$"
 
 Route114_Text_FossilManiacsHouseSign:
 	.string "FOSSIL MANIAC'S HOUSE\n"

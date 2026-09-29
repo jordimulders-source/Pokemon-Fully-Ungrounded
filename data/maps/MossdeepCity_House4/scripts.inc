@@ -45,17 +45,19 @@ MossdeepCity_House4_Text_BrotherLikesToFindBases:
 	.string "Then he moves in.$"
 
 MossdeepCity_House4_Text_BrotherLikesToVisitBasesAndBattle:
-	.string "My little brother says he likes to\n"
-	.string "visit people's SECRET BASES and have\l"
-	.string "POKéMON battles.$"
+	.string "My little brother visits people's SECRET\n"
+	.string "BASES and battles them.\p"
+	.string "Uninvited. Every time.$"
 
 MossdeepCity_House4_Text_YouMadeSecretBaseNearX:
-	.string "Was it you who made a SECRET BASE\n"
-	.string "near {STR_VAR_1}?$"
+	.string "Was it you who made a SECRET BASE near\n"
+	.string "{STR_VAR_1}?\p"
+	.string "I've been there. I ate your snacks.$"
 
 MossdeepCity_House4_Text_MakeSecretBase:
-	.string "You should make a SECRET BASE\n"
-	.string "somewhere. I'll go find it!$"
+	.string "Make a SECRET BASE somewhere. I'll find\n"
+	.string "it!\p"
+	.string "And move in.$"
 
 MossdeepCity_House4_Text_Skitty:
 	.string "SKITTY: Miyaan?$"

@@ -276,22 +276,23 @@ MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs:
 	step_end
 
 MossdeepCity_SpaceCenter_1F_Text_RocketLaunchImminent:
-	.string "The rocket's launch is imminent!$"
+	.string "The rocket launch is imminent!\p"
+	.string "No, you can't come.$"
 
 MossdeepCity_SpaceCenter_1F_Text_SuccessfulLaunchNumber:
-	.string "The rocket launched safely!\n"
-	.string "That's successful launch no. {STR_VAR_1}!$"
+	.string "The rocket launched safely!\p"
+	.string "Successful launch no. {STR_VAR_1}!\p"
+	.string "We don't count the other ones.$"
 
 MossdeepCity_SpaceCenter_1F_Text_HaywireButRocketLaunchImminent:
-	.string "I know that things are a little\n"
-	.string "haywire right now, but…\p"
-	.string "The rocket's launch is imminent!$"
+	.string "Things are a bit haywire right now, but…\p"
+	.string "The launch is imminent!\p"
+	.string "The show must go on. Into space.$"
 
 MossdeepCity_SpaceCenter_1F_Text_HaywireButSuccessfulLaunchNumber:
-	.string "I know that things are a little\n"
-	.string "haywire right now, but…\p"
-	.string "The rocket launched safely!\n"
-	.string "That's successful launch no. {STR_VAR_1}!$"
+	.string "Things are a bit haywire, but…\p"
+	.string "The rocket launched safely! Launch no.\n"
+	.string "{STR_VAR_1}!$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection:
 	.string "Soon AI will fly the rockets. No humans\n"
@@ -300,10 +301,9 @@ MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection:
 	.string "that'll be fine.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaHaveSightsOnSpaceCenter:
-	.string "Those MAGMA thugs have their sights\n"
-	.string "set on our SPACE CENTER.\p"
-	.string "But we can't allow anything that minor\n"
-	.string "to interfere with our rocket launch!$"
+	.string "TEAM MAGMA wants our SPACE CENTER.\p"
+	.string "But nothing stops our launch!\p"
+	.string "Not even hot sauce.$"
 
 MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt:
 	.string "I found this on the beach.\p"
@@ -317,36 +317,38 @@ MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers:
 	.string "need a rocket.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaCantStealFuelTakeThis:
-	.string "TEAM MAGMA can't be allowed to steal\n"
-	.string "the rocket fuel.\p"
-	.string "Oh, by the way, you can have this stone\n"
-	.string "I found on the beach.$"
+	.string "TEAM MAGMA can't steal the rocket fuel.\p"
+	.string "Oh, here, have this stone I found on the\n"
+	.string "beach.\p"
+	.string "Maybe it's from space. Maybe from a\n"
+	.string "beach.$"
 
 MossdeepCity_SpaceCenter_1F_Text_CantStrollOnBeachWithMagma:
-	.string "With TEAM MAGMA around, I guess\n"
-	.string "strolls on the beach aren't safe.$"
+	.string "With TEAM MAGMA around, beach walks\n"
+	.string "aren't safe.\p"
+	.string "They keep offering me samples.$"
 
 MossdeepCity_SpaceCenter_1F_Text_DidPokemonComeFromSpace:
-	.string "Some people claim that POKéMON came\n"
-	.string "from space. Could it be true?$"
+	.string "Some say POKéMON came from space.\p"
+	.string "Could it be true?\p"
+	.string "CLEFAIRY did. I'm sure of it. Look at it.$"
 
 MossdeepCity_SpaceCenter_1F_Text_AquaShouldBeatMagma:
-	.string "TEAM AQUA should take care of\n"
-	.string "TEAM MAGMA!\p"
-	.string "But if they did that, TEAM AQUA will\n"
-	.string "become bold and brazen, won't they?$"
+	.string "TEAM AQUA should deal with TEAM MAGMA!\p"
+	.string "But then AQUA gets cocky.\p"
+	.string "Sparkling water AND smug. Unbearable.$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketsBoggleMyMind:
-	.string "A giant chunk of metal bursts through\n"
-	.string "the skies and flies into space…\p"
-	.string "It boggles my mind!$"
+	.string "A giant chunk of metal flies into\n"
+	.string "space…\p"
+	.string "It boggles my mind!\p"
+	.string "I still don't trust elevators.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaWantsToSpoilMyDream:
-	.string "A giant chunk of metal bursts through\n"
-	.string "the skies and flies into space…\p"
-	.string "But TEAM MAGMA wants to spoil\n"
-	.string "that dream of mine!\p"
-	.string "I'm not having any of that!$"
+	.string "A giant chunk of metal flies into\n"
+	.string "space…\p"
+	.string "And TEAM MAGMA wants to ruin my dream!\p"
+	.string "With SAUCE! Not having it!$"
 
 MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel:
 	.string "STEVEN: You read that proclamation?\n"
@@ -356,15 +358,17 @@ MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel:
 	.string "the town!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro:
-	.string "As promised, we've come for\n"
-	.string "the rocket fuel!$"
+	.string "As promised, we're here for the rocket\n"
+	.string "fuel!\p"
+	.string "For the spiciest volcano in history!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt3Defeat:
-	.string "Ran out of fuel…$"
+	.string "Ran out of fuel…\p"
+	.string "And sauce.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt3PostBattle:
-	.string "Don't think you're on a roll just\n"
-	.string "because you've beaten me!$"
+	.string "Don't think you're on a roll!\p"
+	.string "The BOSS is upstairs. He's very spicy.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro:
 	.string "ALL YOUR BASE ARE BELONG TO US.$"
@@ -378,31 +382,31 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt1PostBattle:
 	.string "And extra spicy.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro:
-	.string "The rocket fuel the SPACE CENTER has\n"
-	.string "in storage--that's what we're after.\p"
-	.string "We mean to take every last bit of it!$"
+	.string "We want all the rocket fuel.\p"
+	.string "Every. Last. Drop.\p"
+	.string "For the pepper greenhouse.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt4Defeat:
-	.string "Please, can you spare some fuel?\n"
-	.string "Even a chintzy cup will do!$"
+	.string "Please, spare some fuel? Even a tiny\n"
+	.string "cup!\p"
+	.string "I'll trade you a hot sauce.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt4PostBattle:
-	.string "What are we going to do with\n"
-	.string "the rocket fuel?\p"
-	.string "How would I know?\n"
-	.string "Ask our leader upstairs!$"
+	.string "What do we do with rocket fuel?\p"
+	.string "No idea! Ask the BOSS upstairs!\p"
+	.string "Something with peppers. Always peppers.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro:
-	.string "Our leader said no one, but no one,\n"
-	.string "gets past me!$"
+	.string "The BOSS said nobody gets past me!\p"
+	.string "Nobody!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat:
 	.string "Ack! Ack! Aaack!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2PostBattle:
-	.string "Please, tell our leader that\n"
-	.string "I never abandoned my post.\l"
-	.string "That I stayed to the bitter end…$"
+	.string "Tell the BOSS I never left my post.\p"
+	.string "I stayed until the bitter end.\p"
+	.string "Like a good chili.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice:
 	.string "This is… An intent-to-steal notice?\p"

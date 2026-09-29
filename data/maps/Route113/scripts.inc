@@ -134,10 +134,11 @@ Route113_EventScript_Wyatt::
 	end
 
 Route113_Text_AshCanBeFashionedIntoGlass:
-	.string "Wahahaha! Today's technology is a\n"
-	.string "wondrous thing!\p"
-	.string "Take this volcanic ash here.\n"
-	.string "It can be fashioned into glass.$"
+	.string "Wahahaha! Technology is wonderful!\p"
+	.string "This volcanic ash can be turned into\n"
+	.string "glass!\p"
+	.string "And into lung problems. But mostly\n"
+	.string "glass!$"
 
 Route113_Text_FunWalkingThroughAsh:
 	.string "Walking through ash is fun! It's like\n"

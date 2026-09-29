@@ -1124,8 +1124,8 @@ Route104_Text_MayWeShouldRegister:
 	.string "with your time?$"
 
 Route104_Text_RegisteredMay:
-	.string "{PLAYER} registered MAY\n"
-	.string "in the POKéNAV.$"
+	.string "{PLAYER} registered MAY in the POKéNAV.\p"
+	.string "She'll call about the POKéDEX. A lot.$"
 
 Route104_Text_MayHowsYourPokedex:
 	.string "MAY: Not like I want you stalking\n"
@@ -1213,8 +1213,8 @@ Route104_Text_BrendanIntro:
 	.string "a TRAINER, but I won't go easy!$"
 
 Route104_Text_BrendanDefeat:
-	.string "Hmm…\n"
-	.string "You're pretty good.$"
+	.string "Hmm… You're pretty good.\p"
+	.string "Don't let it go to your head.$"
 
 Route104_Text_BrendanPostBattle:
 	.string "BN: Listen, I have nothing to say,\n"

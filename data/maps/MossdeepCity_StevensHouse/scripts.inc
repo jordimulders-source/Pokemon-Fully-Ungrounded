@@ -171,20 +171,22 @@ MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis:
 
 MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum:
 	.string "{PLAYER} checked the POKé BALL.\p"
-	.string "It contained the POKéMON\n"
-	.string "BELDUM.\p"
+	.string "It holds a BELDUM. There's a guitar pick\n"
+	.string "taped to it.\p"
 	.string "Take the POKé BALL?$"
 
 MossdeepCity_StevensHouse_Text_ObtainedBeldum:
-	.string "{PLAYER} obtained a BELDUM.$"
+	.string "{PLAYER} obtained a BELDUM.\p"
+	.string "It headbangs slightly.$"
 
 @ Unused
 MossdeepCity_StevensHouse_Text_NoSpaceForAnotherMon:
-	.string "There is no space for another POKéMON.$"
+	.string "No space for another POKéMON.$"
 
 MossdeepCity_StevensHouse_Text_LeftPokeBallWhereItWas:
-	.string "{PLAYER} left the POKé BALL where\n"
-	.string "it was.$"
+	.string "{PLAYER} left the POKé BALL where it\n"
+	.string "was.\p"
+	.string "The BELDUM looks sad. Metal-sad.$"
 
 MossdeepCity_StevensHouse_Text_LetterFromSteven:
 	.string "It's a letter.\p"

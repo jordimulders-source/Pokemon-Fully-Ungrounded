@@ -316,8 +316,9 @@ PetalburgWoods_EventScript_JamesRematch::
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
-	.string "Hmmm…\n"
-	.string "Not a one to be found…$"
+	.string "Hmmm… Not one to be found…\p"
+	.string "Where are all the SHROOMISH? They're\n"
+	.string "usually everywhere. Evil.$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
 	.string "Hello, have you seen any idiots\n"
@@ -414,26 +415,29 @@ PetalburgWoods_Text_PeopleRespectYou:
 	.string "I don't belong here...$"
 
 PetalburgWoods_Text_IWantRematch1:
-	.string "I want a rematch when my BUG\n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "Rematch when my BUG POKéMON grow up!\p"
+	.string "I'm registering you! Popularity requires\n"
+	.string "contacts!$"
 
 PetalburgWoods_Text_IWantRematch2:
-	.string "I want a rematch when my BUG \n"
-	.string "POKéMON grow up!\p"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "Rematch when my BUG POKéMON grow up!\p"
+	.string "I'm registering you! Popularity requires\n"
+	.string "contacts!$"
 
 PetalburgWoods_Text_MyPokemonHaveGrown:
-	.string "My BUG POKéMON have grown.\n"
-	.string "I'll be popular again.$"
+	.string "My BUG POKéMON have grown. I'll be\n"
+	.string "popular again.\p"
+	.string "With other bug people.$"
 
 PetalburgWoods_Text_CantBePopularIfLose:
-	.string "I can't be popular if I lose.$"
+	.string "I can't be popular if I lose.\p"
+	.string "So I'm not popular.$"
 
 PetalburgWoods_Text_IveBeenTrainingHard:
-	.string "You get to be popular if you have\n"
-	.string "strong POKéMON, right?\l"
-	.string "So, I've been training hard.$"
+	.string "Strong POKéMON make you popular,\n"
+	.string "right?\p"
+	.string "So I trained hard.\p"
+	.string "Still zero followers.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"

@@ -332,10 +332,11 @@ RustboroCity_DevonCorp_2F_Text_TwoFossilsPickOne:
 	.string "Which one do you pick?$"
 
 RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher:
-	.string "Excellent!\n"
-	.string "Let's do this right away.\p"
-	.string "{PLAYER} handed the {STR_VAR_1} to\n"
-	.string "the DEVON RESEARCHER.$"
+	.string "Excellent! Let's do this now.\p"
+	.string "{PLAYER} handed the {STR_VAR_1} to the\n"
+	.string "DEVON RESEARCHER.\p"
+	.string "He used the FOSSIL MANIAC's notes.\n"
+	.string "Uncredited.$"
 
 RustboroCity_DevonCorp_2F_Text_FossilRegeneratorTakesTime:
 	.string "The FOSSIL REGENERATOR, which I made,\n"
@@ -349,13 +350,15 @@ RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife:
 	.string "to me.$"
 
 RustboroCity_DevonCorp_2F_Text_ReceivedMonFromResearcher:
-	.string "{PLAYER} received {STR_VAR_2} from\n"
-	.string "the DEVON RESEARCHER.$"
+	.string "{PLAYER} received {STR_VAR_2} from the\n"
+	.string "DEVON RESEARCHER.\p"
+	.string "It looks confused. It was a rock this\n"
+	.string "morning.$"
 
 @ Unused
 RustboroCity_DevonCorp_2F_Text_TooManyPokemon:
-	.string "Uh-oh, you've got too many POKéMON.\n"
-	.string "You have no room for this one.$"
+	.string "Uh-oh, too many POKéMON. No room for\n"
+	.string "this one.$"
 
 RustboroCity_DevonCorp_2F_Text_DevelopNewPokenavFeature:
 	.string "I'm developing a new POKéNAV feature…\n"

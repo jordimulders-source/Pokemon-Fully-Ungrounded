@@ -81,27 +81,22 @@ PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
 	.string "KNOW it.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
-	.string "For example, your TREECKO\n"
-	.string "is a GRASS type.\p"
-	.string "It's strong against the WATER and\n"
-	.string "GROUND types.\p"
-	.string "But, it's weak against FIRE-type\n"
-	.string "POKéMON.$"
+	.string "Your TREECKO is a GRASS type.\p"
+	.string "Strong against WATER and GROUND.\p"
+	.string "Weak against FIRE. And bugs. And birds.\n"
+	.string "And poison. And ice. Poor thing.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
-	.string "For example, your TORCHIC\n"
-	.string "is a FIRE type.\p"
-	.string "It's strong against the GRASS and\n"
-	.string "BUG types.\p"
-	.string "But, it's weak against WATER-type\n"
-	.string "POKéMON.$"
+	.string "Your TORCHIC is a FIRE type.\p"
+	.string "Strong against GRASS and BUG.\p"
+	.string "Weak against WATER. And it's a chicken.\n"
+	.string "Just saying.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
-	.string "For example, your MUDKIP\n"
-	.string "is a WATER type.\p"
-	.string "It's strong against the FIRE type.\p"
-	.string "But, it's weak against GRASS-type\n"
-	.string "and ELECTRIC-type POKéMON.$"
+	.string "Your MUDKIP is a WATER type.\p"
+	.string "Strong against FIRE.\p"
+	.string "It evolves into GROUND too. Then only\n"
+	.string "GRASS hurts it. Smart pick.$"
 
 PetalburgCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

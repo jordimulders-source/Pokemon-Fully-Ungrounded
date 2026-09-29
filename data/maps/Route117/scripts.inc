@@ -217,14 +217,15 @@ Route117_EventScript_Aisha::
 
 Route117_Text_DayCarePokemonHadNewMove:
 	.string "I left my POKéMON at the DAY CARE.\p"
-	.string "When I got it back, it had a new move\n"
-	.string "that I didn't teach it.\l"
-	.string "I was really, really surprised.$"
+	.string "It came back with a move I didn't teach\n"
+	.string "it.\p"
+	.string "And an EGG. I have questions.$"
 
 Route117_Text_ArentTheseFlowersPretty:
-	.string "What do you think?\n"
 	.string "Aren't these flowers pretty?\p"
-	.string "I planted them all!$"
+	.string "I planted them all!\p"
+	.string "The AROMA LADY on ROUTE 118 keeps\n"
+	.string "asking if they can be smoked.$"
 
 Route117_Text_AirIsTastyHere:
 	.string "The air is tasty here!\p"

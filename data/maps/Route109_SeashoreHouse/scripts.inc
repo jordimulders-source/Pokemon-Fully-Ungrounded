@@ -102,36 +102,31 @@ Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
 	end
 
 Route109_SeashoreHouse_Text_SeashoreHouseIntro:
-	.string "I'm the owner of the SEASHORE HOUSE.\n"
-	.string "But you can call me MR. SEA!\p"
-	.string "What I love above all is to see hot\n"
-	.string "POKéMON battles.\p"
-	.string "Let me see that your heart burns hot!\p"
-	.string "If you can defeat all the TRAINERS\n"
-	.string "here, I'll reward your efforts.$"
+	.string "I own the SEASHORE HOUSE. Call me MR.\n"
+	.string "SEA!\p"
+	.string "I love hot POKéMON battles!\p"
+	.string "Show me your heart burns hot!\p"
+	.string "Beat all the TRAINERS here and I'll\n"
+	.string "reward you.$"
 
 Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
 	.string "Show me some hot matches!\p"
-	.string "I run this SEASHORE HOUSE just for\n"
-	.string "that reason alone!$"
+	.string "That's the only reason I run this place.\p"
+	.string "The food is terrible.$"
 
 Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
-	.string "You're scorching hot!\n"
-	.string "Those battles blazed!\l"
-	.string "I'm more than just satisfied!\p"
-	.string "As thanks for showing me your hot\n"
-	.string "streak, I want you to take these.\p"
-	.string "It's half a dozen bottles of SODA POP!$"
+	.string "Scorching hot! Those battles blazed!\p"
+	.string "As thanks, take these!\p"
+	.string "Six bottles of SODA POP! Not sparkling\n"
+	.string "water. We don't serve that here.$"
 
 Route109_SeashoreHouse_Text_BagFull:
-	.string "Oh, but hey, your BAG's jammed full.\n"
-	.string "I'll hang on to these for you.$"
+	.string "Your BAG's jammed full. I'll hold on to\n"
+	.string "these for you.$"
 
 Route109_SeashoreHouse_Text_WantToBuySodaPop:
-	.string "Want to buy some SODA POP?\n"
-	.string "POKéMON love it!\p"
-	.string "Just ¥300 a bottle!\n"
-	.string "Buy some!$"
+	.string "Want some SODA POP? POKéMON love it!\p"
+	.string "¥300 a bottle! Buy some!$"
 
 Route109_SeashoreHouse_Text_HereYouGo:
 	.string "Here you go!$"
@@ -140,8 +135,8 @@ Route109_SeashoreHouse_Text_NotEnoughMoney:
 	.string "You don't have the money.$"
 
 Route109_SeashoreHouse_Text_ThatsTooBad:
-	.string "No?\n"
-	.string "That's too bad.$"
+	.string "No? That's too bad.\p"
+	.string "More for me.$"
 
 Route109_SeashoreHouse_Text_DwayneIntro:
 	.string "Looking for a battle in the SEASHORE\n"

@@ -379,9 +379,8 @@ Route120_Text_StevenShowMeYourPower:
 
 Route120_Text_StevenUsedDevonScope:
 	.string "STEVEN used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
-	.string "visible!\p"
-	.string "The startled POKéMON attacked!$"
+	.string "An invisible POKéMON became visible!\p"
+	.string "It did not like that! It attacked!$"
 
 Route120_Text_StevenGiveDevonScope:
 	.string "STEVEN: Your battle style SHREDS, dude.\n"
@@ -399,14 +398,13 @@ Kecleon_Text_SomethingUnseeable:
 	.string "Something unseeable is in the way.$"
 
 Kecleon_Text_WantToUseDevonScope:
-	.string "Something unseeable is in the way.\p"
-	.string "Want to use the DEVON SCOPE?$"
+	.string "Something invisible is in the way.\p"
+	.string "Use the DEVON SCOPE?$"
 
 Kecleon_Text_UseDevonScopeMonAttacked:
 	.string "{PLAYER} used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
-	.string "visible!\p"
-	.string "The startled POKéMON attacked!$"
+	.string "An invisible POKéMON became visible!\p"
+	.string "It did not like that! It attacked!$"
 
 Route120_Text_RouteSignFortree:
 	.string "ROUTE 120\n"

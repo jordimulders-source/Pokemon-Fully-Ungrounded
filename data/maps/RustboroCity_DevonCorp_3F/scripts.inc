@@ -210,7 +210,8 @@ RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
 	.string "…Where's my king of hearts?$"
 
 RustboroCity_DevonCorp_3F_Text_ReceivedPokenav:
-	.string "{PLAYER} received a POKéNAV.$"
+	.string "{PLAYER} received a POKéNAV.\p"
+	.string "It's warm. Very warm.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 	.string "MR. STONE: That's a POKéNAV. It has a\n"

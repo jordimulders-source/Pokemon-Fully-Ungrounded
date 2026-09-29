@@ -34,7 +34,7 @@ RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt:
 	.string "It only exploded once.$"
 
 RustboroCity_Flat2_2F_Text_GoingToWorkAtDevonToo:
-	.string "My daddy's working at the CORPORATION.\p"
-	.string "When I grow up, I'm going to work for\n"
-	.string "DEVON, too.$"
+	.string "My daddy works at the CORPORATION.\p"
+	.string "When I grow up, I'll work for DEVON too.\p"
+	.string "If there's still a building.$"
 

@@ -83,90 +83,68 @@ RustboroCity_Flat1_2F_Text_ComingUpWithMealsIsHard:
 	.string "Friday is pizza. Always pizza.$"
 
 RustboroCity_Flat1_2F_Text_HelloDoYouKnowFunnyPhrase:
-	.string "Oh, hello!\n"
-	.string "Welcome to the PEPPER household.\p"
-	.string "I have a question for you.\n"
-	.string "Have you ever baby-sat?\p"
-	.string "You see, I'm a new father, so raising\n"
-	.string "a child is all new to me.\p"
-	.string "And I have a problem. My daughter\n"
-	.string "WALDA doesn't laugh enough.\p"
-	.string "I think she'd laugh for me if I told\n"
-	.string "her something funny.\p"
-	.string "Do you know of a funny word or\n"
-	.string "phrase you can tell me?$"
+	.string "Oh, hello! Welcome to the PEPPER\n"
+	.string "household.\p"
+	.string "Have you ever babysat?\p"
+	.string "I'm a new father. It's all new to me.\p"
+	.string "My daughter WALDA doesn't laugh.\p"
+	.string "She just stares. At me. For hours.\p"
+	.string "Do you know a funny word or phrase?$"
 
 RustboroCity_Flat1_2F_Text_BeenSayingXDoYouKnowBetterPhrase:
-	.string "I've been saying “{STR_VAR_1}”\n"
-	.string "to amuse her lately.\p"
-	.string "Do you know of a better word or\n"
-	.string "a phrase that might work?$"
+	.string "I've been saying “{STR_VAR_1}” to make her\n"
+	.string "laugh.\p"
+	.string "Nothing. Do you know something better?$"
 
 RustboroCity_Flat1_2F_Text_WonderfulLetsHearSuggestion:
-	.string "Oh, that's wonderful.\n"
-	.string "So, let's hear it, your suggestion.$"
+	.string "Oh, wonderful. Let's hear it.$"
 
 RustboroCity_Flat1_2F_Text_OhIsThatRight:
 	.string "Oh, is that right?\p"
-	.string "Well, if you come up with a good\n"
-	.string "suggestion, I'm all ears.$"
+	.string "Well, if you think of something, I'm all\n"
+	.string "ears. Please. I'm desperate.$"
 
 RustboroCity_Flat1_2F_Text_LetsGiveItATry2:
-	.string "Ah, I see.\n"
-	.string "Well, let's give it a try, shall we?$"
+	.string "I see. Let's try it.$"
 
 RustboroCity_Flat1_2F_Text_OhShesLaughing:
-	.string "{STR_VAR_1}.\n"
-	.string "{STR_VAR_1}.\p"
-	.string "Oh, yes! She's laughing!\n"
-	.string "Oh, I am as delighted as she!$"
+	.string "{STR_VAR_1}. {STR_VAR_1}.\p"
+	.string "Oh! She's laughing! I'm so happy! I might\n"
+	.string "cry!$"
 
 RustboroCity_Flat1_2F_Text_LetsGiveItATry:
-	.string "Ah, I see.\n"
-	.string "Well, let's give it a try, shall we?$"
+	.string "I see. Let's try it.$"
 
 RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll:
-	.string "{STR_VAR_1}.\n"
-	.string "{STR_VAR_1}.\p"
-	.string "Hmmm… She's not smiling at all.\n"
-	.string "Maybe WALDA is one serious child…$"
+	.string "{STR_VAR_1}. {STR_VAR_1}.\p"
+	.string "Hmmm… Not even a smile.\p"
+	.string "WALDA is a very serious child. She'll be a\n"
+	.string "tax auditor.$"
 
 RustboroCity_Flat1_2F_Text_ThinkOfMyOwnPhrase:
-	.string "Oh, so you don't know any good words.\n"
-	.string "I'd better think for myself, then.\p"
-	.string "Hmm…\n"
-	.string "How about “{STR_VAR_1}”?\l"
-	.string "Let's see if that will work.$"
+	.string "No funny words? Then I'll think of one.\p"
+	.string "Hmm… How about “{STR_VAR_1}”? Let's see.$"
 
 RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll2:
-	.string "{STR_VAR_1}.\n"
-	.string "{STR_VAR_1}.\p"
-	.string "Hmmm… She's not smiling at all.\n"
-	.string "Maybe WALDA is one serious child…$"
+	.string "{STR_VAR_1}. {STR_VAR_1}.\p"
+	.string "Hmmm… Nothing.\p"
+	.string "She's judging me. I can feel it.$"
 
 RustboroCity_Flat1_2F_Text_OhYouDontKnowAny:
-	.string "Oh, so you don't know any good words.\n"
-	.string "I guess I'll try to amuse her with\l"
-	.string "the saying I used before.\p"
-	.string "Anyways, if you have a good suggestion,\n"
-	.string "don't hesitate in telling me, okay?$"
+	.string "No good words? I'll use my old one again.\p"
+	.string "If you think of something, tell me.\n"
+	.string "Please.$"
 
 RustboroCity_Flat1_2F_Text_ThankYouIllGiveYouWallpaper:
 	.string "Thank you!\p"
-	.string "Thanks to you, my darling WALDA\n"
-	.string "laughed for me!\p"
-	.string "Actually, I may not look all that\n"
-	.string "special, but I'm one of DEVON\l"
-	.string "CORPORATION's top researchers.\p"
-	.string "So, how about I do something in return\n"
-	.string "for you?\p"
-	.string "I know, I'll add some new wallpaper\n"
-	.string "patterns for the BOXES in the PC\l"
-	.string "POKéMON Storage System.\p"
-	.string "In the wallpaper pattern menu,\n"
-	.string "select “FRIENDS.”\p"
-	.string "That will give you access to the new\n"
-	.string "wallpaper patterns.$"
+	.string "WALDA laughed! My darling WALDA!\p"
+	.string "I may not look like much, but I'm one of\n"
+	.string "DEVON's top researchers.\p"
+	.string "Let me give you something back.\p"
+	.string "New wallpapers for your PC BOXES.\p"
+	.string "Select “FRIENDS” in the wallpaper menu.\p"
+	.string "They're the only thing I made that\n"
+	.string "never exploded.$"
 
 RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll:
 	.string "It's a POKéMON plush DOLL!$"

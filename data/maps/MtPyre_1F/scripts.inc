@@ -26,20 +26,20 @@ MtPyre_1F_EventScript_Man::
 	end
 
 MtPyre_1F_Text_TakeThisForYourOwnGood:
-	.string "All sorts of beings wander the slopes\n"
-	.string "of MT. PYRE…\p"
-	.string "There is no telling what may happen.\n"
-	.string "Take this. It's for your own good.$"
+	.string "All sorts of beings wander MT. PYRE…\p"
+	.string "Anything can happen. Take this. For\n"
+	.string "your own good.$"
 
 MtPyre_1F_Text_ExplainCleanseTag:
-	.string "Have a POKéMON hold that\n"
-	.string "CLEANSE TAG.\p"
-	.string "It will help ward off wild POKéMON.$"
+	.string "Let a POKéMON hold that CLEANSE TAG.\p"
+	.string "It keeps wild POKéMON away.\p"
+	.string "Ghosts too. Mostly.$"
 
 MtPyre_1F_Text_ComeToPayRespects:
-	.string "Did you come to pay your respect\n"
-	.string "to the spirits of departed POKéMON?\p"
-	.string "You must care for your POKéMON a lot.$"
+	.string "Did you come to honor the spirits of\n"
+	.string "departed POKéMON?\p"
+	.string "You must love your POKéMON.\p"
+	.string "Or you're lost. Either is fine.$"
 
 MtPyre_1F_Text_RestingPlaceOfZigzagoon:
 	.string "This is the final resting place of my\n"

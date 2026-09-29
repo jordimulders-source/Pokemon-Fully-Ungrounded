@@ -214,8 +214,9 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "the wind!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} received the STONE BADGE\n"
-	.string "from ROXANNE.$"
+	.string "{PLAYER} received the STONE BADGE from\n"
+	.string "ROXANNE.\p"
+	.string "It rocks.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 	.string "The STONE BADGE heightens the ATTACK\n"
@@ -237,12 +238,12 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "Don't waste it on a rag doll dance.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "RUSTBORO CITY POKéMON GYM\p"
+	.string "Rock on!$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
 	.string "RUSTBORO CITY POKéMON GYM\p"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "ROXANNE'S CERTIFIED TRAINERS: {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … … … … … … … Beep!\p"
@@ -254,8 +255,8 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … … … … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registered GYM LEADER ROXANNE\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER ROXANNE in the\n"
+	.string "POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
 	.string "ROXANNE: Here I go again… Oh, it's you!\p"

@@ -107,25 +107,30 @@ Route112_EventScript_Shayla::
 	end
 
 Route112_Text_LeaderGoingToAwakenThing:
-	.string "Hey, man, is our leader really going\n"
-	.string "to awaken that thing?$"
+	.string "Hey, man, is the BOSS really waking up\n"
+	.string "that thing?\p"
+	.string "For peppers?$"
 
 Route112_Text_YeahWeNeedMeteorite:
-	.string "Sounds like it, yeah. But I heard\n"
-	.string "we need a METEORITE to do it.$"
+	.string "Sounds like it. But we need a METEORITE\n"
+	.string "first.\p"
+	.string "For the heat. Or the flavor.$"
 
 Route112_Text_OhThatsWhyCrewWentToFallarbor:
-	.string "Oh, I get it now. That's why the rest\n"
-	.string "of the crew went out to FALLARBOR.$"
+	.string "Oh, that's why the rest of the crew went\n"
+	.string "to FALLARBOR.\p"
+	.string "And they took all the chips.$"
 
 Route112_Text_CantLetAnyonePassUntilTheyreBack:
-	.string "You got it. And until they come back,\n"
-	.string "we're not to let anyone pass, right.$"
+	.string "Right. Nobody passes until they're\n"
+	.string "back.\p"
+	.string "We're guarding. And snacking.$"
 
 Route112_Text_NotEasyToGetBackToLavaridge:
-	.string "Eh, I'd like to get to MAUVILLE, but if\n"
-	.string "I went down these ledges, it'd be no\l"
-	.string "easy matter to get back to LAVARIDGE.$"
+	.string "I'd like to go to MAUVILLE, but if I jump\n"
+	.string "down these ledges…\p"
+	.string "I can't get back up to LAVARIDGE.\p"
+	.string "Ledges are a one-way life choice.$"
 
 Route112_Text_MtChimneyCableCarSign:
 	.string "MT. CHIMNEY CABLE CAR\n"

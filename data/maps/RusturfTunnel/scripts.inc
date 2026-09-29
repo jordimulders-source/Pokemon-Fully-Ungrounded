@@ -419,8 +419,8 @@ RusturfTunnel_EventScript_Mike::
 	end
 
 RusturfTunnel_Text_ComeAndGetSome:
-	.string "What, are you coming?\n"
-	.string "Come and get some, then!$"
+	.string "Coming? Come and get some, then!\p"
+	.string "I'm carbonated!$"
 
 RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
@@ -446,43 +446,37 @@ RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 	.string "Am I glad to see you're safe!$"
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
-	.string "PEEKO owes her life to you!\p"
-	.string "They call me MR. BRINEY.\n"
-	.string "And, you are?\p"
-	.string "… … … … … … … …\n"
+	.string "You saved PEEKO's life!\p"
+	.string "They call me MR. BRINEY. And you are?\p"
 	.string "… … … … … … … …\p"
-	.string "Ah, so you are {PLAYER}{KUN}!\n"
-	.string "I sincerely thank you!\p"
-	.string "Now, if there's anything that troubles\n"
-	.string "you, don't hesitate to tell me!\p"
-	.string "You can usually find me in my cottage\n"
-	.string "by the sea near PETALBURG WOODS.\p"
-	.string "Come, PEEKO, we should make our way\n"
-	.string "home.\p"
+	.string "{PLAYER}{KUN}! Thank you!\p"
+	.string "If anything troubles you, just tell me!\p"
+	.string "I live in a cottage by the sea near\n"
+	.string "PETALBURG WOODS.\p"
+	.string "Come, PEEKO. Home.\p"
 	.string "PEEKO: Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging:
 	.string "… …\p"
-	.string "Why can't they keep digging?\n"
-	.string "Is the bedrock too hard?\p"
-	.string "My beloved awaits me in VERDANTURF\n"
-	.string "TOWN just beyond here…\p"
-	.string "If RUSTBORO and VERDANTURF were\n"
-	.string "joined by this tunnel, I could visit\l"
-	.string "her every day…\p"
-	.string "But this…\n"
-	.string "What am I to do?$"
+	.string "Why did they stop digging? Is the rock\n"
+	.string "too hard?\p"
+	.string "My beloved WANDA waits in VERDANTURF,\n"
+	.string "right beyond this…\p"
+	.string "With this tunnel, I could see her every\n"
+	.string "day…\p"
+	.string "I'll dig by hand. For love. And a little\n"
+	.string "for cardio.$"
 
 RusturfTunnel_Text_ToGetToVerdanturf:
-	.string "To get from RUSTBORO to VERDANTURF,\n"
-	.string "you need to go to DEWFORD, then pass\l"
-	.string "through SLATEPORT and MAUVILLE…$"
+	.string "RUSTBORO to VERDANTURF means DEWFORD,\n"
+	.string "SLATEPORT, then MAUVILLE…\p"
+	.string "Or digging. I chose digging.$"
 
 RusturfTunnel_Text_YouShatteredBoulderTakeHM:
-	.string "Wow! You shattered that boulder\n"
-	.string "blocking the way.\p"
-	.string "To show you how much I appreciate it,\n"
-	.string "I'd like you to have this HM.$"
+	.string "Wow! You smashed the boulder blocking\n"
+	.string "the way!\p"
+	.string "Take this HM as thanks.\p"
+	.string "I've been punching that rock for a year.$"
 
 RusturfTunnel_Text_ExplainStrength:
 	.string "STRENGTH. It lets a POKéMON push\n"
@@ -490,18 +484,17 @@ RusturfTunnel_Text_ExplainStrength:
 	.string "That's the whole move. Push. Boulder.$"
 
 RusturfTunnel_Text_WandaReunion:
-	.string "WANDA!\n"
-	.string "Now I can see you anytime!\p"
-	.string "WANDA: That's…wonderful.\p"
-	.string "Please, take some rest at my home.$"
+	.string "WANDA! Now I can see you every day!\p"
+	.string "WANDA: That's… wonderful.\p"
+	.string "Please, rest at my place.\p"
+	.string "(She sounds less excited than him.)$"
 
 RusturfTunnel_Text_BoyfriendOnOtherSideOfRock:
-	.string "On the other side of this rock…\n"
-	.string "My boyfriend is there.\p"
-	.string "He… He's not just digging the tunnel\n"
-	.string "to come see me.\p"
-	.string "He works his hands raw and rough\n"
-	.string "for the benefit of everyone.$"
+	.string "On the other side of this rock… my\n"
+	.string "boyfriend.\p"
+	.string "He's not just digging for me.\p"
+	.string "He works his hands raw for everyone.\p"
+	.string "…Mostly for me, though. It's a lot.$"
 
 RusturfTunnel_Text_MikeIntro:
 	.string "What do you call a wild man in the\n"

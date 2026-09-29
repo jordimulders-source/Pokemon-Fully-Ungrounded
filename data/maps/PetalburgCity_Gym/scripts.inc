@@ -1171,7 +1171,8 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
 	.string "with, yes strong yes.$"
 
 PetalburgCity_Gym_Text_DadHmISee:
-	.string "DAD: Hm. I see.$"
+	.string "DAD: Hm. I see.\p"
+	.string "…Right. Anyway.$"
 
 PetalburgCity_Gym_Text_DadPlayerGoWithWally:
 	.string "DAD: {PLAYER}, you heard that,\n"
@@ -1553,8 +1554,8 @@ PetalburgCity_Gym_Text_JodyPostBadge:
 	.string "special effects budget.$"
 
 PetalburgCity_Gym_Text_DoorAppearsLocked:
-	.string "This door appears to be locked\n"
-	.string "right now…$"
+	.string "This door is locked right now…\p"
+	.string "Dad locks everything. Trust issues.$"
 
 PetalburgCity_Gym_Text_EnterSpeedRoom:
 	.string "“SQUID GAME ROOM,” the sign says.\p"
@@ -1562,8 +1563,7 @@ PetalburgCity_Gym_Text_EnterSpeedRoom:
 
 @ Unused
 PetalburgCity_Gym_Text_DoorAppearsLocked2:
-	.string "This door appears to be locked\n"
-	.string "right now…$"
+	.string "This door is locked right now…$"
 
 PetalburgCity_Gym_Text_EnterAccuracyRoom:
 	.string "“GAME OF THRONES ROOM,” the sign says.\p"
@@ -1596,12 +1596,13 @@ PetalburgCity_Gym_Text_EnterGymLeadersRoom:
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_GymStatue:
-	.string "PETALBURG CITY POKéMON GYM$"
+	.string "PETALBURG CITY POKéMON GYM\p"
+	.string "Home of NORMAN. Never home.$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
 	.string "PETALBURG CITY POKéMON GYM\p"
-	.string "NORMAN'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "NORMAN'S CERTIFIED TRAINERS: {PLAYER}\p"
+	.string "He's proud. He won't say it.$"
 
 PetalburgCity_Gym_Text_NormanPreRematch:
 	.string "DAD: {PLAYER}…\n"

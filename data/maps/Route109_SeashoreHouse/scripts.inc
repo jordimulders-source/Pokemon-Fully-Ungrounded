@@ -158,15 +158,19 @@ Route109_SeashoreHouse_Text_DwaynePostBattle:
 
 Route109_SeashoreHouse_Text_JohannaIntro:
 	.string "Boring battles aren't worth the effort.\p"
-	.string "Fiery hot battles are what toughen up\n"
-	.string "TRAINERS and POKéMON!$"
+	.string "WHITNEY is my idol!\n"
+	.string "I've modeled my team after her!\l"
+	.string "It's going to be fiery hot!$"
 
 Route109_SeashoreHouse_Text_JohannaDefeated:
-	.string "That's hot!$"
+	.string "Waaaaah! You're so mean!\n"
+	.string "That's... not hot at all!$"
 
 Route109_SeashoreHouse_Text_JohannaPostBattle:
-	.string "Whew, I'm all thirsty.\n"
-	.string "Maybe I'll have a SODA POP.$"
+	.string "Whew, I'm all thirsty. Crying and\n"
+	.string "battling really takes it out of you.\p"
+	.string "Maybe I'll have a MOOMOO MILK...\n"
+	.string "I mean, a SODA POP.$"
 
 Route109_SeashoreHouse_Text_SimonIntro:
 	.string "I'm going to show you how great\n"

@@ -460,99 +460,85 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	end
 
 MauvilleCity_Text_UncleHesTooPeppy:
-	.string "UNCLE: It's because of POKéMON that\n"
-	.string "this boy's got more pep, I suppose…\l"
-	.string "But he's become a bit too peppy…$"
+	.string "UNCLE: This kid catches a RALTS with\n"
+	.string "only a few moves and suddenly he\l"
+	.string "thinks he can take on the world.$"
 
 MauvilleCity_Text_WallyWantToChallengeGym:
-	.string "WALLY: Aww, UNCLE, please?\p"
-	.string "I want to challenge this GYM and see\n"
-	.string "how much better I've become.\p"
-	.string "Please? May I, please?$"
+	.string "WALLY: UNC, power clear have. RALTS\n"
+	.string "use moving like CONFUSIC or\l"
+	.string "TELEPORTATIONS, effective hits super.\l"
+	.string "Before beatable ZIGZAGOON three.$"
 
 MauvilleCity_Text_UncleYourePushingIt:
-	.string "UNCLE: Now hold on, WALLY.\p"
-	.string "Since you started living with POKéMON,\n"
-	.string "you have grown quite a lot stronger.\p"
-	.string "But don't you think you're pushing it\n"
-	.string "to suddenly challenge a GYM?$"
+	.string "UNCLE: Now hold on, WALLY. You bigmouth\p"
+	.string "You've beaten 2 ZIGZAGOON that were\n"
+	.string "already close to fainting, because of\l"
+	.string "some kid with overpowered POKéMON\l"
+	.string "walking past and now you're thinking\l"
+	.string "you are the bomb diggity?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone:
-	.string "WALLY: I'm not pushing it.\p"
-	.string "If I combine forces with RALTS,\n"
-	.string "we can beat anyone!$"
+	.string "WALLY: Uncle no understanding have,\n"
+	.string "knowledge little. Rule of POKéMON\l"
+	.string "faint is faint.$"
 
 MauvilleCity_Text_WallyWillYouBattleMe:
-	.string "WALLY: Oh! Hi, {PLAYER}!\p"
-	.string "I've gotten a lot stronger since\n"
-	.string "we met.\p"
-	.string "{PLAYER}, I want you and my UNCLE to\n"
-	.string "understand that.\p"
-	.string "{PLAYER}, please, will you have\n"
-	.string "a battle with me?$"
+	.string "WALLY: Oh! Greet {PLAYER}!\p"
+	.string "Power increasings. Now gym challenge\n"
+	.string "want. Engagement? Test power.$"
 
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong:
-	.string "WALLY: Oh… If you won't battle me,\n"
-	.string "{PLAYER}, my UNCLE won't know that I've\l"
-	.string "become really strong.$"
+	.string "WALLY: Unfortunatings. Time of later.\n"
+	.string "Understand heal understand well.$"
 
 MauvilleCity_Text_UncleCanYouBattleWally:
-	.string "UNCLE: {PLAYER}{KUN}, was it?\n"
-	.string "On WALLY's behalf, can I ask you to\l"
-	.string "battle with him just this once?\p"
-	.string "I don't think he's going to listen to\n"
-	.string "any reason the way he is now.$"
+	.string "UNCLE: {PLAYER}{KUN}, there's my savior.\n"
+	.string "Beat this little brat and get some\l"
+	.string "sense into his little brain!$"
 
 MauvilleCity_Text_WallyPleaseBattleMe:
-	.string "WALLY: {PLAYER}, please!\n"
-	.string "Battle with me, please.$"
+	.string "WALLY: {PLAYER}, gratitude when\n"
+	.string "will have engagement.$"
 
 MauvilleCity_Text_WallyHereICome:
-	.string "WALLY: {PLAYER}, thank you.\p"
-	.string "Okay… Here I come!$"
+	.string "WALLY: {PLAYER}, thank. DESTINATION!$"
 
 MauvilleCity_Text_WallyDefeat:
 	.string "WALLY: … … … … … … …\p"
 	.string "… … … … … … … …\p"
-	.string "I lost…$"
+	.string "Failure have$"
 
 MauvilleCity_Text_WallyIllGoBackToVerdanturf:
 	.string "WALLY: UNCLE…\n"
-	.string "I'll go back to VERDANTURF…$"
+	.string "VERDANTURF walk$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle:
-	.string "{PLAYER}, thank you.\n"
+	.string "{PLAYER}, thanks a lot.\n"
 	.string "Being a TRAINER is tough, isn't it?\p"
-	.string "It's not enough just to have POKéMON\n"
-	.string "and make them battle. That isn't what\l"
-	.string "being a real TRAINER is about.$"
+	.string "But not as tough as doing 9 to 5\n"
+	.string "manual labor in our garden and to be\l"
+	.string "fair I really need this kid to do\l"
+	.string "that for the summer. So man up!$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown:
-	.string "UNCLE: WALLY, there's no need to be so\n"
-	.string "down on yourself.\p"
-	.string "Why, what's keeping you from becoming\n"
-	.string "stronger and stronger?\p"
-	.string "Come on, let's go home.\n"
-	.string "Everyone's waiting for you.$"
+	.string "UNCLE: WALLY, get yo ass to the garden.\n"
+	.string "Don't forget the apple knife on your\l"
+	.string "way there.$"
 
 MauvilleCity_Text_UncleVisitUsSometime:
 	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me\n"
-	.string "that you must be the TRAINER who kept\l"
-	.string "an eye out for WALLY when he caught\l"
-	.string "his POKéMON.\p"
-	.string "Why don't you visit us in VERDANTURF\n"
-	.string "sometime?\l"
-	.string "I'm sure WALLY would enjoy it.$"
-
+	.string "that you advised WALLY to get a RALTS,\l"
+	.string "at least a RALTS will grow useful\l"
+	.string "eventually. Thanks for not being\l"
+	.string "an asshole!$"
 
 MauvilleCity_Text_WallyPokenavCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "WALLY: Oh, hello, {PLAYER}!\p"
-	.string "I just wanted to tell you that\n"
-	.string "my uncle bought me a POKéNAV!\p"
-	.string "Now I can get in touch with you\n"
-	.string "anytime, {PLAYER}!\p"
+	.string "WALLY: Greet, {PLAYER}!\p"
+	.string "UNC have POKéNAV purchase. Fast\n"
+	.string "speed fast, call often? {PLAYER}!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
@@ -562,13 +548,14 @@ MauvilleCity_Text_RegisteredWally:
 
 MauvilleCity_Text_ScottYouDidntHoldBack:
 	.string "SCOTT: Hehe…\n"
-	.string "I was watching that match!\p"
+	.string "I was watching that match like the\l"
+	.string "creep that I am!\p"
 	.string "You're friends with that boy WALLY,\n"
 	.string "aren't you?\p"
 	.string "But you didn't hold anything back\n"
 	.string "and beat him impressively.\p"
-	.string "Yeah! That's what a real POKéMON\n"
-	.string "battle is all about!\p"
+	.string "Yeah! That's what a real bully\n"
+	.string "tends to do!\l"
 	.string "I idolize TRAINERS like that!\p"
 	.string "… … … … … …\n"
 	.string "I'll be cheering for you!$"

@@ -47,15 +47,19 @@ VictoryRoad_B2F_Text_VitoPostBattle:
 	.string "Maybe I'll go home…$"
 
 VictoryRoad_B2F_Text_OwenIntro:
-	.string "I'd heard that there was a tough\n"
-	.string "little kid around. Do they mean you?$"
+	.string "There you are!\p"
+	.string "Are you enjoying my romhack?\n"
+	.string "You're approaching the E4...\l"
+	.string "That's gonna be some fun battles!$"
 
 VictoryRoad_B2F_Text_OwenDefeat:
-	.string "The little shrimp is tough!$"
+	.string "You are ready!\n"
+	.string "Hopefully you are good at team building!$"
 
 VictoryRoad_B2F_Text_OwenPostBattle:
-	.string "The rumors I heard, that tough little\n"
-	.string "kid is from PETALBURG CITY.$"
+	.string "Man, it's so fun to be able to make\n"
+	.string "your own edit of a game and get\l"
+	.string "your creative ideas going.$"
 
 VictoryRoad_B2F_Text_CarolineIntro:
 	.string "You must be getting a little tired.$"

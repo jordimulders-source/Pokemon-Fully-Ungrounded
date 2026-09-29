@@ -185,167 +185,227 @@ LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "bound {PLAYER}?\p"
 	.string "LAVARIDGE's GYM LEADER FLANNERY\n"
 	.string "uses FIRE-type POKéMON.\p"
-	.string "Her passion for POKéMON burns stronger\n"
-	.string "and hotter than a volcano.\p"
+	.string "Finally! A place where nobody is\n"
+	.string "vlogging or talking about crypto!\p"
+	.string "These people are hardcore outdoors\n"
+	.string "freaks. If it doesn't involve wool\l"
+	.string "socks or cast-iron pans, they don't\l"
+	.string "want to hear it.\p"
 	.string "Don't get too close to her--you'll burn!\n"
 	.string "Hose her down with water and then\l"
-	.string "go for it!$"
+	.string "go for it!\p"
+	.string "And for the love of ARCEUS, put\n"
+	.string "your phone on silent before they\l"
+	.string "throw it into the volcano!$"
 
 LavaridgeTown_Gym_1F_Text_GymGuidePostVictory:
-	.string "Yow! That was a scorching-hot battle!$"
+	.string "Yow! That was a scorching-hot battle!\p"
+	.string "Pure, analog skill! No algorithms,\n"
+	.string "just raw heat!$"
 
 LavaridgeTown_Gym_1F_Text_ColeIntro:
 	.string "Owowowowow!\n"
-	.string "Yikes, it's hot!$"
+	.string "Yikes, it's hot! It's BURNING!\p"
+	.string "Don't you just love how the heat\n"
+	.string "strips away your dignity?\l"
+	.string "Come on! Make it sting!$"
 
 LavaridgeTown_Gym_1F_Text_ColeDefeat:
-	.string "I'm blinded by sweat in my eyes…$"
+	.string "YES! I'm blinded by sweat and defeat!\n"
+	.string "The agony is… exquisite!$"
 
 LavaridgeTown_Gym_1F_Text_ColePostBattle:
-	.string "Being buried in hot sand promotes\n"
-	.string "circulation.\p"
-	.string "It's effective for healing pain in\n"
-	.string "your joints.$"
+	.string "Being buried in scorching sand\n"
+	.string "promotes circulation through pain.\p"
+	.string "If your joints don't scream, you\n"
+	.string "aren't truly living. You should\l"
+	.string "try sleeping on a bed of nettles\l"
+	.string "next. It's life-changing!$"
 
 LavaridgeTown_Gym_1F_Text_AxleIntro:
-	.string "I'm trying to relieve my stress.\n"
-	.string "Don't come along and stress me out!$"
+	.string "I am on year ten of my digital detox!\n"
+	.string "Don't bring your 5G signals over here\l"
+	.string "and stress me out!\p"
+	.string "I can smell the lithium in your pocket!\n"
+	.string "Begone, screen-breather!$"
 
 LavaridgeTown_Gym_1F_Text_AxleDefeat:
+	.string "My chakras are misaligned!\n"
 	.string "I hope FLANNERY flames you good!$"
 
 LavaridgeTown_Gym_1F_Text_AxlePostBattle:
 	.string "Haaah… Whew…\p"
 	.string "If you spend too much time buried in\n"
-	.string "hot sand, it tuckers you out…$"
+	.string "hot sand, it tuckers you out…\p"
+	.string "But at least the sand doesn't try\n"
+	.string "to show me targeted ads or political\l"
+	.string "takes from people I don't know.$"
 
 LavaridgeTown_Gym_B1F_Text_KeeganIntro:
 	.string "You must be getting tired by now.\n"
-	.string "You'd like to rest in the hot sand,\l"
-	.string "wouldn't you?\p"
-	.string "But you should know that maintaining\n"
-	.string "your willpower is an important ability\l"
-	.string "for all TRAINERS.$"
+	.string "Forget the sand... you look like\l"
+	.string "you need a steak seared in butter.\p"
+	.string "Maintaining your willpower is key,\n"
+	.string "but so is high-quality animal fat.\l"
+	.string "No seed oils in this Gym, kid!$"
 
 LavaridgeTown_Gym_B1F_Text_KeeganDefeat:
-	.string "Play with fire, and be burned…$"
+	.string "Too much heat in the pan...\n"
+	.string "Play with fire, and be burned.$"
 
 LavaridgeTown_Gym_B1F_Text_KeeganPostBattle:
-	.string "Your skill is real…\n"
-	.string "But our LEADER FLANNERY is strong.\p"
-	.string "If you don't watch yourself, you'll be\n"
-	.string "burned seriously.$"
+	.string "Your skill is real… like a perfectly\n"
+	.string "rested ribeye.\p"
+	.string "But FLANNERY? She's a different kind\n"
+	.string "of heat. If you don't watch yourself,\l"
+	.string "she'll char you to a crisp.\p"
+	.string "Now move along, my tallow is\n"
+	.string "reaching its smoke point.$"
 
 LavaridgeTown_Gym_1F_Text_GeraldIntro:
 	.string "Can your POKéMON withstand\n"
-	.string "392-degree heat?$"
+	.string "392-degree heat?\p"
+	.string "Nothing clears the pores like raw\n"
+	.string "volcanic sulfur! It's nature's\l"
+	.string "cologne, kid!$"
 
 LavaridgeTown_Gym_1F_Text_GeraldDefeat:
-	.string "It didn't burn hotly enough…$"
+	.string "My skin is glowing, but my\n"
+	.string "team didn't burn hotly enough…$"
 
 LavaridgeTown_Gym_1F_Text_GeraldPostBattle:
 	.string "The temperature of magma is\n"
-	.string "392 degrees.\p"
-	.string "Your POKéMON beat me, so they should\n"
-	.string "easily survive in magma.$"
+	.string "392 degrees. It's the perfect soak.\p"
+	.string "I spend ten hours a day in the\n"
+	.string "hot springs until I'm basically\l"
+	.string "boiled. You should try it.\p"
+	.string "If you can survive 392 degrees,\n"
+	.string "you don't need a smartphone to\l"
+	.string "feel 'connected' to the world.$"
 
 LavaridgeTown_Gym_1F_Text_DanielleIntro:
-	.string "Um…\n"
-	.string "Okay, I'll battle with you.$"
+	.string "Um… Okay, I'll battle with you.\n"
+	.string "But make it quick, my canned pea\l"
+	.string "soup is almost lukewarm!$"
 
 LavaridgeTown_Gym_1F_Text_DanielleDefeat:
-	.string "Oh, but you're too strong.$"
+	.string "Oh, but you're too strong…\n"
+	.string "Almost as strong as the smell of\l"
+	.string "my chemical toilet.$"
 
 LavaridgeTown_Gym_1F_Text_DaniellePostBattle:
 	.string "I'm going to be a pretty and strong\n"
-	.string "TRAINER just like FLANNERY.$"
+	.string "TRAINER just like FLANNERY.\p"
+	.string "My dream is to buy a classic camper\n"
+	.string "and drive from one site to the next.\p"
+	.string "KALOS, PALDEA, KANTO... it doesn't\n"
+	.string "matter where we are, as long as\l"
+	.string "I'm in my folding chair staring\l"
+	.string "at a grey hedge. How quaint!$"
 
 LavaridgeTown_Gym_B1F_Text_JaceIntro:
-	.string "Come on, get with it!\n"
-	.string "Let's go before my feelings cool!$"
+	.string "Come on, get with it!\p"
+	.string "I’ve been rubbing these sticks for\n"
+	.string "hours! My hands are bleeding, but\l"
+	.string "the fire is ALIVE!\p"
+	.string "Battle me before the embers die!$"
 
 LavaridgeTown_Gym_B1F_Text_JaceDefeat:
-	.string "It's so hot, and yet my heart is\n"
-	.string "clutched by ice…$"
+	.string "My flame is out… It's so hot, and\n"
+	.string "yet my heart is clutched by ice…$"
 
 LavaridgeTown_Gym_B1F_Text_JacePostBattle:
-	.string "The way the battling spirit burns\n"
-	.string "within you, you may stand a chance\l"
-	.string "against our LEADER.$"
+	.string "The way your spirit burns… you\n"
+	.string "might actually beat FLANNERY.\p"
+	.string "But never trust a man who uses a\n"
+	.string "microwave. It's the devil's box!$"
 
 LavaridgeTown_Gym_B1F_Text_JeffIntro:
 	.string "See how the flames blaze wildly?\n"
-	.string "They flare in anticipation of my win!$"
+	.string "They’re whispering my name!\p"
+	.string "They flare in anticipation of my win!\n"
+	.string "Can you hear them too, or is your\l"
+	.string "brain just full of WiFi signals?$"
 
 LavaridgeTown_Gym_B1F_Text_JeffDefeat:
-	.string "Something didn't go right.$"
+	.string "The fire lied to me!\n"
+	.string "Something didn't go right...$"
 
 LavaridgeTown_Gym_B1F_Text_JeffPostBattle:
 	.string "Well, so what? I say so what?\n"
 	.string "I can walk on hot coals barefoot!\p"
-	.string "…Don't even think about trying it!$"
+	.string "The blisters make me feel closer\n"
+	.string "to the earth! Don't try it, kid.\l"
+	.string "Your feet are probably too soft\l"
+	.string "from wearing 'ergonomic' sneakers!$"
 
 LavaridgeTown_Gym_B1F_Text_EliIntro:
-	.string "As much as I love mountains,\n"
-	.string "I especially love volcanoes.$"
+	.string "As much as I love mountains, I\n"
+	.string "especially love volcanoes.\p"
+	.string "I’ve been hiking for six weeks\n"
+	.string "straight. My backpack is my home,\l"
+	.string "and my musk is my shield!$"
 
 LavaridgeTown_Gym_B1F_Text_EliDefeat:
-	.string "Well, it seems to me I lost without\n"
-	.string "ever being in control.$"
+	.string "I lost without ever being in control.\n"
+	.string "Maybe it’s the lack of electrolytes...$"
 
 LavaridgeTown_Gym_B1F_Text_EliPostBattle:
 	.string "I stay here because I became a fan\n"
-	.string "of FLANNERY's power.\p"
-	.string "Hehehehe.$"
+	.string "of FLANNERY's raw power.\p"
+	.string "She doesn't use deodorant either.\n"
+	.string "She’s the real deal. Hehehehe.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryIntro:
-	.string "Welcome… No, wait.\p"
-	.string "Puny TRAINER, how good to see you've\n"
-	.string "made it here!\p"
-	.string "I have been entrusted with the…\n"
-	.string "No, wait.\p"
+	.string "Welcome… No, wait!\p"
+	.string "Puny TRAINER, prepare to be scorched\n"
+	.string "by the raw, unwashed power of… uh…\l"
+	.string "Wait, what did Jace call it? Right!\l"
+	.string "The primal embers of the soul!\p"
 	.string "I am FLANNERY, and I'm the GYM\n"
-	.string "LEADER here!\p"
-	.string "Uh…\n"
-	.string "Dare not underestimate me, though\l"
-	.string "I have been LEADER only a short time!\p"
-	.string "With skills inherited from my grand-\n"
-	.string "father, I shall, uh…demonstrate the\l"
-	.string "hot moves we have honed on this land!$"
+	.string "LEADER here! I inherit the skills of\l"
+	.string "my grandfather, who never used\l"
+	.string "a GPS in his life!\p"
+	.string "Dare not underestimate me! We hone\n"
+	.string "our moves in the dirt and the sulfur!\l"
+	.string "No WiFi! Just analog… uh… heat!\l"
+	.string "Prepare to get cooked!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "Oh…\n"
 	.string "I guess I was trying too hard…\p"
 	.string "I… I've only recently become\n"
-	.string "a GYM LEADER.\p"
-	.string "I tried too hard to be someone\n"
-	.string "I'm not.\p"
-	.string "I have to do things my natural way. If\n"
-	.string "I don't, my POKéMON will be confused.\p"
-	.string "Thanks for teaching me that.\n"
+	.string "a GYM LEADER. And honestly?\l"
+	.string "The smell of sulfur is giving me\l"
+	.string "a massive headache.\p"
+	.string "I tried too hard to impress these\n"
+	.string "camping fanatics by acting like\l"
+	.string "someone I'm not.\p"
+	.string "I have to do things my natural way.\n"
+	.string "Thanks for teaching me that.\l"
 	.string "For that, you deserve this.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
 	.string "{PLAYER} received the HEAT BADGE\n"
 	.string "from FLANNERY.$"
-
 LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
 	.string "If you have a HEAT BADGE, all POKéMON\n"
-	.string "up to Level 50, even those you get in\l"
-	.string "trades from other people, will obey\l"
-	.string "you completely.\p"
-	.string "And, it lets POKéMON use the HM move\n"
-	.string "STRENGTH outside of battle.\p"
+	.string "up to Level 50 will obey you.\p"
+	.string "It also lets you use STRENGTH out of\n"
+	.string "battle. You'll need it to move heavy\l"
+	.string "boulders or to haul a literal pile\l"
+	.string "of trash out of the woods!\p"
 	.string "This is a token of my appreciation.\n"
 	.string "Don't be shy about taking it!$"
 
 LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "That TM50 contains OVERHEAT.\p"
-	.string "That move inflicts serious damage on\n"
-	.string "the opponent.\p"
-	.string "But it also sharply cuts the SP. ATK\n"
-	.string "of the POKéMON using it. It might not\l"
-	.string "be suitable for longer battles.$"
+	.string "It inflicts serious damage, but it\n"
+	.string "sharply cuts your SP. ATK.\p"
+	.string "It’s like my WiFi router... it works\n"
+	.string "great for five minutes, then it\l"
+	.string "overheats and I have to go back to\l"
+	.string "staring at the fire. It’s a sign!$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 	.string "Registered GYM LEADER FLANNERY\n"
@@ -353,8 +413,14 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "Your power reminds me of someone…\p"
-	.string "Oh! I know! You battle like NORMAN,\n"
-	.string "the GYM LEADER of PETALBURG.$"
+	.string "Oh! I know! You battle like NORMAN\n"
+	.string "over in PETALBURG.\p"
+	.string "Though it’s hard to believe he's\n"
+	.string "still that strong. Last I heard,\l"
+	.string "he hasn't left his couch in weeks.\p"
+	.string "He’s on his fourth rewatch of some\n"
+	.string "show about a Tiger King. Talk about\l"
+	.string "a different kind of 'wildlife'...$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
 	.string "LAVARIDGE TOWN POKéMON GYM$"

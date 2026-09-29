@@ -14637,3 +14637,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.6] - Na-beta-gebieden
 - Afgesproken: dialogen in het Trick House, de Battle Frontier en de Battle Tents blijven tot na de beta vanilla (vastgelegd in CLAUDE.md).
 - Dialoogstudio: nieuw vinkje "Na-beta-gebieden verbergen" (standaard aan) haalt deze kaarten uit de kaartlijst en de zoekresultaten.
+
+### [v.0.6.7] - Gym-dialogen uit Firebase Studio
+- Dialogen die in Firebase Studio stonden maar nooit in de repo terechtkwamen, overgenomen uit de `maps`-export:
+  - Dewford Gym (UFC-thema, incl. Brawly), Mauville Gym, Lavaridge Gym, Fortree Gym, Mossdeep Gym, Sootopolis Gym (1F en B1F).
+  - Mauville City, Seashore House (Route 109) en Victory Road B2F.
+- Dewford Gym: Jocelyn (Romero), Laura (McGregor) en Lilith (Rogan) hebben nu de Black Belt-sprite i.p.v. Girl 3.
+- Pokémon League 1F: Rare Candy in de winkel.
+- Samengevoegd met wat de repo al had: Cliffords double battle, de Spiritomb/Muk-prullenbakken, de uitgebreide Lilycove-winkel, de Ability Capsule in Pacifidlog, de naadloze Mini Forest-verbinding en de fixes in Littleroot bleven behouden.
+- Regelafbreking gerepareerd in Flannery's overwinningstekst en de Mossdeep Gym-gids (twee keer `\n` in één tekstvak).

@@ -982,8 +982,8 @@ LilycoveCity_ContestLobby_EventScript_LittleGirlHaveCase::
 
 LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase:
 	.string "Yippee!\p"
-	.string "The lady at the reception counter\n"
-	.string "gave me a case for {POKEBLOCK}S!$"
+	.string "The lady gave me a {POKEBLOCK} case!\p"
+	.string "It's my first sponsorship deal.$"
 
 LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries:
 	.string "Make {POKEBLOCK}S and put them in there.\p"
@@ -1045,36 +1045,30 @@ LilycoveCity_ContestLobby_Text_FineThatsTheWayItIs:
 	.string "Well, be seeing you.$"
 
 LilycoveCity_ContestLobby_Text_MasterRankHereICome:
-	.string "Hoo, boy… Master Rank CONTESTS,\n"
-	.string "here I come.\p"
-	.string "The world will know that my dearest\n"
-	.string "POKéMON is the cutest being in all\l"
-	.string "existence. The time has come!\l"
-	.string "Uheheheh.$"
+	.string "Master Rank, here I come.\p"
+	.string "The world will know my POKéMON is the\n"
+	.string "prettiest.\p"
+	.string "Don't laugh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere:
-	.string "You can see a whole variety of\n"
-	.string "POKéMON here.\p"
-	.string "That's why I make this place a regular\n"
-	.string "part of my daily stroll.$"
+	.string "I come here to see lots of POKéMON.\p"
+	.string "It's cheaper than a zoo. And they wear\n"
+	.string "makeup.$"
 
 LilycoveCity_ContestLobby_Text_ContestFeastForEyes:
-	.string "Wow, coming out to a CONTEST is\n"
-	.string "a feast for these eyes!\p"
-	.string "Would you look at all the POKéMON\n"
-	.string "that just scream to be painted?$"
+	.string "A feast for the eyes!\p"
+	.string "I'm painting all of them.\p"
+	.string "Unpaid. For exposure.$"
 
 LilycoveCity_ContestLobby_Text_ToughContestIsExtreme:
-	.string "The TOUGHNESS CONTEST is like\n"
-	.string "extreme, man!\p"
-	.string "Those muscular appeals…\n"
-	.string "Cascading sweat… I swoon!$"
+	.string "The TOUGHNESS CONTEST is extreme, man!\p"
+	.string "Muscular appeals… Cascading sweat…\p"
+	.string "I have to sit down.$"
 
 LilycoveCity_ContestLobby_Text_LavishedCareOnMon:
-	.string "Day in and day out, I lavished my care\n"
-	.string "on this POKéMON.\p"
-	.string "Its condition is peaking.\n"
-	.string "Today, victory is mine!$"
+	.string "Day in, day out, I pampered this\n"
+	.string "POKéMON.\p"
+	.string "My wife left. Worth it.$"
 
 LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
 	.string "I made POKéBLOCKS with my family. Mom\n"

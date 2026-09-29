@@ -14801,3 +14801,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Gymborden: Roxanne ("little rock star"), Wattson ("Electric Wizard"), Flannery (off the grid), Winona (jetlagged superster), Liza & Tate, en het Sootopolis-gymbord noemt nu WALLACE als sommelier.
 - Mt. Chimney: "Follow the example of the Chinese. Never take the stairs." Day Care, Safari Zone, Mt. Pyre Pier (Cuphead) en Berry Master volgens Jordi's wensen.
 - Functionele borden (kajuitnummers, bedden, automaat, recordborden, handboeken), Battle Tent-borden en het Trick House-bord zijn ongewijzigd.
+
+### [v.0.6.34] - Contests en Marts
+- Contest Hall en lobby (Lilycove): missverkiezingen met pushy ouders, influencers en mensen die het veel te serieus nemen (37 teksten).
+- Marts: de shoppers geven kloppend advies over items, met een droge draai (25 teksten, alle Marts behalve de Battle Frontier).

@@ -58,10 +58,9 @@ SootopolisCity_Mart_Text_PPUpIsGreat:
 	.string "of a POKéMON move.$"
 
 SootopolisCity_Mart_Text_TooScaryOutside:
-	.string "What…\n"
 	.string "What is happening?\p"
-	.string "I really want to know, but it's too\n"
-	.string "scary to go outside.$"
+	.string "I want to know, but it's scary outside.\p"
+	.string "I'll stay in the MART. Forever.$"
 
 SootopolisCity_Mart_Text_FullRestoreItemOfDreams:
 	.string "Do you know FULL RESTORE?\p"
@@ -70,6 +69,7 @@ SootopolisCity_Mart_Text_FullRestoreItemOfDreams:
 	.string "It's truly an item of your dreams!$"
 
 SootopolisCity_Mart_Text_DidSomethingAwaken:
-	.string "This weather…\n"
-	.string "Did something awaken?$"
+	.string "This weather…\p"
+	.string "Did something awaken?\p"
+	.string "Or is it the sauce?$"
 

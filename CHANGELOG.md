@@ -14889,3 +14889,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Het flitsen vóór de schermtransitie is korter: 2 snelle flitsen in plaats van 3 langzame (~16 frames i.p.v. ~48). De transities zelf zijn ongewijzigd.
 - "Got away safely!" staat korter in beeld (B_WAIT_TIME_SHORT i.p.v. LONG).
 - De Old Rod blijft bewust slecht (25% kans op beet).
+
+### [v.0.6.50] - Quality of life als vaste regel
+- CLAUDE.md: nieuw principe "de game respecteert de tijd van de speler", plus de lijst met goedgekeurde QoL-wensen die nog gedaan moeten worden (HM-moves zonder HM, Repel opnieuw, Fly vanuit de kaart, Move Deleter, EV/IV-overzicht, meerdere Rare Candies tegelijk, minder herhaalde popups en teksten).

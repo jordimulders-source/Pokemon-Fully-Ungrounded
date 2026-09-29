@@ -14689,3 +14689,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Rustboro: twee kinderen missen McDonald's en KFC, de dikke man eet tegenwoordig gefrituurde Kakuna.
 - Perry (Route 118) doet vogelgeluiden na: Taillow en Wingull.
 - Mauville Game Corner: extreem verslaafde gokkers (spelinformatie blijft behouden).
+
+### [v.0.6.14] - Bernie's Pidgey, wc-grappen, Lance
+- Bernie (Kindler, Route 114): eerste gevecht Pidgey (lv 24, bewust als grap) i.p.v. Wingull. In de rematches is de Pidgey opgegeten: Pelipper wordt Dolliv (rematch 2) / Arboliva (3–5). Rematch-tekst verwijst ernaar.
+- Magma Hideout: twee grunts over de gevolgen van pittig eten (wc bezet, pijnlijk zitvlak).
+- Rustboro Pokémon Center: "All my childhood heroes are cancelled now. Who's next, LANCE?"

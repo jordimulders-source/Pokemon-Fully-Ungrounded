@@ -60,5 +60,7 @@ MagmaHideout_2F_1R_Text_Grunt5Defeat:
 	.string "Nobody ever wants a sample…$"
 
 MagmaHideout_2F_1R_Text_Grunt5PostBattle:
-	.string "Actually, I'm no expert at battling…$"
+	.string "Pro tip: never eat the sample right\n"
+	.string "before a shift. The bathroom here is\l"
+	.string "always occupied.$"
 

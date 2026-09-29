@@ -155,7 +155,9 @@ MagmaHideout_4F_Text_Grunt13Defeat:
 	.string "easy?$"
 
 MagmaHideout_4F_Text_Grunt13PostBattle:
-	.string "C-come on, one more match…$"
+	.string "One more round? I can't. I can barely\n"
+	.string "sit down. Yesterday's DA BOMB is still\l"
+	.string "burning… on the way out.$"
 
 MagmaHideout_4F_Text_TabithaIntro:
 	.string "Hehehe!\n"

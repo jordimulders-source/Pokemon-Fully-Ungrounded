@@ -1949,12 +1949,11 @@ Route114_Text_BernieRegister:
 	.string "Let's register each other!$"
 
 Route114_Text_BernieRematchIntro:
-	.string "Have you learned to keep water handy\n"
-	.string "for campfires?$"
+	.string "Remember my PIDGEY? I got hungry. Now I\n"
+	.string "grow my own olives. For the oil.$"
 
 Route114_Text_BernieRematchDefeat:
-	.string "I got hosed down before I could\n"
-	.string "flare up, I guess.$"
+	.string "Tasted like chicken, by the way.$"
 
 Route114_Text_BerniePostRematch:
 	.string "You really do have to be careful with\n"

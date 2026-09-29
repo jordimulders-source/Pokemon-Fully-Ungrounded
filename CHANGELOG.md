@@ -14892,3 +14892,4 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.50] - Quality of life als vaste regel
 - CLAUDE.md: nieuw principe "de game respecteert de tijd van de speler", plus de lijst met goedgekeurde QoL-wensen die nog gedaan moeten worden (HM-moves zonder HM, Repel opnieuw, Fly vanuit de kaart, Move Deleter, EV/IV-overzicht, meerdere Rare Candies tegelijk, minder herhaalde popups en teksten).
+- CLAUDE.md: tweede ronde QoL-wensen toegevoegd (Itemfinder die items laat oplichten, bessenbomen-overzicht, sneller fietsen/surfen, geen ontsnapkans in de Safari Zone en bij Latios/Latias, tas sorteren, twee registratieknoppen, nature/ability in de pc, team in één keer healen, level van de volgende gym-ace, rematch-overzicht) en wat bewust niet komt.

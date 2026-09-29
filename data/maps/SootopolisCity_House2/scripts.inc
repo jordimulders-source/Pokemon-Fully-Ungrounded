@@ -20,8 +20,8 @@ SootopolisCity_House2_EventScript_DontKnowAboutOrbs::
 
 SootopolisCity_House2_Text_DidYouKnowAboutMtPyreOrbs:
 	.string "MT. PYRE…\p"
-	.string "At its peak are two orbs placed side\n"
-	.string "by side. Did you know?$"
+	.string "At its peak are two ORBS, side by side.\p"
+	.string "Like the eyes of an old god. Watching.$"
 
 SootopolisCity_House2_Text_YesTwoOrbsSideBySide:
 	.string "Yes, two orbs side by side…\p"

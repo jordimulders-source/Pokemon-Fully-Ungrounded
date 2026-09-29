@@ -574,10 +574,10 @@ LilycoveCity_Harbor_Text_WhereWouldYouLikeToGo:
 	.string "Then, where would you like to go?$"
 
 LilycoveCity_Harbor_Text_SailorFerryUnavailable:
-	.string "Until they finish making the ferry,\n"
-	.string "we sailors have nothing to do…\p"
-	.string "I wish they'd get a move on, the folks\n"
-	.string "at the SHIPYARD in SLATEPORT.$"
+	.string "Until they finish the ferry, we sailors\n"
+	.string "have nothing to do.\p"
+	.string "So we go to the mall.\p"
+	.string "We've been to the mall a lot.$"
 
 LilycoveCity_Harbor_Text_SailorFerryAvailable:
 	.string "The ferry S.S. TIDAL is finally in\n"

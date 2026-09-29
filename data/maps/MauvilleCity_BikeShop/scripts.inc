@@ -256,11 +256,10 @@ MauvilleCity_BikeShop_Text_OhYourBikeIsInPC:
 	.string "on your adventure!$"
 
 MauvilleCity_BikeShop_Text_HandbooksAreInBack:
-	.string "I'm learning about BIKES while\n"
-	.string "I work here.\p"
-	.string "If you need advice on how to ride your\n"
-	.string "BIKE, there're a couple handbooks in\l"
-	.string "the back.$"
+	.string "I'm learning about BIKES while I work\n"
+	.string "here.\p"
+	.string "There are handbooks in the back.\p"
+	.string "I haven't read them. Don't tell RYDEL.$"
 
 MauvilleCity_BikeShop_Text_MachHandbookWhichPage:
 	.string "It's a handbook on the MACH BIKE.\p"

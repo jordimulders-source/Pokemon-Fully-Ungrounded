@@ -32,10 +32,10 @@ SootopolisCity_House6_EventScript_NoRoomForWailmerDoll::
 	end
 
 SootopolisCity_House6_Text_FirstGuestInWhileTakeDoll:
-	.string "Hello! You're our first guest in\n"
-	.string "a good while.\p"
-	.string "You've brightened up my day, so I'll\n"
-	.string "give you a big WAILMER DOLL.$"
+	.string "Hello! You're our first guest in years!\p"
+	.string "You've made my day. Take this big\n"
+	.string "WAILMER DOLL.\p"
+	.string "It was taking up the whole bed.$"
 
 SootopolisCity_House6_Text_TakeGoodCareOfIt:
 	.string "Take good care of it!$"

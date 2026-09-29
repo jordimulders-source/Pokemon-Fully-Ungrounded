@@ -381,10 +381,9 @@ SlateportCity_Harbor_EventScript_TradedScanner::
 	end
 
 SlateportCity_Harbor_Text_FerryServiceUnavailable:
-	.string "I beg your pardon?\n"
-	.string "You're looking for a ship?\p"
-	.string "I'm sorry, the ferry service isn't\n"
-	.string "available at present…$"
+	.string "I beg your pardon? You want a ship?\p"
+	.string "The ferry isn't ready yet.\p"
+	.string "The captain is still learning to swim.$"
 
 SlateportCity_Harbor_Text_MayISeeYourTicket:
 	.string "Hello, are you here for the ferry?\n"
@@ -424,21 +423,18 @@ SlateportCity_Harbor_Text_LoveToGoDeepUnderwaterSomeday:
 	.string "that someday.$"
 
 SlateportCity_Harbor_Text_AbnormalWeather:
-	.string "For a ship to sail safely, we need to\n"
-	.string "know about the weather!\p"
-	.string "Speaking of weather, I heard something\n"
-	.string "from a guy at the WEATHER INSTITUTE.\p"
-	.string "He was saying abnormal weather has\n"
-	.string "been reported all over the place!\p"
-	.string "You should visit the WEATHER INSTITUTE\n"
-	.string "and ask around!$"
+	.string "Ships need to know the weather!\p"
+	.string "The WEATHER INSTITUTE says abnormal\n"
+	.string "weather is everywhere!\p"
+	.string "Visit the WEATHER INSTITUTE on ROUTE\n"
+	.string "119.\p"
+	.string "Or just look up.$"
 
 SlateportCity_Harbor_Text_SubTooSmallForMe:
-	.string "I wanted to go with CAPT. STERN on\n"
-	.string "the ocean floor exploration.\p"
+	.string "I wanted to join CAPT. STERN on the\n"
+	.string "expedition.\p"
 	.string "But the sub's too small for me.\p"
-	.string "If I squeezed in, there wouldn't be\n"
-	.string "any room for the CAPTAIN…$"
+	.string "The CAPTAIN would've had to stay home.$"
 
 SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum:
 	.string "CAPT. STERN: Those thugs…\p"

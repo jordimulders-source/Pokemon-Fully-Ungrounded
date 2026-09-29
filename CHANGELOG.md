@@ -14846,3 +14846,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Route 123: Cooltrainers Wendy en Jazmyn heten nu SCARLET en VIOLET, twee zussen op Treasure Hunt (verwijzingen naar Scarlet/Violet: Treasure Hunt, picknick-sandwiches, Herba Mystica). Paldea-teams (lv 35): Scarlet: Armarouge, Lokix, Glimmora, Houndstone; Violet: Ceruledge, Mabosstiff, Espathra, Cyclizar. Beide 12 IV's, Full Restore en dezelfde AI.
 - Jerry (School Kid, Route 116) wil een salaryman worden zoals Larry.
 - Losse NPC's: Diving Treasure Hunter (eiland leger dan Alola), Verdanturf lamer dan Team Flare, Fortree-meisje headbutt bomen, honeymoon-stel in Lilycove (klaagt over Legends Z-A / is fan van Legends: Arceus), Route 110-jongen is blij dat deze game snel is.
+
+### [v.0.6.42] - NPC's in de steden
+- 177 NPC-teksten in Dewford Hall, Ever Grande, Fallarbor, Fortree, Lavaridge, Lilycove, Mauville, Mossdeep, Petalburg, Rustboro, Slateport en Sootopolis herschreven, in het thema van elke stad (Lilycove: mall, Mauville: datacenter, Mossdeep: ruimte, Sootopolis: Griekse goden en Wallace' wijn, Rustboro: Devon, Slateport: markt en nomads).
+- Met Jordi's aanpassingen: Victory Road vol "jerkoffs", Cozmo's sriracha, Serperior in de lucht, Mothim in de cereal, Jynx-mascotte, Deoxys, Whatsapp in plaats van Wingull-post, PEAKYCHU.
+- Verhaal- en functionele teksten (Stern, Gabby & Ty, Game Corner-kassa, ribbons, Beldum, Lotad/Seedot) zijn ongewijzigd.

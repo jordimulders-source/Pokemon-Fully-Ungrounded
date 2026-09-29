@@ -17,8 +17,8 @@ FortreeCity_House3_Text_MetStevenHadAmazingPokemon:
 	.string "singing.$"
 
 FortreeCity_House3_Text_OhYouHavePokedex:
-	.string "What's that thing you have there?\p"
+	.string "What's that thing?\p"
 	.string "… … … … … …\p"
-	.string "Oh, it's called a POKéDEX?\n"
-	.string "It's really awesome!$"
+	.string "A POKéDEX? Does it have streaming apps\n"
+	.string "on it?$"
 

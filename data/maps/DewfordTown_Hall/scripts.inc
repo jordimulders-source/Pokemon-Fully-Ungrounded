@@ -255,10 +255,10 @@ DewfordTown_Hall_EventScript_ReceivedSludgeBomb::
 	end
 
 DewfordTown_Hall_Text_CantImagineLifeWithoutTrend:
-	.string "What's in vogue? Why, it has to be\n"
-	.string "“{STR_VAR_1}”!\p"
-	.string "I can't imagine what life would be like\n"
-	.string "without “{STR_VAR_1}”!$"
+	.string "What's in vogue? “{STR_VAR_1}”! Obviously!\p"
+	.string "I can't imagine life without “{STR_VAR_1}”!\p"
+	.string "I've said that about 40 trends this\n"
+	.string "year.$"
 
 DewfordTown_Hall_Text_GettingBoredOfTrend:
 	.string "What's in vogue? Why, it has to be\n"
@@ -268,16 +268,14 @@ DewfordTown_Hall_Text_GettingBoredOfTrend:
 
 DewfordTown_Hall_Text_TeachingMonAboutTrend:
 	.string "I'm teaching my POKéMON about\n"
-	.string "“{STR_VAR_1},”\l"
-	.string "but it's not going well.\p"
-	.string "It's a bit too much, I think.$"
+	.string "“{STR_VAR_1}.”\p"
+	.string "It bit me.$"
 
 DewfordTown_Hall_Text_DeepLinkBetweenXAndY:
-	.string "I'm studying up on the hip and trendy\n"
-	.string "“{STR_VAR_1}” now.\p"
-	.string "Is it true that there's a deep link\n"
-	.string "between “{STR_VAR_1}”\l"
-	.string "and “{STR_VAR_2}”?$"
+	.string "I'm researching “{STR_VAR_1}.”\p"
+	.string "Is there a deep link between “{STR_VAR_1}”\n"
+	.string "and “{STR_VAR_2}”?\p"
+	.string "I heard it on a podcast. Six hours long.$"
 
 DewfordTown_Hall_Text_MyHunchWasRight:
 	.string "Oh!\n"
@@ -292,14 +290,14 @@ DewfordTown_Hall_Text_NotEasyToKeepUp:
 	.string "me to keep up with trends!$"
 
 DewfordTown_Hall_Text_TVShowAboutTrend:
-	.string "This whole business about\n"
-	.string "“{STR_VAR_1}”…\l"
-	.string "Isn't there a TV show on it?$"
+	.string "“{STR_VAR_1}”…\p"
+	.string "Isn't there a TV show on it? Season 7\n"
+	.string "was bad.$"
 
 DewfordTown_Hall_Text_IsTrendMorePopularAcrossSea:
 	.string "Across the sea…\p"
-	.string "Is “{STR_VAR_1}”\n"
-	.string "even more popular?$"
+	.string "Is “{STR_VAR_1}” even more popular?\p"
+	.string "They always get everything first.$"
 
 DewfordTown_Hall_Text_CollectTrendMerchandise:
 	.string "I collect official\n"

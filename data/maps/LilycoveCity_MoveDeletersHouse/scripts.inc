@@ -67,10 +67,10 @@ LilycoveCity_MoveDeletersHouse_EventScript_LastMonWithSurf::
 	end
 
 LilycoveCity_MoveDeletersHouse_Text_ICanMakeMonForgetMove:
-	.string "Uh…\n"
-	.string "Oh, yes, I'm the MOVE DELETER.\p"
-	.string "I can make POKéMON forget their moves.\p"
-	.string "Would you like me to do that?$"
+	.string "Uh… Oh, yes, I'm the MOVE DELETER.\p"
+	.string "I make POKéMON forget moves.\p"
+	.string "I also forgot what I had for breakfast.\n"
+	.string "Occupational hazard.$"
 
 LilycoveCity_MoveDeletersHouse_Text_WhichMonShouldForget:
 	.string "Which POKéMON should forget a move?$"

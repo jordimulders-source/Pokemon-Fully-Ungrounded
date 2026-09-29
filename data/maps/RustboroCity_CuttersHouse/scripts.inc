@@ -40,8 +40,9 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "often as you like. That's what HM means.$"
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
-	.string "When they were expanding the city of\n"
-	.string "RUSTBORO, my dad helped out.\p"
-	.string "He made his POKéMON use CUT to clear\n"
-	.string "the land of trees.$"
+	.string "When they expanded RUSTBORO, my dad\n"
+	.string "helped.\p"
+	.string "His POKéMON CUT down all the trees.\p"
+	.string "Now he's in a climate protest group. Full\n"
+	.string "circle.$"
 

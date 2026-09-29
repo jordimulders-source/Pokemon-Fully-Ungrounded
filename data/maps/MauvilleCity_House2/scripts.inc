@@ -42,10 +42,11 @@ MauvilleCity_House2_EventScript_DeclineTrade::
 	end
 
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
-	.string "If I had a BIKE, it'd be easy to cycle to\n"
-	.string "SLATEPORT for some shopping.\p"
-	.string "I'd be able to buy HARBOR MAIL at the\n"
-	.string "POKéMON MART in SLATEPORT…$"
+	.string "If I had a BIKE, I'd cycle to SLATEPORT\n"
+	.string "for shopping.\p"
+	.string "I'd buy HARBOR MAIL.\p"
+	.string "Wait, mail doesn't exist anymore? Who\n"
+	.string "would do that?$"
 
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
 	.string "Oh! You have HARBOR MAIL?\n"

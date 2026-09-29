@@ -418,10 +418,10 @@ MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
 
 MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
 	.string "Hehehe!\p"
-	.string "We come all the way here to get some\n"
-	.string "fuel, and we're interfered with again!\p"
-	.string "If you're going to mess with us too,\n"
-	.string "we'll take care of you at the same time!$"
+	.string "We came all the way here for fuel, and\n"
+	.string "now you!\p"
+	.string "Fine. You'll get the hot sauce\n"
+	.string "treatment too!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
 	.string "MAXIE: Out of the way! This is a\n"

@@ -59,16 +59,12 @@ FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat:
 	.string "cut since before I had a job.$"
 
 FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav:
-	.string "Oh, wow, you have a POKéNAV!\n"
-	.string "And it's just like mine!\p"
-	.string "Do you know about POKéNAV's\n"
-	.string "MATCH CALL system?\p"
-	.string "Access it, and you can chat with\n"
+	.string "Whoa, you have a POKéNAV! Just like\n"
+	.string "mine!\p"
+	.string "With MATCH CALL you can chat with\n"
 	.string "registered TRAINERS anytime.\p"
-	.string "It also shows you which TRAINERS\n"
-	.string "want a rematch with you.\p"
-	.string "It's really nifty! Those DEVON guys\n"
-	.string "sure know what they're doing!$"
+	.string "It shows who wants a rematch.\p"
+	.string "Nobody ever calls me. But it shows it.$"
 
 FortreeCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

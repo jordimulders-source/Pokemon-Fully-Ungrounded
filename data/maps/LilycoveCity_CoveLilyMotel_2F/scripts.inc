@@ -85,32 +85,33 @@ LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThis:
 	.string "recognition of your feat!$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_ImTheProgrammer:
-	.string "Me? You're talking to me?\n"
-	.string "I'm the PROGRAMMER.\p"
-	.string "I wonder what the SLOTS are\n"
-	.string "like here.$"
+	.string "Me? I'm the PROGRAMMER.\p"
+	.string "I made this game. Well, a version of it.\p"
+	.string "Someone changed everything. I'm not\n"
+	.string "angry. Just disappointed.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_ImTheGraphicArtist:
-	.string "I'm the GRAPHIC ARTIST! Aren't the\n"
-	.string "POKéMON of HOENN interesting?$"
+	.string "I'm the GRAPHIC ARTIST!\p"
+	.string "Aren't HOENN's POKéMON interesting?\p"
+	.string "Who put all these other POKéMON in\n"
+	.string "here?!$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_GirlsAreCute:
-	.string "The girl TUBERS, they're cute, hey?\n"
-	.string "To battle against a cute TUBER…\p"
-	.string "Whoop, it's so awesome!\p"
-	.string "And the TWINS! Aren't they cute?\n"
-	.string "A 2-on-2 battle with TWINS…\p"
-	.string "Whoop, it's unbearably fun!$"
+	.string "The TUBERS, the TWINS… A 2-on-2\n"
+	.string "battle…\p"
+	.string "Whoop, so fun!\p"
+	.string "…Why is everyone looking at me like\n"
+	.string "that?$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_SeaBreezeTicklesHeart:
-	.string "The sea breeze tickles my heart.\n"
-	.string "It feels wonderful here!$"
+	.string "The sea breeze tickles my heart.\p"
+	.string "The mold in this room tickles my lungs.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy:
-	.string "You never know when and where\n"
-	.string "people will challenge you.\p"
-	.string "That's why I never leave home without\n"
-	.string "my GAME BOY ADVANCE.$"
+	.string "You never know when someone challenges\n"
+	.string "you.\p"
+	.string "So I always carry my GAME BOY ADVANCE.\p"
+	.string "And a charger. Nobody has the charger.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles:
 	.string "SCOTT: … … … … … … … … … … Zzz…\p"

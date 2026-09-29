@@ -573,15 +573,15 @@ LilycoveCity_Text_GetLostMessingUpTraining:
 	.string "still water somewhere.$"
 
 LilycoveCity_Text_ContestHallInTown:
-	.string "There's a POKéMON CONTEST HALL\n"
-	.string "right in this here town. \p"
-	.string "That means well-raised POKéMON will\n"
-	.string "come from all over the country.\p"
-	.string "My heart swells with excitement!$"
+	.string "There's a CONTEST HALL in this town.\p"
+	.string "POKéMON come from all over to get their\n"
+	.string "hair done.\p"
+	.string "My heart swells! My wallet shrinks!$"
 
 LilycoveCity_Text_StrangeCaveInCove:
-	.string "Have you seen that strange cave in\n"
-	.string "the cove at the edge of town?$"
+	.string "Have you seen that strange cave in the\n"
+	.string "cove?\p"
+	.string "I heard bubbling. Fizzy bubbling.$"
 
 LilycoveCity_Text_GoingToMoveDeleterForHMs:
 	.string "I'm going to teach my POKéMON some new\n"
@@ -597,10 +597,11 @@ LilycoveCity_Text_ImFromKanto:
 	.string "I only found BUG POKéMON and RATTATA.$"
 
 LilycoveCity_Text_TeamAquaBeenTrainingWailmer:
-	.string "TEAM AQUA's been training their\n"
-	.string "WAILMER in the cove.\p"
-	.string "We SAILORS can't get our boats out\n"
-	.string "to sea with them in the way!$"
+	.string "TEAM AQUA's WAILMER are blocking the\n"
+	.string "cove.\p"
+	.string "We SAILORS can't get out to sea.\p"
+	.string "And they keep offering us sparkling\n"
+	.string "water. We drink rum.$"
 
 LilycoveCity_Text_SomeonePuntedTeamAquaOut:
 	.string "Ahoy, did you know?\p"
@@ -610,11 +611,9 @@ LilycoveCity_Text_SomeonePuntedTeamAquaOut:
 	.string "so we can get our boats out again.$"
 
 LilycoveCity_Text_SomeoneStoleMyPokemon:
-	.string "I was taking a relaxing snooze at the\n"
-	.string "seaside inn to the sound of waves…\p"
-	.string "When someone stole my POKéMON!\p"
-	.string "Who's the abductor?\n"
-	.string "TEAM AQUA? Is it TEAM AQUA?$"
+	.string "I took a nap at the seaside inn…\p"
+	.string "And someone stole my POKéMON!\p"
+	.string "The inn gave me a coupon. For the mall.$"
 
 LilycoveCity_Text_MissingPokemonCameBack:
 	.string "My missing POKéMON…\n"
@@ -622,33 +621,27 @@ LilycoveCity_Text_MissingPokemonCameBack:
 
 LilycoveCity_Text_ImArtDealer:
 	.string "I'm an ART DEALER.\p"
-	.string "I am a buyer and seller of fine art,\n"
-	.string "especially paintings.\p"
-	.string "I've heard that the MUSEUM here has\n"
-	.string "magnificent works on exhibit…$"
+	.string "I buy paintings for too much and sell\n"
+	.string "them for more.\p"
+	.string "Art.$"
 
 LilycoveCity_Text_SeaRemainsForeverYoung:
-	.string "Even as we grow old and wrinkled,\n"
-	.string "the sea remains forever young with\l"
-	.string "the vivid brilliance of life…\p"
-	.string "Fwohoho fwohohohoho…$"
+	.string "We grow old and wrinkled, but the sea\n"
+	.string "stays forever young.\p"
+	.string "Fwohoho…\p"
+	.string "The sea never had a mall membership.$"
 
 LilycoveCity_Text_SixtyYearsAgoHusbandProposed:
-	.string "It was sixty years ago that my husband\n"
-	.string "proposed to me here.\l"
-	.string "The sea remains as beautiful as ever.\p"
-	.string "Mufufufu mufufufufufu…$"
+	.string "Sixty years ago, my husband proposed\n"
+	.string "to me right here.\p"
+	.string "The sea is as beautiful as ever.\p"
+	.string "He's in the mall. He's been in the mall\n"
+	.string "since 1987.$"
 
 LilycoveCity_Text_TeamAquaRenovatedCavern:
-	.string "Hm, you know of the peculiar cavern\n"
-	.string "in this cove?\p"
-	.string "That had been a natural formation,\n"
-	.string "but then that TEAM AQUA lot came\l"
-	.string "along and made their renovations.\p"
-	.string "They call themselves\n"
-	.string "the “nature-loving TEAM AQUA”!\p"
-	.string "But what they do and what they say\n"
-	.string "don't match at all!$"
+	.string "That cave in the cove was natural.\p"
+	.string "Then TEAM AQUA renovated it.\p"
+	.string "Now it has a soda fountain.$"
 
 LilycoveCity_Text_TeamAquaLotGoneForGood:
 	.string "That cave in the cove…\p"
@@ -711,8 +704,10 @@ LilycoveCity_Text_MoveDeletersHouseSign:
 	.string "memories, on request.”$"
 
 LilycoveCity_Text_DoYouKnowAboutBerryBlender:
-	.string "Do you know about the machine\n"
-	.string "BERRY BLENDER?$"
+	.string "Do you know about the BERRY BLENDER?\p"
+	.string "You put BERRIES in. You spin. You get\n"
+	.string "candy for POKéMON.\p"
+	.string "It's a smoothie with extra steps.$"
 
 LilycoveCity_Text_FasterSpinBetterPokeblocks:
 	.string "People have to work together to get it\n"
@@ -727,14 +722,14 @@ LilycoveCity_Text_ExplainBerryBlender:
 	.string "its condition will improve by a lot.$"
 
 LilycoveCity_Text_HeardTowerCalledSkyPillar:
-	.string "I heard there's a tower somewhere out\n"
-	.string "on the sea routes.\p"
-	.string "It's called the SKY PILLAR, I hear.$"
+	.string "There's a tower out on the sea routes.\p"
+	.string "The SKY PILLAR.\p"
+	.string "Sounds like a great place for a mall.$"
 
 LilycoveCity_Text_SawTallTowerOnRoute131:
-	.string "I saw this tall tower somewhere\n"
-	.string "around ROUTE 131.\p"
-	.string "Could that possibly be…?$"
+	.string "I saw a tall tower near ROUTE 131.\p"
+	.string "Could that be…?\p"
+	.string "…a new department store?!$"
 
 LilycoveCity_Text_JustArrivedAndSawRarePokemon:
 	.string "LEGENDS: Z-A? One city. ONE city.\p"

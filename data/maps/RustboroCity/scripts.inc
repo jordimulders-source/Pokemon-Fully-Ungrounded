@@ -1026,11 +1026,10 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner:
 	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym:
-	.string "Have you taken the POKéMON GYM\n"
-	.string "challenge?\p"
-	.string "When you get that shiny GYM BADGE\n"
-	.string "in hand, I guess TRAINERS begin to\l"
-	.string "realize what is required of them.$"
+	.string "Have you done the GYM challenge?\p"
+	.string "Once you get that shiny BADGE, you\n"
+	.string "realize what's required.\p"
+	.string "More BADGES. Always more BADGES.$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
@@ -1038,23 +1037,24 @@ RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere:
-	.string "Oh? Who might you be?\n"
-	.string "You're a new face around these parts.\p"
-	.string "Have you just transferred into the\n"
-	.string "POKéMON TRAINER'S SCHOOL?$"
+	.string "Oh? A new face.\p"
+	.string "Did you just transfer to the TRAINER'S\n"
+	.string "SCHOOL?\p"
+	.string "Or are you a new DEVON test subject? We\n"
+	.string "pay in coupons.$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM LEADER, but…\p"
-	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type POKéMON…\p"
-	.string "FIRE-type POKéMON don't match up\n"
-	.string "well against ROCK-type POKéMON…$"
+	.string "I challenged ROXANNE with FIRE-type\n"
+	.string "POKéMON.\p"
+	.string "FIRE doesn't do well against ROCK.\p"
+	.string "I know that NOW.$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He goes for walks in the tunnel every\n"
-	.string "so often.$"
+	.string "Old MR. BRINEY lives in a cottage by the\n"
+	.string "sea.\p"
+	.string "He walks through the tunnel sometimes.\p"
+	.string "With his PEEKO. He talks to it more than\n"
+	.string "to people.$"
 
 RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "The old sailor MR. BRINEY lives in\n"
@@ -1065,9 +1065,9 @@ RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "that PEEKO.$"
 
 RustboroCity_Text_WowYouHavePokemon:
-	.string "Wow, you have POKéMON with you, too.\p"
-	.string "When I get bigger, I'm going to go\n"
-	.string "places with POKéMON, too.$"
+	.string "You have POKéMON too!\p"
+	.string "When I grow up, I'll travel with POKéMON!\p"
+	.string "Or I'll be on TikTok. We'll see.$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 	.string "POKéMON TRAINER'S SCHOOL! Is it like\n"
@@ -1083,10 +1083,10 @@ RustboroCity_Text_PokemonChangeShape:
 	.string "to eat, BERRIES?$"
 
 RustboroCity_Text_TradePokemonGrowFast:
-	.string "A POKéMON you get in a trade from\n"
-	.string "someone grows fast.\p"
-	.string "But if you don't have certain GYM\n"
-	.string "BADGES, it may not obey you…$"
+	.string "Traded POKéMON grow fast.\p"
+	.string "But without the right BADGES, they\n"
+	.string "won't obey you.\p"
+	.string "Like teenagers.$"
 
 RustboroCity_Text_OutOfTheWay:
 	.string "Get out!\n"
@@ -1106,8 +1106,9 @@ RustboroCity_Text_HelpMeIWasRobbed:
 	.string "I'm going to be in serious trouble.$"
 
 RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
-	.string "That shady character, I think he took\n"
-	.string "off towards the tunnel over there.$"
+	.string "That shady guy ran toward the tunnel!\p"
+	.string "He was drinking sparkling water. Very\n"
+	.string "suspicious.$"
 
 RustboroCity_Text_YouGotItThankYou:
 	.string "Oh! How did it go?\n"
@@ -1281,11 +1282,9 @@ RustboroCity_Text_IdBetterGetBackToWork:
 	.string "Please take care, {PLAYER}!$"
 
 RustboroCity_Text_YouCanHave2On2Battle:
-	.string "Did you know this?\p"
-	.string "You can have a 2-on-2 battle even\n"
-	.string "if you're not with another TRAINER.\p"
-	.string "If you catch the eyes of two TRAINERS\n"
-	.string "when you have two or more POKéMON,\l"
-	.string "they'll both challenge you.\p"
-	.string "Don't you think it'd be cool if you\n"
-	.string "could beat two TRAINERS by yourself?$"
+	.string "Did you know?\p"
+	.string "If two TRAINERS see you at once, they\n"
+	.string "both challenge you!\p"
+	.string "Imagine beating two TRAINERS by\n"
+	.string "yourself!\p"
+	.string "…I got beaten by two. Twice.$"

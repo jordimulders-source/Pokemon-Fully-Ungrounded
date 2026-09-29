@@ -106,10 +106,10 @@ FallarborTown_PokemonCenter_1F_Text_LanetteGreeting:
 	.string "My house is on ROUTE 114.$"
 
 FallarborTown_PokemonCenter_1F_Text_FossilManiacEdgeOfTown:
-	.string "I wonder what POKéMON looked like\n"
-	.string "long, long ago?\p"
-	.string "Maybe the FOSSIL MANIAC at the edge\n"
-	.string "of town will know.$"
+	.string "What did POKéMON look like long ago?\p"
+	.string "Ask the FOSSIL MANIAC at the edge of\n"
+	.string "town.\p"
+	.string "He'll tell you. For three hours.$"
 
 FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees:
 	.string "In FALLARBOR, we plant hardy trees.\p"

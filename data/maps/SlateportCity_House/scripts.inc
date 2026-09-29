@@ -11,13 +11,12 @@ SlateportCity_House_EventScript_Girl::
 
 SlateportCity_House_Text_NatureToDoWithStatGains:
 	.string "My POKéMON has a HASTY nature.\p"
-	.string "It has higher SPEED compared to\n"
-	.string "my other POKéMON.\p"
-	.string "Maybe their nature has something to\n"
-	.string "do with the stat gains of POKéMON.$"
+	.string "It has higher SPEED than my others.\p"
+	.string "It also bites. Hastily.$"
 
 SlateportCity_House_Text_MustBeGoingToBattleTent:
-	.string "You're a TRAINER, aren't you?\p"
-	.string "Since you came to SLATEPORT CITY,\n"
-	.string "you must be going to the BATTLE TENT.$"
+	.string "You're a TRAINER?\p"
+	.string "Then you must be here for the BATTLE\n"
+	.string "TENT.\p"
+	.string "Or the free Wi-Fi. Like everyone else.$"
 

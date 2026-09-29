@@ -65,12 +65,11 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsHappy::
 	end
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
-	.string "PROF. COZMO: Oh…\n"
-	.string "I never should have let myself be\l"
-	.string "conned into telling TEAM MAGMA where\l"
-	.string "you can find METEORITES…\p"
-	.string "That METEORITE from METEOR FALLS…\n"
-	.string "It's never going to be mine now…$"
+	.string "PROF. COZMO: Oh… I never should have\n"
+	.string "told TEAM MAGMA about the METEORITES…\p"
+	.string "They promised me free hot sauce.\p"
+	.string "It wasn't even that hot. It was like\n"
+	.string "sriracha.$"
 
 FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 	.string "Oh!\n"
@@ -105,9 +104,11 @@ FallarborTown_CozmosHouse_Text_MayIHaveMeteorite:
 	.string "How about in exchange for this TM?$"
 
 FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls:
-	.string "PROF. COZMO went off to METEOR FALLS\n"
-	.string "on ROUTE 114 with some people from\l"
-	.string "TEAM MAGMA.$"
+	.string "PROF. COZMO went to METEOR FALLS on\n"
+	.string "ROUTE 114.\p"
+	.string "With TEAM MAGMA. For hot sauce.\p"
+	.string "Remind me why I married this\n"
+	.string "susceptible fool?$"
 
 FallarborTown_CozmosHouse_Text_FeelSorryForCozmo:
 	.string "Poor PROF. COZMO…\n"

@@ -376,18 +376,14 @@ SlateportCity_PokemonFanClub_Text_TreatPokemonWithLove:
 	.string "and care, they'll love you back.$"
 
 SlateportCity_PokemonFanClub_Text_PokemonDontLikeFainting:
-	.string "If you keep letting a POKéMON faint\n"
-	.string "in battle, it'll come to resent it.\p"
-	.string "Soon, it will become less trusting\n"
-	.string "of the TRAINER.\p"
-	.string "In other words, it certainly won't\n"
-	.string "like you very much.$"
+	.string "If your POKéMON keeps fainting, it'll\n"
+	.string "start to resent you.\p"
+	.string "Mine is writing a letter to a lawyer.$"
 
 SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein:
-	.string "Do POKéMON enjoy having items used\n"
-	.string "on them?\p"
-	.string "Mine acted really happy when I gave\n"
-	.string "it some PROTEIN.$"
+	.string "Do POKéMON like items used on them?\p"
+	.string "Mine loved PROTEIN.\p"
+	.string "Now it goes to the gym without me.$"
 
 SlateportCity_PokemonFanClub_Text_Skitty:
 	.string "SKITTY: Fffnyaaaah…$"

@@ -63,12 +63,9 @@ SlateportCity_SternsShipyard_1F_EventScript_Briney::
 	end
 
 SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails:
-	.string "Umm… If this goes here, and that\n"
-	.string "goes over there…\p"
-	.string "Then where does this thing go?\n"
-	.string "And what about that doohickey?\p"
-	.string "Aaargh! I can't make heads or tails\n"
-	.string "of this!$"
+	.string "Umm… This goes here… That goes there…\p"
+	.string "Where does this doohickey go?\p"
+	.string "We have IKEA instructions for a ferry.$"
 
 SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern:
 	.string "Hm?\n"
@@ -128,14 +125,12 @@ SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock:
 	.string "build one great ship, aye!$"
 
 SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing:
-	.string "The seasons, the weather, where\n"
-	.string "the moon sits in the sky…\p"
-	.string "These and other conditions make\n"
-	.string "the sea change its expression.\p"
-	.string "That's right!\n"
-	.string "The sea is like a living thing!$"
+	.string "Seasons, weather, the moon…\p"
+	.string "The sea changes its mood constantly.\p"
+	.string "The sea is like my ex.$"
 
 SlateportCity_SternsShipyard_1F_Text_GetSeasickEasily:
-	.string "I get seasick real easily.\n"
-	.string "So I get to help out here instead.$"
+	.string "I get seasick easily.\p"
+	.string "So I build ships. On land. Far from the\n"
+	.string "sea.$"
 

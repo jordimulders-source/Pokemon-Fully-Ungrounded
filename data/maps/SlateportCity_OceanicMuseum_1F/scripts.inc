@@ -274,14 +274,15 @@ SlateportCity_OceanicMuseum_1F_Text_DidntHaveMoney:
 	.string "I spent it all on SAN PELLEGRINO.$"
 
 SlateportCity_OceanicMuseum_1F_Text_LearnAboutSeaForBattling:
-	.string "I want to learn about the sea and\n"
-	.string "use that knowledge for battling.$"
+	.string "I want to learn about the sea and use it\n"
+	.string "for battling.\p"
+	.string "Step one: the sea is wet.$"
 
 SlateportCity_OceanicMuseum_1F_Text_SternIsRoleModel:
-	.string "I get all giddy and gooey when\n"
-	.string "I see the sea!\p"
-	.string "For me, CAPT. STERN is the number\n"
-	.string "one role model!$"
+	.string "I get all giddy when I see the sea!\p"
+	.string "CAPT. STERN is my role model!\p"
+	.string "I have his poster. And his trash. Don't\n"
+	.string "ask.$"
 
 SlateportCity_OceanicMuseum_1F_Text_MustBePokemonWeDontKnow:
 	.string "After the first 251, they're not really\n"

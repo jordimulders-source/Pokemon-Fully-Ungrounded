@@ -313,20 +313,19 @@ LilycoveCity_LilycoveMuseum_2F_Text_ItsPaintingOfPokemon:
 	.string "It's a painting of POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_NewPaintingsSurprisedMe:
-	.string "I've been away awhile, so the new\n"
-	.string "paintings up here surprised me.\p"
+	.string "I've been away, and look at these new\n"
+	.string "paintings!\p"
 	.string "I wish someone would paint my POKéMON\n"
-	.string "this pretty.$"
+	.string "this pretty.\p"
+	.string "My POKéMON is a GRIMER.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_NewPaintingsRatherAmusing:
-	.string "Well… So this is where they show\n"
-	.string "the topical POKéMON paintings.\p"
-	.string "I see, these new paintings are indeed\n"
-	.string "rather amusing.$"
+	.string "So this is where they hang the modern\n"
+	.string "POKéMON paintings.\p"
+	.string "Amusing.\p"
+	.string "My grandson could do this. He has.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ThesePaintingsOfYourPokemon:
-	.string "Wow, is that right?\n"
-	.string "These paintings are of your POKéMON.\p"
-	.string "Isn't that just the ultimate joy for\n"
-	.string "a TRAINER?$"
+	.string "These paintings are of YOUR POKéMON?\p"
+	.string "How much?$"
 

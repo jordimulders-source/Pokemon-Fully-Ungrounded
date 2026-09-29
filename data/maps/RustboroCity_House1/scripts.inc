@@ -70,8 +70,8 @@ RustboroCity_House1_Text_AnyPokemonCanBeCute:
 	.string "FARFETCH'D still smell like soup?$"
 
 RustboroCity_House1_Text_AllSortsOfPlaces:
-	.string "In all sorts of places, there are all\n"
-	.string "sorts of POKéMON and people.\p"
-	.string "I find that fascinating, so I go to all\n"
-	.string "sorts of places.$"
+	.string "All sorts of places have all sorts of\n"
+	.string "POKéMON and people.\p"
+	.string "So I go to all sorts of places.\p"
+	.string "My wife thinks I'm at work.$"
 

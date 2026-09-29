@@ -63,14 +63,15 @@ FortreeCity_House4_EventScript_Wingull::
 	end
 
 FortreeCity_House4_Text_BringsWorldCloserTogether:
-	.string "By being together with POKéMON,\n"
-	.string "people make more and more friends.\p"
-	.string "And that brings the world closer\n"
-	.string "together. I think it's wonderful!$"
+	.string "POKéMON bring people together!\p"
+	.string "My son wants to fly with a flock of BIRD\n"
+	.string "POKéMON.\p"
+	.string "Please don't bring him closer to the\n"
+	.string "ground.$"
 
 FortreeCity_House4_Text_GoBirdPokemon:
-	.string "There!\n"
-	.string "Go, BIRD POKéMON!$"
+	.string "There! Go, BIRD POKéMON!\p"
+	.string "Lift me! LIFT ME!$"
 
 FortreeCity_House4_Text_AskedWingullToRunErrand:
 	.string "Heheh, I asked my WINGULL to run\n"

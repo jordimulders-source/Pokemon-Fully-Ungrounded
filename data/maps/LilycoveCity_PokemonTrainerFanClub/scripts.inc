@@ -624,8 +624,9 @@ LilycoveCity_PokemonTrainerFanClub_Text_BrawlyNoImYourFan:
 	.string "Go for it!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ICantHelpLikingBrawly:
-	.string "I can't help it, I can only get to\n"
-	.string "like BRAWLY…$"
+	.string "I can't help it, I only like BRAWLY…\p"
+	.string "Those shoulders. The amazing trash\n"
+	.string "talk. That octagon.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly:
 	.string "Nobody understands the charm of\n"
@@ -654,11 +655,9 @@ LilycoveCity_PokemonTrainerFanClub_Text_YourFatherNeverGaveUpSoKeepOnBattling:
 
 LilycoveCity_PokemonTrainerFanClub_Text_LongWayToGoComparedToNorman:
 	.string "NORMAN battled with more power,\n"
-	.string "charisma, and showmanship than you.\p"
-	.string "Even though people may say that\n"
-	.string "you're strong…\p"
-	.string "You've still got a long way to go\n"
-	.string "compared to your father.$"
+	.string "charisma and showmanship than you.\p"
+	.string "You're strong, sure.\p"
+	.string "But your dad has better hair.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouAndNormanAreDifferent:
 	.string "You're beginning to get the same\n"
@@ -794,10 +793,10 @@ LilycoveCity_PokemonTrainerFanClub_Text_OnlyIRecognizeYourTrueWorth:
 	.string "the hidden power that beats within.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_HaventRealizedPotential:
-	.string "Yes, I see strength in your eyes.\p"
+	.string "I see strength in your eyes.\p"
 	.string "But!\p"
-	.string "You still haven't realized your\n"
-	.string "potential.$"
+	.string "You haven't realized your potential.\n"
+	.string "Like my son. He's 40.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YourePowerfulButNotTrueStrength:
 	.string "It is true that you are tremendously\n"

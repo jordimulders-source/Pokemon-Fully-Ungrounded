@@ -50,8 +50,9 @@ RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
 
 RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
 	.string "The man next door gave me an HM!\p"
-	.string "I used it to teach my POKéMON how to\n"
-	.string "CUT down skinny trees.$"
+	.string "Now my POKéMON can CUT skinny trees.\p"
+	.string "Only skinny ones. The fat trees just\n"
+	.string "laugh at us.$"
 
 RustboroCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

@@ -143,10 +143,9 @@ LilycoveCity_House3_Text_ExplainPokeblocks:
 	.string "Don't give up, dear!$"
 
 LilycoveCity_House3_Text_HappyToHaveQuadruplets:
-	.string "When my wife gave birth to quadruplets,\n"
-	.string "you bet I was shocked.\p"
-	.string "But, now, seeing them play together,\n"
-	.string "it makes me happy.$"
+	.string "My wife had quadruplets.\p"
+	.string "I was shocked.\p"
+	.string "Now I just want to sleep. For one night.$"
 
 LilycoveCity_House3_Text_GoingToWinMultiBattles:
 	.string "We're having MULTI BATTLES, but I know\n"

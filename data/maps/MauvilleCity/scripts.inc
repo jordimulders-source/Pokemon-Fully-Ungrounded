@@ -590,25 +590,28 @@ MauvilleCity_Text_WattsonYoungTakeCharge:
 	.string "stepping up!$"
 
 MauvilleCity_Text_NurseHurtMonBackToHealth:
-	.string "You know, it's cool to have POKéMON\n"
-	.string "battles and stuff…\p"
-	.string "But if your POKéMON gets hurt,\n"
-	.string "you have to nurse it back to health.$"
+	.string "Battles are cool and stuff…\p"
+	.string "But if your POKéMON gets hurt, you have\n"
+	.string "to heal it.\p"
+	.string "Or just put it in the PC and forget\n"
+	.string "about it. Like my dad.$"
 
 MauvilleCity_Text_AllSortsOfPeopleComeThrough:
-	.string "The roads of this town stretch north\n"
-	.string "and south, and east and west.\p"
-	.string "Because of that, we get all sorts of\n"
-	.string "people coming through.$"
+	.string "MAUVILLE's roads go north, south, east\n"
+	.string "and west.\p"
+	.string "So all sorts of people come through.\p"
+	.string "And all their data goes through the\n"
+	.string "datacenter.$"
 
 MauvilleCity_Text_RydelVeryGenerous:
-	.string "Have you been to RYDEL'S CYCLES yet?\p"
-	.string "RYDEL, the owner, is a very generous\n"
-	.string "man.$"
+	.string "Have you been to RYDEL'S CYCLES?\p"
+	.string "RYDEL gives away bikes. Free.\p"
+	.string "Nobody knows how he pays rent.$"
 
 MauvilleCity_Text_PokemonCanJumpYouOnBike:
-	.string "Even if you're riding a BIKE,\n"
-	.string "wild POKéMON could jump you.$"
+	.string "Even on a BIKE, wild POKéMON can jump\n"
+	.string "you.\p"
+	.string "That's why I take a limo.$"
 
 MauvilleCity_Text_CitySign:
 	.string "MAUVILLE CITY\n"
@@ -632,16 +635,15 @@ MauvilleCity_Text_GameCornerSign:
 	.string "MAUVILLE GAME CORNER$"
 
 MauvilleCity_Text_ExplainTV:
-	.string "Hi, do you check out TV at all?\p"
-	.string "They've added a bunch of cool new\n"
-	.string "shows recently.\p"
-	.string "TV is so cool. I've seen my friends on\n"
-	.string "TV just out of the blue.\p"
-	.string "And, sometimes, they even put you on TV\n"
-	.string "without telling you.\p"
-	.string "I wish I would be on TV sometime.\p"
-	.string "That's why I think you should check\n"
-	.string "out TVs whenever you can.$"
+	.string "Do you watch TV?\p"
+	.string "They've added tons of new shows. All of\n"
+	.string "them are about us.\p"
+	.string "Sometimes they put you on TV without\n"
+	.string "asking.\p"
+	.string "The datacenter knows everything.\n"
+	.string "Everything.\p"
+	.string "That's why I watch. Just to see what\n"
+	.string "they know.$"
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"

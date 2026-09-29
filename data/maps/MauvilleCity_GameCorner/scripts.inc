@@ -696,9 +696,9 @@ MauvilleCity_GameCorner_Text_CantCarryAnyMore:
 	.string "Oh, you can't carry any more than that.$"
 
 MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne:
-	.string "I made a mistake and got two of\n"
-	.string "the same DOLLS.\p"
-	.string "Would you like one of them?$"
+	.string "I got two of the same DOLL.\p"
+	.string "I spent ¥40,000 on COINS for them.\p"
+	.string "Want one? Please. I can't look at it.$"
 
 MauvilleCity_GameCorner_Text_HereYouGo2:
 	.string "Here you go!$"
@@ -716,10 +716,9 @@ MauvilleCity_GameCorner_Text_CantWinJackpot:
 	.string "the jackpot.$"
 
 MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
-	.string "Hey, kid, if you want to play here,\n"
-	.string "you need a COIN CASE.\p"
-	.string "I think the young lady next door\n"
-	.string "had one. Go see her!$"
+	.string "Hey, kid, you need a COIN CASE to play.\p"
+	.string "The lady next door has one.\p"
+	.string "Don't tell your mom I told you.$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 	.string "My luck can only last so long.\n"

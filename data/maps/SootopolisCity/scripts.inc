@@ -1412,13 +1412,11 @@ SootopolisCity_Text_PhysicallyFitLivingHere:
 	.string "getting physically fit.$"
 
 SootopolisCity_Text_GiantPokemonSuddenlyAppeared:
-	.string "These giant POKéMON suddenly appeared\n"
-	.string "in the middle of the city!\p"
-	.string "And, I've never seen them before!\p"
-	.string "Why are they smashing into each\n"
-	.string "other like that?\p"
-	.string "Why can't they be friends, those\n"
-	.string "POKéMON?$"
+	.string "Giant POKéMON appeared in the middle of\n"
+	.string "the city!\p"
+	.string "Why are they fighting?!\p"
+	.string "They're like the gods of the old\n"
+	.string "stories!$"
 
 SootopolisCity_Text_WhatIsThatGreenPokemon:
 	.string "What? What? What?\n"
@@ -1431,10 +1429,9 @@ SootopolisCity_Text_WhereDidLegendariesGo:
 	.string "somewhere else?$"
 
 SootopolisCity_Text_TwoPokemonArentAngry:
-	.string "I just get this sense somehow that\n"
-	.string "the two POKéMON aren't angry.\p"
-	.string "I think… They probably can't control\n"
-	.string "their own power…$"
+	.string "I don't think they're angry.\p"
+	.string "They just can't control their power.\p"
+	.string "Like my uncle at weddings.$"
 
 SootopolisCity_Text_FlyingMonStoppedRampage:
 	.string "That flying POKéMON came down from\n"
@@ -1454,13 +1451,15 @@ SootopolisCity_Text_ThatWasWicked:
 	.string "That was wicked!$"
 
 SootopolisCity_Text_GoRedAndBlueMon:
-	.string "Go for it, red POKéMON!\n"
-	.string "Don't back off, blue POKéMON!$"
+	.string "Go, red POKéMON! Don't back off, blue\n"
+	.string "POKéMON!\p"
+	.string "¥200 on red!$"
 
 SootopolisCity_Text_DoYouKnowMonNames:
 	.string "… … … … … …\p"
-	.string "Hi, do you know the names of those\n"
-	.string "POKéMON fighting over there?$"
+	.string "Do you know the names of those\n"
+	.string "POKéMON?\p"
+	.string "I want to know who to root for.$"
 
 SootopolisCity_Text_GreenOneSettlesThings:
 	.string "I was wondering which one would win,\n"
@@ -1469,13 +1468,11 @@ SootopolisCity_Text_GreenOneSettlesThings:
 	.string "Talk about a huge turn of events!$"
 
 SootopolisCity_Text_SeeingLegendWithOwnEyes:
-	.string "There's an ancient legend that claims\n"
-	.string "the land and sea were shaped by\l"
-	.string "a colossal battle between POKéMON.\p"
-	.string "Well, I'm seeing that happen with\n"
-	.string "my very own eyes!\p"
-	.string "Whoa! I never expected to be\n"
-	.string "witness to something this huge!$"
+	.string "An ancient legend says land and sea\n"
+	.string "were shaped by a battle of POKéMON!\p"
+	.string "Like ZEUS versus POSEIDON!\p"
+	.string "I'm seeing it with my own eyes! I need to\n"
+	.string "write an epic poem!$"
 
 SootopolisCity_Text_SawLegendWithOwnEyes:
 	.string "There's an ancient legend that claims\n"
@@ -1487,17 +1484,18 @@ SootopolisCity_Text_SawLegendWithOwnEyes:
 	.string "witness to something this huge!$"
 
 SootopolisCity_Text_BigPokemonFighting:
-	.string "A big POKéMON is fighting with\n"
-	.string "another big POKéMON!\p"
-	.string "Please, someone make them stop!$"
+	.string "Two huge POKéMON are fighting!\p"
+	.string "Someone make them stop!\p"
+	.string "WALLACE! Put down the wine and do\n"
+	.string "something!$"
 
 SootopolisCity_Text_PrettyMonCameFromSky:
 	.string "A pretty POKéMON came down from\n"
 	.string "the sky…$"
 
 SootopolisCity_Text_SootopolisWillBeWrecked:
-	.string "Oh, no!\n"
-	.string "SOOTOPOLIS CITY will get wrecked!$"
+	.string "Oh, no! SOOTOPOLIS will get wrecked!\p"
+	.string "We just renovated the temple!$"
 
 SootopolisCity_Text_SootopolisDidntGetWrecked:
 	.string "SOOTOPOLIS CITY didn't get wrecked!$"
@@ -1557,15 +1555,11 @@ SootopolisCity_Text_NightSkyFavoriteScenery:
 	.string "It's my favorite scenery.$"
 
 SootopolisCity_Text_WeatherWentWild:
-	.string "The weather was clear this morning,\n"
-	.string "but…\p"
-	.string "All of a sudden, dark clouds brewed up,\n"
-	.string "rain started falling in sheets, and\l"
-	.string "there was thunder and lightning, too.\p"
-	.string "The weather just went completely\n"
-	.string "wild!\p"
-	.string "Is all of this because of those\n"
-	.string "POKéMON?$"
+	.string "It was sunny this morning…\p"
+	.string "Then sheets of rain, thunder,\n"
+	.string "lightning…\p"
+	.string "The gods are angry. Or the POKéMON.\n"
+	.string "Same thing here.$"
 
 SootopolisCity_Text_YouBroughtFlyingMon:
 	.string "Oh?\p"

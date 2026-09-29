@@ -263,7 +263,8 @@ RustboroCity_DevonCorp_3F_Text_PleaseGoAhead:
 
 RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard:
 	.string "If you visit the SHIPYARD in SLATEPORT,\n"
-	.string "you should go see CAPT. STERN.$"
+	.string "say hi to CAPT. STERN.\p"
+	.string "And return our stapler.$"
 
 RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 	.string "The REPEAT BALL and TIMER BALL are\n"

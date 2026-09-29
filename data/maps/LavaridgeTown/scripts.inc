@@ -383,30 +383,28 @@ LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
 	.string "ask.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry:
-	.string "We draw as much hot water as we need,\n"
-	.string "and yet the hot springs never run dry.\p"
-	.string "Isn't it magical?\p"
-	.string "These hot springs appear near active\n"
-	.string "volcanoes. Veins of water under the\l"
-	.string "ground are heated by magma to well up\l"
-	.string "as hot springs.$"
+	.string "We take all the hot water we want, and\n"
+	.string "the springs never run dry.\p"
+	.string "It's magma. Heating water. Under our\n"
+	.string "feet.\p"
+	.string "Don't think about it too much.$"
 
 LavaridgeTown_Text_PokemonNippedBackside:
-	.string "Being buried in this hot sand is…\n"
-	.string "Sigh…\p"
-	.string "So warm and heavenly…\p"
+	.string "Being buried in hot sand… So warm…\p"
 	.string "Eh? Gyaah! Ouch!\p"
-	.string "A POKéMON nipped my backside!$"
+	.string "A POKéMON bit my behind! Again!$"
 
 LavaridgeTown_Text_OhYouLikeHotSprings:
-	.string "Oh, you like hot springs, do you?\p"
-	.string "That's surprising for one as young\n"
-	.string "as you.$"
+	.string "You like hot springs? At your age?\p"
+	.string "Wait until your back starts talking to\n"
+	.string "you.$"
 
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"
-	.string "I want to become a beautiful and strong\n"
-	.string "GYM LEADER like FLANNERY.$"
+	.string "I want to be a GYM LEADER like\n"
+	.string "FLANNERY.\p"
+	.string "Mom says I also need to shower\n"
+	.string "sometimes. Like FLANNERY doesn't.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
 	.string "Life hasn't been the same since\n"

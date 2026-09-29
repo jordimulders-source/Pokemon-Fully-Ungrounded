@@ -331,24 +331,23 @@ MossdeepCity_Text_WailmerWatching:
 	.string "Here they just… float.$"
 
 MossdeepCity_Text_SpaceCenterReceivedLetter:
-	.string "The island's SPACE CENTER has been\n"
-	.string "launching huge rockets.\p"
-	.string "There's been some kind of an uproar\n"
-	.string "over a letter they received recently.$"
+	.string "The SPACE CENTER launches huge\n"
+	.string "rockets.\p"
+	.string "They got a scary letter recently.\p"
+	.string "Probably from the neighbors. The\n"
+	.string "rockets are loud.$"
 
 MossdeepCity_Text_SpaceCenterLaunchingRockets:
 	.string "The island's SPACE CENTER has been\n"
 	.string "launching huge rockets.$"
 
 MossdeepCity_Text_MossdeepTargetedByMagma:
-	.string "I heard from a SAILOR buddy that\n"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
-	.string "I also heard that someone came along\n"
-	.string "and wiped the floor with them!\p"
-	.string "But MOSSDEEP here's been targeted\n"
-	.string "by that TEAM MAGMA.\p"
-	.string "If you want to know what they're up to,\n"
-	.string "go visit the SPACE CENTER.$"
+	.string "A SAILOR buddy says TEAM AQUA set up\n"
+	.string "shop in LILYCOVE.\p"
+	.string "And someone wiped the floor with them!\p"
+	.string "Now TEAM MAGMA wants MOSSDEEP.\p"
+	.string "Go check the SPACE CENTER. Bring milk.\n"
+	.string "For the spice.$"
 
 MossdeepCity_Text_FeelReliefOnLand:
 	.string "I'm a SAILOR, so the sea's obviously\n"
@@ -357,35 +356,32 @@ MossdeepCity_Text_FeelReliefOnLand:
 	.string "after a long voyage, I do feel relief!$"
 
 MossdeepCity_Text_NiceIfWorldCoveredByFlowers:
-	.string "Wouldn't it be nice?\p"
-	.string "If the whole world was covered in\n"
-	.string "plants and flowers like this island?$"
+	.string "Wouldn't it be nice if the whole world\n"
+	.string "was covered in flowers?\p"
+	.string "Then we'd all live in space. Because of\n"
+	.string "the allergies.$"
 
 MossdeepCity_Text_LifeNeedsSeaToLive:
-	.string "All life needs the sea to live, even\n"
-	.string "though it makes its home on the land.\p"
-	.string "Life, having run its course, becomes\n"
-	.string "soil and returns to the land.\p"
-	.string "And the sea is always connected to\n"
-	.string "the land.\p"
-	.string "Yes, like the very shoreline here.$"
+	.string "All life needs the sea.\p"
+	.string "Life runs its course, becomes soil,\n"
+	.string "returns to the land.\p"
+	.string "Then we launch it into space. That's the\n"
+	.string "dream.$"
 
 MossdeepCity_Text_SurfExhilarating:
-	.string "A voyage on a ship is fine.\p"
-	.string "But crossing the sea with POKéMON\n"
-	.string "using SURF…\p"
-	.string "Now that's an exhilarating trip!\n"
-	.string "Wouldn't you agree, youngster?$"
+	.string "A ship is fine.\p"
+	.string "But SURFING with POKéMON?\n"
+	.string "Exhilarating!\p"
+	.string "A rocket would be better. I've applied\n"
+	.string "four times.$"
 
 MossdeepCity_Text_SpecialSpaceCenterRock:
-	.string "This rock has a special meaning to\n"
-	.string "the people at the SPACE CENTER.\p"
-	.string "They put it here as their wish for\n"
-	.string "their rockets to fly safely.\p"
-	.string "When you make a wish, what do you use?\n"
-	.string "Do you wish upon a star?\p"
-	.string "I use a wish tag to make it happen.\n"
-	.string "That's what I do.$"
+	.string "This rock means a lot to the SPACE\n"
+	.string "CENTER.\p"
+	.string "They wish upon it so their rockets fly\n"
+	.string "safely.\p"
+	.string "Until they eventually get fucked up by\n"
+	.string "DEOXYS.$"
 
 MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.\p"
@@ -419,14 +415,10 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "time.$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
-	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
-	.string "LEADER come in.\p"
-	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+	.string "Ahh… The waves on my feet… Nice.\p"
+	.string "SOOTOPOLIS has a new GYM LEADER.\p"
+	.string "He owns a winery. Or is a winery. Hard to\n"
+	.string "say.$"
 
 
 @ Project Grounded: Scott is steeds vermomd. Hier als de speler zelf.

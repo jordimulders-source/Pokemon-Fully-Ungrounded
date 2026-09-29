@@ -15662,6 +15662,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Treecko
 Level: 5
@@ -15675,6 +15676,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Houndour
 Level: 21
@@ -15708,6 +15710,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Houndoom
 Level: 34
@@ -15741,6 +15744,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Mugshot: Blue
 
 Torchic
 Level: 5
@@ -15754,6 +15758,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Lombre
 Level: 21
@@ -15787,6 +15792,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Ludicolo
 Level: 34
@@ -15820,6 +15826,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Mudkip
 Level: 5
@@ -15833,6 +15840,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Kecleon
 Level: 21
@@ -15866,6 +15874,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Tropius
 Level: 34
@@ -15899,6 +15908,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Treecko
 Level: 5
@@ -15912,6 +15922,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Remoraid
 Level: 21
@@ -15945,6 +15956,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Octillery
 Level: 35
@@ -15978,6 +15990,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Torchic
 Level: 5
@@ -15991,6 +16004,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Remoraid
 Level: 21
@@ -16024,6 +16038,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Octillery
 Level: 35
@@ -16057,6 +16072,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Mudkip
 Level: 5
@@ -16070,6 +16086,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Capsakid
 Level: 21
@@ -16103,6 +16120,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Roserade
 Level: 35
@@ -17580,6 +17598,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Lombre
 Level: 14
@@ -17601,6 +17620,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Blue
 
 Houndour
 Level: 14
@@ -17756,6 +17776,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Kecleon
 Level: 14
@@ -17777,6 +17798,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Mugshot: Pink
 
 Vulpix
 Level: 14
@@ -17799,6 +17821,7 @@ Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 
 Hippowdon
 Level: 44
@@ -17843,6 +17866,7 @@ Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 
 Hippopotas
 Level: 28
@@ -19319,6 +19343,7 @@ Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Darmanitan @ Choice Scarf
 Level: 62
@@ -19380,6 +19405,7 @@ Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Darmanitan @ Choice Scarf
 Level: 64
@@ -19441,6 +19467,7 @@ Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Darmanitan @ Choice Scarf
 Level: 66
@@ -19502,6 +19529,7 @@ Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Darmanitan @ Choice Scarf
 Level: 68
@@ -19562,6 +19590,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Houndoom
 Level: 41
@@ -19595,6 +19624,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Ludicolo
 Level: 41
@@ -19628,6 +19658,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Blue
 
 Tropius
 Level: 41
@@ -19661,6 +19692,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Octillery
 Level: 41
@@ -19694,6 +19726,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Octillery
 Level: 41
@@ -19727,6 +19760,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Roserade
 Level: 41
@@ -21414,6 +21448,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
 
 Tyranitar
 Level: 51
@@ -22205,6 +22240,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Remoraid
 Level: 14
@@ -22226,6 +22262,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Pink
 
 Capsakid
 Level: 14
@@ -22248,6 +22285,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Golem @ Focus Sash
 Level: 47
@@ -22308,6 +22346,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Golem @ Focus Sash
 Level: 52
@@ -22368,6 +22407,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Golem @ Focus Sash
 Level: 57
@@ -22428,6 +22468,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Golem @ Focus Sash
 Level: 62
@@ -22488,6 +22529,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Spinda @ Silk Scarf
 Level: 47
@@ -22549,6 +22591,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Spinda @ Silk Scarf
 Level: 52
@@ -22610,6 +22653,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Spinda @ Silk Scarf
 Level: 57
@@ -22671,6 +22715,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Spinda @ Silk Scarf
 Level: 62
@@ -22732,6 +22777,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Volbeat @ Charcoal
 Level: 49
@@ -22793,6 +22839,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Volbeat @ Charcoal
 Level: 54
@@ -22854,6 +22901,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Volbeat @ Charcoal
 Level: 59
@@ -22915,6 +22963,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Yellow
 
 Volbeat @ Charcoal
 Level: 64
@@ -22976,6 +23025,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Pink
 
 Ninetales @ Heat Rock
 Level: 49
@@ -23040,6 +23090,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Pink
 
 Ninetales @ Heat Rock
 Level: 54
@@ -23104,6 +23155,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Pink
 
 Ninetales @ Heat Rock
 Level: 59
@@ -23168,6 +23220,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Pink
 
 Ninetales @ Heat Rock
 Level: 64
@@ -23232,6 +23285,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Wobbuffet @ Custap Berry
 Level: 57
@@ -23296,6 +23350,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Wobbuffet @ Custap Berry
 Level: 62
@@ -23360,6 +23415,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Wobbuffet @ Custap Berry
 Level: 67
@@ -23424,6 +23480,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Wobbuffet @ Custap Berry
 Level: 72
@@ -23488,6 +23545,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
+Mugshot: Blue
 
 Xatu @ Focus Sash
 Level: 55
@@ -23546,6 +23604,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
+Mugshot: Blue
 
 Xatu @ Focus Sash
 Level: 60
@@ -23604,6 +23663,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
+Mugshot: Blue
 
 Xatu @ Focus Sash
 Level: 65
@@ -23662,6 +23722,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
+Mugshot: Blue
 
 Xatu @ Focus Sash
 Level: 70
@@ -23720,6 +23781,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Slowking @ King's Rock
 Level: 61
@@ -23778,6 +23840,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Slowking @ King's Rock
 Level: 66
@@ -23836,6 +23899,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Slowking @ King's Rock
 Level: 71
@@ -23894,6 +23958,7 @@ Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 
 Slowking @ King's Rock
 Level: 76
@@ -23952,6 +24017,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Masquerain @ Focus Sash
 Level: 62
@@ -24016,6 +24082,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Masquerain @ Focus Sash
 Level: 67
@@ -24080,6 +24147,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Masquerain @ Focus Sash
 Level: 72
@@ -24144,6 +24212,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Masquerain @ Focus Sash
 Level: 77

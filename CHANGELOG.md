@@ -14912,3 +14912,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - De eerste keer dat je een item vindt, zie je een korte beschrijving met plaatje (`OW_ITEM_DESCRIPTIONS_FIRST_TIME`). Let op: dit verandert de save-indeling, oude saves van vóór deze versie werken mogelijk niet meer.
 - Vanaf de 6e badge (Feather Badge) kun je vanuit de Town Map en de PokéNav-kaart met A naar een bezochte stad vliegen (`OW_FLAG_POKE_RIDER` = `FLAG_BADGE06_GET`).
 - CLAUDE.md: lijst "al gedaan" bijgewerkt.
+
+### [v.0.6.54] - Mugshot-slide voor belangrijke gevechten
+- Net als bij de Elite Four krijgen nu ook deze gevechten de mugshot-slide (trainerplaatje schuift in beeld): alle rivaalgevechten (Brendan blauw, May roze), alle gymleider-rematches (zelfde kleur als hun eerste gevecht, Wallace' rematches blauw), Wally's rematches in Victory Road (paars) en Maxie (Magma Hideout, Mt. Chimney, Mossdeep; geel). Archie, de gymleiders, Wally in Mauville en de Elite Four hadden hem al.
+- Nieuwe gevechten (Wally-event, Birch) krijgen hem ook zodra ze erin zitten.

@@ -14661,3 +14661,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Dewford Town: Mr. Briney, de visser (catfishing), de trendy jongen, de borden en de vrouw op straat.
 - Abandoned Ship Captain's Office: de man die de scanner zoekt.
 - `*` bestaat niet in het lettertype van de game: "*Does a Fortnite dance…*" staat er nu als "(Does a Fortnite dance and turns around.)".
+
+### [v.0.6.10] - Pokémon-grappen: Incineroar-haters, Sneasler, Cycling Road, All Your Base
+- Incineroar-haters: de man in het Fortree Pokémon Center (tournament-results), de jongen (Fake Out + Parting Shot) en de heer (Smash: Hero vs. Incineroar) in Lilycove Department Store 4F.
+- Atsushi (Mt. Pyre): Sneasler als ultieme Incineroar-counter.
+- Cycling Road: Anthony heet nu ARMSTRONG (vitamines…); Jacob zit op een huurfiets die over tijd is.
+- Space Center: de eerste Magma-grunt opent met "ALL YOUR BASE ARE BELONG TO US."

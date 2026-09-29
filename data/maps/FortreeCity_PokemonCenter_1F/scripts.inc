@@ -41,12 +41,11 @@ FortreeCity_PokemonCenter_1F_Text_GoToSafariZone:
 	.string "That's my suggestion.$"
 
 FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat:
-	.string "Have you done anything at\n"
-	.string "the RECORD CORNER?\p"
-	.string "It's pretty neat. It mixes and matches\n"
-	.string "the records of TRAINERS.\p"
-	.string "I don't know quite how it works,\n"
-	.string "but it's cool. It's exciting, even!$"
+	.string "Have you seen the tournament results?\n"
+	.string "INCINEROAR. INCINEROAR. INCINEROAR.\p"
+	.string "Fake Out, Intimidate, Parting Shot,\n"
+	.string "repeat. That cat has been in every top\l"
+	.string "cut since before I had a job.$"
 
 FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav:
 	.string "Oh, wow, you have a POKéNAV!\n"

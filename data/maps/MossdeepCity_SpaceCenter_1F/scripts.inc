@@ -373,8 +373,7 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt3PostBattle:
 	.string "because you've beaten me!$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro:
-	.string "We gave you fair warning!\n"
-	.string "There's nothing sneaky about us!$"
+	.string "ALL YOUR BASE ARE BELONG TO US.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat:
 	.string "Grrr…\n"

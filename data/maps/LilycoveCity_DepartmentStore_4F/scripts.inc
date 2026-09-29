@@ -50,11 +50,11 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
-	.string "Hmm…\p"
-	.string "An attacking move…\n"
-	.string "Or a defensive move…\p"
-	.string "It's no easy matter to decide which TM\n"
-	.string "moves should be taught to POKéMON…$"
+	.string "HERO in Smash is bad enough. Random\n"
+	.string "crits, random instakills. Fine.\p"
+	.string "But INCINEROAR? That wrestling cat\n"
+	.string "taunts, takes the hit and REVENGES me\l"
+	.string "off the stage. My blood boils.$"
 
 LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
 	.string "There are so many different kinds of\n"
@@ -63,6 +63,7 @@ LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
 	.string "different kinds.$"
 
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
-	.string "I'd like to get all the different TMs,\n"
-	.string "but a POKéMON learns only four moves.$"
+	.string "A POKéMON can learn four moves.\n"
+	.string "INCINEROAR only needs two: Fake Out\l"
+	.string "and Parting Shot.$"
 

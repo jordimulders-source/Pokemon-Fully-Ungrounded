@@ -1047,12 +1047,12 @@ Route109_Text_ElijahPostBattle:
 	.string "I guess I'll head for SLATEPORT.$"
 
 Route110_Text_JacobIntro:
-	.string "Whoa! Watch it!\n"
-	.string "I guess you're not used to BIKE racing.$"
+	.string "My rental bike is three minutes over\n"
+	.string "time! Let's make this QUICK!$"
 
 Route110_Text_JacobDefeated:
-	.string "Whoa!\n"
-	.string "My brakes failed!$"
+	.string "My brakes failed! That's another 20\n"
+	.string "POKéDOLLARS late fee…$"
 
 Route110_Text_JacobPostBattle:
 	.string "Flat tires and brake problems can\n"
@@ -1060,11 +1060,12 @@ Route110_Text_JacobPostBattle:
 	.string "Inspect your BIKE for problems!$"
 
 Route110_Text_AnthonyIntro:
-	.string "Yo, you!\n"
-	.string "Can you keep up with my speed?$"
+	.string "Can you keep up? I take vitamins.\n"
+	.string "Special vitamins. Seven of them.$"
 
 Route110_Text_AnthonyDefeated:
-	.string "Crash and burn!$"
+	.string "Crash and burn! Please don't test my\n"
+	.string "blood.$"
 
 Route110_Text_AnthonyPostBattle:
 	.string "Speed alone won't let me win at POKéMON.\n"

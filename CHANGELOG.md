@@ -14680,3 +14680,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Daisuke (Route 111): Cuphead ("A GREAT SLAM AND THEN SOME!" / "KNOCKOUT!", King Dice en de Devil).
 - Wyatt (Route 113): kraakt Palworld en de knockoffs van Lucario, Cobalion en Decidueye af.
 - Lavaridge Pokémon Center: de heer over heal, fight, faint. "What a life…"
+
+### [v.0.6.13] - Team Magma: de ultieme hot sauce, plus losse grappen
+- Team Magma is op missie voor de heetste hot sauce: alle grunts op Mt. Chimney, Jagged Pass en in de Magma Hideout (Da Bomb, Scoville, Capsakid/Scovillain, bleke Hoenners die niks pittigs kunnen eten).
+- Teams: de twee Mt. Chimney-grunts krijgen er een Capsakid bij, Magma Hideout-grunts 12 en 13 krijgen er een Scovillain bij (toegevoegd als 4e Pokémon).
+- Mossdeep Space Center: de matroos (machine elves en ayahuasca), de wetenschapper (AI en HAL), de Ninja Boy droomt na de diefstalbrief van space ice cream.
+- Sootopolis wordt Griekser: pita souvlaki, de juiste uitspraak van gyros, een Homerus-imitator en boosheid over Tom Holland en Matt Damon in The Odyssey.
+- Rustboro: twee kinderen missen McDonald's en KFC, de dikke man eet tegenwoordig gefrituurde Kakuna.
+- Perry (Route 118) doet vogelgeluiden na: Taillow en Wingull.
+- Mauville Game Corner: extreem verslaafde gokkers (spelinformatie blijft behouden).

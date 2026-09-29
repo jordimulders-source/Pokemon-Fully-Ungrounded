@@ -2678,12 +2678,16 @@ Route118_Text_RosePostRematch:
 	.string "POKéMON will be attracted by it.$"
 
 Route118_Text_PerryIntro:
-	.string "BIRD POKéMON that FLY elegantly in\n"
-	.string "the sky… They're the best!$"
+	.string "Listen closely. TAILLOW: a sharp\n"
+	.string "“tsip-tsip-tsip,” like a shopping cart\l"
+	.string "with ambition.\p"
+	.string "WINGULL: a hoarse “kyaa-kyaa-kyaa,”\n"
+	.string "the laugh of someone who just stole\l"
+	.string "your fries.$"
 
 Route118_Text_PerryDefeat:
-	.string "Urgh…\n"
-	.string "I crashed…$"
+	.string "…And that sound? That's me losing. Very\n"
+	.string "common in this area.$"
 
 Route118_Text_PerryPostBattle:
 	.string "You've got great POKéMON.\n"

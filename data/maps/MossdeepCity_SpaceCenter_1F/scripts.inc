@@ -294,12 +294,10 @@ MossdeepCity_SpaceCenter_1F_Text_HaywireButSuccessfulLaunchNumber:
 	.string "That's successful launch no. {STR_VAR_1}!$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection:
-	.string "A rocket launch demands perfection.\n"
-	.string "Not even a 1% margin of error is allowed.\p"
-	.string "Even if it's 99% okay, the whole thing\n"
-	.string "is useless if 1% happens to be no good.\p"
-	.string "Despite that, we never stop trying.\n"
-	.string "Why? It's a dream that never ends.$"
+	.string "Soon AI will fly the rockets. No humans\n"
+	.string "needed at all.\p"
+	.string "…Open the pod bay doors, HAL. I'm sure\n"
+	.string "that'll be fine.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaHaveSightsOnSpaceCenter:
 	.string "Those MAGMA thugs have their sights\n"
@@ -314,8 +312,10 @@ MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt:
 	.string "have it.$"
 
 MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers:
-	.string "The HOENN region has been famous for \n"
-	.string "its meteor showers for a long time.$"
+	.string "Meteor showers are nice. But have you\n"
+	.string "ever met the machine elves?\p"
+	.string "One cup of ayahuasca and you don't\n"
+	.string "need a rocket.$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaCantStealFuelTakeThis:
 	.string "TEAM MAGMA can't be allowed to steal\n"
@@ -411,13 +411,13 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt2PostBattle:
 	.string "That I stayed to the bitter end…$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice:
-	.string "This is…\n"
-	.string "An intent-to-steal notice?\p"
-	.string "“To the staff of the SPACE CENTER:\n"
-	.string "How are you? We are doing fine.\p"
+	.string "This is… An intent-to-steal notice?\p"
+	.string "“To the staff of the SPACE CENTER: How\n"
+	.string "are you? We are doing fine.\p"
 	.string "“We will soon visit you to take your\n"
 	.string "rocket fuel.\p"
-	.string "“Please don't try to stop us.\n"
-	.string "We will take the fuel no matter what.\p"
-	.string "“Let there be more land!\n"
-	.string "                                          TEAM MAGMA”$"
+	.string "“Please don't try to stop us. We will\n"
+	.string "take the fuel no matter what.\p"
+	.string "“Let there be more land! TEAM MAGMA”\p"
+	.string "…I'm going to be an astronaut. I'll eat\n"
+	.string "space ice cream every day.$"

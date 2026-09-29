@@ -1500,11 +1500,8 @@ SootopolisCity_Text_SootopolisDidntGetWrecked:
 	.string "SOOTOPOLIS CITY didn't get wrecked!$"
 
 SootopolisCity_Text_NoOrdinaryTourist:
-	.string "Hm!\n"
-	.string "You've come all the way to SOOTOPOLIS?\l"
-	.string "You're no ordinary tourist.\p"
-	.string "But I suppose that doesn't make you\n"
-	.string "an extraordinary tourist, either.$"
+	.string "Nothing beats a pita souvlaki after a\n"
+	.string "long day of volcano living.$"
 
 SootopolisCity_Text_CityRegainedCalm:
 	.string "The city has regained its calm…$"
@@ -1537,13 +1534,8 @@ SootopolisCity_Text_CaveOfOriginSleepsToo:
 	.string "the cave, too, shall sleep…$"
 
 SootopolisCity_Text_SootopolisSkyBeautiful:
-	.string "SOOTOPOLIS sprang up as a town in\n"
-	.string "the crater of a volcano.\p"
-	.string "If you look up at the sky, the lip of\n"
-	.string "the crater is also visible.\l"
-	.string "So, all you see is the sky in a circle.\p"
-	.string "But that's what makes the sky above\n"
-	.string "SOOTOPOLIS the most beautiful.$"
+	.string "It's GYROS. YEE-ros. Not JAI-ros. Say it\n"
+	.string "right or leave my city.$"
 
 SootopolisCity_Text_GiganticPokemonFight:
 	.string "When two POKéMON that gigantic\n"

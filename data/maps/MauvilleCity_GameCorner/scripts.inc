@@ -733,32 +733,40 @@ MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone:
 
 MauvilleCity_GameCorner_Text_RouletteTablesDifferentRates:
 	.string "The ROULETTE tables have different\n"
-	.string "rates.\p"
-	.string "Check your COINS if you're going to\n"
-	.string "pick a table.$"
+	.string "rates. Check your COINS before you pick\l"
+	.string "one.\p"
+	.string "I lost my house at the first table. My\n"
+	.string "kidney at the second. Next up: my\l"
+	.string "grandson.$"
 
 MauvilleCity_GameCorner_Text_EasyToLoseTrackOfTime:
-	.string "It's easy to lose track of time in here. \n"
-	.string "I should get back to work.$"
+	.string "It's easy to lose track of time in here.\n"
+	.string "I came in for a quick break.\p"
+	.string "My restaurant closed three years ago.$"
 
 MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay:
-	.string "COINS are needed to play here\n"
-	.string "in the GAME CORNER.$"
+	.string "COINS are needed to play here in the\n"
+	.string "GAME CORNER.\p"
+	.string "I pay my rent in COINS now. My landlord\n"
+	.string "cries a lot.$"
 
 MauvilleCity_GameCorner_Text_RouletteOnlyLuck:
-	.string "This ROULETTE thing…\n"
-	.string "It's rather demanding.\p"
-	.string "Win or lose, it's only by luck.$"
+	.string "Win or lose, it's only luck.\p"
+	.string "My wife took the kids and the POKéMON.\n"
+	.string "But I've got a good feeling about red.$"
 
 MauvilleCity_GameCorner_Text_UpTo3CoinsCanBeUsed:
 	.string "Up to three COINS can be used to play\n"
-	.string "the SLOTS.$"
+	.string "the SLOTS.\p"
+	.string "Three coins, three mortgages. Same\n"
+	.string "thing.$"
 
 MauvilleCity_GameCorner_Text_DifficultToStopOn7:
-	.string "It's very difficult to make it stop\n"
-	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL TIME\n"
-	.string "bonus game, you'll receive extra COINS.$"
+	.string "It's very difficult to stop it on “7.” If\n"
+	.string "it stops on “7” during REEL TIME, you\l"
+	.string "get extra COINS.\p"
+	.string "I've been here 72 hours. I think I saw\n"
+	.string "God on reel two.$"
 
 MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo:
 	.string "Here's some information for you\n"

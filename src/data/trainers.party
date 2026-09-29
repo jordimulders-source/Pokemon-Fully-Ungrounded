@@ -2502,7 +2502,7 @@ Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WILTON_1 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2511,7 +2511,7 @@ Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta
+Snover
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2531,7 +2531,7 @@ Wailmer
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Makuhita
+Rhyhorn
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2769,7 +2769,7 @@ Ability: Protean
 - Aura Sphere
 
 === TRAINER_WILTON_2 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2778,7 +2778,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta
+Abomasnow
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
@@ -2798,12 +2798,12 @@ Wailmer
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Hariyama
+Rhyhorn
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_WILTON_3 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2812,7 +2812,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -2832,12 +2832,12 @@ Wailord
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Hariyama
+Rhydon
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_WILTON_4 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2846,7 +2846,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -2866,12 +2866,12 @@ Wailord
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Hariyama
+Rhydon
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_WILTON_5 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2880,7 +2880,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -2900,7 +2900,7 @@ Wailord
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Hariyama
+Rhydon
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 

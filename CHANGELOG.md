@@ -14821,3 +14821,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Blue's Raticate (Mt. Pyre 1F, graf): "Smell ya later, buddy." Jaylen zegt daarom geen "SMELL YA LATER" meer.
 - Nebby (Mossdeep PC): "Get back in the bag, NEBBY!"
 - Fabian: "THE SHAPE OF POKéMON TO COME!" (Refused).
+
+### [v.0.6.38] - Charles (inverse battles) en memes
+- WILTON (Cooltrainer, Route 111) heet nu CHARLES, de heartbreaker. Al zijn gevechten, ook de rematches, zijn inverse battles (type-effectiviteit omgedraaid). Nieuwe vlag `FLAG_INVERSE_BATTLE` (0x24) is gekoppeld aan `B_FLAG_INVERSE_BATTLE`; `src/battle_setup.c` zet hem aan bij de start van zijn gevecht en uit na afloop.
+- Charles' team: Ponyta/Rapidash → Snover/Abomasnow en Makuhita/Hariyama → Rhyhorn/Rhydon (veel zwaktes, dus inverted keihard resistent tegen de starters).
+- Cyndy (Battle Girl, Route 115) heeft zo lang getraind dat ze zweeft. Leah (Mt. Pyre 2F) is een Channeler uit Lavender Town.
+- Kara (Route 131): "Where do I put my POKé BALLS? Teehee… Woman's secret!" Hector (Route 115): I SWALLOW SLUDGE TO TRANSFORM MYSELF. Deandre (Route 118): I AM GOING TO ENJOY AN EGG. Makayla (Route 132): haar man heeft voedselvergiftiging.
+- Pacifidlog: het zusje van de Yes Town-jongen waarschuwt dat hij alleen gesloten vragen stelt. Route 117: "The air is tasty here!" is nog gekker.

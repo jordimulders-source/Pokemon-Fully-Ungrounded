@@ -47,7 +47,7 @@
 #define FLAG_SHIP_MUK_ENCOUNTERED     0x21 // Project Grounded: Muk uit de prullenbak op Abandoned Ship B1F gezien
 #define FLAG_RECEIVED_SPIT_SWALLOW_MON 0x22 // Project Grounded: Silicobra of Hisui-Qwilfish van de strandman in Slateport
 #define FLAG_FORTREE_HAUNTER_TRADE_COMPLETED 0x23 // Project Grounded: Haunter-voor-Machoke-ruil in Fortree
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_INVERSE_BATTLE    0x24 // Project Grounded: aan tijdens het gevecht tegen CHARLES (inverse battle)
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

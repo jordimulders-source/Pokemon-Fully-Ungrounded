@@ -33,8 +33,10 @@ PacifidlogTown_House4_Text_PeopleSawHighFlyingPokemon:
 	.string "Probably leaving PACIFIDLOG. Smart.$"
 
 PacifidlogTown_House4_Text_SkyPokemon:
-	.string "A sky POKéMON!\n"
-	.string "A sky POKéMON!$"
+	.string "Don't talk to my brother.\p"
+	.string "He only asks yes-or-no questions.\p"
+	.string "Mom says it's a phase.\p"
+	.string "It's been nine years.$"
 
 PacifidlogTown_House4_Text_WhereDidYouComeFrom:
 	.string "Where did you come from?$"

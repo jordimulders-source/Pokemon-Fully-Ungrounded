@@ -107,18 +107,16 @@ MtPyre_2F_Text_DezNotEnoughMons:
 	.string "Just one POKéMON won't do at all.$"
 
 MtPyre_2F_Text_LeahIntro:
-	.string "You are an unfamiliar sight…\n"
-	.string "Depart before anything befalls you!$"
+	.string "Be gone…\p"
+	.string "Intruders…$"
 
 MtPyre_2F_Text_LeahDefeat:
-	.string "Hmm…\n"
-	.string "You're durable.$"
+	.string "…Sorry. Old habit.\p"
+	.string "I used to work in LAVENDER TOWN.$"
 
 MtPyre_2F_Text_LeahPostBattle:
-	.string "Our family has been TRAINERS here\n"
-	.string "since my great-grandmother's time…\p"
-	.string "It is my duty to protect this\n"
-	.string "mountain…$"
+	.string "Give… me… your…\p"
+	.string "…Actually, never mind.$"
 
 MtPyre_2F_Text_ZanderIntro:
 	.string "Kiyaaaaah!\n"

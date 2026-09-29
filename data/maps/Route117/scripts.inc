@@ -227,7 +227,12 @@ Route117_Text_ArentTheseFlowersPretty:
 	.string "I planted them all!$"
 
 Route117_Text_AirIsTastyHere:
-	.string "The air is tasty here!$"
+	.string "The air is tasty here!\p"
+	.string "CHOMP! CHOMP!\p"
+	.string "Notes of flowers, fresh grass and a\n"
+	.string "hint of DAY CARE.\p"
+	.string "…Mostly DAY CARE.\p"
+	.string "I'm going back for seconds!$"
 
 Route117_Text_RouteSignVerdanturf:
 	.string "ROUTE 117\n"

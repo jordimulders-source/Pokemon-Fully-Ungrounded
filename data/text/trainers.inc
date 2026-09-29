@@ -1423,36 +1423,40 @@ Route111_Text_DaisukePostBattle:
 	.string "casino, kid.$"
 
 Route111_Text_WiltonIntro:
-	.string "Show me how much you've toughened\n"
-	.string "your POKéMON.$"
+	.string "I'm a heartbreaker… My name… CHARLES.\p"
+	.string "I wanted to get the attention of a girl\n"
+	.string "I like, so I learned a new style of\l"
+	.string "battling.\p"
+	.string "INVERSE BATTLES. Everything is upside\n"
+	.string "down.\p"
+	.string "Like my love life.$"
 
 Route111_Text_WiltonDefeat:
-	.string "I see, you've toughened them\n"
-	.string "considerably.$"
+	.string "She still won't look at me…$"
 
 Route111_Text_WiltonPostBattle:
-	.string "POKéMON and TRAINERS learn much\n"
-	.string "through battling.\p"
-	.string "What's important is to never give up\n"
-	.string "even if you lose.$"
+	.string "In an inverse battle, weaknesses\n"
+	.string "become strengths.\p"
+	.string "I'm hoping the same goes for me.$"
 
 Route111_Text_WiltonRegister:
-	.string "There is much to be learned from\n"
-	.string "your training style.\p"
-	.string "I request a rematch if it\n"
-	.string "behooves you.$"
+	.string "You get inverse battles.\p"
+	.string "Maybe you can help me get her.\p"
+	.string "Let's register each other.$"
 
 Route111_Text_WiltonRematchIntro:
-	.string "We're training here to elevate our\n"
-	.string "game to the next level.\l"
-	.string "Stay and train with us!$"
+	.string "It's me. CHARLES. The heartbreaker.\p"
+	.string "She blocked me. Everywhere.\p"
+	.string "So I'm still battling upside down.$"
 
 Route111_Text_WiltonRematchDefeat:
-	.string "Ooh, you're decent!$"
+	.string "Upside down, inside out…\p"
+	.string "Still single.$"
 
 Route111_Text_WiltonPostRematch:
-	.string "Since you're that strong, you should\n"
-	.string "aim for the POKéMON LEAGUE.$"
+	.string "One day she'll notice me.\p"
+	.string "Until then: inverse battles and sad\n"
+	.string "songs.$"
 
 Route111_Text_BrookeIntro:
 	.string "Oh, your POKéMON look like serious\n"
@@ -2133,16 +2137,21 @@ Route115_Text_NobPostRematch:
 	.string "I'll redouble my training!$"
 
 Route115_Text_CyndyIntro:
-	.string "This beach is my secret training spot!\n"
-	.string "Don't come butting in!$"
+	.string "This beach is my secret training spot!\p"
+	.string "I've trained here for ten years.\p"
+	.string "Now I can hover in mid-air.\p"
+	.string "Look at my feet. They're not touching\n"
+	.string "the ground. Scared yet?$"
 
 Route115_Text_CyndyDefeat:
-	.string "I haven't trained enough!$"
+	.string "I haven't trained enough!\p"
+	.string "…I'm still hovering, though.$"
 
 Route115_Text_CyndyPostBattle:
-	.string "The sand acts as a cushion to reduce\n"
-	.string "impact and prevent injury.\l"
-	.string "This is the perfect place to train.$"
+	.string "Everyone asks how I float.\p"
+	.string "Discipline. Focus. Ten years of squats.\p"
+	.string "Also, I can't get down. Please call\n"
+	.string "someone.$"
 
 Route115_Text_CyndyRegister:
 	.string "Okay, fine, you're free to come here.\n"
@@ -2160,16 +2169,14 @@ Route115_Text_CyndyPostRematch:
 	.string "It must be that I love POKéMON.$"
 
 Route115_Text_HectorIntro:
-	.string "I have a rare POKéMON!\n"
-	.string "Would you like me to show you?$"
+	.string "I SWALLOW SLUDGE TO TRANSFORM MYSELF!$"
 
 Route115_Text_HectorDefeat:
-	.string "You…\n"
-	.string "You want my POKéMON, don't you?$"
+	.string "I QUESTION YOUR FASHION SENSE\n"
+	.string "SERIOUSLY!$"
 
 Route115_Text_HectorPostBattle:
-	.string "I have this rare POKéMON.\n"
-	.string "It's enough to keep me satisfied.$"
+	.string "POUND THE THICK FAT ON MY BELLY DRUM!$"
 
 Route115_Text_KyraIntro:
 	.string "I'll battle while I'm running!\n"
@@ -2763,9 +2770,7 @@ Route118_Text_DeandreDefeat:
 	.string "POKéMON 1, 2, and 3?!$"
 
 Route118_Text_DeandrePostBattle:
-	.string "Isn't it cool that I have a POKéMON\n"
-	.string "battle team?\p"
-	.string "You can copy me--I don't mind!$"
+	.string "I AM GOING TO ENJOY AN EGG$"
 
 Route119_Text_BrentIntro:
 	.string "We're the MIMIC CIRCLE!\n"
@@ -4483,14 +4488,18 @@ Route131_Text_SusiePostBattle:
 
 Route131_Text_KaraIntro:
 	.string "Why do men love bathing suits so much?\p"
-	.string "They all ogle me!$"
+	.string "They all ogle me!\p"
+	.string "…Oh. You're wondering where my POKé\n"
+	.string "BALLS are.$"
 
 Route131_Text_KaraDefeat:
-	.string "I'm out of my depth!$"
+	.string "Teehee…\p"
+	.string "You still don't know.$"
 
 Route131_Text_KaraPostBattle:
-	.string "Maybe it's not my bathing suit that\n"
-	.string "makes men look. It must be my beauty!$"
+	.string "If I'm wearing a bikini… where do I put\n"
+	.string "my POKé BALLS?\p"
+	.string "Teehee… Woman's secret!$"
 
 Route131_Text_ReliIntro:
 	.string "RELI: We'll work together as siblings\n"
@@ -4611,8 +4620,9 @@ Route132_Text_KiyoPostBattle:
 	.string "a day, don't you?$"
 
 Route132_Text_MakaylaIntro:
-	.string "I'm always with my husband,\n"
-	.string "but I can win even without him.$"
+	.string "Woo-hoo! My husband got food\n"
+	.string "poisoning, so now I get to do whatever I\l"
+	.string "want to do!$"
 
 Route132_Text_MakaylaDefeat:
 	.string "Oh, I guess I wasn't good enough.$"

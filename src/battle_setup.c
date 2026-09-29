@@ -1196,6 +1196,15 @@ void ClearTrainerFlag(u16 trainerId)
     FlagClear(TRAINER_FLAGS_START + trainerId);
 }
 
+// Project Grounded: CHARLES (Route 111) vecht altijd een inverse battle, ook in zijn rematches.
+static void TrySetInverseBattleFlag(void)
+{
+    u32 trainerId = TRAINER_BATTLE_PARAM.opponentA;
+
+    if (trainerId == TRAINER_WILTON_1 || (trainerId >= TRAINER_WILTON_2 && trainerId <= TRAINER_WILTON_5))
+        FlagSet(B_FLAG_INVERSE_BATTLE);
+}
+
 void BattleSetup_StartTrainerBattle(void)
 {
     if (gNoOfApproachingTrainers == 2)
@@ -1259,9 +1268,14 @@ void BattleSetup_StartTrainerBattle(void)
     gMain.savedCallback = CB2_EndTrainerBattle;
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge())
+    {
         DoBattlePyramidTrainerHillBattle();
+    }
     else
+    {
+        TrySetInverseBattleFlag();
         DoTrainerBattle();
+    }
 
     ScriptContext_Stop();
 }
@@ -1305,6 +1319,7 @@ static void HandleBattleVariantEndParty(void)
 static void CB2_EndTrainerBattle(void)
 {
     HandleBattleVariantEndParty();
+    FlagClear(B_FLAG_INVERSE_BATTLE);
 
     gIsDebugBattle = FALSE;
     if (FollowerNPCIsBattlePartner())
@@ -1346,6 +1361,7 @@ static void CB2_EndTrainerBattle(void)
 
 static void CB2_EndRematchBattle(void)
 {
+    FlagClear(B_FLAG_INVERSE_BATTLE);
     if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_SECRET_BASE)
     {
         DowngradeBadPoison();
@@ -1369,6 +1385,7 @@ void BattleSetup_StartRematchBattle(void)
 {
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
     gMain.savedCallback = CB2_EndRematchBattle;
+    TrySetInverseBattleFlag();
     DoTrainerBattle();
     ScriptContext_Stop();
 }

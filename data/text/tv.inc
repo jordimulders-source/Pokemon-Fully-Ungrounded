@@ -2697,31 +2697,29 @@ gTVPokemonBattleUpdateText07::
 	.string "“POKéMON BATTLE UPDATE!”$"
 
 GabbyAndTy_Text_GabbyPreFirstBattle:
-	.string "GABBY: Oh! We've just spotted a tough-\n"
-	.string "looking TRAINER here of all places!\p"
-	.string "Okay, roll camera!\n"
-	.string "Let's get this interview.$"
+	.string "GABBY: We are here… live… on location.\p"
+	.string "Where a TRAINER… of unknown origin…\n"
+	.string "has appeared.\p"
+	.string "Sources close to the tall grass…\n"
+	.string "describe the TRAINER as…\l"
+	.string "“tough-looking.”\p"
+	.string "Ty. Roll camera.$"
 
 GabbyAndTy_Text_GabbyIntro:
-	.string "GABBY: Oh! You're {PLAYER}! Hi!\n"
-	.string "Do you remember us from last time?\p"
-	.string "Can you show us how much stronger\n"
-	.string "you've become? Okay, cue interview!$"
+	.string "GABBY: {PLAYER}… We meet again.\p"
+	.string "Last time… the viewers… were divided.\p"
+	.string "Tonight… the question on everyone's\n"
+	.string "lips… Have you… gotten stronger?$"
 
 GabbyAndTy_Text_GabbyDefeatFirstTime:
-	.string "GABBY: My eyes didn't lie!\n"
-	.string "I did discover an astonishing TRAINER!$"
+	.string "GABBY: A stunning… upset… here tonight.\n"
+	.string "Ty… add the red arrow.$"
 
 GabbyAndTy_Text_WhoAreYouInterview:
-	.string "GABBY: Awesome! Awesome!\n"
-	.string "Who are you?!\p"
-	.string "I knew we were onto something wild\n"
-	.string "when we spotted you!\p"
-	.string "Oh, please let me explain. We travel\n"
-	.string "around everywhere interviewing all\l"
-	.string "sorts of TRAINERS.\p"
-	.string "So, would you give us a bit of your time\n"
-	.string "for an interview?$"
+	.string "GABBY: Who… ARE you?\p"
+	.string "We travel the region… interviewing\n"
+	.string "TRAINERS… for the algorithm.\p"
+	.string "Would you… give us a statement?$"
 
 GabbyAndTy_Text_QuoteFromLastInterview:
 	.string "GABBY: “{STR_VAR_1}!”\p"
@@ -2760,34 +2758,28 @@ GabbyAndTy_Text_InterviewAgain:
 	.string "Do you want to be interviewed again?$"
 
 GabbyAndTy_Text_DescribeYourFeelings:
-	.string "You will?\n"
-	.string "Thank you!\p"
-	.string "Okay, I need you to describe your\n"
-	.string "feelings about our battle, but it\l"
-	.string "has to be short and sweet. Go!$"
+	.string "You will? … Thank you.\p"
+	.string "Describe your feelings… about the\n"
+	.string "battle. Short… Snappy… It's for the\l"
+	.string "thumbnail.$"
 
 GabbyAndTy_Text_PerfectWellBeSeeingYou:
-	.string "GABBY: Mmm, yeah!\n"
-	.string "That's the perfect clincher!\p"
-	.string "I get the feeling that this will make\n"
-	.string "a great TV show.\p"
-	.string "There's a chance that they'll air this\n"
-	.string "on TV, so make sure to look for us!\p"
-	.string "Okay!\n"
-	.string "We'll be seeing you!$"
+	.string "GABBY: A powerful… statement.\p"
+	.string "That… is our headline.\p"
+	.string "This has been GABBY… reporting live.\n"
+	.string "Like and subscribe.$"
 
 GabbyAndTy_Text_DontGiveUpKeepingEyeOut:
-	.string "GABBY: Oh…\p"
-	.string "Okay, but don't give up!\n"
-	.string "We'll be keeping an eye out for you!$"
+	.string "GABBY: No comment… We'll just… make\n"
+	.string "something up.$"
 
 GabbyAndTy_Text_KeepingAnEyeOutForYou:
-	.string "GABBY: We'll be keeping an eye out\n"
-	.string "for you!$"
+	.string "GABBY: We'll be… keeping an eye… on you.\p"
+	.string "And so will… the comments section.$"
 
 GabbyAndTy_Text_GabbyNotEnoughMons:
-	.string "GABBY: Is there a strong TRAINER\n"
-	.string "anywhere with a lot of POKéMON?$"
+	.string "GABBY: One POKéMON… That's… not\n"
+	.string "content.$"
 
 GabbyAndTy_Text_GiveUsAnInterviewThisTime:
 	.string "GABBY: Wow, you are something!\p"
@@ -2800,37 +2792,34 @@ GabbyAndTy_Text_GiveUsAnInterviewThisTime:
 	.string "this time?$"
 
 GabbyAndTy_Text_GabbyDefeat:
-	.string "GABBY: That was an intense battle!\n"
-	.string "Did you get all that on camera?$"
+	.string "GABBY: A crushing defeat… for the\n"
+	.string "incumbents.\p"
+	.string "That's us.$"
 
 GabbyAndTy_Text_TyPreFirstBattle:
-	.string "TY: Hey, lookie here! A tough-looking\n"
-	.string "TRAINER here, of all places!\l"
-	.string "Camera's rolling!$"
+	.string "TY: Camera is rolling…\p"
+	.string "The TRAINER appears… to be… standing.\n"
+	.string "We will… monitor the situation.$"
 
 GabbyAndTy_Text_TyIntro:
-	.string "TY: Hey, lookie here!\n"
-	.string "I remember you!\p"
-	.string "I'll get this battle all on this\n"
-	.string "here camera!$"
+	.string "TY: I remember you… The camera…\n"
+	.string "remembers you too.$"
 
 GabbyAndTy_Text_TyPostBattle:
-	.string "TY: You're a natural!\n"
-	.string "Got me some prime footage right here!$"
+	.string "TY: A natural… Would you… sign this\n"
+	.string "waiver?$"
 
 GabbyAndTy_Text_TyNotEnoughMons:
-	.string "TY: Do you only have the one POKéMON\n"
-	.string "and that's it?\p"
-	.string "If you had more POKéMON, it'd make for\n"
-	.string "better footage, but…$"
+	.string "TY: One POKéMON… My camera has more\n"
+	.string "lenses… than you have POKéMON.$"
 
 GabbyAndTy_Text_TyDefeatFirstTime:
-	.string "TY: Yep, we sure spotted a hot TRAINER.\n"
-	.string "This is a huge scoop for us!$"
+	.string "TY: This is… a developing story. We'll fix\n"
+	.string "it… in editing.$"
 
 GabbyAndTy_Text_TyDefeat:
-	.string "TY: Yep, I got it all.\n"
-	.string "That whole battle's on camera.$"
+	.string "TY: I got it all… Except the part… where\n"
+	.string "we lost.$"
 
 gTVInSearchOfTrainersText00::
 	.string "IN SEARCH OF TRAINERS…\p"

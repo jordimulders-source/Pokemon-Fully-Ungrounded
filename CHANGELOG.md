@@ -14704,3 +14704,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - De Winstrates zijn een extreem fanatiek sportgezin.
 - Cable Club-receptioniste (in alle Pokémon Centers): weet dat ze nutteloos is.
 - `tools/dialogen/import.py` kan nu ook teksten in `data/text/*.inc` vervangen.
+
+### [v.0.6.17] - Nep-Birch, Wattson's datacenter, Gabby & Ty, musea
+- Scott: nep-Birch in de Rustboro School (vermomming mislukt: hij praat niet over poep), in Mossdeep verkleed als jijzelf.
+- Wattson: New Mauville is het slechtste datacenter ooit (AI, crypto, browsergeschiedenis; koeling uit 1998).
+- Gabby & Ty praten als politieke verslaggevers… met… veel… pauzes. Clickbait-titels, "like and subscribe".
+- Winstrates: de Macho Brace zit onder het kwijl.
+- Union Room (geen adapter): nog sarcastischer.
+- Musea: de receptioniste van het Oceanic Museum en de curator van het Lilycove Art Museum zijn irritant overdreven vriendelijk.

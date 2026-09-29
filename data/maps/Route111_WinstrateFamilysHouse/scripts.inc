@@ -65,12 +65,11 @@ Route111_WinstrateFamilysHouse_Text_MySonIsStrongerThanYou:
 	.string "challenge, I'll have you know.$"
 
 Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMachoBrace:
-	.string "We use this MACHO BRACE to more\n"
-	.string "effectively strengthen our POKéMON\l"
-	.string "in training.\p"
-	.string "Since you've beaten all of us here,\n"
-	.string "I don't know if you need it, but we\l"
-	.string "would like you to have our MACHO BRACE.$"
+	.string "We use this MACHO BRACE to strengthen\n"
+	.string "our POKéMON. And VIVI.\p"
+	.string "You beat all of us, so you can have it.\n"
+	.string "There's a bit of drool on it. A lot,\l"
+	.string "actually. It's mostly drool.$"
 
 Route111_WinstrateFamilysHouse_Text_PassionateAboutBattles:
 	.string "When it comes to POKéMON battles,\n"

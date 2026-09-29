@@ -228,11 +228,11 @@ CableClub_Text_NoEnigmaBerryInUnionRoom:
 	.string "BERRY may enter the UNION ROOM.$"
 
 CableClub_Text_UnionRoomAdapterNotConnected:
-	.string "This is the POKéMON WIRELESS CLUB\n"
-	.string "UNION ROOM.\p"
-	.string "Unfortunately, your Wireless\n"
-	.string "Adapter is not connected properly.\p"
-	.string "Please do come again.$"
+	.string "This is the UNION ROOM.\p"
+	.string "Your Wireless Adapter isn't connected.\n"
+	.string "Shocking. Truly. Nobody saw this coming.\p"
+	.string "Please come again. Or don't. It really\n"
+	.string "doesn't matter.$"
 
 @ Unused
 CableClub_Text_OhExcuseMe:

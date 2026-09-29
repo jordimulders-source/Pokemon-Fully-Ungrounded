@@ -165,32 +165,29 @@ LilycoveCity_LilycoveMuseum_1F_Text_WelcomeToLilycoveMuseum:
 	.string "featuring POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_ImCuratorHaveYouViewedOurPaintings:
-	.string "I'm the CURATOR of this MUSEUM of\n"
-	.string "fine arts.\p"
-	.string "It's heartening to see someone so\n"
-	.string "young as you in our MUSEUM.\p"
-	.string "Have you viewed our collection of\n"
-	.string "paintings already?$"
+	.string "Oh! OH! A young visitor! I'm the CURATOR,\n"
+	.string "but please, think of me as your friend.\l"
+	.string "Your best friend.\p"
+	.string "Have you viewed our paintings yet?\n"
+	.string "Every single one? Twice?$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_NotDisturbYouTakeYourTime:
-	.string "Ah, then let me not disturb you.\n"
-	.string "Please, do take your time.$"
+	.string "Take your time! Take ALL the time! I'll\n"
+	.string "just stand very close behind you.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_HaveYouAnInterestInPaintings:
-	.string "Oh? I do believe that you seem to\n"
-	.string "be a POKéMON TRAINER.\p"
-	.string "Have you an interest in paintings,\n"
-	.string "too?$"
+	.string "You're a POKéMON TRAINER?! That's\n"
+	.string "incredible! Do you like paintings too?\l"
+	.string "You do, don't you? I can tell!$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_HonoredYoudVisitInSpiteOfThat:
-	.string "I see…\p"
-	.string "I'm honored that you would visit\n"
-	.string "us in spite of that.$"
+	.string "You don't?! …That's fine! I'm honored\n"
+	.string "you came anyway! Truly!\p"
+	.string "Please come back! Tomorrow? Every day?$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_ExcellentCanYouComeWithMe:
-	.string "Ah, excellent!\n"
-	.string "You do like paintings!\p"
-	.string "Then, may I ask you to come with me?$"
+	.string "You DO! I KNEW it! Come with me! Hold my\n"
+	.string "hand! No? That's okay!$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_VeryOldPainting:
 	.string "It's a very old painting.\n"

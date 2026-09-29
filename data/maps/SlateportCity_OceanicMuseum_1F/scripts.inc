@@ -223,16 +223,23 @@ SlateportCity_OceanicMuseum_1F_Movement_FamiliarGruntExitNorth:
 	step_end
 
 SlateportCity_OceanicMuseum_1F_Text_WouldYouLikeToEnter:
-	.string "Welcome to the OCEANIC MUSEUM.\p"
-	.string "The entrance fee is ¥50.\n"
-	.string "Would you like to enter?$"
+	.string "WELCOME to the OCEANIC MUSEUM!!! Oh my\n"
+	.string "gosh, a VISITOR! You look amazing\l"
+	.string "today, by the way!\p"
+	.string "The entrance fee is just ¥50! That's\n"
+	.string "nothing for someone as wonderful as\l"
+	.string "you! Would you like to enter? Please say\l"
+	.string "yes!$"
 
 SlateportCity_OceanicMuseum_1F_Text_PleaseEnjoyYourself:
-	.string "Please enjoy yourself.$"
+	.string "THANK YOU! You're my favorite person\n"
+	.string "today! Enjoy yourself! I'll be right\l"
+	.string "here! Waiting! For you!$"
 
 SlateportCity_OceanicMuseum_1F_Text_NotEnoughMoney:
-	.string "Oh? I'm sorry, but you don't seem to\n"
-	.string "have enough money.$"
+	.string "Oh no, not enough money? That's okay! I\n"
+	.string "still like you! I just can't let you in.\p"
+	.string "I'm so sorry. I'm going to cry a little.$"
 
 SlateportCity_OceanicMuseum_1F_Text_CatchUpWithYourGroup:
 	.string "Oh? You're with that group that\n"

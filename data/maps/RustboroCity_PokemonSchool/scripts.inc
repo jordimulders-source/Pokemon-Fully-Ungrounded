@@ -260,17 +260,14 @@ RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "topics to study!$"
 
 RustboroCity_PokemonSchool_Text_TradingRightNow:
-	.string "I'm trading POKéMON with my friend\n"
-	.string "right now.$"
+	.string "Football's coming home this year. I can\n"
+	.string "feel it.$"
 
 RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
-	.string "I always wanted a SEEDOT, and\n"
-	.string "I'm finally getting one!$"
+	.string "HAHAHAHA! It's never coming home.$"
 
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
-	.string "POKéMON can hold items, but they\n"
-	.string "don't know what to do with man-made\l"
-	.string "items like POTION and ANTIDOTE.$"
+	.string "Schade DEUTSCHLAND, alles ist vorbei!$"
 
 RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
 	.string "You know how some POKéMON moves can\n"

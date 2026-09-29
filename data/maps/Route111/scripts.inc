@@ -617,12 +617,11 @@ Route111_Text_VickyPostBattle:
 	.string "Stay for dinner. VIVI isn't having any.$"
 
 Route111_Text_ToughToKeepWinningUpTheRanks:
-	.string "If you don't raise your POKéMON some\n"
-	.string "more, it could be tough to keep winning\l"
-	.string "up through the ranks.\p"
-	.string "I've heard the POKéMON LEAGUE's\n"
-	.string "ELITE FOUR are far stronger than\l"
-	.string "any GYM LEADER.$"
+	.string "I'm a LIFE COACH now! Here's my advice:\n"
+	.string "drink water, wake up at 5, believe in\l"
+	.string "yourself.\p"
+	.string "That'll be 200 POKéDOLLARS. …No, I don't\n"
+	.string "have clients yet. Or a job.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
 	.string "I challenged the WINSTRATE family,\n"

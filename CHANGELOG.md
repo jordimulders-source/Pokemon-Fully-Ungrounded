@@ -14750,3 +14750,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Weather Institute: Castform-gift en onderzoeker over weertypes (Sandstorm telt niet, sorry Darude).
 - Ninja Boys zijn weebs met anime-referenties (Naruto, Fist of the North Star, Dragon Ball, One Piece, Attack on Titan, JoJo, Demon Slayer, Death Note) en de Ninja Boy-NPC's ook.
 - Psychics praten over astral projection, de kosmos channelen, tarot, karma/dharma, manifesteren en Scientology (Mt. Pyre, Route 110, 115, 117, 123, Lilycove).
+
+### [v.0.6.24] - Losse grappen
+- Yasu (Route 119): One Punch Man. Chester (Route 118, Bird Keeper): is een Super Saiyan geworden (hair gel).
+- Lavaridge: de vrouw met het Odd Egg is er bang voor; twee oma's in de hot springs over Michael Jackson ("it's been 17 years").
+- Pacifidlog PC: de oude man zegt alleen "LAS MALVINAS SON ARGENTINAS."
+- Rustboro Pokémon School: football's coming home / it's never coming home / "Schade DEUTSCHLAND, alles ist vorbei!"
+- Route 111: werkloze life coach. Slateport: twee digital nomads die niks doen.

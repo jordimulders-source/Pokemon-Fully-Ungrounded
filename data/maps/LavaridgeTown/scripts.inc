@@ -357,21 +357,14 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an EGG.\p"
-	.string "I'd hoped to hatch it by covering it in\n"
-	.string "hot sand by the hot springs.\l"
-	.string "But that doesn't seem to be enough…\p"
-	.string "I've heard it would be best if it were\n"
-	.string "kept together with POKéMON and\l"
-	.string "carried about.\p"
-	.string "You are a TRAINER, yes?\n"
-	.string "And your POKéMON radiate vitality.\p"
-	.string "So, what say you?\n"
-	.string "Will you take this EGG to hatch?$"
+	.string "I have an EGG. Tried hatching it in hot\n"
+	.string "sand. It's too odd for me.\p"
+	.string "Could be anything. I'm scared of it. Will\n"
+	.string "you take it?$"
 
 LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
-	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here EGG!$"
+	.string "Good! Walk plenty with it. And don't\n"
+	.string "blame me for what comes out.$"
 
 LavaridgeTown_Text_ReceivedTheEgg:
 	.string "{PLAYER} received the EGG.$"
@@ -381,14 +374,13 @@ LavaridgeTown_Text_NoRoomForThisEgg:
 	.string "There's no room for this EGG…$"
 
 LavaridgeTown_Text_AsYouWishThen:
-	.string "As you wish, then…\p"
-	.string "If you have a change of heart about\n"
-	.string "hatching this EGG, I will be here.$"
+	.string "As you wish… It'll hatch into something\n"
+	.string "weird anyway.$"
 
 LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
-	.string "Every so often, an EGG will be found at\n"
-	.string "the POKéMON DAY CARE.\p"
-	.string "Or at least that's how the rumor goes.$"
+	.string "Every so often an EGG turns up at the\n"
+	.string "DAY CARE. Nobody knows how. We don't\l"
+	.string "ask.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry:
 	.string "We draw as much hot water as we need,\n"
@@ -417,17 +409,11 @@ LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "GYM LEADER like FLANNERY.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
-	.string "If people put POKéMON in hot springs,\n"
-	.string "it might be seriously strange.\p"
-	.string "Why, it might be an electric bath, or\n"
-	.string "a bubble bath, or even a lava bath…$"
+	.string "Life hasn't been the same since\n"
+	.string "MICHAEL JACKSON died.$"
 
 LavaridgeTown_Text_HotSpringsClaims:
-	.string "They're claiming that these hot springs\n"
-	.string "are good for calming nervous tension,\l"
-	.string "relieving aching muscles, solving\l"
-	.string "romantic problems, and attracting\l"
-	.string "money…$"
+	.string "Come on, it's been 17 years.$"
 
 LavaridgeTown_Text_TownSign:
 	.string "LAVARIDGE TOWN\p"

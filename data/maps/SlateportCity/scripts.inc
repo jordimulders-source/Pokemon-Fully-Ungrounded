@@ -950,10 +950,10 @@ SlateportCity_Text_EffortRibbonLooksGoodOnIt:
 	.string "RIBBON looks good on it!$"
 
 SlateportCity_Text_WonderIfLighthouseStartlesPokemon:
-	.string "The light of the lighthouse reaches\n"
-	.string "dozens of miles away.\p"
-	.string "I wonder if it doesn't startle POKéMON\n"
-	.string "in the sea.$"
+	.string "I'm building a personal brand around\n"
+	.string "mindful productivity.\p"
+	.string "I've been here eight months. The WiFi\n"
+	.string "doesn't work. I haven't worked.$"
 
 SlateportCity_Text_SeaweedFullOfLife:
 	.string "Ooh, look at this!\p"
@@ -1100,12 +1100,10 @@ SlateportCity_Text_CantChangeTradeMonName:
 	.string "POKéMON is in the nickname.$"
 
 SlateportCity_Text_BattleTentBuiltRecently:
-	.string "Recently, a BATTLE TENT was built\n"
-	.string "in SLATEPORT.\p"
-	.string "GYMS are fun, but the BATTLE TENT's\n"
-	.string "awesome in its own way.\p"
-	.string "You should go find tough POKéMON\n"
-	.string "for the BATTLE TENT!$"
+	.string "I'm a digital nomad. I help brands unlock\n"
+	.string "their authentic synergy.\p"
+	.string "What that means? I post pictures of my\n"
+	.string "laptop on the beach.$"
 
 SlateportCity_Text_CaptSternBeingInterviewed:
 	.string "I was hoping that it was a famous star\n"

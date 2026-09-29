@@ -2684,11 +2684,11 @@ Route118_Text_PerryPostBattle:
 	.string "I'll have to train mine better.$"
 
 Route118_Text_ChesterIntro:
-	.string "Take flight!\n"
-	.string "My BIRD POKéMON!$"
+	.string "AAAAAARGH! My hair turned golden and\n"
+	.string "spiky! I've become a SUPER SAIYAN!$"
 
 Route118_Text_ChesterDefeat:
-	.string "They did take flight…$"
+	.string "…It was just hair gel.$"
 
 Route118_Text_ChesterPostBattle:
 	.string "If they'd get stronger, they'd be able\n"
@@ -2920,17 +2920,14 @@ Route119_Text_PhilPostBattle:
 	.string "admired BIRD POKéMON…$"
 
 Route119_Text_YasuIntro:
-	.string "To lurk in shadows, and live in\n"
-	.string "darkness… That is my destiny.\p"
-	.string "I emerge to challenge you!$"
+	.string "100 push-ups, 100 sit-ups, 100 squats,\n"
+	.string "10 km running. Every day. Let's battle.$"
 
 Route119_Text_YasuDefeat:
-	.string "I admit defeat!$"
+	.string "…OK.$"
 
 Route119_Text_YasuPostBattle:
-	.string "Those defeated in battle withdraw\n"
-	.string "quietly back into the shadows.\l"
-	.string "That, too, is destiny…$"
+	.string "I went bald for nothing.$"
 
 Route119_Text_TakashiIntro:
 	.string "I'm gonna be KING OF THE PIRATES! On\n"

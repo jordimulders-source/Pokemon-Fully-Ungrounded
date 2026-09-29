@@ -276,8 +276,7 @@ SootopolisCity_Gym_1F_Text_GymStatue:
 
 SootopolisCity_Gym_1F_Text_GymStatueCertified:
 	.string "SOOTOPOLIS CITY POKéMON GYM\p"
-	.string "JUAN'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "WALLACE'S CERTIFIED TRAINERS: {PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch:
 	.string "WALLACE: Ah, my GYM had just returned\n"

@@ -38,16 +38,18 @@ SootopolisCity_House6_Text_FirstGuestInWhileTakeDoll:
 	.string "It was taking up the whole bed.$"
 
 SootopolisCity_House6_Text_TakeGoodCareOfIt:
-	.string "Take good care of it!$"
+	.string "Take good care of it! It snores.$"
 
 SootopolisCity_House6_Text_IllHoldItForYou:
-	.string "Oh, you want it, but not right now?\n"
-	.string "Okay, then I'll hold it for you.$"
+	.string "Oh, you want it, but not right now? Okay,\n"
+	.string "I'll hold on to it.\p"
+	.string "It can have the bed a little longer.$"
 
 SootopolisCity_House6_Text_DontWantThisDoll:
-	.string "Are you sure?\n"
-	.string "You don't want this DOLL?$"
+	.string "Are you sure? You don't want this DOLL?\n"
+	.string "It's huge!$"
 
 SootopolisCity_House6_Text_LovePlushDolls:
-	.string "I love plush DOLLS!$"
+	.string "I love plush DOLLS! I have no space left\n"
+	.string "in my bed.$"
 

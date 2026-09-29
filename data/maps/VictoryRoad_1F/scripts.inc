@@ -154,7 +154,8 @@ VictoryRoad_1F_Text_EdgarIntro:
 	.string "anymore.$"
 
 VictoryRoad_1F_Text_EdgarDefeat:
-	.string "My dream ends here again…$"
+	.string "My dream ends here. Again. For the ninth\n"
+	.string "time.$"
 
 VictoryRoad_1F_Text_EdgarPostBattle:
 	.string "You made it this far. Keep going!\p"
@@ -177,7 +178,8 @@ VictoryRoad_1F_Text_HopeIntro:
 	.string "VICTORY. Or at least very long.$"
 
 VictoryRoad_1F_Text_HopeDefeat:
-	.string "Your battle style is fantastic…$"
+	.string "Your battle style is fantastic… Mine is\n"
+	.string "apparently “losing”.$"
 
 VictoryRoad_1F_Text_HopePostBattle:
 	.string "You could become CHAMPION.\p"

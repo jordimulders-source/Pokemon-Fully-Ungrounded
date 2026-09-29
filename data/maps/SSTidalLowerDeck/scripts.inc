@@ -17,7 +17,7 @@ SSTidalLowerDeck_Text_PhillipIntro:
 	.string "Quick battle! Break time!$"
 
 SSTidalLowerDeck_Text_PhillipDefeat:
-	.string "Little bro, I lost!$"
+	.string "Little bro, I lost! Don't tell Mom!$"
 
 SSTidalLowerDeck_Text_PhillipPostBattle:
 	.string "We're the CLEANUP BROTHERS!\p"
@@ -32,7 +32,7 @@ SSTidalLowerDeck_Text_LeonardIntro:
 	.string "And plenty of rats.$"
 
 SSTidalLowerDeck_Text_LeonardDefeat:
-	.string "Big bro, I lost!$"
+	.string "Big bro, I lost! I'm telling Mom!$"
 
 SSTidalLowerDeck_Text_LeonardPostBattle:
 	.string "We're the CLEANUP BROTHERS!\p"

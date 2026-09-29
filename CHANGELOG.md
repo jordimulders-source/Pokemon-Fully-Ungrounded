@@ -14859,3 +14859,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - De overige ~710 trainerteksten herschreven (intro, verlies, na het gevecht, registratie, rematches en "bring twee Pokémon"-teksten): Meteor Falls, Mt. Pyre, Seashore House, S.S. Tidal, Victory Road en Route 113–134.
 - Bestaande thema's lopen door: Cyndy zweeft ook in haar rematches, Rose blijft high, Jerry wil een salaryman worden, Dalton en Fernando blijven bij Metallica en Motörhead, de Mimic Circle (met Donalds zes Ditto), het echtpaar Makayla/Paxton (voedselvergiftiging) en Hudson zoekt al twintig jaar zijn maat Kelvin.
 - Beschermd en ongewijzigd: Jeffrey (Route 120), Deandre's intro/verlies en de rivalen, Elite Four en Wallace.
+
+### [v.0.6.45] - Resterende teksten (op naar 100%)
+- Alle nog vanilla teksten buiten de post-beta-gebieden herschreven, in vijf blokken (~1000 teksten): borden, systeemteksten, huizen, grotten, het Aqua/Magma-verhaal (Archie verkoopt sparkling water, Maxie hot sauce), S.S. Tidal, Slateport (Stern, haven, museum, Name Rater, Fan Club, Berry Powder-dame), Sootopolis (Wallace de sommelier, de Lotad/Seedot-broers die al jaren niet praten), Verdanturf (Friendship Rater, de tunnelgraver), Trainer Hill-balie, VS Seeker en de laatste trainer-verliesteksten.
+- Sootopolis-gymbeeld: "WALLACE'S CERTIFIED TRAINERS" (was Juan). Pokémon Center Sootopolis noemt Wallace als gymleider en Steven als kampioen.
+- Scripts die niet op een newline eindigden, gerepareerd (waarschuwingen bij het bouwen zijn weg).
+- Bewust vanilla gelaten: Mom (tekst van Jordi), Jeffrey (Route 120), de Yes Town-jongen, Deandre, de Regi-hints, de legendes op de Mt. Pyre-top, Maxie's stilte op Mt. Pyre en zijn verlies op Mt. Chimney/Route 128, Shelly's verlies, Archie's "Hold it right there"/"So it was you", RYDEL×50, Pokémon-kreten, functionele borden (hutnummers, bedden, records) en alles in Trick House, Battle Frontier en Battle Tents.

@@ -51,13 +51,14 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	end
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
-	.string "WALLACE is rumored to be the toughest\n"
-	.string "TRAINER in the whole HOENN region.\p"
-	.string "This town's GYM is led by the TRAINER\n"
-	.string "who taught WALLACE.\p"
-	.string "But the ELITE FOUR… They're said to be\n"
-	.string "even stronger than WALLACE's mentor.\p"
-	.string "How strong could they be?$"
+	.string "Our GYM LEADER WALLACE is one of the\n"
+	.string "toughest TRAINERS in HOENN.\p"
+	.string "Some say it's the wine. Others say it's\n"
+	.string "talent.\p"
+	.string "But the ELITE FOUR are said to be even\n"
+	.string "stronger.\p"
+	.string "And the CHAMPION? Nobody knows. He's\n"
+	.string "always in a cave somewhere.$"
 
 SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 	.string "Everyone is hiding in their homes.\p"
@@ -65,10 +66,9 @@ SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 	.string "Free healing. Free chairs. Good choice.$"
 
 SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
-	.string "Whenever, wherever, and whatever\n"
-	.string "happens, I will always be friends with\l"
-	.string "POKéMON.\p"
-	.string "Because it's fun to be with POKéMON!$"
+	.string "Whenever, wherever, whatever happens,\n"
+	.string "I'll always be friends with POKéMON.\p"
+	.string "Humans are the problem.$"
 
 SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
 	.string "Aren't POKéMON our friends?\p"

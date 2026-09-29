@@ -60,10 +60,10 @@ VictoryRoad_B2F_Text_OwenPostBattle:
 	.string "your creative ideas going.$"
 
 VictoryRoad_B2F_Text_CarolineIntro:
-	.string "You must be getting a little tired.$"
+	.string "You look tired. Perfect.$"
 
 VictoryRoad_B2F_Text_CarolineDefeat:
-	.string "No signs of tiring at all!$"
+	.string "Not tired at all?! What are you on?!$"
 
 VictoryRoad_B2F_Text_CarolinePostBattle:
 	.string "VICTORY ROAD and the LEAGUE are\n"

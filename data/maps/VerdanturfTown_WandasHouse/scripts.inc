@@ -113,14 +113,12 @@ VerdanturfTown_WandasHouse_Text_WallyGoneThatFar:
 	.string "check if he took his shoes.$"
 
 VerdanturfTown_WandasHouse_Text_MeetWanda:
-	.string "WANDA: You are?\n"
-	.string "Oh, right, I get it!\p"
-	.string "You're the {PLAYER} who WALLY was\n"
-	.string "telling me about.\p"
-	.string "I'm WALLY's cousin.\n"
-	.string "Glad to meet you!\p"
-	.string "I think WALLY's become a lot more lively\n"
-	.string "and healthy since he came here.$"
+	.string "WANDA: You are? Oh, right!\p"
+	.string "You're the {PLAYER} WALLY told me about.\p"
+	.string "I'm WALLY's cousin. Nice to meet you!\p"
+	.string "WALLY's become so much healthier since\n"
+	.string "he came here. It's the air. And the lack\l"
+	.string "of internet.$"
 
 VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
 	.string "WANDA: Don't worry about WALLY. He'll be\n"
@@ -130,21 +128,20 @@ VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
 
 VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay:
 	.string "Thanks to you, I can see my girlfriend\n"
-	.string "every day.\l"
-	.string "Happy? You bet I am!$"
+	.string "every day!\p"
+	.string "Her mom still doesn't like me, but hey!$"
 
 VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendDriven:
-	.string "My daughter's boyfriend is a very\n"
-	.string "driven and passionate sort of person.\p"
-	.string "He's been digging a tunnel nonstop\n"
-	.string "just so he can see my daughter.\p"
-	.string "My daughter's a little concerned,\n"
-	.string "so she goes out to the tunnel a lot.$"
+	.string "My daughter's boyfriend is very…\n"
+	.string "driven.\p"
+	.string "He's been digging a tunnel nonstop just\n"
+	.string "to see her.\p"
+	.string "It's romantic. It's also a bit of a red\n"
+	.string "flag.$"
 
 VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendWasDigging:
-	.string "It's amazing. My daughter's boyfriend\n"
-	.string "was digging the tunnel by hand!\p"
-	.string "It's so incredible!$"
+	.string "He dug that tunnel by hand! By HAND!\p"
+	.string "I've changed my mind. He can marry her.$"
 
 VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
 	.string "If anything happened to WALLY, I'd\n"

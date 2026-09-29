@@ -31,7 +31,7 @@ VictoryRoad_B1F_Text_SamuelIntro:
 	.string "I'm getting stage fright…$"
 
 VictoryRoad_B1F_Text_SamuelDefeat:
-	.string "I couldn't do a thing…$"
+	.string "I couldn't do a single thing…$"
 
 VictoryRoad_B1F_Text_SamuelPostBattle:
 	.string "The POKéMON LEAGUE is far away again…\p"
@@ -54,7 +54,7 @@ VictoryRoad_B1F_Text_MichelleIntro:
 	.string "A very long, very dark way.$"
 
 VictoryRoad_B1F_Text_MichelleDefeat:
-	.string "That's the way!$"
+	.string "That's the way! …For you. Not for me.$"
 
 VictoryRoad_B1F_Text_MichellePostBattle:
 	.string "You'll do fine! Your POKéMON are eager\n"

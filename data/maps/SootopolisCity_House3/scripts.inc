@@ -26,7 +26,8 @@ SootopolisCity_House3_Text_JuanHasManyFansDoYou:
 	.string "Mostly wine clubs. Do you have fans?$"
 
 SootopolisCity_House3_Text_YouMustBePrettyStrong:
-	.string "Oh, then you must be pretty strong.$"
+	.string "Oh, then you must be pretty strong. Or\n"
+	.string "pretty rich.$"
 
 SootopolisCity_House3_Text_LonesomeTryWorkingHarder:
 	.string "Oh, dear… That's lonely.\p"

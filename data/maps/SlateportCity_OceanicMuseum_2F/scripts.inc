@@ -269,20 +269,21 @@ SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3::
 	end
 
 SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
-	.string "Yes? If you're looking for STERN,\n"
-	.string "that would be me.\p"
-	.string "Ah! Those must be the parts I ordered\n"
-	.string "from MR. STONE of DEVON.\p"
-	.string "Thank you! That's great!\n"
-	.string "We can prepare for our expedition now.$"
+	.string "Yes? If you're looking for STERN, that's\n"
+	.string "me.\p"
+	.string "Ah! The parts I ordered from MR. STONE\n"
+	.string "of DEVON!\p"
+	.string "Thank you! Now we can prepare our\n"
+	.string "expedition!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
 	.string "Hehehe, hold it! We'll take those parts!\n"
 	.string "For the bottling plant!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
-	.string "CAPT. STERN: Wh-what?\n"
-	.string "Who are you people?$"
+	.string "CAPT. STERN: Wh-what? Who are you\n"
+	.string "people? Is this about the parking\l"
+	.string "ticket?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
 	.string "We're TEAM AQUA!\p"
@@ -329,22 +330,19 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "you. Per bubble.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
-	.string "CAPT. STERN: You're…\n"
-	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
-	.string "Anyway, that was a tense situation!\n"
-	.string "Thank you for saving us!\p"
-	.string "Oh, yes, I almost forgot that you\n"
-	.string "even brought the parts from DEVON!$"
+	.string "CAPT. STERN: You're… Ah, right, {PLAYER}{KUN}…\p"
+	.string "That was tense! Thank you for saving\n"
+	.string "us!\p"
+	.string "Oh, and you even brought the parts from\n"
+	.string "DEVON!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
-	.string "CAPT. STERN: Whoops!\n"
-	.string "There's no time to lose!\p"
-	.string "We have to set out on our ocean-floor\n"
-	.string "expedition really soon.\p"
-	.string "Thanks again, but now I've got\n"
-	.string "to go!\p"
-	.string "Feel free to wander around and check\n"
-	.string "out our facilities, though.$"
+	.string "CAPT. STERN: Whoops! No time to lose!\p"
+	.string "We're setting out on our ocean-floor\n"
+	.string "expedition soon.\p"
+	.string "Thanks again, but I've got to go!\p"
+	.string "Feel free to look around. Don't lick the\n"
+	.string "exhibits.$"
 
 SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip:
 	.string "I saw a model ship here.\p"
@@ -369,21 +367,20 @@ SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
 	.string "…Tastes still. TEAM AQUA disapproves.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
-	.string "“WATER QUALITY SAMPLE 2,” the\n"
-	.string "label says.\p"
-	.string "Does the saltiness of seawater differ\n"
-	.string "by region, too?$"
+	.string "“WATER QUALITY SAMPLE 2,” the label\n"
+	.string "says.\p"
+	.string "It tastes different from sample 1. …Why\n"
+	.string "did you taste it?$"
 
 SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 	.string "A rubber ball is expanding and\n"
 	.string "shrinking.\p"
-	.string "“In the sea, the weight of water itself\n"
-	.string "exerts pressure.\p"
-	.string "“In shallow water, the pressure is not\n"
-	.string "very heavy.\p"
-	.string "“However, in extremely deep water,\n"
-	.string "the pressure can reach even tens of\l"
-	.string "thousands of tons on a small area.”$"
+	.string "“In the sea, the water itself exerts\n"
+	.string "pressure.\p"
+	.string "“In shallow water, not much.\p"
+	.string "“In very deep water, tens of thousands\n"
+	.string "of tons press on a small area.”\p"
+	.string "Kind of like exam week.$"
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel:
 	.string "“MODEL OF HOENN REGION”\p"
@@ -393,32 +390,35 @@ SlateportCity_OceanicMuseum_2F_Text_HoennModel:
 	.string "boring bit.$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
-	.string "It's a display on the flow of seawater.\p"
-	.string "“Near the bottom of the sea, water\n"
-	.string "flows due to differences in such\l"
-	.string "factors as temperature and salinity.”$"
+	.string "A display on the flow of seawater.\p"
+	.string "“Near the seabed, water flows due to\n"
+	.string "differences in temperature and\l"
+	.string "saltiness.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay:
-	.string "It's a display on the flow of seawater.\p"
-	.string "“Toward the surface, seawater flows\n"
-	.string "as currents driven by the winds.”$"
+	.string "A display on the flow of seawater.\p"
+	.string "“Near the surface, currents are driven\n"
+	.string "by the wind.” And by TENTACOOL. Lots of\l"
+	.string "TENTACOOL.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica:
 	.string "“THE FERRY S.S. TIDAL\p"
-	.string "“A scale replica of the ship under\n"
-	.string "construction at STERN'S SHIPYARD.”$"
+	.string "“A scale model of the ship being built\n"
+	.string "at STERN'S SHIPYARD.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica:
 	.string "“SUBMARINE EXPLORER 1\p"
 	.string "“A replica of the high-performance\n"
-	.string "ocean floor exploration submarine.”$"
+	.string "seafloor submarine.” Please do not\l"
+	.string "steal.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica:
 	.string "“SUBMERSIBLE POD\p"
-	.string "“A replica of a compact, unmanned\n"
-	.string "pod for seafloor exploration.”$"
+	.string "“A replica of a small, unmanned pod for\n"
+	.string "seafloor exploration.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica:
 	.string "“S.S. ANNE\p"
 	.string "“A replica of the luxury liner that\n"
-	.string "circles the globe.”$"
+	.string "circles the globe.”\p"
+	.string "There's a tiny truck next to it. Weird.$"

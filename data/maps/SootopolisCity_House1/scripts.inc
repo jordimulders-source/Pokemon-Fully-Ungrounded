@@ -29,10 +29,10 @@ SootopolisCity_House1_EventScript_Kecleon::
 	end
 
 SootopolisCity_House1_Text_DevelopedThisTM:
-	.string "For thirty years I've remained in\n"
-	.string "SOOTOPOLIS honing my skills.\p"
-	.string "I developed a shattering TM.\n"
-	.string "I bequeath it to you!$"
+	.string "For thirty years I've stayed in\n"
+	.string "SOOTOPOLIS, honing my skills.\p"
+	.string "My knees are shattered. So I made a TM\n"
+	.string "that shatters things. Take it!$"
 
 SootopolisCity_House1_Text_ExplainBrickBreak:
 	.string "BRICK BREAK. It breaks bricks. And\n"

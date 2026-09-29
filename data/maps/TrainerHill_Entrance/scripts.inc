@@ -299,24 +299,21 @@ TrainerHill_Entrance_Text_WelcomeToTrainerHill:
 	.string "lonely owner.$"
 
 TrainerHill_Entrance_Text_SaveGameBeforeEnter:
-	.string "Is this your first visit here?\p"
-	.string "Before you enter, please save\n"
-	.string "your game.$"
+	.string "First time here?\p"
+	.string "Before you go in, please save your game.\n"
+	.string "People have been lost up there.$"
 
 TrainerHill_Entrance_Text_TrainersUpToFloorX:
-	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
+	.string "Let's see… The TRAINERS here now are…\p"
 	.string "Up to floor no. {STR_VAR_1}.$"
 
 TrainerHill_Entrance_Text_TrainersInEveryRoom:
-	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
-	.string "There appear to be TRAINERS gathered\n"
-	.string "in every room.$"
+	.string "Let's see… The TRAINERS here now are…\p"
+	.string "In every room. Like cockroaches.$"
 
 TrainerHill_Entrance_Text_LikeToChallengeTrainers:
-	.string "Would you like to challenge the\n"
-	.string "waiting TRAINERS?$"
+	.string "Would you like to challenge the waiting\n"
+	.string "TRAINERS?$"
 
 TrainerHill_Entrance_Text_TimeProgessGetSetGo:
 	.string "I'll time you. Best of luck!\p"
@@ -359,10 +356,9 @@ TrainerHill_Entrance_Text_ExplainTrainerHill:
 
 @ Unused
 TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
-	.string "Oh, I'm sorry, but you appear to have\n"
-	.string "only one POKéMON with you.\p"
-	.string "You will need at least two POKéMON\n"
-	.string "to enter this event.$"
+	.string "Sorry, you only have one POKéMON with\n"
+	.string "you.\p"
+	.string "You need at least two. Go make a friend.$"
 
 TrainerHill_Roof_Text_YouFinallyCameBravo:
 	.string "Hm! Hm!\p"
@@ -434,5 +430,5 @@ TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen:
 	.string "already.$"
 
 TrainerHill_Elevator_Text_ReturnToReception:
-	.string "Would you like to return to\n"
-	.string "the reception counter?$"
+	.string "Would you like to return to the\n"
+	.string "reception counter?$"

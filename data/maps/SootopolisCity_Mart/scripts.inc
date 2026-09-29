@@ -54,8 +54,8 @@ SootopolisCity_Mart_EventScript_GentlemanNoLegendaries::
 
 SootopolisCity_Mart_Text_PPUpIsGreat:
 	.string "PP UP is great!\p"
-	.string "It raises the POWER POINTS, the PP,\n"
-	.string "of a POKéMON move.$"
+	.string "It raises the PP of a move. Like a\n"
+	.string "protein shake for attacks.$"
 
 SootopolisCity_Mart_Text_TooScaryOutside:
 	.string "What is happening?\p"
@@ -64,9 +64,9 @@ SootopolisCity_Mart_Text_TooScaryOutside:
 
 SootopolisCity_Mart_Text_FullRestoreItemOfDreams:
 	.string "Do you know FULL RESTORE?\p"
-	.string "Full restoration of HP!\n"
-	.string "Eradication of all status problems!\p"
-	.string "It's truly an item of your dreams!$"
+	.string "Full HP! All status problems gone!\p"
+	.string "Some rich kids carry four of them.\n"
+	.string "Cowards.$"
 
 SootopolisCity_Mart_Text_DidSomethingAwaken:
 	.string "This weather…\p"

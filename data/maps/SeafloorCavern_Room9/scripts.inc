@@ -247,18 +247,19 @@ SeafloorCavern_Room9_Text_ArchieWithThisRedOrb:
 	.string "With it, KYOGRE will…$"
 
 SeafloorCavern_Room9_Text_RedOrbShinesByItself:
-	.string "The RED ORB suddenly began shining\n"
-	.string "by itself!$"
+	.string "The RED ORB suddenly began shining by\n"
+	.string "itself!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
 	.string "ARCHIE: What?!\p"
-	.string "I didn't do anything.\n"
-	.string "Why did the RED ORB…\p"
-	.string "Where did KYOGRE go?$"
+	.string "I didn't touch anything! Why is the RED\n"
+	.string "ORB…\p"
+	.string "Where did my KYOGRE go?! That's my\n"
+	.string "whole supply chain!$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside:
-	.string "ARCHIE: Hm? It's a message from our\n"
-	.string "members outside…$"
+	.string "ARCHIE: Hm? A message from the grunts\n"
+	.string "outside… This had better be good news.$"
 
 SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard:
 	.string "ARCHIE: Yes, what is it?\p"
@@ -297,5 +298,6 @@ SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue:
 	.string "Nobody buys sparkling water in a flood!$"
 
 SeafloorCavern_Room9_Text_MaxieComeOnPlayer:
-	.string "MAXIE: {PLAYER}, come on, you have\n"
-	.string "to get out of here, too!$"
+	.string "MAXIE: {PLAYER}, come on, you have to\n"
+	.string "get out of here too! Customers don't\l"
+	.string "grow on trees!$"

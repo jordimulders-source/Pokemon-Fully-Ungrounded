@@ -63,8 +63,9 @@ SSTidalRooms_EventScript_Naomi::
 	end
 
 SSTidalRooms_Text_TakeRestOnBed:
-	.string "There's a bed…\n"
-	.string "Let's take a rest.$"
+	.string "There's a bed…\p"
+	.string "It smells like CAPTAIN BRINEY. Let's\n"
+	.string "rest anyway.$"
 
 SSTidalRooms_Text_ColtonIntro:
 	.string "I often sail to LILYCOVE for the\n"
@@ -73,7 +74,8 @@ SSTidalRooms_Text_ColtonIntro:
 	.string "She's the mother.$"
 
 SSTidalRooms_Text_ColtonDefeat:
-	.string "That was an enjoyable match!$"
+	.string "What a match! I'm putting this in my\n"
+	.string "cruise review. Five stars.$"
 
 SSTidalRooms_Text_ColtonPostBattle:
 	.string "I get so excited about the next\n"
@@ -82,10 +84,12 @@ SSTidalRooms_Text_ColtonPostBattle:
 	.string "matching bows.$"
 
 SSTidalRooms_Text_MicahIntro:
-	.string "Are your friends strong?$"
+	.string "Are your friends strong? Mine are.\n"
+	.string "They're in my bag.$"
 
 SSTidalRooms_Text_MicahDefeat:
-	.string "Your friends are, indeed, strong.$"
+	.string "Your friends are, indeed, strong. Mine\n"
+	.string "need a gym membership.$"
 
 SSTidalRooms_Text_MicahPostBattle:
 	.string "Friends need not be human.\p"
@@ -113,7 +117,7 @@ SSTidalRooms_Text_JedIntro:
 	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_JedDefeat:
-	.string "JED: Sigh…$"
+	.string "JED: Sigh… Honeymoon's over.$"
 
 SSTidalRooms_Text_JedPostBattle:
 	.string "JED: Our lovey-dovey power failed for\n"
@@ -130,7 +134,8 @@ SSTidalRooms_Text_LeaIntro:
 	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_LeaDefeat:
-	.string "LEA: Oh, boo!$"
+	.string "LEA: Oh, boo! This was supposed to be\n"
+	.string "romantic!$"
 
 SSTidalRooms_Text_LeaPostBattle:
 	.string "LEA: Our lovey-dovey power failed…\p"
@@ -145,7 +150,7 @@ SSTidalRooms_Text_GarretIntro:
 	.string "I'm bored. Entertain me.$"
 
 SSTidalRooms_Text_GarretDefeat:
-	.string "…That will do.$"
+	.string "…That will do. Put it on Daddy's tab.$"
 
 SSTidalRooms_Text_GarretPostBattle:
 	.string "Perhaps I'll have Father buy me a yacht.\p"

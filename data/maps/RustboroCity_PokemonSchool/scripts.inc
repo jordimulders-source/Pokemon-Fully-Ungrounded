@@ -244,11 +244,10 @@ RustboroCity_PokemonSchool_Text_ExplainFreeze:
 	.string "Thaw it out using an ICE HEAL.$"
 
 RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
-	.string "Students who don't study get a little\n"
-	.string "taste of my QUICK CLAW.\p"
-	.string "Whether or not you are a good student \n"
-	.string "will be evident from the way you use\l"
-	.string "this item.$"
+	.string "Students who don't study get a taste\n"
+	.string "of my QUICK CLAW.\p"
+	.string "You think I'm just a teacher? No. I AM\n"
+	.string "THE ONE WHO KNOCKS!$"
 
 RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "A POKéMON holding the QUICK CLAW will\n"

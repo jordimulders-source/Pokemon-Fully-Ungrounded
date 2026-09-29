@@ -56,20 +56,24 @@ LilycoveCity_PokemonCenter_1F_EventScript_ManiacBadTeamGone::
 	end
 
 LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon:
-	.string "I wonder how many kinds of POKéMON\n"
-	.string "there are in the world.\p"
-	.string "It'd be great to cross seas and\n"
-	.string "trade POKéMON with people far away.$"
+	.string "MARIO KART WORLD is great. Really great.\p"
+	.string "But where are the updates? I've driven\n"
+	.string "the same highway so often, I know every\l"
+	.string "cow by name.$"
 
 LilycoveCity_PokemonCenter_1F_Text_HeardAboutRottenScoundrels:
-	.string "I've been hearing about some rotten\n"
-	.string "scoundrels who steal POKéMON and rip\l"
-	.string "off METEORITES.$"
+	.string "I heard if you surf along CINNABAR's\n"
+	.string "coast, you find MISSINGNO.\p"
+	.string "I surfed along every coast in HOENN.\p"
+	.string "No MISSINGNO. No RARE CANDIES.\p"
+	.string "Just a mass grave of TENTACOOL.\p"
+	.string "You're welcome for the variety.$"
 
 LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
-	.string "Those rotten scoundrels who steal\n"
-	.string "POKéMON and rip off METEORITES…\p"
-	.string "I haven't seen them around recently.$"
+	.string "Those scoundrels who steal POKéMON and\n"
+	.string "METEORITES…\p"
+	.string "Haven't seen them lately.\p"
+	.string "They're probably at a tasting.$"
 
 LilycoveCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

@@ -65,54 +65,55 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsHappy::
 	end
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
-	.string "PROF. COZMO: Oh…\n"
-	.string "I never should have let myself be\l"
-	.string "conned into telling TEAM MAGMA where\l"
-	.string "you can find METEORITES…\p"
-	.string "That METEORITE from METEOR FALLS…\n"
-	.string "It's never going to be mine now…$"
+	.string "PROF. COZMO: Oh… I never should have\n"
+	.string "told TEAM MAGMA about the METEORITES…\p"
+	.string "They promised me free hot sauce.\p"
+	.string "It wasn't even that hot. It was like\n"
+	.string "sriracha.$"
 
 FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
-	.string "Oh!\n"
-	.string "Hah?\p"
-	.string "That item…\p"
-	.string "Could it be?\p"
-	.string "Is it the METEORITE that TEAM MAGMA\n"
-	.string "took from METEOR FALLS?\p"
+	.string "Oh! Hah?\p"
+	.string "That item… Could it be?\p"
+	.string "The METEORITE TEAM MAGMA took from\n"
+	.string "METEOR FALLS?\p"
 	.string "Please, may I have it?\p"
-	.string "I'm not asking for it for free.\n"
-	.string "How about in exchange for this TM?$"
+	.string "Not for free. How about this TM?$"
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
-	.string "PROF. COZMO: This TM, it represents\n"
-	.string "my feeling of gratitude.\l"
-	.string "Please use it!$"
+	.string "PROF. COZMO: This is RETURN. The more\n"
+	.string "your POKéMON likes you, the harder it\l"
+	.string "hits.\p"
+	.string "So, not very hard, probably.$"
 
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
-	.string "PROF. COZMO: Oh, I can't believe it.\n"
-	.string "This is really, really great!\p"
-	.string "This is really going to help my research!$"
+	.string "PROF. COZMO: Oh, I can't believe it! This\n"
+	.string "is great!\p"
+	.string "This will really help my research!\p"
+	.string "And I can finally stop crying.$"
 
 FallarborTown_CozmosHouse_Text_CrushedWithDisappointment:
-	.string "PROF. COZMO: Oh, but…\n"
-	.string "I'm crushed with disappointment…$"
+	.string "PROF. COZMO: Oh… I'm crushed…\p"
+	.string "I'll go eat sriracha. Alone.$"
 
 FallarborTown_CozmosHouse_Text_MayIHaveMeteorite:
 	.string "PROF. COZMO: Please, may I have that\n"
 	.string "METEORITE?\p"
-	.string "I'm not asking for it for free.\n"
-	.string "How about in exchange for this TM?$"
+	.string "I'll give you this TM for it.$"
 
 FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls:
-	.string "PROF. COZMO went off to METEOR FALLS\n"
-	.string "on ROUTE 114 with some people from\l"
-	.string "TEAM MAGMA.$"
+	.string "PROF. COZMO went to METEOR FALLS on\n"
+	.string "ROUTE 114.\p"
+	.string "With TEAM MAGMA. For hot sauce.\p"
+	.string "Remind me why I married this\n"
+	.string "susceptible fool?$"
 
 FallarborTown_CozmosHouse_Text_FeelSorryForCozmo:
-	.string "Poor PROF. COZMO…\n"
-	.string "He's so depressed… I feel sorry for him.$"
+	.string "Poor PROF. COZMO… So depressed…\p"
+	.string "I'd feel sorry for him if he hadn't sold\n"
+	.string "us out for sriracha.$"
 
 FallarborTown_CozmosHouse_Text_CozmoIsSoHappy:
-	.string "Look at PROF. COZMO…\n"
-	.string "He's so happy! I think it's cute.$"
+	.string "Look at PROF. COZMO… So happy!\p"
+	.string "He's hugging the rock. It's cute. And\n"
+	.string "weird.$"
 

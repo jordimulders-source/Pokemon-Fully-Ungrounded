@@ -422,131 +422,103 @@ MtPyre_Summit_EventScript_Grunt4::
 	end
 
 MtPyre_Summit_Text_Grunt1Intro:
-	.string "No! Those TEAM MAGMA goons got\n"
-	.string "here ahead of us!\p"
-	.string "We can't fall behind!$"
+	.string "No! TEAM MAGMA got here first!\p"
+	.string "They'll put hot sauce on everything!$"
 
 MtPyre_Summit_Text_Grunt1Defeat:
-	.string "I thought you were one of the MAGMAS\n"
-	.string "who happened to come back…$"
+	.string "I thought you were MAGMA.\p"
+	.string "You smell like chili.$"
 
 MtPyre_Summit_Text_Grunt1PostBattle:
-	.string "Yeah, so you are strong…\n"
-	.string "But there're a lot of us!$"
+	.string "There's a lot of us.\p"
+	.string "And a lot of bottles.$"
 
 MtPyre_Summit_Text_Grunt2Intro:
-	.string "Hah!\n"
-	.string "Too bad for you!\p"
-	.string "If you came earlier, you only would've\n"
-	.string "had to battle the wimpy TEAM MAGMA.\p"
-	.string "But since you arrived now, you have\n"
-	.string "to take on us toughies!$"
+	.string "Too bad! MAGMA was the easy part.\p"
+	.string "We're carbonated!$"
 
 MtPyre_Summit_Text_Grunt2Defeat:
-	.string "Urgh… I should've let you take on\n"
-	.string "TEAM MAGMA first…$"
+	.string "Should've let MAGMA get you first.$"
 
 MtPyre_Summit_Text_Grunt2PostBattle:
-	.string "You don't know anything!\n"
-	.string "So why are you messing with us?$"
+	.string "You know nothing about bubbles!$"
 
 MtPyre_Summit_Text_Grunt3Intro:
-	.string "You…\n"
 	.string "We saw you at MT. CHIMNEY.\p"
-	.string "You don't belong to either TEAM,\n"
-	.string "so why would you be here?$"
+	.string "Not MAGMA, not AQUA.\p"
+	.string "Still water, then?$"
 
 MtPyre_Summit_Text_Grunt3Defeat:
-	.string "If you're going to mess with anyone,\n"
-	.string "let it be TEAM MAGMA…$"
+	.string "Go bother MAGMA. They're the spicy\n"
+	.string "ones.$"
 
 MtPyre_Summit_Text_Grunt3PostBattle:
-	.string "Heh, it doesn't matter!\n"
-	.string "We bought ourselves some time!\p"
-	.string "The BOSS should have snatched what\n"
-	.string "he was after!$"
+	.string "Doesn't matter. The BOSS got the ORB.\p"
+	.string "The bubbliest ORB there is.$"
 
 MtPyre_Summit_Text_Grunt4Intro:
-	.string "Oh, I know!\n"
-	.string "You tried to join TEAM MAGMA,\l"
-	.string "but they wouldn't have you!\p"
-	.string "Well, don't think that we'll let you\n"
-	.string "join our TEAM AQUA!$"
+	.string "You tried to join MAGMA and they\n"
+	.string "wouldn't take you?\p"
+	.string "Too mild?$"
 
 MtPyre_Summit_Text_Grunt4Defeat:
-	.string "If you want to join TEAM AQUA that\n"
-	.string "badly, we can consider it…$"
+	.string "Want to join AQUA?\p"
+	.string "SPA tastings are on Tuesdays.$"
 
 MtPyre_Summit_Text_Grunt4PostBattle:
-	.string "We have a great combination going\n"
-	.string "with us members and our leader.$"
+	.string "Our members and our leader.\p"
+	.string "Like water and bubbles.$"
 
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
-	.string "ARCHIE: TEAM MAGMA's MAXIE got ahead\n"
-	.string "of us, but we also got what we wanted.\p"
-	.string "The RED ORB preserved at MT. PYRE…\n"
-	.string "I, ARCHIE, now have it in my possession!\p"
-	.string "Fufufu… Now we can bring our ultimate\n"
-	.string "objective to fruition!\p"
-	.string "Okay, TEAM!\n"
-	.string "We're pulling out!$"
+	.string "ARCHIE: MAXIE beat us here, but I got\n"
+	.string "what I wanted.\p"
+	.string "The RED ORB!\p"
+	.string "With it, KYOGRE becomes the biggest\n"
+	.string "bottling plant in history.\p"
+	.string "Fwahaha! TEAM! We're pulling out!$"
 
 MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
-	.string "Oh, no…\n"
-	.string "This cannot happen…\p"
-	.string "Not only the BLUE ORB, but even\n"
-	.string "the RED ORB has been taken…\p"
-	.string "The BLUE ORB and RED ORB must never\n"
-	.string "be separated. They belong together.\p"
-	.string "What are those men trying to do with\n"
-	.string "the two ORBS?\p"
-	.string "… … … … … …\n"
+	.string "Oh, no… This can't be…\p"
+	.string "The BLUE ORB and the RED ORB, both\n"
+	.string "taken…\p"
+	.string "They must never be separated. They\n"
+	.string "belong together.\p"
+	.string "What do those men want with them?\p"
 	.string "… … … … … …\p"
-	.string "Oh, yes. Was it TEAM MAGMA who came\n"
-	.string "and took the BLUE ORB first?\p"
-	.string "Well, in their haste, they left this\n"
-	.string "behind.\p"
-	.string "I couldn't imagine what exactly it\n"
-	.string "could be.\p"
-	.string "I would like you to have it.\n"
-	.string "Perhaps it will be useful in some way.$"
+	.string "TEAM MAGMA took the BLUE ORB first.\p"
+	.string "In their hurry, they left this behind.\p"
+	.string "It smells like paprika. Take it. Maybe\n"
+	.string "it's useful.$"
 
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
-	.string "The BLUE ORB and RED ORB taken by\n"
-	.string "those sinister men…\p"
-	.string "They must never be apart…\n"
-	.string "I fear something terrible will happen…$"
+	.string "The BLUE ORB and RED ORB, taken by\n"
+	.string "those men…\p"
+	.string "They must never be apart…\p"
+	.string "Nothing good comes from mixing sauce\n"
+	.string "and soda.$"
 
 MtPyre_Summit_Text_GroudonKyogreAwakened:
-	.string "Oh, my goodness…\p"
-	.string "You say that both GROUDON and KYOGRE\n"
-	.string "have been awakened?\p"
-	.string "It is said that the BLUE ORB and\n"
-	.string "the RED ORB quelled the rage of\l"
-	.string "the two POKéMON…\p"
-	.string "It is also said that the true owner\n"
-	.string "of the ORBS still exists.\p"
-	.string "However, no one knows who, or what\n"
-	.string "exactly, the ORBS belong to.\p"
-	.string "It could be a human, or perhaps\n"
-	.string "a POKéMON, but no one knows.$"
+	.string "Oh, my…\p"
+	.string "GROUDON and KYOGRE have both\n"
+	.string "awakened?\p"
+	.string "The ORBS once calmed the rage of those\n"
+	.string "two…\p"
+	.string "They say the true owner of the ORBS\n"
+	.string "still exists.\p"
+	.string "Nobody knows who. Human or POKéMON.$"
 
 MtPyre_Summit_Text_ThoseTwoMenReturnedOrbs:
 	.string "The two men who took the ORBS came\n"
-	.string "back to return them on their own.\p"
-	.string "Those men…\n"
-	.string "Perhaps they are not so evil after all…$"
+	.string "back and returned them.\p"
+	.string "Maybe they're not so evil after all…\p"
+	.string "They even left free samples.$"
 
 MtPyre_Summit_Text_SuperAncientPokemonTaughtUs:
-	.string "The embodiments of the land, sea,\n"
-	.string "and the sky…\p"
-	.string "That is said to be the identities of\n"
-	.string "the super-ancient POKéMON…\p"
-	.string "In the same way that we humans and\n"
-	.string "POKéMON have life, our world, too,\l"
-	.string "is alive…\p"
-	.string "The super-ancient POKéMON have\n"
-	.string "taught us that…$"
+	.string "The embodiments of land, sea and sky…\p"
+	.string "That's what the super-ancient POKéMON\n"
+	.string "are…\p"
+	.string "Like us, the world is alive…\p"
+	.string "They taught us that. The hard way.$"
 
 MtPyre_Summit_Text_WillYouHearOutMyTale:
 	.string "MT. PYRE is where we calm the spirits\n"
@@ -589,12 +561,10 @@ MtPyre_Summit_Text_MaxieSilence:
 	.string "… … … … … …$"
 
 MtPyre_Summit_Text_HearTheNewLegendOfHoenn:
-	.string "It is my role to pass on the legends\n"
-	.string "of HOENN to future generations.\p"
-	.string "And the crisis that just ended in\n"
-	.string "SOOTOPOLIS rewrote a legend…\p"
-	.string "Have you the time to hear the new\n"
-	.string "legend of HOENN?$"
+	.string "My role is to pass on HOENN's legends.\p"
+	.string "The crisis in SOOTOPOLIS rewrote one…\p"
+	.string "Do you have time to hear the new legend\n"
+	.string "of HOENN?$"
 
 MtPyre_Summit_Text_HoennTrioTale:
 	.string "It happened long, long ago…\p"

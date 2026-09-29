@@ -217,26 +217,36 @@ Route117_EventScript_Aisha::
 
 Route117_Text_DayCarePokemonHadNewMove:
 	.string "I left my POKéMON at the DAY CARE.\p"
-	.string "When I got it back, it had a new move\n"
-	.string "that I didn't teach it.\l"
-	.string "I was really, really surprised.$"
+	.string "It came back with a move I didn't teach\n"
+	.string "it.\p"
+	.string "And an EGG. I have questions.$"
 
 Route117_Text_ArentTheseFlowersPretty:
-	.string "What do you think?\n"
 	.string "Aren't these flowers pretty?\p"
-	.string "I planted them all!$"
+	.string "I planted them all!\p"
+	.string "The AROMA LADY on ROUTE 118 keeps\n"
+	.string "asking if they can be smoked.$"
 
 Route117_Text_AirIsTastyHere:
-	.string "The air is tasty here!$"
+	.string "The air is tasty here!\p"
+	.string "CHOMP! CHOMP!\p"
+	.string "Notes of flowers, fresh grass and a\n"
+	.string "hint of DAY CARE.\p"
+	.string "…Mostly DAY CARE.\p"
+	.string "I'm going back for seconds!$"
 
 Route117_Text_RouteSignVerdanturf:
 	.string "ROUTE 117\n"
-	.string "{LEFT_ARROW} VERDANTURF TOWN$"
+	.string "{LEFT_ARROW} VERDANTURF TOWN\p"
+	.string "Clean air! Please don't breathe too\n"
+	.string "much of it.$"
 
 Route117_Text_RouteSignMauville:
 	.string "ROUTE 117\n"
-	.string "{RIGHT_ARROW} MAUVILLE CITY$"
+	.string "{RIGHT_ARROW} MAUVILLE CITY\p"
+	.string "Bring your own electricity.$"
 
 Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"
-	.string "“Let us raise your POKéMON.”$"
+	.string "“Let us raise your POKéMON.\p"
+	.string "”Don't ask where the EGGS come from.“$"

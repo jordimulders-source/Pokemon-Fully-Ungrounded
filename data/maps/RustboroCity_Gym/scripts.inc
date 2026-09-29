@@ -214,8 +214,9 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "the wind!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} received the STONE BADGE\n"
-	.string "from ROXANNE.$"
+	.string "{PLAYER} received the STONE BADGE from\n"
+	.string "ROXANNE.\p"
+	.string "It rocks.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 	.string "The STONE BADGE heightens the ATTACK\n"
@@ -237,60 +238,41 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "Don't waste it on a rag doll dance.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "RUSTBORO CITY POKéMON GYM\p"
+	.string "Rock on!$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
 	.string "RUSTBORO CITY POKéMON GYM\p"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "ROXANNE'S CERTIFIED TRAINERS: {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
-	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
-	.string "This is ROXANNE of RUSTBORO CITY.\p"
-	.string "I heard from BRAWLY that you're\n"
-	.string "moving up through the ranks of\l"
-	.string "TRAINERS at an incredible clip.\p"
-	.string "Well, I'd rather not think that\n"
-	.string "I can't beat you.\p"
-	.string "I promise, I will shape up my GYM\n"
-	.string "so that you may challenge us again.\p"
-	.string "I hope you'll be looking forward to\n"
-	.string "that occasion as much as me!\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
+	.string "… … … … … … … … … … … Beep!\p"
+	.string "ROXANNE: Hey {PLAYER}, it's ROXANNE!\n"
+	.string "BRAWLY says you're climbing the charts.\l"
+	.string "Number one with a bullet!\p"
+	.string "I'm rehearsing my GYM for a comeback\n"
+	.string "tour. Be there!\p"
+	.string "… … … … … … … … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registered GYM LEADER ROXANNE\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER ROXANNE in the\n"
+	.string "POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
-	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM LEADER here.\p"
-	.string "I'm sure we've both experienced many\n"
-	.string "battles since we last met.\p"
-	.string "I would like to see how much better\n"
-	.string "we've become. Let us battle!$"
+	.string "ROXANNE: Here I go again… Oh, it's you!\p"
+	.string "It's been a long time since I rock and\n"
+	.string "rolled. Let's battle!$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat:
-	.string "Grr…\n"
-	.string "Again, I have lost…$"
+	.string "Another one bites the dust…$"
 
 RustboroCity_Gym_Text_RoxannePostRematch:
-	.string "ROXANNE: I still have much to learn\n"
-	.string "when it comes to battling POKéMON.\p"
-	.string "That awareness makes me love battling\n"
-	.string "all that much more!$"
+	.string "ROXANNE: Don't stop believin'.\p"
+	.string "Now go, before I sing the whole album.$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
-	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM LEADER here.\p"
-	.string "I'm sure we've both experienced many\n"
-	.string "battles since we last met.\p"
-	.string "I would like to see how much better\n"
-	.string "we've become…\p"
-	.string "Oh, no…\n"
-	.string "You only have one POKéMON with you?\p"
-	.string "Please return with at least one more\n"
-	.string "POKéMON.$"
+	.string "ROXANNE: Here I go again… Oh, it's you!\p"
+	.string "It's been a long time since I rock and\n"
+	.string "rolled. Let's battle!\p"
+	.string "…Only one POKéMON? It takes two, baby.\n"
+	.string "Come back with at least two.$"

@@ -89,32 +89,28 @@ FallarborTown_PokemonCenter_1F_Movement_LanetteExitWest:
 	step_end
 
 FallarborTown_PokemonCenter_1F_Text_LanetteGreeting:
-	.string "Oh, hello.\n"
-	.string "You are?\p"
-	.string "Okay, your name's {PLAYER}{KUN}.\n"
-	.string "I can see that you're a TRAINER.\p"
-	.string "So that means you use the POKéMON\n"
-	.string "Storage System I developed.\p"
-	.string "How I arrived at that conclusion is\n"
-	.string "a simple deductive process.\p"
-	.string "You spoke to me because you wanted\n"
-	.string "to access something on this PC.\p"
-	.string "Oh, I'm sorry. I'm LANETTE.\p"
-	.string "Honestly, I'm glad to meet you--it's\n"
-	.string "great you're using the Storage System.\p"
-	.string "If you could, please visit me at home.\n"
-	.string "My house is on ROUTE 114.$"
+	.string "Oh, hello. You are?\p"
+	.string "{PLAYER}{KUN}. You're a TRAINER.\p"
+	.string "So you use the POKéMON Storage System.\n"
+	.string "I made it.\p"
+	.string "You're standing at the PC. Simple\n"
+	.string "deduction.\p"
+	.string "I'm LANETTE. Glad you use my system!\p"
+	.string "Visit me at home on ROUTE 114. I don't\n"
+	.string "get visitors. At all.$"
 
 FallarborTown_PokemonCenter_1F_Text_FossilManiacEdgeOfTown:
-	.string "I wonder what POKéMON looked like\n"
-	.string "long, long ago?\p"
-	.string "Maybe the FOSSIL MANIAC at the edge\n"
-	.string "of town will know.$"
+	.string "What did POKéMON look like long ago?\p"
+	.string "Ask the FOSSIL MANIAC at the edge of\n"
+	.string "town.\p"
+	.string "He'll tell you. For three hours.$"
 
 FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees:
-	.string "In the fields of FALLARBOR, we plant\n"
-	.string "seedlings of hardy trees that thrive\l"
-	.string "even in volcanic ash.$"
+	.string "In FALLARBOR, we plant hardy trees.\p"
+	.string "Reminds me of AGE OF EMPIRES II.\p"
+	.string "4,000 hours played.\p"
+	.string "I still forget to build farms.\p"
+	.string "…Wololo.$"
 
 FallarborTown_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

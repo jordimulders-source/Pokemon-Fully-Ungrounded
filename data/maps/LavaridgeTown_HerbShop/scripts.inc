@@ -40,25 +40,23 @@ LavaridgeTown_HerbShop_EventScript_ExplainCharcoal::
 	end
 
 LavaridgeTown_HerbShop_Text_WelcomeToHerbShop:
-	.string "Welcome to the HERB SHOP, home of\n"
-	.string "effective and inexpensive medicine!$"
+	.string "Welcome to the HERB SHOP!\p"
+	.string "Effective. Cheap. But very risky.\p"
+	.string "At your own risk.$"
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
-	.string "You've come to look at herbal medicine\n"
-	.string "in LAVARIDGE?\p"
-	.string "That's rather commendable.\p"
+	.string "Herbal medicine? At your age?\p"
 	.string "I like you! Take this!$"
 
 LavaridgeTown_HerbShop_Text_ExplainCharcoal:
-	.string "That CHARCOAL I gave you, it's used\n"
-	.string "for making herbal medicine.\p"
-	.string "It also does wonders when held by\n"
-	.string "a POKéMON.\p"
-	.string "It intensifies the power of FIRE-type\n"
-	.string "moves.$"
+	.string "That CHARCOAL is used for herbal\n"
+	.string "medicine.\p"
+	.string "Held by a POKéMON, it powers up FIRE\n"
+	.string "moves.\p"
+	.string "Don't smoke it.$"
 
 LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
-	.string "Herbal medicine works impressively well.\n"
-	.string "But your POKéMON will dislike you for it.\l"
-	.string "It must be horribly bitter!$"
+	.string "Herbal medicine works great.\p"
+	.string "Your POKéMON will hate you for it.\p"
+	.string "They might experience a bad trip.$"
 

@@ -23,10 +23,9 @@ MauvilleCity_PokemonCenter_2F_EventScript_Youngster::
 	end
 
 MauvilleCity_PokemonCenter_2F_Text_Youngster:
-	.string "Did you know that you can link battle\n"
-	.string "at the COLOSSEUM here?\p"
-	.string "They put up your record on the wall\n"
-	.string "for everyone to see.\p"
-	.string "It's embarrassing if you lose more\n"
-	.string "often than you win…$"
+	.string "You can link battle at the COLOSSEUM\n"
+	.string "here.\p"
+	.string "They put your record on the wall.\p"
+	.string "Mine says 0 wins, 83 losses. I'm\n"
+	.string "consistent.$"
 

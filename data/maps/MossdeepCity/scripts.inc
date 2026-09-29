@@ -3,6 +3,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call MossdeepCity_EventScript_SetScottDisguise
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
@@ -304,125 +305,131 @@ MossdeepCity_Movement_ScottExitEast:
 	step_end
 
 MossdeepCity_Text_WantKingsRockStevenGaveMe:
-	.string "I got this from STEVEN, but I don't\n"
-	.string "know what it's good for.\p"
-	.string "I think it's called KING'S ROCK.\n"
+	.string "I got this from STEVEN. He called it the\n"
+	.string "KING'S ROCK and then screamed for a\l"
+	.string "full minute.\p"
 	.string "Do you want it?$"
 
 MossdeepCity_Text_YouCanKeepIt:
-	.string "Why would you want it?\n"
-	.string "You're weird.\p"
-	.string "You can keep it, but keep it a secret\n"
-	.string "from STEVEN.$"
+	.string "Why would you want it? You're weird.\p"
+	.string "Keep it. But don't tell STEVEN. He'll\n"
+	.string "write a song about it.$"
 
 MossdeepCity_Text_StevensHouseOverThere:
-	.string "STEVEN's house is right over there!$"
+	.string "STEVEN's house is right over there! You\n"
+	.string "can hear the double bass from here.$"
 
 MossdeepCity_Text_WhatToDoWithWeirdRock:
-	.string "Yeah, you think so, too! What are you\n"
-	.string "supposed to do with some weird rock?$"
+	.string "Right? What do you even do with a weird\n"
+	.string "rock?\p"
+	.string "STEVEN has 400 of them.$"
 
 MossdeepCity_Text_WailmerWatching:
-	.string "Around MOSSDEEP, you can see wild\n"
-	.string "WAILMER.\p"
-	.string "It's called, uh…\n"
-	.string "What was it now…\p"
-	.string "WAI, WAI, WAI…\p"
-	.string "WAILMER watching!$"
+	.string "Around MOSSDEEP you can see wild\n"
+	.string "WAILMER. It's called WAILMER watching.\p"
+	.string "In anime they'd be giant sea titans.\n"
+	.string "Here they just… float.$"
 
 MossdeepCity_Text_SpaceCenterReceivedLetter:
-	.string "The island's SPACE CENTER has been\n"
-	.string "launching huge rockets.\p"
-	.string "There's been some kind of an uproar\n"
-	.string "over a letter they received recently.$"
+	.string "The SPACE CENTER launches huge\n"
+	.string "rockets.\p"
+	.string "They got a scary letter recently.\p"
+	.string "Probably from the neighbors. The\n"
+	.string "rockets are loud.$"
 
 MossdeepCity_Text_SpaceCenterLaunchingRockets:
-	.string "The island's SPACE CENTER has been\n"
-	.string "launching huge rockets.$"
+	.string "The SPACE CENTER keeps launching huge\n"
+	.string "rockets.\p"
+	.string "None with me on it.$"
 
 MossdeepCity_Text_MossdeepTargetedByMagma:
-	.string "I heard from a SAILOR buddy that\n"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
-	.string "I also heard that someone came along\n"
-	.string "and wiped the floor with them!\p"
-	.string "But MOSSDEEP here's been targeted\n"
-	.string "by that TEAM MAGMA.\p"
-	.string "If you want to know what they're up to,\n"
-	.string "go visit the SPACE CENTER.$"
+	.string "A SAILOR buddy says TEAM AQUA set up\n"
+	.string "shop in LILYCOVE.\p"
+	.string "And someone wiped the floor with them!\p"
+	.string "Now TEAM MAGMA wants MOSSDEEP.\p"
+	.string "Go check the SPACE CENTER. Bring milk.\n"
+	.string "For the spice.$"
 
 MossdeepCity_Text_FeelReliefOnLand:
-	.string "I'm a SAILOR, so the sea's obviously\n"
-	.string "more important to me.\p"
-	.string "But you know? When I get back on land\n"
-	.string "after a long voyage, I do feel relief!$"
+	.string "I'm a SAILOR. The sea means everything\n"
+	.string "to me.\p"
+	.string "But after a long voyage, land feels so\n"
+	.string "good.\p"
+	.string "And the bars are here.$"
 
 MossdeepCity_Text_NiceIfWorldCoveredByFlowers:
-	.string "Wouldn't it be nice?\p"
-	.string "If the whole world was covered in\n"
-	.string "plants and flowers like this island?$"
+	.string "Wouldn't it be nice if the whole world\n"
+	.string "was covered in flowers?\p"
+	.string "Then we'd all live in space. Because of\n"
+	.string "the allergies.$"
 
 MossdeepCity_Text_LifeNeedsSeaToLive:
-	.string "All life needs the sea to live, even\n"
-	.string "though it makes its home on the land.\p"
-	.string "Life, having run its course, becomes\n"
-	.string "soil and returns to the land.\p"
-	.string "And the sea is always connected to\n"
-	.string "the land.\p"
-	.string "Yes, like the very shoreline here.$"
+	.string "All life needs the sea.\p"
+	.string "Life runs its course, becomes soil,\n"
+	.string "returns to the land.\p"
+	.string "Then we launch it into space. That's the\n"
+	.string "dream.$"
 
 MossdeepCity_Text_SurfExhilarating:
-	.string "A voyage on a ship is fine.\p"
-	.string "But crossing the sea with POKéMON\n"
-	.string "using SURF…\p"
-	.string "Now that's an exhilarating trip!\n"
-	.string "Wouldn't you agree, youngster?$"
+	.string "A ship is fine.\p"
+	.string "But SURFING with POKéMON?\n"
+	.string "Exhilarating!\p"
+	.string "A rocket would be better. I've applied\n"
+	.string "four times.$"
 
 MossdeepCity_Text_SpecialSpaceCenterRock:
-	.string "This rock has a special meaning to\n"
-	.string "the people at the SPACE CENTER.\p"
-	.string "They put it here as their wish for\n"
-	.string "their rockets to fly safely.\p"
-	.string "When you make a wish, what do you use?\n"
-	.string "Do you wish upon a star?\p"
-	.string "I use a wish tag to make it happen.\n"
-	.string "That's what I do.$"
+	.string "This rock means a lot to the SPACE\n"
+	.string "CENTER.\p"
+	.string "They wish upon it so their rockets fly\n"
+	.string "safely.\p"
+	.string "Until they eventually get fucked up by\n"
+	.string "DEOXYS.$"
 
 MossdeepCity_Text_ItsAWhiteRock:
-	.string "It's a white rock.$"
+	.string "It's a white rock.\p"
+	.string "It's just a rock. STEVEN checked.$"
 
 MossdeepCity_Text_GymSign:
 	.string "MOSSDEEP CITY POKéMON GYM\n"
 	.string "LEADERS: LIZA & TATE\p"
-	.string "“The mystic combination!”$"
+	.string "“The mystic combination! They finish\n"
+	.string "each other's… sandwiches.”$"
 
 MossdeepCity_Text_CitySign:
 	.string "MOSSDEEP CITY\n"
-	.string "“Our slogan: Cherish POKéMON!”$"
+	.string "“Our slogan: Cherish POKéMON! Our other\l"
+	.string "slogan: Get to space.”$"
 
 MossdeepCity_Text_SpaceCenterSign:
 	.string "MOSSDEEP SPACE CENTER\n"
-	.string "“The closest place to space.”$"
+	.string "“The closest place to space. Still not\l"
+	.string "very close.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown:
-	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
-	.string "I'm doing great!\p"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
-	.string "pretty strong, so I decided to come\l"
-	.string "take a look-see for myself.\p"
-	.string "But there's something wrong about\n"
-	.string "this town.\p"
-	.string "People are going on about a warning\n"
-	.string "letter and the SPACE CENTER…\p"
-	.string "I don't think it concerns me in any\n"
-	.string "way, though.$"
+	.string "SCOTT: Hi, {PLAYER}{KUN}! Like it? I'm you now.\n"
+	.string "I've been you all week. Your mom didn't\l"
+	.string "notice.\p"
+	.string "… … …\p"
+	.string "Okay, okay! Don't look at me like that.\n"
+	.string "I'll stop. I promise.\p"
+	.string "…People here are talking about a\n"
+	.string "warning letter. I didn't write it. This\l"
+	.string "time.$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
-	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
-	.string "LEADER come in.\p"
-	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+	.string "Ahh… The waves on my feet… Nice.\p"
+	.string "SOOTOPOLIS has a new GYM LEADER.\p"
+	.string "He owns a winery. Or is a winery. Hard to\n"
+	.string "say.$"
 
+
+@ Project Grounded: Scott is steeds vermomd. Hier als de speler zelf.
+MossdeepCity_EventScript_SetScottDisguise::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_EventScript_SetScottDisguiseFemale
+	return
+
+MossdeepCity_EventScript_SetScottDisguiseFemale::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	return

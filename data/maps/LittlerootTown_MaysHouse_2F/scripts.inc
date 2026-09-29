@@ -321,8 +321,9 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Now get yo ass outta here!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
-	.string "POKéMON fully restored!\n"
-	.string "Items ready, and…$"
+	.string "POKéMON fully healed! Items packed,\n"
+	.string "and…\p"
+	.string "POKéDEX charged!$"
 
 RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Hello, my hair is not white!\n"
@@ -338,8 +339,8 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "That's easy mode!$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
-	.string "POKéMON fully restored…\n"
-	.string "Items all packed, and…$"
+	.string "POKéMON healed… Items packed…\p"
+	.string "Hair… perfect.$"
 
 RivalsHouse_2F_Text_ItsRivalsPokeBall:
 	.string "It's {RIVAL}'s POKé BALL!\p"

@@ -32,15 +32,24 @@ DewfordTown_PokemonCenter_1F_EventScript_Man::
 	end
 
 DewfordTown_PokemonCenter_1F_Text_StoneCavern:
-	.string "There's a stone cavern at the edge\n"
-	.string "of town.\p"
-	.string "I've heard you can find rare stones\n"
-	.string "there.$"
+	.string "There's a stone cavern at the edge of\n"
+	.string "town. Rare stones, dark corners, no\l"
+	.string "neighbors.\p"
+	.string "Last Friday I saw MADAME SILK go in\n"
+	.string "with a boombox and a bag of feathers.\l"
+	.string "Ten minutes later, RANDY followed with a\l"
+	.string "fishing ROD.\p"
+	.string "There are no fish in that cave.$"
 
 DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
-	.string "Even if a POKéMON faints and can't\n"
-	.string "battle, it can still use a move learned\l"
-	.string "from a HIDDEN MACHINE (HM).$"
+	.string "Even if a POKéMON faints, it can still\n"
+	.string "use a move from a HIDDEN MACHINE.\p"
+	.string "An unconscious PELIPPER carrying you\n"
+	.string "across the ocean. A knocked-out\l"
+	.string "LAPRAS as your ferry.\p"
+	.string "Anywhere else they'd call that POKéMON\n"
+	.string "abuse. But somehow it's still perfectly\l"
+	.string "legal these days.$"
 
 DewfordTown_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

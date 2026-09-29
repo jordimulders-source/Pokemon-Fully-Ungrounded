@@ -39,14 +39,26 @@ AI: Check Bad Move
 Arrokuda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Dive
+- Focus Energy
+- Crunch
 
 Blastoise
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rain Dance
+- Aqua Tail
+- Shell Smash
 
 Crawdaunt
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Metal Claw
+- Clamp
+- Razor Shell
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
@@ -60,6 +72,10 @@ AI: Check Bad Move
 Mantine
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Headbutt
+- Air Slash
+- Aqua Ring
 
 Duraludon
 Level: 36
@@ -89,6 +105,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Seismitoad
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Round
+- Flail
+- Uproar
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
@@ -123,6 +143,10 @@ AI: Check Bad Move
 Drednaw
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Headbutt
+- Counter
+- Jaw Lock
 
 Fraxure
 Level: 41
@@ -144,10 +168,18 @@ AI: Check Bad Move
 Lapras
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Water Pulse
+- Brine
+- Body Slam
 
 Tentacruel
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Power Gem
+- Dazzling Gleam
+- Hyper Voice
 
 Toedscruel
 Level: 41
@@ -169,10 +201,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jellicent
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Recover
+- Shadow Ball
+- Whirlpool
 
 Clawitzer
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Hone Claws
+- Water Pulse
+- Swords Dance
 
 === TRAINER_GABRIELLE_1 ===
 Name: GABRIELLE
@@ -219,10 +259,18 @@ AI: Check Bad Move
 Chewtle
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Tackle
+- Water Gun
+- Bite
 
 Mareanie
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Peck
+- Wide Guard
+- Bite
 
 Slowpoke_Galar
 Level: 12
@@ -231,6 +279,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Tatsugiri
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Splash
+- Harden
+- Helping Hand
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -316,6 +368,10 @@ AI: Check Bad Move
 Wishiwashi
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aqua Tail
+- Aqua Ring
+- Endeavor
 
 Absol
 Level: 41
@@ -324,6 +380,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Psych Up
+- Amnesia
+- Stored Power
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -358,10 +418,18 @@ AI: Check Bad Move
 Drizzile
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Growl
+- Water Gun
+- Water Pulse
 
 Veluza
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Pluck
+- Water Pulse
+- Focus Energy
 
 Bombirdier
 Level: 16
@@ -370,6 +438,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skrelp
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Acid
+- Water Gun
+- Tail Whip
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: GRUNT
@@ -383,6 +455,10 @@ AI: Check Bad Move
 Pelipper
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Swallow
+- Spit Up
+- Weather Ball
 
 Abomasnow
 Level: 32
@@ -472,10 +548,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Carvanha
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rage
+- Focus Energy
+- Aqua Jet
 
 Omanyte
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rollout
+- Sand Attack
+- Water Gun
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
 Name: GRUNT
@@ -511,6 +595,10 @@ AI: Check Bad Move
 Jellicent
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Recover
+- Shadow Ball
+- Whirlpool
 
 Rotom
 Level: 37
@@ -553,10 +641,18 @@ AI: Check Bad Move
 Sealeo
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aurora Beam
+- Muddy Water
+- Encore
 
 Feraligatr
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Ice Fang
+- Flail
+- Crunch
 
 Fraxure
 Level: 36
@@ -574,10 +670,18 @@ AI: Check Bad Move
 Relicanth
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rock Slide
+- Brine
+- Take Down
 
 Gorebyss
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Safeguard
+- Dive
+- Baton Pass
 
 Cursola
 Level: 33
@@ -595,6 +699,10 @@ AI: Check Bad Move
 Gyarados
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Acrobatics
+- Rain Dance
+- Aqua Tail
 
 Honchkrow
 Level: 36
@@ -620,6 +728,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Seadra
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Charge Beam
+- Agility
+- Psybeam
 
 Skarmory
 Level: 35
@@ -667,6 +779,10 @@ AI: Basic Trainer
 Wailord
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Bounce
+- Aurora Beam
+- Body Slam
 
 Snorlax
 Level: 39
@@ -683,6 +799,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Dondozo
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Noble Roar
+- Soak
+- Body Slam
 
 Cetitan
 Level: 39
@@ -733,6 +853,10 @@ AI: Basic Trainer
 Politoed
 Level: 36
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Rain Dance
+- Body Slam
+- Psychic Noise
 
 Armaldo
 Level: 36
@@ -741,6 +865,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Kabutops
 Level: 36
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Mud Shot
+- Ancient Power
+- Brine
 
 Aerodactyl
 Level: 36
@@ -770,10 +898,18 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Alomomola
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Soak
+- Wish
+- Brine
 
 Samurott_Hisui
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Aerial Ace
+- Aqua Jet
+- Encore
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -947,11 +1083,23 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Thwackey
+Amoonguss
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Amoonguss
+Breloom
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Parasect
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Shiinotic
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Toedscruel
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2366,7 +2514,7 @@ Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WILTON_1 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2375,7 +2523,7 @@ Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta
+Snover
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2395,7 +2543,7 @@ Wailmer
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Makuhita
+Rhyhorn
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2633,7 +2781,7 @@ Ability: Protean
 - Aura Sphere
 
 === TRAINER_WILTON_2 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2642,7 +2790,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Ponyta
+Abomasnow
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
@@ -2662,12 +2810,12 @@ Wailmer
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Hariyama
+Rhyhorn
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_WILTON_3 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2676,7 +2824,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -2696,12 +2844,12 @@ Wailord
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Hariyama
+Rhydon
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_WILTON_4 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2710,7 +2858,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -2730,12 +2878,12 @@ Wailord
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Hariyama
+Rhydon
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_WILTON_5 ===
-Name: WILTON
+Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -2744,7 +2892,7 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Rapidash
+Abomasnow
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -2764,7 +2912,7 @@ Wailord
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Hariyama
+Rhydon
 Level: 40
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -2995,7 +3143,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 
 === TRAINER_WENDY ===
-Name: WENDY
+Name: SCARLET
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -3004,19 +3152,19 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Mawile
+Armarouge
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Florges
+Lokix
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Swanna
+Glimmora
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Lurantis
+Houndstone
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4576,6 +4724,10 @@ Monferno
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Capsakid
+Level: 25
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_STEVE_2 ===
 Name: STEVE
 Class: Pokemaniac
@@ -5754,10 +5906,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Palafin
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Charm
+- Acrobatics
+- Encore
 
 Wishiwashi
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Uproar
+- Aqua Tail
+- Aqua Ring
 
 === TRAINER_SHAWN ===
 Name: SHAWN
@@ -6125,7 +6285,7 @@ Slugma
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
+Pidgey
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6158,7 +6318,7 @@ Magcargo
 Level: 32
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Pelipper
+Dolliv
 Level: 32
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6191,7 +6351,7 @@ Magcargo
 Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Pelipper
+Arboliva
 Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6224,7 +6384,7 @@ Magcargo
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Pelipper
+Arboliva
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6257,7 +6417,7 @@ Magcargo
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Pelipper
+Arboliva
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -10113,35 +10273,21 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Poochyena
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
 
-Meowth
+Poochyena
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
 
-Electabuzz
+Poochyena
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
 
-Plusle
-Level: 12
+Poochyena
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
-
-Chansey
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
-
-Lucario
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Metronome
 
 === TRAINER_BEN ===
 Name: BEN
@@ -10294,11 +10440,15 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Aron
+Koffing
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Meowth
+Grimer
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Golbat
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11002,7 +11152,7 @@ Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_ANTHONY ===
-Name: ANTHONY
+Name: ARMSTRONG
 Class: Triathlete
 Pic: Cycling Triathlete M
 Gender: Male
@@ -15044,26 +15194,30 @@ Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JAZMYN ===
-Name: JAZMYN
+Name: VIOLET
 Class: Cooltrainer 2
 Pic: Cooltrainer F
 Gender: Female
 Music: Cool
-Items: Hyper Potion
+Items: Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Houndoom
+Ceruledge
 Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Zoroark
+Mabosstiff
 Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Honchkrow
+Espathra
 Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Cyclizar
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JONAS ===
 Name: JONAS
@@ -16868,10 +17022,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Vaporeon
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Water Pulse
+- Aurora Beam
+- Aqua Ring
 
 Lanturn
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Tail Glow
+- Aqua Ring
+- Signal Beam
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -17116,6 +17278,10 @@ Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Litten
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Capsakid
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -17510,10 +17676,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Poliwrath
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Circle Throw
+- Body Slam
+- Hypnosis
 
 Barbaracle
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rock Polish
+- Slash
+- Hone Claws
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
@@ -20344,6 +20518,7 @@ Class: Rich Boy
 Pic: Rich Boy
 Gender: Male
 Music: Rich
+Items: Full Restore / Full Restore / Max Revive / Max Revive
 Double Battle: No
 AI: Check Bad Move
 
@@ -20356,6 +20531,14 @@ Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sandile
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Furfrou
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Meowth_Alola
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -21069,6 +21252,10 @@ Durant
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Scovillain
+Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
 Name: GRUNT
 Class: Team Magma
@@ -21087,6 +21274,10 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Centiskorch
+Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Scovillain
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -21664,17 +21855,35 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 13
+Machop
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
 
-Cacnea
-Level: 13
+Meowth
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
 
-Tandemaus
-Level: 13
+Electabuzz
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
+
+Plusle
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
+
+Chansey
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
+
+Lucario
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Metronome
 
 === TRAINER_MELINA ===
 Name: MELINA

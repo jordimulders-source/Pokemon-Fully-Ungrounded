@@ -242,9 +242,48 @@ LavaridgeTown_EventScript_EggWoman::
 	playfanfare MUS_OBTAIN_ITEM
 	message LavaridgeTown_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_WYNAUT
+	call LavaridgeTown_EventScript_GiveOddEgg
 	release
 	end
+
+@ Project Grounded: een "Odd Egg" zoals in Crystal. Eén van 8 soorten (elk 1/8), 50% kans op shiny.
+LavaridgeTown_EventScript_GiveOddEgg::
+	random 8
+	switch VAR_RESULT
+	case 0, LavaridgeTown_EventScript_OddEggLarvesta
+	case 1, LavaridgeTown_EventScript_OddEggDeino
+	case 2, LavaridgeTown_EventScript_OddEggLitwick
+	case 3, LavaridgeTown_EventScript_OddEggFuecoco
+	case 4, LavaridgeTown_EventScript_OddEggManaphy
+	case 5, LavaridgeTown_EventScript_OddEggTogepi
+	case 6, LavaridgeTown_EventScript_OddEggFerroseed
+	giveegg SPECIES_TOXEL
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggLarvesta::
+	giveegg SPECIES_LARVESTA
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggDeino::
+	giveegg SPECIES_DEINO
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggLitwick::
+	giveegg SPECIES_LITWICK
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggFuecoco::
+	giveegg SPECIES_FUECOCO
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggManaphy::
+	giveegg SPECIES_MANAPHY
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggTogepi::
+	giveegg SPECIES_TOGEPI
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggFerroseed::
+	giveegg SPECIES_FERROSEED
+LavaridgeTown_EventScript_OddEggShiny::
+	random 2
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_NopReturn
+	special SetLastPartyMonShiny
+	return
 
 LavaridgeTown_EventScript_ReceivedEgg::
 	msgbox LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
@@ -274,133 +313,108 @@ LavaridgeTown_EventScript_HerbShopSign::
 	end
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
-	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
-	.string "Oh? While I visited the hot springs,\n"
-	.string "you got the LAVARIDGE GYM BADGE.\p"
-	.string "You must have collected\n"
-	.string "good POKéMON…\l"
-	.string "No, I believe you raised some.\p"
-	.string "I guess it would be okay for you to\n"
-	.string "have this.$"
+	.string "MAY: {PLAYER}{KUN}! Long time!\p"
+	.string "You got the LAVARIDGE BADGE while I\n"
+	.string "was in the hot springs?\p"
+	.string "You didn't just catch strong POKéMON.\n"
+	.string "You raised them. Ugh.\p"
+	.string "Fine. You can have this.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
-	.string "MAY: With those GO-GOGGLES, you'll\n"
-	.string "have no trouble getting through the\l"
-	.string "desert near ROUTE 111.\p"
-	.string "But, wow, {PLAYER}{KUN}…\n"
-	.string "Challenging GYMS…\p"
-	.string "You're trying hard because you don't\n"
-	.string "want to lose to me, I bet!\p"
-	.string "{PLAYER}{KUN}, I think I should challenge\n"
-	.string "your dad in PETALBURG GYM.\p"
-	.string "See you again!$"
+	.string "MAY: With those GO-GOGGLES, the desert\n"
+	.string "near ROUTE 111 is no problem.\p"
+	.string "But wow, {PLAYER}{KUN}… GYMS…\p"
+	.string "You're only doing this so you don't lose\n"
+	.string "to me.\p"
+	.string "I'm going to challenge your dad in\n"
+	.string "PETALBURG. See ya!$"
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
-	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
-	.string "How's it going?\p"
-	.string "Hmm…\n"
-	.string "That's a decent collection of BADGES.\p"
-	.string "All right, then.\n"
-	.string "You may as well have this.$"
+	.string "BRENDAN: {PLAYER}, hey. Been a while.\p"
+	.string "Hmm… Decent BADGE collection.\p"
+	.string "Fine. You can have this.$"
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
-	.string "BRENDAN: Keep those with you if you're\n"
-	.string "planning on going into that desert near\l"
-	.string "ROUTE 111.\p"
-	.string "There should be some POKéMON that\n"
-	.string "are exclusively desert-dwellers.\l"
-	.string "You might look around for those.\p"
-	.string "As for me…\n"
-	.string "I'm considering challenging NORMAN,\l"
-	.string "the GYM LEADER of PETALBURG.\p"
-	.string "Unlike you, {PLAYER}, your dad looks like\n"
-	.string "he really is tough.\p"
-	.string "See you around!$"
+	.string "BRENDAN: Take these into the desert\n"
+	.string "near ROUTE 111.\p"
+	.string "Some POKéMON only live there. Look\n"
+	.string "around.\p"
+	.string "Me? I'm going to challenge NORMAN in\n"
+	.string "PETALBURG.\p"
+	.string "Your dad actually looks tough. Unlike\n"
+	.string "you.\p"
+	.string "See ya!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an EGG.\p"
-	.string "I'd hoped to hatch it by covering it in\n"
-	.string "hot sand by the hot springs.\l"
-	.string "But that doesn't seem to be enough…\p"
-	.string "I've heard it would be best if it were\n"
-	.string "kept together with POKéMON and\l"
-	.string "carried about.\p"
-	.string "You are a TRAINER, yes?\n"
-	.string "And your POKéMON radiate vitality.\p"
-	.string "So, what say you?\n"
-	.string "Will you take this EGG to hatch?$"
+	.string "I have an EGG. Tried hatching it in hot\n"
+	.string "sand. It's too odd for me.\p"
+	.string "Could be anything. I'm scared of it. Will\n"
+	.string "you take it?$"
 
 LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
-	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here EGG!$"
+	.string "Good! Walk plenty with it. And don't\n"
+	.string "blame me for what comes out.$"
 
 LavaridgeTown_Text_ReceivedTheEgg:
 	.string "{PLAYER} received the EGG.$"
 
 LavaridgeTown_Text_NoRoomForThisEgg:
-	.string "Oh? You've too many POKéMON.\n"
-	.string "There's no room for this EGG…$"
+	.string "You have too many POKéMON.\p"
+	.string "No room for the EGG. Make room. It's\n"
+	.string "worth it.$"
 
 LavaridgeTown_Text_AsYouWishThen:
-	.string "As you wish, then…\p"
-	.string "If you have a change of heart about\n"
-	.string "hatching this EGG, I will be here.$"
+	.string "As you wish… It'll hatch into something\n"
+	.string "weird anyway.$"
 
 LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
-	.string "Every so often, an EGG will be found at\n"
-	.string "the POKéMON DAY CARE.\p"
-	.string "Or at least that's how the rumor goes.$"
+	.string "Every so often an EGG turns up at the\n"
+	.string "DAY CARE. Nobody knows how. We don't\l"
+	.string "ask.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry:
-	.string "We draw as much hot water as we need,\n"
-	.string "and yet the hot springs never run dry.\p"
-	.string "Isn't it magical?\p"
-	.string "These hot springs appear near active\n"
-	.string "volcanoes. Veins of water under the\l"
-	.string "ground are heated by magma to well up\l"
-	.string "as hot springs.$"
+	.string "We take all the hot water we want, and\n"
+	.string "the springs never run dry.\p"
+	.string "It's magma. Heating water. Under our\n"
+	.string "feet.\p"
+	.string "Don't think about it too much.$"
 
 LavaridgeTown_Text_PokemonNippedBackside:
-	.string "Being buried in this hot sand is…\n"
-	.string "Sigh…\p"
-	.string "So warm and heavenly…\p"
+	.string "Being buried in hot sand… So warm…\p"
 	.string "Eh? Gyaah! Ouch!\p"
-	.string "A POKéMON nipped my backside!$"
+	.string "A POKéMON bit my behind! Again!$"
 
 LavaridgeTown_Text_OhYouLikeHotSprings:
-	.string "Oh, you like hot springs, do you?\p"
-	.string "That's surprising for one as young\n"
-	.string "as you.$"
+	.string "You like hot springs? At your age?\p"
+	.string "Wait until your back starts talking to\n"
+	.string "you.$"
 
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"
-	.string "I want to become a beautiful and strong\n"
-	.string "GYM LEADER like FLANNERY.$"
+	.string "I want to be a GYM LEADER like\n"
+	.string "FLANNERY.\p"
+	.string "Mom says I also need to shower\n"
+	.string "sometimes. Like FLANNERY doesn't.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
-	.string "If people put POKéMON in hot springs,\n"
-	.string "it might be seriously strange.\p"
-	.string "Why, it might be an electric bath, or\n"
-	.string "a bubble bath, or even a lava bath…$"
+	.string "Life hasn't been the same since\n"
+	.string "MICHAEL JACKSON died.$"
 
 LavaridgeTown_Text_HotSpringsClaims:
-	.string "They're claiming that these hot springs\n"
-	.string "are good for calming nervous tension,\l"
-	.string "relieving aching muscles, solving\l"
-	.string "romantic problems, and attracting\l"
-	.string "money…$"
+	.string "Come on, it's been 17 years.$"
 
 LavaridgeTown_Text_TownSign:
 	.string "LAVARIDGE TOWN\p"
-	.string "“POKéMON CENTER HOT SPRINGS\n"
-	.string "An excellent place for relaxing!”$"
+	.string "“HEAL. FIGHT. FAINT. WHAT A LIFE.”$"
 
 LavaridgeTown_Text_GymSign:
 	.string "LAVARIDGE TOWN POKéMON GYM\n"
-	.string "LEADER: FLANNERY\l"
-	.string "“One with a fiery passion that burns!”$"
+	.string "LEADER: FLANNERY\p"
+	.string "“Off the grid. No WiFi. Just raw,\n"
+	.string "unwashed heat!”$"
 
 LavaridgeTown_Text_HerbShopSign:
 	.string "POKéMON HERB SHOP\n"
-	.string "“Bitter taste--better cure!”$"
+	.string "“Bitter taste--better cure! Your\l"
+	.string "POKéMON will hate you.”$"
 

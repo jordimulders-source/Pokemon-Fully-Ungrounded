@@ -42,25 +42,26 @@ MauvilleCity_House2_EventScript_DeclineTrade::
 	end
 
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
-	.string "If I had a BIKE, it'd be easy to cycle to\n"
-	.string "SLATEPORT for some shopping.\p"
-	.string "I'd be able to buy HARBOR MAIL at the\n"
-	.string "POKéMON MART in SLATEPORT…$"
+	.string "If I had a BIKE, I'd cycle to SLATEPORT\n"
+	.string "for shopping.\p"
+	.string "I'd buy HARBOR MAIL.\p"
+	.string "Wait, mail doesn't exist anymore? Who\n"
+	.string "would do that?$"
 
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
-	.string "Oh! You have HARBOR MAIL?\n"
-	.string "Will you trade it for a COIN CASE?$"
+	.string "Oh! You have HARBOR MAIL? Trade it for\n"
+	.string "a COIN CASE?$"
 
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
-	.string "Oh, I'm so happy!\n"
-	.string "Okay, I'll trade you a COIN CASE!$"
+	.string "I'm so happy! Here's the COIN CASE!\p"
+	.string "I'm finally free of it.$"
 
 MauvilleCity_House2_Text_UseCoinCaseAtGameCorner:
-	.string "That COIN CASE can be used\n"
-	.string "at the GAME CORNER.$"
+	.string "Use that COIN CASE at the GAME CORNER.\p"
+	.string "Or don't. I'm serious. Don't.$"
 
 MauvilleCity_House2_Text_ThatsDisappointing:
-	.string "Oh, that's disappointing.\p"
-	.string "A COIN CASE is needed for the\n"
-	.string "GAME CORNER.$"
+	.string "Oh, disappointing.\p"
+	.string "You need a COIN CASE for the GAME\n"
+	.string "CORNER.$"
 

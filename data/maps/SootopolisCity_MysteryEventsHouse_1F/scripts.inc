@@ -165,48 +165,50 @@ SootopolisCity_MysteryEventsHouse_1F_Movement_OldManMoveAsideRight:
 
 SootopolisCity_MysteryEventsHouse_1F_Text_OnlyAmusementWatchingBattles:
 	.string "When I was young, I traveled the world\n"
-	.string "as a POKéMON TRAINER.\p"
-	.string "Now that I've become an old buzzard,\n"
-	.string "my only amusement is watching young\l"
-	.string "TRAINERS battle.$"
+	.string "as a TRAINER.\p"
+	.string "Now I'm an old buzzard. My only fun is\n"
+	.string "watching young TRAINERS battle.\p"
+	.string "And criticizing them.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_DoorAppearsToBeLocked:
-	.string "The door appears to be locked.$"
+	.string "The door is locked. Something is\n"
+	.string "breathing behind it.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_ChallengeVisitingTrainer:
-	.string "A TRAINER named {STR_VAR_1}\n"
-	.string "is visiting my home.\p"
-	.string "Would you like to challenge\n"
-	.string "{STR_VAR_1}?$"
+	.string "A TRAINER named {STR_VAR_1} is visiting my\n"
+	.string "home.\p"
+	.string "They won't leave. Would you like to\n"
+	.string "challenge {STR_VAR_1}?$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_YouWontBattle:
-	.string "You won't battle? I'm disappointed\n"
-	.string "that I can't see you battle…$"
+	.string "You won't battle? Then who's going to\n"
+	.string "get them out of my house?$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_KeepItTo3On3:
 	.string "Oh, good, good!\p"
-	.string "But my house isn't all that sturdy.\p"
-	.string "Could I ask you to keep it down to\n"
-	.string "a 3-on-3 match?$"
+	.string "But my house isn't very sturdy.\p"
+	.string "Could you keep it to a 3-on-3 match?\n"
+	.string "The last guy broke my fridge.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_SaveProgressBeforeBattle:
-	.string "Before you two battle, you should\n"
-	.string "save your progress.$"
+	.string "Before you two battle, you should save\n"
+	.string "your progress.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_HopeToSeeGoodMatch:
-	.string "I hope to see a good match!$"
+	.string "I hope to see a good match! Mind the\n"
+	.string "vase.$"
 
 @ Unused
 SootopolisCity_MysteryEventsHouse_1F_Text_StrVar1Tie:
 	.string "{STR_VAR_1}$"
 
 SootopolisCity_MysteryEventsHouse_B1F_Text_MatchEndedUpDraw:
-	.string "The match ended up a draw.$"
+	.string "The match ended in a draw.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_BrilliantStandoff:
-	.string "So, it became a standoff.\p"
-	.string "It was a brilliant match in which\n"
-	.string "neither side conceded a step!$"
+	.string "A standoff!\p"
+	.string "Neither side gave an inch! Brilliant! Now\n"
+	.string "please both leave.$"
 
 @ Unused
 SootopolisCity_MysteryEventsHouse_1F_Text_StrVar1Won:
@@ -214,8 +216,8 @@ SootopolisCity_MysteryEventsHouse_1F_Text_StrVar1Won:
 
 SootopolisCity_MysteryEventsHouse_1F_Text_ThatWasSuperlative:
 	.string "That was superlative!\p"
-	.string "Why, it was like seeing myself in\n"
-	.string "my youth again!$"
+	.string "It was like seeing myself in my youth! I\n"
+	.string "had more hair then.$"
 
 @ Unused
 SootopolisCity_MysteryEventsHouse_1F_Text_StrVar1Lost:
@@ -223,6 +225,6 @@ SootopolisCity_MysteryEventsHouse_1F_Text_StrVar1Lost:
 
 SootopolisCity_MysteryEventsHouse_1F_Text_TooBadForYou:
 	.string "Ah, too bad for you!\p"
-	.string "But it was a good match.\n"
-	.string "I hope you can win next time.$"
+	.string "But it was a good match. Try again. The\n"
+	.string "house is still standing.$"
 

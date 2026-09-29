@@ -138,33 +138,32 @@ SkyPillar_Outside_EventScript_ClosedDoor::
 	end
 
 SkyPillar_Outside_Text_DoorIsClosed:
-	.string "The door is closed.$"
+	.string "The door is closed. It looks older than\n"
+	.string "the concept of doors.$"
 
 SkyPillar_Outside_Text_OpenedDoorToSkyPillar:
-	.string "WALLACE: Oh, my, I'm terribly sorry!\p"
-	.string "In my haste, I didn't notice that\n"
-	.string "I'd left you behind!\p"
-	.string "I've opened the locked door of\n"
-	.string "the SKY PILLAR.\p"
-	.string "{PLAYER}{KUN}, let's be on our way!$"
+	.string "WALLACE: Oh my, how terribly rude of me!\p"
+	.string "I was in such a hurry, I left you behind\n"
+	.string "with the bottles!\p"
+	.string "I've opened the door of the SKY PILLAR.\p"
+	.string "{PLAYER}{KUN}, let's go! The vintage waits for\n"
+	.string "no one!$"
 
 SkyPillar_Outside_Text_EarthquakeNotMomentToWaste:
-	.string "WALLACE: It's an earthquake!\p"
-	.string "There's not a moment to waste!\n"
-	.string "We've got to hurry!$"
+	.string "WALLACE: An earthquake! My cellar!\p"
+	.string "There's not a moment to waste! Hurry!$"
 
 SkyPillar_Outside_Text_SituationGettingWorse:
-	.string "WALLACE: Hmm…\n"
-	.string "The situation is getting worse…$"
+	.string "WALLACE: Hmm… This is getting worse.\n"
+	.string "And I'm getting sober.$"
 
 SkyPillar_Outside_Text_GotToGoBackForSootopolis:
 	.string "WALLACE: This isn't good…\p"
-	.string "The weather distortion is spreading\n"
-	.string "even here…\p"
+	.string "The weather chaos has even reached\n"
+	.string "this place…\p"
 	.string "{PLAYER}{KUN}.\p"
-	.string "RAYQUAZA should be farther up\n"
-	.string "from here.\p"
-	.string "I'm worried about SOOTOPOLIS.\n"
-	.string "I've got to go back.\p"
-	.string "Everything is in your hands now.\n"
-	.string "Don't fail us!$"
+	.string "RAYQUAZA should be up at the top.\p"
+	.string "I'm worried about SOOTOPOLIS. And my\n"
+	.string "wine cellar. Mostly SOOTOPOLIS. I have\l"
+	.string "to go back.\p"
+	.string "It's all up to you now. Don't fail us!$"

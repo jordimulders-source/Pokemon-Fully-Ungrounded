@@ -77,21 +77,17 @@ Route105_EventScript_AndresRematch::
 	end
 
 Route104_Text_DadPokenavCall:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
+	.string "… … … … … … Beep!\p"
 	.string "DAD: Oh, {PLAYER}?\p"
-	.string "… … … … … …\n"
-	.string "Where are you now?\l"
-	.string "It sounds windy wherever you are.\p"
-	.string "I just heard from DEVON's MR. STONE\n"
-	.string "about your POKéNAV, so I decided\l"
-	.string "to give you a call.\p"
-	.string "It sounds like you're doing fine,\n"
-	.string "so that's fine with me.\p"
-	.string "You take care now.\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
+	.string "… … … Where are you? It sounds windy.\p"
+	.string "MR. STONE told me about your POKéNAV,\n"
+	.string "so I called.\p"
+	.string "You sound fine. Good.\p"
+	.string "Take care.\p"
+	.string "… … … … … … Click!\p"
+	.string "…That was the longest conversation\n"
+	.string "we've had in years.$"
 
 Route104_Text_RegisteredDadInPokenav:
-	.string "Registered DAD NORMAN\n"
-	.string "in the POKéNAV.$"
+	.string "Registered DAD NORMAN in the POKéNAV.\p"
+	.string "He won't call. But he's there.$"

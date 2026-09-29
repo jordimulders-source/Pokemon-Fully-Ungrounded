@@ -14633,3 +14633,236 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.5] - Dialogen Abandoned Ship (Dialoogstudio)
 - 55 herschreven dialogen van het Abandoned Ship verwerkt (Captain's Office, gangen 1F/B1F, kamers 1F/B1F, Hidden Floor; trainers Charlie, Duncan, Demetrius, Thalia, Garrison, Jani, Kira & Dan incl. rematches), automatisch afgebroken voor het tekstvak.
+
+### [v.0.6.6] - Na-beta-gebieden
+- Afgesproken: dialogen in het Trick House, de Battle Frontier en de Battle Tents blijven tot na de beta vanilla (vastgelegd in CLAUDE.md).
+- Dialoogstudio: nieuw vinkje "Na-beta-gebieden verbergen" (standaard aan) haalt deze kaarten uit de kaartlijst en de zoekresultaten.
+
+### [v.0.6.7] - Gym-dialogen uit Firebase Studio
+- Dialogen die in Firebase Studio stonden maar nooit in de repo terechtkwamen, overgenomen uit de `maps`-export:
+  - Dewford Gym (UFC-thema, incl. Brawly), Mauville Gym, Lavaridge Gym, Fortree Gym, Mossdeep Gym, Sootopolis Gym (1F en B1F).
+  - Mauville City, Seashore House (Route 109) en Victory Road B2F.
+- Dewford Gym: Jocelyn (Romero), Laura (McGregor) en Lilith (Rogan) hebben nu de Black Belt-sprite i.p.v. Girl 3.
+- Pokémon League 1F: Rare Candy in de winkel.
+- Samengevoegd met wat de repo al had: Cliffords double battle, de Spiritomb/Muk-prullenbakken, de uitgebreide Lilycove-winkel, de Ability Capsule in Pacifidlog, de naadloze Mini Forest-verbinding en de fixes in Littleroot bleven behouden.
+- Regelafbreking gerepareerd in Flannery's overwinningstekst en de Mossdeep Gym-gids (twee keer `\n` in één tekstvak).
+
+### [v.0.6.8] - Dewford: roddeldorp (Randy & Madame Silk)
+- Nieuw verhaaltje in Dewford: iedereen roddelt over RANDY, die vreemdgaat met MADAME SILK (de oude man die de Silk Scarf geeft en een burlesque act doet).
+- Huis 1: Randy (ontkent alles), zijn vrouw (het slachtoffer, weet van niks) en hun Zigzagoon (weet alles).
+- Huis 2: Madame Silk (Silk Scarf-teksten) en de jongen die mijmert over de tijd dat Brawly's gym nog om vechten draaide.
+- Pokémon Center: de vrouw die Madame Silk en Randy de grot in zag gaan; de HM-man over flauwgevallen Pokémon die nog moeten vliegen en surfen.
+
+### [v.0.6.9] - Dialogen uit de Dialoogstudio (73 teksten)
+- Aqua Hideout (1F, B1F, B2F): alle grunts en Matt.
+- Cave of Origin B1F: Wallace, de sommelier.
+- Desert Underpass: teksten bij de fossielen.
+- Dewford Gym: Brawly's rematch-teksten.
+- Dewford Town: Mr. Briney, de visser (catfishing), de trendy jongen, de borden en de vrouw op straat.
+- Abandoned Ship Captain's Office: de man die de scanner zoekt.
+- `*` bestaat niet in het lettertype van de game: "*Does a Fortnite dance…*" staat er nu als "(Does a Fortnite dance and turns around.)".
+
+### [v.0.6.10] - Pokémon-grappen: Incineroar-haters, Sneasler, Cycling Road, All Your Base
+- Incineroar-haters: de man in het Fortree Pokémon Center (tournament-results), de jongen (Fake Out + Parting Shot) en de heer (Smash: Hero vs. Incineroar) in Lilycove Department Store 4F.
+- Atsushi (Mt. Pyre): Sneasler als ultieme Incineroar-counter.
+- Cycling Road: Anthony heet nu ARMSTRONG (vitamines…); Jacob zit op een huurfiets die over tijd is.
+- Space Center: de eerste Magma-grunt opent met "ALL YOUR BASE ARE BELONG TO US."
+
+### [v.0.6.11] - Cycling Road en Route 117
+- Cycling Road: Abigail is een Strava-fanaat, Jasmine komt niet meer uit haar klikpedalen.
+- Route 117: de triatleten Dylan, Maria en Melina zeuren alleen nog over blessures en ouderdom.
+- `tools/dialogen/import.py` zet rechte aanhalingstekens (") automatisch om naar “ en ” (het lettertype kent geen rechte).
+
+### [v.0.6.12] - Gitaristen, Palworld, Cuphead en meer
+- Gitaristen zingen echte nummers (regels aangeleverd door Jordi): Dalton (Enter Sandman / Master of Puppets; rematch: Life During Wartime), Fernando (Ace of Spades; rematch: Odyssey van Kyuss), Fabian (New Noise), Joseph (Feel Good Inc.).
+- Ronald (Route 132): Milotic als echte Incineroar-counter… tot hij merkt dat Milotic in deze game geen Competitive heeft.
+- Benjamin (Cycling Road): zingt "Op Fietse" van Skik.
+- Daisuke (Route 111): Cuphead ("A GREAT SLAM AND THEN SOME!" / "KNOCKOUT!", King Dice en de Devil).
+- Wyatt (Route 113): kraakt Palworld en de knockoffs van Lucario, Cobalion en Decidueye af.
+- Lavaridge Pokémon Center: de heer over heal, fight, faint. "What a life…"
+
+### [v.0.6.13] - Team Magma: de ultieme hot sauce, plus losse grappen
+- Team Magma is op missie voor de heetste hot sauce: alle grunts op Mt. Chimney, Jagged Pass en in de Magma Hideout (Da Bomb, Scoville, Capsakid/Scovillain, bleke Hoenners die niks pittigs kunnen eten).
+- Teams: de twee Mt. Chimney-grunts krijgen er een Capsakid bij, Magma Hideout-grunts 12 en 13 krijgen er een Scovillain bij (toegevoegd als 4e Pokémon).
+- Mossdeep Space Center: de matroos (machine elves en ayahuasca), de wetenschapper (AI en HAL), de Ninja Boy droomt na de diefstalbrief van space ice cream.
+- Sootopolis wordt Griekser: pita souvlaki, de juiste uitspraak van gyros, een Homerus-imitator en boosheid over Tom Holland en Matt Damon in The Odyssey.
+- Rustboro: twee kinderen missen McDonald's en KFC, de dikke man eet tegenwoordig gefrituurde Kakuna.
+- Perry (Route 118) doet vogelgeluiden na: Taillow en Wingull.
+- Mauville Game Corner: extreem verslaafde gokkers (spelinformatie blijft behouden).
+
+### [v.0.6.14] - Bernie's Pidgey, wc-grappen, Lance
+- Bernie (Kindler, Route 114): eerste gevecht Pidgey (lv 24, bewust als grap) i.p.v. Wingull. In de rematches is de Pidgey opgegeten: Pelipper wordt Dolliv (rematch 2) / Arboliva (3–5). Rematch-tekst verwijst ernaar.
+- Magma Hideout: twee grunts over de gevolgen van pittig eten (wc bezet, pijnlijk zitvlak).
+- Rustboro Pokémon Center: "All my childhood heroes are cancelled now. Who's next, LANCE?"
+
+### [v.0.6.15] - Rematch-teksten van de gymleiders
+- Roxanne (songregels + PokéNav-telefoontje), Wattson (WATTCOIN), Flannery (doet niet meer alsof), Winona (wil naar haar boomhut), Tate & Liza (Mercurius retrograde, tarot) en Wallace (sommelier): rematch-intro, verslagen, na de rematch en "maar één Pokémon".
+
+### [v.0.6.16] - Scott de stalker, de Winstrates, de Cable Club
+- Scott is een stalker in steeds een andere (opvallende) vermomming: nep-Birch (Rustboro School), je rivaal (Slateport, afhankelijk van je geslacht), wielrenner (Route 119), Beauty (Cove Lily Motel), jijzelf (Mossdeep, afhankelijk van je geslacht), Pokémon Center-verpleegster (Ever Grande). In Petalburg, Mauville en op de S.S. Tidal gewoon als Scott.
+- Scotts teksten in Slateport, Route 119, het motel, Birch's lab (telefoon), de S.S. Tidal en Ever Grande zijn veel creepier.
+- De Winstrates zijn een extreem fanatiek sportgezin.
+- Cable Club-receptioniste (in alle Pokémon Centers): weet dat ze nutteloos is.
+- `tools/dialogen/import.py` kan nu ook teksten in `data/text/*.inc` vervangen.
+
+### [v.0.6.17] - Nep-Birch, Wattson's datacenter, Gabby & Ty, musea
+- Scott: nep-Birch in de Rustboro School (vermomming mislukt: hij praat niet over poep), in Mossdeep verkleed als jijzelf.
+- Wattson: New Mauville is het slechtste datacenter ooit (AI, crypto, browsergeschiedenis; koeling uit 1998).
+- Gabby & Ty praten als politieke verslaggevers… met… veel… pauzes. Clickbait-titels, "like and subscribe".
+- Winstrates: de Macho Brace zit onder het kwijl.
+- Union Room (geen adapter): nog sarcastischer.
+- Musea: de receptioniste van het Oceanic Museum en de curator van het Lilycove Art Museum zijn irritant overdreven vriendelijk.
+
+### [v.0.6.18] - Wally (geschreven door Jordi)
+- Bord bij zijn huis: "WALLY'S LIVING OF PLACE".
+- Wally in Wanda's huis en op Victory Road praat in zijn eigen gebroken taal ("Strongness will be, then, fight amore!", "AGES FOR THE FIGHT! Pumping!", zoekt een vrouw en kind).
+
+### [v.0.6.19] - Wally's familie, Direct Corner, Union Room, kapotte robot
+- Wally's ouders, oom en de rest van Wanda's huis praten kleinerend over Wally (de logopedist gaf het op, niet de scherpste, tien stappen buiten = feest); alleen Wanda ziet hem als een (hele rare) diamond in the rough.
+- Direct Corner en Union Room (alle Pokémon Centers): over de top sarcastisch en overduidelijk nutteloos.
+- Devon Corporation 2F: een kapotte AI-assistent die tijdens het gesprek crasht.
+- `tools/dialogen/import.py` waarschuwt nu voor tekens die niet in het lettertype bestaan (zoals — en *).
+
+### [v.0.6.20] - Steven de metalhead, Devon, losse NPC's
+- Steven praat overal als een metalhead à la Jack Black (ROCK ON, SLAYEEEER, HEAVY METAAAAAL): Granite Cave, Route 118, Route 120, Space Center, zijn huis, Route 128, Sootopolis, Meteor Falls; ook de NPC's over Steven (Fortree, Mossdeep).
+- Devon Corporation: experimenten mislukken aan de lopende band; de fossielman is een miskend genie; Mr. Stone speelt Solitaire en vergeet je naam.
+- Losse NPC's: Mario Kart World zonder updates (Lilycove PC), na Pokopia wil iemand niet meer battlen (Slateport PC), Santiago drijft al sinds de release roerloos (Route 130), Darrin's vingers zijn rozijnen (Route 107), Roland wil op een Wailord surfen (Route 124), de gestrande Kelvin (Route 134), Alex ziet vliegende golems bij de Sealed Chamber (Route 134), de Mirage Island-opa is sarcastisch (Pacifidlog).
+
+### [v.0.6.21] - Spit or Swallow, Sabrina vs. Taylor
+- Nieuwe NPC op het strand van Slateport (25,57) die alleen vraagt: "Spit or swallow?"
+  - SPIT: Silicobra lv 10 met Sand Spit, moves Spit Up en Stockpile.
+  - SWALLOW: Hisui-Qwilfish lv 10 met Stockpile en Swallow.
+  - Daarna zegt hij alleen nog: "Nice." (FLAG_RECEIVED_SPIT_SWALLOW_MON, voorheen FLAG_UNUSED_0x022.) Met een volle party stelt hij alleen de vraag.
+- Verdanturf (huis): twee vrouwen discussiëren of Sabrina Carpenter of Taylor Swift beter is.
+
+### [v.0.6.22] - Ruilen, Trainer Tips
+- In-game ruilen aangepast (mail weggehaald):
+  - Rustboro: Ralts → Galar-Farfetch'd "SIR LEEK" (houdt een Leek vast).
+  - Fortree: Slugma (was Volbeat) → Galar-Ponyta "SPARKLES".
+  - Pacifidlog: Tentacool (was Bagon) → Mime Jr. "MIMEJR".
+  - Nieuw, Fortree (zelfde huis, de vrouw): Machoke → Haunter "SPOOKY". Grap: "Why didn't it evolve? …Oh right, evolution methods were changed. Level 37 now." (INGAME_TRADE_HAUNTER, FLAG_FORTREE_HAUNTER_TRADE_COMPLETED = voorheen FLAG_UNUSED_0x023.)
+  - Teksten van alle ruilers herschreven.
+- Trainer Tips-borden (Route 106, 109, 110 ×2, 111, 113, 116 ×2, 119) herschreven, deels door Jordi zelf.
+
+### [v.0.6.23] - Odd Egg, Pokédex-controleur, Castform, Ninja Boys, Psychics
+- Lavaridge: het Wynaut-ei is nu een "Odd Egg" zoals in Crystal: willekeurig Larvesta, Deino, Litwick, Fuecoco, Manaphy, Togepi, Ferroseed of Toxel (elk 1/8), met 50% kans op shiny. Nieuwe special `SetLastPartyMonShiny` (src/birch_pc.c) + test in `test/grounded/odd_egg.c`.
+- Fortree Pokémon Center: de heer telt je gevangen Pokémon (National Dex). Minder dan 20: hij lacht je uit en stuurt je naar vanilla Emerald.
+- Weather Institute: Castform-gift en onderzoeker over weertypes (Sandstorm telt niet, sorry Darude).
+- Ninja Boys zijn weebs met anime-referenties (Naruto, Fist of the North Star, Dragon Ball, One Piece, Attack on Titan, JoJo, Demon Slayer, Death Note) en de Ninja Boy-NPC's ook.
+- Psychics praten over astral projection, de kosmos channelen, tarot, karma/dharma, manifesteren en Scientology (Mt. Pyre, Route 110, 115, 117, 123, Lilycove).
+
+### [v.0.6.24] - Losse grappen
+- Yasu (Route 119): One Punch Man. Chester (Route 118, Bird Keeper): is een Super Saiyan geworden (hair gel).
+- Lavaridge: de vrouw met het Odd Egg is er bang voor; twee oma's in de hot springs over Michael Jackson ("it's been 17 years").
+- Pacifidlog PC: de oude man zegt alleen "LAS MALVINAS SON ARGENTINAS."
+- Rustboro Pokémon School: football's coming home / it's never coming home / "Schade DEUTSCHLAND, alles ist vorbei!"
+- Route 111: werkloze life coach. Slateport: twee digital nomads die niks doen.
+
+### [v.0.6.25] - PokéNav-telefoontjes, Hitoshi
+- PokéNav Match Call-teksten in stijl: alle gymleiders (Roxanne, Brawly, Wattson, Flannery, Winona, Tate & Liza, Wallace), Steven (metal), Scott (creepy), Mr. Stone (Solitaire), Norman (bingewatcher), Wallace over Steven, en Prof. Birch bij het registreren (droppings). Mom, Wally, May/Brendan en de Elite Four nog niet.
+- Hitoshi (Black Belt, Route 134): "JUST DO IT!!!"
+
+### [v.0.6.26] - Walter White, genwunners
+- Rustboro Pokémon School: de leraar (Quick Claw) is Walter White: "I AM THE ONE WHO KNOCKS!"
+- Oceanic Museum 1F: een genwunner (na 251 zijn het geen Pokémon meer) tegen een meisje dat hem een hypocriet noemt (Mimikyu-knuffel, Lucario-tattoo).
+
+### [v.0.6.27] - Wegwijzers, Let's Groove, Africa
+- Alle 26 richtingbordjes (Route 101–123, Mt. Chimney) hebben na de richting één rare regel erbij.
+- Celina (Aroma Lady, Route 111) zingt Let's Groove; Rachel (Parasol Lady, Route 119) zingt Africa in de regen.
+
+### [v.0.6.28] - Timmy
+- Timmy (Youngster, Route 110) zingt "I WANNA BE THE VERY BEST, LIKE NO ONE EVER WAS!"
+- Thomas (Gentleman, S.S. Tidal) citeert Giovanni, maar is gewoon fan van maffiaseries.
+- Jaylen (Youngster, Route 113) doet Blue na: "SMELL YA LATER!"
+
+### [v.0.6.29] - TM-NPC's, Pacifidlog, Julio, Hugh
+- NPC's die een TM/HM geven beschrijven die nu droog (Sludge Bomb, Hidden Power, Flash, Rock Smash, Stored Power, Dig, Cut, Strength, Waterfall, Brick Break, Return, Trick Room, Rest, Play Rough). Route 114 (sprak over Roar, geeft Stored Power) en S.S. Tidal (sprak over Snatch, geeft Play Rough) kloppen nu weer met het item.
+- Pacifidlog huis 2: teksten passen nu bij de Ability Capsule (lieve Pokémon) / Dazzling Gleam (Pokémon die je haat).
+- Julio (Jagged Pass): "They see me rollin'… They hatin'…"; Hugh (Route 119): "I BELIEVE I CAN FLY!"
+- Victory Road 1F: Katelynn (Rage Against the Machine), Albert (Chop Suey) en Quincy (B.Y.O.B.).
+
+### [v.0.6.30] - Team Aqua: bruiswater
+- Team Aqua is geobsedeerd door bruiswater (Spa, Sourcy, San Pellegrino, Perrier, Chaudfontaine). 83 teksten herschreven: Route 110, de rij bij het museum in Slateport, het Oceanic Museum, Rusturf Tunnel, het Weather Institute (incl. Shelly), de top van Mt. Pyre, Seafloor Cavern (incl. Shelly) en de grunts in Lilycove.
+- Verhaalteksten (Matt die de duikboot inpikt, het Devon-pakket) zijn ongewijzigd.
+
+### [v.0.6.31] - Lilycove-mall, Pacifidlog, Pokémon School, losse NPC's, Bubble Beam
+- Lilycove Department Store: mensen die de hele dag in de mall hangen omdat ze niks te doen hebben, en mensen die door de consumptiedrang worden geleefd.
+- Pacifidlog: iedereen klaagt over het gebrek aan voorzieningen (Regi-hints en de YES TOWN-grap blijven staan).
+- Rustboro Pokémon School: de leerlingen praten over virale filmpjes en TikTok en vinden school overrated.
+- Losse NPC's: Pokémon-abonnement (Slateport PC), datalek van het PC-systeem (Petalburg PC), The Sims (Lilycove 5F), Age of Empires II (Fallarbor PC), EA FC-packs met Rodri (Mauville PC).
+- Team Aqua: elke water-Pokémon van de grunts, Shelly en Matt kent Bubble Beam plus zijn laatste 3 level-up moves op dat level (40 Pokémon). Archie is ongewijzigd.
+
+### [v.0.6.32] - Maxie, Archie en Tabitha
+- Maxie en Archie zijn moustache-twirling evil geniuses met een bedrijf: Maxie wil Groudon als ultieme pepervoorziening voor MAGMA HOT SAUCE, Archie wil Kyogre als ultieme bottelfabriek voor AQUA SPARKLING WATER. Tabitha is Maxie's trouwe hulp.
+- 45 teksten herschreven: Slateport-museum, Meteor Falls, Mt. Chimney, Magma Hideout, Mt. Pyre, Slateport-haven, Space Center, Seafloor Cavern, Route 128 en Sootopolis. Verhaalpunten (Orbs, Meteorite, raketbrandstof, overstroming, Rayquaza) zijn gelijk gebleven.
+
+### [v.0.6.33] - Borden
+- 62 borden herschreven: stads- en dorpsborden krijgen een scheve slogan in het thema van de stad, gebouwborden een droge toevoeging.
+- Gymborden: Roxanne ("little rock star"), Wattson ("Electric Wizard"), Flannery (off the grid), Winona (jetlagged superster), Liza & Tate, en het Sootopolis-gymbord noemt nu WALLACE als sommelier.
+- Mt. Chimney: "Follow the example of the Chinese. Never take the stairs." Day Care, Safari Zone, Mt. Pyre Pier (Cuphead) en Berry Master volgens Jordi's wensen.
+- Functionele borden (kajuitnummers, bedden, automaat, recordborden, handboeken), Battle Tent-borden en het Trick House-bord zijn ongewijzigd.
+
+### [v.0.6.34] - Contests en Marts
+- Contest Hall en lobby (Lilycove): missverkiezingen met pushy ouders, influencers en mensen die het veel te serieus nemen (37 teksten).
+- Marts: de shoppers geven kloppend advies over items, met een droge draai (25 teksten, alle Marts behalve de Battle Frontier).
+
+### [v.0.6.35] - Trainer Hill
+- De eigenaar van de Trainer Hill heeft de toren alleen gebouwd om een tag-partner te vinden: een eenzame man met een datingshow. 20 teksten herschreven (receptie, NPC's bij de ingang, de eigenaar op het dak). Functionele teksten (opslaan, tijd, lift) zijn ongewijzigd.
+
+### [v.0.6.36] - Vervolgteksten en losse NPC's
+- Vervolgteksten (verlies/na het gevecht) van ~55 al herschreven trainers sluiten nu aan op hun nieuwe intro. Dalton: "MASTER OF PUPPETS IS PULLING YOUR STRINGS!", Fabian: "AERIALS, IN THE SKY!", Fernando: "Fuck, man. LEMMY, why did you have to go?"
+- Verhaal-vervolgteksten in de hot sauce/bruiswater-stijl: Meteor Falls, Rusturf Tunnel, Weather Institute, Oceanic Museum, Space Center.
+- S.S. Tidal: de TM-gever (Play Rough) sprak nog over Snatch; nu "I just like to play rough."
+- Nieuwe NPC-teksten: darter Edmond (Route 109, Ted Hankey), Kirby vs. 3D Mario (Rustboro PC), Pokémon Unite/Café (Lavaridge PC), Pokémon GO (Mauville, Petalburg, Mossdeep en Verdanturf PC), en de klager over de elemental monkeys (Petalburg PC).
+
+### [v.0.6.37] - Callbacks naar andere Pokémon-games
+- MissingNo. (Lilycove PC): geen Rare Candies, alleen een massagraf aan Tentacool — vandaar de grotere variatie.
+- Mew onder de truck (Lilycove, de jongen uit Kanto): duwt sindsdien elke truck weg, vindt alleen Bug-Pokémon en Rattata.
+- Blue's Raticate (Mt. Pyre 1F, graf): "Smell ya later, buddy." Jaylen zegt daarom geen "SMELL YA LATER" meer.
+- Nebby (Mossdeep PC): "Get back in the bag, NEBBY!"
+- Fabian: "THE SHAPE OF POKéMON TO COME!" (Refused).
+
+### [v.0.6.38] - Charles (inverse battles) en memes
+- WILTON (Cooltrainer, Route 111) heet nu CHARLES, de heartbreaker. Al zijn gevechten, ook de rematches, zijn inverse battles (type-effectiviteit omgedraaid). Nieuwe vlag `FLAG_INVERSE_BATTLE` (0x24) is gekoppeld aan `B_FLAG_INVERSE_BATTLE`; `src/battle_setup.c` zet hem aan bij de start van zijn gevecht en uit na afloop.
+- Charles' team: Ponyta/Rapidash → Snover/Abomasnow en Makuhita/Hariyama → Rhyhorn/Rhydon (veel zwaktes, dus inverted keihard resistent tegen de starters).
+- Cyndy (Battle Girl, Route 115) heeft zo lang getraind dat ze zweeft. Leah (Mt. Pyre 2F) is een Channeler uit Lavender Town.
+- Kara (Route 131): "Where do I put my POKé BALLS? Teehee… Woman's secret!" Hector (Route 115): I SWALLOW SLUDGE TO TRANSFORM MYSELF. Deandre (Route 118): I AM GOING TO ENJOY AN EGG. Makayla (Route 132): haar man heeft voedselvergiftiging.
+- Pacifidlog: het zusje van de Yes Town-jongen waarschuwt dat hij alleen gesloten vragen stelt. Route 117: "The air is tasty here!" is nog gekker.
+
+### [v.0.6.39] - Joey en Johnson (Route 116)
+- Joey (Youngster) heeft nu vier Poochyena (lv 12–13), allemaal "in the top percentage of POOCHYENA".
+- Het Metronome-team van Joey (Machop, Meowth, Electabuzz, Plusle, Chansey, Lucario, allemaal Metronome) is naar Johnson gegaan, met bijpassende Metronome-dialoog. Johnsons oude team (Shroomish, Cacnea, Tandemaus) is vervallen.
+
+### [v.0.6.40] - Rocket-wannabe, scummy rich boy, planten en paddenstoelen
+- Dillon (Youngster, Route 113) denkt dat hij bij Team Rocket zit, zonder uniform. Team: Koffing, Grimer, Golbat, Raticate, Murkrow (lv 24).
+- Dawson (Rich Boy, Route 116) is scummy. Team uitgebreid met Furfrou en Alolan Meowth (lv 13); items: 2× Full Restore en 2× Max Revive (4 is het maximum per trainer).
+- Johnson (Metronome-team) zegt alleen nog "Tik tok, tik tok, tik tok." zodat de speler verrast wordt.
+- Aroma Ladies: Rose (Route 118) is high van planten, Violet (Route 123) van paddenstoelen. Violet heeft nu een volledig paddenstoelen-team: Amoonguss, Breloom, Parasect, Shiinotic, Toedscruel (lv 32).
+- Davis (Route 123): "LET'S GO! KNEECAPS!" Brice (Hiker, Route 112): "HYUCK HYUCK HYUCK!"
+- Wingull-huis (Route 119): de vrouw is nog overdrevener.
+- Beschermd, blijft vanilla: Jeffrey (Route 120, "… … … Want to battle?") en de Yes Town-jongen in Pacifidlog.
+
+### [v.0.6.41] - Scarlet & Violet, Larry, Legends en meer
+- Route 123: Cooltrainers Wendy en Jazmyn heten nu SCARLET en VIOLET, twee zussen op Treasure Hunt (verwijzingen naar Scarlet/Violet: Treasure Hunt, picknick-sandwiches, Herba Mystica). Paldea-teams (lv 35): Scarlet: Armarouge, Lokix, Glimmora, Houndstone; Violet: Ceruledge, Mabosstiff, Espathra, Cyclizar. Beide 12 IV's, Full Restore en dezelfde AI.
+- Jerry (School Kid, Route 116) wil een salaryman worden zoals Larry.
+- Losse NPC's: Diving Treasure Hunter (eiland leger dan Alola), Verdanturf lamer dan Team Flare, Fortree-meisje headbutt bomen, honeymoon-stel in Lilycove (klaagt over Legends Z-A / is fan van Legends: Arceus), Route 110-jongen is blij dat deze game snel is.
+
+### [v.0.6.42] - NPC's in de steden
+- 177 NPC-teksten in Dewford Hall, Ever Grande, Fallarbor, Fortree, Lavaridge, Lilycove, Mauville, Mossdeep, Petalburg, Rustboro, Slateport en Sootopolis herschreven, in het thema van elke stad (Lilycove: mall, Mauville: datacenter, Mossdeep: ruimte, Sootopolis: Griekse goden en Wallace' wijn, Rustboro: Devon, Slateport: markt en nomads).
+- Met Jordi's aanpassingen: Victory Road vol "jerkoffs", Cozmo's sriracha, Serperior in de lucht, Mothim in de cereal, Jynx-mascotte, Deoxys, Whatsapp in plaats van Wingull-post, PEAKYCHU.
+- Verhaal- en functionele teksten (Stern, Gabby & Ty, Game Corner-kassa, ribbons, Beldum, Lotad/Seedot) zijn ongewijzigd.
+
+### [v.0.6.43] - Trainers vroege routes
+- 289 trainerteksten (intro, verlies, na het gevecht, registratie en rematches) op Jagged Pass, Mt. Chimney, Rusturf Tunnel en Route 104–112. Bestaande thema's lopen door in hun rematches (Haley: The Clash, Winston: Mo Money, Cindy: boerenkinkel-lady, Benjamin: Nederlands, Abigail: Strava).
+
+### [v.0.6.44] - Alle overige trainers
+- De overige ~710 trainerteksten herschreven (intro, verlies, na het gevecht, registratie, rematches en "bring twee Pokémon"-teksten): Meteor Falls, Mt. Pyre, Seashore House, S.S. Tidal, Victory Road en Route 113–134.
+- Bestaande thema's lopen door: Cyndy zweeft ook in haar rematches, Rose blijft high, Jerry wil een salaryman worden, Dalton en Fernando blijven bij Metallica en Motörhead, de Mimic Circle (met Donalds zes Ditto), het echtpaar Makayla/Paxton (voedselvergiftiging) en Hudson zoekt al twintig jaar zijn maat Kelvin.
+- Beschermd en ongewijzigd: Jeffrey (Route 120), Deandre's intro/verlies en de rivalen, Elite Four en Wallace.
+
+### [v.0.6.45] - Resterende teksten (op naar 100%)
+- Alle nog vanilla teksten buiten de post-beta-gebieden herschreven, in vijf blokken (~1000 teksten): borden, systeemteksten, huizen, grotten, het Aqua/Magma-verhaal (Archie verkoopt sparkling water, Maxie hot sauce), S.S. Tidal, Slateport (Stern, haven, museum, Name Rater, Fan Club, Berry Powder-dame), Sootopolis (Wallace de sommelier, de Lotad/Seedot-broers die al jaren niet praten), Verdanturf (Friendship Rater, de tunnelgraver), Trainer Hill-balie, VS Seeker en de laatste trainer-verliesteksten.
+- Sootopolis-gymbeeld: "WALLACE'S CERTIFIED TRAINERS" (was Juan). Pokémon Center Sootopolis noemt Wallace als gymleider en Steven als kampioen.
+- Scripts die niet op een newline eindigden, gerepareerd (waarschuwingen bij het bouwen zijn weg).
+- Bewust vanilla gelaten: Mom (tekst van Jordi), Jeffrey (Route 120), de Yes Town-jongen, Deandre, de Regi-hints, de legendes op de Mt. Pyre-top, Maxie's stilte op Mt. Pyre en zijn verlies op Mt. Chimney/Route 128, Shelly's verlies, Archie's "Hold it right there"/"So it was you", RYDEL×50, Pokémon-kreten, functionele borden (hutnummers, bedden, records) en alles in Trick House, Battle Frontier en Battle Tents.
+- Nagekomen: de voorzitter-broer in Pacifidlog (vakantie in een dorp zonder wifi), New Mauville (iemand mint crypto op de generator), Mt. Pyre-trainers Luke & Dez, Tasha en Valerie, een Magma-grunt in het Space Center, de Lilycove-museumzaal en de Trainer Fan Club.

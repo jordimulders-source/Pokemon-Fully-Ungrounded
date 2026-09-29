@@ -148,119 +148,116 @@ JaggedPass_EventScript_Autumn::
 	end
 
 JaggedPass_Text_EricIntro:
-	.string "MT. CHIMNEY's JAGGED PASS…\p"
-	.string "Now this is what I've always wanted\n"
-	.string "in a mountain.\p"
-	.string "This jagged bumpiness…\n"
-	.string "It rocks my soul!$"
+	.string "JAGGED PASS…\p"
+	.string "This bumpiness… It rocks my soul!\p"
+	.string "And my knees. Mostly my knees.$"
 
 JaggedPass_Text_EricDefeat:
-	.string "Losing left me bitter!$"
+	.string "Losing left me bitter! Like the ash!$"
 
 JaggedPass_Text_EricPostBattle:
-	.string "Yes, I did lose at POKéMON…\p"
-	.string "But, when it comes to the love of\n"
-	.string "the mountains, I have you beat!$"
+	.string "I lost at POKéMON…\p"
+	.string "But I love mountains more than you.\p"
+	.string "I married one. Emotionally.$"
 
 JaggedPass_Text_DianaIntro:
-	.string "This place isn't your casual hike.\n"
-	.string "It's not suited for a picnic.$"
+	.string "This is not a picnic spot.\p"
+	.string "I brought a picnic anyway. It's covered\n"
+	.string "in ash.$"
 
 JaggedPass_Text_DianaDefeat:
-	.string "Ohhh, no!\n"
-	.string "The ground is too bumpy…$"
+	.string "Ohhh, no! The ground is too bumpy… My\n"
+	.string "sandwich fell.$"
 
 JaggedPass_Text_DianaPostBattle:
-	.string "Did you know?\p"
-	.string "Some people cleverly ride their\n"
-	.string "bicycles up this horribly bumpy pass.$"
+	.string "Some people ride their bikes up this\n"
+	.string "pass.\p"
+	.string "Those people are psychopaths.$"
 
 JaggedPass_Text_DianaRegister:
-	.string "Will you ever be back in this area?\n"
-	.string "If you do return, I'd like a rematch.$"
+	.string "Come back sometime!\p"
+	.string "I'll have a new sandwich. Probably also\n"
+	.string "ashy.$"
 
 JaggedPass_Text_DianaRematchIntro:
-	.string "Picnics are fun wherever you go.\n"
-	.string "Just like POKéMON!$"
+	.string "Picnics are fun anywhere! Even on a\n"
+	.string "volcano!$"
 
 JaggedPass_Text_DianaRematchDefeat:
 	.string "I only lost because the ground is\n"
-	.string "too bumpy!$"
+	.string "bumpy!$"
 
 JaggedPass_Text_DianaPostRematch:
-	.string "I'll forget about losing and just\n"
-	.string "enjoy this bumpy hike.$"
+	.string "I'll forget about losing and eat my ash\n"
+	.string "sandwich.$"
 
 JaggedPass_Text_EthanIntro:
-	.string "JAGGED PASS is hard to walk on.\n"
-	.string "It's a good place for training.$"
+	.string "JAGGED PASS is hard to walk on.\p"
+	.string "Great for training. Terrible for ankles.$"
 
 JaggedPass_Text_EthanDefeat:
-	.string "It was all over while we were still\n"
-	.string "trying to find a good footing…$"
+	.string "We lost while still looking for solid\n"
+	.string "ground…$"
 
 JaggedPass_Text_EthanPostBattle:
-	.string "If I had an ACRO BIKE, I'd be able to\n"
-	.string "jump ledges.$"
+	.string "With an ACRO BIKE I could jump these\n"
+	.string "ledges.\p"
+	.string "I'd also die. But stylishly.$"
 
 JaggedPass_Text_EthanRegister:
-	.string "When I get more used to this bumpiness,\n"
-	.string "I'll be sure to win!\p"
-	.string "Can you register me in your POKéNAV?$"
+	.string "Once I'm used to the bumps, I'll win!\p"
+	.string "Register me, please.$"
 
 JaggedPass_Text_EthanRematchIntro:
-	.string "I got used to this bumpiness.\n"
-	.string "I sing while I climb now.$"
+	.string "I'm used to the bumps now. I sing while I\n"
+	.string "climb.\p"
+	.string "Badly. But loudly.$"
 
 JaggedPass_Text_EthanRematchDefeat:
-	.string "It's still not easy to battle on this\n"
-	.string "bumpy ground…$"
+	.string "Still not easy on this ground…$"
 
 JaggedPass_Text_EthanPostRematch:
-	.string "I should get an ACRO BIKE from RYDEL\n"
-	.string "in MAUVILLE CITY…$"
+	.string "I really should get that ACRO BIKE from\n"
+	.string "RYDEL.\p"
+	.string "He gives them away, right? Right?$"
 
 JaggedPass_Text_GruntIntro:
-	.string "Wah!\n"
-	.string "What are you doing here?\p"
-	.string "What am I doing in a place like this?\p"
-	.string "What business is it of yours?$"
+	.string "Wah! What are you doing here? I'm, uh…\n"
+	.string "harvesting. For the sauce.$"
 
 JaggedPass_Text_GruntDefeat:
-	.string "Urrrgh…\p"
-	.string "I should've ducked into our HIDEOUT\n"
-	.string "right away…$"
+	.string "My mouth is on fire. Not in the good way.$"
 
 JaggedPass_Text_GoWhereverYouWant:
-	.string "Okay, oh-kay!\n"
-	.string "I admit it--you're strong!\p"
-	.string "Don't worry about me.\n"
-	.string "Go wherever you want!$"
+	.string "Okay, okay! You're strong!\p"
+	.string "Go wherever you want!\p"
+	.string "I'll stay here. With the chili.$"
 
 JaggedPass_Text_BoulderShakingInResponseToEmblem:
-	.string "Oh! This boulder is shaking in response\n"
-	.string "to the MAGMA EMBLEM!$"
+	.string "This boulder is shaking at the MAGMA\n"
+	.string "EMBLEM!\p"
+	.string "It smells like hot sauce.$"
 
 JaggedPass_Text_JulioIntro:
-	.string "Aiyeeh! It's awfully scary to shoot\n"
-	.string "down the mountain in one go!$"
+	.string "They see me rollin'… They hatin'…$"
 
 JaggedPass_Text_JulioDefeat:
-	.string "I feel like I'm falling apart…$"
+	.string "…They caught me ridin' dirty.$"
 
 JaggedPass_Text_JulioPostBattle:
-	.string "My bicycle bounced around so much,\n"
-	.string "my rear end's sore…$"
+	.string "My bike bounced so much, my rear end's\n"
+	.string "sore.\p"
+	.string "They see me limpin'…$"
 
 JaggedPass_Text_AutumnIntro:
-	.string "I climb this hill every day.\n"
-	.string "I have confidence in my strength!$"
+	.string "I climb this hill every day!\p"
+	.string "My thighs could crack walnuts!$"
 
 JaggedPass_Text_AutumnDefeat:
-	.string "Hmm…\n"
-	.string "What went wrong?$"
+	.string "Hmm… What went wrong? Leg day wasn't\n"
+	.string "enough?$"
 
 JaggedPass_Text_AutumnPostBattle:
-	.string "What is that odd rock protrusion\n"
-	.string "a little up the hill from here?$"
+	.string "See that odd rock up the hill?\p"
+	.string "I think someone lives behind it. Weird.$"
 

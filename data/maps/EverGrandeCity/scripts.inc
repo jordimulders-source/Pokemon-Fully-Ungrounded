@@ -24,14 +24,15 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	end
 
 EverGrandeCity_Text_EnteringVictoryRoad:
-	.string "ENTERING VICTORY ROAD$"
+	.string "ENTERING VICTORY ROAD\p"
+	.string "Last chance to turn back.$"
 
 EverGrandeCity_Text_EnteringPokemonLeague:
-	.string "ENTERING POKéMON LEAGUE\n"
-	.string "CENTER GATE$"
+	.string "ENTERING POKéMON LEAGUE\p"
+	.string "No refunds.$"
 
 EverGrandeCity_Text_CitySign:
 	.string "EVER GRANDE CITY\p"
-	.string "“The paradise of flowers, the sea,\n"
-	.string "and POKéMON.”$"
+	.string "“The paradise of flowers, the sea, and\n"
+	.string "very tired TRAINERS.”$"
 

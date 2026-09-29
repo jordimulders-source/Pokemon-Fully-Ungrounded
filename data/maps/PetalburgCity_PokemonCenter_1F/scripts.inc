@@ -60,44 +60,43 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 	return
 
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
-	.string "That PC-based POKéMON Storage\n"
-	.string "System…\p"
-	.string "Whoever made it must be some kind\n"
-	.string "of a scientific wizard!$"
+	.string "The PC Storage System got hacked.\p"
+	.string "My POKéMON, my moves, my EVs. All leaked.\p"
+	.string "Now every kid on the route counters my\n"
+	.string "team.\p"
+	.string "I haven't won in six weeks.$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
-	.string "When my POKéMON ate an\n"
-	.string "ORAN BERRY, it regained HP!$"
+	.string "I walked 10 km to hatch an EGG.\p"
+	.string "It was a MAGIKARP.\p"
+	.string "Again.$"
 
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
-	.string "There are many types of POKéMON.\p"
-	.string "All types have their strengths and\n"
-	.string "weaknesses against other types.\p"
-	.string "Depending on the types of POKéMON,\n"
-	.string "a battle could be easy or hard.$"
+	.string "GRASS beats WATER, WATER beats FIRE,\n"
+	.string "FIRE beats GRASS.\p"
+	.string "So where are the monkeys?!\p"
+	.string "PANSAGE, PANSEAR, PANPOUR!\p"
+	.string "The whole triangle, in monkey form!\p"
+	.string "Somebody left them out on purpose. I\n"
+	.string "KNOW it.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
-	.string "For example, your TREECKO\n"
-	.string "is a GRASS type.\p"
-	.string "It's strong against the WATER and\n"
-	.string "GROUND types.\p"
-	.string "But, it's weak against FIRE-type\n"
-	.string "POKéMON.$"
+	.string "Your TREECKO is a GRASS type.\p"
+	.string "Strong against WATER and GROUND.\p"
+	.string "Weak against FIRE. And bugs. And birds.\n"
+	.string "And poison. And ice. Poor thing.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
-	.string "For example, your TORCHIC\n"
-	.string "is a FIRE type.\p"
-	.string "It's strong against the GRASS and\n"
-	.string "BUG types.\p"
-	.string "But, it's weak against WATER-type\n"
-	.string "POKéMON.$"
+	.string "Your TORCHIC is a FIRE type.\p"
+	.string "Strong against GRASS and BUG.\p"
+	.string "Weak against WATER. And it's a chicken.\n"
+	.string "Just saying.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
-	.string "For example, your MUDKIP\n"
-	.string "is a WATER type.\p"
-	.string "It's strong against the FIRE type.\p"
-	.string "But, it's weak against GRASS-type\n"
-	.string "and ELECTRIC-type POKéMON.$"
+	.string "Your MUDKIP is a WATER type.\p"
+	.string "Strong against FIRE.\p"
+	.string "It evolves into GROUND too. Then only\n"
+	.string "GRASS hurts it. Smart pick.$"
 
 PetalburgCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

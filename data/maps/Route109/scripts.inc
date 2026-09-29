@@ -477,76 +477,70 @@ Route109_EventScript_Elijah::
 	end
 
 DewfordTown_Text_BrineyLandedInSlateportDeliverGoods:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "We've made land in SLATEPORT!\p"
-	.string "I suppose you're going to visit CAPT.\n"
-	.string "STERN and deliver the DEVON GOODS?$"
-
-Route109_Text_BrineySailToDewfordQuestion:
-	.string "MR. BRINEY: I thought you're supposed\n"
-	.string "to deliver the DEVON GOODS.\p"
-	.string "Would you like to sail back to\n"
-	.string "DEWFORD, then?$"
-
-Route109_Text_BrineyDewfordItIs:
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
-	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
-
-Route109_Text_BrineyDeliverDevonGoods:
-	.string "MR. BRINEY: Then you go on and deliver\n"
-	.string "the DEVON GOODS. I'll be waiting.$"
-
-DewfordTown_Text_BrineyLandedInSlateport:
 	.string "MR. BRINEY: Ahoy! We've made land in\n"
 	.string "SLATEPORT!\p"
-	.string "You just go on and tell me whenever\n"
-	.string "you want to set sail again!$"
+	.string "Going to deliver the DEVON GOODS to\n"
+	.string "CAPT. STERN?$"
+
+Route109_Text_BrineySailToDewfordQuestion:
+	.string "MR. BRINEY: Weren't you delivering the\n"
+	.string "DEVON GOODS?\p"
+	.string "Sail back to DEWFORD, then?$"
+
+Route109_Text_BrineyDewfordItIs:
+	.string "MR. BRINEY: DEWFORD it is!\p"
+	.string "Anchors aweigh! PEEKO, my darling, we're\n"
+	.string "off!$"
+
+Route109_Text_BrineyDeliverDevonGoods:
+	.string "MR. BRINEY: Go deliver the DEVON GOODS.\n"
+	.string "I'll wait.\p"
+	.string "PEEKO and I will have a little chat.$"
+
+DewfordTown_Text_BrineyLandedInSlateport:
+	.string "MR. BRINEY: Ahoy! SLATEPORT!\p"
+	.string "Tell me when you want to sail again!$"
 
 Route109_Text_BrineyWhereAreWeBound:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "For you, I'll go out to sea anytime!\p"
-	.string "Now, my friend, where are we bound?$"
+	.string "MR. BRINEY: Ahoy! For you, I'll sail\n"
+	.string "anytime!\p"
+	.string "Where are we bound?$"
 
 Route109_Text_BrineyTellMeWhenYouNeedToSail:
-	.string "MR. BRINEY: You just tell me whenever\n"
-	.string "you need to set sail again!$"
+	.string "MR. BRINEY: Just tell me when you need\n"
+	.string "to sail again!$"
 
 Route109_Text_ChillAtMyPapasSpot:
-	.string "Yo, TRAINERS!\n"
-	.string "Whether you're hot to trot,\l"
-	.string "or cool cat not,\l"
-	.string "chill at my papa's spot!$"
+	.string "Yo, TRAINERS! Hot to trot or cool cat\n"
+	.string "not, chill at my papa's spot!\p"
+	.string "He paid me to say that.$"
 
 Route109_Text_LittleKidsDartAround:
-	.string "Little kids can dart around so quickly…\p"
-	.string "You don't dare take your eyes off them\n"
-	.string "for an instant. It's very taxing.\p"
-	.string "Mine are with my POKéMON, so they\n"
-	.string "should be okay, but…$"
+	.string "Little kids dart around so fast…\p"
+	.string "You can't look away for a second.\p"
+	.string "Mine are with my POKéMON. I'm at the bar.$"
 
 Route109_Text_SandCastleTakingLongTime:
-	.string "Our sand castle's taking a long time\n"
-	.string "to make.$"
+	.string "Our sand castle is taking forever.\p"
+	.string "The waves keep eating it.$"
 
 Route109_Text_YouCanHaveThis:
-	.string "You can have this!$"
+	.string "You can have this!\p"
+	.string "It was in the sand.$"
 
 Route109_Text_WereGoingToMakeBigCastle:
-	.string "We're going to get all the sand from\n"
-	.string "the beach and make a big castle!\p"
-	.string "And then we're going to be a king and\n"
-	.string "queen.\p"
-	.string "We'll let you be a servant.$"
+	.string "We'll use ALL the sand on the beach for\n"
+	.string "a big castle!\p"
+	.string "Then we'll be king and queen.\p"
+	.string "You can be a servant. Unpaid.$"
 
 Route109_Text_ZigzagoonPicksUpLitter:
-	.string "The water around these parts is clean.\p"
-	.string "But, I get my ZIGZAGOON to pick up\n"
-	.string "litter from the shoreline at times.\p"
-	.string "Dirty water becomes rain and joins our\n"
-	.string "rivers, which we drink from…\p"
-	.string "If we pollute the sea, it all comes\n"
-	.string "back to haunt us eventually.$"
+	.string "The water here is clean.\p"
+	.string "My ZIGZAGOON picks up litter on the\n"
+	.string "shore.\p"
+	.string "Polluted sea becomes rain, then rivers,\n"
+	.string "then our drinks…\p"
+	.string "TEAM AQUA bottles it. Think about that.$"
 
 Route109_Text_ZigzagoonCry:
 	.string "ZIGZAGOON: Guguu?$"
@@ -554,11 +548,9 @@ Route109_Text_ZigzagoonCry:
 Route109_Text_SeashoreHouseSign:
 	.string "SEASHORE HOUSE\p"
 	.string "“May hot battles rage on hot sands!\n"
-	.string "The place for hot TRAINERS!”$"
+	.string "Sunscreen not included.”$"
 
 Route109_Text_TrainerTipsSign:
 	.string "TRAINER TIPS\p"
-	.string "POKéMON at the same level may not\n"
-	.string "always have identical stats.\p"
-	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"
+	.string "POKéMON at the same level always have\n"
+	.string "different stats. Maths, learn it.$"

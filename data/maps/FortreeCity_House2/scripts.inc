@@ -43,39 +43,36 @@ FortreeCity_House2_EventScript_WrongGuess::
 
 FortreeCity_House2_Text_HiddenPowersArousedByNature:
 	.string "People… POKéMON…\p"
-	.string "Their hidden powers are aroused by\n"
-	.string "living in natural environments…$"
+	.string "Nature awakens their hidden powers…\p"
+	.string "Also coffee.$"
 
 FortreeCity_House2_Text_CoinInWhichHand:
 	.string "Let this old woman see if your hidden\n"
 	.string "power has awoken…\p"
 	.string "I hold a coin in my hand.\p"
-	.string "Now, tell me, have I palmed it in\n"
-	.string "the right hand? Or in the left?$"
+	.string "Which hand? Right or left?$"
 
 FortreeCity_House2_Text_CorrectTryAgainWhichHand:
-	.string "Oh! Yes, correct!\p"
-	.string "We shall try again.\p"
-	.string "In which hand have I palmed the coin?\n"
-	.string "The right or left?$"
+	.string "Oh! Correct!\p"
+	.string "Again. Which hand?$"
 
 FortreeCity_House2_Text_CorrectTryAgainWhichHand2:
-	.string "Oh! Yes, correct!\p"
-	.string "We shall try again.\p"
-	.string "In which hand have I palmed the coin?\n"
-	.string "The right or left?$"
+	.string "Correct again!\p"
+	.string "One more. Which hand? Don't look at my\n"
+	.string "sleeve.$"
 
 FortreeCity_House2_Text_YourHiddenPowerHasAwoken:
-	.string "Oh! Splendid!\n"
-	.string "Your hidden power has awoken!\p"
-	.string "Here, take this and awaken the hidden\n"
-	.string "power of your POKéMON.$"
+	.string "Splendid! Your hidden power has awoken!\p"
+	.string "Take this and awaken your POKéMON's\n"
+	.string "hidden power.\p"
+	.string "It was a coin trick. But the TM is real.$"
 
 FortreeCity_House2_Text_ExplainHiddenPower:
-	.string "HIDDEN POWER is a move that changes\n"
-	.string "with the POKéMON.$"
+	.string "HIDDEN POWER. Its type depends on the\n"
+	.string "POKéMON. That's it. That's the move.$"
 
 FortreeCity_House2_Text_YouGuessedWrong:
-	.string "No, too bad.\n"
-	.string "You guessed wrong.$"
+	.string "No, wrong hand.\p"
+	.string "Your hidden power is still asleep. Like\n"
+	.string "my husband.$"
 

@@ -31,15 +31,14 @@ MossdeepCity_PokemonCenter_1F_EventScript_Girl::
 	end
 
 MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
-	.string "The GYM LEADERS in this town are\n"
-	.string "a formidable duo.\p"
-	.string "Their combination attacks are, like,\n"
-	.string "excellent and wow!$"
+	.string "Did you see a girl in a white hat?\p"
+	.string "She keeps yelling at her bag.\p"
+	.string "“Get back in the bag, NEBBY!”$"
 
 MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves:
-	.string "Depending on the special abilities of\n"
-	.string "POKéMON, some moves might change\l"
-	.string "or not work at all.$"
+	.string "The POKéSTOP here gave me three POKé\n"
+	.string "BALLS and a sprained ankle.\p"
+	.string "I walked into the sea.$"
 
 MossdeepCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

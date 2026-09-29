@@ -63,113 +63,122 @@ SSTidalRooms_EventScript_Naomi::
 	end
 
 SSTidalRooms_Text_TakeRestOnBed:
-	.string "There's a bed…\n"
-	.string "Let's take a rest.$"
+	.string "There's a bed…\p"
+	.string "It smells like CAPTAIN BRINEY. Let's\n"
+	.string "rest anyway.$"
 
 SSTidalRooms_Text_ColtonIntro:
-	.string "I often sail to LILYCOVE CITY.\p"
-	.string "I enjoy attending CONTESTS,\n"
-	.string "you see.$"
+	.string "I often sail to LILYCOVE for the\n"
+	.string "CONTESTS.\p"
+	.string "With my five SKITTY. And my DELCATTY.\n"
+	.string "She's the mother.$"
 
 SSTidalRooms_Text_ColtonDefeat:
-	.string "That was an enjoyable match!$"
+	.string "What a match! I'm putting this in my\n"
+	.string "cruise review. Five stars.$"
 
 SSTidalRooms_Text_ColtonPostBattle:
-	.string "I get so excited imagining what kinds\n"
-	.string "of POKéMON I'll get to see in the next\l"
-	.string "CONTEST. The anticipation of it thrills!$"
+	.string "I get so excited about the next\n"
+	.string "CONTEST!\p"
+	.string "My cats do too. They're wearing\n"
+	.string "matching bows.$"
 
 SSTidalRooms_Text_MicahIntro:
-	.string "Are your friends strong?$"
+	.string "Are your friends strong? Mine are.\n"
+	.string "They're in my bag.$"
 
 SSTidalRooms_Text_MicahDefeat:
-	.string "Your friends are, indeed, strong.$"
+	.string "Your friends are, indeed, strong. Mine\n"
+	.string "need a gym membership.$"
 
 SSTidalRooms_Text_MicahPostBattle:
-	.string "Friends need not be human.\n"
-	.string "For me, POKéMON are treasured friends!$"
+	.string "Friends need not be human.\p"
+	.string "My POKéMON are my only friends. By\n"
+	.string "choice. Mostly.$"
 
 SSTidalRooms_Text_ThomasIntro:
-	.string "Child…\n"
-	.string "Did you knock on the door?$"
+	.string "Child… I see that you raise POKéMON\n"
+	.string "with utmost care.\p"
+	.string "A child like you would never understand\n"
+	.string "what I hope to achieve.$"
 
 SSTidalRooms_Text_ThomasDefeat:
-	.string "A loss is to be accepted without haste\n"
-	.string "or panic.$"
+	.string "…I'm not GIOVANNI, by the way. I just\n"
+	.string "watch a lot of mafia shows. THE\l"
+	.string "SOPRANOS. Four times.$"
 
 SSTidalRooms_Text_ThomasPostBattle:
-	.string "To be never ruffled in any situation is\n"
-	.string "the GENTLEMAN's code of conduct.$"
+	.string "To never be ruffled is the GENTLEMAN's\n"
+	.string "code.\p"
+	.string "Also TONY SOPRANO's. Different results.$"
 
 SSTidalRooms_Text_JedIntro:
-	.string "JED: I feel a little shy about this, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
+	.string "JED: This is a bit embarrassing, but…\p"
+	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_JedDefeat:
-	.string "JED: Sigh…$"
+	.string "JED: Sigh… Honeymoon's over.$"
 
 SSTidalRooms_Text_JedPostBattle:
-	.string "JED: It's the first time that our lovey-\n"
-	.string "dovey power couldn't prevail!\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "JED: Our lovey-dovey power failed for\n"
+	.string "the first time!\p"
+	.string "It's our honeymoon. Great start.$"
 
 SSTidalRooms_Text_JedNotEnoughMons:
-	.string "JED: You only have one POKéMON?\n"
-	.string "Isn't that just too lonesome?$"
+	.string "JED: Only one POKéMON? Isn't that\n"
+	.string "lonely?\p"
+	.string "Get a partner. Like us.$"
 
 SSTidalRooms_Text_LeaIntro:
-	.string "LEA: I feel a little silly, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
+	.string "LEA: I feel silly, but…\p"
+	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_LeaDefeat:
-	.string "LEA: Oh, boo!$"
+	.string "LEA: Oh, boo! This was supposed to be\n"
+	.string "romantic!$"
 
 SSTidalRooms_Text_LeaPostBattle:
-	.string "LEA: I can't believe it!\n"
-	.string "Our lovey-dovey power failed…\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "LEA: Our lovey-dovey power failed…\p"
+	.string "I blame JED. Honeymoon's over.$"
 
 SSTidalRooms_Text_LeaNotEnoughMons:
-	.string "LEA: I wanted to battle…\n"
-	.string "But you don't even have two POKéMON…$"
+	.string "LEA: You don't even have two POKéMON…\p"
+	.string "That's so sad.$"
 
 SSTidalRooms_Text_GarretIntro:
-	.string "Ah, you've come just in time.\p"
-	.string "I'm bored, you see.\n"
-	.string "You may entertain me.$"
+	.string "Ah, you came just in time.\p"
+	.string "I'm bored. Entertain me.$"
 
 SSTidalRooms_Text_GarretDefeat:
-	.string "…That will do.$"
+	.string "…That will do. Put it on Daddy's tab.$"
 
 SSTidalRooms_Text_GarretPostBattle:
-	.string "Perhaps I shall get Father to acquire\n"
-	.string "a yacht for me.\l"
-	.string "A yacht for me and POKéMON!$"
+	.string "Perhaps I'll have Father buy me a yacht.\p"
+	.string "This ferry has other people on it. Ew.$"
 
 SSTidalRooms_Text_NaomiIntro:
-	.string "Oh, you're such an adorable TRAINER.\n"
-	.string "Would you like to have tea?\l"
-	.string "Or would you rather battle?$"
+	.string "Oh, what an adorable TRAINER.\p"
+	.string "Tea? Or a battle? Or both? I'm on\n"
+	.string "vacation.$"
 
 SSTidalRooms_Text_NaomiDefeat:
-	.string "I see.\n"
-	.string "You're the active sort.$"
+	.string "I see. You're the active sort.$"
 
 SSTidalRooms_Text_NaomiPostBattle:
 	.string "A world cruise on a luxury liner has its\n"
-	.string "charms, I must say…\p"
-	.string "But, I will admit there is an appealing\n"
-	.string "side to touring HOENN by ferry.$"
+	.string "charms…\p"
+	.string "But a HOENN ferry has charm too.\p"
+	.string "The charm of having no room service.$"
 
 SSTidalRooms_Text_NotSuspiciousTakeThis:
-	.string "Uh… Hi! I… I'm not acting suspicious!\n"
-	.string "Uh… You can have this! For free!\p"
-	.string "It… Honestly, I didn't SNATCH it from\n"
-	.string "someone! I'd never do such a thing!\l"
-	.string "It's clean! You can use it!$"
+	.string "Uh… Hi! I… I'm not acting suspicious!\p"
+	.string "Take this! For free!\p"
+	.string "I just like to play rough. With POKéMON.\n"
+	.string "Only POKéMON.\p"
+	.string "It's clean! Honestly!$"
 
 SSTidalRooms_Text_ExplainSnatch:
-	.string "SNATCH steals the beneficial effects\n"
-	.string "of certain moves before they can be\l"
-	.string "used by a foe or ally.$"
+	.string "PLAY ROUGH. A FAIRY move. It hits hard.\n"
+	.string "It may lower ATTACK.\p"
+	.string "It's not playful at all.$"
 

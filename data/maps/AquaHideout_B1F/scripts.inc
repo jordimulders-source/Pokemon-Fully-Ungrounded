@@ -107,54 +107,60 @@ AquaHideout_B1F_EventScript_Grunt7::
 	end
 
 AquaHideout_B1F_Text_Grunt2Intro:
-	.string "If you want to know the secret about\n"
-	.string "our HIDEOUT, you have me to beat!$"
+	.string "I've been told to tell nothing about our\n"
+	.string "HIDEOUT. But you know how it works in\l"
+	.string "this game. You beat me and suddenly my\l"
+	.string "filter will slip off!$"
 
 AquaHideout_B1F_Text_Grunt2Defeat:
-	.string "I can't win at all…$"
+	.string "Ahhh this is how I become a snitch.$"
 
 AquaHideout_B1F_Text_Grunt2PostBattle:
-	.string "Our HIDEOUT's secret?\p"
-	.string "Well, let's just say…\n"
-	.string "There's a submarine at the far end!\p"
-	.string "But, by now…\n"
-	.string "Kekekeke…$"
+	.string "So in our HIDEOUT there's a submarine,\n"
+	.string "that might play a small but significant\l"
+	.string "part in this story. But once you will get\l"
+	.string "there the submarine will escape just\l"
+	.string "before you will confront it. Anyways, to\l"
+	.string "advance the game, you'd still have to go\l"
+	.string "there! Good luck!$"
 
 AquaHideout_B1F_Text_Grunt3Intro:
-	.string "Fuel supply loaded A-OK!\n"
-	.string "In-cruise snacks loaded A-OK!\p"
+	.string "Fuel supply loaded A-OK! In-cruise\n"
+	.string "snacks and booze loaded A-OK!\p"
 	.string "Nothing left to do but KO a pesky\n"
 	.string "meddler!$"
 
 AquaHideout_B1F_Text_Grunt3Defeat:
-	.string "I took a serious licking!$"
+	.string "OH SNAP!$"
 
 AquaHideout_B1F_Text_Grunt3PostBattle:
-	.string "Humph!\n"
-	.string "This was supposed to happen!\p"
-	.string "My mission was to just hold you up!$"
+	.string "Humph! This was supposed to happen! I\n"
+	.string "am a weak grunt!\p"
+	.string "My mission was to just hold you up!\n"
+	.string "Mwuahauhaha.$"
 
 AquaHideout_B1F_Text_Grunt5Intro:
-	.string "Yawn… Keeping watch over the\n"
-	.string "HIDEOUT bores me. I'll take you on.$"
+	.string "Life in the hideout is boring. You wanna\n"
+	.string "gamble? No? Just fight?$"
 
 AquaHideout_B1F_Text_Grunt5Defeat:
-	.string "Yawn…\n"
-	.string "Oh, I lost…$"
+	.string "Yawn… Oh, I lost…Should've gambled...$"
 
 AquaHideout_B1F_Text_Grunt5PostBattle:
-	.string "If you scurry too much, other TEAM\n"
-	.string "AQUA members might get you.$"
+	.string "Team AQUA will keep on chasing you. We\n"
+	.string "are mighty and we have the strongest\l"
+	.string "grunts!$"
 
 AquaHideout_B1F_Text_Grunt7Intro:
-	.string "Hey!\n"
-	.string "You there!\p"
-	.string "Which do you think is cooler?\n"
-	.string "TEAM AQUA's uniform or TEAM MAGMA's?$"
+	.string "Hey! You there!\p"
+	.string "Which do you think is cooler? TEAM\n"
+	.string "AQUA's uniform or TEAM MAGMA's? Do you\l"
+	.string "like pirates?$"
 
 AquaHideout_B1F_Text_Grunt7Defeat:
-	.string "I lost in a cool way…$"
+	.string "Aaargh matey, at least I am still very\n"
+	.string "pirate like!$"
 
 AquaHideout_B1F_Text_Grunt7PostBattle:
 	.string "If you have a cool uniform, you look\n"
-	.string "good even in a loss, don't you think?$"
+	.string "fashionable even while losing!$"

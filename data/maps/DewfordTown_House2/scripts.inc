@@ -27,31 +27,38 @@ DewfordTown_House2_EventScript_Boy::
 	end
 
 DewfordTown_House2_Text_WantYouToHaveSilkScarf:
-	.string "Gorge your eyes on this!\p"
-	.string "It's a SILK SCARF. It's right at the\n"
-	.string "cutting edge of fashion, yeah!\p"
-	.string "Oh, I can see your eyes twinkling!\n"
-	.string "You appreciate my dazzling style!\p"
-	.string "Oh, you're a delight!\n"
-	.string "Here you go. I want you to have it!$"
+	.string "Gorge your eyes on this! It's a SILK\n"
+	.string "SCARF!\p"
+	.string "Every Friday I perform as MADAME SILK.\n"
+	.string "Just me, this scarf and a very tasteful\l"
+	.string "amount of shoulder.\p"
+	.string "One night, a married man sat in the\n"
+	.string "front row and never looked away. What\l"
+	.string "can I say? The scarf does things to\l"
+	.string "people.\p"
+	.string "Oh, you've got that same twinkle in your\n"
+	.string "eyes! Here, take it. I have seventeen\l"
+	.string "more.$"
 
 DewfordTown_House2_Text_NoRoom:
-	.string "Oh, you don't have room?\p"
-	.string "Now, listen tight, this SCARF is a must-\n"
-	.string "have! Why, I would sell all my items\l"
-	.string "in order to get it!$"
+	.string "Oh, you don't have room? Make room,\n"
+	.string "darling.\p"
+	.string "Nobody has ever said no to MADAME SILK.\n"
+	.string "Just ask RANDY.$"
 
 DewfordTown_House2_Text_ExplainSilkScarf:
 	.string "The SILK SCARF raises the power of\n"
 	.string "NORMAL-type moves.\p"
-	.string "It's a marvelous SCARF that will go\n"
-	.string "with almost all POKéMON!$"
+	.string "It goes with almost every POKéMON. And\n"
+	.string "almost every husband, apparently.$"
 
 DewfordTown_House2_Text_BrawlySoCool:
-	.string "Wow, you bothered to cross the sea\n"
-	.string "to visit DEWFORD?\p"
-	.string "Did you maybe come here because you\n"
-	.string "heard about BRAWLY?\p"
-	.string "He's so cool…\n"
-	.string "Everyone idolizes him.$"
+	.string "Wow, you crossed the sea to visit\n"
+	.string "DEWFORD? Did you hear about RANDY too?\p"
+	.string "Back in the day, BRAWLY's GYM was pure:\n"
+	.string "the best fought the best, no trash\l"
+	.string "talk, no excuses.\p"
+	.string "Now it's all rumors, press conferences\n"
+	.string "and who slept with whom. DEWFORD used\l"
+	.string "to be about fighting!$"
 

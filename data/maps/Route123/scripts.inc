@@ -172,27 +172,32 @@ Route123_EventScript_RematchFernando::
 
 Route123_Text_LoveGrassMonsHaveAny:
 	.string "I love GRASS-type POKéMON!\p"
-	.string "Do you have any GRASS-type POKéMON?$"
+	.string "Do you have any?$"
 
 Route123_Text_YouLikeGrassMonsTooHaveThis:
 	.string "Oh?\p"
-	.string "You like GRASS-type POKéMON, too,\n"
-	.string "don't you?\p"
-	.string "I'm so happy, you can have this!\n"
-	.string "It's a token of our friendship.$"
+	.string "You like GRASS-type POKéMON too!\p"
+	.string "I'm so happy! Take this. A token of our\n"
+	.string "friendship.$"
 
 Route123_Text_CheckTreesWithMyGrassMon:
-	.string "I check trees with my GRASS-type\n"
-	.string "POKéMON. I'm like a tree doctor.$"
+	.string "I check trees with my GRASS POKéMON.\p"
+	.string "I'm a tree doctor.\p"
+	.string "The trees have no insurance, though.$"
 
 Route123_Text_RouteSign:
 	.string "{RIGHT_ARROW} ROUTE 123\n"
-	.string "{LEFT_ARROW} ROUTE 118$"
+	.string "{LEFT_ARROW} ROUTE 118\p"
+	.string "The sign painter gave up on this one.$"
 
 Route123_Text_RouteSignMtPyre:
 	.string "{UP_ARROW} MT. PYRE\n"
-	.string "“Forbidden to the faint of heart.”$"
+	.string "“Forbidden to the faint of heart.”\p"
+	.string "Also to the easily spooked and ZUBAT\n"
+	.string "haters.$"
 
 Route123_Text_BerryMastersHouse:
-	.string "BERRY MASTER'S HOUSE$"
+	.string "BERRY MASTER'S HOUSE\p"
+	.string "For all your experimentation and\n"
+	.string "cross-breeding on BERRIES.$"
 

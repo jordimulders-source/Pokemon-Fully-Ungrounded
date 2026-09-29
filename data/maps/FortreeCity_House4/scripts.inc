@@ -63,32 +63,32 @@ FortreeCity_House4_EventScript_Wingull::
 	end
 
 FortreeCity_House4_Text_BringsWorldCloserTogether:
-	.string "By being together with POKéMON,\n"
-	.string "people make more and more friends.\p"
-	.string "And that brings the world closer\n"
-	.string "together. I think it's wonderful!$"
+	.string "POKéMON bring people together!\p"
+	.string "My son wants to fly with a flock of BIRD\n"
+	.string "POKéMON.\p"
+	.string "Please don't bring him closer to the\n"
+	.string "ground.$"
 
 FortreeCity_House4_Text_GoBirdPokemon:
-	.string "There!\n"
-	.string "Go, BIRD POKéMON!$"
+	.string "There! Go, BIRD POKéMON!\p"
+	.string "Lift me! LIFT ME!$"
 
 FortreeCity_House4_Text_AskedWingullToRunErrand:
-	.string "Heheh, I asked my WINGULL to run\n"
-	.string "an errand for me.$"
+	.string "Heheh, I sent my WINGULL on an errand.\p"
+	.string "It'll be back. Eventually. With\n"
+	.string "something random.$"
 
 FortreeCity_House4_Text_WelcomeWingullTakeMentalHerb:
-	.string "Good!\n"
 	.string "Welcome back, WINGULL!\p"
-	.string "Huh? What is this?\n"
-	.string "What is it holding?\p"
-	.string "A MENTAL HERB?\n"
-	.string "It must have picked it up somewhere.\p"
-	.string "But I'm not a TRAINER, so you can\n"
-	.string "have it.$"
+	.string "What's that? A MENTAL HERB?\p"
+	.string "I asked for milk.\p"
+	.string "You can have it. I'm not a TRAINER.$"
 
 FortreeCity_House4_Text_FriendsFarAwayThanksToWingull:
 	.string "Thanks to my WINGULL, I have friends\n"
-	.string "who live far away.$"
+	.string "far away.\p"
+	.string "Mostly because it keeps pooping on\n"
+	.string "them.$"
 
 FortreeCity_House4_Text_Wingull:
 	.string "WINGULL: Pihyoh!$"

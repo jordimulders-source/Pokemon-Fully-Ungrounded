@@ -982,103 +982,86 @@ LilycoveCity_ContestLobby_EventScript_LittleGirlHaveCase::
 
 LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase:
 	.string "Yippee!\p"
-	.string "The lady at the reception counter\n"
-	.string "gave me a case for {POKEBLOCK}S!$"
+	.string "The lady gave me a {POKEBLOCK} case!\p"
+	.string "It's my first sponsorship deal.$"
 
 LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries:
 	.string "Make {POKEBLOCK}S and put them in there.\p"
-	.string "When you make a {POKEBLOCK}, everyone\n"
-	.string "has to put in a different BERRY.$"
+	.string "Everyone has to use a different BERRY.\p"
+	.string "No, you can't all use ORAN.$"
 
 LilycoveCity_ContestLobby_Text_YourPokemonSpurredMeToPaint:
 	.string "Congratulations!\p"
-	.string "I did a painting of your POKéMON to\n"
-	.string "commemorate its victory…\p"
-	.string "Well, your POKéMON's appeals were\n"
-	.string "so fantastic, it spurred me into\l"
-	.string "painting better than I usually do.\l"
-	.string "Look, see?$"
+	.string "I painted your POKéMON to celebrate its\n"
+	.string "win!\p"
+	.string "Its appeals inspired me to paint better\n"
+	.string "than usual. Look!$"
 
 LilycoveCity_ContestLobby_Text_ShouldITakePaintingToMuseum:
-	.string "What do you think? I'm confident in\n"
-	.string "what I've done, but do you like it?\p"
-	.string "A work of this caliber, it wouldn't look\n"
-	.string "out of place in an art museum.\p"
-	.string "Huh? An art museum really is looking\n"
-	.string "for paintings?\p"
-	.string "Do you think I should take this there?$"
+	.string "What do you think? I'm proud of it.\p"
+	.string "It could hang in an art museum.\p"
+	.string "Wait, a museum is actually looking for\n"
+	.string "paintings?\p"
+	.string "Should I take it there?$"
 
 LilycoveCity_ContestLobby_Text_IllTakePaintingToMuseum:
-	.string "What, really? Then, sure, I will take\n"
-	.string "this painting there right now.\p"
-	.string "I'll give it a proper title, too.\p"
-	.string "I hope they'll like it and consider\n"
-	.string "exhibiting this.\p"
-	.string "Please check if they did accept this.\n"
-	.string "Thank you!$"
+	.string "Really? Then I'll take it there right\n"
+	.string "now!\p"
+	.string "I'll give it a proper title. Something\n"
+	.string "deep.\p"
+	.string "Check if they accepted it. Thank you!$"
 
 LilycoveCity_ContestLobby_Text_TakeMementoOfPainting:
-	.string "Oh, that's right!\p"
-	.string "As a memento of me painting your\n"
-	.string "POKéMON, please take this.$"
+	.string "Oh, right!\p"
+	.string "As a memento of the painting, take this.$"
 
 LilycoveCity_ContestLobby_Text_ReceivedARibbon:
-	.string "{PLAYER} received a RIBBON.$"
+	.string "{PLAYER} received a RIBBON.\p"
+	.string "It matches nothing you own.$"
 
 LilycoveCity_ContestLobby_Text_PutTheRibbonOnMon:
-	.string "{PLAYER} put the RIBBON on\n"
-	.string "{STR_VAR_1}.$"
+	.string "{PLAYER} put the RIBBON on {STR_VAR_1}.\p"
+	.string "{STR_VAR_1} looks mildly annoyed.$"
 
 LilycoveCity_ContestLobby_Text_OkaySeeYou:
 	.string "Okay, see you!$"
 
 LilycoveCity_ContestLobby_Text_TakeHomeButIdLikeToTakeToMuseum:
-	.string "Oh… Then, I guess I'll just take\n"
-	.string "this home with me…\p"
-	.string "But, you know, I would like to take\n"
-	.string "this to the art museum… Okay?$"
+	.string "Oh… Then I'll just take it home…\p"
+	.string "But I'd really like to take it to the\n"
+	.string "museum… Please?$"
 
 LilycoveCity_ContestLobby_Text_FineThatsTheWayItIs:
-	.string "Oh, fine, that's the way it is.\n"
-	.string "I will hang this in my own house.\p"
-	.string "I'll just have to try harder next time.\n"
-	.string "Well, be seeing you.$"
+	.string "Fine. I'll hang it in my own house.\p"
+	.string "Next to the other 200. Bye.$"
 
 LilycoveCity_ContestLobby_Text_MasterRankHereICome:
-	.string "Hoo, boy… Master Rank CONTESTS,\n"
-	.string "here I come.\p"
-	.string "The world will know that my dearest\n"
-	.string "POKéMON is the cutest being in all\l"
-	.string "existence. The time has come!\l"
-	.string "Uheheheh.$"
+	.string "Master Rank, here I come.\p"
+	.string "The world will know my POKéMON is the\n"
+	.string "prettiest.\p"
+	.string "Don't laugh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere:
-	.string "You can see a whole variety of\n"
-	.string "POKéMON here.\p"
-	.string "That's why I make this place a regular\n"
-	.string "part of my daily stroll.$"
+	.string "I come here to see lots of POKéMON.\p"
+	.string "It's cheaper than a zoo. And they wear\n"
+	.string "makeup.$"
 
 LilycoveCity_ContestLobby_Text_ContestFeastForEyes:
-	.string "Wow, coming out to a CONTEST is\n"
-	.string "a feast for these eyes!\p"
-	.string "Would you look at all the POKéMON\n"
-	.string "that just scream to be painted?$"
+	.string "A feast for the eyes!\p"
+	.string "I'm painting all of them.\p"
+	.string "Unpaid. For exposure.$"
 
 LilycoveCity_ContestLobby_Text_ToughContestIsExtreme:
-	.string "The TOUGHNESS CONTEST is like\n"
-	.string "extreme, man!\p"
-	.string "Those muscular appeals…\n"
-	.string "Cascading sweat… I swoon!$"
+	.string "The TOUGHNESS CONTEST is extreme, man!\p"
+	.string "Muscular appeals… Cascading sweat…\p"
+	.string "I have to sit down.$"
 
 LilycoveCity_ContestLobby_Text_LavishedCareOnMon:
-	.string "Day in and day out, I lavished my care\n"
-	.string "on this POKéMON.\p"
-	.string "Its condition is peaking.\n"
-	.string "Today, victory is mine!$"
+	.string "Day in, day out, I pampered this\n"
+	.string "POKéMON.\p"
+	.string "My wife left. Worth it.$"
 
 LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
-	.string "I made {POKEBLOCK}S with Mom, Dad, and\n"
-	.string "Big Sister. They turned out great!\p"
-	.string "I bet you can make smoother, better\n"
-	.string "{POKEBLOCK}S if you have more people.$"
+	.string "I made POKéBLOCKS with my family. Mom\n"
+	.string "says they're not ramen. Mom is wrong.$"
 

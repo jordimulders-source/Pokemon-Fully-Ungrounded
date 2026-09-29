@@ -951,9 +951,11 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "me a monetary gift!$"
 	
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "If you use a PC, you can store items\n"
-	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+	.string "With a PC, you can store items and\n"
+	.string "POKéMON.\p"
+	.string "The power of science is staggering!\p"
+	.string "LANETTE made it. Nobody remembers\n"
+	.string "that.$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH spends days on the toilet\n"
@@ -1014,18 +1016,19 @@ LittlerootTown_Text_PlayersHouse:
 	.string "IN THE MIDDLE OF THE STREET!$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. BIRCH'S HOUSE\p"
+	.string "He's never home. He's in a bush\n"
+	.string "somewhere.$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
-	.string "That was good work out there!\p"
-	.string "I knew there was something special\n"
-	.string "about you when I first saw you,\l"
-	.string "but I never expected this.\p"
-	.string "Oh, yes. Do you still have the POKéDEX\n"
-	.string "I gave you?\p"
-	.string "I have something to show you.\n"
-	.string "Let's go to my LAB.$"
+	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}! Great\n"
+	.string "work!\p"
+	.string "I knew you were special. I didn't expect\n"
+	.string "CHAMPION, though.\p"
+	.string "Do you still have the POKéDEX I gave\n"
+	.string "you?\p"
+	.string "Come to my LAB. I have something to\n"
+	.string "show you.$"
 
 LittlerootTown_EventScript_GalarBiologist::
 	lock

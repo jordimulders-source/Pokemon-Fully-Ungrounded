@@ -36,22 +36,26 @@ LavaridgeTown_PokemonCenter_1F_EventScript_Gentleman::
 	end
 
 LavaridgeTown_PokemonCenter_1F_Text_TrainersPokemonSpendTimeTogether:
-	.string "I think POKéMON get closer to their\n"
-	.string "TRAINERS if they spend time together.\p"
-	.string "The longer the better.\n"
-	.string "That's what I think.$"
+	.string "Heal. Fight. Faint.\p"
+	.string "Heal. Fight. Faint.\p"
+	.string "What a life.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_HotSpringCanInvigorate:
-	.string "It's sort of magical how just sitting\n"
-	.string "in a hot-spring pool can invigorate.\p"
-	.string "I wish I could let my POKéMON\n"
-	.string "soak, too.$"
+	.string "POKéMON UNITE. A MOBA.\p"
+	.string "POKéMON CAFé. Serving lattes.\p"
+	.string "Who asked for this?!\p"
+	.string "I just want to throw balls at animals.\n"
+	.string "Like a normal person.$"
 
 LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo:
-	.string "Hohoho! Hey, kid, you can reach\n"
-	.string "the hot springs from here.\p"
-	.string "If POKéMON are getting rest, so too\n"
-	.string "should their TRAINERS.$"
+	.string "Hohoho… You hear that jingle?\n"
+	.string "Ding-ding-dididing. Three seconds and\l"
+	.string "your POKéMON are good as new.\p"
+	.string "And then you send them right back out.\n"
+	.string "Burned, poisoned, frozen, thrown into\l"
+	.string "walls.\p"
+	.string "Heal, fight, faint. Heal, fight, faint.\p"
+	.string "What a life…$"
 
 LavaridgeTown_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

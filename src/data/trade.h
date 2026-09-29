@@ -986,14 +986,14 @@ static const struct InGameTrade sIngameTrades[] =
 {
     [INGAME_TRADE_SEEDOT] =
     {
-        .nickname = _("DOTS"),
-        .species = SPECIES_SEEDOT,
+        .nickname = _("SIR LEEK"),
+        .species = SPECIES_FARFETCHD_GALAR,
         .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1,
+        .abilityNum = 0,
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY,
+        .heldItem = ITEM_LEEK,
         .mailNum = -1,
         .otName = _("KOBE"),
         .otGender = MALE,
@@ -1002,35 +1002,35 @@ static const struct InGameTrade sIngameTrades[] =
     },
     [INGAME_TRADE_PLUSLE] =
     {
-        .nickname = _("PLUSES"),
-        .species = SPECIES_PLUSLE,
+        .nickname = _("SPARKLES"),
+        .species = SPECIES_PONYTA_GALAR,
         .ivs = {4, 4, 4, 5, 5, 4},
         .abilityNum = 0,
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL,
-        .mailNum = 0,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
         .otName = _("ROMAN"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
+        .requestedSpecies = SPECIES_SLUGMA
     },
     [INGAME_TRADE_HORSEA] =
     {
-        .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
+        .nickname = _("MIMEJR"),
+        .species = SPECIES_MIME_JR,
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
-        .mailNum = 1,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
         .otName = _("SKYLAR"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_TENTACOOL
     },
     [INGAME_TRADE_MEOWTH] =
     {
@@ -1047,6 +1047,23 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
+    },
+    // Project Grounded: Fortree. De grap: ruilen laat hier niets evolueren (Haunter/Machoke: level 37).
+    [INGAME_TRADE_HAUNTER] =
+    {
+        .nickname = _("SPOOKY"),
+        .species = SPECIES_HAUNTER,
+        .ivs = {5, 4, 4, 5, 5, 4},
+        .abilityNum = 0,
+        .otId = 13337,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x9A,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("GWEN"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MACHOKE
     }
 };
 

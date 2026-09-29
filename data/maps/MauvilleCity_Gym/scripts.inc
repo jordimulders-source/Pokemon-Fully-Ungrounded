@@ -259,163 +259,222 @@ MauvilleCity_Gym_EventScript_GymStatue::
 MauvilleCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "WATTSON, the LEADER of MAUVILLE\n"
-	.string "GYM, uses ELECTRIC-type POKéMON.\p"
-	.string "If you challenge him with WATER-type\n"
-	.string "POKéMON, he'll zap them! Bzzt!\p"
-	.string "And, he's put in switch-controlled\n"
-	.string "doors all over his GYM! Eccentric!\p"
-	.string "Hey, go for it!$"
+	.string "Look, I'll be honest... I don't know\n"
+	.string "what's happening in here anymore.\p"
+	.string "WATTSON started investing in crypto\n"
+	.string "and now the whole GYM is just... kids\l"
+	.string "doing dances for views and screaming\l"
+	.string "about their 'Sigma' grindset.\p"
+	.string "He uses ELECTRIC-type POKéMON. If you\n"
+	.string "use WATER-types, they'll get zapped\l"
+	.string "faster than a pump-and-dump scam!\p"
+	.string "The switches open the doors, but some\n"
+	.string "influencer tried to charge me 500\l"
+	.string "POKéDOLLARS for the 'Alpha' route.\p"
+	.string "Just... go in there, win, and please\n"
+	.string "don't let them film a prank on you!$"
 
 MauvilleCity_Gym_Text_GymGuidePostVictory:
-	.string "Whoa, you're electrifying!\n"
-	.string "You've powered the door open!$"
+	.string "Whoa, you actually won?! And you\n"
+	.string "did it without a 'Glow Up' montage!\p"
+	.string "You're electrifying! You've powered\n"
+	.string "the door open and escaped the cringe!$"
 
 MauvilleCity_Gym_Text_KirkIntro:
 	.string "My electric soul, it'll shatter your\n"
-	.string "dreams whole, whoa-yeahah!$"
+	.string "dreams whole, whoa-yeahah!\p"
+	.string "Buy my vinyl, kid! I'm one stream\n"
+	.string "away from being able to afford\l"
+	.string "a single LAVA COOKIE!$"
 
 MauvilleCity_Gym_Text_KirkDefeat:
-	.string "That was plugged in, amped up,\n"
-	.string "over-driven electric, man!$"
+	.string "That was plugged in, amped up...\n"
+	.string "and I just earned 0.0003 POKéDOLLARS!$"
 
 MauvilleCity_Gym_Text_KirkPostBattle:
-	.string "POKéMON and rock, it's all about heart,\n"
-	.string "whoa-yeah!$"
+	.string "POKéMON and rock, it's all about heart!\n"
+	.string "But you can't eat heart, man.\p"
+	.string "I got a million streams last month\n"
+	.string "and the platform sent me a sticker\l"
+	.string "and a 'thanks' email.\p"
+	.string "Meanwhile, the kid behind me just\n"
+	.string "made a fortune selling a NFT of\l"
+	.string "a pixelated VOLTORB. Unbelievable.$"
 
 MauvilleCity_Gym_Text_ShawnIntro:
-	.string "I trained under WATTSON!\n"
-	.string "There ain't no way I'll lose easily!$"
+	.string "I trained under WATTSON, but my\n"
+	.string "portfolio is my real master!\p"
+	.string "You’re looking at a future trillionaire!\n"
+	.string "I've got diamond hands, kid. You're\l"
+	.string "about to get liquidated! HODL!$"
 
 MauvilleCity_Gym_Text_ShawnDefeat:
-	.string "Unplugged and turned off…$"
+	.string "No! My stop-loss didn't trigger!\n"
+	.string "I'm getting rugpulled!$"
 
 MauvilleCity_Gym_Text_ShawnPostBattle:
-	.string "WATTSON, our GYM LEADER, has been\n"
-	.string "around for a long, long time.\p"
-	.string "He was battling even before your\n"
-	.string "daddy was born, that tough coot.$"
+	.string "WATTSON has been around for a long\n"
+	.string "time, but he’s still using fiat!\p"
+	.string "He was battling before your daddy\n"
+	.string "was born, but he doesn't even own\l"
+	.string "a single Bored AIPOM NFT.\p"
+	.string "Have fun staying poor, NPC!\n"
+	.string "Fortune favors the brave!$"
 
 MauvilleCity_Gym_Text_BenIntro:
-	.string "This GYM's got puzzles!\n"
-	.string "Isn't it fun?$"
+	.string "This GYM's got puzzles! This is\n"
+	.string "so skibidi! 6-7, 6-7, 6-7!\p"
+	.string "TUNG TUNG TUNG SAHUR!\n"
+	.string "TUNG TUNG TUNG SAHUR!\p"
+	.string "Prepare to get mogged, NPC!$"
 
 MauvilleCity_Gym_Text_BenDefeat:
-	.string "It's no fun to lose…$"
+	.string "Noo! My fanum tax! This is\n"
+	.string "negative aura! It's over for me...$"
 
 MauvilleCity_Gym_Text_BenPostBattle:
 	.string "WATTSON says he likes setting up\n"
-	.string "little traps with switches.$"
+	.string "little traps with switches.\p"
+	.string "Sticking out your gyatt for the\n"
+	.string "rizzler... TUNG TUNG TUNG SAHUR!\l"
+	.string "TUNG TUNG TUNG SAHUR!\p"
+	.string "I need to find a subway surfers\n"
+	.string "gameplay video to stay focused.\l"
+	.string "6-7! 6-7!$"
 
 MauvilleCity_Gym_Text_VivianIntro:
-	.string "With my charm and my POKéMON's moves,\n"
-	.string "you'll be shocked!$"
+	.string "What is up, V-Squad?! Today we are\n"
+	.string "battling this total NPC live!\p"
+	.string "Can we get some 'W's in the chat?\n"
+	.string "That IONO girl is so mid compared\l"
+	.string "to my aesthetic! Don't forget to\l"
+	.string "smash that like button!$"
 
 MauvilleCity_Gym_Text_VivianDefeat:
-	.string "I'm shocked by your power!$"
+	.string "Ugh, guys, I think they're stream-\n"
+	.string "sniping me! This is so toxic!$"
 
 MauvilleCity_Gym_Text_VivianPostBattle:
 	.string "I've heard that MAUVILLE was founded\n"
-	.string "by WATTSON.\p"
-	.string "He was a TRAINER long before we\n"
-	.string "became TRAINERS.\l"
-	.string "He must know all sorts of things!$"
+	.string "by WATTSON. He's okay, but he has\l"
+	.string "zero social media presence.\p"
+	.string "I offered to manage his socials for\n"
+	.string "a 90% cut, but he just laughed.\p"
+	.string "Anyway, link in bio for my apology\n"
+	.string "video! Use code 'CRINGE' for 5%\l"
+	.string "off my brand of bath water!$"
 
 MauvilleCity_Gym_Text_AngeloIntro:
-	.string "I love shiny things!$"
+	.string "I love shiny things!\p"
+	.string ">be me\n"
+	.string ">see a rare POKéMON\l"
+	.string ">mfw an NPC tries to battle me\p"
+	.string "Anon, you're about to get\n"
+	.string "ratio'ed by my volts!$"
 
 MauvilleCity_Gym_Text_AngeloDefeat:
-	.string "Oh…\n"
-	.string "My eyes are frazzled…$"
+	.string "Oh… My eyes are frazzled…\n"
+	.string "This wasn't in the thread!$"
 
 MauvilleCity_Gym_Text_AngeloPostBattle:
 	.string "MAUVILLE GYM's WATTSON has a shiny\n"
-	.string "forehead. It makes me happy!$"
+	.string "forehead. It makes me happy!\p"
+	.string "I'm going to post your team on the\n"
+	.string "/vp/ board and call it 'mid'.\p"
+	.string "Go touch grass, you absolute\n"
+	.string "normie. Topkek!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
-	.string "I've given up on my plans to convert\n"
-	.string "the city, I have.\p"
-	.string "And so, I put my time into making\n"
-	.string "door traps in my GYM.\p"
-	.string "Oh? Now, what are you doing here?\p"
-	.string "What's that? You say you've gotten\n"
-	.string "past all my rigged doors?\p"
-	.string "Wahahahah!\n"
-	.string "Now, that is amusing!\p"
+	.string "Wahahahah! I've given up on my plans\n"
+	.string "to convert the city, I have!\p"
+	.string "Why build a city when you can just\n"
+	.string "host a server farm? I'm mining coins\l"
+	.string "while these kids mine for likes!\p"
+	.string "Oh? Now, what are you doing here?\n"
+	.string "You say you've gotten past all my\l"
+	.string "rigged doors and influencers?\p"
+	.string "Wahahahah! Now, that is amusing!\n"
+	.string "You're the only real thing in this\l"
+	.string "digital asylum!\p"
 	.string "Then, I, WATTSON, the LEADER of\n"
 	.string "MAUVILLE GYM, shall electrify you!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat:
 	.string "Wahahahah!\n"
 	.string "Fine, I lost!\p"
-	.string "You ended up giving me a thrill!\n"
+	.string "You ended up giving me a thrill that\n"
+	.string "no NFT or viral video ever could!\l"
 	.string "Take this BADGE!$"
 
 MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "{PLAYER} received the DYNAMO BADGE\n"
-	.string "from WATTSON.$"
+	.string "from WATTSON.\p"
+	.string "It comes with a subscription. Wahahaha!$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the DYNAMO BADGE, POKéMON can\n"
 	.string "use ROCK SMASH out of battle.\p"
-	.string "And, it will make your POKéMON a little\n"
-	.string "bit faster, too.\p"
-	.string "Hmm…\n"
-	.string "You should take this, too!$"
+	.string "Smash those rocks like I smash the\n"
+	.string "'buy' button on a dip! Wahahah!\p"
+	.string "It also gives your POKéMON a little\n"
+	.string "speed boost, like a high-speed\l"
+	.string "internet connection!\p"
+	.string "Hmm… You should take this, too!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM34 there contains SHOCK WAVE.\p"
-	.string "It's a trustworthy move that never\n"
-	.string "misses! You can count on it!\p"
+	.string "That TM34 contains VOLT SWITCH.\p"
+	.string "It’s a move that lets you strike\n"
+	.string "and then instantly swap out.\p"
+	.string "It's just like my investment strategy:\n"
+	.string "Take the profit and run before the\l"
+	.string "market crashes! Wahahahah!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM LEADER WATTSON\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER WATTSON in the\n"
+	.string "POKéNAV.\p"
+	.string "You'll get his ads now.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
-	.string "I swell with optimism, seeing a promising\n"
-	.string "young TRAINER like you!$"
+	.string "I swell with optimism, seeing a young\n"
+	.string "TRAINER who hasn't had their brain\l"
+	.string "completely fried by the internet!\p"
+	.string "There might be hope for this\n"
+	.string "generation after all, Wahahah!$"
 
 MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
-	.string "Wahahahah!\n"
-	.string "Go forth and endeavor, youngster!$"
+	.string "Wahahahah!\p"
+	.string "Go forth and endeavor, youngster!\n"
+	.string "And remember: never click on\l"
+	.string "suspicious links!$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "MAUVILLE CITY POKéMON GYM\p"
+	.string "Sponsored by WATTSON.$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "MAUVILLE CITY POKéMON GYM\p"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "WATTSON'S CERTIFIED TRAINERS: {PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "I'll make sparks fly from you!\n"
-	.string "Don't say I didn't warn you!$"
+	.string "WATTSON: Ah-ha! Here at last! I\n"
+	.string "launched my own coin: WATTCOIN! Want to\l"
+	.string "invest? No? Then battle! Wahahahaha!$"
 
 MauvilleCity_Gym_Text_WattsonRematchDefeat:
-	.string "Oof…\n"
-	.string "Our batteries ran dry…$"
+	.string "Oof… My server farm crashed…$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch:
-	.string "WATTSON: We'll have to recharge our\n"
-	.string "batteries again.\p"
-	.string "When we're fully charged up, we'll\n"
-	.string "gladly accept your challenge.\p"
-	.string "So, come back again sometime,\n"
+	.string "WATTSON: Time to reboot and restore\n"
+	.string "from backup.\p"
+	.string "Come back when my internet works again,\n"
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "Oops! Wait!\n"
-	.string "You've only one POKéMON with you!\p"
-	.string "Come see me with two or more\n"
-	.string "POKéMON, all right?$"
+	.string "WATTSON: Ah-ha! Here at last! I\n"
+	.string "launched my own coin: WATTCOIN! Want to\l"
+	.string "invest? No? Then battle! Wahahahaha!\p"
+	.string "Oops! Only one POKéMON? Even WATTCOIN\n"
+	.string "has more holders than that! Come back\l"
+	.string "with two.$"
 

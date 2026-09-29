@@ -370,252 +370,340 @@ MossdeepCity_Gym_EventScript_RedFloorSwitch::
 	end
 
 MossdeepCity_Gym_Text_GymGuideAdvice:
-	.string "Yo, how's it going, CHAMPION-bound\n"
-	.string "{PLAYER}?\p"
-	.string "The GYM LEADERS here use\n"
-	.string "PSYCHIC-type POKéMON.\p"
-	.string "If you go up against them with\n"
-	.string "FIGHTING- or POISON-type POKéMON,\l"
-	.string "they'll inflict horrible damage!\p"
-	.string "Plus, they'll come at you with\n"
-	.string "outstanding combination attacks.\p"
-	.string "If you want to win, you'll need to show\n"
-	.string "them how tight you are with your\l"
-	.string "POKéMON. Go for it!$"
+    .string "Yo, how's it going, CHAMPION-bound\n"
+    .string "{PLAYER}?\p"
+    .string "Look, I'll be real with you: I've had\n"
+    .string "a headache for three hours just from\l"
+    .string "breathing in all this incense.\p"
+    .string "The GYM LEADERS here use PSYCHIC-type\n"
+    .string "POKéMON, but they call themselves\l"
+    .string "“Spiritual Alignment Coaches.”\p"
+    .string "If you go in with FIGHTING- or POISON-\n"
+    .string "types, they'll “energetically cleanse”\l"
+    .string "your team right out of the building.\p"
+    .string "They fight in a Double Battle.\n"
+    .string "It's a mess of manifesting, tarot\l"
+    .string "cards, and bad cosmic vibes.\p"
+    .string "Stay focused, trust your logic, and\n"
+    .string "don't let them upsell you any crystals.\l"
+    .string "Go for it!$"
 
 MossdeepCity_Gym_Text_GymGuidePostVictory:
-	.string "Wow, you're astounding!\n"
-	.string "You're one great TRAINER!$"
+    .string "Wow, you actually won!\n"
+    .string "I guess your vibe was just stronger.\p"
+    .string "Can I finally unplug that salt lamp\n"
+    .string "now? The glowing is giving me\l"
+    .string "serious eye strain.$"
 
 MossdeepCity_Gym_Text_PrestonIntro:
-	.string "Battles hinge on the strength of your\n"
-	.string "spirit! The weak-spirited will never win!$"
+	.string "Stop! Cease and desist!\n"
+	.string "I sense a massive copyright violation!\p"
+	.string "Using a spoon to focus psychic power\n"
+	.string "is MY brand. You and your POKéMON\l"
+	.string "will hear from my lawyers!$"
 
 MossdeepCity_Gym_Text_PrestonDefeat:
-	.string "I lost!\n"
-	.string "I must temper my spirit again!$"
+	.string "Objection!\n"
+	.string "This result is inadmissible in court!$"
 
 MossdeepCity_Gym_Text_PrestonPostBattle:
-	.string "The indecisive lose.\n"
-	.string "That's my warning to you.$"
+	.string "KADABRA and ALAKAZAM are clearly\n"
+	.string "guilty of identity theft.\p"
+	.string "I tried to sue them for 20 years,\n"
+	.string "but apparently, you can't serve papers\l"
+	.string "to a fictional species. What a scam!$"
 
 MossdeepCity_Gym_Text_VirgilIntro:
-	.string "Let me see your talent!$"
+	.string "Stop! I can see your potential from\n"
+	.string "a mile away, but your energy is totally\l"
+	.string "unmonetized!\p"
+	.string "Let me show you my 'Elite Ascension'\n"
+	.string "battle strategy. For a small fee, I can\l"
+	.string "unlock your true talent!$"
 
 MossdeepCity_Gym_Text_VirgilDefeat:
-	.string "You possess spectacular talent!$"
+	.string "Wait! This defeat is just a\n"
+	.string "learning opportunity for your brand!$"
 
 MossdeepCity_Gym_Text_VirgilPostBattle:
-	.string "If there are prodigies in the world,\n"
-	.string "then our GYM LEADERS are them!\p"
-	.string "However, you may be even more talented\n"
-	.string "than them…$"
+	.string "You have raw talent, kid, but you're\n"
+	.string "missing the 'Twin Flame' mindset.\p"
+	.string "Our GYM LEADERS? They're the ultimate\n"
+	.string "prodigies. They've reached the\l"
+	.string "diamond tier of consciousness!\p"
+	.string "Check out my webinar later if you\n"
+	.string "want to reach their level... or just\l"
+	.string "give me 5000 PokéDollars now?$"
 
 MossdeepCity_Gym_Text_BlakeIntro:
-	.string "Fufufufu… Watch me levitate a POKé\n"
-	.string "BALL telekinetically!\p"
+	.string "Fufufufu… Behold! I am currently\n"
+	.string "projecting my consciousness into the\l"
+	.string "astral plane!\p"
 	.string "Wrooooooooaaaar!\n"
 	.string "… … … … … … …\p"
-	.string "Sometimes, I'm out of sync…$"
+	.string "Wait, give me a second… my soul is\n"
+	.string "having some lag issues…$"
 
 MossdeepCity_Gym_Text_BlakeDefeat:
-	.string "My POKéMON battling skills are out\n"
-	.string "of sync, too!$"
+	.string "My win-rate in the astral plane is\n"
+	.string "much higher than this!$"
 
 MossdeepCity_Gym_Text_BlakePostBattle:
-	.string "A POKé BALL was too heavy to lift\n"
-	.string "psychically. But this dust bunny…\p"
+	.string "Lifting a POKé BALL with my mind is\n"
+	.string "hard because of its dense atoms.\l"
+	.string "But this dust bunny…\p"
 	.string "Whoooooooooooooooh!\n"
 	.string "… … … … … …\p"
-	.string "No, I'm not cheating!\n"
-	.string "I didn't blow on it! Honestly!$"
+	.string "Stop laughing! I am levitating it!\n"
+	.string "I am NOT blowing on it with my mouth!\l"
+	.string "That's just the wind of the cosmos!$"
 
 MossdeepCity_Gym_Text_HannahIntro:
 	.string "When you lose to me, don't be too hard\n"
-	.string "on yourself.\p"
-	.string "It's not that you're weak--I'm just\n"
-	.string "too strong!$"
+	.string "on yourself or your aura.\p"
+	.string "It's not that you're weak... I'm just\n"
+	.string "that strong! My rising sign is\l"
+	.string "naturally cracked at battling!$"
 
 MossdeepCity_Gym_Text_HannahDefeat:
-	.string "You're just too strong!$"
+	.string "The stars... they lied to me? This\n"
+	.string "wasn't in my daily horoscope!$"
 
 MossdeepCity_Gym_Text_HannahPostBattle:
-	.string "I'm not going to get down on myself for\n"
-	.string "losing. I just need to train harder.\p"
-	.string "Positive thinking--that's my strong\n"
-	.string "point!$"
+	.string "I'm not going to let this loss lower\n"
+	.string "my vibrations. I'll just manifest a\l"
+	.string "win in my next encounter.\p"
+	.string "Delusional optimism is my\n"
+	.string "strong point!$"
 
 MossdeepCity_Gym_Text_SamanthaIntro:
-	.string "I see it…\n"
-	.string "I see your future…\p"
-	.string "If you can beat me, I will tell you\n"
-	.string "your future!$"
+	.string "I see it...\n"
+	.string "The cards don't lie!\p"
+	.string "The Tower, the Moon, and... oh, a\n"
+	.string "reversed Magician! If you can beat\l"
+	.string "me, I'll reveal your true destiny!$"
 
 MossdeepCity_Gym_Text_SamanthaDefeat:
-	.string "I surrender!$"
+	.string "The cards... they were upside down!$"
 
 MossdeepCity_Gym_Text_SamanthaPostBattle:
 	.string "You will wage a terrifically intense\n"
-	.string "battle with our GYM LEADERS…\p"
-	.string "The result…\n"
-	.string "You won't hear it from me!$"
+	.string "battle with our GYM LEADERS...\p"
+	.string "The result... I can see it clearly in\n"
+	.string "the Three of Swords, but you'll have\l"
+	.string "to pay for the full reading!$"
 
 MossdeepCity_Gym_Text_MauraIntro:
-	.string "The roads you have traveled…\n"
-	.string "What you have experienced…\p"
-	.string "Come at me with everything you've\n"
-	.string "learned!$"
+	.string "The spirits you have carried...\n"
+	.string "The shadows that follow you...\p"
+	.string "My board is twitching with your\n"
+	.string "darkest secrets. Come and face the\l"
+	.string "judgment of the beyond!$"
 
 MossdeepCity_Gym_Text_MauraDefeat:
-	.string "You've traveled a path of greatness!$"
+	.string "The spirits... they have gone silent!$"
 
 MossdeepCity_Gym_Text_MauraPostBattle:
-	.string "A bright future awaits those who have\n"
-	.string "worked diligently.\p"
-	.string "For those who lazed idly, there is\n"
-	.string "only despair at the end.\p"
-	.string "What goes around comes around…$"
+	.string "I thought I was reading your future\n"
+	.string "and the voices of the departed.\p"
+	.string "But it turns out I was just picking\n"
+	.string "up the telepathic static from my\l"
+	.string "COFRAGRIGUS the whole time.\p"
+	.string "What goes around comes around...\n"
+	.string "usually in a gold plated coffin.$"
 
 MossdeepCity_Gym_Text_SylviaIntro:
-	.string "Even at the risk of life, I will win\n"
-	.string "this battle!$"
+	.string "Even at the risk of my mortal soul,\n"
+	.string "I will win this battle!\p"
+	.string "The spirits of the night and the\n"
+	.string "SUCCUBUS guides are on my side!$"
 
 MossdeepCity_Gym_Text_SylviaDefeat:
-	.string "What you do…\n"
-	.string "It horrifies me…$"
+	.string "What you do...\n"
+	.string "It horrifies me...$"
 
 MossdeepCity_Gym_Text_SylviaPostBattle:
-	.string "How dare you beat me…\p"
-	.string "It won't be my fault if something\n"
-	.string "horrible befalls you…$"
+	.string "How dare you break my circle...\p"
+	.string "It won't be my fault if a SUCCUBUS\n"
+	.string "haunts your dreams or something\l"
+	.string "horrible befalls you...$"
 
 MossdeepCity_Gym_Text_NateIntro:
 	.string "Hohoho.\p"
-	.string "You need me to show you how tenacious\n"
-	.string "the PSYCHIC type can be.$"
+	.string "I say... you look like a fellow scholar!\p"
+	.string "I recently read a very thick book\n"
+	.string "about secret societies and cults.\l"
+	.string "Let me demonstrate the tenacious\n"
+	.string "rituals... I mean, tactics I learned!$"
 
 MossdeepCity_Gym_Text_NateDefeat:
 	.string "Oh! My, my!\n"
-	.string "Your battle style is fantastic!$"
+	.string "The book didn't mention this part!$"
 
 MossdeepCity_Gym_Text_NatePostBattle:
-	.string "I… I don't let defeat rattle m-me,\n"
-	.string "however b-badly.$"
+	.string "I... I must admit I don't really\n"
+	.string "understand what is happening here.\p"
+	.string "Everyone is talking about auras and\n"
+	.string "cosmic vibrations, but I just want\l"
+	.string "to discuss chapter four of my book.\p"
+	.string "It's all very rattle... rattling!$"
 
 MossdeepCity_Gym_Text_KathleenIntro:
-	.string "Let me show you a perfectly awful,\n"
-	.string "horrifying time!$"
+	.string "YOU ARE BEWIIIIIIIIIITCHEEEED!\p"
 
 MossdeepCity_Gym_Text_KathleenDefeat:
-	.string "N-nooooo!$"
+	.string "N-nooooo!\p"
+	.string "The spell… it backfired!$"
 
 MossdeepCity_Gym_Text_KathleenPostBattle:
 	.string "Your vitality is contagious!\n"
-	.string "Get away from me quickly!$"
+	.string "Get away from me quickly before\l"
+	.string "you accidentally manifest some\l"
+	.string "sunshine and rainbows!$"
 
 MossdeepCity_Gym_Text_CliffordIntro:
-	.string "I may be past my prime, but I suggest\n"
-	.string "you not patronize me.$"
+	.string "Do what thou wilt shall be the whole\n"
+	.string "of the law!\p"
+	.string "I may be past my prime, but my\n"
+	.string "magick is more potent than ever.\l"
+	.string "Prepare for a true initiation!$"
 
 MossdeepCity_Gym_Text_CliffordDefeat:
-	.string "Ah, you overflow with the power\n"
-	.string "of youth!$"
+	.string "Abrahadabra... the ritual... failed!$"
 
 MossdeepCity_Gym_Text_CliffordNotEnoughMons:
 	.string "A double battle with only one\n"
 	.string "POKéMON? Come back with two.$"
 
 MossdeepCity_Gym_Text_CliffordPostBattle:
-	.string "It seems that I could not overcome\n"
-	.string "your youthful energy.$"
+	.string "You possess a terrifying amount of\n"
+	.string "willpower. Perhaps you are the\l"
+	.string "chosen one I read about in my\l"
+	.string "midnight evocations.\p"
+	.string "Love is the law, love under will... but\n"
+	.string "losing still stings!$"
 
 MossdeepCity_Gym_Text_MaceyIntro:
-	.string "You're not getting through to the end!\n"
-	.string "Not if I can help it!$"
+	.string "You shall not pass into the inner\n"
+	.string "sanctum! The Law of Thelema is\l"
+	.string "absolute, and your vibration is\l"
+	.string "not authorized for this ritual!$"
 
 MossdeepCity_Gym_Text_MaceyDefeat:
-	.string "How could you be so ludicrously\n"
-	.string "strong?$"
+	.string "How could a profane outsider be so\n"
+	.string "ludicrously strong?$"
 
 MossdeepCity_Gym_Text_MaceyPostBattle:
 	.string "Humph! You may be strong, but you're\n"
 	.string "not suitable for the PSYCHIC type!\p"
-	.string "The way you battle is somehow brutal!$"
+	.string "The way you battle is somehow brutal\n"
+	.string "and lacking in magickal grace.\l"
+	.string "Master CLIFFORD will be displeased!$"
 
 MossdeepCity_Gym_Text_NicholasIntro:
-	.string "Wroooar! Have a taste of my super\n"
-	.string "POKéMON hard-battling power!$"
+	.string "Wroooar! Science and alchemy are\n"
+	.string "two sides of the same coin!\p"
+	.string "Humankind cannot gain anything\n"
+	.string "without first giving something in\l"
+	.string "return. To obtain, something of equal\n"
+	.string "value must be lost!\p"
+	.string "That is the law of EQUIVALENT\n"
+	.string "EXCHANGE! Prepare to be dissected!$"
 
 MossdeepCity_Gym_Text_NicholasDefeat:
-	.string "Oh!\n"
-	.string "Done in!$"
+	.string "The reaction... it failed!\n"
+	.string "My calculations were off!$"
 
 MossdeepCity_Gym_Text_NicholasPostBattle:
-	.string "All right! I think I'll develop a special\n"
-	.string "invincible POKéMON power next.$"
+	.string "All right! I need a catalyst to\n"
+	.string "bypass the law of exchange.\p"
+	.string "I shall develop a red, glowing\n"
+	.string "PHILOSOPHER'S STONE next.\p"
+	.string "I just need a few thousand souls and\n"
+	.string "some mercury... hohoho!$"
 
 MossdeepCity_Gym_Text_TateAndLizaIntro:
-	.string "TATE: Hehehe… Were you surprised?\p"
-	.string "LIZA: Fufufu… Were you surprised?\p"
-	.string "TATE: That there are two GYM LEADERS?\n"
-	.string "LIZA: That there are two GYM LEADERS?\p"
-	.string "TATE: We're twins!\n"
-	.string "LIZA: We're twins!\p"
-	.string "TATE: We don't need to talk because…\n"
-	.string "LIZA: We can each determine what…\p"
-	.string "TATE: The other is thinking…\n"
-	.string "LIZA: All in our minds!\p"
-	.string "TATE: This combination of ours…\n"
-	.string "LIZA: Can you beat it?$"
+	.string "TATE: Hehehe... Did you feel that?\p"
+	.string "LIZA: Fufufu... The vibration of the\n"
+	.string "cosmic door slamming shut?\p"
+	.string "TATE: We are not just two LEADERS.\n"
+	.string "LIZA: We are one soul split by a\l"
+	.string "shooting star and ancient stardust!\p"
+	.string "TATE: We don't need to speak...\n"
+	.string "LIZA: Because our Twin Flame energy\l"
+	.string "is currently peak performance!\p"
+	.string "TATE: I am thinking of a number...\n"
+	.string "LIZA: It is the sound of your aura\l"
+	.string "screaming in lowercase!\p"
+	.string "TATE: This quantum combination...\n"
+	.string "LIZA: This psychic fever dream...\l"
+	.string "Can you even comprehend it?$"
 
 MossdeepCity_Gym_Text_TateAndLizaDefeat:
-	.string "TATE: What?! Our combination…\n"
-	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
-	.string "LIZA: So, in recognition, take this.$"
+	.string "TATE: What?! Our frequency...\n"
+	.string "LIZA: It has been scrambled by a\l"
+	.string "lower vibrational entity!\p"
+	.string "TATE: The cards... the stars...\n"
+	.string "LIZA: They are all out of alignment!\l"
+	.string "Fine... take the badge before our\l"
+	.string "chakras implode!$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
-	.string "{PLAYER} received the MIND BADGE\n"
-	.string "from TATE and LIZA.$"
+	.string "{PLAYER} received the MIND BADGE from\n"
+	.string "TATE and LIZA.\p"
+	.string "They finished each other's sentences\n"
+	.string "while handing it over.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "TATE: The MIND BADGE enhances the\n"
-	.string "SP. ATK and SP. DEF of POKéMON.\p"
-	.string "LIZA: It also lets you use the HM move\n"
-	.string "DIVE outside of battle.\p"
-	.string "TATE: You should also take this, too.$"
+	.string "TATE: The MIND BADGE aligns the\n"
+	.string "chakras of your team's power.\p"
+	.string "LIZA: It grants them focus in their\n"
+	.string "SP. ATK and SP. DEF.\p"
+	.string "TATE: It also allows your soul to\n"
+	.string "DIVE into the depths of the ocean.\p"
+	.string "LIZA: Take this offering as well... it\n"
+	.string "vibrates with intense energy.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains…\n"
+	.string "TATE: That TM04 contains...\n"
 	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises SP. ATK and…\n"
-	.string "LIZA: It raises SP. DEF!\p"
-	.string "TATE: It's a move that's perfect…\n"
-	.string "LIZA: For PSYCHIC POKéMON!\p"
-	.string "… … … … … …$"
+	.string "TATE: It raises the frequency of\n"
+	.string "your thoughts and...\p"
+	.string "LIZA: It shields your aura from\n"
+	.string "negative interference!\p"
+	.string "TATE: It is a move that is perfect...\n"
+	.string "LIZA: For achieving total ego death!\p"
+	.string "... ... ... ... ... ...$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:
-	.string "Registered GYM LEADERS TATE & LIZA\n"
-	.string "in the POKéNAV.$"
+	.string "The cosmic signatures of TATE & LIZA\n"
+	.string "were etched into the POKéNAV.$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostBattle:
-	.string "TATE: Looks like the bond between you\n"
-	.string "and your POKéMON is far stronger than\l"
-	.string "the bond that we share as twins.\p"
-	.string "LIZA: You will become even stronger!\n"
-	.string "We've battled you, so we know.$"
+	.string "TATE: Your bond is like a supernova\n"
+	.string "swallowing our collective dream.\p"
+	.string "LIZA: You have transcended our\n"
+	.string "Twin Flame connection.\p"
+	.string "TATE: Go now... the stars have\n"
+	.string "already written your next victory.\p"
+	.string "LIZA: We will continue to manifest\n"
+	.string "your downfall in our dreams.$"
 
 MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
-	.string "TATE: Hehehe… Were you surprised?\p"
-	.string "LIZA: That there are two GYM LEADERS?\p"
-	.string "TATE: Oops, you have only one…\n"
-	.string "LIZA: POKéMON that can battle.\p"
-	.string "TATE: We can't battle that way!\p"
-	.string "LIZA: If you want to challenge us,\n"
-	.string "bring some more POKéMON.$"
+	.string "TATE: Hehehe... Were you surprised?\p"
+	.string "LIZA: That the universe requires\n"
+	.string "balance in all things?\p"
+	.string "TATE: You only have one soul...\n"
+	.string "LIZA: I mean, one POKéMON that\l"
+	.string "can battle in this plane.\p"
+	.string "TATE: We cannot dance in the moonlight\n"
+	.string "with an uneven number!\p"
+	.string "LIZA: Return when your party has\n"
+	.string "achieved numerical symmetry.$"
 
 MossdeepCity_Gym_Text_GymStatue:
-	.string "MOSSDEEP CITY POKéMON GYM$"
+	.string "MOSSDEEP CITY POKéMON GYM\p"
+	.string "The mystic combination.$"
 
 MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "MOSSDEEP CITY POKéMON GYM\p"
@@ -623,35 +711,23 @@ MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch:
-	.string "TATE: POKéMON…\n"
-	.string "LIZA: POKéMON…\p"
-	.string "TATE: By changing the party's mix…\n"
-	.string "LIZA: The battle style changes.\p"
-	.string "TATE: But me…\n"
-	.string "LIZA: But me…\p"
-	.string "TATE: I'll always be with LIZA!\n"
-	.string "LIZA: I'll always be with TATE!\p"
-	.string "TATE: Our combination…\n"
-	.string "LIZA: We'll show you again and again!$"
+	.string "TATE: Mercury… LIZA: …is in retrograde.\p"
+	.string "TATE: A perfect day… LIZA: …for a\n"
+	.string "rematch!\p"
+	.string "TATE: Our Twin Flame… LIZA: …has been\n"
+	.string "recharged by the full moon!$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchDefeat:
-	.string "TATE: You and your POKéMON…\n"
-	.string "LIZA: It's as if you were siblings!$"
+	.string "TATE: The tarot said… LIZA: …we would\n"
+	.string "win. We want a refund!$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostRematch:
-	.string "TATE: You can knock us down,\n"
-	.string "but we'll never stay down!\p"
-	.string "LIZA: Because the two of us,\n"
-	.string "we always support each other!$"
+	.string "TATE: You can knock us down… LIZA: …but\n"
+	.string "our horoscope says we'll rise again.\p"
+	.string "TATE: Next week. LIZA: Probably.$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
-	.string "TATE: You're back again…\n"
-	.string "LIZA: You're back again…\p"
-	.string "TATE: To give us a rematch.\n"
-	.string "LIZA: To give us a rematch.\p"
-	.string "TATE: But…\n"
-	.string "LIZA: For our match…\p"
-	.string "TATE: You brought just one POKéMON!\n"
-	.string "LIZA: You brought just one POKéMON!\p"
-	.string "TATE: We need you to bring at least…\n"
-	.string "LIZA: Two POKéMON when you come back.$"
+	.string "TATE: You're back… LIZA: You're back…\p"
+	.string "TATE: With one POKéMON? LIZA: The\n"
+	.string "universe demands two. Come back\l"
+	.string "balanced.$"

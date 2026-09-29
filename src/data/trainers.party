@@ -25798,3 +25798,45 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Arcanine_Hisui
 Level: 29
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_BIRCH ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+
+Rellor
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud-Slap
+- Mud Shot
+- Struggle Bug
+- Defense Curl
+
+Wooper_Paldea
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud-Slap
+- Mud Shot
+- Poison Tail
+- Tail Whip
+
+Sandygast
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud-Slap
+- Mud Shot
+- Astonish
+- Sand Attack
+
+Grimer_Alola
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud-Slap
+- Mud Shot
+- Bite
+- Poison Gas

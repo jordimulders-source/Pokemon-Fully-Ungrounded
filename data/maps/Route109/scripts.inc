@@ -554,3 +554,47 @@ Route109_Text_TrainerTipsSign:
 	.string "TRAINER TIPS\p"
 	.string "POKéMON at the same level always have\n"
 	.string "different stats. Maths, learn it.$"
+
+@ Project Grounded: Prof. Birch op het strand, naast een "kuiltje" (Sandygast-uitwerpselen).
+Route109_EventScript_Birch::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_BIRCH, Route109_EventScript_BirchPostBattle
+	msgbox Route109_Text_BirchSandygastDroppings, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BIRCH, Route109_Text_BirchDefeat
+	msgbox Route109_Text_BirchPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route109_EventScript_BirchPostBattle::
+	msgbox Route109_Text_BirchPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route109_EventScript_SandygastPit::
+	msgbox Route109_Text_SandygastPit, MSGBOX_SIGN
+	end
+
+Route109_Text_BirchSandygastDroppings:
+	.string "BIRCH: Oh, {PLAYER}! Look at this\n"
+	.string "little pit in the sand.\p"
+	.string "Looks like a normal hole, right?\n"
+	.string "Wrong! It's SANDYGAST droppings.\p"
+	.string "Most peculiar.\p"
+	.string "…So! You've gotten stronger.\n"
+	.string "But a lot weaker than I expected.\p"
+	.string "Honestly? I think I could even\n"
+	.string "beat you.\p"
+	.string "Let me show you my research team!$"
+
+Route109_Text_BirchDefeat:
+	.string "BIRCH: Well. That's embarrassing.\n"
+	.string "For science.$"
+
+Route109_Text_BirchPostBattle:
+	.string "BIRCH: Back to the droppings.\n"
+	.string "Science never sleeps.$"
+
+Route109_Text_SandygastPit:
+	.string "A small pit in the sand.\p"
+	.string "It's not a pit.$"

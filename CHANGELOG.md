@@ -14900,3 +14900,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Mach Bike begint direct op rensnelheid (en versnelt daarna naar topsnelheid); Acro Bike rijdt even snel als de Mach Bike op topsnelheid.
 - Pokémon in de Safari Zone vluchten niet meer.
 - Latios/Latias (rondzwervend) vluchten niet meer; je kunt gewoon vechten of vangen. Teleport en Whirlwind van wilde Pokémon werken nog wel.
+
+### [v.0.6.52] - Quality of life: rijpe bessen opzoeken met de Wailmer Pail
+- Gebruik je de Wailmer Pail (uit de tas of via Select) terwijl je niet bij een bessenboom staat, dan krijg je een lijst van kaarten met rijpe bessen, bv. "Ripe BERRIES at: ROUTE 104 (3)". Geen rijpe bessen: "No BERRIES are ripe right now."
+- Welke boom op welke kaart staat, wordt gegenereerd uit de mapdata: `python3 tools/grounded/berry_tree_locations.py` → `src/data/berry_tree_locations.h`. Opnieuw draaien als er bessenbomen bijkomen of verhuizen.

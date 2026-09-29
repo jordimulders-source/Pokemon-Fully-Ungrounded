@@ -470,14 +470,12 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 	.string "Like water and bubbles.$"
 
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
-	.string "ARCHIE: TEAM MAGMA's MAXIE got ahead\n"
-	.string "of us, but we also got what we wanted.\p"
-	.string "The RED ORB preserved at MT. PYRE…\n"
-	.string "I, ARCHIE, now have it in my possession!\p"
-	.string "Fufufu… Now we can bring our ultimate\n"
-	.string "objective to fruition!\p"
-	.string "Okay, TEAM!\n"
-	.string "We're pulling out!$"
+	.string "ARCHIE: MAXIE beat us here, but I got\n"
+	.string "what I wanted.\p"
+	.string "The RED ORB!\p"
+	.string "With it, KYOGRE becomes the biggest\n"
+	.string "bottling plant in history.\p"
+	.string "Fwahaha! TEAM! We're pulling out!$"
 
 MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "Oh, no…\n"

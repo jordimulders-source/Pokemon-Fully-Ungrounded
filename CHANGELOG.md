@@ -14916,3 +14916,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.54] - Mugshot-slide voor belangrijke gevechten
 - Net als bij de Elite Four krijgen nu ook deze gevechten de mugshot-slide (trainerplaatje schuift in beeld): alle rivaalgevechten (Brendan blauw, May roze), alle gymleider-rematches (zelfde kleur als hun eerste gevecht, Wallace' rematches blauw), Wally's rematches in Victory Road (paars) en Maxie (Magma Hideout, Mt. Chimney, Mossdeep; geel). Archie, de gymleiders, Wally in Mauville en de Elite Four hadden hem al.
 - Nieuwe gevechten (Wally-event, Birch) krijgen hem ook zodra ze erin zitten.
+
+### [v.0.6.55] - Wally in Meteor Falls en op Mt. Chimney
+- **Meteor Falls:** bij de ingang (vanaf Route 114) staat Wally. Loop je naar binnen, dan rent hij op je af: "{PLAYER}! Fall of Meteor.", draait een rondje, "Wow! Very beaut! Train much team. Timing of battle appear now!" en vecht (TRAINER_WALLY_METEOR_FALLS, mugshot paars, geen AI-flags = willekeurige moves). Na afloop: "Oh thank! Realizations moves, hmmmm planning more and more. Think become good!" en hij rent weg.
+  - Team (lv 26, Kirlia als ace lv 28, IV's 8): Lunatone (Confusion, Rock Throw, Rock Smash, Rain Dance), Solrock (Ember, Rock Throw, Sunny Day, Confusion), Gyarados (Surf, Hyper Beam, Strength, Leer), Primeape (Vacuum Wave, Rage, Thrash, Leer), Milotic (Splash), Kirlia (Calm Mind, Confusion, Screech, Skill Swap).
+  - Verliestekst in het gevecht is een placeholder ("Wow… {PLAYER} strong!"); aan te passen in de Dialoogstudio.
+- **Mt. Chimney:** het losse gevecht tegen Tabitha onderweg blijft. Op de top komt na Maxie's intro Tabitha terug, rent Wally binnen ("Whoopwhoop, hot {PLAYER} fight with, want learn. Come ons!") en volgt een tag battle: jij (3 Pokémon naar keuze) + Wally tegen Maxie + Tabitha.
+  - Wally (partner, geen AI-flags): Oranguru (Instruct), Dondozo (Tickle, Soak, Noble Roar), Kirlia lv 30 (Calm Mind, Confusion, Screech, Skill Swap). In een tag battle heeft elke trainer maximaal 3 Pokémon.
+  - Maxie: Hippopotas 29, Ferroseed 29, Camerupt 31 (zandteam: Ferroseed en Camerupt hebben geen last van de zandstorm). Tabitha (TRAINER_TABITHA_MT_CHIMNEY_TAG): Arcanine 28, Magmar 28, Hisuian Arcanine 29.
+- Nieuwe vlaggen/var: `FLAG_HIDE_MT_CHIMNEY_WALLY` (0x26), `FLAG_HIDE_METEOR_FALLS_WALLY` (0x27), `VAR_WALLY_METEOR_FALLS_STATE` (0x4083); partner `PARTNER_WALLY`.

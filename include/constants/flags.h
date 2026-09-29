@@ -49,8 +49,8 @@
 #define FLAG_FORTREE_HAUNTER_TRADE_COMPLETED 0x23 // Project Grounded: Haunter-voor-Machoke-ruil in Fortree
 #define FLAG_INVERSE_BATTLE    0x24 // Project Grounded: aan tijdens het gevecht tegen CHARLES (inverse battle)
 #define FLAG_ORAS_DOWSING    0x25 // Project Grounded: Itemfinder werkt als de ORAS Dowsing Machine
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_HIDE_MT_CHIMNEY_WALLY    0x26 // Project Grounded: Wally rent binnen op Mt. Chimney
+#define FLAG_HIDE_METEOR_FALLS_WALLY  0x27 // Project Grounded: Wally bij de ingang van Meteor Falls
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag

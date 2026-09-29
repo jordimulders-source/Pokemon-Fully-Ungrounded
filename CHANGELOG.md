@@ -14780,3 +14780,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Pacifidlog huis 2: teksten passen nu bij de Ability Capsule (lieve Pokémon) / Dazzling Gleam (Pokémon die je haat).
 - Julio (Jagged Pass): "They see me rollin'… They hatin'…"; Hugh (Route 119): "I BELIEVE I CAN FLY!"
 - Victory Road 1F: Katelynn (Rage Against the Machine), Albert (Chop Suey) en Quincy (B.Y.O.B.).
+
+### [v.0.6.30] - Team Aqua: bruiswater
+- Team Aqua is geobsedeerd door bruiswater (Spa, Sourcy, San Pellegrino, Perrier, Chaudfontaine). 83 teksten herschreven: Route 110, de rij bij het museum in Slateport, het Oceanic Museum, Rusturf Tunnel, het Weather Institute (incl. Shelly), de top van Mt. Pyre, Seafloor Cavern (incl. Shelly) en de grunts in Lilycove.
+- Verhaalteksten (Matt die de duikboot inpikt, het Devon-pakket) zijn ongewijzigd.

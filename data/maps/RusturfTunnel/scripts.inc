@@ -426,17 +426,14 @@ RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro:
-	.string "Grah, keelhaul it all!\p"
-	.string "That hostage POKéMON turned out to\n"
-	.string "be worthless!\p"
-	.string "And to think I made a getaway…\n"
-	.string "In this tunnel to nowhere!\p"
-	.string "Hey! You!\n"
-	.string "So you want to battle me?$"
+	.string "Grah! That hostage PEEKO was useless!\p"
+	.string "I thought it'd lead me to a secret\n"
+	.string "spring.\p"
+	.string "It leads to a boat.$"
 
 RusturfTunnel_Text_GruntDefeat:
-	.string "Urrrggh! My career in crime comes to\n"
-	.string "a dead end!$"
+	.string "My career in crime…\p"
+	.string "Flat as still water.$"
 
 RusturfTunnel_Text_GruntTakePackage:
 	.string "This is plain not right…\p"

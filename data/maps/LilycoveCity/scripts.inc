@@ -543,39 +543,34 @@ LilycoveCity_Text_BrendanYouGoingToBattleFrontier:
 	.string "Well, anyway, hang in there!$"
 
 LilycoveCity_Text_MovedLootIntoHideoutToday:
-	.string "Fufufu…\p"
-	.string "We moved more loot into our secret\n"
-	.string "HIDEOUT today…\p"
-	.string "Wh-who are you?!\n"
-	.string "I was just talking to myself!$"
+	.string "Fufufu… We moved more loot into our\n"
+	.string "HIDEOUT today.\p"
+	.string "Mostly crates of SAN PELLEGRINO.\p"
+	.string "Wh-who are you?! I was talking to\n"
+	.string "myself!$"
 
 LilycoveCity_Text_ChanceToDoBigThings:
-	.string "I'm just a GRUNT, so I don't know what\n"
-	.string "the BOSS is thinking…\p"
-	.string "But being on TEAM AQUA, I know I'll get\n"
-	.string "the chance to do big things!\p"
-	.string "Wh-who are you?!\n"
-	.string "I was just talking to myself!$"
+	.string "I'm just a GRUNT.\p"
+	.string "But on TEAM AQUA I get to do big things.\p"
+	.string "Like carry water.$"
 
 LilycoveCity_Text_DontGoNearCaveInCove:
-	.string "Hey, you!\p"
-	.string "Don't go near the cave in the cove!\p"
-	.string "Why? You don't need a reason why!\n"
-	.string "I'm an adult, so you just listen to me!$"
+	.string "Hey! Don't go near the cave in the cove!\p"
+	.string "Why? Because I'm an adult!\p"
+	.string "And it's where we keep the bubbles!$"
 
 LilycoveCity_Text_IfWorldBecomesOurs:
-	.string "If this whole wide world becomes ours,\n"
-	.string "TEAM AQUA's, it will be a happier\l"
-	.string "place for POKéMON, too.$"
+	.string "If the world becomes TEAM AQUA's, every\n"
+	.string "tap will pour sparkling water.\p"
+	.string "Even the toilets.$"
 
 LilycoveCity_Text_WailmerLeapOutOfWater:
-	.string "There! WAILMER!\n"
-	.string "Leap out of the water now!$"
+	.string "There! WAILMER! Blow bubbles!$"
 
 LilycoveCity_Text_GetLostMessingUpTraining:
-	.string "Hunh? What do you want?\p"
-	.string "You're messing up our training,\n"
-	.string "so can you, like, get lost?$"
+	.string "What do you want?\p"
+	.string "You're messing up our training. Go drink\n"
+	.string "still water somewhere.$"
 
 LilycoveCity_Text_ContestHallInTown:
 	.string "There's a POKéMON CONTEST HALL\n"

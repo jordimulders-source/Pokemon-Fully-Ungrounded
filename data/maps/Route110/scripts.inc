@@ -739,20 +739,23 @@ Route110_Movement_BirchExit4:
 	step_end
 
 Route110_Text_WeCantTalkAboutAquaActivities:
-	.string "TEAM AQUA's activities…\n"
-	.string "We can't talk about them yet.$"
+	.string "TEAM AQUA's mission is top secret.\p"
+	.string "…Fine. It's about sparkling water.$"
 
 Route110_Text_KickUpARuckus:
-	.string "I want to get going to SLATEPORT and\n"
-	.string "kick up a ruckus!$"
+	.string "I'm heading to SLATEPORT to kick up a\n"
+	.string "ruckus!\p"
+	.string "And buy SAN PELLEGRINO.$"
 
 Route110_Text_MyFirstJobInAqua:
-	.string "This is my first job after joining\n"
-	.string "TEAM AQUA. It's a little scary.$"
+	.string "My first job at TEAM AQUA.\p"
+	.string "Onboarding was a SPA tasting.\p"
+	.string "Still or sparkling? SPARKLING. Always.$"
 
 Route110_Text_AquaActionsBringSmiles:
-	.string "TEAM AQUA's actions should bring\n"
-	.string "smiles to people's faces!$"
+	.string "TEAM AQUA's actions should bring smiles\n"
+	.string "to people's faces!\p"
+	.string "And bubbles to their water!$"
 
 Route110_Text_MayLetsBattle:
 	.string "MAY: Hi, {PLAYER}{KUN}, long time no see!\p"
@@ -918,10 +921,8 @@ Route110_Text_CyclingRoadSign:
 
 Route110_Text_AquaWasHere:
 	.string "“TEAM AQUA was here!”\p"
-	.string "Someone painted that onto this sign,\n"
-	.string "but then someone else painted over it.\p"
-	.string "“TEAM MAGMA rules!” is what it\n"
-	.string "says now.$"
+	.string "Someone painted over it:\n"
+	.string "“SOURCY > SPA.”$"
 
 Route110_Text_Route103Sign:
 	.string "ROUTE 110\n"

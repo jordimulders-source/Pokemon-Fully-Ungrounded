@@ -286,12 +286,11 @@ SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
 	.string "We're TEAM AQUA!\p"
-	.string "Our BOSS wants those parts!\n"
-	.string "Shut your yap and fork them over!$"
+	.string "The BOSS wants those parts! Fork them\n"
+	.string "over, or no bubbles for you!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat:
-	.string "Awaaaah!\n"
-	.string "A kid beat me!$"
+	.string "Awaaaah! My fizz went flat!$"
 
 SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious:
 	.string "Oh, man, what a disaster…\n"
@@ -302,8 +301,8 @@ SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis:
 	.string "Let me take care of this!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
-	.string "What?!\n"
-	.string "I lost, too!$"
+	.string "What?! I lost too!\p"
+	.string "Pour me a SPA!$"
 
 SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
 	.string "Now what? If we don't get the parts,\n"

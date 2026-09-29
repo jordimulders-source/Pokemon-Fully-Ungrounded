@@ -248,29 +248,30 @@ SlateportCity_OceanicMuseum_1F_Text_CatchUpWithYourGroup:
 	.string "You'd better go catch up to them!$"
 
 SlateportCity_OceanicMuseum_1F_Text_AquaExistForGoodOfAll:
-	.string "We, TEAM AQUA, exist for the good\n"
-	.string "of all!$"
+	.string "We, TEAM AQUA, exist for the good of all!\p"
+	.string "And for carbonation.$"
 
 SlateportCity_OceanicMuseum_1F_Text_OurBossIsntHere:
-	.string "We were told to assemble here,\n"
-	.string "so we did, but…\p"
-	.string "Our BOSS, the linchpin, isn't here.$"
+	.string "We were told to assemble here.\p"
+	.string "The BOSS isn't here. Probably at the\n"
+	.string "tap.$"
 
 SlateportCity_OceanicMuseum_1F_Text_WouldStuffHereMakeMeRich:
-	.string "If I ripped off the stuff here,\n"
-	.string "would it make me rich?$"
+	.string "If I stole the stuff here, could I\n"
+	.string "afford PERRIER every day?$"
 
 SlateportCity_OceanicMuseum_1F_Text_CanLearnForNefariousDeeds:
-	.string "What I learn here, I can put to use on\n"
-	.string "nefarious deeds…$"
+	.string "What I learn here, I can use for\n"
+	.string "nefarious deeds.\p"
+	.string "Like carbonating the ocean.$"
 
 SlateportCity_OceanicMuseum_1F_Text_RustboroBungled:
-	.string "If our goons didn't bungle things\n"
-	.string "in RUSTBORO, we wouldn't be here!$"
+	.string "If our goons didn't bungle RUSTBORO,\n"
+	.string "we'd be at the SPA right now.$"
 
 SlateportCity_OceanicMuseum_1F_Text_DidntHaveMoney:
-	.string "I didn't have ¥50, so it took a long\n"
-	.string "time getting by the receptionist.$"
+	.string "I didn't have ¥50.\p"
+	.string "I spent it all on SAN PELLEGRINO.$"
 
 SlateportCity_OceanicMuseum_1F_Text_LearnAboutSeaForBattling:
 	.string "I want to learn about the sea and\n"
@@ -292,13 +293,10 @@ SlateportCity_OceanicMuseum_1F_Text_WantSeaPokemon:
 	.string "and a LUCARIO tattoo!$"
 
 SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis:
-	.string "Aiyeeeh!\n"
-	.string "What are you doing here?\p"
-	.string "Me? I'm the TEAM AQUA member\n"
-	.string "you thumped before, remember?\l"
-	.string "Back in RUSTURF TUNNEL?\p"
-	.string "Here, take this!\n"
-	.string "You have to forgive me!$"
+	.string "Aiyeeeh! It's you! The one who thumped\n"
+	.string "me!\p"
+	.string "Here, take this. Just go away.\p"
+	.string "I'm enjoying the water exhibit.$"
 
 SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain:
 	.string "TRICK ROOM. Slow POKéMON move first for\n"

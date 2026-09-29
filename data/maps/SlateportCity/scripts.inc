@@ -1011,44 +1011,50 @@ SlateportCity_Text_VisitedMuseumOften:
 	.string "the sea after seeing the exhibits.$"
 
 SlateportCity_Text_QuitPushing:
-	.string "Hey, there! Quit pushing!\n"
-	.string "This is the line, can't you see?$"
+	.string "Hey! Quit pushing!\p"
+	.string "This is the line for free PERRIER!$"
 
 SlateportCity_Text_AquaHasPolicy:
-	.string "TEAM AQUA has a policy of\n"
-	.string "assembling and dispersing at\l"
-	.string "the operation site.$"
+	.string "TEAM AQUA assembles and disperses at\n"
+	.string "the operation site.\p"
+	.string "Bring your own bottle.$"
 
 SlateportCity_Text_BossIsBrilliant:
 	.string "Our BOSS is brilliant.\p"
-	.string "What would he want to do with\n"
-	.string "a MUSEUM now?$"
+	.string "Why would he want a MUSEUM? Unless it\n"
+	.string "has a mineral spring.$"
 
 SlateportCity_Text_WhatsNewSchemeIWonder:
-	.string "What's the new scheme, I wonder?\p"
-	.string "Our BOSS is scary when he's mad, so\n"
-	.string "I'd better not screw things up…$"
+	.string "What's the new scheme?\p"
+	.string "Last time the BOSS got mad, somebody\n"
+	.string "brought SPA BLAUW. Still water.\p"
+	.string "He's still not over it.$"
 
 SlateportCity_Text_ShouldTakeItAll:
-	.string "If there's something we need in\n"
-	.string "the MUSEUM, we should take it all!$"
+	.string "If there's something we need in the\n"
+	.string "MUSEUM, take it all!\p"
+	.string "Especially the water cooler.$"
 
 SlateportCity_Text_DontButtIn:
-	.string "Hey, you there!\n"
-	.string "Don't butt in!$"
+	.string "Hey! Don't butt in!\p"
+	.string "I've been waiting for my CHAUDFONTAINE\n"
+	.string "all day!$"
 
 SlateportCity_Text_RemindsMeOfLongLineForGames:
-	.string "A long line, huh?\p"
-	.string "It reminds me of the times I lined up to\n"
-	.string "buy smash-hit games…$"
+	.string "A long line?\p"
+	.string "Reminds me of queuing for\n"
+	.string "limited-edition SAN PELLEGRINO\l"
+	.string "flavors.$"
 
 SlateportCity_Text_WhyAreWeLiningUp:
-	.string "Why are we even lining up and paying?\n"
-	.string "We should just march in!$"
+	.string "Why are we lining up and paying? We\n"
+	.string "should just march in!\p"
+	.string "And drink everything.$"
 
 SlateportCity_Text_WhatDoYouWant:
-	.string "What?\n"
-	.string "What do you want?$"
+	.string "What? What do you want?\p"
+	.string "Still or sparkling?\p"
+	.string "Wrong answer.$"
 
 SlateportCity_Text_IllReadSignForYou:
 	.string "You want to read this sign?\n"
@@ -1056,22 +1062,19 @@ SlateportCity_Text_IllReadSignForYou:
 
 SlateportCity_Text_SaysSomethingLikeSeaIsEndless:
 	.string "Let's see…\p"
-	.string "Um… I think it says something like\n"
-	.string "“the life in the sea is endless.”\p"
-	.string "Yup, I'm pretty sure that's what\n"
-	.string "it says.$"
+	.string "I think it says “the bubbles in the sea\n"
+	.string "are endless.”\p"
+	.string "Yup, pretty sure.$"
 
 SlateportCity_Text_ShouldveBroughtMyGameBoy:
 	.string "Grumble…\p"
-	.string "I should've brought my Game Boy\n"
-	.string "Advance so I wouldn't get bored in line…\p"
-	.string "Grumble…$"
+	.string "Should've brought my Game Boy Advance.\n"
+	.string "And a six-pack of SOURCY.$"
 
 SlateportCity_Text_HotSpringsAfterOperation:
-	.string "When this operation's over, I'll take\n"
-	.string "you to a hot spring spa!\p"
-	.string "That's what our leader said.\n"
-	.string "I can't wait!$"
+	.string "After this operation, the BOSS is\n"
+	.string "taking us to a mineral spring spa!\p"
+	.string "Natural bubbles!$"
 
 SlateportCity_Text_SeaIsSoWet:
 	.string "The sea is just so vast…\p"

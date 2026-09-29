@@ -2895,12 +2895,11 @@ Route119_Text_CatherinePostRematch:
 	.string "rely on you.$"
 
 Route119_Text_HughIntro:
-	.string "The vast sky holds untold promise!\p"
-	.string "Nothing can compare to the sheer\n"
-	.string "exhilaration of flight!$"
+	.string "I BELIEVE I CAN FLY! I BELIEVE I CAN\n"
+	.string "TOUCH THE SKY!$"
 
 Route119_Text_HughDefeat:
-	.string "Down and out!$"
+	.string "…I believe I can't.$"
 
 Route119_Text_HughPostBattle:
 	.string "My BIRD POKéMON made my dreams of\n"

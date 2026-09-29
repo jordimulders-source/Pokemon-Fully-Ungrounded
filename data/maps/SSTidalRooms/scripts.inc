@@ -172,7 +172,7 @@ SSTidalRooms_Text_NotSuspiciousTakeThis:
 	.string "It's clean! You can use it!$"
 
 SSTidalRooms_Text_ExplainSnatch:
-	.string "SNATCH steals the beneficial effects\n"
-	.string "of certain moves before they can be\l"
-	.string "used by a foe or ally.$"
+	.string "PLAY ROUGH. A FAIRY move. It hits hard.\n"
+	.string "It may lower ATTACK.\p"
+	.string "It's not playful at all.$"
 

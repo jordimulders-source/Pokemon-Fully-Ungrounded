@@ -84,9 +84,10 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 	.string "How about in exchange for this TM?$"
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
-	.string "PROF. COZMO: This TM, it represents\n"
-	.string "my feeling of gratitude.\l"
-	.string "Please use it!$"
+	.string "PROF. COZMO: This is RETURN. The more\n"
+	.string "your POKéMON likes you, the harder it\l"
+	.string "hits.\p"
+	.string "So, not very hard, probably.$"
 
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
 	.string "PROF. COZMO: Oh, I can't believe it.\n"

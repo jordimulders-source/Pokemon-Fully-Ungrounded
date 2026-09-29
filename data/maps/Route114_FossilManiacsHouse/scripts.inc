@@ -39,8 +39,9 @@ Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother:
 	.string "holes just like my big brother…$"
 
 Route114_FossilManiacsHouse_Text_DigReturnsYouToEntrance:
-	.string "If you make a POKéMON DIG inside a\n"
-	.string "cave, you're returned to the entrance…$"
+	.string "DIG. You dig. Then you hit.\p"
+	.string "In a cave, it takes you back to the\n"
+	.string "entrance. Riveting.$"
 
 Route114_FossilManiacsHouse_Text_RocksFillDisplayCase:
 	.string "Rocks in peculiar shapes fill\n"

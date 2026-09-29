@@ -14774,3 +14774,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Timmy (Youngster, Route 110) zingt "I WANNA BE THE VERY BEST, LIKE NO ONE EVER WAS!"
 - Thomas (Gentleman, S.S. Tidal) citeert Giovanni, maar is gewoon fan van maffiaseries.
 - Jaylen (Youngster, Route 113) doet Blue na: "SMELL YA LATER!"
+
+### [v.0.6.29] - TM-NPC's, Pacifidlog, Julio, Hugh
+- NPC's die een TM/HM geven beschrijven die nu droog (Sludge Bomb, Hidden Power, Flash, Rock Smash, Stored Power, Dig, Cut, Strength, Waterfall, Brick Break, Return, Trick Room, Rest, Play Rough). Route 114 (sprak over Roar, geeft Stored Power) en S.S. Tidal (sprak over Snatch, geeft Play Rough) kloppen nu weer met het item.
+- Pacifidlog huis 2: teksten passen nu bij de Ability Capsule (lieve Pokémon) / Dazzling Gleam (Pokémon die je haat).
+- Julio (Jagged Pass): "They see me rollin'… They hatin'…"; Hugh (Route 119): "I BELIEVE I CAN FLY!"

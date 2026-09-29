@@ -425,12 +425,8 @@ DewfordTown_Hall_Text_WellBeTrendDuo:
 	.string "Hahahah!$"
 
 DewfordTown_Hall_Text_GiveYouSludgeBomb:
-	.string "For me, SLUDGE BOMB is at the peak\n"
-	.string "of popularity. It's the one.\p"
-	.string "Hunh? You're telling me that you don't\n"
-	.string "know about SLUDGE BOMB?\p"
-	.string "That's outright pitiful.\n"
-	.string "I'll give you one.$"
+	.string "SLUDGE BOMB. It's a bomb. Of sludge.\p"
+	.string "It may poison the target. Here's one.$"
 
 DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo:
 	.string "I love SLUDGE BOMB.\p"

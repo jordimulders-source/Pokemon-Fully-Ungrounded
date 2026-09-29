@@ -238,11 +238,10 @@ JaggedPass_Text_BoulderShakingInResponseToEmblem:
 	.string "to the MAGMA EMBLEM!$"
 
 JaggedPass_Text_JulioIntro:
-	.string "Aiyeeh! It's awfully scary to shoot\n"
-	.string "down the mountain in one go!$"
+	.string "They see me rollin'… They hatin'…$"
 
 JaggedPass_Text_JulioDefeat:
-	.string "I feel like I'm falling apart…$"
+	.string "…They caught me ridin' dirty.$"
 
 JaggedPass_Text_JulioPostBattle:
 	.string "My bicycle bounced around so much,\n"

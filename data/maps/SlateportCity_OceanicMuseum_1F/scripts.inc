@@ -301,10 +301,10 @@ SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis:
 	.string "You have to forgive me!$"
 
 SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain:
-	.string "That TM, it suits you more than it\n"
-	.string "does me.\p"
-	.string "Hope I never see you again!\n"
-	.string "Wahahaha!$"
+	.string "TRICK ROOM. Slow POKéMON move first for\n"
+	.string "five turns.\p"
+	.string "It suits you more than me. Hope I never\n"
+	.string "see you again! Wahahaha!$"
 
 SlateportCity_OceanicMuseum_1F_Text_YouHaveToTakeThis:
 	.string "Awww, come on!\n"

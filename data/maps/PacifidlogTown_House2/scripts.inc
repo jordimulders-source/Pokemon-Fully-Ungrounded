@@ -103,9 +103,10 @@ PacifidlogTown_House2_Text_AhYourPokemon:
 	.string "Your POKéMON…$"
 
 PacifidlogTown_House2_Text_AdoringPokemonTakeThis:
-	.string "It clearly likes you very much.\p"
-	.string "A POKéMON that adoring and adorable\n"
-	.string "deserves a TM like this, no?$"
+	.string "It clearly likes you. Here, an ABILITY\n"
+	.string "CAPSULE.\p"
+	.string "It swaps your POKéMON's ability. That's\n"
+	.string "all it does.$"
 
 PacifidlogTown_House2_Text_PutInSomeMoreEffort:
 	.string "Hmm…\n"
@@ -114,22 +115,15 @@ PacifidlogTown_House2_Text_PutInSomeMoreEffort:
 	.string "some more effort.$"
 
 PacifidlogTown_House2_Text_ViciousPokemonTakeThis:
-	.string "It has a vicious look to it.\p"
-	.string "A frightening POKéMON like that\n"
-	.string "deserves a TM like this.$"
+	.string "It hates you. Here's DAZZLING GLEAM.\n"
+	.string "Maybe some sparkle helps.$"
 
 PacifidlogTown_House2_Text_ExplainReturnFrustration:
-	.string "If a POKéMON likes you a lot, RETURN's\n"
-	.string "power is enhanced.\p"
-	.string "If it doesn't like you, FRUSTRATION's\n"
-	.string "power goes up.$"
+	.string "Come back next week. Same deal.$"
 
 PacifidlogTown_House2_Text_GetGoodTMInXDays:
-	.string "Oh, yes. In about {STR_VAR_1} or so days,\n"
-	.string "I should be getting a good TM or two.\p"
-	.string "You should come see me then.\n"
-	.string "I'll give you a TM that's suitable for\l"
-	.string "your POKéMON.$"
+	.string "Come back in about {STR_VAR_1} days. I'll\n"
+	.string "have something for you.$"
 
 PacifidlogTown_House2_Text_Rurii:
 	.string "AZURILL: Rurii.$"

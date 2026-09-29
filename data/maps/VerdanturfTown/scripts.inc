@@ -78,11 +78,10 @@ VerdanturfTown_Text_ManDugTunnelForLove:
 	.string "I don't really get it, but hey!$"
 
 VerdanturfTown_Text_AirCleanHere:
-	.string "The way the winds blow, volcanic ash\n"
-	.string "is never blown in this direction.\p"
-	.string "The air is clean and delicious here.\n"
-	.string "Living here should do wonders for even\l"
-	.string "frail and sickly people.$"
+	.string "The air is clean here.\p"
+	.string "That's it. That's the whole town.\p"
+	.string "VERDANTURF is lamer than TEAM FLARE.\p"
+	.string "At least they had a plan.$"
 
 VerdanturfTown_Text_MakeBattleTentDebut:
 	.string "My POKéMON and I, we've been riding\n"

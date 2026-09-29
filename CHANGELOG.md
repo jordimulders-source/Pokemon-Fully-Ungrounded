@@ -14841,3 +14841,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Davis (Route 123): "LET'S GO! KNEECAPS!" Brice (Hiker, Route 112): "HYUCK HYUCK HYUCK!"
 - Wingull-huis (Route 119): de vrouw is nog overdrevener.
 - Beschermd, blijft vanilla: Jeffrey (Route 120, "… … … Want to battle?") en de Yes Town-jongen in Pacifidlog.
+
+### [v.0.6.41] - Scarlet & Violet, Larry, Legends en meer
+- Route 123: Cooltrainers Wendy en Jazmyn heten nu SCARLET en VIOLET, twee zussen op Treasure Hunt (verwijzingen naar Scarlet/Violet: Treasure Hunt, picknick-sandwiches, Herba Mystica). Paldea-teams (lv 35): Scarlet: Armarouge, Lokix, Glimmora, Houndstone; Violet: Ceruledge, Mabosstiff, Espathra, Cyclizar. Beide 12 IV's, Full Restore en dezelfde AI.
+- Jerry (School Kid, Route 116) wil een salaryman worden zoals Larry.
+- Losse NPC's: Diving Treasure Hunter (eiland leger dan Alola), Verdanturf lamer dan Team Flare, Fortree-meisje headbutt bomen, honeymoon-stel in Lilycove (klaagt over Legends Z-A / is fan van Legends: Arceus), Route 110-jongen is blij dat deze game snel is.

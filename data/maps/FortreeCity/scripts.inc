@@ -107,10 +107,11 @@ FortreeCity_Text_ThisTimeIllBeatWinona:
 	.string "with me. This time, I'll beat WINONA.$"
 
 FortreeCity_Text_TreesGrowByDrinkingRainwater:
-	.string "The ground absorbs rainwater, and\n"
-	.string "trees grow by drinking that water…\p"
-	.string "Our FORTREE CITY exists because\n"
-	.string "there's both water and soil.$"
+	.string "I headbutt every tree I see.\p"
+	.string "In JOHTO, POKéMON fall out.\p"
+	.string "In HOENN? Nothing.\p"
+	.string "Just bark and a headache.\p"
+	.string "Tree 417. Here I go.$"
 
 FortreeCity_Text_EveryoneHealthyAndLively:
 	.string "The CITY consists of homes built on\n"

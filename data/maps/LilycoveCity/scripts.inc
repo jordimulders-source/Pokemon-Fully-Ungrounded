@@ -737,17 +737,13 @@ LilycoveCity_Text_SawTallTowerOnRoute131:
 	.string "Could that possibly be…?$"
 
 LilycoveCity_Text_JustArrivedAndSawRarePokemon:
-	.string "We just arrived here on our\n"
-	.string "honeymoon vacation.\p"
-	.string "We happened to see a DRAGON-type\n"
-	.string "POKéMON flying way up in the sky.\p"
-	.string "Do cool POKéMON like that live in\n"
-	.string "the HOENN region?$"
+	.string "LEGENDS: Z-A? One city. ONE city.\p"
+	.string "I spent the whole game on rooftops.\p"
+	.string "I wanted KALOS. I got a parking garage.$"
 
 LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
-	.string "On our honeymoon, we vowed to see as\n"
-	.string "many rare POKéMON as we can.\p"
-	.string "So we were delighted to see a rare\n"
-	.string "POKéMON as soon as we arrived.\p"
-	.string "I mean, we are totally happy!$"
+	.string "Well, I loved LEGENDS: ARCEUS.\p"
+	.string "Sneaking through the grass, throwing\n"
+	.string "balls from the bushes…\p"
+	.string "That's how I caught my husband.$"
 

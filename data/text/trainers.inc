@@ -2288,18 +2288,17 @@ Route116_Text_JanicePostBattle:
 	.string "power, that's ideal, I think.$"
 
 Route116_Text_JerryIntro:
-	.string "We learn all sorts of things at the\n"
-	.string "TRAINER'S SCHOOL.\p"
-	.string "I want to test things out for real!$"
+	.string "My dream is to become a salaryman like\n"
+	.string "LARRY!$"
 
 Route116_Text_JerryDefeat:
-	.string "I slacked off in school…\n"
-	.string "That's why I lost.$"
+	.string "…Overtime. Again.$"
 
 Route116_Text_JerryPostBattle:
-	.string "I'll have to redo some courses at\n"
-	.string "the TRAINER'S SCHOOL.\l"
-	.string "If I don't, ROXANNE will be steamed.$"
+	.string "LARRY eats at the same restaurant\n"
+	.string "every day.\p"
+	.string "Same order. Same face. No emotion.\p"
+	.string "That's the dream.$"
 
 Route116_Text_JerryRegister1:
 	.string "I learned at the TRAINER'S SCHOOL\n"
@@ -3411,15 +3410,18 @@ Route121_Text_MarcelPostBattle:
 	.string "before entering any CONTEST.$"
 
 Route123_Text_WendyIntro:
-	.string "Want to determine how strong you are?\n"
-	.string "I'll be the test!$"
+	.string "School's out! It's Treasure Hunt\n"
+	.string "season!\p"
+	.string "My sister VIOLET is somewhere on this\n"
+	.string "route. We're competing.$"
 
 Route123_Text_WendyDefeat:
-	.string "You passed with flying colors!$"
+	.string "…Picnic break?$"
 
 Route123_Text_WendyPostBattle:
-	.string "To best even me…\n"
-	.string "Your strength is marvelous!$"
+	.string "My sandwich had no shiny power.\p"
+	.string "VIOLET says: add more HERBA MYSTICA.\p"
+	.string "She's always right. Ugh.$"
 
 Route123_Text_BraxtonIntro:
 	.string "You seem to have a big collection\n"
@@ -3600,16 +3602,16 @@ Route123_Text_DavisPostBattle:
 	.string "Do the math. That's so many knees.$"
 
 Route123_Text_JazmynIntro:
-	.string "My confidence will get a boost by\n"
-	.string "beating someone obviously strong!$"
+	.string "Our teacher said: find your own\n"
+	.string "treasure.\p"
+	.string "SCARLET went the other way. Typical.$"
 
 Route123_Text_JazmynDefeat:
-	.string "There goes my confidence…$"
+	.string "I need a sandwich. A big one.$"
 
 Route123_Text_JazmynPostBattle:
-	.string "They say that you can't judge a person\n"
-	.string "by their appearance.\p"
-	.string "But often, their looks don't lie…$"
+	.string "I told SCARLET a hundred times.\p"
+	.string "More HERBA MYSTICA.$"
 
 Route123_Text_FrederickIntro:
 	.string "Hello, child!\n"

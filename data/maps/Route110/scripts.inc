@@ -810,8 +810,11 @@ Route110_Text_BrendanExplainItemfinder:
 	.string "POKéMON.$"
 
 Route110_Text_RideBikeAtFullSpeed:
-	.string "Wouldn't it be great to ride a BIKE\n"
-	.string "at full speed on CYCLING ROAD?$"
+	.string "Isn't it great how fast this game is?\p"
+	.string "Enjoy it while it lasts.\p"
+	.string "The next generation will be sooo slow.\p"
+	.string "The trees will load after you walk\n"
+	.string "through them.$"
 
 Route110_Text_HairStreamsBehindMe:
 	.string "How do you like the way my raven-\n"

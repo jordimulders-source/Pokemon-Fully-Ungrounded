@@ -90,12 +90,15 @@ SSTidalRooms_Text_MicahPostBattle:
 	.string "For me, POKéMON are treasured friends!$"
 
 SSTidalRooms_Text_ThomasIntro:
-	.string "Child…\n"
-	.string "Did you knock on the door?$"
+	.string "Child… I see that you raise POKéMON\n"
+	.string "with utmost care.\p"
+	.string "A child like you would never understand\n"
+	.string "what I hope to achieve.$"
 
 SSTidalRooms_Text_ThomasDefeat:
-	.string "A loss is to be accepted without haste\n"
-	.string "or panic.$"
+	.string "…I'm not GIOVANNI, by the way. I just\n"
+	.string "watch a lot of mafia shows. THE\l"
+	.string "SOPRANOS. Four times.$"
 
 SSTidalRooms_Text_ThomasPostBattle:
 	.string "To be never ruffled in any situation is\n"

@@ -14959,3 +14959,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Nieuwe automatische voorbereiding (`prepare_auto` in `tools/grounded/prepare_midi.py`): alle noten worden per GBA-instrument gegroepeerd (piano, strijkers, trompet, pauken, taiko, xylofoon, enz.), zodat ook grote orkest-MIDI's binnen de 10 sporen passen. Volume wordt in de aanslag verwerkt; pitch bends vallen weg. Wat daarna nog niet past, valt af (alleen bij Giratina: koor, orgel, xylofoon, hobo en een paar kleine partijen, 199 noten) en bij Cyrus 37 noten van een lead.
 - De voicegroup `grounded_gm` wordt nu door hetzelfde script gegenereerd; nieuwe instrumenten erbij: glockenspiel, xylofoon, harp, pauken en taiko.
 - Getest in de emulator: alle vijf spelen af, nauwelijks clipping.
+
+### [v.0.6.61] - Test: nog vier nummers bij WILD MUSIC
+- Als test hoe ver we kunnen gaan, toegevoegd bij WILD MUSIC: DARK CAVE (HeartGold/SoulSilver), YOSHI CASTLE, BROKEN PIER en SUNSET WILDS (beide Mario Kart: Super Circuit).
+- Via dezelfde automatische voorbereiding; bij alle vier paste alles binnen de 10 sporen, er vielen geen partijen weg.
+- Getest in de emulator: alle vier spelen af, nauwelijks clipping.

@@ -29,3 +29,10 @@ for src, dst in [
     ('bw_ghetsis.mid',    'mus_grounded_vs_ghetsis.mid'),
 ]:
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
+for src, dst in [
+    ('hgss_dark_cave.mid',    'mus_grounded_vs_dark_cave.mid'),
+    ('yoshi_castle.mid',      'mus_grounded_vs_yoshi_castle.mid'),
+    ('mksc_broken_pier.mid',  'mus_grounded_vs_broken_pier.mid'),
+    ('mksc_sunset_wilds.mid', 'mus_grounded_vs_sunset_wilds.mid'),
+]:
+    prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')

@@ -552,6 +552,10 @@
 #define MUS_GROUNDED_VS_N           614 // Project Grounded: N's thema (Black/White), keuze in het optiemenu
 #define MUS_GROUNDED_VS_GIRATINA    615 // Project Grounded: Giratina-gevechtsmuziek (Platinum), keuze in het optiemenu
 #define MUS_GROUNDED_VS_GHETSIS     616 // Project Grounded: Ghetsis-gevechtsmuziek (Black/White), keuze in het optiemenu
+#define MUS_GROUNDED_VS_DARK_CAVE   617 // Project Grounded: Dark Cave (HeartGold/SoulSilver), keuze bij WILD MUSIC
+#define MUS_GROUNDED_VS_YOSHI_CASTLE 618 // Project Grounded: Yoshi's castle-muziek, keuze bij WILD MUSIC
+#define MUS_GROUNDED_VS_BROKEN_PIER 619 // Project Grounded: Broken Pier (Mario Kart: Super Circuit), keuze bij WILD MUSIC
+#define MUS_GROUNDED_VS_SUNSET_WILDS 620 // Project Grounded: Sunset Wilds (Mario Kart: Super Circuit), keuze bij WILD MUSIC
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

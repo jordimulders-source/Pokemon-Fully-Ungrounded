@@ -14969,3 +14969,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Doorgespeeld in de emulator: instant heal bij de verpleegster (tekst verdwijnt na ~0,5 s, je kunt meteen weglopen), vissen (hengel uit, direct beet en gevecht), itembeschrijving bij het krijgen van een item, opslaan en laden (CONTINUE werkt, je staat weer waar je was).
 - Vissen: "A POKéMON's on the hook!" en "Not even a nibble…" stonden maar ~0,1 s in beeld (de vistaak laat de tekst dubbel zo snel lopen). Pauze verhoogd naar {PAUSE 200}, nu ~0,3 s leesbaar.
 - Maxie (Mt. Chimney): Hippopotas lv 29 is nu Hippowdon (evolueert in dit project op 28).
+
+### [v.0.6.63] - Onge-evolueerde trainer-Pokémon geëvolueerd
+- Op Jordi's aanwijzing geëvolueerd (level stond al op/boven het evolutielevel van dit project), 33 stuks: Arrokuda → Barraskewda (Aqua-grunt), Honedge → Doublade (Leah), Baltoy → Claydol (Chip, Magma-grunt 16), Loudred → Exploud (Gabby & Ty 3), Buizel → Floatzel (Austina), Pichu → Pikachu (Ricky), Tirtouga → Carracosta (Charlie), Slakoth → Vigoroth (George, Autumn), Duskull → Dusclops (Tammy), Shuppet → Banette (Tasha), Aron → Lairon (Steve), Toedscool → Toedscruel (Dominik), Wattrel → Kilowattrel (David, Hugh), Patrat → Watchog (Chad), Sandshrew → Sandslash (Drew, Shane, Travis), Marill → Azumarill (Victoria, Jani), Makuhita → Hariyama (Shelby), Phantump → Trevenant (Carter), Klink → Klang (Anthony, Abigail, Jasmine), Wingull → Pelipper (Donny, Allison, Hugh), Koffing → Weezing (Takashi), Machoke → Machamp (Phillip), Swablu → Altaria (Ashley).
+- George's Vigoroth: Truant → Vital Spirit (Vigoroth kan Truant niet hebben).
+- Bewust niet geëvolueerd (grappen): o.a. Magikarps, Edwards Abra's, Wally's Ralts, Whismur, Mareep, Azurill, Skitty.

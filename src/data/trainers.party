@@ -36,7 +36,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Arrokuda
+Barraskewda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bubble Beam
@@ -978,7 +978,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Honedge
+Doublade
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1269,7 +1269,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
+Claydol
 Level: 33
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -1529,7 +1529,7 @@ Magneton
 Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Loudred
+Exploud
 Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -1690,7 +1690,7 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Buizel
+Floatzel
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1872,7 +1872,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Tail Whip
 - Surf
 
-Pichu
+Pikachu
 Level: 18
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Sweet Kiss
@@ -1946,7 +1946,7 @@ Barraskewda
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tirtouga
+Carracosta
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2305,9 +2305,9 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / HP_AWARE / CHECK_VIABILITY / STALL
 
-Slakoth @ Sitrus Berry
+Vigoroth @ Sitrus Berry
 Level: 32
-Ability: Truant
+Ability: Vital Spirit
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
 - Slack Off
@@ -3627,7 +3627,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
+Dusclops
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3673,7 +3673,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Shuppet
+Banette
 Level: 36
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -4649,7 +4649,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Aron
+Lairon
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4882,7 +4882,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Toedscool
+Toedscruel
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5016,7 +5016,7 @@ Luvdisc
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wattrel
+Kilowattrel
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5376,7 +5376,7 @@ Stoutland
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Patrat
+Watchog
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6446,7 +6446,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Sandslash
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6526,7 +6526,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Sandslash
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6605,7 +6605,7 @@ Shroomish
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Slakoth
+Vigoroth
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6626,7 +6626,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Sandslash
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9622,7 +9622,7 @@ Charcadet @ Oran Berry
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Marill @ Oran Berry
+Azumarill @ Oran Berry
 Level: 20
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -10051,7 +10051,7 @@ Meditite
 Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Makuhita
+Hariyama
 Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -10961,7 +10961,7 @@ Cursola
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Phantump
+Trevenant
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -11164,7 +11164,7 @@ Cyclizar
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Klink
+Klang
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11330,7 +11330,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Klink
+Klang
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11363,7 +11363,7 @@ Varoom
 Level: 23
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Klink
+Klang
 Level: 23
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -12108,7 +12108,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
+Pelipper
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12175,7 +12175,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
+Pelipper
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12515,7 +12515,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
+Pelipper
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12523,7 +12523,7 @@ Tropius
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wattrel
+Kilowattrel
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12960,7 +12960,7 @@ Ninjask
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Koffing
+Weezing
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13017,7 +13017,7 @@ Gender: Female
 Music: Girl
 Double Battle: No
 
-Marill
+Azumarill
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14981,7 +14981,7 @@ Tentacruel
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
+Machamp
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -19252,7 +19252,7 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Swablu
+Altaria
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -21354,7 +21354,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
+Claydol
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

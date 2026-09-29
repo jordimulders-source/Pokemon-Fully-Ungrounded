@@ -123,7 +123,8 @@ Route103_Text_LivPostBattle:
 	.string "LIV: uehehuehuuuuehhhuhueehnhhhu$"
 
 Route103_Text_AmyLivRegister:
-	.string "LIV: heheheeeeheuuuheeehsssshuhuffff$"
+	.string "LIV: heheheeeeheuuuheeeh\n"
+	.string "sssshuhuffff$"
 
 Route103_Text_LivNotEnoughPokemon:
 	.string "LIV: hngushuesnnnnnhsfuuuehuh$"

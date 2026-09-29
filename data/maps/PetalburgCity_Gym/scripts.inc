@@ -1155,7 +1155,8 @@ PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 
 PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
 	.string "Um… Me…\n"
-	.string "Me want become real Pokemon of trainers…$"
+	.string "Me want become real Pokemon\l"
+	.string "of trainers…$"
 
 PetalburgCity_Gym_Text_DadOhYoureWallyRight:
 	.string "DAD: Hm? You're… Uh… Oh, right.\n"
@@ -1429,8 +1430,9 @@ PetalburgCity_Gym_Text_GeorgePostBattle:
 	.string "two-way street. Your POKéMON\l"
 	.string "aren't just tools, they're\l"
 	.string "senior associates.\p"
-	.string "Go on! The GAME OF THRONES ROOM is next.\n"
-	.string "It’s a real 'Red Wedding' in there.$"
+	.string "Go on! The GAME OF THRONES ROOM\n"
+	.string "is next. It’s a real 'Red Wedding'\l"
+	.string "in there.$"
 
 PetalburgCity_Gym_Text_GeorgePostBadge:
 	.string "HARVEY: I'm going to keep billable\n"

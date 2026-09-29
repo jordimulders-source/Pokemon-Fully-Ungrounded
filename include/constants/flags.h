@@ -45,7 +45,7 @@
 
 #define FLAG_CAUGHT_SHIP_SPIRITOMB    0x20 // Project Grounded: Spiritomb in de prullenbak van het Abandoned Ship gevangen
 #define FLAG_SHIP_MUK_ENCOUNTERED     0x21 // Project Grounded: Muk uit de prullenbak op Abandoned Ship B1F gezien
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
+#define FLAG_RECEIVED_SPIT_SWALLOW_MON 0x22 // Project Grounded: Silicobra of Hisui-Qwilfish van de strandman in Slateport
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag

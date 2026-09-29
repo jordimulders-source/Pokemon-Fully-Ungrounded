@@ -14727,3 +14727,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Steven praat overal als een metalhead à la Jack Black (ROCK ON, SLAYEEEER, HEAVY METAAAAAL): Granite Cave, Route 118, Route 120, Space Center, zijn huis, Route 128, Sootopolis, Meteor Falls; ook de NPC's over Steven (Fortree, Mossdeep).
 - Devon Corporation: experimenten mislukken aan de lopende band; de fossielman is een miskend genie; Mr. Stone speelt Solitaire en vergeet je naam.
 - Losse NPC's: Mario Kart World zonder updates (Lilycove PC), na Pokopia wil iemand niet meer battlen (Slateport PC), Santiago drijft al sinds de release roerloos (Route 130), Darrin's vingers zijn rozijnen (Route 107), Roland wil op een Wailord surfen (Route 124), de gestrande Kelvin (Route 134), Alex ziet vliegende golems bij de Sealed Chamber (Route 134), de Mirage Island-opa is sarcastisch (Pacifidlog).
+
+### [v.0.6.21] - Spit or Swallow, Sabrina vs. Taylor
+- Nieuwe NPC op het strand van Slateport (25,57) die alleen vraagt: "Spit or swallow?"
+  - SPIT: Silicobra lv 10 met Sand Spit, moves Spit Up en Stockpile.
+  - SWALLOW: Hisui-Qwilfish lv 10 met Stockpile en Swallow.
+  - Daarna zegt hij alleen nog: "Nice." (FLAG_RECEIVED_SPIT_SWALLOW_MON, voorheen FLAG_UNUSED_0x022.) Met een volle party stelt hij alleen de vraag.
+- Verdanturf (huis): twee vrouwen discussiëren of Sabrina Carpenter of Taylor Swift beter is.

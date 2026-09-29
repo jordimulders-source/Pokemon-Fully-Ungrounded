@@ -1349,3 +1349,53 @@ SlateportCity_EventScript_SetScottDisguise::
 SlateportCity_EventScript_SetScottDisguiseFemale::
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
 	return
+
+@ Project Grounded: strandman die maar één vraag stelt.
+SlateportCity_EventScript_SpitOrSwallow::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_SPIT_SWALLOW_MON, SlateportCity_EventScript_SpitOrSwallowNice
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, SlateportCity_EventScript_SpitOrSwallowAsk
+	message SlateportCity_Text_SpitOrSwallow
+	waitmessage
+	dynmultichoice 21, 6, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SlateportCity_Text_Spit, SlateportCity_Text_Swallow
+	goto_if_eq VAR_RESULT, 1, SlateportCity_EventScript_Swallow
+	givemon SPECIES_SILICOBRA, 10, item=ITEM_NONE, abilityNum=0, move1=MOVE_SPIT_UP, move2=MOVE_STOCKPILE, move3=MOVE_NONE, move4=MOVE_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_SILICOBRA
+	goto SlateportCity_EventScript_SpitOrSwallowReceived
+
+SlateportCity_EventScript_Swallow::
+	givemon SPECIES_QWILFISH_HISUI, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_QWILFISH_HISUI
+SlateportCity_EventScript_SpitOrSwallowReceived::
+	playfanfare MUS_OBTAIN_ITEM
+	message SlateportCity_Text_ReceivedSpitOrSwallowMon
+	waitmessage
+	waitfanfare
+	setflag FLAG_RECEIVED_SPIT_SWALLOW_MON
+SlateportCity_EventScript_SpitOrSwallowNice::
+	msgbox SlateportCity_Text_Nice, MSGBOX_DEFAULT
+	release
+	end
+
+@ Volle party: hij stelt alleen de vraag, zonder keuzemenu.
+SlateportCity_EventScript_SpitOrSwallowAsk::
+	msgbox SlateportCity_Text_SpitOrSwallow, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_Text_SpitOrSwallow:
+	.string "Spit or swallow?$"
+
+SlateportCity_Text_Spit:
+	.string "SPIT$"
+
+SlateportCity_Text_Swallow:
+	.string "SWALLOW$"
+
+SlateportCity_Text_ReceivedSpitOrSwallowMon:
+	.string "{PLAYER} received a {STR_VAR_1}!$"
+
+SlateportCity_Text_Nice:
+	.string "Nice.$"

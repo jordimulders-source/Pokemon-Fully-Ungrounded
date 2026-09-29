@@ -14893,3 +14893,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.50] - Quality of life als vaste regel
 - CLAUDE.md: nieuw principe "de game respecteert de tijd van de speler", plus de lijst met goedgekeurde QoL-wensen die nog gedaan moeten worden (HM-moves zonder HM, Repel opnieuw, Fly vanuit de kaart, Move Deleter, EV/IV-overzicht, meerdere Rare Candies tegelijk, minder herhaalde popups en teksten).
 - CLAUDE.md: tweede ronde QoL-wensen toegevoegd (Itemfinder die items laat oplichten, bessenbomen-overzicht, sneller fietsen/surfen, geen ontsnapkans in de Safari Zone en bij Latios/Latias, tas sorteren, twee registratieknoppen, nature/ability in de pc, team in één keer healen, level van de volgende gym-ace, rematch-overzicht) en wat bewust niet komt.
+
+### [v.0.6.51] - Quality of life: dowsing, sneller fietsen/surfen, niemand vlucht meer
+- Itemfinder werkt nu als de Dowsing Machine uit ORAS: hij blijft aan terwijl je loopt, kleurt van blauw naar rood en piept sneller naarmate je dichter bij een verborgen item komt (`I_ORAS_DOWSING_FLAG` = `FLAG_ORAS_DOWSING`, 0x25). Tijdens het dowsen kun je niet rennen; op het water werkt hij niet.
+- Surfen gaat even snel als de Mach Bike op topsnelheid.
+- Mach Bike begint direct op rensnelheid (en versnelt daarna naar topsnelheid); Acro Bike rijdt even snel als de Mach Bike op topsnelheid.
+- Pokémon in de Safari Zone vluchten niet meer.
+- Latios/Latias (rondzwervend) vluchten niet meer; je kunt gewoon vechten of vangen. Teleport en Whirlwind van wilde Pokémon werken nog wel.

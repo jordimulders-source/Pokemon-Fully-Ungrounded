@@ -838,8 +838,8 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         }
         else
         {
-            // speed 2 is fast, same speed as running
-            PlayerWalkFast(direction);
+            // Project Grounded: surfen gaat even snel als de Mach Bike op topsnelheid (was PlayerWalkFast)
+            PlayerWalkFaster(direction);
         }
         return;
     }

@@ -74,7 +74,7 @@ static void (*const sMachBikeTransitions[])(u8) =
 // bikeFrameCounter is input which is represented by sMachBikeSpeeds in order
 static void (*const sMachBikeSpeedCallbacks[])(u8) =
 {
-    PlayerWalkNormal,
+    PlayerWalkFast, // Project Grounded: Mach Bike begint op rensnelheid (was PlayerWalkNormal)
     PlayerWalkFast,
     PlayerWalkFaster,
 };
@@ -585,7 +585,7 @@ static void AcroBikeTransition_Moving(u8 direction)
         if (ObjectMovingOnRockStairs(playerObjEvent, direction))
             PlayerWalkFast(direction);
         else
-            PlayerRideWaterCurrent(direction);
+            PlayerWalkFaster(direction); // Project Grounded: Acro Bike even snel als de Mach Bike (was PlayerRideWaterCurrent)
     }
 }
 

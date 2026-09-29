@@ -386,8 +386,9 @@ LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "For that, you deserve this.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
-	.string "{PLAYER} received the HEAT BADGE\n"
-	.string "from FLANNERY.$"
+	.string "{PLAYER} received the HEAT BADGE from\n"
+	.string "FLANNERY.\p"
+	.string "It smells like sulfur. And patchouli.$"
 LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
 	.string "If you have a HEAT BADGE, all POKéMON\n"
 	.string "up to Level 50 will obey you.\p"
@@ -408,8 +409,10 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "staring at the fire. It’s a sign!$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
-	.string "Registered GYM LEADER FLANNERY\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER FLANNERY in the\n"
+	.string "POKéNAV.\p"
+	.string "She said she doesn't use phones. It's\n"
+	.string "registered anyway.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "Your power reminds me of someone…\p"
@@ -423,7 +426,8 @@ LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "a different kind of 'wildlife'...$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
-	.string "LAVARIDGE TOWN POKéMON GYM$"
+	.string "LAVARIDGE TOWN POKéMON GYM\p"
+	.string "No WiFi.$"
 
 LavaridgeTown_Gym_1F_Text_GymStatueCertified:
 	.string "LAVARIDGE TOWN POKéMON GYM\p"

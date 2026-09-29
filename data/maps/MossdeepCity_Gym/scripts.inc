@@ -649,8 +649,10 @@ MossdeepCity_Gym_Text_TateAndLizaDefeat:
 	.string "chakras implode!$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
-	.string "{PLAYER} received the MIND BADGE\n"
-	.string "from TATE and LIZA.$"
+	.string "{PLAYER} received the MIND BADGE from\n"
+	.string "TATE and LIZA.\p"
+	.string "They finished each other's sentences\n"
+	.string "while handing it over.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 	.string "TATE: The MIND BADGE aligns the\n"
@@ -700,7 +702,8 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
 	.string "achieved numerical symmetry.$"
 
 MossdeepCity_Gym_Text_GymStatue:
-	.string "MOSSDEEP CITY POKéMON GYM$"
+	.string "MOSSDEEP CITY POKéMON GYM\p"
+	.string "The mystic combination.$"
 
 MossdeepCity_Gym_Text_GymStatueCertified:
 	.string "MOSSDEEP CITY POKéMON GYM\p"

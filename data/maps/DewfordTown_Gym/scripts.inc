@@ -447,7 +447,8 @@ DewfordTown_Gym_Text_BrawlyDefeat:
 
 DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 	.string "{PLAYER} received the KNUCKLE BADGE\n"
-	.string "from BRAWLY.$"
+	.string "from BRAWLY.\p"
+	.string "It's still warm. And a bit sweaty.$"
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "The KNUCKLE BADGE is your ticket to\n"
@@ -469,8 +470,9 @@ DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "… … … … … …$"
 
 DewfordTown_Gym_Text_RegisteredBrawly:
-	.string "Registered GYM LEADER BRAWLY\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER BRAWLY in the\n"
+	.string "POKéNAV.\p"
+	.string "He'll send you workout videos.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "I can see your talent becoming a\n"
@@ -480,12 +482,12 @@ DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "change my mind about the contract.$"
 
 DewfordTown_Gym_Text_GymStatue:
-	.string "DEWFORD TOWN POKéMON GYM$"
+	.string "DEWFORD TOWN POKéMON GYM\p"
+	.string "THE OCTAGON$"
 
 DewfordTown_Gym_Text_GymStatueCertified:
 	.string "DEWFORD TOWN POKéMON GYM\p"
-	.string "BRAWLY'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "BRAWLY'S CERTIFIED FIGHTERS: {PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch:
 	.string "BRAWLY: A real fucking fighter always\n"

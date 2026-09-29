@@ -70,9 +70,10 @@ LilycoveCity_PokemonCenter_1F_Text_HeardAboutRottenScoundrels:
 	.string "You're welcome for the variety.$"
 
 LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
-	.string "Those rotten scoundrels who steal\n"
-	.string "POKéMON and rip off METEORITES…\p"
-	.string "I haven't seen them around recently.$"
+	.string "Those scoundrels who steal POKéMON and\n"
+	.string "METEORITES…\p"
+	.string "Haven't seen them lately.\p"
+	.string "They're probably at a tasting.$"
 
 LilycoveCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

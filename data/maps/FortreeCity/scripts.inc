@@ -102,8 +102,9 @@ FortreeCity_Text_SomethingBlockingGym:
 	.string "I'll just stand here. Forever.$"
 
 FortreeCity_Text_ThisTimeIllBeatWinona:
-	.string "I've got my pride-and-joy POKéMON\n"
-	.string "with me. This time, I'll beat WINONA.$"
+	.string "I brought my pride-and-joy POKéMON.\p"
+	.string "This time I'll beat WINONA!\p"
+	.string "If she's awake. She's always jetlagged.$"
 
 FortreeCity_Text_TreesGrowByDrinkingRainwater:
 	.string "I headbutt every tree I see.\p"
@@ -136,14 +137,13 @@ FortreeCity_Text_SomethingUnseeable:
 	.string "Something unseeable is in the way.$"
 
 FortreeCity_Text_UnseeableUseDevonScope:
-	.string "Something unseeable is in the way.\p"
-	.string "Want to use the DEVON SCOPE?$"
+	.string "Something invisible is in the way.\p"
+	.string "Use the DEVON SCOPE?$"
 
 FortreeCity_Text_UsedDevonScopePokemonFled:
 	.string "{PLAYER} used the DEVON SCOPE.\p"
-	.string "An invisible POKéMON became completely\n"
-	.string "visible!\p"
-	.string "The startled POKéMON fled!$"
+	.string "An invisible POKéMON became visible!\p"
+	.string "It was very embarrassed and ran away!$"
 
 FortreeCity_Text_CitySign:
 	.string "FORTREE CITY\n"

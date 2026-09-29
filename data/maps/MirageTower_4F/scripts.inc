@@ -50,12 +50,14 @@ MirageTower_4F_Text_TakeRootFossil:
 	.string "Take the ROOT FOSSIL?$"
 
 MirageTower_4F_Text_LeftRootFossilAlone:
-	.string "{PLAYER} left the ROOT FOSSIL alone.$"
+	.string "{PLAYER} left the ROOT FOSSIL alone.\p"
+	.string "It'll be sand soon.$"
 
 MirageTower_4F_Text_TakeClawFossil:
 	.string "You found the CLAW FOSSIL.\p"
 	.string "Take the CLAW FOSSIL?$"
 
 MirageTower_4F_Text_LeaveClawFossilAlone:
-	.string "{PLAYER} left the CLAW FOSSIL alone.$"
+	.string "{PLAYER} left the CLAW FOSSIL alone.\p"
+	.string "It'll be sand soon.$"
 	

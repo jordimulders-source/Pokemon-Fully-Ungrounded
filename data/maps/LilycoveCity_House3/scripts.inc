@@ -98,49 +98,30 @@ LilycoveCity_House3_EventScript_WereDoingContest::
 	end
 
 LilycoveCity_House3_Text_LearnFromMasterOfPokeblocks:
-	.string "Oh, my, my! Are you traveling alone?\n"
-	.string "But you're so young! Good for you!\p"
-	.string "I'm sure my kids could learn a thing\n"
-	.string "or two from you!\p"
+	.string "Oh, my! Traveling alone? So young!\p"
+	.string "My kids could learn from you. Four of\n"
+	.string "them. All at once.\p"
 	.string "Me? I'm a master of {POKEBLOCK}S.\p"
-	.string "If I get serious just a little, why,\n"
-	.string "I can concoct great {POKEBLOCK}S.\p"
-	.string "Would you like to learn from me,\n"
-	.string "a master of {POKEBLOCK}S?$"
+	.string "Want to learn from me?$"
 
 LilycoveCity_House3_Text_OhAreYouSure:
 	.string "Oh? Are you sure?\p"
-	.string "You shouldn't always try to do\n"
-	.string "everything by yourself, dear!$"
+	.string "You can't do everything alone, dear!\n"
+	.string "Trust me. Quadruplets.$"
 
 LilycoveCity_House3_Text_ExplainPokeblocks:
-	.string "Oh, good! You're a smart soul!\n"
-	.string "This is a bit long, so listen up!\p"
-	.string "Are you ready?\p"
-	.string "If you look at {POKEBLOCK}S, you should see\n"
-	.string "that they are rated on how they feel.\p"
-	.string "The lower the feel rating,\n"
-	.string "the better it is. Don't forget this!\p"
-	.string "A good {POKEBLOCK} has a low feel\n"
-	.string "rating and a high level.\p"
-	.string "A POKéMON can eat more good\n"
-	.string "{POKEBLOCK}S than ordinary ones, too.\p"
-	.string "And this is important.\p"
-	.string "If you want to make smooth {POKEBLOCK}S,\n"
-	.string "use different kinds of BERRIES.\p"
-	.string "Don't be stingy--the kinds of BERRIES\n"
-	.string "affect the smoothness of {POKEBLOCK}S.\p"
-	.string "And another thing.\p"
-	.string "The more people blending BERRIES,\n"
-	.string "the smoother the {POKEBLOCK}S.\p"
-	.string "That's why you should talk to other\n"
-	.string "people and make {POKEBLOCK}S together.\p"
-	.string "That's about all you need to know to\n"
-	.string "make good {POKEBLOCK}S.\p"
-	.string "If everyone had POKéMON they love,\n"
-	.string "smooth {POKEBLOCK}S, and a loving family,\l"
-	.string "the world would be a happier place.\p"
-	.string "Don't give up, dear!$"
+	.string "Good! This is long, so listen!\p"
+	.string "{POKEBLOCK}S are rated on how they feel.\p"
+	.string "Lower feel rating = better. Remember\n"
+	.string "that!\p"
+	.string "A good {POKEBLOCK} has a low feel and a high level.\p"
+	.string "Use different kinds of BERRIES for\n"
+	.string "smooth {POKEBLOCK}S.\p"
+	.string "More people blending = smoother {POKEBLOCK}S.\p"
+	.string "So make friends and blend together.\p"
+	.string "That's it! Good luck, dear!\p"
+	.string "Now, if you'll excuse me, someone is\n"
+	.string "crying. Someone is always crying.$"
 
 LilycoveCity_House3_Text_HappyToHaveQuadruplets:
 	.string "My wife had quadruplets.\p"
@@ -148,20 +129,23 @@ LilycoveCity_House3_Text_HappyToHaveQuadruplets:
 	.string "Now I just want to sleep. For one night.$"
 
 LilycoveCity_House3_Text_GoingToWinMultiBattles:
-	.string "We're having MULTI BATTLES, but I know\n"
-	.string "I'm going to win.$"
+	.string "We're doing MULTI BATTLES.\p"
+	.string "I'm going to win. I always win. I'm the\n"
+	.string "oldest by four minutes.$"
 
 LilycoveCity_House3_Text_LikeMixingAtRecordCorner:
-	.string "We like mixing stuff at\n"
-	.string "the RECORD CORNER.\p"
-	.string "But what gets mixed up?$"
+	.string "We like mixing stuff at the RECORD\n"
+	.string "CORNER.\p"
+	.string "What gets mixed? Nobody knows.$"
 
 LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender:
-	.string "We're going to make super {POKEBLOCK}S\n"
-	.string "with a BERRY BLENDER!$"
+	.string "We're making super {POKEBLOCK}S with the BERRY\n"
+	.string "BLENDER!\p"
+	.string "Four of us! Perfect!$"
 
 LilycoveCity_House3_Text_GoingToEnterContest:
-	.string "I want to brag about how tough my\n"
-	.string "POKéMON is, so we're going to enter\l"
-	.string "a CONTEST together.$"
+	.string "I'm entering a CONTEST to brag about my\n"
+	.string "POKéMON.\p"
+	.string "My brothers are entering too. It'll be a\n"
+	.string "war.$"
 

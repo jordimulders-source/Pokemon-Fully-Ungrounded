@@ -229,14 +229,14 @@ JaggedPass_Text_GruntDefeat:
 	.string "My mouth is on fire. Not in the good way.$"
 
 JaggedPass_Text_GoWhereverYouWant:
-	.string "Okay, oh-kay!\n"
-	.string "I admit it--you're strong!\p"
-	.string "Don't worry about me.\n"
-	.string "Go wherever you want!$"
+	.string "Okay, okay! You're strong!\p"
+	.string "Go wherever you want!\p"
+	.string "I'll stay here. With the chili.$"
 
 JaggedPass_Text_BoulderShakingInResponseToEmblem:
-	.string "Oh! This boulder is shaking in response\n"
-	.string "to the MAGMA EMBLEM!$"
+	.string "This boulder is shaking at the MAGMA\n"
+	.string "EMBLEM!\p"
+	.string "It smells like hot sauce.$"
 
 JaggedPass_Text_JulioIntro:
 	.string "They see me rollin'… They hatin'…$"

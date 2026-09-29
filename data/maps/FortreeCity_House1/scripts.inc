@@ -127,8 +127,9 @@ FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
 
 FortreeCity_House1_Text_TradingMemoriesWithOthers:
 	.string "Trading POKéMON with others…\p"
-	.string "It's as if you're trading your own\n"
-	.string "memories with other people.$"
+	.string "It's like trading memories.\p"
+	.string "Nobody wanted my memories. Or my\n"
+	.string "POKéMON.$"
 
 FortreeCity_House1_Text_Zigzagoon:
 	.string "ZIGZAGOON: Gumomoh?$"

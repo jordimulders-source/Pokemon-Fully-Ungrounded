@@ -49,12 +49,11 @@ LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine:
 	.string "I like you! Take this!$"
 
 LavaridgeTown_HerbShop_Text_ExplainCharcoal:
-	.string "That CHARCOAL I gave you, it's used\n"
-	.string "for making herbal medicine.\p"
-	.string "It also does wonders when held by\n"
-	.string "a POKéMON.\p"
-	.string "It intensifies the power of FIRE-type\n"
-	.string "moves.$"
+	.string "That CHARCOAL is used for herbal\n"
+	.string "medicine.\p"
+	.string "Held by a POKéMON, it powers up FIRE\n"
+	.string "moves.\p"
+	.string "Don't smoke it.$"
 
 LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
 	.string "Herbal medicine works great.\p"

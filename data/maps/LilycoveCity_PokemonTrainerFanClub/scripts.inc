@@ -559,69 +559,50 @@ LilycoveCity_PokemonTrainerFanClub_EventScript_AlreadyInterviewed2::
 	end
 
 LilycoveCity_PokemonTrainerFanClub_Text_OhWowItsPlayer:
-	.string "Oh, wow!\n"
-	.string "It's {PLAYER}!$"
+	.string "Oh, wow! It's {PLAYER}!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_HeardAboutYouImYourFan:
-	.string "I've heard the news!\n"
-	.string "You're really strong, aren't you?\p"
-	.string "We always argue about who is the\n"
-	.string "strongest of all TRAINERS here.\p"
-	.string "So when I heard about you, I decided\n"
-	.string "to be your fan!\p"
-	.string "I hope you'll keep on battling other\n"
-	.string "tough TRAINERS.\p"
-	.string "That way, we'll be able to see more\n"
-	.string "of your hot, hot battles.\p"
-	.string "That will make the others here see\n"
-	.string "exactly how great you are.\p"
-	.string "Remember, I'm cheering for you,\n"
-	.string "{PLAYER}!$"
+	.string "I've heard about you! You're strong!\p"
+	.string "Here we argue about who's the\n"
+	.string "strongest TRAINER.\p"
+	.string "So I've decided: I'm your fan!\p"
+	.string "Keep battling tough TRAINERS. Hot, hot\n"
+	.string "battles!\p"
+	.string "I'm cheering for you, {PLAYER}! I have a\n"
+	.string "scrapbook.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YoureOneWeWantToWin:
-	.string "Yo, {PLAYER}!\n"
-	.string "You're the one we want to win!$"
+	.string "Yo, {PLAYER}! We want YOU to win!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_OthersDontKnowYoureTheBest:
-	.string "The others, they don't know that\n"
-	.string "you're the best of the best!\p"
-	.string "Isn't that right, {PLAYER}?\n"
-	.string "Show them you've got guts!$"
+	.string "The others don't know you're the best!\p"
+	.string "Show them, {PLAYER}! Show them all!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainersPowerIsOutOfTheOrdinary:
-	.string "I hate to say this, but the TRAINER\n"
-	.string "everybody's talking about is\l"
-	.string "{STR_VAR_1}, no question about it!\p"
-	.string "That TRAINER's power…\n"
-	.string "It's out of the ordinary.$"
+	.string "I hate to say it, but everyone's talking\n"
+	.string "about {STR_VAR_1}.\p"
+	.string "That TRAINER's power… Not normal.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsBestNoOneWantsToListen:
-	.string "Darn it… I've been telling people\n"
-	.string "that {STR_VAR_1} is the best now…\p"
-	.string "But no one wants to listen…$"
+	.string "Darn it… I keep saying {STR_VAR_1} is the\n"
+	.string "best…\p"
+	.string "Nobody listens. Nobody ever listens.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_HearingAboutToughNewTrainer:
-	.string "I've been hearing things about\n"
-	.string "a tough new TRAINER.\p"
-	.string "This TRAINER's supposed to be beating\n"
-	.string "GYM LEADERS, even.\p"
-	.string "Do you know anything about this\n"
-	.string "new TRAINER?$"
+	.string "I've heard about a tough new TRAINER.\p"
+	.string "Beating GYM LEADERS, even.\p"
+	.string "Do you know who it is? It's not you,\n"
+	.string "right? You look too normal.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ImPullingForYou:
-	.string "Oh!\n"
-	.string "{PLAYER}!\p"
-	.string "Go for it!\n"
-	.string "I'm pulling for you!$"
+	.string "Oh! {PLAYER}!\p"
+	.string "Go for it! I'm pulling for you!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_BrawlyNoImYourFan:
-	.string "Sigh…\n"
-	.string "BRAWLY…\p"
-	.string "Oh, no! Wait!\n"
-	.string "That's not right! No, no, no!\p"
-	.string "I'm your fan through and through!\p"
-	.string "So make me proud!\n"
-	.string "Go for it!$"
+	.string "Sigh… BRAWLY…\p"
+	.string "No! Wait! I'm YOUR fan!\p"
+	.string "Totally! Make me proud!\p"
+	.string "…Those shoulders though.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ICantHelpLikingBrawly:
 	.string "I can't help it, I only like BRAWLY…\p"
@@ -629,29 +610,25 @@ LilycoveCity_PokemonTrainerFanClub_Text_ICantHelpLikingBrawly:
 	.string "talk. That octagon.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly:
-	.string "Nobody understands the charm of\n"
-	.string "BRAWLY…\p"
-	.string "I don't care!\p"
-	.string "Even if I'm the only one, I'm going\n"
-	.string "to keep cheering for BRAWLY!$"
+	.string "Nobody gets BRAWLY's charm…\p"
+	.string "I don't care! I'll cheer for BRAWLY\n"
+	.string "alone!\p"
+	.string "In the octagon of my heart.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly:
-	.string "Whatever anyone says, my favorite\n"
-	.string "TRAINER is DEWFORD's GYM LEADER\l"
-	.string "BRAWLY!$"
+	.string "Whatever anyone says, my favorite is\n"
+	.string "BRAWLY!\p"
+	.string "The trash talk! The shoulders!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather:
-	.string "You've surpassed your own father in\n"
-	.string "every regard!\p"
-	.string "I'm telling you, so there's no question\n"
-	.string "about it at all!$"
+	.string "You've surpassed your father in every\n"
+	.string "way!\p"
+	.string "Even the hair. Almost.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YourFatherNeverGaveUpSoKeepOnBattling:
-	.string "Even when things turned bleak,\n"
-	.string "your father never gave up.\p"
-	.string "This I know to be true.\p"
-	.string "You never give up even if you lose!\n"
-	.string "So keep on battling!$"
+	.string "Even when it looked bleak, your father\n"
+	.string "never gave up.\p"
+	.string "You don't either! Keep battling!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_LongWayToGoComparedToNorman:
 	.string "NORMAN battled with more power,\n"
@@ -660,137 +637,120 @@ LilycoveCity_PokemonTrainerFanClub_Text_LongWayToGoComparedToNorman:
 	.string "But your dad has better hair.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouAndNormanAreDifferent:
-	.string "You're beginning to get the same\n"
-	.string "air of awe NORMAN exudes.\p"
-	.string "But there's something conclusively\n"
-	.string "different between you and NORMAN.\p"
-	.string "I can't tell you what that is.\n"
-	.string "You'll have to find it yourself.$"
+	.string "You're starting to have NORMAN's aura.\p"
+	.string "But there's one big difference between\n"
+	.string "you two.\p"
+	.string "I won't tell you. Find it yourself. It's\n"
+	.string "the hair.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WeDiscussStrongestTrainers:
-	.string "Everyone here, we're all huge fans\n"
-	.string "of POKéMON battles.\p"
-	.string "We discuss who we consider to be\n"
-	.string "the strongest of all TRAINERS.\p"
-	.string "If you were to become famous,\n"
-	.string "we might even become your fans!$"
+	.string "We're all huge fans of POKéMON battles\n"
+	.string "here.\p"
+	.string "We argue about who's strongest. For\n"
+	.string "hours.\p"
+	.string "If you got famous, we might be your\n"
+	.string "fans!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_OhWoweeItsPlayer:
-	.string "Oh, woweee! It's {PLAYER}!\n"
-	.string "For real, too!\p"
-	.string "Please, shake my hand, shake my hand!$"
+	.string "Oh, woweee! It's {PLAYER}! For real!\p"
+	.string "Shake my hand! Shake it! I'm never\n"
+	.string "washing it!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_AlwaysCheerForYou:
-	.string "I'll always cheer for you, {PLAYER}!\n"
-	.string "Always, always!\p"
-	.string "I don't want to see you lose ever,\n"
-	.string "{PLAYER}.\p"
-	.string "Because I know you're really,\n"
-	.string "really strong, {PLAYER}!$"
+	.string "I'll always cheer for you, {PLAYER}!\p"
+	.string "I never want to see you lose!\p"
+	.string "You're really, really strong! I have a\n"
+	.string "poster!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_EveryoneThinksTrainerIsCool:
-	.string "{STR_VAR_1} is really cool…\p"
-	.string "Everyone thinks so, right, right?$"
+	.string "{STR_VAR_1} is so cool…\p"
+	.string "Everyone agrees, right? Right?$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsReallyCoolItsJustMe:
-	.string "{STR_VAR_1} really is cool, don't\n"
-	.string "you think so?\p"
-	.string "Even if it's just me, I'm going to keep\n"
-	.string "cheering my favorite TRAINER.$"
+	.string "{STR_VAR_1} is cool, right?\p"
+	.string "Even if I'm the only one, I'll keep\n"
+	.string "cheering.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WishThereWasTrainerLikeThat:
 	.string "My favorite TRAINER is…\p"
-	.string "Cool…\p"
-	.string "Strong…\p"
-	.string "And really nice…\p"
-	.string "I wish there was a TRAINER like that…$"
+	.string "Cool… Strong… Really nice…\p"
+	.string "I wish that TRAINER existed…$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WantToBeStrongLikeYou:
-	.string "Whoa! It's {PLAYER}!\n"
-	.string "Wicked!\p"
-	.string "When I grow up, I want to be strong\n"
-	.string "like you, {PLAYER}!$"
+	.string "Whoa! It's {PLAYER}! Wicked!\p"
+	.string "When I grow up, I'll be strong like you!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_OnlyOneWhoCheersForYou:
 	.string "Even if I'm the only one…\p"
-	.string "You'll always be the only one\n"
-	.string "I cheer for, {PLAYER}!\p"
-	.string "Because I believe in you, {PLAYER}!$"
+	.string "I'll always cheer for you, {PLAYER}!\p"
+	.string "I believe in you! A little too much, Mom\n"
+	.string "says.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsWickedlyCool:
-	.string "{STR_VAR_1} is so wickedly cool…\n"
-	.string "I want to shake hands with my hero.$"
+	.string "{STR_VAR_1} is wickedly cool…\p"
+	.string "I want to shake my hero's hand.\n"
+	.string "Dattebayo.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_NeverGoingToStopBeingTrainersFan:
 	.string "Even if I'm the only one…\p"
-	.string "I'm never going to stop being\n"
-	.string "{STR_VAR_1}'s fan!\p"
-	.string "Because I've heard, {STR_VAR_1}\n"
-	.string "never loses!$"
+	.string "I'll never stop being {STR_VAR_1}'s fan!\p"
+	.string "I heard {STR_VAR_1} never loses! Believe it!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YoureAmazingAfterAll:
-	.string "{PLAYER}!\n"
-	.string "You are amazing after all!\p"
-	.string "Ever since I set eyes on you,\n"
-	.string "I knew that you were great.\p"
-	.string "It looks like my eyes didn't deceive me.$"
+	.string "{PLAYER}! You're amazing after all!\p"
+	.string "I knew it from the start.\p"
+	.string "My eyes never lie. My mouth does, but my\n"
+	.string "eyes don't.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ImInYourCorner:
-	.string "Who cares about the others.\n"
-	.string "I'm in your corner!\p"
-	.string "You don't need to worry. Just get\n"
-	.string "out there and battle like always.$"
+	.string "Forget the others. I'm in your corner!\p"
+	.string "Just go out there and battle like\n"
+	.string "always.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ThinkTrainerIsNumberOne:
-	.string "You're a pretty decent TRAINER,\n"
-	.string "I think.\p"
-	.string "But I also think that {STR_VAR_1}\n"
-	.string "is number one right now.\p"
-	.string "That's just my opinion.\n"
-	.string "Don't worry about it too much.$"
+	.string "You're pretty decent.\p"
+	.string "But I think {STR_VAR_1} is number one right\n"
+	.string "now.\p"
+	.string "Just my opinion. Don't cry about it.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YoureMaybeStrongerThanTrainer:
-	.string "Wow, you really are strong.\n"
-	.string "Maybe even stronger than {STR_VAR_1}.\p"
+	.string "Wow, you're strong. Maybe stronger than\n"
+	.string "{STR_VAR_1}.\p"
 	.string "But {STR_VAR_1} needs me.\p"
-	.string "If I don't cheer for {STR_VAR_1},\n"
-	.string "who will?$"
+	.string "If I don't cheer, who will?$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouChangedMyMind:
-	.string "You've changed my mind!\n"
-	.string "You are strong, aren't you?\p"
-	.string "I'd like you to tell me how you managed\n"
-	.string "to get so strong!$"
+	.string "You changed my mind! You ARE strong!\p"
+	.string "Tell me how you got so strong!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouBattleAttractivelyInToughSituation:
-	.string "The tougher the situation, the more\n"
-	.string "attractively you battle.\p"
+	.string "The tougher the situation, the better\n"
+	.string "you battle.\p"
 	.string "I can't wait for your next battle!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsStandout:
-	.string "Among the recently hot TRAINERS,\n"
-	.string "{STR_VAR_1} is the standout.\p"
-	.string "That toughness, it's simply not normal.\p"
-	.string "You're doing okay, but you're not in\n"
-	.string "the same class as {STR_VAR_1}.$"
+	.string "Among hot TRAINERS right now, {STR_VAR_1}\n"
+	.string "stands out.\p"
+	.string "That toughness isn't normal.\p"
+	.string "You're okay. But not {STR_VAR_1}-level.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_NoOneCanKnockYouButTrainerStronger:
-	.string "You are really popular…\p"
-	.string "You're strong, and you're caring to\n"
-	.string "POKéMON. No one can knock you.\p"
-	.string "But, you know, I believe in {STR_VAR_1}.\p"
-	.string "{STR_VAR_1} is definitely stronger!\n"
-	.string "I'm positive!$"
+	.string "You're really popular…\p"
+	.string "Strong, kind to POKéMON. Nobody can\n"
+	.string "knock you.\p"
+	.string "But I believe in {STR_VAR_1}.\p"
+	.string "{STR_VAR_1} is stronger! Positive!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouImpressive:
 	.string "You…\p"
 	.string "Impressive!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_OnlyIRecognizeYourTrueWorth:
-	.string "Your true worth, it is fine if only\n"
-	.string "I recognized it.\p"
-	.string "The others I doubt will understand\n"
-	.string "the hidden power that beats within.$"
+	.string "Only I see your true worth.\p"
+	.string "The others won't understand the hidden\n"
+	.string "power inside you.\p"
+	.string "That's fine. I'll love you from a\n"
+	.string "distance.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_HaventRealizedPotential:
 	.string "I see strength in your eyes.\p"
@@ -799,12 +759,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_HaventRealizedPotential:
 	.string "Like my son. He's 40.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YourePowerfulButNotTrueStrength:
-	.string "It is true that you are tremendously\n"
-	.string "powerful.\p"
-	.string "But!\n"
-	.string "I can tell…\p"
-	.string "That strength cannot be considered\n"
-	.string "true strength yet!\p"
-	.string "True strength is…!\n"
-	.string "… …\p"
-	.string "Actually, I have no idea, either.$"
+	.string "You're tremendously powerful.\p"
+	.string "But! That isn't true strength yet!\p"
+	.string "True strength is…! … …\p"
+	.string "Actually, no idea.$"

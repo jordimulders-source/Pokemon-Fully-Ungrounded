@@ -199,8 +199,8 @@ LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
 	.string "I spent my last money on a POKé DOLL.$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
-	.string "It's a VENDING MACHINE.\n"
-	.string "Which drink would you like?$"
+	.string "It's a VENDING MACHINE.\p"
+	.string "Which overpriced drink would you like?$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
 	.string "Clang!\p"
@@ -208,11 +208,13 @@ LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
 
 LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown:
 	.string "Clang!\p"
-	.string "Score! An extra can of {STR_VAR_1}\n"
-	.string "dropped down!$"
+	.string "Score! An extra can of {STR_VAR_1}!\p"
+	.string "Capitalism gave back. Once.$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
-	.string "Not enough money…$"
+	.string "Not enough money…\p"
+	.string "The mall wins again.$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
-	.string "Decided against buying a drink.$"
+	.string "Decided against buying a drink.\p"
+	.string "The mall felt that.$"

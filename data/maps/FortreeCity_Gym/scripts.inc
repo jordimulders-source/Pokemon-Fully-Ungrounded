@@ -314,7 +314,8 @@ FortreeCity_Gym_Text_WinonaDefeat:
 
 FortreeCity_Gym_Text_ReceivedFeatherBadge:
 	.string "{PLAYER} received the FEATHER BADGE\n"
-	.string "from WINONA.$"
+	.string "from WINONA.\p"
+	.string "It came with a free eye mask.$"
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
 	.string "With the FEATHER BADGE, all POKéMON up\n"
@@ -340,8 +341,9 @@ FortreeCity_Gym_Text_ExplainAerialAce:
 	.string "just like I am!$"
 
 FortreeCity_Gym_Text_RegisteredWinona:
-	.string "Registered GYM LEADER WINONA\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER WINONA in the\n"
+	.string "POKéNAV.\p"
+	.string "She'll call from different time zones.$"
 
 FortreeCity_Gym_Text_WinonaPostBattle:
 	.string "Though I fell to you, I will remain\n"
@@ -352,12 +354,12 @@ FortreeCity_Gym_Text_WinonaPostBattle:
 	.string "Nature is so much better than fans.$"
 
 FortreeCity_Gym_Text_GymStatue:
-	.string "FORTREE CITY POKéMON GYM$"
+	.string "FORTREE CITY POKéMON GYM\p"
+	.string "Please do not disturb.$"
 
 FortreeCity_Gym_Text_GymStatueCertified:
 	.string "FORTREE CITY POKéMON GYM\p"
-	.string "WINONA'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "WINONA'S CERTIFIED TRAINERS: {PLAYER}$"
 
 FortreeCity_Gym_Text_WinonaPreRematch:
 	.string "WINONA: You again. And you're CHAMPION\n"

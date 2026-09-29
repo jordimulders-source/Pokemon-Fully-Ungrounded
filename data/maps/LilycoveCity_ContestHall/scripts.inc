@@ -472,14 +472,14 @@ LilycoveCity_ContestHall_Text_WantCuteMonOfMyOwn:
 	.string "And put it in a dress!$"
 
 LilycoveCity_ContestHall_Text_BeautyContestStage:
-	.string "BEAUTY CONTEST STAGE\n"
-	.string "BE ALLURED BY BEAUTIFUL POKéMON!$"
+	.string "BEAUTY CONTEST STAGE\p"
+	.string "FILTERS NOT ALLOWED!$"
 
 LilycoveCity_ContestHall_Text_CuteContestStage:
-	.string "CUTENESS CONTEST STAGE\n"
-	.string "BE CHARMED BY CUTE POKéMON!$"
+	.string "CUTENESS CONTEST STAGE\p"
+	.string "PARENTS, CALM DOWN!$"
 
 LilycoveCity_ContestHall_Text_SmartContestStage:
-	.string "SMARTNESS CONTEST STAGE\n"
-	.string "BE IMPRESSED BY SMART POKéMON!$"
+	.string "SMARTNESS CONTEST STAGE\p"
+	.string "POKéMON ONLY. TRAINERS NEED NOT APPLY.$"
 

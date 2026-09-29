@@ -195,11 +195,13 @@ LilycoveCity_LilycoveMuseum_1F_Text_VeryOldPainting:
 
 LilycoveCity_LilycoveMuseum_1F_Text_OddLandscapeFantasticScenery:
 	.string "It's an odd landscape with bizarre\n"
-	.string "and fantastic scenery.$"
+	.string "scenery.\p"
+	.string "VIOLET from ROUTE 123 would love it.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfBeautifulWoman:
-	.string "It's a painting of a beautiful, smiling\n"
-	.string "woman with a POKéMON on her lap.$"
+	.string "It's a painting of a smiling woman with a\n"
+	.string "POKéMON on her lap.\p"
+	.string "Her eyes follow you. Creepy.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfLegendaryPokemon:
 	.string "It's a painting of a legendary POKéMON.\p"
@@ -208,33 +210,32 @@ LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfLegendaryPokemon:
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfGrassPokemon:
 	.string "It's a painting of GRASS POKéMON\n"
-	.string "swaying in a breeze.\p"
-	.string "They appear to be enjoying the wind's\n"
-	.string "gentle caress.$"
+	.string "swaying in the breeze.\p"
+	.string "It costs more than your house.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfBerries:
 	.string "It's a painting of BERRIES.\p"
 	.string "You could eat it. Please don't.$"
 
 LilycoveCity_LilycoveMuseum_Text_BirdPokemonSculptureReplica:
-	.string "It's a replica of a famous sculpture.\p"
-	.string "It depicts an ancient BIRD POKéMON.$"
+	.string "It's a replica of a famous sculpture of\n"
+	.string "an ancient BIRD POKéMON.\p"
+	.string "The original was also a replica.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_BigPokeBallCarvedFromStone:
-	.string "It's a big POKé BALL carved from\n"
-	.string "a black stone.\p"
-	.string "It was apparently used in festivals\n"
-	.string "in the olden days.$"
+	.string "A big POKé BALL carved from black\n"
+	.string "stone.\p"
+	.string "Used at festivals long ago.\p"
+	.string "Nobody knows how to open it.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_StoneTabletWithAncientText:
-	.string "It's a huge stone tablet inscribed\n"
-	.string "with POKéMON and dense text in the\l"
-	.string "small characters of an ancient,\l"
-	.string "unreadable language.$"
+	.string "A huge stone tablet with POKéMON and\n"
+	.string "ancient, unreadable text.\p"
+	.string "Probably a shopping list.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_WorksOfMagnificence:
-	.string "Hmmm…\n"
-	.string "What works of great magnificence…$"
+	.string "Hmmm… Such magnificent works…\p"
+	.string "I'm here for the air conditioning.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_MustntForgetLoveForFineArts:
 	.string "Battling is fun, I'll grant you that.\p"

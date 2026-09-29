@@ -408,7 +408,8 @@ MauvilleCity_Gym_Text_WattsonDefeat:
 
 MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "{PLAYER} received the DYNAMO BADGE\n"
-	.string "from WATTSON.$"
+	.string "from WATTSON.\p"
+	.string "It comes with a subscription. Wahahaha!$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the DYNAMO BADGE, POKéMON can\n"
@@ -430,8 +431,9 @@ MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM LEADER WATTSON\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER WATTSON in the\n"
+	.string "POKéNAV.\p"
+	.string "You'll get his ads now.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
 	.string "I swell with optimism, seeing a young\n"
@@ -447,12 +449,12 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "suspicious links!$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "MAUVILLE CITY POKéMON GYM\p"
+	.string "Sponsored by WATTSON.$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
 	.string "MAUVILLE CITY POKéMON GYM\p"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "WATTSON'S CERTIFIED TRAINERS: {PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
 	.string "WATTSON: Ah-ha! Here at last! I\n"

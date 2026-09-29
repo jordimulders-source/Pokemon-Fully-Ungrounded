@@ -86,42 +86,31 @@ LilycoveCity_CoveLilyMotel_1F_Text_NoGuestsWithTeamAqua:
 	.string "a motel.$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_CantSeeTheTV:
-	.string "Hey, down in front!\n"
-	.string "I can't see the TV!$"
+	.string "Hey, down in front! I can't see the TV!$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_MonFoundLostItem:
-	.string "Amazing! You're telling me a POKéMON\n"
-	.string "found someone's lost item?\p"
-	.string "That's something. If we had some smart\n"
-	.string "POKéMON like that…\p"
-	.string "We could recover anything that our\n"
-	.string "guests mislaid…$"
+	.string "Amazing! A POKéMON found someone's\n"
+	.string "lost item?\p"
+	.string "If we had a POKéMON like that…\p"
+	.string "We could find the TV remote.$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_HeardAquaHideoutBusted:
-	.string "Oh, sorry, sorry!\n"
-	.string "I was too involved in watching TV!\p"
-	.string "I heard that someone busted\n"
-	.string "the TEAM AQUA HIDEOUT.\p"
-	.string "Thanks to that, we just booked\n"
-	.string "a reservation from a big group.\p"
-	.string "It was a company called… Uh…\n"
-	.string "GAME something…$"
+	.string "Oh, sorry! I was watching TV!\p"
+	.string "Someone busted the TEAM AQUA HIDEOUT.\p"
+	.string "So we got a big booking. A company\n"
+	.string "called… GAME something…$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_HouseSittingMonCaughtBurglar:
 	.string "Amazing! A house-sitting POKéMON\n"
 	.string "caught a burglar?\p"
-	.string "That's something. If we had a tough\n"
-	.string "POKéMON as a security guard…\p"
-	.string "We would be able to provide our guests\n"
-	.string "with greater safety.$"
+	.string "With a POKéMON guard, our guests would\n"
+	.string "be safer.\p"
+	.string "Right now we have a very old ZIGZAGOON.$"
 
 LilycoveCity_CoveLilyMotel_1F_Text_BetterGetWorkingOnGuestsDinner:
-	.string "Oh, sorry, sorry!\n"
-	.string "I was too involved in watching TV.\p"
-	.string "Oh, yes. A big group of guests arrived\n"
-	.string "a little while ago.\p"
-	.string "They booked in as GAME FREAK,\n"
-	.string "so I guess they must make games.\p"
-	.string "Uh-oh, I'd better get working on\n"
-	.string "their dinner!$"
+	.string "Oh, sorry! I was watching TV.\p"
+	.string "A big group checked in. GAME FREAK, they\n"
+	.string "said.\p"
+	.string "They make games. They asked for 30\n"
+	.string "years of the same formula. For dinner.$"
 

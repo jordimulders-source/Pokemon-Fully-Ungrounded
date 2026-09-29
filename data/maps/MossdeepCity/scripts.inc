@@ -311,18 +311,18 @@ MossdeepCity_Text_WantKingsRockStevenGaveMe:
 	.string "Do you want it?$"
 
 MossdeepCity_Text_YouCanKeepIt:
-	.string "Why would you want it?\n"
-	.string "You're weird.\p"
-	.string "You can keep it, but keep it a secret\n"
-	.string "from STEVEN.$"
+	.string "Why would you want it? You're weird.\p"
+	.string "Keep it. But don't tell STEVEN. He'll\n"
+	.string "write a song about it.$"
 
 MossdeepCity_Text_StevensHouseOverThere:
 	.string "STEVEN's house is right over there! You\n"
 	.string "can hear the double bass from here.$"
 
 MossdeepCity_Text_WhatToDoWithWeirdRock:
-	.string "Yeah, you think so, too! What are you\n"
-	.string "supposed to do with some weird rock?$"
+	.string "Right? What do you even do with a weird\n"
+	.string "rock?\p"
+	.string "STEVEN has 400 of them.$"
 
 MossdeepCity_Text_WailmerWatching:
 	.string "Around MOSSDEEP you can see wild\n"
@@ -338,8 +338,9 @@ MossdeepCity_Text_SpaceCenterReceivedLetter:
 	.string "rockets are loud.$"
 
 MossdeepCity_Text_SpaceCenterLaunchingRockets:
-	.string "The island's SPACE CENTER has been\n"
-	.string "launching huge rockets.$"
+	.string "The SPACE CENTER keeps launching huge\n"
+	.string "rockets.\p"
+	.string "None with me on it.$"
 
 MossdeepCity_Text_MossdeepTargetedByMagma:
 	.string "A SAILOR buddy says TEAM AQUA set up\n"
@@ -350,10 +351,11 @@ MossdeepCity_Text_MossdeepTargetedByMagma:
 	.string "For the spice.$"
 
 MossdeepCity_Text_FeelReliefOnLand:
-	.string "I'm a SAILOR, so the sea's obviously\n"
-	.string "more important to me.\p"
-	.string "But you know? When I get back on land\n"
-	.string "after a long voyage, I do feel relief!$"
+	.string "I'm a SAILOR. The sea means everything\n"
+	.string "to me.\p"
+	.string "But after a long voyage, land feels so\n"
+	.string "good.\p"
+	.string "And the bars are here.$"
 
 MossdeepCity_Text_NiceIfWorldCoveredByFlowers:
 	.string "Wouldn't it be nice if the whole world\n"

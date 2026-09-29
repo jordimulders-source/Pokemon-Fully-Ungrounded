@@ -163,26 +163,24 @@ LilycoveCity_DepartmentStore_1F_Text_Azumarill:
 	.string "AZUMARILL: Maririroo!$"
 
 LilycoveCity_DepartmentStore_1F_Text_FloorNamesSign:
-	.string "1F: SERVICE COUNTER\n"
-	.string "    LOTTERY CORNER\p"
+	.string "1F: SERVICE COUNTER, LOTTERY\p"
 	.string "2F: TRAINER'S ZONE\p"
 	.string "3F: BATTLE COLLECTION\p"
 	.string "4F: TM CORNER\p"
 	.string "5F: POKé DOLL FLOOR\p"
-	.string "ROOFTOP: ROOFTOP PLAZA$"
+	.string "ROOFTOP: PLAZA (NO EXIT)$"
 
 @ Unused
 LilycoveCity_DepartmentStore_1F_Text_WirelessCommIsFun:
-	.string "Wireless Communication is a\n"
-	.string "lot of fun, isn't it?\p"
-	.string "I think it lets you do things that\n"
-	.string "weren't possible before.\p"
-	.string "For instance, you can now trade\n"
-	.string "with people you couldn't before.\p"
-	.string "I think it's going to be exciting!$"
+	.string "Wireless Communication is so fun!\p"
+	.string "You can trade with people you couldn't\n"
+	.string "before!\p"
+	.string "If you can find anyone who still has\n"
+	.string "this game.$"
 
 @ Unused
 LilycoveCity_DepartmentStore_1F_Text_SpreadWordAboutWirelessComm:
-	.string "I want to spread the word about how\n"
-	.string "fun Wireless Communication can be.$"
+	.string "I want to tell everyone about Wireless\n"
+	.string "Communication!\p"
+	.string "Nobody listens. They're all shopping.$"
 

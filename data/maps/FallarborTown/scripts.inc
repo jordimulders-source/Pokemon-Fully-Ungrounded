@@ -59,10 +59,11 @@ FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "They smell like chili.$"
 
 FallarborTown_Text_RegionKnownForMeteors:
-	.string "This region's been known for meteors\n"
-	.string "since the olden days.\p"
-	.string "They say METEOR FALLS was gouged out\n"
-	.string "by a falling meteorite long ago.$"
+	.string "This region has been known for meteors\n"
+	.string "forever.\p"
+	.string "METEOR FALLS was made by one.\p"
+	.string "That's why we all wear helmets. Well, I\n"
+	.string "do.$"
 
 FallarborTown_Text_MyPreciousAzurill:
 	.string "Look! My precious AZURILL!\p"

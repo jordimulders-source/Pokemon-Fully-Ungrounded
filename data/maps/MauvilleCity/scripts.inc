@@ -543,8 +543,7 @@ MauvilleCity_Text_WallyPokenavCall:
 	.string "… … … … … Click!$"
 
 MauvilleCity_Text_RegisteredWally:
-	.string "Registered WALLY\n"
-	.string "in the POKéNAV.$"
+	.string "Registered WALLY in the POKéNAV.$"
 
 MauvilleCity_Text_ScottYouDidntHoldBack:
 	.string "SCOTT: Hehe…\n"
@@ -646,4 +645,5 @@ MauvilleCity_Text_ExplainTV:
 	.string "they know.$"
 
 MauvilleCity_Text_BeenCheckingOutTV:
-	.string "Hi, have you been checking out TVs?$"
+	.string "Have you been watching TV?\p"
+	.string "The datacenter is watching you back.$"

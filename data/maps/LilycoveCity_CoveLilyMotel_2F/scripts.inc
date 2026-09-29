@@ -68,21 +68,16 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_MetScott::
 
 LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex:
 	.string "I'm the GAME DESIGNER.\p"
-	.string "Oh, is that right?\n"
 	.string "You're working on a POKéDEX?\p"
-	.string "It's tough trying to complete it,\n"
-	.string "but don't give up.\p"
-	.string "If you do complete it, please come\n"
-	.string "show me.$"
+	.string "It's tough. We made it tough on purpose.\n"
+	.string "Sorry.\p"
+	.string "Show me when it's done.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThis:
-	.string "Wow! That's awesome!\n"
-	.string "Yep, it's totally awesome!\p"
-	.string "This POKéDEX is completely filled!\n"
-	.string "You really must love POKéMON!\p"
-	.string "I'm so impressed!\p"
-	.string "Let me give you something in\n"
-	.string "recognition of your feat!$"
+	.string "Wow! It's completely filled!\p"
+	.string "You must really love POKéMON. Or have no\n"
+	.string "life.\p"
+	.string "Either way, I'm impressed! Take this!$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_ImTheProgrammer:
 	.string "Me? I'm the PROGRAMMER.\p"

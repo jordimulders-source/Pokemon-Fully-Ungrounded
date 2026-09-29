@@ -313,48 +313,37 @@ LavaridgeTown_EventScript_HerbShopSign::
 	end
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
-	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
-	.string "Oh? While I visited the hot springs,\n"
-	.string "you got the LAVARIDGE GYM BADGE.\p"
-	.string "You must have collected\n"
-	.string "good POKéMON…\l"
-	.string "No, I believe you raised some.\p"
-	.string "I guess it would be okay for you to\n"
-	.string "have this.$"
+	.string "MAY: {PLAYER}{KUN}! Long time!\p"
+	.string "You got the LAVARIDGE BADGE while I\n"
+	.string "was in the hot springs?\p"
+	.string "You didn't just catch strong POKéMON.\n"
+	.string "You raised them. Ugh.\p"
+	.string "Fine. You can have this.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
-	.string "MAY: With those GO-GOGGLES, you'll\n"
-	.string "have no trouble getting through the\l"
-	.string "desert near ROUTE 111.\p"
-	.string "But, wow, {PLAYER}{KUN}…\n"
-	.string "Challenging GYMS…\p"
-	.string "You're trying hard because you don't\n"
-	.string "want to lose to me, I bet!\p"
-	.string "{PLAYER}{KUN}, I think I should challenge\n"
-	.string "your dad in PETALBURG GYM.\p"
-	.string "See you again!$"
+	.string "MAY: With those GO-GOGGLES, the desert\n"
+	.string "near ROUTE 111 is no problem.\p"
+	.string "But wow, {PLAYER}{KUN}… GYMS…\p"
+	.string "You're only doing this so you don't lose\n"
+	.string "to me.\p"
+	.string "I'm going to challenge your dad in\n"
+	.string "PETALBURG. See ya!$"
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
-	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
-	.string "How's it going?\p"
-	.string "Hmm…\n"
-	.string "That's a decent collection of BADGES.\p"
-	.string "All right, then.\n"
-	.string "You may as well have this.$"
+	.string "BRENDAN: {PLAYER}, hey. Been a while.\p"
+	.string "Hmm… Decent BADGE collection.\p"
+	.string "Fine. You can have this.$"
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
-	.string "BRENDAN: Keep those with you if you're\n"
-	.string "planning on going into that desert near\l"
-	.string "ROUTE 111.\p"
-	.string "There should be some POKéMON that\n"
-	.string "are exclusively desert-dwellers.\l"
-	.string "You might look around for those.\p"
-	.string "As for me…\n"
-	.string "I'm considering challenging NORMAN,\l"
-	.string "the GYM LEADER of PETALBURG.\p"
-	.string "Unlike you, {PLAYER}, your dad looks like\n"
-	.string "he really is tough.\p"
-	.string "See you around!$"
+	.string "BRENDAN: Take these into the desert\n"
+	.string "near ROUTE 111.\p"
+	.string "Some POKéMON only live there. Look\n"
+	.string "around.\p"
+	.string "Me? I'm going to challenge NORMAN in\n"
+	.string "PETALBURG.\p"
+	.string "Your dad actually looks tough. Unlike\n"
+	.string "you.\p"
+	.string "See ya!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
 	.string "I have an EGG. Tried hatching it in hot\n"
@@ -370,8 +359,9 @@ LavaridgeTown_Text_ReceivedTheEgg:
 	.string "{PLAYER} received the EGG.$"
 
 LavaridgeTown_Text_NoRoomForThisEgg:
-	.string "Oh? You've too many POKéMON.\n"
-	.string "There's no room for this EGG…$"
+	.string "You have too many POKéMON.\p"
+	.string "No room for the EGG. Make room. It's\n"
+	.string "worth it.$"
 
 LavaridgeTown_Text_AsYouWishThen:
 	.string "As you wish… It'll hatch into something\n"

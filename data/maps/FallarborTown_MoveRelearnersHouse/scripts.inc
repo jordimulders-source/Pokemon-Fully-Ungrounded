@@ -68,10 +68,9 @@ FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
 	.string "Don't ask what I do with them.$"
 
 FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
-	.string "Oh! That's it! That's an honest to\n"
-	.string "goodness HEART SCALE!\p"
-	.string "Let me guess, you want me to teach\n"
-	.string "a move?$"
+	.string "Oh! An honest-to-goodness HEART\n"
+	.string "SCALE!\p"
+	.string "Let me guess. You want a move taught?$"
 
 FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon:
 	.string "Which POKéMON needs tutoring?$"
@@ -81,18 +80,19 @@ FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove:
 
 FallarborTown_MoveRelearnersHouse_Text_DontHaveMoveToTeachPokemon:
 	.string "Sorry…\p"
-	.string "It doesn't appear as if I have any move\n"
-	.string "I can teach that POKéMON.$"
+	.string "I have nothing to teach that POKéMON.\p"
+	.string "It already knows everything. Or\n"
+	.string "nothing.$"
 
 FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale:
-	.string "{PLAYER} handed over one HEART SCALE\n"
-	.string "in exchange.$"
+	.string "{PLAYER} handed over one HEART SCALE.\p"
+	.string "The MOVE TUTOR sniffed it.$"
 
 FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale:
-	.string "If your POKéMON need to learn a move,\n"
-	.string "come back with a HEART SCALE.$"
+	.string "Need a move? Bring a HEART SCALE.\p"
+	.string "I don't take cards.$"
 
 FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
-	.string "Hunh? There isn't a single move that\n"
-	.string "I can teach an EGG.$"
+	.string "Hunh? I can't teach an EGG anything.\p"
+	.string "It's an EGG.$"
 

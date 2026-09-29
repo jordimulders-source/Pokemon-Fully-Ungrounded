@@ -76,31 +76,35 @@ LilycoveCity_MoveDeletersHouse_Text_WhichMonShouldForget:
 	.string "Which POKéMON should forget a move?$"
 
 LilycoveCity_MoveDeletersHouse_Text_WhichMoveShouldBeForgotten:
-	.string "Which move should be forgotten?$"
+	.string "Which move should be forgotten?\p"
+	.string "I forget which one you said. Say it\n"
+	.string "again.$"
 
 LilycoveCity_MoveDeletersHouse_Text_MonOnlyKnowsOneMove:
-	.string "{STR_VAR_1} knows only one move\n"
-	.string "so it can't be forgotten…$"
+	.string "{STR_VAR_1} only knows one move.\p"
+	.string "If it forgets that, it forgets\n"
+	.string "everything. Like me.$"
 
 LilycoveCity_MoveDeletersHouse_Text_MonsMoveShouldBeForgotten:
-	.string "Hm! {STR_VAR_1}'s {STR_VAR_2}?\n"
-	.string "That move should be forgotten?$"
+	.string "Hm! {STR_VAR_1}'s {STR_VAR_2}?\p"
+	.string "Forget it? Are you sure?$"
 
 LilycoveCity_MoveDeletersHouse_Text_MonHasForgottenMove:
-	.string "It worked to perfection!\p"
-	.string "{STR_VAR_1} has forgotten\n"
-	.string "{STR_VAR_2} completely.$"
+	.string "Worked perfectly!\p"
+	.string "{STR_VAR_1} has completely forgotten\n"
+	.string "{STR_VAR_2}.\p"
+	.string "Also its birthday. Side effect.$"
 
 LilycoveCity_MoveDeletersHouse_Text_ComeAgain:
-	.string "Come again if there are moves that\n"
-	.string "need to be forgotten.$"
+	.string "Come again if moves need forgetting.\p"
+	.string "Or memories. I'm flexible.$"
 
 LilycoveCity_MoveDeletersHouse_Text_EggCantForgetMoves:
-	.string "What?\n"
-	.string "No EGG should know any moves.$"
+	.string "What? An EGG doesn't know any moves.\p"
+	.string "It doesn't know anything. Lucky thing.$"
 
 LilycoveCity_MoveDeletersHouse_Text_CantForgetSurf:
 	.string "Hm!\p"
-	.string "Your {STR_VAR_1} doesn't seem willing\n"
-	.string "to forget SURF.$"
+	.string "Your {STR_VAR_1} refuses to forget SURF.\p"
+	.string "It's emotionally attached.$"
 

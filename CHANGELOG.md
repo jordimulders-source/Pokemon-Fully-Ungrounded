@@ -14904,3 +14904,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.52] - Quality of life: rijpe bessen opzoeken met de Wailmer Pail
 - Gebruik je de Wailmer Pail (uit de tas of via Select) terwijl je niet bij een bessenboom staat, dan krijg je een lijst van kaarten met rijpe bessen, bv. "Ripe BERRIES at: ROUTE 104 (3)". Geen rijpe bessen: "No BERRIES are ripe right now."
 - Welke boom op welke kaart staat, wordt gegenereerd uit de mapdata: `python3 tools/grounded/berry_tree_locations.py` → `src/data/berry_tree_locations.h`. Opnieuw draaien als er bessenbomen bijkomen of verhuizen.
+
+### [v.0.6.53] - Quality of life: verborgen instellingen aangezet
+- Repel/Lure op: "Use another?" met dezelfde soort (`VAR_LAST_REPEL_LURE_USED` = `VAR_LAST_REPEL_USED`, 0x404E).
+- Summary-scherm: op de stats-pagina kun je doorbladeren naar IV's en EV's (`P_SUMMARY_SCREEN_IV_EV_INFO`).
+- De kaartnaam-popup verschijnt niet opnieuw als je binnen hetzelfde gebied van kaart wisselt (`OW_HIDE_REPEAT_MAP_POPUP`).
+- De eerste keer dat je een item vindt, zie je een korte beschrijving met plaatje (`OW_ITEM_DESCRIPTIONS_FIRST_TIME`). Let op: dit verandert de save-indeling, oude saves van vóór deze versie werken mogelijk niet meer.
+- Vanaf de 6e badge (Feather Badge) kun je vanuit de Town Map en de PokéNav-kaart met A naar een bezochte stad vliegen (`OW_FLAG_POKE_RIDER` = `FLAG_BADGE06_GET`).
+- CLAUDE.md: lijst "al gedaan" bijgewerkt.

@@ -14652,3 +14652,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Huis 1: Randy (ontkent alles), zijn vrouw (het slachtoffer, weet van niks) en hun Zigzagoon (weet alles).
 - Huis 2: Madame Silk (Silk Scarf-teksten) en de jongen die mijmert over de tijd dat Brawly's gym nog om vechten draaide.
 - Pokémon Center: de vrouw die Madame Silk en Randy de grot in zag gaan; de HM-man over flauwgevallen Pokémon die nog moeten vliegen en surfen.
+
+### [v.0.6.9] - Dialogen uit de Dialoogstudio (73 teksten)
+- Aqua Hideout (1F, B1F, B2F): alle grunts en Matt.
+- Cave of Origin B1F: Wallace, de sommelier.
+- Desert Underpass: teksten bij de fossielen.
+- Dewford Gym: Brawly's rematch-teksten.
+- Dewford Town: Mr. Briney, de visser (catfishing), de trendy jongen, de borden en de vrouw op straat.
+- Abandoned Ship Captain's Office: de man die de scanner zoekt.
+- `*` bestaat niet in het lettertype van de game: "*Does a Fortnite dance…*" staat er nu als "(Does a Fortnite dance and turns around.)".

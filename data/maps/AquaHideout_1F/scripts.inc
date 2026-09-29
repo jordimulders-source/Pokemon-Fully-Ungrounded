@@ -51,69 +51,49 @@ AquaHideout_1F_EventScript_Grunt1Defeated::
 	end
 
 AquaHideout_1F_Text_OurBossIsSnatchingSomething:
-	.string "What? What? What do you want with \n"
-	.string "TEAM AQUA?\p"
-	.string "Our BOSS isn't here! He's gone off to\n"
-	.string "snatch something important!\p"
-	.string "… …\n"
-	.string "Where did he go?\p"
-	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "What? What? What are you doing here?\p"
+	.string "Our capo? Or the big boss? I ain't no\n"
+	.string "snitch! I won't tell you where they are.$"
 
 AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
-	.string "What? What?\n"
-	.string "Are you a TEAM MAGMA grunt?\p"
-	.string "I hear that TEAM MAGMA is trying to\n"
-	.string "awaken an awesome POKéMON at their\l"
-	.string "HIDEOUT.\p"
-	.string "But where might their HIDEOUT be?$"
+	.string "TEAM MAGMA? Those stupid activists.\n"
+	.string "Let them burn in their own hell,\l"
+	.string "literally. If I knew where their hideout\l"
+	.string "is, I would splash the whole place, with\l"
+	.string "a hose. That'll teach them!$"
 
 AquaHideout_1F_Text_BossWentToJackASubmarine:
-	.string "What? What? What do you want with \n"
-	.string "TEAM AQUA?\p"
-	.string "Our BOSS isn't here!\n"
-	.string "He's gone off to jack a submarine!\p"
-	.string "… …\n"
-	.string "Where did he go?\p"
-	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "Where's the boss? Something about a\n"
+	.string "Yellow Submarine? He wants one, but no\l"
+	.string "idea where they sell these, or have\l"
+	.string "them.$"
 
 AquaHideout_1F_Text_BossIsOnRoute122:
-	.string "What? What? What do you want with \n"
-	.string "TEAM AQUA?\p"
-	.string "Our BOSS isn't here! He's on his way to\n"
-	.string "MT. PYRE on ROUTE 122!\p"
-	.string "… …\n"
-	.string "Why did he go?\p"
-	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "Big Boss is at Mt. Pyre. No idea what\n"
+	.string "he's doing with all the spiritual\l"
+	.string "bullshit over there, maybe he is into\l"
+	.string "astrology? Why am I telling you this?$"
 
 AquaHideout_1F_Text_TeamMagmaAtMtChimney:
-	.string "What? What?\n"
-	.string "Are you a TEAM MAGMA grunt?\p"
-	.string "I hear that TEAM MAGMA is after\n"
-	.string "an awesome POKéMON at MT. CHIMNEY.\p"
-	.string "But what is that POKéMON like?$"
+	.string "GROUDON and KYOGRE have awesome music.\n"
+	.string "I would go undercover at TEAM MAGMA, so\l"
+	.string "I could hear it twice.$"
 
 AquaHideout_1F_Text_BossIsInSlateportCity:
-	.string "What? What? What do you want with\n"
-	.string "TEAM AQUA?\p"
-	.string "Our BOSS isn't here!\n"
-	.string "He's on his way to SLATEPORT CITY!\p"
-	.string "… …\n"
-	.string "Why did he go?\p"
-	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "SLATEPORT has a PORT, with boats. Yeah,\n"
+	.string "surprising, really?$"
 
 AquaHideout_1F_Text_Grunt1Intro:
-	.string "Ayiyiyi!\n"
-	.string "Suspicious character spotted!$"
+	.string "Ayiyiyi! Suspicious character spotted!\n"
+	.string "Please do not touch me!$"
 
 AquaHideout_1F_Text_Grunt1Defeat:
-	.string "Grrrrr…\n"
-	.string "I lost it!$"
+	.string "I'm scared!!!!$"
 
 AquaHideout_1F_Text_Grunt1PostBattle:
-	.string "I took the loss for the TEAM,\n"
-	.string "but I did my job…$"
+	.string "HAHAHA, you thought I was scared, but I\n"
+	.string "wasn't. Also I am actually your grandma\l"
+	.string "as well! Hahahaha, Now that's a twist. My\l"
+	.string "colleagues have already finished their\l"
+	.string "sinister plans now too.$"
 

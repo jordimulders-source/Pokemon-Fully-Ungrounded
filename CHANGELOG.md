@@ -14964,3 +14964,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Als test hoe ver we kunnen gaan, toegevoegd bij WILD MUSIC: DARK CAVE (HeartGold/SoulSilver), YOSHI CASTLE, BROKEN PIER en SUNSET WILDS (beide Mario Kart: Super Circuit).
 - Via dezelfde automatische voorbereiding; bij alle vier paste alles binnen de 10 sporen, er vielen geen partijen weg.
 - Getest in de emulator: alle vier spelen af, nauwelijks clipping.
+
+### [v.0.6.62] - Beta-check in de emulator
+- Doorgespeeld in de emulator: instant heal bij de verpleegster (tekst verdwijnt na ~0,5 s, je kunt meteen weglopen), vissen (hengel uit, direct beet en gevecht), itembeschrijving bij het krijgen van een item, opslaan en laden (CONTINUE werkt, je staat weer waar je was).
+- Vissen: "A POKéMON's on the hook!" en "Not even a nibble…" stonden maar ~0,1 s in beeld (de vistaak laat de tekst dubbel zo snel lopen). Pauze verhoogd naar {PAUSE 200}, nu ~0,3 s leesbaar.

@@ -14773,3 +14773,4 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.28] - Timmy
 - Timmy (Youngster, Route 110) zingt "I WANNA BE THE VERY BEST, LIKE NO ONE EVER WAS!"
 - Thomas (Gentleman, S.S. Tidal) citeert Giovanni, maar is gewoon fan van maffiaseries.
+- Jaylen (Youngster, Route 113) doet Blue na: "SMELL YA LATER!"

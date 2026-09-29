@@ -1667,17 +1667,15 @@ Route112_Text_ShaylaPostBattle:
 	.string "But it's all right if you're busy.$"
 
 Route113_Text_JaylenIntro:
-	.string "Can you guess why it's so cool\n"
-	.string "around here?$"
+	.string "Hey! You're here too? Gramps told me\n"
+	.string "about you. What a loser.$"
 
 Route113_Text_JaylenDefeat:
-	.string "Peeuuw!\n"
-	.string "That stinks!$"
+	.string "WHAT? Unbelievable! I picked the wrong\n"
+	.string "POKéMON!$"
 
 Route113_Text_JaylenPostBattle:
-	.string "The volcanic ash blocks the sun,\n"
-	.string "so it doesn't get very warm.\p"
-	.string "That's good for me--I can't stand heat!$"
+	.string "SMELL YA LATER!$"
 
 Route113_Text_DillonIntro:
 	.string "The volcano's eruption is proof that\n"

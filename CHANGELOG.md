@@ -14805,3 +14805,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.34] - Contests en Marts
 - Contest Hall en lobby (Lilycove): missverkiezingen met pushy ouders, influencers en mensen die het veel te serieus nemen (37 teksten).
 - Marts: de shoppers geven kloppend advies over items, met een droge draai (25 teksten, alle Marts behalve de Battle Frontier).
+
+### [v.0.6.35] - Trainer Hill
+- De eigenaar van de Trainer Hill heeft de toren alleen gebouwd om een tag-partner te vinden: een eenzame man met een datingshow. 20 teksten herschreven (receptie, NPC's bij de ingang, de eigenaar op het dak). Functionele teksten (opslaan, tijd, lift) zijn ongewijzigd.

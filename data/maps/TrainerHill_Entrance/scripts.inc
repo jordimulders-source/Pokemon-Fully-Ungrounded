@@ -287,17 +287,16 @@ TrainerHill_Entrance_Pokemart_Expanded:
 	pokemartlistend
 
 TrainerHill_Entrance_Text_StillGettingReady:
-	.string "This is the TRAINER HILL where\n"
-	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS.\p"
-	.string "Unfortunately, we're still getting\n"
-	.string "things ready. Please come back later!$"
+	.string "This is the TRAINER HILL. Tag battles\n"
+	.string "with many TRAINERS!\p"
+	.string "We're still getting ready.\p"
+	.string "The owner is still getting ready. He's\n"
+	.string "been getting ready for years.$"
 
 TrainerHill_Entrance_Text_WelcomeToTrainerHill:
-	.string "Welcome!\p"
-	.string "This is the TRAINER HILL where\n"
-	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS!$"
+	.string "Welcome to the TRAINER HILL!\p"
+	.string "Tag battles, many TRAINERS, one very\n"
+	.string "lonely owner.$"
 
 TrainerHill_Entrance_Text_SaveGameBeforeEnter:
 	.string "Is this your first visit here?\p"
@@ -320,46 +319,43 @@ TrainerHill_Entrance_Text_LikeToChallengeTrainers:
 	.string "waiting TRAINERS?$"
 
 TrainerHill_Entrance_Text_TimeProgessGetSetGo:
-	.string "I will time your progress.\n"
-	.string "Best of luck!\p"
+	.string "I'll time you. Best of luck!\p"
 	.string "On your marks…\p"
 	.string "Get set…\p"
-	.string "Go!$"
+	.string "He's already blushing. Go!$"
 
 TrainerHill_Entrance_Text_PleaseVisitUsAgain:
-	.string "Please do visit us again!$"
+	.string "Please visit again!\p"
+	.string "He'll leave the light on.$"
 
 TrainerHill_Entrance_Text_TooBadTremendousEffort:
-	.string "That was too bad.\p"
-	.string "I think you put in a tremendous\n"
-	.string "effort in your battling.\p"
-	.string "Please come back and try again!$"
+	.string "Too bad.\p"
+	.string "You tried hard. He saw.\p"
+	.string "Please come back. He needs this.$"
 
 TrainerHill_Entrance_Text_HopeYouGiveItYourBest:
-	.string "I hope you give it your best.$"
+	.string "Give it your best.\p"
+	.string "Or don't. He'll love you anyway.$"
 
 TrainerHill_Entrance_Text_MovedReceptionHereForSwitch:
-	.string "When the TRAINERS switch places,\n"
-	.string "the movement can be hectic.\p"
-	.string "To avoid the stampede, we moved\n"
-	.string "the reception counter here.\p"
-	.string "I'm sorry for the inconvenience.$"
+	.string "When the TRAINERS switch places, it's a\n"
+	.string "stampede.\p"
+	.string "So we moved the counter.\p"
+	.string "Also, the owner kept “accidentally”\n"
+	.string "standing here.$"
 
 TrainerHill_Entrance_Text_ThankYouForPlaying:
-	.string "Thank you for playing!$"
+	.string "Thank you for playing!\p"
+	.string "He says thank you too. Through me. He's\n"
+	.string "shy.$"
 
 TrainerHill_Entrance_Text_ExplainTrainerHill:
-	.string "Here at the TRAINER HILL, we conduct\n"
-	.string "an event called the Time Attack.\p"
-	.string "It is a race that measures how long\n"
-	.string "you take to reach our owner on\l"
-	.string "the rooftop from this counter.\p"
-	.string "The fastest times are posted on\n"
-	.string "the Time Board--try competing with\l"
-	.string "your friends.\p"
-	.string "In TRAINER battles along the way,\n"
-	.string "neither Exp. Points nor money will\l"
-	.string "be awarded.$"
+	.string "Here we hold the Time Attack.\p"
+	.string "Race from this counter to our owner on\n"
+	.string "the roof.\p"
+	.string "He's waiting. He's always waiting.\p"
+	.string "Fastest times go on the Time Board.\p"
+	.string "No Exp. Points, no money. Just love.$"
 
 @ Unused
 TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
@@ -370,80 +366,72 @@ TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
 
 TrainerHill_Roof_Text_YouFinallyCameBravo:
 	.string "Hm! Hm!\p"
-	.string "You finally came!\n"
-	.string "Yes, you have arrived!\p"
-	.string "Wait! Don't say it!\n"
-	.string "I know why you came all the way\l"
-	.string "here by yourself!\p"
-	.string "You wanted to see me, the owner\n"
-	.string "of the TRAINER HILL, because…\p"
+	.string "You came! You finally came!\p"
+	.string "Don't say it! I know why you're here!\p"
 	.string "You want to form a tag team with me!\n"
 	.string "Wa-hoo!\p"
-	.string "…Uh?\n"
-	.string "That's not it?\p"
-	.string "Anyway, I watched you on your way up.\n"
-	.string "Marvelous battling! Bravo, indeed!$"
+	.string "…No?\p"
+	.string "…It's fine. I'm fine.\p"
+	.string "Marvelous battling on your way up!\n"
+	.string "Bravo!$"
 
 TrainerHill_Roof_Text_HaveTheMostMarvelousGift:
-	.string "For a marvelous someone like you,\n"
-	.string "I have the most marvelous gift!$"
+	.string "For a marvelous someone like you, a\n"
+	.string "marvelous gift!\p"
+	.string "Don't read into it. …Unless you want to.$"
 
 TrainerHill_Roof_Text_FullUpBeBackLaterForThis:
-	.string "Oh, no, full up with things!\n"
-	.string "You'll be back later for this!$"
+	.string "Full up?\p"
+	.string "That's fine. Now you have to come back.\n"
+	.string "For me.$"
 
 TrainerHill_Roof_Text_GotHereMarvelouslyQuickly:
-	.string "Oh, hold on here! Did you possibly get\n"
-	.string "here marvelously quickly?\p"
-	.string "How splendid! You needn't have\n"
-	.string "hurried so to see me!\p"
-	.string "That is so delightful. I'll have the Time\n"
-	.string "Board at the reception updated!$"
+	.string "Wait… Did you rush here? To see me?\p"
+	.string "How splendid! Nobody ever rushes for\n"
+	.string "me!\p"
+	.string "I'll update the Time Board. And my diary.$"
 
 TrainerHill_Roof_Text_YouWerentVeryQuick:
-	.string "But, oh…\n"
-	.string "You weren't very quick getting here.$"
+	.string "But, oh… You took your time.\p"
+	.string "Like everyone else.$"
 
 TrainerHill_Roof_Text_ArriveZippierNextTime:
-	.string "Perhaps it would please me more if you\n"
-	.string "arrived zippier next time.\p"
-	.string "Then, I should be pleased to form\n"
-	.string "a tag team with you!\p"
-	.string "Until we meet again, amigo!$"
+	.string "Come faster next time.\p"
+	.string "Then we can form a tag team!\p"
+	.string "Until we meet again, amigo!\p"
+	.string "…Text me.$"
 
 @ Unused
 TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner:
-	.string "I had the TRAINER HILL built for but\n"
-	.string "one reason and one only!\p"
-	.string "To find the most suitable partner\n"
-	.string "with whom I may form a tag team!$"
+	.string "I built the TRAINER HILL for one reason\n"
+	.string "only!\p"
+	.string "To find a tag partner!\p"
+	.string "A dating app was cheaper. But this has\n"
+	.string "more flair.$"
 
 TrainerHill_Entrance_Text_ChallengeTime:
 	.string "{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec.$"
 
 TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead:
-	.string "Who knows what sort of TRAINERS\n"
-	.string "and POKéMON combos are ahead?\p"
-	.string "All I know is that I'll knock aside\n"
-	.string "anyone that stands in my way!$"
+	.string "Who knows what combos are ahead?\p"
+	.string "I'll knock aside anyone in my way!\p"
+	.string "Except the owner. I heard he hugs.$"
 
 TrainerHill_Entrance_Text_CantWaitToTestTheWaters:
-	.string "I heard tough TRAINERS come to this\n"
-	.string "TRAINER HILL from all over.\p"
-	.string "I can't wait to test the waters!\p"
-	.string "I'll knock aside anyone that stands\n"
-	.string "in my way!$"
+	.string "Tough TRAINERS come here from all over.\p"
+	.string "Mostly to get away from the owner's\n"
+	.string "messages.$"
 
 TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop:
-	.string "Do you see the Time Board over there?\p"
-	.string "My friends and I are trying to see who\n"
-	.string "can reach the top in the least time.$"
+	.string "See the Time Board?\p"
+	.string "My friends and I race to the top.\p"
+	.string "Last one up has to hug the owner.$"
 
 TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen:
-	.string "Do you know when they're opening\n"
-	.string "this place up?\p"
-	.string "I'm waiting here to be the first\n"
-	.string "challenger ever!$"
+	.string "When do they open?\p"
+	.string "I want to be the first challenger ever!\p"
+	.string "…The owner asked me out three times\n"
+	.string "already.$"
 
 TrainerHill_Elevator_Text_ReturnToReception:
 	.string "Would you like to return to\n"

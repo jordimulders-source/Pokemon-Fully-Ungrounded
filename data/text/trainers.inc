@@ -1576,18 +1576,17 @@ Route111_Text_BiancaPostBattle:
 	.string "You have quite a ways to travel.$"
 
 Route112_Text_BriceIntro:
-	.string "Hahahaha!\n"
-	.string "How about we have a battle?\l"
-	.string "You and me!\l"
-	.string "Hahahaha!$"
+	.string "HYUCK HYUCK HYUCK!\p"
+	.string "How about a battle? You and me!\p"
+	.string "HYUCK HYUCK HYUCK!$"
 
 Route112_Text_BriceDefeat:
-	.string "I lost!\n"
-	.string "Hahahaha!$"
+	.string "Hyuck… hyuck…$"
 
 Route112_Text_BricePostBattle:
-	.string "Hahahahaha! Something flew up my nose!\n"
-	.string "Hahahaha-hatchoo!$"
+	.string "HYUCK HYUCK HYUCK!\p"
+	.string "I laugh even when I lose!\p"
+	.string "HYUCK!$"
 
 Route112_Text_TrentIntro:
 	.string "My legs are solid from pounding up\n"
@@ -1689,17 +1688,18 @@ Route113_Text_JaylenPostBattle:
 	.string "…After Gramps stops laughing.$"
 
 Route113_Text_DillonIntro:
-	.string "The volcano's eruption is proof that\n"
-	.string "the earth is alive.$"
+	.string "Hands up! This is a TEAM ROCKET\n"
+	.string "operation!\p"
+	.string "…Uniform? It's in the wash.\p"
+	.string "This is my undercover look.$"
 
 Route113_Text_DillonDefeat:
-	.string "You're some kind of strong!$"
+	.string "TEAM ROCKET… retreats… for now!$"
 
 Route113_Text_DillonPostBattle:
-	.string "Ouch! Owww! I can't see!\n"
-	.string "I got ashes in my eyelashes!\p"
-	.string "Get it? Ashes and eyelashes?\p"
-	.string "Okay, that was bad, sorry…$"
+	.string "GIOVANNI will hear about this.\p"
+	.string "I sent him 400 letters. No reply yet.\p"
+	.string "He's probably busy. Being evil.$"
 
 Route113_Text_MadelineIntro:
 	.string "I use this parasol to ward off this\n"
@@ -2373,18 +2373,20 @@ Route116_Text_SarahPostBattle:
 	.string "my wealth has no meaning.$"
 
 Route116_Text_DawsonIntro:
-	.string "When you lay your eyes on my POKéMON's\n"
-	.string "gorgeous fur, their beauty will render\l"
-	.string "you helpless!$"
+	.string "Out of my way, peasant.\p"
+	.string "Daddy's buying this route. Then the\n"
+	.string "tunnel. Then you.\p"
+	.string "I don't lose battles. I buy them.$"
 
 Route116_Text_DawsonDefeat:
-	.string "Oh, baby, say it isn't so!$"
+	.string "WHAT?! How much for that win?!\p"
+	.string "…You can't buy a win? Since when?!$"
 
 Route116_Text_DawsonPostBattle:
-	.string "Oh, no, no, no!\n"
-	.string "You've mussed up my POKéMON's fur!\l"
-	.string "You've ruined my hairdo, too!\l"
-	.string "I'll have to call my stylist now!$"
+	.string "Scum? Me?\p"
+	.string "I prefer “early investor.”\p"
+	.string "Now move. You're standing on my future\n"
+	.string "parking lot.$"
 
 Route116_Text_DevanIntro:
 	.string "We'll rock you hard!$"
@@ -2398,17 +2400,15 @@ Route116_Text_DevanPostBattle:
 	.string "types, that's what I ought to do.$"
 
 Route116_Text_JohnsonIntro:
-	.string "It's a dead end up here. I'm bored.\p"
-	.string "So I taught my whole team METRONOME.\p"
-	.string "Every turn is a surprise! Even for me!$"
+	.string "Tik tok, tik tok, tik tok.$"
 
 Route116_Text_JohnsonDefeat:
-	.string "METRONOME picked… losing.$"
+	.string "Tik… tok…\p"
+	.string "Time's up.$"
 
 Route116_Text_JohnsonPostBattle:
-	.string "Want to stay and watch?\p"
-	.string "Sometimes it picks EXPLOSION.\p"
-	.string "Then I'm not bored.$"
+	.string "Every clock ticks the same.\p"
+	.string "Mine doesn't.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"
@@ -2655,17 +2655,20 @@ Route117_Text_AishaPostBattle:
 
 Route118_Text_RoseIntro:
 	.string "The aroma of flowers has a magical\n"
-	.string "power. It cleanses us body and soul.$"
+	.string "power.\p"
+	.string "Especially the ones I dry and roll\n"
+	.string "myself.\p"
+	.string "Whoa… your POKéMON have, like, auras.$"
 
 Route118_Text_RoseDefeat:
-	.string "Oh, dear me.\n"
-	.string "I seem to have lost.$"
+	.string "Oh, dear me. I lost.\p"
+	.string "And my lighter.$"
 
 Route118_Text_RosePostBattle:
-	.string "Flowers, POKéMON…\n"
-	.string "I love whatever smells nice.\p"
-	.string "Stinky things…\n"
-	.string "I'll pass.$"
+	.string "Flowers, POKéMON… I love whatever\n"
+	.string "smells nice.\p"
+	.string "Especially that one plant. You know the\n"
+	.string "one.$"
 
 Route118_Text_RoseRegister:
 	.string "Sniff… That odor--it's a POKéNAV!\n"
@@ -3432,16 +3435,21 @@ Route123_Text_BraxtonPostBattle:
 	.string "match!$"
 
 Route123_Text_VioletIntro:
-	.string "They say that good times are filled\n"
-	.string "with good aromas.$"
+	.string "They say good times are filled with good\n"
+	.string "aromas.\p"
+	.string "And good mushrooms.\p"
+	.string "Whoa… your face is melting. Beautiful.\n"
+	.string "Let's battle.$"
 
 Route123_Text_VioletDefeat:
-	.string "Oh…\n"
-	.string "I smell the bitter scent of misery…$"
+	.string "Oh… I can taste the colors of defeat…$"
 
 Route123_Text_VioletPostBattle:
-	.string "The BERRY MASTER's garden is filled\n"
-	.string "with uplifting fragrances.$"
+	.string "The BERRY MASTER's garden is so\n"
+	.string "uplifting.\p"
+	.string "Last time I talked to a tree for six\n"
+	.string "hours.\p"
+	.string "It had great advice.$"
 
 Route123_Text_CameronIntro:
 	.string "Being a psychic is about willpower. I've\n"
@@ -3579,16 +3587,17 @@ Route123_Text_FernandoPostRematch:
 	.string "…No? Fine. Shut it.$"
 
 Route123_Text_DavisIntro:
-	.string "This is my awesome BUG POKéMON!\n"
-	.string "My big brother got it for me.$"
+	.string "LET'S GO! KNEECAPS!\p"
+	.string "I gotta catch more POKéMON!\p"
+	.string "POKéMON with cool knees are so neat.$"
 
 Route123_Text_DavisDefeat:
-	.string "Waaaah!\n"
-	.string "You meanie!$"
+	.string "My knees… they buckled…$"
 
 Route123_Text_DavisPostBattle:
-	.string "Don't tell my brother I lost.\n"
-	.string "You have to keep it a secret!$"
+	.string "BUG POKéMON have six knees each.\p"
+	.string "Six!\p"
+	.string "Do the math. That's so many knees.$"
 
 Route123_Text_JazmynIntro:
 	.string "My confidence will get a boost by\n"

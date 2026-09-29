@@ -14832,3 +14832,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.39] - Joey en Johnson (Route 116)
 - Joey (Youngster) heeft nu vier Poochyena (lv 12–13), allemaal "in the top percentage of POOCHYENA".
 - Het Metronome-team van Joey (Machop, Meowth, Electabuzz, Plusle, Chansey, Lucario, allemaal Metronome) is naar Johnson gegaan, met bijpassende Metronome-dialoog. Johnsons oude team (Shroomish, Cacnea, Tandemaus) is vervallen.
+
+### [v.0.6.40] - Rocket-wannabe, scummy rich boy, planten en paddenstoelen
+- Dillon (Youngster, Route 113) denkt dat hij bij Team Rocket zit, zonder uniform. Team: Koffing, Grimer, Golbat, Raticate, Murkrow (lv 24).
+- Dawson (Rich Boy, Route 116) is scummy. Team uitgebreid met Furfrou en Alolan Meowth (lv 13); items: 2× Full Restore en 2× Max Revive (4 is het maximum per trainer).
+- Johnson (Metronome-team) zegt alleen nog "Tik tok, tik tok, tik tok." zodat de speler verrast wordt.
+- Aroma Ladies: Rose (Route 118) is high van planten, Violet (Route 123) van paddenstoelen. Violet heeft nu een volledig paddenstoelen-team: Amoonguss, Breloom, Parasect, Shiinotic, Toedscruel (lv 32).
+- Davis (Route 123): "LET'S GO! KNEECAPS!" Brice (Hiker, Route 112): "HYUCK HYUCK HYUCK!"
+- Wingull-huis (Route 119): de vrouw is nog overdrevener.
+- Beschermd, blijft vanilla: Jeffrey (Route 120, "… … … Want to battle?") en de Yes Town-jongen in Pacifidlog.

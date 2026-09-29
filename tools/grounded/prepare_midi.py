@@ -117,7 +117,13 @@ def write_voicegroup(path='sound/voicegroups/grounded_gm.inc'):
     open(path, 'w').write('\n'.join(lines) + '\n')
 
 
-def prepare_auto(src, dst, max_tracks=10, loop=True, report=True):
+def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
+                 drop_channels=(), channel_category=None, transpose=None, max_note=None):
+    """drop_channels: MIDI-kanalen die wegvallen; channel_category: {kanaal: categorie} om het instrument
+    te overschrijven (bv. rips met niet-GM-programma's); transpose: {kanaal: halve tonen};
+    max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen)."""
+    channel_category = channel_category or {}
+    transpose = transpose or {}
     m = mido.MidiFile(src)
     tempo_events = []                     # (tick, meta)
     notes = {}                            # categorie -> list of (tick, on, note, vel)
@@ -136,16 +142,23 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True):
                 vol[ch] = msg.value
             elif msg.type == 'control_change' and msg.control == 11:
                 expr[ch] = msg.value
+            elif msg.type in ('note_on', 'note_off') and ch in drop_channels:
+                continue
             elif msg.type == 'note_on' and msg.velocity > 0:
-                cat = 'drums' if ch == 9 else gm_category(prog.get(ch, 0))[0]
+                cat = 'drums' if ch == 9 else channel_category.get(ch, gm_category(prog.get(ch, 0))[0])
                 v = int(msg.velocity * vol.get(ch, 100) / 127 * expr.get(ch, 127) / 127)
-                notes.setdefault(cat, []).append((tick, 1, msg.note, max(1, min(127, v))))
-                active.setdefault((ch, msg.note), []).append(cat)
+                n = msg.note + transpose.get(ch, 0)
+                if max_note is not None and ch != 9:
+                    while n > max_note:
+                        n -= 12
+                n = max(0, min(127, n))
+                notes.setdefault(cat, []).append((tick, 1, n, max(1, min(127, v))))
+                active.setdefault((ch, msg.note), []).append((cat, n))
             elif msg.type in ('note_off', 'note_on'):
                 stack = active.get((ch, msg.note))
                 if stack:
-                    cat = stack.pop(0)
-                    notes[cat].append((tick, 0, msg.note, 0))
+                    cat, n = stack.pop(0)
+                    notes[cat].append((tick, 0, n, 0))
     end_tick = max((ev[0] for evs in notes.values() for ev in evs), default=0)
     count = {c: sum(1 for e in evs if e[1]) for c, evs in notes.items()}
     keep = []

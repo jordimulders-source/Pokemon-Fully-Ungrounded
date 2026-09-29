@@ -14979,3 +14979,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.64] - Mom vóór de klok
 - Zolang je de klok boven nog niet hebt gezet, zegt Mom niet meer de A-Team-regel, maar: "Ugh, this move sucked. It took forever. / Your DAD caused a ton of trouble, and all he brought was a new clock. / It's upstairs. Go look at it." Daarna blijft ze bij "The A-Team will be on soon! YOU FOOL!".
 - Getest in de emulator.
+
+### [v.0.6.65] - Dark Cave en Giratina: geen piepende hoge tonen meer
+- `prepare_auto` kan nu per nummer kanalen weglaten (`drop_channels`), een ander instrument geven (`channel_category`), transponeren (`transpose`) en te hoge noten per octaaf omlaag zetten (`max_note`).
+- Dark Cave (HGSS-rip met eigen, niet-GM instrumentnummers): shaker-kanaal (noten 101-111) weg, kanaal 7 en 8 zijn nu baslijnen, alles boven toonhoogte 84 een octaaf (of meer) omlaag.
+- Giratina: de piep aan het begin was een hoornpartij op toonhoogte 85-104; alles boven 84 gaat nu per octaaf omlaag. De climax blijft verder gelijk.

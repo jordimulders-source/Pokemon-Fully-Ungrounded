@@ -25,14 +25,21 @@ for src, dst in [
     ('dppt_champion.mid', 'mus_grounded_vs_dppt_champion.mid'),
     ('dppt_cyrus.mid',    'mus_grounded_vs_cyrus.mid'),
     ('bw_n.mid',          'mus_grounded_vs_n.mid'),
-    ('pt_giratina.mid',   'mus_grounded_vs_giratina.mid'),
     ('bw_ghetsis.mid',    'mus_grounded_vs_ghetsis.mid'),
 ]:
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
 for src, dst in [
-    ('hgss_dark_cave.mid',    'mus_grounded_vs_dark_cave.mid'),
     ('yoshi_castle.mid',      'mus_grounded_vs_yoshi_castle.mid'),
     ('mksc_broken_pier.mid',  'mus_grounded_vs_broken_pier.mid'),
     ('mksc_sunset_wilds.mid', 'mus_grounded_vs_sunset_wilds.mid'),
 ]:
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
+
+# Dark Cave is een HGSS-rip met eigen (niet-GM) instrumentnummers: kanaal 2 (shaker, noten 101-111) weg,
+# kanaal 7 en 8 zijn baslijnen, en alles boven toonhoogte 84 gaat per octaaf omlaag.
+prepare_auto(f'{SRC}/hgss_dark_cave.mid', f'{DST}/mus_grounded_vs_dark_cave.mid',
+             drop_channels=(2,), channel_category={7: 'fingered_bass', 8: 'synth_bass'}, max_note=84)
+
+# Giratina: de hoornpartij (kanaal 14) en een paar strijkers zitten op toonhoogte 85-104, veel te hoog voor
+# de GBA-samples (piep aan het begin). Alles boven 84 gaat per octaaf omlaag.
+prepare_auto(f'{SRC}/pt_giratina.mid', f'{DST}/mus_grounded_vs_giratina.mid', max_note=84)

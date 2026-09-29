@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_music_options.h"
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
@@ -6149,12 +6150,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
         }
     }
     else
     {
-        return MUS_VS_WILD;
+        return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }
 

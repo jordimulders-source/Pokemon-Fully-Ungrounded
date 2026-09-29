@@ -9,11 +9,15 @@
 #include "scanline_effect.h"
 #include "sprite.h"
 #include "strings.h"
+#include "string_util.h"
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
 #include "window.h"
 #include "gba/m4a_internal.h"
+#include "battle_music_options.h"
+#include "event_data.h"
+#include "constants/vars.h"
 #include "constants/rgb.h"
 
 #define tMenuSelection data[0]
@@ -23,6 +27,8 @@
 #define tSound data[4]
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
+#define tWildMusic data[7]
+#define tTrainerMusic data[8]
 
 enum
 {
@@ -32,7 +38,9 @@ enum
     MENUITEM_SOUND,
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
-    MENUITEM_CANCEL,
+    MENUITEM_WILDMUSIC,    // Project Grounded
+    MENUITEM_TRAINERMUSIC, // Project Grounded
+    // Project Grounded: CANCEL is weg; B sluit het menu
     MENUITEM_COUNT,
 };
 
@@ -48,6 +56,8 @@ enum
 #define YPOS_SOUND        (MENUITEM_SOUND * 16)
 #define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
+#define YPOS_WILDMUSIC    (MENUITEM_WILDMUSIC * 16)
+#define YPOS_TRAINERMUSIC (MENUITEM_TRAINERMUSIC * 16)
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -67,6 +77,8 @@ static void FrameType_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
+static u8 BattleMusic_ProcessInput(u8 selection, u8 count);
+static void BattleMusic_DrawChoice(const u8 *name, u8 y);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
 
@@ -100,7 +112,8 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_SOUND]       = COMPOUND_STRING("SOUND"),
     [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
     [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("FRAME"),
-    [MENUITEM_CANCEL]      = COMPOUND_STRING("CANCEL"),
+    [MENUITEM_WILDMUSIC]   = COMPOUND_STRING("WILD MUSIC"),
+    [MENUITEM_TRAINERMUSIC] = COMPOUND_STRING("TRAINER MUSIC"),
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -117,9 +130,9 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
     [WIN_OPTIONS] = {
         .bg = 0,
         .tilemapLeft = 2,
-        .tilemapTop = 5,
+        .tilemapTop = 3,  // Project Grounded: was 5; titel en opties staan samen in één kader
         .width = 26,
-        .height = 14,
+        .height = 16,     // Project Grounded: was 14 (8 regels i.p.v. 7)
         .paletteNum = 1,
         .baseBlock = 0x36
     },
@@ -250,6 +263,8 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
+        gTasks[taskId].tWildMusic = VarGet(VAR_BATTLE_MUSIC_WILD) < gWildBattleMusicOptionsCount ? VarGet(VAR_BATTLE_MUSIC_WILD) : 0;
+        gTasks[taskId].tTrainerMusic = VarGet(VAR_BATTLE_MUSIC_TRAINER) < gTrainerBattleMusicOptionsCount ? VarGet(VAR_BATTLE_MUSIC_TRAINER) : 0;
 
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
         BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
@@ -257,6 +272,8 @@ void CB2_InitOptionMenu(void)
         Sound_DrawChoices(gTasks[taskId].tSound);
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
+        BattleMusic_DrawChoice(gWildBattleMusicOptions[gTasks[taskId].tWildMusic].name, YPOS_WILDMUSIC);
+        BattleMusic_DrawChoice(gTrainerBattleMusicOptions[gTasks[taskId].tTrainerMusic].name, YPOS_TRAINERMUSIC);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
 
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
@@ -279,12 +296,7 @@ static void Task_OptionMenuFadeIn(u8 taskId)
 
 static void Task_OptionMenuProcessInput(u8 taskId)
 {
-    if (JOY_NEW(A_BUTTON))
-    {
-        if (gTasks[taskId].tMenuSelection == MENUITEM_CANCEL)
-            gTasks[taskId].func = Task_OptionMenuSave;
-    }
-    else if (JOY_NEW(B_BUTTON))
+    if (JOY_NEW(B_BUTTON))
     {
         gTasks[taskId].func = Task_OptionMenuSave;
     }
@@ -293,12 +305,12 @@ static void Task_OptionMenuProcessInput(u8 taskId)
         if (gTasks[taskId].tMenuSelection > 0)
             gTasks[taskId].tMenuSelection--;
         else
-            gTasks[taskId].tMenuSelection = MENUITEM_CANCEL;
+            gTasks[taskId].tMenuSelection = MENUITEM_COUNT - 1;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
-        if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL)
+        if (gTasks[taskId].tMenuSelection < MENUITEM_COUNT - 1)
             gTasks[taskId].tMenuSelection++;
         else
             gTasks[taskId].tMenuSelection = 0;
@@ -352,6 +364,20 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tWindowFrameType)
                 FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
             break;
+        case MENUITEM_WILDMUSIC:
+            previousOption = gTasks[taskId].tWildMusic;
+            gTasks[taskId].tWildMusic = BattleMusic_ProcessInput(gTasks[taskId].tWildMusic, gWildBattleMusicOptionsCount);
+
+            if (previousOption != gTasks[taskId].tWildMusic)
+                BattleMusic_DrawChoice(gWildBattleMusicOptions[gTasks[taskId].tWildMusic].name, YPOS_WILDMUSIC);
+            break;
+        case MENUITEM_TRAINERMUSIC:
+            previousOption = gTasks[taskId].tTrainerMusic;
+            gTasks[taskId].tTrainerMusic = BattleMusic_ProcessInput(gTasks[taskId].tTrainerMusic, gTrainerBattleMusicOptionsCount);
+
+            if (previousOption != gTasks[taskId].tTrainerMusic)
+                BattleMusic_DrawChoice(gTrainerBattleMusicOptions[gTasks[taskId].tTrainerMusic].name, YPOS_TRAINERMUSIC);
+            break;
         default:
             return;
         }
@@ -372,6 +398,8 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
+    VarSet(VAR_BATTLE_MUSIC_WILD, gTasks[taskId].tWildMusic);
+    VarSet(VAR_BATTLE_MUSIC_TRAINER, gTasks[taskId].tTrainerMusic);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -390,7 +418,7 @@ static void Task_OptionMenuFadeOut(u8 taskId)
 static void HighlightOptionMenuItem(u8 index)
 {
     SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(16, DISPLAY_WIDTH - 16));
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * 16 + 40, index * 16 + 56));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * 16 + 24, index * 16 + 40)); // Project Grounded: was +40/+56 (lijst staat hoger)
 }
 
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
@@ -631,6 +659,32 @@ static void ButtonMode_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
 }
 
+// Project Grounded: muziekkeuze, met links/rechts door de lijst bladeren.
+static u8 BattleMusic_ProcessInput(u8 selection, u8 count)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        selection = (selection + 1 < count) ? selection + 1 : 0;
+        sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        selection = (selection != 0) ? selection - 1 : count - 1;
+        sArrowPressed = TRUE;
+    }
+    return selection;
+}
+
+static void BattleMusic_DrawChoice(const u8 *name, u8 y)
+{
+    u8 text[24];
+    u8 *end = StringCopy(text, COMPOUND_STRING("{COLOR RED}{SHADOW LIGHT_RED}"));
+
+    StringCopy(end, name);
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 104, y, 96, 16);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, text, 104, y + 1, TEXT_SKIP_DRAW, NULL);
+}
+
 static void DrawHeaderText(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
@@ -660,22 +714,12 @@ static void DrawOptionMenuTexts(void)
 static void DrawBgWindowFrames(void)
 {
     //                     bg, tile,              x, y, width, height, palNum
-    // Draw title window frame
+    // Project Grounded: titel (rij 1-2) en optielijst (rij 3-18) samen in één kader van rij 0 t/m 19
     FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  0,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  0, 27,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  0, 26,  1,  7);
     FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  0,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  1,  1,  2,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  1,  1,  2,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1,  3,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2,  3, 27,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28,  3,  1,  1,  7);
-
-    // Draw options list window frame
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  4,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  4, 26,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  4,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  5,  1, 18,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  5,  1, 18,  7);
+    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  1,  1, 18,  7);
+    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  1,  1, 18,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 19,  1,  1,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 19, 26,  1,  7);
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);

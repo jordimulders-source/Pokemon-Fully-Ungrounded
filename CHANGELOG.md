@@ -14925,3 +14925,17 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Wally (partner, geen AI-flags): Oranguru (Instruct), Dondozo (Tickle, Soak, Noble Roar), Kirlia lv 30 (Calm Mind, Confusion, Screech, Skill Swap). In een tag battle heeft elke trainer maximaal 3 Pokémon.
   - Maxie: Hippopotas 29, Ferroseed 29, Camerupt 31 (zandteam: Ferroseed en Camerupt hebben geen last van de zandstorm). Tabitha (TRAINER_TABITHA_MT_CHIMNEY_TAG): Arcanine 28, Magmar 28, Hisuian Arcanine 29.
 - Nieuwe vlaggen/var: `FLAG_HIDE_MT_CHIMNEY_WALLY` (0x26), `FLAG_HIDE_METEOR_FALLS_WALLY` (0x27), `VAR_WALLY_METEOR_FALLS_STATE` (0x4083); partner `PARTNER_WALLY`.
+
+### [v.0.6.56] - Prof. Birch op het strand
+- Route 109 (strand onder Slateport): Prof. Birch staat naast een "kuiltje" (Sandygast-uitwerpselen, "Most peculiar."). Hij vindt je sterker geworden, maar zwakker dan verwacht, en denkt dat hij kan winnen. Daarna vecht hij (TRAINER_BIRCH, nieuwe trainerklasse PROFESSOR, mugshot groen).
+- Team (lv 19–20, allemaal Mud-Slap en Mud Shot): Rellor (+ Struggle Bug, Defense Curl), Paldean Wooper (+ Poison Tail, Tail Whip; lv 19, want hij evolueert op 20), Sandygast (+ Astonish, Sand Attack), Alolan Grimer lv 20 (+ Bite, Poison Gas).
+- Op het strand stond geen zichtbaar kuiltje; het kuiltje is een onzichtbaar bord links van Birch ("A small pit in the sand. It's not a pit."). Birch staat op (23,22).
+- Getest in de emulator (mGBA headless): Birch op de kaart, de dialoog, de mugshot-slide en zijn sprite in het gevecht ("PROFESSOR BIRCH") zien er goed uit.
+
+### [v.0.6.57] - Gevechtsmuziek kiezen in het optiemenu
+- Twee nieuwe regels in OPTION: WILD MUSIC en TRAINER MUSIC, bladeren met links/rechts. CANCEL is weg (B sluit het menu); OPTION-titel en opties staan samen in één kader.
+- Wilde gevechten: HOENN (standaard), KANTO, GROUDON (Kyogre/Groudon-thema), REGI, RAYQUAZA, MEW, KANTO BIRDS (FRLG-legendary), MEWTWO, DEOXYS, LEGEND DOGS.
+- Gewone trainergevechten: HOENN (standaard), KANTO, KANTO GYM, KANTO CHAMP, DEOXYS, LEGEND DOGS. Gymleiders, rivalen, Aqua/Magma, Elite Four enz. houden hun eigen muziek.
+- LEGEND DOGS is het ongebruikte Suicune/legendary beasts-nummer dat in de ROM zit (volgens de broncode een testtrack); kan ruw klinken.
+- Opgeslagen in `VAR_BATTLE_MUSIC_WILD` (0x408B) en `VAR_BATTLE_MUSIC_TRAINER` (0x4091). Lijst in `src/battle_music_options.c`.
+- Getest in de emulator: menu, bladeren en opslaan werken.

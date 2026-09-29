@@ -14984,3 +14984,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - `prepare_auto` kan nu per nummer kanalen weglaten (`drop_channels`), een ander instrument geven (`channel_category`), transponeren (`transpose`) en te hoge noten per octaaf omlaag zetten (`max_note`).
 - Dark Cave (HGSS-rip met eigen, niet-GM instrumentnummers): shaker-kanaal (noten 101-111) weg, kanaal 7 en 8 zijn nu baslijnen, alles boven toonhoogte 84 een octaaf (of meer) omlaag.
 - Giratina: de piep aan het begin was een hoornpartij op toonhoogte 85-104; alles boven 84 gaat nu per octaaf omlaag. De climax blijft verder gelijk.
+
+### [v.0.6.66] - Giratina: geen partijen meer weggelaten
+- `prepare_auto` laat instrumenten die niet meer in de 10 sporen passen niet meer vallen, maar voegt ze samen met het meest verwante instrument dat wel een spoor heeft (koor/orgel → strijkers, hobo → fluit, tuba → hoorn, glockenspiel/xylofoon → piano, enz.).
+- Giratina: alle 199 eerder weggelaten noten klinken nu mee.

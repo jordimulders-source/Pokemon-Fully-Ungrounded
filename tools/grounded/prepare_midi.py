@@ -165,7 +165,27 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
     if 'drums' in notes:
         keep.append('drums')
     keep += [c for c in sorted(count, key=lambda c: -count[c]) if c != 'drums'][:max_tracks - len(keep)]
-    dropped = [c for c in notes if c not in keep]
+    # Categorieën die niet meer passen, samenvoegen met het meest verwante instrument dat wel een spoor heeft.
+    FALLBACK = {
+        'choir': ['strings', 'organ', 'horn', 'flute'], 'organ': ['strings', 'choir', 'piano'],
+        'oboe': ['flute', 'strings', 'horn'], 'flute': ['oboe', 'strings', 'square1'],
+        'tuba': ['horn', 'trumpet', 'fingered_bass'], 'horn': ['trumpet', 'tuba', 'strings'],
+        'trumpet': ['horn', 'tuba', 'strings'], 'glockenspiel': ['xylophone', 'piano', 'harp'],
+        'xylophone': ['glockenspiel', 'piano', 'harp'], 'harp': ['piano', 'strings'],
+        'square1': ['square2', 'flute'], 'square2': ['square1', 'flute'],
+        'noise': ['drums', 'cymbal'], 'cymbal': ['drums', 'noise'], 'taiko': ['timpani', 'drums'],
+        'timpani': ['taiko', 'drums', 'fingered_bass'], 'piano': ['harp', 'strings'],
+        'strings': ['choir', 'organ', 'piano'],
+        'fingered_bass': ['synth_bass', 'slap_bass'], 'synth_bass': ['fingered_bass', 'slap_bass'],
+        'slap_bass': ['fingered_bass', 'synth_bass'],
+    }
+    merged = []
+    for c in [c for c in notes if c not in keep]:
+        target = next((t for t in FALLBACK.get(c, []) if t in keep), None)
+        if target:
+            notes[target] += notes[c]
+            merged.append(f'{c}->{target}')
+    dropped = [c for c in notes if c not in keep and not any(m.startswith(c + '->') for m in merged)]
 
     out = mido.MidiFile(type=1, ticks_per_beat=m.ticks_per_beat)
     cond = mido.MidiTrack(); out.tracks.append(cond)
@@ -187,4 +207,4 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
             tr.append(mido.Message('note_on' if on else 'note_off', channel=ch, note=note, velocity=v, time=tk - last)); last = tk
     out.save(dst)
     if report:
-        print(f'{dst}: sporen {keep} ' + (f'| weggelaten: {dropped} ({sum(count[c] for c in dropped)} noten)' if dropped else ''))
+        print(f'{dst}: sporen {keep}' + (f' | samengevoegd: {merged}' if merged else '') + (f' | weggelaten: {dropped} ({sum(count[c] for c in dropped)} noten)' if dropped else ''))

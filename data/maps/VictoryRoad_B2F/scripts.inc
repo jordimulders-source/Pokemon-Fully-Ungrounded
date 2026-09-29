@@ -32,19 +32,17 @@ VictoryRoad_B2F_EventScript_Dianne::
 	end
 
 VictoryRoad_B2F_Text_VitoIntro:
-	.string "I trained together with my whole family,\n"
-	.string "every one of us!\l"
-	.string "I'm not losing to anyone!$"
+	.string "I trained with my whole family! Every\n"
+	.string "one of us!\p"
+	.string "We're the WINSTRATES' cousins!$"
 
 VictoryRoad_B2F_Text_VitoDefeat:
-	.string "Better than my family?!\n"
-	.string "Is that possible?!$"
+	.string "Better than my family?! How?!$"
 
 VictoryRoad_B2F_Text_VitoPostBattle:
-	.string "I was better than everyone in my\n"
-	.string "family. I've never lost before…\p"
-	.string "I've lost my confidence…\n"
-	.string "Maybe I'll go home…$"
+	.string "I was the best in my family. Never lost.\p"
+	.string "Now I have to tell them at dinner.\p"
+	.string "Maybe I'll just live in this cave.$"
 
 VictoryRoad_B2F_Text_OwenIntro:
 	.string "There you are!\p"
@@ -68,45 +66,45 @@ VictoryRoad_B2F_Text_CarolineDefeat:
 	.string "No signs of tiring at all!$"
 
 VictoryRoad_B2F_Text_CarolinePostBattle:
-	.string "VICTORY ROAD and the POKéMON LEAGUE\n"
-	.string "are long and grueling challenges.\l"
-	.string "Beware of fatigue!$"
+	.string "VICTORY ROAD and the LEAGUE are\n"
+	.string "grueling.\p"
+	.string "Bring snacks. I didn't. I'm so hungry.$"
 
 VictoryRoad_B2F_Text_JulieIntro:
-	.string "You shouldn't get complacent just\n"
-	.string "because you have a lot of GYM BADGES.\p"
-	.string "There's always going to be someone\n"
-	.string "who's better than you!$"
+	.string "Don't get cocky because of your GYM\n"
+	.string "BADGES.\p"
+	.string "There's always someone better!$"
 
 VictoryRoad_B2F_Text_JulieDefeat:
-	.string "You're better than me!$"
+	.string "You're better than me!\p"
+	.string "I guess I'm the someone.$"
 
 VictoryRoad_B2F_Text_JuliePostBattle:
-	.string "Gaze on your collected BADGES and\n"
-	.string "remember the TRAINERS you've faced.$"
+	.string "Look at your BADGES and remember who\n"
+	.string "you've beaten.\p"
+	.string "The jerkoffs in this cave included.$"
 
 VictoryRoad_B2F_Text_FelixIntro:
-	.string "I've come this far, but the tension's\n"
-	.string "giving me awful stomach pain…$"
+	.string "I made it this far, but the stress gives\n"
+	.string "me stomach cramps…$"
 
 VictoryRoad_B2F_Text_FelixDefeat:
-	.string "Ooh…\n"
-	.string "It hurts…$"
+	.string "Ooh… It hurts…$"
 
 VictoryRoad_B2F_Text_FelixPostBattle:
-	.string "I can't help getting all tense knowing\n"
-	.string "that I'm nearing the POKéMON LEAGUE.\p"
-	.string "It's all I can do to feign calm.$"
+	.string "The LEAGUE is so close. I'm so tense.\p"
+	.string "Is there a toilet in this cave? Asking\n"
+	.string "urgently.$"
 
 VictoryRoad_B2F_Text_DianneIntro:
-	.string "The elite among the elite gather in\n"
-	.string "this cave.\p"
+	.string "The elite of the elite gather in this\n"
+	.string "cave.\p"
 	.string "How are you finding it?$"
 
 VictoryRoad_B2F_Text_DianneDefeat:
-	.string "Not rattled in the least bit!$"
+	.string "Not rattled at all!$"
 
 VictoryRoad_B2F_Text_DiannePostBattle:
-	.string "You do have guts! I like that!\n"
-	.string "Keep it going!$"
+	.string "You've got guts! Keep it up!\p"
+	.string "And take a left. Trust me.$"
 

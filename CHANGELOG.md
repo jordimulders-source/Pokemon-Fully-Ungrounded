@@ -14854,3 +14854,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.43] - Trainers vroege routes
 - 289 trainerteksten (intro, verlies, na het gevecht, registratie en rematches) op Jagged Pass, Mt. Chimney, Rusturf Tunnel en Route 104–112. Bestaande thema's lopen door in hun rematches (Haley: The Clash, Winston: Mo Money, Cindy: boerenkinkel-lady, Benjamin: Nederlands, Abigail: Strava).
+
+### [v.0.6.44] - Alle overige trainers
+- De overige ~710 trainerteksten herschreven (intro, verlies, na het gevecht, registratie, rematches en "bring twee Pokémon"-teksten): Meteor Falls, Mt. Pyre, Seashore House, S.S. Tidal, Victory Road en Route 113–134.
+- Bestaande thema's lopen door: Cyndy zweeft ook in haar rematches, Rose blijft high, Jerry wil een salaryman worden, Dalton en Fernando blijven bij Metallica en Motörhead, de Mimic Circle (met Donalds zes Ditto), het echtpaar Makayla/Paxton (voedselvergiftiging) en Hudson zoekt al twintig jaar zijn maat Kelvin.
+- Beschermd en ongewijzigd: Jeffrey (Route 120), Deandre's intro/verlies en de rivalen, Elite Four en Wallace.

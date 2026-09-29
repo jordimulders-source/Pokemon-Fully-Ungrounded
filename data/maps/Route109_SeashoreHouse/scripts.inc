@@ -144,17 +144,17 @@ Route109_SeashoreHouse_Text_ThatsTooBad:
 	.string "That's too bad.$"
 
 Route109_SeashoreHouse_Text_DwayneIntro:
-	.string "If you're looking for a battle in the\n"
-	.string "SEASHORE HOUSE, you'll find no\l"
-	.string "hotter TRAINER than me, matey!$"
+	.string "Looking for a battle in the SEASHORE\n"
+	.string "HOUSE?\p"
+	.string "No hotter TRAINER than me, matey!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated:
-	.string "That was a hot battle!\n"
-	.string "I can accept that loss, matey!$"
+	.string "Hot battle! I accept that loss, matey!$"
 
 Route109_SeashoreHouse_Text_DwaynePostBattle:
-	.string "Whenever I'm in SLATEPORT, I enjoy\n"
-	.string "hot battles and ice-cold SODA POP!$"
+	.string "In SLATEPORT I love hot battles and\n"
+	.string "ice-cold SODA POP!\p"
+	.string "The SODA POP is 90% sugar. Like me.$"
 
 Route109_SeashoreHouse_Text_JohannaIntro:
 	.string "Boring battles aren't worth the effort.\p"
@@ -173,14 +173,16 @@ Route109_SeashoreHouse_Text_JohannaPostBattle:
 	.string "I mean, a SODA POP.$"
 
 Route109_SeashoreHouse_Text_SimonIntro:
-	.string "I'm going to show you how great\n"
-	.string "my POKéMON are, but don't cry!$"
+	.string "I'll show you how great my POKéMON are!\p"
+	.string "Don't cry!$"
 
 Route109_SeashoreHouse_Text_SimonDefeated:
-	.string "…I lost, but I won't cry…$"
+	.string "…I lost, but I won't cry…\p"
+	.string "…Sniff.$"
 
 Route109_SeashoreHouse_Text_SimonPostBattle:
-	.string "If one of my POKéMON knew the move\n"
-	.string "for carrying me across water on its\l"
-	.string "back, I could get rid of this inner tube.$"
+	.string "If my POKéMON could SURF, I'd ditch this\n"
+	.string "inner tube.\p"
+	.string "My POKéMON is a CLAMPERL. It can't\n"
+	.string "carry me.$"
 

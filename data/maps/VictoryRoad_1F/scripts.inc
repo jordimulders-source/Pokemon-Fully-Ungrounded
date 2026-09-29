@@ -148,16 +148,18 @@ VictoryRoad_1F_Text_WallyPostBattle:
 	.string "strong continue!$"
 
 VictoryRoad_1F_Text_EdgarIntro:
-	.string "I've made it this far a couple times,\n"
-	.string "but the last stretch is so long…$"
+	.string "I've made it this far a couple of times.\p"
+	.string "The last stretch is so long…\p"
+	.string "I'm not even sure where the exit is\n"
+	.string "anymore.$"
 
 VictoryRoad_1F_Text_EdgarDefeat:
 	.string "My dream ends here again…$"
 
 VictoryRoad_1F_Text_EdgarPostBattle:
-	.string "You've made it this far. Keep the\n"
-	.string "momentum going and become the\l"
-	.string "CHAMPION! If anyone can, it's you!$"
+	.string "You made it this far. Keep going!\p"
+	.string "If anyone becomes CHAMPION, it's you.\p"
+	.string "I'll just live here.$"
 
 VictoryRoad_1F_Text_AlbertIntro:
 	.string "WAKE UP! Grab a brush and put a little\n"
@@ -171,15 +173,15 @@ VictoryRoad_1F_Text_AlbertPostBattle:
 	.string "Trust in my self-righteous suicide…$"
 
 VictoryRoad_1F_Text_HopeIntro:
-	.string "This seemingly infinite and harsh road\n"
-	.string "lives up to its name of VICTORY.$"
+	.string "This endless road lives up to its name.\p"
+	.string "VICTORY. Or at least very long.$"
 
 VictoryRoad_1F_Text_HopeDefeat:
 	.string "Your battle style is fantastic…$"
 
 VictoryRoad_1F_Text_HopePostBattle:
-	.string "You seem to have the potential for\n"
-	.string "becoming the CHAMPION.$"
+	.string "You could become CHAMPION.\p"
+	.string "If you find the way out. Good luck.$"
 
 VictoryRoad_1F_Text_QuincyIntro:
 	.string "WHY DO THEY ALWAYS SEND THE POOR?!$"

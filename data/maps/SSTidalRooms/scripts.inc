@@ -67,17 +67,19 @@ SSTidalRooms_Text_TakeRestOnBed:
 	.string "Let's take a rest.$"
 
 SSTidalRooms_Text_ColtonIntro:
-	.string "I often sail to LILYCOVE CITY.\p"
-	.string "I enjoy attending CONTESTS,\n"
-	.string "you see.$"
+	.string "I often sail to LILYCOVE for the\n"
+	.string "CONTESTS.\p"
+	.string "With my five SKITTY. And my DELCATTY.\n"
+	.string "She's the mother.$"
 
 SSTidalRooms_Text_ColtonDefeat:
 	.string "That was an enjoyable match!$"
 
 SSTidalRooms_Text_ColtonPostBattle:
-	.string "I get so excited imagining what kinds\n"
-	.string "of POKéMON I'll get to see in the next\l"
-	.string "CONTEST. The anticipation of it thrills!$"
+	.string "I get so excited about the next\n"
+	.string "CONTEST!\p"
+	.string "My cats do too. They're wearing\n"
+	.string "matching bows.$"
 
 SSTidalRooms_Text_MicahIntro:
 	.string "Are your friends strong?$"
@@ -86,8 +88,9 @@ SSTidalRooms_Text_MicahDefeat:
 	.string "Your friends are, indeed, strong.$"
 
 SSTidalRooms_Text_MicahPostBattle:
-	.string "Friends need not be human.\n"
-	.string "For me, POKéMON are treasured friends!$"
+	.string "Friends need not be human.\p"
+	.string "My POKéMON are my only friends. By\n"
+	.string "choice. Mostly.$"
 
 SSTidalRooms_Text_ThomasIntro:
 	.string "Child… I see that you raise POKéMON\n"
@@ -106,64 +109,61 @@ SSTidalRooms_Text_ThomasPostBattle:
 	.string "Also TONY SOPRANO's. Different results.$"
 
 SSTidalRooms_Text_JedIntro:
-	.string "JED: I feel a little shy about this, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
+	.string "JED: This is a bit embarrassing, but…\p"
+	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_JedDefeat:
 	.string "JED: Sigh…$"
 
 SSTidalRooms_Text_JedPostBattle:
-	.string "JED: It's the first time that our lovey-\n"
-	.string "dovey power couldn't prevail!\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "JED: Our lovey-dovey power failed for\n"
+	.string "the first time!\p"
+	.string "It's our honeymoon. Great start.$"
 
 SSTidalRooms_Text_JedNotEnoughMons:
-	.string "JED: You only have one POKéMON?\n"
-	.string "Isn't that just too lonesome?$"
+	.string "JED: Only one POKéMON? Isn't that\n"
+	.string "lonely?\p"
+	.string "Get a partner. Like us.$"
 
 SSTidalRooms_Text_LeaIntro:
-	.string "LEA: I feel a little silly, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
+	.string "LEA: I feel silly, but…\p"
+	.string "Behold our lovey-dovey power!$"
 
 SSTidalRooms_Text_LeaDefeat:
 	.string "LEA: Oh, boo!$"
 
 SSTidalRooms_Text_LeaPostBattle:
-	.string "LEA: I can't believe it!\n"
-	.string "Our lovey-dovey power failed…\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "LEA: Our lovey-dovey power failed…\p"
+	.string "I blame JED. Honeymoon's over.$"
 
 SSTidalRooms_Text_LeaNotEnoughMons:
-	.string "LEA: I wanted to battle…\n"
-	.string "But you don't even have two POKéMON…$"
+	.string "LEA: You don't even have two POKéMON…\p"
+	.string "That's so sad.$"
 
 SSTidalRooms_Text_GarretIntro:
-	.string "Ah, you've come just in time.\p"
-	.string "I'm bored, you see.\n"
-	.string "You may entertain me.$"
+	.string "Ah, you came just in time.\p"
+	.string "I'm bored. Entertain me.$"
 
 SSTidalRooms_Text_GarretDefeat:
 	.string "…That will do.$"
 
 SSTidalRooms_Text_GarretPostBattle:
-	.string "Perhaps I shall get Father to acquire\n"
-	.string "a yacht for me.\l"
-	.string "A yacht for me and POKéMON!$"
+	.string "Perhaps I'll have Father buy me a yacht.\p"
+	.string "This ferry has other people on it. Ew.$"
 
 SSTidalRooms_Text_NaomiIntro:
-	.string "Oh, you're such an adorable TRAINER.\n"
-	.string "Would you like to have tea?\l"
-	.string "Or would you rather battle?$"
+	.string "Oh, what an adorable TRAINER.\p"
+	.string "Tea? Or a battle? Or both? I'm on\n"
+	.string "vacation.$"
 
 SSTidalRooms_Text_NaomiDefeat:
-	.string "I see.\n"
-	.string "You're the active sort.$"
+	.string "I see. You're the active sort.$"
 
 SSTidalRooms_Text_NaomiPostBattle:
 	.string "A world cruise on a luxury liner has its\n"
-	.string "charms, I must say…\p"
-	.string "But, I will admit there is an appealing\n"
-	.string "side to touring HOENN by ferry.$"
+	.string "charms…\p"
+	.string "But a HOENN ferry has charm too.\p"
+	.string "The charm of having no room service.$"
 
 SSTidalRooms_Text_NotSuspiciousTakeThis:
 	.string "Uh… Hi! I… I'm not acting suspicious!\p"

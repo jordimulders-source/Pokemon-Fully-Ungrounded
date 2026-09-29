@@ -28,10 +28,9 @@ PacifidlogTown_House4_EventScript_No::
 	end
 
 PacifidlogTown_House4_Text_PeopleSawHighFlyingPokemon:
-	.string "People were saying they saw a POKéMON\n"
-	.string "flying high above HOENN.\p"
-	.string "Is it flying around all the time?\n"
-	.string "Doesn't it need to rest somewhere?$"
+	.string "People saw a POKéMON flying high above\n"
+	.string "HOENN.\p"
+	.string "Probably leaving PACIFIDLOG. Smart.$"
 
 PacifidlogTown_House4_Text_SkyPokemon:
 	.string "A sky POKéMON!\n"

@@ -54,10 +54,10 @@ MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
 	.string "as my friend's!$"
 
 MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
-	.string "A RECORD CORNER opened upstairs in\n"
-	.string "the POKéMON CENTER.\p"
-	.string "I don't know what it's about, but it\n"
-	.string "sounds fun. I'll go check it out!$"
+	.string "I've spent ¥50,000 on EA FC packs.\p"
+	.string "My best player is still RODRI.\p"
+	.string "He walks. Everywhere.\p"
+	.string "…One more pack.$"
 
 MauvilleCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

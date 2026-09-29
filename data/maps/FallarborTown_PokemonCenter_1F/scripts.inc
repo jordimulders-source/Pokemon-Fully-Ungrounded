@@ -112,9 +112,11 @@ FallarborTown_PokemonCenter_1F_Text_FossilManiacEdgeOfTown:
 	.string "of town will know.$"
 
 FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees:
-	.string "In the fields of FALLARBOR, we plant\n"
-	.string "seedlings of hardy trees that thrive\l"
-	.string "even in volcanic ash.$"
+	.string "In FALLARBOR, we plant hardy trees.\p"
+	.string "Reminds me of AGE OF EMPIRES II.\p"
+	.string "4,000 hours played.\p"
+	.string "I still forget to build farms.\p"
+	.string "…Wololo.$"
 
 FallarborTown_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

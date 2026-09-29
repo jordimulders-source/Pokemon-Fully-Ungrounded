@@ -60,10 +60,11 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 	return
 
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
-	.string "That PC-based POKéMON Storage\n"
-	.string "System…\p"
-	.string "Whoever made it must be some kind\n"
-	.string "of a scientific wizard!$"
+	.string "The PC Storage System got hacked.\p"
+	.string "My POKéMON, my moves, my EVs. All leaked.\p"
+	.string "Now every kid on the route counters my\n"
+	.string "team.\p"
+	.string "I haven't won in six weeks.$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
 	.string "When my POKéMON ate an\n"

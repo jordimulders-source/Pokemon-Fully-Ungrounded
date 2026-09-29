@@ -57,10 +57,9 @@ LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "off the stage. My blood boils.$"
 
 LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
-	.string "There are so many different kinds of\n"
-	.string "TM moves.\p"
-	.string "A catalog I read said there are fifty\n"
-	.string "different kinds.$"
+	.string "There are fifty kinds of TMs.\p"
+	.string "I have 49.\p"
+	.string "I can't sleep.$"
 
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 	.string "A POKéMON can learn four moves.\n"

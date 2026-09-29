@@ -14784,3 +14784,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.30] - Team Aqua: bruiswater
 - Team Aqua is geobsedeerd door bruiswater (Spa, Sourcy, San Pellegrino, Perrier, Chaudfontaine). 83 teksten herschreven: Route 110, de rij bij het museum in Slateport, het Oceanic Museum, Rusturf Tunnel, het Weather Institute (incl. Shelly), de top van Mt. Pyre, Seafloor Cavern (incl. Shelly) en de grunts in Lilycove.
 - Verhaalteksten (Matt die de duikboot inpikt, het Devon-pakket) zijn ongewijzigd.
+
+### [v.0.6.31] - Lilycove-mall, Pacifidlog, Pokémon School, losse NPC's, Bubble Beam
+- Lilycove Department Store: mensen die de hele dag in de mall hangen omdat ze niks te doen hebben, en mensen die door de consumptiedrang worden geleefd.
+- Pacifidlog: iedereen klaagt over het gebrek aan voorzieningen (Regi-hints en de YES TOWN-grap blijven staan).
+- Rustboro Pokémon School: de leerlingen praten over virale filmpjes en TikTok en vinden school overrated.
+- Losse NPC's: Pokémon-abonnement (Slateport PC), datalek van het PC-systeem (Petalburg PC), The Sims (Lilycove 5F), Age of Empires II (Fallarbor PC), EA FC-packs met Rodri (Mauville PC).
+- Team Aqua: elke water-Pokémon van de grunts, Shelly en Matt kent Bubble Beam plus zijn laatste 3 level-up moves op dat level (40 Pokémon). Archie is ongewijzigd.

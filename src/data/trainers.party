@@ -39,14 +39,26 @@ AI: Check Bad Move
 Arrokuda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Dive
+- Focus Energy
+- Crunch
 
 Blastoise
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rain Dance
+- Aqua Tail
+- Shell Smash
 
 Crawdaunt
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Metal Claw
+- Clamp
+- Razor Shell
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
@@ -60,6 +72,10 @@ AI: Check Bad Move
 Mantine
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Headbutt
+- Air Slash
+- Aqua Ring
 
 Duraludon
 Level: 36
@@ -89,6 +105,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Seismitoad
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Round
+- Flail
+- Uproar
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
@@ -123,6 +143,10 @@ AI: Check Bad Move
 Drednaw
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Headbutt
+- Counter
+- Jaw Lock
 
 Fraxure
 Level: 41
@@ -144,10 +168,18 @@ AI: Check Bad Move
 Lapras
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Water Pulse
+- Brine
+- Body Slam
 
 Tentacruel
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Power Gem
+- Dazzling Gleam
+- Hyper Voice
 
 Toedscruel
 Level: 41
@@ -169,10 +201,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Jellicent
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Recover
+- Shadow Ball
+- Whirlpool
 
 Clawitzer
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Hone Claws
+- Water Pulse
+- Swords Dance
 
 === TRAINER_GABRIELLE_1 ===
 Name: GABRIELLE
@@ -219,10 +259,18 @@ AI: Check Bad Move
 Chewtle
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Tackle
+- Water Gun
+- Bite
 
 Mareanie
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Peck
+- Wide Guard
+- Bite
 
 Slowpoke_Galar
 Level: 12
@@ -231,6 +279,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Tatsugiri
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Splash
+- Harden
+- Helping Hand
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -316,6 +368,10 @@ AI: Check Bad Move
 Wishiwashi
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aqua Tail
+- Aqua Ring
+- Endeavor
 
 Absol
 Level: 41
@@ -324,6 +380,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Psych Up
+- Amnesia
+- Stored Power
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -358,10 +418,18 @@ AI: Check Bad Move
 Drizzile
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Growl
+- Water Gun
+- Water Pulse
 
 Veluza
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Pluck
+- Water Pulse
+- Focus Energy
 
 Bombirdier
 Level: 16
@@ -370,6 +438,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skrelp
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Acid
+- Water Gun
+- Tail Whip
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: GRUNT
@@ -383,6 +455,10 @@ AI: Check Bad Move
 Pelipper
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Swallow
+- Spit Up
+- Weather Ball
 
 Abomasnow
 Level: 32
@@ -472,10 +548,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Carvanha
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rage
+- Focus Energy
+- Aqua Jet
 
 Omanyte
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rollout
+- Sand Attack
+- Water Gun
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
 Name: GRUNT
@@ -511,6 +595,10 @@ AI: Check Bad Move
 Jellicent
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Recover
+- Shadow Ball
+- Whirlpool
 
 Rotom
 Level: 37
@@ -553,10 +641,18 @@ AI: Check Bad Move
 Sealeo
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aurora Beam
+- Muddy Water
+- Encore
 
 Feraligatr
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Ice Fang
+- Flail
+- Crunch
 
 Fraxure
 Level: 36
@@ -574,10 +670,18 @@ AI: Check Bad Move
 Relicanth
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rock Slide
+- Brine
+- Take Down
 
 Gorebyss
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Safeguard
+- Dive
+- Baton Pass
 
 Cursola
 Level: 33
@@ -595,6 +699,10 @@ AI: Check Bad Move
 Gyarados
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Acrobatics
+- Rain Dance
+- Aqua Tail
 
 Honchkrow
 Level: 36
@@ -620,6 +728,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Seadra
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Charge Beam
+- Agility
+- Psybeam
 
 Skarmory
 Level: 35
@@ -667,6 +779,10 @@ AI: Basic Trainer
 Wailord
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Bounce
+- Aurora Beam
+- Body Slam
 
 Snorlax
 Level: 39
@@ -683,6 +799,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Dondozo
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Noble Roar
+- Soak
+- Body Slam
 
 Cetitan
 Level: 39
@@ -733,6 +853,10 @@ AI: Basic Trainer
 Politoed
 Level: 36
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Rain Dance
+- Body Slam
+- Psychic Noise
 
 Armaldo
 Level: 36
@@ -741,6 +865,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Kabutops
 Level: 36
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Mud Shot
+- Ancient Power
+- Brine
 
 Aerodactyl
 Level: 36
@@ -770,10 +898,18 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Alomomola
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Soak
+- Wish
+- Brine
 
 Samurott_Hisui
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Aerial Ace
+- Aqua Jet
+- Encore
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -5758,10 +5894,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Palafin
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Charm
+- Acrobatics
+- Encore
 
 Wishiwashi
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Uproar
+- Aqua Tail
+- Aqua Ring
 
 === TRAINER_SHAWN ===
 Name: SHAWN
@@ -16872,10 +17016,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Vaporeon
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Water Pulse
+- Aurora Beam
+- Aqua Ring
 
 Lanturn
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Tail Glow
+- Aqua Ring
+- Signal Beam
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -17518,10 +17670,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Poliwrath
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Circle Throw
+- Body Slam
+- Hypnosis
 
 Barbaracle
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Rock Polish
+- Slash
+- Hone Claws
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA

@@ -72,8 +72,8 @@ PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 	.string "today. Best week ever.$"
 
 PacifidlogTown_House3_Text_IsThatAPokedex:
-	.string "Is that a POKéDEX?\p"
-	.string "Did you get to meet a lot of different\n"
-	.string "POKéMON?\p"
-	.string "I wish I was like you.$"
+	.string "Is that a POKéDEX? Can I charge my\n"
+	.string "phone on it?\p"
+	.string "We have one outlet. It's in the POKéMON\n"
+	.string "CENTER.$"
 

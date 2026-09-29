@@ -35,14 +35,15 @@ PacifidlogTown_PokemonCenter_1F_EventScript_OldMan::
 	end
 
 PacifidlogTown_PokemonCenter_1F_Text_WhatColorTrainerCard:
-	.string "What color is your TRAINER CARD?\n"
-	.string "Mine's copper!$"
+	.string "What color is your TRAINER CARD?\p"
+	.string "Mine's copper. Like the pipes we don't\n"
+	.string "have.$"
 
 PacifidlogTown_PokemonCenter_1F_Text_OnColonyOfCorsola:
-	.string "PACIFIDLOG TOWN floats on top of\n"
-	.string "a colony of CORSOLA.\p"
-	.string "If I told you that, would you believe\n"
-	.string "me?$"
+	.string "PACIFIDLOG floats on a colony of\n"
+	.string "CORSOLA.\p"
+	.string "No roads. No shops. No sewer.\p"
+	.string "Just CORSOLA.$"
 
 PacifidlogTown_PokemonCenter_1F_Text_AncestorsLivedOnBoats:
 	.string "LAS MALVINAS SON ARGENTINAS.$"

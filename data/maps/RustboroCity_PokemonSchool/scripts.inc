@@ -269,20 +269,14 @@ RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
 	.string "Schade DEUTSCHLAND, alles ist vorbei!$"
 
 RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
-	.string "You know how some POKéMON moves can\n"
-	.string "confuse a POKéMON?\p"
-	.string "A confused POKéMON will sometimes\n"
-	.string "attack itself without meaning to.\p"
-	.string "But once it leaves battle, it will\n"
-	.string "return to normal.$"
+	.string "Did you see the SKITTY that fell off\n"
+	.string "the table? 40 million views.\p"
+	.string "School doesn't teach you that.$"
 
 RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry:
-	.string "A POKéMON holding a BERRY will heal\n"
-	.string "itself…\p"
-	.string "There are many kinds of items that\n"
-	.string "POKéMON can hold…\p"
-	.string "Boy, it sure is hard taking notes\n"
-	.string "down…$"
+	.string "Why learn about BERRIES?\p"
+	.string "A guy on TikTok says school is a scam.\p"
+	.string "He's 14. He owns a Lamborghini.$"
 
 RustboroCity_PokemonSchool_Text_StudentsNotes:
 	.string "It's this student's notebook…\p"

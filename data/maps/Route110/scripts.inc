@@ -917,7 +917,8 @@ Route110_Text_SlateportCitySign:
 	.string "Smells like fish. You'll get used to it.$"
 
 Route110_Text_CyclingRoadSign:
-	.string "SEASIDE CYCLING ROAD$"
+	.string "SEASIDE CYCLING ROAD\p"
+	.string "Helmets optional. Regret mandatory.$"
 
 Route110_Text_AquaWasHere:
 	.string "“TEAM AQUA was here!”\p"
@@ -931,7 +932,8 @@ Route110_Text_Route103Sign:
 	.string "Revolutionary.$"
 
 Route110_Text_SeasideParkingSign:
-	.string "SEASIDE PARKING$"
+	.string "SEASIDE PARKING\p"
+	.string "Full. Always.$"
 
 Route110_Text_MauvilleCitySign:
 	.string "ROUTE 110\n"

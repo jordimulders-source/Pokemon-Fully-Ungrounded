@@ -135,7 +135,9 @@ Route112_Text_MtChimneyCableCarSign:
 Route112_Text_MtChimneySign:
 	.string "MT. CHIMNEY\p"
 	.string "“For LAVARIDGE TOWN or the summit,\n"
-	.string "please take the CABLE CAR.”$"
+	.string "please take the CABLE CAR.\p"
+	.string "”Follow the example of the Chinese.\n"
+	.string "Never take the stairs.“$"
 
 Route112_Text_RouteSignLavaridge:
 	.string "ROUTE 112\n"

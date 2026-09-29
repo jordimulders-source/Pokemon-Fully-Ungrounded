@@ -87,9 +87,11 @@ FallarborTown_Text_BattleTentSign:
 
 FallarborTown_Text_TownSign:
 	.string "FALLARBOR TOWN\n"
-	.string "“A farm community with small gardens.”$"
+	.string "“A farm community with small gardens.\l"
+	.string "And ash. So much ash.”$"
 
 FallarborTown_Text_MoveTutorSign:
 	.string "MOVE TUTOR'S HOUSE\n"
-	.string "“New moves taught to POKéMON.”$"
+	.string "“New moves taught to POKéMON. No\l"
+	.string "refunds.”$"
 

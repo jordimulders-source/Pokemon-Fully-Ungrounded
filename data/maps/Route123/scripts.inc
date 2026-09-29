@@ -197,5 +197,7 @@ Route123_Text_RouteSignMtPyre:
 	.string "haters.$"
 
 Route123_Text_BerryMastersHouse:
-	.string "BERRY MASTER'S HOUSE$"
+	.string "BERRY MASTER'S HOUSE\p"
+	.string "For all your experimentation and\n"
+	.string "cross-breeding on BERRIES.$"
 

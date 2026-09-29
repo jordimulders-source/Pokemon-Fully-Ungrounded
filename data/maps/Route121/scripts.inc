@@ -179,10 +179,13 @@ Route121_Text_AheadLoomsMtPyre:
 
 Route121_Text_MtPyrePierSign:
 	.string "MT. PYRE PIER\p"
-	.string "…The sign is old and worn out.\n"
-	.string "The words are barely legible…$"
+	.string "…The sign is old and worn out. Someone\n"
+	.string "scratched into it:\p"
+	.string "“There came a spooky bunch… BOO!”$"
 
 Route121_Text_SafariZoneSign:
 	.string "“Filled with rare POKéMON!”\n"
-	.string "SAFARI ZONE$"
+	.string "SAFARI ZONE\p"
+	.string "Enter at your own risk. The POKéMON are\n"
+	.string "dangerous.$"
 

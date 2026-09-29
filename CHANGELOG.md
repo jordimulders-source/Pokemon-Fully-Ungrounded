@@ -14795,3 +14795,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.32] - Maxie, Archie en Tabitha
 - Maxie en Archie zijn moustache-twirling evil geniuses met een bedrijf: Maxie wil Groudon als ultieme pepervoorziening voor MAGMA HOT SAUCE, Archie wil Kyogre als ultieme bottelfabriek voor AQUA SPARKLING WATER. Tabitha is Maxie's trouwe hulp.
 - 45 teksten herschreven: Slateport-museum, Meteor Falls, Mt. Chimney, Magma Hideout, Mt. Pyre, Slateport-haven, Space Center, Seafloor Cavern, Route 128 en Sootopolis. Verhaalpunten (Orbs, Meteorite, raketbrandstof, overstroming, Rayquaza) zijn gelijk gebleven.
+
+### [v.0.6.33] - Borden
+- 62 borden herschreven: stads- en dorpsborden krijgen een scheve slogan in het thema van de stad, gebouwborden een droge toevoeging.
+- Gymborden: Roxanne ("little rock star"), Wattson ("Electric Wizard"), Flannery (off the grid), Winona (jetlagged superster), Liza & Tate, en het Sootopolis-gymbord noemt nu WALLACE als sommelier.
+- Mt. Chimney: "Follow the example of the Chinese. Never take the stairs." Day Care, Safari Zone, Mt. Pyre Pier (Cuphead) en Berry Master volgens Jordi's wensen.
+- Functionele borden (kajuitnummers, bedden, automaat, recordborden, handboeken), Battle Tent-borden en het Trick House-bord zijn ongewijzigd.

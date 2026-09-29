@@ -190,8 +190,9 @@ LilycoveCity_LilycoveMuseum_1F_Text_ExcellentCanYouComeWithMe:
 	.string "hand! No? That's okay!$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_VeryOldPainting:
-	.string "It's a very old painting.\n"
-	.string "The paint is peeling here and there.$"
+	.string "It's a very old painting.\p"
+	.string "The paint is peeling. Like the museum\n"
+	.string "budget.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_OddLandscapeFantasticScenery:
 	.string "It's an odd landscape with bizarre\n"
@@ -202,10 +203,9 @@ LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfBeautifulWoman:
 	.string "woman with a POKéMON on her lap.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfLegendaryPokemon:
-	.string "It's a painting of a legendary POKéMON\n"
-	.string "from long ago.\p"
-	.string "The artist painted this from\n"
-	.string "imagination.$"
+	.string "It's a painting of a legendary POKéMON.\p"
+	.string "The artist had never seen one. It\n"
+	.string "shows.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfGrassPokemon:
 	.string "It's a painting of GRASS POKéMON\n"
@@ -214,9 +214,8 @@ LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfGrassPokemon:
 	.string "gentle caress.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfBerries:
-	.string "It's a delicious-looking painting\n"
-	.string "of BERRIES.\p"
-	.string "This painting could make you hungry!$"
+	.string "It's a painting of BERRIES.\p"
+	.string "You could eat it. Please don't.$"
 
 LilycoveCity_LilycoveMuseum_Text_BirdPokemonSculptureReplica:
 	.string "It's a replica of a famous sculpture.\p"

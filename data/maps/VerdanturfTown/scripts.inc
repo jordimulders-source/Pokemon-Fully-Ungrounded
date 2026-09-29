@@ -108,10 +108,12 @@ VerdanturfTown_Text_EasyToGetToRustboroNow:
 VerdanturfTown_Text_TownSign:
 	.string "VERDANTURF TOWN\p"
 	.string "“The windswept highlands with the\n"
-	.string "sweet fragrance of grass.”$"
+	.string "sweet fragrance of grass. Hay fever\l"
+	.string "capital of HOENN.”$"
 
 VerdanturfTown_Text_WandasHouse:
-	.string "WANDA'S HOUSE$"
+	.string "WANDA'S HOUSE\p"
+	.string "(Her boyfriend lives in the tunnel.)$"
 
 VerdanturfTown_Text_BattleTentSign:
 	.string "BATTLE TENT VERDANTURF SITE\n"
@@ -119,7 +121,7 @@ VerdanturfTown_Text_BattleTentSign:
 
 VerdanturfTown_Text_RusturfTunnelSign:
 	.string "RUSTURF TUNNEL\n"
-	.string "“Linking RUSTBORO and VERDANTURF\p"
-	.string "“The tunnel project has been\n"
-	.string "canceled.”$"
+	.string "“Linking RUSTBORO and VERDANTURF.\p"
+	.string "”The tunnel project has been canceled.\n"
+	.string "Walk.“$"
 

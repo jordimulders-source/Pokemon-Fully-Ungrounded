@@ -810,8 +810,8 @@ LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
 	.string "I don't even want to know.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch:
-	.string "It's a PC used for research.\n"
-	.string "Better not mess around with it.$"
+	.string "It's a PC used for research.\p"
+	.string "The browser history is… research.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon:
 	.string "It's crammed with books on\n"

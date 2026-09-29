@@ -660,17 +660,18 @@ LilycoveCity_Text_TeamAquaLotGoneForGood:
 
 LilycoveCity_Text_CitySign:
 	.string "LILYCOVE CITY\p"
-	.string "“Where the land ends and the\n"
-	.string "sea begins.”$"
+	.string "“Where the land ends and the shopping\n"
+	.string "begins.”$"
 
 LilycoveCity_Text_ContestHallSign:
 	.string "POKéMON CONTEST HALL\n"
-	.string "“The gathering place for TRAINERS!”$"
+	.string "“The gathering place for TRAINERS who\l"
+	.string "don't like fighting.”$"
 
 LilycoveCity_Text_MotelSign:
 	.string "COVE LILY MOTEL\p"
-	.string "“Remember us as COVE LILY of\n"
-	.string "LILYCOVE.”$"
+	.string "“Remember us as COVE LILY of LILYCOVE.\n"
+	.string "Please. Anyone.”$"
 
 LilycoveCity_Text_MuseumSign:
 	.string "LILYCOVE MUSEUM\p"
@@ -696,19 +697,19 @@ LilycoveCity_Text_HarborSign:
 
 LilycoveCity_Text_TrainerFanClubSign:
 	.string "POKéMON TRAINER FAN CLUB\p"
-	.string "The names of TRAINERS are scribbled\n"
-	.string "all over the sign…$"
+	.string "The names of TRAINERS are scribbled all\n"
+	.string "over the sign…\p"
+	.string "Yours isn't there yet.$"
 
 LilycoveCity_Text_DepartmentStoreSign:
 	.string "LILYCOVE DEPARTMENT STORE\p"
-	.string "“Overflowing with great merchandise\n"
-	.string "and excitement!\p"
-	.string "“A great place to find that something\n"
-	.string "you need!”$"
+	.string "“You don't need it.\p"
+	.string "”You want it.“$"
 
 LilycoveCity_Text_MoveDeletersHouseSign:
 	.string "MOVE DELETER'S HOUSE\p"
-	.string "“Unwanted POKéMON moves deleted.”$"
+	.string "“Unwanted moves deleted. Also\n"
+	.string "memories, on request.”$"
 
 LilycoveCity_Text_DoYouKnowAboutBerryBlender:
 	.string "Do you know about the machine\n"

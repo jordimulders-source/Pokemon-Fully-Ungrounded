@@ -388,20 +388,24 @@ MossdeepCity_Text_SpecialSpaceCenterRock:
 	.string "That's what I do.$"
 
 MossdeepCity_Text_ItsAWhiteRock:
-	.string "It's a white rock.$"
+	.string "It's a white rock.\p"
+	.string "It's just a rock. STEVEN checked.$"
 
 MossdeepCity_Text_GymSign:
 	.string "MOSSDEEP CITY POKéMON GYM\n"
 	.string "LEADERS: LIZA & TATE\p"
-	.string "“The mystic combination!”$"
+	.string "“The mystic combination! They finish\n"
+	.string "each other's… sandwiches.”$"
 
 MossdeepCity_Text_CitySign:
 	.string "MOSSDEEP CITY\n"
-	.string "“Our slogan: Cherish POKéMON!”$"
+	.string "“Our slogan: Cherish POKéMON! Our other\l"
+	.string "slogan: Get to space.”$"
 
 MossdeepCity_Text_SpaceCenterSign:
 	.string "MOSSDEEP SPACE CENTER\n"
-	.string "“The closest place to space.”$"
+	.string "“The closest place to space. Still not\l"
+	.string "very close.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "SCOTT: Hi, {PLAYER}{KUN}! Like it? I'm you now.\n"

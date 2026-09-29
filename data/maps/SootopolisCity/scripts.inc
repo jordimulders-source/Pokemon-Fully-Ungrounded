@@ -1389,14 +1389,18 @@ SootopolisCity_Movement_DestroyTask::
 
 SootopolisCity_Text_GymSign:
 	.string "SOOTOPOLIS CITY POKéMON GYM\n"
-	.string "LEADER: JUAN\p"
-	.string "“The GYM LEADER with the beauty\n"
-	.string "of pure water!”$"
+	.string "LEADER: WALLACE\p"
+	.string "“Sommelier, proprietor and connoisseur\n"
+	.string "of fine vintages.\p"
+	.string "”Full-bodied. Notes of oak, black\n"
+	.string "cherry and a mildly enlarged liver.\p"
+	.string "“Never drinks before noon. It is always\n"
+	.string "noon somewhere.”$"
 
 SootopolisCity_Text_CitySign:
 	.string "SOOTOPOLIS CITY\p"
 	.string "“The mystical city where history\n"
-	.string "slumbers.”$"
+	.string "slumbers. Do not wake.”$"
 
 SootopolisCity_Text_DoorIsClosed:
 	.string "The door is closed.$"

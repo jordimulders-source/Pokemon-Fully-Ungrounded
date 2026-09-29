@@ -361,10 +361,11 @@ SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine:
 	.string "into a giant robot? GET IN THE ROBOT!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
-	.string "“WATER QUALITY SAMPLE 1,” the\n"
-	.string "label says.\p"
-	.string "The sea is all connected, but the\n"
-	.string "water seems to differ by region.$"
+	.string "“WATER QUALITY SAMPLE 1,” the label\n"
+	.string "says.\p"
+	.string "The sea is all connected, but the water\n"
+	.string "seems to differ by region.\p"
+	.string "…Tastes still. TEAM AQUA disapproves.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
 	.string "“WATER QUALITY SAMPLE 2,” the\n"
@@ -385,9 +386,10 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel:
 	.string "“MODEL OF HOENN REGION”\p"
-	.string "It's a miniature diorama of the\n"
-	.string "HOENN region.\p"
-	.string "Where is LITTLEROOT TOWN on this?$"
+	.string "It's a miniature diorama of the HOENN\n"
+	.string "region.\p"
+	.string "Where is LITTLEROOT TOWN? … There. The\n"
+	.string "boring bit.$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
 	.string "It's a display on the flow of seawater.\p"

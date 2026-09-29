@@ -1222,19 +1222,19 @@ RustboroCity_Text_BrendanMrBrineyHint:
 RustboroCity_Text_TunnelNearingCompletion:
 	.string "“Timesaving tunnel nearing\n"
 	.string "completion!”\p"
-	.string "…Is what it says on the sign, but\n"
-	.string "there's also a big “X” splashed\l"
-	.string "across it in red paint…$"
+	.string "Someone crossed it out and wrote:\n"
+	.string "“LOL.”$"
 
 RustboroCity_Text_DevonCorpSign:
 	.string "DEVON CORPORATION\p"
-	.string "“For all your living needs, we make\n"
-	.string "it all.”$"
+	.string "“For all your living needs. Most\n"
+	.string "experiments successful.”$"
 
 RustboroCity_Text_GymSign:
 	.string "RUSTBORO CITY POKéMON GYM\n"
 	.string "LEADER: ROXANNE\p"
-	.string "“The ROCK-loving honors student!”$"
+	.string "“Our city's own little rock star. Rock\n"
+	.string "on!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "DEVON CORP. BRANCH OFFICE\p"
@@ -1244,12 +1244,12 @@ RustboroCity_Text_DevonCorpBranchOfficeSign:
 RustboroCity_Text_CitySign:
 	.string "RUSTBORO CITY\p"
 	.string "“The city probing the integration of\n"
-	.string "nature and science.”$"
+	.string "nature and science. Results pending.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
 	.string "POKéMON TRAINER'S SCHOOL\p"
-	.string "“We'll teach you anything about\n"
-	.string "POKéMON!”$"
+	.string "“We'll teach you anything. Attendance\n"
+	.string "optional.”$"
 
 RustboroCity_Text_CuttersHouse:
 	.string "CUTTER'S HOUSE$"

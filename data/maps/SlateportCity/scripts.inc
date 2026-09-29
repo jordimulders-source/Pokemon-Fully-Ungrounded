@@ -1205,8 +1205,8 @@ SlateportCity_Text_BattleTentSign:
 
 SlateportCity_Text_SternsShipyardWantedSign:
 	.string "STERN'S SHIPYARD\p"
-	.string "“Wanted: A sailor capable of sailing\n"
-	.string "in all currents.”$"
+	.string "“Wanted: a sailor capable of sailing in\n"
+	.string "all currents. Unpaid internship.”$"
 
 SlateportCity_Text_SternsShipyardNearsCompletion:
 	.string "STERN'S SHIPYARD\p"
@@ -1222,21 +1222,23 @@ SlateportCity_Text_SternsShipyardFerryComplete:
 
 SlateportCity_Text_PokemonFanClubSign:
 	.string "POKéMON FAN CLUB\n"
-	.string "“Calling all fans of POKéMON!”$"
+	.string "“Calling all fans of POKéMON! Lanyards\l"
+	.string "mandatory.”$"
 
 SlateportCity_Text_OceanicMuseumSign:
-	.string "“The endless sea sustains\n"
-	.string "all life.”\p"
+	.string "“The endless sea sustains all life.\n"
+	.string "Bubbles sold separately.”\p"
 	.string "OCEANIC MUSEUM$"
 
 SlateportCity_Text_CitySign:
 	.string "SLATEPORT CITY\p"
-	.string "“The port where people and POKéMON\n"
-	.string "cross paths.”$"
+	.string "“The port where people, POKéMON and\n"
+	.string "remote workers cross paths.”$"
 
 SlateportCity_Text_MarketSign:
 	.string "SLATEPORT MARKET\n"
-	.string "“Unique items found nowhere else!”$"
+	.string "“Unique items found nowhere else!\l"
+	.string "Returns found nowhere either.”$"
 
 SlateportCity_Text_HarborFerryUnderConstruction:
 	.string "SLATEPORT HARBOR\p"
@@ -1252,7 +1254,8 @@ SlateportCity_Text_HarborSign:
 
 SlateportCity_Text_NameRatersHouseSign:
 	.string "NAME RATER'S HOUSE\n"
-	.string "“POKéMON nicknames rated.”$"
+	.string "“POKéMON nicknames rated. Honestly.\l"
+	.string "Brace yourself.”$"
 
 SlateportCity_Text_ExplainBerries:
 	.string "If a wild POKéMON gets hurt, it heals\n"

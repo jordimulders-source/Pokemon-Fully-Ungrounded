@@ -160,12 +160,11 @@ VictoryRoad_1F_Text_EdgarPostBattle:
 	.string "CHAMPION! If anyone can, it's you!$"
 
 VictoryRoad_1F_Text_AlbertIntro:
-	.string "I didn't come all this way to lose now.\n"
-	.string "That possibility doesn't exist!$"
+	.string "WAKE UP! Grab a brush and put a little\n"
+	.string "make-up!$"
 
 VictoryRoad_1F_Text_AlbertDefeat:
-	.string "Impossible…\n"
-	.string "I lost?$"
+	.string "…I cry when angels deserve to die…$"
 
 VictoryRoad_1F_Text_AlbertPostBattle:
 	.string "I lost here…\p"
@@ -184,12 +183,10 @@ VictoryRoad_1F_Text_HopePostBattle:
 	.string "becoming the CHAMPION.$"
 
 VictoryRoad_1F_Text_QuincyIntro:
-	.string "What is the VICTORY ROAD?\n"
-	.string "I'll tell you if you win!$"
+	.string "WHY DO THEY ALWAYS SEND THE POOR?!$"
 
 VictoryRoad_1F_Text_QuincyDefeat:
-	.string "Okay!\n"
-	.string "Well done!$"
+	.string "…Barbarisms by Barbaras.$"
 
 VictoryRoad_1F_Text_QuincyPostBattle:
 	.string "Getting through here safely--that's\n"
@@ -199,12 +196,10 @@ VictoryRoad_1F_Text_QuincyPostBattle:
 	.string "ROAD.$"
 
 VictoryRoad_1F_Text_KatelynnIntro:
-	.string "I have nothing to say to anyone\n"
-	.string "that's come this far. Come on!$"
+	.string "FUCK YOU, I WON'T DO WHAT YOU TELL ME!$"
 
 VictoryRoad_1F_Text_KatelynnDefeat:
-	.string "This is a disgrace…$"
+	.string "…Okay. I'll do what you tell me.$"
 
 VictoryRoad_1F_Text_KatelynnPostBattle:
-	.string "Humph, go right on ahead.\n"
-	.string "See if I care.$"
+	.string "Killing in the name of… Never mind.$"

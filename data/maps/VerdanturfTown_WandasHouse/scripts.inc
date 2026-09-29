@@ -95,26 +95,22 @@ VerdanturfTown_WandasHouse_Text_StrongerSpeechShort:
 	.string "Strongness will be, then, fight amore!$"
 
 VerdanturfTown_WandasHouse_Text_WallysNextDoor:
-	.string "UNCLE: Oh! {PLAYER}{KUN}!\n"
-	.string "WALLY's next door.\p"
-	.string "But, boy, there's something I have to\n"
-	.string "tell you.\p"
-	.string "This natural environment is doing\n"
-	.string "wonders for WALLY's health.\p"
-	.string "Maybe it's not just the environment.\n"
-	.string "It could be POKéMON that are giving\l"
-	.string "the boy hope.$"
+	.string "UNCLE: Oh! {PLAYER}{KUN}! WALLY's next door.\p"
+	.string "The fresh air is doing wonders!\n"
+	.string "Yesterday he climbed the stairs all by\l"
+	.string "himself.\p"
+	.string "Only fell twice. So proud of the little\n"
+	.string "guy.$"
 
 VerdanturfTown_WandasHouse_Text_WallySlippedOff:
-	.string "WALLY's gone away…\n"
-	.string "He slipped off on his own…$"
+	.string "WALLY's gone away… He slipped off on\n"
+	.string "his own… He can't even open a jar!$"
 
 VerdanturfTown_WandasHouse_Text_WallyGoneThatFar:
-	.string "UNCLE: Is that right?\n"
-	.string "WALLY's gone away that far all by\l"
-	.string "himself…\p"
-	.string "Well, I have to give him credit--he is\n"
-	.string "my little brother's son.$"
+	.string "UNCLE: WALLY's gone that far all by\n"
+	.string "himself?\p"
+	.string "Well, good for him! Somebody should\n"
+	.string "check if he took his shoes.$"
 
 VerdanturfTown_WandasHouse_Text_MeetWanda:
 	.string "WANDA: You are?\n"
@@ -127,10 +123,10 @@ VerdanturfTown_WandasHouse_Text_MeetWanda:
 	.string "and healthy since he came here.$"
 
 VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
-	.string "WANDA: Don't worry about WALLY.\n"
-	.string "He'll be just fine.\p"
-	.string "I know my little cousin, and he has\n"
-	.string "POKéMON with him, too.$"
+	.string "WANDA: Don't worry about WALLY. He'll be\n"
+	.string "just fine.\p"
+	.string "He talks funny, sure. But he's a diamond\n"
+	.string "in the rough. A very weird diamond.$"
 
 VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay:
 	.string "Thanks to you, I can see my girlfriend\n"
@@ -151,12 +147,13 @@ VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendWasDigging:
 	.string "It's so incredible!$"
 
 VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
-	.string "If anything were to happen to WALLY,\n"
-	.string "I would never be able to look his\l"
-	.string "parents in PETALBURG in the eye…$"
+	.string "If anything happened to WALLY, I'd\n"
+	.string "never be able to look his parents in the\l"
+	.string "eye…\p"
+	.string "They'd be so surprised he made it that\n"
+	.string "far.$"
 
 VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande:
 	.string "WALLY was in EVER GRANDE?\p"
-	.string "His parents in PETALBURG would be\n"
-	.string "astonished to hear that!$"
+	.string "His parents are going to faint. Again.$"
 

@@ -330,12 +330,16 @@ MossdeepCity_GameCorner_1F_Text_RetryPlease:
 	.string "again, please?$"
 
 CableClub_Text_WelcomeWhichDirectCornerRoom:
-	.string "Welcome to the POKéMON WIRELESS\n"
-	.string "CLUB DIRECT CORNER.\p"
-	.string "You may interact directly with\n"
-	.string "your friends here.\p"
-	.string "Which room would you like to\n"
-	.string "enter?$"
+	.string "Welcome to the WIRELESS CLUB DIRECT\n"
+	.string "CORNER!!! The most exciting room in\l"
+	.string "HOENN!\p"
+	.string "Here you can connect with your friends!\n"
+	.string "Wirelessly! Isn't that AMAZING?!\p"
+	.string "…Nobody has ever connected. Not once.\n"
+	.string "I've checked the logs every day for\l"
+	.string "twenty years.\p"
+	.string "Which room would you like? Pick any.\n"
+	.string "They're all empty. Like me.$"
 
 CableClub_Text_TradePokemon:
 	.string "Would you like to trade POKéMON?$"
@@ -386,12 +390,14 @@ CableClub_Text_ChooseGroupLeader:
 	.string "“JOIN GROUP.”$"
 
 CableClub_Text_WelcomeUnionRoomEnter:
-	.string "Welcome to the POKéMON WIRELESS\n"
-	.string "CLUB UNION ROOM.\p"
-	.string "You may interact directly with\n"
-	.string "other TRAINERS here, some of\l"
-	.string "whom you may not even know.\p"
-	.string "Would you like to enter the ROOM?$"
+	.string "Welcome to the UNION ROOM! Where\n"
+	.string "TRAINERS from all over the world meet!\p"
+	.string "Look around! So many friends! …Look\n"
+	.string "closer. That's a plant.\p"
+	.string "I talk to the plant sometimes. It\n"
+	.string "doesn't answer either.\p"
+	.string "Would you like to enter? Please. I'm\n"
+	.string "begging you. Just once.$"
 
 CableClub_Text_UnionRoomInfo:
 	.string "The TRAINERS in the UNION ROOM\n"

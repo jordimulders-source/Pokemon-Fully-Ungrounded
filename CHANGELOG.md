@@ -14716,3 +14716,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.18] - Wally (geschreven door Jordi)
 - Bord bij zijn huis: "WALLY'S LIVING OF PLACE".
 - Wally in Wanda's huis en op Victory Road praat in zijn eigen gebroken taal ("Strongness will be, then, fight amore!", "AGES FOR THE FIGHT! Pumping!", zoekt een vrouw en kind).
+
+### [v.0.6.19] - Wally's familie, Direct Corner, Union Room, kapotte robot
+- Wally's ouders, oom en de rest van Wanda's huis praten kleinerend over Wally (de logopedist gaf het op, niet de scherpste, tien stappen buiten = feest); alleen Wanda ziet hem als een (hele rare) diamond in the rough.
+- Direct Corner en Union Room (alle Pokémon Centers): over de top sarcastisch en overduidelijk nutteloos.
+- Devon Corporation 2F: een kapotte AI-assistent die tijdens het gesprek crasht.
+- `tools/dialogen/import.py` waarschuwt nu voor tekens die niet in het lettertype bestaan (zoals — en *).

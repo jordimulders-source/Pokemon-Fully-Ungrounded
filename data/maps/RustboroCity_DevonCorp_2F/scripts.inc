@@ -269,9 +269,16 @@ RustboroCity_DevonCorp_2F_EventScript_WorkOnNext::
 	end
 
 RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon:
-	.string "We're developing a device for talking\n"
-	.string "with POKéMON.\p"
-	.string "But we haven't had much success…$"
+	.string "BEEP. GREETINGS, HUMAN. I AM DEVON AI\n"
+	.string "ASSISTANT, MODEL 7.\p"
+	.string "HOW CAN I HELP YOU TODAY?\p"
+	.string "YOU SAID: “BUY MORE POKé BALLS.”\n"
+	.string "ADDING 999 POKé BALLS TO CART.\p"
+	.string "ERROR. ERR0R. ERRRRR-\p"
+	.string "I AM A GOOD ASSISTANT. I AM A GOOD\n"
+	.string "ASSIS- BZZT.\p"
+	.string "…WOULD YOU LIKE TO RATE THIS\n"
+	.string "CONVERSATION?$"
 
 RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls:
 	.string "I'm developing new kinds of\n"

@@ -95,7 +95,7 @@ LABEL_RE = r'(?m)^({label}::?\n)((?:[ \t]*\.string[ \t]+".*"[ \t]*\n?)+)'
 def apply(edits):
     files = sorted(glob.glob('data/maps/*/scripts.inc')) + sorted(glob.glob('data/text/*.inc'))
     contents = {f: open(f).read() for f in files}
-    done, missing, too_wide = [], [], []
+    done, missing, too_wide, unknown = [], [], [], []
     for label, text in edits.items():
         pattern = re.compile(LABEL_RE.format(label=re.escape(label)))
         for f, t in contents.items():
@@ -103,6 +103,9 @@ def apply(edits):
             if not m:
                 continue
             strings = to_strings(text)
+            bad = {ch for ch in re.sub(r'\{[^}]*\}', '', curly_quotes(text)) if ch not in W and ch not in '\n'}
+            if bad:
+                unknown.append(f"{label} ({' '.join(sorted(bad))})")
             for s in strings:
                 if text_width(s.rstrip('$').replace('\\n', '').replace('\\l', '').replace('\\p', '')) > LIMIT:
                     too_wide.append(label)
@@ -115,14 +118,16 @@ def apply(edits):
     for f, t in contents.items():
         if t != open(f).read():
             open(f, 'w').write(t)
-    return done, missing, sorted(set(too_wide))
+    return done, missing, sorted(set(too_wide)), unknown
 
 
 if __name__ == '__main__':
     edits = json.load(open(sys.argv[1]))
-    done, missing, too_wide = apply(edits)
+    done, missing, too_wide, unknown = apply(edits)
     print(f'{len(done)} dialogen verwerkt')
     if missing:
         print('Niet gevonden:', ', '.join(missing))
+    if unknown:
+        print('Tekens die niet in het lettertype bestaan:', ', '.join(unknown))
     if too_wide:
         print('Te lange woorden (passen niet op één regel):', ', '.join(too_wide))

@@ -140,10 +140,8 @@ Route113_Text_AshCanBeFashionedIntoGlass:
 	.string "It can be fashioned into glass.$"
 
 Route113_Text_FunWalkingThroughAsh:
-	.string "It's fun walking through the volcano's\n"
-	.string "ashes on the ground and grass.\p"
-	.string "You can see where you walked--it's\n"
-	.string "really neat!$"
+	.string "Walking through ash is fun! It's like\n"
+	.string "the end of every shonen fight.$"
 
 Route113_Text_RouteSign111:
 	.string "ROUTE 113\n"

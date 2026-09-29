@@ -242,9 +242,48 @@ LavaridgeTown_EventScript_EggWoman::
 	playfanfare MUS_OBTAIN_ITEM
 	message LavaridgeTown_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_WYNAUT
+	call LavaridgeTown_EventScript_GiveOddEgg
 	release
 	end
+
+@ Project Grounded: een "Odd Egg" zoals in Crystal. Eén van 8 soorten (elk 1/8), 50% kans op shiny.
+LavaridgeTown_EventScript_GiveOddEgg::
+	random 8
+	switch VAR_RESULT
+	case 0, LavaridgeTown_EventScript_OddEggLarvesta
+	case 1, LavaridgeTown_EventScript_OddEggDeino
+	case 2, LavaridgeTown_EventScript_OddEggLitwick
+	case 3, LavaridgeTown_EventScript_OddEggFuecoco
+	case 4, LavaridgeTown_EventScript_OddEggManaphy
+	case 5, LavaridgeTown_EventScript_OddEggTogepi
+	case 6, LavaridgeTown_EventScript_OddEggFerroseed
+	giveegg SPECIES_TOXEL
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggLarvesta::
+	giveegg SPECIES_LARVESTA
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggDeino::
+	giveegg SPECIES_DEINO
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggLitwick::
+	giveegg SPECIES_LITWICK
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggFuecoco::
+	giveegg SPECIES_FUECOCO
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggManaphy::
+	giveegg SPECIES_MANAPHY
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggTogepi::
+	giveegg SPECIES_TOGEPI
+	goto LavaridgeTown_EventScript_OddEggShiny
+LavaridgeTown_EventScript_OddEggFerroseed::
+	giveegg SPECIES_FERROSEED
+LavaridgeTown_EventScript_OddEggShiny::
+	random 2
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_NopReturn
+	special SetLastPartyMonShiny
+	return
 
 LavaridgeTown_EventScript_ReceivedEgg::
 	msgbox LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT

@@ -325,12 +325,10 @@ MossdeepCity_Text_WhatToDoWithWeirdRock:
 	.string "supposed to do with some weird rock?$"
 
 MossdeepCity_Text_WailmerWatching:
-	.string "Around MOSSDEEP, you can see wild\n"
-	.string "WAILMER.\p"
-	.string "It's called, uh…\n"
-	.string "What was it now…\p"
-	.string "WAI, WAI, WAI…\p"
-	.string "WAILMER watching!$"
+	.string "Around MOSSDEEP you can see wild\n"
+	.string "WAILMER. It's called WAILMER watching.\p"
+	.string "In anime they'd be giant sea titans.\n"
+	.string "Here they just… float.$"
 
 MossdeepCity_Text_SpaceCenterReceivedLetter:
 	.string "The island's SPACE CENTER has been\n"

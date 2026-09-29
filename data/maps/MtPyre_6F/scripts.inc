@@ -56,14 +56,14 @@ MtPyre_6F_Text_ValeriePostRematch:
 	.string "Sometimes, they play…$"
 
 MtPyre_6F_Text_CedricIntro:
-	.string "Have you lost your bearings?\n"
-	.string "Have no fear for I am here!$"
+	.string "Lost? Fear not. I channel the spirits of\n"
+	.string "this mountain. They say turn left.$"
 
 MtPyre_6F_Text_CedricDefeat:
-	.string "Weren't you lost?$"
+	.string "The spirits said left. The spirits were\n"
+	.string "wrong.$"
 
 MtPyre_6F_Text_CedricPostBattle:
-	.string "I had this feeling that a lost TRAINER\n"
-	.string "would be panicked and easy to beat.\p"
-	.string "It's dirty and I won't try it again…$"
+	.string "My feelings are 60% accurate. On a good\n"
+	.string "day.$"
 

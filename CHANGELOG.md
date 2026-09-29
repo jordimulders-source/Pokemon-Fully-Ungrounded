@@ -14743,3 +14743,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Nieuw, Fortree (zelfde huis, de vrouw): Machoke → Haunter "SPOOKY". Grap: "Why didn't it evolve? …Oh right, evolution methods were changed. Level 37 now." (INGAME_TRADE_HAUNTER, FLAG_FORTREE_HAUNTER_TRADE_COMPLETED = voorheen FLAG_UNUSED_0x023.)
   - Teksten van alle ruilers herschreven.
 - Trainer Tips-borden (Route 106, 109, 110 ×2, 111, 113, 116 ×2, 119) herschreven, deels door Jordi zelf.
+
+### [v.0.6.23] - Odd Egg, Pokédex-controleur, Castform, Ninja Boys, Psychics
+- Lavaridge: het Wynaut-ei is nu een "Odd Egg" zoals in Crystal: willekeurig Larvesta, Deino, Litwick, Fuecoco, Manaphy, Togepi, Ferroseed of Toxel (elk 1/8), met 50% kans op shiny. Nieuwe special `SetLastPartyMonShiny` (src/birch_pc.c) + test in `test/grounded/odd_egg.c`.
+- Fortree Pokémon Center: de heer telt je gevangen Pokémon (National Dex). Minder dan 20: hij lacht je uit en stuurt je naar vanilla Emerald.
+- Weather Institute: Castform-gift en onderzoeker over weertypes (Sandstorm telt niet, sorry Darude).
+- Ninja Boys zijn weebs met anime-referenties (Naruto, Fist of the North Star, Dragon Ball, One Piece, Attack on Titan, JoJo, Demon Slayer, Death Note) en de Ninja Boy-NPC's ook.
+- Psychics praten over astral projection, de kosmos channelen, tarot, karma/dharma, manifesteren en Scientology (Mt. Pyre, Route 110, 115, 117, 123, Lilycove).

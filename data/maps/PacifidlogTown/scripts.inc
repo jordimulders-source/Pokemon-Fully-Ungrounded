@@ -34,9 +34,10 @@ PacifidlogTown_Text_FastRunningCurrent:
 	.string "up swept away somewhere else.$"
 
 PacifidlogTown_Text_NeatHousesOnWater:
-	.string "See, isn't it neat?\n"
-	.string "These houses are on water!\p"
-	.string "I was born here!$"
+	.string "Houses on water! Just like the Land of\n"
+	.string "Waves in NARUTO!\p"
+	.string "I was born here. Still waiting for my\n"
+	.string "ninja arc.$"
 
 PacifidlogTown_Text_SkyPillarTooScary:
 	.string "The SKY PILLAR?\p"

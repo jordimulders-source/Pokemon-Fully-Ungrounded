@@ -1443,8 +1443,7 @@ SootopolisCity_Text_WonderWhatWorldIsLike:
 	.string "the other side of this round sky?$"
 
 SootopolisCity_Text_ThisIsWicked:
-	.string "Wow!\n"
-	.string "This is wicked!$"
+	.string "Two kaiju fighting! This is SO anime!$"
 
 SootopolisCity_Text_ThatWasWicked:
 	.string "Wow!\n"

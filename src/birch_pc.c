@@ -2,6 +2,7 @@
 #include "event_data.h"
 #include "field_message_box.h"
 #include "pokedex.h"
+#include "pokemon.h"
 #include "strings.h"
 
 bool16 ScriptGetPokedexInfo(void)
@@ -69,4 +70,14 @@ const u8 *GetPokedexRatingText(u32 count)
 void ShowPokedexRatingMessage(void)
 {
     ShowFieldMessage(GetPokedexRatingText(gSpecialVar_0x8004));
+}
+
+// Project Grounded: maakt de laatste Pokémon in de party shiny (gebruikt door het Odd Egg in Lavaridge).
+void SetLastPartyMonShiny(void)
+{
+    bool32 shiny = TRUE;
+    u32 count = CalculatePlayerPartyCount();
+
+    if (count > 0)
+        SetMonData(&gPlayerParty[count - 1], MON_DATA_IS_SHINY, &shiny);
 }

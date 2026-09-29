@@ -33,25 +33,22 @@ MtPyre_3F_EventScript_RematchGabrielle::
 	end
 
 MtPyre_3F_Text_WilliamIntro:
-	.string "The rich atmosphere of the mountain\n"
-	.string "has elevated my psychic power!\p"
-	.string "A mere child like you…\n"
-	.string "You dream of winning?$"
+	.string "My astral body is on floor 6. My physical\n"
+	.string "body is stuck here with you.$"
 
 MtPyre_3F_Text_WilliamDefeat:
-	.string "I drown in self-pity…$"
+	.string "Bad karma… I drown in it.$"
 
 MtPyre_3F_Text_WilliamPostBattle:
-	.string "My psychic powers have surely\n"
-	.string "grown several times, but…$"
+	.string "My astral body will be back soon. It's\n"
+	.string "getting coffee.$"
 
 MtPyre_3F_Text_KaylaIntro:
-	.string "Ahahahaha!\p"
-	.string "This is no place for children, least\n"
-	.string "of all you!$"
+	.string "Ahahaha! I channel the COSMOS! The\n"
+	.string "COSMOS says… you're mid.$"
 
 MtPyre_3F_Text_KaylaDefeat:
-	.string "I lost that cleanly…$"
+	.string "The COSMOS lied to me…$"
 
 MtPyre_3F_Text_KaylaPostBattle:
 	.string "This means my training is still not\n"

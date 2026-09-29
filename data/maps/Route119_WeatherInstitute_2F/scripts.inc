@@ -278,29 +278,30 @@ Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
 	.string "TEAM MAGMA, just you wait!$"
 
 Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
-	.string "Thanks!\n"
-	.string "Thanks to you, we're safe!\p"
-	.string "It might be an odd way of thanking you,\n"
-	.string "but take this POKéMON.$"
+	.string "Thanks! We're safe! Take this POKéMON.\p"
+	.string "CASTFORM changes with the weather!\n"
+	.string "SUN! RAIN! HAIL! SNOW!\p"
+	.string "…Not SANDSTORM, though. Sorry, DARUDE.$"
 
 @ Unused
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
-	.string "Hm? You don't seem to have any room\n"
-	.string "for this POKéMON.$"
+	.string "No room in your party? The weather isn't\n"
+	.string "the only thing that's cloudy.$"
 
 Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform:
 	.string "{PLAYER} received CASTFORM!$"
 
 Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
-	.string "That POKéMON changes shape according\n"
-	.string "to the weather conditions.\p"
-	.string "There're plenty of them in the\n"
-	.string "INSTITUTE--go ahead and take it.$"
+	.string "CASTFORM changes shape with the\n"
+	.string "weather. It's a weather app you can\l"
+	.string "throw at people.\p"
+	.string "SANDSTORM? Nope. Does nothing.\n"
+	.string "DUDUDUDUDU. Nothing.$"
 
 Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
-	.string "I've been researching rain for many\n"
-	.string "years, but it's ridiculous to think that\l"
-	.string "humans can freely change the weather.$"
+	.string "I've researched rain for years. You\n"
+	.string "know what's ridiculous? SANDSTORM is\l"
+	.string "weather, but CASTFORM ignores it. Rude.$"
 
 Route119_WeatherInstitute_2F_Text_GroudonWeather:
 	.string "I track weather patterns over\n"

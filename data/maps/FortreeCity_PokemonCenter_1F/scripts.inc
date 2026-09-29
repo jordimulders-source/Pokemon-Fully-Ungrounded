@@ -15,8 +15,21 @@ FortreeCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
+@ Project Grounded: telt hoeveel Pokémon je gevangen hebt (National Dex) en lacht je uit onder de 20.
 FortreeCity_PokemonCenter_1F_EventScript_Gentleman::
-	msgbox FortreeCity_PokemonCenter_1F_Text_GoToSafariZone, MSGBOX_NPC
+	lock
+	faceplayer
+	setvar VAR_0x8004, 1
+	specialvar VAR_RESULT, ScriptGetPokedexInfo
+	buffernumberstring STR_VAR_1, VAR_0x8006
+	goto_if_lt VAR_0x8006, 20, FortreeCity_PokemonCenter_1F_EventScript_GentlemanLaugh
+	msgbox FortreeCity_PokemonCenter_1F_Text_GoToSafariZone, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_GentlemanLaugh::
+	msgbox FortreeCity_PokemonCenter_1F_Text_PlayVanillaEmerald, MSGBOX_DEFAULT
+	release
 	end
 
 FortreeCity_PokemonCenter_1F_EventScript_Man::
@@ -35,10 +48,8 @@ FortreeCity_PokemonCenter_1F_EventScript_Boy::
 	end
 
 FortreeCity_PokemonCenter_1F_Text_GoToSafariZone:
-	.string "Listen, kid, are you working\n"
-	.string "on a POKéDEX?\p"
-	.string "Hmm… Go to the SAFARI ZONE.\n"
-	.string "That's my suggestion.$"
+	.string "Listen, kid. {STR_VAR_1} POKéMON caught?\n"
+	.string "Not bad. Go to the SAFARI ZONE for more.$"
 
 FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat:
 	.string "Have you seen the tournament results?\n"
@@ -69,3 +80,9 @@ FortreeCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "sleep. What a lazy bastard!\p"
 	.string "Wake 'em up! Before you Gogo!$"
 	
+FortreeCity_PokemonCenter_1F_Text_PlayVanillaEmerald:
+	.string "Listen, kid. How many POKéMON have you\n"
+	.string "caught? {STR_VAR_1}? HAHAHAHA!\p"
+	.string "Why are you even playing a romhack like\n"
+	.string "this if you don't catch POKéMON?\p"
+	.string "Go play vanilla EMERALD!$"

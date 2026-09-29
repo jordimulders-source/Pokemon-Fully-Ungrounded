@@ -1070,9 +1070,9 @@ RustboroCity_Text_WowYouHavePokemon:
 	.string "places with POKéMON, too.$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
-	.string "POKéMON TRAINER'S SCHOOL!\p"
-	.string "If I go to this school, will I be able\n"
-	.string "to catch rare POKéMON easily?$"
+	.string "POKéMON TRAINER'S SCHOOL! Is it like\n"
+	.string "anime school? Will there be a transfer\l"
+	.string "student with a dark past?$"
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
 	.string "Why doesn't this world have a\n"

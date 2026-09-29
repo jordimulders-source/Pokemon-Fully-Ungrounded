@@ -371,8 +371,8 @@ SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum:
 	.string "the MUSEUM!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine:
-	.string "Wow, the submarine's awesome!\n"
-	.string "I want to go for a ride!$"
+	.string "The submarine is awesome! Can it turn\n"
+	.string "into a giant robot? GET IN THE ROBOT!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
 	.string "“WATER QUALITY SAMPLE 1,” the\n"

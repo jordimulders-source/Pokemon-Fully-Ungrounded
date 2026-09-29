@@ -252,8 +252,8 @@ LilycoveCity_LilycoveMuseum_1F_Text_ThisMuseumIsInspiration:
 	.string "is an inspiration.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_ThisLadyIsPretty:
-	.string "This lady is pretty!\n"
-	.string "She's like Mommy!$"
+	.string "This painting is pretty! She looks like\n"
+	.string "my waifu!$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_ThisPokemonIsAdorable:
 	.string "This POKéMON is adorable!\n"
@@ -267,10 +267,8 @@ LilycoveCity_LilycoveMuseum_1F_Text_HeardMuseumGotNewPaintings:
 	.string "the second floor?$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_CuratorHasBeenCheerful:
-	.string "Lately, the CURATOR has been\n"
-	.string "unusually cheerful.\p"
-	.string "I bet something good happened for him.\n"
-	.string "Definitely.$"
+	.string "Lately the CURATOR has been unusually\n"
+	.string "cheerful. I read his aura. It's… a lot.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_AimToSeeGreatPaintings:
 	.string "I aim to see many great paintings\n"

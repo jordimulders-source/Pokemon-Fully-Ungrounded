@@ -1146,23 +1146,22 @@ Route110_Text_JasminePostBattle:
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro:
-	.string "I have foreseen your intentions!\n"
-	.string "I cannot possibly lose!$"
+	.string "I have foreseen your intentions! The\n"
+	.string "cards never lie!$"
 
 Route110_Text_EdwardDefeated:
-	.string "I failed to prophesize my own demise!$"
+	.string "The cards lied!$"
 
 Route110_Text_EdwardPostBattle:
-	.string "I see your future…\p"
-	.string "Hmm…\n"
-	.string "I see a shining light…$"
+	.string "I see your future… A shining light… No,\n"
+	.string "wait, that's the sun.$"
 
 Route110_Text_JaclynIntro:
-	.string "Ahahahaha!\n"
-	.string "I'll dazzle you with my wonders!$"
+	.string "Ahahaha! Mercury is in retrograde!\n"
+	.string "You're doomed!$"
 
 Route110_Text_JaclynDefeated:
-	.string "I wondrously lost!$"
+	.string "I should've checked my horoscope first.$"
 
 Route110_Text_JaclynPostBattle:
 	.string "You managed to win only because it was\n"
@@ -1722,26 +1721,25 @@ Route113_Text_MadelinePostRematch:
 	.string "I must say I'm impressed!$"
 
 Route113_Text_LaoIntro:
-	.string "From out of the ashes I leap! Hiyah!\n"
-	.string "I challenge thee!$"
+	.string "BELIEVE IT! I'm gonna be the HOKAGE of\n"
+	.string "ROUTE 113!$"
 
 Route113_Text_LaoDefeat:
-	.string "With honor I admit defeat!$"
+	.string "Dattebayo… I lost.$"
 
 Route113_Text_LaoPostBattle:
-	.string "I must refine the art of concealment.\n"
-	.string "I bid thee farewell.$"
+	.string "I'll train until I master the RASENGAN.$"
 
 Route113_Text_LaoRegister:
 	.string "Yiiyaah! Witness the ancient ninja\n"
 	.string "technique of POKéNAV registration!$"
 
 Route113_Text_LaoRematchIntro:
-	.string "From out of the ashes I leap! Hiyah!\n"
-	.string "I challenge thee!$"
+	.string "I NEVER go back on my word! That's my\n"
+	.string "ninja way!$"
 
 Route113_Text_LaoRematchDefeat:
-	.string "With honor I admit defeat!$"
+	.string "SASUKE would have won…$"
 
 Route113_Text_LaoPostRematch:
 	.string "My flawless concealment was let down\n"
@@ -1749,18 +1747,14 @@ Route113_Text_LaoPostRematch:
 	.string "I bid thee farewell.$"
 
 Route113_Text_LungIntro:
-	.string "Thanks for finding me!\n"
-	.string "But we still have to battle!$"
+	.string "You found me? OMAE WA MOU SHINDEIRU!$"
 
 Route113_Text_LungDefeat:
-	.string "I'll use my ninjutsu on you…\n"
-	.string "“VOLCANIC ASH SWIRL CLOAK”!\p"
-	.string "…What?\n"
-	.string "It's already over?$"
+	.string "NANI?!$"
 
 Route113_Text_LungPostBattle:
-	.string "You know what's crummy about hiding?\n"
-	.string "It's lonely if no one comes along.$"
+	.string "Hiding is lonely. Like being the only one\n"
+	.string "who read the manga.$"
 
 Route113_Text_ToriIntro:
 	.string "TORI: Both of us, we collect ashes.\n"
@@ -2187,16 +2181,14 @@ Route115_Text_KyraPostBattle:
 	.string "I should take a run to calm down…$"
 
 Route115_Text_JaidenIntro:
-	.string "Take that!\n"
-	.string "Ultra POKéMON ninja attack!$"
+	.string "KAMEHAMEHAAAA!$"
 
 Route115_Text_JaidenDefeat:
-	.string "Waaah!\n"
-	.string "Our strategy failed!$"
+	.string "My power level wasn't over 9000…$"
 
 Route115_Text_JaidenPostBattle:
-	.string "But my POKéMON were ultra,\n"
-	.string "weren't they?$"
+	.string "But my POKéMON were ultra, weren't\n"
+	.string "they? Like ULTRA INSTINCT?$"
 
 Route115_Text_HeleneIntro:
 	.string "My POKéMON have black belt-level\n"
@@ -2212,23 +2204,22 @@ Route115_Text_HelenePostBattle:
 	.string "You're a GYM LEADER, aren't you?$"
 
 Route115_Text_AlixIntro:
-	.string "Our eyes met!\n"
-	.string "There's no getting away now!$"
+	.string "Our eyes met! Our souls are linked now.\n"
+	.string "That'll be 300 POKéDOLLARS.$"
 
 Route115_Text_AlixDefeat:
-	.string "Gah!\n"
-	.string "Not bad!$"
+	.string "Gah! Bad dharma!$"
 
 Route115_Text_AlixPostBattle:
 	.string "Oh, well.\n"
 	.string "I think I will TELEPORT home.$"
 
 Route115_Text_MarleneIntro:
-	.string "You've disturbed my meditation…\n"
-	.string "You'll be punished for it.$"
+	.string "You've disturbed my meditation! I was\n"
+	.string "halfway to the astral plane!$"
 
 Route115_Text_MarleneDefeat:
-	.string "You've broken my concentration!$"
+	.string "My chakras are all over the floor now.$"
 
 Route115_Text_MarlenePostBattle:
 	.string "I was meditating with my POKéMON.\n"
@@ -2624,11 +2615,11 @@ Route117_Text_MelinaPostBattle:
 	.string "while looking at flowers.$"
 
 Route117_Text_BrandiIntro:
-	.string "Let me demonstrate the power\n"
-	.string "hidden within a PSYCHIC POKéMON!$"
+	.string "Behold the power of my THETANS! I've\n"
+	.string "been cleared!$"
 
 Route117_Text_BrandiDefeat:
-	.string "Astonishing!$"
+	.string "My E-METER is broken…$"
 
 Route117_Text_BrandiPostBattle:
 	.string "PSYCHIC POKéMON are complex.\n"
@@ -2942,27 +2933,25 @@ Route119_Text_YasuPostBattle:
 	.string "That, too, is destiny…$"
 
 Route119_Text_TakashiIntro:
-	.string "If you're not on your guard,\n"
-	.string "you're in for some pain!$"
+	.string "I'm gonna be KING OF THE PIRATES! On\n"
+	.string "ROUTE 119!$"
 
 Route119_Text_TakashiDefeat:
-	.string "You're surprisingly good!$"
+	.string "My straw hat!$"
 
 Route119_Text_TakashiPostBattle:
-	.string "My surprise attack ended in\n"
-	.string "failure…$"
+	.string "One day I'll find the ONE PIECE. It's\n"
+	.string "probably in the tall grass.$"
 
 Route119_Text_HideoIntro:
-	.string "To hide a tree, use a forest!$"
+	.string "To hide a tree, use a forest. To hide a\n"
+	.string "TITAN, use a WALL!$"
 
 Route119_Text_HideoDefeat:
-	.string "I bow to your superiority.$"
+	.string "SHINZOU WO SASAGEYO… I lost.$"
 
 Route119_Text_HideoPostBattle:
-	.string "To hide a tree, use a forest!\n"
-	.string "To hide a POKéMON, use a POKéMON!\p"
-	.string "There is no deep, hidden meaning\n"
-	.string "to that.$"
+	.string "TATAKAE! …Tomorrow.$"
 
 Route119_Text_ChrisIntro:
 	.string "You spoke to me…\n"
@@ -3169,29 +3158,23 @@ Route120_Text_AngelicaPostBattle:
 	.string "get in your way.$"
 
 Route120_Text_KeigoIntro:
-	.string "I will adopt the movements of POKéMON\n"
-	.string "and create new ninja techniques.$"
+	.string "ORA ORA ORA ORA ORA!$"
 
 Route120_Text_KeigoDefeat:
-	.string "The creation of new ninja techniques\n"
-	.string "is but a distant dream…$"
+	.string "YARE YARE DAZE.$"
 
 Route120_Text_KeigoPostBattle:
-	.string "Perhaps I ought to apprentice under\n"
-	.string "a ninja sensei.$"
+	.string "It was me, DIO!$"
 
 Route120_Text_RileyIntro:
-	.string "We ninja conceal ourselves under our\n"
-	.string "camouflage cloaks.\l"
-	.string "I bet you didn't know where I was!$"
+	.string "Breath of Camouflage, First Form!$"
 
 Route120_Text_RileyDefeat:
-	.string "I lost!\n"
-	.string "I should camouflage my shame!$"
+	.string "My breathing technique failed…$"
 
 Route120_Text_RileyPostBattle:
-	.string "Our camouflage cloaks are all\n"
-	.string "handmade.$"
+	.string "I need a demon slayer sensei. Or a\n"
+	.string "snack.$"
 
 Route120_Text_CallieIntro:
 	.string "If you don't pay attention,\n"
@@ -3452,16 +3435,15 @@ Route123_Text_VioletPostBattle:
 	.string "with uplifting fragrances.$"
 
 Route123_Text_CameronIntro:
-	.string "Being a psychic is about willpower.\p"
-	.string "I've willed myself not to lose to\n"
-	.string "anyone. That makes me strong!$"
+	.string "Being a psychic is about willpower. I've\n"
+	.string "manifested my victory.$"
 
 Route123_Text_CameronDefeat:
-	.string "I feel sad…$"
+	.string "My vision board lied…$"
 
 Route123_Text_CameronPostBattle:
-	.string "Being a psychic is about willpower.\n"
-	.string "I thought I wouldn't lose to you…$"
+	.string "I manifested winning. The universe left\n"
+	.string "me on read.$"
 
 Route123_Text_CameronRegister:
 	.string "I sense it!\n"
@@ -3470,24 +3452,22 @@ Route123_Text_CameronRegister:
 	.string "Let's see your POKéNAV.$"
 
 Route123_Text_CameronRematchIntro:
-	.string "I've convinced myself that I won't\n"
-	.string "lose anymore. That makes me strong!$"
+	.string "I won't lose anymore. It's called the law\n"
+	.string "of attraction.$"
 
 Route123_Text_CameronRematchDefeat:
-	.string "I feel sad…$"
+	.string "The universe is ghosting me.$"
 
 Route123_Text_CameronPostRematch:
 	.string "I should train at MT. PYRE…\n"
 	.string "I'll never beat you this way…$"
 
 Route123_Text_JackiIntro:
-	.string "Don't be too happy if your POKéMON\n"
-	.string "develop psychic powers.\p"
-	.string "You need to refine those powers to\n"
-	.string "make them really useful.$"
+	.string "Don't be happy if your POKéMON develop\n"
+	.string "psychic powers. Mine read my diary.$"
 
 Route123_Text_JackiDefeat:
-	.string "Overwhelmed!$"
+	.string "My aura is beige now.$"
 
 Route123_Text_JackiPostBattle:
 	.string "We all have psychic powers.\n"
@@ -3498,11 +3478,11 @@ Route123_Text_JackiRegister:
 	.string "Is that okay with you?$"
 
 Route123_Text_JackiRematchIntro:
-	.string "Have you awoken the psychic powers\n"
-	.string "within you?$"
+	.string "Have you awoken your psychic powers?\n"
+	.string "No? Have you tried crystals?$"
 
 Route123_Text_JackiRematchDefeat:
-	.string "Astounding!$"
+	.string "Bad karma for me, good dharma for you.$"
 
 Route123_Text_JackiPostRematch:
 	.string "Your power with POKéMON…\n"
@@ -3651,16 +3631,14 @@ Route123_Text_EdPostBattle:
 	.string "I think they'll make me better.$"
 
 Route123_Text_JonasIntro:
-	.string "I lay in ambush, and a TRAINER has\n"
-	.string "landed in my trap!$"
+	.string "I lay in ambush! I'll write your name in\n"
+	.string "my notebook!$"
 
 Route123_Text_JonasDefeat:
-	.string "If you don't lose, how am I supposed\n"
-	.string "to have fun playing ninja?$"
+	.string "I'll take a potato chip… AND EAT IT!$"
 
 Route123_Text_JonasPostBattle:
-	.string "I'm going to ambush a weaker-looking\n"
-	.string "TRAINER next time.$"
+	.string "L is watching me. Probably.$"
 
 Route123_Text_KayleyIntro:
 	.string "I just bought this parasol.\n"

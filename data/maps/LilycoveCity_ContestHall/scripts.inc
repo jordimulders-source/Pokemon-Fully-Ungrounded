@@ -419,10 +419,9 @@ LilycoveCity_ContestHall_Text_OverdidGrooming:
 	.string "What should I do?$"
 
 LilycoveCity_ContestHall_Text_JudgeWontSeeAuroraBeam:
-	.string "This AURORA BEAM is so dazzling,\n"
-	.string "the JUDGE won't be able to see it.\p"
-	.string "Uh, wait a second…\n"
-	.string "That'll be meaningless, then!$"
+	.string "This AURORA BEAM is so dazzling, the\n"
+	.string "JUDGE will be astrally projected out of\l"
+	.string "the building.$"
 
 LilycoveCity_ContestHall_Text_PokemonLooksLikeYoungerMe:
 	.string "This pretty POKéMON looks just like\n"

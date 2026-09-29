@@ -935,15 +935,15 @@ Route110_Text_MauvilleCitySign:
 
 Route110_Text_TrainerTipsPrlzSleep:
 	.string "TRAINER TIPS\p"
-	.string "The foe can be made helpless by\n"
-	.string "paralyzing it or causing it to sleep.\p"
-	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
+	.string "Paralyze your foe or put it to sleep,\n"
+	.string "then beat it up while it can't move.\p"
+	.string "It's called strategy. Don't think about\n"
+	.string "it too much.$"
 
 Route110_Text_TrainerTipsRegisterItems:
 	.string "TRAINER TIPS\p"
-	.string "The items in the BAG can be reorganized\n"
-	.string "by pressing SELECT.$"
+	.string "Press SELECT to reorganize your BAG.\p"
+	.string "Nobody has ever done this.$"
 
 Route110_Text_TrickHouseSign:
 	.string "“Three steps {RIGHT_ARROW} and two steps {UP_ARROW}\n"

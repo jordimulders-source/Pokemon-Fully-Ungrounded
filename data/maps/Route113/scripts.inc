@@ -155,10 +155,10 @@ Route113_Text_RouteSignFallarbor:
 
 Route113_Text_TrainerTipsRegisterKeyItems:
 	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
-	.string "Simply press SELECT to use\n"
-	.string "the registered item conveniently.$"
+	.string "Register a KEY ITEM to SELECT and use\n"
+	.string "it with one button.\p"
+	.string "Congratulations. You've read the\n"
+	.string "manual.$"
 
 Route113_Text_GlassWorkshopSign:
 	.string "GLASS WORKSHOP\n"

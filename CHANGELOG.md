@@ -14734,3 +14734,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - SWALLOW: Hisui-Qwilfish lv 10 met Stockpile en Swallow.
   - Daarna zegt hij alleen nog: "Nice." (FLAG_RECEIVED_SPIT_SWALLOW_MON, voorheen FLAG_UNUSED_0x022.) Met een volle party stelt hij alleen de vraag.
 - Verdanturf (huis): twee vrouwen discussiëren of Sabrina Carpenter of Taylor Swift beter is.
+
+### [v.0.6.22] - Ruilen, Trainer Tips
+- In-game ruilen aangepast (mail weggehaald):
+  - Rustboro: Ralts → Galar-Farfetch'd "SIR LEEK" (houdt een Leek vast).
+  - Fortree: Slugma (was Volbeat) → Galar-Ponyta "SPARKLES".
+  - Pacifidlog: Tentacool (was Bagon) → Mime Jr. "MIMEJR".
+  - Nieuw, Fortree (zelfde huis, de vrouw): Machoke → Haunter "SPOOKY". Grap: "Why didn't it evolve? …Oh right, evolution methods were changed. Level 37 now." (INGAME_TRADE_HAUNTER, FLAG_FORTREE_HAUNTER_TRADE_COMPLETED = voorheen FLAG_UNUSED_0x023.)
+  - Teksten van alle ruilers herschreven.
+- Trainer Tips-borden (Route 106, 109, 110 ×2, 111, 113, 116 ×2, 119) herschreven, deels door Jordi zelf.

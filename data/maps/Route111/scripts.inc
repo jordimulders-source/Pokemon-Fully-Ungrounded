@@ -651,11 +651,10 @@ Route111_Text_OldLadysRestStopSign:
 
 Route111_Text_TrainerTipsSpAtkSpDef:
 	.string "TRAINER TIPS\p"
-	.string "One of the indicators of a POKéMON's\n"
-	.string "powerfulness is SP. ATK. It stands for\l"
-	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, SP. DEF stands for “SPECIAL\n"
-	.string "DEFENSE.”$"
+	.string "SP. ATK means “SPECIAL ATTACK.” SP. DEF\n"
+	.string "means “SPECIAL DEFENSE.”\p"
+	.string "Don't act like this is new information.\n"
+	.string "BULBAPEDIA.$"
 
 Route111_Text_ShouldBeMirageTowerAroundHere:
 	.string "There should be a tower made of sand\n"

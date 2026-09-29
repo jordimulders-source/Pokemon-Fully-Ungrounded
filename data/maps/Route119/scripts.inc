@@ -586,9 +586,7 @@ Route119_Text_WeatherInstitute:
 
 Route119_Text_TrainerTipsDecoration:
 	.string "TRAINER TIPS\p"
-	.string "Up to sixteen decorations and\n"
-	.string "furniture items can be placed in\l"
-	.string "a SECRET BASE.\p"
-	.string "Pick your favorite items and create\n"
-	.string "your very own SECRET BASE exactly the\l"
-	.string "way you want.$"
+	.string "Up to sixteen decorations fit in a\n"
+	.string "SECRET BASE.\p"
+	.string "You'll put in one chair and never come\n"
+	.string "back.$"

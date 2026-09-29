@@ -14667,3 +14667,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Atsushi (Mt. Pyre): Sneasler als ultieme Incineroar-counter.
 - Cycling Road: Anthony heet nu ARMSTRONG (vitamines…); Jacob zit op een huurfiets die over tijd is.
 - Space Center: de eerste Magma-grunt opent met "ALL YOUR BASE ARE BELONG TO US."
+
+### [v.0.6.11] - Cycling Road en Route 117
+- Cycling Road: Abigail is een Strava-fanaat, Jasmine komt niet meer uit haar klikpedalen.
+- Route 117: de triatleten Dylan, Maria en Melina zeuren alleen nog over blessures en ouderdom.
+- `tools/dialogen/import.py` zet rechte aanhalingstekens (") automatisch om naar “ en ” (het lettertype kent geen rechte).

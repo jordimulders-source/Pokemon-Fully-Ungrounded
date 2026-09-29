@@ -1098,12 +1098,13 @@ Route110_Text_BenjaminRematchPostBattle:
 	.string "Take it easy. There's plenty of time.$"
 
 Route110_Text_AbigailIntro:
-	.string "The triathlon is hard in the extreme.\p"
-	.string "You have to complete the three events\n"
-	.string "of swimming, cycling, and running.$"
+	.string "Hold on, let me pause my STRAVA.\p"
+	.string "…Actually, no, keep it running. This\n"
+	.string "battle counts as interval training.$"
 
 Route110_Text_AbigailDefeated:
-	.string "POKéMON battles are hard, too!$"
+	.string "My average speed! Ruined! 400 kudos,\n"
+	.string "gone!$"
 
 Route110_Text_AbigailPostBattle:
 	.string "I'm exhausted, so I need a break.\n"
@@ -1114,23 +1115,26 @@ Route110_Text_AbigailRegister:
 	.string "Let's have a rematch on CYCLING ROAD.$"
 
 Route110_Text_AbigailRematchIntro:
-	.string "Isn't it neat to hold a battle while\n"
-	.string "cycling?$"
+	.string "I have 1,200 followers on STRAVA and\n"
+	.string "zero friends. Let's battle, I need a new\l"
+	.string "segment record.$"
 
 Route110_Text_AbigailRematchDefeated:
-	.string "Wow…\n"
-	.string "How could you be so strong?$"
+	.string "If it's not on STRAVA, it didn't happen.\n"
+	.string "So this didn't happen.$"
 
 Route110_Text_AbigailRematchPostBattle:
 	.string "Were you going after a record?\p"
 	.string "I'm sorry if I held you up!$"
 
 Route110_Text_JasmineIntro:
-	.string "I've been riding without stopping.\n"
-	.string "My thighs are like rocks!$"
+	.string "Clip-in pedals! Very pro, very fast.\p"
+	.string "I just can't get my feet out of them. So\n"
+	.string "I can't stop. Ever. Let's battle while I\l"
+	.string "roll!$"
 
 Route110_Text_JasmineDefeated:
-	.string "I'm worried about muscle cramps…$"
+	.string "Help… I'm tipping over… very… slowly…$"
 
 Route110_Text_JasminePostBattle:
 	.string "Oh, you have some GYM BADGES?\n"
@@ -2438,11 +2442,14 @@ Route117_Text_LydiaPostRematch:
 	.string "of {POKEBLOCK}S, depending on their nature.$"
 
 Route117_Text_DylanIntro:
-	.string "I'm in the middle of a triathlon, but,\n"
-	.string "whatever, let's have a battle!$"
+	.string "I'm in the middle of a triathlon. Well,\n"
+	.string "the middle of my knee rehab, really.\p"
+	.string "My physio says no running. My physio\n"
+	.string "isn't here. Let's battle!$"
 
 Route117_Text_DylanDefeat:
-	.string "I ran out of energy!$"
+	.string "Ah, my Achilles… Or my hip? Everything\n"
+	.string "hurts at 38.$"
 
 Route117_Text_DylanPostBattle:
 	.string "I may have blown it…\p"
@@ -2454,12 +2461,13 @@ Route117_Text_DylanRegister:
 	.string "I'd like you to train me!$"
 
 Route117_Text_DylanRematchIntro:
-	.string "I'm smack in the middle of a triathlon,\n"
-	.string "but I'm comfortably ahead.\l"
-	.string "Let's make this a quick battle!$"
+	.string "I'm back! New knee, same bad back. My\n"
+	.string "doctor calls me “remarkably stubborn\l"
+	.string "for my age.”$"
 
 Route117_Text_DylanRematchDefeat:
-	.string "I ran out of energy again!$"
+	.string "I felt something pop. Don't worry,\n"
+	.string "something always pops.$"
 
 Route117_Text_DylanPostRematch:
 	.string "I was tops in swimming and cycling,\n"
@@ -2467,12 +2475,13 @@ Route117_Text_DylanPostRematch:
 	.string "POKéMON yet.$"
 
 Route117_Text_MariaIntro:
-	.string "I do my triathlon training with POKéMON,\n"
-	.string "so I'm pretty confident about my speed.$"
+	.string "I've done 14 triathlons. My body has\n"
+	.string "done about 11 of them.\p"
+	.string "The rest was ibuprofen.$"
 
 Route117_Text_MariaDefeat:
-	.string "I need to get more practices in,\n"
-	.string "I guess.$"
+	.string "My shins! Nobody ever warns you about\n"
+	.string "the shins!$"
 
 Route117_Text_MariaPostBattle:
 	.string "Training is meaningful only if you\n"
@@ -2485,13 +2494,12 @@ Route117_Text_MariaRegister:
 	.string "If you'd like, I'll battle you later!$"
 
 Route117_Text_MariaRematchIntro:
-	.string "Are you keeping up with your training?\n"
-	.string "I sure am!\l"
-	.string "Let me show you the evidence!$"
+	.string "Are you keeping up with your training? I\n"
+	.string "am. I'm also keeping up with my\l"
+	.string "physiotherapy bills.$"
 
 Route117_Text_MariaRematchDefeat:
-	.string "I need to get more practices in,\n"
-	.string "I guess.$"
+	.string "I need more practice. And a new spine.$"
 
 Route117_Text_MariaPostRematch:
 	.string "I'll resume training tomorrow.\n"
@@ -2586,11 +2594,14 @@ Route117_Text_MegRematchNotEnoughMons:
 	.string "We want to have a 2-on-2 battle.$"
 
 Route117_Text_MelinaIntro:
-	.string "Isn't it nice? To battle while looking\n"
-	.string "at pretty flowers?$"
+	.string "Isn't it nice? Battling while looking at\n"
+	.string "pretty flowers?\p"
+	.string "It's the only thing I can still do. I\n"
+	.string "pulled a hamstring getting out of bed.$"
 
 Route117_Text_MelinaDefeat:
-	.string "Oh, that's quite impressive!$"
+	.string "Oh, that's impressive… Could you help me\n"
+	.string "up?$"
 
 Route117_Text_MelinaPostBattle:
 	.string "It feels wonderful to go for a jog\n"

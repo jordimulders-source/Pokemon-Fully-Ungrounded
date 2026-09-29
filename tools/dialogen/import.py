@@ -67,8 +67,15 @@ def layout(text):
     return result
 
 
+def curly_quotes(text):
+    """Het lettertype van de game kent geen rechte " — zet ze om naar “ en ”."""
+    parts = text.split('"')
+    return ''.join(p + ('“' if i % 2 == 0 else '”') for i, p in enumerate(parts[:-1])) + parts[-1]
+
+
 def to_strings(text):
     """Platte tekst -> lijst van .string-regels (zonder aanhalingstekens)."""
+    text = curly_quotes(text)
     out = []
     boxes = layout(text)
     for b, lines in enumerate(boxes):

@@ -14871,3 +14871,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Verpleegster in stijl: "We fix your POKéMON. No questions asked. No insurance needed." en "Do not ask what happens in the back." Ook de Gold Card-, "the usual"- en Pokérus-teksten.
 - Pc: draait nog op Windows XP; "Your data is safe. Probably." (sluit aan op de NPC met het datalek).
 - Te brede tekstregels gerepareerd: Wally in de Petalburg Gym, Harvey (Game of Thrones Room), Owen (Victory Road) en Liv's registratie.
+
+### [v.0.6.47] - Quality of life: instant heal in het Pokémon Center
+- Praten met de verpleegster healt je team direct: één geluidje (item-heal), één regel "Your POKéMON are fully healed. Next!" en de tekst sluit na een halve seconde vanzelf. Geen ja/nee-vraag, geen draaiende verpleegster, geen Poké Ball-machine, geen jingle.
+- De Gold Card-dialoog en de Union Room-melding bij de verpleegster zijn vervallen. Alleen de eerste keer dat je team Pokérus heeft, komt er één uitlegtekst bij.
+- `OW_UNION_DISABLE_CHECK` staat aan: de game controleert bij het binnenlopen van een Pokémon Center niet meer op de Union Room (draadloze adapter), dus het laden gaat sneller.
+- Na een white-out gebruikt de verpleegster nog wel de oude animatie (komt zelden voor).

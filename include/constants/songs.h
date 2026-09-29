@@ -547,6 +547,11 @@
 #define PH_NURSE_SOLO               609
 #define MUS_GROUNDED_VS_COLRESS     610 // Project Grounded: Colress-gevechtsmuziek (Black 2/White 2), keuze in het optiemenu
 #define MUS_GROUNDED_VS_BIRCH       611 // Project Grounded: Macarena, Birch's gevechtsmuziek
+#define MUS_GROUNDED_VS_DPPT_CHAMPION 612 // Project Grounded: Kampioen-gevechtsmuziek (Diamond/Pearl/Platinum), keuze in het optiemenu
+#define MUS_GROUNDED_VS_CYRUS       613 // Project Grounded: Cyrus-gevechtsmuziek (DPPt), keuze in het optiemenu
+#define MUS_GROUNDED_VS_N           614 // Project Grounded: N's thema (Black/White), keuze in het optiemenu
+#define MUS_GROUNDED_VS_GIRATINA    615 // Project Grounded: Giratina-gevechtsmuziek (Platinum), keuze in het optiemenu
+#define MUS_GROUNDED_VS_GHETSIS     616 // Project Grounded: Ghetsis-gevechtsmuziek (Black/White), keuze in het optiemenu
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

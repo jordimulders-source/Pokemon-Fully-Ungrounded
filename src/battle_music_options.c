@@ -17,6 +17,7 @@ const struct BattleMusicOption gWildBattleMusicOptions[] =
     { COMPOUND_STRING("MEWTWO"),       MUS_RG_VS_MEWTWO },
     { COMPOUND_STRING("DEOXYS"),       MUS_RG_VS_DEOXYS },
     { COMPOUND_STRING("LEGEND DOGS"),  MUS_C_VS_LEGEND_BEAST },
+    { COMPOUND_STRING("GIRATINA"),     MUS_GROUNDED_VS_GIRATINA },
 };
 
 const struct BattleMusicOption gTrainerBattleMusicOptions[] =
@@ -26,6 +27,10 @@ const struct BattleMusicOption gTrainerBattleMusicOptions[] =
     { COMPOUND_STRING("KANTO GYM"),    MUS_RG_VS_GYM_LEADER },
     { COMPOUND_STRING("KANTO CHAMP"),  MUS_RG_VS_CHAMPION },
     { COMPOUND_STRING("COLRESS"),      MUS_GROUNDED_VS_COLRESS },
+    { COMPOUND_STRING("SINNOH CHAMP"), MUS_GROUNDED_VS_DPPT_CHAMPION },
+    { COMPOUND_STRING("CYRUS"),        MUS_GROUNDED_VS_CYRUS },
+    { COMPOUND_STRING("N"),            MUS_GROUNDED_VS_N },
+    { COMPOUND_STRING("GHETSIS"),      MUS_GROUNDED_VS_GHETSIS },
     { COMPOUND_STRING("DEOXYS"),       MUS_RG_VS_DEOXYS },
     { COMPOUND_STRING("LEGEND DOGS"),  MUS_C_VS_LEGEND_BEAST },
 };

@@ -618,6 +618,11 @@ gSongTable::
 	song ph_nurse_solo, MUSIC_PLAYER_SE2, 2
 	song mus_grounded_vs_colress, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_birch, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_dppt_champion, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_cyrus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_n, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_giratina, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_ghetsis, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

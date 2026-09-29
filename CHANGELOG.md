@@ -14951,3 +14951,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Nieuwe General MIDI-achtige voicegroup `sound/voicegroups/grounded_gm.inc`: GM-programma's gekoppeld aan instrumenten die al in de ROM zitten (piano, orgel, bassen, strijkers, koor, trompet, fluit, hobo, blokgolf-leads, drumset op programma 127).
 - De originele MIDI's staan in `sound/songs/grounded_src/`; `python3 tools/grounded/midi_songs.py` (vereist `pip install mido`) maakt er `sound/songs/midi/mus_grounded_*.mid` van: drumkanaal → drumset, maximaal 10 sporen (GBA-limiet; bij Macarena vervallen de fluit die de piccolo verdubbelt, een tweede square lead en een los effect), kanalen/programma's omgezet en loop-markers rond het hele nummer.
 - Getest in de emulator: tijdens het Birch-gevecht speelt de Macarena, Colress speelt af, nauwelijks clipping. Klinkt in GBA-kwaliteit, dus niet als het origineel.
+
+### [v.0.6.60] - Nog vijf gevechtsthema's
+- Toegevoegd uit Jordi's MIDI's, als keuze in het optiemenu:
+  - TRAINER MUSIC: SINNOH CHAMP (kampioen DPPt), CYRUS, N (N's thema, Black/White), GHETSIS.
+  - WILD MUSIC: GIRATINA (Platinum).
+- Nieuwe automatische voorbereiding (`prepare_auto` in `tools/grounded/prepare_midi.py`): alle noten worden per GBA-instrument gegroepeerd (piano, strijkers, trompet, pauken, taiko, xylofoon, enz.), zodat ook grote orkest-MIDI's binnen de 10 sporen passen. Volume wordt in de aanslag verwerkt; pitch bends vallen weg. Wat daarna nog niet past, valt af (alleen bij Giratina: koor, orgel, xylofoon, hobo en een paar kleine partijen, 199 noten) en bij Cyrus 37 noten van een lead.
+- De voicegroup `grounded_gm` wordt nu door hetzelfde script gegenereerd; nieuwe instrumenten erbij: glockenspiel, xylofoon, harp, pauken en taiko.
+- Getest in de emulator: alle vijf spelen af, nauwelijks clipping.

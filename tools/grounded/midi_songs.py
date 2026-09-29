@@ -17,3 +17,15 @@ prepare(f'{SRC}/colress_battle.mid', f'{DST}/mus_grounded_vs_colress.mid',
 prepare(f'{SRC}/macarena.mid', f'{DST}/mus_grounded_vs_birch.mid',
         drop_tracks=(5, 13, 14))
 print('klaar')
+
+# Automatisch voorbereid (groepering per GBA-instrument), zie prepare_auto in prepare_midi.py
+from prepare_midi import prepare_auto, write_voicegroup
+write_voicegroup()
+for src, dst in [
+    ('dppt_champion.mid', 'mus_grounded_vs_dppt_champion.mid'),
+    ('dppt_cyrus.mid',    'mus_grounded_vs_cyrus.mid'),
+    ('bw_n.mid',          'mus_grounded_vs_n.mid'),
+    ('pt_giratina.mid',   'mus_grounded_vs_giratina.mid'),
+    ('bw_ghetsis.mid',    'mus_grounded_vs_ghetsis.mid'),
+]:
+    prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')

@@ -1,5 +1,5 @@
 @ Project Grounded: General MIDI-achtige voicegroup voor geïmporteerde MIDI's.
-@ Programma 127 = drumset (het drumkanaal krijgt dit programma via tools/grounded/prepare_midi.py).
+@ Gegenereerd door tools/grounded/prepare_midi.py (write_voicegroup); programma 127 = drumset.
 voice_group grounded_gm
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -10,12 +10,12 @@ voice_group grounded_gm
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 6
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 7
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 8
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 9
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 10
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 11
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 12
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 13
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 14
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 9
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 10
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 11
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 12
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 13
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 14
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 15
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 16
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 17
@@ -47,8 +47,8 @@ voice_group grounded_gm
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 46
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 47
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
@@ -117,9 +117,9 @@ voice_group grounded_gm
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 113
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 114
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 115
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 116
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 117
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 118
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 116
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 117
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 118
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 119
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 121

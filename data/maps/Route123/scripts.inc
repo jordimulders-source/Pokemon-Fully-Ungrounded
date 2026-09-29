@@ -187,11 +187,14 @@ Route123_Text_CheckTreesWithMyGrassMon:
 
 Route123_Text_RouteSign:
 	.string "{RIGHT_ARROW} ROUTE 123\n"
-	.string "{LEFT_ARROW} ROUTE 118$"
+	.string "{LEFT_ARROW} ROUTE 118\p"
+	.string "The sign painter gave up on this one.$"
 
 Route123_Text_RouteSignMtPyre:
 	.string "{UP_ARROW} MT. PYRE\n"
-	.string "“Forbidden to the faint of heart.”$"
+	.string "“Forbidden to the faint of heart.”\p"
+	.string "Also to the easily spooked and ZUBAT\n"
+	.string "haters.$"
 
 Route123_Text_BerryMastersHouse:
 	.string "BERRY MASTER'S HOUSE$"

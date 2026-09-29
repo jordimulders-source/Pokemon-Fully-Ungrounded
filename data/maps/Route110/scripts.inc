@@ -910,7 +910,8 @@ Route110_Text_AcroBikesDoNotQualify:
 
 Route110_Text_SlateportCitySign:
 	.string "ROUTE 110\n"
-	.string "{DOWN_ARROW} SLATEPORT CITY$"
+	.string "{DOWN_ARROW} SLATEPORT CITY\p"
+	.string "Smells like fish. You'll get used to it.$"
 
 Route110_Text_CyclingRoadSign:
 	.string "SEASIDE CYCLING ROAD$"
@@ -924,14 +925,17 @@ Route110_Text_AquaWasHere:
 
 Route110_Text_Route103Sign:
 	.string "ROUTE 110\n"
-	.string "{LEFT_ARROW} ROUTE 103$"
+	.string "{LEFT_ARROW} ROUTE 103\p"
+	.string "This sign points at a route.\n"
+	.string "Revolutionary.$"
 
 Route110_Text_SeasideParkingSign:
 	.string "SEASIDE PARKING$"
 
 Route110_Text_MauvilleCitySign:
 	.string "ROUTE 110\n"
-	.string "{UP_ARROW} MAUVILLE CITY$"
+	.string "{UP_ARROW} MAUVILLE CITY\p"
+	.string "FREE WIFI. (Not really.)$"
 
 Route110_Text_TrainerTipsPrlzSleep:
 	.string "TRAINER TIPS\p"

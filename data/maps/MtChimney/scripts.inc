@@ -744,7 +744,8 @@ MtChimney_Text_MachineMakesNoResponse:
 
 MtChimney_Text_RouteSign:
 	.string "{DOWN_ARROW} JAGGED PATH\n"
-	.string "LAVARIDGE TOWN AHEAD$"
+	.string "LAVARIDGE TOWN AHEAD\p"
+	.string "Wear shoes. Seriously.$"
 
 MtChimney_Text_ShelbyIntro:
 	.string "I've been to the hot springs and\n"

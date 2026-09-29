@@ -284,9 +284,13 @@ Route118_Text_CanCrossRiversWithSurf:
 
 Route118_Text_RouteSignMauville:
 	.string "ROUTE 118\n"
-	.string "{LEFT_ARROW} MAUVILLE CITY$"
+	.string "{LEFT_ARROW} MAUVILLE CITY\p"
+	.string "No swimming. Just kidding, everybody\n"
+	.string "swims.$"
 
 Route118_Text_RouteSign119:
 	.string "ROUTE 118\n"
-	.string "{UP_ARROW} ROUTE 119$"
+	.string "{UP_ARROW} ROUTE 119\p"
+	.string "It rains there. Always. This sign is wet\n"
+	.string "just thinking about it.$"
 

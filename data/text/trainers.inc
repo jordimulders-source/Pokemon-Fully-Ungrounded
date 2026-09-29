@@ -1531,12 +1531,11 @@ Route111_Text_TyronPostBattle:
 	.string "they enter a battle!$"
 
 Route111_Text_CelinaIntro:
-	.string "Show me how to put a little excitement\n"
-	.string "into my life.$"
+	.string "LET'S GROOVE TONIGHT! Share the spice\n"
+	.string "of life!$"
 
 Route111_Text_CelinaDefeat:
-	.string "Oh… My…\n"
-	.string "That was too much excitement.$"
+	.string "…Baby, slice it right…$"
 
 Route111_Text_CelinaPostBattle:
 	.string "My pulse is still racing.\n"
@@ -2993,17 +2992,15 @@ Route119_Text_DaytonPostBattle:
 	.string "TRAINERS like you!$"
 
 Route119_Text_RachelIntro:
-	.string "Wherever and whenever I may be,\n"
-	.string "I always have my parasol in hand.$"
+	.string "It's raining again. It's gonna take a lot\n"
+	.string "to drag me away from you!$"
 
 Route119_Text_RachelDefeat:
-	.string "Oh, but…\n"
-	.string "That's not fair.$"
+	.string "I bless the rains down in AFRICAAAA!$"
 
 Route119_Text_RachelPostBattle:
-	.string "You're asking if my parasol is heavy?\n"
-	.string "Your BAG is filled with more junk than\l"
-	.string "I ever carry around.$"
+	.string "…This is ROUTE 119, not AFRICA. I know.\n"
+	.string "Let me have this.$"
 
 Route120_Text_ColinIntro:
 	.string "Do you have any moves that can strike\n"

@@ -129,7 +129,8 @@ Route112_Text_NotEasyToGetBackToLavaridge:
 
 Route112_Text_MtChimneyCableCarSign:
 	.string "MT. CHIMNEY CABLE CAR\n"
-	.string "“A short walk {UP_ARROW} way!”$"
+	.string "“A short walk {UP_ARROW} way!”\p"
+	.string "Short is relative.$"
 
 Route112_Text_MtChimneySign:
 	.string "MT. CHIMNEY\p"
@@ -138,5 +139,6 @@ Route112_Text_MtChimneySign:
 
 Route112_Text_RouteSignLavaridge:
 	.string "ROUTE 112\n"
-	.string "{LEFT_ARROW} LAVARIDGE TOWN$"
+	.string "{LEFT_ARROW} LAVARIDGE TOWN\p"
+	.string "Bring a towel. And a nose plug.$"
 

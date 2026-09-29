@@ -145,11 +145,13 @@ Route113_Text_FunWalkingThroughAsh:
 
 Route113_Text_RouteSign111:
 	.string "ROUTE 113\n"
-	.string "{RIGHT_ARROW} ROUTE 111$"
+	.string "{RIGHT_ARROW} ROUTE 111\p"
+	.string "Mind the ash. It's already in your shoes.$"
 
 Route113_Text_RouteSignFallarbor:
 	.string "ROUTE 113\n"
-	.string "{LEFT_ARROW} FALLARBOR TOWN$"
+	.string "{LEFT_ARROW} FALLARBOR TOWN\p"
+	.string "Population: small. Meteors: many.$"
 
 Route113_Text_TrainerTipsRegisterKeyItems:
 	.string "TRAINER TIPS\p"

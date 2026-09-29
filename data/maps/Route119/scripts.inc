@@ -579,7 +579,9 @@ Route119_Text_CanYourMonMakeSecretBase:
 
 Route119_Text_RouteSignFortree:
 	.string "ROUTE 119\n"
-	.string "{RIGHT_ARROW} FORTREE CITY$"
+	.string "{RIGHT_ARROW} FORTREE CITY\p"
+	.string "The city in the trees. Afraid of\n"
+	.string "heights? Too bad.$"
 
 Route119_Text_WeatherInstitute:
 	.string "WEATHER INSTITUTE$"

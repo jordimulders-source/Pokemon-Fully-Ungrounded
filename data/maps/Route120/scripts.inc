@@ -410,8 +410,11 @@ Kecleon_Text_UseDevonScopeMonAttacked:
 
 Route120_Text_RouteSignFortree:
 	.string "ROUTE 120\n"
-	.string "{LEFT_ARROW} FORTREE CITY$"
+	.string "{LEFT_ARROW} FORTREE CITY\p"
+	.string "You're almost there. Or you just left.\n"
+	.string "The sign doesn't know.$"
 
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
-	.string "{LEFT_ARROW} ROUTE 120$"
+	.string "{LEFT_ARROW} ROUTE 120\p"
+	.string "Pick one. Both are wrong.$"

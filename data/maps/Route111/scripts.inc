@@ -630,7 +630,9 @@ Route111_Text_WinstrateFamilyDestroyedMe:
 
 Route111_Text_RouteSignMauville:
 	.string "ROUTE 111\n"
-	.string "{DOWN_ARROW} MAUVILLE CITY$"
+	.string "{DOWN_ARROW} MAUVILLE CITY\p"
+	.string "You just came from there. Why are you\n"
+	.string "reading this?$"
 
 Route111_Text_WinstrateHouseSign:
 	.string "“Our family's hearts beat as one!”\n"
@@ -638,11 +640,13 @@ Route111_Text_WinstrateHouseSign:
 
 Route111_Text_RouteSign112:
 	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 112$"
+	.string "{LEFT_ARROW} ROUTE 112\p"
+	.string "The arrow is correct. Probably.$"
 
 Route111_Text_RouteSign113:
 	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 113$"
+	.string "{LEFT_ARROW} ROUTE 113\p"
+	.string "Also left. Everything is left. Don't ask.$"
 
 Route111_Text_OldLadysRestStopSign:
 	.string "OLD LADY'S REST STOP\n"
@@ -705,5 +709,6 @@ Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 Route111_Text_TrainerHillSign:
 	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
 	.string "“Scale the heights, you hot-blooded\n"
-	.string "TRAINERS!”$"
+	.string "TRAINERS!”\p"
+	.string "Your knees won't.$"
 

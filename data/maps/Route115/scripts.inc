@@ -137,7 +137,9 @@ Route115_Text_NeverKnowWhenCavePokemonWillAppear:
 
 Route115_Text_RouteSignRustboro:
 	.string "ROUTE 115\n"
-	.string "{DOWN_ARROW} RUSTBORO CITY$"
+	.string "{DOWN_ARROW} RUSTBORO CITY\p"
+	.string "A guy running with a parcel is normal\n"
+	.string "here.$"
 
 Route115_Text_MeteorFallsSign:
 	.string "METEOR FALLS\n"

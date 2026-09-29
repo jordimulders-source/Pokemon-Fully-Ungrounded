@@ -298,5 +298,7 @@ Route101_Text_WildPokemonInTallGrass:
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "{UP_ARROW} OLDALE TOWN\p"
+	.string "It's the only way. You can't get lost.\n"
+	.string "People still do.$"
 

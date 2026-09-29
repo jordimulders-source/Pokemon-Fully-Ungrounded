@@ -231,11 +231,14 @@ Route117_Text_AirIsTastyHere:
 
 Route117_Text_RouteSignVerdanturf:
 	.string "ROUTE 117\n"
-	.string "{LEFT_ARROW} VERDANTURF TOWN$"
+	.string "{LEFT_ARROW} VERDANTURF TOWN\p"
+	.string "Clean air! Please don't breathe too\n"
+	.string "much of it.$"
 
 Route117_Text_RouteSignMauville:
 	.string "ROUTE 117\n"
-	.string "{RIGHT_ARROW} MAUVILLE CITY$"
+	.string "{RIGHT_ARROW} MAUVILLE CITY\p"
+	.string "Bring your own electricity.$"
 
 Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"

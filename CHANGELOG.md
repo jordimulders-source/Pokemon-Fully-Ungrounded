@@ -14999,3 +14999,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.68] - Mom's afscheid zonder running-shoes-melding
 - Bij het weggaan uit Littleroot geen "running shoes"-regel, fanfare of "{PLAYER} doesn't know what to do." meer (die had je al vanaf het begin). Mom's afscheidsspeech (Village People, Mongolen, geldcadeau) blijft.
+
+### [v.0.6.69] - Wireless Club-tekst
+- `gText_SorryWirelessClubAdjustments`: "I'm terribly sorry, this room is completely useless. This game has never supported online play and link cables are out of fashion."

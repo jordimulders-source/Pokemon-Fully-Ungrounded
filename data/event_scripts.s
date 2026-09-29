@@ -1009,9 +1009,11 @@ gText_BigHoleInTheWall::
 	.string "There is a big hole in the wall.$"
 
 gText_SorryWirelessClubAdjustments::
-	.string "I'm terribly sorry.\n"
-	.string "The POKéMON WIRELESS CLUB is\l"
-	.string "undergoing adjustments now.$"
+	.string "I'm terribly sorry, this room is\n"
+	.string "completely useless.\p"
+	.string "This game has never supported\n"
+	.string "online play and link cables are\l"
+	.string "out of fashion.$"
 
 gText_UndergoingAdjustments::
 	.string "It appears to be undergoing\n"

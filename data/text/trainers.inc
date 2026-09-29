@@ -4781,12 +4781,10 @@ Route134_Text_AlexPostBattle:
 	.string "a long flight…$"
 
 Route134_Text_HitoshiIntro:
-	.string "You're a POKéMON TRAINER.\n"
-	.string "No need for words. We battle now.$"
+	.string "JUST DO IT!!!$"
 
 Route134_Text_HitoshiDefeat:
-	.string "… … … … … …\n"
-	.string "… … … … … …$"
+	.string "…Yesterday you said tomorrow.$"
 
 Route134_Text_HitoshiPostBattle:
 	.string "It was I who challenged you, and yet\n"

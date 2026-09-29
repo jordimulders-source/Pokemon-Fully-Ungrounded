@@ -14757,3 +14757,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Pacifidlog PC: de oude man zegt alleen "LAS MALVINAS SON ARGENTINAS."
 - Rustboro Pokémon School: football's coming home / it's never coming home / "Schade DEUTSCHLAND, alles ist vorbei!"
 - Route 111: werkloze life coach. Slateport: twee digital nomads die niks doen.
+
+### [v.0.6.25] - PokéNav-telefoontjes, Hitoshi
+- PokéNav Match Call-teksten in stijl: alle gymleiders (Roxanne, Brawly, Wattson, Flannery, Winona, Tate & Liza, Wallace), Steven (metal), Scott (creepy), Mr. Stone (Solitaire), Norman (bingewatcher), Wallace over Steven, en Prof. Birch bij het registreren (droppings). Mom, Wally, May/Brendan en de Elite Four nog niet.
+- Hitoshi (Black Belt, Route 134): "JUST DO IT!!!"

@@ -2248,16 +2248,21 @@ Route116_Text_ClarkPostBattle:
 	.string "To a HIKER, mountains are roads!$"
 
 Route116_Text_JoeyIntro:
-	.string "My POKéMON rule!\n"
-	.string "Check them out!$"
+	.string "My POOCHYENA isn't like other\n"
+	.string "POOCHYENA.\p"
+	.string "It's in the top percentage of\n"
+	.string "POOCHYENA!\p"
+	.string "…All four of them are.$"
 
 Route116_Text_JoeyDefeat:
-	.string "Ouch! A scrape!\n"
-	.string "I have to put on a bandage!$"
+	.string "Ouch! A scrape!\p"
+	.string "My POOCHYENA are still top percentage,\n"
+	.string "though!$"
 
 Route116_Text_JoeyPostBattle:
-	.string "Bandages are signs of toughness!\n"
-	.string "I've got another one!$"
+	.string "I'll call you sometime. About POOCHYENA.\p"
+	.string "They're in the top percentage, you\n"
+	.string "know.$"
 
 Route116_Text_JoseIntro:
 	.string "My BUG POKéMON are tough!\n"
@@ -2393,15 +2398,17 @@ Route116_Text_DevanPostBattle:
 	.string "types, that's what I ought to do.$"
 
 Route116_Text_JohnsonIntro:
-	.string "It's a dead end up here.\n"
-	.string "I'm bored, so can we battle?$"
+	.string "It's a dead end up here. I'm bored.\p"
+	.string "So I taught my whole team METRONOME.\p"
+	.string "Every turn is a surprise! Even for me!$"
 
 Route116_Text_JohnsonDefeat:
-	.string "That was fun even though I lost.$"
+	.string "METRONOME picked… losing.$"
 
 Route116_Text_JohnsonPostBattle:
-	.string "Want to stay here and keep\n"
-	.string "me company?$"
+	.string "Want to stay and watch?\p"
+	.string "Sometimes it picks EXPLOSION.\p"
+	.string "Then I'm not bored.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"

@@ -14828,3 +14828,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Cyndy (Battle Girl, Route 115) heeft zo lang getraind dat ze zweeft. Leah (Mt. Pyre 2F) is een Channeler uit Lavender Town.
 - Kara (Route 131): "Where do I put my POKé BALLS? Teehee… Woman's secret!" Hector (Route 115): I SWALLOW SLUDGE TO TRANSFORM MYSELF. Deandre (Route 118): I AM GOING TO ENJOY AN EGG. Makayla (Route 132): haar man heeft voedselvergiftiging.
 - Pacifidlog: het zusje van de Yes Town-jongen waarschuwt dat hij alleen gesloten vragen stelt. Route 117: "The air is tasty here!" is nog gekker.
+
+### [v.0.6.39] - Joey en Johnson (Route 116)
+- Joey (Youngster) heeft nu vier Poochyena (lv 12–13), allemaal "in the top percentage of POOCHYENA".
+- Het Metronome-team van Joey (Machop, Meowth, Electabuzz, Plusle, Chansey, Lucario, allemaal Metronome) is naar Johnson gegaan, met bijpassende Metronome-dialoog. Johnsons oude team (Shroomish, Cacnea, Tandemaus) is vervallen.

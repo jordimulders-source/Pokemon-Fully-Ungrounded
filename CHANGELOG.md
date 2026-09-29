@@ -14712,3 +14712,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Winstrates: de Macho Brace zit onder het kwijl.
 - Union Room (geen adapter): nog sarcastischer.
 - Musea: de receptioniste van het Oceanic Museum en de curator van het Lilycove Art Museum zijn irritant overdreven vriendelijk.
+
+### [v.0.6.18] - Wally (geschreven door Jordi)
+- Bord bij zijn huis: "WALLY'S LIVING OF PLACE".
+- Wally in Wanda's huis en op Victory Road praat in zijn eigen gebroken taal ("Strongness will be, then, fight amore!", "AGES FOR THE FIGHT! Pumping!", zoekt een vrouw en kind).

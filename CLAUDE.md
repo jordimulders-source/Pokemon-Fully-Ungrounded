@@ -19,6 +19,13 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 ## Samenwerken
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
+## Quality of life
+- **De game respecteert de tijd van de speler.** Pokémon is een JRPG vol herhaling; schrap die herhaling zodat speed-up-knoppen niet nodig zijn. Animaties (aanvallen, schermtransities) zijn tof en blijven; wachttijden, overbodige teksten, ja/nee-vragen en minigames gaan eruit.
+- Al gedaan: korte intro, geen tutorial, instant heal bij de verpleegster, vissen zonder minigame (Old Rod blijft bewust slecht), tekstsnelheid standaard Fast, B zet de cursor op Run, korter flitsen vóór transities.
+- Bewust níet: Exp. Share als Key Item, pc in het menu.
+- Goedgekeurd, nog te doen: HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Repel automatisch opnieuw gebruiken, Fly vanuit de Town Map, Move Deleter bij de Move Relearner, EV/IV-overzicht in het summary-scherm, Rare Candy/vitamines in één keer meerdere gebruiken, kaartnaam-popup niet herhalen, itembeschrijving bij de eerste keer oppakken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc).
+- Later proberen: kortere pauzes tussen gevechtsberichten (`B_WAIT_TIME_MULTIPLIER` 10 → 8) en snellere schermtransities.
+
 ## Wilde encounters (`src/data/wild_encounters.json`)
 - Land heeft precies **12 slots** met kansen 20/20/10/10/10/10/5/5/4/4/1/1. Meer of minder entries = bug (extra entries komen nooit voor).
 - **Design-filosofie:** bijna geen super zeldzame (1%) encounters. Voeg je een soort toe, geef die minimaal ~5%, bij voorkeur door twee slots te combineren (bijv. 4% + 1%).

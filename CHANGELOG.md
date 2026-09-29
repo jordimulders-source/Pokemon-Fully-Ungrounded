@@ -14646,3 +14646,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Pokémon League 1F: Rare Candy in de winkel.
 - Samengevoegd met wat de repo al had: Cliffords double battle, de Spiritomb/Muk-prullenbakken, de uitgebreide Lilycove-winkel, de Ability Capsule in Pacifidlog, de naadloze Mini Forest-verbinding en de fixes in Littleroot bleven behouden.
 - Regelafbreking gerepareerd in Flannery's overwinningstekst en de Mossdeep Gym-gids (twee keer `\n` in één tekstvak).
+
+### [v.0.6.8] - Dewford: roddeldorp (Randy & Madame Silk)
+- Nieuw verhaaltje in Dewford: iedereen roddelt over RANDY, die vreemdgaat met MADAME SILK (de oude man die de Silk Scarf geeft en een burlesque act doet).
+- Huis 1: Randy (ontkent alles), zijn vrouw (het slachtoffer, weet van niks) en hun Zigzagoon (weet alles).
+- Huis 2: Madame Silk (Silk Scarf-teksten) en de jongen die mijmert over de tijd dat Brawly's gym nog om vechten draaide.
+- Pokémon Center: de vrouw die Madame Silk en Randy de grot in zag gaan; de HM-man over flauwgevallen Pokémon die nog moeten vliegen en surfen.

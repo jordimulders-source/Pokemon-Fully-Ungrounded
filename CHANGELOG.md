@@ -14943,3 +14943,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.58] - Wally-events getest; aces bewaard voor het laatst
 - Beide Wally-events in de emulator doorgespeeld: Meteor Falls (Wally ziet je, loopt op je af, dialoog, paarse mugshot, gevecht, daarna weg) en Mt. Chimney (Maxie's dialoog, Tabitha loopt naar Maxie, Wally rent binnen, 3 Pokémon kiezen, dubbele mugshot, tag battle, na afloop verdwijnen Magma en Wally). Annuleer je het kiezen, dan kom je gewoon terug in het keuzescherm.
 - Wally stuurde zonder AI zijn Pokémon in willekeurige volgorde in, waardoor Kirlia niet als laatste kwam. Nu hebben Wally (beide gevechten), Maxie (Camerupt) en Tabitha in de tag battle (Hisuian Arcanine) `AI_FLAG_ACE_POKEMON`: de laatste Pokémon komt pas als allerlaatste. Wally's moves blijven willekeurig.
+
+### [v.0.6.59] - Eigen muziek: Colress en Macarena
+- Twee MIDI's van Jordi omgezet naar GBA-muziek: de Colress-gevechtsmuziek (Pokémon Black 2/White 2) en de Macarena.
+  - Colress is een extra keuze bij TRAINER MUSIC in het optiemenu ("COLRESS").
+  - Macarena is Prof. Birch's gevechtsmuziek (`MUS_GROUNDED_VS_BIRCH`, in `GetBattleBGM`).
+- Nieuwe General MIDI-achtige voicegroup `sound/voicegroups/grounded_gm.inc`: GM-programma's gekoppeld aan instrumenten die al in de ROM zitten (piano, orgel, bassen, strijkers, koor, trompet, fluit, hobo, blokgolf-leads, drumset op programma 127).
+- De originele MIDI's staan in `sound/songs/grounded_src/`; `python3 tools/grounded/midi_songs.py` (vereist `pip install mido`) maakt er `sound/songs/midi/mus_grounded_*.mid` van: drumkanaal → drumset, maximaal 10 sporen (GBA-limiet; bij Macarena vervallen de fluit die de piccolo verdubbelt, een tweede square lead en een los effect), kanalen/programma's omgezet en loop-markers rond het hele nummer.
+- Getest in de emulator: tijdens het Birch-gevecht speelt de Macarena, Colress speelt af, nauwelijks clipping. Klinkt in GBA-kwaliteit, dus niet als het origineel.

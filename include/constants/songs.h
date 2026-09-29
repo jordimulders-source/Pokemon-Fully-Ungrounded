@@ -545,6 +545,8 @@
 #define PH_NURSE_BLEND              607
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
+#define MUS_GROUNDED_VS_COLRESS     610 // Project Grounded: Colress-gevechtsmuziek (Black 2/White 2), keuze in het optiemenu
+#define MUS_GROUNDED_VS_BIRCH       611 // Project Grounded: Macarena, Birch's gevechtsmuziek
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

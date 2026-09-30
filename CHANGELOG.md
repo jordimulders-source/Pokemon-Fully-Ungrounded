@@ -15114,3 +15114,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **IJskamer 1:** de twee losse tiles links bij rij 15–16 zijn weg; de linkerwand loopt egaal door tot aan de uitgang.
 - **Route 115:** de Coldstep-ingang staat één tile naar rechts (36,9).
 - **Terra Cave (Groudon, na de Elite Four):** de verborgen oost-ingang op Route 115 staat nu helemaal ergens anders, in de rotswand op (26,9) in het maze-gebied. De warp en de plaats- en opruimscripts in `abnormal_weather.inc` zijn aangepast.
+
+### [v.0.6.87] - Build-fix: gewijzigde kaarten altijd in de ROM
+- `map_data_rules.mk`: `maps.o` hangt nu ook af van alle `data/layouts/*/*.bin`. Eerder werd een gewijzigde `map.bin` (zonder wijziging in `layouts.json`) niet opnieuw ingebouwd, waardoor de ROM nog een oude kaart kon bevatten (zo stond in beta 2 nog de oude zandtunnel van Coldstep Cave).

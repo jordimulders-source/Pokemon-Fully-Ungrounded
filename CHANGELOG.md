@@ -15108,3 +15108,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Zandgang** is een L-vormige gang: je komt zuid binnen, loopt een paar stappen omhoog, dan naar het oosten, en gaat door het gat in de noordwand ijskamer 1 in (daar kom je zuid binnen).
 - **IJskamer 2:** het stuk tussen de twee ladders is een glijpuzzel (8 ijsblokken, kortste oplossing 13 zetten). Items op losse sneeuwtegels: Never-Melt Ice (2,2), Ice Stone (8,6), PP Up (15,13). Met de solver gecontroleerd dat alles bereikbaar is en je niet kunt vastlopen.
 - In de emulator doorgelopen: Route 115 → zandgang → ijskamer 1 → (ladder) → ijskamer 2 → puzzel opgelost tot de uitgangsladder.
+
+### [v.0.6.86] - Coldstep Cave: echte tunnel, rechte wand; Terra Cave verplaatst
+- **Tunnel (ingang):** geen zand en bruine vlakken meer. Het is nu een gewone grottunnel met rotsvloer en nette randen, opgebouwd met dezelfde rand-regels als Altering Cave (bovenrand, onderrand, zijranden, binnen- en buitenhoeken). Je komt zuid binnen, loopt omhoog, dan oost, en gaat noord door het gat.
+- **IJskamer 1:** de twee losse tiles links bij rij 15–16 zijn weg; de linkerwand loopt egaal door tot aan de uitgang.
+- **Route 115:** de Coldstep-ingang staat één tile naar rechts (36,9).
+- **Terra Cave (Groudon, na de Elite Four):** de verborgen oost-ingang op Route 115 staat nu helemaal ergens anders, in de rotswand op (26,9) in het maze-gebied. De warp en de plaats- en opruimscripts in `abnormal_weather.inc` zijn aangepast.

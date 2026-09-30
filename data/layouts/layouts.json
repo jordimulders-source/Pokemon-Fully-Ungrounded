@@ -1302,6 +1302,36 @@
       "blockdata_filepath": "data/layouts/MeteorFalls_CraterRoom/map.bin"
     },
     {
+      "id": "LAYOUT_COLDSTEP_CAVE_ICE_ROOM_2",
+      "name": "ColdstepCave_IceRoom2_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ColdstepCave_IceRoom2/border.bin",
+      "blockdata_filepath": "data/layouts/ColdstepCave_IceRoom2/map.bin"
+    },
+    {
+      "id": "LAYOUT_COLDSTEP_CAVE_ICE_ROOM_1",
+      "name": "ColdstepCave_IceRoom1_Layout",
+      "width": 22,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ColdstepCave_IceRoom1/border.bin",
+      "blockdata_filepath": "data/layouts/ColdstepCave_IceRoom1/map.bin"
+    },
+    {
+      "id": "LAYOUT_COLDSTEP_CAVE_ENTRANCE",
+      "name": "ColdstepCave_Entrance_Layout",
+      "width": 18,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ColdstepCave_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/ColdstepCave_Entrance/map.bin"
+    },
+    {
       "id": "LAYOUT_RUSTURF_TUNNEL",
       "name": "RusturfTunnel_Layout",
       "width": 36,

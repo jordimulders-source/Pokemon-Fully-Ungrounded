@@ -30,8 +30,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 
 ## Wilde encounters (`src/data/wild_encounters.json`)
 - Land heeft precies **12 slots** met kansen 20/20/10/10/10/10/5/5/4/4/1/1. Meer of minder entries = bug (extra entries komen nooit voor).
-- **Design-filosofie:** bijna geen super zeldzame (1%) encounters. Voeg je een soort toe, geef die minimaal ~5%, bij voorkeur door twee slots te combineren (bijv. 4% + 1%).
-- Vervang bij voorkeur een slot van een soort die **dubbel** in de tabel staat, zodat er geen soort verdwijnt.
+- **Design-filosofie:** elke tabel heeft **12 unieke soorten**, geen soort in twee slots. De 1%-slots zijn dus echte zeldzaamheden.
+- In oudere tabellen die nog dubbele soorten hebben: vervang bij voorkeur zo'n dubbel slot, zodat er geen soort verdwijnt.
 - Elke entry heeft `min_level` én `max_level` (ontbrekende `max_level` gaf eerder lv 100-encounters).
 - Schuif je slots door, behoud dan de zeldzaamheidsvolgorde (wie het zeldzaamst was, blijft dat).
 - Houd rekening met evolutielevels (bijv. Deino evolueert op 32, Zweilous op 53).

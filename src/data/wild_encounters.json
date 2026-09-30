@@ -4761,8 +4761,71 @@
               { "min_level": 18, "max_level": 20, "species": "SPECIES_DWEBBLE" },
               { "min_level": 19, "max_level": 20, "species": "SPECIES_JANGMO_O" },
               { "min_level": 19, "max_level": 19, "species": "SPECIES_BELDUM" },
-              { "min_level": 20, "max_level": 20, "species": "SPECIES_JANGMO_O" },
-              { "min_level": 19, "max_level": 19, "species": "SPECIES_BELDUM" }
+              { "min_level": 20, "max_level": 20, "species": "SPECIES_CHINGLING" },
+              { "min_level": 20, "max_level": 20, "species": "SPECIES_SOLOSIS" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_COLDSTEP_CAVE_ENTRANCE",
+          "base_label": "gColdstepCave_Entrance",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_SNORUNT" },
+              { "min_level": 29, "max_level": 30, "species": "SPECIES_SNOVER" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_BERGMITE" },
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_SMOOCHUM" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_SEALEO" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_SNOM" },
+              { "min_level": 29, "max_level": 29, "species": "SPECIES_VULPIX_ALOLA" },
+              { "min_level": 30, "max_level": 30, "species": "SPECIES_CETODDLE" },
+              { "min_level": 30, "max_level": 30, "species": "SPECIES_FRIGIBAX" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_PILOSWINE" },
+              { "min_level": 31, "max_level": 31, "species": "SPECIES_EISCUE" },
+              { "min_level": 30, "max_level": 30, "species": "SPECIES_DARUMAKA_GALAR" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_COLDSTEP_CAVE_ICE_ROOM_1",
+          "base_label": "gColdstepCave_IceRoom1",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_VANILLISH" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_SANDSLASH_ALOLA" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_BEARTIC" },
+              { "min_level": 30, "max_level": 31, "species": "SPECIES_SNORUNT" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_BERGMITE" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_PILOSWINE" },
+              { "min_level": 31, "max_level": 32, "species": "SPECIES_SNEASEL" },
+              { "min_level": 31, "max_level": 32, "species": "SPECIES_JYNX" },
+              { "min_level": 31, "max_level": 32, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 31, "max_level": 32, "species": "SPECIES_CRYOGONAL" },
+              { "min_level": 32, "max_level": 32, "species": "SPECIES_MR_MIME_GALAR" },
+              { "min_level": 32, "max_level": 32, "species": "SPECIES_FROSLASS" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_COLDSTEP_CAVE_ICE_ROOM_2",
+          "base_label": "gColdstepCave_IceRoom2",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_ABOMASNOW" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_BEARTIC" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_GLALIE" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_FROSLASS" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_VANILLISH" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_SEALEO" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_JYNX" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_NINETALES_ALOLA" },
+              { "min_level": 32, "max_level": 33, "species": "SPECIES_CETODDLE" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_EISCUE" },
+              { "min_level": 32, "max_level": 32, "species": "SPECIES_DARUMAKA_GALAR" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_FRIGIBAX" }
             ]
           }
         }

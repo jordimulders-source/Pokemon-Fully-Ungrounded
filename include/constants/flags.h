@@ -53,10 +53,10 @@
 #define FLAG_HIDE_METEOR_FALLS_WALLY  0x27 // Project Grounded: Wally bij de ingang van Meteor Falls
 #define FLAG_HIDE_ROUTE115_KECCLES    0x28 // Project Grounded: Keccles op het strand van Route 115
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE    0x29 // Project Grounded
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_ITEM_COLDSTEP_CAVE_ICE_STONE    0x2A // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_NEVER_MELT_ICE    0x2B // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_PP_UP    0x2C // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag

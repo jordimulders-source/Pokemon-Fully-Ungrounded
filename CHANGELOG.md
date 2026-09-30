@@ -15057,3 +15057,16 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.78] - TM51 Seltzer Surge in de Aqua Hideout
 - TM51 (Seltzer Surge) ligt als Pokéball op de tafel naast de laptop in Aqua Hideout B1F (23,19). Vlag: `FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE` (0x29).
 - De laptop (22,19) is leesbaar: "On this laptop there is a Google Doc, reading the following: Our hard work, finally paid off. The ultimate move. This will be a commercial success, bottle, ship and sell it! Sparkling water forever!"
+
+### [v.0.6.79] - Coldstep Cave (eerste deel van het sneeuwgebied) + unieke encounter-slots
+- **Route 115:** de Mach Bike-helling op (28,8–9) is een trap geworden, altijd te gebruiken. Nieuwe grotingang in de rotswand op (35,10), boven het Jigglypuff-gebied (Surf nodig).
+- **Coldstep Cave** (nieuw gebied `MAPSEC_COLDSTEP_CAVE`, stenen naambordje; op de Town Map sta je dan op Route 115). Van west naar oost:
+  - **Ingang:** korte zandgang in Shoal Cave-stijl. Een gat in de wand leidt naar beneden.
+  - **IJskamer 1:** je komt binnen via een ladder. Glijpuzzel in Crystal-stijl met 14 ijsblokken, kortste oplossing 12 zetten. Met een solver gecontroleerd dat je nergens vast kunt komen te zitten, en in de emulator helemaal uitgespeeld. Max Revive bij de uitgang. Naadloos verbonden met kamer 2 in het oosten.
+  - **IJskamer 2:** sneeuwvloer met een ijsveld in het midden. Ice Stone (op het ijs), Never-Melt Ice, PP Up. Ladder in de noordoosthoek, straks de uitgang naar Route 135 (volgende stap).
+- **Wilde Pokémon** (12 unieke soorten per kamer, lv 28–33, ijs-soorten die nog weinig voorkomen, levels passend bij de evolutielevels van dit project):
+  - Ingang: Snorunt, Snover, Bergmite, Smoochum, Sealeo, Snom, Alola-Vulpix, Cetoddle, Frigibax, Piloswine, Eiscue, Galar-Darumaka.
+  - IJskamer 1: Vanillish, Alola-Sandslash, Beartic, Snorunt, Bergmite, Piloswine, Sneasel, Jynx, Delibird, Cryogonal, Galar-Mr. Mime, Froslass.
+  - IJskamer 2: Abomasnow, Beartic, Glalie, Froslass, Vanillish, Sealeo, Jynx, Alola-Ninetales, Cetoddle, Eiscue, Galar-Darumaka, Frigibax.
+- **Meteor Falls kraterkamer:** de dubbele 1%-slots (Jangmo-o, Beldum) zijn vervangen door Chingling en Solosis, zodat ook daar alle 12 slots uniek zijn.
+- CLAUDE.md: encounter-filosofie bijgewerkt (12 unieke soorten per tabel).

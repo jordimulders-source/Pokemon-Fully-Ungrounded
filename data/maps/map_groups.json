@@ -431,7 +431,10 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "Route102_MiniForest",
-    "MeteorFalls_CraterRoom"
+    "MeteorFalls_CraterRoom",
+    "ColdstepCave_Entrance",
+    "ColdstepCave_IceRoom1",
+    "ColdstepCave_IceRoom2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

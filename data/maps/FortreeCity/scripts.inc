@@ -67,8 +67,9 @@ FortreeCity_EventScript_AskUseDevonScope::
 	release
 	end
 
+@ Project Grounded: de onzichtbare Kecleon is Keccles (tweede gevecht)
 FortreeCity_EventScript_UseDevonScope::
-	msgbox FortreeCity_Text_UsedDevonScopePokemonFled, MSGBOX_DEFAULT
+	msgbox FortreeCity_Text_UsedDevonScopeKeccles, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Movement_KecleonAppears
 	waitmovement 0
@@ -76,6 +77,8 @@ FortreeCity_EventScript_UseDevonScope::
 	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
+	msgbox FortreeCity_Text_KecclesSpying, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_KECCLES_2, FortreeCity_Text_KecclesDefeat
 	applymovement VAR_LAST_TALKED, FortreeCity_Movement_KecleonFlee
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -139,6 +142,30 @@ FortreeCity_Text_SomethingUnseeable:
 FortreeCity_Text_UnseeableUseDevonScope:
 	.string "Something invisible is in the way.\p"
 	.string "Use the DEVON SCOPE?$"
+
+FortreeCity_Text_UsedDevonScopeKeccles:
+	.string "{PLAYER} used the DEVON SCOPE.\p"
+	.string "An invisible POKéMON became visible!$"
+
+FortreeCity_Text_KecclesSpying:
+	.string "KECCLES: Wow, was that necessary?\p"
+	.string "Oh, I was camouflaged? My apologies.\p"
+	.string "I was spying the GYM, not in a creepy\n"
+	.string "way, in a tactical way. Planning my\l"
+	.string "attack.\p"
+	.string "Let me tell you, most POKéMON have no\n"
+	.string "clue about tactics.\p"
+	.string "They can be smart, but they are too\n"
+	.string "obedient.\p"
+	.string "Once they get confined to a POKé BALL,\n"
+	.string "their free will wanes.\p"
+	.string "Sometimes I wonder, what real free will\n"
+	.string "is…\p"
+	.string "Anyways, let's check if we are both\n"
+	.string "ready for WINONA!$"
+
+FortreeCity_Text_KecclesDefeat:
+	.string "Hmmm…$"
 
 FortreeCity_Text_UsedDevonScopePokemonFled:
 	.string "{PLAYER} used the DEVON SCOPE.\p"

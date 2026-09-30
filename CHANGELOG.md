@@ -15117,3 +15117,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.87] - Build-fix: gewijzigde kaarten altijd in de ROM
 - `map_data_rules.mk`: `maps.o` hangt nu ook af van alle `data/layouts/*/*.bin`. Eerder werd een gewijzigde `map.bin` (zonder wijziging in `layouts.json`) niet opnieuw ingebouwd, waardoor de ROM nog een oude kaart kon bevatten (zo stond in beta 2 nog de oude zandtunnel van Coldstep Cave).
+
+### [v.0.6.88] - Keccles bij de Fortree Gym, muziekcredits, trap en ingang Route 115 afgewerkt
+- **Keccles 2** (`TRAINER_KECCLES_2`): de onzichtbare Kecleon voor de Fortree Gym is nu Keccles. Na de Devon Scope wordt hij zichtbaar, houdt Jordi's speech over tactiek en vrije wil, en daagt je uit ("let's check if we are both ready for WINONA!"). Na het gevecht loopt hij weg, zoals de oude Kecleon.
+  - Team (lv 39, ace lv 41): Heliolisk, Charizard, Serperior, Clodsire, Bellibolt en **Salazzle** (Corrosion: Nasty Plot, Venoshock, Incinerate, Poison Gas), met mugshot en ace-AI.
+- **Fortree Pokémon Center:** de jongen met de PokéNav-uitleg vertelt nu vol verbazing dat er een pratende Kecleon binnenkwam die zijn Pokémon liet healen en iedereen goedemorgen wenste. Heel creepy.
+- **CREDITS.md:** alle toegevoegde muziek met de games waar ze vandaan komen (Pokémon B/W, B2/W2, DPPt, HGSS, Yoshi's Island, Mario Kart: Super Circuit), de namen uit de MIDI's (Koji Kondo als componist, Omar / Saru-kun als sequencer, 当野卓人) en Los del Río voor de Macarena.
+- **Route 115:** de trap is aan beide kanten afgewerkt; links zit de gewone rotswand in plaats van de roze rand van de oude Mach Bike-helling, rechts loopt de wand door. De wand links van de Coldstep-ingang loopt nu door tot aan de deur.

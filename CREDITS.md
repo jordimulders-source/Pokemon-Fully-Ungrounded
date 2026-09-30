@@ -2,6 +2,19 @@
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
 
+### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)
+Alle rechten op de originele composities liggen bij de oorspronkelijke makers; de nummers staan in de game als fan-bewerking, niet commercieel.
+- **Battle! Colress**: Pokémon Black 2 / White 2 (© Nintendo / Creatures Inc. / GAME FREAK inc.). MIDI-sequencer onbekend.
+- **N's Theme** en **Battle! Ghetsis**: Pokémon Black / White (© Nintendo / Creatures Inc. / GAME FREAK inc.). N's Theme gemaakt met NoteWorthy Composer; sequencer onbekend.
+- **Battle! Champion (Cynthia)** en **Battle! Cyrus**: Pokémon Diamond / Pearl / Platinum (© Nintendo / Creatures Inc. / GAME FREAK inc.). MIDI-sequencer onbekend.
+- **Battle! Giratina**: Pokémon Platinum (© Nintendo / Creatures Inc. / GAME FREAK inc.). MIDI-sequencer onbekend.
+- **Dark Cave**: Pokémon HeartGold / SoulSilver (origineel uit Pokémon Gold / Silver; © Nintendo / Creatures Inc. / GAME FREAK inc.). MIDI-sequencer onbekend.
+- **Castle & Fortress ("Yoshi's Castle")**: Super Mario World 2: Yoshi's Island (© Nintendo), componist **Koji Kondo**; MIDI op gehoor uitgeschreven door **当野卓人** (volgens de MIDI).
+- **Boo Lake / Broken Pier**: Mario Kart: Super Circuit (© Nintendo); MIDI door **Saru-kun (Omar)**.
+- **Sunset Wilds**: Mario Kart: Super Circuit (© Nintendo); MIDI door **Omar**.
+- **Macarena** (Prof. Birch' gevechtsmuziek): **Los del Río** (Antonio Romero Monge en Rafael Ruiz Perdigones). MIDI-sequencer onbekend.
+- Omzetting naar de GBA-geluidsengine: `tools/grounded/prepare_midi.py` en `tools/grounded/midi_songs.py`.
+
 ## Credits ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

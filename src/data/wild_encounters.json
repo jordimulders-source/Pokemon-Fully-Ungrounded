@@ -4744,6 +4744,27 @@
               { "min_level": 7, "max_level": 8, "species": "SPECIES_NYMBLE" }
             ]
           }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_CRATER_ROOM",
+          "base_label": "gMeteorFalls_CraterRoom",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              { "min_level": 17, "max_level": 19, "species": "SPECIES_MINIOR_METEOR" },
+              { "min_level": 17, "max_level": 19, "species": "SPECIES_CLEFAIRY" },
+              { "min_level": 17, "max_level": 19, "species": "SPECIES_INKAY" },
+              { "min_level": 17, "max_level": 19, "species": "SPECIES_GOTHITA" },
+              { "min_level": 18, "max_level": 20, "species": "SPECIES_CARBINK" },
+              { "min_level": 16, "max_level": 17, "species": "SPECIES_ROLYCOLY" },
+              { "min_level": 18, "max_level": 20, "species": "SPECIES_ELGYEM" },
+              { "min_level": 18, "max_level": 20, "species": "SPECIES_DWEBBLE" },
+              { "min_level": 19, "max_level": 20, "species": "SPECIES_JANGMO_O" },
+              { "min_level": 19, "max_level": 19, "species": "SPECIES_BELDUM" },
+              { "min_level": 20, "max_level": 20, "species": "SPECIES_JANGMO_O" },
+              { "min_level": 19, "max_level": 19, "species": "SPECIES_BELDUM" }
+            ]
+          }
         }
       ]
     },

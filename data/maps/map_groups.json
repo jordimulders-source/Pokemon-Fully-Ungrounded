@@ -430,7 +430,8 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "Route102_MiniForest"
+    "Route102_MiniForest",
+    "MeteorFalls_CraterRoom"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -206,6 +206,13 @@
       "elevation": 0,
       "dest_map": "MAP_METEOR_FALLS_STEVENS_CAVE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 40,
+      "elevation": 3,
+      "dest_map": "MAP_METEOR_FALLS_CRATER_ROOM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

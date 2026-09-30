@@ -15024,3 +15024,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Team lv 13–14: Charmander (Dragon Breath/Ember/Smokescreen/Scratch), Snivy (Vine Whip/Wrap/Growth/Leer), Helioptile (Thunder Shock/Mud-Slap/Quick Attack/Tail Whip), Salandit (ace, lv 14: Ember/Smog/Poison Gas/Scratch).
   - Na het gevecht: Jordi's afscheidstekst, daarna verdwijnt hij (`FLAG_HIDE_ROUTE115_KECCLES`).
 - Sparkling Surf: ongeveer de helft meer bubbels.
+
+### [v.0.6.73] - Meteor Falls: kraterkamer met willekeurige static encounter
+- Nieuwe opening onderin de muur van Meteor Falls 1F, helemaal rechts naast het brokkelige gesteente (warp op (14,40)).
+- Nieuwe kaart `MeteorFalls_CraterRoom` (vloer van 10×10) in Meteor Falls-stijl: stalactietenmuur met een gat als ingang, drie kraters en verspreide rotsen.
+- Wilde Pokémon (ondervertegenwoordigd, passend bij het meteoor/ruimte-thema), lv 16–20:
+  Minior (Meteor) 20%, Clefairy 20%, Inkay 10%, Gothita 10%, Carbink 10%, Rolycoly 10% (lv 16–17, evolueert op 18), Elgyem 5%, Dwebble 5%, Jangmo-o 5% (4+1), Beldum 5% (4+1).
+- Static encounter: bij het binnenkomen is er 25% kans op een willekeurige Pokémon midden in de kamer: Bagon, Deino, Lapras (lv 22), Mienfoo, Minior of Carbink (lv 20). Na het gevecht verdwijnt hij; opnieuw binnenkomen geeft een nieuwe kans.

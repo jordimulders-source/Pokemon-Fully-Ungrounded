@@ -15081,3 +15081,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.81] - Mini Forest: minder gras
 - Ongeveer 30% van het hoge gras in het doolhof is gewone grond geworden, in hele stukken van 2×2 zodat je niet de hele weg door gras hoeft.
 - De Leftovers liggen nu op grond in plaats van in het gras.
+
+### [v.0.6.82] - Coldstep Cave: ijskamer 1 naar het Ice Path uit Crystal
+- IJskamer 1 (39×26) is nagebouwd naar Ice Path 1F uit Pokémon Crystal, zonder de strook aan de oostkant. Het grote ijsveld linksboven, de rotsruggen (als ijsblokken), de sneeuwgangen en de vier trappen tussen de delen komen overeen met het origineel. De ijspuzzel is nu maar één onderdeel van de kamer.
+- De ingang zit aan de **westkant**: de zandgang loopt aan de oostkant uit (pijl naar rechts) en je komt links in de ijskamer binnen (pijl naar links om terug te gaan). Daarvoor zijn twee nieuwe pijl-metatiles toegevoegd aan de grot-tileset (926: sneeuw met pijl west, 927: zand met pijl oost); het oude gat in de wand is dicht.
+- Het gat naar beneden uit Crystal (rechtsboven) is een **ladder omhoog** naar ijskamer 2, want je klimt.
+- Max Revive ligt in het doodlopende hoekje onderaan (25,23).
+- Met een solver gecontroleerd: de uitgang is bereikbaar (kortste route 74 zetten) en vanuit elke bereikbare plek kom je nog terug of verder, dus je kunt niet vastlopen. In de emulator is de hele route uitgespeeld tot in kamer 2.

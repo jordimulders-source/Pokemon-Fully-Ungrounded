@@ -1314,8 +1314,8 @@
     {
       "id": "LAYOUT_COLDSTEP_CAVE_ICE_ROOM_1",
       "name": "ColdstepCave_IceRoom1_Layout",
-      "width": 22,
-      "height": 16,
+      "width": 39,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ColdstepCave_IceRoom1/border.bin",

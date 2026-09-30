@@ -18492,15 +18492,20 @@ SparklingSurfBubbles:
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	delay 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	playsewithpan SE_M_BUBBLE3, 0
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	delay 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	delay 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	delay 3

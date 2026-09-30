@@ -15016,3 +15016,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Animatie `gBattleAnimMove_SparklingSurf` hergebruikt de Surf-golf en de bubbel-graphics van Bubble/BubbleBeam. De bubbel-sprites (`gSurfBubbleSpriteTemplate`, `gSurfBigBubbleSpriteTemplate`) staan in `src/battle_anim_water.c`.
   - Stats voorlopig gelijk aan Surf: Water, special, 90 power, 100 acc, 15 PP, raakt alle Pokémon naast de gebruiker. Nog door Jordi te bepalen.
   - Nog geen Pokémon leert hem.
+
+### [v.0.6.72] - Keccles de Kecleon (eerste ontmoeting) + meer bubbels bij Sparkling Surf
+- Nieuwe trainer **Keccles** (`TRAINER_KECCLES_1`, klasse {PKMN} TRAINER, eigen trainerplaatje `TRAINER_PIC_KECLEON` = de Kecleon-gevechtssprite, mugshot).
+  - Staat op het strand van Route 115 (6,66) en kijkt naar links, naar het water. Daar kun je al komen vóór Roxanne.
+  - Jordi's dialoog met een ja/nee-keuze. Bij "nee" zegt hij "Oh. Okay." (tijdelijke tekst) en draait hij terug naar het water.
+  - Team lv 13–14: Charmander (Dragon Breath/Ember/Smokescreen/Scratch), Snivy (Vine Whip/Wrap/Growth/Leer), Helioptile (Thunder Shock/Mud-Slap/Quick Attack/Tail Whip), Salandit (ace, lv 14: Ember/Smog/Poison Gas/Scratch).
+  - Na het gevecht: Jordi's afscheidstekst, daarna verdwijnt hij (`FLAG_HIDE_ROUTE115_KECCLES`).
+- Sparkling Surf: ongeveer de helft meer bubbels.

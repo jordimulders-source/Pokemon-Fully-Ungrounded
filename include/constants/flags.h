@@ -51,7 +51,7 @@
 #define FLAG_ORAS_DOWSING    0x25 // Project Grounded: Itemfinder werkt als de ORAS Dowsing Machine
 #define FLAG_HIDE_MT_CHIMNEY_WALLY    0x26 // Project Grounded: Wally rent binnen op Mt. Chimney
 #define FLAG_HIDE_METEOR_FALLS_WALLY  0x27 // Project Grounded: Wally bij de ingang van Meteor Falls
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_HIDE_ROUTE115_KECCLES    0x28 // Project Grounded: Keccles op het strand van Route 115
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

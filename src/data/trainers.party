@@ -25841,3 +25841,45 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mud Shot
 - Bite
 - Poison Gas
+
+=== TRAINER_KECCLES_1 ===
+Name: KECCLES
+Class: Rival
+Pic: Kecleon
+Gender: Male
+Music: Male
+Double Battle: No
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+Mugshot: Green
+
+Charmander
+Level: 13
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Dragon Breath
+- Ember
+- Smokescreen
+- Scratch
+
+Snivy
+Level: 13
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Vine Whip
+- Wrap
+- Growth
+- Leer
+
+Helioptile
+Level: 13
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Thunder Shock
+- Mud-Slap
+- Quick Attack
+- Tail Whip
+
+Salandit
+Level: 14
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Ember
+- Smog
+- Poison Gas
+- Scratch

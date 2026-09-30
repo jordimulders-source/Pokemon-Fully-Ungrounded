@@ -146,3 +146,59 @@ Route115_Text_MeteorFallsSign:
 	.string "FALLARBOR TOWN THROUGH HERE\p"
 	.string "Mind the dragons. And the old couple.$"
 
+
+@ Project Grounded: Keccles de Kecleon, eerste ontmoeting (strand van Route 115)
+Route115_EventScript_Keccles::
+	lock
+	faceplayer
+	msgbox Route115_Text_KecclesIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route115_EventScript_KecclesDeclined
+	trainerbattle_no_intro TRAINER_KECCLES_1, Route115_Text_KecclesDefeat
+	msgbox Route115_Text_KecclesPostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_ROUTE115_KECCLES
+	setflag FLAG_HIDE_ROUTE115_KECCLES
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+Route115_EventScript_KecclesDeclined::
+	msgbox Route115_Text_KecclesDeclined, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE115_KECCLES, Common_Movement_FaceLeft
+	waitmovement 0
+	release
+	end
+
+Route115_Text_KecclesIntro:
+	.string "Oh hi, didn't see you there.\p"
+	.string "Ah, likewise?\p"
+	.string "Yeah you don't normally see KECLEON\n"
+	.string "on the beach, you normally don't see\l"
+	.string "KECLEON at all, do you?\p"
+	.string "I'm a very sad KECLEON.\p"
+	.string "I've learned human speech and I\n"
+	.string "started an academic career, but I've\l"
+	.string "only gotten this existential dread.\p"
+	.string "I want to experience the beauty of\n"
+	.string "life again. Can you help me with this?\p"
+	.string "I've become a POKéMON trainer,\n"
+	.string "maybe the thrill of battle will help\l"
+	.string "me become happy again.\p"
+	.string "Would you be open for a battle?$"
+
+Route115_Text_KecclesDeclined:
+	.string "Oh. Okay.$"
+
+Route115_Text_KecclesDefeat:
+	.string "Hmmm…$"
+
+Route115_Text_KecclesPostBattle:
+	.string "You know what? I think this has some\n"
+	.string "potential.\p"
+	.string "I will explore the world, get badges\n"
+	.string "and train my team of Lizardmon.\p"
+	.string "Let's push each other.\p"
+	.string "As a POKéMON I can teach you some\n"
+	.string "things about POKéMON psychology.\p"
+	.string "See you around!$"

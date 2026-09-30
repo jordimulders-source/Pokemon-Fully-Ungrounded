@@ -862,12 +862,13 @@
 #define TRAINER_WALLY_METEOR_FALLS          856 // Project Grounded: Wally bij de ingang van Meteor Falls
 #define TRAINER_TABITHA_MT_CHIMNEY_TAG      857 // Project Grounded: Tabitha in de tag battle met Maxie (Wally is je partner)
 #define TRAINER_BIRCH                       858 // Project Grounded: Prof. Birch op het strand (Route 109)
+#define TRAINER_KECCLES_1                   859 // Project Grounded: Keccles de Kecleon (strand Route 115)
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      859
+#define TRAINERS_COUNT                      860
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

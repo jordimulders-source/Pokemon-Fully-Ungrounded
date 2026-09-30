@@ -2315,6 +2315,27 @@
           }
         },
         {
+          "map": "MAP_ROUTE136",
+          "base_label": "gRoute136",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_LAIRON" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_BOLDORE" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_SKARMORY" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_HAWLUCHA" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_GURDURR" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_FROSMOTH" },
+              { "min_level": 35, "max_level": 37, "species": "SPECIES_ALTARIA" },
+              { "min_level": 35, "max_level": 37, "species": "SPECIES_GABITE" },
+              { "min_level": 35, "max_level": 37, "species": "SPECIES_TORKOAL" },
+              { "min_level": 35, "max_level": 37, "species": "SPECIES_GLIGAR" },
+              { "min_level": 37, "max_level": 37, "species": "SPECIES_DRUDDIGON" },
+              { "min_level": 37, "max_level": 37, "species": "SPECIES_PUPITAR" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
           "base_label": "gAbandonedShip_HiddenFloorCorridors",
           "water_mons": {

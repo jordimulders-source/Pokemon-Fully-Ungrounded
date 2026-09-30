@@ -1,0 +1,28 @@
+{
+  "id": "MAP_ROUTE136_GROTTO",
+  "name": "Route136_Grotto",
+  "layout": "LAYOUT_ROUTE136_GROTTO",
+  "music": "MUS_MT_PYRE",
+  "region_map_section": "MAPSEC_ROUTE_136",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE136",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

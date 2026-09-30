@@ -15181,3 +15181,13 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.98] - Route 135: Assault Vest in plaats van Never-Melt Ice
 - Het item op het noordoostelijke terras (53,2) is nu een **Assault Vest** (Gen 6), die nog nergens anders te krijgen was.
+
+### [v.0.6.99] - Route 136: de bergklim naar Ashfrost (eerste versie)
+- **Nieuwe route: Route 136** (60×44), verbonden met de zuidoostelijke uitgang van Route 135. Geen water; een avontuurlijke klim naar het oosten en noorden: eerst door een dal omlaag, dan via trappen omhoog, een lange trap tegen een hoge rotswand op, smalle richels langs de wanden, en bovenaan een smalle bergpas (x 49) naar Ashfrost Town. Grillige klifranden, rotsheuvels, grote keien, besneeuwde Hoenn-randbomen. Muziek: Victory Road. Weer: sneeuw.
+- **Rivaalgevecht (Brendan/May)** in de bergpas, vóór Lilycove. Teams zijn die van Route 119 (+3 levels, betere IV's), en iedereen krijgt een **Hisuian Avalugg** (kwam nog nergens voor) in plaats van Lopunny/Exploud. Rivaalmuziek en mugshot; daarna loopt hij/zij de pas in.
+- **Keccles (derde gevecht, vóór Fortree)** staat onzichtbaar in een opvallend gat in een rij rotsen, met een **Weakness Policy** erachter. Met de Devon Scope wordt hij zichtbaar. Team ongeveer zoals in Fortree (lv 37, Salazzle lv 39 als ace), met **Steelix** in plaats van Bellibolt.
+- **Trainers:** Hikers Otto (Rhydon, Boldore, Lairon) en Helmut (Gurdurr, Torkoal, Krookodile); Ace Trainers Connor (Staraptor, Excadrill, Lucario, Bisharp), Sigrid (Froslass, Gardevoir, Vanilluxe, Altaria) en Rafael (Mamoswine, Aerodactyl, Hawlucha, Hakamo-o, van het pad af); Dragon Tamer Hakon (Dragonair, Flygon, Noivern, Druddigon, Gabite) op de smalle richel, waar je langs moet.
+- **Verborgen grot:** rechts in de klifrand (51,21), bereikbaar via de wei naast het pad. Binnen een klein ijsgrotje (`Route136_Grotto`, nog leeg; Jordi bepaalt later wat erin komt).
+- **Items:** Max Ether, Rare Candy (hoog, van het pad af), Weakness Policy (achter Keccles); verborgen: Star Piece en Max Repel.
+- **Wilde Pokémon (12 unieke soorten, lv 34–37):** Lairon, Boldore, Skarmory, Hawlucha, Gurdurr, Frosmoth, Altaria, Gabite, Torkoal, Gligar, Druddigon (1%), Pupitar (1%).
+- Alle nieuwe teksten zijn placeholders voor Jordi. Bouwscript: `tools/grounded/maptools/route136.py`.

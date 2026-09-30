@@ -26100,3 +26100,504 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Icicle Crash
 - Ancient Power
 - Ice Fang
+
+=== TRAINER_BRENDAN_ROUTE_136_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Blue
+
+Ludicolo
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Huntail
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Zangoose
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Absol
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Blaziken
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_BRENDAN_ROUTE_136_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Blue
+
+Tropius
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Torkoal
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Zangoose
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Absol
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Swampert
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_BRENDAN_ROUTE_136_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Blue
+
+Houndoom
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Huntail
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Pinsir
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Banette
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Sceptile
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_MAY_ROUTE_136_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Pink
+
+Octillery
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Mimikyu
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Vespiquen
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Magnezone
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Blaziken
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_MAY_ROUTE_136_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Pink
+
+Roserade
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Scovillain
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Froslass
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Mienshao
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Swampert
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_MAY_ROUTE_136_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Pink
+
+Octillery
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Ninetales
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Avalugg_Hisui
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Vespiquen
+Level: 37
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Eelektross
+Level: 38
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Sceptile
+Level: 39
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_KECCLES_3 ===
+Name: KECCLES
+Class: Rival
+Pic: Kecleon
+Gender: Male
+Music: Male
+Double Battle: No
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+Mugshot: Green
+
+Heliolisk
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
+- Bulldoze
+
+Charizard
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Flamethrower
+- Dragon Claw
+- Scary Face
+
+Serperior
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Leaf Blade
+- Coil
+- Leech Seed
+- Slam
+
+Clodsire
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Toxic Spikes
+- Yawn
+- Poison Jab
+- Mud Shot
+
+Steelix
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Stealth Rock
+- Iron Head
+- Bulldoze
+- Rock Tomb
+
+Salazzle
+Level: 39
+Ability: Corrosion
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Nasty Plot
+- Venoshock
+- Incinerate
+- Poison Gas
+
+=== TRAINER_OTTO ===
+Name: OTTO
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Rhydon
+Level: 37
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Rock Slide
+- Bulldoze
+- Horn Attack
+- Scary Face
+
+Boldore
+Level: 36
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Stealth Rock
+- Rock Blast
+- Iron Defense
+- Mud-Slap
+
+Lairon
+Level: 36
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Iron Head
+- Rock Tomb
+- Metal Sound
+- Protect
+
+=== TRAINER_HELMUT ===
+Name: HELMUT
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Gurdurr
+Level: 36
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Hammer Arm
+- Rock Slide
+- Bulk Up
+- Mach Punch
+
+Torkoal
+Level: 36
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Flamethrower
+- Smokescreen
+- Body Slam
+- Rapid Spin
+
+Krookodile
+Level: 37
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Crunch
+- Bulldoze
+- Sand Tomb
+- Swagger
+
+=== TRAINER_CONNOR ===
+Name: CONNOR
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Staraptor
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Brave Bird
+- Close Combat
+- Quick Attack
+- Double Team
+
+Excadrill
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Drill Run
+- Metal Claw
+- Rock Slide
+- Swords Dance
+
+Lucario
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Aura Sphere
+- Flash Cannon
+- Quick Guard
+- Nasty Plot
+
+Bisharp
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Night Slash
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_SIGRID ===
+Name: SIGRID
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Froslass
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Ice Beam
+- Hex
+- Will-O-Wisp
+- Destiny Bond
+
+Gardevoir
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Psychic
+- Moonblast
+- Calm Mind
+- Thunder Wave
+
+Vanilluxe
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Ice Beam
+- Flash Cannon
+- Mirror Coat
+- Acid Armor
+
+Altaria
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Roost
+
+=== TRAINER_RAFAEL ===
+Name: RAFAEL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Mamoswine
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Amnesia
+
+Aerodactyl
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Rock Slide
+- Wing Attack
+- Crunch
+- Agility
+
+Hawlucha
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Flying Press
+- Detect
+- Swords Dance
+- Roost
+
+Hakamo_o
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Sky Uppercut
+- Dragon Claw
+- Autotomize
+- Iron Defense
+
+=== TRAINER_HAKON ===
+Name: HAKON
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Dragonair
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Rush
+- Thunder Wave
+- Aqua Tail
+- Dragon Dance
+
+Flygon
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Claw
+- Earth Power
+- U-turn
+- Screech
+
+Noivern
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Dragon Pulse
+- Super Fang
+- Roost
+
+Druddigon
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Tail
+- Revenge
+- Rock Slide
+- Glare
+
+Gabite
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Claw
+- Dig
+- Sand Tomb
+- Swords Dance

@@ -62,11 +62,11 @@
 #define FLAG_ITEM_ROUTE_135_ASSAULT_VEST    0x30 // Project Grounded: Route 135
 #define FLAG_ITEM_ROUTE_135_SUPER_REPEL    0x31 // Project Grounded: Route 135
 #define FLAG_HIDE_ROUTE135_LAPRAS    0x32 // Project Grounded: Lapras (static) in het meer van Route 135
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_ITEM_ROUTE_136_MAX_ETHER    0x33 // Project Grounded: Route 136
+#define FLAG_ITEM_ROUTE_136_RARE_CANDY    0x34 // Project Grounded: Route 136
+#define FLAG_ITEM_ROUTE_136_WEAKNESS_POLICY    0x35 // Project Grounded: Route 136
+#define FLAG_HIDE_ROUTE136_RIVAL    0x36 // Project Grounded: Route 136
+#define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
@@ -659,8 +659,8 @@
 
 #define FLAG_HIDDEN_ITEM_ROUTE_135_NUGGET  0x265 // Project Grounded: Route 135
 #define FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL  0x266 // Project Grounded: Route 135
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_136_STAR_PIECE  0x267 // Project Grounded: Route 136
+#define FLAG_HIDDEN_ITEM_ROUTE_136_MAX_REPEL  0x268 // Project Grounded: Route 136
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag

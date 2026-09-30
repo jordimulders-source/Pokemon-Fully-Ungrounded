@@ -868,12 +868,25 @@
 #define TRAINER_EDMUND                      862 // Project Grounded: Hiker, dubbelgevecht met Tenzing (Route 135)
 #define TRAINER_TENZING                     863 // Project Grounded: Hiker, dubbelgevecht met Edmund (Route 135)
 #define TRAINER_BRAM                        864 // Project Grounded: Swimmer, Wim Hof-methode (Route 135)
+#define TRAINER_BRENDAN_ROUTE_136_TREECKO       865 // Project Grounded: Route 136
+#define TRAINER_BRENDAN_ROUTE_136_TORCHIC       866 // Project Grounded: Route 136
+#define TRAINER_BRENDAN_ROUTE_136_MUDKIP        867 // Project Grounded: Route 136
+#define TRAINER_MAY_ROUTE_136_TREECKO           868 // Project Grounded: Route 136
+#define TRAINER_MAY_ROUTE_136_TORCHIC           869 // Project Grounded: Route 136
+#define TRAINER_MAY_ROUTE_136_MUDKIP            870 // Project Grounded: Route 136
+#define TRAINER_KECCLES_3                       871 // Project Grounded: Route 136
+#define TRAINER_OTTO                            872 // Project Grounded: Route 136
+#define TRAINER_HELMUT                          873 // Project Grounded: Route 136
+#define TRAINER_CONNOR                          874 // Project Grounded: Route 136
+#define TRAINER_SIGRID                          875 // Project Grounded: Route 136
+#define TRAINER_RAFAEL                          876 // Project Grounded: Route 136
+#define TRAINER_HAKON                           877 // Project Grounded: Route 136
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      865
+#define TRAINERS_COUNT                      878
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

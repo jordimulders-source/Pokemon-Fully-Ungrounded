@@ -167,6 +167,8 @@ gStdScripts_End::
 	.include "data/maps/Route134/scripts.inc"
 	.include "data/maps/Route135/scripts.inc"
 	.include "data/maps/Route135_House/scripts.inc"
+	.include "data/maps/Route136/scripts.inc"
+	.include "data/maps/Route136_Grotto/scripts.inc"
 	.include "data/maps/Underwater_Route124/scripts.inc"
 	.include "data/maps/Underwater_Route126/scripts.inc"
 	.include "data/maps/Underwater_Route127/scripts.inc"

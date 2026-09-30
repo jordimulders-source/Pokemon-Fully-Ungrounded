@@ -15204,3 +15204,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Kristalgrot (`Route136_Grotto`):** water en lava liggen 3 tiles verder uit elkaar (kaart is nu 30 breed). Daartussen loopt een pad van boven naar beneden, en vanaf dat pad kun je het meer in surfen. Het water had in de Marine Cave-data botsing; die is eraf.
 - **Duikstuk:** in het kristalmeer kun je duiken (Dive). Je komt in een onderwatertrog (`Underwater_Route136`, kopie van de trog van de Sealed Chamber). Zwem naar de lichte plek onderaan en kom boven in een verborgen zandgrot (`Route136_SuicuneCave`, kopie van de ingang van Seafloor Cavern, zonder uitgang naar boven). Daar staat **Suicune (lv 50, static)**. Terug: duiken in het meertje; Escape Rope/Dig brengt je naar Route 136 voor de grot. Omdat je Dive pas na Mossdeep hebt, is dit iets om later terug te komen.
 - Nieuwe vlag: `FLAG_HIDE_ROUTE136_SUICUNE` (0x38).
+
+### [v.0.7.2] - Dynamisch weer op de bergroutes: sneeuw en as
+- Nieuwe weercyclus `WEATHER_ASHFROST_CYCLE` voor **Route 135 en 136**: per dag afwisselend **sneeuw** en **vulkanische as** (zelfde dagcyclus als het weer op Route 119/123, via `weatherCycleStage`). As heeft in gevechten geen effect; sneeuw geeft zoals voorheen sneeuw/hagel.

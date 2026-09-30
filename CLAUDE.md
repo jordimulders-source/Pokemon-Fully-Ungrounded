@@ -94,11 +94,11 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`): verbonden met Route 135 (connectie offset 40). Stenen Hoenn-trappen (General 175/207) zoals Route 119. Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,20), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon. Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
   - Verborgen grot `Route136_Grotto` (30×28, bouwscript `grotto136.py`): kristalgrot met watermeer en lavapoel, pad ertussen, je kunt het meer in surfen. Verder leeg; Jordi bepaalt de inhoud.
   - Duikstuk: in het meer duiken → `Underwater_Route136` (kopie van de trog van de Sealed Chamber; op (12,44) bovenkomen) → `Route136_SuicuneCave` (kopie van de ingang van Seafloor Cavern) met Suicune lv 50 (`FLAG_HIDE_ROUTE136_SUICUNE`). Dive-bestemmingen via `setdivewarp` in de map-scripts. In de emulator getest (surfen, duiken, bovenkomen, gevecht).
+- **Weer Route 135/136:** `WEATHER_ASHFROST_CYCLE` (23), per dag afwisselend sneeuw en as (`sWeatherCycleAshfrost` in `src/field_weather_effect.c`). Ashfrost Town kan dezelfde cyclus krijgen.
 
 ## Openstaande taken (in volgorde)
 1. **Route 136 afronden** (Jordi's laatste feedback):
    - Trappen, pad in de kristalgrot en duikstuk met Suicune: **af** (v0.7.1), wacht op feedback van Jordi.
-   - Dynamisch weer met sneeuw en as afwisselend (Route 135 en 136).
    - De bergpas lijkt van boven dicht omdat buiten de kaart de border-bomen staan; dat lost zich op zodra Ashfrost via een `up`-connectie op x 48–51 aansluit.
 2. **Ashfrost Town:** paradijselijk dal met een meertje in het midden, een man die daar vist, huizen eromheen (sommige op verhoging), Pokémon Center, Mart en een paar huizen. De sneeuwpop hoort hier. Gebouwen staan in de bronsheet `graphics/grounded/snow_src` (rijen 104–134); waarschijnlijk is een eigen stads-tileset nodig vanwege het tile-budget.
 3. **Town Map:** Route 135/136 en Ashfrost toevoegen (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).

@@ -2610,6 +2610,15 @@ static const u8 sWeatherCycleRoute123[WEATHER_CYCLE_LENGTH] =
     WEATHER_SUNNY,
 };
 
+// Project Grounded: bergroutes naar Ashfrost (Route 135/136), per dag afwisselend sneeuw en as
+static const u8 sWeatherCycleAshfrost[WEATHER_CYCLE_LENGTH] =
+{
+    WEATHER_SNOW,
+    WEATHER_VOLCANIC_ASH,
+    WEATHER_SNOW,
+    WEATHER_VOLCANIC_ASH,
+};
+
 static u8 TranslateWeatherNum(u8 weather)
 {
     switch (weather)
@@ -2632,6 +2641,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_ASHFROST_CYCLE:     return sWeatherCycleAshfrost[gSaveBlock1Ptr->weatherCycleStage];
     default:                         return WEATHER_NONE;
     }
 }

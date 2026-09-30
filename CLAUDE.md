@@ -85,8 +85,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 
 ## Stand van zaken
 - **Af:** Coldstep Cave (Route 115 → tunnel → ijskamer 1 → ijskamer 2, puzzel van 28 zetten, oplosbaar voor elke combinatie van opgepakte items), Keccles 1 en 2, Seltzer Surge (TM51), muziekcredits.
-- **Route 135** (60×40, sneeuw, bouwscript `tools/grounded/maptools/route135.py`): terrassen, brede waterval met Life Orb erboven, meer met oevers, besneeuwde Hoenn-randbomen, huisje rechtsboven (`Route135_House`, nog leeg), hikers Edmund & Tenzing (dubbel), Birch-gevecht 2 (Macarena). Wacht op Jordi's reactie op randbomen en huisje.
-  - Ook: Swimmer Bram (Wim Hof, Water/IJs-team) in de inham onder het meer, Lapras-static midden in het meer, oud stel zonder elektronica in het huisje.
+- **Route 135** (60×40, sneeuw, bouwscript `tools/grounded/maptools/route135.py`): terrassen, brede waterval met Life Orb erboven, meer met oevers, besneeuwde Hoenn-randbomen, huisje rechtsboven (`Route135_House`), hikers Edmund & Tenzing (dubbel), Birch-gevecht 2 (Macarena). Jordi is tevreden over de kaart.
+  - Ook: Swimmer Bram (Wim Hof, Water/IJs-team, alleen gevecht als je hem aanspreekt) aan de rand van het meer, Lapras-static midden in het meer, oud stel zonder elektronica in het huisje.
   - Nog van Jordi: definitieve teksten van Birch 2, Edmund, Tenzing, Bram en het oude stel (nu placeholders).
   - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
   - `MAPSEC_ROUTE_135` valt op de Town Map nog onder Route 115 (alias in `src/region_map.c`).

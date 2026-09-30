@@ -10,11 +10,11 @@ m=M(W,H); rnd=random.Random(135)
 for y in range(H):
     for x in range(W):
         if rnd.random()<0.07: m.put(x,y,rnd.choice(['snow_dots','tuft0','tuft1','tuft3','snow_light','tuft5']))
-L1=set(rect(-1,-1,W,21))-set(rect(12,12,36,21))
-L2=set(rect(-1,-1,W,11))-set(rect(44,6,W,11))
+L1=set(rect(4,-1,W-5,21))-set(rect(12,12,36,21))
+L2=set(rect(4,-1,W-5,11))-set(rect(44,6,W,11))
 L3=set(rect(13,-1,35,11))
 terrace(m,L1); terrace(m,L2); terrace(m,L3,face=7)
-EVENTS={(14,33),(24,24),(55,9),(55,10),(34,36),(38,19),(44,19),(33,3),(55,2),(10,13),(6,12),(36,34),(4,28)}
+EVENTS={(53,2),(16,32),(24,24),(46,9),(46,10),(34,36),(38,19),(44,19),(33,3),(10,13),(6,12),(36,34),(4,28)}
 def free(x,y): return 0<=x<W and 0<=y<H and m.col[y][x]==0 and m.elev[y][x]==3
 # bronvijver en waterval (3 breed, 3 terrassen hoog)
 m.water(set(rect(19,1,29,3))|set(rect(20,4,28,4)),extra=set(rect(21,5,27,5)))
@@ -37,9 +37,9 @@ def stairs(x0,y0,w=3,h=2):
         for y in range(y0,y0+h): m.put(x,y,'stairs',0)
 stairs(6,20); stairs(40,20); stairs(50,4)
 # huisje
-HOUSE=set(rect(54,6,57,9))
+HOUSE=set(rect(45,6,48,9))
 # pad
-path=set(rect(5,12,7,19))|set(rect(5,22,7,36))|set(rect(5,35,52,36))|set(rect(50,35,52,H-1))|set(rect(40,22,42,34))|set(rect(40,12,42,19))|set(rect(40,12,52,14))|set(rect(50,6,52,11))|set(rect(46,2,54,3))|set(rect(53,10,56,11))
+path=set(rect(5,12,7,19))|set(rect(5,22,7,36))|set(rect(5,35,52,36))|set(rect(50,35,52,H-1))|set(rect(40,22,42,34))|set(rect(40,12,42,19))|set(rect(40,12,52,14))|set(rect(50,6,52,11))|set(rect(46,2,54,3))|set(rect(46,10,50,11))
 path-= {c for c in path if m.g[c[1]][c[0]]==N['stairs']}
 path={c for c in path if free(*c)}
 autopath(m,path,'deep')
@@ -59,7 +59,7 @@ def okf(x,y):
     return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and (free(x,y) or m.g[y][x] in PINE)
 PINE={N[k] for k in N if 'pine' in k}|{N['grass_snow']}|{N[k] for k in N if k.startswith('tuft') or k.startswith('snow')}
 REG=set(rect(0,0,W-1,1))|set(rect(0,12,3,H-1))|set(rect(0,H-4,W-1,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,11,9))|set(rect(14,0,17,3))|set(rect(30,0,35,3))|set(rect(36,0,43,1))
-REG-=set(rect(53,5,59,12))
+REG-=set(rect(44,5,49,11))
 hforest(m,REG,okf,path)
 # doorlopende bosstrook langs alle kaartranden (verbergt de uiteinden van de bergwanden)
 def okb(x,y):
@@ -68,7 +68,7 @@ def okb(x,y):
 BAND=set(rect(0,0,3,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,17,1))|set(rect(30,0,W-1,1))|set(rect(0,H-2,W-1,H-1))
 hforest(m,BAND,okb,path)
 for (x,y) in HOUSE:
-    m.put(x,y,f'house_blue_{x-54}{y-6}',0 if (x,y)==(55,9) else 1)
+    m.put(x,y,f'house_blue_{x-45}{y-6}',0 if (x,y)==(46,9) else 1)
 for (x,y) in [(15,1),(31,1),(33,0),(2,1),(9,0),(40,0),(56,0),(44,13),(56,12),(12,13),(47,23),(56,24),(10,24),(14,33),(3,26),
               (1,4),(4,6),(7,2),(10,5),(2,8),(8,7),(11,1),(14,4),(16,6),(30,5),(32,4),(17,2),(29,1),(37,4),(42,1),
               (45,15),(47,13),(53,14),(55,16),(38,15),(36,17),(57,18),(9,14),(12,17),(1,17),
@@ -115,6 +115,6 @@ def reach(s):
 R=reach((6,12))
 adj=lambda p: any((p[0]+dx,p[1]+dy) in R for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)))
 print('decor',nb,'uitgang',(51,39) in R,{p:(free(*p) or m.g[p[1]][p[0]]==N['cave_door'],adj(p)) for p in EVENTS})
-m.elev[33][14]=3   # Swimmer staat in de inham op hoogte 3, zodat hij spelers op het land kan zien
+m.elev[32][16]=3   # Swimmer staat in de inham op hoogte 3, zodat je hem vanaf de oever kunt aanspreken
 open(os.path.join(REPO,'data/layouts/Route135/map.bin'),'wb').write(struct.pack(f'<{W*H}H',*m.bin()))
 if len(sys.argv)>1: m.img().save(sys.argv[1])

@@ -15173,3 +15173,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Lapras** als static encounter midden in het meer (lv 36, eenmalig, `FLAG_HIDE_ROUTE135_LAPRAS`). In de surftabel is Lapras (1%) vervangen door Feebas.
 - **Het huisje:** een oud stel zonder tv of elektronica. Hij volgt het nieuws al twintig jaar niet meer, zij geeft de grote bedrijven geen cent (placeholderteksten voor Jordi). Het interieur heeft geen tv.
 - **Sneeuwtileset:** U-vormige oevertegels toegevoegd (achteraan).
+
+### [v.0.6.97] - Route 135 afgerond: klifranden, Bram, huisje
+- **Klifranden:** de terrassen stoppen nu vóór de bosstrook langs de randen (x 4–55), zodat elke bergwand eindigt met een nette hoek en zijrand in plaats van afgekapt tegen de bomen.
+- **Swimmer Bram** hangt aan de rand van het meer op (16,32), in het water. Hij valt je niet meer aan als je langsloopt; het gevecht begint pas als je hem aanspreekt (vanaf de oever).
+- **Huisje** twee plekken naar links geschoven, helemaal op het terras (deur op 46,9), met een paadje naar het hoofdpad. De Never-Melt Ice ligt nu op (53,2).

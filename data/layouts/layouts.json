@@ -1325,7 +1325,7 @@
       "id": "LAYOUT_COLDSTEP_CAVE_ENTRANCE",
       "name": "ColdstepCave_Entrance_Layout",
       "width": 18,
-      "height": 9,
+      "height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ColdstepCave_Entrance/border.bin",

@@ -15101,3 +15101,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Inhoud: sneeuwgrond (4 varianten + diepe sneeuw), ijsvloer, besneeuwd en groen hoog gras, plukjes en bloemen, drie paden (steen, roze, diepe sneeuw) met randen en binnenhoeken, hoogvlakte-kliffen met sneeuwtop, binnenhoeken, voorkant, grotingang en waterval-voorkant, bergtop en grote kei, besneeuwde, groene en smalle dennen, rotsen, ijsrotsen en ijskristallen, sneeuwballen, sneeuwpop, Pokémon-beeldje, boomstam, bosje en stronk.
   - `metatile_names.json` koppelt namen aan metatile-id's voor het bouwen van de kaarten.
 - Credits voor CinnaYva bovenaan `CREDITS.md`.
+
+### [v.0.6.85] - Coldstep Cave: alleen verticale tunneldeuren, L-gang, glijpuzzel in kamer 2
+- Gen 3 heeft alleen deuren in een bovenwand en uitgangen in een onderwand. De zijdeur links in ijskamer 1 is daarom vervangen door een **uitgang onderaan de weststrook** (x 3, y 16), met de bestaande uitgang-tiles in het ijspalet (nieuwe metatiles 929–932 in de grot-tileset).
+- **Route 115:** de onderste rij van de rotswand bij de ingang is weggehaald. Het terras is één rij dieper en de ingang zit nu in de noordwand (35,9). De verborgen Terra Cave-ingang (Groudon, na de Elite Four) is mee één rij omhoog verplaatst, zowel de warp als het script in `abnormal_weather.inc`.
+- **Zandgang** is een L-vormige gang: je komt zuid binnen, loopt een paar stappen omhoog, dan naar het oosten, en gaat door het gat in de noordwand ijskamer 1 in (daar kom je zuid binnen).
+- **IJskamer 2:** het stuk tussen de twee ladders is een glijpuzzel (8 ijsblokken, kortste oplossing 13 zetten). Items op losse sneeuwtegels: Never-Melt Ice (2,2), Ice Stone (8,6), PP Up (15,13). Met de solver gecontroleerd dat alles bereikbaar is en je niet kunt vastlopen.
+- In de emulator doorgelopen: Route 115 → zandgang → ijskamer 1 → (ladder) → ijskamer 2 → puzzel opgelost tot de uitgangsladder.

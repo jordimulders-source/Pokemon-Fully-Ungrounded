@@ -13,9 +13,9 @@ AbnormalWeather_EventScript_PlaceTilesRoute115West::
 	setmetatile 21, 6, METATILE_Fallarbor_BrownCaveEntrance_Bottom, FALSE
 	return
 
-AbnormalWeather_EventScript_PlaceTilesRoute115East::
-	setmetatile 36, 9, METATILE_Fallarbor_BrownCaveEntrance_Top, TRUE
-	setmetatile 36, 10, METATILE_Fallarbor_BrownCaveEntrance_Bottom, FALSE
+AbnormalWeather_EventScript_PlaceTilesRoute115East:: @ Project Grounded: een rij hoger (rotswand ingekort voor Coldstep Cave)
+	setmetatile 36, 8, METATILE_Fallarbor_BrownCaveEntrance_Top, TRUE
+	setmetatile 36, 9, METATILE_Fallarbor_BrownCaveEntrance_Bottom, FALSE
 	return
 
 AbnormalWeather_EventScript_PlaceTilesRoute116North::
@@ -236,8 +236,8 @@ AbnormalWeather_EventScript_CleanupRoute115West::
 	return
 
 AbnormalWeather_EventScript_CleanupRoute115East::
+	setmetatile 36, 8, METATILE_Fallarbor_BrownRockWall, TRUE
 	setmetatile 36, 9, METATILE_Fallarbor_BrownRockWall, TRUE
-	setmetatile 36, 10, METATILE_Fallarbor_BrownRockWall, TRUE
 	return
 
 AbnormalWeather_EventScript_CleanupRoute116North::

@@ -16,7 +16,7 @@ from PIL import Image
 SRC = 'graphics/grounded/snow_src'
 OUT = 'data/tilesets/secondary/snow'
 PAL_FIRST, NUM_PALS = 6, 7
-MB = {'normal': 0x00, 'tall_grass': 0x02, 'ice': 0x20, 'door': 0x60}
+MB = {'normal': 0x00, 'tall_grass': 0x02, 'ice': 0x20, 'door': 0x60, 'pond': 0x10}
 LAYER_COVERED = 1
 
 sheet = Image.open(f'{SRC}/CustomTilesetSnow.png').convert('RGBA')
@@ -120,6 +120,49 @@ for n, (c, r) in {'rock_snow': (5, 6), 'rock_snow2': (7, 6), 'rock_cluster': (5,
                   'stump': (3, 39)}.items():
     add(n, G, cell(c, r))
 
+# --- oevers: bewegend vijverwater (primary tile 0x11e, palet 1) met een sneeuwrand erover ---
+WATER = ('prim', [0x111e] * 4)
+_edge = np.array(G, dtype=np.int32)
+_line = np.array([120, 152, 200, 255])            # oeverlijn (blauwgrijs)
+
+
+def shore(n, s_, w, e, nw=False, ne=False, sw=False, se=False, depth=5):
+    out = np.zeros((16, 16, 4), dtype=np.int32)
+    for y in range(16):
+        for x in range(16):
+            snow = (n and y < depth) or (s_ and y >= 16 - depth) or (w and x < depth) or (e and x >= 16 - depth)
+            r = depth + 1
+            if nw and (x - 0) ** 2 + (y - 0) ** 2 < r * r: snow = True
+            if ne and (x - 15) ** 2 + (y - 0) ** 2 < r * r: snow = True
+            if sw and (x - 0) ** 2 + (y - 15) ** 2 < r * r: snow = True
+            if se and (x - 15) ** 2 + (y - 15) ** 2 < r * r: snow = True
+            if snow:
+                out[y, x] = _edge[y, x]
+    # 1 pixel oeverlijn langs de rand van de sneeuw
+    m = out[..., 3] > 0
+    for y in range(16):
+        for x in range(16):
+            if not m[y, x]:
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    yy, xx = y + dy, x + dx
+                    if 0 <= yy < 16 and 0 <= xx < 16 and m[yy, xx]:
+                        out[y, x] = _line
+                        break
+    return Image.fromarray(out.astype(np.uint8), 'RGBA')
+
+
+add('water', WATER, None, 'pond')
+for n_ in (0, 1):
+    for s_ in (0, 1):
+        for w_ in (0, 1):
+            for e_ in (0, 1):
+                if n_ + s_ + w_ + e_ == 0 or (n_ and s_) or (w_ and e_):
+                    continue
+                add(f'shore_{"n" if n_ else ""}{"s" if s_ else ""}{"w" if w_ else ""}{"e" if e_ else ""}',
+                    WATER, shore(n_, s_, w_, e_), 'pond')
+for corner in ('nw', 'ne', 'sw', 'se'):
+    add(f'shore_in_{corner}', WATER, shore(0, 0, 0, 0, **{corner: True}), 'pond')
+
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):
     a = a.copy()
@@ -130,7 +173,7 @@ def to5(a):
 blocks = []   # alle 8x8-blokjes (RGBA)
 for _, bottom, top, _ in metatiles:
     for layer in (bottom, top):
-        if layer is None:
+        if layer is None or isinstance(layer, tuple):
             continue
         a = to5(np.array(layer, dtype=np.int32))
         for qy in (0, 8):
@@ -225,6 +268,9 @@ names = {}
 for n, (name, bottom, top, beh) in enumerate(metatiles):
     entries = []
     for layer in (bottom, top):
+        if isinstance(layer, tuple):
+            entries += layer[1]
+            continue
         a = to5(np.array(layer, dtype=np.int32)) if layer is not None else None
         for qy in (0, 8):
             for qx in (0, 8):

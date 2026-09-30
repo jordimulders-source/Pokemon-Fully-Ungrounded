@@ -43,7 +43,7 @@
   ],
   "warp_events": [
     {
-      "x": 1,
+      "x": 3,
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_COLDSTEP_CAVE_ENTRANCE",

@@ -356,14 +356,14 @@
     },
     {
       "x": 36,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
     },
     {
       "x": 35,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_COLDSTEP_CAVE_ENTRANCE",
       "dest_warp_id": "0"

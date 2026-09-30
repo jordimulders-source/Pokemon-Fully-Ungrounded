@@ -130,5 +130,18 @@
  "bunny_statue": 640,
  "log": 641,
  "bush_snow": 642,
- "stump": 643
+ "stump": 643,
+ "water": 644,
+ "shore_e": 645,
+ "shore_w": 646,
+ "shore_s": 647,
+ "shore_se": 648,
+ "shore_sw": 649,
+ "shore_n": 650,
+ "shore_ne": 651,
+ "shore_nw": 652,
+ "shore_in_nw": 653,
+ "shore_in_ne": 654,
+ "shore_in_sw": 655,
+ "shore_in_se": 656
 }

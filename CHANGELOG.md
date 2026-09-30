@@ -15077,3 +15077,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - Aan het doodlopende eind dat het verst van de ingang ligt (109 stappen): **Leftovers** als zichtbare Pokéball. Die lag eerst verstopt; dezelfde vlag, dus wie hem al had, krijgt hem niet nog een keer.
   - Getest in de emulator: van de ingang naar het eind gelopen en de Leftovers opgepakt.
 - **Coldstep Cave:** ijskamer 1 en 2 zijn geen naadloos verbonden kaarten meer, maar losse kamers. Een ijsladder bij de uitgang van de puzzel (18,11) brengt je naar een ladder in kamer 2 (3,11), en terug. Getest.
+
+### [v.0.6.81] - Mini Forest: minder gras
+- Ongeveer 30% van het hoge gras in het doolhof is gewone grond geworden, in hele stukken van 2×2 zodat je niet de hele weg door gras hoeft.
+- De Leftovers liggen nu op grond in plaats van in het gras.

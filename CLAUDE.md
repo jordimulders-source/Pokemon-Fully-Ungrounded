@@ -67,3 +67,31 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - "Verwerk de dialogen": lees `edits` met status `klaar` (ArtifactData), schrijf `{label: text}` naar een JSON-bestand en draai `python3 tools/dialogen/import.py <bestand>`. Dat breekt de tekst automatisch af (zelfde regels als het voorbeeld in de editor). Bouw, controleer, commit, zet de verwerkte documenten op status `verwerkt` en voer de notities/wensen uit.
 - **Niet vóór de beta:** dialogen in het Trick House (`Route110_TrickHouse*`), de Battle Frontier (`BattleFrontier_*`) en de Battle Tents (`*_BattleTent*`) blijven bewust vanilla tot na de beta. Niet aanpassen, tenzij Jordi erom vraagt. De Dialoogstudio verbergt deze gebieden standaard.
 - Na wijzigingen in de scripts: `python3 tools/dialogen/export.py <dialogen.json>` en publiceer dat bestand opnieuw bij de pagina, zodat de editor de actuele game-tekst toont.
+- Nieuwe NPC-teksten die Claude toevoegt zijn neutrale placeholders, totdat Jordi ze zelf schrijft.
+
+## Sessies en overdracht
+- Elke sessie begint vers; dit bestand is het geheugen. Werk de sectie **Stand van zaken** hieronder bij aan het eind van elk afgerond stuk werk (in dezelfde commit), zodat een nieuwe sessie direct verder kan.
+- Branch: `claude/hopeful-brahmagupta-hsth8c` (PR 5 naar `master`). Is die PR gemerged, begin dan een nieuwe branch vanaf `master`.
+- Commit en push na elk afgerond stuk, met een changelogsectie.
+
+## Kaarten maken
+- Jordi wil van **elke kaart die af is** screenshots (een render van de hele kaart en een paar emulatorbeelden), zodat hij kan tweaken.
+- Gereedschap en testrecept staan in `tools/grounded/maptools/README.md` (renderen, `snowlib.py` voor sneeuwkaarten, ijspuzzel-zoeker, headless emulator).
+- Routegrootte: ongeveer gemiddeld of net onder gemiddeld (landroutes zijn meestal 2400–3200 tiles, bijv. 40×80 of 60×40).
+- Randen van routes: de vaste Hoenn-randbomen (op sneeuwkaarten de besneeuwde versie `htree_*`), ook als `border.bin`. Geen losse bomen die elkaar overlappen.
+- Watervallen zoals bij Ever Grande/Meteor Falls: breed, in een massieve rotswand (`fall()` en `terrace(face=...)` in `snowlib.py`).
+- Sneeuwtileset (`tools/grounded/snow_tileset.py`): nieuwe metatiles **alleen achteraan** toevoegen (anders verschuiven alle nummers). Na genereren eerst `make data/tilesets/secondary/snow/tiles.4bpp`. Tile-budget max. 512 (nu ~431).
+- Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; `wild_encounters.json` en andere grote JSON-bestanden tekstueel bewerken (niet via `json.dump`, dat herformatteert het hele bestand); trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`).
+
+## Stand van zaken
+- **Af:** Coldstep Cave (Route 115 → tunnel → ijskamer 1 → ijskamer 2, puzzel van 28 zetten, oplosbaar voor elke combinatie van opgepakte items), Keccles 1 en 2, Seltzer Surge (TM51), muziekcredits.
+- **Route 135** (60×40, sneeuw, bouwscript `tools/grounded/maptools/route135.py`): terrassen, brede waterval met Life Orb erboven, meer met oevers, besneeuwde Hoenn-randbomen, huisje rechtsboven (`Route135_House`, nog leeg), hikers Edmund & Tenzing (dubbel), Birch-gevecht 2 (Macarena). Wacht op Jordi's reactie op randbomen en huisje.
+  - Nog van Jordi: teksten van Birch 2, Edmund, Tenzing; wie er in het huisje woont.
+  - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
+  - `MAPSEC_ROUTE_135` valt op de Town Map nog onder Route 115 (alias in `src/region_map.c`).
+
+## Openstaande taken (in volgorde)
+1. **Route 136** (sneeuw, klimt verder de bergen in; hoog maar niet hoger dan Mt. Chimney): bomengang met een item, geblokkeerd door een onzichtbare Keccles (Devon Scope, zoals bij Fortree); rivaalgevecht May/Brendan; een Bird Keeper; een zwemmer aan de waterkant ("Wim Hof"-idee van Jordi); dynamisch weer met sneeuw en as afwisselend (ook voor Route 135).
+2. **Ashfrost Town:** paradijselijk dal met een meertje in het midden, een man die daar vist, huizen eromheen (sommige op verhoging), Pokémon Center, Mart en een paar huizen. De sneeuwpop hoort hier. Gebouwen staan in de bronsheet `graphics/grounded/snow_src` (rijen 104–134); waarschijnlijk is een eigen stads-tileset nodig vanwege het tile-budget.
+3. **Town Map:** Route 135/136 en Ashfrost toevoegen (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
+4. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

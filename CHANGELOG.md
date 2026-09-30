@@ -15156,3 +15156,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.93] - Overdracht voor nieuwe sessies
 - `docs/grounded/OVERDRACHT.md`: stand van zaken, openstaande taken (Route 136, Ashfrost, Town Map, Ditto gepauzeerd), werkwijze en valkuilen, zodat een nieuwe Claude-sessie direct verder kan zonder de hele vorige sessie te laden.
 - `tools/grounded/maptools/`: het kaart- en testgereedschap dat Claude gebruikt (renderen, sneeuwkaarten bouwen, ijspuzzel-zoeker, headless emulator), met uitleg in de README. `route135.py` bouwt Route 135 opnieuw.
+
+### [v.0.6.94] - Overdracht verhuisd naar CLAUDE.md
+- De inhoud van `docs/grounded/OVERDRACHT.md` staat nu in `CLAUDE.md` (secties *Sessies en overdracht*, *Kaarten maken*, *Stand van zaken*, *Openstaande taken*), zodat elke nieuwe sessie het automatisch leest. Het losse bestand is weg. Claude werkt *Stand van zaken* bij na elk afgerond stuk werk.

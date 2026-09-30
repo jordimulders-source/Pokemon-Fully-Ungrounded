@@ -187,7 +187,7 @@
       "width": 50,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route102_MiniForest/border.bin",
       "blockdata_filepath": "data/layouts/Route102_MiniForest/map.bin"
     },

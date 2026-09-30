@@ -15002,3 +15002,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.69] - Wireless Club-tekst
 - `gText_SorryWirelessClubAdjustments`: "I'm terribly sorry, this room is completely useless. This game has never supported online play and link cables are out of fashion."
+
+### [v.0.6.70] - Mini Forest: tiles, gras en levels; Wally draait rustiger
+- Grafische bug opgelost: de Mini Forest gebruikte de Fortree-tileset en Route 102 die van Petalburg. De GBA tekent een aangrenzende kaart met de tileset van de kaart waar je staat. Daardoor zag je vanuit het bos het berry-veldje van Route 102 als houtblokken met blauw, en veranderden tiles onderin van kleur. De Mini Forest gebruikt nu ook `gTileset_Petalburg`.
+  - Het boomhuisje bovenin (Fortree-tiles, zonder warp) is daardoor vervangen door bomen.
+- De twee losse tiles bij de ingang (onderaan, x 38–39) zijn nu gewoon gras.
+- Het hoge gras rechts (tile 454/455, een onnatuurlijk patroon) is nu hetzelfde hoge gras als links.
+- Wilde levels omlaag naar het niveau van Route 102 (was 6–10, nu 5–8): Scatterbug/Tandemaus 5–7, Venipede/Emolga 6–7, Foongus/Karrablast 6–8, Minccino/Chatot 7, Rookidee/Nymble 6–8 en 7–8.
+- Wally draait in Meteor Falls zijn rondje twee keer zo langzaam (`delay_4` → `delay_8`).

@@ -348,19 +348,19 @@ MeteorFalls_1F_1R_Movement_WallyApproachLower:
 
 MeteorFalls_1F_1R_Movement_WallySpin:
 	face_down
-	delay_4
+	delay_8
 	face_left
-	delay_4
+	delay_8
 	face_up
-	delay_4
+	delay_8
 	face_right
-	delay_4
+	delay_8
 	face_down
-	delay_4
+	delay_8
 	face_left
-	delay_4
+	delay_8
 	face_up
-	delay_4
+	delay_8
 	face_right
 	step_end
 

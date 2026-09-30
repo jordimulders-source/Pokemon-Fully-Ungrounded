@@ -4730,18 +4730,18 @@
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
-              { "min_level": 6, "max_level": 8, "species": "SPECIES_SCATTERBUG" },
-              { "min_level": 6, "max_level": 8, "species": "SPECIES_TANDEMAUS" },
-              { "min_level": 7, "max_level": 9, "species": "SPECIES_VENIPEDE" },
-              { "min_level": 7, "max_level": 9, "species": "SPECIES_EMOLGA" },
-              { "min_level": 8, "max_level": 10, "species": "SPECIES_FOONGUS" },
-              { "min_level": 8, "max_level": 10, "species": "SPECIES_KARRABLAST" },
-              { "min_level": 9, "max_level": 9, "species": "SPECIES_MINCCINO" },
-              { "min_level": 9, "max_level": 9, "species": "SPECIES_CHATOT" },
-              { "min_level": 8, "max_level": 10, "species": "SPECIES_ROOKIDEE" },
-              { "min_level": 8, "max_level": 10, "species": "SPECIES_NYMBLE" },
-              { "min_level": 9, "max_level": 10, "species": "SPECIES_ROOKIDEE" },
-              { "min_level": 9, "max_level": 10, "species": "SPECIES_NYMBLE" }
+              { "min_level": 5, "max_level": 7, "species": "SPECIES_SCATTERBUG" },
+              { "min_level": 5, "max_level": 7, "species": "SPECIES_TANDEMAUS" },
+              { "min_level": 6, "max_level": 7, "species": "SPECIES_VENIPEDE" },
+              { "min_level": 6, "max_level": 7, "species": "SPECIES_EMOLGA" },
+              { "min_level": 6, "max_level": 8, "species": "SPECIES_FOONGUS" },
+              { "min_level": 6, "max_level": 8, "species": "SPECIES_KARRABLAST" },
+              { "min_level": 7, "max_level": 7, "species": "SPECIES_MINCCINO" },
+              { "min_level": 7, "max_level": 7, "species": "SPECIES_CHATOT" },
+              { "min_level": 6, "max_level": 8, "species": "SPECIES_ROOKIDEE" },
+              { "min_level": 6, "max_level": 8, "species": "SPECIES_NYMBLE" },
+              { "min_level": 7, "max_level": 8, "species": "SPECIES_ROOKIDEE" },
+              { "min_level": 7, "max_level": 8, "species": "SPECIES_NYMBLE" }
             ]
           }
         }

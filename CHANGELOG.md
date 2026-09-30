@@ -15053,3 +15053,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Beschrijving: "A fizzing wave that may lower Speed or confuse."
 - TM51: "Team AQUA's fizzy wave hits both foes. May lower Speed or confuse."
 - Tests in `test/battle/grounded/seltzer_surge.c` (Speed-kans, Confusion-kans, raakt partner niet): alle 3 slagen.
+
+### [v.0.6.78] - TM51 Seltzer Surge in de Aqua Hideout
+- TM51 (Seltzer Surge) ligt als Pokéball op de tafel naast de laptop in Aqua Hideout B1F (23,19). Vlag: `FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE` (0x29).
+- De laptop (22,19) is leesbaar: "On this laptop there is a Google Doc, reading the following: Our hard work, finally paid off. The ultimate move. This will be a commercial success, bottle, ship and sell it! Sparkling water forever!"

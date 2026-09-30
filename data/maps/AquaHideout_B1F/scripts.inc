@@ -164,3 +164,17 @@ AquaHideout_B1F_Text_Grunt7Defeat:
 AquaHideout_B1F_Text_Grunt7PostBattle:
 	.string "If you have a cool uniform, you look\n"
 	.string "fashionable even while losing!$"
+
+@ Project Grounded: laptop naast TM51 (Seltzer Surge)
+AquaHideout_B1F_EventScript_SeltzerNote::
+	msgbox AquaHideout_B1F_Text_SeltzerNote, MSGBOX_SIGN
+	end
+
+AquaHideout_B1F_Text_SeltzerNote:
+	.string "On this laptop there is a Google\n"
+	.string "Doc, reading the following:\p"
+	.string "Our hard work, finally paid off.\n"
+	.string "The ultimate move.\p"
+	.string "This will be a commercial success,\n"
+	.string "bottle, ship and sell it!\p"
+	.string "Sparkling water forever!$"

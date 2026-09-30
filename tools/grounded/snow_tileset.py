@@ -123,7 +123,9 @@ for n, (c, r) in {'rock_snow': (5, 6), 'rock_snow2': (7, 6), 'rock_cluster': (5,
 # --- oevers: bewegend vijverwater (primary tile 0x11e, palet 1) met een sneeuwrand erover ---
 WATER = ('prim', [0x111e] * 4)
 _edge = np.array(G, dtype=np.int32)
-_line = np.array([120, 152, 200, 255])            # oeverlijn (blauwgrijs)
+_rim = np.array([96, 80, 104, 255])               # oeverrand (donker steen)
+_rim_hi = np.array([168, 184, 208, 255])          # lichte rand op de sneeuw
+_shadow = np.array([80, 136, 208, 255])           # schaduw op het water
 
 
 def shore(n, s_, w, e, nw=False, ne=False, sw=False, se=False, depth=5):
@@ -136,18 +138,36 @@ def shore(n, s_, w, e, nw=False, ne=False, sw=False, se=False, depth=5):
             if ne and (x - 15) ** 2 + (y - 0) ** 2 < r * r: snow = True
             if sw and (x - 0) ** 2 + (y - 15) ** 2 < r * r: snow = True
             if se and (x - 15) ** 2 + (y - 15) ** 2 < r * r: snow = True
+            # buitenhoeken rond maken
+            R = 9
+            for cn, cw, sx, sy in ((n, w, -1, -1), (n, e, 1, -1), (s_, w, -1, 1), (s_, e, 1, 1)):
+                if cn and cw:
+                    cx = depth + R if sx < 0 else 15 - depth - R
+                    cy = depth + R if sy < 0 else 15 - depth - R
+                    if (x - cx) * sx > 0 and (y - cy) * sy > 0 and (x - cx) ** 2 + (y - cy) ** 2 > R * R:
+                        snow = True
             if snow:
                 out[y, x] = _edge[y, x]
-    # 1 pixel oeverlijn langs de rand van de sneeuw
+    # oever: donkere steenrand direct langs de sneeuw, daaronder een schaduwband op het water
     m = out[..., 3] > 0
+    dist = np.full((16, 16), 99)
     for y in range(16):
         for x in range(16):
-            if not m[y, x]:
-                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-                    yy, xx = y + dy, x + dx
-                    if 0 <= yy < 16 and 0 <= xx < 16 and m[yy, xx]:
-                        out[y, x] = _line
-                        break
+            if m[y, x]:
+                continue
+            for yy in range(16):
+                for xx in range(16):
+                    if m[yy, xx]:
+                        dist[y, x] = min(dist[y, x], max(abs(yy - y), abs(xx - x)))
+    for y in range(16):
+        for x in range(16):
+            if m[y, x] and any(0 <= y + dy < 16 and 0 <= x + dx < 16 and not m[y + dy, x + dx]
+                               for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                out[y, x] = _rim_hi
+            elif dist[y, x] <= 2:
+                out[y, x] = _rim
+            elif dist[y, x] <= 4:
+                out[y, x] = _shadow
     return Image.fromarray(out.astype(np.uint8), 'RGBA')
 
 

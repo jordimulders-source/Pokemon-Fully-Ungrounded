@@ -15139,3 +15139,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Wilde Pokémon (12 unieke soorten, lv 32–35):** Beartic, Gogoat, Piloswine, Abomasnow, Primeape, Hisuian Sneasel, Ursaring, Stantler, Absol, Amaura, Arctibax (1%), Drampa (1%). Surfen: Seel, Sealeo, Dewgong, Cetoddle, Lapras. Vissen: Goldeen, Arrokuda, Barboach, Shellder, Seaking, Whiscash, Barraskewda, Cloyster, Basculin, Alomomola.
 - Weer: sneeuw (in gevechten hagel). Muziek: Route 120. Op de Town Map valt Route 135 voorlopig onder Route 115, totdat de kaart wordt bijgewerkt.
 - **Sneeuwtileset:** houten trap toegevoegd (`stairs`).
+
+### [v.0.6.91] - Route 135 afgewerkt: oevers, bosranden, decor
+- **Meer:** duidelijke oevers met een donkere steenrand, een lichte sneeuwrand en een schaduwband op het water. De hoeken zijn rond en losse uitstulpingen zijn weg, zodat het een echt meer is in plaats van een plas. (Aangepast in de sneeuwtileset, dus alle toekomstige sneeuwmeren hebben dit ook.)
+- **Randen:** dichte, overlappende dennenbossen langs de west-, oost- en zuidrand, boven de grot en naast de bronvijver. Je kunt er niet meer tussendoor lijken te lopen.
+- **Decor:** extra rotsen, ijskristallen, sneeuwballen, stronken, bloemen en plukjes verspreid, steeds met vrije ruimte rond het pad. Met een bereikbaarheidscheck gecontroleerd: uitgang, trappen, trainers en items blijven bereikbaar.
+- De Super Repel ligt nu op (10,13), in het sneeuwgras bij de grot.

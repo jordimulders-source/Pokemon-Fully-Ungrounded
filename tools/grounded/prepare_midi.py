@@ -118,10 +118,12 @@ def write_voicegroup(path='sound/voicegroups/grounded_gm.inc'):
 
 
 def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
-                 drop_channels=(), channel_category=None, transpose=None, max_note=None):
+                 drop_channels=(), channel_category=None, transpose=None, max_note=None,
+                 volume=None):
     """drop_channels: MIDI-kanalen die wegvallen; channel_category: {kanaal: categorie} om het instrument
     te overschrijven (bv. rips met niet-GM-programma's); transpose: {kanaal: halve tonen};
-    max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen)."""
+    max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen);
+    volume: {categorie: 0-127} spoorvolume (standaard 127), om de balans tussen bas en midden te regelen."""
     channel_category = channel_category or {}
     transpose = transpose or {}
     m = mido.MidiFile(src)
@@ -201,7 +203,7 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
         program = next(gm_category(p)[1] for p in range(128) if gm_category(p)[0] == cat)
         tr = mido.MidiTrack(); out.tracks.append(tr)
         tr.append(mido.Message('program_change', channel=ch, program=program, time=0))
-        tr.append(mido.Message('control_change', channel=ch, control=7, value=127, time=0))
+        tr.append(mido.Message('control_change', channel=ch, control=7, value=(volume or {}).get(cat, 127), time=0))
         last = 0
         for tk, on, note, v in sorted(notes[cat], key=lambda e: (e[0], e[1])):
             tr.append(mido.Message('note_on' if on else 'note_off', channel=ch, note=note, velocity=v, time=tk - last)); last = tk

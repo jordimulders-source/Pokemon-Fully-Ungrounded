@@ -42,4 +42,6 @@ prepare_auto(f'{SRC}/hgss_dark_cave.mid', f'{DST}/mus_grounded_vs_dark_cave.mid'
 
 # Giratina: de hoornpartij (kanaal 14) en een paar strijkers zitten op toonhoogte 85-104, veel te hoog voor
 # de GBA-samples (piep aan het begin). Alles boven 84 gaat per octaaf omlaag.
-prepare_auto(f'{SRC}/pt_giratina.mid', f'{DST}/mus_grounded_vs_giratina.mid', max_note=84)
+prepare_auto(f'{SRC}/pt_giratina.mid', f'{DST}/mus_grounded_vs_giratina.mid', max_note=84,
+             # vergeleken met een GBA-soundfont-opname: bas te zwak, midden te sterk
+             volume={'strings': 80, 'piano': 80, 'horn': 86, 'trumpet': 86, 'flute': 86, 'square2': 76})

@@ -15034,3 +15034,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.74] - Keccles: tekst bij "nee"
 - Keccles zegt bij "nee" nu: "Hmm, I get your hesitation, probably the shock of me talking to you." (vervangt de tijdelijke "Oh. Okay.").
+
+### [v.0.6.75] - Giratina: sterkere bas
+- Vergeleken met Jordi's mp3 (GBA-soundfont-versie): onze bas was te zwak (43% vs 56% van de energie) en het midden te sterk.
+- `prepare_auto` heeft een nieuwe optie `volume={categorie: 0-127}` (spoorvolume). Voor Giratina staan strings/piano op 80, horn/trumpet/flute op 86 en square op 76; de bas blijft 127.
+- Resultaat: bas 54%, midden 41%. Dat is vrijwel gelijk aan de referentie, en de noten komen voor 94% overeen.

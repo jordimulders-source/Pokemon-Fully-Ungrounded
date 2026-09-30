@@ -92,6 +92,36 @@ def extract_repo_universals() -> list[str]:
         return list()
 
 
+# Project Grounded: eigen TM-moves die in geen enkele officiële game bestaan.
+# Een soort kan zo'n move leren als hij de "like"-move kan leren (in welke game dan ook)
+# of als hij (in dit project) een van de genoemde types heeft.
+GROUNDED_CUSTOM_TEACHABLES = {
+    "MOVE_SELTZER_SURGE": {"like": "MOVE_SCALD", "types": {"TYPE_WATER"}},
+}
+SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
+LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
+TYPE_PAT = re.compile(r"TYPE_[A-Z]+")
+
+
+def grounded_learnset_types() -> dict[str, set[str]]:
+    """
+    Map each teachable-learnset name (e.g. "Magikarp") to the union of types of the
+    species that use it, read from src/data/pokemon/species_info/*.h.
+    """
+    result: dict[str, set[str]] = {}
+    for fname in glob.glob("./src/data/pokemon/species_info/*.h"):
+        with open(fname, "r") as fp:
+            text = fp.read()
+        starts = [m.start() for m in SPECIES_BLOCK_PAT.finditer(text)] + [len(text)]
+        for b, e in zip(starts, starts[1:]):
+            block = text[b:e]
+            ref = LEARNSET_REF_PAT.search(block)
+            types_line = re.search(r"\.types\s*=[^\n]*", block)
+            if ref and types_line:
+                result.setdefault(ref.group(1), set()).update(TYPE_PAT.findall(types_line.group(0)))
+    return result
+
+
 def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str], header: str) -> str:
     """
     Build the file content for teachable_learnsets.h.
@@ -100,6 +130,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         old = teachables_fp.read()
 
     cursor = 0
+    learnset_types = grounded_learnset_types()
     new = header + dedent("""
     static const u16 sNoneTeachableLearnset[] = {
         MOVE_UNAVAILABLE,
@@ -120,7 +151,13 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
             cursor = match_e + 1
             continue
 
-        repo_species_teachables = filter(lambda m: m in repo_teachables, all_learnables[species_upper])
+        repo_species_teachables = list(filter(lambda m: m in repo_teachables, all_learnables[species_upper]))
+        for move, rule in GROUNDED_CUSTOM_TEACHABLES.items():
+            if move in repo_teachables and move not in repo_species_teachables and (
+                rule["like"] in all_learnables[species_upper]
+                or learnset_types.get(species.group("name"), set()) & rule["types"]
+            ):
+                repo_species_teachables.append(move)
 
         new += old[cursor:match_b]
         new += "\n".join([

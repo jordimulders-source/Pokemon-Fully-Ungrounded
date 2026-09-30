@@ -907,7 +907,7 @@
 #define MOVE_PSYCHIC_NOISE 845
 #define MOVE_UPPER_HAND 846
 #define MOVE_MALIGNANT_CHAIN 847
-#define MOVE_SPARKLING_SURF 848 // Project Grounded
+#define MOVE_SELTZER_SURGE 848 // Project Grounded
 
 #define MOVES_COUNT_GEN9 849
 

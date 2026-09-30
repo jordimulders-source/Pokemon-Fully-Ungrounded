@@ -1893,7 +1893,7 @@ static void CreateWaterPulseRingBubbles(struct Sprite *sprite, int xDiff, int yD
     }
 }
 
-// Project Grounded: bubbels voor Sparkling Surf. Ze verschijnen verspreid over het scherm,
+// Project Grounded: bubbels voor Seltzer Surge. Ze verschijnen verspreid over het scherm,
 // drijven mee met de Surf-golf, stijgen op, wiebelen en groeien.
 #define sLife   data[0]
 #define sDir    data[1]

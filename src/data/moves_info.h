@@ -21324,10 +21324,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
-    // Project Grounded: Surf met bruisend water. Stats voorlopig gelijk aan Surf.
-    [MOVE_SPARKLING_SURF] =
+    // Project Grounded: Team Aqua's bruiswater-golf (Surf met bubbels). Bijeffect nog te kiezen.
+    [MOVE_SELTZER_SURGE] =
     {
-        .name = COMPOUND_STRING("Sparkling Surf"),
+        .name = COMPOUND_STRING("Seltzer Surge"),
         .description = COMPOUND_STRING(
             "A huge wave of fizzing,\n"
             "sparkling water hits all."),
@@ -21345,7 +21345,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
-        .battleAnimScript = gBattleAnimMove_SparklingSurf,
+        .battleAnimScript = gBattleAnimMove_SeltzerSurge,
     },
 
     // Z-Moves

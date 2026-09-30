@@ -15039,3 +15039,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Vergeleken met Jordi's mp3 (GBA-soundfont-versie): onze bas was te zwak (43% vs 56% van de energie) en het midden te sterk.
 - `prepare_auto` heeft een nieuwe optie `volume={categorie: 0-127}` (spoorvolume). Voor Giratina staan strings/piano op 80, horn/trumpet/flute op 86 en square op 76; de bas blijft 127.
 - Resultaat: bas 54%, midden 41%. Dat is vrijwel gelijk aan de referentie, en de noten komen voor 94% overeen.
+
+### [v.0.6.76] - Sparkling Surf heet nu Seltzer Surge, en wordt TM51
+- Naam: **Seltzer Surge** (`MOVE_SELTZER_SURGE`), Team Aqua's bruiswater-move. Water, special, 90 power, 100 acc, 15 PP, raakt iedereen naast de gebruiker. Bijeffect volgt.
+- **TM51** (`ITEM_TM_SELTZER_SURGE`) met eigen beschrijving. Een door mensen gemaakte move, dus alleen via de TM, niet per level-up.
+- Wie hem kan leren: iedere soort die Scald kan leren (in welke game dan ook) plus alle Water-types in dit project, ook Magikarp. Dat zijn 185 learnsets.
+  - Geregeld in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`), zodat het bij elke build automatisch meegaat, ook als types veranderen.

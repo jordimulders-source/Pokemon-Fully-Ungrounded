@@ -534,12 +534,32 @@
     {
       "id": "LAYOUT_ROUTE136_GROTTO",
       "name": "Route136_Grotto_Layout",
-      "width": 27,
+      "width": 30,
       "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route136_Grotto/border.bin",
       "blockdata_filepath": "data/layouts/Route136_Grotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_ROUTE136",
+      "name": "Underwater_Route136_Layout",
+      "width": 22,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_Route136/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_Route136/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE136_SUICUNE_CAVE",
+      "name": "Route136_SuicuneCave_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route136_SuicuneCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route136_SuicuneCave/map.bin"
     },
     {
       "id": "LAYOUT_UNDERWATER_ROUTE126",

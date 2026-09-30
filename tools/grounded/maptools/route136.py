@@ -21,10 +21,11 @@ terrace(m,L1); terrace(m,L2,face=4); terrace(m,L3,face=3); terrace(m,L4)
 # rotsheuvels in het dal en de wei
 for r in (set(rect(4,12,8,17)),set(rect(27,34,33,38)),set(rect(42,29,47,33)),set(rect(13,30,17,33))): terrace(m,r)
 def free(x,y): return 0<=x<W and 0<=y<H and m.col[y][x]==0 and m.elev[y][x]==3
-def stairs(x0,y0,w=3,h=2):
-    for x in range(x0,x0+w):
-        for y in range(y0,y0+h): m.put(x,y,'stairs',0)
-stairs(21,24); stairs(28,14,3,4); stairs(38,8,3,3); stairs(47,4)
+STL,STR=175,207   # Hoenn-stenen trap uit de General-tileset (zoals Route 119): links, rechts
+STAIRS={STL,STR}
+def stairs(x0,y0,h=2):
+    for y in range(y0,y0+h): m.put(x0,y,STL,0); m.put(x0+1,y,STR,0)
+stairs(21,24); stairs(29,14,4); stairs(38,8,3); stairs(48,4)
 # verborgen grot in de L1-rand, rechtsonder in de wei (van het pad af)
 for x,n in zip((50,51,52),('cliff_front_a','cliff_front_b','cliff_front_c')): m.put(x,24,n,1)
 for x,n in zip((50,51,52),('cave_l','cave_door','cave_r')): m.put(x,25,n,1)
@@ -33,7 +34,7 @@ m.put(51,25,'cave_door',0,0)
 path=(set(rect(10,0,12,9))|set(rect(10,8,16,10))|set(rect(14,8,16,18))|set(rect(10,16,16,18))|set(rect(10,16,12,28))|set(rect(10,26,23,28))|set(rect(21,18,23,23))|set(rect(21,18,30,20))
       |set(rect(28,11,30,13))|set(rect(28,11,40,13))|set(rect(38,6,40,7))|set(rect(38,6,49,7))
       |set(rect(48,0,50,5)))
-path-= {c for c in path if m.g[c[1]][c[0]]==N['stairs']}
+path-= {c for c in path if m.g[c[1]][c[0]] in STAIRS}
 path={c for c in path if free(*c)}
 autopath(m,path,'deep')
 # grote keien (2x2) als obstakels op de plateaus
@@ -48,12 +49,12 @@ for y in (18,19): m.put(47,y,'rock_snow',1)
 # --- bossen ---
 def okf(x,y):
     return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and m.elev[y][x]!=1 and \
-        m.g[y][x] not in (N['stairs'],N['cave_door']) and (free(x,y) or m.g[y][x]==N['grass_snow'])
+        m.g[y][x] not in STAIRS|{N['cave_door']} and (free(x,y) or m.g[y][x]==N['grass_snow'])
 REG=set(rect(4,2,7,10))|set(rect(4,19,7,25))|set(rect(14,2,17,6))|set(rect(13,21,17,24))|set(rect(4,30,9,41))|set(rect(20,30,31,33))|set(rect(38,36,47,41))|set(rect(18,2,21,15))|set(rect(34,22,41,23))
 hforest(m,REG,okf,path)
 def okb(x,y):
     return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and m.elev[y][x]!=1 and \
-        m.g[y][x] not in (N['stairs'],N['cave_door'])
+        m.g[y][x] not in STAIRS|{N['cave_door']}
 BAND=set(rect(0,0,3,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,9,1))|set(rect(14,0,47,1))|set(rect(52,0,W-1,1))|set(rect(0,H-2,W-1,H-1))
 hforest(m,BAND,okb,path)
 # hoog gras (niet direct tegen de randbomen aan)
@@ -71,11 +72,13 @@ def clear_near(x,y,r=1):
         for dy in range(-r,r+1):
             c=(x+dx,y+dy)
             if c in path or c in EVENTS: return False
-            if 0<=c[0]<W and 0<=c[1]<H and m.g[c[1]][c[0]] in (N['stairs'],N['cave_door']): return False
+            if 0<=c[0]<W and 0<=c[1]<H and m.g[c[1]][c[0]] in STAIRS|{N['cave_door']}: return False
     return True
 BLOCK=['rock_snow','rock_snow2','rock_cluster','rock_snow3','rock_snow4','ice_rock','ice_rock2','ice_chunks','ice_crystal','ice_crystal2','snowball','log','bush_snow','stump']
 SOFT=['flowers_blue','flowers_pink','tuft2','tuft4','tuft6','tuft7','tuft8','tuft9','snow_deep','snow_deep2']
-cands=[(x,y) for y in range(H) for x in range(W) if free(x,y) and m.g[y][x]!=N['grass_snow'] and (x,y) not in path]
+# doorgangen die vrij moeten blijven van decor (naar Keccles en de grot, de oostkant van L1)
+KEEP=set(rect(36,20,39,21))|set(rect(49,21,53,23))
+cands=[(x,y) for y in range(H) for x in range(W) if free(x,y) and m.g[y][x]!=N['grass_snow'] and (x,y) not in path and (x,y) not in KEEP]
 rnd.shuffle(cands)
 for (x,y) in cands:
     if not free(x,y): continue

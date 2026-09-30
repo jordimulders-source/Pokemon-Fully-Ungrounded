@@ -67,7 +67,7 @@
 #define FLAG_ITEM_ROUTE_136_WEAKNESS_POLICY    0x35 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_RIVAL    0x36 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_HIDE_ROUTE136_SUICUNE    0x38 // Project Grounded: Suicune (static) in de grot achter het kristalmeer van Route 136
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

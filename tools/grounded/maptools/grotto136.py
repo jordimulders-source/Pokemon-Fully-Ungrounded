@@ -35,6 +35,22 @@ for (x,y) in cand:
     if any(abs(x-a)+abs(y-b)<3 for a,b in placed): continue
     g[y][x]=(BLUE if x<14 else rnd.choice((RED1,RED2)))|0x400|(3<<12); placed.append((x,y))
 print('kristallen geplaatst:',placed)
+# pad tussen meer en lava: K kolommen invoegen bij x=15 (alles vanaf de lava schuift K naar rechts)
+K=3; FLOOR=0x211|(3<<12)
+for y in range(GH):
+    if y<7: ins=g[y][15]
+    elif y==7: ins=g[y][13]
+    elif y<GH-2: ins=FLOOR
+    else: ins=g[y][14]
+    g[y][15:15]=[ins]*K
+W+=K
+# oostoever van het meer (kolom 14) surfbaar maken: botsing eraf
+for y in range(17,23):
+    if (g[y][14]&0x3ff)==0x288: g[y][14]&=~0xc00
+# het diepe water zelf had in Marine Cave botsing: eraf, zodat je kunt zwemmen (en duiken)
+for y in range(GH):
+    for x in range(W):
+        if (g[y][x]&0x3ff) in (0x14e,0x14f): g[y][x]&=~0xc00
 open('data/layouts/Route136_Grotto/map.bin','wb').write(struct.pack('<%dH'%(W*GH),*[t for r in g for t in r]))
 # ladder (ingang) zoeken
 lad=[(x,y) for y in range(GH) for x in range(W) if (g[y][x]>>0)&0x3ff in (0x2f5,0x2f6,0x2f7,0x29b,0x28f)]

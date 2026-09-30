@@ -59,7 +59,7 @@
 #define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY    0x2E // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_ROUTE_135_LIFE_ORB    0x2F // Project Grounded: Route 135
-#define FLAG_ITEM_ROUTE_135_NEVER_MELT_ICE    0x30 // Project Grounded: Route 135
+#define FLAG_ITEM_ROUTE_135_ASSAULT_VEST    0x30 // Project Grounded: Route 135
 #define FLAG_ITEM_ROUTE_135_SUPER_REPEL    0x31 // Project Grounded: Route 135
 #define FLAG_HIDE_ROUTE135_LAPRAS    0x32 // Project Grounded: Lapras (static) in het meer van Route 135
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

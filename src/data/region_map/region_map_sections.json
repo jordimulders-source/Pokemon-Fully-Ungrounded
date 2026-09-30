@@ -1234,6 +1234,10 @@
     {
       "id": "MAPSEC_COLDSTEP_CAVE",
       "name": "COLDSTEP CAVE"
+    },
+    {
+      "id": "MAPSEC_ROUTE_135",
+      "name": "ROUTE 135"
     }
   ]
 }

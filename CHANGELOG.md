@@ -15128,3 +15128,14 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.6.89] - Coldstep Cave: ijskamer 2 met een nieuwe, eerlijke puzzel; Focus Sash
 - **IJskamer 2:** nieuwe glijpuzzel (15 rotsen). Pittig: de kortste route van ladder naar ladder is 28 glijbewegingen. Door de computer gecontroleerd: voor elke combinatie van opgepakte items blijft de uitgang bereikbaar en kun je vanaf elke plek zowel terug naar de ingang als door naar de uitgang. Er zijn dus geen softlocks meer, van welke kant je ook komt. In de emulator helemaal nagelopen.
 - **Items in ijskamer 2:** Ice Stone (5,13), **Focus Sash** (3,7) en PP Up (13,3), elk op een sneeuwtegel. De Focus Sash vervangt de Never-Melt Ice en was nog nergens anders te krijgen.
+
+### [v.0.6.90] - Route 135 (eerste versie)
+- **Nieuwe route: Route 135** (60×40, net onder de gemiddelde routelengte). Je komt er via de uitgangsladder van Coldstep Cave (ijskamer 2) en staat buiten bij een grotingang in de klif.
+- **Opbouw in lagen:** meerdere terrassen met trappen. In het midden valt een brede, hoge waterval (7 breed, zoals bij Ever Grande en Meteor Falls) uit een bronvijver door een massieve rotswand in een groot meer. Boven de waterval ligt een **Life Orb** (alleen bereikbaar met Waterfall).
+- **Pad:** van de grot omlaag, langs het meer naar het oosten en dan naar het zuiden (daar komt straks Route 136). Sneeuwgras, dennenbossen, rotsen en ijskristallen.
+- **Hikers Edmund & Tenzing** (lv 35) staan boven de trap naar het oostelijke terras en vallen je samen aan (dubbelgevecht als je twee Pokémon hebt). Edmund: Coalossal, Stonjourner, Bergmite. Tenzing: Mudsdale, Klawf, Naclstack.
+- **Prof. Birch (gevecht 2)** staat bij een besneeuwde kei aan het pad. Team (lv 36, ace lv 38): Amaura, Alolan Sandslash, Crabominable, Cryogonal en Cetitan, allemaal met Icy Wind. Hij vecht ook hier op de Macarena. De dialoog is een neutrale placeholder, zodat Jordi hem zelf kan schrijven.
+- **Items:** Life Orb (boven de waterval), Never-Melt Ice (noordoostelijk terras), Super Repel; verborgen: Nugget (bij Birch' kei) en Ice Heal (aan het meer).
+- **Wilde Pokémon (12 unieke soorten, lv 32–35):** Beartic, Gogoat, Piloswine, Abomasnow, Primeape, Hisuian Sneasel, Ursaring, Stantler, Absol, Amaura, Arctibax (1%), Drampa (1%). Surfen: Seel, Sealeo, Dewgong, Cetoddle, Lapras. Vissen: Goldeen, Arrokuda, Barboach, Shellder, Seaking, Whiscash, Barraskewda, Cloyster, Basculin, Alomomola.
+- Weer: sneeuw (in gevechten hagel). Muziek: Route 120. Op de Town Map valt Route 135 voorlopig onder Route 115, totdat de kaart wordt bijgewerkt.
+- **Sneeuwtileset:** houten trap toegevoegd (`stairs`).

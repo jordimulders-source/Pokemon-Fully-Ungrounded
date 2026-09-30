@@ -2269,6 +2269,52 @@
           }
         },
         {
+          "map": "MAP_ROUTE135",
+          "base_label": "gRoute135",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_BEARTIC" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_GOGOAT" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_PILOSWINE" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_ABOMASNOW" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_PRIMEAPE" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_SNEASEL_HISUI" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_URSARING" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_STANTLER" },
+              { "min_level": 34, "max_level": 35, "species": "SPECIES_ABSOL" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_AMAURA" },
+              { "min_level": 35, "max_level": 35, "species": "SPECIES_ARCTIBAX" },
+              { "min_level": 35, "max_level": 35, "species": "SPECIES_DRAMPA" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_SEEL" },
+              { "min_level": 30, "max_level": 34, "species": "SPECIES_SEALEO" },
+              { "min_level": 34, "max_level": 35, "species": "SPECIES_DEWGONG" },
+              { "min_level": 32, "max_level": 35, "species": "SPECIES_CETODDLE" },
+              { "min_level": 35, "max_level": 35, "species": "SPECIES_LAPRAS" }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              { "min_level": 5, "max_level": 10, "species": "SPECIES_GOLDEEN" },
+              { "min_level": 5, "max_level": 10, "species": "SPECIES_ARROKUDA" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_BARBOACH" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_SHELLDER" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_SEAKING" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_WHISCASH" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_BARRASKEWDA" },
+              { "min_level": 35, "max_level": 40, "species": "SPECIES_CLOYSTER" },
+              { "min_level": 35, "max_level": 40, "species": "SPECIES_BASCULIN" },
+              { "min_level": 35, "max_level": 40, "species": "SPECIES_ALOMOMOLA" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
           "base_label": "gAbandonedShip_HiddenFloorCorridors",
           "water_mons": {

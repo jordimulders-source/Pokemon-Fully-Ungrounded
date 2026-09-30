@@ -25943,3 +25943,119 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Incinerate
 - Poison Gas
 
+
+=== TRAINER_BIRCH_2 ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+
+Amaura
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Rock Tomb
+- Thunder Wave
+- Take Down
+
+Sandslash_Alola
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Rock Tomb
+- Iron Head
+- Rapid Spin
+
+Crabominable
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Rock Tomb
+- Hammer Arm
+- Bulk Up
+
+Cryogonal
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Ancient Power
+- Freeze-Dry
+- Recover
+
+Cetitan
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Rock Slide
+- Body Slam
+- Yawn
+
+=== TRAINER_EDMUND ===
+Name: EDMUND
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Coalossal
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Stealth Rock
+- Rock Slide
+- Tar Shot
+- Incinerate
+
+Stonjourner
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Wide Guard
+- Rock Slide
+- Stomping Tantrum
+- Body Slam
+
+Bergmite
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Avalanche
+- Ice Fang
+- Rapid Spin
+- Curse
+
+=== TRAINER_TENZING ===
+Name: TENZING
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Mudsdale
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Bulldoze
+- Heavy Slam
+- Rock Smash
+- Iron Defense
+
+Klawf
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Rock Tomb
+- Bulldoze
+- Vise Grip
+- Swords Dance
+
+Naclstack
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Salt Cure
+- Rock Blast
+- Recover
+- Mud Shot

@@ -162,6 +162,8 @@ for n_ in (0, 1):
                     WATER, shore(n_, s_, w_, e_), 'pond')
 for corner in ('nw', 'ne', 'sw', 'se'):
     add(f'shore_in_{corner}', WATER, shore(0, 0, 0, 0, **{corner: True}), 'pond')
+# --- houten trap (tegen een klif op) ---
+add('stairs', over(G, cell(3, 4)))
 
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):

@@ -58,9 +58,9 @@
 #define FLAG_ITEM_COLDSTEP_CAVE_PP_UP    0x2C // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY    0x2E // Project Grounded: Coldstep Cave
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_ITEM_ROUTE_135_LIFE_ORB    0x2F // Project Grounded: Route 135
+#define FLAG_ITEM_ROUTE_135_NEVER_MELT_ICE    0x30 // Project Grounded: Route 135
+#define FLAG_ITEM_ROUTE_135_SUPER_REPEL    0x31 // Project Grounded: Route 135
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
@@ -657,8 +657,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 #define FLAG_HIDDEN_ITEM_ROUTE_102_LEFTOVERS                 (FLAG_HIDDEN_ITEMS_START + 0x70)
 
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_135_NUGGET  0x265 // Project Grounded: Route 135
+#define FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL  0x266 // Project Grounded: Route 135
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag

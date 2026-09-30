@@ -512,6 +512,16 @@
       "blockdata_filepath": "data/layouts/Route134/map.bin"
     },
     {
+      "id": "LAYOUT_ROUTE135",
+      "name": "Route135_Layout",
+      "width": 60,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snow",
+      "border_filepath": "data/layouts/Route135/border.bin",
+      "blockdata_filepath": "data/layouts/Route135/map.bin"
+    },
+    {
       "id": "LAYOUT_UNDERWATER_ROUTE126",
       "name": "Underwater_Route126_Layout",
       "width": 80,

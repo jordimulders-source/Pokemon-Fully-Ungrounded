@@ -143,5 +143,6 @@
  "shore_in_nw": 653,
  "shore_in_ne": 654,
  "shore_in_sw": 655,
- "shore_in_se": 656
+ "shore_in_se": 656,
+ "stairs": 657
 }

@@ -138,16 +138,24 @@ def fall(m,x0,y0,y1,w=3,foam=True):
         for x in range(x0,x0+w): m.put(x,y1+1,193,0,1)
 
 def hforest(m,region,ok,path=set()):
-    """Hoenn-bosbomen (besneeuwd) op een 2x2-raster. region: cellen waar bos mag; ok(x,y): cel is vrij."""
+    """Hoenn-bosbomen (besneeuwd) op een 2x2-raster (even x/y, gelijk aan de border.bin).
+    Buiten de kaart geldt als bos, zodat de rand naadloos doorloopt. Een boom komt er alleen
+    als zijn top past: bovenaan de kaart, onder een andere boom, of met een vrije cel erboven."""
     region=set(region)
-    anchors={(x,y) for (x,y) in region if x%2==0 and y%2==0 and all((x+dx,y+dy) in region and ok(x+dx,y+dy) for dx in (0,1) for dy in (0,1))}
+    out=lambda x,y: not(0<=x<m.W and 0<=y<m.H)
+    cand={(x,y) for (x,y) in region if x%2==0 and y%2==0 and all(out(x+dx,y+dy) or ((x+dx,y+dy) in region and ok(x+dx,y+dy)) for dx in (0,1) for dy in (0,1))}
+    anchors=set()
+    for (x,y) in sorted(cand,key=lambda p:p[1]):
+        if y==0 or (x,y-2) in anchors or all(ok(x+dx,y-1) and (x+dx,y-1) not in path for dx in (0,1)):
+            anchors.add((x,y))
+    A=lambda x,y: (x,y) in anchors or out(x,y)
     T=lambda k: 'htree_'+k
     for (x,y) in anchors:
-        L=(x-2,y) in anchors; R=(x+2,y) in anchors; B=(x,y+2) in anchors
+        L=A(x-2,y); R=A(x+2,y); B=A(x,y+2)
         m.put(x,y,T('1d4' if L else '1d6'),1); m.put(x+1,y,T('1d5' if R else '1d7'),1)
         if B: m.put(x,y+1,T('1dc'),1); m.put(x+1,y+1,T('1dd'),1)
         else: m.put(x,y+1,T('1e4' if L else '1e6'),1); m.put(x+1,y+1,T('1e5' if R else '1e7'),1)
     for (x,y) in anchors:
-        if (x,y-2) not in anchors and 0<=y-1 and ok(x,y-1) and ok(x+1,y-1) and (x,y-1) not in path and (x+1,y-1) not in path:
+        if y>0 and (x,y-2) not in anchors:
             m.put(x,y-1,T('1ce'),0); m.put(x+1,y-1,T('1cf'),0)
     return anchors

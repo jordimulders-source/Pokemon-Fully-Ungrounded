@@ -222,10 +222,10 @@ def _general_tree_layers():
     return res
 for _mid, (_bot, _top) in _general_tree_layers().items():
     add(f'htree_{_mid:03x}', over(G, _bot), _top if _top.getbbox() else None)
-# --- klein blauw huisje (4x3), deur op (1,2) ---
-for dy in range(3):
+# --- klein blauw huisje (4x4, dak begint halverwege rij 107), deur op (1,3) ---
+for dy in range(4):
     for dx in range(4):
-        add(f'house_blue_{dx}{dy}', over(G, cell(dx, 108 + dy)), beh='door' if (dx, dy) == (1, 2) else 'normal')
+        add(f'house_blue_{dx}{dy}', over(G, cell(dx, 107 + dy)), beh='door' if (dx, dy) == (1, 3) else 'normal')
 
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):

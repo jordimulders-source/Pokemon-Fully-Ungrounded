@@ -10,14 +10,14 @@ m=M(W,H); rnd=random.Random(135)
 for y in range(H):
     for x in range(W):
         if rnd.random()<0.07: m.put(x,y,rnd.choice(['snow_dots','tuft0','tuft1','tuft3','snow_light','tuft5']))
-L1=set(rect(0,0,W-1,21))-set(rect(12,12,36,21))
-L2=set(rect(0,0,W-1,11))-set(rect(44,6,W-1,11))
-L3=set(rect(13,0,35,11))
+L1=set(rect(-1,-1,W,21))-set(rect(12,12,36,21))
+L2=set(rect(-1,-1,W,11))-set(rect(44,6,W,11))
+L3=set(rect(13,-1,35,11))
 terrace(m,L1); terrace(m,L2); terrace(m,L3,face=7)
-EVENTS={(55,9),(34,36),(38,19),(44,19),(33,3),(55,2),(10,13),(6,12),(36,34),(4,28)}
+EVENTS={(55,9),(55,10),(34,36),(38,19),(44,19),(33,3),(55,2),(10,13),(6,12),(36,34),(4,28)}
 def free(x,y): return 0<=x<W and 0<=y<H and m.col[y][x]==0 and m.elev[y][x]==3
 # bronvijver en waterval (3 breed, 3 terrassen hoog)
-m.water(smooth(set(rect(19,0,29,2))|set(rect(20,3,28,3))))
+m.water(smooth(set(rect(19,1,29,2))|set(rect(20,3,28,3))))
 lake=smooth(set(blob(24,25,11.5,8,seed=7,rough=0.12))|set(blob(24,15,8.5,4.5,seed=2,rough=0.1))|set(rect(18,12,30,14))|set(blob(15,30,5,3,seed=12,rough=0.1)))
 lake={c for c in lake if 12<=c[1]<=33 and 4<=c[0]<=40}
 for _ in range(4):
@@ -27,6 +27,7 @@ m.water(lake)
 fall(m,21,4,11,w=7)
 # grot (Coldstep, uitgang) in de L2-rand links
 for x,n in zip((5,6,7),('cave_l','cave_door','cave_r')): m.put(x,11,n,1)
+for x,n in zip((5,6,7),('cliff_front_a','cliff_front_b','cliff_front_c')): m.put(x,10,n,1)
 m.put(6,11,'cave_door',0,0)
 # trappen
 def stairs(x0,y0,w=3,h=2):
@@ -34,9 +35,9 @@ def stairs(x0,y0,w=3,h=2):
         for y in range(y0,y0+h): m.put(x,y,'stairs',0)
 stairs(6,20); stairs(40,20); stairs(50,4)
 # huisje
-HOUSE=set(rect(54,6,57,8))
+HOUSE=set(rect(54,6,57,9))
 # pad
-path=set(rect(5,12,7,19))|set(rect(5,22,7,36))|set(rect(5,35,52,37))|set(rect(50,35,52,H-1))|set(rect(40,22,42,34))|set(rect(40,12,42,19))|set(rect(40,12,52,14))|set(rect(50,6,52,11))|set(rect(46,1,54,3))|set(rect(53,9,56,10))
+path=set(rect(5,12,7,19))|set(rect(5,22,7,36))|set(rect(5,35,52,36))|set(rect(50,35,52,H-1))|set(rect(40,22,42,34))|set(rect(40,12,42,19))|set(rect(40,12,52,14))|set(rect(50,6,52,11))|set(rect(46,2,54,3))|set(rect(53,10,56,11))
 path-= {c for c in path if m.g[c[1]][c[0]]==N['stairs']}
 path={c for c in path if free(*c)}
 autopath(m,path,'deep')
@@ -55,12 +56,11 @@ def pine(x,y,g=None):
 def okf(x,y):
     return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and (free(x,y) or m.g[y][x] in PINE)
 PINE={N[k] for k in N if 'pine' in k}|{N['grass_snow']}|{N[k] for k in N if k.startswith('tuft') or k.startswith('snow')}
-REG=set(rect(0,12,3,H-1))|set(rect(0,H-4,W-1,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,11,9))|set(rect(14,0,17,3))|set(rect(30,0,35,3))|set(rect(36,0,43,1))
-REG-=set(rect(53,5,59,11))
-REG|=set(rect(58,10,59,11))
+REG=set(rect(0,0,W-1,1))|set(rect(0,12,3,H-1))|set(rect(0,H-4,W-1,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,11,9))|set(rect(14,0,17,3))|set(rect(30,0,35,3))|set(rect(36,0,43,1))
+REG-=set(rect(53,5,59,12))
 hforest(m,REG,okf,path)
 for (x,y) in HOUSE:
-    m.put(x,y,f'house_blue_{x-54}{y-6}',0 if (x,y)==(55,8) else 1)
+    m.put(x,y,f'house_blue_{x-54}{y-6}',0 if (x,y)==(55,9) else 1)
 for (x,y) in [(15,1),(31,1),(33,0),(2,1),(9,0),(40,0),(56,0),(44,13),(56,12),(12,13),(47,23),(56,24),(10,24),(14,33),(3,26),
               (1,4),(4,6),(7,2),(10,5),(2,8),(8,7),(11,1),(14,4),(16,6),(30,5),(32,4),(17,2),(29,1),(37,4),(42,1),
               (45,15),(47,13),(53,14),(55,16),(38,15),(36,17),(57,18),(9,14),(12,17),(1,17),

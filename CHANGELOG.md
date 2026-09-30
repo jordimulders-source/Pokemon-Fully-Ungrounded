@@ -15159,3 +15159,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.6.94] - Overdracht verhuisd naar CLAUDE.md
 - De inhoud van `docs/grounded/OVERDRACHT.md` staat nu in `CLAUDE.md` (secties *Sessies en overdracht*, *Kaarten maken*, *Stand van zaken*, *Openstaande taken*), zodat elke nieuwe sessie het automatisch leest. Het losse bestand is weg. Claude werkt *Stand van zaken* bij na elk afgerond stuk werk.
+
+### [v.0.6.95] - Route 135: boomtoppen, kaartranden, grot en dak
+- **Boomtoppen:** een randboom komt er alleen nog als zijn top past (vrije cel erboven, een boom erboven of de bovenrand van de kaart). Er worden geen toppen meer afgekapt door het pad of door een klif. Het zuidelijke pad is één tile smaller, zodat de onderste bomenrij zijn toppen heeft.
+- **Kaartranden:** de terrassen lopen door tot buiten de kaart, dus langs de randen staan geen klifranden meer maar bos. Buiten de kaart telt als bos, zodat de randbomen naadloos aansluiten op de `border.bin`. De bovenkant heeft nu ook een bosrand. Getest: loop je naar een rand, dan loop je tegen het bos aan.
+- **Grotingang:** de rotsboog boven de grot (bovenste helft uit de tileset) staat er nu ook, zodat de grot niet meer afgekapt is.
+- **Huisje:** het dak begon in de bronsheet een halve tile hoger en is nu compleet (4×4). De deur staat op (55,9) en in de emulator getest (naar binnen en weer naar buiten).

@@ -94,7 +94,12 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`, eerste versie): verbonden met Route 135 (connectie offset 40). Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,17), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon, verborgen grot `Route136_Grotto` (kristalgrot met lava én water uit de Cave-tileset, bouwscript `grotto136.py`; leeg, Jordi bepaalt de inhoud). Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
 
 ## Openstaande taken (in volgorde)
-1. **Route 136 afronden:** Jordi's feedback op de eerste versie verwerken; dynamisch weer met sneeuw en as afwisselend (Route 135 en 136).
+1. **Route 136 afronden** (Jordi's laatste feedback):
+   - Trappen: vervang de houten sneeuwtrappen door de Hoenn-stenen trap zoals op Route 119 (General-metatile 175 links, 207 rechts, 2 breed, per rij herhaald in de klifwand). Let op: bij een eerste poging werd Keccles (51,20) onbereikbaar volgens de check in `route136.py`; controleer de bereikbaarheid.
+   - Kristalgrot `Route136_Grotto`: een pad tussen het watermeer en de lavapoel, zodat je het water in kunt (Surf).
+   - Duikstuk: vanuit het watermeer duiken (diepwatertiles + `dive`-connectie naar een nieuwe onderwaterkaart), boven komen in een nieuw grotdeel met een Suicune-static (voorbeeld: Underwater_SealedChamber → SealedChamber_OuterRoom).
+   - Dynamisch weer met sneeuw en as afwisselend (Route 135 en 136).
+   - De bergpas lijkt van boven dicht omdat buiten de kaart de border-bomen staan; dat lost zich op zodra Ashfrost via een `up`-connectie op x 48–51 aansluit.
 2. **Ashfrost Town:** paradijselijk dal met een meertje in het midden, een man die daar vist, huizen eromheen (sommige op verhoging), Pokémon Center, Mart en een paar huizen. De sneeuwpop hoort hier. Gebouwen staan in de bronsheet `graphics/grounded/snow_src` (rijen 104–134); waarschijnlijk is een eigen stads-tileset nodig vanwege het tile-budget.
 3. **Town Map:** Route 135/136 en Ashfrost toevoegen (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
 4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).

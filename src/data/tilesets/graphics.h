@@ -482,6 +482,29 @@ const u16 gTilesetPalettes_Unused1[][16] =
     INCBIN_U16("data/tilesets/secondary/unused_1/palettes/15.gbapal"),
 };
 
+// Project Grounded: sneeuw-tileset (CinnaYva)
+const u32 gTilesetTiles_Snow[] = INCBIN_U32("data/tilesets/secondary/snow/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_Snow[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_MeteorFalls[] = INCBIN_U32("data/tilesets/secondary/meteor_falls/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_MeteorFalls[][16] =

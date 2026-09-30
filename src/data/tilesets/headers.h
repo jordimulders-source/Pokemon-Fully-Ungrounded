@@ -256,6 +256,17 @@ const struct Tileset gTileset_Unused1 =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Snow = // Project Grounded: sneeuw-tileset (CinnaYva)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Snow,
+    .palettes = gTilesetPalettes_Snow,
+    .metatiles = gMetatiles_Snow,
+    .metatileAttributes = gMetatileAttributes_Snow,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_MeteorFalls =
 {
     .isCompressed = TRUE,

@@ -15094,3 +15094,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Het lege stuk van 3×4 in het midden (x 17–20, y 15–17) heeft een gang gekregen vanaf rij 13, met een **Rare Candy** (`FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY`, 0x2E).
 - Het ijs aan de onderkant bij x 25–28 (rij 9) is dichtgemaakt met rotsen.
 - Opnieuw gecontroleerd met de solver: de ladder is bereikbaar (kortste route nu 95 zetten), beide items zijn bereikbaar en je kunt nergens vastlopen.
+
+### [v.0.6.84] - Sneeuw-tileset (CinnaYva) omgezet naar GBA
+- Nieuwe secondary tileset `gTileset_Snow` (`data/tilesets/secondary/snow`), gemaakt met `tools/grounded/snow_tileset.py` uit CinnaYva's Essentials-tileset (`graphics/grounded/snow_src/`).
+  - 132 metatiles in 340 tiles en 7 paletten. Per 8×8-blokje kiest het script het best passende palet; tiles worden ontdubbeld, ook gespiegeld.
+  - Inhoud: sneeuwgrond (4 varianten + diepe sneeuw), ijsvloer, besneeuwd en groen hoog gras, plukjes en bloemen, drie paden (steen, roze, diepe sneeuw) met randen en binnenhoeken, hoogvlakte-kliffen met sneeuwtop, binnenhoeken, voorkant, grotingang en waterval-voorkant, bergtop en grote kei, besneeuwde, groene en smalle dennen, rotsen, ijsrotsen en ijskristallen, sneeuwballen, sneeuwpop, Pokémon-beeldje, boomstam, bosje en stronk.
+  - `metatile_names.json` koppelt namen aan metatile-id's voor het bouwen van de kaarten.
+- Credits voor CinnaYva bovenaan `CREDITS.md`.

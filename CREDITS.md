@@ -1,3 +1,7 @@
+## Project Grounded
+
+- **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
+
 ## Credits ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

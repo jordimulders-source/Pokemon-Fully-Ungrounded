@@ -15070,3 +15070,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
   - IJskamer 2: Abomasnow, Beartic, Glalie, Froslass, Vanillish, Sealeo, Jynx, Alola-Ninetales, Cetoddle, Eiscue, Galar-Darumaka, Frigibax.
 - **Meteor Falls kraterkamer:** de dubbele 1%-slots (Jangmo-o, Beldum) zijn vervangen door Chingling en Solosis, zodat ook daar alle 12 slots uniek zijn.
 - CLAUDE.md: encounter-filosofie bijgewerkt (12 unieke soorten per tabel).
+
+### [v.0.6.80] - Mini Forest wordt een doolhof; Coldstep-kamers los van elkaar
+- **Mini Forest** helemaal opnieuw: veel kleiner (26×22 in plaats van 50×20), een doolhof van gangen van 2 tegels breed vol hoog gras tussen dichte bomenrijen. Het schaduwweer blijft, dus het voelt benauwd.
+  - De ingang sluit nog steeds aan op de opening bovenin Route 102 (verbinding verschoven: offset 24 / -24).
+  - Aan het doodlopende eind dat het verst van de ingang ligt (109 stappen): **Leftovers** als zichtbare Pokéball. Die lag eerst verstopt; dezelfde vlag, dus wie hem al had, krijgt hem niet nog een keer.
+  - Getest in de emulator: van de ingang naar het eind gelopen en de Leftovers opgepakt.
+- **Coldstep Cave:** ijskamer 1 en 2 zijn geen naadloos verbonden kaarten meer, maar losse kamers. Een ijsladder bij de uitgang van de puzzel (18,11) brengt je naar een ladder in kamer 2 (3,11), en terug. Getest.

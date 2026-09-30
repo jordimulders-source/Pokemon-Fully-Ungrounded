@@ -15145,3 +15145,4 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Randen:** dichte, overlappende dennenbossen langs de west-, oost- en zuidrand, boven de grot en naast de bronvijver. Je kunt er niet meer tussendoor lijken te lopen.
 - **Decor:** extra rotsen, ijskristallen, sneeuwballen, stronken, bloemen en plukjes verspreid, steeds met vrije ruimte rond het pad. Met een bereikbaarheidscheck gecontroleerd: uitgang, trappen, trainers en items blijven bereikbaar.
 - De Super Repel ligt nu op (10,13), in het sneeuwgras bij de grot.
+- De rand buiten de kaart is nu dennenbos in plaats van bergtoppen, zodat het bos naadloos doorloopt.

@@ -21324,21 +21324,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
-    // Project Grounded: Team Aqua's bruiswater-golf (Surf met bubbels). Bijeffect nog te kiezen.
+    // Project Grounded: Team Aqua's bruiswater-golf (Surf met bubbels): 80 power, 20% Speed -1, 10% confusion, alleen beide tegenstanders.
     [MOVE_SELTZER_SURGE] =
     {
         .name = COMPOUND_STRING("Seltzer Surge"),
         .description = COMPOUND_STRING(
-            "A huge wave of fizzing,\n"
-            "sparkling water hits all."),
+            "A fizzing wave that may\n"
+            "lower Speed or confuse."),
         .effect = EFFECT_HIT,
-        .power = 90,
+        .power = 80,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 15,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 20,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 10,
+        }),
         .damagesUnderwater = TRUE,
         .skyBattleBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,

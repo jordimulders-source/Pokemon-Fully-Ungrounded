@@ -12552,9 +12552,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Team AQUA's fizzy\n"
-            "sparkling water wave\n"
-            "that hits all around."),
+            "Team AQUA's fizzy wave\n"
+            "hits both foes. May\n"
+            "lower Speed or confuse."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

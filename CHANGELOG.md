@@ -15045,3 +15045,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **TM51** (`ITEM_TM_SELTZER_SURGE`) met eigen beschrijving. Een door mensen gemaakte move, dus alleen via de TM, niet per level-up.
 - Wie hem kan leren: iedere soort die Scald kan leren (in welke game dan ook) plus alle Water-types in dit project, ook Magikarp. Dat zijn 185 learnsets.
   - Geregeld in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`), zodat het bij elke build automatisch meegaat, ook als types veranderen.
+
+### [v.0.6.77] - Seltzer Surge: bijeffecten en balans
+- **80 power** (was 90). Surf blijft de sterkste pure watergolf; Seltzer Surge ruilt kracht in voor bijeffecten.
+- Bijeffecten: **20% kans op Speed -1** en **10% kans op Confusion** (per geraakte tegenstander).
+- Raakt **alleen beide tegenstanders** (`MOVE_TARGET_BOTH`), niet je partner zoals Surf.
+- Beschrijving: "A fizzing wave that may lower Speed or confuse."
+- TM51: "Team AQUA's fizzy wave hits both foes. May lower Speed or confuse."
+- Tests in `test/battle/grounded/seltzer_surge.c` (Speed-kans, Confusion-kans, raakt partner niet): alle 3 slagen.

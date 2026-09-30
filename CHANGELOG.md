@@ -15191,3 +15191,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Items:** Max Ether, Rare Candy (hoog, van het pad af), Weakness Policy (achter Keccles); verborgen: Star Piece en Max Repel.
 - **Wilde Pokémon (12 unieke soorten, lv 34–37):** Lairon, Boldore, Skarmory, Hawlucha, Gurdurr, Frosmoth, Altaria, Gabite, Torkoal, Gligar, Druddigon (1%), Pupitar (1%).
 - Alle nieuwe teksten zijn placeholders voor Jordi. Bouwscript: `tools/grounded/maptools/route136.py`.
+
+### [v.0.7.0] - Route 136: pas naar Ashfrost, strakkere randen, kristalgrot met lava en water
+- **Bergpas:** de uitgang bovenaan is nu een 3 tiles breed pad dat zonder bomen doorloopt tot de bovenrand (x 48–51). Daar sluit Ashfrost Town straks aan, zoals bij elke andere stad. Loop je de pas in, dan spreekt Brendan/May je vanzelf aan (coord-trigger op y 3); aanspreken kan ook.
+- **Randbomen:** bomen die tegen al bestaande bomen aan komen (bijv. de bosrand onderaan tegen het bos linksonder) sluiten nu goed aan in plaats van elkaar af te kappen (`hforest` in `snowlib.py`).
+- **Gras:** hoog gras komt niet meer direct tegen de randbomen aan, zodat er geen half vakje sneeuw tussen zit.
+- **Klifranden:** de getrapte klifranden rechts (twee randen die raar op elkaar aansloten) zijn recht getrokken. Keccles staat nu in het gat van de rotsrij op (51,20) met de Weakness Policy erachter op (52,18); de verborgen grot zit in de klifrand op (51,25).
+- **Kristalgrot (`Route136_Grotto`):** opnieuw opgebouwd uit de Cave-tileset: het watermeer van Marine Cave en de lavapoel van Terra Cave naast elkaar, met blauwe en rode kristallen uit Cave of Origin. De kristallen staan nu op de bruine grotvloer: transparante kopieën van de kristaltiles zijn achteraan aan de Cave-tileset toegevoegd (metatiles 0x3A5–0x3A7, tiles 429–440, `-num_tiles 441`). Bouwscript: `tools/grounded/maptools/grotto136.py`. Nog leeg; Jordi bepaalt de inhoud.

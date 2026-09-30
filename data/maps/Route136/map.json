@@ -116,7 +116,7 @@
       "local_id": "LOCALID_ROUTE136_KECCLES",
       "graphics_id": "OBJ_EVENT_GFX_KECLEON",
       "x": 51,
-      "y": 17,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
@@ -155,7 +155,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 52,
-      "y": 15,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -169,13 +169,41 @@
   "warp_events": [
     {
       "x": 51,
-      "y": 21,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ROUTE136_GROTTO",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Route136_EventScript_RivalTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Route136_EventScript_RivalTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Route136_EventScript_RivalTrigger"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

@@ -81,6 +81,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - Randen van routes: de vaste Hoenn-randbomen (op sneeuwkaarten de besneeuwde versie `htree_*`), ook als `border.bin`. Geen losse bomen die elkaar overlappen.
 - Watervallen zoals bij Ever Grande/Meteor Falls: breed, in een massieve rotswand (`fall()` en `terrace(face=...)` in `snowlib.py`).
 - Sneeuwtileset (`tools/grounded/snow_tileset.py`): nieuwe metatiles **alleen achteraan** toevoegen (anders verschuiven alle nummers). Na genereren eerst `make data/tilesets/secondary/snow/tiles.4bpp`. Tile-budget max. 512 (nu ~431).
+- Cave-tileset (`data/tilesets/secondary/cave`): transparante kristallen toegevoegd als metatiles 0x3A5 (blauw), 0x3A6/0x3A7 (rood); `-num_tiles` staat op 441 in `graphics_file_rules.mk`.
 - Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; `wild_encounters.json` en andere grote JSON-bestanden tekstueel bewerken (niet via `json.dump`, dat herformatteert het hele bestand); trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`).
 
 ## Stand van zaken
@@ -90,7 +91,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
   - Nog van Jordi: definitieve teksten van Birch 2, Edmund, Tenzing, Bram en het oude stel (nu placeholders).
   - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
   - `MAPSEC_ROUTE_135` valt op de Town Map nog onder Route 115 (alias in `src/region_map.c`).
-- **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`, eerste versie): verbonden met Route 135 (connectie offset 40). Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,17), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon, verborgen grot `Route136_Grotto` (leeg, Jordi bepaalt de inhoud). Teksten zijn placeholders.
+- **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`, eerste versie): verbonden met Route 135 (connectie offset 40). Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,17), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon, verborgen grot `Route136_Grotto` (kristalgrot met lava én water uit de Cave-tileset, bouwscript `grotto136.py`; leeg, Jordi bepaalt de inhoud). Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
 
 ## Openstaande taken (in volgorde)
 1. **Route 136 afronden:** Jordi's feedback op de eerste versie verwerken; dynamisch weer met sneeuw en as afwisselend (Route 135 en 136).

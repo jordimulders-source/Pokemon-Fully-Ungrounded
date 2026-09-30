@@ -148,11 +148,13 @@ def hforest(m,region,ok,path=set()):
     region=set(region)
     out=lambda x,y: not(0<=x<m.W and 0<=y<m.H)
     cand={(x,y) for (x,y) in region if x%2==0 and y%2==0 and all(out(x+dx,y+dy) or ((x+dx,y+dy) in region and ok(x+dx,y+dy)) for dx in (0,1) for dy in (0,1))}
+    TOPS={N['htree_1d4'],N['htree_1d6']}
+    old=lambda x,y: 0<=x<m.W and 0<=y<m.H and m.g[y][x] in TOPS     # boom die er al staat (linkerbovenkwart)
     anchors=set()
     for (x,y) in sorted(cand,key=lambda p:p[1]):
-        if y==0 or (x,y-2) in anchors or all(ok(x+dx,y-1) and (x+dx,y-1) not in path for dx in (0,1)):
+        if y==0 or (x,y-2) in anchors or old(x,y-2) or all(ok(x+dx,y-1) and (x+dx,y-1) not in path for dx in (0,1)):
             anchors.add((x,y))
-    A=lambda x,y: (x,y) in anchors or out(x,y)
+    A=lambda x,y: (x,y) in anchors or out(x,y) or old(x,y)
     T=lambda k: 'htree_'+k
     for (x,y) in anchors:
         L=A(x-2,y); R=A(x+2,y); B=A(x,y+2)
@@ -160,6 +162,14 @@ def hforest(m,region,ok,path=set()):
         if B: m.put(x,y+1,T('1dc'),1); m.put(x+1,y+1,T('1dd'),1)
         else: m.put(x,y+1,T('1e4' if L else '1e6'),1); m.put(x+1,y+1,T('1e5' if R else '1e7'),1)
     for (x,y) in anchors:
-        if y>0 and (x,y-2) not in anchors:
+        if y>0 and old(x,y-2):
+            m.put(x,y-1,T('1dc'),1); m.put(x+1,y-1,T('1dd'),1)   # bestaande boom erboven: stam met onze top erover
+        elif y>0 and (x,y-2) not in anchors:
             m.put(x,y-1,T('1ce'),0); m.put(x+1,y-1,T('1cf'),0)
+    # buren die er al stonden: hun zijkant laten aansluiten
+    for (x,y) in anchors:
+        for (nx,side) in ((x-2,'r'),(x+2,'l')):
+            if old(nx,y) and (nx,y) not in anchors:
+                if side=='r': m.put(nx+1,y,T('1d5'),1); m.put(nx+1,y+1,T('1dd' if m.g[y+1][nx]==N['htree_1dc'] else '1e5'),1)
+                else: m.put(nx,y,T('1d4'),1); m.put(nx,y+1,T('1dc' if m.g[y+1][nx+1]==N['htree_1dd'] else '1e4'),1)
     return anchors

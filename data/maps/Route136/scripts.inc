@@ -13,9 +13,19 @@ Route136_EventScript_SetMayGfx::
 	end
 
 @ ---------------------------------------------------------------- rivaal bij de bergpas
+Route136_EventScript_RivalTrigger::
+	goto_if_set FLAG_HIDE_ROUTE136_RIVAL, Route136_EventScript_RivalTriggerEnd
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	goto Route136_EventScript_RivalTalk
+Route136_EventScript_RivalTriggerEnd::
+	end
+
 Route136_EventScript_Rival::
 	lock
 	faceplayer
+Route136_EventScript_RivalTalk::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route136_EventScript_May
 	goto Route136_EventScript_Brendan

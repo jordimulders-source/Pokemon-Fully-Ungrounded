@@ -101,6 +101,13 @@
       "elevation": 0,
       "dest_map": "MAP_COLDSTEP_CAVE_ICE_ROOM_2",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 55,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE135_HOUSE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

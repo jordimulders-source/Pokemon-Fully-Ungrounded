@@ -185,6 +185,48 @@ for corner in ('nw', 'ne', 'sw', 'se'):
 # --- houten trap (tegen een klif op) ---
 add('stairs', over(G, cell(3, 4)))
 
+# --- besneeuwde Hoenn-randbomen: de bosbomen uit de General-tileset (0x1CE-0x1EF), groen -> sneeuw ---
+def _general_tree_layers():
+    gp = 'data/tilesets/primary/general/'
+    gtiles = open(gp + 'tiles.4bpp', 'rb').read()
+    gmt = open(gp + 'metatiles.bin', 'rb').read()
+    gpal = [tuple(map(int, l.split())) for l in open(gp + 'palettes/02.pal').read().split('\n')[3:19]]
+    recolor = {1: (240, 248, 255), 2: (192, 212, 236), 3: (56, 120, 104), 4: (32, 72, 72),
+               15: (126, 148, 196)}          # 12/13/14 = gras -> doorzichtig
+    def tile_img(e):
+        t, hf, vf, pn = e & 0x3FF, (e >> 10) & 1, (e >> 11) & 1, e >> 12
+        img = Image.new('RGBA', (8, 8), (0, 0, 0, 0))
+        if pn != 2:
+            return img
+        b = gtiles[t * 32:(t + 1) * 32]
+        for y in range(8):
+            for x in range(8):
+                c = (b[y * 4 + x // 2] >> (4 * (x & 1))) & 15
+                if c in recolor:
+                    img.putpixel((x, y), recolor[c] + (255,))
+                elif c not in (0, 12, 13, 14):
+                    img.putpixel((x, y), gpal[c] + (255,))
+        if hf: img = img.transpose(Image.FLIP_LEFT_RIGHT)
+        if vf: img = img.transpose(Image.FLIP_TOP_BOTTOM)
+        return img
+    def layer(ents):
+        out = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+        for k, e in enumerate(ents):
+            out.alpha_composite(tile_img(e), ((k % 2) * 8, (k // 2) * 8))
+        return out
+    res = {}
+    for mid in list(range(0x1CE, 0x1D0)) + list(range(0x1D4, 0x1D8)) + list(range(0x1DC, 0x1E0)) + \
+            list(range(0x1E4, 0x1E8)) + list(range(0x1EC, 0x1F0)):
+        e = struct.unpack_from('<8H', gmt, mid * 16)
+        res[mid] = (layer(e[:4]), layer(e[4:]))
+    return res
+for _mid, (_bot, _top) in _general_tree_layers().items():
+    add(f'htree_{_mid:03x}', over(G, _bot), _top if _top.getbbox() else None)
+# --- klein blauw huisje (4x3), deur op (1,2) ---
+for dy in range(3):
+    for dx in range(4):
+        add(f'house_blue_{dx}{dy}', over(G, cell(dx, 108 + dy)), beh='door' if (dx, dy) == (1, 2) else 'normal')
+
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):
     a = a.copy()

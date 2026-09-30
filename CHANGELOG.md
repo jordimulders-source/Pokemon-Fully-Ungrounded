@@ -15146,3 +15146,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Decor:** extra rotsen, ijskristallen, sneeuwballen, stronken, bloemen en plukjes verspreid, steeds met vrije ruimte rond het pad. Met een bereikbaarheidscheck gecontroleerd: uitgang, trappen, trainers en items blijven bereikbaar.
 - De Super Repel ligt nu op (10,13), in het sneeuwgras bij de grot.
 - De rand buiten de kaart is nu dennenbos in plaats van bergtoppen, zodat het bos naadloos doorloopt.
+
+### [v.0.6.92] - Route 135: besneeuwde Hoenn-randbomen en een huisje
+- **Randbomen:** de randen van Route 135 bestaan nu uit dezelfde bosbomen als op alle Hoenn-routes (General-tileset 0x1CE–0x1EF), omgezet naar een besneeuwde versie (sneeuw op de kruinen, sneeuw in plaats van gras eromheen). Ze sluiten naadloos op elkaar aan, met rand-, top- en onderstukken zoals in Hoenn. De losse dennen blijven alleen als decor in open stukken.
+- **Kaartrand:** buiten de kaart loopt hetzelfde besneeuwde bos door (geen rotsen/bergtoppen meer).
+- **Huisje rechtsboven** (onder de noordoostelijke klif, deur op 55,8) met een paadje ernaartoe. Binnen is het een standaard huisinterieur (`Route135_House`), nog zonder bewoner.
+- **Sneeuwtileset:** nieuwe metatiles achteraan toegevoegd (`htree_*` en `house_blue_*`), zodat bestaande nummers niet verschuiven. De tileset heeft ook nog kant-en-klare sneeuwhuizen, een Pokémon Center en een Mart voor Ashfrost.

@@ -59,3 +59,35 @@ Route135_Text_TenzingDefeat:
 Route135_Text_TenzingPostBattle:
 	.string "Take the stairs up north.\n"
 	.string "There's something in the snow.$"
+
+Route135_EventScript_Bram::
+	trainerbattle_single TRAINER_BRAM, Route135_Text_BramIntro, Route135_Text_BramDefeat
+	msgbox Route135_Text_BramPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route135_EventScript_Lapras::
+	lock
+	faceplayer
+	playmoncry SPECIES_LAPRAS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_LAPRAS, 36
+	dowildbattle
+	removeobject LOCALID_ROUTE135_LAPRAS
+	setflag FLAG_HIDE_ROUTE135_LAPRAS
+	release
+	end
+
+Route135_Text_BramIntro:
+	.string "Breathe in… and out.\n"
+	.string "Thirty times. Then hold it.\p"
+	.string "That's the WIM HOF METHOD!\n"
+	.string "Deep breathing and ice-cold water.\p"
+	.string "My POKéMON and I swim in this lake\n"
+	.string "every single day. Let's go!$"
+
+Route135_Text_BramDefeat:
+	.string "Brr… I forgot to breathe.$"
+
+Route135_Text_BramPostBattle:
+	.string "Cold water, deep breaths.\n"
+	.string "You should try it sometime!$"

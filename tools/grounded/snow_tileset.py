@@ -226,6 +226,9 @@ for _mid, (_bot, _top) in _general_tree_layers().items():
 for dy in range(4):
     for dx in range(4):
         add(f'house_blue_{dx}{dy}', over(G, cell(dx, 107 + dy)), beh='door' if (dx, dy) == (1, 3) else 'normal')
+# --- U-vormige oevers (smalle inham van 1 tile breed/hoog) ---
+for _n, _s, _w, _e in ((0, 1, 1, 1), (1, 0, 1, 1), (1, 1, 1, 0), (1, 1, 0, 1)):
+    add(f'shore_{"n" if _n else ""}{"s" if _s else ""}{"w" if _w else ""}{"e" if _e else ""}', WATER, shore(_n, _s, _w, _e), 'pond')
 
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):

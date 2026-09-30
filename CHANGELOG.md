@@ -15165,3 +15165,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Kaartranden:** de terrassen lopen door tot buiten de kaart, dus langs de randen staan geen klifranden meer maar bos. Buiten de kaart telt als bos, zodat de randbomen naadloos aansluiten op de `border.bin`. De bovenkant heeft nu ook een bosrand. Getest: loop je naar een rand, dan loop je tegen het bos aan.
 - **Grotingang:** de rotsboog boven de grot (bovenste helft uit de tileset) staat er nu ook, zodat de grot niet meer afgekapt is.
 - **Huisje:** het dak begon in de bronsheet een halve tile hoger en is nu compleet (4×4). De deur staat op (55,9) en in de emulator getest (naar binnen en weer naar buiten).
+
+### [v.0.6.96] - Route 135: waterval, bosranden, Swimmer Bram, Lapras en het oude stel
+- **Waterval:** stroomt nu direct uit de bronvijver over de rotsrand (bovenrand van de waterval op de kliprand, zoals bij Ever Grande), zonder sneeuwstrook ertussen.
+- **Kaartranden:** een doorlopende bosstrook langs alle randen (4 breed links/rechts, 2 hoog boven/onder). De bergwanden lopen er achter weg in plaats van afgekapt tegen de kaartrand te eindigen; ook rechtsboven.
+- **Swimmer Bram** (`TRAINER_BRAM`) in de inham aan de onderkant van het meer. Hij begint over de Wim Hof-methode (placeholdertekst) en heeft alleen Water/IJs-Pokémon: Sealeo, Dewgong, Cloyster (lv 35) en Arctovish (lv 37). Hij staat op hoogte 3, zodat hij je op het pad ziet.
+- **Lapras** als static encounter midden in het meer (lv 36, eenmalig, `FLAG_HIDE_ROUTE135_LAPRAS`). In de surftabel is Lapras (1%) vervangen door Feebas.
+- **Het huisje:** een oud stel zonder tv of elektronica. Hij volgt het nieuws al twintig jaar niet meer, zij geeft de grote bedrijven geen cent (placeholderteksten voor Jordi). Het interieur heeft geen tv.
+- **Sneeuwtileset:** U-vormige oevertegels toegevoegd (achteraan).

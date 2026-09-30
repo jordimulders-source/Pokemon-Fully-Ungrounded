@@ -14,17 +14,19 @@ L1=set(rect(-1,-1,W,21))-set(rect(12,12,36,21))
 L2=set(rect(-1,-1,W,11))-set(rect(44,6,W,11))
 L3=set(rect(13,-1,35,11))
 terrace(m,L1); terrace(m,L2); terrace(m,L3,face=7)
-EVENTS={(55,9),(55,10),(34,36),(38,19),(44,19),(33,3),(55,2),(10,13),(6,12),(36,34),(4,28)}
+EVENTS={(14,33),(24,24),(55,9),(55,10),(34,36),(38,19),(44,19),(33,3),(55,2),(10,13),(6,12),(36,34),(4,28)}
 def free(x,y): return 0<=x<W and 0<=y<H and m.col[y][x]==0 and m.elev[y][x]==3
 # bronvijver en waterval (3 breed, 3 terrassen hoog)
-m.water(smooth(set(rect(19,1,29,2))|set(rect(20,3,28,3))))
+m.water(set(rect(19,1,29,3))|set(rect(20,4,28,4)),extra=set(rect(21,5,27,5)))
 lake=smooth(set(blob(24,25,11.5,8,seed=7,rough=0.12))|set(blob(24,15,8.5,4.5,seed=2,rough=0.1))|set(rect(18,12,30,14))|set(blob(15,30,5,3,seed=12,rough=0.1)))
 lake={c for c in lake if 12<=c[1]<=33 and 4<=c[0]<=40}
 for _ in range(4):
     lake={c for c in lake if sum((c[0]+dx,c[1]+dy) in lake for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)))>=2 or c[1]<=13}
 
 m.water(lake)
-fall(m,21,4,11,w=7)
+inlets=[(x,y) for (x,y) in lake if (x,y+1) not in lake and (x-1,y) not in lake and (x+1,y) not in lake and (x,y-1) in lake]
+print('inham(men):',sorted(inlets))
+fall(m,21,5,11,w=7)
 # grot (Coldstep, uitgang) in de L2-rand links
 for x,n in zip((5,6,7),('cave_l','cave_door','cave_r')): m.put(x,11,n,1)
 for x,n in zip((5,6,7),('cliff_front_a','cliff_front_b','cliff_front_c')): m.put(x,10,n,1)
@@ -59,6 +61,12 @@ PINE={N[k] for k in N if 'pine' in k}|{N['grass_snow']}|{N[k] for k in N if k.st
 REG=set(rect(0,0,W-1,1))|set(rect(0,12,3,H-1))|set(rect(0,H-4,W-1,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,11,9))|set(rect(14,0,17,3))|set(rect(30,0,35,3))|set(rect(36,0,43,1))
 REG-=set(rect(53,5,59,12))
 hforest(m,REG,okf,path)
+# doorlopende bosstrook langs alle kaartranden (verbergt de uiteinden van de bergwanden)
+def okb(x,y):
+    return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and (x,y) not in HOUSE and m.elev[y][x]!=1 \
+        and m.g[y][x] not in (N['stairs'],N['cave_door'])
+BAND=set(rect(0,0,3,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,17,1))|set(rect(30,0,W-1,1))|set(rect(0,H-2,W-1,H-1))
+hforest(m,BAND,okb,path)
 for (x,y) in HOUSE:
     m.put(x,y,f'house_blue_{x-54}{y-6}',0 if (x,y)==(55,9) else 1)
 for (x,y) in [(15,1),(31,1),(33,0),(2,1),(9,0),(40,0),(56,0),(44,13),(56,12),(12,13),(47,23),(56,24),(10,24),(14,33),(3,26),
@@ -107,5 +115,6 @@ def reach(s):
 R=reach((6,12))
 adj=lambda p: any((p[0]+dx,p[1]+dy) in R for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)))
 print('decor',nb,'uitgang',(51,39) in R,{p:(free(*p) or m.g[p[1]][p[0]]==N['cave_door'],adj(p)) for p in EVENTS})
+m.elev[33][14]=3   # Swimmer staat in de inham op hoogte 3, zodat hij spelers op het land kan zien
 open(os.path.join(REPO,'data/layouts/Route135/map.bin'),'wb').write(struct.pack(f'<{W*H}H',*m.bin()))
 if len(sys.argv)>1: m.img().save(sys.argv[1])

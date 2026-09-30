@@ -2295,7 +2295,7 @@
               { "min_level": 30, "max_level": 34, "species": "SPECIES_SEALEO" },
               { "min_level": 34, "max_level": 35, "species": "SPECIES_DEWGONG" },
               { "min_level": 32, "max_level": 35, "species": "SPECIES_CETODDLE" },
-              { "min_level": 35, "max_level": 35, "species": "SPECIES_LAPRAS" }
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_FEEBAS" }
             ]
           },
           "fishing_mons": {

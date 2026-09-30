@@ -867,12 +867,13 @@
 #define TRAINER_BIRCH_2                     861 // Project Grounded: Prof. Birch bij de sneeuwkei (Route 135)
 #define TRAINER_EDMUND                      862 // Project Grounded: Hiker, dubbelgevecht met Tenzing (Route 135)
 #define TRAINER_TENZING                     863 // Project Grounded: Hiker, dubbelgevecht met Edmund (Route 135)
+#define TRAINER_BRAM                        864 // Project Grounded: Swimmer, Wim Hof-methode (Route 135)
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      864
+#define TRAINERS_COUNT                      865
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

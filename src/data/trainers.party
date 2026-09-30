@@ -26059,3 +26059,44 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Rock Blast
 - Recover
 - Mud Shot
+
+=== TRAINER_BRAM ===
+Name: BRAM
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Sealeo
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Aurora Beam
+- Brine
+- Body Slam
+- Encore
+
+Dewgong
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Icy Wind
+- Aqua Jet
+- Encore
+- Rest
+
+Cloyster
+Level: 35
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Icicle Spear
+- Razor Shell
+- Supersonic
+- Protect
+
+Arctovish
+Level: 37
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Fishious Rend
+- Icicle Crash
+- Ancient Power
+- Ice Fang

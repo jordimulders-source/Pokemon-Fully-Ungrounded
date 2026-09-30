@@ -31,12 +31,16 @@ class M:
                 elif l: s.put(x,y,'cliff_l',1)
                 elif r: s.put(x,y,'cliff_r',1)
                 else: s.put(x,y,'cliff_c',0)
-    def water(s,cells):
-        cells=set(cells)
+    def water(s,cells,extra=()):
+        cells=set(cells); allw=cells|set(extra)
         for (x,y) in cells:
-            n=(x,y-1) in cells; so=(x,y+1) in cells; w=(x-1,y) in cells; e=(x+1,y) in cells
+            n=(x,y-1) in allw; so=(x,y+1) in allw; w=(x-1,y) in allw; e=(x+1,y) in allw
             k='water'
-            if not n and not w: k='shore_nw'
+            if (not so and not w and not e) and n: k='shore_swe'
+            elif (not n and not w and not e) and so: k='shore_nwe'
+            elif (not n and not so and not w) and e: k='shore_nsw'
+            elif (not n and not so and not e) and w: k='shore_nse'
+            elif not n and not w: k='shore_nw'
             elif not n and not e: k='shore_ne'
             elif not so and not w: k='shore_sw'
             elif not so and not e: k='shore_se'
@@ -45,10 +49,10 @@ class M:
             elif not w: k='shore_w'
             elif not e: k='shore_e'
             else:
-                if (x-1,y-1) not in cells: k='shore_in_nw'
-                elif (x+1,y-1) not in cells: k='shore_in_ne'
-                elif (x-1,y+1) not in cells: k='shore_in_sw'
-                elif (x+1,y+1) not in cells: k='shore_in_se'
+                if (x-1,y-1) not in allw: k='shore_in_nw'
+                elif (x+1,y-1) not in allw: k='shore_in_ne'
+                elif (x-1,y+1) not in allw: k='shore_in_sw'
+                elif (x+1,y+1) not in allw: k='shore_in_se'
             s.put(x,y,k,0,1)
     def pine(s,x,y,green=False):
         p='pinegreen' if green else 'pine'

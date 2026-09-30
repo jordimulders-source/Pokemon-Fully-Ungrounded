@@ -61,7 +61,7 @@
 #define FLAG_ITEM_ROUTE_135_LIFE_ORB    0x2F // Project Grounded: Route 135
 #define FLAG_ITEM_ROUTE_135_NEVER_MELT_ICE    0x30 // Project Grounded: Route 135
 #define FLAG_ITEM_ROUTE_135_SUPER_REPEL    0x31 // Project Grounded: Route 135
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_HIDE_ROUTE135_LAPRAS    0x32 // Project Grounded: Lapras (static) in het meer van Route 135
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag

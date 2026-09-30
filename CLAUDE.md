@@ -86,7 +86,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 ## Stand van zaken
 - **Af:** Coldstep Cave (Route 115 → tunnel → ijskamer 1 → ijskamer 2, puzzel van 28 zetten, oplosbaar voor elke combinatie van opgepakte items), Keccles 1 en 2, Seltzer Surge (TM51), muziekcredits.
 - **Route 135** (60×40, sneeuw, bouwscript `tools/grounded/maptools/route135.py`): terrassen, brede waterval met Life Orb erboven, meer met oevers, besneeuwde Hoenn-randbomen, huisje rechtsboven (`Route135_House`, nog leeg), hikers Edmund & Tenzing (dubbel), Birch-gevecht 2 (Macarena). Wacht op Jordi's reactie op randbomen en huisje.
-  - Nog van Jordi: teksten van Birch 2, Edmund, Tenzing; wie er in het huisje woont.
+  - Ook: Swimmer Bram (Wim Hof, Water/IJs-team) in de inham onder het meer, Lapras-static midden in het meer, oud stel zonder elektronica in het huisje.
+  - Nog van Jordi: definitieve teksten van Birch 2, Edmund, Tenzing, Bram en het oude stel (nu placeholders).
   - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
   - `MAPSEC_ROUTE_135` valt op de Town Map nog onder Route 115 (alias in `src/region_map.c`).
 
@@ -94,4 +95,5 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 1. **Route 136** (sneeuw, klimt verder de bergen in; hoog maar niet hoger dan Mt. Chimney): bomengang met een item, geblokkeerd door een onzichtbare Keccles (Devon Scope, zoals bij Fortree); rivaalgevecht May/Brendan; een Bird Keeper; een zwemmer aan de waterkant ("Wim Hof"-idee van Jordi); dynamisch weer met sneeuw en as afwisselend (ook voor Route 135).
 2. **Ashfrost Town:** paradijselijk dal met een meertje in het midden, een man die daar vist, huizen eromheen (sommige op verhoging), Pokémon Center, Mart en een paar huizen. De sneeuwpop hoort hier. Gebouwen staan in de bronsheet `graphics/grounded/snow_src` (rijen 104–134); waarschijnlijk is een eigen stads-tileset nodig vanwege het tile-budget.
 3. **Town Map:** Route 135/136 en Ashfrost toevoegen (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
-4. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
+4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).
+5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

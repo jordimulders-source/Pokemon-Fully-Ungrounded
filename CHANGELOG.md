@@ -15207,3 +15207,11 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.7.2] - Dynamisch weer op de bergroutes: sneeuw en as
 - Nieuwe weercyclus `WEATHER_ASHFROST_CYCLE` voor **Route 135 en 136**: per dag afwisselend **sneeuw** en **vulkanische as** (zelfde dagcyclus als het weer op Route 119/123, via `weatherCycleStage`). As heeft in gevechten geen effect; sneeuw geeft zoals voorheen sneeuw/hagel.
+
+### [v.0.8.0] - Ashfrost Town (eerste versie)
+- **Nieuwe stad: Ashfrost Town** (40×30), boven aan de bergpas van Route 136. Een beschut dal met een **meertje in het midden** (met een visser aan de noordoever), bloemen en groene dennen rond het water, de **sneeuwpop** bij het meer, een **verhoging** rechtsboven met twee huizen (stenen trap), een oud huis linksboven, **Pokémon Center** en **Mart**. Weer: dezelfde sneeuw/as-cyclus als Route 135/136. Muziek: Fallarbor.
+- **Eigen stads-tileset `snow_town`** (`python3 tools/grounded/snow_tileset.py --town`): de basis van de sneeuwtileset plus Pokémon Center, Mart en vier huizen uit de bronsheet van CinnaYva (502 van 512 tiles). Bouwscript van de kaart: `tools/grounded/maptools/ashfrost.py`.
+- **Overgang met Route 136:** omdat de GBA maar één secondary tileset tegelijk kan tonen, is dit geen naadloze connectie maar een warp: bovenaan de bergpas (y 0) kom je in Ashfrost, onderaan Ashfrost terug in de pas.
+- **Binnen:** Pokémon Center 1F/2F (heal location `HEAL_LOCATION_ASHFROST_TOWN`, je respawnt hier na verlies), Mart (Ultra Ball, Great Ball, Hyper/Super Potion, Full Heal, Ice Heal, Burn Heal, Revive, Escape Rope, Max Repel) en drie huizen met elk een bewoner.
+- Alle teksten zijn **placeholders** voor Jordi (visser, kind bij de sneeuwpop, oude vrouw, hiker, vrouw, bewoners).
+- Nog niet: Ashfrost en Route 135/136 op de Town Map, Fly naar Ashfrost (komt bij de Town Map-taak). `MAPSEC_ASHFROST_TOWN` valt voorlopig onder Route 115.

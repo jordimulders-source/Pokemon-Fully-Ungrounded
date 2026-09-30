@@ -3,6 +3,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 REPO=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','..'))
 from gridrender import render
 N=json.load(open(os.path.join(REPO,'data/tilesets/secondary/snow/metatile_names.json')))
+SEC=['snow']
+def use_tileset(name):
+    """Wissel naar een andere sneeuw-tileset (bijv. 'snow_town' voor Ashfrost): N en de render volgen mee."""
+    N.clear(); N.update(json.load(open(os.path.join(REPO,f'data/tilesets/secondary/{name}/metatile_names.json')))); SEC[0]=name
 class M:
     def __init__(s,W,H,base='snow'):
         s.W,s.H=W,H; s.g=[[N[base]]*W for _ in range(H)]; s.col=[[0]*W for _ in range(H)]; s.elev=[[3]*W for _ in range(H)]
@@ -59,7 +63,7 @@ class M:
         for dy in range(3):
             for dx in range(2): s.put(x+dx,y+dy,f'{p}_{dx}{dy}',1)
     def img(s,scale=1):
-        return render(s.g,'general','snow',1)
+        return render(s.g,'general',SEC[0],1)
     def bin(s):
         return [ (s.g[y][x]&0x3ff)|(s.col[y][x]<<10)|(s.elev[y][x]<<12) for y in range(s.H) for x in range(s.W)]
 

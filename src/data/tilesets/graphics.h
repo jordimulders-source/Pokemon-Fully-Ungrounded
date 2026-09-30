@@ -482,6 +482,29 @@ const u16 gTilesetPalettes_Unused1[][16] =
     INCBIN_U16("data/tilesets/secondary/unused_1/palettes/15.gbapal"),
 };
 
+// Project Grounded: stads-tileset voor Ashfrost (CinnaYva)
+const u32 gTilesetTiles_SnowTown[] = INCBIN_U32("data/tilesets/secondary/snow_town/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_SnowTown[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/snow_town/palettes/15.gbapal"),
+};
+
 // Project Grounded: sneeuw-tileset (CinnaYva)
 const u32 gTilesetTiles_Snow[] = INCBIN_U32("data/tilesets/secondary/snow/tiles.4bpp.fastSmol");
 

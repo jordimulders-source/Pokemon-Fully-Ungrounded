@@ -202,6 +202,42 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "Route136_EventScript_RivalTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "Route136_EventScript_ToAshfrost"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "Route136_EventScript_ToAshfrost"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "Route136_EventScript_ToAshfrost"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "Route136_EventScript_ToAshfrost"
     }
   ],
   "bg_events": [

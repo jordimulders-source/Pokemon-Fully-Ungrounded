@@ -293,3 +293,9 @@ Route136_Text_HakonDefeat:
 Route136_Text_HakonPostBattle:
 	.string "Beyond the pass lies a valley no one\n"
 	.string "has seen in a hundred years.$"
+
+@ De bergpas naar Ashfrost: Ashfrost heeft een eigen tileset, dus geen naadloze connectie maar een warp
+Route136_EventScript_ToAshfrost::
+	warpsilent MAP_ASHFROST_TOWN, 19, 28
+	waitstate
+	end

@@ -78,6 +78,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - Jordi wil van **elke kaart die af is** screenshots (een render van de hele kaart en een paar emulatorbeelden), zodat hij kan tweaken.
 - Gereedschap en testrecept staan in `tools/grounded/maptools/README.md` (renderen, `snowlib.py` voor sneeuwkaarten, ijspuzzel-zoeker, headless emulator).
 - Routegrootte: ongeveer gemiddeld of net onder gemiddeld (landroutes zijn meestal 2400–3200 tiles, bijv. 40×80 of 60×40).
+- Verbonden kaarten (connections) moeten dezelfde secondary tileset hebben; anders een warp gebruiken (zoals Route 136 ↔ Ashfrost).
 - Randen van routes: de vaste Hoenn-randbomen (op sneeuwkaarten de besneeuwde versie `htree_*`), ook als `border.bin`. Geen losse bomen die elkaar overlappen.
 - Watervallen zoals bij Ever Grande/Meteor Falls: breed, in een massieve rotswand (`fall()` en `terrace(face=...)` in `snowlib.py`).
 - Sneeuwtileset (`tools/grounded/snow_tileset.py`): nieuwe metatiles **alleen achteraan** toevoegen (anders verschuiven alle nummers). Na genereren eerst `make data/tilesets/secondary/snow/tiles.4bpp`. Tile-budget max. 512 (nu ~431).
@@ -94,13 +95,13 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`): verbonden met Route 135 (connectie offset 40). Stenen Hoenn-trappen (General 175/207) zoals Route 119. Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,20), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon. Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
   - Verborgen grot `Route136_Grotto` (30×28, bouwscript `grotto136.py`): kristalgrot met watermeer en lavapoel, pad ertussen, je kunt het meer in surfen. Verder leeg; Jordi bepaalt de inhoud.
   - Duikstuk: in het meer duiken → `Underwater_Route136` (kopie van de trog van de Sealed Chamber; op (12,44) bovenkomen) → `Route136_SuicuneCave` (kopie van de ingang van Seafloor Cavern) met Suicune lv 50 (`FLAG_HIDE_ROUTE136_SUICUNE`). Dive-bestemmingen via `setdivewarp` in de map-scripts. In de emulator getest (surfen, duiken, bovenkomen, gevecht).
+- **Ashfrost Town** (40×30, bouwscript `tools/grounded/maptools/ashfrost.py`, eigen tileset `snow_town` via `snow_tileset.py --town`, 502/512 tiles): meertje met visser, sneeuwpop, verhoging met twee huizen, oud huis, Pokémon Center (heal location, respawn), Mart, drie huizen (`AshfrostTown_House1-3`). Teksten zijn placeholders. Overgang met Route 136 is een **warp** (coord-triggers op Route 136 y 0 en Ashfrost y 29), omdat verbonden kaarten dezelfde tileset moeten hebben. Emulator: in- en uitlopen, Pokémon Center getest.
 - **Weer Route 135/136:** `WEATHER_ASHFROST_CYCLE` (23), per dag afwisselend sneeuw en as (`sWeatherCycleAshfrost` in `src/field_weather_effect.c`). Ashfrost Town kan dezelfde cyclus krijgen.
 
 ## Openstaande taken (in volgorde)
 1. **Route 136 afronden** (Jordi's laatste feedback):
    - Trappen, pad in de kristalgrot en duikstuk met Suicune: **af** (v0.7.1), wacht op feedback van Jordi.
-   - De bergpas lijkt van boven dicht omdat buiten de kaart de border-bomen staan; dat lost zich op zodra Ashfrost via een `up`-connectie op x 48–51 aansluit.
-2. **Ashfrost Town:** paradijselijk dal met een meertje in het midden, een man die daar vist, huizen eromheen (sommige op verhoging), Pokémon Center, Mart en een paar huizen. De sneeuwpop hoort hier. Gebouwen staan in de bronsheet `graphics/grounded/snow_src` (rijen 104–134); waarschijnlijk is een eigen stads-tileset nodig vanwege het tile-budget.
-3. **Town Map:** Route 135/136 en Ashfrost toevoegen (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
+2. **Ashfrost Town:** eerste versie **af** (v0.8.0), wacht op feedback en teksten van Jordi. Mogelijke uitbreidingen: gym (staat in de bronsheet, rijen 121–127, maar past niet meer in het tile-budget van `snow_town`), Move Tutor/Deleter.
+3. **Town Map:** Route 135/136 en Ashfrost toevoegen, plus `FLAG_VISITED_ASHFROST_TOWN` en Fly (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
 4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).
 5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

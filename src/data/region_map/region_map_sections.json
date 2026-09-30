@@ -1242,6 +1242,10 @@
     {
       "id": "MAPSEC_ROUTE_136",
       "name": "ROUTE 136"
+    },
+    {
+      "id": "MAPSEC_ASHFROST_TOWN",
+      "name": "ASHFROST TOWN"
     }
   ]
 }

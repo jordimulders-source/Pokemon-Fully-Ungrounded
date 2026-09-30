@@ -542,6 +542,16 @@
       "blockdata_filepath": "data/layouts/Route136_Grotto/map.bin"
     },
     {
+      "id": "LAYOUT_ASHFROST_TOWN",
+      "name": "AshfrostTown_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SnowTown",
+      "border_filepath": "data/layouts/AshfrostTown/border.bin",
+      "blockdata_filepath": "data/layouts/AshfrostTown/map.bin"
+    },
+    {
       "id": "LAYOUT_UNDERWATER_ROUTE136",
       "name": "Underwater_Route136_Layout",
       "width": 22,

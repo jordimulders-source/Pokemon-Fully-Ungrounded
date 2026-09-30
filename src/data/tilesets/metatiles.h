@@ -69,6 +69,8 @@ const u16 gMetatileAttributes_Unused1[] = INCBIN_U16("data/tilesets/secondary/un
 
 const u16 gMetatiles_Snow[] = INCBIN_U16("data/tilesets/secondary/snow/metatiles.bin"); // Project Grounded
 const u16 gMetatileAttributes_Snow[] = INCBIN_U16("data/tilesets/secondary/snow/metatile_attributes.bin");
+const u16 gMetatiles_SnowTown[] = INCBIN_U16("data/tilesets/secondary/snow_town/metatiles.bin"); // Project Grounded: Ashfrost
+const u16 gMetatileAttributes_SnowTown[] = INCBIN_U16("data/tilesets/secondary/snow_town/metatile_attributes.bin");
 const u16 gMetatiles_MeteorFalls[] = INCBIN_U16("data/tilesets/secondary/meteor_falls/metatiles.bin");
 const u16 gMetatileAttributes_MeteorFalls[] = INCBIN_U16("data/tilesets/secondary/meteor_falls/metatile_attributes.bin");
 

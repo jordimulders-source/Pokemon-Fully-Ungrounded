@@ -7,14 +7,16 @@ om naar een GBA secondary tileset (data/tilesets/secondary/snow).
   en schrijft tiles.png, palettes/*.pal, metatiles.bin, metatile_attributes.bin.
 - Schrijft ook data/tilesets/secondary/snow/metatile_names.json (naam -> metatile-id) voor de kaartbouwers.
 
-Gebruik: python3 tools/grounded/snow_tileset.py
+Gebruik: python3 tools/grounded/snow_tileset.py          (sneeuw-tileset voor routes)
+         python3 tools/grounded/snow_tileset.py --town   (stads-tileset snow_town: basis + gebouwen, voor Ashfrost)
 """
-import json, os, struct
+import json, os, struct, sys
 import numpy as np
 from PIL import Image
 
 SRC = 'graphics/grounded/snow_src'
-OUT = 'data/tilesets/secondary/snow'
+TOWN = '--town' in sys.argv
+OUT = 'data/tilesets/secondary/snow_town' if TOWN else 'data/tilesets/secondary/snow'
 PAL_FIRST, NUM_PALS = 6, 7
 MB = {'normal': 0x00, 'tall_grass': 0x02, 'ice': 0x20, 'door': 0x60, 'pond': 0x10}
 LAYER_COVERED = 1
@@ -229,6 +231,24 @@ for dy in range(4):
 # --- U-vormige oevers (smalle inham van 1 tile breed/hoog) ---
 for _n, _s, _w, _e in ((0, 1, 1, 1), (1, 0, 1, 1), (1, 1, 1, 0), (1, 1, 0, 1)):
     add(f'shore_{"n" if _n else ""}{"s" if _s else ""}{"w" if _w else ""}{"e" if _e else ""}', WATER, shore(_n, _s, _w, _e), 'pond')
+
+# ---------------------------------------------------------------- stads-tileset (Ashfrost)
+if TOWN:
+    # alleen de basis die een stad nodig heeft (tile-budget), daarna de gebouwen uit de bronsheet
+    KEEP = ('snow', 'snow_dots', 'snow_light', 'grass_snow', 'grass_green', 'tuft', 'flowers_', 'path_stone_',
+            'cliff_', 'water', 'shore_', 'stairs', 'htree_', 'pine_', 'pinegreen_', 'rock_snow', 'rock_cluster',
+            'snowman', 'log', 'bush_snow', 'stump', 'house_blue_', 'ice_crystal', 'snowball')
+    metatiles[:] = [m for m in metatiles if m[0] in KEEP or any(m[0].startswith(k) for k in KEEP if k.endswith('_'))
+                    or (m[0].startswith('tuft') or m[0].startswith('cliff_') or m[0].startswith('shore_'))]
+    def building(name, c0, r0, w, h, door):
+        for dy in range(h):
+            for dx in range(w):
+                add(f'{name}_{dx}{dy}', over(G, cell(c0 + dx, r0 + dy)), beh='door' if (dx, dy) == door else 'normal')
+    building('house_pink', 0, 104, 4, 3, (2, 2))
+    building('shop_green', 4, 104, 4, 3, (2, 2))
+    building('house_yellow', 4, 107, 4, 4, (1, 3))
+    building('pc', 0, 111, 5, 5, (2, 4))
+    building('mart', 0, 116, 4, 4, (2, 3))
 
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):

@@ -68,7 +68,7 @@
 #define FLAG_HIDE_ROUTE136_RIVAL    0x36 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_SUICUNE    0x38 // Project Grounded: Suicune (static) in de grot achter het kristalmeer van Route 136
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_VISITED_ASHFROST_TOWN    0x39 // Project Grounded: voor Fly naar Ashfrost
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag

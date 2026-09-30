@@ -15215,3 +15215,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Binnen:** Pokémon Center 1F/2F (heal location `HEAL_LOCATION_ASHFROST_TOWN`, je respawnt hier na verlies), Mart (Ultra Ball, Great Ball, Hyper/Super Potion, Full Heal, Ice Heal, Burn Heal, Revive, Escape Rope, Max Repel) en drie huizen met elk een bewoner.
 - Alle teksten zijn **placeholders** voor Jordi (visser, kind bij de sneeuwpop, oude vrouw, hiker, vrouw, bewoners).
 - Nog niet: Ashfrost en Route 135/136 op de Town Map, Fly naar Ashfrost (komt bij de Town Map-taak). `MAPSEC_ASHFROST_TOWN` valt voorlopig onder Route 115.
+
+### [v.0.8.1] - Town Map: Route 135, Route 136 en Ashfrost Town
+- Op de **Town Map** staan nu Route 135 (mapsec x 1–2, y 3, oost van Route 115), Route 136 (x 3, y 2–3) en **Ashfrost Town** (x 4, y 2) in de lege hooglanden tussen Route 114/115 en Lavaridge, met oranje routetegels en een stadsstip in `graphics/pokenav/region_map/map.bin`. Ze vallen niet meer onder Route 115 (Coldstep Cave nog wel).
+- **Fly naar Ashfrost:** nieuwe vlag `FLAG_VISITED_ASHFROST_TOWN` (0x39, gezet bij binnenkomst), eigen fly-icoon op de kaart en de heal location voor de Pokémon Center als bestemming.

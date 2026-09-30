@@ -1,5 +1,10 @@
 AshfrostTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, AshfrostTown_OnTransition
 	.byte 0
+
+AshfrostTown_OnTransition:
+	setflag FLAG_VISITED_ASHFROST_TOWN
+	end
 
 @ Terug de bergpas af naar Route 136 (warp; Route 136 heeft een andere tileset)
 AshfrostTown_EventScript_ToRoute136::

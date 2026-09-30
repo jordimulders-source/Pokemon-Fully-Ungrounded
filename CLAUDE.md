@@ -91,7 +91,6 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
   - Ook: Swimmer Bram (Wim Hof, Water/IJs-team, alleen gevecht als je hem aanspreekt) aan de rand van het meer, Lapras-static midden in het meer, oud stel zonder elektronica in het huisje.
   - Nog van Jordi: definitieve teksten van Birch 2, Edmund, Tenzing, Bram en het oude stel (nu placeholders).
   - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
-  - `MAPSEC_ROUTE_135` valt op de Town Map nog onder Route 115 (alias in `src/region_map.c`).
 - **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`): verbonden met Route 135 (connectie offset 40). Stenen Hoenn-trappen (General 175/207) zoals Route 119. Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,20), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon. Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
   - Verborgen grot `Route136_Grotto` (30×28, bouwscript `grotto136.py`): kristalgrot met watermeer en lavapoel, pad ertussen, je kunt het meer in surfen. Verder leeg; Jordi bepaalt de inhoud.
   - Duikstuk: in het meer duiken → `Underwater_Route136` (kopie van de trog van de Sealed Chamber; op (12,44) bovenkomen) → `Route136_SuicuneCave` (kopie van de ingang van Seafloor Cavern) met Suicune lv 50 (`FLAG_HIDE_ROUTE136_SUICUNE`). Dive-bestemmingen via `setdivewarp` in de map-scripts. In de emulator getest (surfen, duiken, bovenkomen, gevecht).
@@ -102,6 +101,6 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 1. **Route 136 afronden** (Jordi's laatste feedback):
    - Trappen, pad in de kristalgrot en duikstuk met Suicune: **af** (v0.7.1), wacht op feedback van Jordi.
 2. **Ashfrost Town:** eerste versie **af** (v0.8.0), wacht op feedback en teksten van Jordi. Mogelijke uitbreidingen: gym (staat in de bronsheet, rijen 121–127, maar past niet meer in het tile-budget van `snow_town`), Move Tutor/Deleter.
-3. **Town Map:** Route 135/136 en Ashfrost toevoegen, plus `FLAG_VISITED_ASHFROST_TOWN` en Fly (lege hooglanden rond mapsec x3–4, y1–4; regionmap-coördinaat = tile − (1,2)).
+3. **Town Map:** **af** (v0.8.1). Route 135 (mapsec 1–2,3), Route 136 (3,2–3), Ashfrost (4,2) in `region_map_layout.h`, `region_map_sections.json` en de tilemap `graphics/pokenav/region_map/map.bin` (tile = mapsec + (1,2)). Fly via `FLAG_VISITED_ASHFROST_TOWN` (0x39) en een eigen fly-icoon in `CreateFlyDestIcons`. Fly zelf nog niet in de emulator getest, de Town Map wel.
 4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).
 5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

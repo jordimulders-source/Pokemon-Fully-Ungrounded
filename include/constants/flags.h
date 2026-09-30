@@ -57,7 +57,7 @@
 #define FLAG_ITEM_COLDSTEP_CAVE_NEVER_MELT_ICE    0x2B // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_PP_UP    0x2C // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY    0x2E // Project Grounded: Coldstep Cave
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag

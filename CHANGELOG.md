@@ -15088,3 +15088,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Het gat naar beneden uit Crystal (rechtsboven) is een **ladder omhoog** naar ijskamer 2, want je klimt.
 - Max Revive ligt in het doodlopende hoekje onderaan (25,23).
 - Met een solver gecontroleerd: de uitgang is bereikbaar (kortste route 74 zetten) en vanuit elke bereikbare plek kom je nog terug of verder, dus je kunt niet vastlopen. In de emulator is de hele route uitgespeeld tot in kamer 2.
+
+### [v.0.6.83] - Coldstep Cave ijskamer 1: tunneldeur, extra gang met item, ijs dicht
+- Tunneldeur links op rij 16: een nieuwe metatile in de grot-tileset (928), een donkere opening in de ijswand. Daarvoor zijn 4 nieuwe tiles toegevoegd (425–428; `-num_tiles` in `graphics_file_rules.mk` naar 429).
+- Het lege stuk van 3×4 in het midden (x 17–20, y 15–17) heeft een gang gekregen vanaf rij 13, met een **Rare Candy** (`FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY`, 0x2E).
+- Het ijs aan de onderkant bij x 25–28 (rij 9) is dichtgemaakt met rotsen.
+- Opnieuw gecontroleerd met de solver: de ladder is bereikbaar (kortste route nu 95 zetten), beide items zijn bereikbaar en je kunt nergens vastlopen.

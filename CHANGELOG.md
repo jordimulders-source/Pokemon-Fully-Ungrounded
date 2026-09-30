@@ -15124,3 +15124,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - **Fortree Pokémon Center:** de jongen met de PokéNav-uitleg vertelt nu vol verbazing dat er een pratende Kecleon binnenkwam die zijn Pokémon liet healen en iedereen goedemorgen wenste. Heel creepy.
 - **CREDITS.md:** alle toegevoegde muziek met de games waar ze vandaan komen (Pokémon B/W, B2/W2, DPPt, HGSS, Yoshi's Island, Mario Kart: Super Circuit), de namen uit de MIDI's (Koji Kondo als componist, Omar / Saru-kun als sequencer, 当野卓人) en Los del Río voor de Macarena.
 - **Route 115:** de trap is aan beide kanten afgewerkt; links zit de gewone rotswand in plaats van de roze rand van de oude Mach Bike-helling, rechts loopt de wand door. De wand links van de Coldstep-ingang loopt nu door tot aan de deur.
+
+### [v.0.6.89] - Coldstep Cave: ijskamer 2 met een nieuwe, eerlijke puzzel; Focus Sash
+- **IJskamer 2:** nieuwe glijpuzzel (15 rotsen). Pittig: de kortste route van ladder naar ladder is 28 glijbewegingen. Door de computer gecontroleerd: voor elke combinatie van opgepakte items blijft de uitgang bereikbaar en kun je vanaf elke plek zowel terug naar de ingang als door naar de uitgang. Er zijn dus geen softlocks meer, van welke kant je ook komt. In de emulator helemaal nagelopen.
+- **Items in ijskamer 2:** Ice Stone (5,13), **Focus Sash** (3,7) en PP Up (13,3), elk op een sneeuwtegel. De Focus Sash vervangt de Never-Melt Ice en was nog nergens anders te krijgen.

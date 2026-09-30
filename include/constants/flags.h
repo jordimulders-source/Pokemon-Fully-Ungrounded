@@ -54,7 +54,7 @@
 #define FLAG_HIDE_ROUTE115_KECCLES    0x28 // Project Grounded: Keccles op het strand van Route 115
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE    0x29 // Project Grounded
 #define FLAG_ITEM_COLDSTEP_CAVE_ICE_STONE    0x2A // Project Grounded: Coldstep Cave
-#define FLAG_ITEM_COLDSTEP_CAVE_NEVER_MELT_ICE    0x2B // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_FOCUS_SASH   0x2B // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_PP_UP    0x2C // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
 #define FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY    0x2E // Project Grounded: Coldstep Cave

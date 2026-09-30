@@ -188,7 +188,9 @@ Route115_Text_KecclesIntro:
 	.string "Would you be open for a battle?$"
 
 Route115_Text_KecclesDeclined:
-	.string "Oh. Okay.$"
+	.string "Hmm, I get your hesitation,\n"
+	.string "probably the shock of me talking\l"
+	.string "to you.$"
 
 Route115_Text_KecclesDefeat:
 	.string "Hmmm…$"

@@ -15031,3 +15031,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Wilde Pokémon (ondervertegenwoordigd, passend bij het meteoor/ruimte-thema), lv 16–20:
   Minior (Meteor) 20%, Clefairy 20%, Inkay 10%, Gothita 10%, Carbink 10%, Rolycoly 10% (lv 16–17, evolueert op 18), Elgyem 5%, Dwebble 5%, Jangmo-o 5% (4+1), Beldum 5% (4+1).
 - Static encounter: bij het binnenkomen is er 25% kans op een willekeurige Pokémon midden in de kamer: Bagon, Deino, Lapras (lv 22), Mienfoo, Minior of Carbink (lv 20). Na het gevecht verdwijnt hij; opnieuw binnenkomen geeft een nieuwe kans.
+
+### [v.0.6.74] - Keccles: tekst bij "nee"
+- Keccles zegt bij "nee" nu: "Hmm, I get your hesitation, probably the shock of me talking to you." (vervangt de tijdelijke "Oh. Okay.").

@@ -1892,3 +1892,62 @@ static void CreateWaterPulseRingBubbles(struct Sprite *sprite, int xDiff, int yD
             gSprites[spriteId].data[2] = randomSomethingX;
     }
 }
+
+// Project Grounded: bubbels voor Sparkling Surf. Ze verschijnen verspreid over het scherm,
+// drijven mee met de Surf-golf, stijgen op, wiebelen en groeien.
+#define sLife   data[0]
+#define sDir    data[1]
+#define sPhase  data[2]
+#define sHalfY  data[3]
+
+static void AnimSurfBubble_Step(struct Sprite *sprite)
+{
+    sprite->x += 2 * sprite->sDir;
+    // golf: 1 px/frame omhoog (speler) of omlaag (tegenstander); bubbel stijgt 0,5 px/frame
+    sprite->sHalfY += -2 * sprite->sDir - 1;
+    sprite->y += sprite->sHalfY / 2;
+    sprite->sHalfY %= 2;
+    sprite->sPhase = (sprite->sPhase + 10) & 0xFF;
+    sprite->x2 = Sin(sprite->sPhase, 4);
+    if (--sprite->sLife <= 0 || sprite->x < -16 || sprite->x > DISPLAY_WIDTH + 16 || sprite->y < -16 || sprite->y > 120)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimSurfBubble(struct Sprite *sprite)
+{
+    sprite->sDir = IsOnPlayerSide(gBattleAnimAttacker) ? 1 : -1;
+    sprite->x = Random() % DISPLAY_WIDTH;
+    sprite->y = 8 + Random() % 100;
+    sprite->sLife = 20 + Random() % 14;
+    sprite->oam.priority = 1; // boven de golf (BG1), onder het tekstvak
+    sprite->sPhase = Random() & 0xFF;
+    sprite->sHalfY = 0;
+    sprite->callback = AnimSurfBubble_Step;
+}
+
+#undef sLife
+#undef sDir
+#undef sPhase
+#undef sHalfY
+
+const struct SpriteTemplate gSurfBubbleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SMALL_BUBBLES,
+    .paletteTag = ANIM_TAG_SMALL_BUBBLES,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gAnims_WaterBubble,
+    .images = NULL,
+    .affineAnims = gAffineAnims_Bubble,
+    .callback = AnimSurfBubble,
+};
+
+const struct SpriteTemplate gSurfBigBubbleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BUBBLE,
+    .paletteTag = ANIM_TAG_BUBBLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gAnims_WaterBubbleProjectile,
+    .images = NULL,
+    .affineAnims = gAffineAnims_Bubble,
+    .callback = AnimSurfBubble,
+};

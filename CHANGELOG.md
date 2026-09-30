@@ -15010,3 +15010,9 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Het hoge gras rechts (tile 454/455, een onnatuurlijk patroon) is nu hetzelfde hoge gras als links.
 - Wilde levels omlaag naar het niveau van Route 102 (was 6–10, nu 5–8): Scatterbug/Tandemaus 5–7, Venipede/Emolga 6–7, Foongus/Karrablast 6–8, Minccino/Chatot 7, Rookidee/Nymble 6–8 en 7–8.
 - Wally draait in Meteor Falls zijn rondje twee keer zo langzaam (`delay_4` → `delay_8`).
+
+### [v.0.6.71] - Nieuwe move: Sparkling Surf
+- `MOVE_SPARKLING_SURF` (848): de gewone Surf-golf, plus bruisende bubbels verspreid over het hele watervlak. De bubbels drijven mee met de golf, stijgen op, wiebelen en groeien, en verdwijnen samen met de golf.
+  - Animatie `gBattleAnimMove_SparklingSurf` hergebruikt de Surf-golf en de bubbel-graphics van Bubble/BubbleBeam. De bubbel-sprites (`gSurfBubbleSpriteTemplate`, `gSurfBigBubbleSpriteTemplate`) staan in `src/battle_anim_water.c`.
+  - Stats voorlopig gelijk aan Surf: Water, special, 90 power, 100 acc, 15 PP, raakt alle Pokémon naast de gebruiker. Nog door Jordi te bepalen.
+  - Nog geen Pokémon leert hem.

@@ -21324,6 +21324,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Project Grounded: Surf met bruisend water. Stats voorlopig gelijk aan Surf.
+    [MOVE_SPARKLING_SURF] =
+    {
+        .name = COMPOUND_STRING("Sparkling Surf"),
+        .description = COMPOUND_STRING(
+            "A huge wave of fizzing,\n"
+            "sparkling water hits all."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .damagesUnderwater = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_SparklingSurf,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

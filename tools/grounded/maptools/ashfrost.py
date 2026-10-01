@@ -85,6 +85,7 @@ for (dx_,dy_) in DOORS.values():
 line((S1[0],12),(S1[0],S1[1]-1)); line((S1[0],S1[1]+2),(S1[0],19))
 line((11,19),(S2[0]+1,19))            # straat op laag 1
 line((S2[0],S2[1]+2),(S2[0],23)); line((S3[0],23),(S2[0]+1,23))   # weide
+line((S3[0],24),(S3[0],S3[1]-1))     # aansluiten op de onderste trap
 line((S3[0],S3[1]+2),(S3[0],29))      # strand
 path={c for c in path if FLOOR(c)}
 autopath(m,path,'path_stone')

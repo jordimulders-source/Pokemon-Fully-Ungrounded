@@ -15253,3 +15253,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.8.6] - Ashfrost Village: groter meer, besneeuwd gras
 - Meer groter (laag 2 en 3 breder, meer ca. 12×5).
 - Besneeuwd hoog gras in plukken in plaats van één losse tile (decor; Ashfrost heeft geen wilde Pokémon).
+
+### [v.0.8.7] - Ashfrost Village: pad naar de onderste trap
+- Het pad op de weide loopt nu door tot aan de trap naar het meer (er ontbrak een rij).

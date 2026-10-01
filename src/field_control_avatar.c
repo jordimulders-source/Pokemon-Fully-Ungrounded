@@ -95,6 +95,7 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
     input->pressedRButton = FALSE;
+    input->pressedLButton = FALSE;
     input->input_field_1_1 = FALSE;
     input->input_field_1_2 = FALSE;
     input->input_field_1_3 = FALSE;
@@ -121,6 +122,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedBButton = TRUE;
             if (newKeys & R_BUTTON)
                 input->pressedRButton = TRUE;
+            if ((newKeys & L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A)
+                input->pressedLButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -232,6 +235,9 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         return TRUE;
 
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+        return TRUE;
+
+    if (input->pressedLButton && UseRegisteredKeyItemLOnField() == TRUE)
         return TRUE;
 
     if (input->pressedRButton && TryStartDexNavSearch())

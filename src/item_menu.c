@@ -83,6 +83,8 @@ enum {
     ACTION_CHECK,
     ACTION_WALK,
     ACTION_DESELECT,
+    ACTION_REGISTER_L,
+    ACTION_DESELECT_L,
     ACTION_CHECK_TAG,
     ACTION_CONFIRM,
     ACTION_SHOW,
@@ -197,6 +199,7 @@ static void BagMenu_MoveCursorCallback(s32, bool8, struct ListMenu *);
 static void BagMenu_ItemPrintCallback(u8, u32, u8);
 static void ItemMenu_UseOutOfBattle(u8);
 static void ItemMenu_Toss(u8);
+static void ItemMenu_RegisterL(u8);
 static void ItemMenu_Register(u8);
 static void ItemMenu_Give(u8);
 static void ItemMenu_Cancel(u8);
@@ -299,6 +302,8 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_CHECK]             = {COMPOUND_STRING("CHECK"),     {ItemMenu_UseOutOfBattle}},
     [ACTION_WALK]              = {COMPOUND_STRING("WALK"),      {ItemMenu_UseOutOfBattle}},
     [ACTION_DESELECT]          = {COMPOUND_STRING("DESELECT"),  {ItemMenu_Register}},
+    [ACTION_REGISTER_L]        = {COMPOUND_STRING("L BUTTON"),  {ItemMenu_RegisterL}},
+    [ACTION_DESELECT_L]        = {COMPOUND_STRING("DESELECT"),  {ItemMenu_RegisterL}},
     [ACTION_CHECK_TAG]         = {COMPOUND_STRING("CHECK TAG"), {ItemMenu_CheckTag}},
     [ACTION_CONFIRM]           = {gMenuText_Confirm,            {Task_FadeAndCloseBagMenu}},
     [ACTION_SHOW]              = {COMPOUND_STRING("SHOW"),      {ItemMenu_Show}},
@@ -320,7 +325,7 @@ static const u8 sContextMenuItems_ItemsPocket[] = {
 
 static const u8 sContextMenuItems_KeyItemsPocket[] = {
     ACTION_USE,         ACTION_REGISTER,
-    ACTION_DUMMY,       ACTION_CANCEL
+    ACTION_REGISTER_L,  ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BallsPocket[] = {
@@ -1018,6 +1023,8 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
             // Print registered icon
             if (gSaveBlock1Ptr->registeredItem != ITEM_NONE && gSaveBlock1Ptr->registeredItem == itemSlot.itemId)
                 BlitBitmapToWindow(windowId, sRegisteredSelect_Gfx, 96, y - 1, 24, 16);
+            else if (VarGet(VAR_REGISTERED_ITEM_L) != ITEM_NONE && VarGet(VAR_REGISTERED_ITEM_L) == itemSlot.itemId)
+                BagMenu_Print(windowId, FONT_NARROW, COMPOUND_STRING("L"), 110, y, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
         }
     }
 }
@@ -1697,6 +1704,8 @@ static void OpenContextMenu(u8 taskId)
                 memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_KeyItemsPocket, sizeof(sContextMenuItems_KeyItemsPocket));
                 if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
                     gBagMenu->contextMenuItemsBuffer[1] = ACTION_DESELECT;
+                if (VarGet(VAR_REGISTERED_ITEM_L) == gSpecialVar_ItemId)
+                    gBagMenu->contextMenuItemsBuffer[2] = ACTION_DESELECT_L;
                 if (gSpecialVar_ItemId == ITEM_MACH_BIKE || gSpecialVar_ItemId == ITEM_ACRO_BIKE)
                 {
                     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -2017,6 +2026,28 @@ static void ItemMenu_Register(u8 taskId)
         gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     else
         gSaveBlock1Ptr->registeredItem = gSpecialVar_ItemId;
+    if (VarGet(VAR_REGISTERED_ITEM_L) == gSpecialVar_ItemId) // Project Grounded: een item staat op één knop
+        VarSet(VAR_REGISTERED_ITEM_L, ITEM_NONE);
+    DestroyListMenuTask(tListTaskId, scrollPos, cursorPos);
+    LoadBagItemListBuffers(gBagPosition.pocket);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
+    ScheduleBgCopyTilemapToVram(0);
+    ItemMenu_Cancel(taskId);
+}
+
+// Project Grounded: registreren op de L-knop (tweede registratieknop)
+static void ItemMenu_RegisterL(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    u16 *scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
+    u16 *cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
+
+    if (VarGet(VAR_REGISTERED_ITEM_L) == gSpecialVar_ItemId)
+        VarSet(VAR_REGISTERED_ITEM_L, ITEM_NONE);
+    else
+        VarSet(VAR_REGISTERED_ITEM_L, gSpecialVar_ItemId);
+    if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
+        gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     DestroyListMenuTask(tListTaskId, scrollPos, cursorPos);
     LoadBagItemListBuffers(gBagPosition.pocket);
     tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
@@ -2171,6 +2202,31 @@ bool8 UseRegisteredKeyItemOnField(void)
         }
     }
     ScriptContext_SetupScript(EventScript_SelectWithoutRegisteredItem);
+    return TRUE;
+}
+
+// Project Grounded: het item op de L-knop gebruiken. Zonder geregistreerd item gebeurt er niets.
+bool8 UseRegisteredKeyItemLOnField(void)
+{
+    u8 taskId;
+    u16 item = VarGet(VAR_REGISTERED_ITEM_L);
+
+    if (item == ITEM_NONE || InUnionRoom() == TRUE || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InBattlePike() || InMultiPartnerRoom() == TRUE)
+        return FALSE;
+    if (CheckBagHasItem(item, 1) != TRUE)
+    {
+        VarSet(VAR_REGISTERED_ITEM_L, ITEM_NONE);
+        return FALSE;
+    }
+    HideMapNamePopUpWindow();
+    ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    PlayerFreeze();
+    StopPlayerAvatar();
+    gSpecialVar_ItemId = item;
+    taskId = CreateTask(GetItemFieldFunc(item), 8);
+    gTasks[taskId].tUsingRegisteredKeyItem = TRUE;
     return TRUE;
 }
 

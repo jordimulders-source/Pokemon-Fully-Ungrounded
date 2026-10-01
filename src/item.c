@@ -504,6 +504,12 @@ void CompactPCItems(void)
 
 void SwapRegisteredBike(void)
 {
+    // Project Grounded: ook het item op de L-knop
+    if (VarGet(VAR_REGISTERED_ITEM_L) == ITEM_MACH_BIKE)
+        VarSet(VAR_REGISTERED_ITEM_L, ITEM_ACRO_BIKE);
+    else if (VarGet(VAR_REGISTERED_ITEM_L) == ITEM_ACRO_BIKE)
+        VarSet(VAR_REGISTERED_ITEM_L, ITEM_MACH_BIKE);
+
     switch (gSaveBlock1Ptr->registeredItem)
     {
     case ITEM_MACH_BIKE:

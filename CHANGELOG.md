@@ -15336,3 +15336,9 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Six-Pack** (`ITEM_SIX_PACK`): zes potions in een kartonnen drager. Buiten gevechten **60 HP voor elke Pokémon in het team** (zelfde effect als een Super Potion, op iedereen tegelijk; flauwgevallen Pokémon niet). 2000 Pokédollar. Te koop in de **Lilycove Department Store (2F)** en de **Fortree Mart**. Niet bruikbaar in gevechten.
 - Eigen icoon (`graphics/items/icons/six_pack.png`, eigen palet): drie paarse potion-sprayflesjes in een kartonnen drager met handvat-gat en een mintgroen etiket met wit kruis.
 - Melding: "Everyone took a swig from the SIX-PACK and recovered HP!" Getest in de emulator.
+
+### [v.0.8.25] - QoL: tweede registratieknop (L); hengel en fiets zonder menu
+- Key items kunnen nu ook op de **L-knop** geregistreerd worden: in de tas heeft een key item naast REGISTER (SELECT) de optie **L BUTTON** (of DESELECT als hij er al op staat). Een item staat op één knop tegelijk; in de lijst staat "L" achter het item op L.
+- Zo kun je bijv. de **fiets op L en de hengel op SELECT** zetten: allebei zonder menu. Zonder item op L doet L niets. Staat de optie "L=A" aan, dan werkt L als A (geen registratieknop).
+- Opgeslagen in `VAR_REGISTERED_ITEM_L` (was `VAR_UNUSED_0x409B`), dus de save-structuur is ongewijzigd. Wisselen tussen Mach/Acro Bike past ook het item op L aan. Code: `UseRegisteredKeyItemLOnField` / `ItemMenu_RegisterL` in `src/item_menu.c`, `pressedLButton` in `src/field_control_avatar.c`.
+- Getest in de emulator: Mach Bike op L (op- en afstappen), Old Rod op SELECT.

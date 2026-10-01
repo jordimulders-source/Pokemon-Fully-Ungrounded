@@ -6,7 +6,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 1. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
 
 ## Quality of life (nog te doen)
-- **Goedgekeurd:** HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Rare Candy/vitamines in één keer meerdere gebruiken, tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, hengel en fiets zonder menu, korte melding bij items oppakken (zonder tekstvak).
+- **Goedgekeurd:** HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Rare Candy/vitamines in één keer meerdere gebruiken, tas sorteren, nature/ability zichtbaar in de pc, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, korte melding bij items oppakken (zonder tekstvak).
 - **Later proberen:** snellere schermtransities.
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)

@@ -6912,6 +6912,25 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Falinksite,
     },
 
+    // Project Grounded: zes potions in een drager; buiten gevechten 60 HP voor het hele team
+    [ITEM_SIX_PACK] =
+    {
+        .name = ITEM_NAME("Six-Pack"),
+        .price = 2000,
+        .holdEffectParam = 60,
+        .description = COMPOUND_STRING(
+            "Six potions in a\n"
+            "carrier. Restores\n"
+            "60 HP to the team."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_SixPack,
+        .effect = gItemEffect_SuperPotion,
+        .flingPower = 30,
+        .iconPic = gItemIcon_SixPack,
+        .iconPalette = gItemIconPalette_SixPack,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000

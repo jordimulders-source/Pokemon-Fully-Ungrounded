@@ -15331,3 +15331,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - Voor HP kiest hij de **goedkoopste combinatie**: per soort potion (Potion, Berry Juice, Fresh Water, Soda Pop, Lemonade, Super/Hyper/Max Potion, Moomoo Milk, Full Restore) berekent hij hoeveel er nodig zijn en wat dat samen kost; heb je nergens genoeg van, dan eerst de sterkste. Items werken precies zoals bij normaal gebruik. Bittere kruiden (vriendschap omlaag), bessen en PP-items worden niet gebruikt.
 - Korte melding: "Used X item(s). The whole team is patched up!", "...then ran out of suitable medicine.", "No suitable medicine in the BAG. Thoughts and prayers it is." of "Everyone is already fine. Show-offs." (placeholders).
 - Getest in de emulator: Lapras (10 HP, vergiftigd) en Machamp (flauwgevallen) in één druk vol, met 6+3 Potions, 1 Antidote en 1 Revive.
+
+### [v.0.8.24] - Nieuw item: Six-Pack
+- **Six-Pack** (`ITEM_SIX_PACK`): zes potions in een kartonnen drager. Buiten gevechten **60 HP voor elke Pokémon in het team** (zelfde effect als een Super Potion, op iedereen tegelijk; flauwgevallen Pokémon niet). 2000 Pokédollar. Te koop in de **Lilycove Department Store (2F)** en de **Fortree Mart**. Niet bruikbaar in gevechten.
+- Eigen icoon (`graphics/items/icons/six_pack.png`, eigen palet): drie paarse potion-sprayflesjes in een kartonnen drager met handvat-gat en een mintgroen etiket met wit kruis.
+- Melding: "Everyone took a swig from the SIX-PACK and recovered HP!" Getest in de emulator.

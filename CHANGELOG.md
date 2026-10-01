@@ -15352,3 +15352,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - In een **wild gevecht** toont **L** in het actiemenu de **ability, het vastgehouden item en de moves** van de wilde Pokémon, als je die soort al gevangen hebt (Pokédex). Elke knop sluit het weer en zet het actiemenu terug. In dubbelgevechten de linker tegenstander (of de rechter als de linker al weg is). Niet in trainergevechten.
 - Nog niet gevangen: "No data yet. Catch one first, then we'll talk." (placeholder). Staat de optie "L=A" aan, dan werkt L als A.
 - Code: `ShowWildMonInfo` / `HandleInputWildMonInfo` in `src/battle_controller_player.c` (gebruikt de vensters van het actiemenu, klein lettertype). Getest in de emulator (Shuckle gevangen, Magikarp niet).
+
+### [v.0.8.28] - Wilde Pokémon-info in één vak
+- Feedback Jordi op v0.8.27: de info stond verspreid over de twee vakken van het actiemenu en de tekst viel half weg. Nu staat alles in **één omkaderd vak** rechts boven het gevecht (hetzelfde vak als het level-up-overzicht): ability, item, en daaronder de vier moves, elk op een eigen regel. Elke knop sluit het vak; het actiemenu blijft ongewijzigd staan.

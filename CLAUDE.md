@@ -44,7 +44,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Immersie telt voor Jordi:** alleen dingen die in de wereld kloppen (geen Reshiram-beeld als Reshiram niet in de game zit; dieren die echt in koud zoet water leven; bloemen alleen waar het plausibel is). Bij twijfel kort uitleggen of voorleggen.
 - **Animaties in gevechten:** argumenten van `createvisualtask` worden niet gewist; voeg je een argument toe aan een taak, zet het dan expliciet in álle aanroepen. Weer aan het eind van de beurt (`gBattleAnimGeneral_*`) los van de move-animatie inkorten.
 - **Gevechtsanimaties versnellen:** algemeen via `sFastBattleAnim` in `src/battle_anim.c` (halveert `delay` voor status/algemene animaties); per animatie alleen nog als iets na het halveren te lang blijft.
-- **Emulatortests:** de intro-savestate heeft een kapotte party (Lv0); doe `givemon` vóór een testgevecht. Fly testen: START → A (debug) → A (Utilities) → A (Fly to map). Fly-flags worden pas gezet bij het binnenlopen van de kaart.
+- **Emulatortests:** de intro-savestate heeft een kapotte party (Lv0); doe `givemon` vóór een testgevecht. Zonder `setflag FLAG_SYS_POKEMON_GET` ontbreekt POKéMON in het startmenu. B in een wild gevecht zet de cursor op Run (wacht op berichten i.p.v. B te drukken). Tas: pockets wisselen met RIGHT (hold 8, ~60 frames), Key Items = 4× RIGHT. HP/status testen: direct in `gPlayerParty` schrijven (100 bytes per Pokémon; status +80, hp +86).
+- **Meldingen in menu's** (partymenu, tas): de tekst moet eindigen op `{PAUSE_UNTIL_PRESS}`, anders verdwijnt hij meteen. In het partymenu eerst `PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1])`.
+- **Gevechts-UI:** informatie in één omkaderd vak tonen (bijv. het level-up-vak `B_WIN_LEVEL_UP_BOX` via `HandleBattleWindow(18, 7, 29, 19, WINDOW_BG1)`), niet verspreid over de vakken van het actiemenu (Jordi: cognitief onduidelijk, tekst viel weg). Altijd ingezoomd controleren op afgekapte tekst. Fly testen: START → A (debug) → A (Utilities) → A (Fly to map). Fly-flags worden pas gezet bij het binnenlopen van de kaart.
 
 ## Werkwijzen (herhaalde taken)
 

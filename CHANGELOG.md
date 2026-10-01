@@ -15275,3 +15275,11 @@ Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 
 
 ### [v.0.9.2] - Kortere pauzes in gevechten
 - `B_WAIT_TIME_MULTIPLIER` 10 → 8 (vanilla 16): berichten in gevechten blijven korter staan. Terugzetten kan in `include/config/battle.h` als het te snel voelt.
+
+### [v.0.9.3] - Snellere weer- en statusanimaties in gevechten
+De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun volledige animatie; alleen het weer aan het begin/eind van een beurt is korter.
+- **Zandstorm:** ongeveer de helft korter (sneller in- en uitfaden, 36 i.p.v. 101 frames vol zand, 4 i.p.v. 7 zandsikkels). Nieuw argument "kort" voor `AnimTask_LoadSandstormBackground`.
+- **Hagel:** de helft van de hagelstenen (`AnimTask_HailShort`), sneller donker worden, 4 i.p.v. 8 tikgeluiden.
+- **Regen, zon, sneeuw:** kortere regen (30 i.p.v. 60 frames), 2 i.p.v. 4 lichtstralen, sneeuw 50 i.p.v. 150 frames; snellere overgangen.
+- **Statussen:** poison (korter schudden en flitsen), confusion (eendjes 40 i.p.v. 90 frames en sneller rond), sleep en infatuation (halve pauzes).
+- CLAUDE.md: nieuwe secties "Zelflerend werken" en "Lessen" (o.a. uit het Ashfrost-proces).

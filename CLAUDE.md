@@ -30,6 +30,21 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - Bewust níet: Exp. Share als Key Item, pc in het menu, type-effectiviteit altijd tonen, zwakke encounters ontlopen (zwakkere routes afzoeken kan een bewuste keuze zijn), uitleg van de laatst-gebruikte-bal-knop, een echte levelcap.
 - Gedaan (events): Wally-gevecht in Meteor Falls en tag battle met Wally tegen Maxie + Tabitha op Mt. Chimney, Prof. Birch op het strand van Route 109, gevechtsmuziek kiezen in het optiemenu. Belangrijke gevechten (rivalen, gymleiders, Archie, Maxie, Wally, Birch) krijgen de mugshot-slide (`Mugshot:` in `trainers.party`). Legendary beasts (Raikou/Entei/Suicune) krijgen hun eigen thema (`MUS_C_VS_LEGEND_BEAST`) via `BattleSetup_StartLegendaryBattle`.
 
+## Zelflerend werken
+- Leer van elke sessie en word steeds beter in het meebouwen aan deze rom. Voeg **zelf, zonder het te vragen**, aan het eind van een stuk werk nieuwe lessen toe onder "Lessen" hieronder: fouten die je maakte, feedback van Jordi, valkuilen in de code/tools en testtrucs die werkten. Kort, één regel per les; verouderde lessen bijwerken of schrappen.
+- Alleen **designprincipes** (smaak, spelregels, humor) eerst aan Jordi voorleggen (zie Vaste regels). Technische en werkwijze-lessen mag je direct opschrijven.
+
+## Lessen
+- **Bronsheets (Essentials/RMXP):** objecten beginnen vaak een (halve) rij hoger of een kolom anders dan je denkt (sneeuwpophoofd, boomtop, luifel, lantaarn). Zoom per object op pixelniveau in (`grid.py`-achtig) vóór het knippen, en controleer de render op afgekapte koppen/daken. Rode X-vakjes zijn markeringen: leeg laten.
+- **Tile-limiet:** Essentials-art ontdubbelt slecht (een gebouw ≈ 50–60 tiles). Een eigen primary + secondary geeft 2×512 tiles en 13 paletten (zie Ashfrost). Onderlaag = grond (gedeeld uit de primary), bovenlaag = object.
+- **Kliffen:** afgeschuinde hoeken bij kuilen/terrassen geven rommelige losse klifstukjes; gebruik rechte rechthoeken. Trappen midden in een rechte wand (laat het script dat controleren) en laat het pad tot op elke trap doorlopen (controleer de render op gaten). `cliff_front_b` in de sneeuwset heeft een grotopening; voor hoge wanden gestapelde `cliff_b`-rijen.
+- **Deuren:** de deur-tile in de kaart moet precies de tile met deurgedrag uit de tileset zijn (groen huis: (2,3), niet (1,3)); anders loop je over de deur zonder warp.
+- **Kaartgrootte wijzigen:** ook `layouts.json` (breedte/hoogte), warps, coord-triggers, heal location, inkomende warps (bijv. Route 136) en NPC-posities bijwerken.
+- **Decor uit General** kan op sneeuw als je de graskleuren (palet 1/2, index 12–14) transparant maakt (`_general_metatile(..., nograss=True)`).
+- **Immersie telt voor Jordi:** alleen dingen die in de wereld kloppen (geen Reshiram-beeld als Reshiram niet in de game zit; dieren die echt in koud zoet water leven; bloemen alleen waar het plausibel is). Bij twijfel kort uitleggen of voorleggen.
+- **Animaties in gevechten:** argumenten van `createvisualtask` worden niet gewist; voeg je een argument toe aan een taak, zet het dan expliciet in álle aanroepen. Weer aan het eind van de beurt (`gBattleAnimGeneral_*`) los van de move-animatie inkorten.
+- **Emulatortests:** de intro-savestate heeft een kapotte party (Lv0); doe `givemon` vóór een testgevecht. Fly testen: START → A (debug) → A (Utilities) → A (Fly to map). Fly-flags worden pas gezet bij het binnenlopen van de kaart.
+
 ## Werkwijzen (herhaalde taken)
 
 ### Een route bouwen

@@ -4,12 +4,11 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 1. **Ashfrost Village: feedback van Jordi verwerken** (eerste versie staat, v0.8.3).
-2. **Weer- en statusanimaties in gevechten versnellen** (confusion, poison enz.; zie Quality of life).
-3. **Lager Lagoon en Vintage Spill** (zie Backlog, Moves).
-4. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
+2. **Lager Lagoon en Vintage Spill** (zie Backlog, Moves).
+3. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
 
 ## Quality of life (nog te doen)
-- **Goedgekeurd:** **weer-effecten en statusanimaties in gevechten (bijv. confusion, poison) versnellen**, HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
+- **Goedgekeurd:** HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
 - **Later proberen:** snellere schermtransities.
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)

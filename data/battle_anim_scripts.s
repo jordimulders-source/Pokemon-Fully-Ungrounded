@@ -9888,7 +9888,7 @@ gBattleAnimMove_ShoreUp::
 	loadspritegfx ANIM_TAG_FLYING_DIRT @sandstorm
 	loadspritegfx ANIM_TAG_BLUE_STAR @heal2
 	playsewithpan SE_M_SANDSTORM, 0x0
-	createvisualtask AnimTask_LoadSandstormBackground, 0x5, 0x0
+	createvisualtask AnimTask_LoadSandstormBackground, 0x5, 0x0, 0x0
 	delay 16
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0xa, 0x900, 0x60, 0x0
 	delay 10
@@ -24165,7 +24165,7 @@ gBattleAnimMove_Uproar::
 gBattleAnimMove_HeatWave::
 	loadspritegfx ANIM_TAG_FLYING_DIRT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLYING_DIRT, 0, 6, 6, RGB_RED
-	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE
+	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE, FALSE
 	createvisualtask AnimTask_BlendBackground, 6, 6, RGB_RED
 	panse SE_M_HEAT_WAVE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	delay 4
@@ -27033,7 +27033,7 @@ FlamethrowerCreateFlames:
 gBattleAnimMove_Sandstorm::
 	loadspritegfx ANIM_TAG_FLYING_DIRT
 	playsewithpan SE_M_SANDSTORM, 0
-	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE
+	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE, FALSE
 	delay 16
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
 	delay 10
@@ -30976,14 +30976,19 @@ UnsetSolarBeamBg:
 	return
 
 gBattleAnimStatus_Poison::
-	loopsewithpan SE_M_TOXIC, SOUND_PAN_TARGET, 13, 6
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 18, 2
-	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
+	loopsewithpan SE_M_TOXIC, SOUND_PAN_TARGET, 10, 3
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 9, 2
+	blend_color_cycle selector=F_PAL_ATTACKER, delay=1, num_blends=1, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
 	end
 
 gBattleAnimStatus_Confusion::
 	loadspritegfx ANIM_TAG_DUCK
-	call ConfusionEffect
+	loopsewithpan SE_M_DIZZY_PUNCH, SOUND_PAN_TARGET, 13, 3
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=0, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=51, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=102, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=153, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=204, wave_period=5, duration=40
 	end
 
 gBattleAnimStatus_Burn::
@@ -31003,10 +31008,10 @@ gBattleAnimStatus_Infatuation::
 	loadspritegfx ANIM_TAG_MAGENTA_HEART
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 0, 20
-	delay 15
+	delay 7
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, -20, 20
-	delay 15
+	delay 7
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 20, 20
 	end
@@ -31015,7 +31020,7 @@ gBattleAnimStatus_Sleep::
 	loadspritegfx ANIM_TAG_LETTER_Z
 	playsewithpan SE_M_SNORE, SOUND_PAN_ATTACKER
 	createsprite gSleepLetterZSpriteTemplate, ANIM_ATTACKER, 2, 4, -10, 16, 0, 0
-	delay 30
+	delay 14
 	createsprite gSleepLetterZSpriteTemplate, ANIM_ATTACKER, 2, 4, -10, 16, 0, 0
 	end
 
@@ -31308,8 +31313,18 @@ gBattleAnimGeneral_HangedOn::
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 0, 0, 0, 15
 	end
 
+@ Project Grounded: korte weer-animaties aan het eind van de beurt (de moves zelf houden hun volledige animatie)
 gBattleAnimGeneral_Rain::
-	call RainDrops
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 4, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	delay 24
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB_BLACK
+	waitforvisualfinish
 	end
 
 RainDrops:
@@ -31326,16 +31341,58 @@ RainDrops:
 	return
 
 gBattleAnimGeneral_Sun::
-	goto gBattleAnimMove_SunnyDay
+	loadspritegfx ANIM_TAG_SUNLIGHT
+	monbg ANIM_ATK_PARTNER
+	setalpha 13, 3
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 0, 0, 6, RGB_WHITE
+	waitforvisualfinish
+	panse_adjustnone SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +1, 0
+	call SunnyDayLightRay
+	call SunnyDayLightRay
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 0, 6, 0, RGB_WHITE
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	end
 
 gBattleAnimGeneral_Sandstorm::
-	goto gBattleAnimMove_Sandstorm
+	loadspritegfx ANIM_TAG_FLYING_DIRT
+	playsewithpan SE_M_SANDSTORM, 0
+	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE, TRUE
+	delay 8
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 90, 2048, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 50, 2560, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
+	end
 
 gBattleAnimGeneral_Hail::
-	goto gBattleAnimMove_Hail
+	loadspritegfx ANIM_TAG_HAIL
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 6, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_HailShort, 5
+	loopsewithpan SE_M_HAIL, 0, 8, 4
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 6, 0, RGB_BLACK
+	end
 
 gBattleAnimGeneral_Snow::
-	goto gBattleAnimMove_Snowscape
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 4, RGB(11, 18, 22)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	delay 40
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB(11, 18, 22)
+	waitforvisualfinish
+	end
 
 gBattleAnimGeneral_Fog::
 	goto gBattleAnimMove_Haze

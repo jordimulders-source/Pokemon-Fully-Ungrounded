@@ -237,15 +237,14 @@ if TOWN:
     # alleen de basis die een stad nodig heeft (tile-budget), daarna de gebouwen uit de bronsheet
     KEEP = ('snow', 'snow_dots', 'snow_light', 'grass_snow', 'grass_green', 'tuft', 'flowers_', 'path_stone_',
             'cliff_', 'water', 'shore_', 'stairs', 'htree_', 'pine_', 'pinegreen_', 'rock_snow', 'rock_cluster',
-            'snowman', 'log', 'bush_snow', 'stump', 'house_blue_', 'ice_crystal', 'snowball')
+            'snowman', 'log', 'bush_snow', 'stump', 'house_blue_', 'ice_crystal', 'snowball', 'boulder_')
     metatiles[:] = [m for m in metatiles if m[0] in KEEP or any(m[0].startswith(k) for k in KEEP if k.endswith('_'))
                     or (m[0].startswith('tuft') or m[0].startswith('cliff_') or m[0].startswith('shore_'))]
     def building(name, c0, r0, w, h, door):
         for dy in range(h):
             for dx in range(w):
                 add(f'{name}_{dx}{dy}', over(G, cell(c0 + dx, r0 + dy)), beh='door' if (dx, dy) == door else 'normal')
-    building('house_pink', 0, 104, 4, 3, (2, 2))
-    building('shop_green', 4, 104, 4, 3, (2, 2))
+    building('house_pink', 0, 103, 4, 4, (2, 3))      # dak begint halverwege rij 103
     building('house_yellow', 4, 107, 4, 4, (1, 3))
     building('pc', 0, 111, 5, 5, (2, 4))
     building('mart', 0, 116, 4, 4, (2, 3))

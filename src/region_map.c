@@ -156,6 +156,7 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_MIRAGE_TOWER,               MAPSEC_ROUTE_111},
     {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
     {MAPSEC_COLDSTEP_CAVE,               MAPSEC_ROUTE_115}, // Project Grounded
+    {MAPSEC_CRYSTAL_CAVITY,              MAPSEC_ROUTE_136}, // Project Grounded
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},

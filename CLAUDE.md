@@ -2,6 +2,13 @@
 
 Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
 
+## Zuinig met tokens
+- **Geen ROM opleveren** (zippen/versturen) tenzij Jordi erom vraagt. `make -j4` om te controleren dat het bouwt mag altijd; filter de uitvoer (`make -j8 2>&1 | grep "rror:"`).
+- Emulatortests en screenshots alleen voor wat echt nieuw of riskant is (warps, scripts, nieuwe mechanics); niet voor elke kleine kaartwijziging. Eén render van de hele kaart aan het eind is genoeg; stuur die zonder ze zelf eerst vaak te bekijken.
+- Gebruik de bestaande tools (`tools/grounded/maptools/`, o.a. `testrom.py`, `render_map.py`) in plaats van ze opnieuw te schrijven. Lees grote bestanden gericht (grep, offset/limit), niet in zijn geheel.
+- Korte statusberichten; geen samenvattingen van wat al in de changelog staat.
+- **Stand van zaken** hieronder kort houden: alleen wat een volgende sessie moet weten. Details horen in `CHANGELOG.md`.
+
 ## Vaste regels
 - **Changelog:** zet elke wijziging onderaan in `CHANGELOG.md`, als een nieuwe `### [v.x.y.z] - ...`-sectie. Dit is Jordi's eigen logboek; het mag "vervuild" zijn (codeblokken, learnsets). Niet opschonen of herstructureren.
 - **Debugmenu blijft aan** (`DEBUG_OVERWORLD_MENU` en `DEBUG_BATTLE_MENU` in `include/config/debug.h`).
@@ -11,22 +18,51 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Intro kort houden:** geen truck-intro, geen tv-scène. Mom houdt haar humoristische standaardtekst; healen, PokéNav-registratie en post-game-dialoog werken wel.
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) zijn bewust weggelaten.
 - **National Dex** is vanaf het begin beschikbaar.
+- Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
 ## Speelervaring
 - Filosofie à la Shin Megami Tensei / Slay the Spire: gevechten mogen pittig zijn, maar de speler krijgt veel tools en mogelijkheden om ze op te lossen.
 - Move-aanpassingen gebeuren per move; er is geen algemene regel (zoals "altijd 100% bijeffect").
 
-## Samenwerken
-- Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
-
 ## Quality of life
 - **De game respecteert de tijd van de speler.** Pokémon is een JRPG vol herhaling; schrap die herhaling zodat speed-up-knoppen niet nodig zijn. Animaties (aanvallen, schermtransities) zijn tof en blijven; wachttijden, overbodige teksten, ja/nee-vragen en minigames gaan eruit.
 - Al gedaan: korte intro, geen tutorial, instant heal bij de verpleegster, vissen zonder minigame (Old Rod blijft bewust slecht), tekstsnelheid standaard Fast, B zet de cursor op Run, korter flitsen vóór transities, Itemfinder als ORAS-dowsing, sneller fietsen/surfen, geen vluchtende Safari-/rondzwervende Pokémon, Wailmer Pail toont rijpe bessen, Repel "Use another?", EV/IV in het summary-scherm, kaartnaam-popup niet herhalen, itembeschrijving bij eerste keer oppakken, Fly vanuit de Town Map/PokéNav-kaart na de 6e badge.
 - Bewust níet: Exp. Share als Key Item, pc in het menu, type-effectiviteit altijd tonen, zwakke encounters ontlopen (zwakkere routes afzoeken kan een bewuste keuze zijn), uitleg van de laatst-gebruikte-bal-knop, een echte levelcap.
-- Goedgekeurd, nog te doen: HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
-- Gedaan (events): Wally-gevecht in Meteor Falls en tag battle met Wally tegen Maxie + Tabitha op Mt. Chimney, Prof. Birch op het strand van Route 109, gevechtsmuziek kiezen in het optiemenu. Belangrijke gevechten (rivalen, gymleiders, Archie, Maxie, Wally, Birch) krijgen de mugshot-slide (`Mugshot:` in `trainers.party`).
-- Testen in de emulator kan headless: `pip install mgba` (libmgba staat al op het systeem) en screenshots maken met de Python-bindings; het debugmenu zit in het startmenu (DEBUG → Scripts voor tijdelijke testscripts, niet committen).
+- Goedgekeurd, nog te doen: **weer-effecten en statusanimaties in gevechten (bijv. confusion, poison) versnellen**, HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
+- Gedaan (events): Wally-gevecht in Meteor Falls en tag battle met Wally tegen Maxie + Tabitha op Mt. Chimney, Prof. Birch op het strand van Route 109, gevechtsmuziek kiezen in het optiemenu. Belangrijke gevechten (rivalen, gymleiders, Archie, Maxie, Wally, Birch) krijgen de mugshot-slide (`Mugshot:` in `trainers.party`). Legendary beasts (Raikou/Entei/Suicune) krijgen hun eigen thema (`MUS_C_VS_LEGEND_BEAST`) via `BattleSetup_StartLegendaryBattle`.
 - Later proberen: kortere pauzes tussen gevechtsberichten (`B_WAIT_TIME_MULTIPLIER` 10 → 8) en snellere schermtransities.
+
+## Werkwijzen (herhaalde taken)
+
+### Een route bouwen
+Blauwdruk: **Route 135 en 136** (`tools/grounded/maptools/route135.py`, `route136.py`). Bouw elke kaart met een script (vaste seed), nooit met de hand.
+- Grootte: gemiddeld of net onder gemiddeld (2400–3200 tiles, bijv. 60×40).
+- Hoogteverschillen met `terrace(..., face=...)`; trappen = stenen Hoenn-trap (General 175 links / 207 rechts, 2 breed, per rij in de klifwand), zoals Route 119.
+- Randen: vaste Hoenn-randbomen (`hforest`, op sneeuw `htree_*`), ook in `border.bin`. Geen losse overlappende bomen; bomen sluiten aan op bestaande bomen.
+- Hoog gras niet direct tegen randbomen; geen halve sprites of onafgemaakte randen (controleer de render op afgekapte daken, kliffen en oevers).
+- Watervallen breed in een massieve rotswand (`fall()`).
+- Houd events en doorgangen vrij van decor (EVENTS/KEEP-sets) en laat het script de **bereikbaarheid** controleren (deuren, items, trainers, uitgangen).
+- Wilde Pokémon: zie "Wilde encounters". Trainers: zie "Trainer parties".
+- Verbonden kaarten (connections) moeten dezelfde secondary tileset hebben; anders een warp (zoals Route 136 ↔ Ashfrost).
+
+### Een grot of binnenkaart bouwen
+Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136_Grotto` (`grotto136.py`). Hergebruik vanilla layouts waar het kan (kopie in een eigen layoutmap, dan aanpassen). Duiken: `setdivewarp` in de map-scripts (zie `Underwater_Route136`).
+
+### Een stad bouwen
+- Gebouwen en stadsgrond komen uit de stads-tileset `snow_town` (`python3 tools/grounded/snow_tileset.py --town`; bouwscript `ashfrost.py`). Controleer in de bronsheet waar een gebouw echt begint (sommige daken beginnen halverwege een rij).
+- Pokémon Center: `*_PokemonCenter_1F/2F` op de standaard layouts, heal location in `src/data/heal_locations.json`, `setrespawn` in de 1F. Mart en huizen op de vanilla layouts.
+- Nieuwe mapsec: `region_map_sections.json`, beide popup-tabellen in `src/map_name_popup.c`, en op de Town Map (zie Stand van zaken).
+
+### Nieuwe NPC's en trainers
+- Teams en levels: zie "Trainer parties". Teksten: **meteen een humoristische placeholder** in de stijl van de game (droog, self-aware, soms de vierde wand doorbrekend). Jordi herschrijft wat hij wil via de Dialoogstudio.
+- Script-aanpassingen daarna exporteren voor de Dialoogstudio (zie "Dialogen").
+
+### Testen
+- `python3 tools/grounded/maptools/testrom.py <scratchmap> "regels script 1" ["regels script 2" ...]` bouwt een test-ROM met tijdelijke debug-scripts (bijv. `warp MAP_X, x, y; waitstate`) en zet `debug.inc` terug. Daarna in Python: `Emu(rom)`, `load(e, intro)`, `debug_script(e, 1)` (`emu.py`). Bouw daarna opnieuw voor een schone ROM.
+- Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; grote JSON-bestanden (`wild_encounters.json`, `layouts.json`, `map_groups.json`) tekstueel bewerken, niet via `json.dump`; trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`); nieuwe kaarten achteraan hun groep in `map_groups.json`.
+
+### Afronden van een stuk werk
+`make -j4` slaagt → changelogsectie → **Stand van zaken** bijwerken (kort) → commit en push. Bij een kaart: één render van de hele kaart naar Jordi (plus emulatorbeelden als er iets te zien valt). Geen ROM tenzij gevraagd.
 
 ## Wilde encounters (`src/data/wild_encounters.json`)
 - Land heeft precies **12 slots** met kansen 20/20/10/10/10/10/5/5/4/4/1/1. Meer of minder entries = bug (extra entries komen nooit voor).
@@ -42,7 +78,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - Een `Ability:` in `src/data/trainers.party` moet in de abilitylijst van die soort staan.
 
 ## Trainer parties (`src/data/trainers.party`)
-- **Taakverdeling:** Jordi doet de humor (grap-teams, grappige dialogen); Claude doet het serieuze werk. Verzin zelf geen grappen, maar laat Jordi's grappen staan.
+- **Taakverdeling:** Jordi doet de echte humor (grap-teams, definitieve dialogen); Claude doet het serieuze werk en schrijft humoristische placeholders. Laat Jordi's grappen staan.
 - **Elk gevecht moet engaging zijn**, serieus óf als grap. De speler mag niet op de automatische piloot raken zoals in de echte games. Placeholders moeten ook al vermakelijk zijn; na de beta wordt alles echt uniek gemaakt.
 - **Levels:** gelijk aan Jordi's eigen trainers op dezelfde route (meestal 5–6 boven vanilla). Binnen een team vlakke levels, de ace eventueel 1–2 hoger.
 - **Evoluties:** een Pokémon op een level waarop hij al geëvolueerd had kunnen zijn, is geëvolueerd. Gebruik de evolutielevels van dit project (`src/data/pokemon/species_info/`), die wijken soms af van de officiële games. Uitzondering: een bewuste grap van Jordi.
@@ -58,49 +94,29 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 
 ## Bouwen en testen
 - Bouwen: `make -j4` (moet zonder fouten slagen vóór elke push).
-- `make check` (CI-job `build`) faalt ook op `master`, met honderd-en-zoveel tests die de bewust gewijzigde mechanics en soorten niet meer verwachten. Nieuwe failures ten opzichte van master zijn wel een probleem.
+- `make check` (CI-job `build`) faalt ook op `master`, met honderd-en-zoveel tests die de bewust gewijzigde mechanics en soorten niet meer verwachten. Nieuwe failures ten opzichte van master zijn wel een probleem; meld de bekende failures niet aan Jordi.
 - Werk op een branch en open een PR naar `master`.
-- Meld de bekende, al bestaande `make check`-failures niet aan Jordi; alleen nieuwe failures die door een wijziging komen zijn het vermelden waard.
 
 ## Dialogen (Dialoogstudio)
 - Jordi schrijft dialogen in de Dialoogstudio: https://claude.ai/artifact/LP3qyGyvhaj6p5GS32Gjxz (bewerkingen staan in de database van die pagina: collectie `edits`, per tekstlabel `{text, note, status, map}`; wensen per kaart in `verzoeken`).
 - "Verwerk de dialogen": lees `edits` met status `klaar` (ArtifactData), schrijf `{label: text}` naar een JSON-bestand en draai `python3 tools/dialogen/import.py <bestand>`. Dat breekt de tekst automatisch af (zelfde regels als het voorbeeld in de editor). Bouw, controleer, commit, zet de verwerkte documenten op status `verwerkt` en voer de notities/wensen uit.
 - **Niet vóór de beta:** dialogen in het Trick House (`Route110_TrickHouse*`), de Battle Frontier (`BattleFrontier_*`) en de Battle Tents (`*_BattleTent*`) blijven bewust vanilla tot na de beta. Niet aanpassen, tenzij Jordi erom vraagt. De Dialoogstudio verbergt deze gebieden standaard.
 - Na wijzigingen in de scripts: `python3 tools/dialogen/export.py <dialogen.json>` en publiceer dat bestand opnieuw bij de pagina, zodat de editor de actuele game-tekst toont.
-- Nieuwe NPC-teksten die Claude toevoegt zijn neutrale placeholders, totdat Jordi ze zelf schrijft.
 
 ## Sessies en overdracht
-- Elke sessie begint vers; dit bestand is het geheugen. Werk de sectie **Stand van zaken** hieronder bij aan het eind van elk afgerond stuk werk (in dezelfde commit), zodat een nieuwe sessie direct verder kan.
+- Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
 - Branch: `claude/hopeful-brahmagupta-hsth8c` (PR 5 naar `master`). Is die PR gemerged, begin dan een nieuwe branch vanaf `master`.
 - Commit en push na elk afgerond stuk, met een changelogsectie.
-
-## Kaarten maken
-- Jordi wil van **elke kaart die af is** screenshots (een render van de hele kaart en een paar emulatorbeelden), zodat hij kan tweaken.
-- Gereedschap en testrecept staan in `tools/grounded/maptools/README.md` (renderen, `snowlib.py` voor sneeuwkaarten, ijspuzzel-zoeker, headless emulator).
-- Routegrootte: ongeveer gemiddeld of net onder gemiddeld (landroutes zijn meestal 2400–3200 tiles, bijv. 40×80 of 60×40).
-- Verbonden kaarten (connections) moeten dezelfde secondary tileset hebben; anders een warp gebruiken (zoals Route 136 ↔ Ashfrost).
-- Randen van routes: de vaste Hoenn-randbomen (op sneeuwkaarten de besneeuwde versie `htree_*`), ook als `border.bin`. Geen losse bomen die elkaar overlappen.
-- Watervallen zoals bij Ever Grande/Meteor Falls: breed, in een massieve rotswand (`fall()` en `terrace(face=...)` in `snowlib.py`).
-- Sneeuwtileset (`tools/grounded/snow_tileset.py`): nieuwe metatiles **alleen achteraan** toevoegen (anders verschuiven alle nummers). Na genereren eerst `make data/tilesets/secondary/snow/tiles.4bpp`. Tile-budget max. 512 (nu ~431).
-- Cave-tileset (`data/tilesets/secondary/cave`): transparante kristallen toegevoegd als metatiles 0x3A5 (blauw), 0x3A6/0x3A7 (rood); `-num_tiles` staat op 441 in `graphics_file_rules.mk`.
-- Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; `wild_encounters.json` en andere grote JSON-bestanden tekstueel bewerken (niet via `json.dump`, dat herformatteert het hele bestand); trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`).
+- Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town` (Ashfrost; eigen nummering, 481/512 tiles), Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
-- **Af:** Coldstep Cave (Route 115 → tunnel → ijskamer 1 → ijskamer 2, puzzel van 28 zetten, oplosbaar voor elke combinatie van opgepakte items), Keccles 1 en 2, Seltzer Surge (TM51), muziekcredits.
-- **Route 135** (60×40, sneeuw, bouwscript `tools/grounded/maptools/route135.py`): terrassen, brede waterval met Life Orb erboven, meer met oevers, besneeuwde Hoenn-randbomen, huisje rechtsboven (`Route135_House`), hikers Edmund & Tenzing (dubbel), Birch-gevecht 2 (Macarena). Jordi is tevreden over de kaart.
-  - Ook: Swimmer Bram (Wim Hof, Water/IJs-team, alleen gevecht als je hem aanspreekt) aan de rand van het meer, Lapras-static midden in het meer, oud stel zonder elektronica in het huisje.
-  - Nog van Jordi: definitieve teksten van Birch 2, Edmund, Tenzing, Bram en het oude stel (nu placeholders).
-  - Route 136 sluit aan op de zuidoostelijke uitgang (x 50–53, onderrand, connectie `down`).
-- **Route 136** (60×44, bergklim, bouwscript `tools/grounded/maptools/route136.py`): verbonden met Route 135 (connectie offset 40). Stenen Hoenn-trappen (General 175/207) zoals Route 119. Rivaal Brendan/May in de bergpas (x 49, bovenrand; hier komt Ashfrost op aan), Keccles 3 onzichtbaar in het gat in de rotsrij (51,20), hikers Otto en Helmut, Ace Trainers Connor, Sigrid en Rafael, Dragon Tamer Hakon. Teksten zijn placeholders. De bergpas (x 48–51, bovenrand) is open voor de connectie met Ashfrost.
-  - Verborgen grot `Route136_Grotto` (30×28, bouwscript `grotto136.py`): kristalgrot met watermeer en lavapoel, pad ertussen, je kunt het meer in surfen. Verder leeg; Jordi bepaalt de inhoud.
-  - Duikstuk: in het meer duiken → `Underwater_Route136` (kopie van de trog van de Sealed Chamber; op (12,44) bovenkomen) → `Route136_SuicuneCave` (kopie van de ingang van Seafloor Cavern) met Suicune lv 50 (`FLAG_HIDE_ROUTE136_SUICUNE`). Dive-bestemmingen via `setdivewarp` in de map-scripts. In de emulator getest (surfen, duiken, bovenkomen, gevecht).
-- **Ashfrost Town** (40×30, bouwscript `tools/grounded/maptools/ashfrost.py`, eigen tileset `snow_town` via `snow_tileset.py --town`, 502/512 tiles): meertje met visser, sneeuwpop, verhoging met twee huizen, oud huis, Pokémon Center (heal location, respawn), Mart, drie huizen (`AshfrostTown_House1-3`). Teksten zijn placeholders. Overgang met Route 136 is een **warp** (coord-triggers op Route 136 y 0 en Ashfrost y 29), omdat verbonden kaarten dezelfde tileset moeten hebben. Emulator: in- en uitlopen, Pokémon Center getest.
-- **Weer Route 135/136:** `WEATHER_ASHFROST_CYCLE` (23), per dag afwisselend sneeuw en as (`sWeatherCycleAshfrost` in `src/field_weather_effect.c`). Ashfrost Town kan dezelfde cyclus krijgen.
+- **Af:** Coldstep Cave, Keccles 1–3, Seltzer Surge (TM51), muziekcredits, Route 135, Route 136 met Crystal Cavity (kristalgrot, duikstuk, Suicune lv 50 met beasts-thema), weer sneeuw/as (`WEATHER_ASHFROST_CYCLE`), Town Map met Route 135/136 en Ashfrost.
+- Nog van Jordi: definitieve teksten van Route 135/136 en Ashfrost (nu placeholders).
+- **Ashfrost Town – herontwerp bezig** (feedback Jordi): in een kloof zoals Sootopolis, meer een paar lagen dieper, Pokémon Center centraal, Mart minder centraal, meer schwung/design. Het roze huis is in `snow_town` gerepareerd (4×4, dak vanaf rij 103) en de groene winkel is eruit; daardoor zijn de metatile-nummers van `snow_town` verschoven en is **`data/layouts/AshfrostTown/map.bin` nog niet opnieuw gebouwd** (de stad ziet er in de game nu kapot uit). Het nieuwe bouwscript `ashfrost.py` (44×34: rotswand rondom, dorpsring, twee lagen omlaag naar het meer) staat klaar maar faalt nog op de plaatsing van het Pokémon Center (deur valt op de trap/klif). Na het bouwen: layout 40×30 → 44×34 in `layouts.json`, objecten, warps en de coord-triggers in `AshfrostTown/map.json` (onderrand y 33) en de warp-bestemming in `Route136_EventScript_ToAshfrost` aanpassen.
 
 ## Openstaande taken (in volgorde)
-1. **Route 136 afronden** (Jordi's laatste feedback):
-   - Trappen, pad in de kristalgrot en duikstuk met Suicune: **af** (v0.7.1), wacht op feedback van Jordi.
-2. **Ashfrost Town:** eerste versie **af** (v0.8.0), wacht op feedback en teksten van Jordi. Mogelijke uitbreidingen: gym (staat in de bronsheet, rijen 121–127, maar past niet meer in het tile-budget van `snow_town`), Move Tutor/Deleter.
-3. **Town Map:** **af** (v0.8.1). Route 135 (mapsec 1–2,3), Route 136 (3,2–3), Ashfrost (4,2) in `region_map_layout.h`, `region_map_sections.json` en de tilemap `graphics/pokenav/region_map/map.bin` (tile = mapsec + (1,2)). Fly via `FLAG_VISITED_ASHFROST_TOWN` (0x39) en een eigen fly-icoon in `CreateFlyDestIcons`. Fly zelf nog niet in de emulator getest, de Town Map wel.
+1. **Ashfrost-herontwerp afmaken** (zie hierboven).
+2. **Fly naar Ashfrost werkt nog niet** (getest door Jordi). Uitzoeken: o.a. heal location/`sMapHealLocations`, de flag en `GetMapsecType`/fly-icoon in `src/region_map.c`.
+3. **Weer- en statusanimaties in gevechten versnellen** (confusion, poison enz.; zie Quality of life).
 4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).
-5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Besproken opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
+5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

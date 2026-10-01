@@ -12,6 +12,7 @@ Hulpscripts waarmee Claude kaarten bouwt, rendert en test. Draai alles vanuit de
 | `ashfrost.py [voorbeeld.png]` | Bouwt Ashfrost Town (tileset `snow_town`, via `use_tileset('snow_town')` in `snowlib`). |
 | `icepuzzle_search.py <seed> <iteraties>` | Zoekt een ijsglijpuzzel die oplosbaar blijft voor elke combinatie van opgepakte items (gebruikt voor Coldstep ijskamer 2). |
 | `emu.py` | Headless mGBA: `Emu(rom)`, `press()`, `debug_script(e, k)`. |
+| `testrom.py <map> "script 1" [...]` | Test-ROM met tijdelijke debug-scripts (regels met `;`), zet `debug.inc` daarna terug en maakt een savestate na de intro. |
 | `make_intro_state.py <rom> <uit.bin>` | Savestate na de intro (opnieuw maken na elke rebuild). |
 
 ## Testen in de emulator

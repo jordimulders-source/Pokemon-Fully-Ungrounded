@@ -15219,3 +15219,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 ### [v.0.8.1] - Town Map: Route 135, Route 136 en Ashfrost Town
 - Op de **Town Map** staan nu Route 135 (mapsec x 1–2, y 3, oost van Route 115), Route 136 (x 3, y 2–3) en **Ashfrost Town** (x 4, y 2) in de lege hooglanden tussen Route 114/115 en Lavaridge, met oranje routetegels en een stadsstip in `graphics/pokenav/region_map/map.bin`. Ze vallen niet meer onder Route 115 (Coldstep Cave nog wel).
 - **Fly naar Ashfrost:** nieuwe vlag `FLAG_VISITED_ASHFROST_TOWN` (0x39, gezet bij binnenkomst), eigen fly-icoon op de kaart en de heal location voor de Pokémon Center als bestemming.
+
+### [v.0.8.2] - Suicune-muziek, Crystal Cavity, roze huis
+- **Suicune** (en ook Raikou/Entei, mochten ze ooit verschijnen) krijgt het **legendary beasts-thema** (`MUS_C_VS_LEGEND_BEAST`, de ongebruikte Suicune-track uit Emerald). Het gevecht start nu via `BattleSetup_StartLegendaryBattle`; vlucht je, dan blijft Suicune staan.
+- De kristalgrot op Route 136 heet nu **Crystal Cavity** (eigen mapsec met stenen naambord; ook de onderwatertrog en de Suicune-grot vallen eronder). Op de Town Map valt hij onder Route 136.
+- Stads-tileset `snow_town`: het **roze huis** had een afgekapt dak (het dak begint halverwege rij 103 van de bronsheet); nu 4×4. De ongebruikte groene winkel is eruit (481/512 tiles). Ashfrost zelf wordt nog opnieuw gebouwd (zie CLAUDE.md).
+- `tools/grounded/maptools/testrom.py`: bouwt een test-ROM met tijdelijke debug-scripts en zet `debug.inc` daarna zelf terug.
+- CLAUDE.md is herschreven tot een compacte werkinstructie (route/grot/stad bouwen, NPC's, testen, afronden, zuinig met tokens).

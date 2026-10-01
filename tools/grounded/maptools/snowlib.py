@@ -3,10 +3,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 REPO=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','..'))
 from gridrender import render
 N=json.load(open(os.path.join(REPO,'data/tilesets/secondary/snow/metatile_names.json')))
-SEC=['snow']
+SEC=['snow']; PRIM=['general']
 def use_tileset(name):
     """Wissel naar een andere sneeuw-tileset (bijv. 'snow_town' voor Ashfrost): N en de render volgen mee."""
     N.clear(); N.update(json.load(open(os.path.join(REPO,f'data/tilesets/secondary/{name}/metatile_names.json')))); SEC[0]=name
+    if os.path.isdir(os.path.join(REPO,f'data/tilesets/primary/{name}_base')): PRIM[0]=name+'_base'   # eigen primary (Ashfrost)
 class M:
     def __init__(s,W,H,base='snow'):
         s.W,s.H=W,H; s.g=[[N[base]]*W for _ in range(H)]; s.col=[[0]*W for _ in range(H)]; s.elev=[[3]*W for _ in range(H)]
@@ -63,7 +64,7 @@ class M:
         for dy in range(3):
             for dx in range(2): s.put(x+dx,y+dy,f'{p}_{dx}{dy}',1)
     def img(s,scale=1):
-        return render(s.g,'general',SEC[0],1)
+        return render(s.g,PRIM[0],SEC[0],1)
     def bin(s):
         return [ (s.g[y][x]&0x3ff)|(s.col[y][x]<<10)|(s.elev[y][x]<<12) for y in range(s.H) for x in range(s.W)]
 
@@ -126,7 +127,7 @@ def terrace(m,R,face=2,skip=set()):
             elif d==1 or face<=2:
                 n='cliff_front_a' if l else 'cliff_front_c' if r else 'cliff_front_b'
             else:
-                n='cliff_l' if l else 'cliff_r' if r else 169
+                n=N.get('cliff_mid_l','cliff_l') if l else N.get('cliff_mid_r','cliff_r') if r else N.get('cliff_mid',169)
             c=1
         else:
             t=(x,y-1) not in R; l=(x-1,y) not in R; r=(x+1,y) not in R

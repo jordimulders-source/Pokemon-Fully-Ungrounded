@@ -178,6 +178,8 @@ gStdScripts_End::
 	.include "data/maps/AshfrostTown_House1/scripts.inc"
 	.include "data/maps/AshfrostTown_House2/scripts.inc"
 	.include "data/maps/AshfrostTown_House3/scripts.inc"
+	.include "data/maps/AshfrostTown_House4/scripts.inc"
+	.include "data/maps/AshfrostTown_House5/scripts.inc"
 	.include "data/maps/Underwater_Route124/scripts.inc"
 	.include "data/maps/Underwater_Route126/scripts.inc"
 	.include "data/maps/Underwater_Route127/scripts.inc"

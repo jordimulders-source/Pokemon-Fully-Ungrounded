@@ -18,6 +18,7 @@ SRC = 'graphics/grounded/snow_src'
 TOWN = '--town' in sys.argv
 OUT = 'data/tilesets/secondary/snow_town' if TOWN else 'data/tilesets/secondary/snow'
 PAL_FIRST, NUM_PALS = 6, 7
+NUM_PALS_IN_PRIMARY = 6
 MB = {'normal': 0x00, 'tall_grass': 0x02, 'ice': 0x20, 'door': 0x60, 'pond': 0x10}
 LAYER_COVERED = 1
 
@@ -232,39 +233,100 @@ for dy in range(4):
 for _n, _s, _w, _e in ((0, 1, 1, 1), (1, 0, 1, 1), (1, 1, 1, 0), (1, 1, 0, 1)):
     add(f'shore_{"n" if _n else ""}{"s" if _s else ""}{"w" if _w else ""}{"e" if _e else ""}', WATER, shore(_n, _s, _w, _e), 'pond')
 
+
 # ---------------------------------------------------------------- stads-tileset (Ashfrost)
+# Ashfrost krijgt een eigen primary (snow_town_base: grond, kliffen, water, bomen, decor) én een eigen
+# secondary (snow_town: gebouwen). Zo heeft de stad 2x512 tiles en 13 paletten in plaats van 512 en 7.
 if TOWN:
-    # alleen de basis die een stad nodig heeft (tile-budget), daarna de gebouwen uit de bronsheet
-    KEEP = ('snow', 'snow_dots', 'snow_light', 'grass_snow', 'grass_green', 'tuft', 'flowers_', 'path_stone_',
-            'cliff_', 'water', 'shore_', 'stairs', 'htree_', 'pine_', 'pinegreen_', 'rock_snow', 'rock_cluster',
-            'snowman', 'log', 'bush_snow', 'stump', 'house_blue_', 'ice_crystal', 'snowball', 'boulder_')
-    metatiles[:] = [m for m in metatiles if m[0] in KEEP or any(m[0].startswith(k) for k in KEEP if k.endswith('_'))
-                    or (m[0].startswith('tuft') or m[0].startswith('cliff_') or m[0].startswith('shore_'))]
+    KEEP = ('snow', 'snow_dots', 'snow_light', 'grass_snow', 'grass_green', 'flowers_blue', 'flowers_pink',
+            'water', 'stairs', 'rock_snow', 'rock_cluster', 'snowman', 'log', 'bush_snow', 'stump', 'ice_crystal',
+            'snowball', 'bunny_statue', 'ice_rock', 'rock_snow2')
+    PREF = ('tuft', 'path_stone_', 'cliff_', 'shore_', 'htree_', 'pine_', 'pinegreen_', 'boulder_')
+    metatiles[:] = [m for m in metatiles if m[0] in KEEP or m[0].startswith(PREF)]
+
+    def _general_metatile(mid):
+        """Een General-metatile als (onder, boven) RGBA, alle paletten (voor de Hoenn-trap en het vijverwater)."""
+        gp = 'data/tilesets/primary/general/'
+        gtiles = open(gp + 'tiles.4bpp', 'rb').read()
+        gmt = open(gp + 'metatiles.bin', 'rb').read()
+        gpals = [[tuple(map(int, l.split())) for l in open(f'{gp}palettes/{i:02}.pal').read().split('\n')[3:19]]
+                 for i in range(6)]
+        def tile_img(e):
+            t, hf, vf, pn = e & 0x3FF, (e >> 10) & 1, (e >> 11) & 1, e >> 12
+            img = Image.new('RGBA', (8, 8), (0, 0, 0, 0))
+            b = gtiles[t * 32:(t + 1) * 32]
+            for y in range(8):
+                for x in range(8):
+                    c = (b[y * 4 + x // 2] >> (4 * (x & 1))) & 15
+                    if c:
+                        img.putpixel((x, y), gpals[pn][c] + (255,))
+            if hf: img = img.transpose(Image.FLIP_LEFT_RIGHT)
+            if vf: img = img.transpose(Image.FLIP_TOP_BOTTOM)
+            return img
+        e = struct.unpack_from('<8H', gmt, mid * 16)
+        out = []
+        for ents in (e[:4], e[4:]):
+            im = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+            for k, en in enumerate(ents):
+                im.alpha_composite(tile_img(en), ((k % 2) * 8, (k // 2) * 8))
+            out.append(im)
+        return out
+    # water: het echte plaatje in plaats van een verwijzing naar General
+    _wt = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+    _gt = open('data/tilesets/primary/general/tiles.4bpp', 'rb').read()[0x11e * 32:0x11f * 32]
+    _gp = [tuple(map(int, l.split())) for l in open('data/tilesets/primary/general/palettes/01.pal').read().split('\n')[3:19]]
+    for _y in range(8):
+        for _x in range(8):
+            _c = (_gt[_y * 4 + _x // 2] >> (4 * (_x & 1))) & 15
+            for _ox in (0, 8):
+                for _oy in (0, 8):
+                    _wt.putpixel((_x + _ox, _y + _oy), _gp[_c] + (255,))
+    metatiles[:] = [(n, _wt if isinstance(b, tuple) else b, t, beh) for n, b, t, beh in metatiles]
+    # stenen Hoenn-trap (General 175/207)
+    # hoge kliffen: gestapelde rotslagen (cliff_b-rij uit de bron) in plaats van de voorkant met grotopening
+    metatiles[:] = [(n, over(G, cell(1, 2)) if n == 'cliff_front_b' else b, t, beh) for n, b, t, beh in metatiles]
+    add('cliff_mid', over(G, cell(1, 2)))
+    add('cliff_mid_l', over(G, cell(0, 2)))
+    add('cliff_mid_r', over(G, cell(2, 2)))
+    for _n, _mid in (('hstairs_l', 175), ('hstairs_r', 207)):
+        _b, _t = _general_metatile(_mid)
+        add(_n, over(G, _b, _t))
+    # decor (primary)
+    for n, (c, r) in {'barrel': (1, 50), 'rock_round': (0, 50), 'snowball_big': (2, 50), 'pokeball': (4, 50),
+                      'pot_red': (4, 51), 'pot_white': (5, 51), 'sign_wood': (1, 51), 'sign_wood2': (2, 51),
+                      'crate': (3, 51), 'bonsai': (3, 50), 'snowbush': (3, 38)}.items():
+        add(n, G, cell(c, r))
+    for dy in range(2):
+        add(f'lamp_{dy}', G, cell(2, 48 + dy))
+    for k, r in (('pink', 43), ('red', 45), ('purple', 47), ('blue', 49)):
+        for dx in range(2):
+            add(f'bench_{k}_{dx}', G, cell(6 + dx, r))
+    PRIMARY = list(metatiles)
+    metatiles[:] = []
+
     def building(name, c0, r0, w, h, door):
         for dy in range(h):
             for dx in range(w):
-                add(f'{name}_{dx}{dy}', over(G, cell(c0 + dx, r0 + dy)), beh='door' if (dx, dy) == door else 'normal')
-    building('house_pink', 0, 103, 4, 4, (2, 3))      # dak begint halverwege rij 103
-    building('house_yellow', 4, 107, 4, 4, (1, 3))
+                add(f'{name}_{dx}{dy}', G, cell(c0 + dx, r0 + dy), beh='door' if (dx, dy) == door else 'normal')
     building('pc', 0, 111, 5, 5, (2, 4))
     building('mart', 0, 116, 4, 4, (2, 3))
+    building('house_pink', 0, 103, 4, 4, (2, 3))      # dak begint halverwege rij 103
+    building('house_green', 4, 103, 4, 4, (2, 3))
+    building('house_blue', 0, 107, 4, 4, (1, 3))
+    building('house_yellow', 4, 107, 4, 4, (1, 3))
+    building('lodge', 0, 84, 5, 5, (1, 4))            # grote grijze lodge (5x5)
+    building('igloo', 0, 25, 3, 3, (1, 2))
+    building('stall', 3, 27, 3, 2, None)
+    building('statue', 5, 94, 3, 2, None)
+    building('bigtree', 0, 38, 3, 5, None)
+    building('icepond', 0, 43, 3, 3, None)
+
 
 # ---------------------------------------------------------------- kleuren en paletten
 def to5(a):
     a = a.copy()
     a[..., :3] = (a[..., :3] // 8) * 8
     return a
-
-
-blocks = []   # alle 8x8-blokjes (RGBA)
-for _, bottom, top, _ in metatiles:
-    for layer in (bottom, top):
-        if layer is None or isinstance(layer, tuple):
-            continue
-        a = to5(np.array(layer, dtype=np.int32))
-        for qy in (0, 8):
-            for qx in (0, 8):
-                blocks.append(a[qy:qy + 8, qx:qx + 8])
 
 
 def colors_of(b):
@@ -288,111 +350,155 @@ def kmeans(pts, k, iters=12, seed=0):
     return cent
 
 
-# tiles clusteren naar 7 paletten (k-means op gemiddelde kleur), daarna iteratief verfijnen
-feat = []
-opaque_blocks = [b for b in blocks if (b[..., 3] > 127).any()]
-for b in opaque_blocks:
-    c = colors_of(b)
-    feat.append(np.concatenate([c.mean(0), c.std(0)]))
-feat = np.array(feat)
-assign = ((feat[:, None, :] - kmeans(feat, NUM_PALS)[None]) ** 2).sum(2).argmin(1)
-for it in range(6):
-    pals = []
-    for j in range(NUM_PALS):
-        pts = np.concatenate([colors_of(b) for b, a in zip(opaque_blocks, assign) if a == j] or [np.zeros((1, 3))])
-        pals.append(np.round(kmeans(pts.astype(float), 15, seed=it) / 8) * 8)
-    errs = []
+def emit(metatiles, OUT, base, pal_first, num_pals, shared=None, blank_tile=False):
+    """Zet een lijst metatiles om naar een GBA-tileset in OUT. base: 0 (primary) of 512 (secondary).
+    shared: resultaat van een eerdere emit (primary); identieke tiles daaruit worden hergebruikt."""
+    blocks = []   # alle 8x8-blokjes (RGBA)
+    for _, bottom, top, _ in metatiles:
+        for layer in (bottom, top):
+            if layer is None or isinstance(layer, tuple):
+                continue
+            a = to5(np.array(layer, dtype=np.int32))
+            for qy in (0, 8):
+                for qx in (0, 8):
+                    blocks.append(a[qy:qy + 8, qx:qx + 8])
+
+    # tiles clusteren naar paletten (k-means op gemiddelde kleur), daarna iteratief verfijnen
+    def in_shared(b):
+        return shared is not None and shared_ref(b) is not None
+
+    def shared_ref(b):
+        c = b[..., :3].reshape(-1, 3)
+        m = (b[..., 3] > 127).reshape(-1)
+        if not m.any():
+            return None
+        for j, p in enumerate(shared['pals']):
+            d = ((c[:, None, :].astype(float) - p[None]) ** 2).sum(2)
+            if d.min(1)[m].max() > 0:
+                continue
+            idx = np.where(m, d.argmin(1) + 1, 0).reshape(8, 8)
+            for hf in (0, 1):
+                for vf in (0, 1):
+                    v = idx[:, ::-1] if hf else idx
+                    v = v[::-1, :] if vf else v
+                    key = v.astype(np.uint8).tobytes()
+                    if key in shared['lookup']:
+                        return shared['lookup'][key][0], hf, vf, shared['pal_first'] + j
+        return None
+
+    feat = []
+    opaque_blocks = [b for b in blocks if (b[..., 3] > 127).any() and not in_shared(b)]
     for b in opaque_blocks:
-        c = colors_of(b).astype(float)
-        errs.append([((c[:, None, :] - p[None]) ** 2).sum(2).min(1).sum() for p in pals])
-    assign = np.array(errs).argmin(1)
-pals = [np.clip(p, 0, 248) for p in pals]
+        c = colors_of(b)
+        feat.append(np.concatenate([c.mean(0), c.std(0)]))
+    feat = np.array(feat)
+    assign = ((feat[:, None, :] - kmeans(feat, num_pals)[None]) ** 2).sum(2).argmin(1)
+    for it in range(6):
+        pals = []
+        for j in range(num_pals):
+            pts = np.concatenate([colors_of(b) for b, a in zip(opaque_blocks, assign) if a == j] or [np.zeros((1, 3))])
+            pals.append(np.round(kmeans(pts.astype(float), 15, seed=it) / 8) * 8)
+        errs = []
+        for b in opaque_blocks:
+            c = colors_of(b).astype(float)
+            errs.append([((c[:, None, :] - p[None]) ** 2).sum(2).min(1).sum() for p in pals])
+        assign = np.array(errs).argmin(1)
+    pals = [np.clip(p, 0, 248) for p in pals]
+
+    def quantize(b):
+        """8x8 RGBA -> (paletindex, 8x8 indices)"""
+        c = b[..., :3].reshape(-1, 3).astype(float)
+        m = (b[..., 3] > 127).reshape(-1)
+        if not m.any():
+            return None
+        best = None
+        for j, p in enumerate(pals):
+            d = ((c[:, None, :] - p[None]) ** 2).sum(2)
+            idx = d.argmin(1)
+            err = d.min(1)[m].sum()
+            if best is None or err < best[0]:
+                best = (err, j, idx)
+        _, j, idx = best
+        idx = np.where(m, idx + 1, 0).reshape(8, 8)
+        return j, idx
+
+    tiles = [np.zeros((8, 8), dtype=np.int64)] if blank_tile else []   # tile 0 van een primary is leeg
+    tile_lookup = {}      # bytes -> (tile, hflip, vflip)
+
+    def tile_ref(b):
+        if shared is not None:
+            r = shared_ref(b)
+            if r is not None:
+                return r
+        q = quantize(b)
+        if q is None:
+            return None
+        j, idx = q
+        for hf in (0, 1):
+            for vf in (0, 1):
+                v = idx[:, ::-1] if hf else idx
+                v = v[::-1, :] if vf else v
+                key = v.astype(np.uint8).tobytes()
+                if key in tile_lookup:
+                    return base + tile_lookup[key][0], hf, vf, pal_first + j
+        tiles.append(idx)
+        tile_lookup[idx.astype(np.uint8).tobytes()] = (len(tiles) - 1,)
+        return base + len(tiles) - 1, 0, 0, pal_first + j
+
+    metatile_data = bytearray()
+    attr_data = bytearray()
+    names = {}
+    for n, (name, bottom, top, beh) in enumerate(metatiles):
+        entries = []
+        for layer in (bottom, top):
+            if isinstance(layer, tuple):
+                entries += layer[1]
+                continue
+            a = to5(np.array(layer, dtype=np.int32)) if layer is not None else None
+            for qy in (0, 8):
+                for qx in (0, 8):
+                    ref = tile_ref(a[qy:qy + 8, qx:qx + 8]) if a is not None else None
+                    if ref is None:
+                        entries.append(0)
+                    else:
+                        t, hf, vf, pn = ref
+                        entries.append(t | (hf << 10) | (vf << 11) | (pn << 12))
+        metatile_data += struct.pack('<8H', *entries)
+        attr_data += struct.pack('<H', beh | (LAYER_COVERED << 12))
+        names[name] = base + n
+
+    assert len(tiles) <= 512, f'te veel tiles: {len(tiles)}'
+    assert len(metatiles) <= 512
+
+    os.makedirs(f'{OUT}/palettes', exist_ok=True)
+    cols = 16
+    rows = (len(tiles) + cols - 1) // cols
+    img = Image.new('P', (cols * 8, rows * 8), 0)
+    for i, t in enumerate(tiles):
+        img.paste(Image.fromarray(t.astype(np.uint8), 'P'), ((i % cols) * 8, (i // cols) * 8))
+    grey = []
+    for i in range(16):
+        grey += [i * 16, i * 16, i * 16]
+    img.putpalette(grey + [0] * (768 - 48))
+    img.save(f'{OUT}/tiles.png')
+    for i in range(16):
+        j = i - pal_first
+        colors = [(0, 0, 0)] * 16
+        if 0 <= j < num_pals:
+            colors = [(255, 0, 255)] + [tuple(int(v) for v in c) for c in pals[j]]
+            colors += [(0, 0, 0)] * (16 - len(colors))
+        with open(f'{OUT}/palettes/{i:02}.pal', 'w') as f:
+            f.write('JASC-PAL\n0100\n16\n' + ''.join(f'{r} {g} {b}\n' for r, g, b in colors))
+    open(f'{OUT}/metatiles.bin', 'wb').write(metatile_data)
+    open(f'{OUT}/metatile_attributes.bin', 'wb').write(attr_data)
+    print(f'{OUT}: {len(metatiles)} metatiles, {len(tiles)} tiles, {num_pals} paletten')
+    return {'pals': pals, 'lookup': tile_lookup, 'pal_first': pal_first, 'names': names}
 
 
-def quantize(b):
-    """8x8 RGBA -> (paletindex, 8x8 indices)"""
-    c = b[..., :3].reshape(-1, 3).astype(float)
-    m = (b[..., 3] > 127).reshape(-1)
-    if not m.any():
-        return None
-    best = None
-    for j, p in enumerate(pals):
-        d = ((c[:, None, :] - p[None]) ** 2).sum(2)
-        idx = d.argmin(1)
-        err = d.min(1)[m].sum()
-        if best is None or err < best[0]:
-            best = (err, j, idx)
-    _, j, idx = best
-    idx = np.where(m, idx + 1, 0).reshape(8, 8)
-    return j, idx
-
-
-tiles = []            # lijst van 8x8 index-arrays
-tile_lookup = {}      # bytes -> (tile, hflip, vflip)
-
-
-def tile_ref(b):
-    q = quantize(b)
-    if q is None:
-        return None
-    j, idx = q
-    for hf in (0, 1):
-        for vf in (0, 1):
-            v = idx[:, ::-1] if hf else idx
-            v = v[::-1, :] if vf else v
-            key = v.astype(np.uint8).tobytes()
-            if key in tile_lookup:
-                return tile_lookup[key][0], hf, vf, j
-    tiles.append(idx)
-    tile_lookup[idx.astype(np.uint8).tobytes()] = (len(tiles) - 1,)
-    return len(tiles) - 1, 0, 0, j
-
-
-metatile_data = bytearray()
-attr_data = bytearray()
-names = {}
-for n, (name, bottom, top, beh) in enumerate(metatiles):
-    entries = []
-    for layer in (bottom, top):
-        if isinstance(layer, tuple):
-            entries += layer[1]
-            continue
-        a = to5(np.array(layer, dtype=np.int32)) if layer is not None else None
-        for qy in (0, 8):
-            for qx in (0, 8):
-                ref = tile_ref(a[qy:qy + 8, qx:qx + 8]) if a is not None else None
-                if ref is None:
-                    entries.append(0)
-                else:
-                    t, hf, vf, j = ref
-                    entries.append((512 + t) | (hf << 10) | (vf << 11) | ((PAL_FIRST + j) << 12))
-    metatile_data += struct.pack('<8H', *entries)
-    attr_data += struct.pack('<H', beh | (LAYER_COVERED << 12))
-    names[name] = 512 + n
-
-assert len(tiles) <= 512, f'te veel tiles: {len(tiles)}'
-assert len(metatiles) <= 512
-
-os.makedirs(f'{OUT}/palettes', exist_ok=True)
-cols = 16
-rows = (len(tiles) + cols - 1) // cols
-img = Image.new('P', (cols * 8, rows * 8), 0)
-for i, t in enumerate(tiles):
-    img.paste(Image.fromarray(t.astype(np.uint8), 'P'), ((i % cols) * 8, (i // cols) * 8))
-grey = []
-for i in range(16):
-    grey += [i * 16, i * 16, i * 16]
-img.putpalette(grey + [0] * (768 - 48))
-img.save(f'{OUT}/tiles.png')
-for i in range(16):
-    j = i - PAL_FIRST
-    colors = [(0, 0, 0)] * 16
-    if 0 <= j < NUM_PALS:
-        colors = [(255, 0, 255)] + [tuple(int(v) for v in c) for c in pals[j]]
-        colors += [(0, 0, 0)] * (16 - len(colors))
-    with open(f'{OUT}/palettes/{i:02}.pal', 'w') as f:
-        f.write('JASC-PAL\n0100\n16\n' + ''.join(f'{r} {g} {b}\n' for r, g, b in colors))
-open(f'{OUT}/metatiles.bin', 'wb').write(metatile_data)
-open(f'{OUT}/metatile_attributes.bin', 'wb').write(attr_data)
-json.dump(names, open(f'{OUT}/metatile_names.json', 'w'), indent=1)
-print(f'{len(metatiles)} metatiles, {len(tiles)} tiles, {NUM_PALS} paletten')
+if TOWN:
+    prim = emit(PRIMARY, 'data/tilesets/primary/snow_town_base', 0, 0, NUM_PALS_IN_PRIMARY, blank_tile=True)
+    sec = emit(metatiles, OUT, 512, PAL_FIRST, NUM_PALS, shared=prim)
+    json.dump({**prim['names'], **sec['names']}, open(f'{OUT}/metatile_names.json', 'w'), indent=1)
+else:
+    res = emit(metatiles, OUT, 512, PAL_FIRST, NUM_PALS)
+    json.dump(res['names'], open(f'{OUT}/metatile_names.json', 'w'), indent=1)

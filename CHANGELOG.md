@@ -15226,3 +15226,12 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Stads-tileset `snow_town`: het **roze huis** had een afgekapt dak (het dak begint halverwege rij 103 van de bronsheet); nu 4×4. De ongebruikte groene winkel is eruit (481/512 tiles). Ashfrost zelf wordt nog opnieuw gebouwd (zie CLAUDE.md).
 - `tools/grounded/maptools/testrom.py`: bouwt een test-ROM met tijdelijke debug-scripts en zet `debug.inc` daarna zelf terug.
 - CLAUDE.md is herschreven tot een compacte werkinstructie (route/grot/stad bouwen, NPC's, testen, afronden, zuinig met tokens).
+
+### [v.0.8.3] - Ashfrost Village (herontwerp), eigen primary tileset
+- **Ashfrost Town heet nu Ashfrost Village** (naam op de Town Map en in de popup; interne namen `MAP_ASHFROST_TOWN` enz. blijven).
+- **Herontwerp (44×34):** een dal boven op de berg. Hoge rotswand rondom (bos erop), het dorp op de bovenste laag, en een slingerpad met stenen trappen twee lagen omlaag: eerst naar een groene weide (met standbeeld), dan naar het meer met strandje en bankjes. Ingang via een kloof linksonder (warp met Route 136, coord-triggers op y 33).
+- Pokémon Center centraal boven het dal, Mart bij de ingang. Nieuw: grote lodge (`AshfrostTown_House4`) en een groen huis (`AshfrostTown_House5`), met placeholderteksten. Verder een marktkraampje, iglo, lantaarns, bloempotten, een grote besneeuwde boom, sneeuwpop en ander decor.
+- **Tile-limiet opgelost:** Ashfrost heeft nu een eigen *primary* tileset `snow_town_base` (grond, kliffen, water, bomen, decor) naast de secondary `snow_town` (gebouwen). Daardoor 2×512 tiles en 13 paletten in plaats van 512 tiles en 7 paletten. Nu in gebruik: 334 + 422 tiles.
+- Kliffen in de stad: schone gestapelde rotslagen in plaats van de voorkant-tile met grotopening.
+- `snow_tileset.py`: emissie in een functie (`emit`), secondary hergebruikt identieke tiles uit de primary. De route-tileset `snow` blijft byte-voor-byte gelijk.
+- Heal location naar het nieuwe Pokémon Center (21,10); Route 136 warpt naar (7,32).

@@ -3,7 +3,7 @@
 Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeronde taken gaan naar `CHANGELOG.md`.
 
 ## Openstaande taken (in volgorde)
-1. **Ashfrost-herontwerp afmaken** (zie Stand van zaken in CLAUDE.md).
+1. **Ashfrost Village: feedback van Jordi verwerken** (eerste versie staat, v0.8.3).
 2. **Fly naar Ashfrost werkt nog niet** (getest door Jordi). Uitzoeken: o.a. heal location/`sMapHealLocations`, de flag en `GetMapsecType`/fly-icoon in `src/region_map.c`.
 3. **Weer- en statusanimaties in gevechten versnellen** (confusion, poison enz.; zie Quality of life).
 4. **Lager Lagoon en Vintage Spill** (zie Backlog, Moves).
@@ -15,7 +15,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.
-- **Kaarten/gebieden:** Ashfrost Town → **Ashfrost Village** (echt dal met meer, zichtbare kliffen, pad omlaag, veel meer assets). Oostkant van de kaart interessanter (meer eilanden, beter onderwater-exploreren, nieuwe dungeons). Jungle onder Fortree (Ogerpon/Zarude). Swamp, fairy forest, mushroom forest, haunted house, outer-space-gebied vanaf Mossdeep. Safari Zone uitbreiden. Extra tilesets (Ekat99, o.a. Snowpoint Temple voor Regigigas).
+- **Kaarten/gebieden:** Oostkant van de kaart interessanter (meer eilanden, beter onderwater-exploreren, nieuwe dungeons). Jungle onder Fortree (Ogerpon/Zarude). Swamp, fairy forest, mushroom forest, haunted house, outer-space-gebied vanaf Mossdeep. Safari Zone uitbreiden. Extra tilesets (Ekat99, o.a. Snowpoint Temple voor Regigigas).
 - **Regi-quest:** Regieleki (cave bij Mauville), Regidrago (Jagged Pass), Regigigas (andere cave, ten noorden van Ashfrost). Braille-activatie, kamerpatroon = oogpatroon van de Regi, idem de gevechtstransitie. Activatie nog bedenken.
 - **Legendary/mythical events:** Jirachi; Latios/Latias kiezen (cryptisch, de ander post-game); inverted Sky Pillar die steeds dieper gaat → Giratina; Mewtwo; Genesect; Raikou (verborgen ruimte New Mauville-datacenter) en Entei (Mt. Chimney), pas na Suicune; shiny Rayquaza; Darkrai (Mt. Pyre, post-game); Shaymin (bootticket naar bloemenveld); Victini (Victory Island-ticket: gauntlet met nieuwe trainers door heel Hoenn, evt. keuze-element); Kubfu-sidequest; Delta Episode post-game met Zinnia en Deoxys in de ruimte (muziek Delta Emerald: Shota Kageyama, MIDI paterDM, credits STikER + Delta Emerald; Zinnia-art: aveontrainer, MelodyCrystel, HaydenisEpic).
 - **Heatran-cutscene:** na Wattson verdwijnen de Rock Smash-stenen boven Mauville definitief (zijstenen blijven); Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden. Post-game Heatran-gebied in Fiery Path/Mt. Chimney (niet op de Entei-plek).

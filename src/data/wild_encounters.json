@@ -2358,11 +2358,11 @@
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
-              { "min_level": 20, "max_level": 23, "species": "SPECIES_SPHEAL" },
-              { "min_level": 20, "max_level": 23, "species": "SPECIES_SEEL" },
-              { "min_level": 22, "max_level": 24, "species": "SPECIES_SPHEAL" },
-              { "min_level": 22, "max_level": 24, "species": "SPECIES_SEEL" },
-              { "min_level": 25, "max_level": 25, "species": "SPECIES_LAPRAS" }
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_DUCKLETT" },
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_PSYDUCK" },
+              { "min_level": 22, "max_level": 24, "species": "SPECIES_QUAGSIRE" },
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_GOLDEEN" },
+              { "min_level": 22, "max_level": 22, "species": "SPECIES_SPHEAL" }
             ]
           }
         },

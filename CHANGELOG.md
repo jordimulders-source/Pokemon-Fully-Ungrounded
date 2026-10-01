@@ -15261,3 +15261,6 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 Het gras en het meer in Ashfrost hebben nu encounters: alleen tamme, ongevaarlijke Pokémon die niet schuw zijn voor mensen, jong (lage levels). Bewuste uitzondering op de 12-unieke-soorten-regel.
 - Land (rate 10): Swinub 30%, Vanillite 30%, Snover 20%, Snom 10% (lv 20–23), Delibird 10% (lv 22–23).
 - Water (rate 4): Spheal 65%, Seel 34% (lv 20–24), Lapras 1% (lv 25).
+
+### [v.0.8.9] - Ashfrost Village: realistischere meer-encounters
+Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 20–24), Quagsire 5% (lv 22–24), Goldeen 4% (lv 20–24), Spheal 1% (lv 22, knipoog naar de Baikalrob, een echte zoetwaterzeehond in een bevroren meer). Seel en Lapras zijn eruit (zeedieren).

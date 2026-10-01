@@ -43,6 +43,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Decor uit General** kan op sneeuw als je de graskleuren (palet 1/2, index 12–14) transparant maakt (`_general_metatile(..., nograss=True)`).
 - **Immersie telt voor Jordi:** alleen dingen die in de wereld kloppen (geen Reshiram-beeld als Reshiram niet in de game zit; dieren die echt in koud zoet water leven; bloemen alleen waar het plausibel is). Bij twijfel kort uitleggen of voorleggen.
 - **Animaties in gevechten:** argumenten van `createvisualtask` worden niet gewist; voeg je een argument toe aan een taak, zet het dan expliciet in álle aanroepen. Weer aan het eind van de beurt (`gBattleAnimGeneral_*`) los van de move-animatie inkorten.
+- **Gevechtsanimaties versnellen:** algemeen via `sFastBattleAnim` in `src/battle_anim.c` (halveert `delay` voor status/algemene animaties); per animatie alleen nog als iets na het halveren te lang blijft.
 - **Emulatortests:** de intro-savestate heeft een kapotte party (Lv0); doe `givemon` vóór een testgevecht. Fly testen: START → A (debug) → A (Utilities) → A (Fly to map). Fly-flags worden pas gezet bij het binnenlopen van de kaart.
 
 ## Werkwijzen (herhaalde taken)

@@ -15283,3 +15283,7 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Regen, zon, sneeuw:** kortere regen (30 i.p.v. 60 frames), 2 i.p.v. 4 lichtstralen, sneeuw 50 i.p.v. 150 frames; snellere overgangen.
 - **Statussen:** poison (korter schudden en flitsen), confusion (eendjes 40 i.p.v. 90 frames en sneller rond), sleep en infatuation (halve pauzes).
 - CLAUDE.md: nieuwe secties "Zelflerend werken" en "Lessen" (o.a. uit het Ashfrost-proces).
+
+### [v.0.9.4] - Algemene versnelling van animaties tussen de beurten
+- In `LaunchBattleAnimation` (`src/battle_anim.c`): voor alle **status-animaties** en alle **algemene animaties** (weer, terrein-effecten, Leech Seed, Wrap/Fire Spin, Ingrain/Aqua Ring/Wish-heal, Leftovers/bessen, stat-wijzigingen, Salt Cure, Sea of Fire, Future Sight-treffer enz.) worden de wachttijden (`delay`) in het animatiescript **gehalveerd**. Geldt bovenop de korte weer-animaties van v0.9.3.
+- Uitgezonderd (blijven op normale snelheid): aanvallen, Mega-evolutie, Primal Reversion, Power Construct, Ultra Burst, Tera, Z-moves, Totem-aura, Dynamax, vormverandering en het wegvallen van Illusion.

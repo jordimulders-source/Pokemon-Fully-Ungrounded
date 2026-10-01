@@ -49,6 +49,7 @@
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
 
+static void ShowWildMonInfo(u32 battler); // Project Grounded
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
 static void PlayerHandleTrainerSlide(u32 battler);
@@ -394,6 +395,11 @@ static void HandleInputChooseAction(u32 battler)
     {
         SwapHpBarsWithHpText();
     }
+    else if (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A
+             && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
+    {
+        ShowWildMonInfo(battler);
+    }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
@@ -407,6 +413,75 @@ static void HandleInputChooseAction(u32 battler)
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
         BtlController_Complete(battler);
     }
+}
+
+// Project Grounded: L in het actiemenu (wilde gevechten) toont ability, item en moves van de wilde Pokémon,
+// als je die soort al gevangen hebt. Gebruikt de twee vensters van het actiemenu; elke knop sluit het weer.
+static void PrintWildMonInfoLine(u32 windowId, const u8 *str, u32 y, u32 fill, u32 fg, u32 bg, u32 shadow)
+{
+    u8 colors[3] = {bg, fg, shadow};
+    u32 width = WindowWidthPx(windowId) - 2;
+    AddTextPrinterParameterized3(windowId, GetFontIdToFit(str, FONT_SMALL, 0, width), 1, y, colors, TEXT_SKIP_DRAW, str);
+}
+
+static void HandleInputWildMonInfo(u32 battler)
+{
+    if (JOY_NEW(A_BUTTON | B_BUTTON | L_BUTTON | R_BUTTON | START_BUTTON | SELECT_BUTTON))
+    {
+        PlaySE(SE_RG_BALL_CLICK);
+        BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+        PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
+        BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+        ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+        gBattlerControllerFuncs[battler] = HandleInputChooseAction;
+    }
+}
+
+static void ShowWildMonInfo(u32 battler)
+{
+    u32 i, target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    struct Pokemon *mon;
+    u32 species;
+
+    if (!IsBattlerAlive(target) && IsDoubleBattle())
+        target = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    mon = GetBattlerMon(target);
+    species = GetMonData(mon, MON_DATA_SPECIES);
+
+    PlaySE(SE_RG_BALL_CLICK);
+    for (i = 0; i < 4; i++)
+        ActionSelectionDestroyCursorAt(i);
+    FillWindowPixelBuffer(B_WIN_ACTION_PROMPT, PIXEL_FILL(0xF));
+    FillWindowPixelBuffer(B_WIN_ACTION_MENU, PIXEL_FILL(0xE));
+
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    {
+        PrintWildMonInfoLine(B_WIN_ACTION_PROMPT, COMPOUND_STRING("No data yet."), 1, 0xF, 1, 15, 6);
+        PrintWildMonInfoLine(B_WIN_ACTION_PROMPT, COMPOUND_STRING("Catch one first,"), 11, 0xF, 1, 15, 6);
+        PrintWildMonInfoLine(B_WIN_ACTION_PROMPT, COMPOUND_STRING("then we'll talk."), 21, 0xF, 1, 15, 6);
+    }
+    else
+    {
+        u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
+        PrintWildMonInfoLine(B_WIN_ACTION_PROMPT, gAbilitiesInfo[gBattleMons[target].ability].name, 1, 0xF, 1, 15, 6);
+        PrintWildMonInfoLine(B_WIN_ACTION_MENU, item != ITEM_NONE ? GetItemName(item) : COMPOUND_STRING("No item"), 1, 0xE, 13, 14, 15);
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            u32 move = gBattleMons[target].moves[i];
+            if (move == MOVE_NONE)
+                continue;
+            if (i < 2)
+                PrintWildMonInfoLine(B_WIN_ACTION_PROMPT, GetMoveName(move), 11 + 10 * i, 0xF, 1, 15, 6);
+            else
+                PrintWildMonInfoLine(B_WIN_ACTION_MENU, GetMoveName(move), 11 + 10 * (i - 2), 0xE, 13, 14, 15);
+        }
+    }
+    PutWindowTilemap(B_WIN_ACTION_PROMPT);
+    PutWindowTilemap(B_WIN_ACTION_MENU);
+    CopyWindowToVram(B_WIN_ACTION_PROMPT, COPYWIN_FULL);
+    CopyWindowToVram(B_WIN_ACTION_MENU, COPYWIN_FULL);
+    gBattlerControllerFuncs[battler] = HandleInputWildMonInfo;
 }
 
 void HandleInputChooseTarget(u32 battler)

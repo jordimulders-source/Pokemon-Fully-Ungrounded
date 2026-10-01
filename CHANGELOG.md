@@ -15347,3 +15347,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - Het infopaneel links in de pc toont nu: naam, geslacht/level, **nature**, **ability** en het vastgehouden item (in die volgorde). De regel "/Soort" vervalt als de Pokémon geen bijnaam heeft (die was dan dubbel); met bijnaam staan soort en geslacht/level samen op één regel.
 - De nature is de effectieve nature (met mints meegerekend, `MON_DATA_HIDDEN_NATURE`). Werkt voor party en boxen; in de modus "Move Items" blijft het oude paneel.
 - Getest in de emulator (party én box).
+
+### [v.0.8.27] - QoL: gegevens van wilde Pokémon die je al gevangen hebt
+- In een **wild gevecht** toont **L** in het actiemenu de **ability, het vastgehouden item en de moves** van de wilde Pokémon, als je die soort al gevangen hebt (Pokédex). Elke knop sluit het weer en zet het actiemenu terug. In dubbelgevechten de linker tegenstander (of de rechter als de linker al weg is). Niet in trainergevechten.
+- Nog niet gevangen: "No data yet. Catch one first, then we'll talk." (placeholder). Staat de optie "L=A" aan, dan werkt L als A.
+- Code: `ShowWildMonInfo` / `HandleInputWildMonInfo` in `src/battle_controller_player.c` (gebruikt de vensters van het actiemenu, klein lettertype). Getest in de emulator (Shuckle gevangen, Magikarp niet).

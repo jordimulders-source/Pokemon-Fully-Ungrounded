@@ -1,0 +1,165 @@
+{
+  "id": "MAP_ROUTE135",
+  "name": "Route135",
+  "layout": "LAYOUT_ROUTE135",
+  "music": "MUS_ROUTE120",
+  "region_map_section": "MAPSEC_ROUTE_135",
+  "requires_flash": false,
+  "weather": "WEATHER_ASHFROST_CYCLE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE136",
+      "offset": 40,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ROUTE135_BIRCH",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 34,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route135_EventScript_Birch",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 38,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route135_EventScript_Edmund",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 44,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route135_EventScript_Tenzing",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 33,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LIFE_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_135_LIFE_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 53,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ASSAULT_VEST",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_135_ASSAULT_VEST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_REPEL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_135_SUPER_REPEL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 16,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route135_EventScript_Bram",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE135_LAPRAS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAPRAS)",
+      "x": 24,
+      "y": 24,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route135_EventScript_Lapras",
+      "flag": "FLAG_HIDE_ROUTE135_LAPRAS"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_COLDSTEP_CAVE_ICE_ROOM_2",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 46,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE135_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 34,
+      "elevation": 3,
+      "item": "ITEM_NUGGET",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_135_NUGGET"
+    },
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_ICE_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL"
+    }
+  ]
+}

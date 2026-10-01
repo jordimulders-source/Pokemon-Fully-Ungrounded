@@ -7454,7 +7454,6 @@ static const struct LevelUpMove sLinooneLevelUpLearnset[] = {
 #if P_GALARIAN_FORMS
 static const struct LevelUpMove sZigzagoonGalarLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_PARTING_SHOT),
     LEVEL_UP_MOVE( 1, MOVE_BABY_DOLL_EYES),
     LEVEL_UP_MOVE( 3, MOVE_SAND_ATTACK),

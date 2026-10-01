@@ -290,3 +290,100 @@ MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
 	.string "What will they do with the METEORITE at\n"
 	.string "MT. CHIMNEY?\p"
 	.string "Grow peppers? On a volcano?$"
+
+@ Project Grounded: Wally wacht bij de ingang en daagt je uit.
+MeteorFalls_1F_1R_EventScript_WallyApproachUpper::
+	lockall
+	call MeteorFalls_1F_1R_EventScript_WallyNotices
+	applymovement LOCALID_METEOR_FALLS_WALLY, MeteorFalls_1F_1R_Movement_WallyApproachUpper
+	waitmovement 0
+	goto MeteorFalls_1F_1R_EventScript_WallyBattle
+	end
+
+MeteorFalls_1F_1R_EventScript_WallyApproachLower::
+	lockall
+	call MeteorFalls_1F_1R_EventScript_WallyNotices
+	applymovement LOCALID_METEOR_FALLS_WALLY, MeteorFalls_1F_1R_Movement_WallyApproachLower
+	waitmovement 0
+	goto MeteorFalls_1F_1R_EventScript_WallyBattle
+	end
+
+MeteorFalls_1F_1R_EventScript_WallyNotices::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_METEOR_FALLS_WALLY, Common_Movement_ExclamationMark
+	waitmovement 0
+	return
+
+MeteorFalls_1F_1R_EventScript_WallyBattle::
+	msgbox MeteorFalls_1F_1R_Text_WallyFallOfMeteor, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_METEOR_FALLS_WALLY, MeteorFalls_1F_1R_Movement_WallySpin
+	waitmovement 0
+	msgbox MeteorFalls_1F_1R_Text_WallyVeryBeaut, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_WALLY_METEOR_FALLS, MeteorFalls_1F_1R_Text_WallyDefeat
+	msgbox MeteorFalls_1F_1R_Text_WallyPostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_METEOR_FALLS_WALLY, MeteorFalls_1F_1R_Movement_WallyExit
+	waitmovement 0
+	removeobject LOCALID_METEOR_FALLS_WALLY
+	setflag FLAG_HIDE_METEOR_FALLS_WALLY
+	setvar VAR_WALLY_METEOR_FALLS_STATE, 1
+	releaseall
+	end
+
+MeteorFalls_1F_1R_Movement_WallyApproachUpper:
+	walk_right
+	walk_up
+	walk_right
+	face_right
+	step_end
+
+MeteorFalls_1F_1R_Movement_WallyApproachLower:
+	walk_right
+	walk_right
+	face_right
+	step_end
+
+MeteorFalls_1F_1R_Movement_WallySpin:
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_up
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_up
+	delay_8
+	face_right
+	step_end
+
+MeteorFalls_1F_1R_Movement_WallyExit:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+MeteorFalls_1F_1R_Text_WallyFallOfMeteor:
+	.string "WALLY: {PLAYER}!\n"
+	.string "Fall of Meteor.$"
+
+MeteorFalls_1F_1R_Text_WallyVeryBeaut:
+	.string "Wow! Very beaut!\n"
+	.string "Train much team.\p"
+	.string "Timing of battle appear now!$"
+
+MeteorFalls_1F_1R_Text_WallyDefeat:
+	.string "Wow… {PLAYER} strong!$"
+
+MeteorFalls_1F_1R_Text_WallyPostBattle:
+	.string "WALLY: Oh thank! Realizations moves,\n"
+	.string "hmmmm planning more and more.\p"
+	.string "Think become good!$"

@@ -51,7 +51,8 @@
     F(FLASH_CANNON) \
     F(DARK_PULSE) \
     F(PLAY_ROUGH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */
 
 #define FOREACH_HM(F) \
     F(CUT) \

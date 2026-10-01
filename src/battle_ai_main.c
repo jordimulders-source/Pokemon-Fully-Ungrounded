@@ -6826,19 +6826,15 @@ static s32 AI_Roaming(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     if (!roamerCanFlee && IsBattlerTrapped(battlerDef, battlerAtk))
         return score;
 
-    AI_Flee();
+    // Project Grounded: rondzwervende Pokémon (Latios/Latias) vluchten niet meer; ze vechten gewoon.
     return score;
 }
 
 // Safari pokemon logic
 static s32 AI_Safari(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
-    u32 safariFleeRate = gBattleStruct->safariEscapeFactor * 5; // Safari flee rate, from 0-20.
-
-    if ((Random() % 100) < safariFleeRate)
-        AI_Flee();
-    else
-        AI_Watch();
+    // Project Grounded: Pokémon in de Safari Zone vluchten niet meer; ze kijken alleen toe.
+    AI_Watch();
 
     return score;
 }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_music_options.h"
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
@@ -6094,6 +6095,10 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;
+        case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema
+        case SPECIES_ENTEI:
+        case SPECIES_SUICUNE:
+            return MUS_C_VS_LEGEND_BEAST;
         default:
             return MUS_RG_VS_LEGEND;
         }
@@ -6117,6 +6122,11 @@ u16 GetBattleBGM(void)
         if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
          && TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED)
             return MUS_RG_VS_GYM_LEADER;
+
+        // Project Grounded: Prof. Birch vecht op de Macarena
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2))
+            return MUS_GROUNDED_VS_BIRCH;
 
         switch (trainerClass)
         {
@@ -6149,12 +6159,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
         }
     }
     else
     {
-        return MUS_VS_WILD;
+        return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }
 

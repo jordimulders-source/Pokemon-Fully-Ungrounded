@@ -48,27 +48,27 @@
 #define FLAG_RECEIVED_SPIT_SWALLOW_MON 0x22 // Project Grounded: Silicobra of Hisui-Qwilfish van de strandman in Slateport
 #define FLAG_FORTREE_HAUNTER_TRADE_COMPLETED 0x23 // Project Grounded: Haunter-voor-Machoke-ruil in Fortree
 #define FLAG_INVERSE_BATTLE    0x24 // Project Grounded: aan tijdens het gevecht tegen CHARLES (inverse battle)
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_ORAS_DOWSING    0x25 // Project Grounded: Itemfinder werkt als de ORAS Dowsing Machine
+#define FLAG_HIDE_MT_CHIMNEY_WALLY    0x26 // Project Grounded: Wally rent binnen op Mt. Chimney
+#define FLAG_HIDE_METEOR_FALLS_WALLY  0x27 // Project Grounded: Wally bij de ingang van Meteor Falls
+#define FLAG_HIDE_ROUTE115_KECCLES    0x28 // Project Grounded: Keccles op het strand van Route 115
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE    0x29 // Project Grounded
+#define FLAG_ITEM_COLDSTEP_CAVE_ICE_STONE    0x2A // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_FOCUS_SASH   0x2B // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_PP_UP    0x2C // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE    0x2D // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY    0x2E // Project Grounded: Coldstep Cave
+#define FLAG_ITEM_ROUTE_135_LIFE_ORB    0x2F // Project Grounded: Route 135
+#define FLAG_ITEM_ROUTE_135_ASSAULT_VEST    0x30 // Project Grounded: Route 135
+#define FLAG_ITEM_ROUTE_135_SUPER_REPEL    0x31 // Project Grounded: Route 135
+#define FLAG_HIDE_ROUTE135_LAPRAS    0x32 // Project Grounded: Lapras (static) in het meer van Route 135
+#define FLAG_ITEM_ROUTE_136_MAX_ETHER    0x33 // Project Grounded: Route 136
+#define FLAG_ITEM_ROUTE_136_RARE_CANDY    0x34 // Project Grounded: Route 136
+#define FLAG_ITEM_ROUTE_136_WEAKNESS_POLICY    0x35 // Project Grounded: Route 136
+#define FLAG_HIDE_ROUTE136_RIVAL    0x36 // Project Grounded: Route 136
+#define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
+#define FLAG_HIDE_ROUTE136_SUICUNE    0x38 // Project Grounded: Suicune (static) in de grot achter het kristalmeer van Route 136
+#define FLAG_VISITED_ASHFROST_TOWN    0x39 // Project Grounded: voor Fly naar Ashfrost
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
@@ -657,10 +657,10 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 #define FLAG_HIDDEN_ITEM_ROUTE_102_LEFTOVERS                 (FLAG_HIDDEN_ITEMS_START + 0x70)
 
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_135_NUGGET  0x265 // Project Grounded: Route 135
+#define FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL  0x266 // Project Grounded: Route 135
+#define FLAG_HIDDEN_ITEM_ROUTE_136_STAR_PIECE  0x267 // Project Grounded: Route 136
+#define FLAG_HIDDEN_ITEM_ROUTE_136_MAX_REPEL  0x268 // Project Grounded: Route 136
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag

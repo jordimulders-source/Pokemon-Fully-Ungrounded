@@ -881,7 +881,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_MANSION",
-      "name": "POKéMON MANSION"
+      "name": "POK\u00e9MON MANSION"
     },
     {
       "id": "MAPSEC_KANTO_SAFARI_ZONE",
@@ -889,7 +889,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
-      "name": "POKéMON LEAGUE"
+      "name": "POK\u00e9MON LEAGUE"
     },
     {
       "id": "MAPSEC_ROCK_TUNNEL",
@@ -901,7 +901,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",
-      "name": "POKéMON TOWER"
+      "name": "POK\u00e9MON TOWER"
     },
     {
       "id": "MAPSEC_CERULEAN_CAVE",
@@ -1230,6 +1230,38 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_COLDSTEP_CAVE",
+      "name": "COLDSTEP CAVE"
+    },
+    {
+      "id": "MAPSEC_ROUTE_135",
+      "name": "ROUTE 135",
+      "x": 1,
+      "y": 3,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_136",
+      "name": "ROUTE 136",
+      "x": 3,
+      "y": 2,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_ASHFROST_TOWN",
+      "name": "ASHFROST TOWN",
+      "x": 4,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_CRYSTAL_CAVITY",
+      "name": "CRYSTAL CAVITY"
     }
   ]
 }

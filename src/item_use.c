@@ -1,4 +1,6 @@
 #include "global.h"
+#include "region_map.h"
+#include "string_util.h"
 #include "item_use.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -806,6 +808,58 @@ static void ItemUseOnFieldCB_Berry(u8 taskId)
     DestroyTask(taskId);
 }
 
+#include "data/berry_tree_locations.h"
+
+static EWRAM_DATA u8 sRipeBerriesText[400] = {0};
+static const u8 sText_NoRipeBerries[] = _("No BERRIES are ripe right now.");
+static const u8 sText_RipeBerriesAt[] = _("Ripe BERRIES at:");
+
+// Project Grounded: maakt een lijst van kaarten met rijpe bessen, bv. "ROUTE 104 (3)".
+static void BuildRipeBerryListText(void)
+{
+    mapsec_u16_t secs[BERRY_TREES_COUNT];
+    u8 counts[BERRY_TREES_COUNT];
+    u32 i, j, numSecs = 0;
+    u8 *ptr;
+
+    for (i = 0; i < BERRY_TREES_COUNT; i++)
+    {
+        if (sBerryTreeMapSecs[i] == MAPSEC_NONE || GetBerryTreeInfo(i)->stage != BERRY_STAGE_BERRIES)
+            continue;
+        for (j = 0; j < numSecs; j++)
+        {
+            if (secs[j] == sBerryTreeMapSecs[i])
+                break;
+        }
+        if (j == numSecs)
+        {
+            secs[numSecs] = sBerryTreeMapSecs[i];
+            counts[numSecs] = 0;
+            numSecs++;
+        }
+        counts[j]++;
+    }
+
+    if (numSecs == 0)
+    {
+        StringCopy(sRipeBerriesText, sText_NoRipeBerries);
+        return;
+    }
+
+    ptr = StringCopy(sRipeBerriesText, sText_RipeBerriesAt);
+    for (i = 0; i < numSecs; i++)
+    {
+        // Twee regels per tekstvak: kop + 1e kaart, daarna telkens 2 kaarten per vak.
+        *ptr++ = (i % 2 == 1) ? CHAR_PROMPT_CLEAR : CHAR_NEWLINE;
+        ptr = GetMapName(ptr, secs[i], 0);
+        *ptr++ = CHAR_SPACE;
+        *ptr++ = CHAR_LEFT_PAREN;
+        ptr = ConvertIntToDecimalStringN(ptr, counts[i], STR_CONV_MODE_LEFT_ALIGN, 2);
+        *ptr++ = CHAR_RIGHT_PAREN;
+        *ptr = EOS;
+    }
+}
+
 void ItemUseOutOfBattle_WailmerPail(u8 taskId)
 {
     if (TryToWaterSudowoodo() == TRUE)
@@ -820,7 +874,9 @@ void ItemUseOutOfBattle_WailmerPail(u8 taskId)
     }
     else
     {
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+        // Project Grounded: niet bij een boom? Dan toont de Wailmer Pail waar bessen rijp zijn.
+        BuildRipeBerryListText();
+        DisplayCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem, sRipeBerriesText);
     }
 }
 

@@ -59,12 +59,12 @@ FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat:
 	.string "cut since before I had a job.$"
 
 FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav:
-	.string "Whoa, you have a POKéNAV! Just like\n"
-	.string "mine!\p"
-	.string "With MATCH CALL you can chat with\n"
-	.string "registered TRAINERS anytime.\p"
-	.string "It shows who wants a rematch.\p"
-	.string "Nobody ever calls me. But it shows it.$"
+	.string "Did you see that?!\p"
+	.string "A talking KECLEON just walked in here\n"
+	.string "and healed its POKéMON at the counter!\p"
+	.string "It even said good morning to everyone\n"
+	.string "inside.\p"
+	.string "Very creepy.$"
 
 FortreeCity_PokemonCenter_1F_Text_ProtipMaster:
 	.string "Hello, I am the PROTIP ORACLE!\p"

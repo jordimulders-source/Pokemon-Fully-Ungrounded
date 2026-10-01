@@ -18474,6 +18474,43 @@ gBattleAnimMove_DragonCheer::
 	delay 10
 	end
 
+@ Project Grounded: Surf-golf met bruisende bubbels over het hele watervlak
+gBattleAnimMove_SeltzerSurge::
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_BUBBLE
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	delay 10
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	delay 10
+	call SeltzerSurgeBubbles
+	call SeltzerSurgeBubbles
+	call SeltzerSurgeBubbles
+	call SeltzerSurgeBubbles
+	waitforvisualfinish
+	end
+SeltzerSurgeBubbles:
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	delay 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	playsewithpan SE_M_BUBBLE3, 0
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	delay 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	delay 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
+	delay 3
+	return
+
 gBattleAnimMove_MalignantChain::
 	loadspritegfx ANIM_TAG_PURPLE_CHAIN
 	loadspritegfx ANIM_TAG_POISON_BUBBLE

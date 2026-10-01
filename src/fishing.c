@@ -184,10 +184,14 @@ static bool32 Fishing_WaitBeforeDots(struct Task *task)
 {
     AlignFishingAnimationFrames();
 
-    // Wait one second
+    // Project Grounded: geen puntjes- of A-minigame. Na een korte wachttijd wordt direct
+    // bepaald of er iets bijt: "Not even a nibble…" of meteen een gevecht.
     task->tFrameCounter++;
-    if (task->tFrameCounter >= 60)
-        task->tStep = FISHING_INIT_DOTS;
+    if (task->tFrameCounter >= 30)
+    {
+        LoadMessageBoxAndFrameGfx(0, TRUE);
+        task->tStep = FISHING_CHECK_FOR_BITE;
+    }
     return FALSE;
 }
 
@@ -273,7 +277,10 @@ static bool32 Fishing_CheckForBite(struct Task *task)
         task->tStep = FISHING_NOT_EVEN_NIBBLE;
 
     if (bite)
+    {
         StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingBiteDirectionAnimNum(GetPlayerFacingDirection()));
+        task->tStep = FISHING_MON_ON_HOOK; // Project Grounded: direct aan de haak, geen minigame
+    }
 
     return TRUE;
 }

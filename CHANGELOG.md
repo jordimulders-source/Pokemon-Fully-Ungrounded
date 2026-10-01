@@ -14871,3 +14871,358 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Verpleegster in stijl: "We fix your POKéMON. No questions asked. No insurance needed." en "Do not ask what happens in the back." Ook de Gold Card-, "the usual"- en Pokérus-teksten.
 - Pc: draait nog op Windows XP; "Your data is safe. Probably." (sluit aan op de NPC met het datalek).
 - Te brede tekstregels gerepareerd: Wally in de Petalburg Gym, Harvey (Game of Thrones Room), Owen (Victory Road) en Liv's registratie.
+
+### [v.0.6.47] - Quality of life: instant heal in het Pokémon Center
+- Praten met de verpleegster healt je team direct: één geluidje (item-heal), één regel "Your POKéMON are fully healed. Next!" en de tekst sluit na een halve seconde vanzelf. Geen ja/nee-vraag, geen draaiende verpleegster, geen Poké Ball-machine, geen jingle.
+- De Gold Card-dialoog en de Union Room-melding bij de verpleegster zijn vervallen. Alleen de eerste keer dat je team Pokérus heeft, komt er één uitlegtekst bij.
+- `OW_UNION_DISABLE_CHECK` staat aan: de game controleert bij het binnenlopen van een Pokémon Center niet meer op de Union Room (draadloze adapter), dus het laden gaat sneller.
+- Na een white-out gebruikt de verpleegster nog wel de oude animatie (komt zelden voor).
+
+### [v.0.6.48] - Quality of life: vissen zonder minigame
+- Hengel uitgooien, half seconde wachten, klaar: óf "Not even a nibble…" óf direct "A POKéMON's on the hook!" en het gevecht start. Geen puntjes, geen A-drukken op het juiste moment, geen "It got away…" meer.
+- Beide teksten sluiten vanzelf (geen A-druk nodig).
+- De kans op beet is ongewijzigd (Old Rod 25%, Good Rod 50%, Super Rod 75%; Suction Cups/Sticky Hold vooraan verhoogt de kans).
+
+### [v.0.6.49] - Quality of life: sneller gevechten en wild encounters
+- Tekstsnelheid staat bij een nieuw spel standaard op Fast (was Mid). In het optiemenu blijft hij aan te passen; bestaande saves houden hun eigen instelling.
+- Bij wilde Pokémon zet B in het gevechtsmenu de cursor op Run (`B_QUICK_MOVE_CURSOR_TO_RUN`): wegrennen is B, A.
+- Het flitsen vóór de schermtransitie is korter: 2 snelle flitsen in plaats van 3 langzame (~16 frames i.p.v. ~48). De transities zelf zijn ongewijzigd.
+- "Got away safely!" staat korter in beeld (B_WAIT_TIME_SHORT i.p.v. LONG).
+- De Old Rod blijft bewust slecht (25% kans op beet).
+
+### [v.0.6.50] - Quality of life als vaste regel
+- CLAUDE.md: nieuw principe "de game respecteert de tijd van de speler", plus de lijst met goedgekeurde QoL-wensen die nog gedaan moeten worden (HM-moves zonder HM, Repel opnieuw, Fly vanuit de kaart, Move Deleter, EV/IV-overzicht, meerdere Rare Candies tegelijk, minder herhaalde popups en teksten).
+- CLAUDE.md: tweede ronde QoL-wensen toegevoegd (Itemfinder die items laat oplichten, bessenbomen-overzicht, sneller fietsen/surfen, geen ontsnapkans in de Safari Zone en bij Latios/Latias, tas sorteren, twee registratieknoppen, nature/ability in de pc, team in één keer healen, level van de volgende gym-ace, rematch-overzicht) en wat bewust niet komt.
+
+### [v.0.6.51] - Quality of life: dowsing, sneller fietsen/surfen, niemand vlucht meer
+- Itemfinder werkt nu als de Dowsing Machine uit ORAS: hij blijft aan terwijl je loopt, kleurt van blauw naar rood en piept sneller naarmate je dichter bij een verborgen item komt (`I_ORAS_DOWSING_FLAG` = `FLAG_ORAS_DOWSING`, 0x25). Tijdens het dowsen kun je niet rennen; op het water werkt hij niet.
+- Surfen gaat even snel als de Mach Bike op topsnelheid.
+- Mach Bike begint direct op rensnelheid (en versnelt daarna naar topsnelheid); Acro Bike rijdt even snel als de Mach Bike op topsnelheid.
+- Pokémon in de Safari Zone vluchten niet meer.
+- Latios/Latias (rondzwervend) vluchten niet meer; je kunt gewoon vechten of vangen. Teleport en Whirlwind van wilde Pokémon werken nog wel.
+
+### [v.0.6.52] - Quality of life: rijpe bessen opzoeken met de Wailmer Pail
+- Gebruik je de Wailmer Pail (uit de tas of via Select) terwijl je niet bij een bessenboom staat, dan krijg je een lijst van kaarten met rijpe bessen, bv. "Ripe BERRIES at: ROUTE 104 (3)". Geen rijpe bessen: "No BERRIES are ripe right now."
+- Welke boom op welke kaart staat, wordt gegenereerd uit de mapdata: `python3 tools/grounded/berry_tree_locations.py` → `src/data/berry_tree_locations.h`. Opnieuw draaien als er bessenbomen bijkomen of verhuizen.
+
+### [v.0.6.53] - Quality of life: verborgen instellingen aangezet
+- Repel/Lure op: "Use another?" met dezelfde soort (`VAR_LAST_REPEL_LURE_USED` = `VAR_LAST_REPEL_USED`, 0x404E).
+- Summary-scherm: op de stats-pagina kun je doorbladeren naar IV's en EV's (`P_SUMMARY_SCREEN_IV_EV_INFO`).
+- De kaartnaam-popup verschijnt niet opnieuw als je binnen hetzelfde gebied van kaart wisselt (`OW_HIDE_REPEAT_MAP_POPUP`).
+- De eerste keer dat je een item vindt, zie je een korte beschrijving met plaatje (`OW_ITEM_DESCRIPTIONS_FIRST_TIME`). Let op: dit verandert de save-indeling, oude saves van vóór deze versie werken mogelijk niet meer.
+- Vanaf de 6e badge (Feather Badge) kun je vanuit de Town Map en de PokéNav-kaart met A naar een bezochte stad vliegen (`OW_FLAG_POKE_RIDER` = `FLAG_BADGE06_GET`).
+- CLAUDE.md: lijst "al gedaan" bijgewerkt.
+
+### [v.0.6.54] - Mugshot-slide voor belangrijke gevechten
+- Net als bij de Elite Four krijgen nu ook deze gevechten de mugshot-slide (trainerplaatje schuift in beeld): alle rivaalgevechten (Brendan blauw, May roze), alle gymleider-rematches (zelfde kleur als hun eerste gevecht, Wallace' rematches blauw), Wally's rematches in Victory Road (paars) en Maxie (Magma Hideout, Mt. Chimney, Mossdeep; geel). Archie, de gymleiders, Wally in Mauville en de Elite Four hadden hem al.
+- Nieuwe gevechten (Wally-event, Birch) krijgen hem ook zodra ze erin zitten.
+
+### [v.0.6.55] - Wally in Meteor Falls en op Mt. Chimney
+- **Meteor Falls:** bij de ingang (vanaf Route 114) staat Wally. Loop je naar binnen, dan rent hij op je af: "{PLAYER}! Fall of Meteor.", draait een rondje, "Wow! Very beaut! Train much team. Timing of battle appear now!" en vecht (TRAINER_WALLY_METEOR_FALLS, mugshot paars, geen AI-flags = willekeurige moves). Na afloop: "Oh thank! Realizations moves, hmmmm planning more and more. Think become good!" en hij rent weg.
+  - Team (lv 26, Kirlia als ace lv 28, IV's 8): Lunatone (Confusion, Rock Throw, Rock Smash, Rain Dance), Solrock (Ember, Rock Throw, Sunny Day, Confusion), Gyarados (Surf, Hyper Beam, Strength, Leer), Primeape (Vacuum Wave, Rage, Thrash, Leer), Milotic (Splash), Kirlia (Calm Mind, Confusion, Screech, Skill Swap).
+  - Verliestekst in het gevecht is een placeholder ("Wow… {PLAYER} strong!"); aan te passen in de Dialoogstudio.
+- **Mt. Chimney:** het losse gevecht tegen Tabitha onderweg blijft. Op de top komt na Maxie's intro Tabitha terug, rent Wally binnen ("Whoopwhoop, hot {PLAYER} fight with, want learn. Come ons!") en volgt een tag battle: jij (3 Pokémon naar keuze) + Wally tegen Maxie + Tabitha.
+  - Wally (partner, geen AI-flags): Oranguru (Instruct), Dondozo (Tickle, Soak, Noble Roar), Kirlia lv 30 (Calm Mind, Confusion, Screech, Skill Swap). In een tag battle heeft elke trainer maximaal 3 Pokémon.
+  - Maxie: Hippopotas 29, Ferroseed 29, Camerupt 31 (zandteam: Ferroseed en Camerupt hebben geen last van de zandstorm). Tabitha (TRAINER_TABITHA_MT_CHIMNEY_TAG): Arcanine 28, Magmar 28, Hisuian Arcanine 29.
+- Nieuwe vlaggen/var: `FLAG_HIDE_MT_CHIMNEY_WALLY` (0x26), `FLAG_HIDE_METEOR_FALLS_WALLY` (0x27), `VAR_WALLY_METEOR_FALLS_STATE` (0x4083); partner `PARTNER_WALLY`.
+
+### [v.0.6.56] - Prof. Birch op het strand
+- Route 109 (strand onder Slateport): Prof. Birch staat naast een "kuiltje" (Sandygast-uitwerpselen, "Most peculiar."). Hij vindt je sterker geworden, maar zwakker dan verwacht, en denkt dat hij kan winnen. Daarna vecht hij (TRAINER_BIRCH, nieuwe trainerklasse PROFESSOR, mugshot groen).
+- Team (lv 19–20, allemaal Mud-Slap en Mud Shot): Rellor (+ Struggle Bug, Defense Curl), Paldean Wooper (+ Poison Tail, Tail Whip; lv 19, want hij evolueert op 20), Sandygast (+ Astonish, Sand Attack), Alolan Grimer lv 20 (+ Bite, Poison Gas).
+- Op het strand stond geen zichtbaar kuiltje; het kuiltje is een onzichtbaar bord links van Birch ("A small pit in the sand. It's not a pit."). Birch staat op (23,22).
+- Getest in de emulator (mGBA headless): Birch op de kaart, de dialoog, de mugshot-slide en zijn sprite in het gevecht ("PROFESSOR BIRCH") zien er goed uit.
+
+### [v.0.6.57] - Gevechtsmuziek kiezen in het optiemenu
+- Twee nieuwe regels in OPTION: WILD MUSIC en TRAINER MUSIC, bladeren met links/rechts. CANCEL is weg (B sluit het menu); OPTION-titel en opties staan samen in één kader.
+- Wilde gevechten: HOENN (standaard), KANTO, GROUDON (Kyogre/Groudon-thema), REGI, RAYQUAZA, MEW, KANTO BIRDS (FRLG-legendary), MEWTWO, DEOXYS, LEGEND DOGS.
+- Gewone trainergevechten: HOENN (standaard), KANTO, KANTO GYM, KANTO CHAMP, DEOXYS, LEGEND DOGS. Gymleiders, rivalen, Aqua/Magma, Elite Four enz. houden hun eigen muziek.
+- LEGEND DOGS is het ongebruikte Suicune/legendary beasts-nummer dat in de ROM zit (volgens de broncode een testtrack); kan ruw klinken.
+- Opgeslagen in `VAR_BATTLE_MUSIC_WILD` (0x408B) en `VAR_BATTLE_MUSIC_TRAINER` (0x4091). Lijst in `src/battle_music_options.c`.
+- Getest in de emulator: menu, bladeren en opslaan werken.
+
+### [v.0.6.58] - Wally-events getest; aces bewaard voor het laatst
+- Beide Wally-events in de emulator doorgespeeld: Meteor Falls (Wally ziet je, loopt op je af, dialoog, paarse mugshot, gevecht, daarna weg) en Mt. Chimney (Maxie's dialoog, Tabitha loopt naar Maxie, Wally rent binnen, 3 Pokémon kiezen, dubbele mugshot, tag battle, na afloop verdwijnen Magma en Wally). Annuleer je het kiezen, dan kom je gewoon terug in het keuzescherm.
+- Wally stuurde zonder AI zijn Pokémon in willekeurige volgorde in, waardoor Kirlia niet als laatste kwam. Nu hebben Wally (beide gevechten), Maxie (Camerupt) en Tabitha in de tag battle (Hisuian Arcanine) `AI_FLAG_ACE_POKEMON`: de laatste Pokémon komt pas als allerlaatste. Wally's moves blijven willekeurig.
+
+### [v.0.6.59] - Eigen muziek: Colress en Macarena
+- Twee MIDI's van Jordi omgezet naar GBA-muziek: de Colress-gevechtsmuziek (Pokémon Black 2/White 2) en de Macarena.
+  - Colress is een extra keuze bij TRAINER MUSIC in het optiemenu ("COLRESS").
+  - Macarena is Prof. Birch's gevechtsmuziek (`MUS_GROUNDED_VS_BIRCH`, in `GetBattleBGM`).
+- Nieuwe General MIDI-achtige voicegroup `sound/voicegroups/grounded_gm.inc`: GM-programma's gekoppeld aan instrumenten die al in de ROM zitten (piano, orgel, bassen, strijkers, koor, trompet, fluit, hobo, blokgolf-leads, drumset op programma 127).
+- De originele MIDI's staan in `sound/songs/grounded_src/`; `python3 tools/grounded/midi_songs.py` (vereist `pip install mido`) maakt er `sound/songs/midi/mus_grounded_*.mid` van: drumkanaal → drumset, maximaal 10 sporen (GBA-limiet; bij Macarena vervallen de fluit die de piccolo verdubbelt, een tweede square lead en een los effect), kanalen/programma's omgezet en loop-markers rond het hele nummer.
+- Getest in de emulator: tijdens het Birch-gevecht speelt de Macarena, Colress speelt af, nauwelijks clipping. Klinkt in GBA-kwaliteit, dus niet als het origineel.
+
+### [v.0.6.60] - Nog vijf gevechtsthema's
+- Toegevoegd uit Jordi's MIDI's, als keuze in het optiemenu:
+  - TRAINER MUSIC: SINNOH CHAMP (kampioen DPPt), CYRUS, N (N's thema, Black/White), GHETSIS.
+  - WILD MUSIC: GIRATINA (Platinum).
+- Nieuwe automatische voorbereiding (`prepare_auto` in `tools/grounded/prepare_midi.py`): alle noten worden per GBA-instrument gegroepeerd (piano, strijkers, trompet, pauken, taiko, xylofoon, enz.), zodat ook grote orkest-MIDI's binnen de 10 sporen passen. Volume wordt in de aanslag verwerkt; pitch bends vallen weg. Wat daarna nog niet past, valt af (alleen bij Giratina: koor, orgel, xylofoon, hobo en een paar kleine partijen, 199 noten) en bij Cyrus 37 noten van een lead.
+- De voicegroup `grounded_gm` wordt nu door hetzelfde script gegenereerd; nieuwe instrumenten erbij: glockenspiel, xylofoon, harp, pauken en taiko.
+- Getest in de emulator: alle vijf spelen af, nauwelijks clipping.
+
+### [v.0.6.61] - Test: nog vier nummers bij WILD MUSIC
+- Als test hoe ver we kunnen gaan, toegevoegd bij WILD MUSIC: DARK CAVE (HeartGold/SoulSilver), YOSHI CASTLE, BROKEN PIER en SUNSET WILDS (beide Mario Kart: Super Circuit).
+- Via dezelfde automatische voorbereiding; bij alle vier paste alles binnen de 10 sporen, er vielen geen partijen weg.
+- Getest in de emulator: alle vier spelen af, nauwelijks clipping.
+
+### [v.0.6.62] - Beta-check in de emulator
+- Doorgespeeld in de emulator: instant heal bij de verpleegster (tekst verdwijnt na ~0,5 s, je kunt meteen weglopen), vissen (hengel uit, direct beet en gevecht), itembeschrijving bij het krijgen van een item, opslaan en laden (CONTINUE werkt, je staat weer waar je was).
+- Vissen: "A POKéMON's on the hook!" en "Not even a nibble…" stonden maar ~0,1 s in beeld (de vistaak laat de tekst dubbel zo snel lopen). Pauze verhoogd naar {PAUSE 200}, nu ~0,3 s leesbaar.
+- Maxie (Mt. Chimney): Hippopotas lv 29 is nu Hippowdon (evolueert in dit project op 28).
+
+### [v.0.6.63] - Onge-evolueerde trainer-Pokémon geëvolueerd
+- Op Jordi's aanwijzing geëvolueerd (level stond al op/boven het evolutielevel van dit project), 33 stuks: Arrokuda → Barraskewda (Aqua-grunt), Honedge → Doublade (Leah), Baltoy → Claydol (Chip, Magma-grunt 16), Loudred → Exploud (Gabby & Ty 3), Buizel → Floatzel (Austina), Pichu → Pikachu (Ricky), Tirtouga → Carracosta (Charlie), Slakoth → Vigoroth (George, Autumn), Duskull → Dusclops (Tammy), Shuppet → Banette (Tasha), Aron → Lairon (Steve), Toedscool → Toedscruel (Dominik), Wattrel → Kilowattrel (David, Hugh), Patrat → Watchog (Chad), Sandshrew → Sandslash (Drew, Shane, Travis), Marill → Azumarill (Victoria, Jani), Makuhita → Hariyama (Shelby), Phantump → Trevenant (Carter), Klink → Klang (Anthony, Abigail, Jasmine), Wingull → Pelipper (Donny, Allison, Hugh), Koffing → Weezing (Takashi), Machoke → Machamp (Phillip), Swablu → Altaria (Ashley).
+- George's Vigoroth: Truant → Vital Spirit (Vigoroth kan Truant niet hebben).
+- Bewust niet geëvolueerd (grappen): o.a. Magikarps, Edwards Abra's, Wally's Ralts, Whismur, Mareep, Azurill, Skitty.
+- `make check`: vergeleken met master is er één nieuwe failure, "SaveBlock3 is backwards compatible", door de bewuste save-wijziging voor itembeschrijvingen (+104 bytes). Verwachte grootte in `test/save.c` bijgewerkt naar 108; verder gelijk aan master.
+
+### [v.0.6.64] - Mom vóór de klok
+- Zolang je de klok boven nog niet hebt gezet, zegt Mom niet meer de A-Team-regel, maar: "Ugh, this move sucked. It took forever. / Your DAD caused a ton of trouble, and all he brought was a new clock. / It's upstairs. Go look at it." Daarna blijft ze bij "The A-Team will be on soon! YOU FOOL!".
+- Getest in de emulator.
+
+### [v.0.6.65] - Dark Cave en Giratina: geen piepende hoge tonen meer
+- `prepare_auto` kan nu per nummer kanalen weglaten (`drop_channels`), een ander instrument geven (`channel_category`), transponeren (`transpose`) en te hoge noten per octaaf omlaag zetten (`max_note`).
+- Dark Cave (HGSS-rip met eigen, niet-GM instrumentnummers): shaker-kanaal (noten 101-111) weg, kanaal 7 en 8 zijn nu baslijnen, alles boven toonhoogte 84 een octaaf (of meer) omlaag.
+- Giratina: de piep aan het begin was een hoornpartij op toonhoogte 85-104; alles boven 84 gaat nu per octaaf omlaag. De climax blijft verder gelijk.
+
+### [v.0.6.66] - Giratina: geen partijen meer weggelaten
+- `prepare_auto` laat instrumenten die niet meer in de 10 sporen passen niet meer vallen, maar voegt ze samen met het meest verwante instrument dat wel een spoor heeft (koor/orgel → strijkers, hobo → fluit, tuba → hoorn, glockenspiel/xylofoon → piano, enz.).
+- Giratina: alle 199 eerder weggelaten noten klinken nu mee.
+
+### [v.0.6.67] - Snellere worp bij het uitsturen + Galar Zigzagoon
+- De worp van de speler aan het begin van een gevecht is ongeveer een derde sneller; de animatie zelf blijft.
+  - Worpanimatie van de achterkant-sprite (Hoenn: 24/9/24/9 → 16/6/16/6 frames, Kanto: 20/6/6/24 → 13/4/4/16).
+  - De bal vertrekt eerder (31 → 21 frames; partner 24 → 16) en de trainer schuift sneller weg (50 → 34 frames).
+  - De boog van de bal is korter (25 → 19 frames). Dat geldt ook bij het wisselen tijdens een gevecht.
+  - Getest in de emulator: geen grafische fouten.
+- Galar Zigzagoon: Leer uit de level-1-moves gehaald. Op lv 5 kent hij nu Tackle, Parting Shot, Baby-Doll Eyes en Sand Attack, in plaats van alleen stat-verlagende moves.
+
+### [v.0.6.68] - Mom's afscheid zonder running-shoes-melding
+- Bij het weggaan uit Littleroot geen "running shoes"-regel, fanfare of "{PLAYER} doesn't know what to do." meer (die had je al vanaf het begin). Mom's afscheidsspeech (Village People, Mongolen, geldcadeau) blijft.
+
+### [v.0.6.69] - Wireless Club-tekst
+- `gText_SorryWirelessClubAdjustments`: "I'm terribly sorry, this room is completely useless. This game has never supported online play and link cables are out of fashion."
+
+### [v.0.6.70] - Mini Forest: tiles, gras en levels; Wally draait rustiger
+- Grafische bug opgelost: de Mini Forest gebruikte de Fortree-tileset en Route 102 die van Petalburg. De GBA tekent een aangrenzende kaart met de tileset van de kaart waar je staat. Daardoor zag je vanuit het bos het berry-veldje van Route 102 als houtblokken met blauw, en veranderden tiles onderin van kleur. De Mini Forest gebruikt nu ook `gTileset_Petalburg`.
+  - Het boomhuisje bovenin (Fortree-tiles, zonder warp) is daardoor vervangen door bomen.
+- De twee losse tiles bij de ingang (onderaan, x 38–39) zijn nu gewoon gras.
+- Het hoge gras rechts (tile 454/455, een onnatuurlijk patroon) is nu hetzelfde hoge gras als links.
+- Wilde levels omlaag naar het niveau van Route 102 (was 6–10, nu 5–8): Scatterbug/Tandemaus 5–7, Venipede/Emolga 6–7, Foongus/Karrablast 6–8, Minccino/Chatot 7, Rookidee/Nymble 6–8 en 7–8.
+- Wally draait in Meteor Falls zijn rondje twee keer zo langzaam (`delay_4` → `delay_8`).
+
+### [v.0.6.71] - Nieuwe move: Sparkling Surf
+- `MOVE_SPARKLING_SURF` (848): de gewone Surf-golf, plus bruisende bubbels verspreid over het hele watervlak. De bubbels drijven mee met de golf, stijgen op, wiebelen en groeien, en verdwijnen samen met de golf.
+  - Animatie `gBattleAnimMove_SparklingSurf` hergebruikt de Surf-golf en de bubbel-graphics van Bubble/BubbleBeam. De bubbel-sprites (`gSurfBubbleSpriteTemplate`, `gSurfBigBubbleSpriteTemplate`) staan in `src/battle_anim_water.c`.
+  - Stats voorlopig gelijk aan Surf: Water, special, 90 power, 100 acc, 15 PP, raakt alle Pokémon naast de gebruiker. Nog door Jordi te bepalen.
+  - Nog geen Pokémon leert hem.
+
+### [v.0.6.72] - Keccles de Kecleon (eerste ontmoeting) + meer bubbels bij Sparkling Surf
+- Nieuwe trainer **Keccles** (`TRAINER_KECCLES_1`, klasse {PKMN} TRAINER, eigen trainerplaatje `TRAINER_PIC_KECLEON` = de Kecleon-gevechtssprite, mugshot).
+  - Staat op het strand van Route 115 (6,66) en kijkt naar links, naar het water. Daar kun je al komen vóór Roxanne.
+  - Jordi's dialoog met een ja/nee-keuze. Bij "nee" zegt hij "Oh. Okay." (tijdelijke tekst) en draait hij terug naar het water.
+  - Team lv 13–14: Charmander (Dragon Breath/Ember/Smokescreen/Scratch), Snivy (Vine Whip/Wrap/Growth/Leer), Helioptile (Thunder Shock/Mud-Slap/Quick Attack/Tail Whip), Salandit (ace, lv 14: Ember/Smog/Poison Gas/Scratch).
+  - Na het gevecht: Jordi's afscheidstekst, daarna verdwijnt hij (`FLAG_HIDE_ROUTE115_KECCLES`).
+- Sparkling Surf: ongeveer de helft meer bubbels.
+
+### [v.0.6.73] - Meteor Falls: kraterkamer met willekeurige static encounter
+- Nieuwe opening onderin de muur van Meteor Falls 1F, helemaal rechts naast het brokkelige gesteente (warp op (14,40)).
+- Nieuwe kaart `MeteorFalls_CraterRoom` (vloer van 10×10) in Meteor Falls-stijl: stalactietenmuur met een gat als ingang, drie kraters en verspreide rotsen.
+- Wilde Pokémon (ondervertegenwoordigd, passend bij het meteoor/ruimte-thema), lv 16–20:
+  Minior (Meteor) 20%, Clefairy 20%, Inkay 10%, Gothita 10%, Carbink 10%, Rolycoly 10% (lv 16–17, evolueert op 18), Elgyem 5%, Dwebble 5%, Jangmo-o 5% (4+1), Beldum 5% (4+1).
+- Static encounter: bij het binnenkomen is er 25% kans op een willekeurige Pokémon midden in de kamer: Bagon, Deino, Lapras (lv 22), Mienfoo, Minior of Carbink (lv 20). Na het gevecht verdwijnt hij; opnieuw binnenkomen geeft een nieuwe kans.
+
+### [v.0.6.74] - Keccles: tekst bij "nee"
+- Keccles zegt bij "nee" nu: "Hmm, I get your hesitation, probably the shock of me talking to you." (vervangt de tijdelijke "Oh. Okay.").
+
+### [v.0.6.75] - Giratina: sterkere bas
+- Vergeleken met Jordi's mp3 (GBA-soundfont-versie): onze bas was te zwak (43% vs 56% van de energie) en het midden te sterk.
+- `prepare_auto` heeft een nieuwe optie `volume={categorie: 0-127}` (spoorvolume). Voor Giratina staan strings/piano op 80, horn/trumpet/flute op 86 en square op 76; de bas blijft 127.
+- Resultaat: bas 54%, midden 41%. Dat is vrijwel gelijk aan de referentie, en de noten komen voor 94% overeen.
+
+### [v.0.6.76] - Sparkling Surf heet nu Seltzer Surge, en wordt TM51
+- Naam: **Seltzer Surge** (`MOVE_SELTZER_SURGE`), Team Aqua's bruiswater-move. Water, special, 90 power, 100 acc, 15 PP, raakt iedereen naast de gebruiker. Bijeffect volgt.
+- **TM51** (`ITEM_TM_SELTZER_SURGE`) met eigen beschrijving. Een door mensen gemaakte move, dus alleen via de TM, niet per level-up.
+- Wie hem kan leren: iedere soort die Scald kan leren (in welke game dan ook) plus alle Water-types in dit project, ook Magikarp. Dat zijn 185 learnsets.
+  - Geregeld in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`), zodat het bij elke build automatisch meegaat, ook als types veranderen.
+
+### [v.0.6.77] - Seltzer Surge: bijeffecten en balans
+- **80 power** (was 90). Surf blijft de sterkste pure watergolf; Seltzer Surge ruilt kracht in voor bijeffecten.
+- Bijeffecten: **20% kans op Speed -1** en **10% kans op Confusion** (per geraakte tegenstander).
+- Raakt **alleen beide tegenstanders** (`MOVE_TARGET_BOTH`), niet je partner zoals Surf.
+- Beschrijving: "A fizzing wave that may lower Speed or confuse."
+- TM51: "Team AQUA's fizzy wave hits both foes. May lower Speed or confuse."
+- Tests in `test/battle/grounded/seltzer_surge.c` (Speed-kans, Confusion-kans, raakt partner niet): alle 3 slagen.
+
+### [v.0.6.78] - TM51 Seltzer Surge in de Aqua Hideout
+- TM51 (Seltzer Surge) ligt als Pokéball op de tafel naast de laptop in Aqua Hideout B1F (23,19). Vlag: `FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE` (0x29).
+- De laptop (22,19) is leesbaar: "On this laptop there is a Google Doc, reading the following: Our hard work, finally paid off. The ultimate move. This will be a commercial success, bottle, ship and sell it! Sparkling water forever!"
+
+### [v.0.6.79] - Coldstep Cave (eerste deel van het sneeuwgebied) + unieke encounter-slots
+- **Route 115:** de Mach Bike-helling op (28,8–9) is een trap geworden, altijd te gebruiken. Nieuwe grotingang in de rotswand op (35,10), boven het Jigglypuff-gebied (Surf nodig).
+- **Coldstep Cave** (nieuw gebied `MAPSEC_COLDSTEP_CAVE`, stenen naambordje; op de Town Map sta je dan op Route 115). Van west naar oost:
+  - **Ingang:** korte zandgang in Shoal Cave-stijl. Een gat in de wand leidt naar beneden.
+  - **IJskamer 1:** je komt binnen via een ladder. Glijpuzzel in Crystal-stijl met 14 ijsblokken, kortste oplossing 12 zetten. Met een solver gecontroleerd dat je nergens vast kunt komen te zitten, en in de emulator helemaal uitgespeeld. Max Revive bij de uitgang. Naadloos verbonden met kamer 2 in het oosten.
+  - **IJskamer 2:** sneeuwvloer met een ijsveld in het midden. Ice Stone (op het ijs), Never-Melt Ice, PP Up. Ladder in de noordoosthoek, straks de uitgang naar Route 135 (volgende stap).
+- **Wilde Pokémon** (12 unieke soorten per kamer, lv 28–33, ijs-soorten die nog weinig voorkomen, levels passend bij de evolutielevels van dit project):
+  - Ingang: Snorunt, Snover, Bergmite, Smoochum, Sealeo, Snom, Alola-Vulpix, Cetoddle, Frigibax, Piloswine, Eiscue, Galar-Darumaka.
+  - IJskamer 1: Vanillish, Alola-Sandslash, Beartic, Snorunt, Bergmite, Piloswine, Sneasel, Jynx, Delibird, Cryogonal, Galar-Mr. Mime, Froslass.
+  - IJskamer 2: Abomasnow, Beartic, Glalie, Froslass, Vanillish, Sealeo, Jynx, Alola-Ninetales, Cetoddle, Eiscue, Galar-Darumaka, Frigibax.
+- **Meteor Falls kraterkamer:** de dubbele 1%-slots (Jangmo-o, Beldum) zijn vervangen door Chingling en Solosis, zodat ook daar alle 12 slots uniek zijn.
+- CLAUDE.md: encounter-filosofie bijgewerkt (12 unieke soorten per tabel).
+
+### [v.0.6.80] - Mini Forest wordt een doolhof; Coldstep-kamers los van elkaar
+- **Mini Forest** helemaal opnieuw: veel kleiner (26×22 in plaats van 50×20), een doolhof van gangen van 2 tegels breed vol hoog gras tussen dichte bomenrijen. Het schaduwweer blijft, dus het voelt benauwd.
+  - De ingang sluit nog steeds aan op de opening bovenin Route 102 (verbinding verschoven: offset 24 / -24).
+  - Aan het doodlopende eind dat het verst van de ingang ligt (109 stappen): **Leftovers** als zichtbare Pokéball. Die lag eerst verstopt; dezelfde vlag, dus wie hem al had, krijgt hem niet nog een keer.
+  - Getest in de emulator: van de ingang naar het eind gelopen en de Leftovers opgepakt.
+- **Coldstep Cave:** ijskamer 1 en 2 zijn geen naadloos verbonden kaarten meer, maar losse kamers. Een ijsladder bij de uitgang van de puzzel (18,11) brengt je naar een ladder in kamer 2 (3,11), en terug. Getest.
+
+### [v.0.6.81] - Mini Forest: minder gras
+- Ongeveer 30% van het hoge gras in het doolhof is gewone grond geworden, in hele stukken van 2×2 zodat je niet de hele weg door gras hoeft.
+- De Leftovers liggen nu op grond in plaats van in het gras.
+
+### [v.0.6.82] - Coldstep Cave: ijskamer 1 naar het Ice Path uit Crystal
+- IJskamer 1 (39×26) is nagebouwd naar Ice Path 1F uit Pokémon Crystal, zonder de strook aan de oostkant. Het grote ijsveld linksboven, de rotsruggen (als ijsblokken), de sneeuwgangen en de vier trappen tussen de delen komen overeen met het origineel. De ijspuzzel is nu maar één onderdeel van de kamer.
+- De ingang zit aan de **westkant**: de zandgang loopt aan de oostkant uit (pijl naar rechts) en je komt links in de ijskamer binnen (pijl naar links om terug te gaan). Daarvoor zijn twee nieuwe pijl-metatiles toegevoegd aan de grot-tileset (926: sneeuw met pijl west, 927: zand met pijl oost); het oude gat in de wand is dicht.
+- Het gat naar beneden uit Crystal (rechtsboven) is een **ladder omhoog** naar ijskamer 2, want je klimt.
+- Max Revive ligt in het doodlopende hoekje onderaan (25,23).
+- Met een solver gecontroleerd: de uitgang is bereikbaar (kortste route 74 zetten) en vanuit elke bereikbare plek kom je nog terug of verder, dus je kunt niet vastlopen. In de emulator is de hele route uitgespeeld tot in kamer 2.
+
+### [v.0.6.83] - Coldstep Cave ijskamer 1: tunneldeur, extra gang met item, ijs dicht
+- Tunneldeur links op rij 16: een nieuwe metatile in de grot-tileset (928), een donkere opening in de ijswand. Daarvoor zijn 4 nieuwe tiles toegevoegd (425–428; `-num_tiles` in `graphics_file_rules.mk` naar 429).
+- Het lege stuk van 3×4 in het midden (x 17–20, y 15–17) heeft een gang gekregen vanaf rij 13, met een **Rare Candy** (`FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY`, 0x2E).
+- Het ijs aan de onderkant bij x 25–28 (rij 9) is dichtgemaakt met rotsen.
+- Opnieuw gecontroleerd met de solver: de ladder is bereikbaar (kortste route nu 95 zetten), beide items zijn bereikbaar en je kunt nergens vastlopen.
+
+### [v.0.6.84] - Sneeuw-tileset (CinnaYva) omgezet naar GBA
+- Nieuwe secondary tileset `gTileset_Snow` (`data/tilesets/secondary/snow`), gemaakt met `tools/grounded/snow_tileset.py` uit CinnaYva's Essentials-tileset (`graphics/grounded/snow_src/`).
+  - 132 metatiles in 340 tiles en 7 paletten. Per 8×8-blokje kiest het script het best passende palet; tiles worden ontdubbeld, ook gespiegeld.
+  - Inhoud: sneeuwgrond (4 varianten + diepe sneeuw), ijsvloer, besneeuwd en groen hoog gras, plukjes en bloemen, drie paden (steen, roze, diepe sneeuw) met randen en binnenhoeken, hoogvlakte-kliffen met sneeuwtop, binnenhoeken, voorkant, grotingang en waterval-voorkant, bergtop en grote kei, besneeuwde, groene en smalle dennen, rotsen, ijsrotsen en ijskristallen, sneeuwballen, sneeuwpop, Pokémon-beeldje, boomstam, bosje en stronk.
+  - `metatile_names.json` koppelt namen aan metatile-id's voor het bouwen van de kaarten.
+- Credits voor CinnaYva bovenaan `CREDITS.md`.
+
+### [v.0.6.85] - Coldstep Cave: alleen verticale tunneldeuren, L-gang, glijpuzzel in kamer 2
+- Gen 3 heeft alleen deuren in een bovenwand en uitgangen in een onderwand. De zijdeur links in ijskamer 1 is daarom vervangen door een **uitgang onderaan de weststrook** (x 3, y 16), met de bestaande uitgang-tiles in het ijspalet (nieuwe metatiles 929–932 in de grot-tileset).
+- **Route 115:** de onderste rij van de rotswand bij de ingang is weggehaald. Het terras is één rij dieper en de ingang zit nu in de noordwand (35,9). De verborgen Terra Cave-ingang (Groudon, na de Elite Four) is mee één rij omhoog verplaatst, zowel de warp als het script in `abnormal_weather.inc`.
+- **Zandgang** is een L-vormige gang: je komt zuid binnen, loopt een paar stappen omhoog, dan naar het oosten, en gaat door het gat in de noordwand ijskamer 1 in (daar kom je zuid binnen).
+- **IJskamer 2:** het stuk tussen de twee ladders is een glijpuzzel (8 ijsblokken, kortste oplossing 13 zetten). Items op losse sneeuwtegels: Never-Melt Ice (2,2), Ice Stone (8,6), PP Up (15,13). Met de solver gecontroleerd dat alles bereikbaar is en je niet kunt vastlopen.
+- In de emulator doorgelopen: Route 115 → zandgang → ijskamer 1 → (ladder) → ijskamer 2 → puzzel opgelost tot de uitgangsladder.
+
+### [v.0.6.86] - Coldstep Cave: echte tunnel, rechte wand; Terra Cave verplaatst
+- **Tunnel (ingang):** geen zand en bruine vlakken meer. Het is nu een gewone grottunnel met rotsvloer en nette randen, opgebouwd met dezelfde rand-regels als Altering Cave (bovenrand, onderrand, zijranden, binnen- en buitenhoeken). Je komt zuid binnen, loopt omhoog, dan oost, en gaat noord door het gat.
+- **IJskamer 1:** de twee losse tiles links bij rij 15–16 zijn weg; de linkerwand loopt egaal door tot aan de uitgang.
+- **Route 115:** de Coldstep-ingang staat één tile naar rechts (36,9).
+- **Terra Cave (Groudon, na de Elite Four):** de verborgen oost-ingang op Route 115 staat nu helemaal ergens anders, in de rotswand op (26,9) in het maze-gebied. De warp en de plaats- en opruimscripts in `abnormal_weather.inc` zijn aangepast.
+
+### [v.0.6.87] - Build-fix: gewijzigde kaarten altijd in de ROM
+- `map_data_rules.mk`: `maps.o` hangt nu ook af van alle `data/layouts/*/*.bin`. Eerder werd een gewijzigde `map.bin` (zonder wijziging in `layouts.json`) niet opnieuw ingebouwd, waardoor de ROM nog een oude kaart kon bevatten (zo stond in beta 2 nog de oude zandtunnel van Coldstep Cave).
+
+### [v.0.6.88] - Keccles bij de Fortree Gym, muziekcredits, trap en ingang Route 115 afgewerkt
+- **Keccles 2** (`TRAINER_KECCLES_2`): de onzichtbare Kecleon voor de Fortree Gym is nu Keccles. Na de Devon Scope wordt hij zichtbaar, houdt Jordi's speech over tactiek en vrije wil, en daagt je uit ("let's check if we are both ready for WINONA!"). Na het gevecht loopt hij weg, zoals de oude Kecleon.
+  - Team (lv 39, ace lv 41): Heliolisk, Charizard, Serperior, Clodsire, Bellibolt en **Salazzle** (Corrosion: Nasty Plot, Venoshock, Incinerate, Poison Gas), met mugshot en ace-AI.
+- **Fortree Pokémon Center:** de jongen met de PokéNav-uitleg vertelt nu vol verbazing dat er een pratende Kecleon binnenkwam die zijn Pokémon liet healen en iedereen goedemorgen wenste. Heel creepy.
+- **CREDITS.md:** alle toegevoegde muziek met de games waar ze vandaan komen (Pokémon B/W, B2/W2, DPPt, HGSS, Yoshi's Island, Mario Kart: Super Circuit), de namen uit de MIDI's (Koji Kondo als componist, Omar / Saru-kun als sequencer, 当野卓人) en Los del Río voor de Macarena.
+- **Route 115:** de trap is aan beide kanten afgewerkt; links zit de gewone rotswand in plaats van de roze rand van de oude Mach Bike-helling, rechts loopt de wand door. De wand links van de Coldstep-ingang loopt nu door tot aan de deur.
+
+### [v.0.6.89] - Coldstep Cave: ijskamer 2 met een nieuwe, eerlijke puzzel; Focus Sash
+- **IJskamer 2:** nieuwe glijpuzzel (15 rotsen). Pittig: de kortste route van ladder naar ladder is 28 glijbewegingen. Door de computer gecontroleerd: voor elke combinatie van opgepakte items blijft de uitgang bereikbaar en kun je vanaf elke plek zowel terug naar de ingang als door naar de uitgang. Er zijn dus geen softlocks meer, van welke kant je ook komt. In de emulator helemaal nagelopen.
+- **Items in ijskamer 2:** Ice Stone (5,13), **Focus Sash** (3,7) en PP Up (13,3), elk op een sneeuwtegel. De Focus Sash vervangt de Never-Melt Ice en was nog nergens anders te krijgen.
+
+### [v.0.6.90] - Route 135 (eerste versie)
+- **Nieuwe route: Route 135** (60×40, net onder de gemiddelde routelengte). Je komt er via de uitgangsladder van Coldstep Cave (ijskamer 2) en staat buiten bij een grotingang in de klif.
+- **Opbouw in lagen:** meerdere terrassen met trappen. In het midden valt een brede, hoge waterval (7 breed, zoals bij Ever Grande en Meteor Falls) uit een bronvijver door een massieve rotswand in een groot meer. Boven de waterval ligt een **Life Orb** (alleen bereikbaar met Waterfall).
+- **Pad:** van de grot omlaag, langs het meer naar het oosten en dan naar het zuiden (daar komt straks Route 136). Sneeuwgras, dennenbossen, rotsen en ijskristallen.
+- **Hikers Edmund & Tenzing** (lv 35) staan boven de trap naar het oostelijke terras en vallen je samen aan (dubbelgevecht als je twee Pokémon hebt). Edmund: Coalossal, Stonjourner, Bergmite. Tenzing: Mudsdale, Klawf, Naclstack.
+- **Prof. Birch (gevecht 2)** staat bij een besneeuwde kei aan het pad. Team (lv 36, ace lv 38): Amaura, Alolan Sandslash, Crabominable, Cryogonal en Cetitan, allemaal met Icy Wind. Hij vecht ook hier op de Macarena. De dialoog is een neutrale placeholder, zodat Jordi hem zelf kan schrijven.
+- **Items:** Life Orb (boven de waterval), Never-Melt Ice (noordoostelijk terras), Super Repel; verborgen: Nugget (bij Birch' kei) en Ice Heal (aan het meer).
+- **Wilde Pokémon (12 unieke soorten, lv 32–35):** Beartic, Gogoat, Piloswine, Abomasnow, Primeape, Hisuian Sneasel, Ursaring, Stantler, Absol, Amaura, Arctibax (1%), Drampa (1%). Surfen: Seel, Sealeo, Dewgong, Cetoddle, Lapras. Vissen: Goldeen, Arrokuda, Barboach, Shellder, Seaking, Whiscash, Barraskewda, Cloyster, Basculin, Alomomola.
+- Weer: sneeuw (in gevechten hagel). Muziek: Route 120. Op de Town Map valt Route 135 voorlopig onder Route 115, totdat de kaart wordt bijgewerkt.
+- **Sneeuwtileset:** houten trap toegevoegd (`stairs`).
+
+### [v.0.6.91] - Route 135 afgewerkt: oevers, bosranden, decor
+- **Meer:** duidelijke oevers met een donkere steenrand, een lichte sneeuwrand en een schaduwband op het water. De hoeken zijn rond en losse uitstulpingen zijn weg, zodat het een echt meer is in plaats van een plas. (Aangepast in de sneeuwtileset, dus alle toekomstige sneeuwmeren hebben dit ook.)
+- **Randen:** dichte, overlappende dennenbossen langs de west-, oost- en zuidrand, boven de grot en naast de bronvijver. Je kunt er niet meer tussendoor lijken te lopen.
+- **Decor:** extra rotsen, ijskristallen, sneeuwballen, stronken, bloemen en plukjes verspreid, steeds met vrije ruimte rond het pad. Met een bereikbaarheidscheck gecontroleerd: uitgang, trappen, trainers en items blijven bereikbaar.
+- De Super Repel ligt nu op (10,13), in het sneeuwgras bij de grot.
+- De rand buiten de kaart is nu dennenbos in plaats van bergtoppen, zodat het bos naadloos doorloopt.
+
+### [v.0.6.92] - Route 135: besneeuwde Hoenn-randbomen en een huisje
+- **Randbomen:** de randen van Route 135 bestaan nu uit dezelfde bosbomen als op alle Hoenn-routes (General-tileset 0x1CE–0x1EF), omgezet naar een besneeuwde versie (sneeuw op de kruinen, sneeuw in plaats van gras eromheen). Ze sluiten naadloos op elkaar aan, met rand-, top- en onderstukken zoals in Hoenn. De losse dennen blijven alleen als decor in open stukken.
+- **Kaartrand:** buiten de kaart loopt hetzelfde besneeuwde bos door (geen rotsen/bergtoppen meer).
+- **Huisje rechtsboven** (onder de noordoostelijke klif, deur op 55,8) met een paadje ernaartoe. Binnen is het een standaard huisinterieur (`Route135_House`), nog zonder bewoner.
+- **Sneeuwtileset:** nieuwe metatiles achteraan toegevoegd (`htree_*` en `house_blue_*`), zodat bestaande nummers niet verschuiven. De tileset heeft ook nog kant-en-klare sneeuwhuizen, een Pokémon Center en een Mart voor Ashfrost.
+
+### [v.0.6.93] - Overdracht voor nieuwe sessies
+- `docs/grounded/OVERDRACHT.md`: stand van zaken, openstaande taken (Route 136, Ashfrost, Town Map, Ditto gepauzeerd), werkwijze en valkuilen, zodat een nieuwe Claude-sessie direct verder kan zonder de hele vorige sessie te laden.
+- `tools/grounded/maptools/`: het kaart- en testgereedschap dat Claude gebruikt (renderen, sneeuwkaarten bouwen, ijspuzzel-zoeker, headless emulator), met uitleg in de README. `route135.py` bouwt Route 135 opnieuw.
+
+### [v.0.6.94] - Overdracht verhuisd naar CLAUDE.md
+- De inhoud van `docs/grounded/OVERDRACHT.md` staat nu in `CLAUDE.md` (secties *Sessies en overdracht*, *Kaarten maken*, *Stand van zaken*, *Openstaande taken*), zodat elke nieuwe sessie het automatisch leest. Het losse bestand is weg. Claude werkt *Stand van zaken* bij na elk afgerond stuk werk.
+
+### [v.0.6.95] - Route 135: boomtoppen, kaartranden, grot en dak
+- **Boomtoppen:** een randboom komt er alleen nog als zijn top past (vrije cel erboven, een boom erboven of de bovenrand van de kaart). Er worden geen toppen meer afgekapt door het pad of door een klif. Het zuidelijke pad is één tile smaller, zodat de onderste bomenrij zijn toppen heeft.
+- **Kaartranden:** de terrassen lopen door tot buiten de kaart, dus langs de randen staan geen klifranden meer maar bos. Buiten de kaart telt als bos, zodat de randbomen naadloos aansluiten op de `border.bin`. De bovenkant heeft nu ook een bosrand. Getest: loop je naar een rand, dan loop je tegen het bos aan.
+- **Grotingang:** de rotsboog boven de grot (bovenste helft uit de tileset) staat er nu ook, zodat de grot niet meer afgekapt is.
+- **Huisje:** het dak begon in de bronsheet een halve tile hoger en is nu compleet (4×4). De deur staat op (55,9) en in de emulator getest (naar binnen en weer naar buiten).
+
+### [v.0.6.96] - Route 135: waterval, bosranden, Swimmer Bram, Lapras en het oude stel
+- **Waterval:** stroomt nu direct uit de bronvijver over de rotsrand (bovenrand van de waterval op de kliprand, zoals bij Ever Grande), zonder sneeuwstrook ertussen.
+- **Kaartranden:** een doorlopende bosstrook langs alle randen (4 breed links/rechts, 2 hoog boven/onder). De bergwanden lopen er achter weg in plaats van afgekapt tegen de kaartrand te eindigen; ook rechtsboven.
+- **Swimmer Bram** (`TRAINER_BRAM`) in de inham aan de onderkant van het meer. Hij begint over de Wim Hof-methode (placeholdertekst) en heeft alleen Water/IJs-Pokémon: Sealeo, Dewgong, Cloyster (lv 35) en Arctovish (lv 37). Hij staat op hoogte 3, zodat hij je op het pad ziet.
+- **Lapras** als static encounter midden in het meer (lv 36, eenmalig, `FLAG_HIDE_ROUTE135_LAPRAS`). In de surftabel is Lapras (1%) vervangen door Feebas.
+- **Het huisje:** een oud stel zonder tv of elektronica. Hij volgt het nieuws al twintig jaar niet meer, zij geeft de grote bedrijven geen cent (placeholderteksten voor Jordi). Het interieur heeft geen tv.
+- **Sneeuwtileset:** U-vormige oevertegels toegevoegd (achteraan).
+
+### [v.0.6.97] - Route 135 afgerond: klifranden, Bram, huisje
+- **Klifranden:** de terrassen stoppen nu vóór de bosstrook langs de randen (x 4–55), zodat elke bergwand eindigt met een nette hoek en zijrand in plaats van afgekapt tegen de bomen.
+- **Swimmer Bram** hangt aan de rand van het meer op (16,32), in het water. Hij valt je niet meer aan als je langsloopt; het gevecht begint pas als je hem aanspreekt (vanaf de oever).
+- **Huisje** twee plekken naar links geschoven, helemaal op het terras (deur op 46,9), met een paadje naar het hoofdpad. De Never-Melt Ice ligt nu op (53,2).
+
+### [v.0.6.98] - Route 135: Assault Vest in plaats van Never-Melt Ice
+- Het item op het noordoostelijke terras (53,2) is nu een **Assault Vest** (Gen 6), die nog nergens anders te krijgen was.
+
+### [v.0.6.99] - Route 136: de bergklim naar Ashfrost (eerste versie)
+- **Nieuwe route: Route 136** (60×44), verbonden met de zuidoostelijke uitgang van Route 135. Geen water; een avontuurlijke klim naar het oosten en noorden: eerst door een dal omlaag, dan via trappen omhoog, een lange trap tegen een hoge rotswand op, smalle richels langs de wanden, en bovenaan een smalle bergpas (x 49) naar Ashfrost Town. Grillige klifranden, rotsheuvels, grote keien, besneeuwde Hoenn-randbomen. Muziek: Victory Road. Weer: sneeuw.
+- **Rivaalgevecht (Brendan/May)** in de bergpas, vóór Lilycove. Teams zijn die van Route 119 (+3 levels, betere IV's), en iedereen krijgt een **Hisuian Avalugg** (kwam nog nergens voor) in plaats van Lopunny/Exploud. Rivaalmuziek en mugshot; daarna loopt hij/zij de pas in.
+- **Keccles (derde gevecht, vóór Fortree)** staat onzichtbaar in een opvallend gat in een rij rotsen, met een **Weakness Policy** erachter. Met de Devon Scope wordt hij zichtbaar. Team ongeveer zoals in Fortree (lv 37, Salazzle lv 39 als ace), met **Steelix** in plaats van Bellibolt.
+- **Trainers:** Hikers Otto (Rhydon, Boldore, Lairon) en Helmut (Gurdurr, Torkoal, Krookodile); Ace Trainers Connor (Staraptor, Excadrill, Lucario, Bisharp), Sigrid (Froslass, Gardevoir, Vanilluxe, Altaria) en Rafael (Mamoswine, Aerodactyl, Hawlucha, Hakamo-o, van het pad af); Dragon Tamer Hakon (Dragonair, Flygon, Noivern, Druddigon, Gabite) op de smalle richel, waar je langs moet.
+- **Verborgen grot:** rechts in de klifrand (51,21), bereikbaar via de wei naast het pad. Binnen een klein ijsgrotje (`Route136_Grotto`, nog leeg; Jordi bepaalt later wat erin komt).
+- **Items:** Max Ether, Rare Candy (hoog, van het pad af), Weakness Policy (achter Keccles); verborgen: Star Piece en Max Repel.
+- **Wilde Pokémon (12 unieke soorten, lv 34–37):** Lairon, Boldore, Skarmory, Hawlucha, Gurdurr, Frosmoth, Altaria, Gabite, Torkoal, Gligar, Druddigon (1%), Pupitar (1%).
+- Alle nieuwe teksten zijn placeholders voor Jordi. Bouwscript: `tools/grounded/maptools/route136.py`.
+
+### [v.0.7.0] - Route 136: pas naar Ashfrost, strakkere randen, kristalgrot met lava en water
+- **Bergpas:** de uitgang bovenaan is nu een 3 tiles breed pad dat zonder bomen doorloopt tot de bovenrand (x 48–51). Daar sluit Ashfrost Town straks aan, zoals bij elke andere stad. Loop je de pas in, dan spreekt Brendan/May je vanzelf aan (coord-trigger op y 3); aanspreken kan ook.
+- **Randbomen:** bomen die tegen al bestaande bomen aan komen (bijv. de bosrand onderaan tegen het bos linksonder) sluiten nu goed aan in plaats van elkaar af te kappen (`hforest` in `snowlib.py`).
+- **Gras:** hoog gras komt niet meer direct tegen de randbomen aan, zodat er geen half vakje sneeuw tussen zit.
+- **Klifranden:** de getrapte klifranden rechts (twee randen die raar op elkaar aansloten) zijn recht getrokken. Keccles staat nu in het gat van de rotsrij op (51,20) met de Weakness Policy erachter op (52,18); de verborgen grot zit in de klifrand op (51,25).
+- **Kristalgrot (`Route136_Grotto`):** opnieuw opgebouwd uit de Cave-tileset: het watermeer van Marine Cave en de lavapoel van Terra Cave naast elkaar, met blauwe en rode kristallen uit Cave of Origin. De kristallen staan nu op de bruine grotvloer: transparante kopieën van de kristaltiles zijn achteraan aan de Cave-tileset toegevoegd (metatiles 0x3A5–0x3A7, tiles 429–440, `-num_tiles 441`). Bouwscript: `tools/grounded/maptools/grotto136.py`. Nog leeg; Jordi bepaalt de inhoud.
+
+### [v.0.7.1] - Route 136: stenen trappen, pad in de kristalgrot, duikstuk naar Suicune
+- **Trappen:** de houten sneeuwtrappen zijn vervangen door de stenen Hoenn-trap zoals op Route 119 (General-metatiles 175/207, 2 breed, per rij in de klifwand). Een doorgang op x 36–39 en de wei voor Keccles blijven vrij van losse decoratie, zodat alles bereikbaar blijft (gecontroleerd met de check in `route136.py` en in de emulator).
+- **Kristalgrot (`Route136_Grotto`):** water en lava liggen 3 tiles verder uit elkaar (kaart is nu 30 breed). Daartussen loopt een pad van boven naar beneden, en vanaf dat pad kun je het meer in surfen. Het water had in de Marine Cave-data botsing; die is eraf.
+- **Duikstuk:** in het kristalmeer kun je duiken (Dive). Je komt in een onderwatertrog (`Underwater_Route136`, kopie van de trog van de Sealed Chamber). Zwem naar de lichte plek onderaan en kom boven in een verborgen zandgrot (`Route136_SuicuneCave`, kopie van de ingang van Seafloor Cavern, zonder uitgang naar boven). Daar staat **Suicune (lv 50, static)**. Terug: duiken in het meertje; Escape Rope/Dig brengt je naar Route 136 voor de grot. Omdat je Dive pas na Mossdeep hebt, is dit iets om later terug te komen.
+- Nieuwe vlag: `FLAG_HIDE_ROUTE136_SUICUNE` (0x38).
+
+### [v.0.7.2] - Dynamisch weer op de bergroutes: sneeuw en as
+- Nieuwe weercyclus `WEATHER_ASHFROST_CYCLE` voor **Route 135 en 136**: per dag afwisselend **sneeuw** en **vulkanische as** (zelfde dagcyclus als het weer op Route 119/123, via `weatherCycleStage`). As heeft in gevechten geen effect; sneeuw geeft zoals voorheen sneeuw/hagel.
+
+### [v.0.8.0] - Ashfrost Town (eerste versie)
+- **Nieuwe stad: Ashfrost Town** (40×30), boven aan de bergpas van Route 136. Een beschut dal met een **meertje in het midden** (met een visser aan de noordoever), bloemen en groene dennen rond het water, de **sneeuwpop** bij het meer, een **verhoging** rechtsboven met twee huizen (stenen trap), een oud huis linksboven, **Pokémon Center** en **Mart**. Weer: dezelfde sneeuw/as-cyclus als Route 135/136. Muziek: Fallarbor.
+- **Eigen stads-tileset `snow_town`** (`python3 tools/grounded/snow_tileset.py --town`): de basis van de sneeuwtileset plus Pokémon Center, Mart en vier huizen uit de bronsheet van CinnaYva (502 van 512 tiles). Bouwscript van de kaart: `tools/grounded/maptools/ashfrost.py`.
+- **Overgang met Route 136:** omdat de GBA maar één secondary tileset tegelijk kan tonen, is dit geen naadloze connectie maar een warp: bovenaan de bergpas (y 0) kom je in Ashfrost, onderaan Ashfrost terug in de pas.
+- **Binnen:** Pokémon Center 1F/2F (heal location `HEAL_LOCATION_ASHFROST_TOWN`, je respawnt hier na verlies), Mart (Ultra Ball, Great Ball, Hyper/Super Potion, Full Heal, Ice Heal, Burn Heal, Revive, Escape Rope, Max Repel) en drie huizen met elk een bewoner.
+- Alle teksten zijn **placeholders** voor Jordi (visser, kind bij de sneeuwpop, oude vrouw, hiker, vrouw, bewoners).
+- Nog niet: Ashfrost en Route 135/136 op de Town Map, Fly naar Ashfrost (komt bij de Town Map-taak). `MAPSEC_ASHFROST_TOWN` valt voorlopig onder Route 115.
+
+### [v.0.8.1] - Town Map: Route 135, Route 136 en Ashfrost Town
+- Op de **Town Map** staan nu Route 135 (mapsec x 1–2, y 3, oost van Route 115), Route 136 (x 3, y 2–3) en **Ashfrost Town** (x 4, y 2) in de lege hooglanden tussen Route 114/115 en Lavaridge, met oranje routetegels en een stadsstip in `graphics/pokenav/region_map/map.bin`. Ze vallen niet meer onder Route 115 (Coldstep Cave nog wel).
+- **Fly naar Ashfrost:** nieuwe vlag `FLAG_VISITED_ASHFROST_TOWN` (0x39, gezet bij binnenkomst), eigen fly-icoon op de kaart en de heal location voor de Pokémon Center als bestemming.
+
+### [v.0.8.2] - Suicune-muziek, Crystal Cavity, roze huis
+- **Suicune** (en ook Raikou/Entei, mochten ze ooit verschijnen) krijgt het **legendary beasts-thema** (`MUS_C_VS_LEGEND_BEAST`, de ongebruikte Suicune-track uit Emerald). Het gevecht start nu via `BattleSetup_StartLegendaryBattle`; vlucht je, dan blijft Suicune staan.
+- De kristalgrot op Route 136 heet nu **Crystal Cavity** (eigen mapsec met stenen naambord; ook de onderwatertrog en de Suicune-grot vallen eronder). Op de Town Map valt hij onder Route 136.
+- Stads-tileset `snow_town`: het **roze huis** had een afgekapt dak (het dak begint halverwege rij 103 van de bronsheet); nu 4×4. De ongebruikte groene winkel is eruit (481/512 tiles). Ashfrost zelf wordt nog opnieuw gebouwd (zie CLAUDE.md).
+- `tools/grounded/maptools/testrom.py`: bouwt een test-ROM met tijdelijke debug-scripts en zet `debug.inc` daarna zelf terug.
+- CLAUDE.md is herschreven tot een compacte werkinstructie (route/grot/stad bouwen, NPC's, testen, afronden, zuinig met tokens).

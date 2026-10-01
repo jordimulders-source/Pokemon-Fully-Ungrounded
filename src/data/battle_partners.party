@@ -44,3 +44,32 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_WALLY ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Back Pic: Wally
+AI: AI_FLAG_ACE_POKEMON
+
+Oranguru
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Instruct
+
+Dondozo
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Tickle
+- Soak
+- Noble Roar
+
+Kirlia
+Level: 30
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Calm Mind
+- Confusion
+- Screech
+- Skill Swap

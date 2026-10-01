@@ -1,0 +1,62 @@
+{
+  "id": "MAP_COLDSTEP_CAVE_ICE_ROOM_1",
+  "name": "ColdstepCave_IceRoom1",
+  "layout": "LAYOUT_COLDSTEP_CAVE_ICE_ROOM_1",
+  "music": "MUS_MT_PYRE",
+  "region_map_section": "MAPSEC_COLDSTEP_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_COLDSTEP_CAVE_MAX_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 20,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_COLDSTEP_CAVE_RARE_CANDY"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_COLDSTEP_CAVE_ENTRANCE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 37,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_COLDSTEP_CAVE_ICE_ROOM_2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

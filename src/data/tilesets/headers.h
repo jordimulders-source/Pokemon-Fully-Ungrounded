@@ -256,6 +256,28 @@ const struct Tileset gTileset_Unused1 =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_SnowTown = // Project Grounded: stads-tileset voor Ashfrost (CinnaYva)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SnowTown,
+    .palettes = gTilesetPalettes_SnowTown,
+    .metatiles = gMetatiles_SnowTown,
+    .metatileAttributes = gMetatileAttributes_SnowTown,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Snow = // Project Grounded: sneeuw-tileset (CinnaYva)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Snow,
+    .palettes = gTilesetPalettes_Snow,
+    .metatiles = gMetatiles_Snow,
+    .metatileAttributes = gMetatileAttributes_Snow,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_MeteorFalls =
 {
     .isCompressed = TRUE,

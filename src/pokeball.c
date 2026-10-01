@@ -1189,7 +1189,7 @@ static void SpriteCB_MonSendOut_1(struct Sprite *sprite)
     u32 coordX = (isPlayer) ? BATTLER_COORD_X_2 : BATTLER_COORD_X;
     u32 coordY = (isPlayer) ? BATTLER_COORD_Y_PIC_OFFSET : BATTLER_COORD_Y;
 
-    sprite->data[0] = 25;
+    sprite->data[0] = 19; // Project Grounded: snellere boog (was 25)
     sprite->data[2] = GetBattlerSpriteCoord(sprite->sBattler, coordX);
     sprite->data[4] = GetBattlerSpriteCoord(sprite->sBattler, coordY) + 24;
     sprite->data[5] = -30;

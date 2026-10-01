@@ -130,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "AquaHideout_B1F_EventScript_Grunt7",
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 23,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_SELTZER_SURGE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE"
     }
   ],
   "warp_events": [
@@ -310,5 +323,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 19,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AquaHideout_B1F_EventScript_SeltzerNote"
+    }
+  ]
 }

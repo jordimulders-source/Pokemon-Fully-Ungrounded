@@ -43,7 +43,36 @@ MtChimney_EventScript_Maxie::
 	applymovement LOCALID_MT_CHIMNEY_MAXIE, Common_Movement_Delay48
 	waitmovement 0
 	msgbox MtChimney_Text_MaxieIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat
+	closemessage
+	@ Project Grounded: Tabitha komt terug, Wally rent binnen en vecht met je mee (tag battle).
+	applymovement LOCALID_MT_CHIMNEY_TABITHA, MtChimney_Movement_TabithaJoinMaxie
+	waitmovement 0
+	addobject LOCALID_MT_CHIMNEY_WALLY
+	applymovement LOCALID_MT_CHIMNEY_WALLY, MtChimney_Movement_WallyRunIn
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_MT_CHIMNEY_WALLY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox MtChimney_Text_WallyWhoopWhoop, MSGBOX_DEFAULT
+	closemessage
+MtChimney_EventScript_ChooseMonsForWallyTag::
+	special SavePlayerParty
+	fadescreen FADE_TO_BLACK
+	special ChooseHalfPartyForBattle
+	waitstate
+	goto_if_ne VAR_RESULT, 0, MtChimney_EventScript_DoWallyTagBattle
+	special LoadPlayerParty
+	goto MtChimney_EventScript_ChooseMonsForWallyTag
+
+MtChimney_EventScript_DoWallyTagBattle::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_TABITHA_MT_CHIMNEY_TAG, MtChimney_Text_TabithaDefeat, PARTNER_WALLY
+	switch VAR_RESULT
+	case 1, MtChimney_EventScript_DefeatedMaxieWithWally
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
+
+MtChimney_EventScript_DefeatedMaxieWithWally::
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -52,6 +81,8 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1
 	removeobject LOCALID_MT_CHIMNEY_TABITHA
 	removeobject LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2
+	removeobject LOCALID_MT_CHIMNEY_WALLY
+	setflag FLAG_HIDE_MT_CHIMNEY_WALLY
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setobjectxyperm LOCALID_MT_CHIMNEY_ARCHIE, 10, 12
@@ -828,3 +859,31 @@ MtChimney_Text_SawyerPostRematch:
 	.string "It's really hot here. I'm wearing three\n"
 	.string "sweaters.\p"
 	.string "Hiker habit.$"
+
+MtChimney_Movement_TabithaJoinMaxie:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	face_up
+	step_end
+
+MtChimney_Movement_WallyRunIn:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	face_up
+	step_end
+
+MtChimney_Text_WallyWhoopWhoop:
+	.string "WALLY: Whoopwhoop, hot {PLAYER}\n"
+	.string "fight with, want learn.\p"
+	.string "Come ons!$"

@@ -448,6 +448,8 @@ extern const union AffineAnimCmd *const gGrowingRingAffineAnimTable[];
 extern const union AffineAnimCmd *const gAffineAnims_Droplet[];
 extern const union AnimCmd *const gAnims_SmallBubblePair[];
 extern const union AnimCmd *const gAnims_WaterBubble[];
+extern const struct SpriteTemplate gSurfBubbleSpriteTemplate;
+extern const struct SpriteTemplate gSurfBigBubbleSpriteTemplate;
 extern const union AffineAnimCmd *const gAffineAnims_Bite[];
 
 // battle_anim_normal.c

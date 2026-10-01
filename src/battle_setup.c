@@ -507,6 +507,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
+    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema
+    case SPECIES_ENTEI:
+    case SPECIES_SUICUNE:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

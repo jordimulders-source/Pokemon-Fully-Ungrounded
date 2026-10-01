@@ -282,6 +282,8 @@ const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/pale
 
 const u32 gTrainerFrontPic_ProfessorBirch[] = INCBIN_U32("graphics/trainers/front_pics/birch.4bpp.smol");
 const u16 gTrainerPalette_ProfessorBirch[] = INCBIN_U16("graphics/trainers/front_pics/birch.gbapal");
+const u32 gTrainerFrontPic_Kecleon[] = INCBIN_U32("graphics/trainers/front_pics/kecleon.4bpp.smol");
+const u16 gTrainerPalette_Kecleon[] = INCBIN_U16("graphics/trainers/front_pics/kecleon.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -405,24 +407,25 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_ProfessorBirch, gTrainerPalette_ProfessorBirch),
+    TRAINER_SPRITE(TRAINER_PIC_KECLEON, gTrainerFrontPic_Kecleon, gTrainerPalette_Kecleon),
 };
 
-static const union AnimCmd sAnimCmd_Hoenn[] =
+static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)
 {
-    ANIMCMD_FRAME(0, 24),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(2, 24),
-    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_FRAME(0, 6),
     ANIMCMD_FRAME(3, 50),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnimCmd_Kanto[] =
+static const union AnimCmd sAnimCmd_Kanto[] = // Project Grounded: snellere worp (was 20/6/6/24)
 {
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(2, 6),
-    ANIMCMD_FRAME(3, 6),
-    ANIMCMD_FRAME(4, 24),
+    ANIMCMD_FRAME(1, 13),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(4, 16),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };

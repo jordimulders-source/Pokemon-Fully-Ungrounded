@@ -155,6 +155,8 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_SKY_PILLAR,                 MAPSEC_ROUTE_131},
     {MAPSEC_MIRAGE_TOWER,               MAPSEC_ROUTE_111},
     {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
+    {MAPSEC_COLDSTEP_CAVE,               MAPSEC_ROUTE_115}, // Project Grounded
+    {MAPSEC_CRYSTAL_CAVITY,              MAPSEC_ROUTE_136}, // Project Grounded
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
@@ -304,6 +306,7 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_MOSSDEEP_CITY] = {MAP_GROUP(MAP_MOSSDEEP_CITY), MAP_NUM(MAP_MOSSDEEP_CITY), HEAL_LOCATION_MOSSDEEP_CITY},
     [MAPSEC_SOOTOPOLIS_CITY] = {MAP_GROUP(MAP_SOOTOPOLIS_CITY), MAP_NUM(MAP_SOOTOPOLIS_CITY), HEAL_LOCATION_SOOTOPOLIS_CITY},
     [MAPSEC_EVER_GRANDE_CITY] = {MAP_GROUP(MAP_EVER_GRANDE_CITY), MAP_NUM(MAP_EVER_GRANDE_CITY), HEAL_LOCATION_EVER_GRANDE_CITY},
+    [MAPSEC_ASHFROST_TOWN] = {MAP_GROUP(MAP_ASHFROST_TOWN), MAP_NUM(MAP_ASHFROST_TOWN), HEAL_LOCATION_ASHFROST_TOWN}, // Project Grounded
     [MAPSEC_ROUTE_101] = {MAP_GROUP(MAP_ROUTE101), MAP_NUM(MAP_ROUTE101), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_102] = {MAP_GROUP(MAP_ROUTE102), MAP_NUM(MAP_ROUTE102), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_103] = {MAP_GROUP(MAP_ROUTE103), MAP_NUM(MAP_ROUTE103), HEAL_LOCATION_NONE},
@@ -1218,6 +1221,8 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
         return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_EVER_GRANDE_CITY:
         return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ASHFROST_TOWN: // Project Grounded
+        return FlagGet(FLAG_VISITED_ASHFROST_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
@@ -1883,6 +1888,23 @@ static void CreateFlyDestIcons(void)
             gSprites[spriteId].sIconMapSec = mapSecId;
         }
         canFlyFlag++;
+    }
+
+    // Project Grounded: Ashfrost Town (heeft geen FLAG_VISITED_* in de vaste reeks)
+    GetMapSecDimensions(MAPSEC_ASHFROST_TOWN, &x, &y, &width, &height);
+    x = (x + MAPCURSOR_X_MIN) * 8 + 4;
+    y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
+    spriteId = CreateSprite(&sFlyDestIconSpriteTemplate, x, y, 10);
+    if (spriteId != MAX_SPRITES)
+    {
+        gSprites[spriteId].oam.shape = SPRITE_SHAPE(8x8);
+        shape = SPRITE_SHAPE(8x8);
+        if (FlagGet(FLAG_VISITED_ASHFROST_TOWN))
+            gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
+        else
+            shape += 3;
+        StartSpriteAnim(&gSprites[spriteId], shape);
+        gSprites[spriteId].sIconMapSec = MAPSEC_ASHFROST_TOWN;
     }
 }
 

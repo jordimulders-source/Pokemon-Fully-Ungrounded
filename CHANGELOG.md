@@ -15264,3 +15264,8 @@ Het gras en het meer in Ashfrost hebben nu encounters: alleen tamme, ongevaarlij
 
 ### [v.0.8.9] - Ashfrost Village: realistischere meer-encounters
 Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 20–24), Quagsire 5% (lv 22–24), Goldeen 4% (lv 20–24), Spheal 1% (lv 22, knipoog naar de Baikalrob, een echte zoetwaterzeehond in een bevroren meer). Seel en Lapras zijn eruit (zeedieren).
+
+### [v.0.9.0] - Kleine taken: Keccles, Cramorant, Avalugg
+- **Keccles (Route 136):** nieuwe introtekst van Jordi ("I wonder, why do so many Americans dress in camo..."), nabeschouwing aangepast (hij zei nog "See you in FORTREE", maar je komt hem pas na Fortree tegen). Levels 37/39 → **43, ace Salazzle 45** (Keccles 2 in Fortree is 39, Winona 41–43).
+- **Spit or swallow (Slateport):** "swallow" geeft nu een **Cramorant** (lv 10, Stockpile/Swallow) in plaats van Hisuian Qwilfish.
+- **Rivaal Route 136:** Hisuian Avalugg weg (gaat later naar Birch). Brendan krijgt zijn Exploud terug, May haar Lopunny (originele teams van Route 119, +3 levels).

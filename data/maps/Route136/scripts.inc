@@ -222,15 +222,21 @@ Route136_Text_UsedDevonScope:
 	.string "visible!$"
 
 Route136_Text_KecclesIntro:
-	.string "KECCLES: You again!\p"
-	.string "This is my spot. Nobody gets past\n"
-	.string "without a battle!$"
+	.string "KECCLES: I wonder, why do so many\n"
+	.string "Americans dress in camo.\p"
+	.string "Oh wow, my disguise got removed again.\n"
+	.string "Even in snow you can trace me?\p"
+	.string "Anyways, that shows that I chose you\n"
+	.string "well as a rival.\p"
+	.string "Let's hone our strength, I have a\n"
+	.string "feeling I might be victorious this time!$"
 
 Route136_Text_KecclesDefeat:
 	.string "KECCLES: Hmmm…$"
 
 Route136_Text_KecclesPostBattle:
-	.string "KECCLES: See you in FORTREE.$"
+	.string "KECCLES: Next time I'm dressing up as a\n"
+	.string "snowbank. A really convincing one.$"
 
 Route136_Text_OttoIntro:
 	.string "The higher you climb, the thinner\n"

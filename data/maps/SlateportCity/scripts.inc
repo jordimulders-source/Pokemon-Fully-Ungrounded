@@ -1358,8 +1358,8 @@ SlateportCity_EventScript_SpitOrSwallow::
 	goto SlateportCity_EventScript_SpitOrSwallowReceived
 
 SlateportCity_EventScript_Swallow::
-	givemon SPECIES_QWILFISH_HISUI, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
-	bufferspeciesname STR_VAR_1, SPECIES_QWILFISH_HISUI
+	givemon SPECIES_CRAMORANT, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_CRAMORANT
 SlateportCity_EventScript_SpitOrSwallowReceived::
 	playfanfare MUS_OBTAIN_ITEM
 	message SlateportCity_Text_ReceivedSpitOrSwallowMon

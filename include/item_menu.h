@@ -106,6 +106,8 @@ void CB2_ReturnToBagMenuPocket(void);
 void CB2_BagMenuFromStartMenu(void);
 u8 GetItemListPosition(u8 pocketId);
 bool8 UseRegisteredKeyItemOnField(void);
+extern u8 gMultiUseCount;
+bool32 IsMultiUseItem(u16 item);
 bool8 UseRegisteredKeyItemLOnField(void);
 void CB2_GoToSellMenu(void);
 void GoToBagMenu(u8 location, u8 pocket, MainCallback exitCallback);

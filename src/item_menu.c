@@ -1871,7 +1871,62 @@ static void RemoveContextWindow(void)
         BagMenu_RemoveWindow(ITEMWIN_2x3);
 }
 
+// Project Grounded: Rare Candy en vitamines/veren in één keer meerdere gebruiken.
+EWRAM_DATA u8 gMultiUseCount = 0; // 0 of 1 = één
+
+bool32 IsMultiUseItem(u16 item)
+{
+    return item == ITEM_RARE_CANDY || (item >= ITEM_HP_UP && item <= ITEM_CARBOS)
+        || (item >= ITEM_HEALTH_FEATHER && item <= ITEM_SWIFT_FEATHER);
+}
+
+static void UseItemOutOfBattleNow(u8 taskId);
+
+static void Task_ChooseHowManyToUse(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    if (AdjustQuantityAccordingToDPadInput(&tItemCount, tQuantity) == TRUE)
+    {
+        PrintItemQuantity(gBagMenu->windowIds[ITEMWIN_QUANTITY], tItemCount);
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_RG_BALL_CLICK);
+        BagMenu_RemoveWindow(ITEMWIN_QUANTITY);
+        gMultiUseCount = tItemCount;
+        UseItemOutOfBattleNow(taskId);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_RG_BALL_CLICK);
+        BagMenu_RemoveWindow(ITEMWIN_QUANTITY);
+        CancelToss(taskId);
+    }
+}
+
 static void ItemMenu_UseOutOfBattle(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    gMultiUseCount = 0;
+    if (GetItemFieldFunc(gSpecialVar_ItemId) && IsMultiUseItem(gSpecialVar_ItemId) && tQuantity > 1 && CalculatePlayerPartyCount() != 0)
+    {
+        RemoveContextWindow();
+        tItemCount = 1;
+        CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar1, 2);
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Use how many\n{STR_VAR_1}?"));
+        FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
+        BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, 0, COLORID_NORMAL);
+        AddItemQuantityWindow(ITEMWIN_QUANTITY);
+        PrintItemQuantity(gBagMenu->windowIds[ITEMWIN_QUANTITY], tItemCount);
+        gTasks[taskId].func = Task_ChooseHowManyToUse;
+        return;
+    }
+    UseItemOutOfBattleNow(taskId);
+}
+
+static void UseItemOutOfBattleNow(u8 taskId)
 {
     if (GetItemFieldFunc(gSpecialVar_ItemId))
     {

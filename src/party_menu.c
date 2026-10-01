@@ -5001,8 +5001,17 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
         gPartyMenuUseExitCallback = TRUE;
         if (!IsItemFlute(item))
         {
+            // Project Grounded: meerdere vitamines/veren in één keer (aantal gekozen in de tas)
+            u32 used = 1;
+            if (IsMultiUseItem(item))
+            {
+                while (used < gMultiUseCount && CheckBagHasItem(item, used + 1)
+                       && !ExecuteTableBasedItemEffect(mon, item, gPartyMenu.slotId, 0))
+                    used++;
+            }
+            gMultiUseCount = 0;
             PlaySE(SE_USE_ITEM);
-            RemoveBagItem(item, 1);
+            RemoveBagItem(item, used);
         }
         else
         {
@@ -5947,10 +5956,20 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     }
     else
     {
+        // Project Grounded: meerdere Rare Candies in één keer (aantal gekozen in de tas)
+        u32 used = 1;
+        if (*itemPtr == ITEM_RARE_CANDY)
+        {
+            while (used < gMultiUseCount && CheckBagHasItem(*itemPtr, used + 1)
+                   && !ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0))
+                used++;
+            BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+        }
+        gMultiUseCount = 0;
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
         gPartyMenuUseExitCallback = TRUE;
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        RemoveBagItem(gSpecialVar_ItemId, 1);
+        RemoveBagItem(gSpecialVar_ItemId, used);
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
         {

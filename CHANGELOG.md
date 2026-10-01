@@ -15313,3 +15313,7 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 ### [v.0.8.19] - QoL: bessen planten in één handeling
 - Lege grond aanspreken opent **direct de bessentas** (geen "Want to plant a BERRY?" met ja/nee meer; B annuleert).
 - Heb je de **Wailmer Pail**, dan krijgt de bes na het planten meteen water (`BerryTree_EventScript_WaterAfterPlanting`), ook als je een bes vanuit de tas op de grond gebruikt. In de emulator gecontroleerd: de boom staat direct op "gewaterd".
+
+### [v.0.8.20] - QoL: Move Deleter bij de Move Relearner
+- In het huis van de Move Relearner (Fallarbor) zit nu ook een **Move Deleter** (`LOCALID_FALLARBOR_MOVE_DELETER`, op de stoel tegenover de Relearner, (7,4)). Geen ja/nee-vraag vooraf: hij vraagt direct welke Pokémon iets moet vergeten (B annuleert). De rest van het gesprek is dat van de Move Deleter in Lilycove (die blijft ook bestaan).
+- Placeholdertekst: "He teaches POKéMON old moves. I make them forget new ones. Together we run a perfectly pointless business."

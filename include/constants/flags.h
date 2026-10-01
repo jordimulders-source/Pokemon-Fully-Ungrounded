@@ -69,7 +69,7 @@
 #define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_SUICUNE    0x38 // Project Grounded: Suicune (static) in de grot achter het kristalmeer van Route 136
 #define FLAG_VISITED_ASHFROST_TOWN    0x39 // Project Grounded: voor Fly naar Ashfrost
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON    0x3A // Project Grounded: Coldstep Cave ijskamer 1, rechts van het middelste ijsveld
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
@@ -1081,7 +1081,7 @@
 #define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
-#define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
+#define FLAG_ITEM_ROUTE_120_TM_SCALD                                0x407 // Project Grounded: was Full Heal
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
 #define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A

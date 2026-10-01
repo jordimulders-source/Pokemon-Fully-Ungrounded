@@ -15301,3 +15301,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.16] - Vintage Spill sterker
 - Lager Lagoon was in enkelgevechten op alles beter. **Vintage Spill** nu: **60 power** (was 40), confusion **50% → 100%** (was 25 → 50 → 100%): de tweede treffer op hetzelfde doelwit verwart altijd. De teller werkt verder hetzelfde (blijft staan bij andere moves, weg na wisselen). Tests aangepast.
+
+### [v.0.8.17] - TM-plekken voor Lager Lagoon en Scald
+- **TM52 Lager Lagoon** ligt in **Coldstep Cave ijskamer 1** op het vloerhoekje rechts van het middelste ijsveld (31,6), op de plek van HM07 in Ice Path (Gold/Silver/Crystal). Koud bier in een ijsgrot. Vlag `FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON` (0x3A). Met de solver gecontroleerd: bereikbaar door over het middelste ijsveld te glijden, en je kunt nergens vastlopen.
+- **TM03 Scald** (was Wallace's TM) ligt op **Route 120** op de plek van de Full Heal (7,89). Vlag hernoemd naar `FLAG_ITEM_ROUTE_120_TM_SCALD` (zelfde waarde 0x407).
+- TODO: nieuwe move **Machine Learning** in de backlog gezet (uitwerking volgt).

@@ -18488,6 +18488,37 @@ gBattleAnimMove_SeltzerSurge::
 	call SeltzerSurgeBubbles
 	waitforvisualfinish
 	end
+@ Project Grounded: Surf-golf van bier (geel palet), met schuimbubbels
+gBattleAnimMove_LagerLagoon::
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_BUBBLE
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_LAGER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 10, 10, RGB(31, 30, 24)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_BUBBLE, 0, 10, 10, RGB(31, 30, 24)
+	delay 10
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	delay 10
+	call SeltzerSurgeBubbles
+	call SeltzerSurgeBubbles
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Water Sport in bordeauxrood; het doelwit wankelt na
+gBattleAnimMove_VintageSpill::
+	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GLOWY_BLUE_ORB, 0, 14, 14, RGB(16, 1, 6)
+	createvisualtask AnimTask_WaterSport, 5
+	delay 8
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 44
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 30
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 12, 1
+	createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_TARGET, RGB(16, 1, 6), 10, 3, 1
+	waitforvisualfinish
+	end
+
 SeltzerSurgeBubbles:
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3

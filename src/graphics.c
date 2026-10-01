@@ -1443,6 +1443,7 @@ const u32 gBattleAnimBgImage_SpacialRend[] = INCBIN_U32("graphics/battle_anims/b
 const u16 gBattleAnimBgPalette_SpacialRend[] = INCBIN_U16("graphics/battle_anims/backgrounds/spacial_rend.gbapal");
 
 const u16 gBattleAnimBgPalette_SludgeWave[] = INCBIN_U16("graphics/battle_anims/backgrounds/sludge_wave.gbapal");
+const u16 gBattleAnimBgPalette_LagerLagoon[] = INCBIN_U16("graphics/battle_anims/backgrounds/lager_lagoon.gbapal"); // Project Grounded
 
 const u32 gBattleAnimBgImage_Aeroblast[] = INCBIN_U32("graphics/battle_anims/backgrounds/aeroblast_tiles.4bpp.smol");
 const u16 gBattleAnimBgPalette_Aeroblast[] = INCBIN_U16("graphics/battle_anims/backgrounds/aeroblast.gbapal");

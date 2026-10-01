@@ -21356,6 +21356,61 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SeltzerSurge,
     },
 
+    // Project Grounded: bier-Surf met gele golven en schuim: 65 power, 50% confusion, raakt ook de partner.
+    [MOVE_LAGER_LAGOON] =
+    {
+        .name = COMPOUND_STRING("Lager Lagoon"),
+        .description = COMPOUND_STRING(
+            "A foaming wave of beer.\n"
+            "Often confuses everyone."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .damagesUnderwater = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_LagerLagoon,
+    },
+
+    // Project Grounded: wijn morsen (Water Sport in bordeaux): 40 power; confusion 25 -> 50 -> 100% per treffer
+    // op hetzelfde doelwit (teller in gDisableStructs, verdwijnt bij wisselen). Zie Cmd_setadditionaleffects.
+    [MOVE_VINTAGE_SPILL] =
+    {
+        .name = COMPOUND_STRING("Vintage Spill"),
+        .description = COMPOUND_STRING(
+            "Splashes fine wine. Each\n"
+            "hit is likelier to confuse."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 25,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VintageSpill,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

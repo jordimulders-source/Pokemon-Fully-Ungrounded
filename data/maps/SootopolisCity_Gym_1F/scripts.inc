@@ -116,14 +116,14 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	end
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
-	giveitem ITEM_TM_SCALD
+	giveitem ITEM_TM_VINTAGE_SPILL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
-	giveitem ITEM_TM_SCALD
+	giveitem ITEM_TM_VINTAGE_SPILL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -245,8 +245,8 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "That TECHNICAL MACHINE contains\n"
-	.string "WATER PULSE.\p"
-	.string "It occasionally confuses the target.\n"
+	.string "VINTAGE SPILL.\p"
+	.string "Every splash confuses a little more.\n"
 	.string "Think of it as a shot of 90 percent\l"
 	.string "absinthe delivered to the face.\p"
 	.string "... ... ... ... ... ...$"

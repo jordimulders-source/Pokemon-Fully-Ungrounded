@@ -84,6 +84,7 @@ struct DisableStruct
     u8 mimickedMoves:4;
     u8 rechargeTimer:4;
     u8 autotomizeCount;
+    u8 vintageSpillCount; // Project Grounded: aantal Vintage Spill-treffers sinds het inwisselen
     u16 slowStartTimer;
     u16 embargoTimer;
     u16 magnetRiseTimer;

@@ -52,7 +52,9 @@
     F(DARK_PULSE) \
     F(PLAY_ROUGH) \
     F(OVERHEAT) \
-    F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */
+    F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */ \
+    F(LAGER_LAGOON) /* Project Grounded: TM52, bier-Surf */ \
+    F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */
 
 #define FOREACH_HM(F) \
     F(CUT) \

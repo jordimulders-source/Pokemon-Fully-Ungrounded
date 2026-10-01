@@ -2916,6 +2916,7 @@ extern const u32 gBattleAnimBgTilemap_InAir[];
 extern const u32 gBattleAnimBgTilemap_Aurora[];
 extern const u32 gBattleAnimBgTilemap_Fissure[];
 extern const u16 gBattleAnimBgPalette_SludgeWave[];
+extern const u16 gBattleAnimBgPalette_LagerLagoon[];
 extern const u32 gBattleAnimBgImage_Aeroblast[];
 extern const u16 gBattleAnimBgPalette_Aeroblast[];
 extern const u32 gBattleAnimBgTilemap_Aeroblast[];

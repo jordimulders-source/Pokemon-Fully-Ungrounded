@@ -98,6 +98,29 @@ def extract_repo_universals() -> list[str]:
 GROUNDED_CUSTOM_TEACHABLES = {
     "MOVE_SELTZER_SURGE": {"like": "MOVE_SCALD", "types": {"TYPE_WATER"}},
 }
+# Lager Lagoon (bier) en Vintage Spill (wijn): iedereen die water kan maken, plus soorten die dicht bij
+# het brouw- of wijnproces staan (taak "learnsets" in de changelog).
+# Water Gun als criterium gaf Rattata, Clefairy enz. (Gen 1-TM); daarom Water-types plus deze natuurlijke watermakers.
+WATER_MAKERS = {
+    "Azurill", "Phanpy", "Donphan", "Dewgong", "Dragalge",  # sproeien water, of leven erin
+    "Goomy", "Sliggoo", "Goodra", "SliggooHisui", "GoodraHisui",
+}
+GROUNDED_CUSTOM_TEACHABLES["MOVE_LAGER_LAGOON"] = {"like": set(), "types": {"TYPE_WATER"}, "species": WATER_MAKERS | {
+    "Hoppip", "Skiploom", "Jumpluff",                       # hop
+    "Skwovet", "Greedent",                                  # graanvoorraad
+    "Paras", "Parasect", "Shroomish", "Breloom",            # gist en schimmels
+    "Foongus", "Amoonguss", "Morelull", "Shiinotic", "Toedscool", "Toedscruel",
+    "Gulpin", "Swalot",                                     # gisting in de maag
+    "Spinda", "Snorlax", "Munchlax",                        # vaste klanten
+}}
+GROUNDED_CUSTOM_TEACHABLES["MOVE_VINTAGE_SPILL"] = {"like": set(), "types": {"TYPE_WATER"}, "species": WATER_MAKERS | {
+    "Bounsweet", "Steenee", "Tsareena",                     # druiven treden
+    "Shuckle",                                              # laat bessen gisten in zijn schild
+    "Cherubi", "Cherrim", "Tropius",                        # fruit
+    "Applin", "Flapple", "Appletun", "Dipplin", "Hydrapple",
+    "Phantump", "Trevenant", "Dhelmise",                    # eikenhouten vaten en scheepsladingen
+    "Gulpin", "Swalot", "Spinda",                           # gisting en proeverij
+}}
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")
@@ -154,8 +177,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         repo_species_teachables = list(filter(lambda m: m in repo_teachables, all_learnables[species_upper]))
         for move, rule in GROUNDED_CUSTOM_TEACHABLES.items():
             if move in repo_teachables and move not in repo_species_teachables and (
-                rule["like"] in all_learnables[species_upper]
+                ({rule["like"]} if isinstance(rule["like"], str) else rule["like"]) & set(all_learnables[species_upper])
                 or learnset_types.get(species.group("name"), set()) & rule["types"]
+                or species.group("name") in rule.get("species", set())
             ):
                 repo_species_teachables.append(move)
 

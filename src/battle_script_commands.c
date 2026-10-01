@@ -4208,7 +4208,20 @@ static void Cmd_setadditionaleffects(void)
             // Various checks for if this move effect can be applied this turn
             if (CanApplyAdditionalEffect(additionalEffect))
             {
-                percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
+                // Project Grounded: Vintage Spill wordt per treffer op hetzelfde doelwit sterker (25 -> 50 -> 100% confusion)
+                if (gCurrentMove == MOVE_VINTAGE_SPILL && additionalEffect->moveEffect == MOVE_EFFECT_CONFUSION)
+                {
+                    static const u8 sVintageSpillChances[] = {25, 50, 100};
+                    struct AdditionalEffect vintageEffect = *additionalEffect;
+                    vintageEffect.chance = sVintageSpillChances[gDisableStructs[gBattlerTarget].vintageSpillCount];
+                    percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), &vintageEffect);
+                    if (gDisableStructs[gBattlerTarget].vintageSpillCount < ARRAY_COUNT(sVintageSpillChances) - 1)
+                        gDisableStructs[gBattlerTarget].vintageSpillCount++;
+                }
+                else
+                {
+                    percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
+                }
 
                 // Activate effect if it's primary (chance == 0) or if RNGesus says so
                 if ((percentChance == 0) || RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))

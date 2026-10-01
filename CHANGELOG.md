@@ -15265,18 +15265,18 @@ Het gras en het meer in Ashfrost hebben nu encounters: alleen tamme, ongevaarlij
 ### [v.0.8.9] - Ashfrost Village: realistischere meer-encounters
 Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 20–24), Quagsire 5% (lv 22–24), Goldeen 4% (lv 20–24), Spheal 1% (lv 22, knipoog naar de Baikalrob, een echte zoetwaterzeehond in een bevroren meer). Seel en Lapras zijn eruit (zeedieren).
 
-### [v.0.9.0] - Kleine taken: Keccles, Cramorant, Avalugg
+### [v.0.8.10] - Kleine taken: Keccles, Cramorant, Avalugg
 - **Keccles (Route 136):** nieuwe introtekst van Jordi ("I wonder, why do so many Americans dress in camo..."), nabeschouwing aangepast (hij zei nog "See you in FORTREE", maar je komt hem pas na Fortree tegen). Levels 37/39 → **43, ace Salazzle 45** (Keccles 2 in Fortree is 39, Winona 41–43).
 - **Spit or swallow (Slateport):** "swallow" geeft nu een **Cramorant** (lv 10, Stockpile/Swallow) in plaats van Hisuian Qwilfish.
 - **Rivaal Route 136:** Hisuian Avalugg weg (gaat later naar Birch). Brendan krijgt zijn Exploud terug, May haar Lopunny (originele teams van Route 119, +3 levels).
 
-### [v.0.9.1] - Fly naar Ashfrost getest
+### [v.0.8.11] - Fly naar Ashfrost getest
 - In de emulator getest: Fly naar Ashfrost Village werkt (icoon op de kaart, landing voor het nieuwe Pokémon Center op (23,10)). Waarschijnlijk werkte het eerder niet door de oude heal location van vóór het herontwerp, of door een save die Ashfrost al bezocht had voordat de flag bestond: de flag `FLAG_VISITED_ASHFROST_TOWN` wordt pas gezet als je het dorp opnieuw binnenloopt.
 
-### [v.0.9.2] - Kortere pauzes in gevechten
+### [v.0.8.12] - Kortere pauzes in gevechten
 - `B_WAIT_TIME_MULTIPLIER` 10 → 8 (vanilla 16): berichten in gevechten blijven korter staan. Terugzetten kan in `include/config/battle.h` als het te snel voelt.
 
-### [v.0.9.3] - Snellere weer- en statusanimaties in gevechten
+### [v.0.8.13] - Snellere weer- en statusanimaties in gevechten
 De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun volledige animatie; alleen het weer aan het begin/eind van een beurt is korter.
 - **Zandstorm:** ongeveer de helft korter (sneller in- en uitfaden, 36 i.p.v. 101 frames vol zand, 4 i.p.v. 7 zandsikkels). Nieuw argument "kort" voor `AnimTask_LoadSandstormBackground`.
 - **Hagel:** de helft van de hagelstenen (`AnimTask_HailShort`), sneller donker worden, 4 i.p.v. 8 tikgeluiden.
@@ -15284,6 +15284,17 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Statussen:** poison (korter schudden en flitsen), confusion (eendjes 40 i.p.v. 90 frames en sneller rond), sleep en infatuation (halve pauzes).
 - CLAUDE.md: nieuwe secties "Zelflerend werken" en "Lessen" (o.a. uit het Ashfrost-proces).
 
-### [v.0.9.4] - Algemene versnelling van animaties tussen de beurten
-- In `LaunchBattleAnimation` (`src/battle_anim.c`): voor alle **status-animaties** en alle **algemene animaties** (weer, terrein-effecten, Leech Seed, Wrap/Fire Spin, Ingrain/Aqua Ring/Wish-heal, Leftovers/bessen, stat-wijzigingen, Salt Cure, Sea of Fire, Future Sight-treffer enz.) worden de wachttijden (`delay`) in het animatiescript **gehalveerd**. Geldt bovenop de korte weer-animaties van v0.9.3.
+### [v.0.8.14] - Algemene versnelling van animaties tussen de beurten
+- In `LaunchBattleAnimation` (`src/battle_anim.c`): voor alle **status-animaties** en alle **algemene animaties** (weer, terrein-effecten, Leech Seed, Wrap/Fire Spin, Ingrain/Aqua Ring/Wish-heal, Leftovers/bessen, stat-wijzigingen, Salt Cure, Sea of Fire, Future Sight-treffer enz.) worden de wachttijden (`delay`) in het animatiescript **gehalveerd**. Geldt bovenop de korte weer-animaties van v0.8.13.
 - Uitgezonderd (blijven op normale snelheid): aanvallen, Mega-evolutie, Primal Reversion, Power Construct, Ultra Burst, Tera, Z-moves, Totem-aura, Dynamax, vormverandering en het wegvallen van Illusion.
+
+### [v.0.8.15] - Lager Lagoon en Vintage Spill; versienummers
+- **Versienummers:** 0.9 is gereserveerd voor de laatste fase vóór de beta (1.0). De vorige secties v0.9.0–v0.9.4 heten nu v0.8.10–v0.8.14; we tellen door vanaf v0.8.15.
+- **Lager Lagoon** (`MOVE_LAGER_LAGOON`, **TM52**): bier-Surf. Water, special, 65 power, 100 acc, 15 PP, **50% confusion**, raakt iedereen naast de gebruiker (ook de partner, zoals Surf). Animatie: Surf-golf met eigen geel bierpalet (`graphics/battle_anims/backgrounds/lager_lagoon.pal`, `ANIM_SURF_PAL_LAGER`) en roomwitte schuimbubbels.
+- **Vintage Spill** (`MOVE_VINTAGE_SPILL`, **TM53**): wijn morsen. Water, special, 40 power, 100 acc, 20 PP, één doelwit. Confusion-kans loopt per treffer op hetzelfde doelwit op: **25% → 50% → 100%**. De teller (`vintageSpillCount` in `gDisableStructs`) blijft staan als de gebruiker tussendoor iets anders doet en verdwijnt pas als het doelwit wisselt. Animatie: Water Sport in bordeauxrood, het doelwit kleurt even rood en wankelt.
+- **Wallace** (Sootopolis Gym) geeft nu **TM53 Vintage Spill** bij de Rain Badge (was TM03 Scald; zijn tekst noemde nog Water Pulse). Uitleg aangepast, de absintgrap blijft. **TM03 Scald** heeft daardoor nog geen plek in de game (volgt).
+- **Wie leert ze (TM):** alle Water-types plus natuurlijke watermakers (Azurill, Phanpy, Donphan, Dewgong, Dragalge, Goomy-lijn incl. Hisui). Daarnaast:
+  - Lager Lagoon: hop (Hoppip, Skiploom, Jumpluff), graanvoorraad (Skwovet, Greedent), gist/schimmels (Paras, Parasect, Shroomish, Breloom, Foongus, Amoonguss, Morelull, Shiinotic, Toedscool, Toedscruel), gisting in de maag (Gulpin, Swalot) en vaste klanten (Spinda, Snorlax, Munchlax). 192 soorten.
+  - Vintage Spill: druiven treden (Bounsweet, Steenee, Tsareena), Shuckle (laat bessen gisten), fruit (Cherubi, Cherrim, Tropius, Applin, Flapple, Appletun, Dipplin, Hydrapple), eikenhouten vaten (Phantump, Trevenant, Dhelmise), gisting/proeverij (Gulpin, Swalot, Spinda). 190 soorten.
+  - Regels in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`).
+- Tests: `test/battle/grounded/lager_lagoon.c` (50% confusion, raakt ook de partner) en `vintage_spill.c` (25%, 50%, 100% ook met andere moves ertussen, reset na wisselen). Alle 6 slagen.

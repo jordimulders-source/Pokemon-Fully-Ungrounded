@@ -28,9 +28,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **De game respecteert de tijd van de speler.** Pokémon is een JRPG vol herhaling; schrap die herhaling zodat speed-up-knoppen niet nodig zijn. Animaties (aanvallen, schermtransities) zijn tof en blijven; wachttijden, overbodige teksten, ja/nee-vragen en minigames gaan eruit.
 - Al gedaan: korte intro, geen tutorial, instant heal bij de verpleegster, vissen zonder minigame (Old Rod blijft bewust slecht), tekstsnelheid standaard Fast, B zet de cursor op Run, korter flitsen vóór transities, Itemfinder als ORAS-dowsing, sneller fietsen/surfen, geen vluchtende Safari-/rondzwervende Pokémon, Wailmer Pail toont rijpe bessen, Repel "Use another?", EV/IV in het summary-scherm, kaartnaam-popup niet herhalen, itembeschrijving bij eerste keer oppakken, Fly vanuit de Town Map/PokéNav-kaart na de 6e badge.
 - Bewust níet: Exp. Share als Key Item, pc in het menu, type-effectiviteit altijd tonen, zwakke encounters ontlopen (zwakkere routes afzoeken kan een bewuste keuze zijn), uitleg van de laatst-gebruikte-bal-knop, een echte levelcap.
-- Goedgekeurd, nog te doen: **weer-effecten en statusanimaties in gevechten (bijv. confusion, poison) versnellen**, HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
 - Gedaan (events): Wally-gevecht in Meteor Falls en tag battle met Wally tegen Maxie + Tabitha op Mt. Chimney, Prof. Birch op het strand van Route 109, gevechtsmuziek kiezen in het optiemenu. Belangrijke gevechten (rivalen, gymleiders, Archie, Maxie, Wally, Birch) krijgen de mugshot-slide (`Mugshot:` in `trainers.party`). Legendary beasts (Raikou/Entei/Suicune) krijgen hun eigen thema (`MUS_C_VS_LEGEND_BEAST`) via `BattleSetup_StartLegendaryBattle`.
-- Later proberen: kortere pauzes tussen gevechtsberichten (`B_WAIT_TIME_MULTIPLIER` 10 → 8) en snellere schermtransities.
 
 ## Werkwijzen (herhaalde taken)
 
@@ -104,6 +102,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Na wijzigingen in de scripts: `python3 tools/dialogen/export.py <dialogen.json>` en publiceer dat bestand opnieuw bij de pagina, zodat de editor de actuele game-tekst toont.
 
 ## Sessies en overdracht
+- **Takenlijst:** `TODO.md` (openstaande taken op volgorde, goedgekeurde QoL, backlog). Afgeronde taken daar weghalen en in de changelog zetten.
 - Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
 - Branch: `claude/hopeful-brahmagupta-hsth8c` (PR 5 naar `master`). Is die PR gemerged, begin dan een nieuwe branch vanaf `master`.
 - Commit en push na elk afgerond stuk, met een changelogsectie.
@@ -113,10 +112,3 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - **Af:** Coldstep Cave, Keccles 1–3, Seltzer Surge (TM51), muziekcredits, Route 135, Route 136 met Crystal Cavity (kristalgrot, duikstuk, Suicune lv 50 met beasts-thema), weer sneeuw/as (`WEATHER_ASHFROST_CYCLE`), Town Map met Route 135/136 en Ashfrost.
 - Nog van Jordi: definitieve teksten van Route 135/136 en Ashfrost (nu placeholders).
 - **Ashfrost Town – herontwerp bezig** (feedback Jordi): in een kloof zoals Sootopolis, meer een paar lagen dieper, Pokémon Center centraal, Mart minder centraal, meer schwung/design. Het roze huis is in `snow_town` gerepareerd (4×4, dak vanaf rij 103) en de groene winkel is eruit; daardoor zijn de metatile-nummers van `snow_town` verschoven en is **`data/layouts/AshfrostTown/map.bin` nog niet opnieuw gebouwd** (de stad ziet er in de game nu kapot uit). Het nieuwe bouwscript `ashfrost.py` (44×34: rotswand rondom, dorpsring, twee lagen omlaag naar het meer) staat klaar maar faalt nog op de plaatsing van het Pokémon Center (deur valt op de trap/klif). Na het bouwen: layout 40×30 → 44×34 in `layouts.json`, objecten, warps en de coord-triggers in `AshfrostTown/map.json` (onderrand y 33) en de warp-bestemming in `Route136_EventScript_ToAshfrost` aanpassen.
-
-## Openstaande taken (in volgorde)
-1. **Ashfrost-herontwerp afmaken** (zie hierboven).
-2. **Fly naar Ashfrost werkt nog niet** (getest door Jordi). Uitzoeken: o.a. heal location/`sMapHealLocations`, de flag en `GetMapsecType`/fly-icoon in `src/region_map.c`.
-3. **Weer- en statusanimaties in gevechten versnellen** (confusion, poison enz.; zie Quality of life).
-4. **Bier- en wijnversie van Surf/Muddy Water** met hoge kans op confusion (idee van Jordi; details nog afstemmen, zie Seltzer Surge als voorbeeld).
-5. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.

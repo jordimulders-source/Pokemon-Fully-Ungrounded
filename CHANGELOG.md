@@ -15306,3 +15306,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **TM52 Lager Lagoon** ligt in **Coldstep Cave ijskamer 1** op het vloerhoekje rechts van het middelste ijsveld (31,6), op de plek van HM07 in Ice Path (Gold/Silver/Crystal). Koud bier in een ijsgrot. Vlag `FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON` (0x3A). Met de solver gecontroleerd: bereikbaar door over het middelste ijsveld te glijden, en je kunt nergens vastlopen.
 - **TM03 Scald** (was Wallace's TM) ligt op **Route 120** op de plek van de Full Heal (7,89). Vlag hernoemd naar `FLAG_ITEM_ROUTE_120_TM_SCALD` (zelfde waarde 0x407).
 - TODO: nieuwe move **Machine Learning** in de backlog gezet (uitwerking volgt).
+
+### [v.0.8.18] - QoL: geen bijnaamvraag na het vangen
+- Na het vangen komt de vraag "Give a nickname to the captured ...?" niet meer (`BattleScript_TryNicknameCaughtMon` in `data/battle_scripts_2.s`). Een bijnaam geven kan op verzoek via het summary-scherm (rename-optie). Bij een volle party gaat de Pokémon al direct naar de pc (geen wisselmenu).

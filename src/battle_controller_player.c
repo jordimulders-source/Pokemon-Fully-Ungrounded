@@ -50,6 +50,8 @@
 #include "test/test_runner_battle.h"
 
 static void ShowWildMonInfo(u32 battler); // Project Grounded
+static void Controller_WaitForDebug(u32 battler);
+static void WildInfo_OpenSummary(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
 static void PlayerHandleTrainerSlide(u32 battler);
@@ -415,90 +417,61 @@ static void HandleInputChooseAction(u32 battler)
     }
 }
 
-// Project Grounded: L in het actiemenu (wilde gevechten) toont ability, item en moves van de wilde Pokémon,
-// als je die soort al gevangen hebt. Eén omkaderd vak (het vak van het level-up-overzicht); elke knop sluit het.
-static void PrintWildMonInfoLine(const u8 *str, u32 line)
-{
-    u8 colors[3] = {TEXT_DYNAMIC_COLOR_5, TEXT_DYNAMIC_COLOR_4, TEXT_DYNAMIC_COLOR_6};
-    u32 width = WindowWidthPx(B_WIN_LEVEL_UP_BOX);
-    AddTextPrinterParameterized3(B_WIN_LEVEL_UP_BOX, GetFontIdToFit(str, FONT_NORMAL, 0, width), 0, 14 * line + (line >= 2 ? 2 : 0), colors, TEXT_SKIP_DRAW, str);
-}
+// Project Grounded: L in het actiemenu (wilde gevechten) opent het summary-scherm van de wilde Pokémon
+// (stats, moves, ability enz.), als je die soort al gevangen hebt; terug naar het gevecht met B.
+// Loopt via dezelfde engine-route als het debugmenu (B_ACTION_DEBUG), zodat het actiemenu daarna opnieuw wordt gevraagd.
+// Nog niet gevangen: een korte melding in het vak "What will ... do?".
+static bool8 sShowWildInfo;
+static u8 sWildInfoTarget;
+static EWRAM_DATA struct Pokemon sWildInfoMon = {0};
 
-static void WildMonInfo_WaitClosed(u32 battler)
+static void HandleInputWildMonNoData(u32 battler)
 {
-    if (!IsDma3ManagerBusyWithBgCopy())
+    if (JOY_NEW(A_BUTTON | B_BUTTON | L_BUTTON | R_BUTTON | START_BUTTON | SELECT_BUTTON | DPAD_ANY))
     {
-        SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
-        SetBgAttribute(1, BG_ATTR_PRIORITY, 1);
-        ShowBg(0);
-        ShowBg(1);
+        PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
+        BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
         gBattlerControllerFuncs[battler] = HandleInputChooseAction;
-    }
-}
-
-static void HandleInputWildMonInfo(u32 battler)
-{
-    if (JOY_NEW(A_BUTTON | B_BUTTON | L_BUTTON | R_BUTTON | START_BUTTON | SELECT_BUTTON))
-    {
-        PlaySE(SE_RG_BALL_CLICK);
-        HandleBattleWindow(18, 7, 29, 19, WINDOW_BG1 | WINDOW_CLEAR);
-        ClearWindowTilemap(B_WIN_LEVEL_UP_BOX);
-        CopyWindowToVram(B_WIN_LEVEL_UP_BOX, COPYWIN_MAP);
-        gBattlerControllerFuncs[battler] = WildMonInfo_WaitClosed;
-    }
-}
-
-static void WildMonInfo_WaitDrawn(u32 battler)
-{
-    if (!IsDma3ManagerBusyWithBgCopy())
-    {
-        gBattle_BG1_Y = 0;
-        gBattlerControllerFuncs[battler] = HandleInputWildMonInfo;
     }
 }
 
 static void ShowWildMonInfo(u32 battler)
 {
-    u32 i, line, target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
-    struct Pokemon *mon;
+    u32 target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
     u32 species;
 
     if (!IsBattlerAlive(target) && IsDoubleBattle())
         target = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
-    mon = GetBattlerMon(target);
-    species = GetMonData(mon, MON_DATA_SPECIES);
-
-    PlaySE(SE_RG_BALL_CLICK);
-    gBattle_BG1_X = 0;
-    gBattle_BG1_Y = 256; // verborgen tot alles getekend is
-    SetBgAttribute(0, BG_ATTR_PRIORITY, 1);
-    SetBgAttribute(1, BG_ATTR_PRIORITY, 0);
-    ShowBg(0);
-    ShowBg(1);
-    HandleBattleWindow(18, 7, 29, 19, WINDOW_BG1);
-    FillWindowPixelBuffer(B_WIN_LEVEL_UP_BOX, PIXEL_FILL(TEXT_DYNAMIC_COLOR_5));
+    species = GetMonData(GetBattlerMon(target), MON_DATA_SPECIES);
 
     if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
     {
-        PrintWildMonInfoLine(COMPOUND_STRING("No data yet."), 0);
-        PrintWildMonInfoLine(COMPOUND_STRING("Catch one"), 2);
-        PrintWildMonInfoLine(COMPOUND_STRING("first, then"), 3);
-        PrintWildMonInfoLine(COMPOUND_STRING("we'll talk."), 4);
+        PlaySE(SE_FAILURE);
+        BattlePutTextOnWindow(COMPOUND_STRING("No data yet.\nCatch one first!"), B_WIN_ACTION_PROMPT);
+        gBattlerControllerFuncs[battler] = HandleInputWildMonNoData;
+        return;
     }
-    else
+    PlaySE(SE_SELECT);
+    TryHideLastUsedBall();
+    sShowWildInfo = TRUE;
+    sWildInfoTarget = target;
+    BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
+    BtlController_Complete(battler);
+}
+
+static void WildInfo_OpenSummary(u32 battler)
+{
+    if (!gPaletteFade.active)
     {
-        u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
-        PrintWildMonInfoLine(gAbilitiesInfo[gBattleMons[target].ability].name, 0);
-        PrintWildMonInfoLine(item != ITEM_NONE ? GetItemName(item) : COMPOUND_STRING("No item"), 1);
-        for (i = 0, line = 2; i < MAX_MON_MOVES; i++)
-        {
-            if (gBattleMons[target].moves[i] != MOVE_NONE)
-                PrintWildMonInfoLine(GetMoveName(gBattleMons[target].moves[i]), line++);
-        }
+        gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+        ReshowBattleScreenDummy();
+        FreeAllWindowBuffers();
+        DeactivateAllTextPrinters();
+        // Kopie: een pointer naar gEnemyParty ziet het summary-scherm als een link-tegenstander (leest gLinkPlayers)
+        sWildInfoMon = gEnemyParty[gBattlerPartyIndexes[sWildInfoTarget]];
+        ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, &sWildInfoMon, 0, 0, CB2_SetUpReshowBattleScreenAfterMenu);
     }
-    PutWindowTilemap(B_WIN_LEVEL_UP_BOX);
-    CopyWindowToVram(B_WIN_LEVEL_UP_BOX, COPYWIN_FULL);
-    gBattlerControllerFuncs[battler] = WildMonInfo_WaitDrawn;
 }
 
 void HandleInputChooseTarget(u32 battler)
@@ -2435,6 +2408,14 @@ static void Controller_WaitForDebug(u32 battler)
 
 static void PlayerHandleBattleDebug(u32 battler)
 {
+    if (sShowWildInfo) // Project Grounded: summary-scherm van de wilde Pokémon i.p.v. het debugmenu
+    {
+        sShowWildInfo = FALSE;
+        gBattlerInMenuId = battler;
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gBattlerControllerFuncs[battler] = WildInfo_OpenSummary;
+        return;
+    }
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
     SetMainCallback2(CB2_BattleDebugMenu);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;

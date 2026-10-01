@@ -15355,3 +15355,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.28] - Wilde Pokémon-info in één vak
 - Feedback Jordi op v0.8.27: de info stond verspreid over de twee vakken van het actiemenu en de tekst viel half weg. Nu staat alles in **één omkaderd vak** rechts boven het gevecht (hetzelfde vak als het level-up-overzicht): ability, item, en daaronder de vier moves, elk op een eigen regel. Elke knop sluit het vak; het actiemenu blijft ongewijzigd staan.
+
+### [v.0.8.29] - Wilde Pokémon bekijken in het summary-scherm
+- Feedback Jordi op v0.8.28 (het vak overlapte het menu): **L** in het actiemenu van een wild gevecht opent nu een **apart scherm**, het gewone summary-scherm, met de wilde Pokémon: info (ability, nature), stats (ook IV's) en moves, net alsof je naar een eigen Pokémon kijkt. Met B terug naar het gevecht; daarna wordt het actiemenu opnieuw gevraagd. Alleen voor soorten die je al gevangen hebt; anders "No data yet. Catch one first!" in het vak links.
+- L i.p.v. R: R is in wilde gevechten de knop voor de laatst gebruikte bal (vasthouden + pijltjes om te wisselen).
+- Techniek: loopt via de engine-route van het debugmenu (`B_ACTION_DEBUG`); het scherm krijgt een kopie van de Pokémon, want een pointer naar `gEnemyParty` ziet het summary-scherm als een link-tegenstander (dat gaf ontbrekende tekst en een zwart scherm). Getest in de emulator: alle pagina's, terug naar het gevecht en daarna verder spelen.

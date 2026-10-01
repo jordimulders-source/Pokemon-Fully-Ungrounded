@@ -15272,3 +15272,6 @@ Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 
 
 ### [v.0.9.1] - Fly naar Ashfrost getest
 - In de emulator getest: Fly naar Ashfrost Village werkt (icoon op de kaart, landing voor het nieuwe Pokémon Center op (23,10)). Waarschijnlijk werkte het eerder niet door de oude heal location van vóór het herontwerp, of door een save die Ashfrost al bezocht had voordat de flag bestond: de flag `FLAG_VISITED_ASHFROST_TOWN` wordt pas gezet als je het dorp opnieuw binnenloopt.
+
+### [v.0.9.2] - Kortere pauzes in gevechten
+- `B_WAIT_TIME_MULTIPLIER` 10 → 8 (vanilla 16): berichten in gevechten blijven korter staan. Terugzetten kan in `include/config/battle.h` als het te snel voelt.

@@ -10,7 +10,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** **weer-effecten en statusanimaties in gevechten (bijv. confusion, poison) versnellen**, HM-moves zonder HM in je team (met een dialoog die de speler sowieso tegenkomt en het uitlegt), Move Deleter bij de Move Relearner, Rare Candy/vitamines in één keer meerdere gebruiken, kortere berichten na het vangen (bijnaam alleen op verzoek, volle party direct naar de pc), tas sorteren, twee registratieknoppen, nature/ability zichtbaar in de pc, hele team in één keer healen met een item, aanwijzing van het level van de volgende gym-ace, rematch-overzicht in de PokéNav, moves én ability zien van wilde Pokémon die je al gevangen hebt, nieuw gevangen Pokémon automatisch op een vrije plek in de pc, hengel en fiets zonder menu, bessen planten in één handeling, korte melding bij items oppakken (zonder tekstvak), gevechtsmenu onthoudt de laatst gekozen move.
-- **Later proberen:** kortere pauzes tussen gevechtsberichten (`B_WAIT_TIME_MULTIPLIER` 10 → 8) en snellere schermtransities.
+- **Later proberen:** snellere schermtransities.
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.

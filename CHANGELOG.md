@@ -15269,3 +15269,6 @@ Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 
 - **Keccles (Route 136):** nieuwe introtekst van Jordi ("I wonder, why do so many Americans dress in camo..."), nabeschouwing aangepast (hij zei nog "See you in FORTREE", maar je komt hem pas na Fortree tegen). Levels 37/39 → **43, ace Salazzle 45** (Keccles 2 in Fortree is 39, Winona 41–43).
 - **Spit or swallow (Slateport):** "swallow" geeft nu een **Cramorant** (lv 10, Stockpile/Swallow) in plaats van Hisuian Qwilfish.
 - **Rivaal Route 136:** Hisuian Avalugg weg (gaat later naar Birch). Brendan krijgt zijn Exploud terug, May haar Lopunny (originele teams van Route 119, +3 levels).
+
+### [v.0.9.1] - Fly naar Ashfrost getest
+- In de emulator getest: Fly naar Ashfrost Village werkt (icoon op de kaart, landing voor het nieuwe Pokémon Center op (23,10)). Waarschijnlijk werkte het eerder niet door de oude heal location van vóór het herontwerp, of door een save die Ashfrost al bezocht had voordat de flag bestond: de flag `FLAG_VISITED_ASHFROST_TOWN` wordt pas gezet als je het dorp opnieuw binnenloopt.

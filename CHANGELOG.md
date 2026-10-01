@@ -15235,3 +15235,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Kliffen in de stad: schone gestapelde rotslagen in plaats van de voorkant-tile met grotopening.
 - `snow_tileset.py`: emissie in een functie (`emit`), secondary hergebruikt identieke tiles uit de primary. De route-tileset `snow` blijft byte-voor-byte gelijk.
 - Heal location naar het nieuwe Pokémon Center (21,10); Route 136 warpt naar (7,32).
+
+### [v.0.8.4] - Ashfrost Village: feedback verwerkt
+- Sneeuwpop en konijnbeeld zijn nu 1×2 (het hoofd zat in de rij erboven), de grote besneeuwde boom is 3×6 (top erbij) en de luifel van het marktkraampje is 3×3 (zonder het losse grasstukje uit de bron).
+- Lantaarns werkelijk zichtbaar (zaten een kolom naast het plaatje in de bronsheet).
+- Bankjes aan het meer vervangen door besneeuwde boomstammen.
+- Trappen midden in een rechte klifwand in plaats van bij een hoek: dorp → weide bij het kraampje, weide → meer rechts.
+- Meer groter (meeroever breder).

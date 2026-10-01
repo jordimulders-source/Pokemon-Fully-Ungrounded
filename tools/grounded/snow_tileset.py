@@ -297,17 +297,18 @@ if TOWN:
                       'crate': (3, 51), 'bonsai': (3, 50), 'snowbush': (3, 38)}.items():
         add(n, G, cell(c, r))
     for dy in range(2):
-        add(f'lamp_{dy}', G, cell(2, 48 + dy))
-    for k, r in (('pink', 43), ('red', 45), ('purple', 47), ('blue', 49)):
-        for dx in range(2):
-            add(f'bench_{k}_{dx}', G, cell(6 + dx, r))
+        add(f'lamp_{dy}', G, cell(1, 48 + dy))
+        add(f'snowman_{dy}', G, cell(3, 21 + dy))        # sneeuwpop en konijnbeeld zijn 1x2 (hoofd in de rij erboven)
+        add(f'bunny_{dy}', G, cell(4, 21 + dy))
     PRIMARY = list(metatiles)
     metatiles[:] = []
 
+    BLANK = {('stall', 1, 2), ('bigtree', 0, 0), ('bigtree', 2, 0)}   # vreemde stukjes in de bron (gras, markeringen)
     def building(name, c0, r0, w, h, door):
         for dy in range(h):
             for dx in range(w):
-                add(f'{name}_{dx}{dy}', G, cell(c0 + dx, r0 + dy), beh='door' if (dx, dy) == door else 'normal')
+                top = None if (name, dx, dy) in BLANK else cell(c0 + dx, r0 + dy)
+                add(f'{name}_{dx}{dy}', G, top, beh='door' if (dx, dy) == door else 'normal')
     building('pc', 0, 111, 5, 5, (2, 4))
     building('mart', 0, 116, 4, 4, (2, 3))
     building('house_pink', 0, 103, 4, 4, (2, 3))      # dak begint halverwege rij 103
@@ -316,9 +317,9 @@ if TOWN:
     building('house_yellow', 4, 107, 4, 4, (1, 3))
     building('lodge', 0, 84, 5, 5, (1, 4))            # grote grijze lodge (5x5)
     building('igloo', 0, 25, 3, 3, (1, 2))
-    building('stall', 3, 27, 3, 2, None)
+    building('stall', 3, 26, 3, 3, None)              # luifel begint onderin rij 26
     building('statue', 5, 94, 3, 2, None)
-    building('bigtree', 0, 38, 3, 5, None)
+    building('bigtree', 0, 37, 3, 6, None)            # top in rij 37 (alleen de middelste kolom)
     building('icepond', 0, 43, 3, 3, None)
 
 

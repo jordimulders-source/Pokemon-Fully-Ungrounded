@@ -21,8 +21,8 @@ def rrect(x0,y0,x1,y1,cut=2):
 GORGE=set(rect(5,30,8,H+5))
 crater=rrect(3,5,40,29,0)|GORGE                    # dorp; ingang via een kloof linksonder
 pit1=rrect(10,15,33,29,3)                        # weide
-pit0=rrect(15,21,29,29,2)                        # meeroever
-lake=smooth(set(blob(23.5,25.4,5.2,2.4,seed=3,rough=0.10)))
+pit0=rrect(14,21,31,29,2)                        # meeroever
+lake=smooth(set(blob(22.8,25.9,6.9,3.0,seed=3,rough=0.10)))
 RIM=ALL-crater
 terrace(m,ALL-pit0,face=2)
 terrace(m,ALL-pit1,face=2)
@@ -32,8 +32,9 @@ for c in list(pit0):
 m.water({c for c in lake if inmap(c)})
 
 def top(S,x): return min(y for (xx,y) in S if xx==x)
-# trappen: dorp -> weide rechts, weide -> meeroever links (de weg naar beneden slingert over de weide)
-S1=(30,top(pit1,30)-2); S0=(16,top(pit0,16)-2)
+# trappen midden in een rechte klifwand (niet bij een hoek): dorp -> weide links, weide -> meeroever rechts
+S1=(17,top(pit1,17)-2); S0=(26,top(pit0,26)-2)
+assert all(top(pit1,x)==top(pit1,17) for x in range(15,21)) and all(top(pit0,x)==top(pit0,26) for x in range(25,29))
 for (sx,sy) in (S1,S0):
     for y in (sy,sy+1): m.put(sx,y,'hstairs_l',0); m.put(sx+1,y,'hstairs_r',0)
 print('trappen',S1,S0)
@@ -79,7 +80,7 @@ for (dx_,dy_) in DOORS.values():
     else: line((dx_,dy_+1),(dx_,10),1)
 line((S1[0],12),(S1[0],S1[1]-1))      # naar de trap
 line((S1[0],S1[1]+2),(S1[0],17))      # weide
-line((S0[0],17),(S1[0]+1,17))
+line((S1[0],17),(S0[0]+1,17))
 line((S0[0],17),(S0[0],S0[1]-1))
 line((S0[0],S0[1]+2),(S0[0],22))      # strand
 path={c for c in path if FLOOR(c)}
@@ -87,7 +88,7 @@ autopath(m,path,'path_stone')
 
 # --- bewoners/objecten (vrijhouden) ---
 # visser, kind bij de sneeuwpop, oude vrouw bij het standbeeld, hiker bij de ingang, vrouw in de dorpsstraat
-EVENTS={(18,24),(6,13),(24,15),(6,27),(33,12)}
+EVENTS={(19,22),(7,13),(24,15),(6,27),(33,12)}
 print('events',sorted(EVENTS))
 
 def free(c): return FLOOR(c) and c not in path and c not in EVENTS
@@ -98,14 +99,16 @@ for (x,y) in [(10,9),(18,9),(25,9),(32,9),(4,19),(39,14),(39,22),(8,27)]:
     if free((x,y)) and free((x,y-1)): m.put(x,y-1,'lamp_0',1); m.put(x,y,'lamp_1',1)
 for (dx_,dy_) in DOORS.values():
     put_if(dx_-1,dy_+1,'pot_red'); put_if(dx_+1,dy_+1,'pot_white')
-obj('stall',15,7,3,2)                                 # marktkraampje naast het Center
+obj('stall',15,6,3,3)                                 # marktkraampje naast het Center
 obj('statue',20,15,3,2)                               # standbeeld op de weide
 obj('igloo',37,24,3,3,(1,2))                          # iglo (deur als decor)
 if m.g[26][38]==N['igloo_12']: m.col[26][38]=1
-for (x,y,k) in [(21,22,'blue'),(25,22,'red')]:
-    if free((x,y)) and free((x+1,y)): m.put(x,y,f'bench_{k}_0',1); m.put(x+1,y,f'bench_{k}_1',1)
-obj('bigtree',11,21,3,5)
-for (x,y,n) in [(5,13,'snowman'),(6,16,'bunny_statue'),(38,13,'snowball_big'),(32,6,'barrel'),(33,6,'crate'),(39,16,'rock_round'),(17,8,'sign_wood')]:
+for (x,y) in [(16,21),(17,21),(22,21),(23,21)]:       # boomstammen als bankjes aan het meer
+    put_if(x,y,'log')
+obj('bigtree',10,21,3,6)
+for (x,y,n) in [(6,12,'snowman'),(5,15,'bunny')]:      # 1x2: hoofd erboven
+    if free((x,y)) and free((x,y+1)): m.put(x,y,n+'_0',1); m.put(x,y+1,n+'_1',1)
+for (x,y,n) in [(38,13,'snowball_big'),(32,6,'barrel'),(33,6,'crate'),(39,16,'rock_round'),(18,8,'sign_wood')]:
     put_if(x,y,n)
 
 # --- bos op de kloofrand, dennen en keien ---

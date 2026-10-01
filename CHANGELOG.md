@@ -15325,3 +15325,9 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - De gids bij de ingang van elke gym zegt na zijn eigen advies ook het **level van de ace** van die gymleider (Roxanne 16, Brawly 22, Wattson 25, Flannery 29, Norman 35, Winona 43, Tate & Liza 49, Wallace 56).
 - Na de overwinning noemt hij de **volgende gym** en het level van die ace (bij Norman: "Your dad."); in Sootopolis verwijst hij naar de League. Jordi's bestaande gidsteksten zijn ongewijzigd; de tips staan in eigen labels (`*_Text_GymGuideAceLevel`, `*_Text_GymGuideNextAce`, placeholders).
 - **Let op:** past Jordi een gymteam aan, dan moet het level in deze teksten mee.
+
+### [v.0.8.23] - QoL: hele team healen met één knop (SELECT in het partymenu)
+- In het partymenu (buiten gevechten) healt **SELECT** het hele team met de heal-items uit je tas (`HealPartyWithBagItems` in `src/party_menu.c`). Per Pokémon: eerst reviven (Revive, anders Max Revive), dan de status (eerst het specifieke middel zoals Antidote/Awakening, anders het goedkoopste Full Heal-achtige item, incl. Lava Cookie enz.), dan HP.
+- Voor HP kiest hij de **goedkoopste combinatie**: per soort potion (Potion, Berry Juice, Fresh Water, Soda Pop, Lemonade, Super/Hyper/Max Potion, Moomoo Milk, Full Restore) berekent hij hoeveel er nodig zijn en wat dat samen kost; heb je nergens genoeg van, dan eerst de sterkste. Items werken precies zoals bij normaal gebruik. Bittere kruiden (vriendschap omlaag), bessen en PP-items worden niet gebruikt.
+- Korte melding: "Used X item(s). The whole team is patched up!", "...then ran out of suitable medicine.", "No suitable medicine in the BAG. Thoughts and prayers it is." of "Everyone is already fine. Show-offs." (placeholders).
+- Getest in de emulator: Lapras (10 HP, vergiftigd) en Machamp (flauwgevallen) in één druk vol, met 6+3 Potions, 1 Antidote en 1 Revive.

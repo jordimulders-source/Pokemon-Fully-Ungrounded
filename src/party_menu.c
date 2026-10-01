@@ -330,6 +330,7 @@ static void Task_CancelChooseMonYesNo(u8);
 static void PartyMenuDisplayYesNoMenu(void);
 static void Task_HandleCancelChooseMonYesNoInput(u8);
 static void Task_ReturnToChooseMonAfterText(u8);
+static void HealPartyWithBagItems(u8 taskId);
 static void UpdateCurrentPartySelection(s8 *, s8);
 static void UpdatePartySelectionSingleLayout(s8 *, s8);
 static void UpdatePartySelectionDoubleLayout(s8 *, s8);
@@ -1442,8 +1443,161 @@ void Task_HandleChooseMonInput(u8 taskId)
                 MoveCursorToConfirm();
             }
             break;
+        case SELECT_BUTTON:
+            HealPartyWithBagItems(taskId);
+            break;
         }
     }
+}
+
+// Project Grounded: het hele team healen met de heal-items uit de tas, in één druk op SELECT.
+// Per Pokémon: eerst reviven, dan de status, dan HP. Steeds het goedkoopste item dat het werk doet;
+// is geen enkel item genoeg, dan het sterkste en opnieuw. Items worden toegepast zoals bij normaal gebruik.
+static const u16 sAutoHealHpItems[] =
+{
+    ITEM_POTION, ITEM_BERRY_JUICE, ITEM_FRESH_WATER, ITEM_SODA_POP, ITEM_LEMONADE, ITEM_SUPER_POTION,
+    ITEM_MOOMOO_MILK, ITEM_HYPER_POTION, ITEM_MAX_POTION, ITEM_FULL_RESTORE,
+};
+
+static const u16 sAutoHealGenericStatusItems[] =
+{
+    ITEM_PEWTER_CRUNCHIES, ITEM_LAVA_COOKIE, ITEM_OLD_GATEAU, ITEM_RAGE_CANDY_BAR, ITEM_CASTELIACONE,
+    ITEM_LUMIOSE_GALETTE, ITEM_SHALOUR_SABLE, ITEM_BIG_MALASADA, ITEM_FULL_HEAL,
+};
+
+static bool32 AutoHeal_TryItem(u32 slot, u16 item, u32 *used)
+{
+    if (item == ITEM_NONE || !CheckBagHasItem(item, 1))
+        return FALSE;
+    if (ExecuteTableBasedItemEffect(&gPlayerParty[slot], item, slot, 0))
+        return FALSE; // geen effect
+    RemoveBagItem(item, 1);
+    (*used)++;
+    return TRUE;
+}
+
+static u16 AutoHeal_SpecificStatusCure(u32 status)
+{
+    if (status & STATUS1_SLEEP)
+        return ITEM_AWAKENING;
+    if (status & STATUS1_PSN_ANY)
+        return ITEM_ANTIDOTE;
+    if (status & STATUS1_BURN)
+        return ITEM_BURN_HEAL;
+    if (status & STATUS1_PARALYSIS)
+        return ITEM_PARALYZE_HEAL;
+    if (status & STATUS1_ICY_ANY)
+        return ITEM_ICE_HEAL;
+    return ITEM_NONE;
+}
+
+static void AutoHeal_HealHP(u32 slot, u32 *used)
+{
+    struct Pokemon *mon = &gPlayerParty[slot];
+    u32 i;
+
+    while (TRUE)
+    {
+        u32 hp = GetMonData(mon, MON_DATA_HP);
+        u32 maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+        u16 best = ITEM_NONE, strongest = ITEM_NONE;
+        u32 bestCost = 0xFFFFFFFF, strongestAmount = 0;
+
+        if (hp == 0 || hp >= maxHp)
+            return;
+        for (i = 0; i < ARRAY_COUNT(sAutoHealHpItems); i++)
+        {
+            u16 item = sAutoHealHpItems[i];
+            u32 amount = GetItemHoldEffectParam(item);
+            u32 owned = CountTotalItemQuantityInBag(item);
+            u32 needed, cost;
+            if (owned == 0)
+                continue;
+            if (amount == 255)
+                amount = maxHp; // Max Potion / Full Restore
+            // Hoeveel van dit item zijn nodig om vol te raken, en wat kost dat samen?
+            needed = (maxHp - hp + amount - 1) / amount;
+            cost = needed * GetItemPrice(item);
+            if (needed <= owned && cost < bestCost)
+            {
+                best = item;
+                bestCost = cost;
+            }
+            if (amount > strongestAmount)
+            {
+                strongest = item;
+                strongestAmount = amount;
+            }
+        }
+        if (best == ITEM_NONE)
+            best = strongest;
+        if (!AutoHeal_TryItem(slot, best, used))
+            return;
+    }
+}
+
+static void HealPartyWithBagItems(u8 taskId)
+{
+    u32 slot, i, used = 0;
+    bool32 everyoneHealthy = TRUE;
+
+    for (slot = 0; slot < gPlayerPartyCount; slot++)
+    {
+        struct Pokemon *mon = &gPlayerParty[slot];
+        u32 status;
+
+        if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
+            continue;
+        if (GetMonData(mon, MON_DATA_HP) == 0)
+        {
+            if (!AutoHeal_TryItem(slot, ITEM_REVIVE, &used))
+                AutoHeal_TryItem(slot, ITEM_MAX_REVIVE, &used);
+        }
+        status = GetMonData(mon, MON_DATA_STATUS);
+        if (status & STATUS1_ANY)
+        {
+            if (!AutoHeal_TryItem(slot, AutoHeal_SpecificStatusCure(status), &used))
+            {
+                for (i = 0; i < ARRAY_COUNT(sAutoHealGenericStatusItems); i++)
+                {
+                    if (AutoHeal_TryItem(slot, sAutoHealGenericStatusItems[i], &used))
+                        break;
+                }
+            }
+        }
+        AutoHeal_HealHP(slot, &used);
+
+        if (GetMonData(mon, MON_DATA_HP) < GetMonData(mon, MON_DATA_MAX_HP) || (GetMonData(mon, MON_DATA_STATUS) & STATUS1_ANY))
+            everyoneHealthy = FALSE;
+
+        SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
+        DisplayPartyPokemonData(slot);
+        CopyWindowToVram(sPartyMenuBoxes[slot].windowId, COPYWIN_FULL);
+    }
+
+    if (used == 0 && everyoneHealthy)
+    {
+        PlaySE(SE_SELECT);
+        StringCopy(gStringVar4, COMPOUND_STRING("Everyone is already fine.\nShow-offs.{PAUSE_UNTIL_PRESS}"));
+    }
+    else if (used == 0)
+    {
+        PlaySE(SE_FAILURE);
+        StringCopy(gStringVar4, COMPOUND_STRING("No suitable medicine in the BAG.\nThoughts and prayers it is.{PAUSE_UNTIL_PRESS}"));
+    }
+    else
+    {
+        PlaySE(SE_USE_ITEM);
+        ConvertIntToDecimalStringN(gStringVar1, used, STR_CONV_MODE_LEFT_ALIGN, 3);
+        if (everyoneHealthy)
+            StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Used {STR_VAR_1} item(s). The whole team\nis patched up!{PAUSE_UNTIL_PRESS}"));
+        else
+            StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Used {STR_VAR_1} item(s), then ran out\nof suitable medicine.{PAUSE_UNTIL_PRESS}"));
+    }
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
 }
 
 static s8 *GetCurrentPartySlotPtr(void)
@@ -1716,6 +1870,10 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
 
     if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
+
+    // Project Grounded: SELECT healt het hele team met items uit de tas (alleen buiten gevechten)
+    if (JOY_NEW(SELECT_BUTTON) && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && gPartyMenu.action == PARTY_ACTION_CHOOSE_MON)
+        return SELECT_BUTTON;
 
     if (movementDir && gPlayerPartyCount != 0)
     {

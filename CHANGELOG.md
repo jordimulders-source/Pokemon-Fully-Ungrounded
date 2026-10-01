@@ -15298,3 +15298,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
   - Vintage Spill: druiven treden (Bounsweet, Steenee, Tsareena), Shuckle (laat bessen gisten), fruit (Cherubi, Cherrim, Tropius, Applin, Flapple, Appletun, Dipplin, Hydrapple), eikenhouten vaten (Phantump, Trevenant, Dhelmise), gisting/proeverij (Gulpin, Swalot, Spinda). 190 soorten.
   - Regels in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`).
 - Tests: `test/battle/grounded/lager_lagoon.c` (50% confusion, raakt ook de partner) en `vintage_spill.c` (25%, 50%, 100% ook met andere moves ertussen, reset na wisselen). Alle 6 slagen.
+
+### [v.0.8.16] - Vintage Spill sterker
+- Lager Lagoon was in enkelgevechten op alles beter. **Vintage Spill** nu: **60 power** (was 40), confusion **50% → 100%** (was 25 → 50 → 100%): de tweede treffer op hetzelfde doelwit verwart altijd. De teller werkt verder hetzelfde (blijft staan bij andere moves, weg na wisselen). Tests aangepast.

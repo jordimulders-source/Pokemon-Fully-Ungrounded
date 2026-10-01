@@ -21384,7 +21384,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_LagerLagoon,
     },
 
-    // Project Grounded: wijn morsen (Water Sport in bordeaux): 40 power; confusion 25 -> 50 -> 100% per treffer
+    // Project Grounded: wijn morsen (Water Sport in bordeaux): 60 power; confusion 50 -> 100% per treffer
     // op hetzelfde doelwit (teller in gDisableStructs, verdwijnt bij wisselen). Zie Cmd_setadditionaleffects.
     [MOVE_VINTAGE_SPILL] =
     {
@@ -21393,7 +21393,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Splashes fine wine. Each\n"
             "hit is likelier to confuse."),
         .effect = EFFECT_HIT,
-        .power = 40,
+        .power = 60,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 20,
@@ -21402,7 +21402,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 25,
+            .chance = 50,
         }),
         .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,

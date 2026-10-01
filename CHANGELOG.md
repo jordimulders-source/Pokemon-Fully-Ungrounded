@@ -15342,3 +15342,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - Zo kun je bijv. de **fiets op L en de hengel op SELECT** zetten: allebei zonder menu. Zonder item op L doet L niets. Staat de optie "L=A" aan, dan werkt L als A (geen registratieknop).
 - Opgeslagen in `VAR_REGISTERED_ITEM_L` (was `VAR_UNUSED_0x409B`), dus de save-structuur is ongewijzigd. Wisselen tussen Mach/Acro Bike past ook het item op L aan. Code: `UseRegisteredKeyItemLOnField` / `ItemMenu_RegisterL` in `src/item_menu.c`, `pressedLButton` in `src/field_control_avatar.c`.
 - Getest in de emulator: Mach Bike op L (op- en afstappen), Old Rod op SELECT.
+
+### [v.0.8.26] - QoL: nature en ability zichtbaar in de pc
+- Het infopaneel links in de pc toont nu: naam, geslacht/level, **nature**, **ability** en het vastgehouden item (in die volgorde). De regel "/Soort" vervalt als de Pokémon geen bijnaam heeft (die was dan dubbel); met bijnaam staan soort en geslacht/level samen op één regel.
+- De nature is de effectieve nature (met mints meegerekend, `MON_DATA_HIDDEN_NATURE`). Werkt voor party en boxen; in de modus "Move Items" blijft het oude paneel.
+- Getest in de emulator (party én box).

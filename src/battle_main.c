@@ -4517,6 +4517,9 @@ static void HandleTurnActionSelectionState(void)
 
                             // Get the chosen move position (and thus the chosen move) and target from the returned buffer.
                             gBattleStruct->chosenMovePositions[battler] = gBattleResources->bufferB[battler][2] & ~RET_GIMMICK;
+                            // Project Grounded: onthoud de gekozen move per teamlid, zodat de cursor er na een wissel weer staat
+                            if (IsOnPlayerSide(battler) && gBattleStruct->chosenMovePositions[battler] < MAX_MON_MOVES)
+                                gBattleStruct->lastMoveCursorByPartySlot[gBattlerPartyIndexes[battler]] = gBattleStruct->chosenMovePositions[battler];
                             gChosenMoveByBattler[battler] = GetChosenMoveFromPosition(battler);
                             gBattleStruct->moveTarget[battler] = gBattleResources->bufferB[battler][3];
                             if (IsBattleMoveStatus(gChosenMoveByBattler[battler]) && GetBattlerAbility(battler) == ABILITY_MYCELIUM_MIGHT)

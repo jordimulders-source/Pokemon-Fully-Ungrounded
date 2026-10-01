@@ -15317,3 +15317,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 ### [v.0.8.20] - QoL: Move Deleter bij de Move Relearner
 - In het huis van de Move Relearner (Fallarbor) zit nu ook een **Move Deleter** (`LOCALID_FALLARBOR_MOVE_DELETER`, op de stoel tegenover de Relearner, (7,4)). Geen ja/nee-vraag vooraf: hij vraagt direct welke Pokémon iets moet vergeten (B annuleert). De rest van het gesprek is dat van de Move Deleter in Lilycove (die blijft ook bestaan).
 - Placeholdertekst: "He teaches POKéMON old moves. I make them forget new ones. Together we run a perfectly pointless business."
+
+### [v.0.8.21] - QoL: gevechtsmenu onthoudt de laatst gekozen move
+- De move-cursor staat nu per teamlid op de laatst gekozen move, **ook na wisselen** (eerder sprong hij na een wissel terug naar de eerste move). Opgeslagen in `gBattleStruct->lastMoveCursorByPartySlot` (gezet in `battle_main.c` bij het kiezen, gelezen in `PlayerHandleChooseMove`). Geldt per gevecht. Getest in de emulator: Lapras kiest Splash, wisselt naar Machamp (cursor op de eerste move), terug naar Lapras: cursor weer op Splash.

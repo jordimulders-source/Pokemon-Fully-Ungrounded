@@ -641,6 +641,7 @@ struct BattleStruct
     u8 linkBattleVsSpriteId_V; // The letter "V"
     u8 linkBattleVsSpriteId_S; // The letter "S"
     u8 chosenMovePositions[MAX_BATTLERS_COUNT];
+    u8 lastMoveCursorByPartySlot[PARTY_SIZE]; // Project Grounded: laatst gekozen move per teamlid van de speler (ook na wisselen)
     u8 stateIdAfterSelScript[MAX_BATTLERS_COUNT];
     u8 prevSelectedPartySlot;
     u8 stringMoveType;

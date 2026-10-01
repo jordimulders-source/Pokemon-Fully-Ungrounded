@@ -2090,6 +2090,11 @@ void PlayerHandleChooseMove(u32 battler)
     {
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
+        // Project Grounded: cursor op de laatst gekozen move van dit teamlid, ook na een wissel
+        gMoveSelectionCursor[battler] = gBattleStruct->lastMoveCursorByPartySlot[gBattlerPartyIndexes[battler]];
+        if (gMoveSelectionCursor[battler] >= MAX_MON_MOVES || moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_NONE)
+            gMoveSelectionCursor[battler] = 0;
+
         InitMoveSelectionsVarsAndStrings(battler);
         gBattleStruct->gimmick.playerSelect = FALSE;
         TryToAddMoveInfoWindow();

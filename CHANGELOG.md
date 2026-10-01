@@ -15309,3 +15309,7 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.18] - QoL: geen bijnaamvraag na het vangen
 - Na het vangen komt de vraag "Give a nickname to the captured ...?" niet meer (`BattleScript_TryNicknameCaughtMon` in `data/battle_scripts_2.s`). Een bijnaam geven kan op verzoek via het summary-scherm (rename-optie). Bij een volle party gaat de Pokémon al direct naar de pc (geen wisselmenu).
+
+### [v.0.8.19] - QoL: bessen planten in één handeling
+- Lege grond aanspreken opent **direct de bessentas** (geen "Want to plant a BERRY?" met ja/nee meer; B annuleert).
+- Heb je de **Wailmer Pail**, dan krijgt de bes na het planten meteen water (`BerryTree_EventScript_WaterAfterPlanting`), ook als je een bes vanuit de tas op de grond gebruikt. In de emulator gecontroleerd: de boom staat direct op "gewaterd".

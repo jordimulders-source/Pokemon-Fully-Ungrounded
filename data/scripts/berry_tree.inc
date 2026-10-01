@@ -36,10 +36,8 @@ BerryTree_EventScript_CheckSoil::
 BerryTree_EventScript_WantToPlant::
 	specialvar VAR_RESULT, PlayerHasMulch
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlantMulch
-	msgbox BerryTree_Text_WantToPlant, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_ChooseBerryToPlant
-	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPlanting
-	end
+	@ Project Grounded: geen ja/nee-vraag, direct de bessentas (B annuleert)
+	goto BerryTree_EventScript_ChooseBerryToPlant
 
 BerryTree_EventScript_WantToMulch::
 .if OW_BERRY_MULCH_USAGE == TRUE
@@ -78,6 +76,7 @@ BerryTree_EventScript_ChooseBerryToPlant::
 	goto_if_eq VAR_ITEM_ID, 0, BerryTree_EventScript_CancelPlanting
 	removeitem VAR_ITEM_ID
 	call BerryTree_EventScript_PlantBerry
+	call BerryTree_EventScript_WaterAfterPlanting
 
 BerryTree_EventScript_CancelPlanting::
 	release
@@ -207,6 +206,7 @@ BerryTree_EventScript_ItemUsePlantBerry::
 	lockall
 	special ObjectEventInteractionGetBerryTreeData
 	call BerryTree_EventScript_PlantBerry
+	call BerryTree_EventScript_WaterAfterPlanting
 	releaseall
 	end
 
@@ -245,6 +245,19 @@ BerryTree_EventScript_WaterBerry::
 	waitbuttonpress
 	releaseall
 	end
+
+@ Project Grounded: planten en water geven in één handeling (als je de Wailmer Pail hebt)
+BerryTree_EventScript_WaterAfterPlanting::
+	checkitem ITEM_WAILMER_PAIL
+	goto_if_eq VAR_RESULT, FALSE, BerryTree_EventScript_WaterAfterPlantingEnd
+	specialvar VAR_RESULT, CanWaterBerryPlot
+	goto_if_eq VAR_RESULT, FALSE, BerryTree_EventScript_WaterAfterPlantingEnd
+	closemessage
+	special ObjectEventInteractionWaterBerryTree
+	special DoWateringBerryTreeAnim
+	waitstate
+BerryTree_EventScript_WaterAfterPlantingEnd::
+	return
 
 BerryTree_EventScript_PlantBerry::
 	special ObjectEventInteractionPlantBerryTree

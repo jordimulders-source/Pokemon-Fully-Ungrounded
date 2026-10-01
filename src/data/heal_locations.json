@@ -147,7 +147,7 @@
     {
       "id": "HEAL_LOCATION_ASHFROST_TOWN",
       "map": "MAP_ASHFROST_TOWN",
-      "x": 21,
+      "x": 23,
       "y": 10,
       "respawn_map": "MAP_ASHFROST_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_ASHFROST_NURSE"

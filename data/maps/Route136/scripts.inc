@@ -296,6 +296,6 @@ Route136_Text_HakonPostBattle:
 
 @ De bergpas naar Ashfrost: Ashfrost heeft een eigen tileset, dus geen naadloze connectie maar een warp
 Route136_EventScript_ToAshfrost::
-	warpsilent MAP_ASHFROST_TOWN, 7, 32
+	warpsilent MAP_ASHFROST_TOWN, 7, 38
 	waitstate
 	end

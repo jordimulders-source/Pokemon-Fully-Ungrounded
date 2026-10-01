@@ -1,49 +1,50 @@
-"""Bouwt data/layouts/AshfrostTown/map.bin: Ashfrost Village ligt in een dal boven op de berg.
-Een hoge rotswand rondom (bos erop), het dorp op de bovenste ring, en een slingerpad met trappen
-twee lagen omlaag naar een meer met een strandje. Pokémon Center centraal boven het dal.
+"""Bouwt data/layouts/AshfrostTown/map.bin: Ashfrost Village ligt in een diep dal boven op de berg.
+Een hoge rotswand rondom (bos erop). Vier lagen: bovenaan het dorp (Pokémon Center centraal), één laag lager
+nog een huis en het heiligdom met de stenen Regi-beelden, dan een groene weide, en helemaal onderin het meer.
+Een slingerpad met stenen trappen (midden in rechte klifwanden) loopt van boven naar beneden.
 Tilesets: snow_town_base (primary) + snow_town (secondary), zie snow_tileset.py --town.
-Ingang: een smalle kloof linksonder (x 5-8), warp naar Route 136 (coord-triggers op y 33).
-Gebruik: python3 tools/grounded/maptools/ashfrost.py [voorbeeld.png]"""
+Ingang: een smalle kloof linksonder (x 5-8), warp naar Route 136 (coord-triggers op de onderste rij).
+Gebruik: python3 tools/grounded/maptools/ashfrost.py [voorbeeld.png]   (SOFT=1: objecten die niet passen melden)"""
 import os, sys, struct, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from snowlib import *
 use_tileset('snow_town')
-W,H=44,34
+W,H=48,40
 m=M(W,H,base='cliff_c'); rnd=random.Random(2024)
 ALL={(x,y) for x in range(-4,W+4) for y in range(-4,H+6)}
 inmap=lambda c: 0<=c[0]<W and 0<=c[1]<H
 
-# --- vormen: kloof (dorp), weide 1 laag lager, meeroever 2 lagen lager ---
-# Strakke vormen (rechthoeken met afgeschuinde hoeken) geven duidelijke, doorlopende klifwanden.
+# --- vormen: kloof (dorp), laag 1 (huis + heiligdom), laag 2 (weide), laag 3 (meer) ---
 def rrect(x0,y0,x1,y1,cut=2):
     # alleen de bovenhoeken afschuinen: onderhoeken van een kuil worden anders losse klifstukjes
     return {(x,y) for (x,y) in rect(x0,y0,x1,y1) if min(x-x0,x1-x)+(y-y0)>=cut}
-GORGE=set(rect(5,30,8,H+5))
-crater=rrect(3,5,40,29,0)|GORGE                    # dorp; ingang via een kloof linksonder
-pit1=rrect(10,15,33,29,3)                        # weide
-pit0=rrect(14,21,31,29,2)                        # meeroever
-lake=smooth(set(blob(22.8,25.9,6.9,3.0,seed=3,rough=0.10)))
+GORGE=set(rect(5,36,8,H+5))
+crater=rrect(3,5,44,35,0)|GORGE
+pit1=rrect(10,15,37,35,0)
+pit2=rrect(16,23,31,35,0)
+pit3=rrect(19,28,28,35,0)
+lake=smooth(set(blob(23.8,32.4,4.3,2.4,seed=3,rough=0.10)))
 RIM=ALL-crater
-terrace(m,ALL-pit0,face=2)
-terrace(m,ALL-pit1,face=2)
+for P in (pit3,pit2,pit1):
+    terrace(m,ALL-P,face=2)
 terrace(m,RIM,face=4)               # hoge kloofwand
-for c in list(pit0):
+for c in pit3:
     if inmap(c): m.put(*c,'snow',0)
 m.water({c for c in lake if inmap(c)})
 
 def top(S,x): return min(y for (xx,y) in S if xx==x)
-# trappen midden in een rechte klifwand (niet bij een hoek): dorp -> weide links, weide -> meeroever rechts
-S1=(17,top(pit1,17)-2); S0=(26,top(pit0,26)-2)
-assert all(top(pit1,x)==top(pit1,17) for x in range(15,21)) and all(top(pit0,x)==top(pit0,26) for x in range(25,29))
-for (sx,sy) in (S1,S0):
+# trappen midden in rechte klifwanden; het pad slingert: links omlaag, rechts omlaag, links omlaag
+S1=(18,top(pit1,18)-2); S2=(26,top(pit2,26)-2); S3=(22,top(pit3,22)-2)
+for (P,(sx,sy)) in ((pit1,S1),(pit2,S2),(pit3,S3)):
+    assert all(top(P,x)==top(P,sx) for x in range(sx-1,sx+3)),(sx,sy)
     for y in (sy,sy+1): m.put(sx,y,'hstairs_l',0); m.put(sx+1,y,'hstairs_r',0)
-print('trappen',S1,S0)
+print('trappen',S1,S2,S3)
 
 # --- gebouwen en grote objecten ---
 def level(c):
-    return 2 if c in pit0 else 1 if c in pit1 else 0
+    return 3 if c in pit3 else 2 if c in pit2 else 1 if c in pit1 else 0
 FLOOR=lambda c: inmap(c) and m.g[c[1]][c[0]] in (N['cliff_c'],N['snow']) and m.col[c[1]][c[0]]==0
-def obj(name,x0,y0,w,h,door=None,free=()):
+def obj(name,x0,y0,w,h,door=None):
     cells=[(x0+dx,y0+dy) for dx in range(w) for dy in range(h)]
     lv={level(c) for c in cells}
     bad=[c for c in cells if not FLOOR(c)]+([] if door is None else [c for c in [(x0+door[0],y0+door[1]+1)] if not FLOOR(c)])
@@ -51,16 +52,20 @@ def obj(name,x0,y0,w,h,door=None,free=()):
     assert not bad and len(lv)==1,(name,bad,lv)
     for dy in range(h):
         for dx in range(w):
-            m.put(x0+dx,y0+dy,f'{name}_{dx}{dy}',0 if (dx,dy)==door or (dx,dy) in free else 1)
+            m.put(x0+dx,y0+dy,f'{name}_{dx}{dy}',0 if (dx,dy)==door else 1)
     return None if door is None else (x0+door[0],y0+door[1])
-DOORS={}
-DOORS['lodge']=obj('lodge',5,5,5,5,(1,4))              # grote lodge linksboven
+class _D(dict):
+    def values(s): return [v for v in dict.values(s) if v]
+DOORS=_D()
+# laag 0 (dorp)
+DOORS['lodge']=obj('lodge',4,5,5,5,(1,4))
 DOORS['house_blue']=obj('house_blue',11,6,4,4,(1,3))
-DOORS['pc']=obj('pc',19,5,5,5,(2,4))                  # centraal boven het dal
-DOORS['house_pink']=obj('house_pink',27,6,4,4,(2,3))
-DOORS['house_yellow']=obj('house_yellow',35,6,4,4,(1,3))
-DOORS['house_green']=obj('house_green',37,17,4,4,(2,3))
-DOORS['mart']=obj('mart',3,20,4,4,(2,3))               # bij de ingang
+DOORS['pc']=obj('pc',21,5,5,5,(2,4))                  # centraal boven het dal
+DOORS['house_pink']=obj('house_pink',29,6,4,4,(2,3))
+DOORS['house_yellow']=obj('house_yellow',36,6,4,4,(1,3))
+DOORS['mart']=obj('mart',3,24,4,4,(2,3))              # bij de ingang
+# laag 1
+DOORS['house_green']=obj('house_green',12,15,4,4,(2,3))
 print('deuren',DOORS)
 
 # --- paden ---
@@ -72,44 +77,56 @@ def line(a,b,w=2):
             for k in range(w):
                 path.add((x+k,y) if x0==x1 else (x,y+k))
 line((7,H-1),(7,10))                  # vanuit de kloof omhoog langs de Mart
-line((7,10),(36,10))                  # dorpsstraat onder de huizen
-line((35,10),(35,24))                 # rechterkant omlaag
+line((7,10),(41,10))                  # dorpsstraat onder de huizen
 for (dx_,dy_) in DOORS.values():
-    if dx_<10 and dy_>15: line((dx_,dy_+1),(7,dy_+1),1)
-    elif dx_>35 and dy_>15: line((dx_,dy_+1),(35,dy_+1),1)
+    if level((dx_,dy_))==1: line((dx_,dy_+1),(dx_,19),1)
+    elif dx_<10 and dy_>15: line((dx_,dy_+1),(7,dy_+1),1)
     else: line((dx_,dy_+1),(dx_,10),1)
-line((S1[0],12),(S1[0],S1[1]-1))      # naar de trap
-line((S1[0],S1[1]+2),(S1[0],17))      # weide
-line((S1[0],17),(S0[0]+1,17))
-line((S0[0],17),(S0[0],S0[1]-1))
-line((S0[0],S0[1]+2),(S0[0],22))      # strand
+line((S1[0],12),(S1[0],S1[1]-1)); line((S1[0],S1[1]+2),(S1[0],19))
+line((11,19),(S2[0]+1,19))            # straat op laag 1
+line((S2[0],S2[1]+2),(S2[0],23)); line((S3[0],23),(S2[0]+1,23))   # weide
+line((S3[0],S3[1]+2),(S3[0],29))      # strand
 path={c for c in path if FLOOR(c)}
 autopath(m,path,'path_stone')
 
-# --- bewoners/objecten (vrijhouden) ---
-# visser, kind bij de sneeuwpop, oude vrouw bij het standbeeld, hiker bij de ingang, vrouw in de dorpsstraat
-EVENTS={(19,22),(7,13),(24,15),(6,27),(33,12)}
+# --- bewoners (vrijhouden) ---
+# visser, kind bij de sneeuwpop, oude vrouw bij het heiligdom, hiker bij de ingang, vrouw in de dorpsstraat
+EVENTS={(23,29),(5,14),(24,18),(6,33),(34,11)}
 print('events',sorted(EVENTS))
 
 def free(c): return FLOOR(c) and c not in path and c not in EVENTS
 def put_if(x,y,name,col=1):
     if free((x,y)): m.put(x,y,name,col); return True
     return False
-for (x,y) in [(10,9),(18,9),(25,9),(32,9),(4,19),(39,14),(39,22),(8,27)]:
+# heiligdom: drie stenen Regi-beelden op laag 1, lantaarns en bloemen ervoor
+for i,sp in enumerate(('regirock','regice','registeel')):
+    obj(sp,20+3*i,15,2,3)
+for (x,y) in [(10,9),(19,9),(27,9),(34,9),(42,9),(4,22),(42,18),(19,17),(29,17)]:
     if free((x,y)) and free((x,y-1)): m.put(x,y-1,'lamp_0',1); m.put(x,y,'lamp_1',1)
+for x in (20,21,23,24,26,27): put_if(x,18,'g_flowers')
 for (dx_,dy_) in DOORS.values():
     put_if(dx_-1,dy_+1,'pot_red'); put_if(dx_+1,dy_+1,'pot_white')
 obj('stall',15,6,3,3)                                 # marktkraampje naast het Center
-obj('statue',20,15,3,2)                               # standbeeld op de weide
-obj('igloo',37,24,3,3,(1,2))                          # iglo (deur als decor)
-if m.g[26][38]==N['igloo_12']: m.col[26][38]=1
-for (x,y) in [(16,21),(17,21),(22,21),(23,21)]:       # boomstammen als bankjes aan het meer
-    put_if(x,y,'log')
-obj('bigtree',10,21,3,6)
-for (x,y,n) in [(6,12,'snowman'),(5,15,'bunny')]:      # 1x2: hoofd erboven
-    if free((x,y)) and free((x,y+1)): m.put(x,y,n+'_0',1); m.put(x,y+1,n+'_1',1)
-for (x,y,n) in [(38,13,'snowball_big'),(32,6,'barrel'),(33,6,'crate'),(39,16,'rock_round'),(18,8,'sign_wood')]:
+obj('igloo',33,15,3,3,(1,2))                          # iglo (later de weg naar de Regigigas-grot)
+if m.g[17][34]==N['igloo_12']: m.col[17][34]=1
+# stenen hekje langs de klifrand boven laag 1 (niet voor de trap)
+for x in range(10,38):
+    if free((x,12)) and m.g[13][x] not in (N['hstairs_l'],N['hstairs_r']):
+        l=not free((x-1,12)); r=not free((x+1,12))
+        m.put(x,12,'g_fence_l' if l else 'g_fence_r' if r else 'g_fence_m',1)
+# heggen, brievenbussen, wegwijzer en ander decor
+for (x,y) in [(42,5),(42,13)]:
+    if all(free((x+dx,y+dy)) for dx in range(3) for dy in range(2)):
+        for dx in range(3):
+            for dy in range(2): m.put(x+dx,y+dy,f'hedge_{dx}{dy}',1)
+for (x,y,n) in [(10,8,'g_mailbox'),(28,8,'g_mailbox'),(35,8,'g_mailbox'),(9,30,'g_sign'),(15,18,'g_mailbox'),
+                (38,12,'snowball_big'),(43,24,'rock_round'),(18,8,'sign_wood'),(30,21,'ice_plant'),(36,21,'ice_plant2'),
+                (12,24,'stump2'),(35,27,'log'),(36,27,'log')]:
     put_if(x,y,n)
+for (x,y,n) in [(4,13,'snowman'),(4,17,'bunny')]:      # 1x2: hoofd erboven
+    if free((x,y)) and free((x,y+1)): m.put(x,y,n+'_0',1); m.put(x,y+1,n+'_1',1)
+for (x,y) in [(22,29),(25,28),(26,28)]: put_if(x,y,'log')    # boomstammen als bankjes aan het meer
+obj('bigtree',11,27,3,6)
 
 # --- bos op de kloofrand, dennen en keien ---
 def okb(x,y):
@@ -124,27 +141,28 @@ def pine(x,y,g):
     cells=[(x+dx,y+dy) for dx in range(2) for dy in range(3)]
     if all(okd(*c) for c in cells) and len({level(c) for c in cells})==1: m.pine(x,y,green=g); return True
     return False
-for (x,y,g) in [(2,31,True),(3,12,True),(4,15,False),(39,26,True),(31,24,True),(11,15,False),(32,15,True),(16,25,True),(14,27,False)]: pine(x,y,g)
-for (x,y) in [(4,26),(39,19),(26,26)]:
+for (x,y,g) in [(2,37,True),(3,19,False),(42,26,True),(43,31,False),(14,26,True),(14,31,False),(34,24,True),
+                (29,30,True),(10,21,False),(36,30,False)]: pine(x,y,g)
+for (x,y) in [(4,31),(42,20),(33,32)]:
     if all(okd(x+dx,y+dy) for dx in (0,1) for dy in (0,1)):
         for dx in (0,1):
             for dy in (0,1): m.put(x+dx,y+dy,f'boulder_{dx}{dy}',1)
-# de weide en het strand zijn groen en bloeien (het beschutte 'paradijs'), het dorp is besneeuwd
-for c in sorted(pit1):
+# de weide (laag 2) is groen en bloeit (het beschutte 'paradijs'), de rest is besneeuwd
+for c in sorted(pit2-pit3):
     if not inmap(c): continue
     x,y=c
     if m.g[y][x] in (N['cliff_c'],N['snow']) and m.col[y][x]==0 and c not in EVENTS and c not in path:
         r=rnd.random()
         if r<0.22: m.put(x,y,rnd.choice(['flowers_blue','flowers_pink']),0)
-        elif r<0.48: m.put(x,y,'grass_green',0)
-        elif r<0.58: m.put(x,y,rnd.choice(['tuft0','tuft1','tuft3']),0)
-for c in sorted(crater-pit1):
+        elif r<0.45: m.put(x,y,'grass_green',0)
+        elif r<0.55: m.put(x,y,rnd.choice(['tuft0','tuft1','tuft3']),0)
+for c in sorted(crater-pit2):
     if inmap(c) and okd(*c) and rnd.random()<0.06: m.put(*c,rnd.choice(['tuft2','tuft5','snow_dots','flowers_blue']),0)
 
 # --- bereikbaarheid ---
 from collections import deque
 def walk(x,y): return inmap((x,y)) and m.col[y][x]==0
-start=(5,H-1); seen={start}; q=deque([start])
+start=(7,H-1); seen={start}; q=deque([start])
 while q:
     x,y=q.popleft()
     for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)):

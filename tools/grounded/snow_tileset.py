@@ -244,7 +244,7 @@ if TOWN:
     PREF = ('tuft', 'path_stone_', 'cliff_', 'shore_', 'htree_', 'pine_', 'pinegreen_', 'boulder_')
     metatiles[:] = [m for m in metatiles if m[0] in KEEP or m[0].startswith(PREF)]
 
-    def _general_metatile(mid):
+    def _general_metatile(mid, nograss=False):
         """Een General-metatile als (onder, boven) RGBA, alle paletten (voor de Hoenn-trap en het vijverwater)."""
         gp = 'data/tilesets/primary/general/'
         gtiles = open(gp + 'tiles.4bpp', 'rb').read()
@@ -258,7 +258,7 @@ if TOWN:
             for y in range(8):
                 for x in range(8):
                     c = (b[y * 4 + x // 2] >> (4 * (x & 1))) & 15
-                    if c:
+                    if c and not (nograss and pn in (1, 2) and c in (12, 13, 14)):
                         img.putpixel((x, y), gpals[pn][c] + (255,))
             if hf: img = img.transpose(Image.FLIP_LEFT_RIGHT)
             if vf: img = img.transpose(Image.FLIP_TOP_BOTTOM)
@@ -300,6 +300,19 @@ if TOWN:
         add(f'lamp_{dy}', G, cell(1, 48 + dy))
         add(f'snowman_{dy}', G, cell(3, 21 + dy))        # sneeuwpop en konijnbeeld zijn 1x2 (hoofd in de rij erboven)
         add(f'bunny_{dy}', G, cell(4, 21 + dy))
+    # decor uit de General-tileset (zonder het gras eronder): brievenbus, bloemen, wegwijzer, stenen hekje
+    def _general_nograss(mid):
+        bot, top = _general_metatile(mid, nograss=True)
+        return over(bot, top)
+    for _n, _mid in (('g_mailbox', 0x03), ('g_flowers', 0x04), ('g_sign', 0x1B),
+                     ('g_fence_l', 0x148), ('g_fence_m', 0x149), ('g_fence_r', 0x14A)):
+        add(_n, G, _general_nograss(_mid))
+    # besneeuwde heg (3x2) en extra decor uit de bronsheet
+    for dy in range(2):
+        for dx in range(3):
+            add(f'hedge_{dx}{dy}', G, cell(dx, 21 + dy))
+    for n, (c, r) in {'mailbox': (2, 53), 'ice_plant': (6, 23), 'ice_plant2': (7, 23), 'stump2': (3, 39)}.items():
+        add(n, G, cell(c, r))
     PRIMARY = list(metatiles)
     metatiles[:] = []
 
@@ -321,6 +334,14 @@ if TOWN:
     building('statue', 5, 94, 3, 2, None)
     building('bigtree', 0, 37, 3, 6, None)            # top in rij 37 (alleen de middelste kolom)
     building('icepond', 0, 43, 3, 3, None)
+    # stenen Regi-beelden (heiligdom in Ashfrost), 2x3 uit de overworld-sprites, zie regi_statue.py
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from regi_statue import statue
+    for sp in ('regirock', 'regice', 'registeel'):
+        im = statue(sp)
+        for dy in range(3):
+            for dx in range(2):
+                add(f'{sp}_{dx}{dy}', G, im.crop((dx * 16, dy * 16, dx * 16 + 16, dy * 16 + 16)))
 
 
 # ---------------------------------------------------------------- kleuren en paletten

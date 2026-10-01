@@ -544,8 +544,8 @@
     {
       "id": "LAYOUT_ASHFROST_TOWN",
       "name": "AshfrostTown_Layout",
-      "width": 44,
-      "height": 34,
+      "width": 48,
+      "height": 40,
       "primary_tileset": "gTileset_SnowTownBase",
       "secondary_tileset": "gTileset_SnowTown",
       "border_filepath": "data/layouts/AshfrostTown/border.bin",

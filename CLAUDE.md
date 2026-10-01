@@ -105,10 +105,10 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
 - Branch: `claude/hopeful-brahmagupta-hsth8c` (PR 5 naar `master`). Is die PR gemerged, begin dan een nieuwe branch vanaf `master`.
 - Commit en push na elk afgerond stuk, met een changelogsectie.
-- Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 334 + 422 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
+- Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
 - **Af:** Coldstep Cave, Keccles 1–3, Seltzer Surge (TM51), muziekcredits, Route 135, Route 136 met Crystal Cavity (kristalgrot, duikstuk, Suicune lv 50 met beasts-thema), weer sneeuw/as (`WEATHER_ASHFROST_CYCLE`), Town Map met Route 135/136 en Ashfrost.
 - Nog van Jordi: definitieve teksten van Route 135/136 en Ashfrost (nu placeholders).
 - Emulator: `pip install mgba` + `apt-get install libmgba0.10` (verse container).
-- **Ashfrost Village** (herontwerp, v0.8.3): eerste versie staat; wacht op feedback van Jordi. Bouwscript `ashfrost.py` (44×34), eigen primary `snow_town_base` + secondary `snow_town` (beide via `snow_tileset.py --town`; namen in `snow_town/metatile_names.json`).
+- **Ashfrost Village** (herontwerp, v0.8.3): eerste versie staat; wacht op feedback van Jordi. Bouwscript `ashfrost.py` (48×40, vier lagen, Regi-heiligdom op laag 1), eigen primary `snow_town_base` + secondary `snow_town` (beide via `snow_tileset.py --town`; namen in `snow_town/metatile_names.json`).

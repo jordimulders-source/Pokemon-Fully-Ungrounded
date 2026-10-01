@@ -15242,3 +15242,10 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Bankjes aan het meer vervangen door besneeuwde boomstammen.
 - Trappen midden in een rechte klifwand in plaats van bij een hoek: dorp → weide bij het kraampje, weide → meer rechts.
 - Meer groter (meeroever breder).
+
+### [v.0.8.5] - Ashfrost Village: dieper dal, Regi-heiligdom
+- Kaart 44×34 → **48×40** en één laag dieper: dorp bovenaan, laag 1 met het groene huis, de iglo en een **heiligdom met drie stenen Regi-beelden** (Regirock, Regice, Registeel; grijze versies van hun overworld-sprites op een sokkel, `tools/grounded/regi_statue.py`), laag 2 een groene weide, laag 3 het meer. Het Reshiram-beeld is weg.
+- Kuilen zonder afgeschuinde hoeken: strakke, doorlopende klifwanden; trappen midden in de wanden, het pad slingert links-rechts-links omlaag.
+- Meer decor: stenen hekje langs de klifrand boven laag 1, lantaarns, bloemen voor het heiligdom, brievenbussen, wegwijzer, besneeuwde heggen, ijsplanten, boomstammen, keien. Brievenbus, bloemen, wegwijzer en hekje komen uit de General-tileset (zonder het gras).
+- Oude vrouw staat nu biddend bij het heiligdom (placeholdertekst). Iglo blijft de toekomstige weg naar de Regigigas-grot.
+- Warps, coord-triggers (y 39), heal location (23,10) en de warp vanaf Route 136 (7,38) aangepast.

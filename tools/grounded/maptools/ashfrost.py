@@ -21,9 +21,9 @@ def rrect(x0,y0,x1,y1,cut=2):
 GORGE=set(rect(5,36,8,H+5))
 crater=rrect(3,5,44,35,0)|GORGE
 pit1=rrect(10,15,37,35,0)
-pit2=rrect(16,23,31,35,0)
-pit3=rrect(19,28,28,35,0)
-lake=smooth(set(blob(23.8,32.4,4.3,2.4,seed=3,rough=0.10)))
+pit2=rrect(14,23,33,35,0)
+pit3=rrect(17,28,30,35,0)
+lake=smooth(set(blob(23.8,32.3,5.7,2.7,seed=3,rough=0.10)))
 RIM=ALL-crater
 for P in (pit3,pit2,pit1):
     terrace(m,ALL-P,face=2)
@@ -120,14 +120,19 @@ for (x,y) in [(42,5),(42,13)]:
         for dx in range(3):
             for dy in range(2): m.put(x+dx,y+dy,f'hedge_{dx}{dy}',1)
 for (x,y,n) in [(10,8,'g_mailbox'),(28,8,'g_mailbox'),(35,8,'g_mailbox'),(9,30,'g_sign'),(15,18,'g_mailbox'),
-                (38,12,'snowball_big'),(43,24,'rock_round'),(18,8,'sign_wood'),(30,21,'ice_plant'),(36,21,'ice_plant2'),
+                (38,12,'snowball_big'),(43,24,'rock_round'),(18,8,'sign_wood'),(30,21,'ice_plant'),
                 (12,24,'stump2'),(35,27,'log'),(36,27,'log')]:
     put_if(x,y,n)
 for (x,y,n) in [(4,13,'snowman'),(4,17,'bunny')]:      # 1x2: hoofd erboven
     if free((x,y)) and free((x,y+1)): m.put(x,y,n+'_0',1); m.put(x,y+1,n+'_1',1)
 for (x,y) in [(22,29),(25,28),(26,28)]: put_if(x,y,'log')    # boomstammen als bankjes aan het meer
-obj('bigtree',11,27,3,6)
+obj('bigtree',10,27,3,6)
 
+# besneeuwd hoog gras in plukken (decor; Ashfrost heeft geen wilde Pokémon)
+for (x0,y0,w,h) in [(34,20,3,2),(41,22,3,3),(4,29,2,2),(35,32,3,2)]:
+    for x in range(x0,x0+w):
+        for y in range(y0,y0+h):
+            if free((x,y)) and rnd.random()<0.85: m.put(x,y,'grass_snow',0)
 # --- bos op de kloofrand, dennen en keien ---
 def okb(x,y):
     return inmap((x,y)) and (x,y) not in path and (x,y) not in EVENTS and m.g[y][x]==N['cliff_c'] and m.col[y][x]==0 and (x,y) in RIM

@@ -15249,3 +15249,7 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Meer decor: stenen hekje langs de klifrand boven laag 1, lantaarns, bloemen voor het heiligdom, brievenbussen, wegwijzer, besneeuwde heggen, ijsplanten, boomstammen, keien. Brievenbus, bloemen, wegwijzer en hekje komen uit de General-tileset (zonder het gras).
 - Oude vrouw staat nu biddend bij het heiligdom (placeholdertekst). Iglo blijft de toekomstige weg naar de Regigigas-grot.
 - Warps, coord-triggers (y 39), heal location (23,10) en de warp vanaf Route 136 (7,38) aangepast.
+
+### [v.0.8.6] - Ashfrost Village: groter meer, besneeuwd gras
+- Meer groter (laag 2 en 3 breder, meer ca. 12×5).
+- Besneeuwd hoog gras in plukken in plaats van één losse tile (decor; Ashfrost heeft geen wilde Pokémon).

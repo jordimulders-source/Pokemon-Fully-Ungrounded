@@ -145,11 +145,13 @@ SootopolisCity_Gym_1F_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
 	msgbox SootopolisCity_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory::
 	msgbox SootopolisCity_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -306,3 +308,15 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "serving wine without a glass. Return\l"
 	.string "with at least two.$"
 
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+SootopolisCity_Gym_1F_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 56.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+SootopolisCity_Gym_1F_Text_GymGuideNextAce:
+	.string "Next stop: the POKéMON LEAGUE.\n"
+	.string "Their levels? No idea.\p"
+	.string "Nobody ever comes back\n"
+	.string "to tell me.$"

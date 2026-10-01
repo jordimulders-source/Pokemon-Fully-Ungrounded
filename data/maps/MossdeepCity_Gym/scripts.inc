@@ -273,11 +273,13 @@ MossdeepCity_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
 	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 MossdeepCity_Gym_EventScript_GymGuidePostVictory::
 	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -731,3 +733,16 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 	.string "TATE: With one POKéMON? LIZA: The\n"
 	.string "universe demands two. Come back\l"
 	.string "balanced.$"
+
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+MossdeepCity_Gym_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 49.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+MossdeepCity_Gym_Text_GymGuideNextAce:
+	.string "Next stop: WALLACE in SOOTOPOLIS.\n"
+	.string "Their ace is level 56.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

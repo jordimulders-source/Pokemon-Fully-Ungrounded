@@ -1107,11 +1107,13 @@ PetalburgCity_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_GymGuidePostVictory
 	msgbox PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 PetalburgCity_Gym_EventScript_GymGuidePostVictory::
 	msgbox PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1649,3 +1651,15 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "You need a partner in crime!\n"
 	.string "Come back with at least two.$"
 
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+PetalburgCity_Gym_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 35.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+PetalburgCity_Gym_Text_GymGuideNextAce:
+	.string "Next stop: WINONA in FORTREE.\n"
+	.string "Their ace is level 43.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

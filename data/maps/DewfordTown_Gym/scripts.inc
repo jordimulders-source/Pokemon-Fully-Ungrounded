@@ -252,11 +252,13 @@ DewfordTown_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox DewfordTown_Gym_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 DewfordTown_Gym_EventScript_GymGuidePostVictory::
 	msgbox DewfordTown_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox DewfordTown_Gym_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -505,3 +507,16 @@ DewfordTown_Gym_Text_BrawlyPostRematch:
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "BRAWLY: Do you want a rematch? I do, we\n"
 	.string "can promote it!$"
+
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+DewfordTown_Gym_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 22.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+DewfordTown_Gym_Text_GymGuideNextAce:
+	.string "Next stop: WATTSON in MAUVILLE.\n"
+	.string "Their ace is level 25.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

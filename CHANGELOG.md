@@ -15320,3 +15320,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.21] - QoL: gevechtsmenu onthoudt de laatst gekozen move
 - De move-cursor staat nu per teamlid op de laatst gekozen move, **ook na wisselen** (eerder sprong hij na een wissel terug naar de eerste move). Opgeslagen in `gBattleStruct->lastMoveCursorByPartySlot` (gezet in `battle_main.c` bij het kiezen, gelezen in `PlayerHandleChooseMove`). Geldt per gevecht. Getest in de emulator: Lapras kiest Splash, wisselt naar Machamp (cursor op de eerste move), terug naar Lapras: cursor weer op Splash.
+
+### [v.0.8.22] - QoL: gymgidsen noemen het level van de ace
+- De gids bij de ingang van elke gym zegt na zijn eigen advies ook het **level van de ace** van die gymleider (Roxanne 16, Brawly 22, Wattson 25, Flannery 29, Norman 35, Winona 43, Tate & Liza 49, Wallace 56).
+- Na de overwinning noemt hij de **volgende gym** en het level van die ace (bij Norman: "Your dad."); in Sootopolis verwijst hij naar de League. Jordi's bestaande gidsteksten zijn ongewijzigd; de tips staan in eigen labels (`*_Text_GymGuideAceLevel`, `*_Text_GymGuideNextAce`, placeholders).
+- **Let op:** past Jordi een gymteam aan, dan moet het level in deze teksten mee.

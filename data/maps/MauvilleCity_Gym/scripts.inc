@@ -226,11 +226,13 @@ MauvilleCity_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_GymGuidePostVictory
 	msgbox MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox MauvilleCity_Gym_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 MauvilleCity_Gym_EventScript_GymGuidePostVictory::
 	msgbox MauvilleCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox MauvilleCity_Gym_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -478,3 +480,15 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "has more holders than that! Come back\l"
 	.string "with two.$"
 
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+MauvilleCity_Gym_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 25.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+MauvilleCity_Gym_Text_GymGuideNextAce:
+	.string "Next stop: FLANNERY in LAVARIDGE.\n"
+	.string "Their ace is level 29.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

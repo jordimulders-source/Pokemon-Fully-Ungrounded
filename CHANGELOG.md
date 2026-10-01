@@ -15256,3 +15256,8 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 
 ### [v.0.8.7] - Ashfrost Village: pad naar de onderste trap
 - Het pad op de weide loopt nu door tot aan de trap naar het meer (er ontbrak een rij).
+
+### [v.0.8.8] - Ashfrost Village: wilde Pokémon (zoals Icirrus)
+Het gras en het meer in Ashfrost hebben nu encounters: alleen tamme, ongevaarlijke Pokémon die niet schuw zijn voor mensen, jong (lage levels). Bewuste uitzondering op de 12-unieke-soorten-regel.
+- Land (rate 10): Swinub 30%, Vanillite 30%, Snover 20%, Snom 10% (lv 20–23), Delibird 10% (lv 22–23).
+- Water (rate 4): Spheal 64%, Seel 34% (lv 20–24), Lapras 1% (lv 25).

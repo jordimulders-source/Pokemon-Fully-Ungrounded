@@ -68,6 +68,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Elke entry heeft `min_level` én `max_level` (ontbrekende `max_level` gaf eerder lv 100-encounters).
 - Schuif je slots door, behoud dan de zeldzaamheidsvolgorde (wie het zeldzaamst was, blijft dat).
 - Houd rekening met evolutielevels (bijv. Deino evolueert op 32, Zweilous op 53).
+- **Uitzondering: steden met gras** (Ashfrost, à la Icirrus): mogen afwijken van de 12-unieke-soorten-regel. Alleen tamme, ongevaarlijke soorten die niet schuw zijn voor mensen, op lage levels (jonge Pokémon).
 
 ## Pokémon-revisies
 - Types, stats, abilities en learnsets van veel soorten zijn aangepast; dat staat per soort in `CHANGELOG.md` ("Pokémon Revisie: ..."). De code in `src/data/pokemon/species_info/` moet overeenkomen met de changelog. Controleer dat bij twijfel (Swellow had Wind Rider in de changelog maar niet in de code).

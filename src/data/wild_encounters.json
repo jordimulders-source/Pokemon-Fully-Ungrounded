@@ -2336,6 +2336,37 @@
           }
         },
         {
+          "map": "MAP_ASHFROST_TOWN",
+          "base_label": "gAshfrostTown",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_SWINUB" },
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_VANILLITE" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SNOVER" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SWINUB" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_VANILLITE" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_SNOVER" },
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_SNOM" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SNOM" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 23, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 23, "max_level": 23, "species": "SPECIES_DELIBIRD" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 20, "max_level": 23, "species": "SPECIES_SPHEAL" },
+              { "min_level": 20, "max_level": 23, "species": "SPECIES_SEEL" },
+              { "min_level": 22, "max_level": 24, "species": "SPECIES_SPHEAL" },
+              { "min_level": 22, "max_level": 24, "species": "SPECIES_SEEL" },
+              { "min_level": 25, "max_level": 25, "species": "SPECIES_LAPRAS" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
           "base_label": "gAbandonedShip_HiddenFloorCorridors",
           "water_mons": {

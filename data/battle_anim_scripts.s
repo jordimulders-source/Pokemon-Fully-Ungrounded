@@ -18531,10 +18531,14 @@ gBattleAnimGeneral_PollenHaze::
 	end
 
 PollenHazeDrift:
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 1
 	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-24, wave_offset=85, duration=60, blend=0
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 0
 	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-20, wave_offset=170, duration=60, blend=0
 	delay 8
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 1
 	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-10, wave_offset=0, duration=60, blend=0
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 0
 	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-12, wave_offset=85, duration=60, blend=0
 	delay 8
 	return

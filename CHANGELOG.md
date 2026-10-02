@@ -15418,3 +15418,9 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Overworld:** nieuw weer `WEATHER_SNOW_STORM`: donkerdere lucht, 36 vlokken (normaal 16; meer kan niet veilig vanwege de sprite-limiet), sneller vallend en schuin door de wind. Lichte sneeuw (`WEATHER_SNOW`) geeft in gevechten **Snowscape**, de sneeuwstorm geeft **Snow Storm**. Weather Ball wordt Ice en Snow Cloak werkt in beide.
 - **Route 135** wisselt per dag tussen lichte sneeuw en as (zoals voorheen, maar gevechten krijgen nu Snowscape); **Route 136** wisselt tussen **sneeuwstorm** en as (`WEATHER_ASHFROST_STORM_CYCLE`).
 - Tests: `test/battle/grounded/snow_storm.c` (schade, Def-buff, Snowscape onschadelijk). De bestaande hagel-tests verwachten nu de nieuwe teksten; alle Snow/Hail/Chilly Reception-tests slagen. In de emulator gecontroleerd: sneeuwstorm op Route 136.
+
+### [v.0.8.42] - Testregressies na Snow Storm/Shedinja opgelost
+- Volledige `make check` vergeleken met `master`: drie nieuwe failures gevonden en opgelost.
+- **Abilitybeschrijvingen** van de sneeuw-abilities ingekort (Snow Cloak, Ice Body, Snow Warning, Slush Rush, Ice Face), zodat ze in het vak passen.
+- Tests bijgewerkt: Overcoat verwacht "Snow Storm" in plaats van "Hail"; de Ability Shield-test zet Shedinja expliciet op 1 HP (Shedinja heeft in Grounded normale HP).
+- Er zijn geen nieuwe failures meer ten opzichte van `master`.

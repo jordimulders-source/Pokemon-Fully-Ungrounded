@@ -103,7 +103,7 @@ SINGLE_BATTLE_TEST("Ability Shield protects against Sunsteel Strike (no message)
 
     GIVEN {
         ASSUME(MoveIgnoresTargetAbility(MOVE_SUNSTEEL_STRIKE));
-        PLAYER(SPECIES_SHEDINJA) { Ability(ABILITY_WONDER_GUARD); Item(item); }
+        PLAYER(SPECIES_SHEDINJA) { Ability(ABILITY_WONDER_GUARD); Item(item); HP(1); } // Project Grounded: Shedinja heeft normale HP
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUNSTEEL_STRIKE); }

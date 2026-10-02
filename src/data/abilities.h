@@ -612,7 +612,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNOW_CLOAK] =
     {
         .name = _("Snow Cloak"),
-        .description = COMPOUND_STRING("Ups evasion in snowy weather."),
+        .description = COMPOUND_STRING("Ups evasion in snow."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -858,7 +858,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_BODY] =
     {
         .name = _("Ice Body"),
-        .description = COMPOUND_STRING("HP recovery in snowy weather."),
+        .description = COMPOUND_STRING("HP recovery in snow."),
         .aiRating = 3,
     },
 
@@ -1518,7 +1518,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SLUSH_RUSH] =
     {
         .name = _("Slush Rush"),
-        .description = COMPOUND_STRING("Raises Speed in snowy weather."),
+        .description = COMPOUND_STRING("Raises Speed in snow."),
         .aiRating = 5,
     },
 
@@ -1885,7 +1885,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_FACE] =
     {
         .name = _("Ice Face"),
-        .description = COMPOUND_STRING("Snowy weather renews free hit."),
+        .description = COMPOUND_STRING("Snow renews free hit."),
         .aiRating = 4,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,

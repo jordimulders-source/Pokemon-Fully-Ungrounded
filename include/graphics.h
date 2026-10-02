@@ -2290,6 +2290,7 @@ extern const u32 gBattleAnimSpriteGfx_FlyingDirt[];
 extern const u32 gBattleAnimSpriteGfx_IcicleSpear[];
 extern const u32 gBattleAnimSpriteGfx_Hail[];
 extern const u32 gBattleAnimSpriteGfx_GlowyRedOrb[];
+extern const u32 gBattleAnimSpriteGfx_LaserDot[];
 extern const u32 gBattleAnimSpriteGfx_GreenSpike[];
 extern const u32 gBattleAnimSpriteGfx_Pokeblock[];
 extern const u32 gBattleAnimSpriteGfx_WhiteFeather[];

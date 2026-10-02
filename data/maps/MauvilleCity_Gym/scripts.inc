@@ -112,7 +112,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
-	giveitem ITEM_TM_VOLT_SWITCH
+	giveitem ITEM_TM_MACHINE_LEARNING
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -120,7 +120,7 @@ MauvilleCity_Gym_EventScript_GiveShockWave2::
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave::
-	giveitem ITEM_TM_VOLT_SWITCH
+	giveitem ITEM_TM_MACHINE_LEARNING
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -424,12 +424,12 @@ MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "Hmm… You should take this, too!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM34 contains VOLT SWITCH.\p"
-	.string "It’s a move that lets you strike\n"
-	.string "and then instantly swap out.\p"
-	.string "It's just like my investment strategy:\n"
-	.string "Take the profit and run before the\l"
-	.string "market crashes! Wahahahah!\p"
+	.string "That TM54 contains MACHINE LEARNING.\p"
+	.string "It trains itself a little more every\n"
+	.string "turn. Just like my trading bot!\p"
+	.string "Sometimes it hallucinates and buys a\n"
+	.string "llama farm. Still profitable!\l"
+	.string "Wahahahah!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:

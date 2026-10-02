@@ -16,7 +16,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 7. **Rotom-event:** Mauville, na badge 3, kelder van een huis met een tv.
 8. ~~Prof. Oak~~ (gedaan, v0.8.50)
 9. **Mimikyu-trainer:** in de "mimic circle" onderaan Route 119 (bij de Bug Maniacs, hoog gras). Een Mimikyu-object op een stuk zonder gras; Mimikyu als zeldzame encounter op Route 119 (vervangt het vaakst voorkomende dubbele slot).
-10. Nog open: **Laser Beam** en **Machine Learning** (wat doen ze?), level/badge van Oak.
+10. ~~Laser Beam / Machine Learning~~ (gedaan, v0.8.51). Open: wie leert Shadow Siphon?
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** (alles afgerond)

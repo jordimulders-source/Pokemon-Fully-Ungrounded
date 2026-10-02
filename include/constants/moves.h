@@ -914,8 +914,11 @@
 #define MOVE_FUNGAL_CONTROL 852 // Project Grounded: Parasect
 #define MOVE_TRANSMUTATION 853 // Project Grounded: omgekeerde Transform
 #define MOVE_IMPLOSION 854 // Project Grounded: self-KO + zwart gat
+#define MOVE_LASER_BEAM 855 // Project Grounded
+#define MOVE_MACHINE_LEARNING 856 // Project Grounded: TM54, Wattson
+#define MOVE_SHADOW_SIPHON 857 // Project Grounded: Dark-versie van Draining Kiss
 
-#define MOVES_COUNT_GEN9 855
+#define MOVES_COUNT_GEN9 858
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

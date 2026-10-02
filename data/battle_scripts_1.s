@@ -3331,6 +3331,32 @@ BattleScript_EffectTransmutation::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Machine Learning. Elke opeenvolgende beurt gaan meer stats +1 (1, 2, 3, daarna alle 5),
+@ de hoogste basisstats eerst. 20% kans op hallucinatie: dan doet hij een willekeurige move (zie CancelerCallSubmove).
+BattleScript_EffectMachineLearning::
+	attackcanceler
+	attackanimation
+	waitanimation
+	callnative BS_MachineLearningTrain
+	printstring STRINGID_MACHINELEARNINGTRAINED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MachineLearningLoop:
+	callnative BS_MachineLearningNextStat
+	.4byte BattleScript_MoveEnd
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_MachineLearningLoop
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_MachineLearningLoop
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MachineLearningLoop
+
+BattleScript_MachineLearningHallucination::
+	printattackstring
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_MACHINELEARNINGHALLUCINATED
+	waitmessage B_WAIT_TIME_LONG
+	setcalledmove
+	return
+
 BattleScript_EffectPainSplit::
 	attackcanceler
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON

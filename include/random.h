@@ -146,6 +146,7 @@ enum RandomTag
     RNG_INFATUATION,
     RNG_LOADED_DICE,
     RNG_METRONOME,
+    RNG_MACHINE_LEARNING, // Project Grounded: hallucinatiekans
     RNG_MOODY_INCREASE,
     RNG_MOODY_DECREASE,
     RNG_PARALYSIS,

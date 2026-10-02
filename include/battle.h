@@ -116,6 +116,9 @@ struct DisableStruct
     u8 unnerveActivated:1; // Unnerve and As One (Unnerve part) activate only once per switch in
     u8 hazardsDone:1;
     u8 blackHoleDone:1; // Project Grounded: Implosion-effect bij het inwisselen gehad
+    u8 machineLearningCount; // Project Grounded: aantal opeenvolgende beurten Machine Learning
+    u8 machineLearningStats; // Project Grounded: stats (bits) die deze beurt nog omhoog gaan
+    u16 machineLearningTurn; // Project Grounded: beurt waarin Machine Learning het laatst gebruikt werd
     u8 endured:1;
     u8 tryEjectPack:1;
     u8 octolockedBy:3;

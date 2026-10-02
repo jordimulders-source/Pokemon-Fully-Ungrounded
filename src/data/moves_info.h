@@ -21513,6 +21513,83 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Implosion,
     },
 
+    [MOVE_LASER_BEAM] =
+    {
+        .name = COMPOUND_STRING("Laser Beam"),
+        .description = COMPOUND_STRING(
+            "A laser that burns through\n"
+            "Protect, screens and boosts."),
+        .effect = EFFECT_BRICK_BREAK,
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresProtect = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LaserBeam,
+    },
+
+    [MOVE_MACHINE_LEARNING] =
+    {
+        .name = COMPOUND_STRING("Machine Learning"),
+        .description = COMPOUND_STRING(
+            "Trains each turn: more stats\n"
+            "rise. May hallucinate."),
+        .effect = EFFECT_MACHINE_LEARNING,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .snatchAffected = FALSE,
+        .ignoresProtect = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Charge,
+    },
+
+    [MOVE_SHADOW_SIPHON] =
+    {
+        .name = COMPOUND_STRING("Shadow Siphon"),
+        .description = COMPOUND_STRING(
+            "Siphons the foe's life away.\n"
+            "Restores a lot of HP."),
+        .effect = EFFECT_ABSORB,
+        .power = 50,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 75 },
+        .makesContact = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ShadowSiphon,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

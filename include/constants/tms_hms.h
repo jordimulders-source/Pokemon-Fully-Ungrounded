@@ -54,7 +54,9 @@
     F(OVERHEAT) \
     F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */ \
     F(LAGER_LAGOON) /* Project Grounded: TM52, bier-Surf */ \
-    F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */
+    F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */ \
+    F(MACHINE_LEARNING) /* Project Grounded: TM54, beloning van Wattson */ \
+    F(LASER_BEAM) /* Project Grounded: TM55, beloning van Tate & Liza */
 
 #define FOREACH_HM(F) \
     F(CUT) \

@@ -95,7 +95,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_LASER_BEAM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -103,7 +103,7 @@ MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_LASER_BEAM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -667,14 +667,14 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 	.string "vibrates with intense energy.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains...\n"
-	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises the frequency of\n"
-	.string "your thoughts and...\p"
-	.string "LIZA: It shields your aura from\n"
-	.string "negative interference!\p"
-	.string "TATE: It is a move that is perfect...\n"
-	.string "LIZA: For achieving total ego death!\p"
+	.string "TATE: That TM55 contains...\n"
+	.string "LIZA: LASER BEAM!\p"
+	.string "TATE: A beam of pure focus, thinner\n"
+	.string "than a hair...\p"
+	.string "LIZA: That burns through every wall\n"
+	.string "the mind can build!\p"
+	.string "TATE: Protect, screens, boosts...\n"
+	.string "LIZA: Nothing survives a clear mind!\p"
 	.string "... ... ... ... ... ...$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:

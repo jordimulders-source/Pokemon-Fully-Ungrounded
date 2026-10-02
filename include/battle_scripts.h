@@ -709,6 +709,8 @@ extern const u8 BattleScript_EffectTickle[];
 extern const u8 BattleScript_EffectFlash[];
 extern const u8 BattleScript_EffectFungalControl[];
 extern const u8 BattleScript_EffectTransmutation[];
+extern const u8 BattleScript_EffectMachineLearning[];
+extern const u8 BattleScript_MachineLearningHallucination[];
 extern const u8 BattleScript_FaintAttackerForImplosion[];
 extern const u8 BattleScript_BlackHoleSwitchIn[];
 extern const u8 BattleScript_BlackHoleEnds[];

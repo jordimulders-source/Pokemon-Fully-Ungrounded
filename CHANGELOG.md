@@ -15465,3 +15465,18 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Graphics uit FireRed/LeafGreen (pret/pokefirered): trainerfoto `graphics/trainers/front_pics/oak.png` (`TRAINER_PIC_OAK`) en overworld-sprite `prof_oak.png` (`OBJ_EVENT_GFX_PROF_OAK`, omgezet naar het NPC-palet van Birch, met grijs haar).
 - Nieuw: `TRAINER_PROF_OAK`, `FLAG_RECEIVED_OAK_STARTER` (0x3B).
 - In de emulator getest (sprite, gevecht, keuze, ontvangst).
+
+### [v.0.8.51] - Laser Beam, Machine Learning en Shadow Siphon
+- **Laser Beam** (TM55, nu de beloning van **Tate & Liza**): Psychic, special, 75 BP, 100 acc, 10 PP.
+  - Gaat door Protect, breekt Reflect/Light Screen (zoals Brick Break) en negeert de defense-boosts van het doelwit.
+  - Animatie: de achtergrond wordt zwart, een dunne rode laser (eigen sprite `laser_dot.png`, 36 punten op de lijn), rook bij de inslag.
+  - Leerbaar via TM door alles wat lasers kan afschieten (Porygon-lijn, Magnemite-lijn, Octillery, Magmortar, Blastoise, Clawitzer, Starmie, Genesect, Deoxys, Necrozma, …) en logische Psychic-soorten (Alakazam-lijn, Espeon, Beheeyem, Metagross, Gardevoir/Gallade, Xatu, Claydol, Reuniclus, Malamar, …); 64 soorten in totaal.
+- **Machine Learning** (TM54, nu de beloning van **Wattson**): Electric, status, 10 PP.
+  - Opeenvolgende beurten gaan er steeds meer stats +1: eerst 1, dan 2, dan 3, daarna alle 5 (de hoogste basisstats eerst). Een andere move of wisselen reset de reeks.
+  - Elke beurt 20% kans op **hallucinatie**: dan doet hij een willekeurige move (Metronome, zonder de Metronome-animatie). Hallucineren breekt de reeks niet.
+  - Teksten (placeholder): "[X] finished training epoch N!" en "[X] hallucinated! It confidently did something else!"
+  - Leerbaar door machine-Pokémon (Porygon-, Magnemite-, Klink-, Beldum-, Golett-lijn, Rotom, Genesect, Magearna, alle Iron-paradoxen, Registeel/Regieleki/Regigigas, Voltorb-lijnen, Varoom-lijn).
+- **Shadow Siphon**: Dark-versie van Draining Kiss (special, 50 BP, herstelt 75% van de schade). Animatie: Giga Drain met donkerpaarse bollen. Nog niemand leert hem.
+- Wattson en Tate & Liza hebben nieuwe uitleg bij hun TM (placeholders in hun stijl).
+- De oude gym-TM's liggen nu op de grond: **TM Volt Switch** op Route 119 (3,56, was Hyper Potion) en **TM Calm Mind** op Route 123 (75,9, was Elixir).
+- Tests: `test/battle/grounded/laser_beam.c`, `machine_learning.c`, `shadow_siphon.c`.

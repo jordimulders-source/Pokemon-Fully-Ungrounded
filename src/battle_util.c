@@ -2444,6 +2444,18 @@ static enum MoveCanceler CancelerCallSubmove(struct BattleContext *ctx)
         calledMove = GetMetronomeMove();
         battleScript = BattleScript_MetronomeAttackstring;
         break;
+    case EFFECT_MACHINE_LEARNING: // Project Grounded: 20% kans op hallucinatie (willekeurige move, zonder Metronome-animatie)
+        if (RandomPercentage(RNG_MACHINE_LEARNING, 20))
+        {
+            gDisableStructs[ctx->battlerAtk].machineLearningTurn = gBattleTurnCounter; // de reeks loopt door
+            calledMove = GetMetronomeMove();
+            battleScript = BattleScript_MachineLearningHallucination;
+        }
+        else
+        {
+            noEffect = TRUE;
+        }
+        break;
     case EFFECT_ASSIST:
         calledMove = GetAssistMove();
         break;

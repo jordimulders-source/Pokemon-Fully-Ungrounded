@@ -18503,7 +18503,73 @@ gBattleAnimMove_LagerLagoon::
 	waitforvisualfinish
 	end
 
-@ Project Grounded: Water Sport in bordeauxrood; het doelwit wankelt na
+@ Project Grounded: Laser Beam - een dunne rode laser op een zwarte achtergrond, met rook bij het doelwit
+gBattleAnimMove_LaserBeam::
+	loadspritegfx ANIM_TAG_LASER_DOT
+	loadspritegfx ANIM_TAG_GRAY_SMOKE
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 16, RGB_BLACK
+	waitforvisualfinish
+	playsewithpan SE_M_LOCK_ON, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_TARGET
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 0, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 1, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 2, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 3, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 4, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 5, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 6, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 7, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 8, 36, 44
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 9, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 10, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 11, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 12, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 13, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 14, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 15, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 16, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 17, 36, 42
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 18, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 19, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 20, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 21, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 22, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 23, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 24, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 25, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 26, 36, 40
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 27, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 28, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 29, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 30, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 31, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 32, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 33, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 34, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 35, 36, 38
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 36, 36, 36
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 2, 0, 24, 1
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, 0, 0, 1, 0
+	delay 6
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, 8, -8, 1, 0
+	delay 6
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, -8, 6, 1, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 16, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Shadow Siphon - Giga Drain met donkere bollen
+gBattleAnimMove_ShadowSiphon::
+	loadspritegfx ANIM_TAG_ORBS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 13, 13, RGB(6, 0, 10)
+	goto gBattleAnimMove_GigaDrain
+
 @ Project Grounded: Implosion. De gebruiker stort in tot een zwart gat; ringen en deeltjes worden naar binnen getrokken.
 gBattleAnimMove_Implosion::
 	loadspritegfx ANIM_TAG_SHADOW_BALL
@@ -18562,6 +18628,7 @@ ImplosionPull:
 	delay 4
 	return
 
+@ Project Grounded: Water Sport in bordeauxrood; het doelwit wankelt na
 gBattleAnimMove_VintageSpill::
 	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GLOWY_BLUE_ORB, 0, 14, 14, RGB(16, 1, 6)

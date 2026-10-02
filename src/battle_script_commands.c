@@ -18413,3 +18413,64 @@ void BS_FormBlackHole(void)
     gFieldTimers.blackHoleTimer = 5;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
+
+
+// Project Grounded: Machine Learning. Opeenvolgende beurten: 1, 2, 3 en daarna alle 5 stats +1.
+// Welke stats: de hoogste basisstats van de gebruiker eerst (bij gelijkspel Atk, Def, SpAtk, SpDef, Speed).
+void BS_MachineLearningTrain(void)
+{
+    NATIVE_ARGS();
+    struct DisableStruct *ds = &gDisableStructs[gBattlerAttacker];
+    const struct SpeciesInfo *info = &gSpeciesInfo[gBattleMons[gBattlerAttacker].species];
+    static const u8 sStats[] = {STAT_ATK, STAT_DEF, STAT_SPATK, STAT_SPDEF, STAT_SPEED};
+    u8 base[ARRAY_COUNT(sStats)];
+    u32 i, j, n;
+
+    if (ds->machineLearningCount == 0 || ds->machineLearningTurn + 1 != gBattleTurnCounter)
+        ds->machineLearningCount = 0;
+    if (ds->machineLearningCount < 4)
+        ds->machineLearningCount++;
+    ds->machineLearningTurn = gBattleTurnCounter;
+
+    base[0] = info->baseAttack;
+    base[1] = info->baseDefense;
+    base[2] = info->baseSpAttack;
+    base[3] = info->baseSpDefense;
+    base[4] = info->baseSpeed;
+
+    n = (ds->machineLearningCount >= 4) ? ARRAY_COUNT(sStats) : ds->machineLearningCount;
+    ds->machineLearningStats = 0;
+    for (i = 0; i < n; i++)
+    {
+        u32 best = ARRAY_COUNT(sStats);
+        for (j = 0; j < ARRAY_COUNT(sStats); j++)
+        {
+            if (ds->machineLearningStats & (1u << sStats[j]))
+                continue;
+            if (best == ARRAY_COUNT(sStats) || base[j] > base[best])
+                best = j;
+        }
+        ds->machineLearningStats |= 1u << sStats[best];
+    }
+    PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, ds->machineLearningCount);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_MachineLearningNextStat(void)
+{
+    NATIVE_ARGS(const u8 *doneInstr);
+    struct DisableStruct *ds = &gDisableStructs[gBattlerAttacker];
+    u32 stat;
+
+    for (stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+    {
+        if (ds->machineLearningStats & (1u << stat))
+        {
+            ds->machineLearningStats &= ~(1u << stat);
+            SET_STATCHANGER(stat, 1, FALSE);
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+    }
+    gBattlescriptCurrInstr = cmd->doneInstr;
+}

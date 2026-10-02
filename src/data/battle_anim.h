@@ -1472,6 +1472,7 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_TatsugiriCurly, 0x200, ANIM_TAG_TATSUGIRI_CURLY},
     {gBattleAnimSpriteGfx_TatsugiriDroopy, 0x200, ANIM_TAG_TATSUGIRI_DROOPY},
     {gBattleAnimSpriteGfx_TatsugiriStretchy, 0x200, ANIM_TAG_TATSUGIRI_STRETCHY},
+    {gBattleAnimSpriteGfx_LaserDot, 0x0020, ANIM_TAG_LASER_DOT},
 };
 
 const struct SpritePalette gBattleAnimPaletteTable[] =
@@ -1945,6 +1946,7 @@ const struct SpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_TatsugiriCurly, ANIM_TAG_TATSUGIRI_CURLY},
     {gBattleAnimSpritePal_TatsugiriDroopy, ANIM_TAG_TATSUGIRI_DROOPY},
     {gBattleAnimSpritePal_TatsugiriStretchy, ANIM_TAG_TATSUGIRI_STRETCHY},
+    {gBattleAnimSpritePal_GlowyRedOrb, ANIM_TAG_LASER_DOT},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =

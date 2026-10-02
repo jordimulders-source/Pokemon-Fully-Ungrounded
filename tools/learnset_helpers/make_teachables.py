@@ -121,6 +121,23 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_VINTAGE_SPILL"] = {"like": set(), "types": {"TY
     "Phantump", "Trevenant", "Dhelmise",                    # eikenhouten vaten en scheepsladingen
     "Gulpin", "Swalot", "Spinda",                           # gisting en proeverij
 }}
+# Laser Beam (TM55, Tate & Liza): alles wat lasers kan afschieten (schietarmen, kanonnen, stralen) plus logische Psychic-soorten.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_LASER_BEAM"] = {"like": set(), "types": set(), "species": {
+    "Porygon", "Porygon2", "PorygonZ", "Magnemite", "Magneton", "Magnezone", "Remoraid", "Octillery",
+    "Magmortar", "Blastoise", "Clauncher", "Clawitzer", "Genesect", "Staryu", "Starmie", "Metang", "Metagross",
+    "Registeel", "Probopass", "Bronzor", "Bronzong", "Vikavolt", "Golett", "Golurk", "Duraludon", "Archaludon",
+    "DeoxysNormal", "DeoxysAttack", "DeoxysDefense", "DeoxysSpeed", "Necrozma", "Solgaleo", "Lunala", "Celesteela",
+    "Abra", "Kadabra", "Alakazam", "Espeon", "Elgyem", "Beheeyem", "Mewtwo", "Kirlia", "Gardevoir", "Gallade",
+    "Natu", "Xatu", "Baltoy", "Claydol", "Lunatone", "Solrock", "Gothitelle", "Reuniclus", "Sigilyph", "Orbeetle",
+    "Inkay", "Malamar", "Hatterene", "Espathra", "Calyrex", "CalyrexIce", "CalyrexShadow", "Girafarig", "Farigiraf",
+}}
+# Machine Learning (TM54, Wattson): machine-Pokémon, vooral die door een soort AI bestuurd kunnen worden.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_MACHINE_LEARNING"] = {"like": set(), "types": set(), "species": {
+    "Porygon", "Porygon2", "PorygonZ", "Magnemite", "Magneton", "Magnezone", "Rotom", "Klink", "Klang", "Klinklang",
+    "Genesect", "Magearna", "IronBundle", "IronHands", "IronJugulis", "IronMoth", "IronThorns", "IronValiant",
+    "IronLeaves", "IronBoulder", "IronCrown", "IronTreads", "Golett", "Golurk", "Beldum", "Metang", "Metagross",
+    "Registeel", "Regieleki", "Regigigas", "Voltorb", "Electrode", "VoltorbHisui", "ElectrodeHisui", "Varoom", "Revavroom",
+}}
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")

@@ -9696,3 +9696,31 @@ void AnimTask_GetCommanderType(u8 taskId)
 
     DestroyAnimVisualTask(taskId);
 }
+
+// Project Grounded: Laser Beam - een dunne, doorlopende rode laser.
+// Elk bolletje staat vast op een punt van de lijn tussen aanvaller en doelwit.
+// arg0: index op de lijn, arg1: aantal punten, arg2: hoe lang het punt blijft staan (frames)
+static void AnimLaserBeamDot(struct Sprite *sprite)
+{
+    s32 x0 = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s32 y0 = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    s32 x1 = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    s32 y1 = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    s32 n = gBattleAnimArgs[1] > 0 ? gBattleAnimArgs[1] : 1;
+
+    sprite->x = x0 + (x1 - x0) * gBattleAnimArgs[0] / n;
+    sprite->y = y0 + (y1 - y0) * gBattleAnimArgs[0] / n;
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+const struct SpriteTemplate gLaserBeamDotSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_LASER_DOT,
+    .paletteTag = ANIM_TAG_LASER_DOT,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimLaserBeamDot,
+};

@@ -5910,6 +5910,8 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
                     return TYPE_FIRE;
                 else if (gBattleWeather & (B_WEATHER_SNOW | B_WEATHER_HAIL))
                     return TYPE_ICE;
+                else if (gBattleWeather & B_WEATHER_ACID_RAIN) // Project Grounded
+                    return TYPE_POISON;
                 else
                     return moveType;
             }

@@ -7984,7 +7984,8 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         {
             gBattleScripting.battler = battler;
             BattleScriptPushCursor();
-            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2)
+            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2
+             || (gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect())) // Project Grounded: Acid Rain maakt het Toxic
             {
                 gBattlescriptCurrInstr = BattleScript_ToxicSpikesBadlyPoisoned;
                 gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
@@ -9513,6 +9514,16 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
             }
             return TRUE;
         }
+        if (gBattleWeather & B_WEATHER_ACID_RAIN) // Project Grounded: Defog blaast de zure wolken weg
+        {
+            if (clear)
+            {
+                gBattleWeather &= ~B_WEATHER_ACID_RAIN;
+                gWishFutureKnock.weatherDuration = 0;
+                BattleScriptCall(BattleScript_AcidRainEnded_Ret);
+            }
+            return TRUE;
+        }
         if (GetConfig(B_DEFOG_EFFECT_CLEARING) >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY))
         {
             if (clear)
@@ -9902,7 +9913,11 @@ static void Cmd_tryhealhalfhealth(void)
     if (cmd->battler == BS_ATTACKER)
         gBattlerTarget = gBattlerAttacker;
 
-    SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 2);
+    // Project Grounded: in Acid Rain wordt Milk Drink zuur en herstelt hij maar een kwart (1/8 van de max HP)
+    if (gCurrentMove == MOVE_MILK_DRINK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_ACID_RAIN))
+        SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 8);
+    else
+        SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 2);
     if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
         gBattlescriptCurrInstr = failInstr;
     else
@@ -9943,6 +9958,9 @@ static void Cmd_setfieldweather(void)
         break;
     case BATTLE_WEATHER_SNOW:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SNOW;
+        break;
+    case BATTLE_WEATHER_ACID_RAIN: // Project Grounded
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN;
         break;
     }
 

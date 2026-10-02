@@ -178,3 +178,41 @@ AquaHideout_B1F_Text_SeltzerNote:
 	.string "This will be a commercial success,\n"
 	.string "bottle, ship and sell it!\p"
 	.string "Sparkling water forever!$"
+
+@ Project Grounded: een Aqua-grunt geeft je TM57 Acid Rain, want het verpest hun bruiswater.
+AquaHideout_B1F_EventScript_AcidRainGrunt::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_ACID_RAIN, AquaHideout_B1F_EventScript_AcidRainGruntDone
+	msgbox AquaHideout_B1F_Text_AcidRainGruntGive, MSGBOX_DEFAULT
+	giveitem ITEM_TM_ACID_RAIN
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_ACID_RAIN
+	msgbox AquaHideout_B1F_Text_AcidRainGruntAfter, MSGBOX_DEFAULT
+	release
+	end
+
+AquaHideout_B1F_EventScript_AcidRainGruntDone::
+	msgbox AquaHideout_B1F_Text_AcidRainGruntDone, MSGBOX_DEFAULT
+	release
+	end
+
+AquaHideout_B1F_Text_AcidRainGruntGive:
+	.string "Psst. Intruder. Yeah, you.\n"
+	.string "Want a TM? Take it. Please.\p"
+	.string "R&D made ACID RAIN. The idea was\n"
+	.string "to expand the sea with free water\l"
+	.string "from the sky.\p"
+	.string "Except it fell into the sparkling\n"
+	.string "water vats. Now our SELTZER tastes\l"
+	.string "like a car battery.\p"
+	.string "The boss had one sip and fired\n"
+	.string "three admins. Get it out of here.$"
+
+AquaHideout_B1F_Text_AcidRainGruntAfter:
+	.string "If anyone asks, you stole it.\n"
+	.string "Heroically. I fought back. Hard.$"
+
+AquaHideout_B1F_Text_AcidRainGruntDone:
+	.string "Don't drink anything in this base.\n"
+	.string "Trust me.$"

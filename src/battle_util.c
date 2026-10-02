@@ -212,6 +212,15 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .continuesMessage = B_MSG_WEATHER_TURN_STRONG_WINDS,
         .animation = B_ANIM_STRONG_WINDS,
     },
+
+    [BATTLE_WEATHER_ACID_RAIN] = // Project Grounded
+    {
+        .flag = B_WEATHER_ACID_RAIN,
+        .rock = HOLD_EFFECT_BLACK_SLUDGE,
+        .endMessage = B_MSG_WEATHER_END_ACID_RAIN,
+        .continuesMessage = B_MSG_WEATHER_TURN_ACID_RAIN,
+        .animation = B_ANIM_ACID_RAIN_CONTINUES,
+    },
 };
 
 // Helper function for actual dmg calcs during battle. For simulated AI dmg, CalcTypeEffectivenessMultiplier should be used directly
@@ -4306,6 +4315,13 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_AIR_POLLUTION: // Project Grounded
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, gLastUsedAbility))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_AirPollutionActivates);
+                effect++;
+            }
+            break;
         case ABILITY_DRIZZLE:
             if (TryChangeBattleWeather(battler, BATTLE_WEATHER_RAIN, gLastUsedAbility))
             {
@@ -7184,6 +7200,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower = gNaturalGiftTable[ITEM_TO_BERRY(gBattleMons[battlerAtk].item)].power;
         break;
     case EFFECT_DOUBLE_POWER_ON_ARG_STATUS:
+        // Project Grounded: in Acid Rain telt elk doelwit als vergiftigd (Venoshock)
+        if ((GetMoveEffectArg_Status(move) & STATUS1_PSN_ANY) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN))
+        {
+            basePower *= 2;
+            break;
+        }
         // Comatose targets treated as if asleep
         if ((gBattleMons[battlerDef].status1 | (STATUS1_SLEEP * (ctx->abilityDef == ABILITY_COMATOSE))) & GetMoveEffectArg_Status(move)
          && !((GetMoveAdditionalEffectById(move, 0)->moveEffect == MOVE_EFFECT_REMOVE_STATUS) && DoesSubstituteBlockMove(battlerAtk, battlerDef, move)))
@@ -8185,6 +8207,9 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     // snow def boost for ice types
     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW | B_WEATHER_HAIL) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+    // Project Grounded: acid rain def boost for poison types
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN) && usesDefStat)
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
 
@@ -8248,6 +8273,13 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_ACID_RAIN && (ctx->abilityAtk != ABILITY_FORECAST || GetMoveEffect(ctx->move) == EFFECT_WEATHER_BALL)) // Project Grounded: Fire en Water zwakker, Poison sterker (Castform heeft er geen last van, behalve Weather Ball)
+    {
+        if (ctx->moveType == TYPE_FIRE || ctx->moveType == TYPE_WATER)
+            return UQ_4_12(0.5);
+        if (ctx->moveType == TYPE_POISON)
+            return UQ_4_12(1.5);
     }
     return UQ_4_12(1.0);
 }
@@ -10255,6 +10287,11 @@ u32 CalcSecondaryEffectChance(u32 battler, enum Ability battlerAbility, const st
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
+    // Project Grounded: Acid Rain verdubbelt de gifkans (50% of meer wordt 100%)
+    if ((additionalEffect->moveEffect == MOVE_EFFECT_POISON || additionalEffect->moveEffect == MOVE_EFFECT_TOXIC)
+     && secondaryEffectChance != 0 && gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect())
+        secondaryEffectChance = (secondaryEffectChance >= 50) ? 100 : secondaryEffectChance * 2;
+
     if (hasRainbow && hasSereneGrace && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH)
         return secondaryEffectChance * 2;
 
@@ -10954,7 +10991,7 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
 
     if (!effect && HasWeatherEffect())
     {
-        if (MoveAlwaysHitsInRain(move) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN))
+        if (MoveAlwaysHitsInRain(move) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN | B_WEATHER_ACID_RAIN))
             effect = TRUE;
         else if ((gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && MoveAlwaysHitsInHailSnow(move))
             effect = TRUE;

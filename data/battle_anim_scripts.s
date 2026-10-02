@@ -18503,6 +18503,36 @@ gBattleAnimMove_LagerLagoon::
 	waitforvisualfinish
 	end
 
+@ Project Grounded: Acid Rain - paarse regen (move en eind van de beurt)
+gBattleAnimMove_AcidRain::
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_RAIN_DROPS, 0, 12, 12, RGB(20, 4, 26)
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 6, RGB(12, 2, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	delay 120
+	delay 30
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 6, 0, RGB(12, 2, 16)
+	waitforvisualfinish
+	end
+
+gBattleAnimGeneral_AcidRain::
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_RAIN_DROPS, 0, 12, 12, RGB(20, 4, 26)
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 6, RGB(12, 2, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	delay 24
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 6, 0, RGB(12, 2, 16)
+	waitforvisualfinish
+	end
+
 @ Project Grounded: Fungal Control - contact, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit
 gBattleAnimMove_FungalControl::
 	loadspritegfx ANIM_TAG_IMPACT
@@ -30804,6 +30834,7 @@ gBattleAnimMove_WeatherBall::
 	jumpreteq ANIM_WEATHER_HAIL, WeatherBallIce
 	jumpreteq ANIM_WEATHER_SNOW, WeatherBallIce
 	jumpreteq ANIM_WEATHER_FOG, WeatherBallNormal
+	jumpreteq ANIM_WEATHER_ACID_RAIN, WeatherBallAcid
 WeatherBallNormal:
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gWeatherBallNormalDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 0, 0
@@ -30828,6 +30859,11 @@ WeatherBallFire:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 8, 1
 	waitforvisualfinish
 	end
+WeatherBallAcid: @ Project Grounded: paars-groene bellen
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 12, 12, RGB(16, 6, 24)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 8, RGB(10, 26, 4)
+	goto WeatherBallWater
 WeatherBallWater:
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
 	createsprite gWeatherBallWaterDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 50, 10

@@ -1014,6 +1014,8 @@ extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
 extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
 extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
+extern const u8 gBattleAnimGeneral_AcidRain[];
+extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

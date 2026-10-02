@@ -21591,6 +21591,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_ShadowSiphon,
     },
 
+    [MOVE_ACID_RAIN] =
+    {
+        .name = COMPOUND_STRING("Acid Rain"),
+        .description = COMPOUND_STRING(
+            "Summons acid rain for 5\n"
+            "turns. Poison thrives."),
+        .effect = EFFECT_ACID_RAIN,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AcidRain,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

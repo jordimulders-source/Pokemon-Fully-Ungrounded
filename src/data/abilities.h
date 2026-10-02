@@ -23,6 +23,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 9,
     },
 
+    [ABILITY_AIR_POLLUTION] = // Project Grounded
+    {
+        .name = _("Air Pollution"),
+        .description = COMPOUND_STRING("Summons acid rain."),
+        .aiRating = 8,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),
@@ -449,7 +456,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FORECAST] =
     {
         .name = _("Forecast"),
-        .description = COMPOUND_STRING("Changes with the weather."),
+        .description = COMPOUND_STRING("Shifts with the weather."), // Project Grounded: ook immuun voor de nadelen van zand en zure regen
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,

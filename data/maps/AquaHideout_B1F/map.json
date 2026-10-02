@@ -143,6 +143,20 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM_SELTZER_SURGE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_TM_SELTZER_SURGE"
+    },
+    {
+      "local_id": "LOCALID_AQUA_HIDEOUT_B1F_ACID_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "x": 32,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AquaHideout_B1F_EventScript_AcidRainGrunt",
+      "flag": "0"
     }
   ],
   "warp_events": [

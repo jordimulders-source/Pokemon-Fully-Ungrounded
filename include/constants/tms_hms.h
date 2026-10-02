@@ -57,7 +57,8 @@
     F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */ \
     F(MACHINE_LEARNING) /* Project Grounded: TM54, beloning van Wattson */ \
     F(LASER_BEAM) /* Project Grounded: TM55, beloning van Tate & Liza */ \
-    F(SHADOW_SIPHON) /* Project Grounded: TM56, Mt. Pyre 3F */
+    F(SHADOW_SIPHON) /* Project Grounded: TM56, Mt. Pyre 3F */ \
+    F(ACID_RAIN) /* Project Grounded: TM57, van een Aqua-grunt in de Aqua Hideout */
 
 #define FOREACH_HM(F) \
     F(CUT) \

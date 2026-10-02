@@ -149,6 +149,10 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_SHADOW_SIPHON"] = {"like": set(), "types": set(
     "Drifblim", "Litwick", "Lampent", "Chandelure", "Froslass", "Noibat", "Noivern", "Sinistea",
     "Polteageist", "Dreepy", "Drakloak", "Dragapult", "Gimmighoul", "Gholdengo"
 }}
+# Acid Rain (TM57, Aqua-grunt): alle Poison-types plus soorten die met vervuiling of weer te maken hebben.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_ACID_RAIN"] = {"like": set(), "types": {"TYPE_POISON"}, "species": {
+    "Castform", "Torkoal", "Rolycoly", "Carkol", "Coalossal", "Slugma", "Magcargo",
+}}
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")

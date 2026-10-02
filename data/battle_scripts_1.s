@@ -1017,6 +1017,7 @@ BattleScript_DefDown_Ret:
 
 BattleScript_EffectPurify::
 	attackcanceler
+	jumpifweatheraffected B_WEATHER_ACID_RAIN, BattleScript_AcidRainBlocksCure @ Project Grounded
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_PurifyWorks
 	goto BattleScript_ButItFailed
@@ -3357,6 +3358,43 @@ BattleScript_MachineLearningHallucination::
 	setcalledmove
 	return
 
+@ Project Grounded: Acid Rain (paarse Rain Dance)
+BattleScript_EffectAcidRain::
+	attackcanceler
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_ACID_RAIN
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_AirPollutionActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNMADEACIDRAIN
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_ACID_RAIN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_AcidRainHeal::
+	playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PKMNSOAKEDUPACIDRAIN
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_AcidRainEnded_Ret::
+	printstring STRINGID_ACIDRAINBLOWNAWAY
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+	return
+
+BattleScript_AcidRainBlocksCure::
+	attackanimation
+	waitanimation
+	printstring STRINGID_ACIDRAINBLOCKSCURE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectPainSplit::
 	attackcanceler
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
@@ -3437,6 +3475,7 @@ BattleScript_EffectSpite::
 @ TODO: Simplfy script
 BattleScript_EffectHealBell::
 	attackcanceler
+	jumpifweatheraffected B_WEATHER_ACID_RAIN, BattleScript_AcidRainBlocksCure @ Project Grounded
 	attackanimation
 	waitanimation
 	healpartystatus
@@ -4365,6 +4404,7 @@ BattleScript_EffectImprison::
 
 BattleScript_EffectRefresh::
 	attackcanceler
+	jumpifweatheraffected B_WEATHER_ACID_RAIN, BattleScript_AcidRainBlocksCure @ Project Grounded
 	curestatuswithmove BattleScript_ButItFailed
 	attackanimation
 	waitanimation

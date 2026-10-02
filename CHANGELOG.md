@@ -15487,3 +15487,18 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - Level-up: Zubat 29, Golbat/Crobat 32, Misdreavus/Mismagius 30, Spiritomb 30, Shuppet 30, Banette 32, Impidimp 28, Morgrem/Grimmsnarl 30, Zorua 30, Zoroark 32, Sableye 30.
   - Animatie: paarse gloed, de schaduw van het doelwit verschijnt aan zijn voeten en wordt krimpend naar de aanvaller gezogen; het doelwit verbleekt, de aanvaller herstelt.
 - **Fungal Control** maakt nu contact en heeft een eigen animatie: aanvallen, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit (ongebruikte asset `mushroom.png` uit expansion), met een groene gloed.
+
+### [v.0.8.53] - Acid Rain (TM57) en Air Pollution
+- Nieuw weer **Acid Rain** (alleen in gevechten), 5 beurten, 8 met **Black Sludge**:
+  - Poison-types herstellen 1/16 HP per beurt en krijgen Def ×1,5. Alle anderen verliezen 1/16 per beurt, behalve Steel (en Magic Guard, Overcoat, Safety Goggles, Utility Umbrella, ondergrondse/onderwater-Pokémon).
+  - Poison-moves ×1,5, Fire- én Water-moves ×0,5 ("ultieme weather wars").
+  - Venoshock doet altijd dubbele schade. Gifkansen van moves verdubbelen (10→20%, 20→40%, 50% en hoger → 100%).
+  - Purify, Aromatherapy, Refresh en Heal Bell falen ("The acid rain keeps poisoning everything!").
+  - Synthesis, Moonlight en Morning Sun herstellen 1/4. Milk Drink wordt zuur en herstelt een kwart van normaal (1/8).
+  - Toxic Spikes maken in Acid Rain meteen Badly Poisoned. Thunder en Hurricane raken altijd.
+  - Weather Ball wordt Poison, 100 BP, met paars-groene bellen. Defog blaast de zure wolken weg. Rapid Spin werkt normaal.
+  - Animatie: paarse regen, als move en aan het eind van elke beurt.
+- Move **Acid Rain** (Poison, status, 5 PP) = **TM57**. Je krijgt hem van een **nieuwe Aqua-grunt in de Aqua Hideout B1F** (32,18): R&D's zure regen viel in de bruiswatervaten (placeholder-dialoog). Leerbaar via TM door alle Poison-types plus Castform, Torkoal, Slugma-, Rolycoly-lijn. Level-up bij 46 Poison-soorten (o.a. Arbok, Nidoking-lijn, Crobat, Muk, Weezing, Tentacruel, Swalot, Drapion, Toxicroak, Garbodor, Dragalge, Toxapex, Salazzle, Toxtricity, Scolipede, Glimmora, Grafaiai).
+- Nieuwe ability **Air Pollution** (zoals Drizzle, maar Acid Rain): Koffing/Weezing (vervangt Levitate) en Trubbish/Garbodor (vervangt Stench).
+- **Forecast** (Castform): immuun voor de nadelen van Sandstorm en Acid Rain; Weather Ball werkt gewoon.
+- Tests: `test/battle/grounded/acid_rain.c` (9 tests). In de emulator getest: animatie en de grunt.

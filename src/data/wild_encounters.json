@@ -1596,7 +1596,7 @@
               { "min_level": 28, "max_level": 30, "species": "SPECIES_LUDICOLO" },
               { "min_level": 26, "max_level": 28, "species": "SPECIES_CROAGUNK" },
               { "min_level": 30, "max_level": 32, "species": "SPECIES_AMBIPOM" },
-              { "min_level": 27, "max_level": 28, "species": "SPECIES_CROAGUNK" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_MIMIKYU" },
               { "min_level": 35, "max_level": 35, "species": "SPECIES_ZARUDE" }
             ]
           },

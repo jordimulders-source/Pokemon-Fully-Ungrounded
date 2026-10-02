@@ -286,6 +286,8 @@ const u32 gTrainerFrontPic_Kecleon[] = INCBIN_U32("graphics/trainers/front_pics/
 const u16 gTrainerPalette_Kecleon[] = INCBIN_U16("graphics/trainers/front_pics/kecleon.gbapal");
 const u32 gTrainerFrontPic_ProfessorOak[] = INCBIN_U32("graphics/trainers/front_pics/oak.4bpp.smol");
 const u16 gTrainerPalette_ProfessorOak[] = INCBIN_U16("graphics/trainers/front_pics/oak.gbapal");
+const u32 gTrainerFrontPic_Mimikyu[] = INCBIN_U32("graphics/trainers/front_pics/mimikyu.4bpp.smol");
+const u16 gTrainerPalette_Mimikyu[] = INCBIN_U16("graphics/trainers/front_pics/mimikyu.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -411,6 +413,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_ProfessorBirch, gTrainerPalette_ProfessorBirch),
     TRAINER_SPRITE(TRAINER_PIC_KECLEON, gTrainerFrontPic_Kecleon, gTrainerPalette_Kecleon),
     TRAINER_SPRITE(TRAINER_PIC_OAK, gTrainerFrontPic_ProfessorOak, gTrainerPalette_ProfessorOak),
+    TRAINER_SPRITE(TRAINER_PIC_MIMIKYU, gTrainerFrontPic_Mimikyu, gTrainerPalette_Mimikyu),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)

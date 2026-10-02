@@ -15532,3 +15532,8 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.57] - Gossifleur zonder Pollen Season, Weather Ball-tests gerepareerd
 - **Gossifleur** heeft weer Effect Spore; Pollen Season blijft alleen bij geëvolueerde soorten (Eldegoss enz.), niet bij onge-evolueerde Pokémon van vroege routes.
 - De vanilla Weather Ball-tests gebruiken nu Misdreavus i.p.v. Wobbuffet: Wobbuffet is in Grounded Psychic/Normal en kreeg STAB op de Normal Weather Ball, waardoor de tests de verkeerde verhouding verwachtten. De move zelf werkte al goed; alle 4 tests slagen nu.
+
+### [v.0.8.58] - Mimi de Mimikyu (Mimic Circle, Route 119)
+- **Mimi** is zelf een Mimikyu en een trainer (zoals Keccles een Kecleon is): ze staat op de kale strook in de Mimic Circle (22,123) en spreekt alleen in griezelige geluiden ("…pika… …pika…", "(a long, wet giggle)"). Placeholders.
+- Team (lv 33, ace 35): Pikachu, Pachirisu, Dedenne, Marill (bewust onge-evolueerd: de nep-Pikachu) en Mimikyu (Disguise, lv 35). Trainerfoto = de Mimikyu-sprite (`TRAINER_PIC_MIMIKYU`), muziek Suspicious.
+- **Mimikyu** als zeldzame encounter (1%, lv 28–30) in het gras van Route 119; vervangt het dubbele Croagunk-slot.

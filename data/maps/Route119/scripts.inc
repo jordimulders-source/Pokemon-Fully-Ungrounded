@@ -622,3 +622,22 @@ Route119_Text_TimothyAfterTM:
 Route119_Text_TimothyPostBattle:
 	.string "Antihistamines are a lie told\n"
 	.string "by the man.$"
+
+@ Project Grounded: Mimi is zelf een Mimikyu (zoals Keccles een Kecleon is). Ze zegt niets, alleen geluiden.
+Route119_EventScript_Mimi::
+	trainerbattle_single TRAINER_MIMI, Route119_Text_MimiIntro, Route119_Text_MimiDefeat
+	msgbox Route119_Text_MimiPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route119_Text_MimiIntro:
+	.string "…hehe…\p"
+	.string "…pika… …pika…\p"
+	.string "(scritch… scritch…)$"
+
+Route119_Text_MimiDefeat:
+	.string "(a long, wet giggle)$"
+
+Route119_Text_MimiPostBattle:
+	.string "…\p"
+	.string "(the costume slowly turns\n"
+	.string "to look at you)$"

@@ -855,6 +855,7 @@ extern const u8 gBattleAnimMove_LagerLagoon[];
 extern const u8 gBattleAnimMove_VintageSpill[];
 extern const u8 gBattleAnimMove_Implosion[];
 extern const u8 gBattleAnimMove_LaserBeam[];
+extern const u8 gBattleAnimMove_FungalControl[];
 extern const u8 gBattleAnimMove_ShadowSiphon[];
 extern const u8 gBattleAnimMove_BreakneckBlitz[];
 extern const u8 gBattleAnimMove_AllOutPummeling[];

@@ -12636,11 +12636,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM56] =
+    [ITEM_TM_SHADOW_SIPHON] = // Project Grounded: TM56
     {
         .name = ITEM_NAME("TM56"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Siphons the foe's shadow\n"
+            "from afar. Restores a lot\n"
+            "of HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

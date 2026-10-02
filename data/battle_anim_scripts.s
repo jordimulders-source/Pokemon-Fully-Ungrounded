@@ -18503,6 +18503,35 @@ gBattleAnimMove_LagerLagoon::
 	waitforvisualfinish
 	end
 
+@ Project Grounded: Fungal Control - contact, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit
+gBattleAnimMove_FungalControl::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_SPORE
+	loadspritegfx ANIM_TAG_MUSHROOM
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 6
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 12, 4
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-12, wave_offset=85, duration=60, blend=1
+	delay 6
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-4, wave_offset=170, duration=60, blend=1
+	delay 10
+	playsewithpan SE_M_GIGA_DRAIN, SOUND_PAN_TARGET
+	createsprite gFungalControlMushroomSpriteTemplate, ANIM_TARGET, 2, -4, -18, ANIM_TARGET, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 4, 0, 7, RGB(10, 20, 4)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 1, 0, 30, 1
+	delay 40
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 4, 7, 0, RGB(10, 20, 4)
+	waitforvisualfinish
+	end
+
 @ Project Grounded: Laser Beam - een dunne rode laser op een zwarte achtergrond, met rook bij het doelwit
 gBattleAnimMove_LaserBeam::
 	loadspritegfx ANIM_TAG_LASER_DOT
@@ -18564,11 +18593,35 @@ gBattleAnimMove_LaserBeam::
 	waitforvisualfinish
 	end
 
-@ Project Grounded: Shadow Siphon - Giga Drain met donkere bollen
+@ Project Grounded: Shadow Siphon - de schaduw van het doelwit wordt opgeslurpt door de aanvaller (geen contact)
 gBattleAnimMove_ShadowSiphon::
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_ORBS
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 13, 13, RGB(6, 0, 10)
-	goto gBattleAnimMove_GigaDrain
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ROUND_SHADOW, 0, 16, 16, RGB(2, 0, 4)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 14, 14, RGB(5, 0, 9)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 10, RGB(3, 0, 6)
+	waitforvisualfinish
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	createsprite gShadowSiphonShadowSpriteTemplate, ANIM_TARGET, 2, 18, 22, 26
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 8, RGB_BLACK
+	delay 22
+	playsewithpan SE_M_GIGA_DRAIN, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 2, 0, 20, 1
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=10, wave_amplitude=8, wave_period=26
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-10, y=16, wave_amplitude=-20, wave_period=30
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=10, y=14, wave_amplitude=16, wave_period=28
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=18, wave_amplitude=-8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-6, y=12, wave_amplitude=24, wave_period=32
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 8, 0, RGB_BLACK
+	call HealingEffect
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 10, 0, RGB(3, 0, 6)
+	waitforvisualfinish
+	end
 
 @ Project Grounded: Implosion. De gebruiker stort in tot een zwart gat; ringen en deeltjes worden naar binnen getrokken.
 gBattleAnimMove_Implosion::

@@ -15480,3 +15480,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Wattson en Tate & Liza hebben nieuwe uitleg bij hun TM (placeholders in hun stijl).
 - De oude gym-TM's liggen nu op de grond: **TM Volt Switch** op Route 119 (3,56, was Hyper Potion) en **TM Calm Mind** op Route 123 (75,9, was Elixir).
 - Tests: `test/battle/grounded/laser_beam.c`, `machine_learning.c`, `shadow_siphon.c`.
+
+### [v.0.8.52] - Shadow Siphon (TM56) en nieuwe animaties
+- **Shadow Siphon** wordt **TM56**, te vinden op **Mt. Pyre 3F** (was Super Repel). Idee: zuigt op afstand de schaduw weg, zonder contact.
+  - Via TM voor special Dark-aanvallers en sinistere soorten op afstand (55 soorten, o.a. Houndoom, Honchkrow, Zoroark, Hydreigon, Darkrai, Spiritomb, Mismagius, Grimmsnarl-lijn, Banette, Zubat-lijn, Sableye, Gengar-lijn, Dusknoir, Chandelure, Froslass, Polteageist, Dragapult).
+  - Level-up: Zubat 29, Golbat/Crobat 32, Misdreavus/Mismagius 30, Spiritomb 30, Shuppet 30, Banette 32, Impidimp 28, Morgrem/Grimmsnarl 30, Zorua 30, Zoroark 32, Sableye 30.
+  - Animatie: paarse gloed, de schaduw van het doelwit verschijnt aan zijn voeten en wordt krimpend naar de aanvaller gezogen; het doelwit verbleekt, de aanvaller herstelt.
+- **Fungal Control** maakt nu contact en heeft een eigen animatie: aanvallen, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit (ongebruikte asset `mushroom.png` uit expansion), met een groene gloed.

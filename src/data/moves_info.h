@@ -21451,13 +21451,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .powderMove = TRUE,
+        .makesContact = TRUE,
         .magicCoatAffected = TRUE,
         .encoreBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Spore,
+        .battleAnimScript = gBattleAnimMove_FungalControl,
     },
 
     [MOVE_TRANSMUTATION] =

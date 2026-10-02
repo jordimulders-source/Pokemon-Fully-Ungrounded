@@ -138,6 +138,17 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_MACHINE_LEARNING"] = {"like": set(), "types": s
     "IronLeaves", "IronBoulder", "IronCrown", "IronTreads", "Golett", "Golurk", "Beldum", "Metang", "Metagross",
     "Registeel", "Regieleki", "Regigigas", "Voltorb", "Electrode", "VoltorbHisui", "ElectrodeHisui", "Varoom", "Revavroom",
 }}
+# Shadow Siphon (TM56, Mt. Pyre): zuigt op afstand de schaduw/levenskracht weg, zonder contact.
+# Special Dark-aanvallers plus sinistere soorten die op afstand griezelige dingen doen.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_SHADOW_SIPHON"] = {"like": set(), "types": set(), "species": {
+    "Houndour", "Houndoom", "Murkrow", "Honchkrow", "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui",
+    "Deino", "Zweilous", "Hydreigon", "Darkrai", "Yveltal", "Nickit", "Thievul", "MoltresGalar",
+    "Inkay", "Malamar", "HoopaUnbound", "ChiYu", "Pecharunt", "Spiritomb", "Misdreavus", "Mismagius",
+    "Impidimp", "Morgrem", "Grimmsnarl", "Shuppet", "Banette", "Zubat", "Golbat", "Crobat",
+    "Sableye", "Gastly", "Haunter", "Gengar", "Duskull", "Dusclops", "Dusknoir", "Drifloon",
+    "Drifblim", "Litwick", "Lampent", "Chandelure", "Froslass", "Noibat", "Noivern", "Sinistea",
+    "Polteageist", "Dreepy", "Drakloak", "Dragapult", "Gimmighoul", "Gholdengo"
+}}
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")

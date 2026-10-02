@@ -110,7 +110,8 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_BIRCH                 93
 #define TRAINER_PIC_KECLEON               94 // Project Grounded: Keccles
-#define TRAINER_PIC_COUNT                 95
+#define TRAINER_PIC_OAK                   95 // Project Grounded: Prof. Oak (sprite uit FRLG)
+#define TRAINER_PIC_COUNT                 96
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

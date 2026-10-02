@@ -15458,3 +15458,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.49] - Wie leert Implosion
 - Level-up: Voltorb 46 / Electrode 50 (ook Hisui), Solrock 50, Lunatone 50, Minior 50 (alle vormen), Dusknoir 57, Drifblim 57, Cosmoem 45, Necrozma 80, Darkrai 82, Deoxys 85 (alle vormen).
 - Jordi's lijst plus eigen toevoegingen die kunnen imploderen: Drifblim (ballon), Cosmoem (instortende protoster) en Necrozma (slokt licht op). Schrappen kan.
+
+### [v.0.8.50] - Prof. Oak in Slateport
+- **Prof. Oak** staat bij de vuurtoren van Slateport (36,53) naar zee te kijken, zodra je Slateport in kunt. Praten = gevecht (mugshot, paars): Exeggcute, Growlithe, Bulbasaur, Squirtle, Charmander (lv 15, de starters bewust onge-evolueerd) en Tauros (lv 17, ace).
+- Na het gevecht kies je een **Kanto-starter** (Bulbasaur/Charmander/Squirtle, lv 15; zonder bijnaamvraag). Teksten zijn placeholders.
+- Graphics uit FireRed/LeafGreen (pret/pokefirered): trainerfoto `graphics/trainers/front_pics/oak.png` (`TRAINER_PIC_OAK`) en overworld-sprite `prof_oak.png` (`OBJ_EVENT_GFX_PROF_OAK`, omgezet naar het NPC-palet van Birch, met grijs haar).
+- Nieuw: `TRAINER_PROF_OAK`, `FLAG_RECEIVED_OAK_STARTER` (0x3B).
+- In de emulator getest (sprite, gevecht, keuze, ontvangst).

@@ -14,7 +14,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.
 6. **Heatran-cutscene** na Wattson: Rock Smash-stenen op Route 111 net boven Mauville weg; Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden (Fiery Path).
 7. **Rotom-event:** Mauville, na badge 3, kelder van een huis met een tv.
-8. **Prof. Oak:** staat in Slateport bij de vuurtoren naar het water te kijken; gevecht → Gen 1-starter.
+8. ~~Prof. Oak~~ (gedaan, v0.8.50)
 9. **Mimikyu-trainer:** in de "mimic circle" onderaan Route 119 (bij de Bug Maniacs, hoog gras). Een Mimikyu-object op een stuk zonder gras; Mimikyu als zeldzame encounter op Route 119 (vervangt het vaakst voorkomende dubbele slot).
 10. Nog open: **Laser Beam** en **Machine Learning** (wat doen ze?), level/badge van Oak.
 

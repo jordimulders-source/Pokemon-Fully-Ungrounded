@@ -53,6 +53,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Emulator-screenshots hebben een dag/nacht-tint** (`OW_ENABLE_DNS`, echte klok): roze/oranje of blauw is de tijd van de dag, geen paletbug.
 - **Gehoorzaamheid in emulatortests:** de intro-savestate heeft geen badges, dus een `givemon` boven lv 10 is ongehoorzaam (doet een andere move, gaat slapen). Altijd testen met lv ≤ 10 óf eerst alle badges zetten (`setflag FLAG_BADGE01_GET` … `FLAG_BADGE08_GET`).
 - **Wilde gevechten via debugscript** starten pas na de eerste knopdruk: na `debug_script` eerst A, dan ~400 frames wachten tot het actiemenu er is.
+- **Nieuwe graphics:** een overworld-sprite heeft een eigen regel in `spritesheet_rules.mk` nodig (`-mwidth 2 -mheight 4` voor 16×32), anders staan de tegels door elkaar. Make bouwt een `.c` niet opnieuw als alleen een INCBIN-bestand verandert: `touch` het `.c`-bestand (bijv. `src/event_object_movement.c`). FRLG-graphics komen uit `pret/pokefirered` (raw.githubusercontent.com).
 
 ## Werkwijzen (herhaalde taken)
 

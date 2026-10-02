@@ -15528,3 +15528,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Silver Powder** verlengt Pollen Haze tot 8 beurten (zoals Black Sludge bij Acid Rain).
 - Pollen Season weer weg bij de voorgangers: **Hoppip, Skiploom, Sunkern, Cutiefly** (en Scatterbug) hebben hun oude ability terug (Infiltrator, Early Bird, Sweet Veil, Friend Guard). Gossifleur houdt Pollen Season.
 - Test: Silver Powder verlengt Pollen Haze.
+
+### [v.0.8.57] - Gossifleur zonder Pollen Season, Weather Ball-tests gerepareerd
+- **Gossifleur** heeft weer Effect Spore; Pollen Season blijft alleen bij geëvolueerde soorten (Eldegoss enz.), niet bij onge-evolueerde Pokémon van vroege routes.
+- De vanilla Weather Ball-tests gebruiken nu Misdreavus i.p.v. Wobbuffet: Wobbuffet is in Grounded Psychic/Normal en kreeg STAB op de Normal Weather Ball, waardoor de tests de verkeerde verhouding verwachtten. De move zelf werkte al goed; alle 4 tests slagen nu.

@@ -7,6 +7,7 @@
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "item.h"
 
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
@@ -224,3 +225,20 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     },
 #endif
 };
+
+// Project Grounded: HM-acties zonder dat een Pokémon de move kent: badge + de HM in de tas is genoeg
+// ("er wordt altijd wel een Pokémon gechanneld, desnoods uit de box").
+bool32 CanUseFieldMoveViaHM(enum FieldMove fieldMove)
+{
+    u32 item;
+    u16 move = FieldMove_GetMoveId(fieldMove);
+
+    if (move == MOVE_NONE || !IsFieldMoveUnlocked(fieldMove))
+        return FALSE;
+    for (item = ITEM_HM01; item <= ITEM_HM08; item++)
+    {
+        if (GetItemTMHMMoveId(item) == move && CheckBagHasItem(item, 1))
+            return TRUE;
+    }
+    return FALSE;
+}

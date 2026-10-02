@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_move.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -1064,6 +1065,11 @@ void SetDefaultFlashLevel(void)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
         gSaveBlock1Ptr->flashLevel = 1;
+    else if (CanUseFieldMoveViaHM(FIELD_MOVE_FLASH)) // Project Grounded: donkere grotten meteen verlicht met badge + HM05
+    {
+        FlagSet(FLAG_SYS_USE_FLASH);
+        gSaveBlock1Ptr->flashLevel = 1;
+    }
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
 }

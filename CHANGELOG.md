@@ -15370,3 +15370,11 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Rare Candy, vitamines (HP Up t/m Carbos) en veren:** kies je USE in de tas en heb je er meer dan één, dan vraagt de tas eerst "Use how many?" (zelfde aantalkiezer als bij weggooien: ↑↓ ±1, ←→ ±10). Daarna kies je de Pokémon en worden ze in één keer toegepast, met één melding (bijv. "elevated to Lv. 15"). Moves die onderweg geleerd worden en een evolutie daarna gaan zoals bij Exp. Candies. Er worden nooit meer gebruikt dan zin heeft (lv 100, EV-maximum); de rest blijft in de tas. `gMultiUseCount` / `IsMultiUseItem` in `src/item_menu.c`, toepassen in `ItemUseCB_RareCandy` en `ItemUseCB_Medicine`.
 - **Tas sorteren** bestond al in pokeemerald-expansion: in de tas opent **START** het sorteermenu (naam, type, aantal, index). Van de takenlijst gehaald.
 - Getest in de emulator: 5 Rare Candies (lv 10 → 15, daarna move leren) en 3 Proteins in één keer.
+
+### [v.0.8.32] - QoL: HM-acties zonder HM-Pokémon, direct bij aanspreken
+- **Badge + HM in de tas is genoeg** voor Cut, Rock Smash, Strength, Surf, Waterfall, Dive en Flash: niemand in je team hoeft de move te kennen (`CanUseFieldMoveViaHM` in `src/field_move.c`; terugval in `checkfieldmove` en `PartyHasMonWithSurf`). Immersieve uitleg: er wordt altijd wel een Pokémon "gechanneld", desnoods uit de box.
+- **Direct bij aanspreken, zonder vraag en zonder tekst:** boom aanspreken = meteen Cut, rots = Rock Smash, rotsblok = Strength staat aan, water = meteen surfen, waterval = meteen omhoog. Alleen **Dive** (en weer bovenkomen) vraagt nog "Would you like to dive?".
+- **Geen Pokémon-animatie** meer bij veldacties (het "Pokémon verschijnt"-moment in `FldEff_FieldMoveShowMonInit` is overgeslagen; geldt ook voor Fly).
+- **Donkere grotten** zijn meteen verlicht als je de Knuckle Badge en HM05 Flash in je tas hebt (`SetDefaultFlashLevel`).
+- **Uitleg** bij de Cutter in Rustboro (HM01), achter zijn bestaande tekst: "And no, you don't have to teach it. Just walk up to a tree and press A. Some POKéMON somewhere does the work. In your BOX, probably. We call it channeling. Nobody asks questions. Same goes for every HM you'll find. BADGE plus HM in your BAG. Done." (placeholder).
+- Getest in de emulator: Cut (boom op Route 104) en Surf, met alleen een Magikarp zonder die moves in het team.

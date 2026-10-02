@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_move.h"
 #include "main.h"
 #include "bike.h"
 #include "event_data.h"
@@ -1537,6 +1538,8 @@ bool8 PartyHasMonWithSurf(void)
             if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
                 return TRUE;
         }
+        if (CanUseFieldMoveViaHM(FIELD_MOVE_SURF)) // Project Grounded
+            return TRUE;
     }
     return FALSE;
 }

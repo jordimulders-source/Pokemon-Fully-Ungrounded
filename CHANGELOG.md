@@ -15717,3 +15717,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.92] - Magikarp: geleidelijker opbouwen
 - De Magikarp-transitie duurt langer (ruim 2,5 seconde) en bouwt geleidelijk op: eerst af en toe een Magikarp, dan steeds vaker, rond de helft drie reuzen (boven, midden en onder, zodat de GBA ze op dezelfde beeldregels kan blijven tekenen), en pas daarna stapelt de berg zich rij voor rij op tot het scherm vol is.
+
+### [v.0.8.93] - Plan van aanpak voor de backlog, credits
+- **`BACKLOG_PLAN.md`:** per backlog-onderdeel (legendaries, Regi-quest, gebieden, trainers, signature moves, Battle Frontier) wat er al is, een voorstel en genummerde vragen voor Jordi. Opvallend: de eilanden voor Mew, Deoxys, Lugia/Ho-Oh en de Lati's staan al in de ROM; alleen de tickets zijn in vanilla alleen via Mystery Gift te krijgen.
+- **`CREDITS.md`:** graphics uit FireRed/LeafGreen (Brock, Oak), de ghost uit Red/Blue (pret/pokered) en MissingNo.

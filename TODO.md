@@ -28,6 +28,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Later proberen:** (snellere schermovergangen bij warps gedaan in v0.8.36; gevechtsintro eventueel later)
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)
+Plan van aanpak en open vragen per onderdeel: `BACKLOG_PLAN.md` (3 okt 2026). Eerst Jordi's antwoorden afwachten.
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.
 - **Kaarten/gebieden:** Oostkant van de kaart interessanter (meer eilanden, beter onderwater-exploreren, nieuwe dungeons). Jungle onder Fortree (Ogerpon/Zarude). Swamp, fairy forest, mushroom forest, haunted house, outer-space-gebied vanaf Mossdeep. Safari Zone uitbreiden. Extra tilesets (Ekat99, o.a. Snowpoint Temple voor Regigigas).
 - **Regi-quest:** Regieleki (cave bij Mauville), Regidrago (Jagged Pass), Regigigas (andere cave, ten noorden van Ashfrost; de iglo in Ashfrost wordt de ingang/doorgang ernaartoe). Braille-activatie, kamerpatroon = oogpatroon van de Regi, idem de gevechtstransitie. Activatie nog bedenken.

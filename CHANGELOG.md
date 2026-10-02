@@ -15523,3 +15523,8 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Nieuwe gevechtstransitie **B_TRANSITION_AURORA**, alleen voor **Suicune** (Crystal Cavity): het beeld wordt donker, noorderlichtgordijnen verschijnen en glinsteren (kleurcyclus groen → cyaan → paars, licht wiegend), lichten op tot wit en vervagen dan naar het gevecht. Muziek blijft het beasts-thema.
 - Graphics gegenereerd met `tools/grounded/aurora_transition.py` (`graphics/battle_transitions/aurora.png/.bin/.pal`, 156 tiles, 16 paletframes); de transitie zelf staat onderaan `src/battle_transition.c`.
 - Raikou en Entei houden de Blur-transitie (eigen transities kunnen later).
+
+### [v.0.8.56] - Pollen Haze-feedback
+- **Silver Powder** verlengt Pollen Haze tot 8 beurten (zoals Black Sludge bij Acid Rain).
+- Pollen Season weer weg bij de voorgangers: **Hoppip, Skiploom, Sunkern, Cutiefly** (en Scatterbug) hebben hun oude ability terug (Infiltrator, Early Bird, Sweet Veil, Friend Guard). Gossifleur houdt Pollen Season.
+- Test: Silver Powder verlengt Pollen Haze.

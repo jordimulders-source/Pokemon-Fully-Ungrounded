@@ -3286,6 +3286,8 @@ bool32 TryChangeBattleWeather(u32 battler, u32 battleWeatherId, u32 ability)
             gWishFutureKnock.weatherDuration = 0;
         else if (rock != 0 && GetBattlerHoldEffect(battler) == rock)
             gWishFutureKnock.weatherDuration = 8;
+        else if (battleWeatherId == BATTLE_WEATHER_POLLEN_HAZE && gBattleMons[battler].item == ITEM_SILVER_POWDER) // Project Grounded
+            gWishFutureKnock.weatherDuration = 8;
         else
             gWishFutureKnock.weatherDuration = 5;
         for (u32 i = 0; i < gBattlersCount; i++)

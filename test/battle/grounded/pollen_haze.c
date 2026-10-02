@@ -110,3 +110,22 @@ SINGLE_BATTLE_TEST("Pollen Season summons Pollen Haze on switch-in")
         MESSAGE("Ribombee's Pollen Season\nfilled the air with pollen!");
     }
 }
+
+SINGLE_BATTLE_TEST("Silver Powder extends Pollen Haze to 8 turns")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_SILVER_POWDER); Moves(MOVE_POLLEN_HAZE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_POLLEN_HAZE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("Pollen filled the air!");
+        NOT MESSAGE("The pollen settled.");
+    }
+}

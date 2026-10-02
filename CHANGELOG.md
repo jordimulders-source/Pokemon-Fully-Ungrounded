@@ -15672,3 +15672,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Fiery Path en Mt. Chimney** (`B_TRANSITION_ROUTE_HEAT`): hittegolf. Het beeld trilt in opstijgende golven, kleurt oranje en dan verblindend licht.
 - **Cycling Road** (de verhoogde weg op Route 110; `B_TRANSITION_ROUTE_CYCLING`): POV over je stuur. Je raast over de weg boven de zee, de strepen en randen schieten op je af (fietsbel), dan wit.
 - Regirock in de Desert Ruins houdt zijn eigen transitie.
+
+### [v.0.8.84] - Route-transities, ronde 3: Mt. Pyre, Sky Pillar, New Mauville, Artisan Cave
+- **Mt. Pyre** (alle verdiepingen, buitenkant en top; `B_TRANSITION_ROUTE_PYRE`): een vloek. Paarse mist kruipt van de randen naar het midden, overal gaan gloeiende ogen open (en knipperen), vloektekens flakkeren, tot alles donkerpaars is.
+- **Sky Pillar** (`B_TRANSITION_ROUTE_SKY`): je schiet zo snel de lucht in dat het beeld het niet bijhoudt. Snelheidsstrepen en wolken razen naar beneden, het beeld schudt, de wereld verdwijnt in het blauw en alles wordt wit.
+- **New Mauville** (ingang, binnen en het datacenter; `B_TRANSITION_ROUTE_SHORT`): kortsluiting. Het beeld hapert in verschoven banden, flikkert, er springen vonken over, en dan gaat het uit als een oude tv (witte lijn die krimpt tot een stip).
+- **Artisan Cave** (`B_TRANSITION_ROUTE_PAINT`): grote penseelstreken in rood, geel, blauw, groen en paars schilderen het beeld vol.
+- **Cycling Road:** het beeld fadet nu eerst kort naar zwart en daarna fadet de weg in.

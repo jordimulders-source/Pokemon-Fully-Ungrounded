@@ -77,6 +77,10 @@ enum BattleTransition
     B_TRANSITION_ROUTE_SAND, // Project Grounded: woestijn, zandstorm
     B_TRANSITION_ROUTE_HEAT, // Project Grounded: Fiery Path / Mt. Chimney, hittegolf
     B_TRANSITION_ROUTE_CYCLING, // Project Grounded: Cycling Road, POV op de fiets
+    B_TRANSITION_ROUTE_PYRE, // Project Grounded: Mt. Pyre, spookachtige vloek
+    B_TRANSITION_ROUTE_SKY, // Project Grounded: Sky Pillar, razendsnel de lucht in
+    B_TRANSITION_ROUTE_SHORT, // Project Grounded: New Mauville, kortsluiting
+    B_TRANSITION_ROUTE_PAINT, // Project Grounded: Artisan Cave, wordt volgeschilderd
     B_TRANSITION_COUNT
 };
 

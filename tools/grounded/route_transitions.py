@@ -204,3 +204,73 @@ for f in range(4):
 save('cycling', tiles, pals)
 import struct
 open(OUT + 'route_cycling.bin', 'wb').write(struct.pack('<%dH' % len(tm), *tm))
+
+# ------------------------------------------------------------------ Mt. Pyre: spookachtige vloek
+# 1-4 paarse mist (steeds dichter), 5-6 gloeiende ogen (links/rechts), 7 vloekteken-fragmenten
+PYRE = pad([(0, 0, 0), (4, 0, 7), (8, 2, 13), (13, 5, 20), (31, 10, 26), (31, 28, 31), (20, 8, 28)])
+pyre = []
+for lvl, p in enumerate((0.25, 0.5, 0.75, 1.0)):
+    rr = random.Random(110 + lvl)
+    pyre.append(tile(lambda x, y, p=p: (1 if rr.random() < 0.6 else 2) if ((x + y) % 4 < p * 4 and rr.random() < p + 0.1) else 0))
+def eye(cx):
+    def f(x, y):
+        d = math.hypot((x - cx) * 0.8, (y - 4) * 1.4)
+        if d < 1.1: return 5
+        if d < 2.3: return 4
+        if d < 3.2: return 6
+        return 1
+    return tile(f)
+pyre += [eye(4.5), eye(3.0)]
+rr = random.Random(117)
+pyre.append(tile(lambda x, y: 6 if (x == y or x == 7 - y or y == 4) and rr.random() < 0.8 else 0))
+save('pyre', pyre, [PYRE])
+
+# ------------------------------------------------------------------ Sky Pillar: razendsnel de lucht in
+# 1-2 snelheidsstrepen (verticaal), 3-6 wolk (2x2), 7 kleine wolk
+SKY = pad([(0, 0, 0), (31, 31, 31), (24, 28, 31), (18, 24, 31), (12, 19, 30)])
+sky = []
+for k in range(2):
+    rr = random.Random(120 + k)
+    cols = rr.sample(range(8), 2)
+    sky.append(tile(lambda x, y, cols=cols: (1 if y % 8 < 6 else 2) if x in cols else 0))
+def cloud(x, y):
+    d = min(math.hypot(x - 5, y - 9) / 5, math.hypot(x - 10, y - 7) / 6, math.hypot(x - 8, y - 11) / 6.5)
+    if d < 0.7: return 1
+    if d < 1.0: return 2
+    return 0
+for ty in range(2):
+    for tx in range(2):
+        sky.append(tile(lambda x, y, tx=tx, ty=ty: cloud(x + tx * 8, y + ty * 8)))
+sky.append(tile(lambda x, y: 1 if math.hypot(x - 3.5, y - 4) < 2.5 else (2 if math.hypot(x - 3.5, y - 4) < 3.4 else 0)))
+save('sky', sky, [SKY])
+
+# ------------------------------------------------------------------ New Mauville: kortsluiting
+# 1 zwart, 2 witte horizontale lijn (beeld gaat uit), 3 witte stip, 4-6 vonkbogen, 7 ruis
+SHORT = pad([(0, 0, 0), (0, 0, 0), (31, 31, 31), (31, 31, 12), (12, 24, 31), (20, 20, 22)])
+short = [tile(lambda x, y: 1), tile(lambda x, y: 2 if y in (3, 4) else 1), tile(lambda x, y: 2 if math.hypot(x - 3.5, y - 3.5) < 1.6 else 1)]
+for k in range(3):
+    rr = random.Random(130 + k)
+    pts, y0 = {}, rr.randint(1, 6)
+    for x in range(8):
+        y0 = max(0, min(7, y0 + rr.randint(-2, 2)))
+        pts[(x, y0)] = 2; pts[(x, max(0, y0 - 1))] = 3
+        if rr.random() < 0.4: pts[(x, min(7, y0 + 1))] = 4
+    short.append(tile(lambda x, y, pts=pts: pts.get((x, y), 0)))
+rr = random.Random(135)
+short.append(tile(lambda x, y: rr.choice((0, 0, 0, 5, 2, 1))))
+save('short', short, [SHORT])
+
+# ------------------------------------------------------------------ Artisan Cave: het beeld wordt volgeschilderd
+# per kleur (rood, geel, blauw, groen, paars) 2 tiles: penseelstreek (met haarstreepjes) en spetters
+PAINTS = [((31, 6, 6), (22, 2, 2)), ((31, 27, 4), (26, 18, 0)), ((6, 14, 31), (2, 6, 22)), ((6, 26, 8), (2, 16, 4)), ((22, 8, 28), (13, 3, 18))]
+pal = [(0, 0, 0)]
+for a, b in PAINTS:
+    pal += [a, b]
+PAINT = pad(pal)
+paint = []
+for k, _ in enumerate(PAINTS):
+    lo, hi = 1 + 2 * k, 2 + 2 * k
+    rr = random.Random(140 + k)
+    paint.append(tile(lambda x, y: hi if (y + rr.randint(0, 1)) % 3 == 0 else lo))
+    paint.append(tile(lambda x, y: (lo if rr.random() < 0.7 else hi) if math.hypot(x - 3.5 + rr.random(), y - 3.5) < 2.2 + rr.random() * 1.5 else 0))
+save('paint', paint, [PAINT])

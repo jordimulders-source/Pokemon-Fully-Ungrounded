@@ -15614,3 +15614,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Prof. Oak** vecht nu op het lab-thema uit FRLG (`MUS_RG_OAK_LAB`).
 - **Birch in Verdanturf** kreeg nog niet zijn eigen gevechtsmuziek (de Macarena, zoals zijn andere gevechten); nu wel.
 - In de emulator getest (Brock: sprite, slide, gevecht).
+
+### [v.0.8.73] - Protip Oracle in Ashfrost
+- De **PROTIP ORACLE** staat nu ook in het Pokémon Center van Ashfrost, op dezelfde plek (8,8) en als hetzelfde type NPC (Maniac) als in de andere Pokémon Centers. Tip: ICE-types krijgen geen schade in een SNOW STORM, "and neither do you, if you never go outside. That's why I live in POKéMON CENTERS now. All of them."

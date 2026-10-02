@@ -2927,6 +2927,7 @@ static const struct LevelUpMove sVoltorbLevelUpLearnset[] = {
     LEVEL_UP_MOVE(26, MOVE_ELECTRO_BALL),
     LEVEL_UP_MOVE(29, MOVE_SELF_DESTRUCT),
     LEVEL_UP_MOVE(34, MOVE_LIGHT_SCREEN),
+    LEVEL_UP_MOVE(46, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 
@@ -2946,6 +2947,7 @@ static const struct LevelUpMove sElectrodeLevelUpLearnset[] = {
     LEVEL_UP_MOVE(36, MOVE_SEARING_SHOT),
     LEVEL_UP_MOVE(41, MOVE_DISCHARGE),
     LEVEL_UP_MOVE(47, MOVE_FOCUS_BLAST),
+    LEVEL_UP_MOVE(50, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(54, MOVE_PSYCHIC),
     LEVEL_UP_MOVE(58, MOVE_EXPLOSION),
     LEVEL_UP_MOVE(62, MOVE_THUNDER),
@@ -2970,6 +2972,7 @@ static const struct LevelUpMove sVoltorbHisuiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(34, MOVE_DISCHARGE),
     LEVEL_UP_MOVE(41, MOVE_EXPLOSION),
     LEVEL_UP_MOVE(46, MOVE_GYRO_BALL),
+    LEVEL_UP_MOVE(46, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(50, MOVE_GRASSY_TERRAIN),
     LEVEL_UP_END
 };
@@ -2993,6 +2996,7 @@ static const struct LevelUpMove sElectrodeHisuiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_EXPLOSION),
     LEVEL_UP_MOVE(46, MOVE_GYRO_BALL),
     LEVEL_UP_MOVE(50, MOVE_GRASSY_TERRAIN),
+    LEVEL_UP_MOVE(50, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 #endif //P_HISUIAN_FORMS
@@ -9222,6 +9226,7 @@ static const struct LevelUpMove sLunatoneLevelUpLearnset[] = {
     LEVEL_UP_MOVE(45, MOVE_MAGIC_ROOM),
     LEVEL_UP_MOVE(48, MOVE_METEOR_BEAM),   
     LEVEL_UP_MOVE(50, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE(50, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(55, MOVE_LUNAR_DANCE),
     LEVEL_UP_END
 };
@@ -9249,6 +9254,7 @@ static const struct LevelUpMove sSolrockLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_STONE_EDGE),    
     LEVEL_UP_MOVE(44, MOVE_SUNNY_DAY),     
     LEVEL_UP_MOVE(48, MOVE_WILL_O_WISP),   
+    LEVEL_UP_MOVE(50, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(52, MOVE_EARTHQUAKE),    
     LEVEL_UP_MOVE(56, MOVE_EXPLOSION),     
     LEVEL_UP_MOVE(60, MOVE_HEAVY_SLAM),
@@ -9712,6 +9718,7 @@ static const struct LevelUpMove sDusknoirLevelUpLearnset[] = {
     LEVEL_UP_MOVE(48, MOVE_POLTERGEIST),     
     LEVEL_UP_MOVE(52, MOVE_ZAP_CANNON),      
     LEVEL_UP_MOVE(56, MOVE_FUTURE_SIGHT),
+    LEVEL_UP_MOVE(57, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(60, MOVE_DESTINY_BOND),
     LEVEL_UP_END
 };
@@ -10409,6 +10416,7 @@ static const struct LevelUpMove sDeoxysNormalLevelUpLearnset[] = {
     LEVEL_UP_MOVE(61, MOVE_RECOVER),
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(85, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 
@@ -10427,6 +10435,7 @@ static const struct LevelUpMove sDeoxysAttackLevelUpLearnset[] = {
     LEVEL_UP_MOVE(61, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(85, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 
@@ -10447,6 +10456,7 @@ static const struct LevelUpMove sDeoxysDefenseLevelUpLearnset[] = {
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_COUNTER),
     LEVEL_UP_MOVE(73, MOVE_MIRROR_COAT),
+    LEVEL_UP_MOVE(85, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 
@@ -10465,6 +10475,7 @@ static const struct LevelUpMove sDeoxysSpeedLevelUpLearnset[] = {
     LEVEL_UP_MOVE(61, MOVE_RECOVER),
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_EXTREME_SPEED),
+    LEVEL_UP_MOVE(85, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 #endif //P_FAMILY_DEOXYS
@@ -11197,6 +11208,7 @@ static const struct LevelUpMove sDrifblimLevelUpLearnset[] = {
     LEVEL_UP_MOVE(42, MOVE_BATON_PASS),
     LEVEL_UP_MOVE(48, MOVE_TAILWIND),
     LEVEL_UP_MOVE(54, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE(57, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 #endif //P_FAMILY_DRIFLOON
@@ -12015,6 +12027,7 @@ static const struct LevelUpMove sDarkraiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(57, MOVE_HAZE),
     LEVEL_UP_MOVE(66, MOVE_DARK_VOID),
     LEVEL_UP_MOVE(75, MOVE_NASTY_PLOT),
+    LEVEL_UP_MOVE(82, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(84, MOVE_DREAM_EATER),
     LEVEL_UP_MOVE(93, MOVE_DARK_PULSE),
     LEVEL_UP_END
@@ -18187,6 +18200,7 @@ static const struct LevelUpMove sMiniorLevelUpLearnset[] = {
     LEVEL_UP_MOVE(43, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(45, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE(50, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE(50, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 #endif //P_FAMILY_MINIOR
@@ -18495,6 +18509,7 @@ static const struct LevelUpMove sCosmogLevelUpLearnset[] = {
 static const struct LevelUpMove sCosmoemLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_COSMIC_POWER),
     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),
+    LEVEL_UP_MOVE(45, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_END
 };
 
@@ -18713,6 +18728,7 @@ static const struct LevelUpMove sNecrozmaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(64, MOVE_POWER_GEM),
     LEVEL_UP_MOVE(72, MOVE_PHOTON_GEYSER),
     LEVEL_UP_MOVE(80, MOVE_GRAVITY),
+    LEVEL_UP_MOVE(80, MOVE_IMPLOSION), // Project Grounded
     LEVEL_UP_MOVE(88, MOVE_PRISMATIC_LASER),
     LEVEL_UP_END
 };

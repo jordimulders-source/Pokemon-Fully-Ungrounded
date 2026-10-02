@@ -15454,3 +15454,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Animatie: eigen zwart-gat-animatie met onderdelen uit de Z-move Black Hole Eclipse; de achtergrond wordt donker, ringen en deeltjes worden naar de gebruiker gezogen, de gebruiker wordt zwart en krimpt, dan een zwarte flits met schokgolf.
 - Nog niemand leert hem (vraag aan Jordi).
 - Tests: `test/battle/grounded/implosion.c` (self-KO + −1 Atk/SpAtk bij inwisselen, hazards weg, einde na 5 beurten).
+
+### [v.0.8.49] - Wie leert Implosion
+- Level-up: Voltorb 46 / Electrode 50 (ook Hisui), Solrock 50, Lunatone 50, Minior 50 (alle vormen), Dusknoir 57, Drifblim 57, Cosmoem 45, Necrozma 80, Darkrai 82, Deoxys 85 (alle vormen).
+- Jordi's lijst plus eigen toevoegingen die kunnen imploderen: Drifblim (ballon), Cosmoem (instortende protoster) en Necrozma (slokt licht op). Schrappen kan.

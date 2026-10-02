@@ -9,7 +9,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
 1. ~~Fungal Control~~ (gedaan, v0.8.45)
 2. ~~Transmutation~~ (gedaan, v0.8.46)
-3. ~~Implosion~~ (gedaan, v0.8.48; wie leert hem nog open)
+3. ~~Implosion~~ (gedaan, v0.8.48–0.8.49)
 4. ~~Wild summary~~ (gedaan, v0.8.44)
 5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.
 6. **Heatran-cutscene** na Wattson: Rock Smash-stenen op Route 111 net boven Mauville weg; Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden (Fiery Path).

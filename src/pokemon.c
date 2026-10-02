@@ -1686,11 +1686,7 @@ void CalculateMonStats(struct Pokemon *mon)
         return;
 #endif
 
-    if (species == SPECIES_SHEDINJA)
-    {
-        newMaxHP = 1;
-    }
-    else
+    // Project Grounded: Shedinja niet meer vast op 1 HP; gewone formule met base HP 20 (zie revisie v0.2.1)
     {
         s32 n = 2 * GetSpeciesBaseHP(species) + iv[STAT_HP];
         newMaxHP = (((n + ev[STAT_HP] / 4) * level) / 100) + level + 10;

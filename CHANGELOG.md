@@ -15394,3 +15394,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 ### [v.0.8.36] - Snellere schermovergangen; Ditto onderaan
 - De fade naar/van zwart (of wit) bij **deuren, trappen en warps** gaat ongeveer een derde sneller (`WarpFadeOutScreen`/`WarpFadeInScreen` in `src/field_screen_effect.c`: grotere fadestappen). De overgang blijft zichtbaar.
 - TODO: de Ditto-trainer staat op verzoek van Jordi onderaan; verder werk ik de backlog af van makkelijk naar moeilijk.
+
+### [v.0.8.37] - Shedinja niet meer vast op 1 HP
+- De revisie van v0.2.1 gaf Shedinja al **base HP 20**, maar `CalculateMonStats` (`src/pokemon.c`) zette zijn HP daarna hard op 1. Die uitzondering is weg: Shedinja gebruikt nu de gewone HP-formule. Op lv 50 (IV 31, geen EV's) is dat **95 HP**, op lv 100 rond 180. Wonder Guard blijft, dus alleen supereffectieve aanvallen en indirecte schade raken hem; met deze HP overleeft hij een paar tikken weer/gif/hazards in plaats van op elke tik te sterven.

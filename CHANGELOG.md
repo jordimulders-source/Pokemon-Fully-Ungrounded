@@ -15560,3 +15560,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.63] - Gevechtstransitie Deoxys: ruimte + DNA
 - Er zitten geen DNA-animaties in de game, dus **Deoxys** krijgt een eigen ruimte-transitie met DNA: het hele beeld (ook de sprites) wordt zwart, een sterrenhemel met twinkelende sterren en een draaiende **DNA-dubbelhelix** in Deoxys-kleuren (oranje/cyaan, paarse en gele basenparen) komt op, schiet steeds sneller voorbij (warp, licht wiegend) en licht wit op vlak voor het gevecht.
 - `B_TRANSITION_DEOXYS` in `BattleSetup_StartLegendaryBattle` (alle Deoxys-vormen). Graphics via `tools/grounded/deoxys_transition.py` (`graphics/battle_transitions/deoxys.*`). In de emulator getest.
+
+### [v.0.8.64] - Gevechtstransitie Birch: poep
+- **Prof. Birch** (`TRAINER_BIRCH`, `TRAINER_BIRCH_2`) krijgt een eigen schermtransitie in plaats van de mugshot-slide: **bruine prut druipt stroperig van boven over het beeld** (met druppels, spikkels en af en toe een maïskorrel), de speler en Birch kleuren mee bruin, en dan **plopt een grijnzende drol-emoji** van boven naar beneden, stuitert twee keer (plop-geluiden) en **stinkt** (bewegende groene stanklijnen, Toxic-geluid) voor het gevecht begint.
+- `B_TRANSITION_BIRCH`, gekozen in `GetTrainerBattleTransition` vóór de mugshot-check. Graphics via `tools/grounded/birch_transition.py` (`graphics/battle_transitions/birch.*`). In de emulator getest.

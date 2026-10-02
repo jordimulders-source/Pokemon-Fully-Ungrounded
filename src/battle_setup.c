@@ -794,6 +794,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
+    // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
+    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_2)
+        return B_TRANSITION_BIRCH;
+
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 

@@ -121,6 +121,7 @@ static void Task_Aurora(u8); // Project Grounded
 static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
+static void Task_Birch(u8); // Project Grounded
 static bool8 Regidrago_Init(struct Task *);
 static bool8 Regieleki_Init(struct Task *);
 static void Task_Groudon(u8);
@@ -339,6 +340,8 @@ static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
 static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deoxys.bin");
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
+static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
+static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
 static const u16 sRayquaza_Palette[] = INCBIN_U16("graphics/battle_transitions/rayquaza.gbapal");
@@ -406,6 +409,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_REGIDRAGO] = Task_Regidrago, // Project Grounded
     [B_TRANSITION_REGIELEKI] = Task_Regieleki, // Project Grounded
     [B_TRANSITION_DEOXYS] = Task_Deoxys, // Project Grounded
+    [B_TRANSITION_BIRCH] = Task_Birch, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -5097,3 +5101,172 @@ static void Task_Deoxys(u8 taskId)
 #undef tDeoxysSpeed
 #undef tDeoxysScroll
 #undef tDeoxysDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_BIRCH
+// Bruine prut druipt van boven over het beeld (de sprites kleuren mee bruin), daarna plopt een
+// grijnzende drol naar beneden, stuitert en stinkt (groene stanklijnen) voor het gevecht begint.
+// Tiles: zie tools/grounded/birch_transition.py.
+//------------------------------------------------------------------------
+#define BIRCH_TILE_SOLID   1
+#define BIRCH_TILE_EDGE    5
+#define BIRCH_TILE_EMOJI   37
+#define BIRCH_EMOJI_W      12
+#define BIRCH_EMOJI_H      10
+#define BIRCH_EMOJI_X      9
+#define BIRCH_EMOJI_Y      5
+#define BIRCH_EDGE_ROWS    4
+#define BIRCH_TILE(t)      ((15 << 12) | (t))
+
+#define tBirchTimer   data[1]
+#define tBirchPos     data[2]  // hoe ver de prut gezakt is, in 1/16 pixel
+#define tBirchSpeed   data[3]
+#define tBirchY       data[4]  // hoogte van de drol boven zijn eindpositie, in 1/16 pixel
+#define tBirchVel     data[5]
+#define tBirchBounces data[6]
+#define tBirchDelay   data[8]
+
+static u16 Birch_SolidTile(s32 row, s32 col)
+{
+    // vast patroon per inhoudsrij, zodat de spikkels mee zakken in plaats van te verspringen
+    u32 hash = (u32)(row * 7 + col * 13 + row * col * 5) & 31;
+    if (hash == 0)
+        return BIRCH_TILE(BIRCH_TILE_SOLID + 3); // af en toe een maiskorrel
+    return BIRCH_TILE(BIRCH_TILE_SOLID + hash % 3);
+}
+
+static void Birch_DrawCurtain(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+    s32 p = task->tBirchPos >> 4;
+    s32 q = p / 8, m = p % 8;
+    s32 r, c;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    for (r = 0; r < 21; r++)
+    {
+        s32 contentRow = r - q - (m > 0);
+        for (c = 0; c < 32; c++)
+        {
+            u16 tile;
+            if (contentRow >= 0)
+                tile = 0;
+            else if (contentRow >= -BIRCH_EDGE_ROWS)
+                tile = BIRCH_TILE(BIRCH_TILE_EDGE + (contentRow + BIRCH_EDGE_ROWS) * 8 + (c % 8));
+            else
+                tile = Birch_SolidTile(contentRow, c);
+            tilemap[r * 32 + c] = tile;
+        }
+    }
+    SetGpuReg(REG_OFFSET_BG0VOFS, (8 - m) % 8);
+}
+
+static bool8 Birch_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sBirch_Tileset, tileset, sizeof(sBirch_Tileset));
+    LoadPalette(sBirch_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    // de sprites (speler, Birch) kleuren mee bruin terwijl de prut over het beeld zakt
+    BeginNormalPaletteFade(PALETTES_OBJECTS, 3, 0, 16, RGB(13, 8, 3));
+    task->tBirchTimer = 0;
+    task->tBirchPos = 0;
+    task->tBirchSpeed = 8;
+    PlaySE(SE_MUD_BALL);
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 Birch_Drip(struct Task *task)
+{
+    // stroperig: soms bijna stil, dan weer een klodder
+    if ((task->tBirchTimer & 15) < 10)
+        task->tBirchSpeed += 3;
+    else if (task->tBirchSpeed > 12)
+        task->tBirchSpeed -= 4;
+    task->tBirchPos += task->tBirchSpeed;
+    task->tBirchTimer++;
+    Birch_DrawCurtain(task);
+    if ((task->tBirchPos >> 4) >= DISPLAY_HEIGHT + BIRCH_EDGE_ROWS * 8 + 8)
+    {
+        u16 *tilemap, *tileset;
+        s32 r, c;
+
+        GetBg0TilesDst(&tilemap, &tileset);
+        for (r = 0; r < 32; r++)
+            for (c = 0; c < 32; c++)
+                tilemap[r * 32 + c] = Birch_SolidTile(r, c);
+        for (r = 0; r < BIRCH_EMOJI_H; r++)
+            for (c = 0; c < BIRCH_EMOJI_W; c++)
+                tilemap[(BIRCH_EMOJI_Y + r) * 32 + BIRCH_EMOJI_X + c] = BIRCH_TILE(BIRCH_TILE_EMOJI + r * BIRCH_EMOJI_W + c);
+        // de drol begint boven het scherm; met VOFS zakt hij (de rest is overal dezelfde prut)
+        task->tBirchY = 120 << 4;
+        task->tBirchVel = 0;
+        task->tBirchBounces = 0;
+        task->tBirchTimer = 0;
+        SetGpuReg(REG_OFFSET_BG0VOFS, task->tBirchY >> 4);
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static bool8 Birch_Plop(struct Task *task)
+{
+    task->tBirchVel += 10; // zwaartekracht
+    task->tBirchY -= task->tBirchVel;
+    if (task->tBirchY <= 0)
+    {
+        task->tBirchY = 0;
+        task->tBirchBounces++;
+        PlaySE(task->tBirchBounces == 1 ? SE_MUD_BALL : SE_BALL_BOUNCE_1);
+        if (task->tBirchBounces >= 3)
+        {
+            SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+            task->tBirchTimer = 0;
+            PlaySE(SE_M_TOXIC);
+            task->tState++;
+            return FALSE;
+        }
+        task->tBirchVel = -(task->tBirchVel * 2 / 5); // stuiteren, steeds lager
+    }
+    SetGpuReg(REG_OFFSET_BG0VOFS, (task->tBirchY >> 4) & 0xFF);
+    return FALSE;
+}
+
+static bool8 Birch_Stink(struct Task *task)
+{
+    LoadPalette(&sBirch_Palette[((task->tBirchTimer / 5) % 4) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    if (++task->tBirchTimer > 60)
+    {
+        task->tBirchDelay = 4;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sBirch_Funcs[] =
+{
+    Birch_Init,
+    Birch_Drip,
+    Birch_Plop,
+    Birch_Stink,
+    FramesCountdown,
+    WeatherDuo_FadeOut,
+    WeatherDuo_End
+};
+
+static void Task_Birch(u8 taskId)
+{
+    while (sBirch_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tBirchTimer
+#undef tBirchPos
+#undef tBirchSpeed
+#undef tBirchY
+#undef tBirchVel
+#undef tBirchBounces
+#undef tBirchDelay

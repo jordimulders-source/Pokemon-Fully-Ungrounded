@@ -476,14 +476,14 @@ pika += blocks(lambda x, y: 4 if x < tm.size[0] and y < tm.size[1] and tm.getpix
 save('pikachu', pika, [PIKA])
 print('  Pika!-tekst', TW, 'x', TH, 'tiles')
 
-# ------------------------------------------------------------------ Magikarp: het spartelende party-icoon, 2x vergroot (2 frames, 8x8)
+# ------------------------------------------------------------------ Magikarp: het spartelende party-icoon, 3x vergroot (2 frames, 12x12)
 # plus de front-sprite (64x128, 2 frames) als OBJ-sprite die in grote aantallen over elkaar heen spartelt
 ic = Image.open('graphics/pokemon/magikarp/icon.png')
 icpal = ic.getpalette()[:48]
 KARP = [tuple(icpal[i * 3 + k] // 8 for k in range(3)) for i in range(16)]
 karp = []
 for fr in range(2):
-    karp += blocks(lambda x, y, fr=fr: ic.getpixel((x // 2, y // 2 + fr * 32)), 8, 8)
+    karp += blocks(lambda x, y, fr=fr: ic.getpixel((x // 3, y // 3 + fr * 32)), 12, 12)
 save('magikarp', karp, [KARP])
 mf = Image.open('graphics/pokemon/magikarp/anim_front.png')
 mpal = [tuple(int(v) // 8 for v in l.split()) for l in open('graphics/pokemon/magikarp/normal.pal').read().split('\n')[3:19]]

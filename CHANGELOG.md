@@ -15708,3 +15708,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.89] - Magikarp: verdrinken in Magikarp
 - De Magikarp-transitie is veel voller: **grote Magikarp-iconen** (2x vergroot) vullen de achtergrond, en daaroverheen verschijnen steeds sneller **tot 56 spartelende Magikarp-sprites** (de grote front-sprite, 64x64, met beide animatieframes). Ze springen op en neer, staan willekeurig gespiegeld en overlappen elkaar, tot het scherm een berg Magikarp is.
+
+### [v.0.8.90] - Magikarp nog groter
+- Achtergrond-iconen nu **3x vergroot** (96x96), en in de tweede helft komen er **zes Magikarp-reuzen** bij (sprites op ~1,8x, normaal en gespiegeld, met een plons) bovenop de tientallen spartelende Magikarp.

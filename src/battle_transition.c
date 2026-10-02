@@ -6731,8 +6731,10 @@ static void Task_Pikachu(u8 taskId)
 
 // ---------------- Magikarp: je verdrinkt in Magikarp. Grote Magikarp-iconen vullen de achtergrond en daaroverheen
 // verschijnen steeds meer spartelende Magikarp-sprites (64x64, front-sprite) die elkaar overlappen.
-// BG-tiles: 1-64 icoon frame 1, 65-128 frame 2 (2x vergroot, 8x8)
-#define MAGIKARP_BG_SLOTS 12
+// BG-tiles: 1-144 icoon frame 1, 145-288 frame 2 (3x vergroot, 12x12). In de tweede helft komen er nog zes reuzen
+// bij: affine sprites op bijna 2x (twee gedeelde matrices: normaal en gespiegeld).
+#define MAGIKARP_BG_SLOTS 6
+#define MAGIKARP_GIANTS   6
 #define MAGIKARP_SPRITES  56
 #define MAGIKARP_TAG      0x5A12
 
@@ -6786,6 +6788,8 @@ static void RTMagikarp_Init(struct Task *task)
     LoadSpriteSheet(&sheet);
     LoadSpritePalette(&spal);
     task->tRtA = 0; // aantal sprites
+    task->tRtB = 0; // aantal reuzen
+    task->tRtC = 0; // reuzen-matrices aangemaakt
 }
 
 static bool8 RTMagikarp_Update(struct Task *task)
@@ -6794,13 +6798,40 @@ static bool8 RTMagikarp_Update(struct Task *task)
     s32 t = task->tRtTimer;
     u32 k, n;
 
-    // achtergrond: grote spartelende iconen, een voor een
+    // achtergrond: reusachtige spartelende iconen, een voor een
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    n = min(t / 3 + 1, MAGIKARP_BG_SLOTS);
+    n = min(t / 4 + 1, MAGIKARP_BG_SLOTS);
     for (k = 0; k < n; k++)
     {
         u32 idx = (k * 5) % MAGIKARP_BG_SLOTS;
-        RT_PutBlock(tilemap, (idx % 4) * 8 - (idx / 4 == 1 ? 4 : 0), (idx / 4) * 7 - 1, 1 + (((t / 6 + k) & 1) * 64), 8, 8);
+        RT_PutBlock(tilemap, (idx % 3) * 10 - (idx / 3) * 3, (idx / 3) * 10 - 2, 1 + (((t / 6 + k) & 1) * 144), 12, 12);
+    }
+    // reuzen (affine, ~1.8x) bovenop alles
+    if (t >= 40 && (t % 6) == 0 && task->tRtB < MAGIKARP_GIANTS && task->tRtA < MAGIKARP_SPRITES)
+    {
+        u8 id = CreateSprite(&sRTMagikarp_Template, 30 + (task->tRtB * 37) % 180, 30 + (task->tRtB * 53) % 100, 0);
+        if (id != MAX_SPRITES)
+        {
+            struct Sprite *sprite = &gSprites[id];
+            if (task->tRtC == 0)
+            {
+                // twee gedeelde matrices: 1.8x, normaal en gespiegeld
+                task->tRtC = 1;
+                task->data[5] = AllocOamMatrix();
+                task->data[7] = AllocOamMatrix();
+                SetOamMatrixRotationScaling(task->data[5], 460, 460, 0);
+                SetOamMatrixRotationScaling(task->data[7], -460, 460, 0);
+            }
+            sprite->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+            sprite->oam.matrixNum = (task->tRtB & 1) ? task->data[7] : task->data[5];
+            sprite->affineAnimPaused = TRUE;
+            CalcCenterToCornerVec(sprite, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
+            sprite->data[0] = Random() & 0x7F;
+            sprite->data[1] = 7;
+            sRTMagikarp_Sprites[task->tRtA++] = id;
+            task->tRtB++;
+            PlaySE(SE_M_MEGA_KICK);
+        }
     }
     // daaroverheen: steeds meer Magikarp-sprites, steeds sneller
     for (k = 0; k < (t < 20 ? (t % 3 == 0) : (t < 40 ? 1 : 2)) && task->tRtA < MAGIKARP_SPRITES; k++)
@@ -6809,6 +6840,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
         if (id == MAX_SPRITES)
             break;
         StartSpriteAnim(&gSprites[id], Random() & 1);
+        gSprites[id].subpriority = 2 + MAGIKARP_SPRITES - task->tRtA;
         gSprites[id].animDelayCounter = Random() % 5;
         gSprites[id].data[0] = Random() & 0x7F;
         gSprites[id].data[1] = 6 + Random() % 6;
@@ -6825,6 +6857,11 @@ static void RTMagikarp_Finish(struct Task *task)
     u32 k;
     for (k = 0; k < (u32)task->tRtA; k++)
         DestroySprite(&gSprites[sRTMagikarp_Sprites[k]]);
+    if (task->tRtC)
+    {
+        FreeOamMatrix(task->data[5]);
+        FreeOamMatrix(task->data[7]);
+    }
     FreeSpriteTilesByTag(MAGIKARP_TAG);
     FreeSpritePaletteByTag(MAGIKARP_TAG);
 }

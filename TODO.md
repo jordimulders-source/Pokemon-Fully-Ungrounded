@@ -19,7 +19,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 10. ~~Laser Beam / Machine Learning / Shadow Siphon~~ (gedaan, v0.8.51–0.8.53)
 
 ## Volgende ronde (Jordi, 2 okt 2026), in deze volgorde
-1. ~~Hoennian Grimer/Muk~~ (gedaan, v0.8.67). Open: waar kan de speler ze vangen?
+1. ~~Hoennian Grimer/Muk~~ (gedaan, v0.8.67–0.8.68; speler krijgt er één van Birch)
 2. ~~Transities Regidrago/Regieleki/Deoxys/Birch~~ (gedaan, v0.8.62–0.8.65)
 3. ~~Sootopolis na Rayquaza met Keccles~~ (gedaan, v0.8.66). Open: Archie en Maxie eventueel terug in de post-game.
 

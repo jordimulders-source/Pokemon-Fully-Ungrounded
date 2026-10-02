@@ -15593,3 +15593,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Nieuw Birch-gevecht in Verdanturf** (`TRAINER_BIRCH_VERDANTURF`): na zijn gevecht op Route 109 staat Birch op het plein van Verdanturf (12,8) naar de grond te staren. Hij bewondert hoe vruchtbaar de natuurlijke mest de aarde maakt en is enorm fan van de nieuwe Grimer-vorm. Team (lv 24): Rabsca, Clodsire, Sandygast, Mudbray; ace **Grimer (Hoenn)** lv 26. Met de poep-transitie. Teksten zijn placeholders.
 - **Birch op Route 135** (`TRAINER_BIRCH_2`) is nu een doorontwikkeling van zijn eerdere teams: Rabsca (Trick Room), Clodsire, Palossand, Mudsdale, **Avalugg (Hisui)** lv 37 en ace **Muk (Hoenn)** lv 38. Slimmere AI. Het oude ijsteam is vervangen.
 - In de emulator getest (Verdanturf-gevecht, transitie, Hoenn-Muk-backsprite).
+
+### [v.0.8.68] - Hoenn-Grimer als cadeau van Birch
+- Na het gevecht in Verdanturf geeft Birch de speler **één Grimer (Hoenn)**, lv 22 ("Still warm. Don't ask why."). Bij een vol team gaat hij naar de pc; is ook de pc vol, dan kun je later terugkomen (`FLAG_RECEIVED_HOENN_GRIMER`, 0x44). Verder zijn de Hoenn-vormen voorlopig nergens te vangen. In de emulator getest.

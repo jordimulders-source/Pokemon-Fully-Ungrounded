@@ -79,7 +79,7 @@
 #define FLAG_HIDE_SOOTOPOLIS_KECCLES 0x41 // Project Grounded
 #define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
 #define FLAG_HIDE_VERDANTURF_BIRCH 0x43 // Project Grounded
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_RECEIVED_HOENN_GRIMER 0x44 // Project Grounded: Birch geeft een Hoenn-Grimer (Verdanturf)
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag

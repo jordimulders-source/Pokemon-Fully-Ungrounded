@@ -135,18 +135,63 @@ VerdanturfTown_EventScript_Birch::
 	goto_if_defeated TRAINER_BIRCH_VERDANTURF, VerdanturfTown_EventScript_BirchPostBattle
 	msgbox VerdanturfTown_Text_BirchIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BIRCH_VERDANTURF, VerdanturfTown_Text_BirchDefeat
+	goto VerdanturfTown_EventScript_BirchGiveGrimer
+	end
+
+VerdanturfTown_EventScript_BirchPostBattle::
+	goto_if_unset FLAG_RECEIVED_HOENN_GRIMER, VerdanturfTown_EventScript_BirchGiveGrimer
 	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
 	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
 	waitmovement 0
 	release
 	end
 
-VerdanturfTown_EventScript_BirchPostBattle::
+VerdanturfTown_EventScript_BirchGiveGrimer::
+	msgbox VerdanturfTown_Text_BirchTakeGrimer, MSGBOX_DEFAULT
+	givemon SPECIES_GRIMER_HOENN, 22
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, VerdanturfTown_EventScript_BirchNoRoom
+	copyvar VAR_0x8004, VAR_RESULT
+	playfanfare MUS_OBTAIN_ITEM
+	message VerdanturfTown_Text_ReceivedGrimer
+	waitmessage
+	waitfanfare
+	setflag FLAG_RECEIVED_HOENN_GRIMER
+	goto_if_eq VAR_0x8004, MON_GIVEN_TO_PC, VerdanturfTown_EventScript_BirchGrimerToPC
 	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
+	goto VerdanturfTown_EventScript_BirchBackToSoil
+	end
+
+VerdanturfTown_EventScript_BirchGrimerToPC::
+	msgbox VerdanturfTown_Text_BirchGrimerToPC, MSGBOX_DEFAULT
+	goto VerdanturfTown_EventScript_BirchBackToSoil
+	end
+
+VerdanturfTown_EventScript_BirchNoRoom::
+	msgbox VerdanturfTown_Text_BirchNoRoom, MSGBOX_DEFAULT
+VerdanturfTown_EventScript_BirchBackToSoil::
 	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
 	waitmovement 0
 	release
 	end
+
+VerdanturfTown_Text_BirchTakeGrimer:
+	.string "BIRCH: You know what? You clearly\n"
+	.string "don't appreciate it enough yet.\p"
+	.string "So take one home! A fresh one.\n"
+	.string "Still warm. Don't ask why.$"
+
+VerdanturfTown_Text_ReceivedGrimer:
+	.string "{PLAYER} received a GRIMER!\n"
+	.string "It smells like a farm.$"
+
+VerdanturfTown_Text_BirchGrimerToPC:
+	.string "BIRCH: Your party is full, so I sent\n"
+	.string "it to your PC. Sorry, BILL.$"
+
+VerdanturfTown_Text_BirchNoRoom:
+	.string "BIRCH: No room anywhere? Not even\n"
+	.string "in the PC? Come back when you can\l"
+	.string "make space for greatness.$"
 
 VerdanturfTown_Text_BirchIntro:
 	.string "BIRCH: Shh! {PLAYER}, look at\n"

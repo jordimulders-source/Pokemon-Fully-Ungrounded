@@ -20,8 +20,10 @@
 #define WEATHER_ROUTE119_CYCLE          20
 #define WEATHER_ROUTE123_CYCLE          21
 #define WEATHER_FOG                     22  // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL
-#define WEATHER_ASHFROST_CYCLE          23  // Project Grounded: Route 135/136, per dag afwisselend sneeuw en as
-#define WEATHER_COUNT                   24
+#define WEATHER_ASHFROST_CYCLE          23  // Project Grounded: Route 135, per dag afwisselend sneeuw en as
+#define WEATHER_SNOW_STORM              24  // Project Grounded: zware sneeuwbui; in gevechten Snow Storm (was Hail)
+#define WEATHER_ASHFROST_STORM_CYCLE    25  // Project Grounded: Route 136, per dag afwisselend sneeuwstorm en as
+#define WEATHER_COUNT                   26
 
 // These are used in maps' coord_weather_event entries.
 // They are not a one-to-one mapping with the engine's

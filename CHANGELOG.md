@@ -15409,3 +15409,12 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.40] - Route 135: meer Bergmite en Eiscue
 - Op verzoek van Jordi drijven er nu **3 Bergmite** ((17,21), (28,20), (20,29)) en **2 Eiscue** ((32,27), (33,23)) in het meer van Route 135, allemaal lv 33 en met eigen tijdelijke vlag (`FLAG_TEMP_11`–`15`), dus ze komen terug na het verlaten van de kaart.
+
+### [v.0.8.41] - Snow Storm (Hail) en sneeuwstorm op Route 136
+Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwaardere Snowscape mét schade.
+- **Snow Storm** (de move en het weer die eerst Hail heetten, `MOVE_HAIL` / `B_WEATHER_HAIL`): 1/16 schade per beurt voor niet-Ice-types (zoals Sandstorm) **én** Ice-types +50% Def (zoals Snowscape, `battle_util.c`). Alle teksten hernoemd: "A snow storm started!", "The snow storm rages on.", "... is buffeted by the snow storm!", "The snow storm stopped.", en de beschrijvingen van de move, Aurora Veil, Max Hailstorm en de sneeuwabilities ("snowy weather"). Wie Hail leerde, leert nu Snow Storm. **Snow Warning** zet Snow Storm.
+- **Snowscape** blijft neutraal (alleen de Def-buff, geen schade). Chilly Reception zet Snowscape.
+- **Animatie:** Snow Storm is een zwaardere Snowscape (donkerder, meer sneeuwvlokken en windgeluid) in plaats van hagelstenen, zowel als move als aan het eind van de beurt.
+- **Overworld:** nieuw weer `WEATHER_SNOW_STORM`: donkerdere lucht, 36 vlokken (normaal 16; meer kan niet veilig vanwege de sprite-limiet), sneller vallend en schuin door de wind. Lichte sneeuw (`WEATHER_SNOW`) geeft in gevechten **Snowscape**, de sneeuwstorm geeft **Snow Storm**. Weather Ball wordt Ice en Snow Cloak werkt in beide.
+- **Route 135** wisselt per dag tussen lichte sneeuw en as (zoals voorheen, maar gevechten krijgen nu Snowscape); **Route 136** wisselt tussen **sneeuwstorm** en as (`WEATHER_ASHFROST_STORM_CYCLE`).
+- Tests: `test/battle/grounded/snow_storm.c` (schade, Def-buff, Snowscape onschadelijk). De bestaande hagel-tests verwachten nu de nieuwe teksten; alle Snow/Hail/Chilly Reception-tests slagen. In de emulator gecontroleerd: sneeuwstorm op Route 136.

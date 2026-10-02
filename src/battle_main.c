@@ -5929,6 +5929,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
                     return TYPE_WATER;
                 break;
             case WEATHER_SNOW:
+            case WEATHER_SNOW_STORM: // Project Grounded
                 return TYPE_ICE;
             case WEATHER_SANDSTORM:
                 return TYPE_ROCK;

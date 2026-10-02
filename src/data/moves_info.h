@@ -6980,9 +6980,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    // Project Grounded: Hail heet Snow Storm: schade per beurt én Ice-types +50% Def (zoals Snowscape)
     [MOVE_HAIL] =
     {
-        .name = COMPOUND_STRING("Hail"),
+        .name = COMPOUND_STRING("Snow Storm"),
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
             .description = COMPOUND_STRING(
                 "Summons a snowstorm that\n"
@@ -6990,7 +6991,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .effect = EFFECT_SNOWSCAPE,
         #else
             .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
+                "A biting snow storm that\n"
                 "strikes every turn."),
             .effect = EFFECT_HAIL,
         #endif
@@ -16905,7 +16906,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #elif B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_BOTH
         .description = COMPOUND_STRING(
             "Weakens all attacks if\n"
-            "used in hail or snow."),
+            "used in snowy weather."),
         #else
         .description = COMPOUND_STRING(
             "Weakens all attacks, but\n"
@@ -20465,7 +20466,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Snowscape"),
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_HAIL
             .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
+                "A biting snow storm that\n"
                 "strikes every turn."),
             .effect = EFFECT_HAIL,
         #else
@@ -22160,7 +22161,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Max Hailstorm"),
         .description = COMPOUND_STRING(
             "Ice Dynamax attack.\n"
-            "Summons hail for 5 turns."),
+            "Summons a snow storm."),
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
         .type = TYPE_ICE,

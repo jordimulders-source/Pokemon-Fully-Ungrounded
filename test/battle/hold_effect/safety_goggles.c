@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Hail")
     } WHEN {
         TURN { MOVE(player, MOVE_HAIL); }
     } SCENE {
-        NOT MESSAGE("The opposing Wobbuffet is buffeted by the hail!");
+        NOT MESSAGE("The opposing Wobbuffet is buffeted by the snow storm!");
     }
 }
 

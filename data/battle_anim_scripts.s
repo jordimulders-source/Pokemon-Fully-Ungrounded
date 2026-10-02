@@ -24218,15 +24218,25 @@ gBattleAnimMove_HeatWave::
 	end
 
 @ Also used by Hail weather
+@ Project Grounded: Snow Storm (de move Hail) = een zwaardere Snowscape
 gBattleAnimMove_Hail::
-	loadspritegfx ANIM_TAG_HAIL
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 0, 6, RGB_BLACK
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 7, RGB(8, 12, 16)
 	waitforvisualfinish
-	createvisualtask AnimTask_Hail, 5
-	loopsewithpan SE_M_HAIL, 0, 8, 10
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	delay 60
+	playsewithpan SE_M_GUST2, SOUND_PAN_TARGET
+	delay 60
+	playsewithpan SE_M_GUST2, SOUND_PAN_ATTACKER
+	delay 30
 	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 6, 0, RGB_BLACK
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 7, 0, RGB(8, 12, 16)
+	waitforvisualfinish
 	end
 
 gBattleAnimMove_Torment::
@@ -31401,15 +31411,22 @@ gBattleAnimGeneral_Sandstorm::
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
 	end
 
+@ Project Grounded: Snow Storm (de vroegere Hail) = een zwaardere Snowscape: donkerder en meer sneeuw
 gBattleAnimGeneral_Hail::
-	loadspritegfx ANIM_TAG_HAIL
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 6, RGB_BLACK
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 7, RGB(8, 12, 16)
 	waitforvisualfinish
-	createvisualtask AnimTask_HailShort, 5
-	loopsewithpan SE_M_HAIL, 0, 8, 4
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	delay 20
+	playsewithpan SE_M_GUST2, SOUND_PAN_TARGET
+	delay 20
 	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 6, 0, RGB_BLACK
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 7, 0, RGB(8, 12, 16)
+	waitforvisualfinish
 	end
 
 gBattleAnimGeneral_Snow::

@@ -826,7 +826,7 @@ SINGLE_BATTLE_TEST("Dynamax: Max Hailstorm sets up hail")
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SNOW_CONTINUES);
 #else
-        MESSAGE("It started to hail!");
+        MESSAGE("A snow storm started!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HAIL_CONTINUES);
 #endif

@@ -253,6 +253,20 @@ static u32 LoopedTask_BuildMatchCallList(s32 taskState)
 
         return LT_CONTINUE;
     case 3:
+        // Project Grounded: trainers die klaar zijn voor een rematch bovenaan (met hun Pokéball-icoon),
+        // daaronder de rest in de oude volgorde.
+        {
+            static EWRAM_DATA struct PokenavMatchCallEntry sReordered[MAX_REMATCH_ENTRIES - 1] = {0};
+            int n = 0;
+            for (i = 0; i < state->numRegistered; i++)
+                if (ShouldDrawRematchPokeballIcon(i))
+                    sReordered[n++] = state->matchCallEntries[i];
+            for (i = 0; i < state->numRegistered; i++)
+                if (!ShouldDrawRematchPokeballIcon(i))
+                    sReordered[n++] = state->matchCallEntries[i];
+            for (i = 0; i < state->numRegistered; i++)
+                state->matchCallEntries[i] = sReordered[i];
+        }
         state->initFinished = TRUE;
         break;
     }

@@ -6,7 +6,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 1. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
 
 ## Quality of life (nog te doen)
-- **Goedgekeurd:** rematch-overzicht in de PokéNav.
+- **Goedgekeurd:** (alles afgerond)
 - **Later proberen:** snellere schermtransities.
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)

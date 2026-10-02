@@ -15378,3 +15378,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Donkere grotten** zijn meteen verlicht als je de Knuckle Badge en HM05 Flash in je tas hebt (`SetDefaultFlashLevel`).
 - **Uitleg** bij de Cutter in Rustboro (HM01), achter zijn bestaande tekst: "And no, you don't have to teach it. Just walk up to a tree and press A. Some POKéMON somewhere does the work. In your BOX, probably. We call it channeling. Nobody asks questions. Same goes for every HM you'll find. BADGE plus HM in your BAG. Done." (placeholder).
 - Getest in de emulator: Cut (boom op Route 104) en Surf, met alleen een Magikarp zonder die moves in het team.
+
+### [v.0.8.33] - QoL: rematch-overzicht in de PokéNav
+- In **Match Call** staan trainers die **klaar zijn voor een rematch** nu bovenaan (met hun Pokéball-icoon), daaronder de rest in de oude volgorde. Het vak links toont bij elke geselecteerde trainer de route waar die staat, dus je ziet meteen waar je heen moet. Code: case 3 van `LoopedTask_BuildMatchCallList` in `src/pokenav_match_call_list.c`.
+- Getest in de emulator (Lola op Route 109 en Cristin op Route 121 bovenaan).
+- Daarmee is de lijst met goedgekeurde QoL-taken leeg.

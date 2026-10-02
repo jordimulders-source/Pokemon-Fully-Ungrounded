@@ -15623,3 +15623,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.75] - Pollen Haze aan beide kanten
 - De animatie van **Pollen Haze** (move én het weer aan het eind van de beurt) laat het stuifmeel nu over beide kanten van het veld dwarrelen, niet alleen bij de gebruiker. Nieuwe taak `AnimTask_PollenHazeSetSide` (spore-sprites volgen altijd het doel; de taak wisselt het doel tussen de eigen kant en de overkant).
+
+### [v.0.8.76] - Debug: legendary-gevechten forceren
+- Nieuw in het debugmenu: **Utilities > Legendary battle…** met Regirock, Regice, Registeel, Regidrago, Regieleki, Regigigas, Suicune, Raikou, Entei, Groudon, Kyogre, Rayquaza, Deoxys, Mew, Latias, Latios, Lugia en Ho-Oh (lv 50). Elk gevecht start via dezelfde special als het echte event (`StartRegiBattle`, `BattleSetup_StartLegendaryBattle`, `BattleSetup_StartLatiBattle`), dus met het juiste thema en de juiste transitie. Scripts in `data/scripts/grounded_debug.inc`.

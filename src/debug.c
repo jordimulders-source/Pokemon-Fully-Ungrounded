@@ -370,6 +370,24 @@ extern const u8 Debug_EventScript_EWRAMCounters[];
 extern const u8 Debug_Follower_NPC_Event_Script[];
 extern const u8 Debug_Follower_NPC_Not_Enabled[];
 extern const u8 Debug_EventScript_Steven_Multi[];
+extern const u8 Debug_EventScript_Legend_Regirock[];
+extern const u8 Debug_EventScript_Legend_Regice[];
+extern const u8 Debug_EventScript_Legend_Registeel[];
+extern const u8 Debug_EventScript_Legend_Regidrago[];
+extern const u8 Debug_EventScript_Legend_Regieleki[];
+extern const u8 Debug_EventScript_Legend_Regigigas[];
+extern const u8 Debug_EventScript_Legend_Suicune[];
+extern const u8 Debug_EventScript_Legend_Raikou[];
+extern const u8 Debug_EventScript_Legend_Entei[];
+extern const u8 Debug_EventScript_Legend_Groudon[];
+extern const u8 Debug_EventScript_Legend_Kyogre[];
+extern const u8 Debug_EventScript_Legend_Rayquaza[];
+extern const u8 Debug_EventScript_Legend_DeoxysNormal[];
+extern const u8 Debug_EventScript_Legend_Mew[];
+extern const u8 Debug_EventScript_Legend_Latias[];
+extern const u8 Debug_EventScript_Legend_Latios[];
+extern const u8 Debug_EventScript_Legend_Lugia[];
+extern const u8 Debug_EventScript_Legend_HoOh[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -528,6 +546,30 @@ static const struct DebugMenuOption sDebugMenu_Actions_FollowerNPCMenu[] =
     { NULL }
 };
 
+// Project Grounded: legendary-gevechten forceren (thema's en transities testen)
+static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
+{
+    { COMPOUND_STRING("Regirock"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Regirock },
+    { COMPOUND_STRING("Regice"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Regice },
+    { COMPOUND_STRING("Registeel"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Registeel },
+    { COMPOUND_STRING("Regidrago"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Regidrago },
+    { COMPOUND_STRING("Regieleki"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Regieleki },
+    { COMPOUND_STRING("Regigigas"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Regigigas },
+    { COMPOUND_STRING("Suicune"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Suicune },
+    { COMPOUND_STRING("Raikou"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Raikou },
+    { COMPOUND_STRING("Entei"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Entei },
+    { COMPOUND_STRING("Groudon"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Groudon },
+    { COMPOUND_STRING("Kyogre"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Kyogre },
+    { COMPOUND_STRING("Rayquaza"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Rayquaza },
+    { COMPOUND_STRING("Deoxys"), DebugAction_ExecuteScript, Debug_EventScript_Legend_DeoxysNormal },
+    { COMPOUND_STRING("Mew"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Mew },
+    { COMPOUND_STRING("Latias"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Latias },
+    { COMPOUND_STRING("Latios"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Latios },
+    { COMPOUND_STRING("Lugia"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Lugia },
+    { COMPOUND_STRING("Ho-Oh"), DebugAction_ExecuteScript, Debug_EventScript_Legend_HoOh },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
@@ -541,6 +583,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
+    { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
     { NULL }
 };
 

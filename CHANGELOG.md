@@ -15406,3 +15406,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 ### [v.0.8.39] - Route 135: Bergmite en Eiscue drijven in het meer
 - In het meer van Route 135 drijven nu een **Bergmite** (17,21) en een **Eiscue** (32,27), naast de Lapras. Aanspreken (surfend) = cry + **wild gevecht** op lv 33 (de wilde Pokémon op de route zijn lv 32–34). Ze gebruiken tijdelijke vlaggen (`FLAG_TEMP_11`/`12`), dus na het verlaten van de kaart drijven ze er weer.
 - Getest in de emulator: zichtbaar in het water, surfen ernaartoe, gevecht start.
+
+### [v.0.8.40] - Route 135: meer Bergmite en Eiscue
+- Op verzoek van Jordi drijven er nu **3 Bergmite** ((17,21), (28,20), (20,29)) en **2 Eiscue** ((32,27), (33,23)) in het meer van Route 135, allemaal lv 33 en met eigen tijdelijke vlag (`FLAG_TEMP_11`–`15`), dus ze komen terug na het verlaten van de kaart.

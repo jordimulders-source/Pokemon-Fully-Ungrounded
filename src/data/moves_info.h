@@ -21411,6 +21411,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_VintageSpill,
     },
 
+    // Project Grounded: Falinks-signature, Grieks voor "duwen" in een hoplieten-falanx.
+    // 20 power per treffer; 5 treffers bij volle HP, minder naarmate de HP daalt (zie CancelerMultihitMoves).
+    [MOVE_OTHISMOS] =
+    {
+        .name = COMPOUND_STRING("Othismos"),
+        .description = COMPOUND_STRING(
+            "A hoplite shoving push.\n"
+            "Hits more at higher HP."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+        .battleAnimScript = gBattleAnimMove_ArmThrust,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

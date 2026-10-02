@@ -910,8 +910,9 @@
 #define MOVE_SELTZER_SURGE 848 // Project Grounded
 #define MOVE_LAGER_LAGOON 849 // Project Grounded
 #define MOVE_VINTAGE_SPILL 850 // Project Grounded
+#define MOVE_OTHISMOS 851 // Project Grounded: Falinks
 
-#define MOVES_COUNT_GEN9 851
+#define MOVES_COUNT_GEN9 852
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

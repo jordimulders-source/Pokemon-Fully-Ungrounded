@@ -2883,7 +2883,13 @@ static enum MoveCanceler CancelerMultihitMoves(struct BattleContext *ctx)
     {
         enum Ability ability = ctx->abilities[ctx->battlerAtk];
 
-        if (ability == ABILITY_SKILL_LINK)
+        if (ctx->currentMove == MOVE_OTHISMOS)
+        {
+            // Project Grounded: de falanx is zo sterk als de gebruiker gezond is: 1 + 4 x HP/maxHP treffers (5 bij volle HP)
+            u32 hits = 1 + (gBattleMons[ctx->battlerAtk].hp * 4) / gBattleMons[ctx->battlerAtk].maxHP;
+            gMultiHitCounter = min(hits, 5);
+        }
+        else if (ability == ABILITY_SKILL_LINK)
         {
             gMultiHitCounter = 5;
         }

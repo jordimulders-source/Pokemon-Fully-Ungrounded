@@ -15397,3 +15397,8 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.37] - Shedinja niet meer vast op 1 HP
 - De revisie van v0.2.1 gaf Shedinja al **base HP 20**, maar `CalculateMonStats` (`src/pokemon.c`) zette zijn HP daarna hard op 1. Die uitzondering is weg: Shedinja gebruikt nu de gewone HP-formule. Op lv 50 (IV 31, geen EV's) is dat **95 HP**, op lv 100 rond 180. Wonder Guard blijft, dus alleen supereffectieve aanvallen en indirecte schade raken hem; met deze HP overleeft hij een paar tikken weer/gif/hazards in plaats van op elke tik te sterven.
+
+### [v.0.8.38] - Nieuwe move: Othismos (Falinks)
+- **Othismos** (`MOVE_OTHISMOS`), Grieks voor het duwen van een hoplieten-falanx. Fighting, physical, **20 power per treffer**, 100 acc, 10 PP, contact. Aantal treffers = 1 + 4 × HP/max HP: **5 bij volle HP**, 4 vanaf 75%, 3 vanaf 50%, 2 vanaf 25%, daaronder 1 (`CancelerMultihitMoves` in `src/battle_util.c`). Beschrijving: "A hoplite shoving push. Hits more at higher HP."
+- Falinks leert hem op **lv 30**, naast Reversal (die juist sterker wordt bij lage HP). Animatie: die van Arm Thrust.
+- Tests: `test/battle/grounded/othismos.c` (5, 3 en 1 treffer); slagen.

@@ -15564,3 +15564,8 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.64] - Gevechtstransitie Birch: poep
 - **Prof. Birch** (`TRAINER_BIRCH`, `TRAINER_BIRCH_2`) krijgt een eigen schermtransitie in plaats van de mugshot-slide: **bruine prut druipt stroperig van boven over het beeld** (met druppels, spikkels en af en toe een maïskorrel), de speler en Birch kleuren mee bruin, en dan **plopt een grijnzende drol-emoji** van boven naar beneden, stuitert twee keer (plop-geluiden) en **stinkt** (bewegende groene stanklijnen, Toxic-geluid) voor het gevecht begint.
 - `B_TRANSITION_BIRCH`, gekozen in `GetTrainerBattleTransition` vóór de mugshot-check. Graphics via `tools/grounded/birch_transition.py` (`graphics/battle_transitions/birch.*`). In de emulator getest.
+
+### [v.0.8.65] - Birch zonder drol, Regieleki symmetrisch
+- **Birch-transitie:** de drol-emoji (plop, stuiteren, stank) is eruit op verzoek van Jordi; alleen de bruine prut die over het beeld druipt blijft, daarna fade naar zwart. Alleen bij gevechten tegen Birch.
+- **Regieleki-transitie:** het stippatroon is nu symmetrisch (de linkerkant van de referentie gespiegeld rond de middelste stip); de referentie stond scheef.
+- Jordi: Regidrago en Deoxys goedgekeurd.

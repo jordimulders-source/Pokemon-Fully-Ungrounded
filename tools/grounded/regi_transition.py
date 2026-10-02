@@ -68,6 +68,6 @@ BLACK = [(0, 0, 0)] * 8
 # Regidrago: blauwe stippen in een vork/Y-patroon (gezicht op de rode bol)
 build('regidrago', [(140, 57), (335, 57), (240, 93), (165, 143), (313, 143), (240, 197), (240, 298)], 0.5,
       BLACK + [(16, 140, 224), (8, 40, 90), (16, 70, 140), (24, 100, 190), (40, 170, 240), (90, 200, 248), (170, 228, 255), (255, 255, 255)])
-# Regieleki: roze/oranje stippen in zijn glimlachpatroon
-build('regieleki', [(126, 215), (180, 287), (105, 335), (265, 305), (352, 325), (438, 278), (410, 400)], 0.55,
+# Regieleki: roze/oranje stippen, symmetrisch (linkerkant van de referentie gespiegeld)
+build('regieleki', [(126, 215), (180, 287), (105, 335), (265, 305), (350, 287), (404, 215), (425, 335)], 0.55,
       BLACK + [(240, 140, 150), (110, 40, 40), (170, 70, 70), (215, 110, 100), (248, 150, 130), (255, 180, 160), (255, 215, 200), (255, 255, 255)])

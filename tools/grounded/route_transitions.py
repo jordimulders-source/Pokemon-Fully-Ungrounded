@@ -120,3 +120,87 @@ snow = [flakes(70, 1), flakes(71, 2), flakes(72, 3), flakes(73, 14), flakes(74, 
 rr = random.Random(75)
 snow.append(tile(lambda x, y: 1 if rr.random() < 0.85 else 2))
 save('snow', snow, [SNOW])
+
+# ------------------------------------------------------------------ Route 113: as waait door het beeld
+# 1-3 losse asdeeltjes (horizontaal uitgesmeerd), 4-5 dichte as, 6 helemaal grijs
+ASH = pad([(0, 0, 0), (22, 22, 22), (15, 15, 16), (9, 9, 10), (27, 27, 26)])
+def ashtile(seed, n):
+    rr = random.Random(seed)
+    t = [[0] * 8 for _ in range(8)]
+    for _ in range(n):
+        x, y, ln = rr.randint(0, 7), rr.randint(0, 7), rr.randint(1, 4)
+        c = rr.choice((1, 2, 3))
+        for d in range(ln):
+            t[y][(x + d) % 8] = c if d < ln - 1 else 4
+    return [t[y][x] for y in range(8) for x in range(8)]
+ash = [ashtile(80, 1), ashtile(81, 2), ashtile(82, 3), ashtile(83, 12), ashtile(84, 22)]
+rr = random.Random(85)
+ash.append(tile(lambda x, y: rr.choice((1, 1, 2, 4))))
+save('ash', ash, [ASH])
+
+# ------------------------------------------------------------------ woestijn: zandstorm, lagen zand van onder naar boven
+# 1-2 zandkam (bovenrand van een laag), 3-6 zandlagen (4 tinten), 7-8 vliegend zand
+SAND = pad([(0, 0, 0), (30, 26, 17), (27, 22, 13), (24, 18, 10), (20, 15, 8), (31, 29, 22), (17, 12, 6)])
+sand = []
+for k in range(2):
+    rr = random.Random(90 + k)
+    sand.append(tile(lambda x, y, k=k: 0 if y < 3 + int(2 * math.sin((x + 4 * k) * 0.8)) else (5 if y < 5 + int(2 * math.sin((x + 4 * k) * 0.8)) else 1)))
+for k, c in enumerate((1, 2, 3, 4)):
+    rr = random.Random(95 + k)
+    sand.append(tile(lambda x, y, c=c: c if rr.random() > 0.12 else rr.choice((5, 6))))
+for k in range(2):
+    rr = random.Random(99 + k)
+    sand.append(tile(lambda x, y: rr.choice((1, 2, 5)) if (y in (2, 5) and rr.random() < 0.5) else 0))
+save('sand', sand, [SAND])
+
+# ------------------------------------------------------------------ Cycling Road: POV op de fiets over de weg
+# volledig beeld (240x160): lucht, zee, weg in perspectief met bewegende strepen (kleurcyclus), stuur onderaan
+# kleuren: 1-4 asfalt-banden, 5-8 middenstreep-banden, 9-12 rand-banden, 13 lucht, 14 zee, 15 stuur
+HOR = 52
+img = [[13] * 240 for _ in range(160)]
+for y in range(HOR, 160):
+    d = y - HOR + 1
+    z = 900.0 / d                       # diepte
+    band = int(z / 9) % 4
+    half = 5 + d * 1.0                 # halve wegbreedte
+    for x in range(240):
+        dx = abs(x - 120)
+        if dx > half + 3 + d * 0.08:
+            img[y][x] = 14
+        elif dx > half:
+            img[y][x] = 9 + band
+        elif dx < 1 + d * 0.04:
+            img[y][x] = 5 + band
+        else:
+            img[y][x] = 1 + band
+# stuur en handen onderaan
+for y in range(128, 160):
+    for x in range(240):
+        yy = y - 128
+        bar = abs(yy - 16 - ((x - 120) / 60.0) ** 2 * 5) < 4.5 and 14 < x < 226
+        stem = abs(x - 120) < 10 and yy > 12
+        grip = (abs(x - 30) < 18 or abs(x - 210) < 18) and 8 < yy < 32
+        if bar or stem or grip:
+            img[y][x] = 15
+tiles, index, tm = [], {}, []
+for ty in range(20):
+    for tx in range(30):
+        t = tuple(img[ty * 8 + py][tx * 8 + px] for py in range(8) for px in range(8))
+        if t not in index:
+            index[t] = len(tiles) + 1; tiles.append(list(t))
+        tm.append(index[t])
+pals = []
+ROAD = [(9, 9, 10), (12, 12, 13)]
+for f in range(4):
+    pal = [(0, 0, 0)]
+    for b in range(4):
+        pal.append(ROAD[(b + f) % 4 < 2])
+    for b in range(4):
+        pal.append((31, 31, 31) if (b + f) % 4 < 2 else ROAD[1])
+    for b in range(4):
+        pal.append((31, 6, 6) if (b + f) % 4 < 2 else (31, 31, 31))
+    pal += [(14, 22, 31), (4, 12, 24), (5, 4, 4)]
+    pals.append(pal)
+save('cycling', tiles, pals)
+import struct
+open(OUT + 'route_cycling.bin', 'wb').write(struct.pack('<%dH' % len(tm), *tm))

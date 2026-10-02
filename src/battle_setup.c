@@ -788,6 +788,22 @@ static s32 GetGroundedRouteTransition(void)
         return B_TRANSITION_ROUTE_BEACH;
     if (AT_MAP(MAP_ROUTE135) || AT_MAP(MAP_ROUTE136))
         return B_TRANSITION_ROUTE_SNOW;
+    if (AT_MAP(MAP_ROUTE113))
+        return B_TRANSITION_ROUTE_ASH;
+    if (AT_MAP(MAP_DESERT_RUINS))
+        return B_TRANSITION_ROUTE_SAND;
+    if (AT_MAP(MAP_ROUTE111))
+    {
+        s16 x, y;
+        PlayerGetDestCoords(&x, &y);
+        if (MetatileBehavior_IsSandOrDeepSand(MapGridGetMetatileBehaviorAt(x, y)))
+            return B_TRANSITION_ROUTE_SAND;
+    }
+    if (AT_MAP(MAP_FIERY_PATH) || AT_MAP(MAP_MT_CHIMNEY))
+        return B_TRANSITION_ROUTE_HEAT;
+    // Cycling Road: de verhoogde weg over Route 110 (hoogte 4)
+    if (AT_MAP(MAP_ROUTE110) && gObjectEvents[gPlayerAvatar.objectEventId].currentElevation == 4)
+        return B_TRANSITION_ROUTE_CYCLING;
     return -1;
 }
 

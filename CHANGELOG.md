@@ -15665,3 +15665,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - **Route 135/136** (`B_TRANSITION_ROUTE_SNOW`): ongeacht het weer gaat het steeds harder sneeuwen tot het scherm helemaal wit is.
 - Gedeelde runner voor alle route-transities in `src/battle_transition.c` (`RouteTransition_Run`); tiles uit `tools/grounded/route_transitions.py`. Testen: `tools/grounded/maptools/transtest.py` (warp + wild gevecht, strook frames per plek).
 - Op de lijst in `TODO.md`: de overige route-transities, Gabby & Ty (camera met REC), de Poochyena-trainer (Poochyena valt in POV aan) en het strand bij Slateport (strandbal in je gezicht).
+
+### [v.0.8.83] - Route-transities, ronde 2: as, zandstorm, hittegolf, Cycling Road
+- **Route 113** (`B_TRANSITION_ROUTE_ASH`): vulkanische as waait van rechts naar links door het beeld, steeds dichter, tot alles grijs is.
+- **Woestijn van Route 111** (alleen op zand) **en Desert Ruins** (`B_TRANSITION_ROUTE_SAND`): zandstorm. Laag na laag zand schuift snel van onder naar boven over het beeld, met vliegend zand erboven.
+- **Fiery Path en Mt. Chimney** (`B_TRANSITION_ROUTE_HEAT`): hittegolf. Het beeld trilt in opstijgende golven, kleurt oranje en dan verblindend licht.
+- **Cycling Road** (de verhoogde weg op Route 110; `B_TRANSITION_ROUTE_CYCLING`): POV over je stuur. Je raast over de weg boven de zee, de strepen en randen schieten op je af (fietsbel), dan wit.
+- Regirock in de Desert Ruins houdt zijn eigen transitie.

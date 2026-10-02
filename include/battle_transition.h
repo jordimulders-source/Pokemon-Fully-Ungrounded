@@ -73,6 +73,10 @@ enum BattleTransition
     B_TRANSITION_ROUTE_BEACH, // Project Grounded: strand van een zeeroute, golf uit de verte
     B_TRANSITION_ROUTE_BUBBLES, // Project Grounded: onder water, luchtbellen
     B_TRANSITION_ROUTE_SNOW, // Project Grounded: Route 135/136, sneeuwt dicht
+    B_TRANSITION_ROUTE_ASH, // Project Grounded: Route 113, as waait door het beeld
+    B_TRANSITION_ROUTE_SAND, // Project Grounded: woestijn, zandstorm
+    B_TRANSITION_ROUTE_HEAT, // Project Grounded: Fiery Path / Mt. Chimney, hittegolf
+    B_TRANSITION_ROUTE_CYCLING, // Project Grounded: Cycling Road, POV op de fiets
     B_TRANSITION_COUNT
 };
 

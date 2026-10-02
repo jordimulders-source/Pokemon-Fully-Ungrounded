@@ -128,6 +128,10 @@ static void Task_RouteWave(u8); // Project Grounded
 static void Task_RouteBeach(u8); // Project Grounded
 static void Task_RouteBubbles(u8); // Project Grounded
 static void Task_RouteSnow(u8); // Project Grounded
+static void Task_RouteAsh(u8); // Project Grounded
+static void Task_RouteSand(u8); // Project Grounded
+static void Task_RouteHeat(u8); // Project Grounded
+static void Task_RouteCycling(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -363,6 +367,13 @@ static const u16 sRouteBubbles_Tileset[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sRouteBubbles_Palette[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.gbapal");
 static const u16 sRouteSnow_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_snow.4bpp");
 static const u16 sRouteSnow_Palette[] = INCBIN_U16("graphics/battle_transitions/route_snow.gbapal");
+static const u16 sRouteAsh_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_ash.4bpp");
+static const u16 sRouteAsh_Palette[] = INCBIN_U16("graphics/battle_transitions/route_ash.gbapal");
+static const u16 sRouteSand_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_sand.4bpp");
+static const u16 sRouteSand_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sand.gbapal");
+static const u16 sRouteCycling_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_cycling.4bpp");
+static const u16 sRouteCycling_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_cycling.bin");
+static const u16 sRouteCycling_Palette[] = INCBIN_U16("graphics/battle_transitions/route_cycling.gbapal");
 static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
 static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
@@ -440,6 +451,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ROUTE_BEACH] = Task_RouteBeach, // Project Grounded
     [B_TRANSITION_ROUTE_BUBBLES] = Task_RouteBubbles, // Project Grounded
     [B_TRANSITION_ROUTE_SNOW] = Task_RouteSnow, // Project Grounded
+    [B_TRANSITION_ROUTE_ASH] = Task_RouteAsh, // Project Grounded
+    [B_TRANSITION_ROUTE_SAND] = Task_RouteSand, // Project Grounded
+    [B_TRANSITION_ROUTE_HEAT] = Task_RouteHeat, // Project Grounded
+    [B_TRANSITION_ROUTE_CYCLING] = Task_RouteCycling, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -5844,4 +5859,193 @@ static const struct RouteTransition sRT_Snow =
 static void Task_RouteSnow(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Snow);
+}
+
+// ---------------- Route 113: vulkanische as waait van rechts naar links door het beeld, steeds dichter, tot alles grijs is
+// tiles: 1-3 losse asdeeltjes, 4-5 dichte as, 6 helemaal grijs
+static bool8 RTAsh_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer;
+    u32 i, n = 4 + t / 2;
+
+    SetGpuReg(REG_OFFSET_BG0HOFS, (t * 5) & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (-(t / 2) + Sin((t * 5) & 0xFF, 3)) & 0x1FF);
+    for (i = 0; i < n; i++)
+    {
+        u16 *cell = &tilemap[Random() % (32 * 32)];
+        u32 cur = *cell & 0x3FF;
+        if (cur == 0)
+            *cell = RT_TILE(1 + Random() % 3);
+        else if (cur < 4)
+            *cell = RT_TILE(t > 25 ? 4 : cur);
+        else if (cur == 4 && t > 45)
+            *cell = RT_TILE(5);
+    }
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 6, 13), RGB(13, 13, 13));
+    if (t == 30 || t == 60)
+        PlaySE(SE_M_GUST);
+    if (t >= 95)
+    {
+        for (i = 0; i < 32 * 32; i++)
+            tilemap[i] = RT_TILE(6);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Ash =
+{
+    sRouteAsh_Tileset, sizeof(sRouteAsh_Tileset), sRouteAsh_Palette, 1, 1, SE_M_GUST, NULL, RTAsh_Update
+};
+
+static void Task_RouteAsh(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Ash);
+}
+
+// ---------------- woestijn: zandstorm, laag na laag zand schuift snel van onder naar boven over het beeld
+// tiles: 1-2 zandkam, 3-6 zandlagen, 7-8 vliegend zand
+static void RTSand_Init(struct Task *task)
+{
+    task->tRtA = 0; // hoogte van het zand in pixels
+    task->tRtB = 4; // snelheid in 1/4 pixel
+}
+
+static bool8 RTSand_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer;
+    s32 r, c, top, rt;
+
+    if (t > 12)
+    {
+        task->tRtB += 1;
+        task->tRtA += task->tRtB >> 2;
+    }
+    top = DISPLAY_HEIGHT - task->tRtA;
+    rt = top >> 3;
+    SetGpuReg(REG_OFFSET_BG0VOFS, (-(top & 7)) & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0HOFS, (t * 4) & 0x1FF);
+    for (r = -1; r < 22; r++)
+    {
+        for (c = 0; c < 32; c++)
+        {
+            u16 tile = 0;
+            if (r == rt)
+                tile = 1 + ((c + t / 4) & 1);
+            else if (r > rt)
+                tile = 3 + (((21 - r) / 2) & 3);
+            else if (((c * 5 + r * 3 + t) % 7) == 0)
+                tile = 7 + ((c + r) & 1);
+            tilemap[(r & 31) * 32 + c] = tile ? RT_TILE(tile) : 0;
+        }
+    }
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 5, 10), RGB(26, 20, 12));
+    if (t == 20 || t == 45)
+        PlaySE(SE_M_SAND_ATTACK);
+    return top < -16;
+}
+
+static const struct RouteTransition sRT_Sand =
+{
+    sRouteSand_Tileset, sizeof(sRouteSand_Tileset), sRouteSand_Palette, 1, 1, SE_M_SANDSTORM, RTSand_Init, RTSand_Update
+};
+
+static void Task_RouteSand(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Sand);
+}
+
+// ---------------- Cycling Road: je kijkt over je stuur en raast over de weg (strepen bewegen via een kleurcyclus)
+static void RTCycling_Init(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    u32 r, c;
+    for (r = 0; r < 20; r++)
+        for (c = 0; c < 30; c++)
+            tilemap[r * 32 + c] = RT_TILE(sRouteCycling_Tilemap[r * 30 + c]);
+    BlendPalette(BG_PLTT_ID(15), 16, 16, RGB_BLACK);
+    task->tRtA = 0;  // fase van de strepen
+    task->tRtB = 4;  // snelheid
+}
+
+static bool8 RTCycling_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (task->tRtB < 40)
+        task->tRtB++;
+    task->tRtA += task->tRtB;
+    LoadPalette(&sRouteCycling_Palette[((task->tRtA >> 4) & 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (t & 2) ? 1 : 0); // trillen over de weg
+    if (t < 8)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - t * 2, RGB_BLACK);
+    if (t == 2)
+        PlaySE(SE_BIKE_BELL);
+    if (t >= 70)
+    {
+        BlendPalette(BG_PLTT_ID(15), 16, min((t - 70) * 2, 16), RGB_WHITE);
+        return t >= 78;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Cycling =
+{
+    sRouteCycling_Tileset, sizeof(sRouteCycling_Tileset), sRouteCycling_Palette, 1, 1, 0, RTCycling_Init, RTCycling_Update
+};
+
+static void Task_RouteCycling(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Cycling);
+}
+
+// ---------------- Fiery Path / Mt. Chimney: hittegolf. Het beeld trilt in opstijgende golven (zoals bij Swirl, via
+// HBlank-scroll van de overworld), kleurt oranje en dan verblindend licht, daarna naar zwart.
+static void Task_RouteHeat(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    s32 t;
+
+    switch (task->tState)
+    {
+    case 0:
+        InitTransitionData();
+        ScanlineEffect_Clear();
+        SetSinWave((s16 *)gScanlineEffectRegBuffers[1], sTransitionData->cameraX, 0, 4, 0, DISPLAY_HEIGHT);
+        SetVBlankCallback(VBlankCB_Swirl);
+        SetHBlankCallback(HBlankCB_Swirl);
+        EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
+        task->tRtTimer = 0;
+        PlaySE(SE_M_HEAT_WAVE);
+        task->tState++;
+        break;
+    case 1:
+    case 2:
+        t = task->tRtTimer++;
+        sTransitionData->VBlank_DMA = FALSE;
+        SetSinWave((s16 *)gScanlineEffectRegBuffers[0], sTransitionData->cameraX, t * 6, 5, min(1 + t / 7, 10), DISPLAY_HEIGHT);
+        sTransitionData->VBlank_DMA++;
+        if (task->tState == 1)
+        {
+            if (t < 50)
+                BlendPalettes(PALETTES_ALL, min(t / 4, 9), RGB(31, 12, 0));
+            else
+                BlendPalettes(PALETTES_ALL, min(9 + (t - 50) / 3, 14), RGB(31, 27, 16));
+            if (t >= 75)
+            {
+                CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+                BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+                task->tState++;
+            }
+        }
+        else if (!gPaletteFade.active)
+        {
+            DmaStop(0);
+            FadeScreenBlack();
+            DestroyTask(taskId);
+        }
+        break;
+    }
 }

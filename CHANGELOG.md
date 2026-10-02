@@ -15427,3 +15427,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.43] - Weer omgedraaid op Route 135/136
 - Op verzoek van Jordi: hoe dichter bij Ashfrost, hoe leefbaarder het weer. **Route 135** wisselt nu per dag tussen **sneeuwstorm** (Snow Storm in gevechten) en as; **Route 136** tussen lichte sneeuw (Snowscape) en as.
+
+### [v.0.8.44] - Summary van wilde Pokémon: "Wild POKéMON"
+- Het summary-scherm dat je met L in een wild gevecht opent, deed alsof de Pokémon al van jou was (jouw OT-naam en ID, "met at Lv x, [plek]"). Nu: `OT/-----`, geen ID, en als memo "*[nature] nature, Wild POKéMON. Not yours. Yet.*" (placeholder; herschrijfbaar).
+- Code: `ShowWildPokemonSummaryScreen` in `src/pokemon_summary_screen.c` (vlag `isWildMon`).

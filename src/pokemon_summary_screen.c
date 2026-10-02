@@ -185,6 +185,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 windowIds[8];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 handleDeoxys;
+    bool8 isWildMon; // Project Grounded: wilde Pokémon bekeken met L in een gevecht
     s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or Pokémon data
     u8 unk_filler4[6];
     u8 categoryIconSpriteId;
@@ -1254,6 +1255,16 @@ void ShowSelectMovePokemonSummaryScreen(struct Pokemon *mons, u8 monIndex, u8 ma
 {
     ShowPokemonSummaryScreen(SUMMARY_MODE_SELECT_MOVE, mons, monIndex, maxMonIndex, callback);
     sMonSummaryScreen->newMove = newMove;
+}
+
+// Project Grounded: summary van een wilde Pokémon (L in een wild gevecht); geen OT en geen "met at"
+static const u8 sText_WildOT[] = _("-----");
+static const u8 sText_XNatureWild[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nWild POKéMON.\nNot yours. Yet.");
+
+void ShowWildPokemonSummaryScreen(struct Pokemon *mon, void (*callback)(void))
+{
+    ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, mon, 0, 0, callback);
+    sMonSummaryScreen->isWildMon = TRUE;
 }
 
 void ShowPokemonSummaryScreenHandleDeoxys(u8 mode, struct BoxPokemon *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void))
@@ -3625,7 +3636,9 @@ static void PrintMonOTName(void)
         windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ORIGINAL_TRAINER);
         PrintTextOnWindow(windowId, gText_OTSlash, 0, 1, 0, 1);
         x = GetStringWidth(FONT_NORMAL, gText_OTSlash, 0);
-        if (sMonSummaryScreen->summary.OTGender == 0)
+        if (sMonSummaryScreen->isWildMon)
+            PrintTextOnWindow(windowId, sText_WildOT, x, 1, 0, 1);
+        else if (sMonSummaryScreen->summary.OTGender == 0)
             PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, x, 1, 0, 5);
         else
             PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, x, 1, 0, 6);
@@ -3635,7 +3648,7 @@ static void PrintMonOTName(void)
 static void PrintMonOTID(void)
 {
     int xPos;
-    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
+    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE && !sMonSummaryScreen->isWildMon)
     {
         ConvertIntToDecimalStringN(StringCopy(gStringVar1, gText_IDNumber2), (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
         xPos = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar1, 56);
@@ -3668,6 +3681,10 @@ static void BufferMonTrainerMemo(void)
     if (InBattleFactory() == TRUE || InSlateportBattleTent() == TRUE || IsInGamePartnerMon() == TRUE)
     {
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, gText_XNature);
+    }
+    else if (sMonSummaryScreen->isWildMon)
+    {
+        DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sText_XNatureWild);
     }
     else
     {

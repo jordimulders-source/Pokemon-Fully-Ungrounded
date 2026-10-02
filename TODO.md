@@ -10,7 +10,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 1. **Fungal Control** (Parasect, Bug/Grass status?, 60% acc): 3 beurten lang kies jij de move van de tegenstander, alle moves toegestaan (ook Explosion/Memento).
 2. **Transmutation** (Psychic, status, 100% acc): het doelwit wordt een kopie van de gebruiker (types, stats, moves met 5 PP) tot het wisselt. Level-up voor Mew, Alakazam-, Metagross-, Gothitelle-, Elgyem-, Meowstic-lijn, Delphox, Sigilyph, Indeedee, Jynx, Claydol, Wyrdeer, Farigiraf.
 3. **Implosion**: Dark, special, 200 BP, self-KO; zwart gat 5 beurten voor béíde kanten (hazards weg, −1 Atk/SpAtk voor elke Pokémon die het veld op komt). Animatie: zwart gat, alles wordt naar het midden getrokken, zwart als kleur.
-4. **Wild summary (L):** OT en memo vervangen door "Wild POKéMON" (placeholder).
+4. ~~Wild summary~~ (gedaan, v0.8.44)
 5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.
 6. **Heatran-cutscene** na Wattson: Rock Smash-stenen op Route 111 net boven Mauville weg; Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden (Fiery Path).
 7. **Rotom-event:** Mauville, na badge 3, kelder van een huis met een tv.

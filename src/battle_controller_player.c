@@ -470,7 +470,7 @@ static void WildInfo_OpenSummary(u32 battler)
         DeactivateAllTextPrinters();
         // Kopie: een pointer naar gEnemyParty ziet het summary-scherm als een link-tegenstander (leest gLinkPlayers)
         sWildInfoMon = gEnemyParty[gBattlerPartyIndexes[sWildInfoTarget]];
-        ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, &sWildInfoMon, 0, 0, CB2_SetUpReshowBattleScreenAfterMenu);
+        ShowWildPokemonSummaryScreen(&sWildInfoMon, CB2_SetUpReshowBattleScreenAfterMenu);
     }
 }
 

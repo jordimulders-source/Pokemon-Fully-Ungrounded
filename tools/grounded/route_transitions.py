@@ -476,14 +476,23 @@ pika += blocks(lambda x, y: 4 if x < tm.size[0] and y < tm.size[1] and tm.getpix
 save('pikachu', pika, [PIKA])
 print('  Pika!-tekst', TW, 'x', TH, 'tiles')
 
-# ------------------------------------------------------------------ Magikarp: het spartelende party-icoon (2 frames, 4x4)
+# ------------------------------------------------------------------ Magikarp: het spartelende party-icoon, 2x vergroot (2 frames, 8x8)
+# plus de front-sprite (64x128, 2 frames) als OBJ-sprite die in grote aantallen over elkaar heen spartelt
 ic = Image.open('graphics/pokemon/magikarp/icon.png')
 icpal = ic.getpalette()[:48]
 KARP = [tuple(icpal[i * 3 + k] // 8 for k in range(3)) for i in range(16)]
 karp = []
 for fr in range(2):
-    karp += blocks(lambda x, y, fr=fr: ic.getpixel((x, y + fr * 32)), 4, 4)
+    karp += blocks(lambda x, y, fr=fr: ic.getpixel((x // 2, y // 2 + fr * 32)), 8, 8)
 save('magikarp', karp, [KARP])
+mf = Image.open('graphics/pokemon/magikarp/anim_front.png')
+mpal = [tuple(int(v) // 8 for v in l.split()) for l in open('graphics/pokemon/magikarp/normal.pal').read().split('\n')[3:19]]
+mf.putpalette([v * 8 for c in mpal for v in c] + [0] * (768 - 48))
+mf.save(OUT + 'sprite_magikarp.png')
+with open(OUT + 'sprite_magikarp.pal', 'w', newline='\r\n') as fp:
+    fp.write('JASC-PAL\n0100\n16\n')
+    for c in mpal:
+        fp.write('%d %d %d\n' % tuple(v * 8 for v in c))
 
 # ------------------------------------------------------------------ Gabby & Ty: camerazoeker met REC en rode stip
 # 1-4 hoeken (2x2 elk: LB, RB, LO, RO -> 1-16), 17 lijn horizontaal, 18 lijn verticaal, 19-22 rode stip (2x2),

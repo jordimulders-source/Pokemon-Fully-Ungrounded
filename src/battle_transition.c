@@ -410,6 +410,8 @@ static const u16 sPikachu_Tileset[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u16 sPikachu_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.gbapal");
 static const u16 sMagikarp_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.4bpp");
 static const u16 sMagikarp_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.gbapal");
+static const u32 sMagikarpSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_magikarp.4bpp");
+static const u16 sMagikarpSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_magikarp.gbapal");
 static const u16 sGabbyTy_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_camera.4bpp");
 static const u16 sGabbyTy_Palette[] = INCBIN_U16("graphics/battle_transitions/route_camera.gbapal");
 static const u16 sKoffing_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_koffing.4bpp");
@@ -6727,38 +6729,109 @@ static void Task_Pikachu(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Pikachu);
 }
 
-// ---------------- Magikarp: steeds meer spartelende Magikarp verschijnen een voor een, tot het scherm vol zit
-// tiles: 1-16 frame 1, 17-32 frame 2 (party-icoon, 4x4)
-#define MAGIKARP_SLOTS 40
+// ---------------- Magikarp: je verdrinkt in Magikarp. Grote Magikarp-iconen vullen de achtergrond en daaroverheen
+// verschijnen steeds meer spartelende Magikarp-sprites (64x64, front-sprite) die elkaar overlappen.
+// BG-tiles: 1-64 icoon frame 1, 65-128 frame 2 (2x vergroot, 8x8)
+#define MAGIKARP_BG_SLOTS 12
+#define MAGIKARP_SPRITES  56
+#define MAGIKARP_TAG      0x5A12
 
-static void RTMagikarp_Slot(u32 k, s32 *x, s32 *y)
+static EWRAM_DATA u8 sRTMagikarp_Sprites[MAGIKARP_SPRITES] = {0};
+
+static const struct OamData sRTMagikarp_Oam =
 {
-    u32 idx = (k * 17) % MAGIKARP_SLOTS; // husselen (17 is onderling ondeelbaar met 40)
-    *x = (idx % 8) * 4 - ((idx / 8) & 1) * 2 + 1;
-    *y = (idx / 8) * 4;
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 0,
+};
+
+static const union AnimCmd sRTMagikarp_Anim[] =
+{
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(64, 5),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sRTMagikarp_AnimFlip[] =
+{
+    ANIMCMD_FRAME(0, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(64, 4, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sRTMagikarp_Anims[] = {sRTMagikarp_Anim, sRTMagikarp_AnimFlip};
+
+// spartelen: steeds opnieuw een stukje omhoog springen
+static void SpriteCB_RTMagikarp(struct Sprite *sprite)
+{
+    sprite->data[0] += sprite->data[1];
+    sprite->y2 = -Sin(sprite->data[0] & 0x7F, 10);
+}
+
+static const struct SpriteTemplate sRTMagikarp_Template =
+{
+    .tileTag = MAGIKARP_TAG,
+    .paletteTag = MAGIKARP_TAG,
+    .oam = &sRTMagikarp_Oam,
+    .anims = sRTMagikarp_Anims,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_RTMagikarp,
+};
+
+static void RTMagikarp_Init(struct Task *task)
+{
+    struct SpriteSheet sheet = {sMagikarpSprite_Gfx, 64 * 128 / 2, MAGIKARP_TAG};
+    struct SpritePalette spal = {sMagikarpSprite_Palette, MAGIKARP_TAG};
+    LoadSpriteSheet(&sheet);
+    LoadSpritePalette(&spal);
+    task->tRtA = 0; // aantal sprites
 }
 
 static bool8 RTMagikarp_Update(struct Task *task)
 {
     u16 *tilemap = RT_Tilemap();
-    s32 t = task->tRtTimer, x, y;
-    u32 k, n = min(t / 2 + 1, MAGIKARP_SLOTS);
+    s32 t = task->tRtTimer;
+    u32 k, n;
 
+    // achtergrond: grote spartelende iconen, een voor een
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    n = min(t / 3 + 1, MAGIKARP_BG_SLOTS);
     for (k = 0; k < n; k++)
     {
-        RTMagikarp_Slot(k, &x, &y);
-        RT_PutBlock(tilemap, x, y + (((t / 4 + k) & 1) ? 0 : 0), 1 + (((t / 5 + k) & 1) * 16), 4, 4);
+        u32 idx = (k * 5) % MAGIKARP_BG_SLOTS;
+        RT_PutBlock(tilemap, (idx % 4) * 8 - (idx / 4 == 1 ? 4 : 0), (idx / 4) * 7 - 1, 1 + (((t / 6 + k) & 1) * 64), 8, 8);
     }
-    if (t % 16 == 0 && t < 80)
-        PlaySE(SE_M_DOUBLE_SLAP);
-    BlendPalettes(RT_SCENE_PALETTES, min(t / 6, 8), RGB(6, 14, 28));
-    return t >= MAGIKARP_SLOTS * 2 + 20;
+    // daaroverheen: steeds meer Magikarp-sprites, steeds sneller
+    for (k = 0; k < (t < 20 ? (t % 3 == 0) : (t < 40 ? 1 : 2)) && task->tRtA < MAGIKARP_SPRITES; k++)
+    {
+        u8 id = CreateSprite(&sRTMagikarp_Template, 8 + Random() % 224, 8 + Random() % 150, MAGIKARP_SPRITES - task->tRtA);
+        if (id == MAX_SPRITES)
+            break;
+        StartSpriteAnim(&gSprites[id], Random() & 1);
+        gSprites[id].animDelayCounter = Random() % 5;
+        gSprites[id].data[0] = Random() & 0x7F;
+        gSprites[id].data[1] = 6 + Random() % 6;
+        sRTMagikarp_Sprites[task->tRtA++] = id;
+    }
+    if (t % 12 == 0 && t < 84)
+        PlaySE(t % 24 ? SE_M_DOUBLE_SLAP : SE_M_SURF);
+    BlendPalettes(RT_SCENE_PALETTES & ~(1 << (16 + IndexOfSpritePaletteTag(MAGIKARP_TAG))), min(t / 4, 10), RGB(6, 14, 28));
+    return t >= 92;
+}
+
+static void RTMagikarp_Finish(struct Task *task)
+{
+    u32 k;
+    for (k = 0; k < (u32)task->tRtA; k++)
+        DestroySprite(&gSprites[sRTMagikarp_Sprites[k]]);
+    FreeSpriteTilesByTag(MAGIKARP_TAG);
+    FreeSpritePaletteByTag(MAGIKARP_TAG);
 }
 
 static const struct RouteTransition sRT_Magikarp =
 {
-    sMagikarp_Tileset, sizeof(sMagikarp_Tileset), sMagikarp_Palette, 1, 1, 0, NULL, RTMagikarp_Update, NULL
+    sMagikarp_Tileset, sizeof(sMagikarp_Tileset), sMagikarp_Palette, 1, 1, 0, RTMagikarp_Init, RTMagikarp_Update, RTMagikarp_Finish
 };
 
 static void Task_Magikarp(u8 taskId)

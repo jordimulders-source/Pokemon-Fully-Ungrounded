@@ -15705,3 +15705,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Strand van Route 109** (voor Slateport, niet surfend; `B_TRANSITION_BEACHBALL`): strand met parasols onderin, een draaiende strandbal vliegt in een boog op je af en raakt je vol (beeld schudt, wit).
 - Soort-transities gaan vóór route-transities (een Magikarp onder water krijgt de Magikarp-transitie). De draaiende/schalende figuren zijn affine sprites (`RT_CreateSprite`); de wereld kleurt mee, de sprite niet.
 - Graphics in `tools/grounded/route_transitions.py`; Poochyena en Magikarp komen uit de eigen sprites/iconen van de game.
+
+### [v.0.8.89] - Magikarp: verdrinken in Magikarp
+- De Magikarp-transitie is veel voller: **grote Magikarp-iconen** (2x vergroot) vullen de achtergrond, en daaroverheen verschijnen steeds sneller **tot 56 spartelende Magikarp-sprites** (de grote front-sprite, 64x64, met beide animatieframes). Ze springen op en neer, staan willekeurig gespiegeld en overlappen elkaar, tot het scherm een berg Magikarp is.

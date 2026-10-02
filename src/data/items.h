@@ -12571,9 +12571,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Team AQUA's fizzy wave\n"
-            "hits both foes. May\n"
-            "lower Speed or confuse."),
+            "A fizzy wave.\n"
+            "May lower Speed\n"
+            "or confuse."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12585,9 +12585,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM52"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A foaming beer wave hits\n"
-            "everyone nearby. Often\n"
-            "confuses. Drink wisely."),
+            "A foaming beer\n"
+            "wave. Often\n"
+            "confuses all."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12599,9 +12599,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM53"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Splashes a fine red.\n"
-            "Each hit on the same foe\n"
-            "is likelier to confuse."),
+            "Splashes wine.\n"
+            "Each hit raises\n"
+            "confusion odds."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12613,9 +12613,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM54"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Trains on itself. More\n"
-            "stats rise each turn, but\n"
-            "it may hallucinate."),
+            "Trains each turn\n"
+            "to boost stats.\n"
+            "May hallucinate."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12627,9 +12627,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM55"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A thin laser that burns\n"
-            "through Protect, screens\n"
-            "and Sp. Def boosts."),
+            "A thin laser that\n"
+            "pierces Protect\n"
+            "and screens."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12641,9 +12641,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM56"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Siphons the foe's shadow\n"
-            "from afar. Restores a lot\n"
-            "of HP."),
+            "Siphons the foe's\n"
+            "shadow to restore\n"
+            "HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12655,9 +12655,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM57"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Summons acid rain. Poison\n"
-            "thrives, the rest corrodes.\n"
-            "Ruins sparkling water."),
+            "Calls acid rain.\n"
+            "Poison thrives,\n"
+            "others corrode."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12669,9 +12669,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM58"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Fills the air with pollen.\n"
-            "Bug and Grass thrive.\n"
-            "Ahchoo."),
+            "Spreads pollen.\n"
+            "Bug and Grass\n"
+            "thrive. Ahchoo."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

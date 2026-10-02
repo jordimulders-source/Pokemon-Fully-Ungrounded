@@ -121,6 +121,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 ## Moves (`src/data/moves_info.h`)
 - Stat-drops op de tegenstander: gebruik losse effecten per stat (`MOVE_EFFECT_DEF_MINUS_1`, `MOVE_EFFECT_SP_DEF_MINUS_1`, ...). Gecombineerde effecten zoals `MOVE_EFFECT_DEF_SPDEF_DOWN` (Close Combat) en `MOVE_EFFECT_ATK_DEF_DOWN` (Superpower) werken altijd op de gebruiker.
 - `additionalEffects` worden alleen uitgevoerd bij aanvallende moves (en bij `onChargeTurnOnly` op de laadbeurt van two-turn moves), niet bij statusmoves zoals Flash.
+- **Beschrijving van een nieuwe TM/move-item** (`.description` in `src/data/items.h`): het tasvak is smal, dus 3 regels van max. ±17 tekens (zoals U-turn: "Attacks, then / swaps places with / a party Pokémon.").
 - Eigen tests staan in `test/battle/grounded/`.
 
 ## Bouwen en testen

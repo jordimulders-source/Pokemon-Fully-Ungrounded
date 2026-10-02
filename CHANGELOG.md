@@ -15617,3 +15617,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.73] - Protip Oracle in Ashfrost
 - De **PROTIP ORACLE** staat nu ook in het Pokémon Center van Ashfrost, op dezelfde plek (8,8) en als hetzelfde type NPC (Maniac) als in de andere Pokémon Centers. Tip: ICE-types krijgen geen schade in een SNOW STORM, "and neither do you, if you never go outside. That's why I live in POKéMON CENTERS now. All of them."
+
+### [v.0.8.74] - TM-beschrijvingen passen in de tas
+- De beschrijvingen van de nieuwe TM's (Seltzer Surge, Lager Lagoon, Vintage Spill, Machine Learning, Laser Beam, Shadow Siphon, Acid Rain, Pollen Haze) zijn ingekort tot 3 regels van max. ±17 tekens, zodat ze in het smalle tasvak passen (net als U-turn).

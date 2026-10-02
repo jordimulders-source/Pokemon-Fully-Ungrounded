@@ -15545,3 +15545,9 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.60] - Rotom-event in Mauville
 - In het huis met de Coin Case-vrouw (`MauvilleCity_House2`) zit een **geheime trap achter de boekenkast** (aanspreken bij (2,1)) naar een nieuwe kelder `MauvilleCity_House2_B1F` (layout van de Mossdeep Game Corner-kelder) met een tv.
 - Vóór de 3e badge: alleen ruis. Daarna: de trash-talkshow "SHOCKING EXES" ("My new ex is… ROTOM!"), de camera schudt en een wilde **Rotom** (lv 28) springt uit het scherm. Versla of vlucht je, dan kruipt hij terug in de tv en kun je het opnieuw proberen; na het vangen (`FLAG_CAUGHT_MAUVILLE_ROTOM`, 0x40) toont de tv alleen nog saai nieuws. Teksten zijn placeholders. In de emulator getest.
+
+### [v.0.8.61] - Gabby & Ty: eerste gevecht met local celebrity Brad
+- Het eerste Gabby & Ty-gevecht (Route 111) is nu een **dubbel gevecht tegen twee trainers**: **Brad**, de local celebrity (Rich Boy, staat naast Gabby & Ty), en Ty. Gabby interviewt zoals altijd na afloop.
+- Brads **Poochyena "Barkley"** (lv 34, bewust nooit geëvolueerd): Strong Jaw, Adamant, perfecte IV's, 252 Atk/252 Spe, Play Rough, Foul Play, Psychic Fangs, Hone Claws. Slimme AI.
+- Ty heeft bij dit eerste gevecht maar één Pokémon: **Magnemite** lv 25 (Thunder Wave, Flash Cannon, Spark, Light Screen). Jordi's oude zes-Pokémon-team van `TRAINER_GABBY_AND_TY_1` is daarvoor vervangen; de latere Gabby & Ty-teams (2–6) zijn ongewijzigd.
+- Met maar één bruikbare Pokémon weigert Brad ("this is a DOUBLE feature"). Nieuwe trainer `TRAINER_LOCAL_CELEBRITY` (881), nieuwe special `GetMonsStateToDoubles`. Teksten zijn placeholders. In de emulator getest (gevecht, verliestekst, interview).

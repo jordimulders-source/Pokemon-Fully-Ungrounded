@@ -11,12 +11,19 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 2. ~~Transmutation~~ (gedaan, v0.8.46)
 3. ~~Implosion~~ (gedaan, v0.8.48–0.8.49)
 4. ~~Wild summary~~ (gedaan, v0.8.44)
-5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.
-6. **Heatran-cutscene** na Wattson: Rock Smash-stenen op Route 111 net boven Mauville weg; Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden (Fiery Path).
-7. **Rotom-event:** Mauville, na badge 3, kelder van een huis met een tv.
+5. ~~Gabby & Ty~~ (gedaan, v0.8.61)
+6. ~~Heatran-cutscene~~ (gedaan, v0.8.59)
+7. ~~Rotom-event~~ (gedaan, v0.8.60)
 8. ~~Prof. Oak~~ (gedaan, v0.8.50)
-9. **Mimikyu-trainer:** in de "mimic circle" onderaan Route 119 (bij de Bug Maniacs, hoog gras). Een Mimikyu-object op een stuk zonder gras; Mimikyu als zeldzame encounter op Route 119 (vervangt het vaakst voorkomende dubbele slot).
-10. ~~Laser Beam / Machine Learning~~ (gedaan, v0.8.51). Open: wie leert Shadow Siphon?
+9. ~~Mimikyu-trainer~~ (gedaan, v0.8.58)
+10. ~~Laser Beam / Machine Learning / Shadow Siphon~~ (gedaan, v0.8.51–0.8.53)
+
+## Volgende ronde (Jordi, 2 okt 2026), in deze volgorde
+1. **Hoennian Grimer/Muk:** poepkleurig en iets meer poepvormig. Eerst testsprites/screens ter goedkeuring; daarna Poison/Ground en Birch krijgt ze ergens in de game.
+2. **Gevechtstransities Regidrago** (blauwe stippen in zijn gezichtspatroon) en **Regieleki** (roze/oranje stippen), zoals de andere Regi's.
+3. **Deoxys-transitie:** DNA-animaties gebruiken als die bestaan, anders "super spacy".
+4. **Birch-transitie:** schermtransitie (geen slide), poepthema, bruin en heel komisch.
+5. **Na Rayquaza:** Archie en Maxie hebben géén spijt en ontbinden niet; woedend dat hun plannen mislukten, geven de speler de schuld. Keccles vliegt in (Fly-animatie): hij kon het lijden niet aanzien en channelde "de ultieme groene reptiel". Archie/Maxie beledigen kameleon en speler creatief. Dubbel: Archie + Maxie vs speler + Keccles (Tropius, Helioptile, Serperior als ace; flink pittig; Keccles krijgt hyperintelligente AI). Transitie zoals Aqua/Magma maar met beide logo's naast elkaar. Daarna dropen ze zielig af (geen eer, niets geleerd). Keccles bedankt de speler: zin van het leven niet gevonden, gezondheid en geluk zijn zijn doelen, de League is aan jou, hij wil sterker worden; eerste hint naar de Battle Frontier.
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** (alles afgerond)

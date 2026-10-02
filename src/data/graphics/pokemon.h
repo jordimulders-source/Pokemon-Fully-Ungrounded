@@ -3588,6 +3588,32 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_ALOLAN_FORMS
+    // Project Grounded: Hoenn-vorm
+    const u32 gMonFrontPic_GrimerHoenn[] = INCBIN_U32("graphics/pokemon/grimer/hoenn/anim_front.4bpp.smol");
+    const u16 gMonPalette_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/hoenn/normal.gbapal");
+    const u32 gMonBackPic_GrimerHoenn[] = INCBIN_U32("graphics/pokemon/grimer/hoenn/back.4bpp.smol");
+    const u16 gMonShinyPalette_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/hoenn/shiny.gbapal");
+    const u8 gMonIcon_GrimerHoenn[] = INCBIN_U8("graphics/pokemon/grimer/hoenn/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GrimerHoenn[] = INCBIN_COMP("graphics/pokemon/grimer/hoenn/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/hoenn/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/hoenn/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+    // Project Grounded: Hoenn-vorm
+    const u32 gMonFrontPic_MukHoenn[] = INCBIN_U32("graphics/pokemon/muk/hoenn/anim_front.4bpp.smol");
+    const u16 gMonPalette_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/normal.gbapal");
+    const u32 gMonBackPic_MukHoenn[] = INCBIN_U32("graphics/pokemon/muk/hoenn/back.4bpp.smol");
+    const u16 gMonShinyPalette_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/shiny.gbapal");
+    const u8 gMonIcon_MukHoenn[] = INCBIN_U8("graphics/pokemon/muk/hoenn/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MukHoenn[] = INCBIN_COMP("graphics/pokemon/muk/hoenn/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_GRIMER
 
 #if P_FAMILY_SHELLDER

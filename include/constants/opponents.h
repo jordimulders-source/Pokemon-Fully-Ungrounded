@@ -887,12 +887,13 @@
 #define TRAINER_LOCAL_CELEBRITY                 881 // Project Grounded: local celebrity bij het eerste Gabby & Ty-gevecht (Route 111)
 #define TRAINER_ARCHIE_SOOTOPOLIS               882 // Project Grounded: Archie + Maxie tegen jou + Keccles (Sootopolis)
 #define TRAINER_MAXIE_SOOTOPOLIS                883 // Project Grounded
+#define TRAINER_BIRCH_VERDANTURF                884 // Project Grounded: Birch en de Hoenn-Grimer (Verdanturf)
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      884
+#define TRAINERS_COUNT                      885
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

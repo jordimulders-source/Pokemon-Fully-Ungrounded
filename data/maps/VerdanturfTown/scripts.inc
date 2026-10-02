@@ -5,6 +5,13 @@ VerdanturfTown_MapScripts::
 VerdanturfTown_OnTransition:
 	setflag FLAG_VISITED_VERDANTURF_TOWN
 	setvar VAR_CONTEST_HALL_STATE, 0
+	@ Project Grounded: Birch staat hier pas na zijn gevecht op Route 109
+	setflag FLAG_HIDE_VERDANTURF_BIRCH
+	goto_if_defeated TRAINER_BIRCH, VerdanturfTown_EventScript_ShowBirch
+	end
+
+VerdanturfTown_EventScript_ShowBirch::
+	clearflag FLAG_HIDE_VERDANTURF_BIRCH
 	end
 
 VerdanturfTown_EventScript_Twin::
@@ -121,3 +128,46 @@ VerdanturfTown_Text_RusturfTunnelSign:
 	.string "”The tunnel project has been canceled.\n"
 	.string "Walk.“$"
 
+@ ---------------------------------------------------------------- Project Grounded: Birch en de Hoenn-Grimer
+VerdanturfTown_EventScript_Birch::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_BIRCH_VERDANTURF, VerdanturfTown_EventScript_BirchPostBattle
+	msgbox VerdanturfTown_Text_BirchIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BIRCH_VERDANTURF, VerdanturfTown_Text_BirchDefeat
+	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
+	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_EventScript_BirchPostBattle::
+	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
+	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_Text_BirchIntro:
+	.string "BIRCH: Shh! {PLAYER}, look at\n"
+	.string "this soil. LOOK at it.\p"
+	.string "Dark. Crumbly. Fragrant.\n"
+	.string "The richest earth in all of HOENN.\p"
+	.string "And do you know why? Natural\n"
+	.string "fertilizer! A whole new form of\l"
+	.string "GRIMER lives in these fields!\p"
+	.string "Brown, earthy, and made of… well.\n"
+	.string "Of exactly what you think.\p"
+	.string "I am its biggest fan. I have\n"
+	.string "a poster. I have TWO posters.\p"
+	.string "Here, let me show you. Up close.$"
+
+VerdanturfTown_Text_BirchDefeat:
+	.string "BIRCH: Even in defeat, it smells\n"
+	.string "like progress!$"
+
+VerdanturfTown_Text_BirchPostBattle:
+	.string "BIRCH: The farmers here say their\n"
+	.string "carrots have never been bigger.\p"
+	.string "They also say they would like me\n"
+	.string "to stop kneeling in their fields.$"

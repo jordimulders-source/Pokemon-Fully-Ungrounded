@@ -78,7 +78,7 @@
 #define FLAG_CAUGHT_MAUVILLE_ROTOM 0x40
 #define FLAG_HIDE_SOOTOPOLIS_KECCLES 0x41 // Project Grounded
 #define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_HIDE_VERDANTURF_BIRCH 0x43 // Project Grounded
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag

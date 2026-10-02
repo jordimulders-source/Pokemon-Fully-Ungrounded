@@ -15583,3 +15583,13 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - De berouwscène op Mt. Pyre (bollen terugbrengen) wordt **overgeslagen**: ze brengen de bollen niet terug. Steven zegt nu dat ze samen één buskaartje delen.
 - **Bugfix (alle multi battles):** in een multi battle gaan vier ballen tegelijk open; de bal-partikels konden alle 64 sprites opmaken, waarna de Pokémon van de speler geen sprite kreeg en het gevecht bleef hangen. Partikels worden nu overgeslagen zodra er minder dan 8 sprites vrij zijn (`CreateBallParticleSprite` in `src/battle_anim_throw.c`).
 - In de emulator getest: scène, transitie, gevecht en afloop.
+
+### [v.0.8.67] - Hoenn-Grimer en Hoenn-Muk, Birch in Verdanturf
+- **Nieuwe vormen: Grimer en Muk (Hoenn)**, `SPECIES_GRIMER_HOENN` (1550) en `SPECIES_MUK_HOENN` (1551), opgebouwd zoals de Alolan-vormen. De gewone Grimer/Muk en de Alolan-vormen blijven bestaan en staan alle drie in de Pokédex-vormen (`sGrimerFormSpeciesIdTable`/`sMukFormSpeciesIdTable`).
+  - Pokémon Revisie: Grimer (Hoenn) — Poison/Ground, 80/80/65/40/45/25. Abilities: Stench / Sticky Hold / Earth Eater. Categorie "Dung". Evolueert op lv 30 in Muk (Hoenn).
+  - Pokémon Revisie: Muk (Hoenn) — Poison/Ground, 105/115/95/65/110/50. Abilities: Stench / Sticky Hold / Earth Eater.
+  - Learnsets met meer modder: Mud-Slap, Mud Sport, Mud Shot, Bulldoze, Mud Bomb, Earth Power (Muk ook Shore Up), naast Sludge/Sludge Bomb/Acid Armor/Acid Rain/Gunk Shot/Memento. TM's en egg moves zoals de gewone Grimer/Muk.
+  - Sprites: poepbruin; de bovenkant van het hoofd ís een gelaagde drol (ook op de backsprites; bij Muk ligt hij over de arm). Shiny in bedorven poepkleur. Icoon bruin, overworld-palet bruin. Graphics in `graphics/pokemon/grimer/hoenn/` en `muk/hoenn/`.
+- **Nieuw Birch-gevecht in Verdanturf** (`TRAINER_BIRCH_VERDANTURF`): na zijn gevecht op Route 109 staat Birch op het plein van Verdanturf (12,8) naar de grond te staren. Hij bewondert hoe vruchtbaar de natuurlijke mest de aarde maakt en is enorm fan van de nieuwe Grimer-vorm. Team (lv 24): Rabsca, Clodsire, Sandygast, Mudbray; ace **Grimer (Hoenn)** lv 26. Met de poep-transitie. Teksten zijn placeholders.
+- **Birch op Route 135** (`TRAINER_BIRCH_2`) is nu een doorontwikkeling van zijn eerdere teams: Rabsca (Trick Room), Clodsire, Palossand, Mudsdale, **Avalugg (Hisui)** lv 37 en ace **Muk (Hoenn)** lv 38. Slimmere AI. Het oude ijsteam is vervangen.
+- In de emulator getest (Verdanturf-gevecht, transitie, Hoenn-Muk-backsprite).

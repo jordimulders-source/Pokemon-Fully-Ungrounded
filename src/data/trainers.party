@@ -25935,48 +25935,57 @@ Pic: Birch
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 Mugshot: Green
 
-Amaura
+Rabsca
 Level: 36
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Icy Wind
-- Rock Tomb
-- Thunder Wave
-- Take Down
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
 
-Sandslash_Alola
+Clodsire
 Level: 36
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Icy Wind
-- Rock Tomb
-- Iron Head
-- Rapid Spin
-
-Crabominable
-Level: 36
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Icy Wind
-- Rock Tomb
-- Hammer Arm
-- Bulk Up
-
-Cryogonal
-Level: 36
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Icy Wind
-- Ancient Power
-- Freeze-Dry
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Earthquake
+- Poison Jab
 - Recover
+- Toxic Spikes
 
-Cetitan
-Level: 38
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Icy Wind
+Palossand
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Sand Tomb
+
+Mudsdale
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- High Horsepower
+- Heavy Slam
 - Rock Slide
-- Body Slam
-- Yawn
+- Iron Defense
+
+Avalugg_Hisui
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mountain Gale
+- Rock Slide
+- Body Press
+- Iron Defense
+
+Muk_Hoenn
+Level: 38
+Ability: Stench
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover
 
 === TRAINER_EDMUND ===
 Name: EDMUND
@@ -26866,3 +26875,54 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Heat Wave
 - Yawn
 - Protect
+
+=== TRAINER_BIRCH_VERDANTURF ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Rabsca
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Bug Bite
+- Psybeam
+- Mud-Slap
+- Light Screen
+
+Clodsire
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Mud Shot
+- Poison Tail
+- Yawn
+- Bulldoze
+
+Sandygast
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Hex
+- Mud Shot
+- Sand Attack
+- Harden
+
+Mudbray
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Bulldoze
+- Rock Smash
+- Mud-Slap
+- Iron Defense
+
+Grimer_Hoenn
+Level: 26
+Ability: Stench
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Mud Bomb
+- Sludge
+- Recover
+- Bulldoze

@@ -359,6 +359,7 @@ static const u16 sGrimerFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_GRIMER_ALOLA,
 #endif
+    SPECIES_GRIMER_HOENN,
     FORM_SPECIES_END,
 };
 
@@ -367,6 +368,7 @@ static const u16 sMukFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_MUK_ALOLA,
 #endif
+    SPECIES_MUK_HOENN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GRIMER

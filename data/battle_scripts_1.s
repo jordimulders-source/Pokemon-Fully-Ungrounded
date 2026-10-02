@@ -3395,6 +3395,36 @@ BattleScript_AcidRainBlocksCure::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Pollen Haze (Bug-weer)
+BattleScript_EffectPollenHaze::
+	attackcanceler
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_POLLEN_HAZE
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_PollenSeasonActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNMADEPOLLENHAZE
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_POLLEN_HAZE_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_PollenHazeHeal::
+	playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PKMNSOAKEDUPPOLLEN
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_PollenHazeBlownAway::
+	printstring STRINGID_POLLENHAZEBLOWNAWAY
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+	return
+
 BattleScript_EffectPainSplit::
 	attackcanceler
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON

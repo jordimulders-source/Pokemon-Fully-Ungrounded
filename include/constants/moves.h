@@ -918,8 +918,9 @@
 #define MOVE_MACHINE_LEARNING 856 // Project Grounded: TM54, Wattson
 #define MOVE_SHADOW_SIPHON 857 // Project Grounded: Dark-versie van Draining Kiss
 #define MOVE_ACID_RAIN 858 // Project Grounded: TM57, zure regen
+#define MOVE_POLLEN_HAZE 859 // Project Grounded: TM58, stuifmeel (Bug-weer)
 
-#define MOVES_COUNT_GEN9 859
+#define MOVES_COUNT_GEN9 860
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

@@ -358,6 +358,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_TRANSMUTATION, // Project Grounded: het doelwit wordt een kopie van de gebruiker (omgekeerde Transform)
     EFFECT_MACHINE_LEARNING, // Project Grounded: steeds meer stats +1, 20% kans op hallucinatie (Metronome)
     EFFECT_ACID_RAIN, // Project Grounded: zure regen (weer)
+    EFFECT_POLLEN_HAZE, // Project Grounded: stuifmeel (weer)
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

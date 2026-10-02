@@ -582,3 +582,43 @@ Route119_Text_TrainerTipsDecoration:
 	.string "SECRET BASE.\p"
 	.string "You'll put in one chair and never come\n"
 	.string "back.$"
+
+@ Project Grounded: Bug Maniac Timothy (net boven de Mimic Circle) - pollenteam, daarna TM58 Pollen Haze
+Route119_EventScript_Timothy::
+	trainerbattle_single TRAINER_TIMOTHY, Route119_Text_TimothyIntro, Route119_Text_TimothyDefeat, Route119_EventScript_TimothyGiveTM
+	goto_if_unset FLAG_RECEIVED_TM_POLLEN_HAZE, Route119_EventScript_TimothyGiveTM
+	msgbox Route119_Text_TimothyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route119_EventScript_TimothyGiveTM::
+	msgbox Route119_Text_TimothyGiveTM, MSGBOX_DEFAULT
+	giveitem ITEM_TM_POLLEN_HAZE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_POLLEN_HAZE
+	msgbox Route119_Text_TimothyAfterTM, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_Text_TimothyIntro:
+	.string "Do you feel it? The itch?\n"
+	.string "That's the pollen, friend.\p"
+	.string "Every BUG I raise was fed nothing\n"
+	.string "but pollen since birth.\p"
+	.string "My eyes are swollen shut.\n"
+	.string "I have never been happier.$"
+
+Route119_Text_TimothyDefeat:
+	.string "Ahh… ahh… AHCHOO!$"
+
+Route119_Text_TimothyGiveTM:
+	.string "You beat the pollen. So now you\n"
+	.string "must CARRY the pollen.\p"
+	.string "Take it. TM58. POLLEN HAZE.$"
+
+Route119_Text_TimothyAfterTM:
+	.string "SPREAD THE POLLEN!\n"
+	.string "AHCHOOOO!$"
+
+Route119_Text_TimothyPostBattle:
+	.string "Antihistamines are a lie told\n"
+	.string "by the man.$"

@@ -21615,6 +21615,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_AcidRain,
     },
 
+    [MOVE_POLLEN_HAZE] =
+    {
+        .name = COMPOUND_STRING("Pollen Haze"),
+        .description = COMPOUND_STRING(
+            "Fills the air with pollen for\n"
+            "5 turns. Bug and Grass thrive."),
+        .effect = EFFECT_POLLEN_HAZE,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PollenHaze,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

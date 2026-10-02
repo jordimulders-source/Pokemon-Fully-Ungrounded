@@ -221,6 +221,15 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .continuesMessage = B_MSG_WEATHER_TURN_ACID_RAIN,
         .animation = B_ANIM_ACID_RAIN_CONTINUES,
     },
+
+    [BATTLE_WEATHER_POLLEN_HAZE] = // Project Grounded
+    {
+        .flag = B_WEATHER_POLLEN_HAZE,
+        .rock = HOLD_EFFECT_NONE,
+        .endMessage = B_MSG_WEATHER_END_POLLEN_HAZE,
+        .continuesMessage = B_MSG_WEATHER_TURN_POLLEN_HAZE,
+        .animation = B_ANIM_POLLEN_HAZE_CONTINUES,
+    },
 };
 
 // Helper function for actual dmg calcs during battle. For simulated AI dmg, CalcTypeEffectivenessMultiplier should be used directly
@@ -4315,6 +4324,13 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_POLLEN_SEASON: // Project Grounded
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_POLLEN_HAZE, gLastUsedAbility))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_PollenSeasonActivates);
+                effect++;
+            }
+            break;
         case ABILITY_AIR_POLLUTION: // Project Grounded
             if (TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, gLastUsedAbility))
             {
@@ -7428,8 +7444,12 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (gSideTimers[atkSide].retaliateTimer == 1)
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
+    case EFFECT_HIT_ENEMY_HEAL_ALLY: // Project Grounded: Pollen Puff gebruikt het stuifmeel in de lucht
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case EFFECT_SOLAR_BEAM:
-        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
+        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG | B_WEATHER_ACID_RAIN | B_WEATHER_POLLEN_HAZE)))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     case EFFECT_STOMPING_TANTRUM:
@@ -8082,7 +8102,8 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     if (ctx->isCrit && defStage > DEFAULT_STAT_STAGE)
         defStage = DEFAULT_STAT_STAGE;
     // pokemon with unaware ignore defense stat changes while dealing damage
-    if (ctx->abilityAtk == ABILITY_UNAWARE)
+    if (ctx->abilityAtk == ABILITY_UNAWARE
+     || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(ctx->battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded
         defStage = DEFAULT_STAT_STAGE;
     // certain moves also ignore stat changes
     if (MoveIgnoresDefenseEvasionStages(move))
@@ -8273,6 +8294,13 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_POLLEN_HAZE) // Project Grounded: Bug en Grass sterker, Fire zwakker (niet voor Castform)
+    {
+        if (ctx->moveType == TYPE_BUG || ctx->moveType == TYPE_GRASS)
+            return UQ_4_12(1.5);
+        if (ctx->moveType == TYPE_FIRE && ctx->abilityAtk != ABILITY_FORECAST)
+            return UQ_4_12(0.5);
     }
     if (ctx->weather & B_WEATHER_ACID_RAIN && (ctx->abilityAtk != ABILITY_FORECAST || GetMoveEffect(ctx->move) == EFFECT_WEATHER_BALL)) // Project Grounded: Fire en Water zwakker, Poison sterker (Castform heeft er geen last van, behalve Weather Ball)
     {
@@ -11017,7 +11045,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
     if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkAbility == ABILITY_MINDS_EYE
-            || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && atkAbility == ABILITY_ILLUMINATE))
+            || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && atkAbility == ABILITY_ILLUMINATE)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded: Bug negeert boosts in Pollen Haze
         evasionStage = DEFAULT_STAT_STAGE;
     if (MoveIgnoresDefenseEvasionStages(move))
         evasionStage = DEFAULT_STAT_STAGE;
@@ -11038,6 +11067,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     // Check Thunder and Hurricane on sunny weather.
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && MoveHas50AccuracyInSun(move))
         moveAcc = 50;
+    // Project Grounded: spore- en poedermoves +20 accuracy in Pollen Haze
+    if (IsPowderMove(move) && moveAcc != 0 && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect())
+        moveAcc = min(moveAcc + 20, 100);
     // Check Wonder Skin.
     if (defAbility == ABILITY_WONDER_SKIN && IsBattleMoveStatus(move) && moveAcc > 50)
         moveAcc = 50;

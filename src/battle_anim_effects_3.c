@@ -5792,6 +5792,8 @@ void AnimTask_GetWeather(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FOG;
     else if (gWeatherMoveAnim & B_WEATHER_ACID_RAIN) // Project Grounded
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_ACID_RAIN;
+    else if (gWeatherMoveAnim & B_WEATHER_POLLEN_HAZE) // Project Grounded
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_POLLEN_HAZE;
 
     DestroyAnimVisualTask(taskId);
 }

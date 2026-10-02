@@ -153,6 +153,15 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
             effect = TRUE;
         }
         break;
+    case BATTLE_WEATHER_POLLEN_HAZE: // Project Grounded: Grass herstelt 1/16
+        if (IS_BATTLER_OF_TYPE(battler, TYPE_GRASS) && !IsBattlerAtMaxHp(battler) && !gBattleMons[battler].volatiles.healBlock)
+        {
+            gBattlerAttacker = battler;
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+            BattleScriptExecute(BattleScript_PollenHazeHeal);
+            effect = TRUE;
+        }
+        break;
     case BATTLE_WEATHER_ACID_RAIN: // Project Grounded: Poison herstelt 1/16, de rest (behalve Steel) verliest 1/16
         if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
         {

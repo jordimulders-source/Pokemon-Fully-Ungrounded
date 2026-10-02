@@ -18503,6 +18503,42 @@ gBattleAnimMove_LagerLagoon::
 	waitforvisualfinish
 	end
 
+@ Project Grounded: Pollen Haze - stuifmeel dwarrelt over het hele veld (move en eind van de beurt)
+gBattleAnimMove_PollenHaze::
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SPORE, 0, 9, 9, RGB(31, 27, 6)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 5, RGB(31, 26, 8)
+	waitforvisualfinish
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_ATTACKER, 14, 8
+	call PollenHazeDrift
+	call PollenHazeDrift
+	call PollenHazeDrift
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 5, 0, RGB(31, 26, 8)
+	waitforvisualfinish
+	end
+
+gBattleAnimGeneral_PollenHaze::
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SPORE, 0, 9, 9, RGB(31, 27, 6)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 5, RGB(31, 26, 8)
+	waitforvisualfinish
+	playsewithpan SE_M_POISON_POWDER, SOUND_PAN_ATTACKER
+	call PollenHazeDrift
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 5, 0, RGB(31, 26, 8)
+	waitforvisualfinish
+	end
+
+PollenHazeDrift:
+	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-24, wave_offset=85, duration=60, blend=0
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-20, wave_offset=170, duration=60, blend=0
+	delay 8
+	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-10, wave_offset=0, duration=60, blend=0
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-12, wave_offset=85, duration=60, blend=0
+	delay 8
+	return
+
 @ Project Grounded: Acid Rain - paarse regen (move en eind van de beurt)
 gBattleAnimMove_AcidRain::
 	loadspritegfx ANIM_TAG_RAIN_DROPS
@@ -30835,6 +30871,7 @@ gBattleAnimMove_WeatherBall::
 	jumpreteq ANIM_WEATHER_SNOW, WeatherBallIce
 	jumpreteq ANIM_WEATHER_FOG, WeatherBallNormal
 	jumpreteq ANIM_WEATHER_ACID_RAIN, WeatherBallAcid
+	jumpreteq ANIM_WEATHER_POLLEN_HAZE, WeatherBallPollen
 WeatherBallNormal:
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gWeatherBallNormalDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 0, 0
@@ -30859,6 +30896,11 @@ WeatherBallFire:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 8, 1
 	waitforvisualfinish
 	end
+WeatherBallPollen: @ Project Grounded: geel-groene stuifmeelbollen
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 12, 12, RGB(28, 26, 4)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 8, RGB(20, 28, 4)
+	goto WeatherBallWater
 WeatherBallAcid: @ Project Grounded: paars-groene bellen
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 12, 12, RGB(16, 6, 24)

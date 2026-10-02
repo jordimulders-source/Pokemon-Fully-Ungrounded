@@ -4781,6 +4781,8 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        else if (gBattleWeather & B_WEATHER_POLLEN_HAZE && IS_BATTLER_OF_TYPE(battler, TYPE_BUG)) // Project Grounded: Tailwind voor Bug
+            speed *= 2;
     }
 
     // other abilities
@@ -5912,6 +5914,8 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
                     return TYPE_ICE;
                 else if (gBattleWeather & B_WEATHER_ACID_RAIN) // Project Grounded
                     return TYPE_POISON;
+                else if (gBattleWeather & B_WEATHER_POLLEN_HAZE) // Project Grounded
+                    return TYPE_BUG;
                 else
                     return moveType;
             }

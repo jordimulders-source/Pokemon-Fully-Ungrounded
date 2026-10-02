@@ -258,6 +258,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_SWAP_TO_SUBSTITUTE]     = gBattleAnimGeneral_SwapToSubstitute,
     [B_ANIM_SWAP_FROM_SUBSTITUTE]   = gBattleAnimGeneral_SwapFromSubstitute,
     [B_ANIM_ACID_RAIN_CONTINUES]    = gBattleAnimGeneral_AcidRain, // Project Grounded
+    [B_ANIM_POLLEN_HAZE_CONTINUES]  = gBattleAnimGeneral_PollenHaze, // Project Grounded
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =

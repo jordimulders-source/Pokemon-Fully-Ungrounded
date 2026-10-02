@@ -15502,3 +15502,19 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Nieuwe ability **Air Pollution** (zoals Drizzle, maar Acid Rain): Koffing/Weezing (vervangt Levitate) en Trubbish/Garbodor (vervangt Stench).
 - **Forecast** (Castform): immuun voor de nadelen van Sandstorm en Acid Rain; Weather Ball werkt gewoon.
 - Tests: `test/battle/grounded/acid_rain.c` (9 tests). In de emulator getest: animatie en de grunt.
+
+### [v.0.8.54] - Pollen Haze (TM58), Pollen Season en Bug Maniac Timothy
+- Nieuw weer **Pollen Haze** (Bug-weer, alleen in gevechten, 5 beurten):
+  - **Bug-types**: Speed ×2 (een Tailwind voor alleen Bug) en ze negeren de stat boosts van het doelwit (Def/SpDef en evasion, zoals Unaware).
+  - **Bug- en Grass-moves ×1,5**, Fire-moves ×0,5 (niet voor Castform). **Grass-types herstellen 1/16** per beurt.
+  - Spore- en poedermoves +20 accuracy (max 100). Weather Ball wordt Bug (100 BP, geel-groene animatie).
+  - **Pollen Puff** doet ×1,5 schade tegen tegenstanders en herstelt 75% (i.p.v. 50%) bij bondgenoten.
+  - Synthesis, Moonlight en Morning Sun worden níet gehalveerd (stuifmeel is goed voor planten).
+  - **Windmoves** (Gust, Heat Wave, Hurricane, Tailwind, Air Cutter, Twister, Icy Wind, Petal Blizzard, …) blazen het stuifmeel meteen weg: "The wind blew the pollen away! Ahchoo!"
+  - Solar Beam en Solar Blade doen in Pollen Haze én Acid Rain halve schade, zoals in regen (zie vraag).
+  - Animatie: geel stuifmeel dwarrelt over het veld (spore-sprites), gele gloed.
+- Move **Pollen Haze** (Bug, status, 5 PP) = **TM58**. Via TM voor alle Bug- en Grass-types (221 soorten); level-up bij 57 Bug/Grass-soorten (o.a. Butterfree, Beedrill, Parasect, Venomoth, Vileplume, Victreebel, Jumpluff, Sunflora, Roserade, Vespiquen, Leavanny, Whimsicott, Lilligant, Vivillon, Florges, Ribombee, Eldegoss, Orbeetle, Volcarona, Heracross, Scizor, Breloom).
+- Nieuwe ability **Pollen Season** (zoals Drizzle, maar Pollen Haze): Butterfree (Compound Eyes of Pollen Season, vervangt Tinted Lens), Venomoth (vervangt Tinted Lens; Magic Guard blijft), Ribombee (vervangt Sweet Veil), Vivillon (vervangt Friend Guard), Mothim (vervangt Tinted Lens), Sunflora (vervangt Early Bird), Eldegoss (vervangt Effect Spore), Jumpluff (vervangt Infiltrator). De voorgangers in die lijnen (Cutiefly, Hoppip/Skiploom, Sunkern, Gossifleur) delen de ability.
+- **Bug Maniac Timothy** (Route 119, 22,113, net boven de Mimic Circle): volledig pollenteam — Ribombee lv 35 (Pollen Season), Butterfree (Compound Eyes, Sleep Powder), Venomoth, Vivillon (Compound Eyes), Jumpluff (Cotton Spore, Pollen Haze), Eldegoss lv 34 (Pollen Puff). Na het gevecht geeft hij **TM58**: "SPREAD THE POLLEN! AHCHOOOO!" (placeholders).
+- Forecast (Castform) heeft ook in Pollen Haze geen last van het Fire-nadeel.
+- Tests: `test/battle/grounded/pollen_haze.c` (6 tests). In de emulator getest: Timothy, gevecht, Pollen Season-animatie.

@@ -26659,3 +26659,66 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Pursuit
 - Work Up
 - Rest
+
+=== TRAINER_TIMOTHY ===
+Name: TIMOTHY
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Ribombee
+Level: 35
+Ability: Pollen Season
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Pollen Puff
+- Bug Buzz
+- Moonblast
+- Quiver Dance
+
+Butterfree
+Level: 33
+Ability: Compound Eyes
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Sleep Powder
+- Bug Buzz
+- Psybeam
+- Quiver Dance
+
+Venomoth
+Level: 33
+Ability: Shield Dust
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Stun Spore
+- Bug Buzz
+- Psychic
+- Sludge Bomb
+
+Vivillon
+Level: 33
+Ability: Compound Eyes
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Powder
+- Bug Buzz
+- Draining Kiss
+- Struggle Bug
+
+Jumpluff
+Level: 33
+Ability: Chlorophyll
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Cotton Spore
+- Leech Seed
+- Bullet Seed
+- Pollen Haze
+
+Eldegoss
+Level: 34
+Ability: Regenerator
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Pollen Puff
+- Cotton Guard
+- Energy Ball
+- Synthesis

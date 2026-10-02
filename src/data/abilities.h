@@ -30,6 +30,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_POLLEN_SEASON] = // Project Grounded
+    {
+        .name = _("Pollen Season"),
+        .description = COMPOUND_STRING("Summons a pollen haze."),
+        .aiRating = 8,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

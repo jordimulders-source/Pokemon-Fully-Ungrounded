@@ -6709,6 +6709,15 @@ static void Cmd_moveend(void)
             break;
         }
         case MOVEEND_MOVE_BLOCK:
+            // Project Grounded: windmoves (Gust, Heat Wave, Hurricane, Tailwind, ...) blazen Pollen Haze weg
+            if (gBattleWeather & B_WEATHER_POLLEN_HAZE && IsWindMove(gCurrentMove) && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            {
+                gBattleWeather &= ~B_WEATHER_POLLEN_HAZE;
+                gWishFutureKnock.weatherDuration = 0;
+                BattleScriptCall(BattleScript_PollenHazeBlownAway);
+                effect = TRUE;
+                break;
+            }
             effect = HandleMoveEndMoveBlock(moveEffect);
             gBattleScripting.moveendState++;
             break;
@@ -9962,6 +9971,9 @@ static void Cmd_setfieldweather(void)
     case BATTLE_WEATHER_ACID_RAIN: // Project Grounded
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN;
         break;
+    case BATTLE_WEATHER_POLLEN_HAZE: // Project Grounded
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_POLLEN_HAZE;
+        break;
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -12435,7 +12447,7 @@ static void Cmd_recoverbasedonsunlight(void)
         }
         else if (GetConfig(B_TIME_OF_DAY_HEALING_MOVES) != GEN_2)
         {
-            if (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA)
+            if (!(gBattleWeather & (B_WEATHER_ANY & ~B_WEATHER_POLLEN_HAZE)) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA) // Project Grounded: Pollen Haze halveert niet
                 recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else if (gBattleWeather & B_WEATHER_SUN)
                 recoverAmount = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
@@ -15512,6 +15524,8 @@ void BS_TryHealPulse(void)
     {
         s32 healAmount = 0;
         if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_LAUNCHER && IsPulseMove(gCurrentMove))
+            healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 75 / 100;
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_HIT_ENEMY_HEAL_ALLY && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect()) // Project Grounded
             healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 75 / 100;
         else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && GetMoveEffectArg_MoveProperty(gCurrentMove) == MOVE_EFFECT_FLORAL_HEALING)
             healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 2 / 3;

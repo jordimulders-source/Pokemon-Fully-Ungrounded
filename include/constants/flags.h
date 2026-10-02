@@ -72,7 +72,7 @@
 #define FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON    0x3A // Project Grounded: Coldstep Cave ijskamer 1, rechts van het middelste ijsveld
 #define FLAG_RECEIVED_OAK_STARTER    0x3B // Project Grounded: Kanto-starter van Prof. Oak (Slateport)
 #define FLAG_RECEIVED_TM_ACID_RAIN    0x3C // Project Grounded: TM57 van de Aqua-grunt (Aqua Hideout B1F)
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_RECEIVED_TM_POLLEN_HAZE    0x3D // Project Grounded: TM58 van Bug Maniac Timothy (Route 119)
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag

@@ -1015,6 +1015,8 @@ extern const u8 gBattleAnimGeneral_PowerConstruct[];
 extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
 extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
 extern const u8 gBattleAnimGeneral_AcidRain[];
+extern const u8 gBattleAnimGeneral_PollenHaze[];
+extern const u8 gBattleAnimMove_PollenHaze[];
 extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations

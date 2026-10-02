@@ -306,6 +306,12 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_ACIDRAINBLOCKSCURE]                   = COMPOUND_STRING("The acid rain keeps\npoisoning everything!"),
     [STRINGID_ACIDRAINBLOWNAWAY]                    = COMPOUND_STRING("The acid clouds were\nblown away!"),
     [STRINGID_PKMNMADEACIDRAIN]                     = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nmade acid rain fall!"),
+    [STRINGID_STARTEDPOLLENHAZE]                    = COMPOUND_STRING("Pollen filled the air!"),
+    [STRINGID_POLLENHAZECONTINUES]                  = COMPOUND_STRING("Pollen drifts across the field."),
+    [STRINGID_POLLENHAZESTOPPED]                    = COMPOUND_STRING("The pollen settled."),
+    [STRINGID_PKMNSOAKEDUPPOLLEN]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} soaked up\nthe pollen!"),
+    [STRINGID_POLLENHAZEBLOWNAWAY]                  = COMPOUND_STRING("The wind blew the pollen away!\nAhchoo!"),
+    [STRINGID_PKMNMADEPOLLENHAZE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nfilled the air with pollen!"),
     [STRINGID_PKMNGOTENCORE]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} must do an encore!"),
     [STRINGID_PKMNGOTENCOREDMOVE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} can only use {B_CURRENT_MOVE}!\p"),
     [STRINGID_PKMNENCOREENDED]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} ended its encore!"),
@@ -1017,6 +1023,7 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_SNOW]      = STRINGID_STARTEDSNOW,
     [B_MSG_STARTED_FOG]       = STRINGID_FOGCREPTUP, // Unused, can use for custom moves that set fog
     [B_MSG_STARTED_ACID_RAIN] = STRINGID_STARTEDACIDRAIN, // Project Grounded
+    [B_MSG_STARTED_POLLEN_HAZE] = STRINGID_STARTEDPOLLENHAZE, // Project Grounded
 };
 
 const u16 gWeatherEndsStringIds[B_MSG_WEATHER_END_COUNT] =
@@ -1029,6 +1036,7 @@ const u16 gWeatherEndsStringIds[B_MSG_WEATHER_END_COUNT] =
     [B_MSG_WEATHER_END_FOG]          = STRINGID_FOGLIFTED,
     [B_MSG_WEATHER_END_STRONG_WINDS] = STRINGID_STRONGWINDSDISSIPATED,
     [B_MSG_WEATHER_END_ACID_RAIN]    = STRINGID_ACIDRAINSTOPPED, // Project Grounded
+    [B_MSG_WEATHER_END_POLLEN_HAZE]  = STRINGID_POLLENHAZESTOPPED, // Project Grounded
 };
 
 const u16 gWeatherTurnStringIds[] =
@@ -1042,6 +1050,7 @@ const u16 gWeatherTurnStringIds[] =
     [B_MSG_WEATHER_TURN_FOG]          = STRINGID_FOGISDEEP,
     [B_MSG_WEATHER_TURN_STRONG_WINDS] = STRINGID_MYSTERIOUSAIRCURRENTBLOWSON,
     [B_MSG_WEATHER_TURN_ACID_RAIN]    = STRINGID_ACIDRAINCONTINUES, // Project Grounded
+    [B_MSG_WEATHER_TURN_POLLEN_HAZE]  = STRINGID_POLLENHAZECONTINUES, // Project Grounded
 };
 
 const u16 gSandStormHailDmgStringIds[] =

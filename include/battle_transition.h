@@ -69,6 +69,10 @@ enum BattleTransition
     B_TRANSITION_AQUA_MAGMA, // Project Grounded: Archie + Maxie samen
     B_TRANSITION_RAIKOU, // Project Grounded: bliksems
     B_TRANSITION_ENTEI, // Project Grounded: steekvlam die het scherm overneemt
+    B_TRANSITION_ROUTE_WAVE, // Project Grounded: zee/surfen, golf van rechts naar links
+    B_TRANSITION_ROUTE_BEACH, // Project Grounded: strand van een zeeroute, golf uit de verte
+    B_TRANSITION_ROUTE_BUBBLES, // Project Grounded: onder water, luchtbellen
+    B_TRANSITION_ROUTE_SNOW, // Project Grounded: Route 135/136, sneeuwt dicht
     B_TRANSITION_COUNT
 };
 

@@ -124,6 +124,10 @@ static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
 static void Task_Raikou(u8); // Project Grounded
 static void Task_Entei(u8); // Project Grounded
+static void Task_RouteWave(u8); // Project Grounded
+static void Task_RouteBeach(u8); // Project Grounded
+static void Task_RouteBubbles(u8); // Project Grounded
+static void Task_RouteSnow(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -351,6 +355,14 @@ static const u16 sRaikou_Tilemap[] = INCBIN_U16("graphics/battle_transitions/rai
 static const u16 sRaikou_Palette[] = INCBIN_U16("graphics/battle_transitions/raikou.gbapal");
 static const u16 sEntei_Tileset[] = INCBIN_U16("graphics/battle_transitions/entei.4bpp");
 static const u16 sEntei_Palette[] = INCBIN_U16("graphics/battle_transitions/entei.gbapal");
+static const u16 sRouteWave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_wave.4bpp");
+static const u16 sRouteWave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_wave.gbapal");
+static const u16 sRouteBeach_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_beach.4bpp");
+static const u16 sRouteBeach_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beach.gbapal");
+static const u16 sRouteBubbles_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.4bpp");
+static const u16 sRouteBubbles_Palette[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.gbapal");
+static const u16 sRouteSnow_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_snow.4bpp");
+static const u16 sRouteSnow_Palette[] = INCBIN_U16("graphics/battle_transitions/route_snow.gbapal");
 static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
 static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
@@ -424,6 +436,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_AQUA_MAGMA] = Task_AquaMagma, // Project Grounded
     [B_TRANSITION_RAIKOU] = Task_Raikou, // Project Grounded
     [B_TRANSITION_ENTEI] = Task_Entei, // Project Grounded
+    [B_TRANSITION_ROUTE_WAVE] = Task_RouteWave, // Project Grounded
+    [B_TRANSITION_ROUTE_BEACH] = Task_RouteBeach, // Project Grounded
+    [B_TRANSITION_ROUTE_BUBBLES] = Task_RouteBubbles, // Project Grounded
+    [B_TRANSITION_ROUTE_SNOW] = Task_RouteSnow, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -5511,3 +5527,321 @@ static void Task_Entei(u8 taskId)
 #undef tEnteiSpeed
 #undef tEnteiStep
 #undef tEnteiDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: route-transities (gevechtsovergang per gebied, zie GetGroundedRouteTransition in battle_setup.c)
+// Gedeelde runner: tiles + palet (eventueel een kleurcyclus) laden op BG0 met palet 15, elke frame update() tot die
+// TRUE geeft, het beeld even vasthouden en dan bevroren naar zwart faden. Tiles: tools/grounded/route_transitions.py.
+//------------------------------------------------------------------------
+#define tRtTimer  data[1]
+#define tRtA      data[2]
+#define tRtB      data[3]
+#define tRtC      data[4]
+#define tRtDelay  data[8]
+#define RT_TILE(n) ((n) | (15 << 12))
+#define RT_SCENE_PALETTES (PALETTES_ALL & ~(1 << 15))
+
+struct RouteTransition
+{
+    const u16 *tiles;
+    u32 tilesSize;
+    const u16 *palettes;
+    u8 numPalettes;
+    u8 palSpeed;
+    u16 sound;
+    void (*init)(struct Task *task);
+    bool8 (*update)(struct Task *task);
+};
+
+static u16 *RT_Tilemap(void)
+{
+    u16 *tilemap, *tileset;
+    GetBg0TilesDst(&tilemap, &tileset);
+    return tilemap;
+}
+
+static void RT_LoadPalette(const struct RouteTransition *rt, struct Task *task)
+{
+    u32 frame = rt->numPalettes > 1 ? (task->tRtTimer / rt->palSpeed) % rt->numPalettes : 0;
+    LoadPalette(&rt->palettes[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+}
+
+static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
+{
+    struct Task *task = &gTasks[taskId];
+    u16 *tilemap, *tileset;
+
+    switch (task->tState)
+    {
+    case 0:
+        GetBg0TilesDst(&tilemap, &tileset);
+        CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+        CpuCopy16(rt->tiles, tileset, rt->tilesSize);
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        task->tRtTimer = task->tRtA = task->tRtB = task->tRtC = 0;
+        RT_LoadPalette(rt, task);
+        if (rt->init)
+            rt->init(task);
+        if (rt->sound)
+            PlaySE(rt->sound);
+        task->tState++;
+        break;
+    case 1:
+        RT_LoadPalette(rt, task);
+        if (rt->update(task))
+        {
+            task->tRtDelay = 10;
+            task->tState++;
+        }
+        task->tRtTimer++;
+        break;
+    case 2:
+        if (--task->tRtDelay == 0)
+        {
+            // beeld bevriezen zoals het nu is, dan naar zwart
+            CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+            BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+            task->tState++;
+        }
+        break;
+    case 3:
+        if (!gPaletteFade.active)
+        {
+            DmaStop(0);
+            FadeScreenBlack();
+            DestroyTask(taskId);
+        }
+        break;
+    }
+}
+
+// ---------------- zee / surfen: een golf rolt van rechts naar links over het beeld
+// tiles: 1-4 water, 5 schuimrand, 6 schuim, 7 schuim->water, 8 spatdruppels
+static const s8 sRTWave_Curl[21] = {0, -1, -2, -3, -3, -3, -2, -2, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0};
+
+static void RTWave_Init(struct Task *task)
+{
+    task->tRtA = 256; // x-positie van de schuimrand in pixels
+    task->tRtB = 1;   // snelheid
+}
+
+static bool8 RTWave_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 r, c, front, x;
+
+    if (task->tRtTimer % 3 == 2)
+        task->tRtB++;
+    task->tRtA -= task->tRtB;
+    x = task->tRtA;
+    SetGpuReg(REG_OFFSET_BG0HOFS, (-(x & 7)) & 0x1FF);
+    for (r = 0; r < 21; r++)
+    {
+        front = (x >> 3) + sRTWave_Curl[r];
+        for (c = -1; c < 31; c++)
+        {
+            u16 t = 0;
+            if (c == front - 1)
+                t = ((r + task->tRtTimer / 2) & 1) ? 8 : 0;
+            else if (c == front)
+                t = 5;
+            else if (c == front + 1)
+                t = 6;
+            else if (c == front + 2)
+                t = 7;
+            else if (c > front + 2)
+                t = 1 + ((r + c * 2 + task->tRtTimer / 4) & 3);
+            tilemap[r * 32 + (c & 31)] = t ? RT_TILE(t) : 0;
+        }
+    }
+    return x < -40;
+}
+
+static const struct RouteTransition sRT_Wave =
+{
+    sRouteWave_Tileset, sizeof(sRouteWave_Tileset), sRouteWave_Palette, 4, 4, SE_M_SURF, RTWave_Init, RTWave_Update
+};
+
+static void Task_RouteWave(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Wave);
+}
+
+// ---------------- strand: vanaf het strand komt er uit de verte een golf aan die over je heen spoelt
+// tiles: 1-3 verre zee, 4-5 golfwand, 6 schuimkam (onderrand), 7 schuimkam (boven), 8 schuimspetters
+static void RTBeach_Init(struct Task *task)
+{
+    task->tRtA = 12 << 3; // onderrand van de golf, in 1/8 pixel
+    task->tRtB = 4;
+}
+
+// onregelmatige schuimkam: per kolom 0 of 1 rij verder naar voren
+static const u8 sRTBeach_Jag[32] = {0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0};
+
+static bool8 RTBeach_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 r, c, y, fr, face;
+
+    if (task->tRtA < (176 << 3))
+    {
+        task->tRtB++;
+        task->tRtA += task->tRtB;
+    }
+    y = task->tRtA >> 3;
+    face = 1 + y / 24; // hoe dichterbij, hoe hoger de golfwand
+    SetGpuReg(REG_OFFSET_BG0VOFS, (-(y & 7)) & 0x1FF);
+    for (c = 0; c < 32; c++)
+    {
+        fr = (y >> 3) + sRTBeach_Jag[(c + task->tRtTimer / 5) & 31];
+        for (r = -1; r < 22; r++)
+        {
+            u16 t = 0;
+            if (r == fr)
+                t = 6;
+            else if (r == fr - 1)
+                t = 7;
+            else if (r == fr + 1)
+                t = ((task->tRtTimer / 2 + c) & 3) == 0 ? 8 : 0;
+            else if (r < fr - 1 && r >= fr - 1 - face)
+                t = 4 + ((r + c) & 1);
+            else if (r == fr - 2 - face && y > 90)
+                t = 7; // schuim boven op de golfwand
+            else if (r < fr - 1 - face)
+                t = 1 + ((r + c + task->tRtTimer / 6) % 3);
+            tilemap[(r & 31) * 32 + c] = t ? RT_TILE(t) : 0;
+        }
+    }
+    if (y >= 176)
+    {
+        // de golf slaat over je heen: wit opspatten
+        BlendPalettes(PALETTES_ALL, min(task->tRtC * 2, 16), RGB_WHITE);
+        if (task->tRtC++ >= 8)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Beach =
+{
+    sRouteBeach_Tileset, sizeof(sRouteBeach_Tileset), sRouteBeach_Palette, 4, 4, SE_M_SURF, RTBeach_Init, RTBeach_Update
+};
+
+static void Task_RouteBeach(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Beach);
+}
+
+// ---------------- onder water: steeds meer luchtbellen stijgen van beneden naar boven
+// tiles: 1 klein, 2 middel, 3-6 groot (2x2), 7 sliertje
+static void RTBubbles_PlaceRow(u16 *tilemap, u32 row, u32 density)
+{
+    u32 c;
+    for (c = 0; c < 32; c++)
+    {
+        u32 rnd = Random() % 100;
+        u16 t = 0;
+        if (rnd < density / 2)
+            t = 1;
+        else if (rnd < density * 3 / 4)
+            t = 7;
+        else if (rnd < density)
+            t = 2;
+        tilemap[(row & 31) * 32 + c] = t ? RT_TILE(t) : 0;
+    }
+}
+
+static void RTBubbles_Init(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    u32 r, i;
+    for (r = 0; r < 32; r++)
+        RTBubbles_PlaceRow(tilemap, r, 8);
+    // een paar grote bellen
+    for (i = 0; i < 4; i++)
+    {
+        u32 x = 2 + (Random() % 26), y = 4 + i * 6;
+        tilemap[y * 32 + x] = RT_TILE(3);
+        tilemap[y * 32 + x + 1] = RT_TILE(4);
+        tilemap[(y + 1) * 32 + x] = RT_TILE(5);
+        tilemap[(y + 1) * 32 + x + 1] = RT_TILE(6);
+    }
+    task->tRtA = 0;  // scroll in 1/16 pixel
+    task->tRtB = 16; // snelheid
+    task->tRtC = 21; // eerstvolgende rij die onderaan het beeld in komt
+}
+
+static bool8 RTBubbles_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer;
+
+    if (task->tRtB < 16 * 7)
+        task->tRtB += 2;
+    task->tRtA += task->tRtB;
+    while (task->tRtC < ((task->tRtA >> 4) >> 3) + 21)
+    {
+        RTBubbles_PlaceRow(tilemap, task->tRtC, min(10 + t, 85));
+        task->tRtC++;
+    }
+    SetGpuReg(REG_OFFSET_BG0VOFS, (task->tRtA >> 4) & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0HOFS, Sin((t * 6) & 0xFF, 3) & 0x1FF);
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 6, 11), RGB(4, 12, 24));
+    if (t == 0 || t == 30 || t == 55)
+        PlaySE(SE_M_BUBBLE);
+    if (t > 70)
+        BlendPalette(BG_PLTT_ID(15), 16, min((t - 70) * 2, 16), RGB(28, 31, 31));
+    return t >= 80;
+}
+
+static const struct RouteTransition sRT_Bubbles =
+{
+    sRouteBubbles_Tileset, sizeof(sRouteBubbles_Tileset), sRouteBubbles_Palette, 1, 1, 0, RTBubbles_Init, RTBubbles_Update
+};
+
+static void Task_RouteBubbles(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Bubbles);
+}
+
+// ---------------- Route 135/136: het gaat steeds harder sneeuwen tot het scherm helemaal dichtsneeuwt
+// tiles: 1-3 losse vlokken, 4-5 dichte sneeuw, 6 helemaal wit
+static bool8 RTSnow_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer;
+    u32 i, n = 4 + t / 2;
+
+    SetGpuReg(REG_OFFSET_BG0VOFS, (-(t * 2)) & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0HOFS, (t / 2 + Sin((t * 4) & 0xFF, 4)) & 0x1FF);
+    for (i = 0; i < n; i++)
+    {
+        u16 *cell = &tilemap[Random() % (32 * 32)];
+        u32 cur = *cell & 0x3FF;
+        if (cur == 0)
+            *cell = RT_TILE(1 + Random() % 3);
+        else if (cur < 4)
+            *cell = RT_TILE(t > 25 ? 4 : cur);
+        else if (cur == 4 && t > 45)
+            *cell = RT_TILE(5);
+    }
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 6, 14), RGB_WHITE);
+    if (t >= 100)
+    {
+        for (i = 0; i < 32 * 32; i++)
+            tilemap[i] = RT_TILE(6);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Snow =
+{
+    sRouteSnow_Tileset, sizeof(sRouteSnow_Tileset), sRouteSnow_Palette, 1, 1, SE_M_GUST, NULL, RTSnow_Update
+};
+
+static void Task_RouteSnow(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Snow);
+}

@@ -765,11 +765,41 @@ static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
     return sum;
 }
 
+// Project Grounded: route-transities. Geeft de transitie voor de plek waar de speler nu is, of -1 voor de standaard.
+// Unieke transities (legendaries, gymleiders, rivalen, Birch, ...) worden eerder gekozen en gaan hier niet langs.
+#define AT_MAP(map) (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(map) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(map))
+
+static bool32 IsSeaRoute(void)
+{
+    return AT_MAP(MAP_ROUTE105) || AT_MAP(MAP_ROUTE106) || AT_MAP(MAP_ROUTE107) || AT_MAP(MAP_ROUTE108)
+        || AT_MAP(MAP_ROUTE109) || AT_MAP(MAP_ROUTE122) || AT_MAP(MAP_ROUTE124) || AT_MAP(MAP_ROUTE125)
+        || AT_MAP(MAP_ROUTE126) || AT_MAP(MAP_ROUTE127) || AT_MAP(MAP_ROUTE128) || AT_MAP(MAP_ROUTE129)
+        || AT_MAP(MAP_ROUTE130) || AT_MAP(MAP_ROUTE131) || AT_MAP(MAP_ROUTE132) || AT_MAP(MAP_ROUTE133)
+        || AT_MAP(MAP_ROUTE134);
+}
+
+static s32 GetGroundedRouteTransition(void)
+{
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        return B_TRANSITION_ROUTE_BUBBLES;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        return B_TRANSITION_ROUTE_WAVE;
+    if (IsSeaRoute())
+        return B_TRANSITION_ROUTE_BEACH;
+    if (AT_MAP(MAP_ROUTE135) || AT_MAP(MAP_ROUTE136))
+        return B_TRANSITION_ROUTE_SNOW;
+    return -1;
+}
+
 enum BattleTransition GetWildBattleTransition(void)
 {
     u8 transitionType = GetBattleTransitionTypeByMap();
     u8 enemyLevel = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL);
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
+    s32 routeTransition = GetGroundedRouteTransition();
+
+    if (routeTransition >= 0)
+        return routeTransition;
 
     if (enemyLevel < playerLevel)
     {
@@ -816,6 +846,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+
+    // Project Grounded: route-transitie voor de plek (zee, strand, onder water, sneeuw, ...)
+    if (GetGroundedRouteTransition() >= 0)
+        return GetGroundedRouteTransition();
 
     switch (GetTrainerBattleType(trainerId))
     {

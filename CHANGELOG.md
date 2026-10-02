@@ -15656,3 +15656,12 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.81] - Birch houdt zijn strontteam
 - De teams van **Birch in Mossdeep** en **Birch onder water** bouwen nu voort op zijn eerdere strontteam (Route 135): Rabsca, Clodsire, Palossand en Mudsdale, met **Hoenn-Muk** als ace. Per gevecht één Pokémon in het thema: **Minior** bij de meteoriet (lv 46, ace 48), **Wailord** onder water (lv 49, ace 51).
+
+### [v.0.8.82] - Route-transities, ronde 1: zee, strand, onder water, sneeuw
+- Nieuw: **route-transities**. Op bepaalde plekken krijgen alle gevechten (wild en trainers) een eigen overgang. Gevechten met een unieke transitie houden die (gymleiders, rivalen, Birch, legendaries, Team Aqua/Magma, alles met een mugshot). De keuze zit in `GetGroundedRouteTransition` (`src/battle_setup.c`).
+  - **Zee / surfen** (`B_TRANSITION_ROUTE_WAVE`): een golf met een krullende schuimkam rolt van rechts naar links over het beeld. Geldt voor elk gevecht terwijl je surft.
+  - **Strand van een zeeroute** (Route 105–109, 122, 124–134, niet surfend; `B_TRANSITION_ROUTE_BEACH`): uit de verte komt een golf aan die steeds hoger wordt en over je heen spoelt (witte spat).
+  - **Onder water** (`B_TRANSITION_ROUTE_BUBBLES`): steeds meer luchtbellen stijgen van beneden naar boven, het beeld kleurt diepblauw. Birch onder water houdt zijn eigen transitie.
+  - **Route 135/136** (`B_TRANSITION_ROUTE_SNOW`): ongeacht het weer gaat het steeds harder sneeuwen tot het scherm helemaal wit is.
+- Gedeelde runner voor alle route-transities in `src/battle_transition.c` (`RouteTransition_Run`); tiles uit `tools/grounded/route_transitions.py`. Testen: `tools/grounded/maptools/transtest.py` (warp + wild gevecht, strook frames per plek).
+- Op de lijst in `TODO.md`: de overige route-transities, Gabby & Ty (camera met REC), de Poochyena-trainer (Poochyena valt in POV aan) en het strand bij Slateport (strandbal in je gezicht).

@@ -2,6 +2,11 @@
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
 
+### Graphics uit andere Pokémon-games (© Nintendo / Creatures Inc. / GAME FREAK inc.)
+- **Brock** (trainerfoto en overworld-sprite) en **Prof. Oak** (trainerfoto en overworld-sprite): Pokémon FireRed / LeafGreen, via de decompilatie **pret/pokefirered**.
+- **De ongeïdentificeerde ghost** (Lavender Town; in de Mt. Pyre-gevechtstransitie): Pokémon Red / Blue, `gfx/battle/ghost.png` uit de decompilatie **pret/pokered**. Bestand: `graphics/grounded/ghost_pokered.png`.
+- **MissingNo.** (in de New Mauville-gevechtstransitie): Pokémon Red / Blue; afbeelding aangeleverd door Jordi (`graphics/grounded/missingno.png`).
+
 ### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)
 Alle rechten op de originele composities liggen bij de oorspronkelijke makers; de nummers staan in de game als fan-bewerking, niet commercieel.
 - **Battle! Colress**: Pokémon Black 2 / White 2 (© Nintendo / Creatures Inc. / GAME FREAK inc.). MIDI-sequencer onbekend.

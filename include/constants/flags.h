@@ -73,8 +73,8 @@
 #define FLAG_RECEIVED_OAK_STARTER    0x3B // Project Grounded: Kanto-starter van Prof. Oak (Slateport)
 #define FLAG_RECEIVED_TM_ACID_RAIN    0x3C // Project Grounded: TM57 van de Aqua-grunt (Aqua Hideout B1F)
 #define FLAG_RECEIVED_TM_POLLEN_HAZE    0x3D // Project Grounded: TM58 van Bug Maniac Timothy (Route 119)
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_HIDE_ROUTE111_HEATRAN_ROCKS    0x3E // Project Grounded: Heatran heeft de stenen boven Mauville weggebeukt
+#define FLAG_HIDE_ROUTE111_HEATRAN    0x3F // Project Grounded: Heatran (alleen zichtbaar tijdens de cutscene)
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag

@@ -174,7 +174,7 @@
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_REGISTERED_ITEM_L                            0x409B // Project Grounded: key item geregistreerd op de L-knop
 #define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
+#define VAR_HEATRAN_CUTSCENE_STATE                       0x409D // Project Grounded: 1 = Heatran-cutscene op Route 111 gezien
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0

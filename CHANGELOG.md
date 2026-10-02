@@ -15537,3 +15537,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Mimi** is zelf een Mimikyu en een trainer (zoals Keccles een Kecleon is): ze staat op de kale strook in de Mimic Circle (22,123) en spreekt alleen in griezelige geluiden ("…pika… …pika…", "(a long, wet giggle)"). Placeholders.
 - Team (lv 33, ace 35): Pikachu, Pachirisu, Dedenne, Marill (bewust onge-evolueerd: de nep-Pikachu) en Mimikyu (Disguise, lv 35). Trainerfoto = de Mimikyu-sprite (`TRAINER_PIC_MIMIKYU`), muziek Suspicious.
 - **Mimikyu** als zeldzame encounter (1%, lv 28–30) in het gras van Route 119; vervangt het dubbele Croagunk-slot.
+
+### [v.0.8.59] - Heatran-cutscene op Route 111
+- Na de badge van Wattson: zodra je boven Mauville de trap op loopt (Route 111, y=121), schudt de grond, verdwijnen de twee Rock Smash-stenen voorgoed (de rotsen ernaast blijven) en komt **Heatran** de route af. Hij brult, ruikt aan je, verliest zijn interesse en loopt weer naar het noorden (richting Fiery Path). Teksten zijn placeholders.
+- Eenmalig via `VAR_HEATRAN_CUTSCENE_STATE` (0x409D); flags `FLAG_HIDE_ROUTE111_HEATRAN_ROCKS` (0x3E) en `FLAG_HIDE_ROUTE111_HEATRAN` (0x3F). In de emulator getest.

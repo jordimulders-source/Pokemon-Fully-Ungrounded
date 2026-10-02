@@ -2,7 +2,7 @@
 Per transitie: graphics/battle_transitions/route_<naam>.png (tiles, index 0 = leeg) en route_<naam>.pal
 (1 of meer paletten van 16 kleuren). De tilemaps bouwt de code in src/battle_transition.c zelf op.
 Gebruik: python3 tools/grounded/route_transitions.py"""
-import math, random
+import math, random, struct
 from PIL import Image
 
 OUT = 'graphics/battle_transitions/'
@@ -34,6 +34,14 @@ def pad(pal):
 def tile(fn):
     return [fn(x, y) for y in range(8) for x in range(8)]
 
+
+def blocks(fn, w, h):
+    """Tekent een vorm van w x h tiles (fn(x, y) in pixels) en geeft de tiles rij voor rij terug."""
+    out = []
+    for ty in range(h):
+        for tx in range(w):
+            out.append(tile(lambda x, y, tx=tx, ty=ty: fn(x + tx * 8, y + ty * 8)))
+    return out
 
 def cycle(base, n, amp=3):
     """n paletten waarin de kleuren 1.. licht golven (schittering)."""
@@ -205,24 +213,38 @@ save('cycling', tiles, pals)
 import struct
 open(OUT + 'route_cycling.bin', 'wb').write(struct.pack('<%dH' % len(tm), *tm))
 
-# ------------------------------------------------------------------ Mt. Pyre: spookachtige vloek
-# 1-4 paarse mist (steeds dichter), 5-6 gloeiende ogen (links/rechts), 7 vloekteken-fragmenten
-PYRE = pad([(0, 0, 0), (4, 0, 7), (8, 2, 13), (13, 5, 20), (31, 10, 26), (31, 28, 31), (20, 8, 28)])
-pyre = []
-for lvl, p in enumerate((0.25, 0.5, 0.75, 1.0)):
-    rr = random.Random(110 + lvl)
-    pyre.append(tile(lambda x, y, p=p: (1 if rr.random() < 0.6 else 2) if ((x + y) % 4 < p * 4 and rr.random() < p + 0.1) else 0))
-def eye(cx):
-    def f(x, y):
-        d = math.hypot((x - cx) * 0.8, (y - 4) * 1.4)
-        if d < 1.1: return 5
-        if d < 2.3: return 4
-        if d < 3.2: return 6
+# ------------------------------------------------------------------ Mt. Pyre: de ongeidentificeerde ghosts van Lavender Town
+# ghost van 8x8 tiles (64x64) naar de Lavender Town-sprite: gebochelde zwarte gestalte, boze schuine ogen, brede grijns,
+# klauwhandjes met witte vingerlijnen, korrelige grijze aura eromheen; tiles 1-64
+PYRE = pad([(0, 0, 0), (1, 1, 2), (8, 8, 9), (16, 16, 17), (31, 31, 31)])
+from PIL import ImageDraw, ImageFilter
+G = 64
+body = Image.new('L', (G, G), 0)
+d = ImageDraw.Draw(body)
+d.ellipse((11, 3, 53, 43), fill=255)                                    # kop/romp
+d.polygon([(13, 26), (51, 26), (55, 52), (48, 58), (40, 54), (32, 60), (24, 54), (16, 58), (9, 52)], fill=255)  # lijf met slierten
+d.ellipse((3, 30, 23, 50), fill=255)                                    # linkerhand
+d.ellipse((41, 30, 61, 50), fill=255)                                   # rechterhand
+face = Image.new('L', (G, G), 0)
+f = ImageDraw.Draw(face)
+f.polygon([(17, 15), (29, 20), (28, 23), (18, 19)], fill=255)          # linkeroog, schuin naar het midden
+f.polygon([(47, 15), (35, 20), (36, 23), (46, 19)], fill=255)          # rechteroog
+f.chord((21, 20, 43, 36), 10, 170, fill=255)                            # grijns
+f.arc((6, 34, 14, 46), 270, 90, fill=255); f.arc((10, 33, 18, 45), 270, 90, fill=255)   # vingers links
+f.arc((50, 34, 58, 46), 90, 270, fill=255); f.arc((46, 33, 54, 45), 90, 270, fill=255)  # vingers rechts
+near = body.filter(ImageFilter.MaxFilter(5))
+far = body.filter(ImageFilter.MaxFilter(11))
+def ghost(x, y):
+    if face.getpixel((x, y)) and body.getpixel((x, y)):
+        return 4
+    if body.getpixel((x, y)):
         return 1
-    return tile(f)
-pyre += [eye(4.5), eye(3.0)]
-rr = random.Random(117)
-pyre.append(tile(lambda x, y: 6 if (x == y or x == 7 - y or y == 4) and rr.random() < 0.8 else 0))
+    if near.getpixel((x, y)):
+        return 2 if (x + y) % 2 == 0 else 3
+    if far.getpixel((x, y)):
+        return 3 if (x + y) % 2 == 0 and (x // 2 + y) % 3 else 0
+    return 0
+pyre = blocks(ghost, 8, 8)
 save('pyre', pyre, [PYRE])
 
 # ------------------------------------------------------------------ Sky Pillar: razendsnel de lucht in
@@ -258,6 +280,21 @@ for k in range(3):
     short.append(tile(lambda x, y, pts=pts: pts.get((x, y), 0)))
 rr = random.Random(135)
 short.append(tile(lambda x, y: rr.choice((0, 0, 0, 5, 2, 1))))
+# MissingNo: L-vorm (linksboven leeg), blokjes in lila, lichtroze, perzik en zwart; tiles 8-91
+SHORT[6:9] = [(16, 13, 19), (30, 28, 30), (29, 21, 15)]
+MW, MH = 6 * 8, 14 * 8
+rr = random.Random(136)
+cells = [[rr.choice((6, 6, 7, 7, 7, 8, 1)) for _ in range(MW // 4)] for _ in range(MH // 4)]
+for cy in range(0, MH // 4, 3):              # typische streepjes met stippen
+    if rr.random() < 0.5:
+        x0 = rr.randint(0, 6)
+        for cx in range(x0, min(MW // 4, x0 + 6)):
+            cells[cy][cx] = 8 if cx % 2 else 1
+def missingno(x, y):
+    if x < 16 and y < 56:
+        return 0
+    return cells[y // 4][x // 4]
+short += blocks(missingno, 6, 14)
 save('short', short, [SHORT])
 
 # ------------------------------------------------------------------ Artisan Cave: het beeld wordt volgeschilderd
@@ -274,3 +311,147 @@ for k, _ in enumerate(PAINTS):
     paint.append(tile(lambda x, y: hi if (y + rr.randint(0, 1)) % 3 == 0 else lo))
     paint.append(tile(lambda x, y: (lo if rr.random() < 0.7 else hi) if math.hypot(x - 3.5 + rr.random(), y - 3.5) < 2.2 + rr.random() * 1.5 else 0))
 save('paint', paint, [PAINT])
+
+# ------------------------------------------------------------------ Safari Zone: van bovenaf tussen de bomen door
+# 1 bosgrond (donker), 2-10 boom (3x3), 11-14 struik (2x2), 15 gras
+SAF = pad([(0, 0, 0), (3, 9, 3), (6, 15, 5), (10, 21, 7), (16, 26, 10), (8, 6, 3), (2, 5, 2)])
+rr = random.Random(150)
+saf = [tile(lambda x, y: 6 if rr.random() < 0.7 else 1)]
+def tree(x, y):
+    d = math.hypot(x - 11.5, y - 11.5)
+    n = 0.8 * math.sin(math.atan2(y - 11.5, x - 11.5) * 7)
+    if d < 10.5 + n:
+        sh = (x - 11.5) + (y - 11.5)
+        return 4 if sh < -9 else (3 if sh < 0 else (2 if d < 9 + n else 1))
+    return 0
+saf += [[6 if v == 0 else v for v in t] for t in blocks(tree, 3, 3)]
+def bush(x, y):
+    d = math.hypot(x - 7.5, y - 7.5)
+    return (3 if x + y < 12 else 2) if d < 6.5 else (1 if d < 7.3 else 0)
+saf += [[6 if v == 0 else v for v in t] for t in blocks(bush, 2, 2)]
+saf.append(tile(lambda x, y: 3 if (x % 3 == 0 and y % 4 < 2) else 6))
+save('safari', saf, [SAF])
+
+# ------------------------------------------------------------------ Meteor Falls: zijwaarts tussen stalactieten en stalagmieten
+# stalactiet (4 breed, 7 hoog, punt naar beneden): 1-28; stalagmiet (punt naar boven): 29-56; rotsplafond/-bodem 57
+MET = pad([(0, 0, 0), (5, 4, 8), (10, 9, 14), (16, 15, 20), (23, 22, 27), (3, 3, 5), (29, 28, 31)])
+def spike(up, seed):
+    rr = random.Random(seed)
+    knobs = [(rr.uniform(4, 28), rr.uniform(0, 40), rr.uniform(3, 6)) for _ in range(10)]
+    def f(x, y):
+        yy = 55 - y if up else y
+        half = 15.5 * (1 - yy / 56.0) ** 0.9 + 1.5 * math.sin(yy * 0.5)
+        dx = x - 15.5
+        if abs(dx) > half:
+            return 0
+        if abs(dx) > half - 1.2:
+            return 5
+        h = -dx / max(half, 1) * 1.6                                   # licht van links
+        for kx, ky, kr in knobs:
+            dd = math.hypot(x - kx, yy - ky) / kr
+            if dd < 1:
+                h += (1 - dd) * 0.9
+        if not up and yy > 46 and abs(dx) < 2:
+            return 6                                                   # glinsterende druppelpunt
+        return max(1, min(4, 2 + int(round(h))))
+    return f
+met = blocks(spike(False, 161), 4, 7) + blocks(spike(True, 162), 4, 7)
+rr = random.Random(160)
+met.append(tile(lambda x, y: rr.choice((5, 1, 1, 2))))
+save('meteor', met, [MET])
+
+# ------------------------------------------------------------------ Jagged Pass: POV op de fiets bergaf over een rotsig pad
+# volledig beeld zoals de Cycling Road. Rotsen liggen op en naast het pad op vaste diepte-afstanden; elke rots hoort bij
+# een fase (0-3). Per frame is maar een fase zichtbaar, zodat de rotsen op je af lijken te komen.
+# kleuren: 1-4 padbanden, 5-12 rotsen (fase 0-3, licht/donker), 13 aslucht, 14 rotswand opzij, 15 stuur
+HORJ = 46
+img = [[13] * 240 for _ in range(160)]
+def depth(y):
+    return 900.0 / (y - HORJ + 1)
+for y in range(HORJ, 160):
+    d = y - HORJ + 1
+    band = int(depth(y) / 9) % 4
+    half = 10 + d * 1.15 + 6 * math.sin(d * 0.08)
+    for x in range(240):
+        dx = abs(x - 120 + 10 * math.sin(d * 0.05))
+        img[y][x] = 14 if dx > half else 1 + band
+# rotsen: banen (wereld-x) en diepte z = (n + fase/4) * D
+D = 36.0                                   # = 4 padbanden van 9, zodat rotsen even snel gaan als het pad
+rr = random.Random(180)
+lanes = [-0.75, -0.35, 0.0, 0.35, 0.75]
+rocks = []
+for n in range(0, 12):
+    for ph in range(4):
+        if n == 0 and ph == 0:
+            continue
+        for lane in rr.sample(lanes, 2):
+            rocks.append(((n + ph / 4.0) * D, lane + rr.uniform(-0.15, 0.15), ph, rr.uniform(0.7, 1.3)))
+rocks.sort(key=lambda r: -r[0])           # ver eerst, dichtbij overschrijft
+for z, lane, ph, size in rocks:
+    y0 = HORJ - 1 + 900.0 / z               # schermrij van de voet van de rots
+    if y0 >= 160 or y0 < HORJ + 1:
+        continue
+    d = y0 - HORJ + 1
+    half = 10 + d * 1.15
+    cx = 120 + lane * half
+    rad = max(1.5, d * 0.34 * size)
+    for y in range(int(y0 - rad * 1.4), int(y0) + 1):
+        for x in range(int(cx - rad - 1), int(cx + rad + 2)):
+            if 0 <= x < 240 and HORJ <= y < 160:
+                if ((x - cx) / rad) ** 2 + ((y - y0 + rad * 0.55) / (rad * 0.9)) ** 2 <= 1:
+                    lit = (x - cx) + (y - y0 + rad) < 0
+                    img[y][x] = 5 + ph * 2 + (0 if lit else 1)
+# stuur
+for y in range(128, 160):
+    for x in range(240):
+        yy = y - 128
+        bar = abs(yy - 16 - ((x - 120) / 60.0) ** 2 * 5) < 4.5 and 14 < x < 226
+        stem = abs(x - 120) < 10 and yy > 12
+        grip = (abs(x - 30) < 18 or abs(x - 210) < 18) and 8 < yy < 32
+        if bar or stem or grip:
+            img[y][x] = 15
+tiles, index, tm = [], {}, []
+for ty in range(20):
+    for tx in range(30):
+        t = tuple(img[ty * 8 + py][tx * 8 + px] for py in range(8) for px in range(8))
+        if t not in index:
+            index[t] = len(tiles) + 1; tiles.append(list(t))
+        tm.append(index[t])
+GROUND = [(18, 12, 8), (20, 14, 10)]
+ROCKL, ROCKD = (24, 20, 18), (11, 9, 9)
+pals = []
+for f in range(4):
+    pal = [(0, 0, 0)]
+    for b in range(4):
+        pal.append(GROUND[(b + f) % 4 < 2])
+    for ph in range(4):
+        vis = (ph + f) % 4 == 0
+        pal += [ROCKL, ROCKD] if vis else [(19, 13, 9), (19, 13, 9)]
+    pal += [(16, 16, 17), (9, 6, 6), (5, 4, 4)]
+    pals.append(pal)
+save('jagged', tiles, pals)
+open(OUT + 'route_jagged.bin', 'wb').write(struct.pack('<%dH' % len(tm), *tm))
+
+# ------------------------------------------------------------------ regenwoud (Route 119, Fortree, Route 120)
+# grote bladeren (4x4): 1-16 en 17-32 (gespiegeld), lianen 33-34, regenstrepen 35-36
+RAIN = pad([(0, 0, 0), (2, 9, 4), (4, 15, 6), (8, 22, 9), (14, 27, 12), (20, 26, 31), (4, 7, 3)])
+def leaf(flip):
+    def f(x, y):
+        if flip:
+            x = 31 - x
+        u, v = (x + y) / 2.0 - 16, (x - y) / 2.0     # langs en dwars op de bladnerf (diagonaal)
+        if abs(u) > 15:
+            return 0
+        width = 7.5 * math.cos(u / 15 * math.pi / 2) ** 0.8
+        if abs(v) <= width:
+            if abs(v) < 0.6:
+                return 4
+            return 3 if v < 0 else (2 if abs(v) < width - 1.2 else 1)
+        return 0
+    return f
+rainf = blocks(leaf(False), 4, 4) + blocks(leaf(True), 4, 4)
+rainf.append(tile(lambda x, y: (2 if (y + x // 2) % 6 < 4 else 6) if 3 <= x <= 4 else 0))
+rainf.append(tile(lambda x, y: (3 if y % 5 < 3 else 6) if 2 <= x <= 3 or (5 <= x <= 6 and y % 7 < 3) else 0))
+rainf.append(tile(lambda x, y: 5 if (x - y // 3) % 8 == 0 and y % 8 < 5 else 0))
+rainf.append(tile(lambda x, y: 5 if (x - y // 3 + 4) % 8 == 0 and (y + 3) % 8 < 4 else 0))
+save('rainforest', rainf, [RAIN])

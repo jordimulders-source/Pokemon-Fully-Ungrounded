@@ -15679,3 +15679,12 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **New Mauville** (ingang, binnen en het datacenter; `B_TRANSITION_ROUTE_SHORT`): kortsluiting. Het beeld hapert in verschoven banden, flikkert, er springen vonken over, en dan gaat het uit als een oude tv (witte lijn die krimpt tot een stip).
 - **Artisan Cave** (`B_TRANSITION_ROUTE_PAINT`): grote penseelstreken in rood, geel, blauw, groen en paars schilderen het beeld vol.
 - **Cycling Road:** het beeld fadet nu eerst kort naar zwart en daarna fadet de weg in.
+
+### [v.0.8.85] - Route-transities, ronde 4: Safari Zone, Meteor Falls, Jagged Pass, regenwoud (+ bijgewerkt: Mt. Pyre, New Mauville)
+- **Safari Zone** (`B_TRANSITION_ROUTE_SAFARI`): het beeld fadet geleidelijk naar een bos van bovenaf. Je zigzagt over een pad tussen de bomen en struiken door, steeds sneller, tot je op een open plek uitkomt (geleidelijk naar wit).
+- **Meteor Falls** (`B_TRANSITION_ROUTE_METEOR`): zijwaarts door de grot, laverend tussen forse stalactieten en stalagmieten met rotsstructuur.
+- **Jagged Pass** (`B_TRANSITION_ROUTE_JAGGED`): POV op de fiets, hobbelend bergaf over een rotsig pad. Grote rotsen op het pad komen op je af en schieten onder je stuur door.
+- **Route 119, Fortree en Route 120** (`B_TRANSITION_ROUTE_RAINFOREST`): je baant je een weg door reuzenbladeren en lianen, in de regen.
+- **Mt. Pyre:** de paarse mist is vervangen door de **ongeïdentificeerde ghosts uit Lavender Town** (zwart silhouet, boze ogen, brede grijns, klauwhandjes, korrelige aura) die van beneden omhoog door een grauwe wereld zweven.
+- **New Mauville:** tijdens de kortsluiting flitst **MissingNo** meerdere keren heel kort in beeld.
+- Op de lijst (`TODO.md`): soort-transities voor Pikachu, Magikarp, Psyduck en Koffing/Weezing.

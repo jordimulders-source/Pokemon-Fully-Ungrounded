@@ -81,6 +81,10 @@ enum BattleTransition
     B_TRANSITION_ROUTE_SKY, // Project Grounded: Sky Pillar, razendsnel de lucht in
     B_TRANSITION_ROUTE_SHORT, // Project Grounded: New Mauville, kortsluiting
     B_TRANSITION_ROUTE_PAINT, // Project Grounded: Artisan Cave, wordt volgeschilderd
+    B_TRANSITION_ROUTE_SAFARI, // Project Grounded: Safari Zone, tussen de bomen door
+    B_TRANSITION_ROUTE_METEOR, // Project Grounded: Meteor Falls, tussen stalactieten en stalagmieten
+    B_TRANSITION_ROUTE_JAGGED, // Project Grounded: Jagged Pass, tussen de rotsen naar beneden
+    B_TRANSITION_ROUTE_RAINFOREST, // Project Grounded: Route 119/120 en Fortree, door het regenwoud
     B_TRANSITION_COUNT
 };
 

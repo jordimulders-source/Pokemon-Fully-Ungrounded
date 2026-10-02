@@ -410,6 +410,9 @@ static const u16 sPikachu_Tileset[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u16 sPikachu_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.gbapal");
 static const u16 sMagikarp_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.4bpp");
 static const u16 sMagikarp_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.gbapal");
+static const u16 sMagikarpPile_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.4bpp");
+static const u16 sMagikarpPile_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.bin");
+static const u16 sMagikarpPile_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.gbapal");
 static const u32 sMagikarpSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_magikarp.4bpp");
 static const u16 sMagikarpSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_magikarp.gbapal");
 static const u16 sGabbyTy_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_camera.4bpp");
@@ -6735,6 +6738,7 @@ static void Task_Pikachu(u8 taskId)
 // bij: affine sprites op bijna 2x (twee gedeelde matrices: normaal en gespiegeld).
 #define MAGIKARP_BG_SLOTS 6
 #define MAGIKARP_GIANTS   6
+#define MAGIKARP_PILE_START 78
 #define MAGIKARP_SPRITES  56
 #define MAGIKARP_TAG      0x5A12
 
@@ -6798,6 +6802,25 @@ static bool8 RTMagikarp_Update(struct Task *task)
     s32 t = task->tRtTimer;
     u32 k, n;
 
+    // slot: een berg Magikarp (collage zonder een pixel achtergrond) stapelt zich van onder naar boven op
+    if (t >= MAGIKARP_PILE_START)
+    {
+        u16 *tileset;
+        u32 r, c, rows = min((t - MAGIKARP_PILE_START) * 2 + 2, 20);
+        GetBg0TilesDst(&tilemap, &tileset);
+        if (t == MAGIKARP_PILE_START)
+        {
+            CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+            CpuCopy16(sMagikarpPile_Tileset, tileset, sizeof(sMagikarpPile_Tileset));
+            PlaySE(SE_M_SURF);
+        }
+        LoadPalette(sMagikarpPile_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        for (r = 20 - rows; r < 20; r++)
+            for (c = 0; c < 30; c++)
+                tilemap[r * 32 + c] = RT_TILE(sMagikarpPile_Tilemap[r * 30 + c]);
+        return t >= MAGIKARP_PILE_START + 16;
+    }
+
     // achtergrond: reusachtige spartelende iconen, een voor een
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
     n = min(t / 4 + 1, MAGIKARP_BG_SLOTS);
@@ -6849,7 +6872,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
     if (t % 12 == 0 && t < 84)
         PlaySE(t % 24 ? SE_M_DOUBLE_SLAP : SE_M_SURF);
     BlendPalettes(RT_SCENE_PALETTES & ~(1 << (16 + IndexOfSpritePaletteTag(MAGIKARP_TAG))), min(t / 4, 10), RGB(6, 14, 28));
-    return t >= 92;
+    return FALSE;
 }
 
 static void RTMagikarp_Finish(struct Task *task)

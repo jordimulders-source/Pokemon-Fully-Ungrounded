@@ -15711,3 +15711,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.90] - Magikarp nog groter
 - Achtergrond-iconen nu **3x vergroot** (96x96), en in de tweede helft komen er **zes Magikarp-reuzen** bij (sprites op ~1,8x, normaal en gespiegeld, met een plons) bovenop de tientallen spartelende Magikarp.
+
+### [v.0.8.91] - Magikarp: het hele scherm vol
+- Aan het eind van de Magikarp-transitie stapelt zich een **berg Magikarp** van onder naar boven op: een vooraf gemaakte collage van 79 overlappende Magikarp (`route_magikarp_pile`, in `route_transitions.py`) waarin geen enkele pixel achtergrond meer zichtbaar is. Vlak voor het gevecht zie je dus alleen nog Magikarp.

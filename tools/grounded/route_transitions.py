@@ -656,3 +656,40 @@ for ty in range(6):
         btm.append(bidx[t])
 save('beachball', btiles, [BEACH])
 open(OUT + 'route_beachball.bin', 'wb').write(struct.pack('<%dH' % len(btm), *btm))
+
+# ------------------------------------------------------------------ Magikarp-collage: het hele scherm vol Magikarp, geen pixel achtergrond
+# telkens een Magikarp (front-sprite, willekeurig frame/gespiegeld, soms 1,5x) over een nog lege plek, tot alles bedekt is
+rr = random.Random(200)
+frames = [mf.crop((0, 0, 64, 64)), mf.crop((0, 64, 64, 128))]
+canvas = [[0] * 240 for _ in range(160)]
+placed = 0
+while True:
+    empty = [(x, y) for y in range(0, 160, 3) for x in range(0, 240, 3) if canvas[y][x] == 0]
+    if not empty:
+        empty = [(x, y) for y in range(160) for x in range(240) if canvas[y][x] == 0]
+        if not empty:
+            break
+    ex, ey = rr.choice(empty)
+    fr = rr.choice(frames)
+    if rr.random() < 0.5:
+        fr = fr.transpose(Image.FLIP_LEFT_RIGHT)
+    sc = rr.choice((1.0, 1.0, 1.5))
+    size = int(64 * sc)
+    spr = fr.resize((size, size), Image.NEAREST)
+    ox, oy = ex - size // 2 + rr.randint(-8, 8), ey - size // 2 + rr.randint(-8, 8)
+    for y in range(size):
+        for x in range(size):
+            v = spr.getpixel((x, y))
+            if v and 0 <= ox + x < 240 and 0 <= oy + y < 160:
+                canvas[oy + y][ox + x] = v
+    placed += 1
+ctiles, cidx, ctm = [], {}, []
+for ty in range(20):
+    for tx in range(30):
+        t = tuple(canvas[ty * 8 + py][tx * 8 + px] for py in range(8) for px in range(8))
+        if t not in cidx:
+            cidx[t] = len(ctiles) + 1; ctiles.append(list(t))
+        ctm.append(cidx[t])
+save('magikarp_pile', ctiles, [mpal])
+open(OUT + 'route_magikarp_pile.bin', 'wb').write(struct.pack('<%dH' % len(ctm), *ctm))
+print('  collage:', placed, 'Magikarp')

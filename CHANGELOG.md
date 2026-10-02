@@ -15447,3 +15447,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.47] - Chilly Reception voor meer Pokémon
 - Level-up toegevoegd (rest van de learnsets ongewijzigd): Galar Mr. Mime en Mr. Rime 32, Chatot 33, Squawkabilly 35, Jigglypuff 28, Kecleon 30, Whismur 25, Loudred en Exploud 29, Jynx 33.
+
+### [v.0.8.48] - Nieuwe move: Implosion
+- **Implosion**: Dark, special, 200 BP, 100 acc, 5 PP; raakt iedereen om de gebruiker heen (zoals Explosion) en de gebruiker gaat K.O. Damp blokkeert hem.
+- Daarna ontstaat een **zwart gat** (5 beurten), voor beide kanten: alle hazards op het veld verdwijnen meteen, en elke Pokémon die het veld op komt krijgt −1 Attack en −1 Sp. Atk. Na 5 beurten: "The black hole evaporated. Thanks, Hawking." (placeholder).
+- Animatie: eigen zwart-gat-animatie met onderdelen uit de Z-move Black Hole Eclipse; de achtergrond wordt donker, ringen en deeltjes worden naar de gebruiker gezogen, de gebruiker wordt zwart en krimpt, dan een zwarte flits met schokgolf.
+- Nog niemand leert hem (vraag aan Jordi).
+- Tests: `test/battle/grounded/implosion.c` (self-KO + −1 Atk/SpAtk bij inwisselen, hazards weg, einde na 5 beurten).

@@ -1119,6 +1119,19 @@ static bool32 HandleEndTurnGravity(u32 battler)
     return effect;
 }
 
+// Project Grounded: het zwarte gat van Implosion verdwijnt na 5 beurten
+static bool32 HandleEndTurnBlackHole(u32 battler)
+{
+    gBattleStruct->eventState.endTurn++;
+
+    if (gFieldTimers.blackHoleTimer > 0 && --gFieldTimers.blackHoleTimer == 0)
+    {
+        BattleScriptExecute(BattleScript_BlackHoleEnds);
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static bool32 HandleEndTurnWaterSport(u32 battler)
 {
     bool32 effect = FALSE;
@@ -1420,6 +1433,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_SECOND_EVENT_BLOCK] = HandleEndTurnSecondEventBlock,
     [ENDTURN_TRICK_ROOM] = HandleEndTurnTrickRoom,
     [ENDTURN_GRAVITY] = HandleEndTurnGravity,
+    [ENDTURN_BLACK_HOLE] = HandleEndTurnBlackHole,
     [ENDTURN_WATER_SPORT] = HandleEndTurnWaterSport,
     [ENDTURN_MUD_SPORT] = HandleEndTurnMudSport,
     [ENDTURN_WONDER_ROOM] = HandleEndTurnWonderRoom,

@@ -18504,6 +18504,64 @@ gBattleAnimMove_LagerLagoon::
 	end
 
 @ Project Grounded: Water Sport in bordeauxrood; het doelwit wankelt na
+@ Project Grounded: Implosion. De gebruiker stort in tot een zwart gat; ringen en deeltjes worden naar binnen getrokken.
+gBattleAnimMove_Implosion::
+	loadspritegfx ANIM_TAG_SHADOW_BALL
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_ICE_CHUNK
+	loadspritegfx ANIM_TAG_VERTICAL_HEX
+	loadspritegfx ANIM_TAG_ORBS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 14, 14, RGB(5, 0, 9)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ICE_CHUNK, 0, 12, 12, RGB_BLACK
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_VERTICAL_HEX, 0, 13, 13, RGB_BLACK
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 11, RGB_BLACK
+	waitforvisualfinish
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_ATTACKER
+	createsprite gBlackHoleEclipseHoleSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_ATTACKER, 0
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 2, 0, 70, 1
+	call ImplosionPull
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 3, 0, 16, RGB_BLACK
+	call ImplosionPull
+	call ImplosionPull
+	waitforvisualfinish
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -8, -8, 10, ANIM_ATTACKER, 0
+	createsprite gBlackHoleEclipseHoleShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 0, 16, 16, RGB_BLACK
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 8, 0, 30, 1
+	delay 30
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_ATTACKER), 3, 16, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+ImplosionPull:
+	createsprite gBlackHoleEclipseBlueRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=56, y=40, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-56, y=-40, duration=18
+	delay 3
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=0, y=56, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=0, y=-56, duration=18
+	delay 3
+	createsprite gBlackHoleEclipseRedRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=56, y=-28, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-56, y=28, duration=18
+	delay 3
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=40, y=40, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-40, y=-40, duration=18
+	delay 3
+	createsprite gBlackHoleEclipseRedRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-28, y=48, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=28, y=-48, duration=18
+	delay 4
+	return
+
 gBattleAnimMove_VintageSpill::
 	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GLOWY_BLUE_ORB, 0, 14, 14, RGB(16, 1, 6)

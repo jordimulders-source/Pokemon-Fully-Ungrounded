@@ -6001,7 +6001,10 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         if (!IsAbilityOnField(ABILITY_DAMP))
         {
             gBattleStruct->passiveHpUpdate[gBattlerAttacker] = 0;
-            BattleScriptCall(BattleScript_FaintAttackerForExplosion);
+            if (gCurrentMove == MOVE_IMPLOSION) // Project Grounded
+                BattleScriptCall(BattleScript_FaintAttackerForImplosion);
+            else
+                BattleScriptCall(BattleScript_FaintAttackerForExplosion);
             effect = TRUE;
         }
         break;
@@ -8072,6 +8075,12 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
             gDisableStructs[battler].hazardsDone = TRUE;
             gBattleStruct->hazardsCounter = 0;
         }
+    }
+    else if (gFieldTimers.blackHoleTimer != 0 && !gDisableStructs[battler].blackHoleDone) // Project Grounded: Implosion
+    {
+        gDisableStructs[battler].blackHoleDone = TRUE;
+        gBattleScripting.battler = battler;
+        BattleScriptCall(BattleScript_BlackHoleSwitchIn);
     }
     else if (gBattleMons[battler].hp != gBattleMons[battler].maxHP && gBattleStruct->zmove.healReplacement)
     {
@@ -18391,5 +18400,16 @@ void BS_SwapAttackerAndTarget(void)
     u32 temp = gBattlerAttacker;
     gBattlerAttacker = gBattlerTarget;
     gBattlerTarget = temp;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Implosion vormt een zwart gat: alle hazards (beide kanten) verdwijnen, 5 beurten lang -1 Atk/SpAtk bij inwisselen
+void BS_FormBlackHole(void)
+{
+    NATIVE_ARGS();
+    RemoveAllHazardsFromField(B_SIDE_PLAYER);
+    RemoveAllHazardsFromField(B_SIDE_OPPONENT);
+    gFieldTimers.blackHoleTimer = 5;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

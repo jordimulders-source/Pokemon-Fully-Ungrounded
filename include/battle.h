@@ -115,6 +115,7 @@ struct DisableStruct
     u8 iceFaceActivationPrevention:1; // fixes hit escape move edge case
     u8 unnerveActivated:1; // Unnerve and As One (Unnerve part) activate only once per switch in
     u8 hazardsDone:1;
+    u8 blackHoleDone:1; // Project Grounded: Implosion-effect bij het inwisselen gehad
     u8 endured:1;
     u8 tryEjectPack:1;
     u8 octolockedBy:3;
@@ -233,6 +234,7 @@ struct FieldTimer
     u16 terrainTimer;
     u16 gravityTimer;
     u16 fairyLockTimer;
+    u16 blackHoleTimer; // Project Grounded: Implosion
 };
 
 struct WishFutureKnock

@@ -21489,6 +21489,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Transform,
     },
 
+    [MOVE_IMPLOSION] =
+    {
+        .name = COMPOUND_STRING("Implosion"),
+        .description = COMPOUND_STRING(
+            "The user collapses into a\n"
+            "black hole. User faints."),
+        .effect = EFFECT_EXPLOSION,
+        .power = 200,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .parentalBondBanned = TRUE,
+        .dampBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Implosion,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

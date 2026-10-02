@@ -913,8 +913,9 @@
 #define MOVE_OTHISMOS 851 // Project Grounded: Falinks
 #define MOVE_FUNGAL_CONTROL 852 // Project Grounded: Parasect
 #define MOVE_TRANSMUTATION 853 // Project Grounded: omgekeerde Transform
+#define MOVE_IMPLOSION 854 // Project Grounded: self-KO + zwart gat
 
-#define MOVES_COUNT_GEN9 854
+#define MOVES_COUNT_GEN9 855
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

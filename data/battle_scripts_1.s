@@ -2613,6 +2613,42 @@ BattleScript_EffectExplosion::
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	goto BattleScript_HitFromCritCalc
 
+@ Project Grounded: Implosion. Na de klap ontstaat een zwart gat (5 beurten): hazards verdwijnen en wie het veld op komt, krijgt -1 Atk/SpAtk.
+BattleScript_FaintAttackerForImplosion::
+	callnative BS_FormBlackHole
+	printstring STRINGID_BLACKHOLEFORMED
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+	return
+
+BattleScript_BlackHoleSwitchIn::
+	savetarget
+	saveattacker
+	copybyte gBattlerTarget, sBATTLER
+	copybyte gBattlerAttacker, sBATTLER
+	printstring STRINGID_BLACKHOLESWITCHIN
+	waitmessage B_WAIT_TIME_LONG
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_CHECK_PREVENTION | STAT_CHANGE_ALLOW_PTR, BattleScript_BlackHoleSwitchInSpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_CHANGE_EMPTY, BattleScript_BlackHoleSwitchInSpAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BlackHoleSwitchInSpAtk:
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_CHECK_PREVENTION | STAT_CHANGE_ALLOW_PTR, BattleScript_BlackHoleSwitchInEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_CHANGE_EMPTY, BattleScript_BlackHoleSwitchInEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BlackHoleSwitchInEnd:
+	restoretarget
+	restoreattacker
+	return
+
+BattleScript_BlackHoleEnds::
+	printstring STRINGID_BLACKHOLEENDS
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_FaintAttackerForExplosion::
 	tryfaintmon BS_ATTACKER
 	return

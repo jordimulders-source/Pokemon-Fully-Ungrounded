@@ -51,6 +51,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Summary-scherm vanuit een gevecht:** nooit een pointer naar `gEnemyParty` meegeven (wordt gezien als link-tegenstander → leest `gLinkPlayers` → geheugen kapot, tekst weg, zwart scherm); geef een kopie mee. Een apart scherm openen vanuit het actiemenu: via de engine-route van het debugmenu (`B_ACTION_DEBUG` → `PlayerHandleBattleDebug`), en `DeactivateAllTextPrinters()` vóór het nieuwe scherm.
 - **Gevechts-UI:** informatie in één omkaderd vak tonen (bijv. het level-up-vak `B_WIN_LEVEL_UP_BOX` via `HandleBattleWindow(18, 7, 29, 19, WINDOW_BG1)`), niet verspreid over de vakken van het actiemenu (Jordi: cognitief onduidelijk, tekst viel weg). Altijd ingezoomd controleren op afgekapte tekst. Fly testen: START → A (debug) → A (Utilities) → A (Fly to map). Fly-flags worden pas gezet bij het binnenlopen van de kaart.
 - **Emulator-screenshots hebben een dag/nacht-tint** (`OW_ENABLE_DNS`, echte klok): roze/oranje of blauw is de tijd van de dag, geen paletbug.
+- **Gehoorzaamheid in emulatortests:** de intro-savestate heeft geen badges, dus een `givemon` boven lv 10 is ongehoorzaam (doet een andere move, gaat slapen). Altijd testen met lv ≤ 10 óf eerst alle badges zetten (`setflag FLAG_BADGE01_GET` … `FLAG_BADGE08_GET`).
+- **Wilde gevechten via debugscript** starten pas na de eerste knopdruk: na `debug_script` eerst A, dan ~400 frames wachten tot het actiemenu er is.
 
 ## Werkwijzen (herhaalde taken)
 

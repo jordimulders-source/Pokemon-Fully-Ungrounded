@@ -15387,3 +15387,6 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 ### [v.0.8.34] - HM-acties: vragen terug bij Strength, Surf en Waterfall; Flash-melding
 - Feedback Jordi: **Strength, Surf en Waterfall** vragen weer ja/nee (zonder de "X used ...!"-tekst en zonder Pokémon-animatie). Cut en Rock Smash blijven direct; Dive vraagt ook.
 - **Flash:** bij het binnengaan van een donkere grot (badge + HM05 in de tas) komt één keer de melding "Your POKéMON decided to use FLASH, because who the heck wants to walk around in a dark cave?" (ook niet opnieuw bij een volgende verdieping). `gShowAutoFlashMessage` in `src/overworld.c`, script `EventScript_AutoFlash`. Getest in de emulator (Granite Cave B1F).
+
+### [v.0.8.35] - Automatisch Flash zichtbaar
+- Feedback Jordi: bij het binnengaan van een donkere grot (badge + HM05) begint het nu **donker** en gaat het licht met de gewone Flash-animatie zichtbaar open (`animateflash 1`, ~2 seconden), daarna de melding. Getest in de emulator (Granite Cave B1F).

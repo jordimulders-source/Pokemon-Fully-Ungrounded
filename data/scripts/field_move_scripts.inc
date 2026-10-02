@@ -473,6 +473,8 @@ Text_CantRockClimb:
 @ Project Grounded: automatisch Flash in donkere grotten (badge + HM05 in de tas)
 EventScript_AutoFlash::
 	lockall
+	animateflash 1
+	setflashlevel 1
 	msgbox Text_AutoFlash, MSGBOX_DEFAULT
 	releaseall
 	end

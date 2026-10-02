@@ -1069,9 +1069,10 @@ void SetDefaultFlashLevel(void)
         gSaveBlock1Ptr->flashLevel = 1;
     else if (CanUseFieldMoveViaHM(FIELD_MOVE_FLASH)) // Project Grounded: donkere grotten meteen verlicht met badge + HM05
     {
+        // Begint donker; EventScript_AutoFlash laat het licht zichtbaar opengaan en toont de melding
         FlagSet(FLAG_SYS_USE_FLASH);
-        gSaveBlock1Ptr->flashLevel = 1;
-        gShowAutoFlashMessage = TRUE; // melding zodra de speler kan bewegen (field_control_avatar.c)
+        gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
+        gShowAutoFlashMessage = TRUE; // zodra de speler kan bewegen (field_control_avatar.c)
     }
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;

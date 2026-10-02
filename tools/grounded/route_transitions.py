@@ -3,7 +3,7 @@ Per transitie: graphics/battle_transitions/route_<naam>.png (tiles, index 0 = le
 (1 of meer paletten van 16 kleuren). De tilemaps bouwt de code in src/battle_transition.c zelf op.
 Gebruik: python3 tools/grounded/route_transitions.py"""
 import math, random, struct
-from PIL import Image
+from PIL import Image, ImageDraw
 
 OUT = 'graphics/battle_transitions/'
 
@@ -444,3 +444,206 @@ rainf.append(tile(lambda x, y: (3 if y % 5 < 3 else 6) if 2 <= x <= 3 or (5 <= x
 rainf.append(tile(lambda x, y: 5 if (x - y // 3) % 8 == 0 and y % 8 < 5 else 0))
 rainf.append(tile(lambda x, y: 5 if (x - y // 3 + 4) % 8 == 0 and (y + 3) % 8 < 4 else 0))
 save('rainforest', rainf, [RAIN])
+
+# ================================================================== unieke transities (soort / trainer / plek)
+from PIL import ImageFont
+BOLD = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+
+def text_mask(text, size):
+    """Tekst als harde 1-bit pixels (geen anti-aliasing)."""
+    font = ImageFont.truetype(BOLD, size)
+    x0, y0, x1, y1 = font.getbbox(text)
+    m = Image.new('1', (x1 - x0 + 2, y1 - y0 + 2), 0)
+    ImageDraw.Draw(m).text((1 - x0, 1 - y0), text, font=font, fill=1)
+    return m
+
+def mask_tiles(w, h, fn):
+    return blocks(fn, w, h)
+
+# ------------------------------------------------------------------ Pikachu: geel scherm, twee rode wangen, "Pika!"
+# 1 geel, 2-37 wang (6x6), 38.. tekst "Pika!" (op geel)
+PIKA = pad([(0, 0, 0), (31, 27, 4), (30, 6, 4), (19, 2, 2), (2, 2, 2), (31, 31, 31)])
+pika = [tile(lambda x, y: 1)]
+def cheek(x, y):
+    d = math.hypot(x - 23.5, y - 23.5)
+    if d < 19:
+        return 5 if math.hypot(x - 16, y - 15) < 4 else 2
+    return 3 if d < 21.5 else 1
+pika += blocks(cheek, 6, 6)
+tm = text_mask('Pika!', 44)
+TW, TH = (tm.size[0] + 7) // 8, (tm.size[1] + 7) // 8
+pika += blocks(lambda x, y: 4 if x < tm.size[0] and y < tm.size[1] and tm.getpixel((x, y)) else 1, TW, TH)
+save('pikachu', pika, [PIKA])
+print('  Pika!-tekst', TW, 'x', TH, 'tiles')
+
+# ------------------------------------------------------------------ Magikarp: het spartelende party-icoon (2 frames, 4x4)
+ic = Image.open('graphics/pokemon/magikarp/icon.png')
+icpal = ic.getpalette()[:48]
+KARP = [tuple(icpal[i * 3 + k] // 8 for k in range(3)) for i in range(16)]
+karp = []
+for fr in range(2):
+    karp += blocks(lambda x, y, fr=fr: ic.getpixel((x, y + fr * 32)), 4, 4)
+save('magikarp', karp, [KARP])
+
+# ------------------------------------------------------------------ Gabby & Ty: camerazoeker met REC en rode stip
+# 1-4 hoeken (2x2 elk: LB, RB, LO, RO -> 1-16), 17 lijn horizontaal, 18 lijn verticaal, 19-22 rode stip (2x2),
+# 23.. "REC", daarna batterij (3x2)
+CAM = pad([(0, 0, 0), (31, 31, 31), (31, 4, 4), (8, 8, 8), (16, 31, 16)])
+def corner(fx, fy):
+    def f(x, y):
+        xx, yy = (15 - x if fx else x), (15 - y if fy else y)
+        if (xx < 3 and yy < 16) or (yy < 3 and xx < 16):
+            return 1
+        if (xx < 4 and yy < 16) or (yy < 4 and xx < 16):
+            return 3
+        return 0
+    return f
+cam = []
+for fx, fy in ((0, 0), (1, 0), (0, 1), (1, 1)):
+    cam += blocks(corner(fx, fy), 2, 2)
+cam.append(tile(lambda x, y: 1 if y < 3 else (3 if y == 3 else 0)))
+cam.append(tile(lambda x, y: 1 if x < 3 else (3 if x == 3 else 0)))
+cam += blocks(lambda x, y: 2 if math.hypot(x - 7.5, y - 7.5) < 6 else (3 if math.hypot(x - 7.5, y - 7.5) < 7.2 else 0), 2, 2)
+rec = text_mask('REC', 14)
+RW, RH = (rec.size[0] + 7) // 8, (rec.size[1] + 7) // 8
+def recf(x, y):
+    if x < rec.size[0] and y < rec.size[1] and rec.getpixel((x, y)):
+        return 1
+    if any(0 <= x - dx < rec.size[0] and 0 <= y - dy < rec.size[1] and rec.getpixel((x - dx, y - dy)) for dx, dy in ((1, 0), (0, 1), (1, 1))):
+        return 3
+    return 0
+cam += blocks(recf, RW, RH)
+def battery(x, y):
+    if 2 <= y <= 13 and 1 <= x <= 20:
+        if y in (2, 13) or x in (1, 20):
+            return 1
+        return 4 if 3 <= x <= 18 and 4 <= y <= 11 and x < 15 else 0
+    if 21 <= x <= 22 and 5 <= y <= 10:
+        return 1
+    return 0
+cam += blocks(battery, 3, 2)
+save('camera', cam, [CAM])
+print('  REC', RW, 'x', RH)
+
+# ------------------------------------------------------------------ Koffing/Weezing: het schedel-en-botten-teken op paars
+# volledige afbeelding voor PatternWeave (zoals Aqua/Magma): palet 0-7 zwart, 8-15 paars/bot
+KOFPAL = [(0, 0, 0)] * 8 + [(124, 108, 168), (72, 56, 110), (96, 82, 140), (150, 136, 190), (200, 192, 172), (232, 226, 210), (250, 248, 240), (40, 30, 64)]
+W2, H2 = 240, 160
+kimg = Image.new('P', (W2, H2), 8)
+kd = ImageDraw.Draw(kimg)
+for r in range(150, 0, -6):                                   # zachte paarse gloed naar het midden
+    kd.ellipse((120 - r * 1.5, 80 - r, 120 + r * 1.5, 80 + r), fill=8 if r > 100 else (10 if r > 60 else 11))
+cx, cy = 120, 84
+def bone(x0, y0, x1, y1, w, fill, knob):
+    kd.line((x0, y0, x1, y1), fill=fill, width=w)
+    for (x, y) in ((x0, y0), (x1, y1)):
+        dx, dy = (x1 - x0), (y1 - y0)
+        n = math.hypot(dx, dy); px, py = -dy / n * knob * 0.7, dx / n * knob * 0.7
+        for s in (-1, 1):
+            kd.ellipse((x + s * px - knob, y + s * py - knob, x + s * px + knob, y + s * py + knob), fill=fill)
+for fill, grow in ((15, 3), (12, 0)):                         # donkere rand, dan bot
+    bone(cx - 44, cy + 2, cx + 44, cy + 58, 16 + grow * 2, fill, 9 + grow)
+    bone(cx + 44, cy + 2, cx - 44, cy + 58, 16 + grow * 2, fill, 9 + grow)
+kd.ellipse((cx - 30 - 3, cy - 64 - 3, cx + 30 + 3, cy - 16 + 3), fill=15)   # ring (schedel) bovenop
+kd.ellipse((cx - 30, cy - 64, cx + 30, cy - 16), fill=13)
+kd.ellipse((cx - 14 - 3, cy - 50 - 3, cx + 14 + 3, cy - 30 + 3), fill=15)
+kd.ellipse((cx - 14, cy - 50, cx + 14, cy - 30), fill=10)
+kd.arc((cx - 26, cy - 60, cx + 26, cy - 20), 200, 300, fill=14, width=3)   # glans
+ktiles, kidx, ktm = [tuple([0] * 64)], {tuple([0] * 64): 0}, [0] * 1024
+for ty in range(20):
+    for tx in range(30):
+        t = tuple(kimg.getpixel((tx * 8 + px, ty * 8 + py)) for py in range(8) for px in range(8))
+        if t not in kidx:
+            kidx[t] = len(ktiles); ktiles.append(t)
+        ktm[ty * 32 + tx] = kidx[t] | (15 << 12)
+rows = (len(ktiles) + 15) // 16
+out = Image.new('P', (128, rows * 8))
+for n, t in enumerate(ktiles):
+    for p_, v in enumerate(t):
+        out.putpixel(((n % 16) * 8 + p_ % 8, (n // 16) * 8 + p_ // 8), v)
+out.putpalette([v for c in KOFPAL for v in c] + [0] * (768 - 48))
+out.save(OUT + 'route_koffing.png')
+open(OUT + 'route_koffing.bin', 'wb').write(struct.pack('<1024H', *ktm))
+with open(OUT + 'route_koffing.pal', 'w', newline='\r\n') as fp:
+    fp.write('JASC-PAL\n0100\n16\n')
+    for c in KOFPAL:
+        fp.write('%d %d %d\n' % c)
+print('koffing', len(ktiles), 'tiles')
+
+# ------------------------------------------------------------------ sprites (64x64, 4bpp) voor draaien/schalen
+def save_sprite(name, img64, pal):
+    img64.putpalette([v * 8 for c in pal for v in c] + [0] * (768 - 48))
+    img64.save(OUT + 'sprite_%s.png' % name)
+    with open(OUT + 'sprite_%s.pal' % name, 'w', newline='\r\n') as fp:
+        fp.write('JASC-PAL\n0100\n16\n')
+        for c in pal:
+            fp.write('%d %d %d\n' % tuple(v * 8 for v in c))
+
+# Psyduck: groot wit vraagteken met zwarte rand
+q = text_mask('?', 60)
+QPAL = pad([(0, 0, 0), (31, 31, 31), (2, 2, 2), (28, 24, 6)])
+qi = Image.new('P', (64, 64), 0)
+ox, oy = (64 - q.size[0]) // 2, (64 - q.size[1]) // 2
+for y in range(64):
+    for x in range(64):
+        inside = lambda xx, yy: 0 <= xx - ox < q.size[0] and 0 <= yy - oy < q.size[1] and q.getpixel((xx - ox, yy - oy))
+        if inside(x, y):
+            qi.putpixel((x, y), 1)
+        elif any(inside(x + dx, y + dy) for dx in (-2, -1, 0, 1, 2) for dy in (-2, -1, 0, 1, 2)):
+            qi.putpixel((x, y), 2)
+save_sprite('question', qi, QPAL)
+
+# Poochyena (Joey): de eerste frame van de front-sprite
+po = Image.open('graphics/pokemon/poochyena/anim_front.png')
+ppal = [tuple(int(v) // 8 for v in l.split()) for l in open('graphics/pokemon/poochyena/normal.pal').read().split('\n')[3:19]]
+save_sprite('poochyena', po.crop((0, 0, 64, 64)), ppal)
+
+# strandbal (Slateport): zes gekleurde parten, glans
+BPAL = pad([(0, 0, 0), (31, 31, 31), (30, 4, 4), (4, 12, 30), (31, 26, 2), (4, 4, 6), (22, 22, 24)])
+bi = Image.new('P', (64, 64), 0)
+for y in range(64):
+    for x in range(64):
+        d = math.hypot(x - 31.5, y - 31.5)
+        if d < 29:
+            a = (math.degrees(math.atan2(y - 31.5, x - 31.5)) + 360) % 360
+            seg = int(a // 60)
+            c = (2, 1, 3, 1, 4, 1)[seg]
+            if math.hypot(x - 22, y - 20) < 5:
+                c = 1
+            elif d > 26:
+                c = 6 if c == 1 else c
+            bi.putpixel((x, y), c)
+        elif d < 31:
+            bi.putpixel((x, y), 5)
+save_sprite('beachball', bi, BPAL)
+
+# strand met parasols (onderkant van het beeld, 30x6 tiles) voor de strandbal-transitie
+# 1 zand, 2 zand donker, 3 parasol rood, 4 parasol wit, 5 paal, 6 schaduw, 7 zee, 8 schuim
+BEACH = pad([(0, 0, 0), (30, 26, 17), (26, 21, 12), (30, 6, 6), (31, 31, 31), (14, 12, 10), (22, 18, 11), (8, 18, 30), (24, 30, 31)])
+bimg = [[1] * 240 for _ in range(48)]
+rr = random.Random(190)
+for y in range(48):
+    for x in range(240):
+        if y < 6:
+            bimg[y][x] = 7 if y < 4 else 8
+        elif rr.random() < 0.08:
+            bimg[y][x] = 2
+for px_ in (30, 110, 190):
+    for y in range(48):
+        for x in range(240):
+            dx, dy = x - px_, y - 20
+            if dy <= 0 and dx * dx / 24.0 ** 2 + dy * dy / 14.0 ** 2 <= 1:
+                bimg[y][x] = 3 if int((math.degrees(math.atan2(-dy, dx)) // 30)) % 2 == 0 else 4
+            elif abs(dx) <= 1 and 0 < dy < 26:
+                bimg[y][x] = 5
+            elif 20 < dy < 26 and abs(dx - 8) < 18 and bimg[y][x] in (1, 2):
+                bimg[y][x] = 6
+btiles, bidx, btm = [], {}, []
+for ty in range(6):
+    for tx in range(30):
+        t = tuple(bimg[ty * 8 + py][tx * 8 + px] for py in range(8) for px in range(8))
+        if t not in bidx:
+            bidx[t] = len(btiles) + 1; btiles.append(list(t))
+        btm.append(bidx[t])
+save('beachball', btiles, [BEACH])
+open(OUT + 'route_beachball.bin', 'wb').write(struct.pack('<%dH' % len(btm), *btm))

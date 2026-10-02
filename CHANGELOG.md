@@ -15694,3 +15694,14 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.87] - New Mauville: de echte MissingNo
 - De MissingNo in de kortsluit-transitie is nu **cel voor cel Jordi's plaatje** (`graphics/grounded/missingno.png`), inclusief de L-vorm en de lichtroze vlakken. Hij flitst **zes keer** heel kort (3–4 frames) op steeds een andere plek in beeld.
+
+### [v.0.8.88] - Unieke transities: Pikachu, Magikarp, Psyduck, Koffing/Weezing, Gabby & Ty, Joey, strand van Slateport
+- **Wilde Pikachu** (`B_TRANSITION_PIKACHU`): meteen een geel scherm, twee rode wangen schuiven erin, dan "Pika!" in zwarte letters in het midden (met Pikachu's cry).
+- **Wilde Magikarp** (`B_TRANSITION_MAGIKARP`): een voor een verschijnen er spartelende Magikarp (het party-icoon met zijn twee frames), tot er 40 in beeld zitten.
+- **Wilde Psyduck** (`B_TRANSITION_PSYDUCK`): de wereld kleurt geel, een enorm vraagteken ploft in beeld en gaat steeds sneller rondjes draaien.
+- **Wilde Koffing, Weezing en Galar-Weezing** (`B_TRANSITION_KOFFING`): het schedel-en-botten-teken van Koffing op paars, met hetzelfde weef-effect als het Aqua/Magma-logo.
+- **Gabby & Ty** (alle gevechten, ook met de local celebrity; `B_TRANSITION_GABBY_TY`): een camera wordt op je gericht. De zoekerhoeken zoomen in, REC verschijnt met een knipperende rode stip en een batterij-icoon, en het eindigt met een flits.
+- **Joey** (Route 116, de Poochyena-trainer; `B_TRANSITION_POOCHYENA`): zijn Poochyena springt in sprongen op je af, steeds groter, tot hij bijt (rood).
+- **Strand van Route 109** (voor Slateport, niet surfend; `B_TRANSITION_BEACHBALL`): strand met parasols onderin, een draaiende strandbal vliegt in een boog op je af en raakt je vol (beeld schudt, wit).
+- Soort-transities gaan vóór route-transities (een Magikarp onder water krijgt de Magikarp-transitie). De draaiende/schalende figuren zijn affine sprites (`RT_CreateSprite`); de wereld kleurt mee, de sprite niet.
+- Graphics in `tools/grounded/route_transitions.py`; Poochyena en Magikarp komen uit de eigen sprites/iconen van de game.

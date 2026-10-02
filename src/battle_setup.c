@@ -784,6 +784,9 @@ static s32 GetGroundedRouteTransition(void)
         return B_TRANSITION_ROUTE_BUBBLES;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         return B_TRANSITION_ROUTE_WAVE;
+    // het strand voor Slateport: strandbal in je gezicht
+    if (AT_MAP(MAP_ROUTE109))
+        return B_TRANSITION_BEACHBALL;
     if (IsSeaRoute())
         return B_TRANSITION_ROUTE_BEACH;
     if (AT_MAP(MAP_ROUTE135) || AT_MAP(MAP_ROUTE136))
@@ -834,6 +837,20 @@ enum BattleTransition GetWildBattleTransition(void)
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
     s32 routeTransition = GetGroundedRouteTransition();
 
+    // Project Grounded: sommige wilde Pokemon hebben hun eigen transitie
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
+    {
+    case SPECIES_PIKACHU:
+        return B_TRANSITION_PIKACHU;
+    case SPECIES_MAGIKARP:
+        return B_TRANSITION_MAGIKARP;
+    case SPECIES_PSYDUCK:
+        return B_TRANSITION_PSYDUCK;
+    case SPECIES_KOFFING:
+    case SPECIES_WEEZING:
+    case SPECIES_WEEZING_GALAR:
+        return B_TRANSITION_KOFFING;
+    }
     if (routeTransition >= 0)
         return routeTransition;
 
@@ -865,6 +882,12 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
     if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER)
         return B_TRANSITION_BIRCH;
+
+    // Project Grounded: Gabby & Ty filmen je; Joey's Poochyena valt je aan
+    if ((trainerId >= TRAINER_GABBY_AND_TY_1 && trainerId <= TRAINER_GABBY_AND_TY_6) || trainerId == TRAINER_LOCAL_CELEBRITY)
+        return B_TRANSITION_GABBY_TY;
+    if (trainerId == TRAINER_JOEY)
+        return B_TRANSITION_POOCHYENA;
 
     // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
     if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)

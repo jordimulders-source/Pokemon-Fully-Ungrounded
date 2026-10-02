@@ -4,11 +4,6 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Route-transities** (alle gevechten op die plek, behalve unieke transities zoals gymleiders, rivalen, Birch, legendaries): zee (golf van rechts naar links; surfen telt ook), strand van zeeroutes (golf uit de verte die over je heen spoelt), onder water (luchtbellen), Route 135/136 (sneeuwt dicht), Route 113 (as waait door het scherm), Route 111-woestijn + Desert Ruins (zandstorm, lagen zand van onder naar boven), Cycling Road op Route 110 (POV op de fiets over de weg), Fiery Path + Mt. Chimney (hittegolf), Mt. Pyre (spookachtige vloek), Sky Pillar (razendsnel de lucht in), New Mauville (kortsluiting), Artisan Cave (wordt volgeschilderd), Safari Zone (door de bomen navigeren), Meteor Falls (stalagmieten/stalactieten), Jagged Pass (door de rotsen naar beneden), Route 119/Fortree/Route 120 (door het regenwoud).
-- **Poochyena-trainer** (de trainer met het hoge Poochyena-percentage): een Poochyena valt je in POV aan en komt steeds dichterbij.
-- **Strand bij Slateport (Route 109):** parasols en strand aan de onderkant, dan raakt een strandbal je in je POV.
-- **Soort-transities (wilde Pokémon):** Pikachu: meteen een geel scherm, twee rode cirkels (wangen) komen in beeld, dan in het midden in zwarte tekst "Pika!". Magikarp: zoveel mogelijk spartelende Magikarp-sprites die één voor één in beeld komen. Psyduck: een enorm vraagteken dat daarna heel snel rondjes gaat draaien. Koffing/Weezing: het schedel-en-botten-teken (de cirkel met gekruiste botten van Koffing) op een paarse achtergrond, zoals het Aqua/Magma-logo (PatternWeave).
-- **Gabby & Ty-transitie:** een camera wordt op je gericht en gaat filmen, met rode stip en REC.
 - **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen

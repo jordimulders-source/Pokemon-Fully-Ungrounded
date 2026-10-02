@@ -85,6 +85,13 @@ enum BattleTransition
     B_TRANSITION_ROUTE_METEOR, // Project Grounded: Meteor Falls, tussen stalactieten en stalagmieten
     B_TRANSITION_ROUTE_JAGGED, // Project Grounded: Jagged Pass, tussen de rotsen naar beneden
     B_TRANSITION_ROUTE_RAINFOREST, // Project Grounded: Route 119/120 en Fortree, door het regenwoud
+    B_TRANSITION_PIKACHU, // Project Grounded: wilde Pikachu, geel scherm met wangen en "Pika!"
+    B_TRANSITION_MAGIKARP, // Project Grounded: wilde Magikarp, scherm vol spartelende Magikarp
+    B_TRANSITION_PSYDUCK, // Project Grounded: wilde Psyduck, enorm draaiend vraagteken
+    B_TRANSITION_KOFFING, // Project Grounded: wilde Koffing/Weezing, schedel-en-botten-teken op paars
+    B_TRANSITION_GABBY_TY, // Project Grounded: Gabby & Ty, camerazoeker met REC
+    B_TRANSITION_POOCHYENA, // Project Grounded: Joey, Poochyena springt op je af
+    B_TRANSITION_BEACHBALL, // Project Grounded: strand van Route 109, strandbal in je gezicht
     B_TRANSITION_COUNT
 };
 

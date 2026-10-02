@@ -15402,3 +15402,7 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 - **Othismos** (`MOVE_OTHISMOS`), Grieks voor het duwen van een hoplieten-falanx. Fighting, physical, **20 power per treffer**, 100 acc, 10 PP, contact. Aantal treffers = 1 + 4 × HP/max HP: **5 bij volle HP**, 4 vanaf 75%, 3 vanaf 50%, 2 vanaf 25%, daaronder 1 (`CancelerMultihitMoves` in `src/battle_util.c`). Beschrijving: "A hoplite shoving push. Hits more at higher HP."
 - Falinks leert hem op **lv 30**, naast Reversal (die juist sterker wordt bij lage HP). Animatie: die van Arm Thrust.
 - Tests: `test/battle/grounded/othismos.c` (5, 3 en 1 treffer); slagen.
+
+### [v.0.8.39] - Route 135: Bergmite en Eiscue drijven in het meer
+- In het meer van Route 135 drijven nu een **Bergmite** (17,21) en een **Eiscue** (32,27), naast de Lapras. Aanspreken (surfend) = cry + **wild gevecht** op lv 33 (de wilde Pokémon op de route zijn lv 32–34). Ze gebruiken tijdelijke vlaggen (`FLAG_TEMP_11`/`12`), dus na het verlaten van de kaart drijven ze er weer.
+- Getest in de emulator: zichtbaar in het water, surfen ernaartoe, gevecht start.

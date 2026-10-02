@@ -15714,3 +15714,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.91] - Magikarp: het hele scherm vol
 - Aan het eind van de Magikarp-transitie stapelt zich een **berg Magikarp** van onder naar boven op: een vooraf gemaakte collage van 79 overlappende Magikarp (`route_magikarp_pile`, in `route_transitions.py`) waarin geen enkele pixel achtergrond meer zichtbaar is. Vlak voor het gevecht zie je dus alleen nog Magikarp.
+
+### [v.0.8.92] - Magikarp: geleidelijker opbouwen
+- De Magikarp-transitie duurt langer (ruim 2,5 seconde) en bouwt geleidelijk op: eerst af en toe een Magikarp, dan steeds vaker, rond de helft drie reuzen (boven, midden en onder, zodat de GBA ze op dezelfde beeldregels kan blijven tekenen), en pas daarna stapelt de berg zich rij voor rij op tot het scherm vol is.

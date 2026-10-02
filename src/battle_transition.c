@@ -6735,10 +6735,11 @@ static void Task_Pikachu(u8 taskId)
 // ---------------- Magikarp: je verdrinkt in Magikarp. Grote Magikarp-iconen vullen de achtergrond en daaroverheen
 // verschijnen steeds meer spartelende Magikarp-sprites (64x64, front-sprite) die elkaar overlappen.
 // BG-tiles: 1-144 icoon frame 1, 145-288 frame 2 (3x vergroot, 12x12). In de tweede helft komen er nog zes reuzen
-// bij: affine sprites op bijna 2x (twee gedeelde matrices: normaal en gespiegeld).
+// bij: affine sprites op bijna 2x (twee gedeelde matrices: normaal en gespiegeld), boven/midden/onder gespreid zodat
+// ze niet op dezelfde beeldregels staan (de GBA kan maar een beperkt aantal grote sprites per regel tekenen).
 #define MAGIKARP_BG_SLOTS 6
-#define MAGIKARP_GIANTS   6
-#define MAGIKARP_PILE_START 78
+#define MAGIKARP_GIANTS   3
+#define MAGIKARP_PILE_START 128
 #define MAGIKARP_SPRITES  56
 #define MAGIKARP_TAG      0x5A12
 
@@ -6806,7 +6807,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
     if (t >= MAGIKARP_PILE_START)
     {
         u16 *tileset;
-        u32 r, c, rows = min((t - MAGIKARP_PILE_START) * 2 + 2, 20);
+        u32 r, c, rows = min((t - MAGIKARP_PILE_START) + 1, 20);
         GetBg0TilesDst(&tilemap, &tileset);
         if (t == MAGIKARP_PILE_START)
         {
@@ -6818,21 +6819,21 @@ static bool8 RTMagikarp_Update(struct Task *task)
         for (r = 20 - rows; r < 20; r++)
             for (c = 0; c < 30; c++)
                 tilemap[r * 32 + c] = RT_TILE(sMagikarpPile_Tilemap[r * 30 + c]);
-        return t >= MAGIKARP_PILE_START + 16;
+        return t >= MAGIKARP_PILE_START + 30;
     }
 
     // achtergrond: reusachtige spartelende iconen, een voor een
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    n = min(t / 4 + 1, MAGIKARP_BG_SLOTS);
+    n = min(t / 12 + 1, MAGIKARP_BG_SLOTS);
     for (k = 0; k < n; k++)
     {
         u32 idx = (k * 5) % MAGIKARP_BG_SLOTS;
         RT_PutBlock(tilemap, (idx % 3) * 10 - (idx / 3) * 3, (idx / 3) * 10 - 2, 1 + (((t / 6 + k) & 1) * 144), 12, 12);
     }
     // reuzen (affine, ~1.8x) bovenop alles
-    if (t >= 40 && (t % 6) == 0 && task->tRtB < MAGIKARP_GIANTS && task->tRtA < MAGIKARP_SPRITES)
+    if (t >= 96 && (t % 9) == 0 && task->tRtB < MAGIKARP_GIANTS && task->tRtA < MAGIKARP_SPRITES)
     {
-        u8 id = CreateSprite(&sRTMagikarp_Template, 30 + (task->tRtB * 37) % 180, 30 + (task->tRtB * 53) % 100, 0);
+        u8 id = CreateSprite(&sRTMagikarp_Template, 50 + task->tRtB * 70, 24 + task->tRtB * 56, 0);
         if (id != MAX_SPRITES)
         {
             struct Sprite *sprite = &gSprites[id];
@@ -6857,7 +6858,8 @@ static bool8 RTMagikarp_Update(struct Task *task)
         }
     }
     // daaroverheen: steeds meer Magikarp-sprites, steeds sneller
-    for (k = 0; k < (t < 20 ? (t % 3 == 0) : (t < 40 ? 1 : 2)) && task->tRtA < MAGIKARP_SPRITES; k++)
+    // steeds meer: eerst af en toe een, dan steeds vaker
+    for (k = 0; k < (t < 30 ? (t % 6 == 0) : (t < 60 ? (t % 3 == 0) : (t < 90 ? (t % 2 == 0) : 1))) && task->tRtA < MAGIKARP_SPRITES; k++)
     {
         u8 id = CreateSprite(&sRTMagikarp_Template, 8 + Random() % 224, 8 + Random() % 150, MAGIKARP_SPRITES - task->tRtA);
         if (id == MAX_SPRITES)
@@ -6869,7 +6871,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
         gSprites[id].data[1] = 6 + Random() % 6;
         sRTMagikarp_Sprites[task->tRtA++] = id;
     }
-    if (t % 12 == 0 && t < 84)
+    if (t % 12 == 0 && t < MAGIKARP_PILE_START)
         PlaySE(t % 24 ? SE_M_DOUBLE_SLAP : SE_M_SURF);
     BlendPalettes(RT_SCENE_PALETTES & ~(1 << (16 + IndexOfSpritePaletteTag(MAGIKARP_TAG))), min(t / 4, 10), RGB(6, 14, 28));
     return FALSE;

@@ -53,6 +53,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Emulator-screenshots hebben een dag/nacht-tint** (`OW_ENABLE_DNS`, echte klok): roze/oranje of blauw is de tijd van de dag, geen paletbug.
 - **Gehoorzaamheid in emulatortests:** de intro-savestate heeft geen badges, dus een `givemon` boven lv 10 is ongehoorzaam (doet een andere move, gaat slapen). Altijd testen met lv ≤ 10 óf eerst alle badges zetten (`setflag FLAG_BADGE01_GET` … `FLAG_BADGE08_GET`).
 - **Wilde gevechten via debugscript** starten pas na de eerste knopdruk: na `debug_script` eerst A, dan ~400 frames wachten tot het actiemenu er is.
+- **ROM opleveren:** 32 MB is te groot voor SendUserFile; zip hem (≈16 MB). Bouw eerst opnieuw na `testrom.py`.
+- **Dubbel tegen twee trainers vanuit een script:** `trainerbattle_two_trainers A, verliestekstA, B, verliestekstB`; het script loopt daarna gewoon door. Zelf vooraf `goto_if_defeated` en `specialvar VAR_RESULT, GetMonsStateToDoubles` (special toegevoegd) controleren.
+- **Nieuwe kaart:** ook de `scripts.inc` in `data/event_scripts.s` opnemen, anders linkerfout op `*_MapScripts`.
 - **Nieuwe graphics:** een overworld-sprite heeft een eigen regel in `spritesheet_rules.mk` nodig (`-mwidth 2 -mheight 4` voor 16×32), anders staan de tegels door elkaar. Make bouwt een `.c` niet opnieuw als alleen een INCBIN-bestand verandert: `touch` het `.c`-bestand (bijv. `src/event_object_movement.c`). FRLG-graphics komen uit `pret/pokefirered` (raw.githubusercontent.com).
 
 ## Werkwijzen (herhaalde taken)
@@ -134,6 +137,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
+- **Events v0.8.58–0.8.61:** Mimi (Mimikyu-trainer, Route 119), Heatran-cutscene (Route 111), Rotom in de kelder van `MauvilleCity_House2_B1F`, eerste Gabby & Ty-gevecht dubbel met Brad (`TRAINER_LOCAL_CELEBRITY`). ROM v0.8.61 opgeleverd. Volgende ronde staat in `TODO.md` ("Volgende ronde").
 - **Moves/weer v0.8.45–0.8.53:** Fungal Control, Transmutation, Implosion (zwart gat), Laser Beam (TM55), Machine Learning (TM54), Shadow Siphon (TM56), Acid Rain (TM57, weer `B_WEATHER_ACID_RAIN`, ability Air Pollution), Pollen Haze (TM58, `B_WEATHER_POLLEN_HAZE`, ability Pollen Season, Bug Maniac Timothy op Route 119). Prof. Oak in Slateport. Suicune-noorderlichttransitie (`B_TRANSITION_AURORA`).
 - **Af:** QoL-reeks v0.8.18–0.8.34, Lager Lagoon (TM52, Coldstep) en Vintage Spill (TM53, Wallace), Scald (TM03, Route 120), snellere animaties tussen beurten (v0.8.13–0.8.14), Keccles 3-tekst, Fly naar Ashfrost, Coldstep Cave, Keccles 1–3, Seltzer Surge (TM51), muziekcredits, Route 135, Route 136 met Crystal Cavity (kristalgrot, duikstuk, Suicune lv 50 met beasts-thema), weer: Route 135 sneeuwstorm/as (`WEATHER_ASHFROST_STORM_CYCLE`), Route 136 sneeuw/as (`WEATHER_ASHFROST_CYCLE`; hoe dichter bij Ashfrost, hoe milder); Hail heet Snow Storm (schade + Ice-Def), lichte sneeuw = Snowscape, Town Map met Route 135/136 en Ashfrost.
 - Nog van Jordi: definitieve teksten van Route 135/136 en Ashfrost (nu placeholders).

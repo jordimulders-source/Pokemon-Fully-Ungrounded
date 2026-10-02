@@ -3,11 +3,12 @@
 Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeronde taken gaan naar `CHANGELOG.md`.
 
 ## Openstaande taken (in volgorde)
-1. **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost.
+Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
+- **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** (alles afgerond)
-- **Later proberen:** snellere schermtransities.
+- **Later proberen:** (snellere schermovergangen bij warps gedaan in v0.8.36; gevechtsintro eventueel later)
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.

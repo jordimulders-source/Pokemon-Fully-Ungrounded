@@ -15390,3 +15390,7 @@ De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun vol
 
 ### [v.0.8.35] - Automatisch Flash zichtbaar
 - Feedback Jordi: bij het binnengaan van een donkere grot (badge + HM05) begint het nu **donker** en gaat het licht met de gewone Flash-animatie zichtbaar open (`animateflash 1`, ~2 seconden), daarna de melding. Getest in de emulator (Granite Cave B1F).
+
+### [v.0.8.36] - Snellere schermovergangen; Ditto onderaan
+- De fade naar/van zwart (of wit) bij **deuren, trappen en warps** gaat ongeveer een derde sneller (`WarpFadeOutScreen`/`WarpFadeInScreen` in `src/field_screen_effect.c`: grotere fadestappen). De overgang blijft zichtbaar.
+- TODO: de Ditto-trainer staat op verzoek van Jordi onderaan; verder werk ik de backlog af van makkelijk naar moeilijk.

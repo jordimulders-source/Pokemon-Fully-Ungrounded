@@ -38,6 +38,38 @@ NewMauville_Inside_EventScript_ShowVoltorb3::
 
 NewMauville_Inside_OnLoad:
 	call_if_eq VAR_NEW_MAUVILLE_STATE, 2, NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	call_if_set FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN, NewMauville_Inside_EventScript_SetServerRoomStairs
+	end
+
+@ Project Grounded: verborgen deur (trap) naar de ondergrondse grot met Raikou, bovenaan de gang naast de oostkamer
+NewMauville_Inside_EventScript_SetServerRoomStairs::
+	setmetatile 37, 22, 0x25C, TRUE
+	setmetatile 38, 22, 0x26E, TRUE
+	setmetatile 39, 22, 0x25D, TRUE
+	setmetatile 37, 23, 0x293, TRUE
+	setmetatile 38, 23, 0x276, FALSE
+	setmetatile 39, 23, 0x294, TRUE
+	return
+
+@ Project Grounded: schakelaar op de computer in de oostkamer
+NewMauville_Inside_EventScript_ServerRoomSwitch::
+	lockall
+	goto_if_set FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN, NewMauville_Inside_EventScript_ServerRoomSwitchPressed
+	msgbox NewMauville_Inside_Text_ServerRoomSwitch, MSGBOX_DEFAULT
+	playse SE_PIN
+	waitse
+	setflag FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN
+	call NewMauville_Inside_EventScript_SetServerRoomStairs
+	special DrawWholeMapView
+	playse SE_BANG
+	waitse
+	msgbox NewMauville_Inside_Text_ServerRoomOpened, MSGBOX_DEFAULT
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_ServerRoomSwitchPressed::
+	msgbox NewMauville_Inside_Text_ServerRoomSwitchPressed, MSGBOX_DEFAULT
+	releaseall
 	end
 
 NewMauville_Inside_EventScript_BlueButton::
@@ -260,3 +292,19 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped:
 	.string "Click…\p"
 	.string "… … … … … … … … … … … … … … … …\p"
 	.string "The generator seems to have stopped…$"
+
+NewMauville_Inside_Text_ServerRoomSwitch:
+	.string "There's a dusty switch under the\n"
+	.string "monitor. The label says:\p"
+	.string "SERVER ROOM B. DO NOT PRESS.\n"
+	.string "THIS MEANS YOU, WATTSON.\p"
+	.string "{PLAYER} pressed it.$"
+
+NewMauville_Inside_Text_ServerRoomOpened:
+	.string "Further down the hall, a wall\n"
+	.string "slid open with a dramatic rumble.\p"
+	.string "Something smells like ozone.$"
+
+NewMauville_Inside_Text_ServerRoomSwitchPressed:
+	.string "The switch is already pressed.\n"
+	.string "Pressing it harder does nothing.$"

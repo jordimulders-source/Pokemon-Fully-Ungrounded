@@ -15642,3 +15642,14 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - Team (lv 49, ace 51): Wailord, Gorebyss, Pyukumuku, Jellicent, Clodsire, Hoenn-Muk.
 - Beide gevechten hebben de Macarena en de prut-transitie, zoals de andere Birch-gevechten. Teksten zijn placeholders.
 - Getest in de emulator: de meteoriet en Birch in Mossdeep, Birch onder water, en het begin van beide gevechten (onder water met de onderwaterachtergrond).
+
+### [v.0.8.80] - Raikou en Entei: verborgen grotten en eigen gevechtstransities
+- **Raikou (lv 50, static), New Mauville:** in de oostkamer zit onder een monitor (34,22) een stoffige schakelaar ("SERVER ROOM B. DO NOT PRESS. THIS MEANS YOU, WATTSON."). Druk je erop, dan schuift een paar tiles verder bovenaan de gang (38,23) een wand open met een trap. Daarachter ligt een **kapot ondergronds datacenter** (`NewMauville_ThunderCave`): een rotsgrot zoals de ingang van New Mauville, vol tanks en computers uit de Aqua Hideout, met puin en **stoom** (horizontale mist). Op de monitoren staan placeholderteksten ("ERROR: FUTURE NOT FOUND."). New Mauville kun je pas in met Surf, dus vanaf badge 5.
+- **Entei (lv 50, static), Mt. Chimney:** vanaf **badge 5** is er aan de rustige westkant van Mt. Chimney (8,12) een grotingang in de rotswand (zelfde mechanisme als de Magma Hideout op Jagged Pass; daarvoor is het gewoon rots). Daarachter een gang (`MtChimney_EnteiPassage`, kopie van Terra Cave Entrance) en een lavagrot (`MtChimney_EnteiLair`, kopie van Terra Cave End), waar Entei aan de lava staat.
+- Vlucht je, dan blijven ze staan; verslagen of gevangen = weg (`FLAG_HIDE_NEW_MAUVILLE_RAIKOU`, `FLAG_HIDE_MT_CHIMNEY_ENTEI`; schakelaar: `FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN`).
+- **Nieuwe gevechtstransities** (muziek blijft het beasts-thema):
+  - **Raikou (`B_TRANSITION_RAIKOU`):** het beeld wordt blauwzwart en er slaan steeds sneller bliksems (Thunder) in op verschillende plekken, elk met een witte flits en een donderklap. De laatste klap maakt alles wit.
+  - **Entei (`B_TRANSITION_ENTEI`):** midden in beeld flakkert een klein steekvlammetje, de wereld kleurt donkerrood, en dan breidt het vuur zich eerst langzaam en daarna steeds sneller uit over het hele scherm, gloeit wit op en gaat over in het gevecht.
+  - Graphics: `tools/grounded/beasts_transition.py`. Kaarten: `tools/grounded/maptools/beasts_maps.py`.
+- Getest in de emulator: de schakelaar, de deur, het datacenter en het Raikou-gevecht; de ingang op Mt. Chimney (alleen met badge 5), de gang en het Entei-gevecht; beide transities.
+- CLAUDE.md: testgevechten voortaan met een Arceus lv 100 (Dark Pulse, Psychic, Thunderbolt, Ice Beam) en alle badges aan.

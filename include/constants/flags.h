@@ -80,9 +80,9 @@
 #define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
 #define FLAG_HIDE_VERDANTURF_BIRCH 0x43 // Project Grounded
 #define FLAG_RECEIVED_HOENN_GRIMER 0x44 // Project Grounded: Birch geeft een Hoenn-Grimer (Verdanturf)
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_HIDE_NEW_MAUVILLE_RAIKOU    0x45 // Project Grounded: Raikou (static) in de verborgen serverruimte van New Mauville
+#define FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN    0x46 // Project Grounded: schakelaar op de computer in de oostkamer: deur naar de ondergrondse grot (Raikou)
+#define FLAG_HIDE_MT_CHIMNEY_ENTEI    0x47 // Project Grounded: Entei (static) in de verborgen lavagrot van Mt. Chimney
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag

@@ -4,7 +4,6 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Raikou en Entei** (na Suicune): Raikou in een verborgen ruimte van het datacenter in New Mauville, Entei op Mt. Chimney. Elk een eigen gevechtstransitie: Raikou = meerdere Thunders, Entei = een kleine steekvlam die langzaam uitgroeit tot het hele scherm.
 - **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
@@ -32,7 +31,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.
 - **Kaarten/gebieden:** Oostkant van de kaart interessanter (meer eilanden, beter onderwater-exploreren, nieuwe dungeons). Jungle onder Fortree (Ogerpon/Zarude). Swamp, fairy forest, mushroom forest, haunted house, outer-space-gebied vanaf Mossdeep. Safari Zone uitbreiden. Extra tilesets (Ekat99, o.a. Snowpoint Temple voor Regigigas).
 - **Regi-quest:** Regieleki (cave bij Mauville), Regidrago (Jagged Pass), Regigigas (andere cave, ten noorden van Ashfrost; de iglo in Ashfrost wordt de ingang/doorgang ernaartoe). Braille-activatie, kamerpatroon = oogpatroon van de Regi, idem de gevechtstransitie. Activatie nog bedenken.
-- **Legendary/mythical events:** Jirachi; Latios/Latias kiezen (cryptisch, de ander post-game); inverted Sky Pillar die steeds dieper gaat → Giratina; Mewtwo; Genesect; Raikou (verborgen ruimte New Mauville-datacenter) en Entei (Mt. Chimney), pas na Suicune; shiny Rayquaza; Darkrai (Mt. Pyre, post-game); Shaymin (bootticket naar bloemenveld); Victini (Victory Island-ticket: gauntlet met nieuwe trainers door heel Hoenn, evt. keuze-element); Kubfu-sidequest; Delta Episode post-game met Zinnia en Deoxys in de ruimte (muziek Delta Emerald: Shota Kageyama, MIDI paterDM, credits STikER + Delta Emerald; Zinnia-art: aveontrainer, MelodyCrystel, HaydenisEpic).
+- **Legendary/mythical events:** Jirachi; Latios/Latias kiezen (cryptisch, de ander post-game); inverted Sky Pillar die steeds dieper gaat → Giratina; Mewtwo; Genesect; shiny Rayquaza; Darkrai (Mt. Pyre, post-game); Shaymin (bootticket naar bloemenveld); Victini (Victory Island-ticket: gauntlet met nieuwe trainers door heel Hoenn, evt. keuze-element); Kubfu-sidequest; Delta Episode post-game met Zinnia en Deoxys in de ruimte (muziek Delta Emerald: Shota Kageyama, MIDI paterDM, credits STikER + Delta Emerald; Zinnia-art: aveontrainer, MelodyCrystel, HaydenisEpic).
 - **Heatran:** post-game Heatran-gebied in Fiery Path/Mt. Chimney (niet op de Entei-plek). (cutscene gedaan, v0.8.59)
 - **Birch:** dialoog bij Ashfrost veel smeriger. (Verdanturf-gevecht en Route 135-team met Hisui-Avalugg gedaan, v0.8.67; Mossdeep-meteoriet en onder water gedaan, v0.8.79)
 - **Trainers/NPC's:** Colress, Red/Blue Burglar toevoegen; trainersprites Gen 4+ (Greenphx); onderzoeken of Gen 4/5-overworldsprites om te zetten zijn.

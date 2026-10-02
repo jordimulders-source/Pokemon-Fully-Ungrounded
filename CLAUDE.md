@@ -91,6 +91,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 
 ### Testen
 - `python3 tools/grounded/maptools/testrom.py <scratchmap> "regels script 1" ["regels script 2" ...]` bouwt een test-ROM met tijdelijke debug-scripts (bijv. `warp MAP_X, x, y; waitstate`) en zet `debug.inc` terug. Daarna in Python: `Emu(rom)`, `load(e, intro)`, `debug_script(e, 1)` (`emu.py`). Bouw daarna opnieuw voor een schone ROM.
+- **Testgevechten:** altijd met een **Arceus lv 100** met Dark Pulse, Psychic, Thunderbolt en Ice Beam (`givemon SPECIES_ARCEUS, 100, move1=MOVE_DARK_PULSE, move2=MOVE_PSYCHIC, move3=MOVE_THUNDERBOLT, move4=MOVE_ICE_BEAM`), tenzij een gevecht een ander soort Pokémon vereist. Zet in het testscript ook **alle badges** aan (`setflag FLAG_BADGE01_GET` t/m `FLAG_BADGE08_GET`), anders luistert Arceus niet.
 - Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; grote JSON-bestanden (`wild_encounters.json`, `layouts.json`, `map_groups.json`) tekstueel bewerken, niet via `json.dump`; trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`); nieuwe kaarten achteraan hun groep in `map_groups.json`.
 
 ### Afronden van een stuk werk
@@ -145,6 +146,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
+- **Raikou/Entei v0.8.80:** Raikou in het kapotte datacenter onder New Mauville (schakelaar in de oostkamer), Entei achter een verborgen ingang op Mt. Chimney (vanaf badge 5). Eigen transities `B_TRANSITION_RAIKOU`/`B_TRANSITION_ENTEI`; nieuwe transities kosten maar een paar KB (ROM ±23 van 32 MB).
 - **Birch v0.8.79:** Mossdeep (meteoriet = Birth Island-steen, Macarena-lore) en Underwater Route 124. Alle Birch-trainers staan in `battle_setup.c` (transitie) en `pokemon.c` (muziek); een nieuwe Birch daar ook toevoegen.
 - **Hoenn-Grimer/Muk v0.8.67:** nieuwe vormen (Poison/Ground), Birch in Verdanturf (`TRAINER_BIRCH_VERDANTURF`, ace Hoenn-Grimer), Birch 2 doorontwikkeld met Hisui-Avalugg en Hoenn-Muk. De speler krijgt alleen één Hoenn-Grimer van Birch (Verdanturf); verder nergens te vangen.
 - **Transities/Sootopolis v0.8.62–0.8.66:** Regidrago/Regieleki/Deoxys/Birch-transities (Birch alleen prut, geen drol), Keccles-scène na Rayquaza met multi battle (Archie + Maxie, weerneutraal), Mt. Pyre-berouwscène overgeslagen.

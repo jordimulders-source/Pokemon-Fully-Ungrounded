@@ -4520,6 +4520,36 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAUVILLE_THUNDER_CAVE",
+      "name": "NewMauville_ThunderCave_Layout",
+      "width": 22,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NewMauville_ThunderCave/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_ThunderCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_ENTEI_PASSAGE",
+      "name": "MtChimney_EnteiPassage_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtChimney_EnteiPassage/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_EnteiPassage/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_ENTEI_LAIR",
+      "name": "MtChimney_EnteiLair_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtChimney_EnteiLair/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_EnteiLair/map.bin"
     }
   ]
 }

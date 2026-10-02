@@ -122,6 +122,8 @@ static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
+static void Task_Raikou(u8); // Project Grounded
+static void Task_Entei(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -344,6 +346,11 @@ static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deo
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
 static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
 static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
+static const u16 sRaikou_Tileset[] = INCBIN_U16("graphics/battle_transitions/raikou.4bpp");
+static const u16 sRaikou_Tilemap[] = INCBIN_U16("graphics/battle_transitions/raikou.bin");
+static const u16 sRaikou_Palette[] = INCBIN_U16("graphics/battle_transitions/raikou.gbapal");
+static const u16 sEntei_Tileset[] = INCBIN_U16("graphics/battle_transitions/entei.4bpp");
+static const u16 sEntei_Palette[] = INCBIN_U16("graphics/battle_transitions/entei.gbapal");
 static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
 static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
@@ -415,6 +422,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_DEOXYS] = Task_Deoxys, // Project Grounded
     [B_TRANSITION_BIRCH] = Task_Birch, // Project Grounded
     [B_TRANSITION_AQUA_MAGMA] = Task_AquaMagma, // Project Grounded
+    [B_TRANSITION_RAIKOU] = Task_Raikou, // Project Grounded
+    [B_TRANSITION_ENTEI] = Task_Entei, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -5242,3 +5251,263 @@ static void Task_Birch(u8 taskId)
 #undef tBirchPos
 #undef tBirchSpeed
 #undef tBirchDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: gedeelde stappen voor Raikou en Entei
+//------------------------------------------------------------------------
+#define BEASTS_SCENE_PALETTES (PALETTES_ALL & ~(1 << 15)) // alles behalve BG-palet 15 (de transitie zelf)
+
+// alle paletten wit (ook de "unfaded" buffer), zodat de fade hierna van wit naar zwart gaat
+static void Beasts_SetAllWhite(void)
+{
+    CpuFill16(RGB_WHITE, gPlttBufferUnfaded, PLTT_SIZE);
+    CpuFill16(RGB_WHITE, gPlttBufferFaded, PLTT_SIZE);
+}
+
+static bool8 Beasts_FadeOutAll(struct Task *task)
+{
+    BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+    task->tState++;
+    return FALSE;
+}
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_RAIKOU
+// Het beeld wordt donker en er slaan steeds sneller bliksems in (Thunder) op verschillende plekken, elk met
+// een witte flits en een donderklap. De laatste klap maakt alles wit, daarna naar het gevecht.
+// Graphics: tools/grounded/beasts_transition.py (RAIKOU_BOLTS schichten rond x=128).
+//------------------------------------------------------------------------
+#define RAIKOU_BOLTS   3
+#define tRaikouTimer   data[1]
+#define tRaikouStrike  data[2]
+#define tRaikouLast    data[3]
+#define tRaikouDelay   data[8]
+
+static const u8 sRaikou_StrikeTimes[] = {14, 46, 72, 92, 106, 116, 123, 128, 132};
+static const u8 sRaikou_StrikeX[]     = {64, 176, 112, 32, 204, 148, 84, 216, 120};
+
+static bool8 Raikou_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sRaikou_Tileset, tileset, sizeof(sRaikou_Tileset));
+    LoadPalette(sRaikou_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    task->tRaikouTimer = 0;
+    task->tRaikouStrike = 0;
+    task->tRaikouLast = -100;
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 Raikou_Storm(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+    s32 t = task->tRaikouTimer;
+    s32 d;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    if (task->tRaikouStrike < ARRAY_COUNT(sRaikou_StrikeTimes) && t == sRaikou_StrikeTimes[task->tRaikouStrike])
+    {
+        u32 i = task->tRaikouStrike;
+        CpuCopy16(&sRaikou_Tilemap[(i % RAIKOU_BOLTS) * 32 * 32], tilemap, BG_SCREEN_SIZE);
+        SetGpuReg(REG_OFFSET_BG0HOFS, (128 - sRaikou_StrikeX[i]) & 0x1FF);
+        PlaySE(SE_THUNDER);
+        task->tRaikouLast = t;
+        task->tRaikouStrike++;
+    }
+    d = t - task->tRaikouLast;
+
+    // de wereld: flits bij een inslag, verder steeds donkerder (blauwzwart)
+    if (d == 0)
+        BlendPalettes(BEASTS_SCENE_PALETTES, 13, RGB_WHITE);
+    else if (d == 1)
+        BlendPalettes(BEASTS_SCENE_PALETTES, 7, RGB_WHITE);
+    else if (d == 2)
+        BlendPalettes(BEASTS_SCENE_PALETTES, 2, RGB_WHITE);
+    else
+        BlendPalettes(BEASTS_SCENE_PALETTES, min(t / 3, 11), RGB(0, 0, 4));
+
+    // de schicht: even fel, dan uitdoven
+    LoadPalette(sRaikou_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    if (d >= 4 && d < 12)
+        BlendPalette(BG_PLTT_ID(15), 16, (d - 3) * 2, RGB_BLACK);
+    else if (d == 12)
+        CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+
+    task->tRaikouTimer++;
+    if (task->tRaikouStrike == ARRAY_COUNT(sRaikou_StrikeTimes) && d == 3)
+    {
+        // laatste klap: alles wit
+        PlaySE(SE_THUNDER);
+        Beasts_SetAllWhite();
+        task->tRaikouDelay = 16;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sRaikou_Funcs[] =
+{
+    Raikou_Init,
+    Raikou_Storm,
+    FramesCountdown,
+    Beasts_FadeOutAll,
+    WeatherDuo_End
+};
+
+static void Task_Raikou(u8 taskId)
+{
+    while (sRaikou_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tRaikouTimer
+#undef tRaikouStrike
+#undef tRaikouLast
+#undef tRaikouDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_ENTEI
+// Midden in beeld flakkert een klein steekvlammetje; dat groeit langzaam en dan steeds sneller uit tot vuur
+// over het hele scherm, gloeit wit op en gaat dan over in het gevecht.
+// Tiles (tools/grounded/beasts_transition.py): 0 leeg, 1-4 vlakvuur, 5-8 randvlammen, 9-32 steekvlam (2x3, 4 frames).
+//------------------------------------------------------------------------
+#define ENTEI_FRAMES      8
+#define ENTEI_FILL        1
+#define ENTEI_EDGE        5
+#define ENTEI_SMALL       9
+#define ENTEI_CENTER_X    120
+#define ENTEI_CENTER_Y    80
+#define ENTEI_MAX_RADIUS  (160 << 4)
+#define tEnteiTimer       data[1]
+#define tEnteiRadius      data[2] // in 1/16 pixel
+#define tEnteiSpeed       data[3]
+#define tEnteiStep        data[4]
+#define tEnteiDelay       data[8]
+
+static void Entei_Flicker(struct Task *task)
+{
+    u32 frame = (task->tEnteiTimer / 3) % ENTEI_FRAMES;
+    LoadPalette(&sEntei_Palette[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+}
+
+static bool8 Entei_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sEntei_Tileset, tileset, sizeof(sEntei_Tileset));
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    task->tEnteiTimer = 0;
+    task->tEnteiRadius = 16 << 4;
+    task->tEnteiSpeed = 6;
+    Entei_Flicker(task);
+    PlaySE(SE_M_EMBER);
+    task->tState++;
+    return FALSE;
+}
+
+// klein steekvlammetje in het midden (2x3 tiles), de wereld wordt langzaam donkerrood
+static bool8 Entei_Spark(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+    u32 x, y, frame = (task->tEnteiTimer / 5) % 4;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    for (y = 0; y < 3; y++)
+        for (x = 0; x < 2; x++)
+            tilemap[(8 + y) * 32 + 14 + x] = (ENTEI_SMALL + frame * 6 + y * 2 + x) | (15 << 12);
+    Entei_Flicker(task);
+    BlendPalettes(BEASTS_SCENE_PALETTES, min(task->tEnteiTimer / 4, 8), RGB(8, 1, 0));
+    if (++task->tEnteiTimer > 48)
+    {
+        PlaySE(SE_M_FLAMETHROWER);
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static void Entei_DrawFire(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+    s32 r, c, dx, dy, dist2;
+    s32 radius = task->tEnteiRadius >> 4;
+    s32 inner = radius - 10;
+    u32 phase = task->tEnteiTimer / 4;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    for (r = 0; r < 20; r++)
+    {
+        dy = r * 8 + 4 - ENTEI_CENTER_Y;
+        for (c = 0; c < 30; c++)
+        {
+            u16 tile = 0;
+            dx = c * 8 + 4 - ENTEI_CENTER_X;
+            dist2 = dx * dx + dy * dy;
+            if (inner > 0 && dist2 < inner * inner)
+                tile = ENTEI_FILL + ((r * 3 + c * 5 + phase) & 3);
+            else if (dist2 < radius * radius)
+                tile = ENTEI_EDGE + ((r + c * 3 + phase) & 3);
+            tilemap[r * 32 + c] = tile ? (tile | (15 << 12)) : 0;
+        }
+    }
+}
+
+// het vuur breidt zich uit: eerst langzaam, dan steeds sneller
+static bool8 Entei_Spread(struct Task *task)
+{
+    task->tEnteiSpeed += 1;
+    task->tEnteiRadius += task->tEnteiSpeed;
+    Entei_DrawFire(task);
+    Entei_Flicker(task);
+    task->tEnteiTimer++;
+    if (task->tEnteiRadius >= ENTEI_MAX_RADIUS)
+    {
+        task->tEnteiStep = 0;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static bool8 Entei_Brighten(struct Task *task)
+{
+    Entei_DrawFire(task);
+    Entei_Flicker(task);
+    BlendPalette(BG_PLTT_ID(15), 16, min(task->tEnteiStep, 16), RGB_WHITE);
+    task->tEnteiTimer++;
+    if ((task->tEnteiTimer & 1) == 0)
+        task->tEnteiStep++;
+    if (task->tEnteiStep > 16)
+    {
+        Beasts_SetAllWhite();
+        task->tEnteiDelay = 12;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sEntei_Funcs[] =
+{
+    Entei_Init,
+    Entei_Spark,
+    Entei_Spread,
+    Entei_Brighten,
+    FramesCountdown,
+    Beasts_FadeOutAll,
+    WeatherDuo_End
+};
+
+static void Task_Entei(u8 taskId)
+{
+    while (sEntei_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tEnteiTimer
+#undef tEnteiRadius
+#undef tEnteiSpeed
+#undef tEnteiStep
+#undef tEnteiDelay

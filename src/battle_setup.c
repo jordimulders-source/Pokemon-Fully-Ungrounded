@@ -507,9 +507,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
-    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema
-    case SPECIES_ENTEI:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
+        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_C_VS_LEGEND_BEAST);
+        break;
+    case SPECIES_ENTEI: // Project Grounded: steekvlam die het hele scherm overneemt
+        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_C_VS_LEGEND_BEAST);
         break;
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);

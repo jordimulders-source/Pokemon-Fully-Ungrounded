@@ -67,6 +67,8 @@ enum BattleTransition
     B_TRANSITION_DEOXYS, // Project Grounded: ruimte + DNA-helix
     B_TRANSITION_BIRCH, // Project Grounded: poep-thema
     B_TRANSITION_AQUA_MAGMA, // Project Grounded: Archie + Maxie samen
+    B_TRANSITION_RAIKOU, // Project Grounded: bliksems
+    B_TRANSITION_ENTEI, // Project Grounded: steekvlam die het scherm overneemt
     B_TRANSITION_COUNT
 };
 

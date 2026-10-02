@@ -15688,3 +15688,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Mt. Pyre:** de paarse mist is vervangen door de **ongeïdentificeerde ghosts uit Lavender Town** (zwart silhouet, boze ogen, brede grijns, klauwhandjes, korrelige aura) die van beneden omhoog door een grauwe wereld zweven.
 - **New Mauville:** tijdens de kortsluiting flitst **MissingNo** meerdere keren heel kort in beeld.
 - Op de lijst (`TODO.md`): soort-transities voor Pikachu, Magikarp, Psyduck en Koffing/Weezing.
+
+### [v.0.8.86] - Mt. Pyre: de echte Lavender Town-ghost
+- De ghosts in de Mt. Pyre-transitie zijn nu **pixel voor pixel de originele sprite uit Pokémon Red/Blue** (`graphics/grounded/ghost_pokered.png`, uit pret/pokered `gfx/battle/ghost.png`), met een paarse aura. Er zweven er nu meer tegelijk omhoog.

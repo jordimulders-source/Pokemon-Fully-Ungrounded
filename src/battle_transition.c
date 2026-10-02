@@ -6102,18 +6102,20 @@ static void Task_RouteHeat(u8 taskId)
 }
 
 // ---------------- Mt. Pyre: een vloek. De wereld wordt grauw en de ongeidentificeerde ghosts uit Lavender Town zweven
-// van beneden omhoog door het beeld. tiles: 1-64 ghost (8x8)
+// van beneden omhoog door het beeld (de echte sprite uit Red/Blue). tiles: 1-36 ghost (6x6)
 static void RTPyre_PutGhost(u16 *tilemap, s32 x, s32 y)
 {
-    RT_PutBlock(tilemap, x, y, 1, 8, 8);
+    RT_PutBlock(tilemap, x, y, 1, 6, 6);
 }
 
 static void RTPyre_Init(struct Task *task)
 {
     u16 *tilemap = RT_Tilemap();
-    RTPyre_PutGhost(tilemap, 0, 20);
-    RTPyre_PutGhost(tilemap, 22, 21);
-    RTPyre_PutGhost(tilemap, 11, 24);
+    RTPyre_PutGhost(tilemap, 1, 20);
+    RTPyre_PutGhost(tilemap, 23, 21);
+    RTPyre_PutGhost(tilemap, 12, 24);
+    RTPyre_PutGhost(tilemap, 18, 26);
+    RTPyre_PutGhost(tilemap, 6, 26);
 }
 
 static bool8 RTPyre_Update(struct Task *task)
@@ -6125,7 +6127,8 @@ static bool8 RTPyre_Update(struct Task *task)
     {
         // tweede golf, in rijen die nu boven het beeld zitten en straks onderaan weer binnenkomen
         RTPyre_PutGhost(tilemap, 4, 2);
-        RTPyre_PutGhost(tilemap, 18, 6);
+        RTPyre_PutGhost(tilemap, 16, 5);
+        RTPyre_PutGhost(tilemap, 25, 1);
     }
     SetGpuReg(REG_OFFSET_BG0VOFS, (t * 5 / 2) & 0x1FF);
     SetGpuReg(REG_OFFSET_BG0HOFS, Sin((t * 4) & 0xFF, 6) & 0x1FF);

@@ -214,37 +214,24 @@ import struct
 open(OUT + 'route_cycling.bin', 'wb').write(struct.pack('<%dH' % len(tm), *tm))
 
 # ------------------------------------------------------------------ Mt. Pyre: de ongeidentificeerde ghosts van Lavender Town
-# ghost van 8x8 tiles (64x64) naar de Lavender Town-sprite: gebochelde zwarte gestalte, boze schuine ogen, brede grijns,
-# klauwhandjes met witte vingerlijnen, korrelige grijze aura eromheen; tiles 1-64
-PYRE = pad([(0, 0, 0), (1, 1, 2), (8, 8, 9), (16, 16, 17), (31, 31, 31)])
-from PIL import ImageDraw, ImageFilter
-G = 64
-body = Image.new('L', (G, G), 0)
-d = ImageDraw.Draw(body)
-d.ellipse((11, 3, 53, 43), fill=255)                                    # kop/romp
-d.polygon([(13, 26), (51, 26), (55, 52), (48, 58), (40, 54), (32, 60), (24, 54), (16, 58), (9, 52)], fill=255)  # lijf met slierten
-d.ellipse((3, 30, 23, 50), fill=255)                                    # linkerhand
-d.ellipse((41, 30, 61, 50), fill=255)                                   # rechterhand
-face = Image.new('L', (G, G), 0)
-f = ImageDraw.Draw(face)
-f.polygon([(17, 15), (29, 20), (28, 23), (18, 19)], fill=255)          # linkeroog, schuin naar het midden
-f.polygon([(47, 15), (35, 20), (36, 23), (46, 19)], fill=255)          # rechteroog
-f.chord((21, 20, 43, 36), 10, 170, fill=255)                            # grijns
-f.arc((6, 34, 14, 46), 270, 90, fill=255); f.arc((10, 33, 18, 45), 270, 90, fill=255)   # vingers links
-f.arc((50, 34, 58, 46), 90, 270, fill=255); f.arc((46, 33, 54, 45), 90, 270, fill=255)  # vingers rechts
-near = body.filter(ImageFilter.MaxFilter(5))
-far = body.filter(ImageFilter.MaxFilter(11))
+# de echte ghost-sprite uit Pokemon Red/Blue (pret/pokered, gfx/battle/ghost.png, 48x48, 4 grijstinten), pixel voor pixel:
+# wit buiten de ghost wordt doorzichtig, wit binnenin (ogen, grijns) blijft wit, grijs wordt een paarse aura. tiles 1-36
+PYRE = pad([(0, 0, 0), (1, 1, 2), (13, 5, 19), (22, 10, 28), (31, 31, 31)])
+src = Image.open('graphics/grounded/ghost_pokered.png').convert('L')
+GW, GH = src.size
+outside, todo = set(), [(x, y) for x in range(GW) for y in (0, GH - 1)] + [(x, y) for y in range(GH) for x in (0, GW - 1)]
+while todo:
+    x, y = todo.pop()
+    if (x, y) in outside or not (0 <= x < GW and 0 <= y < GH) or src.getpixel((x, y)) < 200:
+        continue
+    outside.add((x, y))
+    todo += [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
 def ghost(x, y):
-    if face.getpixel((x, y)) and body.getpixel((x, y)):
-        return 4
-    if body.getpixel((x, y)):
-        return 1
-    if near.getpixel((x, y)):
-        return 2 if (x + y) % 2 == 0 else 3
-    if far.getpixel((x, y)):
-        return 3 if (x + y) % 2 == 0 and (x // 2 + y) % 3 else 0
-    return 0
-pyre = blocks(ghost, 8, 8)
+    v = src.getpixel((x, y))
+    if v >= 200:
+        return 0 if (x, y) in outside else 4
+    return 1 if v < 40 else (2 if v < 128 else 3)
+pyre = blocks(ghost, GW // 8, GH // 8)
 save('pyre', pyre, [PYRE])
 
 # ------------------------------------------------------------------ Sky Pillar: razendsnel de lucht in

@@ -6264,12 +6264,30 @@ static void RTShort_Glitch(struct Task *task, s32 t)
     }
 }
 
+// MissingNo flitst een paar keer op steeds een andere plek in beeld: {start, frames, x, y} in tiles
+static const u8 sRTShort_MissingNo[][4] = {{5, 3, 3, 2}, {15, 3, 20, 5}, {24, 4, 10, 1}, {33, 3, 1, 6}, {41, 3, 23, 0}, {47, 3, 13, 4}};
+
+static bool32 RTShort_MissingNo(s32 t, u32 *x, u32 *y)
+{
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sRTShort_MissingNo); i++)
+    {
+        if (t >= sRTShort_MissingNo[i][0] && t < sRTShort_MissingNo[i][0] + sRTShort_MissingNo[i][1])
+        {
+            *x = sRTShort_MissingNo[i][2];
+            *y = sRTShort_MissingNo[i][3];
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 static void Task_RouteShort(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
     u16 *tilemap, *tileset;
     s32 t, k;
-    u32 i;
+    u32 i, mx, my;
 
     switch (task->tState)
     {
@@ -6302,9 +6320,9 @@ static void Task_RouteShort(u8 taskId)
             CpuFill16(0, tilemap, BG_SCREEN_SIZE);
             for (i = 0; i < 3 + (u32)t / 4; i++)
                 tilemap[(Random() % 20) * 32 + Random() % 30] = RT_TILE(4 + Random() % 4);
-            if (t == 6 || t == 7 || t == 14 || t == 15 || t == 22 || t == 31 || t == 32 || t == 38 || t == 44 || t == 45)
+            if (RTShort_MissingNo(t, &mx, &my))
             {
-                RT_PutBlock(tilemap, 12, 3, 8, 6, 14);
+                RT_PutBlock(tilemap, mx, my, 8, 6, 14);
                 BlendPalettes(PALETTES_ALL & ~(1 << 15), 0, RGB_BLACK);
                 break;
             }

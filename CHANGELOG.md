@@ -15691,3 +15691,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.86] - Mt. Pyre: de echte Lavender Town-ghost
 - De ghosts in de Mt. Pyre-transitie zijn nu **pixel voor pixel de originele sprite uit Pokémon Red/Blue** (`graphics/grounded/ghost_pokered.png`, uit pret/pokered `gfx/battle/ghost.png`), met een paarse aura. Er zweven er nu meer tegelijk omhoog.
+
+### [v.0.8.87] - New Mauville: de echte MissingNo
+- De MissingNo in de kortsluit-transitie is nu **cel voor cel Jordi's plaatje** (`graphics/grounded/missingno.png`), inclusief de L-vorm en de lichtroze vlakken. Hij flitst **zes keer** heel kort (3–4 frames) op steeds een andere plek in beeld.

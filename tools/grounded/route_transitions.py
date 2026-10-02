@@ -267,20 +267,22 @@ for k in range(3):
     short.append(tile(lambda x, y, pts=pts: pts.get((x, y), 0)))
 rr = random.Random(135)
 short.append(tile(lambda x, y: rr.choice((0, 0, 0, 5, 2, 1))))
-# MissingNo: L-vorm (linksboven leeg), blokjes in lila, lichtroze, perzik en zwart; tiles 8-91
-SHORT[6:9] = [(16, 13, 19), (30, 28, 30), (29, 21, 15)]
-MW, MH = 6 * 8, 14 * 8
-rr = random.Random(136)
-cells = [[rr.choice((6, 6, 7, 7, 7, 8, 1)) for _ in range(MW // 4)] for _ in range(MH // 4)]
-for cy in range(0, MH // 4, 3):              # typische streepjes met stippen
-    if rr.random() < 0.5:
-        x0 = rr.randint(0, 6)
-        for cx in range(x0, min(MW // 4, x0 + 6)):
-            cells[cy][cx] = 8 if cx % 2 else 1
-def missingno(x, y):
-    if x < 16 and y < 56:
+# MissingNo uit graphics/grounded/missingno.png (Jordi; 60x60 cellen van 6,67 px). MissingNo beslaat cellen x 18-40,
+# y 2-57 (23x56), L-vormig: linksboven (x < 25, y < 26) leeg. Op 2 px per cel = 46x112 in een vak van 6x14 tiles.
+# Kleuren: lila, lichtroze (het wit binnen de vorm), perzik, zwart; tiles 8-91
+SHORT[6:9] = [(16, 14, 19), (31, 29, 31), (30, 22, 17)]
+mn = Image.open('graphics/grounded/missingno.png').convert('RGB')
+CELL = mn.size[0] / 60.0
+MNCOL = {(128, 112, 152): 6, (240, 176, 136): 8, (24, 16, 16): 1, (255, 255, 255): 7}
+def mncell(i, j):
+    if i < 7 and j < 24:
         return 0
-    return cells[y // 4][x // 4]
+    return MNCOL.get(mn.getpixel((int((18 + i + 0.5) * CELL), int((2 + j + 0.5) * CELL))), 7)
+def missingno(x, y):
+    i, j = (x - 1) // 2, y // 2
+    if not (0 <= i < 23 and 0 <= j < 56):
+        return 0
+    return mncell(i, j)
 short += blocks(missingno, 6, 14)
 save('short', short, [SHORT])
 

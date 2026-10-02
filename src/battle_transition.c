@@ -122,6 +122,8 @@ static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
+static void Task_AquaMagma(u8); // Project Grounded
+static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
 static bool8 Regieleki_Init(struct Task *);
 static void Task_Groudon(u8);
@@ -342,6 +344,8 @@ static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deo
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
 static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
 static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
+static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
+static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
 static const u16 sRayquaza_Palette[] = INCBIN_U16("graphics/battle_transitions/rayquaza.gbapal");
@@ -410,6 +414,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_REGIELEKI] = Task_Regieleki, // Project Grounded
     [B_TRANSITION_DEOXYS] = Task_Deoxys, // Project Grounded
     [B_TRANSITION_BIRCH] = Task_Birch, // Project Grounded
+    [B_TRANSITION_AQUA_MAGMA] = Task_AquaMagma, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -478,6 +483,17 @@ static const TransitionStateFunc sRegice_Funcs[] =
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+// Project Grounded: Aqua- en Magma-logo naast elkaar (Archie + Maxie, Sootopolis)
+static const TransitionStateFunc sAquaMagma_Funcs[] =
+{
+    AquaMagma_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    FramesCountdown,
     PatternWeave_CircularMask
 };
 
@@ -1396,6 +1412,11 @@ static void Task_Regirock(u8 taskId)
     while (sRegirock_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_AquaMagma(u8 taskId)
+{
+    while (sAquaMagma_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void Task_Regidrago(u8 taskId)
 {
     while (sRegidrago_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1493,6 +1514,12 @@ static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSi
     CpuCopy16(tilemap_, tilemap, 0x500);
     SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
     task->tState++;
+}
+
+static bool8 AquaMagma_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sAquaMagma_Tileset, sizeof(sAquaMagma_Tileset), sAquaMagma_Tilemap, sEvilTeam_Palette);
+    return FALSE;
 }
 
 static bool8 Regidrago_Init(struct Task *task)

@@ -1789,6 +1789,23 @@ u8 AnimateBallOpenParticles(u8 x, u8 y, u8 priority, u8 subpriority, u8 ballId)
     return taskId;
 }
 
+// Project Grounded: in een multi battle gaan vier ballen tegelijk open; zonder deze rem konden de partikels
+// alle 64 sprites opmaken, waarna de Pokemon zelf geen sprite kreeg en het gevecht bleef hangen.
+#define BALL_PARTICLE_SPRITE_RESERVE 8
+static u8 CreateBallParticleSprite(u32 ballId, s16 x, s16 y, u8 subpriority)
+{
+    u32 i, freeSprites = 0;
+
+    for (i = 0; i < MAX_SPRITES && freeSprites < BALL_PARTICLE_SPRITE_RESERVE; i++)
+    {
+        if (!gSprites[i].inUse)
+            freeSprites++;
+    }
+    if (freeSprites < BALL_PARTICLE_SPRITE_RESERVE)
+        return MAX_SPRITES;
+    return CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+}
+
 static void IncrBallParticleCount(void)
 {
     if (gMain.inBattle)
@@ -1811,7 +1828,7 @@ static void PokeBallOpenParticleAnimation(u8 taskId)
         priority = gTasks[taskId].data[3];
         subpriority = gTasks[taskId].data[4];
 
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -1870,7 +1887,7 @@ static void TimerBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 8; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -1904,7 +1921,7 @@ static void DiveBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 8; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -1939,7 +1956,7 @@ static void SafariBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 8; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -1974,7 +1991,7 @@ static void UltraBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 10; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -2015,7 +2032,7 @@ static void GreatBallOpenParticleAnimation(u8 taskId)
 
         for (i = 0; i < 8; i++)
         {
-            spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+            spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
             if (spriteId != MAX_SPRITES)
             {
                 IncrBallParticleCount();
@@ -2065,7 +2082,7 @@ static void RepeatBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 12; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();
@@ -2109,7 +2126,7 @@ static void MasterBallOpenParticleAnimation(u8 taskId)
     {
         for (i = 0; i < 8; i++)
         {
-            spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+            spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
             if (spriteId != MAX_SPRITES)
             {
                 IncrBallParticleCount();
@@ -2153,7 +2170,7 @@ static void PremierBallOpenParticleAnimation(u8 taskId)
 
     for (i = 0; i < 8; i++)
     {
-        spriteId = CreateSprite(&sBallParticleSpriteTemplates[ballId], x, y, subpriority);
+        spriteId = CreateBallParticleSprite(ballId, x, y, subpriority);
         if (spriteId != MAX_SPRITES)
         {
             IncrBallParticleCount();

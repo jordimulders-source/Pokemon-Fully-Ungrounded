@@ -33,6 +33,8 @@ SootopolisCity_EventScript_LockGymDoor::
 
 SootopolisCity_OnTransition:
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
+	setflag FLAG_HIDE_SOOTOPOLIS_KECCLES
+	setflag FLAG_HIDE_SOOTOPOLIS_TROPIUS
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
@@ -119,6 +121,15 @@ SootopolisCity_EventScript_SetOutsideGymObjPos::
 	call_if_eq VAR_SOOTOPOLIS_WALLACE_STATE, 0, SootopolisCity_EventScript_SetWallaceMiddle
 	call_if_eq VAR_SOOTOPOLIS_WALLACE_STATE, 1, SootopolisCity_EventScript_SetWallaceRight
 	call_if_eq VAR_SOOTOPOLIS_WALLACE_STATE, 2, SootopolisCity_EventScript_SetWallaceLeft
+	call_if_eq VAR_SOOTOPOLIS_KECCLES_STATE, 1, SootopolisCity_EventScript_SetKecclesSceneObjPos
+	return
+
+@ Project Grounded: Maxie en Archie tegenover de speler voor de scène met Keccles
+SootopolisCity_EventScript_SetKecclesSceneObjPos::
+	setobjectxyperm LOCALID_SOOTOPOLIS_MAXIE, 34, 34
+	setobjectxyperm LOCALID_SOOTOPOLIS_ARCHIE, 34, 35
+	setobjectmovementtype LOCALID_SOOTOPOLIS_MAXIE, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_SOOTOPOLIS_ARCHIE, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 SootopolisCity_EventScript_SetWallaceMiddle::
@@ -164,6 +175,7 @@ SootopolisCity_OnResume:
 
 SootopolisCity_OnFrame:
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_StartLegendariesScene
+	map_script_2 VAR_SOOTOPOLIS_KECCLES_STATE, 1, SootopolisCity_EventScript_KecclesScene
 	map_script_2 VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_StartRayquazaScene
 	.2byte 0
 
@@ -515,7 +527,8 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	warpwhitefade MAP_SOOTOPOLIS_CITY, 43, 32
+	setvar VAR_SOOTOPOLIS_KECCLES_STATE, 1  @ Project Grounded: Archie, Maxie en Keccles
+	warpwhitefade MAP_SOOTOPOLIS_CITY, 31, 35
 	waitstate
 	end
 
@@ -568,7 +581,8 @@ SootopolisCity_EventScript_RayquazaSceneFromDive::
 	fadenewbgm MUS_SURF
 	delay 120
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	warpwhitefade MAP_SOOTOPOLIS_CITY, 29, 53
+	setvar VAR_SOOTOPOLIS_KECCLES_STATE, 1  @ Project Grounded: Archie, Maxie en Keccles
+	warpwhitefade MAP_SOOTOPOLIS_CITY, 31, 35
 	waitstate
 	end
 
@@ -1630,8 +1644,8 @@ SootopolisCity_Text_SoThatsRayquaza:
 
 SootopolisCity_Text_MaxieArchieLeft:
 	.string "STEVEN: MAXIE and ARCHIE are gone.\n"
-	.string "Maybe they went to MT. PYRE to return\l"
-	.string "the ORBS. Or to start a band.$"
+	.string "Last I saw, they were sharing one\l"
+	.string "bus ticket. And one sandwich.$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar:
 	.string "WALLACE: Oh? {PLAYER}{KUN}?\p"
@@ -1666,3 +1680,308 @@ SootopolisCity_Text_DazzledByMentor:
 	.string "WALLACE: Come to my GYM whenever you\n"
 	.string "like. I've uncorked something special\l"
 	.string "for you.$"
+
+@ ---------------------------------------------------------------- Project Grounded
+@ Na Rayquaza: Archie en Maxie hebben geen spijt, ze zijn woedend. Keccles vliegt in op zijn Tropius
+@ en vecht met je mee (multi battle). Daarna dropen ze af, zonder eer en zonder les.
+SootopolisCity_EventScript_KecclesScene::
+	lockall
+	special StorePlayerCoordsInVars
+	goto_if_ne VAR_0x8004, 31, SootopolisCity_EventScript_KecclesSceneReposition
+	goto_if_ne VAR_0x8005, 35, SootopolisCity_EventScript_KecclesSceneReposition
+	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject LOCALID_SOOTOPOLIS_MAXIE, DIR_WEST
+	turnobject LOCALID_SOOTOPOLIS_ARCHIE, DIR_WEST
+	delay 30
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	applymovement LOCALID_SOOTOPOLIS_MAXIE, SootopolisCity_Movement_StompLeft
+	applymovement LOCALID_SOOTOPOLIS_ARCHIE, SootopolisCity_Movement_StompLeft
+	waitmovement 0
+	msgbox SootopolisCity_Text_MaxieFurious, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_ArchieFurious, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_MaxieBlamesPlayer, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_ArchieBlamesPlayer, MSGBOX_DEFAULT
+	closemessage
+	@ Keccles komt aanvliegen op zijn Tropius
+	clearflag FLAG_HIDE_SOOTOPOLIS_TROPIUS
+	addobject LOCALID_SOOTOPOLIS_TROPIUS
+	playse SE_M_FLY
+	applymovement LOCALID_SOOTOPOLIS_TROPIUS, SootopolisCity_Movement_TropiusFlyIn
+	waitmovement 0
+	waitse
+	clearflag FLAG_HIDE_SOOTOPOLIS_KECCLES
+	addobject LOCALID_SOOTOPOLIS_KECCLES
+	applymovement LOCALID_SOOTOPOLIS_KECCLES, SootopolisCity_Movement_KecclesHopOff
+	waitmovement 0
+	playse SE_BALL_OPEN
+	removeobject LOCALID_SOOTOPOLIS_TROPIUS
+	applymovement LOCALID_SOOTOPOLIS_KECCLES, SootopolisCity_Movement_KecclesJoinPlayer
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox SootopolisCity_Text_KecclesArrives, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SOOTOPOLIS_KECCLES, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox SootopolisCity_Text_KecclesChanneledReptile, MSGBOX_DEFAULT
+	playse SE_PIN
+	applymovement LOCALID_SOOTOPOLIS_MAXIE, Common_Movement_ExclamationMark
+	applymovement LOCALID_SOOTOPOLIS_ARCHIE, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SootopolisCity_Text_MaxieInsultsKeccles, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_ArchieInsultsKeccles, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_ArchieInsultsPlayer, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_MaxieInsultsPlayer, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_KecclesLetsBattle, MSGBOX_DEFAULT
+	closemessage
+SootopolisCity_EventScript_ChooseMonsForKecclesTag::
+	special SavePlayerParty
+	fadescreen FADE_TO_BLACK
+	special ChooseHalfPartyForBattle
+	waitstate
+	goto_if_ne VAR_RESULT, 0, SootopolisCity_EventScript_DoKecclesTagBattle
+	special LoadPlayerParty
+	goto SootopolisCity_EventScript_ChooseMonsForKecclesTag
+
+SootopolisCity_EventScript_DoKecclesTagBattle::
+	multi_2_vs_2 TRAINER_MAXIE_SOOTOPOLIS, SootopolisCity_Text_MaxieDefeat, TRAINER_ARCHIE_SOOTOPOLIS, SootopolisCity_Text_ArchieDefeat, PARTNER_KECCLES
+	switch VAR_RESULT
+	case 1, SootopolisCity_EventScript_DefeatedArchieMaxieWithKeccles
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
+
+SootopolisCity_EventScript_DefeatedArchieMaxieWithKeccles::
+	msgbox SootopolisCity_Text_MaxiePathetic, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_ArchiePathetic, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SOOTOPOLIS_MAXIE, SootopolisCity_Movement_MaxieSlinkOff
+	applymovement LOCALID_SOOTOPOLIS_ARCHIE, SootopolisCity_Movement_ArchieSlinkOff
+	waitmovement 0
+	msgbox SootopolisCity_Text_TheySlunkAway, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_SOOTOPOLIS_MAXIE
+	removeobject LOCALID_SOOTOPOLIS_ARCHIE
+	fadescreenswapbuffers FADE_FROM_BLACK
+	setflag FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE
+	setflag FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE
+	setflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
+	setflag FLAG_MET_MAXIE_SOOTOPOLIS
+	setflag FLAG_MET_ARCHIE_SOOTOPOLIS
+	@ geen berouwscène op Mt. Pyre: ze brengen de bollen niet terug
+	delay 30
+	applymovement LOCALID_SOOTOPOLIS_KECCLES, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox SootopolisCity_Text_KecclesThanks, MSGBOX_DEFAULT
+	closemessage
+	@ Keccles vliegt weer weg op zijn Tropius
+	playse SE_BALL_OPEN
+	setobjectxyperm LOCALID_SOOTOPOLIS_TROPIUS, 32, 33
+	clearflag FLAG_HIDE_SOOTOPOLIS_TROPIUS
+	addobject LOCALID_SOOTOPOLIS_TROPIUS
+	delay 20
+	applymovement LOCALID_SOOTOPOLIS_KECCLES, SootopolisCity_Movement_KecclesHopOn
+	waitmovement 0
+	removeobject LOCALID_SOOTOPOLIS_KECCLES
+	playse SE_M_FLY
+	applymovement LOCALID_SOOTOPOLIS_TROPIUS, SootopolisCity_Movement_TropiusFlyAway
+	waitmovement 0
+	removeobject LOCALID_SOOTOPOLIS_TROPIUS
+	setflag FLAG_HIDE_SOOTOPOLIS_KECCLES
+	setflag FLAG_HIDE_SOOTOPOLIS_TROPIUS
+	setvar VAR_SOOTOPOLIS_KECCLES_STATE, 2
+	fadedefaultbgm
+	releaseall
+	end
+
+@ Na een verloren gevecht (of na Rayquaza van elders): eerst netjes op de plek zetten
+SootopolisCity_EventScript_KecclesSceneReposition::
+	warpsilent MAP_SOOTOPOLIS_CITY, 31, 35
+	waitstate
+	releaseall
+	end
+
+SootopolisCity_Movement_StompLeft:
+	walk_in_place_faster_left
+	walk_in_place_faster_left
+	step_end
+
+SootopolisCity_Movement_TropiusFlyIn:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_in_place_faster_down
+	step_end
+
+SootopolisCity_Movement_KecclesHopOff:
+	jump_in_place_down
+	step_end
+
+SootopolisCity_Movement_KecclesJoinPlayer:
+	walk_left
+	walk_in_place_faster_down
+	step_end
+
+SootopolisCity_Movement_KecclesHopOn:
+	walk_right
+	jump_in_place_up
+	step_end
+
+SootopolisCity_Movement_TropiusFlyAway:
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+SootopolisCity_Movement_MaxieSlinkOff:
+	face_right
+	delay_16
+	walk_slow_up
+	step_end
+
+SootopolisCity_Movement_ArchieSlinkOff:
+	face_right
+	delay_16
+	walk_slow_down
+	step_end
+
+SootopolisCity_Text_TheySlunkAway:
+	.string "MAXIE and ARCHIE shuffle off,\n"
+	.string "arguing about who pays for the bus.$"
+
+SootopolisCity_Text_MaxieFurious:
+	.string "MAXIE: …Do you know what that\n"
+	.string "dragon just did?\p"
+	.string "It calmed GROUDON. Calmed it!\n"
+	.string "Like a scented candle!\p"
+	.string "There goes my volcano-roasted salsa\n"
+	.string "empire. Fifteen years of planning.\l"
+	.string "The jars were already printed!$"
+
+SootopolisCity_Text_ArchieFurious:
+	.string "ARCHIE: Jars?! I had a FLEET of\n"
+	.string "bottling ships waiting offshore!\p"
+	.string "PRIMORDIAL SEA WATER, premium!\n"
+	.string "Now it's just… sea. Regular sea.\l"
+	.string "You can't sell regular sea!$"
+
+SootopolisCity_Text_MaxieBlamesPlayer:
+	.string "MAXIE: And who climbed that pillar\n"
+	.string "and rang the big green doorbell?\p"
+	.string "YOU. {PLAYER}. The intern of\n"
+	.string "the apocalypse.$"
+
+SootopolisCity_Text_ArchieBlamesPlayer:
+	.string "ARCHIE: Nobody asked you to call\n"
+	.string "a sky noodle!\p"
+	.string "We're going to sue you. And then\n"
+	.string "we're going to beat you up.\l"
+	.string "Not necessarily in that order!$"
+
+SootopolisCity_Text_KecclesArrives:
+	.string "KECCLES: Hello, {PLAYER}.\n"
+	.string "Sorry I'm late. I was flying\l"
+	.string "in camouflage. Over the sea.\p"
+	.string "I matched the water so well\n"
+	.string "I nearly lost myself.$"
+
+SootopolisCity_Text_KecclesChanneledReptile:
+	.string "KECCLES: Gentlemen. Allow me\n"
+	.string "to confess something.\p"
+	.string "I sat on my rock and watched\n"
+	.string "the rain drown the fields and the\l"
+	.string "sun scorch the reefs.\p"
+	.string "And I asked myself: what is a\n"
+	.string "chameleon, if not a creature that\l"
+	.string "becomes whatever surrounds it?\p"
+	.string "But I could not become this.\n"
+	.string "The suffering of the POKéMON\l"
+	.string "was too loud.\p"
+	.string "So I meditated. Three days.\n"
+	.string "No food. Some snacks.\p"
+	.string "And I channeled the ultimate\n"
+	.string "green reptile.\p"
+	.string "You are welcome, Hoenn.$"
+
+SootopolisCity_Text_MaxieInsultsKeccles:
+	.string "MAXIE: YOU summoned RAYQUAZA?\n"
+	.string "You're a lizard that forgot\l"
+	.string "which colour it was supposed to be!$"
+
+SootopolisCity_Text_ArchieInsultsKeccles:
+	.string "ARCHIE: A discount handbag\n"
+	.string "with a philosophy degree!\p"
+	.string "I've seen more spine in\n"
+	.string "a jellyfish buffet!$"
+
+SootopolisCity_Text_ArchieInsultsPlayer:
+	.string "ARCHIE: And YOU, {PLAYER}!\n"
+	.string "You've got the charisma of a\l"
+	.string "wet REPEL and the haircut to\l"
+	.string "match!$"
+
+SootopolisCity_Text_MaxieInsultsPlayer:
+	.string "MAXIE: A walking participation\n"
+	.string "trophy. A loading screen\l"
+	.string "with legs.\p"
+	.string "ARCHIE! Truce. Just this once.\n"
+	.string "Let's flatten these two!$"
+
+SootopolisCity_Text_KecclesLetsBattle:
+	.string "KECCLES: Anger is just fear\n"
+	.string "wearing a bigger coat.\p"
+	.string "{PLAYER}, shall we take their\n"
+	.string "coats off?$"
+
+SootopolisCity_Text_MaxieDefeat:
+	.string "MAXIE: This is the worst business\n"
+	.string "quarter of my life.$"
+
+SootopolisCity_Text_ArchieDefeat:
+	.string "ARCHIE: My ships… my bottles…\n"
+	.string "my sea…$"
+
+SootopolisCity_Text_MaxiePathetic:
+	.string "MAXIE: This isn't over. It's…\n"
+	.string "paused. Strategically.\p"
+	.string "I'm going to go home and lie\n"
+	.string "face down on the carpet.$"
+
+SootopolisCity_Text_ArchiePathetic:
+	.string "ARCHIE: Yeah, well… you smell!\n"
+	.string "Both of you!\p"
+	.string "MAXIE, can you lend me bus fare?\n"
+	.string "My ships got repossessed.$"
+
+SootopolisCity_Text_KecclesThanks:
+	.string "KECCLES: Thank you, {PLAYER}.\n"
+	.string "Truly.\p"
+	.string "I set out to find the meaning of\n"
+	.string "life. I have not found it.\l"
+	.string "I suspect I never will.\p"
+	.string "But I have found two smaller\n"
+	.string "things: health and happiness.\l"
+	.string "Those will be my goals now.\p"
+	.string "The POKéMON LEAGUE? No. That\n"
+	.string "mountain is yours to climb.\p"
+	.string "I only want to keep growing\n"
+	.string "stronger. Quietly. In disguise.\p"
+	.string "Although… I hear rumours of a\n"
+	.string "place across the sea. A frontier\l"
+	.string "built for battle.\p"
+	.string "Rules that bend, formats that\n"
+	.string "twist… A strategist could really\l"
+	.string "go wild there.\p"
+	.string "Perhaps we will meet again,\n"
+	.string "{PLAYER}. You may not see me.\l"
+	.string "But I will be there.$"

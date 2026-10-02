@@ -76,8 +76,8 @@
 #define FLAG_HIDE_ROUTE111_HEATRAN_ROCKS    0x3E // Project Grounded: Heatran heeft de stenen boven Mauville weggebeukt
 #define FLAG_HIDE_ROUTE111_HEATRAN    0x3F // Project Grounded: Heatran (alleen zichtbaar tijdens de cutscene)
 #define FLAG_CAUGHT_MAUVILLE_ROTOM 0x40
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_HIDE_SOOTOPOLIS_KECCLES 0x41 // Project Grounded
+#define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag

@@ -19,11 +19,9 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 10. ~~Laser Beam / Machine Learning / Shadow Siphon~~ (gedaan, v0.8.51–0.8.53)
 
 ## Volgende ronde (Jordi, 2 okt 2026), in deze volgorde
-1. **Hoennian Grimer/Muk:** poepkleurig en iets meer poepvormig. Eerst testsprites/screens ter goedkeuring; daarna Poison/Ground en Birch krijgt ze ergens in de game.
-2. **Gevechtstransities Regidrago** (blauwe stippen in zijn gezichtspatroon) en **Regieleki** (roze/oranje stippen), zoals de andere Regi's.
-3. **Deoxys-transitie:** DNA-animaties gebruiken als die bestaan, anders "super spacy".
-4. **Birch-transitie:** schermtransitie (geen slide), poepthema, bruin en heel komisch.
-5. **Na Rayquaza:** Archie en Maxie hebben géén spijt en ontbinden niet; woedend dat hun plannen mislukten, geven de speler de schuld. Keccles vliegt in (Fly-animatie): hij kon het lijden niet aanzien en channelde "de ultieme groene reptiel". Archie/Maxie beledigen kameleon en speler creatief. Dubbel: Archie + Maxie vs speler + Keccles (Tropius, Helioptile, Serperior als ace; flink pittig; Keccles krijgt hyperintelligente AI). Transitie zoals Aqua/Magma maar met beide logo's naast elkaar. Daarna dropen ze zielig af (geen eer, niets geleerd). Keccles bedankt de speler: zin van het leven niet gevonden, gezondheid en geluk zijn zijn doelen, de League is aan jou, hij wil sterker worden; eerste hint naar de Battle Frontier.
+1. **Hoennian Grimer/Muk:** kleur goedgekeurd. Nog: de krul moet meer onderdeel van het hoofd zijn, ook op de backsprite; shiny in bedorven poepkleur. Daarna Poison/Ground en Birch krijgt ze ergens in de game.
+2. ~~Transities Regidrago/Regieleki/Deoxys/Birch~~ (gedaan, v0.8.62–0.8.65)
+3. ~~Sootopolis na Rayquaza met Keccles~~ (gedaan, v0.8.66). Open: Archie en Maxie eventueel terug in de post-game.
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** (alles afgerond)

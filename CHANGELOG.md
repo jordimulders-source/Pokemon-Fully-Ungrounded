@@ -15569,3 +15569,17 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Birch-transitie:** de drol-emoji (plop, stuiteren, stank) is eruit op verzoek van Jordi; alleen de bruine prut die over het beeld druipt blijft, daarna fade naar zwart. Alleen bij gevechten tegen Birch.
 - **Regieleki-transitie:** het stippatroon is nu symmetrisch (de linkerkant van de referentie gespiegeld rond de middelste stip); de referentie stond scheef.
 - Jordi: Regidrago en Deoxys goedgekeurd.
+
+### [v.0.8.66] - Sootopolis na Rayquaza: Keccles, Archie en Maxie
+- **Nieuwe scène na Rayquaza** (`SootopolisCity_EventScript_KecclesScene`, start automatisch via `VAR_SOOTOPOLIS_KECCLES_STATE` = 1 na de Rayquaza-scène). De speler staat op het eiland voor de gym, tegenover Maxie en Archie. Ze tonen **geen berouw** en heffen niets op: ze zijn woedend dat hun zakenplannen (Maxie's salsa uit de vulkaan, Archie's flessen "PRIMORDIAL SEA WATER") mislukt zijn en geven de speler de schuld van Rayquaza.
+- **Keccles vliegt in op zijn Tropius**, stapt af en legt in zijn filosofische stijl uit dat hij het lijden van de Pokémon niet kon aanzien en "the ultimate green reptile" channelde. Archie en Maxie beledigen de kameleon en de speler (placeholders).
+- **Multi battle: Maxie + Archie tegen speler + Keccles** (je kiest 3 Pokémon, zoals bij Wally op Mt. Chimney). Weerneutraal en zonder dubbele items, alle Pokémon in gewone Poké Balls:
+  - **Maxie** (`TRAINER_MAXIE_SOOTOPOLIS`): Scovillain lv 54, Claydol lv 54 (Light Clay, schermen), Camerupt lv 55 (Solid Rock).
+  - **Archie** (`TRAINER_ARCHIE_SOOTOPOLIS`): Overqwil lv 54 (Intimidate), Sharpedo lv 54 (Speed Boost, Life Orb), Archaludon lv 55.
+  - **Keccles** (`PARTNER_KECCLES`): Tropius lv 54 (Tailwind, Wide Guard), Heliolisk lv 54 (Dry Skin, Electroweb), **Serperior lv 56 als ace** (Contrary, Leaf Storm). Zijn AI is "hyperintelligent": omniscient, voorspelt switches en moves, slimme wissels. Heliolisk in plaats van Helioptile, omdat Keccles hem al geëvolueerd had.
+  - Keccles heeft een eigen rugsprite (de Kecleon-backsprite, `TRAINER_BACK_PIC_KECLEON`).
+- **Gevechtstransitie** `B_TRANSITION_AQUA_MAGMA`: het Aqua- en het Magma-logo naast elkaar in het vanilla weef-effect (`tools/grounded/aquamagma_transition.py`).
+- Na het gevecht **druipen Archie en Maxie zielig af** ("arguing about who pays for the bus"). Keccles bedankt de speler: geen zin van het leven gevonden, gezondheid en geluk als doelen, de League is aan jou, hij wil sterker worden, en een eerste hint naar de **Battle Frontier**. Daarna vliegt hij weg op Tropius.
+- De berouwscène op Mt. Pyre (bollen terugbrengen) wordt **overgeslagen**: ze brengen de bollen niet terug. Steven zegt nu dat ze samen één buskaartje delen.
+- **Bugfix (alle multi battles):** in een multi battle gaan vier ballen tegelijk open; de bal-partikels konden alle 64 sprites opmaken, waarna de Pokémon van de speler geen sprite kreeg en het gevecht bleef hangen. Partikels worden nu overgeslagen zodra er minder dan 8 sprites vrij zijn (`CreateBallParticleSprite` in `src/battle_anim_throw.c`).
+- In de emulator getest: scène, transitie, gevecht en afloop.

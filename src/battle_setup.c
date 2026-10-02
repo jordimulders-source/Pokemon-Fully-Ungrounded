@@ -798,6 +798,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_2)
         return B_TRANSITION_BIRCH;
 
+    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
+    if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
+        return B_TRANSITION_AQUA_MAGMA;
+
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 

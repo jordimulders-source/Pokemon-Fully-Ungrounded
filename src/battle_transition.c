@@ -118,6 +118,10 @@ static void Task_Registeel(u8);
 static void Task_Regirock(u8);
 static void Task_Kyogre(u8);
 static void Task_Aurora(u8); // Project Grounded
+static void Task_Regidrago(u8); // Project Grounded
+static void Task_Regieleki(u8); // Project Grounded
+static bool8 Regidrago_Init(struct Task *);
+static bool8 Regieleki_Init(struct Task *);
 static void Task_Groudon(u8);
 static void Task_Rayquaza(u8);
 static void Task_ShredSplit(u8);
@@ -325,6 +329,12 @@ static const u16 sKyogre2_Palette[] = INCBIN_U16("graphics/battle_transitions/ky
 static const u16 sAurora_Tileset[] = INCBIN_U16("graphics/battle_transitions/aurora.4bpp");
 static const u16 sAurora_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aurora.bin");
 static const u16 sAurora_Palette[] = INCBIN_U16("graphics/battle_transitions/aurora.gbapal");
+static const u16 sRegidrago_Tileset[] = INCBIN_U16("graphics/battle_transitions/regidrago.4bpp");
+static const u16 sRegidrago_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regidrago.bin");
+static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/regidrago.gbapal");
+static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
+static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
+static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
 static const u16 sRayquaza_Palette[] = INCBIN_U16("graphics/battle_transitions/rayquaza.gbapal");
@@ -389,6 +399,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
     [B_TRANSITION_AURORA] = Task_Aurora, // Project Grounded
+    [B_TRANSITION_REGIDRAGO] = Task_Regidrago, // Project Grounded
+    [B_TRANSITION_REGIELEKI] = Task_Regieleki, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -454,6 +466,25 @@ static const TransitionStateFunc sRegice_Funcs[] =
 {
     Regi_Init,
     Regice_SetGfx,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+// Project Grounded: Regidrago en Regieleki (eigen stippatroon, zelfde weef-effect)
+static const TransitionStateFunc sRegidrago_Funcs[] =
+{
+    Regidrago_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+static const TransitionStateFunc sRegieleki_Funcs[] =
+{
+    Regieleki_Init,
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
@@ -1356,6 +1387,16 @@ static void Task_Regirock(u8 taskId)
     while (sRegirock_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_Regidrago(u8 taskId)
+{
+    while (sRegidrago_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+static void Task_Regieleki(u8 taskId)
+{
+    while (sRegieleki_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void Task_Kyogre(u8 taskId)
 {
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1427,6 +1468,33 @@ static bool8 Regi_Init(struct Task *task)
     CpuCopy16(sRegis_Tileset, tileset, 0x2000);
 
     task->tState++;
+    return FALSE;
+}
+
+static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
+{
+    u16 *tilemap, *tileset;
+
+    task->tEndDelay = 60;
+    InitPatternWeaveTransition(task);
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(tileset_, tileset, tilesetSize);
+    LoadPalette(palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    CpuCopy16(tilemap_, tilemap, 0x500);
+    SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
+    task->tState++;
+}
+
+static bool8 Regidrago_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegidrago_Tileset, sizeof(sRegidrago_Tileset), sRegidrago_Tilemap, sRegidrago_Palette);
+    return FALSE;
+}
+
+static bool8 Regieleki_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
     return FALSE;
 }
 

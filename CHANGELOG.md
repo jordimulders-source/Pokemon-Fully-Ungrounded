@@ -15551,3 +15551,8 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - Brads **Poochyena "Barkley"** (lv 34, bewust nooit geëvolueerd): Strong Jaw, Adamant, perfecte IV's, 252 Atk/252 Spe, Play Rough, Foul Play, Psychic Fangs, Hone Claws. Slimme AI.
 - Ty heeft bij dit eerste gevecht maar één Pokémon: **Magnemite** lv 25 (Thunder Wave, Flash Cannon, Spark, Light Screen). Jordi's oude zes-Pokémon-team van `TRAINER_GABBY_AND_TY_1` is daarvoor vervangen; de latere Gabby & Ty-teams (2–6) zijn ongewijzigd.
 - Met maar één bruikbare Pokémon weigert Brad ("this is a DOUBLE feature"). Nieuwe trainer `TRAINER_LOCAL_CELEBRITY` (881), nieuwe special `GetMonsStateToDoubles`. Teksten zijn placeholders. In de emulator getest (gevecht, verliestekst, interview).
+
+### [v.0.8.62] - Gevechtstransities Regidrago en Regieleki
+- **Regidrago** en **Regieleki** krijgen een eigen gevechtstransitie zoals de andere Regi's (zelfde weef-effect en cirkelmasker): Regidrago met **blauwe stippen** in zijn vorkpatroon, Regieleki met **roze/oranje stippen** in zijn glimlachpatroon. Patronen overgenomen van de referentiebeelden van Jordi.
+- Graphics gegenereerd met `tools/grounded/regi_transition.py` (stip uit de vanilla Regi-tiles, op een 240×160-beeld gezet en in tiles ontdubbeld): `graphics/battle_transitions/regidrago.*` en `regieleki.*`.
+- Werkt via `special StartRegiBattle` (zoals de andere Regi's), dus zodra ze in de wereld staan. In de emulator getest.

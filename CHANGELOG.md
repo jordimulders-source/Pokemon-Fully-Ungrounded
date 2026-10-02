@@ -15602,3 +15602,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.70] - Debug: Fly-flags ook voor Ashfrost
 - De debugoptie **Toggle Fly Flags** zette Ashfrost niet aan (de vaste lijst `sLocationFlags` in `src/debug.c` kende hem niet), waardoor het Ashfrost-icoon grijs bleef. Nu staat `FLAG_VISITED_ASHFROST_TOWN` in de lijst. Normaal vliegen werkte al: de flag wordt gezet zodra je Ashfrost binnenloopt. In de emulator gecontroleerd (icoon vliegbaar).
+
+### [v.0.8.71] - Pc-infovak: tekst niet meer afgekapt
+- In het infovak van de pc (nature en ability, v0.8.x) viel de onderkant van de regels weg: elke tekstregel tekende zijn eigen achtergrond en wiste zo de onderkant van de regel erboven ("Jolly", "Compound Eyes"). De regels worden nu met een transparante achtergrond getekend (`PrintDisplayMonInfo` in `src/pokemon_storage_system.c`). In de emulator gecontroleerd.

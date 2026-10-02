@@ -3992,23 +3992,25 @@ static void PrintDisplayMonInfo(void)
     FillWindowPixelBuffer(WIN_DISPLAY_INFO, PIXEL_FILL(1));
     if (sStorage->boxOption != OPTION_MOVE_ITEMS && sStorage->displayMonNatureText[0] != EOS)
     {
-        // Project Grounded: naam, (soort +) geslacht/level, nature, ability, item
+        // Project Grounded: naam, (soort +) geslacht/level, nature, ability, item.
+        // Transparante tekstachtergrond: anders wist elke regel de onderkant van de regel erboven.
+        static const u8 sDisplayInfoColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
         u32 width = WindowWidthPx(WIN_DISPLAY_INFO) - 6;
-        AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNameText, FONT_NORMAL, 0, width), sStorage->displayMonNameText, 6, 0, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNameText, FONT_NORMAL, 0, width), 6, 0, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonNameText);
         if (sStorage->displayMonNicknamed)
         {
             u8 line[72];
             StringCopy(line, sStorage->displayMonSpeciesName);
             StringAppend(line, sStorage->displayMonGenderLvlText);
-            AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(line, FONT_SHORT, 0, width), line, 6, 13, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(line, FONT_SHORT, 0, width), 6, 13, sDisplayInfoColors, TEXT_SKIP_DRAW, line);
         }
         else
         {
-            AddTextPrinterParameterized(WIN_DISPLAY_INFO, FONT_SHORT, sStorage->displayMonGenderLvlText, 6, 13, TEXT_SKIP_DRAW, NULL);
+            AddTextPrinterParameterized3(WIN_DISPLAY_INFO, FONT_SHORT, 6, 13, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonGenderLvlText);
         }
-        AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNatureText, FONT_SMALL, 0, width), sStorage->displayMonNatureText, 6, 24, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonAbilityText, FONT_SMALL, 0, width), sStorage->displayMonAbilityText, 6, 34, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonItemName, FONT_SMALL, 0, width), sStorage->displayMonItemName, 6, 44, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNatureText, FONT_SMALL, 0, width), 6, 24, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonNatureText);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonAbilityText, FONT_SMALL, 0, width), 6, 34, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonAbilityText);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonItemName, FONT_SMALL, 0, width), 6, 44, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonItemName);
     }
     else if (sStorage->boxOption != OPTION_MOVE_ITEMS)
     {

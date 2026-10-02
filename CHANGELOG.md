@@ -15596,3 +15596,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.68] - Hoenn-Grimer als cadeau van Birch
 - Na het gevecht in Verdanturf geeft Birch de speler **één Grimer (Hoenn)**, lv 22 ("Still warm. Don't ask why."). Bij een vol team gaat hij naar de pc; is ook de pc vol, dan kun je later terugkomen (`FLAG_RECEIVED_HOENN_GRIMER`, 0x44). Verder zijn de Hoenn-vormen voorlopig nergens te vangen. In de emulator getest.
+
+### [v.0.8.69] - Galar-Zigzagoon in Littleroot
+- De Zigzagoon naast de man met de Zigzagoon-gift in Littleroot is nu ook in de overworld een **Galar-Zigzagoon** (`OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)`), passend bij de gift.

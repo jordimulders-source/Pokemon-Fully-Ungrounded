@@ -234,6 +234,14 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
 
+    // Project Grounded: melding na automatisch Flash bij het binnengaan van een donkere grot
+    if (gShowAutoFlashMessage)
+    {
+        gShowAutoFlashMessage = FALSE;
+        ScriptContext_SetupScript(EventScript_AutoFlash);
+        return TRUE;
+    }
+
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
 

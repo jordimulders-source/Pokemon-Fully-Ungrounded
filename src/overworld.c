@@ -1059,6 +1059,8 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 1 is the largest flash radius
 // Flash level of 7 is the smallest flash radius
 // Flash level of 8 is fully black
+EWRAM_DATA bool8 gShowAutoFlashMessage = FALSE; // Project Grounded
+
 void SetDefaultFlashLevel(void)
 {
     if (!gMapHeader.cave)
@@ -1069,6 +1071,7 @@ void SetDefaultFlashLevel(void)
     {
         FlagSet(FLAG_SYS_USE_FLASH);
         gSaveBlock1Ptr->flashLevel = 1;
+        gShowAutoFlashMessage = TRUE; // melding zodra de speler kan bewegen (field_control_avatar.c)
     }
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;

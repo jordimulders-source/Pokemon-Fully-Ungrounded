@@ -220,7 +220,10 @@ EventScript_StrengthBoulder::
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
 	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
-	@ Project Grounded: geen vraag en geen tekst; Strength staat meteen aan, duwen kan direct
+	@ Project Grounded: wel de vraag, geen animatie of extra tekst; daarna kun je meteen duwen
+	msgbox Text_WantToStrength, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
+	closemessage
 	playse SE_M_STRENGTH
 	setflag FLAG_SYS_USE_STRENGTH
 	releaseall
@@ -278,7 +281,10 @@ EventScript_UseWaterfall::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
-	@ Project Grounded: geen vraag en geen tekst, meteen omhoog
+	@ Project Grounded: wel de vraag, geen animatie of extra tekst
+	msgbox Text_WantToWaterfall, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
+	closemessage
 	hidefollowernpc
 	dofieldeffect FLDEFF_USE_WATERFALL
 	callnative FollowerNPC_WarpSetEnd
@@ -463,3 +469,15 @@ Text_MonUsedRockClimb:
 Text_CantRockClimb:
     .string "The cliff is steep.\n"
     .string "A Pokémon may be able to climb it.$"
+
+@ Project Grounded: automatisch Flash in donkere grotten (badge + HM05 in de tas)
+EventScript_AutoFlash::
+	lockall
+	msgbox Text_AutoFlash, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Text_AutoFlash:
+	.string "Your POKéMON decided to use FLASH,\n"
+	.string "because who the heck wants to walk\l"
+	.string "around in a dark cave?$"

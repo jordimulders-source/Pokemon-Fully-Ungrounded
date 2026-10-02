@@ -4,7 +4,10 @@ EventScript_UseSurf::
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	lockall
-	@ Project Grounded: geen vraag en geen tekst, meteen het water op
+	@ Project Grounded: wel de vraag, geen animatie of extra tekst
+	msgbox gText_WantToUseSurf, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseUseSurf
+	closemessage
 	dofieldeffect FLDEFF_USE_SURF
 EventScript_ReleaseUseSurf::
 	releaseall

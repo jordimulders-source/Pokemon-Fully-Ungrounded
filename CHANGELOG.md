@@ -15518,3 +15518,8 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Bug Maniac Timothy** (Route 119, 22,113, net boven de Mimic Circle): volledig pollenteam — Ribombee lv 35 (Pollen Season), Butterfree (Compound Eyes, Sleep Powder), Venomoth, Vivillon (Compound Eyes), Jumpluff (Cotton Spore, Pollen Haze), Eldegoss lv 34 (Pollen Puff). Na het gevecht geeft hij **TM58**: "SPREAD THE POLLEN! AHCHOOOO!" (placeholders).
 - Forecast (Castform) heeft ook in Pollen Haze geen last van het Fire-nadeel.
 - Tests: `test/battle/grounded/pollen_haze.c` (6 tests). In de emulator getest: Timothy, gevecht, Pollen Season-animatie.
+
+### [v.0.8.55] - Noorderlicht-transitie voor Suicune
+- Nieuwe gevechtstransitie **B_TRANSITION_AURORA**, alleen voor **Suicune** (Crystal Cavity): het beeld wordt donker, noorderlichtgordijnen verschijnen en glinsteren (kleurcyclus groen → cyaan → paars, licht wiegend), lichten op tot wit en vervagen dan naar het gevecht. Muziek blijft het beasts-thema.
+- Graphics gegenereerd met `tools/grounded/aurora_transition.py` (`graphics/battle_transitions/aurora.png/.bin/.pal`, 156 tiles, 16 paletframes); de transitie zelf staat onderaan `src/battle_transition.c`.
+- Raikou en Entei houden de Blur-transitie (eigen transities kunnen later).

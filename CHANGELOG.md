@@ -15424,3 +15424,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Abilitybeschrijvingen** van de sneeuw-abilities ingekort (Snow Cloak, Ice Body, Snow Warning, Slush Rush, Ice Face), zodat ze in het vak passen.
 - Tests bijgewerkt: Overcoat verwacht "Snow Storm" in plaats van "Hail"; de Ability Shield-test zet Shedinja expliciet op 1 HP (Shedinja heeft in Grounded normale HP).
 - Er zijn geen nieuwe failures meer ten opzichte van `master`.
+
+### [v.0.8.43] - Weer omgedraaid op Route 135/136
+- Op verzoek van Jordi: hoe dichter bij Ashfrost, hoe leefbaarder het weer. **Route 135** wisselt nu per dag tussen **sneeuwstorm** (Snow Storm in gevechten) en as; **Route 136** tussen lichte sneeuw (Snowscape) en as.

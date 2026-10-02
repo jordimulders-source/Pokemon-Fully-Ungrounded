@@ -2648,7 +2648,7 @@ static const u8 sWeatherCycleAshfrost[WEATHER_CYCLE_LENGTH] =
     WEATHER_VOLCANIC_ASH,
 };
 
-// Project Grounded: Route 136 (hoger in de bergen), per dag afwisselend sneeuwstorm en as
+// Project Grounded: Route 135 (verst van Ashfrost), per dag afwisselend sneeuwstorm en as
 static const u8 sWeatherCycleAshfrostStorm[WEATHER_CYCLE_LENGTH] =
 {
     WEATHER_SNOW_STORM,

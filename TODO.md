@@ -6,17 +6,17 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
 
-## Vragen voor Jordi (verzameld in de nacht van 1 op 2 okt 2026)
-Backlog-ideeën waar ik nog een beslissing van je voor nodig heb; daarna kan ik ze zelfstandig bouwen.
-1. **Gabby & Ty, 1e gevecht dubbel met de "local celebrity":** wie staat er tegenover je? Voorstel: Gabby & Ty interviewen een lokale beroemdheid (naam?) en dát wordt een dubbelgevecht: de beroemdheid met zijn overdreven Poochyena (perfecte IV/EV, Play Rough / Foul Play / Psychic Fangs / Hone Claws) + Ty met één Pokémon. Poochyena +10 levels = lv 30? Blijft Poochyena onge-evolueerd (grap)?
-2. **Transmutation** (Psychic, "omgekeerde Transform", alle moves 5 PP): klopt het dat het **doelwit** verandert in een kopie van de gebruiker (types, stats, moves met 5 PP)? Status move, 100% acc? Wie leert hem (bijv. Mew, Metagross-lijn, Alakazam) en via TM of level?
-3. **Fungal Control** (Parasect, 60% acc): jij kiest welke move de tegenstander gebruikt. Alleen de volgende beurt, of 3 beurten zoals Encore? Mag het ook een statusmove van de tegenstander zijn die hem zelf schaadt (bijv. Explosion)?
-4. **Implosion** (200 BP, self-KO, zwart gat 5 beurten): type en categorie (Dark/Psychic, special?)? Geldt het zwarte gat (−1 Atk/SpAtk bij inwisselen, hazards weg) voor beide kanten of alleen de kant van de tegenstander? Wie leert hem?
-5. **Laser Beam** en **Machine Learning**: wat moeten ze doen?
-6. **Heatran-cutscene na Wattson:** welke Rock Smash-stenen boven Mauville bedoel je (Route 111 zuid, richting de woestijn?), en loopt Heatran via Route 111 naar het noorden (richting Fiery Path)?
-7. **Snow Storm** (net gebouwd): is de sneeuwstorm op Route 136 zwaar genoeg zo (36 vlokken, wind, donkerder; meer kan niet vanwege de sprite-limiet)? Route 135 geeft in gevechten nu Snowscape (geen schade); is dat goed?
-8. **Summary-scherm van wilde Pokémon (L):** de "OT"-naam en "met at Lv x, [plek]" vult de game in alsof jij hem al bezit. Zal ik die regels verbergen of vervangen door bijv. "Wild POKéMON"?
-9. **Mimikyu-trainer, Prof. Oak-gevecht, Rotom-event:** waar in de wereld en rond welk level / welke badge?
+## Besloten met Jordi (2 okt 2026), nog te bouwen
+1. **Fungal Control** (Parasect, Bug/Grass status?, 60% acc): 3 beurten lang kies jij de move van de tegenstander, alle moves toegestaan (ook Explosion/Memento).
+2. **Transmutation** (Psychic, status, 100% acc): het doelwit wordt een kopie van de gebruiker (types, stats, moves met 5 PP) tot het wisselt. Level-up voor Mew, Alakazam-, Metagross-, Gothitelle-, Elgyem-, Meowstic-lijn, Delphox, Sigilyph, Indeedee, Jynx, Claydol, Wyrdeer, Farigiraf.
+3. **Implosion**: Dark, special, 200 BP, self-KO; zwart gat 5 beurten voor béíde kanten (hazards weg, −1 Atk/SpAtk voor elke Pokémon die het veld op komt). Animatie: zwart gat, alles wordt naar het midden getrokken, zwart als kleur.
+4. **Wild summary (L):** OT en memo vervangen door "Wild POKéMON" (placeholder).
+5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.
+6. **Heatran-cutscene** na Wattson: Rock Smash-stenen op Route 111 net boven Mauville weg; Heatran loopt langs, cry, ruikt aan je, loopt naar het noorden (Fiery Path).
+7. **Rotom-event:** Mauville, na badge 3, kelder van een huis met een tv.
+8. **Prof. Oak:** staat in Slateport bij de vuurtoren naar het water te kijken; gevecht → Gen 1-starter.
+9. **Mimikyu-trainer:** in de "mimic circle" onderaan Route 119 (bij de Bug Maniacs, hoog gras). Een Mimikyu-object op een stuk zonder gras; Mimikyu als zeldzame encounter op Route 119 (vervangt het vaakst voorkomende dubbele slot).
+10. Nog open: **Laser Beam** en **Machine Learning** (wat doen ze?), level/badge van Oak.
 
 ## Quality of life (nog te doen)
 - **Goedgekeurd:** (alles afgerond)

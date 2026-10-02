@@ -889,12 +889,14 @@
 #define TRAINER_MAXIE_SOOTOPOLIS                883 // Project Grounded
 #define TRAINER_BIRCH_VERDANTURF                884 // Project Grounded: Birch en de Hoenn-Grimer (Verdanturf)
 #define TRAINER_BROCK                           885 // Project Grounded: Brock bij de Day Care (Route 117)
+#define TRAINER_BIRCH_MOSSDEEP                  886 // Project Grounded: Birch bij de meteoriet (Mossdeep)
+#define TRAINER_BIRCH_UNDERWATER                887 // Project Grounded: Birch onder water bij de Clamperl-stront (Route 124)
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      886
+#define TRAINERS_COUNT                      888
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

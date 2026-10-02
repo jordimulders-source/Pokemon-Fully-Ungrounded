@@ -433,3 +433,81 @@ MossdeepCity_EventScript_SetScottDisguise::
 MossdeepCity_EventScript_SetScottDisguiseFemale::
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
 	return
+
+@ Project Grounded: Prof. Birch bij de meteoriet
+MossdeepCity_EventScript_Birch::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_BIRCH_MOSSDEEP, MossdeepCity_EventScript_BirchPostBattle
+	msgbox MossdeepCity_Text_BirchMeteorite, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BIRCH_MOSSDEEP, MossdeepCity_Text_BirchDefeat
+	msgbox MossdeepCity_Text_BirchPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_BirchPostBattle::
+	msgbox MossdeepCity_Text_BirchPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_Meteorite::
+	msgbox MossdeepCity_Text_Meteorite, MSGBOX_SIGN
+	end
+
+MossdeepCity_Text_BirchMeteorite:
+	.string "BIRCH: {PLAYER}! Don't touch it!\n"
+	.string "It came down this morning.\p"
+	.string "Everyone in MOSSDEEP says it's\n"
+	.string "a METEORITE.\p"
+	.string "Look at the shape. The color.\n"
+	.string "The faint glow. Smell it.\p"
+	.string "That is no rock, {PLAYER}.\n"
+	.string "That is a heap of COSMIC POOP.\p"
+	.string "EXTRATERRESTRIAL POOP!\n"
+	.string "Fresh from the stars!\p"
+	.string "Something up there ate something,\n"
+	.string "and this is the result.\p"
+	.string "A MINIOR? A LUNATONE? A DEOXYS?\n"
+	.string "The first space dropping in\l"
+	.string "recorded history, and it's MINE.\p"
+	.string "This calls for a celebration.\n"
+	.string "And you know what that means.\p"
+	.string "The MACARENA!\p"
+	.string "Did you know it's by LOS DEL RÍO?\n"
+	.string "Antonio Romero and Rafael Ruiz,\l"
+	.string "two gentlemen from near SEVILLE.\p"
+	.string "In 1992 they saw a flamenco dancer\n"
+	.string "in VENEZUELA and wrote it on\l"
+	.string "the spot. Science works the same.\p"
+	.string "MACARENA is the middle name of\n"
+	.string "Antonio's daughter. Lucky girl.\p"
+	.string "But the one EVERYONE knows is\n"
+	.string "the BAYSIDE BOYS remix from MIAMI.\p"
+	.string "They added the English verses.\n"
+	.string "Fourteen weeks at number one\l"
+	.string "in the USA, in 1996!\p"
+	.string "Did you know a whole political\n"
+	.string "convention danced it that year?\p"
+	.string "Did you know the song is about\n"
+	.string "a girl whose boyfriend VITORINO\l"
+	.string "joins the army…\p"
+	.string "…and she spends the time with\n"
+	.string "two of his friends?\p"
+	.string "Did you know I know all the\n"
+	.string "moves? Hands. Hands. Shoulders.\l"
+	.string "Head. Hips.\p"
+	.string "And did you know my team knows\n"
+	.string "them too? Hit it!$"
+
+MossdeepCity_Text_BirchDefeat:
+	.string "BIRCH: Houston, we have\n"
+	.string "a problem.$"
+
+MossdeepCity_Text_BirchPostBattle:
+	.string "BIRCH: The rock is still warm.\p"
+	.string "I'm choosing to believe that's\n"
+	.string "re-entry heat.$"
+
+MossdeepCity_Text_Meteorite:
+	.string "A strange glowing stone.\n"
+	.string "It's still warm. Suspiciously warm.$"

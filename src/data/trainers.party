@@ -26976,3 +26976,121 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Breath
 - Bind
 - Stealth Rock
+
+=== TRAINER_BIRCH_MOSSDEEP ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Rabsca
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
+
+Minior
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shell Smash
+- Power Gem
+- Acrobatics
+- Earthquake
+
+Lunatone
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Moonblast
+- Psychic
+- Earth Power
+- Rock Polish
+
+Clodsire
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Earthquake
+- Poison Jab
+- Recover
+- Toxic Spikes
+
+Palossand
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Sand Tomb
+
+Muk_Hoenn
+Level: 48
+Ability: Stench
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover
+
+=== TRAINER_BIRCH_UNDERWATER ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Wailord
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Spout
+- Rest
+- Sleep Talk
+- Heavy Slam
+
+Gorebyss
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shell Smash
+- Hydro Pump
+- Psychic
+- Ice Beam
+
+Pyukumuku
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Toxic
+- Recover
+- Soak
+- Counter
+
+Jellicent
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Clodsire
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Earthquake
+- Liquidation
+- Recover
+- Toxic Spikes
+
+Muk_Hoenn
+Level: 51
+Ability: Stench
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover

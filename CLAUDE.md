@@ -140,11 +140,12 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 ## Sessies en overdracht
 - **Takenlijst:** `TODO.md` (openstaande taken op volgorde, goedgekeurde QoL, backlog). Afgeronde taken daar weghalen en in de changelog zetten.
 - Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
-- Branch: `claude/ecstatic-volta-kg8r32` (voortzetting van `claude/epic-lamport-voso15`; nog geen PR naar `master`). Is die gemerged, begin dan een nieuwe branch vanaf `master`.
+- Branch: `claude/ecstatic-volta-kg8r32` (PR 6 gemerged; nieuwe PR naar `master` per ronde). Is die gemerged, begin dan een nieuwe branch vanaf `master`.
 - Commit en push na elk afgerond stuk, met een changelogsectie.
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
+- **Birch v0.8.79:** Mossdeep (meteoriet = Birth Island-steen, Macarena-lore) en Underwater Route 124. Alle Birch-trainers staan in `battle_setup.c` (transitie) en `pokemon.c` (muziek); een nieuwe Birch daar ook toevoegen.
 - **Hoenn-Grimer/Muk v0.8.67:** nieuwe vormen (Poison/Ground), Birch in Verdanturf (`TRAINER_BIRCH_VERDANTURF`, ace Hoenn-Grimer), Birch 2 doorontwikkeld met Hisui-Avalugg en Hoenn-Muk. De speler krijgt alleen één Hoenn-Grimer van Birch (Verdanturf); verder nergens te vangen.
 - **Transities/Sootopolis v0.8.62–0.8.66:** Regidrago/Regieleki/Deoxys/Birch-transities (Birch alleen prut, geen drol), Keccles-scène na Rayquaza met multi battle (Archie + Maxie, weerneutraal), Mt. Pyre-berouwscène overgeslagen.
 - **Events v0.8.58–0.8.61:** Mimi (Mimikyu-trainer, Route 119), Heatran-cutscene (Route 111), Rotom in de kelder van `MauvilleCity_House2_B1F`, eerste Gabby & Ty-gevecht dubbel met Brad (`TRAINER_LOCAL_CELEBRITY`). ROM v0.8.61 opgeleverd. Volgende ronde staat in `TODO.md` ("Volgende ronde").

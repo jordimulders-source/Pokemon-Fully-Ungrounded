@@ -15634,3 +15634,11 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.78] - Crystal Cavity: meer weer bereikbaar, lavarand af
 - Een **rode kristal op (18,24)** stond midden op het pad tussen water en lava, waardoor je het meer (en dus het duikstuk naar Suicune) niet meer kon bereiken. `grotto136.py` controleert nu bij elke kristal of alles vanaf de ingang bereikbaar blijft (water telt mee); een kristal die iets afsluit wordt overgeslagen. Het script stopt met een fout als het meer onbereikbaar is.
 - De **linkerrand van het lavameer** (linksonder) was niet af: de buitenste randkolom van Terra Cave werd niet meegekopieerd. Nu wel; het lavameer is 1 tile naar rechts geschoven, zodat het pad op x 18 vrij blijft.
+
+### [v.0.8.79] - Birch in Mossdeep (kosmische stront) en onder water (Clamperl-stront)
+- **Prof. Birch in Mossdeep** (`TRAINER_BIRCH_MOSSDEEP`) staat op het zandveld onder het Space Center (59,24), naast een **"meteoriet"** op (60,24): de grijze driehoeksteen van Birth Island (`OBJ_EVENT_GFX_DEOXYS_TRIANGLE`, standaardpalet, dus steenkleurig). Birch weet zeker dat het geen steen is maar **een hoop kosmische stront** ("EXTRATERRESTRIAL POOP!") van een Minior, Lunatone of Deoxys. Daarna begint hij uitgebreid over de **Macarena**: Los del Río (Antonio Romero en Rafael Ruiz uit de buurt van Sevilla), de flamencodanseres in Venezuela (1992), Macarena als tweede naam van Antonio's dochter, de remix van de Bayside Boys uit Miami (Engelse coupletten, 14 weken nummer 1 in de VS in 1996), het politieke congres dat hem dat jaar danste, Vitorino die het leger in gaat, en de danspasjes.
+  - Team (lv 46, ace 48): Rabsca, Minior, Lunatone, Clodsire, Palossand, Hoenn-Muk.
+- **Prof. Birch onder water** (`TRAINER_BIRCH_UNDERWATER`) op Underwater Route 124, in het ronde zeewierveld links (11,32), met een snorkel van Wailord-stront. Hij onderzoekt de Clamperl-stront (onzichtbaar bord naast hem: "They're not pearls.").
+  - Team (lv 49, ace 51): Wailord, Gorebyss, Pyukumuku, Jellicent, Clodsire, Hoenn-Muk.
+- Beide gevechten hebben de Macarena en de prut-transitie, zoals de andere Birch-gevechten. Teksten zijn placeholders.
+- Getest in de emulator: de meteoriet en Birch in Mossdeep, Birch onder water, en het begin van beide gevechten (onder water met de onderwaterachtergrond).

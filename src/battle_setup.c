@@ -795,7 +795,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
-    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2)
+    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER)
         return B_TRANSITION_BIRCH;
 
     // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar

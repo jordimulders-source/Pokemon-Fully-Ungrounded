@@ -15653,3 +15653,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - Graphics: `tools/grounded/beasts_transition.py`. Kaarten: `tools/grounded/maptools/beasts_maps.py`.
 - Getest in de emulator: de schakelaar, de deur, het datacenter en het Raikou-gevecht; de ingang op Mt. Chimney (alleen met badge 5), de gang en het Entei-gevecht; beide transities.
 - CLAUDE.md: testgevechten voortaan met een Arceus lv 100 (Dark Pulse, Psychic, Thunderbolt, Ice Beam) en alle badges aan.
+
+### [v.0.8.81] - Birch houdt zijn strontteam
+- De teams van **Birch in Mossdeep** en **Birch onder water** bouwen nu voort op zijn eerdere strontteam (Route 135): Rabsca, Clodsire, Palossand en Mudsdale, met **Hoenn-Muk** als ace. Per gevecht één Pokémon in het thema: **Minior** bij de meteoriet (lv 46, ace 48), **Wailord** onder water (lv 49, ace 51).

@@ -147,7 +147,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 
 ## Stand van zaken
 - **Raikou/Entei v0.8.80:** Raikou in het kapotte datacenter onder New Mauville (schakelaar in de oostkamer), Entei achter een verborgen ingang op Mt. Chimney (vanaf badge 5). Eigen transities `B_TRANSITION_RAIKOU`/`B_TRANSITION_ENTEI`; nieuwe transities kosten maar een paar KB (ROM ±23 van 32 MB).
-- **Birch v0.8.79:** Mossdeep (meteoriet = Birth Island-steen, Macarena-lore) en Underwater Route 124. Alle Birch-trainers staan in `battle_setup.c` (transitie) en `pokemon.c` (muziek); een nieuwe Birch daar ook toevoegen.
+- **Birch v0.8.79–0.8.81:** vast strontteam (Rabsca, Clodsire, Palossand, Mudsdale, ace Hoenn-Muk) + per gevecht één Pokémon in het thema. Mossdeep (meteoriet = Birth Island-steen, Macarena-lore) en Underwater Route 124. Alle Birch-trainers staan in `battle_setup.c` (transitie) en `pokemon.c` (muziek); een nieuwe Birch daar ook toevoegen.
 - **Hoenn-Grimer/Muk v0.8.67:** nieuwe vormen (Poison/Ground), Birch in Verdanturf (`TRAINER_BIRCH_VERDANTURF`, ace Hoenn-Grimer), Birch 2 doorontwikkeld met Hisui-Avalugg en Hoenn-Muk. De speler krijgt alleen één Hoenn-Grimer van Birch (Verdanturf); verder nergens te vangen.
 - **Transities/Sootopolis v0.8.62–0.8.66:** Regidrago/Regieleki/Deoxys/Birch-transities (Birch alleen prut, geen drol), Keccles-scène na Rayquaza met multi battle (Archie + Maxie, weerneutraal), Mt. Pyre-berouwscène overgeslagen.
 - **Events v0.8.58–0.8.61:** Mimi (Mimikyu-trainer, Route 119), Heatran-cutscene (Route 111), Rotom in de kelder van `MauvilleCity_House2_B1F`, eerste Gabby & Ty-gevecht dubbel met Brad (`TRAINER_LOCAL_CELEBRITY`). ROM v0.8.61 opgeleverd. Volgende ronde staat in `TODO.md` ("Volgende ronde").

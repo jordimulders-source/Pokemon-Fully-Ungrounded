@@ -26995,22 +26995,6 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psychic
 - Earth Power
 
-Minior
-Level: 46
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shell Smash
-- Power Gem
-- Acrobatics
-- Earthquake
-
-Lunatone
-Level: 46
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Moonblast
-- Psychic
-- Earth Power
-- Rock Polish
-
 Clodsire
 Level: 46
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
@@ -27026,6 +27010,22 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Earth Power
 - Shore Up
 - Sand Tomb
+
+Mudsdale
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Iron Defense
+
+Minior
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shell Smash
+- Power Gem
+- Acrobatics
+- Earthquake
 
 Muk_Hoenn
 Level: 48
@@ -27046,6 +27046,38 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint
 Mugshot: Green
 
+Rabsca
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
+
+Clodsire
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Earthquake
+- Poison Jab
+- Recover
+- Toxic Spikes
+
+Palossand
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Sand Tomb
+
+Mudsdale
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Iron Defense
+
 Wailord
 Level: 49
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
@@ -27053,38 +27085,6 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rest
 - Sleep Talk
 - Heavy Slam
-
-Gorebyss
-Level: 49
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shell Smash
-- Hydro Pump
-- Psychic
-- Ice Beam
-
-Pyukumuku
-Level: 49
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Toxic
-- Recover
-- Soak
-- Counter
-
-Jellicent
-Level: 49
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Scald
-- Shadow Ball
-- Recover
-- Will-O-Wisp
-
-Clodsire
-Level: 49
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Earthquake
-- Liquidation
-- Recover
-- Toxic Spikes
 
 Muk_Hoenn
 Level: 51

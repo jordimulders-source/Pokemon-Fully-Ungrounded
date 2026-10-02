@@ -719,6 +719,8 @@ static void TryShowAsTarget(u32 battler)
     }
 }
 
+EWRAM_DATA bool8 gFungalControlChoosing = FALSE;
+
 void HandleInputChooseMove(u32 battler)
 {
     u16 moveTarget;
@@ -826,6 +828,10 @@ void HandleInputChooseMove(u32 battler)
             break;
         }
     }
+    else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59) && gFungalControlChoosing)
+    {
+        // Project Grounded: Fungal Control moet een keuze krijgen
+    }
     else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)  && !gBattleStruct->descriptionSubmenu)
     {
         PlaySE(SE_RG_BALL_CLICK);
@@ -909,7 +915,7 @@ void HandleInputChooseMove(u32 battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu)
+    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu && !gFungalControlChoosing)
     {
         if (gNumberOfMovesToChoose > 1 && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
         {
@@ -952,7 +958,7 @@ void HandleInputChooseMove(u32 battler)
         gBattleStruct->descriptionSubmenu = TRUE;
         TryMoveSelectionDisplayMoveDescription(battler);
     }
-    else if (JOY_NEW(START_BUTTON))
+    else if (JOY_NEW(START_BUTTON) && !gFungalControlChoosing)
     {
         if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE
             && !HasTrainerUsedGimmick(battler, gBattleStruct->gimmick.usableGimmick[battler])
@@ -2156,7 +2162,7 @@ void PlayerHandleChooseMove(u32 battler)
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
         // Project Grounded: cursor op de laatst gekozen move van dit teamlid, ook na een wissel
-        gMoveSelectionCursor[battler] = gBattleStruct->lastMoveCursorByPartySlot[gBattlerPartyIndexes[battler]];
+        gMoveSelectionCursor[battler] = gFungalControlChoosing ? 0 : gBattleStruct->lastMoveCursorByPartySlot[gBattlerPartyIndexes[battler]];
         if (gMoveSelectionCursor[battler] >= MAX_MON_MOVES || moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_NONE)
             gMoveSelectionCursor[battler] = 0;
 
@@ -2164,6 +2170,12 @@ void PlayerHandleChooseMove(u32 battler)
         gBattleStruct->gimmick.playerSelect = FALSE;
         TryToAddMoveInfoWindow();
 
+        if (gFungalControlChoosing)
+        {
+            gBattleStruct->zmove.viable = FALSE;
+        }
+        else
+        {
         AssignUsableZMoves(battler, moveInfo->moves);
         gBattleStruct->zmove.viable = (gBattleStruct->zmove.possibleZMoves[battler] & (1u << gMoveSelectionCursor[battler])) != 0;
 
@@ -2173,6 +2185,7 @@ void PlayerHandleChooseMove(u32 battler)
             DestroyGimmickTriggerSprite();
         if (!(gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_Z_MOVE && !gBattleStruct->zmove.viable))
             CreateGimmickTriggerSprite(battler);
+        }
 
         gBattlerControllerFuncs[battler] = HandleChooseMoveAfterDma3;
     }

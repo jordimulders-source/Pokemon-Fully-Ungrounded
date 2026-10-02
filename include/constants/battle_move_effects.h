@@ -354,6 +354,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_STONE_AXE, // Not to be confused with MOVE_EFFECT_STEALTH_ROCK. They have two different activation timings.
     EFFECT_CEASELESS_EDGE, // Same applies to spikes
     EFFECT_FLASH, // Project Grounded: verlaagt Accuracy, Attack en Sp. Atk van het doelwit
+    EFFECT_FUNGAL_CONTROL, // Project Grounded: de gebruiker kiest 3 beurten lang de move van het doelwit
+    EFFECT_TRANSMUTATION, // Project Grounded: het doelwit wordt een kopie van de gebruiker (omgekeerde Transform)
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

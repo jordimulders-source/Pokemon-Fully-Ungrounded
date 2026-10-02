@@ -15431,3 +15431,19 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.44] - Summary van wilde Pokémon: "Wild POKéMON"
 - Het summary-scherm dat je met L in een wild gevecht opent, deed alsof de Pokémon al van jou was (jouw OT-naam en ID, "met at Lv x, [plek]"). Nu: `OT/-----`, geen ID, en als memo "*[nature] nature, Wild POKéMON. Not yours. Yet.*" (placeholder; herschrijfbaar).
 - Code: `ShowWildPokemonSummaryScreen` in `src/pokemon_summary_screen.c` (vlag `isWildMon`).
+
+### [v.0.8.45] - Nieuwe move: Fungal Control (Parasect)
+- **Fungal Control**: Grass, status, 60% acc, 10 PP, poedermove (Grass-types en Overcoat zijn immuun), Magic Coat kaatst hem terug. Sporen nemen het brein van het doelwit over: **jij kiest welke move het doelwit 3 beurten lang moet gebruiken**, ook Explosion of Memento.
+- De speler kiest via het gewone move-menu, dat dan de moves van het doelwit toont (B, SELECT en START doen daar niets). Als de AI Fungal Control gebruikt, kiest ze de move die jou het meest schaadt (self-KO > statusmove > zwakste aanval).
+- Werkt via het Encore-mechanisme: faalt als het doelwit al vastzit, Aroma Veil beschermt, Mental Herb geneest.
+- Teksten (placeholder): "Spores seep into [X]'s brain…" en "[X] is now a fungus puppet! It can only use [move]!"
+- Parasect leert hem bij evolutie (en op lv 1); Spore blijft op lv 1 en 22.
+- Tests: `test/battle/grounded/fungal_control.c`. In de emulator getest (menu, 3 beurten Growl, tweede poging faalt).
+
+### [v.0.8.46] - Nieuwe move: Transmutation
+- **Transmutation**: Psychic, status, 100% acc, 10 PP. Een omgekeerde Transform: het **doelwit** wordt een kopie van de gebruiker (sprite, types, stats, stat stages, ability en moves, elk met max. 5 PP) tot het wisselt. Faalt als een van beide al getransformeerd is, achter een Substitute, of bij Dynamax/Illusion.
+- Level-up: Kadabra/Alakazam 40, Metang/Metagross 45, Gothita-lijn 40, Elgyem/Beheeyem 40, Espurr 20, Meowstic 40, Mew 50, Delphox 45, Sigilyph 40, Indeedee 40, Jynx 44, Claydol 42, Wyrdeer 40, Farigiraf 40.
+- Tests: `test/battle/grounded/transmutation.c`. In de emulator getest (Zigzagoon werd een Parasect).
+
+### [v.0.8.47] - Chilly Reception voor meer Pokémon
+- Level-up toegevoegd (rest van de learnsets ongewijzigd): Galar Mr. Mime en Mr. Rime 32, Chatot 33, Squawkabilly 35, Jigglypuff 28, Kecleon 30, Whismur 25, Loudred en Exploud 29, Jynx 33.

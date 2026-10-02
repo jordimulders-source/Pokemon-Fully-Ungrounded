@@ -3265,6 +3265,36 @@ BattleScript_EffectEncore::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Fungal Control (Parasect). De gebruiker kiest welke move het doelwit 3 beurten lang moet gebruiken.
+BattleScript_EffectFungalControl::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	callnative BS_TryFungalControl
+	.4byte BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_FUNGALCONTROLCHOOSE
+	waitmessage B_WAIT_TIME_MED
+	callnative BS_FungalControlChooseMove
+	printstring STRINGID_FUNGALCONTROLLED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Transmutation, een omgekeerde Transform. Het doelwit wordt een kopie van de gebruiker (moves met 5 PP).
+BattleScript_EffectTransmutation::
+	attackcanceler
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	callnative BS_TryTransmutation
+	.4byte BattleScript_ButItFailed
+	callnative BS_SwapAttackerAndTarget
+	attackanimation
+	waitanimation
+	callnative BS_SwapAttackerAndTarget
+	printstring STRINGID_TRANSMUTED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectPainSplit::
 	attackcanceler
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON

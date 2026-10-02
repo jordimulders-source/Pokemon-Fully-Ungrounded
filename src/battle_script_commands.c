@@ -18212,3 +18212,184 @@ void BS_UndoDynamax(void)
 
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
+
+
+// Project Grounded: Fungal Control (Parasect)
+// De gebruiker kiest welke move het doelwit 3 beurten lang moet gebruiken (werkt via Encore).
+// De speler kiest via het move-menu; de AI (en de testrunner) kiest de move die het doelwit het meest schaadt.
+static bool32 FungalControl_IsUsable(u32 battler, u32 pos)
+{
+    u32 move = gBattleMons[battler].moves[pos];
+    return move != MOVE_NONE && gBattleMons[battler].pp[pos] != 0 && !IsMoveEncoreBanned(move);
+}
+
+static u32 FungalControl_AutoPick(u32 battler)
+{
+    u32 i, best = 0;
+    s32 score, bestScore = -1;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u32 move = gBattleMons[battler].moves[i];
+        if (!FungalControl_IsUsable(battler, i))
+            continue;
+        switch (GetMoveEffect(move))
+        {
+        case EFFECT_EXPLOSION:
+        case EFFECT_MISTY_EXPLOSION:
+        case EFFECT_MEMENTO:
+        case EFFECT_FINAL_GAMBIT:
+        case EFFECT_HEALING_WISH:
+            score = 1000;
+            break;
+        default:
+            if (GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
+                score = 500;
+            else
+                score = 400 - GetMovePower(move);
+            break;
+        }
+        if (score > bestScore)
+        {
+            bestScore = score;
+            best = i;
+        }
+    }
+    return best;
+}
+
+void BS_TryFungalControl(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 i;
+
+    if (gDisableStructs[gBattlerTarget].encoredMove == MOVE_NONE)
+    {
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (FungalControl_IsUsable(gBattlerTarget, i))
+            {
+                gBattlescriptCurrInstr = cmd->nextInstr;
+                return;
+            }
+        }
+    }
+    gBattlescriptCurrInstr = cmd->failInstr;
+}
+
+static EWRAM_DATA bool8 sFungalControlWaiting = FALSE;
+
+void BS_FungalControlChooseMove(void)
+{
+    NATIVE_ARGS();
+    u32 i, pos;
+
+    if (!sFungalControlWaiting)
+    {
+        if (!BattlerHasAi(gBattlerAttacker) && !gTestRunnerEnabled && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+        {
+            struct ChooseMoveStruct moveInfo = {0};
+
+            moveInfo.species = gBattleMons[gBattlerTarget].species;
+            moveInfo.monTypes[0] = gBattleMons[gBattlerTarget].types[0];
+            moveInfo.monTypes[1] = gBattleMons[gBattlerTarget].types[1];
+            moveInfo.monTypes[2] = gBattleMons[gBattlerTarget].types[2];
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                moveInfo.moves[i] = gBattleMons[gBattlerTarget].moves[i];
+                moveInfo.currentPp[i] = gBattleMons[gBattlerTarget].pp[i];
+                moveInfo.maxPp[i] = CalculatePPWithBonus(gBattleMons[gBattlerTarget].moves[i], gBattleMons[gBattlerTarget].ppBonuses, i);
+            }
+            gFungalControlChoosing = TRUE;
+            BtlController_EmitChooseMove(gBattlerAttacker, B_COMM_TO_CONTROLLER, FALSE, FALSE, &moveInfo);
+            MarkBattlerForControllerExec(gBattlerAttacker);
+            sFungalControlWaiting = TRUE;
+            return;
+        }
+        pos = FungalControl_AutoPick(gBattlerTarget);
+    }
+    else
+    {
+        gFungalControlChoosing = FALSE;
+        sFungalControlWaiting = FALSE;
+        pos = gBattleResources->bufferB[gBattlerAttacker][2] & (MAX_MON_MOVES - 1);
+        if (!FungalControl_IsUsable(gBattlerTarget, pos))
+            pos = FungalControl_AutoPick(gBattlerTarget);
+    }
+
+    gDisableStructs[gBattlerTarget].encoredMove = gBattleMons[gBattlerTarget].moves[pos];
+    gDisableStructs[gBattlerTarget].encoredMovePos = pos;
+    if (gDisableStructs[gBattlerTarget].encoredMove != GetChosenMoveFromPosition(gBattlerTarget))
+        gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
+    if (HasBattlerActedThisTurn(gBattlerTarget))
+        gDisableStructs[gBattlerTarget].encoreTimer = 4;
+    else
+        gDisableStructs[gBattlerTarget].encoreTimer = 3;
+    PREPARE_MOVE_BUFFER(gBattleTextBuff1, gDisableStructs[gBattlerTarget].encoredMove);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Transmutation (omgekeerde Transform): het doelwit wordt een kopie van de gebruiker,
+// met dezelfde regels als Transform (types, stats, stat stages, ability en moves met max. 5 PP), tot het wisselt.
+void BS_TryTransmutation(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 user = gBattlerAttacker, target = gBattlerTarget;
+
+    if (gBattleMons[target].volatiles.transformed
+        || gBattleMons[user].volatiles.transformed
+        || DoesSubstituteBlockMove(user, target, gCurrentMove)
+        || gBattleStruct->illusion[user].state == ILLUSION_ON
+        || gBattleStruct->illusion[target].state == ILLUSION_ON
+        || IsSemiInvulnerable(target, EXCLUDE_COMMANDER)
+        || GetActiveGimmick(target) == GIMMICK_DYNAMAX)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else
+    {
+        s32 i;
+        u8 *monTarget = (u8 *)(&gBattleMons[target]);
+        u8 *monUser = (u8 *)(&gBattleMons[user]);
+
+        gBattleMons[target].volatiles.transformed = TRUE;
+        gDisableStructs[target].disabledMove = MOVE_NONE;
+        gDisableStructs[target].disableTimer = 0;
+        gDisableStructs[target].encoredMove = MOVE_NONE;
+        gDisableStructs[target].encoreTimer = 0;
+        gDisableStructs[target].transformedMonPersonality = gBattleMons[user].personality;
+        gDisableStructs[target].transformedMonShininess = gBattleMons[user].isShiny;
+        gDisableStructs[target].mimickedMoves = 0;
+        gDisableStructs[target].usedMoves = 0;
+
+        PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[user].species)
+
+        for (i = 0; i < offsetof(struct BattlePokemon, pp); i++)
+            monTarget[i] = monUser[i];
+
+        gDisableStructs[target].overwrittenAbility = GetBattlerAbility(user);
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            u32 pp = GetMovePP(gBattleMons[target].moves[i]);
+            gBattleMons[target].pp[i] = (pp < 5) ? pp : 5;
+        }
+
+        RecordAllMoves(target);
+        RecordAbilityBattle(target, gBattleMons[target].ability);
+
+        BtlController_EmitResetActionMoveSelection(target, B_COMM_TO_CONTROLLER, RESET_MOVE_SELECTION);
+        MarkBattlerForControllerExec(target);
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+}
+
+// Project Grounded: wisselt aanvaller en doelwit (bijv. om de Transform-animatie op het doelwit af te spelen)
+void BS_SwapAttackerAndTarget(void)
+{
+    NATIVE_ARGS();
+    u32 temp = gBattlerAttacker;
+    gBattlerAttacker = gBattlerTarget;
+    gBattlerTarget = temp;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}

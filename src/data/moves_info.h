@@ -21436,6 +21436,59 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_ArmThrust,
     },
 
+    [MOVE_FUNGAL_CONTROL] =
+    {
+        .name = COMPOUND_STRING("Fungal Control"),
+        .description = COMPOUND_STRING(
+            "Spores hijack the foe. You\n"
+            "pick its move for 3 turns."),
+        .effect = EFFECT_FUNGAL_CONTROL,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 60,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .powderMove = TRUE,
+        .magicCoatAffected = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Spore,
+    },
+
+    [MOVE_TRANSMUTATION] =
+    {
+        .name = COMPOUND_STRING("Transmutation"),
+        .description = COMPOUND_STRING(
+            "Turns the foe into a copy\n"
+            "of the user. 5 PP per move."),
+        .effect = EFFECT_TRANSMUTATION,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .magicCoatAffected = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Transform,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

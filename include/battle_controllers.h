@@ -178,6 +178,8 @@ enum {
 #define RET_VALUE_LEVELED_UP   11
 #define RET_GIMMICK            (1 << 7)
 
+extern bool8 gFungalControlChoosing; // Project Grounded: move-menu toont de moves van het doelwit van Fungal Control
+
 struct UnusedControllerStruct
 {
     u8 unk:7;

@@ -7,8 +7,8 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
-1. **Fungal Control** (Parasect, Bug/Grass status?, 60% acc): 3 beurten lang kies jij de move van de tegenstander, alle moves toegestaan (ook Explosion/Memento).
-2. **Transmutation** (Psychic, status, 100% acc): het doelwit wordt een kopie van de gebruiker (types, stats, moves met 5 PP) tot het wisselt. Level-up voor Mew, Alakazam-, Metagross-, Gothitelle-, Elgyem-, Meowstic-lijn, Delphox, Sigilyph, Indeedee, Jynx, Claydol, Wyrdeer, Farigiraf.
+1. ~~Fungal Control~~ (gedaan, v0.8.45)
+2. ~~Transmutation~~ (gedaan, v0.8.46)
 3. **Implosion**: Dark, special, 200 BP, self-KO; zwart gat 5 beurten voor béíde kanten (hazards weg, −1 Atk/SpAtk voor elke Pokémon die het veld op komt). Animatie: zwart gat, alles wordt naar het midden getrokken, zwart als kleur.
 4. ~~Wild summary~~ (gedaan, v0.8.44)
 5. **Gabby & Ty**, 1e gevecht: dubbel met de local celebrity + onge-evolueerde Poochyena (perfecte IV/EV, Play Rough/Foul Play/Psychic Fangs/Hone Claws, +10 levels) en Ty met één Pokémon.

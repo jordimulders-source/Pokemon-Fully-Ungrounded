@@ -65,3 +65,17 @@ MauvilleCity_House2_Text_ThatsDisappointing:
 	.string "You need a COIN CASE for the GAME\n"
 	.string "CORNER.$"
 
+
+MauvilleCity_House2_EventScript_HiddenStairs::
+	lockall
+	msgbox MauvilleCity_House2_Text_HiddenStairs, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EXIT
+	warp MAP_MAUVILLE_CITY_HOUSE2_B1F, 3, 2
+	waitstate
+	releaseall
+	end
+
+MauvilleCity_House2_Text_HiddenStairs:
+	.string "There's a staircase hidden behind\n"
+	.string "the bookcase. TV noise drifts up.$"

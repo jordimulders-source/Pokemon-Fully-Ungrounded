@@ -15541,3 +15541,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.59] - Heatran-cutscene op Route 111
 - Na de badge van Wattson: zodra je boven Mauville de trap op loopt (Route 111, y=121), schudt de grond, verdwijnen de twee Rock Smash-stenen voorgoed (de rotsen ernaast blijven) en komt **Heatran** de route af. Hij brult, ruikt aan je, verliest zijn interesse en loopt weer naar het noorden (richting Fiery Path). Teksten zijn placeholders.
 - Eenmalig via `VAR_HEATRAN_CUTSCENE_STATE` (0x409D); flags `FLAG_HIDE_ROUTE111_HEATRAN_ROCKS` (0x3E) en `FLAG_HIDE_ROUTE111_HEATRAN` (0x3F). In de emulator getest.
+
+### [v.0.8.60] - Rotom-event in Mauville
+- In het huis met de Coin Case-vrouw (`MauvilleCity_House2`) zit een **geheime trap achter de boekenkast** (aanspreken bij (2,1)) naar een nieuwe kelder `MauvilleCity_House2_B1F` (layout van de Mossdeep Game Corner-kelder) met een tv.
+- Vóór de 3e badge: alleen ruis. Daarna: de trash-talkshow "SHOCKING EXES" ("My new ex is… ROTOM!"), de camera schudt en een wilde **Rotom** (lv 28) springt uit het scherm. Versla of vlucht je, dan kruipt hij terug in de tv en kun je het opnieuw proberen; na het vangen (`FLAG_CAUGHT_MAUVILLE_ROTOM`, 0x40) toont de tv alleen nog saai nieuws. Teksten zijn placeholders. In de emulator getest.

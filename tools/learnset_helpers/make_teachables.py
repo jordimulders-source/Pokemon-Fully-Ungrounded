@@ -98,6 +98,63 @@ def extract_repo_universals() -> list[str]:
 GROUNDED_CUSTOM_TEACHABLES = {
     "MOVE_SELTZER_SURGE": {"like": "MOVE_SCALD", "types": {"TYPE_WATER"}},
 }
+# Lager Lagoon (bier) en Vintage Spill (wijn): iedereen die water kan maken, plus soorten die dicht bij
+# het brouw- of wijnproces staan (taak "learnsets" in de changelog).
+# Water Gun als criterium gaf Rattata, Clefairy enz. (Gen 1-TM); daarom Water-types plus deze natuurlijke watermakers.
+WATER_MAKERS = {
+    "Azurill", "Phanpy", "Donphan", "Dewgong", "Dragalge",  # sproeien water, of leven erin
+    "Goomy", "Sliggoo", "Goodra", "SliggooHisui", "GoodraHisui",
+}
+GROUNDED_CUSTOM_TEACHABLES["MOVE_LAGER_LAGOON"] = {"like": set(), "types": {"TYPE_WATER"}, "species": WATER_MAKERS | {
+    "Hoppip", "Skiploom", "Jumpluff",                       # hop
+    "Skwovet", "Greedent",                                  # graanvoorraad
+    "Paras", "Parasect", "Shroomish", "Breloom",            # gist en schimmels
+    "Foongus", "Amoonguss", "Morelull", "Shiinotic", "Toedscool", "Toedscruel",
+    "Gulpin", "Swalot",                                     # gisting in de maag
+    "Spinda", "Snorlax", "Munchlax",                        # vaste klanten
+}}
+GROUNDED_CUSTOM_TEACHABLES["MOVE_VINTAGE_SPILL"] = {"like": set(), "types": {"TYPE_WATER"}, "species": WATER_MAKERS | {
+    "Bounsweet", "Steenee", "Tsareena",                     # druiven treden
+    "Shuckle",                                              # laat bessen gisten in zijn schild
+    "Cherubi", "Cherrim", "Tropius",                        # fruit
+    "Applin", "Flapple", "Appletun", "Dipplin", "Hydrapple",
+    "Phantump", "Trevenant", "Dhelmise",                    # eikenhouten vaten en scheepsladingen
+    "Gulpin", "Swalot", "Spinda",                           # gisting en proeverij
+}}
+# Laser Beam (TM55, Tate & Liza): alles wat lasers kan afschieten (schietarmen, kanonnen, stralen) plus logische Psychic-soorten.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_LASER_BEAM"] = {"like": set(), "types": set(), "species": {
+    "Porygon", "Porygon2", "PorygonZ", "Magnemite", "Magneton", "Magnezone", "Remoraid", "Octillery",
+    "Magmortar", "Blastoise", "Clauncher", "Clawitzer", "Genesect", "Staryu", "Starmie", "Metang", "Metagross",
+    "Registeel", "Probopass", "Bronzor", "Bronzong", "Vikavolt", "Golett", "Golurk", "Duraludon", "Archaludon",
+    "DeoxysNormal", "DeoxysAttack", "DeoxysDefense", "DeoxysSpeed", "Necrozma", "Solgaleo", "Lunala", "Celesteela",
+    "Abra", "Kadabra", "Alakazam", "Espeon", "Elgyem", "Beheeyem", "Mewtwo", "Kirlia", "Gardevoir", "Gallade",
+    "Natu", "Xatu", "Baltoy", "Claydol", "Lunatone", "Solrock", "Gothitelle", "Reuniclus", "Sigilyph", "Orbeetle",
+    "Inkay", "Malamar", "Hatterene", "Espathra", "Calyrex", "CalyrexIce", "CalyrexShadow", "Girafarig", "Farigiraf",
+}}
+# Machine Learning (TM54, Wattson): machine-Pokémon, vooral die door een soort AI bestuurd kunnen worden.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_MACHINE_LEARNING"] = {"like": set(), "types": set(), "species": {
+    "Porygon", "Porygon2", "PorygonZ", "Magnemite", "Magneton", "Magnezone", "Rotom", "Klink", "Klang", "Klinklang",
+    "Genesect", "Magearna", "IronBundle", "IronHands", "IronJugulis", "IronMoth", "IronThorns", "IronValiant",
+    "IronLeaves", "IronBoulder", "IronCrown", "IronTreads", "Golett", "Golurk", "Beldum", "Metang", "Metagross",
+    "Registeel", "Regieleki", "Regigigas", "Voltorb", "Electrode", "VoltorbHisui", "ElectrodeHisui", "Varoom", "Revavroom",
+}}
+# Shadow Siphon (TM56, Mt. Pyre): zuigt op afstand de schaduw/levenskracht weg, zonder contact.
+# Special Dark-aanvallers plus sinistere soorten die op afstand griezelige dingen doen.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_SHADOW_SIPHON"] = {"like": set(), "types": set(), "species": {
+    "Houndour", "Houndoom", "Murkrow", "Honchkrow", "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui",
+    "Deino", "Zweilous", "Hydreigon", "Darkrai", "Yveltal", "Nickit", "Thievul", "MoltresGalar",
+    "Inkay", "Malamar", "HoopaUnbound", "ChiYu", "Pecharunt", "Spiritomb", "Misdreavus", "Mismagius",
+    "Impidimp", "Morgrem", "Grimmsnarl", "Shuppet", "Banette", "Zubat", "Golbat", "Crobat",
+    "Sableye", "Gastly", "Haunter", "Gengar", "Duskull", "Dusclops", "Dusknoir", "Drifloon",
+    "Drifblim", "Litwick", "Lampent", "Chandelure", "Froslass", "Noibat", "Noivern", "Sinistea",
+    "Polteageist", "Dreepy", "Drakloak", "Dragapult", "Gimmighoul", "Gholdengo"
+}}
+# Acid Rain (TM57, Aqua-grunt): alle Poison-types plus soorten die met vervuiling of weer te maken hebben.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_ACID_RAIN"] = {"like": set(), "types": {"TYPE_POISON"}, "species": {
+    "Castform", "Torkoal", "Rolycoly", "Carkol", "Coalossal", "Slugma", "Magcargo",
+}}
+# Pollen Haze (TM58, Bug Maniac op Route 119): alle Bug- en Grass-types.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_POLLEN_HAZE"] = {"like": set(), "types": {"TYPE_BUG", "TYPE_GRASS"}}
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")
@@ -154,8 +211,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         repo_species_teachables = list(filter(lambda m: m in repo_teachables, all_learnables[species_upper]))
         for move, rule in GROUNDED_CUSTOM_TEACHABLES.items():
             if move in repo_teachables and move not in repo_species_teachables and (
-                rule["like"] in all_learnables[species_upper]
+                ({rule["like"]} if isinstance(rule["like"], str) else rule["like"]) & set(all_learnables[species_upper])
                 or learnset_types.get(species.group("name"), set()) & rule["types"]
+                or species.group("name") in rule.get("species", set())
             ):
                 repo_species_teachables.append(move)
 

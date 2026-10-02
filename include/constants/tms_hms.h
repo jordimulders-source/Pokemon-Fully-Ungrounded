@@ -52,7 +52,14 @@
     F(DARK_PULSE) \
     F(PLAY_ROUGH) \
     F(OVERHEAT) \
-    F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */
+    F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */ \
+    F(LAGER_LAGOON) /* Project Grounded: TM52, bier-Surf */ \
+    F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */ \
+    F(MACHINE_LEARNING) /* Project Grounded: TM54, beloning van Wattson */ \
+    F(LASER_BEAM) /* Project Grounded: TM55, beloning van Tate & Liza */ \
+    F(SHADOW_SIPHON) /* Project Grounded: TM56, Mt. Pyre 3F */ \
+    F(ACID_RAIN) /* Project Grounded: TM57, van een Aqua-grunt in de Aqua Hideout */ \
+    F(POLLEN_HAZE) /* Project Grounded: TM58, van een Bug Maniac boven de Mimic Circle (Route 119) */
 
 #define FOREACH_HM(F) \
     F(CUT) \

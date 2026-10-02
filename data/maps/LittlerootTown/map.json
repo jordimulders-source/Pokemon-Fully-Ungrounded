@@ -130,7 +130,7 @@
     },
     {
       "local_id": "LOCALID_GALAR_ZIGZAGOON",
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)",
       "x": 14,
       "y": 2,
       "elevation": 3,

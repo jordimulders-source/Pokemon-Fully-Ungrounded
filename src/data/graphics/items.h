@@ -92,6 +92,8 @@ const u16 gItemIconPalette_CherishBall[] = INCBIN_U16("graphics/items/icon_palet
 // Medicine
 
 const u32 gItemIcon_Potion[] = INCBIN_U32("graphics/items/icons/potion.4bpp.smol");
+const u32 gItemIcon_SixPack[] = INCBIN_U32("graphics/items/icons/six_pack.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_SixPack[] = INCBIN_U16("graphics/items/icon_palettes/six_pack.gbapal");
 const u16 gItemIconPalette_Potion[] = INCBIN_U16("graphics/items/icon_palettes/potion.gbapal");
 
 const u16 gItemIconPalette_SuperPotion[] = INCBIN_U16("graphics/items/icon_palettes/super_potion.gbapal");

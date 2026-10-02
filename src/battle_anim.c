@@ -257,6 +257,8 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_POWER_CONSTRUCT]        = gBattleAnimGeneral_PowerConstruct,
     [B_ANIM_SWAP_TO_SUBSTITUTE]     = gBattleAnimGeneral_SwapToSubstitute,
     [B_ANIM_SWAP_FROM_SUBSTITUTE]   = gBattleAnimGeneral_SwapFromSubstitute,
+    [B_ANIM_ACID_RAIN_CONTINUES]    = gBattleAnimGeneral_AcidRain, // Project Grounded
+    [B_ANIM_POLLEN_HAZE_CONTINUES]  = gBattleAnimGeneral_PollenHaze, // Project Grounded
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =
@@ -322,9 +324,40 @@ static void Nop(void)
 {
 }
 
+// Project Grounded: animaties tussen de beurten door (weer, status, terrein, heal, items...) lopen sneller:
+// hun wachttijden (delay) worden gehalveerd. Aanvallen en filmische momenten blijven op normale snelheid.
+static bool8 sFastBattleAnim;
+
+static bool32 IsFastBattleAnim(u32 animType, u32 animId)
+{
+    if (animType == ANIM_TYPE_STATUS)
+        return TRUE;
+    if (animType != ANIM_TYPE_GENERAL)
+        return FALSE;
+    switch (animId)
+    {
+    case B_ANIM_MEGA_EVOLUTION:
+    case B_ANIM_PRIMAL_REVERSION:
+    case B_ANIM_POWER_CONSTRUCT:
+    case B_ANIM_ULTRA_BURST:
+    case B_ANIM_TERA_CHARGE:
+    case B_ANIM_TERA_ACTIVATE:
+    case B_ANIM_ZMOVE_ACTIVATE:
+    case B_ANIM_TOTEM_FLARE:
+    case B_ANIM_DYNAMAX_GROWTH:
+    case B_ANIM_FORM_CHANGE:
+    case B_ANIM_ILLUSION_OFF:
+        return FALSE;
+    default:
+        return TRUE;
+    }
+}
+
 void LaunchBattleAnimation(u32 animType, u32 animId)
 {
     s32 i;
+
+    sFastBattleAnim = IsFastBattleAnim(animType, animId);
 
     if (gTestRunnerEnabled)
     {
@@ -808,6 +841,8 @@ static void Cmd_delay(void)
 {
     sBattleAnimScriptPtr++;
     sAnimFramesToWait = sBattleAnimScriptPtr[0];
+    if (sFastBattleAnim)
+        sAnimFramesToWait = (sAnimFramesToWait + 1) / 2;
     if (sAnimFramesToWait == 0)
         sAnimFramesToWait = -1;
     sBattleAnimScriptPtr++;

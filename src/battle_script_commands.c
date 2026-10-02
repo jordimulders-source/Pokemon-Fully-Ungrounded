@@ -4208,7 +4208,20 @@ static void Cmd_setadditionaleffects(void)
             // Various checks for if this move effect can be applied this turn
             if (CanApplyAdditionalEffect(additionalEffect))
             {
-                percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
+                // Project Grounded: Vintage Spill wordt per treffer op hetzelfde doelwit sterker (50 -> 100% confusion)
+                if (gCurrentMove == MOVE_VINTAGE_SPILL && additionalEffect->moveEffect == MOVE_EFFECT_CONFUSION)
+                {
+                    static const u8 sVintageSpillChances[] = {50, 100};
+                    struct AdditionalEffect vintageEffect = *additionalEffect;
+                    vintageEffect.chance = sVintageSpillChances[gDisableStructs[gBattlerTarget].vintageSpillCount];
+                    percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), &vintageEffect);
+                    if (gDisableStructs[gBattlerTarget].vintageSpillCount < ARRAY_COUNT(sVintageSpillChances) - 1)
+                        gDisableStructs[gBattlerTarget].vintageSpillCount++;
+                }
+                else
+                {
+                    percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
+                }
 
                 // Activate effect if it's primary (chance == 0) or if RNGesus says so
                 if ((percentChance == 0) || RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))
@@ -5988,7 +6001,10 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         if (!IsAbilityOnField(ABILITY_DAMP))
         {
             gBattleStruct->passiveHpUpdate[gBattlerAttacker] = 0;
-            BattleScriptCall(BattleScript_FaintAttackerForExplosion);
+            if (gCurrentMove == MOVE_IMPLOSION) // Project Grounded
+                BattleScriptCall(BattleScript_FaintAttackerForImplosion);
+            else
+                BattleScriptCall(BattleScript_FaintAttackerForExplosion);
             effect = TRUE;
         }
         break;
@@ -6693,6 +6709,15 @@ static void Cmd_moveend(void)
             break;
         }
         case MOVEEND_MOVE_BLOCK:
+            // Project Grounded: windmoves (Gust, Heat Wave, Hurricane, Tailwind, ...) blazen Pollen Haze weg
+            if (gBattleWeather & B_WEATHER_POLLEN_HAZE && IsWindMove(gCurrentMove) && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            {
+                gBattleWeather &= ~B_WEATHER_POLLEN_HAZE;
+                gWishFutureKnock.weatherDuration = 0;
+                BattleScriptCall(BattleScript_PollenHazeBlownAway);
+                effect = TRUE;
+                break;
+            }
             effect = HandleMoveEndMoveBlock(moveEffect);
             gBattleScripting.moveendState++;
             break;
@@ -7968,7 +7993,8 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         {
             gBattleScripting.battler = battler;
             BattleScriptPushCursor();
-            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2)
+            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2
+             || (gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect())) // Project Grounded: Acid Rain maakt het Toxic
             {
                 gBattlescriptCurrInstr = BattleScript_ToxicSpikesBadlyPoisoned;
                 gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
@@ -8059,6 +8085,12 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
             gDisableStructs[battler].hazardsDone = TRUE;
             gBattleStruct->hazardsCounter = 0;
         }
+    }
+    else if (gFieldTimers.blackHoleTimer != 0 && !gDisableStructs[battler].blackHoleDone) // Project Grounded: Implosion
+    {
+        gDisableStructs[battler].blackHoleDone = TRUE;
+        gBattleScripting.battler = battler;
+        BattleScriptCall(BattleScript_BlackHoleSwitchIn);
     }
     else if (gBattleMons[battler].hp != gBattleMons[battler].maxHP && gBattleStruct->zmove.healReplacement)
     {
@@ -9491,6 +9523,16 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
             }
             return TRUE;
         }
+        if (gBattleWeather & B_WEATHER_ACID_RAIN) // Project Grounded: Defog blaast de zure wolken weg
+        {
+            if (clear)
+            {
+                gBattleWeather &= ~B_WEATHER_ACID_RAIN;
+                gWishFutureKnock.weatherDuration = 0;
+                BattleScriptCall(BattleScript_AcidRainEnded_Ret);
+            }
+            return TRUE;
+        }
         if (GetConfig(B_DEFOG_EFFECT_CLEARING) >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY))
         {
             if (clear)
@@ -9880,7 +9922,11 @@ static void Cmd_tryhealhalfhealth(void)
     if (cmd->battler == BS_ATTACKER)
         gBattlerTarget = gBattlerAttacker;
 
-    SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 2);
+    // Project Grounded: in Acid Rain wordt Milk Drink zuur en herstelt hij maar een kwart (1/8 van de max HP)
+    if (gCurrentMove == MOVE_MILK_DRINK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_ACID_RAIN))
+        SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 8);
+    else
+        SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 2);
     if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
         gBattlescriptCurrInstr = failInstr;
     else
@@ -9921,6 +9967,12 @@ static void Cmd_setfieldweather(void)
         break;
     case BATTLE_WEATHER_SNOW:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SNOW;
+        break;
+    case BATTLE_WEATHER_ACID_RAIN: // Project Grounded
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN;
+        break;
+    case BATTLE_WEATHER_POLLEN_HAZE: // Project Grounded
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_POLLEN_HAZE;
         break;
     }
 
@@ -12395,7 +12447,7 @@ static void Cmd_recoverbasedonsunlight(void)
         }
         else if (GetConfig(B_TIME_OF_DAY_HEALING_MOVES) != GEN_2)
         {
-            if (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA)
+            if (!(gBattleWeather & (B_WEATHER_ANY & ~B_WEATHER_POLLEN_HAZE)) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA) // Project Grounded: Pollen Haze halveert niet
                 recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else if (gBattleWeather & B_WEATHER_SUN)
                 recoverAmount = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
@@ -15473,6 +15525,8 @@ void BS_TryHealPulse(void)
         s32 healAmount = 0;
         if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_LAUNCHER && IsPulseMove(gCurrentMove))
             healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 75 / 100;
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_HIT_ENEMY_HEAL_ALLY && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect()) // Project Grounded
+            healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 75 / 100;
         else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && GetMoveEffectArg_MoveProperty(gCurrentMove) == MOVE_EFFECT_FLORAL_HEALING)
             healAmount = GetNonDynamaxMaxHP(gBattlerTarget) * 2 / 3;
         else
@@ -18198,4 +18252,257 @@ void BS_UndoDynamax(void)
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Fungal Control (Parasect)
+// De gebruiker kiest welke move het doelwit 3 beurten lang moet gebruiken (werkt via Encore).
+// De speler kiest via het move-menu; de AI (en de testrunner) kiest de move die het doelwit het meest schaadt.
+static bool32 FungalControl_IsUsable(u32 battler, u32 pos)
+{
+    u32 move = gBattleMons[battler].moves[pos];
+    return move != MOVE_NONE && gBattleMons[battler].pp[pos] != 0 && !IsMoveEncoreBanned(move);
+}
+
+static u32 FungalControl_AutoPick(u32 battler)
+{
+    u32 i, best = 0;
+    s32 score, bestScore = -1;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u32 move = gBattleMons[battler].moves[i];
+        if (!FungalControl_IsUsable(battler, i))
+            continue;
+        switch (GetMoveEffect(move))
+        {
+        case EFFECT_EXPLOSION:
+        case EFFECT_MISTY_EXPLOSION:
+        case EFFECT_MEMENTO:
+        case EFFECT_FINAL_GAMBIT:
+        case EFFECT_HEALING_WISH:
+            score = 1000;
+            break;
+        default:
+            if (GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
+                score = 500;
+            else
+                score = 400 - GetMovePower(move);
+            break;
+        }
+        if (score > bestScore)
+        {
+            bestScore = score;
+            best = i;
+        }
+    }
+    return best;
+}
+
+void BS_TryFungalControl(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 i;
+
+    if (gDisableStructs[gBattlerTarget].encoredMove == MOVE_NONE)
+    {
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (FungalControl_IsUsable(gBattlerTarget, i))
+            {
+                gBattlescriptCurrInstr = cmd->nextInstr;
+                return;
+            }
+        }
+    }
+    gBattlescriptCurrInstr = cmd->failInstr;
+}
+
+static EWRAM_DATA bool8 sFungalControlWaiting = FALSE;
+
+void BS_FungalControlChooseMove(void)
+{
+    NATIVE_ARGS();
+    u32 i, pos;
+
+    if (!sFungalControlWaiting)
+    {
+        if (!BattlerHasAi(gBattlerAttacker) && !gTestRunnerEnabled && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+        {
+            struct ChooseMoveStruct moveInfo = {0};
+
+            moveInfo.species = gBattleMons[gBattlerTarget].species;
+            moveInfo.monTypes[0] = gBattleMons[gBattlerTarget].types[0];
+            moveInfo.monTypes[1] = gBattleMons[gBattlerTarget].types[1];
+            moveInfo.monTypes[2] = gBattleMons[gBattlerTarget].types[2];
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                moveInfo.moves[i] = gBattleMons[gBattlerTarget].moves[i];
+                moveInfo.currentPp[i] = gBattleMons[gBattlerTarget].pp[i];
+                moveInfo.maxPp[i] = CalculatePPWithBonus(gBattleMons[gBattlerTarget].moves[i], gBattleMons[gBattlerTarget].ppBonuses, i);
+            }
+            gFungalControlChoosing = TRUE;
+            BtlController_EmitChooseMove(gBattlerAttacker, B_COMM_TO_CONTROLLER, FALSE, FALSE, &moveInfo);
+            MarkBattlerForControllerExec(gBattlerAttacker);
+            sFungalControlWaiting = TRUE;
+            return;
+        }
+        pos = FungalControl_AutoPick(gBattlerTarget);
+    }
+    else
+    {
+        gFungalControlChoosing = FALSE;
+        sFungalControlWaiting = FALSE;
+        pos = gBattleResources->bufferB[gBattlerAttacker][2] & (MAX_MON_MOVES - 1);
+        if (!FungalControl_IsUsable(gBattlerTarget, pos))
+            pos = FungalControl_AutoPick(gBattlerTarget);
+    }
+
+    gDisableStructs[gBattlerTarget].encoredMove = gBattleMons[gBattlerTarget].moves[pos];
+    gDisableStructs[gBattlerTarget].encoredMovePos = pos;
+    if (gDisableStructs[gBattlerTarget].encoredMove != GetChosenMoveFromPosition(gBattlerTarget))
+        gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
+    if (HasBattlerActedThisTurn(gBattlerTarget))
+        gDisableStructs[gBattlerTarget].encoreTimer = 4;
+    else
+        gDisableStructs[gBattlerTarget].encoreTimer = 3;
+    PREPARE_MOVE_BUFFER(gBattleTextBuff1, gDisableStructs[gBattlerTarget].encoredMove);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Transmutation (omgekeerde Transform): het doelwit wordt een kopie van de gebruiker,
+// met dezelfde regels als Transform (types, stats, stat stages, ability en moves met max. 5 PP), tot het wisselt.
+void BS_TryTransmutation(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 user = gBattlerAttacker, target = gBattlerTarget;
+
+    if (gBattleMons[target].volatiles.transformed
+        || gBattleMons[user].volatiles.transformed
+        || DoesSubstituteBlockMove(user, target, gCurrentMove)
+        || gBattleStruct->illusion[user].state == ILLUSION_ON
+        || gBattleStruct->illusion[target].state == ILLUSION_ON
+        || IsSemiInvulnerable(target, EXCLUDE_COMMANDER)
+        || GetActiveGimmick(target) == GIMMICK_DYNAMAX)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else
+    {
+        s32 i;
+        u8 *monTarget = (u8 *)(&gBattleMons[target]);
+        u8 *monUser = (u8 *)(&gBattleMons[user]);
+
+        gBattleMons[target].volatiles.transformed = TRUE;
+        gDisableStructs[target].disabledMove = MOVE_NONE;
+        gDisableStructs[target].disableTimer = 0;
+        gDisableStructs[target].encoredMove = MOVE_NONE;
+        gDisableStructs[target].encoreTimer = 0;
+        gDisableStructs[target].transformedMonPersonality = gBattleMons[user].personality;
+        gDisableStructs[target].transformedMonShininess = gBattleMons[user].isShiny;
+        gDisableStructs[target].mimickedMoves = 0;
+        gDisableStructs[target].usedMoves = 0;
+
+        PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[user].species)
+
+        for (i = 0; i < offsetof(struct BattlePokemon, pp); i++)
+            monTarget[i] = monUser[i];
+
+        gDisableStructs[target].overwrittenAbility = GetBattlerAbility(user);
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            u32 pp = GetMovePP(gBattleMons[target].moves[i]);
+            gBattleMons[target].pp[i] = (pp < 5) ? pp : 5;
+        }
+
+        RecordAllMoves(target);
+        RecordAbilityBattle(target, gBattleMons[target].ability);
+
+        BtlController_EmitResetActionMoveSelection(target, B_COMM_TO_CONTROLLER, RESET_MOVE_SELECTION);
+        MarkBattlerForControllerExec(target);
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+}
+
+// Project Grounded: wisselt aanvaller en doelwit (bijv. om de Transform-animatie op het doelwit af te spelen)
+void BS_SwapAttackerAndTarget(void)
+{
+    NATIVE_ARGS();
+    u32 temp = gBattlerAttacker;
+    gBattlerAttacker = gBattlerTarget;
+    gBattlerTarget = temp;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Implosion vormt een zwart gat: alle hazards (beide kanten) verdwijnen, 5 beurten lang -1 Atk/SpAtk bij inwisselen
+void BS_FormBlackHole(void)
+{
+    NATIVE_ARGS();
+    RemoveAllHazardsFromField(B_SIDE_PLAYER);
+    RemoveAllHazardsFromField(B_SIDE_OPPONENT);
+    gFieldTimers.blackHoleTimer = 5;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+
+// Project Grounded: Machine Learning. Opeenvolgende beurten: 1, 2, 3 en daarna alle 5 stats +1.
+// Welke stats: de hoogste basisstats van de gebruiker eerst (bij gelijkspel Atk, Def, SpAtk, SpDef, Speed).
+void BS_MachineLearningTrain(void)
+{
+    NATIVE_ARGS();
+    struct DisableStruct *ds = &gDisableStructs[gBattlerAttacker];
+    const struct SpeciesInfo *info = &gSpeciesInfo[gBattleMons[gBattlerAttacker].species];
+    static const u8 sStats[] = {STAT_ATK, STAT_DEF, STAT_SPATK, STAT_SPDEF, STAT_SPEED};
+    u8 base[ARRAY_COUNT(sStats)];
+    u32 i, j, n;
+
+    if (ds->machineLearningCount == 0 || ds->machineLearningTurn + 1 != gBattleTurnCounter)
+        ds->machineLearningCount = 0;
+    if (ds->machineLearningCount < 4)
+        ds->machineLearningCount++;
+    ds->machineLearningTurn = gBattleTurnCounter;
+
+    base[0] = info->baseAttack;
+    base[1] = info->baseDefense;
+    base[2] = info->baseSpAttack;
+    base[3] = info->baseSpDefense;
+    base[4] = info->baseSpeed;
+
+    n = (ds->machineLearningCount >= 4) ? ARRAY_COUNT(sStats) : ds->machineLearningCount;
+    ds->machineLearningStats = 0;
+    for (i = 0; i < n; i++)
+    {
+        u32 best = ARRAY_COUNT(sStats);
+        for (j = 0; j < ARRAY_COUNT(sStats); j++)
+        {
+            if (ds->machineLearningStats & (1u << sStats[j]))
+                continue;
+            if (best == ARRAY_COUNT(sStats) || base[j] > base[best])
+                best = j;
+        }
+        ds->machineLearningStats |= 1u << sStats[best];
+    }
+    PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, ds->machineLearningCount);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_MachineLearningNextStat(void)
+{
+    NATIVE_ARGS(const u8 *doneInstr);
+    struct DisableStruct *ds = &gDisableStructs[gBattlerAttacker];
+    u32 stat;
+
+    for (stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+    {
+        if (ds->machineLearningStats & (1u << stat))
+        {
+            ds->machineLearningStats &= ~(1u << stat);
+            SET_STATCHANGER(stat, 1, FALSE);
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+    }
+    gBattlescriptCurrInstr = cmd->doneInstr;
 }

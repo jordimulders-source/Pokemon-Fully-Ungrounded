@@ -713,3 +713,95 @@ Route111_Text_TrainerHillSign:
 	.string "TRAINERS!”\p"
 	.string "Your knees won't.$"
 
+
+@ Project Grounded: na Wattson beukt Heatran de stenen boven Mauville weg, loopt langs, ruikt aan je en gaat naar het noorden.
+Route111_EventScript_HeatranCutscene::
+	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_HeatranNotYet
+	lockall
+	setvar VAR_HEATRAN_CUTSCENE_STATE, 1
+	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_1
+	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_2
+	setflag FLAG_HIDE_ROUTE111_HEATRAN_ROCKS
+	playse SE_M_STRENGTH
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 10 @ num shakes
+	setvar VAR_0x8007, 4  @ shake delay
+	special ShakeCamera
+	waitstate
+	msgbox Route111_Text_HeatranRumble, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	clearflag FLAG_HIDE_ROUTE111_HEATRAN
+	addobject LOCALID_ROUTE111_HEATRAN
+	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranWalkDown
+	waitmovement 0
+	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PlayerStartled
+	waitmovement 0
+	msgbox Route111_Text_HeatranSniffs, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranWalkAway
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_HEATRAN
+	setflag FLAG_HIDE_ROUTE111_HEATRAN
+	msgbox Route111_Text_HeatranGone, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route111_EventScript_HeatranNotYet::
+	end
+
+Route111_Movement_HeatranWalkDown:
+	walk_slow_down
+	walk_slow_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_slow_down
+	walk_slow_down
+	delay_16
+	step_end
+
+Route111_Movement_PlayerStartled:
+	emote_exclamation_mark
+	lock_facing_direction
+	walk_slow_down
+	unlock_facing_direction
+	step_end
+
+Route111_Movement_HeatranWalkAway:
+	delay_16
+	face_up
+	delay_16
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route111_Text_HeatranRumble:
+	.string "The ground is shaking…\n"
+	.string "Something big is coming down the route!$"
+
+Route111_Text_HeatranSniffs:
+	.string "The POKéMON sniffs at you.\p"
+	.string "Its breath smells like a volcano\n"
+	.string "that skipped breakfast.\p"
+	.string "It seems to have lost interest.$"
+
+Route111_Text_HeatranGone:
+	.string "It lumbered off to the north…\p"
+	.string "The rocks that blocked the route\n"
+	.string "are gone. Melted, probably.$"

@@ -1596,7 +1596,7 @@
               { "min_level": 28, "max_level": 30, "species": "SPECIES_LUDICOLO" },
               { "min_level": 26, "max_level": 28, "species": "SPECIES_CROAGUNK" },
               { "min_level": 30, "max_level": 32, "species": "SPECIES_AMBIPOM" },
-              { "min_level": 27, "max_level": 28, "species": "SPECIES_CROAGUNK" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_MIMIKYU" },
               { "min_level": 35, "max_level": 35, "species": "SPECIES_ZARUDE" }
             ]
           },
@@ -2332,6 +2332,37 @@
               { "min_level": 35, "max_level": 37, "species": "SPECIES_GLIGAR" },
               { "min_level": 37, "max_level": 37, "species": "SPECIES_DRUDDIGON" },
               { "min_level": 37, "max_level": 37, "species": "SPECIES_PUPITAR" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ASHFROST_TOWN",
+          "base_label": "gAshfrostTown",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_SWINUB" },
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_VANILLITE" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SNOVER" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SWINUB" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_VANILLITE" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_SNOVER" },
+              { "min_level": 20, "max_level": 22, "species": "SPECIES_SNOM" },
+              { "min_level": 21, "max_level": 23, "species": "SPECIES_SNOM" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 22, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 23, "max_level": 23, "species": "SPECIES_DELIBIRD" },
+              { "min_level": 23, "max_level": 23, "species": "SPECIES_DELIBIRD" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_DUCKLETT" },
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_PSYDUCK" },
+              { "min_level": 22, "max_level": 24, "species": "SPECIES_QUAGSIRE" },
+              { "min_level": 20, "max_level": 24, "species": "SPECIES_GOLDEEN" },
+              { "min_level": 22, "max_level": 22, "species": "SPECIES_SPHEAL" }
             ]
           }
         },

@@ -5773,6 +5773,16 @@ static void AnimRecycle_Step(struct Sprite *sprite)
     }
 }
 
+// Project Grounded: Pollen Haze - sporen volgen altijd het doel; arg 0 = overkant, 1 = eigen kant
+void AnimTask_PollenHazeSetSide(u8 taskId)
+{
+    if (gBattleAnimArgs[0])
+        gBattleAnimTarget = gBattleAnimAttacker;
+    else
+        gBattleAnimTarget = GetOppositeBattler(gBattleAnimAttacker);
+    DestroyAnimVisualTask(taskId);
+}
+
 void AnimTask_GetWeather(u8 taskId)
 {
     bool32 utilityUmbrellaAffected = GetBattlerHoldEffect(gBattleAnimAttacker) == HOLD_EFFECT_UTILITY_UMBRELLA;
@@ -5790,6 +5800,10 @@ void AnimTask_GetWeather(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SNOW;
     else if (gWeatherMoveAnim & B_WEATHER_FOG)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FOG;
+    else if (gWeatherMoveAnim & B_WEATHER_ACID_RAIN) // Project Grounded
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_ACID_RAIN;
+    else if (gWeatherMoveAnim & B_WEATHER_POLLEN_HAZE) // Project Grounded
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_POLLEN_HAZE;
 
     DestroyAnimVisualTask(taskId);
 }

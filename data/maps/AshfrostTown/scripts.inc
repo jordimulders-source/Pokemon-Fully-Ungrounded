@@ -31,7 +31,7 @@ AshfrostTown_EventScript_OldWoman::
 	end
 
 AshfrostTown_EventScript_OldWoman_Text:
-	.string "(Placeholder: old woman.)$"
+	.string "Every morning I polish the three\nstone giants and pray to them.\pThey have never once said thank you.\nNeither did my late husband.$"
 
 AshfrostTown_EventScript_Hiker::
 	msgbox AshfrostTown_EventScript_Hiker_Text, MSGBOX_NPC

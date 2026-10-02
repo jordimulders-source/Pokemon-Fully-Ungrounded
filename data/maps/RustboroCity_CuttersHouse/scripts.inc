@@ -35,7 +35,14 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "CUT. It cuts. Small trees, mostly. You\n"
 	.string "need the STONE BADGE.\p"
 	.string "You can use it outside of battle, as\n"
-	.string "often as you like. That's what HM means.$"
+	.string "often as you like. That's what HM means.\p"
+	.string "And no, you don't have to teach it.\n"
+	.string "Just walk up to a tree and press A.\p"
+	.string "Some POKéMON somewhere does the work.\n"
+	.string "In your BOX, probably. We call it\l"
+	.string "channeling. Nobody asks questions.\p"
+	.string "Same goes for every HM you'll find.\n"
+	.string "BADGE plus HM in your BAG. Done.$"
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "When they expanded RUSTBORO, my dad\n"

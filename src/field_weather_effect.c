@@ -773,8 +773,33 @@ static bool8 CreateSnowflakeSprite(void);
 static bool8 DestroySnowflakeSprite(void);
 static void InitSnowflakeSpriteMovement(struct Sprite *);
 
+// Project Grounded: zware sneeuwbui (WEATHER_SNOW_STORM): meer en snellere vlokken, wind en een donkerdere lucht
+static EWRAM_DATA bool8 sSnowStorm = FALSE;
+
+void SnowStorm_InitVars(void)
+{
+    Snow_InitVars();
+    sSnowStorm = TRUE;
+    gWeatherPtr->targetColorMapIndex = 3;
+    gWeatherPtr->targetSnowflakeSpriteCount = 36; // meer kan niet veilig: max. 64 sprites, ook voor NPCs en voetstappen
+}
+
+void SnowStorm_InitAll(void)
+{
+    u16 i;
+
+    SnowStorm_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        Snow_Main();
+        for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++)
+            UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]);
+    }
+}
+
 void Snow_InitVars(void)
 {
+    sSnowStorm = FALSE;
     gWeatherPtr->initStep = 0;
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
@@ -833,7 +858,7 @@ static bool8 UpdateVisibleSnowflakeSprites(void)
     if (gWeatherPtr->snowflakeSpriteCount == gWeatherPtr->targetSnowflakeSpriteCount)
         return FALSE;
 
-    if (++gWeatherPtr->snowflakeVisibleCounter > 36)
+    if (++gWeatherPtr->snowflakeVisibleCounter > (sSnowStorm ? 6 : 36))
     {
         gWeatherPtr->snowflakeVisibleCounter = 0;
         if (gWeatherPtr->snowflakeSpriteCount < gWeatherPtr->targetSnowflakeSpriteCount)
@@ -941,6 +966,8 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
     sprite->x2 = 0;
     rand = Random();
     sprite->tDeltaY = (rand & 3) * 5 + 64;
+    if (sSnowStorm)
+        sprite->tDeltaY *= 2;
     sprite->tDeltaY2 = sprite->tDeltaY;
     StartSpriteAnim(sprite, (rand & 1) ? 0 : 1);
     sprite->tWaveIndex = 0;
@@ -970,6 +997,8 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
     sprite->tWaveIndex += sprite->tWaveDelta;
     sprite->tWaveIndex &= 0xFF;
     sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+    if (sSnowStorm) // wind
+        sprite->x -= 1 + (sprite->tWaveDelta & 1);
 
     x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
     if (x & 0x100)
@@ -2619,6 +2648,15 @@ static const u8 sWeatherCycleAshfrost[WEATHER_CYCLE_LENGTH] =
     WEATHER_VOLCANIC_ASH,
 };
 
+// Project Grounded: Route 135 (verst van Ashfrost), per dag afwisselend sneeuwstorm en as
+static const u8 sWeatherCycleAshfrostStorm[WEATHER_CYCLE_LENGTH] =
+{
+    WEATHER_SNOW_STORM,
+    WEATHER_VOLCANIC_ASH,
+    WEATHER_SNOW_STORM,
+    WEATHER_VOLCANIC_ASH,
+};
+
 static u8 TranslateWeatherNum(u8 weather)
 {
     switch (weather)
@@ -2642,6 +2680,8 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ASHFROST_CYCLE:     return sWeatherCycleAshfrost[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_SNOW_STORM:         return WEATHER_SNOW_STORM;
+    case WEATHER_ASHFROST_STORM_CYCLE: return sWeatherCycleAshfrostStorm[gSaveBlock1Ptr->weatherCycleStage];
     default:                         return WEATHER_NONE;
     }
 }

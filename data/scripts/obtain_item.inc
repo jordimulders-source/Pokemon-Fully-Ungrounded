@@ -113,10 +113,24 @@ Std_FindItem::
 	checkitemspace ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT
 	bufferitemnameplural STR_VAR_2, ITEMID, AMOUNT
+	@ Project Grounded: al eens gevonden? Dan zonder tekstvak, met een korte pop-up
+	goto_if_eq VAR_0x8007, FALSE, EventScript_FindItemNormal
+	specialvar VAR_RESULT, IsItemObtainedBefore
+	goto_if_eq VAR_RESULT, TRUE, EventScript_QuickPickUpItem
+EventScript_FindItemNormal:
 	checkitemtype ITEMID
 	call EventScript_BufferPocketNameAndTryFanfare
 	call_if_eq VAR_0x8007, TRUE, EventScript_PickUpItem
 	call_if_eq VAR_0x8007, FALSE, EventScript_NoRoomToPickUpItem
+	release
+	return
+
+EventScript_QuickPickUpItem::
+	removeobject VAR_LAST_TALKED
+	additem VAR_0x8004, VAR_0x8005
+	copyvar VAR_0x8007, VAR_0x8005
+	playse SE_RG_BAG_POCKET
+	special ShowItemPickupPopup
 	release
 	return
 
@@ -179,6 +193,11 @@ EventScript_HiddenItemScript::
 	additem VAR_0x8005
 	copyvar VAR_0x8007, VAR_RESULT
 	bufferitemnameplural STR_VAR_2, VAR_0x8005, 1
+	@ Project Grounded: al eens gevonden? Dan zonder tekstvak, met een korte pop-up
+	goto_if_eq VAR_0x8007, FALSE, EventScript_HiddenItemNormal
+	specialvar VAR_RESULT, IsItemObtainedBefore
+	goto_if_eq VAR_RESULT, TRUE, EventScript_QuickPickUpHiddenItem
+EventScript_HiddenItemNormal:
 	checkitemtype VAR_0x8005
 	call EventScript_BufferPocketNameAndTryFanfare
 	goto_if_eq VAR_0x8007, TRUE, EventScript_PickUpHiddenItem
@@ -214,6 +233,17 @@ EventScript_PutHiddenItemInPocket::
 	copyvar VAR_0x8004, VAR_0x8008
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	hideitemdescription
+	special TryPutTreasureInvestigatorsOnAir
+	special SetHiddenItemFlag
+	callnative Script_UpdateDowseState
+	releaseall
+	end
+
+EventScript_QuickPickUpHiddenItem::
+	callnative Script_ClearDowsingColor
+	setvar VAR_0x8007, 1
+	playse SE_RG_BAG_POCKET
+	special ShowItemPickupPopup
 	special TryPutTreasureInvestigatorsOnAir
 	special SetHiddenItemFlag
 	callnative Script_UpdateDowseState

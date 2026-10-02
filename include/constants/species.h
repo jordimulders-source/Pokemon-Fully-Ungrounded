@@ -1664,8 +1664,10 @@
 #define SPECIES_ZYGARDE_MEGA                            1547
 #define SPECIES_DRAMPA_MEGA                             1548
 #define SPECIES_FALINKS_MEGA                            1549
+#define SPECIES_GRIMER_HOENN                            1550 // Project Grounded
+#define SPECIES_MUK_HOENN                               1551 // Project Grounded
 
-#define SPECIES_EGG                                     (SPECIES_FALINKS_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_MUK_HOENN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

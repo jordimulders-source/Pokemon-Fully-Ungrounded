@@ -150,11 +150,13 @@ LavaridgeTown_Gym_1F_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, LavaridgeTown_Gym_1F_EventScript_GymGuidePostVictory
 	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GymGuidePostVictory::
 	msgbox LavaridgeTown_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Gym_1F_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -456,3 +458,16 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "Only one POKéMON? Even Grandpa\n"
 	.string "brought two, and he forgets everything.\l"
 	.string "Bring at least two.$"
+
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+LavaridgeTown_Gym_1F_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 29.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+LavaridgeTown_Gym_1F_Text_GymGuideNextAce:
+	.string "Next stop: NORMAN in PETALBURG.\n"
+	.string "Your dad. His ace is level 35.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

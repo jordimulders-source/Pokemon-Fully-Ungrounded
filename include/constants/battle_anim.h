@@ -423,6 +423,7 @@
 #define ANIM_TAG_TATSUGIRI_CURLY            (ANIM_SPRITES_START + 409)
 #define ANIM_TAG_TATSUGIRI_DROOPY           (ANIM_SPRITES_START + 410)
 #define ANIM_TAG_TATSUGIRI_STRETCHY         (ANIM_SPRITES_START + 411)
+#define ANIM_TAG_LASER_DOT                  (ANIM_SPRITES_START + 412) // Project Grounded: Laser Beam
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -594,7 +595,9 @@
 #define B_ANIM_POWER_CONSTRUCT          53
 #define B_ANIM_SWAP_TO_SUBSTITUTE       54
 #define B_ANIM_SWAP_FROM_SUBSTITUTE     55
-#define NUM_B_ANIMS_GENERAL             56
+#define B_ANIM_ACID_RAIN_CONTINUES      56 // Project Grounded
+#define B_ANIM_POLLEN_HAZE_CONTINUES    57 // Project Grounded
+#define NUM_B_ANIMS_GENERAL             58
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -648,6 +651,8 @@
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
 #define ANIM_WEATHER_FOG 6
+#define ANIM_WEATHER_ACID_RAIN 7 // Project Grounded
+#define ANIM_WEATHER_POLLEN_HAZE 8 // Project Grounded
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0
@@ -663,6 +668,7 @@
 #define ANIM_SURF_PAL_SURF           0
 #define ANIM_SURF_PAL_MUDDY_WATER    1
 #define ANIM_SURF_PAL_SLUDGE_WAVE    2
+#define ANIM_SURF_PAL_LAGER          3 // Project Grounded: Lager Lagoon
 
 // Order Up palettes for Commander
 #define ANIM_ORDER_UP_NONE           0

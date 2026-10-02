@@ -13,6 +13,7 @@ struct FieldMoveInfo
 };
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
+bool32 CanUseFieldMoveViaHM(enum FieldMove fieldMove); // Project Grounded
 
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 {

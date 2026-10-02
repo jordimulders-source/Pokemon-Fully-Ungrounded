@@ -5,6 +5,13 @@ VerdanturfTown_MapScripts::
 VerdanturfTown_OnTransition:
 	setflag FLAG_VISITED_VERDANTURF_TOWN
 	setvar VAR_CONTEST_HALL_STATE, 0
+	@ Project Grounded: Birch staat hier pas na zijn gevecht op Route 109
+	setflag FLAG_HIDE_VERDANTURF_BIRCH
+	goto_if_defeated TRAINER_BIRCH, VerdanturfTown_EventScript_ShowBirch
+	end
+
+VerdanturfTown_EventScript_ShowBirch::
+	clearflag FLAG_HIDE_VERDANTURF_BIRCH
 	end
 
 VerdanturfTown_EventScript_Twin::
@@ -121,3 +128,91 @@ VerdanturfTown_Text_RusturfTunnelSign:
 	.string "”The tunnel project has been canceled.\n"
 	.string "Walk.“$"
 
+@ ---------------------------------------------------------------- Project Grounded: Birch en de Hoenn-Grimer
+VerdanturfTown_EventScript_Birch::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_BIRCH_VERDANTURF, VerdanturfTown_EventScript_BirchPostBattle
+	msgbox VerdanturfTown_Text_BirchIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BIRCH_VERDANTURF, VerdanturfTown_Text_BirchDefeat
+	goto VerdanturfTown_EventScript_BirchGiveGrimer
+	end
+
+VerdanturfTown_EventScript_BirchPostBattle::
+	goto_if_unset FLAG_RECEIVED_HOENN_GRIMER, VerdanturfTown_EventScript_BirchGiveGrimer
+	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
+	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_EventScript_BirchGiveGrimer::
+	msgbox VerdanturfTown_Text_BirchTakeGrimer, MSGBOX_DEFAULT
+	givemon SPECIES_GRIMER_HOENN, 22
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, VerdanturfTown_EventScript_BirchNoRoom
+	copyvar VAR_0x8004, VAR_RESULT
+	playfanfare MUS_OBTAIN_ITEM
+	message VerdanturfTown_Text_ReceivedGrimer
+	waitmessage
+	waitfanfare
+	setflag FLAG_RECEIVED_HOENN_GRIMER
+	goto_if_eq VAR_0x8004, MON_GIVEN_TO_PC, VerdanturfTown_EventScript_BirchGrimerToPC
+	msgbox VerdanturfTown_Text_BirchPostBattle, MSGBOX_DEFAULT
+	goto VerdanturfTown_EventScript_BirchBackToSoil
+	end
+
+VerdanturfTown_EventScript_BirchGrimerToPC::
+	msgbox VerdanturfTown_Text_BirchGrimerToPC, MSGBOX_DEFAULT
+	goto VerdanturfTown_EventScript_BirchBackToSoil
+	end
+
+VerdanturfTown_EventScript_BirchNoRoom::
+	msgbox VerdanturfTown_Text_BirchNoRoom, MSGBOX_DEFAULT
+VerdanturfTown_EventScript_BirchBackToSoil::
+	applymovement LOCALID_VERDANTURF_BIRCH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_Text_BirchTakeGrimer:
+	.string "BIRCH: You know what? You clearly\n"
+	.string "don't appreciate it enough yet.\p"
+	.string "So take one home! A fresh one.\n"
+	.string "Still warm. Don't ask why.$"
+
+VerdanturfTown_Text_ReceivedGrimer:
+	.string "{PLAYER} received a GRIMER!\n"
+	.string "It smells like a farm.$"
+
+VerdanturfTown_Text_BirchGrimerToPC:
+	.string "BIRCH: Your party is full, so I sent\n"
+	.string "it to your PC. Sorry, BILL.$"
+
+VerdanturfTown_Text_BirchNoRoom:
+	.string "BIRCH: No room anywhere? Not even\n"
+	.string "in the PC? Come back when you can\l"
+	.string "make space for greatness.$"
+
+VerdanturfTown_Text_BirchIntro:
+	.string "BIRCH: Shh! {PLAYER}, look at\n"
+	.string "this soil. LOOK at it.\p"
+	.string "Dark. Crumbly. Fragrant.\n"
+	.string "The richest earth in all of HOENN.\p"
+	.string "And do you know why? Natural\n"
+	.string "fertilizer! A whole new form of\l"
+	.string "GRIMER lives in these fields!\p"
+	.string "Brown, earthy, and made of… well.\n"
+	.string "Of exactly what you think.\p"
+	.string "I am its biggest fan. I have\n"
+	.string "a poster. I have TWO posters.\p"
+	.string "Here, let me show you. Up close.$"
+
+VerdanturfTown_Text_BirchDefeat:
+	.string "BIRCH: Even in defeat, it smells\n"
+	.string "like progress!$"
+
+VerdanturfTown_Text_BirchPostBattle:
+	.string "BIRCH: The farmers here say their\n"
+	.string "carrots have never been bigger.\p"
+	.string "They also say they would like me\n"
+	.string "to stop kneeling in their fields.$"

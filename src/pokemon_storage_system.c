@@ -485,6 +485,9 @@ struct PokemonStorageSystemData
     u8 displayMonSpeciesName[36];
     u8 displayMonGenderLvlText[36];
     u8 displayMonItemName[36];
+    u8 displayMonNatureText[24];  // Project Grounded: nature en ability in het infopaneel
+    u8 displayMonAbilityText[24];
+    bool8 displayMonNicknamed;
     bool8 (*monPlaceChangeFunc)(void);
     u8 monPlaceChangeState;
     u8 shiftBoxId;
@@ -3987,7 +3990,29 @@ static void LoadDisplayMonGfx(u16 species, u32 pid)
 static void PrintDisplayMonInfo(void)
 {
     FillWindowPixelBuffer(WIN_DISPLAY_INFO, PIXEL_FILL(1));
-    if (sStorage->boxOption != OPTION_MOVE_ITEMS)
+    if (sStorage->boxOption != OPTION_MOVE_ITEMS && sStorage->displayMonNatureText[0] != EOS)
+    {
+        // Project Grounded: naam, (soort +) geslacht/level, nature, ability, item.
+        // Transparante tekstachtergrond: anders wist elke regel de onderkant van de regel erboven.
+        static const u8 sDisplayInfoColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
+        u32 width = WindowWidthPx(WIN_DISPLAY_INFO) - 6;
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNameText, FONT_NORMAL, 0, width), 6, 0, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonNameText);
+        if (sStorage->displayMonNicknamed)
+        {
+            u8 line[72];
+            StringCopy(line, sStorage->displayMonSpeciesName);
+            StringAppend(line, sStorage->displayMonGenderLvlText);
+            AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(line, FONT_SHORT, 0, width), 6, 13, sDisplayInfoColors, TEXT_SKIP_DRAW, line);
+        }
+        else
+        {
+            AddTextPrinterParameterized3(WIN_DISPLAY_INFO, FONT_SHORT, 6, 13, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonGenderLvlText);
+        }
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNatureText, FONT_SMALL, 0, width), 6, 24, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonNatureText);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonAbilityText, FONT_SMALL, 0, width), 6, 34, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonAbilityText);
+        AddTextPrinterParameterized3(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonItemName, FONT_SMALL, 0, width), 6, 44, sDisplayInfoColors, TEXT_SKIP_DRAW, sStorage->displayMonItemName);
+    }
+    else if (sStorage->boxOption != OPTION_MOVE_ITEMS)
     {
         AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNameText, FONT_NORMAL, 0, WindowWidthPx(WIN_DISPLAY_INFO) - 6), sStorage->displayMonNameText, 6, 0, TEXT_SKIP_DRAW, NULL);
         AddTextPrinterParameterized(WIN_DISPLAY_INFO, GetFontIdToFit(sStorage->displayMonNameText, FONT_SHORT, 0, WindowWidthPx(WIN_DISPLAY_INFO) - 12), sStorage->displayMonSpeciesName, 6, 15, TEXT_SKIP_DRAW, NULL);
@@ -6920,6 +6945,8 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
     u8 *txtPtr;
     u16 gender;
     bool8 sanityIsBadEgg;
+    u32 nature = 0;
+    enum Ability ability = ABILITY_NONE;
 
     sStorage->displayMonItemId = ITEM_NONE;
     gender = MON_MALE;
@@ -6945,6 +6972,8 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             sStorage->displayMonPalette = GetMonFrontSpritePal(mon);
             gender = GetMonGender(mon);
             sStorage->displayMonItemId = GetMonData(mon, MON_DATA_HELD_ITEM);
+            nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
+            ability = GetMonAbility(mon);
         }
     }
     else if (mode == MODE_BOX)
@@ -6970,6 +6999,8 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             sStorage->displayMonPalette = GetMonSpritePalFromSpeciesAndPersonality(sStorage->displayMonSpecies, isShiny, sStorage->displayMonPersonality);
             gender = GetGenderFromSpeciesAndPersonality(sStorage->displayMonSpecies, sStorage->displayMonPersonality);
             sStorage->displayMonItemId = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM);
+            nature = GetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE);
+            ability = GetAbilityBySpecies(sStorage->displayMonSpecies, GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM));
         }
     }
     else
@@ -6985,6 +7016,9 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
         StringFill(sStorage->displayMonSpeciesName, CHAR_SPACE, 8);
         StringFill(sStorage->displayMonGenderLvlText, CHAR_SPACE, 8);
         StringFill(sStorage->displayMonItemName, CHAR_SPACE, 8);
+        sStorage->displayMonNatureText[0] = EOS;
+        sStorage->displayMonAbilityText[0] = EOS;
+        sStorage->displayMonNicknamed = FALSE;
     }
     else if (sStorage->displayMonIsEgg)
     {
@@ -6996,9 +7030,17 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
         StringFill(sStorage->displayMonSpeciesName, CHAR_SPACE, 8);
         StringFill(sStorage->displayMonGenderLvlText, CHAR_SPACE, 8);
         StringFill(sStorage->displayMonItemName, CHAR_SPACE, 8);
+        sStorage->displayMonNatureText[0] = EOS;
+        sStorage->displayMonAbilityText[0] = EOS;
+        sStorage->displayMonNicknamed = FALSE;
     }
     else
     {
+        // Project Grounded: zonder bijnaam is de soortregel dubbel; dan komt daar het level
+        sStorage->displayMonNicknamed = (StringCompare(sStorage->displayMonName, GetSpeciesName(sStorage->displayMonSpecies)) != 0);
+        StringCopy(sStorage->displayMonNatureText, gNaturesInfo[nature].name);
+        StringCopy(sStorage->displayMonAbilityText, gAbilitiesInfo[ability].name);
+
         if (sStorage->displayMonSpecies == SPECIES_NIDORAN_F || sStorage->displayMonSpecies == SPECIES_NIDORAN_M)
             gender = MON_GENDERLESS;
 

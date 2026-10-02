@@ -1,6 +1,22 @@
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
 
+@ Project Grounded: Move Deleter naast de Move Relearner. Geen ja/nee-vraag: direct een Pokémon kiezen (B annuleert).
+@ De rest van het gesprek is dat van de Move Deleter in Lilycove.
+FallarborTown_MoveRelearnersHouse_EventScript_MoveDeleter::
+	lockall
+	applymovement LOCALID_FALLARBOR_MOVE_DELETER, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveDeleter, MSGBOX_DEFAULT
+	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
+	end
+
+FallarborTown_MoveRelearnersHouse_Text_ImTheMoveDeleter:
+	.string "He teaches POKéMON old moves.\n"
+	.string "I make them forget new ones.\p"
+	.string "Together we run a perfectly\n"
+	.string "pointless business.$"
+
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer

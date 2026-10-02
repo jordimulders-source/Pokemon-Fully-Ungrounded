@@ -1303,7 +1303,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_TINTED_LENS },
+        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_POLLEN_SEASON }, // Project Grounded: Tinted Lens -> Pollen Season
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Butterfree"),
         .cryId = CRY_BUTTERFREE,
@@ -1399,7 +1399,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_TINTED_LENS },
+        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_POLLEN_SEASON }, // Project Grounded: Tinted Lens -> Pollen Season
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Butterfree"),
         .cryId = CRY_BUTTERFREE,
@@ -6501,9 +6501,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_TINTED_LENS, ABILITY_MAGIC_GUARD },
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_POLLEN_SEASON, ABILITY_MAGIC_GUARD }, // Project Grounded: Tinted Lens -> Pollen Season
     #else
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_TINTED_LENS, ABILITY_MAGIC_GUARD },
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_POLLEN_SEASON, ABILITY_MAGIC_GUARD }, // Project Grounded: Tinted Lens -> Pollen Season
     #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Venomoth"),
@@ -11671,6 +11671,151 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sMukFormSpeciesIdTable,
     },
 #endif //P_ALOLAN_FORMS
+    // Project Grounded: Hoenn-vorm (natuurlijke mest uit Verdanturf)
+    [SPECIES_GRIMER_HOENN] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 80,
+        .baseDefense   = 65,
+        .baseSpeed     = 25,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 45,
+        .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
+        .catchRate = 190,
+        .expYield = 65,
+        .evYield_HP = 1,
+        .itemRare = ITEM_BLACK_SLUDGE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_EARTH_EATER },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Grimer"),
+        .cryId = CRY_GRIMER,
+        .natDexNum = NATIONAL_DEX_GRIMER,
+        .categoryName = _("Dung"),
+        .height = 9,
+        .weight = 350,
+        .description = COMPOUND_STRING("A Grimer found only in the fields around\n"
+            "Verdanturf. It is made of natural manure\n"
+            "and makes the soil absurdly fertile.\n"
+            "Farmers love it. Their neighbours do not."),
+        .pokemonScale = 258,
+        .pokemonOffset = 10,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_GrimerHoenn,
+        .frontPicSize = MON_COORDS_SIZE(48, 56),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_H_SLIDE_SLOW,
+        .backPic = gMonBackPic_GrimerHoenn,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_GrimerHoenn,
+        .shinyPalette = gMonShinyPalette_GrimerHoenn,
+        .iconSprite = gMonIcon_GrimerHoenn,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 3, SHADOW_SIZE_M)
+        FOOTPRINT(Grimer)
+        OVERWORLD(
+            sPicTable_GrimerHoenn,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_GrimerHoenn,
+            gShinyOverworldPalette_GrimerHoenn
+        )
+        .levelUpLearnset = sGrimerHoennLevelUpLearnset,
+        .teachableLearnset = sGrimerTeachableLearnset,
+        .eggMoveLearnset = sGrimerEggMoveLearnset,
+        .formSpeciesIdTable = sGrimerFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_MUK_HOENN}),
+    },
+
+    // Project Grounded: Hoenn-vorm (natuurlijke mest uit Verdanturf)
+    [SPECIES_MUK_HOENN] =
+    {
+        .baseHP        = 105,
+        .baseAttack    = 115,
+        .baseDefense   = 95,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
+        .catchRate = 75,
+        .expYield = 175,
+        .evYield_HP = 1,
+        .evYield_Attack = 1,
+        .itemRare = ITEM_BLACK_SLUDGE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_EARTH_EATER },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Muk"),
+        .cryId = CRY_MUK,
+        .natDexNum = NATIONAL_DEX_MUK,
+        .categoryName = _("Dung"),
+        .height = 12,
+        .weight = 350,
+        .description = COMPOUND_STRING("It spreads itself over barren land and\n"
+            "leaves it fertile within a single night.\n"
+            "PROF. BIRCH calls it the future of farming.\n"
+            "Nobody else calls it anything polite."),
+        .pokemonScale = 256,
+        .pokemonOffset = 2,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_MukHoenn,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
+        .frontAnimDelay = 45,
+        .backPic = gMonBackPic_MukHoenn,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_H_STRETCH,
+        .palette = gMonPalette_MukHoenn,
+        .shinyPalette = gMonShinyPalette_MukHoenn,
+        .iconSprite = gMonIcon_MukHoenn,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Muk)
+        OVERWORLD(
+            sPicTable_MukHoenn,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_MukHoenn,
+            gShinyOverworldPalette_MukHoenn
+        )
+        .levelUpLearnset = sMukHoennLevelUpLearnset,
+        .teachableLearnset = sMukTeachableLearnset,
+        .formSpeciesIdTable = sMukFormSpeciesIdTable,
+    },
 #endif //P_FAMILY_GRIMER
 
 #if P_FAMILY_SHELLDER
@@ -14055,7 +14200,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_8
-        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH },
+        .abilities = { ABILITY_AIR_POLLUTION, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH }, // Project Grounded: Levitate -> Air Pollution
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
     #endif
@@ -14133,7 +14278,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_8
-        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH },
+        .abilities = { ABILITY_AIR_POLLUTION, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH }, // Project Grounded: Levitate -> Air Pollution
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
     #endif

@@ -534,8 +534,8 @@
     {
       "id": "LAYOUT_ROUTE136_GROTTO",
       "name": "Route136_Grotto_Layout",
-      "width": 30,
-      "height": 28,
+      "width": 35,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route136_Grotto/border.bin",
@@ -544,9 +544,9 @@
     {
       "id": "LAYOUT_ASHFROST_TOWN",
       "name": "AshfrostTown_Layout",
-      "width": 40,
-      "height": 30,
-      "primary_tileset": "gTileset_General",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_SnowTownBase",
       "secondary_tileset": "gTileset_SnowTown",
       "border_filepath": "data/layouts/AshfrostTown/border.bin",
       "blockdata_filepath": "data/layouts/AshfrostTown/map.bin"

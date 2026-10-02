@@ -5,6 +5,7 @@
 #define PARTNER_NONE 0
 #define PARTNER_STEVEN 1
 #define PARTNER_WALLY 2 // Project Grounded: Wally op Mt. Chimney
-#define PARTNER_COUNT 3
+#define PARTNER_KECCLES 3 // Project Grounded: Keccles in Sootopolis
+#define PARTNER_COUNT 4
 
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

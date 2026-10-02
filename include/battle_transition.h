@@ -61,6 +61,12 @@ enum BattleTransition
     B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ,
     B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ,
     B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ,
+    B_TRANSITION_AURORA, // Project Grounded: noorderlicht (Suicune)
+    B_TRANSITION_REGIDRAGO, // Project Grounded
+    B_TRANSITION_REGIELEKI, // Project Grounded
+    B_TRANSITION_DEOXYS, // Project Grounded: ruimte + DNA-helix
+    B_TRANSITION_BIRCH, // Project Grounded: poep-thema
+    B_TRANSITION_AQUA_MAGMA, // Project Grounded: Archie + Maxie samen
     B_TRANSITION_COUNT
 };
 

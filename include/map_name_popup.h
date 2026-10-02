@@ -8,4 +8,6 @@
 // Exported ROM declarations
 void HideMapNamePopUpWindow(void);
 void ShowMapNamePopup(void);
+void ShowItemPickupPopup(void);
+bool8 IsItemObtainedBefore(void);
 #endif //GUARD_MAP_NAME_POPUP_H

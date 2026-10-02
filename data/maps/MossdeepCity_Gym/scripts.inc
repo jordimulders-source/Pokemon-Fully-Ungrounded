@@ -95,7 +95,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_LASER_BEAM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -103,7 +103,7 @@ MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_LASER_BEAM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -273,11 +273,13 @@ MossdeepCity_Gym_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
 	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 MossdeepCity_Gym_EventScript_GymGuidePostVictory::
 	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox MossdeepCity_Gym_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -665,14 +667,14 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 	.string "vibrates with intense energy.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains...\n"
-	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises the frequency of\n"
-	.string "your thoughts and...\p"
-	.string "LIZA: It shields your aura from\n"
-	.string "negative interference!\p"
-	.string "TATE: It is a move that is perfect...\n"
-	.string "LIZA: For achieving total ego death!\p"
+	.string "TATE: That TM55 contains...\n"
+	.string "LIZA: LASER BEAM!\p"
+	.string "TATE: A beam of pure focus, thinner\n"
+	.string "than a hair...\p"
+	.string "LIZA: That burns through every wall\n"
+	.string "the mind can build!\p"
+	.string "TATE: Protect, screens, boosts...\n"
+	.string "LIZA: Nothing survives a clear mind!\p"
 	.string "... ... ... ... ... ...$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:
@@ -731,3 +733,16 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 	.string "TATE: With one POKéMON? LIZA: The\n"
 	.string "universe demands two. Come back\l"
 	.string "balanced.$"
+
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+MossdeepCity_Gym_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 49.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+MossdeepCity_Gym_Text_GymGuideNextAce:
+	.string "Next stop: WALLACE in SOOTOPOLIS.\n"
+	.string "Their ace is level 56.\p"
+	.string "That's all the free advice.\n"
+	.string "The rest costs a RARE CANDY.$"

@@ -139,6 +139,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         if (ability != ABILITY_SAND_VEIL
          && ability != ABILITY_SAND_FORCE
          && ability != ABILITY_SAND_RUSH
+         && ability != ABILITY_FORECAST // Project Grounded: Castform is immuun voor de nadelen van het weer
          && ability != ABILITY_OVERCOAT
          && !IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
          && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
@@ -148,6 +149,42 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         {
             SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SANDSTORM;
+            BattleScriptExecute(BattleScript_DamagingWeather);
+            effect = TRUE;
+        }
+        break;
+    case BATTLE_WEATHER_POLLEN_HAZE: // Project Grounded: Grass herstelt 1/16
+        if (IS_BATTLER_OF_TYPE(battler, TYPE_GRASS) && !IsBattlerAtMaxHp(battler) && !gBattleMons[battler].volatiles.healBlock)
+        {
+            gBattlerAttacker = battler;
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+            BattleScriptExecute(BattleScript_PollenHazeHeal);
+            effect = TRUE;
+        }
+        break;
+    case BATTLE_WEATHER_ACID_RAIN: // Project Grounded: Poison herstelt 1/16, de rest (behalve Steel) verliest 1/16
+        if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
+        {
+            if (!IsBattlerAtMaxHp(battler) && !gBattleMons[battler].volatiles.healBlock)
+            {
+                gBattlerAttacker = battler;
+                SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+                BattleScriptExecute(BattleScript_AcidRainHeal);
+                effect = TRUE;
+            }
+        }
+        else if (!IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
+         && ability != ABILITY_FORECAST
+         && ability != ABILITY_OVERCOAT
+         && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
+         && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
+         && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
+         && GetBattlerHoldEffect(battler) != HOLD_EFFECT_UTILITY_UMBRELLA
+         && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+        {
+            gBattlerAttacker = battler;
+            SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ACID_RAIN;
             BattleScriptExecute(BattleScript_DamagingWeather);
             effect = TRUE;
         }
@@ -1119,6 +1156,19 @@ static bool32 HandleEndTurnGravity(u32 battler)
     return effect;
 }
 
+// Project Grounded: het zwarte gat van Implosion verdwijnt na 5 beurten
+static bool32 HandleEndTurnBlackHole(u32 battler)
+{
+    gBattleStruct->eventState.endTurn++;
+
+    if (gFieldTimers.blackHoleTimer > 0 && --gFieldTimers.blackHoleTimer == 0)
+    {
+        BattleScriptExecute(BattleScript_BlackHoleEnds);
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static bool32 HandleEndTurnWaterSport(u32 battler)
 {
     bool32 effect = FALSE;
@@ -1420,6 +1470,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_SECOND_EVENT_BLOCK] = HandleEndTurnSecondEventBlock,
     [ENDTURN_TRICK_ROOM] = HandleEndTurnTrickRoom,
     [ENDTURN_GRAVITY] = HandleEndTurnGravity,
+    [ENDTURN_BLACK_HOLE] = HandleEndTurnBlackHole,
     [ENDTURN_WATER_SPORT] = HandleEndTurnWaterSport,
     [ENDTURN_MUD_SPORT] = HandleEndTurnMudSport,
     [ENDTURN_WONDER_ROOM] = HandleEndTurnWonderRoom,

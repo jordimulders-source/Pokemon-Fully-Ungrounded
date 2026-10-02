@@ -77,6 +77,67 @@ Route135_EventScript_Lapras::
 	release
 	end
 
+@ Project Grounded: Bergmite en Eiscue drijven in het meer; na het verlaten van de kaart zijn ze er weer (tijdelijke vlaggen)
+Route135_EventScript_Bergmite::
+	lock
+	faceplayer
+	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_BERGMITE, 33
+	dowildbattle
+	removeobject LOCALID_ROUTE135_BERGMITE
+	setflag FLAG_TEMP_11
+	release
+	end
+
+Route135_EventScript_Eiscue::
+	lock
+	faceplayer
+	playmoncry SPECIES_EISCUE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_EISCUE, 33
+	dowildbattle
+	removeobject LOCALID_ROUTE135_EISCUE
+	setflag FLAG_TEMP_12
+	release
+	end
+
+Route135_EventScript_Bergmite2::
+	lock
+	faceplayer
+	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_BERGMITE, 33
+	dowildbattle
+	removeobject LOCALID_ROUTE135_BERGMITE_2
+	setflag FLAG_TEMP_13
+	release
+	end
+
+Route135_EventScript_Bergmite3::
+	lock
+	faceplayer
+	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_BERGMITE, 33
+	dowildbattle
+	removeobject LOCALID_ROUTE135_BERGMITE_3
+	setflag FLAG_TEMP_14
+	release
+	end
+
+Route135_EventScript_Eiscue2::
+	lock
+	faceplayer
+	playmoncry SPECIES_EISCUE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_EISCUE, 33
+	dowildbattle
+	removeobject LOCALID_ROUTE135_EISCUE_2
+	setflag FLAG_TEMP_15
+	release
+	end
+
 Route135_Text_BramIntro:
 	.string "Breathe in… and out.\n"
 	.string "Thirty times. Then hold it.\p"

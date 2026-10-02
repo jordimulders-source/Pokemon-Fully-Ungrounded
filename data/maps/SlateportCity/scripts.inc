@@ -1358,8 +1358,8 @@ SlateportCity_EventScript_SpitOrSwallow::
 	goto SlateportCity_EventScript_SpitOrSwallowReceived
 
 SlateportCity_EventScript_Swallow::
-	givemon SPECIES_QWILFISH_HISUI, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
-	bufferspeciesname STR_VAR_1, SPECIES_QWILFISH_HISUI
+	givemon SPECIES_CRAMORANT, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_CRAMORANT
 SlateportCity_EventScript_SpitOrSwallowReceived::
 	playfanfare MUS_OBTAIN_ITEM
 	message SlateportCity_Text_ReceivedSpitOrSwallowMon
@@ -1391,3 +1391,118 @@ SlateportCity_Text_ReceivedSpitOrSwallowMon:
 
 SlateportCity_Text_Nice:
 	.string "Nice.$"
+
+@ Project Grounded: Prof. Oak staat bij de vuurtoren naar zee te kijken. Gevecht, daarna een Kanto-starter naar keuze.
+SlateportCity_EventScript_ProfOak::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_OAK_STARTER, SlateportCity_EventScript_ProfOakDone
+	goto_if_defeated TRAINER_PROF_OAK, SlateportCity_EventScript_ProfOakGiveStarter
+	msgbox SlateportCity_Text_ProfOakIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_PROF_OAK, SlateportCity_Text_ProfOakDefeat
+	goto SlateportCity_EventScript_ProfOakGiveStarter
+	end
+
+SlateportCity_EventScript_ProfOakGiveStarter::
+	msgbox SlateportCity_Text_ProfOakOfferStarter, MSGBOX_DEFAULT
+	dynmultichoice 18, 4, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, SlateportCity_Text_OakBulbasaur, SlateportCity_Text_OakCharmander, SlateportCity_Text_OakSquirtle
+	switch VAR_RESULT
+	case 0, SlateportCity_EventScript_ProfOakGiveBulbasaur
+	case 1, SlateportCity_EventScript_ProfOakGiveCharmander
+	case 2, SlateportCity_EventScript_ProfOakGiveSquirtle
+	goto SlateportCity_EventScript_ProfOakGiveBulbasaur
+	end
+
+SlateportCity_EventScript_ProfOakGiveBulbasaur::
+	setvar VAR_TEMP_1, SPECIES_BULBASAUR
+	goto SlateportCity_EventScript_ProfOakGiveMon
+	end
+
+SlateportCity_EventScript_ProfOakGiveCharmander::
+	setvar VAR_TEMP_1, SPECIES_CHARMANDER
+	goto SlateportCity_EventScript_ProfOakGiveMon
+	end
+
+SlateportCity_EventScript_ProfOakGiveSquirtle::
+	setvar VAR_TEMP_1, SPECIES_SQUIRTLE
+	goto SlateportCity_EventScript_ProfOakGiveMon
+	end
+
+SlateportCity_EventScript_ProfOakGiveMon::
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	givemon VAR_TEMP_1, 15
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Common_EventScript_NoMoreRoomForPokemon
+	playfanfare MUS_OBTAIN_ITEM
+	message SlateportCity_Text_ProfOakReceivedStarter
+	waitmessage
+	waitfanfare
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SlateportCity_EventScript_ProfOakStarterToPC
+	goto SlateportCity_EventScript_ProfOakStarterGiven
+	end
+
+SlateportCity_EventScript_ProfOakStarterToPC::
+	call Common_EventScript_TransferredToPC
+	goto SlateportCity_EventScript_ProfOakStarterGiven
+	end
+
+SlateportCity_EventScript_ProfOakStarterGiven::
+	setflag FLAG_RECEIVED_OAK_STARTER
+	msgbox SlateportCity_Text_ProfOakAfterStarter, MSGBOX_DEFAULT
+	applymovement LOCALID_SLATEPORT_PROF_OAK, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_ProfOakDone::
+	msgbox SlateportCity_Text_ProfOakDone, MSGBOX_DEFAULT
+	applymovement LOCALID_SLATEPORT_PROF_OAK, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+SlateportCity_Text_ProfOakIntro:
+	.string "OAK: …The sea. Hoenn's sea.\n"
+	.string "It's wetter than Kanto's.\p"
+	.string "I'm on vacation. My grandson kept\n"
+	.string "calling me, so I dropped my phone\l"
+	.string "off the S.S. Anne. On purpose.\p"
+	.string "Hm? Are you a boy or a girl?\p"
+	.string "…Never mind. I stopped asking\n"
+	.string "in 1996. It never helped.\p"
+	.string "Let's see what Hoenn's kids are\n"
+	.string "made of. Kanto style!$"
+
+SlateportCity_Text_ProfOakDefeat:
+	.string "Well! My Tauros hasn't lost\n"
+	.string "since the Gold and Silver beta.$"
+
+SlateportCity_Text_ProfOakOfferStarter:
+	.string "OAK: Here. Take one of these.\p"
+	.string "I've carried them around since\n"
+	.string "the nineties. They keep asking when\l"
+	.string "they get to evolve.\p"
+	.string "I never know what to tell them.\n"
+	.string "Pick one. Quickly, before I get\l"
+	.string "sentimental.$"
+
+SlateportCity_Text_OakBulbasaur:
+	.string "BULBASAUR$"
+
+SlateportCity_Text_OakCharmander:
+	.string "CHARMANDER$"
+
+SlateportCity_Text_OakSquirtle:
+	.string "SQUIRTLE$"
+
+SlateportCity_Text_ProfOakReceivedStarter:
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+SlateportCity_Text_ProfOakAfterStarter:
+	.string "OAK: Raise it well.\n"
+	.string "Or don't. I'm on vacation.$"
+
+SlateportCity_Text_ProfOakDone:
+	.string "OAK: The sea is calming.\n"
+	.string "Unlike my grandson.\p"
+	.string "Smell ya later, as he says.\n"
+	.string "Every. Single. Time.$"

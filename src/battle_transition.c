@@ -117,6 +117,15 @@ static void Task_Regice(u8);
 static void Task_Registeel(u8);
 static void Task_Regirock(u8);
 static void Task_Kyogre(u8);
+static void Task_Aurora(u8); // Project Grounded
+static void Task_Regidrago(u8); // Project Grounded
+static void Task_Regieleki(u8); // Project Grounded
+static void Task_Deoxys(u8); // Project Grounded
+static void Task_Birch(u8); // Project Grounded
+static void Task_AquaMagma(u8); // Project Grounded
+static bool8 AquaMagma_Init(struct Task *);
+static bool8 Regidrago_Init(struct Task *);
+static bool8 Regieleki_Init(struct Task *);
 static void Task_Groudon(u8);
 static void Task_Rayquaza(u8);
 static void Task_ShredSplit(u8);
@@ -320,6 +329,23 @@ static const u32 sGroudon_Tileset[] = INCBIN_U32("graphics/battle_transitions/gr
 static const u32 sGroudon_Tilemap[] = INCBIN_U32("graphics/battle_transitions/groudon.bin.smolTM");
 static const u16 sKyogre1_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt1.gbapal");
 static const u16 sKyogre2_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt2.gbapal");
+// Project Grounded: noorderlicht-transitie (Suicune), gegenereerd met tools/grounded/aurora_transition.py
+static const u16 sAurora_Tileset[] = INCBIN_U16("graphics/battle_transitions/aurora.4bpp");
+static const u16 sAurora_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aurora.bin");
+static const u16 sAurora_Palette[] = INCBIN_U16("graphics/battle_transitions/aurora.gbapal");
+static const u16 sRegidrago_Tileset[] = INCBIN_U16("graphics/battle_transitions/regidrago.4bpp");
+static const u16 sRegidrago_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regidrago.bin");
+static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/regidrago.gbapal");
+static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
+static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
+static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
+static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
+static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deoxys.bin");
+static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
+static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
+static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
+static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
+static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
 static const u16 sRayquaza_Palette[] = INCBIN_U16("graphics/battle_transitions/rayquaza.gbapal");
@@ -383,6 +409,12 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
+    [B_TRANSITION_AURORA] = Task_Aurora, // Project Grounded
+    [B_TRANSITION_REGIDRAGO] = Task_Regidrago, // Project Grounded
+    [B_TRANSITION_REGIELEKI] = Task_Regieleki, // Project Grounded
+    [B_TRANSITION_DEOXYS] = Task_Deoxys, // Project Grounded
+    [B_TRANSITION_BIRCH] = Task_Birch, // Project Grounded
+    [B_TRANSITION_AQUA_MAGMA] = Task_AquaMagma, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -448,6 +480,36 @@ static const TransitionStateFunc sRegice_Funcs[] =
 {
     Regi_Init,
     Regice_SetGfx,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+// Project Grounded: Aqua- en Magma-logo naast elkaar (Archie + Maxie, Sootopolis)
+static const TransitionStateFunc sAquaMagma_Funcs[] =
+{
+    AquaMagma_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    FramesCountdown,
+    PatternWeave_CircularMask
+};
+
+// Project Grounded: Regidrago en Regieleki (eigen stippatroon, zelfde weef-effect)
+static const TransitionStateFunc sRegidrago_Funcs[] =
+{
+    Regidrago_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+static const TransitionStateFunc sRegieleki_Funcs[] =
+{
+    Regieleki_Init,
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
@@ -1350,6 +1412,21 @@ static void Task_Regirock(u8 taskId)
     while (sRegirock_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_AquaMagma(u8 taskId)
+{
+    while (sAquaMagma_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+static void Task_Regidrago(u8 taskId)
+{
+    while (sRegidrago_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+static void Task_Regieleki(u8 taskId)
+{
+    while (sRegieleki_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void Task_Kyogre(u8 taskId)
 {
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1421,6 +1498,39 @@ static bool8 Regi_Init(struct Task *task)
     CpuCopy16(sRegis_Tileset, tileset, 0x2000);
 
     task->tState++;
+    return FALSE;
+}
+
+static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
+{
+    u16 *tilemap, *tileset;
+
+    task->tEndDelay = 60;
+    InitPatternWeaveTransition(task);
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(tileset_, tileset, tilesetSize);
+    LoadPalette(palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    CpuCopy16(tilemap_, tilemap, 0x500);
+    SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
+    task->tState++;
+}
+
+static bool8 AquaMagma_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sAquaMagma_Tileset, sizeof(sAquaMagma_Tileset), sAquaMagma_Tilemap, sEvilTeam_Palette);
+    return FALSE;
+}
+
+static bool8 Regidrago_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegidrago_Tileset, sizeof(sRegidrago_Tileset), sRegidrago_Tilemap, sRegidrago_Palette);
+    return FALSE;
+}
+
+static bool8 Regieleki_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
     return FALSE;
 }
 
@@ -4838,3 +4948,297 @@ static bool8 FrontierSquaresScroll_End(struct Task *task)
 #undef tScrollYDir
 #undef tScrollUpdateFlag
 #undef tSquareNum
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_AURORA (Suicune)
+// Het scherm wordt donker, er verschijnen noorderlichtgordijnen die glinsteren en van kleur verschuiven
+// (groen -> cyaan -> paars), licht dat zachtjes wiegt, en dan oplicht tot wit vlak voor het gevecht.
+//------------------------------------------------------------------------
+#define AURORA_FRAMES  16
+#define tAuroraTimer   data[1]
+#define tAuroraDelay   data[8]
+
+static bool8 Aurora_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sAurora_Tileset, tileset, sizeof(sAurora_Tileset));
+    CpuCopy16(sAurora_Tilemap, tilemap, sizeof(sAurora_Tilemap));
+    LoadPalette(sAurora_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    task->tAuroraTimer = 0;
+    task->tState++;
+    return FALSE;
+}
+
+static void Aurora_LoadFrame(struct Task *task)
+{
+    u32 frame = (task->tAuroraTimer / 3) % AURORA_FRAMES;
+    LoadPalette(&sAurora_Palette[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetGpuReg(REG_OFFSET_BG0HOFS, Sin((task->tAuroraTimer * 3) & 0xFF, 6));
+}
+
+static bool8 Aurora_Shimmer(struct Task *task)
+{
+    Aurora_LoadFrame(task);
+    if (++task->tAuroraTimer > 84)
+        task->tState++;
+    return FALSE;
+}
+
+static bool8 Aurora_Brighten(struct Task *task)
+{
+    static u8 sStep;
+    if (task->tAuroraTimer == 85)
+        sStep = 0;
+    Aurora_LoadFrame(task);
+    BlendPalette(BG_PLTT_ID(15), 16, min(sStep, 16), RGB_WHITE);
+    if ((task->tAuroraTimer & 1) == 0 && sStep < 16)
+        sStep++;
+    task->tAuroraTimer++;
+    if (sStep >= 16)
+    {
+        // wit vastzetten, zodat het uitfaden van wit naar zwart gaat (en de kleuren niet terugkomen)
+        CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
+        CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
+        task->tAuroraDelay = 12;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sAurora_Funcs[] =
+{
+    WeatherTrio_BgFadeBlack,
+    WeatherTrio_WaitFade,
+    Aurora_Init,
+    Aurora_Shimmer,
+    Aurora_Brighten,
+    FramesCountdown,
+    WeatherDuo_FadeOut,
+    WeatherDuo_End
+};
+
+static void Task_Aurora(u8 taskId)
+{
+    while (sAurora_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tAuroraTimer
+#undef tAuroraDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_DEOXYS
+// Het scherm wordt zwart; een sterrenhemel met een draaiende DNA-dubbelhelix (oranje/cyaan) komt op
+// en schiet steeds sneller voorbij (warp), tot alles wit oplicht vlak voor het gevecht.
+//------------------------------------------------------------------------
+#define DEOXYS_FRAMES  8
+#define tDeoxysTimer   data[1]
+#define tDeoxysSpeed   data[2]
+#define tDeoxysScroll  data[3]
+#define tDeoxysDelay   data[8]
+
+static bool8 Deoxys_FadeAllBlack(struct Task *task)
+{
+    // ook de overworld-sprites, anders zweven de speler en NPC's door de ruimte
+    BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 Deoxys_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sDeoxys_Tileset, tileset, sizeof(sDeoxys_Tileset));
+    CpuCopy16(sDeoxys_Tilemap, tilemap, sizeof(sDeoxys_Tilemap));
+    LoadPalette(sDeoxys_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    BlendPalette(BG_PLTT_ID(15), 16, 16, RGB_BLACK);
+    task->tDeoxysTimer = 0;
+    task->tDeoxysSpeed = 16; // in 1/16 pixel per frame
+    task->tDeoxysScroll = 0;
+    task->tState++;
+    return FALSE;
+}
+
+static void Deoxys_Update(struct Task *task, u32 fade, u16 color)
+{
+    u32 frame = (task->tDeoxysTimer / 4) % DEOXYS_FRAMES;
+    LoadPalette(&sDeoxys_Palette[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    if (fade)
+        BlendPalette(BG_PLTT_ID(15), 16, fade, color);
+    task->tDeoxysScroll += task->tDeoxysSpeed;
+    SetGpuReg(REG_OFFSET_BG0HOFS, (task->tDeoxysScroll >> 4) & 0xFF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, Sin((task->tDeoxysTimer * 4) & 0xFF, 3));
+    task->tDeoxysTimer++;
+}
+
+static bool8 Deoxys_Warp(struct Task *task)
+{
+    // eerst invaden uit het zwart, daarna steeds sneller
+    u32 fade = task->tDeoxysTimer < 32 ? 16 - task->tDeoxysTimer / 2 : 0;
+    if (task->tDeoxysTimer > 30 && task->tDeoxysSpeed < 16 * 12)
+        task->tDeoxysSpeed += 3;
+    Deoxys_Update(task, fade, RGB_BLACK);
+    if (task->tDeoxysTimer > 100)
+        task->tState++;
+    return FALSE;
+}
+
+static bool8 Deoxys_Flash(struct Task *task)
+{
+    static u8 sStep;
+    if (task->tDeoxysTimer == 101)
+        sStep = 0;
+    Deoxys_Update(task, min(sStep, 16), RGB_WHITE);
+    if ((task->tDeoxysTimer & 1) == 0 && sStep < 16)
+        sStep++;
+    if (sStep >= 16)
+    {
+        CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
+        CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        task->tDeoxysDelay = 12;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sDeoxys_Funcs[] =
+{
+    Deoxys_FadeAllBlack,
+    WeatherTrio_WaitFade,
+    Deoxys_Init,
+    Deoxys_Warp,
+    Deoxys_Flash,
+    FramesCountdown,
+    WeatherDuo_FadeOut,
+    WeatherDuo_End
+};
+
+static void Task_Deoxys(u8 taskId)
+{
+    while (sDeoxys_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tDeoxysTimer
+#undef tDeoxysSpeed
+#undef tDeoxysScroll
+#undef tDeoxysDelay
+
+//------------------------------------------------------------------------
+// Project Grounded: B_TRANSITION_BIRCH
+// Bruine prut druipt van boven over het beeld (de sprites kleuren mee bruin), daarna fade naar zwart.
+// Tiles: zie tools/grounded/birch_transition.py.
+//------------------------------------------------------------------------
+#define BIRCH_TILE_SOLID   1
+#define BIRCH_TILE_EDGE    5
+#define BIRCH_EDGE_ROWS    4
+#define BIRCH_TILE(t)      ((15 << 12) | (t))
+
+#define tBirchTimer   data[1]
+#define tBirchPos     data[2]  // hoe ver de prut gezakt is, in 1/16 pixel
+#define tBirchSpeed   data[3]
+#define tBirchDelay   data[8]
+
+static u16 Birch_SolidTile(s32 row, s32 col)
+{
+    // vast patroon per inhoudsrij, zodat de spikkels mee zakken in plaats van te verspringen
+    u32 hash = (u32)(row * 7 + col * 13 + row * col * 5) & 31;
+    if (hash == 0)
+        return BIRCH_TILE(BIRCH_TILE_SOLID + 3); // af en toe een maiskorrel
+    return BIRCH_TILE(BIRCH_TILE_SOLID + hash % 3);
+}
+
+static void Birch_DrawCurtain(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+    s32 p = task->tBirchPos >> 4;
+    s32 q = p / 8, m = p % 8;
+    s32 r, c;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    for (r = 0; r < 21; r++)
+    {
+        s32 contentRow = r - q - (m > 0);
+        for (c = 0; c < 32; c++)
+        {
+            u16 tile;
+            if (contentRow >= 0)
+                tile = 0;
+            else if (contentRow >= -BIRCH_EDGE_ROWS)
+                tile = BIRCH_TILE(BIRCH_TILE_EDGE + (contentRow + BIRCH_EDGE_ROWS) * 8 + (c % 8));
+            else
+                tile = Birch_SolidTile(contentRow, c);
+            tilemap[r * 32 + c] = tile;
+        }
+    }
+    SetGpuReg(REG_OFFSET_BG0VOFS, (8 - m) % 8);
+}
+
+static bool8 Birch_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sBirch_Tileset, tileset, sizeof(sBirch_Tileset));
+    LoadPalette(sBirch_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    // de sprites (speler, Birch) kleuren mee bruin terwijl de prut over het beeld zakt
+    BeginNormalPaletteFade(PALETTES_OBJECTS, 3, 0, 16, RGB(13, 8, 3));
+    task->tBirchTimer = 0;
+    task->tBirchPos = 0;
+    task->tBirchSpeed = 8;
+    PlaySE(SE_MUD_BALL);
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 Birch_Drip(struct Task *task)
+{
+    // stroperig: soms bijna stil, dan weer een klodder
+    if ((task->tBirchTimer & 15) < 10)
+        task->tBirchSpeed += 3;
+    else if (task->tBirchSpeed > 12)
+        task->tBirchSpeed -= 4;
+    task->tBirchPos += task->tBirchSpeed;
+    task->tBirchTimer++;
+    Birch_DrawCurtain(task);
+    if ((task->tBirchPos >> 4) >= DISPLAY_HEIGHT + BIRCH_EDGE_ROWS * 8 + 8)
+    {
+        u16 *tilemap, *tileset;
+        s32 r, c;
+
+        GetBg0TilesDst(&tilemap, &tileset);
+        for (r = 0; r < 32; r++)
+            for (c = 0; c < 32; c++)
+                tilemap[r * 32 + c] = Birch_SolidTile(r, c);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        task->tBirchDelay = 20;
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static const TransitionStateFunc sBirch_Funcs[] =
+{
+    Birch_Init,
+    Birch_Drip,
+    FramesCountdown,
+    WeatherDuo_FadeOut,
+    WeatherDuo_End
+};
+
+static void Task_Birch(u8 taskId)
+{
+    while (sBirch_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+#undef tBirchTimer
+#undef tBirchPos
+#undef tBirchSpeed
+#undef tBirchDelay

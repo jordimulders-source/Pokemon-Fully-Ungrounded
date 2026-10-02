@@ -49,6 +49,9 @@
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
 
+static void ShowWildMonInfo(u32 battler); // Project Grounded
+static void Controller_WaitForDebug(u32 battler);
+static void WildInfo_OpenSummary(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
 static void PlayerHandleTrainerSlide(u32 battler);
@@ -394,6 +397,11 @@ static void HandleInputChooseAction(u32 battler)
     {
         SwapHpBarsWithHpText();
     }
+    else if (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A
+             && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
+    {
+        ShowWildMonInfo(battler);
+    }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
@@ -406,6 +414,63 @@ static void HandleInputChooseAction(u32 battler)
         TryHideLastUsedBall();
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
         BtlController_Complete(battler);
+    }
+}
+
+// Project Grounded: L in het actiemenu (wilde gevechten) opent het summary-scherm van de wilde Pokémon
+// (stats, moves, ability enz.), als je die soort al gevangen hebt; terug naar het gevecht met B.
+// Loopt via dezelfde engine-route als het debugmenu (B_ACTION_DEBUG), zodat het actiemenu daarna opnieuw wordt gevraagd.
+// Nog niet gevangen: een korte melding in het vak "What will ... do?".
+static bool8 sShowWildInfo;
+static u8 sWildInfoTarget;
+static EWRAM_DATA struct Pokemon sWildInfoMon = {0};
+
+static void HandleInputWildMonNoData(u32 battler)
+{
+    if (JOY_NEW(A_BUTTON | B_BUTTON | L_BUTTON | R_BUTTON | START_BUTTON | SELECT_BUTTON | DPAD_ANY))
+    {
+        PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
+        BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
+        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+        gBattlerControllerFuncs[battler] = HandleInputChooseAction;
+    }
+}
+
+static void ShowWildMonInfo(u32 battler)
+{
+    u32 target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    u32 species;
+
+    if (!IsBattlerAlive(target) && IsDoubleBattle())
+        target = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    species = GetMonData(GetBattlerMon(target), MON_DATA_SPECIES);
+
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    {
+        PlaySE(SE_FAILURE);
+        BattlePutTextOnWindow(COMPOUND_STRING("No data yet.\nCatch one first!"), B_WIN_ACTION_PROMPT);
+        gBattlerControllerFuncs[battler] = HandleInputWildMonNoData;
+        return;
+    }
+    PlaySE(SE_SELECT);
+    TryHideLastUsedBall();
+    sShowWildInfo = TRUE;
+    sWildInfoTarget = target;
+    BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
+    BtlController_Complete(battler);
+}
+
+static void WildInfo_OpenSummary(u32 battler)
+{
+    if (!gPaletteFade.active)
+    {
+        gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+        ReshowBattleScreenDummy();
+        FreeAllWindowBuffers();
+        DeactivateAllTextPrinters();
+        // Kopie: een pointer naar gEnemyParty ziet het summary-scherm als een link-tegenstander (leest gLinkPlayers)
+        sWildInfoMon = gEnemyParty[gBattlerPartyIndexes[sWildInfoTarget]];
+        ShowWildPokemonSummaryScreen(&sWildInfoMon, CB2_SetUpReshowBattleScreenAfterMenu);
     }
 }
 
@@ -654,6 +719,8 @@ static void TryShowAsTarget(u32 battler)
     }
 }
 
+EWRAM_DATA bool8 gFungalControlChoosing = FALSE;
+
 void HandleInputChooseMove(u32 battler)
 {
     u16 moveTarget;
@@ -761,6 +828,10 @@ void HandleInputChooseMove(u32 battler)
             break;
         }
     }
+    else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59) && gFungalControlChoosing)
+    {
+        // Project Grounded: Fungal Control moet een keuze krijgen
+    }
     else if ((JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)  && !gBattleStruct->descriptionSubmenu)
     {
         PlaySE(SE_RG_BALL_CLICK);
@@ -844,7 +915,7 @@ void HandleInputChooseMove(u32 battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu)
+    else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu && !gFungalControlChoosing)
     {
         if (gNumberOfMovesToChoose > 1 && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
         {
@@ -887,7 +958,7 @@ void HandleInputChooseMove(u32 battler)
         gBattleStruct->descriptionSubmenu = TRUE;
         TryMoveSelectionDisplayMoveDescription(battler);
     }
-    else if (JOY_NEW(START_BUTTON))
+    else if (JOY_NEW(START_BUTTON) && !gFungalControlChoosing)
     {
         if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE
             && !HasTrainerUsedGimmick(battler, gBattleStruct->gimmick.usableGimmick[battler])
@@ -2090,10 +2161,21 @@ void PlayerHandleChooseMove(u32 battler)
     {
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
+        // Project Grounded: cursor op de laatst gekozen move van dit teamlid, ook na een wissel
+        gMoveSelectionCursor[battler] = gFungalControlChoosing ? 0 : gBattleStruct->lastMoveCursorByPartySlot[gBattlerPartyIndexes[battler]];
+        if (gMoveSelectionCursor[battler] >= MAX_MON_MOVES || moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_NONE)
+            gMoveSelectionCursor[battler] = 0;
+
         InitMoveSelectionsVarsAndStrings(battler);
         gBattleStruct->gimmick.playerSelect = FALSE;
         TryToAddMoveInfoWindow();
 
+        if (gFungalControlChoosing)
+        {
+            gBattleStruct->zmove.viable = FALSE;
+        }
+        else
+        {
         AssignUsableZMoves(battler, moveInfo->moves);
         gBattleStruct->zmove.viable = (gBattleStruct->zmove.possibleZMoves[battler] & (1u << gMoveSelectionCursor[battler])) != 0;
 
@@ -2103,6 +2185,7 @@ void PlayerHandleChooseMove(u32 battler)
             DestroyGimmickTriggerSprite();
         if (!(gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_Z_MOVE && !gBattleStruct->zmove.viable))
             CreateGimmickTriggerSprite(battler);
+        }
 
         gBattlerControllerFuncs[battler] = HandleChooseMoveAfterDma3;
     }
@@ -2338,6 +2421,14 @@ static void Controller_WaitForDebug(u32 battler)
 
 static void PlayerHandleBattleDebug(u32 battler)
 {
+    if (sShowWildInfo) // Project Grounded: summary-scherm van de wilde Pokémon i.p.v. het debugmenu
+    {
+        sShowWildInfo = FALSE;
+        gBattlerInMenuId = battler;
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gBattlerControllerFuncs[battler] = WildInfo_OpenSummary;
+        return;
+    }
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
     SetMainCallback2(CB2_BattleDebugMenu);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;

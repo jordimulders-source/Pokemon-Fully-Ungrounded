@@ -1652,6 +1652,33 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId)
     }
 }
 
+// Project Grounded: Six-Pack, 60 HP voor iedereen in het team (niet voor flauwgevallen Pokémon)
+void ItemUseOutOfBattle_SixPack(u8 taskId)
+{
+    bool32 healedSomeone = FALSE;
+    u32 i;
+
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        if (!ExecuteTableBasedItemEffect(&gPlayerParty[i], ITEM_SIX_PACK, i, 0))
+            healedSomeone = TRUE;
+    }
+
+    if (healedSomeone)
+    {
+        RemoveUsedItem();
+        PlaySE(SE_USE_ITEM);
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+            DisplayItemMessage(taskId, FONT_NORMAL, COMPOUND_STRING("Everyone took a swig from the\nSIX-PACK and recovered HP!{PAUSE_UNTIL_PRESS}"), CloseItemMessage);
+        else
+            DisplayItemMessageOnField(taskId, COMPOUND_STRING("Everyone took a swig from the\nSIX-PACK and recovered HP!{PAUSE_UNTIL_PRESS}"), Task_CloseCantUseKeyItemMessage);
+    }
+    else
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+    }
+}
+
 static void ItemUseOnFieldCB_TownMap(u8 taskId)
 {
     LockPlayerFieldControls();

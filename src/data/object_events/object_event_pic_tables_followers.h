@@ -751,6 +751,12 @@ static const struct SpriteFrameImage sPicTable_MukAlola[] = {
     overworld_ascending_frames(gObjectEventPic_MukAlola, 4, 4),
 };
 #endif //P_ALOLAN_FORMS
+static const struct SpriteFrameImage sPicTable_GrimerHoenn[] = {
+    overworld_ascending_frames(gObjectEventPic_GrimerHoenn, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_MukHoenn[] = {
+    overworld_ascending_frames(gObjectEventPic_MukHoenn, 4, 4),
+};
 #endif //P_FAMILY_GRIMER
 
 #if P_FAMILY_SHELLDER

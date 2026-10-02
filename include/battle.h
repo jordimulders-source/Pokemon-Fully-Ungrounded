@@ -84,6 +84,7 @@ struct DisableStruct
     u8 mimickedMoves:4;
     u8 rechargeTimer:4;
     u8 autotomizeCount;
+    u8 vintageSpillCount; // Project Grounded: aantal Vintage Spill-treffers sinds het inwisselen
     u16 slowStartTimer;
     u16 embargoTimer;
     u16 magnetRiseTimer;
@@ -114,6 +115,10 @@ struct DisableStruct
     u8 iceFaceActivationPrevention:1; // fixes hit escape move edge case
     u8 unnerveActivated:1; // Unnerve and As One (Unnerve part) activate only once per switch in
     u8 hazardsDone:1;
+    u8 blackHoleDone:1; // Project Grounded: Implosion-effect bij het inwisselen gehad
+    u8 machineLearningCount; // Project Grounded: aantal opeenvolgende beurten Machine Learning
+    u8 machineLearningStats; // Project Grounded: stats (bits) die deze beurt nog omhoog gaan
+    u16 machineLearningTurn; // Project Grounded: beurt waarin Machine Learning het laatst gebruikt werd
     u8 endured:1;
     u8 tryEjectPack:1;
     u8 octolockedBy:3;
@@ -232,6 +237,7 @@ struct FieldTimer
     u16 terrainTimer;
     u16 gravityTimer;
     u16 fairyLockTimer;
+    u16 blackHoleTimer; // Project Grounded: Implosion
 };
 
 struct WishFutureKnock
@@ -640,6 +646,7 @@ struct BattleStruct
     u8 linkBattleVsSpriteId_V; // The letter "V"
     u8 linkBattleVsSpriteId_S; // The letter "S"
     u8 chosenMovePositions[MAX_BATTLERS_COUNT];
+    u8 lastMoveCursorByPartySlot[PARTY_SIZE]; // Project Grounded: laatst gekozen move per teamlid van de speler (ook na wisselen)
     u8 stateIdAfterSelScript[MAX_BATTLERS_COUNT];
     u8 prevSelectedPartySlot;
     u8 stringMoveType;

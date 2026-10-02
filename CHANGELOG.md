@@ -15226,3 +15226,411 @@ Zelfde uitgangspunten als v.0.5.4 (levels gelijk aan eigen trainers op de route,
 - Stads-tileset `snow_town`: het **roze huis** had een afgekapt dak (het dak begint halverwege rij 103 van de bronsheet); nu 4×4. De ongebruikte groene winkel is eruit (481/512 tiles). Ashfrost zelf wordt nog opnieuw gebouwd (zie CLAUDE.md).
 - `tools/grounded/maptools/testrom.py`: bouwt een test-ROM met tijdelijke debug-scripts en zet `debug.inc` daarna zelf terug.
 - CLAUDE.md is herschreven tot een compacte werkinstructie (route/grot/stad bouwen, NPC's, testen, afronden, zuinig met tokens).
+
+### [v.0.8.3] - Ashfrost Village (herontwerp), eigen primary tileset
+- **Ashfrost Town heet nu Ashfrost Village** (naam op de Town Map en in de popup; interne namen `MAP_ASHFROST_TOWN` enz. blijven).
+- **Herontwerp (44×34):** een dal boven op de berg. Hoge rotswand rondom (bos erop), het dorp op de bovenste laag, en een slingerpad met stenen trappen twee lagen omlaag: eerst naar een groene weide (met standbeeld), dan naar het meer met strandje en bankjes. Ingang via een kloof linksonder (warp met Route 136, coord-triggers op y 33).
+- Pokémon Center centraal boven het dal, Mart bij de ingang. Nieuw: grote lodge (`AshfrostTown_House4`) en een groen huis (`AshfrostTown_House5`), met placeholderteksten. Verder een marktkraampje, iglo, lantaarns, bloempotten, een grote besneeuwde boom, sneeuwpop en ander decor.
+- **Tile-limiet opgelost:** Ashfrost heeft nu een eigen *primary* tileset `snow_town_base` (grond, kliffen, water, bomen, decor) naast de secondary `snow_town` (gebouwen). Daardoor 2×512 tiles en 13 paletten in plaats van 512 tiles en 7 paletten. Nu in gebruik: 334 + 422 tiles.
+- Kliffen in de stad: schone gestapelde rotslagen in plaats van de voorkant-tile met grotopening.
+- `snow_tileset.py`: emissie in een functie (`emit`), secondary hergebruikt identieke tiles uit de primary. De route-tileset `snow` blijft byte-voor-byte gelijk.
+- Heal location naar het nieuwe Pokémon Center (21,10); Route 136 warpt naar (7,32).
+
+### [v.0.8.4] - Ashfrost Village: feedback verwerkt
+- Sneeuwpop en konijnbeeld zijn nu 1×2 (het hoofd zat in de rij erboven), de grote besneeuwde boom is 3×6 (top erbij) en de luifel van het marktkraampje is 3×3 (zonder het losse grasstukje uit de bron).
+- Lantaarns werkelijk zichtbaar (zaten een kolom naast het plaatje in de bronsheet).
+- Bankjes aan het meer vervangen door besneeuwde boomstammen.
+- Trappen midden in een rechte klifwand in plaats van bij een hoek: dorp → weide bij het kraampje, weide → meer rechts.
+- Meer groter (meeroever breder).
+
+### [v.0.8.5] - Ashfrost Village: dieper dal, Regi-heiligdom
+- Kaart 44×34 → **48×40** en één laag dieper: dorp bovenaan, laag 1 met het groene huis, de iglo en een **heiligdom met drie stenen Regi-beelden** (Regirock, Regice, Registeel; grijze versies van hun overworld-sprites op een sokkel, `tools/grounded/regi_statue.py`), laag 2 een groene weide, laag 3 het meer. Het Reshiram-beeld is weg.
+- Kuilen zonder afgeschuinde hoeken: strakke, doorlopende klifwanden; trappen midden in de wanden, het pad slingert links-rechts-links omlaag.
+- Meer decor: stenen hekje langs de klifrand boven laag 1, lantaarns, bloemen voor het heiligdom, brievenbussen, wegwijzer, besneeuwde heggen, ijsplanten, boomstammen, keien. Brievenbus, bloemen, wegwijzer en hekje komen uit de General-tileset (zonder het gras).
+- Oude vrouw staat nu biddend bij het heiligdom (placeholdertekst). Iglo blijft de toekomstige weg naar de Regigigas-grot.
+- Warps, coord-triggers (y 39), heal location (23,10) en de warp vanaf Route 136 (7,38) aangepast.
+
+### [v.0.8.6] - Ashfrost Village: groter meer, besneeuwd gras
+- Meer groter (laag 2 en 3 breder, meer ca. 12×5).
+- Besneeuwd hoog gras in plukken in plaats van één losse tile (decor; Ashfrost heeft geen wilde Pokémon).
+
+### [v.0.8.7] - Ashfrost Village: pad naar de onderste trap
+- Het pad op de weide loopt nu door tot aan de trap naar het meer (er ontbrak een rij).
+
+### [v.0.8.8] - Ashfrost Village: wilde Pokémon (zoals Icirrus)
+Het gras en het meer in Ashfrost hebben nu encounters: alleen tamme, ongevaarlijke Pokémon die niet schuw zijn voor mensen, jong (lage levels). Bewuste uitzondering op de 12-unieke-soorten-regel.
+- Land (rate 10): Swinub 30%, Vanillite 30%, Snover 20%, Snom 10% (lv 20–23), Delibird 10% (lv 22–23).
+- Water (rate 4): Spheal 65%, Seel 34% (lv 20–24), Lapras 1% (lv 25).
+
+### [v.0.8.9] - Ashfrost Village: realistischere meer-encounters
+Water (rate 4) is nu zoetwater en koudebestendig: Ducklett 60%, Psyduck 30% (lv 20–24), Quagsire 5% (lv 22–24), Goldeen 4% (lv 20–24), Spheal 1% (lv 22, knipoog naar de Baikalrob, een echte zoetwaterzeehond in een bevroren meer). Seel en Lapras zijn eruit (zeedieren).
+
+### [v.0.8.10] - Kleine taken: Keccles, Cramorant, Avalugg
+- **Keccles (Route 136):** nieuwe introtekst van Jordi ("I wonder, why do so many Americans dress in camo..."), nabeschouwing aangepast (hij zei nog "See you in FORTREE", maar je komt hem pas na Fortree tegen). Levels 37/39 → **43, ace Salazzle 45** (Keccles 2 in Fortree is 39, Winona 41–43).
+- **Spit or swallow (Slateport):** "swallow" geeft nu een **Cramorant** (lv 10, Stockpile/Swallow) in plaats van Hisuian Qwilfish.
+- **Rivaal Route 136:** Hisuian Avalugg weg (gaat later naar Birch). Brendan krijgt zijn Exploud terug, May haar Lopunny (originele teams van Route 119, +3 levels).
+
+### [v.0.8.11] - Fly naar Ashfrost getest
+- In de emulator getest: Fly naar Ashfrost Village werkt (icoon op de kaart, landing voor het nieuwe Pokémon Center op (23,10)). Waarschijnlijk werkte het eerder niet door de oude heal location van vóór het herontwerp, of door een save die Ashfrost al bezocht had voordat de flag bestond: de flag `FLAG_VISITED_ASHFROST_TOWN` wordt pas gezet als je het dorp opnieuw binnenloopt.
+
+### [v.0.8.12] - Kortere pauzes in gevechten
+- `B_WAIT_TIME_MULTIPLIER` 10 → 8 (vanilla 16): berichten in gevechten blijven korter staan. Terugzetten kan in `include/config/battle.h` als het te snel voelt.
+
+### [v.0.8.13] - Snellere weer- en statusanimaties in gevechten
+De moves zelf (Sandstorm, Hail, Sunny Day, Rain Dance, Snowscape) houden hun volledige animatie; alleen het weer aan het begin/eind van een beurt is korter.
+- **Zandstorm:** ongeveer de helft korter (sneller in- en uitfaden, 36 i.p.v. 101 frames vol zand, 4 i.p.v. 7 zandsikkels). Nieuw argument "kort" voor `AnimTask_LoadSandstormBackground`.
+- **Hagel:** de helft van de hagelstenen (`AnimTask_HailShort`), sneller donker worden, 4 i.p.v. 8 tikgeluiden.
+- **Regen, zon, sneeuw:** kortere regen (30 i.p.v. 60 frames), 2 i.p.v. 4 lichtstralen, sneeuw 50 i.p.v. 150 frames; snellere overgangen.
+- **Statussen:** poison (korter schudden en flitsen), confusion (eendjes 40 i.p.v. 90 frames en sneller rond), sleep en infatuation (halve pauzes).
+- CLAUDE.md: nieuwe secties "Zelflerend werken" en "Lessen" (o.a. uit het Ashfrost-proces).
+
+### [v.0.8.14] - Algemene versnelling van animaties tussen de beurten
+- In `LaunchBattleAnimation` (`src/battle_anim.c`): voor alle **status-animaties** en alle **algemene animaties** (weer, terrein-effecten, Leech Seed, Wrap/Fire Spin, Ingrain/Aqua Ring/Wish-heal, Leftovers/bessen, stat-wijzigingen, Salt Cure, Sea of Fire, Future Sight-treffer enz.) worden de wachttijden (`delay`) in het animatiescript **gehalveerd**. Geldt bovenop de korte weer-animaties van v0.8.13.
+- Uitgezonderd (blijven op normale snelheid): aanvallen, Mega-evolutie, Primal Reversion, Power Construct, Ultra Burst, Tera, Z-moves, Totem-aura, Dynamax, vormverandering en het wegvallen van Illusion.
+
+### [v.0.8.15] - Lager Lagoon en Vintage Spill; versienummers
+- **Versienummers:** 0.9 is gereserveerd voor de laatste fase vóór de beta (1.0). De vorige secties v0.9.0–v0.9.4 heten nu v0.8.10–v0.8.14; we tellen door vanaf v0.8.15.
+- **Lager Lagoon** (`MOVE_LAGER_LAGOON`, **TM52**): bier-Surf. Water, special, 65 power, 100 acc, 15 PP, **50% confusion**, raakt iedereen naast de gebruiker (ook de partner, zoals Surf). Animatie: Surf-golf met eigen geel bierpalet (`graphics/battle_anims/backgrounds/lager_lagoon.pal`, `ANIM_SURF_PAL_LAGER`) en roomwitte schuimbubbels.
+- **Vintage Spill** (`MOVE_VINTAGE_SPILL`, **TM53**): wijn morsen. Water, special, 40 power, 100 acc, 20 PP, één doelwit. Confusion-kans loopt per treffer op hetzelfde doelwit op: **25% → 50% → 100%**. De teller (`vintageSpillCount` in `gDisableStructs`) blijft staan als de gebruiker tussendoor iets anders doet en verdwijnt pas als het doelwit wisselt. Animatie: Water Sport in bordeauxrood, het doelwit kleurt even rood en wankelt.
+- **Wallace** (Sootopolis Gym) geeft nu **TM53 Vintage Spill** bij de Rain Badge (was TM03 Scald; zijn tekst noemde nog Water Pulse). Uitleg aangepast, de absintgrap blijft. **TM03 Scald** heeft daardoor nog geen plek in de game (volgt).
+- **Wie leert ze (TM):** alle Water-types plus natuurlijke watermakers (Azurill, Phanpy, Donphan, Dewgong, Dragalge, Goomy-lijn incl. Hisui). Daarnaast:
+  - Lager Lagoon: hop (Hoppip, Skiploom, Jumpluff), graanvoorraad (Skwovet, Greedent), gist/schimmels (Paras, Parasect, Shroomish, Breloom, Foongus, Amoonguss, Morelull, Shiinotic, Toedscool, Toedscruel), gisting in de maag (Gulpin, Swalot) en vaste klanten (Spinda, Snorlax, Munchlax). 192 soorten.
+  - Vintage Spill: druiven treden (Bounsweet, Steenee, Tsareena), Shuckle (laat bessen gisten), fruit (Cherubi, Cherrim, Tropius, Applin, Flapple, Appletun, Dipplin, Hydrapple), eikenhouten vaten (Phantump, Trevenant, Dhelmise), gisting/proeverij (Gulpin, Swalot, Spinda). 190 soorten.
+  - Regels in `tools/learnset_helpers/make_teachables.py` (`GROUNDED_CUSTOM_TEACHABLES`).
+- Tests: `test/battle/grounded/lager_lagoon.c` (50% confusion, raakt ook de partner) en `vintage_spill.c` (25%, 50%, 100% ook met andere moves ertussen, reset na wisselen). Alle 6 slagen.
+
+### [v.0.8.16] - Vintage Spill sterker
+- Lager Lagoon was in enkelgevechten op alles beter. **Vintage Spill** nu: **60 power** (was 40), confusion **50% → 100%** (was 25 → 50 → 100%): de tweede treffer op hetzelfde doelwit verwart altijd. De teller werkt verder hetzelfde (blijft staan bij andere moves, weg na wisselen). Tests aangepast.
+
+### [v.0.8.17] - TM-plekken voor Lager Lagoon en Scald
+- **TM52 Lager Lagoon** ligt in **Coldstep Cave ijskamer 1** op het vloerhoekje rechts van het middelste ijsveld (31,6), op de plek van HM07 in Ice Path (Gold/Silver/Crystal). Koud bier in een ijsgrot. Vlag `FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON` (0x3A). Met de solver gecontroleerd: bereikbaar door over het middelste ijsveld te glijden, en je kunt nergens vastlopen.
+- **TM03 Scald** (was Wallace's TM) ligt op **Route 120** op de plek van de Full Heal (7,89). Vlag hernoemd naar `FLAG_ITEM_ROUTE_120_TM_SCALD` (zelfde waarde 0x407).
+- TODO: nieuwe move **Machine Learning** in de backlog gezet (uitwerking volgt).
+
+### [v.0.8.18] - QoL: geen bijnaamvraag na het vangen
+- Na het vangen komt de vraag "Give a nickname to the captured ...?" niet meer (`BattleScript_TryNicknameCaughtMon` in `data/battle_scripts_2.s`). Een bijnaam geven kan op verzoek via het summary-scherm (rename-optie). Bij een volle party gaat de Pokémon al direct naar de pc (geen wisselmenu).
+
+### [v.0.8.19] - QoL: bessen planten in één handeling
+- Lege grond aanspreken opent **direct de bessentas** (geen "Want to plant a BERRY?" met ja/nee meer; B annuleert).
+- Heb je de **Wailmer Pail**, dan krijgt de bes na het planten meteen water (`BerryTree_EventScript_WaterAfterPlanting`), ook als je een bes vanuit de tas op de grond gebruikt. In de emulator gecontroleerd: de boom staat direct op "gewaterd".
+
+### [v.0.8.20] - QoL: Move Deleter bij de Move Relearner
+- In het huis van de Move Relearner (Fallarbor) zit nu ook een **Move Deleter** (`LOCALID_FALLARBOR_MOVE_DELETER`, op de stoel tegenover de Relearner, (7,4)). Geen ja/nee-vraag vooraf: hij vraagt direct welke Pokémon iets moet vergeten (B annuleert). De rest van het gesprek is dat van de Move Deleter in Lilycove (die blijft ook bestaan).
+- Placeholdertekst: "He teaches POKéMON old moves. I make them forget new ones. Together we run a perfectly pointless business."
+
+### [v.0.8.21] - QoL: gevechtsmenu onthoudt de laatst gekozen move
+- De move-cursor staat nu per teamlid op de laatst gekozen move, **ook na wisselen** (eerder sprong hij na een wissel terug naar de eerste move). Opgeslagen in `gBattleStruct->lastMoveCursorByPartySlot` (gezet in `battle_main.c` bij het kiezen, gelezen in `PlayerHandleChooseMove`). Geldt per gevecht. Getest in de emulator: Lapras kiest Splash, wisselt naar Machamp (cursor op de eerste move), terug naar Lapras: cursor weer op Splash.
+
+### [v.0.8.22] - QoL: gymgidsen noemen het level van de ace
+- De gids bij de ingang van elke gym zegt na zijn eigen advies ook het **level van de ace** van die gymleider (Roxanne 16, Brawly 22, Wattson 25, Flannery 29, Norman 35, Winona 43, Tate & Liza 49, Wallace 56).
+- Na de overwinning noemt hij de **volgende gym** en het level van die ace (bij Norman: "Your dad."); in Sootopolis verwijst hij naar de League. Jordi's bestaande gidsteksten zijn ongewijzigd; de tips staan in eigen labels (`*_Text_GymGuideAceLevel`, `*_Text_GymGuideNextAce`, placeholders).
+- **Let op:** past Jordi een gymteam aan, dan moet het level in deze teksten mee.
+
+### [v.0.8.23] - QoL: hele team healen met één knop (SELECT in het partymenu)
+- In het partymenu (buiten gevechten) healt **SELECT** het hele team met de heal-items uit je tas (`HealPartyWithBagItems` in `src/party_menu.c`). Per Pokémon: eerst reviven (Revive, anders Max Revive), dan de status (eerst het specifieke middel zoals Antidote/Awakening, anders het goedkoopste Full Heal-achtige item, incl. Lava Cookie enz.), dan HP.
+- Voor HP kiest hij de **goedkoopste combinatie**: per soort potion (Potion, Berry Juice, Fresh Water, Soda Pop, Lemonade, Super/Hyper/Max Potion, Moomoo Milk, Full Restore) berekent hij hoeveel er nodig zijn en wat dat samen kost; heb je nergens genoeg van, dan eerst de sterkste. Items werken precies zoals bij normaal gebruik. Bittere kruiden (vriendschap omlaag), bessen en PP-items worden niet gebruikt.
+- Korte melding: "Used X item(s). The whole team is patched up!", "...then ran out of suitable medicine.", "No suitable medicine in the BAG. Thoughts and prayers it is." of "Everyone is already fine. Show-offs." (placeholders).
+- Getest in de emulator: Lapras (10 HP, vergiftigd) en Machamp (flauwgevallen) in één druk vol, met 6+3 Potions, 1 Antidote en 1 Revive.
+
+### [v.0.8.24] - Nieuw item: Six-Pack
+- **Six-Pack** (`ITEM_SIX_PACK`): zes potions in een kartonnen drager. Buiten gevechten **60 HP voor elke Pokémon in het team** (zelfde effect als een Super Potion, op iedereen tegelijk; flauwgevallen Pokémon niet). 2000 Pokédollar. Te koop in de **Lilycove Department Store (2F)** en de **Fortree Mart**. Niet bruikbaar in gevechten.
+- Eigen icoon (`graphics/items/icons/six_pack.png`, eigen palet): drie paarse potion-sprayflesjes in een kartonnen drager met handvat-gat en een mintgroen etiket met wit kruis.
+- Melding: "Everyone took a swig from the SIX-PACK and recovered HP!" Getest in de emulator.
+
+### [v.0.8.25] - QoL: tweede registratieknop (L); hengel en fiets zonder menu
+- Key items kunnen nu ook op de **L-knop** geregistreerd worden: in de tas heeft een key item naast REGISTER (SELECT) de optie **L BUTTON** (of DESELECT als hij er al op staat). Een item staat op één knop tegelijk; in de lijst staat "L" achter het item op L.
+- Zo kun je bijv. de **fiets op L en de hengel op SELECT** zetten: allebei zonder menu. Zonder item op L doet L niets. Staat de optie "L=A" aan, dan werkt L als A (geen registratieknop).
+- Opgeslagen in `VAR_REGISTERED_ITEM_L` (was `VAR_UNUSED_0x409B`), dus de save-structuur is ongewijzigd. Wisselen tussen Mach/Acro Bike past ook het item op L aan. Code: `UseRegisteredKeyItemLOnField` / `ItemMenu_RegisterL` in `src/item_menu.c`, `pressedLButton` in `src/field_control_avatar.c`.
+- Getest in de emulator: Mach Bike op L (op- en afstappen), Old Rod op SELECT.
+
+### [v.0.8.26] - QoL: nature en ability zichtbaar in de pc
+- Het infopaneel links in de pc toont nu: naam, geslacht/level, **nature**, **ability** en het vastgehouden item (in die volgorde). De regel "/Soort" vervalt als de Pokémon geen bijnaam heeft (die was dan dubbel); met bijnaam staan soort en geslacht/level samen op één regel.
+- De nature is de effectieve nature (met mints meegerekend, `MON_DATA_HIDDEN_NATURE`). Werkt voor party en boxen; in de modus "Move Items" blijft het oude paneel.
+- Getest in de emulator (party én box).
+
+### [v.0.8.27] - QoL: gegevens van wilde Pokémon die je al gevangen hebt
+- In een **wild gevecht** toont **L** in het actiemenu de **ability, het vastgehouden item en de moves** van de wilde Pokémon, als je die soort al gevangen hebt (Pokédex). Elke knop sluit het weer en zet het actiemenu terug. In dubbelgevechten de linker tegenstander (of de rechter als de linker al weg is). Niet in trainergevechten.
+- Nog niet gevangen: "No data yet. Catch one first, then we'll talk." (placeholder). Staat de optie "L=A" aan, dan werkt L als A.
+- Code: `ShowWildMonInfo` / `HandleInputWildMonInfo` in `src/battle_controller_player.c` (gebruikt de vensters van het actiemenu, klein lettertype). Getest in de emulator (Shuckle gevangen, Magikarp niet).
+
+### [v.0.8.28] - Wilde Pokémon-info in één vak
+- Feedback Jordi op v0.8.27: de info stond verspreid over de twee vakken van het actiemenu en de tekst viel half weg. Nu staat alles in **één omkaderd vak** rechts boven het gevecht (hetzelfde vak als het level-up-overzicht): ability, item, en daaronder de vier moves, elk op een eigen regel. Elke knop sluit het vak; het actiemenu blijft ongewijzigd staan.
+
+### [v.0.8.29] - Wilde Pokémon bekijken in het summary-scherm
+- Feedback Jordi op v0.8.28 (het vak overlapte het menu): **L** in het actiemenu van een wild gevecht opent nu een **apart scherm**, het gewone summary-scherm, met de wilde Pokémon: info (ability, nature), stats (ook IV's) en moves, net alsof je naar een eigen Pokémon kijkt. Met B terug naar het gevecht; daarna wordt het actiemenu opnieuw gevraagd. Alleen voor soorten die je al gevangen hebt; anders "No data yet. Catch one first!" in het vak links.
+- L i.p.v. R: R is in wilde gevechten de knop voor de laatst gebruikte bal (vasthouden + pijltjes om te wisselen).
+- Techniek: loopt via de engine-route van het debugmenu (`B_ACTION_DEBUG`); het scherm krijgt een kopie van de Pokémon, want een pointer naar `gEnemyParty` ziet het summary-scherm als een link-tegenstander (dat gaf ontbrekende tekst en een zwart scherm). Getest in de emulator: alle pagina's, terug naar het gevecht en daarna verder spelen.
+
+### [v.0.8.30] - QoL: korte melding bij items oppakken
+- Vind je een item dat je **al eens eerder** hebt gevonden (itembal of verborgen item), dan gaat het zonder tekstvak en zonder fanfare direct in de tas: een kort tasgeluid en een **pop-up met de itemnaam** (de kaartnaam-pop-up, bijv. "Potion" of "Poké Ball x3"). Je kunt meteen doorlopen.
+- De **eerste keer** dat je een soort item vindt, blijft het gewone tekstvak met itembeschrijving (TM's zijn dus altijd de eerste keer). Volle tas: het oude bericht. In de Battle Pyramid blijft alles vanilla.
+- Code: `EventScript_QuickPickUpItem` / `EventScript_QuickPickUpHiddenItem` in `data/scripts/obtain_item.inc`, specials `IsItemObtainedBefore` en `ShowItemPickupPopup` in `src/map_name_popup.c` (de pop-up toont dan de itemnaam i.p.v. de kaartnaam, ook als kaartnaam-pop-ups op die kaart uit staan). Getest in de emulator met een Potion op Route 102.
+
+### [v.0.8.31] - QoL: Rare Candy en vitamines meerdere tegelijk; tas sorteren
+- **Rare Candy, vitamines (HP Up t/m Carbos) en veren:** kies je USE in de tas en heb je er meer dan één, dan vraagt de tas eerst "Use how many?" (zelfde aantalkiezer als bij weggooien: ↑↓ ±1, ←→ ±10). Daarna kies je de Pokémon en worden ze in één keer toegepast, met één melding (bijv. "elevated to Lv. 15"). Moves die onderweg geleerd worden en een evolutie daarna gaan zoals bij Exp. Candies. Er worden nooit meer gebruikt dan zin heeft (lv 100, EV-maximum); de rest blijft in de tas. `gMultiUseCount` / `IsMultiUseItem` in `src/item_menu.c`, toepassen in `ItemUseCB_RareCandy` en `ItemUseCB_Medicine`.
+- **Tas sorteren** bestond al in pokeemerald-expansion: in de tas opent **START** het sorteermenu (naam, type, aantal, index). Van de takenlijst gehaald.
+- Getest in de emulator: 5 Rare Candies (lv 10 → 15, daarna move leren) en 3 Proteins in één keer.
+
+### [v.0.8.32] - QoL: HM-acties zonder HM-Pokémon, direct bij aanspreken
+- **Badge + HM in de tas is genoeg** voor Cut, Rock Smash, Strength, Surf, Waterfall, Dive en Flash: niemand in je team hoeft de move te kennen (`CanUseFieldMoveViaHM` in `src/field_move.c`; terugval in `checkfieldmove` en `PartyHasMonWithSurf`). Immersieve uitleg: er wordt altijd wel een Pokémon "gechanneld", desnoods uit de box.
+- **Direct bij aanspreken, zonder vraag en zonder tekst:** boom aanspreken = meteen Cut, rots = Rock Smash, rotsblok = Strength staat aan, water = meteen surfen, waterval = meteen omhoog. Alleen **Dive** (en weer bovenkomen) vraagt nog "Would you like to dive?".
+- **Geen Pokémon-animatie** meer bij veldacties (het "Pokémon verschijnt"-moment in `FldEff_FieldMoveShowMonInit` is overgeslagen; geldt ook voor Fly).
+- **Donkere grotten** zijn meteen verlicht als je de Knuckle Badge en HM05 Flash in je tas hebt (`SetDefaultFlashLevel`).
+- **Uitleg** bij de Cutter in Rustboro (HM01), achter zijn bestaande tekst: "And no, you don't have to teach it. Just walk up to a tree and press A. Some POKéMON somewhere does the work. In your BOX, probably. We call it channeling. Nobody asks questions. Same goes for every HM you'll find. BADGE plus HM in your BAG. Done." (placeholder).
+- Getest in de emulator: Cut (boom op Route 104) en Surf, met alleen een Magikarp zonder die moves in het team.
+
+### [v.0.8.33] - QoL: rematch-overzicht in de PokéNav
+- In **Match Call** staan trainers die **klaar zijn voor een rematch** nu bovenaan (met hun Pokéball-icoon), daaronder de rest in de oude volgorde. Het vak links toont bij elke geselecteerde trainer de route waar die staat, dus je ziet meteen waar je heen moet. Code: case 3 van `LoopedTask_BuildMatchCallList` in `src/pokenav_match_call_list.c`.
+- Getest in de emulator (Lola op Route 109 en Cristin op Route 121 bovenaan).
+- Daarmee is de lijst met goedgekeurde QoL-taken leeg.
+
+### [v.0.8.34] - HM-acties: vragen terug bij Strength, Surf en Waterfall; Flash-melding
+- Feedback Jordi: **Strength, Surf en Waterfall** vragen weer ja/nee (zonder de "X used ...!"-tekst en zonder Pokémon-animatie). Cut en Rock Smash blijven direct; Dive vraagt ook.
+- **Flash:** bij het binnengaan van een donkere grot (badge + HM05 in de tas) komt één keer de melding "Your POKéMON decided to use FLASH, because who the heck wants to walk around in a dark cave?" (ook niet opnieuw bij een volgende verdieping). `gShowAutoFlashMessage` in `src/overworld.c`, script `EventScript_AutoFlash`. Getest in de emulator (Granite Cave B1F).
+
+### [v.0.8.35] - Automatisch Flash zichtbaar
+- Feedback Jordi: bij het binnengaan van een donkere grot (badge + HM05) begint het nu **donker** en gaat het licht met de gewone Flash-animatie zichtbaar open (`animateflash 1`, ~2 seconden), daarna de melding. Getest in de emulator (Granite Cave B1F).
+
+### [v.0.8.36] - Snellere schermovergangen; Ditto onderaan
+- De fade naar/van zwart (of wit) bij **deuren, trappen en warps** gaat ongeveer een derde sneller (`WarpFadeOutScreen`/`WarpFadeInScreen` in `src/field_screen_effect.c`: grotere fadestappen). De overgang blijft zichtbaar.
+- TODO: de Ditto-trainer staat op verzoek van Jordi onderaan; verder werk ik de backlog af van makkelijk naar moeilijk.
+
+### [v.0.8.37] - Shedinja niet meer vast op 1 HP
+- De revisie van v0.2.1 gaf Shedinja al **base HP 20**, maar `CalculateMonStats` (`src/pokemon.c`) zette zijn HP daarna hard op 1. Die uitzondering is weg: Shedinja gebruikt nu de gewone HP-formule. Op lv 50 (IV 31, geen EV's) is dat **95 HP**, op lv 100 rond 180. Wonder Guard blijft, dus alleen supereffectieve aanvallen en indirecte schade raken hem; met deze HP overleeft hij een paar tikken weer/gif/hazards in plaats van op elke tik te sterven.
+
+### [v.0.8.38] - Nieuwe move: Othismos (Falinks)
+- **Othismos** (`MOVE_OTHISMOS`), Grieks voor het duwen van een hoplieten-falanx. Fighting, physical, **20 power per treffer**, 100 acc, 10 PP, contact. Aantal treffers = 1 + 4 × HP/max HP: **5 bij volle HP**, 4 vanaf 75%, 3 vanaf 50%, 2 vanaf 25%, daaronder 1 (`CancelerMultihitMoves` in `src/battle_util.c`). Beschrijving: "A hoplite shoving push. Hits more at higher HP."
+- Falinks leert hem op **lv 30**, naast Reversal (die juist sterker wordt bij lage HP). Animatie: die van Arm Thrust.
+- Tests: `test/battle/grounded/othismos.c` (5, 3 en 1 treffer); slagen.
+
+### [v.0.8.39] - Route 135: Bergmite en Eiscue drijven in het meer
+- In het meer van Route 135 drijven nu een **Bergmite** (17,21) en een **Eiscue** (32,27), naast de Lapras. Aanspreken (surfend) = cry + **wild gevecht** op lv 33 (de wilde Pokémon op de route zijn lv 32–34). Ze gebruiken tijdelijke vlaggen (`FLAG_TEMP_11`/`12`), dus na het verlaten van de kaart drijven ze er weer.
+- Getest in de emulator: zichtbaar in het water, surfen ernaartoe, gevecht start.
+
+### [v.0.8.40] - Route 135: meer Bergmite en Eiscue
+- Op verzoek van Jordi drijven er nu **3 Bergmite** ((17,21), (28,20), (20,29)) en **2 Eiscue** ((32,27), (33,23)) in het meer van Route 135, allemaal lv 33 en met eigen tijdelijke vlag (`FLAG_TEMP_11`–`15`), dus ze komen terug na het verlaten van de kaart.
+
+### [v.0.8.41] - Snow Storm (Hail) en sneeuwstorm op Route 136
+Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwaardere Snowscape mét schade.
+- **Snow Storm** (de move en het weer die eerst Hail heetten, `MOVE_HAIL` / `B_WEATHER_HAIL`): 1/16 schade per beurt voor niet-Ice-types (zoals Sandstorm) **én** Ice-types +50% Def (zoals Snowscape, `battle_util.c`). Alle teksten hernoemd: "A snow storm started!", "The snow storm rages on.", "... is buffeted by the snow storm!", "The snow storm stopped.", en de beschrijvingen van de move, Aurora Veil, Max Hailstorm en de sneeuwabilities ("snowy weather"). Wie Hail leerde, leert nu Snow Storm. **Snow Warning** zet Snow Storm.
+- **Snowscape** blijft neutraal (alleen de Def-buff, geen schade). Chilly Reception zet Snowscape.
+- **Animatie:** Snow Storm is een zwaardere Snowscape (donkerder, meer sneeuwvlokken en windgeluid) in plaats van hagelstenen, zowel als move als aan het eind van de beurt.
+- **Overworld:** nieuw weer `WEATHER_SNOW_STORM`: donkerdere lucht, 36 vlokken (normaal 16; meer kan niet veilig vanwege de sprite-limiet), sneller vallend en schuin door de wind. Lichte sneeuw (`WEATHER_SNOW`) geeft in gevechten **Snowscape**, de sneeuwstorm geeft **Snow Storm**. Weather Ball wordt Ice en Snow Cloak werkt in beide.
+- **Route 135** wisselt per dag tussen lichte sneeuw en as (zoals voorheen, maar gevechten krijgen nu Snowscape); **Route 136** wisselt tussen **sneeuwstorm** en as (`WEATHER_ASHFROST_STORM_CYCLE`).
+- Tests: `test/battle/grounded/snow_storm.c` (schade, Def-buff, Snowscape onschadelijk). De bestaande hagel-tests verwachten nu de nieuwe teksten; alle Snow/Hail/Chilly Reception-tests slagen. In de emulator gecontroleerd: sneeuwstorm op Route 136.
+
+### [v.0.8.42] - Testregressies na Snow Storm/Shedinja opgelost
+- Volledige `make check` vergeleken met `master`: drie nieuwe failures gevonden en opgelost.
+- **Abilitybeschrijvingen** van de sneeuw-abilities ingekort (Snow Cloak, Ice Body, Snow Warning, Slush Rush, Ice Face), zodat ze in het vak passen.
+- Tests bijgewerkt: Overcoat verwacht "Snow Storm" in plaats van "Hail"; de Ability Shield-test zet Shedinja expliciet op 1 HP (Shedinja heeft in Grounded normale HP).
+- Er zijn geen nieuwe failures meer ten opzichte van `master`.
+
+### [v.0.8.43] - Weer omgedraaid op Route 135/136
+- Op verzoek van Jordi: hoe dichter bij Ashfrost, hoe leefbaarder het weer. **Route 135** wisselt nu per dag tussen **sneeuwstorm** (Snow Storm in gevechten) en as; **Route 136** tussen lichte sneeuw (Snowscape) en as.
+
+### [v.0.8.44] - Summary van wilde Pokémon: "Wild POKéMON"
+- Het summary-scherm dat je met L in een wild gevecht opent, deed alsof de Pokémon al van jou was (jouw OT-naam en ID, "met at Lv x, [plek]"). Nu: `OT/-----`, geen ID, en als memo "*[nature] nature, Wild POKéMON. Not yours. Yet.*" (placeholder; herschrijfbaar).
+- Code: `ShowWildPokemonSummaryScreen` in `src/pokemon_summary_screen.c` (vlag `isWildMon`).
+
+### [v.0.8.45] - Nieuwe move: Fungal Control (Parasect)
+- **Fungal Control**: Grass, status, 60% acc, 10 PP, poedermove (Grass-types en Overcoat zijn immuun), Magic Coat kaatst hem terug. Sporen nemen het brein van het doelwit over: **jij kiest welke move het doelwit 3 beurten lang moet gebruiken**, ook Explosion of Memento.
+- De speler kiest via het gewone move-menu, dat dan de moves van het doelwit toont (B, SELECT en START doen daar niets). Als de AI Fungal Control gebruikt, kiest ze de move die jou het meest schaadt (self-KO > statusmove > zwakste aanval).
+- Werkt via het Encore-mechanisme: faalt als het doelwit al vastzit, Aroma Veil beschermt, Mental Herb geneest.
+- Teksten (placeholder): "Spores seep into [X]'s brain…" en "[X] is now a fungus puppet! It can only use [move]!"
+- Parasect leert hem bij evolutie (en op lv 1); Spore blijft op lv 1 en 22.
+- Tests: `test/battle/grounded/fungal_control.c`. In de emulator getest (menu, 3 beurten Growl, tweede poging faalt).
+
+### [v.0.8.46] - Nieuwe move: Transmutation
+- **Transmutation**: Psychic, status, 100% acc, 10 PP. Een omgekeerde Transform: het **doelwit** wordt een kopie van de gebruiker (sprite, types, stats, stat stages, ability en moves, elk met max. 5 PP) tot het wisselt. Faalt als een van beide al getransformeerd is, achter een Substitute, of bij Dynamax/Illusion.
+- Level-up: Kadabra/Alakazam 40, Metang/Metagross 45, Gothita-lijn 40, Elgyem/Beheeyem 40, Espurr 20, Meowstic 40, Mew 50, Delphox 45, Sigilyph 40, Indeedee 40, Jynx 44, Claydol 42, Wyrdeer 40, Farigiraf 40.
+- Tests: `test/battle/grounded/transmutation.c`. In de emulator getest (Zigzagoon werd een Parasect).
+
+### [v.0.8.47] - Chilly Reception voor meer Pokémon
+- Level-up toegevoegd (rest van de learnsets ongewijzigd): Galar Mr. Mime en Mr. Rime 32, Chatot 33, Squawkabilly 35, Jigglypuff 28, Kecleon 30, Whismur 25, Loudred en Exploud 29, Jynx 33.
+
+### [v.0.8.48] - Nieuwe move: Implosion
+- **Implosion**: Dark, special, 200 BP, 100 acc, 5 PP; raakt iedereen om de gebruiker heen (zoals Explosion) en de gebruiker gaat K.O. Damp blokkeert hem.
+- Daarna ontstaat een **zwart gat** (5 beurten), voor beide kanten: alle hazards op het veld verdwijnen meteen, en elke Pokémon die het veld op komt krijgt −1 Attack en −1 Sp. Atk. Na 5 beurten: "The black hole evaporated. Thanks, Hawking." (placeholder).
+- Animatie: eigen zwart-gat-animatie met onderdelen uit de Z-move Black Hole Eclipse; de achtergrond wordt donker, ringen en deeltjes worden naar de gebruiker gezogen, de gebruiker wordt zwart en krimpt, dan een zwarte flits met schokgolf.
+- Nog niemand leert hem (vraag aan Jordi).
+- Tests: `test/battle/grounded/implosion.c` (self-KO + −1 Atk/SpAtk bij inwisselen, hazards weg, einde na 5 beurten).
+
+### [v.0.8.49] - Wie leert Implosion
+- Level-up: Voltorb 46 / Electrode 50 (ook Hisui), Solrock 50, Lunatone 50, Minior 50 (alle vormen), Dusknoir 57, Drifblim 57, Cosmoem 45, Necrozma 80, Darkrai 82, Deoxys 85 (alle vormen).
+- Jordi's lijst plus eigen toevoegingen die kunnen imploderen: Drifblim (ballon), Cosmoem (instortende protoster) en Necrozma (slokt licht op). Schrappen kan.
+
+### [v.0.8.50] - Prof. Oak in Slateport
+- **Prof. Oak** staat bij de vuurtoren van Slateport (36,53) naar zee te kijken, zodra je Slateport in kunt. Praten = gevecht (mugshot, paars): Exeggcute, Growlithe, Bulbasaur, Squirtle, Charmander (lv 15, de starters bewust onge-evolueerd) en Tauros (lv 17, ace).
+- Na het gevecht kies je een **Kanto-starter** (Bulbasaur/Charmander/Squirtle, lv 15; zonder bijnaamvraag). Teksten zijn placeholders.
+- Graphics uit FireRed/LeafGreen (pret/pokefirered): trainerfoto `graphics/trainers/front_pics/oak.png` (`TRAINER_PIC_OAK`) en overworld-sprite `prof_oak.png` (`OBJ_EVENT_GFX_PROF_OAK`, omgezet naar het NPC-palet van Birch, met grijs haar).
+- Nieuw: `TRAINER_PROF_OAK`, `FLAG_RECEIVED_OAK_STARTER` (0x3B).
+- In de emulator getest (sprite, gevecht, keuze, ontvangst).
+
+### [v.0.8.51] - Laser Beam, Machine Learning en Shadow Siphon
+- **Laser Beam** (TM55, nu de beloning van **Tate & Liza**): Psychic, special, 75 BP, 100 acc, 10 PP.
+  - Gaat door Protect, breekt Reflect/Light Screen (zoals Brick Break) en negeert de defense-boosts van het doelwit.
+  - Animatie: de achtergrond wordt zwart, een dunne rode laser (eigen sprite `laser_dot.png`, 36 punten op de lijn), rook bij de inslag.
+  - Leerbaar via TM door alles wat lasers kan afschieten (Porygon-lijn, Magnemite-lijn, Octillery, Magmortar, Blastoise, Clawitzer, Starmie, Genesect, Deoxys, Necrozma, …) en logische Psychic-soorten (Alakazam-lijn, Espeon, Beheeyem, Metagross, Gardevoir/Gallade, Xatu, Claydol, Reuniclus, Malamar, …); 64 soorten in totaal.
+- **Machine Learning** (TM54, nu de beloning van **Wattson**): Electric, status, 10 PP.
+  - Opeenvolgende beurten gaan er steeds meer stats +1: eerst 1, dan 2, dan 3, daarna alle 5 (de hoogste basisstats eerst). Een andere move of wisselen reset de reeks.
+  - Elke beurt 20% kans op **hallucinatie**: dan doet hij een willekeurige move (Metronome, zonder de Metronome-animatie). Hallucineren breekt de reeks niet.
+  - Teksten (placeholder): "[X] finished training epoch N!" en "[X] hallucinated! It confidently did something else!"
+  - Leerbaar door machine-Pokémon (Porygon-, Magnemite-, Klink-, Beldum-, Golett-lijn, Rotom, Genesect, Magearna, alle Iron-paradoxen, Registeel/Regieleki/Regigigas, Voltorb-lijnen, Varoom-lijn).
+- **Shadow Siphon**: Dark-versie van Draining Kiss (special, 50 BP, herstelt 75% van de schade). Animatie: Giga Drain met donkerpaarse bollen. Nog niemand leert hem.
+- Wattson en Tate & Liza hebben nieuwe uitleg bij hun TM (placeholders in hun stijl).
+- De oude gym-TM's liggen nu op de grond: **TM Volt Switch** op Route 119 (3,56, was Hyper Potion) en **TM Calm Mind** op Route 123 (75,9, was Elixir).
+- Tests: `test/battle/grounded/laser_beam.c`, `machine_learning.c`, `shadow_siphon.c`.
+
+### [v.0.8.52] - Shadow Siphon (TM56) en nieuwe animaties
+- **Shadow Siphon** wordt **TM56**, te vinden op **Mt. Pyre 3F** (was Super Repel). Idee: zuigt op afstand de schaduw weg, zonder contact.
+  - Via TM voor special Dark-aanvallers en sinistere soorten op afstand (55 soorten, o.a. Houndoom, Honchkrow, Zoroark, Hydreigon, Darkrai, Spiritomb, Mismagius, Grimmsnarl-lijn, Banette, Zubat-lijn, Sableye, Gengar-lijn, Dusknoir, Chandelure, Froslass, Polteageist, Dragapult).
+  - Level-up: Zubat 29, Golbat/Crobat 32, Misdreavus/Mismagius 30, Spiritomb 30, Shuppet 30, Banette 32, Impidimp 28, Morgrem/Grimmsnarl 30, Zorua 30, Zoroark 32, Sableye 30.
+  - Animatie: paarse gloed, de schaduw van het doelwit verschijnt aan zijn voeten en wordt krimpend naar de aanvaller gezogen; het doelwit verbleekt, de aanvaller herstelt.
+- **Fungal Control** maakt nu contact en heeft een eigen animatie: aanvallen, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit (ongebruikte asset `mushroom.png` uit expansion), met een groene gloed.
+
+### [v.0.8.53] - Acid Rain (TM57) en Air Pollution
+- Nieuw weer **Acid Rain** (alleen in gevechten), 5 beurten, 8 met **Black Sludge**:
+  - Poison-types herstellen 1/16 HP per beurt en krijgen Def ×1,5. Alle anderen verliezen 1/16 per beurt, behalve Steel (en Magic Guard, Overcoat, Safety Goggles, Utility Umbrella, ondergrondse/onderwater-Pokémon).
+  - Poison-moves ×1,5, Fire- én Water-moves ×0,5 ("ultieme weather wars").
+  - Venoshock doet altijd dubbele schade. Gifkansen van moves verdubbelen (10→20%, 20→40%, 50% en hoger → 100%).
+  - Purify, Aromatherapy, Refresh en Heal Bell falen ("The acid rain keeps poisoning everything!").
+  - Synthesis, Moonlight en Morning Sun herstellen 1/4. Milk Drink wordt zuur en herstelt een kwart van normaal (1/8).
+  - Toxic Spikes maken in Acid Rain meteen Badly Poisoned. Thunder en Hurricane raken altijd.
+  - Weather Ball wordt Poison, 100 BP, met paars-groene bellen. Defog blaast de zure wolken weg. Rapid Spin werkt normaal.
+  - Animatie: paarse regen, als move en aan het eind van elke beurt.
+- Move **Acid Rain** (Poison, status, 5 PP) = **TM57**. Je krijgt hem van een **nieuwe Aqua-grunt in de Aqua Hideout B1F** (32,18): R&D's zure regen viel in de bruiswatervaten (placeholder-dialoog). Leerbaar via TM door alle Poison-types plus Castform, Torkoal, Slugma-, Rolycoly-lijn. Level-up bij 46 Poison-soorten (o.a. Arbok, Nidoking-lijn, Crobat, Muk, Weezing, Tentacruel, Swalot, Drapion, Toxicroak, Garbodor, Dragalge, Toxapex, Salazzle, Toxtricity, Scolipede, Glimmora, Grafaiai).
+- Nieuwe ability **Air Pollution** (zoals Drizzle, maar Acid Rain): Koffing/Weezing (vervangt Levitate) en Trubbish/Garbodor (vervangt Stench).
+- **Forecast** (Castform): immuun voor de nadelen van Sandstorm en Acid Rain; Weather Ball werkt gewoon.
+- Tests: `test/battle/grounded/acid_rain.c` (9 tests). In de emulator getest: animatie en de grunt.
+
+### [v.0.8.54] - Pollen Haze (TM58), Pollen Season en Bug Maniac Timothy
+- Nieuw weer **Pollen Haze** (Bug-weer, alleen in gevechten, 5 beurten):
+  - **Bug-types**: Speed ×2 (een Tailwind voor alleen Bug) en ze negeren de stat boosts van het doelwit (Def/SpDef en evasion, zoals Unaware).
+  - **Bug- en Grass-moves ×1,5**, Fire-moves ×0,5 (niet voor Castform). **Grass-types herstellen 1/16** per beurt.
+  - Spore- en poedermoves +20 accuracy (max 100). Weather Ball wordt Bug (100 BP, geel-groene animatie).
+  - **Pollen Puff** doet ×1,5 schade tegen tegenstanders en herstelt 75% (i.p.v. 50%) bij bondgenoten.
+  - Synthesis, Moonlight en Morning Sun worden níet gehalveerd (stuifmeel is goed voor planten).
+  - **Windmoves** (Gust, Heat Wave, Hurricane, Tailwind, Air Cutter, Twister, Icy Wind, Petal Blizzard, …) blazen het stuifmeel meteen weg: "The wind blew the pollen away! Ahchoo!"
+  - Solar Beam en Solar Blade doen in Pollen Haze én Acid Rain halve schade, zoals in regen (zie vraag).
+  - Animatie: geel stuifmeel dwarrelt over het veld (spore-sprites), gele gloed.
+- Move **Pollen Haze** (Bug, status, 5 PP) = **TM58**. Via TM voor alle Bug- en Grass-types (221 soorten); level-up bij 57 Bug/Grass-soorten (o.a. Butterfree, Beedrill, Parasect, Venomoth, Vileplume, Victreebel, Jumpluff, Sunflora, Roserade, Vespiquen, Leavanny, Whimsicott, Lilligant, Vivillon, Florges, Ribombee, Eldegoss, Orbeetle, Volcarona, Heracross, Scizor, Breloom).
+- Nieuwe ability **Pollen Season** (zoals Drizzle, maar Pollen Haze): Butterfree (Compound Eyes of Pollen Season, vervangt Tinted Lens), Venomoth (vervangt Tinted Lens; Magic Guard blijft), Ribombee (vervangt Sweet Veil), Vivillon (vervangt Friend Guard), Mothim (vervangt Tinted Lens), Sunflora (vervangt Early Bird), Eldegoss (vervangt Effect Spore), Jumpluff (vervangt Infiltrator). De voorgangers in die lijnen (Cutiefly, Hoppip/Skiploom, Sunkern, Gossifleur) delen de ability.
+- **Bug Maniac Timothy** (Route 119, 22,113, net boven de Mimic Circle): volledig pollenteam — Ribombee lv 35 (Pollen Season), Butterfree (Compound Eyes, Sleep Powder), Venomoth, Vivillon (Compound Eyes), Jumpluff (Cotton Spore, Pollen Haze), Eldegoss lv 34 (Pollen Puff). Na het gevecht geeft hij **TM58**: "SPREAD THE POLLEN! AHCHOOOO!" (placeholders).
+- Forecast (Castform) heeft ook in Pollen Haze geen last van het Fire-nadeel.
+- Tests: `test/battle/grounded/pollen_haze.c` (6 tests). In de emulator getest: Timothy, gevecht, Pollen Season-animatie.
+
+### [v.0.8.55] - Noorderlicht-transitie voor Suicune
+- Nieuwe gevechtstransitie **B_TRANSITION_AURORA**, alleen voor **Suicune** (Crystal Cavity): het beeld wordt donker, noorderlichtgordijnen verschijnen en glinsteren (kleurcyclus groen → cyaan → paars, licht wiegend), lichten op tot wit en vervagen dan naar het gevecht. Muziek blijft het beasts-thema.
+- Graphics gegenereerd met `tools/grounded/aurora_transition.py` (`graphics/battle_transitions/aurora.png/.bin/.pal`, 156 tiles, 16 paletframes); de transitie zelf staat onderaan `src/battle_transition.c`.
+- Raikou en Entei houden de Blur-transitie (eigen transities kunnen later).
+
+### [v.0.8.56] - Pollen Haze-feedback
+- **Silver Powder** verlengt Pollen Haze tot 8 beurten (zoals Black Sludge bij Acid Rain).
+- Pollen Season weer weg bij de voorgangers: **Hoppip, Skiploom, Sunkern, Cutiefly** (en Scatterbug) hebben hun oude ability terug (Infiltrator, Early Bird, Sweet Veil, Friend Guard). Gossifleur houdt Pollen Season.
+- Test: Silver Powder verlengt Pollen Haze.
+
+### [v.0.8.57] - Gossifleur zonder Pollen Season, Weather Ball-tests gerepareerd
+- **Gossifleur** heeft weer Effect Spore; Pollen Season blijft alleen bij geëvolueerde soorten (Eldegoss enz.), niet bij onge-evolueerde Pokémon van vroege routes.
+- De vanilla Weather Ball-tests gebruiken nu Misdreavus i.p.v. Wobbuffet: Wobbuffet is in Grounded Psychic/Normal en kreeg STAB op de Normal Weather Ball, waardoor de tests de verkeerde verhouding verwachtten. De move zelf werkte al goed; alle 4 tests slagen nu.
+
+### [v.0.8.58] - Mimi de Mimikyu (Mimic Circle, Route 119)
+- **Mimi** is zelf een Mimikyu en een trainer (zoals Keccles een Kecleon is): ze staat op de kale strook in de Mimic Circle (22,123) en spreekt alleen in griezelige geluiden ("…pika… …pika…", "(a long, wet giggle)"). Placeholders.
+- Team (lv 33, ace 35): Pikachu, Pachirisu, Dedenne, Marill (bewust onge-evolueerd: de nep-Pikachu) en Mimikyu (Disguise, lv 35). Trainerfoto = de Mimikyu-sprite (`TRAINER_PIC_MIMIKYU`), muziek Suspicious.
+- **Mimikyu** als zeldzame encounter (1%, lv 28–30) in het gras van Route 119; vervangt het dubbele Croagunk-slot.
+
+### [v.0.8.59] - Heatran-cutscene op Route 111
+- Na de badge van Wattson: zodra je boven Mauville de trap op loopt (Route 111, y=121), schudt de grond, verdwijnen de twee Rock Smash-stenen voorgoed (de rotsen ernaast blijven) en komt **Heatran** de route af. Hij brult, ruikt aan je, verliest zijn interesse en loopt weer naar het noorden (richting Fiery Path). Teksten zijn placeholders.
+- Eenmalig via `VAR_HEATRAN_CUTSCENE_STATE` (0x409D); flags `FLAG_HIDE_ROUTE111_HEATRAN_ROCKS` (0x3E) en `FLAG_HIDE_ROUTE111_HEATRAN` (0x3F). In de emulator getest.
+
+### [v.0.8.60] - Rotom-event in Mauville
+- In het huis met de Coin Case-vrouw (`MauvilleCity_House2`) zit een **geheime trap achter de boekenkast** (aanspreken bij (2,1)) naar een nieuwe kelder `MauvilleCity_House2_B1F` (layout van de Mossdeep Game Corner-kelder) met een tv.
+- Vóór de 3e badge: alleen ruis. Daarna: de trash-talkshow "SHOCKING EXES" ("My new ex is… ROTOM!"), de camera schudt en een wilde **Rotom** (lv 28) springt uit het scherm. Versla of vlucht je, dan kruipt hij terug in de tv en kun je het opnieuw proberen; na het vangen (`FLAG_CAUGHT_MAUVILLE_ROTOM`, 0x40) toont de tv alleen nog saai nieuws. Teksten zijn placeholders. In de emulator getest.
+
+### [v.0.8.61] - Gabby & Ty: eerste gevecht met local celebrity Brad
+- Het eerste Gabby & Ty-gevecht (Route 111) is nu een **dubbel gevecht tegen twee trainers**: **Brad**, de local celebrity (Rich Boy, staat naast Gabby & Ty), en Ty. Gabby interviewt zoals altijd na afloop.
+- Brads **Poochyena "Barkley"** (lv 34, bewust nooit geëvolueerd): Strong Jaw, Adamant, perfecte IV's, 252 Atk/252 Spe, Play Rough, Foul Play, Psychic Fangs, Hone Claws. Slimme AI.
+- Ty heeft bij dit eerste gevecht maar één Pokémon: **Magnemite** lv 25 (Thunder Wave, Flash Cannon, Spark, Light Screen). Jordi's oude zes-Pokémon-team van `TRAINER_GABBY_AND_TY_1` is daarvoor vervangen; de latere Gabby & Ty-teams (2–6) zijn ongewijzigd.
+- Met maar één bruikbare Pokémon weigert Brad ("this is a DOUBLE feature"). Nieuwe trainer `TRAINER_LOCAL_CELEBRITY` (881), nieuwe special `GetMonsStateToDoubles`. Teksten zijn placeholders. In de emulator getest (gevecht, verliestekst, interview).
+
+### [v.0.8.62] - Gevechtstransities Regidrago en Regieleki
+- **Regidrago** en **Regieleki** krijgen een eigen gevechtstransitie zoals de andere Regi's (zelfde weef-effect en cirkelmasker): Regidrago met **blauwe stippen** in zijn vorkpatroon, Regieleki met **roze/oranje stippen** in zijn glimlachpatroon. Patronen overgenomen van de referentiebeelden van Jordi.
+- Graphics gegenereerd met `tools/grounded/regi_transition.py` (stip uit de vanilla Regi-tiles, op een 240×160-beeld gezet en in tiles ontdubbeld): `graphics/battle_transitions/regidrago.*` en `regieleki.*`.
+- Werkt via `special StartRegiBattle` (zoals de andere Regi's), dus zodra ze in de wereld staan. In de emulator getest.
+
+### [v.0.8.63] - Gevechtstransitie Deoxys: ruimte + DNA
+- Er zitten geen DNA-animaties in de game, dus **Deoxys** krijgt een eigen ruimte-transitie met DNA: het hele beeld (ook de sprites) wordt zwart, een sterrenhemel met twinkelende sterren en een draaiende **DNA-dubbelhelix** in Deoxys-kleuren (oranje/cyaan, paarse en gele basenparen) komt op, schiet steeds sneller voorbij (warp, licht wiegend) en licht wit op vlak voor het gevecht.
+- `B_TRANSITION_DEOXYS` in `BattleSetup_StartLegendaryBattle` (alle Deoxys-vormen). Graphics via `tools/grounded/deoxys_transition.py` (`graphics/battle_transitions/deoxys.*`). In de emulator getest.
+
+### [v.0.8.64] - Gevechtstransitie Birch: poep
+- **Prof. Birch** (`TRAINER_BIRCH`, `TRAINER_BIRCH_2`) krijgt een eigen schermtransitie in plaats van de mugshot-slide: **bruine prut druipt stroperig van boven over het beeld** (met druppels, spikkels en af en toe een maïskorrel), de speler en Birch kleuren mee bruin, en dan **plopt een grijnzende drol-emoji** van boven naar beneden, stuitert twee keer (plop-geluiden) en **stinkt** (bewegende groene stanklijnen, Toxic-geluid) voor het gevecht begint.
+- `B_TRANSITION_BIRCH`, gekozen in `GetTrainerBattleTransition` vóór de mugshot-check. Graphics via `tools/grounded/birch_transition.py` (`graphics/battle_transitions/birch.*`). In de emulator getest.
+
+### [v.0.8.65] - Birch zonder drol, Regieleki symmetrisch
+- **Birch-transitie:** de drol-emoji (plop, stuiteren, stank) is eruit op verzoek van Jordi; alleen de bruine prut die over het beeld druipt blijft, daarna fade naar zwart. Alleen bij gevechten tegen Birch.
+- **Regieleki-transitie:** het stippatroon is nu symmetrisch (de linkerkant van de referentie gespiegeld rond de middelste stip); de referentie stond scheef.
+- Jordi: Regidrago en Deoxys goedgekeurd.
+
+### [v.0.8.66] - Sootopolis na Rayquaza: Keccles, Archie en Maxie
+- **Nieuwe scène na Rayquaza** (`SootopolisCity_EventScript_KecclesScene`, start automatisch via `VAR_SOOTOPOLIS_KECCLES_STATE` = 1 na de Rayquaza-scène). De speler staat op het eiland voor de gym, tegenover Maxie en Archie. Ze tonen **geen berouw** en heffen niets op: ze zijn woedend dat hun zakenplannen (Maxie's salsa uit de vulkaan, Archie's flessen "PRIMORDIAL SEA WATER") mislukt zijn en geven de speler de schuld van Rayquaza.
+- **Keccles vliegt in op zijn Tropius**, stapt af en legt in zijn filosofische stijl uit dat hij het lijden van de Pokémon niet kon aanzien en "the ultimate green reptile" channelde. Archie en Maxie beledigen de kameleon en de speler (placeholders).
+- **Multi battle: Maxie + Archie tegen speler + Keccles** (je kiest 3 Pokémon, zoals bij Wally op Mt. Chimney). Weerneutraal en zonder dubbele items, alle Pokémon in gewone Poké Balls:
+  - **Maxie** (`TRAINER_MAXIE_SOOTOPOLIS`): Scovillain lv 54, Claydol lv 54 (Light Clay, schermen), Camerupt lv 55 (Solid Rock).
+  - **Archie** (`TRAINER_ARCHIE_SOOTOPOLIS`): Overqwil lv 54 (Intimidate), Sharpedo lv 54 (Speed Boost, Life Orb), Archaludon lv 55.
+  - **Keccles** (`PARTNER_KECCLES`): Tropius lv 54 (Tailwind, Wide Guard), Heliolisk lv 54 (Dry Skin, Electroweb), **Serperior lv 56 als ace** (Contrary, Leaf Storm). Zijn AI is "hyperintelligent": omniscient, voorspelt switches en moves, slimme wissels. Heliolisk in plaats van Helioptile, omdat Keccles hem al geëvolueerd had.
+  - Keccles heeft een eigen rugsprite (de Kecleon-backsprite, `TRAINER_BACK_PIC_KECLEON`).
+- **Gevechtstransitie** `B_TRANSITION_AQUA_MAGMA`: het Aqua- en het Magma-logo naast elkaar in het vanilla weef-effect (`tools/grounded/aquamagma_transition.py`).
+- Na het gevecht **druipen Archie en Maxie zielig af** ("arguing about who pays for the bus"). Keccles bedankt de speler: geen zin van het leven gevonden, gezondheid en geluk als doelen, de League is aan jou, hij wil sterker worden, en een eerste hint naar de **Battle Frontier**. Daarna vliegt hij weg op Tropius.
+- De berouwscène op Mt. Pyre (bollen terugbrengen) wordt **overgeslagen**: ze brengen de bollen niet terug. Steven zegt nu dat ze samen één buskaartje delen.
+- **Bugfix (alle multi battles):** in een multi battle gaan vier ballen tegelijk open; de bal-partikels konden alle 64 sprites opmaken, waarna de Pokémon van de speler geen sprite kreeg en het gevecht bleef hangen. Partikels worden nu overgeslagen zodra er minder dan 8 sprites vrij zijn (`CreateBallParticleSprite` in `src/battle_anim_throw.c`).
+- In de emulator getest: scène, transitie, gevecht en afloop.
+
+### [v.0.8.67] - Hoenn-Grimer en Hoenn-Muk, Birch in Verdanturf
+- **Nieuwe vormen: Grimer en Muk (Hoenn)**, `SPECIES_GRIMER_HOENN` (1550) en `SPECIES_MUK_HOENN` (1551), opgebouwd zoals de Alolan-vormen. De gewone Grimer/Muk en de Alolan-vormen blijven bestaan en staan alle drie in de Pokédex-vormen (`sGrimerFormSpeciesIdTable`/`sMukFormSpeciesIdTable`).
+  - Pokémon Revisie: Grimer (Hoenn) — Poison/Ground, 80/80/65/40/45/25. Abilities: Stench / Sticky Hold / Earth Eater. Categorie "Dung". Evolueert op lv 30 in Muk (Hoenn).
+  - Pokémon Revisie: Muk (Hoenn) — Poison/Ground, 105/115/95/65/110/50. Abilities: Stench / Sticky Hold / Earth Eater.
+  - Learnsets met meer modder: Mud-Slap, Mud Sport, Mud Shot, Bulldoze, Mud Bomb, Earth Power (Muk ook Shore Up), naast Sludge/Sludge Bomb/Acid Armor/Acid Rain/Gunk Shot/Memento. TM's en egg moves zoals de gewone Grimer/Muk.
+  - Sprites: poepbruin; de bovenkant van het hoofd ís een gelaagde drol (ook op de backsprites; bij Muk ligt hij over de arm). Shiny in bedorven poepkleur. Icoon bruin, overworld-palet bruin. Graphics in `graphics/pokemon/grimer/hoenn/` en `muk/hoenn/`.
+- **Nieuw Birch-gevecht in Verdanturf** (`TRAINER_BIRCH_VERDANTURF`): na zijn gevecht op Route 109 staat Birch op het plein van Verdanturf (12,8) naar de grond te staren. Hij bewondert hoe vruchtbaar de natuurlijke mest de aarde maakt en is enorm fan van de nieuwe Grimer-vorm. Team (lv 24): Rabsca, Clodsire, Sandygast, Mudbray; ace **Grimer (Hoenn)** lv 26. Met de poep-transitie. Teksten zijn placeholders.
+- **Birch op Route 135** (`TRAINER_BIRCH_2`) is nu een doorontwikkeling van zijn eerdere teams: Rabsca (Trick Room), Clodsire, Palossand, Mudsdale, **Avalugg (Hisui)** lv 37 en ace **Muk (Hoenn)** lv 38. Slimmere AI. Het oude ijsteam is vervangen.
+- In de emulator getest (Verdanturf-gevecht, transitie, Hoenn-Muk-backsprite).
+
+### [v.0.8.68] - Hoenn-Grimer als cadeau van Birch
+- Na het gevecht in Verdanturf geeft Birch de speler **één Grimer (Hoenn)**, lv 22 ("Still warm. Don't ask why."). Bij een vol team gaat hij naar de pc; is ook de pc vol, dan kun je later terugkomen (`FLAG_RECEIVED_HOENN_GRIMER`, 0x44). Verder zijn de Hoenn-vormen voorlopig nergens te vangen. In de emulator getest.
+
+### [v.0.8.69] - Galar-Zigzagoon in Littleroot
+- De Zigzagoon naast de man met de Zigzagoon-gift in Littleroot is nu ook in de overworld een **Galar-Zigzagoon** (`OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)`), passend bij de gift.
+
+### [v.0.8.70] - Debug: Fly-flags ook voor Ashfrost
+- De debugoptie **Toggle Fly Flags** zette Ashfrost niet aan (de vaste lijst `sLocationFlags` in `src/debug.c` kende hem niet), waardoor het Ashfrost-icoon grijs bleef. Nu staat `FLAG_VISITED_ASHFROST_TOWN` in de lijst. Normaal vliegen werkte al: de flag wordt gezet zodra je Ashfrost binnenloopt. In de emulator gecontroleerd (icoon vliegbaar).
+
+### [v.0.8.71] - Pc-infovak: tekst niet meer afgekapt
+- In het infovak van de pc (nature en ability, v0.8.x) viel de onderkant van de regels weg: elke tekstregel tekende zijn eigen achtergrond en wiste zo de onderkant van de regel erboven ("Jolly", "Compound Eyes"). De regels worden nu met een transparante achtergrond getekend (`PrintDisplayMonInfo` in `src/pokemon_storage_system.c`). In de emulator gecontroleerd.
+
+### [v.0.8.72] - Brock bij de Day Care, Oak op het lab-thema
+- **Brock** (`TRAINER_BROCK`) staat op Route 117 bij de Day Care (55,6), naast het hek (niet op de plek van de eieren-man). Beschikbaar zodra je in Mauville bent. Anime-Brock als persiflage: verliefd op de Day Care-dame, "My eyes are open. This is just my face.", niemand die hem aan zijn oor wegsleept. Teksten zijn placeholders.
+  - Team: Geodude, Vulpix, Gligar, Rhyhorn (lv 24) en ace Onix (lv 26, Stealth Rock/Bind).
+  - Kanto-gymleidermuziek (`MUS_RG_VS_GYM_LEADER`), gele mugshot-slide, klasse Leader.
+  - Graphics uit FRLG (`pret/pokefirered`): trainerfoto en overworld-sprite, met een eigen overworld-palet (`OBJ_EVENT_PAL_TAG_BROCK`).
+- **Prof. Oak** vecht nu op het lab-thema uit FRLG (`MUS_RG_OAK_LAB`).
+- **Birch in Verdanturf** kreeg nog niet zijn eigen gevechtsmuziek (de Macarena, zoals zijn andere gevechten); nu wel.
+- In de emulator getest (Brock: sprite, slide, gevecht).
+
+### [v.0.8.73] - Protip Oracle in Ashfrost
+- De **PROTIP ORACLE** staat nu ook in het Pokémon Center van Ashfrost, op dezelfde plek (8,8) en als hetzelfde type NPC (Maniac) als in de andere Pokémon Centers. Tip: ICE-types krijgen geen schade in een SNOW STORM, "and neither do you, if you never go outside. That's why I live in POKéMON CENTERS now. All of them."
+
+### [v.0.8.74] - TM-beschrijvingen passen in de tas
+- De beschrijvingen van de nieuwe TM's (Seltzer Surge, Lager Lagoon, Vintage Spill, Machine Learning, Laser Beam, Shadow Siphon, Acid Rain, Pollen Haze) zijn ingekort tot 3 regels van max. ±17 tekens, zodat ze in het smalle tasvak passen (net als U-turn).
+
+### [v.0.8.75] - Pollen Haze aan beide kanten
+- De animatie van **Pollen Haze** (move én het weer aan het eind van de beurt) laat het stuifmeel nu over beide kanten van het veld dwarrelen, niet alleen bij de gebruiker. Nieuwe taak `AnimTask_PollenHazeSetSide` (spore-sprites volgen altijd het doel; de taak wisselt het doel tussen de eigen kant en de overkant).
+
+### [v.0.8.76] - Debug: legendary-gevechten forceren
+- Nieuw in het debugmenu: **Utilities > Legendary battle…** met Regirock, Regice, Registeel, Regidrago, Regieleki, Regigigas, Suicune, Raikou, Entei, Groudon, Kyogre, Rayquaza, Deoxys, Mew, Latias, Latios, Lugia en Ho-Oh (lv 50). Elk gevecht start via dezelfde special als het echte event (`StartRegiBattle`, `BattleSetup_StartLegendaryBattle`, `BattleSetup_StartLatiBattle`), dus met het juiste thema en de juiste transitie. Scripts in `data/scripts/grounded_debug.inc`.
+
+### [v.0.8.77] - Crystal Cavity opgeknapt, Suicune weer bereikbaar
+- **Crystal Cavity** (`grotto136.py`, nu 35×30): de volledige Marine Cave-kaart inclusief de rotsrand bovenaan (die was weggeknipt, waardoor de bovenkant geen duidelijke rand had). Het lavameer van Terra Cave staat nu mét zijn eigen randen op een verbrede vloer en overschrijft de rotsrichel tussen meer en lava niet meer; het pad tussen water en lava ziet er daardoor normaal uit. Kristallen opnieuw verdeeld. Ingang nu (28,4), bovenkomen uit het meer op (9,21).
+- **Onderwater (Underwater_Route136):** de braille onder het plateau is vervangen door een zwemgat (zoals de ingang van de Seafloor Cavern, `MB_WATER_DOOR`). Zwem erin en je komt surfend uit in de Suicune-grot. Bovenkomen vóór het gat (12,44) werkt ook nog. Bouwscript `underwater136.py`.
+
+### [v.0.8.78] - Crystal Cavity: meer weer bereikbaar, lavarand af
+- Een **rode kristal op (18,24)** stond midden op het pad tussen water en lava, waardoor je het meer (en dus het duikstuk naar Suicune) niet meer kon bereiken. `grotto136.py` controleert nu bij elke kristal of alles vanaf de ingang bereikbaar blijft (water telt mee); een kristal die iets afsluit wordt overgeslagen. Het script stopt met een fout als het meer onbereikbaar is.
+- De **linkerrand van het lavameer** (linksonder) was niet af: de buitenste randkolom van Terra Cave werd niet meegekopieerd. Nu wel; het lavameer is 1 tile naar rechts geschoven, zodat het pad op x 18 vrij blijft.

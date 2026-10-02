@@ -9888,7 +9888,7 @@ gBattleAnimMove_ShoreUp::
 	loadspritegfx ANIM_TAG_FLYING_DIRT @sandstorm
 	loadspritegfx ANIM_TAG_BLUE_STAR @heal2
 	playsewithpan SE_M_SANDSTORM, 0x0
-	createvisualtask AnimTask_LoadSandstormBackground, 0x5, 0x0
+	createvisualtask AnimTask_LoadSandstormBackground, 0x5, 0x0, 0x0
 	delay 16
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0xa, 0x900, 0x60, 0x0
 	delay 10
@@ -18488,6 +18488,285 @@ gBattleAnimMove_SeltzerSurge::
 	call SeltzerSurgeBubbles
 	waitforvisualfinish
 	end
+@ Project Grounded: Surf-golf van bier (geel palet), met schuimbubbels
+gBattleAnimMove_LagerLagoon::
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_BUBBLE
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_LAGER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 10, 10, RGB(31, 30, 24)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_BUBBLE, 0, 10, 10, RGB(31, 30, 24)
+	delay 10
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	delay 10
+	call SeltzerSurgeBubbles
+	call SeltzerSurgeBubbles
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Pollen Haze - stuifmeel dwarrelt over het hele veld (move en eind van de beurt)
+gBattleAnimMove_PollenHaze::
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SPORE, 0, 9, 9, RGB(31, 27, 6)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 5, RGB(31, 26, 8)
+	waitforvisualfinish
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_ATTACKER, 14, 8
+	call PollenHazeDrift
+	call PollenHazeDrift
+	call PollenHazeDrift
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 5, 0, RGB(31, 26, 8)
+	waitforvisualfinish
+	end
+
+gBattleAnimGeneral_PollenHaze::
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SPORE, 0, 9, 9, RGB(31, 27, 6)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 5, RGB(31, 26, 8)
+	waitforvisualfinish
+	playsewithpan SE_M_POISON_POWDER, SOUND_PAN_ATTACKER
+	call PollenHazeDrift
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 5, 0, RGB(31, 26, 8)
+	waitforvisualfinish
+	end
+
+PollenHazeDrift:
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 1
+	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-24, wave_offset=85, duration=60, blend=0
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 0
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-20, wave_offset=170, duration=60, blend=0
+	delay 8
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 1
+	create_spore_particle_sprite ANIM_ATTACKER, 2, x=0, y=-10, wave_offset=0, duration=60, blend=0
+	createvisualtask AnimTask_PollenHazeSetSide, 2, 0
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-12, wave_offset=85, duration=60, blend=0
+	delay 8
+	return
+
+@ Project Grounded: Acid Rain - paarse regen (move en eind van de beurt)
+gBattleAnimMove_AcidRain::
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_RAIN_DROPS, 0, 12, 12, RGB(20, 4, 26)
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 6, RGB(12, 2, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	delay 120
+	delay 30
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 6, 0, RGB(12, 2, 16)
+	waitforvisualfinish
+	end
+
+gBattleAnimGeneral_AcidRain::
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_RAIN_DROPS, 0, 12, 12, RGB(20, 4, 26)
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 6, RGB(12, 2, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	delay 24
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 6, 0, RGB(12, 2, 16)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Fungal Control - contact, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit
+gBattleAnimMove_FungalControl::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_SPORE
+	loadspritegfx ANIM_TAG_MUSHROOM
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 6
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 12, 4
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-12, wave_offset=85, duration=60, blend=1
+	delay 6
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-4, wave_offset=170, duration=60, blend=1
+	delay 10
+	playsewithpan SE_M_GIGA_DRAIN, SOUND_PAN_TARGET
+	createsprite gFungalControlMushroomSpriteTemplate, ANIM_TARGET, 2, -4, -18, ANIM_TARGET, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 4, 0, 7, RGB(10, 20, 4)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 1, 0, 30, 1
+	delay 40
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 4, 7, 0, RGB(10, 20, 4)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Laser Beam - een dunne rode laser op een zwarte achtergrond, met rook bij het doelwit
+gBattleAnimMove_LaserBeam::
+	loadspritegfx ANIM_TAG_LASER_DOT
+	loadspritegfx ANIM_TAG_GRAY_SMOKE
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 16, RGB_BLACK
+	waitforvisualfinish
+	playsewithpan SE_M_LOCK_ON, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_TARGET
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 0, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 1, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 2, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 3, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 4, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 5, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 6, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 7, 36, 44
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 8, 36, 44
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 9, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 10, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 11, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 12, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 13, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 14, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 15, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 16, 36, 42
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 17, 36, 42
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 18, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 19, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 20, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 21, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 22, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 23, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 24, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 25, 36, 40
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 26, 36, 40
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 27, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 28, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 29, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 30, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 31, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 32, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 33, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 34, 36, 38
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 35, 36, 38
+	delay 1
+	createsprite gLaserBeamDotSpriteTemplate, ANIM_TARGET, 3, 36, 36, 36
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 2, 0, 24, 1
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, 0, 0, 1, 0
+	delay 6
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, 8, -8, 1, 0
+	delay 6
+	createsprite gOctazookaSmokeSpriteTemplate, ANIM_TARGET, 4, -8, 6, 1, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 16, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Shadow Siphon - de schaduw van het doelwit wordt opgeslurpt door de aanvaller (geen contact)
+gBattleAnimMove_ShadowSiphon::
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ROUND_SHADOW, 0, 16, 16, RGB(2, 0, 4)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 14, 14, RGB(5, 0, 9)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 10, RGB(3, 0, 6)
+	waitforvisualfinish
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	createsprite gShadowSiphonShadowSpriteTemplate, ANIM_TARGET, 2, 18, 22, 26
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 8, RGB_BLACK
+	delay 22
+	playsewithpan SE_M_GIGA_DRAIN, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 2, 0, 20, 1
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=10, wave_amplitude=8, wave_period=26
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-10, y=16, wave_amplitude=-20, wave_period=30
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=10, y=14, wave_amplitude=16, wave_period=28
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=18, wave_amplitude=-8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-6, y=12, wave_amplitude=24, wave_period=32
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 8, 0, RGB_BLACK
+	call HealingEffect
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 10, 0, RGB(3, 0, 6)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Implosion. De gebruiker stort in tot een zwart gat; ringen en deeltjes worden naar binnen getrokken.
+gBattleAnimMove_Implosion::
+	loadspritegfx ANIM_TAG_SHADOW_BALL
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_ICE_CHUNK
+	loadspritegfx ANIM_TAG_VERTICAL_HEX
+	loadspritegfx ANIM_TAG_ORBS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 14, 14, RGB(5, 0, 9)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ICE_CHUNK, 0, 12, 12, RGB_BLACK
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_VERTICAL_HEX, 0, 13, 13, RGB_BLACK
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 11, RGB_BLACK
+	waitforvisualfinish
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_ATTACKER
+	createsprite gBlackHoleEclipseHoleSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_ATTACKER, 0
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 2, 0, 70, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 2, 0, 70, 1
+	call ImplosionPull
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 3, 0, 16, RGB_BLACK
+	call ImplosionPull
+	call ImplosionPull
+	waitforvisualfinish
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -8, -8, 10, ANIM_ATTACKER, 0
+	createsprite gBlackHoleEclipseHoleShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 0, 16, 16, RGB_BLACK
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 8, 0, 30, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 8, 0, 30, 1
+	delay 30
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_ATTACKER), 3, 16, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+ImplosionPull:
+	createsprite gBlackHoleEclipseBlueRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=56, y=40, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-56, y=-40, duration=18
+	delay 3
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=0, y=56, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=0, y=-56, duration=18
+	delay 3
+	createsprite gBlackHoleEclipseRedRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=56, y=-28, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-56, y=28, duration=18
+	delay 3
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=40, y=40, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-40, y=-40, duration=18
+	delay 3
+	createsprite gBlackHoleEclipseRedRingInwardsSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, ANIM_ATTACKER, 0
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=-28, y=48, duration=18
+	create_power_absorption_orb_sprite ANIM_ATTACKER, 2, x=28, y=-48, duration=18
+	delay 4
+	return
+
+@ Project Grounded: Water Sport in bordeauxrood; het doelwit wankelt na
+gBattleAnimMove_VintageSpill::
+	loadspritegfx ANIM_TAG_GLOWY_BLUE_ORB
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GLOWY_BLUE_ORB, 0, 14, 14, RGB(16, 1, 6)
+	createvisualtask AnimTask_WaterSport, 5
+	delay 8
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 44
+	playsewithpan SE_M_SURF, SOUND_PAN_ATTACKER
+	delay 30
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 12, 1
+	createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_TARGET, RGB(16, 1, 6), 10, 3, 1
+	waitforvisualfinish
+	end
+
 SeltzerSurgeBubbles:
 	createsprite gSurfBubbleSpriteTemplate, ANIM_ATTACKER, 3
 	createsprite gSurfBigBubbleSpriteTemplate, ANIM_ATTACKER, 3
@@ -24165,7 +24444,7 @@ gBattleAnimMove_Uproar::
 gBattleAnimMove_HeatWave::
 	loadspritegfx ANIM_TAG_FLYING_DIRT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLYING_DIRT, 0, 6, 6, RGB_RED
-	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE
+	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE, FALSE
 	createvisualtask AnimTask_BlendBackground, 6, 6, RGB_RED
 	panse SE_M_HEAT_WAVE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	delay 4
@@ -24187,15 +24466,25 @@ gBattleAnimMove_HeatWave::
 	end
 
 @ Also used by Hail weather
+@ Project Grounded: Snow Storm (de move Hail) = een zwaardere Snowscape
 gBattleAnimMove_Hail::
-	loadspritegfx ANIM_TAG_HAIL
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 0, 6, RGB_BLACK
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 7, RGB(8, 12, 16)
 	waitforvisualfinish
-	createvisualtask AnimTask_Hail, 5
-	loopsewithpan SE_M_HAIL, 0, 8, 10
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 120
+	delay 60
+	playsewithpan SE_M_GUST2, SOUND_PAN_TARGET
+	delay 60
+	playsewithpan SE_M_GUST2, SOUND_PAN_ATTACKER
+	delay 30
 	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 6, 0, RGB_BLACK
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 7, 0, RGB(8, 12, 16)
+	waitforvisualfinish
 	end
 
 gBattleAnimMove_Torment::
@@ -27033,7 +27322,7 @@ FlamethrowerCreateFlames:
 gBattleAnimMove_Sandstorm::
 	loadspritegfx ANIM_TAG_FLYING_DIRT
 	playsewithpan SE_M_SANDSTORM, 0
-	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE
+	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE, FALSE
 	delay 16
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
 	delay 10
@@ -30585,6 +30874,8 @@ gBattleAnimMove_WeatherBall::
 	jumpreteq ANIM_WEATHER_HAIL, WeatherBallIce
 	jumpreteq ANIM_WEATHER_SNOW, WeatherBallIce
 	jumpreteq ANIM_WEATHER_FOG, WeatherBallNormal
+	jumpreteq ANIM_WEATHER_ACID_RAIN, WeatherBallAcid
+	jumpreteq ANIM_WEATHER_POLLEN_HAZE, WeatherBallPollen
 WeatherBallNormal:
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gWeatherBallNormalDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 0, 0
@@ -30609,6 +30900,16 @@ WeatherBallFire:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 8, 1
 	waitforvisualfinish
 	end
+WeatherBallPollen: @ Project Grounded: geel-groene stuifmeelbollen
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 12, 12, RGB(28, 26, 4)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 8, RGB(20, 28, 4)
+	goto WeatherBallWater
+WeatherBallAcid: @ Project Grounded: paars-groene bellen
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 12, 12, RGB(16, 6, 24)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 8, RGB(10, 26, 4)
+	goto WeatherBallWater
 WeatherBallWater:
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
 	createsprite gWeatherBallWaterDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 50, 10
@@ -30976,14 +31277,19 @@ UnsetSolarBeamBg:
 	return
 
 gBattleAnimStatus_Poison::
-	loopsewithpan SE_M_TOXIC, SOUND_PAN_TARGET, 13, 6
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 18, 2
-	blend_color_cycle selector=F_PAL_ATTACKER, delay=2, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
+	loopsewithpan SE_M_TOXIC, SOUND_PAN_TARGET, 10, 3
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 9, 2
+	blend_color_cycle selector=F_PAL_ATTACKER, delay=1, num_blends=1, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
 	end
 
 gBattleAnimStatus_Confusion::
 	loadspritegfx ANIM_TAG_DUCK
-	call ConfusionEffect
+	loopsewithpan SE_M_DIZZY_PUNCH, SOUND_PAN_TARGET, 13, 3
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=0, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=51, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=102, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=153, wave_period=5, duration=40
+	create_confusion_duck_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=204, wave_period=5, duration=40
 	end
 
 gBattleAnimStatus_Burn::
@@ -31003,10 +31309,10 @@ gBattleAnimStatus_Infatuation::
 	loadspritegfx ANIM_TAG_MAGENTA_HEART
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 0, 20
-	delay 15
+	delay 7
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, -20, 20
-	delay 15
+	delay 7
 	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
 	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 20, 20
 	end
@@ -31015,7 +31321,7 @@ gBattleAnimStatus_Sleep::
 	loadspritegfx ANIM_TAG_LETTER_Z
 	playsewithpan SE_M_SNORE, SOUND_PAN_ATTACKER
 	createsprite gSleepLetterZSpriteTemplate, ANIM_ATTACKER, 2, 4, -10, 16, 0, 0
-	delay 30
+	delay 14
 	createsprite gSleepLetterZSpriteTemplate, ANIM_ATTACKER, 2, 4, -10, 16, 0, 0
 	end
 
@@ -31308,8 +31614,18 @@ gBattleAnimGeneral_HangedOn::
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 0, 0, 0, 15
 	end
 
+@ Project Grounded: korte weer-animaties aan het eind van de beurt (de moves zelf houden hun volledige animatie)
 gBattleAnimGeneral_Rain::
-	call RainDrops
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 4, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 30
+	delay 24
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB_BLACK
+	waitforvisualfinish
 	end
 
 RainDrops:
@@ -31326,16 +31642,65 @@ RainDrops:
 	return
 
 gBattleAnimGeneral_Sun::
-	goto gBattleAnimMove_SunnyDay
+	loadspritegfx ANIM_TAG_SUNLIGHT
+	monbg ANIM_ATK_PARTNER
+	setalpha 13, 3
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 0, 0, 6, RGB_WHITE
+	waitforvisualfinish
+	panse_adjustnone SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +1, 0
+	call SunnyDayLightRay
+	call SunnyDayLightRay
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 0, 6, 0, RGB_WHITE
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	end
 
 gBattleAnimGeneral_Sandstorm::
-	goto gBattleAnimMove_Sandstorm
+	loadspritegfx ANIM_TAG_FLYING_DIRT
+	playsewithpan SE_M_SANDSTORM, 0
+	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE, TRUE
+	delay 8
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 90, 2048, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 50, 2560, 96, 0
+	delay 6
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
+	end
 
+@ Project Grounded: Snow Storm (de vroegere Hail) = een zwaardere Snowscape: donkerder en meer sneeuw
 gBattleAnimGeneral_Hail::
-	goto gBattleAnimMove_Hail
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 7, RGB(8, 12, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	delay 20
+	playsewithpan SE_M_GUST2, SOUND_PAN_TARGET
+	delay 20
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 7, 0, RGB(8, 12, 16)
+	waitforvisualfinish
+	end
 
 gBattleAnimGeneral_Snow::
-	goto gBattleAnimMove_Snowscape
+	loadspritegfx ANIM_TAG_SNOWFLAKES
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 0, 4, RGB(11, 18, 22)
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	createvisualtask AnimTask_CreateSnowflakes, 2, 0, 3, 50
+	delay 40
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB(11, 18, 22)
+	waitforvisualfinish
+	end
 
 gBattleAnimGeneral_Fog::
 	goto gBattleAnimMove_Haze

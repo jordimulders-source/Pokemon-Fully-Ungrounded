@@ -333,6 +333,8 @@ enum __attribute__((packed)) Ability
     ABILITY_TERAFORM_ZERO = 309,
     ABILITY_POISON_PUPPETEER = 310,
     ABILITY_DIMENSIONAL_WARP = 311,
+    ABILITY_AIR_POLLUTION = 312, // Project Grounded: zet Acid Rain bij binnenkomst
+    ABILITY_POLLEN_SEASON = 313, // Project Grounded: zet Pollen Haze bij binnenkomst
     ABILITIES_COUNT_GEN9,
     ABILITIES_COUNT = ABILITIES_COUNT_GEN9,
 };

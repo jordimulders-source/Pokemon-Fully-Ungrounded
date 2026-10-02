@@ -178,6 +178,8 @@ gStdScripts_End::
 	.include "data/maps/AshfrostTown_House1/scripts.inc"
 	.include "data/maps/AshfrostTown_House2/scripts.inc"
 	.include "data/maps/AshfrostTown_House3/scripts.inc"
+	.include "data/maps/AshfrostTown_House4/scripts.inc"
+	.include "data/maps/AshfrostTown_House5/scripts.inc"
 	.include "data/maps/Underwater_Route124/scripts.inc"
 	.include "data/maps/Underwater_Route126/scripts.inc"
 	.include "data/maps/Underwater_Route127/scripts.inc"
@@ -258,6 +260,7 @@ gStdScripts_End::
 	.include "data/maps/MauvilleCity_House1/scripts.inc"
 	.include "data/maps/MauvilleCity_GameCorner/scripts.inc"
 	.include "data/maps/MauvilleCity_House2/scripts.inc"
+	.include "data/maps/MauvilleCity_House2_B1F/scripts.inc"
 	.include "data/maps/MauvilleCity_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/MauvilleCity_PokemonCenter_2F/scripts.inc"
 	.include "data/maps/MauvilleCity_Mart/scripts.inc"
@@ -605,6 +608,7 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
+	.include "data/scripts/grounded_debug.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

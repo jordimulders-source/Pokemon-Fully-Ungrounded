@@ -16,8 +16,8 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 23,
-      "y": 2,
+      "x": 28,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ROUTE136",
       "dest_warp_id": "0"

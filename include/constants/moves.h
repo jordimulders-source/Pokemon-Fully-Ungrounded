@@ -908,8 +908,19 @@
 #define MOVE_UPPER_HAND 846
 #define MOVE_MALIGNANT_CHAIN 847
 #define MOVE_SELTZER_SURGE 848 // Project Grounded
+#define MOVE_LAGER_LAGOON 849 // Project Grounded
+#define MOVE_VINTAGE_SPILL 850 // Project Grounded
+#define MOVE_OTHISMOS 851 // Project Grounded: Falinks
+#define MOVE_FUNGAL_CONTROL 852 // Project Grounded: Parasect
+#define MOVE_TRANSMUTATION 853 // Project Grounded: omgekeerde Transform
+#define MOVE_IMPLOSION 854 // Project Grounded: self-KO + zwart gat
+#define MOVE_LASER_BEAM 855 // Project Grounded
+#define MOVE_MACHINE_LEARNING 856 // Project Grounded: TM54, Wattson
+#define MOVE_SHADOW_SIPHON 857 // Project Grounded: Dark-versie van Draining Kiss
+#define MOVE_ACID_RAIN 858 // Project Grounded: TM57, zure regen
+#define MOVE_POLLEN_HAZE 859 // Project Grounded: TM58, stuifmeel (Bug-weer)
 
-#define MOVES_COUNT_GEN9 849
+#define MOVES_COUNT_GEN9 860
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

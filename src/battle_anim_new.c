@@ -9696,3 +9696,110 @@ void AnimTask_GetCommanderType(u8 taskId)
 
     DestroyAnimVisualTask(taskId);
 }
+
+// Project Grounded: Laser Beam - een dunne, doorlopende rode laser.
+// Elk bolletje staat vast op een punt van de lijn tussen aanvaller en doelwit.
+// arg0: index op de lijn, arg1: aantal punten, arg2: hoe lang het punt blijft staan (frames)
+static void AnimLaserBeamDot(struct Sprite *sprite)
+{
+    s32 x0 = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s32 y0 = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    s32 x1 = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    s32 y1 = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    s32 n = gBattleAnimArgs[1] > 0 ? gBattleAnimArgs[1] : 1;
+
+    sprite->x = x0 + (x1 - x0) * gBattleAnimArgs[0] / n;
+    sprite->y = y0 + (y1 - y0) * gBattleAnimArgs[0] / n;
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+const struct SpriteTemplate gLaserBeamDotSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_LASER_DOT,
+    .paletteTag = ANIM_TAG_LASER_DOT,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimLaserBeamDot,
+};
+
+// Project Grounded: Shadow Siphon - de schaduw van het doelwit verschijnt aan zijn voeten en wordt
+// krimpend naar de aanvaller gezogen. arg0: y-offset onder het doelwit, arg1: wachttijd, arg2: duur van het opzuigen
+static const union AffineAnimCmd sShadowSiphonShadowAffineCmds[] =
+{
+    AFFINEANIMCMD_FRAME(0x100, 0x48, 0, 0),
+    AFFINEANIMCMD_FRAME(0, 0, 0, 22),
+    AFFINEANIMCMD_FRAME(-8, -2, 0, 26),
+    AFFINEANIMCMD_END,
+};
+
+static const union AffineAnimCmd *const sShadowSiphonShadowAffineAnims[] =
+{
+    sShadowSiphonShadowAffineCmds,
+};
+
+static void AnimShadowSiphonShadow_Step(struct Sprite *sprite)
+{
+    if (sprite->data[6] > 0)
+    {
+        sprite->data[6]--;
+        if (sprite->data[6] == 0)
+            InitAnimLinearTranslation(sprite);
+        return;
+    }
+    if (AnimTranslateLinear(sprite))
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimShadowSiphonShadow(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) + gBattleAnimArgs[0];
+    sprite->subpriority = GetBattlerSpriteSubpriority(gBattleAnimTarget) + 1;
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->data[1] = sprite->x;
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    sprite->data[3] = sprite->y;
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    sprite->data[6] = gBattleAnimArgs[1];
+    sprite->callback = AnimShadowSiphonShadow_Step;
+}
+
+const struct SpriteTemplate gShadowSiphonShadowSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ROUND_SHADOW,
+    .paletteTag = ANIM_TAG_ROUND_SHADOW,
+    .oam = &gOamData_AffineNormal_ObjNormal_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = sShadowSiphonShadowAffineAnims,
+    .callback = AnimShadowSiphonShadow,
+};
+
+// Project Grounded: Fungal Control - een paddenstoel groeit langzaam uit het doelwit (vier groeistadia)
+static const union AnimCmd sAnim_FungalMushroomGrow[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(16, 10),
+    ANIMCMD_FRAME(32, 10),
+    ANIMCMD_FRAME(48, 40),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_FungalMushroom[] =
+{
+    sAnim_FungalMushroomGrow,
+};
+
+const struct SpriteTemplate gFungalControlMushroomSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MUSHROOM,
+    .paletteTag = ANIM_TAG_MUSHROOM,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_FungalMushroom,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSpriteOnMonPos,
+};

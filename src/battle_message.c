@@ -259,7 +259,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNHITWITHRECOIL]                    = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was damaged by the recoil!"),
     [STRINGID_PKMNPROTECTEDITSELF2]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} protected itself!"),
     [STRINGID_PKMNBUFFETEDBYSANDSTORM]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is buffeted by the sandstorm!"),
-    [STRINGID_PKMNPELTEDBYHAIL]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is buffeted by the hail!"),
+    [STRINGID_PKMNPELTEDBYHAIL]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is buffeted by the snow storm!"),
     [STRINGID_PKMNSEEDED]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was seeded!"),
     [STRINGID_PKMNEVADEDATTACK]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} avoided the attack!"),
     [STRINGID_PKMNSAPPEDBYLEECHSEED]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s health is sapped by Leech Seed!"),
@@ -290,6 +290,28 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNMOVEWASDISABLED]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1} was disabled!"),
     [STRINGID_PKMNMOVEISDISABLED]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE} is disabled!\p"),
     [STRINGID_PKMNMOVEDISABLEDNOMORE]               = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s move is no longer disabled!"),
+    [STRINGID_FUNGALCONTROLCHOOSE]                  = COMPOUND_STRING("Spores seep into\n{B_DEF_NAME_WITH_PREFIX2}'s brain…"),
+    [STRINGID_FUNGALCONTROLLED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is now\na fungus puppet!\pIt can only use {B_BUFF1}!"),
+    [STRINGID_TRANSMUTED]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was transmuted\ninto {B_BUFF1}!"),
+    [STRINGID_BLACKHOLEFORMED]                      = COMPOUND_STRING("The implosion left a black hole!\pAll hazards on the field were\nswallowed up!"),
+    [STRINGID_BLACKHOLESWITCHIN]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is pulled\ntoward the black hole!"),
+    [STRINGID_BLACKHOLEENDS]                        = COMPOUND_STRING("The black hole evaporated.\nThanks, Hawking."),
+    [STRINGID_MACHINELEARNINGTRAINED]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} finished\ntraining epoch {B_BUFF1}!"),
+    [STRINGID_MACHINELEARNINGHALLUCINATED]          = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hallucinated!\nIt confidently did something else!"),
+    [STRINGID_STARTEDACIDRAIN]                      = COMPOUND_STRING("Acid rain started to fall!"),
+    [STRINGID_ACIDRAINCONTINUES]                    = COMPOUND_STRING("The acid rain keeps pouring."),
+    [STRINGID_ACIDRAINSTOPPED]                      = COMPOUND_STRING("The acid rain stopped."),
+    [STRINGID_PKMNHURTBYACIDRAIN]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is corroded\nby the acid rain!"),
+    [STRINGID_PKMNSOAKEDUPACIDRAIN]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} soaks up\nthe acid rain. Delicious!"),
+    [STRINGID_ACIDRAINBLOCKSCURE]                   = COMPOUND_STRING("The acid rain keeps\npoisoning everything!"),
+    [STRINGID_ACIDRAINBLOWNAWAY]                    = COMPOUND_STRING("The acid clouds were\nblown away!"),
+    [STRINGID_PKMNMADEACIDRAIN]                     = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nmade acid rain fall!"),
+    [STRINGID_STARTEDPOLLENHAZE]                    = COMPOUND_STRING("Pollen filled the air!"),
+    [STRINGID_POLLENHAZECONTINUES]                  = COMPOUND_STRING("Pollen drifts across the field."),
+    [STRINGID_POLLENHAZESTOPPED]                    = COMPOUND_STRING("The pollen settled."),
+    [STRINGID_PKMNSOAKEDUPPOLLEN]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} soaked up\nthe pollen!"),
+    [STRINGID_POLLENHAZEBLOWNAWAY]                  = COMPOUND_STRING("The wind blew the pollen away!\nAhchoo!"),
+    [STRINGID_PKMNMADEPOLLENHAZE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nfilled the air with pollen!"),
     [STRINGID_PKMNGOTENCORE]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} must do an encore!"),
     [STRINGID_PKMNGOTENCOREDMOVE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} can only use {B_CURRENT_MOVE}!\p"),
     [STRINGID_PKMNENCOREENDED]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} ended its encore!"),
@@ -394,9 +416,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SUNLIGHTGOTBRIGHT]                    = COMPOUND_STRING("The sunlight turned harsh!"),
     [STRINGID_SUNLIGHTSTRONG]                       = COMPOUND_STRING("The sunlight is strong."), //not in gen 5+
     [STRINGID_SUNLIGHTFADED]                        = COMPOUND_STRING("The sunlight faded."),
-    [STRINGID_STARTEDHAIL]                          = COMPOUND_STRING("It started to hail!"),
-    [STRINGID_HAILCONTINUES]                        = COMPOUND_STRING("The hail is crashing down."),
-    [STRINGID_HAILSTOPPED]                          = COMPOUND_STRING("The hail stopped."),
+    [STRINGID_STARTEDHAIL]                          = COMPOUND_STRING("A snow storm started!"),
+    [STRINGID_HAILCONTINUES]                        = COMPOUND_STRING("The snow storm rages on."),
+    [STRINGID_HAILSTOPPED]                          = COMPOUND_STRING("The snow storm stopped."),
     [STRINGID_STATCHANGESGONE]                      = COMPOUND_STRING("All stat changes were eliminated!"),
     [STRINGID_COINSSCATTERED]                       = COMPOUND_STRING("Coins were scattered everywhere!"),
     [STRINGID_TOOWEAKFORSUBSTITUTE]                 = COMPOUND_STRING("But it does not have enough HP left to make a substitute!"),
@@ -604,7 +626,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_ANTICIPATIONACTIVATES]                = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} shuddered!"),
     [STRINGID_FOREWARNACTIVATES]                    = COMPOUND_STRING("{B_SCR_ABILITY} alerted {B_SCR_NAME_WITH_PREFIX2} to {B_EFF_NAME_WITH_PREFIX2}'s {B_BUFF1}!"),
     [STRINGID_ICEBODYHPGAIN]                        = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY} healed it a little bit!"), //don't think this message is displayed anymore
-    [STRINGID_SNOWWARNINGHAIL]                      = COMPOUND_STRING("It started to hail!"),
+    [STRINGID_SNOWWARNINGHAIL]                      = COMPOUND_STRING("A snow storm started!"),
     [STRINGID_FRISKACTIVATES]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} frisked {B_DEF_NAME_WITH_PREFIX2} and found its {B_LAST_ITEM}!"),
     [STRINGID_UNNERVEENTERS]                        = COMPOUND_STRING("{B_EFF_TEAM1} team is too nervous to eat Berries!"),
     [STRINGID_HARVESTBERRY]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} harvested its {B_LAST_ITEM}!"),
@@ -852,7 +874,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_POKEFLUTE]                            = COMPOUND_STRING("{B_PLAYER_NAME} played the {B_LAST_ITEM}."),
     [STRINGID_MONHEARINGFLUTEAWOKE]                 = COMPOUND_STRING("The Pokémon hearing the flute awoke!"),
     [STRINGID_SUNLIGHTISHARSH]                      = COMPOUND_STRING("The sunlight is harsh!"),
-    [STRINGID_ITISHAILING]                          = COMPOUND_STRING("It's hailing!"),
+    [STRINGID_ITISHAILING]                          = COMPOUND_STRING("A snow storm is raging!"),
     [STRINGID_ITISSNOWING]                          = COMPOUND_STRING("It's snowing!"),
     [STRINGID_ISCOVEREDWITHGRASS]                   = COMPOUND_STRING("The battlefield is covered with grass!"),
     [STRINGID_MISTSWIRLSAROUND]                     = COMPOUND_STRING("Mist swirls around the battlefield!"),
@@ -1000,6 +1022,8 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_HAIL]      = STRINGID_STARTEDHAIL,
     [B_MSG_STARTED_SNOW]      = STRINGID_STARTEDSNOW,
     [B_MSG_STARTED_FOG]       = STRINGID_FOGCREPTUP, // Unused, can use for custom moves that set fog
+    [B_MSG_STARTED_ACID_RAIN] = STRINGID_STARTEDACIDRAIN, // Project Grounded
+    [B_MSG_STARTED_POLLEN_HAZE] = STRINGID_STARTEDPOLLENHAZE, // Project Grounded
 };
 
 const u16 gWeatherEndsStringIds[B_MSG_WEATHER_END_COUNT] =
@@ -1011,6 +1035,8 @@ const u16 gWeatherEndsStringIds[B_MSG_WEATHER_END_COUNT] =
     [B_MSG_WEATHER_END_SNOW]         = STRINGID_SNOWSTOPPED,
     [B_MSG_WEATHER_END_FOG]          = STRINGID_FOGLIFTED,
     [B_MSG_WEATHER_END_STRONG_WINDS] = STRINGID_STRONGWINDSDISSIPATED,
+    [B_MSG_WEATHER_END_ACID_RAIN]    = STRINGID_ACIDRAINSTOPPED, // Project Grounded
+    [B_MSG_WEATHER_END_POLLEN_HAZE]  = STRINGID_POLLENHAZESTOPPED, // Project Grounded
 };
 
 const u16 gWeatherTurnStringIds[] =
@@ -1023,12 +1049,15 @@ const u16 gWeatherTurnStringIds[] =
     [B_MSG_WEATHER_TURN_SNOW]         = STRINGID_SNOWCONTINUES,
     [B_MSG_WEATHER_TURN_FOG]          = STRINGID_FOGISDEEP,
     [B_MSG_WEATHER_TURN_STRONG_WINDS] = STRINGID_MYSTERIOUSAIRCURRENTBLOWSON,
+    [B_MSG_WEATHER_TURN_ACID_RAIN]    = STRINGID_ACIDRAINCONTINUES, // Project Grounded
+    [B_MSG_WEATHER_TURN_POLLEN_HAZE]  = STRINGID_POLLENHAZECONTINUES, // Project Grounded
 };
 
 const u16 gSandStormHailDmgStringIds[] =
 {
     [B_MSG_SANDSTORM] = STRINGID_PKMNBUFFETEDBYSANDSTORM,
-    [B_MSG_HAIL]      = STRINGID_PKMNPELTEDBYHAIL
+    [B_MSG_HAIL]      = STRINGID_PKMNPELTEDBYHAIL,
+    [B_MSG_ACID_RAIN] = STRINGID_PKMNHURTBYACIDRAIN, // Project Grounded
 };
 
 const u16 gProtectLikeUsedStringIds[] =
@@ -1242,7 +1271,7 @@ const u16 gWeatherStartsStringIds[] =
     [WEATHER_SUNNY_CLOUDS]       = STRINGID_ITISRAINING,
     [WEATHER_SUNNY]              = STRINGID_ITISRAINING,
     [WEATHER_RAIN]               = STRINGID_ITISRAINING,
-    [WEATHER_SNOW]               = (B_OVERWORLD_SNOW >= GEN_9 ? STRINGID_ITISSNOWING : STRINGID_ITISHAILING),
+    [WEATHER_SNOW]               = STRINGID_ITISSNOWING, // Project Grounded: lichte sneeuw = Snowscape
     [WEATHER_RAIN_THUNDERSTORM]  = STRINGID_ITISRAINING,
     [WEATHER_FOG_HORIZONTAL]     = STRINGID_FOGISDEEP,
     [WEATHER_VOLCANIC_ASH]       = STRINGID_ITISRAINING,
@@ -1253,7 +1282,8 @@ const u16 gWeatherStartsStringIds[] =
     [WEATHER_DROUGHT]            = STRINGID_SUNLIGHTISHARSH,
     [WEATHER_DOWNPOUR]           = STRINGID_ITISRAINING,
     [WEATHER_UNDERWATER_BUBBLES] = STRINGID_ITISRAINING,
-    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING
+    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING,
+    [WEATHER_SNOW_STORM]         = STRINGID_ITISHAILING, // Project Grounded: sneeuwstorm = Snow Storm
 };
 
 const u16 gTerrainStartsStringIds[] =

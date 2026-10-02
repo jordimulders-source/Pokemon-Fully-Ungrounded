@@ -60,7 +60,7 @@ DOUBLE_BATTLE_TEST("Overcoat blocks damage from hail")
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_HAIL); MOVE(playerRight, MOVE_SKILL_SWAP, target: playerLeft); }
     } SCENE {
-        MESSAGE("Wynaut used Hail!");
+        MESSAGE("Wynaut used Snow Storm!");
         MESSAGE("Solosis used Skill Swap!");
         HP_BAR(playerLeft);
         NONE_OF {

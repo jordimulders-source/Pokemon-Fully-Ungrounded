@@ -284,6 +284,12 @@ const u32 gTrainerFrontPic_ProfessorBirch[] = INCBIN_U32("graphics/trainers/fron
 const u16 gTrainerPalette_ProfessorBirch[] = INCBIN_U16("graphics/trainers/front_pics/birch.gbapal");
 const u32 gTrainerFrontPic_Kecleon[] = INCBIN_U32("graphics/trainers/front_pics/kecleon.4bpp.smol");
 const u16 gTrainerPalette_Kecleon[] = INCBIN_U16("graphics/trainers/front_pics/kecleon.gbapal");
+const u32 gTrainerFrontPic_ProfessorOak[] = INCBIN_U32("graphics/trainers/front_pics/oak.4bpp.smol");
+const u16 gTrainerPalette_ProfessorOak[] = INCBIN_U16("graphics/trainers/front_pics/oak.gbapal");
+const u32 gTrainerFrontPic_Brock[] = INCBIN_U32("graphics/trainers/front_pics/brock.4bpp.smol");
+const u16 gTrainerPalette_Brock[] = INCBIN_U16("graphics/trainers/front_pics/brock.gbapal");
+const u32 gTrainerFrontPic_Mimikyu[] = INCBIN_U32("graphics/trainers/front_pics/mimikyu.4bpp.smol");
+const u16 gTrainerPalette_Mimikyu[] = INCBIN_U16("graphics/trainers/front_pics/mimikyu.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -295,6 +301,8 @@ const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
 
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
+const u8 gTrainerBackPic_Kecleon[] = INCBIN_U8("graphics/trainers/back_pics/kecleon.4bpp");
+const u16 gTrainerBackPicPalette_Kecleon[] = INCBIN_U16("graphics/trainers/back_pics/kecleon.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
 
 // The first two parameters invoke a front pic and palette by
@@ -408,6 +416,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_BIRCH, gTrainerFrontPic_ProfessorBirch, gTrainerPalette_ProfessorBirch),
     TRAINER_SPRITE(TRAINER_PIC_KECLEON, gTrainerFrontPic_Kecleon, gTrainerPalette_Kecleon),
+    TRAINER_SPRITE(TRAINER_PIC_OAK, gTrainerFrontPic_ProfessorOak, gTrainerPalette_ProfessorOak),
+    TRAINER_SPRITE(TRAINER_PIC_BROCK, gTrainerFrontPic_Brock, gTrainerPalette_Brock),
+    TRAINER_SPRITE(TRAINER_PIC_MIMIKYU, gTrainerFrontPic_Mimikyu, gTrainerPalette_Mimikyu),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)
@@ -483,4 +494,5 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_KECLEON, 4, gTrainerBackPic_Kecleon, gTrainerBackPicPalette_Kecleon, sBackAnims_Hoenn),
 };

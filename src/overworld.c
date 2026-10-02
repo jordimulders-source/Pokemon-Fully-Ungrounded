@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_move.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -1058,12 +1059,21 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 1 is the largest flash radius
 // Flash level of 7 is the smallest flash radius
 // Flash level of 8 is fully black
+EWRAM_DATA bool8 gShowAutoFlashMessage = FALSE; // Project Grounded
+
 void SetDefaultFlashLevel(void)
 {
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
         gSaveBlock1Ptr->flashLevel = 1;
+    else if (CanUseFieldMoveViaHM(FIELD_MOVE_FLASH)) // Project Grounded: donkere grotten meteen verlicht met badge + HM05
+    {
+        // Begint donker; EventScript_AutoFlash laat het licht zichtbaar opengaan en toont de melding
+        FlagSet(FLAG_SYS_USE_FLASH);
+        gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
+        gShowAutoFlashMessage = TRUE; // zodra de speler kan bewegen (field_control_avatar.c)
+    }
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
 }

@@ -1463,6 +1463,15 @@ void AnimTask_Hail(u8 taskId)
     task->func = AnimTask_Hail2;
 }
 
+// Project Grounded: korte hagel voor het weer aan het eind van de beurt (de helft van de hagelstenen)
+void AnimTask_HailShort(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    task->data[6] = TRUE;
+    task->func = AnimTask_Hail2;
+}
+
 static void AnimTask_Hail2(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
@@ -1485,7 +1494,7 @@ static void AnimTask_Hail2(u8 taskId)
 
             if (++task->tHailAffineAnimNum == (int)ARRAY_COUNT(sAffineAnims_HailParticle))
             {
-                if (++task->tHailStructId == (int)ARRAY_COUNT(sHailCoordData))
+                if (++task->tHailStructId == (task->data[6] ? (int)ARRAY_COUNT(sHailCoordData) / 2 : (int)ARRAY_COUNT(sHailCoordData)))
                     task->tState++;
                 else
                     task->tState--;

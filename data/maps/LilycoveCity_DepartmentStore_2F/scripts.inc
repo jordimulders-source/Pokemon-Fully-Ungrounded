@@ -29,6 +29,7 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_SIX_PACK
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL

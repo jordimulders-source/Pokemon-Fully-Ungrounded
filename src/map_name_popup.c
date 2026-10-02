@@ -17,6 +17,8 @@
 #include "task.h"
 #include "text.h"
 #include "constants/battle_frontier.h"
+#include "item.h"
+#include "overworld.h"
 #include "constants/layouts.h"
 #include "constants/region_map_sections.h"
 #include "constants/weather.h"
@@ -371,9 +373,39 @@ enum {
 #define tIncomingPopUp data[3]
 #define tPrintTimer    data[4]
 
+// Project Grounded: korte pop-up bij het oppakken van een item dat je al eens gevonden hebt.
+// Gebruikt de kaartnaam-pop-up, maar met de itemnaam als tekst (gSpecialVar_0x8006 = item, 0x8007 = aantal).
+static EWRAM_DATA u8 sItemPopupText[32] = {0};
+static EWRAM_DATA bool8 sItemPopupPending = FALSE;
+static void StartMapNamePopup(void);
+
+void ShowItemPickupPopup(void)
+{
+    u8 *end = StringCopy(sItemPopupText, GetItemName(gSpecialVar_0x8006));
+    if (gSpecialVar_0x8007 > 1)
+    {
+        end = StringCopy(end, COMPOUND_STRING(" x"));
+        ConvertIntToDecimalStringN(end, gSpecialVar_0x8007, STR_CONV_MODE_LEFT_ALIGN, 3);
+    }
+    sItemPopupPending = TRUE;
+    StartMapNamePopup();
+}
+
+bool8 IsItemObtainedBefore(void)
+{
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
+        return FALSE;
+    return GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_ITEM_OBTAINED) != 0;
+}
+
 void ShowMapNamePopup(void)
 {
     if (FlagGet(FLAG_HIDE_MAP_NAME_POPUP) != TRUE)
+        StartMapNamePopup();
+}
+
+static void StartMapNamePopup(void)
+{
     {
         if (!FuncIsActiveTask(Task_MapNamePopUpWindow))
         {
@@ -530,7 +562,7 @@ static void UpdateSecondaryPopUpWindow(u8 secondaryPopUpWindowId)
 
 static void ShowMapNamePopUpWindow(void)
 {
-    u8 mapDisplayHeader[24];
+    u8 mapDisplayHeader[36];
     u8 *withoutPrefixPtr;
     u8 x;
     const u8 *mapDisplayHeaderSource;
@@ -549,6 +581,12 @@ static void ShowMapNamePopUpWindow(void)
             mapDisplayHeaderSource = sBattlePyramid_MapHeaderStrings[gSaveBlock2Ptr->frontier.curChallengeBattleNum];
         }
         StringCopy(withoutPrefixPtr, mapDisplayHeaderSource);
+    }
+    else if (sItemPopupPending) // Project Grounded: item-pop-up
+    {
+        sItemPopupPending = FALSE;
+        withoutPrefixPtr = &(mapDisplayHeader[3]);
+        StringCopy(withoutPrefixPtr, sItemPopupText);
     }
     else
     {

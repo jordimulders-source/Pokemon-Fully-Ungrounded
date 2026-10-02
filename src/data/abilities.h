@@ -23,6 +23,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 9,
     },
 
+    [ABILITY_AIR_POLLUTION] = // Project Grounded
+    {
+        .name = _("Air Pollution"),
+        .description = COMPOUND_STRING("Summons acid rain."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_POLLEN_SEASON] = // Project Grounded
+    {
+        .name = _("Pollen Season"),
+        .description = COMPOUND_STRING("Summons a pollen haze."),
+        .aiRating = 8,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),
@@ -449,7 +463,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FORECAST] =
     {
         .name = _("Forecast"),
-        .description = COMPOUND_STRING("Changes with the weather."),
+        .description = COMPOUND_STRING("Shifts with the weather."), // Project Grounded: ook immuun voor de nadelen van zand en zure regen
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,
@@ -612,7 +626,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNOW_CLOAK] =
     {
         .name = _("Snow Cloak"),
-        .description = COMPOUND_STRING("Ups evasion in Hail or Snow."),
+        .description = COMPOUND_STRING("Ups evasion in snow."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -858,7 +872,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_BODY] =
     {
         .name = _("Ice Body"),
-        .description = COMPOUND_STRING("HP recovery in Hail or Snow."),
+        .description = COMPOUND_STRING("HP recovery in snow."),
         .aiRating = 3,
     },
 
@@ -876,7 +890,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     #if B_SNOW_WARNING >= GEN_9
         .description = COMPOUND_STRING("Summons snow in battle."),
     #else
-        .description = COMPOUND_STRING("Summons hail in battle."),
+        .description = COMPOUND_STRING("Summons a snow storm."),
     #endif
         .aiRating = 8,
     },
@@ -1518,7 +1532,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SLUSH_RUSH] =
     {
         .name = _("Slush Rush"),
-        .description = COMPOUND_STRING("Raises Speed in Hail/Snow."),
+        .description = COMPOUND_STRING("Raises Speed in snow."),
         .aiRating = 5,
     },
 
@@ -1885,7 +1899,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_FACE] =
     {
         .name = _("Ice Face"),
-        .description = COMPOUND_STRING("Hail or Snow renew free hit."),
+        .description = COMPOUND_STRING("Snow renews free hit."),
         .aiRating = 4,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,

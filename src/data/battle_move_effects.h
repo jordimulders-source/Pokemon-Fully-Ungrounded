@@ -1100,6 +1100,36 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 1,
     },
 
+    [EFFECT_FUNGAL_CONTROL] =
+    {
+        .battleScript = BattleScript_EffectFungalControl,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_TRANSMUTATION] =
+    {
+        .battleScript = BattleScript_EffectTransmutation,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_MACHINE_LEARNING] =
+    {
+        .battleScript = BattleScript_EffectMachineLearning,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_ACID_RAIN] =
+    {
+        .battleScript = BattleScript_EffectAcidRain,
+        .battleTvScore = 4,
+    },
+
+    [EFFECT_POLLEN_HAZE] =
+    {
+        .battleScript = BattleScript_EffectPollenHaze,
+        .battleTvScore = 4,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

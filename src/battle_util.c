@@ -212,6 +212,24 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .continuesMessage = B_MSG_WEATHER_TURN_STRONG_WINDS,
         .animation = B_ANIM_STRONG_WINDS,
     },
+
+    [BATTLE_WEATHER_ACID_RAIN] = // Project Grounded
+    {
+        .flag = B_WEATHER_ACID_RAIN,
+        .rock = HOLD_EFFECT_BLACK_SLUDGE,
+        .endMessage = B_MSG_WEATHER_END_ACID_RAIN,
+        .continuesMessage = B_MSG_WEATHER_TURN_ACID_RAIN,
+        .animation = B_ANIM_ACID_RAIN_CONTINUES,
+    },
+
+    [BATTLE_WEATHER_POLLEN_HAZE] = // Project Grounded
+    {
+        .flag = B_WEATHER_POLLEN_HAZE,
+        .rock = HOLD_EFFECT_NONE,
+        .endMessage = B_MSG_WEATHER_END_POLLEN_HAZE,
+        .continuesMessage = B_MSG_WEATHER_TURN_POLLEN_HAZE,
+        .animation = B_ANIM_POLLEN_HAZE_CONTINUES,
+    },
 };
 
 // Helper function for actual dmg calcs during battle. For simulated AI dmg, CalcTypeEffectivenessMultiplier should be used directly
@@ -2444,6 +2462,18 @@ static enum MoveCanceler CancelerCallSubmove(struct BattleContext *ctx)
         calledMove = GetMetronomeMove();
         battleScript = BattleScript_MetronomeAttackstring;
         break;
+    case EFFECT_MACHINE_LEARNING: // Project Grounded: 20% kans op hallucinatie (willekeurige move, zonder Metronome-animatie)
+        if (RandomPercentage(RNG_MACHINE_LEARNING, 20))
+        {
+            gDisableStructs[ctx->battlerAtk].machineLearningTurn = gBattleTurnCounter; // de reeks loopt door
+            calledMove = GetMetronomeMove();
+            battleScript = BattleScript_MachineLearningHallucination;
+        }
+        else
+        {
+            noEffect = TRUE;
+        }
+        break;
     case EFFECT_ASSIST:
         calledMove = GetAssistMove();
         break;
@@ -2883,7 +2913,13 @@ static enum MoveCanceler CancelerMultihitMoves(struct BattleContext *ctx)
     {
         enum Ability ability = ctx->abilities[ctx->battlerAtk];
 
-        if (ability == ABILITY_SKILL_LINK)
+        if (ctx->currentMove == MOVE_OTHISMOS)
+        {
+            // Project Grounded: de falanx is zo sterk als de gebruiker gezond is: 1 + 4 x HP/maxHP treffers (5 bij volle HP)
+            u32 hits = 1 + (gBattleMons[ctx->battlerAtk].hp * 4) / gBattleMons[ctx->battlerAtk].maxHP;
+            gMultiHitCounter = min(hits, 5);
+        }
+        else if (ability == ABILITY_SKILL_LINK)
         {
             gMultiHitCounter = 5;
         }
@@ -3249,6 +3285,8 @@ bool32 TryChangeBattleWeather(u32 battler, u32 battleWeatherId, u32 ability)
         if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
             gWishFutureKnock.weatherDuration = 0;
         else if (rock != 0 && GetBattlerHoldEffect(battler) == rock)
+            gWishFutureKnock.weatherDuration = 8;
+        else if (battleWeatherId == BATTLE_WEATHER_POLLEN_HAZE && gBattleMons[battler].item == ITEM_SILVER_POWDER) // Project Grounded
             gWishFutureKnock.weatherDuration = 8;
         else
             gWishFutureKnock.weatherDuration = 5;
@@ -3916,19 +3954,19 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                     effect = TRUE;
                 }
                 break;
-            case WEATHER_SNOW:
+            case WEATHER_SNOW: // Project Grounded: lichte sneeuw = Snowscape
                 if (!(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
                 {
-                    if (B_OVERWORLD_SNOW >= GEN_9)
-                    {
-                        gBattleWeather = B_WEATHER_SNOW;
-                        gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
-                    }
-                    else
-                    {
-                        gBattleWeather = B_WEATHER_HAIL;
-                        gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
-                    }
+                    gBattleWeather = B_WEATHER_SNOW;
+                    gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
+                    effect = TRUE;
+                }
+                break;
+            case WEATHER_SNOW_STORM: // Project Grounded: sneeuwstorm = Snow Storm (de vroegere Hail)
+                if (!(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+                {
+                    gBattleWeather = B_WEATHER_HAIL;
+                    gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
                     effect = TRUE;
                 }
                 break;
@@ -4285,6 +4323,20 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SCREENCLEANER;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_POLLEN_SEASON: // Project Grounded
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_POLLEN_HAZE, gLastUsedAbility))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_PollenSeasonActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_AIR_POLLUTION: // Project Grounded
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, gLastUsedAbility))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_AirPollutionActivates);
                 effect++;
             }
             break;
@@ -7166,6 +7218,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower = gNaturalGiftTable[ITEM_TO_BERRY(gBattleMons[battlerAtk].item)].power;
         break;
     case EFFECT_DOUBLE_POWER_ON_ARG_STATUS:
+        // Project Grounded: in Acid Rain telt elk doelwit als vergiftigd (Venoshock)
+        if ((GetMoveEffectArg_Status(move) & STATUS1_PSN_ANY) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN))
+        {
+            basePower *= 2;
+            break;
+        }
         // Comatose targets treated as if asleep
         if ((gBattleMons[battlerDef].status1 | (STATUS1_SLEEP * (ctx->abilityDef == ABILITY_COMATOSE))) & GetMoveEffectArg_Status(move)
          && !((GetMoveAdditionalEffectById(move, 0)->moveEffect == MOVE_EFFECT_REMOVE_STATUS) && DoesSubstituteBlockMove(battlerAtk, battlerDef, move)))
@@ -7388,8 +7446,12 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (gSideTimers[atkSide].retaliateTimer == 1)
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
+    case EFFECT_HIT_ENEMY_HEAL_ALLY: // Project Grounded: Pollen Puff gebruikt het stuifmeel in de lucht
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case EFFECT_SOLAR_BEAM:
-        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
+        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG | B_WEATHER_ACID_RAIN | B_WEATHER_POLLEN_HAZE)))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     case EFFECT_STOMPING_TANTRUM:
@@ -8042,7 +8104,8 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     if (ctx->isCrit && defStage > DEFAULT_STAT_STAGE)
         defStage = DEFAULT_STAT_STAGE;
     // pokemon with unaware ignore defense stat changes while dealing damage
-    if (ctx->abilityAtk == ABILITY_UNAWARE)
+    if (ctx->abilityAtk == ABILITY_UNAWARE
+     || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(ctx->battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded
         defStage = DEFAULT_STAT_STAGE;
     // certain moves also ignore stat changes
     if (MoveIgnoresDefenseEvasionStages(move))
@@ -8165,7 +8228,10 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     if (GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     // snow def boost for ice types
-    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW | B_WEATHER_HAIL) && usesDefStat)
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+    // Project Grounded: acid rain def boost for poison types
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
@@ -8230,6 +8296,20 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_POLLEN_HAZE) // Project Grounded: Bug en Grass sterker, Fire zwakker (niet voor Castform)
+    {
+        if (ctx->moveType == TYPE_BUG || ctx->moveType == TYPE_GRASS)
+            return UQ_4_12(1.5);
+        if (ctx->moveType == TYPE_FIRE && ctx->abilityAtk != ABILITY_FORECAST)
+            return UQ_4_12(0.5);
+    }
+    if (ctx->weather & B_WEATHER_ACID_RAIN && (ctx->abilityAtk != ABILITY_FORECAST || GetMoveEffect(ctx->move) == EFFECT_WEATHER_BALL)) // Project Grounded: Fire en Water zwakker, Poison sterker (Castform heeft er geen last van, behalve Weather Ball)
+    {
+        if (ctx->moveType == TYPE_FIRE || ctx->moveType == TYPE_WATER)
+            return UQ_4_12(0.5);
+        if (ctx->moveType == TYPE_POISON)
+            return UQ_4_12(1.5);
     }
     return UQ_4_12(1.0);
 }
@@ -10237,6 +10317,11 @@ u32 CalcSecondaryEffectChance(u32 battler, enum Ability battlerAbility, const st
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
+    // Project Grounded: Acid Rain verdubbelt de gifkans (50% of meer wordt 100%)
+    if ((additionalEffect->moveEffect == MOVE_EFFECT_POISON || additionalEffect->moveEffect == MOVE_EFFECT_TOXIC)
+     && secondaryEffectChance != 0 && gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect())
+        secondaryEffectChance = (secondaryEffectChance >= 50) ? 100 : secondaryEffectChance * 2;
+
     if (hasRainbow && hasSereneGrace && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH)
         return secondaryEffectChance * 2;
 
@@ -10936,7 +11021,7 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
 
     if (!effect && HasWeatherEffect())
     {
-        if (MoveAlwaysHitsInRain(move) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN))
+        if (MoveAlwaysHitsInRain(move) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN | B_WEATHER_ACID_RAIN))
             effect = TRUE;
         else if ((gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && MoveAlwaysHitsInHailSnow(move))
             effect = TRUE;
@@ -10962,7 +11047,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
     if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkAbility == ABILITY_MINDS_EYE
-            || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && atkAbility == ABILITY_ILLUMINATE))
+            || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && atkAbility == ABILITY_ILLUMINATE)
+            || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded: Bug negeert boosts in Pollen Haze
         evasionStage = DEFAULT_STAT_STAGE;
     if (MoveIgnoresDefenseEvasionStages(move))
         evasionStage = DEFAULT_STAT_STAGE;
@@ -10983,6 +11069,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     // Check Thunder and Hurricane on sunny weather.
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && MoveHas50AccuracyInSun(move))
         moveAcc = 50;
+    // Project Grounded: spore- en poedermoves +20 accuracy in Pollen Haze
+    if (IsPowderMove(move) && moveAcc != 0 && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect())
+        moveAcc = min(moveAcc + 20, 100);
     // Check Wonder Skin.
     if (defAbility == ABILITY_WONDER_SKIN && IsBattleMoveStatus(move) && moveAcc > 50)
         moveAcc = 50;

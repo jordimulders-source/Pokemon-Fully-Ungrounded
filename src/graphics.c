@@ -1376,6 +1376,7 @@ const u8 gContestNextTurnRandomGfx[] = INCBIN_U8("graphics/contest/nextturn_rand
 
 const u32 gBattleAnimSpriteGfx_GlowyRedOrb[] = INCBIN_U32("graphics/battle_anims/sprites/glowy_red_orb.4bpp.smol");
 const u16 gBattleAnimSpritePal_GlowyRedOrb[] = INCBIN_U16("graphics/battle_anims/sprites/glowy_red_orb.gbapal");
+const u32 gBattleAnimSpriteGfx_LaserDot[] = INCBIN_U32("graphics/battle_anims/sprites/laser_dot.4bpp.smol"); // Project Grounded
 const u16 gBattleAnimSpritePal_GlowyGreenOrb[] = INCBIN_U16("graphics/battle_anims/sprites/glowy_green_orb.gbapal");
 const u16 gBattleAnimSpritePal_SleepPowder[] = INCBIN_U16("graphics/battle_anims/sprites/sleep_powder.gbapal");
 const u16 gBattleAnimSpritePal_StunSpore[] = INCBIN_U16("graphics/battle_anims/sprites/stun_spore.gbapal");
@@ -1443,6 +1444,7 @@ const u32 gBattleAnimBgImage_SpacialRend[] = INCBIN_U32("graphics/battle_anims/b
 const u16 gBattleAnimBgPalette_SpacialRend[] = INCBIN_U16("graphics/battle_anims/backgrounds/spacial_rend.gbapal");
 
 const u16 gBattleAnimBgPalette_SludgeWave[] = INCBIN_U16("graphics/battle_anims/backgrounds/sludge_wave.gbapal");
+const u16 gBattleAnimBgPalette_LagerLagoon[] = INCBIN_U16("graphics/battle_anims/backgrounds/lager_lagoon.gbapal"); // Project Grounded
 
 const u32 gBattleAnimBgImage_Aeroblast[] = INCBIN_U32("graphics/battle_anims/backgrounds/aeroblast_tiles.4bpp.smol");
 const u16 gBattleAnimBgPalette_Aeroblast[] = INCBIN_U16("graphics/battle_anims/backgrounds/aeroblast.gbapal");

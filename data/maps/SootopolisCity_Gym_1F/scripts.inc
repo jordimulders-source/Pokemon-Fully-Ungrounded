@@ -116,14 +116,14 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	end
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
-	giveitem ITEM_TM_SCALD
+	giveitem ITEM_TM_VINTAGE_SPILL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
-	giveitem ITEM_TM_SCALD
+	giveitem ITEM_TM_VINTAGE_SPILL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -145,11 +145,13 @@ SootopolisCity_Gym_1F_EventScript_GymGuide::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
 	msgbox SootopolisCity_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_GymGuideAceLevel, MSGBOX_DEFAULT
 	release
 	end
 
 SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory::
 	msgbox SootopolisCity_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_GymGuideNextAce, MSGBOX_DEFAULT
 	release
 	end
 
@@ -245,8 +247,8 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "That TECHNICAL MACHINE contains\n"
-	.string "WATER PULSE.\p"
-	.string "It occasionally confuses the target.\n"
+	.string "VINTAGE SPILL.\p"
+	.string "Every splash confuses a little more.\n"
 	.string "Think of it as a shot of 90 percent\l"
 	.string "absinthe delivered to the face.\p"
 	.string "... ... ... ... ... ...$"
@@ -306,3 +308,15 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "serving wine without a glass. Return\l"
 	.string "with at least two.$"
 
+@ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
+SootopolisCity_Gym_1F_Text_GymGuideAceLevel:
+	.string "Insider info: the LEADER's ace\n"
+	.string "is level 56.\p"
+	.string "You didn't hear it from me.\n"
+	.string "You heard it from me, but still.$"
+
+SootopolisCity_Gym_1F_Text_GymGuideNextAce:
+	.string "Next stop: the POKéMON LEAGUE.\n"
+	.string "Their levels? No idea.\p"
+	.string "Nobody ever comes back\n"
+	.string "to tell me.$"

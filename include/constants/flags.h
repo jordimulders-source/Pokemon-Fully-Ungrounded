@@ -69,17 +69,17 @@
 #define FLAG_HIDE_ROUTE136_KECCLES    0x37 // Project Grounded: Route 136
 #define FLAG_HIDE_ROUTE136_SUICUNE    0x38 // Project Grounded: Suicune (static) in de grot achter het kristalmeer van Route 136
 #define FLAG_VISITED_ASHFROST_TOWN    0x39 // Project Grounded: voor Fly naar Ashfrost
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_ITEM_COLDSTEP_CAVE_TM_LAGER_LAGOON    0x3A // Project Grounded: Coldstep Cave ijskamer 1, rechts van het middelste ijsveld
+#define FLAG_RECEIVED_OAK_STARTER    0x3B // Project Grounded: Kanto-starter van Prof. Oak (Slateport)
+#define FLAG_RECEIVED_TM_ACID_RAIN    0x3C // Project Grounded: TM57 van de Aqua-grunt (Aqua Hideout B1F)
+#define FLAG_RECEIVED_TM_POLLEN_HAZE    0x3D // Project Grounded: TM58 van Bug Maniac Timothy (Route 119)
+#define FLAG_HIDE_ROUTE111_HEATRAN_ROCKS    0x3E // Project Grounded: Heatran heeft de stenen boven Mauville weggebeukt
+#define FLAG_HIDE_ROUTE111_HEATRAN    0x3F // Project Grounded: Heatran (alleen zichtbaar tijdens de cutscene)
+#define FLAG_CAUGHT_MAUVILLE_ROTOM 0x40
+#define FLAG_HIDE_SOOTOPOLIS_KECCLES 0x41 // Project Grounded
+#define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
+#define FLAG_HIDE_VERDANTURF_BIRCH 0x43 // Project Grounded
+#define FLAG_RECEIVED_HOENN_GRIMER 0x44 // Project Grounded: Birch geeft een Hoenn-Grimer (Verdanturf)
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
@@ -1081,7 +1081,7 @@
 #define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
-#define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
+#define FLAG_ITEM_ROUTE_120_TM_SCALD                                0x407 // Project Grounded: was Full Heal
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
 #define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
@@ -1156,10 +1156,10 @@
 #define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
 #define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
 #define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452
+#define FLAG_ITEM_ROUTE_119_TM_VOLT_SWITCH                          0x452 // Project Grounded: was Hyper Potion 2
 #define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
 #define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
-#define FLAG_ITEM_ROUTE_123_ELIXIR                                  0x455
+#define FLAG_ITEM_ROUTE_123_TM_CALM_MIND                            0x455 // Project Grounded: was Elixir
 #define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                        0x456
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0x458
@@ -1170,7 +1170,7 @@
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
 #define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                         0x45F
-#define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                            0x460
+#define FLAG_ITEM_MT_PYRE_3F_TM_SHADOW_SIPHON                            0x460
 #define FLAG_ITEM_ROUTE_118_HYPER_POTION                            0x461
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463

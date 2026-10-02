@@ -498,7 +498,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_ATTACK:
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
         break;
     case SPECIES_LUGIA:
     case SPECIES_HO_OH:
@@ -509,8 +509,10 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema
     case SPECIES_ENTEI:
-    case SPECIES_SUICUNE:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+        break;
+    case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
+        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);
         break;
     }
 
@@ -557,6 +559,12 @@ void StartRegiBattle(void)
         break;
     case SPECIES_REGISTEEL:
         transitionId = B_TRANSITION_REGISTEEL;
+        break;
+    case SPECIES_REGIDRAGO:
+        transitionId = B_TRANSITION_REGIDRAGO;
+        break;
+    case SPECIES_REGIELEKI:
+        transitionId = B_TRANSITION_REGIELEKI;
         break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
@@ -785,6 +793,14 @@ enum BattleTransition GetTrainerBattleTransition(void)
     u8 playerLevel;
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+
+    // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
+    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2)
+        return B_TRANSITION_BIRCH;
+
+    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
+    if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
+        return B_TRANSITION_AQUA_MAGMA;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;

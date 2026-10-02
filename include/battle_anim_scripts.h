@@ -851,6 +851,12 @@ extern const u8 gBattleAnimMove_PsychicNoise[];
 extern const u8 gBattleAnimMove_UpperHand[];
 extern const u8 gBattleAnimMove_MalignantChain[];
 extern const u8 gBattleAnimMove_SeltzerSurge[];
+extern const u8 gBattleAnimMove_LagerLagoon[];
+extern const u8 gBattleAnimMove_VintageSpill[];
+extern const u8 gBattleAnimMove_Implosion[];
+extern const u8 gBattleAnimMove_LaserBeam[];
+extern const u8 gBattleAnimMove_FungalControl[];
+extern const u8 gBattleAnimMove_ShadowSiphon[];
 extern const u8 gBattleAnimMove_BreakneckBlitz[];
 extern const u8 gBattleAnimMove_AllOutPummeling[];
 extern const u8 gBattleAnimMove_SupersonicSkystrike[];
@@ -1008,6 +1014,10 @@ extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
 extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
 extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
+extern const u8 gBattleAnimGeneral_AcidRain[];
+extern const u8 gBattleAnimGeneral_PollenHaze[];
+extern const u8 gBattleAnimMove_PollenHaze[];
+extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

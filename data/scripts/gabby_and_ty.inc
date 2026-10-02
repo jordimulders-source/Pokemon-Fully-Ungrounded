@@ -131,17 +131,59 @@ GabbyAndTy_EventScript_ShowAtRoute118_3::
 	clearflag FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3
 	return
 
+@ Project Grounded: het eerste gevecht is dubbel tegen de local celebrity (Brad en zijn Poochyena) en Ty.
 GabbyAndTy_EventScript_GabbyBattle1::
-	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattle, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+GabbyAndTy_EventScript_TyBattle1::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_GABBY_AND_TY_1, GabbyAndTy_EventScript_KeepingAnEyeOutForYouBattle1
+	specialvar VAR_RESULT, GetMonsStateToDoubles
+	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, GabbyAndTy_EventScript_CelebrityNotEnoughMons
+	msgbox GabbyAndTy_Text_GabbyPreFirstBattle, MSGBOX_DEFAULT
+	msgbox GabbyAndTy_Text_CelebrityIntro, MSGBOX_DEFAULT
+	msgbox GabbyAndTy_Text_TyPreFirstBattle, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_two_trainers TRAINER_LOCAL_CELEBRITY, GabbyAndTy_Text_CelebrityDefeat, TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyDefeatFirstTime
+	msgbox GabbyAndTy_Text_CelebrityPostBattle, MSGBOX_DEFAULT
+	msgbox GabbyAndTy_Text_GabbyDefeatFirstTime, MSGBOX_DEFAULT
+	goto GabbyAndTy_EventScript_FirstInterview
+	end
+
+GabbyAndTy_EventScript_KeepingAnEyeOutForYouBattle1::
 	msgbox GabbyAndTy_Text_KeepingAnEyeOutForYou, MSGBOX_DEFAULT
 	release
 	end
 
-GabbyAndTy_EventScript_TyBattle1::
-	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattle, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
-	msgbox GabbyAndTy_Text_TyPostBattle, MSGBOX_DEFAULT
+GabbyAndTy_EventScript_CelebrityNotEnoughMons::
+	msgbox GabbyAndTy_Text_CelebrityNotEnoughMons, MSGBOX_DEFAULT
 	release
 	end
+
+GabbyAndTy_Text_CelebrityIntro:
+	.string "BRAD: That's right, Hoenn. It's me.\n"
+	.string "BRAD. Mauville's most famous guy.\p"
+	.string "And this is BARKLEY. My POOCHYENA.\n"
+	.string "No, he will never evolve.\p"
+	.string "Perfect genes. Perfect training.\n"
+	.string "Evolving would be a downgrade.\p"
+	.string "Smile for the camera, kid.\n"
+	.string "You're about to go viral.\l"
+	.string "As a loser.$"
+
+GabbyAndTy_Text_CelebrityDefeat:
+	.string "BRAD: Cut! CUT! That wasn't\n"
+	.string "my good side!$"
+
+GabbyAndTy_Text_CelebrityPostBattle:
+	.string "BRAD: BARKLEY, we're leaving.\n"
+	.string "Tell my agent… we're pivoting\l"
+	.string "to cooking videos.$"
+
+GabbyAndTy_Text_CelebrityNotEnoughMons:
+	.string "BRAD: One POKéMON? Kid, this is\n"
+	.string "a DOUBLE feature.\p"
+	.string "Come back with at least two.\n"
+	.string "My fans demand a fair fight.$"
 
 GabbyAndTy_EventScript_GabbyBattle2::
 	trainerbattle_double TRAINER_GABBY_AND_TY_2, GabbyAndTy_Text_GabbyIntro, GabbyAndTy_Text_GabbyDefeat, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_RequestInterview

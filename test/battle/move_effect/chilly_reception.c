@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Chilly Reception sets up snow and switches the user out")
         MESSAGE("Slowking is preparing to tell a chillingly bad joke!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CHILLY_RECEPTION, player);
 #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_HAIL
-        MESSAGE("It started to hail!");
+        MESSAGE("A snow storm started!");
 #else
         MESSAGE("It started to snow!");
 #endif
@@ -97,7 +97,7 @@ SINGLE_BATTLE_TEST("Chilly Reception changes the weather, even if the user canno
         MESSAGE("Slowking is preparing to tell a chillingly bad joke!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CHILLY_RECEPTION, player);
 #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_HAIL
-        MESSAGE("It started to hail!");
+        MESSAGE("A snow storm started!");
 #else
         MESSAGE("It started to snow!");
 #endif

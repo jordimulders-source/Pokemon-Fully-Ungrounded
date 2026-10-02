@@ -141,6 +141,7 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DROUGHT]            = {Drought_InitVars,       Drought_Main,       Drought_InitAll,       Drought_Finish},
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
+    [WEATHER_SNOW_STORM]         = {SnowStorm_InitVars,     Snow_Main,          SnowStorm_InitAll,     Snow_Finish}, // Project Grounded
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -1207,6 +1208,8 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ROUTE119_CYCLE]     = _("ROUTE119 CYCLE"),
     [WEATHER_ROUTE123_CYCLE]     = _("ROUTE123 CYCLE"),
     [WEATHER_ASHFROST_CYCLE]     = _("ASHFROST CYCLE"),
+    [WEATHER_SNOW_STORM]         = _("SNOW STORM"),
+    [WEATHER_ASHFROST_STORM_CYCLE] = _("ASHFROST STORM CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
 };
 

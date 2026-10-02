@@ -881,12 +881,20 @@
 #define TRAINER_SIGRID                          875 // Project Grounded: Route 136
 #define TRAINER_RAFAEL                          876 // Project Grounded: Route 136
 #define TRAINER_HAKON                           877 // Project Grounded: Route 136
+#define TRAINER_PROF_OAK                        878 // Project Grounded: Prof. Oak bij de vuurtoren (Slateport)
+#define TRAINER_TIMOTHY                         879 // Project Grounded: Bug Maniac boven de Mimic Circle (Route 119), TM58 Pollen Haze
+#define TRAINER_MIMI                            880 // Project Grounded: Mimikyu-trainer in de Mimic Circle (Route 119)
+#define TRAINER_LOCAL_CELEBRITY                 881 // Project Grounded: local celebrity bij het eerste Gabby & Ty-gevecht (Route 111)
+#define TRAINER_ARCHIE_SOOTOPOLIS               882 // Project Grounded: Archie + Maxie tegen jou + Keccles (Sootopolis)
+#define TRAINER_MAXIE_SOOTOPOLIS                883 // Project Grounded
+#define TRAINER_BIRCH_VERDANTURF                884 // Project Grounded: Birch en de Hoenn-Grimer (Verdanturf)
+#define TRAINER_BROCK                           885 // Project Grounded: Brock bij de Day Care (Route 117)
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      878
+#define TRAINERS_COUNT                      886
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

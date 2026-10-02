@@ -6980,9 +6980,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    // Project Grounded: Hail heet Snow Storm: schade per beurt én Ice-types +50% Def (zoals Snowscape)
     [MOVE_HAIL] =
     {
-        .name = COMPOUND_STRING("Hail"),
+        .name = COMPOUND_STRING("Snow Storm"),
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
             .description = COMPOUND_STRING(
                 "Summons a snowstorm that\n"
@@ -6990,7 +6991,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .effect = EFFECT_SNOWSCAPE,
         #else
             .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
+                "A biting snow storm that\n"
                 "strikes every turn."),
             .effect = EFFECT_HAIL,
         #endif
@@ -16905,7 +16906,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #elif B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_BOTH
         .description = COMPOUND_STRING(
             "Weakens all attacks if\n"
-            "used in hail or snow."),
+            "used in snowy weather."),
         #else
         .description = COMPOUND_STRING(
             "Weakens all attacks, but\n"
@@ -20465,7 +20466,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Snowscape"),
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_HAIL
             .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
+                "A biting snow storm that\n"
                 "strikes every turn."),
             .effect = EFFECT_HAIL,
         #else
@@ -21356,6 +21357,288 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SeltzerSurge,
     },
 
+    // Project Grounded: bier-Surf met gele golven en schuim: 65 power, 50% confusion, raakt ook de partner.
+    [MOVE_LAGER_LAGOON] =
+    {
+        .name = COMPOUND_STRING("Lager Lagoon"),
+        .description = COMPOUND_STRING(
+            "A foaming wave of beer.\n"
+            "Often confuses everyone."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .damagesUnderwater = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_LagerLagoon,
+    },
+
+    // Project Grounded: wijn morsen (Water Sport in bordeaux): 60 power; confusion 50 -> 100% per treffer
+    // op hetzelfde doelwit (teller in gDisableStructs, verdwijnt bij wisselen). Zie Cmd_setadditionaleffects.
+    [MOVE_VINTAGE_SPILL] =
+    {
+        .name = COMPOUND_STRING("Vintage Spill"),
+        .description = COMPOUND_STRING(
+            "Splashes fine wine. Each\n"
+            "hit is likelier to confuse."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VintageSpill,
+    },
+
+    // Project Grounded: Falinks-signature, Grieks voor "duwen" in een hoplieten-falanx.
+    // 20 power per treffer; 5 treffers bij volle HP, minder naarmate de HP daalt (zie CancelerMultihitMoves).
+    [MOVE_OTHISMOS] =
+    {
+        .name = COMPOUND_STRING("Othismos"),
+        .description = COMPOUND_STRING(
+            "A hoplite shoving push.\n"
+            "Hits more at higher HP."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+        .battleAnimScript = gBattleAnimMove_ArmThrust,
+    },
+
+    [MOVE_FUNGAL_CONTROL] =
+    {
+        .name = COMPOUND_STRING("Fungal Control"),
+        .description = COMPOUND_STRING(
+            "Spores hijack the foe. You\n"
+            "pick its move for 3 turns."),
+        .effect = EFFECT_FUNGAL_CONTROL,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 60,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .powderMove = TRUE,
+        .makesContact = TRUE,
+        .magicCoatAffected = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FungalControl,
+    },
+
+    [MOVE_TRANSMUTATION] =
+    {
+        .name = COMPOUND_STRING("Transmutation"),
+        .description = COMPOUND_STRING(
+            "Turns the foe into a copy\n"
+            "of the user. 5 PP per move."),
+        .effect = EFFECT_TRANSMUTATION,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .magicCoatAffected = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Transform,
+    },
+
+    [MOVE_IMPLOSION] =
+    {
+        .name = COMPOUND_STRING("Implosion"),
+        .description = COMPOUND_STRING(
+            "The user collapses into a\n"
+            "black hole. User faints."),
+        .effect = EFFECT_EXPLOSION,
+        .power = 200,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .parentalBondBanned = TRUE,
+        .dampBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Implosion,
+    },
+
+    [MOVE_LASER_BEAM] =
+    {
+        .name = COMPOUND_STRING("Laser Beam"),
+        .description = COMPOUND_STRING(
+            "A laser that burns through\n"
+            "Protect, screens and boosts."),
+        .effect = EFFECT_BRICK_BREAK,
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresProtect = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LaserBeam,
+    },
+
+    [MOVE_MACHINE_LEARNING] =
+    {
+        .name = COMPOUND_STRING("Machine Learning"),
+        .description = COMPOUND_STRING(
+            "Trains each turn: more stats\n"
+            "rise. May hallucinate."),
+        .effect = EFFECT_MACHINE_LEARNING,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .snatchAffected = FALSE,
+        .ignoresProtect = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Charge,
+    },
+
+    [MOVE_SHADOW_SIPHON] =
+    {
+        .name = COMPOUND_STRING("Shadow Siphon"),
+        .description = COMPOUND_STRING(
+            "Siphons the foe's life away.\n"
+            "Restores a lot of HP."),
+        .effect = EFFECT_ABSORB,
+        .power = 50,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .absorbPercentage = 75 },
+        .makesContact = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ShadowSiphon,
+    },
+
+    [MOVE_ACID_RAIN] =
+    {
+        .name = COMPOUND_STRING("Acid Rain"),
+        .description = COMPOUND_STRING(
+            "Summons acid rain for 5\n"
+            "turns. Poison thrives."),
+        .effect = EFFECT_ACID_RAIN,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AcidRain,
+    },
+
+    [MOVE_POLLEN_HAZE] =
+    {
+        .name = COMPOUND_STRING("Pollen Haze"),
+        .description = COMPOUND_STRING(
+            "Fills the air with pollen for\n"
+            "5 turns. Bug and Grass thrive."),
+        .effect = EFFECT_POLLEN_HAZE,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PollenHaze,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
@@ -22081,7 +22364,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Max Hailstorm"),
         .description = COMPOUND_STRING(
             "Ice Dynamax attack.\n"
-            "Summons hail for 5 turns."),
+            "Summons a snow storm."),
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
         .type = TYPE_ICE,

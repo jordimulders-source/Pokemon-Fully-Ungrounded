@@ -29,7 +29,9 @@
       "flag": "FLAG_HIDE_ROUTE136_SUICUNE"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {"x": 10, "y": 17, "elevation": 1, "dest_map": "MAP_UNDERWATER_ROUTE136", "dest_warp_id": "0"}
+  ],
   "coord_events": [],
   "bg_events": []
 }

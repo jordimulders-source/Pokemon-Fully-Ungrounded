@@ -15626,3 +15626,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.76] - Debug: legendary-gevechten forceren
 - Nieuw in het debugmenu: **Utilities > Legendary battle…** met Regirock, Regice, Registeel, Regidrago, Regieleki, Regigigas, Suicune, Raikou, Entei, Groudon, Kyogre, Rayquaza, Deoxys, Mew, Latias, Latios, Lugia en Ho-Oh (lv 50). Elk gevecht start via dezelfde special als het echte event (`StartRegiBattle`, `BattleSetup_StartLegendaryBattle`, `BattleSetup_StartLatiBattle`), dus met het juiste thema en de juiste transitie. Scripts in `data/scripts/grounded_debug.inc`.
+
+### [v.0.8.77] - Crystal Cavity opgeknapt, Suicune weer bereikbaar
+- **Crystal Cavity** (`grotto136.py`, nu 35×30): de volledige Marine Cave-kaart inclusief de rotsrand bovenaan (die was weggeknipt, waardoor de bovenkant geen duidelijke rand had). Het lavameer van Terra Cave staat nu mét zijn eigen randen op een verbrede vloer en overschrijft de rotsrichel tussen meer en lava niet meer; het pad tussen water en lava ziet er daardoor normaal uit. Kristallen opnieuw verdeeld. Ingang nu (28,4), bovenkomen uit het meer op (9,21).
+- **Onderwater (Underwater_Route136):** de braille onder het plateau is vervangen door een zwemgat (zoals de ingang van de Seafloor Cavern, `MB_WATER_DOOR`). Zwem erin en je komt surfend uit in de Suicune-grot. Bovenkomen vóór het gat (12,44) werkt ook nog. Bouwscript `underwater136.py`.

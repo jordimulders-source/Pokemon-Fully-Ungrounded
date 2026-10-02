@@ -11,5 +11,5 @@ Underwater_Route136_OnDive:
 	end
 
 Underwater_Route136_EventScript_SurfaceGrotto::
-	setdivewarp MAP_ROUTE136_GROTTO, 9, 19
+	setdivewarp MAP_ROUTE136_GROTTO, 9, 21
 	end

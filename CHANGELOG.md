@@ -15556,3 +15556,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Regidrago** en **Regieleki** krijgen een eigen gevechtstransitie zoals de andere Regi's (zelfde weef-effect en cirkelmasker): Regidrago met **blauwe stippen** in zijn vorkpatroon, Regieleki met **roze/oranje stippen** in zijn glimlachpatroon. Patronen overgenomen van de referentiebeelden van Jordi.
 - Graphics gegenereerd met `tools/grounded/regi_transition.py` (stip uit de vanilla Regi-tiles, op een 240×160-beeld gezet en in tiles ontdubbeld): `graphics/battle_transitions/regidrago.*` en `regieleki.*`.
 - Werkt via `special StartRegiBattle` (zoals de andere Regi's), dus zodra ze in de wereld staan. In de emulator getest.
+
+### [v.0.8.63] - Gevechtstransitie Deoxys: ruimte + DNA
+- Er zitten geen DNA-animaties in de game, dus **Deoxys** krijgt een eigen ruimte-transitie met DNA: het hele beeld (ook de sprites) wordt zwart, een sterrenhemel met twinkelende sterren en een draaiende **DNA-dubbelhelix** in Deoxys-kleuren (oranje/cyaan, paarse en gele basenparen) komt op, schiet steeds sneller voorbij (warp, licht wiegend) en licht wit op vlak voor het gevecht.
+- `B_TRANSITION_DEOXYS` in `BattleSetup_StartLegendaryBattle` (alle Deoxys-vormen). Graphics via `tools/grounded/deoxys_transition.py` (`graphics/battle_transitions/deoxys.*`). In de emulator getest.

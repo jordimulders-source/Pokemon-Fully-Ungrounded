@@ -64,6 +64,7 @@ enum BattleTransition
     B_TRANSITION_AURORA, // Project Grounded: noorderlicht (Suicune)
     B_TRANSITION_REGIDRAGO, // Project Grounded
     B_TRANSITION_REGIELEKI, // Project Grounded
+    B_TRANSITION_DEOXYS, // Project Grounded: ruimte + DNA-helix
     B_TRANSITION_COUNT
 };
 

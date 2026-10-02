@@ -15599,3 +15599,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.69] - Galar-Zigzagoon in Littleroot
 - De Zigzagoon naast de man met de Zigzagoon-gift in Littleroot is nu ook in de overworld een **Galar-Zigzagoon** (`OBJ_EVENT_GFX_SPECIES(ZIGZAGOON_GALAR)`), passend bij de gift.
+
+### [v.0.8.70] - Debug: Fly-flags ook voor Ashfrost
+- De debugoptie **Toggle Fly Flags** zette Ashfrost niet aan (de vaste lijst `sLocationFlags` in `src/debug.c` kende hem niet), waardoor het Ashfrost-icoon grijs bleef. Nu staat `FLAG_VISITED_ASHFROST_TOWN` in de lijst. Normaal vliegen werkte al: de flag wordt gezet zodra je Ashfrost binnenloopt. In de emulator gecontroleerd (icoon vliegbaar).

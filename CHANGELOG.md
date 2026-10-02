@@ -15630,3 +15630,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.77] - Crystal Cavity opgeknapt, Suicune weer bereikbaar
 - **Crystal Cavity** (`grotto136.py`, nu 35×30): de volledige Marine Cave-kaart inclusief de rotsrand bovenaan (die was weggeknipt, waardoor de bovenkant geen duidelijke rand had). Het lavameer van Terra Cave staat nu mét zijn eigen randen op een verbrede vloer en overschrijft de rotsrichel tussen meer en lava niet meer; het pad tussen water en lava ziet er daardoor normaal uit. Kristallen opnieuw verdeeld. Ingang nu (28,4), bovenkomen uit het meer op (9,21).
 - **Onderwater (Underwater_Route136):** de braille onder het plateau is vervangen door een zwemgat (zoals de ingang van de Seafloor Cavern, `MB_WATER_DOOR`). Zwem erin en je komt surfend uit in de Suicune-grot. Bovenkomen vóór het gat (12,44) werkt ook nog. Bouwscript `underwater136.py`.
+
+### [v.0.8.78] - Crystal Cavity: meer weer bereikbaar, lavarand af
+- Een **rode kristal op (18,24)** stond midden op het pad tussen water en lava, waardoor je het meer (en dus het duikstuk naar Suicune) niet meer kon bereiken. `grotto136.py` controleert nu bij elke kristal of alles vanaf de ingang bereikbaar blijft (water telt mee); een kristal die iets afsluit wordt overgeslagen. Het script stopt met een fout als het meer onbereikbaar is.
+- De **linkerrand van het lavameer** (linksonder) was niet af: de buitenste randkolom van Terra Cave werd niet meegekopieerd. Nu wel; het lavameer is 1 tile naar rechts geschoven, zodat het pad op x 18 vrij blijft.

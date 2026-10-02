@@ -17,12 +17,13 @@ for y in range(H):
     if y<10: g[y][19:19]=[g[y][18]]*N
     else:    g[y][20:20]=[g[y][20]]*N
 W+=N
-# lavameer van Terra Cave (kolommen 13-22, rijen 17-26, incl. lavaranden) op de verbrede vloer (kolom 19-28)
+# lavameer van Terra Cave (kolommen 12-22, rijen 17-26, incl. alle lavaranden) op de verbrede vloer
+# (kolom 19-29); kolom 18 blijft vrij als pad tussen meer en lava
 LAVA=range(0x35f,0x374)
 for y in range(17,27):
-    for x in range(13,23):
+    for x in range(12,23):
         t=terra[y][x]
-        if (t&0x3ff) in LAVA: g[y][x+6]=t
+        if (t&0x3ff) in LAVA: g[y][x+7]=t
 # oostoever van het meer (kolom 14) surfbaar maken: botsing eraf
 for y in range(19,25):
     if (g[y][14]&0x3ff)==0x288: g[y][14]&=~0xc00
@@ -37,11 +38,26 @@ rnd=random.Random(1360)
 cand=[(x,y) for y in range(10,H-2) for x in range(2,W-2) if (g[y][x]&0x3ff) in floor and
       sum((g[y+dy][x+dx]&0x3ff) not in floor for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)))>=2]
 rnd.shuffle(cand)
+# bereikbaarheid vanaf de ingang (28,4); water telt mee (surfen). Een kristal mag niets afsluiten.
+def reach():
+    seen={(28,4)}; st=[(28,4)]
+    while st:
+        x,y=st.pop()
+        for nx,ny in ((x+1,y),(x-1,y),(x,y+1),(x,y-1)):
+            if 0<=nx<W and 0<=ny<H and (nx,ny) not in seen and not g[ny][nx]&0xc00:
+                seen.add((nx,ny)); st.append((nx,ny))
+    return seen
+R=reach(); assert (9,21) in R, 'meer onbereikbaar'
 placed=[]
 for (x,y) in cand:
     if len(placed)>=18: break
     if any(abs(x-a)+abs(y-b)<3 for a,b in placed): continue
+    old=g[y][x]; g[y][x]|=0x400
+    R2=reach()
+    if len(R2)<len(R)-((x,y) in R): g[y][x]=old; continue
+    R=R2
     g[y][x]=(BLUE if x<17 else rnd.choice((RED1,RED2)))|0x400|(3<<12); placed.append((x,y))
+assert (9,21) in reach(), 'meer onbereikbaar'
 print('kristallen:',sorted(placed))
 open('data/layouts/Route136_Grotto/map.bin','wb').write(struct.pack('<%dH'%(W*H),*[t for r in g for t in r]))
 print('grootte',W,H)

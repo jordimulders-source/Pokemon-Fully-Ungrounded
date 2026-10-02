@@ -112,7 +112,8 @@
 #define TRAINER_PIC_KECLEON               94 // Project Grounded: Keccles
 #define TRAINER_PIC_OAK                   95 // Project Grounded: Prof. Oak (sprite uit FRLG)
 #define TRAINER_PIC_MIMIKYU               96 // Project Grounded: Mimi de Mimikyu (Route 119)
-#define TRAINER_PIC_COUNT                 97
+#define TRAINER_PIC_BROCK                 97 // Project Grounded: Brock (sprite uit FRLG)
+#define TRAINER_PIC_COUNT                 98
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

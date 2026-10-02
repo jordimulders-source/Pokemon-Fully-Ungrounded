@@ -26926,3 +26926,53 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Sludge
 - Recover
 - Bulldoze
+
+=== TRAINER_BROCK ===
+Name: BROCK
+Class: Leader
+Pic: Brock
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Yellow
+
+Geodude
+Level: 24
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rock Tomb
+- Bulldoze
+- Defense Curl
+- Rollout
+
+Vulpix
+Level: 24
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Incinerate
+- Will-O-Wisp
+- Confuse Ray
+- Quick Attack
+
+Gligar
+Level: 24
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Acrobatics
+- Bulldoze
+- Knock Off
+- Sand Attack
+
+Rhyhorn
+Level: 24
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Stomp
+- Rock Tomb
+- Bulldoze
+- Scary Face
+
+Onix
+Level: 26
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rock Tomb
+- Dragon Breath
+- Bind
+- Stealth Rock

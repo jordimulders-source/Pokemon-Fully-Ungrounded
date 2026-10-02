@@ -15605,3 +15605,12 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.71] - Pc-infovak: tekst niet meer afgekapt
 - In het infovak van de pc (nature en ability, v0.8.x) viel de onderkant van de regels weg: elke tekstregel tekende zijn eigen achtergrond en wiste zo de onderkant van de regel erboven ("Jolly", "Compound Eyes"). De regels worden nu met een transparante achtergrond getekend (`PrintDisplayMonInfo` in `src/pokemon_storage_system.c`). In de emulator gecontroleerd.
+
+### [v.0.8.72] - Brock bij de Day Care, Oak op het lab-thema
+- **Brock** (`TRAINER_BROCK`) staat op Route 117 bij de Day Care (55,6), naast het hek (niet op de plek van de eieren-man). Beschikbaar zodra je in Mauville bent. Anime-Brock als persiflage: verliefd op de Day Care-dame, "My eyes are open. This is just my face.", niemand die hem aan zijn oor wegsleept. Teksten zijn placeholders.
+  - Team: Geodude, Vulpix, Gligar, Rhyhorn (lv 24) en ace Onix (lv 26, Stealth Rock/Bind).
+  - Kanto-gymleidermuziek (`MUS_RG_VS_GYM_LEADER`), gele mugshot-slide, klasse Leader.
+  - Graphics uit FRLG (`pret/pokefirered`): trainerfoto en overworld-sprite, met een eigen overworld-palet (`OBJ_EVENT_PAL_TAG_BROCK`).
+- **Prof. Oak** vecht nu op het lab-thema uit FRLG (`MUS_RG_OAK_LAB`).
+- **Birch in Verdanturf** kreeg nog niet zijn eigen gevechtsmuziek (de Macarena, zoals zijn andere gevechten); nu wel.
+- In de emulator getest (Brock: sprite, slide, gevecht).

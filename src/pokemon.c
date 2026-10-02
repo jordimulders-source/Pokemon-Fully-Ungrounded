@@ -6116,12 +6116,17 @@ u16 GetBattleBGM(void)
 
         // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
         if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED)
+         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BROCK))
             return MUS_RG_VS_GYM_LEADER;
+
+        // Project Grounded: Prof. Oak vecht op het lab-thema uit FRLG
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+         && TRAINER_BATTLE_PARAM.opponentA == TRAINER_PROF_OAK)
+            return MUS_RG_OAK_LAB;
 
         // Project Grounded: Prof. Birch vecht op de Macarena
         if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2))
+         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_VERDANTURF || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2))
             return MUS_GROUNDED_VS_BIRCH;
 
         switch (trainerClass)

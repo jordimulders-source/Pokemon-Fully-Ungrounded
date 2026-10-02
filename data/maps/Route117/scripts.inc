@@ -250,3 +250,48 @@ Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"
 	.string "“Let us raise your POKéMON.\p"
 	.string "”Don't ask where the EGGS come from.“$"
+
+@ ---------------------------------------------------------------- Project Grounded: Brock bij de Day Care
+Route117_EventScript_Brock::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_BROCK, Route117_EventScript_BrockPostBattle
+	msgbox Route117_Text_BrockIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BROCK, Route117_Text_BrockDefeat
+	msgbox Route117_Text_BrockPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route117_EventScript_BrockPostBattle::
+	msgbox Route117_Text_BrockPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route117_Text_BrockIntro:
+	.string "BROCK: Shh! Don't look at me.\n"
+	.string "Look at HER. The DAY CARE lady.\p"
+	.string "Such grace. Such patience.\n"
+	.string "She has raised four hundred eggs\l"
+	.string "and not one of them was mine.\p"
+	.string "…What? My eyes are open.\n"
+	.string "This is just my face.\p"
+	.string "I'm BROCK! Rock-solid gym leader\n"
+	.string "from Kanto, future greatest\l"
+	.string "POKéMON BREEDER, and professional\l"
+	.string "heartbreak survivor.\p"
+	.string "Nobody is here to drag me away\n"
+	.string "by the ear, so I'm staying.\p"
+	.string "And if you want to talk to the\n"
+	.string "lady of my dreams, you go through\l"
+	.string "my ROCK-HARD defense first!$"
+
+Route117_Text_BrockDefeat:
+	.string "BROCK: Crushed… like my heart\n"
+	.string "every single episode.$"
+
+Route117_Text_BrockPostBattle:
+	.string "BROCK: Fine. I'll go cook dinner\n"
+	.string "for everyone. Again.\p"
+	.string "Tell the DAY CARE lady I said hi.\n"
+	.string "No, wait. Tell her I said HELLO.\l"
+	.string "With a nice voice.$"

@@ -377,6 +377,7 @@ LilycoveCity_EventScript_BrendanBattleFrontier::
 	return
 
 LilycoveCity_EventScript_RivalFlyAway::
+	call LilycoveCity_EventScript_RivalEonTicket
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -706,3 +707,48 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "balls from the bushes…\p"
 	.string "That's how I caught my husband.$"
 
+@ Project Grounded: de rivaal heeft twee tickets voor Southern Island gekocht; jij kiest er een.
+@ Rood = Latias, blauw = Latios (de ander zwerft na de Hall of Fame rond, via VAR_ROAMER_POKEMON).
+LilycoveCity_EventScript_RivalEonTicket::
+	goto_if_set FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, Common_EventScript_NopReturn
+	msgbox LilycoveCity_Text_RivalTwoTickets, MSGBOX_DEFAULT
+	message LilycoveCity_Text_RivalPickTicket
+	waitmessage
+	dynmultichoice 19, 6, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, LilycoveCity_Text_RedTicket, LilycoveCity_Text_BlueTicket
+	call_if_eq VAR_RESULT, 0, LilycoveCity_EventScript_PickedRedTicket
+	call_if_ne VAR_RESULT, 0, LilycoveCity_EventScript_PickedBlueTicket
+	giveitem ITEM_EON_TICKET
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	msgbox LilycoveCity_Text_RivalTicketAfter, MSGBOX_DEFAULT
+	return
+
+LilycoveCity_EventScript_PickedRedTicket::
+	setvar VAR_ROAMER_POKEMON, 1  @ Southern Island: Latias
+	return
+
+LilycoveCity_EventScript_PickedBlueTicket::
+	setvar VAR_ROAMER_POKEMON, 0  @ Southern Island: Latios
+	return
+
+LilycoveCity_Text_RedTicket:
+	.string "RED TICKET$"
+
+LilycoveCity_Text_BlueTicket:
+	.string "BLUE TICKET$"
+
+LilycoveCity_Text_RivalTwoTickets:
+	.string "Oh, wait. I bought two ferry tickets to\n"
+	.string "SOUTHERN ISLAND. Rumor says a really\l"
+	.string "rare POKéMON lives there.\p"
+	.string "Then I remembered I get seasick on a\n"
+	.string "pedal boat. So... you can have one.$"
+
+LilycoveCity_Text_RivalPickTicket:
+	.string "Red one or blue one? Pick fast, before I\n"
+	.string "get sentimental.$"
+
+LilycoveCity_Text_RivalTicketAfter:
+	.string "The ferry leaves from the harbor here\n"
+	.string "in LILYCOVE.\p"
+	.string "If you meet that POKéMON, say hi from\n"
+	.string "me. From a safe distance. On dry land.$"

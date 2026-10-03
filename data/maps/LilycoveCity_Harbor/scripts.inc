@@ -9,7 +9,7 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
-	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_FerryUnavailable
+	call_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_CheckEonTicketBeforeGameClear
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
 	call LilycoveCity_Harbor_EventScript_GetOldSeaMapState
@@ -584,3 +584,10 @@ LilycoveCity_Harbor_Text_SailorFerryAvailable:
 	.string "The SHIPYARD must have worked extra\n"
 	.string "hard.\p"
 	.string "No more mall for me. Time to work!$"
+
+@ Project Grounded: met het Eon Ticket van je rivaal mag je ook voor de Hall of Fame al naar Southern Island
+LilycoveCity_Harbor_EventScript_CheckEonTicketBeforeGameClear::
+	goto_if_unset FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, LilycoveCity_Harbor_EventScript_FerryUnavailable
+	checkitem ITEM_EON_TICKET
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_Harbor_EventScript_FerryUnavailable
+	return

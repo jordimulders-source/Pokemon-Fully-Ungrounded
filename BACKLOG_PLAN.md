@@ -15,9 +15,9 @@ De eilanden uit Emerald staan al in de ROM en werken: **Faraway Island (Mew)**, 
 **Voorstel:** de tickets in de wereld verstoppen of laten verdienen. Dat is weinig werk en levert vier legendary-events op.
 
 **Antwoorden van Jordi (3 okt):**
-- Tickets voor **Mew (Old Sea Map)** en **Lugia/Ho-Oh (Mystic Ticket)** koop je in de **battle facility** (Battle Frontier, met BP).
-- **Latias/Latios:** na het rivaalgevecht in Lilycove zegt de rivaal dat hij/zij twee tickets heeft gekocht; je mag er één kiezen. **Rood = Latias, blauw = Latios.**
-- **Deoxys** krijgt een eigen event (zie Delta Episode), niet Birth Island.
+- **Gedaan (v0.8.97):** Old Sea Map (Mew), Mystic Ticket (Lugia/Ho-Oh) en Aurora Ticket (Deoxys, Birth Island blijft voorlopig) koop je voor 200 BP in de Battle Frontier.
+- **Gedaan (v0.8.97):** Latias/Latios via de rivaal in Lilycove (rood = Latias, blauw = Latios).
+- **Deoxys:** ruimte-event naar de backlog (Jordi denkt er nog over na); Birth Island blijft tot dan.
 
 **Oorspronkelijke vragen:**
 1. Wil je deze eilanden gebruiken? Of liever eigen events voor deze legendaries (bijv. Latios/Latias "cryptisch kiezen", zoals in je backlog)?

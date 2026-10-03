@@ -15759,3 +15759,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Zandstorm tussen de beurten:** nog korter (zand 16 frames vol in beeld i.p.v. 36, sneller in- en uitfaden, twee zandsikkels i.p.v. vier).
 - **Duiken** gaat even snel als surfen.
 - **Ashfrost:** placeholderteksten voor de visser (grijze slushie-vis), het sneeuwpopjongetje (zijn sneeuwpop is een slechte invloed), de wandelaar (je zit hier nooit vast in de sneeuw zoals in Sinnoh) en de vrouw (haar was is nooit meer wit). De oude vrouw bij het Regi-heiligdom houdt haar tekst.
+
+### [v.0.8.97] - Tickets voor de legendary-eilanden
+- **Battle Frontier, ruilbalie voor vasthoud-items:** drie nieuwe prijzen voor **200 BP** per stuk: **OLD SEA MAP** (Faraway Island, Mew), **MYSTICTICKET** (Navel Rock, Lugia en Ho-Oh) en **AURORATICKET** (Birth Island, Deoxys met de driehoekpuzzel). Kopen zet meteen de bootroute aan; heb je het ticket al, dan zegt de balie dat het één per passagier is.
+- **Latias of Latios:** na het rivaalgevecht in Lilycove vertelt je rivaal dat hij/zij twee tickets voor Southern Island heeft gekocht maar zeeziek wordt, en je mag kiezen: **rood ticket = Latias, blauw ticket = Latios** (Eon Ticket). De andere zwerft na de Hall of Fame rond door Hoenn (`VAR_ROAMER_POKEMON`).
+- De veerman in Lilycove neemt je met het Eon Ticket ook vóór de Hall of Fame mee naar Southern Island (de andere tickets zijn post-game, want je koopt ze in de Battle Frontier).
+- Getest in de emulator: de tickets staan met icoon en beschrijving in het BP-menu; na het rivaalgevecht krijg je de keuze en het Eon Ticket.
+- **Deoxys:** het ruimte-event (Delta Episode) staat in de backlog; het huidige Birth Island-event blijft voorlopig.

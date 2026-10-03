@@ -556,10 +556,10 @@ ICON_PAL.update({'chansey': 0, 'kecleon': 1})
 def node_icons3():
     return {
         'fight': item_icon('poke_ball').crop((3, 3, 21, 21)),
-        'elite': trim(load_gba('graphics/field_effects/pics/emotion_exclamation.png',
-                               'graphics/object_events/palettes/may.gbapal')),
+        'elite': trim(load_gba('graphics/object_events/pics/pokemon_old/substitute.png',
+                               'graphics/object_events/pics/pokemon_old/substitute.gbapal').crop((0, 0, 32, 32))),
         'rest': trim(mon_icon('chansey')),
-        'shop': trim(mon_icon('kecleon')),
+        'shop': oldale_emblems()[1],
         'event': trim(mon_icon('unown/question')),
     }
 

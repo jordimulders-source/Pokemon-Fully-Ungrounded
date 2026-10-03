@@ -4,6 +4,15 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 
 **Beta (v0.8.103):** volledige run speelbaar via debugmenu > Utilities > The Spire: draft, act-kaart, kamers (gevecht, elite, rust, winkel, event, baas), relics, 3 acts met evolutie, pauzeren in de save. Code: `src/spire.c` (gevecht), `src/spire_run.c` (run, kaartgeneratie, kamers, relics), `src/spire_map.c` (kaart), `src/spire_cards.c` (kaartenschermen). Nog niet: ingang in de wereld, codex, intenties met patronen voor bazen, golven, echte event-teksten. Eerder: rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
 
+## Kernprincipes (Jordi, okt 2026)
+- **Altijd een eerlijke winkans bij goed spel**, zoals in Slay the Spire: slordig spelen kost je meestal de run (tenzij je veel relic-geluk hebt), maar zelfs de zwaarste seed is te winnen. Daarom spelen pro's in Slay lange reeksen op A10/A20.
+- **Elk gevecht is een puzzel**: verkeerd aangepakt een obstakel, goed aangepakt makkelijk. Vijanden beginnen zwak en krijgen per act meer gimmicks en kracht; passief spelen wordt steeds meer afgestraft.
+- **Pokémon-kennis én Slay-kennis worden beloond** (types, abilities, look-alikes herkennen; patronen, tempo, kaartkeuzes).
+- **Creatief, maar altijd grounded**: eerst kijken of er al een Pokémon-mechanic voor is (Ritual = Rage, opladen = Quiver Dance/Machine Learning/Acupressure, start-buff = totem-boost, Gremlin Nob = Defiant). Zoveel mogelijk binnen de Pokémon-wereld.
+- **Altijd wiskundig onderbouwd**: elke keuze komt uit het rekenwerk (`SPIRE_BALANS.md`, gegenereerd door `tools/grounded/spire/spire_pool.py` en `encounters.py`). Breekt een voorstel de balans, dan meldt Claude dat meteen.
+- **Alles is lv 100** (speler en vijanden); level is nooit een knop.
+- Meer variatie dan Slay 1 en 2 mag: er zijn 1000+ Pokémon (al is een groot deel nutteloos voor deze modus).
+
 ## Concept
 - Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.
 - **3 acts**, per act verdiepingen met keuzes (gevecht, elite, winkel, rustplek, event) en een **baas**.
@@ -95,3 +104,19 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 - RUN in een gevecht = pauzeren (kamer opnieuw bij terugkomst). Tas is uit in de Spire.
 - Relics als run-brede effecten (8 stuks, zie `gSpireRelics`).
 
+## Uitwerking v0.8.104 (zie SPIRE_BALANS.md voor alle getallen)
+- **Rentals:** 315 lijnen toegelaten (rekenscript): eerste (niet-baby) vorm, evolueert na act 1 en na act 2 (Gible → Gabite → Garchomp); bij een vertakking (Eevee, Kirlia, Gloom, ...) kies je. Afgevallen: Magikarp, Caterpie, Ralts, Feebas e.d. (een act te zwak), Luvdisc en andere eenstaps-soorten die niet sterker zijn dan een gemiddelde act-2-vorm. Eenstaps-soorten die té sterk zijn (Heracross, Snorlax, Gholdengo, ...) komen alleen via een event. Tiers C/B/A/S = draft-zeldzaamheid 35/35/22/8%.
+- **Startkit:** STAB 40-50 per type (fysiek/speciaal naar de hoogste aanvalsstat over de run), basis-statusmove (gekozen met een verwachtingswaardemodel: Growl wint meestal, Tail Whip bij fysieke aanvallers) en een grounded move (Leech Seed, Sing, Thunder Wave, Moonlight, ...). Eén type = 3 moves (een vrije slot voor beloningen).
+- **Verboden moves:** wisselen/vluchten (Teleport, U-turn, Roar, ...), doet niets (Splash, Sweet Scent, ...), vaste/procentuele schade (Psywave, Super Fang, OHKO, Pain Split, ...), KO ongeacht HP (Perish Song, Destiny Bond), items stelen (Trick, Knock Off, ...), plus Jordi's lijst (Bubble, Pound, ...). Objectief slechtere moves (automatisch bepaald) komen niet als beloning of startmove.
+- **Biomes:** twee per act (Overgrown Grove/Sunken Docks, The Hive/Frostbite Hollow, Gilded Court/The Abyss), elk met zwakke (verdieping 1-2), gewone en elite-ontmoetingen die op Slay-vijanden lijken (Vine Shambler = Tangela, Fogmog = Amoonguss, Gremlin Nob = Primeape met Defiant en Rage, Lagavulin = slapende Avalugg, ...). Gevechtsachtergrond per biome; kaart in de kleur van het biome met een verloop naar karmozijn bovenin.
+- **Gimmicks met Pokémon-mechanics:** vaste patronen (de AI volgt een moveslot-volgorde; de intentie toont precies wat komt), abilities, vasthouditems, totem-boosts (elites zijn totems: +1 op hun aanvalsstat), beginveld (Grassy Terrain, Trick Room, ...), slapend beginnen.
+- **Bazen per act:** act 1 Venusaur & Blastoise, Totem Wishiwashi + Araquanid, Totem Alola-Marowak + Salazzle, Gigantamax Pikachu + Plusle; act 2 Mega Metagross, Darkrai, Mewtwo & Mew, Dialga & Palkia; act 3 Mega Mewtwo Y, Ultra Necrozma, Eternamax Eternatus, Mega Rayquaza, Terapagos (Terastal). Mega-, Ultra Burst-, Gmax- en Tera-vormen staan daarvoor aan in `include/config/species_enabled.h`.
+- **Rustplek = Snorlax-kamp:** Chansey (40% HP, alle PP, status weg) of Porygon2 (upgrade: aanval +30%, statusmove +1 stage en mist niet, max PP; "+" achter de naam).
+- **Winkel:** twee schappen (UP/DOWN): 2 moves + 1 relic; 2 vasthouditems + Move Relearner (altijd; 50¥ + 25¥ per gebruik; elke level-up-move van de huidige soort, ongeacht level).
+- **Items:** vasthouditems (één per Pokémon, gebruikt = weg) met Spire-regels: Life Orb 2%, Focus Sash op elke HP, Leftovers 1/32. **Relics** zijn trainerspullen voor het hele team: Berry Pouch, Amulet Coin, Guard Spec., Dire Hit, Muscle Band, Wide Lens, Soothe Bell, Sacred Ash.
+- **Events (16):** speciale Ditto, paddenstoelenpad (bessen of sporen = slapend het volgende gevecht in), Toxic Spikes (3 gevechten kans op gif), smerige Move Deleter, move tutor, Snorlax's Lunch (Big Fish), Gimmighoul's Chest (Golden Idol), Nurse on a Break (Cleric), Spinda's Wheel (Wheel of Change), A Fainted Ace (Dead Adventurer, kan een elitegevecht worden), Glitch in the Wall (Shining Light), Litwick's Candle (Bonfire Spirits), A Strong Stranger (sterke eenstaps-Pokémon die zich aansluit), Kecleon, Unown, Hiker. Elk event één keer per run.
+- **Toren:** in de Battle Frontier (noordkant, Frontier-stijl), lobby `BattleFrontier_SpireLobby`.
+
+## Nog open
+- Spire-codex, golven (derde vijand), dramatischer baas-intro, ja/nee-vraag bij de receptioniste, definitieve teksten (events, hints, lobby) door Jordi.
+- Balans bijstellen na Jordi's testfeedback (de rekensheets herberekenen alles).

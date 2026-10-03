@@ -20,11 +20,11 @@
 #define P_NEW_EVOS_IN_REGIONAL_DEX       TRUE
 
 // Battle gimmick specific Forms.
-#define P_MEGA_EVOLUTIONS                FALSE
+#define P_MEGA_EVOLUTIONS                TRUE  // Project Grounded: aan voor de bazen van The Spire (Mega Mewtwo Y, Metagross, Rayquaza)
 #define P_PRIMAL_REVERSIONS              FALSE // Groudon and Kyogre only.
-#define P_ULTRA_BURST_FORMS              FALSE // Ultra Necrozma only.
-#define P_GIGANTAMAX_FORMS               FALSE
-#define P_TERA_FORMS                     FALSE
+#define P_ULTRA_BURST_FORMS              TRUE  // Ultra Necrozma only. Project Grounded: baas in The Spire
+#define P_GIGANTAMAX_FORMS               TRUE  // Project Grounded: Gigantamax Pikachu, baas in The Spire
+#define P_TERA_FORMS                     TRUE  // Project Grounded: Terapagos (Terastal), baas in The Spire
 
 #define P_GEN_9_MEGA_EVOLUTIONS          P_MEGA_EVOLUTIONS // Mega Evolutions introduced in Z-A and its DLC
 

@@ -72,6 +72,16 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 
 **Focus Sash**: overleeft één keer een KO-klap, op elke HP (niet alleen vol); daarna weg. Waarde ≈ één klap (±10% HP) plus het redden van een run.
 
+## Overige getallen (en waarom)
+
+- **Levels:** alles in de Spire is lv 100 (Jordi). Level is dus nooit een knop; sterkte komt uit soort, moves, items, totem-boosts en HP-vermenigvuldiger.
+- **Heal na een gevecht 10%, rustplek (Chansey) 40%.** Een gewoon gevecht kost ±11% (zie Ontmoetingen), een elite ±24%, een baas ±55%. Per act: ±2 zwakke (2×7%) + ±2 gewone (2×11%) + 1-2 elites (24-48%) ≈ 60-85% verlies, tegenover 6×10% + 1-2 rustplekken (40-80%) ≈ 100-140% herstel. Goed spel komt met ±70-90% bij de baas aan; slordig spel (gimmicks negeren = 1,5-2× zoveel verlies) strandt. Met de oude 20% na elk gevecht was een gewoon gevecht altijd gratis.
+- **Upgrade (Porygon2, "+"):** aanval +30% kracht; statusmove één stage extra en mist nooit; altijd max PP. Rekensom: de hoofdaanval wordt ±60% van de beurten gebruikt, dus ±18% meer schade, gevechten ±15% korter, ±15% minder schade incasseren: ±1,6% HP per gewoon gevecht, 3,6% per elite, 8% per baas. Over de ±15 gevechten die na de eerste rustplek nog komen is dat ±40% HP: precies even veel als rusten (40%). Vroeg in de run is upgraden dus beter, laat in de run rusten: een echte keuze.
+- **Geld:** gevecht 15-25¥, elite 35-45¥, baas 80¥ (Amulet Coin +50%): ±280¥ per act. Winkel: move 45/70/120¥ (common/uncommon/rare), vasthouditem 50/85/140¥, relic 120¥, Move Relearner 50¥ + 25¥ per eerder gebruik (zoals card removal in Slay: 75 + 25n). Eén winkelbezoek koopt dus 2-4 dingen.
+- **Vasthouditems:** één per Pokémon, zoals in de echte games; gebruikt (Focus Sash, bes) = weg voor de rest van de run. Spire-afwijkingen: Life Orb 2% terugslag, Focus Sash op elke HP, Leftovers 1/32 (zie boven). Nutteloos en dus niet in de pool: Red Card, Eject Button/Pack, Shed Shell, Smoke Ball, Exp. Share, Lucky Egg, Everstone, evolutie-items (Up-Grade, ...), Destiny Knot, Float Stone, Iron Ball, Lagging Tail, Sticky Barb, Ring Target, Full Incense, Macho Brace, Power-items, Cleanse Tag.
+- **Draft-zeldzaamheid:** C 35%, B 35%, A 22%, S 8% (zoals kaartzeldzaamheid in Slay: de sterkste opties zijn zeldzaam).
+- **Beloningskaarten:** kaart 1 past bij het type van je eerste Pokémon, kaart 2 bij je tweede, kaart 3 is vrij (zoals klassekaarten in Slay). Zeldzaamheid 60/30/10%.
+
 ## Rentals
 
 ### Tier S (48)

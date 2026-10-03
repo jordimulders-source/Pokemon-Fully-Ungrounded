@@ -514,3 +514,292 @@ def relic_list():
 if __name__ == '__main__' and len(sys.argv) > 2 and sys.argv[2] == 'v2':
     for name, im in (('reward', reward_screen()), ('map2', map_screen2()), ('legend2', legend2()), ('relics', relic_list())):
         im.resize((im.width * 4, im.height * 4), Image.NEAREST).save(os.path.join(OUT, name + '.png'))
+
+
+# ---------------------------------------------------------------------------
+# Versie 3: rustige PokéNav-achtergrond, Pokémon-icoontjes voor de kamers.
+
+def gbapal(path):
+    import struct
+    b = open(path, 'rb').read()
+    out = []
+    for i in range(0, len(b), 2):
+        v = struct.unpack('<H', b[i:i + 2])[0]
+        out.append(((v & 31) * 255 // 31, ((v >> 5) & 31) * 255 // 31, ((v >> 10) & 31) * 255 // 31))
+    return out
+
+
+def load_gba(png, pal):
+    im = Image.open(os.path.join(ROOT, png))
+    p = gbapal(os.path.join(ROOT, pal))[:16]
+    im.putpalette([c for rgb in p for c in rgb] + [0] * (768 - 3 * len(p)))
+    return load_pal_img(im)
+
+
+def load_pal_img(im):
+    rgba = im.convert('RGBA')
+    px, src = rgba.load(), im.load()
+    for j in range(im.height):
+        for i in range(im.width):
+            if src[i, j] == 0:
+                px[i, j] = (0, 0, 0, 0)
+    return rgba
+
+
+def trim(im):
+    return im.crop(im.getbbox())
+
+
+ICON_PAL.update({'chansey': 0, 'kecleon': 1})
+
+
+def node_icons3():
+    return {
+        'fight': item_icon('poke_ball').crop((3, 3, 21, 21)),
+        'elite': trim(load_gba('graphics/field_effects/pics/emotion_exclamation.png',
+                               'graphics/object_events/palettes/may.gbapal')),
+        'rest': trim(mon_icon('chansey')),
+        'shop': trim(mon_icon('kecleon')),
+        'event': trim(mon_icon('unown/question')),
+    }
+
+
+def map_screen3():
+    img = Image.new('RGB', (W, H))
+    d = ImageDraw.Draw(img)
+    icons = node_icons3()
+    MW = 168
+    # PokéNav-stippenachtergrond
+    dots = load_gba('graphics/pokenav/bg_dots.png', 'graphics/pokenav/bg_dots.gbapal').convert('RGB')
+    for y in range(0, H, 8):
+        for x in range(0, MW, 16):
+            img.paste(dots, (x, y))
+
+    layout = [
+        [('fight', 34), ('fight', 84), ('event', 134)],
+        [('fight', 22), ('shop', 64), ('fight', 106), ('fight', 148)],
+        [('event', 34), ('fight', 84), ('elite', 134)],
+        [('fight', 22), ('rest', 64), ('fight', 106)],
+        [('elite', 34), ('event', 84), ('fight', 134)],
+        [('shop', 34), ('fight', 84), ('elite', 134)],
+        [('rest', 56), ('rest', 112)],
+    ]
+    edges = {0: [(0, 0), (0, 1), (1, 1), (1, 2), (2, 2), (2, 3)],
+             1: [(0, 0), (1, 0), (1, 1), (2, 1), (2, 2), (3, 2)],
+             2: [(0, 0), (0, 1), (1, 1), (2, 2)],
+             3: [(0, 0), (1, 1), (2, 1), (2, 2)],
+             4: [(0, 0), (0, 1), (1, 1), (2, 1), (2, 2)],
+             5: [(0, 0), (1, 0), (1, 1), (2, 1)]}
+    ys = [148 - 19 * f for f in range(7)]
+    BOSS = (84, 14)
+    path = [(0, 1), (1, 1), (2, 1)]
+    cur = path[-1]
+    nexts = [(3, 1), (3, 2)]
+    ROUTE, ROUTE_EDGE = (248, 208, 96), (176, 128, 48)
+    DONE, DONE_EDGE = (240, 88, 64), (152, 40, 32)
+
+    def pos(f, i):
+        return layout[f][i][1], ys[f]
+
+    def route(x0, y0, x1, y1, col, edge):
+        # Town Map-route: recht omhoog, opzij, omhoog; 3 px breed met donkere rand
+        ym = (y0 + y1) // 2
+        segs = [(x0, ym, x0, y0), (min(x0, x1), ym, max(x0, x1), ym), (x1, y1, x1, ym)]
+        for (a, b, c, e) in segs:
+            d.rectangle((min(a, c) - 2, min(b, e) - 2, max(a, c) + 2, max(b, e) + 2), fill=edge)
+        for (a, b, c, e) in segs:
+            d.rectangle((min(a, c) - 1, min(b, e) - 1, max(a, c) + 1, max(b, e) + 1), fill=col)
+
+    for done in (False, True):
+        for f, es in edges.items():
+            for a, b in es:
+                taken = (f, a) in path and (f + 1, b) in path
+                if taken == done:
+                    route(*pos(f, a), *pos(f + 1, b), DONE if taken else ROUTE, DONE_EDGE if taken else ROUTE_EDGE)
+        if not done:
+            for _, x in layout[6]:
+                route(x, ys[6], BOSS[0], BOSS[1] + 6, ROUTE, ROUTE_EDGE)
+
+    # baas
+    boss = mon_icon('tyranitar')
+    d.ellipse((BOSS[0] - 15, BOSS[1] - 7, BOSS[0] + 15, BOSS[1] + 9), fill=(200, 64, 56), outline=(120, 32, 32))
+    img.paste(boss, (BOSS[0] - 16, BOSS[1] - 20), boss)
+
+    for f, row in enumerate(layout):
+        for i, (kind, x) in enumerate(row):
+            ic = icons[kind]
+            if (f < cur[0] or (f, i) == cur) and (f, i) not in path:
+                ic = ic.copy()
+                ic.putalpha(ic.getchannel('A').point(lambda a: a * 2 // 5))
+            paste_c(img, ic, x, ys[f])
+
+    head = load_pal(os.path.join(ROOT, 'graphics/pokenav/region_map/brendan_icon.png'))
+    cx, cy = pos(*cur)
+    img.paste(head, (cx - 19, cy - 9), head)
+    x, y = pos(*nexts[1])
+    for (ox, oy, sx, sy) in ((-12, -12, 1, 1), (11, -12, -1, 1), (-12, 11, 1, -1), (11, 11, -1, -1)):
+        for t in range(2):
+            d.line((x + ox, y + oy + t * sy, x + ox + 5 * sx, y + oy + t * sy), fill=(248, 72, 40))
+            d.line((x + ox + t * sx, y + oy, x + ox + t * sx, y + oy + 5 * sy), fill=(248, 72, 40))
+    d.rectangle((0, 0, MW - 1, H - 1), outline=(40, 56, 96))
+
+    frame(img, 168, 0, 72, 114)
+    F.text(img, 174, 3, 'ACT 1')
+    F.text(img, 174, 16, 'Floor 4/7', name='small')
+    for k, (sp, hp) in enumerate([('gardevoir', 0.64), ('swampert', 0.88)]):
+        y = 30 + k * 24
+        ic = mon_icon(sp).crop((4, 6, 28, 30))
+        img.paste(ic, (170, y), ic)
+        F.text(img, 196, y, '%d%%' % (hp * 100), name='small')
+        hpbar(img, 196, y + 15, 36, hp)
+    F.text(img, 174, 78, 'BP 14', name='small')
+    for k, it in enumerate(['leftovers', 'quick_claw']):
+        ii = item_icon(it)
+        img.paste(ii, (170 + k * 22, 88), ii)
+    F.text(img, 216, 94, '+3', name='small')
+    frame(img, 168, 114, 72, 46)
+    paste_c(img, icons['fight'], 182, 126)
+    F.text(img, 193, 118, 'Battle', name='small')
+    F.text(img, 174, 131, '2 wild', name='small')
+    F.text(img, 174, 143, 'Win: new move', name='small')
+    return img
+
+
+def legend3():
+    icons = node_icons3()
+    img = Image.new('RGB', (240, 28), (248, 248, 248))
+    x = 4
+    for kind, lab in [('fight', 'Battle'), ('elite', 'Elite'), ('rest', 'Rest'), ('shop', 'Shop'), ('event', 'Event')]:
+        paste_c(img, icons[kind], x + 10, 14)
+        x = F.text(img, x + 21, 6, lab, name='small') + 6
+    return img
+
+
+if __name__ == '__main__' and len(sys.argv) > 2 and sys.argv[2] == 'v3':
+    for name, im in (('map3', map_screen3()), ('legend3', legend3())):
+        im.resize((im.width * 4, im.height * 4), Image.NEAREST).save(os.path.join(OUT, name + '.png'))
+
+
+# ---------------------------------------------------------------------------
+# Versie 4: kaart scrolt (meer lucht), schuine routes met rand.
+
+def act_canvas4():
+    MW, GAP = 168, 30
+    layout = [
+        [('fight', 34), ('fight', 84), ('event', 134)],
+        [('fight', 22), ('shop', 64), ('fight', 106), ('fight', 148)],
+        [('event', 34), ('fight', 84), ('elite', 134)],
+        [('fight', 22), ('rest', 64), ('fight', 106)],
+        [('elite', 34), ('event', 84), ('fight', 134)],
+        [('shop', 34), ('fight', 84), ('elite', 134)],
+        [('rest', 56), ('rest', 112)],
+    ]
+    edges = {0: [(0, 0), (0, 1), (1, 1), (1, 2), (2, 2), (2, 3)],
+             1: [(0, 0), (1, 0), (1, 1), (2, 1), (2, 2), (3, 2)],
+             2: [(0, 0), (0, 1), (1, 1), (2, 2)],
+             3: [(0, 0), (1, 1), (2, 1), (2, 2)],
+             4: [(0, 0), (0, 1), (1, 1), (2, 1), (2, 2)],
+             5: [(0, 0), (1, 0), (1, 1), (2, 1)]}
+    HT = 40 + GAP * 7 + 6
+    img = Image.new('RGB', (MW, HT))
+    d = ImageDraw.Draw(img)
+    icons = node_icons3()
+    dots = load_gba('graphics/pokenav/bg_dots.png', 'graphics/pokenav/bg_dots.gbapal').convert('RGB')
+    for y in range(0, HT, 8):
+        for x in range(0, MW, 16):
+            img.paste(dots, (x, y))
+    ys = [HT - 18 - GAP * f for f in range(7)]
+    BOSS = (84, 22)
+    path = [(0, 1), (1, 1), (2, 1)]
+    cur = path[-1]
+    nexts = [(3, 1), (3, 2)]
+
+    def pos(f, i):
+        return layout[f][i][1], ys[f]
+
+    def line(x0, y0, x1, y1, col, edge):
+        for w, c in ((3, edge), (1, col)):
+            n = max(abs(x1 - x0), abs(y1 - y0))
+            for s in range(n + 1):
+                x = x0 + (x1 - x0) * s / n
+                y = y0 + (y1 - y0) * s / n
+                d.rectangle((round(x) - w // 2 - 1, round(y) - w // 2 - 1, round(x) + w // 2 + 1, round(y) + w // 2 + 1) if w == 3
+                            else (round(x) - 1, round(y) - 1, round(x) + 1, round(y) + 1) if False else
+                            (round(x) - 1, round(y) - 1, round(x), round(y)), fill=c)
+
+    ROUTE, ROUTE_EDGE = (248, 208, 96), (168, 120, 48)
+    DONE, DONE_EDGE = (240, 88, 64), (144, 40, 32)
+    for done in (False, True):
+        for f, es in edges.items():
+            for a, b in es:
+                taken = (f, a) in path and (f + 1, b) in path
+                if taken == done:
+                    line(*pos(f, a), *pos(f + 1, b), DONE if taken else ROUTE, DONE_EDGE if taken else ROUTE_EDGE)
+        if not done:
+            for _, x in layout[6]:
+                line(x, ys[6], BOSS[0], BOSS[1] + 6, ROUTE, ROUTE_EDGE)
+
+    boss = mon_icon('tyranitar')
+    d.ellipse((BOSS[0] - 17, BOSS[1] - 8, BOSS[0] + 17, BOSS[1] + 10), fill=(200, 64, 56), outline=(120, 32, 32))
+    img.paste(boss, (BOSS[0] - 16, BOSS[1] - 22), boss)
+    F.text(img, BOSS[0] + 20, BOSS[1] - 6, 'BOSS', fg=(168, 40, 40), shadow=(248, 248, 248), name='small')
+    for f, row in enumerate(layout):
+        for i, (kind, x) in enumerate(row):
+            ic = icons[kind]
+            if (f < cur[0] or (f, i) == cur) and (f, i) not in path:
+                ic = ic.copy()
+                ic.putalpha(ic.getchannel('A').point(lambda a: a * 2 // 5))
+            paste_c(img, ic, x, ys[f])
+    head = load_pal(os.path.join(ROOT, 'graphics/pokenav/region_map/brendan_icon.png'))
+    cx, cy = pos(*cur)
+    img.paste(head, (cx - 20, cy - 9), head)
+    x, y = pos(*nexts[1])
+    for (ox, oy, sx, sy) in ((-12, -12, 1, 1), (11, -12, -1, 1), (-12, 11, 1, -1), (11, 11, -1, -1)):
+        for t in range(2):
+            d.line((x + ox, y + oy + t * sy, x + ox + 5 * sx, y + oy + t * sy), fill=(248, 72, 40))
+            d.line((x + ox + t * sx, y + oy, x + ox + t * sx, y + oy + 5 * sy), fill=(248, 72, 40))
+    return img, ys[3]
+
+
+def map_screen4():
+    canvas, focus_y = act_canvas4()
+    top = max(0, min(canvas.height - H, focus_y - 90))
+    img = Image.new('RGB', (W, H))
+    img.paste(canvas.crop((0, top, 168, top + H)), (0, 0))
+    d = ImageDraw.Draw(img)
+    # scrollpijlen uit de PokéNav (lijstpijlen)
+    arrows = load_gba('graphics/pokenav/list_arrows.png', 'graphics/pokenav/list_arrows.gbapal')
+    up = arrows.crop((0, 0, 16, 8)) if arrows.height >= 8 else arrows
+    if top > 0:
+        F.text(img, 80, -2, '↑', fg=(248, 72, 40), shadow=(248, 248, 248))
+    if top + H < canvas.height:
+        F.text(img, 80, H - 15, '↓', fg=(248, 72, 40), shadow=(248, 248, 248))
+    d.rectangle((0, 0, 167, H - 1), outline=(40, 56, 96))
+    icons = node_icons3()
+    frame(img, 168, 0, 72, 114)
+    F.text(img, 174, 3, 'ACT 1')
+    F.text(img, 174, 16, 'Floor 4/7', name='small')
+    for k, (sp, hp) in enumerate([('gardevoir', 0.64), ('swampert', 0.88)]):
+        y = 30 + k * 24
+        ic = mon_icon(sp).crop((4, 6, 28, 30))
+        img.paste(ic, (170, y), ic)
+        F.text(img, 196, y, '%d%%' % (hp * 100), name='small')
+        hpbar(img, 196, y + 15, 36, hp)
+    F.text(img, 174, 78, 'BP 14', name='small')
+    for k, it in enumerate(['leftovers', 'quick_claw']):
+        ii = item_icon(it)
+        img.paste(ii, (170 + k * 22, 88), ii)
+    F.text(img, 216, 94, '+3', name='small')
+    frame(img, 168, 114, 72, 46)
+    paste_c(img, icons['fight'], 182, 126)
+    F.text(img, 193, 118, 'Battle', name='small')
+    F.text(img, 174, 131, '2 wild', name='small')
+    F.text(img, 174, 143, 'Win: new move', name='small')
+    return img, canvas
+
+
+if __name__ == '__main__' and len(sys.argv) > 2 and sys.argv[2] == 'v4':
+    scr, full = map_screen4()
+    scr.resize((W * 4, H * 4), Image.NEAREST).save(os.path.join(OUT, 'map4.png'))
+    full.resize((full.width * 3, full.height * 3), Image.NEAREST).save(os.path.join(OUT, 'map4_full.png'))
+    l = legend3(); l.resize((l.width * 4, l.height * 4), Image.NEAREST).save(os.path.join(OUT, 'legend3.png'))

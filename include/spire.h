@@ -2,6 +2,10 @@
 #define GUARD_SPIRE_H
 
 // Project Grounded: The Spire (roguelike-faciliteit, zie SPIRE_DESIGN.md)
+//   src/spire.c         gevechtsmechaniek (×HP, DEFEND/blok, intenties)
+//   src/spire_run.c     run-state (SaveBlock2), kaartgeneratie, kamers, relics, acts
+//   src/spire_map.c     act-kaart
+//   src/spire_cards.c   kaartenscherm (beloning, draft, rust, winkel, events, berichten)
 
 #define B_ACTION_SPIRE_DEFEND   22
 
@@ -18,12 +22,95 @@
 #define SPIRE_BLOCK_PERCENT     15
 #define SPIRE_BLOCK_SPLIT       60
 
+#define SPIRE_SAVE_MAGIC        0x5A
+#define SPIRE_ACTS              3
+#define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
+#define SPIRE_MAX_NODES         4   // kamers per verdieping
+#define SPIRE_HEAL_AFTER        20  // procent HP na een gewonnen gevecht
+#define SPIRE_REST_HEAL         50  // procent HP op een rustplek
+
+enum SpireRoom
+{
+    SPIRE_ROOM_NONE,
+    SPIRE_ROOM_FIGHT,
+    SPIRE_ROOM_ELITE,
+    SPIRE_ROOM_REST,
+    SPIRE_ROOM_SHOP,
+    SPIRE_ROOM_EVENT,
+    SPIRE_ROOM_BOSS,
+};
+
+enum SpireRelic
+{
+    SPIRE_RELIC_LEFTOVERS,     // +10% extra heal na elk gevecht
+    SPIRE_RELIC_AMULET_COIN,   // +50% geld
+    SPIRE_RELIC_KINGS_ROCK,    // +30% blok bij DEFEND
+    SPIRE_RELIC_SCOPE_LENS,    // eigen crits +1 stage
+    SPIRE_RELIC_MUSCLE_BAND,   // eigen schade +10%
+    SPIRE_RELIC_WIDE_LENS,     // eigen spread-moves zonder 25% verlies
+    SPIRE_RELIC_SOOTHE_BELL,   // rustplek heelt 80% i.p.v. 50%
+    SPIRE_RELIC_FOCUS_SASH,    // overleef een klap op volle HP met 1 HP
+    SPIRE_RELIC_COUNT,
+};
+
+// Lopende run, in gSaveBlock2Ptr->spireData: een gepauzeerde run overleeft opslaan en uitzetten.
+struct SpireSave
+{
+    u8 magic;           // SPIRE_SAVE_MAGIC = er loopt een run
+    u8 act;             // 1-3
+    u8 floor;           // aantal afgeronde verdiepingen in deze act (SPIRE_FLOORS = baas aan de beurt)
+    u8 node;            // gekozen kamer op die verdieping
+    u32 seed;           // seed van de kaart van deze act
+    u16 path;           // gekozen kamers per verdieping (2 bits per verdieping)
+    u16 bp;             // BP van deze run (gaan naar je totaal als de run eindigt)
+    u16 gold;           // geld voor de winkel
+    u8 inRoom:1;        // kamer gestart maar nog niet klaar (gevecht gepauzeerd)
+    u8 unused:7;
+    u8 runsWon;
+    u32 relics;         // bitveld met relics
+    struct Pokemon mons[2];
+};
+
+#define SPIRE_SAVE (*(struct SpireSave *)gSaveBlock2Ptr->spireData)
+
+struct SpireRelicInfo
+{
+    u16 item;           // icoon
+    const u8 *name;
+    const u8 *desc;
+};
+
+struct SpireMapNode
+{
+    u8 type;            // enum SpireRoom
+    u8 x;               // pixelpositie op de kaart
+    u8 links;           // bitmasker naar kamers op de volgende verdieping
+};
+
+struct SpireActMap
+{
+    u8 count[SPIRE_FLOORS];
+    struct SpireMapNode nodes[SPIRE_FLOORS][SPIRE_MAX_NODES];
+};
+
+// uitkomst van de laatste kamer, voor de kop van het beloningsscherm
+struct SpireResult
+{
+    u16 bp;
+    u16 gold;
+    u8 healPercent;
+};
+
 extern bool8 gSpireBattle;
 extern u8 gSpireAct;
 extern u16 gSpireBlock[MAX_BATTLERS_COUNT];
 extern u16 gSpireBlockAbsorbed[MAX_BATTLERS_COUNT];
 extern u8 gSpireDefendTarget[MAX_BATTLERS_COUNT];
+extern u16 gSpireEnemyHp[PARTY_SIZE];
+extern struct SpireResult gSpireResult;
+extern const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT];
 
+// spire.c: gevecht
 void Spire_OnEnemyPartyCreated(void);
 void Spire_ClearBlocks(void);
 u32 Spire_BlockAmount(u32 battler);
@@ -31,13 +118,49 @@ u32 Spire_BlockPercent(u32 amount, u32 target);
 void Spire_AbsorbDamage(u32 battlerDef);
 void HandleAction_SpireDefend(void);
 bool32 Spire_TryPrintBlockAbsorbed(void);
-void Spire_StartPrototypeBattle(void);
-void Spire_ResetRun(void);
-struct Pokemon *Spire_GetRunMon(u32 i);
-u32 Spire_GetRunBP(void);
-u32 Spire_GetRunFloor(void);
-void Spire_OpenReward(MainCallback callback, u32 bpGained);
-void Spire_EndBattle(void);
 u8 *Spire_GetIntentText(u8 *dst, u32 battler);
+void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent);
+void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves);
+
+// spire_run.c: run
+bool32 Spire_RunActive(void);
+struct Pokemon *Spire_GetRunMon(u32 i);
+bool32 Spire_HasRelic(u32 relic);
+void Spire_AddRelic(u32 relic);
+u32 Spire_RandomNewRelic(u32 salt);
+void Spire_GenerateMap(struct SpireActMap *map, u32 seed);
+bool32 Spire_IsReachable(const struct SpireActMap *map, u32 floor, u32 node);
+void Spire_EnterRoom(u32 floor, u32 node);
+void Spire_RoomFinished(void);
+void Spire_SuspendRun(void);
+void Spire_GiveUpRun(void);
+void Spire_HealRun(u32 percent);
+void Spire_RestorePP(void);
+bool32 Spire_CanEvolve(u32 i);
+void Spire_Evolve(u32 i);
+void Spire_SetRental(u32 i, u16 species);
+u16 Spire_RandomRental(u32 salt);
+u16 Spire_RandomMove(u32 rarity, u32 salt);
+void Spire_ReturnToField(void);
+u16 Spire_GetBossSpecies(void);
+void Spire_Enter(void);
+void Spire_ResetRun(void);
+
+// spire_map.c
+void Spire_OpenMap(void);
+
+// spire_cards.c
+enum SpireCardMode
+{
+    SPIRE_CARDS_MOVES,      // beloning: kies een move en leer hem aan
+    SPIRE_CARDS_RELICS,     // beloning: kies een relic
+    SPIRE_CARDS_DRAFT,      // start van een run: kies een rental (twee keer)
+    SPIRE_CARDS_REST,       // rustplek
+    SPIRE_CARDS_SHOP,       // winkel
+    SPIRE_CARDS_EVENT,      // event
+    SPIRE_CARDS_MESSAGE,    // alleen een bericht (einde run, nieuwe act)
+};
+void Spire_OpenCards(u32 mode, void (*onDone)(void));
+void Spire_OpenMessage(const u8 *title, const u8 *text, void (*onDone)(void));
 
 #endif // GUARD_SPIRE_H

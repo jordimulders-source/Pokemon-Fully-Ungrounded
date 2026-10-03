@@ -4088,6 +4088,9 @@ u8 IsRunningFromBattleImpossible(u32 battler)
     enum HoldEffect holdEffect;
     u32 i;
 
+    if (gSpireBattle) // Project Grounded: RUN = pauzeren in The Spire
+        return BATTLE_RUN_SUCCESS;
+
     if (FlagGet(B_FLAG_NO_RUNNING))
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
@@ -4321,7 +4324,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag())
+                    if ((ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag()) || gSpireBattle) // Project Grounded: geen tas in The Spire
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

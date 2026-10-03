@@ -15800,3 +15800,21 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Run (prototype):** je twee rentals blijven bewaard tussen gevechten, met hun HP, PP en nieuwe moves. Na een gewonnen gevecht +20% HP; wie flauwviel doet het volgende gevecht mee met 1 HP. Verdieping 1-3 zijn gewone gevechten tegen twee willekeurige wilde Pokémon (lv 48, act-1-pool uit het rekenscript), verdieping 4 is de baas (Tyranitar + Whimsicott). Verlies je of win je van de baas, dan is de run voorbij. Nog niet in de save (alleen geheugen).
 - Debugmenu > Utilities: **Spire prototype** start het volgende gevecht van de run, **Spire: reset run** begint opnieuw.
 - Getest in de emulator: gevecht gewonnen → beloningsscherm → move geleerd → terug naar de overworld → volgend gevecht met dezelfde rentals (PP en moves bewaard).
+
+### [v.0.8.103] - The Spire: beta
+De roguelike-faciliteit is speelbaar van begin tot eind (voorlopig via debugmenu > Utilities > **The Spire**).
+- **Run in de save** (`SaveBlock2`, 288 bytes): act, verdieping, gekozen pad, kaart-seed, BP, geld, relics en je twee rentals (met HP, PP en moves). Pauzeer je, dan staat de run er na opslaan en uitzetten nog. **The Spire** hervat waar je was; **Spire: reset run** wist hem.
+- **Draft:** je kiest twee keer één van drie rentals (middelste evolutiestap, lv 50). Elke kaart toont icoon, types en base stats. Startermoves: STAB uit de common-pool + Protect, aangevuld met eigen level-up-moves.
+- **Act-kaart** (`src/spire_map.c`), zoals de goedgekeurde mockup: PokéNav-stippen, gele routes met rand (zonder kruisingen), gelopen pad rood, kamers als icoontjes (Poké Ball, Substitute met geel aura, Chansey, Mart-embleem, Unown-?), baas bovenaan op een rood plateau, Brendan- of May-hoofdje op je plek, rode hoekhaken als cursor. 7 verdiepingen + baas; de kaart scrolt (omhoog/omlaag). Rechts: act, verdieping, team met HP, BP, geld en relics; onderaan wat de gekozen kamer inhoudt. START of B: pauzeren / opgeven.
+- **Kamers:**
+  - Gevecht: twee wilde Pokémon uit de pool van die act (lv 48/50/52). Winst: +20% HP, geld, BP, en een keuze uit drie moves.
+  - Elite: een sterke Pokémon (×2,5 HP) met een partner. Winst: eerst een keuze uit drie relics, dan moves.
+  - Baas: per act één van drie (act 1 Milotic/Aggron/Flygon, act 2 Salamence/Metagross/Tyranitar, act 3 Groudon/Kyogre/Rayquaza; ×4,5 HP) met een support-lakei. Winst: relic + moves + volgende act.
+  - Rust (Pokémon Center): helen (50%, alle PP, status weg) of een rental laten evolueren.
+  - Winkel (Poké Mart): een move (40/70¥), een relic (100¥) of een Potion voor het team (30¥). Meerdere dingen kopen kan; B = weg.
+  - Event: vier placeholders met drie keuzes (Kecleon-gratis-proeverij, Unown-scheldwoord, Ditto-schatkist, behulpzame Hiker).
+- **Relics:** Leftovers (+10% heal na gevecht), Amulet Coin (+50% geld), King's Rock (+30% blok), Scope Lens (+1 crit-stage), Muscle Band (+10% schade), Wide Lens (spread-moves zonder verlies), Soothe Bell (rust heelt 80%), Focus Sash (op volle HP een KO-klap overleven).
+- **Acts:** na de baas van act 1 en 2 evolueren je rentals (als dat kan), heal 50% en alle PP, nieuwe kaart. Na act 3 is de run gewonnen. BP van de run gaan altijd naar je BP-totaal (ook bij verlies). BP: gevecht 1, elite 3, baas 10, × act.
+- **In gevechten:** geen tas; RUN = pauzeren (lukt altijd; je begint die kamer opnieuw als je terugkomt). Verlies = run voorbij.
+- **Kaartenscherm** (`src/spire_cards.c`, vervangt `spire_reward.c`) weer in de stijl van de mockup: paarse torenstenen, rode rand om de gekozen kaart, kleurige kop (BP blauw, geld goud, HP groen), PC-hand als cursor. Fix: het tekenen van de rand wiste de kaartinhoud, waardoor tekst soms wegviel.
+- Graphics: `tools/grounded/spire/spire_gfx.py` maakt de kaarticoontjes in `graphics/grounded/spire/` uit dezelfde bronnen als de mockup.

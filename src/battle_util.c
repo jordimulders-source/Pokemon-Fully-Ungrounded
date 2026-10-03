@@ -697,6 +697,12 @@ bool32 TryRunFromBattle(u32 battler)
     u8 pyramidMultiplier;
     u8 speedVar;
 
+    if (gSpireBattle) // Project Grounded: in The Spire is RUN = pauzeren, lukt altijd
+    {
+        gCurrentTurnActionNumber = gBattlersCount;
+        gBattleOutcome = B_OUTCOME_RAN;
+        return TRUE;
+    }
     // If this flag is set, running will never be successful under any circumstances.
     if (FlagGet(B_FLAG_NO_RUNNING))
         return effect;
@@ -8248,6 +8254,8 @@ static inline s32 CalculateBaseDamage(u32 power, u32 userFinalAttack, u32 level,
 
 static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)
 {
+    if (gSpireBattle && IsOnPlayerSide(ctx->battlerAtk) && Spire_HasRelic(SPIRE_RELIC_WIDE_LENS))
+        return UQ_4_12(1.0); // Project Grounded: The Spire, relic Wide Lens
     if (IsDoubleBattle())
 	{
         if (GetMoveTargetCount(ctx) == 2)
@@ -8577,6 +8585,8 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     u32 unmodifiedDefenderSpeed = gBattleMons[ctx->battlerDef].speed;
 
     //TODO: Behemoth Blade, Behemoth Bash, Dynamax Cannon (Dynamax)
+    if (gSpireBattle && IsOnPlayerSide(ctx->battlerAtk) && Spire_HasRelic(SPIRE_RELIC_MUSCLE_BAND))
+        DAMAGE_MULTIPLY_MODIFIER(UQ_4_12(1.1)); // Project Grounded: The Spire, relic Muscle Band
     DAMAGE_MULTIPLY_MODIFIER(GetMinimizeModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetUndergroundModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetDiveModifier(ctx->move, ctx->battlerDef));

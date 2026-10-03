@@ -596,7 +596,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
-    { COMPOUND_STRING("Spire prototype"),   DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
+    { COMPOUND_STRING("The Spire"),         DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
     { COMPOUND_STRING("Spire: reset run"),  DebugAction_ExecuteScript, Debug_EventScript_SpireResetRun },
     { NULL }
 };

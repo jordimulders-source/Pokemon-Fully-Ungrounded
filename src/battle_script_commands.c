@@ -1665,7 +1665,8 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
-                    + gBattleMons[battlerAtk].volatiles.bonusCritStages;
+                    + gBattleMons[battlerAtk].volatiles.bonusCritStages
+                    + ((gSpireBattle && IsOnPlayerSide(battlerAtk) && Spire_HasRelic(SPIRE_RELIC_SCOPE_LENS)) ? 1 : 0); // Project Grounded
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
@@ -1964,6 +1965,11 @@ static void Cmd_adjustdamage(void)
             RecordItemEffectBattle(battlerDef, holdEffect);
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
+        }
+        else if (gSpireBattle && IsOnPlayerSide(battlerDef) && Spire_HasRelic(SPIRE_RELIC_FOCUS_SASH) && IsBattlerAtMaxHp(battlerDef))
+        {
+            enduredHit |= 1u << battlerDef; // Project Grounded: The Spire, relic Focus Sash
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_ENDURED;
         }
         else if (GetConfig(B_STURDY) >= GEN_5 && GetBattlerAbility(battlerDef) == ABILITY_STURDY && IsBattlerAtMaxHp(battlerDef))
         {
@@ -16569,7 +16575,7 @@ void BS_JumpIfNoWhiteOut(void)
 {
     NATIVE_ARGS(const u8 *jumpInstr);
 
-    if (FlagGet(B_FLAG_NO_WHITEOUT))
+    if (FlagGet(B_FLAG_NO_WHITEOUT) || gSpireBattle) // Project Grounded: geen whiteout/geldverlies in The Spire
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;

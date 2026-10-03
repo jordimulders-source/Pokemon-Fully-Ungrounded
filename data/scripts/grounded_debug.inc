@@ -189,15 +189,15 @@ Debug_EventScript_Legend_Heatran::
 	releaseall
 	end
 
-@ Project Grounded: debugmenu Utilities > Spire prototype - testgevecht The Spire (2 rentals tegen baas + lakeien)
+@ Project Grounded: debugmenu Utilities > The Spire - start of hervat een run (beta)
 Debug_EventScript_SpirePrototype::
 	lockall
-	special Spire_StartPrototypeBattle
+	special Spire_Enter
 	waitstate
 	releaseall
 	end
 
-@ Project Grounded: debugmenu Utilities > Spire: reset run - begint de volgende Spire prototype weer bij verdieping 1
+@ Project Grounded: debugmenu Utilities > Spire: reset run - wist de lopende run (zonder BP)
 Debug_EventScript_SpireResetRun::
 	special Spire_ResetRun
 	msgbox Debug_Text_SpireResetRun, MSGBOX_DEFAULT

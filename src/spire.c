@@ -34,20 +34,18 @@ EWRAM_DATA u8 gSpireAct = 0;
 EWRAM_DATA u16 gSpireBlock[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gSpireBlockAbsorbed[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u8 gSpireDefendTarget[MAX_BATTLERS_COUNT] = {0};
-EWRAM_DATA static struct Pokemon sSavedParty[PARTY_SIZE] = {0};
-EWRAM_DATA static u8 sSavedPartyCount = 0;
-EWRAM_DATA static bool8 sBossFight = FALSE;
+EWRAM_DATA u16 gSpireEnemyHp[PARTY_SIZE] = {0}; // HP-vermenigvuldiger per vijand (procent)
 
 // act-factor van het blok (procenten), per act 1-3
 static const u8 sActBlockFactor[] = {100, 100, 125, 150};
 
-static void ScaleMonHp(struct Pokemon *mon, u32 percent)
+void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent)
 {
     u32 maxHp;
 
     if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
         return;
-    maxHp = GetMonData(mon, MON_DATA_MAX_HP) * percent / 100;
+    maxHp = GetMonData(mon, MON_DATA_MAX_HP) * (percent ? percent : 100) / 100;
     if (maxHp > 999)
         maxHp = 999;
     SetMonData(mon, MON_DATA_MAX_HP, &maxHp);
@@ -63,7 +61,7 @@ void Spire_OnEnemyPartyCreated(void)
         return;
     Spire_ClearBlocks();
     for (i = 0; i < PARTY_SIZE; i++)
-        ScaleMonHp(&gEnemyParty[i], (i == 0 && sBossFight) ? SPIRE_HP_BOSS : SPIRE_HP_NORMAL);
+        Spire_ScaleMonHp(&gEnemyParty[i], gSpireEnemyHp[i]);
 }
 
 void Spire_ClearBlocks(void)
@@ -87,6 +85,8 @@ u32 Spire_BlockAmount(u32 battler)
     u32 amount = gBattleMons[battler].maxHP * SPIRE_BLOCK_PERCENT * def / (100 * ref);
 
     amount = amount * sActBlockFactor[act] / 100;
+    if (Spire_HasRelic(SPIRE_RELIC_KINGS_ROCK))
+        amount = amount * 13 / 10;
     return amount ? amount : 1;
 }
 
@@ -295,164 +295,19 @@ u8 *Spire_GetIntentText(u8 *dst, u32 battler)
 }
 
 // ---------------------------------------------------------------------------
-// Prototypegevecht (debugmenu > Utilities > Spire prototype)
+// Hulpfuncties voor src/spire_run.c
 
-static void CreateSpireMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves)
+void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves)
 {
     u32 i;
 
     CreateMon(mon, species, level, iv, FALSE, 0, OT_ID_PLAYER_ID, 0);
     for (i = 0; i < NUM_STATS; i++)
         SetMonData(mon, MON_DATA_HP_EV + i, &ev);
-    for (i = 0; i < MAX_MON_MOVES; i++)
-        SetMonMoveSlot(mon, moves[i], i);
+    if (moves != NULL)
+        for (i = 0; i < MAX_MON_MOVES; i++)
+            SetMonMoveSlot(mon, moves[i], i);
     CalculateMonStats(mon);
 }
 
-static void CreateRental(struct Pokemon *mon, u16 species, const u16 *moves)
-{
-    CreateSpireMon(mon, species, 50, 31, 84, moves);
-    ScaleMonHp(mon, SPIRE_HP_PLAYER);
-}
 
-static const u16 sRentalMovesGardevoir[] = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT};
-static const u16 sRentalMovesSwampert[] = {MOVE_MUDDY_WATER, MOVE_LIQUIDATION, MOVE_ICE_BEAM, MOVE_PROTECT};
-static const u16 sBossMovesTyranitar[] = {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE};
-static const u16 sLackeyMovesWhimsicott[] = {MOVE_TAILWIND, MOVE_HELPING_HAND, MOVE_MOONBLAST, MOVE_ENCORE};
-
-// Run-opslag (prototype: alleen in het geheugen, niet in de save).
-struct SpireRun
-{
-    bool8 active;
-    u8 floor;
-    u16 bp;
-    struct Pokemon mons[2];
-};
-EWRAM_DATA static struct SpireRun sRun = {0};
-
-#define SPIRE_PROTO_FLOORS 4  // verdieping 1-3 gewone gevechten, 4 = baas
-#define SPIRE_HEAL_AFTER   20 // procent van max HP na een gewonnen gevecht
-
-struct Pokemon *Spire_GetRunMon(u32 i)
-{
-    return &sRun.mons[i];
-}
-
-u32 Spire_GetRunBP(void)
-{
-    return sRun.bp;
-}
-
-u32 Spire_GetRunFloor(void)
-{
-    return sRun.floor;
-}
-
-void Spire_ResetRun(void)
-{
-    sRun.active = FALSE;
-}
-
-static void CB2_EndSpireBattle(void)
-{
-    bool32 won = (gBattleOutcome == B_OUTCOME_WON);
-    u32 i;
-
-    // rentals terug in de run (met hun HP/PP), daarna je eigen team terug
-    for (i = 0; i < 2; i++)
-        sRun.mons[i] = gPlayerParty[i];
-    Spire_EndBattle();
-
-    if (!won)
-    {
-        sRun.active = FALSE;
-        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        return;
-    }
-
-    // kleine heal; wie flauwviel doet het volgende gevecht mee met 1 HP
-    for (i = 0; i < 2; i++)
-    {
-        u32 hp = GetMonData(&sRun.mons[i], MON_DATA_HP);
-        u32 maxHp = GetMonData(&sRun.mons[i], MON_DATA_MAX_HP);
-
-        if (hp == 0)
-            hp = 1;
-        else
-            hp = min(maxHp, hp + maxHp * SPIRE_HEAL_AFTER / 100);
-        SetMonData(&sRun.mons[i], MON_DATA_HP, &hp);
-    }
-    sRun.bp += sBossFight ? 10 : 1;
-    if (sBossFight)
-        sRun.active = FALSE;  // prototype: na de baas is de run klaar
-    else
-        sRun.floor++;
-    Spire_OpenReward(CB2_ReturnToFieldContinueScriptPlayMapMusic, sBossFight ? 10 : 1);
-}
-
-void Spire_EndBattle(void)
-{
-    u32 i;
-
-    gSpireBattle = FALSE;
-    Spire_ClearBlocks();
-    for (i = 0; i < PARTY_SIZE; i++)
-        gPlayerParty[i] = sSavedParty[i];
-    gPlayerPartyCount = sSavedPartyCount;
-}
-
-// Gewone tegenstanders in act 1 (zie tools/grounded/spire/balance.py): standaard level-up-moves.
-static const u16 sNormalFoesAct1[] =
-{
-    SPECIES_PIDGEOTTO, SPECIES_NUZLEAF, SPECIES_LOMBRE, SPECIES_ELECTRIKE, SPECIES_GLOOM, SPECIES_FLAAFFY,
-    SPECIES_SKIPLOOM, SPECIES_SWABLU, SPECIES_NUMEL, SPECIES_SPOINK, SPECIES_BALTOY, SPECIES_CORPHISH,
-    SPECIES_SHUPPET, SPECIES_DUSKULL, SPECIES_SNORUNT, SPECIES_GRAVELER, SPECIES_MACHOKE, SPECIES_LAIRON,
-};
-
-void Spire_StartPrototypeBattle(void)
-{
-    u32 i;
-
-    if (!sRun.active)
-    {
-        CreateRental(&sRun.mons[0], SPECIES_GARDEVOIR, sRentalMovesGardevoir);
-        CreateRental(&sRun.mons[1], SPECIES_SWAMPERT, sRentalMovesSwampert);
-        sRun.active = TRUE;
-        sRun.floor = 1;
-        sRun.bp = 0;
-    }
-
-    for (i = 0; i < PARTY_SIZE; i++)
-        sSavedParty[i] = gPlayerParty[i];
-    sSavedPartyCount = gPlayerPartyCount;
-    ZeroPlayerPartyMons();
-    gPlayerParty[0] = sRun.mons[0];
-    gPlayerParty[1] = sRun.mons[1];
-    CalculatePlayerPartyCount();
-
-    // Losse Pokémon, geen trainer: een wild dubbelgevecht met slimme AI (zie IsWildMonSmart).
-    // De HP-vermenigvuldigers komen in Spire_OnEnemyPartyCreated (bij de baas: eerste = baas).
-    ZeroEnemyPartyMons();
-    sBossFight = (sRun.floor >= SPIRE_PROTO_FLOORS);
-    if (sBossFight)
-    {
-        CreateSpireMon(&gEnemyParty[0], SPECIES_TYRANITAR, 50, 31, 84, sBossMovesTyranitar);
-        CreateSpireMon(&gEnemyParty[1], SPECIES_WHIMSICOTT, 46, 20, 0, sLackeyMovesWhimsicott);
-    }
-    else
-    {
-        u32 a = Random() % ARRAY_COUNT(sNormalFoesAct1);
-        u32 b = (a + 1 + Random() % (ARRAY_COUNT(sNormalFoesAct1) - 1)) % ARRAY_COUNT(sNormalFoesAct1);
-
-        CreateMon(&gEnemyParty[0], sNormalFoesAct1[a], 48, 20, FALSE, 0, OT_ID_PLAYER_ID, 0);
-        CreateMon(&gEnemyParty[1], sNormalFoesAct1[b], 48, 20, FALSE, 0, OT_ID_PLAYER_ID, 0);
-    }
-
-    gSpireBattle = TRUE;
-    gSpireAct = 1;
-    Spire_ClearBlocks();
-    LockPlayerFieldControls();
-    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
-    gMain.savedCallback = CB2_EndSpireBattle;
-    BattleSetup_StartSpireBattle();
-}

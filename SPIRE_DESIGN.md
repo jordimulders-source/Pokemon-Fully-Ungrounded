@@ -2,7 +2,7 @@
 
 Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volgende sessie.
 
-**Gebouwd (v0.8.100–0.8.102):** beloningsscherm (`src/spire_reward.c`) en een run in het geheugen (rentals bewaard, verdieping 1-3 + baas). Eerder: rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
+**Beta (v0.8.103):** volledige run speelbaar via debugmenu > Utilities > The Spire: draft, act-kaart, kamers (gevecht, elite, rust, winkel, event, baas), relics, 3 acts met evolutie, pauzeren in de save. Code: `src/spire.c` (gevecht), `src/spire_run.c` (run, kaartgeneratie, kamers, relics), `src/spire_map.c` (kaart), `src/spire_cards.c` (kaartenschermen). Nog niet: ingang in de wereld, codex, intenties met patronen voor bazen, golven, echte event-teksten. Eerder: rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
 
 ## Concept
 - Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.
@@ -87,4 +87,11 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 - Kamericonen: gevecht = Poké Ball (item-icoon), elite = Substitute (overworld-sprite) met een klein geel Super Saiyan-aura, rust = Chansey (icoon), winkel = blauw Mart-embleem (dak), event = Unown-?.
 - Relics: eerste twee in het zijpaneel + "+N"; R opent de relic-lijst met uitleg. Cursor in menu's = de PC-hand.
 - Mockups: `tools/grounded/spire/mockups.py <uitmap> v2|v4`.
+
+## Beta-keuzes (v0.8.103, bijstellen na testen)
+- Act = 7 verdiepingen + baas. Verdieping 1 altijd gevechten, verdieping 7 altijd rust, elites vanaf verdieping 3.
+- Geld (¥) per gevecht 15–25, elite 35–45, baas 80; winkel: move 40/70, relic 100, Potion 30.
+- BP: gevecht 1, elite 3, baas 10, × act; altijd naar je totaal (ook bij verlies).
+- RUN in een gevecht = pauzeren (kamer opnieuw bij terugkomst). Tas is uit in de Spire.
+- Relics als run-brede effecten (8 stuks, zie `gSpireRelics`).
 

@@ -50,8 +50,15 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - **Kleine heal na elk gevecht** (orde 10%, exact getal bepalen tijdens het testen; relics kunnen het verhogen).
 
 ## Balans / HP
-- HP van speler en tegenstanders verhogen (voorstel **×3**, speler eventueel iets meer). Eerste schatting op lv 50: normale klap ≈ 12% HP, super effective ≈ 25% met ×3 HP. Nog doorrekenen.
-- Volgende stap: **rekenscript** (Python, echte schadeformule van expansion) dat duizenden aanvallen tussen typische rentals en tegenstanders per act simuleert → HP-vermenigvuldiger, Defend-X en act-groei vastleggen.
+- **Rekenscript:** `tools/grounded/spire/balance.py` (echte Gen 5+-schadeformule, soorten/typetabel uit de broncode; `--run` speelt hele acts na, `--set sleutel=waarde` voor andere instellingen). Speler is een simpele bot zonder potions/relics/drops, dus de echte speler doet het beter.
+- **Startwaarden (v0.8.100):**
+  - HP-vermenigvuldiger: **speler ×4**, normale tegenstander ×1, elite ×2,5, baas ×4,5. Levels: speler 50, vijand 48 / 50 / 52 per act.
+  - Normaal gevecht = **2 tegenstanders** (geen golf): ±3 beurten, ±15% HP kwijt. Elite ±4 beurten, ±25%. Baas (+ 2 support-lakeien) ±11 beurten, ±65%, bot wint 60–80%.
+  - Klap van een tegenstander ≈ 7–15% van je max HP; jouw STAB-klap ≈ 45% van een normale tegenstander, 13–17% van een elite, ±7% van een baas.
+  - **Bazen niet sterker laten slaan**: bewegingskracht 75/80/85 (STAB) per act; dreiging komt uit patronen en support (lakeien die de baas buffen: +15% schade per buff, max +60%), niet uit ruwe kracht. Met 90–110 kracht en een totem-boost won de bot <5%.
+  - **Heal na gevecht 20%**, rustplek 50%. Met 10% / 30% strandde de bot al in de gewone gevechten van act 1.
+  - **DEFEND**: 15% van eigen max HP × verdedigingsfactor × act-factor (1 / 1,25 / 1,5) ≈ één klap. Helpt vooral in act 3 (bot haalt act 3 in 68% i.p.v. 46%); in act 1 neutraal. Eventueel act 1 iets hoger (×1,2).
+  - Resultaat bot per act (vers team): act 1 48%, act 2 74%, act 3 68% gehaald; vrijwel alleen gestrand op de baas.
 
 ## Beloning (BP naar rato)
 - Ook bij een paar gewonnen gevechten BP. Voorstel: 1 BP per gevecht, 3 per elite, 10 per baas, bonus per act; act 2/3 ×2/×3. Volledige run grofweg 100–150 BP (tickets kosten 200).
@@ -64,7 +71,7 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - Intentie: AI kiest een beurt vooruit en moet zich eraan houden; schadeschatting uit de AI-schadeberekening.
 
 ## Nog open
-- HP-vermenigvuldigers en Defend-formule (rekenscript).
+- HP-vermenigvuldigers en Defend-formule: startwaarden staan hierboven; bijstellen na het prototype.
 - Aantal verdiepingen per act, bag-slots, exacte heal na gevecht.
 - Inhoud: rentalpool, startermoves per Pokémon, movepool met zeldzaamheden, relicpool, bazenpool met patronen, events.
 - Prototypevoorstel: één gevecht (2 tegen 1 baas) met intenties, DEFEND en ×HP om het gevoel te testen; daarna toren, kaart, drops, winkel.

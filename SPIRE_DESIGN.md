@@ -1,0 +1,70 @@
+# The Spire – ontwerp (roguelike-faciliteit, Battle Frontier)
+
+Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de bron voor de volgende sessie.
+
+## Concept
+- Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.
+- **3 acts**, per act verdiepingen met keuzes (gevecht, elite, winkel, rustplek, event) en een **baas**.
+- Doel: snappy, methodisch, weinig RNG-pech; niet PokéRogue-achtig (geen tientallen one-shots).
+- Zoveel mogelijk Pokémon-mechanics blijven overeind (crits blijven bestaan).
+
+## Team
+- **Rentals**, en je hebt er **altijd precies 2**. Je speelt **altijd doubles** (jij 2 Pokémon).
+- Groot aantal Pokémon beschikbaar voor de speler; sommige zijn beter dan andere, dat is prima.
+- Een nieuwe Pokémon (draft/event/shop) **vervangt** er één; de nieuwe komt met volle HP. Relics blijven.
+- **Evolueren na act 1** (als de Pokémon dat kan).
+- Flauwgevallen en toch gewonnen: doet het volgende gevecht weer mee met **1 HP**.
+- **Switchen bestaat niet.**
+
+## Tegenstanders
+- 1 of meerdere tegenstanders: **2 tegen 1** (baas) kan, 2 tegen 2 ook. Meer dan 2 tegelijk kan de engine niet, wel **golven** (valt een lakei, dan komt de volgende uit de party).
+- Bazen/lakeien: een **grote pool aan bazen** met vaste patronen (memoriseren zoals in Slay, maar meer variatie). Lakeien = zwakke support-Pokémon (weer, Tailwind, schermen, buffs).
+- **Abilities van tegenstanders verborgen**; de ability-popup van expansion onthult ze. Idee: een **Spire-codex** (met R) die onthoudt wat je ooit zag (ability, moves, patroon).
+- **Intenties**: de tegenstander legt zijn volgende move een beurt vooruit vast en toont die compact onder zijn levensbalk, bijv. `▶ EARTHQUAKE ⟷ beide ~38`, `▶ FLAMETHROWER → links ~65`, `▶ SWORDS DANCE  Atk^`. Pijl = doel (links/rechts/beide), getal = geschatte schade (bereik of max; crits kunnen erdoorheen). Iets liberaler met ruimte dan in normale gevechten mag.
+- Kan de intentie niet doorgaan (doel flauw, Taunt, slaap, flinch, geen PP): gewone Pokémon-regels (ander doel / beurt kwijt).
+
+## Gevechtsmenu
+- **FIGHT / BAG / DEFEND / RUN**: het POKéMON-menu wordt **DEFEND**.
+- **DEFEND**: kost de beurt van die Pokémon, gaat **altijd eerst** (prioriteit als Protect, +4), geeft **Blok** (getal dat deze beurt eerst wordt opgemaakt, vervalt aan het eind van de beurt).
+  - Op **1 Pokémon** naar keuze, of **gespreid over beide** (elk iets meer dan de helft, voorstel 60%).
+  - Hoeveelheid **schaalt met de verdediging** van de Pokémon die verdedigt (Def/Sp. Def) en **neemt per act toe**. Eerste schatting: ~15% van eigen max HP × verdedigingsfactor × act-factor (≈ één normale klap).
+  - Blok werkt alleen tegen **directe schade van moves**, niet tegen brand/gif/weer/terugslag/Stealth Rock. Multi-hit eet het blok per klap op.
+  - Beide Pokémon verdedigen: blokken tellen op.
+- Andere verdedigende moves (Protect, Wide Guard, Follow Me, Reflect…) blijven zoals ze zijn.
+- **BAG**: potions en battle items (X-items worden nuttig). Kopen in de winkel; aantal slots nog bepalen (Slay: 3).
+- **RUN**: kiezen tussen **pauzeren** (run opslaan vanaf het begin van dit gevecht, eigen team terug, terug naar de overworld; later verder met dit gevecht) of **opgeven** (run eindigt, BP naar rato).
+- Eigen ability/stats bekijken: L (of SELECT) opent de summary van je twee Pokémon.
+
+## Moves als kaarten
+- **4-movesprincipe blijft.**
+- Elke rental begint met **startermoves** (zoals Strike/Defend in Slay).
+- Na elk gevecht kies je een move uit een drop (zoals kaartbeloningen). **Elke Pokémon kan elke move leren** als hij hem in een drop krijgt. **STAB** blijft gelden.
+- Moves gecategoriseerd zoals kaarten (aanval / skill / power), met **zeldzaamheid**: de echt goede moves zijn **rare drops**.
+- **PP als kosten**: zeldzaam = sterk maar weinig PP. PP kan doorlopen over gevechten heen (bijv. Protect-achtige moves een paar keer per act, aangevuld op rustplekken).
+
+## Relics, winkel, rust, events
+- **Relics** = elite-drops, willekeurig uit een pool (run-brede effecten, simpele haken in de gevechtscode).
+- **Winkel**: zelf kiezen welke moves, relics, een **ability** kopen, potions/items.
+- **Rustplek**: helen, of een move verbeteren, of (vanaf act 1) evolueren.
+- **Events**: tekstkeuzes met risico/beloning (Jordi's humor); ook kans op een andere Pokémon.
+- **Kleine heal na elk gevecht** (orde 10%, exact getal bepalen tijdens het testen; relics kunnen het verhogen).
+
+## Balans / HP
+- HP van speler en tegenstanders verhogen (voorstel **×3**, speler eventueel iets meer). Eerste schatting op lv 50: normale klap ≈ 12% HP, super effective ≈ 25% met ×3 HP. Nog doorrekenen.
+- Volgende stap: **rekenscript** (Python, echte schadeformule van expansion) dat duizenden aanvallen tussen typische rentals en tegenstanders per act simuleert → HP-vermenigvuldiger, Defend-X en act-groei vastleggen.
+
+## Beloning (BP naar rato)
+- Ook bij een paar gewonnen gevechten BP. Voorstel: 1 BP per gevecht, 3 per elite, 10 per baas, bonus per act; act 2/3 ×2/×3. Volledige run grofweg 100–150 BP (tickets kosten 200).
+
+## Technische notities
+- De **Battle Pike** heeft al deur-keuzes met kamertypes en streak-opslag: bruikbaar als basis voor de verdiepingen (later eventueel een echt kaartscherm).
+- Rentals/eigen team wisselen zoals de **Battle Factory**; run-state (act, verdieping, **seed** voor kaart en tegenstanders, valuta, relics als bitveld, 2 Pokémon) past in de Frontier-opslag (paar honderd bytes).
+- Expansion heeft: `settotemboost` (bazen), starttoestand via var, 2-tegen-1 in doubles werkt in de engine.
+- Blok: waarde per battler, eerst aftrekken bij schade, aan het eind van de beurt op 0; klein schildgetal bij de HP-balk.
+- Intentie: AI kiest een beurt vooruit en moet zich eraan houden; schadeschatting uit de AI-schadeberekening.
+
+## Nog open
+- HP-vermenigvuldigers en Defend-formule (rekenscript).
+- Aantal verdiepingen per act, bag-slots, exacte heal na gevecht.
+- Inhoud: rentalpool, startermoves per Pokémon, movepool met zeldzaamheden, relicpool, bazenpool met patronen, events.
+- Prototypevoorstel: één gevecht (2 tegen 1 baas) met intenties, DEFEND en ×HP om het gevoel te testen; daarna toren, kaart, drops, winkel.

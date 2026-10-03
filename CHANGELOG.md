@@ -15773,3 +15773,6 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - **Transitie** `B_TRANSITION_HEATRAN`: de grond rommelt en de wereld kleurt rood, vijf brede lavapluimen spuiten een voor een omhoog (met koepelkop en spetters), dan loopt het hele beeld vol lava en gloeit het wit op.
   - Ook in het debugmenu (Utilities > Legendary battle > Heatran).
 - **Burglar (Red/Blue):** voorstel voor een Gen 3-versie van de trainerfoto, pixel voor pixel dezelfde vorm, ingekleurd per vlak met Gen 3-schaduw (licht van linksboven): blauwe pet, zwart masker, bruine buit-zak, lichte kleding. `tools/grounded/burglar_sprite.py` → `graphics/grounded/trainers/burglar/burglar_gen3.png`. Nog niet in de game; Jordi beslist.
+
+### [v.0.8.99] - Ontwerp The Spire
+- `SPIRE_DESIGN.md`: alle afspraken over de roguelike-faciliteit The Spire (doubles met 2 rentals, intenties, DEFEND in plaats van POKéMON, moves als kaarten, relics, winkel, rust, BP naar rato). Nog niets gebouwd.

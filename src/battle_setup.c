@@ -516,6 +516,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);
         break;
+    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
+        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

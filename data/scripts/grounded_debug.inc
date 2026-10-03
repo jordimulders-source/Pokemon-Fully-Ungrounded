@@ -180,3 +180,11 @@ Debug_EventScript_ForcedEncounterOff::
 
 Debug_Text_ForcedEncounterOff:
 	.string "Wild encounters are back to normal.$"
+
+Debug_EventScript_Legend_Heatran::
+	lockall
+	setwildbattle SPECIES_HEATRAN, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end

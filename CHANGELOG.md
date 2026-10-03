@@ -15766,3 +15766,10 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - De veerman in Lilycove neemt je met het Eon Ticket ook vóór de Hall of Fame mee naar Southern Island (de andere tickets zijn post-game, want je koopt ze in de Battle Frontier).
 - Getest in de emulator: de tickets staan met icoon en beschrijving in het BP-menu; na het rivaalgevecht krijg je de keuze en het Eon Ticket.
 - **Deoxys:** het ruimte-event (Delta Episode) staat in de backlog; het huidige Birth Island-event blijft voorlopig.
+
+### [v.0.8.98] - Heatran-hol, Burglar-voorstel
+- **Heatran (lv 70, post-game):** na de Hall of Fame zit er linksboven in **Fiery Path** (bij het item in de doodlopende hoek, 8,0-1) een grotopening. Daarachter een vulkaangrot (`FieryPath_HeatranLair`, de layout van Magma Hideout 4F zonder de machines van Team Magma; `tools/grounded/maptools/heatran_lair.py`) met Heatran aan de rand van de grote lavapoel. Vlucht je, dan blijft hij staan.
+  - Muziek: het **Kanto-legendarythema** (`MUS_RG_VS_LEGEND`).
+  - **Transitie** `B_TRANSITION_HEATRAN`: de grond rommelt en de wereld kleurt rood, vijf brede lavapluimen spuiten een voor een omhoog (met koepelkop en spetters), dan loopt het hele beeld vol lava en gloeit het wit op.
+  - Ook in het debugmenu (Utilities > Legendary battle > Heatran).
+- **Burglar (Red/Blue):** voorstel voor een Gen 3-versie van de trainerfoto, pixel voor pixel dezelfde vorm, ingekleurd per vlak met Gen 3-schaduw (licht van linksboven): blauwe pet, zwart masker, bruine buit-zak, lichte kleding. `tools/grounded/burglar_sprite.py` → `graphics/grounded/trainers/burglar/burglar_gen3.png`. Nog niet in de game; Jordi beslist.

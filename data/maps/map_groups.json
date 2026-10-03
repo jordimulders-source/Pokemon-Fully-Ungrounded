@@ -456,7 +456,8 @@
     "MtChimney_EnteiLair",
     "RegielekiCave",
     "RegidragoCave",
-    "RegigigasTemple"
+    "RegigigasTemple",
+    "FieryPath_HeatranLair"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

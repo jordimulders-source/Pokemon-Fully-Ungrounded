@@ -3552,6 +3552,16 @@
       "blockdata_filepath": "data/layouts/MagmaHideout_4F/map.bin"
     },
     {
+      "id": "LAYOUT_FIERY_PATH_HEATRAN_LAIR",
+      "name": "FieryPath_HeatranLair_Layout",
+      "width": 59,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/FieryPath_HeatranLair/border.bin",
+      "blockdata_filepath": "data/layouts/FieryPath_HeatranLair/map.bin"
+    },
+    {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY",
       "name": "BattleFrontier_BattlePalaceLobby_Layout",
       "width": 25,

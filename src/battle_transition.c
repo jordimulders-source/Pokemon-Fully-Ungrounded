@@ -151,6 +151,7 @@ static void Task_Beachball(u8); // Project Grounded
 static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
+static void Task_Heatran(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -438,6 +439,8 @@ static const u16 sZangoose_Palette[] = INCBIN_U16("graphics/battle_transitions/r
 static const u32 sZangooseClaw_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zangoose_claw.4bpp");
 static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zangoose_claw.gbapal");
 static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
+static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
+static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -542,6 +545,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_COLRESS] = Task_Colress, // Project Grounded
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
     [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
+    [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7342,4 +7346,81 @@ static const struct RouteTransition sRT_Seviper =
 static void Task_Seviper(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Seviper);
+}
+
+// ---------------- Heatran: de grond rommelt, lavapluimen spuiten een voor een omhoog, en dan loopt het hele beeld
+// vol lava (uitbarsting). tiles: 1-2 lava, 3/4 pluimranden, 5-7 kop, 8 druppels, 9 oppervlak van de vloed
+#define HEATRAN_PLUMES 5
+static const s8 sHeatranPlumeCol[HEATRAN_PLUMES] = {15, 3, 27, 9, 21};
+static const u8 sHeatranPlumeStart[HEATRAN_PLUMES] = {4, 10, 15, 20, 24};
+#define HEATRAN_FLOOD_START 36
+
+static bool8 RTHeatran_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, r, c, h, top, flood;
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = 0;
+
+    for (i = 0; i < HEATRAN_PLUMES; i++)
+    {
+        s32 cx = sHeatranPlumeCol[i];
+        if (t < sHeatranPlumeStart[i])
+            continue;
+        if (t == sHeatranPlumeStart[i])
+            PlaySE(i % 2 ? SE_M_FLAME_WHEEL : SE_M_EMBER);
+        h = min((t - sHeatranPlumeStart[i]) * 3, 22);
+        top = 20 - h;
+        // pluim van 5 tiles breed: rand, drie keer lava, rand; kop met een koepel erop
+        for (r = max(top, 0); r < 20; r++)
+        {
+            tilemap[r * 32 + ((cx - 2) & 31)] = RT_TILE(3);
+            for (c = -1; c <= 1; c++)
+                tilemap[r * 32 + ((cx + c) & 31)] = RT_TILE(1 + ((r + c + t / 2) & 1));
+            tilemap[r * 32 + ((cx + 2) & 31)] = RT_TILE(4);
+        }
+        if (top - 1 >= 0)
+        {
+            tilemap[(top - 1) * 32 + ((cx - 2) & 31)] = RT_TILE(5);
+            for (c = -1; c <= 1; c++)
+                tilemap[(top - 1) * 32 + ((cx + c) & 31)] = RT_TILE(6);
+            tilemap[(top - 1) * 32 + ((cx + 2) & 31)] = RT_TILE(7);
+        }
+        if (top - 4 >= 0)
+        {
+            tilemap[(top - 3) * 32 + ((cx - 3 + (t + i) % 3) & 31)] = RT_TILE(8);
+            tilemap[(top - 4) * 32 + ((cx + 1 + (t + 2 * i) % 3) & 31)] = RT_TILE(8);
+        }
+    }
+
+    // de vloed: lava stijgt van onder tot het hele beeld vol is
+    flood = (t >= HEATRAN_FLOOD_START) ? (t - HEATRAN_FLOOD_START) * 2 : 0;
+    for (r = 20 - min(flood, 21); r < 20; r++)
+        for (c = 0; c < 30; c++)
+            tilemap[r * 32 + c] = RT_TILE(r == 20 - flood ? 9 : 1 + ((r + c) & 1));
+
+    if (t == 0)
+        PlaySE(SE_M_EARTHQUAKE);
+    if (t == HEATRAN_FLOOD_START)
+        PlaySE(SE_M_EXPLOSION);
+    SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 2, 10), RGB(12, 2, 0));
+    if (flood >= 22)
+    {
+        BlendPalettes(PALETTES_ALL, min((flood - 22) * 4, 16), RGB(31, 28, 16));
+        return flood >= 30;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Heatran =
+{
+    sHeatran_Tileset, sizeof(sHeatran_Tileset), sHeatran_Palette, 4, 3, 0, NULL, RTHeatran_Update, NULL
+};
+
+static void Task_Heatran(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Heatran);
 }

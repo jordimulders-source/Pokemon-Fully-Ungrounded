@@ -840,3 +840,44 @@ utm, ltm = tmap(jaw_upper()), tmap(jaw_lower())
 save('seviper', stiles, [SPAL])
 open(OUT + 'route_seviper_upper.bin', 'wb').write(struct.pack('<%dH' % len(utm), *utm))
 open(OUT + 'route_seviper_lower.bin', 'wb').write(struct.pack('<%dH' % len(ltm), *ltm))
+
+# ------------------------------------------------------------------ Heatran: lavapluimen en een uitbarsting
+# 1-2 lava (stroming, kleurcyclus), 3 pluim linkerrand, 4 pluim rechterrand, 5-7 kop van de pluim (l/m/r),
+# 8 druppels, 9 lava-oppervlak (golvende bovenrand van de vloed)
+LAVA = [(0, 0, 0), (12, 2, 2), (22, 4, 2), (29, 10, 2), (31, 18, 4), (31, 26, 10), (31, 31, 22), (6, 2, 2)]
+lr = random.Random(485)
+def lava_px(x, y, v):
+    s = math.sin((x * 0.9 + y * 0.35 + v * 2.1)) + math.sin((y * 0.7 - x * 0.3 + v))
+    return 2 + int((s + 2) / 4 * 4.99)          # 2..6
+def lava_tile(v):
+    return tile(lambda x, y: lava_px(x, y, v))
+def edge(left):
+    def f(x, y):
+        d = x if left else 7 - x                    # afstand tot de buitenkant
+        w = 3 + int(1.5 * math.sin(y * 1.3 + (0 if left else 2)))
+        if d < 7 - w:
+            return 0
+        if d == 7 - w:
+            return 7 if lr.random() < 0.5 else 2
+        return lava_px(x, y, 1)
+    return tile(f)
+def head(part):
+    def f(x, y):
+        gx = x + part * 8                           # 0..23 over de drie tiles
+        top = 7 - int(6 * math.sin(math.pi * gx / 23) ** 0.6)
+        if y < top:
+            return 0
+        if y == top:
+            return 6
+        return 5 if y < top + 2 else lava_px(gx, y, 2)
+    return tile(f)
+def drops():
+    pts = [(1, 2), (5, 0), (3, 6), (6, 4)]
+    return tile(lambda x, y: 5 if any(abs(x - a) + abs(y - b) <= 1 for a, b in pts) else 0)
+def surface():
+    def f(x, y):
+        top = 3 + int(2 * math.sin(x * 0.8))
+        return 0 if y < top else (6 if y == top else lava_px(x, y, 3))
+    return tile(f)
+htiles = [lava_tile(0), lava_tile(1), edge(True), edge(False), head(0), head(1), head(2), drops(), surface()]
+save('heatran', htiles, cycle(pad(LAVA), 4, amp=2))

@@ -28,6 +28,7 @@
 #include "text_window.h"
 #include "trainer_pokemon_sprites.h"
 #include "window.h"
+#include "constants/characters.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/species.h"
@@ -63,7 +64,6 @@ enum
 #define PAL_TEXT      15
 #define FRAME_TILE    0x200
 #define TAG_HAND      0x5341
-#define TAG_PIC       0x5342
 
 struct SpireRest
 {
@@ -109,9 +109,9 @@ static const struct BgTemplate sBgTemplates[] =
 static const struct WindowTemplate sWindowTemplates[] =
 {
     [WIN_HEADER] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 1, .width = 28, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x001},
-    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 11, .width = 11, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
-    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 18, .tilemapTop = 11, .width = 11, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x04F},
-    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 14, .width = 28, .height = 5, .paletteNum = PAL_TEXT, .baseBlock = 0x065},
+    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 13, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
+    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 16, .tilemapTop = 13, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x053},
+    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 17, .width = 28, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x06D},
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -227,82 +227,86 @@ static void DrawHeader(void)
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
 
-static void DrawOptions(void)
-{
-    u8 buf[24];
-
-    FillWindowPixelBuffer(WIN_LEFT, PIXEL_FILL(1));
-    FillWindowPixelBuffer(WIN_RIGHT, PIXEL_FILL(1));
-    ConvertIntToDecimalStringN(buf, RestPercent(), STR_CONV_MODE_LEFT_ALIGN, 3);
-    StringAppend(buf, COMPOUND_STRING("% HP, all PP"));
-    PrintText(WIN_LEFT, FONT_NORMAL, 4, 1, sColor_Green, COMPOUND_STRING("REST"));
-    PrintText(WIN_LEFT, FONT_SMALL_NARROW, 40, 3, sColor_Dark, buf);
-    PrintText(WIN_RIGHT, FONT_NORMAL, 4, 1, sColor_Blue, COMPOUND_STRING("UPGRADE"));
-    PrintText(WIN_RIGHT, FONT_SMALL_NARROW, 56, 3, sColor_Dark, COMPOUND_STRING("one move +"));
-    CopyWindowToVram(WIN_LEFT, COPYWIN_FULL);
-    CopyWindowToVram(WIN_RIGHT, COPYWIN_FULL);
-    DrawFrame(WIN_LEFT, (sRest->state == STATE_MAIN && sRest->choice == CHOICE_REST) ? PAL_FRAME_SEL : PAL_FRAME);
-    DrawFrame(WIN_RIGHT, (sRest->state != STATE_MESSAGE && sRest->choice == CHOICE_UPGRADE) ? PAL_FRAME_SEL : PAL_FRAME);
-    ScheduleBgCopyTilemapToVram(0);
-}
-
-static void DrawHpBar(u32 x, u32 y, struct Pokemon *mon)
+static void DrawHpBar(u32 win, u32 x, u32 y, struct Pokemon *mon)
 {
     u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP);
     u32 w = maxHp ? 40 * hp / maxHp : 0;
     u32 col = (hp * 2 > maxHp) ? 9 : (hp * 5 > maxHp) ? 6 : 11;
 
-    FillWindowPixelRect(WIN_BOTTOM, PIXEL_FILL(13), x, y, 42, 4);
+    FillWindowPixelRect(win, PIXEL_FILL(13), x, y, 42, 4);
     if (w)
-        FillWindowPixelRect(WIN_BOTTOM, PIXEL_FILL(col), x + 1, y + 1, w, 2);
+        FillWindowPixelRect(win, PIXEL_FILL(col), x + 1, y + 1, w, 2);
 }
 
-static void DrawTeam(void)
+// Linker/rechter venster: de twee keuzes, of je twee Pokémon (welke move?), of de moves van één Pokémon.
+static void DrawOptions(void)
 {
     u32 i;
+    u8 buf[24];
 
     for (i = 0; i < 2; i++)
     {
-        struct Pokemon *mon = Spire_GetRunMon(i);
-        u8 nick[POKEMON_NAME_LENGTH + 1];
-        u8 buf[8];
-        u32 x = 40 + i * 112;
-        u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+        u32 win = WIN_LEFT + i;
+        bool32 sel;
 
-        GetMonData(mon, MON_DATA_NICKNAME, nick);
-        if (sRest->state == STATE_CHOOSE_MON && sRest->mon == i)
-            PrintText(WIN_BOTTOM, FONT_NORMAL, x - 38, 18, sColor_Red, COMPOUND_STRING("▶"));
-        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x, 14, sColor_Dark, nick);
-        DrawHpBar(x, 27, mon);
-        ConvertIntToDecimalStringN(buf, maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0, STR_CONV_MODE_LEFT_ALIGN, 3);
-        StringAppend(buf, COMPOUND_STRING("%"));
-        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x + 44, 23, sColor_Dark, buf);
-    }
-}
-
-static void DrawMoves(void)
-{
-    struct Pokemon *mon = Spire_GetRunMon(sRest->mon);
-    u32 i;
-
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        u32 m = GetMonData(mon, MON_DATA_MOVE1 + i);
-        u32 x = 14 + (i % 2) * 108, y = 13 + (i / 2) * 12;
-        u8 *p;
-
-        if (sRest->slot == i)
-            PrintText(WIN_BOTTOM, FONT_NORMAL, x - 10, y - 2, sColor_Red, COMPOUND_STRING("▶"));
-        if (m == MOVE_NONE)
+        FillWindowPixelBuffer(win, PIXEL_FILL(1));
+        if (sRest->state == STATE_CHOOSE_MON || (sRest->state == STATE_MAIN && FALSE))
         {
-            PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x, y, sColor_Gray, COMPOUND_STRING("-"));
-            continue;
+            struct Pokemon *mon = Spire_GetRunMon(i);
+            u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+
+            sel = (sRest->mon == i);
+            GetMonData(mon, MON_DATA_NICKNAME, buf);
+            PrintText(win, FONT_SMALL_NARROW, 26, 0, sel ? sColor_Red : sColor_Dark, buf);
+            DrawHpBar(win, 26, 11, mon);
+            ConvertIntToDecimalStringN(buf, maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0, STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(buf, COMPOUND_STRING("%"));
+            PrintText(win, FONT_SMALL_NARROW, 72, 6, sColor_Dark, buf);
         }
-        p = StringCopy(gStringVar4, GetMoveName(m));
-        if (Spire_IsSlotUpgraded(mon, i))
-            StringCopy(p, COMPOUND_STRING("+"));
-        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x, y, Spire_IsSlotUpgraded(mon, i) ? sColor_Gold : sColor_Dark, gStringVar4);
+        else if (sRest->state == STATE_CHOOSE_MOVE)
+        {
+            struct Pokemon *mon = Spire_GetRunMon(sRest->mon);
+            u32 k;
+
+            sel = (sRest->slot % 2 == i);
+            for (k = 0; k < 2; k++)
+            {
+                u32 slot = k * 2 + i;
+                u32 m = GetMonData(mon, MON_DATA_MOVE1 + slot);
+                u8 *p;
+
+                if (m == MOVE_NONE)
+                {
+                    PrintText(win, FONT_SMALL_NARROW, 10, k * 8, sColor_Gray, COMPOUND_STRING("-"));
+                    continue;
+                }
+                p = StringCopy(gStringVar4, GetMoveName(m));
+                if (Spire_IsSlotUpgraded(mon, slot))
+                    StringCopy(p, COMPOUND_STRING("+"));
+                if (sRest->slot == slot)
+                    PrintText(win, FONT_SMALL_NARROW, 2, k * 8, sColor_Red, COMPOUND_STRING("▶"));
+                PrintText(win, FONT_SMALL_NARROW, 10, k * 8, Spire_IsSlotUpgraded(mon, slot) ? sColor_Gold : sColor_Dark, gStringVar4);
+            }
+        }
+        else if (i == CHOICE_REST)
+        {
+            sel = (sRest->choice == CHOICE_REST);
+            buf[0] = CHAR_PLUS;
+            ConvertIntToDecimalStringN(buf + 1, RestPercent(), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(buf, COMPOUND_STRING("% HP, all PP"));
+            PrintText(win, FONT_NORMAL, 4, 0, sColor_Green, COMPOUND_STRING("REST"));
+            PrintText(win, FONT_SMALL_NARROW, 40, 3, sColor_Dark, buf);
+        }
+        else
+        {
+            sel = (sRest->choice == CHOICE_UPGRADE);
+            PrintText(win, FONT_NORMAL, 4, 0, sColor_Blue, COMPOUND_STRING("UPGRADE"));
+            PrintText(win, FONT_SMALL_NARROW, 60, 3, sColor_Dark, COMPOUND_STRING("one move: +"));
+        }
+        CopyWindowToVram(win, COPYWIN_FULL);
+        DrawFrame(win, (sel && sRest->state != STATE_MESSAGE) ? PAL_FRAME_SEL : PAL_FRAME);
     }
+    ScheduleBgCopyTilemapToVram(0);
 }
 
 static void DrawBottom(void)
@@ -315,22 +319,18 @@ static void DrawBottom(void)
     case STATE_MAIN:
         if (sRest->choice == CHOICE_REST)
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark,
-                      COMPOUND_STRING("Chansey patches your team up. Status cured.\nNo questions. No insurance."));
+                      COMPOUND_STRING("Chansey patches you up. Status cured too.\nNo questions. No insurance."));
         else
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark,
-                      COMPOUND_STRING("Porygon2 rewrites one move: +30% power, or one\nextra stat stage and it never misses. Max PP."));
-        if (sRest->choice == CHOICE_REST)
-            DrawTeam();
+                      COMPOUND_STRING("Attack: +30% power. Status move: one extra\nstat stage and it never misses. Max PP."));
         break;
     case STATE_CHOOSE_MON:
         PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Blue, COMPOUND_STRING("Whose move does Porygon2 rewrite?"));
-        DrawTeam();
         break;
     case STATE_CHOOSE_MOVE:
         GetMonData(Spire_GetRunMon(sRest->mon), MON_DATA_NICKNAME, gStringVar1);
-        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Which move of {STR_VAR_1}?"));
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Which move of {STR_VAR_1}? (B: back)"));
         PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Blue, gStringVar4);
-        DrawMoves();
         break;
     case STATE_MESSAGE:
         PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, sRest->message);
@@ -339,8 +339,7 @@ static void DrawBottom(void)
     CopyWindowToVram(WIN_BOTTOM, COPYWIN_FULL);
     for (i = 0; i < 2; i++)
         if (sRest->iconSpriteIds[i] != SPRITE_NONE)
-            gSprites[sRest->iconSpriteIds[i]].invisible = !(sRest->state == STATE_CHOOSE_MON
-                                                         || (sRest->state == STATE_MAIN && sRest->choice == CHOICE_REST));
+            gSprites[sRest->iconSpriteIds[i]].invisible = (sRest->state != STATE_CHOOSE_MON);
 }
 
 static void Redraw(void)
@@ -371,8 +370,8 @@ static void UpdateSprites(void)
     }
     if (sRest->state == STATE_MAIN)
     {
-        hand->x = sRest->choice == CHOICE_REST ? 56 : 190;
-        hand->y = 22 + (((sRest->timer >> 4) & 1) ? 2 : 0);
+        hand->x = sRest->choice == CHOICE_REST ? 70 : 206;
+        hand->y = 46 + (((sRest->timer >> 4) & 1) ? 2 : 0);
         hand->invisible = FALSE;
     }
     else
@@ -385,9 +384,9 @@ static void CreateSprites(void)
 {
     u32 i;
 
-    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 56, 58, 0, TAG_PIC);
-    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 66, 1, TAG_PIC + 1);
-    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 184, 58, 2, TAG_PIC + 2);
+    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 52, 66, 0, SPECIES_CHANSEY); // palettetag = soort
+    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 62, 0, SPECIES_SNORLAX);
+    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 188, 66, 0, SPECIES_PORYGON2);
     for (i = 0; i < 3; i++)
         gSprites[sRest->picSpriteIds[i]].oam.priority = 1;
     // Snorlax slaapt achter de helpers
@@ -399,7 +398,7 @@ static void CreateSprites(void)
         struct Pokemon *mon = Spire_GetRunMon(i);
 
         sRest->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
-                                                8 + 24 + i * 112, 112 + 30, 0, GetMonData(mon, MON_DATA_PERSONALITY));
+                                                8 + 20 + i * 120, 104 + 8, 0, GetMonData(mon, MON_DATA_PERSONALITY));
         gSprites[sRest->iconSpriteIds[i]].oam.priority = 0;
     }
     LoadSpriteSheet(&sSpriteSheet_Hand);
@@ -459,6 +458,7 @@ void Spire_OpenRest(void (*onDone)(void))
 
     DrawFrame(WIN_HEADER, PAL_FRAME);
     DrawFrame(WIN_BOTTOM, PAL_FRAME);
+    // de helpers staan voor de balie (de vensters), Snorlax erachter
     PutWindowTilemap(WIN_HEADER);
     PutWindowTilemap(WIN_LEFT);
     PutWindowTilemap(WIN_RIGHT);

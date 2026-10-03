@@ -131,6 +131,7 @@ static const u16 sTextPal[16] =
     RGB(31, 24, 23), RGB(10, 10, 11), RGB(15, 9, 22), RGB(26, 22, 30),
 };
 static const u8 sColor_Dark[]   = {1, 2, 3};
+static const u8 sColor_DarkT[]  = {TEXT_COLOR_TRANSPARENT, 2, 3};
 static const u8 sColor_Blue[]   = {1, 4, 5};
 static const u8 sColor_Gold[]   = {1, 6, 7};
 static const u8 sColor_Red[]    = {1, 11, 12};
@@ -139,17 +140,16 @@ static const u8 sColor_Boss[]   = {0, 8, 7};
 
 static const struct BgTemplate sBgTemplates[] =
 {
-    {.bg = 0, .charBaseIndex = 1, .mapBaseIndex = 31, .priority = 0},
+    {.bg = 0, .charBaseIndex = 2, .mapBaseIndex = 31, .priority = 0},
     {.bg = 1, .charBaseIndex = 0, .mapBaseIndex = 30, .priority = 2},
-    {.bg = 2, .charBaseIndex = 2, .mapBaseIndex = 26, .priority = 3}, // achtergrond van het biome (gevechtsachtergrond)
+    {.bg = 2, .charBaseIndex = 3, .mapBaseIndex = 29, .priority = 3}, // PokéNav-stippen in de kleuren van het biome
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
     [WIN_LINES] = {.bg = 1, .tilemapLeft = 0, .tilemapTop = 0, .width = 21, .height = 32, .paletteNum = PAL_LINES, .baseBlock = 0x001},
-    // BG0 deelt charblock 1 met de staart van de routes (BG1, 21x32 tegels): vensters vanaf tegel 0xB0
-    [WIN_PANEL] = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 1, .width = 7, .height = 12, .paletteNum = PAL_TEXT, .baseBlock = 0x0B0},
-    [WIN_INFO]  = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 15, .width = 7, .height = 4, .paletteNum = PAL_TEXT, .baseBlock = 0x104},
+    [WIN_PANEL] = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 1, .width = 7, .height = 12, .paletteNum = PAL_TEXT, .baseBlock = 0x001},
+    [WIN_INFO]  = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 15, .width = 7, .height = 4, .paletteNum = PAL_TEXT, .baseBlock = 0x055},
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -269,12 +269,12 @@ static const u8 sText_Rest[] = _("Rest");
 static const u8 sText_Mart[] = _("Poké Mart");
 static const u8 sText_Event[] = _("Event");
 static const u8 sText_Boss[] = _("BOSS");
-static const u8 sText_TwoWild[] = _("2 wild");
+static const u8 sText_TwoWild[] = _("Two wild ones");
 static const u8 sText_WinMove[] = _("Win: a move");
 static const u8 sText_StrongFoe[] = _("A strong foe");
 static const u8 sText_WinRelic[] = _("Win: relic");
-static const u8 sText_HealOr[] = _("Heal or");
-static const u8 sText_Evolve[] = _("evolve");
+static const u8 sText_HealOr[] = _("Heal, or");
+static const u8 sText_Evolve[] = _("upgrade a move");
 static const u8 sText_Spend[] = _("Spend your ¥");
 static const u8 sText_WhoKnows[] = _("Who knows?");
 static const u8 sText_NextAct[] = _("+ next act");
@@ -321,8 +321,9 @@ static void DrawInfo(void)
         u32 type = ChoiceType();
 
         PrintText(WIN_INFO, FONT_NORMAL, 0, 0, type == SPIRE_ROOM_BOSS || type == SPIRE_ROOM_ELITE ? sColor_Red : sColor_Dark, sRoomText[type][0]);
-        PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 12, sColor_Dark, sRoomText[type][1]);
-        PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 21, sColor_Dark, sRoomText[type][2]);
+        // transparante achtergrond, anders wist elke regel de onderkant van de regel erboven
+        PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 12, sColor_DarkT, sRoomText[type][1]);
+        PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 21, sColor_DarkT, sRoomText[type][2]);
     }
     CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
 }
@@ -440,6 +441,7 @@ static void UpdateSpritePositions(void)
     if ((sMap->timer & 0x1F) >= 0x18)
         gSprites[sMap->cursorSpriteId].invisible = TRUE;
     SetGpuReg(REG_OFFSET_BG1VOFS, sMap->scroll);
+    SetGpuReg(REG_OFFSET_BG2VOFS, sMap->scroll);
 }
 
 static void CreateSprites(void)
@@ -545,11 +547,51 @@ static void CB2_SpireMap(void)
     UpdatePaletteFade();
 }
 
-// Achtergrond: de gevechtsachtergrond van het biome, donker getint zodat de routes opvallen. Staat stil
-// terwijl de kaart scrolt (diepte).
+// Achtergrond: PokéNav-stippen in de kleuren van het biome, met een verloop naar boven toe:
+// hoe dichter bij de baas, hoe donkerder en roder (de toren). 8 banden van 4 tegelrijen, paletten 2-9.
+#define PAL_BANDS   2
+#define NUM_BANDS   8
+
+static const u16 sBiomeColors[SPIRE_BIOME_COUNT] =   // achtergrond onderaan de act; de stip is iets lichter
+{
+    [SPIRE_BIOME_GROVE] = RGB(5, 11, 6),
+    [SPIRE_BIOME_DOCKS] = RGB(4, 8, 14),
+    [SPIRE_BIOME_HIVE]  = RGB(13, 10, 4),
+    [SPIRE_BIOME_FROST] = RGB(8, 12, 17),
+    [SPIRE_BIOME_COURT] = RGB(10, 6, 14),
+    [SPIRE_BIOME_ABYSS] = RGB(6, 4, 9),
+};
+static const u16 sSpireTopColor = RGB(11, 3, 5);
+
+static u16 LerpColor(u16 a, u16 b, u32 t, u32 n)
+{
+    return RGB(GET_R(a) + ((s32)GET_R(b) - (s32)GET_R(a)) * (s32)t / (s32)n,
+               GET_G(a) + ((s32)GET_G(b) - (s32)GET_G(a)) * (s32)t / (s32)n,
+               GET_B(a) + ((s32)GET_B(b) - (s32)GET_B(a)) * (s32)t / (s32)n);
+}
+
 static void LoadBackground(void)
 {
-    Spire_LoadBiomeBackground(RGB(3, 2, 7), 9);
+    u16 *tilemap = AllocZeroed(BG_SCREEN_SIZE);
+    u32 biome = RUN.biome < SPIRE_BIOME_COUNT ? RUN.biome : 0;
+    u32 x, y, b;
+
+    LoadBgTiles(2, sDotsGfx, 0x40, 0);
+    for (b = 0; b < NUM_BANDS; b++)
+    {
+        u16 pal[16];
+        u32 t = NUM_BANDS - 1 - b;      // band 0 = bovenaan = de toren in
+
+        CpuCopy16(sDotsPal, pal, sizeof(pal));
+        pal[1] = LerpColor(sBiomeColors[biome], sSpireTopColor, t, NUM_BANDS - 1);
+        pal[2] = LerpColor(pal[1], RGB_WHITE, 2, 16);   // stip: een tikje lichter (zoals de PokéNav)
+        LoadPalette(pal, BG_PLTT_ID(PAL_BANDS + b), PLTT_SIZE_4BPP);
+    }
+    for (y = 0; y < 32; y++)
+        for (x = 0; x < 32; x++)
+            tilemap[y * 32 + x] = (x & 1) | ((PAL_BANDS + y * NUM_BANDS / 32) << 12);
+    SetBgTilemapBuffer(2, tilemap);
+    ScheduleBgCopyTilemapToVram(2);
 }
 
 void Spire_OpenMap(void)
@@ -592,7 +634,6 @@ void Spire_OpenMap(void)
 
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_BG2_ON);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_EFFECT_BLEND);
-    ShowBg(2);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 9));
     ShowBg(0);
     ShowBg(1);

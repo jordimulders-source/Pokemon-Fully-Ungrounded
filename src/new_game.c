@@ -46,6 +46,7 @@
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
 #include "constants/items.h"
+#include "constants/heal_locations.h"
 #include "difficulty.h"
 #include "follower_npc.h"
 
@@ -211,6 +212,8 @@ void NewGameInitData(void)
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING);
+        // Project Grounded: de truck-intro (die dit deed) is eruit; zonder dit witte je uit naar Petalburg
+        SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
     }
     else
     {
@@ -224,6 +227,7 @@ void NewGameInitData(void)
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING);
+        SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);
     }
 
     VarSet(VAR_LITTLEROOT_INTRO_STATE, 4); 
@@ -232,6 +236,7 @@ void NewGameInitData(void)
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
     EnableNationalPokedex(); // Project Grounded: National Dex vanaf het begin
+    FlagSet(FLAG_REGI_DOORS_OPENED); // Project Grounded: Regi-grotten open; de puzzel zit nu in de stippen (geen braille/Wailord+Relicanth)
 
     WarpToTruck();
 

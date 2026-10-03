@@ -476,9 +476,20 @@ u8 PickWildMonNature(void)
     return Random() % NUM_NATURES;
 }
 
+// Project Grounded: debugmenu "Force encounter": elke wilde encounter wordt deze soort tot hij weer uit staat
+// (SPECIES_NONE = uit). gDebugForceNextStep: de eerstvolgende stap in gras/water is meteen raak.
+EWRAM_DATA u16 gDebugForcedWildSpecies = SPECIES_NONE;
+EWRAM_DATA bool8 gDebugForceNextStep = FALSE;
+
 void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm = TRUE;
+
+    if (gDebugForcedWildSpecies != SPECIES_NONE)
+    {
+        species = gDebugForcedWildSpecies;
+        gDebugForceNextStep = FALSE;
+    }
 
     ZeroEnemyPartyMons();
 
@@ -624,6 +635,8 @@ static bool8 EncounterOddsCheck(u16 encounterRate)
 // Returns true if it will try to create a wild encounter.
 static bool8 WildEncounterCheck(u32 encounterRate, bool8 ignoreAbility)
 {
+    if (gDebugForceNextStep)
+        return TRUE;
     encounterRate *= 16;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
         encounterRate = encounterRate * 80 / 100;
@@ -1234,6 +1247,54 @@ bool8 StandardWildEncounter_Debug(void)
 
     DoStandardWildBattle_Debug();
     return TRUE;
+}
+
+// Project Grounded: debugmenu "Wild battle (map)" - trekt een Pokémon uit de tabel van de
+// huidige kaart (gras/grot, anders water, anders vissen) en start een gewoon wild gevecht.
+void Debug_StartMapWildBattle(void)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    const struct WildPokemonInfo *info;
+    enum TimeOfDay timeOfDay;
+
+    gSpecialVar_Result = FALSE;
+    if (headerId == HEADER_NONE)
+        return;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+    if (info != NULL && TryGenerateWildMon(info, WILD_AREA_LAND, 0))
+    {
+        gSpecialVar_Result = TRUE;
+    }
+    else
+    {
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+        info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+        if (info != NULL && TryGenerateWildMon(info, WILD_AREA_WATER, 0))
+        {
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+            info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
+            if (info != NULL)
+            {
+                GenerateFishingWildMon(info, GOOD_ROD);
+                gSpecialVar_Result = TRUE;
+            }
+        }
+    }
+
+    if (gSpecialVar_Result)
+        BattleSetup_StartScriptedWildBattle();
+}
+
+void Debug_ClearForcedEncounter(void)
+{
+    gDebugForcedWildSpecies = SPECIES_NONE;
+    gDebugForceNextStep = FALSE;
 }
 
 u32 ChooseHiddenMonIndex(void)

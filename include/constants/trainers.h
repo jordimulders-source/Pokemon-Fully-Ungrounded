@@ -113,7 +113,9 @@
 #define TRAINER_PIC_OAK                   95 // Project Grounded: Prof. Oak (sprite uit FRLG)
 #define TRAINER_PIC_MIMIKYU               96 // Project Grounded: Mimi de Mimikyu (Route 119)
 #define TRAINER_PIC_BROCK                 97 // Project Grounded: Brock (sprite uit FRLG)
-#define TRAINER_PIC_COUNT                 98
+#define TRAINER_PIC_COLRESS               98 // Project Grounded: Colress (B2W2)
+#define TRAINER_PIC_ZINNIA                99 // Project Grounded: Zinnia
+#define TRAINER_PIC_COUNT                 100
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -360,6 +362,8 @@ enum TrainerClassID
     TRAINER_CLASS_PYRAMID_KING,
     TRAINER_CLASS_RS_PROTAG,
     TRAINER_CLASS_PROFESSOR, // Project Grounded: Prof. Birch
+    TRAINER_CLASS_SCIENTIST, // Project Grounded: Colress
+    TRAINER_CLASS_LOREKEEPER, // Project Grounded: Zinnia
     TRAINER_CLASS_COUNT,
 };
 

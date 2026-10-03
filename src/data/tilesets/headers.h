@@ -267,6 +267,17 @@ const struct Tileset gTileset_SnowTownBase = // Project Grounded: primary voor A
     .callback = NULL,
 };
 
+const struct Tileset gTileset_SnowTemple = // Project Grounded: Regigigas-tempel (sneeuwtempel van Ekat99)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SnowTemple,
+    .palettes = gTilesetPalettes_SnowTemple,
+    .metatiles = gMetatiles_SnowTemple,
+    .metatileAttributes = gMetatileAttributes_SnowTemple,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_SnowTown = // Project Grounded: stads-tileset voor Ashfrost (CinnaYva)
 {
     .isCompressed = TRUE,

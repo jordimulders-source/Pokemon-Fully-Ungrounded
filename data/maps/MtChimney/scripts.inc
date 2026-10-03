@@ -1,7 +1,16 @@
 MtChimney_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, MtChimney_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, MtChimney_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, MtChimney_OnLoad
 	.byte 0
+
+@ Project Grounded: vanaf badge 5 is er een verborgen grotingang aan de westkant (gang naar Entei)
+MtChimney_OnLoad:
+	goto_if_unset FLAG_BADGE05_GET, MtChimney_EventScript_EnteiCaveHidden
+	setmetatile 8, 11, METATILE_Lavaridge_CaveEntrance_Top, TRUE
+	setmetatile 8, 12, METATILE_Lavaridge_CaveEntrance_Bottom, FALSE
+MtChimney_EventScript_EnteiCaveHidden:
+	end
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1

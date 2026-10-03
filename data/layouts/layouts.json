@@ -2922,6 +2922,36 @@
       "blockdata_filepath": "data/layouts/AncientTomb/map.bin"
     },
     {
+      "id": "LAYOUT_REGIDRAGO_CAVE",
+      "name": "RegidragoCave_Layout",
+      "width": 17,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RegidragoCave/border.bin",
+      "blockdata_filepath": "data/layouts/RegidragoCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_REGIGIGAS_TEMPLE",
+      "name": "RegigigasTemple_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_SnowTemple",
+      "border_filepath": "data/layouts/RegigigasTemple/border.bin",
+      "blockdata_filepath": "data/layouts/RegigigasTemple/map.bin"
+    },
+    {
+      "id": "LAYOUT_REGIELEKI_CAVE",
+      "name": "RegielekiCave_Layout",
+      "width": 17,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RegielekiCave/border.bin",
+      "blockdata_filepath": "data/layouts/RegielekiCave/map.bin"
+    },
+    {
       "id": "LAYOUT_UNDERWATER_ROUTE134",
       "name": "Underwater_Route134_Layout",
       "width": 18,
@@ -3520,6 +3550,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MagmaHideout_4F/border.bin",
       "blockdata_filepath": "data/layouts/MagmaHideout_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_FIERY_PATH_HEATRAN_LAIR",
+      "name": "FieryPath_HeatranLair_Layout",
+      "width": 59,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/FieryPath_HeatranLair/border.bin",
+      "blockdata_filepath": "data/layouts/FieryPath_HeatranLair/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY",
@@ -4520,6 +4560,36 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAUVILLE_THUNDER_CAVE",
+      "name": "NewMauville_ThunderCave_Layout",
+      "width": 22,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NewMauville_ThunderCave/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_ThunderCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_ENTEI_PASSAGE",
+      "name": "MtChimney_EnteiPassage_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtChimney_EnteiPassage/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_EnteiPassage/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_ENTEI_LAIR",
+      "name": "MtChimney_EnteiLair_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtChimney_EnteiLair/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_EnteiLair/map.bin"
     }
   ]
 }

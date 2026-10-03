@@ -67,6 +67,35 @@ enum BattleTransition
     B_TRANSITION_DEOXYS, // Project Grounded: ruimte + DNA-helix
     B_TRANSITION_BIRCH, // Project Grounded: poep-thema
     B_TRANSITION_AQUA_MAGMA, // Project Grounded: Archie + Maxie samen
+    B_TRANSITION_RAIKOU, // Project Grounded: bliksems
+    B_TRANSITION_ENTEI, // Project Grounded: steekvlam die het scherm overneemt
+    B_TRANSITION_ROUTE_WAVE, // Project Grounded: zee/surfen, golf van rechts naar links
+    B_TRANSITION_ROUTE_BEACH, // Project Grounded: strand van een zeeroute, golf uit de verte
+    B_TRANSITION_ROUTE_BUBBLES, // Project Grounded: onder water, luchtbellen
+    B_TRANSITION_ROUTE_SNOW, // Project Grounded: Route 135/136, sneeuwt dicht
+    B_TRANSITION_ROUTE_ASH, // Project Grounded: Route 113, as waait door het beeld
+    B_TRANSITION_ROUTE_SAND, // Project Grounded: woestijn, zandstorm
+    B_TRANSITION_ROUTE_HEAT, // Project Grounded: Fiery Path / Mt. Chimney, hittegolf
+    B_TRANSITION_ROUTE_CYCLING, // Project Grounded: Cycling Road, POV op de fiets
+    B_TRANSITION_ROUTE_PYRE, // Project Grounded: Mt. Pyre, spookachtige vloek
+    B_TRANSITION_ROUTE_SKY, // Project Grounded: Sky Pillar, razendsnel de lucht in
+    B_TRANSITION_ROUTE_SHORT, // Project Grounded: New Mauville, kortsluiting
+    B_TRANSITION_ROUTE_PAINT, // Project Grounded: Artisan Cave, wordt volgeschilderd
+    B_TRANSITION_ROUTE_SAFARI, // Project Grounded: Safari Zone, tussen de bomen door
+    B_TRANSITION_ROUTE_METEOR, // Project Grounded: Meteor Falls, tussen stalactieten en stalagmieten
+    B_TRANSITION_ROUTE_JAGGED, // Project Grounded: Jagged Pass, tussen de rotsen naar beneden
+    B_TRANSITION_ROUTE_RAINFOREST, // Project Grounded: Route 119/120 en Fortree, door het regenwoud
+    B_TRANSITION_PIKACHU, // Project Grounded: wilde Pikachu, geel scherm met wangen en "Pika!"
+    B_TRANSITION_MAGIKARP, // Project Grounded: wilde Magikarp, scherm vol spartelende Magikarp
+    B_TRANSITION_PSYDUCK, // Project Grounded: wilde Psyduck, enorm draaiend vraagteken
+    B_TRANSITION_KOFFING, // Project Grounded: wilde Koffing/Weezing, schedel-en-botten-teken op paars
+    B_TRANSITION_GABBY_TY, // Project Grounded: Gabby & Ty, camerazoeker met REC
+    B_TRANSITION_POOCHYENA, // Project Grounded: Joey, Poochyena springt op je af
+    B_TRANSITION_BEACHBALL, // Project Grounded: strand van Route 109, strandbal in je gezicht
+    B_TRANSITION_COLRESS, // Project Grounded: Colress, mugshot en dan twee tandwielen die op je af komen
+    B_TRANSITION_ZANGOOSE, // Project Grounded: wilde Zangoose, een reuzenklauw scheurt het scherm open
+    B_TRANSITION_SEVIPER, // Project Grounded: wilde Seviper, een schermvullende Poison Fang
+    B_TRANSITION_HEATRAN, // Project Grounded: Heatran, lavapluimen en een uitbarsting
     B_TRANSITION_COUNT
 };
 

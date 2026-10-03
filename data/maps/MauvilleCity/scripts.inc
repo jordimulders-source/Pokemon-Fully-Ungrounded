@@ -10,6 +10,7 @@ MauvilleCity_OnTransition:
 	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
 	setvar VAR_MAUVILLE_GYM_STATE, 0
 	call_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
+	call MauvilleCity_EventScript_SetColressVisibility
 	end
 
 MauvilleCity_EventScript_MoveWattsonBackToGym::
@@ -647,3 +648,223 @@ MauvilleCity_Text_ExplainTV:
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Have you been watching TV?\p"
 	.string "The datacenter is watching you back.$"
+
+@ ---------------------------------------------------------------- Project Grounded: Colress in Mauville
+@ Bij de eerste keer binnenkomen vanaf Route 110 loopt Colress op je af. Weiger je het gevecht, dan wacht hij
+@ bij het Pokémon Center (VAR_COLRESS_MAUVILLE_STATE 1) tot je het wel aangaat.
+MauvilleCity_EventScript_SetColressVisibility::
+	setflag FLAG_HIDE_MAUVILLE_COLRESS
+	goto_if_ne VAR_COLRESS_MAUVILLE_STATE, 1, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MAUVILLE_COLRESS
+	return
+
+MauvilleCity_EventScript_ColressArrives::
+	lockall
+	getplayerxy VAR_0x8004, VAR_0x8005
+	copyvar VAR_0x8006, VAR_0x8004
+	setvar VAR_0x8007, 0
+	goto_if_ge VAR_0x8004, 30, MauvilleCity_EventScript_ColressFromLeft
+	addvar VAR_0x8006, 7
+	call MauvilleCity_EventScript_SpawnColress
+	applymovement LOCALID_MAUVILLE_COLRESS, MauvilleCity_Movement_ColressWalkLeft
+	goto MauvilleCity_EventScript_ColressTalk
+
+MauvilleCity_EventScript_ColressFromLeft::
+	setvar VAR_0x8007, 1
+	subvar VAR_0x8006, 7
+	call MauvilleCity_EventScript_SpawnColress
+	applymovement LOCALID_MAUVILLE_COLRESS, MauvilleCity_Movement_ColressWalkRight
+	goto MauvilleCity_EventScript_ColressTalk
+
+MauvilleCity_EventScript_SpawnColress::
+	setobjectxyperm LOCALID_MAUVILLE_COLRESS, VAR_0x8006, 17
+	clearflag FLAG_HIDE_MAUVILLE_COLRESS
+	addobject LOCALID_MAUVILLE_COLRESS
+	return
+
+MauvilleCity_EventScript_ColressTalk::
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_MAUVILLE_COLRESS, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_MAUVILLE_COLRESS, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox MauvilleCity_Text_ColressIntro, MSGBOX_DEFAULT
+	msgbox MauvilleCity_Text_ColressAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_ColressDeclined
+	call MauvilleCity_EventScript_ColressBattle
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MAUVILLE_COLRESS
+	setflag FLAG_HIDE_MAUVILLE_COLRESS
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+MauvilleCity_EventScript_ColressDeclined::
+	setvar VAR_COLRESS_MAUVILLE_STATE, 1
+	msgbox MauvilleCity_Text_ColressDeclined, MSGBOX_DEFAULT
+	call MauvilleCity_EventScript_ColressLeave
+	removeobject LOCALID_MAUVILLE_COLRESS
+	setobjectxyperm LOCALID_MAUVILLE_COLRESS, 21, 9
+	addobject LOCALID_MAUVILLE_COLRESS
+	releaseall
+	end
+
+MauvilleCity_EventScript_ColressBattle::
+	msgbox MauvilleCity_Text_ColressAccept, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_COLRESS_MAUVILLE, MauvilleCity_Text_ColressDefeat
+	setvar VAR_COLRESS_MAUVILLE_STATE, 2
+	msgbox MauvilleCity_Text_ColressPostBattle, MSGBOX_DEFAULT
+	return
+
+@ aangesproken bij het Pokémon Center (na weigeren)
+MauvilleCity_EventScript_Colress::
+	lock
+	faceplayer
+	msgbox MauvilleCity_Text_ColressWaiting, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_ColressStillWaiting
+	call MauvilleCity_EventScript_ColressBattle
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MAUVILLE_COLRESS
+	setflag FLAG_HIDE_MAUVILLE_COLRESS
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+MauvilleCity_EventScript_ColressStillWaiting::
+	msgbox MauvilleCity_Text_ColressStillWaiting, MSGBOX_DEFAULT
+	release
+	end
+
+@ terug zoals hij kwam (VAR_0x8007: 0 = kwam van rechts)
+MauvilleCity_EventScript_ColressLeave::
+	call_if_eq VAR_0x8007, 0, MauvilleCity_EventScript_ColressLeaveRight
+	call_if_eq VAR_0x8007, 1, MauvilleCity_EventScript_ColressLeaveLeft
+	waitmovement 0
+	return
+
+MauvilleCity_EventScript_ColressLeaveRight::
+	applymovement LOCALID_MAUVILLE_COLRESS, MauvilleCity_Movement_ColressLeaveRight
+	return
+
+MauvilleCity_EventScript_ColressLeaveLeft::
+	applymovement LOCALID_MAUVILLE_COLRESS, MauvilleCity_Movement_ColressLeaveLeft
+	return
+
+MauvilleCity_Movement_ColressWalkLeft:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+MauvilleCity_Movement_ColressWalkRight:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+MauvilleCity_Movement_ColressLeaveRight:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+MauvilleCity_Movement_ColressLeaveLeft:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+MauvilleCity_Text_ColressIntro:
+	.string "???: Ah! A fresh data point walking into\n"
+	.string "MAUVILLE!\p"
+	.string "I am COLRESS. I came here because\n"
+	.string "MAUVILLE calls itself the city of the\l"
+	.string "future.\p"
+	.string "Then I looked at the future. Allow me to\n"
+	.string "present my findings.\p"
+	.string "Exhibit A: the GAME CORNER. Every slot\n"
+	.string "machine is a random number generator\l"
+	.string "wired to one man named Gerald. When you\l"
+	.string "win, Gerald cries.\p"
+	.string "Exhibit B: the entire city runs on a\n"
+	.string "single MAGNEMITE on a treadmill.\l"
+	.string "WATTSON calls this “the grid.”\p"
+	.string "Exhibit C: the bike shop sells two bikes,\n"
+	.string "but you may only own one. That is not a\l"
+	.string "business model. That is a hostage\l"
+	.string "situation.\p"
+	.string "Exhibit D: the power plant under the\n"
+	.string "city is sealed with a key. The key is in\l"
+	.string "WATTSON's pocket. Next to a peppermint.\l"
+	.string "The peppermint is also from 1987.\p"
+	.string "Exhibit E: the internet here is a ROTOM\n"
+	.string "in somebody's basement. It has opinions\l"
+	.string "about your browser history.\p"
+	.string "Conclusion: MAUVILLE is held together\n"
+	.string "by tape, optimism and one very tired\l"
+	.string "electric rodent.\p"
+	.string "But the most interesting thing in this\n"
+	.string "city... is your team.\p"
+	.string "I sense structure. Synergy. Somebody\n"
+	.string "actually thought about type coverage.\l"
+	.string "Or got lucky in a statistically\l"
+	.string "fascinating way.$"
+
+MauvilleCity_Text_ColressAsk:
+	.string "Would you let me test it in battle?\n"
+	.string "Strictly for science.\p"
+	.string "You may refuse. Science also studies\n"
+	.string "rejection.$"
+
+MauvilleCity_Text_ColressAccept:
+	.string "Excellent! Let us collect some data!$"
+
+MauvilleCity_Text_ColressDeclined:
+	.string "A refusal! Noted, logged and\n"
+	.string "timestamped.\p"
+	.string "I will be near the POKéMON CENTER,\n"
+	.string "recalibrating. Come find me when your\l"
+	.string "curiosity wins.$"
+
+MauvilleCity_Text_ColressDefeat:
+	.string "Fascinating! My hypothesis was wrong.\n"
+	.string "That is the best possible outcome!$"
+
+MauvilleCity_Text_ColressPostBattle:
+	.string "Your Pokémon brought out every last\n"
+	.string "bit of their potential.\p"
+	.string "Unlike MAUVILLE's power grid. I'm going\n"
+	.string "to go unplug the treadmill and see what\l"
+	.string "happens.$"
+
+MauvilleCity_Text_ColressWaiting:
+	.string "COLRESS: Ah, my favorite data point!\n"
+	.string "Has your curiosity finally won? Shall we\l"
+	.string "battle?$"
+
+MauvilleCity_Text_ColressStillWaiting:
+	.string "Still no? Fine. I will keep observing the\n"
+	.string "bike shop. I believe it's about to sell a\l"
+	.string "third bike to nobody.$"

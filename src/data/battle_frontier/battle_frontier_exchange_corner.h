@@ -45,6 +45,9 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_KINGS_ROCK,
     ITEM_FOCUS_BAND,
     ITEM_SCOPE_LENS,
+    ITEM_OLD_SEA_MAP,   // Project Grounded: tickets voor de legendary-eilanden
+    ITEM_MYSTIC_TICKET,
+    ITEM_AURORA_TICKET,
     ITEM_LIST_END
 };
 
@@ -84,6 +87,11 @@ static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
     gText_Exit
 };
 
+// Project Grounded: tickets voor de legendary-eilanden
+static const u8 sText_OldSeaMapDesc[] = _("A faded sea chart to a faraway\nisland. The S.S. TIDAL can go.");
+static const u8 sText_MysticTicketDesc[] = _("A ticket for the S.S. TIDAL to\nNAVEL ROCK.");
+static const u8 sText_AuroraTicketDesc[] = _("A ticket for the S.S. TIDAL to\nBIRTH ISLAND.");
+
 static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
 {
     BattleFrontier_ExchangeServiceCorner_Text_LeftoversDesc,
@@ -95,5 +103,8 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
     BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
+    sText_OldSeaMapDesc, // Project Grounded
+    sText_MysticTicketDesc,
+    sText_AuroraTicketDesc,
     gText_Exit
 };

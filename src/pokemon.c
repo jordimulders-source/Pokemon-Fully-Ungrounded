@@ -6126,11 +6126,15 @@ u16 GetBattleBGM(void)
 
         // Project Grounded: Prof. Birch vecht op de Macarena
         if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_VERDANTURF || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2))
+         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_VERDANTURF || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2 || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_MOSSDEEP || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_UNDERWATER))
             return MUS_GROUNDED_VS_BIRCH;
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
+            return MUS_GROUNDED_VS_COLRESS;
+        case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
+            return MUS_GROUNDED_VS_ZINNIA;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;

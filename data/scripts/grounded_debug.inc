@@ -143,3 +143,48 @@ Debug_EventScript_Legend_HoOh::
 	waitstate
 	releaseall
 	end
+
+@ Project Grounded: debugmenu Utilities > Wild battle (map) - wild gevecht uit de tabel van deze kaart (route-transities testen)
+Debug_EventScript_WildFromMap::
+	lockall
+	special Debug_StartMapWildBattle
+	goto_if_eq VAR_RESULT, FALSE, Debug_EventScript_WildFromMap_None
+	waitstate
+	releaseall
+	end
+
+Debug_EventScript_WildFromMap_None::
+	msgbox Debug_Text_WildFromMap_None, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_WildFromMap_None:
+	.string "Deze kaart heeft geen wilde Pokémon.$"
+
+@ Project Grounded: debugmenu Utilities > Force encounter - bevestiging
+Debug_EventScript_ForcedEncounterSet::
+	msgbox Debug_Text_ForcedEncounterSet, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_ForcedEncounterSet:
+	.string "All wild encounters: {STR_VAR_1}.\n"
+	.string "Turn off: Force encounter: off.$"
+
+@ Project Grounded: debugmenu Utilities > Force encounter: off - weer gewone encounters
+Debug_EventScript_ForcedEncounterOff::
+	special Debug_ClearForcedEncounter
+	msgbox Debug_Text_ForcedEncounterOff, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_ForcedEncounterOff:
+	.string "Wild encounters are back to normal.$"
+
+Debug_EventScript_Legend_Heatran::
+	lockall
+	setwildbattle SPECIES_HEATRAN, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end

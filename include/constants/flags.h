@@ -80,17 +80,17 @@
 #define FLAG_HIDE_SOOTOPOLIS_TROPIUS 0x42 // Project Grounded
 #define FLAG_HIDE_VERDANTURF_BIRCH 0x43 // Project Grounded
 #define FLAG_RECEIVED_HOENN_GRIMER 0x44 // Project Grounded: Birch geeft een Hoenn-Grimer (Verdanturf)
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_HIDE_NEW_MAUVILLE_RAIKOU    0x45 // Project Grounded: Raikou (static) in de verborgen serverruimte van New Mauville
+#define FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN    0x46 // Project Grounded: schakelaar op de computer in de oostkamer: deur naar de ondergrondse grot (Raikou)
+#define FLAG_HIDE_MT_CHIMNEY_ENTEI    0x47 // Project Grounded: Entei (static) in de verborgen lavagrot van Mt. Chimney
+#define FLAG_HIDE_MAUVILLE_COLRESS    0x48 // Project Grounded: Colress wacht in Mauville op een gevecht
+#define FLAG_HIDE_MAGMA_HIDEOUT_COLRESS    0x49 // Project Grounded: Colress in de machinekamer van de Magma Hideout
+#define FLAG_HIDE_SKY_PILLAR_ZINNIA    0x4A // Project Grounded: Zinnia voor de Sky Pillar
+#define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED    0x4B // Project Grounded: stippenpuzzel in de Regieleki-grot (onder de Cycling Road)
+#define FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED    0x4C // Project Grounded: stippenpuzzel in de Regidrago-grot (Route 130)
+#define FLAG_DEFEATED_REGIELEKI    0x4D // Project Grounded: Regieleki gevangen
+#define FLAG_DEFEATED_REGIDRAGO    0x4E // Project Grounded: Regidrago gevangen
+#define FLAG_DEFEATED_REGIGIGAS    0x4F // Project Grounded: Regigigas gevangen
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -120,7 +120,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_REGIGIGAS_TEMPLE_OPEN           0x68  // Project Grounded: alle vijf Regi's gevangen, de tempel in Ashfrost is open
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -255,7 +255,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_HIDE_REGIELEKI                  0xE9 // Project Grounded
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -460,8 +460,8 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_HIDE_REGIDRAGO                  0x1AA // Project Grounded
+#define FLAG_HIDE_REGIGIGAS                  0x1AB // Project Grounded
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -510,7 +510,7 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_HIDE_FIERY_PATH_HEATRAN         0x1DA // Project Grounded: Heatran (static) in de lavagrot onder Fiery Path
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC

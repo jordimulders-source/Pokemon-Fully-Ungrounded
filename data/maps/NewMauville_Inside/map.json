@@ -126,6 +126,13 @@
       "elevation": 3,
       "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 38,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_MAUVILLE_THUNDER_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -284,6 +291,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NewMauville_Inside_EventScript_Generator"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NewMauville_Inside_EventScript_ServerRoomSwitch"
     }
   ]
 }

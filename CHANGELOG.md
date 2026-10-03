@@ -15634,3 +15634,145 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.78] - Crystal Cavity: meer weer bereikbaar, lavarand af
 - Een **rode kristal op (18,24)** stond midden op het pad tussen water en lava, waardoor je het meer (en dus het duikstuk naar Suicune) niet meer kon bereiken. `grotto136.py` controleert nu bij elke kristal of alles vanaf de ingang bereikbaar blijft (water telt mee); een kristal die iets afsluit wordt overgeslagen. Het script stopt met een fout als het meer onbereikbaar is.
 - De **linkerrand van het lavameer** (linksonder) was niet af: de buitenste randkolom van Terra Cave werd niet meegekopieerd. Nu wel; het lavameer is 1 tile naar rechts geschoven, zodat het pad op x 18 vrij blijft.
+
+### [v.0.8.79] - Birch in Mossdeep (kosmische stront) en onder water (Clamperl-stront)
+- **Prof. Birch in Mossdeep** (`TRAINER_BIRCH_MOSSDEEP`) staat op het zandveld onder het Space Center (59,24), naast een **"meteoriet"** op (60,24): de grijze driehoeksteen van Birth Island (`OBJ_EVENT_GFX_DEOXYS_TRIANGLE`, standaardpalet, dus steenkleurig). Birch weet zeker dat het geen steen is maar **een hoop kosmische stront** ("EXTRATERRESTRIAL POOP!") van een Minior, Lunatone of Deoxys. Daarna begint hij uitgebreid over de **Macarena**: Los del Río (Antonio Romero en Rafael Ruiz uit de buurt van Sevilla), de flamencodanseres in Venezuela (1992), Macarena als tweede naam van Antonio's dochter, de remix van de Bayside Boys uit Miami (Engelse coupletten, 14 weken nummer 1 in de VS in 1996), het politieke congres dat hem dat jaar danste, Vitorino die het leger in gaat, en de danspasjes.
+  - Team (lv 46, ace 48): Rabsca, Minior, Lunatone, Clodsire, Palossand, Hoenn-Muk.
+- **Prof. Birch onder water** (`TRAINER_BIRCH_UNDERWATER`) op Underwater Route 124, in het ronde zeewierveld links (11,32), met een snorkel van Wailord-stront. Hij onderzoekt de Clamperl-stront (onzichtbaar bord naast hem: "They're not pearls.").
+  - Team (lv 49, ace 51): Wailord, Gorebyss, Pyukumuku, Jellicent, Clodsire, Hoenn-Muk.
+- Beide gevechten hebben de Macarena en de prut-transitie, zoals de andere Birch-gevechten. Teksten zijn placeholders.
+- Getest in de emulator: de meteoriet en Birch in Mossdeep, Birch onder water, en het begin van beide gevechten (onder water met de onderwaterachtergrond).
+
+### [v.0.8.80] - Raikou en Entei: verborgen grotten en eigen gevechtstransities
+- **Raikou (lv 50, static), New Mauville:** in de oostkamer zit onder een monitor (34,22) een stoffige schakelaar ("SERVER ROOM B. DO NOT PRESS. THIS MEANS YOU, WATTSON."). Druk je erop, dan schuift een paar tiles verder bovenaan de gang (38,23) een wand open met een trap. Daarachter ligt een **kapot ondergronds datacenter** (`NewMauville_ThunderCave`): een rotsgrot zoals de ingang van New Mauville, vol tanks en computers uit de Aqua Hideout, met puin en **stoom** (horizontale mist). Op de monitoren staan placeholderteksten ("ERROR: FUTURE NOT FOUND."). New Mauville kun je pas in met Surf, dus vanaf badge 5.
+- **Entei (lv 50, static), Mt. Chimney:** vanaf **badge 5** is er aan de rustige westkant van Mt. Chimney (8,12) een grotingang in de rotswand (zelfde mechanisme als de Magma Hideout op Jagged Pass; daarvoor is het gewoon rots). Daarachter een gang (`MtChimney_EnteiPassage`, kopie van Terra Cave Entrance) en een lavagrot (`MtChimney_EnteiLair`, kopie van Terra Cave End), waar Entei aan de lava staat.
+- Vlucht je, dan blijven ze staan; verslagen of gevangen = weg (`FLAG_HIDE_NEW_MAUVILLE_RAIKOU`, `FLAG_HIDE_MT_CHIMNEY_ENTEI`; schakelaar: `FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN`).
+- **Nieuwe gevechtstransities** (muziek blijft het beasts-thema):
+  - **Raikou (`B_TRANSITION_RAIKOU`):** het beeld wordt blauwzwart en er slaan steeds sneller bliksems (Thunder) in op verschillende plekken, elk met een witte flits en een donderklap. De laatste klap maakt alles wit.
+  - **Entei (`B_TRANSITION_ENTEI`):** midden in beeld flakkert een klein steekvlammetje, de wereld kleurt donkerrood, en dan breidt het vuur zich eerst langzaam en daarna steeds sneller uit over het hele scherm, gloeit wit op en gaat over in het gevecht.
+  - Graphics: `tools/grounded/beasts_transition.py`. Kaarten: `tools/grounded/maptools/beasts_maps.py`.
+- Getest in de emulator: de schakelaar, de deur, het datacenter en het Raikou-gevecht; de ingang op Mt. Chimney (alleen met badge 5), de gang en het Entei-gevecht; beide transities.
+- CLAUDE.md: testgevechten voortaan met een Arceus lv 100 (Dark Pulse, Psychic, Thunderbolt, Ice Beam) en alle badges aan.
+
+### [v.0.8.81] - Birch houdt zijn strontteam
+- De teams van **Birch in Mossdeep** en **Birch onder water** bouwen nu voort op zijn eerdere strontteam (Route 135): Rabsca, Clodsire, Palossand en Mudsdale, met **Hoenn-Muk** als ace. Per gevecht één Pokémon in het thema: **Minior** bij de meteoriet (lv 46, ace 48), **Wailord** onder water (lv 49, ace 51).
+
+### [v.0.8.82] - Route-transities, ronde 1: zee, strand, onder water, sneeuw
+- Nieuw: **route-transities**. Op bepaalde plekken krijgen alle gevechten (wild en trainers) een eigen overgang. Gevechten met een unieke transitie houden die (gymleiders, rivalen, Birch, legendaries, Team Aqua/Magma, alles met een mugshot). De keuze zit in `GetGroundedRouteTransition` (`src/battle_setup.c`).
+  - **Zee / surfen** (`B_TRANSITION_ROUTE_WAVE`): een golf met een krullende schuimkam rolt van rechts naar links over het beeld. Geldt voor elk gevecht terwijl je surft.
+  - **Strand van een zeeroute** (Route 105–109, 122, 124–134, niet surfend; `B_TRANSITION_ROUTE_BEACH`): uit de verte komt een golf aan die steeds hoger wordt en over je heen spoelt (witte spat).
+  - **Onder water** (`B_TRANSITION_ROUTE_BUBBLES`): steeds meer luchtbellen stijgen van beneden naar boven, het beeld kleurt diepblauw. Birch onder water houdt zijn eigen transitie.
+  - **Route 135/136** (`B_TRANSITION_ROUTE_SNOW`): ongeacht het weer gaat het steeds harder sneeuwen tot het scherm helemaal wit is.
+- Gedeelde runner voor alle route-transities in `src/battle_transition.c` (`RouteTransition_Run`); tiles uit `tools/grounded/route_transitions.py`. Testen: `tools/grounded/maptools/transtest.py` (warp + wild gevecht, strook frames per plek).
+- Op de lijst in `TODO.md`: de overige route-transities, Gabby & Ty (camera met REC), de Poochyena-trainer (Poochyena valt in POV aan) en het strand bij Slateport (strandbal in je gezicht).
+
+### [v.0.8.83] - Route-transities, ronde 2: as, zandstorm, hittegolf, Cycling Road
+- **Route 113** (`B_TRANSITION_ROUTE_ASH`): vulkanische as waait van rechts naar links door het beeld, steeds dichter, tot alles grijs is.
+- **Woestijn van Route 111** (alleen op zand) **en Desert Ruins** (`B_TRANSITION_ROUTE_SAND`): zandstorm. Laag na laag zand schuift snel van onder naar boven over het beeld, met vliegend zand erboven.
+- **Fiery Path en Mt. Chimney** (`B_TRANSITION_ROUTE_HEAT`): hittegolf. Het beeld trilt in opstijgende golven, kleurt oranje en dan verblindend licht.
+- **Cycling Road** (de verhoogde weg op Route 110; `B_TRANSITION_ROUTE_CYCLING`): POV over je stuur. Je raast over de weg boven de zee, de strepen en randen schieten op je af (fietsbel), dan wit.
+- Regirock in de Desert Ruins houdt zijn eigen transitie.
+
+### [v.0.8.84] - Route-transities, ronde 3: Mt. Pyre, Sky Pillar, New Mauville, Artisan Cave
+- **Mt. Pyre** (alle verdiepingen, buitenkant en top; `B_TRANSITION_ROUTE_PYRE`): een vloek. Paarse mist kruipt van de randen naar het midden, overal gaan gloeiende ogen open (en knipperen), vloektekens flakkeren, tot alles donkerpaars is.
+- **Sky Pillar** (`B_TRANSITION_ROUTE_SKY`): je schiet zo snel de lucht in dat het beeld het niet bijhoudt. Snelheidsstrepen en wolken razen naar beneden, het beeld schudt, de wereld verdwijnt in het blauw en alles wordt wit.
+- **New Mauville** (ingang, binnen en het datacenter; `B_TRANSITION_ROUTE_SHORT`): kortsluiting. Het beeld hapert in verschoven banden, flikkert, er springen vonken over, en dan gaat het uit als een oude tv (witte lijn die krimpt tot een stip).
+- **Artisan Cave** (`B_TRANSITION_ROUTE_PAINT`): grote penseelstreken in rood, geel, blauw, groen en paars schilderen het beeld vol.
+- **Cycling Road:** het beeld fadet nu eerst kort naar zwart en daarna fadet de weg in.
+
+### [v.0.8.85] - Route-transities, ronde 4: Safari Zone, Meteor Falls, Jagged Pass, regenwoud (+ bijgewerkt: Mt. Pyre, New Mauville)
+- **Safari Zone** (`B_TRANSITION_ROUTE_SAFARI`): het beeld fadet geleidelijk naar een bos van bovenaf. Je zigzagt over een pad tussen de bomen en struiken door, steeds sneller, tot je op een open plek uitkomt (geleidelijk naar wit).
+- **Meteor Falls** (`B_TRANSITION_ROUTE_METEOR`): zijwaarts door de grot, laverend tussen forse stalactieten en stalagmieten met rotsstructuur.
+- **Jagged Pass** (`B_TRANSITION_ROUTE_JAGGED`): POV op de fiets, hobbelend bergaf over een rotsig pad. Grote rotsen op het pad komen op je af en schieten onder je stuur door.
+- **Route 119, Fortree en Route 120** (`B_TRANSITION_ROUTE_RAINFOREST`): je baant je een weg door reuzenbladeren en lianen, in de regen.
+- **Mt. Pyre:** de paarse mist is vervangen door de **ongeïdentificeerde ghosts uit Lavender Town** (zwart silhouet, boze ogen, brede grijns, klauwhandjes, korrelige aura) die van beneden omhoog door een grauwe wereld zweven.
+- **New Mauville:** tijdens de kortsluiting flitst **MissingNo** meerdere keren heel kort in beeld.
+- Op de lijst (`TODO.md`): soort-transities voor Pikachu, Magikarp, Psyduck en Koffing/Weezing.
+
+### [v.0.8.86] - Mt. Pyre: de echte Lavender Town-ghost
+- De ghosts in de Mt. Pyre-transitie zijn nu **pixel voor pixel de originele sprite uit Pokémon Red/Blue** (`graphics/grounded/ghost_pokered.png`, uit pret/pokered `gfx/battle/ghost.png`), met een paarse aura. Er zweven er nu meer tegelijk omhoog.
+
+### [v.0.8.87] - New Mauville: de echte MissingNo
+- De MissingNo in de kortsluit-transitie is nu **cel voor cel Jordi's plaatje** (`graphics/grounded/missingno.png`), inclusief de L-vorm en de lichtroze vlakken. Hij flitst **zes keer** heel kort (3–4 frames) op steeds een andere plek in beeld.
+
+### [v.0.8.88] - Unieke transities: Pikachu, Magikarp, Psyduck, Koffing/Weezing, Gabby & Ty, Joey, strand van Slateport
+- **Wilde Pikachu** (`B_TRANSITION_PIKACHU`): meteen een geel scherm, twee rode wangen schuiven erin, dan "Pika!" in zwarte letters in het midden (met Pikachu's cry).
+- **Wilde Magikarp** (`B_TRANSITION_MAGIKARP`): een voor een verschijnen er spartelende Magikarp (het party-icoon met zijn twee frames), tot er 40 in beeld zitten.
+- **Wilde Psyduck** (`B_TRANSITION_PSYDUCK`): de wereld kleurt geel, een enorm vraagteken ploft in beeld en gaat steeds sneller rondjes draaien.
+- **Wilde Koffing, Weezing en Galar-Weezing** (`B_TRANSITION_KOFFING`): het schedel-en-botten-teken van Koffing op paars, met hetzelfde weef-effect als het Aqua/Magma-logo.
+- **Gabby & Ty** (alle gevechten, ook met de local celebrity; `B_TRANSITION_GABBY_TY`): een camera wordt op je gericht. De zoekerhoeken zoomen in, REC verschijnt met een knipperende rode stip en een batterij-icoon, en het eindigt met een flits.
+- **Joey** (Route 116, de Poochyena-trainer; `B_TRANSITION_POOCHYENA`): zijn Poochyena springt in sprongen op je af, steeds groter, tot hij bijt (rood).
+- **Strand van Route 109** (voor Slateport, niet surfend; `B_TRANSITION_BEACHBALL`): strand met parasols onderin, een draaiende strandbal vliegt in een boog op je af en raakt je vol (beeld schudt, wit).
+- Soort-transities gaan vóór route-transities (een Magikarp onder water krijgt de Magikarp-transitie). De draaiende/schalende figuren zijn affine sprites (`RT_CreateSprite`); de wereld kleurt mee, de sprite niet.
+- Graphics in `tools/grounded/route_transitions.py`; Poochyena en Magikarp komen uit de eigen sprites/iconen van de game.
+
+### [v.0.8.89] - Magikarp: verdrinken in Magikarp
+- De Magikarp-transitie is veel voller: **grote Magikarp-iconen** (2x vergroot) vullen de achtergrond, en daaroverheen verschijnen steeds sneller **tot 56 spartelende Magikarp-sprites** (de grote front-sprite, 64x64, met beide animatieframes). Ze springen op en neer, staan willekeurig gespiegeld en overlappen elkaar, tot het scherm een berg Magikarp is.
+
+### [v.0.8.90] - Magikarp nog groter
+- Achtergrond-iconen nu **3x vergroot** (96x96), en in de tweede helft komen er **zes Magikarp-reuzen** bij (sprites op ~1,8x, normaal en gespiegeld, met een plons) bovenop de tientallen spartelende Magikarp.
+
+### [v.0.8.91] - Magikarp: het hele scherm vol
+- Aan het eind van de Magikarp-transitie stapelt zich een **berg Magikarp** van onder naar boven op: een vooraf gemaakte collage van 79 overlappende Magikarp (`route_magikarp_pile`, in `route_transitions.py`) waarin geen enkele pixel achtergrond meer zichtbaar is. Vlak voor het gevecht zie je dus alleen nog Magikarp.
+
+### [v.0.8.92] - Magikarp: geleidelijker opbouwen
+- De Magikarp-transitie duurt langer (ruim 2,5 seconde) en bouwt geleidelijk op: eerst af en toe een Magikarp, dan steeds vaker, rond de helft drie reuzen (boven, midden en onder, zodat de GBA ze op dezelfde beeldregels kan blijven tekenen), en pas daarna stapelt de berg zich rij voor rij op tot het scherm vol is.
+
+### [v.0.8.93] - Plan van aanpak voor de backlog, credits
+- **`BACKLOG_PLAN.md`:** per backlog-onderdeel (legendaries, Regi-quest, gebieden, trainers, signature moves, Battle Frontier) wat er al is, een voorstel en genummerde vragen voor Jordi. Opvallend: de eilanden voor Mew, Deoxys, Lugia/Ho-Oh en de Lati's staan al in de ROM; alleen de tickets zijn in vanilla alleen via Mystery Gift te krijgen.
+- **`CREDITS.md`:** graphics uit FireRed/LeafGreen (Brock, Oak), de ghost uit Red/Blue (pret/pokered) en MissingNo.
+
+### [v.0.8.94] - Graphics-map, Colress en Zinnia, debug: wild gevecht op de kaart
+- **Aangeleverde afbeeldingen** staan nu in `graphics/grounded/` in plaats van in de hoofdmap:
+  - `tilesets/`: vier Ekat99-tilesets: `ekat99_lava_rotsen.png` (rotsen en lava), `ekat99_moeras.png` (moeras), `ekat99_sneeuwtempel.png` (ijs en een tempel, à la Snowpoint Temple), `ekat99_tuin_meloenen.png` (tuin met meloenen). Nog niet omgezet; dat gebeurt per gebied.
+  - `trainers/colress/`: B2W2-trainerfoto (`colress_b2w2_bron.png`), VS-portret (`colress_vs_bron.png`), overworld-sheet (`colress_overworld_bron.jpg`).
+  - `trainers/zinnia/`: trainerfoto + overworld-frames in één sheet (`zinnia_bron.png`).
+  - `trainers/burglar/`: de Burglar uit Red/Blue (`burglar_redblue_bron.png`, Game Boy-grijstinten, uitvergroot).
+  - `overworld/frlg_overworld_npcs.png`: alle NPC-overworlds uit FireRed/LeafGreen.
+- **Trainerfoto's omgezet naar GBA-formaat** (64x64, 15 kleuren + transparant), nog niet in de game: `colress_front_pic.png` en `zinnia_front_pic.png`. Beide afgesneden onder de knieën in plaats van verkleind (verkleinen maakte de gezichten kapot). Zinnia ging van 36 naar 15 kleuren.
+- **Debugmenu: Utilities > "Wild battle (map)"**: start meteen een wild gevecht met een Pokémon uit de encountertabel van de kaart waar je staat (gras/grot, anders surfen, anders vissen met de Good Rod). Het gevecht gebruikt de gewone transitie van die plek, dus zo test je route- en soort-transities zonder door het gras te lopen. Kaarten zonder wilde Pokémon geven een melding. Special `Debug_StartMapWildBattle` in `src/wild_encounter.c`.
+- **Deoxys** krijgt een eigen event (niet Birth Island): vanaf Mossdeep word je de ruimte in geschoten en land je op een andere planeet. Het landschap bouwen we uit de Meteor Falls-tileset met paletswaps (er is geen ruimte-tileset). Bijgewerkt in `BACKLOG_PLAN.md`.
+
+### [v.0.8.95] - Colress en Zinnia in de game, Zangoose- en Seviper-transities, force encounter
+- **Colress** (trainerfoto B2W2, overworld van **PizzaSun**, 32x32 zoals Brendan op de fiets; nieuwe klasse SCIENTIST, muziek "Battle! Colress"):
+  - **Mauville:** de eerste keer dat je Mauville binnenloopt vanaf Route 110 (zuidingang) komt Colress op je af en geeft een komische technische analyse van alles wat er in Mauville misgaat (Gerald in de Game Corner, de Magnemite op de loopband, de fietswinkel als gijzeling, de Rotom-internet in de kelder). Daarna vraagt hij om een gevecht; weigeren mag. Dan wacht hij bij het Pokémon Center (`VAR_COLRESS_MAUVILLE_STATE`). Team lv 26 (Porygon 27): **Elgyem** (lead, Dimensional Warp = Trick Room), Klink, Magnemite, Varoom, Porygon. Allemaal traag; Analytic onder Trick Room.
+  - **Magma Hideout:** hij loopt rond tussen de boormachines in `MagmaHideout_2F_3R`: Team Plasma waren amateurs, maar Team Magma heeft een gelamineerd onderhoudsschema. Team lv 45: Beheeyem, Klinklang, Magnezone, Revavroom, Porygon2, **Magearna** (lv 47). Klinklang, Magnezone en Porygon2 kennen **Machine Learning**.
+  - **Transitie** `B_TRANSITION_COLRESS`: eerst de mugshot-slide; vanuit het witte scherm kleurt alles donker staalblauw en grijpen **twee draaiende tandwielen** in elkaar die steeds sneller draaien en dichterbij komen, eindigend in een witte flits.
+- **Zinnia** (trainerfoto en overworld omgezet; klasse LOREKEEPER, eigen muziek uit Jordi's MIDI: `MUS_GROUNDED_VS_ZINNIA`): staat voor de deur van de Sky Pillar tijdens de klim naar Rayquaza (`VAR_SOOTOPOLIS_CITY_STATE` 4). Na de Wallace-scène staat ze er meteen en test ze je; ze blokkeert de deur tot je wint. Placeholderdialoog over lore die niemand meer kan volgen (splintergroepen, soep op het wandtapijt, een profetie in een taal van drie sprekers). Team: Altaria, Salamence, Noivern, Hisui-Goodra, Dracovish (lv 58–59), **Roaring Moon** lv 60 met Booster Energy. Groene mugshot.
+- **Wilde Zangoose** (`B_TRANSITION_ZANGOOSE`): een reuzenklauw (Crush Claw) zwiept diagonaal door beeld en laat drie striemen achter. Daarna scheurt de middelste open tot een zwarte, gekartelde scheur die het hele scherm opslokt; de wereld kleurt rood en trilt.
+- **Wilde Seviper** (`B_TRANSITION_SEVIPER`): een schermvullende Poison Fang. De bovenkaak met twee enorme giftanden (paarse punten) zakt in beeld, de onderkaak komt van onder, ze klappen dicht en alles loopt paars vol.
+- **Debug: "Force encounter…"** (Utilities): kies een soort met de soortkiezer van Give Pokémon. Alle wilde encounters (gras, surfen, vissen, Rock Smash en "Wild battle (map)") worden die soort, op het level uit de tabel; de eerstvolgende stap in het gras is meteen raak. **"Force encounter: off"** zet het weer uit. Getest in de emulator (Metapod op Route 117).
+- Graphics: `tools/grounded/trainer_sprites.py` (trainerfoto's en overworlds van Colress/Zinnia), tandwiel, klauw en kaken in `tools/grounded/route_transitions.py`. Bron-MIDI in `sound/songs/grounded_src/oras_zinnia.mid`.
+- **BACKLOG_PLAN.md:** Jordi's antwoorden verwerkt (tickets in de battle facility, Lati's via de rivaal in Lilycove, Regi-stippen, sneeuwtempel = Regigigas-grot) plus een voorstel voor de stippenvolgorde.
+
+### [v.0.8.96] - Regi-stippen, Regieleki en Regidrago, de Regigigas-tempel, en losse fixes
+- **Regi-stippenpuzzel** (vervangt de braille-puzzels en de Wailord/Relicanth-kamer): in de voorkamer van elke Regi-grot liggen stippen in het oogpatroon van die Regi (nieuwe metatiles 0x3A8 uit / 0x3A9 aan in de Cave-tileset, gloed in palet 6). Bekijk je de muur, dan lichten de stippen één voor één op in de juiste volgorde: kijken en nadoen. Een verkeerde stip laat alles doven. Als alles brandt, schuift de muur open. Code: `src/regi_dots.c`, `data/scripts/regi_dots.inc`; stippen en kaarten via `tools/grounded/maptools/regi_caves.py`.
+  - Patronen: Regirock een H, Regice een zeshoek met midden, Registeel een kruis, Regieleki een boog met midden, Regidrago een vork (zoals in hun transities).
+  - De drie vanilla Regi-grotten zijn vanaf het begin open (`FLAG_REGI_DOORS_OPENED` bij een nieuw spel); de Sealed Chamber is niet meer nodig.
+  - Versla je een Regi in plaats van hem te vangen, dan valt hij uit elkaar en zet hij zichzelf weer in elkaar (staat er de volgende keer weer). Alleen vangen telt.
+- **Regieleki** (lv 50): een roestig onderhoudsluik in de steunpilaar van de Cycling Road (Route 110, onder de brug op 15,71). Grot `RegielekiCave`.
+- **Regidrago** (lv 50): een eilandje met grot op Route 130 (ten oosten van de Sky Pillar), een kopie van het Island Cave-eiland. Grot `RegidragoCave`.
+- **Regigigas-tempel:** zodra alle vijf Regi's gevangen zijn, rommelt het in het noorden en is de vloer van de iglo in Ashfrost ingestort tot een trap. Beneden: een tempelzaal uit de sneeuwtempel-tileset van Ekat99 (nieuwe secondary `snow_temple`, `tools/grounded/regigigas_temple.py`) met de stenen gevel, ijsvloer en **Regigigas lv 70**.
+- **Witte uit vóór Oldale** stuurde je naar Petalburg (de respawn werd door de geschrapte truck-intro gezet). Bij een nieuw spel is de respawn nu je eigen huis.
+- **Transities Route 135/136 (sneeuw) en Route 113 (as):** het windgeluid bleef doorlopen in het gevecht. Een herhalend geluid van een route-transitie stopt nu als het beeld naar zwart gaat.
+- **Schaduw bij de tegenstander:** bij wegrennen flitste aan het begin van de uitfade een paar frames een schaduw onder de tegenstander. Die blijft nu weg zodra het gevecht beslist is.
+- **Zandstorm tussen de beurten:** nog korter (zand 16 frames vol in beeld i.p.v. 36, sneller in- en uitfaden, twee zandsikkels i.p.v. vier).
+- **Duiken** gaat even snel als surfen.
+- **Ashfrost:** placeholderteksten voor de visser (grijze slushie-vis), het sneeuwpopjongetje (zijn sneeuwpop is een slechte invloed), de wandelaar (je zit hier nooit vast in de sneeuw zoals in Sinnoh) en de vrouw (haar was is nooit meer wit). De oude vrouw bij het Regi-heiligdom houdt haar tekst.
+
+### [v.0.8.97] - Tickets voor de legendary-eilanden
+- **Battle Frontier, ruilbalie voor vasthoud-items:** drie nieuwe prijzen voor **200 BP** per stuk: **OLD SEA MAP** (Faraway Island, Mew), **MYSTICTICKET** (Navel Rock, Lugia en Ho-Oh) en **AURORATICKET** (Birth Island, Deoxys met de driehoekpuzzel). Kopen zet meteen de bootroute aan; heb je het ticket al, dan zegt de balie dat het één per passagier is.
+- **Latias of Latios:** na het rivaalgevecht in Lilycove vertelt je rivaal dat hij/zij twee tickets voor Southern Island heeft gekocht maar zeeziek wordt, en je mag kiezen: **rood ticket = Latias, blauw ticket = Latios** (Eon Ticket). De andere zwerft na de Hall of Fame rond door Hoenn (`VAR_ROAMER_POKEMON`).
+- De veerman in Lilycove neemt je met het Eon Ticket ook vóór de Hall of Fame mee naar Southern Island (de andere tickets zijn post-game, want je koopt ze in de Battle Frontier).
+- Getest in de emulator: de tickets staan met icoon en beschrijving in het BP-menu; na het rivaalgevecht krijg je de keuze en het Eon Ticket.
+- **Deoxys:** het ruimte-event (Delta Episode) staat in de backlog; het huidige Birth Island-event blijft voorlopig.
+
+### [v.0.8.98] - Heatran-hol, Burglar-voorstel
+- **Heatran (lv 70, post-game):** na de Hall of Fame zit er linksboven in **Fiery Path** (bij het item in de doodlopende hoek, 8,0-1) een grotopening. Daarachter een vulkaangrot (`FieryPath_HeatranLair`, de layout van Magma Hideout 4F zonder de machines van Team Magma; `tools/grounded/maptools/heatran_lair.py`) met Heatran aan de rand van de grote lavapoel. Vlucht je, dan blijft hij staan.
+  - Muziek: het **Kanto-legendarythema** (`MUS_RG_VS_LEGEND`).
+  - **Transitie** `B_TRANSITION_HEATRAN`: de grond rommelt en de wereld kleurt rood, vijf brede lavapluimen spuiten een voor een omhoog (met koepelkop en spetters), dan loopt het hele beeld vol lava en gloeit het wit op.
+  - Ook in het debugmenu (Utilities > Legendary battle > Heatran).
+- **Burglar (Red/Blue):** voorstel voor een Gen 3-versie van de trainerfoto, pixel voor pixel dezelfde vorm, ingekleurd per vlak met Gen 3-schaduw (licht van linksboven): blauwe pet, zwart masker, bruine buit-zak, lichte kleding. `tools/grounded/burglar_sprite.py` → `graphics/grounded/trainers/burglar/burglar_gen3.png`. Nog niet in de game; Jordi beslist.
+
+### [v.0.8.99] - Ontwerp The Spire
+- `SPIRE_DESIGN.md`: alle afspraken over de roguelike-faciliteit The Spire (doubles met 2 rentals, intenties, DEFEND in plaats van POKéMON, moves als kaarten, relics, winkel, rust, BP naar rato). Nog niets gebouwd.

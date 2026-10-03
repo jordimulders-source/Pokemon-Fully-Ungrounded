@@ -561,7 +561,7 @@ static void AnimTask_LoadSandstormBackground_Step(u8 taskId)
     switch (gTasks[taskId].tState)
     {
     case 0:
-        if (++gTasks[taskId].tBlendTimer >= (gTasks[taskId].data[9] ? 2 : 4))
+        if (++gTasks[taskId].tBlendTimer >= (gTasks[taskId].data[9] ? 1 : 4))
         {
             gTasks[taskId].tBlendTimer = 0;
             gTasks[taskId].tBlend++;
@@ -574,14 +574,14 @@ static void AnimTask_LoadSandstormBackground_Step(u8 taskId)
         }
         break;
     case 1:
-        if (++gTasks[taskId].tFullAlphaTimer == (gTasks[taskId].data[9] ? 36 : 101))
+        if (++gTasks[taskId].tFullAlphaTimer == (gTasks[taskId].data[9] ? 16 : 101))
         {
             gTasks[taskId].tBlend = 7;
             gTasks[taskId].tState++;
         }
         break;
     case 2:
-        if (++gTasks[taskId].tBlendTimer >= (gTasks[taskId].data[9] ? 2 : 4))
+        if (++gTasks[taskId].tBlendTimer >= (gTasks[taskId].data[9] ? 1 : 4))
         {
             gTasks[taskId].tBlendTimer = 0;
             gTasks[taskId].tBlend--;

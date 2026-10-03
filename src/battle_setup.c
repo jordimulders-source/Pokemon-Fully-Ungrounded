@@ -507,12 +507,17 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
-    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema
-    case SPECIES_ENTEI:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
+        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_C_VS_LEGEND_BEAST);
+        break;
+    case SPECIES_ENTEI: // Project Grounded: steekvlam die het hele scherm overneemt
+        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_C_VS_LEGEND_BEAST);
         break;
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);
+        break;
+    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
+        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
     }
 
@@ -763,11 +768,98 @@ static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
     return sum;
 }
 
+// Project Grounded: route-transities. Geeft de transitie voor de plek waar de speler nu is, of -1 voor de standaard.
+// Unieke transities (legendaries, gymleiders, rivalen, Birch, ...) worden eerder gekozen en gaan hier niet langs.
+#define AT_MAP(map) (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(map) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(map))
+
+static bool32 IsSeaRoute(void)
+{
+    return AT_MAP(MAP_ROUTE105) || AT_MAP(MAP_ROUTE106) || AT_MAP(MAP_ROUTE107) || AT_MAP(MAP_ROUTE108)
+        || AT_MAP(MAP_ROUTE109) || AT_MAP(MAP_ROUTE122) || AT_MAP(MAP_ROUTE124) || AT_MAP(MAP_ROUTE125)
+        || AT_MAP(MAP_ROUTE126) || AT_MAP(MAP_ROUTE127) || AT_MAP(MAP_ROUTE128) || AT_MAP(MAP_ROUTE129)
+        || AT_MAP(MAP_ROUTE130) || AT_MAP(MAP_ROUTE131) || AT_MAP(MAP_ROUTE132) || AT_MAP(MAP_ROUTE133)
+        || AT_MAP(MAP_ROUTE134);
+}
+
+static s32 GetGroundedRouteTransition(void)
+{
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        return B_TRANSITION_ROUTE_BUBBLES;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        return B_TRANSITION_ROUTE_WAVE;
+    // het strand voor Slateport: strandbal in je gezicht
+    if (AT_MAP(MAP_ROUTE109))
+        return B_TRANSITION_BEACHBALL;
+    if (IsSeaRoute())
+        return B_TRANSITION_ROUTE_BEACH;
+    if (AT_MAP(MAP_ROUTE135) || AT_MAP(MAP_ROUTE136))
+        return B_TRANSITION_ROUTE_SNOW;
+    if (AT_MAP(MAP_ROUTE113))
+        return B_TRANSITION_ROUTE_ASH;
+    if (AT_MAP(MAP_DESERT_RUINS))
+        return B_TRANSITION_ROUTE_SAND;
+    if (AT_MAP(MAP_ROUTE111))
+    {
+        s16 x, y;
+        PlayerGetDestCoords(&x, &y);
+        if (MetatileBehavior_IsSandOrDeepSand(MapGridGetMetatileBehaviorAt(x, y)))
+            return B_TRANSITION_ROUTE_SAND;
+    }
+    if (AT_MAP(MAP_FIERY_PATH) || AT_MAP(MAP_MT_CHIMNEY))
+        return B_TRANSITION_ROUTE_HEAT;
+    if (AT_MAP(MAP_MT_PYRE_1F) || AT_MAP(MAP_MT_PYRE_2F) || AT_MAP(MAP_MT_PYRE_3F) || AT_MAP(MAP_MT_PYRE_4F)
+     || AT_MAP(MAP_MT_PYRE_5F) || AT_MAP(MAP_MT_PYRE_6F) || AT_MAP(MAP_MT_PYRE_EXTERIOR) || AT_MAP(MAP_MT_PYRE_SUMMIT))
+        return B_TRANSITION_ROUTE_PYRE;
+    if (AT_MAP(MAP_SKY_PILLAR_ENTRANCE) || AT_MAP(MAP_SKY_PILLAR_OUTSIDE) || AT_MAP(MAP_SKY_PILLAR_1F) || AT_MAP(MAP_SKY_PILLAR_2F)
+     || AT_MAP(MAP_SKY_PILLAR_3F) || AT_MAP(MAP_SKY_PILLAR_4F) || AT_MAP(MAP_SKY_PILLAR_5F) || AT_MAP(MAP_SKY_PILLAR_TOP))
+        return B_TRANSITION_ROUTE_SKY;
+    if (AT_MAP(MAP_NEW_MAUVILLE_ENTRANCE) || AT_MAP(MAP_NEW_MAUVILLE_INSIDE) || AT_MAP(MAP_NEW_MAUVILLE_THUNDER_CAVE))
+        return B_TRANSITION_ROUTE_SHORT;
+    if (AT_MAP(MAP_ARTISAN_CAVE_1F) || AT_MAP(MAP_ARTISAN_CAVE_B1F))
+        return B_TRANSITION_ROUTE_PAINT;
+    if (AT_MAP(MAP_SAFARI_ZONE_NORTH) || AT_MAP(MAP_SAFARI_ZONE_NORTHEAST) || AT_MAP(MAP_SAFARI_ZONE_NORTHWEST)
+     || AT_MAP(MAP_SAFARI_ZONE_SOUTH) || AT_MAP(MAP_SAFARI_ZONE_SOUTHEAST) || AT_MAP(MAP_SAFARI_ZONE_SOUTHWEST))
+        return B_TRANSITION_ROUTE_SAFARI;
+    if (AT_MAP(MAP_METEOR_FALLS_1F_1R) || AT_MAP(MAP_METEOR_FALLS_1F_2R) || AT_MAP(MAP_METEOR_FALLS_B1F_1R)
+     || AT_MAP(MAP_METEOR_FALLS_B1F_2R) || AT_MAP(MAP_METEOR_FALLS_CRATER_ROOM) || AT_MAP(MAP_METEOR_FALLS_STEVENS_CAVE))
+        return B_TRANSITION_ROUTE_METEOR;
+    if (AT_MAP(MAP_JAGGED_PASS))
+        return B_TRANSITION_ROUTE_JAGGED;
+    if (AT_MAP(MAP_ROUTE119) || AT_MAP(MAP_ROUTE120) || AT_MAP(MAP_FORTREE_CITY))
+        return B_TRANSITION_ROUTE_RAINFOREST;
+    // Cycling Road: de verhoogde weg over Route 110 (hoogte 4)
+    if (AT_MAP(MAP_ROUTE110) && gObjectEvents[gPlayerAvatar.objectEventId].currentElevation == 4)
+        return B_TRANSITION_ROUTE_CYCLING;
+    return -1;
+}
+
 enum BattleTransition GetWildBattleTransition(void)
 {
     u8 transitionType = GetBattleTransitionTypeByMap();
     u8 enemyLevel = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL);
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
+    s32 routeTransition = GetGroundedRouteTransition();
+
+    // Project Grounded: sommige wilde Pokemon hebben hun eigen transitie
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
+    {
+    case SPECIES_PIKACHU:
+        return B_TRANSITION_PIKACHU;
+    case SPECIES_MAGIKARP:
+        return B_TRANSITION_MAGIKARP;
+    case SPECIES_PSYDUCK:
+        return B_TRANSITION_PSYDUCK;
+    case SPECIES_KOFFING:
+    case SPECIES_WEEZING:
+    case SPECIES_WEEZING_GALAR:
+        return B_TRANSITION_KOFFING;
+    case SPECIES_ZANGOOSE:
+        return B_TRANSITION_ZANGOOSE;
+    case SPECIES_SEVIPER:
+        return B_TRANSITION_SEVIPER;
+    }
+    if (routeTransition >= 0)
+        return routeTransition;
 
     if (enemyLevel < playerLevel)
     {
@@ -795,12 +887,22 @@ enum BattleTransition GetTrainerBattleTransition(void)
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
-    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2)
+    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER)
         return B_TRANSITION_BIRCH;
+
+    // Project Grounded: Gabby & Ty filmen je; Joey's Poochyena valt je aan
+    if ((trainerId >= TRAINER_GABBY_AND_TY_1 && trainerId <= TRAINER_GABBY_AND_TY_6) || trainerId == TRAINER_LOCAL_CELEBRITY)
+        return B_TRANSITION_GABBY_TY;
+    if (trainerId == TRAINER_JOEY)
+        return B_TRANSITION_POOCHYENA;
 
     // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
     if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
         return B_TRANSITION_AQUA_MAGMA;
+
+    // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
+    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
+        return B_TRANSITION_COLRESS;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
@@ -814,6 +916,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+
+    // Project Grounded: route-transitie voor de plek (zee, strand, onder water, sneeuw, ...)
+    if (GetGroundedRouteTransition() >= 0)
+        return GetGroundedRouteTransition();
 
     switch (GetTrainerBattleType(trainerId))
     {

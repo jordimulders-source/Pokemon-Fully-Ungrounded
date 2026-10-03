@@ -249,11 +249,13 @@
 #define OBJ_EVENT_GFX_APRICORN_TREE              242
 #define OBJ_EVENT_GFX_PROF_OAK                   243 // Project Grounded (sprite uit FRLG)
 #define OBJ_EVENT_GFX_BROCK                      244 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_COLRESS                    245 // Project Grounded (sprite van PizzaSun)
+#define OBJ_EVENT_GFX_ZINNIA                     246 // Project Grounded
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        245
+#define NUM_OBJ_EVENT_GFX                        247
 
 
 // These are dynamic object gfx ids.
@@ -384,6 +386,8 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 #define OBJ_EVENT_PAL_TAG_BROCK                   0x1125 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_COLRESS                 0x1126 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_ZINNIA                  0x1127 // Project Grounded
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

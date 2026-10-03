@@ -450,7 +450,14 @@
     "MeteorFalls_CraterRoom",
     "ColdstepCave_Entrance",
     "ColdstepCave_IceRoom1",
-    "ColdstepCave_IceRoom2"
+    "ColdstepCave_IceRoom2",
+    "NewMauville_ThunderCave",
+    "MtChimney_EnteiPassage",
+    "MtChimney_EnteiLair",
+    "RegielekiCave",
+    "RegidragoCave",
+    "RegigigasTemple",
+    "FieryPath_HeatranLair"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

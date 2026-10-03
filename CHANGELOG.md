@@ -15721,3 +15721,14 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.93] - Plan van aanpak voor de backlog, credits
 - **`BACKLOG_PLAN.md`:** per backlog-onderdeel (legendaries, Regi-quest, gebieden, trainers, signature moves, Battle Frontier) wat er al is, een voorstel en genummerde vragen voor Jordi. Opvallend: de eilanden voor Mew, Deoxys, Lugia/Ho-Oh en de Lati's staan al in de ROM; alleen de tickets zijn in vanilla alleen via Mystery Gift te krijgen.
 - **`CREDITS.md`:** graphics uit FireRed/LeafGreen (Brock, Oak), de ghost uit Red/Blue (pret/pokered) en MissingNo.
+
+### [v.0.8.94] - Graphics-map, Colress en Zinnia, debug: wild gevecht op de kaart
+- **Aangeleverde afbeeldingen** staan nu in `graphics/grounded/` in plaats van in de hoofdmap:
+  - `tilesets/`: vier Ekat99-tilesets: `ekat99_lava_rotsen.png` (rotsen en lava), `ekat99_moeras.png` (moeras), `ekat99_sneeuwtempel.png` (ijs en een tempel, à la Snowpoint Temple), `ekat99_tuin_meloenen.png` (tuin met meloenen). Nog niet omgezet; dat gebeurt per gebied.
+  - `trainers/colress/`: B2W2-trainerfoto (`colress_b2w2_bron.png`), VS-portret (`colress_vs_bron.png`), overworld-sheet (`colress_overworld_bron.jpg`).
+  - `trainers/zinnia/`: trainerfoto + overworld-frames in één sheet (`zinnia_bron.png`).
+  - `trainers/burglar/`: de Burglar uit Red/Blue (`burglar_redblue_bron.png`, Game Boy-grijstinten, uitvergroot).
+  - `overworld/frlg_overworld_npcs.png`: alle NPC-overworlds uit FireRed/LeafGreen.
+- **Trainerfoto's omgezet naar GBA-formaat** (64x64, 15 kleuren + transparant), nog niet in de game: `colress_front_pic.png` en `zinnia_front_pic.png`. Beide afgesneden onder de knieën in plaats van verkleind (verkleinen maakte de gezichten kapot). Zinnia ging van 36 naar 15 kleuren.
+- **Debugmenu: Utilities > "Wild battle (map)"**: start meteen een wild gevecht met een Pokémon uit de encountertabel van de kaart waar je staat (gras/grot, anders surfen, anders vissen met de Good Rod). Het gevecht gebruikt de gewone transitie van die plek, dus zo test je route- en soort-transities zonder door het gras te lopen. Kaarten zonder wilde Pokémon geven een melding. Special `Debug_StartMapWildBattle` in `src/wild_encounter.c`.
+- **Deoxys** krijgt een eigen event (niet Birth Island): vanaf Mossdeep word je de ruimte in geschoten en land je op een andere planeet. Het landschap bouwen we uit de Meteor Falls-tileset met paletswaps (er is geen ruimte-tileset). Bijgewerkt in `BACKLOG_PLAN.md`.

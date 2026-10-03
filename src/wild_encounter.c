@@ -1236,6 +1236,48 @@ bool8 StandardWildEncounter_Debug(void)
     return TRUE;
 }
 
+// Project Grounded: debugmenu "Wild battle (map)" - trekt een Pokémon uit de tabel van de
+// huidige kaart (gras/grot, anders water, anders vissen) en start een gewoon wild gevecht.
+void Debug_StartMapWildBattle(void)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    const struct WildPokemonInfo *info;
+    enum TimeOfDay timeOfDay;
+
+    gSpecialVar_Result = FALSE;
+    if (headerId == HEADER_NONE)
+        return;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+    if (info != NULL && TryGenerateWildMon(info, WILD_AREA_LAND, 0))
+    {
+        gSpecialVar_Result = TRUE;
+    }
+    else
+    {
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+        info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+        if (info != NULL && TryGenerateWildMon(info, WILD_AREA_WATER, 0))
+        {
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+            info = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
+            if (info != NULL)
+            {
+                GenerateFishingWildMon(info, GOOD_ROD);
+                gSpecialVar_Result = TRUE;
+            }
+        }
+    }
+
+    if (gSpecialVar_Result)
+        BattleSetup_StartScriptedWildBattle();
+}
+
 u32 ChooseHiddenMonIndex(void)
 {
     #ifdef ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL

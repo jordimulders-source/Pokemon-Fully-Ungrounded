@@ -143,3 +143,20 @@ Debug_EventScript_Legend_HoOh::
 	waitstate
 	releaseall
 	end
+
+@ Project Grounded: debugmenu Utilities > Wild battle (map) - wild gevecht uit de tabel van deze kaart (route-transities testen)
+Debug_EventScript_WildFromMap::
+	lockall
+	special Debug_StartMapWildBattle
+	goto_if_eq VAR_RESULT, FALSE, Debug_EventScript_WildFromMap_None
+	waitstate
+	releaseall
+	end
+
+Debug_EventScript_WildFromMap_None::
+	msgbox Debug_Text_WildFromMap_None, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_WildFromMap_None:
+	.string "Deze kaart heeft geen wilde Pokémon.$"

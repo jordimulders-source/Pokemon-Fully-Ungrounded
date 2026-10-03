@@ -1,11 +1,16 @@
 ## Project Grounded
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
+- **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin** (nog niet in gebruik): **Ekat99** (DeviantArt). Bron in `graphics/grounded/tilesets/`.
+- **Zinnia** (trainerfoto en overworld, nog niet in gebruik): fan-art, aangeleverd door Jordi (`graphics/grounded/trainers/zinnia/`); maker nog aanvullen (zie de Zinnia-credits in `TODO.md`).
 
 ### Graphics uit andere Pokémon-games (© Nintendo / Creatures Inc. / GAME FREAK inc.)
 - **Brock** (trainerfoto en overworld-sprite) en **Prof. Oak** (trainerfoto en overworld-sprite): Pokémon FireRed / LeafGreen, via de decompilatie **pret/pokefirered**.
 - **De ongeïdentificeerde ghost** (Lavender Town; in de Mt. Pyre-gevechtstransitie): Pokémon Red / Blue, `gfx/battle/ghost.png` uit de decompilatie **pret/pokered**. Bestand: `graphics/grounded/ghost_pokered.png`.
 - **MissingNo.** (in de New Mauville-gevechtstransitie): Pokémon Red / Blue; afbeelding aangeleverd door Jordi (`graphics/grounded/missingno.png`).
+- **Colress** (trainerfoto en VS-portret): Pokémon Black 2 / White 2. Bestanden in `graphics/grounded/trainers/colress/`.
+- **Burglar** (trainerfoto): Pokémon Red / Blue. `graphics/grounded/trainers/burglar/`.
+- **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
 
 ### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)
 Alle rechten op de originele composities liggen bij de oorspronkelijke makers; de nummers staan in de game als fan-bewerking, niet commercieel.

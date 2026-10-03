@@ -388,6 +388,7 @@ extern const u8 Debug_EventScript_Legend_Latias[];
 extern const u8 Debug_EventScript_Legend_Latios[];
 extern const u8 Debug_EventScript_Legend_Lugia[];
 extern const u8 Debug_EventScript_Legend_HoOh[];
+extern const u8 Debug_EventScript_WildFromMap[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -584,6 +585,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
+    { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
     { NULL }
 };
 

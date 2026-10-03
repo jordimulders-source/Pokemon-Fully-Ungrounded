@@ -10,7 +10,7 @@ Opgesteld 3 okt 2026. Per backlog-onderdeel uit `TODO.md`: wat er al is, mijn vo
 
 ## A. Snel en goedkoop: legendaries die al in de game zitten
 
-De eilanden uit Emerald staan al in de ROM en werken: **Faraway Island (Mew)**, **Birth Island (Deoxys, met de driehoekpuzzel)**, **Navel Rock (Lugia en Ho-Oh)** en **Southern Island (Latias/Latios)**. Ze zijn alleen bereikbaar met tickets (Old Sea Map, Aurora Ticket, Mystic Ticket, Eon Ticket) die in vanilla alleen via Mystery Gift te krijgen zijn. De boot vanuit Lilycove is al ingebouwd.
+De eilanden uit Emerald staan al in de ROM en werken: **Faraway Island (Mew)**, **Birth Island (Deoxys, met de driehoekpuzzel; Deoxys krijgt van Jordi een ander event, zie Delta Episode)**, **Navel Rock (Lugia en Ho-Oh)** en **Southern Island (Latias/Latios)**. Ze zijn alleen bereikbaar met tickets (Old Sea Map, Aurora Ticket, Mystic Ticket, Eon Ticket) die in vanilla alleen via Mystery Gift te krijgen zijn. De boot vanuit Lilycove is al ingebouwd.
 
 **Voorstel:** de tickets in de wereld verstoppen of laten verdienen. Dat is weinig werk en levert vier legendary-events op.
 
@@ -53,7 +53,7 @@ Per event een korte schets. Elk event krijgt een eigen transitie (zoals Suicune/
 | **Shaymin** | Bootticket naar een bloemenveld-eiland (nieuwe kaart met Gracidea). | 13. Nieuw eiland via de Lilycove-boot, zoals de andere tickets? |
 | **Victini** | Victory Island-ticket: een gauntlet met nieuwe trainers door heel Hoenn, eventueel met keuzes. | 14. Hoeveel gevechten, en wat bedoel je met het keuze-element (route kiezen, team kiezen)? |
 | **Kubfu** | Sidequest: een dojo (Dewford of Mt. Chimney-pad) met twee torens/proeven (Dark of Water), daarna evolueert Kubfu met de gekozen stijl. | 15. Waar, en hoe moeilijk? |
-| **Delta Episode** | Post-game verhaal met Zinnia, eindigt bij Deoxys in de ruimte (vanaf Mossdeep Space Center). Muziek/art volgens je credits-lijst. | 16. Hoe groot: een korte keten (5–8 scènes) of een echte episode met nieuwe kaarten? De Zinnia-art en de muziek moet je aanleveren (die sites zijn hier geblokkeerd). |
+| **Delta Episode** | Post-game verhaal met Zinnia. **Jordi (3 okt):** vanaf Mossdeep (Space Center) word je de ruimte in geschoten en land je op een andere planeet, waar Deoxys zit. Landschap: Meteor Falls-tileset met paletswaps (geen ruimte-tileset beschikbaar). Zinnia-trainerfoto is omgezet (`graphics/grounded/trainers/zinnia/`). | 16. Hoe groot: een korte keten (5–8 scènes) of een echte episode met nieuwe kaarten? Muziek (Delta Emerald) moet je nog aanleveren. |
 | **Heatran-gebied** | Post-game in Fiery Path/Mt. Chimney (niet de Entei-plek): een diepere lavagrot, cutscene is er al. | 17. Via een nieuwe ingang in Fiery Path? |
 
 ## D. Kaarten en gebieden
@@ -63,16 +63,16 @@ Grote brokken. Ik stel voor er één per keer te doen, met dezelfde werkwijze al
 - **Oostkant interessanter:** meer eilanden en beter onderwater-exploreren op Route 124–134 (nieuwe Dive-plekken met kleine grotten/schatten, een paar eilandjes met trainers).
 - **Jungle onder Fortree** (Ogerpon/Zarude): een nieuwe route of grot vanaf Route 119. Tileset: de bestaande Route 119-jungle plus extra bomen.
 - **Swamp, fairy forest, mushroom forest, haunted house:** elk een eigen tileset. Ekat99-tilesets e.d. zijn hier niet te downloaden; die moet jij aanleveren (in de repo zetten, zoals de missingno.png).
-- **Outer space vanaf Mossdeep:** koppelen aan de Delta Episode (Deoxys).
+- **Outer space vanaf Mossdeep:** koppelen aan de Delta Episode (Deoxys): lancering vanaf Mossdeep, landing op een planeet gebouwd uit Meteor Falls met paletswaps.
 - **Safari Zone uitbreiden:** de twee extra zones uit Emerald (Route 121-uitbreiding) staan al in de ROM en gaan in vanilla open na de Hall of Fame. Goedkoop: eerder openzetten of uitbreiden met nieuwe soorten.
 
 **Vragen:**
 18. Welke als eerste? Mijn voorstel: de Safari-uitbreiding (bijna gratis), daarna de jungle onder Fortree.
-19. Heb je de tilesets (Ekat99, Snowpoint Temple) als bestanden? Zet ze in `graphics/grounded/` (bijv. via "Upload files" op GitHub), dan zet ik ze om.
+19. ~~Tilesets aanleveren~~: staan in `graphics/grounded/tilesets/` (rotsen/lava, moeras, sneeuwtempel, tuin met meloenen). Welke hoort bij welk gebied (bijv. moeras = swamp, sneeuwtempel = Regigigas-grot)?
 
 ## E. Trainers en NPC's
 
-- **Colress:** trainerfoto/overworld van Gen 5 nodig (jij aanleveren). Muziek "Battle! Colress" zit al in de game. Waar en wanneer moet hij verschijnen (20.)?
+- **Colress:** trainerfoto staat klaar (`graphics/grounded/trainers/colress/colress_front_pic.png`); de overworld-sheet is een JPG met ingebakken ruitjesachtergrond, een PNG is beter. Muziek "Battle! Colress" zit al in de game. Waar en wanneer moet hij verschijnen (20.)?
 - **Red/Blue Burglar:** bedoel je de Burglar-trainerklasse uit Red/Blue (met hun teams), of Red en Blue zelf (21.)? De trainerfoto van **Red** staat al in de game (FRLG).
 - **Gen 4+ trainersprites (Greenphx):** omzetten naar GBA (64x64, 16 kleuren) is goed te doen met een script, zodra de bestanden in de repo staan.
 - **Gen 4/5-overworldsprites:** dat kan. Gen 4 gebruikt 32x32 met per richting een stilstaand frame en twee loopframes, hetzelfde formaat als de GBA (rechts = gespiegeld links). Per sprite is het reduceren naar 16 kleuren en een eigen palet. Ook hiervoor heb ik de sheets nodig (22.: welke personages eerst?).

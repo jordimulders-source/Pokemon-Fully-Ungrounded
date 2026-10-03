@@ -32,6 +32,11 @@ void Spire_AbsorbDamage(u32 battlerDef);
 void HandleAction_SpireDefend(void);
 bool32 Spire_TryPrintBlockAbsorbed(void);
 void Spire_StartPrototypeBattle(void);
+void Spire_ResetRun(void);
+struct Pokemon *Spire_GetRunMon(u32 i);
+u32 Spire_GetRunBP(void);
+u32 Spire_GetRunFloor(void);
+void Spire_OpenReward(MainCallback callback, u32 bpGained);
 void Spire_EndBattle(void);
 u8 *Spire_GetIntentText(u8 *dst, u32 battler);
 

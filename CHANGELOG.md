@@ -15791,3 +15791,12 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 ### [v.0.8.101] - The Spire: losse Pokémon i.p.v. trainer, KO-markering
 - **Geen trainer meer** in het prototype: je vecht tegen losse Pokémon (wild dubbelgevecht, "Wild Tyranitar and Whimsicott appeared!"), maar met de slimme trainer-AI, zodat intenties blijven werken. Geen trainer-intro, geen "sent out", geen geld. `TRAINER_SPIRE_PROTO` is weer weg. Golven (een derde Pokémon die invalt) kunnen nu niet: wilde gevechten vullen niet aan. Klefki is dus uit het prototype; de baas staat alleen met Whimsicott.
 - **KO-markering in de intenties:** `Crunch→Gardevoir 38% KO` als de klap je Pokémon zeker uitschakelt, `KO?` als dat alleen met een hoge rol gebeurt (crits niet meegerekend). Bij spread-aanvallen per doel, bijv. `Earthquake→ 23%KO/15%`.
+
+### [v.0.8.102] - The Spire: beloningsscherm en run
+- **Beloningsscherm** na een gewonnen Spire-gevecht (`src/spire_reward.c`): kop met "VICTORY!", BP en +20% HP; drie movekaarten met naam, type-icoon (uit de game), fysiek/speciaal/status, kracht, PP en zeldzaamheid (grijs common, blauw uncommon, goud rare; kansen 60/30/10%). De PC-hand wijst de gekozen kaart aan. Onderaan de uitleg van de move en je twee Pokémon met icoon, HP-balk, % en **STAB** als het type past.
+  - A: kiezen → met ▶ kies je wie hem leert → en welke move hij vergeet. "X learned Y!". Kent hij hem al, dan zegt het scherm dat en ga je terug naar de kaarten.
+  - B: overslaan (of een stap terug).
+  - Movepools per zeldzaamheid staan voorlopig vast in `spire_reward.c` (later per act).
+- **Run (prototype):** je twee rentals blijven bewaard tussen gevechten, met hun HP, PP en nieuwe moves. Na een gewonnen gevecht +20% HP; wie flauwviel doet het volgende gevecht mee met 1 HP. Verdieping 1-3 zijn gewone gevechten tegen twee willekeurige wilde Pokémon (lv 48, act-1-pool uit het rekenscript), verdieping 4 is de baas (Tyranitar + Whimsicott). Verlies je of win je van de baas, dan is de run voorbij. Nog niet in de save (alleen geheugen).
+- Debugmenu > Utilities: **Spire prototype** start het volgende gevecht van de run, **Spire: reset run** begint opnieuw.
+- Getest in de emulator: gevecht gewonnen → beloningsscherm → move geleerd → terug naar de overworld → volgend gevecht met dezelfde rentals (PP en moves bewaard).

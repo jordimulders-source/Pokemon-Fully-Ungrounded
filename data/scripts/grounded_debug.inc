@@ -196,3 +196,13 @@ Debug_EventScript_SpirePrototype::
 	waitstate
 	releaseall
 	end
+
+@ Project Grounded: debugmenu Utilities > Spire: reset run - begint de volgende Spire prototype weer bij verdieping 1
+Debug_EventScript_SpireResetRun::
+	special Spire_ResetRun
+	msgbox Debug_Text_SpireResetRun, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_Text_SpireResetRun:
+	.string "Spire-run gewist.$"

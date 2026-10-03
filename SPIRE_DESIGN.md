@@ -2,7 +2,7 @@
 
 Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volgende sessie.
 
-**Gebouwd (v0.8.100):** rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
+**Gebouwd (v0.8.100–0.8.102):** beloningsscherm (`src/spire_reward.c`) en een run in het geheugen (rentals bewaard, verdieping 1-3 + baas). Eerder: rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
 
 ## Concept
 - Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.

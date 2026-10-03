@@ -531,6 +531,7 @@ gStdScripts_End::
 	.include "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeLobby/scripts.inc"
+	.include "data/maps/BattleFrontier_SpireLobby/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeCorridor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.inc"

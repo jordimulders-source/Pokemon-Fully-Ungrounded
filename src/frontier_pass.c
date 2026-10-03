@@ -1579,6 +1579,9 @@ static void Task_HandleFrontierMap(u8 taskId)
     tState++;
 }
 
+// Project Grounded: extra zeerijen bovenaan BattleFrontier_OutsideWest (tools/grounded/maptools/spire_tower.py)
+#define SPIRE_WEST_EXTRA_ROWS 24
+
 static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
 {
     // In Battle Tower
@@ -1664,6 +1667,9 @@ static void InitFrontierMapSprites(void)
         {
             x += gSaveBlock1Ptr->pos.x;
             y = gSaveBlock1Ptr->pos.y;
+            // Project Grounded: OutsideWest is SPIRE_WEST_EXTRA_ROWS rijen hoger (The Spire)
+            if (mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_OUTSIDE_WEST))
+                y = (y > SPIRE_WEST_EXTRA_ROWS) ? y - SPIRE_WEST_EXTRA_ROWS : 0;
 
             x /= 8;
             y /= 8;
@@ -1687,6 +1693,8 @@ static void InitFrontierMapSprites(void)
                     x = gSaveBlock1Ptr->escapeWarp.x;
 
                 y = gSaveBlock1Ptr->escapeWarp.y;
+                if (gSaveBlock1Ptr->escapeWarp.mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_OUTSIDE_WEST))
+                    y = (y > SPIRE_WEST_EXTRA_ROWS) ? y - SPIRE_WEST_EXTRA_ROWS : 0;
 
                 x /= 8;
                 y /= 8;

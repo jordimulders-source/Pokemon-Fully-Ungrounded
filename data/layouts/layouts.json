@@ -2755,7 +2755,7 @@
       "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_WEST",
       "name": "BattleFrontier_OutsideWest_Layout",
       "width": 56,
-      "height": 72,
+      "height": 96,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
       "border_filepath": "data/layouts/BattleFrontier_OutsideWest/border.bin",
@@ -3640,6 +3640,16 @@
       "secondary_tileset": "gTileset_BattlePike",
       "border_filepath": "data/layouts/BattleFrontier_BattlePikeLobby/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_BattlePikeLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_SPIRE_LOBBY",
+      "name": "BattleFrontier_SpireLobby_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattlePike",
+      "border_filepath": "data/layouts/BattleFrontier_SpireLobby/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_SpireLobby/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR",

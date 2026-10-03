@@ -2,19 +2,23 @@
 
 - De kaart wordt N rijen hoger (bovenaan zee); alle events schuiven N rijen mee, de verbinding met
   OutsideEast krijgt offset N/-N en de veerboot-warps (19, 67) worden (19, 67+N).
-- Achter het noordhek van het Dome-plein (x 32-36, oude rij 0-3) rijst The Spire uit zee: een
-  obsidiaanzwarte stekel met karmozijnrode aders, gewervelde schacht en een gloeiend hart bovenin.
-  De punt staat op rij 0; in het spel zie je hem nooit eindigen.
-- Graphics: rotstextuur uit General (metatile 0x073, de bruine klifwand), opnieuw ingekleurd met een
-  eigen palet (slot 10, ongebruikt in deze tileset). Het silhouet is symmetrisch, zodat rechts de
-  gespiegelde tiles van links gebruikt. Metatiles en tiles komen op ongebruikte plekken van
-  gTileset_BattleFrontierOutsideWest (de tileset zat vol: 510/512 metatiles, alleen deze kaart gebruikt hem).
-- Deur onderaan in het midden (34, N+3): MB_NON_ANIMATED_DOOR, warp naar BattleFrontier_SpireLobby.
+- Op de noordrand van het Dome-plein (x 26-40, de oude hekrij) staat The Spire in Frontier-stijl:
+  de gevel van de Battle Tower (wit glas, baksteenrood, blauwe ruiten, crème pilaren, leien luifel
+  met glazen schuifdeur) uit gTileset_BattleFrontierOutsideEast, 15 breed. Hij loopt in vier
+  trappen (15 -> 11 -> 7 -> 3 breed) omhoog; elke trap eindigt in een dakrand met oranje sierlijst,
+  bovenop staat een antennenaald met rood baken. De voet staat op het plein (onderste rij =
+  pleinvloer), de schacht rijst boven zee uit, net als het huisje rechts ervan.
+- Tiles en metatiles van de Battle Tower worden gekopieerd naar vrije plekken van
+  gTileset_BattleFrontierOutsideWest (alleen deze kaart gebruikt die tileset). Paletten 0 (General),
+  9 en 10 zijn in East en West identiek, dus de kleuren blijven exact die van de Battle Tower.
+- Deur (33, 26): metatile 0x329 met MB_ANIMATED_DOOR, net als de Battle Tower; field_door.c zoekt de
+  animatie op metatile-nummer, dus de deur schuift open met de Battle Tower-animatie.
+  Warp naar BattleFrontier_SpireLobby.
 
 Idempotent: leest de oorspronkelijke kaart/tileset uit git (commit ORIG) en bouwt alles opnieuw.
 Gebruik: python3 tools/grounded/maptools/spire_tower.py [voorbeeld.png]
 """
-import io, json, math, re, struct, subprocess, sys
+import io, json, re, struct, subprocess, sys
 from PIL import Image
 
 ORIG = '6744d697'           # commit vóór The Spire-toren
@@ -22,258 +26,225 @@ N = 24                      # extra rijen bovenaan
 W, H0 = 56, 72
 H = H0 + N
 TS = 'data/tilesets/secondary/battle_frontier_outside_west/'
+EAST = 'data/tilesets/secondary/battle_frontier_outside_east/'
+GEN = 'data/tilesets/primary/general/'
 LAY = 'data/layouts/BattleFrontier_OutsideWest/'
+EAST_MAP = 'data/layouts/BattleFrontier_OutsideEast/map.bin'
 MAPJ = 'data/maps/BattleFrontier_OutsideWest/map.json'
-COL0, COLS = 32, 5          # spire-kolommen x 32..36, as in het midden van x 34
-ROWS = N + 4                # rij 0 .. N+3 (N+3 = oude hekrij)
-DOOR = (34, N + 3)
-PAL = 10
+X0 = 26                     # linkerkolom van de toren
+BASE = N + 3                # onderste rij (oude hekrij, ligt op het plein)
+DOOR = (33, N + 2)
+DOOR_MT = 0x329             # = METATILE_BattleFrontierOutsideEast_Door_BattleTower (deuranimatie)
 LOBBY = 'MAP_BATTLE_FRONTIER_SPIRE_LOBBY'
-MB_NON_ANIMATED_DOOR = 0x60
-LAYER_COVERED = 1
+MB_ANIMATED_DOOR = 0x69
 FLAG_ANIM_TILES = range(218, 224)
 NUM_TILES = 508             # -num_tiles in graphics_file_rules.mk
 DOOR_LABELS = {0x3FC, 0x28A, 0x263, 0x396}
+
+# Battle Tower in OutsideEast: kolommen x 8..24 (17 breed), schacht rij 0-11, voet rij 12-15.
+# Kolom-indexen: 0 wit glas, 1-2 baksteen, 3-4 schuin glas, 5 pilaar, 6 schuin glas, 7-9 middenglas,
+# 10 schuin glas, 11 pilaar, 12-13 schuin glas, 14-15 baksteen, 16 wit glas.
+BT_X = 8
+S1 = [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16]     # 15 breed (voet + onderste trap)
+S2 = [0, 1, 2, 6, 7, 8, 9, 10, 14, 15, 16]                 # 11
+S3 = [0, 6, 7, 8, 9, 10, 16]                               # 7
+S4 = [0, 8, 16]                                            # 3
+# (eerste rij, laatste rij) van elke trap; de rij erboven is de dakrand
+SECTIONS = [(S1, 14, BASE - 4), (S2, 9, 12), (S3, 5, 7), (S4, 3, 3)]
+NEEDLE_ROWS = (0, 1)
+TW = len(S1)
 
 
 def git(path):
     return subprocess.check_output(['git', 'show', '%s:%s' % (ORIG, path)])
 
 
-# ---------------------------------------------------------------- palet
-COLORS = [
-    (255, 0, 255),   # 0 transparant
-    (8, 5, 12),      # 1 omlijning
-    (18, 12, 24),    # 2 obsidiaan
-    (30, 20, 38),    # 3
-    (44, 30, 54),    # 4
-    (62, 44, 74),    # 5 glans
-    (92, 70, 104),   # 6 hoogste glans
-    (58, 8, 18),     # 7 bloedrood donker
-    (110, 14, 28),   # 8 karmozijn
-    (168, 24, 36),   # 9 rood
-    (222, 52, 44),   # 10 helrood
-    (255, 120, 64),  # 11 oranje gloed
-    (255, 204, 112), # 12 gele gloed
-    (255, 246, 214), # 13 witheet
-    (40, 12, 22),    # 14 donker kastanje (gloed op obsidiaan)
-    (0, 0, 0),       # 15 zwart (deuropening)
-]
-
-BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]]
+def read_pal(data):
+    return [tuple(map(int, l.split())) for l in data.decode().replace('\r', '').split('\n')[3:19]]
 
 
-def dither(v, x, y):
-    return v + (BAYER[y & 3][x & 3] / 16.0 - 0.5) * 0.5
+# ---------------------------------------------------------------- Battle Tower-pixels uit East
+class East:
+    def __init__(self):
+        self.map = struct.unpack('<%dH' % (72 * 72), open(EAST_MAP, 'rb').read())
+        self.mts = open(EAST + 'metatiles.bin', 'rb').read()
+        self.attrs = open(EAST + 'metatile_attributes.bin', 'rb').read()
+        self.tiles = Image.open(EAST + 'tiles.png').load()
 
+    def entries(self, mid):
+        return list(struct.unpack_from('<8H', self.mts, (mid - 512) * 16))
 
-# ---------------------------------------------------------------- textuur uit General 0x073
-def general_texture():
-    im =Image.open('data/tilesets/primary/general/tiles.png')
-    px = im.load()
-    pal = [tuple(map(int, l.split())) for l in open('data/tilesets/primary/general/palettes/03.pal').read().split('\n')[3:19]]
-    mt = open('data/tilesets/primary/general/metatiles.bin', 'rb').read()
-    ent = struct.unpack_from('<4H', mt, 0x073 * 16)
-    tex = [[0.0] * 16 for _ in range(16)]
-    for k, e in enumerate(ent):
-        t = e & 0x3FF; hf = (e >> 10) & 1; vf = (e >> 11) & 1
+    def tile_px(self, e):
+        """8x8 (pal, kleur) van een tile-entry (secondary tile), 0 = doorzichtig."""
+        t = (e & 0x3FF) - 512
+        hf, vf, pal = (e >> 10) & 1, (e >> 11) & 1, e >> 12
         tx, ty = (t % 16) * 8, (t // 16) * 8
+        out = []
         for y in range(8):
             for x in range(8):
-                c = px[tx + (7 - x if hf else x), ty + (7 - y if vf else y)]
-                r, g, b = pal[c]
-                tex[(k // 2) * 8 + y][(k % 2) * 8 + x] = (0.3 * r + 0.59 * g + 0.11 * b) / 255.0
-    flat = [v for row in tex for v in row]
-    lo, hi = min(flat), max(flat)
-    return [[(v - lo) / (hi - lo) - 0.5 for v in row] for row in tex]
+                c = self.tiles[tx + (7 - x if hf else x), ty + (7 - y if vf else y)] if t >= 0 else 0
+                out.append((pal, c) if c else None)
+        return out
+
+    def top(self, col, row):
+        """Bovenlaag van Battle Tower-metatile (kolom-index, rij) als 16x16 (pal, kleur)/None."""
+        mid = self.map[row * 72 + BT_X + col] & 0x3FF
+        e = self.entries(mid)
+        px = [[None] * 16 for _ in range(16)]
+        for q in range(4):
+            if (e[4 + q] & 0x3FF) == 0:
+                continue
+            assert (e[4 + q] & 0x3FF) >= 512, hex(mid)
+            d = self.tile_px(e[4 + q])
+            for i, v in enumerate(d):
+                px[(q // 2) * 8 + i // 8][(q % 2) * 8 + i % 8] = v
+        return px
 
 
-TEX = general_texture()
-
-# ---------------------------------------------------------------- silhouet
-YC, RY = 112, 46            # hart: middelpunt en halve hoogte (rij 4-9)
-GROUPS = [11, 14, 17]       # schacht rij 10-21: drie groepen van 2 wervels (elk 2 rijen)
-SH0 = 160
+# ---------------------------------------------------------------- eigen stukken (palet 9)
+P9 = 9
+NAVY, WHITE, LBLUE, GRAY, SLATE, DARK, LAV = 0, 1, 4, 5, 6, 7, 8
+SKY, GLASS, GLASS2, ORANGE, RED, BRICK, BRICK2 = 9, 10, 11, 12, 13, 14, 15
 
 
-def vert(y):
-    """(groepsbreedte, positie 0..1 in de wervel) of None buiten de schacht."""
-    if SH0 <= y < SH0 + 192:
-        return GROUPS[(y - SH0) // 64], ((y - SH0) % 32) / 32.0
-    return None
+def roof_band(width):
+    """Dakrand (16 px hoog) over `width` metatiles: plat dak van boven gezien + oranje sierlijst."""
+    w = width * 16
+    rows = [
+        [DARK] * w,                                   # achterrand
+        [GRAY] * w,
+        [LAV] * w, [LAV] * w, [LAV] * w, [LAV] * w,   # dakvlak
+        [GRAY] * w,                                   # schaduw tegen de lijst
+        [DARK] * w,
+        [WHITE] * w,                                  # bovenkant sierlijst
+        [ORANGE] * w, [ORANGE] * w,
+        [RED] * w, [RED] * w,
+        [BRICK] * w,
+        [BRICK2] * w,
+        [NAVY] * w,                                   # schaduwlijn op de gevel eronder
+    ]
+    # dakvlak: zachte tegelvoegen elke 16 px, licht van linksboven
+    for x in range(w):
+        if x % 16 == 15:
+            for y in (3, 4):
+                rows[y][x] = GRAY
+        if x % 16 == 0:
+            rows[2][x] = WHITE
+    # zijkanten: omlijning, links licht, rechts schaduw
+    for y in range(16):
+        rows[y][0] = DARK
+        rows[y][w - 1] = DARK
+        if 1 <= y <= 14:
+            rows[y][w - 2] = BRICK2 if y >= 9 else GRAY
+            rows[y][1] = WHITE if y >= 8 else rows[y][1]
+    rows[0][0] = rows[0][w - 1] = None
+    return [[(P9, c) if c is not None else None for c in r] for r in rows]
 
 
-def halfwidth(y):
-    if y < 6:
-        return 0.0
-    if y < 64:                                   # naald
-        return 0.6 + 7.0 * ((y - 6) / 58.0) ** 1.5
-    if y < SH0:                                  # hart
-        k = 1 - ((y - YC) / RY) ** 2
-        return 8.0 + 14.0 * max(0.0, k) ** 0.55
-    v = vert(y)
-    if v:                                        # gewervelde schacht
-        base, t = v
-        return base * (1 - 0.10 * math.sin(math.pi * t)) + (2.0 if t < 0.1 else 0.0)
-    rough = 1.6 * math.sin(y * 0.9) + 1.0 * math.sin(y * 2.3) if y >= 384 else 0.0
-    if y < 416:                                  # uitwaaieren (rij 22-25)
-        f = (y - 352) / 64.0
-        return 19 + 13 * f ** 1.6 + rough
-    f = (y - 416) / 32.0                          # voet (rij 26-27), ruwe rots
-    return min(39.5, 32 + 8 * f ** 0.6 + rough)
-
-
-def root_gap(d, y):
-    """Inkepingen tussen de wortels onderaan."""
-    if y < 428:
-        return False
-    g = (y - 428) / 20.0
-    for c in (22.0, 33.5):
-        if abs(d - c) < 0.4 + 3.2 * g:
-            return True
-    return False
-
-
-def spire_pixels():
-    w, h = COLS * 16, ROWS * 16
-    img = [[0] * w for _ in range(h)]
+def needle():
+    """Antennenaald (2 metatiles hoog, 1 breed) met rood baken bovenaan."""
+    h = 32
+    px = [[None] * 16 for _ in range(h)]
     for y in range(h):
-        hw = halfwidth(y)
-        v = vert(y)
-        for x in range(w):
-            d = abs(x + 0.5 - 40)
-            if d >= hw or root_gap(d, y):
+        if y < 4:                                     # baken
+            hw = [1.0, 2.0, 2.5, 2.5][y]
+        elif y < 6:
+            hw = 1.0                                  # dun steeltje onder het baken
+        else:
+            hw = 1.5 + 4.5 * ((y - 6) / (h - 7)) ** 1.3
+        for x in range(16):
+            d = x + 0.5 - 8
+            if abs(d) >= hw:
                 continue
-            e = hw - d                                       # afstand tot de rand
-            u = int(d) % 16
-            tex = TEX[y % 16][u]
-            rel = d / max(hw, 1)
-            amp = 0.75 if y >= 384 else 0.55             # voet: meer rots
-            tone = 0.22 + amp * tex + 0.42 * max(0.0, 1 - rel * rel) ** 1.5
-            c = 2 + max(0, min(4, int(dither(tone, int(d), y) * 4.5)))   # 2..6
-            if c == 6 and (int(d) + y) % 2:
-                c = 5
-            # aders: twee kronkelende karmozijnrode lijnen per kant
-            for k, ph in ((0.55, 0.0), (0.28, 1.7)):
-                pos = hw * (k + 0.06 * math.sin(2 * math.pi * (y % 32) / 32.0 + ph))
-                if abs(d - pos) < 0.55 and hw > 5:
-                    c = 8
-            if d < 1.0 and hw > 3:                           # rugnaad
-                c = 2
-            # wervelring
-            if v:
-                base, t = v
-                ty = (y - SH0) % 32
-                tc = ty - int(3.0 * max(0.0, 1 - rel * rel))     # ring buigt naar voren (midden lager)
-                if ty == 0 and d > base * 0.9 - 4:
-                    c = 1
-                elif tc == 0 and e > 1.2:
-                    c = 1
-                elif tc in (1, 2) and e > 1.2:
-                    c = 6 if (tc == 1 and rel < 0.6) else 5
-                elif tc == 3 and e > 1.2:
-                    c = 4
-                elif tc in (4, 5) and e > 1.2:
-                    c = 2 if tc == 4 else 1 if rel > 0.5 else 3
-            # rand
-            if e < 1.2:
-                c = 1
-            elif e < 2.2:
-                c = 7
-            img[y][x] = c
-    heart(img)
-    base_glow(img)
-    despeckle(img)
-    door(img)
+            e = hw - abs(d)
+            if y < 4:
+                c = WHITE if (y == 1 and d < 0 and d > -1.5) else ORANGE if y < 2 else RED
+                if e < 1:
+                    c = BRICK2
+            else:
+                c = LAV if d < -0.5 else GRAY if d < 1.5 else SLATE
+                if d < 0 and d > -1.5 and hw > 2:
+                    c = WHITE
+                if e < 1:
+                    c = DARK
+            px[y][x] = c
+    # ringen (oranje sierlijsten) op de naald
+    for ry in (14, 24):
+        hw = 1.5 + 4.5 * ((ry - 6) / (h - 7)) ** 1.3 + 1
+        for x in range(16):
+            d = x + 0.5 - 8
+            if abs(d) < hw:
+                px[ry][x] = DARK if hw - abs(d) < 1 else ORANGE
+                px[ry + 1][x] = DARK if hw - abs(d) < 1 else RED
+    # voet van de naald: breed blokje dat op het dak staat
+    for y in range(h - 3, h):
+        for x in range(3, 13):
+            px[y][x] = DARK if x in (3, 12) or y == h - 1 else (LAV if x < 6 else GRAY if x < 10 else SLATE)
+    return [[(P9, c) if c is not None else None for c in r] for r in px]
+
+
+def tower_pixels(east):
+    """Pixels van de hele toren: kolom X0.., rij 0..BASE."""
+    w, h = TW * 16, (BASE + 1) * 16
+    img = [[None] * w for _ in range(h)]
+
+    def paste(px, mx, my):
+        for y, r in enumerate(px):
+            for x, v in enumerate(r):
+                if v is not None:
+                    img[my * 16 + y][mx * 16 + x] = v
+
+    for cols, r0, r1 in SECTIONS:
+        off = (TW - len(cols)) // 2
+        for r in range(r0, r1 + 1):
+            erow = 11 - ((BASE - 4 - r) % 2)          # baksteen wisselt per rij, sluit aan op de voet
+            for i, c in enumerate(cols):
+                paste(east.top(c, erow), off + i, r)
+        band = roof_band(len(cols))
+        for y in range(16):
+            for x in range(len(cols) * 16):
+                img[(r0 - 1) * 16 + y][off * 16 + x] = band[y][x]
+    for r in range(4):                                 # voet: Battle Tower rij 12-15
+        for i, c in enumerate(S1):
+            paste(east.top(c, 12 + r), i, BASE - 3 + r)
+    nd = needle()
+    for y in range(32):
+        for x in range(16):
+            if nd[y][x] is not None:
+                img[NEEDLE_ROWS[0] * 16 + y][(TW // 2) * 16 + x] = nd[y][x]
     return img
-
-
-def despeckle(img):
-    """Losse pixels (minder dan 3 buren) weghalen; de rand eromheen opnieuw omlijnen."""
-    h, w = len(img), len(img[0])
-    for _ in range(2):
-        kill = [(x, y) for y in range(h) for x in range(w) if img[y][x] and sum(
-            1 for dx in (-1, 0, 1) for dy in (-1, 0, 1) if (dx or dy) and 0 <= x + dx < w and 0 <= y + dy < h
-            and img[y + dy][x + dx]) < 3]
-        for x, y in kill:
-            img[y][x] = 0
-
-
-def heart(img):
-    rx, ry = 12.0, 26.0
-    for y in range(YC - 34, YC + 34):
-        hw = halfwidth(y)
-        for x in range(COLS * 16):
-            d = abs(x + 0.5 - 40)
-            if not img[y][x]:
-                continue
-            dy = y - YC
-            r = math.hypot(d / rx, dy / ry)
-            e = hw - d
-            if r < 1.0:
-                g = dither(1.0 - r, int(d), y)
-                c = 13 if g > 0.80 else 12 if g > 0.62 else 11 if g > 0.42 else 10 if g > 0.22 else 9
-                # ribben over het hart (gekooid)
-                for off in (-15, -5, 5, 15):
-                    if abs(dy - off - 2.5 * (d / rx) ** 2) < 1.0:
-                        c = 1 if abs(off) > 10 else 7
-                if d < 1.0 and abs(dy) > 8:
-                    c = 7
-                img[y][x] = c
-            elif r < 1.35 and e > 2.2:
-                if img[y][x] in (3, 4, 5, 6):
-                    img[y][x] = 14 if (int(d) + y) % 2 else 7
-                elif img[y][x] == 2:
-                    img[y][x] = 14
-            elif r < 1.9 and img[y][x] == 8 and e > 2.2:
-                img[y][x] = 9          # aders gloeien bij het hart
-
-
-def base_glow(img):
-    """Rode barsten in de voet rond de deur."""
-    cx, cy = 39.5, ROWS * 16 - 6
-    for y in range(400, ROWS * 16):
-        for x in range(COLS * 16):
-            c = img[y][x]
-            if c in (3, 4, 5, 6):
-                dist = math.hypot(x + 0.5 - 40, (y - cy) * 1.4)
-                if dist < 26 and (int(abs(x + 0.5 - 40)) * 3 + y * 2) % 11 == 0:
-                    img[y][x] = 9 if dist < 16 else 8
-
-
-def door(img):
-    oy = DOOR[1] * 16
-    for y in range(oy, oy + 16):
-        for x in range(32, 48):
-            d = abs(x + 0.5 - 40)
-            top = oy + 3 + 6 * (1 - math.sqrt(max(0.0, 1 - (d / 6.0) ** 2)))
-            if d < 6.0 and y >= top:
-                ry = y - oy
-                c = 15
-                if ry >= 12:
-                    c = 9 if (x + y) % 2 else 8
-                if ry >= 14:
-                    c = 10
-                img[y][x] = c
-            elif d < 7.5 and y >= top - 1.5:
-                img[y][x] = 8 if d < 7 else 1
 
 
 # ---------------------------------------------------------------- tiles en metatiles
 def build():
+    east = East()
     orig_map = list(struct.unpack('<%dH' % (W * H0), git(LAY + 'map.bin')))
     mts = bytearray(git(TS + 'metatiles.bin'))
     attrs = bytearray(git(TS + 'metatile_attributes.bin'))
     tiles_img = Image.open(io.BytesIO(git(TS + 'tiles.png')))
     tiles_img.load()
     border = struct.unpack('<4H', git(LAY + 'border.bin'))
+    gen_mts = open(GEN + 'metatiles.bin', 'rb').read()
 
-    # vrije metatiles: niet op de kaart/rand, geen deurlabel; daarna de 2 lege plekken achteraan
+    # paletten 9 en 10 moeten gelijk zijn aan die van East (dan kloppen de kleuren exact)
+    for p in (9, 10):
+        assert read_pal(git(TS + 'palettes/%02d.pal' % p)) == read_pal(open(EAST + 'palettes/%02d.pal' % p, 'rb').read()), p
+
+    # vrije metatiles: niet op de kaart/rand, geen deurlabel; daarna de lege plekken achteraan
     used = set(v & 0x3FF for v in orig_map) | set(b & 0x3FF for b in border)
     nmt = len(mts) // 16
-    free_mt = [512 + i for i in range(nmt) if 512 + i not in used and 512 + i not in DOOR_LABELS]
+    reserved = used | DOOR_LABELS | {DOOR_MT}
+    free_mt = [512 + i for i in range(nmt) if 512 + i not in reserved]
     free_mt += list(range(512 + nmt, 1024))
-    # vrije tiles: niet gebruikt door een metatile die op de kaart staat
+    if DOOR_MT in used:
+        # 0x329 is in West een gewone metatile op de kaart: verhuizen naar een vrije plek,
+        # zodat 0x329 de Battle Tower-deur kan worden (deuranimatie gaat op metatile-nummer)
+        assert DOOR_MT not in set(b & 0x3FF for b in border)
+        mv = free_mt.pop(0)
+        mts[(mv - 512) * 16:(mv - 511) * 16] = mts[(DOOR_MT - 512) * 16:(DOOR_MT - 511) * 16]
+        attrs[(mv - 512) * 2:(mv - 511) * 2] = attrs[(DOOR_MT - 512) * 2:(DOOR_MT - 511) * 2]
+        orig_map = [(v & ~0x3FF) | mv if (v & 0x3FF) == DOOR_MT else v for v in orig_map]
+        used = (used - {DOOR_MT}) | {mv}
     ref = set()
     for i in range(nmt):
         if 512 + i in used or 512 + i in DOOR_LABELS:
@@ -286,86 +257,103 @@ def build():
     # nieuwe kaart: N rijen zee erboven
     water = orig_map[0]
     grid = [[water] * W for _ in range(N)] + [orig_map[y * W:(y + 1) * W] for y in range(H0)]
-    # vlaggen met paal op x 33 en 36 (oude rij 1-2) weg: daar staat de voet
+    # vlaggen achter de toren weg (oude rij 1-2, x 27..40)
     for oy in (1, 2):
-        for x in (33, 34, 36, 37):
-            grid[N + oy][x] = water
-    for x in (33, 36):      # hekpaal (0x3D6/0x3D7) -> gewoon hek (0x26C/0x26D)
-        v = grid[N + 3][x]
-        grid[N + 3][x] = (v & ~0x3FF) | {0x3D6: 0x26C, 0x3D7: 0x26D}[v & 0x3FF]
+        for x in range(X0, X0 + TW):
+            if (grid[N + oy][x] & 0x3FF) != (water & 0x3FF):
+                grid[N + oy][x] = water
     # een paar rotsen in zee (2x2, zoals op de rest van de kaart)
     rock = [orig_map[0 * W + 5], orig_map[0 * W + 6], orig_map[1 * W + 5], orig_map[1 * W + 6]]
-    for rx, ry in ((6, 6), (19, 13), (47, 4), (25, 20), (44, 17), (11, 19)):
+    for rx, ry in ((6, 6), (19, 13), (47, 4), (20, 20), (46, 16), (11, 19)):
         grid[ry][rx], grid[ry][rx + 1], grid[ry + 1][rx], grid[ry + 1][rx + 1] = rock
 
-    pix = spire_pixels()
-    tile_index = {}           # pixeldata -> (tile, hflip)
-    out_tiles = {}
-    tiles_px = tiles_img.load()
+    # rots die tegen de rechterwand van de toren lag (oude rij 0-1) weg
+    for y in (N, N + 1):
+        for x in range(X0 + TW, X0 + TW + 3):
+            if (grid[y][x] & 0x3FF) in (0x150, 0x151, 0x158, 0x159):
+                grid[y][x] = water
 
-    def get_tile(data):
-        if not any(data):
-            return 0, 0
-        if data in tile_index:
-            return tile_index[data]
-        mir = tuple(data[r * 8 + (7 - c)] for r in range(8) for c in range(8))
-        if mir in tile_index:
-            t, f = tile_index[mir]
-            return t, f ^ 1
+    pix = tower_pixels(east)
+    tiles_px = tiles_img.load()
+    tile_index = {}           # (pal, pixels) -> (tile, hflip, vflip)
+    out_tiles = {}
+
+    def get_tile(block):
+        if all(v is None for v in block):
+            return 0
+        pals = set(v[0] for v in block if v)
+        assert len(pals) == 1, 'tile met meerdere paletten: %s' % pals
+        pal = pals.pop()
+        data = tuple(v[1] if v else 0 for v in block)
+        for hf in (0, 1):
+            for vf in (0, 1):
+                d = tuple(data[(7 - r if vf else r) * 8 + (7 - c if hf else c)] for r in range(8) for c in range(8))
+                if (pal, d) in tile_index:
+                    return (512 + tile_index[(pal, d)]) | (hf << 10) | (vf << 11) | (pal << 12)
         t = free_tiles.pop(0)
-        tile_index[data] = (t, 0)
+        tile_index[(pal, data)] = t
         out_tiles[t] = data
-        return t, 0
+        return (512 + t) | (pal << 12)
+
+    def bottom(mid):
+        src = mts if mid >= 512 else gen_mts
+        e = list(struct.unpack_from('<8H', src, (mid - 512 if mid >= 512 else mid) * 16))
+        return e[:4]
 
     mt_index = {}
-    mt_count = 0
-    for r in range(ROWS):
-        for cx in range(COLS):
-            x0, y0 = cx * 16, r * 16
-            block = [pix[y0 + y][x0 + x] for y in range(16) for x in range(16)]
-            mx, my = COL0 + cx, r
-            if not any(block) and (mx, my) != DOOR:
+    new_mt = 0
+    for my in range(BASE + 1):
+        for cx in range(TW):
+            mx = X0 + cx
+            block = [[pix[my * 16 + y][cx * 16 + x] for x in range(16)] for y in range(16)]
+            filled = any(v for r in block for v in r)
+            if (mx, my) == DOOR:
+                top = [get_tile([block[(q // 2) * 8 + i // 8][(q % 2) * 8 + i % 8] for i in range(64)]) for q in range(4)]
+                bot = bottom(orig_map[(my + 2 - N) * W + mx] & 0x3FF)
+                struct.pack_into('<8H', mts, (DOOR_MT - 512) * 16, *(bot + top))
+                struct.pack_into('<H', attrs, (DOOR_MT - 512) * 2, MB_ANIMATED_DOOR | (1 << 12))
+                grid[my][mx] = DOOR_MT
                 continue
-            bg = grid[my][mx]
-            bgid = bg & 0x3FF
-            src = mts if bgid >= 512 else open('data/tilesets/primary/general/metatiles.bin', 'rb').read()
-            bgent = list(struct.unpack_from('<8H', src, (bgid - 512 if bgid >= 512 else bgid) * 16))
-            assert all((e & 0x3FF) == 0 for e in bgent[4:]), 'achtergrond met bovenlaag op %d,%d' % (mx, my)
-            top = []
-            for q in range(4):
-                qx, qy = (q % 2) * 8, (q // 2) * 8
-                data = tuple(pix[y0 + qy + y][x0 + qx + x] for y in range(8) for x in range(8))
-                t, f = get_tile(data)
-                top.append(((512 + t) | (f << 10) | (PAL << 12)) if t else 0)
-            key = (tuple(bgent[:4]), tuple(top), (mx, my) == DOOR)
+            if not filled and my != BASE:
+                continue
+            if my == BASE or (my == BASE - 1 and 0 < cx < TW - 1):
+                # de voet staat op het plein: vloer van twee rijen lager (zelfde patroon);
+                # de buitenste kolommen van de rij erboven houden water (rechte kustlijn)
+                bgid = orig_map[(my + 2 - N) * W + mx] & 0x3FF
+            else:
+                bgid = water & 0x3FF
+            bot = bottom(bgid)
+            top = [get_tile([block[(q // 2) * 8 + i // 8][(q % 2) * 8 + i % 8] for i in range(64)]) for q in range(4)]
+            key = (tuple(bot), tuple(top))
             if key not in mt_index:
                 m = free_mt.pop(0)
                 mt_index[key] = m
-                mt_count += 1
-                struct.pack_into('<8H', mts, (m - 512) * 16, *(bgent[:4] + top))
-                beh = MB_NON_ANIMATED_DOOR if (mx, my) == DOOR else 0
-                struct.pack_into('<H', attrs, (m - 512) * 2, beh | (LAYER_COVERED << 12))
+                new_mt += 1
+                if m - 512 >= len(mts) // 16:
+                    mts += b'\0' * ((m - 512 + 1) * 16 - len(mts))
+                    attrs += b'\0' * ((m - 512 + 1) * 2 - len(attrs))
+                struct.pack_into('<8H', mts, (m - 512) * 16, *(bot + top))
+                struct.pack_into('<H', attrs, (m - 512) * 2, 1 << 12)     # LAYER_COVERED
             m = mt_index[key]
-            coll = 0 if (mx, my) == DOOR else 1
-            grid[my][mx] = m | (coll << 10) | (bg & 0xF000)
+            if my == BASE:
+                # onderste rij: alleen waar de gevel tot onderaan komt is het muur
+                coll = 1 if any(block[y][x] for y in range(8, 16) for x in range(16)) or abs(mx - DOOR[0]) > 1 else 0
+            else:
+                coll = 1
+            grid[my][mx] = m | (coll << 10)
     for t, data in out_tiles.items():
         tx, ty = (t % 16) * 8, (t // 16) * 8
         for i, c in enumerate(data):
             tiles_px[tx + i % 8, ty + i // 8] = c
-    if len(mts) < 512 * 16:
-        pass
     print('spire: %d metatiles, %d tiles (vrij over: %d metatiles, %d tiles)'
-          % (mt_count, len(out_tiles), len(free_mt), len(free_tiles)))
+          % (new_mt + 1, len(out_tiles), len(free_mt), len(free_tiles)))
 
     open(LAY + 'map.bin', 'wb').write(b''.join(struct.pack('<H', grid[y][x]) for y in range(H) for x in range(W)))
-    # metatiles.bin moet even groot blijven als het aantal gebruikte plekken
-    last = max(mt_index.values()) - 512 + 1
-    n_out = max(nmt, last)
-    open(TS + 'metatiles.bin', 'wb').write(bytes(mts[:n_out * 16]) + b'\0' * max(0, n_out * 16 - len(mts)))
-    open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs[:n_out * 2]) + b'\0' * max(0, n_out * 2 - len(attrs)))
+    open(TS + 'metatiles.bin', 'wb').write(bytes(mts))
+    open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs))
     tiles_img.save(TS + 'tiles.png')
-    with open(TS + 'palettes/%02d.pal' % PAL, 'w', newline='\r\n') as f:
-        f.write('JASC-PAL\n0100\n16\n' + ''.join('%d %d %d\n' % c for c in COLORS))
+    # palet 10 terug naar het origineel (de vorige versie had er een eigen obsidiaanpalet in)
+    open(TS + 'palettes/10.pal', 'wb').write(git(TS + 'palettes/10.pal'))
     return pix
 
 

@@ -1,6 +1,8 @@
 # The Spire – ontwerp (roguelike-faciliteit, Battle Frontier)
 
-Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de bron voor de volgende sessie.
+Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volgende sessie.
+
+**Gebouwd (v0.8.100):** rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
 
 ## Concept
 - Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.
@@ -74,4 +76,5 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - HP-vermenigvuldigers en Defend-formule: startwaarden staan hierboven; bijstellen na het prototype.
 - Aantal verdiepingen per act, bag-slots, exacte heal na gevecht.
 - Inhoud: rentalpool, startermoves per Pokémon, movepool met zeldzaamheden, relicpool, bazenpool met patronen, events.
-- Prototypevoorstel: één gevecht (2 tegen 1 baas) met intenties, DEFEND en ×HP om het gevoel te testen; daarna toren, kaart, drops, winkel.
+- Prototype staat (zie boven); Jordi speelt het eerst. Daarna: toren, kaart, drops, winkel.
+- Intenties staan nu in het vraagvak links onderin (bovenaan is geen ruimte: levensbalken en sprites vullen het scherm). Blok en schade in % van max HP, omdat je in doubles je eigen HP-getallen niet ziet.

@@ -473,6 +473,12 @@ void BattleSetup_StartLatiBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+// Project Grounded: The Spire (src/spire.c zet partijen en het eindcallback klaar)
+void BattleSetup_StartSpireBattle(void)
+{
+    CreateBattleStartTask(GetTrainerBattleTransition(), MUS_VS_FRONTIER_BRAIN);
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();

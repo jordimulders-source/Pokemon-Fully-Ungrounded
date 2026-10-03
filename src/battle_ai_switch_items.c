@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "spire.h"
 #include "constants/battle_ai.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -1121,6 +1122,9 @@ bool32 ShouldSwitch(u32 battler)
     struct Pokemon *party;
     s32 i;
     s32 availableToSwitch;
+
+    if (gSpireBattle) // Project Grounded: in The Spire komt een nieuwe tegenstander alleen als golf (na flauwvallen)
+        return FALSE;
 
     if (!CanBattlerConsiderSwitch(battler))
         return FALSE;

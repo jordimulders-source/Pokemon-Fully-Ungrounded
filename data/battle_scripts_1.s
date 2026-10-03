@@ -9147,3 +9147,29 @@ BattleScript_DimensionalWarpActivates::
     waitmessage B_WAIT_TIME_LONG
     playanimation BS_BATTLER_0, B_ANIM_TRICK_ROOM
     end3
+
+@ Project Grounded: The Spire - DEFEND en blok
+BattleScript_SpireDefendSelf::
+	printstring STRINGID_SPIREDEFENDSELF
+	waitmessage B_WAIT_TIME_MED
+	end2
+
+BattleScript_SpireDefendAlly::
+	printstring STRINGID_SPIREDEFENDALLY
+	waitmessage B_WAIT_TIME_MED
+	end2
+
+BattleScript_SpireDefendBoth::
+	printstring STRINGID_SPIREDEFENDBOTH
+	waitmessage B_WAIT_TIME_MED
+	end2
+
+BattleScript_SpireBlockAbsorbed::
+	printstring STRINGID_SPIREBLOCKABSORBED
+	waitmessage B_WAIT_TIME_MED
+	return
+
+BattleScript_SpireBlockSoftened::
+	printstring STRINGID_SPIREBLOCKSOFTENED
+	waitmessage B_WAIT_TIME_MED
+	return

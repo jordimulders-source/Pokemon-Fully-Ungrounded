@@ -900,7 +900,9 @@
 #define TRAINER_COLRESS_MAGMA                   889 // Project Grounded: Colress in de Magma Hideout
 #define TRAINER_ZINNIA                          890 // Project Grounded: Zinnia voor de Sky Pillar
 
-#define TRAINERS_COUNT                      891
+#define TRAINER_SPIRE_PROTO                     891 // Project Grounded: prototypegevecht The Spire (debugmenu)
+
+#define TRAINERS_COUNT                      892
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

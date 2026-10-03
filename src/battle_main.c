@@ -9,6 +9,7 @@
 #include "battle_hold_effects.h"
 #include "battle_interface.h"
 #include "battle_main.h"
+#include "spire.h"
 #include "battle_message.h"
 #include "battle_pyramid.h"
 #include "battle_scripts.h"
@@ -391,6 +392,7 @@ static void (*const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED]               = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED]        = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL]             = HandleAction_ThrowBall,
+    [B_ACTION_SPIRE_DEFEND]           = HandleAction_SpireDefend, // Project Grounded: The Spire
 };
 
 static void (*const sEndTurnFuncsTable[])(void) =
@@ -571,6 +573,7 @@ static void CB2_InitBattleInternal(void)
                 CreateNPCTrainerParty(&gEnemyParty[PARTY_SIZE / 2], TRAINER_BATTLE_PARAM.opponentB, FALSE);
             SetWildMonHeldItem();
             CalculateEnemyPartyCount();
+            Spire_OnEnemyPartyCreated(); // Project Grounded: The Spire (HP-vermenigvuldigers)
         }
     }
 
@@ -3999,6 +4002,7 @@ void BattleTurnPassed(void)
     gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
 
     TurnValuesCleanUp(TRUE);
+    Spire_ClearBlocks(); // Project Grounded: blok vervalt aan het eind van de beurt
 
     if (gBattleOutcome == 0 && DoEndTurnEffects())
         return;
@@ -4429,6 +4433,9 @@ static void HandleTurnActionSelectionState(void)
                     BtlController_EmitDebugMenu(battler, B_COMM_TO_CONTROLLER);
                     MarkBattlerForControllerExec(battler);
                     break;
+                case B_ACTION_SPIRE_DEFEND: // Project Grounded: doel zit in byte 2
+                    gSpireDefendTarget[battler] = gBattleResources->bufferB[battler][2];
+                    break;
                 }
 
                 if (gBattleTypeFlags & BATTLE_TYPE_TRAINER
@@ -4608,6 +4615,9 @@ static void HandleTurnActionSelectionState(void)
                     break;
                 case B_ACTION_DEBUG:
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                    break;
+                case B_ACTION_SPIRE_DEFEND:
+                    gBattleCommunication[battler]++;
                     break;
                 }
             }
@@ -5082,7 +5092,8 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] == B_ACTION_USE_ITEM
                   || gChosenActionByBattler[battler] == B_ACTION_SWITCH
-                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL)
+                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL
+                  || gChosenActionByBattler[battler] == B_ACTION_SPIRE_DEFEND)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5093,7 +5104,8 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] != B_ACTION_USE_ITEM
                   && gChosenActionByBattler[battler] != B_ACTION_SWITCH
-                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL)
+                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL
+                  && gChosenActionByBattler[battler] != B_ACTION_SPIRE_DEFEND)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5120,7 +5132,9 @@ static void SetActionsAndBattlersTurnOrder(void)
                         && gActionsByTurnOrder[i] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[j] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[i] != B_ACTION_THROW_BALL
-                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL)
+                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL
+                        && gActionsByTurnOrder[i] != B_ACTION_SPIRE_DEFEND
+                        && gActionsByTurnOrder[j] != B_ACTION_SPIRE_DEFEND)
                     {
                         if (GetWhichBattlerFaster(&ctx, FALSE) == -1)
                             SwapTurnOrder(i, j);

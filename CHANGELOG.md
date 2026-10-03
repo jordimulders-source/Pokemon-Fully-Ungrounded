@@ -15776,3 +15776,14 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.99] - Ontwerp The Spire
 - `SPIRE_DESIGN.md`: alle afspraken over de roguelike-faciliteit The Spire (doubles met 2 rentals, intenties, DEFEND in plaats van POKéMON, moves als kaarten, relics, winkel, rust, BP naar rato). Nog niets gebouwd.
+
+### [v.0.8.100] - The Spire: rekenscript en prototypegevecht
+- **Rekenscript** `tools/grounded/spire/balance.py` (met `gamedata.py`, leest soorten, moves en typetabel uit de broncode): simuleert gevechten met de echte schadeformule, 2 rentals in doubles tegen normale tegenstanders, elites en bazen, per act. `--run` speelt hele acts na, `--set sleutel=waarde` probeert andere instellingen. Startwaarden staan in `SPIRE_DESIGN.md` (speler ×4 HP, normaal ×1, elite ×2,5, baas ×4,5; normaal gevecht = 2 tegenstanders; heal na gevecht 20%, rustplek 50%; bazen niet harder laten slaan, dreiging via patronen en support).
+- **Prototypegevecht** (debugmenu > Utilities > **Spire prototype**): je eigen team gaat even aan de kant; je krijgt twee rentals op lv 50 (Gardevoir en Swampert) en vecht in doubles tegen WARDEN: Tyranitar (baas, ×4,5 HP) met Whimsicott ernaast en Klefki als tweede golf. Na afloop (winst of verlies, geen whiteout) krijg je je eigen team terug. Geen exp; rentals luisteren altijd.
+- **Spire-modus in gevechten** (`src/spire.c`, `gSpireBattle`):
+  - **DEFEND** vervangt POKéMON in het actiemenu. Kies met links/rechts: jezelf, je partner of beide; het vak toont meteen hoeveel blok dat geeft (in % van de max HP). DEFEND kost de beurt en gaat altijd vóór alle moves ("Gardevoir guards the team!").
+  - **Blok** = 15% van eigen max HP × verdedigingsfactor (gemiddelde Def/SpD t.o.v. een base-80-stat) × act-factor; over beide verdeeld 60% elk. Vangt alleen directe schade van moves op (multi-hit per klap), vervalt aan het eind van de beurt. Melding: "The block absorbed the hit!" of "The block softened the hit!".
+  - **Intenties**: in het vak links onderin staat wat beide tegenstanders deze beurt gaan doen (boven = bovenste levensbalk), bijv. `▶Crunch→Swampert 17%` of `▶Dragon Dance`. Schade in % van de max HP van het doel (in doubles zie je je eigen HP-getallen niet). Past de naam niet, dan `→L`/`→R`. De AI legt zijn keuze al vóór jouw keuze vast; die wordt getoond en uitgevoerd.
+  - Tegenstanders wisselen niet (de AI-wissel staat uit); een nieuwe tegenstander komt alleen als golf na flauwvallen.
+  - HP-vermenigvuldigers en de rest staan als constanten in `include/spire.h`.
+- Getest in de emulator: intenties, DEFEND op alle drie de doelen, blokmelding, volledig gevecht gewonnen in 7 beurten, eigen team daarna terug.

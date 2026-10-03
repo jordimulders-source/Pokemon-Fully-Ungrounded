@@ -6,6 +6,7 @@
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "battle_scripts.h"
+#include "spire.h"
 #include "battle_environment.h"
 #include "battle_z_move.h"
 #include "item.h"
@@ -1937,6 +1938,8 @@ static void Cmd_adjustdamage(void)
             continue;
         }
 
+        Spire_AbsorbDamage(battlerDef); // Project Grounded: The Spire, blok vangt eerst op
+
         if (gBattleMons[battlerDef].hp > gBattleStruct->moveDamage[battlerDef])
             continue;
 
@@ -2621,6 +2624,9 @@ static void Cmd_resultmessage(void)
     u16 *moveResultFlags = &gBattleStruct->moveResultFlags[gBattlerTarget];
 
     if (gBattleControllerExecFlags)
+        return;
+
+    if (Spire_TryPrintBlockAbsorbed()) // Project Grounded: The Spire
         return;
 
     // TODO: Convert this to a proper FORM_CHANGE type.
@@ -4568,6 +4574,8 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 
 static bool32 BattleTypeAllowsExp(void)
 {
+    if (gSpireBattle) // Project Grounded: rentals in The Spire krijgen geen exp
+        return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;
     else if (gBattleTypeFlags &

@@ -394,6 +394,7 @@ extern const u8 Debug_EventScript_Legend_Heatran[];
 extern const u8 Debug_EventScript_WildFromMap[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
+extern const u8 Debug_EventScript_SpirePrototype[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -594,6 +595,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
+    { COMPOUND_STRING("Spire prototype"),   DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
     { NULL }
 };
 

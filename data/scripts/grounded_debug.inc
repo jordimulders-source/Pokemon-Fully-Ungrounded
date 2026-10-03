@@ -188,3 +188,11 @@ Debug_EventScript_Legend_Heatran::
 	waitstate
 	releaseall
 	end
+
+@ Project Grounded: debugmenu Utilities > Spire prototype - testgevecht The Spire (2 rentals tegen baas + lakeien)
+Debug_EventScript_SpirePrototype::
+	lockall
+	special Spire_StartPrototypeBattle
+	waitstate
+	releaseall
+	end

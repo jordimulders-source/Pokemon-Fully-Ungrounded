@@ -578,3 +578,4 @@ gSpecials::
 	def_special ShowItemPickupPopup
 	def_special IsItemObtainedBefore
 	def_special GetMonsStateToDoubles
+	def_special Spire_StartPrototypeBattle

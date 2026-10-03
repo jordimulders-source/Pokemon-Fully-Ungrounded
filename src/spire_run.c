@@ -7,6 +7,7 @@
 #include "battle_main.h"
 #include "battle_setup.h"
 #include "event_data.h"
+#include "item.h"
 #include "main.h"
 #include "move.h"
 #include "overworld.h"
@@ -45,14 +46,14 @@ static void PickBiome(void);
 
 const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT] =
 {
-    [SPIRE_RELIC_LEFTOVERS]   = {ITEM_LEFTOVERS,   COMPOUND_STRING("Leftovers"),   COMPOUND_STRING("Heal 10% more HP\nafter every battle.")},
+    [SPIRE_RELIC_BERRY_POUCH] = {ITEM_BERRY_POUCH, COMPOUND_STRING("Berry Pouch"), COMPOUND_STRING("Heal 10% more HP\nafter every battle.")},
     [SPIRE_RELIC_AMULET_COIN] = {ITEM_AMULET_COIN, COMPOUND_STRING("Amulet Coin"), COMPOUND_STRING("Earn 50% more money\nin every battle.")},
-    [SPIRE_RELIC_KINGS_ROCK]  = {ITEM_KINGS_ROCK,  COMPOUND_STRING("King's Rock"), COMPOUND_STRING("DEFEND gives 30%\nmore Block.")},
-    [SPIRE_RELIC_SCOPE_LENS]  = {ITEM_SCOPE_LENS,  COMPOUND_STRING("Scope Lens"),  COMPOUND_STRING("Your Pokémon land\ncritical hits more often.")},
+    [SPIRE_RELIC_GUARD_SPEC]  = {ITEM_GUARD_SPEC,  COMPOUND_STRING("Guard Spec."), COMPOUND_STRING("DEFEND gives 30%\nmore Block.")},
+    [SPIRE_RELIC_DIRE_HIT]    = {ITEM_DIRE_HIT,    COMPOUND_STRING("Dire Hit"),    COMPOUND_STRING("Your Pokémon land\ncritical hits more often.")},
     [SPIRE_RELIC_MUSCLE_BAND] = {ITEM_MUSCLE_BAND, COMPOUND_STRING("Muscle Band"), COMPOUND_STRING("Your Pokémon deal\n10% more damage.")},
     [SPIRE_RELIC_WIDE_LENS]   = {ITEM_WIDE_LENS,   COMPOUND_STRING("Wide Lens"),   COMPOUND_STRING("Your moves that hit\nboth foes lose no power.")},
-    [SPIRE_RELIC_SOOTHE_BELL] = {ITEM_SOOTHE_BELL, COMPOUND_STRING("Soothe Bell"), COMPOUND_STRING("Resting heals 80%\ninstead of 50%.")},
-    [SPIRE_RELIC_FOCUS_SASH]  = {ITEM_FOCUS_SASH,  COMPOUND_STRING("Focus Sash"),  COMPOUND_STRING("At full HP, survive a\nknockout hit with 1 HP.")},
+    [SPIRE_RELIC_SOOTHE_BELL] = {ITEM_SOOTHE_BELL, COMPOUND_STRING("Soothe Bell"), COMPOUND_STRING("Resting at camp heals\n30% more HP.")},
+    [SPIRE_RELIC_SACRED_ASH]  = {ITEM_SACRED_ASH,  COMPOUND_STRING("Sacred Ash"),  COMPOUND_STRING("Fainted Pokémon come back\nwith 30% HP, not 1 HP.")},
 };
 
 bool32 Spire_RunActive(void)
@@ -99,6 +100,72 @@ struct Pokemon *Spire_GetRunMon(u32 i)
 
 #include "data/spire_pool.h"
 #include "data/spire_encounters.h"
+
+// Vasthouditems (winkel, events). Eén per Pokémon; een gebruikt item (Focus Sash, bes) is weg voor de rest van de run.
+// Niet in de pool, want nutteloos in de Spire: Red Card, Eject Button/Pack, Shed Shell, Smoke Ball, Exp. Share,
+// Lucky Egg, Everstone, evolutie-items (Up-Grade, ...), Destiny Knot, Float Stone, Iron Ball, Lagging Tail, Sticky Barb,
+// Ring Target, Full Incense, Macho Brace, Power-items, Cleanse Tag, Amulet Coin/Soothe Bell (die zijn relics).
+static const u16 sCommonItems[] =
+{
+    ITEM_SITRUS_BERRY, ITEM_LUM_BERRY, ITEM_QUICK_CLAW, ITEM_KINGS_ROCK, ITEM_SHELL_BELL, ITEM_BIG_ROOT,
+    ITEM_ZOOM_LENS, ITEM_SCOPE_LENS, ITEM_WISE_GLASSES, ITEM_PUNCHING_GLOVE, ITEM_WHITE_HERB, ITEM_MENTAL_HERB,
+    ITEM_POWER_HERB, ITEM_AIR_BALLOON, ITEM_PROTECTIVE_PADS, ITEM_METRONOME, ITEM_LIGHT_CLAY, ITEM_BLACK_SLUDGE,
+    ITEM_NONE, // = typeversterker die past bij je team (Charcoal, Mystic Water, ...)
+};
+static const u16 sUncommonItems[] =
+{
+    ITEM_LIFE_ORB, ITEM_CHOICE_BAND, ITEM_CHOICE_SPECS, ITEM_CHOICE_SCARF, ITEM_ASSAULT_VEST, ITEM_EVIOLITE,
+    ITEM_EXPERT_BELT, ITEM_WEAKNESS_POLICY, ITEM_ROCKY_HELMET, ITEM_HEAVY_DUTY_BOOTS, ITEM_COVERT_CLOAK,
+    ITEM_CLEAR_AMULET, ITEM_LOADED_DICE, ITEM_THROAT_SPRAY, ITEM_FOCUS_SASH, ITEM_BLUNDER_POLICY,
+};
+static const u16 sRareItems[] = {ITEM_LEFTOVERS, ITEM_FOCUS_SASH, ITEM_LIFE_ORB, ITEM_ASSAULT_VEST};
+
+static const u16 sTypeBoosters[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NORMAL] = ITEM_SILK_SCARF, [TYPE_FIGHTING] = ITEM_BLACK_BELT, [TYPE_FLYING] = ITEM_SHARP_BEAK,
+    [TYPE_POISON] = ITEM_POISON_BARB, [TYPE_GROUND] = ITEM_SOFT_SAND, [TYPE_ROCK] = ITEM_HARD_STONE,
+    [TYPE_BUG] = ITEM_SILVER_POWDER, [TYPE_GHOST] = ITEM_SPELL_TAG, [TYPE_STEEL] = ITEM_METAL_COAT,
+    [TYPE_FIRE] = ITEM_CHARCOAL, [TYPE_WATER] = ITEM_MYSTIC_WATER, [TYPE_GRASS] = ITEM_MIRACLE_SEED,
+    [TYPE_ELECTRIC] = ITEM_MAGNET, [TYPE_PSYCHIC] = ITEM_TWISTED_SPOON, [TYPE_ICE] = ITEM_NEVER_MELT_ICE,
+    [TYPE_DRAGON] = ITEM_DRAGON_FANG, [TYPE_DARK] = ITEM_BLACK_GLASSES, [TYPE_FAIRY] = ITEM_FAIRY_FEATHER,
+};
+
+u16 Spire_RandomHeldItem(u32 rarity, u32 salt)
+{
+    u32 r = Random() + salt * 11;
+    u16 item;
+
+    switch (rarity)
+    {
+    case 2:  item = sRareItems[r % ARRAY_COUNT(sRareItems)]; break;
+    case 1:  item = sUncommonItems[r % ARRAY_COUNT(sUncommonItems)]; break;
+    default: item = sCommonItems[r % ARRAY_COUNT(sCommonItems)]; break;
+    }
+    if (item == ITEM_NONE)
+    {
+        u16 species = GetMonData(&RUN.mons[(r >> 4) & 1], MON_DATA_SPECIES);
+        u32 type = GetSpeciesType(species, (r >> 5) & 1);
+
+        item = type < NUMBER_OF_MON_TYPES && sTypeBoosters[type] ? sTypeBoosters[type] : ITEM_CHARCOAL;
+    }
+    return item;
+}
+
+// Beschrijving van een vasthouditem in de Spire (waar de Spire het item anders laat werken).
+static const u8 sDesc_LifeOrb[] = _("Moves hit 30% harder. Each\nattack costs 2% of max HP.");
+static const u8 sDesc_FocusSash[] = _("Survive one knockout hit with\n1 HP, at any HP. Then it is gone.");
+static const u8 sDesc_Leftovers[] = _("Heals 1/32 of max HP every\nturn. Very strong. Very rare.");
+
+const u8 *Spire_GetItemDescription(u16 item)
+{
+    switch (item)
+    {
+    case ITEM_LIFE_ORB:   return sDesc_LifeOrb;
+    case ITEM_FOCUS_SASH: return sDesc_FocusSash;
+    case ITEM_LEFTOVERS:  return sDesc_Leftovers;
+    default:              return GetItemDescription(item);
+    }
+}
 
 bool32 Spire_IsMoveBanned(u16 move)
 {
@@ -161,6 +228,11 @@ u16 Spire_RandomRental(u32 salt)
     return sSpireRentals[0].species;
 }
 
+u16 Spire_RandomEventRental(u32 salt)
+{
+    return sSpireEventRentals[(Random() + salt) % ARRAY_COUNT(sSpireEventRentals)].species;
+}
+
 const struct SpireRental *Spire_FindRental(u16 species)
 {
     u32 i;
@@ -190,6 +262,24 @@ void Spire_SetRental(u32 slot, u16 species)
     static const u16 sFallback[MAX_MON_MOVES] = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE};
 
     Spire_CreateMon(mon, species, SPIRE_LEVEL, 31, 84, rental ? rental->moves : sFallback);
+    RUN.hpBonus[slot] = 0;
+    Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(slot));
+}
+
+// Event 'A VERY SPECIAL DITTO' (Jordi): shiny, 31 IV, Imposter, Choice Scarf.
+void Spire_SetSpecialDitto(u32 slot)
+{
+    struct Pokemon *mon = &RUN.mons[slot];
+    static const u16 sMoves[MAX_MON_MOVES] = {MOVE_TRANSFORM};
+    u32 abilityNum = 2, shiny = TRUE;
+    u16 item = ITEM_CHOICE_SCARF;
+
+    Spire_CreateMon(mon, SPECIES_DITTO, SPIRE_LEVEL, 31, 84, sMoves);
+    if (GetSpeciesAbility(SPECIES_DITTO, 2) != ABILITY_IMPOSTER)
+        abilityNum = (GetSpeciesAbility(SPECIES_DITTO, 1) == ABILITY_IMPOSTER) ? 1 : 0;
+    SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+    SetMonData(mon, MON_DATA_IS_SHINY, &shiny);
+    SetMonData(mon, MON_DATA_HELD_ITEM, &item);
     RUN.hpBonus[slot] = 0;
     Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(slot));
 }
@@ -378,7 +468,7 @@ void Spire_Enter(void)
     }
 }
 
-// Debug (testscripts): VAR_0x8004 = 0 rustplek, 1 winkel, 2 event, 3 kaart. Zonder run: snelle run met twee rentals.
+// Debug (testscripts): VAR_0x8004 = 0 rustplek, 1 winkel, 2 event, 3 kaart, 4 elite, 5 baas. Zonder run: snelle run met twee rentals.
 void Spire_DebugOpen(void)
 {
     CleanupOverworldWindowsAndTilemaps();
@@ -393,6 +483,8 @@ void Spire_DebugOpen(void)
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
     case 1:  Spire_OpenCards(SPIRE_CARDS_SHOP, Spire_ReturnToField); break;
     case 2:  Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_ReturnToField); break;
+    case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
+    case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
     default: Spire_OpenMap(); break;
     }
 }
@@ -425,7 +517,10 @@ void Spire_HealRun(u32 percent)
         struct Pokemon *mon = &RUN.mons[i];
         u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP);
 
-        hp = (hp == 0) ? 1 : min(maxHp, hp + maxHp * percent / 100);
+        if (hp == 0)
+            hp = Spire_HasRelic(SPIRE_RELIC_SACRED_ASH) ? maxHp * 30 / 100 : 1;
+        else
+            hp = min(maxHp, hp + maxHp * percent / 100);
         SetMonData(mon, MON_DATA_HP, &hp);
         if (percent >= SPIRE_REST_HEAL)
         {
@@ -755,6 +850,38 @@ static void CreateFoe(u32 partyIndex, const struct SpireFoe *foe)
     }
 }
 
+// Events: sporen (de Pokémon begint dit gevecht in slaap) en Toxic Spikes (3 gevechten lang 40% kans op gif;
+// Poison- en Steel-types en Heavy-Duty Boots zijn veilig).
+static void ApplyEventEffects(void)
+{
+    u32 i;
+
+    for (i = 0; i < 2; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        u16 species = GetMonData(mon, MON_DATA_SPECIES);
+        u32 status = GetMonData(mon, MON_DATA_STATUS);
+
+        if (GetMonData(mon, MON_DATA_HP) == 0 || status != 0)
+            continue;
+        if (RUN.fungalMask & (1 << i))
+        {
+            status = STATUS1_SLEEP_TURN(2);
+        }
+        else if (RUN.toxicFights && GetMonData(mon, MON_DATA_HELD_ITEM) != ITEM_HEAVY_DUTY_BOOTS
+              && GetSpeciesType(species, 0) != TYPE_POISON && GetSpeciesType(species, 1) != TYPE_POISON
+              && GetSpeciesType(species, 0) != TYPE_STEEL && GetSpeciesType(species, 1) != TYPE_STEEL
+              && Random() % 100 < 40)
+        {
+            status = STATUS1_POISON;
+        }
+        SetMonData(mon, MON_DATA_STATUS, &status);
+    }
+    RUN.fungalMask = 0;
+    if (RUN.toxicFights)
+        RUN.toxicFights--;
+}
+
 static void StartEncounter(const struct SpireEncounter *enc, u32 song)
 {
     u32 i;
@@ -776,6 +903,7 @@ static void StartEncounter(const struct SpireEncounter *enc, u32 song)
     gPlayerParty[0] = RUN.mons[0];
     gPlayerParty[1] = RUN.mons[1];
     CalculatePlayerPartyCount();
+    ApplyEventEffects();
 
     gSpireBattle = TRUE;
     gSpireAct = RUN.act;
@@ -803,6 +931,13 @@ static void StartRoomBattle(u32 type)
         sEncounterIndex = PickEncounter(type);
         StartEncounter(&sSpireEncounters[sEncounterIndex], type == SPIRE_ROOM_ELITE ? MUS_VS_ELITE_FOUR : MUS_VS_WILD);
     }
+}
+
+// Event 'A FAINTED ACE': het gevecht na het zoeken (telt als elite: relic + moves)
+void Spire_StartEventFight(void)
+{
+    sRoomType = SPIRE_ROOM_ELITE;
+    StartRoomBattle(SPIRE_ROOM_ELITE);
 }
 
 static void RewardMoves(void)
@@ -835,7 +970,7 @@ static void CB2_EndSpireBattle(void)
 
     if (sEncounterIndex >= 0)
         MarkEncounterUsed(sEncounterIndex);
-    heal = SPIRE_HEAL_AFTER + (Spire_HasRelic(SPIRE_RELIC_LEFTOVERS) ? 10 : 0);
+    heal = SPIRE_HEAL_AFTER + (Spire_HasRelic(SPIRE_RELIC_BERRY_POUCH) ? 10 : 0);
     Spire_HealRun(heal);
     switch (sRoomType)
     {

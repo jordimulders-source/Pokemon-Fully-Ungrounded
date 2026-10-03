@@ -1666,7 +1666,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
                     + gBattleMons[battlerAtk].volatiles.bonusCritStages
-                    + ((gSpireBattle && IsOnPlayerSide(battlerAtk) && Spire_HasRelic(SPIRE_RELIC_SCOPE_LENS)) ? 1 : 0); // Project Grounded
+                    + ((gSpireBattle && IsOnPlayerSide(battlerAtk) && Spire_HasRelic(SPIRE_RELIC_DIRE_HIT)) ? 1 : 0); // Project Grounded
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
@@ -1966,11 +1966,6 @@ static void Cmd_adjustdamage(void)
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
-        else if (gSpireBattle && IsOnPlayerSide(battlerDef) && Spire_HasRelic(SPIRE_RELIC_FOCUS_SASH) && IsBattlerAtMaxHp(battlerDef))
-        {
-            enduredHit |= 1u << battlerDef; // Project Grounded: The Spire, relic Focus Sash
-            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_ENDURED;
-        }
         else if (GetConfig(B_STURDY) >= GEN_5 && GetBattlerAbility(battlerDef) == ABILITY_STURDY && IsBattlerAtMaxHp(battlerDef))
         {
             enduredHit |= 1u << battlerDef;
@@ -1978,7 +1973,7 @@ static void Cmd_adjustdamage(void)
             gLastUsedAbility = ABILITY_STURDY;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_STURDIED;
         }
-        else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(battlerDef))
+        else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && (IsBattlerAtMaxHp(battlerDef) || gSpireBattle)) // Project Grounded: Spire, op elke HP
         {
             enduredHit |= 1u << battlerDef;
             RecordItemEffectBattle(battlerDef, holdEffect);
@@ -11102,7 +11097,7 @@ static void Cmd_tryKO(void)
         endured = FOCUS_BANDED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
-    else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(gBattlerTarget))
+    else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && (IsBattlerAtMaxHp(gBattlerTarget) || gSpireBattle)) // Project Grounded: Spire, op elke HP
     {
         endured = FOCUS_SASHED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);

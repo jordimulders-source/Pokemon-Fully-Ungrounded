@@ -10010,6 +10010,9 @@ void SortBattlersBySpeed(u8 *battlers, bool32 slowToFast)
 void TryRestoreHeldItems(void)
 {
     u32 i;
+
+    if (gSpireBattle) // Project Grounded: The Spire, een gebruikt item (Focus Sash, bessen) is weg voor de rest van de run
+        return;
     bool32 returnNPCItems = B_RETURN_STOLEN_NPC_ITEMS >= GEN_5 && gBattleTypeFlags & BATTLE_TYPE_TRAINER;
 
     for (i = 0; i < PARTY_SIZE; i++)

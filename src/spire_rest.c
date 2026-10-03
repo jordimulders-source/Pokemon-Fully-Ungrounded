@@ -109,9 +109,9 @@ static const struct BgTemplate sBgTemplates[] =
 static const struct WindowTemplate sWindowTemplates[] =
 {
     [WIN_HEADER] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 1, .width = 28, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x001},
-    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 13, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
-    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 16, .tilemapTop = 13, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x053},
-    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 17, .width = 28, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x06D},
+    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 12, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
+    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 16, .tilemapTop = 12, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x053},
+    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 16, .width = 28, .height = 3, .paletteNum = PAL_TEXT, .baseBlock = 0x06D},
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -194,9 +194,13 @@ void Spire_LoadBiomeBackground(u16 tint, u32 amount)
 // ---------------------------------------------------------------------------------------------
 // Tekenen
 
+// Altijd met transparante achtergrond (het venster is al gevuld): anders wist elke regel de onderkant
+// van de regel erboven.
 static void PrintText(u32 win, u32 font, u32 x, u32 y, const u8 *color, const u8 *str)
 {
-    AddTextPrinterParameterized3(win, font, x, y, color, TEXT_SKIP_DRAW, str);
+    u8 c[3] = {TEXT_COLOR_TRANSPARENT, color[1], color[2]};
+
+    AddTextPrinterParameterized3(win, font, x, y, c, TEXT_SKIP_DRAW, str);
 }
 
 static void DrawFrame(u32 win, u32 pal)
@@ -293,15 +297,15 @@ static void DrawOptions(void)
             sel = (sRest->choice == CHOICE_REST);
             buf[0] = CHAR_PLUS;
             ConvertIntToDecimalStringN(buf + 1, RestPercent(), STR_CONV_MODE_LEFT_ALIGN, 3);
-            StringAppend(buf, COMPOUND_STRING("% HP, all PP"));
+            StringAppend(buf, COMPOUND_STRING("% HP, PP"));
             PrintText(win, FONT_NORMAL, 4, 0, sColor_Green, COMPOUND_STRING("REST"));
-            PrintText(win, FONT_SMALL_NARROW, 40, 3, sColor_Dark, buf);
+            PrintText(win, FONT_SMALL_NARROW, 38, 3, sColor_Dark, buf);
         }
         else
         {
             sel = (sRest->choice == CHOICE_UPGRADE);
             PrintText(win, FONT_NORMAL, 4, 0, sColor_Blue, COMPOUND_STRING("UPGRADE"));
-            PrintText(win, FONT_SMALL_NARROW, 60, 3, sColor_Dark, COMPOUND_STRING("one move: +"));
+            PrintText(win, FONT_SMALL_NARROW, 60, 3, sColor_Dark, COMPOUND_STRING("a move +"));
         }
         CopyWindowToVram(win, COPYWIN_FULL);
         DrawFrame(win, (sel && sRest->state != STATE_MESSAGE) ? PAL_FRAME_SEL : PAL_FRAME);
@@ -371,7 +375,7 @@ static void UpdateSprites(void)
     if (sRest->state == STATE_MAIN)
     {
         hand->x = sRest->choice == CHOICE_REST ? 70 : 206;
-        hand->y = 46 + (((sRest->timer >> 4) & 1) ? 2 : 0);
+        hand->y = 42 + (((sRest->timer >> 4) & 1) ? 2 : 0);
         hand->invisible = FALSE;
     }
     else
@@ -384,9 +388,9 @@ static void CreateSprites(void)
 {
     u32 i;
 
-    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 52, 66, 0, SPECIES_CHANSEY); // palettetag = soort
-    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 62, 0, SPECIES_SNORLAX);
-    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 188, 66, 0, SPECIES_PORYGON2);
+    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 52, 62, 0, SPECIES_CHANSEY); // palettetag = soort
+    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 58, 0, SPECIES_SNORLAX);
+    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 188, 62, 0, SPECIES_PORYGON2);
     for (i = 0; i < 3; i++)
         gSprites[sRest->picSpriteIds[i]].oam.priority = 1;
     // Snorlax slaapt achter de helpers
@@ -398,7 +402,7 @@ static void CreateSprites(void)
         struct Pokemon *mon = Spire_GetRunMon(i);
 
         sRest->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
-                                                8 + 20 + i * 120, 104 + 8, 0, GetMonData(mon, MON_DATA_PERSONALITY));
+                                                8 + 20 + i * 120, 96 + 8, 0, GetMonData(mon, MON_DATA_PERSONALITY));
         gSprites[sRest->iconSpriteIds[i]].oam.priority = 0;
     }
     LoadSpriteSheet(&sSpriteSheet_Hand);

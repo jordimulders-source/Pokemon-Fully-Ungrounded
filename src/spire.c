@@ -156,7 +156,7 @@ u32 Spire_BlockAmount(u32 battler)
     u32 amount = gBattleMons[battler].maxHP * SPIRE_BLOCK_PERCENT * def / (100 * ref);
 
     amount = amount * sActBlockFactor[act] / 100;
-    if (Spire_HasRelic(SPIRE_RELIC_KINGS_ROCK))
+    if (Spire_HasRelic(SPIRE_RELIC_GUARD_SPEC))
         amount = amount * 13 / 10;
     return amount ? amount : 1;
 }

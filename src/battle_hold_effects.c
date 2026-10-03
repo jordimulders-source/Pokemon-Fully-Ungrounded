@@ -8,6 +8,7 @@
 #include "battle_scripts.h"
 #include "item.h"
 #include "string_util.h"
+#include "spire.h"
 #include "data/hold_effects.h"
 #include "constants/berry.h"
 
@@ -572,7 +573,8 @@ static enum ItemEffect TryLifeOrb(u32 battlerAtk)
      && GetMoveEffect(gCurrentMove) != EFFECT_PAIN_SPLIT
      && !IsFutureSightAttackerInParty(battlerAtk, gBattlerTarget, gCurrentMove))
     {
-        SetPassiveDamageAmount(battlerAtk, GetNonDynamaxMaxHP(battlerAtk) / 10);
+        // Project Grounded: in The Spire 2% (met x HP zou 10% veel te zwaar zijn, zie SPIRE_BALANS.md)
+        SetPassiveDamageAmount(battlerAtk, gSpireBattle ? max(1, GetNonDynamaxMaxHP(battlerAtk) / 50) : GetNonDynamaxMaxHP(battlerAtk) / 10);
         BattleScriptCall(BattleScript_ItemHurtRet);
         effect = ITEM_HP_CHANGE;
     }
@@ -653,7 +655,8 @@ static enum ItemEffect TryLeftovers(u32 battler, enum HoldEffect holdEffect)
     if (gBattleMons[battler].hp < gBattleMons[battler].maxHP
      && !(B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battler].volatiles.healBlock))
     {
-        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+        // Project Grounded: in The Spire 1/32 (met x4 HP is 1/16 meer dan een gewoon gevecht kost)
+        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / (gSpireBattle ? 32 : 16));
         RecordItemEffectBattle(battler, holdEffect);
         BattleScriptExecute(BattleScript_ItemHealHP_End2);
         effect = ITEM_HP_CHANGE;

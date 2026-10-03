@@ -160,9 +160,13 @@ static void CB2_SpireMap(void);
 static void Task_SpireMap(u8 taskId);
 
 // --- helpers ----------------------------------------------------------------------------------
+// Altijd met transparante achtergrond (het venster is al gevuld): anders wist elke regel de onderkant
+// van de regel erboven.
 static void PrintText(u32 win, u32 font, u32 x, u32 y, const u8 *color, const u8 *str)
 {
-    AddTextPrinterParameterized3(win, font, x, y, color, TEXT_SKIP_DRAW, str);
+    u8 c[3] = {TEXT_COLOR_TRANSPARENT, color[1], color[2]};
+
+    AddTextPrinterParameterized3(win, font, x, y, c, TEXT_SKIP_DRAW, str);
 }
 
 static u32 PathNode(u32 floor)

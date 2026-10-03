@@ -38,16 +38,17 @@ enum SpireRoom
     SPIRE_ROOM_BOSS,
 };
 
+// Relics = trainerspullen voor het hele team (vasthouditems zijn iets anders: één per Pokémon, zie de winkel).
 enum SpireRelic
 {
-    SPIRE_RELIC_LEFTOVERS,     // +10% extra heal na elk gevecht
+    SPIRE_RELIC_BERRY_POUCH,   // +10% extra heal na elk gevecht
     SPIRE_RELIC_AMULET_COIN,   // +50% geld
-    SPIRE_RELIC_KINGS_ROCK,    // +30% blok bij DEFEND
-    SPIRE_RELIC_SCOPE_LENS,    // eigen crits +1 stage
+    SPIRE_RELIC_GUARD_SPEC,    // +30% blok bij DEFEND
+    SPIRE_RELIC_DIRE_HIT,      // eigen crits +1 stage
     SPIRE_RELIC_MUSCLE_BAND,   // eigen schade +10%
     SPIRE_RELIC_WIDE_LENS,     // eigen spread-moves zonder 25% verlies
-    SPIRE_RELIC_SOOTHE_BELL,   // rustplek heelt 80% i.p.v. 50%
-    SPIRE_RELIC_FOCUS_SASH,    // overleef een klap op volle HP met 1 HP
+    SPIRE_RELIC_SOOTHE_BELL,   // rustplek heelt 30% meer
+    SPIRE_RELIC_SACRED_ASH,    // flauwgevallen na een gewonnen gevecht: terug met 30% i.p.v. 1 HP
     SPIRE_RELIC_COUNT,
 };
 
@@ -226,10 +227,15 @@ void Spire_SetRental(u32 i, u16 species);
 u16 Spire_RandomRental(u32 salt);
 u16 Spire_RandomMove(u32 rarity, u32 salt);
 u16 Spire_RandomMoveOfType(u32 rarity, u32 type, u32 salt);
+u16 Spire_RandomHeldItem(u32 rarity, u32 salt);
+const u8 *Spire_GetItemDescription(u16 item);
 u32 Spire_GetEvolutions(u16 species, u16 *targets);
 void Spire_EvolveTo(u32 i, u16 target);
 u32 Spire_PlayerHpPercent(u32 i);
 const struct SpireRental *Spire_FindRental(u16 species);
+u16 Spire_RandomEventRental(u32 salt);
+void Spire_SetSpecialDitto(u32 slot);
+void Spire_StartEventFight(void);
 void Spire_ReturnToField(void);
 u16 Spire_GetBossSpecies(void);
 void Spire_Enter(void);

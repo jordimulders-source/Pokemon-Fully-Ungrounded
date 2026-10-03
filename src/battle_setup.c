@@ -476,7 +476,7 @@ void BattleSetup_StartLatiBattle(void)
 // Project Grounded: The Spire (src/spire.c zet partijen en het eindcallback klaar)
 void BattleSetup_StartSpireBattle(void)
 {
-    CreateBattleStartTask(GetTrainerBattleTransition(), MUS_VS_FRONTIER_BRAIN);
+    CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_FRONTIER_BRAIN);
 }
 
 void BattleSetup_StartLegendaryBattle(void)

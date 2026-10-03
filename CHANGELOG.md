@@ -15787,3 +15787,7 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
   - Tegenstanders wisselen niet (de AI-wissel staat uit); een nieuwe tegenstander komt alleen als golf na flauwvallen.
   - HP-vermenigvuldigers en de rest staan als constanten in `include/spire.h`.
 - Getest in de emulator: intenties, DEFEND op alle drie de doelen, blokmelding, volledig gevecht gewonnen in 7 beurten, eigen team daarna terug.
+
+### [v.0.8.101] - The Spire: losse Pokémon i.p.v. trainer, KO-markering
+- **Geen trainer meer** in het prototype: je vecht tegen losse Pokémon (wild dubbelgevecht, "Wild Tyranitar and Whimsicott appeared!"), maar met de slimme trainer-AI, zodat intenties blijven werken. Geen trainer-intro, geen "sent out", geen geld. `TRAINER_SPIRE_PROTO` is weer weg. Golven (een derde Pokémon die invalt) kunnen nu niet: wilde gevechten vullen niet aan. Klefki is dus uit het prototype; de baas staat alleen met Whimsicott.
+- **KO-markering in de intenties:** `Crunch→Gardevoir 38% KO` als de klap je Pokémon zeker uitschakelt, `KO?` als dat alleen met een hoge rol gebeurt (crits niet meegerekend). Bij spread-aanvallen per doel, bijv. `Earthquake→ 23%KO/15%`.

@@ -19,6 +19,8 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 - **Switchen bestaat niet.**
 
 ## Tegenstanders
+- **Geen trainers** (Jordi, v0.8.101): je vecht tegen losse Pokémon (wild dubbelgevecht met trainer-AI). Golven vragen nog engine-werk (wilde gevechten vullen niet aan).
+- Intenties tonen **KO** (zeker dodelijk) of **KO?** (alleen met een hoge rol).
 - 1 of meerdere tegenstanders: **2 tegen 1** (baas) kan, 2 tegen 2 ook. Meer dan 2 tegelijk kan de engine niet, wel **golven** (valt een lakei, dan komt de volgende uit de party).
 - Bazen/lakeien: een **grote pool aan bazen** met vaste patronen (memoriseren zoals in Slay, maar meer variatie). Lakeien = zwakke support-Pokémon (weer, Tailwind, schermen, buffs).
 - **Abilities van tegenstanders verborgen**; de ability-popup van expansion onthult ze. Idee: een **Spire-codex** (met R) die onthoudt wat je ooit zag (ability, moves, patroon).

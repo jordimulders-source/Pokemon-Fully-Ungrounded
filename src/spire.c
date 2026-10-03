@@ -186,10 +186,36 @@ static u8 *AppendPercent(u8 *dst, u32 pct)
     return dst;
 }
 
+// Achter de schade: "KO" als zelfs de laagste rol het doel uitschakelt, "KO?" als alleen de hoogste rol dat doet.
+static u8 *AppendKoMark(u8 *dst, u32 battler, u32 target, u32 moveIndex)
+{
+    const struct SimulatedDamage *dmg = &gAiLogicData->simulatedDmg[battler][target][moveIndex];
+
+    if (dmg->maximum >= gBattleMons[target].hp)
+    {
+        *dst++ = CHAR_K;
+        *dst++ = CHAR_O;
+        if (dmg->minimum < gBattleMons[target].hp)
+            *dst++ = CHAR_QUESTION_MARK;
+    }
+    *dst = EOS;
+    return dst;
+}
+
 static u8 *AppendDamage(u8 *dst, u32 battler, u32 target, u32 moveIndex)
 {
     *dst++ = CHAR_SPACE;
-    return AppendPercent(dst, DamagePercent(battler, target, moveIndex));
+    dst = AppendPercent(dst, DamagePercent(battler, target, moveIndex));
+    if (gAiLogicData->simulatedDmg[battler][target][moveIndex].maximum >= gBattleMons[target].hp)
+        *dst++ = CHAR_SPACE;
+    return AppendKoMark(dst, battler, target, moveIndex);
+}
+
+// Spread: per doel het percentage, direct gevolgd door KO/KO? (bijv. "23%KO/15%").
+static u8 *AppendSpreadPart(u8 *dst, u32 battler, u32 target, u32 moveIndex)
+{
+    dst = AppendPercent(dst, DamagePercent(battler, target, moveIndex));
+    return AppendKoMark(dst, battler, target, moveIndex);
 }
 
 #define INTENT_MAX_WIDTH 98 // vak van 112 px min marge en het driehoekje
@@ -206,12 +232,12 @@ static u8 *AppendTargetLabel(u8 *dst, u32 battler, u32 target, u32 moveIndex, bo
             dst = StringCopy(dst, sText_Both);
         *dst++ = CHAR_SPACE;
         if (IsBattlerAlive(left))
-            dst = AppendPercent(dst, DamagePercent(battler, left, moveIndex));
+            dst = AppendSpreadPart(dst, battler, left, moveIndex);
         if (IsDoubleBattle() && IsBattlerAlive(right))
         {
             if (IsBattlerAlive(left))
                 *dst++ = CHAR_SLASH;
-            dst = AppendPercent(dst, DamagePercent(battler, right, moveIndex));
+            dst = AppendSpreadPart(dst, battler, right, moveIndex);
         }
     }
     else
@@ -269,21 +295,28 @@ u8 *Spire_GetIntentText(u8 *dst, u32 battler)
 // ---------------------------------------------------------------------------
 // Prototypegevecht (debugmenu > Utilities > Spire prototype)
 
-static void CreateRental(struct Pokemon *mon, u16 species, const u16 *moves)
+static void CreateSpireMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves)
 {
-    u32 i, ev = 84;
+    u32 i;
 
-    CreateMon(mon, species, 50, 31, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(mon, species, level, iv, FALSE, 0, OT_ID_PLAYER_ID, 0);
     for (i = 0; i < NUM_STATS; i++)
         SetMonData(mon, MON_DATA_HP_EV + i, &ev);
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, moves[i], i);
     CalculateMonStats(mon);
+}
+
+static void CreateRental(struct Pokemon *mon, u16 species, const u16 *moves)
+{
+    CreateSpireMon(mon, species, 50, 31, 84, moves);
     ScaleMonHp(mon, SPIRE_HP_PLAYER);
 }
 
 static const u16 sRentalMovesGardevoir[] = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PROTECT};
 static const u16 sRentalMovesSwampert[] = {MOVE_MUDDY_WATER, MOVE_LIQUIDATION, MOVE_ICE_BEAM, MOVE_PROTECT};
+static const u16 sBossMovesTyranitar[] = {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE};
+static const u16 sLackeyMovesWhimsicott[] = {MOVE_TAILWIND, MOVE_HELPING_HAND, MOVE_MOONBLAST, MOVE_ENCORE};
 
 static void CB2_EndSpireBattle(void)
 {
@@ -314,14 +347,17 @@ void Spire_StartPrototypeBattle(void)
     CreateRental(&gPlayerParty[1], SPECIES_SWAMPERT, sRentalMovesSwampert);
     CalculatePlayerPartyCount();
 
+    // Losse Pokémon, geen trainer: een wild dubbelgevecht met slimme AI (zie IsWildMonSmart).
+    // De HP-vermenigvuldigers komen in Spire_OnEnemyPartyCreated (eerste = baas).
+    ZeroEnemyPartyMons();
+    CreateSpireMon(&gEnemyParty[0], SPECIES_TYRANITAR, 50, 31, 84, sBossMovesTyranitar);
+    CreateSpireMon(&gEnemyParty[1], SPECIES_WHIMSICOTT, 46, 20, 0, sLackeyMovesWhimsicott);
+
     gSpireBattle = TRUE;
     gSpireAct = 1;
     Spire_ClearBlocks();
     LockPlayerFieldControls();
-    memset(&gTrainerBattleParameter, 0, sizeof(gTrainerBattleParameter));
-    TRAINER_BATTLE_PARAM.opponentA = TRAINER_SPIRE_PROTO;
-    TRAINER_BATTLE_PARAM.opponentB = 0xFFFF;
-    gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE;
+    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
     gMain.savedCallback = CB2_EndSpireBattle;
     BattleSetup_StartSpireBattle();
 }

@@ -83,7 +83,7 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 
 ## Schermen (mockups, akkoord Jordi)
 - Flow: gevecht → beloningsscherm (3 moves, A kiezen, B overslaan, SELECT kaart) → act-kaart → volgende kamer. Geen overworld ertussen.
-- Act-kaart scrolt (±4 verdiepingen in beeld), PokéNav-stippenachtergrond, schuine gele routes met rand, gelopen pad rood, Brendan-hoofdje = speler, rode hoekhaken = cursor, alleen de baas zichtbaar (icoon op rood plateau).
+- Act-kaart scrolt (±4 verdiepingen in beeld), PokéNav-stippenachtergrond, schuine gele routes met rand, gelopen pad rood, Brendan- of May-hoofdje = speler (volgt het gekozen geslacht, zoals de Town Map), rode hoekhaken = cursor, alleen de baas zichtbaar (icoon op rood plateau).
 - Kamericonen: gevecht = Poké Ball (item-icoon), elite = Substitute (overworld-sprite), rust = Chansey (icoon), winkel = blauw Mart-embleem (dak), event = Unown-?.
 - Relics: eerste twee in het zijpaneel + "+N"; R opent de relic-lijst met uitleg. Cursor in menu's = de PC-hand.
 - Mockups: `tools/grounded/spire/mockups.py <uitmap> v2|v4`.

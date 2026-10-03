@@ -750,7 +750,9 @@ def act_canvas4():
                 ic = ic.copy()
                 ic.putalpha(ic.getchannel('A').point(lambda a: a * 2 // 5))
             paste_c(img, ic, x, ys[f])
-    head = load_pal(os.path.join(ROOT, 'graphics/pokenav/region_map/brendan_icon.png'))
+    # speler: Brendan- of May-hoofdje van de Town Map (in de game via gSaveBlock2Ptr->playerGender)
+    who = 'may' if os.environ.get('SPIRE_PLAYER') == 'may' else 'brendan'
+    head = load_pal(os.path.join(ROOT, 'graphics/pokenav/region_map/%s_icon.png' % who))
     cx, cy = pos(*cur)
     img.paste(head, (cx - 20, cy - 9), head)
     x, y = pos(*nexts[1])

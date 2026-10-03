@@ -15,6 +15,7 @@ DesertRuins_EventScript_TryRemoveRegirock::
 	return
 
 DesertRuins_OnLoad:
+	special RegiDots_OnLoad
 	call_if_unset FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_HideRegiEntrance
 	end
 
@@ -37,10 +38,7 @@ DesertRuins_EventScript_ShowRegirock::
 	return
 
 DesertRuins_EventScript_CaveEntranceMiddle::
-	lockall
-	goto_if_set FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_BigHoleInWall
-	braillemsgbox DesertRuins_Braille_UseRockSmash
-	releaseall
+	goto Common_EventScript_RegiDotsMural
 	end
 
 DesertRuins_EventScript_BigHoleInWall::
@@ -49,9 +47,7 @@ DesertRuins_EventScript_BigHoleInWall::
 	end
 
 DesertRuins_EventScript_CaveEntranceSide::
-	lockall
-	braillemsgbox DesertRuins_Braille_UseRockSmash
-	releaseall
+	goto Common_EventScript_RegiDotsMural
 	end
 
 DesertRuins_EventScript_Regirock::
@@ -71,12 +67,12 @@ DesertRuins_EventScript_Regirock::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DesertRuins_EventScript_RanFromRegirock
 	setflag FLAG_DEFEATED_REGIROCK
+	call Common_EventScript_CheckRegigigasTemple
 	release
 	end
 
 DesertRuins_EventScript_DefeatedRegirock::
-	setflag FLAG_DEFEATED_REGIROCK
-	goto Common_EventScript_RemoveStaticPokemon
+	goto Common_EventScript_RegiCrumbled
 	end
 
 DesertRuins_EventScript_RanFromRegirock::

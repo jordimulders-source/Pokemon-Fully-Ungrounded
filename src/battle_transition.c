@@ -10,6 +10,7 @@
 #include "field_weather.h"
 #include "gpu_regs.h"
 #include "main.h"
+#include "m4a.h"
 #include "malloc.h"
 #include "overworld.h"
 #include "palette.h"
@@ -5710,7 +5711,9 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
     case 2:
         if (--task->tRtDelay == 0)
         {
-            // beeld bevriezen zoals het nu is, dan naar zwart
+            // beeld bevriezen zoals het nu is, dan naar zwart. Een herhalend geluid (wind, zandstorm) stopt hier.
+            if (rt->sound)
+                m4aSongNumStop(rt->sound);
             CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
             BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
             task->tState++;

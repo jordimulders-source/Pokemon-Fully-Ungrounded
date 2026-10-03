@@ -441,6 +441,9 @@ gStdScripts_End::
 	.include "data/maps/AbandonedShip_HiddenFloorRooms/scripts.inc"
 	.include "data/maps/IslandCave/scripts.inc"
 	.include "data/maps/AncientTomb/scripts.inc"
+	.include "data/maps/RegidragoCave/scripts.inc"
+	.include "data/maps/RegigigasTemple/scripts.inc"
+	.include "data/maps/RegielekiCave/scripts.inc"
 	.include "data/maps/Underwater_Route134/scripts.inc"
 	.include "data/maps/Underwater_SealedChamber/scripts.inc"
 	.include "data/maps/SealedChamber_OuterRoom/scripts.inc"
@@ -612,6 +615,7 @@ gStdScripts_End::
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 	.include "data/scripts/grounded_debug.inc"
+	.include "data/scripts/regi_dots.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

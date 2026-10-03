@@ -39,7 +39,7 @@ Al klaar: gevechtstransities voor alle Regi's, het Regi-heiligdom op laag 1 in A
 
 **Antwoorden van Jordi (3 okt):**
 - Activatie **(b) op de lichtgevende stippen staan**. Dat vervangt de braille-puzzels en het "juiste Pokémon vooraan"-idee helemaal. De volgorde moet voor een mens makkelijk te snappen zijn.
-- **Voorstel volgorde (nog bevestigen):** op de muur van elke kamer zit het oogpatroon van de Regi. De stippen op de muur lichten **één voor één op in een vaste lus** (zoals Simon Says). Loop de vloerstippen in dezelfde volgorde af. Een verkeerde stip laat alles doven en je begint opnieuw. Je hoeft niets te onthouden of te ontcijferen: kijken en nadoen.
+- **Gedaan (v0.8.96), volgorde bevestigd door Jordi:** op de muur van elke kamer zit het oogpatroon van de Regi. De stippen op de muur lichten **één voor één op in een vaste lus** (zoals Simon Says). Loop de vloerstippen in dezelfde volgorde af. Een verkeerde stip laat alles doven en je begint opnieuw. Je hoeft niets te onthouden of te ontcijferen: kijken en nadoen.
 - De **sneeuwtempel-tileset** (Ekat99) wordt de **Regigigas-grot bij Ashfrost** (via de iglo).
 
 **Oorspronkelijke vragen:**

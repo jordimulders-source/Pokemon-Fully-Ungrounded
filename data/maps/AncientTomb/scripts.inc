@@ -24,6 +24,7 @@ AncientTomb_EventScript_ShowRegisteel::
 	return
 
 AncientTomb_OnLoad:
+	special RegiDots_OnLoad
 	call_if_unset FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_HideRegiEntrance
 	end
 
@@ -37,10 +38,7 @@ AncientTomb_EventScript_HideRegiEntrance::
 	return
 
 AncientTomb_EventScript_CaveEntranceMiddle::
-	lockall
-	goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_BigHoleInWall
-	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
-	releaseall
+	goto Common_EventScript_RegiDotsMural
 	end
 
 AncientTomb_EventScript_BigHoleInWall::
@@ -49,9 +47,7 @@ AncientTomb_EventScript_BigHoleInWall::
 	end
 
 AncientTomb_EventScript_CaveEntranceSide::
-	lockall
-	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
-	releaseall
+	goto Common_EventScript_RegiDotsMural
 	end
 
 AncientTomb_EventScript_Registeel::
@@ -71,12 +67,12 @@ AncientTomb_EventScript_Registeel::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, AncientTomb_EventScript_RanFromRegisteel
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, AncientTomb_EventScript_RanFromRegisteel
 	setflag FLAG_DEFEATED_REGISTEEL
+	call Common_EventScript_CheckRegigigasTemple
 	release
 	end
 
 AncientTomb_EventScript_DefeatedRegisteel::
-	setflag FLAG_DEFEATED_REGISTEEL
-	goto Common_EventScript_RemoveStaticPokemon
+	goto Common_EventScript_RegiCrumbled
 	end
 
 AncientTomb_EventScript_RanFromRegisteel::

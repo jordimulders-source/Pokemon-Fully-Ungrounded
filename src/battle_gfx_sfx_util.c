@@ -1289,6 +1289,9 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
 
     if (gBattleSpritesDataPtr->battlerData[battler].behindSubstitute)
         invisible = TRUE;
+    // Project Grounded: aan het eind van het gevecht (bijv. weggerend) flitste de schaduw anders een paar frames op
+    if (gBattleOutcome != 0)
+        invisible = TRUE;
 
     shadowSprite->x = battlerSprite->x + xOffset;
     shadowSprite->x2 = battlerSprite->x2;

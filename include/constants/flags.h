@@ -86,11 +86,11 @@
 #define FLAG_HIDE_MAUVILLE_COLRESS    0x48 // Project Grounded: Colress wacht in Mauville op een gevecht
 #define FLAG_HIDE_MAGMA_HIDEOUT_COLRESS    0x49 // Project Grounded: Colress in de machinekamer van de Magma Hideout
 #define FLAG_HIDE_SKY_PILLAR_ZINNIA    0x4A // Project Grounded: Zinnia voor de Sky Pillar
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED    0x4B // Project Grounded: stippenpuzzel in de Regieleki-grot (onder de Cycling Road)
+#define FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED    0x4C // Project Grounded: stippenpuzzel in de Regidrago-grot (Route 130)
+#define FLAG_DEFEATED_REGIELEKI    0x4D // Project Grounded: Regieleki gevangen
+#define FLAG_DEFEATED_REGIDRAGO    0x4E // Project Grounded: Regidrago gevangen
+#define FLAG_DEFEATED_REGIGIGAS    0x4F // Project Grounded: Regigigas gevangen
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -120,7 +120,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_REGIGIGAS_TEMPLE_OPEN           0x68  // Project Grounded: alle vijf Regi's gevangen, de tempel in Ashfrost is open
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -255,7 +255,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_HIDE_REGIELEKI                  0xE9 // Project Grounded
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -460,8 +460,8 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_HIDE_REGIDRAGO                  0x1AA // Project Grounded
+#define FLAG_HIDE_REGIGIGAS                  0x1AB // Project Grounded
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD

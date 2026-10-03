@@ -15744,3 +15744,18 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 - **Debug: "Force encounter…"** (Utilities): kies een soort met de soortkiezer van Give Pokémon. Alle wilde encounters (gras, surfen, vissen, Rock Smash en "Wild battle (map)") worden die soort, op het level uit de tabel; de eerstvolgende stap in het gras is meteen raak. **"Force encounter: off"** zet het weer uit. Getest in de emulator (Metapod op Route 117).
 - Graphics: `tools/grounded/trainer_sprites.py` (trainerfoto's en overworlds van Colress/Zinnia), tandwiel, klauw en kaken in `tools/grounded/route_transitions.py`. Bron-MIDI in `sound/songs/grounded_src/oras_zinnia.mid`.
 - **BACKLOG_PLAN.md:** Jordi's antwoorden verwerkt (tickets in de battle facility, Lati's via de rivaal in Lilycove, Regi-stippen, sneeuwtempel = Regigigas-grot) plus een voorstel voor de stippenvolgorde.
+
+### [v.0.8.96] - Regi-stippen, Regieleki en Regidrago, de Regigigas-tempel, en losse fixes
+- **Regi-stippenpuzzel** (vervangt de braille-puzzels en de Wailord/Relicanth-kamer): in de voorkamer van elke Regi-grot liggen stippen in het oogpatroon van die Regi (nieuwe metatiles 0x3A8 uit / 0x3A9 aan in de Cave-tileset, gloed in palet 6). Bekijk je de muur, dan lichten de stippen één voor één op in de juiste volgorde: kijken en nadoen. Een verkeerde stip laat alles doven. Als alles brandt, schuift de muur open. Code: `src/regi_dots.c`, `data/scripts/regi_dots.inc`; stippen en kaarten via `tools/grounded/maptools/regi_caves.py`.
+  - Patronen: Regirock een H, Regice een zeshoek met midden, Registeel een kruis, Regieleki een boog met midden, Regidrago een vork (zoals in hun transities).
+  - De drie vanilla Regi-grotten zijn vanaf het begin open (`FLAG_REGI_DOORS_OPENED` bij een nieuw spel); de Sealed Chamber is niet meer nodig.
+  - Versla je een Regi in plaats van hem te vangen, dan valt hij uit elkaar en zet hij zichzelf weer in elkaar (staat er de volgende keer weer). Alleen vangen telt.
+- **Regieleki** (lv 50): een roestig onderhoudsluik in de steunpilaar van de Cycling Road (Route 110, onder de brug op 15,71). Grot `RegielekiCave`.
+- **Regidrago** (lv 50): een eilandje met grot op Route 130 (ten oosten van de Sky Pillar), een kopie van het Island Cave-eiland. Grot `RegidragoCave`.
+- **Regigigas-tempel:** zodra alle vijf Regi's gevangen zijn, rommelt het in het noorden en is de vloer van de iglo in Ashfrost ingestort tot een trap. Beneden: een tempelzaal uit de sneeuwtempel-tileset van Ekat99 (nieuwe secondary `snow_temple`, `tools/grounded/regigigas_temple.py`) met de stenen gevel, ijsvloer en **Regigigas lv 70**.
+- **Witte uit vóór Oldale** stuurde je naar Petalburg (de respawn werd door de geschrapte truck-intro gezet). Bij een nieuw spel is de respawn nu je eigen huis.
+- **Transities Route 135/136 (sneeuw) en Route 113 (as):** het windgeluid bleef doorlopen in het gevecht. Een herhalend geluid van een route-transitie stopt nu als het beeld naar zwart gaat.
+- **Schaduw bij de tegenstander:** bij wegrennen flitste aan het begin van de uitfade een paar frames een schaduw onder de tegenstander. Die blijft nu weg zodra het gevecht beslist is.
+- **Zandstorm tussen de beurten:** nog korter (zand 16 frames vol in beeld i.p.v. 36, sneller in- en uitfaden, twee zandsikkels i.p.v. vier).
+- **Duiken** gaat even snel als surfen.
+- **Ashfrost:** placeholderteksten voor de visser (grijze slushie-vis), het sneeuwpopjongetje (zijn sneeuwpop is een slechte invloed), de wandelaar (je zit hier nooit vast in de sneeuw zoals in Sinnoh) en de vrouw (haar was is nooit meer wit). De oude vrouw bij het Regi-heiligdom houdt haar tekst.

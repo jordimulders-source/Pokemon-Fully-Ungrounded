@@ -971,3 +971,20 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "Keep an eye on my {RIVAL}, please. … … …\p"
 	.string "Well, I'm off to hide in a bush. See you!$"
 
+
+@ Project Grounded: roestig luik in de pijler van de Cycling Road, naar de grot van Regieleki
+Route110_EventScript_PillarHatch::
+	lockall
+	msgbox Route110_Text_PillarHatch, MSGBOX_DEFAULT
+	closemessage
+	playse SE_DOOR
+	warp MAP_REGIELEKI_CAVE, 0
+	waitstate
+	releaseall
+	end
+
+Route110_Text_PillarHatch:
+	.string "A rusty maintenance hatch in the\n"
+	.string "support pillar of the CYCLING ROAD.\p"
+	.string "Somebody wrote “DO NOT” on it, and then\n"
+	.string "forgot the rest.$"

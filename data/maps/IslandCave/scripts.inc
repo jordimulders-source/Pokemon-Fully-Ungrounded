@@ -15,6 +15,7 @@ IslandCave_EventScript_TryRemoveRegice::
 	return
 
 IslandCave_OnLoad:
+	special RegiDots_OnLoad
 	call_if_unset FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_HideRegiEntrance
 	end
 
@@ -50,13 +51,7 @@ IslandCave_EventScript_OpenRegiEntrance::
 	end
 
 IslandCave_EventScript_CaveEntranceMiddle::
-	lockall
-	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
-	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_BigHoleInWall
-	braillemessage IslandCave_Braille_RunLapAroundWall
-	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
-	special ShouldDoBrailleRegicePuzzle
-	goto IslandCave_EventScript_CloseBrailleMsg
+	goto Common_EventScript_RegiDotsMural
 	end
 
 IslandCave_EventScript_BigHoleInWall::
@@ -65,13 +60,7 @@ IslandCave_EventScript_BigHoleInWall::
 	end
 
 IslandCave_EventScript_CaveEntranceSide::
-	lockall
-	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
-	braillemessage IslandCave_Braille_RunLapAroundWall
-	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_CloseBrailleMsg
-	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
-	special ShouldDoBrailleRegicePuzzle
-	goto IslandCave_EventScript_CloseBrailleMsg
+	goto Common_EventScript_RegiDotsMural
 	end
 
 IslandCave_EventScript_CloseBrailleMsg::
@@ -104,12 +93,12 @@ IslandCave_EventScript_Regice::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IslandCave_EventScript_RanFromRegice
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, IslandCave_EventScript_RanFromRegice
 	setflag FLAG_DEFEATED_REGICE
+	call Common_EventScript_CheckRegigigasTemple
 	release
 	end
 
 IslandCave_EventScript_DefeatedRegice::
-	setflag FLAG_DEFEATED_REGICE
-	goto Common_EventScript_RemoveStaticPokemon
+	goto Common_EventScript_RegiCrumbled
 	end
 
 IslandCave_EventScript_RanFromRegice::

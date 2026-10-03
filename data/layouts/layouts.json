@@ -2922,6 +2922,36 @@
       "blockdata_filepath": "data/layouts/AncientTomb/map.bin"
     },
     {
+      "id": "LAYOUT_REGIDRAGO_CAVE",
+      "name": "RegidragoCave_Layout",
+      "width": 17,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RegidragoCave/border.bin",
+      "blockdata_filepath": "data/layouts/RegidragoCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_REGIGIGAS_TEMPLE",
+      "name": "RegigigasTemple_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_SnowTemple",
+      "border_filepath": "data/layouts/RegigigasTemple/border.bin",
+      "blockdata_filepath": "data/layouts/RegigigasTemple/map.bin"
+    },
+    {
+      "id": "LAYOUT_REGIELEKI_CAVE",
+      "name": "RegielekiCave_Layout",
+      "width": 17,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RegielekiCave/border.bin",
+      "blockdata_filepath": "data/layouts/RegielekiCave/map.bin"
+    },
+    {
       "id": "LAYOUT_UNDERWATER_ROUTE134",
       "name": "Underwater_Route134_Layout",
       "width": 18,

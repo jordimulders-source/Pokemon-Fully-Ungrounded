@@ -453,7 +453,10 @@
     "ColdstepCave_IceRoom2",
     "NewMauville_ThunderCave",
     "MtChimney_EnteiPassage",
-    "MtChimney_EnteiLair"
+    "MtChimney_EnteiLair",
+    "RegielekiCave",
+    "RegidragoCave",
+    "RegigigasTemple"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

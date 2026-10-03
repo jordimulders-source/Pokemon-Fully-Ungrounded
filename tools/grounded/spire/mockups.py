@@ -330,7 +330,7 @@ def oldale_emblems():
         subprocess.run([sys.executable, os.path.join(ROOT, 'tools/grounded/maptools/render_map.py'),
                         'OldaleTown', tmp, '0', '20'], cwd=ROOT, check=True)
     im = Image.open(tmp).convert('RGBA')
-    return im.crop((104, 232, 120, 248)), im.crop((231, 71, 247, 87))
+    return im.crop((103, 231, 119, 247)), im.crop((232, 72, 248, 88))
 
 
 def tile(n):
@@ -553,11 +553,36 @@ def trim(im):
 ICON_PAL.update({'chansey': 0, 'kecleon': 1})
 
 
+def aura(im, col=(248, 216, 48)):
+    """Klein Super Saiyan-aura: 1 px geel om het silhouet, daarbuiten een vage gloed en een paar vlammetjes."""
+    from PIL import ImageFilter
+    pad = 3
+    base = Image.new('RGBA', (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0))
+    base.paste(im, (pad, pad), im)
+    a = base.getchannel('A').point(lambda v: 255 if v else 0)
+    ring1 = a.filter(ImageFilter.MaxFilter(3))
+    ring2 = ring1.filter(ImageFilter.MaxFilter(3))
+    out = Image.new('RGBA', base.size, (0, 0, 0, 0))
+    glow = Image.new('RGBA', base.size, col[:3] + (110,))
+    out.paste(glow, (0, 0), ring2)
+    # vlammetjes: boven het hoofd de buitenste gloed iets hoger
+    px = out.load()
+    for x in range(2, base.width - 2, 3):
+        for y in range(base.height):
+            if ring2.getpixel((x, y)):
+                if y >= 1:
+                    px[x, y - 1] = col[:3] + (110,)
+                break
+    out.paste(Image.new('RGBA', base.size, col[:3] + (255,)), (0, 0), ring1)
+    out.paste(base, (0, 0), base)
+    return out
+
+
 def node_icons3():
     return {
         'fight': item_icon('poke_ball').crop((3, 3, 21, 21)),
-        'elite': trim(load_gba('graphics/object_events/pics/pokemon_old/substitute.png',
-                               'graphics/object_events/pics/pokemon_old/substitute.gbapal').crop((0, 0, 32, 32))),
+        'elite': aura(trim(load_gba('graphics/object_events/pics/pokemon_old/substitute.png',
+                                    'graphics/object_events/pics/pokemon_old/substitute.gbapal').crop((0, 0, 32, 32)))),
         'rest': trim(mon_icon('chansey')),
         'shop': oldale_emblems()[1],
         'event': trim(mon_icon('unown/question')),

@@ -12,11 +12,9 @@
 // DEFEND-doel (bitmasker per battler aan eigen kant)
 #define SPIRE_DEFEND_BOTH       0xFF
 
-// HP-vermenigvuldigers in procenten (startwaarden uit tools/grounded/spire/balance.py)
+// HP-vermenigvuldiger van de speler in procenten (vijanden: per ontmoeting, zie src/data/spire_encounters.h)
 #define SPIRE_HP_PLAYER         400
-#define SPIRE_HP_NORMAL         100
-#define SPIRE_HP_ELITE          250
-#define SPIRE_HP_BOSS           450
+#define SPIRE_LEVEL             100 // Jordi: alles in de Spire is lv 100, level is geen knop
 
 // Blok = 15% van max HP x verdedigingsfactor x act-factor; verdeeld over beide = 60% elk
 #define SPIRE_BLOCK_PERCENT     15
@@ -26,8 +24,8 @@
 #define SPIRE_ACTS              3
 #define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
 #define SPIRE_MAX_NODES         4   // kamers per verdieping
-#define SPIRE_HEAL_AFTER        20  // procent HP na een gewonnen gevecht
-#define SPIRE_REST_HEAL         50  // procent HP op een rustplek
+#define SPIRE_HEAL_AFTER        10  // procent HP na een gewonnen gevecht (zie SPIRE_BALANS.md)
+#define SPIRE_REST_HEAL         40  // procent HP op een rustplek (Chansey)
 
 enum SpireRoom
 {
@@ -53,6 +51,76 @@ enum SpireRelic
     SPIRE_RELIC_COUNT,
 };
 
+enum SpireBiomeId
+{
+    SPIRE_BIOME_GROVE,
+    SPIRE_BIOME_DOCKS,
+    SPIRE_BIOME_HIVE,
+    SPIRE_BIOME_FROST,
+    SPIRE_BIOME_COURT,
+    SPIRE_BIOME_ABYSS,
+    SPIRE_BIOME_COUNT,
+};
+
+enum SpireEncounterKind
+{
+    SPIRE_ENC_WEAK,
+    SPIRE_ENC_NORMAL,
+    SPIRE_ENC_ELITE,
+    SPIRE_ENC_BOSS,
+};
+
+enum SpireGimmick
+{
+    SPIRE_GIMMICK_NONE,
+    SPIRE_GIMMICK_SLEEP,    // begint 3 beurten in slaap
+};
+
+struct SpireBiome
+{
+    u8 act;
+    const u8 *name;
+    const u8 *desc;
+};
+
+// Vijand in een ontmoeting (tools/grounded/spire/encounters.py)
+struct SpireFoe
+{
+    u16 species;
+    u16 moves[MAX_MON_MOVES];
+    u16 ability;            // ABILITY_NONE = normaal
+    u16 item;
+    s8 unused;
+    u8 hp;                  // HP-vermenigvuldiger in tienden
+    u8 gimmick;             // enum SpireGimmick
+    s8 boosts[5];           // totem-boosts: Atk, Def, Spe, SpA, SpD
+    u8 pattern[8];          // vaste volgorde van moveslots (1-4), 0 = einde; leeg = vrije AI
+};
+
+struct SpireEncounter
+{
+    u8 biome;               // bij bazen: de act
+    u8 kind;                // enum SpireEncounterKind
+    u8 field;               // STARTING_STATUS_*
+    const u8 *name;
+    const u8 *hint;
+    struct SpireFoe foes[2];
+};
+
+// Rentals en evoluties (tools/grounded/spire/spire_pool.py)
+struct SpireRental
+{
+    u16 species;
+    u8 tier;                // 0 C - 3 S
+    u16 moves[MAX_MON_MOVES];
+};
+
+struct SpireEvolution
+{
+    u16 species;
+    u16 targets[3];
+};
+
 // Lopende run, in gSaveBlock2Ptr->spireData: een gepauzeerde run overleeft opslaan en uitzetten.
 struct SpireSave
 {
@@ -68,6 +136,13 @@ struct SpireSave
     u8 unused:7;
     u8 runsWon;
     u32 relics;         // bitveld met relics
+    u8 biome;           // biome van deze act (enum SpireBiomeId)
+    u8 relearns;        // aantal keer Move Relearner gebruikt (prijs stijgt)
+    u16 usedEncounters; // gevechten die deze act al geweest zijn (index binnen de biome)
+    u8 toxicFights;     // events: zoveel gevechten nog Toxic Spikes-risico
+    u8 fungalMask;      // events: deze rentals (bit 0/1) zijn het volgende gevecht besmet
+    s8 hpBonus[2];      // events: blijvende max-HP-verandering in procentpunten (bijv. -10)
+    u32 eventsSeen;     // events die deze run al geweest zijn
     struct Pokemon mons[2];
 };
 
@@ -109,6 +184,11 @@ extern u8 gSpireDefendTarget[MAX_BATTLERS_COUNT];
 extern u16 gSpireEnemyHp[PARTY_SIZE];
 extern struct SpireResult gSpireResult;
 extern const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT];
+extern const struct SpireBiome gSpireBiomes[SPIRE_BIOME_COUNT];
+extern u8 gSpirePattern[PARTY_SIZE][8];
+extern u8 gSpireStartingStatus;
+extern u8 gSpireEvolveMon;
+extern u8 gSpirePatternStep[PARTY_SIZE];
 
 // spire.c: gevecht
 void Spire_OnEnemyPartyCreated(void);
@@ -121,6 +201,9 @@ bool32 Spire_TryPrintBlockAbsorbed(void);
 u8 *Spire_GetIntentText(u8 *dst, u32 battler);
 void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent);
 void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves);
+void Spire_ApplyPattern(u32 battler);
+void Spire_EndTurn(void);
+bool32 Spire_IsMoveBanned(u16 move);
 
 // spire_run.c: run
 bool32 Spire_RunActive(void);
@@ -141,6 +224,11 @@ void Spire_Evolve(u32 i);
 void Spire_SetRental(u32 i, u16 species);
 u16 Spire_RandomRental(u32 salt);
 u16 Spire_RandomMove(u32 rarity, u32 salt);
+u16 Spire_RandomMoveOfType(u32 rarity, u32 type, u32 salt);
+u32 Spire_GetEvolutions(u16 species, u16 *targets);
+void Spire_EvolveTo(u32 i, u16 target);
+u32 Spire_PlayerHpPercent(u32 i);
+const struct SpireRental *Spire_FindRental(u16 species);
 void Spire_ReturnToField(void);
 u16 Spire_GetBossSpecies(void);
 void Spire_Enter(void);
@@ -159,6 +247,7 @@ enum SpireCardMode
     SPIRE_CARDS_SHOP,       // winkel
     SPIRE_CARDS_EVENT,      // event
     SPIRE_CARDS_MESSAGE,    // alleen een bericht (einde run, nieuwe act)
+    SPIRE_CARDS_EVOLVE,     // nieuwe act: kies de evolutie van gSpireEvolveMon (vertakking)
 };
 void Spire_OpenCards(u32 mode, void (*onDone)(void));
 void Spire_OpenMessage(const u8 *title, const u8 *text, void (*onDone)(void));

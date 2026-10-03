@@ -44,6 +44,7 @@
 #include "regions.h"
 #include "rtc.h"
 #include "sound.h"
+#include "spire.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -6384,6 +6385,8 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
+    if (gSpireBattle) // Project Grounded: The Spire, vijanden hebben alleen hun vaste items
+        return;
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
     {
         u16 rnd;

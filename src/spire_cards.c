@@ -296,11 +296,18 @@ static void AddMoveCard(u32 i, s32 forceRarity)
     {
         u32 roll = Random() % 100;
 
+        u32 type = TYPE_NONE;
+
         if (forceRarity >= 0)
             c->rarity = forceRarity;
         else
             c->rarity = roll < 10 ? 2 : roll < 40 ? 1 : 0;
-        c->value = Spire_RandomMove(c->rarity, i + tries);
+        if (i < 2 && sCards->mode == SPIRE_CARDS_MOVES)
+        {
+            u16 species = GetMonData(&RUN.mons[i], MON_DATA_SPECIES);
+            type = GetSpeciesType(species, (Random() & 1) ? 1 : 0);
+        }
+        c->value = Spire_RandomMoveOfType(c->rarity, type, i + tries);
     } while (CardTaken(i, CARD_MOVE, c->value) && ++tries < 20);
 }
 
@@ -313,6 +320,7 @@ static void BuildCards(void)
     switch (sCards->mode)
     {
     case SPIRE_CARDS_MOVES:
+        // kaart 1 past bij je eerste Pokémon, kaart 2 bij je tweede, kaart 3 is willekeurig (zoals klassekaarten in Slay)
         for (i = 0; i < 3; i++)
             AddMoveCard(i, -1);
         break;
@@ -377,6 +385,18 @@ static void BuildCards(void)
         sCards->cards[2].value = OPT_POTION;
         sCards->cards[2].price = 30;
         break;
+    case SPIRE_CARDS_EVOLVE:
+    {
+        u16 targets[3];
+
+        sCards->count = Spire_GetEvolutions(GetMonData(&RUN.mons[gSpireEvolveMon], MON_DATA_SPECIES), targets);
+        for (i = 0; i < sCards->count; i++)
+        {
+            sCards->cards[i].kind = CARD_MON;
+            sCards->cards[i].value = targets[i];
+        }
+        break;
+    }
     case SPIRE_CARDS_EVENT:
         sCards->event = Random() % ARRAY_COUNT(sEvents);
         for (i = 0; i < 3; i++)
@@ -439,6 +459,12 @@ static void DrawHeader(void)
         break;
     case SPIRE_CARDS_MESSAGE:
         PrintText(WIN_HEADER, FONT_NORMAL, 4, 1, sColor_Purple, sCards->title);
+        break;
+    case SPIRE_CARDS_EVOLVE:
+        GetMonData(&RUN.mons[gSpireEvolveMon], MON_DATA_NICKNAME, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} is evolving!"));
+        PrintText(WIN_HEADER, FONT_NORMAL, 4, 1, sColor_Purple, gStringVar4);
+        PrintText(WIN_HEADER, FONT_NORMAL, 150, 1, sColor_Dark, COMPOUND_STRING("Into what?"));
         break;
     }
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
@@ -570,7 +596,7 @@ static void DrawHpBar(u32 win, u32 x, u32 y, struct Pokemon *mon)
 
 static bool32 ShowTeam(void)
 {
-    return sCards->mode != SPIRE_CARDS_DRAFT && sCards->mode != SPIRE_CARDS_MESSAGE
+    return sCards->mode != SPIRE_CARDS_DRAFT && sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE
         && sCards->state != STATE_CHOOSE_SLOT && sCards->state != STATE_MESSAGE;
 }
 
@@ -599,6 +625,52 @@ static void DrawTeamRow(u32 y, u32 move)
     }
 }
 
+static const u8 *const sTierName[] = {COMPOUND_STRING("COMMON"), COMPOUND_STRING("COMMON"), COMPOUND_STRING("UNCOMMON"), COMPOUND_STRING("RARE")};
+
+// Startmoves en evoluties van een rental in de draft.
+static void DrawDraftLine(u16 species)
+{
+    const struct SpireRental *rental = Spire_FindRental(species);
+    u16 targets[3];
+    u8 *p = gStringVar4;
+    u32 i;
+
+    if (rental)
+    {
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (rental->moves[i] == MOVE_NONE)
+                continue;
+            if (p != gStringVar4)
+                p = StringCopy(p, COMPOUND_STRING(", "));
+            p = StringCopy(p, GetMoveName(rental->moves[i]));
+        }
+        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 24, sColor_Dark, gStringVar4);
+        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 170, 0, rental->tier >= 3 ? sColor_Gold : rental->tier == 2 ? sColor_Blue : sColor_Gray,
+                  sTierName[rental->tier]);
+    }
+    p = gStringVar4;
+    if (Spire_GetEvolutions(species, targets))
+    {
+        u16 mid = targets[0];
+
+        p = StringCopy(p, COMPOUND_STRING("Act 2: "));
+        p = StringCopy(p, GetSpeciesName(mid));
+        if (Spire_GetEvolutions(species, targets) > 1)
+            p = StringCopy(p, COMPOUND_STRING(" (or more)"));
+        if (Spire_GetEvolutions(mid, targets))
+        {
+            p = StringCopy(p, COMPOUND_STRING("  Act 3: "));
+            p = StringCopy(p, GetSpeciesName(targets[0]));
+        }
+    }
+    else
+    {
+        p = StringCopy(p, COMPOUND_STRING("Does not evolve. Strong now, never stronger."));
+    }
+    PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 36, sColor_Purple, gStringVar4);
+}
+
 static void DrawSpeciesStats(u16 species)
 {
     u8 buf[64];
@@ -618,7 +690,7 @@ static void DrawSpeciesStats(u16 species)
     p = ConvertIntToDecimalStringN(p, gSpeciesInfo[species].baseSpeed, STR_CONV_MODE_LEFT_ALIGN, 3);
     PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, GetSpeciesName(species));
     PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 12, sColor_Gray, buf);
-    PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 28, sColor_Dark, COMPOUND_STRING("It evolves after act 1. Pick wisely, or don't."));
+    DrawDraftLine(species);
 }
 
 static void SetSpritesVisible(void)
@@ -653,7 +725,7 @@ static void DrawBottom(void)
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, gSpireRelics[c->value].desc);
         else if (c->kind == CARD_OPTION)
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, sOptions[c->value].desc);
-        if (sCards->mode == SPIRE_CARDS_DRAFT)
+        if (sCards->mode == SPIRE_CARDS_DRAFT || sCards->mode == SPIRE_CARDS_EVOLVE)
             DrawSpeciesStats(c->value);
         else
             DrawTeamRow(22, move);
@@ -869,7 +941,7 @@ static void SetupScreen(void)
         struct Pokemon *mon = Spire_GetRunMon(i);
 
         sCards->iconSpriteIds[i] = SPRITE_NONE;
-        if (sCards->mode != SPIRE_CARDS_DRAFT && sCards->mode != SPIRE_CARDS_MESSAGE && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
+        if (sCards->mode != SPIRE_CARDS_DRAFT && sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
         {
             sCards->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
                                                      8 + 24 + i * 104, 104 + 22 + 10, 0, GetMonData(mon, MON_DATA_PERSONALITY));
@@ -1096,6 +1168,16 @@ static void PickCard(void)
     case CARD_MON:
     {
         u32 slot = IsSecondDraft() ? 1 : 0;
+
+        if (sCards->mode == SPIRE_CARDS_EVOLVE)
+        {
+            GetMonData(&RUN.mons[gSpireEvolveMon], MON_DATA_NICKNAME, gStringVar1);
+            Spire_EvolveTo(gSpireEvolveMon, c->value);
+            StringCopy(gStringVar2, GetSpeciesName(c->value));
+            StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} evolved into {STR_VAR_2}!"));
+            ShowMessage(gStringVar4, FALSE);
+            break;
+        }
 
         Spire_SetRental(slot, c->value);
         StringCopy(gStringVar1, GetSpeciesName(c->value));

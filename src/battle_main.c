@@ -3764,6 +3764,11 @@ static void DoBattleIntro(void)
                 gBattleStruct->startingStatus = GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentA);
                 gBattleStruct->startingStatusTimer = 0; // infinite
             }
+            else if (gSpireBattle) // Project Grounded: The Spire, beginveld van de ontmoeting
+            {
+                gBattleStruct->startingStatus = gSpireStartingStatus;
+                gBattleStruct->startingStatusTimer = 0;
+            }
             else if (B_VAR_STARTING_STATUS != 0)
             {
                 gBattleStruct->startingStatus = VarGet(B_VAR_STARTING_STATUS);
@@ -4002,7 +4007,7 @@ void BattleTurnPassed(void)
     gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
 
     TurnValuesCleanUp(TRUE);
-    Spire_ClearBlocks(); // Project Grounded: blok vervalt aan het eind van de beurt
+    Spire_EndTurn(); // Project Grounded: blok vervalt aan het eind van de beurt, patronen schuiven door
 
     if (gBattleOutcome == 0 && DoEndTurnEffects())
         return;

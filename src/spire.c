@@ -36,6 +36,9 @@ EWRAM_DATA u16 gSpireBlockAbsorbed[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u8 gSpireDefendTarget[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gSpireEnemyHp[PARTY_SIZE] = {0}; // HP-vermenigvuldiger per vijand (procent)
 
+EWRAM_DATA u8 gSpirePattern[PARTY_SIZE][8] = {0};   // vaste patronen van de vijanden (moveslots 1-4)
+EWRAM_DATA u8 gSpirePatternStep[PARTY_SIZE] = {0};
+
 // act-factor van het blok (procenten), per act 1-3
 static const u8 sActBlockFactor[] = {100, 100, 125, 150};
 
@@ -46,8 +49,8 @@ void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent)
     if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
         return;
     maxHp = GetMonData(mon, MON_DATA_MAX_HP) * (percent ? percent : 100) / 100;
-    if (maxHp > 999)
-        maxHp = 999;
+    if (maxHp > 9999)
+        maxHp = 9999;
     SetMonData(mon, MON_DATA_MAX_HP, &maxHp);
     SetMonData(mon, MON_DATA_HP, &maxHp);
 }
@@ -62,6 +65,56 @@ void Spire_OnEnemyPartyCreated(void)
     Spire_ClearBlocks();
     for (i = 0; i < PARTY_SIZE; i++)
         Spire_ScaleMonHp(&gEnemyParty[i], gSpireEnemyHp[i]);
+}
+
+// Vast patroon (zoals de vijanden in Slay the Spire): de AI kiest niet zelf, maar volgt het patroon.
+// De intentie toont dus precies wat er komt. Kan de move niet (geen PP, Taunt, Disable, ...), dan kiest de AI.
+void Spire_ApplyPattern(u32 battler)
+{
+    u32 party, len, slot, target, i;
+    s32 best;
+    const u8 *pattern;
+
+    if (!gSpireBattle || IsOnPlayerSide(battler))
+        return;
+    party = gBattlerPartyIndexes[battler];
+    if (party >= PARTY_SIZE)
+        return;
+    pattern = gSpirePattern[party];
+    for (len = 0; len < 8 && pattern[len] != 0; len++)
+        ;
+    if (len == 0)
+        return;
+    slot = pattern[gSpirePatternStep[party] % len] - 1;
+    if (slot >= MAX_MON_MOVES || gBattleMons[battler].moves[slot] == MOVE_NONE
+     || (gAiLogicData->moveLimitations[battler] & (1u << slot)))
+        return;
+    gAiBattleData->chosenMoveIndex[battler] = slot;
+    // doel: de speler-Pokémon waarop de AI deze move het hoogst scoorde
+    best = -10000;
+    target = gAiBattleData->chosenTarget[battler];
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (!IsOnPlayerSide(i) || !IsBattlerAlive(i))
+            continue;
+        if (gAiBattleData->finalScore[battler][i][slot] > best || !IsOnPlayerSide(target) || !IsBattlerAlive(target))
+        {
+            best = gAiBattleData->finalScore[battler][i][slot];
+            target = i;
+        }
+    }
+    gAiBattleData->chosenTarget[battler] = target;
+}
+
+void Spire_EndTurn(void)
+{
+    u32 i;
+
+    if (!gSpireBattle)
+        return;
+    Spire_ClearBlocks();
+    for (i = 0; i < PARTY_SIZE; i++)
+        gSpirePatternStep[i]++;
 }
 
 void Spire_ClearBlocks(void)

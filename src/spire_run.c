@@ -38,6 +38,7 @@ EWRAM_DATA static u8 sEndMessage[160] = {0};
 static void StartRoomBattle(u32 type);
 static void CB2_EndSpireBattle(void);
 static void NextAct(void);
+static void PickBiome(void);
 
 // ---------------------------------------------------------------------------------------------
 // Relics
@@ -94,165 +95,103 @@ struct Pokemon *Spire_GetRunMon(u32 i)
 }
 
 // ---------------------------------------------------------------------------------------------
-// Pools (zie tools/grounded/spire/balance.py)
+// Pools: berekend door tools/grounded/spire/spire_pool.py en encounters.py (zie SPIRE_BALANS.md)
 
-// rentals bij de draft: middelste evolutiestap, evolueren na act 1
-static const u16 sRentalPool[] =
-{
-    SPECIES_IVYSAUR, SPECIES_CHARMELEON, SPECIES_WARTORTLE, SPECIES_GROVYLE, SPECIES_COMBUSKEN,
-    SPECIES_MARSHTOMP, SPECIES_HAUNTER, SPECIES_MACHOKE, SPECIES_GRAVELER, SPECIES_KADABRA,
-    SPECIES_LAIRON, SPECIES_VIBRAVA, SPECIES_SHELGON, SPECIES_GABITE, SPECIES_MONFERNO,
-    SPECIES_PRINPLUP, SPECIES_GROTLE, SPECIES_LUXIO, SPECIES_ZWEILOUS, SPECIES_FRAXURE,
-    SPECIES_SLIGGOO, SPECIES_KIRLIA, SPECIES_DRAGONAIR, SPECIES_PUPITAR, SPECIES_METANG,
-    SPECIES_CORVISQUIRE, SPECIES_RABOOT, SPECIES_DRIZZILE, SPECIES_THWACKEY, SPECIES_HATTREM,
-};
+#include "data/spire_pool.h"
+#include "data/spire_encounters.h"
 
-static const u16 sNormalFoes[SPIRE_ACTS][18] =
-{
-    {SPECIES_PIDGEOTTO, SPECIES_NUZLEAF, SPECIES_LOMBRE, SPECIES_ELECTRIKE, SPECIES_GLOOM, SPECIES_FLAAFFY,
-     SPECIES_SKIPLOOM, SPECIES_SWABLU, SPECIES_NUMEL, SPECIES_SPOINK, SPECIES_BALTOY, SPECIES_CORPHISH,
-     SPECIES_SHUPPET, SPECIES_DUSKULL, SPECIES_SNORUNT, SPECIES_GRAVELER, SPECIES_MACHOKE, SPECIES_LAIRON},
-    {SPECIES_PIDGEOT, SPECIES_SHIFTRY, SPECIES_LUDICOLO, SPECIES_MANECTRIC, SPECIES_VILEPLUME, SPECIES_AMPHAROS,
-     SPECIES_JUMPLUFF, SPECIES_ALTARIA, SPECIES_CAMERUPT, SPECIES_GRUMPIG, SPECIES_CLAYDOL, SPECIES_CRAWDAUNT,
-     SPECIES_BANETTE, SPECIES_DUSCLOPS, SPECIES_GLALIE, SPECIES_GOLEM, SPECIES_MACHAMP, SPECIES_AGGRON},
-    {SPECIES_STARAPTOR, SPECIES_BRELOOM, SPECIES_GYARADOS, SPECIES_ROSERADE, SPECIES_TOGEKISS, SPECIES_TORKOAL,
-     SPECIES_BRONZONG, SPECIES_SCIZOR, SPECIES_MISMAGIUS, SPECIES_DUSKNOIR, SPECIES_WEAVILE, SPECIES_RHYPERIOR,
-     SPECIES_CONKELDURR, SPECIES_LUCARIO, SPECIES_MAMOSWINE, SPECIES_FROSLASS, SPECIES_GLISCOR, SPECIES_HONCHKROW},
-};
-
-static const u16 sEliteFoes[SPIRE_ACTS][6] =
-{
-    {SPECIES_ARCANINE, SPECIES_GYARADOS, SPECIES_SCIZOR, SPECIES_LUCARIO, SPECIES_MAMOSWINE, SPECIES_HERACROSS},
-    {SPECIES_SALAMENCE, SPECIES_METAGROSS, SPECIES_GARCHOMP, SPECIES_TYRANITAR, SPECIES_DRAGONITE, SPECIES_VOLCARONA},
-    {SPECIES_HYDREIGON, SPECIES_HAXORUS, SPECIES_GOODRA, SPECIES_KINGAMBIT, SPECIES_DRAGAPULT, SPECIES_GHOLDENGO},
-};
-
-static const u8 sFoeLevel[SPIRE_ACTS] = {48, 50, 52};
-
-struct SpireBoss
-{
-    u16 species;
-    u16 moves[MAX_MON_MOVES];
-    u16 lackey;
-    u16 lackeyMoves[MAX_MON_MOVES];
-};
-
-static const struct SpireBoss sBosses[SPIRE_ACTS][3] =
-{
-    {
-        {SPECIES_MILOTIC, {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_DRAGON_PULSE},
-         SPECIES_WHIMSICOTT, {MOVE_TAILWIND, MOVE_HELPING_HAND, MOVE_MOONBLAST, MOVE_ENCORE}},
-        {SPECIES_AGGRON, {MOVE_IRON_HEAD, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_IRON_DEFENSE},
-         SPECIES_KLEFKI, {MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_THUNDER_WAVE, MOVE_FLASH_CANNON}},
-        {SPECIES_FLYGON, {MOVE_EARTHQUAKE, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_U_TURN},
-         SPECIES_PELIPPER, {MOVE_TAILWIND, MOVE_HURRICANE, MOVE_SCALD, MOVE_PROTECT}},
-    },
-    {
-        {SPECIES_SALAMENCE, {MOVE_DRAGON_DANCE, MOVE_DRAGON_CLAW, MOVE_FIRE_FANG, MOVE_HYPER_VOICE},
-         SPECIES_WHIMSICOTT, {MOVE_TAILWIND, MOVE_HELPING_HAND, MOVE_MOONBLAST, MOVE_ENCORE}},
-        {SPECIES_METAGROSS, {MOVE_METEOR_MASH, MOVE_ZEN_HEADBUTT, MOVE_BULLET_PUNCH, MOVE_EARTHQUAKE},
-         SPECIES_KLEFKI, {MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_THUNDER_WAVE, MOVE_FLASH_CANNON}},
-        {SPECIES_TYRANITAR, {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE},
-         SPECIES_PELIPPER, {MOVE_TAILWIND, MOVE_HURRICANE, MOVE_SCALD, MOVE_PROTECT}},
-    },
-    {
-        {SPECIES_GROUDON, {MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH, MOVE_STONE_EDGE, MOVE_BULK_UP},
-         SPECIES_WHIMSICOTT, {MOVE_TAILWIND, MOVE_HELPING_HAND, MOVE_MOONBLAST, MOVE_ENCORE}},
-        {SPECIES_KYOGRE, {MOVE_WATER_SPOUT, MOVE_ICE_BEAM, MOVE_THUNDER, MOVE_CALM_MIND},
-         SPECIES_KLEFKI, {MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_THUNDER_WAVE, MOVE_FLASH_CANNON}},
-        {SPECIES_RAYQUAZA, {MOVE_OUTRAGE, MOVE_EXTREME_SPEED, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE},
-         SPECIES_PELIPPER, {MOVE_TAILWIND, MOVE_HURRICANE, MOVE_SCALD, MOVE_PROTECT}},
-    },
-};
-
-// movepools per zeldzaamheid (0 common, 1 uncommon, 2 rare)
-static const u16 sCommonMoves[] =
-{
-    MOVE_HEADBUTT, MOVE_BITE, MOVE_WATER_PULSE, MOVE_MAGICAL_LEAF, MOVE_SHOCK_WAVE, MOVE_ICY_WIND,
-    MOVE_ROCK_TOMB, MOVE_AERIAL_ACE, MOVE_MUD_SHOT, MOVE_FLAME_WHEEL, MOVE_PSYBEAM, MOVE_SHADOW_CLAW,
-    MOVE_DRAGON_BREATH, MOVE_BRICK_BREAK, MOVE_POISON_JAB, MOVE_BUG_BITE, MOVE_DRAINING_KISS, MOVE_SNARL,
-    MOVE_METAL_CLAW, MOVE_PROTECT,
-};
-static const u16 sUncommonMoves[] =
-{
-    MOVE_FLAMETHROWER, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_ENERGY_BALL, MOVE_EARTH_POWER,
-    MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_DRAGON_PULSE, MOVE_DARK_PULSE, MOVE_FLASH_CANNON, MOVE_X_SCISSOR,
-    MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_SLUDGE_BOMB, MOVE_AURA_SPHERE, MOVE_FREEZE_DRY, MOVE_TAILWIND,
-    MOVE_HELPING_HAND, MOVE_CALM_MIND, MOVE_SWORDS_DANCE, MOVE_WIDE_GUARD, MOVE_DRAIN_PUNCH, MOVE_AIR_SLASH,
-};
-static const u16 sRareMoves[] =
-{
-    MOVE_FIRE_BLAST, MOVE_HYDRO_PUMP, MOVE_THUNDER, MOVE_BLIZZARD, MOVE_CLOSE_COMBAT, MOVE_EARTHQUAKE,
-    MOVE_OUTRAGE, MOVE_MOONBLAST, MOVE_DRACO_METEOR, MOVE_HEAT_WAVE, MOVE_LEAF_STORM, MOVE_DRAGON_DANCE,
-    MOVE_QUIVER_DANCE, MOVE_FOLLOW_ME, MOVE_FAKE_OUT, MOVE_NASTY_PLOT,
-};
-
-u16 Spire_RandomMove(u32 rarity, u32 salt)
-{
-    u32 r = Random() + salt * 7;
-
-    switch (rarity)
-    {
-    case 2:  return sRareMoves[r % ARRAY_COUNT(sRareMoves)];
-    case 1:  return sUncommonMoves[r % ARRAY_COUNT(sUncommonMoves)];
-    default: return sCommonMoves[r % ARRAY_COUNT(sCommonMoves)];
-    }
-}
-
-u16 Spire_RandomRental(u32 salt)
-{
-    return sRentalPool[(Random() + salt * 13) % ARRAY_COUNT(sRentalPool)];
-}
-
-// eerste common-move van dit type uit de pool (startermoves), anders MOVE_NONE
-static u16 CommonMoveOfType(enum Type type, u32 skip)
+bool32 Spire_IsMoveBanned(u16 move)
 {
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(sCommonMoves); i++)
-    {
-        if (GetMoveType(sCommonMoves[i]) == type && sCommonMoves[i] != skip && !IsBattleMoveStatus(sCommonMoves[i]))
-            return sCommonMoves[i];
-    }
-    return MOVE_NONE;
+    for (i = 0; i < ARRAY_COUNT(sSpireBannedMoves); i++)
+        if (sSpireBannedMoves[i] == move)
+            return TRUE;
+    return FALSE;
 }
 
-// Rental: lv 50, startermoves = STAB uit de common-pool + Protect, rest uit de level-up-moves.
+static const u16 *const sMovePools[] = {sSpireCommonMoves, sSpireUncommonMoves, sSpireRareMoves};
+static const u16 sMovePoolSizes[] = {ARRAY_COUNT(sSpireCommonMoves), ARRAY_COUNT(sSpireUncommonMoves), ARRAY_COUNT(sSpireRareMoves)};
+
+u16 Spire_RandomMove(u32 rarity, u32 salt)
+{
+    rarity = min(rarity, 2);
+    return sMovePools[rarity][(Random() + salt * 7) % sMovePoolSizes[rarity]];
+}
+
+// Een move van dit type (TYPE_NONE = alles); geen move van dit type in de pool, dan een willekeurige.
+u16 Spire_RandomMoveOfType(u32 rarity, u32 type, u32 salt)
+{
+    const u16 *pool;
+    u32 i, n = 0, pick;
+
+    rarity = min(rarity, 2);
+    pool = sMovePools[rarity];
+    if (type != TYPE_NONE)
+    {
+        for (i = 0; i < sMovePoolSizes[rarity]; i++)
+            if (GetMoveType(pool[i]) == type)
+                n++;
+    }
+    if (n == 0)
+        return Spire_RandomMove(rarity, salt);
+    pick = (Random() + salt * 7) % n;
+    for (i = 0; i < sMovePoolSizes[rarity]; i++)
+        if (GetMoveType(pool[i]) == type && pick-- == 0)
+            return pool[i];
+    return Spire_RandomMove(rarity, salt);
+}
+
+// Draft: kans per tier (C, B, A, S), zoals de zeldzaamheid van kaarten.
+static const u8 sTierChance[] = {35, 35, 22, 8};
+
+u16 Spire_RandomRental(u32 salt)
+{
+    u32 roll = (Random() + salt * 31) % 100, tier = 0, i, n = 0, pick;
+
+    while (tier < 3 && roll >= sTierChance[tier])
+        roll -= sTierChance[tier++];
+    for (i = 0; i < ARRAY_COUNT(sSpireRentals); i++)
+        if (sSpireRentals[i].tier == tier)
+            n++;
+    pick = (Random() + salt * 13) % (n ? n : 1);
+    for (i = 0; i < ARRAY_COUNT(sSpireRentals); i++)
+        if (sSpireRentals[i].tier == tier && pick-- == 0)
+            return sSpireRentals[i].species;
+    return sSpireRentals[0].species;
+}
+
+const struct SpireRental *Spire_FindRental(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sSpireRentals); i++)
+        if (sSpireRentals[i].species == species)
+            return &sSpireRentals[i];
+    for (i = 0; i < ARRAY_COUNT(sSpireEventRentals); i++)
+        if (sSpireEventRentals[i].species == species)
+            return &sSpireEventRentals[i];
+    return NULL;
+}
+
+// Max-HP-percentage van een rental: x4 plus blijvende event-effecten (bijv. -10).
+u32 Spire_PlayerHpPercent(u32 i)
+{
+    s32 pct = SPIRE_HP_PLAYER + 4 * RUN.hpBonus[i];
+
+    return pct < 100 ? 100 : pct;
+}
+
+// Rental: lv 100 met de startkit uit de rekensheet (STAB 40-50, [STAB], statusmove, grounded move).
 void Spire_SetRental(u32 slot, u16 species)
 {
     struct Pokemon *mon = &RUN.mons[slot];
-    u16 moves[MAX_MON_MOVES];
-    u32 i, n = 0;
+    const struct SpireRental *rental = Spire_FindRental(species);
+    static const u16 sFallback[MAX_MON_MOVES] = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE};
 
-    Spire_CreateMon(mon, species, 50, 31, 84, NULL);
-    moves[n] = CommonMoveOfType(GetSpeciesType(species, 0), MOVE_NONE);
-    if (moves[n] != MOVE_NONE)
-        n++;
-    if (GetSpeciesType(species, 1) != GetSpeciesType(species, 0))
-    {
-        moves[n] = CommonMoveOfType(GetSpeciesType(species, 1), MOVE_NONE);
-        if (moves[n] != MOVE_NONE)
-            n++;
-    }
-    moves[n++] = MOVE_PROTECT;
-    // aanvullen met de eigen level-up-moves (die CreateMon al gaf), zonder dubbelen
-    for (i = 0; i < MAX_MON_MOVES && n < MAX_MON_MOVES; i++)
-    {
-        u16 m = GetMonData(mon, MON_DATA_MOVE1 + i);
-        u32 j;
-        bool32 dup = (m == MOVE_NONE);
-
-        for (j = 0; j < n; j++)
-            if (moves[j] == m)
-                dup = TRUE;
-        if (!dup)
-            moves[n++] = m;
-    }
-    while (n < MAX_MON_MOVES)
-        moves[n++] = MOVE_NONE;
-    for (i = 0; i < MAX_MON_MOVES; i++)
-        SetMonMoveSlot(mon, moves[i], i);
-    Spire_ScaleMonHp(mon, SPIRE_HP_PLAYER);
+    Spire_CreateMon(mon, species, SPIRE_LEVEL, 31, 84, rental ? rental->moves : sFallback);
+    RUN.hpBonus[slot] = 0;
+    Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(slot));
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -398,14 +337,17 @@ static void EndRun(bool32 won)
 
 static void NewRun(void)
 {
-    memset(&RUN, 0, offsetof(struct SpireSave, runsWon));
-    RUN.relics = 0;
+    u8 runsWon = RUN.runsWon;
+
+    memset(&RUN, 0, sizeof(RUN));
+    RUN.runsWon = runsWon;
     ZeroMonData(&RUN.mons[0]);
     ZeroMonData(&RUN.mons[1]);
     RUN.magic = SPIRE_SAVE_MAGIC;
     RUN.act = 1;
     RUN.floor = 0;
     RUN.seed = Random32();
+    PickBiome();
     sDraftStep = 0;
 }
 
@@ -489,36 +431,53 @@ void Spire_RestorePP(void)
     }
 }
 
-static u16 EvolutionOf(u16 species)
+// Evoluties in de Spire (uit de rekensheet): max 3 keuzes; bij meer dan één kiest de speler.
+u32 Spire_GetEvolutions(u16 species, u16 *targets)
 {
-    const struct Evolution *evo = GetSpeciesEvolutions(species);
+    u32 i, j, n = 0;
 
-    if (evo == NULL || evo[0].method == EVOLUTIONS_END)
-        return SPECIES_NONE;
-    return evo[0].targetSpecies;
+    for (i = 0; i < ARRAY_COUNT(sSpireEvolutions); i++)
+    {
+        if (sSpireEvolutions[i].species != species)
+            continue;
+        for (j = 0; j < 3; j++)
+            if (sSpireEvolutions[i].targets[j] != SPECIES_NONE)
+                targets[n++] = sSpireEvolutions[i].targets[j];
+        break;
+    }
+    return n;
 }
 
 bool32 Spire_CanEvolve(u32 i)
 {
-    return EvolutionOf(GetMonData(&RUN.mons[i], MON_DATA_SPECIES)) != SPECIES_NONE;
+    u16 targets[3];
+
+    return Spire_GetEvolutions(GetMonData(&RUN.mons[i], MON_DATA_SPECIES), targets) != 0;
 }
 
-// Evolueren met behoud van HP-verhouding (×4 HP blijft).
-void Spire_Evolve(u32 i)
+// Evolueren met behoud van HP-verhouding (x4 HP en event-effecten blijven).
+void Spire_EvolveTo(u32 i, u16 target)
 {
     struct Pokemon *mon = &RUN.mons[i];
-    u16 target = EvolutionOf(GetMonData(mon, MON_DATA_SPECIES));
     u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP), newHp;
 
     if (target == SPECIES_NONE)
         return;
     SetMonData(mon, MON_DATA_SPECIES, &target);
     CalculateMonStats(mon);
-    Spire_ScaleMonHp(mon, SPIRE_HP_PLAYER);
+    Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(i));
     newHp = GetMonData(mon, MON_DATA_MAX_HP) * hp / (maxHp ? maxHp : 1);
     if (newHp == 0 && hp != 0)
         newHp = 1;
     SetMonData(mon, MON_DATA_HP, &newHp);
+}
+
+void Spire_Evolve(u32 i)
+{
+    u16 targets[3];
+
+    if (Spire_GetEvolutions(GetMonData(&RUN.mons[i], MON_DATA_SPECIES), targets))
+        Spire_EvolveTo(i, targets[0]);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -570,10 +529,76 @@ void Spire_RoomFinished(void)
         Spire_OpenMap();
 }
 
+// Na de baas van act 1 en 2 evolueert elke rental die dat kan (Jordi: Gible -> Gabite -> Garchomp).
+// Bij een vertakking (Eevee, Kirlia, Gloom, ...) kiest de speler op het kaartenscherm.
+EWRAM_DATA u8 gSpireEvolveMon = 0;
+EWRAM_DATA static u8 sEvolveStep = 0;
+
+static void ContinueActEvolutions(void);
+
+static void AppendEvolved(u32 i, const u8 *oldName)
+{
+    StringAppend(sEndMessage, COMPOUND_STRING("\n"));
+    StringAppend(sEndMessage, oldName);
+    StringAppend(sEndMessage, COMPOUND_STRING(" became "));
+    StringAppend(sEndMessage, GetSpeciesName(GetMonData(&RUN.mons[i], MON_DATA_SPECIES)));
+    StringAppend(sEndMessage, COMPOUND_STRING("!"));
+}
+
+// aangeroepen door het kaartenscherm na de keuze (de evolutie is dan al gedaan)
+void Spire_EvolveChoiceDone(void)
+{
+    sEvolveStep++;
+    ContinueActEvolutions();
+}
+
+static void ContinueActEvolutions(void)
+{
+    while (sEvolveStep < 2)
+    {
+        u32 i = sEvolveStep;
+        u16 targets[3];
+        u32 n = Spire_GetEvolutions(GetMonData(&RUN.mons[i], MON_DATA_SPECIES), targets);
+
+        if (n > 1)
+        {
+            gSpireEvolveMon = i;
+            Spire_OpenCards(SPIRE_CARDS_EVOLVE, Spire_EvolveChoiceDone);
+            return;
+        }
+        if (n == 1)
+        {
+            u8 nick[POKEMON_NAME_LENGTH + 1];
+
+            GetMonData(&RUN.mons[i], MON_DATA_NICKNAME, nick);
+            Spire_EvolveTo(i, targets[0]);
+            AppendEvolved(i, nick);
+        }
+        sEvolveStep++;
+    }
+    ConvertIntToDecimalStringN(gStringVar1, RUN.act, STR_CONV_MODE_LEFT_ALIGN, 1);
+    StringCopy(gStringVar2, gSpireBiomes[RUN.biome].name);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("ACT {STR_VAR_1}: {STR_VAR_2}"));
+    Spire_OpenMessage(gStringVar4, sEndMessage, Spire_OpenMap);
+}
+
+// Biome van een act: één van de biomes van die act, op de seed.
+static void PickBiome(void)
+{
+    u32 i, n = 0, pick;
+
+    for (i = 0; i < SPIRE_BIOME_COUNT; i++)
+        if (gSpireBiomes[i].act == RUN.act)
+            n++;
+    pick = (RUN.seed >> 4) % (n ? n : 1);
+    for (i = 0; i < SPIRE_BIOME_COUNT; i++)
+        if (gSpireBiomes[i].act == RUN.act && pick-- == 0)
+            RUN.biome = i;
+    RUN.usedEncounters = 0;
+}
+
 static void NextAct(void)
 {
-    u32 i;
-
     if (RUN.act >= SPIRE_ACTS)
     {
         EndRun(TRUE);
@@ -583,83 +608,148 @@ static void NextAct(void)
     RUN.floor = 0;
     RUN.path = 0;
     RUN.seed = Random32();
-    // na act 1 evolueren de rentals
-    StringCopy(sEndMessage, COMPOUND_STRING("The tower shakes. A new act begins!"));
-    for (i = 0; i < 2; i++)
-    {
-        if (Spire_CanEvolve(i))
-        {
-            u8 nick[POKEMON_NAME_LENGTH + 1];
-
-            GetMonData(&RUN.mons[i], MON_DATA_NICKNAME, nick);
-            Spire_Evolve(i);
-            StringAppend(sEndMessage, COMPOUND_STRING("\n"));
-            StringAppend(sEndMessage, nick);
-            StringAppend(sEndMessage, COMPOUND_STRING(" became "));
-            StringAppend(sEndMessage, GetSpeciesName(GetMonData(&RUN.mons[i], MON_DATA_SPECIES)));
-            StringAppend(sEndMessage, COMPOUND_STRING("!"));
-        }
-    }
+    PickBiome();
+    StringCopy(sEndMessage, gSpireBiomes[RUN.biome].desc);
     Spire_HealRun(SPIRE_REST_HEAL);
     Spire_RestorePP();
-    ConvertIntToDecimalStringN(gStringVar1, RUN.act, STR_CONV_MODE_LEFT_ALIGN, 1);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("ACT {STR_VAR_1}"));
-    Spire_OpenMessage(gStringVar4, sEndMessage, Spire_OpenMap);
+    sEvolveStep = 0;
+    ContinueActEvolutions();
 }
 
 // ---------------------------------------------------------------------------------------------
 // Gevechten
 
-static const struct SpireBoss *GetBoss(void)
+// Baas van deze act: één uit de bazen van de act, op de seed.
+static const struct SpireEncounter *GetBoss(void)
 {
-    return &sBosses[RUN.act - 1][(RUN.seed >> 8) % 3];
+    u32 i, n = 0, pick;
+
+    for (i = 0; i < ARRAY_COUNT(sSpireBosses); i++)
+        if (sSpireBosses[i].biome == RUN.act)
+            n++;
+    pick = (RUN.seed >> 8) % (n ? n : 1);
+    for (i = 0; i < ARRAY_COUNT(sSpireBosses); i++)
+        if (sSpireBosses[i].biome == RUN.act && pick-- == 0)
+            return &sSpireBosses[i];
+    return &sSpireBosses[0];
 }
 
 u16 Spire_GetBossSpecies(void)
 {
-    return GetBoss()->species;
+    return GetBoss()->foes[0].species;
 }
 
-static void CreateFoe(struct Pokemon *mon, u16 species, u8 level)
+// Ontmoeting voor deze kamer: vast op de seed (pauzeren en terugkomen = dezelfde vijanden),
+// verdieping 1-2 uit de zwakke pool, daarna gewoon; elites apart. Niet twee keer dezelfde in een act.
+static u32 PickEncounter(u32 type)
 {
-    Spire_CreateMon(mon, species, level, 20, 0, NULL);
+    u32 kind = (type == SPIRE_ROOM_ELITE) ? SPIRE_ENC_ELITE : (RUN.floor < 2) ? SPIRE_ENC_WEAK : SPIRE_ENC_NORMAL;
+    u32 i, n = 0, local = 0, pick, fresh = 0;
+    u32 st = RUN.seed ^ (RUN.floor * 0x9E3779B1) ^ (RUN.node * 0x85EBCA6B);
+
+    for (i = 0; i < ARRAY_COUNT(sSpireEncounters); i++)
+    {
+        if (sSpireEncounters[i].biome != RUN.biome)
+            continue;
+        if (sSpireEncounters[i].kind == kind)
+        {
+            n++;
+            if (!(RUN.usedEncounters & (1u << local)))
+                fresh++;
+        }
+        local++;
+    }
+    pick = (st >> 7) % (fresh ? fresh : (n ? n : 1));
+    local = 0;
+    for (i = 0; i < ARRAY_COUNT(sSpireEncounters); i++)
+    {
+        if (sSpireEncounters[i].biome != RUN.biome)
+            continue;
+        if (sSpireEncounters[i].kind == kind && (!fresh || !(RUN.usedEncounters & (1u << local))) && pick-- == 0)
+            return i;
+        local++;
+    }
+    return 0;
 }
 
-static void StartRoomBattle(u32 type)
+static void MarkEncounterUsed(u32 index)
 {
-    u32 act = RUN.act - 1;
-    u32 lv = sFoeLevel[act];
-    u32 i, song;
+    u32 i, local = 0;
+
+    for (i = 0; i < index; i++)
+        if (sSpireEncounters[i].biome == sSpireEncounters[index].biome)
+            local++;
+    if (local < 16)
+        RUN.usedEncounters |= 1u << local;
+}
+
+EWRAM_DATA static s16 sEncounterIndex = 0;
+EWRAM_DATA u8 gSpireStartingStatus = 0;
+
+static u32 AbilitySlot(u16 species, u16 ability)
+{
+    u32 i;
+
+    for (i = 0; i < NUM_ABILITY_SLOTS; i++)
+        if (GetSpeciesAbility(species, i) == ability)
+            return i;
+    return 0;
+}
+
+static void CreateFoe(u32 partyIndex, const struct SpireFoe *foe)
+{
+    struct Pokemon *mon = &gEnemyParty[partyIndex];
+    u32 battler = partyIndex == 0 ? B_POSITION_OPPONENT_LEFT : B_POSITION_OPPONENT_RIGHT;
+    u32 i;
+
+    Spire_CreateMon(mon, foe->species, SPIRE_LEVEL, 20, 0, foe->moves[0] != MOVE_NONE ? foe->moves : NULL);
+    // vrije moves (zonder lijst): verboden moves eruit
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        if (Spire_IsMoveBanned(GetMonData(mon, MON_DATA_MOVE1 + i)))
+            SetMonMoveSlot(mon, MOVE_NONE, i);
+    if (foe->ability != ABILITY_NONE)
+    {
+        u32 slot = AbilitySlot(foe->species, foe->ability);
+        SetMonData(mon, MON_DATA_ABILITY_NUM, &slot);
+    }
+    if (foe->item != ITEM_NONE)
+        SetMonData(mon, MON_DATA_HELD_ITEM, &foe->item);
+    if (foe->gimmick == SPIRE_GIMMICK_SLEEP)
+    {
+        u32 status = STATUS1_SLEEP_TURN(3);
+        SetMonData(mon, MON_DATA_STATUS, &status);
+    }
+    gSpireEnemyHp[partyIndex] = foe->hp * 10;
+    for (i = 0; i < 8; i++)
+        gSpirePattern[partyIndex][i] = foe->pattern[i];
+    gSpirePatternStep[partyIndex] = 0;
+    // totem-aura (STAT_ATK ... STAT_SPDEF)
+    memset(&gQueuedStatBoosts[battler], 0, sizeof(gQueuedStatBoosts[battler]));
+    for (i = 0; i < 5; i++)
+    {
+        if (foe->boosts[i] != 0)
+        {
+            gQueuedStatBoosts[battler].stats |= (1 << i) | 0x80;
+            gQueuedStatBoosts[battler].statChanges[i] = foe->boosts[i];
+        }
+    }
+}
+
+static void StartEncounter(const struct SpireEncounter *enc, u32 song)
+{
+    u32 i;
 
     ZeroEnemyPartyMons();
+    memset(gQueuedStatBoosts, 0, sizeof(gQueuedStatBoosts));
     for (i = 0; i < PARTY_SIZE; i++)
-        gSpireEnemyHp[i] = SPIRE_HP_NORMAL;
-
-    if (type == SPIRE_ROOM_BOSS)
     {
-        const struct SpireBoss *boss = GetBoss();
-
-        Spire_CreateMon(&gEnemyParty[0], boss->species, lv + 2, 31, 84, boss->moves);
-        Spire_CreateMon(&gEnemyParty[1], boss->lackey, lv - 4, 20, 0, boss->lackeyMoves);
-        gSpireEnemyHp[0] = SPIRE_HP_BOSS;
-        song = MUS_VS_FRONTIER_BRAIN;
+        gSpireEnemyHp[i] = 100;
+        gSpirePattern[i][0] = 0;
     }
-    else if (type == SPIRE_ROOM_ELITE)
-    {
-        CreateFoe(&gEnemyParty[0], sEliteFoes[act][Random() % 6], lv);
-        CreateFoe(&gEnemyParty[1], sNormalFoes[act][Random() % 18], lv);
-        gSpireEnemyHp[0] = SPIRE_HP_ELITE;
-        song = MUS_VS_ELITE_FOUR;
-    }
-    else
-    {
-        u32 a = Random() % 18;
-        u32 b = (a + 1 + Random() % 17) % 18;
-
-        CreateFoe(&gEnemyParty[0], sNormalFoes[act][a], lv);
-        CreateFoe(&gEnemyParty[1], sNormalFoes[act][b], lv);
-        song = MUS_VS_WILD;
-    }
+    for (i = 0; i < 2; i++)
+        if (enc->foes[i].species != SPECIES_NONE)
+            CreateFoe(i, &enc->foes[i]);
+    gSpireStartingStatus = enc->field;
 
     SaveParty();
     ZeroPlayerPartyMons();
@@ -674,6 +764,20 @@ static void StartRoomBattle(u32 type)
     gMain.savedCallback = CB2_EndSpireBattle;
     PlayMapChosenOrBattleBGM(song);
     SetMainCallback2(CB2_InitBattle);
+}
+
+static void StartRoomBattle(u32 type)
+{
+    if (type == SPIRE_ROOM_BOSS)
+    {
+        sEncounterIndex = -1;
+        StartEncounter(GetBoss(), MUS_VS_FRONTIER_BRAIN);
+    }
+    else
+    {
+        sEncounterIndex = PickEncounter(type);
+        StartEncounter(&sSpireEncounters[sEncounterIndex], type == SPIRE_ROOM_ELITE ? MUS_VS_ELITE_FOUR : MUS_VS_WILD);
+    }
 }
 
 static void RewardMoves(void)
@@ -704,6 +808,8 @@ static void CB2_EndSpireBattle(void)
         return;
     }
 
+    if (sEncounterIndex >= 0)
+        MarkEncounterUsed(sEncounterIndex);
     heal = SPIRE_HEAL_AFTER + (Spire_HasRelic(SPIRE_RELIC_LEFTOVERS) ? 10 : 0);
     Spire_HealRun(heal);
     switch (sRoomType)

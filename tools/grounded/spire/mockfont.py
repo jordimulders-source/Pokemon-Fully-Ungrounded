@@ -7,6 +7,7 @@ for line in open(os.path.join(ROOT, 'charmap.txt'), encoding='utf-8'):
     m = re.match(r"^'(.)'\s*=\s*([0-9A-F]{2})\s*$", line)
     if m:
         CHARMAP.setdefault(m.group(1), int(m.group(2), 16))
+CHARMAP["'"] = CHARMAP.get('’', 0)
 CHARMAP.update({'→': 0x7C, '←': 0x7B, '↑': 0x79, '↓': 0x7A})
 
 def _widths(name):

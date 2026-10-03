@@ -10395,6 +10395,10 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
         RecordAbilityBattle(battler, battlerAbility);
     }
+    // Project Grounded: The Spire, statusmove+ verandert een stat één stap meer
+    if (!flags.onlyChecking && IsBattleMoveStatus(gCurrentMove) && Spire_IsMoveUpgraded(gBattlerAttacker, gCurrentMove)
+     && GET_STAT_BUFF_VALUE(statValue) < 6)
+        statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) + 1)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
 
     PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
 

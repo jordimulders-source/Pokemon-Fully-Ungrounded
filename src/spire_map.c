@@ -139,16 +139,17 @@ static const u8 sColor_Boss[]   = {0, 8, 7};
 
 static const struct BgTemplate sBgTemplates[] =
 {
-    {.bg = 0, .charBaseIndex = 2, .mapBaseIndex = 31, .priority = 0},
+    {.bg = 0, .charBaseIndex = 1, .mapBaseIndex = 31, .priority = 0},
     {.bg = 1, .charBaseIndex = 0, .mapBaseIndex = 30, .priority = 2},
-    {.bg = 2, .charBaseIndex = 3, .mapBaseIndex = 29, .priority = 3},
+    {.bg = 2, .charBaseIndex = 2, .mapBaseIndex = 26, .priority = 3}, // achtergrond van het biome (gevechtsachtergrond)
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
     [WIN_LINES] = {.bg = 1, .tilemapLeft = 0, .tilemapTop = 0, .width = 21, .height = 32, .paletteNum = PAL_LINES, .baseBlock = 0x001},
-    [WIN_PANEL] = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 1, .width = 7, .height = 12, .paletteNum = PAL_TEXT, .baseBlock = 0x001},
-    [WIN_INFO]  = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 15, .width = 7, .height = 4, .paletteNum = PAL_TEXT, .baseBlock = 0x055},
+    // BG0 deelt charblock 1 met de staart van de routes (BG1, 21x32 tegels): vensters vanaf tegel 0xB0
+    [WIN_PANEL] = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 1, .width = 7, .height = 12, .paletteNum = PAL_TEXT, .baseBlock = 0x0B0},
+    [WIN_INFO]  = {.bg = 0, .tilemapLeft = 22, .tilemapTop = 15, .width = 7, .height = 4, .paletteNum = PAL_TEXT, .baseBlock = 0x104},
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -439,7 +440,6 @@ static void UpdateSpritePositions(void)
     if ((sMap->timer & 0x1F) >= 0x18)
         gSprites[sMap->cursorSpriteId].invisible = TRUE;
     SetGpuReg(REG_OFFSET_BG1VOFS, sMap->scroll);
-    SetGpuReg(REG_OFFSET_BG2VOFS, sMap->scroll);
 }
 
 static void CreateSprites(void)
@@ -545,18 +545,11 @@ static void CB2_SpireMap(void)
     UpdatePaletteFade();
 }
 
-static void LoadDots(void)
+// Achtergrond: de gevechtsachtergrond van het biome, donker getint zodat de routes opvallen. Staat stil
+// terwijl de kaart scrolt (diepte).
+static void LoadBackground(void)
 {
-    u16 *tilemap = AllocZeroed(BG_SCREEN_SIZE);
-    u32 x, y;
-
-    LoadBgTiles(2, sDotsGfx, 0x40, 0);
-    LoadPalette(sDotsPal, BG_PLTT_ID(PAL_DOTS), PLTT_SIZE_4BPP);
-    for (y = 0; y < 32; y++)
-        for (x = 0; x < 32; x++)
-            tilemap[y * 32 + x] = (x & 1) | (PAL_DOTS << 12);
-    SetBgTilemapBuffer(2, tilemap);
-    ScheduleBgCopyTilemapToVram(2);
+    Spire_LoadBiomeBackground(RGB(3, 2, 7), 9);
 }
 
 void Spire_OpenMap(void)
@@ -581,7 +574,7 @@ void Spire_OpenMap(void)
     SetBgTilemapBuffer(1, AllocZeroed(BG_SCREEN_SIZE));
     InitWindows(sWindowTemplates);
     DeactivateAllTextPrinters();
-    LoadDots();
+    LoadBackground();
     LoadPalette(sLinesPal, BG_PLTT_ID(PAL_LINES), PLTT_SIZE_4BPP);
     LoadPalette(sTextPal, BG_PLTT_ID(PAL_TEXT), PLTT_SIZE_4BPP);
     LoadWindowGfx(WIN_PANEL, 0, FRAME_TILE, BG_PLTT_ID(PAL_FRAME));
@@ -599,6 +592,7 @@ void Spire_OpenMap(void)
 
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_BG2_ON);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_EFFECT_BLEND);
+    ShowBg(2);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 9));
     ShowBg(0);
     ShowBg(1);

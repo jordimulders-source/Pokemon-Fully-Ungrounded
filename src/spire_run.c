@@ -378,6 +378,25 @@ void Spire_Enter(void)
     }
 }
 
+// Debug (testscripts): VAR_0x8004 = 0 rustplek, 1 winkel, 2 event, 3 kaart. Zonder run: snelle run met twee rentals.
+void Spire_DebugOpen(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    if (!Spire_RunActive())
+    {
+        NewRun();
+        Spire_SetRental(0, Spire_RandomRental(1));
+        Spire_SetRental(1, Spire_RandomRental(2));
+    }
+    switch (gSpecialVar_0x8004)
+    {
+    case 0:  Spire_OpenRest(Spire_ReturnToField); break;
+    case 1:  Spire_OpenCards(SPIRE_CARDS_SHOP, Spire_ReturnToField); break;
+    case 2:  Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_ReturnToField); break;
+    default: Spire_OpenMap(); break;
+    }
+}
+
 void Spire_ResetRun(void)
 {
     RUN.magic = 0;
@@ -506,7 +525,7 @@ void Spire_EnterRoom(u32 floor, u32 node)
         StartRoomBattle(type);
         break;
     case SPIRE_ROOM_REST:
-        Spire_OpenCards(SPIRE_CARDS_REST, Spire_RoomFinished);
+        Spire_OpenRest(Spire_RoomFinished);
         break;
     case SPIRE_ROOM_SHOP:
         Spire_OpenCards(SPIRE_CARDS_SHOP, Spire_RoomFinished);
@@ -685,6 +704,7 @@ static void MarkEncounterUsed(u32 index)
 
 EWRAM_DATA static s16 sEncounterIndex = 0;
 EWRAM_DATA u8 gSpireStartingStatus = 0;
+EWRAM_DATA u8 gSpireEnvironment = 0;
 
 static u32 AbilitySlot(u16 species, u16 ability)
 {
@@ -761,6 +781,11 @@ static void StartEncounter(const struct SpireEncounter *enc, u32 song)
     gSpireAct = RUN.act;
     Spire_ClearBlocks();
     gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+    // achtergrond van het biome; bazen in een eigen arena
+    if (enc->kind == SPIRE_ENC_BOSS)
+        gSpireEnvironment = (RUN.act == 1) ? BATTLE_ENVIRONMENT_LEADER : (RUN.act == 2) ? BATTLE_ENVIRONMENT_CHAMPION : BATTLE_ENVIRONMENT_RAYQUAZA;
+    else
+        gSpireEnvironment = Spire_GetBiomeEnvironment();
     gMain.savedCallback = CB2_EndSpireBattle;
     PlayMapChosenOrBattleBGM(song);
     SetMainCallback2(CB2_InitBattle);

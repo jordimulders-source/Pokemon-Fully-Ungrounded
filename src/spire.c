@@ -106,6 +106,24 @@ void Spire_ApplyPattern(u32 battler)
     gAiBattleData->chosenTarget[battler] = target;
 }
 
+// Upgrades ("+", Porygon2 op de rustplek): opgeslagen als PP Up 3 op die slot.
+bool32 Spire_IsMoveUpgraded(u32 battler, u32 move)
+{
+    u32 i;
+
+    if (!gSpireBattle || !IsOnPlayerSide(battler))
+        return FALSE;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        if (gBattleMons[battler].moves[i] == move)
+            return ((gBattleMons[battler].ppBonuses >> (i * 2)) & 3) == 3;
+    return FALSE;
+}
+
+uq4_12_t Spire_UpgradeDamageModifier(u32 battlerAtk, u32 move)
+{
+    return Spire_IsMoveUpgraded(battlerAtk, move) ? UQ_4_12(1.3) : UQ_4_12(1.0);
+}
+
 void Spire_EndTurn(void)
 {
     u32 i;

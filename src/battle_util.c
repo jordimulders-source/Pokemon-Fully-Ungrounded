@@ -8587,6 +8587,7 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     //TODO: Behemoth Blade, Behemoth Bash, Dynamax Cannon (Dynamax)
     if (gSpireBattle && IsOnPlayerSide(ctx->battlerAtk) && Spire_HasRelic(SPIRE_RELIC_MUSCLE_BAND))
         DAMAGE_MULTIPLY_MODIFIER(UQ_4_12(1.1)); // Project Grounded: The Spire, relic Muscle Band
+    DAMAGE_MULTIPLY_MODIFIER(Spire_UpgradeDamageModifier(ctx->battlerAtk, ctx->move)); // Project Grounded: move+
     DAMAGE_MULTIPLY_MODIFIER(GetMinimizeModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetUndergroundModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetDiveModifier(ctx->move, ctx->battlerDef));
@@ -11055,6 +11056,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     u32 defParam = GetBattlerHoldEffectParam(battlerDef);
 
     gPotentialItemEffectBattler = battlerDef;
+    if (IsBattleMoveStatus(move) && Spire_IsMoveUpgraded(battlerAtk, move)) // Project Grounded: statusmove+ mist niet
+        return 100;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
     if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkAbility == ABILITY_MINDS_EYE

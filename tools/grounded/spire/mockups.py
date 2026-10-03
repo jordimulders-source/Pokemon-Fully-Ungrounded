@@ -63,7 +63,7 @@ def frame(img, x, y, w, h, fill=WHITE, style=1):
     img.paste(bl, (x, y + h - 8), bl); img.paste(br, (x + w - 8, y + h - 8), br)
 
 
-ICON_PAL = {'tyranitar': 4, 'gardevoir': 1, 'swampert': 0, 'ditto': 2, 'unown/question': 0}
+ICON_PAL = {'tyranitar': 4, 'gardevoir': 1, 'swampert': 0, 'ditto': 2, 'unown/question': 0, 'snorlax': 3, 'chansey': 0}
 
 
 def mon_icon(species):
@@ -583,7 +583,7 @@ def node_icons3():
         'fight': item_icon('poke_ball').crop((3, 3, 21, 21)),
         'elite': aura(trim(load_gba('graphics/object_events/pics/pokemon_old/substitute.png',
                                     'graphics/object_events/pics/pokemon_old/substitute.gbapal').crop((0, 0, 32, 32)))),
-        'rest': trim(mon_icon('chansey')),
+        'rest': trim(mon_icon('snorlax')),
         'shop': oldale_emblems()[1],
         'event': trim(mon_icon('unown/question')),
     }

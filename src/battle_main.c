@@ -524,6 +524,8 @@ static void CB2_InitBattleInternal(void)
     {
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
     }
+    if (gSpireBattle) // Project Grounded: The Spire, achtergrond van het biome
+        gBattleEnvironment = gSpireEnvironment;
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
     if (TestRunner_Battle_GetForcedEnvironment())

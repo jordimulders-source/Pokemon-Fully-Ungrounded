@@ -187,6 +187,7 @@ extern const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT];
 extern const struct SpireBiome gSpireBiomes[SPIRE_BIOME_COUNT];
 extern u8 gSpirePattern[PARTY_SIZE][8];
 extern u8 gSpireStartingStatus;
+extern u8 gSpireEnvironment;
 extern u8 gSpireEvolveMon;
 extern u8 gSpirePatternStep[PARTY_SIZE];
 
@@ -233,9 +234,20 @@ void Spire_ReturnToField(void);
 u16 Spire_GetBossSpecies(void);
 void Spire_Enter(void);
 void Spire_ResetRun(void);
+void Spire_DebugOpen(void);
 
 // spire_map.c
 void Spire_OpenMap(void);
+
+// spire_rest.c: Snorlax-kamp en upgrades ("+")
+void Spire_OpenRest(void (*onDone)(void));
+bool32 Spire_IsSlotUpgraded(struct Pokemon *mon, u32 slot);
+void Spire_UpgradeSlot(struct Pokemon *mon, u32 slot);
+void Spire_ClearSlotUpgrade(struct Pokemon *mon, u32 slot);
+u32 Spire_GetBiomeEnvironment(void);
+void Spire_LoadBiomeBackground(u16 tint, u32 amount);
+bool32 Spire_IsMoveUpgraded(u32 battler, u32 move);
+uq4_12_t Spire_UpgradeDamageModifier(u32 battlerAtk, u32 move);
 
 // spire_cards.c
 enum SpireCardMode

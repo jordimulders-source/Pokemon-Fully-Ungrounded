@@ -1287,6 +1287,7 @@ static void HandleChooseSlot(void)
 
         PlaySE(SE_RG_BALL_CLICK);
         SetMonMoveSlot(mon, sCards->teachMove, sCards->slot);
+        Spire_ClearSlotUpgrade(mon, sCards->slot);
         GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(sCards->teachMove));
         StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} learned {STR_VAR_2}!"));

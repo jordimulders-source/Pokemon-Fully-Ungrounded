@@ -292,6 +292,12 @@ static const struct SpriteFrameImage sPicTable_ProfOak[] = {
 static const struct SpriteFrameImage sPicTable_Brock[] = {
     overworld_ascending_frames(gObjectEventPic_Brock, 2, 4),
 };
+static const struct SpriteFrameImage sPicTable_Colress[] = {
+    overworld_ascending_frames(gObjectEventPic_Colress, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Zinnia[] = {
+    overworld_ascending_frames(gObjectEventPic_Zinnia, 2, 4),
+};
 
 static const struct SpriteFrameImage sPicTable_Man4[] = {
     overworld_ascending_frames(gObjectEventPic_Man4, 2, 4),

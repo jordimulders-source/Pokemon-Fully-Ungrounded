@@ -301,6 +301,8 @@ static void DebugAction_Give_Item_SelectQuantity(u8 taskId);
 static void DebugAction_Give_PokemonSimple(u8 taskId);
 static void DebugAction_Give_PokemonComplex(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectId(u8 taskId);
+static void DebugAction_Util_ForceEncounter(u8 taskId);
+static void DebugAction_Util_ForceEncounter_SelectId(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectNature(u8 taskId);
@@ -389,6 +391,8 @@ extern const u8 Debug_EventScript_Legend_Latios[];
 extern const u8 Debug_EventScript_Legend_Lugia[];
 extern const u8 Debug_EventScript_Legend_HoOh[];
 extern const u8 Debug_EventScript_WildFromMap[];
+extern const u8 Debug_EventScript_ForcedEncounterSet[];
+extern const u8 Debug_EventScript_ForcedEncounterOff[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -586,6 +590,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
+    { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
+    { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
     { NULL }
 };
 
@@ -2304,6 +2310,37 @@ static void DebugAction_Give_PokemonSimple(u8 taskId)
     LoadMonIconPalettePersonality(gTasks[taskId].tInput, 0);
     gTasks[taskId].tSpriteId = CreateMonIcon(gTasks[taskId].tInput, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
     gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
+}
+
+// Project Grounded: "Force encounter": kies een soort; alle wilde encounters (ook vissen, rock smash en
+// "Wild battle (map)") worden die soort, op het level uit de tabel, tot "Force encounter: off".
+// De eerstvolgende stap in het gras is meteen raak.
+static void DebugAction_Util_ForceEncounter(u8 taskId)
+{
+    DebugAction_Give_PokemonSimple(taskId);
+    gTasks[taskId].func = DebugAction_Util_ForceEncounter_SelectId;
+}
+
+static void DebugAction_Util_ForceEncounter_SelectId(u8 taskId)
+{
+    if (JOY_NEW(A_BUTTON))
+    {
+        gDebugForcedWildSpecies = gTasks[taskId].tInput;
+        gDebugForceNextStep = TRUE;
+        StringCopy(gStringVar1, GetSpeciesName(gDebugForcedWildSpecies));
+        PlaySE(SE_SELECT);
+        Free(sDebugMonData);
+        FreeMonIconPalettes();
+        FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tSpriteId]);
+        DebugAction_DestroyExtraWindow(taskId);
+        LockPlayerFieldControls();
+        FreezeObjectEvents();
+        ScriptContext_SetupScript(Debug_EventScript_ForcedEncounterSet);
+        return;
+    }
+    DebugAction_Give_Pokemon_SelectId(taskId);
+    if (gTasks[taskId].func == DebugAction_Give_Pokemon_SelectId)
+        gTasks[taskId].func = DebugAction_Util_ForceEncounter_SelectId;
 }
 
 static void DebugAction_Give_PokemonComplex(u8 taskId)

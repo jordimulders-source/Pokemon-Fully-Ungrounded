@@ -562,6 +562,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
     {gObjectEventPal_Brock,                 OBJ_EVENT_PAL_TAG_BROCK}, // Project Grounded
+    {gObjectEventPal_Colress,               OBJ_EVENT_PAL_TAG_COLRESS}, // Project Grounded
+    {gObjectEventPal_Zinnia,                OBJ_EVENT_PAL_TAG_ZINNIA}, // Project Grounded
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

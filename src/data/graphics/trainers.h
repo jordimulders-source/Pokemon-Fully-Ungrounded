@@ -289,6 +289,10 @@ const u16 gTrainerPalette_ProfessorOak[] = INCBIN_U16("graphics/trainers/front_p
 const u32 gTrainerFrontPic_Brock[] = INCBIN_U32("graphics/trainers/front_pics/brock.4bpp.smol");
 const u16 gTrainerPalette_Brock[] = INCBIN_U16("graphics/trainers/front_pics/brock.gbapal");
 const u32 gTrainerFrontPic_Mimikyu[] = INCBIN_U32("graphics/trainers/front_pics/mimikyu.4bpp.smol");
+const u32 gTrainerFrontPic_Colress[] = INCBIN_U32("graphics/trainers/front_pics/colress.4bpp.smol"); // Project Grounded
+const u16 gTrainerPalette_Colress[] = INCBIN_U16("graphics/trainers/front_pics/colress.gbapal");
+const u32 gTrainerFrontPic_Zinnia[] = INCBIN_U32("graphics/trainers/front_pics/zinnia.4bpp.smol"); // Project Grounded
+const u16 gTrainerPalette_Zinnia[] = INCBIN_U16("graphics/trainers/front_pics/zinnia.gbapal");
 const u16 gTrainerPalette_Mimikyu[] = INCBIN_U16("graphics/trainers/front_pics/mimikyu.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
@@ -419,6 +423,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_OAK, gTrainerFrontPic_ProfessorOak, gTrainerPalette_ProfessorOak),
     TRAINER_SPRITE(TRAINER_PIC_BROCK, gTrainerFrontPic_Brock, gTrainerPalette_Brock),
     TRAINER_SPRITE(TRAINER_PIC_MIMIKYU, gTrainerFrontPic_Mimikyu, gTrainerPalette_Mimikyu),
+    TRAINER_SPRITE(TRAINER_PIC_COLRESS, gTrainerFrontPic_Colress, gTrainerPalette_Colress),
+    TRAINER_SPRITE(TRAINER_PIC_ZINNIA, gTrainerFrontPic_Zinnia, gTrainerPalette_Zinnia),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)

@@ -693,3 +693,150 @@ for ty in range(20):
 save('magikarp_pile', ctiles, [mpal])
 open(OUT + 'route_magikarp_pile.bin', 'wb').write(struct.pack('<%dH' % len(ctm), *ctm))
 print('  collage:', placed, 'Magikarp')
+
+# Colress: tandwiel (twee stuks draaien in elkaar en komen op je af), staal met een blauwe ring
+GEAR_TEETH = 10
+GPAL = pad([(0, 0, 0), (2, 3, 5), (8, 10, 13), (14, 16, 19), (21, 23, 26), (28, 29, 31), (5, 21, 28), (2, 12, 19)])
+gi = Image.new('P', (64, 64), 0)
+for y in range(64):
+    for x in range(64):
+        dx, dy = x - 31.5, y - 31.5
+        d = math.hypot(dx, dy)
+        a = math.atan2(dy, dx)
+        # tand: trapezium-vormig profiel over de omtrek
+        ph = (a * GEAR_TEETH / (2 * math.pi)) % 1.0
+        tooth = min(1.0, max(0.0, 1.6 - abs(ph - 0.5) * 5.0))
+        outer = 24 + 6 * tooth
+        if d > outer or d < 6:
+            continue
+        light = -(dx + dy) / (d * 1.414 + 0.01)  # licht van linksboven
+        if d > outer - 1.3 or d < 7.2:
+            c = 1
+        elif 15 <= d <= 18:
+            c = 6 if light > -0.3 else 7  # blauwe ring
+        elif d > 22 and tooth < 0.05:
+            c = 3
+        elif d > outer - 3.5 or d < 10:
+            c = 5 if light > 0.5 else 4 if light > -0.2 else 2
+        elif 10 <= d < 15 and int(((a + math.pi) * 3 / math.pi) * 2) % 2 == 0:
+            c = 2  # gaten tussen de spaken
+        else:
+            c = 3 if light < 0.3 else 4
+        gi.putpixel((x, y), c)
+save_sprite('gear', gi, GPAL)
+
+# ------------------------------------------------------------------ Zangoose: reuzenklauw (Crush Claw) scheurt het scherm
+# BG-tiles (palet ZPAL): 1 zwart (scheur), 2-4 klauwstriem langs de anti-diagonaal (3 varianten),
+# 5-7 scheurrand "zwart rechtsonder", 8-10 scheurrand "zwart linksboven" (gekarteld, rode gloed)
+ZPAL = pad([(0, 0, 0), (1, 0, 2), (31, 31, 31), (31, 18, 18), (26, 4, 6), (14, 0, 2), (31, 26, 26)])
+zr = random.Random(335)
+def zstreak(v):
+    off = (v - 1) * 0.6
+    def f(x, y):
+        d = abs(x + y - 7 + off * 0.0)
+        wob = (zr.random() - 0.5) * 0.6
+        if d + wob < 0.9:
+            return 2
+        if d + wob < 1.9:
+            return 6
+        if d + wob < 2.8:
+            return 3
+        return 4 if d + wob < 3.4 and zr.random() < 0.5 else 0
+    return tile(f)
+def zedge(lower, v):
+    rr = random.Random(1000 + v * 7 + lower)
+    jag = [rr.randint(-2, 2) for _ in range(16)]
+    def f(x, y):
+        s = x + y - 7 + jag[(x - y) % 16]
+        inside = s > 0 if lower else s < 0
+        if inside:
+            return 1
+        if abs(s) <= 1:
+            return 4
+        if abs(s) <= 2:
+            return 5
+        return 0
+    return tile(f)
+ztiles = [tile(lambda x, y: 1)] + [zstreak(v) for v in (1, 2, 3)] + [zedge(1, v) for v in range(3)] + [zedge(0, v) for v in range(3)]
+save('zangoose', ztiles, [ZPAL])
+
+# klauw-sprite: drie gebogen klauwen, wit met rode punt, wijzend naar linksonder
+CPAL = pad([(0, 0, 0), (3, 2, 4), (31, 31, 31), (22, 22, 26), (14, 14, 18), (30, 6, 8), (18, 2, 4)])
+ci = Image.new('P', (64, 64), 0)
+cd = ImageDraw.Draw(ci)
+for k, (ox, oy) in enumerate([(-11, -11), (0, 0), (11, 11)]):
+    # boog van rechtsboven (basis) naar linksonder (punt)
+    pts = []
+    for i in range(24):
+        t = i / 23
+        x = 50 - t * 36 + ox - math.sin(t * math.pi) * 5
+        y = 14 + t * 36 + oy - math.sin(t * math.pi) * 5
+        pts.append((x, y, 4.5 * (1 - t) + 0.7))
+    for x, y, r in pts:
+        cd.ellipse((x - r - 1, y - r - 1, x + r + 1, y + r + 1), fill=1)
+    for i, (x, y, r) in enumerate(pts):
+        col = 5 if i > 17 else (2 if i % 6 < 4 else 3)
+        cd.ellipse((x - r, y - r, x + r, y + r), fill=col)
+        if r > 2:
+            cd.ellipse((x - r + 1, y - r + 2, x + r - 1, y + r), fill=4 if col != 5 else 6)
+            cd.ellipse((x - r, y - r, x + r - 2, y + r - 2), fill=col)
+save_sprite('zangoose_claw', ci, CPAL)
+
+# ------------------------------------------------------------------ Seviper: een schermvullende Poison Fang
+# bovenkaak 240x160 (bek bovenin, twee enorme giftanden met druppels), onderkaak 240x40; tiles ontdubbeld
+SPAL = pad([(0, 0, 0), (2, 0, 3), (10, 2, 10), (18, 4, 14), (31, 31, 31), (24, 24, 26), (18, 18, 22), (20, 4, 28), (28, 12, 31), (12, 2, 18), (26, 8, 10)])
+def jaw_upper():
+    im = Image.new('P', (240, 160), 0)
+    d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, 239, 22), fill=1)
+    for x in range(0, 240, 2):
+        y = 22 + int(3 * math.sin(x / 9.0))
+        d.line((x, 14, x, y), fill=2)
+        d.line((x, y - 4, x, y), fill=3)
+    for cx in (62, 178):
+        # gebogen giftand: breed bij de basis, punt laag in beeld
+        for i in range(120):
+            t = i / 119
+            x = cx + math.sin(t * 2.2) * 10 * (1 if cx < 120 else -1)
+            y = 18 + t * 124
+            r = 17 * (1 - t) ** 0.8 + 1
+            d.ellipse((x - r - 1, y - r - 1, x + r + 1, y + r + 1), fill=1)
+        for i in range(120):
+            t = i / 119
+            x = cx + math.sin(t * 2.2) * 10 * (1 if cx < 120 else -1)
+            y = 18 + t * 124
+            r = 17 * (1 - t) ** 0.8
+            d.ellipse((x - r, y - r, x + r, y + r), fill=7 if t > 0.8 else 5)
+            d.ellipse((x - r * 0.75, y - r, x + r * 0.35, y + r * 0.6), fill=4 if t <= 0.8 else 8)
+        # gif loopt langs de punt naar beneden
+        d.ellipse((cx - 4 + (10 if cx < 120 else -10) * math.sin(2.2), 140, cx + 4 + (10 if cx < 120 else -10) * math.sin(2.2), 152), fill=7)
+        d.ellipse((cx - 2 + (10 if cx < 120 else -10) * math.sin(2.2), 142, cx + 1 + (10 if cx < 120 else -10) * math.sin(2.2), 146), fill=8)
+    return im
+def jaw_lower():
+    im = Image.new('P', (240, 40), 0)
+    d = ImageDraw.Draw(im)
+    d.rectangle((0, 18, 239, 39), fill=1)
+    for x in range(0, 240, 2):
+        y = 18 - int(3 * math.sin(x / 11.0 + 1))
+        d.line((x, y, x, 26), fill=2)
+        d.line((x, y, x, y + 4), fill=3)
+    for cx in range(20, 240, 40):
+        d.polygon([(cx - 6, 18), (cx + 6, 18), (cx, 4)], fill=5)
+        d.line((cx - 3, 16, cx, 6), fill=4)
+    return im
+stiles, sidx = [], {}
+def tmap(im):
+    out = []
+    for ty in range(im.height // 8):
+        for tx in range(30):
+            t = tuple(im.getpixel((tx * 8 + x, ty * 8 + y)) for y in range(8) for x in range(8))
+            if not any(t):
+                out.append(0); continue
+            if t not in sidx:
+                sidx[t] = len(stiles) + 1; stiles.append(list(t))
+            out.append(sidx[t])
+    return out
+utm, ltm = tmap(jaw_upper()), tmap(jaw_lower())
+save('seviper', stiles, [SPAL])
+open(OUT + 'route_seviper_upper.bin', 'wb').write(struct.pack('<%dH' % len(utm), *utm))
+open(OUT + 'route_seviper_lower.bin', 'wb').write(struct.pack('<%dH' % len(ltm), *ltm))

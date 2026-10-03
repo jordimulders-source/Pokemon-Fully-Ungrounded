@@ -896,7 +896,11 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      888
+#define TRAINER_COLRESS_MAUVILLE                888 // Project Grounded: Colress in Mauville
+#define TRAINER_COLRESS_MAGMA                   889 // Project Grounded: Colress in de Magma Hideout
+#define TRAINER_ZINNIA                          890 // Project Grounded: Zinnia voor de Sky Pillar
+
+#define TRAINERS_COUNT                      891
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

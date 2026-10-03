@@ -83,9 +83,9 @@
 #define FLAG_HIDE_NEW_MAUVILLE_RAIKOU    0x45 // Project Grounded: Raikou (static) in de verborgen serverruimte van New Mauville
 #define FLAG_NEW_MAUVILLE_SERVER_ROOM_OPEN    0x46 // Project Grounded: schakelaar op de computer in de oostkamer: deur naar de ondergrondse grot (Raikou)
 #define FLAG_HIDE_MT_CHIMNEY_ENTEI    0x47 // Project Grounded: Entei (static) in de verborgen lavagrot van Mt. Chimney
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_HIDE_MAUVILLE_COLRESS    0x48 // Project Grounded: Colress wacht in Mauville op een gevecht
+#define FLAG_HIDE_MAGMA_HIDEOUT_COLRESS    0x49 // Project Grounded: Colress in de machinekamer van de Magma Hideout
+#define FLAG_HIDE_SKY_PILLAR_ZINNIA    0x4A // Project Grounded: Zinnia voor de Sky Pillar
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag

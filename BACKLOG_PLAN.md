@@ -14,7 +14,12 @@ De eilanden uit Emerald staan al in de ROM en werken: **Faraway Island (Mew)**, 
 
 **Voorstel:** de tickets in de wereld verstoppen of laten verdienen. Dat is weinig werk en levert vier legendary-events op.
 
-**Vragen:**
+**Antwoorden van Jordi (3 okt):**
+- Tickets voor **Mew (Old Sea Map)** en **Lugia/Ho-Oh (Mystic Ticket)** koop je in de **battle facility** (Battle Frontier, met BP).
+- **Latias/Latios:** na het rivaalgevecht in Lilycove zegt de rivaal dat hij/zij twee tickets heeft gekocht; je mag er één kiezen. **Rood = Latias, blauw = Latios.**
+- **Deoxys** krijgt een eigen event (zie Delta Episode), niet Birth Island.
+
+**Oorspronkelijke vragen:**
 1. Wil je deze eilanden gebruiken? Of liever eigen events voor deze legendaries (bijv. Latios/Latias "cryptisch kiezen", zoals in je backlog)?
 2. Hoe krijg je de tickets? Opties: (a) van NPC's na bepaalde mijlpalen, (b) verstopt als zeldzaam item, (c) als beloning van een sidequest. Per ticket mag het verschillen.
 3. Latios/Latias: in vanilla krijg je één van de twee als roamer (afhankelijk van je keuze op tv) en de ander via het Eon Ticket. Hoe zie je "cryptisch kiezen" voor je? Bijv. twee symbolen of raadsels op Southern Island, en de keuze bepaalt wie er komt (de ander post-game)?
@@ -32,7 +37,12 @@ Al klaar: gevechtstransities voor alle Regi's, het Regi-heiligdom op laag 1 in A
   - (b) **Op de stippen staan:** de kamer heeft lichtgevende vloertegels in het oogpatroon van de Regi. Loop je ze allemaal af (of in de juiste volgorde), dan opent de deur. Dat is visueel en past bij de transities.
   - (c) Een Pokémon van het juiste type vooraan (Electric voor Regieleki, Dragon voor Regidrago) en dan Strength/Flash gebruiken in de kamer.
 
-**Vragen:**
+**Antwoorden van Jordi (3 okt):**
+- Activatie **(b) op de lichtgevende stippen staan**. Dat vervangt de braille-puzzels en het "juiste Pokémon vooraan"-idee helemaal. De volgorde moet voor een mens makkelijk te snappen zijn.
+- **Voorstel volgorde (nog bevestigen):** op de muur van elke kamer zit het oogpatroon van de Regi. De stippen op de muur lichten **één voor één op in een vaste lus** (zoals Simon Says). Loop de vloerstippen in dezelfde volgorde af. Een verkeerde stip laat alles doven en je begint opnieuw. Je hoeft niets te onthouden of te ontcijferen: kijken en nadoen.
+- De **sneeuwtempel-tileset** (Ekat99) wordt de **Regigigas-grot bij Ashfrost** (via de iglo).
+
+**Oorspronkelijke vragen:**
 4. Welke activatie (a/b/c, of een combinatie)?
 5. Waar precies bij Mauville en op Jagged Pass? Mag ik een plek voorstellen met een render?
 6. Levels: Regi's op lv 50 zoals Suicune/Raikou/Entei, en Regigigas post-game lv 70?

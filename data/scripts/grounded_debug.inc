@@ -160,3 +160,23 @@ Debug_EventScript_WildFromMap_None::
 
 Debug_Text_WildFromMap_None:
 	.string "Deze kaart heeft geen wilde Pokémon.$"
+
+@ Project Grounded: debugmenu Utilities > Force encounter - bevestiging
+Debug_EventScript_ForcedEncounterSet::
+	msgbox Debug_Text_ForcedEncounterSet, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_ForcedEncounterSet:
+	.string "All wild encounters: {STR_VAR_1}.\n"
+	.string "Turn off: Force encounter: off.$"
+
+@ Project Grounded: debugmenu Utilities > Force encounter: off - weer gewone encounters
+Debug_EventScript_ForcedEncounterOff::
+	special Debug_ClearForcedEncounter
+	msgbox Debug_Text_ForcedEncounterOff, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_ForcedEncounterOff:
+	.string "Wild encounters are back to normal.$"

@@ -5,6 +5,7 @@ SkyPillar_Outside_MapScripts::
 	.byte 0
 
 SkyPillar_Outside_OnTransition:
+	call SkyPillar_Outside_EventScript_SetZinniaVisibility
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_HideMapNamePopup
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
 	end
@@ -83,7 +84,13 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 4
 	removeobject LOCALID_SKY_PILLAR_WALLACE
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
+	clearflag FLAG_HIDE_SKY_PILLAR_ZINNIA
+	addobject LOCALID_SKY_PILLAR_ZINNIA
 	fadescreenswapbuffers FADE_FROM_BLACK
+	@ Project Grounded: Zinnia staat ineens voor de deur
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	call SkyPillar_Outside_EventScript_ZinniaTest
 	releaseall
 	end
 
@@ -167,3 +174,78 @@ SkyPillar_Outside_Text_GotToGoBackForSootopolis:
 	.string "wine cellar. Mostly SOOTOPOLIS. I have\l"
 	.string "to go back.\p"
 	.string "It's all up to you now. Don't fail us!$"
+
+@ ---------------------------------------------------------------- Project Grounded: Zinnia test of je klaar bent voor Rayquaza
+@ Alleen tijdens de klim naar Rayquaza (VAR_SOOTOPOLIS_CITY_STATE 4); ze blokkeert de deur tot je haar verslaat.
+SkyPillar_Outside_EventScript_SetZinniaVisibility::
+	setflag FLAG_HIDE_SKY_PILLAR_ZINNIA
+	goto_if_ne VAR_SOOTOPOLIS_CITY_STATE, 4, Common_EventScript_NopReturn
+	goto_if_defeated TRAINER_ZINNIA, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_SKY_PILLAR_ZINNIA
+	return
+
+SkyPillar_Outside_EventScript_Zinnia::
+	lock
+	faceplayer
+	call SkyPillar_Outside_EventScript_ZinniaTest
+	release
+	end
+
+SkyPillar_Outside_EventScript_ZinniaTest::
+	playse SE_PIN
+	applymovement LOCALID_SKY_PILLAR_ZINNIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SkyPillar_Outside_Text_ZinniaIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ZINNIA, SkyPillar_Outside_Text_ZinniaDefeat
+	msgbox SkyPillar_Outside_Text_ZinniaPostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SKY_PILLAR_ZINNIA
+	setflag FLAG_HIDE_SKY_PILLAR_ZINNIA
+	fadescreen FADE_FROM_BLACK
+	return
+
+SkyPillar_Outside_Text_ZinniaIntro:
+	.string "???: Hold it right there, kid.\p"
+	.string "Name's ZINNIA. I'm a LOREKEEPER. I keep\n"
+	.string "the lore. All of it. Which is a problem,\l"
+	.string "because nobody can follow it anymore.\l"
+	.string "Including me.\p"
+	.string "So. RAYQUAZA. Let me explain. The\n"
+	.string "ancient Draconids worshipped RAYQUAZA.\l"
+	.string "Then a splinter group worshipped the\l"
+	.string "meteor RAYQUAZA ate.\p"
+	.string "Then a splinter of that splinter\n"
+	.string "worshipped the crater the meteor left.\l"
+	.string "Then they had a schism about whether\l"
+	.string "the crater counted as a hole or as an\l"
+	.string "absence of ground.\p"
+	.string "My great-grandmother's songs say\n"
+	.string "RAYQUAZA ate the meteor. My\l"
+	.string "great-aunt's songs say the meteor ate\l"
+	.string "RAYQUAZA. The sacred tapestry says\l"
+	.string "both, but somebody spilled soup on the\l"
+	.string "important bit.\p"
+	.string "There is also a prophecy. It's written in\n"
+	.string "a language that only three people ever\l"
+	.string "spoke, and two of them were the same\l"
+	.string "person.\p"
+	.string "And then there's the alternate timeline\n"
+	.string "where all of this happened differently.\l"
+	.string "Don't ask. I've been asked. I cried.\p"
+	.string "Long story short: there's a very large,\n"
+	.string "very cranky green noodle up there, and\l"
+	.string "you're about to wake it.\p"
+	.string "Show me you won't get eaten. That part\n"
+	.string "of the lore, at least, is extremely\l"
+	.string "consistent.$"
+
+SkyPillar_Outside_Text_ZinniaDefeat:
+	.string "Ha! Okay, okay. You might actually\n"
+	.string "survive the noodle.$"
+
+SkyPillar_Outside_Text_ZinniaPostBattle:
+	.string "ZINNIA: Fine, the door's yours. Go up\n"
+	.string "and wake RAYQUAZA.\p"
+	.string "If it asks about the soup on the\n"
+	.string "tapestry, it wasn't me.$"

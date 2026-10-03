@@ -333,6 +333,7 @@ gSpecials::
 	def_special BattleSetup_StartLegendaryBattle
 	def_special StartRegiBattle
 	def_special Debug_StartMapWildBattle
+	def_special Debug_ClearForcedEncounter
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short
 	def_special FoundBlackGlasses

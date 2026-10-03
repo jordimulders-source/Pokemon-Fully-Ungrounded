@@ -850,6 +850,10 @@ enum BattleTransition GetWildBattleTransition(void)
     case SPECIES_WEEZING:
     case SPECIES_WEEZING_GALAR:
         return B_TRANSITION_KOFFING;
+    case SPECIES_ZANGOOSE:
+        return B_TRANSITION_ZANGOOSE;
+    case SPECIES_SEVIPER:
+        return B_TRANSITION_SEVIPER;
     }
     if (routeTransition >= 0)
         return routeTransition;
@@ -892,6 +896,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
     if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
         return B_TRANSITION_AQUA_MAGMA;
+
+    // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
+    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
+        return B_TRANSITION_COLRESS;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;

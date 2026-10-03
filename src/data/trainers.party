@@ -27094,3 +27094,186 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Earth Power
 - Mud Bomb
 - Recover
+
+=== TRAINER_COLRESS_MAUVILLE ===
+Name: COLRESS
+Class: Scientist
+Pic: Colress
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Blue
+
+Elgyem
+Level: 26
+Ability: Dimensional Warp
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psybeam
+- Thunder Wave
+- Headbutt
+- Calm Mind
+
+Klink
+Level: 26
+Ability: Clear Body
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gear Grind
+- Charge Beam
+- Shift Gear
+- Thunder Wave
+
+Magnemite
+Level: 26
+Ability: Analytic
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Charge Beam
+- Mirror Shot
+- Thunder Wave
+- Supersonic
+
+Varoom
+Level: 26
+Ability: Overcoat
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Poison Jab
+- Assurance
+- Taunt
+- Screech
+
+Porygon @ Eviolite
+Level: 27
+Ability: Analytic
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Tri Attack
+- Psybeam
+- Thunder Wave
+- Recover
+
+=== TRAINER_COLRESS_MAGMA ===
+Name: COLRESS
+Class: Scientist
+Pic: Colress
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Blue
+
+Beheeyem
+Level: 45
+Ability: Dimensional Warp
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Recover
+
+Klinklang
+Level: 45
+Ability: Clear Body
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gear Grind
+- Wild Charge
+- Shift Gear
+- Machine Learning
+
+Magnezone
+Level: 45
+Ability: Analytic
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Machine Learning
+
+Revavroom
+Level: 45
+Ability: Filter
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gunk Shot
+- Spin Out
+- Taunt
+- Shift Gear
+
+Porygon2 @ Eviolite
+Level: 45
+Ability: Analytic
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Tri Attack
+- Ice Beam
+- Recover
+- Machine Learning
+
+Magearna
+Level: 47
+Ability: Soul-Heart
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fleur Cannon
+- Flash Cannon
+- Aura Sphere
+- Shift Gear
+
+=== TRAINER_ZINNIA ===
+Name: ZINNIA
+Class: Lorekeeper
+Pic: Zinnia
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Green
+
+Altaria
+Level: 58
+Ability: Natural Cure
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Dragon Claw
+- Moonblast
+- Roost
+
+Salamence
+Level: 59
+Ability: Intimidate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Dual Wingbeat
+- Earthquake
+- Outrage
+
+Noivern
+Level: 58
+Ability: Infiltrator
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Boomburst
+- Dragon Pulse
+- Hurricane
+- Flamethrower
+
+Goodra_Hisui @ Leftovers
+Level: 58
+Ability: Shell Armor
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Heavy Slam
+- Dragon Pulse
+- Fire Blast
+- Thunderbolt
+
+Dracovish
+Level: 58
+Ability: Strong Jaw
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fishious Rend
+- Psychic Fangs
+- Crunch
+- Dragon Rush
+
+Roaring Moon @ Booster Energy
+Level: 60
+Ability: Protosynthesis
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Crunch
+- Acrobatics
+- Earthquake

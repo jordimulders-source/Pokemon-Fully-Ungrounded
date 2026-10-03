@@ -6131,6 +6131,10 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
+            return MUS_GROUNDED_VS_COLRESS;
+        case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
+            return MUS_GROUNDED_VS_ZINNIA;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;

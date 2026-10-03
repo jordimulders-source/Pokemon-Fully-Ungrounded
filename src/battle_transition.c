@@ -147,6 +147,9 @@ static void Task_Koffing(u8); // Project Grounded
 static void Task_GabbyTy(u8); // Project Grounded
 static void Task_Poochyena(u8); // Project Grounded
 static void Task_Beachball(u8); // Project Grounded
+static void Task_Colress(u8); // Project Grounded
+static void Task_Zangoose(u8); // Project Grounded
+static void Task_Seviper(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -427,6 +430,16 @@ static const u32 sQuestionSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions
 static const u16 sQuestionSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_question.gbapal");
 static const u32 sPoochyenaSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_poochyena.4bpp");
 static const u16 sPoochyenaSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_poochyena.gbapal");
+static const u32 sGearSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_gear.4bpp");
+static const u16 sGearSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_gear.gbapal");
+static const u16 sZangoose_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.4bpp");
+static const u16 sZangoose_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.gbapal");
+static const u32 sZangooseClaw_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zangoose_claw.4bpp");
+static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zangoose_claw.gbapal");
+static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
+static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
+static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
+static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
 static const u32 sBeachballSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_beachball.4bpp");
 static const u16 sBeachballSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_beachball.gbapal");
 static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
@@ -525,6 +538,9 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GABBY_TY] = Task_GabbyTy, // Project Grounded
     [B_TRANSITION_POOCHYENA] = Task_Poochyena, // Project Grounded
     [B_TRANSITION_BEACHBALL] = Task_Beachball, // Project Grounded
+    [B_TRANSITION_COLRESS] = Task_Colress, // Project Grounded
+    [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
+    [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7099,4 +7115,228 @@ static const struct RouteTransition sRT_Beachball =
 static void Task_Beachball(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Beachball);
+}
+
+// ---------------- Colress: eerst de gewone mugshot-slide, en vanuit het witte scherm grijpen twee draaiende
+// tandwielen in elkaar en komen steeds dichterbij (een beetje zoals Gear Grind). De wereld kleurt van wit naar donkerblauw.
+#define tRtGear2 data[7]
+#define tColressPhase data[15]
+#define GEAR_PITCH 27 // afstand van het midden tot waar de tanden in elkaar grijpen, in pixels bij 1x
+
+static void RTColress_Init(struct Task *task)
+{
+    u8 id;
+    RT_CreateSprite(task, sGearSprite_Gfx, sGearSprite_Palette, 120, 80);
+    id = CreateSprite(&sRT_SpriteTemplate, 120, 80, 0);
+    gSprites[id].affineAnimPaused = TRUE;
+    task->tRtGear2 = id;
+    task->tRtA = 0;
+}
+
+static bool8 RTColress_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer, f = min(t, 72), scale, d, k;
+    struct Sprite *gear2 = &gSprites[task->tRtGear2];
+
+    // wit -> donker staalblauw, aan het eind een witte flits (wereld blijft verborgen)
+    k = min(t, 20) * 16 / 20;
+    if (t >= 72)
+        k = 16 - min((t - 72) * 3, 16);
+    BlendPalettes(RT_SceneWithoutSprite(), 16, RGB(31 - k * 29 / 16, 31 - k * 27 / 16, 31 - k * 22 / 16));
+    // steeds sneller draaien, steeds groter
+    task->tRtA += 0x180 + f * 0x14;
+    scale = 40 + f * f * 472 / (72 * 72);
+    d = GEAR_PITCH * scale / 256;
+    if (t % 12 == 0 && t < 72)
+        PlaySE(SE_M_VICEGRIP);
+    RT_SetSprite(task, 120 - d, 80, scale, task->tRtA + 0x0CCC);
+    gear2->x = 120 + d;
+    gear2->y = 80;
+    SetOamMatrixRotationScaling(gear2->oam.matrixNum, scale, scale, -task->tRtA);
+    if (t >= 72)
+    {
+        if (t == 72)
+            PlaySE(SE_M_HARDEN);
+        BlendPalettes(1 << (16 + IndexOfSpritePaletteTag(RT_SPRITE_TAG)), min((t - 72) * 3, 16), RGB_WHITE);
+        return t >= 78;
+    }
+    return FALSE;
+}
+
+static void RTColress_Finish(struct Task *task)
+{
+    struct Sprite *gear2 = &gSprites[task->tRtGear2];
+    FreeSpriteOamMatrix(gear2);
+    DestroySprite(gear2);
+    RT_FinishSprite(task);
+}
+
+static const struct RouteTransition sRT_Colress =
+{
+    sPikachu_Tileset, 32, sPikachu_Palette, 1, 1, 0, RTColress_Init, RTColress_Update, RTColress_Finish
+};
+
+static void Task_Colress(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    if (task->tColressPhase == 0)
+    {
+        // de mugshot tot en met het witte scherm (Mugshot_GradualWhiteFade); daarna de tandwielen
+        while (task->tState < 7 && sMugshot_Funcs[task->tState](task))
+            ;
+        if (task->tState == 7)
+        {
+            SetVBlankCallback(NULL);
+            DmaStop(0);
+            SetHBlankCallback(NULL);
+            BlendPalettes(PALETTES_ALL, 16, RGB_WHITE);
+            SetGpuReg(REG_OFFSET_BLDCNT, 0);
+            SetGpuReg(REG_OFFSET_BLDY, 0);
+            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON);
+            SetVBlankCallback(VBlankCB_BattleTransition);
+            // de trainerfoto's van de mugshot liggen nog (wit/onzichtbaar) in beeld; weg ermee
+            gSprites[task->data[11]].invisible = TRUE; // tOpponentSpriteAId
+            gSprites[task->data[14]].invisible = TRUE; // tPlayerSpriteId
+            task->tState = 0;
+            task->tColressPhase = 1;
+        }
+        return;
+    }
+    RouteTransition_Run(taskId, &sRT_Colress);
+}
+
+// ---------------- Zangoose: een reuzenklauw (Crush Claw) haalt diagonaal uit en laat drie striemen achter;
+// daarna scheurt de middelste striem open tot een zwarte, gekartelde scheur die het hele beeld opslokt.
+// Alles loopt langs de anti-diagonaal: tile (c, r) ligt op striem/scheurrand m als c + r == m.
+// tiles: 1 zwart, 2-4 striem, 5-7 scheurrand (zwart rechtsonder), 8-10 scheurrand (zwart linksboven)
+#define ZANGOOSE_MID 24
+
+static void RTZangoose_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sZangooseClaw_Gfx, sZangooseClaw_Palette, 250, -50);
+    RT_SetSprite(task, 250, -50, 512, 0);
+}
+
+static bool8 RTZangoose_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, f, r, c, s, w, revealed;
+
+    // de klauw zwiept van rechtsboven naar linksonder (x + y blijft 200: door het midden)
+    f = min(t, 14);
+    if (t == 0)
+        PlaySE(SE_M_RAZOR_WIND);
+    if (t <= 14)
+        RT_SetSprite(task, 250 - f * 300 / 14, -50 + f * 300 / 14, 512, 0);
+    else
+        gSprites[task->tRtSprite].invisible = TRUE;
+
+    revealed = t * 24 / 14 - 3; // tot en met deze rij zijn de striemen al getekend
+    w = (t >= 20) ? (t - 18) : 0;  // halve breedte van de scheur
+    if (t == 20)
+    {
+        PlaySE(SE_M_CUT);
+        PlayCry_Normal(SPECIES_ZANGOOSE, 0);
+    }
+    for (r = 0; r < 20; r++)
+    {
+        for (c = 0; c < 30; c++)
+        {
+            u16 tileNum = 0;
+            s = c + r;
+            if (w > 0 && s == ZANGOOSE_MID - w)
+                tileNum = 5 + ((c * 7 + r) % 3);
+            else if (w > 0 && s == ZANGOOSE_MID + w)
+                tileNum = 8 + ((c * 5 + r * 3) % 3);
+            else if (w > 0 && s > ZANGOOSE_MID - w && s < ZANGOOSE_MID + w)
+                tileNum = 1;
+            else if (r <= revealed && (s == ZANGOOSE_MID - 3 || s == ZANGOOSE_MID || s == ZANGOOSE_MID + 3))
+                tileNum = 2 + (r % 3);
+            tilemap[r * 32 + c] = tileNum ? RT_TILE(tileNum) : 0;
+        }
+    }
+    // de wereld kleurt rood en trilt
+    if (t >= 12)
+        BlendPalettes(RT_SceneWithoutSprite(), min(t - 12, 7), RGB(31, 0, 0));
+    if (t >= 20)
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+    return w >= 26;
+}
+
+static const struct RouteTransition sRT_Zangoose =
+{
+    sZangoose_Tileset, sizeof(sZangoose_Tileset), sZangoose_Palette, 1, 1, 0, RTZangoose_Init, RTZangoose_Update, RT_FinishSprite
+};
+
+static void Task_Zangoose(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Zangoose);
+}
+
+// ---------------- Seviper: een Poison Fang zo groot als het scherm. De bovenkaak met twee enorme giftanden zakt
+// van boven in beeld, de onderkaak komt van onder; dan klappen ze dicht en kleurt alles paars van het gif.
+static void RTSeviper_DrawJaw(u16 *tilemap, const u16 *jaw, s32 rows, s32 top)
+{
+    s32 r, c;
+    for (r = 0; r < rows; r++)
+    {
+        if (top + r < 0 || top + r >= 20)
+            continue;
+        for (c = 0; c < 30; c++)
+            if (jaw[r * 30 + c])
+                tilemap[(top + r) * 32 + c] = RT_TILE(jaw[r * 30 + c]);
+    }
+}
+
+static bool8 RTSeviper_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, upper, lower, i;
+
+    if (t < 24)
+    {
+        // de bek gaat dreigend open en komt dichterbij
+        upper = -20 + t / 2;
+        lower = 20 - t / 8;
+    }
+    else
+    {
+        // en bijt!
+        upper = min(-8 + (t - 24) * 2, 0);
+        lower = max(17 - (t - 24), 15);
+    }
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = 0;
+    RTSeviper_DrawJaw(tilemap, sSeviper_Lower, 5, lower);
+    RTSeviper_DrawJaw(tilemap, sSeviper_Upper, 20, upper);
+
+    if (t == 0)
+        PlaySE(SE_M_LEER);
+    if (t == 6)
+        PlayCry_Normal(SPECIES_SEVIPER, 0);
+    if (t < 28)
+        BlendPalettes(RT_SceneWithoutSprite(), min(t / 3, 6), RGB(14, 2, 18));
+    if (t == 28)
+        PlaySE(SE_M_BITE);
+    if (t >= 28)
+    {
+        // gif: het beeld schudt en loopt paars vol
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 5) - 2) & 0x1FF);
+        BlendPalettes(PALETTES_ALL & ~(1 << 15), min(6 + (t - 28) * 2, 16), RGB(16, 2, 22));
+        if (t == 31)
+            PlaySE(SE_M_TOXIC);
+        return t >= 38;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Seviper =
+{
+    sSeviper_Tileset, sizeof(sSeviper_Tileset), sSeviper_Palette, 1, 1, 0, NULL, RTSeviper_Update, NULL
+};
+
+static void Task_Seviper(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Seviper);
 }

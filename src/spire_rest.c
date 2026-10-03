@@ -227,7 +227,7 @@ static void DrawHeader(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
     PrintText(WIN_HEADER, FONT_NORMAL, 4, 1, sColor_Red, COMPOUND_STRING("SNORLAX CAMP"));
-    PrintText(WIN_HEADER, FONT_NORMAL, 100, 1, sColor_Dark, COMPOUND_STRING("Shh. Someone is sleeping."));
+    PrintText(WIN_HEADER, FONT_NORMAL, 100, 1, sColor_Dark, COMPOUND_STRING("Shh. Snorlax is asleep."));
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
 

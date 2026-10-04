@@ -38,7 +38,7 @@ def paste(sx,sy,w,h,dx,dy):
             if (t&0x3ff) in (0x228,0x2a1,0x2a9,0x22a,0x230,0x238,0x232,0x23a): continue  # Aqua-vloer en schaduwen -> grotvloer
             g[dy+yy][dx+xx]=t
 # twee tanks tegen de achterwand (rij 0-6 van de Aqua-tank, inclusief voet en schaduw)
-paste(20,0,4,7,3,0); paste(26,0,4,7,15,0)
+paste(20,0,4,7,2,0); paste(26,0,4,7,15,0)  # linkertank op x 2: ruimte voor de kluisdeur (x 6-8, Genesect)
 # computerclusters (3x4: scherm, kast, kast, schaduw)
 for (dx,dy) in ((2,9),(6,11),(14,11),(17,8),(9,7)):
     paste(17,6,3,4,dx,dy)

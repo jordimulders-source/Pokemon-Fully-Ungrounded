@@ -152,6 +152,8 @@ static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
 static void Task_Heatran(u8); // Project Grounded
+static void Task_Genesect(u8); // Project Grounded
+static void Task_Mewtwo(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -441,6 +443,10 @@ static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
 static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
+static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_genesect.4bpp");
+static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
+static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
+static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -546,6 +552,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
     [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
     [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
+    [B_TRANSITION_GENESECT] = Task_Genesect, // Project Grounded
+    [B_TRANSITION_MEWTWO] = Task_Mewtwo, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7446,4 +7454,166 @@ static const struct RouteTransition sRT_Heatran =
 static void Task_Heatran(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Heatran);
+}
+
+// ---------------- Genesect: CRT-scanlijnen, een rood vizier springt van doel naar doel tot het op het midden vastklikt
+// ("LOCKED ON"), dan een Techno Blast-straal die van links het beeld in schiet en het hele scherm vult.
+// tiles: 1 scanlijnen, 2 scanbalk, 3-66 vizier (8x8), 67-88 "LOCKED ON" (11x2), 89/90/91 straal boven/kern/onder
+#define GENESECT_HOPS 7
+static const u8 sGenesectHopX[GENESECT_HOPS] = {2, 19, 4, 18, 8, 14, 11};
+static const u8 sGenesectHopY[GENESECT_HOPS] = {1, 10, 11, 2, 4, 8, 6};
+#define GENESECT_HOP_START 6
+#define GENESECT_LOCK (GENESECT_HOP_START + (GENESECT_HOPS - 1) * 5)
+#define GENESECT_BEAM 52
+
+static bool8 RTGenesect_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, r, c, w, h;
+    bool32 show;
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = RT_TILE(1);
+    if (t < 40)
+    {
+        r = (t * 2) % 20;
+        for (c = 0; c < 32; c++)
+        {
+            tilemap[r * 32 + c] = RT_TILE(2);
+            tilemap[((r + 1) % 20) * 32 + c] = RT_TILE(2);
+        }
+    }
+    if (t == 0)
+        PlaySE(SE_PC_LOGIN);
+
+    if (t >= GENESECT_HOP_START)
+    {
+        i = min((t - GENESECT_HOP_START) / 5, GENESECT_HOPS - 1);
+        if (t < GENESECT_LOCK && (t - GENESECT_HOP_START) % 5 == 0)
+            PlaySE(SE_SELECT);
+        if (t == GENESECT_LOCK)
+            PlaySE(SE_M_LOCK_ON);
+        show = (t < GENESECT_LOCK || t >= GENESECT_LOCK + 12 || ((t - GENESECT_LOCK) / 3) % 2 == 0);
+        if (show)
+        {
+            RT_PutBlock(tilemap, sGenesectHopX[i], sGenesectHopY[i], 3, 8, 8);
+            if (t >= GENESECT_LOCK)
+                RT_PutBlock(tilemap, 9, 15, 67, 11, 2);
+        }
+    }
+
+    if (t >= GENESECT_BEAM)
+    {
+        if (t == GENESECT_BEAM)
+            PlaySE(SE_M_HYPER_BEAM);
+        w = min((t - GENESECT_BEAM) * 6 + 2, 32);
+        h = (t >= GENESECT_BEAM + 5) ? (t - GENESECT_BEAM - 5) : 0;
+        // kern op rij 9-10, groeit naar boven en onder; rand boven (89) en onder (91)
+        for (r = 8 - h; r <= 11 + h; r++)
+        {
+            if (r < 0 || r >= 20)
+                continue;
+            for (c = 0; c < w; c++)
+                tilemap[r * 32 + c] = RT_TILE(r == 8 - h ? 89 : (r == 11 + h ? 91 : 90));
+        }
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 2, 9), RGB(10, 0, 3));
+    if (t >= GENESECT_BEAM + 15)
+    {
+        BlendPalettes(PALETTES_ALL, min((t - GENESECT_BEAM - 15) * 4, 16), RGB_WHITE);
+        return t >= GENESECT_BEAM + 19;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Genesect =
+{
+    sGenesect_Tileset, sizeof(sGenesect_Tileset), sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
+};
+
+static void Task_Genesect(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Genesect);
+}
+
+// ---------------- Mewtwo: het beeld kleurt diep paars, twee gloeiende ogen gaan open, en dan een psychische schokgolf
+// die vanuit het midden in ringen over het hele scherm rolt. tiles: 1-54 ogen (3 standen van 6x3, linkeroog; het
+// rechteroog is gespiegeld), 55 rand buiten, 56 rand fel, 57 rand binnen, 58-59 psychische vulling (kleurcyclus)
+#define MEWTWO_WAVE 30
+
+static void RTMewtwo_PutEyes(u16 *tilemap, u32 first)
+{
+    u32 i, j;
+    for (j = 0; j < 3; j++)
+    {
+        for (i = 0; i < 6; i++)
+        {
+            tilemap[(7 + j) * 32 + 8 + i] = RT_TILE(first + j * 6 + i);
+            tilemap[(7 + j) * 32 + 16 + i] = RT_TILE(first + j * 6 + (5 - i)) | 0x400; // horizontaal gespiegeld
+        }
+    }
+}
+
+static bool8 RTMewtwo_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, r, c, dx, dy, d2, rad;
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = 0;
+
+    if (t >= MEWTWO_WAVE)
+    {
+        rad = (t - MEWTWO_WAVE) * 8;
+        if (t == MEWTWO_WAVE)
+            PlaySE(SE_M_PSYBEAM);
+        for (r = 0; r < 20; r++)
+        {
+            for (c = 0; c < 30; c++)
+            {
+                dx = c * 8 + 4 - 120;
+                dy = r * 8 + 4 - 80;
+                d2 = dx * dx + dy * dy;
+                if (rad > 16 && d2 < (rad - 16) * (rad - 16))
+                    tilemap[r * 32 + c] = RT_TILE(58 + ((r + c + t / 4) & 1));
+                else if (rad > 8 && d2 < (rad - 8) * (rad - 8))
+                    tilemap[r * 32 + c] = RT_TILE(57);
+                else if (d2 < rad * rad)
+                    tilemap[r * 32 + c] = RT_TILE(56);
+                else if (d2 < (rad + 8) * (rad + 8))
+                    tilemap[r * 32 + c] = RT_TILE(55);
+            }
+        }
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 5) - 2) & 0x1FF);
+    }
+
+    // de ogen blijven boven de golf gloeien tot het scherm bijna vol is
+    if (t >= 8 && t < MEWTWO_WAVE + 14)
+    {
+        if (t == 14)
+            PlaySE(SE_M_CONFUSE_RAY);
+        RTMewtwo_PutEyes(tilemap, t < 11 ? 1 : (t < 14 ? 19 : 37));
+    }
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t, 13), RGB(5, 0, 9));
+    if (t >= MEWTWO_WAVE + 21)
+    {
+        BlendPalettes(PALETTES_ALL, min((t - MEWTWO_WAVE - 21) * 4, 16), RGB(31, 28, 31));
+        return t >= MEWTWO_WAVE + 25;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Mewtwo =
+{
+    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 4, 4, 0, NULL, RTMewtwo_Update, NULL
+};
+
+static void Task_Mewtwo(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Mewtwo);
 }

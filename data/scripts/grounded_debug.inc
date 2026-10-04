@@ -243,3 +243,19 @@ Debug_EventScript_StadiumUnlockAll::
 
 Debug_Text_StadiumUnlockAll:
 	.string "Alle Stadium-compagnons vrij.$"
+
+Debug_EventScript_Legend_Genesect::
+	lockall
+	setwildbattle SPECIES_GENESECT, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end
+
+Debug_EventScript_Legend_Mewtwo::
+	lockall
+	setwildbattle SPECIES_MEWTWO, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end

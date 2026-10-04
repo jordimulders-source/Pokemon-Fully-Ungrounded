@@ -458,7 +458,10 @@
     "RegidragoCave",
     "RegigigasTemple",
     "FieryPath_HeatranLair",
-    "MeteorSpace"
+    "MeteorSpace",
+    "NewMauville_ServerVault",
+    "MeteorFalls_UnknownCave_1F",
+    "MeteorFalls_UnknownCave_B1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

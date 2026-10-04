@@ -4232,6 +4232,36 @@
       "blockdata_filepath": "data/layouts/MeteorSpace/map.bin"
     },
     {
+      "id": "LAYOUT_NEW_MAUVILLE_SERVER_VAULT",
+      "name": "NewMauville_ServerVault_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NewMauville_ServerVault/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_ServerVault/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_UNKNOWN_CAVE_1F",
+      "name": "MeteorFalls_UnknownCave_1F_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MeteorFalls_UnknownCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_UnknownCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_UNKNOWN_CAVE_B1F",
+      "name": "MeteorFalls_UnknownCave_B1F_Layout",
+      "width": 19,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MeteorFalls_UnknownCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_UnknownCave_B1F/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLAND_HARBOR",
       "name": "IslandHarbor_Layout",
       "width": 17,

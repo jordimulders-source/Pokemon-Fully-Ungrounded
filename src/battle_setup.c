@@ -525,6 +525,16 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
+    case SPECIES_GENESECT_DOUSE:
+    case SPECIES_GENESECT_SHOCK:
+    case SPECIES_GENESECT_BURN:
+    case SPECIES_GENESECT_CHILL:
+        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
+        break;
+    case SPECIES_MEWTWO: // Project Grounded: gloeiende ogen en een psychische schokgolf, het Mewtwo-thema uit FRLG
+        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

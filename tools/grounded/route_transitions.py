@@ -881,3 +881,75 @@ def surface():
     return tile(f)
 htiles = [lava_tile(0), lava_tile(1), edge(True), edge(False), head(0), head(1), head(2), drops(), surface()]
 save('heatran', htiles, cycle(pad(LAVA), 4, amp=2))
+
+# ------------------------------------------------------------------ Genesect: scanlijnen, een rood vizier dat zijn doel zoekt, Techno Blast
+# 1 scanlijnen, 2 scanbalk, 3-66 vizier (8x8), 67.. "LOCKED ON" (GTW x GTH), daarna straal: rand boven, kern, rand onder
+GEN = pad([(0, 0, 0), (6, 0, 2), (20, 2, 4), (31, 6, 6), (31, 18, 16), (31, 31, 31), (2, 2, 4), (12, 4, 16)])
+gen = [tile(lambda x, y: 6 if y % 4 == 0 else 0), tile(lambda x, y: 3 if y % 2 == 0 else 4)]
+def reticle(x, y):
+    dx, dy = x - 31.5, y - 31.5
+    r = math.hypot(dx, dy)
+    if r < 2.5:
+        return 5
+    if 25 <= r <= 28:
+        return 3
+    if 24 <= r < 25 or 28 < r <= 29.2:
+        return 1
+    if (abs(dx) < 1.5 or abs(dy) < 1.5) and 7 < r < 32:
+        return 3
+    if (abs(dx) < 2.5 or abs(dy) < 2.5) and 7 < r < 32:
+        return 1
+    if 14 <= r <= 15.5 and int((math.atan2(dy, dx) + math.pi) * 8 / math.pi) % 2 == 0:
+        return 2
+    near = min(x, 63 - x), min(y, 63 - y)
+    if (near[0] < 2 and near[1] < 12) or (near[1] < 2 and near[0] < 12):
+        return 4
+    return 0
+gen += blocks(reticle, 8, 8)
+tm = text_mask('LOCKED ON', 12)
+GTW, GTH = (tm.size[0] + 9) // 8, (tm.size[1] + 9) // 8
+def gtext(x, y):
+    on = lambda a, b: 0 <= a - 1 < tm.size[0] and 0 <= b - 1 < tm.size[1] and tm.getpixel((a - 1, b - 1))
+    if on(x, y):
+        return 3
+    if any(on(x + a, y + b) for a in (-1, 0, 1) for b in (-1, 0, 1)):
+        return 6
+    return 0
+gen += blocks(gtext, GTW, GTH)
+BEAM = [6, 1, 2, 3, 4, 5, 5, 5]
+gen += [tile(lambda x, y: BEAM[y]), tile(lambda x, y: 5 if (x + y) % 3 else 4), tile(lambda x, y: BEAM[7 - y])]
+save('genesect', gen, [GEN])
+print('  LOCKED ON', GTW, 'x', GTH, 'tiles, straal vanaf', 3 + 64 + GTW * GTH)
+
+# ------------------------------------------------------------------ Mewtwo: het scherm wordt paars, twee gloeiende ogen gaan open, psychische schokgolf
+# 1-54 ogen (3 standen x 6x3, linkeroog; rechts = gespiegeld), 55 rand buiten (dither), 56 rand fel, 57 rand binnen,
+# 58-59 psychische vulling; kleurcyclus over 4 paletten
+MEW = [(0, 0, 0), (6, 2, 10), (12, 4, 20), (20, 8, 28), (26, 16, 31), (31, 26, 31), (2, 0, 4), (8, 20, 31), (22, 30, 31)]
+def eye(open_):
+    """Linkeroog (binnenhoek rechts): rechte, schuin aflopende bovenrand (boze blik), bolle onderrand, paarse iris."""
+    def f(x, y):
+        if not 3 <= x <= 44:
+            return 0
+        u = (x - 3) / 41.0
+        mid = 9 + 7 * u                              # lijn van buitenhoek naar binnenhoek
+        top0 = 3 + 11 * u                            # bovenrand (open): recht en schuin
+        bot0 = mid + 8 * math.sin(math.pi * u) ** 0.7
+        top = mid + (top0 - mid) * open_
+        bot = mid + (bot0 - mid) * open_
+        if top <= y <= bot + 0.5:
+            d = math.hypot(x - 28, y - (mid + 2 * open_))
+            if d < 2.2 * open_ + 0.5:
+                return 6
+            if d < 6 * open_ + 0.6:
+                return 3
+            return 8 if y > top + 1.5 else 5
+        if top - 2.5 <= y <= bot + 2.5:
+            return 4 if top - 1.5 <= y <= bot + 1.5 else (2 if (x + y) % 2 else 0)
+        return 0
+    return f
+mew = []
+for o in (0.12, 0.55, 1.0):
+    mew += blocks(eye(o), 6, 3)
+mew += [tile(lambda x, y: 4 if (x + y) % 2 else 0), tile(lambda x, y: 5), tile(lambda x, y: 3 if (x + y) % 2 else 4)]
+mew += [tile(lambda x, y, v=v: 1 + int((math.sin(x * 0.8 + y * 0.5 + v * 2) + math.sin(y * 0.9 - x * 0.4)) + 2.2) % 3) for v in range(2)]
+save('mewtwo', mew, cycle(pad(MEW), 4, amp=3))

@@ -14297,15 +14297,15 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_TriPass,
     },
 
-    [ITEM_RAINBOW_PASS] =
+    [ITEM_RAINBOW_PASS] = // Project Grounded: Bloom Ticket (Shaymin, Flower Paradise)
     {
-        .name = ITEM_NAME("Rainbow Pass"),
-        .pluralName = ITEM_PLURAL_NAME("Rainbow Passes"),
+        .name = ITEM_NAME("Bloom Ticket"),
+        .pluralName = ITEM_PLURAL_NAME("Bloom Tickets"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "For ferries serving\n"
-            "Vermilion and the\n"
-            "Sevii Islands."),
+            "A ticket for the\n"
+            "S.S. Tidal to a\n"
+            "flower island."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

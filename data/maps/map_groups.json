@@ -458,7 +458,10 @@
     "RegidragoCave",
     "RegigigasTemple",
     "FieryPath_HeatranLair",
-    "MeteorSpace"
+    "MeteorSpace",
+    "Route112_Dojo",
+    "Route112_TowerOfDarkness",
+    "Route112_TowerOfWaters"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -615,7 +618,9 @@
     "TrainerHill_Elevator",
     "BattleFrontier_SpireLobby",
     "BattleFrontier_StadiumLobby",
-    "BattleFrontier_StadiumArena"
+    "BattleFrontier_StadiumArena",
+    "FlowerParadise_Shore",
+    "FlowerParadise_Meadow"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

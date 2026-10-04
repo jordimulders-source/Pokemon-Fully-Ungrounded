@@ -966,8 +966,17 @@
 #define TRAINER_STADIUM_JOHNSON                 952
 #define TRAINER_STADIUM_LYLE                    953
 #define TRAINER_DITTO                           954
+// Project Grounded: Kubfu-dojo op Route 112
+#define TRAINER_DOJO_DARK_1                     955
+#define TRAINER_DOJO_DARK_2                     956
+#define TRAINER_DOJO_DARK_KEEPER                957
+#define TRAINER_DOJO_WATER_1                    958
+#define TRAINER_DOJO_WATER_2                    959
+#define TRAINER_DOJO_WATER_KEEPER               960
+#define TRAINER_MUSTARD                         961
+#define TRAINER_STADIUM_MUSTARD                 962
 
-#define TRAINERS_COUNT                      955
+#define TRAINERS_COUNT                      963
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

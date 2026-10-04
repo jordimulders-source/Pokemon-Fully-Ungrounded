@@ -32034,3 +32034,333 @@ Nature: Careful
 - Body Slam
 - Seed Bomb
 - Rest
+
+/* Project Grounded: Kubfu-dojo op Route 112 (Tower of Darkness / Tower of Waters, meester Mustard) */
+=== TRAINER_DOJO_DARK_1 ===
+Name: VESPER
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Zorua
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Illusion
+- Snarl
+- Fake Tears
+- Feint Attack
+- Hone Claws
+
+Inkay
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Contrary
+- Superpower
+- Psybeam
+- Foul Play
+- Hypnosis
+
+=== TRAINER_DOJO_DARK_2 ===
+Name: KAGE
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Scraggy
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Intimidate
+- Brick Break
+- Payback
+- Fake Out
+- Sand Attack
+
+Liepard
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Prankster
+- Sucker Punch
+- Torment
+- Fake Out
+- Assurance
+
+Pancham
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Iron Fist
+- Arm Thrust
+- Work Up
+- Karate Chop
+- Circle Throw
+
+=== TRAINER_DOJO_DARK_KEEPER ===
+Name: OBSIDIAN
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Krokorok
+Level: 26
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Intimidate
+- Crunch
+- Bulldoze
+- Sand Tomb
+- Swagger
+
+Pawniard
+Level: 26
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Defiant
+- Metal Claw
+- Night Slash
+- Iron Defense
+- Fury Cutter
+
+Absol @ Black Glasses
+Level: 27
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Serene Grace
+- Night Slash
+- Play Rough
+- Swords Dance
+- Quick Attack
+
+=== TRAINER_DOJO_WATER_1 ===
+Name: MARINA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Buizel
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Swift Swim
+- Aqua Jet
+- Bite
+- Water Pulse
+- Swift
+
+Clauncher
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Mega Launcher
+- Water Pulse
+- Vise Grip
+- Smack Down
+- Flail
+
+=== TRAINER_DOJO_WATER_2 ===
+Name: RYU
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Poliwhirl
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Water Absorb
+- Bubble Beam
+- Hypnosis
+- Body Slam
+- Double Slap
+
+Mareanie
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Merciless
+- Toxic
+- Venoshock
+- Bite
+- Pin Missile
+
+Mienfoo
+Level: 26
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Regenerator
+- Force Palm
+- Fake Out
+- U-turn
+- Detect
+
+=== TRAINER_DOJO_WATER_KEEPER ===
+Name: TIDE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Frogadier
+Level: 26
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Protean
+- Water Pulse
+- Quick Attack
+- Rock Tomb
+- Smokescreen
+
+Wimpod
+Level: 26
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Wimp Out
+- Bug Bite
+- Struggle Bug
+- Sand Attack
+- Defense Curl
+
+Drednaw @ Mystic Water
+Level: 27
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Strong Jaw
+- Bite
+- Rock Tomb
+- Razor Shell
+- Headbutt
+
+=== TRAINER_MUSTARD ===
+Name: MUSTARD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Yellow
+
+Luxio
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Intimidate
+- Spark
+- Crunch
+- Ice Fang
+- Swagger
+
+Corvisquire
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Big Pecks
+- Pluck
+- Taunt
+- Hone Claws
+- Fury Attack
+
+Jangmo-o
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Bulletproof
+- Dragon Tail
+- Headbutt
+- Bulk Up
+- Protect
+
+Mienfoo
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Regenerator
+- Drain Punch
+- U-turn
+- Fake Out
+- Bounce
+
+Urshifu_Rapid_Strike @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Unseen Fist
+- Surging Strikes
+- Brick Break
+- Aqua Jet
+- Bulk Up
+
+=== TRAINER_STADIUM_MUSTARD ===
+Name: MUSTARD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Yellow
+
+Kommo-o @ Throat Spray
+Level: 50
+Ability: Bulletproof
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Clangorous Soul
+- Clanging Scales
+- Aura Sphere
+- Flamethrower
+
+Corviknight @ Leftovers
+Level: 50
+Ability: Mirror Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
+- Brave Bird
+- Body Press
+- Roost
+- Bulk Up
+
+Luxray @ Choice Band
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Wild Charge
+- Crunch
+- Ice Fang
+- Play Rough
+
+Mienshao @ Life Orb
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- High Jump Kick
+- U-turn
+- Fake Out
+- Knock Off
+
+Slowking_Galar @ Assault Vest
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Sludge Bomb
+- Psychic
+- Flamethrower
+- Slack Off
+
+Urshifu_Rapid_Strike @ Choice Scarf
+Level: 50
+Ability: Unseen Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Surging Strikes
+- Close Combat
+- U-turn
+- Aqua Jet

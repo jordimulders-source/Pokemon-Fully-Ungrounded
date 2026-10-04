@@ -598,3 +598,5 @@ gSpecials::
 	def_special Stadium_SetArenaGfx
 	def_special Stadium_GetMatchNames
 	def_special Stadium_GetBpText
+	def_special Grounded_PartyHasKubfu
+	def_special Grounded_EvolveKubfu

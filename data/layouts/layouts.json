@@ -4630,6 +4630,56 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/MtChimney_EnteiLair/border.bin",
       "blockdata_filepath": "data/layouts/MtChimney_EnteiLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOWER_PARADISE_SHORE",
+      "name": "FlowerParadise_Shore_Layout",
+      "width": 33,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/FlowerParadise_Shore/border.bin",
+      "blockdata_filepath": "data/layouts/FlowerParadise_Shore/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOWER_PARADISE_MEADOW",
+      "name": "FlowerParadise_Meadow_Layout",
+      "width": 29,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FlowerParadise",
+      "border_filepath": "data/layouts/FlowerParadise_Meadow/border.bin",
+      "blockdata_filepath": "data/layouts/FlowerParadise_Meadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_DOJO",
+      "name": "Route112_Dojo_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_Dojo/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_Dojo/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_TOWER_OF_DARKNESS",
+      "name": "Route112_TowerOfDarkness_Layout",
+      "width": 9,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_TowerOfDarkness/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_TowerOfDarkness/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_TOWER_OF_WATERS",
+      "name": "Route112_TowerOfWaters_Layout",
+      "width": 9,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_TowerOfWaters/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_TowerOfWaters/map.bin"
     }
   ]
 }

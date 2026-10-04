@@ -1041,6 +1041,48 @@ Shiny: Yes
 - Focus Blast
 - Trick
 
+=== PARTNER_STADIUM_MUSTARD ===
+Name: MUSTARD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Kommo-o @ Throat Spray
+Level: 50
+Ability: Bulletproof
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Clangorous Soul
+- Clanging Scales
+- Aura Sphere
+- Flamethrower
+
+Luxray @ Choice Band
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Wild Charge
+- Crunch
+- Ice Fang
+- Play Rough
+
+Urshifu_Rapid_Strike @ Choice Scarf
+Level: 50
+Ability: Unseen Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Surging Strikes
+- Close Combat
+- U-turn
+- Aqua Jet
+
 === PARTNER_STADIUM_MATT ===
 Name: MATT
 Class: Aqua Admin

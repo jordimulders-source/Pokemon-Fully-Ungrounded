@@ -685,10 +685,10 @@
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
+#define FLAG_HIDE_FLOWER_PARADISE_SHAYMIN  0x281 // Project Grounded: Shaymin gevangen
+#define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
+#define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
+#define FLAG_KUBFU_EVOLVED  0x284 // Project Grounded: een toren van de dojo voltooid, Kubfu geevolueerd
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag

@@ -46,6 +46,7 @@ static EWRAM_DATA struct DynamicMultichoiceStack *sDynamicMultiChoiceStack = NUL
 static EWRAM_DATA u16 *sDynamicMenuEventScratchPad = NULL;
 
 static u8 sLilycoveSSTidalSelections[SSTIDAL_SELECTION_COUNT];
+static u8 sLilycoveSSTidalCount; // Project Grounded
 
 static void FreeListMenuItems(struct ListMenuItem *items, u32 count);
 static void Task_HandleScrollingMultichoiceInput(u8 taskId);
@@ -874,16 +875,21 @@ static void CreateLilycoveSSTidalMultichoice(void)
         }
     }
 
+    // Project Grounded: Flower Paradise (Shaymin) met het Bloom Ticket uit de Battle Frontier
+    if (gSpecialVar_0x8004 == 0 && CheckBagHasItem(ITEM_BLOOM_TICKET, 1) == TRUE)
+    {
+        sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_FLOWER_PARADISE;
+        selectionCount++;
+    }
+
     sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_EXIT;
     selectionCount++;
 
-    if (gSpecialVar_0x8004 == 0 && FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)
-    {
-        count = selectionCount;
-    }
-
     count = selectionCount;
-    if (count == SSTIDAL_SELECTION_COUNT)
+    sLilycoveSSTidalCount = count;
+    // Project Grounded: meer dan 6 keuzes past niet in een gewoon venster; dan de scrollbare lijst (met alleen de
+    // bestemmingen waarvoor je een ticket hebt, zie GetLilycoveSSTidalSelectionText)
+    if (count > 6)
     {
         gSpecialVar_0x8004 = SCROLL_MULTI_SS_TIDAL_DESTINATION;
         ShowScrollableMultichoice();
@@ -918,6 +924,17 @@ static void CreateLilycoveSSTidalMultichoice(void)
         CopyWindowToVram(windowId, COPYWIN_FULL);
         InitMultichoiceCheckWrap(FALSE, count, windowId, MULTI_SSTIDAL_LILYCOVE);
     }
+}
+
+// Project Grounded: de scrollbare veerbootlijst (field_specials.c) toont alleen de beschikbare bestemmingen
+u8 GetLilycoveSSTidalSelectionCount(void)
+{
+    return sLilycoveSSTidalCount;
+}
+
+const u8 *GetLilycoveSSTidalSelectionText(u8 i)
+{
+    return sLilycoveSSTidalDestinations[sLilycoveSSTidalSelections[i]];
 }
 
 void GetLilycoveSSTidalSelection(void)

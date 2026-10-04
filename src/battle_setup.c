@@ -525,6 +525,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van Gracidea-bloemen
+    case SPECIES_SHAYMIN_SKY:
+        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

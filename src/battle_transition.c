@@ -152,6 +152,7 @@ static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
 static void Task_Heatran(u8); // Project Grounded
+static void Task_Shaymin(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -441,6 +442,8 @@ static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
 static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
+static const u16 sShaymin_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.4bpp");
+static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -546,6 +549,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
     [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
     [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
+    [B_TRANSITION_SHAYMIN] = Task_Shaymin, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7446,4 +7450,81 @@ static const struct RouteTransition sRT_Heatran =
 static void Task_Heatran(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Heatran);
+}
+
+// ---------------- Shaymin: drie spiraalarmen van Gracidea-bloemen en -blaadjes draaien om het midden van het scherm,
+// de wereld wordt donker zodat de bloemen oplichten, en dan bedekt een bloementapijt vanuit het midden het hele beeld.
+// tiles: 1-2 Gracidea (roze / wit), 3-6 roze blaadje, 7-8 wit blaadje, 9 bloementapijt, 10 lichtroze, 11-14 grote
+// Gracidea (2x2). Het beeld wordt eerst in een buffer opgebouwd en dan in een keer gekopieerd (geen scheuren).
+#define SHAYMIN_PETALS 120
+#define SHAYMIN_CARPET_START 46
+
+static void RTShaymin_Put(u8 *cells, s32 x, s32 y, u8 tile)
+{
+    if (x >= 0 && x < 30 && y >= 0 && y < 20 && cells[y * 30 + x] < 9) // niet over het tapijt (doorzichtige randen)
+        cells[y * 30 + x] = tile;
+}
+
+static bool8 RTShaymin_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, n, r, ang, x, y, carpet, dx, dy;
+    u8 cells[30 * 20];
+
+    // het bloementapijt: een cirkel vanuit het midden die steeds groter wordt
+    carpet = (t >= SHAYMIN_CARPET_START) ? (t - SHAYMIN_CARPET_START) * 3 / 2 : -1;
+    for (y = 0; y < 20; y++)
+    {
+        for (x = 0; x < 30; x++)
+        {
+            dx = x * 2 - 29;
+            dy = (y * 2 - 19) * 3 / 2;
+            cells[y * 30 + x] = (carpet >= 0 && dx * dx + dy * dy <= carpet * carpet * 4) ? (((x + y + t / 3) % 5) ? 9 : 10) : 0;
+        }
+    }
+
+    // de wervelwind: drie spiraalarmen die naar buiten draaien; elke achtste is een grote bloem
+    n = min(12 + t * 4, SHAYMIN_PETALS);
+    for (i = 0; i < n; i++)
+    {
+        r = ((i / 3) * 7 + t * 3) % 150;
+        ang = ((i % 3) * 85 + r + t * 5 + (i * 13) % 20) & 0xFF;
+        x = 15 + Cos(ang, r) / 8;
+        y = 10 + Sin(ang, r * 2 / 3) / 8;
+        if (i % 8 == 0)
+        {
+            RTShaymin_Put(cells, x, y, 11);
+            RTShaymin_Put(cells, x + 1, y, 12);
+            RTShaymin_Put(cells, x, y + 1, 13);
+            RTShaymin_Put(cells, x + 1, y + 1, 14);
+        }
+        else if (i % 5 == 0)
+            RTShaymin_Put(cells, x, y, 1 + (i / 5) % 2);
+        else if (i % 3 == 0)
+            RTShaymin_Put(cells, x, y, 7 + ((ang >> 6) & 1));
+        else
+            RTShaymin_Put(cells, x, y, 3 + (ang >> 6));
+    }
+
+    for (y = 0; y < 20; y++)
+        for (x = 0; x < 30; x++)
+            tilemap[y * 32 + x] = cells[y * 30 + x] ? RT_TILE(cells[y * 30 + x]) : 0;
+
+    if (t == 0 || t == 30)
+        PlaySE(SE_M_PETAL_DANCE);
+    if (carpet < 22)
+        BlendPalettes(RT_SCENE_PALETTES, min(t / 4, 10), RGB(3, 8, 5));    // de wereld wordt donkergroen
+    else
+        BlendPalettes(PALETTES_ALL, min(10 + (carpet - 22), 16), RGB(31, 28, 30));
+    return carpet >= 28;
+}
+
+static const struct RouteTransition sRT_Shaymin =
+{
+    sShaymin_Tileset, sizeof(sShaymin_Tileset), sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
+};
+
+static void Task_Shaymin(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Shaymin);
 }

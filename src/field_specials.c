@@ -73,6 +73,7 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "evolution_scene.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -2360,7 +2361,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 12; // Project Grounded: + twee tickets (Aurora Ticket weg: Deoxys alleen in de ruimte)
+        task->tNumItems = 13; // Project Grounded: + drie tickets (Old Sea Map, Mystic, Bloom; Aurora Ticket weg: Deoxys alleen in de ruimte)
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2401,7 +2402,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_SS_TIDAL_DESTINATION:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
+        task->tNumItems = GetLilycoveSSTidalSelectionCount(); // Project Grounded: alleen de beschikbare bestemmingen
         task->tLeft = 19;
         task->tTop = 1;
         task->tWidth = 10;
@@ -2504,6 +2505,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("SCOPE LENS{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("OLD SEA MAP{CLEAR_TO 0x58}200BP"), // Project Grounded
         COMPOUND_STRING("MYSTICTICKET{CLEAR_TO 0x58}200BP"),
+        COMPOUND_STRING("BLOOM TICKET{CLEAR_TO 0x58}200BP"),
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2603,6 +2605,8 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     for (width = 0, i = 0; i < task->tNumItems; i++)
     {
         const u8 *text = sScrollableMultichoiceOptions[gSpecialVar_0x8004][i];
+        if (gSpecialVar_0x8004 == SCROLL_MULTI_SS_TIDAL_DESTINATION) // Project Grounded
+            text = GetLilycoveSSTidalSelectionText(i);
         sScrollableMultichoice_ListMenuItem[i].name = text;
         sScrollableMultichoice_ListMenuItem[i].id = i;
         width = DisplayTextAndGetWidth(text, width);
@@ -4391,4 +4395,38 @@ void SetAbility(void)
 {
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
+}
+
+// Project Grounded: Kubfu-dojo (Route 112). Zit er een Kubfu (geen ei) in het team?
+static s32 FindPartyKubfu(void)
+{
+    u32 i;
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_KUBFU
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            return i;
+    }
+    return -1;
+}
+
+bool8 Grounded_PartyHasKubfu(void)
+{
+    return FindPartyKubfu() >= 0;
+}
+
+// Laat de eerste Kubfu in het team evolueren. gSpecialVar_0x8004: 0 = Tower of Darkness (Single Strike),
+// 1 = Tower of Waters (Rapid Strike). In het script: special Grounded_EvolveKubfu + waitstate.
+void Grounded_EvolveKubfu(void)
+{
+    s32 slot = FindPartyKubfu();
+    u16 target = gSpecialVar_0x8004 ? SPECIES_URSHIFU_RAPID_STRIKE : SPECIES_URSHIFU_SINGLE_STRIKE;
+
+    if (slot < 0)
+    {
+        ScriptContext_Enable();
+        return;
+    }
+    gCB2_AfterEvolution = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    BeginEvolutionScene(&gPlayerParty[slot], target, FALSE, slot);
 }

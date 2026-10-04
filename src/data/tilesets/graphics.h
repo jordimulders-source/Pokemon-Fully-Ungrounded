@@ -1749,3 +1749,25 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.fastSmol");
+
+const u32 gTilesetTiles_FlowerParadise[] = INCBIN_U32("data/tilesets/secondary/flower_paradise/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_FlowerParadise[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/15.gbapal"),
+};

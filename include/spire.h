@@ -242,6 +242,8 @@ void Spire_StartEventFight(void);
 void Spire_ReturnToField(void);
 u16 Spire_GetBossSpecies(void);
 void Spire_Enter(void);
+void Spire_IsRunActive(void);
+void Spire_GiveUpFromField(void);
 void Spire_ResetRun(void);
 void Spire_DebugOpen(void);
 
@@ -296,6 +298,7 @@ enum SpireFx
     SPIRE_FX_WONDER,
     SPIRE_FX_EVOLVE,
     SPIRE_FX_WHEEL,
+    SPIRE_FX_RECRUIT_PSEUDO,
 };
 extern u8 gSpireForcedEvent;    // debug: 0 = willekeurig, anders event-index + 1
 void Spire_OpenEvent(void (*onDone)(void));

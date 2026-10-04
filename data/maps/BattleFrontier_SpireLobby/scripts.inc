@@ -5,9 +5,29 @@ BattleFrontier_SpireLobby_MapScripts::
 BattleFrontier_SpireLobby_EventScript_Attendant::
 	lockall
 	faceplayer
+	special Spire_IsRunActive
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_SpireLobby_EventScript_Continue
 	msgbox BattleFrontier_SpireLobby_Text_Attendant, MSGBOX_DEFAULT
+	msgbox BattleFrontier_SpireLobby_Text_StartClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_SpireLobby_EventScript_NotToday
+BattleFrontier_SpireLobby_EventScript_Enter::
 	special Spire_Enter
 	waitstate
+	releaseall
+	end
+
+BattleFrontier_SpireLobby_EventScript_Continue::
+	msgbox BattleFrontier_SpireLobby_Text_Continue, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_SpireLobby_EventScript_Enter
+	msgbox BattleFrontier_SpireLobby_Text_GiveUp, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_SpireLobby_EventScript_NotToday
+	special Spire_GiveUpFromField
+	waitstate
+	releaseall
+	end
+
+BattleFrontier_SpireLobby_EventScript_NotToday::
+	msgbox BattleFrontier_SpireLobby_Text_NotToday, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -29,6 +49,21 @@ BattleFrontier_SpireLobby_Text_Attendant:
 	.string "Leave whenever you like.\n"
 	.string "The Spire will keep your spot.\l"
 	.string "It is very patient. Up you go!$"
+
+BattleFrontier_SpireLobby_Text_StartClimb:
+	.string "Shall I open the stairs?$"
+
+BattleFrontier_SpireLobby_Text_Continue:
+	.string "Your climb is still waiting for you.\n"
+	.string "Shall we pick up where you left off?$"
+
+BattleFrontier_SpireLobby_Text_GiveUp:
+	.string "Then shall I end this run?\n"
+	.string "You keep the BP you earned.$"
+
+BattleFrontier_SpireLobby_Text_NotToday:
+	.string "Of course. The Spire is not going\n"
+	.string "anywhere. Mostly upwards.$"
 
 BattleFrontier_SpireLobby_Text_Veteran:
 	.string "I made it to floor three once.\n"

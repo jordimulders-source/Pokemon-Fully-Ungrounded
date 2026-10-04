@@ -502,6 +502,18 @@ void Spire_GiveUpRun(void)
     EndRun(FALSE);
 }
 
+// specials voor de receptioniste: VAR_RESULT = TRUE als er een run loopt; opgeven vanuit de lobby
+void Spire_IsRunActive(void)
+{
+    gSpecialVar_Result = Spire_RunActive();
+}
+
+void Spire_GiveUpFromField(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    EndRun(FALSE);
+}
+
 // ---------------------------------------------------------------------------------------------
 // Rentals: heal, PP, evolutie
 
@@ -571,9 +583,14 @@ void Spire_EvolveTo(u32 i, u16 target)
 {
     struct Pokemon *mon = &RUN.mons[i];
     u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP), newHp;
+    u8 nick[POKEMON_NAME_LENGTH + 1];
 
     if (target == SPECIES_NONE)
         return;
+    // rentals hebben geen bijnaam: de naam evolueert mee (anders heet een Charmeleon nog Charmander)
+    GetMonData(mon, MON_DATA_NICKNAME, nick);
+    if (StringCompare(nick, GetSpeciesName(GetMonData(mon, MON_DATA_SPECIES))) == 0)
+        SetMonData(mon, MON_DATA_NICKNAME, GetSpeciesName(target));
     SetMonData(mon, MON_DATA_SPECIES, &target);
     CalculateMonStats(mon);
     Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(i));

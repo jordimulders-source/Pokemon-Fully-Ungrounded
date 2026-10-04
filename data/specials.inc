@@ -581,3 +581,5 @@ gSpecials::
 	def_special Spire_Enter
 	def_special Spire_ResetRun
 	def_special Spire_DebugOpen
+	def_special Spire_IsRunActive
+	def_special Spire_GiveUpFromField

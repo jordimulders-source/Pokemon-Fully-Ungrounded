@@ -26,6 +26,7 @@ Effecten (zie enum SpireFx in include/spire.h):
   recruit                 de event-Pokémon van dit event ({STR_VAR_3}) vervangt er één
   recruitspecies SPECIES  vaste soort vervangt er één (moet in de rentalpool staan)
   ditto                   de speciale Ditto (Jordi)
+  recruitpseudo           de pseudo-legendary van dit event (icoon 'PSEUDO'), op het stadium van de act + 1
   wonder                  één willekeurige Pokémon wordt geruild voor een willekeurige rental
   evolve                  één willekeurige Pokémon evolueert nu al (geen evolutie mogelijk: +60¥)
   wheel                   Spinda's rad (zes uitkomsten, tekst uit de C-code)
@@ -49,8 +50,9 @@ TITLE_W = 140       # titel (FONT_NORMAL)
 VAR_W = 50          # {STR_VAR_3} (soortnaam)
 
 E = []
-def ev(key, title, icon, story, options, acts=(1, 2, 3)):
-    E.append(dict(key=key, title=title, icon=icon, story=story, options=options, acts=acts))
+def ev(key, title, icon, story, options, acts=(1, 2, 3), weight=4):
+    # weight: kans om gekozen te worden (4 = normaal, 1 = zeldzaam)
+    E.append(dict(key=key, title=title, icon=icon, story=story, options=options, acts=acts, weight=weight))
 def opt(name, fx=(), result='', need=None, **kw):
     d = dict(name=name, fx=list(fx), result=result, need=need)
     d.update(kw)
@@ -350,6 +352,25 @@ ev('zorua', 'TWO OF YOU', 'ZORUA',
    [gamble('Point', 50, [('gold', 80)], 'Correct. Zorua drops its disguise and its wallet.',
            [('heal', -20)], 'Wrong. Your own Pokémon is offended. Zorua laughs and leaves.'),
     LEAVE('Both of them follow you. One disappears around the corner.')])
+# v0.8.107 (Jordi): Gholdengo, Snorlax en een willekeurige pseudo-legendary
+ev('gholdengo', '999 COINS', 'GIMMIGHOUL',
+   'A Gimmighoul sits on a heap of coins and counts them out loud. It has 998. It has had 998 for years. It is looking at your wallet.',
+   [opt('Give it all', [('gold', -120), ('goldpct', -100), ('recruitspecies', 'GHOLDENGO')],
+        'It counts to 999 and screams. When the light fades, a Gholdengo is surfing on your money. It wants to come with you. It is keeping the money.',
+        sum='{COLOR RED}{SHADOW LIGHT_RED}All ¥ (120+){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}, {COLOR GREEN}{SHADOW LIGHT_GREEN}Gholdengo joins'),
+    gamble('One coin', 10, [('gold', -1), ('recruitspecies', 'GHOLDENGO')], 'It counts again. 999. It evolves on the spot and looks at you like you hung the moon.',
+           [('gold', -1)], 'It counts again. 998. It recounts. 998. It does not give the coin back.'),
+    LEAVE('Gimmighoul keeps counting. 998. 998. 998.')])
+ev('snorlax', 'THE STAIRS ARE ASLEEP', 'SNORLAX',
+   'A Snorlax is asleep across the stairs. It has been there since floor one. Some say the tower was built around it.',
+   [opt('Feed it', [('loseitems',), ('recruitspecies', 'SNORLAX')], 'It eats everything your team was holding. Then it wakes up, satisfied, and follows the food source: you.'),
+    opt('Nap with it', [('fullheal',), ('sleep', 100)], 'Best nap of your life. Your team is fully rested. A bit too rested, for the next battle.'),
+    opt('Climb over', [('heal', -10)], 'It rolls over halfway. Nobody is hurt badly. Nobody talks about it.')])
+ev('pseudo', 'A RARE SIGHT', 'PSEUDO',
+   'A wild {STR_VAR_3} lands right in front of you. It looks at you. It looks at your team. It decides you will do.',
+   [opt('Welcome it', [('recruitpseudo',)], 'Trainers search for years for one of these. You took the stairs.'),
+    opt('Not today', [('bp', 3)], 'You let a {STR_VAR_3} go. Somewhere, every trainer you ever met sighs at once.')],
+   weight=1)
 ev('audino', 'A CHECK-UP', 'AUDINO',
    'An Audino listens to your team with its ears. It frowns. It has bad news, and a discount.',
    [opt('Treatment', [('gold', -60), ('maxhp', 6), ('heal', 20)], 'It fixes something you did not know was broken.'),
@@ -416,7 +437,7 @@ GOOD, BAD, NEUTRAL, PLAIN = '{COLOR GREEN}{SHADOW LIGHT_GREEN}', '{COLOR RED}{SH
 RAR = ['Item', 'Good item', 'Rare item']
 MOVE_RAR = ['Move', 'Uncommon move', 'Rare move']
 APPENDS = {'forget', 'upgrade', 'evolve', 'wonder', 'sleep', 'loserelic', 'relic'}   # C voegt een regel toe
-INTERACTIVE = {'item', 'give', 'teach', 'teachtype', 'teachmove', 'remove', 'recruit', 'recruitspecies', 'ditto'}
+INTERACTIVE = {'item', 'give', 'teach', 'teachtype', 'teachmove', 'remove', 'recruit', 'recruitspecies', 'ditto', 'recruitpseudo'}
 
 
 def fx_text(f):
@@ -470,6 +491,8 @@ def fx_text(f):
         return GOOD + '%s joins' % species_name(a)
     if k == 'ditto':
         return GOOD + 'Ditto joins'
+    if k == 'recruitpseudo':
+        return GOOD + '{STR_VAR_3} joins'
     if k == 'wonder':
         return NEUTRAL + 'Random trade'
     if k == 'evolve':
@@ -481,7 +504,7 @@ def fx_text(f):
 
 def summary(o):
     if 'sum' in o:
-        return GOOD + o['sum']
+        return o['sum'] if o['sum'].startswith('{') else GOOD + o['sum']
     if 'chance' in o:
         a = ', '.join(fx_text(f) for f in o['fx'] if f[0] != 'gold' or f[1] > 0) or (PLAIN + 'safe')
         b = ', '.join(fx_text(f) for f in o['fxb'] if f[0] != 'gold' or f[1] > 0) or (PLAIN + 'nothing')
@@ -499,7 +522,7 @@ FX_ENUM = {'gold': 'GOLD', 'goldpct': 'GOLD_PCT', 'heal': 'HEAL', 'hurt1': 'HURT
            'teach': 'TEACH', 'teachtype': 'TEACH_TYPE', 'teachmove': 'TEACH_MOVE', 'upgrade': 'UPGRADE', 'forget': 'FORGET',
            'remove': 'REMOVE', 'fullheal': 'FULLHEAL', 'pp': 'PP', 'sleep': 'SLEEP', 'toxic': 'TOXIC', 'elite': 'ELITE',
            'recruit': 'RECRUIT', 'recruitspecies': 'RECRUIT_SPECIES', 'ditto': 'DITTO', 'wonder': 'WONDER',
-           'evolve': 'EVOLVE', 'wheel': 'WHEEL'}
+           'evolve': 'EVOLVE', 'wheel': 'WHEEL', 'recruitpseudo': 'RECRUIT_PSEUDO'}
 errors = []
 
 
@@ -555,7 +578,7 @@ for e in E:
         errors.append(f"{e['key']}: verhaal {len(story)} regels: {story}")
     if not 1 <= len(e['options']) <= 3:
         errors.append(f"{e['key']}: {len(e['options'])} opties")
-    if e['icon'] and e['icon'] != 'RECRUIT' and not re.search(r'#define SPECIES_%s\b' % e['icon'], species_h):
+    if e['icon'] and e['icon'] not in ('RECRUIT', 'PSEUDO') and not re.search(r'#define SPECIES_%s\b' % e['icon'], species_h):
         errors.append(f"{e['key']}: onbekende soort {e['icon']}")
     opts = []
     for o in e['options']:
@@ -578,9 +601,9 @@ for e in E:
             o.get('chance', 100), c_fx(o['fx']), c_fx(o.get('fxb', [])),
             c_str('\\n'.join(ra)), c_str('\\n'.join(rb)) if rb else 'NULL'))
     acts = sum(1 << (a - 1) for a in e['acts'])
-    rows.append('    {%s, %s, %s, %d, %d, {\n%s\n    }},' % (
-        c_str(e['title']), c_str('\\n'.join(story)), 'SPIRE_EVENT_ICON_RECRUIT' if e['icon'] == 'RECRUIT' else ('SPECIES_' + e['icon']) if e['icon'] else 'SPECIES_NONE',
-        acts, len(e['options']), '\n'.join(opts)))
+    rows.append('    {%s, %s, %s, %d, %d, %d, {\n%s\n    }},' % (
+        c_str(e['title']), c_str('\\n'.join(story)), 'SPIRE_EVENT_ICON_RECRUIT' if e['icon'] == 'RECRUIT' else 'SPIRE_EVENT_ICON_PSEUDO' if e['icon'] == 'PSEUDO' else ('SPECIES_' + e['icon']) if e['icon'] else 'SPECIES_NONE',
+        acts, e['weight'], len(e['options']), '\n'.join(opts)))
 
 if errors:
     print('\n'.join(errors))
@@ -588,7 +611,7 @@ if errors:
 
 with open(OUT, 'w', encoding='utf-8') as f:
     f.write('// Gegenereerd door tools/grounded/spire/events.py; niet met de hand bewerken.\n')
-    f.write('// {titel, verhaal, icoon, acts (bitmasker), aantal opties, {naam, effectregel, type-eis, kost geld,\n')
+    f.write('// {titel, verhaal, icoon, acts (bitmasker), gewicht, aantal opties, {naam, effectregel, type-eis, kost geld,\n')
     f.write('//  kans (%), effecten, effecten bij mislukken, uitkomst, uitkomst bij mislukken}}\n\n')
     f.write('static const struct SpireEventData sSpireEvents[] =\n{\n')
     f.write('\n'.join(rows))

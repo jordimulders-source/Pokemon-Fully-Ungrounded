@@ -60,11 +60,20 @@ struct SpireEventData
     const u8 *story;
     u16 species;            // icoon in de kop
     u8 acts;                // bit 0 = act 1
+    u8 weight;              // kans om gekozen te worden (4 = normaal, 1 = zeldzaam)
     u8 count;
     struct SpireEventOption options[3];
 };
 
 #define SPIRE_EVENT_ICON_RECRUIT 0xFFFF   // icoon = de soort van {STR_VAR_3}
+#define SPIRE_EVENT_ICON_PSEUDO  0xFFFE   // idem, en {STR_VAR_3} is een willekeurige pseudo-legendary
+
+// Pseudo-legendaries (basisvorm; ze komen binnen op het stadium van de act + 1, zie RecruitPseudo)
+static const u16 sPseudos[] =
+{
+    SPECIES_DRATINI, SPECIES_LARVITAR, SPECIES_BAGON, SPECIES_BELDUM, SPECIES_GIBLE,
+    SPECIES_DEINO, SPECIES_GOOMY, SPECIES_JANGMO_O, SPECIES_DREEPY, SPECIES_FRIGIBAX,
+};
 #include "data/spire_events.h"
 
 enum
@@ -115,6 +124,8 @@ struct SpireEventScreen
     u8 slot;
     u16 pendingValue;   // move, item of soort
     u16 recruit;        // soort voor {STR_VAR_3}
+    u16 recruitBase;    // pseudo: basisvorm (rental) en aantal evoluties daarna
+    u8 recruitEvos;
     u8 iconSpriteId;
     u8 recruitName[POKEMON_NAME_LENGTH + 1];
     u8 message[MESSAGE_SIZE];
@@ -757,6 +768,10 @@ static void ApplyFx(const struct SpireEventFx *f)
         sEv->pending = PEND_REPLACE;
         sEv->pendingValue = SPECIES_DITTO;
         break;
+    case SPIRE_FX_RECRUIT_PSEUDO:
+        sEv->pending = PEND_REPLACE;
+        sEv->pendingValue = sEv->recruit;
+        break;
     case SPIRE_FX_WONDER:
         WonderTrade();
         break;
@@ -833,9 +848,24 @@ static void FinishPending(void)
     case PEND_REPLACE:
         GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
         if (sEv->pendingValue == SPECIES_DITTO)
+        {
             Spire_SetSpecialDitto(sEv->mon);
+        }
+        else if (sEv->recruitBase != SPECIES_NONE && sEv->pendingValue == sEv->recruit)
+        {
+            // pseudo: als rental (startmoves van de basisvorm), dan evolueren
+            u32 k;
+            u16 targets[3];
+
+            Spire_SetRental(sEv->mon, sEv->recruitBase);
+            for (k = 0; k < sEv->recruitEvos; k++)
+                if (Spire_GetEvolutions(GetMonData(&RUN.mons[sEv->mon], MON_DATA_SPECIES), targets))
+                    Spire_EvolveTo(sEv->mon, targets[0]);
+        }
         else
+        {
             Spire_SetRental(sEv->mon, sEv->pendingValue);
+        }
         StringCopy(gStringVar2, GetSpeciesName(sEv->pendingValue));
         ShowMessage(COMPOUND_STRING("{STR_VAR_1} goes home.\n{STR_VAR_2} joins your team!"));
         break;
@@ -927,9 +957,15 @@ static void ChooseSlot(void)
 }
 
 // --- scherm -------------------------------------------------------------------------------------
+static bool32 EventSeen(u32 i)
+{
+    return (i < 32) ? (RUN.eventsSeen >> i) & 1 : (RUN.eventsSeen2 >> (i - 32)) & 1;
+}
+
+// Gewogen loting onder de events van deze act die deze run nog niet geweest zijn.
 static u32 PickEvent(void)
 {
-    u32 i, n = 0, pick, act = 1u << (RUN.act - 1);
+    u32 i, total = 0, pick, round, act = 1u << (RUN.act - 1);
 
     if (gSpireForcedEvent != 0 && gSpireForcedEvent <= ARRAY_COUNT(sSpireEvents))
     {
@@ -937,27 +973,25 @@ static u32 PickEvent(void)
         gSpireForcedEvent = 0;
         return i;
     }
-    for (pick = 0; pick < 2; pick++)
+    for (round = 0; round < 2 && total == 0; round++)
     {
-        for (i = 0; i < ARRAY_COUNT(sSpireEvents); i++)
+        if (round == 1)
         {
-            bool32 seen = (i < 32) ? (RUN.eventsSeen >> i) & 1 : (RUN.eventsSeen2 >> (i - 32)) & 1;
-
-            if ((sSpireEvents[i].acts & act) && !seen)
-                n++;
+            RUN.eventsSeen = 0;
+            RUN.eventsSeen2 = 0;
         }
-        if (n)
-            break;
-        RUN.eventsSeen = 0;
-        RUN.eventsSeen2 = 0;
+        for (i = 0; i < ARRAY_COUNT(sSpireEvents); i++)
+            if ((sSpireEvents[i].acts & act) && !EventSeen(i))
+                total += sSpireEvents[i].weight;
     }
-    pick = Random() % (n ? n : 1);
+    pick = Random() % (total ? total : 1);
     for (i = 0; i < ARRAY_COUNT(sSpireEvents); i++)
     {
-        bool32 seen = (i < 32) ? (RUN.eventsSeen >> i) & 1 : (RUN.eventsSeen2 >> (i - 32)) & 1;
-
-        if ((sSpireEvents[i].acts & act) && !seen && pick-- == 0)
+        if (!(sSpireEvents[i].acts & act) || EventSeen(i))
+            continue;
+        if (pick < sSpireEvents[i].weight)
             break;
+        pick -= sSpireEvents[i].weight;
     }
     if (i >= ARRAY_COUNT(sSpireEvents))
         i = 0;
@@ -966,6 +1000,21 @@ static u32 PickEvent(void)
     else
         RUN.eventsSeen2 |= 1u << (i - 32);
     return i;
+}
+
+// Pseudo-legendary: willekeurige lijn, één stadium verder dan de act (act 1 = middelste vorm).
+static void RollPseudo(void)
+{
+    u32 k;
+    u16 species, targets[3];
+
+    sEv->recruitBase = sPseudos[Random() % ARRAY_COUNT(sPseudos)];
+    sEv->recruitEvos = min(2, RUN.act);
+    species = sEv->recruitBase;
+    for (k = 0; k < sEv->recruitEvos; k++)
+        if (Spire_GetEvolutions(species, targets))
+            species = targets[0];
+    sEv->recruit = species;
 }
 
 static void VBlankCB_SpireEvent(void)
@@ -993,7 +1042,10 @@ void Spire_OpenEvent(void (*onDone)(void))
     sEv = AllocZeroed(sizeof(*sEv));
     sEv->onDone = onDone;
     sEv->ev = &sSpireEvents[PickEvent()];
-    sEv->recruit = Spire_RandomEventRental(Random());
+    if (sEv->ev->species == SPIRE_EVENT_ICON_PSEUDO)
+        RollPseudo();
+    else
+        sEv->recruit = Spire_RandomEventRental(Random());
     StringCopy(sEv->recruitName, GetSpeciesName(sEv->recruit));
     sEv->iconSpriteId = SPRITE_NONE;
 
@@ -1032,7 +1084,7 @@ void Spire_OpenEvent(void (*onDone)(void))
     LoadMonIconPalettes();
     if (sEv->ev->species != SPECIES_NONE)
     {
-        u16 species = (sEv->ev->species == SPIRE_EVENT_ICON_RECRUIT) ? sEv->recruit : sEv->ev->species;
+        u16 species = (sEv->ev->species >= SPIRE_EVENT_ICON_PSEUDO) ? sEv->recruit : sEv->ev->species;
 
         sEv->iconSpriteId = CreateMonIconNoPersonality(species, SpriteCB_MonIcon,
                                                        8 + 4 + GetStringWidth(FONT_NORMAL, sEv->ev->title, 0) + 20, 8 + 6, 0);

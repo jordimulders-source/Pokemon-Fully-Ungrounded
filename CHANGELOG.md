@@ -15868,3 +15868,14 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - Save: `eventsSeen2` achteraan `SpireSave` (64 events; een gepauzeerde run blijft geldig).
 - Debug: Spire_DebugOpen met `VAR_0x8004` = 2 en `VAR_0x8005` = eventnummer (1-55) opent dat event.
 - Opgeruimd: `src/spire_cards.c` bevat alleen nog de beloningsschermen (moves, relics), de vertakte evolutie en berichten; de oude draft-, rust-, winkel- en eventcode is weg (2056 → 1048 regels).
+
+### [v.0.8.107] - The Spire: speelklaar, Gholdengo/Snorlax/pseudo-events, debugwarp
+- **Debugmenu > Utilities > Warp to the Spire** (bovenaan): meteen naar de lobby van The Spire, ongeacht je voortgang. Zet de Battle Frontier op de kaart, `FLAG_SYS_POKEMON_GET`, en geeft het S.S. Ticket als je dat nog niet had (zodat je met de veerboot weer weg kunt).
+- **Receptioniste met ja/nee:** "Shall I open the stairs?"; loopt er al een run: doorgaan? Zo niet: opgeven (je houdt de BP)? Nieuwe specials `Spire_IsRunActive` en `Spire_GiveUpFromField`.
+- **Nieuwe events (58 totaal):**
+  - *999 Coins*: een Gimmighoul telt al jaren tot 998. Geef al je geld (minstens 120¥) en hij wordt een Gholdengo die met je meegaat (en het geld houdt). Of één munt: 10% kans.
+  - *The Stairs Are Asleep*: Snorlax op de trap. Voer hem alle vasthouditems van je team en hij volgt de voedselbron (jij). Of slaap mee: volle heal, maar slaperig het volgende gevecht.
+  - *A Rare Sight* (zeldzaam, gewicht 1 i.p.v. 4): een willekeurige pseudo-legendary (Dratini, Larvitar, Bagon, Beldum, Gible, Deino, Goomy, Jangmo-o, Dreepy, Frigibax-lijn) sluit zich aan, één stadium verder dan de act (act 1 = middelste vorm, daarna eindvorm).
+- Events hebben nu een **gewicht** (kans om gekozen te worden).
+- **Bugfixes uit de testbot:** geëvolueerde rentals hielden hun oude naam (Charmeleon heette nog "Charmander"; geldt voor alle evoluties tussen acts en in events); de receptioniste zag een gepauzeerde run niet (`specialvar` i.p.v. `special`).
+- **Testbot** (scratch): doorloopt een volledige run vanaf de debugwarp (receptioniste → draft → kaart → gevechten, winkel, rust, events, beloningen, act-overgang, baas → terug in de lobby) zonder vastlopers.

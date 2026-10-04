@@ -190,6 +190,20 @@ Debug_EventScript_Legend_Heatran::
 	end
 
 @ Project Grounded: debugmenu Utilities > The Spire - start of hervat een run (beta)
+@ Project Grounded: debugmenu Utilities > Warp to the Spire - meteen naar de lobby, ongeacht je voortgang.
+@ Zet de Battle Frontier op de kaart en geeft het S.S. Ticket, zodat je met de veerboot ook weer weg kunt.
+Debug_EventScript_SpireWarp::
+	setflag FLAG_LANDMARK_BATTLE_FRONTIER
+	setflag FLAG_SYS_POKEMON_GET
+	checkitem ITEM_SS_TICKET
+	goto_if_eq VAR_RESULT, TRUE, Debug_EventScript_SpireWarpGo
+	additem ITEM_SS_TICKET
+Debug_EventScript_SpireWarpGo::
+	warp MAP_BATTLE_FRONTIER_SPIRE_LOBBY, 5, 10
+	waitstate
+	release
+	end
+
 Debug_EventScript_SpirePrototype::
 	lockall
 	special Spire_Enter

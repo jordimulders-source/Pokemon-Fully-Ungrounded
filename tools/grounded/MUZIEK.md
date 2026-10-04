@@ -119,6 +119,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Regigigas: een extra stem op exact dezelfde noten/ligging als het origineel versmelt (trompet niet hoorbaar) ->
   een octaaf hoger. Klokken (tubular bell, 6689 Hz) een octaaf omhoog klinken kort en dun -> in de ligging van de
   melodie, op volle sterkte en per maat opnieuw luiden. Prioriteit: wat Jordi wil horen (trompet) eerst.
+- Mewtwo v1 (eigen compositie, `mewtwo_theme.py`): intro getimed op de transitie (frames uit `battle_transition.c`:
+  ogen 88, barsten 96-108, burst 114 = ±1,9 s -> 128 bpm zodat de burst op maat 1 tel 0 valt). DirectSound-blokgolf
+  (`sc88pro_square_wave`) als synthlead, PSG-vierkant alleen zacht voor arpeggio's. Opname via het echte gevecht
+  (`setwildbattle` + `BattleSetup_StartLegendaryBattle`), zodat je de sync met de transitie hoort.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

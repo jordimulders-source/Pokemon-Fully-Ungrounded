@@ -16449,3 +16449,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.51] - Regigigas: hoorbare tempelklokken
 - De buisklokken waren te zacht en te kort (één korte slag per noot, een octaaf hoog). Ze luiden nu in de ligging van de melodie, op volle sterkte, en worden op elke maat opnieuw aangeslagen zolang de koraalnoot klinkt, als een tempelklok.
 - De trompet blijft voorgaan bij de kanaalverdeling.
+
+### [v.0.9.52] - Battle! Mewtwo (eigen compositie)
+- Mewtwo heeft een eigen gevechtsthema (`MUS_GROUNDED_VS_MEWTWO`, `tools/grounded/mewtwo_theme.py`), naar het idee van Jordi: euforische trance, melancholisch én evil tegelijk, de imperfecte kloon. 128 bpm, A-mineur.
+  - **Intro (= de transitie):** een donkere drone met een hartslag. Als de ogen in de tank oplichten volgt een tritonus-aanslag, bij de drie barsten drie glasslagen, en als de tank uiteenspat een crash, waarna de beat losbarst.
+  - **A, hoog tempo:** een jagende 16e-bas en four-on-the-floor, met een kwaadaardig staccato-motief met een frygische Bb.
+  - **B, trance-breakdown:** zonder kick, met pads en koor en een melancholische melodie. Elke frase krijgt een zachte echo een halve toon ernaast: de imperfecte kloon. Een snareroffel leidt naar de drop.
+  - **C, euforische drop:** de hook vol op Am–F–C–G, de tweede keer eindigend op een dreigend E-groot. Daarna loopt hij terug naar A.
+- De FRLG-Mewtwo-muziek is vervangen door dit thema.

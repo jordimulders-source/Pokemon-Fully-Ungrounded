@@ -558,7 +558,7 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
         break;
     case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
-        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_GROUNDED_VS_MEWTWO); // eigen thema (trance, de imperfecte kloon)
         break;
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels
     case SPECIES_GIRATINA_ORIGIN:

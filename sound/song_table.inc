@@ -637,6 +637,7 @@ gSongTable::
 	song mus_grounded_vs_wally_5, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_regigigas, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_dave, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_mewtwo, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

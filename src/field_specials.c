@@ -4437,3 +4437,24 @@ bool8 IsNightTime(void)
 {
     return GetTimeOfDay() == TIME_NIGHT;
 }
+
+// Project Grounded: Delta Episode. 1 als de gewone Rayquaza gevangen is (Pokédex), dan verschijnt de shiny op de Sky Pillar.
+bool8 Grounded_CaughtRayquaza(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAYQUAZA), FLAG_GET_CAUGHT) != 0;
+}
+
+// Project Grounded: 1 als er een shiny Rayquaza in het team zit. Alleen met hem kun je in de ruimte ademen.
+bool8 Grounded_PartyHasShinyRayquaza(void)
+{
+    u32 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_RAYQUAZA
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+         && GetMonData(&gPlayerParty[i], MON_DATA_IS_SHINY))
+            return TRUE;
+    }
+    return FALSE;
+}

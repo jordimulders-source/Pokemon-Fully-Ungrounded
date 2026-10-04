@@ -16079,3 +16079,15 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 ### [v.0.8.131] - Mustards gezicht, arena-opstelling
 - **Mustard (trainerfoto):** gezicht opnieuw getekend naar de artwork (Jordi): het witte "haar" zijn zijn lange golvende **wenkbrauwen**, die over de ogen boogt en langs de wangen naar beneden valt; een **puntig wit sikje** onder de kin; **grotere ogen** met pupil en zware oogleden; oor zichtbaar.
 - **Arena-opstelling:** iedereen staat even ver van het midden van het veld (midden = tussen x 8/9 en rij 6/7). Singles: speler (6,6) tegen (11,6); doubles: speler en compagnon op (6,6)/(6,7), tegenstanders op (11,6)/(11,7). Eerder stond de tweede tegenstander op rij 5, waar de bovenrand van het veld over zijn hoofd viel.
+
+### [v.0.9.0] - Begin van fase 0.9: shiny Rayquaza en de Delta Episode met Zinnia
+- **Fase 0.9** (Jordi, 4 okt): de laatste fase vóór de beta. Besluiten en volgorde in `TODO.md` ("Fase v0.9"): muziek alleen als MIDI, shiny Rayquaza + Delta Episode, Archie en Maxie als werkstrafvrijwilligers, signature moves, de Burglar door de steden, Safari-uitbreiding, jungle, moeras, oostkant en uitbreidingen van bijna elke dungeon.
+- **MP3-muziek:** de vijf MP3's (Lorekeeper Zinnia, Wally, Wally's Theme, The Heirs to Eternity, The Lament of Falling Stars) kunnen als gestreamd sample (getest: naadloze lussen gevonden), maar dat kost samen ±5,3 MB ROM. Op Jordi's verzoek niet gedaan; alleen MIDI-versies komen erin. De Zinnia-gevechtsmuziek bestaat al als MIDI.
+- **Shiny Rayquaza:** heb je de gewone Rayquaza op de Sky Pillar gevangen (Pokédex), dan wacht er bij het volgende bezoek een tweede, **gegarandeerd shiny Rayquaza** (lv 75) op dezelfde plek. Eigen overworld-sprite: de opgerolde Rayquaza met een zwart-gouden palet (`OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL`). Shiny via `P_FLAG_FORCE_SHINY` = `FLAG_FORCE_SHINY`, alleen aan tijdens het aanmaken van de wilde Pokémon.
+- Verslagen (niet gevangen) Rayquaza's komen na de League terug, zodat de Delta Episode altijd te halen is.
+- **Delta Episode:**
+  1. Na het vangen van de shiny Rayquaza staat **Zinnia** bij het Space Center in Mossdeep. Gevecht tegen haar volle team (lv 75–77, met Aster de Whismur en Mega-Salamence als ace; Zinnia-muziek).
+  2. De wetenschapper in het Space Center schiet je pas de ruimte in als Zinnia verslagen is **én de shiny Rayquaza in je team zit** ("de enige life support die we kunnen betalen"; Rayquaza leeft in de ozonlaag en maakt lucht). Daarna de ruimte en Deoxys zoals in v0.8.110.
+  3. Na Deoxys (gevangen of verslagen) staat Zinnia bij de meteoriet naast Birch: afsluiter, 3 Comet Shards.
+- Nieuwe specials `Grounded_CaughtRayquaza` en `Grounded_PartyHasShinyRayquaza`; trainer `TRAINER_ZINNIA_DELTA`; `VAR_DELTA_STATE` (0x40F8); flags 0x26C–0x270 en 0x285.
+- **Credits:** N (Delgatron), izzyvicious, en de nieuw aangeleverde sprite-sheets (HG/SS-trainers verzameld door Dann-The-Yoshi, overworlds door PurpleZaffre, de rest met bron "onbekend") in `CREDITS.md`.

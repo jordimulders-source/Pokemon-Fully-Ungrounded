@@ -664,11 +664,11 @@
 #define FLAG_HIDE_FALLARBOR_JIRACHI 0x269 // Project Grounded: Jirachi (object) bij de wenssteen in Fallarbor, verborgen tot je een wens doet
 #define FLAG_DEFEATED_JIRACHI       0x26A // Project Grounded: Jirachi gevangen of verslagen (wens-event klaar)
 #define FLAG_DEFEATED_DARKRAI       0x26B // Project Grounded: Darkrai gevangen of verslagen (nachtmerrie op Mt. Pyre klaar)
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_FORCE_SHINY            0x26C // Project Grounded: P_FLAG_FORCE_SHINY (alleen tijdens het shiny Rayquaza-gevecht aan)
+#define FLAG_DEFEATED_SHINY_RAYQUAZA 0x26D // Project Grounded: shiny Rayquaza gevangen of verslagen (verslagen: terug na de League)
+#define FLAG_CAUGHT_SHINY_RAYQUAZA  0x26E // Project Grounded: shiny Rayquaza gevangen
+#define FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA 0x26F // Project Grounded: wordt elke keer in OnTransition gezet/gewist
+#define FLAG_HIDE_MOSSDEEP_ZINNIA   0x270 // Project Grounded: Zinnia in Mossdeep (Delta Episode); in OnTransition gezet/gewist
 #define FLAG_NEW_MAUVILLE_VAULT_OPEN  0x271 // Project Grounded: serverkluis onder New Mauville herstart (terminal in de Raikou-grot), deur naar Genesect open
 #define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static) in de serverkluis onder New Mauville
 #define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
@@ -689,7 +689,7 @@
 #define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
 #define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
 #define FLAG_KUBFU_EVOLVED  0x284 // Project Grounded: een toren van de dojo voltooid, Kubfu geevolueerd
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
+#define FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE 0x285 // Project Grounded: Zinnia bij de meteoriet (Delta Episode, afsluiter)
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag

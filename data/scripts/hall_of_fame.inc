@@ -30,6 +30,18 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_DEFEATED_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
+	@ Project Grounded: verslagen (niet gevangen) Rayquaza's komen terug, anders kan de Delta Episode niet beginnen
+	specialvar VAR_RESULT, Grounded_CaughtRayquaza
+	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_HallOfFame_EventScript_ResetRayquaza
+	call_if_unset FLAG_CAUGHT_SHINY_RAYQUAZA, EverGrandeCity_HallOfFame_EventScript_ResetShinyRayquaza
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetRayquaza::
+	clearflag FLAG_DEFEATED_RAYQUAZA
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetShinyRayquaza::
+	clearflag FLAG_DEFEATED_SHINY_RAYQUAZA
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::

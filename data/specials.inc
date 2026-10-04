@@ -602,3 +602,5 @@ gSpecials::
 	def_special Grounded_PartyHasKubfu
 	def_special Grounded_EvolveKubfu
 	def_special IsNightTime
+	def_special Grounded_CaughtRayquaza
+	def_special Grounded_PartyHasShinyRayquaza

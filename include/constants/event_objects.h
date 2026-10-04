@@ -269,7 +269,8 @@
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 #define OBJ_EVENT_GFX_MUSTARD                         260 // Project Grounded (Jordi's sheet)
-#define NUM_OBJ_EVENT_GFX                        261
+#define OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL            261 // Project Grounded: shiny Rayquaza (zelfde sprite, zwart palet)
+#define NUM_OBJ_EVENT_GFX                        262
 
 
 // These are dynamic object gfx ids.
@@ -407,6 +408,7 @@
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x112A // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x112B // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_MUSTARD                  0x112C // Project Grounded
+#define OBJ_EVENT_PAL_TAG_RAYQUAZA_SHINY           0x1130 // Project Grounded
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

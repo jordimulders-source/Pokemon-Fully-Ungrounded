@@ -17,7 +17,18 @@ SkyPillar_Top_EventScript_TryRemoveRayquaza::
 SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
+	call SkyPillar_Top_EventScript_TryShowShinyRayquaza
 	end
+
+@ Project Grounded: Delta Episode. Is de gewone Rayquaza gevangen, dan wacht er een tweede, shiny Rayquaza.
+SkyPillar_Top_EventScript_TryShowShinyRayquaza::
+	setflag FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA
+	goto_if_set FLAG_DEFEATED_SHINY_RAYQUAZA, Common_EventScript_NopReturn
+	goto_if_unset FLAG_DEFEATED_RAYQUAZA, Common_EventScript_NopReturn
+	specialvar VAR_RESULT, Grounded_CaughtRayquaza
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA
+	return
 
 SkyPillar_Top_EventScript_SetCleanLayout::
 	setmaplayoutindex LAYOUT_SKY_PILLAR_TOP_CLEAN
@@ -58,6 +69,36 @@ SkyPillar_Top_EventScript_Rayquaza::
 	setflag FLAG_DEFEATED_RAYQUAZA
 	releaseall
 	end
+
+SkyPillar_Top_EventScript_ShinyRayquaza::
+	lockall
+	msgbox SkyPillar_Top_Text_ShinyRayquaza, MSGBOX_DEFAULT
+	closemessage
+	waitse
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setflag FLAG_FORCE_SHINY
+	setwildbattle SPECIES_RAYQUAZA, 75
+	clearflag FLAG_FORCE_SHINY
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_DEFEATED_SHINY_RAYQUAZA
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_DefeatedRayquaza2
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Top_EventScript_RanFromRayquaza
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SkyPillar_Top_EventScript_RanFromRayquaza
+	setflag FLAG_CAUGHT_SHINY_RAYQUAZA
+	call_if_eq VAR_DELTA_STATE, 0, SkyPillar_Top_EventScript_StartDelta
+	msgbox SkyPillar_Top_Text_ShinyRayquazaCaught, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SkyPillar_Top_EventScript_StartDelta::
+	setvar VAR_DELTA_STATE, 1
+	return
 
 SkyPillar_Top_EventScript_DefeatedRayquaza::
 	setflag FLAG_DEFEATED_RAYQUAZA
@@ -181,3 +222,18 @@ SkyPillar_Top_Movement_CameraPanDown:
 SkyPillar_Top_Text_RayquazaFlewOff:
 	.string "The awakened RAYQUAZA flew off…$"
 
+
+SkyPillar_Top_Text_ShinyRayquaza:
+	.string "Another RAYQUAZA. Same pillar.\n"
+	.string "Different paint job.\p"
+	.string "It looks at you like you just\n"
+	.string "caught its little brother.\l"
+	.string "Which, to be fair, you did.$"
+
+SkyPillar_Top_Text_ShinyRayquazaCaught:
+	.string "The shiny RAYQUAZA hums softly.\n"
+	.string "You can breathe easier near it.\p"
+	.string "Literally. It lives in the ozone\n"
+	.string "layer. It brought some along.\p"
+	.string "Somewhere in MOSSDEEP, someone\n"
+	.string "has been waiting for this.$"

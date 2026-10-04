@@ -131,6 +131,7 @@ const u32 gObjectEventPic_Nurse[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_ProfBirch[] = INCBIN_U32("graphics/object_events/pics/people/prof_birch.4bpp");
 const u32 gObjectEventPic_ProfOak[] = INCBIN_U32("graphics/object_events/pics/people/prof_oak.4bpp"); // Project Grounded
 const u32 gObjectEventPic_Mustard[] = INCBIN_U32("graphics/object_events/pics/people/mustard.4bpp"); // Project Grounded
+const u16 gObjectEventPal_RayquazaShiny[] = INCBIN_U16("graphics/object_events/palettes/rayquaza_shiny.gbapal"); // Project Grounded
 const u16 gObjectEventPal_Mustard[] = INCBIN_U16("graphics/object_events/palettes/mustard.gbapal"); // Project Grounded
 const u32 gObjectEventPic_Brock[] = INCBIN_U32("graphics/object_events/pics/people/brock.4bpp"); // Project Grounded
 const u32 gObjectEventPic_Misty[] = INCBIN_U32("graphics/object_events/pics/people/misty.4bpp"); // Project Grounded (FRLG)

@@ -32715,3 +32715,67 @@ Nature: Timid
 - Fiery Dance
 - Bug Buzz
 - Giga Drain
+
+=== TRAINER_ZINNIA_DELTA ===
+Name: ZINNIA
+Class: Lorekeeper
+Pic: Zinnia
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Green
+
+Aster (Whismur) @ Eviolite
+Level: 75
+Ability: Soundproof
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Shadow Ball
+
+Tyrantrum @ Life Orb
+Level: 75
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Head Smash
+- Psychic Fangs
+- Earthquake
+
+Altaria @ Leftovers
+Level: 75
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Dragon Claw
+- Moonblast
+- Roost
+
+Goodra @ Assault Vest
+Level: 75
+Ability: Sap Sipper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Fire Blast
+- Thunderbolt
+- Sludge Bomb
+
+Noivern @ Choice Specs
+Level: 75
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Boomburst
+- Draco Meteor
+- Hurricane
+- Flamethrower
+
+Salamence @ Salamencite
+Level: 77
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Double-Edge
+- Earthquake
+- Dual Wingbeat

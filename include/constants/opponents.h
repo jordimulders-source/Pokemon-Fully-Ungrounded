@@ -980,8 +980,9 @@
 #define TRAINER_DOJO_WATER_KEEPER           965
 #define TRAINER_MUSTARD                     966
 #define TRAINER_STADIUM_MUSTARD             967
+#define TRAINER_ZINNIA_DELTA                968 // Project Grounded: Zinnia in Mossdeep (Delta Episode)
 
-#define TRAINERS_COUNT                      968
+#define TRAINERS_COUNT                      969
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -107,9 +107,29 @@ MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma::
 MossdeepCity_SpaceCenter_1F_EventScript_DeoxysMeteor::
 	goto_if_set FLAG_BATTLED_DEOXYS, MossdeepCity_SpaceCenter_1F_EventScript_DeoxysCaught
 	goto_if_set FLAG_DEFEATED_DEOXYS, MossdeepCity_SpaceCenter_1F_EventScript_DeoxysGone
+	goto_if_eq VAR_DELTA_STATE, 0, MossdeepCity_SpaceCenter_1F_EventScript_NoAir
+	goto_if_eq VAR_DELTA_STATE, 1, MossdeepCity_SpaceCenter_1F_EventScript_ZinniaWaiting
+	specialvar VAR_RESULT, Grounded_PartyHasShinyRayquaza
+	goto_if_eq VAR_RESULT, FALSE, MossdeepCity_SpaceCenter_1F_EventScript_NoShinyRayquaza
 	goto_if_set FLAG_METEOR_SPACE_RETURNED, MossdeepCity_SpaceCenter_1F_EventScript_LaunchAgain
 	msgbox MossdeepCity_SpaceCenter_1F_Text_MeteorIncoming, MSGBOX_YESNO
 	goto MossdeepCity_SpaceCenter_1F_EventScript_LaunchAnswer
+	end
+
+@ Project Grounded: Delta Episode. Zonder de shiny Rayquaza (zuurstof) en Zinnia's zegen gaat niemand de ruimte in.
+MossdeepCity_SpaceCenter_1F_EventScript_NoAir::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_NoAir, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_ZinniaWaiting::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_ZinniaWaiting, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_NoShinyRayquaza::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_NoShinyRayquaza, MSGBOX_DEFAULT
+	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_LaunchAgain::
@@ -533,3 +553,30 @@ MossdeepCity_SpaceCenter_1F_Text_DeoxysGone:
 	.string "back after your next visit to the\l"
 	.string "POKéMON LEAGUE. Don't ask how\l"
 	.string "instruments know that.$"
+
+MossdeepCity_SpaceCenter_1F_Text_NoAir:
+	.string "Ah. You. The CHAMPION.\p"
+	.string "Our telescope found a meteorite that\n"
+	.string "sends signals. Shaped like DNA.\p"
+	.string "We'd love to launch you at it, but\n"
+	.string "space has no air. We checked twice.\p"
+	.string "Unless you know something that makes\n"
+	.string "air. Something big. Something that\l"
+	.string "lives in the ozone layer.\p"
+	.string "There's a legend about a second\n"
+	.string "dragon on the SKY PILLAR, but that's\l"
+	.string "just a legend. Like weekends.$"
+
+MossdeepCity_SpaceCenter_1F_Text_ZinniaWaiting:
+	.string "There's a woman outside who says\n"
+	.string "nobody goes to space without her\l"
+	.string "permission.\p"
+	.string "She doesn't work here. She has never\n"
+	.string "worked here. We're too scared to\l"
+	.string "tell her that.$"
+
+MossdeepCity_SpaceCenter_1F_Text_NoShinyRayquaza:
+	.string "Where's your black RAYQUAZA?\p"
+	.string "It's the only life support we can\n"
+	.string "afford. Bring it along, please.\l"
+	.string "Corpses are bad for the budget.$"

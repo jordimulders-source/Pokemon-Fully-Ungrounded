@@ -203,3 +203,4 @@
 .include "sound/voicegroups/drumsets/rg_credits.inc"
 .include "sound/voicegroups/grounded_gm.inc"
 .include "sound/voicegroups/grounded_wally.inc"
+.include "sound/voicegroups/grounded_dave.inc"

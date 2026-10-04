@@ -90,3 +90,13 @@ herkennen is, komt ook als controle in `music_lint.py`.
   overworld-thema, niet "Battle! Wally".
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
+- Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger
+  genoteerd (E-klein op papier = klinkend D-klein, zoals de MIDI). Melodie uit het blad (herhalingen gelijk), begeleiding
+  uit de MIDI. De bron-drums duren allemaal 2 ticks: geef elke drumnoot een eigen lengte (kick/snare/hihat 1/2 tel,
+  tamboerijn 1/4, crash 2 tellen).
+- Stemverdeler-trucs: lange padnoten (8 tellen) vielen voor 97% weg; in stukken van 2 tellen knippen die een
+  uitklinktijd eerder stoppen (pulserende pad) -> 10%. Pianostoten: lengte + release korter dan de afstand tot de
+  volgende stoot (eigen piano met release 200 i.p.v. de keysplit met 239), anders 4 pianonoten tegelijk.
+  `musiclib.allocate` accepteert nu een uitklinktijd per spoor (`tail={naam: ticks}`).
+- `recpcm.py` meldt veel "sprongen>40" bij hihat/tamboerijn (ruis-samples, 21 kHz): geen glitch zolang ze niet op
+  framegrenzen (elke 352 samples) liggen.

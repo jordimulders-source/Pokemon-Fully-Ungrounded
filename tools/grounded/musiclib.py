@@ -51,13 +51,15 @@ def thin(ev, maxn, keep='top'):
 
 def allocate(parts, order, tail, drum_len=None, drum_parts=(), max_voices=MAX_VOICES):
     """parts: {naam: noten}; order: namen van hoog naar laag. PSG-sporen hier niet in stoppen (tellen niet mee).
-    tail = uitklinktijd in ticks; drum_len = hoe lang een drumnoot een kanaal bezet houdt."""
+    tail = uitklinktijd in ticks (getal, of {naam: ticks} per spoor); drum_len = hoe lang een drumnoot een kanaal
+    bezet houdt."""
     busy, res = [], {}
     for name in order:
         kept = []
+        t = tail.get(name, 0) if isinstance(tail, dict) else tail
         for e in parts.get(name, []):
             s = e[0]
-            en = (s + drum_len) if (name in drum_parts and drum_len) else e[1] + tail
+            en = (s + drum_len) if (name in drum_parts and drum_len) else e[1] + t
             pts = [s] + [b[0] for b in busy if s < b[0] < en]
             if all(sum(1 for b in busy if b[0] <= p < b[1]) < max_voices for p in pts):
                 kept.append(e)

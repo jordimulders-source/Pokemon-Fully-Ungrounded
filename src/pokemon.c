@@ -6102,6 +6102,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
      || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK)
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
+    // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
+    if (trainerId == TRAINER_ALBERT)
+        return MUS_GROUNDED_VS_DAVE;
+
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
      && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))

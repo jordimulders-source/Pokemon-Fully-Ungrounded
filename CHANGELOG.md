@@ -16394,3 +16394,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - `musiclib.allocate()` kan de noten van een origineel als vaste bezetting meetellen.
   - De lint kende de instrumentnummers bij voicegroups zonder nummering één plaats verkeerd toe; dat is opgelost.
   - `recaudio` herkent een tweede soort mGBA-glitch.
+
+### [v.0.9.42] - Dave: Freed From Desire, trouw aan het origineel
+- Het Dave-thema is opnieuw opgebouwd uit één aaneengesloten stuk van de bron (Jordi: "lijkt meer een remix, melodieën door elkaar"), op 128 bpm.
+  - **Intro:** bronmaat 49–52, de orgel-riff.
+  - **Loop:** bronmaat 53–85, in de originele volgorde (couplet, "want more and more", refrein, "na na na").
+- De melodie is het zangspoor uit de MIDI, als één stem: trompet met een PSG-vierkant in unisono. De bladmuziek wordt niet meer als extra stem gebruikt.
+- De loop springt op een natuurlijke plek terug: dezelfde overgang als in het nummer zelf.

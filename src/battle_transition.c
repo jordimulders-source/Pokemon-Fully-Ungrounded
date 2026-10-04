@@ -8617,27 +8617,35 @@ static void Task_Zarude(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Zarude);
 }
 
-// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Poison Chain zoals op de artwork. Dikke, glanzende
-// donut-schakels (om en om van voren en op hun kant) verschijnen om de 5 frames vanaf de "nek" linksonder en lopen
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Poison Chain zoals op de artwork. Grote, glanzende
+// ringen (om en om van voren met een groot gat en op hun kant) verschijnen om de 7 frames vanaf de "nek" linksonder en lopen
 // schuin naar rechtsboven, eindigend in een open ring; het beeld wordt donker-paars. Dan een stilstaand beeld, kort
 // vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
 #define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
-#define POISONCHAIN_STEP  5
+#define POISONCHAIN_STEP  7
 #define POISONCHAIN_HOLD  20
 
 static bool8 RTPoisonChain_Update(struct Task *task)
 {
-    s32 t = task->tRtTimer, n = min(((t * 52) >> 8) + 1, POISONCHAIN_LINKS); // (t * 52) >> 8 = t / POISONCHAIN_STEP
+    s32 t = task->tRtTimer, n = min(((t * 37) >> 8) + 1, POISONCHAIN_LINKS); // (t * 37) >> 8 = t / POISONCHAIN_STEP
 
-    // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen)
+    // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen), en alleen de vakken die ten opzichte
+    // van de vorige stap veranderen
     if (n != task->tRtA)
     {
         u16 *tilemap = RT_Tilemap();
         const u16 *map = &sPoisonChain_Map[(n - 1) * 600];
+        const u16 *prev = (task->tRtA > 0) ? &sPoisonChain_Map[(task->tRtA - 1) * 600] : NULL;
         s32 r, c;
         for (r = 0; r < 20; r++)
+        {
             for (c = 0; c < 30; c++, map++)
+            {
+                if (prev != NULL && *map == *prev++)
+                    continue;
                 tilemap[r * 32 + c] = *map ? RT_TILE(*map) : 0;
+            }
+        }
         task->tRtA = n;
         if (n == 1)
             PlaySE(SE_M_BIND);

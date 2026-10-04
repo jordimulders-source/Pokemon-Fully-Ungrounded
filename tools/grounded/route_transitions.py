@@ -1830,8 +1830,8 @@ save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 
 # ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
-# Poison Chain zoals op de artwork: dikke, glanzende donut-schakels (om en om van voren met een klein rond gat en op hun
-# kant als dikke ovale staaf), in elkaar gehaakt, fel magenta bij de "nek" linksonder en donkerder paars naar het
+# Poison Chain zoals op de artwork: grote, glanzende ringen (om en om van voren met een groot rond gat en op hun
+# kant als slanke staaf), in elkaar gehaakt, fel magenta bij de "nek" linksonder en donkerder paars naar het
 # uiteinde rechtsboven, waar een open ring (haak) hangt. De schakels komen kort na elkaar op, daarna een stilstaand beeld.
 # route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
 # flip-bits) met de eerste k schakels. Tiles ook gespiegeld ontdubbeld.
@@ -1841,12 +1841,12 @@ PC_PAL = [(0, 0, 0), (3, 0, 5), (5, 1, 8), (9, 2, 12),                         #
           (6, 2, 8), (10, 4, 12), (14, 6, 15), (18, 8, 17), (22, 9, 19), (25, 11, 20), # 4-13 schakels: donker paars
           (28, 14, 23), (30, 19, 26), (31, 24, 29), (31, 30, 31)]                   # -> magenta -> roze glans
 PC_SS = 3
-PC_END, PC_DIR = np.array((222.0, 22.0)), np.array((210.0, -136.0))   # haak rechtsboven, richting van de ketting
-PC_PITCH = 40.0
-PC_RO, PC_RI = 26.0, 8.0                     # donut van voren: buiten- en gatstraal
-PC_BAR_L, PC_BAR_W = PC_PITCH - PC_RI - 3, 12.5               # staaf op zijn kant: halve lengte, halve dikte
-PC_HOOK_RO, PC_HOOK_RI = 20.0, 10.5            # open ring aan het eind
-PC_ELEMS = 7                                  # 3 donuts, 3 staven en de haak
+PC_END, PC_DIR = np.array((218.0, 26.0)), np.array((210.0, -136.0))   # haak rechtsboven, richting van de ketting
+PC_PITCH = 53.0
+PC_RO, PC_RI = 36.0, 17.0                    # ring van voren: buiten- en gatstraal (groot rond gat)
+PC_BAR_L, PC_BAR_W = PC_RO + 2, 9.0             # ring op zijn kant (slanke staaf): halve lengte, halve dikte
+PC_HOOK_RO, PC_HOOK_RI = 27.0, 14.0            # open ring aan het eind
+PC_ELEMS = 5                                  # 2 ringen, 2 staven en de open eindring
 axis = PC_DIR / np.hypot(*PC_DIR)
 PC_START = PC_END - axis * PC_PITCH * (PC_ELEMS - 1)
 centers = [PC_START + axis * PC_PITCH * k for k in range(PC_ELEMS)]

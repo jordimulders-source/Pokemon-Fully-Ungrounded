@@ -1344,8 +1344,8 @@
     {
       "id": "LAYOUT_METEOR_FALLS_B1F_2R",
       "name": "MeteorFalls_B1F_2R_Layout",
-      "width": 11,
-      "height": 18,
+      "width": 40,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_B1F_2R/border.bin",
@@ -4550,6 +4550,66 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_StevensCave/border.bin",
       "blockdata_filepath": "data/layouts/MeteorFalls_StevensCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_HIDDEN_FALLS",
+      "name": "MeteorFalls_HiddenFalls_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_HiddenFalls/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_HiddenFalls/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_STARFALL_GROTTO",
+      "name": "MeteorFalls_StarfallGrotto_Layout",
+      "width": 47,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_StarfallGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_StarfallGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_ECHO_CHAMBER",
+      "name": "MeteorFalls_EchoChamber_Layout",
+      "width": 20,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_EchoChamber/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_EchoChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_DRACONID_SHRINE",
+      "name": "MeteorFalls_DraconidShrine_Layout",
+      "width": 22,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_DraconidShrine/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_DraconidShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_STAR_CORE",
+      "name": "MeteorFalls_StarCore_Layout",
+      "width": 26,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_StarCore/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_StarCore/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_TUNNELS",
+      "name": "MeteorFalls_Tunnels_Layout",
+      "width": 47,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_Tunnels/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_Tunnels/map.bin"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE",

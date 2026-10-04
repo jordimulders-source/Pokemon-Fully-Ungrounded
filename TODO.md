@@ -29,7 +29,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 9. **Battle Stadium:** ~~N en Ghetsis in de pool~~ (gedaan, v0.9.2). **Back sprites:** niet tekenen (Jordi, 4 okt: niet overtuigend). In plaats daarvan toont het Stadium aan onze kant geen trainer-backs; de Pokémon staan meteen op het veld (in de maak).
 8. **Dungeons uitbreiden (Jordi, 4 okt):**
    - ~~Petalburg Woods: verborgen paddenstoelenbos~~ (gedaan, v0.9.10: Toadstool Hollow).
-   - Meteor Falls: meerdere verborgen kamers; de kamer naar beneden uitbreiden en interessant maken; een gangenstelsel naar andere toffe events.
+   - ~~Meteor Falls~~ (gedaan, v0.9.13). Open: Selene (Draconid-oudere) in de Battle Stadium-pool.
    - Jagged Pass: ondergrondse uitbreiding.
    - Mt. Chimney: nog hoger klimmen.
    - Victory Road: optionele kamers met veel vette verstopte loot en events.

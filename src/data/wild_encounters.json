@@ -5043,6 +5043,121 @@
           }
         },
         {
+          "map": "MAP_METEOR_FALLS_TUNNELS",
+          "base_label": "gMeteorFalls_Tunnels",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_NOIVERN" },
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_GIGALITH" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_BEHEEYEM" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_BRONZONG" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_SLIGGOO" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_COALOSSAL" },
+              { "min_level": 46, "max_level": 47, "species": "SPECIES_GABITE" },
+              { "min_level": 44, "max_level": 44, "species": "SPECIES_HAKAMO_O" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_DRAKLOAK" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_RAMPARDOS" },
+              { "min_level": 48, "max_level": 48, "species": "SPECIES_HAXORUS" },
+              { "min_level": 52, "max_level": 52, "species": "SPECIES_DRAGONITE" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_STAR_CORE",
+          "base_label": "gMeteorFalls_StarCore",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_MINIOR_METEOR" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_SOLROCK" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_LUNATONE" },
+              { "min_level": 44, "max_level": 44, "species": "SPECIES_METANG" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_CLEFABLE" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_ORBEETLE" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_CHIMECHO" },
+              { "min_level": 47, "max_level": 48, "species": "SPECIES_GOTHITELLE" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_XATU" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_REUNICLUS" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_METAGROSS" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_RABSCA" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_ECHO_CHAMBER",
+          "base_label": "gMeteorFalls_EchoChamber",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_SWOOBAT" },
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_EXPLOUD" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_GOLBAT" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_DUSCLOPS" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_GRUMPIG" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_HYPNO" },
+              { "min_level": 47, "max_level": 48, "species": "SPECIES_KOMMO_O" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_DRAMPA" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_MUSHARNA" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_MEOWSTIC" },
+              { "min_level": 48, "max_level": 48, "species": "SPECIES_CHATOT" },
+              { "min_level": 48, "max_level": 48, "species": "SPECIES_MR_MIME" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_STARFALL_GROTTO",
+          "base_label": "gMeteorFalls_StarfallGrotto",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_LUNATONE" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_SOLROCK" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_MINIOR_METEOR" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_CLEFABLE" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_GLIMMORA" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_BEHEEYEM" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_ARCHEOPS" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_CARRACOSTA" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_STARMIE" },
+              { "min_level": 48, "max_level": 49, "species": "SPECIES_BRONZONG" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_METAGROSS" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_SALAMENCE" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_METEOR_FALLS_HIDDEN_FALLS",
+          "base_label": "gMeteorFalls_HiddenFalls",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_SHELGON" },
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_BARBARACLE" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_DRAGALGE" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_SEADRA" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_OMASTAR" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_CRUSTLE" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_KABUTOPS" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_RELICANTH" },
+              { "min_level": 47, "max_level": 48, "species": "SPECIES_CLAWITZER" },
+              { "min_level": 47, "max_level": 48, "species": "SPECIES_CARRACOSTA" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_KINGDRA" },
+              { "min_level": 50, "max_level": 50, "species": "SPECIES_SALAMENCE" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 44, "max_level": 48, "species": "SPECIES_WHISCASH" },
+              { "min_level": 44, "max_level": 48, "species": "SPECIES_SEAKING" },
+              { "min_level": 45, "max_level": 48, "species": "SPECIES_SEADRA" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_RELICANTH" },
+              { "min_level": 48, "max_level": 50, "species": "SPECIES_KINGDRA" }
+            ]
+          }
+        },
+        {
           "map": "MAP_METEOR_SPACE",
           "base_label": "gMeteorSpace",
           "land_mons": {

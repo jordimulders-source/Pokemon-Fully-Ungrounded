@@ -34163,3 +34163,281 @@ Nature: Modest
 - Psyshock
 - Focus Blast
 - Recover
+
+=== TRAINER_METEOR_DRAKE ===
+Name: DRAKE
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Shelgon
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Claw
+- Zen Headbutt
+- Iron Defense
+- Protect
+
+Flapple
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Grav Apple
+- Dragon Rush
+- Acrobatics
+- Dragon Dance
+
+Dragalge
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sludge Bomb
+- Dragon Pulse
+- Toxic Spikes
+- Hydro Pump
+
+Tyrantrum
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Head Smash
+- Dragon Claw
+- Crunch
+- Earthquake
+
+=== TRAINER_METEOR_BOULDERMAN ===
+Name: BOULDERMAN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Gigalith
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Stone Edge
+- Earthquake
+- Iron Head
+- Stealth Rock
+
+Garganacl
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Salt Cure
+- Recover
+- Rock Slide
+- Body Press
+
+Coalossal
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tar Shot
+- Heat Crash
+- Rock Slide
+- Rapid Spin
+
+Stonjourner
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Stone Edge
+- Heat Crash
+- Rock Polish
+- Body Press
+
+=== TRAINER_METEOR_ORION ===
+Name: ORION
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Beheeyem
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Thunderbolt
+- Shadow Ball
+- Calm Mind
+
+Orbeetle
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Bug Buzz
+- Sticky Web
+- Reflect
+
+Bronzong
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Gyro Ball
+- Extrasensory
+- Trick Room
+- Earthquake
+
+Starmie
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Hydro Pump
+- Thunderbolt
+- Recover
+
+=== TRAINER_METEOR_VESPER ===
+Name: VESPER
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Noivern
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Boomburst
+- Air Slash
+- Dragon Pulse
+- U-turn
+
+Drakloak
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+Kommo-o
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Clanging Scales
+- Close Combat
+- Poison Jab
+- Bulk Up
+
+Sliggoo
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Sludge Bomb
+- Thunderbolt
+- Rain Dance
+
+Haxorus
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Outrage
+- Earthquake
+- Dragon Dance
+- Poison Jab
+
+=== TRAINER_METEOR_NOVA ===
+Name: NOVA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Clefable
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Mash
+- Moonblast
+- Cosmic Power
+- Moonlight
+
+Lunatone
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Ice Beam
+- Moonblast
+- Stealth Rock
+
+Solrock
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Slide
+- Zen Headbutt
+- Sunny Day
+- Explosion
+
+Archeops
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Acrobatics
+- Rock Slide
+- Dragon Claw
+- U-turn
+
+Metagross
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Earthquake
+
+=== TRAINER_DRACONID_ELDER ===
+Name: SELENE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Altaria
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Moonblast
+- Dragon Claw
+- Roost
+
+Kingdra
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Hydro Pump
+- Ice Beam
+- Rain Dance
+
+Flygon
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Goodra
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Fire Blast
+- Thunderbolt
+- Sludge Bomb
+
+Dragonite
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Hydreigon
+Level: 54
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Nasty Plot

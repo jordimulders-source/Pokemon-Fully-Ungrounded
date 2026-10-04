@@ -1017,7 +1017,15 @@
 #define TRAINER_STADIUM_PLASMA_GRUNT_F      995
 #define TRAINER_STADIUM_ROOD                996
 
-#define TRAINERS_COUNT                      997
+
+#define TRAINER_METEOR_DRAKE                997 // Project Grounded: Meteor Falls B1F (Bagon-bekken)
+#define TRAINER_METEOR_BOULDERMAN           998 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_ORION                999 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_VESPER               1000 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_NOVA                 1001 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_DRACONID_ELDER              1002 // Project Grounded: Meteor Falls, Draconid-schrijn
+
+#define TRAINERS_COUNT                      1003
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -672,6 +672,12 @@
     "ToadstoolHollow",
     "SafariZone_FairyForest",
     "SafariZone_ThunderPlains",
-    "SafariZone_HauntedCamp"
+    "SafariZone_HauntedCamp",
+    "MeteorFalls_Tunnels",
+    "MeteorFalls_StarCore",
+    "MeteorFalls_DraconidShrine",
+    "MeteorFalls_EchoChamber",
+    "MeteorFalls_StarfallGrotto",
+    "MeteorFalls_HiddenFalls"
   ]
 }

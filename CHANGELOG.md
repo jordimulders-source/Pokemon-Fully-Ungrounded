@@ -16177,3 +16177,13 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Transitie `B_TRANSITION_NEO_PLASMA`**, nagemaakt naar de BW2-GIF (±2,7 s): blauwe P op een donker raster, een lichtbol trekt de Z, alles wit, het Plasma-schild verschijnt en flitst twee keer, daarna zes flakkerende bliksems naar de randen (`tools/grounded/neo_plasma_transition.py`). Alleen voor de Neo Plasma-deelnemers; Ghetsis en Colress houden hun eigen intro en muziek.
 - **Muziek "Battle! Neo Team Plasma"** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington), ook als keuze "NEO PLASMA" in het optiemenu.
 - Nummers na het samenvoegen: trainers 992–996, lied 623.
+
+### [v.0.9.13] - Meteor Falls: verborgen kamers, gangen en de Draconid-schrijn
+- **De kamer naar beneden** (`MeteorFalls_B1F_2R`) is uitgebreid van 11×18 naar 40×50 (`tools/grounded/maptools/meteor_falls_ext.py`): ingangshal met meteorietbrokken en kraters, een **Strength-nis** (Rare Candy), een middenlaag met trap en een **brede waterval** (Waterfall) naar een bovenmeer met de Dragon Claw-TM en Dragon Tamer Drake.
+- **Verborgen kamers:** een grotgat **achter de waterval** (Surf) naar Hidden Falls (Dragon Scale, Max Elixir), een **scheur in de noordwand** (Rock Smash) naar het gangenstelsel, en een **gat in de vloer** onder een brokkelrots in de gangen naar de Starfall Grotto (Comet Shard, Star Piece).
+- **Gangenstelsel** (47×44): doolhof met Hiker Boulderman, Psychic Orion, Dragon Tamer Vesper en Cooltrainer Nova (lv 47–49), Dragon Fang, Full Restore, Stardust, en drie grotgaten naar de events:
+  - **Meteorietkern** (Star Core): vijf rondzwervende Minior (lv 48, komen terug) en een vaste **Salamence lv 55** ("de Bagon die de meteoriet won").
+  - **Draconid-schrijn:** Draconid-oudere **Selene** vertelt over Zinnia en Rayquaza, vecht (lv 52–54, ace Hydreigon) en geeft één keer een Draco Plate.
+  - **Echokamer:** roep in het donker; de echo verraadt het gat onder de brokkelrots.
+- Wilde Pokémon (12 unieke soorten per kaart, lv 44–52): o.a. Noivern, Gigalith, Hakamo-o, Sliggoo, Gabite, Drakloak, Minior, Glimmora, Dragalge, Kommo-o; zeldzaam Haxorus, Dragonite, Metagross, Kingdra, Salamence.
+- Trainers 997–1002 (`TRAINER_METEOR_*`, `TRAINER_DRACONID_ELDER`); flags 0x2A0–0x2A7, 0x4A3–0x4A7.

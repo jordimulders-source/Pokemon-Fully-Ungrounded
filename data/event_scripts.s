@@ -2,6 +2,7 @@
 #include "config/battle.h"
 #include "config/item.h"
 #include "constants/global.h"
+#include "constants/stadium.h"
 #include "constants/apprentice.h"
 #include "constants/apricorn_tree.h"
 #include "constants/battle.h"
@@ -617,6 +618,7 @@ gStdScripts_End::
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 	.include "data/scripts/grounded_debug.inc"
+	.include "data/scripts/battle_stadium.inc"
 	.include "data/scripts/regi_dots.inc"
 
 EventScript_WhiteOut::

@@ -4,6 +4,7 @@
 #include "battle_ai_util.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
+#include "stadium.h"
 #include "battle_message.h"
 #include "battle_interface.h"
 #include "battle_setup.h"
@@ -237,6 +238,15 @@ static void PlayerPartnerHandleDrawTrainerPic(u32 battler)
     else
         isFrontPic = TRUE;
 
+    // Project Grounded: Battle Stadium-compagnon zonder rugplaatje staat met zijn voorplaatje naast je (Frontier-tag battles)
+    if (Stadium_PartnerUsesFrontPic())
+    {
+        trainerPicId = gBattlePartners[difficulty][gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerPic;
+        isFrontPic = TRUE;
+        xPos = 32;
+        yPos = 80;
+    }
+
     BtlController_HandleDrawTrainerPic(battler, trainerPicId, isFrontPic, xPos, yPos, -1);
 }
 
@@ -331,7 +341,9 @@ static void PlayerPartnerHandleIntroTrainerBallThrow(u32 battler)
     const u16 *trainerPal;
     enum DifficultyLevel difficulty = GetBattlePartnerDifficultyLevel(gPartnerTrainerId);
 
-    if (gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
+    if (Stadium_PartnerUsesFrontPic())
+        trainerPal = gTrainerSprites[gBattlePartners[difficulty][gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerPic].palette.data;
+    else if (gPartnerTrainerId > TRAINER_PARTNER(PARTNER_NONE))
         trainerPal = gTrainerBacksprites[gBattlePartners[difficulty][gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerBackPic].palette.data;
     else if (IsAiVsAiBattle())
         trainerPal = gTrainerSprites[GetTrainerBackPicFromId(gPartnerTrainerId)].palette.data;

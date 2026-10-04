@@ -137,6 +137,11 @@ static void CollectNewUnlocks(void)
     }
 }
 
+void Stadium_HasNewUnlocks(void)
+{
+    gSpecialVar_Result = (sT.newUnlockCount != 0);
+}
+
 u8 Stadium_TakeNewUnlock(void)
 {
     u32 i;
@@ -473,4 +478,16 @@ const u8 *Stadium_GetWinText(u32 opponent)
     case 1:  return sWin2;
     default: return sWin3;
     }
+}
+
+// Debug: alle compagnons vrij (alle deelnemers verslagen, veel punten); meldingen overslaan
+void Stadium_DebugUnlockAll(void)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sStadiumPool); i++)
+        SetBit(SAVE.beaten, i);
+    for (i = 0; i < ARRAY_COUNT(sStadiumCompanions); i++)
+        SetBit(SAVE.seen, i);
+    SAVE.points = 9999;
 }

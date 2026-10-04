@@ -220,3 +220,13 @@ Debug_EventScript_SpireResetRun::
 
 Debug_Text_SpireResetRun:
 	.string "Spire-run gewist.$"
+
+@ Project Grounded: debugmenu Utilities > Stadium: unlock all - alle compagnons vrij (testen)
+Debug_EventScript_StadiumUnlockAll::
+	special Stadium_DebugUnlockAll
+	msgbox Debug_Text_StadiumUnlockAll, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_Text_StadiumUnlockAll:
+	.string "Alle Stadium-compagnons vrij.$"

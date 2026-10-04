@@ -397,6 +397,9 @@ extern const u8 Debug_EventScript_ForcedEncounterOff[];
 extern const u8 Debug_EventScript_SpirePrototype[];
 extern const u8 Debug_EventScript_SpireResetRun[];
 extern const u8 Debug_EventScript_SpireWarp[];
+extern const u8 BattleStadium_EventScript_Singles[];
+extern const u8 BattleStadium_EventScript_Doubles[];
+extern const u8 Debug_EventScript_StadiumUnlockAll[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -600,6 +603,9 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
     { COMPOUND_STRING("The Spire"),         DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
     { COMPOUND_STRING("Spire: reset run"),  DebugAction_ExecuteScript, Debug_EventScript_SpireResetRun },
+    { COMPOUND_STRING("Stadium: singles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Singles },
+    { COMPOUND_STRING("Stadium: doubles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Doubles },
+    { COMPOUND_STRING("Stadium: unlock all"), DebugAction_ExecuteScript, Debug_EventScript_StadiumUnlockAll },
     { NULL }
 };
 

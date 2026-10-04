@@ -5,9 +5,9 @@
 //   src/stadium_screens.c  bracket op papier, wedstrijdkaart, compagnonkeuze, meldingen
 //   src/data/stadium_pool.h  pool en compagnons (tools/grounded/stadium/pool.py)
 
+#include "constants/stadium.h"
+
 #define STADIUM_LEVEL           50
-#define STADIUM_SINGLES         0
-#define STADIUM_DOUBLES         1
 #define STADIUM_SINGLES_MONS    4
 #define STADIUM_DOUBLES_MONS    3
 #define STADIUM_MAX_ENTRANTS    32
@@ -69,6 +69,8 @@ void Stadium_AfterMatch(void);
 void Stadium_EndTournament(void);
 void Stadium_ChooseCompanion(void);
 void Stadium_ShowUnlocks(void);
+void Stadium_HasNewUnlocks(void);
+void Stadium_DebugUnlockAll(void);
 
 // stadium.c -> stadium_screens.c
 u32 Stadium_PoolCount(void);

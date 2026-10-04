@@ -583,3 +583,13 @@ gSpecials::
 	def_special Spire_DebugOpen
 	def_special Spire_IsRunActive
 	def_special Spire_GiveUpFromField
+	def_special Stadium_PrepareChooseParty
+	def_special Stadium_StartTournament
+	def_special Stadium_ShowNextMatch
+	def_special Stadium_StartMatch
+	def_special Stadium_AfterMatch
+	def_special Stadium_EndTournament
+	def_special Stadium_ChooseCompanion
+	def_special Stadium_ShowUnlocks
+	def_special Stadium_HasNewUnlocks
+	def_special Stadium_DebugUnlockAll

@@ -8,7 +8,7 @@ VictoryRoad_1F/B1F/B2F aan. Deterministisch en idempotent.
   Vault        (B1F, grotopening (6,16) in de gang linksonder)      Strength-blokpuzzel (door dit
                script opgelost en gecontroleerd), drie voorwerpen + een verstopt voorwerp.
   Hermit       (B2F, gat (20,1) op een eilandje in het bovenmeer; Surf)  REGINALD, de "vijfde" van de
-               Elite Four (sterk team), geeft TM Flamethrower.
+               Elite Four (sterk team), geeft een Utility Umbrella.
   SharkDen     (B1F, gat in de vloer (35,22) in een nis; je valt erin)   vaste Garchomp lv 58 op een
                schat; ladder terug naar B1F (36,22).
 

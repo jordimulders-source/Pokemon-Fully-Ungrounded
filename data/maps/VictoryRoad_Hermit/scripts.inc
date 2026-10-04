@@ -5,16 +5,16 @@ VictoryRoad_Hermit_MapScripts::
 
 VictoryRoad_Hermit_EventScript_Reginald::
 	trainerbattle_single TRAINER_VR_REGINALD, VictoryRoad_Hermit_Text_ReginaldIntro, VictoryRoad_Hermit_Text_ReginaldDefeat, VictoryRoad_Hermit_EventScript_ReginaldDefeated
-	goto_if_unset FLAG_RECEIVED_TM_FLAMETHROWER_REGINALD, VictoryRoad_Hermit_EventScript_GiveTM
+	goto_if_unset FLAG_RECEIVED_UMBRELLA_REGINALD, VictoryRoad_Hermit_EventScript_GiveUmbrella
 	msgbox VictoryRoad_Hermit_Text_ReginaldPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_Hermit_EventScript_ReginaldDefeated::
-	msgbox VictoryRoad_Hermit_Text_ReginaldGiveTM, MSGBOX_DEFAULT
-VictoryRoad_Hermit_EventScript_GiveTM::
-	giveitem ITEM_TM_FLAMETHROWER
+	msgbox VictoryRoad_Hermit_Text_ReginaldGiveUmbrella, MSGBOX_DEFAULT
+VictoryRoad_Hermit_EventScript_GiveUmbrella::
+	giveitem ITEM_UTILITY_UMBRELLA
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_FLAMETHROWER_REGINALD
+	setflag FLAG_RECEIVED_UMBRELLA_REGINALD
 	msgbox VictoryRoad_Hermit_Text_ReginaldPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -42,9 +42,10 @@ VictoryRoad_Hermit_Text_ReginaldDefeat:
 	.string "So THIS is what the ELITE FOUR\n"
 	.string "feels like. Bracing.$"
 
-VictoryRoad_Hermit_Text_ReginaldGiveTM:
-	.string "Take this. I was saving it for\n"
-	.string "SIDNEY's funeral.\p"
+VictoryRoad_Hermit_Text_ReginaldGiveUmbrella:
+	.string "Take this umbrella. I was saving\n"
+	.string "it for SIDNEY's funeral.\p"
+	.string "It always rains at funerals.\n"
 	.string "He keeps not having one.$"
 
 VictoryRoad_Hermit_Text_ReginaldPostBattle:

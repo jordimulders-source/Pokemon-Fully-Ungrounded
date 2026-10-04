@@ -16245,3 +16245,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Lavabuis:** zes nissen met zwavelkristallen, gestolde lavaplekken, keien, as en scheuren, meer variatie in de vloer.
 - **Top van Mt. Chimney:** drie extra nissen en twee rotspartijen (terrassen minder rechthoekig), plukken as-gras, dode bomen en stronken, gestolde lavastromen vanaf het kratermeer, zwavel langs de kraterrand en tien stoompluimen. Paden, events, zichtlijnen en het Strength-pad blijven vrij (gecontroleerd door `chimney_ext.py`).
 - **Mangrove Mire:** TM Rain Dance (lag er dubbel; TM's zijn herbruikbaar) vervangen door een **Toxic Orb**.
+- **Geen dubbele TM's meer** (Jordi): in Toadstool Hollow ligt een **Misty Seed** i.p.v. TM Giga Drain; Reginald (Victory Road) geeft een **Utility Umbrella** i.p.v. TM Flamethrower ("bewaard voor Sidney's begrafenis; het regent altijd op begrafenissen"). Beide items waren nog nergens te krijgen.

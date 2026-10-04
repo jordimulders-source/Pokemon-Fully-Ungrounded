@@ -1292,21 +1292,21 @@
 #define FLAG_ITEM_MANGROVE_MIRE_TOXIC_ORB                           0x4D6 // Project Grounded: Mangrove Mire (Toxic Orb)
 #define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_BIG_ROOT                     0x4D7 // Project Grounded: Mangrove Mire
 #define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_ULTRA_BALL                   0x4D8 // Project Grounded: Mangrove Mire
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
-#define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
-#define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
-#define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
-#define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
-#define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
-#define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
+#define FLAG_OGERPON_QUEST_STARTED                                  0x4D9 // Project Grounded: Ogerpon-quest: maskerhoedster heeft het verhaal verteld (openingen naar de schuilplaatsen)
+#define FLAG_DEFEATED_OKIDOGI                                       0x4DA // Project Grounded: Ogerpon-quest: Okidogi gevangen of verslagen (Granite Cave; verslagen = terug na de League)
+#define FLAG_CAUGHT_OKIDOGI                                         0x4DB // Project Grounded: Ogerpon-quest: Okidogi gevangen
+#define FLAG_DEFEATED_MUNKIDORI                                     0x4DC // Project Grounded: Ogerpon-quest: Munkidori gevangen of verslagen (Fiery Path; verslagen = terug na de League)
+#define FLAG_CAUGHT_MUNKIDORI                                       0x4DD // Project Grounded: Ogerpon-quest: Munkidori gevangen
+#define FLAG_DEFEATED_FEZANDIPITI                                   0x4DE // Project Grounded: Ogerpon-quest: Fezandipiti gevangen of verslagen (Route 127 onderwater; verslagen = terug na de League)
+#define FLAG_CAUGHT_FEZANDIPITI                                     0x4DF // Project Grounded: Ogerpon-quest: Fezandipiti gevangen
+#define FLAG_RECEIVED_CORNERSTONE_MASK                              0x4E0 // Project Grounded: Ogerpon-quest: Cornerstone Mask terugveroverd (Okidogi)
+#define FLAG_RECEIVED_HEARTHFLAME_MASK                              0x4E1 // Project Grounded: Ogerpon-quest: Hearthflame Mask terugveroverd (Munkidori)
+#define FLAG_RECEIVED_WELLSPRING_MASK                               0x4E2 // Project Grounded: Ogerpon-quest: Wellspring Mask terugveroverd (Fezandipiti)
+#define FLAG_OGERPON_MASKS_PLACED                                   0x4E3 // Project Grounded: Ogerpon-quest: de maskers liggen op het altaar in Fortree Jungle (Ogerpon is verschenen)
+#define FLAG_DEFEATED_OGERPON                                       0x4E4 // Project Grounded: Ogerpon-quest: Ogerpon gevangen of verslagen (verslagen = terug na de League)
+#define FLAG_CAUGHT_OGERPON                                         0x4E5 // Project Grounded: Ogerpon-quest: Ogerpon gevangen
+#define FLAG_HIDE_FORTREE_JUNGLE_OGERPON                            0x4E6 // Project Grounded: Ogerpon-quest: Ogerpon-object achter het altaar
+#define FLAG_OGERPON_MASKS_RETURNED                                 0x4E7 // Project Grounded: Ogerpon-quest: de speler heeft de drie maskers terug als hold items
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
 #define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte

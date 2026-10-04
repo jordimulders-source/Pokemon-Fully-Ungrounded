@@ -591,6 +591,7 @@ open('include/constants/metatile_labels.h', 'w').write(ml)
 # omgevallen zuil, losse blokken en oude vloerplaten ervoor. Zarude zit verstopt in de boomkruin achter het plateau
 # (9, 65) en springt via het plateau naar je toe als je op de vloerplaat (9, 62) stapt (coord-trigger, scripts.inc).
 import zarude_ruins as R
+OGERPON_POS = (31, 53)     # achter het altaar (31,54)
 ZARUDE_HIDE = (9, 65)
 ZARUDE_TRIGGER = (9, 62)
 RUINS = [  # x, y, canvas, w, h, blokkeert, bovenste rij boven de speler
@@ -691,6 +692,10 @@ objs.append(obj('OBJ_EVENT_GFX_ROCKET_GRUNT_M', ROCKET_GUARD[0], ROCKET_GUARD[1]
 objs.append(obj('OBJ_EVENT_GFX_SPECIES(ZARUDE)', ZARUDE_HIDE[0], ZARUDE_HIDE[1], 'MOVEMENT_TYPE_FACE_UP',
                 'TRAINER_TYPE_NONE', 0, 'FortreeJungle_EventScript_ZarudeScene', 'FLAG_HIDE_FORTREE_JUNGLE_ZARUDE'))
 objs[-1] = dict(local_id='LOCALID_FORTREE_JUNGLE_ZARUDE', **objs[-1])
+# Ogerpon (post-game, Ogerpon-quest): verschijnt achter het altaar als de drie maskers erop liggen
+objs.append(obj('OBJ_EVENT_GFX_SPECIES(OGERPON_TEAL)', OGERPON_POS[0], OGERPON_POS[1], 'MOVEMENT_TYPE_FACE_DOWN',
+                'TRAINER_TYPE_NONE', 0, 'FortreeJungle_EventScript_Ogerpon', 'FLAG_HIDE_FORTREE_JUNGLE_OGERPON'))
+objs[-1] = dict(local_id='LOCALID_FORTREE_JUNGLE_OGERPON', **objs[-1])
 mj = {
     "id": "MAP_FORTREE_JUNGLE", "name": "FortreeJungle", "layout": "LAYOUT_FORTREE_JUNGLE",
     "music": "MUS_ROUTE119", "region_map_section": "MAPSEC_FORTREE_JUNGLE", "requires_flash": False,

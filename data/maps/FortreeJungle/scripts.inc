@@ -20,6 +20,8 @@ FortreeJungle_EventScript_OpenRocketHollow::
 FortreeJungle_OnTransition:
 	setflag FLAG_HIDE_JUNGLE_ROCKET_GUARD
 	setflag FLAG_HIDE_FORTREE_JUNGLE_ZARUDE
+	setflag FLAG_HIDE_FORTREE_JUNGLE_OGERPON
+	call FortreeJungle_EventScript_ShowOgerpon
 	call_if_set FLAG_SYS_GAME_CLEAR, FortreeJungle_EventScript_ArmZarude
 	call_if_eq VAR_ROCKET_QUEST, 2, FortreeJungle_EventScript_ShowRocketGuard
 	end
@@ -59,13 +61,129 @@ FortreeJungle_EventScript_Dirk::
 	msgbox FortreeJungle_Text_DirkPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ ---------------------------------------------------------------- Ogerpon (placeholder) en Zarude (placeholder)
+@ ---------------------------------------------------------------- Ogerpon-quest (post-game)
+@ Na de Hall of Fame vertelt de maskerhoedster (32,56) het verhaal: de Loyal Three stalen Ogerpon's maskers.
+@ Daarna zijn de schuilplaatsen open (ON_LOAD in GraniteCave_B2F, FieryPath, Underwater_Route127; kaarten uit
+@ tools/grounded/maptools/ogerpon_quest.py). Met alle drie de maskers legt ze ze op het altaar en verschijnt Ogerpon
+@ (31,53) achter het altaar. Na de vangst of overwinning krijg je de maskers terug als hold items (vormwissel).
+@ Gevlucht = Ogerpon blijft achter het altaar; verslagen = terug na de League; gevangen = weg.
 FortreeJungle_EventScript_MaskKeeper::
-	msgbox FortreeJungle_Text_MaskKeeper, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, FortreeJungle_EventScript_MaskKeeperPreGame
+	goto_if_set FLAG_OGERPON_MASKS_RETURNED, FortreeJungle_EventScript_MaskKeeperDone
+	goto_if_set FLAG_OGERPON_MASKS_PLACED, FortreeJungle_EventScript_MaskKeeperOgerponWaits
+	goto_if_unset FLAG_OGERPON_QUEST_STARTED, FortreeJungle_EventScript_MaskKeeperStory
+	goto_if_unset FLAG_RECEIVED_CORNERSTONE_MASK, FortreeJungle_EventScript_MaskKeeperHint
+	goto_if_unset FLAG_RECEIVED_HEARTHFLAME_MASK, FortreeJungle_EventScript_MaskKeeperHint
+	goto_if_unset FLAG_RECEIVED_WELLSPRING_MASK, FortreeJungle_EventScript_MaskKeeperHint
+	goto FortreeJungle_EventScript_MaskFinale
+
+FortreeJungle_EventScript_MaskKeeperPreGame::
+	msgbox FortreeJungle_Text_MaskKeeper, MSGBOX_DEFAULT
+	release
 	end
 
+FortreeJungle_EventScript_MaskKeeperStory::
+	msgbox FortreeJungle_Text_MaskKeeperStory, MSGBOX_DEFAULT
+	setflag FLAG_OGERPON_QUEST_STARTED
+	release
+	end
+
+FortreeJungle_EventScript_MaskKeeperHint::
+	msgbox FortreeJungle_Text_MaskKeeperHint, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeJungle_EventScript_MaskKeeperOgerponWaits::
+	msgbox FortreeJungle_Text_MaskKeeperOgerponWaits, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeJungle_EventScript_MaskKeeperDone::
+	msgbox FortreeJungle_Text_MaskKeeperDone, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeJungle_EventScript_MaskFinale::
+	msgbox FortreeJungle_Text_MaskKeeperAllMasks, MSGBOX_DEFAULT
+	closemessage
+	removeitem ITEM_CORNERSTONE_MASK
+	removeitem ITEM_HEARTHFLAME_MASK
+	removeitem ITEM_WELLSPRING_MASK
+	setflag FLAG_OGERPON_MASKS_PLACED
+	playse SE_M_GRASSWHISTLE
+	delay 30
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special ShakeCamera
+	waitstate
+	clearflag FLAG_HIDE_FORTREE_JUNGLE_OGERPON
+	addobject LOCALID_FORTREE_JUNGLE_OGERPON
+	applymovement LOCALID_FORTREE_JUNGLE_OGERPON, FortreeJungle_Movement_OgerponAppears
+	waitmovement 0
+	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox FortreeJungle_Text_OgerponAppears, MSGBOX_DEFAULT
+	closemessage
+	goto FortreeJungle_EventScript_OgerponBattle
+
+FortreeJungle_EventScript_Ogerpon::
+	lock
+	faceplayer
+	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
+	waitmoncry
+FortreeJungle_EventScript_OgerponBattle::
+	setwildbattle SPECIES_OGERPON_TEAL, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, FortreeJungle_EventScript_OgerponCaught
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FortreeJungle_EventScript_OgerponDefeated
+	msgbox FortreeJungle_Text_OgerponSulks, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeJungle_EventScript_OgerponCaught::
+	setflag FLAG_CAUGHT_OGERPON
+FortreeJungle_EventScript_OgerponDefeated::
+	setflag FLAG_DEFEATED_OGERPON
+	removeobject LOCALID_FORTREE_JUNGLE_OGERPON
+	setflag FLAG_HIDE_FORTREE_JUNGLE_OGERPON
+	goto_if_set FLAG_OGERPON_MASKS_RETURNED, FortreeJungle_EventScript_OgerponEnd
+	msgbox FortreeJungle_Text_MaskKeeperReturnsMasks, MSGBOX_DEFAULT
+	giveitem ITEM_WELLSPRING_MASK
+	giveitem ITEM_HEARTHFLAME_MASK
+	giveitem ITEM_CORNERSTONE_MASK
+	setflag FLAG_OGERPON_MASKS_RETURNED
+	msgbox FortreeJungle_Text_MaskKeeperFormChange, MSGBOX_DEFAULT
+FortreeJungle_EventScript_OgerponEnd::
+	release
+	end
+
+FortreeJungle_EventScript_ShowOgerpon::
+	goto_if_unset FLAG_OGERPON_MASKS_PLACED, FortreeJungle_EventScript_Return
+	goto_if_set FLAG_DEFEATED_OGERPON, FortreeJungle_EventScript_Return
+	clearflag FLAG_HIDE_FORTREE_JUNGLE_OGERPON
+	return
+
+FortreeJungle_Movement_OgerponAppears:
+	jump_in_place_down
+	delay_8
+	jump_in_place_down
+	step_end
+
 FortreeJungle_EventScript_MaskAltar::
+	goto_if_set FLAG_OGERPON_MASKS_RETURNED, FortreeJungle_EventScript_MaskAltarEmpty
 	msgbox FortreeJungle_Text_MaskAltar, MSGBOX_SIGN
+	end
+
+FortreeJungle_EventScript_MaskAltarEmpty::
+	msgbox FortreeJungle_Text_MaskAltarEmpty, MSGBOX_SIGN
 	end
 
 FortreeJungle_EventScript_ZarudeSign::
@@ -230,6 +348,78 @@ FortreeJungle_Text_MaskAltar:
 	.string "empty, mask-shaped hollows.\p"
 	.string "Someone left a note: “BACK SOON.\n"
 	.string "DO NOT TOUCH. I BITE.”$"
+
+FortreeJungle_Text_MaskAltarEmpty:
+	.string "A mossy stone altar. The note has\n"
+	.string "been updated: “GONE ADVENTURING.\l"
+	.string "STILL BITE.”$"
+
+@ Project Grounded: Ogerpon-quest (placeholders, Jordi herschrijft ze)
+FortreeJungle_Text_MaskKeeperStory:
+	.string "Oh. The CHAMPION. The one who beats\n"
+	.string "up wildlife for a living.\l"
+	.string "Good. You're hired.\p"
+	.string "Long ago an ogre lived in these\n"
+	.string "woods. OGERPON. Small. Green. Bites.\p"
+	.string "Three heroes came to save us from\n"
+	.string "her: OKIDOGI, MUNKIDORI and\l"
+	.string "FEZANDIPITI. We built them statues.\p"
+	.string "Then we found out the ogre was\n"
+	.string "protecting us FROM the heroes.\l"
+	.string "We kept the statues. Sunk cost.\p"
+	.string "Now those three have stolen her\n"
+	.string "masks and scattered across HOENN.\p"
+	.string "The brute hides deep in GRANITE\n"
+	.string "CAVE. The mind reader in FIERY\l"
+	.string "PATH. The vain one under ROUTE 127,\l"
+	.string "in a cave you have to dive into.\p"
+	.string "Bring the masks to this altar.\n"
+	.string "I'd go myself, but I'm 94 and\l"
+	.string "emotionally unavailable.$"
+
+FortreeJungle_Text_MaskKeeperHint:
+	.string "The brute: deep in GRANITE CAVE.\n"
+	.string "The mind reader: FIERY PATH.\l"
+	.string "The vain one: under ROUTE 127.\p"
+	.string "Masks. Altar. Me. It's not a\n"
+	.string "complicated quest, sweetie.$"
+
+FortreeJungle_Text_MaskKeeperAllMasks:
+	.string "All three masks. You actually\n"
+	.string "did it. Nobody ever does it.\p"
+	.string "Let me put them on the altar.\n"
+	.string "Teal in the middle, obviously.$"
+
+FortreeJungle_Text_OgerponAppears:
+	.string "OGERPON looks at the masks.\n"
+	.string "Then at you. Then at the masks.\p"
+	.string "She clearly thinks you stole them.\n"
+	.string "To be fair, everyone else did.$"
+
+FortreeJungle_Text_OgerponSulks:
+	.string "OGERPON is sulking behind the altar.\n"
+	.string "She's not going anywhere. Neither\l"
+	.string "are the masks.$"
+
+FortreeJungle_Text_MaskKeeperOgerponWaits:
+	.string "She's right there, behind the altar.\n"
+	.string "Go on. Bring a ball. Bring two.$"
+
+FortreeJungle_Text_MaskKeeperReturnsMasks:
+	.string "Well. She's calmer now. Probably.\p"
+	.string "Here, take the masks. Someone has to\n"
+	.string "keep them away from the heroes.$"
+
+FortreeJungle_Text_MaskKeeperFormChange:
+	.string "Let OGERPON hold a mask and she\n"
+	.string "turns water, fire or rock to match.\p"
+	.string "She has a wardrobe now. More than\n"
+	.string "I can say for myself.$"
+
+FortreeJungle_Text_MaskKeeperDone:
+	.string "The heroes are in a cave, the ogre\n"
+	.string "is free and I'm still 94.\p"
+	.string "Justice looks weird these days.$"
 
 FortreeJungle_Text_ZarudeSign:
 	.string "WARNING! Monkey territory.\p"

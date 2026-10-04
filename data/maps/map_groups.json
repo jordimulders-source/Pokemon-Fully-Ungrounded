@@ -692,6 +692,9 @@
     "ScorchedSlab_Spring",
     "ScorchedSlab_Sanctum",
     "Underwater_ScorchedSlab",
-    "MangroveMire"
+    "MangroveMire",
+    "GraniteCave_CornerstoneRoom",
+    "FieryPath_EmberHollow",
+    "Route127_WellspringGrotto"
   ]
 }

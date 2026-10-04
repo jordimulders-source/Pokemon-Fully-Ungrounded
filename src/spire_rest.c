@@ -252,6 +252,14 @@ static u32 RestPercent(void)
     return Spire_HasRelic(SPIRE_RELIC_SOOTHE_BELL) ? SPIRE_REST_HEAL + 30 : SPIRE_REST_HEAL;
 }
 
+// Boss-relics die een keuze afsluiten: Awakening (niet rusten), Dubious Disc (niet upgraden).
+static bool32 IsChoiceBlocked(u32 choice)
+{
+    if (choice == CHOICE_REST)
+        return Spire_HasRelic(SPIRE_RELIC_AWAKENING);
+    return Spire_HasRelic(SPIRE_RELIC_DUBIOUS_DISC);
+}
+
 static void DrawHeader(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
@@ -323,18 +331,22 @@ static void DrawOptions(void)
         }
         else if (i == CHOICE_REST)
         {
+            bool32 blocked = IsChoiceBlocked(CHOICE_REST);
+
             sel = (sRest->choice == CHOICE_REST);
             buf[0] = CHAR_PLUS;
             ConvertIntToDecimalStringN(buf + 1, RestPercent(), STR_CONV_MODE_LEFT_ALIGN, 3);
             StringAppend(buf, COMPOUND_STRING("% HP, PP"));
-            PrintText(win, FONT_NORMAL, 4, 0, sColor_Green, COMPOUND_STRING("REST"));
-            PrintText(win, FONT_SMALL_NARROW, 38, 3, sColor_Dark, buf);
+            PrintText(win, FONT_NORMAL, 4, 0, blocked ? sColor_Gray : sColor_Green, COMPOUND_STRING("REST"));
+            PrintText(win, FONT_SMALL_NARROW, 38, 3, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("Awakening: no") : buf);
         }
         else
         {
+            bool32 blocked = IsChoiceBlocked(CHOICE_UPGRADE);
+
             sel = (sRest->choice == CHOICE_UPGRADE);
-            PrintText(win, FONT_NORMAL, 4, 0, sColor_Blue, COMPOUND_STRING("UPGRADE"));
-            PrintText(win, FONT_SMALL_NARROW, 60, 3, sColor_Dark, COMPOUND_STRING("a move +"));
+            PrintText(win, FONT_NORMAL, 4, 0, blocked ? sColor_Gray : sColor_Blue, COMPOUND_STRING("UPGRADE"));
+            PrintText(win, FONT_SMALL_NARROW, 60, 3, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("no") : COMPOUND_STRING("a move +"));
         }
         CopyWindowToVram(win, COPYWIN_FULL);
         DrawFrame(win, (sel && sRest->state != STATE_MESSAGE) ? PAL_FRAME_SEL : PAL_FRAME);
@@ -350,7 +362,11 @@ static void DrawBottom(void)
     switch (sRest->state)
     {
     case STATE_MAIN:
-        if (sRest->choice == CHOICE_REST)
+        if (IsChoiceBlocked(sRest->choice))
+            PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, sRest->choice == CHOICE_REST
+                      ? COMPOUND_STRING("Awakening: your team is far too awake to rest.\nB: leave the camp.")
+                      : COMPOUND_STRING("Dubious Disc: Porygon2 crashes when it looks\nat your moves. B: leave the camp."));
+        else if (sRest->choice == CHOICE_REST)
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark,
                       COMPOUND_STRING("Chansey patches you up. Status cured too.\nNo questions. No insurance."));
         else
@@ -463,6 +479,8 @@ void Spire_OpenRest(void (*onDone)(void))
 {
     sRest = AllocZeroed(sizeof(*sRest));
     sRest->onDone = onDone;
+    if (IsChoiceBlocked(CHOICE_REST))
+        sRest->choice = CHOICE_UPGRADE;
 
     SetVBlankCallback(NULL);
     ScanlineEffect_Stop();
@@ -539,21 +557,44 @@ static void ShowMessage(const u8 *text)
 
 static void DoRest(void)
 {
+    u16 bonus = MOVE_NONE;
+
     Spire_HealRun(RestPercent());
     Spire_RestorePP();
     PlayFanfare(MUS_HEAL);
-    ShowMessage(COMPOUND_STRING("Chansey tucks your team in next to Snorlax.\nHP and PP restored. Nobody snores. Much."));
+    if (Spire_HasRelic(SPIRE_RELIC_POKE_FLUTE)) // relic: rusten upgradet ook een willekeurige move
+        bonus = Spire_UpgradeRandomMove(NULL);
+    if (bonus != MOVE_NONE)
+    {
+        StringCopy(gStringVar1, GetMoveName(bonus));
+        ShowMessage(COMPOUND_STRING("HP and PP restored. The Poké Flute wakes\nSnorlax up for a second. {STR_VAR_1}+!"));
+    }
+    else
+    {
+        ShowMessage(COMPOUND_STRING("Chansey tucks your team in next to Snorlax.\nHP and PP restored. Nobody snores. Much."));
+    }
 }
 
 static void DoUpgrade(void)
 {
     struct Pokemon *mon = Spire_GetRunMon(sRest->mon);
     u32 move = GetMonData(mon, MON_DATA_MOVE1 + sRest->slot);
+    u16 bonus = MOVE_NONE;
 
     Spire_UpgradeSlot(mon, sRest->slot);
     PlaySE(SE_EXP_MAX);
     StringCopy(gStringVar1, GetMoveName(move));
-    ShowMessage(COMPOUND_STRING("Porygon2 rewrites the code of {STR_VAR_1}.\nIt is now {STR_VAR_1}+. Do not ask how."));
+    if (Spire_HasRelic(SPIRE_RELIC_UP_GRADE)) // relic: nog een willekeurige move erbij
+        bonus = Spire_UpgradeRandomMove(NULL);
+    if (bonus != MOVE_NONE)
+    {
+        StringCopy(gStringVar2, GetMoveName(bonus));
+        ShowMessage(COMPOUND_STRING("{STR_VAR_1}+! The Up-Grade makes Porygon2\ndo {STR_VAR_2} too: {STR_VAR_2}+!"));
+    }
+    else
+    {
+        ShowMessage(COMPOUND_STRING("Porygon2 rewrites the code of {STR_VAR_1}.\nIt is now {STR_VAR_1}+. Do not ask how."));
+    }
 }
 
 static void Task_SpireRest(u8 taskId)
@@ -570,6 +611,17 @@ static void Task_SpireRest(u8 taskId)
             PlaySE(SE_SELECT);
             sRest->choice ^= 1;
             Redraw();
+        }
+        else if (JOY_NEW(A_BUTTON) && IsChoiceBlocked(sRest->choice))
+        {
+            PlaySE(SE_FAILURE);
+        }
+        else if (JOY_NEW(B_BUTTON) && (IsChoiceBlocked(CHOICE_REST) || IsChoiceBlocked(CHOICE_UPGRADE)))
+        {
+            // een boss-relic sluit een keuze af: weggaan mag (anders zit je vast als alles al "+" is)
+            PlaySE(SE_SELECT);
+            sRest->state = STATE_EXIT;
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         }
         else if (JOY_NEW(A_BUTTON))
         {

@@ -8585,8 +8585,8 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     u32 unmodifiedDefenderSpeed = gBattleMons[ctx->battlerDef].speed;
 
     //TODO: Behemoth Blade, Behemoth Bash, Dynamax Cannon (Dynamax)
-    if (gSpireBattle && IsOnPlayerSide(ctx->battlerAtk) && Spire_HasRelic(SPIRE_RELIC_MUSCLE_BAND))
-        DAMAGE_MULTIPLY_MODIFIER(UQ_4_12(1.1)); // Project Grounded: The Spire, relic Muscle Band
+    if (gSpireBattle) // Project Grounded: The Spire, relics (Muscle Band, Scanner, Dubious Disc, ...)
+        DAMAGE_MULTIPLY_MODIFIER(Spire_RelicDamageModifier(ctx->battlerAtk, ctx->battlerDef, ctx->isCrit, ctx->typeEffectivenessModifier));
     DAMAGE_MULTIPLY_MODIFIER(Spire_UpgradeDamageModifier(ctx->battlerAtk, ctx->move)); // Project Grounded: move+
     DAMAGE_MULTIPLY_MODIFIER(GetMinimizeModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetUndergroundModifier(ctx->move, ctx->battlerDef));

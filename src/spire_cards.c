@@ -101,6 +101,9 @@ struct SpireCards
     u8 cardSpriteIds[MAX_CARDS][3];
     u8 bob;
     u8 message[160];
+    u8 list[SPIRE_RELIC_COUNT];     // relic-lijst (R op de kaart): alle relics die je hebt
+    u8 listCount;
+    u8 page;                        // drie per pagina
 };
 
 static EWRAM_DATA struct SpireCards *sCards = NULL;
@@ -140,6 +143,12 @@ static const u8 sText_Common[] = _("COMMON");
 static const u8 sText_Uncommon[] = _("UNCOMMON");
 static const u8 sText_Rare[] = _("RARE");
 static const u8 *const sRarityName[] = {sText_Common, sText_Uncommon, sText_Rare};
+// relics: common grijs, uncommon blauw, rare goud, shop groen, boss rood
+static const u8 sRelicTierBarColor[SPIRE_RELIC_TIER_COUNT] = {8, 4, 6, 9, 11};
+static const u8 *const sRelicTierTextColor[SPIRE_RELIC_TIER_COUNT] = {sColor_Gray, sColor_Blue, sColor_Gold, sColor_Green, sColor_Red};
+static const u8 sText_TierShop[] = _("SHOP RELIC");
+static const u8 sText_TierBoss[] = _("BOSS RELIC");
+static const u8 *const sRelicTierName[SPIRE_RELIC_TIER_COUNT] = {sText_Common, sText_Uncommon, sText_Rare, sText_TierShop, sText_TierBoss};
 static const u8 sText_Phys[] = _("Phys.");
 static const u8 sText_Spec[] = _("Spec.");
 static const u8 sText_Status[] = _("Stat.");
@@ -235,7 +244,10 @@ static void AddMoveCard(u32 i)
 
         u32 type = TYPE_NONE;
 
-        c->rarity = roll < 10 ? 2 : roll < 40 ? 1 : 0;
+        if (Spire_HasRelic(SPIRE_RELIC_TM_CASE)) // relic: betere beloningen (25% rare, 45% uncommon)
+            c->rarity = roll < 25 ? 2 : roll < 70 ? 1 : 0;
+        else
+            c->rarity = roll < 10 ? 2 : roll < 40 ? 1 : 0;
         if (i < 2)
         {
             u16 species = GetMonData(&RUN.mons[i], MON_DATA_SPECIES);
@@ -243,6 +255,21 @@ static void AddMoveCard(u32 i)
         }
         c->value = Spire_RandomMoveOfType(c->rarity, type, i + tries);
     } while (CardTaken(i, CARD_MOVE, c->value) && ++tries < 20);
+}
+
+// Relic-lijst: de kaarten van de huidige pagina
+static void FillRelicPage(void)
+{
+    u32 i, first = sCards->page * MAX_CARDS;
+
+    memset(sCards->cards, 0, sizeof(sCards->cards));
+    sCards->count = 0;
+    for (i = 0; i < MAX_CARDS && first + i < sCards->listCount; i++)
+    {
+        sCards->cards[i].kind = CARD_RELIC;
+        sCards->cards[i].value = sCards->list[first + i];
+        sCards->count++;
+    }
 }
 
 static void BuildCards(void)
@@ -259,21 +286,32 @@ static void BuildCards(void)
             AddMoveCard(i);
         break;
     case SPIRE_CARDS_RELICS:
-        sCards->count = 0;
-        for (i = 0; i < 3; i++)
-        {
-            u32 relic, tries = 0;
+    {
+        // elite: elke kaart common 50 / uncommon 33 / rare 17%; baas: boss-relics (gSpireRelicSource)
+        u8 offered[MAX_CARDS];
 
-            do
-                relic = Spire_RandomNewRelic(i * 3 + tries);
-            while (relic < SPIRE_RELIC_COUNT && CardTaken(sCards->count, CARD_RELIC, relic) && ++tries < 20);
-            if (relic >= SPIRE_RELIC_COUNT || CardTaken(sCards->count, CARD_RELIC, relic))
+        sCards->count = 0;
+        for (i = 0; i < MAX_CARDS; i++)
+        {
+            u32 relic = Spire_RandomRelic(gSpireRelicSource, i * 3, offered, sCards->count);
+
+            if (relic >= SPIRE_RELIC_COUNT)
                 break;
+            offered[sCards->count] = relic;
             sCards->cards[sCards->count].kind = CARD_RELIC;
             sCards->cards[sCards->count].value = relic;
             sCards->cards[sCards->count].rarity = 2;
             sCards->count++;
         }
+        break;
+    }
+    case SPIRE_CARDS_RELIC_LIST:
+        sCards->listCount = 0;
+        for (i = 0; i < SPIRE_RELIC_COUNT; i++)
+            if (Spire_HasRelic(i))
+                sCards->list[sCards->listCount++] = i;
+        sCards->page = 0;
+        FillRelicPage();
         break;
     case SPIRE_CARDS_EVOLVE:
     {
@@ -323,6 +361,15 @@ static void DrawHeader(void)
         break;
     case SPIRE_CARDS_MESSAGE:
         PrintText(WIN_HEADER, FONT_NORMAL, 4, 1, sColor_Purple, sCards->title);
+        break;
+    case SPIRE_CARDS_RELIC_LIST:
+        ConvertIntToDecimalStringN(gStringVar1, sCards->listCount, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("YOUR RELICS ({STR_VAR_1})"));
+        PrintText(WIN_HEADER, FONT_NORMAL, 4, 1, sColor_Dark, gStringVar4);
+        ConvertIntToDecimalStringN(gStringVar1, sCards->page + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        ConvertIntToDecimalStringN(gStringVar2, (sCards->listCount + MAX_CARDS - 1) / MAX_CARDS, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("page {STR_VAR_1}/{STR_VAR_2}"));
+        PrintText(WIN_HEADER, FONT_NORMAL, 160, 1, sColor_Gray, gStringVar4);
         break;
     case SPIRE_CARDS_EVOLVE:
         GetMonData(&RUN.mons[gSpireEvolveMon], MON_DATA_NICKNAME, gStringVar1);
@@ -405,10 +452,14 @@ static void DrawCard(u32 i)
         PrintCentered(win, FONT_SMALL_NARROW, 3, 64, sColor_Dark, GetSpeciesName(c->value));
         break;
     case CARD_RELIC:
-        FillWindowPixelRect(win, PIXEL_FILL(6), 0, 0, 64, 3);
+    {
+        u32 tier = gSpireRelics[c->value].tier;
+
+        FillWindowPixelRect(win, PIXEL_FILL(sRelicTierBarColor[tier]), 0, 0, 64, 3);
         PrintCentered(win, FONT_SMALL_NARROW, 3, 64, sColor_Dark, gSpireRelics[c->value].name);
-        DrawFooter(win, COMPOUND_STRING("RELIC"), sColor_Gold);
+        DrawFooter(win, sRelicTierName[tier], sRelicTierTextColor[tier]);
         break;
+    }
     }
     CopyWindowToVram(win, COPYWIN_FULL);
 }
@@ -426,7 +477,7 @@ static void DrawHpBar(u32 win, u32 x, u32 y, struct Pokemon *mon)
 
 static bool32 ShowTeam(void)
 {
-    return sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE
+    return sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE && sCards->mode != SPIRE_CARDS_RELIC_LIST
         && sCards->state != STATE_CHOOSE_SLOT && sCards->state != STATE_MESSAGE;
 }
 
@@ -553,6 +604,8 @@ static void DrawBottom(void)
             PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, gSpireRelics[c->value].desc);
         if (sCards->mode == SPIRE_CARDS_EVOLVE)
             DrawSpeciesStats(c->value);
+        else if (sCards->mode == SPIRE_CARDS_RELIC_LIST)
+            PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 34, sColor_Gray, COMPOUND_STRING("{LEFT_ARROW}{RIGHT_ARROW}: browse     A/B: back to the map"));
         else
             DrawTeamRow(22, move);
         break;
@@ -787,7 +840,8 @@ static void SetupScreen(void)
         struct Pokemon *mon = Spire_GetRunMon(i);
 
         sCards->iconSpriteIds[i] = SPRITE_NONE;
-        if (sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
+        if (sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE && sCards->mode != SPIRE_CARDS_RELIC_LIST
+         && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
         {
             sCards->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
                                                      8 + 24 + i * 104, 104 + 22 + 10, 0, GetMonData(mon, MON_DATA_PERSONALITY));
@@ -901,8 +955,59 @@ static void PickCard(void)
 }
 
 // --- invoer -----------------------------------------------------------------------------------
+// Relic-lijst: LEFT/RIGHT door alle relics (pagina's van drie), A/B terug naar de kaart.
+static void TurnRelicPage(s32 delta)
+{
+    sCards->page += delta;
+    FillRelicPage();
+    sCards->card = (delta > 0) ? 0 : sCards->count - 1;
+    ShowCards();
+    DrawHeader();
+    Redraw();
+}
+
+static void HandleRelicList(void)
+{
+    if (JOY_NEW(DPAD_LEFT) && (sCards->card > 0 || sCards->page > 0))
+    {
+        PlaySE(SE_SELECT);
+        if (sCards->card > 0)
+        {
+            sCards->card--;
+            Redraw();
+        }
+        else
+        {
+            TurnRelicPage(-1);
+        }
+    }
+    else if (JOY_NEW(DPAD_RIGHT) && (sCards->card + 1 < sCards->count || (sCards->page + 1) * MAX_CARDS < sCards->listCount))
+    {
+        PlaySE(SE_SELECT);
+        if (sCards->card + 1 < sCards->count)
+        {
+            sCards->card++;
+            Redraw();
+        }
+        else
+        {
+            TurnRelicPage(1);
+        }
+    }
+    else if (JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        Exit();
+    }
+}
+
 static void HandleCards(void)
 {
+    if (sCards->mode == SPIRE_CARDS_RELIC_LIST)
+    {
+        HandleRelicList();
+        return;
+    }
     if (sCards->count == 0)
     {
         if (JOY_NEW(A_BUTTON | B_BUTTON))
@@ -924,6 +1029,13 @@ static void HandleCards(void)
     else if (JOY_NEW(A_BUTTON))
     {
         PickCard();
+    }
+    else if (JOY_NEW(B_BUTTON) && sCards->mode == SPIRE_CARDS_MOVES && Spire_HasRelic(SPIRE_RELIC_SWEET_HEART))
+    {
+        // Sweet Heart (relic): een move overslaan geeft blijvend max HP (zoals Singing Bowl in Slay)
+        PlaySE(SE_SELECT);
+        Spire_ChangeMaxHp(3);
+        ShowMessage(COMPOUND_STRING("You skip the moves. Sweet Heart:\nboth Pokémon get +3% max HP."), FALSE);
     }
     else if (JOY_NEW(B_BUTTON) && (sCards->mode == SPIRE_CARDS_MOVES || sCards->mode == SPIRE_CARDS_RELICS))
     {

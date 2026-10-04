@@ -264,7 +264,7 @@ static const u8 *LockReason(const struct SpireEventOption *o)
         StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Needs a {STR_VAR_1} type"));
         return gStringVar4;
     }
-    if (HasFx(o, SPIRE_FX_LOSE_RELIC) && RUN.relics == 0)
+    if (HasFx(o, SPIRE_FX_LOSE_RELIC) && Spire_CountRelics() == 0)
         return sText_NeedRelic;
     if (HasFx(o, SPIRE_FX_LOSE_ITEMS) && GetMonData(&RUN.mons[0], MON_DATA_HELD_ITEM) == ITEM_NONE
                                       && GetMonData(&RUN.mons[1], MON_DATA_HELD_ITEM) == ITEM_NONE)
@@ -465,7 +465,7 @@ static void LoseHp(struct Pokemon *mon, u32 percent)
 }
 
 // Blijvende max-HP-verandering in procentpunten van de gewone max HP (voor beide).
-static void ChangeMaxHp(s32 delta)
+void Spire_ChangeMaxHp(s32 delta)
 {
     u32 i;
 
@@ -546,7 +546,7 @@ static void UpgradeRandomMoves(u32 count)
 
 static void GiveRelic(void)
 {
-    u32 relic = Spire_RandomNewRelic(Random() % 8);
+    u32 relic = Spire_RandomRelic(SPIRE_RELIC_FROM_ELITE, Random() % 8, NULL, 0);
 
     if (relic < SPIRE_RELIC_COUNT)
     {
@@ -563,19 +563,16 @@ static void GiveRelic(void)
 
 static void LoseRelic(void)
 {
-    u32 i, n = 0, pick;
+    u32 i, n = Spire_CountRelics(), pick;
 
-    for (i = 0; i < SPIRE_RELIC_COUNT; i++)
-        if (RUN.relics & (1u << i))
-            n++;
     if (n == 0)
         return;
     pick = Random() % n;
     for (i = 0; i < SPIRE_RELIC_COUNT; i++)
     {
-        if ((RUN.relics & (1u << i)) && pick-- == 0)
+        if (Spire_HasRelic(i) && pick-- == 0)
         {
-            RUN.relics &= ~(1u << i);
+            Spire_RemoveRelic(i);
             StringCopy(gStringVar1, gSpireRelics[i].name);
             AppendLine(COMPOUND_STRING("The {STR_VAR_1} is gone."));
             return;
@@ -687,7 +684,7 @@ static void ApplyFx(const struct SpireEventFx *f)
         LoseHp(&RUN.mons[Random() & 1], f->arg);
         break;
     case SPIRE_FX_MAXHP:
-        ChangeMaxHp(f->arg);
+        Spire_ChangeMaxHp(f->arg);
         break;
     case SPIRE_FX_BP:
         RUN.bp += f->arg;
@@ -808,7 +805,8 @@ static void PickOption(void)
         return;
     }
     PlaySE(SE_SELECT);
-    if (o->chance < 100 && Random() % 100 >= o->chance)
+    // Luck Incense (relic): gokken lukt 20 procentpunt vaker (max 95%)
+    if (o->chance < 100 && Random() % 100 >= (Spire_HasRelic(SPIRE_RELIC_LUCK_INCENSE) ? min(95, o->chance + 20) : o->chance))
     {
         fx = o->fxFail;
         text = o->resultFail;

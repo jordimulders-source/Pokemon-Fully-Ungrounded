@@ -18,7 +18,8 @@ Gebruik:
     python3 runsim.py --runs 4000     # meer runs
     python3 runsim.py --set heal_after=10 act_heal=40 --no-write   # andere instelling proberen
 Volgorde na wijzigingen: spire_pool.py -> encounters.py -> runsim.py (encounters.py laat deze sectie staan).
-runsim_before.txt = kerngetallen van v0.8.106 (vóór de Slay-vergelijking), voor de voor/na-tabel; --save schrijft een nieuwe.
+runsim_before.txt = kerngetallen van v0.8.114 (vóór de 50 relics), voor de voor/na-tabel; --save schrijft een nieuwe.
+Relics (lijst, zeldzaamheid, rekenmodel): relics.py.
 """
 import argparse, math, os, random, re, statistics, sys
 from collections import Counter, defaultdict
@@ -26,10 +27,11 @@ from collections import Counter, defaultdict
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import encounters as ENC  # noqa: E402
+import relics as RELICDATA  # noqa: E402
 
 ROOT = ENC.ROOT
 SECTION = '## Vergelijking met Slay the Spire'
-VERSION = 'v0.8.107'
+VERSION = 'v0.8.115'
 
 
 def _read(p):
@@ -61,7 +63,7 @@ def load_config():
     )
     # act-overgang: Spire_HealRun(X) in NextAct
     m = re.search(r'static void NextAct\(void\)\n\{(.*?)\n\}', run, re.S)
-    arg = re.search(r'Spire_HealRun\((\w+)\)', m.group(1)).group(1)
+    arg = re.search(r'Spire_HealRun\(.*?(\w+)\);', m.group(1)).group(1)   # (Gracidea ? 100 : SPIRE_ACT_HEAL)
     cfg['act_heal'] = int(arg) if arg.isdigit() else c_define(h, arg)
     # geld na gevechten (CB2_EndSpireBattle)
     cfg['gold_boss'] = int(re.search(r'case SPIRE_ROOM_BOSS:\s*gold = (\d+)', run).group(1))
@@ -255,9 +257,13 @@ def unit_values(cfg):
     )
 
 
-RELICS = ['BERRY_POUCH', 'AMULET_COIN', 'GUARD_SPEC', 'DIRE_HIT', 'MUSCLE_BAND', 'WIDE_LENS', 'SOOTHE_BELL', 'SACRED_ASH']
-# effect op het HP-verlies per gevecht (schatting, zie de sectie hieronder)
-RELIC_LOSS = {'GUARD_SPEC': 0.96, 'DIRE_HIT': 0.95, 'MUSCLE_BAND': 0.92, 'WIDE_LENS': 0.97, 'SACRED_ASH': 0.98}
+# Relics: lijst, zeldzaamheid en rekenmodel uit relics.py (dezelfde bron als de C-tabel)
+RELIC = {r['key']: r for r in RELICDATA.R}
+RELICS = list(RELIC)
+TIER_ROLL = [('COMMON', 50), ('UNCOMMON', 33), ('RARE', 17)]   # Spire_RandomRelic (elite, event, winkel)
+
+# Speelduur van een mens (seconden), voor de schatting van de runlengte (zie report)
+DUR = dict(turn=35, battle=25, reward=25, relic=20, event=60, shop=90, rest=25, room=10, draft=120, act=45)
 
 SKILL = {'goed': 0.8, 'gemiddeld': 1.0, 'slordig': 1.5}
 CV = {'weak': 0.45, 'normal': 0.45, 'elite': 0.5, 'boss': 0.3}   # spreiding per gevecht (balance.py: 0,6 incl. teamverschil)
@@ -304,10 +310,15 @@ class Run:
     def has(self, r):
         return r in self.relics
 
-    def power(self):
+    def rs(self, key, default=0):
+        """Som (of product voor factoren) van een rekenmodel-veld over je relics."""
+        return sum(RELIC[r]['sim'].get(key, 0) for r in self.relics) or default
+
+    def power(self, kind='normal'):
         p = 0.93 ** min(self.upgrades, 6) * 0.95 ** min(self.items, 2) * 0.97 ** min(self.moves, 3)
         for r in self.relics:
-            p *= RELIC_LOSS.get(r, 1.0)
+            loss = RELIC[r]['sim'].get('loss', 1.0)
+            p *= loss.get(kind, 1.0) if isinstance(loss, dict) else loss
         return p
 
     def has_type(self, t):
@@ -320,22 +331,61 @@ class Run:
         if pct >= self.sim.cfg['rest_heal']:
             self.poison = 0
 
+    def can_offer(self, r, source, exclude):
+        info = RELIC[r]
+        if r in self.relics or r in exclude or any(c in self.relics for c in info['conflicts']):
+            return False
+        return not (source in ('winkel', 'winkel2') and info['noshop'])
+
+    def random_relic(self, source, exclude=()):
+        """Port van Spire_RandomRelic: zeldzaamheid per bron, terugvallen op de naastgelegen."""
+        if source == 'baas':
+            order = ['BOSS', 'RARE', 'UNCOMMON', 'COMMON', 'SHOP']
+        elif source == 'winkel2':
+            order = ['SHOP', 'UNCOMMON', 'COMMON', 'RARE', 'BOSS']
+        else:
+            x = self.rng.randrange(100)
+            tier = 'COMMON' if x < 50 else 'UNCOMMON' if x < 83 else 'RARE'
+            rest = {'COMMON': ['UNCOMMON', 'RARE'], 'UNCOMMON': ['COMMON', 'RARE'], 'RARE': ['UNCOMMON', 'COMMON']}[tier]
+            order = [tier] + rest + (['SHOP'] if source == 'winkel' else []) + ['BOSS']
+        for t in order:
+            cands = [r for r in RELICS if RELIC[r]['tier'] == t and self.can_offer(r, source, exclude)]
+            if cands:
+                return self.rng.choice(cands)
+        return None
+
+    def take_relic(self, r):
+        self.relics.append(r)
+        sim = RELIC[r]['sim']
+        if sim.get('maxhp'):
+            self.apply_fx([('maxhp', sim['maxhp'])])
+        if sim.get('upgrades'):
+            self.upgrades += sim['upgrades']
+        if sim.get('fullheal'):
+            self.heal(100, 'event')
+
     def add_relic(self, source):
-        left = [r for r in RELICS if r not in self.relics]
-        if not left:
+        # elite/baas: kies 1 uit 3 kaarten; event: 1 willekeurige; winkel: zie shop()
+        offers = []
+        for _ in range(3 if source in ('elite', 'baas') else 1):
+            r = self.random_relic(source, offers)
+            if r:
+                offers.append(r)
+        self.log['relicoffers'] += 1
+        if not offers:
             if not self.relics_out:
                 self.relics_out = True
                 self.log['relicsout'] += 1
             return False
-        # kies uit 3 (beloningsscherm) of 1 (event/winkel): de beste voor dit team
-        opts = self.rng.sample(left, min(3 if source in ('elite', 'boss') else 1, len(left)))
-        order = ['MUSCLE_BAND', 'BERRY_POUCH', 'DIRE_HIT', 'GUARD_SPEC', 'AMULET_COIN', 'SOOTHE_BELL', 'WIDE_LENS', 'SACRED_ASH']
-        self.relics.append(min(opts, key=order.index))
+        self.log['relicshort'] += len(offers) < (3 if source in ('elite', 'baas') else 1)
+        self.take_relic(max(offers, key=lambda r: RELIC[r]['sim'].get('pick', 0)))
         return True
 
     def gold_in(self, amount, source):
         if self.has('AMULET_COIN') and source in ('gevecht', 'elite', 'baas'):
             amount = amount * 3 // 2
+        if self.rs('nogold') and source in ('gevecht', 'elite', 'baas'):
+            amount = 0
         self.gold += amount
         self.log['gold'][(self.act, source)] += amount
 
@@ -344,7 +394,7 @@ class Run:
         base = self.sim.mean_loss[(self.biome if kind != 'boss' else 'BOSS%d' % self.act, kind)]
         if kind == 'boss':
             base = self.boss_loss
-        m = base * self.skill * self.matchup * self.power() / self.maxf * self.sim.cfg.get('act_scale', {}).get((self.act, kind), 1.0)
+        m = base * self.skill * self.matchup * self.power(kind) / self.maxf * self.sim.cfg.get('act_scale', {}).get((self.act, kind), 1.0)
         m += self.poison * 0.0625 * turns / self.maxf * 0.5
         return m
 
@@ -362,7 +412,7 @@ class Run:
                 if self.rng.random() < 0.4:
                     self.poison += 1
             self.toxic -= 1
-        m = loss * self.skill * self.matchup * self.power() * S.cfg.get('act_scale', {}).get((self.act, kind), 1.0)
+        m = loss * self.skill * self.matchup * self.power(kind) * S.cfg.get('act_scale', {}).get((self.act, kind), 1.0)
         m *= 1 + 0.35 * self.sleep
         self.sleep = 0
         L = lognorm(self.rng, m, CV[kind]) / self.maxf
@@ -370,16 +420,27 @@ class Run:
         L += self.poison * 0.0625 * turns / self.maxf
         room = {'weak': 'gevecht', 'normal': 'gevecht', 'elite': 'elite', 'boss': 'baas'}[kind]
         self.log['loss'][(self.act, room)].append(min(L, self.hp))
+        # speelduur: beurten (relics die vijanden minder HP geven maken het gevecht korter), plus intro/beloning
+        hpf = 0.8 if (kind == 'elite' and self.has('RING_TARGET')) else 0.85 if (kind in ('weak', 'normal') and self.has('QUICK_BALL')) else 1.0
+        self.time += turns * hpf * DUR['turn'] + DUR['battle'] + DUR['reward'] + (DUR['relic'] if kind in ('elite', 'boss') else 0)
+        self.turns += turns * hpf
         if L >= self.hp:
             self.dead = (self.act, room)
             return False
         self.hp -= L
         heal = S.cfg['heal_after'] + (10 if self.has('BERRY_POUCH') else 0)
+        if self.rs('noheal'):
+            heal = 0
         self.heal(heal, 'na gevecht')
+        if self.rs('oran') and self.hp < 0.5:
+            self.heal(self.rs('oran') / 2, 'na gevecht')   # per Pokémon onder 50%: ±de helft van het team
         lo, hi = S.cfg['gold_fight'] if room == 'gevecht' else S.cfg['gold_elite'] if room == 'elite' else (S.cfg['gold_boss'],) * 2
         self.gold_in(self.rng.randint(lo, hi), room)
-        if room in ('elite', 'baas'):
-            self.add_relic(room)
+        if room == 'baas':
+            self.add_relic('baas')
+        elif room == 'elite':
+            for _ in range(max(1, self.rs('elite_relics'))):
+                self.add_relic('elite')
         return True
 
     # -- rust
@@ -388,36 +449,51 @@ class Run:
 
     def rest(self, next_is_boss):
         need = 0.9 if next_is_boss else 0.6
-        if self.hp < need or self.poison:
+        self.time += DUR['rest']
+        if (self.hp < need or self.poison or self.rs('noupgrade')) and not self.rs('norest'):
             self.heal(self.rest_amount(), 'rust')
+            self.upgrades += self.rs('rest_upgrade')
             self.log['restchoice'][(self.act, 'heal')] += 1
-        else:
-            self.upgrades += 1
+        elif not self.rs('noupgrade'):
+            self.upgrades += 1 + self.rs('upgrade_bonus')
             self.log['restchoice'][(self.act, 'upgrade')] += 1
 
     # -- winkel
     def shop(self):
         cfg, V = self.sim.cfg, self.sim.V
+        f = self.rs('shop', 1.0) if self.has('RAINBOW_PASS') else 1.0
+        price = lambda x: int(x * f)
         spent0 = self.gold
         bought = 0
-        if self.hp < 0.65 and self.gold >= cfg['potion_price']:
-            self.gold -= cfg['potion_price']
+        self.time += DUR['shop']
+        if self.hp < 0.65 and self.gold >= price(cfg['potion_price']):
+            self.gold -= price(cfg['potion_price'])
             self.heal(cfg['potion_heal'], 'winkel')
             bought += 1
-        if self.gold >= cfg['relic_price'] and len(self.relics) < len(RELICS):
-            self.gold -= cfg['relic_price']
-            self.add_relic('winkel')
+        # twee relics in de winkel: een gewone en een winkel-relic; de bot koopt de beste die hij kan betalen
+        offers = []
+        for src in ('winkel', 'winkel2'):
+            r = self.random_relic(src, offers)
+            if r:
+                offers.append(r)
+        self.log['relicoffers'] += 1
+        if not offers and not self.relics_out:
+            self.relics_out = True
+            self.log['relicsout'] += 1
+        if offers and self.gold >= price(cfg['relic_price']):
+            self.gold -= price(cfg['relic_price'])
+            self.take_relic(max(offers, key=lambda r: RELIC[r]['sim'].get('pick', 0)))
             bought += 1
-        if self.items < 2 and self.gold >= cfg['item_price'][1]:
-            self.gold -= cfg['item_price'][1]
+        if self.items < 2 and self.gold >= price(cfg['item_price'][1]):
+            self.gold -= price(cfg['item_price'][1])
             self.items += 1
             bought += 1
-        if self.moves < 3 and self.gold >= cfg['move_price'][1]:
-            self.gold -= cfg['move_price'][1]
+        if self.moves < 3 and self.gold >= price(cfg['move_price'][1]):
+            self.gold -= price(cfg['move_price'][1])
             self.moves += 1
             bought += 1
-        if self.items < 2 and self.gold >= cfg['item_price'][0]:
-            self.gold -= cfg['item_price'][0]
+        if self.items < 2 and self.gold >= price(cfg['item_price'][0]):
+            self.gold -= price(cfg['item_price'][0])
             self.items += 1
             bought += 1
         self.log['spent'][self.act] += spent0 - self.gold
@@ -448,7 +524,7 @@ class Run:
             elif k == 'bp':
                 val += a * V['bp']
             elif k == 'relic':
-                val += V['relic'] if len(self.relics) < len(RELICS) else 0
+                val += V['relic']
             elif k == 'loserelic':
                 val -= V['relic'] if self.relics else 0
             elif k == 'item':
@@ -527,7 +603,10 @@ class Run:
                 self.add_relic('event')
             elif k == 'loserelic':
                 if self.relics:
-                    self.relics.remove(self.rng.choice(self.relics))
+                    r = self.rng.choice(self.relics)
+                    self.relics.remove(r)
+                    if RELIC[r]['sim'].get('maxhp'):
+                        self.maxf = max(0.4, self.maxf - RELIC[r]['sim']['maxhp'] / 100)
             elif k in ('item', 'give'):
                 self.items = min(2, self.items + 1)
             elif k == 'loseitems':
@@ -559,6 +638,7 @@ class Run:
 
     def event(self):
         S = self.sim
+        self.time += DUR['event']
         pool = [e for e in S.events if self.act in e['acts'] and e['key'] not in self.seen]
         if not pool:
             self.seen = set()
@@ -585,7 +665,8 @@ class Run:
             return True
         self.log['event'][e['key']].append(bv)
         fx = best['fx']
-        if 'chance' in best and self.rng.random() * 100 >= best['chance']:
+        chance = min(95, best['chance'] + self.rs('gamble')) if 'chance' in best and best['chance'] < 100 and self.rs('gamble') else best.get('chance')
+        if 'chance' in best and self.rng.random() * 100 >= chance:
             fx = best['fxb']
         return self.apply_fx(fx)
 
@@ -594,7 +675,7 @@ class Run:
         """Verwachte waarde van een pad (lijst kamertypes tot en met de baas)."""
         V, cfg = self.sim.V, self.sim.cfg
         hp, gold, alive, val = self.hp, self.gold, 1.0, 0.0
-        heal_after = cfg['heal_after'] + (10 if self.has('BERRY_POUCH') else 0)
+        heal_after = 0 if self.rs('noheal') else cfg['heal_after'] + (10 if self.has('BERRY_POUCH') else 0)
         for idx, t in enumerate(path):
             if t in (FIGHT, ELITE, BOSS):
                 kind = 'boss' if t == BOSS else 'elite' if t == ELITE else ('weak' if self.floor + idx < 2 else 'normal')
@@ -609,7 +690,7 @@ class Run:
                 val += alive * (g * 0.6 + V['reward_move'] + (V['relic'] if t in (ELITE, BOSS) else 0))
             elif t == REST:
                 nxt_boss = idx + 1 == len(path) - 1 or path[idx + 1] == BOSS
-                if hp < (0.9 if nxt_boss else 0.6):
+                if hp < (0.9 if nxt_boss else 0.6) and not self.rs('norest'):
                     gain = min(self.rest_amount() / 100, 1 - hp)
                     hp += gain
                     val += alive * gain * 100 * V['hp']
@@ -662,6 +743,7 @@ class Run:
             cur = best
             t = nodes[f][cur]['type']
             self.taken.append(t)
+            self.time += DUR['room']
             self.log['rooms'][(act, t)] += 1
             if t == FIGHT:
                 ok = self.fight('weak' if f < 2 else 'normal')
@@ -679,22 +761,31 @@ class Run:
             if not ok:
                 return False
         self.log['arrive'][act].append(self.hp)
+        if self.rs('boss_heal'):
+            self.heal(self.rs('boss_heal'), 'event')   # Hyper Potion
         if not self.fight('boss'):
             return False
         self.log['afterboss'][act].append(self.hp)
         if act < 3:
-            self.heal(S.cfg['act_heal'], 'act-overgang')
+            self.heal(max(S.cfg['act_heal'], self.rs('act_heal')), 'act-overgang')
+            self.time += DUR['act']
         return True
 
     def play(self):
         self.seen = set()
         self.dead = None
+        self.time = DUR['draft']
+        self.turns = 0.0
         for act in (1, 2, 3):
             self.log['reached'][act] += 1
             if not self.play_act(act):
                 self.log['died'][self.dead] += 1
+                self.log['time_lost'].append(self.time)
                 return act
             self.log['cleared'][act] += 1
+        self.log['time_won'].append(self.time)
+        self.log['turns_won'].append(self.turns)
+        self.log['relics_won'].append(len(self.relics))
         return 4
 
 
@@ -714,6 +805,9 @@ class Sim:
                         reached=Counter(), cleared=Counter(), died=Counter(), arrive=defaultdict(list),
                         afterboss=defaultdict(list), eventdmg=Counter(), eventelite=Counter(), softlock=Counter())
         self.log['relicsout'] = 0
+        self.log['relicoffers'] = 0
+        self.log['relicshort'] = 0
+        self.log['time_won'], self.log['time_lost'], self.log['turns_won'], self.log['relics_won'] = [], [], [], []
         rng = random.Random(seed)
         ends = Counter()
         for _ in range(n):
@@ -819,6 +913,25 @@ def report(sim, logs, changes, before, sens=None):
         L += ['', '**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ' +
               ', '.join('×%.2f → %s' % (m, pct(w)) for m, w in sorted(sens.items())) +
               '. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.']
+    # speelduur
+    tw, tl, tu = g['time_won'], g['time_lost'], g['turns_won']
+    if tw:
+        other = statistics.mean(tw) - statistics.mean(tu) * DUR['turn']
+        L += ['', '### Speelduur van een run (schatting voor een mens)', '',
+              'Doel (Jordi): een run duurt voor een mens ±1u-1u20. Een mens denkt per beurt veel langer na dan de bot. Aannames per beurt: '
+              'twee keuzes (FIGHT/DEFEND, move, doel) met de intenties lezen ±2×10 s plus ±15 s animaties en berichten (tekst Fast, '
+              'gevechtsanimaties al ingekort) = **%d s per beurt**. Per gevecht %d s intro/uitslag en %d s beloningsscherm (+%d s relic), '
+              'event %d s, winkel %d s, rustplek %d s, kaart %d s per kamer, draft %d s, act-overgang %d s.' % (
+                  DUR['turn'], DUR['battle'], DUR['reward'], DUR['relic'], DUR['event'], DUR['shop'], DUR['rest'], DUR['room'], DUR['draft'], DUR['act']), '',
+              '| | beurten | duur bij 25 s/beurt | 35 s/beurt | 45 s/beurt |', '|---|---|---|---|---|']
+        for label, turns, rest in (('gewonnen run', statistics.mean(tu), other),):
+            L.append('| %s | %.0f | %.0f min | %.0f min | %.0f min |' % (label, turns, (turns * 25 + rest) / 60, (turns * 35 + rest) / 60, (turns * 45 + rest) / 60))
+        L += ['', 'Verloren runs duren gemiddeld %.0f min (35 s/beurt). Per act: ±%.0f beurten in gevechten, ±%.0f min buiten gevechten. '
+              'Conclusie: een gewonnen run zit met %.0f min (25-45 s per beurt: %.0f-%.0f min) %s het doel van 60-80 min; '
+              'de actlengte (%d verdiepingen) blijft zoals hij is.' % (
+                  statistics.mean(tl) / 60 if tl else 0, statistics.mean(tu) / 3, other / 3 / 60, statistics.mean(tw) / 60,
+                  (statistics.mean(tu) * 25 + other) / 60, (statistics.mean(tu) * 45 + other) / 60,
+                  'binnen' if 60 <= statistics.mean(tw) / 60 <= 80 else 'buiten', cfg['floors'])]
     L += ['', '**Waar runs eindigen** (gemiddeld niveau; Slay: act-1-elites en de act-1/2-baas zijn de grote killers, act 2 ook gewone gevechten):', '']
     deaths = g['died']
     tot_d = max(1, sum(deaths.values()))
@@ -860,6 +973,8 @@ def summary_rows(sim, logs):
     out['aankopen per winkel act 1'] = '%.1f' % (statistics.mean(g['bought'][1]) if g['bought'][1] else 0)
     out['rust: heal act 1'] = g['restchoice'][(1, 'heal')] / max(1, g['restchoice'][(1, 'heal')] + g['restchoice'][(1, 'upgrade')])
     out['relic-pool leeg (runs)'] = g['relicsout'] / max(1, g['reached'][3])
+    out['relics per gewonnen run'] = '%.1f' % (statistics.mean(g['relics_won']) if g['relics_won'] else 0)
+    out['speelduur gewonnen run (min)'] = '%.0f' % (statistics.mean(g['time_won']) / 60 if g['time_won'] else 0)
     for k in ('goed', 'gemiddeld', 'slordig'):
         out['winkans %s' % k] = logs[k]['cleared'][3] / logs[k]['n']
         out['act 1 gehaald (%s)' % k] = logs[k]['cleared'][1] / logs[k]['n']
@@ -875,43 +990,33 @@ def fmtv(v):
 
 
 CHANGES = [
-    '`SPIRE_HEAL_AFTER` 10 → **8%** (`include/spire.h`): Slay\'s Burning Blood is 6 van 80 HP (7,5%), Silent heeft niets. Met 10% was een gewoon '
-    'act-1-gevecht (±12%) bijna gratis en kwam de bot met 96% bij de baas; nu kost een gang netto een paar procent en blijft HP de grondstof over de hele act.',
-    '`SPIRE_REST_HEAL` 40 → **30%**: zoals Slay. Rust/elite-verhouding was 40/24 = 1,7 (Slay 30/±27 ≈ 1,1); nu ±1,2: één rustplek betaalt één elite. '
-    'Upgraden (±40% HP waard over de run) wint nu als je gezond bent: de echte Smith/Rest-keuze. Status gaat weg vanaf 30% (de drempel volgt de constante).',
-    '`SPIRE_ACT_HEAL` **40%** (nieuw; was `SPIRE_REST_HEAL`): de act-overgang los van de rustplek, zelfde 40%. Slay A0 heelt alles, A5+ 75% van het tekort '
-    '(±30-40% na een baas): bewust de strengere variant.',
-    '`SPIRE_START_GOLD` 0 → **75¥** (`NewRun`): Slay begint met 99 goud (±40% van een act). Zonder startgeld kocht de bot in een act-1-winkel gemiddeld 0,5 '
-    'dingen; nu ±1,4, en een eerste winkel is een echte keuze (relic sparen of nu een move).',
-    'Relic in de winkel 120 → **150¥** (`src/spire_shop.c`): relic-prijs gedeeld door het geld van een act was 0,5 (Slay 0,6-1,2, gewone relic 150 op ±250). '
-    'Relics zijn het sterkste in de winkel en de pool is klein: vóór liep hij in bijna de helft van de runs leeg.',
-    'Kaart (`Spire_GenerateMap`): gevecht/event/elite/winkel/rust **45/25/15/7/8%** (was 45/20/15/10/10); te vroeg voor een elite = gevecht, te vroeg voor een '
-    'winkel = event. Vóór had verdieping 2 25% winkels (de elite-kans viel door naar de winkel) terwijl je daar nog geen geld hebt; events per act 0,7 → 1,0 '
-    '(Slay ×7/15: ±1,5-2), winkels ±0,35 per act (Slay 1-2 per 15 kamers).',
-    'Ontmoetingen (`encounters.py`): kalibratie op **HP-verlies per act** (zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65%), eerder alleen op duur '
-    '(alle acts gelijk). Daardoor waren act-2-gangen goedkoper dan act 1 (11% en 5% tegen 12% en 8%) en act-3-elites lichter dan act-1-elites; in Slay doet elke act '
-    'meer pijn en de speler groeit (relics, upgrades, items). HP-factoren in `src/data/spire_encounters.h` opnieuw berekend; act-1-gangen gelijk, act-1-elites ×0,6 → ×0,7 '
-    '(terug op het oude doel van 24%).',
-    'Event *Mimikyu\'s Birthday*, *Bring a gift* 40 → **75¥** (`events.py`): een relic voor 40¥ was een kwart van de winkelprijs (EV +100¥, het op twee na '
-    'gulste event); nu de halve prijs.',
+    '**Relics 8 → 50** (Jordi, 5 okt; `relics.py` → `include/spire_relics.h` en `src/data/spire_relics.h`): 16 common, 15 uncommon, 8 rare, 3 shop, '
+    '8 boss. Elites bieden 3 relics met elk 50/33/17% common/uncommon/rare (zoals Slay), bazen 3 boss-relics (sterk, vaak met een nadeel: '
+    'Awakening = niet rusten, Relic Crown = geen geld, Odd Keystone = geen intenties, ...), de winkel een gewone en een winkel-relic, events een gewone. '
+    'Relics die door een andere relic nutteloos worden, worden niet aangeboden (Soothe Bell na Awakening, ...). '
+    'De relic-pool loopt niet meer leeg (was 28% van de runs); een gewonnen run heeft ±8 relics.',
+    'Run-model (`runsim.py`): relics komen nu uit `relics.py` met hun eigen rekenmodel (HP-verlies per soort gevecht, heal, geld, max HP, '
+    'rust/upgrade, winkelprijzen, act-heal); de bot kiest uit de aangeboden relics zoals de game ze aanbiedt. De factoren zijn schattingen '
+    '(+X% schade ≈ gevecht X% korter ≈ minder schade incasseren) en moeten na testen bijgesteld worden.',
+    '**Procent-moves zeldzaam** (Jordi: Toxic, Leech Seed en vergelijkbare moves zo laten, maar zeldzaam; `spire_pool.py`): nooit meer in een '
+    'startkit, en als beloning alleen nog als een kwart van de rare kaarten (±2,5% per kaart). Zie *Beloningsmoves* hierboven.',
+    'Patronen en blok aan het eind van de beurt (`Spire_EndTurn`): werd vaker dan één keer per beurt aangeroepen zodra er effecten aan het eind van '
+    'de beurt waren (gif, weer, Leftovers), waardoor vaste patronen een stap oversloegen. Nu precies één keer per beurt.',
 ]
 
 OPEN = [
-    '**Gif, Leech Seed, weer en %-heals schalen niet mee met ×HP.** Gif doet 1/8 van de (×4) max HP = 12,5% van de balk per beurt, terwijl een klap ±10% doet. '
-    'Toxic doodt elke baas (×4,5 HP) in ±6 beurten ongeacht zijn HP-vermenigvuldiger; Recover/Roost/Wish helen de helft van de balk. Het event *Toxic Spikes* '
-    'kost daardoor ±20% HP per gevecht per vergiftigde Pokémon (tot de volgende rustplek). Voorstel: in de Spire schade/heal in % van de max HP delen door de '
-    'HP-vermenigvuldiger (engine, `battle_util.c`), of bewust zo laten (Pokémon-kennis) maar dan Toxic/Leech Seed als rare.',
+    '**Relics maken act 2 en 3 goedkoper** (model): met ±8 relics per run (en sterkere boss-relics) zakt het verlies bij de act-3-baas van ±45% naar ±25% '
+    'en stijgt de winkans (gemiddeld/slordig) met ±5/15 procentpunt; zie de voor/na-tabel. Volgens het model herstelt act 2 ×1,15 en act 3 ×1,35 '
+    'zwaarder (encounters.py, `TARGET_ACT`) de oude winkansen (78/36%). Niet aangepast: eerst testen hoe sterk de relics in het echt zijn '
+    '(de factoren in relics.py zijn schattingen). Slay doet hetzelfde: elke act doet meer pijn omdat de speler groeit. '
+    'Geld per act daalt in het model (±135¥) doordat de bot na de eerste baas graag Relic Crown neemt (geen geld meer uit gevechten).',
     '**Vastloper:** in een event waarvan elke optie geld of een type vraagt (nu *The Vending Machine*/Rotom: 20¥, 30¥ of Electric) kun je niet verder als je '
     'te weinig geld hebt en geen Electric-type. Voorstel: B = weglopen als alles op slot zit (`spire_event.c`), of een Leave-optie.',
-    '**Relic-pool (8) is te klein** voor een Slay-ritme (±2-3 elites + baas + winkel per act = 7-10 relics per run): ook na de prijsverhoging loopt hij in ±30% van de '
-    'runs leeg en dan geven elites/bazen niets meer. Slay heeft 100+ relics; 20-25 zou hier genoeg zijn.',
-    '**Winkans:** volgens het model is de Spire nog steeds iets milder dan Slay A0 (gemiddeld niveau ±75-80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. '
-    'De economie (HP, geld, rust) is nu Slay-achtig; wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de '
-    'ontmoetingen en is pas na testen te meten: houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.',
-    '**Act-escalatie in de praktijk:** in het model wordt de speler per act ±15-35% sterker door relics/upgrades/items (schatting), waardoor gangen en elites in act 2/3 '
-    'in de praktijk even duur blijven als in act 1 (Slay: ±1,5× zo duur in act 3). Na testen eventueel act 3 nog zwaarder (gewoon 18-20%).',
-    '**Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). Kort en snappy, maar de run heeft '
-    'daardoor ±10 beloningen minder; 9 verdiepingen zou dichter bij Slay zitten (ontwerpkeuze, niet aangepast).',
+    '**Winkans:** volgens het model is de Spire nog steeds milder dan Slay A0 (gemiddeld niveau ±80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. '
+    'Wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de ontmoetingen en is pas na testen te meten: '
+    'houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.',
+    '**Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). De speelduur zit wel op het doel '
+    '(zie *Speelduur*); de actlengte blijft.',
     'Uitschieters in de ontmoetingen (al gemarkeerd *te zwaar*), zoals Sewer Clam (62% HP) en Jungle Ambush (22 beurten), maken de gang-doden in act 1: eerst die bijstellen.',
 ]
 

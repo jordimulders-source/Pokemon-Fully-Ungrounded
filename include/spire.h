@@ -41,18 +41,16 @@ enum SpireRoom
     SPIRE_ROOM_BOSS,
 };
 
-// Relics = trainerspullen voor het hele team (vasthouditems zijn iets anders: één per Pokémon, zie de winkel).
-enum SpireRelic
+// Relics (50, tools/grounded/spire/relics.py): enum SpireRelic en enum SpireRelicTier
+#include "spire_relics.h"
+
+// Waar een relic vandaan komt (bepaalt de zeldzaamheid, zie Spire_RandomRelic)
+enum SpireRelicSource
 {
-    SPIRE_RELIC_BERRY_POUCH,   // +10% extra heal na elk gevecht
-    SPIRE_RELIC_AMULET_COIN,   // +50% geld
-    SPIRE_RELIC_GUARD_SPEC,    // +30% blok bij DEFEND
-    SPIRE_RELIC_DIRE_HIT,      // eigen crits +1 stage
-    SPIRE_RELIC_MUSCLE_BAND,   // eigen schade +10%
-    SPIRE_RELIC_WIDE_LENS,     // eigen spread-moves zonder 25% verlies
-    SPIRE_RELIC_SOOTHE_BELL,   // rustplek heelt 30% meer
-    SPIRE_RELIC_SACRED_ASH,    // flauwgevallen na een gewonnen gevecht: terug met 30% i.p.v. 1 HP
-    SPIRE_RELIC_COUNT,
+    SPIRE_RELIC_FROM_ELITE,     // elite (en events): common 50 / uncommon 33 / rare 17%
+    SPIRE_RELIC_FROM_BOSS,      // baas: boss-relics
+    SPIRE_RELIC_FROM_SHOP,      // winkel: als elite, nooit 'noShop'
+    SPIRE_RELIC_FROM_SHOP_SPECIAL, // tweede winkelplek: shop-relics (op = als SHOP)
 };
 
 enum SpireBiomeId
@@ -150,6 +148,8 @@ struct SpireSave
     u32 eventsSeen;     // events die deze run al geweest zijn (0-31)
     struct Pokemon mons[2];
     u32 eventsSeen2;    // events 32-63 (achteraan, zodat een gepauzeerde run blijft werken)
+    u32 relics2;        // relics 32-63 (achteraan, idem)
+    u8 relicCharges;    // Acro Bike: aantal sprongen naar een kamer buiten je pad
 };
 
 #define SPIRE_SAVE (*(struct SpireSave *)gSaveBlock2Ptr->spireData)
@@ -159,6 +159,9 @@ struct SpireRelicInfo
     u16 item;           // icoon
     const u8 *name;
     const u8 *desc;
+    u8 tier;            // enum SpireRelicTier
+    bool8 noShop;
+    u8 conflicts[2];    // niet aanbieden als je een van deze al hebt (SPIRE_RELIC_COUNT = geen)
 };
 
 struct SpireMapNode
@@ -197,6 +200,8 @@ extern u8 gSpireHiddenIntent;   // bit per vijandelijke partyplek
 extern u8 gSpireEnvironment;
 extern u8 gSpireEvolveMon;
 extern u8 gSpirePatternStep[PARTY_SIZE];
+extern u8 gSpireEncounterKind;
+extern u8 gSpireRelicSource;    // enum SpireRelicSource van het volgende relic-kaartenscherm  // enum SpireEncounterKind van het lopende gevecht
 
 // spire.c: gevecht
 void Spire_OnEnemyPartyCreated(void);
@@ -212,15 +217,25 @@ void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, 
 void Spire_ApplyPattern(u32 battler);
 void Spire_EndTurn(void);
 bool32 Spire_IsMoveBanned(u16 move);
+u32 Spire_BlockSplit(void);
+uq4_12_t Spire_RelicDamageModifier(u32 battlerAtk, u32 battlerDef, bool32 isCrit, uq4_12_t typeEffectiveness);
+bool32 Spire_TryRelicEndure(u32 battlerDef);
+void Spire_OnFirstTurn(void);
 
 // spire_run.c: run
 bool32 Spire_RunActive(void);
 struct Pokemon *Spire_GetRunMon(u32 i);
 bool32 Spire_HasRelic(u32 relic);
 void Spire_AddRelic(u32 relic);
-u32 Spire_RandomNewRelic(u32 salt);
+void Spire_RemoveRelic(u32 relic);
+u32 Spire_CountRelics(void);
+u32 Spire_RandomRelic(u32 source, u32 salt, const u8 *exclude, u32 excludeCount);
+u32 Spire_RelicHpBonus(void);
+void Spire_RefreshMaxHp(void);
+u16 Spire_UpgradeRandomMove(u32 *monOut);
 void Spire_GenerateMap(struct SpireActMap *map, u32 seed);
 bool32 Spire_IsReachable(const struct SpireActMap *map, u32 floor, u32 node);
+bool32 Spire_IsAcroJump(const struct SpireActMap *map, u32 floor, u32 node);
 void Spire_EnterRoom(u32 floor, u32 node);
 void Spire_RoomFinished(void);
 void Spire_SuspendRun(void);
@@ -306,6 +321,7 @@ enum SpireFx
 };
 extern u8 gSpireForcedEvent;    // debug: 0 = willekeurig, anders event-index + 1
 void Spire_OpenEvent(void (*onDone)(void));
+void Spire_ChangeMaxHp(s32 delta);
 // spire_cards.c
 enum SpireCardMode
 {
@@ -313,6 +329,7 @@ enum SpireCardMode
     SPIRE_CARDS_RELICS,     // beloning: kies een relic
     SPIRE_CARDS_MESSAGE,    // alleen een bericht (einde run, nieuwe act)
     SPIRE_CARDS_EVOLVE,     // nieuwe act: kies de evolutie van gSpireEvolveMon (vertakking)
+    SPIRE_CARDS_RELIC_LIST, // R op de kaart: je relics bekijken (drie per pagina)
 };
 void Spire_OpenCards(u32 mode, void (*onDone)(void));
 void Spire_OpenMessage(const u8 *title, const u8 *text, void (*onDone)(void));

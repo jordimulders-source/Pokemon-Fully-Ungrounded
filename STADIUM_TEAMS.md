@@ -64,7 +64,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_CYRUS | 534 | Crobat, Gyarados, Magnezone, Weavile | Crobat, Magnezone, Weavile | - |
 | STADIUM_BARRY | 525 | Heracross, Roserade, Snorlax, Empoleon | Roserade, Snorlax, Empoleon | - |
 | STADIUM_MARS | 502 | Crobat, Bronzong, Honchkrow, Purugly | Crobat, Bronzong, Purugly | - |
-| STADIUM_JUPITER | 495 | Bronzong, Houndoom, Drapion, Skuntank | Bronzong, Houndoom, Skuntank | - |
+| STADIUM_JUPITER | 507 | Crobat, Bronzong, Houndoom, Skuntank | Crobat, Bronzong, Skuntank | - |
 | STADIUM_SATURN | 512 | Crobat, Bronzong, Weavile, Toxicroak | Crobat, Weavile, Toxicroak | - |
 | STADIUM_PALMER | 580 | Snorlax, Heatran, Cresselia, Dragonite | Heatran, Cresselia, Dragonite | Trick Room |
 | STADIUM_THORTON | 522 | Gliscor, Weavile, Infernape, Porygon-Z | Gliscor, Infernape, Porygon-Z | - |

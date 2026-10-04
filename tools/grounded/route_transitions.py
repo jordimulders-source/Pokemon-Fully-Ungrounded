@@ -882,69 +882,143 @@ def surface():
 htiles = [lava_tile(0), lava_tile(1), edge(True), edge(False), head(0), head(1), head(2), drops(), surface()]
 save('heatran', htiles, cycle(pad(LAVA), 4, amp=2))
 
-# ------------------------------------------------------------------ Shaymin: een wervelwind van Gracidea-bloemen en -blaadjes
-# 1-2 Gracidea (roze / wit met roze hart), 3-6 roze blaadje (vier richtingen), 7-8 wit blaadje, 9 bloementapijt,
-# 10 helemaal lichtroze, 11-14 grote Gracidea (2x2)
-GRAC = pad([(0, 0, 0), (31, 20, 26), (29, 11, 20), (21, 5, 13), (31, 31, 31), (26, 24, 28), (31, 27, 8),
-            (10, 22, 8), (5, 13, 5), (31, 26, 29)])
-def gracidea(white):
+# ------------------------------------------------------------------ Shaymin: een wervelwind van bloemen in alle kleuren (Gracidea voorop)
+# Drie paletten (BG-palet 15, 14 en 13), elk 4 standen (lichte schittering): .pal = [p15 x4, p14 x4, p13 x4].
+# Per palet: 1 wit, 2 wit schaduw, 3-4 blad (licht/donker), 5 geel hart, 6 bruin hart, 7-9 / 10-12 / 13-15 drie
+# bloemkleuren (licht, midden, donker). p15: roze (Gracidea), rood, fuchsia; p14: geel, oranje, zalm; p13: blauw,
+# paars, lila. Tiles: eerst SH_SMALL kleine bloemen/blaadjes (8x8), dan SH_BIG grote bloemen (2x2), dan SH_CARPET
+# tapijttiles (gras met een bloem). Volgorde en palet per tile staan in de tabellen in src/battle_transition.c.
+SH_COMMON = [(31, 31, 31), (24, 23, 27), (14, 26, 8), (5, 15, 6), (31, 27, 6), (17, 8, 3)]
+SH_FAM = {15: [((31, 22, 27), (29, 11, 20), (20, 4, 12)),     # Gracidea-roze
+               ((31, 11, 9), (25, 3, 4), (14, 1, 3)),          # rood
+               ((31, 14, 29), (24, 4, 22), (14, 1, 13))],      # fuchsia
+          14: [((31, 31, 14), (31, 25, 3), (24, 15, 1)),       # geel
+               ((31, 22, 8), (31, 14, 2), (21, 7, 1)),         # oranje
+               ((31, 24, 20), (30, 15, 12), (20, 7, 7))],      # zalm
+          13: [((20, 28, 31), (8, 16, 31), (3, 6, 20)),        # blauw
+               ((24, 16, 31), (16, 6, 28), (8, 2, 16)),        # paars
+               ((29, 25, 31), (23, 18, 31), (14, 10, 24))]}    # lila
+def sh_pal(p, f):
+    base = [(0, 0, 0)] + SH_COMMON + [c for fam in SH_FAM[p] for c in fam]
+    out = [base[0]]
+    for i, c in enumerate(base[1:], 1):
+        d = int(round(1.4 * math.sin(2 * math.pi * f / 4 + i * 1.3)))
+        out.append(tuple(max(0, min(31, v + d)) for v in c))
+    return out
+SH_W, SH_WS, SH_G, SH_GD, SH_Y, SH_BR = 1, 2, 3, 4, 5, 6
+def fam(k):
+    return (7 + 3 * k, 8 + 3 * k, 9 + 3 * k)
+
+def sh_flower(size, n, round_, cols, center=SH_Y, cr=1.1, ring=None, rot=0.3, depth=0.55, rays=False):
+    """bloem van boven: n bloemblaadjes (rond of spits, of dunne stralen), licht linksboven, donker aan de rand"""
+    c0 = (size - 1) / 2.0
+    R = size / 2.0 - 0.15
     def f(x, y):
-        dx, dy = x - 3.5, y - 3.5
+        dx, dy = x - c0, y - c0
         d = math.hypot(dx, dy)
-        if d < 1.1:
-            return 6
-        if d > 3.9:
+        if d < cr:
+            return center if d < cr - 0.6 or (x + y) % 2 else (SH_BR if center == SH_Y else center)
+        if ring and d < ring[0]:
+            return ring[1]
+        a = math.atan2(dy, dx) + rot
+        lobe = abs(math.cos(n * a / 2))
+        if rays:
+            lobe = 1.0 if lobe > 0.45 else 0.0
+        elif round_:
+            lobe = lobe ** 0.5
+        edge = R * (1 - depth) + R * depth * lobe
+        if d > edge:
             return 0
-        a = math.atan2(dy, dx)
-        lobe = abs(math.cos(2.5 * (a + 0.3)))          # vijf bloemblaadjes
-        if d > 1.6 + 2.4 * lobe:
-            return 0
-        if white:
-            return 2 if d < 2.0 else (4 if d < 3.1 else 5)
-        return 3 if d < 1.7 else (2 if d < 2.6 else 1)
-    return tile(f)
-def petal(ang, col):
-    ca, sa = math.cos(ang), math.sin(ang)
-    def f(x, y):
-        u = (x - 3.5) * ca + (y - 3.5) * sa             # langs het blaadje
-        v = -(x - 3.5) * sa + (y - 3.5) * ca
-        if abs(u) > 3.2:
-            return 0
-        w = 1.8 * math.cos(u / 3.2 * math.pi / 2) ** 0.7 * (1.0 if u < 0 else 0.75)
-        if abs(v) > w:
-            return 0
-        if col == 'pink':
-            return 3 if u > 2.2 else (1 if v < -0.5 else 2)
-        return 2 if u > 2.4 else (4 if v < 0.3 else 5)
-    return tile(f)
-def carpet(x, y):
-    pts = [(1, 1, 0), (5, 2, 1), (2, 5, 1), (6, 6, 0)]
-    for cx, cy, w in pts:
-        d = abs(x - cx) + abs(y - cy)
-        if d == 0:
-            return 6
-        if d == 1:
-            return 4 if w else 2
-    return 9 if (x + y) % 3 else 1
-grac = [gracidea(False), gracidea(True)]
-grac += [petal(a, 'pink') for a in (0.4, 0.4 + math.pi / 2, 0.4 + math.pi, 0.4 + 3 * math.pi / 2)]
-grac += [petal(a, 'white') for a in (1.1, 1.1 + math.pi)]
-grac.append(tile(carpet))
-grac.append(tile(lambda x, y: 9))
-def big_gracidea(x, y):
+        light, mid, dark = cols
+        if d > edge - 0.9 or (rays and lobe < 1):
+            return dark
+        return light if dx + dy < -0.6 * d else mid
+    return f
+
+T_TULIP = ['.a.ab.b.', '.aabbbc.', '.abbbbc.', '.abbbbc.', '..bbbc..', '...g....', '.Gg.....', '..g.....']
+T_ROSE = ['..bbbb..', '.baaacb.', 'bacbbacb', 'baabcacb', 'bacccacb', '.baaacc.', '..bccc..', '........']
+T_BELL = ['....gg..', '..gg..g.', '.g....g.', 'ab...abc', 'bbc..bbc', 'c.c..c.c', '........', '........']
+T_LAV = ['...a....', '..aba...', '...bc...', '..abc...', '...bc...', '..abcG..', '...gG...', '...g....']
+T_LEAF = ['......Gg', '....GGg.', '..GGGg..', '.GGGgg..', '.Ggg....', 'gg......', 'g.......', '........']
+T_PETAL = ['........', '...aa...', '..aabb..', '.abbbbc.', '.bbbbcc.', '..bccc..', '...c....', '........']
+def sh_tmpl(rows, cols):
+    m = {'.': 0, 'a': cols[0], 'b': cols[1], 'c': cols[2], 'G': SH_G, 'g': SH_GD, 'W': SH_W, 'Y': SH_Y}
+    return [m[rows[y][x]] for y in range(8) for x in range(8)]
+
+# kleine tiles: (tile, palet)
+sh_small = [
+    (tile(sh_flower(8, 5, False, fam(0), cr=1.3)), 15),                 # Gracidea
+    (tile(sh_flower(8, 5, False, (SH_W, SH_W, fam(0)[1]), center=fam(0)[2], cr=1.2)), 15),  # witte Gracidea, roze hart
+    (sh_tmpl(T_ROSE, fam(1)), 15),                                       # roos
+    (sh_tmpl(T_TULIP, fam(1)), 15),                                      # rode tulp
+    (tile(sh_flower(8, 8, False, fam(2), cr=1.2, depth=0.4)), 15),      # cosmea (fuchsia)
+    (sh_tmpl(T_PETAL, fam(0)), 15),                                      # roze blaadje
+    (sh_tmpl(T_PETAL, fam(1)), 15),                                      # rood blaadje
+    (sh_tmpl(T_LEAF, fam(0)), 15),                                       # blad
+    (tile(sh_flower(8, 12, False, (SH_W, SH_W, SH_WS), cr=1.6, rays=True)), 14),   # madeliefje
+    (tile(sh_flower(8, 5, True, fam(0), cr=1.0, depth=0.35)), 14),      # boterbloem
+    (tile(sh_flower(8, 10, True, fam(1), center=fam(1)[2], cr=1.4, depth=0.25)), 14),  # goudsbloem
+    (sh_tmpl(T_TULIP, fam(0)), 14),                                      # gele tulp
+    (sh_tmpl(T_TULIP, fam(2)), 14),                                      # zalmroze tulp
+    (sh_tmpl(T_PETAL, fam(0)), 14),                                      # geel blaadje
+    (sh_tmpl(T_PETAL, fam(1)), 14),                                      # oranje blaadje
+    (sh_tmpl(T_PETAL, (SH_W, SH_W, SH_WS)), 14),                          # wit blaadje
+    (tile(sh_flower(8, 5, True, fam(0), cr=1.5, ring=(1.6, SH_W), depth=0.3)), 13),  # vergeet-mij-nietje
+    (tile(sh_flower(8, 4, False, fam(1), center=SH_Y, cr=1.0, depth=0.5, rot=0.0)), 13),  # viooltje
+    (sh_tmpl(T_BELL, fam(0)), 13),                                       # klokjes
+    (sh_tmpl(T_LAV, fam(1)), 13),                                        # lavendel
+    (tile(sh_flower(8, 6, False, fam(2), cr=1.1)), 13),                 # lila stervormpje
+    (sh_tmpl(T_PETAL, fam(0)), 13),                                      # blauw blaadje
+    (sh_tmpl(T_PETAL, fam(1)), 13),                                      # paars blaadje
+    (sh_tmpl(T_PETAL, fam(2)), 13),                                      # lila blaadje
+]
+# grote bloemen (16x16)
+sh_big = [
+    (sh_flower(16, 5, False, fam(0), cr=2.4, depth=0.6), 15),            # grote Gracidea
+    (None, 15),                                                           # grote roos (hieronder)
+    (sh_flower(16, 16, False, fam(0), center=SH_BR, cr=4.2, rays=True), 14),   # zonnebloem
+    (sh_flower(16, 14, False, (SH_W, SH_W, SH_WS), cr=3.0, rays=True), 14),    # margriet
+    (sh_flower(16, 5, True, fam(0), cr=2.0, ring=(3.2, SH_W), depth=0.25), 13),  # blauwe winde
+    (sh_flower(16, 6, False, fam(1), cr=1.8, depth=0.7, rot=0.0), 13),   # paarse ster (clematis)
+]
+def sh_bigrose(x, y):
     dx, dy = x - 7.5, y - 7.5
     d = math.hypot(dx, dy)
-    if d < 2.0:
-        return 6
-    a = math.atan2(dy, dx)
-    lobe = abs(math.cos(2.5 * (a + 0.3)))
-    if d > 2.6 + 5.2 * lobe:
+    if d > 7.4:
         return 0
-    if d < 3.0:
-        return 3
-    return 4 if d > 1.8 + 5.2 * lobe else (1 if dx + dy < 0 else 2)
-grac += blocks(big_gracidea, 2, 2)                  # 11-14: grote Gracidea (2x2)
-save('shaymin', grac, cycle(GRAC, 4, amp=1))
+    a = math.atan2(dy, dx)
+    s = (d * 0.9 + a * 1.2) % (2 * math.pi)                # spiraal van blaadjes
+    light, mid, dark = fam(1)
+    if d > 6.6:
+        return dark
+    if s < 0.9:
+        return dark
+    return light if s > 4.0 and dx + dy < 0 else mid
+sh_big[1] = (sh_bigrose, 15)
+SH_CARPET_FLOWERS = (0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 16, 17, 18, 19, 20)   # de bloemen (geen blaadjes)
+def sh_carpet(k):
+    """tapijttile: gras met een van de kleine bloemen erop"""
+    gr2 = random.Random(400 + k)
+    t, p = sh_small[k]
+    return ([v if v else (SH_G if gr2.random() < 0.65 else SH_GD) for v in t], p)
+sh_carpet_tiles = [sh_carpet(k) for k in SH_CARPET_FLOWERS]
+shay = [t for t, p in sh_small]
+for f, p in sh_big:
+    shay += blocks(f, 2, 2)
+shay += [t for t, p in sh_carpet_tiles]
+save('shaymin', shay, [sh_pal(p, f) for p in (15, 14, 13) for f in range(4)])
+# vooraf berekende tabellen (delen is traag op de GBA): _petals.bin = per bloem (210) 3 bytes: straal-offset, hoek-offset,
+# tile (1-24 klein; 0x80 | n = grote bloem n); _carpet.bin = 30x20 tapijtcellen (bit 0-5 tile, bit 6 spiegelen)
+SH_PETALS, SH_CARPET0 = 210, 1 + len(sh_small) + 4 * len(sh_big)
+pet = []
+for i in range(SH_PETALS):
+    pet += [(i // 3) * 6 % 150, ((i % 3) * 85 + (i // 75) * 43 + (i * 13) % 20) & 0xFF,
+            0x80 | ((i // 6) % len(sh_big)) if i % 6 == 0 else 1 + (i * 7 + i // 3) % len(sh_small)]
+open(OUT + 'route_shaymin_petals.bin', 'wb').write(bytes(pet))
+open(OUT + 'route_shaymin_carpet.bin', 'wb').write(bytes(
+    (SH_CARPET0 + (x * 7 + y * 11 + (x * y) % 5) % len(sh_carpet_tiles)) | (((x + y) & 1) << 6) for y in range(20) for x in range(30)))
+print('  Shaymin: %d klein, %d groot, %d tapijt' % (len(sh_small), len(sh_big), len(sh_carpet_tiles)))
+print('  paletten klein:', [p for t, p in sh_small], 'groot:', [p for f, p in sh_big])
 
 # ------------------------------------------------------------------ Genesect: scanlijnen, een rood vizier dat zijn doel zoekt, Techno Blast
 # 1 scanlijnen, 2 scanbalk, 3-66 vizier (8x8), 67.. "LOCKED ON" (GTW x GTH), daarna straal: rand boven, kern, rand onder
@@ -985,38 +1059,300 @@ gen += [tile(lambda x, y: BEAM[y]), tile(lambda x, y: 5 if (x + y) % 3 else 4), 
 save('genesect', gen, [GEN])
 print('  LOCKED ON', GTW, 'x', GTH, 'tiles, straal vanaf', 3 + 64 + GTW * GTH)
 
-# ------------------------------------------------------------------ Mewtwo: het scherm wordt paars, twee gloeiende ogen gaan open, psychische schokgolf
-# 1-54 ogen (3 standen x 6x3, linkeroog; rechts = gespiegeld), 55 rand buiten (dither), 56 rand fel, 57 rand binnen,
-# 58-59 psychische vulling; kleurcyclus over 4 paletten
-MEW = [(0, 0, 0), (6, 2, 10), (12, 4, 20), (20, 8, 28), (26, 16, 31), (31, 26, 31), (2, 0, 4), (8, 20, 31), (22, 30, 31)]
-def eye(open_):
-    """Linkeroog (binnenhoek rechts): rechte, schuin aflopende bovenrand (boze blik), bolle onderrand, paarse iris."""
-    def f(x, y):
-        if not 3 <= x <= 44:
-            return 0
-        u = (x - 3) / 41.0
-        mid = 9 + 7 * u                              # lijn van buitenhoek naar binnenhoek
-        top0 = 3 + 11 * u                            # bovenrand (open): recht en schuin
-        bot0 = mid + 8 * math.sin(math.pi * u) ** 0.7
-        top = mid + (top0 - mid) * open_
-        bot = mid + (bot0 - mid) * open_
-        if top <= y <= bot + 0.5:
-            d = math.hypot(x - 28, y - (mid + 2 * open_))
-            if d < 2.2 * open_ + 0.5:
-                return 6
-            if d < 6 * open_ + 0.6:
-                return 3
-            return 8 if y > top + 1.5 else 5
-        if top - 2.5 <= y <= bot + 2.5:
-            return 4 if top - 1.5 <= y <= bot + 1.5 else (2 if (x + y) % 2 else 0)
-        return 0
-    return f
-mew = []
-for o in (0.12, 0.55, 1.0):
-    mew += blocks(eye(o), 6, 3)
-mew += [tile(lambda x, y: 4 if (x + y) % 2 else 0), tile(lambda x, y: 5), tile(lambda x, y: 3 if (x + y) % 2 else 4)]
-mew += [tile(lambda x, y, v=v: 1 + int((math.sin(x * 0.8 + y * 0.5 + v * 2) + math.sin(y * 0.9 - x * 0.4)) + 2.2) % 3) for v in range(2)]
-save('mewtwo', mew, cycle(pad(MEW), 4, amp=3))
+# ------------------------------------------------------------------ Mewtwo: het lab op Cinnabar Island. In een gloeiende kweektank zweeft
+# Mewtwo's silhouet (de FRLG-sprite), het dagboek uit de Pokémon Mansion verschijnt regel voor regel ("Diary: Feb. 6
+# Mew gave birth. We named the newborn MEWTWO." / "Diary: Sept. 1 MEWTWO is far too powerful. We have failed to curb
+# its vicious tendencies..."), dan gaan de ogen open, barst het glas en spat de tank uiteen in een psychische schokgolf.
+# route_mewtwo.png: tiles 1-3 rand van de schokgolf (buiten, fel, binnen), 4-7 glasscherven, daarna de ontdubbelde
+# tiles van de beelden. Tilemaps (u16, 30 breed, tile-indexen zonder palet): _lab.bin (30x20), _crack.bin (3 x 30x20,
+# barsten 1-3), _page.bin (2 x 30x4: dagboek, rij 16-19), _burst.bin (30x20: psychisch veld met Mewtwo).
+# Paletten (9 x 16): 0-2 rustig (belletjes stijgen), 3-5 ontwaakt (ogen gloeien, vloeistof flakkert), 6-8 schokgolf.
+# Kleuren: 1 zwart, 2 donker staal / tekstschaduw, 3 staal, 4 glans / barst, 5-7 vloeistof (donker-fel), 8-10 belletjes,
+# lampjes en ringen (kleurcyclus), 11 ogen, 12 tekst / scherm, 13-14 silhouet (schaduw / licht)
+import re
+MW_BLACK, MW_STEEL_D, MW_STEEL, MW_GLINT, MW_LIQ_D, MW_LIQ, MW_LIQ_L = 1, 2, 3, 4, 5, 6, 7
+MW_PHASE, MW_EYE, MW_TEXT, MW_SIL_D, MW_SIL_L, MW_GLOW = 8, 11, 12, 13, 14, 15
+def mw_pal(liq, bub_on, bub_off, eye, glow, phase):
+    p = [(0, 0, 0), (1, 2, 3), (4, 6, 8), (10, 13, 15), (22, 27, 27), liq[0], liq[1], liq[2]]
+    for k in range(3):
+        p.append(bub_on if (k + phase) % 3 == 0 else bub_off)
+    return p + [eye, (20, 31, 20), (0, 3, 2), (3, 8, 6), glow]
+MW_LIQ_CALM = ((2, 9, 6), (5, 17, 10), (13, 27, 15))
+mw_pals = []
+for f in range(3):                                      # rustig: belletjes stijgen
+    mw_pals.append(mw_pal(MW_LIQ_CALM, (24, 31, 24), MW_LIQ_CALM[1], (3, 8, 6), (3, 8, 6), f))
+for f in range(3):                                      # ontwaakt: de vloeistof flakkert paars, de ogen gloeien
+    liq = [((2, 9, 6), (8, 4, 12), (4, 6, 10))[f], ((5, 17, 10), (16, 8, 22), (10, 12, 18))[f],
+           ((13, 27, 15), (26, 16, 31), (20, 24, 28))[f]]
+    mw_pals.append(mw_pal(liq, (31, 31, 31), liq[1], ((31, 31, 31), (28, 22, 31), (31, 28, 31))[f],
+                         ((20, 8, 28), (24, 12, 31), (16, 6, 24))[f], f))
+for f in range(3):                                      # schokgolf: paars veld, ringen golven naar buiten
+    ring = [(12, 4, 20), (20, 9, 28), (28, 18, 31)]
+    p = [(0, 0, 0), (2, 0, 4), (6, 2, 10), (14, 8, 22), (31, 28, 31), (6, 2, 12), (12, 4, 20), (24, 14, 31)]
+    for k in range(3):
+        p.append(ring[(k - f) % 3])
+    mw_pals.append(p + [(31, 31, 31), (31, 26, 31), (2, 0, 5), (8, 3, 14), (26, 14, 31)])
+
+def mw_scale3x(img):
+    """Scale3x op een P-beeld (zie guest_trainer_pics.py); daarna halveren geeft een nette 1,5x"""
+    W, H = img.size
+    p = img.load()
+    out = Image.new('P', (W * 3, H * 3))
+    q = out.load()
+    g = lambda x, y: p[min(max(x, 0), W - 1), min(max(y, 0), H - 1)]
+    for y in range(H):
+        for x in range(W):
+            A, B, C, D, E, F, G, Hh, I = [g(x + dx, y + dy) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
+            e = [E] * 9
+            if B != Hh and D != F:
+                e[0] = D if D == B else E
+                e[1] = B if (D == B and E != C) or (B == F and E != A) else E
+                e[2] = F if B == F else E
+                e[3] = D if (D == B and E != G) or (D == Hh and E != A) else E
+                e[5] = F if (B == F and E != I) or (Hh == F and E != C) else E
+                e[6] = D if D == Hh else E
+                e[7] = Hh if (D == Hh and E != I) or (Hh == F and E != G) else E
+                e[8] = F if Hh == F else E
+            for i in range(9):
+                q[x * 3 + i % 3, y * 3 + i // 3] = e[i]
+    return out
+# Mewtwo-silhouet uit de FRLG-frontsprite: 1 schaduw, 2 licht, 3 oog (gloeit als de ogen opengaan)
+mw_spr = Image.open('graphics/pokemon/mewtwo/anim_front_gba.png').crop((0, 0, 64, 64))
+mw_sp = mw_spr.getpalette()
+mw_sil = Image.new('P', (64, 64), 0)
+for y in range(64):
+    for x in range(64):
+        v = mw_spr.getpixel((x, y))
+        if v == 0:
+            continue
+        if 35 <= x <= 39 and 15 <= y <= 18 and v in (5, 6, 7, 8):
+            mw_sil.putpixel((x, y), 3)
+        else:
+            mw_sil.putpixel((x, y), 2 if sum(mw_sp[v * 3:v * 3 + 3]) > 450 and v != 14 else 1)
+mw_big = mw_scale3x(mw_sil).resize((96, 96), Image.NEAREST)
+mw_eye = [(x, y) for y in range(96) for x in range(96) if mw_big.getpixel((x, y)) == 3]
+for (x, y) in mw_eye:                                   # gloed rond het oog (kleur 15), binnen het silhouet
+    for a in range(-2, 3):
+        for b in range(-1, 2):
+            if abs(a) + abs(b) <= 2 and mw_big.getpixel((x + a, y + b)) in (1, 2):
+                mw_big.putpixel((x + a, y + b), 4)
+MW_CX = 120
+mbx0, mby0, mbx1, mby1 = mw_big.getbbox()
+MW_OX, MW_OY = MW_CX - (mbx0 + mbx1) // 2, 17 - mby0
+def mw_paste(im, rim=None):
+    px = mw_big.load()
+    if rim is not None:
+        for y in range(96):
+            for x in range(96):
+                if px[x, y] == 0 and any(0 <= x + a < 96 and 0 <= y + b < 96 and px[x + a, y + b]
+                                         for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                    im.putpixel((MW_OX + x, MW_OY + y), rim)
+    for y in range(96):
+        for x in range(96):
+            if px[x, y]:
+                im.putpixel((MW_OX + x, MW_OY + y), (MW_SIL_D, MW_SIL_L, MW_EYE, MW_GLOW)[px[x, y] - 1])
+
+MTX0, MTX1, MTY0, MTY1 = 64, 176, 14, 112               # glas van de tank
+def mw_lab():
+    im = Image.new('P', (240, 160), MW_BLACK)
+    d = ImageDraw.Draw(im)
+    for x in range(0, 240, 40):                         # wandpanelen
+        d.line(((x, 0), (x, 111)), fill=MW_STEEL_D)
+    for y in (40, 88):
+        d.line(((0, y), (239, y)), fill=MW_STEEL_D)
+    d.rectangle((0, 112, 239, 127), fill=MW_STEEL_D)    # vloer met roosters
+    for x in range(0, 240, 8):
+        d.line(((x, 113), (x, 127)), fill=MW_BLACK)
+    d.line(((0, 112), (239, 112)), fill=MW_STEEL)
+    for (x0, x1) in ((0, MTX0), (MTX1, 239)):           # leidingen van de tankkap naar de zijkanten en omlaag
+        d.rectangle((x0, 3, x1, 9), fill=MW_STEEL)
+        d.line(((x0, 4), (x1, 4)), fill=MW_GLINT)
+        d.line(((x0, 9), (x1, 9)), fill=MW_STEEL_D)
+    for x in (24, 216):
+        d.rectangle((x - 3, 6, x + 3, 56), fill=MW_STEEL)
+        d.line(((x - 2, 6), (x - 2, 56)), fill=MW_GLINT)
+        d.line(((x + 3, 6), (x + 3, 56)), fill=MW_STEEL_D)
+        for y in (20, 40):
+            d.rectangle((x - 4, y, x + 4, y + 2), fill=MW_STEEL_D)
+    # consoles: links een DNA-streng, rechts een hartslag; de lampjes knipperen (fasekleuren)
+    for (cx, kind) in ((24, 'dna'), (216, 'ecg')):
+        x0, x1 = cx - 20, cx + 19
+        d.rectangle((x0, 58, x1, 111), fill=MW_STEEL)
+        d.line(((x0, 58), (x1, 58)), fill=MW_GLINT)
+        d.line(((x0, 58), (x0, 111)), fill=MW_GLINT)
+        d.line(((x1, 58), (x1, 111)), fill=MW_STEEL_D)
+        d.rectangle((x0 + 4, 62, x1 - 4, 88), fill=MW_BLACK)
+        if kind == 'dna':
+            for y in range(64, 87):
+                a = (y - 64) * 0.5
+                xa, xb = cx + int(round(9 * math.sin(a))), cx + int(round(9 * math.sin(a + math.pi)))
+                if (y - 64) % 3 == 1 and abs(xa - xb) > 3:
+                    d.line(((min(xa, xb) + 1, y), (max(xa, xb) - 1, y)), fill=MW_LIQ_D)
+                d.point((xb, y), fill=MW_LIQ)
+                d.point((xa, y), fill=MW_TEXT)
+        else:
+            pts = []
+            for x in range(x0 + 5, x1 - 4):
+                u = (x - x0 - 5) % 15
+                pts.append((x, 76 - {4: 2, 6: 9, 7: -5}.get(u, 0)))
+            d.line(pts, fill=MW_TEXT)
+            for x in range(x0 + 5, x1 - 4, 4):
+                d.point((x, 86), fill=MW_LIQ_D)
+        for k in range(4):
+            d.rectangle((x0 + 6 + k * 8, 94, x0 + 8 + k * 8, 96), fill=MW_PHASE + (k + (cx > 100)) % 3)
+        for k in range(3):
+            d.line(((x0 + 6, 101 + k * 3), (x1 - 6, 101 + k * 3)), fill=MW_STEEL_D)
+    # de tank: kap, glas met vloeistof (cilinder: fel in het midden), belletjes, sokkel
+    d.rectangle((MTX0 - 6, 0, MTX1 + 6, MTY0 - 1), fill=MW_STEEL)
+    d.line(((MTX0 - 6, MTY0 - 1), (MTX1 + 6, MTY0 - 1)), fill=MW_STEEL_D)
+    d.line(((MTX0 - 6, 1), (MTX1 + 6, 1)), fill=MW_GLINT)
+    for x in range(MTX0, MTX1, 12):
+        d.rectangle((x + 2, 4, x + 5, 9), fill=MW_STEEL_D)
+    for y in range(MTY0, MTY1):
+        for x in range(MTX0, MTX1):
+            c = abs((x - MTX0) / (MTX1 - MTX0 - 1) - 0.5) * 2
+            v = MW_LIQ_L if c < 0.32 else (MW_LIQ if c < 0.78 else MW_LIQ_D)
+            if (0.26 < c < 0.38 or 0.72 < c < 0.84) and (x + y) % 2:
+                v = MW_LIQ if c < 0.5 else MW_LIQ_D
+            im.putpixel((x, y), v)
+    for x in (MTX0 + 8, MTX0 + 9, MTX0 + 14):
+        d.line(((x, MTY0 + 2), (x, MTY1 - 3)), fill=MW_GLINT)
+    d.line(((MTX1 - 9, MTY0 + 4), (MTX1 - 9, MTY1 - 5)), fill=MW_GLINT)
+    br = random.Random(150)
+    for col in range(8):                                # belletjes: elke stip heeft een fase per hoogte (stijgen)
+        x = MTX0 + 18 + col * 11 + br.randint(-3, 3)
+        for y in range(MTY1 - 4, MTY0 + 2, -6):
+            if br.random() < 0.75:
+                ph = MW_PHASE + (y // 6) % 3
+                if br.random() < 0.3:
+                    d.rectangle((x - 1, y - 1, x, y), fill=ph)
+                else:
+                    d.point((x, y), fill=ph)
+            x += br.choice((-1, 0, 0, 1))
+    d.rectangle((MTX0 - 2, MTY0, MTX0 - 1, MTY1), fill=MW_STEEL)
+    d.rectangle((MTX1, MTY0, MTX1 + 1, MTY1), fill=MW_STEEL)
+    d.rectangle((MTX0 - 8, MTY1, MTX1 + 8, 126), fill=MW_STEEL)
+    d.line(((MTX0 - 8, MTY1), (MTX1 + 8, MTY1)), fill=MW_GLINT)
+    d.line(((MTX0 - 8, 126), (MTX1 + 8, 126)), fill=MW_STEEL_D)
+    for k in range(5):
+        d.rectangle((MTX0 + 4 + k * 22, MTY1 + 5, MTX0 + 9 + k * 22, MTY1 + 7), fill=MW_PHASE + k % 3)
+    mw_paste(im)
+    d.rectangle((0, 128, 239, 159), fill=MW_BLACK)      # dagboekbalk
+    d.line(((0, 128), (239, 128)), fill=MW_STEEL)
+    return im
+mw_lab_im = mw_lab()
+
+# barsten in het glas (3 stadia) vanaf de plek waar Mewtwo's hand tegen het glas drukt
+mw_segs = []
+mcr = random.Random(2)
+def mw_crack(x, y, ang, n, t0, depth):
+    for i in range(n):
+        ang += mcr.uniform(-0.5, 0.5)
+        nx, ny = x + math.cos(ang) * 7, y + math.sin(ang) * 7
+        mw_segs.append(((x, y), (nx, ny), t0 + i))
+        x, y = nx, ny
+        if depth < 1 and mcr.random() < 0.3:
+            mw_crack(x, y, ang + mcr.choice((-1, 1)) * mcr.uniform(0.7, 1.2), n // 2, t0 + i, depth + 1)
+MW_CRX, MW_CRY = MW_CX + 6, 60
+for k in range(6):
+    mw_crack(MW_CRX, MW_CRY, k * 2 * math.pi / 6 + 0.3, 9, 0, 0)
+mw_cracks = []
+for lim in (2, 5, 99):
+    im = mw_lab_im.copy()
+    d = ImageDraw.Draw(im)
+    for (p, q, t0) in mw_segs:
+        if t0 <= lim:
+            d.line((p, q), fill=MW_GLINT)
+    if lim == 99:
+        d.ellipse((MW_CRX - 3, MW_CRY - 3, MW_CRX + 3, MW_CRY + 3), outline=MW_GLINT)
+    for y in range(160):                                # alleen op het glas
+        for x in range(240):
+            if not (MTX0 <= x < MTX1 and MTY0 <= y < MTY1):
+                im.putpixel((x, y), mw_lab_im.getpixel((x, y)))
+    mw_cracks.append(im)
+
+# het dagboek in het lettertype van de game (latin_narrow; 1 = letter, 2 = schaduw)
+MW_CM = {}
+for line in open('charmap.txt', encoding='utf-8'):
+    m = re.match(r"^'(.|…)'\s*=\s*([0-9A-F]{2})\s*(@.*)?$", line.strip())
+    if m and m.group(1) not in MW_CM:
+        MW_CM[m.group(1)] = int(m.group(2), 16)
+MW_W = [int(v, 0) for v in re.findall(r'0x[0-9A-Fa-f]+|\d+',
+        open('src/fonts.c').read().split('const u8 gFontNarrowLatinGlyphWidths[] = {')[1].split('};')[0])]
+mw_font = Image.open('graphics/fonts/latin_narrow.png')
+def mw_text(im, x, y, text):
+    for ch in text:
+        g = MW_CM[ch]
+        gx, gy = (g % 16) * 16, (g // 16) * 16
+        for yy in range(16):
+            for xx in range(MW_W[g]):
+                v = mw_font.getpixel((gx + xx, gy + yy))
+                if v in (1, 2) and 0 <= y + yy < im.height:
+                    im.putpixel((x + xx, y + yy), MW_TEXT if v == 1 else MW_STEEL_D)
+        x += MW_W[g]
+    return x
+mw_pages = []
+for (head, l1, l2) in (('Diary: Feb. 6', 'Mew gave birth.', 'We named the newborn MEWTWO.'),
+                       ('Diary: Sept. 1', 'MEWTWO is far too powerful.', 'We have failed to curb its vicious tendencies…')):
+    im = Image.new('P', (240, 32), MW_BLACK)
+    ImageDraw.Draw(im).line(((0, 0), (239, 0)), fill=MW_STEEL)
+    mw_text(im, 10, 13, l2)
+    mw_text(im, mw_text(im, 10, -1, head) + 6, -1, l1)
+    mw_pages.append(im)
+
+# schokgolf: psychisch veld in ringen rond Mewtwo (fasekleuren golven naar buiten), spiegelsymmetrisch rond het midden
+# (x 120, y 64 liggen op een tilegrens) zodat de kwarten dezelfde (gespiegelde) tiles delen; Mewtwo zwart met een felle
+# rand en witte ogen
+def mw_burst():
+    im = Image.new('P', (240, 160), 0)
+    for y in range(160):
+        for x in range(240):
+            dx, dy = abs(x + 0.5 - MW_CX), abs(y + 0.5 - 64) * 1.25
+            r = math.hypot(dx, dy)
+            w = (r + 4 * math.cos(4 * math.atan2(dy, dx))) / 9
+            v = MW_PHASE + int(w) % 3
+            if w - int(w) > 0.8:
+                v = MW_LIQ_D if r > 30 else MW_PHASE + (int(w) + 1) % 3
+            im.putpixel((x, y), v)
+    mw_paste(im, rim=MW_GLINT)
+    return im
+mw_burst_im = mw_burst()
+
+mw_tiles = [[MW_GLINT if (x + y) % 2 else MW_BLACK for y in range(8) for x in range(8)],
+            [MW_GLINT] * 64,
+            [MW_LIQ_L if (x + y) % 2 else MW_GLINT for y in range(8) for x in range(8)]]
+for k in range(4):                                      # glasscherven
+    sr = random.Random(30 + k)
+    im = Image.new('P', (8, 8), MW_BLACK)
+    pts = [(sr.randint(0, 3), sr.randint(0, 3)), (sr.randint(4, 7), sr.randint(1, 5)), (sr.randint(1, 5), sr.randint(5, 7))]
+    ImageDraw.Draw(im).polygon(pts, fill=MW_LIQ_L, outline=MW_GLINT)
+    mw_tiles.append([im.getpixel((x, y)) for y in range(8) for x in range(8)])
+mw_idx = {}
+def mw_map(im, h):
+    """ontdubbelt ook gespiegelde tiles (bit 10/11 = horizontaal/verticaal spiegelen in de tilemap)"""
+    out = []
+    for ty in range(h):
+        for tx in range(30):
+            px = [[im.getpixel((tx * 8 + x, ty * 8 + y)) for x in range(8)] for y in range(8)]
+            for flip in range(4):
+                rows = px[::-1] if flip & 2 else px
+                t = tuple(v for row in rows for v in (row[::-1] if flip & 1 else row))
+                if t in mw_idx:
+                    out.append(mw_idx[t] | (flip << 10))
+                    break
+            else:
+                t = tuple(v for row in px for v in row)
+                mw_idx[t] = len(mw_tiles) + 1
+                mw_tiles.append(list(t))
+                out.append(mw_idx[t])
+    return out
+mw_lab_tm = mw_map(mw_lab_im, 20)
+mw_crack_tm = sum((mw_map(im, 20) for im in mw_cracks), [])
+mw_page_tm = sum((mw_map(im, 4) for im in mw_pages), [])
+mw_burst_tm = mw_map(mw_burst_im, 20)
+save('mewtwo', mw_tiles, mw_pals)
+for (nm, tm) in (('lab', mw_lab_tm), ('crack', mw_crack_tm), ('page', mw_page_tm), ('burst', mw_burst_tm)):
+    open(OUT + 'route_mewtwo_%s.bin' % nm, 'wb').write(struct.pack('<%dH' % len(tm), *tm))
 # ------------------------------------------------------------------ Giratina: het scherm scheurt, de wereld klapt
 # ondersteboven de Distortion World in en de zes schaduwvleugels (Origin Forme) sluiten het beeld af.
 # route_giratina.png (tiles), _crack.bin (30x20 tilemap van de scheuren) + _crack_t.bin (u8: frame waarop een vak

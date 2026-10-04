@@ -458,6 +458,13 @@
       "elevation": 0,
       "dest_map": "MAP_ARTISAN_CAVE_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 72,
+      "elevation": 0,
+      "dest_map": "MAP_BATTLE_FRONTIER_STADIUM_LOBBY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

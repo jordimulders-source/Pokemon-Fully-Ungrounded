@@ -1581,6 +1581,9 @@ static void Task_HandleFrontierMap(u8 taskId)
 
 // Project Grounded: extra zeerijen bovenaan BattleFrontier_OutsideWest (tools/grounded/maptools/spire_tower.py)
 #define SPIRE_WEST_EXTRA_ROWS 56
+// Project Grounded: BattleFrontier_OutsideEast is onderaan langer (Battle Stadium, tools/grounded/maptools/stadium.py);
+// het spelerhoofd blijft binnen de oorspronkelijke 72 rijen van de Frontier-kaart
+#define STADIUM_EAST_MAX_Y 71
 
 static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
 {
@@ -1670,6 +1673,8 @@ static void InitFrontierMapSprites(void)
             // Project Grounded: OutsideWest is SPIRE_WEST_EXTRA_ROWS rijen hoger (The Spire)
             if (mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_OUTSIDE_WEST))
                 y = (y > SPIRE_WEST_EXTRA_ROWS) ? y - SPIRE_WEST_EXTRA_ROWS : 0;
+            else if (y > STADIUM_EAST_MAX_Y)
+                y = STADIUM_EAST_MAX_Y;
 
             x /= 8;
             y /= 8;
@@ -1695,6 +1700,8 @@ static void InitFrontierMapSprites(void)
                 y = gSaveBlock1Ptr->escapeWarp.y;
                 if (gSaveBlock1Ptr->escapeWarp.mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_OUTSIDE_WEST))
                     y = (y > SPIRE_WEST_EXTRA_ROWS) ? y - SPIRE_WEST_EXTRA_ROWS : 0;
+                else if (y > STADIUM_EAST_MAX_Y)
+                    y = STADIUM_EAST_MAX_Y;
 
                 x /= 8;
                 y /= 8;

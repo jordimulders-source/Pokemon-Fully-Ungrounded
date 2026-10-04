@@ -3595,7 +3595,7 @@
       "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_EAST",
       "name": "BattleFrontier_OutsideEast_Layout",
       "width": 72,
-      "height": 72,
+      "height": 90,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
       "border_filepath": "data/layouts/BattleFrontier_OutsideEast/border.bin",
@@ -3650,6 +3650,26 @@
       "secondary_tileset": "gTileset_BattlePike",
       "border_filepath": "data/layouts/BattleFrontier_SpireLobby/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_SpireLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_STADIUM_LOBBY",
+      "name": "BattleFrontier_StadiumLobby_Layout",
+      "width": 23,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleDome",
+      "border_filepath": "data/layouts/BattleFrontier_StadiumLobby/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_StadiumLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_STADIUM_ARENA",
+      "name": "BattleFrontier_StadiumArena_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleDome",
+      "border_filepath": "data/layouts/BattleFrontier_StadiumArena/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_StadiumArena/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR",

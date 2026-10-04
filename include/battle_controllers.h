@@ -342,6 +342,7 @@ void BtlController_HandleGetRawMonData(u32 battler);
 void BtlController_HandleSetMonData(u32 battler);
 void BtlController_HandleSetRawMonData(u32 battler);
 void BtlController_HandleLoadMonSprite(u32 battler);
+void BtlController_StadiumIntroPlayerMon(u32 battler); // Project Grounded
 void BtlController_HandleSwitchInAnim(u32 battler);
 void BtlController_HandleReturnMonToBall(u32 battler);
 void BtlController_HandleDrawTrainerPic(u32 battlerId, u32 trainerPicId, bool32 isFrontPic, s16 xPos, s16 yPos, s32 subpriority);

@@ -27,13 +27,18 @@ OUT = 'sound/songs/midi/mus_grounded_vs_dave.mid'
 VG = 'sound/voicegroups/grounded_dave.inc'
 TPB, BAR, BEAT = 240, 960, 240
 BPM = 128
-INTRO = (2, 5)                           # bronmaten 2-4: riff solo
-FIRST, LOOP, END = 53, 53, 86            # bronmaten: loop 53-85
-OFF = (INTRO[1] - INTRO[0]) * BAR        # de loop begint na de intro
+# Jordi: 'gebruik het origineel echt als voorbeeld'. Dus bronmaat 2 t/m 85 achter elkaar, met de opbouw van het
+# nummer zelf: 2-4 riff solo, 5-13 couplet 1, 14 piano + synthstrings, 22 hihats, 24-28 pad + snareroffel, 30 de drop
+# (bas + volle beat), 38-52 'na na na', 53-85 couplet 2 -> refrein -> 'na na na'. Loop terug naar 38 (85 -> 38 is
+# dezelfde overgang als 37 -> 38 in het nummer).
+INTRO = (2, 2)                           # (geen aparte intro meer: die zit in het doorlopende stuk)
+FIRST, LOOP, END = 2, 38, 86
+OFF = 0
 TRUMPET, ORGAN, PIANO, SYNTH_BASS, STRINGS, SQ_LEAD, SQ_PLUCK = 56, 17, 2, 38, 50, 80, 81
 # drums (rs_drumset): echte lengtes, de bron heeft overal 2 ticks. 28/70 vallen buiten de kit, 44/51 zijn PSG
 # (44 = gesloten hihat onder de kick: weg, anders te vol), 49 -> crash 57. Tamboerijn alleen op de shuffle.
-DRUM_MAP = {36: (36, 120), 38: (38, 120), 39: (39, 120), 46: (46, 120), 54: (54, 60), 49: (57, 480)}
+DRUM_MAP = {36: (36, 120), 38: (38, 120), 39: (39, 120), 46: (46, 120), 54: (54, 60), 49: (57, 480),
+            51: (42, 30), 44: (42, 30)}   # ride (opbouw maat 14-21) en pedaal-hihat (PSG in rs_drumset) -> gesloten hihat
 
 
 def drums(ev):
@@ -90,9 +95,6 @@ def build():
         'pad': cut(thin([[round(s / BEAT) * BEAT, round(e / BEAT) * BEAT, n, v] for s, e, n, v in T[10]], 1, 'top')),
         'sq_pluck': cut(T[11]),
     }
-    i0 = INTRO[0] * BAR                                   # intro: alleen het orgel (riff solo)
-    parts['organ'] = [[s - i0, e - i0, n, v] for s, e, n, v in thin(T[6], 2, 'bottom')
-                      if i0 <= s < INTRO[1] * BAR] + parts['organ']
     # pianostoten kort: einde + uitklinktijd vóór de volgende stoot (anders 4 pianonoten tegelijk)
     parts['piano'] = [[s, min(e, s + 80), n, v] for s, e, n, v in parts['piano']]
     # lange pads in stukken van 2 tellen die een uitklinktijd eerder stoppen: bij een volle tel valt alleen dat stuk weg
@@ -100,12 +102,14 @@ def build():
         parts[k] = [[t, min(e, t + 2 * BEAT - 96), n, v] for s, e, n, v in parts[k] for t in range(s, e - 60, 2 * BEAT)]
     for k in parts:
         parts[k] = dedupe(parts[k])
+    parts['hats'] = [e for e in parts['drums'] if e[2] == 42]          # hihats: lage prioriteit (na de strijkers)
+    parts['drums'] = [e for e in parts['drums'] if e[2] != 42]
     parts['sq_lead'] = [list(e) for e in parts['lead']]
     voicegroup()
     rel = releases('grounded_dave')
     progs = {'lead': TRUMPET, 'bass': SYNTH_BASS, 'organ': ORGAN, 'piano': PIANO, 'strings': STRINGS, 'pad': STRINGS}
     tail = {k: release_ticks(rel.get(p, 200), TPB, BPM) for k, p in progs.items()}
-    order = ['lead', 'bass', 'drums', 'organ', 'piano', 'strings', 'pad']
+    order = ['lead', 'bass', 'drums', 'organ', 'piano', 'strings', 'hats', 'pad']
     res = allocate({k: parts[k] for k in order}, order, tail)
     for k in order:
         n, kept = len(parts[k]), len(res[k])
@@ -123,7 +127,7 @@ def build():
     song.add(parts['strings'], STRINGS, 58, 5)
     song.add(parts['pad'], STRINGS, 48, 6, pan=80)
     song.add(parts['sq_pluck'], SQ_PLUCK, 40, 7)
-    song.add(parts['drums'], 127, 104, 9)
+    song.add(sorted(parts['drums'] + parts['hats']), 127, 104, 9)
     song.save(OUT, end)
     print(OUT, '(intro %.1f s, loop %.1f s)' % ((INTRO[1] - INTRO[0] + LOOP - FIRST) * 4 * 60 / BPM, (END - LOOP) * 4 * 60 / BPM))
 

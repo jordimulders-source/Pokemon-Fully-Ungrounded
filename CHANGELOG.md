@@ -16426,3 +16426,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - Daaronder taiko op elke tel, een crash op elke maat en pauken op de grondtoon.
   - Het tempo gaat nog iets omhoog (1,08×). Daarna springt hij terug naar het begin van de loop, van de dominant naar de tonica.
 - **Opname:** het begin van de nummers werd in de previews afgeknipt (±0,2 s). Dat is opgelost in `recaudio`/`recpcm`; in de game was het nooit weg.
+
+### [v.0.9.47] - Dave: de opbouw van het origineel
+- Freed From Desire volgt nu het origineel van begin tot eind (bronmaat 2–85, doorlopend).
+  - **Opbouw zoals in het nummer:** eerst de riff solo, dan couplet 1 met strijkers. Daarna komen piano, synthstrings en ride erbij, dan hihats en de pad met een snareroffel. Op maat 30 volgt de drop met bas en volle beat, dan "na na na", couplet 2, refrein en "na na na".
+  - **Loop:** van maat 85 terug naar 38, dezelfde overgang als in het nummer.
+  - Voorheen sprong hij van de intro meteen naar het volle couplet 2, waardoor alles abrupt inviel.
+- De ride en de pedaal-hihat worden nu gespeeld (als hihat), want die dragen de opbouw. Ze hebben een lage prioriteit, zodat ze de strijkers niet verdringen.

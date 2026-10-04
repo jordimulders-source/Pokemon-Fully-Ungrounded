@@ -109,6 +109,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Slow Start op ±5 s (Jordi), niet op een maatgrens maar waar de transitie eindigt.
 - Opname: al vóór de laatste A opnemen (anders mis je de eerste ±0,2 s); geen -ss meer bij ffmpeg, alleen een fade-in.
 - recaudio: tweede glitchpatroon (exacte nullen om en om in niet-stille muziek) wordt ook overbrugd (Dave-snip op 3 s).
+- Dave ronde 4 ('abrupt, niet zoals het origineel'): een origineel nooit inkorten door secties over te slaan (4 -> 53
+  sloeg de hele opbouw over). Lees eerst per spoor per maat uit wanneer elk instrument invalt (een tabel als in
+  freed_theme.py) en neem het nummer doorlopend over; loop pas op een plek waar het nummer zelf zo'n overgang heeft.
+  Drumnoten die buiten de kit/PSG vallen (ride 51, pedaal-hihat 44) omzetten i.p.v. weglaten: ze dragen de opbouw.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

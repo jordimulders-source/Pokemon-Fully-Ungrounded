@@ -296,6 +296,14 @@ static const struct SpriteFrameImage sPicTable_Brock[] = {
 static const struct SpriteFrameImage sPicTable_Mustard[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_Mustard, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_N[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_N, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Ghetsis[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_Ghetsis, 4, 4),
+};
 static const struct SpriteFrameImage sPicTable_Misty[] = {
     overworld_ascending_frames(gObjectEventPic_Misty, 2, 4),
 };

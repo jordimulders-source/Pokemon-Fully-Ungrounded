@@ -47,6 +47,8 @@ POOL = [
     'STADIUM_CYNTHIA', 'STADIUM_CYRUS', 'STADIUM_BARRY', 'STADIUM_MARS', 'STADIUM_JUPITER', 'STADIUM_SATURN',
     'STADIUM_PALMER', 'STADIUM_THORTON', 'STADIUM_ARGENTA', 'STADIUM_DAHLIA', 'STADIUM_RILEY',
     'STADIUM_ANABEL', 'STADIUM_TUCKER', 'STADIUM_SPENSER', 'STADIUM_GRETA', 'STADIUM_NOLAND', 'STADIUM_LUCY', 'STADIUM_BRANDON',
+    # Unova (Black/White): eigen sprites (tools/grounded/plasma_sprites.py)
+    'STADIUM_N', 'STADIUM_GHETSIS',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
     'ALBERT', 'SAMUEL', 'OWEN',
     # gasten (graphics/grounded/trainers/guests/, tools/grounded/guest_trainer_pics.py)
@@ -186,7 +188,7 @@ GFX = {
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
     'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'MAN_2', 'DITTO': 'SPECIES(DITTO)',
-    'MUSTARD': 'MUSTARD',
+    'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
 }

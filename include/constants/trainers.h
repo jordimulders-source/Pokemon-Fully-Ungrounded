@@ -180,7 +180,9 @@
 #define TRAINER_PIC_TRIO_WEATHER           162 // Project Grounded: Battle Stadium (trio-compagnon)
 #define TRAINER_PIC_TRIO_CREATORS          163 // Project Grounded: Battle Stadium (trio-compagnon)
 #define TRAINER_PIC_MUSTARD               164 // Project Grounded: Kubfu-dojo (Gen 3-versie van zijn artwork)
-#define TRAINER_PIC_COUNT                 165
+#define TRAINER_PIC_N                     165 // Project Grounded: Battle Stadium (N, sheet van Delgatron)
+#define TRAINER_PIC_GHETSIS               166 // Project Grounded: Battle Stadium (Ghetsis, schreeuwend)
+#define TRAINER_PIC_COUNT                 167
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -437,6 +439,8 @@ enum TrainerClassID
     TRAINER_CLASS_GUEST_STAR, // Project Grounded: Battle Stadium (gasten: Wario, Yoshi, Boo, ...)
     TRAINER_CLASS_BURGLAR, // Project Grounded: Battle Stadium (Burglar uit Red/Blue)
     TRAINER_CLASS_COLLECTION, // Project Grounded: Battle Stadium (trio-compagnons: "THE REGIS")
+    TRAINER_CLASS_KING, // Project Grounded: Battle Stadium (N)
+    TRAINER_CLASS_PLASMA_BOSS, // Project Grounded: Battle Stadium (Ghetsis)
     TRAINER_CLASS_COUNT,
 };
 

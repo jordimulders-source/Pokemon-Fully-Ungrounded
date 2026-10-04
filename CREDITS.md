@@ -2,13 +2,14 @@
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
 - **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin** (nog niet in gebruik): **Ekat99** (DeviantArt). Bron in `graphics/grounded/tilesets/`.
-- **N** (sprites): **Delgatron** (DeviantArt). Aangeleverd door Jordi.
+- **N** (trainerfoto en overworld): sprite sheet van **Delgatron** (DeviantArt, "N sprite sheet"). Bron: `graphics/grounded/trainers/n/n_sheet_delgatron_bron.jpg`, omgezet met `tools/grounded/plasma_sprites.py`.
+- **Ghetsis** (overworld): **PurpleZaffre** (DeviantArt, "Team Plasma Boss Ghetsis BW"); trainerfoto uit een pixel-art van Ghetsis (Redbubble-print, maker nog onbekend). Bronnen in `graphics/grounded/trainers/ghetsis/`.
 - **izzyvicious** (DeviantArt): sprites aangeleverd door Jordi (N/Ghetsis-reeks).
 - **Sprite-sheets aangeleverd door Jordi (okt 2026, nog niet allemaal in gebruik; bronnen in `graphics/`):**
   - HG/SS-trainerfoto's (Pokémon HeartGold / SoulSilver, Game Freak), **verzameld door Dann-The-Yoshi** (`d2dp76j-…png`; `288-2882990_…gen-5.png` is een kopie van dezelfde sheet).
-  - Overworlds uit Black/White, Black 2/White 2, HG/SS en Platinum, **sheet door PurpleZaffre** (DeviantArt) (`DV3PUrC.png`), en **Ghetsis-overworld door PurpleZaffre** (`team_plasma_boss_ghetsis_bw_by_purplezaffre_…png`).
+  - Overworlds uit Black/White, Black 2/White 2, HG/SS en Platinum, **sheet door PurpleZaffre** (DeviantArt) (`DV3PUrC.png`), .
   - Overworld-sheets in DS-stijl (`793a0482460ea8b6fc50b14a394fb483.jpg`, `dan096t-…png`) en Kanto-trainers in GBC-stijl (`2gnAy4D.png`): maker nog onbekend.
-  - Ghetsis pixel-art (`fpp,small,…jpg`; de dab-versie `flat,750x,…jpg` is van **rachxt**, Redbubble).
+  - Ghetsis die dabt (`graphics/grounded/trainers/ghetsis/ghetsis_dab_rachxt_bron.jpg`, niet gebruikt): **rachxt** (Redbubble).
   - `5xgc4ca.png` is een schermafbeelding van een map met Gen 5-trainerfoto's (Black/White); te klein om te gebruiken, de losse bestanden zijn nodig.
 - **Zinnia** (trainerfoto en overworld): fan-art, aangeleverd door Jordi (`graphics/grounded/trainers/zinnia/`); maker nog aanvullen (zie de Zinnia-credits in `TODO.md`).
 

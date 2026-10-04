@@ -16102,3 +16102,10 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Regen tegen zand op hetzelfde veld: ze werken samen, maar hun weer niet.
 - Nieuw: trainers `TRAINER_ARCHIE_SERVICE_1–4` en `TRAINER_MAXIE_SERVICE_1–4`, `VAR_WEATHER_SERVICE_TIER` (0x40FC), dagelijkse flag `FLAG_DAILY_WEATHER_SERVICE_BATTLE`, `FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE` (0x286). Getest in de emulator (ronde 3, overwinning, Archie en Maxie blijven staan).
 - Ontwerpkeuze: dagelijks in plaats van wekelijks (de game respecteert de tijd van de speler); wekelijks kan alsnog.
+
+### [v.0.9.2] - Battle Stadium: N en Ghetsis
+- **N** (klasse KING) en **Ghetsis** (klasse PLASMA BOSS) uit Black/White staan in de toernooipool, met hun eigen BW-muziek (de MIDI's bestonden al), mugshot, intro-slide, omroeperzinnen en placeholder-teksten.
+  - N (lv 50): Zoroark (vermomd als Zekrom, Illusion), Carracosta, Vanilluxe, Archeops, Klinklang, Zekrom.
+  - Ghetsis (lv 50): Cofagrigus, Seismitoad, Eelektross, Bisharp, Kyurem-Black, Hydreigon. Samen de top van de pool (sterkte 581/576).
+- Trainerfoto's en overworlds (32×32: de figuren zijn te breed voor 16 px) via `tools/grounded/plasma_sprites.py`: N uit de sheet van Delgatron, Ghetsis' overworld van PurpleZaffre, zijn trainerfoto uit de schreeuwende pixel-art. Bronnen in `graphics/grounded/trainers/n/` en `.../ghetsis/`.
+- Nummers na het samenvoegen: `OBJ_EVENT_GFX_N` 262, `OBJ_EVENT_GFX_GHETSIS` 263, `TRAINER_STADIUM_N` 977, `TRAINER_STADIUM_GHETSIS` 978; `pool.py` opnieuw gedraaid.

@@ -33109,3 +33109,155 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Heat Wave
 - Eruption
 - Protect
+
+=== TRAINER_STADIUM_N ===
+Name: N
+Class: King
+Pic: N
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Green
+
+Zoroark @ Life Orb
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Nasty Plot
+- Dark Pulse
+- Flamethrower
+- Focus Blast
+
+Carracosta @ White Herb
+Level: 50
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Liquidation
+- Stone Edge
+- Aqua Jet
+
+Vanilluxe @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Aurora Veil
+- Flash Cannon
+
+Archeops @ Life Orb
+Level: 50
+Ability: Defeatist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Head Smash
+- Dual Wingbeat
+- Earthquake
+- U-turn
+
+Klinklang @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gear Grind
+- Wild Charge
+- Substitute
+
+Zekrom @ Life Orb
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bolt Strike
+- Dragon Claw
+- Dragon Dance
+- Crunch
+
+=== TRAINER_STADIUM_GHETSIS ===
+Name: GHETSIS
+Class: Plasma Boss
+Pic: Ghetsis
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Cofagrigus @ Leftovers
+Level: 50
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Will-O-Wisp
+- Hex
+- Toxic Spikes
+- Pain Split
+
+Seismitoad @ Life Orb
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Scald
+- Earth Power
+- Sludge Wave
+- Stealth Rock
+
+Eelektross @ Assault Vest
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+Bisharp @ Eviolite
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Swords Dance
+- Sucker Punch
+- Iron Head
+- Knock Off
+
+Kyurem-Black @ Choice Band
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Fusion Bolt
+- Icicle Spear
+- Dragon Claw
+- Outrage
+
+Hydreigon @ Choice Specs
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power

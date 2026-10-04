@@ -21,5 +21,7 @@ STADIUM_INTRO(TRAINER_STADIUM_DONALD, "My BUG POKéMON will keep you company!\p.
 STADIUM_INTRO(TRAINER_STADIUM_IVAN, "I'm the WATER POKéMON expert! I got some very rare fishies...\pMy MAGIKARP knows HYDRO PUMP. Don't ask."),
 STADIUM_INTRO(TRAINER_STADIUM_JOHNSON, "Tik tok, tik tok, tik tok."),
 STADIUM_INTRO(TRAINER_STADIUM_LYLE, "My brother evolved them, and this time I actually levelled them!\pI'm indestructible! For real now!"),
+STADIUM_INTRO(TRAINER_STADIUM_N, "Your POKéMON are talking to me.\pThey say the ball is cramped and the snacks are bad.\pLet's see whose truth is louder. Mine has a dragon."),
+STADIUM_INTRO(TRAINER_STADIUM_GHETSIS, "Sit down! ...You ARE sitting? Then sit down HARDER!\pI have six POKéMON, one stolen dragon and zero shame."),
 
 #undef STADIUM_INTRO

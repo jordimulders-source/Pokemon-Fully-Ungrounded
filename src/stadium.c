@@ -402,6 +402,8 @@ static const struct StadiumQuote sStadiumQuotes[] =
     {TRAINER_STADIUM_DONALD, COMPOUND_STRING("I wish we'd never met... All six of them wish that too."), COMPOUND_STRING("Your own team, but purple. I call it DITTO MANIA.")},
     {TRAINER_STADIUM_IVAN, COMPOUND_STRING("Blupblup..."), COMPOUND_STRING("Very rare fishies. Told you. Blupblup!")},
     {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("Tik... tok...\pTime's up."), COMPOUND_STRING("Tik tok. The METRONOME has spoken.")},
+    {TRAINER_STADIUM_N, COMPOUND_STRING("Your POKéMON... they actually like you.\pThat was not in my equations.\pI need a moment. Or a ferris wheel."), COMPOUND_STRING("I set your POKéMON free. They came back. They want a rematch.")},
+    {TRAINER_STADIUM_GHETSIS, COMPOUND_STRING("Impossible! I am perfect! This bracket is rigged!\pI'll be in my castle. Sulking. Majestically."), COMPOUND_STRING("Bow before me! Or sit down. Sitting is also fine.")},
     {TRAINER_STADIUM_LYLE, COMPOUND_STRING("Level 50 and still... Maybe I should start training their IVs... hmm."), COMPOUND_STRING("Told you! Indestructible! I'm calling my brother.")},
 };
 

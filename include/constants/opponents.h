@@ -990,7 +990,11 @@
 #define TRAINER_ARCHIE_SERVICE_4               975 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 #define TRAINER_MAXIE_SERVICE_4               976 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 
-#define TRAINERS_COUNT                      977
+// Project Grounded: Battle Stadium (Pokémon Black/White)
+#define TRAINER_STADIUM_N                   977
+#define TRAINER_STADIUM_GHETSIS             978
+
+#define TRAINERS_COUNT                      979
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

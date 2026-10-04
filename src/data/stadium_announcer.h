@@ -85,6 +85,8 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_NOLAND, COMPOUND_STRING("FACTORY HEAD NOLAND! He'll borrow your\nPOKéMON. He won't give them back.")},
     {TRAINER_STADIUM_LUCY, COMPOUND_STRING("PIKE QUEEN LUCY! She hasn't smiled\nsince 2004. Neither has her SEVIPER.")},
     {TRAINER_STADIUM_BRANDON, COMPOUND_STRING("PYRAMID KING BRANDON! He brought all\nthree REGIS. They didn't ask to come.")},
+    {TRAINER_STADIUM_N, COMPOUND_STRING("N, the KING of TEAM PLASMA! He wants to\nfree your POKéMON. Ticket refunds: no.")},
+    {TRAINER_STADIUM_GHETSIS, COMPOUND_STRING("GHETSIS! He'd like everyone to sit down.\nYes, you too. Especially you.")},
     {TRAINER_ALBERT, COMPOUND_STRING("From VICTORY ROAD: DAVE! WAKE UP! Grab\na brush and put a little make-up!")},
     {TRAINER_SAMUEL, COMPOUND_STRING("MITCH! He has stage fright. Thousands\nof fans. Everybody, stare at him!")},
     {TRAINER_OWEN, COMPOUND_STRING("SICKBLIK! He made this romhack. Beat\nhim and he nerfs you next patch.")},

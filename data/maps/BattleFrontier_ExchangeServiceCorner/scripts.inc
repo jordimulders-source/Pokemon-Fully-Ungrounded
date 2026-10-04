@@ -338,8 +338,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens
 	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_OldSeaMap
 	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_MysticTicket
-	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_AuroraTicket
-	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -757,22 +756,6 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MysticTicket::
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmMysticTicket:
 	.string "You've chosen the MYSTICTICKET.\n"
-	.string "Is that correct?$"
-
-@ Project Grounded: ticket voor een legendary-eiland (de veerboot in Lilycove neemt je mee)
-BattleFrontier_ExchangeServiceCorner_EventScript_AuroraTicket::
-	checkitem ITEM_AURORA_TICKET
-	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_ExchangeServiceCorner_EventScript_AlreadyHaveTicket
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmAuroraTicket, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
-	setvar VAR_0x8008, 200
-	setvar VAR_0x8009, ITEM_AURORA_TICKET
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
-	end
-
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmAuroraTicket:
-	.string "You've chosen the AURORATICKET.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_EventScript_AlreadyHaveTicket::

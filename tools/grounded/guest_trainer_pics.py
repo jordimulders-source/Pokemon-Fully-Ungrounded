@@ -141,7 +141,7 @@ def ditto():
     # Ditto: twee stipjes en een kleine zachte glimlach (Jordi: derpy, niet gemeen)
     for p in ((30, 25), (33, 25)):
         px[p] = INK
-    for p in ((30, 27), (31, 28), (32, 28), (33, 27)):
+    for p in ((29, 27), (30, 28), (31, 28), (32, 28), (33, 28), (34, 27)):   # brede Ditto-glimlach (Jordi: gezicht B)
         px[p] = INK
     im.putpalette(pal + [0] * (768 - len(pal)))
     return im

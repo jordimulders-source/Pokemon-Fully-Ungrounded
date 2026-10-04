@@ -345,7 +345,10 @@ masks = {}
 for t in POOL + list(RIVALS):
     notes = set()
     idx, keys = pick(trainers[t]['mons'], 4, notes, KEEP.get(t, ()))
-    idx3, _ = pick(trainers[t]['mons'], 3, notes, KEEP.get(t, ()))
+    # doubles: dezelfde groep min één (Jordi): de 3 komen uit de 4 van singles
+    sub = [trainers[t]['mons'][i] for i in idx]
+    j, _ = pick(sub, 3, notes, [idx.index(k) for k in KEEP.get(t, ()) if k in idx])
+    idx3 = [idx[x] for x in j]
     masks[t] = (sum(1 << i for i in idx), sum(1 << i for i in idx3))
     nm = lambda i: species[keys[i]]['dispname'] if keys[i] in species else '?'
     report.append(f'| {t} | {{r}} | {", ".join(nm(i) for i in idx)} | {", ".join(nm(i) for i in idx3)} | {", ".join(sorted(notes)) or "-"} |')
@@ -378,7 +381,9 @@ for i, (pname, src, unlock) in enumerate(COMPANIONS):
         scores[pname] = sum(bst(k) for k in tkeys) / len(tkeys) + unlock[1]   # legendarische sets later
         continue
     tr = trainers[src]
-    idx, keys = pick(tr['mons'], 3, keep=KEEP.get(src, ()))
+    idx4, keys = pick(tr['mons'], 4, keep=KEEP.get(src, ()))   # compagnon = zijn doubles-drie (uit zijn singles-vier)
+    j, _ = pick([tr['mons'][i] for i in idx4], 3, keep=[idx4.index(k) for k in KEEP.get(src, ()) if k in idx4])
+    idx = [idx4[x] for x in j]
     pic = header_field(tr['header'], 'Pic')
     back = BACK_PICS.get(pic)
     lines = [f'=== PARTNER_STADIUM_{pname} ===']

@@ -8619,7 +8619,7 @@ static void Task_Zarude(u8 taskId)
 
 // ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Toxic Chain zoals op de artwork. Een glanzende
 // magenta buis in ringen komt om de 4 frames verder van linksonder het beeld in en eindigt groot in het midden in de
-// "halve schedel" (een dikke ring met een steel en een voet met twee lobben); het beeld wordt donker-paars. Dan een
+// "halve schedel" (een dikke ring met bulten, een korte steel en een brede, platte voet); het beeld wordt donker-paars. Dan een
 // stilstaand beeld, kort vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
 #define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
 #define POISONCHAIN_STEP  4

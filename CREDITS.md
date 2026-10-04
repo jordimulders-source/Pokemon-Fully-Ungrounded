@@ -11,6 +11,7 @@
   - Overworld-sheets in DS-stijl (`793a0482460ea8b6fc50b14a394fb483.jpg`, `dan096t-…png`) en Kanto-trainers in GBC-stijl (`2gnAy4D.png`): maker nog onbekend.
   - Ghetsis die dabt (`graphics/grounded/trainers/ghetsis/ghetsis_dab_rachxt_bron.jpg`, niet gebruikt): **rachxt** (Redbubble).
   - `5xgc4ca.png` is een schermafbeelding van een map met Gen 5-trainerfoto's (Black/White); te klein om te gebruiken, de losse bestanden zijn nodig.
+- **Neo Plasma** (Black 2/White 2: grunts, Zinzolin, Shadow Triad, sage; trainerfoto's en overworlds): **aveontrainer**, **xMachaku** en **PurpleZaffre** (DeviantArt). Muziek "Battle! Neo Team Plasma" (MIDI): **Byabbington** (onlinesequencer.net). Transitie nagemaakt naar Pokémon Black 2/White 2.
 - **Zinnia** (trainerfoto en overworld): fan-art, aangeleverd door Jordi (`graphics/grounded/trainers/zinnia/`); maker nog aanvullen (zie de Zinnia-credits in `TODO.md`).
 
 ### Graphics uit andere Pokémon-games (© Nintendo / Creatures Inc. / GAME FREAK inc.)

@@ -44,6 +44,13 @@
       "elevation": 0,
       "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 72,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE127_WELLSPRING_GROTTO",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

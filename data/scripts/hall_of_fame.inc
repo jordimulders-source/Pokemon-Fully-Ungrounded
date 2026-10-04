@@ -36,10 +36,31 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	call_if_unset FLAG_CAUGHT_SHINY_RAYQUAZA, EverGrandeCity_HallOfFame_EventScript_ResetShinyRayquaza
 	@ Project Grounded: een verslagen (niet gevangen) Zarude zit na de League weer in de ruine van Fortree Jungle
 	call_if_unset FLAG_CAUGHT_ZARUDE, EverGrandeCity_HallOfFame_EventScript_ResetZarude
+	@ Project Grounded: Ogerpon-quest. Verslagen (niet gevangen) Loyal Three en Ogerpon komen terug
+	call_if_unset FLAG_CAUGHT_OKIDOGI, EverGrandeCity_HallOfFame_EventScript_ResetOkidogi
+	call_if_unset FLAG_CAUGHT_MUNKIDORI, EverGrandeCity_HallOfFame_EventScript_ResetMunkidori
+	call_if_unset FLAG_CAUGHT_FEZANDIPITI, EverGrandeCity_HallOfFame_EventScript_ResetFezandipiti
+	call_if_unset FLAG_CAUGHT_OGERPON, EverGrandeCity_HallOfFame_EventScript_ResetOgerpon
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ResetZarude::
 	clearflag FLAG_DEFEATED_ZARUDE
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetOkidogi::
+	clearflag FLAG_DEFEATED_OKIDOGI
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetMunkidori::
+	clearflag FLAG_DEFEATED_MUNKIDORI
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetFezandipiti::
+	clearflag FLAG_DEFEATED_FEZANDIPITI
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetOgerpon::
+	clearflag FLAG_DEFEATED_OGERPON
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ResetRayquaza::

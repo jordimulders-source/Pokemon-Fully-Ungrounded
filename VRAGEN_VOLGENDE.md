@@ -47,6 +47,9 @@ Welke wil je?
 ## 7. Burglar
 Het team voor 7–8 badges (lv 51–52, Acid Rain + Gunk Shot + Close Combat) won in de test van een Arceus lv 100. Te pittig voor een willekeurige ontmoeting? En kans 1 op 12 (Mauville 's nachts 1 op 3), één keer per dag: goed zo?
 
+## 8. Jungle-tileset (optioneel)
+De jungle is nu getekend op een kopie van Fortree. Echt tropisch wordt het met een aangeleverde jungle-tileset (Essentials/RMXP mag), met: (1) een boomrand met brede bladeren i.p.v. de Hoenn-dennenvorm (grootste verschil), (2) donkere vochtige bodem (modder, mos, wortels), (3) lianen die over een pad hangen (2–3 breed), (4) grote 2×2-planten (monstera, boomvaren, plankwortels), (5) bruin/groen water met riet, (6) mossige ruïnes voor Ogerpon/Zarude. Heb je zoiets?
+
 ## Nog open van eerder
 - **Gen 4+-trainersprites (Greenphx) en Johto/Unova voor het Stadium:** je nieuwe sheets (HG/SS-trainers, BW/HGSS/Pt-overworlds) staan in `graphics/`. Welke personages wil je er als eerste uit?
 - **V** (Expert M-foto): eigen sprite gewenst?

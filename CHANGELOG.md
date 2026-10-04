@@ -16145,3 +16145,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.7] - Stadium-intro met worp, Aaron en Fantina van voren
 - **Stadium-intro (Jordi):** onze kant van het veld is eerst leeg (speler en compagnon zijn onzichtbaar, de balletjesbalk staat er wel), daarna gewoon "Go, X!" en de ballen vliegen erin. Vervangt de oplossing uit v0.9.6 waarin onze Pokémon er al stonden. Code: één regel in `BtlController_HandleDrawTrainerPic` (`invisible` voor onze kant als `gStadiumBattle`). Getest in doubles (Brawly als compagnon tegen Dave en Expert V).
 - **Aaron** (Elite Four Sinnoh) sprong in zijn trainerfoto weg met zijn achterhoofd naar ons toe (frame 0 van de Platinum-animatie); nu frame 8: gezicht zichtbaar, armen gespreid. **Fantina** stond met haar rug naar ons; nu frame 6 (gezicht, arm naar de speler). Overige Platinum-foto's nagekeken.
+
+### [v.0.9.8] - Fortree Jungle tropischer
+- **Eigen tileset `fortree_jungle`** (kopie van Fortree met 193 nieuwe tiles en 65 metatiles achteraan, `tools/grounded/maptools/jungle_tileset.py`), zodat de overgang met Fortree naadloos blijft.
+- Dieper in de jungle worden de bomen donker blauwgroen, met **lianen** (48) langs stammen en kruinen en rode/roze **bromelia's** (40) in de kruinen. Verder: omgevallen bemoste stammen, **bananenplanten en heliconia's**, **hibiscus** en **monstera**, **varens** langs de bosranden, bosbodem met gevallen blad en mos, paarse **orchideeën**, **waterlelies met lotus** op de grote poel, en 14 reuzenpalmen.
+- **Mangroves** (groot en klein) met **wortelbogen** bij de poel, uit de Ekat99-moerassheet.
+- Layout, events en bereikbaarheid ongewijzigd (blokkerend decor alleen waar de controle slaagt). Getest: overgang Fortree ↔ jungle zonder glitches, regen.
+- Met een eigen jungle-tileset (brede bladrand in plaats van Hoenn-dennen, donkere modderbodem, hangende lianen over paden, 2×2-planten, bruin/groen water, mossige ruïnes) kan het nog tropischer; zie `VRAGEN_VOLGENDE.md`.

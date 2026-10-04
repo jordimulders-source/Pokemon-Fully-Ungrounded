@@ -1031,9 +1031,16 @@
 #define TRAINER_VR_OSKAR                    1005 // gauntlet 3
 #define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
 
+#define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_DAISY             1009 // Project Grounded: Jagged Pass, lavabuis (verdwaald)
+#define TRAINER_SUMMIT_GRANT                1010 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_PYRO                 1011 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_VERA                 1012 // Project Grounded: top van Mt. Chimney
+
 #define TRAINER_ROCKET_GUARD                1020 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
 #define TRAINER_ROCKET_SMUGGLER             1021 // Project Grounded: Rocket-hideout 1F
-#define TRAINER_ROCKET_MOTTO                1022 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_RECRUITER                1022 // Project Grounded: Rocket-hideout 1F
 #define TRAINER_ROCKET_SCIENTIST            1023 // Project Grounded: Rocket-hideout B1F
 #define TRAINER_ROCKET_THIEF                1024 // Project Grounded: Rocket-hideout B1F
 #define TRAINER_PETREL                      1025 // Project Grounded: Rocket-hideout B2F (executive)

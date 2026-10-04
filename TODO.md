@@ -30,8 +30,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 8. **Dungeons uitbreiden (Jordi, 4 okt):**
    - ~~Petalburg Woods: verborgen paddenstoelenbos~~ (gedaan, v0.9.10: Toadstool Hollow).
    - ~~Meteor Falls~~ (gedaan, v0.9.13). Open: Selene (Draconid-oudere) in de Battle Stadium-pool.
-   - Jagged Pass: ondergrondse uitbreiding.
-   - Mt. Chimney: nog hoger klimmen.
+   - ~~Jagged Pass ondergronds en Mt. Chimney hoger~~ (gedaan, v0.9.16).
    - ~~Victory Road: optionele kamers~~ (gedaan, v0.9.14). Open: Reginald (en eventueel Selene uit Meteor Falls) in de Battle Stadium-pool.
    - Onderwater: veel meer te ontdekken.
    - Scorched Slab: uitbreiden en interessanter maken.

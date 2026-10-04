@@ -28,6 +28,7 @@ def n(pc, octv):     # nootnummer, C4 = 60
 LOOP_A = [(D, 1), (D, 1), (Bb, 0), (C, 0), (D, 1), (D, 1), (G, 1), (A, 0)]
 LOOP_B = [(Bb, 0), (C, 0), (D, 1), (D, 1), (Bb, 0), (C, 0), (A, 0), (A, 0)]
 INTRO_BARS = 8
+TENSION = 4          # aantal spanningsmaten na maat 2 (taiko/strijkers/bas zwellen aan)
 
 
 class Track:
@@ -37,7 +38,7 @@ class Track:
 
     def note(self, bar, pos16, dur16, note, vel=100, raw=False):
         if bar >= 2 and not raw:
-            bar += 1        # extra spanningsmaat: de blazers wachten tot de transitie voorbij is (Jordi)
+            bar += TENSION  # spanningsmaten: de blazers wachten tot de transitie voorbij is (Jordi)
         t = bar * BAR + pos16 * S16
         self.ev.append((t, 1, note, vel))
         self.ev.append((t + max(1, int(dur16 * S16) - 1), 0, note, 0))
@@ -82,8 +83,12 @@ def groove(bar, full=True, soft=False):
         drums.note(bar, p, 1, nt, v - (18 if p in (3, 13, 15) else 0))
     if not full:
         return
-    for p in (0, 6, 10):
-        drums.note(bar, p, 1, 36, 120)               # kick
+    for p in (0, 6, 10, 14):
+        drums.note(bar, p, 1, 36, 120 if p != 14 else 96)   # kick
+    for p in range(0, 16, 2):                        # gesloten hi-hat in achtsten (sample, geen PSG)
+        drums.note(bar, p, 1, 42, 72 if p % 4 == 2 else 52)
+    for p in (4, 12):                                # tamboerijn op de backbeat (sample)
+        drums.note(bar, p, 1, 54, 74)
     for p in range(16):
         noise.note(bar, p, 0.5, 60, 50 if p % 2 else 80)
 
@@ -124,13 +129,21 @@ taiko.note(1, 15, 1, n(D, 2), 127)
 for p in range(0, 16, 2):
     taiko.note(1, p, 2, n(D, 2), 70 + p * 3)
 
-# extra maat 3 (raw): spanning houden, taiko in achtsten, strijkers tremolo een octaaf hoger
-for p in range(0, 16, 2):
-    taiko.note(2, p, 2, n(D, 2), 96 + p * 2, raw=True)
-for p in range(16):
-    strings.note(2, p, 1, n(D, 4), 90 + p, raw=True)
-for p in (0, 8):
-    bass.note(2, p, 4, n(D, 1), 100, raw=True)
+# spanningsmaten (raw): taiko in achtsten, strijkers-tremolo een octaaf hoger, bas; alles zwelt aan
+for k in range(TENSION):
+    b = 2 + k
+    for p in range(0, 16, 2):
+        taiko.note(b, p, 2, n(D, 2), min(127, 80 + k * 12 + p), raw=True)
+    if k == TENSION - 1:                 # laatste maat: taiko in zestienden naar de fanfare toe
+        for p in range(1, 16, 2):
+            taiko.note(b, p, 1, n(D, 2), 90 + p * 2, raw=True)
+    for p in range(16):
+        strings.note(b, p, 1, n(D, 4) + (12 if k >= 2 and p % 2 else 0), min(127, 70 + k * 12 + p), raw=True)
+    for p in (0, 8):
+        bass.note(b, p, 4, n(D, 1), 90 + k * 8, raw=True)
+    if k >= 1:                           # lage conga-puls vanaf de tweede spanningsmaat
+        for p in (0, 4, 8, 12):
+            drums.note(b, p, 1, 64, 50 + k * 10, raw=True)
 
 # maat 4-7: koperfanfare
 fanfare = [(2, 0, 6, n(D, 4)), (2, 6, 2, n(F, 4)), (2, 8, 4, n(G, 4)), (2, 12, 4, n(A, 4)),
@@ -182,7 +195,7 @@ bass.note(7, 0, 4, n(A, 1), 124)
 bass.note(7, 4, 4, n(A, 1), 124)
 bass.note(7, 8, 4, n(A, 1), 124)
 for p in range(12, 16):
-    drums.note(7, p, 1, 41 + (p - 12) * 3, 110)
+    drums.note(7, p, 1, (41, 43, 45, 47)[p - 12], 110)   # 44 is een PSG-piep in rs_drumset!
 
 # ----------------------------------------------------------------- loop A (8 maten)
 MEL_A = [
@@ -238,7 +251,7 @@ for i, (root, minor) in enumerate(LOOP_B):
         taiko.note(b, 8, 2, n(D, 2), 124)
         taiko.note(b, 12, 2, n(D, 2), 127)
 
-END = (B0 + 9) * BAR
+END = (B0 + 8 + TENSION) * BAR
 
 
 def build():
@@ -246,13 +259,13 @@ def build():
     cond = mido.MidiTrack()
     cond.append(mido.MetaMessage('set_tempo', tempo=mido.bpm2tempo(BPM), time=0))
     cond.append(mido.MetaMessage('time_signature', numerator=4, denominator=4, time=0))
-    cond.append(mido.MetaMessage('marker', text='[', time=(L0 + 1) * BAR))
-    cond.append(mido.MetaMessage('marker', text=']', time=END - (L0 + 1) * BAR))
+    cond.append(mido.MetaMessage('marker', text='[', time=(L0 + TENSION) * BAR))
+    cond.append(mido.MetaMessage('marker', text=']', time=END - (L0 + TENSION) * BAR))
     m.tracks.append(cond)
     for t in TRACKS:
         m.tracks.append(t.midi())
     m.save(OUT)
-    print(OUT, '%.1f s intro, %.1f s loop' % ((L0 + 1) * 4 * 60 / BPM, 16 * 4 * 60 / BPM))
+    print(OUT, '%.1f s intro, %.1f s loop' % ((L0 + TENSION) * 4 * 60 / BPM, 16 * 4 * 60 / BPM))
 
 
 if __name__ == '__main__':

@@ -54,23 +54,25 @@ MtPyre_Nightmare_EventScript_WakeUp::
 
 MtPyre_Nightmare_Text_WhereIsThis:
 	.string "…Huh?\p"
-	.string "This is the summit. But the colors are\n"
-	.string "all wrong, and the stairs are gone.\p"
-	.string "Also, there are more graves than\n"
-	.string "before. That's never a good sign.$"
+	.string "This is the summit, but the colors are\n"
+	.string "all wrong and the stairs are gone.\p"
+	.string "There are more graves than before. One\n"
+	.string "of them has your name on it. Spelled\l"
+	.string "wrong.$"
 
 MtPyre_Nightmare_Text_Darkrai:
-	.string "…\p"
 	.string "A shadow with one cold blue eye is\n"
 	.string "waiting in front of the shrine.\p"
-	.string "It has clearly been expecting you.\n"
-	.string "It did not dress up for the occasion.$"
+	.string "One, two, DARKRAI's coming for you. It\n"
+	.string "never learned the rest of the song.$"
 
 MtPyre_Nightmare_Text_NightmareFades:
 	.string "The shadow dissolves.\n"
-	.string "The nightmare starts to fall apart…$"
+	.string "The nightmare falls apart like a cheap\l"
+	.string "sequel…$"
 
 MtPyre_Nightmare_Text_DarkraiLaughs:
-	.string "DARKRAI sinks back into the dark.\n"
-	.string "Somewhere, something is laughing.\p"
-	.string "The dream starts to fall apart…$"
+	.string "DARKRAI sinks back into the dark,\n"
+	.string "laughing.\p"
+	.string "It'll be waiting the next time you fall\n"
+	.string "asleep. Sleep tight!$"

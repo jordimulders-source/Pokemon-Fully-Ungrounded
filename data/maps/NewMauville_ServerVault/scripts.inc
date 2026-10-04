@@ -34,15 +34,17 @@ NewMauville_ServerVault_EventScript_Server2::
 NewMauville_ServerVault_Text_TargetAcquired:
 	.string "Every screen in the room turns red.\p"
 	.string "TARGET ACQUIRED.\n"
-	.string "TARGET: YOU.$"
+	.string "TARGET: YOU.\p"
+	.string "HASTA LA VISTA, BABY.$"
 
 NewMauville_ServerVault_Text_Server1:
 	.string "A server rack, humming happily.\p"
 	.string "Someone taped a note to it:\n"
-	.string "“DO NOT FEED THE BUG.”$"
+	.string "“DO NOT FEED THE BUG. IT ATE THE\l"
+	.string "INTERN.”$"
 
 NewMauville_ServerVault_Text_Server2:
 	.string "A file is open on the screen:\n"
-	.string "GENESECT_BACKUP_FINAL_v2.EXE\p"
-	.string "Last modified: 300 million\n"
-	.string "years ago.$"
+	.string "GENESECT-FINAL-v2-REAL.EXE\p"
+	.string "Last modified: 300 million years ago.\n"
+	.string "Still not backed up.$"

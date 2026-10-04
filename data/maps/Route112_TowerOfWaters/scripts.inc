@@ -56,30 +56,32 @@ Route112_TowerOfWaters_Text_Trainer1Post:
 	.string "Everyone here knew. Nobody told me.$"
 
 Route112_TowerOfWaters_Text_Trainer2Intro:
-	.string "Flow like water! Hit like water!\n"
-	.string "Many, many times! HYAH-YAH-YAH!$"
+	.string "HADOUKEN! SHORYUKEN!\p"
+	.string "…Sorry. With a name like RYU, people\n"
+	.string "expect it.$"
 
 Route112_TowerOfWaters_Text_Trainer2Defeat:
-	.string "I flowed… straight into defeat.$"
+	.string "YOU WIN. PERFECT.\n"
+	.string "I even said the announcer part for you.$"
 
 Route112_TowerOfWaters_Text_Trainer2Post:
 	.string "Water always wins in the end.\n"
 	.string "Just not today. Or yesterday.$"
 
 Route112_TowerOfWaters_Text_KeeperIntro:
-	.string "I am TIDE, keeper of the\n"
-	.string "TOWER OF WATERS.\p"
+	.string "I am TIDE, keeper of the TOWER OF\n"
+	.string "WATERS. Duuude.\p"
 	.string "The scroll behind me teaches a\n"
-	.string "thousand small strikes. Earn them.$"
+	.string "thousand small strikes. Like, totally\l"
+	.string "earn them.$"
 
 Route112_TowerOfWaters_Text_KeeperDefeat:
-	.string "Splash after splash after splash…\n"
-	.string "You've learned the flow.$"
+	.string "Gnarly. You've learned the flow, bro.$"
 
 Route112_TowerOfWaters_Text_Ritual:
-	.string "Your KUBFU is reading the scroll.\n"
-	.string "It's moving its lips. Adorable.\p"
-	.string "Let the water carry it.$"
+	.string "Your KUBFU is reading the scroll. It's\n"
+	.string "moving its lips. Adorable.\p"
+	.string "Let the water carry it, little dude.$"
 
 Route112_TowerOfWaters_Text_AfterRitual:
 	.string "Many strikes. One path.\n"
@@ -89,7 +91,7 @@ Route112_TowerOfWaters_Text_AfterRitual:
 
 Route112_TowerOfWaters_Text_NoKubfu:
 	.string "No KUBFU? Then this was just very\n"
-	.string "aggressive stair exercise.\p"
+	.string "aggressive stair cardio, bro.\p"
 	.string "Bring it, and the scroll is yours.$"
 
 Route112_TowerOfWaters_Text_AlreadyDone:

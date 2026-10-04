@@ -74,31 +74,30 @@ Route112_Dojo_EventScript_Student2::
 	end
 
 Route112_Dojo_Text_MustardIntro:
-	.string "Oh ho ho! A visitor! Nobody visits.\n"
-	.string "The entrance is a hole in a rock.\p"
-	.string "I am MUSTARD, master of this dojo,\n"
-	.string "former champion, current pensioner.\p"
-	.string "You have the eyes of someone who\n"
-	.string "punches problems. I like that.\p"
-	.string "Here. Take this little one.\n"
-	.string "It eats my slippers.$"
+	.string "Oh ho ho! A visitor! Nobody visits. The\n"
+	.string "entrance is a hole in a rock.\p"
+	.string "I am MUSTARD. Former champion, current\n"
+	.string "pensioner, master of the hole in the\l"
+	.string "rock.\p"
+	.string "Here, take this little one. It eats my\n"
+	.string "slippers. And my pension.$"
 
 Route112_Dojo_Text_ReceivedKubfu:
 	.string "{PLAYER} received a {STR_VAR_2}!$"
 
 Route112_Dojo_Text_ExplainTowers:
-	.string "That KUBFU wants to grow up, but it\n"
-	.string "can't decide what kind of adult to be.\p"
-	.string "Upstairs are two towers. Yes, both\n"
-	.string "upstairs. Don't ask about the\l"
-	.string "architecture.\p"
-	.string "Left: the TOWER OF DARKNESS.\n"
-	.string "One strike, big hurt.\p"
-	.string "Right: the TOWER OF WATERS.\n"
-	.string "Many strikes, many small hurts.\p"
-	.string "Beat the keeper at the top with\n"
-	.string "KUBFU in your team, and it chooses\l"
-	.string "its path. Forever. No refunds.$"
+	.string "That KUBFU wants to grow up, but can't\n"
+	.string "decide what kind of adult to be. Very\l"
+	.string "Gen Z.\p"
+	.string "Upstairs are two towers. Both upstairs.\n"
+	.string "Don't ask about the architecture.\p"
+	.string "Left: the TOWER OF DARKNESS. One\n"
+	.string "strike, big hurt.\p"
+	.string "Right: the TOWER OF WATERS. Many\n"
+	.string "strikes, many small hurts.\p"
+	.string "Beat the keeper at the top with KUBFU\n"
+	.string "in your team, and it picks a path.\l"
+	.string "Forever. No refunds.$"
 
 Route112_Dojo_Text_MustardHint:
 	.string "Left stairs: DARKNESS. Single Strike.\n"
@@ -107,10 +106,10 @@ Route112_Dojo_Text_MustardHint:
 	.string "beat you up for free.$"
 
 Route112_Dojo_Text_MustardChallenge:
-	.string "Oh ho! It evolved! I'm so proud\n"
-	.string "I could cry. I'm already crying.\p"
+	.string "Oh ho! It evolved! I'm so proud I could\n"
+	.string "cry. I'm already crying.\p"
 	.string "Now show this old man what you two\n"
-	.string "learned. A friendly match?$"
+	.string "learned. Don't worry, my hip is insured.$"
 
 Route112_Dojo_Text_MustardDeclined:
 	.string "Wise. My back hurts anyway.$"
@@ -127,11 +126,11 @@ Route112_Dojo_Text_MustardPostBattle:
 Route112_Dojo_Text_Student:
 	.string "I've been training here for twelve\n"
 	.string "years. I haven't evolved once.\p"
-	.string "The master says it's a mindset\n"
-	.string "thing. I think it's a species thing.$"
+	.string "The master says it's a mindset thing. I\n"
+	.string "think it's because I'm human.$"
 
 Route112_Dojo_Text_Student2:
-	.string "I climbed both towers once.\p"
-	.string "Then I climbed down again because\n"
-	.string "I forgot my KUBFU at home.\p"
-	.string "Don't be me.$"
+	.string "The master made me paint his fence for\n"
+	.string "three years. Wax on, wax off.\p"
+	.string "I still can't fight. But that fence\n"
+	.string "looks amazing.$"

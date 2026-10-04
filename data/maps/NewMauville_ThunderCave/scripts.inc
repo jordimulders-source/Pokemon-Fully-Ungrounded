@@ -125,11 +125,12 @@ NewMauville_ThunderCave_Text_Monitor3:
 	.string "Sent: 1998.$"
 
 NewMauville_ThunderCave_Text_TerminalBoot:
-	.string "The screen flickers.\p"
+	.string "The screen flickers.\n"
 	.string "ERROR: FUTURE NOT FOUND.\p"
 	.string "SECTOR B: 1 UNREGISTERED LIFEFORM.\n"
-	.string "BUG-TYPE. ARMED. SULKING.\p"
-	.string "VAULT DOOR: LOCKED SINCE 1998.$"
+	.string "BUG-TYPE. ARMED. HOLDS GRUDGES.\p"
+	.string "It looks like you're trying to open a\n"
+	.string "vault. Would you like help?$"
 
 NewMauville_ThunderCave_Text_TerminalPrompt:
 	.string "SELECT RECOVERY PROCEDURE:$"
@@ -147,35 +148,37 @@ NewMauville_ThunderCave_Text_OptLogOut:
 	.string "LOG OUT$"
 
 NewMauville_ThunderCave_Text_TerminalHit:
-	.string "You hit the server.\p"
-	.string "The server is now also\n"
-	.string "disappointed in you.$"
+	.string "You give the server a firm slap.\p"
+	.string "Percussive maintenance. Your dad would\n"
+	.string "be proud. The server is not.$"
 
 NewMauville_ThunderCave_Text_TerminalWattson:
 	.string "Calling WATTSON…\p"
-	.string "“Wahahahah! Did you try paying\n"
-	.string "the power bill? I didn't!”\p"
-	.string "He hangs up. Classic Wattson.$"
+	.string "“Wahahahah! Just turn it off and on\n"
+	.string "again! That's how I fix the city's power\l"
+	.string "grid!”\p"
+	.string "He hangs up. That was actually helpful.\n"
+	.string "Don't tell him.$"
 
 NewMauville_ThunderCave_Text_TerminalLogOut:
-	.string "You log out. Somewhere behind the\n"
-	.string "wall, something sighs. Metallically.$"
+	.string "You log out. Behind the wall, something\n"
+	.string "metal sighs and goes back to plotting.$"
 
 NewMauville_ThunderCave_Text_TerminalShutdown:
 	.string "SHUTTING DOWN…\n"
-	.string "PLEASE DO NOT PANIC.$"
+	.string "SAVING CRYPTO WALLET… FAILED.$"
 
 NewMauville_ThunderCave_Text_TerminalBooting:
-	.string "BOOTING NEW MAUVILLE OS 98…\p"
-	.string "RECOVERING SECTOR B… DONE.\n"
-	.string "VAULT DOOR: UNLOCKED.\p"
-	.string "Have a nice day. Please do not\n"
-	.string "open the vault.$"
+	.string "BOOTING NEW MAUVILLE OS 98…\n"
+	.string "INSTALLING 4,271 UPDATES… SKIPPED.\p"
+	.string "VAULT DOOR: UNLOCKED. Have a nice day.\n"
+	.string "Please do not open the vault.$"
 
 NewMauville_ThunderCave_Text_VaultOpened:
-	.string "Something heavy clicks open\n"
-	.string "in the back wall.$"
+	.string "Something heavy clicks open in the back\n"
+	.string "wall. It sounded like a bad decision.$"
 
 NewMauville_ThunderCave_Text_TerminalDone:
 	.string "VAULT DOOR: UNLOCKED.\n"
-	.string "USER ACCEPTS ALL CONSEQUENCES.$"
+	.string "USER HAS ACCEPTED THE TERMS AND\l"
+	.string "CONDITIONS. NOBODY READ THEM.$"

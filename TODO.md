@@ -33,7 +33,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
    - ~~Jagged Pass ondergronds en Mt. Chimney hoger~~ (gedaan, v0.9.16).
    - ~~Victory Road: optionele kamers~~ (gedaan, v0.9.14). Open: Reginald (en eventueel Selene uit Meteor Falls) in de Battle Stadium-pool.
    - Onderwater: veel meer te ontdekken.
-   - Scorched Slab: uitbreiden en interessanter maken.
+   - ~~Scorched Slab~~ (gedaan, v0.9.17: zonnetempel met lichtpuzzel). Open: Helia in de Stadium-pool (na Jordi's test); vanilla Strength-puzzels (Seafloor Cavern) kort nalopen na de blokkenwijziging.
    - Eigen suggesties van Claude welkom (eerst voorleggen).
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen

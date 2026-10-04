@@ -1763,6 +1763,56 @@
           }
         },
         {
+          "map": "MAP_SCORCHED_SLAB_SUN_HALL",
+          "base_label": "gScorchedSlab_SunHall",
+          "land_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_SUNFLORA" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_HIPPOWDON" },
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_CHERRIM" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_HELIOLISK" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_SANDACONDA" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_MARACTUS" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_HEATMOR" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_PYROAR" },
+              { "min_level": 34, "max_level": 35, "species": "SPECIES_RABSCA" },
+              { "min_level": 34, "max_level": 35, "species": "SPECIES_BRAMBLEGHAST" },
+              { "min_level": 35, "max_level": 35, "species": "SPECIES_ESPEON" },
+              { "min_level": 34, "max_level": 34, "species": "SPECIES_LARVESTA" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SCORCHED_SLAB_SPRING",
+          "base_label": "gScorchedSlab_Spring",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_PSYDUCK" },
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_DEWPIDER" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_GOLDUCK" },
+              { "min_level": 34, "max_level": 36, "species": "SPECIES_ARAQUANID" },
+              { "min_level": 36, "max_level": 36, "species": "SPECIES_MASQUERAIN" }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_GOLDEEN" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_CHEWTLE" },
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_GOLDEEN" },
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_CHEWTLE" },
+              { "min_level": 30, "max_level": 33, "species": "SPECIES_SEAKING" },
+              { "min_level": 33, "max_level": 36, "species": "SPECIES_SEAKING" },
+              { "min_level": 33, "max_level": 36, "species": "SPECIES_BASCULIN_RED_STRIPED" },
+              { "min_level": 34, "max_level": 37, "species": "SPECIES_DREDNAW" },
+              { "min_level": 35, "max_level": 38, "species": "SPECIES_BASCULIN_BLUE_STRIPED" },
+              { "min_level": 38, "max_level": 38, "species": "SPECIES_ARAQUANID" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE121",
           "base_label": "gRoute121",
           "land_mons": {

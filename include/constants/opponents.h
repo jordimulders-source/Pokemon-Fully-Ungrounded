@@ -1030,6 +1030,10 @@
 #define TRAINER_VR_NADIA                    1004 // gauntlet 2
 #define TRAINER_VR_OSKAR                    1005 // gauntlet 3
 #define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
+// 1007-1011: andere agents (Fortree Jungle/Team Rocket, Jagged Pass)
+#define TRAINER_SLAB_RAY                    1013 // Project Grounded: Scorched Slab, zonnezaal (Kindler)
+#define TRAINER_SLAB_MARCO                  1014 // Project Grounded: Scorched Slab, koele bron (verdwaalde duiker)
+#define TRAINER_SLAB_HELIA                  1015 // Project Grounded: Scorched Slab, zonnesanctum (hogepriesteres)
 
 #define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
 #define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis

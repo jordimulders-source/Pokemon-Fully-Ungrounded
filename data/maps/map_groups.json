@@ -687,6 +687,10 @@
     "RocketHideout_B1F",
     "RocketHideout_B2F",
     "JaggedPass_LavaTube",
-    "MtChimney_Summit"
+    "MtChimney_Summit",
+    "ScorchedSlab_SunHall",
+    "ScorchedSlab_Spring",
+    "ScorchedSlab_Sanctum",
+    "Underwater_ScorchedSlab"
   ]
 }

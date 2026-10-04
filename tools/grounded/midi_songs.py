@@ -50,4 +50,5 @@ prepare_auto(f'{SRC}/pt_giratina.mid', f'{DST}/mus_grounded_vs_giratina.mid', ma
 prepare_auto(f'{SRC}/oras_zinnia.mid', f'{DST}/mus_grounded_vs_zinnia.mid', max_note=84)
 
 # Neo Team Plasma (Black 2/White 2), MIDI van Byabbington (onlinesequencer): gevechtsmuziek van de Neo Plasma-deelnemers
-prepare_auto(f'{SRC}/b2w2_neo_plasma.mid', f'{DST}/mus_grounded_vs_neo_plasma.mid', max_note=84)
+# Sinds v2 gemaakt door tools/grounded/neo_plasma_theme.py (echte instrumenten per bronspoor, eigen voicegroup).
+# prepare_auto(f'{SRC}/b2w2_neo_plasma.mid', f'{DST}/mus_grounded_vs_neo_plasma.mid', max_note=84)

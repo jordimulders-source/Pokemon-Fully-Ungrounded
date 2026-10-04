@@ -163,3 +163,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Let bij zo'n sprong op het ritme van de riff (riffmaat / lege maat om en om): 4 -> 53 klopt omdat 52 -> 53 zo is.
 - audiocheck meldt een "constante toon" in een nummer met een solo-intro: de stilte tussen de riffs maakt de mediaan
   klein. Controleer eerst of de stille stukken echt 0 zijn (Dave: ja, 77 Hz = de bas, geen bromtoon).
+- Neo Plasma v2 (Jordi: 'puur synth-deuntje, lijkt qua instrumenten niet op het origineel'): `prepare_auto` groepeert
+  per GM-categorie en zette gitaar (27) + sawtooth (81) samen op één PSG-vierkant, sine op een tweede vierkant en de
+  **steel drums (114) op een crashbekken** (categorie 'cymbal' = 112-119). Gebruik `prepare_auto` niet meer voor een
+  nummer dat herkenbaar moet blijven: lees per bronspoor programma, register en rol uit en kies per spoor een echt sample
+  in een eigen voicegroup (`neo_plasma_theme.py`). PSG alleen voor wat in de bron echt '8-bit' is, zacht.
+- audiocheck meldt bij snelle nummers (176 bpm) 'constante tonen' op 59,7/119,5 Hz: dat is de framesnelheid. De m4a-
+  sequencer start noten alleen op framegrenzen; bij een 16e van 5,1 frames geeft een rij drum-/gitaaraanslagen spectrale
+  lijnen op veelvouden van 59,73 Hz. Geen bromtoon (zit ook in de oude versie); controleer met een opname per spoor.

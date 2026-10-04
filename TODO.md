@@ -4,7 +4,8 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Ditto-trainer** (Pokopia-idee), **gepauzeerd** door Jordi. Opties: vermomde trainer met onthulling, team van Imposter-Ditto's met verschillende items, of een trainer die jouw team kopieert. Plek: Route 115 (hengeltabel vol Ditto) of Ashfrost. (onderaan gezet door Jordi)
+- **Ditto-trainer:** gebouwd als Stadium-deelnemer (v0.8.111; Youngster met Ditto-gezicht, Pokopia-team). Nog open: plek in de overwereld (voorstel Route 115, zie `VRAGEN_OCHTEND.md`).
+- **Open vragen voor Jordi:** `VRAGEN_OCHTEND.md` (Stadium, Deoxys, Spire-balans, Pokémon-balans, QA).
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
 1. ~~Fungal Control~~ (gedaan, v0.8.45)
@@ -31,8 +32,8 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 Plan van aanpak en open vragen per onderdeel: `BACKLOG_PLAN.md` (3 okt 2026). Eerst Jordi's antwoorden afwachten.
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.
 - **Kaarten/gebieden:** Oostkant van de kaart interessanter (meer eilanden, beter onderwater-exploreren, nieuwe dungeons). Jungle onder Fortree (Ogerpon/Zarude). Swamp, fairy forest, mushroom forest, haunted house, outer-space-gebied vanaf Mossdeep. Safari Zone uitbreiden. Extra tilesets (Ekat99, o.a. Snowpoint Temple voor Regigigas).
-- **Legendary/mythical events:** (Regi-quest gedaan v0.8.96; tickets en Lati-keuze gedaan v0.8.97) Jirachi; inverted Sky Pillar die steeds dieper gaat → Giratina; Mewtwo; Genesect; shiny Rayquaza; Darkrai (Mt. Pyre, post-game); Shaymin (bootticket naar bloemenveld); Victini (Victory Island-ticket: gauntlet met nieuwe trainers door heel Hoenn, evt. keuze-element); Kubfu-sidequest; Delta Episode post-game met Zinnia en Deoxys in de ruimte (Jordi denkt nog na over de uitwerking; Zinnia zelf staat al voor de Sky Pillar) (muziek Delta Emerald: Shota Kageyama, MIDI paterDM, credits STikER + Delta Emerald; Zinnia-art: aveontrainer, MelodyCrystel, HaydenisEpic).
+- **Legendary/mythical events:** (Regi-quest gedaan v0.8.96; tickets en Lati-keuze gedaan v0.8.97) Jirachi; inverted Sky Pillar die steeds dieper gaat → Giratina; Mewtwo; Genesect; shiny Rayquaza; Darkrai (Mt. Pyre, post-game); Shaymin (bootticket naar bloemenveld); Victini (Victory Island-ticket: gauntlet met nieuwe trainers door heel Hoenn, evt. keuze-element); Kubfu-sidequest; Delta Episode post-game met Zinnia (de ruimtereis naar Deoxys is gebouwd in v0.8.110; Zinnia is er nog niet aan gekoppeld) (muziek Delta Emerald: Shota Kageyama, MIDI paterDM, credits STikER + Delta Emerald; Zinnia-art: aveontrainer, MelodyCrystel, HaydenisEpic).
 - **Birch:** dialoog bij Ashfrost veel smeriger. (Verdanturf-gevecht en Route 135-team met Hisui-Avalugg gedaan, v0.8.67; Mossdeep-meteoriet en onder water gedaan, v0.8.79)
-- **Trainers/NPC's:** (Colress gedaan v0.8.95) Red/Blue Burglar toevoegen (sprite staat in `graphics/grounded/trainers/burglar/`); trainersprites Gen 4+ (Greenphx); onderzoeken of Gen 4/5-overworldsprites om te zetten zijn.
+- **Trainers/NPC's:** (Colress gedaan v0.8.95; Burglar als Stadium-deelnemer v0.8.111, nog niet in de overwereld) trainersprites Gen 4+ (Greenphx); onderzoeken of Gen 4/5-overworldsprites om te zetten zijn.
 - **Moves:** meer signatures (Cofagrigus, Stunfisk, Mightyena, Wailord, Luvdisc, ...).
-- **Mechanics/systeem:** Battle Frontier: nieuwe facility (toernooi met bekende personages, of roguelike) en rental-teams reviseren.
+- **Mechanics/systeem:** (The Spire en het Battle Stadium gedaan, v0.8.100–0.8.111) rental-teams van de Frontier reviseren.

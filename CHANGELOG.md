@@ -16523,3 +16523,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   de DS-trainerfoto's (`tools/grounded/fade_trainer_pics.py`).
 - `recpcm.py` meldt nu het aantal keer dat de mixer overloopt (moet 0 zijn).
 
+
+### [v.0.9.61] - Neo Plasma-thema met echte instrumenten
+- Jordi: "een puur synth-deuntje, lijkt qua instrumenten niet op het origineel". De automatische omzetting groepeerde per
+  GM-categorie: gitaar en sawtooth samen op één blokgolf, de steel drums als crashbekken. Nu per bronspoor een echt
+  sample in een eigen voicegroup (`tools/grounded/neo_plasma_theme.py`): slap bass, distortion/overdrive-gitaar,
+  kerkorgel, e-piano voor de steel drums (geen steel-drum-sample; alternatief xylofoon/glockenspiel), DirectSound-
+  blokgolf voor de 8-bit-lead, sinus/driehoek zacht op de PSG. Lint OK, 0 keer overlopen.

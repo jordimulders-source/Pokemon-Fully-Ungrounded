@@ -110,6 +110,8 @@ LINES = {
     # Unova
     'STADIUM_N': "N, the KING of TEAM PLASMA! He wants to free your POKéMON. Ticket refunds: no.",
     'STADIUM_GHETSIS': "GHETSIS! He'd like everyone to sit down. Yes, you too. Especially you.",
+    # Team Rocket (Rocket-hideout, Project Grounded)
+    'STADIUM_PETREL': "ROCKET EXEC PETREL! Or GIOVANNI. Or a DITTO. Nobody checked his ID.",
     # Neo Team Plasma (Black 2/White 2)
     'STADIUM_ZINZOLIN': "SAGE ZINZOLIN! He froze a whole city. Then himself. Do not lick him.",
     'STADIUM_ROOD': "SAGE ROOD! Ex-villain, current grandpa. His POKéMON heal. His knees don't.",

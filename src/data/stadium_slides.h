@@ -28,5 +28,6 @@ STADIUM_INTRO(TRAINER_STADIUM_SHADOW_TRIAD, "We are three. You see one.\pThe oth
 STADIUM_INTRO(TRAINER_STADIUM_PLASMA_GRUNT_M, "NEO TEAM PLASMA is back! New logo, same shady business!\pWe used to free POKéMON. Now we just steal them. It's called rebranding."),
 STADIUM_INTRO(TRAINER_STADIUM_PLASMA_GRUNT_F, "I joined for the cool ship and the dental plan.\pThere is no dental plan.\pSomeone is going to pay for that. Probably you."),
 STADIUM_INTRO(TRAINER_STADIUM_GHETSIS, "Sit down! ...You ARE sitting? Then sit down HARDER!\pI have six POKéMON, one stolen dragon and zero shame."),
+STADIUM_INTRO(TRAINER_STADIUM_PETREL, "Gwahahaha! It is I, GIOVANNI!\p...The voice? I have a cold. Bosses get colds.\pFine. I'm PETREL. Probably. Half my team isn't what it looks like either."),
 
 #undef STADIUM_INTRO

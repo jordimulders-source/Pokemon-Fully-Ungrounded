@@ -35342,3 +35342,75 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Giga Drain
 - Spore
 - Rapid Spin
+
+=== TRAINER_STADIUM_PETREL ===
+Name: PETREL
+Class: Rocket Exec
+Pic: Petrel
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Persian @ Focus Sash
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Knock Off
+- U-turn
+- Hypnosis
+
+Ditto @ Choice Scarf
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Relaxed
+- Transform
+
+Weezing_Galar @ Black Sludge
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Strange Steam
+- Will-O-Wisp
+- Pain Split
+- Defog
+
+Honchkrow @ Life Orb
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- U-turn
+
+Mimikyu @ Life Orb
+Level: 50
+Ability: Disguise
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Swords Dance
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+
+Zoroark @ Choice Specs
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Night Daze
+- Flamethrower
+- Sludge Bomb
+- Focus Blast

@@ -9,6 +9,7 @@
 #include "constants/weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/maps.h"
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -1403,6 +1404,13 @@ u8 UpdateShadowColor(u16 color)
     return paletteNum;
 }
 
+// Project Grounded: donkere mist in Toadstool Hollow (de mist mag het donkere bos niet wit wassen)
+static bool32 IsDarkFogMap(void)
+{
+    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TOADSTOOL_HOLLOW)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TOADSTOOL_HOLLOW);
+}
+
 void FogHorizontal_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
@@ -1438,7 +1446,12 @@ void FogHorizontal_Main(void)
     {
     case 0:
         CreateFogHorizontalSprites();
-        if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
+        if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL && IsDarkFogMap())
+        {
+            Weather_SetTargetBlendCoeffs(7, 12, 3);
+            UpdateShadowColor(RGB_GRAY);
+        }
+        else if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
         {
             Weather_SetTargetBlendCoeffs(12, 8, 3);
             UpdateShadowColor(RGB_GRAY);
@@ -1813,7 +1826,10 @@ void FogDiagonal_Main(void)
         gWeatherPtr->initStep++;
         break;
     case 1:
-        Weather_SetTargetBlendCoeffs(12, 8, 8);
+        if (IsDarkFogMap())
+            Weather_SetTargetBlendCoeffs(7, 12, 8);
+        else
+            Weather_SetTargetBlendCoeffs(12, 8, 8);
         gWeatherPtr->initStep++;
         break;
     case 2:

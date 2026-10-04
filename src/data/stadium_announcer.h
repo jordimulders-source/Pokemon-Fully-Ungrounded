@@ -87,6 +87,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_BRANDON, COMPOUND_STRING("PYRAMID KING BRANDON! He brought all\nthree REGIS. They didn't ask to come.")},
     {TRAINER_STADIUM_N, COMPOUND_STRING("N, the KING of TEAM PLASMA! He wants to\nfree your POKéMON. Ticket refunds: no.")},
     {TRAINER_STADIUM_GHETSIS, COMPOUND_STRING("GHETSIS! He'd like everyone to sit down.\nYes, you too. Especially you.")},
+    {TRAINER_STADIUM_PETREL, COMPOUND_STRING("ROCKET EXEC PETREL! Or GIOVANNI. Or a\nDITTO. Nobody checked his ID.")},
     {TRAINER_STADIUM_ZINZOLIN, COMPOUND_STRING("SAGE ZINZOLIN! He froze a whole city.\nThen himself. Do not lick him.")},
     {TRAINER_STADIUM_ROOD, COMPOUND_STRING("SAGE ROOD! Ex-villain, current grandpa.\nHis POKéMON heal. His knees don't.")},
     {TRAINER_STADIUM_SHADOW_TRIAD, COMPOUND_STRING("THE SHADOW TRIAD! Three ninjas, one\nticket. Security is still looking.")},

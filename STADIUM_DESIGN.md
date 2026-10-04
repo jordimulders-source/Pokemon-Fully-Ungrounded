@@ -37,6 +37,11 @@ Archie, Maxie, Birch, Keccles, Colress, Zinnia, Mimi, Brock, Oak, Red, Gabby & T
 Brendan/May, Dave, Mitch en SickBlik (Jordi en zijn maten, Ace Trainers in Victory Road).
 Geïmporteerd (v0.8.108, pokefirered en zo mogelijk DS-repo's): Kanto-gymleiders en Elite Four, Giovanni,
 Blue, plus wat er uit andere generaties schoon binnen te halen is.
+Gasten (`TRAINER_STADIUM_*`, klasse GUEST STAR): Wario, Yoshi (de huilende), Golbat en Grimer (gen 1), Boo, Mew,
+vier Shy Guys (rood, groen, roze Fly Guy, zwart), de Burglar uit Red/Blue en Ditto (Youngster met een Ditto-gezicht,
+praat alleen in puntjes en :), team uit Pokopia). Meme-trainers uit de game als Stadium-versie: Donald (zes Ditto),
+Ivan (zeldzame visjes), Johnson (alleen Metronome), Thomas (Zangoose-familie); Joey en Winston met een eigen versie.
+Intro's staan als trainer slide in `src/data/stadium_slides.h`, nederlaag/winst per trainer in `src/stadium.c`.
 
 ## Compagnons (Vampire Survivors-stijl)
 - Start: **Brendan/May, Keccles, Wally**.
@@ -49,6 +54,9 @@ Blue, plus wat er uit andere generaties schoon binnen te halen is.
   Justice, Forces of Nature, Treasures of Ruin, Loyal Three, Creation-trio, en creatieve sets
   (starters, fossielen, Eeveelutions, ...).
 - Compagnons zonder rugplaatje staan met hun voorplaatje naast je, zoals de Frontier-tag battles in Emerald.
+- Collecties (`TRIOS` in pool.py, klasse "THE": "THE REGIS sent out Regirock!"), op punten: Mascots 1, Starters 3,
+  Fossils 6, Eevees 10, Lake Trio 15, Regis 20, Birds 25, Beasts 30, Pseudos 35, Swords 40, Loyal 3 45, Tapus 50,
+  Genies 55, Ultras 60, Treasures 70, Weather 85, Creators 100. Trainerfoto = voorplaatje van de eerste Pokémon.
 
 ## Beloning
 BP per gewonnen gevecht: ronde 1-2 = 1, kwartfinale = 2, halve finale = 3, finale = 5 (totaal 12 per toernooi),

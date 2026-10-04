@@ -30652,3 +30652,1311 @@ Nature: Timid
 - Hurricane
 - Heat Wave
 - Roost
+
+=== TRAINER_STADIUM_WARIO ===
+Name: WARIO
+Class: Guest Star
+Pic: Guest Wario
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Grafaiai @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Encore
+- Knock Off
+- Super Fang
+- U-turn
+
+Sableye @ Leftovers
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Will-O-Wisp
+- Knock Off
+- Recover
+- Foul Play
+
+Perrserker @ Life Orb
+Level: 50
+Ability: Tough Claws
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Iron Head
+- Close Combat
+- Fake Out
+- Pay Day
+
+Garbodor @ Rocky Helmet
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Gunk Shot
+- Toxic Spikes
+- Drain Punch
+- Spikes
+
+Muk_Alola @ Assault Vest
+Level: 50
+Ability: Poison Touch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Poison Jab
+- Drain Punch
+- Shadow Sneak
+
+Hariyama @ Choice Band
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Close Combat
+- Knock Off
+- Heavy Slam
+- Bullet Punch
+
+=== TRAINER_STADIUM_YOSHI ===
+Name: YOSHI
+Class: Guest Star
+Pic: Guest Yoshi
+Gender: Male
+Music: Twins
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Blissey @ Heavy-Duty Boots
+Level: 50
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Soft-Boiled
+- Seismic Toss
+- Egg Bomb
+- Thunder Wave
+
+Lickilicky @ Leftovers
+Level: 50
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Brave
+- Body Slam
+- Power Whip
+- Knock Off
+- Swords Dance
+
+Tropius @ Sitrus Berry
+Level: 50
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Relaxed
+- Leaf Blade
+- Dragon Hammer
+- Earthquake
+- Synthesis
+
+Meganium @ Leftovers
+Level: 50
+Ability: Leaf Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Giga Drain
+- Dragon Tail
+- Leech Seed
+- Synthesis
+
+Exeggutor_Alola @ Life Orb
+Level: 50
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Trick Room
+- Draco Meteor
+- Flamethrower
+- Giga Drain
+
+Tyranitar @ Weakness Policy
+Level: 50
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Brave
+- Stone Edge
+- Crunch
+- Earthquake
+- Ice Punch
+
+=== TRAINER_STADIUM_GOLBAT ===
+Name: GOLBAT
+Class: Guest Star
+Pic: Guest Golbat
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Zubat @ Eviolite
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Timid
+- Supersonic
+- Confuse Ray
+- Mean Look
+- Toxic
+
+Hypno @ Leftovers
+Level: 50
+Ability: Bad Dreams
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Hypnosis
+- Psychic
+- Nasty Plot
+- Dark Pulse
+
+Porygon_Z @ Choice Specs
+Level: 50
+Ability: Adaptability
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Thunderbolt
+- Shadow Ball
+- Tri Attack
+- Volt Switch
+
+Gengar @ Life Orb
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Sludge Bomb
+- Hypnosis
+- Destiny Bond
+
+Crobat @ Heavy-Duty Boots
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Taunt
+
+Golbat @ Eviolite
+Level: 50
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Super Fang
+- Leech Life
+- Roost
+- Confuse Ray
+
+=== TRAINER_STADIUM_GRIMER ===
+Name: GRIMER
+Class: Guest Star
+Pic: Guest Grimer
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Sludge Bomb
+- Will-O-Wisp
+- Toxic Spikes
+- Pain Split
+
+Gastrodon @ Leftovers
+Level: 50
+Ability: Storm Drain
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Scald
+- Earth Power
+- Recover
+- Sludge Bomb
+
+Swalot @ Sitrus Berry
+Level: 50
+Ability: Gluttony
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Gunk Shot
+- Stockpile
+- Swallow
+- Spit Up
+
+Toxapex @ Black Sludge
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Toxic
+- Recover
+- Baneful Bunker
+- Scald
+
+Goodra @ Assault Vest
+Level: 50
+Ability: Sap Sipper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Draco Meteor
+- Sludge Bomb
+- Fire Blast
+- Thunderbolt
+
+Muk @ Black Sludge
+Level: 50
+Ability: Poison Touch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Gunk Shot
+- Shadow Sneak
+- Ice Punch
+- Minimize
+
+=== TRAINER_STADIUM_BOO ===
+Name: BOO
+Class: Guest Star
+Pic: Guest Boo
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Drifblim @ Sitrus Berry
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Air Slash
+- Will-O-Wisp
+- Destiny Bond
+
+Froslass @ Focus Sash
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Ice Beam
+- Spikes
+- Destiny Bond
+
+Spiritomb @ Leftovers
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+
+Polteageist @ White Herb
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Stored Power
+
+Dusknoir @ Leftovers
+Level: 50
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Poltergeist
+- Shadow Sneak
+- Knock Off
+- Trick Room
+
+Dragapult @ Choice Band
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Sucker Punch
+
+=== TRAINER_STADIUM_MEW ===
+Name: MEW
+Class: Guest Star
+Pic: Guest Mew
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+PIKABLU (Marill) @ Choice Band
+Level: 50
+Ability: Huge Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- Play Rough
+- Aqua Jet
+- Knock Off
+
+GHOST (Marowak_Alola) @ Thick Club
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Shadow Bone
+- Flare Blitz
+- Bonemerang
+- Swords Dance
+
+Clefable @ Leftovers
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Moonblast
+- Moonlight
+- Calm Mind
+- Metronome
+
+Ditto @ Choice Scarf
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Transform
+
+TRUCK (Revavroom) @ Life Orb
+Level: 50
+Ability: Filter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gunk Shot
+- Iron Head
+- High Horsepower
+
+Mew @ Leftovers
+Level: 50
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Aura Sphere
+- Transform
+- Soft-Boiled
+
+=== TRAINER_STADIUM_SHY_GUY_RED ===
+Name: SHY GUY
+Class: Guest Star
+Pic: Guest Shy Guy Red
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Mr. Mime @ Light Clay
+Level: 50
+Ability: Filter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Reflect
+- Light Screen
+- Psychic
+- Encore
+
+Scizor @ Choice Band
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Bullet Punch
+- U-turn
+- Knock Off
+- Close Combat
+
+Talonflame @ Heavy-Duty Boots
+Level: 50
+Ability: Gale Wings
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Flare Blitz
+- Swords Dance
+- Roost
+
+Cofagrigus @ Leftovers
+Level: 50
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Pain Split
+
+Hawlucha @ White Herb
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Close Combat
+- Acrobatics
+- Swords Dance
+- Encore
+
+Ogerpon_Hearthflame @ Hearthflame Mask
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Ivy Cudgel
+- Horn Leech
+- Swords Dance
+- Knock Off
+
+=== TRAINER_STADIUM_SHY_GUY_GREEN ===
+Name: SHYER GUY
+Class: Guest Star
+Pic: Guest Shy Guy Green
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Kecleon @ Leftovers
+Level: 50
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Shadow Sneak
+- Knock Off
+- Drain Punch
+- Power Whip
+
+Decidueye @ Life Orb
+Level: 50
+Ability: Long Reach
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Spirit Shackle
+- Leaf Blade
+- Sucker Punch
+- Swords Dance
+
+Masquerain @ Damp Rock
+Level: 50
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hurricane
+- Bug Buzz
+- Sticky Web
+- Quiver Dance
+
+Zarude @ Choice Scarf
+Level: 50
+Ability: Leaf Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Power Whip
+- Knock Off
+- U-turn
+- Close Combat
+
+Runerigus @ Leftovers
+Level: 50
+Ability: Wandering Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Earthquake
+- Poltergeist
+- Stealth Rock
+- Will-O-Wisp
+
+Ogerpon @ Leftovers
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Ivy Cudgel
+- Knock Off
+- U-turn
+- Swords Dance
+
+=== TRAINER_STADIUM_SHY_GUY_PINK ===
+Name: FLY GUY
+Class: Guest Star
+Pic: Guest Shy Guy Pink
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Slurpuff @ Sitrus Berry
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Belly Drum
+- Play Rough
+- Drain Punch
+- Return
+
+Hatterene @ Life Orb
+Level: 50
+Ability: Magic Bounce
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Trick Room
+- Dazzling Gleam
+- Psychic
+- Mystical Fire
+
+Sylveon @ Leftovers
+Level: 50
+Ability: Pixilate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Wish
+- Protect
+- Shadow Ball
+
+Mr. Mime @ Light Clay
+Level: 50
+Ability: Filter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Reflect
+- Light Screen
+- Dazzling Gleam
+- Encore
+
+Clefable @ Life Orb
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Moonblast
+- Fire Blast
+- Calm Mind
+- Moonlight
+
+Ogerpon_Wellspring @ Wellspring Mask
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Ivy Cudgel
+- Horn Leech
+- Play Rough
+- Spiky Shield
+
+=== TRAINER_STADIUM_SHY_GUY_BLACK ===
+Name: SHADY GUY
+Class: Guest Star
+Pic: Guest Shy Guy Black
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Zoroark @ Life Orb
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Night Daze
+- Flamethrower
+- Sludge Bomb
+- Nasty Plot
+
+Cofagrigus @ Leftovers
+Level: 50
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Shadow Ball
+- Toxic Spikes
+- Trick Room
+- Will-O-Wisp
+
+Honchkrow @ Life Orb
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Heat Wave
+
+Runerigus @ Leftovers
+Level: 50
+Ability: Wandering Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Earthquake
+- Shadow Claw
+- Trick Room
+- Rock Slide
+
+Grimmsnarl @ Light Clay
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Reflect
+- Light Screen
+- Spirit Break
+- Parting Shot
+
+Ogerpon_Cornerstone @ Cornerstone Mask
+Level: 50
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Ivy Cudgel
+- Horn Leech
+- Swords Dance
+- Power Whip
+
+=== TRAINER_STADIUM_BURGLAR ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Thievul @ Sitrus Berry
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Nasty Plot
+- Dark Pulse
+- Parting Shot
+
+Liepard @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Covet
+- Encore
+- Thunder Wave
+- Foul Play
+
+Persian_Alola @ Life Orb
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Pay Day
+- Dark Pulse
+- Nasty Plot
+- Power Gem
+
+Honchkrow @ Life Orb
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Pursuit
+- Heat Wave
+
+Arcanine @ Heavy-Duty Boots
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Flare Blitz
+- Extreme Speed
+- Thief
+- Will-O-Wisp
+
+Weavile @ Life Orb
+Level: 50
+Ability: Pickpocket
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Ice Shard
+- Triple Axel
+- Swords Dance
+
+=== TRAINER_STADIUM_DITTO ===
+Name: DITTO
+Class: Youngster
+Pic: Guest Ditto
+Gender: Male
+Music: Twins
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+SMEARGURU (Smeargle) @ Focus Sash
+Level: 50
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Spore
+- Sticky Web
+- Stealth Rock
+- Follow Me
+
+PROFESSOR (Tangrowth) @ Assault Vest
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Sassy
+- Giga Drain
+- Knock Off
+- Sludge Bomb
+- Earthquake
+
+CHEF (Greedent) @ Sitrus Berry
+Level: 50
+Ability: Cheek Pouch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Stuff Cheeks
+- Body Press
+- Body Slam
+- Seed Bomb
+
+Tinkaton @ Life Orb
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Swords Dance
+
+PEAKYCHU (Pikachu) @ Light Ball
+Level: 50
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Atk / 252 SpA / 252 Spe
+Nature: Hasty
+- Volt Tackle
+- Thunderbolt
+- Grass Knot
+- Fake Out
+
+MOSSLAX (Snorlax) @ Leftovers
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Curse
+- Body Slam
+- Seed Bomb
+- Rest
+
+=== TRAINER_STADIUM_JOEY ===
+Name: JOEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Rattata @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Sucker Punch
+- U-turn
+- Quick Attack
+
+Mightyena @ Choice Band
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Crunch
+- Play Rough
+- Sucker Punch
+- Fire Fang
+
+Obstagoon @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Facade
+- Obstruct
+- Knock Off
+- Close Combat
+
+Linoone @ Life Orb
+Level: 50
+Ability: Tough Claws
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Extreme Speed
+- Belly Drum
+- Seed Bomb
+- Shadow Claw
+
+Mabosstiff @ Leftovers
+Level: 50
+Ability: Stakeout
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Crunch
+- Psychic Fangs
+- Play Rough
+- Wild Charge
+
+Poochyena @ Eviolite
+Level: 50
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+Shiny: Yes
+- Psychic Fangs
+- Fire Fang
+- Crunch
+- Sucker Punch
+
+=== TRAINER_STADIUM_WINSTON ===
+Name: WINSTON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Cramorant @ Choice Specs
+Level: 50
+Ability: Gulp Missile
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+Shiny: Yes
+- Surf
+- Hurricane
+- Ice Beam
+- Roost
+
+Clodsire @ Leftovers
+Level: 50
+Ability: Unaware
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+Shiny: Yes
+- Earthquake
+- Toxic
+- Recover
+- Haze
+
+Rabsca @ Choice Scarf
+Level: 50
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+Shiny: Yes
+- Psychic
+- Bug Buzz
+- Revival Blessing
+- Trick
+
+Persian @ Choice Band
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+Shiny: Yes
+- Pay Day
+- Fake Out
+- U-turn
+- Knock Off
+
+Obstagoon @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+Shiny: Yes
+- Facade
+- Obstruct
+- Knock Off
+- Close Combat
+
+Gholdengo @ Choice Specs
+Level: 50
+Ability: Good as Gold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+Shiny: Yes
+- Make It Rain
+- Shadow Ball
+- Focus Blast
+- Trick
+
+=== TRAINER_STADIUM_DONALD ===
+Name: DONALD
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ditto @ Choice Scarf
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+Ditto @ Life Orb
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+Ditto @ Eject Button
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+Ditto @ Focus Sash
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+Ditto @ Assault Vest
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+Ditto @ Leftovers
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Jolly
+- Transform
+
+=== TRAINER_STADIUM_IVAN ===
+Name: IVAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Magikarp @ Focus Sash
+Level: 50
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Splash
+- Flail
+- Bounce
+
+Pyukumuku @ Rocky Helmet
+Level: 50
+Ability: Innards Out
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Recover
+- Toxic
+- Soak
+- Counter
+
+Wishiwashi @ Leftovers
+Level: 50
+Ability: Schooling
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- Earthquake
+- Ice Fang
+- Endeavor
+
+Relicanth @ Choice Band
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Head Smash
+- Wave Crash
+- Earthquake
+- Double-Edge
+
+Barraskewda @ Choice Band
+Level: 50
+Ability: Propeller Tail
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Aqua Jet
+
+Gyarados @ Leftovers
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+Shiny: Yes
+- Dragon Dance
+- Waterfall
+- Bounce
+- Earthquake
+
+=== TRAINER_STADIUM_JOHNSON ===
+Name: JOHNSON
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Machamp @ Expert Belt
+Level: 50
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Metronome
+
+Persian @ Wide Lens
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Metronome
+
+Electivire @ Life Orb
+Level: 50
+Ability: Motor Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 SpA
+Nature: Naive
+- Metronome
+
+Plusle @ Sitrus Berry
+Level: 50
+Ability: Plus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Metronome
+
+Chansey @ Eviolite
+Level: 50
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Metronome
+
+Lucario @ Life Orb
+Level: 50
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 SpA
+Nature: Naive
+- Metronome
+
+=== TRAINER_STADIUM_THOMAS ===
+Name: THOMAS
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Zangoose @ Toxic Orb
+Level: 50
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Zangoose @ Choice Scarf
+Level: 50
+Ability: Immunity
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Double-Edge
+- Close Combat
+- Knock Off
+- U-turn
+
+Zangoose @ Life Orb
+Level: 50
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Swords Dance
+- Facade
+- Close Combat
+- Shadow Claw
+
+Zangoose @ Focus Sash
+Level: 50
+Ability: Immunity
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Zangoose @ Toxic Orb
+Level: 50
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Swords Dance
+- Facade
+- Close Combat
+- Quick Attack

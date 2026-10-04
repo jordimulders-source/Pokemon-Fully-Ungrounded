@@ -946,8 +946,27 @@
 #define TRAINER_STADIUM_NOLAND                  933
 #define TRAINER_STADIUM_LUCY                    934
 #define TRAINER_STADIUM_BRANDON                 935
+// Project Grounded: Battle Stadium, gasten, Ditto en meme-trainers
+#define TRAINER_STADIUM_WARIO                   936
+#define TRAINER_STADIUM_YOSHI                   937
+#define TRAINER_STADIUM_GOLBAT                  938
+#define TRAINER_STADIUM_GRIMER                  939
+#define TRAINER_STADIUM_BOO                     940
+#define TRAINER_STADIUM_MEW                     941
+#define TRAINER_STADIUM_SHY_GUY_RED             942
+#define TRAINER_STADIUM_SHY_GUY_GREEN           943
+#define TRAINER_STADIUM_SHY_GUY_PINK            944
+#define TRAINER_STADIUM_SHY_GUY_BLACK           945
+#define TRAINER_STADIUM_BURGLAR                 946
+#define TRAINER_STADIUM_DITTO                   947
+#define TRAINER_STADIUM_JOEY                    948
+#define TRAINER_STADIUM_WINSTON                 949
+#define TRAINER_STADIUM_DONALD                  950
+#define TRAINER_STADIUM_IVAN                    951
+#define TRAINER_STADIUM_JOHNSON                 952
+#define TRAINER_STADIUM_THOMAS                  953
 
-#define TRAINERS_COUNT                      936
+#define TRAINERS_COUNT                      954
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -28,7 +28,8 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | ZINNIA | 582 | Altaria, Salamence, Goodra, Roaring Moon | Salamence, Goodra, Roaring Moon | - |
 | MIMI | 418 | Pikachu, Pachirisu, Dedenne, Mimikyu | Pachirisu, Dedenne, Mimikyu | - |
 | GABBY_AND_TY_6 | 522 | Magnezone, Exploud, Farigiraf, Sigilyph | Magnezone, Farigiraf, Sigilyph | - |
-| JOEY | 265 | Poochyena, Poochyena, Poochyena, Poochyena | Poochyena, Poochyena, Poochyena | - |
+| STADIUM_JOEY | 480 | Rattata, Mightyena, Obstagoon, Poochyena | Mightyena, Obstagoon, Poochyena | - |
+| STADIUM_WINSTON | 496 | Clodsire, Rabsca, Obstagoon, Gholdengo | Rabsca, Obstagoon, Gholdengo | - |
 | MATT | 543 | Wailord, Snorlax, Dondozo, Cetitan | Wailord, Snorlax, Cetitan | - |
 | SHELLY_SEAFLOOR_CAVERN | 503 | Sneasler, Alomomola, Samurott | Sneasler, Alomomola, Samurott | - |
 | TABITHA_MOSSDEEP | 507 | Beheeyem, Escavalier, Snorlax | Beheeyem, Escavalier, Snorlax | - |
@@ -80,5 +81,21 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
 | SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
 | OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
+| STADIUM_WARIO | 501 | Grafaiai, Garbodor, Muk, Hariyama | Garbodor, Muk, Hariyama | zure regen |
+| STADIUM_YOSHI | 546 | Blissey, Lickilicky, Exeggutor, Tyranitar | Lickilicky, Exeggutor, Tyranitar | Trick Room, zand |
+| STADIUM_GOLBAT | 449 | Zubat, Porygon-Z, Crobat, Golbat | Zubat, Porygon-Z, Golbat | - |
+| STADIUM_GRIMER | 531 | Weezing, Toxapex, Goodra, Muk | Weezing, Goodra, Muk | zure regen |
+| STADIUM_BOO | 539 | Froslass, Spiritomb, Dusknoir, Dragapult | Spiritomb, Dusknoir, Dragapult | Trick Room |
+| STADIUM_MEW | 458 | Marill, Clefable, Revavroom, Mew | Marill, Revavroom, Mew | - |
+| STADIUM_SHY_GUY_RED | 512 | Scizor, Talonflame, Hawlucha, Ogerpon | Scizor, Hawlucha, Ogerpon | - |
+| STADIUM_SHY_GUY_GREEN | 541 | Decidueye, Masquerain, Zarude, Ogerpon | Masquerain, Zarude, Ogerpon | regen |
+| STADIUM_SHY_GUY_PINK | 517 | Hatterene, Sylveon, Clefable, Ogerpon | Hatterene, Sylveon, Ogerpon | - |
+| STADIUM_SHY_GUY_BLACK | 512 | Honchkrow, Runerigus, Grimmsnarl, Ogerpon | Honchkrow, Grimmsnarl, Ogerpon | - |
+| STADIUM_BURGLAR | 506 | Thievul, Honchkrow, Arcanine, Weavile | Honchkrow, Arcanine, Weavile | - |
+| STADIUM_DITTO | 485 | Tangrowth, Tinkaton, Pikachu, Snorlax | Tangrowth, Pikachu, Snorlax | - |
+| STADIUM_DONALD | 520 | Ditto, Ditto, Ditto, Ditto | Ditto, Ditto, Ditto | - |
+| STADIUM_IVAN | 431 | Magikarp, Relicanth, Barraskewda, Gyarados | Magikarp, Relicanth, Gyarados | - |
+| STADIUM_JOHNSON | 506 | Machamp, Electivire, Chansey, Lucario | Machamp, Electivire, Lucario | - |
+| STADIUM_THOMAS | 493 | Zangoose, Zangoose, Zangoose, Zangoose | Zangoose, Zangoose, Zangoose | - |
 | BRENDAN_ROUTE_136_TREECKO | 515 | Huntail, Exploud, Absol, Blaziken | Huntail, Exploud, Blaziken | - |
 | MAY_ROUTE_136_TORCHIC | 516 | Roserade, Froslass, Mienshao, Swampert | Roserade, Froslass, Swampert | - |

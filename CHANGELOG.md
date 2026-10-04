@@ -16321,3 +16321,6 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - `recaudio.py`: overbrugt alle buffer-glitches van mGBA. Die gaven de snips op 3 en 12 s in de previews; ze zitten niet in de game.
   - De lessen staan in `tools/grounded/MUZIEK.md`.
 - **Loyal Three** (Okidogi, Munkidori, Fezandipiti): eigen Poison Chain-transitie (`B_TRANSITION_POISON_CHAIN`). Paarse schakels haken in elkaar tot een ketting, dan een stilstaand beeld. Okidogi staat in debug "Battle test…". Een tweede versie met de dikke donut-ketting uit de artwork volgt.
+
+### [v.0.9.27] - Shy Guys op Sunset Wilds
+- De vier Shy Guys in het Battle Stadium (Shy Guy, Shyer Guy, Fly Guy, Shady Guy) vechten op **Sunset Wilds** (Mario Kart: Super Circuit, `MUS_GROUNDED_VS_SUNSET_WILDS`).

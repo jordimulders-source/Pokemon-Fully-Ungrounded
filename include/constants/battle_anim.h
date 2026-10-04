@@ -424,6 +424,8 @@
 #define ANIM_TAG_TATSUGIRI_DROOPY           (ANIM_SPRITES_START + 410)
 #define ANIM_TAG_TATSUGIRI_STRETCHY         (ANIM_SPRITES_START + 411)
 #define ANIM_TAG_LASER_DOT                  (ANIM_SPRITES_START + 412) // Project Grounded: Laser Beam
+#define ANIM_TAG_BROKEN_HEART               (ANIM_SPRITES_START + 413) // Project Grounded: Heartbreak
+#define ANIM_TAG_MUMMY_BANDAGE              (ANIM_SPRITES_START + 414) // Project Grounded: Mummy's Curse
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -642,6 +644,8 @@
 #define TRAP_ANIM_INFESTATION 6
 #define TRAP_ANIM_SNAP_TRAP 7
 #define TRAP_ANIM_THUNDER_CAGE 8
+#define TRAP_ANIM_MUMMYS_CURSE 9 // Project Grounded
+#define TRAP_ANIM_STEEL_TRAP 10 // Project Grounded
 
 // Weather defines for battle animation scripts.
 #define ANIM_WEATHER_NONE 0

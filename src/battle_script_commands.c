@@ -3751,6 +3751,30 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
             gBattlescriptCurrInstr = BattleScript_MoveEffectLightScreen;
         }
         break;
+    case MOVE_EFFECT_MUMMIFY: // Project Grounded: Mummy's Curse
+        if (!IsBattlerAlive(gEffectBattler)
+         || gBattleMons[gEffectBattler].ability == ABILITY_MUMMY
+         || gAbilitiesInfo[gBattleMons[gEffectBattler].ability].cantBeOverwritten
+         || gAbilitiesInfo[gBattleMons[gEffectBattler].ability].cantBeSuppressed)
+        {
+            gBattlescriptCurrInstr = battleScript;
+        }
+        else if (GetBattlerHoldEffectIgnoreAbility(gEffectBattler) == HOLD_EFFECT_ABILITY_SHIELD)
+        {
+            RecordItemEffectBattle(gEffectBattler, HOLD_EFFECT_ABILITY_SHIELD);
+            gBattlescriptCurrInstr = battleScript;
+        }
+        else
+        {
+            if (gDisableStructs[gEffectBattler].neutralizingGas)
+                gSpecialStatuses[gEffectBattler].neutralizingGasRemoved = TRUE;
+            RemoveAbilityFlags(gEffectBattler);
+            gBattleScripting.abilityPopupOverwrite = gBattleMons[gEffectBattler].ability;
+            gBattleMons[gEffectBattler].ability = gDisableStructs[gEffectBattler].overwrittenAbility = ABILITY_MUMMY;
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectMummify;
+        }
+        break;
     case MOVE_EFFECT_SALT_CURE:
         if (!gBattleMons[gBattlerTarget].volatiles.saltCure)
         {

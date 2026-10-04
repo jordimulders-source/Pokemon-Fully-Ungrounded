@@ -6625,6 +6625,24 @@ BattleScript_MoveEffectWrap::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+@ Project Grounded: Mummy's Curse. De ability van het doelwit wordt Mummy.
+BattleScript_MoveEffectMummify::
+	copybyte gBattlerAbility, gEffectBattler
+	call BattleScript_AbilityPopUpOverwriteThenNormal
+	recordability BS_EFFECT_BATTLER
+	printstring STRINGID_PKMNMUMMIFIED
+	waitmessage B_WAIT_TIME_LONG
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	tryendneutralizinggas
+	return
+
+@ Project Grounded: Pack Howl. Met een partner: +1 Atk voor beiden (zoals Howl); alleen: +1 Atk en +1 Spe.
+BattleScript_EffectPackHowl::
+	jumpifnoally BS_ATTACKER, BattleScript_EffectDragonDance
+	goto BattleScript_EffectAttackUpUserAlly
+
 BattleScript_MoveEffectConfusion::
 	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
 	printstring STRINGID_PKMNWASCONFUSED

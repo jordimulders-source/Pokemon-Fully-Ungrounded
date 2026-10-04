@@ -359,6 +359,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_MACHINE_LEARNING, // Project Grounded: steeds meer stats +1, 20% kans op hallucinatie (Metronome)
     EFFECT_ACID_RAIN, // Project Grounded: zure regen (weer)
     EFFECT_POLLEN_HAZE, // Project Grounded: stuifmeel (weer)
+    EFFECT_PACK_HOWL, // Project Grounded: dubbel +1 Atk voor het team, solo +1 Atk +1 Spe
+    EFFECT_HEARTBREAK, // Project Grounded: dubbele kracht tegen het andere geslacht of een verliefd doelwit
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

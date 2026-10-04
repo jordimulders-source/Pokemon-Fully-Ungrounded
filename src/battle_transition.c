@@ -8481,15 +8481,15 @@ static void Task_Rocket(u8 taskId)
 // klauwkrassen scheuren door het blad op de taiko-slagen van "Battle! Zarude" (168 BPM: maat = 86 frames; begin maat 2,
 // 3 en halverwege 3) en in de spanningsmaten doemt Zarude's silhouet op met gloeiende rode ogen die op de achtsten pulseren. Daarna zwart, net voor de koperfanfare.
 // tiles (tools/grounded/route_transitions.py): 1-4 bladerdek, 5-7 bladrand, 8-9 liaan, 10 liaantip, 11.. klauwen
-#define ZARUDE_CLAW1   86
-#define ZARUDE_CLAW2   171
-#define ZARUDE_CLAW3   214
-#define ZARUDE_REVEAL  240
-#define ZARUDE_DARK    288
-#define ZARUDE_END     300
+#define ZARUDE_CLAW1   81
+#define ZARUDE_CLAW2   124
+#define ZARUDE_CLAW3   167
+#define ZARUDE_REVEAL  188
+#define ZARUDE_DARK    238
+#define ZARUDE_END     250
 
 static const u8 sZarudeVineCol[] = {3, 9, 16, 22, 27};
-static const u8 sZarudeVineStart[] = {40, 64, 104, 52, 128};
+static const u8 sZarudeVineStart[] = {20, 36, 60, 28, 76};
 static const u8 sZarudeVineLen[] = {9, 13, 7, 11, 14};
 static const s8 sZarudeVineBounce[] = {1, 2, 2, 1, 0, -1, -1, 0};
 static const u8 sZarudeClawStart[] = {ZARUDE_CLAW1, ZARUDE_CLAW2, ZARUDE_CLAW3};
@@ -8506,47 +8506,53 @@ static bool8 RTZarude_Update(struct Task *task)
 {
     u16 *tilemap = RT_Tilemap();
     s32 t = task->tRtTimer, r, c, k, threshold, shake = 0;
-    s32 vineRows[ARRAY_COUNT(sZarudeVineCol)];
+    const u8 *depth = sZarude_Depth;
 
-    // bladerdek: een vak is dicht als zijn diepte (afstand tot de rand) onder de drempel ligt; de drempel groeit
-    threshold = (t * 13) >> 4; // ±5 s: langzaam dichtgroeien (Jordi: intro van 17 s, blazers op ±8,6 s)
-    for (k = 0; k < (s32)ARRAY_COUNT(sZarudeVineCol); k++)
-    {
-        s32 d = t - sZarudeVineStart[k], len = 0;
-        if (d > 0)
-        {
-            if (d < sZarudeVineLen[k])
-                len = d;
-            else
-                len = sZarudeVineLen[k] + sZarudeVineBounce[min(d - sZarudeVineLen[k], (s32)ARRAY_COUNT(sZarudeVineBounce) - 1)];
-        }
-        vineRows[k] = len;
-    }
+    // 1. bladerdek: een vak is dicht als zijn diepte (afstand tot de rand) onder de drempel ligt; de drempel groeit.
+    // Per vak alleen een vergelijking (de hele update moet ruim binnen een frame blijven).
+    threshold = (t * 21) >> 4; // ±5 s incl. de flits vooraf
     for (r = 0; r < 20; r++)
     {
+        u16 *row = &tilemap[r * 32];
         for (c = 0; c < 30; c++)
         {
-            s32 depth = sZarude_Depth[r * 30 + c];
-            u16 tileNum = 0;
-            if (depth < threshold - 14)
-                tileNum = 1 + ((r * 7 + c * 3) & 3);
-            else if (depth < threshold)
-                tileNum = 5 + ((r + c + (t >> 3)) & 1) + ((r & 2) >> 1);
-            for (k = 0; k < (s32)ARRAY_COUNT(sZarudeVineCol); k++)
+            s32 d = *depth++;
+            if (d < threshold - 14)
+                row[c] = RT_TILE(1 + ((r * 7 + c * 3) & 3));
+            else if (d < threshold)
+                row[c] = RT_TILE(5 + ((r + c + (t >> 3)) & 1) + ((r & 2) >> 1));
+            else
+                row[c] = 0;
+        }
+    }
+    // 2. lianen zwiepen van boven naar beneden (met een kleine stuiter)
+    for (k = 0; k < (s32)ARRAY_COUNT(sZarudeVineCol); k++)
+    {
+        s32 d = t - sZarudeVineStart[k], len;
+        if (d <= 0)
+            continue;
+        if (d < sZarudeVineLen[k])
+            len = d;
+        else
+            len = sZarudeVineLen[k] + sZarudeVineBounce[min(d - sZarudeVineLen[k], (s32)ARRAY_COUNT(sZarudeVineBounce) - 1)];
+        for (r = 0; r < len && r < 20; r++)
+            tilemap[r * 32 + sZarudeVineCol[k]] = RT_TILE((r == len - 1) ? 10 : 8 + ((r + k) & 1));
+    }
+    // 3. klauwkrassen: vegen in een paar frames over het beeld en blijven staan
+    for (k = 0; k < 3; k++)
+    {
+        const u16 *claw = &sZarude_Claws[k * 600];
+        s32 prog = (t - sZarudeClawStart[k]) * 8;
+        if (prog < 0)
+            continue;
+        for (r = 0; r < 20; r++)
+        {
+            for (c = 0; c < 30; c++)
             {
-                if (c == sZarudeVineCol[k] && r < vineRows[k])
-                    tileNum = (r == vineRows[k] - 1) ? 10 : 8 + ((r + k) & 1);
+                u16 cl = *claw++;
+                if (cl != 0 && ((k == 1) ? r + c : r + 29 - c) <= prog)
+                    tilemap[r * 32 + c] = RT_TILE(cl);
             }
-            for (k = 0; k < 3; k++)
-            {
-                s32 order, cl = sZarude_Claws[k * 600 + r * 30 + c];
-                if (cl == 0 || t < sZarudeClawStart[k])
-                    continue;
-                order = (k == 1) ? r + c : r + 29 - c;
-                if (order <= (t - sZarudeClawStart[k]) * 8)
-                    tileNum = cl;
-            }
-            tilemap[r * 32 + c] = tileNum ? RT_TILE(tileNum) : 0;
         }
     }
 
@@ -8569,7 +8575,7 @@ static bool8 RTZarude_Update(struct Task *task)
 
     // de wereld wordt jungle-donker
     if (t < ZARUDE_DARK)
-        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 5, 10), RGB(1, 6, 2));
+        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 4, 10), RGB(1, 6, 2));
 
     // silhouet: komt in maat 3 op, groeit langzaam; ogen pulseren op de achtsten (11 frames)
     if (t >= ZARUDE_REVEAL)

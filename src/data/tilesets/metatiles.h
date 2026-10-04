@@ -223,3 +223,6 @@ const u16 gMetatileAttributes_FlowerParadise[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatiles.bin");
 const u16 gMetatileAttributes_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatile_attributes.bin");
+
+const u16 gMetatiles_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatiles.bin");
+const u16 gMetatileAttributes_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatile_attributes.bin");

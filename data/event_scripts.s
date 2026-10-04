@@ -450,6 +450,7 @@ gStdScripts_End::
 	.include "data/maps/Route112_Dojo/scripts.inc"
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
+	.include "data/maps/ToadstoolHollow/scripts.inc"
 	.include "data/maps/FlowerParadise_Shore/scripts.inc"
 	.include "data/maps/MtPyre_Nightmare/scripts.inc"
 	.include "data/maps/MeteorSpace/scripts.inc"

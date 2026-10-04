@@ -4770,6 +4770,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeJungle/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_TOADSTOOL_HOLLOW",
+      "name": "ToadstoolHollow_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ToadstoolHollow",
+      "border_filepath": "data/layouts/ToadstoolHollow/border.bin",
+      "blockdata_filepath": "data/layouts/ToadstoolHollow/map.bin"
     }
   ]
 }

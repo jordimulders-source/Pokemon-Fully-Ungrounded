@@ -931,3 +931,14 @@ const struct Tileset gTileset_NightmareFacility =
     .metatileAttributes = gMetatileAttributes_Facility,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_ToadstoolHollow = // Project Grounded: Toadstool Hollow (paddenstoelenbos), mushroom_forest.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ToadstoolHollow,
+    .palettes = gTilesetPalettes_ToadstoolHollow,
+    .metatiles = gMetatiles_ToadstoolHollow,
+    .metatileAttributes = gMetatileAttributes_ToadstoolHollow,
+    .callback = NULL,
+};

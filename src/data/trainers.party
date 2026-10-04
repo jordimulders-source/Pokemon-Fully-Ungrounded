@@ -33689,3 +33689,102 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Knock Off
 - U-turn
 - Bulk Up
+
+=== TRAINER_HOLLOW_OSKAR ===
+Name: OSKAR
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Venonat
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Confusion
+- Poison Powder
+- Supersonic
+- Tackle
+
+Spinarak
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Night Shade
+- Poison Sting
+- String Shot
+- Absorb
+
+Joltik
+Level: 16
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Electroweb
+- Bug Bite
+- Thunder Wave
+- Absorb
+
+=== TRAINER_HOLLOW_MORELLE ===
+Name: MORELLE
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Morelull
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Moonlight
+- Astonish
+- Flash
+
+Foongus
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Feint Attack
+- Growth
+- Astonish
+
+Sinistea
+Level: 16
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Astonish
+- Aromatic Mist
+- Mega Drain
+- Withdraw
+
+=== TRAINER_HOLLOW_GERRIT ===
+Name: GERRIT
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Rolycoly
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Smack Down
+- Rapid Spin
+- Smokescreen
+- Tackle
+
+Toedscool
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Mud Shot
+- Wrap
+- Supersonic
+
+Phantump
+Level: 17
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Branch Poke
+- Astonish
+- Leech Seed
+- Confuse Ray

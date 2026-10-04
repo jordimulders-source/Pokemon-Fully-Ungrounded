@@ -64,10 +64,11 @@ marimba = Track('marimba', 2, 12, 92, 44)
 lead = Track('flute', 3, 73, 108, 70)
 brass = Track('trumpet', 4, 56, 96, 84)
 strings = Track('strings', 5, 48, 92, 54)
+timp = Track('timpani', 6, 47, 104, 64)
 sq1 = Track('square1', 6, 80, 58, 30)     # PSG: harmonie onder de melodie
 sq2 = Track('square2', 7, 81, 52, 98)     # PSG: arpeggio-glitter
 noise = Track('shaker', 8, 120, 40)       # PSG-ruis: shaker
-TRACKS = [drums, taiko, bass, marimba, lead, brass, strings]   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
+TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, timp]   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
 
 
 def third(minor):
@@ -135,7 +136,17 @@ for k in range(TENSION):
     for p in range(0, 16, 2):
         taiko.note(b, p, 2, n(D, 2), min(127, 80 + k * 12 + p), raw=True)
     for p in range(16):
-        strings.note(b, p, 1, n(D, 4), min(127, 70 + k * 12 + p), raw=True)
+        if k == TENSION - 1:     # laatste spanningsmaat: tremolo klimt D-F-G-A naar de fanfare
+            nt = n((D, F, G, A)[p // 4], 4)
+        else:
+            nt = n(D, 4)
+        strings.note(b, p, 1, nt, min(127, 70 + k * 12 + p * (2 if k == TENSION - 1 else 1)), raw=True)
+    if k == TENSION - 1:
+        for p in range(16):      # paukenroffel die aanzwelt
+            timp.note(b, p, 1, n(D, 2), min(127, 50 + p * 5), raw=True)
+        for p, t in zip(range(12, 16), (50, 47, 45, 41)):   # tomroffel omlaag op de laatste tel
+            drums.note(b, p, 1, t, 100 + (p - 12) * 8, raw=True)
+        drums.note(b + 1, 0, 4, 57, 124, raw=True)          # crash precies op de inzet van de blazers
     for p in (0, 8):
         bass.note(b, p, 4, n(D, 1), 90 + k * 8, raw=True)
     if k >= 1:                           # lage conga-puls vanaf de tweede spanningsmaat

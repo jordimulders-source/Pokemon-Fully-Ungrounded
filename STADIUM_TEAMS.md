@@ -80,7 +80,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_LUCY | 524 | Shuckle, Steelix, Gyarados, Milotic | Shuckle, Gyarados, Milotic | zand |
 | STADIUM_BRANDON | 580 | Regirock, Registeel, Regice, Zapdos | Regirock, Registeel, Zapdos | - |
 | STADIUM_N | 576 | Vanilluxe, Archeops, Klinklang, Zekrom | Vanilluxe, Archeops, Zekrom | sneeuw |
-| STADIUM_GHETSIS | 581 | Seismitoad, Eelektross, Kyurem, Hydreigon | Seismitoad, Kyurem, Hydreigon | - |
+| STADIUM_GHETSIS | 590 | Seismitoad, Kingambit, Kyurem, Hydreigon | Kingambit, Kyurem, Hydreigon | - |
 | ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
 | SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
 | OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
@@ -191,13 +191,13 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 8000 | LAKE |
 | 8100 | LOYAL |
 | 8200 | REGIS |
-| 8300 | GHETSIS |
-| 8400 | BIRDS |
-| 8500 | NORMAN |
-| 8600 | BEASTS |
-| 8700 | NOLAND |
-| 8800 | STEVEN |
-| 8900 | GIOVANNI |
+| 8300 | BIRDS |
+| 8400 | NORMAN |
+| 8500 | BEASTS |
+| 8600 | NOLAND |
+| 8700 | STEVEN |
+| 8800 | GIOVANNI |
+| 8900 | GHETSIS |
 | 9000 | ZINNIA |
 | 9100 | SWORDS |
 | 9200 | TAPUS |

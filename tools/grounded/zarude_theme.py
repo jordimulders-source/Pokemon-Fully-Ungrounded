@@ -182,7 +182,7 @@ bass.note(7, 0, 4, n(A, 1), 124)
 bass.note(7, 4, 4, n(A, 1), 124)
 bass.note(7, 8, 4, n(A, 1), 124)
 for p in range(12, 16):
-    drums.note(7, p, 1, 41 + (p - 12) * 3, 110)
+    drums.note(7, p, 1, (41, 43, 45, 47)[p - 12], 110)   # 44 is een PSG-piep in rs_drumset!
 
 # ----------------------------------------------------------------- loop A (8 maten)
 MEL_A = [

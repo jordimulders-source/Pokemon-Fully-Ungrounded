@@ -16216,3 +16216,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - Trainers (lv 37–39): Hiker Grant, Kindler Pyro (zonteam met Drought en Solar Power), Expert Vera.
 - Trainers 1007–1012; flags 0x4B3–0x4BD. Getest in de emulator (beide ingangen, de trap, de wachtpost, een trainer- en een wild gevecht, de Strength-nis).
 - **Battle! Zarude v6** (Jordi: "puup is eruit, groove iets minder kaal"): zachte gesloten hi-hat in achtsten, tamboerijn op de backbeat en een vierde kickslag in de loop. Alleen echte samples (gecontroleerd: geen PSG-drumnoten).
+- **Battle! Zarude v7** (Jordi: intro langer): na maat 1–2 nu vier spanningsmaten (taiko in achtsten, strijkerstremolo die een octaaf omhoog gaat, bas, lage conga-puls vanaf de tweede maat, laatste maat taiko in zestienden), alles zwelt aan; de koperblazers zetten in op ±8,6 s. Intro 17,1 s, loop 22,9 s. De Zarude-transitie wordt ±5 s, zodat de blazers inzetten als het gevecht in beeld komt.

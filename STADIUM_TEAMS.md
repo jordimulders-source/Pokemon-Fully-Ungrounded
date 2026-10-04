@@ -32,10 +32,51 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | MATT | 543 | Wailord, Snorlax, Dondozo, Cetitan | Wailord, Snorlax, Cetitan | - |
 | SHELLY_SEAFLOOR_CAVERN | 503 | Sneasler, Alomomola, Samurott | Sneasler, Alomomola, Samurott | - |
 | TABITHA_MOSSDEEP | 507 | Beheeyem, Escavalier, Snorlax | Beheeyem, Escavalier, Snorlax | - |
-| BROCK | 365 | Vulpix, Gligar, Rhyhorn, Onix | Gligar, Rhyhorn, Onix | - |
-| PROF_OAK | 368 | Growlithe, Bulbasaur, Squirtle, Tauros | Growlithe, Bulbasaur, Tauros | - |
-| RED | 309 | Charmander | Charmander | - |
-| LEAF | 318 | Bulbasaur | Bulbasaur | - |
+| STADIUM_BROCK | 530 | Tyranitar, Aerodactyl, Kabutops, Steelix | Tyranitar, Aerodactyl, Steelix | zand |
+| STADIUM_MISTY | 528 | Politoed, Kingdra, Lapras, Starmie | Politoed, Kingdra, Starmie | regen |
+| STADIUM_LT_SURGE | 539 | Electrode, Jolteon, Magnezone, Electivire | Electrode, Magnezone, Electivire | - |
+| STADIUM_ERIKA | 498 | Ninetales, Victreebel, Lilligant, Vileplume | Ninetales, Victreebel, Vileplume | zon |
+| STADIUM_KOGA | 515 | Weezing, Venomoth, Muk, Crobat | Weezing, Muk, Crobat | zure regen |
+| STADIUM_SABRINA | 518 | Espeon, Gardevoir, Hypno, Alakazam | Gardevoir, Hypno, Alakazam | - |
+| STADIUM_BLAINE | 532 | Ninetales, Arcanine, Camerupt, Magmortar | Ninetales, Camerupt, Magmortar | zon |
+| STADIUM_GIOVANNI | 518 | Hippowdon, Nidoqueen, Excadrill, Rhyperior | Hippowdon, Excadrill, Rhyperior | zand |
+| STADIUM_LORELEI | 519 | Ninetales, Dewgong, Cloyster, Lapras | Ninetales, Cloyster, Lapras | sneeuw |
+| STADIUM_BRUNO | 496 | Hitmontop, Poliwrath, Steelix, Machamp | Poliwrath, Steelix, Machamp | - |
+| STADIUM_AGATHA | 530 | Arbok, Dusknoir, Crobat, Gengar | Dusknoir, Crobat, Gengar | - |
+| STADIUM_LANCE | 568 | Gyarados, Charizard, Salamence, Dragonite | Gyarados, Salamence, Dragonite | - |
+| STADIUM_BLUE | 540 | Exeggutor, Rhyperior, Gyarados, Arcanine | Rhyperior, Gyarados, Arcanine | Trick Room |
+| STADIUM_RED | 491 | Snorlax, Charizard, Blastoise, Pikachu | Charizard, Blastoise, Pikachu | - |
+| STADIUM_OAK | 525 | Arcanine, Venusaur, Blastoise, Tauros | Arcanine, Blastoise, Tauros | - |
+| STADIUM_ROARK | 534 | Tyranitar, Probopass, Aerodactyl, Rampardos | Tyranitar, Probopass, Rampardos | zand |
+| STADIUM_GARDENIA | 521 | Tangrowth, Abomasnow, Torterra, Roserade | Abomasnow, Torterra, Roserade | sneeuw |
+| STADIUM_MAYLENE | 510 | Medicham, Hariyama, Gallade, Lucario | Hariyama, Gallade, Lucario | - |
+| STADIUM_WAKE | 505 | Pelipper, Ludicolo, Kingdra, Gyarados | Pelipper, Kingdra, Gyarados | regen |
+| STADIUM_FANTINA | 521 | Dusknoir, Froslass, Rotom, Mismagius | Dusknoir, Rotom, Mismagius | - |
+| STADIUM_BYRON | 519 | Bronzong, Magnezone, Aggron, Steelix | Bronzong, Aggron, Steelix | Trick Room |
+| STADIUM_CANDICE | 512 | Froslass, Glaceon, Mamoswine, Abomasnow | Froslass, Glaceon, Abomasnow | sneeuw |
+| STADIUM_VOLKNER | 527 | Rotom, Jolteon, Luxray, Electivire | Rotom, Jolteon, Electivire | - |
+| STADIUM_AARON | 516 | Yanmega, Scizor, Volcarona, Drapion | Yanmega, Volcarona, Drapion | - |
+| STADIUM_BERTHA | 519 | Gliscor, Golem, Rhyperior, Hippowdon | Gliscor, Rhyperior, Hippowdon | zand |
+| STADIUM_FLINT | 514 | Houndoom, Flareon, Drifblim, Infernape | Flareon, Drifblim, Infernape | - |
+| STADIUM_LUCIAN | 513 | Farigiraf, Bronzong, Gallade, Alakazam | Farigiraf, Gallade, Alakazam | - |
+| STADIUM_CYNTHIA | 550 | Roserade, Togekiss, Lucario, Garchomp | Roserade, Togekiss, Garchomp | - |
+| STADIUM_CYRUS | 534 | Crobat, Gyarados, Magnezone, Weavile | Crobat, Magnezone, Weavile | - |
+| STADIUM_BARRY | 525 | Heracross, Roserade, Snorlax, Empoleon | Roserade, Snorlax, Empoleon | - |
+| STADIUM_MARS | 502 | Crobat, Bronzong, Honchkrow, Purugly | Crobat, Bronzong, Purugly | - |
+| STADIUM_JUPITER | 495 | Bronzong, Houndoom, Drapion, Skuntank | Bronzong, Houndoom, Skuntank | - |
+| STADIUM_SATURN | 512 | Crobat, Bronzong, Weavile, Toxicroak | Crobat, Weavile, Toxicroak | - |
+| STADIUM_PALMER | 580 | Snorlax, Heatran, Cresselia, Dragonite | Heatran, Cresselia, Dragonite | Trick Room |
+| STADIUM_THORTON | 522 | Gliscor, Weavile, Infernape, Porygon-Z | Gliscor, Infernape, Porygon-Z | - |
+| STADIUM_ARGENTA | 556 | Blissey, Heatran, Snorlax, Togekiss | Blissey, Heatran, Togekiss | - |
+| STADIUM_DAHLIA | 541 | Politoed, Dusknoir, Zapdos, Ludicolo | Politoed, Zapdos, Ludicolo | regen |
+| STADIUM_RILEY | 546 | Gallade, Metagross, Mamoswine, Lucario | Metagross, Mamoswine, Lucario | - |
+| STADIUM_ANABEL | 575 | Entei, Snorlax, Raikou, Latios | Entei, Raikou, Latios | - |
+| STADIUM_TUCKER | 600 | Salamence, Tyranitar, Metagross, Latias | Salamence, Tyranitar, Latias | zand |
+| STADIUM_SPENSER | 589 | Crobat, Arcanine, Slaking, Suicune | Crobat, Slaking, Suicune | - |
+| STADIUM_GRETA | 499 | Heracross, Umbreon, Gengar, Breloom | Heracross, Umbreon, Breloom | - |
+| STADIUM_NOLAND | 546 | Starmie, Typhlosion, Gardevoir, Metagross | Starmie, Typhlosion, Metagross | - |
+| STADIUM_LUCY | 524 | Shuckle, Steelix, Gyarados, Milotic | Shuckle, Gyarados, Milotic | zand |
+| STADIUM_BRANDON | 580 | Regirock, Registeel, Regice, Zapdos | Regirock, Registeel, Zapdos | - |
 | ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
 | SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
 | OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |

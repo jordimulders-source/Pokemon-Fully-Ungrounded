@@ -216,7 +216,7 @@ static void DrawMatchCard(void)
     PrintCentered(FONT_SMALL_NARROW, 168, 116, sColor_Dark, name);
     AddPic(Stadium_EntrantPic(0), 64, 80, FALSE);
     AddPic(Stadium_EntrantPic(opp), 176, 80, FALSE);
-    PrintCentered(FONT_SMALL, 112, 134, sColor_Gray, COMPOUND_STRING("Everyone fights at level 50."));
+    PrintCentered(FONT_SMALL, 112, 128, sColor_Gray, COMPOUND_STRING("Everyone fights at level 50."));
 }
 
 static void DrawPaperBracket(void)
@@ -291,7 +291,7 @@ static void DrawPaperBracket(void)
     if (Decided(champ))
     {
         Stadium_GetEntrantName(champ, name);
-        PrintCentered(FONT_NORMAL, 112, 136, champ == 0 ? sColor_Red : sColor_Dark, name);
+        PrintCentered(FONT_NORMAL, 112, 128, champ == 0 ? sColor_Red : sColor_Dark, name);
     }
     else
     {
@@ -303,7 +303,7 @@ static void DrawPaperBracket(void)
                 break;
         s = StringCopy(name, COMPOUND_STRING("Next: you vs "));
         Stadium_GetEntrantName(Stadium_GetBracketSlot(round, pos ^ 1), s);
-        PrintCentered(FONT_SMALL_NARROW, 112, 140, sColor_Blue, name);
+        PrintCentered(FONT_SMALL_NARROW, 112, 130, sColor_Blue, name);
     }
 }
 

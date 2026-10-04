@@ -1057,31 +1057,586 @@ Pic: Brock
 Gender: Male
 Music: Hiker
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Gligar
+Tyranitar @ Smooth Rock
 Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Acrobatics
-- Bulldoze
-- Knock Off
-- Sand Attack
-
-Rhyhorn
-Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Stomp
-- Rock Tomb
-- Bulldoze
-- Scary Face
-
-Onix
-Level: 50
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Rock Tomb
-- Dragon Breath
-- Bind
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Rock Slide
+- Crunch
 - Stealth Rock
+- Earthquake
+
+Aerodactyl @ Focus Sash
+Level: 50
+Ability: Unnerve
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Rock Slide
+- Dual Wingbeat
+- Tailwind
+- Taunt
+
+Steelix @ Leftovers
+Level: 50
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Iron Tail
+- Earthquake
+- Stone Edge
+- Protect
+
+=== PARTNER_STADIUM_MISTY ===
+Name: MISTY
+Class: Leader
+Pic: Misty
+Gender: Female
+Music: Girl
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Politoed @ Damp Rock
+Level: 50
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Scald
+- Ice Beam
+- Hypnosis
+- Encore
+
+Kingdra @ Choice Specs
+Level: 50
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Muddy Water
+
+Starmie @ Life Orb
+Level: 50
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Thunder
+- Psychic
+- Rapid Spin
+
+=== PARTNER_STADIUM_LT_SURGE ===
+Name: LT. SURGE
+Class: Leader
+Pic: Lt Surge
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Electrode @ Light Clay
+Level: 50
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunderbolt
+- Reflect
+- Light Screen
+- Explosion
+
+Magnezone @ Assault Vest
+Level: 50
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Electivire @ Life Orb
+Level: 50
+Ability: Motor Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+=== PARTNER_STADIUM_ERIKA ===
+Name: ERIKA
+Class: Leader
+Pic: Erika
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales @ Heat Rock
+Level: 50
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Nasty Plot
+
+Victreebel @ Life Orb
+Level: 50
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Power Whip
+- Sludge Bomb
+- Sucker Punch
+- Swords Dance
+
+Vileplume @ Life Orb
+Level: 50
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Solar Beam
+- Sludge Bomb
+- Weather Ball
+- Sleep Powder
+
+=== PARTNER_STADIUM_KOGA ===
+Name: KOGA
+Class: Leader
+Pic: Koga
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Will-O-Wisp
+- Sludge Bomb
+- Toxic Spikes
+- Pain Split
+
+Muk @ Black Sludge
+Level: 50
+Ability: Poison Touch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Gunk Shot
+- Knock Off
+- Shadow Sneak
+- Curse
+
+Crobat @ Toxic Orb
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Taunt
+
+=== PARTNER_STADIUM_SABRINA ===
+Name: SABRINA
+Class: Leader
+Pic: Sabrina
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Gardevoir @ Choice Scarf
+Level: 50
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Moonblast
+- Psychic
+- Mystical Fire
+- Trick
+
+Hypno @ Sitrus Berry
+Level: 50
+Ability: Bad Dreams
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Psychic
+- Hypnosis
+- Thunder Wave
+- Focus Blast
+
+Alakazam @ Focus Sash
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Calm Mind
+
+=== PARTNER_STADIUM_BLAINE ===
+Name: BLAINE
+Class: Leader
+Pic: Blaine
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales @ Heat Rock
+Level: 50
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Encore
+
+Camerupt @ Life Orb
+Level: 50
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Eruption
+- Earth Power
+- Solar Beam
+- Ancient Power
+
+Magmortar @ Life Orb
+Level: 50
+Ability: Vital Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Fire Blast
+- Thunderbolt
+- Solar Beam
+- Focus Blast
+
+=== PARTNER_STADIUM_GIOVANNI ===
+Name: GIOVANNI
+Class: Boss
+Pic: Giovanni
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Hippowdon @ Smooth Rock
+Level: 50
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Earthquake
+- Slack Off
+- Stealth Rock
+- Whirlwind
+
+Excadrill @ Life Orb
+Level: 50
+Ability: Sand Rush
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Rhyperior @ Weakness Policy
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Earthquake
+- Head Smash
+- Megahorn
+- Protect
+
+=== PARTNER_STADIUM_LORELEI ===
+Name: LORELEI
+Class: Elite Four
+Pic: Lorelei
+Gender: Female
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales_Alola @ Icy Rock
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+Cloyster @ White Herb
+Level: 50
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+
+Lapras @ Leftovers
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Hydro Pump
+- Thunder
+- Freeze-Dry
+
+=== PARTNER_STADIUM_BRUNO ===
+Name: BRUNO
+Class: Elite Four
+Pic: Bruno
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Poliwrath @ Leftovers
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Waterfall
+- Close Combat
+- Bulk Up
+- Ice Punch
+
+Steelix @ Leftovers
+Level: 50
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Iron Tail
+- Earthquake
+- Stone Edge
+- Dragon Dance
+
+Machamp @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Close Combat
+- Knock Off
+- Stone Edge
+- Bullet Punch
+
+=== PARTNER_STADIUM_AGATHA ===
+Name: AGATHA
+Class: Elite Four
+Pic: Agatha
+Gender: Female
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Dusknoir @ Leftovers
+Level: 50
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Brave
+- Trick Room
+- Shadow Sneak
+- Poltergeist
+- Ice Punch
+
+Crobat @ Black Sludge
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- Super Fang
+- Tailwind
+
+Gengar @ Life Orb
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Hypnosis
+
+=== PARTNER_STADIUM_LANCE ===
+Name: LANCE
+Class: Elite Four
+Pic: Lance
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Gyarados @ Sitrus Berry
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Taunt
+
+Salamence @ Life Orb
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Naive
+- Draco Meteor
+- Fire Blast
+- Dual Wingbeat
+- Earthquake
+
+Dragonite @ Lum Berry
+Level: 50
+Ability: Multiscale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dragon Dance
+- Extreme Speed
+- Outrage
+- Earthquake
+
+=== PARTNER_STADIUM_BLUE ===
+Name: BLUE
+Class: Champion
+Pic: Blue
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Rhyperior @ Weakness Policy
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- High Horsepower
+- Head Smash
+- Ice Punch
+- Protect
+
+Gyarados @ Lum Berry
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Bounce
+
+Arcanine @ Life Orb
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Extreme Speed
+- Close Combat
+- Wild Charge
+
+=== PARTNER_STADIUM_RED ===
+Name: RED
+Class: Pkmn Trainer 1
+Pic: Red
+Gender: Male
+Music: Male
+Back Pic: Red
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Charizard @ Life Orb
+Level: 50
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Focus Blast
+
+Blastoise @ Sitrus Berry
+Level: 50
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Flash Cannon
+- Shell Smash
+
+Pikachu @ Light Ball
+Level: 50
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Volt Tackle
+- Thunderbolt
+- Surf
+- Fake Out
 
 === PARTNER_STADIUM_OAK ===
 Name: OAK
@@ -1090,55 +1645,1300 @@ Pic: Oak
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Growlithe
+Arcanine @ Sitrus Berry
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Ember
-- Bite
-- Howl
-- Roar
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Extreme Speed
+- Wild Charge
+- Close Combat
 
-Bulbasaur
+Blastoise @ White Herb
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Vine Whip
-- Leech Seed
-- Poison Powder
-- Take Down
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Shell Smash
+- Hydro Pump
+- Ice Beam
+- Flash Cannon
 
-Tauros
+Tauros @ Life Orb
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Horn Attack
-- Pursuit
-- Work Up
-- Rest
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Double-Edge
+- Earthquake
+- Rock Slide
+- Zen Headbutt
 
-=== PARTNER_STADIUM_RED ===
-Name: RED
+=== PARTNER_STADIUM_ROARK ===
+Name: ROARK
+Class: Leader
+Pic: Roark
+Gender: Male
+Music: Hiker
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Tyranitar @ Smooth Rock
+Level: 50
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Rock Slide
+- Crunch
+- Earthquake
+- Stealth Rock
+
+Probopass @ Leftovers
+Level: 50
+Ability: Sand Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Power Gem
+- Earth Power
+- Flash Cannon
+- Thunder Wave
+
+Rampardos @ Choice Scarf
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Head Smash
+- Earthquake
+- Zen Headbutt
+- Crunch
+
+=== PARTNER_STADIUM_GARDENIA ===
+Name: GARDENIA
+Class: Leader
+Pic: Gardenia
+Gender: Female
+Music: Girl
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Abomasnow @ Icy Rock
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Blizzard
+- Giga Drain
+- Ice Shard
+- Protect
+
+Torterra @ Sitrus Berry
+Level: 50
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Wood Hammer
+- Earthquake
+- Stone Edge
+- Shell Smash
+
+Roserade @ Life Orb
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+=== PARTNER_STADIUM_MAYLENE ===
+Name: MAYLENE
+Class: Leader
+Pic: Maylene
+Gender: Female
+Music: Girl
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Hariyama @ Assault Vest
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Close Combat
+- Fake Out
+- Knock Off
+- Bullet Punch
+
+Gallade @ Lum Berry
+Level: 50
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+Lucario @ Life Orb
+Level: 50
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Hasty
+- Close Combat
+- Meteor Mash
+- Aura Sphere
+- Extreme Speed
+
+=== PARTNER_STADIUM_WAKE ===
+Name: WAKE
+Class: Leader
+Pic: Wake
+Gender: Male
+Music: Swimmer
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Pelipper @ Damp Rock
+Level: 50
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Scald
+- Hurricane
+- Tailwind
+- Protect
+
+Kingdra @ Choice Specs
+Level: 50
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Draco Meteor
+- Muddy Water
+- Hurricane
+
+Gyarados @ Lum Berry
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Bounce
+
+=== PARTNER_STADIUM_FANTINA ===
+Name: FANTINA
+Class: Leader
+Pic: Fantina
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Dusknoir @ Leftovers
+Level: 50
+Ability: Frisk
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Brave
+- Trick Room
+- Poltergeist
+- Shadow Sneak
+- Ice Punch
+
+Rotom_Wash @ Leftovers
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
+
+Mismagius @ Choice Specs
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+- Mystical Fire
+
+=== PARTNER_STADIUM_BYRON ===
+Name: BYRON
+Class: Leader
+Pic: Byron
+Gender: Male
+Music: Hiker
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Bronzong @ Mental Herb
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 SpA / 4 Def
+Nature: Sassy
+- Trick Room
+- Gyro Ball
+- Earthquake
+- Hypnosis
+
+Aggron @ Sitrus Berry
+Level: 50
+Ability: Heavy Metal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Brave
+- Heavy Slam
+- Stone Edge
+- Earthquake
+- Protect
+
+Steelix @ Leftovers
+Level: 50
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Brave
+- Iron Tail
+- Earthquake
+- Stone Edge
+- Protect
+
+=== PARTNER_STADIUM_CANDICE ===
+Name: CANDICE
+Class: Leader
+Pic: Candice
+Gender: Female
+Music: Girl
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Froslass @ Focus Sash
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Spikes
+- Destiny Bond
+
+Glaceon @ Choice Specs
+Level: 50
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Shadow Ball
+- Water Pulse
+
+Abomasnow @ Life Orb
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Quiet
+- Blizzard
+- Wood Hammer
+- Ice Shard
+- Earthquake
+
+=== PARTNER_STADIUM_VOLKNER ===
+Name: VOLKNER
+Class: Leader
+Pic: Volkner
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Rotom_Heat @ Sitrus Berry
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Overheat
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
+
+Jolteon @ Choice Specs
+Level: 50
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunderbolt
+- Shadow Ball
+- Volt Switch
+- Hyper Voice
+
+Electivire @ Life Orb
+Level: 50
+Ability: Motor Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+=== PARTNER_STADIUM_AARON ===
+Name: AARON
+Class: Elite Four
+Pic: Aaron
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Yanmega @ Choice Specs
+Level: 50
+Ability: Tinted Lens
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Bug Buzz
+- Air Slash
+- Giga Drain
+- U-turn
+
+Volcarona @ Lum Berry
+Level: 50
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+Drapion @ Life Orb
+Level: 50
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+=== PARTNER_STADIUM_BERTHA ===
+Name: BERTHA
+Class: Elite Four
+Pic: Bertha
+Gender: Female
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Gliscor @ Toxic Orb
+Level: 50
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Dual Wingbeat
+- Knock Off
+- Swords Dance
+
+Rhyperior @ Life Orb
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- High Horsepower
+- Head Smash
+- Ice Punch
+- Megahorn
+
+Hippowdon @ Smooth Rock
+Level: 50
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Slack Off
+- Stealth Rock
+
+=== PARTNER_STADIUM_FLINT ===
+Name: FLINT
+Class: Elite Four
+Pic: Flint
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Flareon @ Toxic Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Flare Blitz
+- Facade
+- Superpower
+- Quick Attack
+
+Drifblim @ Sitrus Berry
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Timid
+- Shadow Ball
+- Will-O-Wisp
+- Tailwind
+- Strength Sap
+
+Infernape @ Life Orb
+Level: 50
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Naive
+- Close Combat
+- Flare Blitz
+- Grass Knot
+- Mach Punch
+
+=== PARTNER_STADIUM_LUCIAN ===
+Name: LUCIAN
+Class: Elite Four
+Pic: Lucian
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Farigiraf @ Sitrus Berry
+Level: 50
+Ability: Armor Tail
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 SpA / 4 Def
+Nature: Quiet
+- Trick Room
+- Hyper Voice
+- Psychic
+- Nasty Plot
+
+Gallade @ Lum Berry
+Level: 50
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Psycho Cut
+- Sacred Sword
+- Leaf Blade
+- Swords Dance
+
+Alakazam @ Focus Sash
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Calm Mind
+
+=== PARTNER_STADIUM_CYNTHIA ===
+Name: CYNTHIA
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Roserade @ Focus Sash
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+Togekiss @ Sitrus Berry
+Level: 50
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Timid
+- Air Slash
+- Dazzling Gleam
+- Follow Me
+- Nasty Plot
+
+Garchomp @ Life Orb
+Level: 50
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Dragon Claw
+- Rock Slide
+- Swords Dance
+
+=== PARTNER_STADIUM_CYRUS ===
+Name: CYRUS
+Class: Boss
+Pic: Cyrus
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Crobat @ Black Sludge
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Taunt
+
+Magnezone @ Assault Vest
+Level: 50
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Weavile @ Life Orb
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Triple Axel
+- Knock Off
+- Ice Shard
+- Low Kick
+
+=== PARTNER_STADIUM_BARRY ===
+Name: BARRY
 Class: Rival
-Pic: Red
+Pic: Barry
 Gender: Male
 Music: Male
-Back Pic: Red
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Charmander
+Roserade @ Focus Sash
 Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
 
-=== PARTNER_STADIUM_LEAF ===
-Name: LEAF
-Class: Rival
-Pic: Leaf
+Snorlax @ Leftovers
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Body Slam
+- Curse
+- Rest
+- Heavy Slam
+
+Empoleon @ Life Orb
+Level: 50
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Flash Cannon
+- Ice Beam
+- Grass Knot
+
+=== PARTNER_STADIUM_MARS ===
+Name: MARS
+Class: Commander
+Pic: Mars
 Gender: Female
-Music: Male
-Back Pic: Leaf
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Bulbasaur
+Crobat @ Black Sludge
 Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- Super Fang
+- Tailwind
+
+Bronzong @ Leftovers
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Gyro Ball
+- Earthquake
+- Hypnosis
+- Trick Room
+
+Purugly @ Silk Scarf
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- U-turn
+
+=== PARTNER_STADIUM_JUPITER ===
+Name: JUPITER
+Class: Commander
+Pic: Jupiter
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Bronzong @ Leftovers
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Gyro Ball
+- Earthquake
+- Hypnosis
+- Reflect
+
+Houndoom @ Focus Sash
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Fire Blast
+- Dark Pulse
+- Nasty Plot
+- Sludge Bomb
+
+Skuntank @ Life Orb
+Level: 50
+Ability: Aftermath
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Gunk Shot
+- Sucker Punch
+- Fire Blast
+- Crunch
+
+=== PARTNER_STADIUM_SATURN ===
+Name: SATURN
+Class: Commander
+Pic: Saturn
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Crobat @ Black Sludge
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Taunt
+
+Weavile @ Life Orb
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Triple Axel
+- Knock Off
+- Ice Shard
+- Low Kick
+
+Toxicroak @ Life Orb
+Level: 50
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Drain Punch
+- Gunk Shot
+- Sucker Punch
+- Fake Out
+
+=== PARTNER_STADIUM_PALMER ===
+Name: PALMER
+Class: Tower Tycoon
+Pic: Palmer
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Heatran @ Choice Scarf
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Earth Power
+- Flash Cannon
+- Dragon Pulse
+
+Cresselia @ Mental Herb
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Trick Room
+- Psychic
+- Moonblast
+- Moonlight
+
+Dragonite @ Lum Berry
+Level: 50
+Ability: Multiscale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dragon Dance
+- Extreme Speed
+- Outrage
+- Earthquake
+
+=== PARTNER_STADIUM_THORTON ===
+Name: THORTON
+Class: Factory Head
+Pic: Thorton
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Gliscor @ Toxic Orb
+Level: 50
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Dual Wingbeat
+- Knock Off
+- Swords Dance
+
+Infernape @ Life Orb
+Level: 50
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Naive
+- Close Combat
+- Flare Blitz
+- Grass Knot
+- Mach Punch
+
+Porygon-Z @ Choice Specs
+Level: 50
+Ability: Adaptability
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Tri Attack
+- Shadow Ball
+- Thunderbolt
+- Ice Beam
+
+=== PARTNER_STADIUM_ARGENTA ===
+Name: ARGENTA
+Class: Hall Matron
+Pic: Argenta
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Blissey @ Leftovers
+Level: 50
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Seismic Toss
+- Soft-Boiled
+- Thunder Wave
+- Heal Pulse
+
+Heatran @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Heat Wave
+- Earth Power
+- Flash Cannon
+- Dragon Pulse
+
+Togekiss @ Leftovers
+Level: 50
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Timid
+- Air Slash
+- Dazzling Gleam
+- Nasty Plot
+- Roost
+
+=== PARTNER_STADIUM_DAHLIA ===
+Name: DAHLIA
+Class: Arcade Star
+Pic: Dahlia
+Gender: Female
+Music: Girl
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Politoed @ Damp Rock
+Level: 50
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Scald
+- Ice Beam
+- Hypnosis
+- Encore
+
+Zapdos @ Leftovers
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunder
+- Hurricane
+- Heat Wave
+- Roost
+
+Ludicolo @ Life Orb
+Level: 50
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+=== PARTNER_STADIUM_RILEY ===
+Name: RILEY
+Class: Pkmn Trainer 1
+Pic: Riley
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Metagross @ Assault Vest
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Mamoswine @ Life Orb
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Stone Edge
+
+Lucario @ Life Orb
+Level: 50
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Hasty
+- Aura Sphere
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+
+=== PARTNER_STADIUM_ANABEL ===
+Name: ANABEL
+Class: Salon Maiden
+Pic: Salon Maiden Anabel
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Entei @ Lum Berry
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Sacred Fire
+- Extreme Speed
+- Stone Edge
+- Calm Mind
+
+Raikou @ Lum Berry
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Thunderbolt
+- Calm Mind
+- Reflect
+- Shadow Ball
+
+Latios @ Life Orb
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Psychic
+- Calm Mind
+- Recover
+- Draco Meteor
+
+=== PARTNER_STADIUM_TUCKER ===
+Name: TUCKER
+Class: Dome Ace
+Pic: Dome Ace Tucker
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Salamence @ Lum Berry
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dragon Claw
+- Earthquake
+- Brick Break
+- Aerial Ace
+
+Tyranitar @ Chople Berry
+Level: 50
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Rock Slide
+- Crunch
+- Earthquake
+- Fire Punch
+
+Latias @ Chesto Berry
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Thunderbolt
+- Psychic
+- Calm Mind
+- Rest
+
+=== PARTNER_STADIUM_SPENSER ===
+Name: SPENSER
+Class: Palace Maven
+Pic: Palace Maven Spenser
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Crobat @ Bright Powder
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Confuse Ray
+- Double Team
+- Toxic
+- Fly
+
+Slaking @ Scope Lens
+Level: 50
+Ability: Truant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Hardy
+- Hyper Beam
+- Earthquake
+- Shadow Ball
+- Yawn
+
+Suicune @ King's Rock
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Hasty
+- Blizzard
+- Surf
+- Bite
+- Calm Mind
+
+=== PARTNER_STADIUM_GRETA ===
+Name: GRETA
+Class: Arena Tycoon
+Pic: Arena Tycoon Greta
+Gender: Female
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Heracross @ Salac Berry
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Megahorn
+- Rock Tomb
+- Endure
+- Reversal
+
+Umbreon @ Chesto Berry
+Level: 50
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Double-Edge
+- Confuse Ray
+- Rest
+- Psychic
+
+Breloom @ Lum Berry
+Level: 50
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spore
+- Focus Punch
+- Bullet Seed
+- Mach Punch
+
+=== PARTNER_STADIUM_NOLAND ===
+Name: NOLAND
+Class: Factory Head
+Pic: Factory Head Noland
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Starmie @ Life Orb
+Level: 50
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Thunderbolt
+- Psychic
+- Ice Beam
+
+Typhlosion @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Eruption
+- Fire Blast
+- Focus Blast
+- Shadow Ball
+
+Metagross @ Sitrus Berry
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Brave
+- Light Screen
+- Psychic
+- Reflect
+- Meteor Mash
+
+=== PARTNER_STADIUM_LUCY ===
+Name: LUCY
+Class: Pike Queen
+Pic: Pike Queen Lucy
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Shuckle @ Mental Herb
+Level: 50
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Sticky Web
+- Toxic
+- Sandstorm
+- Encore
+
+Gyarados @ Bright Powder
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Bounce
+
+Milotic @ Leftovers
+Level: 50
+Ability: Marvel Scale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Scald
+- Ice Beam
+- Recover
+- Haze
+
+=== PARTNER_STADIUM_BRANDON ===
+Name: BRANDON
+Class: Pyramid King
+Pic: Pyramid King Brandon
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Regirock @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Stone Edge
+- Body Press
+- Curse
+- Thunder Wave
+
+Registeel @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Iron Head
+- Body Press
+- Curse
+- Rest
+
+Zapdos @ Leftovers
+Level: 50
+Ability: Static
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunderbolt
+- Hurricane
+- Heat Wave
+- Roost
 
 === PARTNER_STADIUM_ALBERT ===
 Name: Dave

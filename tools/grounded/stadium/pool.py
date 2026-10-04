@@ -37,8 +37,15 @@ POOL = [
     'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'JOEY',
     # Aqua- en Magma-admins (sterkste versie)
     'MATT', 'SHELLY_SEAFLOOR_CAVERN', 'TABITHA_MOSSDEEP',
-    # Kanto en gasten
-    'BROCK', 'PROF_OAK', 'RED', 'LEAF',
+    # geïmporteerd voor het Stadium (v0.8.108): Kanto (FRLG), Sinnoh (Platinum), Frontier Brains
+    'STADIUM_BROCK', 'STADIUM_MISTY', 'STADIUM_LT_SURGE', 'STADIUM_ERIKA', 'STADIUM_KOGA', 'STADIUM_SABRINA',
+    'STADIUM_BLAINE', 'STADIUM_GIOVANNI', 'STADIUM_LORELEI', 'STADIUM_BRUNO', 'STADIUM_AGATHA', 'STADIUM_LANCE',
+    'STADIUM_BLUE', 'STADIUM_RED', 'STADIUM_OAK',
+    'STADIUM_ROARK', 'STADIUM_GARDENIA', 'STADIUM_MAYLENE', 'STADIUM_WAKE', 'STADIUM_FANTINA', 'STADIUM_BYRON',
+    'STADIUM_CANDICE', 'STADIUM_VOLKNER', 'STADIUM_AARON', 'STADIUM_BERTHA', 'STADIUM_FLINT', 'STADIUM_LUCIAN',
+    'STADIUM_CYNTHIA', 'STADIUM_CYRUS', 'STADIUM_BARRY', 'STADIUM_MARS', 'STADIUM_JUPITER', 'STADIUM_SATURN',
+    'STADIUM_PALMER', 'STADIUM_THORTON', 'STADIUM_ARGENTA', 'STADIUM_DAHLIA', 'STADIUM_RILEY',
+    'STADIUM_ANABEL', 'STADIUM_TUCKER', 'STADIUM_SPENSER', 'STADIUM_GRETA', 'STADIUM_NOLAND', 'STADIUM_LUCY', 'STADIUM_BRANDON',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
     'ALBERT', 'SAMUEL', 'OWEN',
 ]
@@ -48,9 +55,13 @@ RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'
 # Iedereen uit de pool wordt compagnon zodra je hem in het Stadium verslaat (Vampire Survivors-stijl).
 COMPANIONS = [('BRENDAN', 'BRENDAN_ROUTE_136_TREECKO', 'start'), ('MAY', 'MAY_ROUTE_136_TORCHIC', 'start'),
               ('KECCLES', 'KECCLES_3', 'start'), ('WALLY', 'WALLY_VR_5', 'start')]
-COMPANIONS += [(t.split('_')[0] if t not in ('TATE_AND_LIZA_5', 'GABBY_AND_TY_6', 'PROF_OAK') else
-                {'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'PROF_OAK': 'OAK'}[t], t, ('beat', t))
-               for t in POOL if t not in ('KECCLES_3', 'WALLY_VR_5')]
+def companion_name(t):
+    special = {'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE'}
+    t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
+    return special.get(t, special.get(t2, t2.split('_')[0]))
+
+
+COMPANIONS += [(companion_name(t), t, ('beat', t)) for t in POOL if t not in ('KECCLES_3', 'WALLY_VR_5')]
 
 # Rugplaatjes die bestaan; de rest staat met zijn voorplaatje naast je (zoals de Frontier-tag battles)
 BACK_PICS = {'Brendan': 'Brendan', 'May': 'May', 'Red': 'Red', 'Leaf': 'Leaf', 'Steven': 'Steven', 'Wally': 'Wally', 'Kecleon': 'Kecleon'}

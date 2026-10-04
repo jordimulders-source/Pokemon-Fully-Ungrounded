@@ -540,7 +540,8 @@ static void CB2_InitBattleInternal(void)
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL
-                                                                        | BATTLE_TYPE_RECORDED)))
+                                                                        | BATTLE_TYPE_RECORDED))
+        && !gStadiumBattle) // Project Grounded: het Stadium bepaalt zelf singles of doubles
     {
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {

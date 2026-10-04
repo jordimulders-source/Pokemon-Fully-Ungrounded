@@ -3,7 +3,33 @@
 @ Vrijgehouden: de open plek van Zarude (zuidwest) en het masker-altaar van Ogerpon (zuidoost).
 
 FortreeJungle_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, FortreeJungle_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeJungle_OnTransition
 	.byte 0
+
+@ Project Grounded: Rocket-sidequest. De holte in de reuzenpalm (18, 59) is pas open als de quest loopt
+@ (VAR_ROCKET_QUEST >= 2); de wachtpost staat er alleen zolang Petrel de ZONE KEYS nog heeft.
+FortreeJungle_OnLoad:
+	call_if_ge VAR_ROCKET_QUEST, 2, FortreeJungle_EventScript_OpenRocketHollow
+	end
+
+FortreeJungle_EventScript_OpenRocketHollow::
+	setmetatile 18, 59, METATILE_FortreeJungle_RocketHollow, FALSE
+	return
+
+FortreeJungle_OnTransition:
+	setflag FLAG_HIDE_JUNGLE_ROCKET_GUARD
+	call_if_eq VAR_ROCKET_QUEST, 2, FortreeJungle_EventScript_ShowRocketGuard
+	end
+
+FortreeJungle_EventScript_ShowRocketGuard::
+	clearflag FLAG_HIDE_JUNGLE_ROCKET_GUARD
+	return
+
+FortreeJungle_EventScript_RocketGuard::
+	trainerbattle_single TRAINER_ROCKET_GUARD, FortreeJungle_Text_RocketGuardIntro, FortreeJungle_Text_RocketGuardDefeat
+	msgbox FortreeJungle_Text_RocketGuardPostBattle, MSGBOX_AUTOCLOSE
+	end
 
 @ ---------------------------------------------------------------- trainers
 FortreeJungle_EventScript_Bram::
@@ -133,3 +159,19 @@ FortreeJungle_Text_ZarudeSign:
 	.string "Do not look the monkeys in the eye.\p"
 	.string "If a monkey offers you a banana,\n"
 	.string "it is not a banana.$"
+
+@ Project Grounded: Rocket-sidequest (placeholders)
+FortreeJungle_Text_RocketGuardIntro:
+	.string "Halt! This is a perfectly normal\n"
+	.string "giant tree. Nothing to see here.\p"
+	.string "The big hole? Woodpeckers.\n"
+	.string "Very big, very organized ones.$"
+
+FortreeJungle_Text_RocketGuardDefeat:
+	.string "The woodpeckers will\n"
+	.string "hear about this.$"
+
+FortreeJungle_Text_RocketGuardPostBattle:
+	.string "Fine, go in. Wipe your feet.\n"
+	.string "PETREL is very particular\l"
+	.string "about the carpet.$"

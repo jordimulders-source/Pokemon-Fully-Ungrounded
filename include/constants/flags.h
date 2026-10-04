@@ -700,7 +700,7 @@
 #define FLAG_ITEM_FORTREE_JUNGLE_MIRACLE_SEED  0x28D // Project Grounded: Fortree Jungle
 #define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_LEAF_STONE  0x28E // Project Grounded: Fortree Jungle
 #define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_REVIVAL_HERB  0x28F // Project Grounded: Fortree Jungle
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
+#define FLAG_SAFARI_ZONES_OPEN  0x290 // Project Grounded: nieuwe Safari-zones open (Rocket-sidequest)
 #define FLAG_UNUSED_0x291  0x291 // Unused Flag
 #define FLAG_UNUSED_0x292  0x292 // Unused Flag
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
@@ -1222,15 +1222,15 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
+#define FLAG_HIDE_ROUTE121_ROCKET_RUNNER                            0x493 // Project Grounded: Rocket-sidequest: grunt die bij de Safari tegen je aan loopt
+#define FLAG_HIDE_JUNGLE_ROCKET_GUARD                               0x494 // Project Grounded: Rocket-sidequest: wachtpost bij de holle boom in Fortree Jungle
+#define FLAG_HIDE_ROCKET_HIDEOUT_GRUNTS                             0x495 // Project Grounded: Rocket-sidequest: grunts in de hideout (weg na de quest)
+#define FLAG_HIDE_ROCKET_EXEC                                       0x496 // Project Grounded: Rocket-sidequest: Petrel en de dief (weg na het gevecht)
+#define FLAG_ROCKET_FREE_SAFARI                                     0x497 // Project Grounded: Rocket-sidequest: gratis Safari-ronde tegoed
+#define FLAG_ITEM_ROCKET_HIDEOUT_FULL_HEAL                          0x498 // Project Grounded: Rocket-hideout 1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_MAX_POTION                         0x499 // Project Grounded: Rocket-hideout B1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_PP_UP                              0x49A // Project Grounded: Rocket-hideout B1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_NUGGET                             0x49B // Project Grounded: Rocket-hideout B1F
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag

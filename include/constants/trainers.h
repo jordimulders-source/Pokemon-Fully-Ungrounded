@@ -182,7 +182,10 @@
 #define TRAINER_PIC_MUSTARD               164 // Project Grounded: Kubfu-dojo (Gen 3-versie van zijn artwork)
 #define TRAINER_PIC_N                     165 // Project Grounded: Battle Stadium (N, sheet van Delgatron)
 #define TRAINER_PIC_GHETSIS               166 // Project Grounded: Battle Stadium (Ghetsis, schreeuwend)
-#define TRAINER_PIC_COUNT                 167
+#define TRAINER_PIC_ROCKET_GRUNT_M        167 // Project Grounded: Rocket-sidequest (FRLG)
+#define TRAINER_PIC_ROCKET_GRUNT_F        168 // Project Grounded: Rocket-sidequest (FRLG)
+#define TRAINER_PIC_PETREL                169 // Project Grounded: Rocket-sidequest (HG/SS-sheet van Dann-The-Yoshi)
+#define TRAINER_PIC_COUNT                 170
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -441,6 +444,8 @@ enum TrainerClassID
     TRAINER_CLASS_COLLECTION, // Project Grounded: Battle Stadium (trio-compagnons: "THE REGIS")
     TRAINER_CLASS_KING, // Project Grounded: Battle Stadium (N)
     TRAINER_CLASS_PLASMA_BOSS, // Project Grounded: Battle Stadium (Ghetsis)
+    TRAINER_CLASS_TEAM_ROCKET, // Project Grounded: Rocket-sidequest (grunts)
+    TRAINER_CLASS_ROCKET_EXEC, // Project Grounded: Rocket-sidequest (Petrel)
     TRAINER_CLASS_COUNT,
 };
 
@@ -458,6 +463,7 @@ enum TrainerClassID
 #define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+#define TRAINER_ENCOUNTER_MUSIC_ROCKET      14 // Project Grounded: Team Rocket (MUS_RG_ENCOUNTER_ROCKET)
 
 #define F_TRAINER_FEMALE (1 << 7)
 

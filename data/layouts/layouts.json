@@ -4770,6 +4770,36 @@
       "secondary_tileset": "gTileset_FortreeJungle",
       "border_filepath": "data/layouts/FortreeJungle/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_1F",
+      "name": "RocketHideout_1F_Layout",
+      "width": 15,
+      "height": 17,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_1F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_B1F",
+      "name": "RocketHideout_B1F_Layout",
+      "width": 51,
+      "height": 24,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_B2F",
+      "name": "RocketHideout_B2F_Layout",
+      "width": 20,
+      "height": 15,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_B2F/map.bin"
     }
   ]
 }

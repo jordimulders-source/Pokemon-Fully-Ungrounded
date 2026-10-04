@@ -273,7 +273,10 @@
 #define OBJ_EVENT_GFX_N                               262 // Project Grounded (sheet van Delgatron, 32x32)
 #define OBJ_EVENT_GFX_GHETSIS                         263 // Project Grounded (sheet van PurpleZaffre, 32x32)
 #define OBJ_EVENT_GFX_BURGLAR                         264 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
-#define NUM_OBJ_EVENT_GFX                        265
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_M                  265 // Project Grounded: Rocket-sidequest (FRLG)
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_F                  266 // Project Grounded: Rocket-sidequest (FRLG)
+#define OBJ_EVENT_GFX_PETREL                          267 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
+#define NUM_OBJ_EVENT_GFX                        268
 
 
 // These are dynamic object gfx ids.
@@ -417,6 +420,8 @@
 #define OBJ_EVENT_PAL_TAG_N                        0x112D // Project Grounded
 #define OBJ_EVENT_PAL_TAG_GHETSIS                  0x112E // Project Grounded
 #define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_ROCKET                   0x1132 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_PETREL                   0x1133 // Project Grounded: Rocket-sidequest
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

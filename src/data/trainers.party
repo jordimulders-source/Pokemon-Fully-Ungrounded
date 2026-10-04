@@ -33689,3 +33689,234 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Knock Off
 - U-turn
 - Bulk Up
+
+=== TRAINER_ROCKET_GUARD ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Leavanny
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Chlorophyll
+- Leaf Blade
+- X-Scissor
+- Sticky Web
+- Swords Dance
+
+Shiinotic
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Effect Spore
+- Moonblast
+- Strength Sap
+- Confuse Ray
+- Giga Drain
+
+Cacturne
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Water Absorb
+- Spiky Shield
+- Sucker Punch
+- Seed Bomb
+- Leech Seed
+
+=== TRAINER_ROCKET_SMUGGLER ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Sneasel @ Razor Claw
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Pickpocket
+- Thief
+- Ice Shard
+- Night Slash
+- Fake Out
+
+Murkrow @ Eviolite
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Prankster
+- Foul Play
+- Taunt
+- Tailwind
+- Sucker Punch
+
+Sableye
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Prankster
+- Power Gem
+- Knock Off
+- Will-O-Wisp
+- Recover
+
+=== TRAINER_ROCKET_MOTTO ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt F
+Gender: Female
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Arbok
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Intimidate
+- Poison Jab
+- Glare
+- Crunch
+- Coil
+
+Wobbuffet
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Shadow Tag
+- Counter
+- Mirror Coat
+- Encore
+- Safeguard
+
+Weezing
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Air Pollution
+- Sludge Bomb
+- Flamethrower
+- Will-O-Wisp
+- Explosion
+
+=== TRAINER_ROCKET_SCIENTIST ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Magneton
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Analytic
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Thunder Wave
+
+Klang
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Clear Body
+- Gear Grind
+- Shift Gear
+- Wild Charge
+- Metal Sound
+
+Porygon2 @ Eviolite
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Download
+- Tri Attack
+- Ice Beam
+- Discharge
+- Recover
+
+=== TRAINER_ROCKET_THIEF ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt F
+Gender: Female
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Chansey
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Natural Cure
+- Soft-Boiled
+- Seismic Toss
+- Toxic
+- Heal Pulse
+
+Delibird
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Hustle
+- Present
+- Drill Peck
+- Ice Shard
+- Freeze-Dry
+
+Farfetchd
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Moxie
+- Leaf Blade
+- Brave Bird
+- Knock Off
+- Swords Dance
+
+=== TRAINER_PETREL ===
+Name: PETREL
+Class: Rocket Exec
+Pic: Petrel
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Zoroark
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Illusion
+- Night Daze
+- Flamethrower
+- Sludge Bomb
+- Nasty Plot
+
+Ditto @ Choice Scarf
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Imposter
+- Transform
+
+Weezing_Galar
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Levitate
+- Strange Steam
+- Sludge Bomb
+- Will-O-Wisp
+- Pain Split
+
+Honchkrow @ Scope Lens
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Moxie
+- Night Slash
+- Brave Bird
+- Sucker Punch
+- Heat Wave
+
+Persian @ Silk Scarf
+Level: 43
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Technician
+- Fake Out
+- Pay Day
+- Knock Off
+- U-turn

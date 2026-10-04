@@ -159,6 +159,7 @@ static void Task_Giratina(u8); // Project Grounded
 static void Task_Victini(u8); // Project Grounded
 static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
+static void Task_Rocket(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -476,6 +477,10 @@ static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
+static const u16 sRocket_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rocket.4bpp");
+static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
+static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
+static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -588,6 +593,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
     [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
+    [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -8272,4 +8278,112 @@ static const struct RouteTransition sRT_Darkrai =
 static void Task_Darkrai(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Darkrai);
+}
+
+// ---------------- Team Rocket: zwarte balken schuiven om en om van links en rechts dicht (rode voorrand), rode
+// snelheidsstrepen schieten over het zwart, en een grote rode R zoomt draaiend in en stempelt met een klap
+// (witte flits, het beeld schudt). Alle grunts en Petrel (zie GetTrainerBattleTransition in battle_setup.c).
+// tiles: 1 zwart, 2/3 rode voorrand (balk van links / van rechts), 4 streep-lijf, 5 streep-kop, 6 streep-staart
+#define ROCKET_STAMP 18 // frame waarop de R neerkomt
+
+// snelheid per rij (tiles per frame) en een vertraging (frames), zodat de balken niet tegelijk aankomen
+static const u8 sRocketBarSpeed[20] = {4, 3, 5, 3, 4, 5, 3, 4, 3, 5, 4, 3, 5, 4, 3, 4, 5, 3, 4, 3};
+static const u8 sRocketBarDelay[20] = {0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 0, 1};
+// snelheidsstrepen: rij, snelheid in tiles per frame (negatief = naar links), startframe
+static const s8 sRocketStreaks[][3] = {
+    {2, 3, 8}, {5, -4, 9}, {8, 5, 10}, {11, -3, 11}, {14, 4, 9}, {17, -5, 12},
+    {3, -4, 20}, {7, 5, 22}, {12, -5, 21}, {16, 4, 23}, {1, 5, 28}, {18, -4, 27}, {10, 3, 30}, {6, -5, 32},
+};
+// schaal van de R (256 = 1x, 512 = 2x) en draaiing per frame vanaf het verschijnen
+static const u16 sRocketScale[] = {24, 48, 88, 140, 200, 268, 340, 412, 468, 512};
+static const s16 sRocketAngle[] = {-0x2400, -0x2000, -0x1A00, -0x1400, -0x0E00, -0x0900, -0x0500, -0x0200, -0x0080, 0};
+// schudden na de klap (pixels), steeds minder
+static const s8 sRocketShake[] = {5, -5, 4, -4, 4, -3, 3, -2, 2, -1, 1, 0};
+
+static void RTRocket_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sRocketR_Gfx, sRocketR_Palette, 120, 76);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTRocket_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, r, c, len, n, shake = 0;
+    s16 streakHead[20];
+    s8 streakDir[20];
+    u32 i;
+
+    // snelheidsstrepen (5 tiles: staart, 3x lijf, kop) over het zwart, per rij hoogstens een; pas als de balk dicht is
+    for (r = 0; r < 20; r++)
+    {
+        streakDir[r] = 0;
+        streakHead[r] = 0;
+    }
+    for (i = 0; i < ARRAY_COUNT(sRocketStreaks); i++)
+    {
+        s32 row = sRocketStreaks[i][0], v = sRocketStreaks[i][1], start = sRocketStreaks[i][2];
+        if (t < start || (t - sRocketBarDelay[row]) * sRocketBarSpeed[row] <= 33)
+            continue;
+        streakHead[row] = (v > 0) ? (t - start) * v : 29 + (t - start) * v;
+        streakDir[row] = (v > 0) ? 1 : -1;
+    }
+    // balken: rij r komt van links (even) of rechts (oneven); len = aantal zwarte tiles. De hele tilemap van 32x32 doet
+    // mee, zodat er bij het schudden geen wereld langs de randen piept. Elk vak krijgt in een keer zijn eindwaarde.
+    for (r = 0; r < 32; r++)
+    {
+        s32 rr = (r < 20) ? r : r - 20;
+        len = (t - sRocketBarDelay[rr]) * sRocketBarSpeed[rr];
+        if (len < 0)
+            len = 0;
+        for (c = 0; c < 32; c++)
+        {
+            u16 tileNum = 0;
+            n = (r & 1) ? (31 - c) : c; // afstand vanaf de kant waar de balk vandaan komt
+            if (n < len - 1 || len > 32)
+                tileNum = 1;
+            else if (n == len - 1)
+                tileNum = (r & 1) ? 3 : 2;
+            if (r < 20 && streakDir[r] != 0 && c < 30)
+            {
+                s32 k = (streakDir[r] > 0) ? streakHead[r] - c : c - streakHead[r];
+                if (k >= 0 && k < 5)
+                    tileNum = (k == 0) ? 5 : (k == 4 ? 6 : 4);
+            }
+            tilemap[r * 32 + c] = tileNum ? RT_TILE(tileNum) : 0;
+        }
+    }
+    // 3. de R: verschijnt op frame 9, zoomt draaiend in en stempelt op ROCKET_STAMP
+    if (t == 2)
+        PlaySE(SE_M_RAZOR_WIND);
+    if (t >= ROCKET_STAMP - 9)
+    {
+        struct Sprite *sprite = &gSprites[task->tRtSprite];
+        u32 f = min(t - (ROCKET_STAMP - 9), 9);
+        if (t >= ROCKET_STAMP && t - ROCKET_STAMP < (s32)ARRAY_COUNT(sRocketShake))
+            shake = sRocketShake[t - ROCKET_STAMP];
+        sprite->invisible = FALSE;
+        RT_SetSprite(task, 120 + shake, 76 - shake / 2, sRocketScale[f], (u16)sRocketAngle[f]);
+        SetGpuReg(REG_OFFSET_BG0HOFS, (-shake) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+        if (t == ROCKET_STAMP)
+        {
+            PlaySE(SE_M_MEGA_KICK2);
+            SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        }
+        // witte flits op de R bij de klap
+        if (t >= ROCKET_STAMP && t < ROCKET_STAMP + 6)
+            BlendPalettes(1 << (16 + IndexOfSpritePaletteTag(RT_SPRITE_TAG)), 15 - (t - ROCKET_STAMP) * 3, RGB_WHITE);
+    }
+    return t >= ROCKET_STAMP + 26;
+}
+
+static const struct RouteTransition sRT_Rocket =
+{
+    sRocket_Tileset, sizeof(sRocket_Tileset), sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
+};
+
+static void Task_Rocket(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Rocket);
 }

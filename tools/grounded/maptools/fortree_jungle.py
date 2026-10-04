@@ -21,6 +21,11 @@ bosbodem (bladeren/mos) en tropische bloemetjes. Elk blokkerend stuk wordt allee
 controle slaagt en er geen enkel vak afgesloten raakt. De bovenste SAFE rijen blijven Fortree-metatiles: vanuit Fortree
 wordt de jungle met de Fortree-tileset getekend.
 
+Rocket-sidequest: aan de noordrand van de zuidlus staat een reuzenpalm (18, 56-59) met een warp naar de Rocket-hideout
+(rocket_hideout.py). De holte (METATILE_FortreeJungle_RocketHollow) zet scripts.inc pas als de quest loopt; daarvoor
+een plat stukje zonder lang gras en een wachtpost (object achteraan). Dit gebeurt na de tropische laag, zodat de rest
+van de jungle gelijk blijft.
+
 Vrijgehouden voor later: de open plek van Zarude (zuidwest, diep in de jungle) en het heiligdom van Ogerpon
 (zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
 
@@ -510,11 +515,83 @@ for y in range(SAFE, H):
         if mid(x, y) == FLOWER and (x - 31) ** 2 + (y - 54) ** 2 > 22:
             put(x, y, GRASS)
             stamp(x, y, J.groundflowers(1), J.P_FLOWER, GR, block=False)
+
+
+# 3. Rocket-hideout (sidequest, v0.9.x): een reuzenpalm aan de noordrand van de zuidlus, met aan zijn voet een holte die
+# pas open is als de quest loopt (setmetatile in scripts.inc op METATILE_FortreeJungle_RocketHollow, zie
+# include/constants/metatile_labels.h). Komt helemaal aan het eind, zodat de rest van de jungle (rng) gelijk blijft.
+ROCKET_DOOR = (18, 59)                  # voet van de palm (warp); de speler loopt er vanuit het zuiden in
+ROCKET_GUARD = (19, 60)                 # grunt die de wacht houdt (alleen zichtbaar als de quest loopt)
+for dy in range(-4, 1):
+    for dx in range(-2, 3):
+        x, y = ROCKET_DOOR[0] + dx, ROCKET_DOOR[1] + dy
+        assert T[y][x] == 'T' and (x, y) not in KEEP, ('reuzenpalm Rocket past niet', x, y)
+for dy in range(4):
+    for dx in range(3):
+        m = PALM[dy][dx]
+        put_mt = ts.jungle(m) if m in TREEISH else m
+        M[ROCKET_DOOR[1] - 3 + dy][ROCKET_DOOR[0] - 1 + dx] = val(put_mt, 1, 3 if (dy, dx) == (3, 1) else 0)
+# voor de palm een plat stukje (geen lang gras: daarin verdwijnt de grunt met zijn donkere pet helemaal)
+for dx in (-1, 0, 1):
+    x, y = ROCKET_DOOR[0] + dx, ROCKET_DOOR[1] + 1
+    assert T[y][x] in 'gL'
+    T[y][x] = 'g'
+    M[y][x] = val(GRASS, 0, 3)
+    stamp(x, y, J.litter(1 + dx % 2), J.P_JUNGLE, GR, block=False)
+
+
+def rocket_hollow():
+    """Palmvoet (0x273) met een donkere holte onderin de stam; gedrag MB_NON_ANIMATED_DOOR (0x60)."""
+    b, t, at = ts.base(0x273)
+    cv = J.Canvas(16, 16)
+    for k, e in enumerate(b):
+        ti, hf, vf = e & 0x3FF, (e >> 10) & 1, (e >> 11) & 1
+        src = ts.tiles[ti - 512] if ti >= 512 else ts.gtiles[ti]
+        for y in range(8):
+            for x in range(8):
+                cv.p[(k // 2) * 8 + y][(k % 2) * 8 + x] = src[7 - y if vf else y][7 - x if hf else x]
+    for y in range(4, 16):                      # boog: 8 breed, bovenkant rond
+        half = 4 if y >= 7 else (2, 3, 4)[y - 4]
+        for x in range(8 - half, 8 + half):
+            edge = x in (8 - half, 7 + half) or y == 4
+            cv.p[y][x] = 8 if edge else 9       # palet 9: 8 donkerblauw (rand), 9 zwart (holte)
+    for y in range(5, 16):
+        cv.p[y][8 - (4 if y >= 7 else (2, 3, 4)[min(y - 4, 2)]) - 1] = 7
+    # bovenlaag (boomkruinen naast de voet) in het midden open, anders valt de holte erachter weg
+    top = J.Canvas(16, 16)
+    tj = ts.jungle_entries(t)
+    for k, e in enumerate(tj):
+        ti, hf, vf = e & 0x3FF, (e >> 10) & 1, (e >> 11) & 1
+        src = ts.tiles[ti - 512] if ti >= 512 else ts.gtiles[ti]
+        for y in range(8):
+            for x in range(8):
+                top.p[(k // 2) * 8 + y][(k % 2) * 8 + x] = src[7 - y if vf else y][7 - x if hf else x]
+    for y in range(2, 16):
+        for x in range(3, 13):
+            top.p[y][x] = 0
+    return ts.metatile(ts.cut(cv, 0, 0, b[0] >> 12), ts.cut(top, 0, 0, tj[0] >> 12), (at & 0xF000) | 0x60)
+
+
+ROCKET_HOLLOW = rocket_hollow()
+print('Rocket-holte: metatile 0x%X op %s' % (ROCKET_HOLLOW, ROCKET_DOOR))
+ml = open('include/constants/metatile_labels.h').read()
+LBL = '#define METATILE_FortreeJungle_RocketHollow'
+line = '%s                0x%X // Project Grounded: tools/grounded/maptools/fortree_jungle.py\n' % (LBL, ROCKET_HOLLOW)
+if LBL in ml:
+    i = ml.index(LBL)
+    ml = ml[:i] + line + ml[ml.index('\n', i) + 1:]
+else:
+    i = ml.index('// gTileset_Fortree\n')
+    ml = ml[:i] + '// gTileset_FortreeJungle\n' + line + '\n' + ml[i:]
+open('include/constants/metatile_labels.h', 'w').write(ml)
+
 for y in range(SAFE):
     for x in range(W):
         assert mid(x, y) < ts.first, ('nieuwe metatile in het vanuit Fortree zichtbare deel', x, y)
 ntiles, nmts = ts.save()
 walk, surf = check()
+assert (ROCKET_DOOR[0], ROCKET_DOOR[1] + 1) in walk and ROCKET_GUARD in walk and \
+    (ROCKET_DOOR[0], ROCKET_DOOR[1] + 1) not in BLOCK, 'Rocket-ingang onbereikbaar'
 print('tropisch:', placed, '| %d nieuwe tiles (van %d vrij), %d nieuwe metatiles' % (ntiles, ts.nfree, nmts))
 print('bereikbaar: %d vakken lopend, %d met Surf; %d palmen' % (len(walk), len(surf), palms))
 
@@ -562,6 +639,9 @@ for x, y, item, flag in ITEMS:
                     'Common_EventScript_FindItem', flag))
 for x, y, gfx, script in NPCS:
     objs.append(obj(gfx, x, y, 'MOVEMENT_TYPE_FACE_UP', 'TRAINER_TYPE_NONE', 0, script, '0'))
+# Rocket-sidequest: wachtpost bij de holle reuzenpalm (achteraan, zodat de nummers van de andere objecten blijven)
+objs.append(obj('OBJ_EVENT_GFX_ROCKET_GRUNT_M', ROCKET_GUARD[0], ROCKET_GUARD[1], 'MOVEMENT_TYPE_FACE_LEFT',
+                'TRAINER_TYPE_NORMAL', 2, 'FortreeJungle_EventScript_RocketGuard', 'FLAG_HIDE_JUNGLE_ROCKET_GUARD'))
 mj = {
     "id": "MAP_FORTREE_JUNGLE", "name": "FortreeJungle", "layout": "LAYOUT_FORTREE_JUNGLE",
     "music": "MUS_ROUTE119", "region_map_section": "MAPSEC_FORTREE_JUNGLE", "requires_flash": False,
@@ -569,7 +649,10 @@ mj = {
     "allow_escaping": False, "allow_running": True, "show_map_name": True,
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "connections": [{"map": "MAP_FORTREE_CITY", "offset": 0, "direction": "up"}],
-    "object_events": objs, "warp_events": [], "coord_events": [],
+    "object_events": objs,
+    "warp_events": [{"x": ROCKET_DOOR[0], "y": ROCKET_DOOR[1], "elevation": 0, "dest_map": "MAP_ROCKET_HIDEOUT_1F",
+                     "dest_warp_id": "0"}],
+    "coord_events": [],
     "bg_events": [{"type": "sign", "x": x, "y": y, "elevation": 0, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
                    "script": s} for x, y, s in SIGNS] +
                  [{"type": "hidden_item", "x": x, "y": y, "elevation": 3, "item": item, "flag": flag} for x, y, item, flag in HIDDEN],
@@ -618,4 +701,7 @@ if len(sys.argv) > 1:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from gridrender import render
     render(M, 'general', 'fortree_jungle').save(sys.argv[1])
+    MR = [row[:] for row in M]                        # zoals tijdens de Rocket-quest: holte open
+    MR[ROCKET_DOOR[1]][ROCKET_DOOR[0]] = val(ROCKET_HOLLOW, 0, 3)
+    render(MR, 'general', 'fortree_jungle').save(sys.argv[1].replace('.png', '_rocket.png'))
 print('klaar')

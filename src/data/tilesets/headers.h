@@ -942,3 +942,27 @@ const struct Tileset gTileset_FortreeJungle = // Project Grounded: Fortree Jungl
     .metatileAttributes = gMetatileAttributes_FortreeJungle,
     .callback = InitTilesetAnim_Fortree,
 };
+
+// Project Grounded: Rocket-hideout onder Fortree Jungle. Tiles/metatiles van General en Facility, eigen (Rocket-)paletten
+// (tools/grounded/maptools/rocket_hideout.py)
+const struct Tileset gTileset_RocketGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_RocketGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_RocketFacility =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Facility,
+    .palettes = gTilesetPalettes_RocketFacility,
+    .metatiles = gMetatiles_Facility,
+    .metatileAttributes = gMetatileAttributes_Facility,
+    .callback = NULL,
+};

@@ -1006,7 +1006,14 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINERS_COUNT                      989
+#define TRAINER_ROCKET_GUARD                989 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
+#define TRAINER_ROCKET_SMUGGLER             990 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_MOTTO                991 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_SCIENTIST            992 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_ROCKET_THIEF                993 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_PETREL                      994 // Project Grounded: Rocket-hideout B2F (executive)
+
+#define TRAINERS_COUNT                      995
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

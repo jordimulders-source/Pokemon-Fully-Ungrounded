@@ -941,6 +941,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
 
+    // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
+    if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
+        return B_TRANSITION_ROCKET;
+
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 
@@ -1669,6 +1673,9 @@ void PlayTrainerEncounterMusic(void)
             break;
         case TRAINER_ENCOUNTER_MUSIC_RICH:
             music = MUS_ENCOUNTER_RICH;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_ROCKET: // Project Grounded: Team Rocket
+            music = MUS_RG_ENCOUNTER_ROCKET;
             break;
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;

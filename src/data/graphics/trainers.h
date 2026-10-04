@@ -390,6 +390,12 @@ const u32 gTrainerFrontPic_N[] = INCBIN_U32("graphics/trainers/front_pics/n.4bpp
 const u16 gTrainerPalette_N[] = INCBIN_U16("graphics/trainers/front_pics/n.gbapal");
 const u32 gTrainerFrontPic_Ghetsis[] = INCBIN_U32("graphics/trainers/front_pics/ghetsis.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_Ghetsis[] = INCBIN_U16("graphics/trainers/front_pics/ghetsis.gbapal");
+const u32 gTrainerFrontPic_RocketGruntM[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_m.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_RocketGruntM[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_m.gbapal");
+const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_f.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_RocketGruntF[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_f.gbapal");
+const u32 gTrainerFrontPic_Petrel[] = INCBIN_U32("graphics/trainers/front_pics/petrel.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_Petrel[] = INCBIN_U16("graphics/trainers/front_pics/petrel.gbapal");
 const u32 gTrainerFrontPic_GuestDitto[] = INCBIN_U32("graphics/trainers/front_pics/guest_ditto.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_GuestDitto[] = INCBIN_U16("graphics/trainers/front_pics/guest_ditto.gbapal");
 const u32 gTrainerFrontPic_GuestBurglar[] = INCBIN_U32("graphics/trainers/front_pics/guest_burglar.4bpp.smol"); // Project Grounded: Battle Stadium
@@ -608,6 +614,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_MUSTARD, gTrainerFrontPic_Mustard, gTrainerPalette_Mustard),
     TRAINER_SPRITE(TRAINER_PIC_N, gTrainerFrontPic_N, gTrainerPalette_N),
     TRAINER_SPRITE(TRAINER_PIC_GHETSIS, gTrainerFrontPic_Ghetsis, gTrainerPalette_Ghetsis),
+    TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_M, gTrainerFrontPic_RocketGruntM, gTrainerPalette_RocketGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_F, gTrainerFrontPic_RocketGruntF, gTrainerPalette_RocketGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_MASCOTS, gTrainerFrontPic_TrioMascots, gTrainerPalette_TrioMascots),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_STARTERS, gTrainerFrontPic_TrioStarters, gTrainerPalette_TrioStarters),

@@ -308,6 +308,15 @@ static const struct SpriteFrameImage sPicTable_Ghetsis[] = { // Project Grounded
 static const struct SpriteFrameImage sPicTable_Burglar[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_Burglar, 2, 4),
 };
+static const struct SpriteFrameImage sPicTable_RocketGruntM[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_RocketGruntM, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_RocketGruntF[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_RocketGruntF, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_Petrel[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_Petrel, 2, 4),
+};
 static const struct SpriteFrameImage sPicTable_Misty[] = {
     overworld_ascending_frames(gObjectEventPic_Misty, 2, 4),
 };

@@ -6146,6 +6146,10 @@ u16 GetBattleBGM(void)
             return MUS_GROUNDED_VS_N;
         case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
             return MUS_GROUNDED_VS_GHETSIS;
+        case TRAINER_CLASS_TEAM_ROCKET: // Project Grounded: Rocket-sidequest (FRLG-trainermuziek)
+            return MUS_RG_VS_TRAINER;
+        case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
+            return MUS_RG_VS_GYM_LEADER;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
         case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium

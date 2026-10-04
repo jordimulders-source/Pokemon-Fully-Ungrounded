@@ -187,6 +187,9 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
 
+// gTileset_FortreeJungle
+#define METATILE_FortreeJungle_RocketHollow                0x359 // Project Grounded: tools/grounded/maptools/fortree_jungle.py
+
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E

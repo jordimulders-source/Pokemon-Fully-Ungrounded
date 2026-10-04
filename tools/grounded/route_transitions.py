@@ -1647,3 +1647,52 @@ ed.ellipse((25, 29, 39, 38), fill=4)
 ed.rectangle((31, 29, 33, 38), fill=9)                       # spleetpupil
 ed.point([(28, 31), (29, 31), (28, 32)], fill=2)             # glinstering
 save_sprite('darkrai_eye', ei, EPAL)
+
+
+# ------------------------------------------------------------------ Team Rocket: zwarte balken schuiven dicht met een
+# rode voorrand, rode snelheidsstrepen schieten over het zwart, en een grote rode R zoomt in en stempelt met een klap.
+# BG-tiles: 1 zwart, 2 rode voorrand (balk van links), 3 idem van rechts, 4 streep-lijf, 5 streep-kop, 6 streep-staart
+RPAL = pad([(0, 0, 0), (2, 0, 1), (31, 4, 4), (18, 1, 2), (8, 0, 1), (31, 22, 20)])
+def rocket_edge(x, y, right):
+    d = (7 - x) if right else x                      # 0 = kant van het zwart, 7 = kant van de wereld
+    if d <= 3:
+        return 1
+    return 3 if d == 4 else 2 if d < 7 else 5
+def rocket_streak(x, y, part):
+    if y in (3, 4):
+        if part == 'head':
+            return 5 if x >= 5 else 2
+        if part == 'tail':
+            return 4 if x < 4 else 3
+        return 2 if y == 3 else 3
+    if y in (2, 5) and part == 'body' and (x + y) % 3 == 0:
+        return 4
+    return 1
+rtiles = [tile(lambda x, y: 1), tile(lambda x, y: rocket_edge(x, y, False)), tile(lambda x, y: rocket_edge(x, y, True)),
+          tile(lambda x, y: rocket_streak(x, y, 'body')), tile(lambda x, y: rocket_streak(x, y, 'head')),
+          tile(lambda x, y: rocket_streak(x, y, 'tail'))]
+save('rocket', rtiles, [RPAL])
+
+# de R (64x64-sprite, in het spel 2x geschaald): rood met lichte bovenrand, donkere schaduwrand en zwarte omlijning
+RSPAL = pad([(0, 0, 0), (2, 0, 1), (16, 0, 2), (29, 3, 4), (31, 14, 12), (31, 31, 31)])
+SERIF = '/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf'
+font = ImageFont.truetype(SERIF, 64)
+x0, y0, x1, y1 = font.getbbox('R')
+rm = Image.new('1', (64, 64), 0)
+ImageDraw.Draw(rm).text(((64 - (x1 - x0)) // 2 - x0, (64 - (y1 - y0)) // 2 - y0), 'R', font=font, fill=1)
+assert rm.getbbox()[0] >= 3 and rm.getbbox()[1] >= 3 and rm.getbbox()[2] <= 61 and rm.getbbox()[3] <= 61, rm.getbbox()
+ri = Image.new('P', (64, 64), 0)
+inR = lambda x, y: 0 <= x < 64 and 0 <= y < 64 and rm.getpixel((x, y))
+for y in range(64):
+    for x in range(64):
+        if inR(x, y):
+            if not inR(x + 2, y + 2) or not inR(x + 1, y + 1):
+                c = 2                                 # schaduwrand rechtsonder
+            elif not inR(x - 1, y - 1) or not inR(x - 2, y):
+                c = 4                                 # lichtrand linksboven
+            else:
+                c = 3
+            ri.putpixel((x, y), c)
+        elif any(inR(x + dx, y + dy) for dx in (-2, -1, 0, 1, 2) for dy in (-2, -1, 0, 1, 2)):
+            ri.putpixel((x, y), 1)
+save_sprite('rocket_r', ri, RSPAL)

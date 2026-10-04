@@ -16195,3 +16195,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Kluizenaar** (surfend naar een eilandje in het bovenmeer van B2F): **Reginald**, de "vijfde" van de Elite Four, die al dertig jaar wacht tot er iemand met pensioen gaat of doodgaat (Expert met mugshot, lv 58–60, ace Slaking @ Choice Band). Daarna **TM Flamethrower** ("bewaard voor Sidney's begrafenis"). Ook een Expert Belt en zijn afgewezen sollicitatie.
 - **Haaienbak** (gat in de vloer op B1F): een vaste **Garchomp lv 58** die slaapt op de rugzakken van mislukte kampioenen, met Life Orb, Eviolite en Dragon Fang. Donker, zoals Victory Road.
 - Bouwscript `tools/grounded/maptools/victory_road_ext.py`; trainers 1003–1006 (`TRAINER_VR_*`); flags 0x2A8–0x2AF, 0x4AB–0x4AF.
+- **Battle! Zarude v4:** de klap op de backbeat (tel 2 en 4) is eruit; die gaf vanaf de loop een metronoomachtig bliepje.

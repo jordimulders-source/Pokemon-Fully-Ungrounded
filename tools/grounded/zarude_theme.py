@@ -84,8 +84,6 @@ def groove(bar, full=True, soft=False):
         return
     for p in (0, 6, 10):
         drums.note(bar, p, 1, 36, 120)               # kick
-    for p in (4, 12):
-        drums.note(bar, p, 1, 39, 96)                # klap op de backbeat
     for p in range(16):
         noise.note(bar, p, 0.5, 60, 50 if p % 2 else 80)
 

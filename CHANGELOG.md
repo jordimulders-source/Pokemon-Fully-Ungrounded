@@ -16010,3 +16010,11 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Eigen transities: **Genesect** = CRT-scanlijnen, een rood vizier dat van doel naar doel springt en op de speler vastklikt ("LOCKED ON"), dan een Techno Blast-straal die het scherm vult. **Mewtwo** = het beeld wordt diep paars, twee gloeiende boze ogen gaan open, en een psychische schokgolf rolt in ringen over het scherm.
 - Muziek: Genesect de Regi-gevechtsmuziek, Mewtwo het Mewtwo-thema uit FireRed/LeafGreen.
 - Beide staan in het debugmenu (Legendary). Bouwscript: `tools/grounded/maptools/legend_maps.py`. Flags 0x271-0x275.
+
+### [v.0.8.121] - Giratina: de omgekeerde Sky Pillar
+- Post-game: na Rayquaza (gevangen of verslagen) scheurt de vloer van Sky Pillar 1F open (gat op 11,11, korte scène met schudden en Giratina's kreet). Wie erin springt, valt in de omgekeerde Sky Pillar.
+- Drie verdiepingen (B1F/B2F/B3F): de layouts van 1F, 2F en 5F op hun kop, met een eigen tileset `sky_pillar_reverse` (Sky Pillar-metatiles verticaal gespiegeld, Distortion World-kleuren: grauw paars, zwarte put, vaal groene muren, rood i.p.v. goud). Bouwscript: `tools/grounded/maptools/reverse_pillar.py` (controleert de bereikbaarheid).
+- B1F: de ingangsmat bovenin leidt terug naar buiten. B2F: boven en onder zijn omgedraaid (UP/DOWN gewisseld in `DoCB1_Overworld`). B3F: Giratina (Origin Forme, lv 70, met Griseous Core) zweeft voor de put.
+- Eigen transitie `B_TRANSITION_GIRATINA`: paarse scheuren over het scherm, de wereld klapt ondersteboven (HBlank-scroll per beeldlijn) en de zes schaduwvleugels sluiten het beeld af. Muziek: `MUS_GROUNDED_VS_GIRATINA` (Platinum).
+- Wilde encounters op B1F (lv 56–60) en B2F (lv 58–63): ghost/dragon/psychic, 12 unieke soorten per tabel (zeldzaam: Spiritomb, Haxorus, Polteageist, Dragapult).
+- Flag `FLAG_HIDE_SKY_PILLAR_GIRATINA` (was 0x279), var `VAR_SKY_PILLAR_REVERSE_STATE` (was 0x40F9). Teksten zijn placeholders.

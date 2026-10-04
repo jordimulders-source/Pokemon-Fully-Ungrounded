@@ -94,6 +94,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Overworld-GFX-ID's boven 255** (Kanto-sprites 248–259+): het Stadium en scripts kunnen het aan, maar `src/vs_seeker.c` gebruikt nog `u8 graphicsId`; zulke sprites niet als gewone rematch-trainer op een kaart zetten.
 - **Fades en wachttijden:** paletfades wisselen BG en sprites af (`objPaletteToggle`), dus elke stap kost 2 frames + 4 frames afronden; een warp wacht ook op het uitfaden van de oude muziek (`GetMapMusicFadeoutSpeed`). Eigen transities: eindbeeld max ±2 frames vasthouden, fade ±8 frames (v0.8.119).
 - **Warp-elevation** moet gelijk zijn aan die van de tegel (0 = elke); vanilla-grotplateaus zijn soms elevation 4 (Altering Cave).
+- **Kaart op zijn kop** (omgekeerde Sky Pillar, `reverse_pillar.py`): rijen per metatile wisselen + v-flip (bit 11) per tile, `map.bin`-rijen omdraaien, en het gedrag aanpassen (trapdeur 0x60 → zuidpijl, zuidpijl → noordpijl).
+- **Transities die elke frame de BG0-tilemap opnieuw tekenen:** elk vak in één keer de eindwaarde geven, niet eerst wissen (tearing).
+- **Agent-branches samenvoegen:** conflicten achteraan enums/tabellen/map_groups zijn "beide houden"; let op een `}` of komma die op de grens wegvalt.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

@@ -3721,6 +3721,48 @@
           }
         },
         {
+          "map": "MAP_SKY_PILLAR_REVERSE_B1F",
+          "base_label": "gSkyPillar_ReverseB1F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_HAUNTER" },
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_DUSCLOPS" },
+              { "min_level": 57, "max_level": 59, "species": "SPECIES_BANETTE" },
+              { "min_level": 57, "max_level": 59, "species": "SPECIES_BRONZONG" },
+              { "min_level": 57, "max_level": 59, "species": "SPECIES_CLAYDOL" },
+              { "min_level": 57, "max_level": 59, "species": "SPECIES_MISMAGIUS" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_SABLEYE" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_DRIFBLIM" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_GOLURK" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_NOIVERN" },
+              { "min_level": 60, "max_level": 60, "species": "SPECIES_SPIRITOMB" },
+              { "min_level": 60, "max_level": 60, "species": "SPECIES_HAXORUS" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SKY_PILLAR_REVERSE_B2F",
+          "base_label": "gSkyPillar_ReverseB2F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_DUSCLOPS" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_BEHEEYEM" },
+              { "min_level": 59, "max_level": 61, "species": "SPECIES_BRONZONG" },
+              { "min_level": 59, "max_level": 61, "species": "SPECIES_MISMAGIUS" },
+              { "min_level": 59, "max_level": 61, "species": "SPECIES_TREVENANT" },
+              { "min_level": 59, "max_level": 61, "species": "SPECIES_COFAGRIGUS" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_CHANDELURE" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_GENGAR" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_DUSKNOIR" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_HYDREIGON" },
+              { "min_level": 63, "max_level": 63, "species": "SPECIES_POLTEAGEIST" },
+              { "min_level": 63, "max_level": 63, "species": "SPECIES_DRAGAPULT" }
+            ]
+          }
+        },
+        {
           "map": "MAP_SAFARI_ZONE_SOUTHEAST",
           "base_label": "gSafariZone_Southeast",
           "land_mons": {

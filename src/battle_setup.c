@@ -535,6 +535,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEWTWO: // Project Grounded: gloeiende ogen en een psychische schokgolf, het Mewtwo-thema uit FRLG
         CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
         break;
+    case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels
+    case SPECIES_GIRATINA_ORIGIN:
+        CreateBattleStartTask(B_TRANSITION_GIRATINA, MUS_GROUNDED_VS_GIRATINA);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

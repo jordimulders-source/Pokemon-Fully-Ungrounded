@@ -4602,6 +4602,36 @@
       "blockdata_filepath": "data/layouts/SkyPillar_Top_Clean/map.bin"
     },
     {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B3F",
+      "name": "SkyPillar_ReverseB3F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB3F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B2F",
+      "name": "SkyPillar_ReverseB2F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB2F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B1F",
+      "name": "SkyPillar_ReverseB1F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB1F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB1F/map.bin"
+    },
+    {
       "id": "LAYOUT_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
       "name": "SootopolisCity_MysteryEventsHouse_1F_Layout",
       "width": 11,

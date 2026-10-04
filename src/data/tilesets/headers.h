@@ -885,3 +885,14 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SkyPillarReverse = // Project Grounded: omgekeerde Sky Pillar (Giratina), via reverse_pillar.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SkyPillarReverse,
+    .palettes = gTilesetPalettes_SkyPillarReverse,
+    .metatiles = gMetatiles_SkyPillarReverse,
+    .metatileAttributes = gMetatileAttributes_SkyPillarReverse,
+    .callback = NULL,
+};

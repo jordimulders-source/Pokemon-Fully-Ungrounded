@@ -154,6 +154,7 @@ static void Task_Seviper(u8); // Project Grounded
 static void Task_Heatran(u8); // Project Grounded
 static void Task_Genesect(u8); // Project Grounded
 static void Task_Mewtwo(u8); // Project Grounded
+static void Task_Giratina(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -447,6 +448,11 @@ static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/r
 static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
 static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
 static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
+static const u16 sGiratina_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_giratina.4bpp");
+static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
+static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
+static const u8 sGiratina_CrackTime[] = INCBIN_U8("graphics/battle_transitions/route_giratina_crack_t.bin");
+static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/route_giratina_wing.bin");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -554,6 +560,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
     [B_TRANSITION_GENESECT] = Task_Genesect, // Project Grounded
     [B_TRANSITION_MEWTWO] = Task_Mewtwo, // Project Grounded
+    [B_TRANSITION_GIRATINA] = Task_Giratina, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7616,4 +7623,161 @@ static const struct RouteTransition sRT_Mewtwo =
 static void Task_Mewtwo(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Mewtwo);
+}
+
+// ---------------- Giratina: het scherm scheurt open (paarse breuklijnen vanuit het midden, het beeld golft), dan klapt
+// de wereld ondersteboven (HBlank-scroll van BG1-3 per beeldlijn, zoals een kaart die omdraait) en sluiten de zes
+// schaduwvleugels van de Origin Forme het beeld af, van links en rechts. Tiles: route_transitions.py ("giratina").
+#define GIRATINA_FLIP_START 30
+#define GIRATINA_FLIP_LEN   26
+#define GIRATINA_WING_START (GIRATINA_FLIP_START + GIRATINA_FLIP_LEN)
+#define GIRATINA_WING_LEN   28
+
+static void VBlankCB_Giratina(void)
+{
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+}
+
+// schrijft tijdens de HBlank van lijn y de scroll van lijn y + 1 (BG1-3 horizontaal en verticaal)
+static void HBlankCB_Giratina(void)
+{
+    u32 y = REG_VCOUNT;
+    u16 h, v;
+
+    if (y >= 227)
+        y = 0;
+    else if (y >= DISPLAY_HEIGHT - 1)
+        return;
+    else
+        y++;
+    h = gScanlineEffectRegBuffers[1][y];
+    v = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + y];
+    REG_BG1HOFS = h;
+    REG_BG2HOFS = h;
+    REG_BG3HOFS = h;
+    REG_BG1VOFS = v;
+    REG_BG2VOFS = v;
+    REG_BG3VOFS = v;
+}
+
+static void RTGiratina_Init(struct Task *task)
+{
+    u32 i;
+
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    for (i = 0; i < DISPLAY_HEIGHT; i++)
+    {
+        gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = sTransitionData->cameraX;
+        gScanlineEffectRegBuffers[0][DISPLAY_HEIGHT + i] = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + i] = sTransitionData->cameraY;
+    }
+    SetVBlankCallback(VBlankCB_Giratina);
+    SetHBlankCallback(HBlankCB_Giratina);
+    EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
+}
+
+static bool8 RTGiratina_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    u16 *buf = gScanlineEffectRegBuffers[0];
+    s32 t = task->tRtTimer, i, r, c, cc, k, amp, half, off, p;
+
+    sTransitionData->VBlank_DMA = FALSE;
+
+    // tilemap in een keer per vak (niet eerst wissen: dat geeft scheuren in beeld omdat het scherm al getekend wordt)
+    // scheuren: elk vak verschijnt op zijn eigen moment, vanuit het midden naar buiten. Daarover de zes schaduwvleugels,
+    // die van links en rechts het beeld in schuiven (rechts = links 180 graden gedraaid; ze delen nooit een tile)
+    off = 30;
+    if (t >= GIRATINA_WING_START)
+    {
+        p = min(t - GIRATINA_WING_START, GIRATINA_WING_LEN);
+        off = 30 * (GIRATINA_WING_LEN - p) * (GIRATINA_WING_LEN - p) / (GIRATINA_WING_LEN * GIRATINA_WING_LEN);
+    }
+    for (r = 0; r < 20; r++)
+    {
+        for (c = 0; c < 30; c++)
+        {
+            u16 v = 0, w;
+            if (sGiratina_CrackTime[r * 30 + c] <= t * 3 / 2)
+                v = RT_TILE(sGiratina_Crack[r * 30 + c]);
+            cc = c + off;
+            if (cc < 30 && (w = sGiratina_Wing[r * 30 + cc]) != 0)
+                v = RT_TILE(w);
+            cc = 29 - c + off;
+            if (cc < 30 && (w = sGiratina_Wing[(19 - r) * 30 + cc]) != 0)
+                v = RT_TILE(w) | 0x0C00;
+            tilemap[r * 32 + c] = v;
+        }
+    }
+
+    // golvend beeld (horizontaal), dat tijdens het omklappen weer rustig wordt
+    amp = (t < GIRATINA_FLIP_START) ? t / 4 : max(0, 7 - (t - GIRATINA_FLIP_START) / 3);
+    SetSinWave((s16 *)buf, sTransitionData->cameraX, t * 10, 5, amp, DISPLAY_HEIGHT);
+
+    if (t < GIRATINA_FLIP_START)
+    {
+        BlendPalettes(RT_SCENE_PALETTES, min(t / 4, 6), RGB(10, 6, 14));
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            buf[DISPLAY_HEIGHT + i] = sTransitionData->cameraY;
+    }
+    else
+    {
+        // omklappen om de horizontale middellijn: lijn y toont beeldlijn 80 + (y - 80) / k, k van 1 naar -1
+        p = min(t - GIRATINA_FLIP_START, GIRATINA_FLIP_LEN);
+        k = Cos((p * 128 / GIRATINA_FLIP_LEN) & 0xFF, 256);
+        half = 80 * abs(k) / 256;
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+        {
+            s32 src = i;
+            if (abs(k) >= 6)
+                src = (159 + (2 * i - 159) * 256 / k) / 2;
+            buf[DISPLAY_HEIGHT + i] = sTransitionData->cameraY + src - i;
+        }
+        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
+        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(80 - half, 80 + half));
+        SetGpuReg(REG_OFFSET_WININ, abs(k) >= 6 ? WININ_WIN0_BG_ALL : WININ_WIN0_BG0);
+        SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0);
+        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+        BlendPalettes(RT_SCENE_PALETTES, min(6 + (t - GIRATINA_FLIP_START) / 4, 11), RGB(7, 0, 11));
+        gPlttBufferFaded[0] = RGB_BLACK; // de leegte buiten het omklappende beeld
+        if (t == GIRATINA_FLIP_START)
+            PlaySE(SE_M_TELEPORT);
+        if (t == GIRATINA_FLIP_START + GIRATINA_FLIP_LEN / 2)
+            PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
+    }
+
+    if (t >= GIRATINA_WING_START)
+    {
+        SetGpuReg(REG_OFFSET_BG0VOFS, Sin((t * 8) & 0xFF, 2) & 0x1FF);
+        if (t == GIRATINA_WING_START)
+            PlaySE(SE_M_NIGHTMARE);
+        if (t == GIRATINA_WING_START + 10)
+            PlaySE(SE_M_WING_ATTACK);
+    }
+    if (t == 0)
+        PlaySE(SE_M_SCREECH);
+    if (t == 14)
+        PlaySE(SE_M_DETECT);
+    sTransitionData->VBlank_DMA++;
+    return t >= GIRATINA_WING_START + GIRATINA_WING_LEN + 4;
+}
+
+static void RTGiratina_Finish(struct Task *task)
+{
+    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+    SetGpuReg(REG_OFFSET_WININ, 0);
+    SetGpuReg(REG_OFFSET_WINOUT, 0);
+    SetHBlankCallback(NULL);
+}
+
+static const struct RouteTransition sRT_Giratina =
+{
+    sGiratina_Tileset, sizeof(sGiratina_Tileset), sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
+};
+
+static void Task_Giratina(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Giratina);
 }

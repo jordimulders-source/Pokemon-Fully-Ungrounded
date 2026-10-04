@@ -953,3 +953,98 @@ for o in (0.12, 0.55, 1.0):
 mew += [tile(lambda x, y: 4 if (x + y) % 2 else 0), tile(lambda x, y: 5), tile(lambda x, y: 3 if (x + y) % 2 else 4)]
 mew += [tile(lambda x, y, v=v: 1 + int((math.sin(x * 0.8 + y * 0.5 + v * 2) + math.sin(y * 0.9 - x * 0.4)) + 2.2) % 3) for v in range(2)]
 save('mewtwo', mew, cycle(pad(MEW), 4, amp=3))
+# ------------------------------------------------------------------ Giratina: het scherm scheurt, de wereld klapt
+# ondersteboven de Distortion World in en de zes schaduwvleugels (Origin Forme) sluiten het beeld af.
+# route_giratina.png (tiles), _crack.bin (30x20 tilemap van de scheuren) + _crack_t.bin (u8: frame waarop een vak
+# zichtbaar wordt, 255 = nooit), _wing.bin (30x20 tilemap van de linkervleugels; de rechter = 180 graden gedraaid)
+GPAL2 = pad([(0, 0, 0), (1, 0, 2), (7, 6, 9), (28, 3, 5), (16, 1, 3), (27, 21, 6), (17, 5, 24), (27, 17, 31), (31, 31, 31)])
+gtiles, gidx = [], {}
+def gtmap(im, w=30, h=20):
+    out = []
+    for ty in range(h):
+        for tx in range(w):
+            t = tuple(im.getpixel((tx * 8 + x, ty * 8 + y)) for y in range(8) for x in range(8))
+            if not any(t):
+                out.append(0); continue
+            if t not in gidx:
+                gidx[t] = len(gtiles) + 1; gtiles.append(list(t))
+            out.append(gidx[t])
+    return out
+# scheuren: vier gekartelde breuklijnen vanuit punten aan de rand, met zijtakken; zwart met paarse gloed
+gr = random.Random(487)
+crack = Image.new('P', (240, 160), 0)
+cd = ImageDraw.Draw(crack)
+ctime = [[255] * 30 for _ in range(20)]
+segs = []
+def crack_line(x, y, ang, length, width, t0, depth):
+    pts = [(x, y)]
+    for i in range(length):
+        ang += gr.uniform(-0.5, 0.5)
+        x += math.cos(ang) * 9; y += math.sin(ang) * 9
+        pts.append((x, y))
+        segs.append((pts[-2], pts[-1], max(1, width - i * width / (length + 2)), t0 + i * 2))
+        if depth < 2 and gr.random() < 0.22:
+            crack_line(x, y, ang + gr.choice((-1, 1)) * gr.uniform(0.6, 1.1), length // 2, max(1, width * 0.5), t0 + i * 2, depth + 1)
+for (sx, sy, a) in [(120, 74, -2.6), (120, 74, 0.4), (120, 74, 2.0), (120, 74, -0.9)]:
+    crack_line(sx, sy, a, 16, 5, 0, 0)
+for glow in (True, False):
+    for (p, q, w, t) in segs:
+        if glow:
+            cd.line((p, q), fill=6, width=int(w + 4))
+        else:
+            cd.line((p, q), fill=1, width=int(w))
+for (p, q, w, t) in segs:
+    for k in range(5):
+        px = p[0] + (q[0] - p[0]) * k / 4; py = p[1] + (q[1] - p[1]) * k / 4
+        tx, ty = int(px) // 8, int(py) // 8
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                if 0 <= tx + dx < 30 and 0 <= ty + dy < 20:
+                    ctime[ty + dy][tx + dx] = min(ctime[ty + dy][tx + dx], t)
+for y in range(160):                                    # lichte rand langs de gloed
+    for x in range(240):
+        if crack.getpixel((x, y)) == 6 and any(0 <= x + dx < 240 and 0 <= y + dy < 160 and crack.getpixel((x + dx, y + dy)) == 0
+                                               for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))) and (x + y) % 3:
+            crack.putpixel((x, y), 7)
+ctm = gtmap(crack)
+ct = [ctime[r][c] if ctm[r * 30 + c] else 255 for r in range(20) for c in range(30)]
+# linkervleugels: drie zwarte tentakels vanaf de linkerrand, taps toelopend, met rode stekels en een rode punt
+wing = Image.new('P', (240, 160), 0)
+wd = ImageDraw.Draw(wing)
+for (cy, ln, ph) in [(14, 106, 0.0), (66, 112, 1.7), (118, 104, 3.1)]:
+    pts = []
+    for i in range(60):
+        t = i / 59
+        x = -6 + t * ln
+        y = cy + math.sin(t * 3.0 + ph) * 6 - t * t * 5
+        r = 21 * (1 - t) ** 0.7 + 1.5
+        pts.append((x, y, r))
+    for (x, y, r) in pts:                               # zwart lijf
+        wd.ellipse((x - r, y - r, x + r, y + r), fill=1)
+    for k, (x, y, r) in enumerate(pts):                 # grijze glans aan de bovenkant
+        if r > 3:
+            wd.arc((x - r + 1, y - r + 1, x + r - 1, y + r - 1), 200, 300, fill=2)
+    for k in range(5, 50, 8):                           # rode stekels aan de bovenkant, naar achteren gericht
+        x, y, r = pts[k]
+        wd.polygon([(x - 2, y - r + 1), (x + 5, y - r + 1), (x - 6, y - r - 9)], fill=3)
+        wd.line(((x + 4, y - r + 1), (x - 6, y - r - 9)), fill=4)
+    for k in range(10, 52, 12):                         # en kleinere aan de onderkant
+        x, y, r = pts[k]
+        wd.polygon([(x - 2, y + r - 1), (x + 4, y + r - 1), (x - 5, y + r + 6)], fill=4)
+    for (x, y, r) in pts[-6:]:                          # rode punt
+        wd.ellipse((x - r - 1, y - r - 1, x + r + 1, y + r + 1), fill=3)
+    x, y, r = pts[-1]
+    wd.polygon([(x, y - 3), (x + 12, y), (x, y + 3)], fill=3)
+    for k in range(4, 40, 13):                          # gouden ringen (zoals op Giratina's vleugels)
+        x, y, r = pts[k]
+        wd.line(((x, y - r + 3), (x + 2, y + r - 3)), fill=5, width=2)
+# de linkervleugels blijven in de linkerhelft (x < 120); de rechter (180 graden gedraaid) in de rechterhelft, zodat
+# ze elkaars tiles nooit afkappen
+for y in range(160):
+    for x in range(120, 240):
+        wing.putpixel((x, y), 0)
+wtm = gtmap(wing)
+save('giratina', gtiles, [GPAL2])
+open(OUT + 'route_giratina_crack.bin', 'wb').write(struct.pack('<600H', *ctm))
+open(OUT + 'route_giratina_crack_t.bin', 'wb').write(bytes(min(255, v) for v in ct))
+open(OUT + 'route_giratina_wing.bin', 'wb').write(struct.pack('<600H', *wtm))

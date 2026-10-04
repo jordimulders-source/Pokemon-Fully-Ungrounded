@@ -98,6 +98,7 @@ enum BattleTransition
     B_TRANSITION_HEATRAN, // Project Grounded: Heatran, lavapluimen en een uitbarsting
     B_TRANSITION_GENESECT, // Project Grounded: Genesect, scanlijnen, rood vizier en Techno Blast
     B_TRANSITION_MEWTWO, // Project Grounded: Mewtwo, gloeiende ogen en een psychische schokgolf
+    B_TRANSITION_GIRATINA, // Project Grounded: Giratina, het scherm scheurt, klapt om en de schaduwvleugels sluiten het af
     B_TRANSITION_COUNT
 };
 

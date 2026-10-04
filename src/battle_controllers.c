@@ -5,6 +5,7 @@
 #include "battle_anim.h"
 #include "battle_arena.h"
 #include "battle_controllers.h"
+#include "stadium.h"
 #include "battle_gfx_sfx_util.h"
 #include "battle_interface.h"
 #include "battle_message.h"
@@ -2301,48 +2302,6 @@ void BtlController_HandleLoadMonSprite(u32 battler)
         gBattlerControllerFuncs[battler] = WaitForMonAnimAfterLoad;
 }
 
-// Project Grounded: Battle Stadium. Onze kant heeft geen trainer-rugplaatjes: onze Pokémon staan bij de start al
-// op het veld (zoals een wilde Pokémon aan de overkant), met hun healthbox. Geen worp, geen "Go!".
-static void SpriteCB_StadiumPlayerMon(struct Sprite *sprite)
-{
-    if (gIntroSlideFlags & 1)
-        return;
-    if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
-        sprite->x2 = 0;
-    else
-        sprite->x2 -= 2;
-    if (sprite->x2 == 0)
-    {
-        u32 battler = sprite->data[0];
-        StartHealthboxSlideIn(battler);
-        SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
-        sprite->callback = SpriteCallbackDummy;
-    }
-}
-
-void BtlController_StadiumIntroPlayerMon(u32 battler)
-{
-    struct Pokemon *mon = GetBattlerMon(battler);
-    u16 species;
-
-    if (GetMonData(mon, MON_DATA_HP) == 0 || GetMonData(mon, MON_DATA_SPECIES_OR_EGG) == SPECIES_NONE)
-        return;
-    species = GetBattlerVisualSpecies(battler);
-    BattleLoadMonSpriteGfx(mon, battler);
-    SetMultiuseSpriteTemplateToPokemon(species, GetBattlerPosition(battler));
-    gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
-                                               GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2),
-                                               GetBattlerSpriteDefault_Y(battler),
-                                               GetBattlerSpriteSubpriority(battler));
-    gSprites[gBattlerSpriteIds[battler]].x2 = DISPLAY_WIDTH;   // schuift met het veld mee naar binnen
-    gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
-    gSprites[gBattlerSpriteIds[battler]].data[2] = species;
-    gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
-    gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_StadiumPlayerMon;
-    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
-    SetBattlerShadowSpriteCallback(battler, species);
-}
-
 void BtlController_HandleSwitchInAnim(u32 battler)
 {
     bool32 isPlayerSide = (IsControllerPlayer(battler)
@@ -2444,6 +2403,10 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
         }
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x2 = DISPLAY_WIDTH;
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -2;
+        // Project Grounded: Battle Stadium. Geen rugplaatjes aan onze kant: de speler en de compagnon zijn onzichtbaar,
+        // onze kant is eerst leeg en daarna vliegen de ballen er gewoon in ("Go! X!").
+        if (gStadiumBattle)
+            gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].invisible = TRUE;
     }
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].callback = SpriteCB_TrainerSpawn;

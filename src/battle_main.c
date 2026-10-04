@@ -3532,11 +3532,6 @@ static void DoBattleIntro(void)
             switch (GetBattlerPosition(battler))
             {
             case B_POSITION_PLAYER_LEFT: // player sprite
-                if (gStadiumBattle) // Project Grounded: geen rugplaatjes in het Stadium, onze Pokémon staan er al
-                {
-                    BtlController_StadiumIntroPlayerMon(battler);
-                    break;
-                }
                 BtlController_EmitDrawTrainerPic(battler, B_COMM_TO_CONTROLLER);
                 MarkBattlerForControllerExec(battler);
                 break;
@@ -3554,9 +3549,7 @@ static void DoBattleIntro(void)
                 }
                 break;
             case B_POSITION_PLAYER_RIGHT:
-                if (gStadiumBattle) // Project Grounded: ook de compagnon zonder rugplaatje
-                    BtlController_StadiumIntroPlayerMon(battler);
-                else if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)) // partner sprite
+                if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)) // partner sprite
                 {
                     BtlController_EmitDrawTrainerPic(battler, B_COMM_TO_CONTROLLER);
                     MarkBattlerForControllerExec(battler);
@@ -3612,12 +3605,6 @@ static void DoBattleIntro(void)
             battler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
             BtlController_EmitDrawPartyStatusSummary(battler, B_COMM_TO_CONTROLLER, hpStatus, PARTY_SUMM_SKIP_DRAW_DELAY);
             MarkBattlerForControllerExec(battler);
-
-            if (gStadiumBattle) // Project Grounded: geen balletjesbalk aan onze kant (geen worp die hem weghaalt)
-            {
-                gBattleStruct->eventState.battleIntro++;
-                break;
-            }
 
             for (i = 0; i < PARTY_SIZE; i++)
             {
@@ -3715,11 +3702,6 @@ static void DoBattleIntro(void)
             gBattleStruct->eventState.battleIntro++;
         break;
     case BATTLE_INTRO_STATE_PRINT_PLAYER_SEND_OUT_TEXT:
-        if (gStadiumBattle) // Project Grounded: onze Pokémon staan al op het veld, geen "Go!" en geen worp
-        {
-            gBattleStruct->eventState.battleIntro = BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
-            break;
-        }
         if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
         {
             if (gBattleTypeFlags & BATTLE_TYPE_RECORDED_LINK && !(gBattleTypeFlags & BATTLE_TYPE_RECORDED_IS_MASTER))

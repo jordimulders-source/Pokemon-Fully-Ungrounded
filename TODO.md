@@ -22,7 +22,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
    1. **Safari-uitbreiding (Jordi, 4 okt):** drie zones via openingen naar eigen kaarten (eigen tilesets): **Fairy Forest**, **Onweersvlakte**, **Spookkamp** (in de maak, op slot met `FLAG_SAFARI_ZONES_OPEN`).
       - **Sidequest om ze te openen:** buiten de Safari Zone loopt een Team Rocket-grunt tegen je aan die de zonesleutels heeft gestolen en snel wegrent. De **Rocket-hideout is verstopt in Fortree Jungle**. Daar vecht je tegen grunts en een executive (Rocket-transitie met een rode R, Rocket-muziek; teams veel origineler dan alleen Koffing). Je krijgt de spullen terug, brengt ze naar de Safari en mag als dank de nieuwe zones testen.
    2. ~~**Jungle onder Fortree**~~ (kaart gedaan, v0.9.5). Open: Zarude- en Ogerpon-events op de vrijgehouden plekken.
-   3. Moeras (aangeleverde moeras-tileset): Claude zoekt een mooie plek en legt die voor.
+   3. **Moeras: mangrovemoeras tussen Fortree Jungle en Route 120** (Jordi akkoord, 4 okt; Ekat99-moerastileset), aansluitend op de Scorched Slab-uitbreiding.
    4. Oostkant: eilandjes en Dive-grotten.
 9. **Battle Stadium:** ~~N en Ghetsis in de pool~~ (gedaan, v0.9.2). **Back sprites:** niet tekenen (Jordi, 4 okt: niet overtuigend). In plaats daarvan toont het Stadium aan onze kant geen trainer-backs; de Pokémon staan meteen op het veld (in de maak).
 8. **Dungeons uitbreiden (Jordi, 4 okt):**

@@ -16462,3 +16462,17 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Cry:** na de explosie van de tank volgt nu een "ademmaat" met alleen een lage drone en een paar zachte slagen, zodat Mewtwo's cry vrij klinkt. Daarna valt het hoge tempo in. De loop begint na de ademmaat.
 - **Voller:** pompende trance-strijkers in achtsten in de beat-secties, en een koor onder de evil-sectie en de drop.
 - **Kwaadaardiger:** de melodie speelt nu op een kerkorgel. In de euforische drop speelt de blokgolf mee, een octaaf lager en zachter, zodat hij minder schel is.
+
+### [v.0.9.54] - Mewtwo v3: filmische intro
+- **Transitie ±2,5× trager en op de maat:**
+  - Het lab komt langzaam uit het donker en de dagboekpagina's worden rustig geschreven.
+  - De ogen lichten op op 3,75 s, de drie barsten vallen op de maat en de tank spat uiteen op 5,6 s.
+  - De cry in de transitie is weg; alleen de cry bij de start van het gevecht blijft.
+- **Muziek:**
+  - **Intro van 3 maten die met de transitie meeloopt:** drone en koor, een langzame hartslag, orgelakkoorden bij de pagina's, een tritonus-aanslag bij de ogen, glas bij de barsten en een crash bij de explosie.
+  - **Daarna:** een ademmaat voor de cry en een opbouwmaat (snareroffel, riser, stijgende strijkers), dan barst de beat los.
+- **Maximalistischer, zonder het bestaande te veranderen:** extra lagen op de vrije chiptune-kanalen, zodat er niets wegvalt:
+  - een delay-arpeggio;
+  - een sub-bas;
+  - een shaker;
+  - een riser naar de drop.

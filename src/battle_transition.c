@@ -7739,13 +7739,16 @@ static void Task_Genesect(u8 taskId)
 // een psychische schokgolf (scherven vliegen weg, daarachter Mewtwo met witte ogen in een paars veld).
 // tiles en tilemaps: route_transitions.py ("mewtwo"): 1-3 rand van de golf (buiten/fel/binnen), 4-7 scherven.
 // Paletten: 0-2 rustig, 3-5 ontwaakt, 6-8 schokgolf (elk een kleurcyclus van 3 standen).
-#define MEWTWO_LAB    8
-#define MEWTWO_PAGE1  14
-#define MEWTWO_PAGE2  50
-#define MEWTWO_LINE   15    // frames per regel (2 tiles per frame)
-#define MEWTWO_EYES   88
-#define MEWTWO_CRACK  96    // barst 1, +6 barst 2, +12 barst 3
-#define MEWTWO_BURST  114
+// Filmisch (Jordi): ±2,5x trager, getimed op Battle! Mewtwo (128 bpm, 1 maat = 112 frames):
+// ogen op maat 2 (224), barsten op maat 2 tel 2 / 2,67 / 3,33, de tank spat uiteen op maat 3 (336).
+#define MEWTWO_LAB    20
+#define MEWTWO_PAGE1  36
+#define MEWTWO_PAGE2  128
+#define MEWTWO_LINE   38    // frames per regel
+#define MEWTWO_EYES   224
+#define MEWTWO_CRACK  280   // barst 1, +MEWTWO_CRACK_GAP barst 2, +2x barst 3
+#define MEWTWO_CRACK_GAP 19
+#define MEWTWO_BURST  336
 #define MEWTWO_SHARDS 14
 
 static bool8 RTMewtwo_Update(struct Task *task)
@@ -7756,7 +7759,7 @@ static bool8 RTMewtwo_Update(struct Task *task)
     u16 v;
 
     if (t >= MEWTWO_CRACK)
-        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / 6, 2) * 600];
+        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / MEWTWO_CRACK_GAP, 2) * 600];
     rad = (t >= MEWTWO_BURST) ? 12 + (t - MEWTWO_BURST) * 9 : -1;
     page = (t >= MEWTWO_PAGE2) ? 1 : 0;
 
@@ -7815,8 +7818,8 @@ static bool8 RTMewtwo_Update(struct Task *task)
         LoadPalette(&sMewtwo_Palette[(6 + (t / 2) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     else if (t >= MEWTWO_EYES)
         LoadPalette(&sMewtwo_Palette[(3 + (t / 3) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 8)
-        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) * 2, RGB_BLACK); // het lab komt uit het donker
+    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 32)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) / 2, RGB_BLACK); // het lab komt langzaam uit het donker
 
     // trillen: licht bij het barsten, harder bij de schokgolf
     if (t >= MEWTWO_BURST)
@@ -7832,9 +7835,8 @@ static bool8 RTMewtwo_Update(struct Task *task)
 
     if (t == MEWTWO_LAB)
         PlaySE(SE_M_BUBBLE);
-    if (t == MEWTWO_EYES)
-        PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
-    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + 6 || t == MEWTWO_CRACK + 12)
+    // (geen cry bij de ogen: die klinkt al bij de start van het gevecht; de muziek geeft hier een aanslag)
+    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + MEWTWO_CRACK_GAP || t == MEWTWO_CRACK + 2 * MEWTWO_CRACK_GAP)
         PlaySE(SE_ICE_CRACK);
     if (t == MEWTWO_BURST)
         PlaySE(SE_ICE_BREAK);

@@ -85,7 +85,7 @@ voice_group grounded_mewtwo
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 165  @ 82
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188  @ 83
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
@@ -122,7 +122,7 @@ voice_group grounded_mewtwo
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 118
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 119
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 121
+	voice_noise_alt 60, 0, 0, 3, 0, 15, 2  @ 121
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 122
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 123
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 124

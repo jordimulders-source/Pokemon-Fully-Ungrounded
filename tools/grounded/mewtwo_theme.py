@@ -22,9 +22,11 @@ TPB, BPM = 96, 128
 S16 = TPB // 4                 # een 16e
 BAR = TPB * 4
 LEAD, PLUCK, PAD, CHOIR, BASS, TIMPANI, DRUMS, ORGAN = 82, 80, 48, 52, 38, 47, 127, 83
-BREATH = 1     # maat 1: ademmaat na de explosie, zodat de cry van Mewtwo vrij klinkt (Jordi: 'glitcht')
+DELAY, SUB, SHAKER, RISER = 81, 84, 120, 121      # PSG-lagen (kosten geen DirectSound-kanalen)
+EYES_BAR, BURST_BAR = 2, 3                        # transitie: ogen op maat 2, de tank barst op maat 3
+BREATH = (3, 4)  # maat 3: ademmaat voor de cry van Mewtwo; maat 4: opbouw naar de beat
 KICK, SNARE, CLAP, HH, OHH, CRASH, ORCH = 36, 38, 39, 42, 46, 57, 40
-A_START, B_START, C_START, END = 1, 9, 17, 25
+A_START, B_START, C_START, END = 5, 13, 21, 29
 
 N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'D#': 3, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'Ab': 8,
      'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
@@ -75,31 +77,47 @@ HOOK = {   # C: de euforische hook
 
 
 def build():
-    parts = {k: [] for k in ('lead', 'organ', 'echo', 'pluck', 'pad', 'gate', 'choir', 'bass', 'timp', 'drums', 'hats')}
+    parts = {k: [] for k in ('lead', 'organ', 'echo', 'pluck', 'pad', 'gate', 'choir', 'bass', 'timp', 'drums', 'hats',
+                             'delay', 'sub', 'shaker', 'riser')}
 
-    # ---- intro / transitie (maat 0) ----
-    parts['pad'] += [[0, 3 * BAR // 4, p('A2'), 70], [0, 3 * BAR // 4, p('E3'), 64]]          # drone
-    parts['choir'] += [[0, 3 * BAR // 4, p('A3'), 60]]
-    parts['drums'] += [[t, t + S16, KICK, 70 + i * 8] for i, t in enumerate((0, 2 * S16, 4 * S16, 6 * S16, 8 * S16, 10 * S16))]  # hartslag
-    eyes = 12 * S16                                                                          # tel 3: de ogen
-    parts['pad'] += [[eyes, eyes + 4 * S16, n, 112] for n in (p('A#3'), p('E4'), p('A#4'))]  # tritonus-aanslag
-    parts['timp'] += [[eyes, eyes + 2 * S16, p('A2'), 120]]
-    for k, st in enumerate((14 * S16, 14 * S16 + 8, 15 * S16)):                              # drie barsten
-        parts['drums'] += [[st, st + 8, ORCH, 96 + k * 12]]
-        parts['pluck'] += [[st, st + 8, p('E6') + k * 3, 90]]
-    burst = BAR                                                                              # maat 1 tel 0: de tank barst
+    # ---- filmische intro = de transitie (maat 0-2), tank barst op maat 3 ----
+    for b in range(0, BURST_BAR):                                                 # drone + koor, steeds voller
+        t0 = b * BAR
+        parts['pad'] += [[t0, t0 + BAR - 8, p('A2'), 54 + b * 10], [t0, t0 + BAR - 8, p('E3'), 50 + b * 10]]
+        parts['choir'] += [[t0, t0 + BAR - 8, p('A3') + (0, 0, 1)[b], 56 + b * 10]]
+    for b in (0, 1):                                                              # langzame hartslag (lub-dub)
+        for beat in (0, 2):
+            t = b * BAR + beat * TPB
+            parts['drums'] += [[t, t + S16, KICK, 64 + b * 16], [t + S16 + 8, t + 2 * S16 + 8, KICK, 50 + b * 16]]
+    parts['organ'] += [[BAR, BAR + 2 * TPB - 8, n, 70] for n in (p('A3'), p('C4'), p('E4'))]       # de dagboekpagina's
+    parts['organ'] += [[BAR + 2 * TPB, 2 * BAR - 8, n, 74] for n in (p('Bb3'), p('D4'), p('F4'))]
+    parts['pluck'] += [[BAR + i * 2 * S16, BAR + i * 2 * S16 + 6, p('E6'), 30] for i in range(8)]  # tikkende pen
+    eyes = EYES_BAR * BAR                                                         # de ogen lichten op
+    parts['pad'] += [[eyes, eyes + 2 * TPB, n, 112] for n in (p('A#3'), p('E4'), p('A#4'))]       # tritonus-aanslag
+    parts['timp'] += [[eyes, eyes + TPB, p('A2'), 124]]
+    parts['drums'] += [[eyes + i * TPB, eyes + i * TPB + S16, KICK, 96] for i in range(2)]        # hart versnelt
+    parts['drums'] += [[eyes, eyes + 2 * TPB, CRASH, 90]]
+    for k, st in enumerate((2 * TPB, 2 * TPB + 64, 2 * TPB + 128)):              # drie barsten in het glas
+        parts['drums'] += [[eyes + st, eyes + st + 8, ORCH, 96 + k * 12]]
+        parts['pluck'] += [[eyes + st, eyes + st + 8, p('E6') + k * 3, 90]]
+    burst = BURST_BAR * BAR                                                       # de tank barst
     parts['drums'] += [[burst, burst + 2 * TPB, CRASH, 127], [burst, burst + S16, KICK, 127]]
     parts['timp'] += [[burst, burst + TPB, p('A2'), 127]]
+    # ademmaat (de cry van Mewtwo): alleen drone en koor
+    t0 = BREATH[0] * BAR
+    parts['pad'] += [[t0 + TPB, t0 + BAR - 8, p('A2'), 66], [t0 + TPB, t0 + BAR - 8, p('E3'), 60]]
+    parts['choir'] += [[t0 + TPB, t0 + BAR - 8, p('E4'), 70]]
+    # opbouw naar de beat: kick in kwarten, snareroffel 8en -> 16en, ruis-riser, stijgende strijkers
+    t0 = BREATH[1] * BAR
+    parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + S16, KICK, 90 + i * 8] for i in range(4)]
+    parts['drums'] += [[t0 + i * S16, t0 + i * S16 + 8, SNARE, 50 + i * 4] for i in list(range(0, 8, 2)) + list(range(8, 16))]
+    parts['riser'] = [[t0 + i * 2 * S16, t0 + i * 2 * S16 + 2 * S16, 60 + i * 3, 60 + i * 8] for i in range(8)]
+    parts['gate'] += [[t0 + i * 2 * S16, t0 + i * 2 * S16 + S16, p('E4') + i, 70 + i * 4] for i in range(8)]
 
     for b in range(A_START, END):
         ch = PROG[b]
         root, pad = CH[ch]
         t0 = b * BAR
-        if b == BREATH:                     # ademmaat: alleen een lage drone en twee zachte kicks
-            parts['pad'] += [[t0 + 2 * TPB, t0 + BAR - 8, p('A2'), 60], [t0 + 2 * TPB, t0 + BAR - 8, p('E3'), 56]]
-            parts['drums'] += [[t0 + 2 * TPB, t0 + 2 * TPB + S16, KICK, 80], [t0 + 3 * TPB, t0 + 3 * TPB + S16, KICK, 96]]
-            parts['drums'] += [[t0 + 3 * TPB + i * S16, t0 + 3 * TPB + i * S16 + 8, SNARE, 50 + i * 15] for i in range(4)]
-            continue
         # bas: A en C jagend in 16en, B offbeat-trancebas
         r = 12 * 3 + N[root] if N[root] >= 4 else 12 * 4 + N[root]       # E2..D#3
         if b < B_START:
@@ -146,6 +164,20 @@ def build():
             parts['pluck'] += [[t0 + i * S16, t0 + i * S16 + 10, p(pad[i % 3]) + 24 + (12 if i % 8 >= 4 else 0), 72]
                                for i in range(16)]
 
+    # ---- maximalistisch, op de PSG-kanalen (kost geen DirectSound-kanalen; het bestaande blijft gelijk) ----
+    parts['delay'] = [[s + 3 * S16, e + 3 * S16, n, int(v * 0.6)] for s, e, n, v in parts['pluck'] if s >= A_START * BAR]
+    for b in range(A_START, END):
+        t0, root = b * BAR, CH[PROG[b]][0]
+        if b < B_START or b >= C_START:
+            parts['sub'] += [[t0 + h * 2 * TPB, t0 + h * 2 * TPB + 2 * TPB - 8, 12 * 3 + N[root], 100] for h in (0, 1)]
+            parts['shaker'] += [[t0 + i * S16, t0 + i * S16 + 6, 84, 90 if i % 4 == 2 else 50] for i in range(16)]
+        else:
+            parts['sub'] += [[t0, t0 + BAR - 8, 12 * 3 + N[root], 70]]
+    for b in (C_START - 2, C_START - 1):                                           # riser naar de drop
+        t0 = b * BAR
+        parts['riser'] += [[t0 + i * TPB, t0 + i * TPB + TPB, 56 + (b - C_START + 2) * 12 + i * 3, 50 + (b - C_START + 2) * 30 + i * 6]
+                           for i in range(4)]
+
     for k in parts:
         parts[k] = dedupe(parts[k])
 
@@ -157,7 +189,11 @@ def build():
     lines = [('\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 165  @ 82'
               if l.rstrip().endswith('@ 82') else
               '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188  @ 83'
-              if l.rstrip().endswith('@ 83') else l) for l in lines]
+              if l.rstrip().endswith('@ 83') else
+              '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84'
+              if l.rstrip().endswith('@ 84') else
+              '\tvoice_noise_alt 60, 0, 0, 3, 0, 15, 2  @ 121'
+              if l.rstrip().endswith('@ 121') else l) for l in lines]
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(lines))
 
     rel = releases(VG)
@@ -176,12 +212,16 @@ def build():
 
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
-    song.loop = ((BREATH + 1) * BAR, END * BAR)      # de ademmaat niet herhalen
+    song.loop = (A_START * BAR, END * BAR)          # intro en ademmaten niet herhalen
     layout = [('lead', LEAD, 76, 0, 64), ('organ', ORGAN, 104, 7, 64), ('gate', PAD, 70, 8, 64), ('echo', LEAD, 70, 1, 96), ('pluck', PLUCK, 38, 2, 40),
               ('pad', PAD, 78, 3, 64), ('choir', CHOIR, 76, 4, 64), ('bass', BASS, 112, 5, 64),
               ('timp', TIMPANI, 110, 6, 64)]
     for k, prog, vol, ch, pan in layout:
         song.add(parts[k], prog, vol, ch, pan)
+    for k, prog, vol, ch, pan in (('delay', DELAY, 30, 10, 88), ('sub', SUB, 60, 11, 64), ('shaker', SHAKER, 34, 12, 70),
+                                  ('riser', RISER, 44, 13, 64)):
+        song.add(parts[k], prog, vol, ch, pan)
+        layout.append((k, prog, vol, ch, pan))
     song.add(sorted(parts['drums'] + parts['hats']), DRUMS, 104, 9)
     written = {k for k, *_ in layout} | {'drums', 'hats'}
     assert not [k for k in parts if parts[k] and k not in written], 'partij niet weggeschreven'

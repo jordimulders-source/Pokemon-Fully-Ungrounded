@@ -26,8 +26,13 @@ TRUMPET, HORN, CHOIR, TUBA, TAIKO, TIMPANI, DRUMS = 84, 85, 86, 87, 88, 47, 0
 EXTRA = {84: 56, 85: 60, 86: 52, 87: 58, 88: 116}   # nieuwe programma's -> instrument uit grounded_gm
 LOOP_START, LOOP_END = 20, 40
 SLOW_START = {4: 0.55, 5: 0.60, 6: 0.66, 7: 0.73, 8: 0.80, 9: 0.87, 10: 0.94, 11: 1.0}
-DIP = {28: [1.0, 0.95, 0.9, 0.85], 29: [0.8, 0.76, 0.72, 0.68], 30: [0.65, 0.65, 0.65, 0.65], 31: [0.7, 0.8, 0.9, 1.0]}
-QUIET = (29, 30)                        # hier vallen drums en arpeggio's weg en is alles zachter
+# 'bijkomen': de melodie rust in maat 28-29 (na de steek op 28). Al aan het eind van maat 27 afremmen, zodat de steek
+# vertraagd valt; traagst in de rust; in 30-31 weer opbouwen; vanaf 32 de climax iets bóven het normale tempo.
+DIP = {27: [0.95, 0.9, 0.85, 0.8], 28: [0.72, 0.66, 0.62, 0.6], 29: [0.6, 0.6, 0.62, 0.65],
+       30: [0.7, 0.76, 0.82, 0.88], 31: [0.92, 0.96, 1.0, 1.03]}
+CLIMAX = 32                             # maat 32-39: Regigigas op volle kracht (tempo 1,06, fanfare, koor, pauken)
+CLIMAX_TEMPO = 1.06
+QUIET = (28, 29)                        # hier vallen drums en arpeggio's weg en is alles zachter
 MUTE_TRACKS = (4, 5, 7)                 # arpeggio's en drums van het origineel
 
 
@@ -108,8 +113,16 @@ def build():
                    for b in sorted(roots) if 8 <= b < LOOP_END]
     add['taiko'] = [[b * BAR + o, b * BAR + o + 24, 48, 112] for b in range(8, LOOP_END) for o in (0, 48)
                     if b not in QUIET]
-    add['crash'] = [[b * BAR, b * BAR + 48, 57, 120] for b in (8, LOOP_START, 32)]
-    add['roll'] = [[31 * BAR + i * 6, 31 * BAR + i * 6 + 6, 48, 40 + i * 5] for i in range(16)]   # paukenroffel
+    add['crash'] = [[b * BAR, b * BAR + 48, 57, 120] for b in (8, LOOP_START, 32, 34, 36, 38)]
+    # climax: trompetfanfare op de grondtoon (grondtoon+2 oct., kwint, grondtoon) en een tweede koorstem
+    add['fanfare'] = []
+    for b in range(34, LOOP_END):
+        r = roots[b] % 12 + 60
+        add['fanfare'] += [[b * BAR, b * BAR + 36, r + 12, 112], [b * BAR + 36, b * BAR + 48, r + 7, 100],
+                           [b * BAR + 48, b * BAR + 90, r + 12, 118]]
+    add['choir2'] = []        # (tweede koorstem paste niet naast het origineel + fanfare)
+    add['hits'] = [[b * BAR + o, b * BAR + o + 12, 48, 80 + (b - 34) * 6] for b in range(34, LOOP_END) for o in (0, 48)]
+    add['roll'] = [[31 * BAR + i * 6, 31 * BAR + i * 6 + 6, 48, 40 + i * 5] for i in range(16)]   # paukenroffel naar de climax
     for k in add:
         for e in add[k]:
             if bar_of(e[0]) in QUIET:
@@ -128,16 +141,18 @@ def build():
                 continue
             preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
     rel = releases(VG)
-    progs = {'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'tuba': TUBA, 'taiko': TAIKO, 'roll': TIMPANI}
+    progs = {'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
+             'roll': TIMPANI, 'hits': TIMPANI, 'fanfare': TRUMPET}
     tail = {k: release_ticks(rel.get(p, 200), TPB, 160) for k, p in progs.items()}
-    for k in ('choir', 'tuba'):
+    for k in ('choir', 'choir2', 'tuba', 'fanfare'):
         add[k] = detach(add[k], tail[k])
-    order = ['roll', 'crash', 'choir', 'tuba', 'taiko']
-    kept = allocate(add, order, tail=tail, drum_parts=('crash',), drum_len=TPB, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
+    order = ['roll', 'crash', 'fanfare', 'choir', 'tuba', 'choir2', 'hits', 'taiko']
+    kept = allocate(add, order, tail=tail, drum_parts=(), drum_len=None, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
     for k in order:
         if len(kept[k]) < len(add[k]) * 0.97:
             print('  %s: %d van %d noten vallen weg (te vol)' % (k, len(add[k]) - len(kept[k]), len(add[k])))
 
+    kept['roll'] = sorted(kept['roll'] + kept['hits'])      # pauken samen op één spoor
     out = mido.MidiFile(type=1, ticks_per_beat=TPB)
     cond = mido.MidiTrack()
     ev = [(0, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO))]
@@ -147,7 +162,7 @@ def build():
     for b, fs in DIP.items():
         for i, f in enumerate(fs):
             ev.append((b * BAR + i * TPB, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
-    ev.append((32 * BAR, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO)))
+    ev.append((CLIMAX * BAR, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / CLIMAX_TEMPO))))
     ev.append((LOOP_START * BAR, mido.MetaMessage('marker', text='[')))
     ev.append((end, mido.MetaMessage('marker', text=']')))
     last = 0
@@ -157,7 +172,7 @@ def build():
     out.tracks.append(cond)
     for i in range(1, 9):
         out.tracks.append(copy_track(src.tracks[i], i in MUTE_TRACKS))
-    for k, prog, vol, ch, pan in (('choir', CHOIR, 76, 11, 64),
+    for k, prog, vol, ch, pan in (('fanfare', TRUMPET, 92, 8, 72), ('choir', CHOIR, 76, 10, 56), ('choir2', CHOIR, 70, 11, 72),
                                   ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
                                   ('crash', DRUMS, 100, 15, 64)):
         out.tracks.append(note_track(kept[k], prog, vol, ch, pan))

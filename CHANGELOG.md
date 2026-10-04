@@ -16401,3 +16401,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Loop:** bronmaat 53–85, in de originele volgorde (couplet, "want more and more", refrein, "na na na").
 - De melodie is het zangspoor uit de MIDI, als één stem: trompet met een PSG-vierkant in unisono. De bladmuziek wordt niet meer als extra stem gebruikt.
 - De loop springt op een natuurlijke plek terug: dezelfde overgang als in het nummer zelf.
+
+### [v.0.9.43] - Regigigas v3: inzinking op de rust, climax op volle kracht
+- **Inzinking:** de vertraging begint nu al aan het eind van maat 27, vlak voor de rust in de melodie (maat 28–29). Daar is hij het traagst, daarna bouwt hij in de lange noten weer op.
+- **Climax (maat 32–39), iets dat de originele Regi-deuntjes niet hebben:**
+  - Regigigas gaat voorbij zijn normale tempo (1,06×).
+  - Een trompetfanfare op de grondtonen.
+  - Pauken op 1 en 3, en crashes om de 2 maten.
+- **Previews zonder snips:** `recaudio.py` neemt twee keer op (32768 en 44100 Hz). Elke mGBA-glitch wordt vervangen door het echte geluid uit de andere opname, niet meer door een rechte lijn.

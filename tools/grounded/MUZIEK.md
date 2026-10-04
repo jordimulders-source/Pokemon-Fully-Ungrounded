@@ -98,6 +98,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   tel vertragen, niet per maat (Jordi: 'te laat, niet lekker').
 - Vanilla-nummers zijn voor 5 kanalen gemaakt maar gebruiken er tot ±9 (de engine kapte toen af). Tel ze mee als
   preset in `allocate()`. Legendary-gevechten mogen 11 kanalen (MAX_PER_SONG in de lint).
+- **recaudio neemt twee keer op** (32768 en 44100 Hz) en vervangt elk glitchvenster door het echte geluid uit de
+  andere opname (de glitchtijden hangen af van de samplerate). Lineair overbruggen liet een hoorbaar gaatje ('snip').
+- Regigigas v3: de inzinking volgt de muziek: afremmen vóór de rust van de melodie (maat 27), traagst in de rust,
+  opbouwen in de lange noten; daarna een climax die het origineel niet heeft (tempo 1,06×, trompetfanfare op de
+  grondtonen, pauken, crashes om de 2 maten). Zoek bij een tempo-effect eerst de frasen/rusten in de melodie.
 - recaudio: tweede glitchpatroon (exacte nullen om en om in niet-stille muziek) wordt ook overbrugd (Dave-snip op 3 s).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

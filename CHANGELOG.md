@@ -15908,3 +15908,12 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Rode driehoek aan het eind** (`OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED`): geen puzzel, wel de opbouw van Birth Island (de steen spat uiteen, Deoxys lv 70 zakt uit de ruimte, gevecht met de Deoxys-transitie). Daarna haalt het Space Center je terug. Flags gedeeld met Birth Island (gevangen = weg, verslagen = terug na de League).
 - **Wilde Pokémon op de meteoriet** (12 unieke soorten, lv 45–53): Minior, Lunatone, Solrock, Elgyem, Clefairy, Metang, Beheeyem, Cleffa, Gothitelle, Clefable, Porygon-Z, Metagross.
 - **Gevechtsachtergrond in de ruimte:** `BATTLE_ENVIRONMENT_SPACE` = de grot met een donker paars palet.
+
+### [v.0.8.111] - Battle Stadium: gasten, Ditto, meme-trainers, collecties
+- **Gasten in de pool** (klasse GUEST STAR): Wario, Yoshi (de ongebruikte huilende), gen 1-Golbat en -Grimer, Boo, Mew (onder de truck vandaan), vier Shy Guys (SHY GUY, SHYER GUY, FLY GUY, SHADY GUY) met elk een Ogerpon-masker als ace, en de Burglar uit Red/Blue (klasse BURGLAR). Bronnen in `graphics/grounded/trainers/guests/`, tool `tools/grounded/guest_trainer_pics.py` (raster teruggevonden, ruis uit JPEG/WebP verwijderd).
+- **Ditto-trainer:** een Youngster met een Ditto-gezicht die alleen "..." en ":)" zegt, met het Pokopia-team (PEAKYCHU, CHEF, PROFESSOR, MOSSLAX, SMEARGURU, Tinkaton). Nog niet in de overwereld (voorstel: Route 115).
+- **Youngster Joey** met een absurd sterke shiny Poochyena (top percentage, plus Rattata, Mightyena en Obstagoon); **Rich Boy Winston** volledig shiny met luxe-items.
+- **Meme-trainers** als Stadium-versie (de grap blijft, op lv 50): Donald (zes Ditto die hij "bugs" noemt), Ivan (Magikarp met Hydro Pump, rode Gyarados), Johnson (alleen Metronome), Thomas (de Zangoose-familie).
+- Stadium-tegenstanders hebben een eigen intro (trainer slide, `src/data/stadium_slides.h`) en eigen nederlaag- en winsttekst.
+- **Zeventien collecties als compagnon** (klasse "THE": "THE REGIS sent out Regirock!"), vrij te spelen met Stadium-punten: MASCOTS 1, STARTERS 3, FOSSILS 6, EEVEES 10, LAKE TRIO 15, REGIS 20, BIRDS 25, BEASTS 30, PSEUDOS 35, SWORDS 40, LOYAL 3 45, TAPUS 50, GENIES 55, ULTRAS 60, TREASURES 70, WEATHER 85, CREATORS 100. In de arena staan ze als hun eerste Pokémon.
+- Pool nu 94 deelnemers en 111 compagnons. Fix: een compagnon met voorplaatje staat naast de speler in plaats van eroverheen.

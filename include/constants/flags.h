@@ -1289,7 +1289,7 @@
 #define FLAG_ITEM_MANGROVE_MIRE_BLACK_SLUDGE                        0x4D3 // Project Grounded: Mangrove Mire
 #define FLAG_ITEM_MANGROVE_MIRE_MYSTIC_WATER                        0x4D4 // Project Grounded: Mangrove Mire
 #define FLAG_ITEM_MANGROVE_MIRE_ABSORB_BULB                         0x4D5 // Project Grounded: Mangrove Mire
-#define FLAG_ITEM_MANGROVE_MIRE_TM                                  0x4D6 // Project Grounded: Mangrove Mire (TM)
+#define FLAG_ITEM_MANGROVE_MIRE_TOXIC_ORB                           0x4D6 // Project Grounded: Mangrove Mire (Toxic Orb)
 #define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_BIG_ROOT                     0x4D7 // Project Grounded: Mangrove Mire
 #define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_ULTRA_BALL                   0x4D8 // Project Grounded: Mangrove Mire
 #define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag

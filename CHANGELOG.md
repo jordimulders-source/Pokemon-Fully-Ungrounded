@@ -16244,3 +16244,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Nieuw decor achteraan Lavaridge** (`tools/grounded/lavaridge_decor.py`, eigen palet 12; bestaande kaarten veranderen niet): gele **zwavelkristallen**, **gloeiende scheuren**, as-hoopjes, kleine en grote keien, **gestolde lava** (beloopbaar), een stronk en een dode, verkoolde boom, telkens op grotgrind en op berggrond.
 - **Lavabuis:** zes nissen met zwavelkristallen, gestolde lavaplekken, keien, as en scheuren, meer variatie in de vloer.
 - **Top van Mt. Chimney:** drie extra nissen en twee rotspartijen (terrassen minder rechthoekig), plukken as-gras, dode bomen en stronken, gestolde lavastromen vanaf het kratermeer, zwavel langs de kraterrand en tien stoompluimen. Paden, events, zichtlijnen en het Strength-pad blijven vrij (gecontroleerd door `chimney_ext.py`).
+- **Mangrove Mire:** TM Rain Dance (lag er dubbel; TM's zijn herbruikbaar) vervangen door een **Toxic Orb**.

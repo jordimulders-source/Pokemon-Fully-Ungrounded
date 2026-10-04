@@ -1,7 +1,10 @@
 """Project Grounded: Liberty Garden, het eilandje van Victini (post-game, Victory-gauntlet).
 Layout = Southern Island (buitenkant) met de bosgrot dicht en de open plek verbreed tot een tuin:
-een geplaveid plein (Rustboro) met fontein, lantaarns en bloemen. Victini staat boven de fontein.
+een geplaveid plein (Rustboro) met fontein, lantaarns en bloemen.
 De veerboot legt aan bij de steiger (13,22), net als bij Southern Island.
+Gauntlet: het kronkelpad van de steiger naar het plein heeft vier knelpunten van 2 breed; op elk staat een
+uitdager (zicht 1) die de ene helft blokkeert en de andere ziet, dus je moet ze op volgorde verslaan.
+V wacht bij de fontein (aanspreken). Na de vijfde springt Victini van de rechterlantaarn naar de fontein.
 Idempotent; controleert de bereikbaarheid. Gebruik: python3 tools/grounded/maptools/liberty_garden.py"""
 import json, os, shutil, struct
 from collections import deque
@@ -58,24 +61,48 @@ for (fx, fy) in [(8, 6), (9, 6), (8, 7), (9, 9), (8, 9), (9, 10), (19, 6), (20, 
 
 SIGN = (10, 6)
 put(SIGN[0], SIGN[1], 0x003, True)
+DOCK_SIGN = (11, 21)
+put(DOCK_SIGN[0], DOCK_SIGN[1], 0x003, True)
 
 open('data/layouts/%s/map.bin' % NAME, 'wb').write(b''.join(struct.pack('<H', v[y][x]) for y in range(H) for x in range(W)))
 
-VICTINI = (14, 7)
+VICTINI = (14, 7)          # eindplek bij de fontein (setobjectxyperm in de scripts)
+VICTINI_LAMP = (17, 6)     # startplek: de kop van de rechterlantaarn
 SAILOR, DOCK = (13, 23), (13, 22)
+# (naam, gfx, plek, kijkrichting, gezien vakje of None = aanspreken)
+GAUNTLET = [
+    ('VANCE', 'OBJ_EVENT_GFX_BLACK_BELT', (15, 19), 'RIGHT', (16, 19)),
+    ('VERNON', 'OBJ_EVENT_GFX_RICH_BOY', (21, 15), 'DOWN', (21, 16)),
+    ('VEGA', 'OBJ_EVENT_GFX_LASS', (24, 13), 'RIGHT', (25, 13)),
+    ('VESNA', 'OBJ_EVENT_GFX_HEX_MANIAC', (23, 9), 'UP', (23, 8)),
+    ('V', 'OBJ_EVENT_GFX_EXPERT_M', (16, 9), 'LEFT', None),
+]
+OBJS = {VICTINI, SAILOR} | {g[2] for g in GAUNTLET}
 
-# bereikbaarheid: van de steiger naar Victini (iemand moet naast Victini kunnen staan)
+# bereikbaarheid: van de steiger naar Victini, de borden en elke uitdager
 def walkable(x, y):
-    return 0 <= x < W and 0 <= y < H and not (v[y][x] >> 10) & 3 and (v[y][x] >> 12) in (3, 0) and (x, y) not in (VICTINI, SAILOR)
-seen = {DOCK}; q = deque([DOCK])
-while q:
-    x, y = q.popleft()
-    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-        n = (x + dx, y + dy)
-        if n not in seen and walkable(*n) and (v[n[1]][n[0]] >> 12) == 3:
-            seen.add(n); q.append(n)
-assert any((VICTINI[0] + dx, VICTINI[1] + dy) in seen for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0))), 'Victini onbereikbaar'
-assert any((SIGN[0] + dx, SIGN[1] + dy) in seen for dx, dy in ((0, 1),)), 'bord onbereikbaar'
+    return 0 <= x < W and 0 <= y < H and not (v[y][x] >> 10) & 3 and (v[y][x] >> 12) == 3 and (x, y) not in OBJS
+def flood(extra_block=()):
+    seen = {DOCK}; q = deque([DOCK])
+    while q:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            n = (x + dx, y + dy)
+            if n not in seen and walkable(*n) and n not in extra_block:
+                seen.add(n); q.append(n)
+    return seen
+def near(seen, p, dirs=((0, 1), (0, -1), (1, 0), (-1, 0))):
+    return any((p[0] + dx, p[1] + dy) in seen for dx, dy in dirs)
+seen = flood()
+assert near(seen, VICTINI), 'Victini onbereikbaar'
+assert near(seen, SIGN, ((0, 1),)) and near(seen, DOCK_SIGN, ((0, 1), (1, 0))), 'bord onbereikbaar'
+for name, gfx, pos, face, sight in GAUNTLET:
+    assert pos in {(x, y) for y in range(H) for x in range(W) if not (v[y][x] >> 10) & 3}, name + ' staat op een muur'
+    assert near(seen, pos), name + ' onbereikbaar'
+    if sight:
+        # gauntlet: wie het geziene vakje vermijdt, komt niet bij het plein (dus niet langs deze uitdager)
+        assert not near(flood({sight}), VICTINI), name + ' kan omzeild worden'
+        assert sight in seen and sight == (pos[0] + {'RIGHT': 1, 'LEFT': -1}.get(face, 0), pos[1] + {'DOWN': 1, 'UP': -1}.get(face, 0))
 
 lj = open('data/layouts/layouts.json').read()
 if '"LAYOUT_%s"' % CONST not in lj:
@@ -93,10 +120,11 @@ if '"LAYOUT_%s"' % CONST not in lj:
     },''' % (CONST, NAME, W, H, NAME, NAME) + lj[j:]
     open('data/layouts/layouts.json', 'w').write(lj)
 
-def obj(lid, gfx, pos, mv, script, flag='0', elev=3):
+def obj(lid, gfx, pos, mv, script, flag='0', elev=3, sight=0):
     return {'local_id': lid, 'graphics_id': gfx, 'x': pos[0], 'y': pos[1], 'elevation': elev, 'movement_type': mv,
-            'movement_range_x': 0, 'movement_range_y': 0, 'trainer_type': 'TRAINER_TYPE_NONE',
-            'trainer_sight_or_berry_tree_id': '0', 'script': script, 'flag': flag}
+            'movement_range_x': 0, 'movement_range_y': 0,
+            'trainer_type': 'TRAINER_TYPE_NORMAL' if sight else 'TRAINER_TYPE_NONE',
+            'trainer_sight_or_berry_tree_id': str(sight), 'script': script, 'flag': flag}
 
 m = json.load(open('data/maps/%s/map.json' % SRC))
 m.update({'id': 'MAP_' + CONST, 'name': NAME, 'layout': 'LAYOUT_' + CONST, 'region_map_section': 'MAPSEC_LIBERTY_GARDEN',
@@ -104,13 +132,16 @@ m.update({'id': 'MAP_' + CONST, 'name': NAME, 'layout': 'LAYOUT_' + CONST, 'regi
 m['object_events'] = [
     obj('LOCALID_LIBERTY_GARDEN_SAILOR', 'OBJ_EVENT_GFX_SAILOR', SAILOR, 'MOVEMENT_TYPE_FACE_UP', NAME + '_EventScript_Sailor'),
     obj('LOCALID_LIBERTY_GARDEN_SS_TIDAL', 'OBJ_EVENT_GFX_SS_TIDAL', (13, 25), 'MOVEMENT_TYPE_FACE_RIGHT', '0x0', elev=1),
-    obj('LOCALID_LIBERTY_GARDEN_VICTINI', 'OBJ_EVENT_GFX_SPECIES(VICTINI)', VICTINI, 'MOVEMENT_TYPE_FACE_DOWN',
+    obj('LOCALID_LIBERTY_GARDEN_VICTINI', 'OBJ_EVENT_GFX_SPECIES(VICTINI)', VICTINI_LAMP, 'MOVEMENT_TYPE_FACE_DOWN',
         NAME + '_EventScript_Victini', 'FLAG_HIDE_LIBERTY_GARDEN_VICTINI'),
-]
+] + [obj('LOCALID_LIBERTY_GARDEN_' + name, gfx, pos, 'MOVEMENT_TYPE_FACE_' + face,
+         NAME + '_EventScript_' + name.capitalize(), sight=1 if sight else 0) for name, gfx, pos, face, sight in GAUNTLET]
 m['warp_events'] = []
 m['coord_events'] = []
 m['bg_events'] = [{'type': 'sign', 'x': SIGN[0], 'y': SIGN[1], 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
-                   'script': NAME + '_EventScript_Sign'}]
+                   'script': NAME + '_EventScript_Sign'},
+                  {'type': 'sign', 'x': DOCK_SIGN[0], 'y': DOCK_SIGN[1], 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
+                   'script': NAME + '_EventScript_DockSign'}]
 os.makedirs('data/maps/' + NAME, exist_ok=True)
 open('data/maps/%s/map.json' % NAME, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
 

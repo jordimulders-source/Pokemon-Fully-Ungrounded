@@ -1506,36 +1506,3 @@ SlateportCity_Text_ProfOakDone:
 	.string "Unlike my grandson.\p"
 	.string "Smell ya later, as he says.\n"
 	.string "Every. Single. Time.$"
-
-@ Project Grounded: Victory-gauntlet (post-game), uitdager Vernon. Zie LibertyGarden/scripts.inc.
-SlateportCity_EventScript_VictoryChallengerVernon::
-	goto_if_unset FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_VictoryChallengerVernonNotYet
-	trainerbattle_single TRAINER_VICTORY_VERNON, SlateportCity_Text_VictoryVernonIntro, SlateportCity_Text_VictoryVernonDefeat, SlateportCity_EventScript_VictoryChallengerVernonStamp
-	msgbox SlateportCity_Text_VictoryVernonPost, MSGBOX_AUTOCLOSE
-	end
-
-SlateportCity_EventScript_VictoryChallengerVernonNotYet::
-	msgbox SlateportCity_Text_VictoryVernonNotYet, MSGBOX_NPC
-	end
-
-SlateportCity_EventScript_VictoryChallengerVernonStamp::
-	call VictoryGauntlet_EventScript_GiveStamp
-	release
-	end
-
-SlateportCity_Text_VictoryVernonNotYet:
-	.string "CHAMPIONS only, peasant.\p"
-	.string "I had my butler check your net worth.\n"
-	.string "It's mostly POTIONS.$"
-
-SlateportCity_Text_VictoryVernonIntro:
-	.string "Victory? I bought mine. Three times,\n"
-	.string "actually. Volume discount.\p"
-	.string "Let's see if yours is on sale.$"
-
-SlateportCity_Text_VictoryVernonDefeat:
-	.string "Impossible! I paid for this outcome!$"
-
-SlateportCity_Text_VictoryVernonPost:
-	.string "You'll be hearing from my lawyer.\p"
-	.string "He's a PERSIAN. He bills by the scratch.$"

@@ -6936,9 +6936,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Liberty Pass"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ferry ticket to\n"
-            "Liberty Garden.\n"
-            "Smells of victory."),
+            "An invitation to\n"
+            "five fights and a\n"
+            "small miracle."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

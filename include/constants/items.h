@@ -1024,7 +1024,7 @@
 
 #define ITEM_SIX_PACK 855 // Project Grounded: healt het hele team (60 HP per Pokémon)
 
-#define ITEM_LIBERTY_PASS 856 // Project Grounded: ticket naar Liberty Garden (Victini), na de Victory-gauntlet
+#define ITEM_LIBERTY_PASS 856 // Project Grounded: uitnodiging voor de Victory-gauntlet op Liberty Garden (Victini)
 
 #define ITEMS_COUNT 857
 #define ITEM_FIELD_ARROW ITEMS_COUNT

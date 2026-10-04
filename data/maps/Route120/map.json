@@ -760,7 +760,7 @@
       "x": 0,
       "y": 60,
       "elevation": 3,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_9",
       "var_value": "0",
       "script": "Route120_EventScript_ToMangroveMire"
     },
@@ -769,7 +769,7 @@
       "x": 0,
       "y": 61,
       "elevation": 3,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_9",
       "var_value": "0",
       "script": "Route120_EventScript_ToMangroveMire"
     }

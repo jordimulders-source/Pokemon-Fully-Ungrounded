@@ -8478,18 +8478,18 @@ static void Task_Rocket(u8 taskId)
 }
 
 // ---------------- Zarude: de jungle groeit van de randen dicht (bladerdek), lianen zwiepen van boven naar beneden, drie
-// klauwkrassen scheuren door het blad op de taiko-slagen van "Battle! Zarude" (168 BPM: maat = 86 frames; begin maat 2,
-// 3 en halverwege 3) en in de spanningsmaten doemt Zarude's silhouet op met gloeiende rode ogen die op de achtsten pulseren. Daarna zwart, net voor de koperfanfare.
+// klauwkrassen scheuren door het blad op de taiko-slagen van "Battle! Zarude" (168 BPM: maat = 86 frames) en op de
+// accent in maat 2 doemt Zarude's silhouet op met gloeiende rode ogen die op de achtsten pulseren. Daarna zwart, net voor de koperfanfare.
 // tiles (tools/grounded/route_transitions.py): 1-4 bladerdek, 5-7 bladrand, 8-9 liaan, 10 liaantip, 11.. klauwen
-#define ZARUDE_CLAW1   81
-#define ZARUDE_CLAW2   124
-#define ZARUDE_CLAW3   167
-#define ZARUDE_REVEAL  188
-#define ZARUDE_DARK    238
-#define ZARUDE_END     250
+#define ZARUDE_CLAW1   15
+#define ZARUDE_CLAW2   26
+#define ZARUDE_CLAW3   47
+#define ZARUDE_REVEAL  72
+#define ZARUDE_DARK    118
+#define ZARUDE_END     128
 
 static const u8 sZarudeVineCol[] = {3, 9, 16, 22, 27};
-static const u8 sZarudeVineStart[] = {20, 36, 60, 28, 76};
+static const u8 sZarudeVineStart[] = {4, 10, 18, 7, 24};
 static const u8 sZarudeVineLen[] = {9, 13, 7, 11, 14};
 static const s8 sZarudeVineBounce[] = {1, 2, 2, 1, 0, -1, -1, 0};
 static const u8 sZarudeClawStart[] = {ZARUDE_CLAW1, ZARUDE_CLAW2, ZARUDE_CLAW3};
@@ -8510,7 +8510,7 @@ static bool8 RTZarude_Update(struct Task *task)
 
     // 1. bladerdek: een vak is dicht als zijn diepte (afstand tot de rand) onder de drempel ligt; de drempel groeit.
     // Per vak alleen een vergelijking (de hele update moet ruim binnen een frame blijven).
-    threshold = (t * 21) >> 4; // ±5 s incl. de flits vooraf
+    threshold = (t * 54) >> 4; // ±3 s incl. de flits vooraf (blazers op ±5,7 s, na de gevechtsintro)
     for (r = 0; r < 20; r++)
     {
         u16 *row = &tilemap[r * 32];
@@ -8542,7 +8542,7 @@ static bool8 RTZarude_Update(struct Task *task)
     for (k = 0; k < 3; k++)
     {
         const u16 *claw = &sZarude_Claws[k * 600];
-        s32 prog = (t - sZarudeClawStart[k]) * 8;
+        s32 prog = (t - sZarudeClawStart[k]) * 12;
         if (prog < 0)
             continue;
         for (r = 0; r < 20; r++)
@@ -8575,7 +8575,7 @@ static bool8 RTZarude_Update(struct Task *task)
 
     // de wereld wordt jungle-donker
     if (t < ZARUDE_DARK)
-        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 4, 10), RGB(1, 6, 2));
+        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 3, 10), RGB(1, 6, 2));
 
     // silhouet: komt in maat 3 op, groeit langzaam; ogen pulseren op de achtsten (11 frames)
     if (t >= ZARUDE_REVEAL)
@@ -8584,11 +8584,11 @@ static bool8 RTZarude_Update(struct Task *task)
         s32 d = t - ZARUDE_REVEAL;
         u32 palNum = IndexOfSpritePaletteTag(RT_SPRITE_TAG);
         sil->invisible = FALSE;
-        RT_SetSprite(task, 120, 84 - (d >> 3), min(160 + d * 7, 512), 0);
+        RT_SetSprite(task, 120, 84 - (d >> 2), min(200 + d * 10, 512), 0);
         if (d == 4)
             PlayCry_Normal(SPECIES_ZARUDE, 0);
-        if (d < 24)
-            BlendPalettes(1 << (16 + palNum), 12 - (d >> 1), RGB_BLACK); // uit het donker
+        if (d < 12)
+            BlendPalettes(1 << (16 + palNum), 12 - d, RGB_BLACK); // uit het donker
         // ogen fel/dof
         gPlttBufferFaded[OBJ_PLTT_ID(palNum) + 8] = ((d % 11) < 4) ? RGB(31, 12, 6) : RGB(24, 2, 1);
     }

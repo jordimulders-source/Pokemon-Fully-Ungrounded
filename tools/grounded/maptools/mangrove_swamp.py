@@ -595,7 +595,7 @@ coords = [{"type": "trigger", "x": x, "y": y, "elevation": 3, "var": "VAR_TEMP_0
 mj = {
     "id": "MAP_MANGROVE_MIRE", "name": "MangroveMire", "layout": "LAYOUT_MANGROVE_MIRE",
     "music": "MUS_ROUTE119", "region_map_section": "MAPSEC_MANGROVE_MIRE", "requires_flash": False,
-    "weather": "WEATHER_FOG_HORIZONTAL", "map_type": "MAP_TYPE_ROUTE", "allow_cycling": True,
+    "weather": "WEATHER_JUNGLE_CYCLE", "map_type": "MAP_TYPE_ROUTE", "allow_cycling": True,
     "allow_escaping": False, "allow_running": True, "show_map_name": True,
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "connections": [],
@@ -649,7 +649,7 @@ assert rv[59 * RW + 1] & 0x3FF in (GRASS, SIGN_MT), hex(rv[59 * RW + 1])
 rv[59 * RW + 1] = val(SIGN_MT, 1, 3)
 open('data/layouts/Route120/map.bin', 'wb').write(struct.pack('<%dH' % (RW * RH), *rv))
 rj = json.load(open('data/maps/Route120/map.json'))
-if not any(c.get('script') == 'Route120_EventScript_ToMangroveMire' for c in rj['coord_events']):
+if not any(c.get('script') == 'Route120_EventScript_ToMangroveMire' for c in rj['coord_events']):  # VAR_TEMP_0 = speler-x (weer)
     rt = open('data/maps/Route120/map.json').read()
     add_c = ''.join(''',
     {
@@ -657,7 +657,7 @@ if not any(c.get('script') == 'Route120_EventScript_ToMangroveMire' for c in rj[
       "x": 0,
       "y": %d,
       "elevation": 3,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_9",
       "var_value": "0",
       "script": "Route120_EventScript_ToMangroveMire"
     }''' % y for y in (60, 61))

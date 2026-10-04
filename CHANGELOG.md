@@ -16027,3 +16027,11 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - **Eigen transitie** `B_TRANSITION_VICTINI` (idee van Jordi): een grote vlammende V vliegt van onder het beeld omhoog (V-create), slaat wit-heet in en zet het hele scherm in brand. Muziek: Mew-thema.
 - V staat in de Battle Stadium-pool (95 deelnemers, 112 compagnons; de puntendrempels schuiven één plek op).
 - Flags: FLAG_RECEIVED_LIBERTY_PASS (0x289), FLAG_HIDE_LIBERTY_GARDEN_VICTINI (0x28A), FLAG_VICTORY_GAUNTLET_EXPLAINED (0x28B).
+
+### [v.0.8.123] - Wilde tabellen: geen dubbele soorten meer
+- 225 dubbele slots in 111 wilde tabellen (land, surf, Rock Smash, per hengel) vervangen, zodat elke tabel alleen unieke soorten heeft. Alleen het dubbele slot is vervangen: geen soort verdwijnt, levels en zeldzaamheid blijven gelijk.
+- Voorkeur voor soorten die nog weinig of niet in de game zaten (geteld over alle wilde tabellen en trainers), passend bij de plek. Voorbeelden: Lillipup/Starly/Igglybuff/Happiny op Route 101, Nickit/Spinarak/Bonsly op Route 102, Basculin in vijvers en rivieren, Carnivine en Lurantis op Route 120, Pumpkaboo/Drifloon/Alola-Marowak in Mt. Pyre, Fearow op Jagged Pass en Sky Pillar, Gigalith in de Seafloor Cavern.
+- Keuzes vooral om de lore (Jordi, even kijken): Rotom-Wash aan de Super Rod op Route 122, Tatsugiri naast Dondozo in Ever Grande, Milotic in Sootopolis, Camerupt in de Magma Hideout, Basculegion in het meer van Mt. Pyre, een surfende Pikachu naast de surfende Alola-Raichu in Dewford. Safari Southwest/Southeast houden het starterthema (middenstadia van weinig gebruikte starterlijnen).
+- Dubbele paradoxen vervangen (Seafloor Room 8: Weavile, Victory Road B2F: Kingambit).
+- Bewust ongemoeid: Ashfrost (stadsuitzondering), Altering Cave, Artisan Cave, de ongebruikte Cave of Origin-kaarten, Battle Pyramid/Pike.
+- Volledig overzicht: `WILDE_TABELLEN.md`.

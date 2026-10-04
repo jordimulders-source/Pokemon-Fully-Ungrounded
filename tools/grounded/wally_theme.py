@@ -121,10 +121,9 @@ def build(v):
         if isinstance(prog, str):
             ev = drums_for(ev, prog, end)
         else:
-            for e in ev:                   # bron valt een 32ste te vroeg in (x.875): klinkt gehaast -> op de tel
-                if e[0] % 384 == 336:
-                    e[0] += 48
-                    e[1] = max(e[1], e[0] + 48)
+            if ti in (0, 3, 6):            # voorslag op x.875 (tel 11,875): de 2e frase klinkt gehaast t.o.v. de 1e
+                ev = [e for e in ev if e[0] % 384 != 336]
+            for e in ev:
                 e[2] += a.get('transpose', {}).get(ti, 0)
                 if ti in a.get('staccato', {}):
                     e[1] = min(e[1], e[0] + a['staccato'][ti])

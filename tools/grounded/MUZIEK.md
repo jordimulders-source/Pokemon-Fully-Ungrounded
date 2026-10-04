@@ -75,5 +75,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   (dubbele bassdrum verdrong instrumenten) → strak; gehaaste inzetten op x.875; engine 12 kanalen, release-bewust.
 - Wally ronde 3: resterende snips bleken opname (recpcm is schoon); drums afgekapt door DRUM_LEN; 5 te weinig
   gitaar → leadgitaar (overdrive) op de melodie; -V125 tegen de ruis.
+- Wally ronde 4: 'tweede beat gehaast' = een voorslagnoot op tel 11,875 die alleen in de 2e frase zit (bron-
+  transcriptie). Vergelijk bij zo'n klacht frase 1 en 2 noot voor noot; ritmes die herhaald horen te worden, moeten
+  gelijk zijn. Bas-anticipaties die in élke frase terugkomen zijn groove: laten staan.
+- Ruis/'vinyl': de 8-bit-mixer op 13.379 Hz. Zarude valt minder op door schone PSG-sporen. Op 21.024 Hz is de hoge
+  ruis ±40% lager (A/B voorgelegd aan Jordi; kost CPU, eerst lag meten).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

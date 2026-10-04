@@ -16337,3 +16337,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.30] - Poison Chain v3
 - De ketting van de Loyal Three is dichter bij de artwork. Grotere ringen (72 px) met een groot gat en een dunnere rand, slanke tussenschakels, en in totaal 5 stukken: halsband, staaf, ring, staaf en een open eindring.
+
+### [v.0.9.31] - Toxic Chain v4, Wally zonder gehaaste tweede frase
+- **Toxic Chain (Loyal Three):** de ketting volgt nu de artwork. Eén glanzende magenta buis met in elkaar gegoten ringen ("ooo"), en als eindstuk de herkenbare "halve schedel": een dikke ring met een groot oog en daaronder een steel met twee bolle lobben, groot in beeld.
+- **Wally 1–5:** de bron-MIDI had alleen in de tweede frase een extra voorslagnoot (tel 11,875), waardoor die gehaast klonk. Die noot is weg uit melodie, riff en viool. De bas-anticipaties staan weer op hun plek, want die horen bij de groove.

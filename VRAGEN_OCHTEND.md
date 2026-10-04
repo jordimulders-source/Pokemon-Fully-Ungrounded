@@ -2,6 +2,7 @@
 
 **Antwoorden 1-10 (5 okt):** 1 kort (direct de arena in, iedereen klaar) · 2 ja · 3 later · 4 nee, Gyarados eruit · 5 blijft · 6 ok · 7 tong · 8 willekeurig · 9 ok · 10 Route 115. Verwerkt in v0.8.114–0.8.115.
 **Antwoorden 11-17:** 11 Birth Island + ticket weg · 12 lv 70 · 13 eng en stil blijft · 14 Gothitelle weg · 15 zo laten, Toxic/Leech Seed zeldzaam · 16 relics naar 50 · 17 actlengte blijft; een run duurt voor een mens ±1 uur–1u20.
+**Antwoorden 18-21:** 18 niks wijzigen (bewuste buffs, eerst testen; Desolate Land niet te sterk) · 19c (verborgen abilities zijn niet verkrijgbaar) · 20 Delibird, Lumineon, Plusle, Minun, Beautifly, Dustox, Kecleon, Huntail/Gorebyss, Sandslash; rest blijft · 21 ja. Verwerkt in v0.8.116.
 
 Kort antwoorden mag ("1a, 2 ja, 3 Route 115"). Alles hieronder is al gebouwd of klaar om te bouwen; de vragen gaan over smaak en balans.
 

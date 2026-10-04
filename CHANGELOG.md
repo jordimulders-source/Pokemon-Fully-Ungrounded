@@ -15946,3 +15946,35 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Ditto-gezicht:** variant B (twee stipjes, brede Ditto-glimlach).
 - **Deoxys alleen in de ruimte:** het Aurora Ticket is uit de Exchange Service Corner (Birth Island is daarmee niet meer bereikbaar). Ruimte-Deoxys blijft lv 70, muziek blijft `MUS_SEALED_CHAMBER`.
 - **Ruimte-encounters:** Gothitelle eruit, Starmie erin (zelfde 4%-plek, lv 48–50; volgens de Pokédex komt Staryu/Starmie misschien uit de ruimte).
+
+### [v.0.8.116] - Pokémon Revisie: buffs uit het balansrapport, verborgen abilities naar slot 2
+Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Tail Glow, Linoone, Octillery, Kricketune, Crawdaunt, Magcargo/Desolate Land, Grumpig, Beldum) blijven bewust zoals ze zijn: die buffs wil Jordi eerst in de game testen.
+
+**Verborgen abilities zijn in deze romhack niet verkrijgbaar** (geen Ability Patch, geen DexNav). Daarom staat de sterke verborgen ability van deze soorten nu in **slot 2**; de oude slot 2 wordt de verborgen ability (alleen nog voor trainers). Hele evolutielijnen zijn meegenomen, zodat de ability bij het evolueren meegaat.
+- Pokémon Revisie: Volbeat — Levitate / **Prankster** (slot 2 was leeg).
+- Pokémon Revisie: Sandshrew, Sandslash — Sand Rush / **Tough Claws** / verborgen Rough Skin.
+- Pokémon Revisie: Carvanha, Sharpedo — Rough Skin / **Speed Boost** / verborgen Strong Jaw.
+- Pokémon Revisie: Makuhita — Guts / **Sheer Force** / verborgen Technician. Hariyama — Thick Fat / **Sheer Force** / verborgen Purifying Salt.
+- Pokémon Revisie: Mawile — Intimidate / **Sheer Force** / verborgen Hyper Cutter.
+- Pokémon Revisie: Bagon — Rock Head / **Sheer Force**; Shelgon — Rock Head / **Overcoat**; Salamence — Intimidate / **Moxie** (slot 2 was leeg).
+- Pokémon Revisie: Trapinch — Hyper Cutter / **Sheer Force** / verborgen Arena Trap.
+- Pokémon Revisie: Magikarp — Swift Swim / Rattled; Gyarados — Intimidate / **Moxie** (slot 2 was leeg). Magikarp-levels ongewijzigd.
+- Pokémon Revisie: Poochyena — Strong Jaw / Rattled / verborgen Intimidate; Mightyena — Strong Jaw / **Moxie** / verborgen Intimidate.
+- Pokémon Revisie: Pinsir — Hyper Cutter / **Moxie** / verborgen Mold Breaker. Heracross — Skill Link / **Moxie** / verborgen Guts.
+- Pokémon Revisie: Roserade — Natural Cure / **Technician** / verborgen Poison Point.
+- Pokémon Revisie: Sigilyph — Wonder Skin / **Tinted Lens** / verborgen Magic Guard.
+- Pokémon Revisie: Chinchou — Volt Absorb / **Water Absorb** / verborgen Illuminate (zoals Lanturn).
+- Pokémon Revisie: Venomoth — **Magic Guard** / Pollen Season / verborgen Shield Dust.
+- Pokémon Revisie: Kecleon — Color Change / **Protean**.
+- Niet verplaatst (Jordi: zo laten): Cacturne (Water Absorb) en Feebas (Adaptability).
+
+**Buffs:**
+- Pokémon Revisie: Delibird — Atk 55 → 85, Spe 75 → 95. Learnset: Present 1, Ice Shard 1, Ice Punch 15, Drill Peck 25, Icicle Crash 30, Brave Bird 40, Freeze-Dry 45. Present blijft (grap).
+- Pokémon Revisie: Lumineon — SpA 69 → 84. Scald 26 (i.p.v. Attract), Ice Beam 38, Hurricane 44.
+- Pokémon Revisie: Plusle — Nasty Plot op 25 (i.p.v. Fake Tears).
+- Pokémon Revisie: Minun — abilities **Volt Absorb** / Minus; Calm Mind op 22 (i.p.v. Copycat).
+- Pokémon Revisie: Beautifly — abilities Competitive / **Pollen Season** (i.p.v. Rivalry); HP 60 → 70.
+- Pokémon Revisie: Dustox — SpA 50 → 75 (bulky Quiver Dance-mot).
+- Pokémon Revisie: Clamperl — evolueert nu ook op **lv 30**: mannetje → Huntail, vrouwtje → Gorebyss. De Deep Sea Tooth/Scale blijven werken.
+
+**Marill (evolueert op 25):** de wilde Azumarill van 1% op Route 117 (lv 18–22) is nu een Marill; de trainer-Azumarill op lv 20 (Pokéfan-team naast Vanessa) ook.

@@ -565,6 +565,7 @@
 #define MUS_GROUNDED_VS_WALLY_4     627 // Project Grounded: Battle! Wally 4, groeiend (Meteor Falls)
 #define MUS_GROUNDED_VS_WALLY_5     628 // Project Grounded: Battle! Wally 5, heavy metal (Victory Road, rematches)
 #define MUS_GROUNDED_VS_REGIGIGAS   629 // Project Grounded: Battle! Regigigas, bombastische remix van het Regi-thema met Slow Start
+#define MUS_GROUNDED_VS_DAVE        630 // Project Grounded: Dave (Victory Road, Stadium), Freed From Desire (Gala)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

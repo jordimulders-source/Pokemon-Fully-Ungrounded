@@ -29,6 +29,7 @@ struct StadiumEntrant
     u8 rivalFor;        // 0 = altijd; 1 = alleen als de speler een jongen is (May), 2 = meisje (Brendan)
     u8 singlesMask;     // teamplekken voor singles (4)
     u8 doublesMask;     // teamplekken voor doubles/compagnon (3)
+    u16 gfx;            // overworld-sprite in de arena
 };
 
 struct StadiumCompanion
@@ -38,6 +39,7 @@ struct StadiumCompanion
     bool8 frontPic;     // geen rugplaatje: voorplaatje naast de speler (zoals de Frontier-tag battles)
     u8 unlockType;      // enum StadiumUnlock
     u16 unlockValue;
+    u16 gfx;            // overworld-sprite in de arena (naast de speler)
 };
 
 // Opslag in SaveBlock2 (STADIUM_SAVE_SIZE)
@@ -72,6 +74,8 @@ void Stadium_ShowUnlocks(void);
 void Stadium_HasNewUnlocks(void);
 void Stadium_DebugUnlockAll(void);
 void Stadium_GetRecord(void);
+void Stadium_SetArenaGfx(void);
+void Stadium_GetMatchNames(void);
 
 // stadium.c -> stadium_screens.c
 u32 Stadium_PoolCount(void);

@@ -66,6 +66,36 @@ COMPANIONS += [(companion_name(t), t, ('beat', t)) for t in POOL if t not in ('K
 # Rugplaatjes die bestaan; de rest staat met zijn voorplaatje naast je (zoals de Frontier-tag battles)
 BACK_PICS = {'Brendan': 'Brendan', 'May': 'May', 'Red': 'Red', 'Leaf': 'Leaf', 'Steven': 'Steven', 'Wally': 'Wally', 'Kecleon': 'Kecleon'}
 
+# Overworld-sprite in de arena: eigen sprite waar die bestaat, anders een Pokémon of een passende generieke
+GFX = {
+    'ROXANNE': 'ROXANNE', 'BRAWLY': 'BRAWLY', 'WATTSON': 'WATTSON', 'FLANNERY': 'FLANNERY', 'NORMAN': 'NORMAN',
+    'WINONA': 'WINONA', 'TATE_AND_LIZA': 'TATE', 'JUAN': 'JUAN', 'SIDNEY': 'SIDNEY', 'PHOEBE': 'PHOEBE',
+    'GLACIA': 'GLACIA', 'DRAKE': 'DRAKE', 'WALLACE': 'WALLACE', 'STEVEN': 'STEVEN', 'WALLY': 'WALLY',
+    'ARCHIE': 'ARCHIE', 'MAXIE': 'MAXIE', 'BIRCH': 'PROF_BIRCH', 'KECCLES': 'KECLEON', 'COLRESS': 'COLRESS',
+    'ZINNIA': 'ZINNIA', 'MIMI': 'SPECIES(MIMIKYU)', 'BROCK': 'BROCK', 'OAK': 'PROF_OAK', 'RED': 'RED',
+    'LEAF': 'LEAF', 'JOEY': 'YOUNGSTER', 'BRENDAN': 'RIVAL_BRENDAN_NORMAL', 'MAY': 'RIVAL_MAY_NORMAL',
+    'GABBY': 'REPORTER_F', 'MATT': 'AQUA_MEMBER_M', 'SHELLY': 'AQUA_MEMBER_F', 'TABITHA': 'MAGMA_MEMBER_M',
+    'ANABEL': 'ANABEL', 'TUCKER': 'TUCKER', 'SPENSER': 'SPENSER', 'GRETA': 'GRETA', 'NOLAND': 'NOLAND',
+    'LUCY': 'LUCY', 'BRANDON': 'BRANDON', 'BRUNO': 'BLACK_BELT', 'MAYLENE': 'BLACK_BELT', 'MISTY': 'SWIMMER_F',
+    'LT_SURGE': 'SAILOR', 'WAKE': 'SAILOR', 'KOGA': 'NINJA_BOY', 'SABRINA': 'HEX_MANIAC', 'BLAINE': 'SCIENTIST_1',
+    'GIOVANNI': 'GENTLEMAN', 'CYRUS': 'GENTLEMAN', 'AGATHA': 'OLD_WOMAN', 'BERTHA': 'OLD_WOMAN',
+    'LORELEI': 'BEAUTY', 'LANCE': 'MAN_3', 'BLUE': 'BOY_3', 'BARRY': 'BOY_3', 'ROARK': 'HIKER', 'BYRON': 'HIKER',
+    'GARDENIA': 'PICNICKER', 'ERIKA': 'LASS', 'FANTINA': 'BEAUTY', 'CANDICE': 'GIRL_3', 'VOLKNER': 'MAN_5',
+    'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'WOMAN_5', 'MARS': 'WOMAN_2',
+    'JUPITER': 'WOMAN_2', 'SATURN': 'MAN_2', 'PALMER': 'MAN_4', 'THORTON': 'SCIENTIST_2', 'ARGENTA': 'WOMAN_3',
+    'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'ALBERT': 'MAN_3', 'SAMUEL': 'MAN_3', 'OWEN': 'MAN_3', 'WINSTON': 'RICH_BOY',
+}
+
+
+def gfx_for(t, header):
+    t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
+    for key, g in GFX.items():
+        if t2 == key or t2.startswith(key + '_'):
+            return 'OBJ_EVENT_GFX_' + g
+    female = (header_field(header, 'Gender') or '').lower() == 'female'
+    return 'OBJ_EVENT_GFX_' + ('WOMAN_5' if female else 'MAN_3')
+
+
 species = load_species()
 by_disp = {}
 for key, d in species.items():
@@ -205,7 +235,7 @@ for t in POOL + list(RIVALS):
     rating = round(sum(bst(keys[i]) for i in idx) / len(idx))
     report[-1] = report[-1].replace('{r}', str(rating))
     gender = RIVALS.get(t)
-    rows.append((t, rating, {'MALE': 1, 'FEMALE': 2}.get(gender, 0)))
+    rows.append((t, rating, {'MALE': 1, 'FEMALE': 2}.get(gender, 0), gfx_for(t, trainers[t]['header'])))
 
 # partners
 blocks, consts = [], []
@@ -249,10 +279,10 @@ open(PARTNER_H, 'w', encoding='utf-8').write(h)
 with open(OUT, 'w', encoding='utf-8') as f:
     f.write('// Gegenereerd door tools/grounded/stadium/pool.py; niet met de hand bewerken.\n\n')
     f.write('// {trainer, sterkte (gem. BST van de singles-keuze), rivaal voor speler-geslacht (0 = altijd, 1 = man, 2 = vrouw),\n')
-    f.write('//  keuze singles (bitmasker teamplekken), keuze doubles}\n')
+    f.write('//  keuze singles (bitmasker teamplekken), keuze doubles, overworld-sprite in de arena}\n')
     f.write('static const struct StadiumEntrant sStadiumPool[] =\n{\n')
-    for t, r, g in rows:
-        f.write(f'    {{TRAINER_{t}, {r}, {g}, 0x{masks[t][0]:02X}, 0x{masks[t][1]:02X}}},\n')
+    for t, r, g, gfx in rows:
+        f.write(f'    {{TRAINER_{t}, {r}, {g}, 0x{masks[t][0]:02X}, 0x{masks[t][1]:02X}, {gfx}}},\n')
     f.write('};\n\n')
     f.write('// {partner, bron-trainer, voorplaatje i.p.v. rugplaatje, vrijspelen: STADIUM_UNLOCK_*, waarde}\n')
     f.write('static const struct StadiumCompanion sStadiumCompanions[] =\n{\n')
@@ -263,9 +293,9 @@ with open(OUT, 'w', encoding='utf-8') as f:
             u = f'STADIUM_UNLOCK_BEAT, TRAINER_{unlock[1]}'
         else:
             u = f'STADIUM_UNLOCK_POINTS, {unlock[1]}'
-        f.write(f'    {{{c}, TRAINER_{src}, {"TRUE" if front else "FALSE"}, {u}}},\n')
+        f.write(f'    {{{c}, TRAINER_{src}, {"TRUE" if front else "FALSE"}, {u}, {gfx_for(src, trainers[src]["header"])}}},\n')
     f.write('};\n')
 open(os.path.join(ROOT, 'STADIUM_TEAMS.md'), 'w', encoding='utf-8').write('\n'.join(report) + '\n')
 print(f'{len(rows)} deelnemers, {len(COMPANIONS)} compagnons -> {os.path.relpath(OUT, ROOT)}')
-for t, r, g in sorted(rows, key=lambda x: -x[1]):
+for t, r, g, gfx in sorted(rows, key=lambda x: -x[1]):
     print(f'  {r:4d}  {t}')

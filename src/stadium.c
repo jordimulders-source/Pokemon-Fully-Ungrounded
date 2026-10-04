@@ -25,6 +25,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/battle_partner.h"
 #include "constants/trainers.h"
+#include "constants/event_objects.h"
 
 #define SAVE STADIUM_SAVE
 
@@ -510,4 +511,49 @@ void Stadium_GetRecord(void)
     ConvertIntToDecimalStringN(gStringVar1, SAVE.titles[STADIUM_SINGLES], STR_CONV_MODE_LEFT_ALIGN, 5);
     ConvertIntToDecimalStringN(gStringVar2, SAVE.titles[STADIUM_DOUBLES], STR_CONV_MODE_LEFT_ALIGN, 5);
     ConvertIntToDecimalStringN(gStringVar3, SAVE.matchesWon, STR_CONV_MODE_LEFT_ALIGN, 5);
+}
+
+// --- arena (Battle Dome-zaal met publiek) ---------------------------------------------------------
+static u8 CurrentOpponent(void)
+{
+    return sT.bracket[sT.round][PlayerPos(sT.round) ^ 1];
+}
+
+static u16 EntrantGfx(u8 e, u32 member)
+{
+    s32 p = PoolIndexOfTrainer(Stadium_EntrantTrainer(e, member));
+
+    return p >= 0 ? sStadiumPool[p].gfx : OBJ_EVENT_GFX_MAN_3;
+}
+
+// VAR_OBJ_GFX_ID_0/2 = tegenstanders, _1 = speler, _3 = compagnon; VAR_RESULT = singles/doubles
+void Stadium_SetArenaGfx(void)
+{
+    u8 opp = CurrentOpponent();
+
+    VarSet(VAR_OBJ_GFX_ID_0, EntrantGfx(opp, 0));
+    VarSet(VAR_OBJ_GFX_ID_1, gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL : OBJ_EVENT_GFX_RIVAL_MAY_NORMAL);
+    if (sT.mode == STADIUM_DOUBLES)
+    {
+        VarSet(VAR_OBJ_GFX_ID_2, EntrantGfx(opp, 1));
+        VarSet(VAR_OBJ_GFX_ID_3, sStadiumCompanions[sT.companion].gfx);
+    }
+    gSpecialVar_Result = sT.mode;
+}
+
+// gStringVar1 = speler (en compagnon), gStringVar2 = tegenstander(s), gStringVar3 = ronde
+void Stadium_GetMatchNames(void)
+{
+    const u8 *const sRounds[] = {
+        COMPOUND_STRING("first round"), COMPOUND_STRING("second round"), COMPOUND_STRING("quarterfinal"),
+        COMPOUND_STRING("semifinal"), COMPOUND_STRING("FINAL") };
+    u8 *p = StringCopy(gStringVar1, gSaveBlock2Ptr->playerName);
+
+    if (sT.mode == STADIUM_DOUBLES)
+    {
+        p = StringCopy(p, COMPOUND_STRING(" & "));
+        StringCopy(p, GetTrainerNameFromId(TRAINER_PARTNER(sStadiumCompanions[sT.companion].partnerId)));
+    }
+    Stadium_GetEntrantName(CurrentOpponent(), gStringVar2);
+    StringCopy(gStringVar3, sRounds[min(sT.round + (5 - sT.rounds), 4)]);
 }

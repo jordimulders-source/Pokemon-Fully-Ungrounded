@@ -1,7 +1,13 @@
 @ Project Grounded: lobby van het Battle Stadium (toernooien à la Pokémon World Tournament).
 @ De balies starten het toernooi (data/scripts/battle_stadium.inc). Teksten zijn placeholders.
 BattleFrontier_StadiumLobby_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_StadiumLobby_OnFrame
 	.byte 0
+
+BattleFrontier_StadiumLobby_OnFrame:
+	map_script_2 VAR_STADIUM_STATE, 2, BattleStadium_EventScript_LobbyResult
+	map_script_2 VAR_STADIUM_STATE, 3, BattleStadium_EventScript_LobbyResult
+	.2byte 0
 
 BattleFrontier_StadiumLobby_EventScript_SinglesDesk::
 	goto BattleStadium_EventScript_Singles

@@ -1006,7 +1006,14 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINERS_COUNT                      989
+#define TRAINER_METEOR_DRAKE                989 // Project Grounded: Meteor Falls B1F (Bagon-bekken)
+#define TRAINER_METEOR_BOULDERMAN           990 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_ORION                991 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_VESPER               992 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_NOVA                 993 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_DRACONID_ELDER              994 // Project Grounded: Meteor Falls, Draconid-schrijn
+
+#define TRAINERS_COUNT                      995
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

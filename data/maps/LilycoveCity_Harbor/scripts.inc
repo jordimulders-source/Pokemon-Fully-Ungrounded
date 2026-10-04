@@ -9,6 +9,7 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
+	call VictoryGauntlet_EventScript_TryFerry @ Project Grounded: Liberty Pass -> Liberty Garden (Victini)
 	call_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_CheckEonTicketBeforeGameClear
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState

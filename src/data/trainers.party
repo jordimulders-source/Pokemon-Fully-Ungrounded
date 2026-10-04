@@ -32034,3 +32034,354 @@ Nature: Careful
 - Body Slam
 - Seed Bomb
 - Rest
+
+
+=== TRAINER_VICTORY_VANCE ===
+Name: VANCE
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Hawlucha @ Sitrus Berry
+Level: 70
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Swords Dance
+- Acrobatics
+- Close Combat
+- Roost
+
+Gallade @ Scope Lens
+Level: 70
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Night Slash
+
+Lucario @ Life Orb
+Level: 70
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Swords Dance
+- Close Combat
+- Extreme Speed
+- Meteor Mash
+
+Kommo-o @ Throat Spray
+Level: 70
+Ability: Bulletproof
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Clangorous Soul
+- Clanging Scales
+- Aura Sphere
+- Flamethrower
+
+Conkeldurr @ Flame Orb
+Level: 70
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Mach Punch
+- Drain Punch
+- Knock Off
+- Ice Punch
+
+Annihilape @ Leftovers
+Level: 72
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+- Bulk Up
+- Rage Fist
+- Drain Punch
+- Taunt
+
+
+=== TRAINER_VICTORY_VERNON ===
+Name: VERNON
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Klefki @ Light Clay
+Level: 70
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Reflect
+- Light Screen
+- Thunder Wave
+- Foul Play
+
+Persian @ Amulet Coin
+Level: 70
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Fake Out
+- Pay Day
+- Knock Off
+- U-turn
+
+Corviknight @ Leftovers
+Level: 70
+Ability: Mirror Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Brave Bird
+- Body Press
+- Iron Defense
+- Roost
+
+Perrserker @ Choice Band
+Level: 70
+Ability: Tough Claws
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Close Combat
+- Crunch
+- U-turn
+
+Gholdengo @ Leftovers
+Level: 70
+Ability: Good as Gold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Make It Rain
+- Shadow Ball
+- Nasty Plot
+- Recover
+
+Kingambit @ Black Glasses
+Level: 72
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Kowtow Cleave
+- Sucker Punch
+- Iron Head
+- Swords Dance
+
+
+=== TRAINER_VICTORY_VEGA ===
+Name: VEGA
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Bronzong @ Mental Herb
+Level: 70
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Relaxed
+- Trick Room
+- Gyro Ball
+- Earthquake
+- Stealth Rock
+
+Porygon2 @ Eviolite
+Level: 70
+Ability: Download
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+- Trick Room
+- Tri Attack
+- Recover
+- Ice Beam
+
+Rhyperior @ Weakness Policy
+Level: 70
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Brave
+- Head Smash
+- Earthquake
+- Megahorn
+- Ice Punch
+
+Slowking @ Assault Vest
+Level: 70
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+- Scald
+- Psyshock
+- Future Sight
+- Flamethrower
+
+Reuniclus @ Life Orb
+Level: 70
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+- Psychic
+- Focus Blast
+- Shadow Ball
+- Trick Room
+
+Hatterene @ Life Orb
+Level: 72
+Ability: Magic Bounce
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+- Trick Room
+- Dazzling Gleam
+- Psychic
+- Mystical Fire
+
+
+=== TRAINER_VICTORY_VESNA ===
+Name: VESNA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Cofagrigus @ Leftovers
+Level: 70
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Memento
+- Will-O-Wisp
+- Shadow Ball
+- Pain Split
+
+Gengar @ Focus Sash
+Level: 70
+Ability: Perish Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Destiny Bond
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+
+Mismagius @ Leftovers
+Level: 70
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Perish Song
+- Mean Look
+- Protect
+- Shadow Ball
+
+Spiritomb @ Leftovers
+Level: 70
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+- Sucker Punch
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+
+Dusknoir @ Leftovers
+Level: 70
+Ability: Iron Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Punch
+- Ice Punch
+- Fire Punch
+- Thunder Punch
+
+Houndstone @ Leftovers
+Level: 72
+Ability: Fluffy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Last Respects
+- Body Press
+- Play Rough
+- Will-O-Wisp
+
+
+=== TRAINER_VICTORY_V ===
+Name: V
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Vigoroth @ Eviolite
+Level: 70
+Ability: Vital Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+- Bulk Up
+- Slack Off
+- Body Slam
+- Knock Off
+
+Vanilluxe @ Icy Rock
+Level: 70
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Aurora Veil
+- Flash Cannon
+
+Vaporeon @ Leftovers
+Level: 70
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Scald
+- Wish
+- Protect
+- Ice Beam
+
+Venusaur @ Black Sludge
+Level: 70
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Leech Seed
+
+Vikavolt @ Choice Specs
+Level: 70
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Thunderbolt
+- Bug Buzz
+- Energy Ball
+- Volt Switch
+
+Volcarona @ Heavy-Duty Boots
+Level: 72
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain

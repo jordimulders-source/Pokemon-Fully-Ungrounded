@@ -452,6 +452,7 @@ gStdScripts_End::
 	.include "data/maps/SkyPillar_ReverseB1F/scripts.inc"
 	.include "data/maps/SkyPillar_ReverseB2F/scripts.inc"
 	.include "data/maps/SkyPillar_ReverseB3F/scripts.inc"
+	.include "data/maps/LibertyGarden/scripts.inc"
 	.include "data/maps/RegielekiCave/scripts.inc"
 	.include "data/maps/Underwater_Route134/scripts.inc"
 	.include "data/maps/Underwater_SealedChamber/scripts.inc"

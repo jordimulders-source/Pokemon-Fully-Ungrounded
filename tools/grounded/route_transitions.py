@@ -1048,3 +1048,92 @@ save('giratina', gtiles, [GPAL2])
 open(OUT + 'route_giratina_crack.bin', 'wb').write(struct.pack('<600H', *ctm))
 open(OUT + 'route_giratina_crack_t.bin', 'wb').write(bytes(min(255, v) for v in ct))
 open(OUT + 'route_giratina_wing.bin', 'wb').write(struct.pack('<600H', *wtm))
+# ------------------------------------------------------------------ Victini: een grote V in vuur (V-create)
+# 1-3 vuurmassa (kleurcyclus), 4-5 vlammentongen (bovenrand van het vuur), 6 vonken; daarna de V zelf
+# (240x144, tiles ontdubbeld, tilemap 30x18 in route_victini_v.bin, indexen al opgehoogd)
+VPAL = pad([(0, 0, 0), (9, 1, 1), (20, 3, 2), (28, 8, 2), (31, 15, 3), (31, 22, 6), (31, 28, 12), (31, 31, 24),
+            (31, 31, 31), (15, 2, 3)])
+def fire_px(x, y, v):
+    s = math.sin(x * 0.85 + y * 0.5 + v * 2.3) + math.sin(y * 1.1 - x * 0.4 + v * 1.7)
+    return 3 + int((s + 2) / 4 * 3.99)          # 3..6
+vtiles = [tile(lambda x, y, v=v: fire_px(x, y, v)) for v in range(3)]
+def tongue(v):
+    def f(x, y):
+        top = 7 - int(7 * abs(math.sin(x * 0.55 + v * 1.9)) ** 0.7)
+        if y < top:
+            return 0
+        if y == top:
+            return 2
+        return min(6, fire_px(x, y, v) + (1 if y > 5 else 0)) if y > top + 1 else 4
+    return tile(f)
+vtiles += [tongue(0), tongue(1)]
+vr = random.Random(494)
+vtiles.append(tile(lambda x, y: (7 if vr.random() < 0.5 else 6) if vr.random() < 0.08 else 0))
+NFIRE = len(vtiles)
+
+def v_art():
+    W_, H_ = 240, 144
+    im = Image.new('P', (W_, H_), 0)
+    px = im.load()
+    rr = random.Random(4940)
+    noise = [rr.uniform(-1, 1) for _ in range(512)]
+    def nz(k):
+        i = int(k) % 511
+        f = k - int(k)
+        return noise[i] * (1 - f) + noise[i + 1] * f
+    segs = [((38, 24), (120, 138), 0), ((202, 24), (120, 138), 1)]
+    for y in range(H_):
+        for x in range(W_):
+            best = None
+            for (ax, ay), (bx, by), side in segs:
+                dx, dy = bx - ax, by - ay
+                L2 = dx * dx + dy * dy
+                t = max(0.0, min(1.0, ((x - ax) * dx + (y - ay) * dy) / L2))
+                cx, cy = ax + t * dx, ay + t * dy
+                d = math.hypot(x - cx, y - cy)
+                # buitenkant (weg van het midden): vlammige rand
+                outer = (x < cx) if side == 0 else (x > cx)
+                w = 21 * (1 - t) + 7
+                if outer:
+                    w += 5 * (nz(y * 0.35 + side * 200) + 0.6) * (1 - 0.5 * t)
+                if t <= 0.0 and y < ay:
+                    # bovenkant: vlammentongen omhoog
+                    w *= max(0.0, 1 - (ay - y) / (14 + 12 * abs(nz(x * 0.45 + side * 77))))
+                rel = d / max(w, 1)
+                if best is None or rel < best:
+                    best = rel
+            if best is None:
+                continue
+            if best < 0.22:
+                c = 8
+            elif best < 0.40:
+                c = 7
+            elif best < 0.60:
+                c = 6
+            elif best < 0.74:
+                c = 5
+            elif best < 0.86:
+                c = 4
+            elif best < 0.95:
+                c = 3
+            elif best < 1.0:
+                c = 2
+            elif best < 1.12:
+                c = 1
+            else:
+                continue
+            px[x, y] = c
+    return im
+vim = v_art()
+vidx, vmap = {}, []
+for ty in range(vim.height // 8):
+    for tx in range(30):
+        t = tuple(vim.getpixel((tx * 8 + x, ty * 8 + y)) for y in range(8) for x in range(8))
+        if not any(t):
+            vmap.append(0); continue
+        if t not in vidx:
+            vidx[t] = len(vtiles) + 1; vtiles.append(list(t))
+        vmap.append(vidx[t])
+save('victini', vtiles, cycle(VPAL, 4, amp=2))
+open(OUT + 'route_victini_v.bin', 'wb').write(struct.pack('<%dH' % len(vmap), *vmap))
+print('victini: vuur-tiles', NFIRE, 'V-tiles', len(vtiles) - NFIRE)

@@ -621,7 +621,8 @@
     "TrainerHill_Elevator",
     "BattleFrontier_SpireLobby",
     "BattleFrontier_StadiumLobby",
-    "BattleFrontier_StadiumArena"
+    "BattleFrontier_StadiumArena",
+    "LibertyGarden"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

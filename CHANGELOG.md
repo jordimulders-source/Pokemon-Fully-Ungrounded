@@ -16018,3 +16018,12 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Eigen transitie `B_TRANSITION_GIRATINA`: paarse scheuren over het scherm, de wereld klapt ondersteboven (HBlank-scroll per beeldlijn) en de zes schaduwvleugels sluiten het beeld af. Muziek: `MUS_GROUNDED_VS_GIRATINA` (Platinum).
 - Wilde encounters op B1F (lv 56–60) en B2F (lv 58–63): ghost/dragon/psychic, 12 unieke soorten per tabel (zeldzaam: Spiritomb, Haxorus, Polteageist, Dragapult).
 - Flag `FLAG_HIDE_SKY_PILLAR_GIRATINA` (was 0x279), var `VAR_SKY_PILLAR_REVERSE_STATE` (was 0x40F9). Teksten zijn placeholders.
+
+### [v.0.8.122] - Victini: de Victory-gauntlet
+- Post-game: vijf nieuwe Victory-uitdagers verspreid over Hoenn, in vrije volgorde te verslaan (lv 70, ace 72): Vance (Black Belt, Dewford; Fighting), Vernon (Rich Boy, Slateport-markt; "gekochte overwinning", Kingambit), Vega (Psychic, Fortree; Trick Room, Hatterene), Vesna (Hex Maniac, Mossdeep; "morele overwinning", Houndstone met Last Respects) en V (Expert, Ever Grande; alleen Pokémon met een V, Volcarona). Vóór de Hall of Fame weigeren ze.
+- Elke overwinning geeft een Victory-stempel (geteld uit de trainer-flags). De Victory-commissaris in de haven van Lilycove legt het uit, zegt wie er nog over is en geeft na vijf stempels de **Liberty Pass** (nieuw key item).
+- Met de Liberty Pass vraagt de baliemedewerker van de S.S. Tidal of je naar Liberty Garden wilt.
+- **Liberty Garden:** nieuw eilandje (Southern Island-buitenkant met een tuin: plein, fontein, lantaarns, bloemen; bouwscript `tools/grounded/maptools/liberty_garden.py`, mapsec LIBERTY GARDEN). Victini lv 70 bij de fontein.
+- **Eigen transitie** `B_TRANSITION_VICTINI` (idee van Jordi): een grote vlammende V vliegt van onder het beeld omhoog (V-create), slaat wit-heet in en zet het hele scherm in brand. Muziek: Mew-thema.
+- V staat in de Battle Stadium-pool (95 deelnemers, 112 compagnons; de puntendrempels schuiven één plek op).
+- Flags: FLAG_RECEIVED_LIBERTY_PASS (0x289), FLAG_HIDE_LIBERTY_GARDEN_VICTINI (0x28A), FLAG_VICTORY_GAUNTLET_EXPLAINED (0x28B).

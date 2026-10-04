@@ -3755,6 +3755,45 @@ Nature: Jolly
 - X-Scissor
 - Protect
 
+=== PARTNER_STADIUM_VICTORY ===
+Name: V
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Vanilluxe @ Icy Rock
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Aurora Veil
+- Flash Cannon
+
+Vaporeon @ Leftovers
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Scald
+- Wish
+- Protect
+- Ice Beam
+
+Volcarona @ Heavy-Duty Boots
+Level: 50
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

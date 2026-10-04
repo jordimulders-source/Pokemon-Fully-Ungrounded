@@ -966,8 +966,13 @@
 #define TRAINER_STADIUM_JOHNSON                 952
 #define TRAINER_STADIUM_LYLE                    953
 #define TRAINER_DITTO                           954
+#define TRAINER_VICTORY_VANCE                   955
+#define TRAINER_VICTORY_VERNON                  956
+#define TRAINER_VICTORY_VEGA                    957
+#define TRAINER_VICTORY_VESNA                   958
+#define TRAINER_VICTORY_V                       959
 
-#define TRAINERS_COUNT                      955
+#define TRAINERS_COUNT                      960
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

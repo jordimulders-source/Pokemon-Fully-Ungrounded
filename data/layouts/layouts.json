@@ -3052,6 +3052,16 @@
       "blockdata_filepath": "data/layouts/SouthernIsland_Interior/map.bin"
     },
     {
+      "id": "LAYOUT_LIBERTY_GARDEN",
+      "name": "LibertyGarden_Layout",
+      "width": 33,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/LibertyGarden/border.bin",
+      "blockdata_filepath": "data/layouts/LibertyGarden/map.bin"
+    },
+    {
       "id": "LAYOUT_JAGGED_PASS",
       "name": "JaggedPass_Layout",
       "width": 30,

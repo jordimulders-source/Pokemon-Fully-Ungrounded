@@ -96,7 +96,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Warp-elevation** moet gelijk zijn aan die van de tegel (0 = elke); vanilla-grotplateaus zijn soms elevation 4 (Altering Cave).
 - **Kaart op zijn kop** (omgekeerde Sky Pillar, `reverse_pillar.py`): rijen per metatile wisselen + v-flip (bit 11) per tile, `map.bin`-rijen omdraaien, en het gedrag aanpassen (trapdeur 0x60 → zuidpijl, zuidpijl → noordpijl).
 - **Transities die elke frame de BG0-tilemap opnieuw tekenen:** elk vak in één keer de eindwaarde geven, niet eerst wissen (tearing).
-- **Agent-branches samenvoegen:** conflicten achteraan enums/tabellen/map_groups zijn "beide houden"; let op een `}` of komma die op de grens wegvalt.
+- **Agent-branches samenvoegen:** conflicten achteraan enums/tabellen/map_groups zijn "beide houden"; let op een `}` of komma die op de grens wegvalt. Vlecht git twee nieuwe functieblokken door elkaar (battle_transition.c), bouw het bestand dan op uit onze versie + hun blok.
+- **Subagents en de scratchpad:** die wordt gedeeld; laat elke agent een eigen submap gebruiken (een `test.gba` van een ander proces gaf een Bus error).
+- **Object toevoegen aan een kaart met `"object_events": []`:** tekstueel vóór `"warp_events"` invoegen belandt in `connections`; controleer met `json.load`.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

@@ -16188,3 +16188,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - Wilde Pokémon (12 unieke soorten per kaart, lv 44–52): o.a. Noivern, Gigalith, Hakamo-o, Sliggoo, Gabite, Drakloak, Minior, Glimmora, Dragalge, Kommo-o; zeldzaam Haxorus, Dragonite, Metagross, Kingdra, Salamence.
 - Trainers 997–1002 (`TRAINER_METEOR_*`, `TRAINER_DRACONID_ELDER`); flags 0x2A0–0x2A7, 0x4A3–0x4A7.
 - **Battle! Zarude v3** (Jordi): een extra spanningsmaat (taiko in achtsten, strijkers-tremolo een octaaf hoger), zodat de blazers pas na de transitie inzetten (±4,3 s i.p.v. 2,9 s); intro nu 12,9 s. De tamboerijn op elke offbeat is eruit (klonk als een metronoompiepje).
+
+### [v.0.9.14] - Victory Road: vier optionele kamers
+- **Wachtkamer** (achter een Rock Smash-rots in de noordwand van 1F): "de rij voor de Elite Four", een Ace Trainer-gauntlet van drie Cooltrainers die je niet kunt ontwijken (Brent, Nadia, Oskar, lv 54–56), een kaartjesautomaat ("No. 4,813, wachttijd 31 jaar") en de gevonden voorwerpen: **Choice Scarf** en **Choice Specs**.
+- **Kluis van Hiker Gordon** (gang linksonder op B1F): Strength-blokpuzzel (opgelost en gecontroleerd door het bouwscript; opnieuw binnenkomen zet alles terug), met **Big Nugget**, **Ability Capsule** (wisselt alleen tussen slot 1 en 2), **PP Max** en een verstopte Max Elixir.
+- **Kluizenaar** (surfend naar een eilandje in het bovenmeer van B2F): **Reginald**, de "vijfde" van de Elite Four, die al dertig jaar wacht tot er iemand met pensioen gaat of doodgaat (Expert met mugshot, lv 58–60, ace Slaking @ Choice Band). Daarna **TM Flamethrower** ("bewaard voor Sidney's begrafenis"). Ook een Expert Belt en zijn afgewezen sollicitatie.
+- **Haaienbak** (gat in de vloer op B1F): een vaste **Garchomp lv 58** die slaapt op de rugzakken van mislukte kampioenen, met Life Orb, Eviolite en Dragon Fang. Donker, zoals Victory Road.
+- Bouwscript `tools/grounded/maptools/victory_road_ext.py`; trainers 1003–1006 (`TRAINER_VR_*`); flags 0x2A8–0x2AF, 0x4AB–0x4AF.

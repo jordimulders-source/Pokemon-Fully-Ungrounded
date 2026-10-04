@@ -32,7 +32,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
    - ~~Meteor Falls~~ (gedaan, v0.9.13). Open: Selene (Draconid-oudere) in de Battle Stadium-pool.
    - Jagged Pass: ondergrondse uitbreiding.
    - Mt. Chimney: nog hoger klimmen.
-   - Victory Road: optionele kamers met veel vette verstopte loot en events.
+   - ~~Victory Road: optionele kamers~~ (gedaan, v0.9.14). Open: Reginald (en eventueel Selene uit Meteor Falls) in de Battle Stadium-pool.
    - Onderwater: veel meer te ontdekken.
    - Scorched Slab: uitbreiden en interessanter maken.
    - Eigen suggesties van Claude welkom (eerst voorleggen).

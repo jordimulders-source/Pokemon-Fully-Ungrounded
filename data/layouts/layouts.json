@@ -3002,6 +3002,46 @@
       "blockdata_filepath": "data/layouts/VictoryRoad_B2F/map.bin"
     },
     {
+      "id": "LAYOUT_VICTORY_ROAD_SHARK_DEN",
+      "name": "VictoryRoad_SharkDen_Layout",
+      "width": 42,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_SharkDen/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_SharkDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_HERMIT",
+      "name": "VictoryRoad_Hermit_Layout",
+      "width": 17,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Hermit/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Hermit/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_VAULT",
+      "name": "VictoryRoad_Vault_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Vault/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Vault/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_WAITING_ROOM",
+      "name": "VictoryRoad_WaitingRoom_Layout",
+      "width": 13,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_WaitingRoom/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_WaitingRoom/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE104_PROTOTYPE",
       "name": "Route104_Prototype_Layout",
       "width": 1,

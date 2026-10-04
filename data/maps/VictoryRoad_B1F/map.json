@@ -337,6 +337,20 @@
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_B2F",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 6,
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_VAULT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 22,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_SHARK_DEN",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

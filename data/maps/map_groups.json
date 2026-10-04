@@ -678,6 +678,10 @@
     "MeteorFalls_DraconidShrine",
     "MeteorFalls_EchoChamber",
     "MeteorFalls_StarfallGrotto",
-    "MeteorFalls_HiddenFalls"
+    "MeteorFalls_HiddenFalls",
+    "VictoryRoad_WaitingRoom",
+    "VictoryRoad_Vault",
+    "VictoryRoad_Hermit",
+    "VictoryRoad_SharkDen"
   ]
 }

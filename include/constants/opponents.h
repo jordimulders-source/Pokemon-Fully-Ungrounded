@@ -1025,7 +1025,13 @@
 #define TRAINER_METEOR_NOVA                 1001 // Project Grounded: Meteor Falls, Draconid-gangen
 #define TRAINER_DRACONID_ELDER              1002 // Project Grounded: Meteor Falls, Draconid-schrijn
 
-#define TRAINERS_COUNT                      1003
+
+#define TRAINER_VR_BRENT                    1003 // Project Grounded: Victory Road, wachtkamer (gauntlet 1)
+#define TRAINER_VR_NADIA                    1004 // gauntlet 2
+#define TRAINER_VR_OSKAR                    1005 // gauntlet 3
+#define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
+
+#define TRAINERS_COUNT                      1007
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

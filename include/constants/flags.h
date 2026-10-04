@@ -724,14 +724,14 @@
 #define FLAG_ITEM_METEOR_FALLS_TUNNELS_FULL_RESTORE 0x2A5 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_TUNNELS_STARDUST 0x2A6 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_HIDE_METEOR_FALLS_SALAMENCE 0x2A7 // Project Grounded: Meteor Falls (diepte)
-#define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
-#define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
-#define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
-#define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
+#define FLAG_VICTORY_ROAD_WAITING_ROOM_ROCK 0x2A8 // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_WAITING_ROOM_CHOICE_SCARF 0x2A9 // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_WAITING_ROOM_CHOICE_SPECS 0x2AA // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_BIG_NUGGET 0x2AB // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_ABILITY_CAPSULE 0x2AC // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_PP_MAX 0x2AD // Project Grounded: Victory Road-zijkamers
+#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_VAULT_MAX_ELIXIR 0x2AE // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_HERMIT_EXPERT_BELT 0x2AF // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_TOADSTOOL_HOLLOW_TINY_MUSHROOM  0x2B0 // Project Grounded: Toadstool Hollow
 #define FLAG_ITEM_TOADSTOOL_HOLLOW_BIG_MUSHROOM  0x2B1 // Project Grounded: Toadstool Hollow
 #define FLAG_ITEM_TOADSTOOL_HOLLOW_TM_GIGA_DRAIN  0x2B2 // Project Grounded: Toadstool Hollow
@@ -1246,11 +1246,11 @@
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
+#define FLAG_RECEIVED_TM_FLAMETHROWER_REGINALD 0x4AB // Project Grounded: Victory Road-zijkamers
+#define FLAG_HIDE_VICTORY_ROAD_GARCHOMP 0x4AC // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_LIFE_ORB 0x4AD // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_EVIOLITE 0x4AE // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_DRAGON_FANG 0x4AF // Project Grounded: Victory Road-zijkamers
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag

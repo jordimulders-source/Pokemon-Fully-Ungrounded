@@ -34441,3 +34441,206 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Draco Meteor
 - Flamethrower
 - Nasty Plot
+
+=== TRAINER_VR_BRENT ===
+Name: BRENT
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Excadrill @ Focus Sash
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Mold Breaker
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Mamoswine @ Never-Melt Ice
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Thick Fat
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Stealth Rock
+
+Talonflame @ Sharp Beak
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Gale Wings
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Roost
+
+Reuniclus @ Life Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Magic Guard
+- Psychic
+- Focus Blast
+- Calm Mind
+- Recover
+
+=== TRAINER_VR_NADIA ===
+Name: NADIA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Toxtricity @ Throat Spray
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
+
+Goodra @ Assault Vest
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Sap Sipper
+- Draco Meteor
+- Fire Blast
+- Sludge Bomb
+- Thunderbolt
+
+Sylveon @ Leftovers
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Pixilate
+- Hyper Voice
+- Shadow Ball
+- Wish
+- Protect
+
+Ninetales_Alola @ Light Clay
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Snow Warning
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+=== TRAINER_VR_OSKAR ===
+Name: OSKAR
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Guts
+- Mach Punch
+- Drain Punch
+- Knock Off
+- Ice Punch
+
+Clefable @ Leftovers
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Magic Guard
+- Moonblast
+- Calm Mind
+- Soft-Boiled
+- Flamethrower
+
+Gliscor @ Toxic Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Poison Heal
+- Earthquake
+- Knock Off
+- Toxic
+- Protect
+
+Kommo_O @ Life Orb
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Bulletproof
+- Scale Shot
+- Close Combat
+- Iron Head
+- Dragon Dance
+
+=== TRAINER_VR_REGINALD ===
+Name: REGINALD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Hawlucha @ Sitrus Berry
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Unburden
+- Close Combat
+- Acrobatics
+- Swords Dance
+- Roost
+
+Tyranitar @ Chople Berry
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Metagross @ Air Balloon
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Tinkaton @ Leftovers
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Mold Breaker
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Stealth Rock
+
+Magnezone @ Choice Specs
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Analytic
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Slaking @ Choice Band
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Truant
+- Giga Impact
+- Earthquake
+- Knock Off
+- Slack Off

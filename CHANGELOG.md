@@ -16349,3 +16349,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.33] - Toxic Chain v5
 - Het eindstuk van de ketting is een ♀-vorm: een korte steel die uitwaaiert in een brede, platte voet (zoals bij Munkidori en Fezandipiti) in plaats van de Y. Op de eindring zitten twee bulten, zoals bij Okidogi.
+
+### [v.0.9.34] - Toxic Chain v6, Wally's tweede frase volgens de tab
+- **Toxic Chain:** het eindstuk is nu een halve schedel. Het is een ronde ring met aan de onderkant twee brede tanden en een donkere spleet ertussen.
+- **Wally 1–5:** in de tweede frase speelt nu een B van een halve tel (G-A-F#-B-A-G), zoals in de tab die Jordi vond. De bron had daar een korte E met een voorslag-B. Het ritme blijft gelijk.
+- Tweede Wally-bron toegevoegd als referentie: `sound/songs/grounded_src/wally_battle_ss17.mid`.

@@ -13,7 +13,7 @@ De elektrische piano uit de MIDI is in ORAS een elektrische gitaar. Drumnoten 37
 die worden snare (38) en crash (57). Schrijft ook voicegroup_grounded_wally (= grounded_gm met echte gitaren op 24-31).
 Gebruik: python3 tools/grounded/wally_theme.py"""
 import mido
-from musiclib import releases, release_ticks
+from musiclib import dedupe, releases, release_ticks
 
 SRC = 'sound/songs/grounded_src/wally_battle_oras.mid'
 OUT = 'sound/songs/midi/mus_grounded_vs_wally_%d.mid'
@@ -121,8 +121,19 @@ def build(v):
         if isinstance(prog, str):
             ev = drums_for(ev, prog, end)
         else:
-            if ti in (0, 3, 6):            # voorslag op x.875 (tel 11,875): de 2e frase klinkt gehaast t.o.v. de 1e
-                ev = [e for e in ev if e[0] % 384 != 336]
+            if ti in (0, 3, 6):
+                # 2e frase: de bron heeft op x.75 een korte E plus een voorslag-B op x.875 (klinkt gehaast). Volgens de
+                # tab (Jordi) hoort daar één B, een halve tel lang: de B naar x.75 halen en de E laten vallen.
+                late = {e[0] - 48: e for e in ev if e[0] % 384 == 336}
+                keep = []
+                for e in ev:
+                    if e[0] % 384 == 336:
+                        continue
+                    if e[0] in late:
+                        b = late[e[0]]
+                        e = [e[0], max(e[1], b[1]), b[2], b[3]]
+                    keep.append(e)
+                ev = dedupe(keep)
             for e in ev:
                 e[2] += a.get('transpose', {}).get(ti, 0)
                 if ti in a.get('staccato', {}):

@@ -84,5 +84,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Ruis/'vinyl': de 8-bit-mixer op 13.379 Hz. Zarude valt minder op door schone PSG-sporen. Op 21.024 Hz is de hoge
   ruis ±40% lager; Jordi koos die (v0.9.32). Lag meten: tijdelijke teller in de hoofdlus van `src/main.c`
   vergelijken met `gMain.vblankCounter1` (verschil = vertraagde frames).
+- Wally ronde 5: een tab van Jordi (`sound/songs/grounded_src/` + chat) toonde dat de 2e frase G-A-F#-**B**-A-G is;
+  de bron had daar E + voorslag-B. Bij twijfel: een tweede bron (MIDI `wally_battle_ss17.mid`, tab, bladmuziek)
+  naast de eerste leggen; waar twee bronnen het eens zijn, klopt het. Let op: bladmuziek "Wally's Theme" is het
+  overworld-thema, niet "Battle! Wally".
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

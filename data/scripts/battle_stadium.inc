@@ -40,6 +40,9 @@ BattleStadium_EventScript_ArenaMatch::
 	setvar VAR_TEMP_0, 1
 	applymovement LOCALID_PLAYER, BattleStadium_Movement_SetInvisible
 	waitmovement 0
+	special Stadium_GetAnnouncerLine
+	msgbox gStringVar4, MSGBOX_DEFAULT
+	closemessage
 	playse SE_M_ENCORE2
 	delay 40
 	special Stadium_StartMatch

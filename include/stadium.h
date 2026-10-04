@@ -81,6 +81,7 @@ void Stadium_GetRecord(void);
 void Stadium_SetArenaGfx(void);
 void Stadium_GetMatchNames(void);
 void Stadium_GetBpText(void);
+void Stadium_GetAnnouncerLine(void);
 
 // stadium.c -> stadium_screens.c
 u32 Stadium_PoolCount(void);

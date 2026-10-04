@@ -10,7 +10,8 @@ Genereert:
 Sterkte = gemiddelde BST van de 4 sterkste Pokémon (dezelfde keuze als de C-code maakt: de ace
 plus de hoogste BST, in de volgorde van het team). De simulatie van NPC-wedstrijden gebruikt die.
 
-Nieuwe personages (CLAUDE.md): voeg ze toe aan POOL (en eventueel aan COMPANIONS) en draai opnieuw.
+Nieuwe personages (CLAUDE.md): voeg ze toe aan POOL (en eventueel aan COMPANIONS) en draai opnieuw;
+geef ze ook een omroepzin in tools/grounded/stadium/announcer.py.
 Gebruik: python3 tools/grounded/stadium/pool.py
 """
 import os, re, sys

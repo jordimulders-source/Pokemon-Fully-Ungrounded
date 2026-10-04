@@ -2,12 +2,13 @@
 
 - De kaart wordt N rijen hoger (bovenaan zee); alle events schuiven N rijen mee, de verbinding met
   OutsideEast krijgt offset N/-N en de veerboot-warps (19, 67) worden (19, 67+N).
-- Op de noordrand van het Dome-plein (x 26-40, de oude hekrij) staat The Spire in Frontier-stijl:
-  de gevel van de Battle Tower (wit glas, baksteenrood, blauwe ruiten, crème pilaren, leien luifel
-  met glazen schuifdeur) uit gTileset_BattleFrontierOutsideEast, 15 breed. Hij loopt in vier
-  trappen (15 -> 11 -> 7 -> 3 breed) omhoog; elke trap eindigt in een dakrand met oranje sierlijst,
-  bovenop staat een antennenaald met rood baken. De voet staat op het plein (onderste rij =
-  pleinvloer), de schacht rijst boven zee uit, net als het huisje rechts ervan.
+- Op de noordrand van het Dome-plein (x 29-37, de oude hekrij) staat The Spire in Frontier-stijl:
+  de gevel van de Battle Tower (wit glas, baksteenrood, blauwe ruiten, leien luifel met glazen
+  schuifdeur) uit gTileset_BattleFrontierOutsideEast, als slanke spits: een voet van 9 breed met de
+  ingang, dan trappen 9 -> 7 -> 5 -> 3 breed (elk korter dan de vorige, met dakrand en oranje
+  sierlijst) en bovenop een lange antennenaald (4 rijen) met rood baken. Smalle kolommen zijn
+  samengesteld uit twee halve Battle Tower-kolommen (pijler/ruit met beide randen). De voet staat op
+  het plein (onderste rij = pleinvloer); hek en vlaggen links en rechts ervan blijven staan.
 - Tiles en metatiles van de Battle Tower worden gekopieerd naar vrije plekken van
   gTileset_BattleFrontierOutsideWest (alleen deze kaart gebruikt die tileset). Paletten 0 (General),
   9 en 10 zijn in East en West identiek, dus de kleuren blijven exact die van de Battle Tower.
@@ -31,7 +32,7 @@ GEN = 'data/tilesets/primary/general/'
 LAY = 'data/layouts/BattleFrontier_OutsideWest/'
 EAST_MAP = 'data/layouts/BattleFrontier_OutsideEast/map.bin'
 MAPJ = 'data/maps/BattleFrontier_OutsideWest/map.json'
-X0 = 26                     # linkerkolom van de toren
+X0 = 29                     # linkerkolom van de toren (9 breed, midden = deur x 33)
 BASE = N + 3                # onderste rij (oude hekrij, ligt op het plein)
 DOOR = (33, N + 2)
 DOOR_MT = 0x329             # = METATILE_BattleFrontierOutsideEast_Door_BattleTower (deuranimatie)
@@ -45,13 +46,16 @@ DOOR_LABELS = {0x3FC, 0x28A, 0x263, 0x396}
 # Kolom-indexen: 0 wit glas, 1-2 baksteen, 3-4 schuin glas, 5 pilaar, 6 schuin glas, 7-9 middenglas,
 # 10 schuin glas, 11 pilaar, 12-13 schuin glas, 14-15 baksteen, 16 wit glas.
 BT_X = 8
-S1 = [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16]     # 15 breed (voet + onderste trap)
-S2 = [0, 1, 2, 6, 7, 8, 9, 10, 14, 15, 16]                 # 11
-S3 = [0, 6, 7, 8, 9, 10, 16]                               # 7
-S4 = [0, 8, 16]                                            # 3
+# Een kolom is een index of een paar (l, r): linkerhelft van kolom l + rechterhelft van kolom r
+# (tiles zijn 8 px, dus de paletten blijven per tile kloppen). (1, 2) = smalle baksteenpijler met
+# beide randen, (7, 9) = smalle middenruit met beide kozijnen.
+S1 = [0, 1, 2, 7, 8, 9, 14, 15, 16]                       # 9 breed: voet met ingang + onderste schacht
+S2 = [0, (1, 2), 7, 8, 9, (14, 15), 16]                   # 7
+S3 = [0, 6, (7, 9), 10, 16]                               # 5
+S4 = [0, (7, 9), 16]                                      # 3
 # (eerste rij, laatste rij) van elke trap; de rij erboven is de dakrand
-SECTIONS = [(S1, 14, BASE - 4), (S2, 9, 12), (S3, 5, 7), (S4, 3, 3)]
-NEEDLE_ROWS = (0, 1)
+SECTIONS = [(S1, 17, BASE - 4), (S2, 12, 15), (S3, 8, 10), (S4, 5, 6)]
+NEEDLE_ROWS = (0, 3)
 TW = len(S1)
 
 
@@ -87,8 +91,12 @@ class East:
         return out
 
     def top(self, col, row):
-        """Bovenlaag van Battle Tower-metatile (kolom-index, rij) als 16x16 (pal, kleur)/None."""
-        mid = self.map[row * 72 + BT_X + col] & 0x3FF
+        """Bovenlaag van Battle Tower-metatile (kolom-index, rij) als 16x16 (pal, kleur)/None.
+        Kolom (l, r): linkerhelft van kolom l + rechterhelft van kolom r."""
+        if isinstance(col, tuple):
+            a, b = self.top(col[0], row), self.top(col[1], row)
+            return [ra[:8] + rb[8:] for ra, rb in zip(a, b)]
+        mid =self.map[row * 72 + BT_X + col] & 0x3FF
         e = self.entries(mid)
         px = [[None] * 16 for _ in range(16)]
         for q in range(4):
@@ -141,45 +149,50 @@ def roof_band(width):
     return [[(P9, c) if c is not None else None for c in r] for r in rows]
 
 
-def needle():
-    """Antennenaald (2 metatiles hoog, 1 breed) met rood baken bovenaan."""
-    h = 32
+def needle(h):
+    """Antennenaald (h px hoog, 1 metatile breed): rood baken, dunne mast die naar onder iets
+    breder wordt, oranje ringen en een voetblok dat op het bovenste dak staat."""
     px = [[None] * 16 for _ in range(h)]
-    for y in range(h):
-        if y < 4:                                     # baken
-            hw = [1.0, 2.0, 2.5, 2.5][y]
-        elif y < 6:
-            hw = 1.0                                  # dun steeltje onder het baken
+    top = 7                                           # onder het baken
+    def hw_at(y):
+        return 1.0 + 2.5 * ((y - top) / (h - 5 - top)) ** 1.6
+    for y in range(h - 4):
+        if y < 5:                                     # baken met gloed
+            hw = [1.0, 2.0, 2.5, 2.5, 2.0][y]
+        elif y < top:
+            hw = 0.5                                  # spits
         else:
-            hw = 1.5 + 4.5 * ((y - 6) / (h - 7)) ** 1.3
+            hw = hw_at(y)
         for x in range(16):
             d = x + 0.5 - 8
-            if abs(d) >= hw:
+            if abs(d) >= max(hw, 0.5) + (0.5 if hw < 1 else 0):
                 continue
             e = hw - abs(d)
-            if y < 4:
-                c = WHITE if (y == 1 and d < 0 and d > -1.5) else ORANGE if y < 2 else RED
+            if y < 5:
+                c = WHITE if (y == 1 and -1.5 < d < 0) else ORANGE if y < 2 else RED
                 if e < 1:
                     c = BRICK2
+            elif y < top:
+                c = GRAY
             else:
                 c = LAV if d < -0.5 else GRAY if d < 1.5 else SLATE
-                if d < 0 and d > -1.5 and hw > 2:
+                if -1.5 < d < 0 and hw > 2:
                     c = WHITE
                 if e < 1:
                     c = DARK
             px[y][x] = c
-    # ringen (oranje sierlijsten) op de naald
-    for ry in (14, 24):
-        hw = 1.5 + 4.5 * ((ry - 6) / (h - 7)) ** 1.3 + 1
+    # ringen (oranje sierlijsten) op de mast
+    for ry in (20, 34, 47):
+        hw = hw_at(ry) + 1
         for x in range(16):
             d = x + 0.5 - 8
             if abs(d) < hw:
                 px[ry][x] = DARK if hw - abs(d) < 1 else ORANGE
                 px[ry + 1][x] = DARK if hw - abs(d) < 1 else RED
-    # voet van de naald: breed blokje dat op het dak staat
-    for y in range(h - 3, h):
-        for x in range(3, 13):
-            px[y][x] = DARK if x in (3, 12) or y == h - 1 else (LAV if x < 6 else GRAY if x < 10 else SLATE)
+    # voet van de naald: blokje dat op het dak staat
+    for y in range(h - 4, h):
+        for x in range(4, 12):
+            px[y][x] = DARK if x in (4, 11) or y in (h - 4, h - 1) else (LAV if x < 7 else GRAY if x < 9 else SLATE)
     return [[(P9, c) if c is not None else None for c in r] for r in px]
 
 
@@ -207,8 +220,9 @@ def tower_pixels(east):
     for r in range(4):                                 # voet: Battle Tower rij 12-15
         for i, c in enumerate(S1):
             paste(east.top(c, 12 + r), i, BASE - 3 + r)
-    nd = needle()
-    for y in range(32):
+    nh = (NEEDLE_ROWS[1] - NEEDLE_ROWS[0] + 1) * 16
+    nd = needle(nh)
+    for y in range(nh):
         for x in range(16):
             if nd[y][x] is not None:
                 img[NEEDLE_ROWS[0] * 16 + y][(TW // 2) * 16 + x] = nd[y][x]
@@ -266,12 +280,6 @@ def build():
     rock = [orig_map[0 * W + 5], orig_map[0 * W + 6], orig_map[1 * W + 5], orig_map[1 * W + 6]]
     for rx, ry in ((6, 6), (19, 13), (47, 4), (20, 20), (46, 16), (11, 19)):
         grid[ry][rx], grid[ry][rx + 1], grid[ry + 1][rx], grid[ry + 1][rx + 1] = rock
-
-    # rots die tegen de rechterwand van de toren lag (oude rij 0-1) weg
-    for y in (N, N + 1):
-        for x in range(X0 + TW, X0 + TW + 3):
-            if (grid[y][x] & 0x3FF) in (0x150, 0x151, 0x158, 0x159):
-                grid[y][x] = water
 
     pix = tower_pixels(east)
     tiles_px = tiles_img.load()

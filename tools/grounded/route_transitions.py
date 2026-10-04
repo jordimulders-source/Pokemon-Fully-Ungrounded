@@ -1831,9 +1831,10 @@ save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 # ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
 # Toxic Chain zoals op de artwork: een doorlopende, glanzende magenta buis in ovale ringen, kort aan elkaar gegoten, met
-# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met direct aan de onderkant twee korte,
-# brede, blokvormige tanden naast elkaar met een smalle spleet ertussen (zoals bij Okidogi rechtsboven, Munkidori's hoofdband
-# en Fezandipiti's uiteinden). De ketting komt van linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
+# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met aan de onderkant twee korte, brede
+# tanden die schuin naar buiten waaieren, met een brede U-inkeping ertussen (zoals bij Okidogi rechtsboven, Munkidori's
+# hoofdband en Fezandipiti's uiteinden). De ketting komt van linksonder het beeld in; het eindstuk staat groot in het
+# midden. Magenta bij de nek, paarser naar het eind.
 # Het geheel is één afstandsveld (buizen en een vlak "kussen" met een zachte unie), zodat alles vloeiend in elkaar loopt.
 # route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
 # flip-bits) met de eerste k stukken. Tiles ook gespiegeld ontdubbeld.
@@ -1863,7 +1864,7 @@ def perp(v):
 
 # eindstuk: ring (oog) met het midden op PC_E, steel en voet in richting PC_F (schuin naar beneden)
 PC_E = np.array((122.0, 52.0))
-PC_F = unit((0.2, 0.98))
+PC_F = unit((0.62, 0.78))
 PC_ER, PC_ET = 21.0, 10.5                     # hartlijnstraal en buisstraal van het oog
 # ketting: van linksonder naar het oog
 PC_DIR = unit(PC_E - np.array((-20.0, 168.0)))
@@ -1886,21 +1887,30 @@ def tube_field(pts, r):
     return (d - r).reshape(H, W)
 
 
+PC_TOOTH_ANG = 38.0                          # tanden waaieren uit: graden links/rechts van "onder" (PC_F)
+PC_TOOTH_TIP = 52.0                          # afstand van het ringmidden tot de platte tandpunt
+
+
 def foot_field():
-    """de twee tanden: korte, brede blokken met afgeronde hoeken direct onder de ring, met een spleet ertussen
-    (afstandsveld van twee afgeronde rechthoeken in het assenstelsel van het eindstuk)"""
-    s0 = PC_E + PC_F * (PC_ER + PC_ET - 8)    # bovenkant van de tanden (in de onderrand van de ring)
+    """de twee tanden: korte, brede poten die vanuit de ring schuin naar buiten waaieren (links- en rechtsonder),
+    met hol gebogen zijkanten, een brede, afgerond-platte punt en een brede U-inkeping ertussen"""
     n = perp(PC_F)
-    lx = (X - s0[0]) * PC_F[0] + (Y - s0[1]) * PC_F[1]
-    ly = (X - s0[0]) * n[0] + (Y - s0[1]) * n[1]
-    f = np.full((H, W), 1e9)
-    r = 5.0
-    for y0, y1 in ((-18.0, -1.7), (1.7, 18.0)):
-        cx, cy, hx, hy = 14.0, (y0 + y1) / 2, 14.0, (y1 - y0) / 2
-        qx, qy = np.abs(lx - cx) - (hx - r), np.abs(ly - cy) - (hy - r)
-        dd = np.hypot(np.maximum(qx, 0), np.maximum(qy, 0)) + np.minimum(np.maximum(qx, qy), 0) - r
-        f = np.minimum(f, dd)
-    return f
+    im = Image.new('L', (W, H), 0)
+    d = ImageDraw.Draw(im)
+    for sgn in (-1, 1):
+        ang = np.radians(PC_TOOTH_ANG) * sgn
+        u = PC_F * np.cos(ang) + n * np.sin(ang)          # richting van de tand
+        v = perp(u)
+        loc = lambda a, b: tuple((PC_E + u * a + v * b) * PC_SS)
+        us = np.linspace(PC_ER, PC_TOOTH_TIP - 1.5, 14)
+        half = 10.0 + 4.0 * ((us - PC_ER) / (PC_TOOTH_TIP - 1.5 - PC_ER)) ** 2.0   # hol uitlopend
+        right = [loc(a, w) for a, w in zip(us, half)] + [loc(PC_TOOTH_TIP, 13.5)]
+        left = [loc(a, -w) for a, w in zip(us, half)] + [loc(PC_TOOTH_TIP, -13.5)]
+        d.polygon(right + left[::-1], fill=255)
+    m = ndimage.gaussian_filter(np.array(im, float), 1.8 * PC_SS) > 127
+    inside = ndimage.distance_transform_edt(m) / PC_SS
+    outside = ndimage.distance_transform_edt(~m) / PC_SS
+    return np.where(m, -inside, outside)
 
 
 def smin(a, b, k=3.5):
@@ -1928,7 +1938,7 @@ pieces.append(tube_field(seg(centers[-1] + PC_DIR * PC_RA, eye_in), PC_R + 1.5))
 # het eindstuk komt in een keer: oog (iets ovaal, schuin) + steel + voet
 eye = tube_field([PC_E + perp(PC_F) * PC_ER * np.cos(a) * 0.92 + PC_F * PC_ER * np.sin(a)
                   for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
-pieces.append(smin(eye, foot_field(), 2.0))
+pieces.append(smin(eye, foot_field(), 4.0))
 PC_N = len(pieces)
 PC_LEN = float(np.dot(PC_E + PC_F * 60 - PC_O, PC_DIR))
 

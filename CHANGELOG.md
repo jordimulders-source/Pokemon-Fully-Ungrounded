@@ -16375,3 +16375,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.39] - Toxic Chain slingert
 - De ketting van de Loyal Three valt nu van boven in beeld en slingert als een zware ketting uitdempend heen en weer rond de nek (het eindstuk zwaait het verst) en deint daarbij op en neer. Na ±1,3 s volgt de fade naar het gevecht. Het geluid is Bind bij binnenkomst en Toxic bij het laatste uitzwaaien.
 - Technisch: drie vooraf getekende standen plus een draaiing per scanline (HBlank) voor de tussenhoeken. De tabellen komen uit `route_transitions.py`.
+
+### [v.0.9.40] - Dave vecht op Freed From Desire
+- Dave (`TRAINER_ALBERT`, Victory Road 1F en het Battle Stadium) vecht op **Freed From Desire** (Gala), als eurodance-gevechtsthema (`MUS_GROUNDED_VS_DAVE`, `tools/grounded/freed_theme.py`, voicegroup `grounded_dave`).
+  - **Intro:** 4 maten "na na na"-hook met een opbouw naar de loop.
+  - **Loop:** riff, couplet, refrein en "na na na" vol, op 132 bpm.
+  - De melodie komt uit Jordi's bladmuziek, de begeleiding en de drums uit de MIDI. De hook is een trompet met een zacht PSG-vierkant in unisono.
+- Dave staat in debug "Battle test…".

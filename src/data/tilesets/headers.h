@@ -311,6 +311,17 @@ const struct Tileset gTileset_MeteorFalls =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_MeteorSpace = // Project Grounded: meteoriet in de ruimte (Deoxys), uit Meteor Falls via meteor_space.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MeteorSpace,
+    .palettes = gTilesetPalettes_MeteorSpace,
+    .metatiles = gMetatiles_MeteorSpace,
+    .metatileAttributes = gMetatileAttributes_MeteorSpace,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_OceanicMuseum =
 {
     .isCompressed = TRUE,

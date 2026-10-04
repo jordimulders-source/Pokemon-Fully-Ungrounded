@@ -357,6 +357,7 @@ const u16 gObjectEventPal_RedLeaf[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Red[] = INCBIN_U32("graphics/object_events/pics/people/red.4bpp");
 const u32 gObjectEventPic_Leaf[] = INCBIN_U32("graphics/object_events/pics/people/leaf.4bpp");
 const u16 gObjectEventPal_BirthIslandStone[] = INCBIN_U16("graphics/object_events/palettes/birth_island_stone.gbapal");
+const u16 gObjectEventPal_DeoxysTriangleRed[] = INCBIN_U16("graphics/object_events/palettes/deoxys_triangle_red.gbapal"); // Project Grounded
 const u32 gObjectEventPic_BirthIslandStone[] = INCBIN_U32("graphics/object_events/pics/misc/birth_island_stone.4bpp");
 const u16 gObjectEventPal_Deoxys[] = INCBIN_U16("graphics/object_events/palettes/deoxys.gbapal");
 const u32 gObjectEventPic_Anabel[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/anabel.4bpp");

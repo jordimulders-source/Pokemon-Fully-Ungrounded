@@ -4505,6 +4505,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone =
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: dezelfde steen, maar meteen rood (de meteoriet van het Deoxys-event heeft geen puzzel)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangleRed = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE_RED,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_BirthIslandStone,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Anabel = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,

@@ -596,6 +596,29 @@ const u16 gTilesetPalettes_MeteorFalls[][16] =
     INCBIN_U16("data/tilesets/secondary/meteor_falls/palettes/15.gbapal"),
 };
 
+// Project Grounded: meteoriet in de ruimte (Deoxys)
+const u32 gTilesetTiles_MeteorSpace[] = INCBIN_U32("data/tilesets/secondary/meteor_space/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_MeteorSpace[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_OceanicMuseum[] = INCBIN_U32("data/tilesets/secondary/oceanic_museum/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_OceanicMuseum[][16] =

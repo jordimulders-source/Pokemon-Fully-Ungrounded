@@ -29,6 +29,7 @@ def record(rate):
         for _ in range(5): e.press('DOWN', after=6)
         e.press('A', after=30)
         for _ in range(k - 1): e.press('DOWN', after=6)
+        on[0] = True                        # al vóór de laatste A opnemen: anders mis je het begin van het nummer
         e.press('A', after=0)
     on[0] = True; e.run(int(60 * sec))
     return np.array(rec, dtype=np.int16).reshape(-1, 2).astype(np.float64)

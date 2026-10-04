@@ -2,8 +2,8 @@
 """Project Grounded: Battle! Regigigas = het originele Regi-thema (mus_vs_regi, ongewijzigd) + bombast erbovenop,
 met Slow Start (Jordi).
 
-- Maat 0-3 (±6 s, de gevechtstransitie): precies het originele Regi-thema.
-- Maat 4-11: Slow Start. Zodra het gevecht begint zakt het tempo naar 55% en versnelt het per maat terug naar 100%.
+- Maat 0 t/m tel 1 van maat 3 (±5 s, de gevechtstransitie): precies het originele Regi-thema.
+- Vanaf ±5 s: Slow Start. Het tempo zakt in drie tellen naar 55% en versnelt vanaf maat 4 per maat terug naar 100%.
 - Vanaf maat 8: bombast bovenop het origineel (tuba-grondtonen, taiko, crashes), in de loop (maat 20-39) een koor
   onder het koraal. Het koper zit al in het origineel.
 - Maat 28-31 (begin van een frase): hij zakt nog één keer in ("bijkomen"), tel voor tel vertragend, zonder drums en
@@ -25,7 +25,12 @@ BASE_TEMPO = 375000                     # 160 bpm, zoals het origineel
 TRUMPET, HORN, CHOIR, TUBA, TAIKO, TIMPANI, DRUMS = 84, 85, 86, 87, 88, 47, 0
 EXTRA = {84: 56, 85: 60, 86: 52, 87: 58, 88: 116}   # nieuwe programma's -> instrument uit grounded_gm
 LOOP_START, LOOP_END = 20, 40
+# Climax (Jordi: 'epischer, de leider van de Regi's'): na maat 39 nog 8 maten = het hoofdthema (maat 20-27) een hele
+# toon hoger, met een vol koperkoor dat de melodie overneemt, taiko, crashes en pauken; daarna terug naar maat 20.
+CLIMAX_START, CLIMAX_END, SHIFT, CLIMAX_TEMPO2 = 40, 48, 2, 1.08
+CLIMAX_FROM = 20                         # bronmaat van de climax
 SLOW_START = {4: 0.55, 5: 0.60, 6: 0.66, 7: 0.73, 8: 0.80, 9: 0.87, 10: 0.94, 11: 1.0}
+SLOW_IN = [(3, 1, 0.82), (3, 2, 0.68), (3, 3, 0.6)]   # (maat, tel, factor): vanaf ±5 s afremmen (Jordi)
 # 'bijkomen': de melodie rust in maat 28-29 (na de steek op 28). Al aan het eind van maat 27 afremmen, zodat de steek
 # vertraagd valt; traagst in de rust; in 30-31 weer opbouwen; vanaf 32 de climax iets bóven het normale tempo.
 DIP = {27: [0.95, 0.9, 0.85, 0.8], 28: [0.72, 0.66, 0.62, 0.6], 29: [0.6, 0.6, 0.62, 0.65],
@@ -80,6 +85,28 @@ def copy_track(track, mute):
     return out
 
 
+def append_notes(track, notes, srctrack):
+    """Noten achter een gekopieerd spoor plakken (climax), met het programma dat het spoor in de bronmaten had."""
+    ch = next(x.channel for x in srctrack if x.type == 'note_on')
+    tick, prog = 0, 0
+    for x in srctrack:
+        tick += x.time
+        if x.type == 'program_change' and tick <= CLIMAX_FROM * BAR:
+            prog = x.program
+    msgs = list(track)[:-1]                       # zonder end_of_track
+    last = sum(m.time for m in msgs)
+    out = mido.MidiTrack(msgs)
+    ev = [(CLIMAX_START * BAR, 0, mido.Message('program_change', channel=ch, program=prog))]
+    for s, e, n, v in notes:
+        ev.append((s, 2, mido.Message('note_on', channel=ch, note=n, velocity=v)))
+        ev.append((e, 1, mido.Message('note_off', channel=ch, note=n, velocity=0)))
+    for t, _, m in sorted(ev, key=lambda x: (x[0], x[1])):
+        out.append(m.copy(time=max(0, t - last)))
+        last = max(last, t)
+    out.append(mido.MetaMessage('end_of_track', time=0))
+    return out
+
+
 def note_track(notes, prog, vol, ch, pan):
     t = mido.MidiTrack()
     t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
@@ -99,7 +126,7 @@ def build():
     src = mido.MidiFile(SRC)
     assert src.ticks_per_beat == TPB
     T = {i: notes_of(src.tracks[i]) for i in range(1, 9)}
-    end = LOOP_END * BAR
+    end = CLIMAX_END * BAR
 
     # bombast
     add = {}
@@ -116,12 +143,23 @@ def build():
     add['crash'] = [[b * BAR, b * BAR + 48, 57, 120] for b in (8, LOOP_START, 32, 34, 36, 38)]
     # climax: trompetfanfare op de grondtoon (grondtoon+2 oct., kwint, grondtoon) en een tweede koorstem
     add['fanfare'] = []
-    for b in range(34, LOOP_END):
-        r = roots[b] % 12 + 60
-        add['fanfare'] += [[b * BAR, b * BAR + 36, r + 12, 112], [b * BAR + 36, b * BAR + 48, r + 7, 100],
-                           [b * BAR + 48, b * BAR + 90, r + 12, 118]]
+    # de climax-sectie: bronmaat 20-27 naar maat 40-47, +SHIFT halve tonen
+    off = (CLIMAX_START - CLIMAX_FROM) * BAR
+    src_rng = lambda ev: [e for e in ev if CLIMAX_FROM <= bar_of(e[0]) < CLIMAX_FROM + 8]
+    mv = lambda ev, tr=SHIFT: [[s + off, e + off, n + tr, v] for s, e, n, v in src_rng(ev)]
+    add['trumpet'] = [[s, e, n, 120] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
+    add['horn'] = [[s, e, n, 112] for s, e, n, v in mv(thin(T[2], 1, 'top'))]
+    add['choir'] += [[s, e, n - 12, 110] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
+    for b in range(CLIMAX_START, CLIMAX_END):
+        r = roots[b - CLIMAX_START + CLIMAX_FROM] + SHIFT
+        add['tuba'].append([b * BAR, (b + 1) * BAR - 6, r + (12 if r < 31 else 0), 118])
+        add['taiko'] += [[b * BAR + o, b * BAR + o + 12, 48, 120] for o in (0, 24, 48, 72)]
+        add['crash'].append([b * BAR, b * BAR + 48, 57, 124])
+        add['hits'] = add.get('hits', []) + [[b * BAR + o, b * BAR + o + 12, r % 12 + 48, 110] for o in (0, 48)]
+    # originele begeleiding (bas, arpeggio's, drums, pauken) gaat mee de climax in, getransponeerd
+    climax_orig = {3: mv(T[3]), 4: mv(T[4]), 5: mv(T[5]), 7: mv(T[7], 0), 8: mv(T[8])}
     add['choir2'] = []        # (tweede koorstem paste niet naast het origineel + fanfare)
-    add['hits'] = [[b * BAR + o, b * BAR + o + 12, 48, 80 + (b - 34) * 6] for b in range(34, LOOP_END) for o in (0, 48)]
+    add['hits'] = add.get('hits', []) + [[b * BAR + o, b * BAR + o + 12, 48, 80 + (b - 34) * 6] for b in range(34, LOOP_END) for o in (0, 48)]
     add['roll'] = [[31 * BAR + i * 6, 31 * BAR + i * 6 + 6, 48, 40 + i * 5] for i in range(16)]   # paukenroffel naar de climax
     for k in add:
         for e in add[k]:
@@ -140,13 +178,17 @@ def build():
             if i in MUTE_TRACKS and bar_of(s) in QUIET:
                 continue
             preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
+        for s, e, n, v in climax_orig.get(i, []):
+            if r is None and prog != 0:
+                continue
+            preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
     rel = releases(VG)
-    progs = {'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
+    progs = {'crash': DRUMS, 'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
              'roll': TIMPANI, 'hits': TIMPANI, 'fanfare': TRUMPET}
     tail = {k: release_ticks(rel.get(p, 200), TPB, 160) for k, p in progs.items()}
-    for k in ('choir', 'choir2', 'tuba', 'fanfare'):
+    for k in ('choir', 'tuba', 'trumpet', 'horn'):
         add[k] = detach(add[k], tail[k])
-    order = ['roll', 'crash', 'fanfare', 'choir', 'tuba', 'choir2', 'hits', 'taiko']
+    order = ['roll', 'crash', 'trumpet', 'horn', 'choir', 'tuba', 'hits', 'taiko']
     kept = allocate(add, order, tail=tail, drum_parts=(), drum_len=None, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
     for k in order:
         if len(kept[k]) < len(add[k]) * 0.97:
@@ -156,6 +198,8 @@ def build():
     out = mido.MidiFile(type=1, ticks_per_beat=TPB)
     cond = mido.MidiTrack()
     ev = [(0, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO))]
+    for b, t, f in SLOW_IN:
+        ev.append((b * BAR + t * TPB, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
     for b, f in SLOW_START.items():
         ev.append((b * BAR, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
     ev.append((LOOP_START * BAR, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO)))
@@ -163,6 +207,7 @@ def build():
         for i, f in enumerate(fs):
             ev.append((b * BAR + i * TPB, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
     ev.append((CLIMAX * BAR, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / CLIMAX_TEMPO))))
+    ev.append((CLIMAX_START * BAR, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / CLIMAX_TEMPO2))))
     ev.append((LOOP_START * BAR, mido.MetaMessage('marker', text='[')))
     ev.append((end, mido.MetaMessage('marker', text=']')))
     last = 0
@@ -171,7 +216,10 @@ def build():
         last = t
     out.tracks.append(cond)
     for i in range(1, 9):
-        out.tracks.append(copy_track(src.tracks[i], i in MUTE_TRACKS))
+        t = copy_track(src.tracks[i], i in MUTE_TRACKS)
+        if i in climax_orig:
+            t = append_notes(t, climax_orig[i], src.tracks[i])
+        out.tracks.append(t)
     for k, prog, vol, ch, pan in (('fanfare', TRUMPET, 92, 8, 72), ('choir', CHOIR, 76, 10, 56), ('choir2', CHOIR, 70, 11, 72),
                                   ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
                                   ('crash', DRUMS, 100, 15, 64)):

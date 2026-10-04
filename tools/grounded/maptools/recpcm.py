@@ -14,12 +14,13 @@ if k:
     for _ in range(5): e.press('DOWN', after=6)
     e.press('A', after=30)
     for _ in range(k-1): e.press('DOWN', after=6)
-    e.press('A', after=0)
+    e.core.set_keys(KEYS['A'])       # laatste A pas in de opnamelus loslaten: anders mis je het begin van het nummer
 per=mem.u8[SI+11]; spv=int.from_bytes(rd(SI+16,4),'little'); freq=int.from_bytes(rd(SI+20,4),'little')
 print('period',per,'samples/vblank',spv,'freq',freq,'maxChans',mem.u8[SI+6])
 BUF=SI+848
 seg=[]; prev=np.frombuffer(rd(BUF,1584),np.int8).copy(); last=None
 for f in range(int(60*sec)):
+    if f==4: e.core.set_keys()
     e.core.run_frame()
     cur=np.frombuffer(rd(BUF,1584),np.int8).copy()
     ch=[(cur[i*spv:(i+1)*spv]!=prev[i*spv:(i+1)*spv]).sum() for i in range(per)]

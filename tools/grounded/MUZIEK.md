@@ -103,6 +103,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Regigigas v3: de inzinking volgt de muziek: afremmen vóór de rust van de melodie (maat 27), traagst in de rust,
   opbouwen in de lange noten; daarna een climax die het origineel niet heeft (tempo 1,06×, trompetfanfare op de
   grondtonen, pauken, crashes om de 2 maten). Zoek bij een tempo-effect eerst de frasen/rusten in de melodie.
+- Regigigas v4 ('ik mis de epische climax', 'weinig verschil v2/v3'): lagen bóvenop een vol origineel hoor je
+  nauwelijks. Een climax moet iets structureels zijn: een extra sectie (hoofdthema +2 halve tonen), waarin het
+  originele koper zwijgt en een eigen koperkoor de melodie luid overneemt; plus taiko/crash/pauken en tempo 1,08×.
+  Slow Start op ±5 s (Jordi), niet op een maatgrens maar waar de transitie eindigt.
+- Opname: al vóór de laatste A opnemen (anders mis je de eerste ±0,2 s); geen -ss meer bij ffmpeg, alleen een fade-in.
 - recaudio: tweede glitchpatroon (exacte nullen om en om in niet-stille muziek) wordt ook overbrugd (Dave-snip op 3 s).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

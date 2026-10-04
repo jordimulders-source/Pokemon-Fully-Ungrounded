@@ -16418,3 +16418,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.45] - Dave: intro zoals het origineel
 - Freed From Desire begint nu zoals het nummer zelf: de "tududu-tututu"-riff solo op het orgel, zonder beat (bronmaat 2–4). Daarna volgen één kick met een crash en het couplet met de volle begeleiding (bronmaat 53–85, in de originele volgorde).
 - De loop springt terug naar het begin van het couplet, niet naar de solo-intro.
+
+### [v.0.9.46] - Regigigas v4: echte climax, Slow Start op 5 s
+- **Slow Start:** begint nu op ±5 s, waar de transitie eindigt. In drie tellen remt hij af naar 55%, daarna versnelt hij weer per maat.
+- **Climax:** na de loop volgen 8 extra maten. Het hoofdthema komt daarin een hele toon hoger terug (D → E).
+  - Het originele koper zwijgt daar; een vol koperkoor (trompet, hoorn en koor) neemt de melodie luid over.
+  - Daaronder taiko op elke tel, een crash op elke maat en pauken op de grondtoon.
+  - Het tempo gaat nog iets omhoog (1,08×). Daarna springt hij terug naar het begin van de loop, van de dominant naar de tonica.
+- **Opname:** het begin van de nummers werd in de previews afgeknipt (±0,2 s). Dat is opgelost in `recaudio`/`recpcm`; in de game was het nooit weg.

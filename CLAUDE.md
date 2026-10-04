@@ -107,6 +107,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Max. 16 objecten tegelijk op een kaart** (speler incl.); objecten achteraan de lijst verschijnen dan niet (Stadium-arena in doubles).
 - **Route-transities:** geen delingen/modulo per vak per frame (GBA heeft geen deelinstructie; halve snelheid); tabellen vooraf in `route_transitions.py`. BG0-tiles max. ±767; ontdubbel ook gespiegelde tiles. BG-paletten 13 en 14 zijn vrij in de overworld.
 - **Emulatortests van gevechten:** `gMain.callback2` heeft de thumb-bit (vergelijk met `& ~1`); zet `gBattleOutcome` vóór elk volgend gevecht op 0; een gevecht forceren: `gBattleMons[1].hp` (offset 42, struct 104 bytes) op 1.
+- **Trainerfoto naar een artwork** (Mustard, `mustard_sprites.py`): per pixel naar een vast Gen 3-palet, per blok de meerderheid (lijnen ≥30% → omlijning), uitsnede ±80% van de figuur voor een groter hoofd, spiegelen (kijkt naar links), en het hoofd met de hand tekenen als ASCII-raster. Kijk goed naar de artwork (Mustards "haar" waren wenkbrauwen). Overworld uit een RMXP-sheet: frames 16×24 → 9 Gen 3-frames, kleuren samenvoegen tot 15.
+- **Sprites in de Stadium-arena:** rij 5 valt onder de bovenrand van het veld (hoofd weg); het midden ligt tussen x 8/9 en y 6/7.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

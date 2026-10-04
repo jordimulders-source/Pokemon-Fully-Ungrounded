@@ -16075,3 +16075,7 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Na de vijfde overwinning verschijnt **Victini** op de rechterlantaarn en springt naar de fontein (lv 70, transitie en muziek ongewijzigd). Kom je later terug, dan wacht hij daar.
 - Alle teksten (commissaris, veerboot, schipper, borden, uitdagers) herschreven in de huisstijl. Bouwscript `liberty_garden.py` controleert bereikbaarheid en dat geen uitdager te omzeilen is.
 - Flags: `FLAG_VICTORY_GAUNTLET_EXPLAINED` (0x28B) vervangen door `FLAG_DEFEATED_LIBERTY_VICTINI`.
+
+### [v.0.8.131] - Mustards gezicht, arena-opstelling
+- **Mustard (trainerfoto):** gezicht opnieuw getekend naar de artwork (Jordi): het witte "haar" zijn zijn lange golvende **wenkbrauwen**, die over de ogen boogt en langs de wangen naar beneden valt; een **puntig wit sikje** onder de kin; **grotere ogen** met pupil en zware oogleden; oor zichtbaar.
+- **Arena-opstelling:** iedereen staat even ver van het midden van het veld (midden = tussen x 8/9 en rij 6/7). Singles: speler (6,6) tegen (11,6); doubles: speler en compagnon op (6,6)/(6,7), tegenstanders op (11,6)/(11,7). Eerder stond de tweede tegenstander op rij 5, waar de bovenrand van het veld over zijn hoofd viel.

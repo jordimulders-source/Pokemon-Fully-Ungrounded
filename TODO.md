@@ -7,7 +7,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde
-1. **Muziek uit MP3** (`*.mp3` in de repo-root): Delta Episode (Battle! Lorekeeper Zinnia, The Heirs to Eternity, The Lament of Falling Stars) en Wally (Wally's Theme, Battle! Wally). Omzetten als gestreamd sample (MIDI-transcriptie klinkt slecht).
+1. **Muziek uit MP3:** niet als gestreamd sample (kost ±5 MB; Jordi: ROM-ruimte is kostbaar). Alleen als MIDI (paar KB). Zinnia-gevechtsmuziek bestaat al als MIDI (`oras_zinnia.mid`). Voor Wally's Theme, Battle! Wally, The Heirs to Eternity en The Lament of Falling Stars: MIDI-versies nodig (Jordi levert aan of we zoeken ze).
 2. **Shiny Rayquaza:** tweede ontmoeting op de Sky Pillar (zelfde soort, gegarandeerd shiny), pas nadat de gewone Rayquaza gevangen is. Pas daarna kan de Delta Episode. Alleen met de shiny Rayquaza in je team mag je de ruimte in ("zodat je kan blijven ademen").
 3. **Delta Episode met Zinnia:** Zinnia-gevecht op het lanceerplatform in Mossdeep → ruimte/Deoxys zoals nu → afsluiter bij de meteoriet. Met de MP3-muziek.
 4. **Archie en Maxie post-game: werkstraf.** Vrijwilligers in de Lilycove-museumtuin/het Weather Institute, wekelijkse tag battle-rematch met steeds sterkere teams. (Ook in de Stadium-pool.)
@@ -23,6 +23,15 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
    2. **Jungle onder Fortree** (Ogerpon/Zarude): echt wild, dicht bebost tropisch regenwoud met veel regen.
    3. Moeras (aangeleverde moeras-tileset).
    4. Oostkant: eilandjes en Dive-grotten.
+8. **Dungeons uitbreiden (Jordi, 4 okt):**
+   - Petalburg Woods: nieuw stuk bos aan de rechterkant (eventueel eerst boven eruit en dan door), een verborgen paddenstoelenbos.
+   - Meteor Falls: meerdere verborgen kamers; de kamer naar beneden uitbreiden en interessant maken; een gangenstelsel naar andere toffe events.
+   - Jagged Pass: ondergrondse uitbreiding.
+   - Mt. Chimney: nog hoger klimmen.
+   - Victory Road: optionele kamers met veel vette verstopte loot en events.
+   - Onderwater: veel meer te ontdekken.
+   - Scorched Slab: uitbreiden en interessanter maken.
+   - Eigen suggesties van Claude welkom (eerst voorleggen).
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
 1. ~~Fungal Control~~ (gedaan, v0.8.45)

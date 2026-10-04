@@ -162,6 +162,7 @@ static void Task_Darkrai(u8); // Project Grounded
 static void Task_NeoPlasma(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
+static void Task_PoisonChain(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -490,6 +491,9 @@ static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/rou
 static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
 static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
 static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
+static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
+static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
+static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
 static const u32 sZarudeSil_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zarude_silhouette.4bpp");
 static const u16 sZarudeSil_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zarude_silhouette.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
@@ -607,6 +611,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
     [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
     [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
+    [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -8610,4 +8615,43 @@ static const struct RouteTransition sRT_Zarude =
 static void Task_Zarude(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Zarude);
+}
+
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): de Poison Chain. Paarse, gloeiende schakels haken
+// een voor een in elkaar tot een ketting in een boog over het beeld, dat donker-paars wordt; dan een stilstaand beeld
+// (de gloed pulseert licht via het palet), kort vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
+#define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
+#define POISONCHAIN_HOLD  18
+
+static bool8 RTPoisonChain_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer, n = min(((t * 9) >> 5) + 1, POISONCHAIN_LINKS), build = ((POISONCHAIN_LINKS - 1) * 32 + 8) / 9;
+
+    // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen)
+    if (n != task->tRtA)
+    {
+        u16 *tilemap = RT_Tilemap();
+        const u16 *map = &sPoisonChain_Map[(n - 1) * 600];
+        s32 r, c;
+        for (r = 0; r < 20; r++)
+            for (c = 0; c < 30; c++, map++)
+                tilemap[r * 32 + c] = *map ? RT_TILE(*map) : 0;
+        task->tRtA = n;
+        if (n == 1)
+            PlaySE(SE_M_BIND);
+        else if (n == POISONCHAIN_LINKS)
+            PlaySE(SE_M_TOXIC);
+    }
+    BlendPalettes(RT_SCENE_PALETTES, min(t >> 1, 14), RGB(2, 0, 4));
+    return t >= build + POISONCHAIN_HOLD;
+}
+
+static const struct RouteTransition sRT_PoisonChain =
+{
+    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 4, 6, 0, NULL, RTPoisonChain_Update, NULL
+};
+
+static void Task_PoisonChain(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_PoisonChain);
 }

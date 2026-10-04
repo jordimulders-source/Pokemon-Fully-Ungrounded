@@ -32,7 +32,7 @@ ARR = {
     4: dict(tempo=0.95, staccato={2: 192, 5: 192}, tracks={3: (56, 104, 2, 'top'), 6: (OVERDRIVE, 104, 2, 'bottom'), 1: (33, 100, 1, 'bottom'),
                                 5: (48, 64, 1, 'top'), 2: (57, 80, 1, 'top'), 4: ('drums', 96)}),
     # 5 = heavy metal, maar strak: zelfde drums als de bron + crashes, power chords, distortion-bas; niets valt weg
-    5: dict(tempo=1.0, staccato={2: 192}, tracks={3: (60, 112, 2, 'top'), 6: (DIST, 118, 2, 'bottom'), 1: (DIST_LOW, 100, 1, 'bottom'),
+    5: dict(tempo=1.0, staccato={2: 192}, tracks={3: (OVERDRIVE, 120, 2, 'top'), 6: (DIST, 127, 2, 'bottom'), 1: (DIST_LOW, 110, 1, 'bottom'),
                                 2: (57, 92, 1, 'top'), 4: ('drums_metal', 120)}),
 }
 DRUM_FIX = {37: 38, 52: 57}
@@ -40,7 +40,7 @@ DRUM_FIX = {37: 38, 52: 57}
 # andere af ("snips"). Daarom verdeelt dit script de stemmen: max. MAX_VOICES tegelijk, met voorrang op volgorde.
 MAX_VOICES = 10
 PRIORITY = [3, 6, 4, 1, 2, 5, 0]          # melodie, riff, drums, bas, trombone, cello, viool
-DRUM_LEN = 96                             # drumsamples zijn kort; lange drumnoten houden alleen een kanaal bezet
+DRUM_LEN = 96                             # lengte van toegevoegde drumslagen (tamboerijn); brondrums houden hun lengte
 TAIL = 96                                 # uitklinktijd (ticks) die een kanaal na de note-off nog bezet houdt
 
 
@@ -90,11 +90,11 @@ def drums_for(ev, mode, end):
                 vel = int(vel * 0.75)
             else:
                 continue
-        out.append([s, s + DRUM_LEN, n, vel])
+        out.append([s, s + min(e - s, 768), n, vel])   # echte lengte: crash/snare niet afknijpen
     if mode == 'drums_village':            # tamboerijn op de achtste-offbeats: huppelend
         out += [[t, t + DRUM_LEN, 54, 52] for t in range(192, end, 384)]
     if mode == 'drums_metal':              # crash op elke tweede maat
-        out += [[t, t + DRUM_LEN, 57, 104] for t in range(0, end, 3072)]
+        out += [[t, t + 768, 57, 104] for t in range(0, end, 3072)]
     seen, res = set(), []                  # na het omzetten (snare -> tamboerijn) opnieuw ontdubbelen
     for e in sorted(out):
         if (e[0], e[2]) not in seen:

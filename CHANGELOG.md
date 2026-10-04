@@ -16328,3 +16328,9 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.28] - Poison Chain met donut-schakels
 - De transitie van de Loyal Three gebruikt nu hun echte ketting uit de artwork. Dikke, glanzende magenta donuts wisselen af met ovale staven en lopen van een halsband linksonder diagonaal naar een open ring rechtsboven. De kleur verloopt van fel magenta naar donkerpaars.
 - De ketting staat na 0,5 s, daarna volgen 20 frames stilstaand beeld en de fade.
+
+### [v.0.9.29] - Wally ronde 3
+- Drumnoten worden niet meer ingekort: crashes en snares klinken volledig uit. Ze werden afgekapt tot een 16e ("tweede beat te snel afgekapt").
+- **Wally 5:** de melodie wordt nu gespeeld door een leadgitaar (overdrive), de riff door een luidere distortion-gitaar, met daaronder een distortion-bas.
+- Wally 1–5 staan op songvolume 125 (was 90): de 8-bit-mix gebruikte maar een klein deel van zijn bereik, waardoor de ruis opviel ("vinyl").
+- Nieuwe opnametool `recpcm.py`: neemt op uit de mixbuffer van de game zelf, dus precies wat de GBA afspeelt, zonder emulator-glitches. Lessen in `MUZIEK.md`.

@@ -8,7 +8,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
 1. Componeren/arrangeren met een script (`zarude_theme.py`, `wally_theme.py`), nooit met de hand in de MIDI.
 2. `python3 tools/grounded/music_lint.py sound/songs/midi/<nummer>.mid`: moet **OK** zijn.
 3. Test-ROM: `python3 tools/grounded/maptools/testrom.py <map> "playbgm MUS_X, FALSE"`.
-4. Opnemen: `PYTHONPATH=tools/grounded/maptools python3 tools/grounded/maptools/recaudio.py <rom> <intro.bin> <k> <sec> <uit.wav>`.
+4. Opnemen: **`recpcm.py`** (uit de mixbuffer van de game, exact wat de GBA speelt; alleen DirectSound):
+   `PYTHONPATH=tools/grounded/maptools python3 tools/grounded/maptools/recpcm.py <rom> <intro.bin> <k> <sec> <uit.wav>`.
+   Heeft het nummer PSG-sporen, dan `recaudio.py` (emulator-audio, met glitch-reparatie).
 5. `python3 tools/grounded/maptools/audiocheck.py <uit.wav>`: geen pieken/clipping na de eerste 0,1 s, geen
    onverwachte constante tonen, RMS rond 700–2700 (Zarude ≈ 2700 = bovengrens).
 6. mp3 maken (`ffmpeg -ss 0.1 ... -af afade=...`), `volumedetect`: max_volume onder −1 dB.
@@ -46,6 +48,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   dat niet. `recaudio.py` overbrugt elke sprong > 12000 en controleert daarna dat er geen meer over zijn. Jordi hoorde ze als
   snips op 3 s en 12 s in álle versies; het tijdstip verschuift met de samplerate (48 kHz: 7,7 s), dus niet de game.
   **Snips op hetzelfde tijdstip in verschillende nummers = opname, niet muziek.**
+- **Drumnoten niet inkorten** in de MIDI: een crash duurt in de bron 2 tellen, een snare ±¾ tel. Wally kortte ze in tot
+  een 16e ('tweede beat kapt te snel af', Jordi op 7 s). Voor de stemverdeler telt de echte lengte.
+- **Mixniveau:** de GBA mixt 8 bit; Wally gebruikte op -V090 maar RMS 6–11 van 128, waardoor de ruis opviel ('vinyl').
+  Zet eigen nummers op -V110–127 en controleer met recpcm (geen samples op ±127).
 - De eerste 0,03 s bevat een klik van het starten: knip 0,1 s weg.
 
 ## Smaak van Jordi
@@ -67,5 +73,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
   kanalen) + dubbele noten in de bron; engine naar 8 kanalen, stemverdeler, `music_lint.py`.
 - Wally ronde 2: snips op 3/12 s = mGBA-resampler (niet de game); 1 te hoog/melancholisch → dorps; 5 chaotisch
   (dubbele bassdrum verdrong instrumenten) → strak; gehaaste inzetten op x.875; engine 12 kanalen, release-bewust.
+- Wally ronde 3: resterende snips bleken opname (recpcm is schoon); drums afgekapt door DRUM_LEN; 5 te weinig
+  gitaar → leadgitaar (overdrive) op de melodie; -V125 tegen de ruis.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

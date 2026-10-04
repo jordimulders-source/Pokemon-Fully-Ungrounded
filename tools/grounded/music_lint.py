@@ -101,7 +101,7 @@ def lint(mid):
                         elif k == 'psg':
                             errors.append('drumnoot %d is PSG (piepje) op %.2f s' % (x.note, sec(s)))
                             continue
-                    ds_notes.append((s, min(tick, s + int(24 / scale)), ti))
+                    ds_notes.append((s, min(tick, s + 2 * m.ticks_per_beat), ti))   # drums: echte lengte (max 2 tellen)
                 elif kind == 'psg':
                     warns.append('spoor %d programma %d is PSG (vierkant/ruis): bewust?' % (ti, p))
                 else:

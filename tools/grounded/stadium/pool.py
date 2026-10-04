@@ -358,6 +358,12 @@ for t in POOL + list(RIVALS):
 
 # partners
 blocks, consts = [], []
+scores = {}     # pname -> 'episch-heid' (volgorde van vrijspelen: van gewoon naar episch)
+CLASS_BONUS = {'Champion': 80, 'Elite Four': 50, 'Boss': 60, 'Leader': 30, 'Salon Maiden': 60, 'Dome Ace': 60,
+               'Palace Maven': 60, 'Arena Tycoon': 60, 'Factory Head': 60, 'Pike Queen': 60, 'Pyramid King': 60,
+               'Tower Tycoon': 60, 'Hall Matron': 60, 'Arcade Star': 60, 'Commander': 20, 'Rival': 20}
+NAME_BONUS = {'RED': 120, 'BLUE': 40, 'CYNTHIA': 40, 'STEVEN': 40, 'WALLACE': 30, 'OAK': 30, 'GIOVANNI': 30,
+              'LANCE': 30, 'ZINNIA': 20}
 trio_by_name = {t[0]: t for t in TRIOS}
 for i, (pname, src, unlock) in enumerate(COMPANIONS):
     if src is None:   # collectie zonder trainer: voorplaatje van de eerste Pokémon
@@ -367,6 +373,8 @@ for i, (pname, src, unlock) in enumerate(COMPANIONS):
             lines += [mon, '']
         blocks.append('\n'.join(lines))
         consts.append((f'PARTNER_STADIUM_{pname}', True))
+        tkeys = [species_key(m[0].split(' @ ')[0]) for m in team]
+        scores[pname] = sum(bst(k) for k in tkeys) / len(tkeys) + unlock[1]   # legendarische sets later
         continue
     tr = trainers[src]
     idx, keys = pick(tr['mons'], 3, keep=KEEP.get(src, ()))
@@ -388,6 +396,16 @@ for i, (pname, src, unlock) in enumerate(COMPANIONS):
         lines.append('')
     blocks.append('\n'.join(lines))
     consts.append((f'PARTNER_STADIUM_{pname}', back is None))
+    scores[pname] = (sum(bst(keys[j]) for j in idx) / len(idx) + CLASS_BONUS.get(header_field(tr['header'], 'Class'), 0)
+                     + NAME_BONUS.get(pname, 0))
+
+STEP = 100
+EPIC_LAST = ['CYNTHIA', 'RED', 'WEATHER', 'CREATORS']     # de laatste vier, in deze volgorde
+order = sorted((p for p, src, u in COMPANIONS if u != 'start' and p not in EPIC_LAST), key=lambda p: (scores[p], p))
+order += [p for p in EPIC_LAST if p in scores]
+threshold = {p: (1 if i == 0 else i * STEP) for i, p in enumerate(order)}
+report += ['', '## Volgorde van vrijspelen (Stadium-punten: 70 per toernooi, +10 per gewonnen wedstrijd, +20 voor een titel)', '',
+           '| Punten | Compagnon |', '|---|---|'] + [f'| {threshold[p]} | {p} |' for p in order]
 
 party = open(PARTNERS, encoding='utf-8').read()
 for old in (BEGIN, '# --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) ---'):
@@ -417,10 +435,8 @@ with open(OUT, 'w', encoding='utf-8') as f:
     for (pname, src, unlock), (c, front) in zip(COMPANIONS, consts):
         if unlock == 'start':
             u = 'STADIUM_UNLOCK_START, 0'
-        elif unlock[0] == 'beat':
-            u = f'STADIUM_UNLOCK_BEAT, TRAINER_{unlock[1]}'
         else:
-            u = f'STADIUM_UNLOCK_POINTS, {unlock[1]}'
+            u = f'STADIUM_UNLOCK_POINTS, {threshold[pname]}'
         if src:
             gfx = gfx_for(src, trainers[src]['header'])
         else:   # collectie: de eerste Pokémon als overworld-sprite

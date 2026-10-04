@@ -461,7 +461,7 @@ void Stadium_AfterMatch(void)
     }
     // gewonnen: BP, punten, verslagen trainers (compagnons)
     sT.bp += sBpPerRound[min(sT.round + (5 - sT.rounds), ARRAY_COUNT(sBpPerRound) - 1)];
-    SAVE.points = min(0xFFFF, SAVE.points + 1);
+    SAVE.points = min(0xFFFF, SAVE.points + STADIUM_POINTS_WIN);
     SAVE.matchesWon = min(0xFFFF, SAVE.matchesWon + 1);
     for (m = 0; m < 2; m++)
         if (sT.pool[opp][m] != NO_POOL)
@@ -472,7 +472,7 @@ void Stadium_AfterMatch(void)
     if (sT.round >= sT.rounds)
     {
         SAVE.titles[sT.mode] = min(0xFFFF, SAVE.titles[sT.mode] + 1);
-        SAVE.points = min(0xFFFF, SAVE.points + 5);
+        SAVE.points = min(0xFFFF, SAVE.points + STADIUM_POINTS_TITLE);
         gSpecialVar_Result = 2;
     }
     else
@@ -489,6 +489,8 @@ void Stadium_EndTournament(void)
 
     LoadPlayerParty();
     gSaveBlock2Ptr->frontier.battlePoints = min(MAX_BATTLE_FRONTIER_POINTS, bp);
+    SAVE.points = min(0xFFFF, SAVE.points + STADIUM_POINTS_TOURNAMENT);
+    CollectNewUnlocks();
     ConvertIntToDecimalStringN(gStringVar1, sT.bp, STR_CONV_MODE_LEFT_ALIGN, 3);
     VarSet(VAR_FRONTIER_FACILITY, 0);
 }
@@ -553,7 +555,7 @@ void Stadium_DebugUnlockAll(void)
         SetBit(SAVE.beaten, i);
     for (i = 0; i < ARRAY_COUNT(sStadiumCompanions); i++)
         SetBit(SAVE.seen, i);
-    SAVE.points = 9999;
+    SAVE.points = 0xFFFF;
 }
 
 // Bord in de lobby: gStringVar1-3 = titels singles/doubles, gewonnen wedstrijden
@@ -607,4 +609,10 @@ void Stadium_GetMatchNames(void)
     }
     Stadium_GetEntrantName(CurrentOpponent(), gStringVar2);
     StringCopy(gStringVar3, sRounds[min(sT.round + (5 - sT.rounds), 4)]);
+}
+
+// gStringVar1 = verdiende BP (opnieuw, na de meldingsschermen)
+void Stadium_GetBpText(void)
+{
+    ConvertIntToDecimalStringN(gStringVar1, sT.bp, STR_CONV_MODE_LEFT_ALIGN, 3);
 }

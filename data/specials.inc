@@ -597,3 +597,4 @@ gSpecials::
 	def_special Stadium_GetRecord
 	def_special Stadium_SetArenaGfx
 	def_special Stadium_GetMatchNames
+	def_special Stadium_GetBpText

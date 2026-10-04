@@ -8,6 +8,7 @@
 #include "battle_main.h"
 #include "bg.h"
 #include "data.h"
+#include "decompress.h"
 #include "event_data.h"
 #include "gpu_regs.h"
 #include "main.h"
@@ -59,6 +60,7 @@ struct StadiumScreen
     u8 unlock;
     u8 pics[MAX_PICS];
     u8 picCount;
+    u8 portraitMask;    // welke pics[] een portret zijn (eigen tegels, geen trainerpic-sprite)
     u8 icons[PARTY_SIZE];
     u8 iconCount;
     u8 shownPicFor;
@@ -133,6 +135,70 @@ static void Line(s32 x0, s32 y0, s32 x1, s32 y1, u8 color)
 }
 
 // Trainerplaatje (64×64); klein = halve grootte via affine matrix 0
+#define TAG_PORTRAIT 0x5400
+
+static const struct OamData sOam_Portrait = {.shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .priority = 0};
+
+static u8 Pixel(const u8 *pic, u32 x, u32 y)
+{
+    u8 b = pic[((y / 8) * 8 + x / 8) * 32 + (y % 8) * 4 + (x % 8) / 2];
+
+    return (x & 1) ? b >> 4 : b & 0xF;
+}
+
+// Portret voor de bracket: 32x32 rond het hoofd uit de 64x64-trainerfoto, op ware pixelgrootte
+// (verkleinen gooit elke tweede pixel weg en ziet er rommelig uit)
+static u8 AddPortrait(u16 picId, s16 x, s16 y, u8 slot)
+{
+    u8 *pic = Alloc(64 * 64 / 2), *out = AllocZeroed(32 * 32 / 2);
+    s32 top = 0, minX = 63, maxX = 0, x0, y0, px, py, row;
+    struct SpriteSheet sheet = {out, 32 * 32 / 2, TAG_PORTRAIT + slot};
+    struct SpriteTemplate tmpl = {TAG_PORTRAIT + slot, TAG_NONE, &sOam_Portrait, gDummySpriteAnimTable, NULL, gDummySpriteAffineAnimTable, SpriteCallbackDummy};
+    u8 id;
+
+    DecompressPicFromTable(&gTrainerSprites[picId].frontPic, pic);
+    // bovenkant van de figuur, en het midden van het hoofd (de eerste 16 rijen)
+    for (top = 0; top < 64; top++)
+    {
+        for (px = 0; px < 64 && !Pixel(pic, px, top); px++)
+            ;
+        if (px < 64)
+            break;
+    }
+    for (row = top; row < top + 16 && row < 64; row++)
+    {
+        for (px = 0; px < 64; px++)
+        {
+            if (Pixel(pic, px, row))
+            {
+                minX = min(minX, px);
+                maxX = max(maxX, px);
+            }
+        }
+    }
+    x0 = max(0, min(32, (minX + maxX) / 2 - 16));
+    y0 = max(0, min(32, top - 2));
+    for (py = 0; py < 32; py++)
+    {
+        for (px = 0; px < 32; px++)
+        {
+            u8 v = Pixel(pic, x0 + px, y0 + py);
+            u8 *b = &out[((py / 8) * 4 + px / 8) * 32 + (py % 8) * 4 + (px % 8) / 2];
+
+            *b |= (px & 1) ? v << 4 : v;
+        }
+    }
+    LoadSpriteSheet(&sheet);
+    LoadPalette(gTrainerSprites[picId].palette.data, OBJ_PLTT_ID(slot), PLTT_SIZE_4BPP);
+    Free(pic);
+    Free(out);
+    id = CreateSprite(&tmpl, x, y, 0);
+    if (id != MAX_SPRITES)
+        gSprites[id].oam.paletteNum = slot;
+    return id;
+}
+
+// Trainerplaatje (64x64), of als portret (32x32) in de bracket
 static u8 AddPic(u16 picId, s16 x, s16 y, bool32 small)
 {
     u8 slot = sScr->picCount;
@@ -140,15 +206,20 @@ static u8 AddPic(u16 picId, s16 x, s16 y, bool32 small)
 
     if (slot >= MAX_PICS)
         return MAX_SPRITES;
-    id = CreateTrainerPicSprite(picId, TRUE, x, y, slot, TAG_NONE);
-    if (id == 0xFFFF)
-        return MAX_SPRITES;
-    gSprites[id].oam.priority = 0;
     if (small)
     {
-        gSprites[id].oam.affineMode = ST_OAM_AFFINE_NORMAL;
-        gSprites[id].oam.matrixNum = 0;
+        id = AddPortrait(picId, x, y, slot);
+        if (id == MAX_SPRITES)
+            return MAX_SPRITES;
+        sScr->portraitMask |= 1 << slot;
     }
+    else
+    {
+        id = CreateTrainerPicSprite(picId, TRUE, x, y, slot, TAG_NONE);
+        if (id == 0xFFFF)
+            return MAX_SPRITES;
+    }
+    gSprites[id].oam.priority = 0;
     sScr->pics[sScr->picCount++] = id;
     return id;
 }
@@ -158,8 +229,19 @@ static void FreePics(void)
     u32 i;
 
     for (i = 0; i < sScr->picCount; i++)
-        FreeAndDestroyTrainerPicSprite(sScr->pics[i]);
+    {
+        if (sScr->portraitMask & (1 << i))
+        {
+            DestroySprite(&gSprites[sScr->pics[i]]);
+            FreeSpriteTilesByTag(TAG_PORTRAIT + i);
+        }
+        else
+        {
+            FreeAndDestroyTrainerPicSprite(sScr->pics[i]);
+        }
+    }
     sScr->picCount = 0;
+    sScr->portraitMask = 0;
     for (i = 0; i < sScr->iconCount; i++)
         FreeAndDestroyMonIconSprite(&gSprites[sScr->icons[i]]);
     sScr->iconCount = 0;
@@ -271,7 +353,14 @@ static void DrawPaperBracket(void)
     for (p = 0; p < 8; p++)
     {
         u8 e = Stadium_GetBracketSlot(q, p);
-        u8 id = AddPic(Stadium_EntrantPic(e), p < 4 ? QF_LX : QF_RX, sQfY[p % 4], TRUE);
+        s32 cx = p < 4 ? QF_LX : QF_RX, cy = sQfY[p % 4];
+        u8 id = AddPic(Stadium_EntrantPic(e), cx, cy, TRUE);
+
+        // fotokadertje om het portret
+        FillWindowPixelRect(WIN, PIXEL_FILL(INK), WX(cx - 17), WY(cy - 17), 34, 1);
+        FillWindowPixelRect(WIN, PIXEL_FILL(INK), WX(cx - 17), WY(cy + 16), 34, 1);
+        FillWindowPixelRect(WIN, PIXEL_FILL(INK), WX(cx - 17), WY(cy - 17), 1, 34);
+        FillWindowPixelRect(WIN, PIXEL_FILL(INK), WX(cx + 16), WY(cy - 17), 1, 34);
         u32 r;
         bool32 out = FALSE;
 
@@ -484,7 +573,6 @@ static void OpenScreen(u32 screen, void (*onDone)(void))
     PutWindowTilemap(WIN);
 
     LoadMonIconPalettes();
-    SetOamMatrix(0, 0x200, 0, 0, 0x200);    // halve grootte (bracket)
     Redraw();
     ScheduleBgCopyTilemapToVram(0);
 

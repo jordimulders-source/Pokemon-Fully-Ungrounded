@@ -15925,3 +15925,10 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Teksten:** Nate en Nicholas (Mossdeep Gym) en acht regels met POKéBLOCK (Lilycove, Mossdeep, Fan Club, Lydia) passen weer in het tekstvak; `tools/dialogen/import.py` telt `{POKEBLOCK}`/`{PKMN}` nu mee.
 - **Evolutieregel:** Archie's Archaludon lv 50 (evolueert op 50), Katelynn's Kingambit lv 49, Blissey onder lv 36 bij Nob en Cyndy is weer Chansey, Jupiter (Stadium) heeft Crobat i.p.v. Golbat. Miguel (door Jordi ontworpen) ongewijzigd.
 - **Klok bij de start:** de vraag "Is this the correct time?" staat nu standaard op YES (QoL).
+
+### [v.0.8.113] - Battle Stadium: feedback van de ochtend
+- **Bracket:** de kleine plaatjes in de bracket worden niet meer verkleind maar als portret uitgesneden (hoofd en schouders, 32×32, op ware grootte) met een inktlijntje eromheen.
+- **Gen 4-trainers** (Cynthia, Sinnoh-leiders, Frontier Brains ...): de afgeknipte onderkant loopt nu met een geditherde fade weg in plaats van een harde rand (`fade_bottom` in `stadium_trainer_pics.py`).
+- **Ditto-trainer:** gezicht is nu derpy (ogen wijd, scheve glimlach) in plaats van kwaadaardig.
+- **Wario:** nieuwe sprite, meer van de zijkant (zijn staande pose uit de sheet van Jordi), kijkt naar links zoals de andere tegenstanders.
+- **Vrijspelen van compagnons:** niet meer willekeurig maar een onzichtbare puntenteller met drempels. 70 punten per uitgespeeld toernooi, +10 per gewonnen wedstrijd, +20 voor een titel; de eerste compagnon bij 1 punt, daarna elke 100 (±één nieuwe per toernooi, singles of doubles maakt niet uit). Volgorde van gewoon naar episch, de laatste vier: Cynthia, Red, THE WEATHER, THE CREATORS. Volledige volgorde onderaan `STADIUM_TEAMS.md`. Nieuwe compagnons worden in de lobby gemeld na het toernooi.

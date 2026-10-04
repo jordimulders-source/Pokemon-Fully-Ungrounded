@@ -57,6 +57,19 @@ PLATINUM = {
 }
 
 
+# Geordende dither (Bayer 4x4): onderaan afgesneden plaatjes lossen geleidelijk op i.p.v. een harde snede
+BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]]
+
+
+def fade_bottom(out, rows=8):
+    for i in range(rows):
+        y = 63 - i
+        t = (rows - i) / (rows + 1)
+        for x in range(64):
+            if out.getpixel((x, y)) and BAYER[y % 4][x % 4] < t * 16:
+                out.putpixel((x, y), 0)
+
+
 def convert_ds(src, frame):
     im = Image.open(src)
     pal = im.getpalette()
@@ -83,6 +96,8 @@ def convert_ds(src, frame):
         newpal += [(c >> 3) << 3 for c in pal[v * 3:v * 3 + 3]]
     newpal += [0] * (48 - len(newpal))
     out.putpalette(newpal + [0] * (768 - len(newpal)))
+    if h > 64:  # onder de knieën afgesneden: laten oplossen (Jordi: 'slim verbergen')
+        fade_bottom(out)
     return out
 
 

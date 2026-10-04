@@ -45,9 +45,11 @@ Intro's staan als trainer slide in `src/data/stadium_slides.h`, nederlaag/winst 
 
 ## Compagnons (Vampire Survivors-stijl)
 - Start: **Brendan/May, Keccles, Wally**.
-- Een onzichtbare meter (Stadium-punten: +1 per gewonnen gevecht, +5 per gewonnen toernooi) en
-  prestaties (een trainer verslaan in het Stadium) spelen steeds nieuwe compagnons vrij, van minder
-  goed naar goed, met een melding "NEW COMPANION!".
+- **Onzichtbare puntenteller met drempels (Jordi, 5 okt):** 70 punten per uitgespeeld toernooi, +10 per gewonnen
+  wedstrijd, +20 voor een titel (±100 per toernooi, singles of doubles). Drempels: de eerste compagnon bij 1 punt, daarna
+  elke 100, dus ongeveer één nieuwe compagnon per toernooi. Volgorde van gewoon naar episch (teamsterkte + bonus voor
+  kampioenen, E4, Frontier Brains en legendarische sets); de laatste vier: Cynthia, Red, THE WEATHER, THE CREATORS.
+  Volledige volgorde onderaan `STADIUM_TEAMS.md`. Melding "NEW PARTNER!".
 - Iedereen uit de pool kan compagnon worden (ook Archie aan jouw kant).
 - **Collecties zonder trainer**: legendarische trio's en andere sets van drie die samen met je vechten:
   de Regi-geest (Regirock, Regice, Registeel), legendarische vogels, beesten, meertrio, Swords of

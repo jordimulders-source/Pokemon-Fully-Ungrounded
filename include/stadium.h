@@ -8,6 +8,10 @@
 #include "constants/stadium.h"
 
 #define STADIUM_LEVEL           50
+// Onzichtbare meter (Jordi): ±100 punten per toernooi = ±1 nieuwe compagnon (drempels elke 100, pool.py)
+#define STADIUM_POINTS_TOURNAMENT   70
+#define STADIUM_POINTS_WIN          10
+#define STADIUM_POINTS_TITLE        20
 #define STADIUM_SINGLES_MONS    4
 #define STADIUM_DOUBLES_MONS    3
 #define STADIUM_MAX_ENTRANTS    32
@@ -45,7 +49,7 @@ struct StadiumCompanion
 // Opslag in SaveBlock2 (STADIUM_SAVE_SIZE)
 struct StadiumSave
 {
-    u16 points;         // onzichtbare meter: +1 per gewonnen gevecht, +5 per titel
+    u16 points;         // onzichtbare meter (STADIUM_POINTS_*)
     u16 matchesWon;
     u16 titles[2];      // gewonnen toernooien singles/doubles
     u32 beaten[STADIUM_MAX_POOL / 32];          // deelnemers ooit verslagen (bit per poolplek)
@@ -76,6 +80,7 @@ void Stadium_DebugUnlockAll(void);
 void Stadium_GetRecord(void);
 void Stadium_SetArenaGfx(void);
 void Stadium_GetMatchNames(void);
+void Stadium_GetBpText(void);
 
 // stadium.c -> stadium_screens.c
 u32 Stadium_PoolCount(void);

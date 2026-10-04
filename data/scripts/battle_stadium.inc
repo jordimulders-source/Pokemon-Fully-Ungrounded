@@ -94,6 +94,12 @@ BattleStadium_EventScript_BackToLobbyDoubles::
 BattleStadium_EventScript_LobbyResult::
 	lockall
 	special Stadium_EndTournament
+	special Stadium_HasNewUnlocks
+	goto_if_eq VAR_RESULT, FALSE, BattleStadium_EventScript_LobbyResultText
+	special Stadium_ShowUnlocks
+	waitstate
+	special Stadium_GetBpText
+BattleStadium_EventScript_LobbyResultText::
 	goto_if_eq VAR_STADIUM_STATE, 2, BattleStadium_EventScript_LobbyChampion
 	setvar VAR_STADIUM_STATE, 0
 	msgbox BattleStadium_Text_Lost, MSGBOX_DEFAULT

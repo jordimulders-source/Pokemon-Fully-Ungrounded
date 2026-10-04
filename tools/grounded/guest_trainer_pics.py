@@ -21,7 +21,7 @@ BG = (115, 197, 164)   # index 0, zoals de andere trainerfoto's
 
 # naam: (bron, vergroting, onderste bronrijen weglaten)
 GUESTS = {
-    'guest_wario': ('wario_bron.png', 2, 2),       # 34 rijen hoog: de zolen vallen net buiten beeld
+    'guest_wario': ('wario_side_bron.png', 2, 0),  # zijaanzicht (Jordi); 34 rijen: zie SLIM
     'guest_yoshi': ('yoshi_bron.png', 2, 0),
     'guest_golbat': ('golbat_bron.png', 1, 0),     # Game Boy-sprite, al 56 px
     'guest_grimer': ('grimer_bron.png', 1, 0),
@@ -32,6 +32,11 @@ GUESTS = {
     'guest_shy_guy_pink': ('shyguy_pink_bron.png', 2, 0),
     'guest_shy_guy_black': ('shyguy_black_bron.png', 2, 0),
 }
+
+# bronrijen die maar 1x i.p.v. 2x hoog worden, zodat een figuur van 34 rijen precies in 64 past (rustige rijen in het lijf)
+SLIM = {'guest_wario': (14, 15, 24, 26)}
+# gespiegeld, zodat ze in het gevecht naar de speler (links) kijken
+FLIP = {'guest_wario'}
 
 # trio-compagnons: uitvoernaam -> soortmap (eerste Pokémon van de collectie)
 TRIOS = {
@@ -69,11 +74,19 @@ def to_indexed(rgba):
     return out
 
 
-def guest(src, k, trim):
+def guest(src, k, trim, slim=()):
     im = Image.open(SRC + src).convert('RGBA')
     if trim:
         im = im.crop((0, 0, im.width, im.height - trim))
-    im = im.resize((im.width * k, im.height * k), Image.NEAREST)
+    big = im.resize((im.width * k, im.height * k), Image.NEAREST)
+    if slim:
+        rows = [big.crop((0, y * k, big.width, y * k + (1 if y in slim else k))) for y in range(im.height)]
+        big = Image.new('RGBA', (big.width, sum(r.height for r in rows)))
+        y = 0
+        for r in rows:
+            big.paste(r, (0, y))
+            y += r.height
+    im = big
     assert im.width <= 64 and im.height <= 64, (src, im.size)
     out = Image.new('RGBA', (64, 64), (0, 0, 0, 0))
     out.alpha_composite(im, ((64 - im.width) // 2, 64 - im.height))
@@ -81,7 +94,7 @@ def guest(src, k, trim):
 
 
 def ditto():
-    """Youngster als Ditto: kleren/pet Ditto-paars, gezicht = twee stipjes en een brede glimlach."""
+    """Youngster als Ditto: kleren/pet Ditto-paars, gezicht = twee stipjes en een kleine glimlach."""
     im = Image.open(OUT + 'youngster.png')
     pal = im.getpalette()[:48]
     purple = {5: (216, 168, 240), 12: (192, 128, 224), 13: (152, 96, 200), 6: (120, 72, 168),
@@ -96,10 +109,10 @@ def ditto():
             px[x, y] = LIGHT
         px[35, y] = SKIN
     px[28, 28] = 4
-    # Ditto: twee stipogen en een brede glimlach, met een rij huid eronder (anders lijkt het een kaaklijn)
-    for p in ((30, 24), (33, 24)):
+    # Ditto: twee stipjes en een kleine zachte glimlach (Jordi: derpy, niet gemeen)
+    for p in ((30, 25), (33, 25)):
         px[p] = INK
-    for p in ((29, 26), (30, 27), (31, 27), (32, 27), (33, 27), (34, 26)):
+    for p in ((30, 27), (31, 28), (32, 28), (33, 27)):
         px[p] = INK
     im.putpalette(pal + [0] * (768 - len(pal)))
     return im
@@ -120,7 +133,9 @@ def trio(folder):
 def main():
     pics = {}
     for name, (src, k, trim) in GUESTS.items():
-        pics[name] = guest(src, k, trim)
+        pics[name] = guest(src, k, trim, SLIM.get(name, ()))
+        if name in FLIP:
+            pics[name] = pics[name].transpose(Image.FLIP_LEFT_RIGHT)
     pics['guest_ditto'] = ditto()
     pics['guest_burglar'] = Image.open(os.path.join(ROOT, 'graphics/grounded/trainers/burglar/burglar_gen3.png'))
     for name, folder in TRIOS.items():

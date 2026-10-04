@@ -1034,6 +1034,7 @@
 #define TRAINER_SLAB_RAY                    1013 // Project Grounded: Scorched Slab, zonnezaal (Kindler)
 #define TRAINER_SLAB_MARCO                  1014 // Project Grounded: Scorched Slab, koele bron (verdwaalde duiker)
 #define TRAINER_SLAB_HELIA                  1015 // Project Grounded: Scorched Slab, zonnesanctum (hogepriesteres)
+#define TRAINER_STADIUM_PETREL              1016 // Project Grounded: Battle Stadium (Rocket-executive, vermommingen)
 
 #define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
 #define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis

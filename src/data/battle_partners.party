@@ -3343,6 +3343,45 @@ Nature: Timid
 - Energy Ball
 - Trick
 
+=== PARTNER_STADIUM_PETREL ===
+Name: PETREL
+Class: Rocket Exec
+Pic: Petrel
+Gender: Male
+Music: Rocket
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ditto @ Choice Scarf
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Relaxed
+- Transform
+
+Weezing_Galar @ Black Sludge
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Strange Steam
+- Will-O-Wisp
+- Pain Split
+- Defog
+
+Zoroark @ Choice Specs
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Night Daze
+- Flamethrower
+- Sludge Bomb
+- Focus Blast
+
 === PARTNER_STADIUM_ALBERT ===
 Name: Dave
 Class: Cooltrainer

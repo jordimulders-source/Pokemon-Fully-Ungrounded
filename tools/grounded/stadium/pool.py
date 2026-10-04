@@ -51,6 +51,8 @@ POOL = [
     'STADIUM_N', 'STADIUM_GHETSIS',
     # Neo Team Plasma (Black 2/White 2): tools/grounded/neo_plasma_sprites.py, transitie B_TRANSITION_NEO_PLASMA
     'STADIUM_ZINZOLIN', 'STADIUM_ROOD', 'STADIUM_SHADOW_TRIAD', 'STADIUM_PLASMA_GRUNT_M', 'STADIUM_PLASMA_GRUNT_F',
+    # Team Rocket (Rocket-hideout): Petrel, vermommingsteam
+    'STADIUM_PETREL',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
     'ALBERT', 'SAMUEL', 'OWEN',
     # gasten (graphics/grounded/trainers/guests/, tools/grounded/guest_trainer_pics.py)
@@ -194,6 +196,7 @@ GFX = {
     'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
     'ZINZOLIN': 'ZINZOLIN', 'ROOD': 'ROOD', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
     'PLASMA_GRUNT_M': 'NEO_PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'NEO_PLASMA_GRUNT_F',
+    'PETREL': 'PETREL',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
 }
@@ -312,6 +315,7 @@ KEEP = {
     'STADIUM_MEW': [0],       # PIKABLU
     'STADIUM_JOEY': [1, 2, 0],  # Mightyena en Obstagoon (Jordi), Rattata (top percentage)
     'STADIUM_GOLBAT': [0],    # Zubat: de grot in Red/Blue
+    'STADIUM_PETREL': [1],    # Ditto met Imposter: vermommingsteam (Zoroark is de ace)
 }
 # Sterkte met de hand: zes keer Ditto met Imposter is zo sterk als de tegenstander (gemiddelde van de pool)
 RATING = {'STADIUM_DONALD': 520, 'STADIUM_JOEY': 480}  # Joey: Poochyena is top percentage

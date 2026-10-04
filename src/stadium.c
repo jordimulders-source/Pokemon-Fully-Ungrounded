@@ -409,6 +409,7 @@ static const struct StadiumQuote sStadiumQuotes[] =
     {TRAINER_STADIUM_SHADOW_TRIAD, COMPOUND_STRING("We vanish now.\p...The door is locked. We'll wait for the next round."), COMPOUND_STRING("You blinked. We won. That's the whole technique.")},
     {TRAINER_STADIUM_PLASMA_GRUNT_M, COMPOUND_STRING("Lost again? My boss is going to yell at me.\pHe yells at everyone. It's his whole personality."), COMPOUND_STRING("Ha! Hand over your POKéMON! ...No? Okay. Worth a shot.")},
     {TRAINER_STADIUM_PLASMA_GRUNT_F, COMPOUND_STRING("Fine. I'm unionizing the grunts.\pFirst demand: a dental plan."), COMPOUND_STRING("Grunt of the month! Again! There's no prize, but still.")},
+    {TRAINER_STADIUM_PETREL, COMPOUND_STRING("Unmasked by a child. Again.\pI'll tell the boss it was someone else.\pI'm very good at being someone else."), COMPOUND_STRING("You fought a MIMIKYU, a ZOROARK and yourself. Only one of them was real.")},
     {TRAINER_STADIUM_LYLE, COMPOUND_STRING("Level 50 and still... Maybe I should start training their IVs... hmm."), COMPOUND_STRING("Told you! Indestructible! I'm calling my brother.")},
 };
 

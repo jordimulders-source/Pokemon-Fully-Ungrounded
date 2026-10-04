@@ -8,6 +8,8 @@ Bouwt (idempotent, vaste seed):
 - Petalburg Woods: een verborgen doorgang in de oostrand (x 46-47, y 10). De boom is een kopie op de bovenlaag
   (je loopt erachter langs, onzichtbaar); (47,10) is een oostpijl-warp. Twee rode paddenstoeltjes in het gras
   ervoor als hint. Nieuwe tiles/metatiles achteraan Rustboro (die tileset gebruikt Petalburg Woods).
+- Gen 3-stijl (v0.9.x): ronde lichtbanden van linksboven, omlijning in de donkerste tint, lamellen, slagschaduw
+  rechtsonder en grassprieten over de voet. Bomen, kroontjes en reuzen op COVERED zodat de mist alles bedekt.
 - ToadstoolHollow: kaart 44x40 (bos op een 2x2-raster, open plekken uit een grof ASCII-plan), bereikbaarheid.
 - Registratie: layouts.json, map_groups.json (gMapGroup_Grounded), event_scripts.s, headers/graphics/metatiles.h.
 map.json en scripts.inc van ToadstoolHollow staan met de hand in data/maps/ToadstoolHollow.
@@ -38,13 +40,23 @@ def read_pal(path):
 g2 = read_pal(GEN + '/palettes/02.pal')
 # donker, blauwgroen bos: rood/groen omlaag, blauw iets omhoog
 DARK = [(int(r * 0.42), int(g * 0.55), min(255, int(b * 0.62 + 22))) for r, g, b in g2]
-MUSH = [(0, 0, 0), (28, 18, 30), (130, 26, 40), (205, 48, 58), (246, 112, 96), (248, 242, 226), (222, 206, 170),
-        (150, 128, 104), (86, 52, 34), (140, 94, 54), (196, 150, 92), (24, 62, 44), (52, 104, 60), (102, 150, 76),
-        (54, 36, 34), (98, 68, 52)]
-GLOW = [(0, 0, 0), (22, 14, 44), (84, 40, 128), (156, 76, 214), (214, 148, 255), (252, 226, 255), (30, 62, 138),
-        (62, 136, 230), (132, 224, 255), (226, 252, 255), (196, 196, 222), (118, 116, 160), (172, 255, 150),
-        (255, 244, 140), (24, 62, 44), (52, 104, 60)]
+# Palet 7 (MUSH): rood, room (stippen/steel), bruin, grasschaduw/gras. Palet 8 (GLOW): paars, blauw, gloed, steel, gras.
+MUSH = [(0, 0, 0),
+        (74, 18, 44), (134, 34, 60), (186, 56, 66), (228, 108, 98),        # 1-4 rood: omlijning, donker, midden, licht
+        (234, 226, 204), (192, 182, 166), (138, 130, 140),                 # 5-7 room: licht, midden, schaduw
+        (60, 42, 56),                                                       # 8 bruine omlijning / lamellen
+        (96, 62, 58), (140, 98, 72), (186, 144, 100),                       # 9-11 bruin: donker, midden, licht
+        (12, 70, 74), (48, 108, 123), (68, 117, 144), (27, 99, 103)]        # 12 slagschaduw, 13-15 gras (= donker bos)
+GLOW = [(0, 0, 0),
+        (42, 20, 72), (88, 46, 142), (140, 86, 204), (198, 150, 242),      # 1-4 paars
+        (18, 36, 88), (36, 84, 168), (66, 140, 222), (140, 212, 248),      # 5-8 blauw
+        (232, 248, 255),                                                    # 9 gloed (wit)
+        (204, 200, 224), (148, 144, 182), (70, 64, 104),                    # 10-12 steel: licht, midden, donker/omlijning
+        (186, 250, 160),                                                    # 13 gloed (geelgroen)
+        (12, 70, 74), (27, 99, 103)]                                        # 14 slagschaduw, 15 gras
 P_DARK, P_MUSH, P_GLOW = 6, 7, 8
+
+
 
 os.makedirs(TS + '/palettes', exist_ok=True)
 for i in range(16):
@@ -58,7 +70,7 @@ for i in range(16):
         shutil.copy('%s/palettes/%02d.pal' % (RUST, i), '%s/palettes/%02d.pal' % (TS, i))
 
 
-# ================================================================ tekenen
+# ================================================================ tekenen (Gen 3-stijl)
 class Canvas:
     def __init__(self, w, h):
         self.w, self.h = w, h
@@ -85,38 +97,182 @@ class Canvas:
         for x, y in add:
             self.p[y][x] = col
 
+    def paste(self, o):
+        for y in range(self.h):
+            for x in range(self.w):
+                if o.p[y][x]:
+                    self.p[y][x] = o.p[y][x]
 
-KINDS = {  # donker, midden, licht, stip, steel, steelschaduw
-    'red': (2, 3, 4, 5, 6, 7),
-    'brown': (8, 9, 10, 6, 6, 7),
-    'tan': (7, 10, 6, 5, 5, 6),
-    'purple': (2, 3, 4, 5, 10, 11),
-    'blue': (6, 7, 8, 9, 10, 11),
+
+# hoed: omlijning, donker, midden, licht; stip: licht, midden, schaduw; steel: licht, midden, schaduw, omlijning;
+# lamellen: licht, donker; grond: slagschaduw, gras donker, gras, gras licht
+KINDS = {
+    'red':    dict(cap=(1, 2, 3, 4), spot=(5, 6, 7), stem=(5, 6, 7, 8), gill=(7, 8), ground=(12, 15, 13, 14)),
+    'brown':  dict(cap=(8, 9, 10, 11), spot=(11, 10, 9), stem=(5, 6, 7, 8), gill=(7, 8), ground=(12, 15, 13, 14)),
+    'tan':    dict(cap=(8, 7, 6, 5), spot=(5, 6, 7), stem=(6, 6, 7, 8), gill=(7, 8), ground=(12, 15, 13, 14)),
+    'purple': dict(cap=(1, 2, 3, 4), spot=(9, 4, 3), stem=(10, 11, 12, 12), gill=(11, 12), ground=(14, 15, 15, 15)),
+    'blue':   dict(cap=(5, 6, 7, 8), spot=(9, 8, 7), stem=(10, 11, 12, 12), gill=(11, 12), ground=(14, 15, 15, 15)),
 }
+LIGHT = (-0.55, -0.62, 0.56)        # licht van linksboven (en iets van voren)
 
 
-def mushroom(cv, cx, by, rx, ry, sw, sh, kind, spots=(), gills=True):
-    """Paddenstoel met de voet op (cx, by): hoed (halve ellips, rx x ry) boven een steel (sw x sh)."""
-    dk, md, lt, sp, st, ss = KINDS[kind]
-    ccy = by - sh                                    # middellijn van de hoed (onderkant)
+def _light(nx, ny):
+    nz = math.sqrt(max(0.0, 1 - nx * nx - ny * ny))
+    ln = math.sqrt(sum(v * v for v in LIGHT))
+    return (nx * LIGHT[0] + ny * LIGHT[1] + nz * LIGHT[2]) / ln
+
+
+def mushroom(cv, cx, by, rx, ry, sw, sh, kind, spots=(), lip=1, gills=1, tufts=True, shadow=True, seed=0,
+             ring=False, grain=False):
+    """Paddenstoel met de voet op rij `by`, steel `sw` breed, hoed (koepel rx x ry) met de onderrand op by - sh.
+    spots: (u, v, r) met u in [-1, 1] (links-rechts) en v in [-1, 0] (top-onderrand) van de koepel, r in pixels.
+    Gen 3-stijl: licht van linksboven in ronde banden (hooglicht, licht, midden, donker), omlijning in de donkerste
+    tint (aan de lichte kant de donkere tint), donkere lamellen onder de hoed, slagschaduw rechtsonder op de grond en
+    grassprieten die over de voet vallen."""
+    k = KINDS[kind]
+    co, cd, cm, cl = k['cap']
+    sl, sm, ss, so = k['stem']
+    rnd = random.Random(seed)
+    ccy = by - sh                                     # onderrand van de koepel
+    t = Canvas(cv.w, cv.h)
+    part = {}                                         # (x, y) -> 'cap' | 'stem' | 'gill'
+    # --- slagschaduw op de grond (rechtsonder, licht komt van linksboven)
+    if shadow:
+        sx0, srx = cx + max(1.0, sw * 0.4), max(sw * 0.8 + 1.5, rx * 0.6)
+        sry = max(1.3, srx * 0.26)
+        for y in range(by - 3, by + 4):
+            for x in range(int(cx - srx - 3), int(cx + srx + 4)):
+                if ((x + 0.5 - sx0) / srx) ** 2 + ((y + 0.5 - by) / sry) ** 2 <= 1.0:
+                    t.set(x, y, k['ground'][0])
+    # --- steel (iets breder aan de voet)
     x0 = int(round(cx - sw / 2))
-    for y in range(ccy - 1, by + 1):                 # steel
-        for x in range(x0, x0 + sw):
-            right = x - x0 >= sw - max(1, int(sw * 0.35))
-            cv.set(x, y, ss if (right and sw > 1) or y == ccy - 1 else st)
-    for y in range(int(ccy - ry) - 1, ccy + 2):      # hoed
-        for x in range(int(cx - rx) - 1, int(cx + rx) + 2):
-            dx, dy = (x + 0.5 - cx) / rx, (y + 0.5 - ccy) / ry
-            if dy > 0.0:
-                if dy <= 0.45 and abs(dx) <= 1.0 - dy * 0.6:
-                    cv.set(x, y, dk if gills else md)        # rand/lamellen
+    top = ccy + lip
+    for y in range(top, by + 1):
+        flare = 0
+        if sw >= 4 and y >= by - 2:
+            flare = 1
+        if sw >= 8 and y >= by:
+            flare = 2
+        for x in range(x0 - flare, x0 + sw + flare):
+            part[(x, y)] = 'stem'
+    fib = set()
+    if grain:                                         # korte verticale vezelstreepjes
+        for i in range(max(1, (by - top) * sw // 22)):
+            fx_, fy_ = rnd.randrange(x0 + 2, x0 + sw - 1), rnd.randrange(top + 3, by - 1)
+            for j in range(rnd.choice((2, 3, 3, 4))):
+                fib.add((fx_, fy_ + j))
+    for (x, y) in [p for p, v in part.items() if v == 'stem']:
+        f = (x + 0.5 - x0) / max(1, sw)
+        c = sl if f < 0.34 else (sm if f < 0.70 else ss)
+        if sw <= 2:
+            c = sl if x == x0 else ss
+        if y < top + max(1, min(3, sh // 5)):
+            c = ss if f < 0.70 else so                # schaduw van de hoed
+        elif (x, y) in fib:
+            c = ss                                    # vezels
+        if ring and sw >= 6 and y in (top + 4, top + 5):
+            c = sl if (y == top + 4 and f < 0.7) else ss
+        t.set(x, y, c)
+    if sw <= 2:                                       # dunne steel: omlijning rechts erbuiten
+        for y in range(top, by + 1):
+            part[(x0 + sw, y)] = 'stem'
+            t.set(x0 + sw, y, so)
+    if ring and sw >= 6:
+        for x in (x0 - 1, x0 + sw):
+            part[(x, top + 4)] = 'stem'
+            t.set(x, top + 4, ss)
+    # --- lamellen (onderkant van de hoed): donkere halve ellips met lijnen naar de steel
+    if gills:
+        for i in range(gills):
+            y = ccy + lip + i
+            hw = (rx - 1.0) * (1 - 0.22 * (i + 1)) if gills > 1 else rx - 1.5
+            for x in range(int(math.floor(cx - hw)), int(math.ceil(cx + hw))):
+                if part.get((x, y)) == 'stem':
+                    continue
+                part[(x, y)] = 'gill'
+                lam = (x - int(cx)) % 2 == 0
+                t.set(x, y, k['gill'][1] if (lam or i == gills - 1 or rx < 4) else k['gill'][0])
+    # --- hoed
+    capset = set()
+    for y in range(int(math.floor(ccy - ry)) - 1, ccy + lip):
+        for x in range(int(cx - rx) - 2, int(cx + rx) + 3):
+            dx = (x + 0.5 - cx) / rx
+            if y < ccy + 0.5:
+                dy = (y + 0.5 - ccy) / ry
+                if dx * dx + dy * dy <= 1.0:
+                    capset.add((x, y))
+            elif abs(dx) <= 1.0 - 0.08 * (y - ccy):   # omgekrulde rand
+                capset.add((x, y))
+    hx, hy = -0.32, -0.46                             # middelpunt van de lichtbanden (genormaliseerd)
+
+    def band(x, y):
+        dx = (x + 0.5 - cx) / rx
+        dy = (y + 0.5 - ccy) / ry
+        d = math.hypot(dx - hx, (dy - hy) * 1.05)
+        if y > ccy:                                   # rand onder de middellijn
+            return 2 if dx < -0.35 else 3
+        th = (0.12, 0.42, 0.80) if rx >= 5 else (0.22, 0.62, 1.0)
+        lvl = 0 if d < th[0] else (1 if d < th[1] else (2 if d < th[2] else 3))
+        if dy > -0.12 and lvl < 2:                    # onderkant van de koepel ligt in de schaduw
+            lvl += 1
+        return lvl                                    # 0 hooglicht, 1 licht, 2 midden, 3 donker
+
+    for (x, y) in capset:
+        part[(x, y)] = 'cap'
+        lvl = band(x, y)
+        c = (cl, cl, cm, cd)[lvl]
+        if lvl == 0 and rx >= 6 and k['spot'][0] and kind in ('red', 'purple', 'blue') and (x + y) % 2 == 0:
+            c = cl
+        t.set(x, y, c)
+    # --- stippen (schaduwen mee met de hoed, verkort naar de rand toe)
+    for (u, v, r) in spots:
+        scx, scy = cx + u * rx * 0.96, ccy + v * ry
+        fx = max(0.5, math.sqrt(max(0.0, 1 - u * u)))
+        fy = max(0.45, math.sqrt(max(0.0, 1 - v * v))) * 0.78
+        for y in range(int(scy - r) - 1, int(scy + r) + 2):
+            for x in range(int(scx - r) - 1, int(scx + r) + 2):
+                if (x, y) not in capset:
+                    continue
+                ddx, ddy = (x + 0.5 - scx) / (r * fx), (y + 0.5 - scy) / (r * fy)
+                if ddx * ddx + ddy * ddy <= 1.15 or (r < 1.0 and x == int(scx) and y == int(scy)):
+                    lvl = band(x, y)
+                    sl_ = 0 if lvl <= 2 else 1
+                    if r >= 1.4 and ddx * 0.5 + ddy * 0.85 > 0.55:    # onderrand van de stip
+                        sl_ += 1
+                    c = k['spot'][min(2, sl_)]
+                    t.set(x, y, c)
+    # --- omlijning (binnen het silhouet): donkerste tint, aan de lichte kant de donkere tint
+    for (x, y), pt in list(part.items()):
+        nb = [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
+        out = [q for q in nb if q not in part]
+        if pt == 'cap':
+            if not out:
                 continue
-            if dx * dx + dy * dy > 1.0:
-                continue
-            shade = dx * 0.7 + dy * 0.5               # licht van linksboven
-            cv.set(x, y, lt if shade < -0.45 else (dk if shade > 0.38 else md))
-    for sx, sy in spots:
-        cv.set(int(cx + sx), int(ccy + sy), sp)
+            dx = (x + 0.5 - cx) / rx
+            dy = (y + 0.5 - ccy) / ry
+            lit = dx < -0.1 and dy < -0.3 and all(q[0] <= x and q[1] <= y for q in out) and rx > 3
+            t.set(x, y, cd if lit else co)
+        elif pt == 'stem':
+            if sw > 2 and any(q[0] != x for q in out):  # zijkanten
+                t.set(x, y, so if (x >= cx or y < top + 2) else ss)
+        elif pt == 'gill':
+            if any(q[0] != x for q in out) or y == ccy + lip + gills - 1:
+                t.set(x, y, co if kind in ('red', 'purple', 'blue') else k['gill'][1])
+    # --- graspollen over de voet (donkere sprieten met lichte puntjes)
+    if tufts:
+        sd, gd, gm_, gl = k['ground']
+        span = range(x0 - 2, x0 + sw + 2)
+        for x in span:
+            inner = x0 - 1 <= x <= x0 + sw
+            hgt = rnd.choice((1, 2, 2, 3) if inner else (0, 1, 2, 2))
+            if sw >= 6:
+                edge = x <= x0 + 1 or x >= x0 + sw - 2
+                hgt = rnd.choice((3, 4, 4, 5) if edge else (1, 2, 3, 3)) if inner else rnd.choice((1, 2, 3))
+            for j in range(hgt):
+                y = by + 1 - j
+                c = sd if j == 0 else (gd if j < hgt - 1 else gl)
+                t.set(x, y, c)
+    cv.paste(t)
 
 
 def spores(cv, pts, cols):
@@ -129,40 +285,55 @@ def spores(cv, pts, cols):
 def small(kind):
     cv = Canvas(16, 16)
     if kind == 'red':
-        mushroom(cv, 5.5, 13, 4.2, 4.0, 2, 4, 'red', [(-2, -3), (1, -2), (-1, -1)])
-        mushroom(cv, 11.5, 14, 2.8, 2.6, 2, 2, 'red', [(0, -2)])
+        mushroom(cv, 5.5, 13, 4.6, 3.6, 2, 4, 'red', [(-0.45, -0.55, 0.6), (0.3, -0.75, 0.6), (0.62, -0.25, 0.5)],
+                 seed=1)
+        mushroom(cv, 11.5, 14, 2.7, 2.2, 2, 3, 'red', [(-0.2, -0.6, 0.5)], seed=2)
     elif kind == 'brown':
-        mushroom(cv, 4.5, 14, 3.0, 2.4, 2, 3, 'brown')
-        mushroom(cv, 10.5, 12, 3.6, 3.0, 2, 4, 'brown', [(-1, -2)])
-        mushroom(cv, 13.0, 15, 1.8, 1.5, 1, 2, 'tan')
+        mushroom(cv, 10.5, 12, 3.8, 3.2, 2, 4, 'brown', seed=3)
+        mushroom(cv, 4.5, 14, 3.0, 2.4, 2, 3, 'brown', seed=4)
+        mushroom(cv, 13.5, 15, 2.2, 1.8, 1, 2, 'tan', gills=0, seed=5)
     elif kind == 'purple':
-        mushroom(cv, 7.5, 13, 3.8, 3.4, 2, 5, 'purple', [(-2, -2), (1, -3)])
-        mushroom(cv, 12.5, 15, 2.2, 2.0, 1, 3, 'purple')
-        spores(cv, [(2, 3), (13, 4), (10, 1), (3, 9), (14, 10)], [12, 5, 4, 12, 5])
+        mushroom(cv, 7.5, 13, 4.0, 3.4, 2, 5, 'purple', [(-0.4, -0.6, 0.6), (0.4, -0.5, 0.5)], seed=6)
+        mushroom(cv, 12.5, 15, 2.2, 1.9, 1, 3, 'purple', gills=0, seed=7)
+        spores(cv, [(2, 3), (13, 4), (10, 1), (3, 9), (14, 10)], [13, 9, 4, 13, 9])
     elif kind == 'blue':
-        mushroom(cv, 9.5, 14, 4.0, 3.2, 2, 4, 'blue', [(-2, -2), (1, -1)])
-        mushroom(cv, 3.5, 13, 2.4, 2.2, 1, 3, 'blue')
-        spores(cv, [(1, 4), (12, 2), (6, 1), (14, 8), (5, 7)], [9, 8, 12, 9, 13])
-    cv.outline(1, skip=(12, 13, 9, 5, 4, 8) if kind in ('purple', 'blue') else ())
+        mushroom(cv, 3.5, 13, 2.4, 2.1, 1, 3, 'blue', gills=0, seed=8)
+        mushroom(cv, 9.5, 14, 4.2, 3.2, 2, 4, 'blue', [(-0.4, -0.55, 0.6), (0.35, -0.7, 0.5)], seed=9)
+        spores(cv, [(1, 4), (12, 2), (6, 1), (14, 8), (5, 7)], [9, 8, 13, 9, 13])
     return cv
 
 
 def moss(seed):
+    """Mospollen: ronde bultjes in de grastinten, licht linksboven, schaduw rechtsonder."""
     r = random.Random(seed)
     cv = Canvas(16, 16)
-    for _ in range(4):
-        cx, cy, rr = r.uniform(3, 13), r.uniform(3, 13), r.uniform(2.0, 3.6)
+    blobs = [(r.uniform(4, 12), r.uniform(5, 12), r.uniform(1.8, 3.0)) for _ in range(3)]
+    for cx, cy, rr in sorted(blobs, key=lambda b: b[1]):
+        for y in range(16):                          # schaduw
+            for x in range(16):
+                if ((x + 0.5 - cx - 1) / (rr + 0.6)) ** 2 + ((y + 0.5 - cy - rr * 0.7) / (rr * 0.45 + 0.6)) ** 2 <= 1:
+                    if not cv.get(x, y):
+                        cv.set(x, y, 12)
         for y in range(16):
             for x in range(16):
-                d = math.hypot(x + 0.5 - cx, y + 0.5 - cy) + r.uniform(-0.6, 0.6)
-                if d < rr:
-                    cv.set(x, y, 13 if d < rr * 0.35 else (12 if d < rr * 0.75 else 11))
+                dx, dy = (x + 0.5 - cx) / rr, (y + 0.5 - cy) / (rr * 0.8)
+                d = dx * dx + dy * dy
+                if d <= 1.0:
+                    I = _light(dx, min(0.0, dy) if dy < 0 else dy * 0.5)
+                    c = 14 if I > 0.78 else (13 if I > 0.35 else 15)
+                    if d > 0.72 and (dx > 0 or dy > 0):
+                        c = 12
+                    cv.set(x, y, c)
+    for _ in range(5):                                # sprietjes
+        x, y = r.randrange(2, 14), r.randrange(4, 14)
+        if cv.get(x, y) in (13, 15):
+            cv.set(x, y - 1, 14 if not cv.get(x, y - 1) else cv.get(x, y - 1))
     return cv
 
 
 def glowdots():
     cv = Canvas(16, 16)
-    for (x, y), c in zip([(3, 2), (11, 4), (6, 9), (13, 12), (1, 13), (9, 14), (8, 3)], [12, 9, 13, 12, 8, 5, 12]):
+    for (x, y), c in zip([(3, 2), (11, 4), (6, 9), (13, 12), (1, 13), (9, 14), (8, 3)], [13, 9, 13, 13, 8, 9, 13]):
         cv.set(x, y, c)
     for (x, y) in [(6, 8), (6, 10), (5, 9), (7, 9)]:
         cv.set(x, y, 8)
@@ -170,77 +341,96 @@ def glowdots():
 
 
 def log():
-    """Omgevallen stam, 48x16, met mos en paddenstoeltjes; rechts het zaagvlak."""
+    """Omgevallen stam, 48x16: schors met licht van boven, mos, zaagvlak rechts, slagschaduw eronder."""
+    r = random.Random(11)
     cv = Canvas(48, 16)
-    for x in range(1, 44):
-        for y in range(4, 15):
-            ring = (x * 7 + y * 3) % 11
-            c = 15 if y < 9 else 14
-            if ring == 0 and 6 <= y <= 12:
-                c = 14
-            if y in (5, 6) and (x * 5) % 9 < 6:
-                c = 12 if (x % 4) else 13          # mos bovenop
-            if y == 4:
-                c = 11 if x % 3 else 12
+    y0, y1 = 4, 13                                    # boven- en onderkant van de stam
+    for x in range(3, 47):                            # slagschaduw
+        for y in (y1 + 1, y1 + 2):
+            if not (y == y1 + 2 and (x < 6 or x > 44)):
+                cv.set(x, y, 12)
+    for x in range(1, 43):
+        for y in range(y0, y1 + 1):
+            f = (y - y0) / (y1 - y0)
+            c = 11 if f < 0.22 else (10 if f < 0.6 else 9)
+            if (x + y * 11) % 13 < 4 and 0.25 < f < 0.95 and y % 2 == 0:
+                c = 9 if c == 10 else 8               # schorsgroeven (horizontaal)
+            if f < 0.22 and (x * 3 + y) % 9 == 0:
+                c = 10
+            if y in (y0, y1) or x == 1:
+                c = 8
             cv.set(x, y, c)
-    for y in range(4, 15):                         # zaagvlak
-        for x in range(42, 47):
-            dx, dy = (x + 0.5 - 44.5) / 2.6, (y + 0.5 - 9.5) / 5.5
+    for x in range(1, 43):                            # mos bovenop, hangt een beetje over de rand
+        n = r.choice((0, 1, 1, 2, 2, 3))
+        if 16 <= x <= 22 or x > 38:
+            n = min(n, 1)
+        for j in range(n):
+            cv.set(x, y0 - 1 + j, 14 if j == 0 else (13 if j == 1 else 15))
+        if n == 3 and r.random() < 0.5:
+            cv.set(x, y0 + 2, 15)
+    for y in range(y0, y1 + 1):                       # zaagvlak
+        for x in range(40, 48):
+            dx, dy = (x + 0.5 - 43.5) / 3.4, (y + 0.5 - (y0 + y1 + 1) / 2) / ((y1 - y0 + 1) / 2)
             d = dx * dx + dy * dy
             if d <= 1.0:
-                cv.set(x, y, 10 if d > 0.55 else (6 if d > 0.2 else 7))
-    mushroom(cv, 9.5, 4, 2.4, 2.0, 1, 2, 'brown', gills=False)
-    mushroom(cv, 13.0, 4, 1.6, 1.4, 1, 1, 'tan', gills=False)
-    mushroom(cv, 30.5, 4, 2.8, 2.4, 2, 2, 'red', [(0, -2)], gills=False)
-    cv.outline(1)
+                c = 6 if d < 0.15 else (5 if d < 0.4 else (6 if d < 0.65 else 7))
+                if d > 0.82:
+                    c = 8
+                elif dx > 0.2 and dy > 0.1 and c in (5, 6):
+                    c = 7 if c == 6 else 6
+                cv.set(x, y, c)
+    mushroom(cv, 9.5, y0, 2.8, 2.2, 2, 3, 'brown', gills=0, tufts=False, shadow=False, seed=12)
+    mushroom(cv, 13.5, y0, 2.2, 1.7, 1, 2, 'brown', gills=0, tufts=False, shadow=False, seed=13)
+    mushroom(cv, 30.5, y0, 3.2, 2.6, 2, 3, 'red', [(-0.3, -0.6, 0.6)], gills=0, tufts=False, shadow=False, seed=14)
+    for x in range(3, 47, 2):                         # gras tegen de onderkant
+        h = r.choice((0, 1, 2))
+        for j in range(h):
+            cv.set(x, y1 + 2 - j, 15 if j == 0 else 13)
     return cv
 
 
 def fairy_ring(seed):
-    """Heksenkring 80x80 (5x5 metatiles): bleke/bruine paddenstoeltjes in een cirkel, wat donker mos ertussen."""
+    """Heksenkring 80x80 (5x5 metatiles): bleke/bruine paddenstoeltjes in een cirkel, daaronder een ring donker gras
+    (de schimmel onder de grond)."""
     r = random.Random(seed)
     cv = Canvas(80, 80)
+    for i in range(140):
+        a = r.uniform(0, 2 * math.pi)
+        rad = 30 + r.gauss(0, 1.6)
+        x, y = int(40 + rad * math.cos(a)), int(42 + rad * math.sin(a) * 0.92)
+        cv.set(x, y, 15 if r.random() < 0.7 else 12)
     n = 18
+    pts = []
     for i in range(n):
         a = 2 * math.pi * i / n + r.uniform(-0.06, 0.06)
         rad = 29 + r.uniform(-1.5, 1.5)
-        cx, by = 40 + rad * math.cos(a), 42 + rad * math.sin(a) * 0.92
+        pts.append((40 + rad * math.cos(a), 42 + rad * math.sin(a) * 0.92, i))
+    for cx, by, i in sorted(pts, key=lambda p: p[1]):
         kind = 'tan' if i % 3 else 'brown'
         big = r.random() < 0.4
         mushroom(cv, cx, int(by), 3.0 if big else 2.2, 2.4 if big else 1.8, 2 if big else 1, 3 if big else 2, kind,
-                 [(0, -2)] if kind == 'brown' and big else ())
-    for i in range(60):                               # ring van donker mos (de schimmel onder de grond)
-        a = r.uniform(0, 2 * math.pi)
-        rad = 31 + r.uniform(-3, 3)
-        x, y = int(40 + rad * math.cos(a)), int(42 + rad * math.sin(a) * 0.92)
-        if not cv.get(x, y):
-            cv.set(x, y, 11)
-    cv.outline(1, skip=(11,))
+                 gills=1 if big else 0, seed=100 + i)
     return cv
 
 
 def giant_red():
-    """Reuzenpaddenstoel 48x48 (3x3): rode hoed met witte stippen op een dikke steel."""
+    """Reuzenpaddenstoel 48x48 (3x3): rode hoed met roomwitte stippen op een dikke, vezelige steel met manchet."""
     cv = Canvas(48, 48)
-    mushroom(cv, 24, 46, 22.5, 22, 12, 18, 'red',
-             [(-14, -10), (-13, -9), (-14, -9), (-13, -10), (-4, -17), (-3, -17), (-4, -16), (-3, -16), (-2, -17),
-              (8, -12), (9, -12), (8, -11), (9, -11), (9, -13), (15, -6), (16, -6), (15, -5), (-8, -4), (-7, -4),
-              (-8, -5), (2, -7), (3, -7), (2, -8), (-18, -3), (19, -3), (12, -18), (13, -18)])
-    for x in range(14, 34):                            # grasrand aan de voet
-        if x % 3 == 0:
-            cv.set(x, 47, 12)
-    cv.outline(1, skip=(12,))
+    mushroom(cv, 24, 45, 22.4, 17.5, 12, 21, 'red',
+             [(-0.62, -0.55, 2.6), (-0.10, -0.86, 2.4), (0.45, -0.62, 2.4), (0.80, -0.22, 1.8), (-0.88, -0.15, 1.5),
+              (0.10, -0.30, 1.9), (-0.40, -0.18, 1.3), (0.48, -0.95, 1.2), (-0.58, -0.90, 1.0), (0.97, -0.55, 0.9)],
+             lip=2, gills=3, seed=20, ring=True, grain=True)
     return cv
 
 
 def giant_small(kind):
     """Reuzenpaddenstoel 32x32 (2x2), gloeiend paars of blauw."""
     cv = Canvas(32, 32)
-    mushroom(cv, 16, 30, 14.5, 12, 8, 13, kind,
-             [(-8, -6), (-7, -6), (-8, -5), (2, -10), (3, -10), (2, -9), (8, -4), (9, -4), (-2, -3)])
-    spores(cv, [(2, 4), (29, 6), (5, 22), (27, 24), (1, 14), (30, 15)], [12, 9, 5, 12, 13, 5] if kind == 'blue'
-           else [5, 12, 4, 13, 5, 12])
-    cv.outline(1, skip=(12, 13, 9, 5, 4, 8))
+    mushroom(cv, 16, 29, 14.4, 11.5, 8, 14, kind,
+             [(-0.55, -0.5, 1.8), (0.15, -0.82, 1.6), (0.6, -0.35, 1.4), (-0.15, -0.2, 1.1), (-0.85, -0.12, 0.9)],
+             lip=2, gills=2, seed=30 if kind == 'purple' else 31, grain=True)
+    spores(cv, [(2, 4), (29, 6), (5, 22), (27, 24), (1, 14), (30, 15)],
+           [13, 9, 9, 13, 13, 9] if kind == 'blue' else [9, 13, 4, 13, 9, 13])
     return cv
 
 
@@ -387,10 +577,18 @@ def darken(e):
     return [(t & 0x0FFF) | (P_DARK << 12) if t & 0x3FF else t for t in e]
 
 
+# Bomen op COVERED: hun bovenlaag komt op BG2 en de mist (sprites, prioriteit 2) bedekt dan ook de boomtoppen; op
+# BG1 (NORMAL, zoals in vanilla) liggen ze boven de mist. Ook de kroontjes op begaanbare cellen (1c6/1c7/1ce/1cf):
+# anders steken overal onbemiste boomtopjes uit de mist. Prijs: wie direct boven een boom staat, staat nu vóór het
+# topje van de kruin in plaats van erachter (een paar pixels bij de voeten).
 for g in (0x001, 0x00D, 0x1C6, 0x1C7, 0x1CE, 0x1CF, 0x1D4, 0x1D5, 0x1D6, 0x1D7, 0x1DC, 0x1DD, 0x1E4, 0x1E5, 0x1E6,
           0x1E7):
     e = darken(gmt(g))
-    addmt('g%03x' % g, e[:4], e[4:], gat(g))
+    at = gat(g)
+    if g >= 0x1C6:
+        assert at & 0xF000 == NORMAL, hex(at)
+        at = (at & 0x0FFF) | COVERED
+    addmt('g%03x' % g, e[:4], e[4:], at)
 DGRASS = darken(gmt(0x001))[:4]
 addmt('warp_w', DGRASS, [0] * 4, 0x63)               # westpijl-warp terug naar Petalburg Woods
 
@@ -411,13 +609,10 @@ deco('moss2', moss(7), P_MUSH)
 deco('glow', glowdots(), P_GLOW)
 deco('log', log(), P_MUSH, 3, 1)
 deco('ring', fairy_ring(SEED), P_MUSH, 5, 5)
-deco('gred', giant_red(), P_MUSH, 3, 3, layers=[NORMAL, NORMAL, COVERED])
-deco('gpur', giant_small('purple'), P_GLOW, 2, 2, layers=[NORMAL, COVERED])
-gb = giant_small('purple')
-for row in gb.p:                                     # blauwe variant: zelfde vorm, andere kleuren
-    for i, v in enumerate(row):
-        row[i] = {2: 6, 3: 7, 4: 8, 5: 9}.get(v, v)
-deco('gblue', gb, P_GLOW, 2, 2, layers=[NORMAL, COVERED])
+# Alles op COVERED (bovenlaag op BG2): de mistsprites (prioriteit 2) liggen dan ook over de hoeden.
+deco('gred', giant_red(), P_MUSH, 3, 3)
+deco('gpur', giant_small('purple'), P_GLOW, 2, 2)
+deco('gblue', giant_small('blue'), P_GLOW, 2, 2)
 print('eigen tileset:', len(MT), 'metatiles,', len(tt.list) + 1, 'tiles')
 save_tiles(TS + '/tiles.png', None, tt.list, 1)
 open(TS + '/metatiles.bin', 'wb').write(b''.join(struct.pack('<8H', *e) for e in MT))

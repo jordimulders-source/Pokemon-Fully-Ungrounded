@@ -156,6 +156,8 @@ static void Task_Genesect(u8); // Project Grounded
 static void Task_Mewtwo(u8); // Project Grounded
 static void Task_Giratina(u8); // Project Grounded
 static void Task_Victini(u8); // Project Grounded
+static void Task_Jirachi(u8); // Project Grounded
+static void Task_Darkrai(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -457,6 +459,14 @@ static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/rout
 static const u16 sVictini_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_victini.4bpp");
 static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
 static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
+static const u16 sJirachi_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.4bpp");
+static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.gbapal");
+static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
+static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
+static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
+static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
+static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
+static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -566,6 +576,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_MEWTWO] = Task_Mewtwo, // Project Grounded
     [B_TRANSITION_GIRATINA] = Task_Giratina, // Project Grounded
     [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
+    [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
+    [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7912,4 +7924,185 @@ static const struct RouteTransition sRT_Victini =
 static void Task_Victini(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Victini);
+}
+
+// ---------------- Jirachi: een wensster tuimelt fladderend van links naar rechts over het (nachtelijk donker wordende)
+// beeld en laat een spoor van fonkelingen achter; dan komt hij terug, duikt draaiend en groeiend naar het midden en het
+// hele beeld wordt goudwit. BG-tiles: 1-4 fonkelingen (kleurcyclus = twinkelen), sprite: de ster met wenslabels.
+#define JIRACHI_DIVE  44
+#define JIRACHI_FLASH 68
+
+static void RTJirachi_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sJirachiStar_Gfx, sJirachiStar_Palette, -40, 44);
+    RT_SetSprite(task, -40, 44, 256, 0);
+}
+
+static void RTJirachi_Sparkle(u16 *tilemap, s32 x, s32 y)
+{
+    s32 c = (x + (Random() % 17) - 8) / 8, r = (y + (Random() % 17) - 8) / 8;
+    if (c >= 0 && c < 30 && r >= 0 && r < 20)
+        tilemap[r * 32 + c] = RT_TILE(1 + Random() % 4);
+}
+
+static bool8 RTJirachi_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    struct Sprite *star = &gSprites[task->tRtSprite];
+    s32 t = task->tRtTimer, x, y, scale, flip, d, i;
+
+    if (t < JIRACHI_DIVE)
+    {
+        // heen: fladderend (op en neer) en tuimelend (om zijn verticale as) van links naar rechts
+        task->tRtA += 0x0900;
+        x = -40 + t * 7;
+        y = 44 + Sin((t * 14) & 0xFF, 22) + t / 2;
+        scale = 256;
+    }
+    else
+    {
+        // terug: in een boog van rechtsonder naar het midden, steeds sneller draaiend en groter
+        d = min(t - JIRACHI_DIVE, 22);
+        task->tRtA += 0x0900 + d * 0x180;
+        x = 260 - d * 140 / 22;
+        y = 120 - d * 40 / 22 - Sin((d * 6) & 0xFF, 34);
+        scale = 256 + d * 256 / 22;
+    }
+    flip = Cos((t * 9) & 0xFF, scale);
+    if (flip > -40 && flip < 40)
+        flip = (flip < 0) ? -40 : 40;
+    star->x = x;
+    star->y = y;
+    SetOamMatrixRotationScaling(star->oam.matrixNum, flip, scale, task->tRtA);
+
+    // spoor van fonkelingen; bij aankomst in het midden een uitbarsting van fonkelingen over het hele beeld
+    if (t < JIRACHI_FLASH)
+    {
+        RTJirachi_Sparkle(tilemap, x, y);
+        if (t & 1)
+            RTJirachi_Sparkle(tilemap, x - 10, y + 4);
+    }
+    if (t >= JIRACHI_DIVE + 22 && t < JIRACHI_FLASH + 4)
+        for (i = 0; i < 6; i++)
+            RTJirachi_Sparkle(tilemap, Random() % 240, Random() % 160);
+
+    if (t == 0)
+        PlaySE(SE_M_MOONLIGHT);
+    if (t == JIRACHI_DIVE)
+        PlaySE(SE_M_COSMIC_POWER);
+    if (t == JIRACHI_DIVE + 22)
+        PlaySE(SE_SHINY);
+
+    if (t < JIRACHI_FLASH)
+    {
+        BlendPalettes(RT_SceneWithoutSprite(), min(t / 3, 11), RGB(1, 2, 9)); // het wordt nacht
+    }
+    else
+    {
+        // de wens: alles wordt goudwit
+        if (t == JIRACHI_FLASH)
+        {
+            PlaySE(SE_M_HEAL_BELL);
+            RT_FreezePalettes();
+        }
+        BlendPalettes(PALETTES_ALL, min((t - JIRACHI_FLASH) * 2, 16), RGB(31, 30, 21));
+    }
+    return t >= JIRACHI_FLASH + 10;
+}
+
+static const struct RouteTransition sRT_Jirachi =
+{
+    sJirachi_Tileset, sizeof(sJirachi_Tileset), sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
+};
+
+static void Task_Jirachi(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Jirachi);
+}
+
+// ---------------- Darkrai: zwarte nachtmerrierook kruipt van boven en van onder dicht, als oogleden die zwaar worden,
+// en de wereld zakt weg in paars-zwart. Dan gaat midden in het donker één blauw oog open boven een rode kraag; het oog
+// komt op je af en alles wordt zwart. BG-tiles: 1 zwart, 2-4 rookrand onder, 5-7 rookrand boven, 8-9 slierten.
+#define DARKRAI_CLOSED 40
+#define DARKRAI_EYE    46
+#define DARKRAI_LUNGE  70
+
+static void RTDarkrai_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sDarkraiEye_Gfx, sDarkraiEye_Palette, 120, 80);
+    RT_SetSprite(task, 120, 80, 256, 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTDarkrai_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    struct Sprite *eye = &gSprites[task->tRtSprite];
+    s32 t = task->tRtTimer, r, c, top, bottom, d, open, scale;
+
+    for (r = 0; r < 20; r++)
+        for (c = 0; c < 32; c++)
+            tilemap[r * 32 + c] = 0;
+
+    // rook van onder en van boven: per kolom een golvende rand die langzaam omhoog/omlaag kruipt
+    for (c = 0; c < 30; c++)
+    {
+        d = min(t, DARKRAI_CLOSED);
+        bottom = d * 11 / DARKRAI_CLOSED + Sin((c * 23 + t * 5) & 0xFF, 2) + 1;
+        top = d * 11 / DARKRAI_CLOSED + Sin((c * 31 - t * 4 + 64) & 0xFF, 2) + 1;
+        for (r = 0; r < 20; r++)
+        {
+            u16 tileNum = 0;
+            if (t >= DARKRAI_CLOSED || r > 20 - bottom || r < top - 1)
+                tileNum = 1;
+            else if (r == 20 - bottom)
+                tileNum = 2 + (c + t / 6) % 3;
+            else if (r == top - 1)
+                tileNum = 5 + (c + t / 7) % 3;
+            else if (r == 20 - bottom - 2 && (c + t / 4) % 5 == 0)
+                tileNum = 8;
+            else if (r == top + 1 && (c * 3 + t / 5) % 7 == 0)
+                tileNum = 9;
+            if (tileNum)
+                tilemap[r * 32 + c] = RT_TILE(tileNum);
+        }
+    }
+    BlendPalettes(RT_SceneWithoutSprite(), min(t / 3, 13), RGB(3, 0, 6)); // de wereld zakt weg in paars-zwart
+
+    if (t == 0)
+        PlaySE(SE_M_HAZE);
+    if (t == DARKRAI_EYE)
+        PlaySE(SE_M_NIGHTMARE);
+
+    // het oog gaat open (verticaal opschalen), kijkt even, en komt dan op je af
+    if (t >= DARKRAI_EYE)
+    {
+        eye->invisible = FALSE;
+        open = min((t - DARKRAI_EYE) * 24, 256);
+        scale = (t >= DARKRAI_LUNGE) ? 256 + (t - DARKRAI_LUNGE) * 20 : 256;
+        if (scale > 512)
+            scale = 512;
+        SetOamMatrixRotationScaling(eye->oam.matrixNum, scale, max(open * scale / 256, 12), 0);
+        if (t >= DARKRAI_LUNGE)
+        {
+            if (t == DARKRAI_LUNGE)
+            {
+                PlaySE(SE_M_FAINT_ATTACK);
+                RT_FreezePalettes();
+            }
+            if (t >= DARKRAI_LUNGE + 8)
+                BlendPalettes(PALETTES_ALL, min(t - DARKRAI_LUNGE - 8, 16), RGB_BLACK);
+        }
+    }
+    return t >= DARKRAI_LUNGE + 24;
+}
+
+static const struct RouteTransition sRT_Darkrai =
+{
+    sDarkrai_Tileset, sizeof(sDarkrai_Tileset), sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
+};
+
+static void Task_Darkrai(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Darkrai);
 }

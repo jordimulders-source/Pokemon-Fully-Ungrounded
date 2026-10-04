@@ -259,3 +259,19 @@ Debug_EventScript_Legend_Mewtwo::
 	waitstate
 	releaseall
 	end
+
+Debug_EventScript_Legend_Jirachi::
+	lockall
+	setwildbattle SPECIES_JIRACHI, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end
+
+Debug_EventScript_Legend_Darkrai::
+	lockall
+	setwildbattle SPECIES_DARKRAI, 70
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	releaseall
+	end

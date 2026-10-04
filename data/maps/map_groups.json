@@ -464,7 +464,8 @@
     "MeteorFalls_UnknownCave_B1F",
     "SkyPillar_ReverseB1F",
     "SkyPillar_ReverseB2F",
-    "SkyPillar_ReverseB3F"
+    "SkyPillar_ReverseB3F",
+    "MtPyre_Nightmare"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

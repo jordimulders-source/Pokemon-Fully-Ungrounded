@@ -661,9 +661,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL  0x266 // Project Grounded: Route 135
 #define FLAG_HIDDEN_ITEM_ROUTE_136_STAR_PIECE  0x267 // Project Grounded: Route 136
 #define FLAG_HIDDEN_ITEM_ROUTE_136_MAX_REPEL  0x268 // Project Grounded: Route 136
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
+#define FLAG_HIDE_FALLARBOR_JIRACHI 0x269 // Project Grounded: Jirachi (object) bij de wenssteen in Fallarbor, verborgen tot je een wens doet
+#define FLAG_DEFEATED_JIRACHI       0x26A // Project Grounded: Jirachi gevangen of verslagen (wens-event klaar)
+#define FLAG_DEFEATED_DARKRAI       0x26B // Project Grounded: Darkrai gevangen of verslagen (nachtmerrie op Mt. Pyre klaar)
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag

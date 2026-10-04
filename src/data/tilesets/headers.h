@@ -896,3 +896,27 @@ const struct Tileset gTileset_SkyPillarReverse = // Project Grounded: omgekeerde
     .metatileAttributes = gMetatileAttributes_SkyPillarReverse,
     .callback = NULL,
 };
+
+// Project Grounded: Darkrai's nachtmerrie (MtPyre_Nightmare): tiles en metatiles van General/Facility met donkerpaarse
+// paletten (tools/grounded/maptools/darkrai_nightmare.py)
+const struct Tileset gTileset_NightmareGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_NightmareGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_NightmareFacility =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Facility,
+    .palettes = gTilesetPalettes_NightmareFacility,
+    .metatiles = gMetatiles_Facility,
+    .metatileAttributes = gMetatileAttributes_Facility,
+    .callback = NULL,
+};

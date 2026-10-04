@@ -1771,3 +1771,44 @@ const u16 gTilesetPalettes_SkyPillarReverse[][16] =
     INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/15.gbapal"),
 };
+
+// Project Grounded: Darkrai's nachtmerrie
+const u16 gTilesetPalettes_NightmareGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/15.gbapal"),
+};
+
+const u16 gTilesetPalettes_NightmareFacility[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/15.gbapal"),
+};

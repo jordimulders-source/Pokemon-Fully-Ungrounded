@@ -1,6 +1,62 @@
 MtPyre_Summit_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, MtPyre_Summit_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MtPyre_Summit_OnFrame
 	.byte 0
+
+@ Project Grounded: Darkrai. Post-game, 's nachts: wie voor het heiligdom op de top stapt (y 6), valt in slaap en
+@ belandt in een nachtmerrie (MtPyre_Nightmare). VAR_NIGHT_LEGEND_STATE: 1 = trigger aan, 3 = net wakker geworden.
+MtPyre_Summit_OnResume:
+	goto_if_eq VAR_NIGHT_LEGEND_STATE, 3, MtPyre_Summit_EventScript_NoDreamTonight
+	setvar VAR_NIGHT_LEGEND_STATE, 0
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MtPyre_Summit_EventScript_NoDreamTonight
+	goto_if_set FLAG_DEFEATED_DARKRAI, MtPyre_Summit_EventScript_NoDreamTonight
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, FALSE, MtPyre_Summit_EventScript_NoDreamTonight
+	setvar VAR_NIGHT_LEGEND_STATE, 1
+MtPyre_Summit_EventScript_NoDreamTonight:
+	end
+
+MtPyre_Summit_OnFrame:
+	map_script_2 VAR_NIGHT_LEGEND_STATE, 3, MtPyre_Summit_EventScript_WakeUp
+	.2byte 0
+
+MtPyre_Summit_EventScript_DarkraiDream::
+	lockall
+	msgbox MtPyre_Summit_Text_SuddenlyDrowsy, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_NIGHT_LEGEND_STATE, 2
+	fadescreenspeed FADE_TO_BLACK, 6
+	playse SE_M_NIGHTMARE
+	waitse
+	warpsilent MAP_MT_PYRE_NIGHTMARE, 15, 14
+	waitstate
+	releaseall
+	end
+
+MtPyre_Summit_EventScript_WakeUp::
+	lockall
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox MtPyre_Summit_Text_WokeUp, MSGBOX_DEFAULT
+	setvar VAR_NIGHT_LEGEND_STATE, 0
+	releaseall
+	end
+
+MtPyre_Summit_Text_SuddenlyDrowsy:
+	.string "A heavy drowsiness creeps over\n"
+	.string "{PLAYER}.\p"
+	.string "Taking a nap on top of a graveyard\n"
+	.string "in the middle of the night.\p"
+	.string "Surely nothing bad has ever happened\n"
+	.string "to anyone who did that…\p"
+	.string "Zzz…$"
+
+MtPyre_Summit_Text_WokeUp:
+	.string "{PLAYER} wakes up with a start,\n"
+	.string "drenched in cold sweat.\p"
+	.string "The old couple is staring.\n"
+	.string "Nobody says anything about it.$"
 
 MtPyre_Summit_OnTransition:
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions

@@ -6096,6 +6096,9 @@ u16 GetBattleBGM(void)
         case SPECIES_ENTEI:
         case SPECIES_SUICUNE:
             return MUS_C_VS_LEGEND_BEAST;
+        case SPECIES_JIRACHI: // Project Grounded: wens-event in Fallarbor
+            return MUS_VS_MEW;
+        case SPECIES_DARKRAI: // Project Grounded: nachtmerrie op Mt. Pyre
         case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
         case SPECIES_GIRATINA_ORIGIN:
             return MUS_GROUNDED_VS_GIRATINA;

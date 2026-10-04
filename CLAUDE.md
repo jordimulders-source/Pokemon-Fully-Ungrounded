@@ -99,6 +99,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Agent-branches samenvoegen:** conflicten achteraan enums/tabellen/map_groups zijn "beide houden"; let op een `}` of komma die op de grens wegvalt. Vlecht git twee nieuwe functieblokken door elkaar (battle_transition.c), bouw het bestand dan op uit onze versie + hun blok.
 - **Subagents en de scratchpad:** die wordt gedeeld; laat elke agent een eigen submap gebruiken (een `test.gba` van een ander proces gaf een Bus error).
 - **Object toevoegen aan een kaart met `"object_events": []`:** tekstueel vóór `"warp_events"` invoegen belandt in `connections`; controleer met `json.load`.
+- **Zwarte leegte op een kaart:** metatile 0 is niet zwart (layer NORMAL tekent grasbasis op BG3); gebruik Facility-metatile 0x201. Kleine kaarten tonen de border: rondom aanvullen. `build/emerald/data/maps.o` volgt `map.bin`/`border.bin` niet: na een wijziging verwijderen.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

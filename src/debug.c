@@ -393,6 +393,8 @@ extern const u8 Debug_EventScript_Legend_HoOh[];
 extern const u8 Debug_EventScript_Legend_Heatran[];
 extern const u8 Debug_EventScript_Legend_Genesect[];
 extern const u8 Debug_EventScript_Legend_Mewtwo[];
+extern const u8 Debug_EventScript_Legend_Jirachi[];
+extern const u8 Debug_EventScript_Legend_Darkrai[];
 extern const u8 Debug_EventScript_WildFromMap[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
@@ -585,6 +587,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
     { COMPOUND_STRING("Heatran"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Heatran },
     { COMPOUND_STRING("Genesect"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Genesect },
     { COMPOUND_STRING("Mewtwo"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Mewtwo },
+    { COMPOUND_STRING("Jirachi"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Jirachi },
+    { COMPOUND_STRING("Darkrai"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Darkrai },
     { NULL }
 };
 

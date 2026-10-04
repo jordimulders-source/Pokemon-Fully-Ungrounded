@@ -264,7 +264,7 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
+#define VAR_NIGHT_LEGEND_STATE                           0x40F7 // Project Grounded: nachtelijke legendaries (Jirachi, Darkrai): 1 = trigger op deze kaart staat aan, 2 = net in de nachtmerrie, 3 = net wakker
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
 #define VAR_SKY_PILLAR_REVERSE_STATE                     0x40F9 // Project Grounded: omgekeerde Sky Pillar (0 niets, 1 gat open, 2 gezien, 3 geland op B1F, 4 B2F gezien)
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused Var

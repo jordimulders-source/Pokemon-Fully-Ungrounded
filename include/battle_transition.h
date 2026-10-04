@@ -100,6 +100,8 @@ enum BattleTransition
     B_TRANSITION_MEWTWO, // Project Grounded: Mewtwo, gloeiende ogen en een psychische schokgolf
     B_TRANSITION_GIRATINA, // Project Grounded: Giratina, het scherm scheurt, klapt om en de schaduwvleugels sluiten het af
     B_TRANSITION_VICTINI, // Project Grounded: Victini, een grote V in vuur (V-create)
+    B_TRANSITION_JIRACHI, // Project Grounded: Jirachi, een wensster tuimelt fladderend over het beeld
+    B_TRANSITION_DARKRAI, // Project Grounded: Darkrai, nachtmerrierook sluit het beeld en een blauw oog gaat open
     B_TRANSITION_COUNT
 };
 

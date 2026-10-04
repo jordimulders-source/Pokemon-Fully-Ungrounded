@@ -16035,3 +16035,8 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Dubbele paradoxen vervangen (Seafloor Room 8: Weavile, Victory Road B2F: Kingambit).
 - Bewust ongemoeid: Ashfrost (stadsuitzondering), Altering Cave, Artisan Cave, de ongebruikte Cave of Origin-kaarten, Battle Pyramid/Pike.
 - Volledig overzicht: `WILDE_TABELLEN.md`.
+
+### [v.0.8.124] - Jirachi en Darkrai
+- **Jirachi (post-game, 's nachts):** in de oude meteorietkrater in Fallarbor Town (linksonder) gaan staan en een wens doen; Jirachi daalt uit de lucht neer (lv 70, Mew-gevechtsmuziek). Gevlucht = Jirachi vliegt weg, je kunt opnieuw wensen. De Expert M in Fallarbor geeft na de Hall of Fame een hint. **Eigen transitie** (idee Jordi): een tuimelende, fladderende wensster met een spoor van fonkelingen, die draaiend naar het midden duikt; alles wordt goudwit.
+- **Darkrai (post-game, 's nachts):** wie op de top van Mt. Pyre voor het heiligdom stapt, valt in slaap en belandt in een nachtmerrie (nieuwe kaart `MtPyre_Nightmare`: de top in donkerpaarse kleuren, zwevend in het zwart, extra graven, Lavender Town-muziek). Darkrai (lv 70, Giratina-gevechtsmuziek) zweeft voor het heiligdom; na het gevecht word je wakker op de top. **Eigen transitie:** nachtmerrierook kruipt van boven en onder dicht (oogleden), daarna gaat één blauw oog met rode kraag open en komt op je af.
+- Techniek: special `IsNightTime`; flags 0x269–0x26B (`FLAG_HIDE_FALLARBOR_JIRACHI`, `FLAG_DEFEATED_JIRACHI`, `FLAG_DEFEATED_DARKRAI`); `VAR_NIGHT_LEGEND_STATE` (0x40F7); tilesets `nightmare_general`/`nightmare_facility` (alleen eigen paletten); bouwscript `tools/grounded/maptools/darkrai_nightmare.py`; debugmenu Legendary: Jirachi en Darkrai.

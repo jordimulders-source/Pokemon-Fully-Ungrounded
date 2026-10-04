@@ -4392,3 +4392,10 @@ void SetAbility(void)
     u32 ability = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
 }
+
+// Project Grounded: 1 als het nu nacht is (echte klok, dag/nacht-systeem). Voor nachtelijke legendary-events
+// (Jirachi in Fallarbor, Darkrai op Mt. Pyre). Scripts kunnen TIME_NIGHT (een enum) niet zelf vergelijken.
+bool8 IsNightTime(void)
+{
+    return GetTimeOfDay() == TIME_NIGHT;
+}

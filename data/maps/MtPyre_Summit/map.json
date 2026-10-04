@@ -153,6 +153,33 @@
     {
       "type": "trigger",
       "x": 22,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_NIGHT_LEGEND_STATE",
+      "var_value": "1",
+      "script": "MtPyre_Summit_EventScript_DarkraiDream"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_NIGHT_LEGEND_STATE",
+      "var_value": "1",
+      "script": "MtPyre_Summit_EventScript_DarkraiDream"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_NIGHT_LEGEND_STATE",
+      "var_value": "1",
+      "script": "MtPyre_Summit_EventScript_DarkraiDream"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
       "y": 7,
       "elevation": 3,
       "var": "VAR_MT_PYRE_STATE",

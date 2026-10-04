@@ -1422,6 +1422,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPDEF))
                 ADJUST_SCORE(-8);
             break;
+        case EFFECT_PACK_HOWL: // Project Grounded
         case EFFECT_DRAGON_DANCE:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_ATK) || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL))
                 ADJUST_SCORE(-10);
@@ -5214,6 +5215,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_TIDY_UP:
         IncreaseTidyUpScore(battlerAtk, battlerDef, move, &score);
+    case EFFECT_PACK_HOWL: // Project Grounded
     case EFFECT_DRAGON_DANCE:
     case EFFECT_SHIFT_GEAR:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED));
@@ -6138,6 +6140,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_WONDER_ROOM:
     case EFFECT_MAGIC_ROOM:
     case EFFECT_TAILWIND:
+    case EFFECT_PACK_HOWL: // Project Grounded
     case EFFECT_DRAGON_DANCE:
     case EFFECT_TIDY_UP:
     case EFFECT_STICKY_WEB:
@@ -6503,6 +6506,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_COSMIC_POWER:
             case EFFECT_BULK_UP:
             case EFFECT_CALM_MIND:
+            case EFFECT_PACK_HOWL: // Project Grounded
             case EFFECT_DRAGON_DANCE:
             case EFFECT_DEFENSE_UP_3:
             case EFFECT_SPECIAL_ATTACK_UP_3:

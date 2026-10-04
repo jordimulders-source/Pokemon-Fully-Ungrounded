@@ -1130,6 +1130,18 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
     },
 
+    [EFFECT_PACK_HOWL] =
+    {
+        .battleScript = BattleScript_EffectPackHowl,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_HEARTBREAK] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

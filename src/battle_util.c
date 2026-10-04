@@ -7253,6 +7253,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
                 basePower = sTrumpCardPowerTable[gBattleMons[battlerAtk].pp[i]];
         }
         break;
+    case EFFECT_HEARTBREAK: // Project Grounded: Luvdisc. Het is uit.
+        if (AreBattlersOfOppositeGender(battlerAtk, battlerDef)
+         || gBattleMons[battlerDef].volatiles.infatuation
+         || gBattleMons[battlerAtk].volatiles.infatuation)
+            basePower *= 2;
+        break;
     case EFFECT_ACROBATICS:
         if (gBattleMons[battlerAtk].item == ITEM_NONE
             // Edge case, because removal of items happens after damage calculation.

@@ -521,6 +521,7 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_LOWER_SPEED_2_SIDE,
     MOVE_EFFECT_FIRE_SPIN_SIDE,
     MOVE_EFFECT_FIXED_POWER,
+    MOVE_EFFECT_MUMMIFY, // Project Grounded: Mummy's Curse, ability van het doelwit wordt Mummy
     // Max move effects end. They can be used for (custom) normal moves.
 
     NUM_MOVE_EFFECTS

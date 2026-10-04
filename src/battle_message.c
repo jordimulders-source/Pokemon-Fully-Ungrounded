@@ -318,6 +318,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SPIREDEFENDBOTH]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} guards the team!"),
     [STRINGID_SPIREBLOCKABSORBED]                   = COMPOUND_STRING("The block absorbed the hit!"),
     [STRINGID_SPIREBLOCKSOFTENED]                   = COMPOUND_STRING("The block softened the hit!"),
+    [STRINGID_PKMNMUMMYWRAPPED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was wrapped\nin cursed bandages!"),
+    [STRINGID_PKMNINSTEELTRAP]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} stepped right\ninto {B_ATK_NAME_WITH_PREFIX2}'s steel trap!"),
+    [STRINGID_PKMNMUMMIFIED]                        = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} was mummified!\nIts ability became Mummy!"),
     [STRINGID_PKMNGOTENCORE]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} must do an encore!"),
     [STRINGID_PKMNGOTENCOREDMOVE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} can only use {B_CURRENT_MOVE}!\p"),
     [STRINGID_PKMNENCOREENDED]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} ended its encore!"),
@@ -1149,6 +1152,8 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_INFESTATION] = STRINGID_INFESTATION,            // MOVE_INFESTATION
     [B_MSG_WRAPPED_SNAP_TRAP]   = STRINGID_PKMNINSNAPTRAP,         // MOVE_SNAP_TRAP
     [B_MSG_WRAPPED_THUNDER_CAGE]= STRINGID_THUNDERCAGETRAPPED,     // MOVE_THUNDER_CAGE
+    [B_MSG_WRAPPED_MUMMY]       = STRINGID_PKMNMUMMYWRAPPED,       // MOVE_MUMMYS_CURSE (Project Grounded)
+    [B_MSG_WRAPPED_STEEL_TRAP]  = STRINGID_PKMNINSTEELTRAP,        // MOVE_STEEL_TRAP (Project Grounded)
 };
 
 const u16 gMistUsedStringIds[] =

@@ -21639,6 +21639,173 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_PollenHaze,
     },
 
+    [MOVE_MUMMYS_CURSE] =
+    {
+        .name = COMPOUND_STRING("Mummy's Curse"),
+        .description = COMPOUND_STRING(
+            "Binds the foe in cursed wraps.\n"
+            "Its ability becomes Mummy."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_MUMMY,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_MUMMIFY,
+        }),
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MummysCurse,
+    },
+
+    [MOVE_ZAP_TRAP] =
+    {
+        .name = COMPOUND_STRING("Zap Trap"),
+        .description = COMPOUND_STRING(
+            "Snaps shut on the foe like a\n"
+            "trap. No escape. May paralyze."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ZapTrap,
+    },
+
+    [MOVE_STEEL_TRAP] =
+    {
+        .name = COMPOUND_STRING("Steel Trap"),
+        .description = COMPOUND_STRING(
+            "Clamps the foe in a bear trap\n"
+            "for 4-5 turns. Lowers Speed."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_STEEL_TRAP,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SteelTrap,
+    },
+
+    [MOVE_PACK_HOWL] =
+    {
+        .name = COMPOUND_STRING("Pack Howl"),
+        .description = COMPOUND_STRING(
+            "Calls the pack. Raises Attack\n"
+            "of allies, or Atk/Spd if alone."),
+        .effect = EFFECT_PACK_HOWL,
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER, // Targeting is handled through the script
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .soundMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PackHowl,
+    },
+
+    [MOVE_WHALE_SONG] =
+    {
+        .name = COMPOUND_STRING("Whale Song"),
+        .description = COMPOUND_STRING(
+            "A deep song that hits all\n"
+            "others. May cause sleep."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .ignoresSubstitute = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_WhaleSong,
+    },
+
+    [MOVE_HEARTBREAK] =
+    {
+        .name = COMPOUND_STRING("Heartbreak"),
+        .description = COMPOUND_STRING(
+            "It's over. Double power vs.\n"
+            "the other gender. Cuts Sp.Atk."),
+        .effect = EFFECT_HEARTBREAK,
+        .power = 60,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Heartbreak,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

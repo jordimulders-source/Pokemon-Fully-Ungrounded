@@ -333,6 +333,7 @@ gSpecials::
 	def_special BattleSetup_StartLegendaryBattle
 	def_special StartRegiBattle
 	def_special Debug_StartMapWildBattle
+	def_special Debug_BattleTest_Start
 	def_special Debug_ClearForcedEncounter
 	def_special RegiDots_OnLoad
 	def_special RegiDots_Step

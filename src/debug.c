@@ -176,7 +176,7 @@ enum DebugBattleEnvironment
 #define DEBUG_NUMBER_ICON_X 210
 #define DEBUG_NUMBER_ICON_Y 50
 
-#define DEBUG_MAX_MENU_ITEMS 20
+#define DEBUG_MAX_MENU_ITEMS 50 // Project Grounded: was 20; Utilities en Legendary battle hadden er al meer (buffer-overflow)
 #define DEBUG_MAX_SUB_MENU_LEVELS 4
 
 // *******************************
@@ -302,6 +302,8 @@ static void DebugAction_Give_PokemonSimple(u8 taskId);
 static void DebugAction_Give_PokemonComplex(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectId(u8 taskId);
 static void DebugAction_Util_ForceEncounter(u8 taskId);
+struct BattleTest;
+static void DebugAction_Util_BattleTest(u8 taskId, const struct BattleTest *test);
 static void DebugAction_Util_ForceEncounter_SelectId(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId);
@@ -396,6 +398,7 @@ extern const u8 Debug_EventScript_Legend_Mewtwo[];
 extern const u8 Debug_EventScript_Legend_Jirachi[];
 extern const u8 Debug_EventScript_Legend_Darkrai[];
 extern const u8 Debug_EventScript_WildFromMap[];
+extern const u8 Debug_EventScript_BattleTest[];
 extern const u8 Debug_EventScript_BurglarForce[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
@@ -593,6 +596,90 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
     { NULL }
 };
 
+// Project Grounded: debugmenu Utilities > "Battle test…": één gevecht per eigen gevechtsthema en per eigen transitie.
+// Wilde legendaries gaan via dezelfde special als het echte event (BattleSetup_StartLegendaryBattle/StartRegiBattle),
+// wilde soorten met een eigen transitie via een gewoon gescript wild gevecht, trainers via hun echte trainer-id.
+// Route-transities hangen van de kaart af: test die met "Wild battle (map)" op de route zelf.
+enum
+{
+    BATTLE_TEST_LEGEND,  // BattleSetup_StartLegendaryBattle
+    BATTLE_TEST_REGI,    // StartRegiBattle
+    BATTLE_TEST_WILD,    // BattleSetup_StartScriptedWildBattle (transitie per soort)
+    BATTLE_TEST_TRAINER, // trainergevecht (id2 = tweede trainer voor een dubbel, anders TRAINER_NONE)
+};
+
+struct BattleTest
+{
+    u8 kind;
+    u8 level;
+    u16 id;
+    u16 id2;
+};
+
+#define BT_LEGEND(species, lvl) &(const struct BattleTest){ BATTLE_TEST_LEGEND, lvl, species, 0 }
+#define BT_REGI(species)        &(const struct BattleTest){ BATTLE_TEST_REGI, 50, species, 0 }
+#define BT_WILD(species)        &(const struct BattleTest){ BATTLE_TEST_WILD, 5, species, 0 }
+#define BT_TRAINER(a, b)        &(const struct BattleTest){ BATTLE_TEST_TRAINER, 0, a, b }
+
+static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
+{
+    // Trainers: eigen thema's en transities
+    { COMPOUND_STRING("Wally 1 - Mauville"),     DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_MAUVILLE, TRAINER_NONE) },
+    { COMPOUND_STRING("Wally 2 - Meteor Falls"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_METEOR_FALLS, TRAINER_NONE) },
+    { COMPOUND_STRING("Wally 3 - Victory Rd"),   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_VR_1, TRAINER_NONE) },
+    { COMPOUND_STRING("Birch (Macarena)"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_BIRCH, TRAINER_NONE) },
+    { COMPOUND_STRING("Prof. Oak"),              DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_PROF_OAK, TRAINER_NONE) },
+    { COMPOUND_STRING("Brock (Kanto Gym)"),      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_BROCK, TRAINER_NONE) },
+    { COMPOUND_STRING("Colress"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_COLRESS_MAUVILLE, TRAINER_NONE) },
+    { COMPOUND_STRING("Zinnia"),                 DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ZINNIA, TRAINER_NONE) },
+    { COMPOUND_STRING("N"),                      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_N, TRAINER_NONE) },
+    { COMPOUND_STRING("Ghetsis"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_GHETSIS, TRAINER_NONE) },
+    { COMPOUND_STRING("Neo Plasma grunt"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_PLASMA_GRUNT_M, TRAINER_NONE) },
+    { COMPOUND_STRING("Rocket grunt"),           DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ROCKET_GUARD, TRAINER_NONE) },
+    { COMPOUND_STRING("Petrel (Rocket exec)"),   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_PETREL, TRAINER_NONE) },
+    { COMPOUND_STRING("Archie + Maxie"),         DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ARCHIE_SOOTOPOLIS, TRAINER_MAXIE_SOOTOPOLIS) },
+    { COMPOUND_STRING("Gabby & Ty"),             DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_GABBY_AND_TY_1, TRAINER_NONE) },
+    { COMPOUND_STRING("Joey (Poochyena)"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_JOEY, TRAINER_NONE) },
+    { COMPOUND_STRING("Keccles (rival)"),        DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_KECCLES_1, TRAINER_NONE) },
+    { COMPOUND_STRING("Mustard (mugshot)"),      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MUSTARD, TRAINER_NONE) },
+    // Wilde legendaries: transitie + thema uit het echte event
+    { COMPOUND_STRING("Zarude"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZARUDE, 50) },
+    { COMPOUND_STRING("Suicune"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_SUICUNE, 50) },
+    { COMPOUND_STRING("Raikou"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_RAIKOU, 50) },
+    { COMPOUND_STRING("Entei"),                  DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ENTEI, 50) },
+    { COMPOUND_STRING("Deoxys"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_DEOXYS_NORMAL, 50) },
+    { COMPOUND_STRING("Mewtwo"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MEWTWO, 70) },
+    { COMPOUND_STRING("Giratina"),               DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GIRATINA_ALTERED, 70) },
+    { COMPOUND_STRING("Darkrai"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_DARKRAI, 70) },
+    { COMPOUND_STRING("Jirachi"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_JIRACHI, 70) },
+    { COMPOUND_STRING("Victini"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_VICTINI, 70) },
+    { COMPOUND_STRING("Shaymin"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_SHAYMIN_LAND, 70) },
+    { COMPOUND_STRING("Heatran"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_HEATRAN, 70) },
+    { COMPOUND_STRING("Genesect"),               DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GENESECT, 70) },
+    { COMPOUND_STRING("Mew"),                    DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MEW, 50) },
+    { COMPOUND_STRING("Groudon"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GROUDON, 70) },
+    { COMPOUND_STRING("Kyogre"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_KYOGRE, 70) },
+    { COMPOUND_STRING("Rayquaza"),               DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_RAYQUAZA, 70) },
+    { COMPOUND_STRING("Regirock"),               DebugAction_Util_BattleTest, BT_REGI(SPECIES_REGIROCK) },
+    { COMPOUND_STRING("Regice"),                 DebugAction_Util_BattleTest, BT_REGI(SPECIES_REGICE) },
+    { COMPOUND_STRING("Registeel"),              DebugAction_Util_BattleTest, BT_REGI(SPECIES_REGISTEEL) },
+    { COMPOUND_STRING("Regidrago"),              DebugAction_Util_BattleTest, BT_REGI(SPECIES_REGIDRAGO) },
+    { COMPOUND_STRING("Regieleki"),              DebugAction_Util_BattleTest, BT_REGI(SPECIES_REGIELEKI) },
+    // Wilde soorten met een eigen transitie (muziek = keuze bij WILD MUSIC in het optiemenu)
+    { COMPOUND_STRING("Wild: Pikachu"),          DebugAction_Util_BattleTest, BT_WILD(SPECIES_PIKACHU) },
+    { COMPOUND_STRING("Wild: Magikarp"),         DebugAction_Util_BattleTest, BT_WILD(SPECIES_MAGIKARP) },
+    { COMPOUND_STRING("Wild: Psyduck"),          DebugAction_Util_BattleTest, BT_WILD(SPECIES_PSYDUCK) },
+    { COMPOUND_STRING("Wild: Koffing"),          DebugAction_Util_BattleTest, BT_WILD(SPECIES_KOFFING) },
+    { COMPOUND_STRING("Wild: Zangoose"),         DebugAction_Util_BattleTest, BT_WILD(SPECIES_ZANGOOSE) },
+    { COMPOUND_STRING("Wild: Seviper"),          DebugAction_Util_BattleTest, BT_WILD(SPECIES_SEVIPER) },
+    { NULL }
+};
+
+#undef BT_LEGEND
+#undef BT_REGI
+#undef BT_WILD
+#undef BT_TRAINER
+
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Warp to the Spire"), DebugAction_ExecuteScript, Debug_EventScript_SpireWarp },
@@ -609,6 +696,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
+    { COMPOUND_STRING("Battle test…"),      DebugAction_OpenSubMenu, sDebugMenu_Actions_BattleTest },
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
     { COMPOUND_STRING("Burglar: force"),    DebugAction_ExecuteScript, Debug_EventScript_BurglarForce },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
@@ -895,7 +983,7 @@ static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *
     }
     else
     {
-        for (u32 i = 0; items[i].text != NULL; i++)
+        for (u32 i = 0; items[i].text != NULL && i < DEBUG_MAX_MENU_ITEMS; i++)
         {
             sDebugMenuListData->listItems[i].id = i;
             StringExpandPlaceholders(gStringVar4, items[i].text);
@@ -1230,6 +1318,10 @@ static void DebugTask_HandleMenuInput_General(u8 taskId)
             else if (option.action == DebugAction_ExecuteScript)
             {
                 Debug_DestroyMenu_Full_Script(taskId, (const u8 *)option.actionParams);
+            }
+            else if (option.action == DebugAction_Util_BattleTest)
+            {
+                DebugAction_Util_BattleTest(taskId, (const struct BattleTest *)option.actionParams);
             }
             else if (option.action == DebugAction_ToggleFlag)
             {
@@ -2336,6 +2428,105 @@ static void DebugAction_Give_PokemonSimple(u8 taskId)
     LoadMonIconPalettePersonality(gTasks[taskId].tInput, 0);
     gTasks[taskId].tSpriteId = CreateMonIcon(gTasks[taskId].tInput, SpriteCB_MonIcon, DEBUG_NUMBER_ICON_X, DEBUG_NUMBER_ICON_Y, 4, 0);
     gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
+}
+
+// Project Grounded: "Battle test…" (zie sDebugMenu_Actions_BattleTest). Tijdens het gevecht vecht een testteam
+// (2x Arceus lv 100); party, geld, Pokédex-vlaggen en spelstatistieken worden vooraf bewaard en na afloop teruggezet.
+// Er worden geen trainer- of eventflags gezet en verliezen geeft geen white-out. Een gevangen Pokémon verdwijnt weer met het testteam.
+EWRAM_DATA bool8 gDebugBattleTest = FALSE;
+static EWRAM_DATA const struct BattleTest *sBattleTestCurrent = NULL;
+static EWRAM_DATA struct Pokemon sBattleTestParty[PARTY_SIZE] = {0};
+static EWRAM_DATA u8 sBattleTestPartyCount = 0;
+static EWRAM_DATA u32 sBattleTestMoney = 0;
+static EWRAM_DATA u8 sBattleTestDexSeen[NUM_DEX_FLAG_BYTES] = {0};
+static EWRAM_DATA u8 sBattleTestDexCaught[NUM_DEX_FLAG_BYTES] = {0};
+static EWRAM_DATA u32 sBattleTestGameStats[NUM_GAME_STATS] = {0};
+static EWRAM_DATA u16 sBattleTestDailyWilds = 0;
+
+static void DebugAction_Util_BattleTest(u8 taskId, const struct BattleTest *test)
+{
+    sBattleTestCurrent = test;
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_BattleTest);
+}
+
+static void BattleTest_Restore(void)
+{
+    u32 i;
+
+    memcpy(gPlayerParty, sBattleTestParty, sizeof(gPlayerParty));
+    gPlayerPartyCount = sBattleTestPartyCount;
+    SetMoney(&gSaveBlock1Ptr->money, sBattleTestMoney);
+    memcpy(gSaveBlock1Ptr->dexSeen, sBattleTestDexSeen, NUM_DEX_FLAG_BYTES);
+    memcpy(gSaveBlock1Ptr->dexCaught, sBattleTestDexCaught, NUM_DEX_FLAG_BYTES);
+    for (i = 0; i < NUM_GAME_STATS; i++)
+        SetGameStat(i, sBattleTestGameStats[i]);
+    VarSet(VAR_DAILY_WILDS, sBattleTestDailyWilds);
+    gDebugBattleTest = FALSE;
+}
+
+static void CB2_EndBattleTest(void)
+{
+    BattleTest_Restore();
+    CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
+    ResetOamRange(0, 128);
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+static void BattleTest_CreateTestMon(struct Pokemon *mon)
+{
+    static const u16 moves[MAX_MON_MOVES] = { MOVE_DARK_PULSE, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_ICE_BEAM };
+    u32 i;
+
+    CreateMon(mon, SPECIES_ARCEUS, 100, MAX_PER_STAT_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        SetMonMoveSlot(mon, moves[i], i);
+}
+
+void Debug_BattleTest_Start(void)
+{
+    const struct BattleTest *test = sBattleTestCurrent;
+    u32 i;
+
+    if (test == NULL)
+        return;
+
+    // bewaren
+    memcpy(sBattleTestParty, gPlayerParty, sizeof(gPlayerParty));
+    sBattleTestPartyCount = gPlayerPartyCount;
+    sBattleTestMoney = GetMoney(&gSaveBlock1Ptr->money);
+    memcpy(sBattleTestDexSeen, gSaveBlock1Ptr->dexSeen, NUM_DEX_FLAG_BYTES);
+    memcpy(sBattleTestDexCaught, gSaveBlock1Ptr->dexCaught, NUM_DEX_FLAG_BYTES);
+    for (i = 0; i < NUM_GAME_STATS; i++)
+        sBattleTestGameStats[i] = GetGameStat(i);
+    sBattleTestDailyWilds = VarGet(VAR_DAILY_WILDS);
+
+    // testteam (twee, ook voor dubbelgevechten)
+    ZeroPlayerPartyMons();
+    BattleTest_CreateTestMon(&gPlayerParty[0]);
+    BattleTest_CreateTestMon(&gPlayerParty[1]);
+    gPlayerPartyCount = 2;
+    gDebugBattleTest = TRUE;
+
+    switch (test->kind)
+    {
+    case BATTLE_TEST_LEGEND:
+        CreateScriptedWildMon(test->id, test->level, ITEM_NONE);
+        BattleSetup_StartLegendaryBattle();
+        break;
+    case BATTLE_TEST_REGI:
+        CreateScriptedWildMon(test->id, test->level, ITEM_NONE);
+        StartRegiBattle();
+        break;
+    case BATTLE_TEST_WILD:
+        CreateScriptedWildMon(test->id, test->level, ITEM_NONE);
+        BattleSetup_StartScriptedWildBattle();
+        break;
+    case BATTLE_TEST_TRAINER:
+    default:
+        BattleSetup_StartBattleTestTrainer(test->id, test->id2, CB2_EndBattleTest);
+        break;
+    }
+    gMain.savedCallback = CB2_EndBattleTest;
 }
 
 // Project Grounded: "Force encounter": kies een soort; alle wilde encounters (ook vissen, rock smash en

@@ -51,6 +51,7 @@
 #include "constants/species.h"
 #include "constants/trainers.h"
 #include "spire.h"
+#include "debug.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
 
@@ -6577,6 +6578,8 @@ u8 GetAttackerObedienceForAction()
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
         return OBEYS;
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER || gSpireBattle) // Project Grounded: rentals in The Spire
+        return OBEYS;
+    if (gDebugBattleTest) // Project Grounded: testteam van debugmenu "Battle test"
         return OBEYS;
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         return OBEYS;

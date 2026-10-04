@@ -299,3 +299,12 @@ Debug_Text_BurglarForce_Next:
 	.string "Burglar komt in de volgende stad: Mauville,\n"
 	.string "Slateport, Lilycove, Rustboro, Verdanturf,\l"
 	.string "Fallarbor of Petalburg.$"
+
+@ Project Grounded: debugmenu Utilities > Battle test - een uniek gevecht (thema + transitie) met een tijdelijk testteam;
+@ party, geld, Pokédex en statistieken worden na afloop teruggezet (Debug_BattleTest_Start in src/debug.c)
+Debug_EventScript_BattleTest::
+	lockall
+	special Debug_BattleTest_Start
+	waitstate
+	releaseall
+	end

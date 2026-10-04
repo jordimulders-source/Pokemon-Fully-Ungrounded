@@ -682,6 +682,8 @@
     "VictoryRoad_WaitingRoom",
     "VictoryRoad_Vault",
     "VictoryRoad_Hermit",
-    "VictoryRoad_SharkDen"
+    "VictoryRoad_SharkDen",
+    "JaggedPass_LavaTube",
+    "MtChimney_Summit"
   ]
 }

@@ -1031,7 +1031,14 @@
 #define TRAINER_VR_OSKAR                    1005 // gauntlet 3
 #define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
 
-#define TRAINERS_COUNT                      1007
+#define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_DAISY             1009 // Project Grounded: Jagged Pass, lavabuis (verdwaald)
+#define TRAINER_SUMMIT_GRANT                1010 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_PYRO                 1011 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_VERA                 1012 // Project Grounded: top van Mt. Chimney
+
+#define TRAINERS_COUNT                      1013
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -1472,6 +1472,16 @@
       "blockdata_filepath": "data/layouts/MtChimney/map.bin"
     },
     {
+      "id": "LAYOUT_MT_CHIMNEY_SUMMIT",
+      "name": "MtChimney_Summit_Layout",
+      "width": 36,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MtChimney_Summit/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_Summit/map.bin"
+    },
+    {
       "id": "LAYOUT_MT_PYRE_1F",
       "name": "MtPyre_1F_Layout",
       "width": 22,
@@ -3110,6 +3120,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/JaggedPass/border.bin",
       "blockdata_filepath": "data/layouts/JaggedPass/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAGGED_PASS_LAVA_TUBE",
+      "name": "JaggedPass_LavaTube_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/JaggedPass_LavaTube/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_LavaTube/map.bin"
     },
     {
       "id": "LAYOUT_FIERY_PATH",

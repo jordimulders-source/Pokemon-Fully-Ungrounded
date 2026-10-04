@@ -1254,17 +1254,17 @@
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
+#define FLAG_JAGGED_PASS_LAVA_TUBE_ROCK                             0x4B3 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_CHARCOAL                                0x4B4 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_FIRE_STONE                              0x4B5 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_HEAT_ROCK                               0x4B6 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST                           0x4B7 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDDEN_ITEM_LAVA_TUBE_LAVA_COOKIE                      0x4B8 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDE_MT_CHIMNEY_TRAIL_GUARD                            0x4B9 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDE_MT_CHIMNEY_SUMMIT_VOLCARONA                       0x4BA // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_MT_CHIMNEY_SUMMIT_MAGMARIZER                      0x4BB // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_RECEIVED_FLAME_ORB_VOLCANOLOGIST                       0x4BC // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE               0x4BD // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag

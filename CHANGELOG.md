@@ -16136,3 +16136,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Items:** Big Root, Max Revive, Miracle Seed, TM U-turn (alleen surfend), verborgen Leaf Stone en Revival Herb (flags 0x287, 0x288, 0x28C–0x28F).
 - Mapsec `MAPSEC_FORTREE_JUNGLE` met popup en plek op de Town Map onder Fortree.
 - Open: Zarude staat op Route 119 nog in een 1%-slot (eruit zodra het event komt); het altaar is een geleende Fortree-tegel.
+
+### [v.0.9.6] - Battle Stadium zonder back sprites aan onze kant
+- Jordi (4 okt): back sprites voor de 109 compagnons zonder eigen back worden niet getekend (de concepten van Archie en Maxie waren niet overtuigend). In plaats daarvan staan in **Stadium-gevechten** (singles én doubles) **onze Pokémon meteen op het veld** met hun healthbox: geen speler of compagnon die inschuift of gooit, geen balletjesbalk en geen "Go! X!". De tegenstanders schuiven gewoon in met hun front sprite en sturen hun Pokémon uit. Buiten het Stadium verandert er niets.
+- Code: `BtlController_StadiumIntroPlayerMon` / `SpriteCB_StadiumPlayerMon` in `src/battle_controllers.c`, en `DoBattleIntro` in `src/battle_main.c` slaat voor onze kant de trainer-pic en balletjesbalk over. Getest: singles tegen Archie (gewonnen) en doubles met Roxanne tegen Archie en Aaron.
+- Testtruc Stadium-gevecht: debugscript met `givemon` ×3, `setvar VAR_0x8004, STADIUM_SINGLES/DOUBLES`, `special Stadium_PrepareChooseParty`, `special Stadium_StartTournament`, `special Stadium_StartMatch`, `waitstate`.

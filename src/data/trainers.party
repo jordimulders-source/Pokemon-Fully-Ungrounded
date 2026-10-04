@@ -33109,3 +33109,170 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Heat Wave
 - Eruption
 - Protect
+
+=== TRAINER_JUNGLE_BRAM ===
+Name: BRAM
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Lokix
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- First Impression
+- Lunge
+- Sucker Punch
+- Bounce
+
+Vikavolt
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bug Buzz
+- Thunderbolt
+- Air Slash
+- Sticky Web
+
+Heracross
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Guts
+- Megahorn
+- Close Combat
+- Rock Slide
+- Bulk Up
+
+=== TRAINER_JUNGLE_MAYA ===
+Name: MAYA
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Tsareena
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Trop Kick
+- High Jump Kick
+- Rapid Spin
+- Play Rough
+
+Toucannon
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Roost
+
+Tropius
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Leaf Blade
+- Air Slash
+- Body Slam
+- Sunny Day
+
+=== TRAINER_JUNGLE_HANZO ===
+Name: HANZO
+Class: Ninja Boy
+Pic: Ninja Boy
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Accelgor
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bug Buzz
+- Acid Spray
+- Focus Blast
+- Me First
+
+Toxicroak
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Drain Punch
+- Poison Jab
+- Sucker Punch
+- Nasty Plot
+
+Greninja
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Water Shuriken
+- Night Slash
+- Aerial Ace
+- Double Team
+
+=== TRAINER_JUNGLE_FLORA ===
+Name: FLORA
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Lurantis
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Leaf Blade
+- X-Scissor
+- Night Slash
+- Sunny Day
+
+Vileplume
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Petal Dance
+- Sludge Bomb
+- Moonblast
+- Stun Spore
+
+Comfey
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Triage
+- Draining Kiss
+- Giga Drain
+- Synthesis
+- Floral Healing
+
+=== TRAINER_JUNGLE_DIRK ===
+Name: DIRK
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Sudowoodo
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Wood Hammer
+- Rock Slide
+- Sucker Punch
+- Mimic
+
+Drednaw
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Jaw Lock
+- Rock Tomb
+- Liquidation
+- Headbutt
+
+Passimian
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Brick Break
+- Knock Off
+- U-turn
+- Bulk Up

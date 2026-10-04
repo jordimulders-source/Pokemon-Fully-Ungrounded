@@ -990,7 +990,13 @@
 #define TRAINER_ARCHIE_SERVICE_4               975 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 #define TRAINER_MAXIE_SERVICE_4               976 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 
-#define TRAINERS_COUNT                      977
+#define TRAINER_JUNGLE_BRAM                 977 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_MAYA                 978 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_HANZO                979 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_FLORA                980 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_DIRK                 981 // Project Grounded: Fortree Jungle
+
+#define TRAINERS_COUNT                      982
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

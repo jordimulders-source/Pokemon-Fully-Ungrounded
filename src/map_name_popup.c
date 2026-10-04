@@ -200,6 +200,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_OUTER_SPACE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: Deoxys-meteoriet
     [MAPSEC_FLOWER_PARADISE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Shaymin
     [MAPSEC_LIBERTY_GARDEN - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Victini-eiland
+    [MAPSEC_FORTREE_JUNGLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: jungle onder Fortree
 };
 
 #if OW_POPUP_GENERATION == GEN_5
@@ -329,6 +330,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_OUTER_SPACE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Deoxys-meteoriet
     [MAPSEC_FLOWER_PARADISE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Shaymin
     [MAPSEC_LIBERTY_GARDEN - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Victini-eiland
+    [MAPSEC_FORTREE_JUNGLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: jungle onder Fortree
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");

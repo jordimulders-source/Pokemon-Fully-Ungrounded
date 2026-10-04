@@ -16334,3 +16334,6 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Wally 5:** de melodie wordt nu gespeeld door een leadgitaar (overdrive), de riff door een luidere distortion-gitaar, met daaronder een distortion-bas.
 - Wally 1–5 staan op songvolume 125 (was 90): de 8-bit-mix gebruikte maar een klein deel van zijn bereik, waardoor de ruis opviel ("vinyl").
 - Nieuwe opnametool `recpcm.py`: neemt op uit de mixbuffer van de game zelf, dus precies wat de GBA afspeelt, zonder emulator-glitches. Lessen in `MUZIEK.md`.
+
+### [v.0.9.30] - Poison Chain v3
+- De ketting van de Loyal Three is dichter bij de artwork. Grotere ringen (72 px) met een groot gat en een dunnere rand, slanke tussenschakels, en in totaal 5 stukken: halsband, staaf, ring, staaf en een open eindring.

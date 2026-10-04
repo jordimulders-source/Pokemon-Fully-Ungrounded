@@ -173,3 +173,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   `prepare_auto(..., min_note={kanaal: 36})`. De lint waarschuwt al voor noten < E1: neem die waarschuwing serieus.
 - Raikou (v0.9.60, Jordi: 'valt een beetje weg'): een PSG-lead naast het volle origineel op spoorvolume 72 is te zacht;
   127 + duty 25% (voller dan 12,5%). Suicune (klokken) en Entei (gitaar) goedgekeurd.
+- Neo Plasma v2 (Jordi: 'puur synth-deuntje, lijkt qua instrumenten niet op het origineel'): `prepare_auto` groepeert
+  per GM-categorie en zette gitaar (27) + sawtooth (81) samen op één PSG-vierkant, sine op een tweede vierkant en de
+  **steel drums (114) op een crashbekken** (categorie 'cymbal' = 112-119). Gebruik `prepare_auto` niet meer voor een
+  nummer dat herkenbaar moet blijven: lees per bronspoor programma, register en rol uit en kies per spoor een echt sample
+  in een eigen voicegroup (`neo_plasma_theme.py`). PSG alleen voor wat in de bron echt '8-bit' is, zacht.
+- audiocheck meldt bij snelle nummers (176 bpm) 'constante tonen' op 59,7/119,5 Hz: dat is de framesnelheid. De m4a-
+  sequencer start noten alleen op framegrenzen; bij een 16e van 5,1 frames geeft een rij drum-/gitaaraanslagen spectrale
+  lijnen op veelvouden van 59,73 Hz. Geen bromtoon (zit ook in de oude versie); controleer met een opname per spoor.

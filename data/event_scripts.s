@@ -456,6 +456,7 @@ gStdScripts_End::
 	.include "data/maps/Route112_Dojo/scripts.inc"
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
+	.include "data/maps/MangroveMire/scripts.inc"
 	.include "data/maps/RocketHideout_B2F/scripts.inc"
 	.include "data/maps/RocketHideout_B1F/scripts.inc"
 	.include "data/maps/RocketHideout_1F/scripts.inc"

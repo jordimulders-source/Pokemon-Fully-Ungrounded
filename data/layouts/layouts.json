@@ -5000,6 +5000,16 @@
       "secondary_tileset": "gTileset_RocketFacility",
       "border_filepath": "data/layouts/RocketHideout_B2F/border.bin",
       "blockdata_filepath": "data/layouts/RocketHideout_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANGROVE_MIRE",
+      "name": "MangroveMire_Layout",
+      "width": 56,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MangroveMire",
+      "border_filepath": "data/layouts/MangroveMire/border.bin",
+      "blockdata_filepath": "data/layouts/MangroveMire/map.bin"
     }
   ]
 }

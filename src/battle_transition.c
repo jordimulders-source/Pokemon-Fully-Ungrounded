@@ -161,6 +161,7 @@ static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
 static void Task_NeoPlasma(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
+static void Task_Zarude(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -485,6 +486,12 @@ static const u16 sRocket_Tileset[] = INCBIN_U16("graphics/battle_transitions/rou
 static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
 static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
 static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
+static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zarude.4bpp"); // Project Grounded
+static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
+static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
+static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
+static const u32 sZarudeSil_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zarude_silhouette.4bpp");
+static const u16 sZarudeSil_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zarude_silhouette.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -599,6 +606,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
     [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
     [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
+    [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -8467,4 +8475,139 @@ static const struct RouteTransition sRT_Rocket =
 static void Task_Rocket(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Rocket);
+}
+
+// ---------------- Zarude: de jungle groeit van de randen dicht (bladerdek), lianen zwiepen van boven naar beneden, drie
+// klauwkrassen scheuren door het blad op de taiko-slagen van "Battle! Zarude" (168 BPM: maat = 86 frames) en op de
+// accent in maat 2 doemt Zarude's silhouet op met gloeiende rode ogen die op de achtsten pulseren. Daarna zwart, net voor de koperfanfare.
+// tiles (tools/grounded/route_transitions.py): 1-4 bladerdek, 5-7 bladrand, 8-9 liaan, 10 liaantip, 11.. klauwen
+#define ZARUDE_CLAW1   15
+#define ZARUDE_CLAW2   26
+#define ZARUDE_CLAW3   47
+#define ZARUDE_REVEAL  72
+#define ZARUDE_DARK    118
+#define ZARUDE_END     128
+
+static const u8 sZarudeVineCol[] = {3, 9, 16, 22, 27};
+static const u8 sZarudeVineStart[] = {4, 10, 18, 7, 24};
+static const u8 sZarudeVineLen[] = {9, 13, 7, 11, 14};
+static const s8 sZarudeVineBounce[] = {1, 2, 2, 1, 0, -1, -1, 0};
+static const u8 sZarudeClawStart[] = {ZARUDE_CLAW1, ZARUDE_CLAW2, ZARUDE_CLAW3};
+static const s8 sZarudeShake[] = {4, -4, 3, -3, 2, -1, 1, 0};
+
+static void RTZarude_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sZarudeSil_Gfx, sZarudeSil_Palette, 120, 84);
+    RT_SetSprite(task, 120, 84, 256, 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTZarude_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, r, c, k, threshold, shake = 0;
+    const u8 *depth = sZarude_Depth;
+
+    // 1. bladerdek: een vak is dicht als zijn diepte (afstand tot de rand) onder de drempel ligt; de drempel groeit.
+    // Per vak alleen een vergelijking (de hele update moet ruim binnen een frame blijven).
+    threshold = (t * 54) >> 4; // ±3 s incl. de flits vooraf (blazers op ±5,7 s, na de gevechtsintro)
+    for (r = 0; r < 20; r++)
+    {
+        u16 *row = &tilemap[r * 32];
+        for (c = 0; c < 30; c++)
+        {
+            s32 d = *depth++;
+            if (d < threshold - 14)
+                row[c] = RT_TILE(1 + ((r * 7 + c * 3) & 3));
+            else if (d < threshold)
+                row[c] = RT_TILE(5 + ((r + c + (t >> 3)) & 1) + ((r & 2) >> 1));
+            else
+                row[c] = 0;
+        }
+    }
+    // 2. lianen zwiepen van boven naar beneden (met een kleine stuiter)
+    for (k = 0; k < (s32)ARRAY_COUNT(sZarudeVineCol); k++)
+    {
+        s32 d = t - sZarudeVineStart[k], len;
+        if (d <= 0)
+            continue;
+        if (d < sZarudeVineLen[k])
+            len = d;
+        else
+            len = sZarudeVineLen[k] + sZarudeVineBounce[min(d - sZarudeVineLen[k], (s32)ARRAY_COUNT(sZarudeVineBounce) - 1)];
+        for (r = 0; r < len && r < 20; r++)
+            tilemap[r * 32 + sZarudeVineCol[k]] = RT_TILE((r == len - 1) ? 10 : 8 + ((r + k) & 1));
+    }
+    // 3. klauwkrassen: vegen in een paar frames over het beeld en blijven staan
+    for (k = 0; k < 3; k++)
+    {
+        const u16 *claw = &sZarude_Claws[k * 600];
+        s32 prog = (t - sZarudeClawStart[k]) * 12;
+        if (prog < 0)
+            continue;
+        for (r = 0; r < 20; r++)
+        {
+            for (c = 0; c < 30; c++)
+            {
+                u16 cl = *claw++;
+                if (cl != 0 && ((k == 1) ? r + c : r + 29 - c) <= prog)
+                    tilemap[r * 32 + c] = RT_TILE(cl);
+            }
+        }
+    }
+
+    // klap bij elke kras: het beeld schudt even
+    for (k = 0; k < 3; k++)
+    {
+        s32 d = t - sZarudeClawStart[k];
+        if (d >= 0 && d < (s32)ARRAY_COUNT(sZarudeShake))
+            shake = sZarudeShake[d];
+        if (d == 0)
+            PlaySE(SE_M_RAZOR_WIND);
+    }
+    SetGpuReg(REG_OFFSET_BG0HOFS, shake & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+
+    if (t == 0)
+        PlaySE(SE_M_GRASSWHISTLE);
+    if (t == sZarudeVineStart[0])
+        PlaySE(SE_M_BIND);
+
+    // de wereld wordt jungle-donker
+    if (t < ZARUDE_DARK)
+        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 3, 10), RGB(1, 6, 2));
+
+    // silhouet: komt in maat 3 op, groeit langzaam; ogen pulseren op de achtsten (11 frames)
+    if (t >= ZARUDE_REVEAL)
+    {
+        struct Sprite *sil = &gSprites[task->tRtSprite];
+        s32 d = t - ZARUDE_REVEAL;
+        u32 palNum = IndexOfSpritePaletteTag(RT_SPRITE_TAG);
+        sil->invisible = FALSE;
+        RT_SetSprite(task, 120, 84 - (d >> 2), min(200 + d * 10, 512), 0);
+        if (d == 4)
+            PlayCry_Normal(SPECIES_ZARUDE, 0);
+        if (d < 12)
+            BlendPalettes(1 << (16 + palNum), 12 - d, RGB_BLACK); // uit het donker
+        // ogen fel/dof
+        gPlttBufferFaded[OBJ_PLTT_ID(palNum) + 8] = ((d % 11) < 4) ? RGB(31, 12, 6) : RGB(24, 2, 1);
+    }
+    if (t == ZARUDE_DARK)
+    {
+        PlaySE(SE_M_SCREECH);
+        RT_FreezePalettes();
+    }
+    if (t >= ZARUDE_DARK)
+        BlendPalettes(PALETTES_ALL, min((t - ZARUDE_DARK) * 2, 16), RGB_BLACK);
+    return t >= ZARUDE_END;
+}
+
+static const struct RouteTransition sRT_Zarude =
+{
+    sZarude_Tileset, sizeof(sZarude_Tileset), sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
+};
+
+static void Task_Zarude(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Zarude);
 }

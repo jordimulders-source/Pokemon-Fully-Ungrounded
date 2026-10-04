@@ -1696,3 +1696,134 @@ for y in range(64):
         elif any(inR(x + dx, y + dy) for dx in (-2, -1, 0, 1, 2) for dy in (-2, -1, 0, 1, 2)):
             ri.putpixel((x, y), 1)
 save_sprite('rocket_r', ri, RSPAL)
+
+
+# ------------------------------------------------------------------ Zarude: de jungle groeit dicht, lianen zwiepen naar
+# beneden, drie klauwkrassen (op de taiko-slagen van "Battle! Zarude") en dan Zarude's silhouet met rode ogen.
+# BG-tiles (palet ZRPAL): 1-4 dicht bladerdek (vol), 5-7 bladrand (met gaten), 8-9 liaan, 10 liaantip,
+# daarna de klauwkrassen (3 x 30x20 tilemaps in route_zarude_claws.bin, ontdubbeld) en de dieptekaart
+# route_zarude_depth.bin (30x20 u8: hoe ver een vak van de rand ligt; het bladerdek groeit van de rand naar binnen).
+ZRPAL = pad([(0, 0, 0), (1, 3, 1), (2, 6, 2), (3, 10, 3), (5, 14, 4), (8, 19, 5), (13, 24, 7), (4, 3, 1), (9, 6, 3),
+             (14, 10, 5), (0, 1, 0), (10, 26, 6), (22, 31, 12), (6, 18, 8)])
+zr = random.Random(893)
+
+
+def zleaf_layer(img, n, seed, opaque):
+    """Overlappende bladeren (ellipsen met nerf) op een 8x8-tile; opaque = de hele tile gevuld (donkere ondergrond)."""
+    rr = random.Random(seed)
+    if opaque:
+        for y in range(8):
+            for x in range(8):
+                img[y][x] = 1 if rr.random() < 0.6 else 2
+    for _ in range(n):
+        cx, cy = rr.uniform(-1, 9), rr.uniform(-1, 9)
+        a = rr.uniform(0, math.pi)
+        L, Wd = rr.uniform(3.0, 4.6), rr.uniform(1.3, 2.0)
+        ca, sa = math.cos(a), math.sin(a)
+        shade = rr.choice((3, 4, 4, 5))
+        for y in range(8):
+            for x in range(8):
+                u = (x - cx) * ca + (y - cy) * sa
+                v = -(x - cx) * sa + (y - cy) * ca
+                if (u / L) ** 2 + (v / Wd) ** 2 <= 1:
+                    c = shade
+                    if abs(v) < 0.5:
+                        c = 13 if shade >= 4 else 2              # nerf
+                    elif v < -0.6 and shade < 6:
+                        c = shade + 1                            # licht van boven
+                    img[y][x] = c
+    return img
+
+
+def ztile(n, seed, opaque):
+    img = zleaf_layer([[0] * 8 for _ in range(8)], n, seed, opaque)
+    return [img[y][x] for y in range(8) for x in range(8)]
+
+
+zr_tiles = [ztile(5, 10 + k, True) for k in range(4)] + [ztile(3, 30 + k, False) for k in range(3)]
+
+
+def zvine(x, y, seed):
+    rr = random.Random(seed)
+    sx = 3 + int(round(1.2 * math.sin(y * 0.8 + seed)))
+    if x in (sx, sx + 1):
+        return 8 if x == sx else 7
+    if (y + seed) % 4 == 0 and x in (sx + 2, sx + 3, sx + 4):
+        return 6 if x != sx + 4 else 5                          # blaadje rechts
+    if (y + seed) % 4 == 2 and x in (sx - 1, sx - 2, sx - 3):
+        return 5 if x != sx - 3 else 4                          # blaadje links
+    return 0
+
+
+zr_tiles += [tile(lambda x, y: zvine(x, y, 1)), tile(lambda x, y: zvine(x, y, 3)),
+             tile(lambda x, y: (zvine(x, y, 1) if y < 4 else (5 if 2 <= x <= 5 and y < 7 and abs(x - 3.5) < 7 - y else 0)))]
+NZ = len(zr_tiles)                                               # 10: de klauwtiles beginnen bij 11
+
+# dieptekaart: 0 = hoek, ~240 = midden, met wat ruis zodat de bladrand rafelig binnenkomt
+zdepth = []
+for r in range(20):
+    for c in range(30):
+        dx, dy = (c + 0.5 - 15) / 15, (r + 0.5 - 10) / 10
+        d = (1.45 - math.sqrt(dx * dx + dy * dy)) * 168 + zr.uniform(-14, 14)
+        zdepth.append(max(0, min(250, int(d))))
+open(OUT + 'route_zarude_depth.bin', 'wb').write(bytes(zdepth))
+
+
+def zclaw(direction, cx, cy, length, bend):
+    """Drie evenwijdige, licht gebogen klauwkrassen (240x160): zwarte scheur met een smalle, giftig groene gloed.
+    direction 1 = van rechtsboven naar linksonder, -1 = van linksboven naar rechtsonder; (cx, cy) = midden."""
+    im = Image.new('P', (240, 160), 0)
+    d = ImageDraw.Draw(im)
+    ux, uy = (-0.80, 0.60) if direction > 0 else (0.80, 0.60)       # richting van de kras
+    nx, ny = -uy, ux                                                # dwars
+    for k in (-1, 0, 1):
+        pts = []
+        L = length * (0.86 if k else 1.0)
+        for i in range(161):
+            s = i / 160 - 0.5
+            off = k * 17 + bend * (s * s * 4 - 1) * 6
+            x = cx + ux * s * L + nx * off + (k * 6 if k else 0) * ux
+            y = cy + uy * s * L + ny * off + (k * 6 if k else 0) * uy
+            w = 9.0 * math.sin(math.pi * (s + 0.5)) ** 0.7 + 0.6
+            pts.append((x, y, w))
+        for col, extra in ((11, 1.6), (12, 0.7), (10, 0)):
+            for x, y, w in pts:
+                rr2 = max(0.5, w / 2 + extra - (0 if col == 10 else 0.6))
+                d.ellipse((x - rr2, y - rr2, x + rr2, y + rr2), fill=col)
+    return im
+
+
+zc_idx = {}
+zc_maps = []
+for direction, cx, cy, length, bend in ((1, 170, 62, 150, 1), (-1, 74, 96, 150, -1), (1, 118, 82, 230, 1)):
+    im = zclaw(direction, cx, cy, length, bend)
+    m = []
+    for ty in range(20):
+        for tx in range(30):
+            t = tuple(im.getpixel((tx * 8 + x, ty * 8 + y)) for y in range(8) for x in range(8))
+            if not any(t):
+                m.append(0)
+                continue
+            if t not in zc_idx:
+                zc_idx[t] = NZ + 1 + len(zc_idx)
+                zr_tiles.append(list(t))
+            m.append(zc_idx[t])
+    zc_maps += m
+open(OUT + 'route_zarude_claws.bin', 'wb').write(struct.pack('<%dH' % len(zc_maps), *zc_maps))
+assert len(zr_tiles) < 760, len(zr_tiles)
+save('zarude', zr_tiles, [ZRPAL])
+
+# silhouet-sprite: de front-sprite van Zarude, alles bijna zwart met een donkergroene glans en twee rode ogen
+zs = Image.open('graphics/pokemon/zarude/front.png')
+zsil = Image.new('P', (64, 64), 0)
+for y in range(64):
+    for x in range(64):
+        zsil.putpixel((x, y), zs.getpixel((x, y)) & 15)
+ZSPAL = [(0, 0, 0)] + [(1, 2, 1)] * 15
+for i in (7, 9, 13):                                            # groene delen: een vleugje groen in het donker
+    ZSPAL[i] = (2, 6, 2)
+for i in (14, 15, 2):
+    ZSPAL[i] = (0, 0, 0)
+ZSPAL[8] = (31, 4, 2)                                           # ogen
+ZSPAL[12] = (6, 6, 5)                                           # tanden
+save_sprite('zarude_silhouette', zsil, ZSPAL)

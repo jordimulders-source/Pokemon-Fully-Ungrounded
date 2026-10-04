@@ -19,6 +19,8 @@ FortreeJungle_EventScript_OpenRocketHollow::
 
 FortreeJungle_OnTransition:
 	setflag FLAG_HIDE_JUNGLE_ROCKET_GUARD
+	setflag FLAG_HIDE_FORTREE_JUNGLE_ZARUDE
+	call_if_set FLAG_SYS_GAME_CLEAR, FortreeJungle_EventScript_ArmZarude
 	call_if_eq VAR_ROCKET_QUEST, 2, FortreeJungle_EventScript_ShowRocketGuard
 	end
 
@@ -68,6 +70,82 @@ FortreeJungle_EventScript_MaskAltar::
 
 FortreeJungle_EventScript_ZarudeSign::
 	msgbox FortreeJungle_Text_ZarudeSign, MSGBOX_SIGN
+	end
+
+@ ---------------------------------------------------------------- Zarude (post-game)
+@ Na de Hall of Fame zit Zarude verstopt in de boomkruin achter het stenen plateau in de ruine (9, 65). Stap je op de
+@ vloerplaat voor het plateau (9, 62), dan springt hij via het plateau naar je toe. Verslagen = terug na de League
+@ (hall_of_fame.inc), gevangen = weg. VAR_TEMP_4 = 1 zet de coord-trigger aan.
+FortreeJungle_EventScript_ArmZarude::
+	goto_if_set FLAG_DEFEATED_ZARUDE, FortreeJungle_EventScript_Return
+	setvar VAR_TEMP_4, 1
+FortreeJungle_EventScript_Return::
+	return
+
+FortreeJungle_EventScript_ZarudeScene::
+	lockall
+	setvar VAR_TEMP_4, 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playse SE_M_GRASSWHISTLE
+	msgbox FortreeJungle_Text_ZarudeRustle, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_HIDE_FORTREE_JUNGLE_ZARUDE
+	addobject LOCALID_FORTREE_JUNGLE_ZARUDE
+	playmoncry SPECIES_ZARUDE, CRY_MODE_ENCOUNTER
+	applymovement LOCALID_FORTREE_JUNGLE_ZARUDE, FortreeJungle_Movement_ZarudeLeaps
+	waitmovement 0
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 6
+	setvar VAR_0x8007, 3
+	special ShakeCamera
+	waitstate
+	waitmoncry
+	msgbox FortreeJungle_Text_Zarude, MSGBOX_DEFAULT
+	closemessage
+	setwildbattle SPECIES_ZARUDE, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, FortreeJungle_EventScript_ZarudeCaught
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FortreeJungle_EventScript_ZarudeDefeated
+	@ gevlucht: Zarude springt terug de boom in en wacht op je volgende bezoek
+	applymovement LOCALID_FORTREE_JUNGLE_ZARUDE, FortreeJungle_Movement_ZarudeRetreats
+	waitmovement 0
+	removeobject LOCALID_FORTREE_JUNGLE_ZARUDE
+	setflag FLAG_HIDE_FORTREE_JUNGLE_ZARUDE
+	msgbox FortreeJungle_Text_ZarudeRetreats, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FortreeJungle_EventScript_ZarudeCaught::
+	setflag FLAG_CAUGHT_ZARUDE
+FortreeJungle_EventScript_ZarudeDefeated::
+	setflag FLAG_DEFEATED_ZARUDE
+	removeobject LOCALID_FORTREE_JUNGLE_ZARUDE
+	setflag FLAG_HIDE_FORTREE_JUNGLE_ZARUDE
+	releaseall
+	end
+
+FortreeJungle_Movement_ZarudeLeaps:
+	jump_up
+	delay_4
+	jump_up
+	jump_in_place_up
+	step_end
+
+FortreeJungle_Movement_ZarudeRetreats:
+	jump_down
+	jump_down
+	step_end
+
+@ Mangrove Mire: andere tileset, dus geen naadloze connectie maar een warp
+FortreeJungle_EventScript_ToMangroveMire::
+	warpsilent MAP_MANGROVE_MIRE, 1, 22
+	waitstate
 	end
 
 @ ---------------------------------------------------------------- teksten
@@ -175,3 +253,18 @@ FortreeJungle_Text_RocketGuardPostBattle:
 	.string "Fine, go in. Wipe your feet.\n"
 	.string "PETREL is very particular\l"
 	.string "about the carpet.$"
+
+FortreeJungle_Text_ZarudeRustle:
+	.string "The canopy behind the old stones goes\n"
+	.string "dead quiet.\p"
+	.string "Even the mosquitoes stop. That's never\n"
+	.string "a good sign.$"
+
+FortreeJungle_Text_Zarude:
+	.string "A ZARUDE drops out of the trees!\p"
+	.string "It slaps the stone twice. Somewhere, a\n"
+	.string "vine takes notes.$"
+
+FortreeJungle_Text_ZarudeRetreats:
+	.string "ZARUDE swings back into the canopy.\n"
+	.string "It knows where you live. Roughly.$"

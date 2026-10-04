@@ -1059,3 +1059,13 @@ const struct Tileset gTileset_ScorchedSlab = // Project Grounded: Scorched Slab 
     .metatileAttributes = gMetatileAttributes_ScorchedSlab,
     .callback = InitTilesetAnim_Cave,
 };
+const struct Tileset gTileset_MangroveMire = // Project Grounded: Mangrove Mire, eigen moerastiles (mangrove_swamp.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MangroveMire,
+    .palettes = gTilesetPalettes_MangroveMire,
+    .metatiles = gMetatiles_MangroveMire,
+    .metatileAttributes = gMetatileAttributes_MangroveMire,
+    .callback = NULL,
+};

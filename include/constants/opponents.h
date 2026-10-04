@@ -1049,7 +1049,12 @@
 #define TRAINER_ROCKET_THIEF                1024 // Project Grounded: Rocket-hideout B1F
 #define TRAINER_PETREL                      1025 // Project Grounded: Rocket-hideout B2F (executive)
 
-#define TRAINERS_COUNT                      1026
+#define TRAINER_MIRE_OTTO                   1030 // Project Grounded: Mangrove Mire (Fisherman op de steiger)
+#define TRAINER_MIRE_GRISELDA               1031 // Project Grounded: Mangrove Mire (moerasheks)
+#define TRAINER_MIRE_FERN                   1032 // Project Grounded: Mangrove Mire (Pokemon Ranger)
+#define TRAINER_MIRE_KAPPA                  1033 // Project Grounded: Mangrove Mire (Ninja Boy, vermomd als boom)
+
+#define TRAINERS_COUNT                      1034
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

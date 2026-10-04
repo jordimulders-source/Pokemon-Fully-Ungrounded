@@ -34,6 +34,12 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	specialvar VAR_RESULT, Grounded_CaughtRayquaza
 	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_HallOfFame_EventScript_ResetRayquaza
 	call_if_unset FLAG_CAUGHT_SHINY_RAYQUAZA, EverGrandeCity_HallOfFame_EventScript_ResetShinyRayquaza
+	@ Project Grounded: een verslagen (niet gevangen) Zarude zit na de League weer in de ruine van Fortree Jungle
+	call_if_unset FLAG_CAUGHT_ZARUDE, EverGrandeCity_HallOfFame_EventScript_ResetZarude
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetZarude::
+	clearflag FLAG_DEFEATED_ZARUDE
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ResetRayquaza::

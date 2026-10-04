@@ -416,3 +416,18 @@ Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120\p"
 	.string "Pick one. Both are wrong.$"
+
+@ Project Grounded: Mangrove Mire (westrand, andere tileset dus een warp via coord-triggers; mangrove_swamp.py)
+Route120_EventScript_ToMangroveMire::
+	warpsilent MAP_MANGROVE_MIRE, 54, 29
+	waitstate
+	end
+
+Route120_EventScript_MangroveMireSign::
+	msgbox Route120_Text_MangroveMireSign, MSGBOX_SIGN
+	end
+
+Route120_Text_MangroveMireSign:
+	.string "{LEFT_ARROW} MANGROVE MIRE\p"
+	.string "Damp. Dark. Smells like a wet dog\n"
+	.string "that ate a cheese.$"

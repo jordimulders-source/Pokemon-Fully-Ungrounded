@@ -16228,3 +16228,13 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - Tileset `scorched_slab` (Cave-tiles met een warmer palet en zonlichtvlekken), bouwscript `tools/grounded/maptools/scorched_slab_ext.py` (lost de puzzel zelf op en controleert de bereikbaarheid). Trainers 1013–1015; flags 0x4C0–0x4C6.
 - **Engine:** Strength-blokken onthouden na elke duw hun positie zolang je op de kaart blijft (`OverrideTemplateCoordsForObjectEvent`); anders sprongen blokken die buiten beeld raakten terug. Bij opnieuw binnenkomen staan ze weer op hun beginplek.
 - **Battle! Zarude v9** (Jordi: opbouw op 4–5 s epischer): in de laatste spanningsmaat een aanzwellende paukenroffel (nieuw spoor), een strijkerstremolo die klimt (D-F-G-A), een tomroffel omlaag op de laatste tel en een crash precies op de inzet van de blazers.
+
+### [v.0.9.18] - Zarude in de jungle, Mangrove Mire
+- **Zarude (post-game):** na de Hall of Fame zit Zarude verstopt in de boomkruin boven een **ruïne** op de open plek in Fortree Jungle (stenen plateau met klauwkrassen en treden, een hele en een afgebroken zuil met klimop, een omgevallen zuil; `tools/grounded/maptools/zarude_ruins.py`). Stap op de vloerplaat en hij springt in twee sprongen naar je toe: gevecht op lv 70 met **"Battle! Zarude"**. Gevangen = weg, verslagen = terug na de League, gevlucht = terug de boom in. Flags 0x4D0–0x4D2.
+- **Transitie `B_TRANSITION_ZARUDE`** (±3 s): het bladerdek groeit van de randen dicht, vijf lianen zwiepen naar beneden, drie klauwkrassen met een schok op de taiko-slagen, dan Zarude's silhouet met pulserende rode ogen. Valt samen met de opbouw van de muziek.
+- Route 119: het 1%-slot van Zarude is nu Charjabug.
+- **Mangrove Mire** (nieuwe kaart, 56×44, `tools/grounded/maptools/mangrove_swamp.py`, eigen tileset `mangrove_mire`): troebel water en modder met plankenpaden en een visserssteiger, mangroves en wortelbogen (Ekat99-moerasset), waterlelies; regencyclus van de jungle. Tussen **Fortree Jungle** (het doodlopende pad bij de Miracle Seed loopt nu door naar het oosten) en **Route 120** (westkant; warps, Scorched Slab niet aangeraakt). Op de Town Map tussen de jungle en Route 120.
+  - Wilde Pokémon (lv 31–37): Clodsire, Skuntank, Amoonguss, Swalot, Tadbulb, Shiinotic, Yanma, Gastrodon, Goomy, Mudsdale; zeldzaam Galar-Stunfisk en Swampert. Surfen: Skrelp, Golduck, Marshtomp, Dragalge, Stunfisk; vissen o.a. Corphish, Crawdaunt, Whiscash, Politoed.
+  - Trainers (lv 37–38): Fisherman Otto, moerasheks Griselda, Ranger Fern, Ninja Boy Kappa (vermomd als boom).
+  - Items: Black Sludge, Mystic Water (alleen surfend), Absorb Bulb, TM Rain Dance (ook in de Abandoned Ship), verborgen Big Root en Ultra Ball.
+- Trainers 1030–1033; flags 0x4D3–0x4D8.

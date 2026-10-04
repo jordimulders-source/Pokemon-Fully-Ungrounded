@@ -1831,9 +1831,9 @@ save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 # ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
 # Toxic Chain zoals op de artwork: een doorlopende, glanzende magenta buis in ovale ringen, kort aan elkaar gegoten, met
-# als uiteinde de "halve schedel": een dikke ring (het oog) met kleine bulten (jukbeenderen) en een korte steel die
-# uitloopt in een brede, platte voet, zoals een ♀ waarvan het kruis een klokvoet is (zoals bij Okidogi rechtsboven, Munkidori's hoofdband en Fezandipiti's uiteinden). De ketting komt van
-# linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
+# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met direct aan de onderkant twee korte,
+# brede, blokvormige tanden naast elkaar met een smalle spleet ertussen (zoals bij Okidogi rechtsboven, Munkidori's hoofdband
+# en Fezandipiti's uiteinden). De ketting komt van linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
 # Het geheel is één afstandsveld (buizen en een vlak "kussen" met een zachte unie), zodat alles vloeiend in elkaar loopt.
 # route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
 # flip-bits) met de eerste k stukken. Tiles ook gespiegeld ontdubbeld.
@@ -1887,24 +1887,20 @@ def tube_field(pts, r):
 
 
 def foot_field():
-    """voet als vlak kussen: korte steel die uitloopt in een brede, platte voet (afstandsveld van een vorm)"""
-    s0 = PC_E + PC_F * (PC_ER + PC_ET - 3)    # begin van de steel (onderrand van het oog)
+    """de twee tanden: korte, brede blokken met afgeronde hoeken direct onder de ring, met een spleet ertussen
+    (afstandsveld van twee afgeronde rechthoeken in het assenstelsel van het eindstuk)"""
+    s0 = PC_E + PC_F * (PC_ER + PC_ET - 8)    # bovenkant van de tanden (in de onderrand van de ring)
     n = perp(PC_F)
-    loc = lambda x, y: tuple((s0 + PC_F * x + n * y) * PC_SS)
-    im = Image.new('L', (W, H), 0)
-    d = ImageDraw.Draw(im)
-    # steel die met een holle welving uitloopt in een brede, platte voet (klokvorm), onderrand licht hol
-    xs = np.linspace(10, 19, 12)
-    half = 6.5 + 15.5 * ((xs - 10) / 9) ** 2.2                # holle welving van steel naar voet
-    right = [loc(-10, 6.5), loc(10, 6.5)] + [loc(x, w) for x, w in zip(xs, half)] + \
-            [loc(27, 22), loc(30, 19), loc(30, 6), loc(28.5, 0)]
-    left = [loc(-10, -6.5), loc(10, -6.5)] + [loc(x, -w) for x, w in zip(xs, half)] + \
-           [loc(27, -22), loc(30, -19), loc(30, -6)]
-    d.polygon(right + left[::-1], fill=255)
-    m = ndimage.gaussian_filter(np.array(im, float), 1.4 * PC_SS) > 127
-    inside = ndimage.distance_transform_edt(m) / PC_SS
-    outside = ndimage.distance_transform_edt(~m) / PC_SS
-    return np.where(m, -inside, outside)
+    lx = (X - s0[0]) * PC_F[0] + (Y - s0[1]) * PC_F[1]
+    ly = (X - s0[0]) * n[0] + (Y - s0[1]) * n[1]
+    f = np.full((H, W), 1e9)
+    r = 5.0
+    for y0, y1 in ((-18.0, -1.7), (1.7, 18.0)):
+        cx, cy, hx, hy = 14.0, (y0 + y1) / 2, 14.0, (y1 - y0) / 2
+        qx, qy = np.abs(lx - cx) - (hx - r), np.abs(ly - cy) - (hy - r)
+        dd = np.hypot(np.maximum(qx, 0), np.maximum(qy, 0)) + np.minimum(np.maximum(qx, qy), 0) - r
+        f = np.minimum(f, dd)
+    return f
 
 
 def smin(a, b, k=3.5):
@@ -1932,9 +1928,7 @@ pieces.append(tube_field(seg(centers[-1] + PC_DIR * PC_RA, eye_in), PC_R + 1.5))
 # het eindstuk komt in een keer: oog (iets ovaal, schuin) + steel + voet
 eye = tube_field([PC_E + perp(PC_F) * PC_ER * np.cos(a) * 0.92 + PC_F * PC_ER * np.sin(a)
                   for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
-bumps = tube_field([PC_E - perp(PC_F) * (PC_ER + PC_ET - 5)], 8.0)
-bumps = np.minimum(bumps, tube_field([PC_E - PC_F * (PC_ER + PC_ET - 5) - perp(PC_F) * 6], 7.0))
-pieces.append(smin(smin(eye, bumps, 5.0), foot_field(), 3.0))
+pieces.append(smin(eye, foot_field(), 2.0))
 PC_N = len(pieces)
 PC_LEN = float(np.dot(PC_E + PC_F * 60 - PC_O, PC_DIR))
 

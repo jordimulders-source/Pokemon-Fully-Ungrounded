@@ -4767,7 +4767,7 @@
       "width": 40,
       "height": 68,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_FortreeJungle",
       "border_filepath": "data/layouts/FortreeJungle/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
     }

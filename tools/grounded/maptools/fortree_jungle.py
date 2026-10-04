@@ -1,7 +1,8 @@
 """Project Grounded: Fortree Jungle, een dicht, nat regenwoud onder Fortree City.
 
 Bouwt (idempotent, vaste seed):
-- data/layouts/FortreeJungle/map.bin + border.bin (40x68, primary General + secondary Fortree, de bomen van Route 119).
+- data/layouts/FortreeJungle/map.bin + border.bin (40x68, primary General + secondary fortree_jungle: Fortree met
+  tropische tiles/metatiles achteraan, gebouwd door jungle_tileset.py).
 - data/maps/FortreeJungle/map.json (connection omhoog naar Fortree, objecten, bord-events).
 - Fortree City: twee openingen in de zuidrand (x 9-12 en x 34-36) + connection omlaag naar de jungle.
 - Registratie: layouts.json, map_groups.json (gMapGroup_Grounded), event_scripts.s.
@@ -12,6 +13,13 @@ poelen (pond-water met oevers zoals Route 119), plassen, bloemen en reuzenpalmen
 Daarna autotiling: boomkruin boven een open vak (0x0E/0x0F), stam onderaan het bos (0x16/0x17),
 lang gras met de zuidrand (0x15 / Fortree 0x208), pond-oevers (0xB0-0xBA, 0xC0/0xC2) en de oever-grastegel
 (0x002) onder het water. Tot slot controleert het script de bereikbaarheid van alle events.
+
+Tropische laag (v0.9.6): vanaf een golvende grens rond rij 11-16 jungle-groene bomen (palet 12) met lianen en
+bromelia's, mangroves (Ekat99) en waterlelies in de grote poel, omgevallen bemoste stammen, wortelbogen (Ekat99),
+bananenplanten en heliconia's (1x2, bovenkant over de speler), hibiscus en monstera, varens langs de bosranden,
+bosbodem (bladeren/mos) en tropische bloemetjes. Elk blokkerend stuk wordt alleen geplaatst als de bereikbaarheids-
+controle slaagt en er geen enkel vak afgesloten raakt. De bovenste SAFE rijen blijven Fortree-metatiles: vanuit Fortree
+wordt de jungle met de Fortree-tileset getekend.
 
 Vrijgehouden voor later: de open plek van Zarude (zuidwest, diep in de jungle) en het heiligdom van Ogerpon
 (zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
@@ -236,7 +244,7 @@ cands = [(x, y) for y in range(2, H - 6) for x in range(1, W - 3)]
 rng.shuffle(cands)
 used = set()
 for x, y in cands:
-    if palms >= 9:
+    if palms >= 14:
         break
     if all(kind(x + dx, y + dy) == 'T' and M[y + dy][x + dx] & 0x3FF in FOREST
            for dy in range(-1, 5) for dx in range(3)) and not any((x + dx, y + dy) in used
@@ -249,6 +257,8 @@ for x, y in cands:
 
 # ---------------------------------------------------------------- bereikbaarheid
 WALK = set('gLpf')
+blocked = {(x, y) for x, y, *_ in TRAINERS + ITEMS + NPCS}
+BLOCK = set()            # vakken die de tropische laag hieronder dichtzet (stammen, mangroves, struiken)
 
 
 def bfs(starts, ok):
@@ -263,29 +273,249 @@ def bfs(starts, ok):
     return seen
 
 
-blocked = {(x, y) for x, y, *_ in TRAINERS + ITEMS + NPCS}
-walk = bfs([ENTR[0]], lambda x, y: T[y][x] in WALK and (x, y) not in blocked)
-assert ENTR[-1] in walk, 'oostingang niet verbonden met de westingang'
-surf = bfs(list(walk), lambda x, y: (T[y][x] in WALK or T[y][x] == 'w') and (x, y) not in blocked)
-
-
 def near(x, y, s):
     return any((x + dx, y + dy) in s for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))
 
 
-for x, y, *_ in TRAINERS + NPCS:
-    assert near(x, y, walk), ('trainer/NPC onbereikbaar', x, y)
-for x, y, item, _ in ITEMS:
-    s = surf if item == 'ITEM_TM_U_TURN' else walk
-    assert near(x, y, s), ('item onbereikbaar', item)
-    if item == 'ITEM_TM_U_TURN':
-        assert not near(x, y, walk), 'TM-zakje moet alleen surfend bereikbaar zijn'
-for x, y, item, _ in HIDDEN:
-    assert (x, y) in walk, ('verborgen item onbereikbaar', item)
-for x, y, _ in SIGNS:
-    assert near(x, y, walk), ('bord onbereikbaar', x, y)
-for name, (cx, cy) in (('Zarude', (9, 61)), ('Ogerpon', (31, 52))):
-    assert (cx, cy) in walk, name + '-plek onbereikbaar'
+def check(extra=()):
+    """Alle events bereikbaar met BLOCK (+ extra) dicht? Geeft (lopend, met Surf) terug of AssertionError."""
+    shut = blocked | BLOCK | set(extra)
+    walk = bfs([ENTR[0]], lambda x, y: T[y][x] in WALK and (x, y) not in shut)
+    assert ENTR[-1] in walk, 'oostingang niet verbonden met de westingang'
+    surf = bfs(list(walk), lambda x, y: (T[y][x] in WALK or T[y][x] == 'w') and (x, y) not in shut)
+    for x, y, *_ in TRAINERS + NPCS:
+        assert near(x, y, walk), ('trainer/NPC onbereikbaar', x, y)
+    for x, y, item, _ in ITEMS:
+        s = surf if item == 'ITEM_TM_U_TURN' else walk
+        assert near(x, y, s), ('item onbereikbaar', item)
+        if item == 'ITEM_TM_U_TURN':
+            assert not near(x, y, walk), 'TM-zakje moet alleen surfend bereikbaar zijn'
+    for x, y, item, _ in HIDDEN:
+        assert (x, y) in walk, ('verborgen item onbereikbaar', item)
+    for x, y, _ in SIGNS:
+        assert near(x, y, walk), ('bord onbereikbaar', x, y)
+    for name, (cx, cy) in (('Zarude', (9, 61)), ('Ogerpon', (31, 52))):
+        assert (cx, cy) in walk, name + '-plek onbereikbaar'
+    return walk, surf
+
+
+walk0, surf0 = check()
+
+# ---------------------------------------------------------------- tropische laag (tileset fortree_jungle)
+# Alles hieronder gebruikt metatiles die alleen in fortree_jungle bestaan (achter de Fortree-metatiles). Vanuit
+# Fortree wordt de jungle met de Fortree-tileset getekend: de bovenste SAFE rijen blijven daarom origineel.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import jungle_tileset as J
+ts = J.JungleTileset()
+SAFE = 10
+JRNG = random.Random(SEED + 1)
+EVENT_CELLS = {(x, y) for x, y, *_ in TRAINERS + ITEMS + NPCS} | {(x, y) for x, y, *_ in HIDDEN} | \
+              {(x, y) for x, y, _ in SIGNS}
+KEEP = set()             # geen blokkerend decor: rond events, zichtlijnen van trainers, Zarude- en Ogerpon-plek
+for x, y in EVENT_CELLS:
+    for dy in (-1, 0, 1):
+        for dx in (-1, 0, 1):
+            KEEP.add((x + dx, y + dy))
+for x, y, face, *_ in TRAINERS:
+    d = {'UP': (0, -1), 'DOWN': (0, 1), 'LEFT': (-1, 0), 'RIGHT': (1, 0)}.get(face, (0, 0))
+    for k in range(1, 6):
+        KEEP.add((x + d[0] * k, y + d[1] * k))
+for y in range(H):
+    for x in range(W):
+        if (x - 9) ** 2 + (y - 60) ** 2 <= 30 or (x - 31) ** 2 + (y - 54) ** 2 <= 22:
+            KEEP.add((x, y))
+
+
+def mid(x, y):
+    return M[y][x] & 0x3FF
+
+
+def put(x, y, mt, coll=None):
+    v = M[y][x]
+    c = (v >> 10) & 3 if coll is None else coll
+    M[y][x] = mt | (c << 10) | (v & 0xF000)
+
+
+# 1. jungle-groene bomen vanaf een golvende grens (rij SAFE+1 .. SAFE+6), palmkruinen over bos gaan mee
+TREEISH = set(FOREST) | set(TRUNK) | set(CANOPY) | {0x248, 0x249, 0x24A, 0x250, 0x251, 0x252, 0x273}
+ph1, ph2 = JRNG.random() * 6.28, JRNG.random() * 6.28
+EDGE = [SAFE + 1 + round(2.5 + 1.6 * math.sin(x * 0.42 + ph1) + 0.9 * math.sin(x * 1.1 + ph2)) for x in range(W)]
+JUNGLE = set()
+for y in range(SAFE, H):
+    for x in range(W):
+        if mid(x, y) in TREEISH and y >= EDGE[x]:
+            JUNGLE.add((x, y))
+for y in range(SAFE, H):          # boomkruin boven een vrij vak hoort bij de boom eronder
+    for x in range(W):
+        if mid(x, y) in CANOPY and y + 1 < H:
+            (JUNGLE.add if (x, y + 1) in JUNGLE else JUNGLE.discard)((x, y))
+VINE_X = (3, 11)
+lianas = epis = 0
+done = set()
+for y in range(H - 1, SAFE - 1, -1):
+    for x in range(W):
+        if (x, y) not in JUNGLE or (x, y) in done:
+            continue
+        m = mid(x, y)
+        if m in TRUNK and JRNG.random() < 0.45:
+            vx, ph = JRNG.choice(VINE_X), JRNG.choice((0.0, 2.0))
+            length = JRNG.choice((9, 11, 13))
+            put(x, y, ts.recolor(m, draw=lambda cv, vx=vx, ph=ph, l=length: J.vine(cv, vx, 0, l, ph, tip=True)))
+            lianas += 1
+            yy = y - 1                          # liaan loopt door in de kruinen erboven
+            while yy >= SAFE and (x, yy) in JUNGLE and mid(x, yy) in FOREST:
+                put(x, yy, ts.recolor(mid(x, yy), draw=lambda cv, vx=vx, ph=ph: J.vine(cv, vx, 0, 16, ph)))
+                done.add((x, yy))
+                if JRNG.random() < 0.5:
+                    break
+                yy -= 1
+        elif m in FOREST and JRNG.random() < 0.05 and all(kind(x + dx, y + dy) == 'T' for dx in (-1, 0, 1)
+                                                          for dy in (-1, 0, 1)):
+            cx, cy, col = JRNG.choice(((5, 6, 10), (10, 9, 12), (8, 5, 10), (6, 10, 12)))
+            put(x, y, ts.recolor(m, draw=lambda cv, cx=cx, cy=cy, col=col: J.bromeliad(cv, cx, cy, col)))
+            epis += 1
+        elif m in TREEISH:
+            put(x, y, ts.jungle(m))
+print('jungle: %d boomvakken groen, %d lianen, %d bromelia\'s' % (len(JUNGLE), lianas, epis))
+
+
+# 2. decor: stempels die een basis-metatile zonder bovenlaag overschilderen
+def stamp(x0, y0, cv, pal, base_ok, block=True, layer=1, top_layer=None):
+    """Zet cv (veelvoud van 16) op de kaart vanaf (x0, y0). False als het niet past of iets afsluit.
+    layer 1 = onder de speler (covered); top_layer 0 = bovenste rij begaanbaar en over de speler (hoge plant)."""
+    w, h = cv.w // 16, cv.h // 16
+    cells = [(x0 + i, y0 + j) for j in range(h) for i in range(w)]
+    for x, y in cells:
+        if not inb(x, y) or y < SAFE or mid(x, y) not in base_ok or (x, y) in BLOCK or (block and (x, y) in KEEP):
+            return False
+    shut = []
+    if block:
+        shut = cells if top_layer is None else cells[w:]
+        try:
+            walk, _ = check(shut)
+        except AssertionError:
+            return False
+        if len(walk) != len(walk0 - BLOCK - set(shut)):
+            return False                                           # er raakt een stukje afgesloten
+    for j in range(h):
+        for i in range(w):
+            x, y = x0 + i, y0 + j
+            lay = top_layer if (top_layer is not None and j == 0) else layer
+            put(x, y, ts.overlay(mid(x, y), cv, i * 16, j * 16, pal, layer=lay), 1 if (x, y) in shut else None)
+    BLOCK.update(shut)
+    return True
+
+
+def edge_nook(x, y, need=3, space=12):
+    """Open vak aan de bosrand in een ruime plek (niet midden in een smal pad)."""
+    t = sum(kind(x + dx, y + dy) == 'T' for dx in (-1, 0, 1) for dy in (-1, 0, 1))
+    room = sum(kind(x + dx, y + dy) in 'gLpf' for dx in range(-2, 3) for dy in range(-2, 3))
+    return t >= need and room >= space
+
+
+GR = {GRASS}
+WATER_IN = {0xA1}
+placed = {}
+
+
+SPOTS = []
+
+
+def count(name, x=None, y=None):
+    placed[name] = placed.get(name, 0) + 1
+    if x is not None:
+        SPOTS.append((name, x, y))
+
+
+def spaced(name, x, y, same=6, other=2):
+    """Niet te dicht bij ander blokkerend decor (zelfde soort: same vakken, andere soort: other)."""
+    return all(max(abs(x - a), abs(y - b)) >= (same if n == name else other) for n, a, b in SPOTS)
+
+
+# mangroves in de grote poel (wortels in het water)
+for x0, y0, big in ((29, 34, True), (25, 34, False), (28, 33, True), (26, 33, False)):
+    if placed.get('mangrove', 0) >= 2:
+        break
+    if stamp(x0, y0, J.mangrove(big, True), J.P_JUNGLE, WATER_IN):
+        count('mangrove')
+# waterlelies op de poel (je surft er gewoon overheen)
+for _ in range(80):
+    x, y = JRNG.randrange(24, 33), JRNG.randrange(31, 37)
+    if placed.get('lotus', 0) < 5 and stamp(x, y, J.lotus(JRNG.randrange(2)), J.P_FLOWER, WATER_IN, block=False):
+        count('lotus')
+cands = [(x, y) for y in range(SAFE, H - 1) for x in range(1, W - 1)]
+JRNG.shuffle(cands)
+
+
+def against_forest(x, y, n, deep=2):
+    """n vakken vanaf (x, y) liggen direct onder de bosrand en daaronder blijft het pad nog deep vakken breed."""
+    return all(kind(x + i, y - 1) == 'T' and all(kind(x + i, y + k) in 'gLpf' for k in range(1, deep + 1))
+               for i in range(n))
+
+
+# omgevallen stammen tegen de bosrand (natuurlijke barrieres in open plekken)
+for x, y in cands:
+    if placed.get('log', 0) >= 8:
+        break
+    n = JRNG.choice((2, 3))
+    free = all(kind(x + i, y + k) in 'gLpf' for i in range(-1, n + 1) for k in (-2, -1, 1, 2))   # midden in een open plek
+    if (against_forest(x, y, n) or free) and spaced('log', x, y, 6) and stamp(x, y, J.log(n), J.P_JUNGLE, GR):
+        count('log', x, y)
+# wortelbogen (Ekat99)
+for x, y in cands:
+    if placed.get('arch', 0) >= 6:
+        break
+    if against_forest(x, y, 2) and spaced('arch', x, y) and stamp(x, y, J.root_arch(False), J.P_JUNGLE, GR):
+        count('arch', x, y)
+# hoge planten (1x2): bananenplant en heliconia tegen de bosrand; het bovenste vak is begaanbaar en valt over de
+# speler heen
+for x, y in cands:
+    if placed.get('tall', 0) >= 16:
+        break
+    if against_forest(x, y, 1, 3) and spaced('tall', x, y, 3):
+        cv, pal = (J.banana(), J.P_JUNGLE) if JRNG.random() < 0.5 else (J.heliconia(), J.P_FLOWER)
+        if stamp(x, y, cv, pal, GR, top_layer=0):
+            count('tall', x, y)
+# struiken (1x1): hibiscus en monstera; de oude Fortree-struikjes worden ook tropisch
+for y in range(SAFE, H):
+    for x in range(W):
+        if T[y][x] == 'b':
+            BLOCK.add((x, y))
+            plant = (J.hibiscus(JRNG.randrange(2)), J.P_FLOWER) if JRNG.random() < 0.6 else (J.monstera(), J.P_JUNGLE)
+            put(x, y, ts.overlay(GRASS, plant[0], 0, 0, plant[1], layer=1), 1)
+for x, y in cands:
+    if placed.get('bush', 0) >= 16:
+        break
+    if edge_nook(x, y, 3, 11) and spaced('bush', x, y, 4):
+        cv, pal = (J.hibiscus(JRNG.randrange(2)), J.P_FLOWER) if JRNG.random() < 0.45 else (J.monstera(), J.P_JUNGLE)
+        if stamp(x, y, cv, pal, GR):
+            count('bush', x, y)
+# varens langs de bosranden en bloemetjes in open plekken (begaanbaar, onder de speler)
+for x, y in cands:
+    if mid(x, y) != GRASS or (x, y) in EVENT_CELLS:
+        continue
+    t = sum(kind(x + dx, y + dy) == 'T' for dx in (-1, 0, 1) for dy in (-1, 0, 1))
+    if t >= 2 and JRNG.random() < 0.45:
+        if stamp(x, y, J.fern(JRNG.randrange(2)), J.P_JUNGLE, GR, block=False):
+            count('fern')
+    elif t == 0 and JRNG.random() < 0.07:
+        if stamp(x, y, J.groundflowers(JRNG.randrange(2)), J.P_FLOWER, GR, block=False):
+            count('flowers')
+    elif JRNG.random() < 0.3:
+        if stamp(x, y, J.litter(JRNG.randrange(3)), J.P_JUNGLE, GR, block=False):
+            count('litter')
+# de rode General-bloemen in de jungle worden tropische bloemetjes (niet bij het altaar van Ogerpon)
+for y in range(SAFE, H):
+    for x in range(W):
+        if mid(x, y) == FLOWER and (x - 31) ** 2 + (y - 54) ** 2 > 22:
+            put(x, y, GRASS)
+            stamp(x, y, J.groundflowers(1), J.P_FLOWER, GR, block=False)
+for y in range(SAFE):
+    for x in range(W):
+        assert mid(x, y) < ts.first, ('nieuwe metatile in het vanuit Fortree zichtbare deel', x, y)
+ntiles, nmts = ts.save()
+walk, surf = check()
+print('tropisch:', placed, '| %d nieuwe tiles (van %d vrij), %d nieuwe metatiles' % (ntiles, ts.nfree, nmts))
 print('bereikbaar: %d vakken lopend, %d met Surf; %d palmen' % (len(walk), len(surf), palms))
 
 # ---------------------------------------------------------------- schrijven
@@ -360,10 +590,15 @@ if '"LAYOUT_FORTREE_JUNGLE"' not in lj:
       "width": %d,
       "height": %d,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_FortreeJungle",
       "border_filepath": "data/layouts/FortreeJungle/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
     }''' % (W, H) + lj[j:]
+    open('data/layouts/layouts.json', 'w').write(lj)
+i = lj.index('"LAYOUT_FORTREE_JUNGLE"')
+j = lj.index('}', i)
+if '"gTileset_Fortree"' in lj[i:j]:                    # oudere versie (v0.9.5) gebruikte Fortree zelf
+    lj = lj[:i] + lj[i:j].replace('"gTileset_Fortree"', '"gTileset_FortreeJungle"') + lj[j:]
     open('data/layouts/layouts.json', 'w').write(lj)
 g = open('data/maps/map_groups.json').read()
 if '"FortreeJungle"' not in g:
@@ -382,5 +617,5 @@ if inc not in es:
 if len(sys.argv) > 1:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from gridrender import render
-    render(M, 'general', 'fortree').save(sys.argv[1])
+    render(M, 'general', 'fortree_jungle').save(sys.argv[1])
 print('klaar')

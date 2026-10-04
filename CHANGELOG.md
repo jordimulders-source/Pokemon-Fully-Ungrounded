@@ -16409,3 +16409,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - Een trompetfanfare op de grondtonen.
   - Pauken op 1 en 3, en crashes om de 2 maten.
 - **Previews zonder snips:** `recaudio.py` neemt twee keer op (32768 en 44100 Hz). Elke mGBA-glitch wordt vervangen door het echte geluid uit de andere opname, niet meer door een rechte lijn.
+
+### [v.0.9.44] - Regigigas-gevechtstransitie
+- Regigigas heeft een eigen transitie (`B_TRANSITION_REGIGIGAS`), met dezelfde animatie en timing als de andere Regi's: weven, oplichten, de cirkel sluit.
+- Het patroon is Regigigas' zes ogen, symmetrisch in drie rijen: 2 rood (het verst uit elkaar), 2 blauw (iets dichter) en 2 wit (nog iets dichter). Elk oog heeft een witte stip in het midden en kleine oortjes opzij, en licht op in zijn eigen kleur.
+- Script: `tools/grounded/regigigas_transition.py`.

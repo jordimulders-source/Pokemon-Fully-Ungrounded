@@ -6908,7 +6908,7 @@ static void Task_TryItemUseFormChange(u8 taskId)
     case 6:
         if (!IsPartyMenuTextPrinterActive())
         {
-            if (gSpecialVar_ItemId == ITEM_ROTOM_CATALOG) //only for Rotom currently
+            if (gSpecialVar_ItemId == ITEM_ROTOM_CATALOG || IsRotomApplianceItem(gSpecialVar_ItemId)) //only for Rotom currently
             {
                 u32 i;
                 for (i = 0; i < ARRAY_COUNT(sRotomFormChangeMoves); i++)
@@ -6968,6 +6968,54 @@ void ItemUseCB_FormChange_ConsumedOnUse(u8 taskId, TaskFunc task)
 {
     if (TryItemUseFormChange(taskId, task))
         RemoveBagItem(gSpecialVar_ItemId, 1);
+}
+
+// Project Grounded: losse Rotom-apparaten (Key Items uit Lilycove). Het apparaat geeft Rotom
+// die vorm; is Rotom al die vorm, dan wordt hij weer gewone Rotom. Hergebruikt de vormwissel en
+// de signature moves van de Rotom Catalog (FORM_CHANGE_ITEM_USE_MULTICHOICE).
+static const u16 sRotomApplianceMoves[] = {ROTOM_BASE_MOVE, ROTOM_HEAT_MOVE, ROTOM_WASH_MOVE, ROTOM_FROST_MOVE, ROTOM_FAN_MOVE, ROTOM_MOW_MOVE};
+static const u16 sRotomApplianceSpecies[] = {SPECIES_ROTOM, SPECIES_ROTOM_HEAT, SPECIES_ROTOM_WASH, SPECIES_ROTOM_FROST, SPECIES_ROTOM_FAN, SPECIES_ROTOM_MOW};
+
+bool32 IsRotomApplianceItem(u16 itemId)
+{
+    return itemId >= ITEM_MICROWAVE_OVEN && itemId <= ITEM_LAWN_MOWER;
+}
+
+void ItemUseCB_RotomAppliance(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u32 currentSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    u32 targetSpecies = currentSpecies;
+    u32 form = GetItemSecondaryId(gSpecialVar_ItemId);
+
+    if (form >= 1 && form < ARRAY_COUNT(sRotomApplianceSpecies)
+     && !GetMonData(mon, MON_DATA_IS_EGG)
+     && GET_BASE_SPECIES_ID(currentSpecies) == SPECIES_ROTOM)
+    {
+        if (currentSpecies == sRotomApplianceSpecies[form])
+            form = 0; // nog eens gebruiken: terug naar gewone Rotom
+        gSpecialVar_Result = form;
+        gSpecialVar_0x8000 = sRotomApplianceMoves[form];
+        targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_ITEM_USE_MULTICHOICE, ITEM_ROTOM_CATALOG);
+    }
+
+    if (targetSpecies != currentSpecies)
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        SetWordTaskArg(taskId, tNextFunc, (u32)task);
+        gTasks[taskId].func = Task_TryItemUseFormChange;
+        gTasks[taskId].tState = 0;
+        gTasks[taskId].tTargetSpecies = targetSpecies;
+        gTasks[taskId].tAnimWait = 0;
+    }
+    else
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_RG_BALL_CLICK);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
 }
 
 void ItemUseCB_RotomCatalog(u8 taskId, TaskFunc task)

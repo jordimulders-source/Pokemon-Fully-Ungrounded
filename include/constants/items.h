@@ -1026,7 +1026,14 @@
 
 #define ITEM_LIBERTY_PASS 856 // Project Grounded: ticket naar Liberty Garden (Victini), na de Victory-gauntlet
 
-#define ITEMS_COUNT 857
+// Project Grounded: Rotom-apparaten (Key Items, te koop in Lilycove); veranderen Rotom van vorm
+#define ITEM_MICROWAVE_OVEN 857
+#define ITEM_WASHING_MACHINE 858
+#define ITEM_REFRIGERATOR 859
+#define ITEM_ELECTRIC_FAN 860
+#define ITEM_LAWN_MOWER 861
+
+#define ITEMS_COUNT 862
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

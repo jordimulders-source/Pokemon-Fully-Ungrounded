@@ -131,7 +131,7 @@ Bewust niet aangepast: Ashfrost (uitzondering voor steden), Altering Cave en Art
 | Route121 | land | 11 | 32–34 | Mimikyu → **Thievul** | sluwe vos (1%) |
 | Route121 | Super Rod | 9 | 45 | Overqwil → **Toxapex** | giftige zeester (1%) |
 | Route122 | Super Rod | 8 | 40–45 | Cursola → **Basculegion M** | spookvis uit verdronken Basculin, past bij Mt. Pyre |
-| Route122 | Super Rod | 9 | 45–50 | Rotom → **Rotom Wash** | je vist een wasmachine op (1%) |
+| Route122 | Super Rod | 9 | 45–50 | Rotom Wash → **Dragalge** | Rotom alleen via het event (v0.8.126); rottend zeewier rond Mt. Pyre (1%) |
 | Route123 | land | 11 | 35 | Malamar → **Grumpig** | psychisch (1%) |
 | Route125 | Super Rod | 8 | 35–40 | Veluza → **Malamar** | inktvis |
 | Route128 | surf | 3 | 40–45 | Sharpedo → **Huntail** | diepzee bij de Seafloor Cavern |
@@ -233,3 +233,20 @@ Bewust niet aangepast: Ashfrost (uitzondering voor steden), Altering Cave en Art
 | MeteorFalls_StevensCave | land | 11 | 60 | Salamence → **Haxorus** | draak (1%) |
 | Route102_MiniForest | land | 10 | 7–8 | Rookidee → **Tarountula** | bosspin |
 | Route102_MiniForest | land | 11 | 7–8 | Nymble → **Cutiefly** | bloemvlieg (1%) |
+
+## Rotom uit het wild (v0.8.126)
+
+Rotom (alle vormen) komt alleen nog via het event in de kelder van `MauvilleCity_House2_B1F`; de apparaten koop je in Lilycove. Vervangen met dezelfde levels en zeldzaamheid:
+
+| Kaart | Tabel | Slot | Level | Oud → nieuw | Reden |
+|---|---|---|---|---|---|
+| AbandonedShip_Rooms_B1F | surf | 4 | 32–35 | Rotom → **Golisopod** | aaseter in het wrak (1%) |
+| Route108 | surf | 2 | 28–32 | Rotom → **Finizen** | dolfijn op open zee |
+| NewMauville_Entrance | land | 5 | 24–26 | Rotom → **Pawmo** | elektrische muis tussen de kabels |
+| NewMauville_Inside | land | 6 | 26–28 | Rotom → **Elekid** | hoort bij de Electabuzz van de centrale |
+| Route122 | Old Rod | 1 | 25–30 | Rotom Wash → **Basculin White Striped** | wordt Basculegion, verderop in dezelfde tabel |
+| Route122 | Good Rod | 2 | 28–33 | Rotom Heat → **Jellicent** | spookkwal rond Mt. Pyre |
+| Route122 | Good Rod | 3 | 28–33 | Rotom Frost → **Qwilfish Hisui** | duister gifvisje |
+| Route122 | Good Rod | 4 | 30–35 | Rotom Fan → **Skrelp** | lijkt op rottend zeewier |
+| Route122 | Super Rod | 5 | 30–35 | Rotom Mow → **Dhelmise** | spookanker |
+| Route122 | Super Rod | 6 | 32–37 | Rotom → **Overqwil** | volwassen Qwilfish Hisui |

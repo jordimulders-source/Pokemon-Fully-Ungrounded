@@ -21,12 +21,8 @@ Vragen: welke van a–d (en het moeras)? En gaan ze direct na de 6e badge open, 
 - **Altering Cave:** wisselt per dag van soorten (vanilla-idee van Mystery Gift, nu echt).
 Welke wil je erbij?
 
-## 3. Battle Stadium: back sprites
-Van de 118 compagnons hebben er 109 de Brendan-backsprite (alleen Brendan, May, Red, Steven, Wally en Kecleon hebben een eigen). Echte back sprites bestaan voor de meesten niet. Opties:
-- **a.** Per personage een eenvoudige back sprite tekenen (achterhoofd, haar, jas) op basis van de trainerfoto: ±1 uur per stuk; eerst de 20–30 iconische (gymleiders, Elite Four, rivalen, Archie, Maxie, Colress, Zinnia, Mustard, N, Ghetsis).
-- **b.** Een semi-automatisch script dat uit de trainerfoto een silhouet van achteren maakt (gespiegeld, gezicht weggepoetst in haarkleur), daarna met de hand bijwerken.
-- **c.** In doubles de compagnon niet als backsprite tonen (hij schuift weg zoals de speler).
-Welke?
+## 3. ~~Battle Stadium: back sprites~~
+Besloten (4 okt): geen back sprites tekenen; in het Stadium geen trainer-backs aan onze kant.
 
 ## 4. Delta Episode
 Zinnia geeft na Deoxys nu 3 Comet Shards. Wil je een andere beloning (bijv. de Mega Ring, zodat de speler Mega Evolution kan gebruiken; dat zit nu niet in de game)?

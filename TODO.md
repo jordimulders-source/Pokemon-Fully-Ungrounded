@@ -23,7 +23,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
    2. ~~**Jungle onder Fortree**~~ (kaart gedaan, v0.9.5). Open: Zarude- en Ogerpon-events op de vrijgehouden plekken.
    3. Moeras (aangeleverde moeras-tileset).
    4. Oostkant: eilandjes en Dive-grotten.
-9. **Battle Stadium:** ~~N en Ghetsis in de pool~~ (gedaan, v0.9.2). **Back sprites** voor de compagnons in doubles: nu hebben 109 van de 118 partners de Brendan-backsprite (alleen Brendan, May, Red, Steven, Wally en Kecleon hebben een eigen). Belangrijk voor Stadium-doubles.
+9. **Battle Stadium:** ~~N en Ghetsis in de pool~~ (gedaan, v0.9.2). **Back sprites:** niet tekenen (Jordi, 4 okt: niet overtuigend). In plaats daarvan toont het Stadium aan onze kant geen trainer-backs; de Pokémon staan meteen op het veld (in de maak).
 8. **Dungeons uitbreiden (Jordi, 4 okt):**
    - Petalburg Woods: nieuw stuk bos aan de rechterkant (eventueel eerst boven eruit en dan door), een verborgen paddenstoelenbos.
    - Meteor Falls: meerdere verborgen kamers; de kamer naar beneden uitbreiden en interessant maken; een gangenstelsel naar andere toffe events.

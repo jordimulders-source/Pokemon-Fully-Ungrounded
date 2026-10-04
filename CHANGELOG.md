@@ -15939,3 +15939,10 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Ivan:** Gyarados is eruit (de lv 3-grap werkt niet op level 50); nieuwe ace: een shiny Bruxish (Strong Jaw, Swords Dance, Psychic Fangs, Wave Crash, Ice Fang).
 - **Thomas → Lyle:** Thomas (Zangoose-maffia) is vervangen door Lyle uit Petalburg Woods, de Bug Catcher met de geëvolueerde bugs van zijn broer. In het Stadium heeft hij ze eindelijk getraind (Scizor, Yanmega, Pinsir, Kleavor, Golisopod, Ninjask), maar nog steeds met 0 IV's. Scizor en Yanmega doen altijd mee. `TRAINER_STADIUM_THOMAS` heet nu `TRAINER_STADIUM_LYLE` (zelfde nummer).
 - **Ditto op Route 115:** de Ditto-jongen staat op het strand (x 13, y 51) en kijkt naar zee. Zegt "…", na het gevecht ":)". Team = zijn Pokopia-team op lv 30 (Pikachu "PEAKYCHU" lv 32, Tinkatuff i.p.v. Tinkaton). Na het gevecht bijt er bij vissen op dat strand in de helft van de gevallen een Ditto (lv 30–35; `CheckDittoSpot` in `src/wild_encounter.c`).
+
+### [v.0.8.115] - Stadium: Kanto-sprites, doubles-regel; Deoxys alleen in de ruimte
+- **Kanto in de arena:** Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Blue, Lorelei, Bruno, Agatha en Lance hebben hun echte FRLG-overworld (pret/pokefirered, `OBJ_EVENT_GFX_MISTY` … `OBJ_EVENT_GFX_LANCE`, 3 frames uitgebreid naar 9 zoals Brock). Paletten zoals in FRLG; drie nieuwe paletten (`kanto_npc_b/c/d.pal`), Surge en Blue delen het palet van Brock. Ook als compagnon.
+- **Doubles = singles min één (Jordi):** de drie Pokémon van een tegenstander (en van een compagnon) in doubles komen altijd uit zijn vier van singles; `pool.py` dwingt dat nu af (was in de praktijk al zo). De speler kiest zijn vier (of drie) één keer vóór het toernooi.
+- **Ditto-gezicht:** variant B (twee stipjes, brede Ditto-glimlach).
+- **Deoxys alleen in de ruimte:** het Aurora Ticket is uit de Exchange Service Corner (Birth Island is daarmee niet meer bereikbaar). Ruimte-Deoxys blijft lv 70, muziek blijft `MUS_SEALED_CHAMBER`.
+- **Ruimte-encounters:** Gothitelle eruit, Starmie erin (zelfde 4%-plek, lv 48–50; volgens de Pokédex komt Staryu/Starmie misschien uit de ruimte).

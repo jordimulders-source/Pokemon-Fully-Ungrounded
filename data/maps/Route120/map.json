@@ -754,6 +754,24 @@
       "y": 75,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 60,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Route120_EventScript_ToMangroveMire"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 61,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Route120_EventScript_ToMangroveMire"
     }
   ],
   "bg_events": [
@@ -860,6 +878,14 @@
       "y": 76,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_SHRUB1_4"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 59,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route120_EventScript_MangroveMireSign"
     }
   ]
 }

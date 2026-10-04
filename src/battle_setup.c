@@ -552,6 +552,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
         CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);
         break;
+    case SPECIES_ZARUDE: // Project Grounded: de jungle groeit dicht, klauwkrassen op de taiko, eigen "Battle! Zarude"
+    case SPECIES_ZARUDE_DADA:
+        CreateBattleStartTask(B_TRANSITION_ZARUDE, MUS_GROUNDED_VS_ZARUDE);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

@@ -34875,3 +34875,135 @@ Ability: Technician
 - Pay Day
 - Knock Off
 - U-turn
+
+=== TRAINER_MIRE_OTTO ===
+Name: OTTO
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Crawdaunt
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Swords Dance
+
+Seismitoad
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Muddy Water
+- Earth Power
+- Sludge Wave
+- Rain Dance
+
+Bellibolt
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Discharge
+- Muddy Water
+- Slack Off
+- Charge
+
+=== TRAINER_MIRE_GRISELDA ===
+Name: GRISELDA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Amoonguss
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Spore
+- Giga Drain
+- Sludge Bomb
+- Clear Smog
+
+Mismagius
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Ball
+- Mystical Fire
+- Confuse Ray
+- Hex
+
+Trevenant
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Horn Leech
+- Phantom Force
+- Will-O-Wisp
+- Curse
+
+=== TRAINER_MIRE_FERN ===
+Name: FERN
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Carnivine
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Power Whip
+- Crunch
+- Sleep Powder
+- Knock Off
+
+Toxicroak
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Drain Punch
+- Gunk Shot
+- Sucker Punch
+- Bulk Up
+
+Golisopod
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- First Impression
+- Liquidation
+- Razor Shell
+- Aqua Jet
+
+=== TRAINER_MIRE_KAPPA ===
+Name: KAPPA
+Class: Ninja Boy
+Pic: Ninja Boy
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Ludicolo
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Hydro Pump
+- Giga Drain
+- Fake Out
+- Rain Dance
+
+Skuntank
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Poison Jab
+- Sucker Punch
+- Toxic
+- Explosion
+
+Toedscruel
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earth Power
+- Giga Drain
+- Spore
+- Rapid Spin

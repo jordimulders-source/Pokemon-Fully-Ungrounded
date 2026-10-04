@@ -239,3 +239,6 @@ const u16 gMetatileAttributes_SafariThunder[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatiles.bin");
 const u16 gMetatileAttributes_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatile_attributes.bin");
+
+const u16 gMetatiles_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatiles.bin");
+const u16 gMetatileAttributes_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatile_attributes.bin");

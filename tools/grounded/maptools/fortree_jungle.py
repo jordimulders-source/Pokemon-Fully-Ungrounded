@@ -26,8 +26,9 @@ Rocket-sidequest: aan de noordrand van de zuidlus staat een reuzenpalm (18, 56-5
 een plat stukje zonder lang gras en een wachtpost (object achteraan). Dit gebeurt na de tropische laag, zodat de rest
 van de jungle gelijk blijft.
 
-Vrijgehouden voor later: de open plek van Zarude (zuidwest, diep in de jungle) en het heiligdom van Ogerpon
-(zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
+Zarude (post-game, v0.9.x): ruine in de open plek zuidwest (zarude_ruins.py), Zarude in de boomkruin erachter.
+Uitgang oost (39, 39-40) naar Mangrove Mire (warp via coord-trigger; andere tileset).
+Vrijgehouden voor later: het heiligdom van Ogerpon (zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
 
 Gebruik: python3 tools/grounded/maptools/fortree_jungle.py [voorbeeld.png]"""
 import json, math, os, random, struct, sys
@@ -585,6 +586,50 @@ else:
     ml = ml[:i] + '// gTileset_FortreeJungle\n' + line + '\n' + ml[i:]
 open('include/constants/metatile_labels.h', 'w').write(ml)
 
+# 4. Zarude (post-game) en de uitgang naar Mangrove Mire. Ook dit komt helemaal aan het eind (rng blijft gelijk).
+# Ruine in de open plek (zarude_ruins.py, General-palet 3): een stenen plateau (8-10, 63-64) met twee zuilen, een
+# omgevallen zuil, losse blokken en oude vloerplaten ervoor. Zarude zit verstopt in de boomkruin achter het plateau
+# (9, 65) en springt via het plateau naar je toe als je op de vloerplaat (9, 62) stapt (coord-trigger, scripts.inc).
+import zarude_ruins as R
+ZARUDE_HIDE = (9, 65)
+ZARUDE_TRIGGER = (9, 62)
+RUINS = [  # x, y, canvas, w, h, blokkeert, bovenste rij boven de speler
+    (8, 63, R.dais(), 3, 2, True, False),
+    (7, 62, R.pillar(False), 1, 2, True, True),
+    (11, 62, R.pillar(True), 1, 2, True, True),
+    (5, 62, R.fallen(), 2, 1, True, False),
+    (14, 63, R.block(0), 1, 1, True, False),
+    (7, 64, R.block(1), 1, 1, True, False),
+]
+for x0, y0, cv, w, h, blk, toprow in RUINS:
+    for j in range(h):
+        for i in range(w):
+            x, y = x0 + i, y0 + j
+            over = toprow and j == 0
+            assert T[y][x] in 'gLf', ('ruine niet op open grond', x, y, T[y][x])
+            put(x, y, GRASS, 0)
+            M[y][x] = val(ts.overlay(GRASS, cv, i * 16, j * 16, R.PAL, layer=0 if over else 1), 0 if over else 1, 3)
+            if not over:
+                T[y][x] = 'b'
+for k, (x, y) in enumerate(((8, 61), (9, 61), (10, 61), (8, 62), (9, 62), (10, 62))):
+    assert T[y][x] in 'gLf', ('vloerplaat niet op open grond', x, y)
+    T[y][x] = 'g'
+    M[y][x] = val(ts.overlay(GRASS, R.paving(k % 2), 0, 0, R.PAL, layer=1), 0, 3)
+assert T[ZARUDE_HIDE[1]][ZARUDE_HIDE[0]] == 'T'
+
+# uitgang oost: het doodlopende pad bij de Miracle Seed loopt door tot de rand (coord-triggers op x = 39)
+JUNGLE_EXIT = [(39, 39), (39, 40)]
+for x, y in JUNGLE_EXIT:
+    T[y][x] = 'g'
+for x, y in JUNGLE_EXIT:
+    below = kind(x, y + 1)
+    M[y][x] = val(ts.jungle(CANOPY[0]) if below == 'T' else GRASS, 0, 3)
+    if kind(x, y - 1) == 'T':
+        M[y - 1][x] = val(ts.jungle(TRUNK[0]), 1, 0)
+walk_z, _ = check()
+assert ZARUDE_TRIGGER in walk_z and all(c in walk_z for c in JUNGLE_EXIT), 'Zarude-plek of uitgang onbereikbaar'
+assert len(walk_z) >= 700, len(walk_z)
+
 for y in range(SAFE):
     for x in range(W):
         assert mid(x, y) < ts.first, ('nieuwe metatile in het vanuit Fortree zichtbare deel', x, y)
@@ -642,6 +687,10 @@ for x, y, gfx, script in NPCS:
 # Rocket-sidequest: wachtpost bij de holle reuzenpalm (achteraan, zodat de nummers van de andere objecten blijven)
 objs.append(obj('OBJ_EVENT_GFX_ROCKET_GRUNT_M', ROCKET_GUARD[0], ROCKET_GUARD[1], 'MOVEMENT_TYPE_FACE_LEFT',
                 'TRAINER_TYPE_NORMAL', 2, 'FortreeJungle_EventScript_RocketGuard', 'FLAG_HIDE_JUNGLE_ROCKET_GUARD'))
+# Zarude (post-game): verstopt in de boomkruin achter het plateau, verschijnt pas in de scene
+objs.append(obj('OBJ_EVENT_GFX_SPECIES(ZARUDE)', ZARUDE_HIDE[0], ZARUDE_HIDE[1], 'MOVEMENT_TYPE_FACE_UP',
+                'TRAINER_TYPE_NONE', 0, 'FortreeJungle_EventScript_ZarudeScene', 'FLAG_HIDE_FORTREE_JUNGLE_ZARUDE'))
+objs[-1] = dict(local_id='LOCALID_FORTREE_JUNGLE_ZARUDE', **objs[-1])
 mj = {
     "id": "MAP_FORTREE_JUNGLE", "name": "FortreeJungle", "layout": "LAYOUT_FORTREE_JUNGLE",
     "music": "MUS_ROUTE119", "region_map_section": "MAPSEC_FORTREE_JUNGLE", "requires_flash": False,
@@ -652,7 +701,10 @@ mj = {
     "object_events": objs,
     "warp_events": [{"x": ROCKET_DOOR[0], "y": ROCKET_DOOR[1], "elevation": 0, "dest_map": "MAP_ROCKET_HIDEOUT_1F",
                      "dest_warp_id": "0"}],
-    "coord_events": [],
+    "coord_events": [{"type": "trigger", "x": ZARUDE_TRIGGER[0], "y": ZARUDE_TRIGGER[1], "elevation": 3,
+                      "var": "VAR_TEMP_4", "var_value": "1", "script": "FortreeJungle_EventScript_ZarudeScene"}] +
+                    [{"type": "trigger", "x": x, "y": y, "elevation": 3, "var": "VAR_TEMP_0", "var_value": "0",
+                      "script": "FortreeJungle_EventScript_ToMangroveMire"} for x, y in JUNGLE_EXIT],
     "bg_events": [{"type": "sign", "x": x, "y": y, "elevation": 0, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
                    "script": s} for x, y, s in SIGNS] +
                  [{"type": "hidden_item", "x": x, "y": y, "elevation": 3, "item": item, "flag": flag} for x, y, item, flag in HIDDEN],

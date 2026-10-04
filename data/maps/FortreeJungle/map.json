@@ -162,6 +162,20 @@
       "trainer_sight_or_berry_tree_id": "2",
       "script": "FortreeJungle_EventScript_RocketGuard",
       "flag": "FLAG_HIDE_JUNGLE_ROCKET_GUARD"
+    },
+    {
+      "local_id": "LOCALID_FORTREE_JUNGLE_ZARUDE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZARUDE)",
+      "x": 9,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FortreeJungle_EventScript_ZarudeScene",
+      "flag": "FLAG_HIDE_FORTREE_JUNGLE_ZARUDE"
     }
   ],
   "warp_events": [
@@ -173,7 +187,35 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 62,
+      "elevation": 3,
+      "var": "VAR_TEMP_4",
+      "var_value": "1",
+      "script": "FortreeJungle_EventScript_ZarudeScene"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "FortreeJungle_EventScript_ToMangroveMire"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 40,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "FortreeJungle_EventScript_ToMangroveMire"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

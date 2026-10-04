@@ -2045,3 +2045,25 @@ const u16 gTilesetPalettes_RocketFacility[][16] = // Project Grounded: Rocket-hi
     INCBIN_U16("data/tilesets/secondary/rocket_facility/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/rocket_facility/palettes/15.gbapal"),
 };
+
+const u32 gTilesetTiles_MangroveMire[] = INCBIN_U32("data/tilesets/secondary/mangrove_mire/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_MangroveMire[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mangrove_mire/palettes/15.gbapal"),
+};

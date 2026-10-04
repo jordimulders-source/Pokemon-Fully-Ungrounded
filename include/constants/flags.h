@@ -1283,15 +1283,15 @@
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
 #define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
-#define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
-#define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
-#define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
-#define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
-#define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
-#define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
-#define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
+#define FLAG_DEFEATED_ZARUDE                                        0x4D0 // Project Grounded: Zarude gevangen of verslagen (Fortree Jungle; verslagen = terug na de League)
+#define FLAG_CAUGHT_ZARUDE                                          0x4D1 // Project Grounded: Zarude gevangen
+#define FLAG_HIDE_FORTREE_JUNGLE_ZARUDE                             0x4D2 // Project Grounded: Zarude-object in de boomkruin (verborgen tot de scene)
+#define FLAG_ITEM_MANGROVE_MIRE_BLACK_SLUDGE                        0x4D3 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_MYSTIC_WATER                        0x4D4 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_ABSORB_BULB                         0x4D5 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_TM                                  0x4D6 // Project Grounded: Mangrove Mire (TM)
+#define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_BIG_ROOT                     0x4D7 // Project Grounded: Mangrove Mire
+#define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_ULTRA_BALL                   0x4D8 // Project Grounded: Mangrove Mire
 #define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
 #define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
 #define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag

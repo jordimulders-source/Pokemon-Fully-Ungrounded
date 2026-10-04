@@ -5,7 +5,7 @@
 //   src/spire.c         gevechtsmechaniek (×HP, DEFEND/blok, intenties)
 //   src/spire_run.c     run-state (SaveBlock2), kaartgeneratie, kamers, relics, acts
 //   src/spire_map.c     act-kaart
-//   src/spire_cards.c   kaartenscherm (beloning, draft, rust, winkel, events, berichten)
+//   src/spire_cards.c   kaartenscherm (beloning: moves/relics, vertakte evolutie, berichten)
 
 #define B_ACTION_SPIRE_DEFEND   22
 
@@ -304,10 +304,6 @@ enum SpireCardMode
 {
     SPIRE_CARDS_MOVES,      // beloning: kies een move en leer hem aan
     SPIRE_CARDS_RELICS,     // beloning: kies een relic
-    SPIRE_CARDS_DRAFT,      // start van een run: kies een rental (twee keer)
-    SPIRE_CARDS_REST,       // rustplek
-    SPIRE_CARDS_SHOP,       // winkel
-    SPIRE_CARDS_EVENT,      // event
     SPIRE_CARDS_MESSAGE,    // alleen een bericht (einde run, nieuwe act)
     SPIRE_CARDS_EVOLVE,     // nieuwe act: kies de evolutie van gSpireEvolveMon (vertakking)
 };

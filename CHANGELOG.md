@@ -15867,3 +15867,4 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Later beginnen** via events: Gyarados, Butterfree, Milotic, Beedrill, Diggersby, Kricketune, Absol.
 - Save: `eventsSeen2` achteraan `SpireSave` (64 events; een gepauzeerde run blijft geldig).
 - Debug: Spire_DebugOpen met `VAR_0x8004` = 2 en `VAR_0x8005` = eventnummer (1-55) opent dat event.
+- Opgeruimd: `src/spire_cards.c` bevat alleen nog de beloningsschermen (moves, relics), de vertakte evolutie en berichten; de oude draft-, rust-, winkel- en eventcode is weg (2056 → 1048 regels).

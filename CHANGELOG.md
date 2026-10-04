@@ -16476,3 +16476,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - een sub-bas;
   - een shaker;
   - een riser naar de drop.
+
+### [v.0.9.55] - Muziekspeler 16 sporen (Mewtwo v4, Regigigas compleet)
+- **Gevonden:** de muziekspeler speelde maximaal 10 sporen per nummer en sloeg de rest stilletjes over.
+  - **Mewtwo v3** (14 sporen) miste daardoor de drums, de sub-bas, de shaker en de riser.
+  - **Regigigas** (16 sporen) miste het koor, de tuba, de taiko, de pauken, de crashes en de tempelklokken. Daarom waren de klokken en de climax nauwelijks te horen.
+- **Opgelost:** `NUM_TRACKS_BGM` gaat van 10 naar 16 (`sound/music_player_table.inc`, +480 bytes IWRAM, nu 89%). Alle originele nummers hebben 10 sporen of minder en blijven ongewijzigd.
+- **Zarude** had 11 sporen; het 11e (een PSG-shaker) speelde dus nooit. Om de goedgekeurde versie gelijk te houden, is dat spoor eruit gehaald.
+- `music_lint.py` meldt nu een fout als een nummer meer sporen heeft dan de speler aankan.

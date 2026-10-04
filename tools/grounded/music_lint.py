@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Project Grounded: controleert een MIDI vóór hij in de game of naar Jordi gaat (zie tools/grounded/MUZIEK.md).
 
+Controleert ook het aantal sporen (max. NUM_TRACKS_BGM in sound/music_player_table.inc).
 Leest de voicegroup uit midi.cfg (-G_...) en meldt de fouten die we eerder maakten:
   - meer DirectSound-noten tegelijk dan de engine mixt (MAX_CHANS, src/m4a.c) -> noten worden afgekapt ("snips");
     uitklinktijd per instrument uit de release van de voicegroup (musiclib.release_ticks)
@@ -71,6 +72,12 @@ def lint(mid):
     vg = voicegroup_of(mid)
     voices = load_voices(vg) if vg else None
     errors, warns = [], []
+    # de muziekspeler speelt max. NUM_TRACKS_BGM sporen; de rest wordt stilletjes overgeslagen (Mewtwo v3, Regigigas)
+    import re as _re
+    maxtr = int(_re.search(r'NUM_TRACKS_BGM,\s*(\d+)', open('sound/music_player_table.inc').read()).group(1))
+    ntr = sum(1 for t in m.tracks if any(x.type == 'note_on' for x in t))
+    if ntr > maxtr:
+        errors.append('%d sporen met noten, de muziekspeler speelt er max. %d (NUM_TRACKS_BGM): de laatste vallen weg' % (ntr, maxtr))
     if voices is None:
         warns.append('voicegroup onbekend (%s); PSG-controle overgeslagen' % vg)
     tempo = next((x.tempo for t in m.tracks for x in t if x.type == 'set_tempo'), 500000)

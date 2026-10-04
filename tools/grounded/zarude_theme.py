@@ -71,7 +71,9 @@ timp = Track('timpani', 6, 47, 104, 64)
 sq1 = Track('square1', 6, 80, 58, 30)     # PSG: harmonie onder de melodie
 sq2 = Track('square2', 7, 81, 52, 98)     # PSG: arpeggio-glitter
 noise = Track('shaker', 8, 120, 40)       # PSG-ruis: shaker
-TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, timp, sq1, sq2, noise]   # PSG alleen in de loop (zoals v1)   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
+# (de ruis-shaker stond als 11e spoor en werd door de 10-sporen-grens van de speler nooit gespeeld; Jordi keurde
+# Zarude v10 zonder goed, dus hij blijft eruit)
+TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, timp, sq1, sq2]   # PSG alleen in de loop (zoals v1)
 
 
 def third(minor):

@@ -7,7 +7,7 @@
 - **izzyvicious** (DeviantArt): sprites aangeleverd door Jordi (N/Ghetsis-reeks).
 - **Sprite-sheets aangeleverd door Jordi (okt 2026, nog niet allemaal in gebruik; bronnen in `graphics/`):**
   - HG/SS-trainerfoto's (Pokémon HeartGold / SoulSilver, Game Freak), **verzameld door Dann-The-Yoshi** (`d2dp76j-…png`; `288-2882990_…gen-5.png` is een kopie van dezelfde sheet).
-  - Overworlds uit Black/White, Black 2/White 2, HG/SS en Platinum, **sheet door PurpleZaffre** (DeviantArt) (`DV3PUrC.png`), .
+  - Overworlds uit Black/White, Black 2/White 2, HG/SS en Platinum, **sheet door PurpleZaffre** (DeviantArt) (`DV3PUrC.png`).
   - Overworld-sheets in DS-stijl (`793a0482460ea8b6fc50b14a394fb483.jpg`, `dan096t-…png`) en Kanto-trainers in GBC-stijl (`2gnAy4D.png`): maker nog onbekend.
   - Ghetsis die dabt (`graphics/grounded/trainers/ghetsis/ghetsis_dab_rachxt_bron.jpg`, niet gebruikt): **rachxt** (Redbubble).
   - `5xgc4ca.png` is een schermafbeelding van een map met Gen 5-trainerfoto's (Black/White); te klein om te gebruiken, de losse bestanden zijn nodig.

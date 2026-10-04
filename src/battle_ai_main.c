@@ -1404,6 +1404,14 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_EVASION))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_NINE_LIVES: // Project Grounded: maar één keer per gevecht
+            if (gBattleStruct->nineLivesUsed[GetBattlerSide(battlerAtk)] & (1u << gBattlerPartyIndexes[battlerAtk]))
+                ADJUST_SCORE(-20);
+            break;
+        case EFFECT_PRIMEVAL_WARD: // Project Grounded
+            if (gBattleMons[battlerAtk].volatiles.primevalWard && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_COSMIC_POWER:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
                 ADJUST_SCORE(-10);
@@ -5180,6 +5188,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(max(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK),
                          IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPATK)));
         break;
+    case EFFECT_PRIMEVAL_WARD: // Project Grounded
     case EFFECT_COSMIC_POWER:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));

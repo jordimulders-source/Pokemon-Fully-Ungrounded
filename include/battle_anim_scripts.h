@@ -1023,6 +1023,15 @@ extern const u8 gBattleAnimMove_SteelTrap[];
 extern const u8 gBattleAnimMove_PackHowl[];
 extern const u8 gBattleAnimMove_WhaleSong[];
 extern const u8 gBattleAnimMove_Heartbreak[];
+extern const u8 gBattleAnimMove_Eclipse[];
+extern const u8 gBattleAnimMove_TipsyWaltz[];
+extern const u8 gBattleAnimMove_WeatherReport[];
+extern const u8 gBattleAnimMove_VenomDust[];
+extern const u8 gBattleAnimMove_StraightLine[];
+extern const u8 gBattleAnimMove_WindChime[];
+extern const u8 gBattleAnimMove_PrimevalWard[];
+extern const u8 gBattleAnimMove_GulpDown[];
+extern const u8 gBattleAnimMove_NineLives[];
 extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations

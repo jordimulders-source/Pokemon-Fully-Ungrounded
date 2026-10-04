@@ -1142,6 +1142,54 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 1,
     },
 
+    [EFFECT_ECLIPSE] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_TIPSY_WALTZ] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_WEATHER_REPORT] =
+    {
+        .battleScript = BattleScript_EffectWeatherReport,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_STRAIGHT_LINE] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_WIND_CHIME] =
+    {
+        .battleScript = BattleScript_EffectWindChime,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_PRIMEVAL_WARD] =
+    {
+        .battleScript = BattleScript_EffectPrimevalWard,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_GULP_DOWN] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_NINE_LIVES] =
+    {
+        .battleScript = BattleScript_EffectNineLives,
+        .battleTvScore = 2,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

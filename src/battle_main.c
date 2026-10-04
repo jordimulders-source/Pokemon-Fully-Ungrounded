@@ -4861,6 +4861,10 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
     else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].volatiles.transformed))
         speed *= 2;
 
+    // Project Grounded: Gulp Down, ingeslikte Choice Scarf
+    if (GetBattlerSwallowedHoldEffect(battler) == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+        speed = (speed * 150) / 100;
+
     // various effects
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
         speed *= 2;
@@ -5889,6 +5893,7 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
         break;
     case EFFECT_HIDDEN_POWER:
     case EFFECT_WEATHER_BALL:
+    case EFFECT_WEATHER_REPORT:
     case EFFECT_NATURAL_GIFT:
     case EFFECT_CHANGE_TYPE_ON_ITEM:
     case EFFECT_REVELATION_DANCE:
@@ -5957,6 +5962,18 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
 
     switch (moveEffect)
     {
+    case EFFECT_ECLIPSE: // Project Grounded: fysiek = Rock (zon), speciaal = Psychic (maan)
+        if (state == MON_IN_BATTLE)
+        {
+            if (GetCategoryBasedOnStats(battler) == DAMAGE_CATEGORY_PHYSICAL)
+                return TYPE_ROCK;
+        }
+        else if (GetMonData(mon, MON_DATA_ATK) > GetMonData(mon, MON_DATA_SPATK))
+        {
+            return TYPE_ROCK;
+        }
+        break;
+    case EFFECT_WEATHER_REPORT: // Project Grounded: zoals Weather Ball
     case EFFECT_WEATHER_BALL:
         if (state == MON_IN_BATTLE)
         {
@@ -6153,6 +6170,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
           && moveEffect != EFFECT_NATURAL_GIFT
           && moveEffect != EFFECT_HIDDEN_POWER
           && moveEffect != EFFECT_WEATHER_BALL
+          && moveEffect != EFFECT_WEATHER_REPORT
           && ability == ABILITY_NORMALIZE
           && gimmick != GIMMICK_Z_MOVE)
     {

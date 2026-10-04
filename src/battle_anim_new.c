@@ -10073,3 +10073,60 @@ const struct SpriteTemplate gPackHowlMoonSpriteTemplate =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimPackHowlMoon,
 };
+
+// Project Grounded: een sprite die stil op een vaste plek bij een battler staat en na een tijd verdwijnt.
+// arg0: battler (ANIM_ATTACKER/ANIM_TARGET), arg1: x-offset, arg2: y-offset, arg3: duur (frames)
+static void AnimGroundedStaticSprite(struct Sprite *sprite)
+{
+    u8 battler = (gBattleAnimArgs[0] == ANIM_ATTACKER) ? gBattleAnimAttacker : gBattleAnimTarget;
+
+    sprite->x = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2) + gBattleAnimArgs[1];
+    sprite->y = GetBattlerSpriteCoord(battler, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[2];
+    sprite->data[0] = gBattleAnimArgs[3];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+// Nine Lives: negen pootafdrukken in een kring om Delcatty
+const struct SpriteTemplate gNineLivesPawSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PAW_PRINT,
+    .paletteTag = ANIM_TAG_PAW_PRINT,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimGroundedStaticSprite,
+};
+
+// Project Grounded: Tipsy Waltz - eendjes die boven het hoofd van de aanvaller rondcirkelen.
+// arg0: startfase (0-255), arg1: duur (frames)
+static void AnimTipsyDuck_Step(struct Sprite *sprite)
+{
+    sprite->x2 = Cos(sprite->data[0], 30);
+    sprite->y2 = Sin(sprite->data[0], 10);
+    sprite->oam.priority = ((u16)sprite->data[0] < 128) ? 1 : 3;
+    sprite->data[0] = (sprite->data[0] + 4) & 0xFF;
+    if (--sprite->data[1] <= 0)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimTipsyDuck(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    sprite->y = GetBattlerSpriteCoordAttr(gBattleAnimAttacker, BATTLER_COORD_ATTR_TOP) + 4;
+    sprite->data[0] = gBattleAnimArgs[0];
+    sprite->data[1] = gBattleAnimArgs[1];
+    sprite->callback = AnimTipsyDuck_Step;
+    sprite->callback(sprite);
+}
+
+const struct SpriteTemplate gTipsyDuckSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_DUCK,
+    .paletteTag = ANIM_TAG_DUCK,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimTipsyDuck,
+};

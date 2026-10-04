@@ -4,6 +4,7 @@
 #include "move.h"
 #include "constants/battle_string_ids.h"
 #include "constants/hold_effects.h"
+#include "constants/rtc.h"
 
 #define MOVE_LIMITATION_ZEROMOVE                (1 << 0)
 #define MOVE_LIMITATION_PP                      (1 << 1)
@@ -341,6 +342,10 @@ bool32 IsBelchPreventingMove(u32 battler, u32 move);
 bool32 HasEnoughHpToEatBerry(u32 battler, enum Ability ability, u32 hpFraction, u32 itemId);
 bool32 IsPartnerMonFromSameTrainer(u32 battler);
 enum DamageCategory GetCategoryBasedOnStats(u32 battler);
+bool32 IsEclipseTimeBoosted(bool32 physical, enum TimeOfDay timeOfDay);
+u32 GetBattlerSwallowedItem(u32 battler);
+enum HoldEffect GetBattlerSwallowedHoldEffect(u32 battler);
+bool32 IsSwallowableHoldEffect(enum HoldEffect holdEffect);
 void SetShellSideArmCategory(void);
 bool32 MoveIsAffectedBySheerForce(u32 move);
 bool32 IsSheerForceAffected(u16 move, enum Ability ability);

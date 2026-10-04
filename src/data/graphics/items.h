@@ -96,6 +96,16 @@ const u32 gItemIcon_SixPack[] = INCBIN_U32("graphics/items/icons/six_pack.4bpp.s
 const u16 gItemIconPalette_SixPack[] = INCBIN_U16("graphics/items/icon_palettes/six_pack.gbapal");
 const u32 gItemIcon_LibertyPass[] = INCBIN_U32("graphics/items/icons/liberty_pass.4bpp.smol"); // Project Grounded
 const u16 gItemIconPalette_LibertyPass[] = INCBIN_U16("graphics/items/icon_palettes/liberty_pass.gbapal");
+const u32 gItemIcon_MicrowaveOven[] = INCBIN_U32("graphics/items/icons/rotom_microwave_oven.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_MicrowaveOven[] = INCBIN_U16("graphics/items/icon_palettes/rotom_microwave_oven.gbapal");
+const u32 gItemIcon_WashingMachine[] = INCBIN_U32("graphics/items/icons/rotom_washing_machine.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_WashingMachine[] = INCBIN_U16("graphics/items/icon_palettes/rotom_washing_machine.gbapal");
+const u32 gItemIcon_Refrigerator[] = INCBIN_U32("graphics/items/icons/rotom_refrigerator.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_Refrigerator[] = INCBIN_U16("graphics/items/icon_palettes/rotom_refrigerator.gbapal");
+const u32 gItemIcon_ElectricFan[] = INCBIN_U32("graphics/items/icons/rotom_electric_fan.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_ElectricFan[] = INCBIN_U16("graphics/items/icon_palettes/rotom_electric_fan.gbapal");
+const u32 gItemIcon_LawnMower[] = INCBIN_U32("graphics/items/icons/rotom_lawn_mower.4bpp.smol"); // Project Grounded
+const u16 gItemIconPalette_LawnMower[] = INCBIN_U16("graphics/items/icon_palettes/rotom_lawn_mower.gbapal");
 const u16 gItemIconPalette_Potion[] = INCBIN_U16("graphics/items/icon_palettes/potion.gbapal");
 
 const u16 gItemIconPalette_SuperPotion[] = INCBIN_U16("graphics/items/icon_palettes/super_potion.gbapal");

@@ -1229,7 +1229,7 @@
               { "min_level": 25, "max_level": 30, "species": "SPECIES_DHELMISE" },
               { "min_level": 28, "max_level": 32, "species": "SPECIES_VAROOM" },
               { "min_level": 30, "max_level": 35, "species": "SPECIES_EELEKTRIK" },
-              { "min_level": 32, "max_level": 35, "species": "SPECIES_ROTOM" }
+              { "min_level": 32, "max_level": 35, "species": "SPECIES_GOLISOPOD" }
             ]
           },
           "fishing_mons": {
@@ -1473,7 +1473,7 @@
             "mons": [
               { "min_level": 25, "max_level": 28, "species": "SPECIES_MURKROW" },
               { "min_level": 26, "max_level": 29, "species": "SPECIES_SQUAWKABILLY" },
-              { "min_level": 28, "max_level": 32, "species": "SPECIES_ROTOM" },
+              { "min_level": 28, "max_level": 32, "species": "SPECIES_FINIZEN" },
               { "min_level": 30, "max_level": 34, "species": "SPECIES_DHELMISE" },
               { "min_level": 35, "max_level": 38, "species": "SPECIES_EELEKTROSS" }
             ]
@@ -1571,7 +1571,7 @@
               { "min_level": 24, "max_level": 26, "species": "SPECIES_TOXEL" },
               { "min_level": 25, "max_level": 27, "species": "SPECIES_MAGNETON" },
               { "min_level": 25, "max_level": 27, "species": "SPECIES_ELECTABUZZ" },
-              { "min_level": 26, "max_level": 28, "species": "SPECIES_ROTOM" },
+              { "min_level": 26, "max_level": 28, "species": "SPECIES_ELEKID" },
               { "min_level": 26, "max_level": 28, "species": "SPECIES_ELECTRODE" },
               { "min_level": 27, "max_level": 29, "species": "SPECIES_PROBOPASS" },
               { "min_level": 27, "max_level": 29, "species": "SPECIES_DURALUDON" },
@@ -1735,15 +1735,15 @@
             "encounter_rate": 30,
             "mons": [
               { "min_level": 25, "max_level": 30, "species": "SPECIES_CORSOLA_GALAR" },
-              { "min_level": 25, "max_level": 30, "species": "SPECIES_ROTOM_WASH" },
-              { "min_level": 28, "max_level": 33, "species": "SPECIES_ROTOM_HEAT" },
-              { "min_level": 28, "max_level": 33, "species": "SPECIES_ROTOM_FROST" },
-              { "min_level": 30, "max_level": 35, "species": "SPECIES_ROTOM_FAN" },
-              { "min_level": 30, "max_level": 35, "species": "SPECIES_ROTOM_MOW" },
-              { "min_level": 32, "max_level": 37, "species": "SPECIES_ROTOM" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_BASCULIN_WHITE_STRIPED" },
+              { "min_level": 28, "max_level": 33, "species": "SPECIES_JELLICENT" },
+              { "min_level": 28, "max_level": 33, "species": "SPECIES_QWILFISH_HISUI" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_SKRELP" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_DHELMISE" },
+              { "min_level": 32, "max_level": 37, "species": "SPECIES_OVERQWIL" },
               { "min_level": 35, "max_level": 40, "species": "SPECIES_CURSOLA" },
               { "min_level": 40, "max_level": 45, "species": "SPECIES_BASCULEGION_M" },
-              { "min_level": 45, "max_level": 50, "species": "SPECIES_ROTOM_WASH" }
+              { "min_level": 45, "max_level": 50, "species": "SPECIES_DRAGALGE" }
             ]
           }
         },
@@ -2902,7 +2902,7 @@
               { "min_level": 23, "max_level": 25, "species": "SPECIES_PORYGON" },
               { "min_level": 23, "max_level": 25, "species": "SPECIES_TINKATINK" },
               { "min_level": 24, "max_level": 26, "species": "SPECIES_FERROSEED" },
-              { "min_level": 24, "max_level": 26, "species": "SPECIES_ROTOM" },
+              { "min_level": 24, "max_level": 26, "species": "SPECIES_PAWMO" },
               { "min_level": 25, "max_level": 27, "species": "SPECIES_VAROOM" },
               { "min_level": 25, "max_level": 27, "species": "SPECIES_TINKATUFF" },
               { "min_level": 26, "max_level": 28, "species": "SPECIES_CHARJABUG" },

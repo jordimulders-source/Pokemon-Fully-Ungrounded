@@ -28,7 +28,7 @@ def n(pc, octv):     # nootnummer, C4 = 60
 LOOP_A = [(D, 1), (D, 1), (Bb, 0), (C, 0), (D, 1), (D, 1), (G, 1), (A, 0)]
 LOOP_B = [(Bb, 0), (C, 0), (D, 1), (D, 1), (Bb, 0), (C, 0), (A, 0), (A, 0)]
 INTRO_BARS = 8
-TENSION = 4          # aantal spanningsmaten na maat 2 (taiko/strijkers/bas zwellen aan)
+TENSION = 2          # aantal spanningsmaten na maat 2 (taiko/strijkers/bas zwellen aan)
 
 
 class Track:
@@ -134,11 +134,8 @@ for k in range(TENSION):
     b = 2 + k
     for p in range(0, 16, 2):
         taiko.note(b, p, 2, n(D, 2), min(127, 80 + k * 12 + p), raw=True)
-    if k == TENSION - 1:                 # laatste maat: taiko in zestienden naar de fanfare toe
-        for p in range(1, 16, 2):
-            taiko.note(b, p, 1, n(D, 2), 90 + p * 2, raw=True)
     for p in range(16):
-        strings.note(b, p, 1, n(D, 4) + (12 if k >= 2 and p % 2 else 0), min(127, 70 + k * 12 + p), raw=True)
+        strings.note(b, p, 1, n(D, 4), min(127, 70 + k * 12 + p), raw=True)
     for p in (0, 8):
         bass.note(b, p, 4, n(D, 1), 90 + k * 8, raw=True)
     if k >= 1:                           # lage conga-puls vanaf de tweede spanningsmaat

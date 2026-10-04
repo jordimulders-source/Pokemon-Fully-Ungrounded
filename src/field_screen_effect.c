@@ -92,11 +92,11 @@ void WarpFadeInScreen(void)
     {
     case 0:
         FillPalBufferBlack();
-        FadeScreen(FADE_FROM_BLACK, -1); // Project Grounded: snellere schermovergang
+        FadeScreen(FADE_FROM_BLACK, -2); // Project Grounded: snellere schermovergang (vanilla 0, v0.8.36 -1)
         break;
     case 1:
         FillPalBufferWhite();
-        FadeScreen(FADE_FROM_WHITE, -1);
+        FadeScreen(FADE_FROM_WHITE, -2);
     }
 }
 
@@ -109,7 +109,7 @@ void FadeInFromWhite(void)
 void FadeInFromBlack(void)
 {
     FillPalBufferBlack();
-    FadeScreen(FADE_FROM_BLACK, 0);
+    FadeScreen(FADE_FROM_BLACK, -1); // Project Grounded: iets sneller terug na een gevecht of menu (was 0)
 }
 
 void WarpFadeOutScreen(void)
@@ -118,10 +118,10 @@ void WarpFadeOutScreen(void)
     switch (GetMapPairFadeToType(currentMapType, GetDestinationWarpMapHeader()->mapType))
     {
     case 0:
-        FadeScreen(FADE_TO_BLACK, -1); // Project Grounded: snellere schermovergang
+        FadeScreen(FADE_TO_BLACK, -2); // Project Grounded: snellere schermovergang (vanilla 0, v0.8.36 -1)
         break;
     case 1:
-        FadeScreen(FADE_TO_WHITE, -1);
+        FadeScreen(FADE_TO_WHITE, -2);
     }
 }
 

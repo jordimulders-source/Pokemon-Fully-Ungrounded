@@ -5671,7 +5671,17 @@ static void HandleEndTurn_FinishBattle(void)
             TryPutBreakingNewsOnAir();
         }
 
-        BeginFastPaletteFade(3);
+        // Project Grounded: sneller naar zwart aan het eind van het gevecht (de "fast fade" duurde ~35 frames, nu ~16).
+        // Eerst het huidige beeld vastzetten, zodat de fade vanaf precies dit beeld vertrekt.
+        if (!gPaletteFade.active)
+        {
+            CpuCopy32(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+            BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, RGB_BLACK);
+        }
+        else
+        {
+            BeginFastPaletteFade(3);
+        }
         FadeOutMapMusic(5);
         if (B_TRAINERS_KNOCK_OFF_ITEMS == TRUE || B_RESTORE_HELD_BATTLE_ITEMS >= GEN_9)
             TryRestoreHeldItems();

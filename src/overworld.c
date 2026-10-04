@@ -1306,11 +1306,9 @@ void Overworld_ChangeMusicTo(u16 newMusic)
 
 u8 GetMapMusicFadeoutSpeed(void)
 {
-    const struct MapHeader *mapHeader = GetDestinationWarpMapHeader();
-    if (IsMapTypeIndoors(mapHeader->mapType) == TRUE)
-        return 2;
-    else
-        return 4;
+    // Project Grounded: de warp wacht tot de oude muziek weg is; het scherm is dan al zwart. Uitfaden in 16 frames
+    // (was 32 naar binnen en 64 naar buiten).
+    return 1;
 }
 
 void TryFadeOutOldMapMusic(void)
@@ -1823,7 +1821,7 @@ void CB2_WhiteOut(void)
 {
     u8 state;
 
-    if (++gMain.state >= 120)
+    if (++gMain.state >= 30) // Project Grounded: was 120 frames zwart scherm na het verliezen
     {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();

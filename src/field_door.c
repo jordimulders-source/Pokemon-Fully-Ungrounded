@@ -132,39 +132,41 @@ static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
 
+// Project Grounded: snellere deuren. De dichte/open stand aan het begin en eind stond 5 frames stil (dode tijd),
+// nu 2; de tussenstanden 4 i.p.v. 5 frames. Openen en sluiten: 12 i.p.v. 20 frames.
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
-    {4, -1},
-    {4, 0},
-    {4, 0x100},
-    {4, 0x200},
+    {1, -1},
+    {3, 0},
+    {3, 0x100},
+    {1, 0x200},
     {0, 0},
 };
 
 static const struct DoorAnimFrame sDoorCloseAnimFrames[] =
 {
-    {4, 0x200},
-    {4, 0x100},
-    {4, 0},
-    {4, -1},
+    {1, 0x200},
+    {3, 0x100},
+    {3, 0},
+    {1, -1},
     {0, 0},
 };
 
 static const struct DoorAnimFrame sBigDoorOpenAnimFrames[] =
 {
-    {4, -1},
-    {4, 0},
-    {4, 0x200},
-    {4, 0x400},
+    {1, -1},
+    {3, 0},
+    {3, 0x200},
+    {1, 0x400},
     {0, 0},
 };
 
 static const struct DoorAnimFrame sBigDoorCloseAnimFrames[] =
 {
-    {4, 0x400},
-    {4, 0x200},
-    {4, 0},
-    {4, -1},
+    {1, 0x400},
+    {3, 0x200},
+    {3, 0},
+    {1, -1},
     {0, 0},
 };
 

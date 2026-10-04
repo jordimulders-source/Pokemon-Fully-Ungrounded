@@ -171,7 +171,78 @@ def sign(x, y, script):
 def hidden(x, y, it, flag):
     return {'type': 'hidden_item', 'x': x, 'y': y, 'elevation': 3, 'item': it, 'flag': flag}
 
+# ---------------------------------------------------------------- decor (tools/grounded/lavaridge_decor.py)
+DECOR = json.load(open('data/tilesets/secondary/lavaridge/decor.json'))
+def area(cells, r=1):
+    return {(x + dx, y + dy) for x, y in cells for dx in range(-r, r + 1) for dy in range(-r, r + 1)}
+def sight(o):
+    if o['trainer_type'] != 'TRAINER_TYPE_NORMAL': return set()
+    d = {'MOVEMENT_TYPE_FACE_LEFT': (-1, 0), 'MOVEMENT_TYPE_FACE_RIGHT': (1, 0),
+         'MOVEMENT_TYPE_FACE_UP': (0, -1), 'MOVEMENT_TYPE_FACE_DOWN': (0, 1)}[o['movement_type']]
+    return {(o['x'] + d[0] * i, o['y'] + d[1] * i) for i in range(1, int(o['trainer_sight_or_berry_tree_id']) + 1)}
+def keep_cells(objs, bgs, extra=()):
+    k = set(extra)
+    for o in objs:
+        k |= area([(o['x'], o['y'])]) | sight(o)
+    for b in bgs:
+        k |= area([(b['x'], b['y'])])
+    return k
+
+def place(g, name, x, y, kind):
+    info = DECOR['%s_%s' % (name, kind)]
+    for j, row in enumerate(info['ids']):
+        for i, mt in enumerate(row):
+            g[y + j][x + i] = T(mt, True) if info['collision'] else T(mt, elev=3)
+
+def decorate(g, floor, kind, keep, starts, rules, rng, used=None):
+    """Strooit decor over vloercellen (metatile `floor`, beloopbaar). Decor met botsing mag het bereikbare
+    gebied alleen met zijn eigen cellen verkleinen (geen afgesloten hoekjes). rules: (naam, aantal, plek)
+    met plek 'muur' (naast een rand), 'open' (niet naast een rand) of 'vrij'."""
+    H, W = len(g), len(g[0])
+    used = set() if used is None else used
+    base = reach(g, starts)
+    def wallside(c):
+        return any(not walkable(g[c[1] + dy][c[0] + dx]) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                   if 0 <= c[0] + dx < W and 0 <= c[1] + dy < H)
+    for name, count, where in rules:
+        info = DECOR['%s_%s' % (name, kind)]
+        h, w = len(info['ids']), len(info['ids'][0])
+        placed = tries = 0
+        while placed < count and tries < count * 200:
+            tries += 1
+            x, y = rng.randrange(1, W - w), rng.randrange(1, H - h)
+            cells = [(x + i, y + j) for j in range(h) for i in range(w)]
+            if any((g[cy][cx] & 0x3ff) != floor or not walkable(g[cy][cx]) or (cx, cy) in keep or (cx, cy) in used
+                   or (cx, cy) not in base for cx, cy in cells):
+                continue
+            if any(c in used for c in area(cells) - set(cells)): continue
+            ws = any(wallside(c) for c in cells)
+            if where == 'muur' and not ws: continue
+            if where == 'open' and ws: continue
+            if info['collision']:
+                after = reach(g, starts, blocked=set(cells))
+                if after != base - set(cells): continue
+                base = after
+            place(g, name, x, y, kind)
+            used |= set(cells); placed += 1
+    return used
+
+def ash_grass(g, keep, rng, n):
+    """As-gras (Lavaridge 0x207) in grillige plukken op vlakke grond (0x271)."""
+    H, W = len(g), len(g[0])
+    flat = [(x, y) for y in range(H) for x in range(W) if (g[y][x] & 0x3ff) == 0x271 and walkable(g[y][x]) and (x, y) not in keep]
+    done = set()
+    for _ in range(n):
+        cx, cy = rng.choice(flat)
+        rx, ry = rng.uniform(1.5, 3.2), rng.uniform(1.0, 2.0)
+        for y in range(cy - 3, cy + 4):
+            for x in range(cx - 4, cx + 5):
+                if 0 <= x < W and 0 <= y < H and (x, y) in set(flat) and ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1 + rng.uniform(-0.3, 0.2):
+                    g[y][x] = T(0x207, elev=3); done.add((x, y))
+    return done
+
 # ---------------------------------------------------------------- 1. Lavabuis
+NICHES = [(21, 3), (37, 5), (3, 16), (3, 17), (7, 28), (8, 28)]
 TW, TH = 40, 30
 def tunnel_mask():
     m = [['.'] * TW for _ in range(TH)]
@@ -196,6 +267,7 @@ def tunnel_mask():
     carve(3, 23, 24, 27)           # benedenkamer
     carve(11, 23, 15, 24, '.'); carve(12, 23, 14, 24, 'L')
     carve(21, 26, 24, 27, '.')
+    for x, y in NICHES: m[y][x] = '#'
     return [''.join(r) for r in m]
 
 DOOR_A = (33, 3)     # -> Jagged Pass (16,6)
@@ -217,6 +289,16 @@ def lava_tube():
     ]
     bgs = [hidden(3, 27, 'ITEM_LAVA_COOKIE', 'FLAG_HIDDEN_ITEM_LAVA_TUBE_LAVA_COOKIE'),
            sign(16, 16, 'JaggedPass_LavaTube_EventScript_Pillar')]
+    rng = random.Random(77)
+    starts = [(DOOR_A[0], DOOR_A[1] + 1), (DOOR_B[0], DOOR_B[1] + 1)]
+    keep = keep_cells(objs, bgs, area(starts) | {(x, 17) for x in range(26, 33)} | {BOULDER})
+    used = set()
+    for i, (x, y) in enumerate(NICHES):            # zwavel in de nissen
+        place(g, ('sulfur_a', 'sulfur_b')[i % 2], x, y, 'cave'); used.add((x, y))
+    decorate(g, FLOOR, 'cave', keep, starts, [
+        ('basalt', 3, 'vrij'), ('boulder', 3, 'open'), ('sulfur_a', 4, 'muur'), ('sulfur_b', 4, 'muur'),
+        ('rock', 7, 'muur'), ('ash_a', 5, 'vrij'), ('ash_b', 5, 'vrij'), ('crack_a', 9, 'vrij'), ('crack_b', 9, 'vrij'),
+    ], rng, used)
     return g, objs, bgs, mask
 
 # ---------------------------------------------------------------- 2. De top
@@ -236,6 +318,12 @@ def summit_hmap():
     fill(3, 26, 5, 29, 'X'); fill(13, 25, 15, 26, 'X')
     fill(6, 30, 29, 37, '0')       # terras 0 (aankomst)
     fill(6, 34, 9, 37, 'X'); fill(26, 35, 29, 37, 'X')
+    fill(32, 17, 33, 19, '2')      # nis oost op terras 2 (Magmarizer-hoekje)
+    fill(1, 22, 2, 24, '1')        # nis west op terras 1
+    fill(30, 32, 31, 34, '0')      # nis oost op terras 0
+    fill(28, 23, 30, 24, 'X')      # rotspartij terras 1
+    fill(20, 32, 22, 33, 'X')      # rotspartij terras 0
+    fill(24, 7, 27, 8, '3'); fill(26, 7, 27, 7, 'X')   # uitkijkhoek naast het kratermeer
     return [''.join(r) for r in m]
 CRATER = [(x, y) for x in range(12, 24) for y in range(2, 6)]
 SUMMIT_ARRIVE = [(17, 38), (18, 38)]
@@ -261,6 +349,25 @@ def summit():
     ]
     bgs = [hidden(4, 25, 'ITEM_STAR_PIECE', 'FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE'),
            sign(28, 9, 'MtChimney_Summit_EventScript_SummitSign')]
+    rng = random.Random(1137)
+    starts = [(17, 37)]
+    stair_keep = area([(x, y + d) for x, y in SUMMIT_STAIRS for d in (-1, 0, 1)])
+    keep = keep_cells(objs, bgs, stair_keep | area(SUMMIT_ARRIVE + [(17, 37), (18, 37)]) | {(x, 6) for x in range(8, 28)})
+    # gestolde lavastroom vanaf de krater + zwavel langs de kraterrand
+    used = set()
+    for x, y in ((11, 8), (12, 10), (21, 14), (25, 15)):
+        place(g, 'basalt', x, y, 'ground'); used |= {(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)}
+    for (x, y), nm in (((9, 7), 'sulfur_a'), ((26, 8), 'sulfur_b'), ((32, 17), 'sulfur_b'), ((1, 22), 'sulfur_a'), ((31, 32), 'sulfur_a')):
+        place(g, nm, x, y, 'ground'); used.add((x, y))
+    grass = ash_grass(g, keep | area(used), rng, 9)
+    decorate(g, 0x271, 'ground', keep | grass, starts, [
+        ('deadtree', 5, 'muur'), ('stump', 5, 'vrij'), ('boulder', 3, 'open'), ('rock', 7, 'muur'),
+        ('sulfur_a', 2, 'muur'), ('ash_a', 6, 'vrij'), ('ash_b', 6, 'vrij'), ('crack_a', 7, 'vrij'), ('crack_b', 7, 'vrij'),
+    ], rng, used)
+    # stoom uit de grond (vanilla 0x312/0x313, geanimeerd)
+    flat = [(x, y) for y in range(SH) for x in range(SW) if (g[y][x] & 0x3ff) == 0x271 and walkable(g[y][x]) and (x, y) not in keep]
+    for x, y in rng.sample(flat, 10):
+        g[y][x] = T(rng.choice((0x312, 0x313)), elev=3)
     return g, objs, bgs, hm
 
 # ---------------------------------------------------------------- bereikbaarheid

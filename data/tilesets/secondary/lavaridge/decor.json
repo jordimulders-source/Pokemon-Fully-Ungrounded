@@ -1,0 +1,204 @@
+{
+ "sulfur_a_cave": {
+  "ids": [
+   [
+    953
+   ]
+  ],
+  "collision": true
+ },
+ "sulfur_a_ground": {
+  "ids": [
+   [
+    954
+   ]
+  ],
+  "collision": true
+ },
+ "sulfur_b_cave": {
+  "ids": [
+   [
+    955
+   ]
+  ],
+  "collision": true
+ },
+ "sulfur_b_ground": {
+  "ids": [
+   [
+    956
+   ]
+  ],
+  "collision": true
+ },
+ "crack_a_cave": {
+  "ids": [
+   [
+    957
+   ]
+  ],
+  "collision": false
+ },
+ "crack_a_ground": {
+  "ids": [
+   [
+    958
+   ]
+  ],
+  "collision": false
+ },
+ "crack_b_cave": {
+  "ids": [
+   [
+    959
+   ]
+  ],
+  "collision": false
+ },
+ "crack_b_ground": {
+  "ids": [
+   [
+    960
+   ]
+  ],
+  "collision": false
+ },
+ "ash_a_cave": {
+  "ids": [
+   [
+    961
+   ]
+  ],
+  "collision": false
+ },
+ "ash_a_ground": {
+  "ids": [
+   [
+    962
+   ]
+  ],
+  "collision": false
+ },
+ "ash_b_cave": {
+  "ids": [
+   [
+    963
+   ]
+  ],
+  "collision": false
+ },
+ "ash_b_ground": {
+  "ids": [
+   [
+    964
+   ]
+  ],
+  "collision": false
+ },
+ "rock_cave": {
+  "ids": [
+   [
+    965
+   ]
+  ],
+  "collision": true
+ },
+ "rock_ground": {
+  "ids": [
+   [
+    966
+   ]
+  ],
+  "collision": true
+ },
+ "boulder_cave": {
+  "ids": [
+   [
+    967,
+    968
+   ],
+   [
+    969,
+    970
+   ]
+  ],
+  "collision": true
+ },
+ "boulder_ground": {
+  "ids": [
+   [
+    971,
+    972
+   ],
+   [
+    973,
+    974
+   ]
+  ],
+  "collision": true
+ },
+ "basalt_cave": {
+  "ids": [
+   [
+    975,
+    976
+   ],
+   [
+    977,
+    978
+   ]
+  ],
+  "collision": false
+ },
+ "basalt_ground": {
+  "ids": [
+   [
+    979,
+    980
+   ],
+   [
+    981,
+    982
+   ]
+  ],
+  "collision": false
+ },
+ "stump_cave": {
+  "ids": [
+   [
+    983
+   ]
+  ],
+  "collision": true
+ },
+ "stump_ground": {
+  "ids": [
+   [
+    984
+   ]
+  ],
+  "collision": true
+ },
+ "deadtree_cave": {
+  "ids": [
+   [
+    985
+   ],
+   [
+    986
+   ]
+  ],
+  "collision": true
+ },
+ "deadtree_ground": {
+  "ids": [
+   [
+    987
+   ],
+   [
+    988
+   ]
+  ],
+  "collision": true
+ }
+}

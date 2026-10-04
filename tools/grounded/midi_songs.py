@@ -29,7 +29,7 @@ for src, dst in [
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
 # Ghetsis: de koperpartij (kanaal 6) speelt de 'Ghetsis!'-koorakkoorden twee octaven te laag mee (noot 18-27) en de
 # e-piano (kanaal 7) heeft noten 7/13: een trompet-/pianosample zo ver omlaag geeft lange 'puuup'-tonen (Jordi).
-prepare_auto(f'{SRC}/bw_ghetsis.mid', f'{DST}/mus_grounded_vs_ghetsis.mid', min_note={6: 36, 7: 36})
+prepare_auto(f'{SRC}/bw_ghetsis.mid', f'{DST}/mus_grounded_vs_ghetsis.mid', min_note={6: 48, 7: 36})
 for src, dst in [
     ('yoshi_castle.mid',      'mus_grounded_vs_yoshi_castle.mid'),
     ('mksc_broken_pier.mid',  'mus_grounded_vs_broken_pier.mid'),

@@ -16530,3 +16530,9 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   sample in een eigen voicegroup (`tools/grounded/neo_plasma_theme.py`): slap bass, distortion/overdrive-gitaar,
   kerkorgel, e-piano voor de steel drums (geen steel-drum-sample; alternatief xylofoon/glockenspiel), DirectSound-
   blokgolf voor de 8-bit-lead, sinus/driehoek zacht op de PSG. Lint OK, 0 keer overlopen.
+
+### [v.0.9.62] - Ghetsis zonder 'puuup' (ronde 2), Raikou iets zachter
+- **Ghetsis**: bij de koorakkoorden (±1:33) speelde het koper nog op C#2/G2, ver onder een trompet; nu alles onder C3
+  een octaaf omhoog (`min_note={6: 48}`). Daardoor iets voller, dus `-V082` (0 keer overlopen, piek 119/127).
+- **Raikou**: zoemsynth goedgekeurd, nog net iets zachter (spoorvolume 127 -> 110). Trainerfoto's van v0.9.60 goedgekeurd.
+

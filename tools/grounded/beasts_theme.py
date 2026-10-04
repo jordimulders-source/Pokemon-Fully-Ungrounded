@@ -122,7 +122,7 @@ def build(beast):
             chords += [[s, s + TPB // 2, r, 110], [s, s + TPB // 2, r + 7, 102]]
         layers.append(('power', chords, DIST_LO, 96, 52, True))
     elif beast == 'raikou':
-        layers.append(('buzz', [[s, e, n, 127] for s, e, n, v in melody], BUZZ, 127, 64, False))   # Jordi: viel weg bij 72
+        layers.append(('buzz', [[s, e, n, 127] for s, e, n, v in melody], BUZZ, 110, 64, False))   # Jordi: viel weg bij 72, 127 net te hard
         layers.append(('zap', [[s, s + TPB // 4, n + 12, 100] for s, e, n, v in figure], ZAP, 36, 90, False))
         end = max(e for s, e, n, v in bass)
         layers.append(('crackle', [[t, t + 4, 72 + (t // TPB) % 5, 60] for t in range(0, end, TPB * 2)

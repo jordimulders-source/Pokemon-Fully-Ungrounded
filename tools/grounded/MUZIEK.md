@@ -181,3 +181,6 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - audiocheck meldt bij snelle nummers (176 bpm) 'constante tonen' op 59,7/119,5 Hz: dat is de framesnelheid. De m4a-
   sequencer start noten alleen op framegrenzen; bij een 16e van 5,1 frames geeft een rij drum-/gitaaraanslagen spectrale
   lijnen op veelvouden van 59,73 Hz. Geen bromtoon (zit ook in de oude versie); controleer met een opname per spoor.
+- Ghetsis ronde 2: min_note 36 was niet genoeg; koper (trompet-keysplit) onder C3 klinkt nog als 'puuup'. Voor koper
+  min. C3 (48), voor piano/strijkers is C2 (36) prima. Raikou: buzz 110 = goed (127 net te hard, 72 viel weg).
+

@@ -87,7 +87,7 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `STADIUM_SHADOW_TRIAD` | THE SHADOW TRIAD! Three ninjas, one ticket. Security is still looking. |
 | `STADIUM_PLASMA_GRUNT_M` | A NEO PLASMA GRUNT! Nobody knows his name. Including him. |
 | `STADIUM_PLASMA_GRUNT_F` | A NEO PLASMA GRUNT! She joined for the dental plan. There is no dental plan. |
-| `ALBERT` | From VICTORY ROAD: DAVE! WAKE UP! Grab a brush and put a little make-up! |
+| `ALBERT` | From VICTORY ROAD: DAVE is on fire! Your defense is terrified! |
 | `SAMUEL` | MITCH! He has stage fright. Thousands of fans. Everybody, stare at him! |
 | `OWEN` | SICKBLIK! He made this romhack. Beat him and he nerfs you next patch. |
 | `STADIUM_WARIO` | WARIO! Here for the prize money and the free buffet. Mostly the buffet. |

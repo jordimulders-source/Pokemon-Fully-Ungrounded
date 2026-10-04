@@ -16358,3 +16358,6 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.35] - Toxic Chain v7
 - Het eindstuk van de ketting heeft twee brede tanden die ±38° schuin uit elkaar waaieren, met een brede U-inkeping ertussen. Ze wijzen weg van de ketting (naar rechts en rechtsonder), zoals bij Okidogi.
 - Bron voor Dave's nieuwe thema toegevoegd: `sound/songs/grounded_src/freed_from_desire.mid` (Gala, "Freed From Desire").
+
+### [v.0.9.36] - Dave is on fire
+- De Stadium-omroeper kondigt Dave aan met "From VICTORY ROAD: DAVE is on fire! Your defense is terrified!". Dat is een grap die Dave nooit zal kunnen waarderen.

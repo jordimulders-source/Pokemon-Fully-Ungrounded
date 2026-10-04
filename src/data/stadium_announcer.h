@@ -93,7 +93,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_SHADOW_TRIAD, COMPOUND_STRING("THE SHADOW TRIAD! Three ninjas, one\nticket. Security is still looking.")},
     {TRAINER_STADIUM_PLASMA_GRUNT_M, COMPOUND_STRING("A NEO PLASMA GRUNT! Nobody knows his\nname. Including him.")},
     {TRAINER_STADIUM_PLASMA_GRUNT_F, COMPOUND_STRING("A NEO PLASMA GRUNT! She joined for the\ndental plan. There is no dental plan.")},
-    {TRAINER_ALBERT, COMPOUND_STRING("From VICTORY ROAD: DAVE! WAKE UP! Grab\na brush and put a little make-up!")},
+    {TRAINER_ALBERT, COMPOUND_STRING("From VICTORY ROAD: DAVE is on fire! Your\ndefense is terrified!")},
     {TRAINER_SAMUEL, COMPOUND_STRING("MITCH! He has stage fright. Thousands\nof fans. Everybody, stare at him!")},
     {TRAINER_OWEN, COMPOUND_STRING("SICKBLIK! He made this romhack. Beat\nhim and he nerfs you next patch.")},
     {TRAINER_STADIUM_WARIO, COMPOUND_STRING("WARIO! Here for the prize money and the\nfree buffet. Mostly the buffet.")},

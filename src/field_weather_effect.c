@@ -2657,6 +2657,15 @@ static const u8 sWeatherCycleAshfrostStorm[WEATHER_CYCLE_LENGTH] =
     WEATHER_VOLCANIC_ASH,
 };
 
+// Project Grounded: Fortree Jungle, het regent er altijd; per dag regen, onweer, regen, stortbui
+static const u8 sWeatherCycleJungle[WEATHER_CYCLE_LENGTH] =
+{
+    WEATHER_RAIN,
+    WEATHER_RAIN_THUNDERSTORM,
+    WEATHER_RAIN,
+    WEATHER_DOWNPOUR,
+};
+
 static u8 TranslateWeatherNum(u8 weather)
 {
     switch (weather)
@@ -2682,6 +2691,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ASHFROST_CYCLE:     return sWeatherCycleAshfrost[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_SNOW_STORM:         return WEATHER_SNOW_STORM;
     case WEATHER_ASHFROST_STORM_CYCLE: return sWeatherCycleAshfrostStorm[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_JUNGLE_CYCLE:       return sWeatherCycleJungle[gSaveBlock1Ptr->weatherCycleStage];
     default:                         return WEATHER_NONE;
     }
 }

@@ -1000,7 +1000,13 @@
 #define TRAINER_BURGLAR_4                   982 // 7-8 badges
 #define TRAINER_BURGLAR_5                   983 // na de Elite Four
 
-#define TRAINERS_COUNT                      984
+#define TRAINER_JUNGLE_BRAM                 984 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_MAYA                 985 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_HANZO                986 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
+
+#define TRAINERS_COUNT                      989
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

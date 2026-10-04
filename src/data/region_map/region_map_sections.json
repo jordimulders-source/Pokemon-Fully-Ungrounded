@@ -1274,6 +1274,14 @@
     {
       "id": "MAPSEC_LIBERTY_GARDEN",
       "name": "LIBERTY GARDEN"
+    },
+    {
+      "id": "MAPSEC_FORTREE_JUNGLE",
+      "name": "FORTREE JUNGLE",
+      "x": 12,
+      "y": 1,
+      "width": 1,
+      "height": 2
     }
   ]
 }

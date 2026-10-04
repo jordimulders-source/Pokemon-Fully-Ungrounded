@@ -16126,3 +16126,13 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Whale Song** (Wailord, bij evolutie/lv 1): Water, speciaal 70/100, geluid; raakt alle andere Pokémon (ook de partner), door Substitute, 30% slaap. Muzieknoten over het hele veld, golfringen, bubbels.
 - **Heartbreak** (Luvdisc, lv 29): Fairy, speciaal 60/100, 15 PP. Dubbele kracht tegen het andere geslacht of bij verliefdheid; altijd Sp. Atk −1. Een hart barst in tweeën, het doelwit huilt.
 - Yamask en Wailmer leren ze bewust niet (echte signatures).
+
+### [v.0.9.5] - Fortree Jungle
+- **Nieuwe kaart FORTREE JUNGLE** (40×68, General + Fortree, `tools/grounded/maptools/fortree_jungle.py`, seed 893): dicht tropisch regenwoud direct onder Fortree, bereikbaar via twee openingen in de zuidrand van Fortree (connection). Smalle paden tussen massieve bomen, veel hoog gras, poelen en regenplassen, reuzenpalmen, verborgen hoekjes. Het script controleert de bereikbaarheid.
+- **Weer:** nieuw `WEATHER_JUNGLE_CYCLE` wisselt per dag tussen regen, onweer en stortbui (in gevechten regen). Muziek van Route 119.
+- **Vrijgehouden voor later:** een open plek voor **Zarude** (zuidwest, met een waarschuwingsbord) en een **Ogerpon-heiligdom** (zuidoost, stenen altaar met bloemen, een "maskerhoedster" als placeholder).
+- **Wilde Pokémon** (lv 31–36, 12 unieke soorten): Swadloon, Weepinbell, Venomoth, Nuzleaf, Steenee, Vigoroth, Fomantis, Ariados, Passimian, Oranguru, Heracross, Lokix. Surfen: Palpitoad, Araquanid, Masquerain, Quagsire, Ludicolo. Vissen: Chewtle/Tympole, Poliwhirl/Basculin/Drednaw, Seismitoad/Poliwrath/Politoed/Whiscash/Gyarados.
+- **Trainers** (lv 35–37, placeholders in de huisstijl): Bug Catcher Bram, Ranger Maya, Ninja Boy Hanzo (vermomd als boom), Aroma Lady Flora, Hiker Dirk (`TRAINER_JUNGLE_*`, 984–988).
+- **Items:** Big Root, Max Revive, Miracle Seed, TM U-turn (alleen surfend), verborgen Leaf Stone en Revival Herb (flags 0x287, 0x288, 0x28C–0x28F).
+- Mapsec `MAPSEC_FORTREE_JUNGLE` met popup en plek op de Town Map onder Fortree.
+- Open: Zarude staat op Route 119 nog in een 1%-slot (eruit zodra het event komt); het altaar is een geleende Fortree-tegel.

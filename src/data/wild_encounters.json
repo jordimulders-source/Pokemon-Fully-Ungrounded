@@ -2315,6 +2315,52 @@
           }
         },
         {
+          "map": "MAP_FORTREE_JUNGLE",
+          "base_label": "gFortreeJungle",
+          "land_mons": {
+            "encounter_rate": 25,
+            "mons": [
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_SWADLOON" },
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_WEEPINBELL" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_VENOMOTH" },
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_NUZLEAF" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_STEENEE" },
+              { "min_level": 32, "max_level": 34, "species": "SPECIES_VIGOROTH" },
+              { "min_level": 31, "max_level": 33, "species": "SPECIES_FOMANTIS" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_ARIADOS" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_PASSIMIAN" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_ORANGURU" },
+              { "min_level": 35, "max_level": 36, "species": "SPECIES_HERACROSS" },
+              { "min_level": 35, "max_level": 36, "species": "SPECIES_LOKIX" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 32, "max_level": 35, "species": "SPECIES_PALPITOAD" },
+              { "min_level": 32, "max_level": 35, "species": "SPECIES_ARAQUANID" },
+              { "min_level": 33, "max_level": 35, "species": "SPECIES_MASQUERAIN" },
+              { "min_level": 33, "max_level": 36, "species": "SPECIES_QUAGSIRE" },
+              { "min_level": 35, "max_level": 37, "species": "SPECIES_LUDICOLO" }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              { "min_level": 10, "max_level": 15, "species": "SPECIES_CHEWTLE" },
+              { "min_level": 10, "max_level": 15, "species": "SPECIES_TYMPOLE" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_POLIWHIRL" },
+              { "min_level": 25, "max_level": 30, "species": "SPECIES_BASCULIN" },
+              { "min_level": 28, "max_level": 32, "species": "SPECIES_DREDNAW" },
+              { "min_level": 36, "max_level": 40, "species": "SPECIES_SEISMITOAD" },
+              { "min_level": 35, "max_level": 40, "species": "SPECIES_POLIWRATH" },
+              { "min_level": 36, "max_level": 40, "species": "SPECIES_POLITOED" },
+              { "min_level": 36, "max_level": 40, "species": "SPECIES_WHISCASH" },
+              { "min_level": 40, "max_level": 45, "species": "SPECIES_GYARADOS" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE136",
           "base_label": "gRoute136",
           "land_mons": {

@@ -1210,6 +1210,7 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ASHFROST_CYCLE]     = _("ASHFROST CYCLE"),
     [WEATHER_SNOW_STORM]         = _("SNOW STORM"),
     [WEATHER_ASHFROST_STORM_CYCLE] = _("ASHFROST STORM CYCLE"),
+    [WEATHER_JUNGLE_CYCLE]       = _("JUNGLE CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
 };
 

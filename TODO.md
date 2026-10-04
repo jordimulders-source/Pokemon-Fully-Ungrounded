@@ -11,19 +11,19 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 2. ~~**Shiny Rayquaza**~~ (gedaan, v0.9.0): tweede ontmoeting op de Sky Pillar (zelfde soort, gegarandeerd shiny), pas nadat de gewone Rayquaza gevangen is. Pas daarna kan de Delta Episode. Alleen met de shiny Rayquaza in je team mag je de ruimte in ("zodat je kan blijven ademen").
 3. ~~**Delta Episode met Zinnia**~~ (gedaan, v0.9.0; open: definitieve beloning, nu 3 Comet Shards): Zinnia-gevecht op het lanceerplatform in Mossdeep → ruimte/Deoxys zoals nu → afsluiter bij de meteoriet. Met de MP3-muziek.
 4. ~~**Archie en Maxie post-game: werkstraf**~~ (gedaan, v0.9.1, dagelijks i.p.v. wekelijks). Vrijwilligers in de Lilycove-museumtuin/het Weather Institute, wekelijkse tag battle-rematch met steeds sterkere teams. (Ook in de Stadium-pool.)
-5. **Signature moves, met eigen animaties:**
+5. ~~**Signature moves, met eigen animaties**~~ (gedaan, v0.9.4; voorstel extra signatures in `VRAGEN_VOLGENDE.md`):
    - Cofagrigus: **Mummy's Curse** (soort Curse, maar unieker; zelf bedenken).
    - Stunfisk: move waarbij hij zelf dubbelklapt en de tegenstander klemt; Stunfisk en Galar-Stunfisk elk een eigen variant.
    - Mightyena: **Pack Howl** (+1 Atk team in dubbel / +1 Atk +1 Spe solo).
    - Wailord: **Whale Song** (raakt alles, 30% slaap). Luvdisc: **Heartbreak**.
    - Daarna een voorstel: welke saaie/niet-unieke Pokémon (of met lore/power-reden) verdienen nog een signature move of buff?
-6. **Burglar in de overwereld:** kleine kans als je een stad binnenloopt (meerdere steden, vooral 's nachts in Mauville) dat hij uit een huis komt; jij spot hem, gevecht (team zoals de Burglars in andere games). Na verlies staat hij verbijsterd, de bewoner komt naar buiten en pakt zijn/haar spullen terug, hij rent weg en laat een Nugget vallen.
+6. ~~**Burglar in de overwereld**~~ (gedaan, v0.9.3): kleine kans als je een stad binnenloopt (meerdere steden, vooral 's nachts in Mauville) dat hij uit een huis komt; jij spot hem, gevecht (team zoals de Burglars in andere games). Na verlies staat hij verbijsterd, de bewoner komt naar buiten en pakt zijn/haar spullen terug, hij rent weg en laat een Nugget vallen.
 7. **Gebieden (volgorde akkoord):**
    1. **Safari-uitbreiding:** openingen in de Safari Zone naar nieuwe zones (warps, dus eigen tilesets), voor ondervertegenwoordigde soorten/types. Voorstel zones: zie changelog/antwoord 4 okt; wacht op Jordi's keuze.
-   2. **Jungle onder Fortree** (Ogerpon/Zarude): echt wild, dicht bebost tropisch regenwoud met veel regen.
+   2. ~~**Jungle onder Fortree**~~ (kaart gedaan, v0.9.5). Open: Zarude- en Ogerpon-events op de vrijgehouden plekken.
    3. Moeras (aangeleverde moeras-tileset).
    4. Oostkant: eilandjes en Dive-grotten.
-9. **Battle Stadium:** N en Ghetsis in de pool (Jordi, 4 okt). **Back sprites** voor de compagnons in doubles: nu hebben 109 van de 118 partners de Brendan-backsprite (alleen Brendan, May, Red, Steven, Wally en Kecleon hebben een eigen). Belangrijk voor Stadium-doubles.
+9. **Battle Stadium:** ~~N en Ghetsis in de pool~~ (gedaan, v0.9.2). **Back sprites** voor de compagnons in doubles: nu hebben 109 van de 118 partners de Brendan-backsprite (alleen Brendan, May, Red, Steven, Wally en Kecleon hebben een eigen). Belangrijk voor Stadium-doubles.
 8. **Dungeons uitbreiden (Jordi, 4 okt):**
    - Petalburg Woods: nieuw stuk bos aan de rechterkant (eventueel eerst boven eruit en dan door), een verborgen paddenstoelenbos.
    - Meteor Falls: meerdere verborgen kamers; de kamer naar beneden uitbreiden en interessant maken; een gangenstelsel naar andere toffe events.

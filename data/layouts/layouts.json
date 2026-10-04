@@ -4760,6 +4760,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Route112_TowerOfWaters/border.bin",
       "blockdata_filepath": "data/layouts/Route112_TowerOfWaters/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_JUNGLE",
+      "name": "FortreeJungle_Layout",
+      "width": 40,
+      "height": 68,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeJungle/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
     }
   ]
 }

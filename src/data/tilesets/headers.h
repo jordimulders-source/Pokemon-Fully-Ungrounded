@@ -953,3 +953,73 @@ const struct Tileset gTileset_ToadstoolHollow = // Project Grounded: Toadstool H
     .metatileAttributes = gMetatileAttributes_ToadstoolHollow,
     .callback = NULL,
 };
+
+
+// Project Grounded: Safari Zone, fairy (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariFairyGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariFairyGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariFairy =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariFairy,
+    .palettes = gTilesetPalettes_SafariFairy,
+    .metatiles = gMetatiles_SafariFairy,
+    .metatileAttributes = gMetatileAttributes_SafariFairy,
+    .callback = InitTilesetAnim_Fortree,
+};
+
+// Project Grounded: Safari Zone, thunder (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariThunderGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariThunderGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariThunder =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariThunder,
+    .palettes = gTilesetPalettes_SafariThunder,
+    .metatiles = gMetatiles_SafariThunder,
+    .metatileAttributes = gMetatileAttributes_SafariThunder,
+    .callback = InitTilesetAnim_Fallarbor,
+};
+
+// Project Grounded: Safari Zone, spook (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariSpookGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariSpookGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariSpook =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariSpook,
+    .palettes = gTilesetPalettes_SafariSpook,
+    .metatiles = gMetatiles_SafariSpook,
+    .metatileAttributes = gMetatileAttributes_SafariSpook,
+    .callback = InitTilesetAnim_Lilycove,
+};

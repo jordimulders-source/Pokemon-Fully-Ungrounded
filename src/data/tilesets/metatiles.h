@@ -229,3 +229,13 @@ const u16 gMetatileAttributes_FortreeJungle[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatiles.bin");
 const u16 gMetatileAttributes_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatile_attributes.bin");
+
+
+const u16 gMetatiles_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatiles.bin");
+const u16 gMetatileAttributes_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatiles.bin");
+const u16 gMetatileAttributes_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatiles.bin");
+const u16 gMetatileAttributes_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatile_attributes.bin");

@@ -2384,6 +2384,69 @@
           }
         },
         {
+          "map": "MAP_SAFARI_ZONE_FAIRY_FOREST",
+          "base_label": "gSafariZone_FairyForest",
+          "land_mons": {
+            "encounter_rate": 25,
+            "mons": [
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_FLOETTE_RED" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_COTTONEE" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_SPRITZEE" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_SWIRLIX" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_GRANBULL" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_DEDENNE" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_COMFEY" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_DACHSBUN" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_HATENNA" },
+              { "min_level": 30, "max_level": 31, "species": "SPECIES_IMPIDIMP" },
+              { "min_level": 32, "max_level": 32, "species": "SPECIES_MILCERY" },
+              { "min_level": 34, "max_level": 34, "species": "SPECIES_TOGETIC" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SAFARI_ZONE_THUNDER_PLAINS",
+          "base_label": "gSafariZone_ThunderPlains",
+          "land_mons": {
+            "encounter_rate": 25,
+            "mons": [
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_LUXIO" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_GUMSHOOS" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_HELIOPTILE" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_DUBWOOL" },
+              { "min_level": 29, "max_level": 31, "species": "SPECIES_MANECTRIC" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_PACHIRISU" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_BOLTUND" },
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_MASCHIFF" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_PLUSLE" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_MINUN" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_MORPEKO" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_TOGEDEMARU" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SAFARI_ZONE_HAUNTED_CAMP",
+          "base_label": "gSafariZone_HauntedCamp",
+          "land_mons": {
+            "encounter_rate": 25,
+            "mons": [
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_SINISTEA" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_POLTCHAGEIST" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_GIMMIGHOUL_ROAMING" },
+              { "min_level": 28, "max_level": 30, "species": "SPECIES_SKUNTANK" },
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_GREAVARD" },
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_PHANTUMP" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_DRIFBLIM" },
+              { "min_level": 28, "max_level": 29, "species": "SPECIES_SANDYGAST" },
+              { "min_level": 30, "max_level": 32, "species": "SPECIES_PUMPKABOO" },
+              { "min_level": 29, "max_level": 29, "species": "SPECIES_ZORUA_HISUI" },
+              { "min_level": 33, "max_level": 33, "species": "SPECIES_LAMPENT" },
+              { "min_level": 35, "max_level": 35, "species": "SPECIES_SPIRITOMB" }
+            ]
+          }
+        },
+        {
           "map": "MAP_FORTREE_JUNGLE",
           "base_label": "gFortreeJungle",
           "land_mons": {

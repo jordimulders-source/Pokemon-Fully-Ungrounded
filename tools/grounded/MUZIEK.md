@@ -91,6 +91,14 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Regigigas v1: legato-partijen (koper, koor, tuba) bezetten op elke nieuwe noot 2 kanalen (de release van de vorige
   klinkt nog). `musiclib.detach()` laat de vorige noot de uitklinktijd eerder los; `allocate()` neemt de tail per partij.
   Daarmee viel er niets meer weg. RMS via recaudio ±3000 is de bovengrens (Zarude ±2700): -V95.
+- Regigigas v2 (Jordi: 'veel kaler dan het origineel'): een remix van een bestaand nummer = het origineel 1-op-1
+  laten staan (sporen kopiëren, zelfde voicegroup + extra instrumenten erachter) en alleen lagen tóévoegen die het
+  origineel nog niet heeft (koor, tuba, taiko). Geen verdubbeling van wat er al is (koper). Intro gelijk aan het
+  origineel; de Slow Start pas als het gevecht begint (±6 s). Een inzinking op een frasegrens beginnen en tel voor
+  tel vertragen, niet per maat (Jordi: 'te laat, niet lekker').
+- Vanilla-nummers zijn voor 5 kanalen gemaakt maar gebruiken er tot ±9 (de engine kapte toen af). Tel ze mee als
+  preset in `allocate()`. Legendary-gevechten mogen 11 kanalen (MAX_PER_SONG in de lint).
+- recaudio: tweede glitchpatroon (exacte nullen om en om in niet-stille muziek) wordt ook overbrugd (Dave-snip op 3 s).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

@@ -16,6 +16,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import releases, release_ticks
 
 MAX_CHANS = 10          # src/m4a.c mixt 12 kanalen; 2 houden we vrij voor geluidseffecten
+# uitzonderingen: legendary-gevechten mogen 11 (1 kanaal vrij voor effecten)
+MAX_PER_SONG = {'mus_grounded_vs_regigigas.mid': 11}
 CFG = 'sound/songs/midi/midi.cfg'
 VG_DIR = 'sound/voicegroups'
 
@@ -37,7 +39,7 @@ def load_voices(vg):
     out, prog = {}, 0
     for line in open(path):
         line = line.strip()
-        if not line.startswith('voice_'):
+        if not line.startswith('voice_') or line.startswith('voice_group'):   # 'voice_group x' is geen instrument
             continue
         m = re.search(r'@\s*(\d+)', line)
         if m:
@@ -111,13 +113,14 @@ def lint(mid):
     # polyfonie
     starts = sorted(set(n[0] for n in ds_notes))
     over = []
+    cap = MAX_PER_SONG.get(os.path.basename(mid), MAX_CHANS)
     for s in starts:
         c = sum(1 for a, b, _ in ds_notes if a <= s < b)
-        if c > MAX_CHANS:
+        if c > cap:
             over.append((sec(s), c))
     if over:
         errors.append('%d momenten met meer dan %d DirectSound-noten (max %d), bijv. %s' % (
-            len(over), MAX_CHANS, max(c for _, c in over), ', '.join('%.1f s' % t for t, _ in over[:6])))
+            len(over), cap, max(c for _, c in over), ', '.join('%.1f s' % t for t, _ in over[:6])))
     # PSG-waarschuwingen ontdubbelen
     warns = sorted(set(warns))
     return errors, warns

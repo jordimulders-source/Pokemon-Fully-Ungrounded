@@ -16382,3 +16382,15 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Loop:** riff, couplet, refrein en "na na na" vol, op 132 bpm.
   - De melodie komt uit Jordi's bladmuziek, de begeleiding en de drums uit de MIDI. De hook is een trompet met een zacht PSG-vierkant in unisono.
 - Dave staat in debug "Battle test…".
+
+### [v.0.9.41] - Regigigas v2, Toxic Chain bungelt
+- **Battle! Regigigas** opnieuw opgebouwd (Jordi: "veel kaler dan het origineel"):
+  - Het originele Regi-thema staat er nu 1-op-1 in, met dezelfde sporen en instrumenten.
+  - Daarbovenop komen een koor onder het koraal, tuba-grondtonen, taiko, crashes en een paukenroffel.
+  - De eerste ±6 s (de transitie) zijn precies het Regi-thema. Zodra het gevecht begint, komt de Slow Start: het tempo zakt naar 55% en versnelt per maat terug.
+  - Het inzinken halverwege begint nu op een frasegrens (maat 28) en vertraagt tel voor tel. Daarna volgen een paukenroffel en een crash op de nieuwe frase.
+- **Toxic Chain:** de ketting bungelt veerachtig ±28 px op en neer (was ±9) en blijft na de val binnen het scherm.
+- **Muziekgereedschap:**
+  - `musiclib.allocate()` kan de noten van een origineel als vaste bezetting meetellen.
+  - De lint kende de instrumentnummers bij voicegroups zonder nummering één plaats verkeerd toe; dat is opgelost.
+  - `recaudio` herkent een tweede soort mGBA-glitch.

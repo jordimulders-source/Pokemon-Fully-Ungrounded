@@ -1,118 +1,167 @@
 #!/usr/bin/env python3
-"""Project Grounded: Battle! Regigigas, een bombastische remix van het Regi-thema (mus_vs_regi) met Slow Start (Jordi).
+"""Project Grounded: Battle! Regigigas = het originele Regi-thema (mus_vs_regi, ongewijzigd) + bombast erbovenop,
+met Slow Start (Jordi).
 
-- Intro (maat 0-19 van het Regi-thema): begint op 55% tempo en versnelt per maat tot 100% (maat 8). Regigigas wordt
-  laag voor laag wakker: eerst orgel + bas, dan pauken en toms, dan de robot-arpeggio's (PSG, zoals in het
-  origineel), vanaf maat 8 het hele orkest (trompet, hoorn, koor, tuba, taiko, crash).
-- Loop (maat 20-39): het koraal op koper + koor boven de bas-ostinato. In maat 30-33 zakt hij nog één keer in
-  (tempo omlaag, drums weg, zachter: "bijkomen") en komt met een paukenroffel terug op vol gas (maat 34).
-Gebruikt tools/grounded/musiclib.py (stemverdeler, ontdubbelen) en voicegroup_grounded_gm. Zie tools/grounded/MUZIEK.md.
-Gebruik: python3 tools/grounded/regigigas_theme.py"""
-import os, sys
+- Maat 0-3 (±6 s, de gevechtstransitie): precies het originele Regi-thema.
+- Maat 4-11: Slow Start. Zodra het gevecht begint zakt het tempo naar 55% en versnelt het per maat terug naar 100%.
+- Vanaf maat 8: bombast bovenop het origineel (tuba-grondtonen, taiko, crashes), in de loop (maat 20-39) een koor
+  onder het koraal. Het koper zit al in het origineel.
+- Maat 28-31 (begin van een frase): hij zakt nog één keer in ("bijkomen"), tel voor tel vertragend, zonder drums en
+  arpeggio's, en komt met een paukenroffel terug; maat 32 vol gas met een crash.
+De sporen van het origineel worden 1-op-1 gekopieerd (zelfde instrumenten, volumes, pitchbends); de extra
+instrumenten staan in voicegroup_grounded_regigigas (= vs_regi + 84 trompet, 85 hoorn, 86 koor, 87 tuba, 88 taiko).
+Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/regigigas_theme.py"""
+import os, re, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from musiclib import notes_of, dedupe, thin, detach, allocate, releases, release_ticks, Song
+from musiclib import notes_of, thin, detach, allocate, releases, release_ticks
 
 SRC = 'sound/songs/midi/mus_vs_regi.mid'
 OUT = 'sound/songs/midi/mus_grounded_vs_regigigas.mid'
-VG = 'grounded_gm'
-TPB_OUT = 96
-BAR = TPB_OUT * 4
-TRUMPET, HORN, TUBA, CHOIR, ORGAN, TIMPANI, TAIKO, BASS, SQ1, SQ2 = 56, 60, 58, 52, 19, 47, 116, 33, 80, 81
-DRUMS = 127
+VG = 'grounded_regigigas'
+TPB = 24
+BAR = TPB * 4
+BASE_TEMPO = 375000                     # 160 bpm, zoals het origineel
+TRUMPET, HORN, CHOIR, TUBA, TAIKO, TIMPANI, DRUMS = 84, 85, 86, 87, 88, 47, 0
+EXTRA = {84: 56, 85: 60, 86: 52, 87: 58, 88: 116}   # nieuwe programma's -> instrument uit grounded_gm
+LOOP_START, LOOP_END = 20, 40
+SLOW_START = {4: 0.55, 5: 0.60, 6: 0.66, 7: 0.73, 8: 0.80, 9: 0.87, 10: 0.94, 11: 1.0}
+DIP = {28: [1.0, 0.95, 0.9, 0.85], 29: [0.8, 0.76, 0.72, 0.68], 30: [0.65, 0.65, 0.65, 0.65], 31: [0.7, 0.8, 0.9, 1.0]}
+QUIET = (29, 30)                        # hier vallen drums en arpeggio's weg en is alles zachter
+MUTE_TRACKS = (4, 5, 7)                 # arpeggio's en drums van het origineel
 
-# tempo per maat (factor van het origineel, 160 bpm)
-SLOW_START = [0.55, 0.60, 0.66, 0.72, 0.79, 0.86, 0.93, 1.0]
-DIP = {30: [0.9], 31: [0.76], 32: [0.62], 33: [0.68, 0.78, 0.89, 1.0]}   # maat -> factor per tel (1 = hele maat)
-DIP_BARS = (31, 32)        # hier vallen drums, taiko en arpeggio's weg
-INTRO_END, LOOP_START, LOOP_END = 20, 20, 40
-DRUM_MAP = {38: 38, 47: 43, 48: 45, 57: 57}   # rs_drumset: snare, toms, crash
 
-
-def scaled(track, f):
-    ev = notes_of(track)
-    return [[s * f, e * f, n, v] for s, e, n, v in ev]
+def voicegroup():
+    src = open('sound/voicegroups/vs_regi.inc').read().rstrip('\n').split('\n')
+    gm = {}
+    for l in open('sound/voicegroups/grounded_gm.inc'):
+        m = re.search(r'@\s*(\d+)', l)
+        if l.strip().startswith('voice_') and m:
+            gm[int(m.group(1))] = l.split('@')[0].rstrip()
+    out = ['@ Project Grounded: vs_regi + extra instrumenten voor Battle! Regigigas. Gegenereerd door tools/grounded/regigigas_theme.py.',
+           'voice_group grounded_regigigas']
+    out += [l for l in src if l.strip().startswith('voice_') and not l.strip().startswith('voice_group')]
+    for prog in sorted(EXTRA):
+        out.append('%s  @ %d' % (gm[EXTRA[prog]], prog))
+    open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(out) + '\n')
 
 
 def bar_of(t):
     return t // BAR
 
 
+def copy_track(track, mute):
+    """Origineel spoor 1-op-1, behalve in de QUIET-maten: zachter, of (mute) zonder noten."""
+    out, tick, last, skip = mido.MidiTrack(), 0, 0, set()
+    for msg in track:
+        tick += msg.time
+        if msg.type in ('note_on', 'note_off'):
+            b = bar_of(tick)
+            if msg.type == 'note_on' and msg.velocity:
+                if mute and b in QUIET:
+                    skip.add(msg.note)
+                    continue
+                skip.discard(msg.note)
+                if b in QUIET:
+                    msg = msg.copy(velocity=max(1, int(msg.velocity * 0.6)))
+            elif msg.note in skip:
+                skip.discard(msg.note)
+                continue
+        if msg.type == 'end_of_track':
+            break
+        out.append(msg.copy(time=tick - last))
+        last = tick
+    out.append(mido.MetaMessage('end_of_track', time=0))
+    return out
+
+
+def note_track(notes, prog, vol, ch, pan):
+    t = mido.MidiTrack()
+    t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
+    t.append(mido.Message('control_change', channel=ch, control=7, value=vol, time=0))
+    t.append(mido.Message('control_change', channel=ch, control=10, value=pan, time=0))
+    msgs = sorted([(s, 1, n, v) for s, e, n, v in notes] + [(e, 0, n, 0) for s, e, n, v in notes])
+    last = 0
+    for tk, kind, n, v in msgs:
+        t.append(mido.Message('note_on' if kind else 'note_off', channel=ch, note=n,
+                              velocity=max(1, min(127, int(v))) if kind else 0, time=tk - last))
+        last = tk
+    return t
+
+
 def build():
+    voicegroup()
     src = mido.MidiFile(SRC)
-    f = TPB_OUT // src.ticks_per_beat
-    T = {i: scaled(src.tracks[i], f) for i in range(1, 9)}
+    assert src.ticks_per_beat == TPB
+    T = {i: notes_of(src.tracks[i]) for i in range(1, 9)}
     end = LOOP_END * BAR
-    parts = {}
 
-    # koraal / melodie
-    parts['trumpet'] = [e for e in thin(T[1], 1, 'top') if bar_of(e[0]) >= 8]
-    parts['organ'] = [e for e in thin(T[1], 2, 'top') if bar_of(e[0]) < 8]          # intro: chromatisch motief op orgel
-    parts['horn'] = [e for e in thin(T[2], 1, 'top') if bar_of(e[0]) >= 8]
-    parts['choir'] = [list(e) for e in thin(T[2], 1, 'top') if bar_of(e[0]) >= LOOP_START]
-    parts['stabs'] = [[s, s + 24, n, 110] for s, e, n, v in T[6]]                  # G#-steken van de intro op trompet
-    # bas: ostinato + een lange tuba-grondtoon per maat
-    parts['bass'] = [[s, e, n + 12 if n < 31 else n, v] for s, e, n, v in thin(T[3], 1, 'bottom')]   # niet onder G1
+    # bombast
+    add = {}
+    # (geen trompet/hoorn: het origineel heeft het koper al; verdubbelen kost alleen kanalen)
+    add['trumpet'], add['horn'] = [], []
+    add['choir'] = [[s, e, n - 12, v] for s, e, n, v in thin(T[1], 1, 'top') if bar_of(s) >= LOOP_START]
     roots = {}
-    for s, e, n, v in parts['bass']:
+    for s, e, n, v in sorted(T[3]):
         roots.setdefault(bar_of(s), n)
-    parts['tuba'] = [[b * BAR, (b + 1) * BAR - 12, roots[b] + 12, 100] for b in sorted(roots) if b >= 8]
-    # slagwerk
-    parts['timpani'] = [[s, min(e, s + 48), 48, v] for s, e, n, v in T[8]]
-    drums = [[s, min(e, s + 96), DRUM_MAP.get(n, 38), v] for s, e, n, v in T[7] if bar_of(s) >= 2]
-    drums += [[b * BAR, b * BAR + 192, 57, 120] for b in (8, 20, 34)]                # crashes op de grote inzetten
-    parts['drums'] = dedupe(drums)
-    parts['taiko'] = [[b * BAR + o, b * BAR + o + 96, 48, 115] for b in range(8, LOOP_END) for o in (0, 192)]
-    # robot-arpeggio's (PSG, tellen niet mee voor de 10 kanalen)
-    parts['arp1'] = [e for e in T[4] if bar_of(e[0]) >= 4]
-    parts['arp2'] = [e for e in T[5] if bar_of(e[0]) >= 8]
+    add['tuba'] = [[b * BAR, (b + 1) * BAR - 6, roots[b] + (12 if roots[b] < 31 else 0), 100]
+                   for b in sorted(roots) if 8 <= b < LOOP_END]
+    add['taiko'] = [[b * BAR + o, b * BAR + o + 24, 48, 112] for b in range(8, LOOP_END) for o in (0, 48)
+                    if b not in QUIET]
+    add['crash'] = [[b * BAR, b * BAR + 48, 57, 120] for b in (8, LOOP_START, 32)]
+    add['roll'] = [[31 * BAR + i * 6, 31 * BAR + i * 6 + 6, 48, 40 + i * 5] for i in range(16)]   # paukenroffel
+    for k in add:
+        for e in add[k]:
+            if bar_of(e[0]) in QUIET:
+                e[3] = int(e[3] * 0.6)
 
-    # bijkomen: drums/taiko/arpeggio's weg, alles zachter; maat 33 een paukenroffel die aanzwelt
-    for k in ('drums', 'taiko', 'arp1', 'arp2', 'stabs'):
-        parts[k] = [e for e in parts[k] if bar_of(e[0]) not in DIP_BARS + (33,) or k == 'stabs']
-    for k in parts:
-        for e in parts[k]:
-            if bar_of(e[0]) in (30, 31, 32):
-                e[3] = int(e[3] * (0.85 if bar_of(e[0]) == 30 else 0.65))
-    parts['timpani'] = [e for e in parts['timpani'] if bar_of(e[0]) != 33]
-    parts['timpani'] += [[33 * BAR + i * 24, 33 * BAR + i * 24 + 24, 48, 50 + i * 4] for i in range(16)]
-    parts['drums'] += [[33 * BAR + i * 24, 33 * BAR + i * 24 + 24, 38, 40 + i * 4] for i in range(8, 16)]
-
-    # Slow Start: de intro laag voor laag
-    for k, first in (('bass', 0), ('organ', 0), ('timpani', 2), ('drums', 2), ('stabs', 4)):
-        parts[k] = [e for e in parts[k] if bar_of(e[0]) >= first]
-
-    # stemmen verdelen (DirectSound; PSG-arpeggio's tellen niet mee)
+    # stemmen: het origineel ligt vast (DirectSound-noten daarvan als preset), de toevoegingen vullen aan
+    rel_src = releases('vs_regi')
+    preset = []
+    for i in range(1, 9):
+        prog = next((x.program for x in src.tracks[i] if x.type == 'program_change'), 0)
+        r = rel_src.get(prog, 200)
+        if r is None and prog != 0:
+            continue                                          # PSG telt niet mee
+        for s, e, n, v in T[i]:
+            if i in MUTE_TRACKS and bar_of(s) in QUIET:
+                continue
+            preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
     rel = releases(VG)
-    progs = {'trumpet': TRUMPET, 'organ': ORGAN, 'horn': HORN, 'choir': CHOIR, 'stabs': TRUMPET, 'bass': BASS,
-             'tuba': TUBA, 'timpani': TIMPANI, 'taiko': TAIKO}
-    ds = {k: v for k, v in parts.items() if k not in ('arp1', 'arp2')}
-    order = ['trumpet', 'organ', 'bass', 'drums', 'horn', 'choir', 'tuba', 'timpani', 'stabs', 'taiko']
-    tail = {k: release_ticks(rel.get(p, 200), TPB_OUT, 160) for k, p in progs.items()}
-    for k in ('trumpet', 'horn', 'choir', 'tuba', 'bass', 'organ'):
-        ds[k] = detach(ds[k], tail[k])
-    kept = allocate(ds, order, tail=tail, drum_len=None, drum_parts=('drums',), max_voices=10)
+    progs = {'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'tuba': TUBA, 'taiko': TAIKO, 'roll': TIMPANI}
+    tail = {k: release_ticks(rel.get(p, 200), TPB, 160) for k, p in progs.items()}
+    for k in ('choir', 'tuba'):
+        add[k] = detach(add[k], tail[k])
+    order = ['roll', 'crash', 'choir', 'tuba', 'taiko']
+    kept = allocate(add, order, tail=tail, drum_parts=('crash',), drum_len=TPB, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
     for k in order:
-        if len(kept[k]) < len(ds[k]) * 0.97:
-            print('  %s: %d van %d noten vallen weg (te vol)' % (k, len(ds[k]) - len(kept[k]), len(ds[k])))
-    parts.update(kept)
+        if len(kept[k]) < len(add[k]) * 0.97:
+            print('  %s: %d van %d noten vallen weg (te vol)' % (k, len(add[k]) - len(kept[k]), len(add[k])))
 
-    song = Song(TPB_OUT, 375000)
-    for b, fac in enumerate(SLOW_START):
-        song.tempo(b * BAR, fac)
-    song.tempo(LOOP_START * BAR, 1.0)
-    for b, facs in DIP.items():
-        for i, fac in enumerate(facs):
-            song.tempo(b * BAR + i * (BAR // len(facs)), fac)
-    song.tempo(34 * BAR, 1.0)
-    song.loop = (LOOP_START * BAR, end)
-    layout = [('trumpet', TRUMPET, 110, 0, 64), ('organ', ORGAN, 96, 1, 64), ('horn', HORN, 100, 2, 52),
-              ('choir', CHOIR, 84, 3, 76), ('stabs', TRUMPET, 96, 4, 70), ('bass', BASS, 104, 5, 64),
-              ('tuba', TUBA, 92, 6, 60), ('timpani', TIMPANI, 104, 7, 64), ('taiko', TAIKO, 92, 8, 64),
-              ('drums', DRUMS, 104, 9, 64), ('arp1', SQ1, 44, 10, 44), ('arp2', SQ2, 36, 11, 84)]
-    for k, prog, vol, ch, pan in layout:
-        song.add([e for e in parts[k] if e[0] < end], prog, vol, ch, pan)
-    song.save(OUT, end)
+    out = mido.MidiFile(type=1, ticks_per_beat=TPB)
+    cond = mido.MidiTrack()
+    ev = [(0, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO))]
+    for b, f in SLOW_START.items():
+        ev.append((b * BAR, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
+    ev.append((LOOP_START * BAR, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO)))
+    for b, fs in DIP.items():
+        for i, f in enumerate(fs):
+            ev.append((b * BAR + i * TPB, mido.MetaMessage('set_tempo', tempo=int(BASE_TEMPO / f))))
+    ev.append((32 * BAR, mido.MetaMessage('set_tempo', tempo=BASE_TEMPO)))
+    ev.append((LOOP_START * BAR, mido.MetaMessage('marker', text='[')))
+    ev.append((end, mido.MetaMessage('marker', text=']')))
+    last = 0
+    for t, m in sorted(ev, key=lambda x: (x[0], x[1].type != 'set_tempo')):
+        cond.append(m.copy(time=t - last))
+        last = t
+    out.tracks.append(cond)
+    for i in range(1, 9):
+        out.tracks.append(copy_track(src.tracks[i], i in MUTE_TRACKS))
+    for k, prog, vol, ch, pan in (('choir', CHOIR, 76, 11, 64),
+                                  ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
+                                  ('crash', DRUMS, 100, 15, 64)):
+        out.tracks.append(note_track(kept[k], prog, vol, ch, pan))
+    out.save(OUT)
     print(OUT)
 
 

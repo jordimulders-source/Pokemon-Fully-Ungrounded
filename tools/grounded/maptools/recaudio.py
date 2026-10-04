@@ -34,6 +34,16 @@ for c in (0,1):
             while j+1<len(bad) and bad[j+1]-bad[j]<24: j+=1
             lo=max(0,bad[i]-2); hi=min(len(x)-1,bad[j]+18)
             x[lo:hi+1]=np.linspace(x[lo],x[hi],hi+1-lo).astype(np.int32); fixed+=1; i=j+1
+    # tweede patroon: een korte burst met exacte nullen om en om (>=4 nullen binnen 12 samples) in niet-stille muziek
+    z=(x==0).astype(np.int32); cz=np.convolve(z,np.ones(12,dtype=np.int32),'same')
+    loud=np.convolve(np.abs(x),np.ones(256)/256,'same')>300
+    cand=np.where((cz>=4)&loud)[0]
+    i=0
+    while i<len(cand):
+        j=i
+        while j+1<len(cand) and cand[j+1]-cand[j]<32: j+=1
+        lo=max(0,cand[i]-32); hi=min(len(x)-1,cand[j]+32)
+        x[lo:hi+1]=np.linspace(x[lo],x[hi],hi+1-lo).astype(np.int32); fixed+=1; i=j+1
     left=len(np.where(abs(np.diff(x))>12000)[0])
     if left: print('LET OP: nog %d sprongen in kanaal %d'%(left,c))
 a=np.clip(st,-32768,32767).astype(np.int16).reshape(-1)

@@ -127,6 +127,7 @@
 .include "sound/voicegroups/vs_gym_leader.inc"
 .include "sound/voicegroups/vs_champion.inc"
 .include "sound/voicegroups/vs_regi.inc"
+.include "sound/voicegroups/grounded_regigigas.inc"
 .include "sound/voicegroups/vs_kyogre_groudon.inc" @ duplicate of vs_rayquaza
 .include "sound/voicegroups/vs_rival.inc"
 .include "sound/voicegroups/vs_elite_four.inc"

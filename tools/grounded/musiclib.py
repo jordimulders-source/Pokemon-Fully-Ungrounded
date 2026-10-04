@@ -62,11 +62,11 @@ def detach(ev, gap):
     return out
 
 
-def allocate(parts, order, tail, drum_len=None, drum_parts=(), max_voices=MAX_VOICES):
+def allocate(parts, order, tail, drum_len=None, drum_parts=(), max_voices=MAX_VOICES, preset=()):
     """parts: {naam: noten}; order: namen van hoog naar laag. PSG-sporen hier niet in stoppen (tellen niet mee).
     tail = uitklinktijd in ticks (getal, of {naam: ticks} per spoor); drum_len = hoe lang een drumnoot een kanaal
     bezet houdt."""
-    busy, res = [], {}
+    busy, res = list(preset), {}   # preset: (start, eind) van noten die al vastliggen (bv. het origineel)
     for name in order:
         kept = []
         t = tail.get(name, 0) if isinstance(tail, dict) else tail    # tail mag per partij (dict)

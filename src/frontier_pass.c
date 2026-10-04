@@ -1580,7 +1580,7 @@ static void Task_HandleFrontierMap(u8 taskId)
 }
 
 // Project Grounded: extra zeerijen bovenaan BattleFrontier_OutsideWest (tools/grounded/maptools/spire_tower.py)
-#define SPIRE_WEST_EXTRA_ROWS 24
+#define SPIRE_WEST_EXTRA_ROWS 56
 
 static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
 {

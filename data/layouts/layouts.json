@@ -2755,7 +2755,7 @@
       "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_WEST",
       "name": "BattleFrontier_OutsideWest_Layout",
       "width": 56,
-      "height": 96,
+      "height": 128,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
       "border_filepath": "data/layouts/BattleFrontier_OutsideWest/border.bin",

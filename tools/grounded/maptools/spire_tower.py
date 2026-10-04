@@ -1,18 +1,23 @@
 """Project Grounded: The Spire op het Battle Frontier-eiland (BattleFrontier_OutsideWest).
 
 - De kaart wordt N rijen hoger (bovenaan zee); alle events schuiven N rijen mee, de verbinding met
-  OutsideEast krijgt offset N/-N en de veerboot-warps (19, 67) worden (19, 67+N).
+  OutsideEast krijgt offset N/-N, de veerboot-warps (19, 67) worden (19, 67+N) en
+  SPIRE_WEST_EXTRA_ROWS in src/frontier_pass.c (spelerhoofd op de Frontier-kaart) wordt N.
 - Op de noordrand van het Dome-plein (x 29-37, de oude hekrij) staat The Spire in Frontier-stijl:
   de gevel van de Battle Tower (wit glas, baksteenrood, blauwe ruiten, leien luifel met glazen
   schuifdeur) uit gTileset_BattleFrontierOutsideEast, als slanke spits: een voet van 9 breed met de
   ingang, dan trappen 9 -> 7 -> 5 -> 3 breed (elk korter dan de vorige, met dakrand en oranje
-  sierlijst) en bovenop een lange antennenaald (4 rijen) met rood baken. Smalle kolommen zijn
+  sierlijst). De smalle schacht van 3 breed loopt door tot rij 0 en wordt door de kaartrand
+  afgekapt: geen top, geen dak, geen naald (Jordi: "dat je het einde gewoon niet kan zien").
+  Om de RING_EVERY rijen zit er een oranje sierring om de schacht. N is zo groot dat de camera
+  vanaf geen enkele beloopbare tile de bovenrand ziet; (W+15)*(H+14) moet binnen
+  MAX_MAP_DATA_SIZE (10240, include/fieldmap.h) blijven. Smalle kolommen zijn
   samengesteld uit twee halve Battle Tower-kolommen (pijler/ruit met beide randen). De voet staat op
   het plein (onderste rij = pleinvloer); hek en vlaggen links en rechts ervan blijven staan.
 - Tiles en metatiles van de Battle Tower worden gekopieerd naar vrije plekken van
   gTileset_BattleFrontierOutsideWest (alleen deze kaart gebruikt die tileset). Paletten 0 (General),
   9 en 10 zijn in East en West identiek, dus de kleuren blijven exact die van de Battle Tower.
-- Deur (33, 26): metatile 0x329 met MB_ANIMATED_DOOR, net als de Battle Tower; field_door.c zoekt de
+- Deur (33, N+2): metatile 0x329 met MB_ANIMATED_DOOR, net als de Battle Tower; field_door.c zoekt de
   animatie op metatile-nummer, dus de deur schuift open met de Battle Tower-animatie.
   Warp naar BattleFrontier_SpireLobby.
 
@@ -23,7 +28,7 @@ import io, json, re, struct, subprocess, sys
 from PIL import Image
 
 ORIG = '6744d697'           # commit vóór The Spire-toren
-N = 24                      # extra rijen bovenaan
+N = 56                      # extra rijen bovenaan (max. 58: 71*(72+N+14) <= 10240)
 W, H0 = 56, 72
 H = H0 + N
 TS = 'data/tilesets/secondary/battle_frontier_outside_west/'
@@ -54,9 +59,13 @@ S2 = [0, (1, 2), 7, 8, 9, (14, 15), 16]                   # 7
 S3 = [0, 6, (7, 9), 10, 16]                               # 5
 S4 = [0, (7, 9), 16]                                      # 3
 # (eerste rij, laatste rij) van elke trap; de rij erboven is de dakrand
-SECTIONS = [(S1, 17, BASE - 4), (S2, 12, 15), (S3, 8, 10), (S4, 5, 6)]
-NEEDLE_ROWS = (0, 3)
+# S4 heeft geen dakrand: hij loopt door tot rij 0 (r0 = 0 -> geen band)
+SECTIONS = [(S1, BASE - 10, BASE - 4), (S2, BASE - 15, BASE - 12), (S3, BASE - 19, BASE - 17),
+            (S4, 0, BASE - 21)]
+RING_EVERY = 8              # sierring om de eindeloze schacht, elke 8 rijen
+RING_FIRST = BASE - 26      # eerste ring, 5 rijen boven de bovenste dakrand
 TW = len(S1)
+assert (W + 15) * (H + 14) <= 10240
 
 
 def git(path):
@@ -149,51 +158,20 @@ def roof_band(width):
     return [[(P9, c) if c is not None else None for c in r] for r in rows]
 
 
-def needle(h):
-    """Antennenaald (h px hoog, 1 metatile breed): rood baken, dunne mast die naar onder iets
-    breder wordt, oranje ringen en een voetblok dat op het bovenste dak staat."""
-    px = [[None] * 16 for _ in range(h)]
-    top = 7                                           # onder het baken
-    def hw_at(y):
-        return 1.0 + 2.5 * ((y - top) / (h - 5 - top)) ** 1.6
-    for y in range(h - 4):
-        if y < 5:                                     # baken met gloed
-            hw = [1.0, 2.0, 2.5, 2.5, 2.0][y]
-        elif y < top:
-            hw = 0.5                                  # spits
-        else:
-            hw = hw_at(y)
-        for x in range(16):
-            d = x + 0.5 - 8
-            if abs(d) >= max(hw, 0.5) + (0.5 if hw < 1 else 0):
-                continue
-            e = hw - abs(d)
-            if y < 5:
-                c = WHITE if (y == 1 and -1.5 < d < 0) else ORANGE if y < 2 else RED
-                if e < 1:
-                    c = BRICK2
-            elif y < top:
-                c = GRAY
-            else:
-                c = LAV if d < -0.5 else GRAY if d < 1.5 else SLATE
-                if -1.5 < d < 0 and hw > 2:
-                    c = WHITE
-                if e < 1:
-                    c = DARK
-            px[y][x] = c
-    # ringen (oranje sierlijsten) op de mast
-    for ry in (20, 34, 47):
-        hw = hw_at(ry) + 1
-        for x in range(16):
-            d = x + 0.5 - 8
-            if abs(d) < hw:
-                px[ry][x] = DARK if hw - abs(d) < 1 else ORANGE
-                px[ry + 1][x] = DARK if hw - abs(d) < 1 else RED
-    # voet van de naald: blokje dat op het dak staat
-    for y in range(h - 4, h):
-        for x in range(4, 12):
-            px[y][x] = DARK if x in (4, 11) or y in (h - 4, h - 1) else (LAV if x < 7 else GRAY if x < 9 else SLATE)
-    return [[(P9, c) if c is not None else None for c in r] for r in px]
+def ring(width, over=3):
+    """Sierring om de schacht (16 px hoog): bovenste 8 px blijven gevel, onderste 8 px een oranje
+    lijst die `over` px aan beide kanten uitsteekt (zelfde kleuren als de dakrand)."""
+    w = width * 16 + 2 * over
+    cols = [WHITE, ORANGE, ORANGE, RED, RED, BRICK, BRICK2, NAVY]
+    rows = [[None] * w for _ in range(8)] + [[c] * w for c in cols]
+    for y in range(8, 16):
+        rows[y][0] = rows[y][w - 1] = DARK
+        if 9 <= y <= 14:
+            rows[y][1] = WHITE if y <= 10 else rows[y][1]
+            rows[y][w - 2] = BRICK2
+    rows[8][0] = rows[8][w - 1] = None
+    rows[15][0] = rows[15][w - 1] = None
+    return [[(P9, c) if c is not None else None for c in r] for r in rows]
 
 
 def tower_pixels(east):
@@ -213,6 +191,14 @@ def tower_pixels(east):
             erow = 11 - ((BASE - 4 - r) % 2)          # baksteen wisselt per rij, sluit aan op de voet
             for i, c in enumerate(cols):
                 paste(east.top(c, erow), off + i, r)
+        if r0 == 0:                                    # eindeloze schacht: ringen, geen dak
+            rg = ring(len(cols))
+            for r in range(RING_FIRST, -1, -RING_EVERY):
+                for y in range(16):
+                    for x, v in enumerate(rg[y]):
+                        if v is not None:
+                            img[r * 16 + y][off * 16 - 3 + x] = v
+            continue
         band = roof_band(len(cols))
         for y in range(16):
             for x in range(len(cols) * 16):
@@ -220,12 +206,6 @@ def tower_pixels(east):
     for r in range(4):                                 # voet: Battle Tower rij 12-15
         for i, c in enumerate(S1):
             paste(east.top(c, 12 + r), i, BASE - 3 + r)
-    nh = (NEEDLE_ROWS[1] - NEEDLE_ROWS[0] + 1) * 16
-    nd = needle(nh)
-    for y in range(nh):
-        for x in range(16):
-            if nd[y][x] is not None:
-                img[NEEDLE_ROWS[0] * 16 + y][(TW // 2) * 16 + x] = nd[y][x]
     return img
 
 
@@ -279,6 +259,7 @@ def build():
     # een paar rotsen in zee (2x2, zoals op de rest van de kaart)
     rock = [orig_map[0 * W + 5], orig_map[0 * W + 6], orig_map[1 * W + 5], orig_map[1 * W + 6]]
     for rx, ry in ((6, 6), (19, 13), (47, 4), (20, 20), (46, 16), (11, 19)):
+        ry += N - 24                                  # zelfde plek t.o.v. het plein als bij N = 24
         grid[ry][rx], grid[ry][rx + 1], grid[ry + 1][rx], grid[ry + 1][rx + 1] = rock
 
     pix = tower_pixels(east)
@@ -361,7 +342,8 @@ def build():
     open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs))
     tiles_img.save(TS + 'tiles.png')
     # palet 10 terug naar het origineel (de vorige versie had er een eigen obsidiaanpalet in)
-    open(TS + 'palettes/10.pal', 'wb').write(git(TS + 'palettes/10.pal'))
+    # .pal staat als CRLF in de checkout (.gitattributes); git show geeft LF
+    open(TS + 'palettes/10.pal', 'wb').write(git(TS + 'palettes/10.pal').replace(b'\r\n', b'\n').replace(b'\n', b'\r\n'))
     return pix
 
 
@@ -393,6 +375,12 @@ def metadata():
         s = open(f).read()
         s = re.sub(r'warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, \d+', 'warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, %d' % (67 + N), s)
         open(f, 'w').write(s)
+
+    # Frontier Pass-kaart: spelerhoofd rekent de extra rijen eraf
+    f = 'src/frontier_pass.c'
+    s = open(f).read()
+    s = re.sub(r'#define SPIRE_WEST_EXTRA_ROWS \d+', '#define SPIRE_WEST_EXTRA_ROWS %d' % N, s)
+    open(f, 'w').write(s)
     return warp_id
 
 

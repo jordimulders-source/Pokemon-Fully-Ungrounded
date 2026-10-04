@@ -8617,15 +8617,17 @@ static void Task_Zarude(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Zarude);
 }
 
-// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): de Poison Chain. Paarse, gloeiende schakels haken
-// een voor een in elkaar tot een ketting in een boog over het beeld, dat donker-paars wordt; dan een stilstaand beeld
-// (de gloed pulseert licht via het palet), kort vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Poison Chain zoals op de artwork. Dikke, glanzende
+// donut-schakels (om en om van voren en op hun kant) verschijnen om de 5 frames vanaf de "nek" linksonder en lopen
+// schuin naar rechtsboven, eindigend in een open ring; het beeld wordt donker-paars. Dan een stilstaand beeld, kort
+// vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
 #define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
-#define POISONCHAIN_HOLD  18
+#define POISONCHAIN_STEP  5
+#define POISONCHAIN_HOLD  20
 
 static bool8 RTPoisonChain_Update(struct Task *task)
 {
-    s32 t = task->tRtTimer, n = min(((t * 9) >> 5) + 1, POISONCHAIN_LINKS), build = ((POISONCHAIN_LINKS - 1) * 32 + 8) / 9;
+    s32 t = task->tRtTimer, n = min(((t * 52) >> 8) + 1, POISONCHAIN_LINKS); // (t * 52) >> 8 = t / POISONCHAIN_STEP
 
     // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen)
     if (n != task->tRtA)
@@ -8643,12 +8645,12 @@ static bool8 RTPoisonChain_Update(struct Task *task)
             PlaySE(SE_M_TOXIC);
     }
     BlendPalettes(RT_SCENE_PALETTES, min(t >> 1, 14), RGB(2, 0, 4));
-    return t >= build + POISONCHAIN_HOLD;
+    return t >= (POISONCHAIN_LINKS - 1) * POISONCHAIN_STEP + POISONCHAIN_HOLD;
 }
 
 static const struct RouteTransition sRT_PoisonChain =
 {
-    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 4, 6, 0, NULL, RTPoisonChain_Update, NULL
+    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, NULL, RTPoisonChain_Update, NULL
 };
 
 static void Task_PoisonChain(u8 taskId)

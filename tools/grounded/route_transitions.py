@@ -1829,115 +1829,125 @@ ZSPAL[12] = (6, 6, 5)                                           # tanden
 save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 
-# ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): de
-# Poison Chain. Paarse, gloeiende ovale schakels, om en om plat en op hun kant, haken in elkaar en vormen een ketting
-# die in een boog over het (donker-paarse) beeld loopt; de schakels komen kort na elkaar op en blijven dan staan.
+# ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
+# Poison Chain zoals op de artwork: dikke, glanzende donut-schakels (om en om van voren met een klein rond gat en op hun
+# kant als dikke ovale staaf), in elkaar gehaakt, fel magenta bij de "nek" linksonder en donkerder paars naar het
+# uiteinde rechtsboven, waar een open ring (haak) hangt. De schakels komen kort na elkaar op, daarna een stilstaand beeld.
 # route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
-# flip-bits) met de eerste k schakels. Tiles ook gespiegeld ontdubbeld. 4 paletten: de gloed pulseert licht.
+# flip-bits) met de eerste k schakels. Tiles ook gespiegeld ontdubbeld.
 import numpy as np
 from scipy import ndimage
-from PIL import Image
-PC_BASE = [(0, 0, 0), (3, 0, 6), (6, 0, 10), (11, 1, 17), (17, 3, 24), (9, 1, 15), (15, 3, 22), (21, 5, 28),
-           (26, 9, 31), (29, 16, 31), (31, 25, 31)]
-PC_SS = 3                                                     # supersampling
-
-
-def pc_curve(s):
-    """kwadratische bezier: linksonder buiten beeld -> boog -> rechtsboven buiten beeld"""
-    p0, p1, p2 = np.array((-35.0, 170.0)), np.array((75.0, 40.0)), np.array((280.0, 5.0))
-    return (1 - s) ** 2 * p0 + 2 * (1 - s) * s * p1 + s * s * p2
-
-
-ss = np.linspace(0, 1, 4001)
-pts = np.array([pc_curve(s) for s in ss])
-arc = np.concatenate([[0], np.cumsum(np.hypot(*np.diff(pts, axis=0).T))])
-PC_PITCH, PC_LEN, PC_WID, PC_TH = 40.0, 60.0, 36.0, 8.0
-links = []
-d = 8.0
-while d < arc[-1] - 4:
-    i = np.searchsorted(arc, d)
-    a, b = pts[max(0, i - 3)], pts[min(len(pts) - 1, i + 3)]
-    t = (b - a) / np.hypot(*(b - a))
-    links.append((pts[i], t))
-    d += PC_PITCH
-PC_N = len(links)
+PC_PAL = [(0, 0, 0), (3, 0, 5), (5, 1, 8), (9, 2, 12),                         # 1 omlijning, 2-3 zachte gloed
+          (6, 2, 8), (10, 4, 12), (14, 6, 15), (18, 8, 17), (22, 9, 19), (25, 11, 20), # 4-13 schakels: donker paars
+          (28, 14, 23), (30, 19, 26), (31, 24, 29), (31, 30, 31)]                   # -> magenta -> roze glans
+PC_SS = 3
+PC_END, PC_DIR = np.array((222.0, 22.0)), np.array((210.0, -136.0))   # haak rechtsboven, richting van de ketting
+PC_PITCH = 40.0
+PC_RO, PC_RI = 26.0, 8.0                     # donut van voren: buiten- en gatstraal
+PC_BAR_L, PC_BAR_W = PC_PITCH - PC_RI - 3, 12.5               # staaf op zijn kant: halve lengte, halve dikte
+PC_HOOK_RO, PC_HOOK_RI = 20.0, 10.5            # open ring aan het eind
+PC_ELEMS = 7                                  # 3 donuts, 3 staven en de haak
+axis = PC_DIR / np.hypot(*PC_DIR)
+PC_START = PC_END - axis * PC_PITCH * (PC_ELEMS - 1)
+centers = [PC_START + axis * PC_PITCH * k for k in range(PC_ELEMS)]
+PC_N = PC_ELEMS
 
 H, W = 160 * PC_SS, 240 * PC_SS
 yy, xx = np.mgrid[0:H, 0:W]
 X, Y = (xx + 0.5) / PC_SS, (yy + 0.5) / PC_SS
-LIGHT = np.array((-0.6, -0.8))                                 # licht van linksboven
+LV = np.array((-0.55, -0.65, 0.75)); LV /= np.linalg.norm(LV)   # licht linksboven-voor
 
 
-def pc_link(k):
-    """(masker, helderheid 0..1, omlijning) van schakel k op supersample-resolutie"""
-    (cx, cy), (tx, ty) = links[k]
-    u = (X - cx) * tx + (Y - cy) * ty                          # langs de ketting
-    v = -(X - cx) * ty + (Y - cy) * tx                         # dwars
-    if k % 2 == 0:
-        # plat: ovale ring (stadionvorm), buis van dikte PC_TH
-        b = PC_WID / 2
-        r = b - PC_TH / 2
-        half = PC_LEN / 2 - b
-        du = np.clip(np.abs(u) - half, 0, None)
-        dist = np.hypot(du, v)
-        q = dist - r
-        inside = np.abs(q) <= PC_TH / 2
-        prof = q / (PC_TH / 2)
-        w = PC_TH / 2
+def pc_shade(nx, ny, nz):
+    lam = np.clip(nx * LV[0] + ny * LV[1] + nz * LV[2], 0, 1)
+    spec = np.clip(lam, 0, 1) ** 18
+    return lam, spec
+
+
+def pc_elem(k):
+    """(binnen-masker, kleurindex-float, u langs de ketting) van element k"""
+    cx, cy = centers[k]
+    tx, ty = axis
+    dx, dy = X - cx, Y - cy
+    u = dx * tx + dy * ty
+    v = -dx * ty + dy * tx
+    grad = 1 - k / (PC_ELEMS - 1)                       # 1 bij de nek, 0 aan het eind
+    if k == PC_ELEMS - 1 or k % 2 == 0:
+        ro, ri = (PC_HOOK_RO, PC_HOOK_RI) if k == PC_ELEMS - 1 else (PC_RO, PC_RI)
+        R, r = (ro + ri) / 2, (ro - ri) / 2
+        rho = np.hypot(dx, dy)
+        q = (rho - R) / r
+        inside = np.abs(q) <= 1
+        nz = np.sqrt(np.clip(1 - q * q, 0, 1))
+        nx, ny = q * dx / np.maximum(rho, 1e-6), q * dy / np.maximum(rho, 1e-6)
+        if k == PC_ELEMS - 1:
+            # open ring: opening schuin rechtsonder, met ronde uiteinden
+            ang = np.arctan2(v, u)
+            gap0, gap1 = 0.15, 1.05                       # hoekbereik (rad) van de opening
+            inside &= ~((ang > gap0) & (ang < gap1))
+            for a in (gap0, gap1):
+                ex, ey = R * np.cos(a), R * np.sin(a)
+                ddx, ddy = u - ex, v - ey
+                dd = np.hypot(ddx, ddy)
+                cap = dd <= r
+                cz = np.sqrt(np.clip(1 - (dd / r) ** 2, 0, 1))
+                cnx = (ddx * tx - ddy * ty) / r
+                cny = (ddx * ty + ddy * tx) / r
+                nx, ny, nz = np.where(cap, cnx, nx), np.where(cap, cny, ny), np.where(cap, cz, nz)
+                inside |= cap
     else:
-        # op zijn kant: smal en langwerpig, met een donkere spleet tussen de twee draden
-        w = PC_TH * 0.95
-        half = PC_LEN / 2 - w
-        du = np.clip(np.abs(u) - half, 0, None)
+        half = PC_BAR_L - PC_BAR_W
+        du = np.clip(np.abs(u) - half, 0, None) * np.sign(u)
         dist = np.hypot(du, v)
-        inside = dist <= w
-        q = dist
-        prof = dist / w
-    nx = (np.sign(u) * du * tx - v * ty) / np.maximum(dist, 1e-6)
-    ny = (np.sign(u) * du * ty + v * tx) / np.maximum(dist, 1e-6)
-    lam = (nx * LIGHT[0] + ny * LIGHT[1]) * np.clip(prof, -1, 1)
-    bright = 0.3 + 0.45 * lam + 0.35 * np.sqrt(np.clip(1 - prof ** 2, 0, 1))
-    if k % 2 == 1:
-        slot = (np.abs(u) < half - 1) & (np.abs(v) < 0.9)
-        bright = np.where(slot, 0.1, bright)
-        outline = dist <= w + 1.2
-    else:
-        outline = np.abs(q) <= w + 1.2
-    return inside, np.clip(bright, 0, 1), outline
+        inside = dist <= PC_BAR_W
+        s = dist / PC_BAR_W
+        nz = np.sqrt(np.clip(1 - s * s, 0, 1))
+        nx = (du * tx - v * ty) / PC_BAR_W
+        ny = (du * ty + v * tx) / PC_BAR_W
+    lam, spec = pc_shade(nx, ny, nz)
+    val = 4 + lam * 5.0 + grad * 3.0 + spec * 3
+    return inside, np.clip(val, 4, 13.49), u
 
 
-PC_LINKS = [pc_link(k) for k in range(PC_N)]
+PC_E = [pc_elem(k) for k in range(PC_ELEMS)]
 
 
 def pc_render(n):
-    """beeld (160x240, paletindex) met de eerste n schakels"""
+    """beeld (160x240, paletindex) met de eerste n elementen"""
     body = np.zeros((H, W), bool)
-    br = np.zeros((H, W))
+    val = np.zeros((H, W))
     ol = np.zeros((H, W), bool)
-    # platte ringen eerst, de schakels op hun kant eroverheen (die haken door de ringen)
-    for k in [k for k in range(n) if k % 2 == 0] + [k for k in range(n) if k % 2 == 1]:
-        ins, b, o = PC_LINKS[k]
-        body &= ~(o & ~ins)                                    # rand van de bovenste schakel snijdt de onderste
-        ol |= o & ~ins
-        br = np.where(ins, b, br)
-        body |= ins
-        ol &= ~body
+
+    def paint(mask):
+        nonlocal body, val, ol
+        ring = ndimage.binary_dilation(mask, iterations=PC_SS * 1 + 1) & ~mask
+        body &= ~ring                       # omlijning van het bovenste stuk snijdt in wat eronder ligt
+        ol |= ring
+        ol &= ~mask
+        body |= mask
+
+    # donuts eerst, de staven erover: hun ronde uiteinden liggen op de rand van de donuts, tot vlak voor het gat
+    order = [k for k in range(n) if k % 2 == 0 or k == PC_ELEMS - 1] + \
+            [k for k in range(n) if k % 2 == 1 and k != PC_ELEMS - 1]
+    for k in order:
+        ins, vv, u = PC_E[k]
+        paint(ins)
+        val = np.where(ins, vv, val)
 
     def down(m):
         return m.reshape(160, PC_SS, 240, PC_SS).mean(axis=(1, 3))
     bodyf = down(body.astype(float))
-    brf = down(np.where(body, br, 0)) / np.maximum(bodyf, 1e-6)
+    valf = down(np.where(body, val, 0)) / np.maximum(bodyf, 1e-6)
     olf = down(ol.astype(float))
     img = np.zeros((160, 240), np.uint8)
     solid = bodyf >= 0.5
-    edge = (~solid) & (olf >= 0.3)
+    edge = (~solid) & (olf >= 0.25)
     dist = ndimage.distance_transform_edt(~(solid | edge))
-    img[(dist > 0) & (dist <= 9)] = 2
-    img[(dist > 0) & (dist <= 5.5)] = 3
-    img[(dist > 0) & (dist <= 2.5)] = 4
+    outside = ~ndimage.binary_fill_holes(solid | edge)      # gloed alleen buitenom, niet in de gaten
+    img[outside & (dist <= 4.5)] = 2
+    img[outside & (dist <= 2)] = 3
     img[edge] = 1
-    lv = np.clip((brf * 6).astype(int), 0, 5)
-    img[solid] = 5 + lv[solid]
+    img[solid] = np.rint(valf[solid]).astype(np.uint8)
     return img
 
 
@@ -1965,14 +1975,5 @@ for n in range(1, PC_N + 1):
             pc_maps.append(pc_tile_id(tuple(im[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8].flatten())))
 assert len(pc_tiles) < 760, len(pc_tiles)
 open(OUT + 'route_poisonchain_map.bin', 'wb').write(struct.pack('<%dH' % len(pc_maps), *pc_maps))
-pc_pals = []
-for f in range(4):
-    g = [0, 1, 2, 1][f]                                         # gloed: dof, half, fel, half
-    pal = list(PC_BASE)
-    pal[2] = (6 + g, 0, 10 + 2 * g)
-    pal[3] = (11 + 2 * g, 1 + g // 2, 17 + 2 * g)
-    pal[4] = (17 + 2 * g, 3 + g, 24 + 2 * g)
-    pal[10] = (31, 25 + g * 2, 31)
-    pc_pals.append(pad(pal))
-save('poisonchain', pc_tiles, pc_pals)
+save('poisonchain', pc_tiles, [pad(PC_PAL)])
 print('poisonchain', PC_N, 'schakels')

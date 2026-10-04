@@ -458,7 +458,8 @@
     "RegidragoCave",
     "RegigigasTemple",
     "FieryPath_HeatranLair",
-    "MeteorSpace"
+    "MeteorSpace",
+    "MtPyre_Nightmare"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

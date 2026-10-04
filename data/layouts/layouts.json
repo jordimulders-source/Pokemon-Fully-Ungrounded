@@ -3172,6 +3172,16 @@
       "blockdata_filepath": "data/layouts/MtPyre_Summit/map.bin"
     },
     {
+      "id": "LAYOUT_MT_PYRE_NIGHTMARE",
+      "name": "MtPyre_Nightmare_Layout",
+      "width": 31,
+      "height": 22,
+      "primary_tileset": "gTileset_NightmareGeneral",
+      "secondary_tileset": "gTileset_NightmareFacility",
+      "border_filepath": "data/layouts/MtPyre_Nightmare/border.bin",
+      "blockdata_filepath": "data/layouts/MtPyre_Nightmare/map.bin"
+    },
+    {
       "id": "LAYOUT_SEALED_CHAMBER_INNER_ROOM",
       "name": "SealedChamber_InnerRoom_Layout",
       "width": 21,

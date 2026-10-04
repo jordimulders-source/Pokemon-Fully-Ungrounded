@@ -881,3 +881,114 @@ def surface():
     return tile(f)
 htiles = [lava_tile(0), lava_tile(1), edge(True), edge(False), head(0), head(1), head(2), drops(), surface()]
 save('heatran', htiles, cycle(pad(LAVA), 4, amp=2))
+
+# ------------------------------------------------------------------ Jirachi: een wensster tuimelt fladderend over het
+# beeld en laat een spoor van fonkelingen achter; dan duikt hij draaiend naar het midden en alles kleurt goudwit.
+# BG-tiles: 1-4 fonkelingen (klein/middel/groot/kruis), kleurcyclus = twinkelen. Sprite: de ster met drie wenslabels.
+JPAL = [(0, 0, 0), (31, 31, 31), (31, 30, 18), (31, 26, 8), (26, 20, 4), (14, 20, 31), (8, 12, 26)]
+def twinkle(size, cross):
+    def f(x, y):
+        dx, dy = abs(x - 3.5), abs(y - 3.5)
+        if dx < 1 and dy < 1:
+            return 1
+        if cross and dx + dy < size * 0.6 and (dx < 1 or dy < 1):
+            return 2
+        if (dx < 1 and dy < size) or (dy < 1 and dx < size):
+            return 2 if max(dx, dy) < size - 1.2 else 3
+        return 0
+    return tile(f)
+jtiles = [twinkle(2.2, False), twinkle(3.2, False), twinkle(4.1, False), twinkle(4.1, True)]
+JCYC = []
+for f in range(4):
+    p = list(JPAL)
+    p[1] = [(31, 31, 31), (31, 31, 24), (28, 28, 31), (31, 31, 28)][f]
+    p[2] = [(31, 30, 18), (31, 31, 26), (31, 27, 12), (30, 30, 31)][f]
+    p[3] = [(31, 26, 8), (28, 22, 6), (31, 29, 16), (24, 24, 31)][f]
+    JCYC.append(pad(p))
+save('jirachi', jtiles, JCYC)
+
+# ster-sprite: vijfpuntige gele ster (Jirachi's kop), oranje rand, witte glans, drie blauwe wenslabels aan de bovenste punten
+SPAL_J = pad([(0, 0, 0), (31, 31, 31), (31, 30, 14), (31, 25, 4), (24, 14, 2), (12, 6, 2), (14, 20, 31), (8, 12, 26), (20, 26, 31)])
+si = Image.new('P', (64, 64), 0)
+sd = ImageDraw.Draw(si)
+def star_pts(cx, cy, ro, ri, rot=-90):
+    pts = []
+    for k in range(10):
+        a = math.radians(rot + k * 36)
+        r_ = ro if k % 2 == 0 else ri
+        pts.append((cx + r_ * math.cos(a), cy + r_ * math.sin(a)))
+    return pts
+# wenslabels: drie korte strookjes die van de bovenste drie punten afhangen
+for k in (0, 1, 4):
+    a = math.radians(-90 + k * 72)
+    px, py = 32 + 20 * math.cos(a), 33 + 20 * math.sin(a)
+    sd.polygon([(px - 3, py), (px + 3, py), (px + 4 - 2 * (k == 1), py + 9), (px - 2 - 2 * (k == 4), py + 10)], fill=7)
+    sd.polygon([(px - 2, py + 1), (px + 2, py + 1), (px + 2 - 2 * (k == 1), py + 8), (px - 1 - 2 * (k == 4), py + 8)], fill=6)
+sd.polygon(star_pts(32, 33, 25, 11), fill=5)
+sd.polygon(star_pts(32, 33, 23, 10), fill=4)
+sd.polygon(star_pts(32, 33, 21, 9), fill=3)
+sd.polygon(star_pts(31, 32, 15, 7), fill=2)
+sd.ellipse((25, 24, 31, 30), fill=1)
+sd.point([(23, 22), (24, 21)], fill=1)
+save_sprite('jirachi_star', si, SPAL_J)
+
+# ------------------------------------------------------------------ Darkrai: nachtmerrierook kruipt van boven en onder
+# dicht (als oogleden die zwaar worden), het beeld zakt weg in het donker; dan gaat midden in het zwart één blauw oog
+# open boven een rode, gepunte kraag. BG-tiles: 1 zwart, 2-4 rookrand (onder), 5-7 rookrand (boven), 8-9 losse slierten.
+DPAL = [(0, 0, 0), (1, 0, 3), (5, 2, 9), (10, 4, 16), (16, 8, 22), (3, 1, 6)]
+dr = random.Random(491)
+def smoke_edge(up, seed):
+    rr = random.Random(seed)
+    ph = rr.random() * 6
+    def f(x, y):
+        yy = 7 - y if up else y                       # afstand vanaf de open kant
+        top = 3 + int(2.2 * math.sin(x * 0.85 + ph)) + (1 if rr.random() < 0.15 else 0)
+        if yy < top - 1:
+            return 0
+        if yy == top - 1:
+            return 4 if rr.random() < 0.5 else 3
+        if yy == top:
+            return 3
+        return 2 if yy < top + 2 else 1
+    return tile(f)
+def wisp(seed):
+    rr = random.Random(seed)
+    def f(x, y):
+        d = abs(y - 4 - 1.8 * math.sin(x * 0.9 + seed))
+        return 3 if d < 0.8 else (2 if d < 1.6 and rr.random() < 0.7 else 0)
+    return tile(f)
+dtiles = [tile(lambda x, y: 1)] + [smoke_edge(False, 10 + k) for k in range(3)] + \
+         [smoke_edge(True, 20 + k) for k in range(3)] + [wisp(3), wisp(7)]
+DCYC = []
+for f in range(4):
+    p = list(DPAL)
+    p[3] = [(10, 4, 16), (12, 5, 18), (11, 4, 17), (9, 3, 15)][f]
+    p[4] = [(16, 8, 22), (19, 10, 25), (14, 7, 20), (17, 9, 24)][f]
+    DCYC.append(pad(p))
+save('darkrai', dtiles, DCYC)
+
+# oog-sprite: amandelvormig blauw oog met spleetpupil onder een witte haarpluk, met daaronder de rode kraag
+EPAL = pad([(0, 0, 0), (2, 1, 4), (31, 31, 31), (20, 22, 26), (6, 24, 31), (2, 14, 24), (30, 4, 6), (18, 1, 3), (31, 14, 12), (1, 1, 1)])
+ei = Image.new('P', (64, 64), 0)
+ed = ImageDraw.Draw(ei)
+# rode kraag: een waaier van punten onder het oog
+for k in range(-3, 4):
+    a = math.radians(90 + k * 22)
+    tx, ty = 32 + 30 * math.cos(a) * 1.05, 34 + 26 * math.sin(a)
+    bx = 32 + 12 * math.cos(a)
+    by = 34 + 10 * math.sin(a)
+    perp = (math.cos(a + math.pi / 2) * 6, math.sin(a + math.pi / 2) * 6)
+    ed.polygon([(bx - perp[0], by - perp[1]), (tx, ty), (bx + perp[0], by + perp[1])], fill=7)
+    ed.polygon([(bx - perp[0] * 0.6, by - perp[1] * 0.6), (tx - math.cos(a) * 3, ty - math.sin(a) * 3), (bx + perp[0] * 0.4, by + perp[1] * 0.4)], fill=6)
+ed.ellipse((12, 20, 52, 46), fill=1)                         # zwarte kop achter het oog
+# witte haarpluk die vanaf de kruin schuin naar rechtsboven waait
+ed.polygon([(12, 30), (16, 20), (28, 13), (44, 9), (62, 2), (54, 14), (40, 20), (24, 24)], fill=3)
+ed.polygon([(15, 28), (19, 20), (29, 15), (44, 11), (57, 5), (51, 13), (39, 18), (24, 22)], fill=2)
+# oog
+eye = [(18, 34), (24, 29), (32, 27), (40, 29), (46, 33), (40, 38), (32, 40), (24, 38)]
+ed.polygon(eye, fill=9)
+ed.polygon([(20, 34), (25, 30), (32, 28), (39, 30), (44, 33), (39, 37), (32, 38), (25, 37)], fill=5)
+ed.ellipse((25, 29, 39, 38), fill=4)
+ed.rectangle((31, 29, 33, 38), fill=9)                       # spleetpupil
+ed.point([(28, 31), (29, 31), (28, 32)], fill=2)             # glinstering
+save_sprite('darkrai_eye', ei, EPAL)

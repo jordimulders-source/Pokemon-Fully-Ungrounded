@@ -445,6 +445,7 @@ gStdScripts_End::
 	.include "data/maps/RegidragoCave/scripts.inc"
 	.include "data/maps/RegigigasTemple/scripts.inc"
 	.include "data/maps/FieryPath_HeatranLair/scripts.inc"
+	.include "data/maps/MtPyre_Nightmare/scripts.inc"
 	.include "data/maps/MeteorSpace/scripts.inc"
 	.include "data/maps/RegielekiCave/scripts.inc"
 	.include "data/maps/Underwater_Route134/scripts.inc"

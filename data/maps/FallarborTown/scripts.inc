@@ -1,9 +1,11 @@
 FallarborTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, FallarborTown_OnResume
 	.byte 0
 
 FallarborTown_OnTransition:
 	setflag FLAG_VISITED_FALLARBOR_TOWN
+	setflag FLAG_HIDE_FALLARBOR_JIRACHI
 	setvar VAR_CONTEST_HALL_STATE, 0
 	clearflag FLAG_CONTEST_SKETCH_CREATED
 	end
@@ -17,6 +19,7 @@ FallarborTown_EventScript_ExpertM::
 	end
 
 FallarborTown_EventScript_ExpertMNormal::
+	goto_if_set FLAG_SYS_GAME_CLEAR, FallarborTown_EventScript_ExpertMWishHint
 	msgbox FallarborTown_Text_RegionKnownForMeteors, MSGBOX_DEFAULT
 	release
 	end
@@ -92,3 +95,112 @@ FallarborTown_Text_MoveTutorSign:
 	.string "“New moves taught to POKéMON. No\l"
 	.string "refunds.”$"
 
+
+@ Project Grounded: Jirachi-wensevent. Post-game, alleen 's nachts: in de oude meteorietkrater linksonder (2,15) gaan
+@ staan en een wens doen. Jirachi daalt uit de lucht neer (lv 70). VAR_NIGHT_LEGEND_STATE = 1 zet de trigger aan.
+FallarborTown_OnResume:
+	setvar VAR_NIGHT_LEGEND_STATE, 0
+	goto_if_unset FLAG_SYS_GAME_CLEAR, FallarborTown_EventScript_NoWishTonight
+	goto_if_set FLAG_DEFEATED_JIRACHI, FallarborTown_EventScript_NoWishTonight
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_EventScript_NoWishTonight
+	setvar VAR_NIGHT_LEGEND_STATE, 1
+FallarborTown_EventScript_NoWishTonight:
+	end
+
+FallarborTown_EventScript_ExpertMWishHint::
+	msgbox FallarborTown_Text_WishingCraterHint, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_EventScript_WishingCrater::
+	lockall
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox FallarborTown_Text_MakeAWish, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_MOONLIGHT
+	clearflag FLAG_HIDE_FALLARBOR_JIRACHI
+	addobject LOCALID_FALLARBOR_JIRACHI
+	applymovement LOCALID_FALLARBOR_JIRACHI, FallarborTown_Movement_JirachiDescends
+	waitmovement 0
+	playse SE_SHINY
+	waitse
+	goto FallarborTown_EventScript_JirachiBattle
+	end
+
+FallarborTown_EventScript_Jirachi::
+	lockall
+	faceplayer
+	goto FallarborTown_EventScript_JirachiBattle
+	end
+
+FallarborTown_EventScript_JirachiBattle::
+	msgbox FallarborTown_Text_JirachiAppears, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FallarborTown_EventScript_JirachiFliesOff
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FallarborTown_EventScript_JirachiFliesOff
+	setflag FLAG_DEFEATED_JIRACHI
+	setvar VAR_NIGHT_LEGEND_STATE, 0
+	removeobject LOCALID_FALLARBOR_JIRACHI
+	setflag FLAG_HIDE_FALLARBOR_JIRACHI
+	releaseall
+	end
+
+FallarborTown_EventScript_JirachiFliesOff::
+	applymovement LOCALID_FALLARBOR_JIRACHI, FallarborTown_Movement_JirachiAscends
+	waitmovement 0
+	removeobject LOCALID_FALLARBOR_JIRACHI
+	setflag FLAG_HIDE_FALLARBOR_JIRACHI
+	msgbox FallarborTown_Text_JirachiFlewOff, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FallarborTown_Movement_JirachiDescends:
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	step_end
+
+FallarborTown_Movement_JirachiAscends:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+FallarborTown_Text_WishingCraterHint:
+	.string "See that old crater by COZMO's house?\n"
+	.string "A meteorite made it. Ages ago.\p"
+	.string "They say if you stand in it at night\n"
+	.string "and make a wish, something answers.\p"
+	.string "I wished for hair. Something answered.\n"
+	.string "It said no.$"
+
+FallarborTown_Text_MakeAWish:
+	.string "The stars are out above the old\n"
+	.string "meteorite crater.\p"
+	.string "{PLAYER} closes their eyes and makes\n"
+	.string "a wish.\p"
+	.string "… … …\p"
+	.string "Something small and shiny is falling\n"
+	.string "out of the sky. Straight at you.$"
+
+FallarborTown_Text_JirachiAppears:
+	.string "Jiraaa!\p"
+	.string "It has three paper tags on its head.\n"
+	.string "One of them is your wish.\p"
+	.string "It looks like it wants to fight about\n"
+	.string "it first.$"
+
+FallarborTown_Text_JirachiFlewOff:
+	.string "JIRACHI drifted back up into the night\n"
+	.string "sky, taking your wish with it.\p"
+	.string "Maybe wish a little harder next time.$"

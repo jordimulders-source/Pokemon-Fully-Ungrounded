@@ -391,6 +391,8 @@ extern const u8 Debug_EventScript_Legend_Latios[];
 extern const u8 Debug_EventScript_Legend_Lugia[];
 extern const u8 Debug_EventScript_Legend_HoOh[];
 extern const u8 Debug_EventScript_Legend_Heatran[];
+extern const u8 Debug_EventScript_Legend_Jirachi[];
+extern const u8 Debug_EventScript_Legend_Darkrai[];
 extern const u8 Debug_EventScript_WildFromMap[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
@@ -581,6 +583,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
     { COMPOUND_STRING("Lugia"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Lugia },
     { COMPOUND_STRING("Ho-Oh"), DebugAction_ExecuteScript, Debug_EventScript_Legend_HoOh },
     { COMPOUND_STRING("Heatran"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Heatran },
+    { COMPOUND_STRING("Jirachi"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Jirachi },
+    { COMPOUND_STRING("Darkrai"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Darkrai },
     { NULL }
 };
 

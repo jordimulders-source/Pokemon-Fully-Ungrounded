@@ -525,6 +525,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, mythical-muziek (zoals Mew)
+        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_VS_MEW);
+        break;
+    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
+        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

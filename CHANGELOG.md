@@ -16354,3 +16354,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Toxic Chain:** het eindstuk is nu een halve schedel. Het is een ronde ring met aan de onderkant twee brede tanden en een donkere spleet ertussen.
 - **Wally 1–5:** in de tweede frase speelt nu een B van een halve tel (G-A-F#-B-A-G), zoals in de tab die Jordi vond. De bron had daar een korte E met een voorslag-B. Het ritme blijft gelijk.
 - Tweede Wally-bron toegevoegd als referentie: `sound/songs/grounded_src/wally_battle_ss17.mid`.
+
+### [v.0.9.35] - Toxic Chain v7
+- Het eindstuk van de ketting heeft twee brede tanden die ±38° schuin uit elkaar waaieren, met een brede U-inkeping ertussen. Ze wijzen weg van de ketting (naar rechts en rechtsonder), zoals bij Okidogi.
+- Bron voor Dave's nieuwe thema toegevoegd: `sound/songs/grounded_src/freed_from_desire.mid` (Gala, "Freed From Desire").

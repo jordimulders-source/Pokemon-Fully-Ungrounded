@@ -124,3 +124,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   tegelijk (unisono-dubbeling mag); haal ook legato-overlap van 1-2 ticks in het melodiespoor weg.
 - Opname-glitch (mGBA): een venster met >= 4 exacte nullen binnen 12 samples terwijl de omgeving niet stil is;
   overbruggen (±32 samples, lineair). Dave: één bij 11,5 s.
+- Dave ronde 3 (Jordi: "begin met de tududu-tututu zonder beat, één drumslag, dan de zang; het origineel is perfect"):
+  begin zoals het nummer begint (bronmaat 2-4: riff twee keer solo), dan het couplet met volle begeleiding. Couplet 2
+  (53-60) = couplet 1 (5-12) met alle instrumenten en een kick + crash op de eerste tel: zo blijft alles uit de bron.
+  Let bij zo'n sprong op het ritme van de riff (riffmaat / lege maat om en om): 4 -> 53 klopt omdat 52 -> 53 zo is.
+- audiocheck meldt een "constante toon" in een nummer met een solo-intro: de stilte tussen de riffs maakt de mediaan
+  klein. Controleer eerst of de stille stukken echt 0 zijn (Dave: ja, 77 Hz = de bas, geen bromtoon).

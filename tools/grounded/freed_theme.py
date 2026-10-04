@@ -5,8 +5,11 @@
 Volgt de bron-MIDI 1-op-1 (sound/songs/grounded_src/freed_from_desire.mid, D-klein): één aaneengesloten stuk in de
 originele volgorde, niets herschikt (Jordi, ronde 2: "geen remix"). Alleen instrumenten gemapt naar de GBA, drums
 omgezet, akkoorden uitgedund en een stemverdeler.
-  bronmaat 49-52  intro: de orgel-riff met bas en beat (7,5 s)
+  bronmaat 2-4    intro zoals het nummer begint: de "tududu-tututu"-riff (orgel) twee keer solo, zonder beat (5,6 s)
   bronmaat 53-85  loop: couplet 2 -> "want more and more" -> refrein -> "na na na" (33 maten, 61,9 s)
+Couplet 2 is hetzelfde couplet als couplet 1 (bronmaat 5-12, zelfde zang en riff) maar met de volle begeleiding;
+het begint met één drumslag (kick + crash) en dan de zang, zoals Jordi het wil (ronde 3). De riff loopt door in hetzelfde
+ritme: bronmaat 4 (riff) -> 53 (lege riffmaat, opmaat zang) is in de bron 52 -> 53.
 De loop springt van bronmaat 85 (C-akkoord, einde "na na na") terug naar 53 (D-klein, riff), net als 37 -> 38 in het
 nummer. Enige ingreep: de opmaat-E's in maat 85 (die in het nummer naar de a-capella-herhaling leiden) vallen weg,
 zoals maat 37 eindigt.
@@ -24,7 +27,9 @@ OUT = 'sound/songs/midi/mus_grounded_vs_dave.mid'
 VG = 'sound/voicegroups/grounded_dave.inc'
 TPB, BAR, BEAT = 240, 960, 240
 BPM = 128
-FIRST, LOOP, END = 49, 53, 86            # bronmaten: intro 49-52, loop 53-85
+INTRO = (2, 5)                           # bronmaten 2-4: riff solo
+FIRST, LOOP, END = 53, 53, 86            # bronmaten: loop 53-85
+OFF = (INTRO[1] - INTRO[0]) * BAR        # de loop begint na de intro
 TRUMPET, ORGAN, PIANO, SYNTH_BASS, STRINGS, SQ_LEAD, SQ_PLUCK = 56, 17, 2, 38, 50, 80, 81
 # drums (rs_drumset): echte lengtes, de bron heeft overal 2 ticks. 28/70 vallen buiten de kit, 44/51 zijn PSG
 # (44 = gesloten hihat onder de kick: weg, anders te vol), 49 -> crash 57. Tamboerijn alleen op de shuffle.
@@ -68,10 +73,10 @@ def build():
 
     def cut(ev):
         """Bronmaten FIRST..END-1, naar tick 0 geschoven; noten die over het einde lopen afkappen."""
-        return [[s - s0, min(e, s1) - s0, n, v] for s, e, n, v in ev if s0 <= s < s1]
+        return [[s - s0 + OFF, min(e, s1) - s0 + OFF, n, v] for s, e, n, v in ev if s0 <= s < s1]
 
     lead = cut(T[7])
-    lead = [e for e in lead if not (e[0] >= (85 - FIRST) * BAR and e[2] == 76)]   # opmaat-E's in maat 85 (zie boven)
+    lead = [e for e in lead if not (e[0] >= (85 - FIRST) * BAR + OFF and e[2] == 76)]   # opmaat-E's in maat 85 (zie boven)
     lead.sort()
     for a, nxt in zip(lead, lead[1:]):                    # één stem: legato-overlap van 1-2 ticks weghalen
         a[1] = min(a[1], nxt[0])
@@ -85,6 +90,9 @@ def build():
         'pad': cut(thin([[round(s / BEAT) * BEAT, round(e / BEAT) * BEAT, n, v] for s, e, n, v in T[10]], 1, 'top')),
         'sq_pluck': cut(T[11]),
     }
+    i0 = INTRO[0] * BAR                                   # intro: alleen het orgel (riff solo)
+    parts['organ'] = [[s - i0, e - i0, n, v] for s, e, n, v in thin(T[6], 2, 'bottom')
+                      if i0 <= s < INTRO[1] * BAR] + parts['organ']
     # pianostoten kort: einde + uitklinktijd vóór de volgende stoot (anders 4 pianonoten tegelijk)
     parts['piano'] = [[s, min(e, s + 80), n, v] for s, e, n, v in parts['piano']]
     # lange pads in stukken van 2 tellen die een uitklinktijd eerder stoppen: bij een volle tel valt alleen dat stuk weg
@@ -103,10 +111,10 @@ def build():
         n, kept = len(parts[k]), len(res[k])
         print('  %-8s %4d noten, %3d vallen weg (%.1f%%)' % (k, n, n - kept, 100 * (n - kept) / max(n, 1)))
         parts[k] = res[k]
-    end = s1 - s0
+    end = OFF + s1 - s0
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
-    song.loop = ((LOOP - FIRST) * BAR, end)
+    song.loop = (OFF + (LOOP - FIRST) * BAR, end)
     song.add(parts['lead'], TRUMPET, 112, 0)
     song.add(parts['sq_lead'], SQ_LEAD, 52, 1)
     song.add(parts['bass'], SYNTH_BASS, 118, 2)
@@ -117,7 +125,7 @@ def build():
     song.add(parts['sq_pluck'], SQ_PLUCK, 40, 7)
     song.add(parts['drums'], 127, 104, 9)
     song.save(OUT, end)
-    print(OUT, '(intro %.1f s, loop %.1f s)' % ((LOOP - FIRST) * 4 * 60 / BPM, (END - LOOP) * 4 * 60 / BPM))
+    print(OUT, '(intro %.1f s, loop %.1f s)' % ((INTRO[1] - INTRO[0] + LOOP - FIRST) * 4 * 60 / BPM, (END - LOOP) * 4 * 60 / BPM))
 
 
 if __name__ == '__main__':

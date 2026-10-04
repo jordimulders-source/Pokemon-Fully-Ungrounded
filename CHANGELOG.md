@@ -16207,3 +16207,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - Nummers: trainers 1020–1025, trainerfoto's 172–174, overworlds 270–272; flags 0x493–0x49B. Getest in de emulator van botsing tot gratis ronde.
 - **Geen Jessie en James** (Jordi): de Jessie-parodie in de Rocket-hideout (1F) is vervangen door een **recruiter-grunt** die je probeert te werven ("Have you considered a career in organized crime?"; Hypno met Bad Dreams, Bombirdier met Rocky Payload, Grafaiai met Prankster). Ook de verwijzing naar het motto/"blasting off" bij Petrel is weg (`TRAINER_ROCKET_RECRUITER`).
 - **Battle! Zarude v5:** de "puup" vlak voor 13 s was drumnoot 44 in de tomroffel aan het eind van de opbouw: in `rs_drumset` is dat geen tom maar een PSG-vierkantsgolf. Nu toms 41/43/45/47; het script gebruikt geen PSG-drumnoten meer (gecontroleerd).
+
+### [v.0.9.16] - Jagged Pass ondergronds en de top van Mt. Chimney
+- **Lavabuis onder Jagged Pass** (`JaggedPass_LavaTube`, 40×30, Magma Hideout-stijl; `tools/grounded/maptools/chimney_ext.py`): ingang achter een Rock Smash-rots in de klif vlak onder de trap naar Mt. Chimney, uitgang op het plateau halverwege Jagged Pass (naast de Magma Hideout). Magmapoelen, een rotspilaar met een grap-inscriptie en een Strength-nis (badge 4) met **TM Fire Blast** en Heat Rock als terugkeerbeloning. Verder Charcoal, Fire Stone en een verborgen Lava Cookie.
+  - Wilde Pokémon (lv 22–27): Roggenrola, Heatmor, Sizzlipede, Stunky, Carkol, Diglett, Varoom, Magby, Glimmet, Salandit; zeldzaam Druddigon en Larvesta.
+  - Trainers (lv 28): Hiker Hank, Kindler Ignace, Picnicker Daisy (verdwaald).
+- **De top van Mt. Chimney** (`MtChimney_Summit`, 36×40, as-weer): een trap in de bergkam noordoost van Mt. Chimney, vanaf badge 5 (een vulkanoloog houdt je eerder tegen). Drie terrassen naar een kratermeer met een vaste **Volcarona lv 40** ("de tweede zon boven de as"), een vulkanoloog die een **Flame Orb** geeft, een Magmarizer en een verborgen Star Piece.
+  - Trainers (lv 37–39): Hiker Grant, Kindler Pyro (zonteam met Drought en Solar Power), Expert Vera.
+- Trainers 1007–1012; flags 0x4B3–0x4BD. Getest in de emulator (beide ingangen, de trap, de wachtpost, een trainer- en een wild gevecht, de Strength-nis).

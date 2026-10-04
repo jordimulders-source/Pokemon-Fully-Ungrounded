@@ -34875,3 +34875,219 @@ Ability: Technician
 - Pay Day
 - Knock Off
 - U-turn
+
+=== TRAINER_LAVA_TUBE_HANK ===
+Name: HANK
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Naclstack
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Purifying Salt
+- Salt Cure
+- Rock Slide
+- Iron Defense
+- Headbutt
+
+Orthworm
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Earth Eater
+- Iron Tail
+- Dig
+- Wrap
+- Sandstorm
+
+Dugtrio
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Arena Trap
+- Dig
+- Sucker Punch
+- Slash
+- Sand Attack
+
+=== TRAINER_LAVA_TUBE_IGNACE ===
+Name: IGNACE
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Litwick
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Flash Fire
+- Hex
+- Will-O-Wisp
+- Fire Spin
+- Night Shade
+
+Litleo
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Unnerve
+- Fire Fang
+- Headbutt
+- Noble Roar
+- Work Up
+
+Centiskorch
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Flash Fire
+- Fire Lash
+- Bug Bite
+- Coil
+- Flame Wheel
+
+=== TRAINER_LAVA_TUBE_DAISY ===
+Name: DAISY
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Dolliv
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Early Bird
+- Magical Leaf
+- Seed Bomb
+- Growth
+- Charm
+
+Fletchinder
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Flame Body
+- Flame Charge
+- Acrobatics
+- Roost
+- Quick Attack
+
+Cherrim
+Level: 28
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Ability: Flower Gift
+- Sunny Day
+- Petal Blizzard
+- Leech Seed
+- Tackle
+
+=== TRAINER_SUMMIT_GRANT ===
+Name: GRANT
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mudsdale
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Stamina
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Counter
+
+Excadrill @ Soft Sand
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Mold Breaker
+- Drill Run
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Garganacl @ Leftovers
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Purifying Salt
+- Salt Cure
+- Recover
+- Iron Defense
+- Body Press
+
+=== TRAINER_SUMMIT_PYRO ===
+Name: PYRO
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Torkoal @ Heat Rock
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Drought
+- Lava Plume
+- Yawn
+- Stealth Rock
+- Rapid Spin
+
+Tropius @ Sitrus Berry
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Harvest
+- Solar Beam
+- Air Slash
+- Synthesis
+- Leech Seed
+
+Heliolisk
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Solar Power
+- Parabolic Charge
+- Grass Knot
+- Volt Switch
+- Quick Attack
+
+=== TRAINER_SUMMIT_VERA ===
+Name: VERA
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ninetales
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flash Fire
+- Flamethrower
+- Extrasensory
+- Will-O-Wisp
+- Nasty Plot
+
+Magmortar @ Charcoal
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Clear Smog
+
+Skeledirge
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Unaware
+- Torch Song
+- Shadow Ball
+- Slack Off
+- Yawn

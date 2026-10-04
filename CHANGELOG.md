@@ -16414,3 +16414,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - Regigigas heeft een eigen transitie (`B_TRANSITION_REGIGIGAS`), met dezelfde animatie en timing als de andere Regi's: weven, oplichten, de cirkel sluit.
 - Het patroon is Regigigas' zes ogen, symmetrisch in drie rijen: 2 rood (het verst uit elkaar), 2 blauw (iets dichter) en 2 wit (nog iets dichter). Elk oog heeft een witte stip in het midden en kleine oortjes opzij, en licht op in zijn eigen kleur.
 - Script: `tools/grounded/regigigas_transition.py`.
+
+### [v.0.9.45] - Dave: intro zoals het origineel
+- Freed From Desire begint nu zoals het nummer zelf: de "tududu-tututu"-riff solo op het orgel, zonder beat (bronmaat 2–4). Daarna volgen één kick met een crash en het couplet met de volle begeleiding (bronmaat 53–85, in de originele volgorde).
+- De loop springt terug naar het begin van het couplet, niet naar de solo-intro.

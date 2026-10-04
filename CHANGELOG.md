@@ -16187,3 +16187,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Echokamer:** roep in het donker; de echo verraadt het gat onder de brokkelrots.
 - Wilde Pokémon (12 unieke soorten per kaart, lv 44–52): o.a. Noivern, Gigalith, Hakamo-o, Sliggoo, Gabite, Drakloak, Minior, Glimmora, Dragalge, Kommo-o; zeldzaam Haxorus, Dragonite, Metagross, Kingdra, Salamence.
 - Trainers 997–1002 (`TRAINER_METEOR_*`, `TRAINER_DRACONID_ELDER`); flags 0x2A0–0x2A7, 0x4A3–0x4A7.
+- **Battle! Zarude v3** (Jordi): een extra spanningsmaat (taiko in achtsten, strijkers-tremolo een octaaf hoger), zodat de blazers pas na de transitie inzetten (±4,3 s i.p.v. 2,9 s); intro nu 12,9 s. De tamboerijn op elke offbeat is eruit (klonk als een metronoompiepje).

@@ -18,6 +18,7 @@
 #define FACILITY_LINK_CONTEST      7
 #define FACILITY_UNION_ROOM        8
 #define FACILITY_MULTI_OR_EREADER  9  // Direct Corner multi battles, multi battle with Steven, and e-Reader battles
+#define FACILITY_STADIUM          10  // Project Grounded: Battle Stadium (geen restricties, alles wordt level 50)
 
 // Battle Frontier battle modes.
 #define FRONTIER_MODE_SINGLES      0

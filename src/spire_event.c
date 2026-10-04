@@ -277,6 +277,16 @@ static bool32 CanAfford(const struct SpireEventOption *o)
     return RUN.gold >= GoldCost(o);
 }
 
+static bool32 AllLocked(void)
+{
+    u32 i;
+
+    for (i = 0; i < sEv->ev->count; i++)
+        if (LockReason(&sEv->ev->options[i]) == NULL && CanAfford(&sEv->ev->options[i]))
+            return FALSE;
+    return TRUE;
+}
+
 // --- tekenen ----------------------------------------------------------------------------------
 static void DrawHeader(void)
 {
@@ -1140,6 +1150,12 @@ static void Task_SpireEvent(u8 taskId)
         else if (JOY_NEW(A_BUTTON))
         {
             PickOption();
+        }
+        else if (JOY_NEW(B_BUTTON) && AllLocked())
+        {
+            // alles dicht (geen geld, geen type): dan mag je gewoon doorlopen
+            PlaySE(SE_SELECT);
+            ShowMessage(COMPOUND_STRING("You can't do anything here.\nYou walk on, a little embarrassed."));
         }
         break;
     case STATE_MESSAGE:

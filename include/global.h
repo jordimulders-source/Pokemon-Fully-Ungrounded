@@ -573,6 +573,8 @@ struct RankingHall2P
 
 // Project Grounded: The Spire - lopende run (struct SpireSave in include/spire.h, via SPIRE_SAVE).
 #define SPIRE_SAVE_SIZE 288
+// Project Grounded: Battle Stadium - punten, titels, compagnons (struct StadiumSave in include/stadium.h)
+#define STADIUM_SAVE_SIZE 64
 
 struct SaveBlock2
 {
@@ -613,6 +615,7 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
              u32 spireData[SPIRE_SAVE_SIZE / 4]; // Project Grounded: The Spire (struct SpireSave)
+             u32 stadiumData[STADIUM_SAVE_SIZE / 4]; // Project Grounded: Battle Stadium (struct StadiumSave)
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;

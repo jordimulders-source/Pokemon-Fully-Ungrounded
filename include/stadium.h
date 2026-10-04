@@ -1,0 +1,93 @@
+#ifndef GUARD_STADIUM_H
+#define GUARD_STADIUM_H
+// Project Grounded: Battle Stadium (Pokémon World Tournament, zie STADIUM_DESIGN.md)
+//   src/stadium.c          toernooi, gevechten, compagnons, specials
+//   src/stadium_screens.c  bracket op papier, wedstrijdkaart, compagnonkeuze, meldingen
+//   src/data/stadium_pool.h  pool en compagnons (tools/grounded/stadium/pool.py)
+
+#define STADIUM_LEVEL           50
+#define STADIUM_SINGLES         0
+#define STADIUM_DOUBLES         1
+#define STADIUM_SINGLES_MONS    4
+#define STADIUM_DOUBLES_MONS    3
+#define STADIUM_MAX_ENTRANTS    32
+#define STADIUM_PLAYER          0       // deelnemer 0 = de speler (en compagnon)
+#define STADIUM_MAX_POOL        128
+#define STADIUM_MAX_COMPANIONS  128
+
+enum StadiumUnlock
+{
+    STADIUM_UNLOCK_START,   // vanaf het begin
+    STADIUM_UNLOCK_BEAT,    // trainer verslagen in het Stadium (waarde = TRAINER_*)
+    STADIUM_UNLOCK_POINTS,  // Stadium-punten (waarde = drempel)
+};
+
+struct StadiumEntrant
+{
+    u16 trainerId;
+    u16 rating;         // gem. BST van de singles-keuze (simulatie)
+    u8 rivalFor;        // 0 = altijd; 1 = alleen als de speler een jongen is (May), 2 = meisje (Brendan)
+    u8 singlesMask;     // teamplekken voor singles (4)
+    u8 doublesMask;     // teamplekken voor doubles/compagnon (3)
+};
+
+struct StadiumCompanion
+{
+    u16 partnerId;      // PARTNER_STADIUM_*
+    u16 trainerId;      // bron-trainer (TRAINER_NONE bij trio's); niet tegelijk tegenstander
+    bool8 frontPic;     // geen rugplaatje: voorplaatje naast de speler (zoals de Frontier-tag battles)
+    u8 unlockType;      // enum StadiumUnlock
+    u16 unlockValue;
+};
+
+// Opslag in SaveBlock2 (STADIUM_SAVE_SIZE)
+struct StadiumSave
+{
+    u16 points;         // onzichtbare meter: +1 per gewonnen gevecht, +5 per titel
+    u16 matchesWon;
+    u16 titles[2];      // gewonnen toernooien singles/doubles
+    u32 beaten[STADIUM_MAX_POOL / 32];          // deelnemers ooit verslagen (bit per poolplek)
+    u32 seen[STADIUM_MAX_COMPANIONS / 32];      // compagnons waarvan de melding al getoond is
+    u8 lastCompanion;
+    u8 unused[3];
+};
+#define STADIUM_SAVE (*(struct StadiumSave *)gSaveBlock2Ptr->stadiumData)
+
+extern bool8 gStadiumBattle;
+
+// battle_main.c: team van een tegenstander (keuze uit de pool, level 50)
+u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
+bool32 Stadium_PartnerUsesFrontPic(void);
+const u8 *Stadium_GetWinText(u32 opponent);
+
+// specials (data/maps/BattleFrontier_StadiumLobby/scripts.inc)
+void Stadium_PrepareChooseParty(void);
+void Stadium_StartTournament(void);
+void Stadium_ShowNextMatch(void);
+void Stadium_StartMatch(void);
+void Stadium_AfterMatch(void);
+void Stadium_EndTournament(void);
+void Stadium_ChooseCompanion(void);
+void Stadium_ShowUnlocks(void);
+
+// stadium.c -> stadium_screens.c
+u32 Stadium_PoolCount(void);
+const struct StadiumEntrant *Stadium_GetEntrant(u32 i);
+u32 Stadium_CompanionCount(void);
+const struct StadiumCompanion *Stadium_GetCompanion(u32 i);
+bool32 Stadium_IsCompanionUnlocked(u32 i);
+u16 Stadium_EntrantTrainer(u8 slot, u32 member);    // trainer van bracketplek (lid 0/1 bij doubles)
+void Stadium_GetEntrantName(u8 slot, u8 *dst);
+u16 Stadium_EntrantPic(u8 slot);
+u8 Stadium_GetMode(void);
+u8 Stadium_GetRound(void);
+u8 Stadium_GetRoundCount(void);
+u8 Stadium_GetBracketSlot(u32 round, u32 pos);   // STADIUM_PLAYER, deelnemer, of 0xFE = nog onbekend
+u8 Stadium_GetCompanionIndex(void);
+void Stadium_SetCompanionIndex(u8 i);
+u8 Stadium_TakeNewUnlock(void);                  // volgende nieuwe compagnon (0xFF = geen)
+void Stadium_OpenBracket(void (*onDone)(void));
+void Stadium_OpenCompanionSelect(void (*onDone)(void));
+void Stadium_OpenUnlock(u8 companion, void (*onDone)(void));
+
+#endif // GUARD_STADIUM_H

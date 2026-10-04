@@ -10,6 +10,7 @@
 #include "battle_interface.h"
 #include "battle_main.h"
 #include "spire.h"
+#include "stadium.h"
 #include "battle_message.h"
 #include "battle_pyramid.h"
 #include "battle_scripts.h"
@@ -2035,6 +2036,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+    if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50
+        return Stadium_BuildTrainerParty(party, trainerNum, firstTrainer);
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         struct Trainer tempTrainer;

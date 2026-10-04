@@ -15881,3 +15881,12 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **Testbot** (scratch): doorloopt een volledige run vanaf de debugwarp (receptioniste → draft → kaart → gevechten, winkel, rust, events, beloningen, act-overgang, baas → terug in de lobby) zonder vastlopers.
 - **The Spire is eindeloos:** de smalle schacht loopt door tot de bovenrand van de kaart en wordt daar afgekapt (geen naald, geen dak); je ziet het einde nooit. Elke 8 rijen een oranje sierring in de kleuren van de dakranden.
 - BattleFrontier_OutsideWest is 56 rijen zee hoger (kaart 56×128, binnen MAX_MAP_DATA_SIZE). Events, de verbinding met OutsideEast, de veerboot-aankomst (19, 123) en het spelerhoofd op de Frontier Pass-kaart (`SPIRE_WEST_EXTRA_ROWS`) schuiven mee. Voet, deur (33, 58) en trappen ongewijzigd; getest: deur in/uit, veerboot, verbinding.
+
+### [v.0.8.108] - The Spire: balans tegen Slay the Spire, Battle Stadium (begin)
+- **Rekenscript `tools/grounded/spire/runsim.py`:** speelt hele runs na (echte kaartgenerator, ontmoetingen, events, geld en prijzen) en vergelijkt alles met Slay the Spire; tabellen en conclusies onderaan `SPIRE_BALANS.md`. Volgorde: `spire_pool.py` → `encounters.py` → `runsim.py`.
+- Heal na een gevecht 10 → 8% (Burning Blood), rustplek 40 → 30% (zoals Slay; nu een echte keuze tussen rusten en upgraden), nieuwe act blijft 40% (`SPIRE_ACT_HEAL`).
+- Je begint een run met 75¥; een relic in de winkel kost 150¥ (was 120).
+- Act-kaart: meer events (25%), minder winkels (7%) en rustplekken (8%); geen winkels meer op verdieping 2.
+- Gevechten worden per act zwaarder: gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65% HP-verlies (act 1/2/3). Winkans van het model: goed 89%, gemiddeld 78%, slordig 34% (Slay: 70-90 / 40-60 / <15).
+- Event Mimikyu's Birthday: het cadeau kost 75¥ (was 40). Events: als alle opties dicht zitten (geen geld, geen type), kun je met B doorlopen (was een softlock bij de Rotom-automaat).
+- **Battle Stadium (in aanbouw):** ontwerp in `STADIUM_DESIGN.md` (level 50 wiskundig onderbouwd), pool en compagnons via `tools/grounded/stadium/pool.py` met synergie-keuze (weer/terrein met zetter, Trick Room, ace altijd; overzicht in `STADIUM_TEAMS.md`), motor in `src/stadium.c` (toernooi, simulatie, level 50, geen geld/EXP/white-out).

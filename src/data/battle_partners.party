@@ -115,3 +115,1122 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Dragon Pulse
 - Glare
 - Protect
+
+/* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */
+
+=== PARTNER_STADIUM_BRENDAN ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint
+
+Huntail
+Level: 50
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Exploud
+Level: 50
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Blaziken
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== PARTNER_STADIUM_MAY ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Back Pic: May
+AI: Check Bad Move / Try To Faint
+
+Roserade
+Level: 50
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Froslass
+Level: 50
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Swampert
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== PARTNER_STADIUM_KECCLES ===
+Name: KECCLES
+Class: Rival
+Pic: Kecleon
+Gender: Male
+Music: Male
+Back Pic: Kecleon
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+
+Charizard
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Flamethrower
+- Dragon Claw
+- Scary Face
+
+Serperior
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Leaf Blade
+- Coil
+- Leech Seed
+- Slam
+
+Salazzle
+Level: 50
+Ability: Corrosion
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Nasty Plot
+- Venoshock
+- Incinerate
+- Poison Gas
+
+=== PARTNER_STADIUM_WALLY ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Back Pic: Wally
+AI: Basic Trainer
+
+Baxcalibur @ Loaded Dice
+Level: 50
+Ability: Thermal Exchange
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Icicle Spear
+- Glaive Rush
+- Earthquake
+- Dragon Dance
+
+Annihilape @ Chesto Berry
+Level: 50
+Ability: Defiant
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Rest
+- Rage Fist
+- Bulk Up
+- Drain Punch
+
+Gallade @ Choice Scarf
+Level: 50
+Ability: Sharpness
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Psycho Cut
+- Leaf Blade
+- Sacred Sword
+- Aqua Cutter
+
+=== PARTNER_STADIUM_ROXANNE ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Basic Trainer
+
+Golem @ Focus Sash
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Mirror Coat
+- Rock Tomb
+- Explosion
+
+Cradily @ Absorb Bulb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leech Seed
+- Confuse Ray
+- Mega Drain
+- Recover
+
+Probopass @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nuzzle
+- Magnet Rise
+- Rock Tomb
+- Pain Split
+
+=== PARTNER_STADIUM_BRAWLY ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Machamp @ Eviolite
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Rock Tomb
+- Bulk Up
+- Knock Off
+
+Medicham @ Expert Belt
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Force Palm
+- Zen Headbutt
+- Ice Punch
+
+Hariyama @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Belly Drum
+- Arm Thrust
+- Knock Off
+- Sand Attack
+
+=== PARTNER_STADIUM_WATTSON ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Magnezone @ Eviolite
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tri Attack
+- Thunder Wave
+- Sonic Boom
+- Metal Sound
+
+Exploud @ Magnet
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Nuzzle
+- Chilling Water
+- Echoed Voice
+- Swift
+
+Manectric @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Transistor
+- Electric Terrain
+- Shock Wave
+- Ice Fang
+- Volt Switch
+
+=== PARTNER_STADIUM_FLANNERY ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Basic Trainer
+
+Ninetales @ Heat Rock
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drought
+- Burning Jealousy
+- Hypnosis
+- Confuse Ray
+- Solar Beam
+
+Scovillain @ Life Orb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Chlorophyll
+- Solar Beam
+- Flamethrower
+- Zen Headbutt
+- Sunny Day
+
+Magcargo @ White Herb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Desolate Land
+- Shell Smash
+- Earth Power
+- Power Gem
+- Flamethrower
+
+=== PARTNER_STADIUM_NORMAN ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Arboliva @ Leftovers
+Level: 50
+Ability: Seed Sower
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Strength Sap
+- Giga Drain
+- Hyper Voice
+- Earth Power
+
+Ursaluna @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Facade
+- Earthquake
+- Fire Punch
+- Drain Punch
+
+Slaking @ Leftovers
+Level: 50
+Ability: Truant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rest
+- Sleep Talk
+- Giga Impact
+- Hammer Arm
+
+=== PARTNER_STADIUM_WINONA ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: Basic Trainer / Risky
+
+Xatu @ Focus Sash
+Level: 50
+Ability: Magic Bounce
+- Tailwind
+- Psychic
+- Air Slash
+- Roost
+
+Ninjask @ Throat Spray
+Level: 50
+Ability: Punk Rock
+- Boomburst
+- Bug Buzz
+- Psychic Noise
+- Protect
+
+Altaria @ Leftovers
+Level: 50
+Ability: Fluffy
+- Tailwind
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+
+=== PARTNER_STADIUM_TATE_AND_LIZA ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Back Pic: Brendan
+AI: Basic Trainer
+
+Slowking @ King's Rock
+Level: 50
+Ability: Regenerator
+- Sludge Bomb
+- Scald
+- Psychic
+- Chilly Reception
+
+Solrock @ Focus Sash
+Level: 50
+Ability: Levitate
+- Stone Axe
+- Zen Headbutt
+- Flare Blitz
+- Earthquake
+
+Lunatone @ Sitrus Berry
+Level: 50
+Ability: Levitate
+- Trick Room
+- Power Gem
+- Psychic
+- Lunar Blessing
+
+=== PARTNER_STADIUM_JUAN ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Masquerain @ Focus Sash
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drizzle
+- Quiver Dance
+- Hurricane
+- Muddy Water
+- Bug Buzz
+
+Golduck @ Life Orb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Swift Swim
+- Hydro Pump
+- Psychic
+- Nasty Plot
+- Ice Beam
+
+Milotic @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Multiscale
+- Scald
+- Moonblast
+- Recover
+- Flip Turn
+
+=== PARTNER_STADIUM_SIDNEY ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+
+Hypno @ Wide Lens
+Level: 50
+Ability: Bad Dreams
+- Hypnosis
+- Dark Pulse
+- Psychic
+- Nightmare
+
+Obstagoon @ Flame Orb
+Level: 50
+Ability: Guts
+- Obstruct
+- Facade
+- Night Slash
+- Parting Shot
+
+Absol @ Life Orb
+Level: 50
+Ability: Serene Grace
+- Play Rough
+- Night Slash
+- Air Slash
+- Swords Dance
+
+=== PARTNER_STADIUM_PHOEBE ===
+Name: PHOEBE
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING
+
+Dusknoir @ Spell Tag
+Level: 50
+Ability: No Guard
+- Dynamic Punch
+- Shadow Punch
+- Zap Cannon
+- Ice Punch
+
+Porygon_Z @ Life Orb
+Level: 50
+Ability: Adaptability
+- Shadow Ball
+- Discharge
+- Zap Cannon
+- Recover
+
+Parasect @ Leftovers
+Level: 50
+Ability: Cursed Body
+- Spore
+- Last Respects
+- Strength Sap
+- Leech Life
+
+=== PARTNER_STADIUM_GLACIA ===
+Name: GLACIA
+Class: Elite Four
+Pic: Elite Four Glacia
+Gender: Female
+Music: Female
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING
+
+Shiftry @ Focus Sash
+Level: 50
+Ability: Snow Warning
+- Tailwind
+- Blizzard
+- Leaf Storm
+- Dark Void
+
+Walrein @ Leftovers
+Level: 50
+Ability: Lightning Rod
+- Blizzard
+- Muddy Water
+- Slack Off
+- Freeze Dry
+
+Darmanitan_Galar @ Choice Scarf
+Level: 50
+Ability: Gorilla Tactics
+- Icicle Crash
+- Flare Blitz
+- Earthquake
+- U-turn
+
+=== PARTNER_STADIUM_DRAKE ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING
+
+Flygon @ Focus Sash
+Level: 50
+Ability: Tinted Lens
+- First Impression
+- Dragon Claw
+- U-turn
+- Boomburst
+
+Archaludon @ Assault Vest
+Level: 50
+Ability: Stamina
+- Flash Cannon
+- Dragon Pulse
+- Body Press
+- Electro Shot
+
+Salamence @ Life Orb
+Level: 50
+Ability: Intimidate
+- Dual Wingbeat
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+=== PARTNER_STADIUM_WALLACE ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Wailord
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rain Dance
+- Water Spout
+- Double Edge
+- Blizzard
+
+Ludicolo
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Surf
+- Leech Seed
+- Double Team
+
+Milotic @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Recover
+- Surf
+- Ice Beam
+- Toxic
+
+=== PARTNER_STADIUM_STEVEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Back Pic: Steven
+AI: Basic Trainer
+
+Claydol
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Reflect
+- Light Screen
+- Ancient Power
+- Earthquake
+
+Armaldo
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Ancient Power
+- Aerial Ace
+- Slash
+
+Metagross @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Psychic
+- Meteor Mash
+- Shadow Ball
+
+=== PARTNER_STADIUM_ARCHIE ===
+Name: ARCHIE
+Class: Aqua Leader
+Pic: Aqua Leader Archie
+Gender: Male
+Music: Aqua
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_HP_AWARE / AI_FLAG_ACE_POKEMON
+
+Overqwil @ Black Sludge
+Level: 50
+Ball: Poke Ball
+Ability: Intimidate
+Nature: Adamant
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+- Gunk Shot
+- Crunch
+- Liquidation
+- Protect
+
+Sharpedo @ Life Orb
+Level: 50
+Ball: Poke Ball
+Ability: Speed Boost
+Nature: Adamant
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Liquidation
+- Crunch
+- Psychic Fangs
+- Protect
+
+Archaludon @ Assault Vest
+Level: 50
+Ball: Poke Ball
+Ability: Stamina
+Nature: Modest
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Thunderbolt
+- Draco Meteor
+- Flash Cannon
+- Body Press
+
+=== PARTNER_STADIUM_MAXIE ===
+Name: MAXIE
+Class: Magma Leader
+Pic: Magma Leader Maxie
+Gender: Male
+Music: Magma
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_HP_AWARE / AI_FLAG_ACE_POKEMON
+
+Scovillain @ Charcoal
+Level: 50
+Ball: Poke Ball
+Ability: Insomnia
+Nature: Modest
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Flamethrower
+- Giga Drain
+- Spicy Extract
+- Protect
+
+Claydol @ Light Clay
+Level: 50
+Ball: Poke Ball
+Ability: Magic Bounce
+Nature: Relaxed
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP / 128 Def / 128 SpD
+- Reflect
+- Light Screen
+- Earth Power
+- Psychic
+
+Camerupt @ Passho Berry
+Level: 50
+Ball: Poke Ball
+Ability: Solid Rock
+Nature: Modest
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Earth Power
+- Heat Wave
+- Yawn
+- Protect
+
+=== PARTNER_STADIUM_BIRCH ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint
+
+Rabsca
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
+
+Wailord
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Water Spout
+- Rest
+- Sleep Talk
+- Heavy Slam
+
+Muk_Hoenn
+Level: 50
+Ability: Stench
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover
+
+=== PARTNER_STADIUM_COLRESS ===
+Name: COLRESS
+Class: Scientist
+Pic: Colress
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Magnezone
+Level: 50
+Ability: Analytic
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Machine Learning
+
+Porygon2 @ Eviolite
+Level: 50
+Ability: Analytic
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Tri Attack
+- Ice Beam
+- Recover
+- Machine Learning
+
+Magearna
+Level: 50
+Ability: Soul-Heart
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fleur Cannon
+- Flash Cannon
+- Aura Sphere
+- Shift Gear
+
+=== PARTNER_STADIUM_ZINNIA ===
+Name: ZINNIA
+Class: Lorekeeper
+Pic: Zinnia
+Gender: Female
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Salamence
+Level: 50
+Ability: Intimidate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Dual Wingbeat
+- Earthquake
+- Outrage
+
+Goodra_Hisui @ Leftovers
+Level: 50
+Ability: Shell Armor
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Heavy Slam
+- Dragon Pulse
+- Fire Blast
+- Thunderbolt
+
+Roaring Moon @ Booster Energy
+Level: 50
+Ability: Protosynthesis
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Crunch
+- Acrobatics
+- Earthquake
+
+=== PARTNER_STADIUM_MIMI ===
+Name: MIMI
+Class: Rival
+Pic: Mimikyu
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint
+
+Pachirisu
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Super Fang
+- Nuzzle
+- Spark
+- Follow Me
+
+Dedenne
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Parabolic Charge
+- Draining Kiss
+- Super Fang
+- Thunder Wave
+
+Mimikyu
+Level: 50
+Ability: Disguise
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Claw
+- Play Rough
+- Shadow Sneak
+- Swords Dance
+
+=== PARTNER_STADIUM_GABBY_AND_TY ===
+Name: GABBY & TY
+Class: Interviewer
+Pic: Interviewer
+Gender: Male
+Music: Interviewer
+Back Pic: Brendan
+AI: Check Bad Move
+
+Magnezone
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Farigiraf
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Sigilyph
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== PARTNER_STADIUM_JOEY ===
+Name: JOEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Check Bad Move
+
+Poochyena
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Poochyena
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Poochyena
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_STADIUM_MATT ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Back Pic: Brendan
+AI: Basic Trainer
+
+Wailord
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bubble Beam
+- Bounce
+- Aurora Beam
+- Body Slam
+
+Snorlax
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Cetitan
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== PARTNER_STADIUM_SHELLY ===
+Name: SHELLY
+Class: Aqua Admin
+Pic: Aqua Admin F
+Gender: Female
+Music: Aqua
+Back Pic: Brendan
+AI: Basic Trainer
+
+Sneasler
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Alomomola
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Soak
+- Wish
+- Brine
+
+Samurott_Hisui
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bubble Beam
+- Aerial Ace
+- Aqua Jet
+- Encore
+
+=== PARTNER_STADIUM_TABITHA ===
+Name: TABITHA
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Back Pic: Brendan
+AI: Check Bad Move
+
+Beheeyem
+Level: 50
+Ability: Dimensional Warp
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Escavalier
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Snorlax
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== PARTNER_STADIUM_BROCK ===
+Name: BROCK
+Class: Leader
+Pic: Brock
+Gender: Male
+Music: Hiker
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Gligar
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Acrobatics
+- Bulldoze
+- Knock Off
+- Sand Attack
+
+Rhyhorn
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Stomp
+- Rock Tomb
+- Bulldoze
+- Scary Face
+
+Onix
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rock Tomb
+- Dragon Breath
+- Bind
+- Stealth Rock
+
+=== PARTNER_STADIUM_OAK ===
+Name: OAK
+Class: Professor
+Pic: Oak
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Basic Trainer
+
+Growlithe
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Ember
+- Bite
+- Howl
+- Roar
+
+Bulbasaur
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Vine Whip
+- Leech Seed
+- Poison Powder
+- Take Down
+
+Tauros
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Horn Attack
+- Pursuit
+- Work Up
+- Rest
+
+=== PARTNER_STADIUM_RED ===
+Name: RED
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+Back Pic: Red
+
+Charmander
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_STADIUM_LEAF ===
+Name: LEAF
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Male
+Back Pic: Leaf
+
+Bulbasaur
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== PARTNER_STADIUM_ALBERT ===
+Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+
+Iron Valiant
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Garchomp
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kingambit
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== PARTNER_STADIUM_SAMUEL ===
+Name: Mitch
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+
+Flygon @ Life Orb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Tinted Lens
+- First Impression
+- Leech Life
+- U-Turn
+- Dragon Rush
+
+Metagross @ Choice Band
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Bullet Punch
+- Meteor Mash
+- Earthquake
+- Psychic Fangs
+
+Swampert @ Assault Vest
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Regenerator
+- Flip Turn
+- Rock Slide
+- Earthquake
+- Aqua Tail
+
+=== PARTNER_STADIUM_OWEN ===
+Name: SickBlik
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+
+Dragapult @ Focus Sash
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Dragon Darts
+- U-Turn
+- Will-o-Wisp
+- Hex
+
+Volcarona @ Heavy-Duty Boots
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flame Body
+- Quiver Dance
+- Giga Drain
+- Fiery Dance
+- Bug Buzz
+
+Octillery @ Expert Belt
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Protean
+- Octazooka
+- Aeroblast
+- Moonblast
+- Aura Sphere
+
+/* --- einde Battle Stadium --- */

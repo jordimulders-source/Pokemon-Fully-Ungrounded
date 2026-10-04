@@ -7,6 +7,7 @@
 #include "battle_ai_util.h"
 #include "battle_scripts.h"
 #include "spire.h"
+#include "stadium.h"
 #include "battle_environment.h"
 #include "battle_z_move.h"
 #include "item.h"
@@ -4576,6 +4577,8 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 static bool32 BattleTypeAllowsExp(void)
 {
     if (gSpireBattle) // Project Grounded: rentals in The Spire krijgen geen exp
+        return FALSE;
+    if (gStadiumBattle) // Project Grounded: Battle Stadium, level-50-kopieën
         return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;

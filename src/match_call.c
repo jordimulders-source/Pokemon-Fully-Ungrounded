@@ -1068,7 +1068,10 @@ static bool32 CheckMatchCallChance(void)
 
 static bool32 MapAllowsMatchCall(void)
 {
-    if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE)
+    if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE
+     || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_FAIRY_FOREST     // Project Grounded: nieuwe Safari-zones
+     || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_THUNDER_PLAINS
+     || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_HAUNTED_CAMP)
         return FALSE;
 
     if (gMapHeader.regionMapSectionId == MAPSEC_SOOTOPOLIS_CITY

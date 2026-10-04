@@ -1006,14 +1006,39 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINER_ROCKET_GUARD                989 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
-#define TRAINER_ROCKET_SMUGGLER             990 // Project Grounded: Rocket-hideout 1F
-#define TRAINER_ROCKET_MOTTO                991 // Project Grounded: Rocket-hideout 1F
-#define TRAINER_ROCKET_SCIENTIST            992 // Project Grounded: Rocket-hideout B1F
-#define TRAINER_ROCKET_THIEF                993 // Project Grounded: Rocket-hideout B1F
-#define TRAINER_PETREL                      994 // Project Grounded: Rocket-hideout B2F (executive)
+#define TRAINER_HOLLOW_OSKAR                989 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_MORELLE              990 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_GERRIT               991 // Project Grounded: Toadstool Hollow
 
-#define TRAINERS_COUNT                      995
+// Project Grounded: Battle Stadium (Neo Team Plasma, Pokémon Black 2/White 2)
+#define TRAINER_STADIUM_ZINZOLIN            992
+#define TRAINER_STADIUM_SHADOW_TRIAD        993
+#define TRAINER_STADIUM_PLASMA_GRUNT_M      994
+#define TRAINER_STADIUM_PLASMA_GRUNT_F      995
+#define TRAINER_STADIUM_ROOD                996
+
+
+#define TRAINER_METEOR_DRAKE                997 // Project Grounded: Meteor Falls B1F (Bagon-bekken)
+#define TRAINER_METEOR_BOULDERMAN           998 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_ORION                999 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_VESPER               1000 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_NOVA                 1001 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_DRACONID_ELDER              1002 // Project Grounded: Meteor Falls, Draconid-schrijn
+
+
+#define TRAINER_VR_BRENT                    1003 // Project Grounded: Victory Road, wachtkamer (gauntlet 1)
+#define TRAINER_VR_NADIA                    1004 // gauntlet 2
+#define TRAINER_VR_OSKAR                    1005 // gauntlet 3
+#define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
+
+#define TRAINER_ROCKET_GUARD                1020 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
+#define TRAINER_ROCKET_SMUGGLER             1021 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_MOTTO                1022 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_SCIENTIST            1023 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_ROCKET_THIEF                1024 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_PETREL                      1025 // Project Grounded: Rocket-hideout B2F (executive)
+
+#define TRAINERS_COUNT                      1026
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

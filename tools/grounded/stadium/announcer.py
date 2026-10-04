@@ -110,6 +110,12 @@ LINES = {
     # Unova
     'STADIUM_N': "N, the KING of TEAM PLASMA! He wants to free your POKéMON. Ticket refunds: no.",
     'STADIUM_GHETSIS': "GHETSIS! He'd like everyone to sit down. Yes, you too. Especially you.",
+    # Neo Team Plasma (Black 2/White 2)
+    'STADIUM_ZINZOLIN': "SAGE ZINZOLIN! He froze a whole city. Then himself. Do not lick him.",
+    'STADIUM_ROOD': "SAGE ROOD! Ex-villain, current grandpa. His POKéMON heal. His knees don't.",
+    'STADIUM_SHADOW_TRIAD': "THE SHADOW TRIAD! Three ninjas, one ticket. Security is still looking.",
+    'STADIUM_PLASMA_GRUNT_M': "A NEO PLASMA GRUNT! Nobody knows his name. Including him.",
+    'STADIUM_PLASMA_GRUNT_F': "A NEO PLASMA GRUNT! She joined for the dental plan. There is no dental plan.",
     # Jordi en zijn maten
     'ALBERT': "From VICTORY ROAD: DAVE! WAKE UP! Grab a brush and put a little make-up!",
     'SAMUEL': "MITCH! He has stage fright. Thousands of fans. Everybody, stare at him!",

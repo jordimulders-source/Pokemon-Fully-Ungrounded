@@ -567,6 +567,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_N,                     OBJ_EVENT_PAL_TAG_N}, // Project Grounded
     {gObjectEventPal_Ghetsis,               OBJ_EVENT_PAL_TAG_GHETSIS}, // Project Grounded
     {gObjectEventPal_Burglar,               OBJ_EVENT_PAL_TAG_BURGLAR}, // Project Grounded
+    {gObjectEventPal_NeoPlasmaGruntM, OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M}, // Project Grounded (Neo Plasma)
+    {gObjectEventPal_NeoPlasmaGruntF, OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F}, // Project Grounded (Neo Plasma)
+    {gObjectEventPal_Zinzolin, OBJ_EVENT_PAL_TAG_ZINZOLIN}, // Project Grounded (Neo Plasma)
+    {gObjectEventPal_Rood, OBJ_EVENT_PAL_TAG_ROOD}, // Project Grounded (Neo Plasma)
+    {gObjectEventPal_ShadowTriad, OBJ_EVENT_PAL_TAG_SHADOW_TRIAD}, // Project Grounded (Neo Plasma)
     {gObjectEventPal_Rocket,                OBJ_EVENT_PAL_TAG_ROCKET}, // Project Grounded
     {gObjectEventPal_Petrel,                OBJ_EVENT_PAL_TAG_PETREL}, // Project Grounded
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)

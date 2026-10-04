@@ -1,0 +1,112 @@
+{
+  "id": "MAP_SAFARI_ZONE_HAUNTED_CAMP",
+  "name": "SafariZone_HauntedCamp",
+  "layout": "LAYOUT_SAFARI_ZONE_HAUNTED_CAMP",
+  "music": "MUS_MT_PYRE_EXTERIOR",
+  "region_map_section": "MAPSEC_SAFARI_HAUNTED_CAMP",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SPOOKY_PLATE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SAFARI_SPOOK_SPOOKY_PLATE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_REAPER_CLOTH",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SAFARI_SPOOK_REAPER_CLOTH"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 43,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_SAFARI_ZONE_NORTHWEST",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 38,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_HauntedCamp_EventScript_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_HauntedCamp_EventScript_Door"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_HauntedCamp_EventScript_Campfire"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_HauntedCamp_EventScript_Lantern"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SafariZone_HauntedCamp_EventScript_Lantern"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 35,
+      "elevation": 3,
+      "item": "ITEM_DUSK_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_SPELL_TAG",
+      "flag": "FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG"
+    }
+  ]
+}

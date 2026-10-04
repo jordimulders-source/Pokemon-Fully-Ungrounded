@@ -33690,6 +33690,961 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - U-turn
 - Bulk Up
 
+=== TRAINER_HOLLOW_OSKAR ===
+Name: OSKAR
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Venonat
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Confusion
+- Poison Powder
+- Supersonic
+- Tackle
+
+Spinarak
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Night Shade
+- Poison Sting
+- String Shot
+- Absorb
+
+Joltik
+Level: 16
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Electroweb
+- Bug Bite
+- Thunder Wave
+- Absorb
+
+=== TRAINER_HOLLOW_MORELLE ===
+Name: MORELLE
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Morelull
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Moonlight
+- Astonish
+- Flash
+
+Foongus
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Feint Attack
+- Growth
+- Astonish
+
+Sinistea
+Level: 16
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Astonish
+- Aromatic Mist
+- Mega Drain
+- Withdraw
+
+=== TRAINER_HOLLOW_GERRIT ===
+Name: GERRIT
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Rolycoly
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Smack Down
+- Rapid Spin
+- Smokescreen
+- Tackle
+
+Toedscool
+Level: 15
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mega Drain
+- Mud Shot
+- Wrap
+- Supersonic
+
+Phantump
+Level: 17
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Branch Poke
+- Astonish
+- Leech Seed
+- Confuse Ray
+
+=== TRAINER_STADIUM_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Froslass @ Focus Sash
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Spikes
+- Ice Beam
+- Shadow Ball
+- Destiny Bond
+
+Cryogonal @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Abomasnow @ Leftovers
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Giga Drain
+- Earth Power
+- Ice Shard
+
+Vanilluxe @ Choice Specs
+Level: 50
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Mamoswine @ Life Orb
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Weavile @ Razor Claw
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== TRAINER_STADIUM_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Banette @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Will-O-Wisp
+- Poltergeist
+- Knock Off
+- Destiny Bond
+
+Absol @ Life Orb
+Level: 50
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Greninja @ Expert Belt
+Level: 50
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Honchkrow @ Choice Band
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Superpower
+
+Bisharp @ Eviolite
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_STADIUM_PLASMA_GRUNT_M ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Watchog @ Focus Sash
+Level: 50
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Hypnosis
+- Super Fang
+- Knock Off
+- Low Kick
+
+Garbodor @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Gunk Shot
+- Drain Punch
+- Toxic Spikes
+- Spikes
+
+Scrafty @ Leftovers
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 SpD
+Nature: Careful
+- Bulk Up
+- Drain Punch
+- Knock Off
+- Rest
+
+Crobat @ Sharp Beak
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Durant @ Choice Scarf
+Level: 50
+Ability: Hustle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Iron Head
+- X-Scissor
+- Superpower
+- Rock Slide
+
+Golurk @ Life Orb
+Level: 50
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dynamic Punch
+- Earthquake
+- Poltergeist
+- Stone Edge
+
+=== TRAINER_STADIUM_PLASMA_GRUNT_F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Liepard @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Timid
+- Thunder Wave
+- Encore
+- Foul Play
+- Fake Out
+
+Galvantula @ Focus Sash
+Level: 50
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sticky Web
+- Thunder
+- Bug Buzz
+- Energy Ball
+
+Amoonguss @ Black Sludge
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 SpA / 252 SpD
+Nature: Calm
+- Spore
+- Giga Drain
+- Sludge Bomb
+- Clear Smog
+
+Klinklang @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gear Grind
+- Wild Charge
+- Substitute
+
+Mienshao @ Life Orb
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- High Jump Kick
+- U-turn
+- Knock Off
+
+Chandelure @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Fire Blast
+- Energy Ball
+- Trick
+
+=== TRAINER_STADIUM_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Audino @ Leftovers
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Wish
+- Protect
+- Heal Bell
+- Knock Off
+
+Alomomola @ Rocky Helmet
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Scald
+- Wish
+- Protect
+- Toxic
+
+Mandibuzz @ Leftovers
+Level: 50
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Musharna @ Leftovers
+Level: 50
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+Nature: Bold
+- Calm Mind
+- Moonblast
+- Psyshock
+- Moonlight
+
+Gothitelle @ Choice Scarf
+Level: 50
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover
+
+=== TRAINER_METEOR_DRAKE ===
+Name: DRAKE
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Shelgon
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Claw
+- Zen Headbutt
+- Iron Defense
+- Protect
+
+Flapple
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Grav Apple
+- Dragon Rush
+- Acrobatics
+- Dragon Dance
+
+Dragalge
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sludge Bomb
+- Dragon Pulse
+- Toxic Spikes
+- Hydro Pump
+
+Tyrantrum
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Head Smash
+- Dragon Claw
+- Crunch
+- Earthquake
+
+=== TRAINER_METEOR_BOULDERMAN ===
+Name: BOULDERMAN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Gigalith
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Stone Edge
+- Earthquake
+- Iron Head
+- Stealth Rock
+
+Garganacl
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Salt Cure
+- Recover
+- Rock Slide
+- Body Press
+
+Coalossal
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tar Shot
+- Heat Crash
+- Rock Slide
+- Rapid Spin
+
+Stonjourner
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Stone Edge
+- Heat Crash
+- Rock Polish
+- Body Press
+
+=== TRAINER_METEOR_ORION ===
+Name: ORION
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Beheeyem
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Thunderbolt
+- Shadow Ball
+- Calm Mind
+
+Orbeetle
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Bug Buzz
+- Sticky Web
+- Reflect
+
+Bronzong
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Gyro Ball
+- Extrasensory
+- Trick Room
+- Earthquake
+
+Starmie
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Hydro Pump
+- Thunderbolt
+- Recover
+
+=== TRAINER_METEOR_VESPER ===
+Name: VESPER
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Noivern
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Boomburst
+- Air Slash
+- Dragon Pulse
+- U-turn
+
+Drakloak
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+Kommo-o
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Clanging Scales
+- Close Combat
+- Poison Jab
+- Bulk Up
+
+Sliggoo
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Pulse
+- Sludge Bomb
+- Thunderbolt
+- Rain Dance
+
+Haxorus
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Outrage
+- Earthquake
+- Dragon Dance
+- Poison Jab
+
+=== TRAINER_METEOR_NOVA ===
+Name: NOVA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Clefable
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Mash
+- Moonblast
+- Cosmic Power
+- Moonlight
+
+Lunatone
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Ice Beam
+- Moonblast
+- Stealth Rock
+
+Solrock
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Slide
+- Zen Headbutt
+- Sunny Day
+- Explosion
+
+Archeops
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Acrobatics
+- Rock Slide
+- Dragon Claw
+- U-turn
+
+Metagross
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Earthquake
+
+=== TRAINER_DRACONID_ELDER ===
+Name: SELENE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Altaria
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Moonblast
+- Dragon Claw
+- Roost
+
+Kingdra
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Hydro Pump
+- Ice Beam
+- Rain Dance
+
+Flygon
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Goodra
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Fire Blast
+- Thunderbolt
+- Sludge Bomb
+
+Dragonite
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Hydreigon
+Level: 54
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Nasty Plot
+
+=== TRAINER_VR_BRENT ===
+Name: BRENT
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Excadrill @ Focus Sash
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Mold Breaker
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Mamoswine @ Never-Melt Ice
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Thick Fat
+- Icicle Crash
+- Earthquake
+- Ice Shard
+- Stealth Rock
+
+Talonflame @ Sharp Beak
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Gale Wings
+- Brave Bird
+- Flare Blitz
+- U-Turn
+- Roost
+
+Reuniclus @ Life Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Magic Guard
+- Psychic
+- Focus Blast
+- Calm Mind
+- Recover
+
+=== TRAINER_VR_NADIA ===
+Name: NADIA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Toxtricity @ Throat Spray
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
+
+Goodra @ Assault Vest
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Sap Sipper
+- Draco Meteor
+- Fire Blast
+- Sludge Bomb
+- Thunderbolt
+
+Sylveon @ Leftovers
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Pixilate
+- Hyper Voice
+- Shadow Ball
+- Wish
+- Protect
+
+Ninetales_Alola @ Light Clay
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Snow Warning
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+=== TRAINER_VR_OSKAR ===
+Name: OSKAR
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Guts
+- Mach Punch
+- Drain Punch
+- Knock Off
+- Ice Punch
+
+Clefable @ Leftovers
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Magic Guard
+- Moonblast
+- Calm Mind
+- Soft-Boiled
+- Flamethrower
+
+Gliscor @ Toxic Orb
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Poison Heal
+- Earthquake
+- Knock Off
+- Toxic
+- Protect
+
+Kommo_O @ Life Orb
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Bulletproof
+- Scale Shot
+- Close Combat
+- Iron Head
+- Dragon Dance
+
+=== TRAINER_VR_REGINALD ===
+Name: REGINALD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Hawlucha @ Sitrus Berry
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Unburden
+- Close Combat
+- Acrobatics
+- Swords Dance
+- Roost
+
+Tyranitar @ Chople Berry
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Metagross @ Air Balloon
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Tinkaton @ Leftovers
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Mold Breaker
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Stealth Rock
+
+Magnezone @ Choice Specs
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Analytic
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Slaking @ Choice Band
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Truant
+- Giga Impact
+- Earthquake
+- Knock Off
+- Slack Off
+
 === TRAINER_ROCKET_GUARD ===
 Name: GRUNT
 Class: Team Rocket

@@ -81,6 +81,11 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `STADIUM_BRANDON` | PYRAMID KING BRANDON! He brought all three REGIS. They didn't ask to come. |
 | `STADIUM_N` | N, the KING of TEAM PLASMA! He wants to free your POKéMON. Ticket refunds: no. |
 | `STADIUM_GHETSIS` | GHETSIS! He'd like everyone to sit down. Yes, you too. Especially you. |
+| `STADIUM_ZINZOLIN` | SAGE ZINZOLIN! He froze a whole city. Then himself. Do not lick him. |
+| `STADIUM_ROOD` | SAGE ROOD! Ex-villain, current grandpa. His POKéMON heal. His knees don't. |
+| `STADIUM_SHADOW_TRIAD` | THE SHADOW TRIAD! Three ninjas, one ticket. Security is still looking. |
+| `STADIUM_PLASMA_GRUNT_M` | A NEO PLASMA GRUNT! Nobody knows his name. Including him. |
+| `STADIUM_PLASMA_GRUNT_F` | A NEO PLASMA GRUNT! She joined for the dental plan. There is no dental plan. |
 | `ALBERT` | From VICTORY ROAD: DAVE! WAKE UP! Grab a brush and put a little make-up! |
 | `SAMUEL` | MITCH! He has stage fright. Thousands of fans. Everybody, stare at him! |
 | `OWEN` | SICKBLIK! He made this romhack. Beat him and he nerfs you next patch. |

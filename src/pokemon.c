@@ -6074,122 +6074,144 @@ bool32 IsSpeciesInHoennDex(u16 species)
         return TRUE;
 }
 
+// Project Grounded: gevechtsmuziek voor één trainer. Bij twee tegenstanders (Battle Stadium-doubles, tag battles)
+// kiest GetBattleBGM het eigen thema van de eerste; heeft alleen de tweede een eigen thema, dan dat (Jordi).
+static u16 GetTrainerBattleBGM(u16 trainerId)
+{
+    enum TrainerClassID trainerClass;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+        trainerClass = GetFrontierOpponentClass(trainerId);
+    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
+        trainerClass = TRAINER_CLASS_EXPERT;
+    else
+        trainerClass = GetTrainerClassFromId(trainerId);
+
+    // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && (trainerId == TRAINER_REED || trainerId == TRAINER_BROCK))
+        return MUS_RG_VS_GYM_LEADER;
+
+    // Project Grounded: Prof. Oak vecht op het lab-thema uit FRLG
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && trainerId == TRAINER_PROF_OAK)
+        return MUS_RG_OAK_LAB;
+
+    // Project Grounded: Prof. Birch vecht op de Macarena
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))
+        return MUS_GROUNDED_VS_BIRCH;
+
+    switch (trainerClass)
+    {
+    case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
+        return MUS_GROUNDED_VS_COLRESS;
+    case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
+        return MUS_GROUNDED_VS_ZINNIA;
+    case TRAINER_CLASS_KING: // Project Grounded: N (Battle Stadium)
+        return MUS_GROUNDED_VS_N;
+    case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
+        return MUS_GROUNDED_VS_GHETSIS;
+    case TRAINER_CLASS_SAGE: // Project Grounded: Neo Plasma (Battle Stadium)
+    case TRAINER_CLASS_SHADOW_TRIAD:
+    case TRAINER_CLASS_NEO_PLASMA:
+        return MUS_GROUNDED_VS_NEO_PLASMA;
+    case TRAINER_CLASS_TEAM_ROCKET: // Project Grounded: Rocket-sidequest (FRLG-trainermuziek)
+        return MUS_RG_VS_TRAINER;
+    case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
+        return MUS_RG_VS_GYM_LEADER;
+    case TRAINER_CLASS_AQUA_LEADER:
+    case TRAINER_CLASS_MAGMA_LEADER:
+    case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
+        return MUS_VS_AQUA_MAGMA_LEADER;
+    case TRAINER_CLASS_COMMANDER: // Project Grounded: Battle Stadium
+    case TRAINER_CLASS_TEAM_AQUA:
+    case TRAINER_CLASS_TEAM_MAGMA:
+    case TRAINER_CLASS_AQUA_ADMIN:
+    case TRAINER_CLASS_MAGMA_ADMIN:
+        return MUS_VS_AQUA_MAGMA;
+    case TRAINER_CLASS_LEADER:
+        return MUS_VS_GYM_LEADER;
+    case TRAINER_CLASS_CHAMPION:
+        return MUS_VS_CHAMPION;
+    case TRAINER_CLASS_RIVAL:
+        if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+            return MUS_VS_RIVAL;
+        if (!StringCompare(GetTrainerNameFromId(trainerId), gText_BattleWallyName))
+            return MUS_VS_TRAINER;
+        return MUS_VS_RIVAL;
+    case TRAINER_CLASS_ELITE_FOUR:
+        return MUS_VS_ELITE_FOUR;
+    case TRAINER_CLASS_SALON_MAIDEN:
+    case TRAINER_CLASS_DOME_ACE:
+    case TRAINER_CLASS_PALACE_MAVEN:
+    case TRAINER_CLASS_ARENA_TYCOON:
+    case TRAINER_CLASS_FACTORY_HEAD:
+    case TRAINER_CLASS_PIKE_QUEEN:
+    case TRAINER_CLASS_PYRAMID_KING:
+    case TRAINER_CLASS_TOWER_TYCOON: // Project Grounded: Battle Stadium
+    case TRAINER_CLASS_HALL_MATRON:
+    case TRAINER_CLASS_ARCADE_STAR:
+        return MUS_VS_FRONTIER_BRAIN;
+    default:
+        return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
+    }
+    }
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
-        {
-        case SPECIES_RAYQUAZA:
-            return MUS_VS_RAYQUAZA;
-        case SPECIES_KYOGRE:
-        case SPECIES_GROUDON:
-            return MUS_VS_KYOGRE_GROUDON;
-        case SPECIES_REGIROCK:
-        case SPECIES_REGICE:
-        case SPECIES_REGISTEEL:
-        case SPECIES_REGIGIGAS:
-        case SPECIES_REGIELEKI:
-        case SPECIES_REGIDRAGO:
-            return MUS_VS_REGI;
-        case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema
-        case SPECIES_ENTEI:
-        case SPECIES_SUICUNE:
-            return MUS_C_VS_LEGEND_BEAST;
-        case SPECIES_JIRACHI: // Project Grounded: wens-event in Fallarbor
-            return MUS_VS_MEW;
-        case SPECIES_DARKRAI: // Project Grounded: nachtmerrie op Mt. Pyre
-        case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
-        case SPECIES_GIRATINA_ORIGIN:
-            return MUS_GROUNDED_VS_GIRATINA;
-        default:
-            return MUS_RG_VS_LEGEND;
-        }
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    case SPECIES_RAYQUAZA:
+        return MUS_VS_RAYQUAZA;
+    case SPECIES_KYOGRE:
+    case SPECIES_GROUDON:
+        return MUS_VS_KYOGRE_GROUDON;
+    case SPECIES_REGIROCK:
+    case SPECIES_REGICE:
+    case SPECIES_REGISTEEL:
+    case SPECIES_REGIGIGAS:
+    case SPECIES_REGIELEKI:
+    case SPECIES_REGIDRAGO:
+        return MUS_VS_REGI;
+    case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema
+    case SPECIES_ENTEI:
+    case SPECIES_SUICUNE:
+        return MUS_C_VS_LEGEND_BEAST;
+    case SPECIES_JIRACHI: // Project Grounded: wens-event in Fallarbor
+        return MUS_VS_MEW;
+    case SPECIES_DARKRAI: // Project Grounded: nachtmerrie op Mt. Pyre
+    case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
+    case SPECIES_GIRATINA_ORIGIN:
+        return MUS_GROUNDED_VS_GIRATINA;
+    default:
+        return MUS_RG_VS_LEGEND;
+    }
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
     {
-        return MUS_VS_TRAINER;
+    return MUS_VS_TRAINER;
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
-        enum TrainerClassID trainerClass;
+    u16 song = GetTrainerBattleBGM(TRAINER_BATTLE_PARAM.opponentA);
 
-        if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-            trainerClass = GetFrontierOpponentClass(TRAINER_BATTLE_PARAM.opponentA);
-        else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
-            trainerClass = TRAINER_CLASS_EXPERT;
-        else
-            trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-
-        // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
-        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_REED || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BROCK))
-            return MUS_RG_VS_GYM_LEADER;
-
-        // Project Grounded: Prof. Oak vecht op het lab-thema uit FRLG
-        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && TRAINER_BATTLE_PARAM.opponentA == TRAINER_PROF_OAK)
-            return MUS_RG_OAK_LAB;
-
-        // Project Grounded: Prof. Birch vecht op de Macarena
-        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-         && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_VERDANTURF || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_2 || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_MOSSDEEP || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BIRCH_UNDERWATER))
-            return MUS_GROUNDED_VS_BIRCH;
-
-        switch (trainerClass)
-        {
-        case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
-            return MUS_GROUNDED_VS_COLRESS;
-        case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
-            return MUS_GROUNDED_VS_ZINNIA;
-        case TRAINER_CLASS_KING: // Project Grounded: N (Battle Stadium)
-            return MUS_GROUNDED_VS_N;
-        case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
-            return MUS_GROUNDED_VS_GHETSIS;
-        case TRAINER_CLASS_TEAM_ROCKET: // Project Grounded: Rocket-sidequest (FRLG-trainermuziek)
-            return MUS_RG_VS_TRAINER;
-        case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
-            return MUS_RG_VS_GYM_LEADER;
-        case TRAINER_CLASS_AQUA_LEADER:
-        case TRAINER_CLASS_MAGMA_LEADER:
-        case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
-            return MUS_VS_AQUA_MAGMA_LEADER;
-        case TRAINER_CLASS_COMMANDER: // Project Grounded: Battle Stadium
-        case TRAINER_CLASS_TEAM_AQUA:
-        case TRAINER_CLASS_TEAM_MAGMA:
-        case TRAINER_CLASS_AQUA_ADMIN:
-        case TRAINER_CLASS_MAGMA_ADMIN:
-            return MUS_VS_AQUA_MAGMA;
-        case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
-        case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
-        case TRAINER_CLASS_RIVAL:
-            if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_VS_RIVAL;
-            if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
-        case TRAINER_CLASS_ELITE_FOUR:
-            return MUS_VS_ELITE_FOUR;
-        case TRAINER_CLASS_SALON_MAIDEN:
-        case TRAINER_CLASS_DOME_ACE:
-        case TRAINER_CLASS_PALACE_MAVEN:
-        case TRAINER_CLASS_ARENA_TYCOON:
-        case TRAINER_CLASS_FACTORY_HEAD:
-        case TRAINER_CLASS_PIKE_QUEEN:
-        case TRAINER_CLASS_PYRAMID_KING:
-        case TRAINER_CLASS_TOWER_TYCOON: // Project Grounded: Battle Stadium
-        case TRAINER_CLASS_HALL_MATRON:
-        case TRAINER_CLASS_ARCADE_STAR:
-            return MUS_VS_FRONTIER_BRAIN;
-        default:
-            return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
-        }
+    if (song == GetChosenTrainerBattleMusic()
+     && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+     && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && TRAINER_BATTLE_PARAM.opponentB != TRAINER_NONE)
+    {
+        u16 songB = GetTrainerBattleBGM(TRAINER_BATTLE_PARAM.opponentB);
+        if (songB != GetChosenTrainerBattleMusic())
+            song = songB;
+    }
+    return song;
     }
     else
     {
-        return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
+    return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }
 

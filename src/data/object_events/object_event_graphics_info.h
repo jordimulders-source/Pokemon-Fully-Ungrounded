@@ -1334,10 +1334,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// Project Grounded: Rocket-sidequest
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM = {
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_ROCKET,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1350,34 +1350,34 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_RocketGruntM,
+    .images = sPicTable_NeoPlasmaGruntM,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// Project Grounded: Rocket-sidequest
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF = {
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_ROCKET,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
+    .size = 512,
+    .width = 32,
     .height = 32,
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
     .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_RocketGruntF,
+    .images = sPicTable_NeoPlasmaGruntF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// Project Grounded: Rocket-sidequest
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinzolin = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_PETREL,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ZINZOLIN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1390,7 +1390,47 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Petrel,
+    .images = sPicTable_Zinzolin,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ROOD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Rood,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadowTriad = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHADOW_TRIAD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShadowTriad,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -5207,5 +5247,65 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
     .subspriteTables = sOamTables_16x16,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_ApricornTree,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Rocket-sidequest
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ROCKET,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_RocketGruntM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Rocket-sidequest
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ROCKET,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_RocketGruntF,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Rocket-sidequest
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PETREL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Petrel,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

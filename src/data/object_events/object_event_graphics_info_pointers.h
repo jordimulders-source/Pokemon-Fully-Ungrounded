@@ -69,6 +69,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaShi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghetsis;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinzolin;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadowTriad;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
@@ -348,6 +353,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_N] =                        &gObjectEventGraphicsInfo_N,
     [OBJ_EVENT_GFX_GHETSIS] =                  &gObjectEventGraphicsInfo_Ghetsis,
     [OBJ_EVENT_GFX_BURGLAR] =                  &gObjectEventGraphicsInfo_Burglar,
+    [OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M] = &gObjectEventGraphicsInfo_NeoPlasmaGruntM, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F] = &gObjectEventGraphicsInfo_NeoPlasmaGruntF, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_ZINZOLIN] = &gObjectEventGraphicsInfo_Zinzolin, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_ROOD] = &gObjectEventGraphicsInfo_Rood, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_SHADOW_TRIAD] = &gObjectEventGraphicsInfo_ShadowTriad, // Project Grounded (Neo Plasma)
     [OBJ_EVENT_GFX_ROCKET_GRUNT_M] =           &gObjectEventGraphicsInfo_RocketGruntM,
     [OBJ_EVENT_GFX_ROCKET_GRUNT_F] =           &gObjectEventGraphicsInfo_RocketGruntF,
     [OBJ_EVENT_GFX_PETREL] =                   &gObjectEventGraphicsInfo_Petrel,

@@ -16152,3 +16152,47 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Mangroves** (groot en klein) met **wortelbogen** bij de poel, uit de Ekat99-moerassheet.
 - Layout, events en bereikbaarheid ongewijzigd (blokkerend decor alleen waar de controle slaagt). Getest: overgang Fortree ↔ jungle zonder glitches, regen.
 - Met een eigen jungle-tileset (brede bladrand in plaats van Hoenn-dennen, donkere modderbodem, hangende lianen over paden, 2×2-planten, bruin/groen water, mossige ruïnes) kan het nog tropischer; zie `VRAGEN_VOLGENDE.md`.
+
+### [v.0.9.9] - Eigen jungle-gevechtsmuziek; muziek bij twee tegenstanders
+- **"Battle! Zarude"** (`MUS_GROUNDED_VS_ZARUDE`): eerste zelfgecomponeerde gevechtsmuziek, gegenereerd door `tools/grounded/zarude_theme.py` (MIDI → `voicegroup_grounded_gm`). Legendary-stijl in D mineur, 168 bpm: een opbouw van ±11 s die niet herhaalt (taiko en strijkerstremolo tijdens de transitie, koperfanfare, congas en slapbas komen erbij, marimba-ostinato, tomroffel en strijkersloop, crash), daarna een groovy loop van ±23 s: bongo/conga-groove met kick, klap en tamboerijn, funky slapbas, marimba, fluitmelodie met PSG-tertsen; tweede helft strijkers, trompetstoten en call-and-response. Preview opgenomen uit de emulator. Nog niet gekoppeld: dat gebeurt met het Zarude-event.
+- **Muziek bij twee tegenstanders** (Stadium-doubles, tag battles; Jordi): heeft de eerste trainer een eigen thema, dan speelt dat (bijv. Archie + Steven = Archie's thema). Heeft alleen de tweede een eigen thema, dan krijgt dat voorrang op de gewone gevechtsmuziek. Nieuwe hulpfunctie `GetTrainerBattleBGM` in `src/pokemon.c`.
+
+### [v.0.9.10] - Toadstool Hollow: het verborgen paddenstoelenbos
+- **Verborgen ingang** in de oostrand van Petalburg Woods (rechtsboven): je loopt achter een boom door en vindt een pijl naar het oosten. Twee rode paddenstoeltjes in het gras ervoor zijn de hint.
+- **Nieuwe kaart TOADSTOOL HOLLOW** (44×40, `tools/grounded/maptools/mushroom_forest.py`, seed 285, eigen tileset `toadstool_hollow`): donker blauwgroen bos met groepjes paddenstoelen (rood met witte stippen, bruin, paars en blauw gloeiend met sporen), mos, gloeiende sporen, omgevallen stammen, een **heksenkring** en reuzenpaddenstoelen (3×3 rood, 2×2 paars/blauw; je loopt achter de hoed langs). Weer: schaduw, muziek: Viridian Forest (FRLG). Op de Town Map valt het onder Petalburg Woods (blijft verborgen).
+- **Wilde Pokémon** (lv 11–16): Foongus, Morelull, Venonat, Shroomish, Paras, Pumpkaboo, Hoothoot, Spinarak, Phantump, Cutiefly; zeldzaam Shiinotic en Amoonguss.
+- **Trainers:** Bug Catcher Oskar, Aroma Lady Morelle (bij de heksenkring) en Hiker Gerrit (al drie weken verdwaald).
+- **Items:** Tiny Mushroom, Big Mushroom, TM Giga Drain (ook op Route 123; hier een vroege beloning), verborgen Balm Mushroom midden in de heksenkring en een Tiny Mushroom aan het eind van een stam (flags 0x2B0–0x2B4).
+
+### [v.0.9.11] - Drie nieuwe Safari-zones (nog op slot)
+- **Fairy Forest** (44×40): betoverd bos met roze-lila bomen, mintgrond en glinsterbloemen (blauw/roze/lila) in een sprookjesring rond een vijver. Floette (willekeurige bloemkleur), Cottonee, Spritzee, Swirlix, Granbull, Dedenne, Comfey, Dachsbun, Hatenna, Impidimp; zeldzaam Milcery en Togetic (lv 28–34). Items: Pixie Plate, Fairy Feather, verborgen Shiny Stone. Ingang: gat in de bomenrand van Safari Zone Southwest.
+- **Thunder Plains** (48×40): savanne met acacia's, droog hoog gras, een bergwand en drinkplaats, onweer. Luxio, Gumshoos, Helioptile, Dubwool, Manectric, Pachirisu, Boltund, Maschiff, Plusle, Minun; zeldzaam Morpeko en Togedemaru (lv 28–33). Items: Zap Plate, Magnet, verborgen Thunder Stone. Ingang: grot in de bergwand van Safari Zone Northeast.
+- **Haunted Camp** (44×40): vervallen kamp met een dichtgetimmerd theehuis, kapotte lantaarns, kampvuurkring, scheef hek en mist; Mt. Pyre-muziek. Sinistea, Poltchageist, Gimmighoul, Skuntank, Greavard, Phantump, Drifblim, Sandygast, Pumpkaboo, Hisui-Zorua; zeldzaam Lampent en Spiritomb (lv 28–35). Items: Spooky Plate, Reaper Cloth, verborgen Dusk Stone en Spell Tag. Ingang: Safari Zone Northwest.
+- Echte Safari-kaarten (stappenteller, ballen, aas, modder); eigen herkleurde tilesets van vanilla Hoenn-sets (`tools/grounded/maptools/safari_zones.py`, `safari_tilesets.py`).
+- **Op slot** tot `FLAG_SAFARI_ZONES_OPEN` (0x290): bij elke opening staat een Safari-medewerker; de zonesleutels zijn gestolen door "een man in het zwart met een grote rode R" (de Team Rocket-sidequest volgt). Testen: debugmenu Flags → 0x290.
+- **Battle! Zarude v2** (Jordi): de bongo's in de intro bouwen langzamer op (maat 2 taiko in achtsten i.p.v. een conga-roffel; daarna conga's op de tellen, dan achtsten, pas in maat 6 de groove); alle PSG-sporen (vierkantsgolf-harmonie, arpeggio, ruis-shaker) eruit, die gaven losse piepjes.
+
+### [v.0.9.12] - Battle Stadium: Neo Team Plasma, met BW2-transitie
+- **Vijf nieuwe deelnemers** uit Black 2/White 2 (lv 50): **Zinzolin** (klasse SAGE; ijs, ace Weavile), **Rood** (SAGE; heal/stall, ace Reuniclus), **Shadow Triad** (Banette, Absol, Greninja, Krookodile, Honchkrow, ace Bisharp), en twee **Neo Plasma-grunts** (♂ ace Golurk met No Guard + Dynamic Punch; ♀ ace Chandelure). Placeholder-teksten in de huisstijl ("I joined for the cool ship and the dental plan. There is no dental plan."). Trainerfoto's uit de BW2-sheet, overworlds (grunts uit de aangeleverde sheets; Zinzolin, Rood en de Triad omgekleurde vanilla-sprites), `tools/grounded/neo_plasma_sprites.py`.
+- **Transitie `B_TRANSITION_NEO_PLASMA`**, nagemaakt naar de BW2-GIF (±2,7 s): blauwe P op een donker raster, een lichtbol trekt de Z, alles wit, het Plasma-schild verschijnt en flitst twee keer, daarna zes flakkerende bliksems naar de randen (`tools/grounded/neo_plasma_transition.py`). Alleen voor de Neo Plasma-deelnemers; Ghetsis en Colress houden hun eigen intro en muziek.
+- **Muziek "Battle! Neo Team Plasma"** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington), ook als keuze "NEO PLASMA" in het optiemenu.
+- Nummers na het samenvoegen: trainers 992–996, lied 623.
+
+### [v.0.9.13] - Meteor Falls: verborgen kamers, gangen en de Draconid-schrijn
+- **De kamer naar beneden** (`MeteorFalls_B1F_2R`) is uitgebreid van 11×18 naar 40×50 (`tools/grounded/maptools/meteor_falls_ext.py`): ingangshal met meteorietbrokken en kraters, een **Strength-nis** (Rare Candy), een middenlaag met trap en een **brede waterval** (Waterfall) naar een bovenmeer met de Dragon Claw-TM en Dragon Tamer Drake.
+- **Verborgen kamers:** een grotgat **achter de waterval** (Surf) naar Hidden Falls (Dragon Scale, Max Elixir), een **scheur in de noordwand** (Rock Smash) naar het gangenstelsel, en een **gat in de vloer** onder een brokkelrots in de gangen naar de Starfall Grotto (Comet Shard, Star Piece).
+- **Gangenstelsel** (47×44): doolhof met Hiker Boulderman, Psychic Orion, Dragon Tamer Vesper en Cooltrainer Nova (lv 47–49), Dragon Fang, Full Restore, Stardust, en drie grotgaten naar de events:
+  - **Meteorietkern** (Star Core): vijf rondzwervende Minior (lv 48, komen terug) en een vaste **Salamence lv 55** ("de Bagon die de meteoriet won").
+  - **Draconid-schrijn:** Draconid-oudere **Selene** vertelt over Zinnia en Rayquaza, vecht (lv 52–54, ace Hydreigon) en geeft één keer een Draco Plate.
+  - **Echokamer:** roep in het donker; de echo verraadt het gat onder de brokkelrots.
+- Wilde Pokémon (12 unieke soorten per kaart, lv 44–52): o.a. Noivern, Gigalith, Hakamo-o, Sliggoo, Gabite, Drakloak, Minior, Glimmora, Dragalge, Kommo-o; zeldzaam Haxorus, Dragonite, Metagross, Kingdra, Salamence.
+- Trainers 997–1002 (`TRAINER_METEOR_*`, `TRAINER_DRACONID_ELDER`); flags 0x2A0–0x2A7, 0x4A3–0x4A7.
+- **Battle! Zarude v3** (Jordi): een extra spanningsmaat (taiko in achtsten, strijkers-tremolo een octaaf hoger), zodat de blazers pas na de transitie inzetten (±4,3 s i.p.v. 2,9 s); intro nu 12,9 s. De tamboerijn op elke offbeat is eruit (klonk als een metronoompiepje).
+
+### [v.0.9.14] - Victory Road: vier optionele kamers
+- **Wachtkamer** (achter een Rock Smash-rots in de noordwand van 1F): "de rij voor de Elite Four", een Ace Trainer-gauntlet van drie Cooltrainers die je niet kunt ontwijken (Brent, Nadia, Oskar, lv 54–56), een kaartjesautomaat ("No. 4,813, wachttijd 31 jaar") en de gevonden voorwerpen: **Choice Scarf** en **Choice Specs**.
+- **Kluis van Hiker Gordon** (gang linksonder op B1F): Strength-blokpuzzel (opgelost en gecontroleerd door het bouwscript; opnieuw binnenkomen zet alles terug), met **Big Nugget**, **Ability Capsule** (wisselt alleen tussen slot 1 en 2), **PP Max** en een verstopte Max Elixir.
+- **Kluizenaar** (surfend naar een eilandje in het bovenmeer van B2F): **Reginald**, de "vijfde" van de Elite Four, die al dertig jaar wacht tot er iemand met pensioen gaat of doodgaat (Expert met mugshot, lv 58–60, ace Slaking @ Choice Band). Daarna **TM Flamethrower** ("bewaard voor Sidney's begrafenis"). Ook een Expert Belt en zijn afgewezen sollicitatie.
+- **Haaienbak** (gat in de vloer op B1F): een vaste **Garchomp lv 58** die slaapt op de rugzakken van mislukte kampioenen, met Life Orb, Eviolite en Dragon Fang. Donker, zoals Victory Road.
+- Bouwscript `tools/grounded/maptools/victory_road_ext.py`; trainers 1003–1006 (`TRAINER_VR_*`); flags 0x2A8–0x2AF, 0x4AB–0x4AF.
+- **Battle! Zarude v4:** de klap op de backbeat (tel 2 en 4) is eruit; die gaf vanaf de loop een metronoomachtig bliepje.

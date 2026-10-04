@@ -16270,3 +16270,13 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Finale:** met de drie maskers legt de hoedster ze op het altaar en verschijnt Ogerpon (lv 70). Daarna krijg je de maskers terug als hold items (vormwissel via expansion).
 - Transities: de Loyal Three de Koffing-gifschedel, Ogerpon het regenwoud. Muziek `MUS_RG_VS_LEGEND`. Flags 0x4D9–0x4E7.
 - Placeholderteksten in huisstijl. Ongetest: de gevechten tegen Munkidori en Fezandipiti (hetzelfde script als Okidogi, dat wel getest is).
+
+### [v.0.9.23] - Debugmenu: Battle test…
+- START → DEBUG → Utilities… → **Battle test…**: één lijst met 46 voorbeeldgevechten om muziek en transities te testen.
+  - 18 unieke trainers: Wally 1/2/3, Birch, Oak, Brock, Colress, Zinnia, N, Ghetsis, Neo Plasma, Rocket, Petrel, Archie + Maxie, Gabby & Ty, Joey, Keccles en Mustard.
+  - 17 legendaries via het echte legendary-pad.
+  - 5 Regi's.
+  - 6 wilde soorten met een eigen transitie.
+- Je vecht met een tijdelijk testteam van 2× Arceus lv 100, dat altijd gehoorzaamt. Party, geld, Pokédex, statistieken en flags worden na afloop teruggezet: de save blijft onveranderd, ook bij vangen of verliezen.
+- Route-transities zitten er niet in (die hangen van de kaart af); daarvoor blijft "Wild battle (map)".
+- Fix: het debugmenu had ruimte voor 20 items, maar Utilities en "Legendary battle…" hadden er meer (schrijven buiten de buffer). De limiet is nu 50.

@@ -17,9 +17,9 @@ SkyPillar_ReverseB1F_EventScript_Landed::
 	end
 
 SkyPillar_ReverseB1F_Text_Landed:
-	.string "You landed on the ceiling.\n"
-	.string "Which is now the floor.\p"
-	.string "It's the Sky Pillar, but somebody\n"
-	.string "hung it upside down to dry.\p"
-	.string "The stairs only go down from here.\n"
-	.string "Rayquaza would hate this place.$"
+	.string "You landed on the ceiling. Which is now\n"
+	.string "the floor.\p"
+	.string "Welcome to the Upside Down. No kids on\n"
+	.string "bikes, no waffles. Just you.\p"
+	.string "The stairs only go down from here. Like\n"
+	.string "your sense of direction.$"

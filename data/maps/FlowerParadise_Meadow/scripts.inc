@@ -41,8 +41,9 @@ FlowerParadise_Meadow_EventScript_ShayminCaught::
 
 FlowerParadise_Meadow_Text_Shaymin:
 	.string "Shay!\p"
-	.string "(It looks like a hedgehog that is\n"
-	.string "also a salad. It hates you already.)$"
+	.string "(A hedgehog that is also a salad. The\n"
+	.string "Gratitude POKéMON. It is not grateful\l"
+	.string "you're here.)$"
 
 FlowerParadise_Meadow_Text_ShayminHides:
 	.string "SHAYMIN dove into the flowers and\n"

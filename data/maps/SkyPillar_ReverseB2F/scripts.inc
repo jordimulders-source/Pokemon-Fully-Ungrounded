@@ -17,8 +17,7 @@ SkyPillar_ReverseB2F_EventScript_Arrived::
 	end
 
 SkyPillar_ReverseB2F_Text_Arrived:
-	.string "Your inner ear files a complaint.\p"
-	.string "Gravity on this floor seems to have\n"
-	.string "misread the instructions.\p"
-	.string "Up is down. Down is up.\n"
-	.string "Left is, thankfully, still left.$"
+	.string "Your inner ear files a complaint.\n"
+	.string "Gravity here misread the instructions.\p"
+	.string "Up is down. Down is up. Left is still left.\n"
+	.string "Don't get used to it.$"

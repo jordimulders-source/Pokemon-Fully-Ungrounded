@@ -46,17 +46,16 @@ MtPyre_Summit_EventScript_WakeUp::
 MtPyre_Summit_Text_SuddenlyDrowsy:
 	.string "A heavy drowsiness creeps over\n"
 	.string "{PLAYER}.\p"
-	.string "Taking a nap on top of a graveyard\n"
-	.string "in the middle of the night.\p"
-	.string "Surely nothing bad has ever happened\n"
-	.string "to anyone who did that…\p"
+	.string "A nap on top of a graveyard, in the\n"
+	.string "middle of the night. Every horror film\l"
+	.string "ever made agrees: totally safe.\p"
 	.string "Zzz…$"
 
 MtPyre_Summit_Text_WokeUp:
 	.string "{PLAYER} wakes up with a start,\n"
 	.string "drenched in cold sweat.\p"
-	.string "The old couple is staring.\n"
-	.string "Nobody says anything about it.$"
+	.string "The old couple is staring. The old man\n"
+	.string "sighs: “Another one. Third this week.”$"
 
 MtPyre_Summit_OnTransition:
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions

@@ -59,7 +59,7 @@ SkyPillar_1F_EventScript_RiftScene::
 SkyPillar_1F_Text_Rift:
 	.string "The floor cracked open with a sound\n"
 	.string "like a door being slammed backwards.\p"
-	.string "Something down there just screamed.\n"
-	.string "Or yawned. Hard to tell upside down.\p"
-	.string "The tower apparently has a basement.\n"
-	.string "Nobody mentioned a basement.$"
+	.string "Something down there screamed. Or\n"
+	.string "yawned. Hard to tell from up here.\p"
+	.string "The tower has a basement. Of course it\n"
+	.string "does. Every horror film has a basement.$"

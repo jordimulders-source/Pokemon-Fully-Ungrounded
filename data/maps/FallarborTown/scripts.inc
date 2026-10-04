@@ -177,30 +177,33 @@ FallarborTown_Movement_JirachiAscends:
 	step_end
 
 FallarborTown_Text_WishingCraterHint:
-	.string "See that old crater by COZMO's house?\n"
-	.string "A meteorite made it. Ages ago.\p"
-	.string "They say if you stand in it at night\n"
-	.string "and make a wish, something answers.\p"
+	.string "See that old crater by COZMO's house? A\n"
+	.string "meteorite made it. COZMO tried to sell it\l"
+	.string "online.\p"
+	.string "They say if you stand in it at night and\n"
+	.string "make a wish, something answers.\p"
 	.string "I wished for hair. Something answered.\n"
-	.string "It said no.$"
+	.string "It laughed.$"
 
 FallarborTown_Text_MakeAWish:
 	.string "The stars are out above the old\n"
 	.string "meteorite crater.\p"
-	.string "{PLAYER} closes their eyes and makes\n"
-	.string "a wish.\p"
+	.string "{PLAYER} closes their eyes and wishes\n"
+	.string "for a POKéMON game with a real\l"
+	.string "difficulty setting.\p"
 	.string "… … …\p"
-	.string "Something small and shiny is falling\n"
-	.string "out of the sky. Straight at you.$"
+	.string "Something small and shiny is falling out\n"
+	.string "of the sky. Straight at you.$"
 
 FallarborTown_Text_JirachiAppears:
 	.string "Jiraaa!\p"
-	.string "It has three paper tags on its head.\n"
-	.string "One of them is your wish.\p"
-	.string "It looks like it wants to fight about\n"
-	.string "it first.$"
+	.string "It has three wish tags on its head. One\n"
+	.string "says “DIFFICULTY SETTING”.\p"
+	.string "It cracks its tiny knuckles. Wish\n"
+	.string "granted.$"
 
 FallarborTown_Text_JirachiFlewOff:
 	.string "JIRACHI drifted back up into the night\n"
 	.string "sky, taking your wish with it.\p"
-	.string "Maybe wish a little harder next time.$"
+	.string "Wishes don't come true if you run away.\n"
+	.string "It's in the fine print.$"

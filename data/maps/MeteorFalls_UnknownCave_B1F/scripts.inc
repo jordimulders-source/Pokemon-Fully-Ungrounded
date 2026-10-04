@@ -25,7 +25,9 @@ MeteorFalls_UnknownCave_B1F_EventScript_MewtwoStays::
 
 MeteorFalls_UnknownCave_B1F_Text_Mewtwo:
 	.string "A voice echoes inside your head.\p"
-	.string "“I was made to be the strongest.\n"
-	.string "You were made by accident.”\p"
-	.string "“Let us see which one of us\n"
-	.string "the universe regrets more.”$"
+	.string "“Tell the metal man at the waterfall to\n"
+	.string "turn it down. I have been sulking in\l"
+	.string "here since 1996.”\p"
+	.string "“The circumstances of one's birth are\n"
+	.string "irrelevant. Yours were clearly an\l"
+	.string "accident. Let us begin.”$"

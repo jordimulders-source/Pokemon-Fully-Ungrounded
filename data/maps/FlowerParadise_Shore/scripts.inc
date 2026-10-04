@@ -30,14 +30,13 @@ FlowerParadise_Shore_EventScript_Sign::
 	end
 
 FlowerParadise_Shore_Text_SailBack:
-	.string "Aye, mate. Smells like a perfume\n"
-	.string "shop exploded in here.\p"
-	.string "My allergies are filing a complaint.\n"
+	.string "Aye, mate. My nose has been running\n"
+	.string "since we docked. It's trying to get back\l"
+	.string "on the boat.\p"
 	.string "Shall we sail back to LILYCOVE?$"
 
 FlowerParadise_Shore_Text_Sign:
 	.string "FLOWER PARADISE\p"
 	.string "Please do not pick the GRACIDEA.\n"
 	.string "Something in the meadow bites.\p"
-	.string "It is very small.\n"
-	.string "It is very, very angry.$"
+	.string "It is very small. It knows SEED FLARE.$"

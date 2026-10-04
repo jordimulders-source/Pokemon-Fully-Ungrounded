@@ -26,9 +26,7 @@ SkyPillar_ReverseB3F_EventScript_GiratinaStays::
 	end
 
 SkyPillar_ReverseB3F_Text_Giratina:
-	.string "Rayquaza guards the sky.\n"
-	.string "This one guards the bit underneath\l"
-	.string "that nobody ever cleans.\p"
-	.string "It has been banished down here for\n"
-	.string "being rude. It looks ready to be\l"
-	.string "rude again.$"
+	.string "ARCEUS banished this one down here for\n"
+	.string "being rude. That was a few thousand\l"
+	.string "years ago.\p"
+	.string "It has had a lot of time to get ruder.$"

@@ -45,38 +45,42 @@ Route112_TowerOfDarkness_EventScript_AlreadyDone::
 	end
 
 Route112_TowerOfDarkness_Text_Trainer1Intro:
-	.string "The TOWER OF DARKNESS welcomes you.\n"
-	.string "I turned the lights off myself.$"
+	.string "Welcome to the TOWER OF DARKNESS. The\n"
+	.string "lights are off. Spiritually and\l"
+	.string "financially.$"
 
 Route112_TowerOfDarkness_Text_Trainer1Defeat:
 	.string "Ow. I walked into a wall.\n"
 	.string "Unrelated to the battle.$"
 
 Route112_TowerOfDarkness_Text_Trainer1Post:
-	.string "Darkness is a lifestyle.\n"
-	.string "Also my electricity bill is unpaid.$"
+	.string "I told WATTSON I'd pay the power bill\n"
+	.string "next month. That was four years ago.$"
 
 Route112_TowerOfDarkness_Text_Trainer2Intro:
-	.string "One strike! One! That's all a true\n"
-	.string "fighter needs! HYAH!$"
+	.string "One strike! That's all a true fighter\n"
+	.string "needs!\p"
+	.string "FINISH HIM! …Wait, I'm supposed to say\n"
+	.string "that at the end.$"
 
 Route112_TowerOfDarkness_Text_Trainer2Defeat:
-	.string "That was… more than one strike.\n"
-	.string "That's cheating.$"
+	.string "FATALITY.\n"
+	.string "…Mine.$"
 
 Route112_TowerOfDarkness_Text_Trainer2Post:
-	.string "The keeper upstairs only needs one\n"
-	.string "hit. He also only needs one friend.\l"
-	.string "He has zero.$"
+	.string "The keeper upstairs only needs one hit.\n"
+	.string "He also only has one friend. It's the\l"
+	.string "scroll.$"
 
 Route112_TowerOfDarkness_Text_KeeperIntro:
-	.string "I am OBSIDIAN, keeper of the\n"
-	.string "TOWER OF DARKNESS.\p"
+	.string "I am OBSIDIAN, keeper of the TOWER OF\n"
+	.string "DARKNESS. And no, it's not a phase.\p"
 	.string "The scroll at my back teaches one\n"
 	.string "perfect strike. Earn it.$"
 
 Route112_TowerOfDarkness_Text_KeeperDefeat:
-	.string "…A perfect strike. Received.$"
+	.string "…A perfect strike. I'll write a poem\n"
+	.string "about it. Nobody will read it.$"
 
 Route112_TowerOfDarkness_Text_Ritual:
 	.string "Your KUBFU is staring at the scroll\n"

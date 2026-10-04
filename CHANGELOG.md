@@ -16324,3 +16324,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.27] - Shy Guys op Sunset Wilds
 - De vier Shy Guys in het Battle Stadium (Shy Guy, Shyer Guy, Fly Guy, Shady Guy) vechten op **Sunset Wilds** (Mario Kart: Super Circuit, `MUS_GROUNDED_VS_SUNSET_WILDS`).
+
+### [v.0.9.28] - Poison Chain met donut-schakels
+- De transitie van de Loyal Three gebruikt nu hun echte ketting uit de artwork. Dikke, glanzende magenta donuts wisselen af met ovale staven en lopen van een halsband linksonder diagonaal naar een open ring rechtsboven. De kleur verloopt van fel magenta naar donkerpaars.
+- De ketting staat na 0,5 s, daarna volgen 20 frames stilstaand beeld en de fade.

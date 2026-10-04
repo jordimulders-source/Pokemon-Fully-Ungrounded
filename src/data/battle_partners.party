@@ -3100,16 +3100,16 @@ Music: Suspicious
 Back Pic: Brendan
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Seismitoad @ Life Orb
+Kingambit @ Black Glasses
 Level: 50
-Ability: Water Absorb
+Ability: Supreme Overlord
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 SpA / 252 Spe
-Nature: Modest
-- Scald
-- Earth Power
-- Sludge Wave
-- Stealth Rock
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Swords Dance
+- Sucker Punch
+- Iron Head
+- Knock Off
 
 Kyurem-Black @ Choice Band
 Level: 50

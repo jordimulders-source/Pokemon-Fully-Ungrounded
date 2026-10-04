@@ -12,6 +12,7 @@
 - **Burglar** (trainerfoto): Pokémon Red / Blue. `graphics/grounded/trainers/burglar/`.
 - **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
 - **Battle Stadium-trainerfoto's (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Lorelei, Bruno, Agatha, Lance en Blue uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bronnen in `graphics/grounded/trainers/stadium_bron/frlg/`.
+- **Battle Stadium-overworlds (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Blue, Lorelei, Bruno, Agatha en Lance uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bestanden in `graphics/object_events/pics/people/` (3 frames verdubbeld naar 9) en `graphics/object_events/palettes/kanto_npc_*.pal`.
 - **Battle Stadium-trainerfoto's (Sinnoh)**: gymleiders, Elite Four, Cynthia, Cyrus, Mars, Jupiter, Saturn, Barry, Palmer, Thorton, Argenta, Dahlia en Riley uit Pokémon Platinum, via de decompilatie **pret/pokeplatinum**; bijgesneden naar 64x64 met `tools/grounded/stadium_trainer_pics.py`. Bronnen in `graphics/grounded/trainers/stadium_bron/platinum/`.
 - **Battle Stadium-gasten** (trainerfoto's, teruggezet op hun pixelraster en naar 64x64 met `tools/grounded/guest_trainer_pics.py`; bronnen in `graphics/grounded/trainers/guests/`):
   - **Wario**: Wario Land 4 (Nintendo), sprite-sheet aangeleverd door Jordi.

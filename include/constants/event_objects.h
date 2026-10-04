@@ -252,11 +252,23 @@
 #define OBJ_EVENT_GFX_COLRESS                    245 // Project Grounded (sprite van PizzaSun)
 #define OBJ_EVENT_GFX_ZINNIA                     246 // Project Grounded
 #define OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED        247 // Project Grounded: rode driehoek op de meteoriet (Deoxys-event)
+#define OBJ_EVENT_GFX_MISTY                           248 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_LT_SURGE                        249 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_ERIKA                           250 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_KOGA                            251 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_SABRINA                         252 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_BLAINE                          253 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_GIOVANNI                        254 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_BLUE                            255 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_LORELEI                         256 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_BRUNO                           257 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_AGATHA                          258 // Project Grounded (sprite uit FRLG)
+#define OBJ_EVENT_GFX_LANCE                           259 // Project Grounded (sprite uit FRLG)
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        248
+#define NUM_OBJ_EVENT_GFX                        260
 
 
 // These are dynamic object gfx ids.
@@ -390,6 +402,9 @@
 #define OBJ_EVENT_PAL_TAG_COLRESS                 0x1126 // Project Grounded
 #define OBJ_EVENT_PAL_TAG_ZINNIA                  0x1127 // Project Grounded
 #define OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE_RED     0x1128 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_B              0x1129 // Project Grounded (FRLG)
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x112A // Project Grounded (FRLG)
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x112B // Project Grounded (FRLG)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -676,13 +676,14 @@ LilycoveCity_Text_DoYouKnowAboutBerryBlender:
 LilycoveCity_Text_FasterSpinBetterPokeblocks:
 	.string "Everyone has to work together to spin\n"
 	.string "it faster.\p"
-	.string "The faster it spins, the better the {POKEBLOCK}S.\p"
+	.string "The faster it spins, the better the\n"
+	.string "{POKEBLOCK}S.\p"
 	.string "It's teamwork. I hate teamwork.$"
 
 LilycoveCity_Text_ExplainBerryBlender:
 	.string "It makes candy called {POKEBLOCK}S.\p"
-	.string "Good {POKEBLOCK}S improve a POKéMON's condition a\n"
-	.string "lot.\p"
+	.string "Good {POKEBLOCK}S improve a POKéMON's\n"
+	.string "condition a lot.\p"
 	.string "They're just smoothies. Don't tell\n"
 	.string "anyone.$"
 

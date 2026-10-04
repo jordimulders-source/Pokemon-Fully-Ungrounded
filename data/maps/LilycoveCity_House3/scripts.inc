@@ -114,10 +114,12 @@ LilycoveCity_House3_Text_ExplainPokeblocks:
 	.string "{POKEBLOCK}S are rated on how they feel.\p"
 	.string "Lower feel rating = better. Remember\n"
 	.string "that!\p"
-	.string "A good {POKEBLOCK} has a low feel and a high level.\p"
+	.string "A good {POKEBLOCK} has a low feel and a high\n"
+	.string "level.\p"
 	.string "Use different kinds of BERRIES for\n"
 	.string "smooth {POKEBLOCK}S.\p"
-	.string "More people blending = smoother {POKEBLOCK}S.\p"
+	.string "More people blending = smoother\n"
+	.string "{POKEBLOCK}S.\p"
 	.string "So make friends and blend together.\p"
 	.string "That's it! Good luck, dear!\p"
 	.string "Now, if you'll excuse me, someone is\n"
@@ -139,8 +141,8 @@ LilycoveCity_House3_Text_LikeMixingAtRecordCorner:
 	.string "What gets mixed? Nobody knows.$"
 
 LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender:
-	.string "We're making super {POKEBLOCK}S with the BERRY\n"
-	.string "BLENDER!\p"
+	.string "We're making super {POKEBLOCK}S with the\n"
+	.string "BERRY BLENDER!\p"
 	.string "Four of us! Perfect!$"
 
 LilycoveCity_House3_Text_GoingToEnterContest:

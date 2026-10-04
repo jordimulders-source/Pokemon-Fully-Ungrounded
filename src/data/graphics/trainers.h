@@ -294,6 +294,76 @@ const u16 gTrainerPalette_Colress[] = INCBIN_U16("graphics/trainers/front_pics/c
 const u32 gTrainerFrontPic_Zinnia[] = INCBIN_U32("graphics/trainers/front_pics/zinnia.4bpp.smol"); // Project Grounded
 const u16 gTrainerPalette_Zinnia[] = INCBIN_U16("graphics/trainers/front_pics/zinnia.gbapal");
 const u16 gTrainerPalette_Mimikyu[] = INCBIN_U16("graphics/trainers/front_pics/mimikyu.gbapal");
+const u32 gTrainerFrontPic_Misty[] = INCBIN_U32("graphics/trainers/front_pics/leader_misty.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Misty[] = INCBIN_U16("graphics/trainers/front_pics/leader_misty.gbapal");
+const u32 gTrainerFrontPic_LtSurge[] = INCBIN_U32("graphics/trainers/front_pics/leader_lt_surge.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_LtSurge[] = INCBIN_U16("graphics/trainers/front_pics/leader_lt_surge.gbapal");
+const u32 gTrainerFrontPic_Erika[] = INCBIN_U32("graphics/trainers/front_pics/leader_erika.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Erika[] = INCBIN_U16("graphics/trainers/front_pics/leader_erika.gbapal");
+const u32 gTrainerFrontPic_Koga[] = INCBIN_U32("graphics/trainers/front_pics/leader_koga.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Koga[] = INCBIN_U16("graphics/trainers/front_pics/leader_koga.gbapal");
+const u32 gTrainerFrontPic_Sabrina[] = INCBIN_U32("graphics/trainers/front_pics/leader_sabrina.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Sabrina[] = INCBIN_U16("graphics/trainers/front_pics/leader_sabrina.gbapal");
+const u32 gTrainerFrontPic_Blaine[] = INCBIN_U32("graphics/trainers/front_pics/leader_blaine.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Blaine[] = INCBIN_U16("graphics/trainers/front_pics/leader_blaine.gbapal");
+const u32 gTrainerFrontPic_Giovanni[] = INCBIN_U32("graphics/trainers/front_pics/boss_giovanni.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Giovanni[] = INCBIN_U16("graphics/trainers/front_pics/boss_giovanni.gbapal");
+const u32 gTrainerFrontPic_Lorelei[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_lorelei.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Lorelei[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_lorelei.gbapal");
+const u32 gTrainerFrontPic_Bruno[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_bruno.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Bruno[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_bruno.gbapal");
+const u32 gTrainerFrontPic_Agatha[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_agatha.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Agatha[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_agatha.gbapal");
+const u32 gTrainerFrontPic_Lance[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_lance.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Lance[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_lance.gbapal");
+const u32 gTrainerFrontPic_Blue[] = INCBIN_U32("graphics/trainers/front_pics/champion_blue.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Blue[] = INCBIN_U16("graphics/trainers/front_pics/champion_blue.gbapal");
+const u32 gTrainerFrontPic_Roark[] = INCBIN_U32("graphics/trainers/front_pics/leader_roark.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Roark[] = INCBIN_U16("graphics/trainers/front_pics/leader_roark.gbapal");
+const u32 gTrainerFrontPic_Gardenia[] = INCBIN_U32("graphics/trainers/front_pics/leader_gardenia.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Gardenia[] = INCBIN_U16("graphics/trainers/front_pics/leader_gardenia.gbapal");
+const u32 gTrainerFrontPic_Maylene[] = INCBIN_U32("graphics/trainers/front_pics/leader_maylene.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Maylene[] = INCBIN_U16("graphics/trainers/front_pics/leader_maylene.gbapal");
+const u32 gTrainerFrontPic_Wake[] = INCBIN_U32("graphics/trainers/front_pics/leader_wake.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Wake[] = INCBIN_U16("graphics/trainers/front_pics/leader_wake.gbapal");
+const u32 gTrainerFrontPic_Fantina[] = INCBIN_U32("graphics/trainers/front_pics/leader_fantina.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Fantina[] = INCBIN_U16("graphics/trainers/front_pics/leader_fantina.gbapal");
+const u32 gTrainerFrontPic_Byron[] = INCBIN_U32("graphics/trainers/front_pics/leader_byron.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Byron[] = INCBIN_U16("graphics/trainers/front_pics/leader_byron.gbapal");
+const u32 gTrainerFrontPic_Candice[] = INCBIN_U32("graphics/trainers/front_pics/leader_candice.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Candice[] = INCBIN_U16("graphics/trainers/front_pics/leader_candice.gbapal");
+const u32 gTrainerFrontPic_Volkner[] = INCBIN_U32("graphics/trainers/front_pics/leader_volkner.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Volkner[] = INCBIN_U16("graphics/trainers/front_pics/leader_volkner.gbapal");
+const u32 gTrainerFrontPic_Aaron[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_aaron.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Aaron[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_aaron.gbapal");
+const u32 gTrainerFrontPic_Bertha[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_bertha.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Bertha[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_bertha.gbapal");
+const u32 gTrainerFrontPic_Flint[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_flint.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Flint[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_flint.gbapal");
+const u32 gTrainerFrontPic_Lucian[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_lucian.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Lucian[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_lucian.gbapal");
+const u32 gTrainerFrontPic_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/champion_cynthia.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Cynthia[] = INCBIN_U16("graphics/trainers/front_pics/champion_cynthia.gbapal");
+const u32 gTrainerFrontPic_Cyrus[] = INCBIN_U32("graphics/trainers/front_pics/boss_cyrus.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Cyrus[] = INCBIN_U16("graphics/trainers/front_pics/boss_cyrus.gbapal");
+const u32 gTrainerFrontPic_Mars[] = INCBIN_U32("graphics/trainers/front_pics/commander_mars.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Mars[] = INCBIN_U16("graphics/trainers/front_pics/commander_mars.gbapal");
+const u32 gTrainerFrontPic_Jupiter[] = INCBIN_U32("graphics/trainers/front_pics/commander_jupiter.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Jupiter[] = INCBIN_U16("graphics/trainers/front_pics/commander_jupiter.gbapal");
+const u32 gTrainerFrontPic_Saturn[] = INCBIN_U32("graphics/trainers/front_pics/commander_saturn.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Saturn[] = INCBIN_U16("graphics/trainers/front_pics/commander_saturn.gbapal");
+const u32 gTrainerFrontPic_Barry[] = INCBIN_U32("graphics/trainers/front_pics/rival_barry.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Barry[] = INCBIN_U16("graphics/trainers/front_pics/rival_barry.gbapal");
+const u32 gTrainerFrontPic_Palmer[] = INCBIN_U32("graphics/trainers/front_pics/tower_tycoon_palmer.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Palmer[] = INCBIN_U16("graphics/trainers/front_pics/tower_tycoon_palmer.gbapal");
+const u32 gTrainerFrontPic_Thorton[] = INCBIN_U32("graphics/trainers/front_pics/factory_head_thorton.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Thorton[] = INCBIN_U16("graphics/trainers/front_pics/factory_head_thorton.gbapal");
+const u32 gTrainerFrontPic_Argenta[] = INCBIN_U32("graphics/trainers/front_pics/hall_matron_argenta.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Argenta[] = INCBIN_U16("graphics/trainers/front_pics/hall_matron_argenta.gbapal");
+const u32 gTrainerFrontPic_Dahlia[] = INCBIN_U32("graphics/trainers/front_pics/arcade_star_dahlia.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Dahlia[] = INCBIN_U16("graphics/trainers/front_pics/arcade_star_dahlia.gbapal");
+const u32 gTrainerFrontPic_Riley[] = INCBIN_U32("graphics/trainers/front_pics/riley.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Riley[] = INCBIN_U16("graphics/trainers/front_pics/riley.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -425,6 +495,41 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_MIMIKYU, gTrainerFrontPic_Mimikyu, gTrainerPalette_Mimikyu),
     TRAINER_SPRITE(TRAINER_PIC_COLRESS, gTrainerFrontPic_Colress, gTrainerPalette_Colress),
     TRAINER_SPRITE(TRAINER_PIC_ZINNIA, gTrainerFrontPic_Zinnia, gTrainerPalette_Zinnia),
+    TRAINER_SPRITE(TRAINER_PIC_MISTY, gTrainerFrontPic_Misty, gTrainerPalette_Misty),
+    TRAINER_SPRITE(TRAINER_PIC_LT_SURGE, gTrainerFrontPic_LtSurge, gTrainerPalette_LtSurge),
+    TRAINER_SPRITE(TRAINER_PIC_ERIKA, gTrainerFrontPic_Erika, gTrainerPalette_Erika),
+    TRAINER_SPRITE(TRAINER_PIC_KOGA, gTrainerFrontPic_Koga, gTrainerPalette_Koga),
+    TRAINER_SPRITE(TRAINER_PIC_SABRINA, gTrainerFrontPic_Sabrina, gTrainerPalette_Sabrina),
+    TRAINER_SPRITE(TRAINER_PIC_BLAINE, gTrainerFrontPic_Blaine, gTrainerPalette_Blaine),
+    TRAINER_SPRITE(TRAINER_PIC_GIOVANNI, gTrainerFrontPic_Giovanni, gTrainerPalette_Giovanni),
+    TRAINER_SPRITE(TRAINER_PIC_LORELEI, gTrainerFrontPic_Lorelei, gTrainerPalette_Lorelei),
+    TRAINER_SPRITE(TRAINER_PIC_BRUNO, gTrainerFrontPic_Bruno, gTrainerPalette_Bruno),
+    TRAINER_SPRITE(TRAINER_PIC_AGATHA, gTrainerFrontPic_Agatha, gTrainerPalette_Agatha),
+    TRAINER_SPRITE(TRAINER_PIC_LANCE, gTrainerFrontPic_Lance, gTrainerPalette_Lance),
+    TRAINER_SPRITE(TRAINER_PIC_BLUE, gTrainerFrontPic_Blue, gTrainerPalette_Blue),
+    TRAINER_SPRITE(TRAINER_PIC_ROARK, gTrainerFrontPic_Roark, gTrainerPalette_Roark),
+    TRAINER_SPRITE(TRAINER_PIC_GARDENIA, gTrainerFrontPic_Gardenia, gTrainerPalette_Gardenia),
+    TRAINER_SPRITE(TRAINER_PIC_MAYLENE, gTrainerFrontPic_Maylene, gTrainerPalette_Maylene),
+    TRAINER_SPRITE(TRAINER_PIC_WAKE, gTrainerFrontPic_Wake, gTrainerPalette_Wake),
+    TRAINER_SPRITE(TRAINER_PIC_FANTINA, gTrainerFrontPic_Fantina, gTrainerPalette_Fantina),
+    TRAINER_SPRITE(TRAINER_PIC_BYRON, gTrainerFrontPic_Byron, gTrainerPalette_Byron),
+    TRAINER_SPRITE(TRAINER_PIC_CANDICE, gTrainerFrontPic_Candice, gTrainerPalette_Candice),
+    TRAINER_SPRITE(TRAINER_PIC_VOLKNER, gTrainerFrontPic_Volkner, gTrainerPalette_Volkner),
+    TRAINER_SPRITE(TRAINER_PIC_AARON, gTrainerFrontPic_Aaron, gTrainerPalette_Aaron),
+    TRAINER_SPRITE(TRAINER_PIC_BERTHA, gTrainerFrontPic_Bertha, gTrainerPalette_Bertha),
+    TRAINER_SPRITE(TRAINER_PIC_FLINT, gTrainerFrontPic_Flint, gTrainerPalette_Flint),
+    TRAINER_SPRITE(TRAINER_PIC_LUCIAN, gTrainerFrontPic_Lucian, gTrainerPalette_Lucian),
+    TRAINER_SPRITE(TRAINER_PIC_CYNTHIA, gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),
+    TRAINER_SPRITE(TRAINER_PIC_CYRUS, gTrainerFrontPic_Cyrus, gTrainerPalette_Cyrus),
+    TRAINER_SPRITE(TRAINER_PIC_MARS, gTrainerFrontPic_Mars, gTrainerPalette_Mars),
+    TRAINER_SPRITE(TRAINER_PIC_JUPITER, gTrainerFrontPic_Jupiter, gTrainerPalette_Jupiter),
+    TRAINER_SPRITE(TRAINER_PIC_SATURN, gTrainerFrontPic_Saturn, gTrainerPalette_Saturn),
+    TRAINER_SPRITE(TRAINER_PIC_BARRY, gTrainerFrontPic_Barry, gTrainerPalette_Barry),
+    TRAINER_SPRITE(TRAINER_PIC_PALMER, gTrainerFrontPic_Palmer, gTrainerPalette_Palmer),
+    TRAINER_SPRITE(TRAINER_PIC_THORTON, gTrainerFrontPic_Thorton, gTrainerPalette_Thorton),
+    TRAINER_SPRITE(TRAINER_PIC_ARGENTA, gTrainerFrontPic_Argenta, gTrainerPalette_Argenta),
+    TRAINER_SPRITE(TRAINER_PIC_DAHLIA, gTrainerFrontPic_Dahlia, gTrainerPalette_Dahlia),
+    TRAINER_SPRITE(TRAINER_PIC_RILEY, gTrainerFrontPic_Riley, gTrainerPalette_Riley),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] = // Project Grounded: snellere worp (was 24/9/24/9)

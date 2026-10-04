@@ -36,3 +36,8 @@ Kort antwoorden mag ("1a, 2 ja, 3 Route 115"). Alles hieronder is al gebouwd of 
 ## Backlog
 22. Er staan nog open vragen in `BACKLOG_PLAN.md` (Jirachi, Giratina, Mewtwo, Genesect, Darkrai, Shaymin, Victini, Kubfu, nieuwe gebieden). Welke wil je als volgende?
 23. **Archie en Maxie terug in de post-game** (open punt uit `TODO.md`): ja/nee, en waar?
+
+## Uit de QA-ronde (`QA_RAPPORT.md`)
+24. **Route 115:** wilde Pokémon lv 30–50, terwijl de trainers daar lv 13–33 zijn. Bedoeld (achter Surf) of verlagen?
+25. **Dubbele soorten** in ±60 oudere wilde tabellen (lijst in het rapport). Mag ik die volgens de regel (dubbel slot vervangen, zeldzaamheidsvolgorde behouden) zelf invullen, met soorten die passen bij de plek?
+26. **Route-transities** blijven aan het eind ±0,7 s stilstaan (10 frames vasthouden + fade). Korter maken?

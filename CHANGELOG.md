@@ -15924,3 +15924,4 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - **The Spire:** de elemental monkeys zitten niet meer in de draft. Na het vergeten van een move schuiven de moves dicht (met PP en upgrade), zodat de cursor in gevecht nooit meer op een leeg slot staat.
 - **Teksten:** Nate en Nicholas (Mossdeep Gym) en acht regels met POKéBLOCK (Lilycove, Mossdeep, Fan Club, Lydia) passen weer in het tekstvak; `tools/dialogen/import.py` telt `{POKEBLOCK}`/`{PKMN}` nu mee.
 - **Evolutieregel:** Archie's Archaludon lv 50 (evolueert op 50), Katelynn's Kingambit lv 49, Blissey onder lv 36 bij Nob en Cyndy is weer Chansey, Jupiter (Stadium) heeft Crobat i.p.v. Golbat. Miguel (door Jordi ontworpen) ongewijzigd.
+- **Klok bij de start:** de vraag "Is this the correct time?" staat nu standaard op YES (QoL).

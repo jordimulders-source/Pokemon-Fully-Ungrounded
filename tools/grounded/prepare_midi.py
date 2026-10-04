@@ -119,10 +119,11 @@ def write_voicegroup(path='sound/voicegroups/grounded_gm.inc'):
 
 def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                  drop_channels=(), channel_category=None, transpose=None, max_note=None,
-                 volume=None):
+                 volume=None, min_note=None):
     """drop_channels: MIDI-kanalen die wegvallen; channel_category: {kanaal: categorie} om het instrument
     te overschrijven (bv. rips met niet-GM-programma's); transpose: {kanaal: halve tonen};
     max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen);
+    min_note: {kanaal: noot}: lagere noten gaan per octaaf omhoog (een sample ver omlaag gestemd = lange 'puuup');
     volume: {categorie: 0-127} spoorvolume (standaard 127), om de balans tussen bas en midden te regelen."""
     channel_category = channel_category or {}
     transpose = transpose or {}
@@ -153,6 +154,8 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                 if max_note is not None and ch != 9:
                     while n > max_note:
                         n -= 12
+                while min_note and n < min_note.get(ch, 0):
+                    n += 12
                 n = max(0, min(127, n))
                 notes.setdefault(cat, []).append((tick, 1, n, max(1, min(127, v))))
                 active.setdefault((ch, msg.note), []).append((cat, n))

@@ -5,9 +5,8 @@ Bronnen (graphics/grounded/trainers/):
 - n/n_sheet_delgatron_bron.jpg: N-sheet van Delgatron (DeviantArt). Op 1x, maar JPEG: achtergrond via flood fill
   vanaf de rand weg, kleuren samengevoegd tot 15. Trainerfoto = de derde staande pose (armen open), bovenste 62
   rijen (onderkant geditherd weg, zoals de DS-trainerfoto's). Overworld = de HGSS-achtige loopframes (32x32-cellen).
-- ghetsis/ghetsis_schreeuw_bron.jpg: schreeuwende Ghetsis (pixel-art op ±5,5x, JPEG). Eerst terug naar het
-  pixelraster (132x66; per cel de mediaan), dan een uitsnede van 64x64 rond het hoofd; de hand schuift 14 px naar
-  rechts zodat hij in beeld komt.
+- Ghetsis-trainerfoto: de volledige BW2-figuur uit neo_plasma/bw2_plasma_trainers_bron.png (v0.9.60; eerder het
+  hoofd uit ghetsis/ghetsis_schreeuw_bron.jpg, dat was Jordi te weinig).
 - ghetsis/ghetsis_overworld_purplezaffre_bron.png: Ghetsis-overworld van PurpleZaffre (DeviantArt), RMXP 4x4, 2x.
 
 De figuren zijn breder dan 16 px (hoed, gewaad), dus de overworlds zijn 32x32 (9 frames, Gen 3-volgorde, eigen
@@ -166,10 +165,15 @@ def ghetsis_native():
 
 
 def ghetsis_front():
-    nat = strip_bg(ghetsis_native(), light=230, sat=25)
-    hand = nat.crop((0, 34, 38, nat.height))
-    nat.alpha_composite(hand, (14, 34))          # hand dichter bij het gezicht
-    return nat.crop((36, 1, 100, 65))
+    """Volledige figuur (Jordi: niet alleen het hoofd) uit de BW2-sheet van Neo Plasma (1x): bovenste 62 rijen,
+    onderkant geditherd weg, zoals N en de DS-trainerfoto's."""
+    sheet = Image.open(ROOT + '/graphics/grounded/trainers/neo_plasma/bw2_plasma_trainers_bron.png').convert('RGB')
+    fig = strip_bg(sheet.crop((66, 105, 139, 195)), light=245, sat=12)
+    fig = fig.crop(fig.getbbox()).crop((0, 0, 53, 62))
+    out = Image.new('RGBA', (64, 64), (0, 0, 0, 0))
+    out.alpha_composite(fig, ((64 - fig.width) // 2, 2))
+    fade_bottom(out)
+    return out
 
 
 def ghetsis_overworld():

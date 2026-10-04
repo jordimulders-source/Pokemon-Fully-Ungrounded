@@ -25,9 +25,11 @@ for src, dst in [
     ('dppt_champion.mid', 'mus_grounded_vs_dppt_champion.mid'),
     ('dppt_cyrus.mid',    'mus_grounded_vs_cyrus.mid'),
     ('bw_n.mid',          'mus_grounded_vs_n.mid'),
-    ('bw_ghetsis.mid',    'mus_grounded_vs_ghetsis.mid'),
 ]:
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
+# Ghetsis: de koperpartij (kanaal 6) speelt de 'Ghetsis!'-koorakkoorden twee octaven te laag mee (noot 18-27) en de
+# e-piano (kanaal 7) heeft noten 7/13: een trompet-/pianosample zo ver omlaag geeft lange 'puuup'-tonen (Jordi).
+prepare_auto(f'{SRC}/bw_ghetsis.mid', f'{DST}/mus_grounded_vs_ghetsis.mid', min_note={6: 36, 7: 36})
 for src, dst in [
     ('yoshi_castle.mid',      'mus_grounded_vs_yoshi_castle.mid'),
     ('mksc_broken_pier.mid',  'mus_grounded_vs_broken_pier.mid'),
@@ -47,7 +49,10 @@ prepare_auto(f'{SRC}/pt_giratina.mid', f'{DST}/mus_grounded_vs_giratina.mid', ma
              volume={'strings': 80, 'piano': 80, 'horn': 86, 'trumpet': 86, 'flute': 86, 'square2': 76})
 
 # Zinnia (ORAS, Delta Episode): gevechtsmuziek van Zinnia voor de Sky Pillar
-prepare_auto(f'{SRC}/oras_zinnia.mid', f'{DST}/mus_grounded_vs_zinnia.mid', max_note=84)
+# Knapperen (Jordi): de 8-bit-mixer loopt over (-128 <-> 127) bij strijkersstapels + synthbas + kick (1,7-3,1 s,
+# 10 s, 21 s). Strijkers/bas/orgel/drums zachter en -V072 in midi.cfg: 0 overlopen in recpcm, piek 118/127.
+prepare_auto(f'{SRC}/oras_zinnia.mid', f'{DST}/mus_grounded_vs_zinnia.mid', max_note=84,
+             volume={'strings': 80, 'synth_bass': 85, 'organ': 105, 'drums': 112})
 
 # Neo Team Plasma (Black 2/White 2), MIDI van Byabbington (onlinesequencer): gevechtsmuziek van de Neo Plasma-deelnemers
 prepare_auto(f'{SRC}/b2w2_neo_plasma.mid', f'{DST}/mus_grounded_vs_neo_plasma.mid', max_note=84)

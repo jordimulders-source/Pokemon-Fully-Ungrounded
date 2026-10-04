@@ -26,7 +26,7 @@ EXTRA = {
     OVERDRIVE: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 170',
     DIST_HI: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 160',
     DIST_LO: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 160',
-    BUZZ: 'voice_square_1 60, 0, 0, 0, 0, 0, 15, 1',          # duty 12,5%: scherp en zoemend
+    BUZZ: 'voice_square_1 60, 0, 0, 1, 0, 0, 15, 1',          # duty 25%: zoemend, voller dan 12,5% (viel weg)
     ZAP: 'voice_square_2 60, 0, 1, 0, 1, 4, 0',               # duty 25%, kort: elektrische zaps
     CRACKLE: 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0',          # ruis-knetter
 }
@@ -122,7 +122,7 @@ def build(beast):
             chords += [[s, s + TPB // 2, r, 110], [s, s + TPB // 2, r + 7, 102]]
         layers.append(('power', chords, DIST_LO, 96, 52, True))
     elif beast == 'raikou':
-        layers.append(('buzz', [[s, e, n, 112] for s, e, n, v in melody], BUZZ, 72, 64, False))
+        layers.append(('buzz', [[s, e, n, 127] for s, e, n, v in melody], BUZZ, 127, 64, False))   # Jordi: viel weg bij 72
         layers.append(('zap', [[s, s + TPB // 4, n + 12, 100] for s, e, n, v in figure], ZAP, 36, 90, False))
         end = max(e for s, e, n, v in bass)
         layers.append(('crackle', [[t, t + 4, 72 + (t // TPB) % 5, 60] for t in range(0, end, TPB * 2)

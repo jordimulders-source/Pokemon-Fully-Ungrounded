@@ -104,6 +104,6 @@ voice_group grounded_beasts
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 170  @ 100
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 160  @ 101
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 160  @ 102
-	voice_square_1 60, 0, 0, 0, 0, 0, 15, 1  @ 103
+	voice_square_1 60, 0, 0, 1, 0, 0, 15, 1  @ 103
 	voice_square_2 60, 0, 1, 0, 1, 4, 0  @ 104
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 105

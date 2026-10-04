@@ -11,6 +11,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 4. Opnemen: **`recpcm.py`** (uit de mixbuffer van de game, exact wat de GBA speelt; alleen DirectSound):
    `PYTHONPATH=tools/grounded/maptools python3 tools/grounded/maptools/recpcm.py <rom> <intro.bin> <k> <sec> <uit.wav>`.
    Heeft het nummer PSG-sporen, dan `recaudio.py` (emulator-audio, met glitch-reparatie).
+   **Altijd ook recpcm over de hele lengte (+10 s): `overlopen: 0`.** De 8-bit-mixer klemt niet maar slaat om
+   (-93 -> 123) = knapperen; dat zie je níet in recaudio/audiocheck (Zinnia, v0.9.60). Piek ≤ ±120/127 houden.
 5. `python3 tools/grounded/maptools/audiocheck.py <uit.wav>`: geen pieken/clipping na de eerste 0,1 s, geen
    onverwachte constante tonen, RMS rond 700–2700 (Zarude ≈ 2700 = bovengrens).
 6. mp3 maken (`ffmpeg -ss 0.1 ... -af afade=...`), `volumedetect`: max_volume onder −1 dB.
@@ -163,3 +165,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Let bij zo'n sprong op het ritme van de riff (riffmaat / lege maat om en om): 4 -> 53 klopt omdat 52 -> 53 zo is.
 - audiocheck meldt een "constante toon" in een nummer met een solo-intro: de stilte tussen de riffs maakt de mediaan
   klein. Controleer eerst of de stille stukken echt 0 zijn (Dave: ja, 77 Hz = de bas, geen bromtoon).
+- Zinnia (v0.9.60, Jordi: 'knappert soms'): de mixer sloeg om op stapels strijkers (tot 12 noten, vel 127) + synthbas
+  + kick. Alleen -V omlaag (90 -> 72) hielp niet genoeg; per categorie zachter (`volume=` in prepare_auto: strijkers 80,
+  synthbas 85, orgel 105, drums 112) + -V072 gaf 0 overlopen, piek 118/127.
+- Ghetsis (v0.9.60, Jordi: 'lange puuup bij de vocalen'): de koperpartij speelde de 'Ghetsis!'-koorakkoorden twee
+  octaven lager mee (noot 18-27) en de e-piano had noten 7/13. Een sample zo ver omlaag gestemd = trage, lange 'puuup'.
+  `prepare_auto(..., min_note={kanaal: 36})`. De lint waarschuwt al voor noten < E1: neem die waarschuwing serieus.
+- Raikou (v0.9.60, Jordi: 'valt een beetje weg'): een PSG-lead naast het volle origineel op spoorvolume 72 is te zacht;
+  127 + duty 25% (voller dan 12,5%). Suicune (klokken) en Entei (gitaar) goedgekeurd.

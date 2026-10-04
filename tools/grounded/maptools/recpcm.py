@@ -32,6 +32,10 @@ for f in range(int(60*sec)):
 x=np.concatenate(seg).astype(float)
 jumps=int((abs(np.diff(x[int(freq*0.1):]))>40).sum())
 print(out.split('/')[-1],'sprongen>40/128:',jumps)
+# overlopen: de 8-bit-mixer klemt niet maar slaat om (-93 -> 123); hoorbaar als knapperen (Zinnia). Moet 0 zijn.
+wr=np.where(abs(np.diff(x))>128)[0]
+print('OVERLOPEN (knapperen): %d, op s: %s'%(len(wr),sorted(set((wr/freq).round(1).tolist()))[:12]) if len(wr)
+      else 'overlopen: 0, piek %d/127'%abs(x).max())
 best=(0,0,x)
 x=(best[2]*256).clip(-32768,32767).astype(np.int16)
 w=wave.open(out,'wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(freq); w.writeframes(x.tobytes()); w.close()

@@ -117,6 +117,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **IWRAM en de stack:** de stack (onderaan IWRAM, top op `IWRAM_END - 0x1c0`) groeit naar de statische IWRAM-data toe; een gevecht gebruikt ±2,4 KB. Marge meten: gat tussen einde `.iwram.bss` (pokeemerald.map) en de stacktop in de emulator op 0 zetten, een gevecht spelen, kijken tot waar het beschreven is (v0.9.57: 4240 bytes marge). Grote nieuwe buffers in EWRAM, niet in IWRAM. Vertraagde frames in gevechten verschillen per run ±10 (moves/animaties): vergelijk alleen gelijke situaties en herhaal.
 - **Muziek (componeren, arrangeren, opnemen):** lees en vul `tools/grounded/MUZIEK.md` aan (werkwijze, engine-limieten, smaak van Jordi, log per feedbackronde). Elke MIDI eerst door `tools/grounded/music_lint.py`, elke preview door `recaudio.py` + `audiocheck.py`. Nieuwe automatisch herkenbare fouten worden een controle in de lint.
 - **TM's zijn herbruikbaar:** nooit een TM die al ergens ligt of te koop is nog eens als beloning leggen (Jordi). Alle TM01–TM59 liggen al; nieuwe TM's komen later (richting 100). Tot dan: een ander item als beloning.
+- **Afgekapte trainerfoto's:** een figuur die hard op de onderrand stopt (benen eraf) krijgt de Bayer-fade (`fade_trainer_pics.py` / `fade_bottom`); Jordi vindt een harde snede onnatuurlijk.
 - **Platinum-trainerfoto's:** frame 0 van de DS-animatie is niet altijd van voren (Aaron, Fantina); kies per trainer het frame in `stadium_trainer_pics.py`.
 
 ## Werkwijzen (herhaalde taken)

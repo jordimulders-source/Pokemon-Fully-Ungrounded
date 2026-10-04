@@ -16507,3 +16507,19 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Suicune:** de buisklokken slaan op de hoofdmelodie aan (lange noten en elke nieuwe toonhoogte), en het glockenspiel speelt de begeleiding.
   - **Entei:** de overdrive-gitaar neemt de hoofdmelodie over van de strijkers en trompet; de power chords blijven op de bas.
   - **Raikou:** de zoemende blokgolf zit op de hoofdmelodie, en de zaps op de begeleiding.
+
+### [v.0.9.60] - Zinnia zonder knapperen, Ghetsis zonder 'puuup', Raikou luider, trainerfoto's
+- **Zinnia-thema knapperde soms**: de 8-bit-mixer van de GBA klemt niet maar slaat om (een te harde golf springt van
+  -93 naar +123), op stapels strijkers + synthbas + kick (1,7-3,1 s, 10 s, 21 s). Strijkers, synthbas, orgel en drums
+  zachter (`midi_songs.py`) en `-V072`: in een opname uit de mixbuffer over het hele nummer 0 keer overlopen.
+- **Ghetsis-thema**: de lange 'puuup'-tonen bij de 'Ghetsis!'-koorstukken kwamen van de koperpartij, die het koor twee
+  octaven te laag meespeelde (trompetsample ver omlaag gestemd), en van een paar e-pianonoten op toonhoogte 7/13. Die
+  noten gaan nu een of meer octaven omhoog (`prepare_auto(..., min_note=...)`).
+- **Raikou**: de zoemende synth op de hoofdmelodie viel weg; nu op vol volume en met een vollere blokgolf (25%).
+  Suicune en Entei goedgekeurd door Jordi.
+- **Ghetsis-trainerfoto**: de volledige figuur (BW2, zwarte mantel met Plasma-staf) in plaats van alleen het
+  schreeuwende hoofd; onderkant geditherd weg zoals N.
+- **Mustard en Colress**: hun benen waren hard afgekapt aan de onderrand; nu vloeien ze weg met hetzelfde dither als
+  de DS-trainerfoto's (`tools/grounded/fade_trainer_pics.py`).
+- `recpcm.py` meldt nu het aantal keer dat de mixer overloopt (moet 0 zijn).
+

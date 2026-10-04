@@ -4,12 +4,17 @@
 	.equiv NUM_TRACKS_SE2, 9
 	.equiv NUM_TRACKS_SE3, 1
 
-    .bss
+    @ Project Grounded: de BGM-sporen (16 x 0x50 = 1280 bytes) staan in EWRAM (.sbss) i.p.v. IWRAM,
+    @ zodat de stack in IWRAM genoeg marge houdt.
+    .section .sbss
     .align 2
 
 gMPlayTrack_BGM::
     .space TRACK_SIZE * NUM_TRACKS_BGM
     .size gMPlayTrack_BGM, .-gMPlayTrack_BGM
+
+    .bss
+    .align 2
 
 gMPlayTrack_SE1::
     .space TRACK_SIZE * NUM_TRACKS_SE1

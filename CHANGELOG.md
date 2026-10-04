@@ -16484,3 +16484,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Opgelost:** `NUM_TRACKS_BGM` gaat van 10 naar 16 (`sound/music_player_table.inc`, +480 bytes IWRAM, nu 89%). Alle originele nummers hebben 10 sporen of minder en blijven ongewijzigd.
 - **Zarude** had 11 sporen; het 11e (een PSG-shaker) speelde dus nooit. Om de goedgekeurde versie gelijk te houden, is dat spoor eruit gehaald.
 - `music_lint.py` meldt nu een fout als een nummer meer sporen heeft dan de speler aankan.
+
+### [v.0.9.56] - Muziekbuffer naar EWRAM, meer stackmarge
+- De sporenbuffer van de muziekspeler (16 sporen, 1280 bytes) staat nu in het grote werkgeheugen (EWRAM) in plaats van het kleine, snelle geheugen (IWRAM). IWRAM gaat van 89% naar 85%.
+- Gemeten in een gevecht: de stack gebruikt ±2,4 KB, en er blijft nu 2032 bytes marge over. Met de originele 10 sporen was dat 1344 bytes, dus er is meer ruimte dan vóór de uitbreiding.

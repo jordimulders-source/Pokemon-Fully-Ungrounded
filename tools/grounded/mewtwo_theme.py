@@ -21,7 +21,8 @@ VG = 'grounded_mewtwo'
 TPB, BPM = 96, 128
 S16 = TPB // 4                 # een 16e
 BAR = TPB * 4
-LEAD, PLUCK, PAD, CHOIR, BASS, TIMPANI, DRUMS = 82, 80, 48, 52, 38, 47, 127
+LEAD, PLUCK, PAD, CHOIR, BASS, TIMPANI, DRUMS, ORGAN = 82, 80, 48, 52, 38, 47, 127, 83
+BREATH = 1     # maat 1: ademmaat na de explosie, zodat de cry van Mewtwo vrij klinkt (Jordi: 'glitcht')
 KICK, SNARE, CLAP, HH, OHH, CRASH, ORCH = 36, 38, 39, 42, 46, 57, 40
 A_START, B_START, C_START, END = 1, 9, 17, 25
 
@@ -74,7 +75,7 @@ HOOK = {   # C: de euforische hook
 
 
 def build():
-    parts = {k: [] for k in ('lead', 'echo', 'pluck', 'pad', 'choir', 'bass', 'timp', 'drums', 'hats')}
+    parts = {k: [] for k in ('lead', 'organ', 'echo', 'pluck', 'pad', 'gate', 'choir', 'bass', 'timp', 'drums', 'hats')}
 
     # ---- intro / transitie (maat 0) ----
     parts['pad'] += [[0, 3 * BAR // 4, p('A2'), 70], [0, 3 * BAR // 4, p('E3'), 64]]          # drone
@@ -94,6 +95,11 @@ def build():
         ch = PROG[b]
         root, pad = CH[ch]
         t0 = b * BAR
+        if b == BREATH:                     # ademmaat: alleen een lage drone en twee zachte kicks
+            parts['pad'] += [[t0 + 2 * TPB, t0 + BAR - 8, p('A2'), 60], [t0 + 2 * TPB, t0 + BAR - 8, p('E3'), 56]]
+            parts['drums'] += [[t0 + 2 * TPB, t0 + 2 * TPB + S16, KICK, 80], [t0 + 3 * TPB, t0 + 3 * TPB + S16, KICK, 96]]
+            parts['drums'] += [[t0 + 3 * TPB + i * S16, t0 + 3 * TPB + i * S16 + 8, SNARE, 50 + i * 15] for i in range(4)]
+            continue
         # bas: A en C jagend in 16en, B offbeat-trancebas
         r = 12 * 3 + N[root] if N[root] >= 4 else 12 * 4 + N[root]       # E2..D#3
         if b < B_START:
@@ -105,9 +111,11 @@ def build():
             parts['bass'] += [[t0 + i * TPB, t0 + i * TPB + S16, r - 12 + 12, 100] for i in range(4)]
         # pad (strijkers) + koor
         vel_pad = 76 if b < B_START else 96 if b < C_START else 88
-        parts['pad'] += [[t0, t0 + BAR - 8, p(n), vel_pad] for n in pad]
-        if b >= B_START:
-            parts['choir'] += [[t0, t0 + BAR - 8, p(pad[-1]) + 12, 92 if b < C_START else 100]]
+        if B_START <= b < C_START:          # aangehouden pad alleen in de breakdown; in A/C pompt de gate
+            parts['pad'] += [[t0, t0 + BAR - 8, p(n), vel_pad] for n in pad]
+        parts['choir'] += [[t0, t0 + BAR - 8, p(pad[-1]) + (0 if b < B_START else 12), 80 if b < B_START else 92 if b < C_START else 100]]
+        if b < B_START or b >= C_START:      # pompende trance-strijkers in achtsten (gated pad)
+            parts['gate'] += [[t0 + i * 2 * S16, t0 + i * 2 * S16 + S16, p(n) + 12, 84] for i in range(8) for n in pad[1:]]
         # drums
         if b < B_START or b >= C_START:
             parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + S16, KICK, 124] for i in range(4)]
@@ -123,17 +131,18 @@ def build():
                                for i in steps]
         # melodie
         if b < B_START:
-            parts['lead'] += bars(EVIL[ch], b, 108, shift=0)
+            parts['organ'] += bars(EVIL[ch], b, 110)
             parts['pluck'] += [[t0 + i * S16, t0 + i * S16 + 10, p(pad[i % 3]) + 24, 64] for i in range(16)]   # arpeggio
         elif b < C_START:
             k = b - B_START
             if k % 2 == 0:
                 phrase = SAD[(k // 2) % 4]
-                parts['lead'] += bars(phrase, b, 96)
+                parts['organ'] += bars(phrase, b, 100)
                 # de imperfecte kloon: dezelfde frase een maat later, zachter, een halve toon ernaast
                 parts['echo'] += bars(phrase, b + 1, 64, shift=-1)
         else:
-            parts['lead'] += bars(HOOK[ch], b, 120)
+            parts['lead'] += bars(HOOK[ch], b, 104, shift=-12)
+            parts['organ'] += bars(HOOK[ch], b, 118)
             parts['pluck'] += [[t0 + i * S16, t0 + i * S16 + 10, p(pad[i % 3]) + 24 + (12 if i % 8 >= 4 else 0), 72]
                                for i in range(16)]
 
@@ -146,15 +155,17 @@ def build():
     lines[1] = '@ Gegenereerd door tools/grounded/mewtwo_theme.py.'
     lines[2] = 'voice_group %s' % VG
     lines = [('\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 165  @ 82'
-              if l.rstrip().endswith('@ 82') else l) for l in lines]
+              if l.rstrip().endswith('@ 82') else
+              '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188  @ 83'
+              if l.rstrip().endswith('@ 83') else l) for l in lines]
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(lines))
 
     rel = releases(VG)
-    progs = {'lead': LEAD, 'echo': LEAD, 'pad': PAD, 'choir': CHOIR, 'bass': BASS, 'timp': TIMPANI}
+    progs = {'lead': LEAD, 'organ': ORGAN, 'echo': LEAD, 'pad': PAD, 'gate': PAD, 'choir': CHOIR, 'bass': BASS, 'timp': TIMPANI}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
-    for k in ('lead', 'echo', 'choir'):
+    for k in ('lead', 'organ', 'echo', 'choir'):
         parts[k] = detach(parts[k], tail[k])
-    order = ['lead', 'bass', 'drums', 'echo', 'timp', 'choir', 'pad', 'hats']
+    order = ['organ', 'lead', 'bass', 'drums', 'echo', 'timp', 'choir', 'gate', 'pad', 'hats']
     ds = {k: parts[k] for k in order}
     kept = allocate(ds, order, tail)
     for k in order:
@@ -165,8 +176,8 @@ def build():
 
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
-    song.loop = (A_START * BAR, END * BAR)
-    layout = [('lead', LEAD, 100, 0, 64), ('echo', LEAD, 70, 1, 96), ('pluck', PLUCK, 38, 2, 40),
+    song.loop = ((BREATH + 1) * BAR, END * BAR)      # de ademmaat niet herhalen
+    layout = [('lead', LEAD, 76, 0, 64), ('organ', ORGAN, 104, 7, 64), ('gate', PAD, 70, 8, 64), ('echo', LEAD, 70, 1, 96), ('pluck', PLUCK, 38, 2, 40),
               ('pad', PAD, 78, 3, 64), ('choir', CHOIR, 76, 4, 64), ('bass', BASS, 112, 5, 64),
               ('timp', TIMPANI, 110, 6, 64)]
     for k, prog, vol, ch, pan in layout:

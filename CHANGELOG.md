@@ -16457,3 +16457,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **B, trance-breakdown:** zonder kick, met pads en koor en een melancholische melodie. Elke frase krijgt een zachte echo een halve toon ernaast: de imperfecte kloon. Een snareroffel leidt naar de drop.
   - **C, euforische drop:** de hook vol op Am–F–C–G, de tweede keer eindigend op een dreigend E-groot. Daarna loopt hij terug naar A.
 - De FRLG-Mewtwo-muziek is vervangen door dit thema.
+
+### [v.0.9.53] - Mewtwo v2: ruimte voor de cry, voller, kwaadaardiger
+- **Cry:** na de explosie van de tank volgt nu een "ademmaat" met alleen een lage drone en een paar zachte slagen, zodat Mewtwo's cry vrij klinkt. Daarna valt het hoge tempo in. De loop begint na de ademmaat.
+- **Voller:** pompende trance-strijkers in achtsten in de beat-secties, en een koor onder de evil-sectie en de drop.
+- **Kwaadaardiger:** de melodie speelt nu op een kerkorgel. In de euforische drop speelt de blokgolf mee, een octaaf lager en zachter, zodat hij minder schel is.

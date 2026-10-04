@@ -123,6 +123,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   ogen 88, barsten 96-108, burst 114 = ±1,9 s -> 128 bpm zodat de burst op maat 1 tel 0 valt). DirectSound-blokgolf
   (`sc88pro_square_wave`) als synthlead, PSG-vierkant alleen zacht voor arpeggio's. Opname via het echte gevecht
   (`setwildbattle` + `BattleSetup_StartLegendaryBattle`), zodat je de sync met de transitie hoort.
+- Mewtwo v2: de cry van een wilde Pokémon klinkt ±2,3-3 s na de start van het gevecht (na de transitie) en botst
+  met een drop op dat moment -> een 'ademmaat' na de transitie (alleen drone/zachte kick) en de loop daarna laten
+  beginnen. 'Kaal' -> pompende trance-strijkers in achtsten (gate), koor, orgel. 'Lead te schel/niet evil' ->
+  blokgolf een octaaf lager + kerkorgel (`sc88pro_church_organ3_low`, uit rayquaza_appears) op de melodie.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

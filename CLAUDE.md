@@ -106,6 +106,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Nieuw item-icoon:** ook een `extern` in `include/graphics.h`, naast `src/data/graphics/items.h`.
 - **Max. 16 objecten tegelijk op een kaart** (speler incl.); objecten achteraan de lijst verschijnen dan niet (Stadium-arena in doubles).
 - **Route-transities:** geen delingen/modulo per vak per frame (GBA heeft geen deelinstructie; halve snelheid); tabellen vooraf in `route_transitions.py`. BG0-tiles max. ±767; ontdubbel ook gespiegelde tiles. BG-paletten 13 en 14 zijn vrij in de overworld.
+- **Emulatortests van gevechten:** `gMain.callback2` heeft de thumb-bit (vergelijk met `& ~1`); zet `gBattleOutcome` vóór elk volgend gevecht op 0; een gevecht forceren: `gBattleMons[1].hp` (offset 42, struct 104 bytes) op 1.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)
@@ -191,6 +192,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 
 ## Stand van zaken
 - **5 okt (v0.8.113–0.8.125), PR naar `master` geopend vanaf `claude/amazing-wozniak-2iz078`:** Stadium-feedback (portretten, puntendrempels, korte arena, Kanto-overworlds, Lyle, Ditto op Route 115), Deoxys alleen in de ruimte, Pokémon-revisie (buffs, verborgen abilities naar slot 2), Spire 50 relics, kortere overgangen, wilde tabellen zonder dubbelen (`WILDE_TABELLEN.md`), post-game legendaries met eigen transitie: Genesect (New Mauville-kluis), Mewtwo (Meteor Falls), Giratina (omgekeerde Sky Pillar), Victini (Victory-gauntlet, Liberty Garden), Jirachi (Fallarbor, 's nachts), Darkrai (Mt. Pyre, 's nachts), Shaymin (Bloom Ticket, Flower Paradise), Kubfu-dojo (Route 112). Bouwscripts in `tools/grounded/maptools/` (legend_maps, reverse_pillar, liberty_garden, darkrai_nightmare, flower_paradise, kubfu_dojo).
+- **v0.8.126–0.8.130:** Mustard eigen sprites (`mustard_sprites.py`), kaartgroep `gMapGroup_Grounded` (Dungeons zit vol), Rotom alleen via het event + apparaten in Lilycove 5F, Stadium-omroeper (`announcer.py`), nieuwe Mewtwo/Shaymin-transities, teksten in huisstijl, Victini-gauntlet op Liberty Garden.
 - **Volgende sessie:** is de PR gemerged, begin een nieuwe branch vanaf `master`. Eerst `VRAGEN_VOLGENDE.md` met Jordi doorlopen. Vrije flags: 0x26C–0x270, 0x276–0x278, 0x27A–0x280, 0x285–0x288, 0x28C–0x290; vars 0x40F8, 0x40FA, 0x40FB.
 - **The Spire v0.8.106:** draft 10→2, Mart-winkel (Banette), HP% i.p.v. level, slanke toren, 55 datagedreven events (`events.py` → `spire_event.c`). Volgende: Jordi speelt; open: codex, golven, baas-intro, receptioniste, echte teksten.
 - **The Spire v0.8.104:** branch `claude/amazing-wozniak-2iz078` (nog geen PR naar `master`). Toren in de Battle Frontier (West, noordkant) + lobby, rentals/startkits/bans/biomes/ontmoetingen/bazen uit de rekenscripts (`SPIRE_BALANS.md`), Snorlax-kamp, winkel met schappen en Move Relearner, 16 events. Alles lv 100. Volgende: Jordi speelt en geeft feedback; open: codex, golven, baas-intro, ja/nee bij de receptioniste, echte teksten. Kernprincipes staan bovenaan `SPIRE_DESIGN.md`.

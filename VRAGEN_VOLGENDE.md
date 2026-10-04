@@ -21,4 +21,5 @@ Dingen die niet autonoom konden (smaak, ontbrekende bronnen of een keuze die all
 
 ## Trainers
 6. **Gen 4+-trainersprites (Greenphx) en Johto/Unova voor het Stadium:** zet de sheets in `graphics/grounded/`, dan zet ik ze om en maak ik er toernooiteams bij.
-7. **Burglar in de overwereld:** hij staat al in het Stadium. Waar moet hij in de wereld verschijnen (bijv. 's nachts in een huis in Mauville dat hij leegrooft)?
+7. ~~Mustard-sprite~~: gedaan (v0.8.126, naar Jordi's artwork). V heeft nog de Expert M-foto: eigen sprite gewenst?
+8. **Burglar in de overwereld:** hij staat al in het Stadium. Waar moet hij in de wereld verschijnen (bijv. 's nachts in een huis in Mauville dat hij leegrooft)?

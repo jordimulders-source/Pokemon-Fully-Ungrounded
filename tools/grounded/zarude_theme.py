@@ -64,7 +64,7 @@ strings = Track('strings', 5, 48, 92, 54)
 sq1 = Track('square1', 6, 80, 58, 30)     # PSG: harmonie onder de melodie
 sq2 = Track('square2', 7, 81, 52, 98)     # PSG: arpeggio-glitter
 noise = Track('shaker', 8, 120, 40)       # PSG-ruis: shaker
-TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, sq1, sq2, noise]
+TRACKS = [drums, taiko, bass, marimba, lead, brass, strings]   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
 
 
 def third(minor):
@@ -122,9 +122,9 @@ for b in (0, 1):
         strings.note(b, p, 1, n(D, 3) + (12 if b == 1 and p >= 8 else 0), 50 + b * 30 + p * 2)
     sq1.note(b, 0, 16, n(D, 3), 60 + 30 * b)
 taiko.note(1, 15, 1, n(D, 2), 127)
-# conga-roffel die aanzwelt in maat 2
-for p in range(16):
-    drums.note(1, p, 1, 62 if p % 2 else 64, 40 + p * 5)
+# maat 2: taiko in achtsten die aanzwellen (geen conga-roffel meer: te druk)
+for p in range(0, 16, 2):
+    taiko.note(1, p, 2, n(D, 2), 70 + p * 3)
 
 # maat 3-6: koperfanfare
 fanfare = [(2, 0, 6, n(D, 4)), (2, 6, 2, n(F, 4)), (2, 8, 4, n(G, 4)), (2, 12, 4, n(A, 4)),
@@ -136,7 +136,17 @@ for b, p, d, nt in fanfare:
     sq1.note(b, p, d, nt - 12, 90)
 for b in (2, 3, 4, 5):
     taiko.note(b, 0, 2, n(D, 2), 124)
-    groove(b, full=False, soft=(b < 4))
+    if b == 2:      # alleen lage conga's op de tellen
+        for p in (0, 4, 8, 12):
+            drums.note(b, p, 1, 64, 70)
+    elif b == 3:    # achtsten, hoog/laag
+        for p in range(0, 16, 2):
+            drums.note(b, p, 1, 64 if p % 4 == 0 else 62, 76)
+    elif b == 4:    # achtsten met een paar zestienden
+        for p in (0, 2, 4, 6, 7, 8, 10, 12, 14, 15):
+            drums.note(b, p, 1, 64 if p % 4 == 0 else 62, 84)
+    else:           # maat 6: de groove, nog zonder kick
+        groove(b, full=False, soft=True)
     root, minor = [(D, 1), (D, 1), (Bb, 0), (A, 0)][b - 2]
     bass.note(b, 0, 2, n(root, 2), 118)
     bass.note(b, 8, 2, n(root, 2), 110)

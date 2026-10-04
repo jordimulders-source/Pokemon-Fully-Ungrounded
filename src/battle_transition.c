@@ -121,6 +121,7 @@ static void Task_Kyogre(u8);
 static void Task_Aurora(u8); // Project Grounded
 static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
+static void Task_Regigigas(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
 static void Task_Raikou(u8); // Project Grounded
@@ -167,6 +168,7 @@ static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
 static bool8 Regieleki_Init(struct Task *);
+static bool8 Regigigas_Init(struct Task *);
 static void Task_Groudon(u8);
 static void Task_Rayquaza(u8);
 static void Task_ShredSplit(u8);
@@ -380,6 +382,9 @@ static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
 static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
 static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
+static const u16 sRegigigas_Tileset[] = INCBIN_U16("graphics/battle_transitions/regigigas.4bpp");
+static const u16 sRegigigas_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regigigas.bin");
+static const u16 sRegigigas_Palette[] = INCBIN_U16("graphics/battle_transitions/regigigas.gbapal");
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
 static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deoxys.bin");
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
@@ -612,6 +617,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
     [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
     [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
+    [B_TRANSITION_REGIGIGAS] = Task_Regigigas, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -707,6 +713,15 @@ static const TransitionStateFunc sRegidrago_Funcs[] =
 static const TransitionStateFunc sRegieleki_Funcs[] =
 {
     Regieleki_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+static const TransitionStateFunc sRegigigas_Funcs[] =
+{
+    Regigigas_Init,
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
@@ -1624,6 +1639,11 @@ static void Task_Regieleki(u8 taskId)
     while (sRegieleki_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_Regigigas(u8 taskId)
+{
+    while (sRegigigas_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void Task_Kyogre(u8 taskId)
 {
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1728,6 +1748,12 @@ static bool8 Regidrago_Init(struct Task *task)
 static bool8 Regieleki_Init(struct Task *task)
 {
     NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
+    return FALSE;
+}
+
+static bool8 Regigigas_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegigigas_Tileset, sizeof(sRegigigas_Tileset), sRegigigas_Tilemap, sRegigigas_Palette);
     return FALSE;
 }
 

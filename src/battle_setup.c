@@ -640,6 +640,9 @@ void StartRegiBattle(void)
     case SPECIES_REGIELEKI:
         transitionId = B_TRANSITION_REGIELEKI;
         break;
+    case SPECIES_REGIGIGAS:
+        transitionId = B_TRANSITION_REGIGIGAS;
+        break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
         break;

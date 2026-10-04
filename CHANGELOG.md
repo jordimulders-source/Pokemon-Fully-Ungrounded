@@ -15990,3 +15990,15 @@ Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Ta
 - **Bug:** `Spire_EndTurn` liep meer dan één keer per beurt bij effecten aan het eind van de beurt (gif, weer, Leftovers), waardoor vaste vijandpatronen stappen oversloegen. Nu precies één keer.
 - Debug: `Spire_DebugOpen` met VAR_0x8004 = 6 opent een relic-beloning (VAR_0x8005 0 = elite, 1 = baas).
 - Spire-rekenscripts opnieuw gedraaid na de Pokémon-revisie van v0.8.116–0.8.117.
+
+### [v.0.8.119] - Kortere overgangen
+Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en move-animaties zelf blijven.
+- **Route- en soorttransities** (alle eigen transities via `RouteTransition_Run`, ook Pikachu, Colress, Zangoose enz.): het eindbeeld blijft 2 i.p.v. 10 frames staan en de fade naar zwart duurt 8 i.p.v. 16 frames (ook de hittegolf). New Mauville: 3 i.p.v. 8 frames zwart. De animaties zelf zijn ongewijzigd.
+- **Legendary-transities:** Suicune, Deoxys, Entei (12→6), Raikou (16→8) en Birch (20→10) houden het witte/bruine beeld korter vast; Raikou/Entei faden sneller naar zwart.
+- **Deuren:** openen en sluiten in 12 i.p.v. 20 frames.
+- **Warps:** de game wachtte na het zwart worden nog tot de oude muziek was uitgefaded (32 frames naar binnen, 64 naar buiten); nu 16. De fade bij deuren/trappen/warps is iets sneller.
+- **Grotten:** de lichtovergang bij in- en uitgaan gaat twee keer zo snel.
+- **Einde gevecht:** de fade naar zwart duurt ~16 i.p.v. ~35 frames; terug in het veld (en na menu's) fadet het beeld iets sneller in.
+- **White-out:** 30 i.p.v. 120 frames zwart scherm na het verliezen.
+- Gemeten (knop → weer besturing): deur in 121→85, deur uit 135→75, grot in 147→91, grot uit 154→88 frames; wegrennen uit een wild gevecht 114→93; as-transitie tot gevecht 148→132.
+- Bleef zoals het was: vanilla-transities, `WeatherDuo_FadeOut`, `warpwhitefade`/`FadeInFromWhite` in cutscenes, de laadtijd van een gevecht.

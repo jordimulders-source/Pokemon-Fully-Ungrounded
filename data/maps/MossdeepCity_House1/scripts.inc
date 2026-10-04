@@ -35,8 +35,8 @@ MossdeepCity_House1_Text_DoesntLikeOrDislikePokeblocks:
 	.string "A POKéMON without opinions. Rare.$"
 
 MossdeepCity_House1_Text_HusbandCanTellPokeblockMonLikes:
-	.string "My husband can tell what {POKEBLOCK}S a POKéMON\n"
-	.string "likes at a glance.\p"
+	.string "My husband can tell what {POKEBLOCK}S a\n"
+	.string "POKéMON likes at a glance.\p"
 	.string "He can't tell what I like. After 20\n"
 	.string "years.$"
 

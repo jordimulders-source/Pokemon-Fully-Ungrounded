@@ -28,7 +28,23 @@ def load_widths():
     return cm
 
 
+def load_macro_widths():
+    """Breedte van tekenmacro's die gewone glyphs zijn ({POKEBLOCK} = 35px, {PKMN} = 16px, {LV}, ...)."""
+    src = open('src/fonts.c').read()
+    m = re.search(r'gFontNormalLatinGlyphWidths\[\]\s*=\s*\{(.*?)\};', src, re.S)
+    widths = [int(x) for x in re.findall(r'\d+', re.sub(r'//.*', '', m.group(1)))]
+    out = {}
+    for line in open('charmap.txt'):
+        mm = re.match(r'^([A-Z_0-9]+)\s*=\s*((?:[0-9A-F]{2} ?)+)\s*$', line)
+        if mm:
+            codes = [int(x, 16) for x in mm.group(2).split()]
+            if all(c < 0xF7 and c < len(widths) for c in codes):
+                out[mm.group(1)] = sum(widths[c] for c in codes)
+    return out
+
+
 W = load_widths()
+MACRO_W = load_macro_widths()
 
 
 def text_width(s):
@@ -37,7 +53,10 @@ def text_width(s):
         if not part:
             continue
         if part.startswith('{'):
-            w += PLACEHOLDER_W if re.fullmatch(r'\{(PLAYER|RIVAL|STR_VAR_\d)\}', part) else 0
+            if re.fullmatch(r'\{(PLAYER|RIVAL|STR_VAR_\d)\}', part):
+                w += PLACEHOLDER_W
+            else:
+                w += MACRO_W.get(part[1:-1], 0)
         else:
             w += sum(W.get(ch, 6) for ch in part)
     return w

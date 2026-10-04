@@ -535,7 +535,7 @@ MossdeepCity_Gym_Text_NateIntro:
 	.string "I say... you look like a fellow scholar!\p"
 	.string "I recently read a very thick book\n"
 	.string "about secret societies and cults.\l"
-	.string "Let me demonstrate the tenacious\n"
+	.string "Let me demonstrate the tenacious\l"
 	.string "rituals... I mean, tactics I learned!$"
 
 MossdeepCity_Gym_Text_NateDefeat:
@@ -607,7 +607,7 @@ MossdeepCity_Gym_Text_NicholasIntro:
 	.string "two sides of the same coin!\p"
 	.string "Humankind cannot gain anything\n"
 	.string "without first giving something in\l"
-	.string "return. To obtain, something of equal\n"
+	.string "return. To obtain, something of equal\l"
 	.string "value must be lost!\p"
 	.string "That is the law of EQUIVALENT\n"
 	.string "EXCHANGE! Prepare to be dissected!$"

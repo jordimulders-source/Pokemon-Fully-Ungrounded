@@ -690,8 +690,15 @@ TIER_NAMES = ['C', 'B', 'A', 'S']
 ACT_WEIGHT = (0.3, 0.3, 0.4)
 
 
+# Project Grounded: de elemental monkeys zijn bewust weggelaten (CLAUDE.md, vaste regels). Ze tellen wel mee
+# voor de tiers (zodat de rest niet verschuift), maar komen niet in de game.
+NOT_IN_GAME = ('PANSAGE', 'SIMISAGE', 'PANSEAR', 'SIMISEAR', 'PANPOUR', 'SIMIPOUR')
+
+
 def write_header(res, pools):
     path = os.path.join(ROOT, 'src/data/spire_pool.h')
+    res = dict(res, ok=[x for x in res['ok'] if x['base'] not in NOT_IN_GAME],
+               events=[x for x in res['events'] if x['base'] not in NOT_IN_GAME])
     L = ['// Gegenereerd door tools/grounded/spire/spire_pool.py - niet met de hand bewerken.', '',
          '// Rentals: eerste vorm, tier (0 C - 3 S), startmoves (STAB, [STAB], status, grounded).',
          'static const struct SpireRental sSpireRentals[] =', '{']

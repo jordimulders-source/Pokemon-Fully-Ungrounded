@@ -5682,6 +5682,13 @@ static void RT_LoadPalette(const struct RouteTransition *rt, struct Task *task)
     LoadPalette(&rt->palettes[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 }
 
+// het huidige (getinte) beeld als basis vastzetten. Daarna blendt een fade naar wit/zwart vanaf dit beeld, in plaats van
+// eerst een frame de ongetinte wereld te tonen (BlendPalettes rekent vanaf de "unfaded" paletten).
+static void RT_FreezePalettes(void)
+{
+    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+}
+
 static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
 {
     struct Task *task = &gTasks[taskId];
@@ -6249,6 +6256,8 @@ static bool8 RTSky_Update(struct Task *task)
         PlaySE(SE_M_SKY_UPPERCUT);
     if (t >= 62)
     {
+        if (t == 62)
+            RT_FreezePalettes();
         BlendPalettes(PALETTES_ALL, min((t - 62) * 2, 16), RGB_WHITE);
         return t >= 70;
     }
@@ -6551,7 +6560,10 @@ static bool8 RTMeteor_Update(struct Task *task)
         PlaySE(SE_M_WING_ATTACK);
     if (t >= 70)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 70) * 2, 16), RGB_WHITE);
+        // het donker in (niet wit: in een grot is er geen reden voor een witte flits)
+        if (t == 70)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 70) * 2, 16), RGB_BLACK);
         return t >= 78;
     }
     return FALSE;
@@ -6604,7 +6616,7 @@ static bool8 RTJagged_Update(struct Task *task)
         PlaySE(SE_M_ROCK_THROW);
     if (t >= 84)
     {
-        BlendPalette(BG_PLTT_ID(15), 16, min((t - 84) * 2, 16), RGB_WHITE);
+        BlendPalette(BG_PLTT_ID(15), 16, min((t - 84) * 2, 16), RGB_BLACK);
         return t >= 92;
     }
     return FALSE;
@@ -6653,7 +6665,10 @@ static bool8 RTRainforest_Update(struct Task *task)
         PlaySE(SE_M_RAZOR_WIND);
     if (t >= 72)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 72) * 2, 16), RGB_WHITE);
+        // het dichte bos in: donker, geen witte flits
+        if (t == 72)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 72) * 2, 16), RGB_BLACK);
         return t >= 80;
     }
     return FALSE;
@@ -6948,6 +6963,8 @@ static bool8 RTGabbyTy_Update(struct Task *task)
     BlendPalettes(RT_SCENE_PALETTES, min(t / 8, 4), RGB(12, 12, 12));
     if (t >= 76)
     {
+        if (t == 76)
+            RT_FreezePalettes();
         BlendPalettes(PALETTES_ALL, min((t - 76) * 4, 16), RGB_WHITE); // flits
         return t >= 80;
     }
@@ -7019,7 +7036,10 @@ static bool8 RTPsyduck_Update(struct Task *task)
     RT_SetSprite(task, 120, 80, min(scale, 512), task->tRtA);
     if (t >= 84)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 84) * 2, 16), RGB_WHITE);
+        // geen witte flits: het vraagteken draait het beeld uit
+        if (t == 84)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 84) * 2, 16), RGB_BLACK);
         return t >= 92;
     }
     return FALSE;
@@ -7105,7 +7125,10 @@ static bool8 RTBeachball_Update(struct Task *task)
     {
         // pats! het beeld schudt en wordt wit
         if (t == 60)
+        {
             PlaySE(SE_M_MEGA_KICK);
+            RT_FreezePalettes();
+        }
         SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 7) - 3) & 0x1FF);
         x += (Random() % 7) - 3;
         BlendPalettes(PALETTES_ALL, min((t - 60) * 3, 16), RGB_WHITE);

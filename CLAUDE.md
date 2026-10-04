@@ -100,6 +100,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Subagents en de scratchpad:** die wordt gedeeld; laat elke agent een eigen submap gebruiken (een `test.gba` van een ander proces gaf een Bus error).
 - **Object toevoegen aan een kaart met `"object_events": []`:** tekstueel vóór `"warp_events"` invoegen belandt in `connections`; controleer met `json.load`.
 - **Zwarte leegte op een kaart:** metatile 0 is niet zwart (layer NORMAL tekent grasbasis op BG3); gebruik Facility-metatile 0x201. Kleine kaarten tonen de border: rondom aanvullen. `build/emerald/data/maps.o` volgt `map.bin`/`border.bin` niet: na een wijziging verwijderen.
+- **Kubfu evolueren:** `EVO_SCRIPT_TRIGGER` negeert zijn parameter (altijd Single Strike); gebruik `Grounded_EvolveKubfu` (VAR_0x8004 0/1). Testtruc: battle style SET via `u16[gSaveBlock2Ptr+0x14] |= 1<<9` (anders blijft A-mashen hangen op "Will you switch?").
+- **Agent-branches met conflicten:** `graft.py`-aanpak: onze versie + de pure toevoegingen van de agent (diff base→agent), wijzigingen met de hand; trainernummers en gegenereerde bestanden (pool.py) daarna opnieuw.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

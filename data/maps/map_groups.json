@@ -465,7 +465,10 @@
     "SkyPillar_ReverseB1F",
     "SkyPillar_ReverseB2F",
     "SkyPillar_ReverseB3F",
-    "MtPyre_Nightmare"
+    "MtPyre_Nightmare",
+    "Route112_Dojo",
+    "Route112_TowerOfDarkness",
+    "Route112_TowerOfWaters"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -623,7 +626,9 @@
     "BattleFrontier_SpireLobby",
     "BattleFrontier_StadiumLobby",
     "BattleFrontier_StadiumArena",
-    "LibertyGarden"
+    "LibertyGarden",
+    "FlowerParadise_Shore",
+    "FlowerParadise_Meadow"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

@@ -47,4 +47,7 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width);
 bool16 ScriptMenu_CreatePCMultichoice(void);
 void ScriptMenu_DisplayPCStartupPrompt(void);
 
+u8 GetLilycoveSSTidalSelectionCount(void); // Project Grounded
+const u8 *GetLilycoveSSTidalSelectionText(u8 i);
+
 #endif //GUARD_SCRIPT_MENU_H

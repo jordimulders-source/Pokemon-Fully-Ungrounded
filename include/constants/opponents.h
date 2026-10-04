@@ -971,8 +971,17 @@
 #define TRAINER_VICTORY_VEGA                    957
 #define TRAINER_VICTORY_VESNA                   958
 #define TRAINER_VICTORY_V                       959
+// Project Grounded: Kubfu-dojo op Route 112
+#define TRAINER_DOJO_DARK_1                 960
+#define TRAINER_DOJO_DARK_2                 961
+#define TRAINER_DOJO_DARK_KEEPER            962
+#define TRAINER_DOJO_WATER_1                963
+#define TRAINER_DOJO_WATER_2                964
+#define TRAINER_DOJO_WATER_KEEPER           965
+#define TRAINER_MUSTARD                     966
+#define TRAINER_STADIUM_MUSTARD             967
 
-#define TRAINERS_COUNT                      960
+#define TRAINERS_COUNT                      968
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

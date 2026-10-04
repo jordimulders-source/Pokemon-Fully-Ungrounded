@@ -886,6 +886,17 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_FlowerParadise = // Project Grounded: Flower Paradise (Shaymin), Fortree + Gracidea, flower_paradise.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FlowerParadise,
+    .palettes = gTilesetPalettes_FlowerParadise,
+    .metatiles = gMetatiles_FlowerParadise,
+    .metatileAttributes = gMetatileAttributes_FlowerParadise,
+    .callback = InitTilesetAnim_Fortree,
+};
+
 const struct Tileset gTileset_SkyPillarReverse = // Project Grounded: omgekeerde Sky Pillar (Giratina), via reverse_pillar.py
 {
     .isCompressed = TRUE,

@@ -47,7 +47,8 @@ LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect::
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRock
 	case 4, LilycoveCity_Harbor_EventScript_GoToBirthIsland
 	case 5, LilycoveCity_Harbor_EventScript_GoToFarawayIsland
-	case 6, LilycoveCity_Harbor_EventScript_ExitSailSelect
+	case 6, LilycoveCity_Harbor_EventScript_GoToFlowerParadise
+	case 7, LilycoveCity_Harbor_EventScript_ExitSailSelect
 	case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitSailSelect
 	end
 
@@ -75,6 +76,14 @@ LilycoveCity_Harbor_EventScript_GoToBirthIsland::
 LilycoveCity_Harbor_EventScript_GoToFarawayIsland::
 	call LilycoveCity_Harbor_EventScript_BoardFerry
 	warp MAP_FARAWAY_ISLAND_ENTRANCE, 13, 38
+	waitstate
+	release
+	end
+
+@ Project Grounded: Flower Paradise (Shaymin), met het Bloom Ticket
+LilycoveCity_Harbor_EventScript_GoToFlowerParadise::
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_FLOWER_PARADISE_SHORE, 13, 22
 	waitstate
 	release
 	end
@@ -293,7 +302,7 @@ LilycoveCity_Harbor_EventScript_MultipleEventTicketsFirstTime::
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRockFirstTime
 	case 4, LilycoveCity_Harbor_EventScript_GoToBirthIslandFirstTime
 	case 5, LilycoveCity_Harbor_EventScript_GoToFarawayIslandFirstTime
-	case 6, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
+	case 7, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
 	case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
 	release
 	end

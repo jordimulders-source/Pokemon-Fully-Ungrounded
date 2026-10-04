@@ -525,6 +525,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van Gracidea-bloemen
+    case SPECIES_SHAYMIN_SKY:
+        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
     case SPECIES_GENESECT_DOUSE:
     case SPECIES_GENESECT_SHOCK:

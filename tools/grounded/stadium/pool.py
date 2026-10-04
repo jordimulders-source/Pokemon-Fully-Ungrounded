@@ -34,7 +34,7 @@ POOL = [
     'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'WALLACE', 'STEVEN',
     # verhaal
     'WALLY_VR_5', 'ARCHIE_SOOTOPOLIS', 'MAXIE_SOOTOPOLIS', 'BIRCH_UNDERWATER', 'KECCLES_3', 'COLRESS_MAGMA',
-    'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'STADIUM_JOEY', 'STADIUM_WINSTON',
+    'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'STADIUM_JOEY', 'STADIUM_WINSTON', 'STADIUM_MUSTARD',
     # Aqua- en Magma-admins (sterkste versie)
     'MATT', 'SHELLY_SEAFLOOR_CAVERN', 'TABITHA_MOSSDEEP',
     # geïmporteerd voor het Stadium (v0.8.108): Kanto (FRLG), Sinnoh (Platinum), Frontier Brains
@@ -185,6 +185,7 @@ GFX = {
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
     'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'MAN_2', 'DITTO': 'SPECIES(DITTO)',
+    'MUSTARD': 'EXPERT_M',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
 }

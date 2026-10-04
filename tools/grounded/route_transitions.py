@@ -882,6 +882,70 @@ def surface():
 htiles = [lava_tile(0), lava_tile(1), edge(True), edge(False), head(0), head(1), head(2), drops(), surface()]
 save('heatran', htiles, cycle(pad(LAVA), 4, amp=2))
 
+# ------------------------------------------------------------------ Shaymin: een wervelwind van Gracidea-bloemen en -blaadjes
+# 1-2 Gracidea (roze / wit met roze hart), 3-6 roze blaadje (vier richtingen), 7-8 wit blaadje, 9 bloementapijt,
+# 10 helemaal lichtroze, 11-14 grote Gracidea (2x2)
+GRAC = pad([(0, 0, 0), (31, 20, 26), (29, 11, 20), (21, 5, 13), (31, 31, 31), (26, 24, 28), (31, 27, 8),
+            (10, 22, 8), (5, 13, 5), (31, 26, 29)])
+def gracidea(white):
+    def f(x, y):
+        dx, dy = x - 3.5, y - 3.5
+        d = math.hypot(dx, dy)
+        if d < 1.1:
+            return 6
+        if d > 3.9:
+            return 0
+        a = math.atan2(dy, dx)
+        lobe = abs(math.cos(2.5 * (a + 0.3)))          # vijf bloemblaadjes
+        if d > 1.6 + 2.4 * lobe:
+            return 0
+        if white:
+            return 2 if d < 2.0 else (4 if d < 3.1 else 5)
+        return 3 if d < 1.7 else (2 if d < 2.6 else 1)
+    return tile(f)
+def petal(ang, col):
+    ca, sa = math.cos(ang), math.sin(ang)
+    def f(x, y):
+        u = (x - 3.5) * ca + (y - 3.5) * sa             # langs het blaadje
+        v = -(x - 3.5) * sa + (y - 3.5) * ca
+        if abs(u) > 3.2:
+            return 0
+        w = 1.8 * math.cos(u / 3.2 * math.pi / 2) ** 0.7 * (1.0 if u < 0 else 0.75)
+        if abs(v) > w:
+            return 0
+        if col == 'pink':
+            return 3 if u > 2.2 else (1 if v < -0.5 else 2)
+        return 2 if u > 2.4 else (4 if v < 0.3 else 5)
+    return tile(f)
+def carpet(x, y):
+    pts = [(1, 1, 0), (5, 2, 1), (2, 5, 1), (6, 6, 0)]
+    for cx, cy, w in pts:
+        d = abs(x - cx) + abs(y - cy)
+        if d == 0:
+            return 6
+        if d == 1:
+            return 4 if w else 2
+    return 9 if (x + y) % 3 else 1
+grac = [gracidea(False), gracidea(True)]
+grac += [petal(a, 'pink') for a in (0.4, 0.4 + math.pi / 2, 0.4 + math.pi, 0.4 + 3 * math.pi / 2)]
+grac += [petal(a, 'white') for a in (1.1, 1.1 + math.pi)]
+grac.append(tile(carpet))
+grac.append(tile(lambda x, y: 9))
+def big_gracidea(x, y):
+    dx, dy = x - 7.5, y - 7.5
+    d = math.hypot(dx, dy)
+    if d < 2.0:
+        return 6
+    a = math.atan2(dy, dx)
+    lobe = abs(math.cos(2.5 * (a + 0.3)))
+    if d > 2.6 + 5.2 * lobe:
+        return 0
+    if d < 3.0:
+        return 3
+    return 4 if d > 1.8 + 5.2 * lobe else (1 if dx + dy < 0 else 2)
+grac += blocks(big_gracidea, 2, 2)                  # 11-14: grote Gracidea (2x2)
+save('shaymin', grac, cycle(GRAC, 4, amp=1))
+
 # ------------------------------------------------------------------ Genesect: scanlijnen, een rood vizier dat zijn doel zoekt, Techno Blast
 # 1 scanlijnen, 2 scanbalk, 3-66 vizier (8x8), 67.. "LOCKED ON" (GTW x GTH), daarna straal: rand boven, kern, rand onder
 GEN = pad([(0, 0, 0), (6, 0, 2), (20, 2, 4), (31, 6, 6), (31, 18, 16), (31, 31, 31), (2, 2, 4), (12, 4, 16)])

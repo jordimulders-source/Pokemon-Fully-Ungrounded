@@ -8,9 +8,9 @@ RocketHideout_1F_EventScript_Smuggler::
 	msgbox RocketHideout_1F_Text_SmugglerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_1F_EventScript_Motto::
-	trainerbattle_single TRAINER_ROCKET_MOTTO, RocketHideout_1F_Text_MottoIntro, RocketHideout_1F_Text_MottoDefeat
-	msgbox RocketHideout_1F_Text_MottoPostBattle, MSGBOX_AUTOCLOSE
+RocketHideout_1F_EventScript_Recruiter::
+	trainerbattle_single TRAINER_ROCKET_RECRUITER, RocketHideout_1F_Text_RecruiterIntro, RocketHideout_1F_Text_RecruiterDefeat
+	msgbox RocketHideout_1F_Text_RecruiterPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 RocketHideout_1F_Text_SmugglerIntro:
@@ -26,18 +26,18 @@ RocketHideout_1F_Text_SmugglerPostBattle:
 	.string "That's why it's so warm.\p"
 	.string "And why it bites.$"
 
-RocketHideout_1F_Text_MottoIntro:
-	.string "Prepare for trouble! And make it…\n"
-	.string "…hang on, my partner's on break.\p"
-	.string "Fine, I'll do both parts.\n"
-	.string "Prepare for trouble! And make it\l"
-	.string "double! To protect the world from…\p"
-	.string "You're not even listening.$"
+RocketHideout_1F_Text_RecruiterIntro:
+	.string "Oh! A walk-in! Have you considered\n"
+	.string "a career in organized crime?\p"
+	.string "Flexible hours. Black uniforms.\n"
+	.string "Very slimming. Let's do the\l"
+	.string "practical part of the interview.$"
 
-RocketHideout_1F_Text_MottoDefeat:
-	.string "Team Rocket's blasting off\n"
-	.string "agaaain… Indoors. Ow. Ceiling.$"
+RocketHideout_1F_Text_RecruiterDefeat:
+	.string "Strong candidate. Terrible attitude.\n"
+	.string "I'll put you down as a “maybe”.$"
 
-RocketHideout_1F_Text_MottoPostBattle:
-	.string "Twelve years I've recited that\n"
-	.string "motto. Nobody ever lets me finish.$"
+RocketHideout_1F_Text_RecruiterPostBattle:
+	.string "Our benefits package is one cave\n"
+	.string "and a hat. The hat is optional.\p"
+	.string "The cave is not.$"

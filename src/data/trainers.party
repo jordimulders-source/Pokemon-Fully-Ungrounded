@@ -34717,7 +34717,7 @@ Ability: Prankster
 - Will-O-Wisp
 - Recover
 
-=== TRAINER_ROCKET_MOTTO ===
+=== TRAINER_ROCKET_RECRUITER ===
 Name: GRUNT
 Class: Team Rocket
 Pic: Rocket Grunt F
@@ -34726,32 +34726,32 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Arbok
+Hypno
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-Ability: Intimidate
-- Poison Jab
-- Glare
-- Crunch
-- Coil
+Ability: Bad Dreams
+- Hypnosis
+- Psychic
+- Dream Eater
+- Nasty Plot
 
-Wobbuffet
+Bombirdier
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-Ability: Shadow Tag
-- Counter
-- Mirror Coat
-- Encore
-- Safeguard
+Ability: Rocky Payload
+- Rock Slide
+- Knock Off
+- Dual Wingbeat
+- Sucker Punch
 
-Weezing
+Grafaiai
 Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-Ability: Air Pollution
-- Sludge Bomb
-- Flamethrower
-- Will-O-Wisp
-- Explosion
+Ability: Prankster
+- Gunk Shot
+- Super Fang
+- Taunt
+- U-turn
 
 === TRAINER_ROCKET_SCIENTIST ===
 Name: GRUNT

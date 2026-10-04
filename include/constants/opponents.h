@@ -1033,7 +1033,7 @@
 
 #define TRAINER_ROCKET_GUARD                1020 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
 #define TRAINER_ROCKET_SMUGGLER             1021 // Project Grounded: Rocket-hideout 1F
-#define TRAINER_ROCKET_MOTTO                1022 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_RECRUITER                1022 // Project Grounded: Rocket-hideout 1F
 #define TRAINER_ROCKET_SCIENTIST            1023 // Project Grounded: Rocket-hideout B1F
 #define TRAINER_ROCKET_THIEF                1024 // Project Grounded: Rocket-hideout B1F
 #define TRAINER_PETREL                      1025 // Project Grounded: Rocket-hideout B2F (executive)

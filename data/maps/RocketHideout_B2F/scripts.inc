@@ -18,7 +18,7 @@ RocketHideout_B2F_EventScript_PetrelDefeated::
 	setvar VAR_ROCKET_QUEST, 3
 	applymovement LOCALID_ROCKET_RUNNER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	msgbox RocketHideout_B2F_Text_RunnerMotto, MSGBOX_DEFAULT
+	msgbox RocketHideout_B2F_Text_RunnerSmoke, MSGBOX_DEFAULT
 	msgbox RocketHideout_B2F_Text_PetrelRetreat, MSGBOX_DEFAULT
 	closemessage
 	playse SE_M_EXPLOSION
@@ -58,9 +58,9 @@ RocketHideout_B2F_Text_PetrelGivesKeys:
 RocketHideout_B2F_Text_GotZoneKeys:
 	.string "{PLAYER} got the ZONE KEYS back!$"
 
-RocketHideout_B2F_Text_RunnerMotto:
-	.string "Boss! Boss! Should we do the motto?\n"
-	.string "The one with the blasting off?$"
+RocketHideout_B2F_Text_RunnerSmoke:
+	.string "Boss! Boss! Should we use the smoke\n"
+	.string "bomb? The one that smells like toast?$"
 
 RocketHideout_B2F_Text_PetrelRetreat:
 	.string "No time! Smoke bomb!\n"

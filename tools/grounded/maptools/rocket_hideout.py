@@ -203,7 +203,7 @@ M_, F_ = 'OBJ_EVENT_GFX_ROCKET_GRUNT_M', 'OBJ_EVENT_GFX_ROCKET_GRUNT_F'
 OBJS = {
     'RocketHideout_1F': [
         grunt(M_, 7, 14, 'UP', 2, 'RocketHideout_1F_EventScript_Smuggler'),
-        grunt(F_, 9, 3, 'DOWN', 6, 'RocketHideout_1F_EventScript_Motto'),
+        grunt(F_, 9, 3, 'DOWN', 6, 'RocketHideout_1F_EventScript_Recruiter'),
         item(2, 5, 'ITEM_FULL_HEAL', 'FLAG_ITEM_ROCKET_HIDEOUT_FULL_HEAL'),
     ],
     'RocketHideout_B1F': [

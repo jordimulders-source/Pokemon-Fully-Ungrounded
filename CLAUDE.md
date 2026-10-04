@@ -104,6 +104,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Agent-branches met conflicten:** `graft.py`-aanpak: onze versie + de pure toevoegingen van de agent (diff base→agent), wijzigingen met de hand; trainernummers en gegenereerde bestanden (pool.py) daarna opnieuw.
 - **Max. 128 kaarten per kaartgroep** (`struct WarpData` gebruikt `s8 mapNum`; kaart 128+ laat het spel vastlopen in `CB2_LoadMap2`). `gMapGroup_Dungeons` zit vol (128): nieuwe kaarten in `gMapGroup_Grounded` (achteraan `group_order`).
 - **Nieuw item-icoon:** ook een `extern` in `include/graphics.h`, naast `src/data/graphics/items.h`.
+- **Max. 16 objecten tegelijk op een kaart** (speler incl.); objecten achteraan de lijst verschijnen dan niet (Stadium-arena in doubles).
+- **Route-transities:** geen delingen/modulo per vak per frame (GBA heeft geen deelinstructie; halve snelheid); tabellen vooraf in `route_transitions.py`. BG0-tiles max. ±767; ontdubbel ook gespiegelde tiles. BG-paletten 13 en 14 zijn vrij in de overworld.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

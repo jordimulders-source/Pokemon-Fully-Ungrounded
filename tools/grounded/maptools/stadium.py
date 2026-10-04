@@ -695,6 +695,10 @@ def interiors(warp_id):
     objs = []
     for o in room['object_events']:
         o = dict(o)
+        # max. 16 objecten tegelijk (speler incl.): drie publieksleden achteraan weg, anders verdwijnen compagnon en
+        # tweede tegenstander in doubles (die staan met de hand in map.json, v0.8.127)
+        if 'local_id' not in o and o['y'] == 1 and o['x'] in (8, 12, 16):
+            continue
         if 'local_id' in o:
             o['local_id'] = rename[o['local_id']]
         objs.append(o)

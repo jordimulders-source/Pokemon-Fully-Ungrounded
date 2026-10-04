@@ -16238,3 +16238,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - Trainers (lv 37–38): Fisherman Otto, moerasheks Griselda, Ranger Fern, Ninja Boy Kappa (vermomd als boom).
   - Items: Black Sludge, Mystic Water (alleen surfend), Absorb Bulb, TM Rain Dance (ook in de Abandoned Ship), verborgen Big Root en Ultra Ball.
 - Trainers 1030–1033; flags 0x4D3–0x4D8.
+- **Battle! Zarude v10** (Jordi: intro van v9 + de catchy loop van v1): de loop klinkt weer als v1, met de PSG-tertsen onder de fluitmelodie, het arpeggio in het tweede deel, de ruis-shaker, klap op de backbeat en tamboerijn op de offbeat. In v2 waren die PSG-sporen weggehaald vanwege "losse piepjes", maar die bleken van drumnoot 44 (PSG in `rs_drumset`) in de tomroffel te komen. De intro (tot 14,3 s) blijft die van v9, zonder PSG.

@@ -35,8 +35,11 @@ class Track:
     def __init__(self, name, ch, prog, vol, pan=64):
         self.name, self.ch, self.ev = name, ch, []
         self.prog, self.vol, self.pan = prog, vol, pan
+        self.psg = prog in (80, 81, 120)
 
     def note(self, bar, pos16, dur16, note, vel=100, raw=False):
+        if self.psg and bar < INTRO_BARS:
+            return          # geen PSG in de intro (Jordi: intro van v9), wel in de loop (v1)
         if bar >= 2 and not raw:
             bar += TENSION  # spanningsmaten: de blazers wachten tot de transitie voorbij is (Jordi)
         t = bar * BAR + pos16 * S16
@@ -68,7 +71,7 @@ timp = Track('timpani', 6, 47, 104, 64)
 sq1 = Track('square1', 6, 80, 58, 30)     # PSG: harmonie onder de melodie
 sq2 = Track('square2', 7, 81, 52, 98)     # PSG: arpeggio-glitter
 noise = Track('shaker', 8, 120, 40)       # PSG-ruis: shaker
-TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, timp]   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
+TRACKS = [drums, taiko, bass, marimba, lead, brass, strings, timp, sq1, sq2, noise]   # PSG alleen in de loop (zoals v1)   # PSG (sq1/sq2/ruis) eruit: losse piepjes (Jordi)
 
 
 def third(minor):
@@ -84,12 +87,12 @@ def groove(bar, full=True, soft=False):
         drums.note(bar, p, 1, nt, v - (18 if p in (3, 13, 15) else 0))
     if not full:
         return
-    for p in (0, 6, 10, 14):
-        drums.note(bar, p, 1, 36, 120 if p != 14 else 96)   # kick
-    for p in range(0, 16, 2):                        # gesloten hi-hat in achtsten (sample, geen PSG)
-        drums.note(bar, p, 1, 42, 72 if p % 4 == 2 else 52)
-    for p in (4, 12):                                # tamboerijn op de backbeat (sample)
-        drums.note(bar, p, 1, 54, 74)
+    for p in (0, 6, 10):
+        drums.note(bar, p, 1, 36, 120)               # kick
+    for p in (4, 12):
+        drums.note(bar, p, 1, 39, 96)                # klap op de backbeat (v1)
+    for p in range(2, 16, 4):
+        drums.note(bar, p, 1, 54, 64)                # tamboerijn op de offbeat (v1)
     for p in range(16):
         noise.note(bar, p, 0.5, 60, 50 if p % 2 else 80)
 

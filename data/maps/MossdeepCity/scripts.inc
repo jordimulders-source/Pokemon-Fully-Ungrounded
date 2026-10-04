@@ -511,38 +511,3 @@ MossdeepCity_Text_BirchPostBattle:
 MossdeepCity_Text_Meteorite:
 	.string "A strange glowing stone.\n"
 	.string "It's still warm. Suspiciously warm.$"
-
-@ Project Grounded: Victory-gauntlet (post-game), uitdager Vesna. Zie LibertyGarden/scripts.inc.
-MossdeepCity_EventScript_VictoryChallengerVesna::
-	goto_if_unset FLAG_SYS_GAME_CLEAR, MossdeepCity_EventScript_VictoryChallengerVesnaNotYet
-	trainerbattle_single TRAINER_VICTORY_VESNA, MossdeepCity_Text_VictoryVesnaIntro, MossdeepCity_Text_VictoryVesnaDefeat, MossdeepCity_EventScript_VictoryChallengerVesnaStamp
-	msgbox MossdeepCity_Text_VictoryVesnaPost, MSGBOX_AUTOCLOSE
-	end
-
-MossdeepCity_EventScript_VictoryChallengerVesnaNotYet::
-	msgbox MossdeepCity_Text_VictoryVesnaNotYet, MSGBOX_NPC
-	end
-
-MossdeepCity_EventScript_VictoryChallengerVesnaStamp::
-	call VictoryGauntlet_EventScript_GiveStamp
-	release
-	end
-
-MossdeepCity_Text_VictoryVesnaNotYet:
-	.string "...you're not a CHAMPION yet.\p"
-	.string "You're still alive in all the wrong ways.\n"
-	.string "Come back later.$"
-
-MossdeepCity_Text_VictoryVesnaIntro:
-	.string "A moral victory is still a victory.\p"
-	.string "All my POKéMON are already dead. That's\n"
-	.string "not a threat. It's a lifestyle.$"
-
-MossdeepCity_Text_VictoryVesnaDefeat:
-	.string "You won. But at what cost?\p"
-	.string "...Oh. No cost. Cool.$"
-
-MossdeepCity_Text_VictoryVesnaPost:
-	.string "When I lose, I call it a moral victory.\p"
-	.string "I've had six hundred moral victories. I'm\n"
-	.string "very moral.$"

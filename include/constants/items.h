@@ -1024,7 +1024,7 @@
 
 #define ITEM_SIX_PACK 855 // Project Grounded: healt het hele team (60 HP per Pokémon)
 
-#define ITEM_LIBERTY_PASS 856 // Project Grounded: ticket naar Liberty Garden (Victini), na de Victory-gauntlet
+#define ITEM_LIBERTY_PASS 856 // Project Grounded: uitnodiging voor de Victory-gauntlet op Liberty Garden (Victini)
 
 // Project Grounded: Rotom-apparaten (Key Items, te koop in Lilycove); veranderen Rotom van vorm
 #define ITEM_MICROWAVE_OVEN 857

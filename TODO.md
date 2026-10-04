@@ -6,6 +6,8 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Neo Plasma-thema verbeteren** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington, BW2). Jordi: "het is een puur synth-deuntje geworden; qua instrumentgebruik lijkt het totaal niet op het origineel dat ik heb toegevoegd." Dus: per spoor van de bron-MIDI het GM-instrument uitlezen (program_change) en het dichtstbijzijnde echte sample kiezen (strijkers, koper, piano, drums…) i.p.v. PSG/synth; het origineel als voorbeeld nemen, net als bij Dave. Werkwijze en controles: `tools/grounded/MUZIEK.md` (lint, max. 16 sporen, kanaalverdeling, opname met recaudio/recpcm).
 - **Muziek: Keccles-thema** (Jordi, 4 okt): een catchy **salsa dura**-gevechtsthema (hard, koperrijk: trombones/trompetten, piano-montuno, conga/timbales/cowbell/clave, tumbao-bas). Eigen compositie, werkwijze `tools/grounded/MUZIEK.md`; daarna aan alle Keccles-gevechten hangen (`battle_setup.c`/`pokemon.c`).
+- **Muziek: Magikarp-thema** (Jordi, 4 okt): heel onnozel en komisch, een 'spartel'-idee (flappende, onhandige ritmes, glijtonen, pizzicato/fagot/kazoo-achtig). Voor wilde/trainer-Magikarp-gevechten. Let op: Magikarp-levels níet aanpassen.
+- **Muziek: Jirachi-thema** (Jordi, 4 okt): heel hoopvol, licht en vrolijk, passend bij een wishmaker (celesta/klokjes, strijkers, fluit; sterrenmotief). Voor het Jirachi-event (Fallarbor, 's nachts).
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde

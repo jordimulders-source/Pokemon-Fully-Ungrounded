@@ -1831,13 +1831,15 @@ save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 # ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
 # Toxic Chain zoals op de artwork: een doorlopende, glanzende magenta buis in ovale ringen, kort aan elkaar gegoten, met
-# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met aan de onderkant twee korte, brede
-# tanden die schuin naar buiten waaieren, met een brede U-inkeping ertussen (zoals bij Okidogi rechtsboven, Munkidori's
-# hoofdband en Fezandipiti's uiteinden). De ketting komt van linksonder het beeld in; het eindstuk staat groot in het
-# midden. Magenta bij de nek, paarser naar het eind.
+# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met direct aan de onderkant twee korte,
+# brede tanden die schuin naar buiten waaieren, met een brede U-inkeping ertussen (zoals bij Okidogi rechtsboven, Munkidori's hoofdband en Fezandipiti's uiteinden). De ketting komt van
+# linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
 # Het geheel is één afstandsveld (buizen en een vlak "kussen" met een zachte unie), zodat alles vloeiend in elkaar loopt.
-# route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
-# flip-bits) met de eerste k stukken. Tiles ook gespiegeld ontdubbeld.
+# De ketting slingert: hij valt van boven in beeld en zwaait uitdempend heen en weer rond de nek (links buiten beeld),
+# terwijl hij wat op en neer deint. Drie vooraf getekende standen (PC_POSES graden) en daartussen per scanline een
+# horizontale verschuiving (BG0HOFS via HBlank) plus een verticale verschuiving voor het restje draaihoek.
+# route_poisonchain.png (tiles), route_poisonchain_map.bin (per stand een 30x20 tilemap, u16 met flip-bits; tiles ook
+# gespiegeld ontdubbeld) en route_poisonchain_anim.bin (per frame s16: stand, restje draaihoek in Q12 radialen, BG0VOFS).
 import numpy as np
 from scipy import ndimage
 from scipy.spatial import cKDTree
@@ -1862,12 +1864,12 @@ def perp(v):
     return np.array((-v[1], v[0]))
 
 
-# eindstuk: ring (oog) met het midden op PC_E, steel en voet in richting PC_F (schuin naar beneden)
-PC_E = np.array((122.0, 52.0))
-PC_F = unit((0.62, 0.78))
+# ruststand: eindstuk (oog) met het midden op PC_E0, tanden rond richting PC_F0; de ketting komt van links (PC_DIR0)
+PC_E0 = np.array((122.0, 52.0))
+PC_F0 = unit((0.62, 0.78))
 PC_ER, PC_ET = 21.0, 10.5                     # hartlijnstraal en buisstraal van het oog
-# ketting: van linksonder naar het oog
-PC_DIR = unit(PC_E - np.array((-20.0, 118.0)))   # ketting komt van links in, vrij van de tanden
+PC_DIR0 = unit(PC_E0 - np.array((-20.0, 118.0)))
+PC_PIVOT = PC_E0 - PC_DIR0 * 175.0                # scharnierpunt (de nek), links buiten beeld
 PC_R, PC_RA, PC_RB = 6.0, 13.0, 17.0          # buis, ring langs / dwars
 PC_RINGS = 3
 PC_GAP = -3.0                                 # ringen raken elkaar (in elkaar gegoten)
@@ -1891,7 +1893,7 @@ PC_TOOTH_ANG = 38.0                          # tanden waaieren uit: graden links
 PC_TOOTH_TIP = 52.0                          # afstand van het ringmidden tot de platte tandpunt
 
 
-def foot_field():
+def foot_field(PC_E, PC_F):
     """de twee tanden: korte, brede poten die vanuit de ring schuin naar buiten waaieren (links- en rechtsonder),
     met hol gebogen zijkanten, een brede, afgerond-platte punt en een brede U-inkeping ertussen"""
     n = perp(PC_F)
@@ -1918,35 +1920,40 @@ def smin(a, b, k=3.5):
     return b * (1 - h) + a * h - k * h * (1 - h)
 
 
-pieces = []
-eye_in = PC_E - PC_DIR * (PC_ER + PC_ET * 0.4)              # waar de ketting het oog raakt
-c = eye_in - PC_DIR * (PC_GAP + PC_RA + PC_R)
-centers = []
-for k in range(PC_RINGS):
-    centers.insert(0, c)
-    c = c - PC_DIR * (2 * PC_RA + 2 * PC_R + PC_GAP)
-PC_O = centers[0] - PC_DIR * PC_RA
-for k, c in enumerate(centers):
-    if k:
-        pieces.append(tube_field(seg(centers[k - 1] + PC_DIR * PC_RA, c - PC_DIR * PC_RA), PC_R + 1.5))
-    else:
-        pieces.append(np.minimum(tube_field(seg(c - PC_DIR * 60, c - PC_DIR * PC_RA), PC_R + 1.5), 1e9))
-        pieces[0] = np.minimum(pieces[0], tube_field(tube_ellipse(c, PC_DIR, PC_RA, PC_RB), PC_R))
-        continue
-    pieces.append(tube_field(tube_ellipse(c, PC_DIR, PC_RA, PC_RB), PC_R))
-pieces.append(tube_field(seg(centers[-1] + PC_DIR * PC_RA, eye_in), PC_R + 1.5))
-# het eindstuk komt in een keer: oog (iets ovaal, schuin) + steel + voet
-eye = tube_field([PC_E + perp(PC_F) * PC_ER * np.cos(a) * 0.92 + PC_F * PC_ER * np.sin(a)
-                  for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
-pieces.append(smin(eye, foot_field(), 4.0))
-PC_N = len(pieces)
-PC_LEN = float(np.dot(PC_E + PC_F * 60 - PC_O, PC_DIR))
+def pc_pieces(theta):
+    """alle stukken van de ketting, gedraaid over theta graden (positief = met de klok mee) rond het scharnierpunt bij
+    de nek (PC_PIVOT, links buiten beeld): zo zwaait het eindstuk het verst en de nek het minst"""
+    c, s_ = np.cos(np.radians(theta)), np.sin(np.radians(theta))
+    rot = lambda v: np.array((c * v[0] - s_ * v[1], s_ * v[0] + c * v[1]))
+    E, F, D = PC_PIVOT + rot(PC_E0 - PC_PIVOT), rot(PC_F0), rot(PC_DIR0)
+    pieces = []
+    eye_in = E - D * (PC_ER + PC_ET * 0.4)                  # waar de ketting het oog raakt
+    cc = eye_in - D * (PC_GAP + PC_RA + PC_R)
+    centers = []
+    for k in range(PC_RINGS):
+        centers.insert(0, cc)
+        cc = cc - D * (2 * PC_RA + 2 * PC_R + PC_GAP)
+    O = centers[0] - D * PC_RA
+    for k, cc in enumerate(centers):
+        ring = tube_field(tube_ellipse(cc, D, PC_RA, PC_RB), PC_R)
+        if k:
+            pieces.append(tube_field(seg(centers[k - 1] + D * PC_RA, cc - D * PC_RA), PC_R + 1.5))
+            pieces.append(ring)
+        else:
+            pieces.append(np.minimum(tube_field(seg(cc - D * 90, cc - D * PC_RA), PC_R + 1.5), ring))
+    pieces.append(tube_field(seg(centers[-1] + D * PC_RA, eye_in), PC_R + 1.5))
+    # eindstuk: oog (iets ovaal) + de twee tanden
+    eye = tube_field([E + perp(F) * PC_ER * np.cos(a) * 0.92 + F * PC_ER * np.sin(a)
+                      for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
+    pieces.append(smin(eye, foot_field(E, F), 4.0))
+    return pieces, O, D, float(np.dot(E + F * 60 - O, D))
 
 
-def pc_render(n):
-    """beeld (160x240, paletindex) met de eerste n stukken"""
+def pc_render(theta):
+    """beeld (160x240, paletindex) van de hele ketting in de stand theta"""
+    pieces, PC_O, PC_DIR, PC_LEN = pc_pieces(theta)
     f = pieces[0]
-    for k in range(1, n):
+    for k in range(1, len(pieces)):
         f = smin(f, pieces[k])
     inside = f <= 0
     gy, gx = np.gradient(f)
@@ -1993,12 +2000,29 @@ def pc_tile_id(t):
     return len(pc_tiles)
 
 
-for n in range(1, PC_N + 1):
-    im = pc_render(n)
+PC_POSES = (-7.0, 0.0, 7.0)                   # vooraf getekende standen (graden, positief = met de klok mee)
+for th in PC_POSES:
+    im = pc_render(th)
     for ty in range(20):
         for tx in range(30):
             pc_maps.append(pc_tile_id(tuple(im[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8].flatten())))
 assert len(pc_tiles) < 760, len(pc_tiles)
 open(OUT + 'route_poisonchain_map.bin', 'wb').write(struct.pack('<%dH' % len(pc_maps), *pc_maps))
 save('poisonchain', pc_tiles, [pad(PC_PAL)])
-print('poisonchain', PC_N, 'schakels')
+
+# beweging per frame: binnenvallen van boven (BG0VOFS 90 -> 0), uitdempend slingeren rond de nek en wat op en neer
+# deinen na de val. Het restje draaihoek t.o.v. de getoonde stand doet de code per scanline (HOFS = rest * (y - draaipunt
+# y)); het verticale deel ervan benaderen we met één VOFS-verschuiving, gemeten in het midden van de ketting (PC_XC).
+PC_FRAMES, PC_DROP = 80, 14
+PC_XC = 60.0
+pc_anim = []
+for t in range(PC_FRAMES):
+    th = -10.0 * math.exp(-t / 28.0) * math.cos(2 * math.pi * t / 30.0)
+    k = min(range(len(PC_POSES)), key=lambda i: abs(th - PC_POSES[i]))
+    rest = math.radians(th - PC_POSES[k])
+    drop = 90.0 * (1 - t / PC_DROP) ** 2 if t < PC_DROP else 0.0
+    bob = 9.0 * math.exp(-(t - PC_DROP) / 22.0) * math.sin(2 * math.pi * (t - PC_DROP) / 18.0) if t >= PC_DROP else 0.0
+    vofs = drop - bob - rest * (PC_XC - PC_PIVOT[0])           # positieve VOFS schuift het beeld omhoog
+    pc_anim += [k, int(round(rest * 4096)), int(round(vofs))]
+open(OUT + 'route_poisonchain_anim.bin', 'wb').write(struct.pack('<%dh' % len(pc_anim), *pc_anim))
+print('poisonchain', len(PC_POSES), 'standen,', PC_FRAMES, 'frames, draaipunt y', round(PC_PIVOT[1]))

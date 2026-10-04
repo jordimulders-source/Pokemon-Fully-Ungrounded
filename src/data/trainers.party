@@ -34644,3 +34644,121 @@ Ability: Truant
 - Earthquake
 - Knock Off
 - Slack Off
+
+=== TRAINER_SLAB_RAY ===
+Name: RAY
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Torkoal
+Level: 36
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Drought
+- Lava Plume
+- Body Press
+- Yawn
+- Stealth Rock
+
+Sunflora
+Level: 36
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Chlorophyll
+- Solar Beam
+- Earth Power
+- Weather Ball
+- Growth
+
+Ninetales
+Level: 37
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Drought
+- Flamethrower
+- Extrasensory
+- Will-O-Wisp
+- Nasty Plot
+
+=== TRAINER_SLAB_MARCO ===
+Name: MARCO
+Class: Swimmer M
+Pic: Swimmer M
+Gender: Male
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Seaking
+Level: 36
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Lightning Rod
+- Waterfall
+- Megahorn
+- Poison Jab
+- Agility
+
+Araquanid
+Level: 36
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Water Bubble
+- Liquidation
+- Leech Life
+- Mirror Coat
+- Aqua Ring
+
+Drednaw
+Level: 37
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Strong Jaw
+- Jaw Lock
+- Liquidation
+- Rock Tomb
+- Crunch
+
+=== TRAINER_SLAB_HELIA ===
+Name: HELIA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Bronzong
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Heatproof
+- Sunny Day
+- Gyro Ball
+- Extrasensory
+- Stealth Rock
+
+Espeon
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Magic Bounce
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Morning Sun
+
+Heliolisk
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Solar Power
+- Thunderbolt
+- Weather Ball
+- Volt Switch
+- Grass Knot
+
+Armarouge @ Charcoal
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flash Fire
+- Armor Cannon
+- Psyshock
+- Calm Mind
+- Will-O-Wisp

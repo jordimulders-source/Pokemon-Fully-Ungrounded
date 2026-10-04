@@ -3307,9 +3307,49 @@
       "width": 15,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_ScorchedSlab",
       "border_filepath": "data/layouts/ScorchedSlab/border.bin",
       "blockdata_filepath": "data/layouts/ScorchedSlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_SCORCHED_SLAB",
+      "name": "Underwater_ScorchedSlab_Layout",
+      "width": 18,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_ScorchedSlab/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_ScorchedSlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SANCTUM",
+      "name": "ScorchedSlab_Sanctum_Layout",
+      "width": 23,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_Sanctum/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_Sanctum/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SPRING",
+      "name": "ScorchedSlab_Spring_Layout",
+      "width": 25,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_Spring/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_Spring/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SUN_HALL",
+      "name": "ScorchedSlab_SunHall_Layout",
+      "width": 27,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_SunHall/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_SunHall/map.bin"
     },
     {
       "id": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_B4F_LAVA",

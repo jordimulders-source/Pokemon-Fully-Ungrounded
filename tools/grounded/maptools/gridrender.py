@@ -4,7 +4,9 @@ R=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..',
 def load2(dirn):
     base=dirn  # tileset met alleen eigen paletten: BASE noemt de tileset met tiles/metatiles
     if os.path.exists(dirn+'/BASE'): base=os.path.join(os.path.dirname(dirn),open(dirn+'/BASE').read().strip())
-    tiles=open(base+'/tiles.4bpp','rb').read(); mts=open(base+'/metatiles.bin','rb').read()
+    tdir=base  # TILES: eigen metatiles + paletten, tiles van een andere tileset (bijv. scorched_slab -> cave)
+    if os.path.exists(dirn+'/TILES'): tdir=os.path.join(os.path.dirname(dirn),open(dirn+'/TILES').read().strip())
+    tiles=open(tdir+'/tiles.4bpp','rb').read(); mts=open(base+'/metatiles.bin','rb').read()
     pals=[]
     for i in range(16):
         f=f'{dirn}/palettes/{i:02}.pal'

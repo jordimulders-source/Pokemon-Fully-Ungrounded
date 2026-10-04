@@ -1023,3 +1023,14 @@ const struct Tileset gTileset_SafariSpook =
     .metatileAttributes = gMetatileAttributes_SafariSpook,
     .callback = InitTilesetAnim_Lilycove,
 };
+
+const struct Tileset gTileset_ScorchedSlab = // Project Grounded: Scorched Slab (Cave-tiles, warme paletten, lichtvlekken)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cave,
+    .palettes = gTilesetPalettes_ScorchedSlab,
+    .metatiles = gMetatiles_ScorchedSlab,
+    .metatileAttributes = gMetatileAttributes_ScorchedSlab,
+    .callback = InitTilesetAnim_Cave,
+};

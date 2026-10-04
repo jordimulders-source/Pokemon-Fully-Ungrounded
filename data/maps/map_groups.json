@@ -682,6 +682,10 @@
     "VictoryRoad_WaitingRoom",
     "VictoryRoad_Vault",
     "VictoryRoad_Hermit",
-    "VictoryRoad_SharkDen"
+    "VictoryRoad_SharkDen",
+    "ScorchedSlab_SunHall",
+    "ScorchedSlab_Spring",
+    "ScorchedSlab_Sanctum",
+    "Underwater_ScorchedSlab"
   ]
 }

@@ -4458,3 +4458,21 @@ bool8 Grounded_PartyHasShinyRayquaza(void)
     }
     return FALSE;
 }
+
+// Project Grounded: Scorched Slab-zonnezaal. Telt de zonnestenen (Strength-blokken) die op een lichtschacht
+// (METATILE_ScorchedSlab_SunLight) staan; het script opent de zonnedeur als het er drie zijn. Via de templates
+// (PushBoulder_End werkt die bij), want blokken buiten beeld zijn geen actief object.
+u16 ScorchedSlab_CountLitStones(void)
+{
+    u32 i, count = 0;
+
+    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    {
+        const struct ObjectEventTemplate *t = &gSaveBlock1Ptr->objectEventTemplates[i];
+        if (t->localId == 0 || t->graphicsId != OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+            continue;
+        if (MapGridGetMetatileIdAt(t->x + MAP_OFFSET, t->y + MAP_OFFSET) == METATILE_ScorchedSlab_SunLight)
+            count++;
+    }
+    return count;
+}

@@ -117,6 +117,9 @@
 #define METATILE_Building_TV_Off  0x002
 #define METATILE_Building_TV_On   0x003
 
+// gTileset_ScorchedSlab (Project Grounded; verder dezelfde nummers als gTileset_Cave)
+#define METATILE_ScorchedSlab_SunLight                   0x3AA
+
 // gTileset_Cave
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206

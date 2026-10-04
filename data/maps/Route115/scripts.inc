@@ -204,3 +204,21 @@ Route115_Text_KecclesPostBattle:
 	.string "As a POKéMON I can teach you some\n"
 	.string "things about POKéMON psychology.\p"
 	.string "See you around!$"
+
+@ Project Grounded: de Ditto-jongen op het strand. Praat alleen in puntjes en :). Na het gevecht bijt er bij hem
+@ vaak een Ditto (CheckDittoSpot in src/wild_encounter.c).
+Route115_EventScript_Ditto::
+	trainerbattle_single TRAINER_DITTO, Route115_Text_DittoIntro, Route115_Text_DittoDefeat
+	msgbox Route115_Text_DittoPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route115_Text_DittoIntro:
+	.string "…$"
+
+Route115_Text_DittoDefeat:
+	.string ":)$"
+
+Route115_Text_DittoPostBattle:
+	.string "…\p"
+	.string "…\p"
+	.string ":)$"

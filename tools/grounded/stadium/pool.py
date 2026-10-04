@@ -53,7 +53,7 @@ POOL = [
     'STADIUM_SHY_GUY_RED', 'STADIUM_SHY_GUY_GREEN', 'STADIUM_SHY_GUY_PINK', 'STADIUM_SHY_GUY_BLACK',
     'STADIUM_BURGLAR', 'STADIUM_DITTO',
     # meme-trainers uit de game (Stadium-versie: de grap blijft, level 50)
-    'STADIUM_DONALD', 'STADIUM_IVAN', 'STADIUM_JOHNSON', 'STADIUM_THOMAS',
+    'STADIUM_DONALD', 'STADIUM_IVAN', 'STADIUM_JOHNSON', 'STADIUM_LYLE',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -183,7 +183,7 @@ GFX = {
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
     'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'MAN_2', 'DITTO': 'SPECIES(DITTO)',
-    'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'THOMAS': 'GENTLEMAN',
+    'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
 }
 
 
@@ -296,6 +296,7 @@ def score(sub, infos, notes=None):
 KEEP = {
     'STADIUM_DITTO': [4],     # PEAKYCHU
     'STADIUM_IVAN': [0],      # Magikarp met Hydro Pump
+    'STADIUM_LYLE': [0, 1],   # Scizor en Yanmega: de lv 6-grap uit Petalburg Woods, nu getraind
     'STADIUM_MEW': [0],       # PIKABLU
     'STADIUM_JOEY': [1, 2, 0],  # Mightyena en Obstagoon (Jordi), Rattata (top percentage)
     'STADIUM_GOLBAT': [0],    # Zubat: de grot in Red/Blue

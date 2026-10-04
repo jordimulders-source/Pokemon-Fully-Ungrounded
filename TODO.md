@@ -4,7 +4,6 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Ditto-trainer:** gebouwd als Stadium-deelnemer (v0.8.111; Youngster met Ditto-gezicht, Pokopia-team). Nog open: plek in de overwereld (voorstel Route 115, zie `VRAGEN_OCHTEND.md`).
 - **Open vragen voor Jordi:** `VRAGEN_OCHTEND.md` (Stadium, Deoxys, Spire-balans, Pokémon-balans, QA).
 
 ## Besloten met Jordi (2 okt 2026), nog te bouwen

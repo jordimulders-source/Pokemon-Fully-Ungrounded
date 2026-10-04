@@ -20,6 +20,6 @@ STADIUM_INTRO(TRAINER_STADIUM_WINSTON, "I had my whole team made shiny. Professi
 STADIUM_INTRO(TRAINER_STADIUM_DONALD, "My BUG POKéMON will keep you company!\p...They're still DITTO. All six. Surprise again."),
 STADIUM_INTRO(TRAINER_STADIUM_IVAN, "I'm the WATER POKéMON expert! I got some very rare fishies...\pMy MAGIKARP knows HYDRO PUMP. Don't ask."),
 STADIUM_INTRO(TRAINER_STADIUM_JOHNSON, "Tik tok, tik tok, tik tok."),
-STADIUM_INTRO(TRAINER_STADIUM_THOMAS, "Child... this is a family business. Meet the family."),
+STADIUM_INTRO(TRAINER_STADIUM_LYLE, "My brother evolved them, and this time I actually levelled them!\pI'm indestructible! For real now!"),
 
 #undef STADIUM_INTRO

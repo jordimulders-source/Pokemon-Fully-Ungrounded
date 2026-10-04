@@ -401,7 +401,7 @@ static const struct StadiumQuote sStadiumQuotes[] =
     {TRAINER_STADIUM_DONALD, COMPOUND_STRING("I wish we'd never met... All six of them wish that too."), COMPOUND_STRING("Your own team, but purple. I call it DITTO MANIA.")},
     {TRAINER_STADIUM_IVAN, COMPOUND_STRING("Blupblup..."), COMPOUND_STRING("Very rare fishies. Told you. Blupblup!")},
     {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("Tik... tok...\pTime's up."), COMPOUND_STRING("Tik tok. The METRONOME has spoken.")},
-    {TRAINER_STADIUM_THOMAS, COMPOUND_STRING("...I'm not GIOVANNI, by the way. Still watching THE SOPRANOS. Fifth time."), COMPOUND_STRING("Nothing personal, kid. It's just business.")},
+    {TRAINER_STADIUM_LYLE, COMPOUND_STRING("Level 50 and still... Maybe I should start training their IVs... hmm."), COMPOUND_STRING("Told you! Indestructible! I'm calling my brother.")},
 };
 
 static const struct StadiumQuote *GetQuote(u32 trainerId)

@@ -964,9 +964,10 @@
 #define TRAINER_STADIUM_DONALD                  950
 #define TRAINER_STADIUM_IVAN                    951
 #define TRAINER_STADIUM_JOHNSON                 952
-#define TRAINER_STADIUM_THOMAS                  953
+#define TRAINER_STADIUM_LYLE                    953
+#define TRAINER_DITTO                           954
 
-#define TRAINERS_COUNT                      954
+#define TRAINERS_COUNT                      955
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

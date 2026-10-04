@@ -1,5 +1,7 @@
 # Vragen voor Jordi (ochtend 5 okt 2026)
 
+**Antwoorden 1-10 (5 okt):** 1 kort (direct de arena in, iedereen klaar) · 2 ja · 3 later · 4 nee, Gyarados eruit · 5 blijft · 6 ok · 7 tong · 8 willekeurig · 9 ok · 10 Route 115. Verwerkt in v0.8.114 (behalve 2).
+
 Kort antwoorden mag ("1a, 2 ja, 3 Route 115"). Alles hieronder is al gebouwd of klaar om te bouwen; de vragen gaan over smaak en balans.
 
 ## Battle Stadium

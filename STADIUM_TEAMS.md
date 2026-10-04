@@ -94,9 +94,9 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_BURGLAR | 506 | Thievul, Honchkrow, Arcanine, Weavile | Honchkrow, Arcanine, Weavile | - |
 | STADIUM_DITTO | 485 | Tangrowth, Tinkaton, Pikachu, Snorlax | Tangrowth, Pikachu, Snorlax | - |
 | STADIUM_DONALD | 520 | Ditto, Ditto, Ditto, Ditto | Ditto, Ditto, Ditto | - |
-| STADIUM_IVAN | 431 | Magikarp, Relicanth, Barraskewda, Gyarados | Magikarp, Relicanth, Gyarados | - |
+| STADIUM_IVAN | 415 | Magikarp, Relicanth, Barraskewda, Bruxish | Magikarp, Relicanth, Bruxish | - |
 | STADIUM_JOHNSON | 506 | Machamp, Electivire, Chansey, Lucario | Machamp, Electivire, Lucario | - |
-| STADIUM_THOMAS | 493 | Zangoose, Zangoose, Zangoose, Zangoose | Zangoose, Zangoose, Zangoose | - |
+| STADIUM_LYLE | 513 | Scizor, Yanmega, Golisopod, Ninjask | Scizor, Yanmega, Ninjask | - |
 | BRENDAN_ROUTE_136_TREECKO | 515 | Huntail, Exploud, Absol, Blaziken | Huntail, Exploud, Blaziken | - |
 | MAY_ROUTE_136_TORCHIC | 516 | Roserade, Froslass, Mienshao, Swampert | Roserade, Froslass, Swampert | - |
 
@@ -112,10 +112,10 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 500 | MEW |
 | 600 | MIMI |
 | 700 | DITTO |
-| 800 | THOMAS |
-| 900 | SHELLY |
-| 1000 | WARIO |
-| 1100 | TABITHA |
+| 800 | SHELLY |
+| 900 | WARIO |
+| 1000 | TABITHA |
+| 1100 | LYLE |
 | 1200 | MAXIE |
 | 1300 | SHY_GUY_RED |
 | 1400 | WINSTON |

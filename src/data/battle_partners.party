@@ -3668,17 +3668,17 @@ Nature: Adamant
 - Earthquake
 - Double-Edge
 
-Gyarados @ Leftovers
+Bruxish @ Life Orb
 Level: 50
-Ability: Moxie
+Ability: Strong Jaw
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 Shiny: Yes
-- Dragon Dance
-- Waterfall
-- Bounce
-- Earthquake
+- Swords Dance
+- Psychic Fangs
+- Wave Crash
+- Ice Fang
 
 === PARTNER_STADIUM_JOHNSON ===
 Name: JOHNSON
@@ -3713,47 +3713,47 @@ EVs: 4 HP / 252 Atk / 252 SpA
 Nature: Naive
 - Metronome
 
-=== PARTNER_STADIUM_THOMAS ===
-Name: THOMAS
-Class: Gentleman
-Pic: Gentleman
+=== PARTNER_STADIUM_LYLE ===
+Name: LYLE
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Rich
+Music: Male
 Back Pic: Brendan
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Zangoose @ Toxic Orb
+Scizor @ Life Orb
 Level: 50
-Ability: Toxic Boost
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Technician
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Facade
-- Close Combat
-- Knock Off
-- Quick Attack
+Nature: Adamant
+- Bullet Punch
+- Bug Bite
+- Swords Dance
+- Aerial Ace
 
-Zangoose @ Choice Scarf
+Yanmega @ Choice Specs
 Level: 50
-Ability: Immunity
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Double-Edge
-- Close Combat
-- Knock Off
+Ability: Speed Boost
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Bug Buzz
+- Air Slash
+- Giga Drain
 - U-turn
 
-Zangoose @ Toxic Orb
+Ninjask @ Focus Sash
 Level: 50
-Ability: Toxic Boost
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 4 SpD
-Nature: Adamant
+Ability: Speed Boost
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Swords Dance
-- Facade
-- Close Combat
-- Quick Attack
+- Baton Pass
+- X-Scissor
+- Protect
 
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS

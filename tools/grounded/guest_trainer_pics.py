@@ -21,7 +21,7 @@ BG = (115, 197, 164)   # index 0, zoals de andere trainerfoto's
 
 # naam: (bron, vergroting, onderste bronrijen weglaten)
 GUESTS = {
-    'guest_wario': ('wario_side_bron.png', 2, 0),  # zijaanzicht (Jordi); 34 rijen: zie SLIM
+    'guest_wario': ('wario_flex_bron.png', 1.5, 0),  # dubbele biceps (Jordi); 43x34, te breed voor 2x: zie scale3x
     'guest_yoshi': ('yoshi_bron.png', 2, 0),
     'guest_golbat': ('golbat_bron.png', 1, 0),     # Game Boy-sprite, al 56 px
     'guest_grimer': ('grimer_bron.png', 1, 0),
@@ -34,7 +34,7 @@ GUESTS = {
 }
 
 # bronrijen die maar 1x i.p.v. 2x hoog worden, zodat een figuur van 34 rijen precies in 64 past (rustige rijen in het lijf)
-SLIM = {'guest_wario': (14, 15, 24, 26)}
+SLIM = {}
 # gespiegeld, zodat ze in het gevecht naar de speler (links) kijken
 FLIP = {'guest_wario'}
 
@@ -74,11 +74,40 @@ def to_indexed(rgba):
     return out
 
 
+def scale3x(img):
+    """Scale3x (pixel-art-vergroting die schuine randen netjes houdt); daarna halveren geeft een nette 1,5x."""
+    W, H = img.size
+    p = img.load()
+    out = Image.new('RGBA', (W * 3, H * 3))
+    q = out.load()
+    g = lambda x, y: p[min(max(x, 0), W - 1), min(max(y, 0), H - 1)]
+    for y in range(H):
+        for x in range(W):
+            A, B, C, D, E, F, G, Hh, I = [g(x + dx, y + dy) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
+            e = [E] * 9
+            if B != Hh and D != F:
+                e[0] = D if D == B else E
+                e[1] = B if (D == B and E != C) or (B == F and E != A) else E
+                e[2] = F if B == F else E
+                e[3] = D if (D == B and E != G) or (D == Hh and E != A) else E
+                e[5] = F if (B == F and E != I) or (Hh == F and E != C) else E
+                e[6] = D if D == Hh else E
+                e[7] = Hh if (D == Hh and E != I) or (Hh == F and E != G) else E
+                e[8] = F if Hh == F else E
+            for i in range(9):
+                q[x * 3 + i % 3, y * 3 + i // 3] = e[i]
+    return out
+
+
 def guest(src, k, trim, slim=()):
     im = Image.open(SRC + src).convert('RGBA')
     if trim:
         im = im.crop((0, 0, im.width, im.height - trim))
-    big = im.resize((im.width * k, im.height * k), Image.NEAREST)
+    if k == 1.5:
+        big = scale3x(im)
+        big = big.resize((big.width // 2, big.height // 2), Image.NEAREST)
+    else:
+        big = im.resize((im.width * k, im.height * k), Image.NEAREST)
     if slim:
         rows = [big.crop((0, y * k, big.width, y * k + (1 if y in slim else k))) for y in range(im.height)]
         big = Image.new('RGBA', (big.width, sum(r.height for r in rows)))

@@ -31828,17 +31828,17 @@ Nature: Jolly
 - Psychic Fangs
 - Aqua Jet
 
-Gyarados @ Leftovers
+Bruxish @ Life Orb
 Level: 50
-Ability: Moxie
+Ability: Strong Jaw
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 Shiny: Yes
-- Dragon Dance
-- Waterfall
-- Bounce
-- Earthquake
+- Swords Dance
+- Psychic Fangs
+- Wave Crash
+- Ice Fang
 
 === TRAINER_STADIUM_JOHNSON ===
 Name: JOHNSON
@@ -31897,66 +31897,140 @@ EVs: 4 HP / 252 Atk / 252 SpA
 Nature: Naive
 - Metronome
 
-=== TRAINER_STADIUM_THOMAS ===
-Name: THOMAS
-Class: Gentleman
-Pic: Gentleman
+=== TRAINER_STADIUM_LYLE ===
+Name: LYLE
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Rich
+Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Zangoose @ Toxic Orb
+Scizor @ Life Orb
 Level: 50
-Ability: Toxic Boost
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Technician
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Facade
-- Close Combat
-- Knock Off
-- Quick Attack
+Nature: Adamant
+- Bullet Punch
+- Bug Bite
+- Swords Dance
+- Aerial Ace
 
-Zangoose @ Choice Scarf
+Yanmega @ Choice Specs
 Level: 50
-Ability: Immunity
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Double-Edge
-- Close Combat
-- Knock Off
+Ability: Speed Boost
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Bug Buzz
+- Air Slash
+- Giga Drain
 - U-turn
 
-Zangoose @ Life Orb
+Pinsir @ Choice Band
 Level: 50
-Ability: Toxic Boost
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Adamant
-- Swords Dance
-- Facade
-- Close Combat
-- Shadow Claw
-
-Zangoose @ Focus Sash
-Level: 50
-Ability: Immunity
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Moxie
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
-- Fake Out
+- X-Scissor
 - Close Combat
-- Knock Off
-- Quick Attack
+- Earthquake
+- Stone Edge
 
-Zangoose @ Toxic Orb
+Kleavor @ Focus Sash
 Level: 50
-Ability: Toxic Boost
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sharpness
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Stone Axe
+- X-Scissor
+- Close Combat
+- U-turn
+
+Golisopod @ Assault Vest
+Level: 50
+Ability: Emergency Exit
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
+- First Impression
+- Liquidation
+- Leech Life
+- Aqua Jet
+
+Ninjask @ Focus Sash
+Level: 50
+Ability: Speed Boost
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Swords Dance
-- Facade
-- Close Combat
-- Quick Attack
+- Baton Pass
+- X-Scissor
+- Protect
+
+=== TRAINER_DITTO ===
+Name: DITTO
+Class: Youngster
+Pic: Guest Ditto
+Gender: Male
+Music: Twins
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SMEARGURU (Smeargle) @ Focus Sash
+Level: 30
+Ability: Own Tempo
+Nature: Jolly
+- Spore
+- Sticky Web
+- Stealth Rock
+- Follow Me
+
+PROFESSOR (Tangrowth) @ Assault Vest
+Level: 30
+Ability: Regenerator
+Nature: Sassy
+- Giga Drain
+- Knock Off
+- Sludge Bomb
+- Earthquake
+
+CHEF (Greedent) @ Sitrus Berry
+Level: 30
+Ability: Cheek Pouch
+Nature: Impish
+- Stuff Cheeks
+- Body Press
+- Body Slam
+- Seed Bomb
+
+Tinkatuff @ Eviolite
+Level: 30
+Ability: Mold Breaker
+Nature: Jolly
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Swords Dance
+
+PEAKYCHU (Pikachu) @ Light Ball
+Level: 32
+Ability: Lightning Rod
+Nature: Hasty
+- Volt Tackle
+- Thunderbolt
+- Grass Knot
+- Fake Out
+
+MOSSLAX (Snorlax) @ Leftovers
+Level: 30
+Ability: Thick Fat
+Nature: Careful
+- Curse
+- Body Slam
+- Seed Bomb
+- Rest

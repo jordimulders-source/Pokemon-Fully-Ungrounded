@@ -11,6 +11,7 @@ trainers uit de game en uit andere generaties. Teksten zijn placeholders; Jordi 
 - **Doubles 6v6 = multi battle**: jij (3) + een compagnon (3) tegen twee trainers (elk 3). Werkt als de tag battles van Sword/Shield en de Frontier.
 - **Iedereen gebruikt zijn sterkste team** (laatste rematch / post-game-versie).
 - **BP per gewonnen gevecht** (zie Beloning).
+- **Arena kort (Jordi, 5 okt):** na het toernooischerm meteen de arena in, iedereen staat al klaar, publiek juicht, gevecht. Geen opkomst of presentatortekst.
 - **Bracket op papier vanaf de kwartfinale**: acht trainers met hun plaatje, wie tegen wie, winnaars lopen door naar het midden.
 - **Nieuwe personages** in de game komen ook in de pool (staat in CLAUDE.md).
 
@@ -39,8 +40,8 @@ Geïmporteerd (v0.8.108, pokefirered en zo mogelijk DS-repo's): Kanto-gymleiders
 Blue, plus wat er uit andere generaties schoon binnen te halen is.
 Gasten (`TRAINER_STADIUM_*`, klasse GUEST STAR): Wario, Yoshi (de huilende), Golbat en Grimer (gen 1), Boo, Mew,
 vier Shy Guys (rood, groen, roze Fly Guy, zwart), de Burglar uit Red/Blue en Ditto (Youngster met een Ditto-gezicht,
-praat alleen in puntjes en :), team uit Pokopia). Meme-trainers uit de game als Stadium-versie: Donald (zes Ditto),
-Ivan (zeldzame visjes), Johnson (alleen Metronome), Thomas (Zangoose-familie); Joey en Winston met een eigen versie.
+praat alleen in puntjes en :), team uit Pokopia; staat ook op het strand van Route 115, lv 30, daarna bijt er bij hem Ditto). Meme-trainers uit de game als Stadium-versie: Donald (zes Ditto),
+Ivan (zeldzame visjes, ace shiny Bruxish), Johnson (alleen Metronome), Lyle (de broer-bugs uit Petalburg Woods, nu wél getraind maar nog steeds 0 IV's); Joey en Winston met een eigen versie.
 Intro's staan als trainer slide in `src/data/stadium_slides.h`, nederlaag/winst per trainer in `src/stadium.c`.
 
 ## Compagnons (Vampire Survivors-stijl)

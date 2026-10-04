@@ -1539,6 +1539,16 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
 {
     struct FieldInput inputStruct;
 
+    // Project Grounded: op B2F van de omgekeerde Sky Pillar zijn boven en onder omgedraaid
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SKY_PILLAR_REVERSE_B2F)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SKY_PILLAR_REVERSE_B2F))
+    {
+        if (((newKeys & DPAD_UP) != 0) != ((newKeys & DPAD_DOWN) != 0))
+            newKeys ^= DPAD_UP | DPAD_DOWN;
+        if (((heldKeys & DPAD_UP) != 0) != ((heldKeys & DPAD_DOWN) != 0))
+            heldKeys ^= DPAD_UP | DPAD_DOWN;
+    }
+
     UpdatePlayerAvatarTransitionState();
     FieldClearPlayerInput(&inputStruct);
     FieldGetPlayerInput(&inputStruct, newKeys, heldKeys);

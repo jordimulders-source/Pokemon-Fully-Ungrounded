@@ -1664,6 +1664,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + (gBattleMons[battlerAtk].volatiles.dragonCheer != 0 ? 1 : 0)
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
+                    + (GetBattlerSwallowedHoldEffect(battlerAtk) == HOLD_EFFECT_SCOPE_LENS ? 1 : 0) // Project Grounded: Gulp Down
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
                     + gBattleMons[battlerAtk].volatiles.bonusCritStages
@@ -1958,6 +1959,13 @@ static void Cmd_adjustdamage(void)
         else if (gDisableStructs[battlerDef].endured)
         {
             enduredHit |= 1u << battlerDef;
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_ENDURED;
+        }
+        else if (gBattleStruct->nineLivesArmed[GetBattlerSide(battlerDef)] & (1u << gBattlerPartyIndexes[battlerDef])) // Project Grounded: Nine Lives
+        {
+            enduredHit |= 1u << battlerDef;
+            gBattleStruct->nineLivesArmed[GetBattlerSide(battlerDef)] &= ~(1u << gBattlerPartyIndexes[battlerDef]);
+            gBattleStruct->nineLivesTriggered |= 1u << battlerDef;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_ENDURED;
         }
         else if (holdEffect == HOLD_EFFECT_FOCUS_BAND && rand < param)
@@ -2713,6 +2721,13 @@ static void Cmd_resultmessage(void)
             stringId = STRINGID_ONEHITKO;
             break;
         case MOVE_RESULT_FOE_ENDURED:
+            if (gBattleStruct->nineLivesTriggered & (1u << gBattlerTarget)) // Project Grounded: Nine Lives
+            {
+                gBattleStruct->nineLivesTriggered &= ~(1u << gBattlerTarget);
+                *moveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
+                BattleScriptCall(BattleScript_NineLivesActivates);
+                return;
+            }
             stringId = STRINGID_PKMNENDUREDHIT;
             break;
         case MOVE_RESULT_FAILED:
@@ -2761,6 +2776,12 @@ static void Cmd_resultmessage(void)
             else if (*moveResultFlags & MOVE_RESULT_FOE_ENDURED)
             {
                 *moveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
+                if (gBattleStruct->nineLivesTriggered & (1u << gBattlerTarget)) // Project Grounded: Nine Lives
+                {
+                    gBattleStruct->nineLivesTriggered &= ~(1u << gBattlerTarget);
+                    BattleScriptCall(BattleScript_NineLivesActivates);
+                    return;
+                }
                 BattleScriptCall(BattleScript_EnduredMsg);
                 return;
             }
@@ -5914,6 +5935,52 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
             effect = TRUE;
         }
         break;
+    case EFFECT_GULP_DOWN: // Project Grounded: Swalot slikt het item van het doelwit in
+        if (gBattleMons[gBattlerTarget].item != ITEM_NONE
+         && IsBattlerAlive(gBattlerAttacker)
+         && !(side == B_SIDE_PLAYER && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && !DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
+         && CanBattlerGetOrLoseItem(gBattlerTarget, gBattleMons[gBattlerTarget].item)
+         && !NoAliveMonsForEitherParty())
+        {
+            u32 item = gBattleMons[gBattlerTarget].item;
+            enum BattleSide atkSide = GetBattlerSide(gBattlerAttacker);
+
+            if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+            {
+                gBattlerAbility = gBattlerTarget;
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_StickyHoldActivatesRet;
+                effect = TRUE;
+                break;
+            }
+            gLastUsedItem = item;
+            gBattleMons[gBattlerTarget].item = ITEM_NONE;
+            if (gBattleMons[gBattlerTarget].ability != ABILITY_GORILLA_TACTICS)
+                gBattleStruct->choicedMove[gBattlerTarget] = MOVE_NONE;
+            CheckSetUnburden(gBattlerTarget);
+            BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].item), &gBattleMons[gBattlerTarget].item);
+            MarkBattlerForControllerExec(gBattlerTarget);
+            gBattleStruct->itemLost[side][gBattlerPartyIndexes[gBattlerTarget]].stolen = TRUE; // na het gevecht terug
+            SetHealAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / 4);
+
+            if (GetItemPocket(item) == POCKET_BERRIES)
+            {
+                BattleScriptCall(BattleScript_GulpDownBerry);
+            }
+            else if (IsSwallowableHoldEffect(GetItemHoldEffect(item)))
+            {
+                gBattleStruct->swallowedItem[atkSide][gBattlerPartyIndexes[gBattlerAttacker]] = item;
+                BattleScriptCall(BattleScript_GulpDownKept);
+            }
+            else
+            {
+                BattleScriptCall(BattleScript_GulpDownUseless);
+            }
+            effect = TRUE;
+        }
+        break;
     case EFFECT_STEAL_ITEM:
         if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item)
             || gBattleMons[gBattlerAttacker].item != ITEM_NONE
@@ -6385,7 +6452,8 @@ static void Cmd_moveend(void)
         {
             enum HoldEffect holdEffect = GetBattlerHoldEffect(gBattlerTarget);
             if (ItemBattleEffects(gBattlerTarget, gBattlerAttacker, holdEffect, IsOnTargetHitActivation)
-             || ItemBattleEffects(gBattlerTarget, gBattlerAttacker, holdEffect, IsOnStatusChangeActivation))
+             || ItemBattleEffects(gBattlerTarget, gBattlerAttacker, holdEffect, IsOnStatusChangeActivation)
+             || SwallowedItemBattleEffects(gBattlerTarget, gBattlerAttacker, IsOnTargetHitActivation)) // Project Grounded: Gulp Down
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
@@ -6908,6 +6976,8 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_LIFE_ORB_SHELL_BELL:
             if (ItemBattleEffects(gBattlerAttacker, 0, GetBattlerHoldEffect(gBattlerAttacker), IsLifeOrbShellBellActivation))
+                effect = TRUE;
+            else if (SwallowedItemBattleEffects(gBattlerAttacker, 0, IsLifeOrbShellBellActivation)) // Project Grounded: Gulp Down
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
@@ -10446,6 +10516,26 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
                     BattleScriptPush(BS_ptr);
                     gBattleScripting.battler = battler;
                     gBattlescriptCurrInstr = BattleScript_MistProtected;
+                    gSpecialStatuses[battler].statLowered = TRUE;
+                }
+            }
+            return STAT_CHANGE_DIDNT_WORK;
+        }
+        else if (gBattleMons[battler].volatiles.primevalWard // Project Grounded: Relicanth verandert niet
+              && !flags.certain && gCurrentMove != MOVE_CURSE
+              && (flags.statDropPrevention || gBattlerAttacker != battler || flags.mirrorArmored))
+        {
+            if (flags.allowPtr)
+            {
+                if (gSpecialStatuses[battler].statLowered)
+                {
+                    gBattlescriptCurrInstr = BS_ptr;
+                }
+                else
+                {
+                    BattleScriptPush(BS_ptr);
+                    gBattleScripting.battler = battler;
+                    gBattlescriptCurrInstr = BattleScript_PrimevalWardProtected;
                     gSpecialStatuses[battler].statLowered = TRUE;
                 }
             }
@@ -18550,4 +18640,135 @@ void BS_MachineLearningNextStat(void)
         }
     }
     gBattlescriptCurrInstr = cmd->doneInstr;
+}
+
+// Project Grounded: Nine Lives. Eén keer per gevecht per teamlid; faalt de tweede keer.
+void BS_TrySetNineLives(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 side = GetBattlerSide(gBattlerAttacker);
+    u32 bit = 1u << gBattlerPartyIndexes[gBattlerAttacker];
+
+    if (gBattleStruct->nineLivesUsed[side] & bit)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    gBattleStruct->nineLivesUsed[side] |= bit;
+    gBattleStruct->nineLivesArmed[side] |= bit;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Nine Lives. Geneest de status van het doelwit dat net op zijn pootjes landde.
+void BS_NineLivesCureStatus(void)
+{
+    NATIVE_ARGS();
+    if (gBattleMons[gBattlerTarget].status1 & STATUS1_ANY)
+    {
+        gBattleMons[gBattlerTarget].status1 = 0;
+        BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].status1), &gBattleMons[gBattlerTarget].status1);
+        MarkBattlerForControllerExec(gBattlerTarget);
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Wind Chime. Healt de gebruiker en zijn partner één keer per gebruik (bij het eerste doelwit).
+// battler: BS_ATTACKER of BS_ATTACKER_PARTNER; springt naar failInstr als er niets te healen valt.
+void BS_TryWindChimeHeal(void)
+{
+    NATIVE_ARGS(u8 battler, const u8 *failInstr);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+    u32 i;
+    bool32 firstTarget = TRUE;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (gBattleStruct->battlerState[gBattlerAttacker].targetsDone[i])
+            firstTarget = FALSE;
+    }
+
+    if (!firstTarget
+     || (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+     || battler >= gBattlersCount
+     || !IsBattlerAlive(battler)
+     || IsBattlerAtMaxHp(battler)
+     || gBattleMons[battler].volatiles.healBlock)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    if (gSideStatuses[GetBattlerSide(gBattlerAttacker)] & SIDE_STATUS_TAILWIND)
+        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 4);
+    else
+        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
+    gBattleScripting.battler = battler;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Weather Report. Kiest het weer waar het doelwit het zwakst tegen is en zet het.
+static const u8 sWeatherReportWeathers[] =
+{
+    BATTLE_WEATHER_SUN, BATTLE_WEATHER_RAIN, BATTLE_WEATHER_HAIL,
+    BATTLE_WEATHER_SANDSTORM, BATTLE_WEATHER_ACID_RAIN, BATTLE_WEATHER_POLLEN_HAZE,
+};
+static const u8 sWeatherReportTypes[] = { TYPE_FIRE, TYPE_WATER, TYPE_ICE, TYPE_ROCK, TYPE_POISON, TYPE_BUG };
+
+static u32 GetWeatherReportWeather(u32 battlerDef)
+{
+    u32 i, best = 0;
+    uq4_12_t bestMod = 0;
+    enum Type type1 = gBattleMons[battlerDef].types[0];
+    enum Type type2 = gBattleMons[battlerDef].types[1];
+    enum Type type3 = gBattleMons[battlerDef].types[2];
+
+    for (i = 0; i < ARRAY_COUNT(sWeatherReportWeathers); i++)
+    {
+        uq4_12_t mod = GetTypeModifier(sWeatherReportTypes[i], type1);
+        if (type2 != type1)
+            mod = uq4_12_multiply(mod, GetTypeModifier(sWeatherReportTypes[i], type2));
+        if (type3 != TYPE_MYSTERY && type3 != type1 && type3 != type2)
+            mod = uq4_12_multiply(mod, GetTypeModifier(sWeatherReportTypes[i], type3));
+        // Bij gelijke stand wint het weer dat al actief is, anders de eerste in de lijst
+        if (mod > bestMod || (mod == bestMod && (gBattleWeather & (1u << sWeatherReportWeathers[i]))))
+        {
+            bestMod = mod;
+            best = i;
+        }
+    }
+    return sWeatherReportWeathers[best];
+}
+
+void BS_TrySetWeatherReport(void)
+{
+    NATIVE_ARGS(const u8 *noChangeInstr);
+    u32 weather = GetWeatherReportWeather(gBattlerTarget);
+
+    if ((gBattleWeather & (1u << weather)) && HasWeatherEffect())
+    {
+        gBattlescriptCurrInstr = cmd->noChangeInstr;
+        return;
+    }
+    if (!TryChangeBattleWeather(gBattlerAttacker, weather, ABILITY_NONE))
+    {
+        gBattlescriptCurrInstr = cmd->noChangeInstr;
+        return;
+    }
+    switch (weather)
+    {
+    case BATTLE_WEATHER_SUN:       gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SUNLIGHT; break;
+    case BATTLE_WEATHER_RAIN:      gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_RAIN; break;
+    case BATTLE_WEATHER_HAIL:      gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_HAIL; break;
+    case BATTLE_WEATHER_SANDSTORM: gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SANDSTORM; break;
+    case BATTLE_WEATHER_ACID_RAIN: gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN; break;
+    default:                       gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_POLLEN_HAZE; break;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: na het zetten van het weer het type van de aanval opnieuw bepalen (zoals Weather Ball).
+void BS_RecalcMoveType(void)
+{
+    NATIVE_ARGS();
+    SetTypeBeforeUsingMove(gCurrentMove, gBattlerAttacker);
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }

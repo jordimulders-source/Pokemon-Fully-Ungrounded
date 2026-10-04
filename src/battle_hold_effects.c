@@ -1091,6 +1091,8 @@ static enum ItemEffect TrySetMicleBerry(u32 battler, u32 itemId, ActivationTimin
     return effect;
 }
 
+static u16 sSwallowedItemOverride = ITEM_NONE; // Project Grounded: Gulp Down
+
 enum ItemEffect ItemBattleEffects(u32 itemBattler, u32 battler, enum HoldEffect holdEffect, ActivationTiming timing)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
@@ -1098,6 +1100,8 @@ enum ItemEffect ItemBattleEffects(u32 itemBattler, u32 battler, enum HoldEffect 
 
     if (timing == IsOnBerryActivation || timing == IsOnFlingActivation)
         item = gLastUsedItem;
+    else if (sSwallowedItemOverride != ITEM_NONE)
+        item = sSwallowedItemOverride;
     else
         item = gBattleMons[itemBattler].item;
 
@@ -1297,5 +1301,21 @@ enum ItemEffect ItemBattleEffects(u32 itemBattler, u32 battler, enum HoldEffect 
             GetBattlerPartyState(itemBattler)->ateBerry = TRUE;
     }
 
+    return effect;
+}
+
+// Project Grounded: Gulp Down. Laat het ingeslikte item van itemBattler werken (Leftovers, Black Sludge,
+// Shell Bell, Life Orb-terugslag, Rocky Helmet). Berichten noemen het ingeslikte item.
+enum ItemEffect SwallowedItemBattleEffects(u32 itemBattler, u32 battler, ActivationTiming timing)
+{
+    enum ItemEffect effect;
+    u32 item = GetBattlerSwallowedItem(itemBattler);
+    enum HoldEffect holdEffect = GetItemHoldEffect(item);
+
+    if (item == ITEM_NONE || !IsSwallowableHoldEffect(holdEffect))
+        return ITEM_NO_EFFECT;
+    sSwallowedItemOverride = item;
+    effect = ItemBattleEffects(itemBattler, battler, holdEffect, timing);
+    sSwallowedItemOverride = ITEM_NONE;
     return effect;
 }

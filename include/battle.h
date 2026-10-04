@@ -775,6 +775,10 @@ struct BattleStruct
     u8 incrementEchoedVoice:1;
     u8 echoedVoiceCounter:3;
     u8 padding3:4;
+    u16 swallowedItem[NUM_BATTLE_SIDES][PARTY_SIZE]; // Project Grounded: Gulp Down, per teamlid het ingeslikte item
+    u8 nineLivesArmed[NUM_BATTLE_SIDES]; // Project Grounded: Nine Lives, bitmasker per teamlid
+    u8 nineLivesUsed[NUM_BATTLE_SIDES];
+    u8 nineLivesTriggered; // bitmasker per battler, voor het bericht
 };
 
 struct AiBattleData

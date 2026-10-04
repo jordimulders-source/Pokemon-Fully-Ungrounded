@@ -88,5 +88,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
   de bron had daar E + voorslag-B. Bij twijfel: een tweede bron (MIDI `wally_battle_ss17.mid`, tab, bladmuziek)
   naast de eerste leggen; waar twee bronnen het eens zijn, klopt het. Let op: bladmuziek "Wally's Theme" is het
   overworld-thema, niet "Battle! Wally".
+- Regigigas v1: legato-partijen (koper, koor, tuba) bezetten op elke nieuwe noot 2 kanalen (de release van de vorige
+  klinkt nog). `musiclib.detach()` laat de vorige noot de uitklinktijd eerder los; `allocate()` neemt de tail per partij.
+  Daarmee viel er niets meer weg. RMS via recaudio ±3000 is de bovengrens (Zarude ±2700): -V95.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

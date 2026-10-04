@@ -49,15 +49,29 @@ def thin(ev, maxn, keep='top'):
     return sorted(out)
 
 
+def detach(ev, gap):
+    """Legato-partij: elke noot eindigt `gap` ticks (= de uitklinktijd) vóór de volgende noot in dezelfde partij,
+    zodat de release van de vorige noot geen tweede kanaal bezet op het moment dat de nieuwe begint."""
+    ev = sorted(ev)
+    starts = sorted(set(e[0] for e in ev))
+    out = []
+    for e in ev:
+        nxt = next((t for t in starts if t > e[0]), None)
+        end = e[1] if nxt is None else min(e[1], max(e[0] + 6, nxt - gap))
+        out.append([e[0], end, e[2], e[3]])
+    return out
+
+
 def allocate(parts, order, tail, drum_len=None, drum_parts=(), max_voices=MAX_VOICES):
     """parts: {naam: noten}; order: namen van hoog naar laag. PSG-sporen hier niet in stoppen (tellen niet mee).
     tail = uitklinktijd in ticks; drum_len = hoe lang een drumnoot een kanaal bezet houdt."""
     busy, res = [], {}
     for name in order:
         kept = []
+        t = tail.get(name, 0) if isinstance(tail, dict) else tail    # tail mag per partij (dict)
         for e in parts.get(name, []):
             s = e[0]
-            en = (s + drum_len) if (name in drum_parts and drum_len) else e[1] + tail
+            en = (s + drum_len) if (name in drum_parts and drum_len) else e[1] + t
             pts = [s] + [b[0] for b in busy if s < b[0] < en]
             if all(sum(1 for b in busy if b[0] <= p < b[1]) < max_voices for p in pts):
                 kept.append(e)

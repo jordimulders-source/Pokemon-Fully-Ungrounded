@@ -6182,10 +6182,11 @@ u16 GetBattleBGM(void)
     case SPECIES_REGIROCK:
     case SPECIES_REGICE:
     case SPECIES_REGISTEEL:
-    case SPECIES_REGIGIGAS:
     case SPECIES_REGIELEKI:
     case SPECIES_REGIDRAGO:
         return MUS_VS_REGI;
+    case SPECIES_REGIGIGAS: // Project Grounded: eigen thema met Slow Start
+        return MUS_GROUNDED_VS_REGIGIGAS;
     case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema
     case SPECIES_ENTEI:
     case SPECIES_SUICUNE:

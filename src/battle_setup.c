@@ -644,7 +644,8 @@ void StartRegiBattle(void)
         transitionId = B_TRANSITION_GRID_SQUARES;
         break;
     }
-    CreateBattleStartTask(transitionId, MUS_VS_REGI);
+    // Project Grounded: Regigigas krijgt zijn eigen thema (Slow Start)
+    CreateBattleStartTask(transitionId, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_REGIGIGAS ? MUS_GROUNDED_VS_REGIGIGAS : MUS_VS_REGI);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

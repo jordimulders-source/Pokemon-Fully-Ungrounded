@@ -16364,3 +16364,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.37] - Toxic Chain v8
 - De ketting van de Loyal Three is kleiner en dunner en komt vlakker van links binnen. Zo raakt de onderste tand van het eindstuk de ketting niet meer. Eindring en tanden zijn niet veranderd.
+
+### [v.0.9.38] - Battle! Regigigas
+- Regigigas heeft een eigen gevechtsthema (`MUS_GROUNDED_VS_REGIGIGAS`, `tools/grounded/regigigas_theme.py`): een bombastische remix van het Regi-thema met **Slow Start**.
+  - **Intro:** begint op 55% tempo en versnelt per maat. Regigigas wordt laag voor laag wakker: eerst orgel en bas, dan pauken en toms, dan de robot-arpeggio's (PSG, zoals in het origineel), en daarna het hele orkest met trompet, hoorn, koor, tuba, taiko en crashes.
+  - **Loop:** het koraal op koper en koor boven de bas-ostinato. Halverwege zakt hij nog één keer in ("bijkomen"): tempo omlaag, drums weg. Daarna komt hij met een paukenroffel terug op vol gas.
+- Het thema speelt in het Regigigas-event en in de debug-legendarylijst. De andere Regi's houden het gewone Regi-thema.
+- Muziekgereedschap: `musiclib.detach()` voor legato-partijen en `allocate()` met een uitklinktijd per partij.

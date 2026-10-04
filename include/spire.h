@@ -24,8 +24,11 @@
 #define SPIRE_ACTS              3
 #define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
 #define SPIRE_MAX_NODES         4   // kamers per verdieping
-#define SPIRE_HEAL_AFTER        10  // procent HP na een gewonnen gevecht (zie SPIRE_BALANS.md)
-#define SPIRE_REST_HEAL         40  // procent HP op een rustplek (Chansey)
+// v0.8.107: getallen uit tools/grounded/spire/runsim.py (vergelijking met Slay the Spire, zie SPIRE_BALANS.md)
+#define SPIRE_HEAL_AFTER        8   // procent HP na een gewonnen gevecht (Slay: Burning Blood 6 van 80 HP = 7,5%)
+#define SPIRE_REST_HEAL         30  // procent HP op een rustplek (Chansey); Slay 30%. Vanaf dit percentage gaat status weg
+#define SPIRE_ACT_HEAL          40  // procent HP bij een nieuwe act (Slay A5+: 75% van het tekort, ±30-40%)
+#define SPIRE_START_GOLD        75  // geld aan het begin van een run (Slay: 99 = 40% van het geld van een act)
 
 enum SpireRoom
 {

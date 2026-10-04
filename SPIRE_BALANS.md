@@ -112,9 +112,9 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 ## Overige getallen (en waarom)
 
 - **Levels:** alles in de Spire is lv 100 (Jordi). Level is dus nooit een knop; sterkte komt uit soort, moves, items, totem-boosts en HP-vermenigvuldiger.
-- **Heal na een gevecht 10%, rustplek (Chansey) 40%.** Een gewoon gevecht kost ±11% (zie Ontmoetingen), een elite ±24%, een baas ±55%. Per act: ±2 zwakke (2×7%) + ±2 gewone (2×11%) + 1-2 elites (24-48%) ≈ 60-85% verlies, tegenover 6×10% + 1-2 rustplekken (40-80%) ≈ 100-140% herstel. Goed spel komt met ±70-90% bij de baas aan; slordig spel (gimmicks negeren = 1,5-2× zoveel verlies) strandt. Met de oude 20% na elk gevecht was een gewoon gevecht altijd gratis.
-- **Upgrade (Porygon2, "+"):** aanval +30% kracht; statusmove één stage extra en mist nooit; altijd max PP. Rekensom: de hoofdaanval wordt ±60% van de beurten gebruikt, dus ±18% meer schade, gevechten ±15% korter, ±15% minder schade incasseren: ±1,6% HP per gewoon gevecht, 3,6% per elite, 8% per baas. Over de ±15 gevechten die na de eerste rustplek nog komen is dat ±40% HP: precies even veel als rusten (40%). Vroeg in de run is upgraden dus beter, laat in de run rusten: een echte keuze.
-- **Geld:** gevecht 15-25¥, elite 35-45¥, baas 80¥ (Amulet Coin +50%): ±280¥ per act. Winkel: move 45/70/120¥ (common/uncommon/rare), vasthouditem 50/85/140¥, relic 120¥, Move Relearner 50¥ + 25¥ per eerder gebruik (zoals card removal in Slay: 75 + 25n). Eén winkelbezoek koopt dus 2-4 dingen.
+- **Heal na een gevecht 8%, rustplek (Chansey) 30%, nieuwe act 40%** (v0.8.107, zie *Vergelijking met Slay the Spire* onderaan; eerder 10/40/40). Slay: Burning Blood 6 van 80 HP (7,5%), rust 30%, nieuwe act 75% van het tekort (A5+). Een gewoon gevecht kost ±12% (zie Ontmoetingen), een elite ±24-30%, een baas ±55-65%: gewone gevechten kosten netto een paar procent, elites echt HP, en rusten (30% ≈ één elite) concurreert met upgraden. Met de oude 20% na elk gevecht was een gewoon gevecht altijd gratis.
+- **Upgrade (Porygon2, "+"):** aanval +30% kracht; statusmove één stage extra en mist nooit; altijd max PP. Rekensom: de hoofdaanval wordt ±60% van de beurten gebruikt, dus ±18% meer schade, gevechten ±15% korter, ±15% minder schade incasseren: ±1,6% HP per gewoon gevecht, 3,6% per elite, 8% per baas. Over de ±15 gevechten die na de eerste rustplek nog komen is dat ±40% HP: meer dan rusten (30%) als je gezond bent. Vroeg in de run en met genoeg HP is upgraden dus beter, laag of vlak voor de baas rusten: een echte keuze (zoals Smith/Rest in Slay).
+- **Geld:** start 75¥, gevecht 15-25¥, elite 35-45¥, baas 80¥ (Amulet Coin +50%): ±235¥ per act. Winkel: move 45/70/120¥ (common/uncommon/rare), vasthouditem 50/85/140¥, relic 150¥, Move Relearner 50¥ + 25¥ per eerder gebruik (zoals card removal in Slay: 75 + 25n). Eén winkelbezoek koopt dus 1-3 dingen (Slay: start 99, relic 150-300 op ±250 per act).
 - **Vasthouditems:** één per Pokémon, zoals in de echte games; gebruikt (Focus Sash, bes) = weg voor de rest van de run. Spire-afwijkingen: Life Orb 2% terugslag, Focus Sash op elke HP, Leftovers 1/32 (zie boven). Nutteloos en dus niet in de pool: Red Card, Eject Button/Pack, Shed Shell, Smoke Ball, Exp. Share, Lucky Egg, Everstone, evolutie-items (Up-Grade, ...), Destiny Knot, Float Stone, Iron Ball, Lagging Tail, Sticky Barb, Ring Target, Full Incense, Macho Brace, Power-items, Cleanse Tag.
 - **Draft-zeldzaamheid:** C 35%, B 35%, A 22%, S 8% (zoals kaartzeldzaamheid in Slay: de sterkste opties zijn zeldzaam).
 - **Beloningskaarten:** kaart 1 past bij het type van je eerste Pokémon, kaart 2 bij je tweede, kaart 3 is vrij (zoals klassekaarten in Slay). Zeldzaamheid 60/30/10%.
@@ -625,7 +625,7 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 
 Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; speler ×4 HP, 2 aanvallen per beurt op de gevaarlijkste vijand eerst; vijanden vallen in 80% van de beurten aan). Gimmicks (patronen, totem, abilities) zitten er niet in: die maken een gevecht makkelijker als je ze doorziet en zwaarder als je ze negeert. Doel per gevecht: zwak 3–12%, gewoon 6–18%, elite 15–35%, baas 40–75%.
 
-**Kalibratie** (automatisch): per act en soort gevecht een levelverschuiving en HP-factor zodat de mediaan precies op het doel valt (zwak 2,5 beurten/7%, gewoon 3/11%, elite 4,5/24%, baas 9/55%; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel). Level hooguit ±6 (een Grubbin op lv 66 klopt niet). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, en ligt het gemiddelde vast.
+**Kalibratie** (automatisch): per act en soort gevecht een levelverschuiving en HP-factor zodat de mediaan precies op het doel valt (in act 1/2/3: zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65% bij ±9 beurten; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel, en elke act doet meer pijn). Level hooguit ±6 (een Grubbin op lv 66 klopt niet). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, en ligt het gemiddelde vast.
 
 | act | soort | level | HP-factor | mediaan beurten | mediaan HP-verlies |
 |---|---|---|---|---|---|
@@ -633,23 +633,23 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | boss:Totem Marowak | +0 | ×0.8 | 8.5 | 56% |
 | 1 | boss:Totem Wishiwashi | +0 | ×1.0 | 9.5 | 56% |
 | 1 | boss:Venusaur & Blastoise | +0 | ×0.8 | 12.5 | 41% |
-| 1 | elite | +0 | ×0.6 | 4.5 | 21% |
+| 1 | elite | +0 | ×0.7 | 4.5 | 26% |
 | 1 | normal | +0 | ×1.0 | 3.5 | 12% |
 | 1 | weak | +0 | ×0.6 | 2.5 | 8% |
 | 2 | boss:Darkrai | +0 | ×1.3 | 9.5 | 58% |
 | 2 | boss:Dialga & Palkia | +0 | ×0.8 | 7.5 | 65% |
-| 2 | boss:Mega Metagross | +0 | ×1.3 | 11.5 | 51% |
-| 2 | boss:Mewtwo & Mew | +0 | ×1.3 | 10.5 | 50% |
-| 2 | elite | +0 | ×0.8 | 4.5 | 22% |
-| 2 | normal | +0 | ×1.4 | 3.5 | 11% |
-| 2 | weak | +0 | ×1.3 | 2.5 | 5% |
-| 3 | boss:Eternamax Eternatus | +0 | ×0.4 | 8.5 | 54% |
+| 2 | boss:Mega Metagross | +0 | ×1.4 | 12.5 | 56% |
+| 2 | boss:Mewtwo & Mew | +0 | ×1.4 | 11.5 | 66% |
+| 2 | elite | +0 | ×1.0 | 5.0 | 27% |
+| 2 | normal | +0 | ×1.7 | 3.5 | 13% |
+| 2 | weak | +0 | ×1.5 | 2.5 | 7% |
+| 3 | boss:Eternamax Eternatus | +0 | ×0.5 | 10.5 | 67% |
 | 3 | boss:Mega Mewtwo Y | +0 | ×1.2 | 9.5 | 66% |
 | 3 | boss:Mega Rayquaza | +0 | ×0.9 | 7.5 | 68% |
-| 3 | boss:Terapagos | +0 | ×1.1 | 9.5 | 51% |
-| 3 | boss:Ultra Necrozma | +0 | ×1.0 | 7.5 | 60% |
-| 3 | elite | +0 | ×0.9 | 4.5 | 20% |
-| 3 | normal | +0 | ×1.4 | 3.5 | 15% |
+| 3 | boss:Terapagos | +0 | ×1.4 | 11.5 | 65% |
+| 3 | boss:Ultra Necrozma | +0 | ×1.1 | 8.5 | 73% |
+| 3 | elite | +0 | ×1.2 | 5.5 | 28% |
+| 3 | normal | +0 | ×1.6 | 3.5 | 16% |
 | 3 | weak | +0 | ×1.0 | 2.5 | 11% |
 
 | act | biome | soort | ontmoeting | beurten | HP-verlies | |
@@ -664,10 +664,10 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | Overgrown Grove | normal | Mawler (Teddiursa + Skwovet) | 3.5 | 17% |  |
 | 1 | Overgrown Grove | normal | Jungle Ambush (Bellsprout + Hoppip) | 22.5 | 25% | te zwaar |
 | 1 | Overgrown Grove | normal | Moonlight Recital (Clefairy + Clefairy) | 3.5 | 11% |  |
-| 1 | Overgrown Grove | elite | Gremlin Nob (Primeape + Mankey) | 3.5 | 26% |  |
-| 1 | Overgrown Grove | elite | Byrdonis (Trumbeak + Pikipek) | 2.5 | 25% |  |
-| 1 | Overgrown Grove | elite | Bygone Effigy (Snorlax + Munchlax) | 7.5 | 21% |  |
-| 1 | Overgrown Grove | elite | Phrog Parasite (Pyukumuku + Croagunk) | 5.5 | 10% | te makkelijk |
+| 1 | Overgrown Grove | elite | Gremlin Nob (Primeape + Mankey) | 4.5 | 34% |  |
+| 1 | Overgrown Grove | elite | Byrdonis (Trumbeak + Pikipek) | 3.5 | 42% | te zwaar |
+| 1 | Overgrown Grove | elite | Bygone Effigy (Snorlax + Munchlax) | 8.5 | 25% |  |
+| 1 | Overgrown Grove | elite | Phrog Parasite (Pyukumuku + Croagunk) | 6.5 | 13% | te makkelijk |
 | 1 | Sunken Docks | weak | Corpse Slugs (Shellos + Shellos) | 3.5 | 17% | te zwaar |
 | 1 | Sunken Docks | weak | Toadpoles (Tympole + Poliwag) | 1.5 | 6% |  |
 | 1 | Sunken Docks | weak | Seapunks (Tentacool + Clauncher) | 2.5 | 11% |  |
@@ -680,70 +680,197 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | Sunken Docks | normal | Two-Tailed Rats (Tandemaus + Rattata) | 2.5 | 22% | te zwaar |
 | 1 | Sunken Docks | normal | Cultists (Wooper + Lotad) | 2.5 | 7% |  |
 | 1 | Sunken Docks | elite | Terror Eel (Eelektross + Tynamo) | 4.5 | 37% | te zwaar |
-| 1 | Sunken Docks | elite | Skulking Colony (Corsola + Mareanie) | 5.5 | 17% |  |
-| 1 | Sunken Docks | elite | Phantasmal Gardeners (Frillish + Dreepy) | 2.5 | 4% | te makkelijk |
+| 1 | Sunken Docks | elite | Skulking Colony (Corsola + Mareanie) | 6.5 | 26% |  |
+| 1 | Sunken Docks | elite | Phantasmal Gardeners (Frillish + Dreepy) | 3.5 | 8% | te makkelijk |
 | 2 | The Hive | weak | Bowlbugs (Shuckle + Dwebble) | 4.5 | 5% |  |
 | 2 | The Hive | weak | Exoskeletons (Nincada + Nincada) | 2.5 | 4% |  |
-| 2 | The Hive | weak | Tunneler (Drilbur + Sandile) | 1.5 | 1% | te makkelijk |
-| 2 | The Hive | normal | Hunter Killer (Yanmega + Combee) | 2.5 | 13% |  |
-| 2 | The Hive | normal | Louse Progenitor (Forretress + Venonat) | 3.5 | 9% |  |
+| 2 | The Hive | weak | Tunneler (Drilbur + Sandile) | 2.5 | 10% |  |
+| 2 | The Hive | normal | Hunter Killer (Yanmega + Combee) | 3.5 | 20% | te zwaar |
+| 2 | The Hive | normal | Louse Progenitor (Forretress + Venonat) | 4.5 | 12% |  |
 | 2 | The Hive | normal | Mytes (Ariados + Galvantula) | 3.5 | 17% |  |
 | 2 | The Hive | normal | Ovicopter (Vespiquen + Combee) | 3.5 | 8% |  |
-| 2 | The Hive | normal | Spiny Toad (Ferrothorn + Cacnea) | 4.5 | 19% | te zwaar |
-| 2 | The Hive | normal | Sandpit Worms (Trapinch + Silicobra) | 2.5 | 5% | te makkelijk |
-| 2 | The Hive | elite | Decimillipede (Scolipede + Whirlipede) | 3.5 | 18% |  |
-| 2 | The Hive | elite | Entomancer (Ribombee + Volbeat) | 4.5 | 26% |  |
-| 2 | The Hive | elite | The Insatiable (Sandaconda + Gligar) | 4.5 | 31% |  |
-| 2 | Frostbite Hollow | weak | Snow Hares (Snorunt + Cubchoo) | 2.5 | 6% |  |
-| 2 | Frostbite Hollow | weak | Living Icicles (Bergmite + Snom) | 1.5 | 5% |  |
+| 2 | The Hive | normal | Spiny Toad (Ferrothorn + Cacnea) | 5.5 | 23% | te zwaar |
+| 2 | The Hive | normal | Sandpit Worms (Trapinch + Silicobra) | 2.5 | 14% |  |
+| 2 | The Hive | elite | Decimillipede (Scolipede + Whirlipede) | 4.5 | 18% |  |
+| 2 | The Hive | elite | Entomancer (Ribombee + Volbeat) | 3.5 | 33% |  |
+| 2 | The Hive | elite | The Insatiable (Sandaconda + Gligar) | 5.5 | 34% |  |
+| 2 | Frostbite Hollow | weak | Snow Hares (Snorunt + Cubchoo) | 2.5 | 7% |  |
+| 2 | Frostbite Hollow | weak | Living Icicles (Bergmite + Snom) | 2.5 | 6% |  |
 | 2 | Frostbite Hollow | weak | Seal Pups (Spheal + Seel) | 2.5 | 8% |  |
-| 2 | Frostbite Hollow | normal | Frost Byrds (Delibird + Swablu) | 2.5 | 5% | te makkelijk |
-| 2 | Frostbite Hollow | normal | Glass Sentries (Cryogonal + Snover) | 3.5 | 11% |  |
+| 2 | Frostbite Hollow | normal | Frost Byrds (Delibird + Swablu) | 3.5 | 13% |  |
+| 2 | Frostbite Hollow | normal | Glass Sentries (Cryogonal + Snover) | 4.5 | 11% |  |
 | 2 | Frostbite Hollow | normal | Beartic Brute (Beartic + Cubchoo) | 3.5 | 25% | te zwaar |
-| 2 | Frostbite Hollow | normal | The Lost and the Forgotten (Froslass + Glalie) | 4.5 | 14% |  |
-| 2 | Frostbite Hollow | normal | Avalanche (Piloswine + Swinub) | 2.5 | 11% |  |
-| 2 | Frostbite Hollow | normal | Rock, Paper, Wobbuffet (Wobbuffet + Wynaut) | 6.5 | 6% |  |
+| 2 | Frostbite Hollow | normal | The Lost and the Forgotten (Froslass + Glalie) | 5.5 | 16% |  |
+| 2 | Frostbite Hollow | normal | Avalanche (Piloswine + Swinub) | 3.5 | 13% |  |
+| 2 | Frostbite Hollow | normal | Rock, Paper, Wobbuffet (Wobbuffet + Wynaut) | 7.5 | 7% |  |
 | 2 | Frostbite Hollow | normal | Ice Dancers (Spinda + Jynx) | 3.5 | 5% | te makkelijk |
 | 2 | Frostbite Hollow | elite | Lagavulin Matriarch (Avalugg + Bergmite) | 6.5 | 13% | te makkelijk |
-| 2 | Frostbite Hollow | elite | Frozen Knight (Glalie + Snover) | 4.5 | 18% |  |
-| 2 | Frostbite Hollow | elite | Kaiser Crab (Crabominable + Kingler) | 3.5 | 43% | te zwaar |
+| 2 | Frostbite Hollow | elite | Frozen Knight (Glalie + Snover) | 5.5 | 21% |  |
+| 2 | Frostbite Hollow | elite | Kaiser Crab (Crabominable + Kingler) | 4.5 | 54% | te zwaar |
 | 3 | Gilded Court | weak | Turret Operator (Bastiodon + Octillery) | 2.5 | 11% |  |
 | 3 | Gilded Court | weak | Scrolls of Biting (Bronzor + Sigilyph) | 2.5 | 10% |  |
 | 3 | Gilded Court | weak | Devoted Sculptor (Smeargle + Mr. Mime) | 1.5 | 10% |  |
 | 3 | Gilded Court | normal | Axebots (Bisharp + Doublade) | 3.5 | 22% | te zwaar |
 | 3 | Gilded Court | normal | Fabricator (Magnezone + Klinklang) | 3.5 | 31% | te zwaar |
-| 3 | Gilded Court | normal | Owl Magistrate (Noctowl + Xatu) | 4.5 | 12% |  |
-| 3 | Gilded Court | normal | Frog Knight (Sirfetch'd + Toxicroak) | 2.5 | 17% |  |
+| 3 | Gilded Court | normal | Owl Magistrate (Noctowl + Xatu) | 3.5 | 12% |  |
+| 3 | Gilded Court | normal | Frog Knight (Sirfetch'd + Toxicroak) | 3.5 | 21% | te zwaar |
 | 3 | Gilded Court | normal | Globe Head (Rotom + Chimecho) | 3.5 | 15% |  |
-| 3 | Gilded Court | normal | Slimed Berserker (Goodra + Muk) | 4.5 | 21% | te zwaar |
+| 3 | Gilded Court | normal | Slimed Berserker (Goodra + Muk) | 5.5 | 25% | te zwaar |
 | 3 | Gilded Court | normal | The Sloth (Slaking + Vigoroth) | 4.5 | 17% |  |
-| 3 | Gilded Court | elite | Knights Trio (Aegislash + Escavalier) | 4.5 | 18% |  |
-| 3 | Gilded Court | elite | Mecha Knight (Metagross + Bronzong) | 4.5 | 18% |  |
-| 3 | Gilded Court | elite | Soul Nexus (Chandelure + Lampent) | 3.5 | 58% | te zwaar |
+| 3 | Gilded Court | elite | Knights Trio (Aegislash + Escavalier) | 6.5 | 28% |  |
+| 3 | Gilded Court | elite | Mecha Knight (Metagross + Bronzong) | 5.5 | 25% |  |
+| 3 | Gilded Court | elite | Soul Nexus (Chandelure + Lampent) | 4.5 | 58% | te zwaar |
 | 3 | The Abyss | weak | Darklings (Golbat + Sableye) | 2.5 | 13% | te zwaar |
 | 3 | The Abyss | weak | Writhing Mass (Ditto + Muk) | 2.5 | 11% |  |
 | 3 | The Abyss | weak | Exploders (Electrode + Spiritomb) | 2.5 | 13% | te zwaar |
-| 3 | The Abyss | normal | Transient (Shedinja + Dusknoir) | 3.5 | 15% |  |
+| 3 | The Abyss | normal | Transient (Shedinja + Dusknoir) | 3.5 | 18% | te zwaar |
 | 3 | The Abyss | normal | Nemesis (Gengar + Banette) | 2.5 | 13% |  |
-| 3 | The Abyss | normal | Reptomancer (Salazzle + Salandit) | 1.5 | 2% | te makkelijk |
-| 3 | The Abyss | normal | Giant Head (Golurk + Golett) | 2.5 | 5% | te makkelijk |
+| 3 | The Abyss | normal | Reptomancer (Salazzle + Salandit) | 2.5 | 7% |  |
+| 3 | The Abyss | normal | Giant Head (Golurk + Golett) | 2.5 | 7% |  |
 | 3 | The Abyss | normal | Spire Growth (Tangrowth + Trevenant) | 3.5 | 28% | te zwaar |
-| 3 | The Abyss | normal | The Maw (Swalot + Gulpin) | 3.5 | 10% |  |
+| 3 | The Abyss | normal | The Maw (Swalot + Gulpin) | 3.5 | 12% |  |
 | 3 | The Abyss | normal | Nightmare (Hypno + Mismagius) | 3.5 | 16% |  |
-| 3 | The Abyss | normal | The Costume (Mimikyu + Banette) | 2.5 | 11% |  |
-| 3 | The Abyss | elite | Time Eater (Bronzong + Conkeldurr) | 4.5 | 22% |  |
-| 3 | The Abyss | elite | Awakened One (Honchkrow + Murkrow) | 2.5 | 20% |  |
-| 3 | The Abyss | elite | Donu and Deca (Solrock + Lunatone) | 4.5 | 20% |  |
+| 3 | The Abyss | normal | The Costume (Mimikyu + Banette) | 3.5 | 12% |  |
+| 3 | The Abyss | elite | Time Eater (Bronzong + Conkeldurr) | 5.5 | 22% |  |
+| 3 | The Abyss | elite | Awakened One (Honchkrow + Murkrow) | 3.5 | 30% |  |
+| 3 | The Abyss | elite | Donu and Deca (Solrock + Lunatone) | 6.5 | 28% |  |
 | 1 | Boss | boss | Venusaur & Blastoise (Blastoise + Venusaur) | 12.5 | 41% |  |
 | 1 | Boss | boss | Totem Wishiwashi (Wishiwashi + Araquanid) | 9.5 | 56% |  |
 | 1 | Boss | boss | Totem Marowak (Marowak + Salazzle) | 8.5 | 56% |  |
 | 1 | Boss | boss | Gigantamax Pikachu (Pikachu + Plusle) | 12.5 | 52% |  |
-| 2 | Boss | boss | Mega Metagross (Metagross + Beldum) | 11.5 | 51% |  |
+| 2 | Boss | boss | Mega Metagross (Metagross + Beldum) | 12.5 | 56% |  |
 | 2 | Boss | boss | Darkrai (Darkrai + Misdreavus) | 9.5 | 58% |  |
-| 2 | Boss | boss | Mewtwo & Mew (Mewtwo + Mew) | 10.5 | 50% |  |
+| 2 | Boss | boss | Mewtwo & Mew (Mewtwo + Mew) | 11.5 | 66% |  |
 | 2 | Boss | boss | Dialga & Palkia (Dialga + Palkia) | 7.5 | 65% |  |
 | 3 | Boss | boss | Mega Mewtwo Y (Mewtwo + Mew) | 9.5 | 66% |  |
-| 3 | Boss | boss | Ultra Necrozma (Necrozma + Lunatone) | 7.5 | 60% |  |
-| 3 | Boss | boss | Eternamax Eternatus (Eternatus) | 8.5 | 54% |  |
+| 3 | Boss | boss | Ultra Necrozma (Necrozma + Lunatone) | 8.5 | 73% |  |
+| 3 | Boss | boss | Eternamax Eternatus (Eternatus) | 10.5 | 67% |  |
 | 3 | Boss | boss | Mega Rayquaza (Rayquaza + Altaria) | 7.5 | 68% |  |
-| 3 | Boss | boss | Terapagos (Terapagos + Carbink) | 9.5 | 51% |  |
+| 3 | Boss | boss | Terapagos (Terapagos + Carbink) | 11.5 | 65% |  |
+
+## Vergelijking met Slay the Spire (v0.8.107)
+
+Gegenereerd door `tools/grounded/spire/runsim.py` (Monte Carlo over de echte kaartgenerator, ontmoetingen, events, geld en prijzen uit de C-code; 3000 runs per niveau). Referentie: Slay the Spire 1, A0 (Ironclad/Silent).
+
+**Bot:** padplanner zoals een Slay-speler (elites als je gezond bent, rust vóór de baas, winkel met geld); kiest per event de optie met de hoogste verwachtingswaarde. HP-verlies per gevecht = ontmoetingsmodel (hierboven) × niveau × teamfactor (lognormaal, sd 0,25 per act: types tegen biome/baas) × relics/upgrades/items, met spreiding per gevecht (CV 0,45 gewoon, 0,5 elite, 0,3 baas; `balance.py` meet 0,6 inclusief teamverschil). Niveaus: **goed** ×0,8 (DEFEND, gimmicks doorzien), **gemiddeld** ×1,0, **slordig** ×1,5.
+
+**Waarde-eenheden (¥)**, uit de winkelprijzen: 1% HP = 1.4¥ (Super Potion 35¥ voor 25%), relic 150¥, upgrade 56¥ (±40% HP over de rest van de run), willekeurige move = halve prijs, vasthouditem 70% van de prijs, 1 procentpunt max HP = 3× 1% HP (buffer bij elke baas).
+
+### Kamers per act (gekozen pad)
+
+| kamer | Slay (15 + baas) | Spire act 1 | act 2 | act 3 | Spire ×15/7 |
+|---|---|---|---|---|---|
+| gevecht | 5-7 | 3.1 | 3.2 | 3.2 | 6.8 |
+| elite | 1-3 | 1.0 | 1.1 | 1.2 | 2.4 |
+| event | 3-5 | 1.2 | 0.9 | 0.9 | 2.1 |
+| winkel | 1-2 | 0.3 | 0.4 | 0.4 | 0.8 |
+| rust | 2-4 | 1.3 | 1.2 | 1.2 | 2.7 |
+
+Kaart: gevecht ±45%, event 22%, elite 8% (A0) / 13% (A1+), rust 12%, winkel 5%; verdieping 1 gevecht, 9 schatkist, 15 rust; geen elite/rust vóór verdieping 6. Spire: 7 verdiepingen + baas; verdieping 1 gevecht, 7 rust; elites vanaf verdieping 3, rust vanaf 4; kansen gevecht/event/elite/winkel/rust = 45/25/15/7/8%.
+
+### HP per kamer (gemiddeld niveau, % van de team-HP)
+
+| | Slay | act 1 | act 2 | act 3 |
+|---|---|---|---|---|
+| verlies gevecht | 5-15% | 12% (p10 3%, p90 24%) | 9% (p10 3%, p90 18%) | 10% (p10 4%, p90 19%) |
+| verlies elite | 20-35% | 25% (p10 6%, p90 50%) | 24% (p10 8%, p90 49%) | 22% (p10 8%, p90 42%) |
+| verlies baas | 30-50% | 47% (p10 25%, p90 72%) | 48% (p10 25%, p90 77%) | 45% (p10 24%, p90 69%) |
+| aankomst bij de baas | ±70-90% | 93% (p10 75%, p90 100%) | 97% (p10 90%, p90 100%) | 98% (p10 93%, p90 100%) |
+| na de baas | ±40-70% | 60% (p10 31%, p90 85%) | 67% (p10 37%, p90 90%) | 72% (p10 48%, p90 93%) |
+| heal: na gevecht (effectief, per act) | Ironclad 6 HP (7,5%), Silent 0 per gevecht | 42% | 56% | 69% |
+| heal: rust (effectief, per act) | 30% per rustplek | 20% | 16% | 12% |
+| heal: event (effectief, per act) | wisselend | 2% | 2% | 1% |
+| heal: winkel (effectief, per act) | potions | 2% | 2% | 1% |
+| heal: act-overgang (effectief, per act) | 100% (A0-4), 75% van het tekort (A5+) | 28% | 26% | 0% |
+| schade uit events (per act) | ±5-15% | 4% | 3% | 3% |
+| rustplek: heal / upgrade | ±60/40 (act 1) | 61/38 | 47/52 | 33/66 |
+
+### Geld en winkel (gemiddeld niveau)
+
+| | Slay | act 1 | act 2 | act 3 |
+|---|---|---|---|---|
+| geld uit gevecht | ±90 | 62¥ | 73¥ | 84¥ |
+| geld uit elite | ±60 | 43¥ | 53¥ | 66¥ |
+| geld uit baas | ±100 | 75¥ | 90¥ | 107¥ |
+| geld uit event | ±30 | 16¥ | 14¥ | 14¥ |
+| totaal per act | ±250 (+99 start) | 196¥ | 230¥ | 271¥ |
+| uitgegeven per act | ±200-300 | 39¥ | 101¥ | 97¥ |
+| aankopen per winkelbezoek | 2-3 | 1.4 | 2.8 | 2.8 |
+| relic-prijs / geld per act | 0,6-1,2 | 0.77 | 0.65 | 0.55 |
+| goedkoopste move / geld per act | ±0,2 | 0.23 | 0.20 | 0.17 |
+
+Prijzen Slay: kaart 45-55 / 68-82 / 135-165, relic 143-315, verwijderen 75+25n, potion 48-105. Spire: move 45/70/120¥, item 50/85/140¥, relic 150¥, Super Potion 35¥ (25%), Move Relearner 50+25n¥; startgeld 75¥.
+
+### Winkans per act en run
+
+| niveau | act 1 gehaald | act 2 | act 3 | hele run | Slay |
+|---|---|---|---|---|---|
+| goed | 94% | 97% | 98% | **89%** | ±70-90% (ervaren, A0) |
+| gemiddeld | 89% | 92% | 95% | **78%** | 40-60% (redelijke speler, A0) |
+| slordig | 66% | 69% | 75% | **34%** | <15% |
+
+**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ×0.65 → 95%, ×0.80 → 89%, ×1.00 → 78%, ×1.25 → 56%, ×1.50 → 34%, ×2.00 → 9%. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.
+
+**Waar runs eindigen** (gemiddeld niveau; Slay: act-1-elites en de act-1/2-baas zijn de grote killers, act 2 ook gewone gevechten):
+
+act 1 baas 25%, act 2 baas 21%, act 1 gevecht 13%, act 1 elite 11%, act 2 elite 9%, act 3 baas 9%, act 3 elite 6%, act 2 gevecht 3%, act 3 gevecht 2%
+
+### Events (verwachtingswaarde van de beste optie voor de bot, ¥)
+
+Slay: een event is gemiddeld ±50-100 goud waard, met gemene uitzonderingen. Doel hier (events.py): ±60-120¥; >180 = te gul, <15 = zinloos.
+
+Gemiddeld **45¥** per event (55 events). Hoogste: clefairy 236, dojo 163, jirachi 134, ace 127, chest 116, lunch 116. Laagste: persian 0, pelipper 0, magikarp 0, rotom -0, zubat -7, dugtrio -16.
+
+### Voor en na
+
+| | vóór | na |
+|---|---|---|
+| gevecht per act | 3.14 | 3.20 |
+| elite per act | 1.23 | 1.13 |
+| event per act | 0.67 | 1.00 |
+| winkel per act | 0.60 | 0.35 |
+| rust per act | 1.31 | 1.25 |
+| geld per act | 237¥ | 232¥ |
+| aankomst baas act 1 | 96% | 93% |
+| verlies gevecht act 1/2/3 | 13% / 7% / 10% | 12% / 9% / 10% |
+| verlies elite act 1/2/3 | 20% / 21% / 18% | 25% / 24% / 22% |
+| verlies baas act 1/2/3 | 47% / 42% / 37% | 47% / 48% / 45% |
+| aankopen per winkel act 1 | 0.5 | 1.4 |
+| rust: heal act 1 | 48% | 61% |
+| relic-pool leeg (runs) | 46% | 28% |
+| winkans goed | 95% | 89% |
+| act 1 gehaald (goed) | 97% | 94% |
+| winkans gemiddeld | 86% | 78% |
+| act 1 gehaald (gemiddeld) | 91% | 89% |
+| winkans slordig | 51% | 34% |
+| act 1 gehaald (slordig) | 71% | 66% |
+| event-EV (gemiddeld) | 43¥ | 45¥ |
+
+### Aanpassingen (v0.8.107) en waarom
+
+- `SPIRE_HEAL_AFTER` 10 → **8%** (`include/spire.h`): Slay's Burning Blood is 6 van 80 HP (7,5%), Silent heeft niets. Met 10% was een gewoon act-1-gevecht (±12%) bijna gratis en kwam de bot met 96% bij de baas; nu kost een gang netto een paar procent en blijft HP de grondstof over de hele act.
+- `SPIRE_REST_HEAL` 40 → **30%**: zoals Slay. Rust/elite-verhouding was 40/24 = 1,7 (Slay 30/±27 ≈ 1,1); nu ±1,2: één rustplek betaalt één elite. Upgraden (±40% HP waard over de run) wint nu als je gezond bent: de echte Smith/Rest-keuze. Status gaat weg vanaf 30% (de drempel volgt de constante).
+- `SPIRE_ACT_HEAL` **40%** (nieuw; was `SPIRE_REST_HEAL`): de act-overgang los van de rustplek, zelfde 40%. Slay A0 heelt alles, A5+ 75% van het tekort (±30-40% na een baas): bewust de strengere variant.
+- `SPIRE_START_GOLD` 0 → **75¥** (`NewRun`): Slay begint met 99 goud (±40% van een act). Zonder startgeld kocht de bot in een act-1-winkel gemiddeld 0,5 dingen; nu ±1,4, en een eerste winkel is een echte keuze (relic sparen of nu een move).
+- Relic in de winkel 120 → **150¥** (`src/spire_shop.c`): relic-prijs gedeeld door het geld van een act was 0,5 (Slay 0,6-1,2, gewone relic 150 op ±250). Relics zijn het sterkste in de winkel en de pool is klein: vóór liep hij in bijna de helft van de runs leeg.
+- Kaart (`Spire_GenerateMap`): gevecht/event/elite/winkel/rust **45/25/15/7/8%** (was 45/20/15/10/10); te vroeg voor een elite = gevecht, te vroeg voor een winkel = event. Vóór had verdieping 2 25% winkels (de elite-kans viel door naar de winkel) terwijl je daar nog geen geld hebt; events per act 0,7 → 1,0 (Slay ×7/15: ±1,5-2), winkels ±0,35 per act (Slay 1-2 per 15 kamers).
+- Ontmoetingen (`encounters.py`): kalibratie op **HP-verlies per act** (zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65%), eerder alleen op duur (alle acts gelijk). Daardoor waren act-2-gangen goedkoper dan act 1 (11% en 5% tegen 12% en 8%) en act-3-elites lichter dan act-1-elites; in Slay doet elke act meer pijn en de speler groeit (relics, upgrades, items). HP-factoren in `src/data/spire_encounters.h` opnieuw berekend; act-1-gangen gelijk, act-1-elites ×0,6 → ×0,7 (terug op het oude doel van 24%).
+- Event *Mimikyu's Birthday*, *Bring a gift* 40 → **75¥** (`events.py`): een relic voor 40¥ was een kwart van de winkelprijs (EV +100¥, het op twee na gulste event); nu de halve prijs.
+
+### Conclusies
+
+- Per kamer zit de Spire in de Slay-banden: gang ±11%, elite ±24%, baas ±46% van de team-HP (gemiddeld niveau, alle acts).
+- Kamerverdeling per act (×15/7 om met Slay te vergelijken): 6.8 gevechten, 2.4 elites, 2.1 events, 0.8 winkels, 2.7 rustplekken. Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.
+- HP-economie: aankomst bij de act-1-baas 93% (Slay ±70-90%); rustplekken heal/upgrade 61/38, 47/52, 33/66 per act (Slay: vroeg vaak rusten, later smeden).
+- Doodsoorzaken: baas 55%, elite 26%, gang 19%. In Slay zijn act-1-elites een grotere killer; hier weegt de bot het risico mee (elites alleen als je gezond bent).
+- Events zijn gemiddeld 45¥ waard (Slay ±50-100): iets minder dan een gevecht (±20¥ + een move). De dure ruil-events (betaal X voor Y tegen winkelprijs) zijn bewust neutraal; de type-opties maken ze voor het juiste team goed.
+
+### Voor Jordi (beslissen of testen)
+
+- **Gif, Leech Seed, weer en %-heals schalen niet mee met ×HP.** Gif doet 1/8 van de (×4) max HP = 12,5% van de balk per beurt, terwijl een klap ±10% doet. Toxic doodt elke baas (×4,5 HP) in ±6 beurten ongeacht zijn HP-vermenigvuldiger; Recover/Roost/Wish helen de helft van de balk. Het event *Toxic Spikes* kost daardoor ±20% HP per gevecht per vergiftigde Pokémon (tot de volgende rustplek). Voorstel: in de Spire schade/heal in % van de max HP delen door de HP-vermenigvuldiger (engine, `battle_util.c`), of bewust zo laten (Pokémon-kennis) maar dan Toxic/Leech Seed als rare.
+- **Vastloper:** in een event waarvan elke optie geld of een type vraagt (nu *The Vending Machine*/Rotom: 20¥, 30¥ of Electric) kun je niet verder als je te weinig geld hebt en geen Electric-type. Voorstel: B = weglopen als alles op slot zit (`spire_event.c`), of een Leave-optie.
+- **Relic-pool (8) is te klein** voor een Slay-ritme (±2-3 elites + baas + winkel per act = 7-10 relics per run): ook na de prijsverhoging loopt hij in ±30% van de runs leeg en dan geven elites/bazen niets meer. Slay heeft 100+ relics; 20-25 zou hier genoeg zijn.
+- **Winkans:** volgens het model is de Spire nog steeds iets milder dan Slay A0 (gemiddeld niveau ±75-80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. De economie (HP, geld, rust) is nu Slay-achtig; wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de ontmoetingen en is pas na testen te meten: houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.
+- **Act-escalatie in de praktijk:** in het model wordt de speler per act ±15-35% sterker door relics/upgrades/items (schatting), waardoor gangen en elites in act 2/3 in de praktijk even duur blijven als in act 1 (Slay: ±1,5× zo duur in act 3). Na testen eventueel act 3 nog zwaarder (gewoon 18-20%).
+- **Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). Kort en snappy, maar de run heeft daardoor ±10 beloningen minder; 9 verdiepingen zou dichter bij Slay zitten (ontwerpkeuze, niet aangepast).
+- Uitschieters in de ontmoetingen (al gemarkeerd *te zwaar*), zoals Sewer Clam (62% HP) en Jungle Ambush (22 beurten), maken de gang-doden in act 1: eerst die bijstellen.

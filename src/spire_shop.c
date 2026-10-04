@@ -156,7 +156,7 @@ static void Task_SpireShop(u8 taskId);
 // --- prijzen (zie SPIRE_BALANS.md) ------------------------------------------------------------
 static const u16 sMovePrice[] = {45, 70, 120};
 static const u16 sItemPrice[] = {50, 85, 140};
-#define RELIC_PRICE   120
+#define RELIC_PRICE   150 // v0.8.107: 0,6 x het geld van een act, zoals een gewone relic in Slay (150 op ±250)
 #define POTION_PRICE  35
 #define ELIXIR_PRICE  40
 

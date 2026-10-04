@@ -30,8 +30,8 @@ Effecten (zie enum SpireFx in include/spire.h):
   evolve                  één willekeurige Pokémon evolueert nu al (geen evolutie mogelijk: +60¥)
   wheel                   Spinda's rad (zes uitkomsten, tekst uit de C-code)
 
-Balans (SPIRE_BALANS.md): ±280¥ per act; move 45/70/120¥, item 50/85/140¥, relic 120¥; rust = 40% HP,
-na een gevecht 10%. Een event is gemiddeld ±60-120¥ waard; gratis winst alleen met een type-eis of
+Balans (SPIRE_BALANS.md, runsim.py): start 75¥, ±235¥ per act; move 45/70/120¥, item 50/85/140¥, relic 150¥;
+rust = 30% HP, na een gevecht 8%, nieuwe act 40%. Een event is gemiddeld ±60-120¥ waard; gratis winst alleen met een type-eis of
 als ruil (HP, max HP, een move, risico). Een paar events zijn bewust gemeen (Slay: niet elk event is
 een cadeau), maar er is dan altijd een uitweg die weinig kost.
 
@@ -253,7 +253,7 @@ ev('smeargle', 'THE ATELIER', 'SMEARGLE',
 ev('mimikyu', "MIMIKYU'S BIRTHDAY", 'MIMIKYU',
    'A Mimikyu throws itself a birthday party. Nobody came. It is not crying. It is the costume.',
    [opt('Join', [('heal', 30)], 'There is cake. There are games. Mimikyu wins all of them.'),
-    opt('Bring a gift', [('gold', -40), ('relic',)], 'You give it something. It gives you its best present back. It insisted.'),
+    opt('Bring a gift', [('gold', -75), ('relic',)], 'You give it something. It gives you its best present back. It insisted.'),
     opt('Sneak out', [('maxhp', -3)], 'You leave. Mimikyu does not look up. You will carry this with you.')])
 ev('zubat', 'THE CEILING', 'ZUBAT',
    'The ceiling is covered in Zubat. Every single one is, statistically, about to wake up.',

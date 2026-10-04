@@ -1,0 +1,20 @@
+gevecht per act	3.14
+elite per act	1.23
+event per act	0.67
+winkel per act	0.60
+rust per act	1.31
+geld per act	237¥
+aankomst baas act 1	96%
+verlies gevecht act 1/2/3	13% / 7% / 10%
+verlies elite act 1/2/3	20% / 21% / 18%
+verlies baas act 1/2/3	47% / 42% / 37%
+aankopen per winkel act 1	0.5
+rust: heal act 1	48%
+relic-pool leeg (runs)	46%
+winkans goed	95%
+act 1 gehaald (goed)	97%
+winkans gemiddeld	86%
+act 1 gehaald (gemiddeld)	91%
+winkans slordig	51%
+act 1 gehaald (slordig)	71%
+event-EV (gemiddeld)	43¥

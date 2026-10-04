@@ -644,6 +644,14 @@ TARGET = {'weak': (3, 12), 'normal': (6, 18), 'elite': (15, 35), 'boss': (40, 75
 # doel voor de mediaan per groep: (beurten, HP-verlies %) – uit SPIRE_DESIGN.md (normaal ±3 beurten/15%, elite ±4-5/25%,
 # baas ±10/60%); zwakke gevechten iets korter en lichter.
 TARGET_MID = {'weak': (2.5, 7), 'normal': (3.0, 11), 'elite': (4.5, 24), 'boss': (9.0, 55)}
+# v0.8.107 (runsim.py, vergelijking met Slay): elk soort gevecht wordt per act zwaarder, zoals in Slay
+# (act-2-gangen doen pijn, act-3-bazen het meest). Kalibratie op HP-verlies (beurten wegen mee). Eerder viel act 2
+# goedkoper uit dan act 1 (gewoon 11% / zwak 5%) en waren act-3-elites lichter dan act-1-elites (20% / 21%),
+# terwijl de speler per act sterker wordt (relics, upgrades, items). Act-1-elites op het oude doel (24%).
+TARGET_ACT = {('weak', 1): (2.5, 8), ('weak', 2): (2.5, 8), ('weak', 3): (2.5, 10),
+              ('normal', 1): (3.0, 12), ('normal', 2): (3.5, 14), ('normal', 3): (4.0, 16),
+              ('elite', 1): (4.5, 24), ('elite', 2): (5.0, 27), ('elite', 3): (5.5, 30),
+              ('boss', 1): (9.0, 55), ('boss', 2): (9.0, 60), ('boss', 3): (9.0, 65)}
 CALIB = {}   # (act, kind) -> (levelverschuiving, HP-factor)
 
 
@@ -651,7 +659,7 @@ def calibrate(groups):
     import statistics as st
     for key, encs in groups.items():
         act, kind = key
-        tt, tl = TARGET_MID[kind.split(':')[0]]
+        tt, tl = TARGET_ACT.get((kind.split(':')[0], act), TARGET_MID[kind.split(':')[0]])
         best = None
         for dlv in (0,):
             for h10 in range(3, 81):
@@ -665,7 +673,8 @@ def calibrate(groups):
                     if not 7 <= mt <= 13:
                         err += 10
                 else:
-                    err = math.log(mt / tt) ** 2      # alleen de duur; het HP-verlies volgt uit de inhoud
+                    # mediaan van de groep op het doel; de verschillen binnen de groep (de puzzel) blijven staan
+                    err = math.log(max(ml, 0.1) / tl) ** 2 + 0.3 * math.log(mt / tt) ** 2
                 if best is None or err < best[0]:
                     best = (err, dlv, h, mt, ml)
         CALIB[key] = best[1:]
@@ -760,7 +769,7 @@ def main():
          'Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; speler ×4 HP, 2 aanvallen per beurt op de gevaarlijkste vijand eerst; vijanden vallen in 80% van de beurten aan). '
          'Gimmicks (patronen, totem, abilities) zitten er niet in: die maken een gevecht makkelijker als je ze doorziet en zwaarder als je ze negeert. Doel per gevecht: zwak 3–12%, gewoon 6–18%, elite 15–35%, baas 40–75%.', '',
          '**Kalibratie** (automatisch): per act en soort gevecht een levelverschuiving en HP-factor zodat de mediaan precies op het doel valt '
-         '(zwak 2,5 beurten/7%, gewoon 3/11%, elite 4,5/24%, baas 9/55%; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel). Level hooguit ±6 (een Grubbin op lv 66 klopt niet). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, '
+         '(in act 1/2/3: zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65% bij ±9 beurten; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel, en elke act doet meer pijn). Level hooguit ±6 (een Grubbin op lv 66 klopt niet). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, '
          'en ligt het gemiddelde vast.', '',
          '| act | soort | level | HP-factor | mediaan beurten | mediaan HP-verlies |', '|---|---|---|---|---|---|']
     for (act, kind), (dlv, h, mt, ml) in sorted(CALIB.items()):
@@ -775,7 +784,10 @@ def main():
             print('%-6s %-28s %5.1f%% %s' % (e['kind'], e['name'], d['lost'], flag))
     path = os.path.join(ROOT, 'SPIRE_BALANS.md')
     txt = open(path).read()
-    txt = txt.split('\n## Ontmoetingen')[0].rstrip('\n') + '\n' + '\n'.join(R) + '\n'
+    keep = ''
+    if '\n## Vergelijking met Slay the Spire' in txt:   # sectie van runsim.py laten staan
+        keep = '\n## Vergelijking met Slay the Spire' + txt.split('\n## Vergelijking met Slay the Spire', 1)[1]
+    txt = txt.split('\n## Ontmoetingen')[0].rstrip('\n') + '\n' + '\n'.join(R) + '\n' + keep
     open(path, 'w').write(txt)
     print('ontmoetingen: %d, bazen: %d, waarschuwingen: %d' % (sum(len(v) for v in ENCOUNTERS.values()),
                                                                sum(len(v) for v in BOSSES.values()), len(warns)))

@@ -173,7 +173,7 @@ static const struct SpireEventData sSpireEvents[] =
     }},
     {COMPOUND_STRING("MIMIKYU'S BIRTHDAY"), COMPOUND_STRING("A Mimikyu throws itself a birthday party.\nNobody came. It is not crying. It is the costume."), SPECIES_MIMIKYU, 7, 4, 3, {
         {COMPOUND_STRING("Join"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}Heal 30%"), TYPE_NONE, FALSE, 100, {{SPIRE_FX_HEAL, 30}}, {{0}}, COMPOUND_STRING("There is cake. There are games. Mimikyu wins all\nof them."), NULL},
-        {COMPOUND_STRING("Bring a gift"), COMPOUND_STRING("{COLOR RED}{SHADOW LIGHT_RED}-40¥{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}, {COLOR GREEN}{SHADOW LIGHT_GREEN}Relic"), TYPE_NONE, TRUE, 100, {{SPIRE_FX_GOLD, -40}, {SPIRE_FX_RELIC, 0}}, {{0}}, COMPOUND_STRING("You give it something. It gives you its best\npresent back. It insisted."), NULL},
+        {COMPOUND_STRING("Bring a gift"), COMPOUND_STRING("{COLOR RED}{SHADOW LIGHT_RED}-75¥{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}, {COLOR GREEN}{SHADOW LIGHT_GREEN}Relic"), TYPE_NONE, TRUE, 100, {{SPIRE_FX_GOLD, -75}, {SPIRE_FX_RELIC, 0}}, {{0}}, COMPOUND_STRING("You give it something. It gives you its best\npresent back. It insisted."), NULL},
         {COMPOUND_STRING("Sneak out"), COMPOUND_STRING("{COLOR RED}{SHADOW LIGHT_RED}-3% max HP"), TYPE_NONE, FALSE, 100, {{SPIRE_FX_MAXHP, -3}}, {{0}}, COMPOUND_STRING("You leave. Mimikyu does not look up. You will\ncarry this with you."), NULL},
     }},
     {COMPOUND_STRING("THE CEILING"), COMPOUND_STRING("The ceiling is covered in Zubat. Every single\none is, statistically, about to wake up."), SPECIES_ZUBAT, 7, 4, 3, {

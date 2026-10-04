@@ -313,18 +313,18 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
                 node->type = SPIRE_ROOM_FIGHT;
             else if (f == SPIRE_FLOORS - 1)
                 node->type = SPIRE_ROOM_REST;
+            // kansen (runsim.py, vergelijking met Slay): gevecht 45, event 25, elite 15, winkel 7, rust 8%.
+            // Te vroeg voor een elite = gevecht, te vroeg voor een winkel = event (eerder: winkel 25% op verdieping 2).
             else if (r < 45)
                 node->type = SPIRE_ROOM_FIGHT;
-            else if (r < 65)
+            else if (r < 70)
                 node->type = SPIRE_ROOM_EVENT;
-            else if (r < 80 && f >= 2)
-                node->type = SPIRE_ROOM_ELITE;
-            else if (r < 90)
-                node->type = SPIRE_ROOM_SHOP;
-            else if (f >= 3)
-                node->type = SPIRE_ROOM_REST;
+            else if (r < 85)
+                node->type = (f >= 2) ? SPIRE_ROOM_ELITE : SPIRE_ROOM_FIGHT;
+            else if (r < 92)
+                node->type = (f >= 2) ? SPIRE_ROOM_SHOP : SPIRE_ROOM_EVENT;
             else
-                node->type = SPIRE_ROOM_FIGHT;
+                node->type = (f >= 3) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
         }
     }
     // verbindingen zonder kruisingen: kamer i gaat naar j0(i) (oplopend met i) en soms ook naar j0(i)+1,
@@ -435,6 +435,7 @@ static void NewRun(void)
     ZeroMonData(&RUN.mons[1]);
     RUN.magic = SPIRE_SAVE_MAGIC;
     RUN.act = 1;
+    RUN.gold = SPIRE_START_GOLD;
     RUN.floor = 0;
     RUN.seed = Random32();
     PickBiome();
@@ -738,7 +739,7 @@ static void NextAct(void)
     RUN.seed = Random32();
     PickBiome();
     StringCopy(sEndMessage, gSpireBiomes[RUN.biome].desc);
-    Spire_HealRun(SPIRE_REST_HEAL);
+    Spire_HealRun(SPIRE_ACT_HEAL);
     Spire_RestorePP();
     sEvolveStep = 0;
     ContinueActEvolutions();

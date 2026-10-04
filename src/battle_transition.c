@@ -494,6 +494,7 @@ static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_z
 static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
 static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
 static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
+static const u16 sPoisonChain_Anim[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_anim.bin");
 static const u32 sZarudeSil_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zarude_silhouette.4bpp");
 static const u16 sZarudeSil_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zarude_silhouette.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
@@ -8617,26 +8618,32 @@ static void Task_Zarude(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Zarude);
 }
 
-// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Toxic Chain zoals op de artwork. Een glanzende
-// magenta buis in ringen komt om de 4 frames verder van linksonder het beeld in en eindigt groot in het midden in de
-// "halve schedel" (een ronde ring met twee uitwaaierende tanden en een brede inkeping ertussen); het beeld wordt donker-paars. Dan een
-// stilstaand beeld, kort vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
-#define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
-#define POISONCHAIN_STEP  4
-#define POISONCHAIN_HOLD  20
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Toxic Chain zoals op de artwork (magenta buis in
+// ringen, met als eindstuk de "halve schedel": een ring met twee uitwaaierende tanden). De ketting valt van boven in beeld
+// en slingert als een zware ketting uitdempend heen en weer rond de nek (links buiten beeld), terwijl hij wat op en neer
+// deint; het beeld wordt donker-paars, dan de gewone fade. Drie vooraf getekende standen; het restje draaihoek per
+// scanline als BG0HOFS (HBlank) en als één BG0VOFS. De standwissel en de scroll gaan samen in de VBlank (geen scheuren).
+// Alles per frame staat vooraf in route_poisonchain_anim.bin (route_transitions.py).
+#define POISONCHAIN_FRAMES ((s32)(sizeof(sPoisonChain_Anim) / (3 * 2)))
+#define POISONCHAIN_PIVOT_Y 126
+#define tPcPending data[0] // sTransitionData: stand die in de volgende VBlank getekend wordt
+#define tPcShown   data[1] // sTransitionData: stand die nu in de tilemap staat
 
-static bool8 RTPoisonChain_Update(struct Task *task)
+static void VBlankCB_PoisonChain(void)
 {
-    s32 t = task->tRtTimer, n = min((t >> 2) + 1, POISONCHAIN_LINKS); // t >> 2 = t / POISONCHAIN_STEP
-
-    // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen), en alleen de vakken die ten opzichte
-    // van de vorige stap veranderen
-    if (n != task->tRtA)
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
     {
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+        sTransitionData->VBlank_DMA = FALSE;
+    }
+    if (sTransitionData->tPcPending != sTransitionData->tPcShown)
+    {
+        // nieuwe stand: alleen de vakken die verschillen, elk in een keer zijn eindwaarde
         u16 *tilemap = RT_Tilemap();
-        const u16 *map = &sPoisonChain_Map[(n - 1) * 600];
-        const u16 *prev = (task->tRtA > 0) ? &sPoisonChain_Map[(task->tRtA - 1) * 600] : NULL;
-        s32 r, c;
+        const u16 *map = &sPoisonChain_Map[sTransitionData->tPcPending * 600];
+        const u16 *prev = (sTransitionData->tPcShown >= 0) ? &sPoisonChain_Map[sTransitionData->tPcShown * 600] : NULL;
+        u32 r, c;
         for (r = 0; r < 20; r++)
         {
             for (c = 0; c < 30; c++, map++)
@@ -8646,19 +8653,80 @@ static bool8 RTPoisonChain_Update(struct Task *task)
                 tilemap[r * 32 + c] = *map ? RT_TILE(*map) : 0;
             }
         }
-        task->tRtA = n;
-        if (n == 1)
-            PlaySE(SE_M_BIND);
-        else if (n == POISONCHAIN_LINKS)
-            PlaySE(SE_M_TOXIC);
+        sTransitionData->tPcShown = sTransitionData->tPcPending;
     }
-    BlendPalettes(RT_SCENE_PALETTES, min(t >> 1, 14), RGB(2, 0, 4));
-    return t >= (POISONCHAIN_LINKS - 1) * POISONCHAIN_STEP + POISONCHAIN_HOLD;
 }
+
+static void HBlankCB_PoisonChain(void)
+{
+    u32 y = REG_VCOUNT;
+
+    if (y >= 227)
+        y = 0;
+    else if (y >= DISPLAY_HEIGHT - 1)
+        return;
+    else
+        y++;
+    REG_BG0HOFS = gScanlineEffectRegBuffers[1][y];
+    REG_BG0VOFS = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + y];
+}
+
+// scrollwaarden van frame t in buffer 0: per scanline HOFS = restje draaihoek (Q12) * (beeldlijn - draaipunt)
+static void PoisonChain_SetScroll(s32 t)
+{
+    const s16 *anim = (const s16 *)&sPoisonChain_Anim[t * 3];
+    s32 rest = anim[1], vofs = anim[2], y;
+    u16 *buf = gScanlineEffectRegBuffers[0];
+
+    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    {
+        buf[y] = ((rest * (y + vofs - POISONCHAIN_PIVOT_Y)) >> 12) & 0x1FF;
+        buf[DISPLAY_HEIGHT + y] = vofs & 0x1FF;
+    }
+    sTransitionData->tPcPending = anim[0];
+}
+
+static void RTPoisonChain_Init(struct Task *task)
+{
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    sTransitionData->tPcShown = -1;
+    PoisonChain_SetScroll(0);
+    CpuCopy16(gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+    SetVBlankCallback(VBlankCB_PoisonChain);
+    SetHBlankCallback(HBlankCB_PoisonChain);
+    EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
+}
+
+static bool8 RTPoisonChain_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t < POISONCHAIN_FRAMES)
+    {
+        PoisonChain_SetScroll(t);
+        sTransitionData->VBlank_DMA = TRUE;
+    }
+    if (t == 0)
+        PlaySE(SE_M_BIND);
+    else if (t == 62)
+        PlaySE(SE_M_TOXIC);
+    BlendPalettes(RT_SCENE_PALETTES, min(t >> 1, 14), RGB(2, 0, 4));
+    return t >= POISONCHAIN_FRAMES;
+}
+
+static void RTPoisonChain_Finish(struct Task *task)
+{
+    SetHBlankCallback(NULL);
+    SetVBlankCallback(VBlankCB_BattleTransition);
+}
+
+#undef tPcPending
+#undef tPcShown
 
 static const struct RouteTransition sRT_PoisonChain =
 {
-    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, NULL, RTPoisonChain_Update, NULL
+    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
 };
 
 static void Task_PoisonChain(u8 taskId)

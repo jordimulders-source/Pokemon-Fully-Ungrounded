@@ -15879,3 +15879,5 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - Events hebben nu een **gewicht** (kans om gekozen te worden).
 - **Bugfixes uit de testbot:** geëvolueerde rentals hielden hun oude naam (Charmeleon heette nog "Charmander"; geldt voor alle evoluties tussen acts en in events); de receptioniste zag een gepauzeerde run niet (`specialvar` i.p.v. `special`).
 - **Testbot** (scratch): doorloopt een volledige run vanaf de debugwarp (receptioniste → draft → kaart → gevechten, winkel, rust, events, beloningen, act-overgang, baas → terug in de lobby) zonder vastlopers.
+- **The Spire is eindeloos:** de smalle schacht loopt door tot de bovenrand van de kaart en wordt daar afgekapt (geen naald, geen dak); je ziet het einde nooit. Elke 8 rijen een oranje sierring in de kleuren van de dakranden.
+- BattleFrontier_OutsideWest is 56 rijen zee hoger (kaart 56×128, binnen MAX_MAP_DATA_SIZE). Events, de verbinding met OutsideEast, de veerboot-aankomst (19, 123) en het spelerhoofd op de Frontier Pass-kaart (`SPIRE_WEST_EXTRA_ROWS`) schuiven mee. Voet, deur (33, 58) en trappen ongewijzigd; getest: deur in/uit, veerboot, verbinding.

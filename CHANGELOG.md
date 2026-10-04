@@ -16253,3 +16253,20 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   2. **Meteor Falls** (`_2`): overdrive-gitaar, trompet op de melodie, trombone, zachte strijkers, vollere drums.
   3. **Victory Road en de rematches** (`_3`): het eindresultaat met distortion-gitaar (in ORAS is de "piano" een elektrische gitaar), hoorn, viool, cello, trombone, volle drums.
 - Nieuwe voicegroup `grounded_wally` (= `grounded_gm` met echte gitaarsamples op 24–31 i.p.v. PSG-vierkantsgolven). Drumnoten 37 en 52 uit de MIDI zijn PSG-piepjes in `rs_drumset` en zijn omgezet naar snare en crash.
+
+### [v.0.9.21] - Toadstool Hollow in de mist, Petrel in het Stadium, schone muziekpreviews
+- **Toadstool Hollow:** weer `WEATHER_FOG_HORIZONTAL` met een donkerdere menging (7/12, alleen op deze kaart via `IsDarkFogMap()` in `src/field_weather_effect.c`), zodat het bos niet wit wordt gewassen. Bomen, kroontjes en reuzenpaddenstoelen staan nu op COVERED, zodat de mist ook de boomtoppen bedekt (in vanilla ligt de bovenlaag altijd boven de mist). Het tekstvak blijft boven de mist.
+- **Paddenstoelen opnieuw getekend** in Gen 3-stijl (`mushroom_forest.py`): ronde lichtbanden met licht van linksboven, meeshadende stippen, lamellen, steel met manchet, slagschaduw en grassprieten over de voet; paletten 7 en 8 nieuw. Ook de omgevallen stam, de heksenkring en de mospollen.
+- **Petrel** (ROCKET EXEC, `TRAINER_STADIUM_PETREL` 1016, partner 87) in de Battle Stadium-pool: Persian, Ditto (altijd mee via een `KEEP`-regel in `pool.py`), Galar-Weezing, Honchkrow, Mimikyu, ace Zoroark. Doet zich voor als Giovanni ("The voice? I have a cold."). Rode R-transitie via de klasse.
+- **Muziekpreviews:** de "gehoorschade" in de eerste Wally-previews kwam niet uit de game maar uit de opname: de audiobuffer van mGBA liep over tijdens het menu-navigeren. Nieuw: `tools/grounded/maptools/recaudio.py` (leest elke frame) en `audiocheck.py` (pieken, constante tonen, RMS). Wally 1/2/3 opnieuw opgenomen en gecontroleerd; de muziek zelf is ongewijzigd.
+
+### [v.0.9.22] - Ogerpon-quest (post-game)
+- Na de Hall of Fame vertelt de maskerhoedster in Fortree Jungle het echte verhaal: de Loyal Three waren de schurken, Ogerpon beschermde het dorp. Ze hebben de maskers gestolen.
+- **Drie schuilplaatsen** (nieuwe kaarten in `gMapGroup_Grounded`, bouwscript `ogerpon_quest.py`), open na het verhaal:
+  - Okidogi met het Cornerstone Mask: `GraniteCave_CornerstoneRoom`, achter de Rock Smash-rotsen in Granite Cave B2F.
+  - Munkidori met het Hearthflame Mask: `FieryPath_EmberHollow`, een lavagrot linksonder in Fiery Path.
+  - Fezandipiti met het Wellspring Mask: `Route127_WellspringGrotto`, via een zwemgat in Underwater Route 127.
+- Elk is een legendary-gevecht op lv 65, vangbaar. Bij winst of vangst valt het masker. Wie verslagen maar niet gevangen is, komt terug na de League.
+- **Finale:** met de drie maskers legt de hoedster ze op het altaar en verschijnt Ogerpon (lv 70). Daarna krijg je de maskers terug als hold items (vormwissel via expansion).
+- Transities: de Loyal Three de Koffing-gifschedel, Ogerpon het regenwoud. Muziek `MUS_RG_VS_LEGEND`. Flags 0x4D9–0x4E7.
+- Placeholderteksten in huisstijl. Ongetest: de gevechten tegen Munkidori en Fezandipiti (hetzelfde script als Okidogi, dat wel getest is).

@@ -126,7 +126,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Nieuwe mapsec: `region_map_sections.json`, beide popup-tabellen in `src/map_name_popup.c`, en op de Town Map (zie Stand van zaken).
 
 ### Nieuwe NPC's en trainers
-- Teams en levels: zie "Trainer parties". Teksten: **meteen een humoristische placeholder** in de stijl van de game (droog, self-aware, soms de vierde wand doorbrekend). Jordi herschrijft wat hij wil via de Dialoogstudio.
+- Teams en levels: zie "Trainer parties". Teksten: **meteen een humoristische placeholder in de huisstijl van deze romhack** (Jordi, 5 okt: "dat mag je voortaan doen"): droog, absurd, donker, self-aware, popcultuur, soms de vierde wand doorbrekend. Lees eerst wat bestaande teksten van Jordi en de humor-entries in de changelog (v0.6.x). Kort houden. Geldt ook voor teksten die subagents schrijven: geef ze deze opdracht mee. Jordi herschrijft wat hij wil via de Dialoogstudio.
 
 ### Testen
 - `python3 tools/grounded/maptools/testrom.py <scratchmap> "regels script 1" ["regels script 2" ...]` bouwt een test-ROM met tijdelijke debug-scripts (bijv. `warp MAP_X, x, y; waitstate`) en zet `debug.inc` terug. Daarna in Python: `Emu(rom)`, `load(e, intro)`, `debug_script(e, 1)` (`emu.py`). Bouw daarna opnieuw voor een schone ROM.

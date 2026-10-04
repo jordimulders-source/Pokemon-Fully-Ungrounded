@@ -34,6 +34,23 @@ Zinnia geeft na Deoxys nu 3 Comet Shards. Wil je een andere beloning (bijv. de M
 ## 5. MP3-muziek
 Voor Wally's Theme, Battle! Wally, The Heirs to Eternity en The Lament of Falling Stars zijn MIDI-bestanden nodig (een MP3 kost ±1 MB per minuut ROM). Heb je die, of zal ik ze zoeken?
 
+## 6. Nog meer signature moves? (voorstel, niet gebouwd)
+1. Zangoose – **Feud Claw** (Normal 75): dubbel tegen Seviper en Poison, hogere crit. 2. Seviper – **Grudge Fang** (Poison 75, bijt): dubbel tegen Zangoose en Normal, 30% zware vergiftiging.
+3. Solrock/Lunatone – **Eclipse** (70): overdag sterker voor Solrock, 's nachts voor Lunatone (echte klok).
+4. Spinda – **Tipsy Waltz** (Normal 80/90): 50% verwarring; is Spinda zelf verward, dan dubbele kracht.
+5. Castform – **Forecast** (status): zet het weer van zijn vorm (of willekeurig, ook Snow Storm, Acid Rain, Pollen Haze) en +1 Sp. Atk.
+6. Dustox – **Toxic Dust** (status): vergiftigt beide tegenstanders en verlaagt hun Speed.
+7. Volbeat/Illumise – **Firefly Signal**: Volbeat +1 Spe voor het team; Illumise trekt aanvallen naar zich toe en healt.
+8. Linoone – **Straight Line** (Normal 70, +1 prioriteit): dubbel als hij vorige beurt ook Straight Line deed.
+9. Chimecho – **Wind Chime** (Psychic 60, geluid): raakt beide tegenstanders, healt bondgenoten 1/8.
+10. Relicanth – **Living Fossil** (status): +1 Def/Sp. Def, negeert stat-verlagingen tot hij wisselt.
+11. Swalot – **Gulp Down** (Poison 70): slikt het item van het doelwit in en healt 25%.
+12. Delcatty – **Nine Lives** (status, 1× per gevecht): overleeft de volgende KO met 1 HP.
+Welke wil je?
+
+## 7. Burglar
+Het team voor 7–8 badges (lv 51–52, Acid Rain + Gunk Shot + Close Combat) won in de test van een Arceus lv 100. Te pittig voor een willekeurige ontmoeting? En kans 1 op 12 (Mauville 's nachts 1 op 3), één keer per dag: goed zo?
+
 ## Nog open van eerder
 - **Gen 4+-trainersprites (Greenphx) en Johto/Unova voor het Stadium:** je nieuwe sheets (HG/SS-trainers, BW/HGSS/Pt-overworlds) staan in `graphics/`. Welke personages wil je er als eerste uit?
 - **V** (Expert M-foto): eigen sprite gewenst?

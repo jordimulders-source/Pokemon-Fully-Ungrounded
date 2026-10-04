@@ -16116,3 +16116,13 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - Team in het vuur-en-gif-thema van de Red/Blue- en GSC-Burglars (met Thief en Air Pollution), groeit mee met de badges: lv 19–20 (Koffing, Vulpix, Growlithe) tot lv 66–68 na de Elite Four (o.a. Alolan Muk, Magmortar, Mega-Charizard Y).
 - Eigen overworld (FRLG Rocket omgekleurd naar de trainerfoto: pet, masker, buitzak; `tools/grounded/burglar_overworld.py`), ook in het Battle Stadium. Code in `src/burglar.c`, script `data/scripts/burglar.inc`, teksten `data/text/burglar.inc`; geen kaartobjecten nodig (gespawnd, lokale id's 200/201). `VAR_BURGLAR_DEFEATS` (0x40FA), `VAR_BURGLAR_LAST_DAY` (0x40FB), `TRAINER_BURGLAR_1–5` (979–983), `OBJ_EVENT_GFX_BURGLAR` 264.
 - **Forceren:** debugmenu Utilities > "Burglar: force" (of `special Burglar_DebugForce`), daarna langs het huis lopen. Getest in Mauville en Petalburg.
+
+### [v.0.9.4] - Signature moves: Cofagrigus, Stunfisk, Mightyena, Wailord, Luvdisc
+Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_bandage.png` en `broken_heart.png`). Tests: `test/battle/grounded/signature_moves.c` (13/13).
+- **Mummy's Curse** (Cofagrigus, bij evolutie/lv 1): Ghost, speciaal 60/100, 10 PP. Bindt 4–5 beurten (1/8 schade, kan niet wisselen) en het doelwit krijgt de ability **Mummy**, dus wie hem met contact raakt wordt ook een mummie. Ability Shield en onoverschrijfbare abilities beschermen. Animatie: paars veld, zes linnen windsels draaien om het doelwit, een geest stijgt op; eigen beurtanimatie voor het knellen.
+- **Zap Trap** (Stunfisk, lv 28): Electric, fysiek 80/100, contact, bijt. Doelwit kan niet wisselen, 30% verlamming. Stunfisk klapt plat dubbel, kaken klappen dicht, bliksem.
+- **Steel Trap** (Galar-Stunfisk, lv 28): Steel, fysiek 70/100, contact, bijt. Berenklem: 4–5 beurten 1/8 schade ("bloeden") en Speed −1. Stalen klem van vier kanten, metaalsplinters, rode flits.
+- **Pack Howl** (Mightyena, bij evolutie/lv 1): Dark, status, geluid. Met partner +1 Atk voor beiden, alleen +1 Atk en +1 Spe. Nacht, volle maan, twee schaduwwolven huilen mee.
+- **Whale Song** (Wailord, bij evolutie/lv 1): Water, speciaal 70/100, geluid; raakt alle andere Pokémon (ook de partner), door Substitute, 30% slaap. Muzieknoten over het hele veld, golfringen, bubbels.
+- **Heartbreak** (Luvdisc, lv 29): Fairy, speciaal 60/100, 15 PP. Dubbele kracht tegen het andere geslacht of bij verliefdheid; altijd Sp. Atk −1. Een hart barst in tweeën, het doelwit huilt.
+- Yamask en Wailmer leren ze bewust niet (echte signatures).

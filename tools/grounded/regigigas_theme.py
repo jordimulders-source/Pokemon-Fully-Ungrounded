@@ -149,7 +149,15 @@ def build():
     mv = lambda ev, tr=SHIFT: [[s + off, e + off, n + tr, v] for s, e, n, v in src_rng(ev)]
     add['trumpet'] = [[s, e, n, 120] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
     add['horn'] = [[s, e, n, 112] for s, e, n, v in mv(thin(T[2], 1, 'top'))]
-    add['choir'] += [[s, e, n - 12, 110] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
+    add['choir'] += [[s, e, n - 12, 118] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
+    # tweestemmig: een diatonische terts erboven (E-mineur, de toonsoort van de climax)
+    scale = [4, 6, 7, 9, 11, 0, 2]
+    def third(n):
+        pcs = sorted(range(n + 1, n + 6), key=lambda x: x)
+        up = [x for x in pcs if x % 12 in scale]
+        return up[1] if len(up) > 1 else n + 3
+    add['trumpet2'] = [[s, e, third(n), 108] for s, e, n, v in add['trumpet']]
+    add['choir2'] = [[s, e, third(n), 108] for s, e, n, v in add['choir'] if bar_of(s) >= CLIMAX_START]
     for b in range(CLIMAX_START, CLIMAX_END):
         r = roots[b - CLIMAX_START + CLIMAX_FROM] + SHIFT
         add['tuba'].append([b * BAR, (b + 1) * BAR - 6, r + (12 if r < 31 else 0), 118])
@@ -157,8 +165,7 @@ def build():
         add['crash'].append([b * BAR, b * BAR + 48, 57, 124])
         add['hits'] = add.get('hits', []) + [[b * BAR + o, b * BAR + o + 12, r % 12 + 48, 110] for o in (0, 48)]
     # originele begeleiding (bas, arpeggio's, drums, pauken) gaat mee de climax in, getransponeerd
-    climax_orig = {3: mv(T[3]), 4: mv(T[4]), 5: mv(T[5]), 7: mv(T[7], 0), 8: mv(T[8])}
-    add['choir2'] = []        # (tweede koorstem paste niet naast het origineel + fanfare)
+    climax_orig = {3: mv(T[3]), 4: mv(T[4]), 5: mv(T[5])}   # originele drums en pauken: in de climax vervangen door taiko/crash/eigen pauken
     add['hits'] = add.get('hits', []) + [[b * BAR + o, b * BAR + o + 12, 48, 80 + (b - 34) * 6] for b in range(34, LOOP_END) for o in (0, 48)]
     add['roll'] = [[31 * BAR + i * 6, 31 * BAR + i * 6 + 6, 48, 40 + i * 5] for i in range(16)]   # paukenroffel naar de climax
     for k in add:
@@ -183,12 +190,12 @@ def build():
                 continue
             preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
     rel = releases(VG)
-    progs = {'crash': DRUMS, 'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
+    progs = {'trumpet2': TRUMPET, 'crash': DRUMS, 'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
              'roll': TIMPANI, 'hits': TIMPANI, 'fanfare': TRUMPET}
     tail = {k: release_ticks(rel.get(p, 200), TPB, 160) for k, p in progs.items()}
-    for k in ('choir', 'tuba', 'trumpet', 'horn'):
+    for k in ('choir', 'choir2', 'tuba', 'trumpet', 'trumpet2', 'horn'):
         add[k] = detach(add[k], tail[k])
-    order = ['roll', 'crash', 'trumpet', 'horn', 'choir', 'tuba', 'hits', 'taiko']
+    order = ['roll', 'crash', 'trumpet', 'horn', 'choir', 'trumpet2', 'tuba', 'choir2', 'hits', 'taiko']
     kept = allocate(add, order, tail=tail, drum_parts=(), drum_len=None, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
     for k in order:
         if len(kept[k]) < len(add[k]) * 0.97:
@@ -220,10 +227,16 @@ def build():
         if i in climax_orig:
             t = append_notes(t, climax_orig[i], src.tracks[i])
         out.tracks.append(t)
-    for k, prog, vol, ch, pan in (('fanfare', TRUMPET, 92, 8, 72), ('choir', CHOIR, 76, 10, 56), ('choir2', CHOIR, 70, 11, 72),
+    written = set()
+    kept['trumpet'] = sorted(kept['trumpet'] + kept['trumpet2'])   # tweestemmig koper op één spoor
+    kept['choir'] = sorted(kept['choir'] + kept['choir2'])
+    for k, prog, vol, ch, pan in (('trumpet', TRUMPET, 110, 8, 72), ('horn', HORN, 104, 11, 52), ('choir', CHOIR, 84, 10, 60),
                                   ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
                                   ('crash', DRUMS, 100, 15, 64)):
         out.tracks.append(note_track(kept[k], prog, vol, ch, pan))
+        written.add(k)
+    missing = [k for k in kept if kept[k] and k not in written and k not in ('trumpet2', 'choir2', 'hits')]
+    assert not missing, 'partijen berekend maar niet weggeschreven: %s' % missing     # (v4: koper ontbrak zo)
     out.save(OUT)
     print(OUT)
 

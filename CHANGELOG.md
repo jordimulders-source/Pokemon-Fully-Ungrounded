@@ -16433,3 +16433,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Loop:** van maat 85 terug naar 38, dezelfde overgang als in het nummer.
   - Voorheen sprong hij van de intro meteen naar het volle couplet 2, waardoor alles abrupt inviel.
 - De ride en de pedaal-hihat worden nu gespeeld (als hihat), want die dragen de opbouw. Ze hebben een lage prioriteit, zodat ze de strijkers niet verdringen.
+
+### [v.0.9.48] - Regigigas v5: de climax klinkt echt
+- **Bugfix:** in v4 werden de trompet- en hoornpartij van de climax wel berekend, maar nooit in het nummer gezet. Daardoor was er in de climax geen koper te horen. Het script controleert nu dat elke partij echt in de MIDI staat.
+- **Climax nu:** tweestemmig koper (trompet met een terts erboven) en hoorn op de melodie, plus een tweestemmig koor. Daaronder tuba, taiko, een crash op elke maat en pauken op de grondtoon. Koper en koor klinken hier luider dan in de rest van het nummer.
+- Het originele slagwerk en de originele pauken zwijgen in de climax, zodat er kanalen vrij zijn voor het koper en het koor.

@@ -113,6 +113,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   sloeg de hele opbouw over). Lees eerst per spoor per maat uit wanneer elk instrument invalt (een tabel als in
   freed_theme.py) en neem het nummer doorlopend over; loop pas op een plek waar het nummer zelf zo'n overgang heeft.
   Drumnoten die buiten de kit/PSG vallen (ride 51, pedaal-hihat 44) omzetten i.p.v. weglaten: ze dragen de opbouw.
+- Regigigas v5: de climax-trompet en -hoorn werden berekend maar nooit weggeschreven (oude lege 'fanfare' in de
+  uitvoerlijst), dus Jordi hoorde 'geen climax'. Laat een script altijd controleren dat elke niet-lege partij in de
+  MIDI staat (assert in regigigas_theme.py), en luister/meet de climax apart (RMS per sectie).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

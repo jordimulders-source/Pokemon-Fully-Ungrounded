@@ -16361,3 +16361,6 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.36] - Dave is on fire
 - De Stadium-omroeper kondigt Dave aan met "From VICTORY ROAD: DAVE is on fire! Your defense is terrified!". Dat is een grap die Dave nooit zal kunnen waarderen.
+
+### [v.0.9.37] - Toxic Chain v8
+- De ketting van de Loyal Three is kleiner en dunner en komt vlakker van links binnen. Zo raakt de onderste tand van het eindstuk de ketting niet meer. Eindring en tanden zijn niet veranderd.

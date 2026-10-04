@@ -264,6 +264,7 @@ void Spire_OpenRest(void (*onDone)(void));
 bool32 Spire_IsSlotUpgraded(struct Pokemon *mon, u32 slot);
 void Spire_UpgradeSlot(struct Pokemon *mon, u32 slot);
 void Spire_ClearSlotUpgrade(struct Pokemon *mon, u32 slot);
+void Spire_CompactMoves(struct Pokemon *mon);
 u32 Spire_GetBiomeEnvironment(void);
 void Spire_LoadBiomeBackground(u16 tint, u32 amount);
 bool32 Spire_IsMoveUpgraded(u32 battler, u32 move);

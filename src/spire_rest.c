@@ -151,6 +151,35 @@ void Spire_ClearSlotUpgrade(struct Pokemon *mon, u32 slot)
     SetMonData(mon, MON_DATA_PP_BONUSES, &bonuses);
 }
 
+// Lege move-slots dichtschuiven (met PP en upgrade), zodat de cursor in gevecht nooit op een leeg slot staat
+void Spire_CompactMoves(struct Pokemon *mon)
+{
+    u16 moves[MAX_MON_MOVES];
+    u8 pp[MAX_MON_MOVES];
+    u32 i, n = 0, bonuses = GetMonData(mon, MON_DATA_PP_BONUSES), newBonuses = 0;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u16 move = GetMonData(mon, MON_DATA_MOVE1 + i);
+
+        if (move == MOVE_NONE)
+            continue;
+        moves[n] = move;
+        pp[n] = GetMonData(mon, MON_DATA_PP1 + i);
+        newBonuses |= ((bonuses >> (i * 2)) & 3) << (n * 2);
+        n++;
+    }
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u16 move = (i < n) ? moves[i] : MOVE_NONE;
+        u8 p = (i < n) ? pp[i] : 0;
+
+        SetMonData(mon, MON_DATA_MOVE1 + i, &move);
+        SetMonData(mon, MON_DATA_PP1 + i, &p);
+    }
+    SetMonData(mon, MON_DATA_PP_BONUSES, &newBonuses);
+}
+
 // ---------------------------------------------------------------------------------------------
 // Achtergrond: gevechtsachtergrond van het biome (ook in de Spire-gevechten zelf)
 

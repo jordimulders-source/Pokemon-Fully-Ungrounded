@@ -837,6 +837,8 @@ static void CreateFoe(u32 partyIndex, const struct SpireFoe *foe)
     for (i = 0; i < MAX_MON_MOVES; i++)
         if (Spire_IsMoveBanned(GetMonData(mon, MON_DATA_MOVE1 + i)))
             SetMonMoveSlot(mon, MOVE_NONE, i);
+    if (foe->moves[0] == MOVE_NONE) // zonder vaste lijst (dus zonder patroon): lege plekken dichtschuiven
+        Spire_CompactMoves(mon);
     if (foe->ability != ABILITY_NONE)
     {
         u32 slot = AbilitySlot(foe->species, foe->ability);

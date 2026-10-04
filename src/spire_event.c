@@ -515,6 +515,7 @@ static void ForgetRandomMove(void)
     StringCopy(gStringVar2, GetMoveName(GetMonData(mon, MON_DATA_MOVE1 + slot)));
     SetMonMoveSlot(mon, MOVE_NONE, slot);
     Spire_ClearSlotUpgrade(mon, slot);
+    Spire_CompactMoves(mon);
     AppendLine(COMPOUND_STRING("{STR_VAR_1} forgot {STR_VAR_2}."));
 }
 
@@ -953,6 +954,7 @@ static void ChooseSlot(void)
         PlaySE(SE_SELECT);
         SetMonMoveSlot(mon, MOVE_NONE, sEv->slot);
         Spire_ClearSlotUpgrade(mon, sEv->slot);
+        Spire_CompactMoves(mon);
         GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(old));
         ShowMessage(COMPOUND_STRING("{STR_VAR_1} forgot {STR_VAR_2}.\nIt does not miss it."));

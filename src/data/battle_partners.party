@@ -2428,6 +2428,17 @@ Music: Suspicious
 Back Pic: Brendan
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
+Crobat @ Black Sludge
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Brave Bird
+- Super Fang
+- Roost
+- Tailwind
+
 Bronzong @ Leftovers
 Level: 50
 Ability: Levitate
@@ -2438,17 +2449,6 @@ Nature: Relaxed
 - Earthquake
 - Hypnosis
 - Reflect
-
-Houndoom @ Focus Sash
-Level: 50
-Ability: Flash Fire
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 SpA / 252 Spe
-Nature: Timid
-- Fire Blast
-- Dark Pulse
-- Nasty Plot
-- Sludge Bomb
 
 Skuntank @ Life Orb
 Level: 50

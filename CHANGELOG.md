@@ -15917,3 +15917,10 @@ Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing 
 - Stadium-tegenstanders hebben een eigen intro (trainer slide, `src/data/stadium_slides.h`) en eigen nederlaag- en winsttekst.
 - **Zeventien collecties als compagnon** (klasse "THE": "THE REGIS sent out Regirock!"), vrij te spelen met Stadium-punten: MASCOTS 1, STARTERS 3, FOSSILS 6, EEVEES 10, LAKE TRIO 15, REGIS 20, BIRDS 25, BEASTS 30, PSEUDOS 35, SWORDS 40, LOYAL 3 45, TAPUS 50, GENIES 55, ULTRAS 60, TREASURES 70, WEATHER 85, CREATORS 100. In de arena staan ze als hun eerste Pokémon.
 - Pool nu 94 deelnemers en 111 compagnons. Fix: een compagnon met voorplaatje staat naast de speler in plaats van eroverheen.
+
+### [v.0.8.112] - QA-ronde
+- **QA over de hele ROM** (rapport `QA_RAPPORT.md`): alle 73 gevechtstransities frame voor frame, de opening, alle gymleiders, Birch, Oak, Brock, Mimi, Colress, Zinnia, Heatran, de legendary beasts, alle Regi-puzzels, Wally, de multi battles, de Spire (drie bot-runs, één tot en met act 3) en het Stadium. Geen vastlopers gevonden.
+- **Gevechtstransities:** bij Sky Pillar, Gabby & Ty, strandbal, regenwoud, Meteor Falls en Psyduck flitste vlak voor het eind de gewone wereld een frame terug; dat is weg (het beeld wordt eerst vastgezet, `RT_FreezePalettes`). Meteor Falls, Jagged Pass, regenwoud en Psyduck eindigen niet meer onnodig in wit maar faden naar zwart; even lang als voorheen.
+- **The Spire:** de elemental monkeys zitten niet meer in de draft. Na het vergeten van een move schuiven de moves dicht (met PP en upgrade), zodat de cursor in gevecht nooit meer op een leeg slot staat.
+- **Teksten:** Nate en Nicholas (Mossdeep Gym) en acht regels met POKéBLOCK (Lilycove, Mossdeep, Fan Club, Lydia) passen weer in het tekstvak; `tools/dialogen/import.py` telt `{POKEBLOCK}`/`{PKMN}` nu mee.
+- **Evolutieregel:** Archie's Archaludon lv 50 (evolueert op 50), Katelynn's Kingambit lv 49, Blissey onder lv 36 bij Nob en Cyndy is weer Chansey, Jupiter (Stadium) heeft Crobat i.p.v. Golbat. Miguel (door Jordi ontworpen) ongewijzigd.

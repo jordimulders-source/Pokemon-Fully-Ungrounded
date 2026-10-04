@@ -15953,8 +15953,6 @@ Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Ta
 **Verborgen abilities zijn in deze romhack niet verkrijgbaar** (geen Ability Patch, geen DexNav). Daarom staat de sterke verborgen ability van deze soorten nu in **slot 2**; de oude slot 2 wordt de verborgen ability (alleen nog voor trainers). Hele evolutielijnen zijn meegenomen, zodat de ability bij het evolueren meegaat.
 - Pokémon Revisie: Volbeat — Levitate / **Prankster** (slot 2 was leeg).
 - Pokémon Revisie: Sandshrew, Sandslash — Sand Rush / **Tough Claws** / verborgen Rough Skin.
-- Pokémon Revisie: Carvanha, Sharpedo — Rough Skin / **Speed Boost** / verborgen Strong Jaw.
-- Pokémon Revisie: Makuhita — Guts / **Sheer Force** / verborgen Technician. Hariyama — Thick Fat / **Sheer Force** / verborgen Purifying Salt.
 - Pokémon Revisie: Mawile — Intimidate / **Sheer Force** / verborgen Hyper Cutter.
 - Pokémon Revisie: Bagon — Rock Head / **Sheer Force**; Shelgon — Rock Head / **Overcoat**; Salamence — Intimidate / **Moxie** (slot 2 was leeg).
 - Pokémon Revisie: Trapinch — Hyper Cutter / **Sheer Force** / verborgen Arena Trap.
@@ -15966,7 +15964,7 @@ Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Ta
 - Pokémon Revisie: Chinchou — Volt Absorb / **Water Absorb** / verborgen Illuminate (zoals Lanturn).
 - Pokémon Revisie: Venomoth — **Magic Guard** / Pollen Season / verborgen Shield Dust.
 - Pokémon Revisie: Kecleon — Color Change / **Protean**.
-- Niet verplaatst (Jordi: zo laten): Cacturne (Water Absorb) en Feebas (Adaptability).
+- Niet verplaatst (Jordi: zo laten): Cacturne (Water Absorb), Feebas (Adaptability), Carvanha/Sharpedo (Strong Jaw blijft in slot 2) en Makuhita/Hariyama (Technician/Purifying Salt blijven in slot 2; in v0.8.116 eerst wel verplaatst, in v0.8.117 teruggezet).
 
 **Buffs:**
 - Pokémon Revisie: Delibird — Atk 55 → 85, Spe 75 → 95. Learnset: Present 1, Ice Shard 1, Ice Punch 15, Drill Peck 25, Icicle Crash 30, Brave Bird 40, Freeze-Dry 45. Present blijft (grap).
@@ -15978,3 +15976,7 @@ Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Ta
 - Pokémon Revisie: Clamperl — evolueert nu ook op **lv 30**: mannetje → Huntail, vrouwtje → Gorebyss. De Deep Sea Tooth/Scale blijven werken.
 
 **Marill (evolueert op 25):** de wilde Azumarill van 1% op Route 117 (lv 18–22) is nu een Marill; de trainer-Azumarill op lv 20 (Pokéfan-team naast Vanessa) ook.
+
+### [v.0.8.117] - Sharpedo en Hariyama terug
+- Pokémon Revisie: Carvanha, Sharpedo — weer Rough Skin / **Strong Jaw** / verborgen Speed Boost (Jordi's revisie uit v0.2.1).
+- Pokémon Revisie: Makuhita — weer Guts / **Technician**; Hariyama — weer Thick Fat / **Purifying Salt**; Sheer Force blijft verborgen (Jordi's revisie uit v0.2.1).

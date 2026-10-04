@@ -139,7 +139,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Types, stats, abilities en learnsets van veel soorten zijn aangepast; dat staat per soort in `CHANGELOG.md` ("Pokémon Revisie: ..."). De code in `src/data/pokemon/species_info/` moet overeenkomen met de changelog. Controleer dat bij twijfel (Swellow had Wind Rider in de changelog maar niet in de code).
 - Level-up learnsets staan in `src/data/pokemon/level_up_learnsets/gen_9.h` (actief via `P_LVL_UP_LEARNSETS` = GEN_LATEST). Wijzigingen in `gen_1.h` t/m `gen_8.h` hebben geen effect.
 - Een `Ability:` in `src/data/trainers.party` moet in de abilitylijst van die soort staan.
-- **Verborgen abilities zijn niet verkrijgbaar** (Jordi; geen Ability Patch, DexNav uit). Een sterke ability die de speler moet kunnen krijgen hoort in slot 1 of 2 (hele evolutielijn meenemen); het verborgen slot is alleen voor trainers.
+- **Verborgen abilities zijn niet verkrijgbaar** (Jordi; geen Ability Patch, DexNav uit). Een sterke ability die de speler moet kunnen krijgen hoort in slot 1 of 2 (hele evolutielijn meenemen); het verborgen slot is alleen voor trainers. Eerst de revisie in de changelog lezen: slot 1/2 die Jordi bewust koos (Sharpedo Strong Jaw, Hariyama Purifying Salt) niet vervangen.
 
 ## Trainer parties (`src/data/trainers.party`)
 - **Taakverdeling:** Jordi doet de echte humor (grap-teams, definitieve dialogen); Claude doet het serieuze werk en schrijft humoristische placeholders. Laat Jordi's grappen staan.

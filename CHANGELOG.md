@@ -16239,3 +16239,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - Items: Black Sludge, Mystic Water (alleen surfend), Absorb Bulb, TM Rain Dance (ook in de Abandoned Ship), verborgen Big Root en Ultra Ball.
 - Trainers 1030–1033; flags 0x4D3–0x4D8.
 - **Battle! Zarude v10** (Jordi: intro van v9 + de catchy loop van v1): de loop klinkt weer als v1, met de PSG-tertsen onder de fluitmelodie, het arpeggio in het tweede deel, de ruis-shaker, klap op de backbeat en tamboerijn op de offbeat. In v2 waren die PSG-sporen weggehaald vanwege "losse piepjes", maar die bleken van drumnoot 44 (PSG in `rs_drumset`) in de tomroffel te komen. De intro (tot 14,3 s) blijft die van v9, zonder PSG.
+
+### [v.0.9.19] - Lavabuis en de top van Mt. Chimney minder kaal
+- **Nieuw decor achteraan Lavaridge** (`tools/grounded/lavaridge_decor.py`, eigen palet 12; bestaande kaarten veranderen niet): gele **zwavelkristallen**, **gloeiende scheuren**, as-hoopjes, kleine en grote keien, **gestolde lava** (beloopbaar), een stronk en een dode, verkoolde boom, telkens op grotgrind en op berggrond.
+- **Lavabuis:** zes nissen met zwavelkristallen, gestolde lavaplekken, keien, as en scheuren, meer variatie in de vloer.
+- **Top van Mt. Chimney:** drie extra nissen en twee rotspartijen (terrassen minder rechthoekig), plukken as-gras, dode bomen en stronken, gestolde lavastromen vanaf het kratermeer, zwavel langs de kraterrand en tien stoompluimen. Paden, events, zichtlijnen en het Strength-pad blijven vrij (gecontroleerd door `chimney_ext.py`).

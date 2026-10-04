@@ -223,3 +223,12 @@ const u16 gMetatileAttributes_FlowerParadise[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatiles.bin");
 const u16 gMetatileAttributes_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatiles.bin");
+const u16 gMetatileAttributes_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatiles.bin");
+const u16 gMetatileAttributes_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatiles.bin");
+const u16 gMetatileAttributes_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatile_attributes.bin");

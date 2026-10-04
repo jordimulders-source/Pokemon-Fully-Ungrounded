@@ -700,17 +700,17 @@
 #define FLAG_ITEM_FORTREE_JUNGLE_MIRACLE_SEED  0x28D // Project Grounded: Fortree Jungle
 #define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_LEAF_STONE  0x28E // Project Grounded: Fortree Jungle
 #define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_REVIVAL_HERB  0x28F // Project Grounded: Fortree Jungle
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
+#define FLAG_SAFARI_ZONES_OPEN  0x290 // Project Grounded: Safari-zones open (zonesleutels terug; later de Team Rocket-sidequest)
+#define FLAG_ITEM_SAFARI_FAIRY_PIXIE_PLATE  0x291 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_FAIRY_FAIRY_FEATHER  0x292 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_FAIRY_SHINY_STONE  0x293 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_THUNDER_ZAP_PLATE  0x294 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_THUNDER_MAGNET  0x295 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_THUNDER_THUNDER_STONE  0x296 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_SPOOK_SPOOKY_PLATE  0x297 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_SPOOK_REAPER_CLOTH  0x298 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE  0x299 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG  0x29A // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag

@@ -50,6 +50,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 0,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SafariZone_Southwest_EventScript_FairyGuard",
+      "flag": "FLAG_SAFARI_ZONES_OPEN"
     }
   ],
   "warp_events": [
@@ -58,6 +71,13 @@
       "y": 7,
       "elevation": 3,
       "dest_map": "MAP_SAFARI_ZONE_REST_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 30,
+      "elevation": 3,
+      "dest_map": "MAP_SAFARI_ZONE_FAIRY_FOREST",
       "dest_warp_id": "0"
     }
   ],

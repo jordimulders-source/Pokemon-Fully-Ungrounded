@@ -4770,6 +4770,36 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeJungle/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_FAIRY_FOREST",
+      "name": "SafariZone_FairyForest_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariFairyGeneral",
+      "secondary_tileset": "gTileset_SafariFairy",
+      "border_filepath": "data/layouts/SafariZone_FairyForest/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_FairyForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_THUNDER_PLAINS",
+      "name": "SafariZone_ThunderPlains_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariThunderGeneral",
+      "secondary_tileset": "gTileset_SafariThunder",
+      "border_filepath": "data/layouts/SafariZone_ThunderPlains/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_ThunderPlains/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_HAUNTED_CAMP",
+      "name": "SafariZone_HauntedCamp_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariSpookGeneral",
+      "secondary_tileset": "gTileset_SafariSpook",
+      "border_filepath": "data/layouts/SafariZone_HauntedCamp/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_HauntedCamp/map.bin"
     }
   ]
 }

@@ -1282,6 +1282,30 @@
       "y": 1,
       "width": 1,
       "height": 2
+    },
+    {
+      "id": "MAPSEC_SAFARI_FAIRY_FOREST",
+      "name": "FAIRY FOREST",
+      "x": 16,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SAFARI_THUNDER_PLAINS",
+      "name": "THUNDER PLAINS",
+      "x": 16,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SAFARI_HAUNTED_CAMP",
+      "name": "HAUNTED CAMP",
+      "x": 16,
+      "y": 2,
+      "width": 1,
+      "height": 1
     }
   ]
 }

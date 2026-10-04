@@ -2,7 +2,8 @@
 """Project Grounded: controleert een MIDI vóór hij in de game of naar Jordi gaat (zie tools/grounded/MUZIEK.md).
 
 Leest de voicegroup uit midi.cfg (-G_...) en meldt de fouten die we eerder maakten:
-  - meer DirectSound-noten tegelijk dan de engine mixt (MAX_CHANS, src/m4a.c) -> noten worden afgekapt ("snips")
+  - meer DirectSound-noten tegelijk dan de engine mixt (MAX_CHANS, src/m4a.c) -> noten worden afgekapt ("snips");
+    uitklinktijd per instrument uit de release van de voicegroup (musiclib.release_ticks)
   - dubbele noten (zelfde spoor, noot en tick) -> volumepiek/klik + kanaalroof
   - drumnoten die in de drumkit PSG zijn (piepjes) of buiten de kit vallen (stilte)
   - melodische programma's die PSG zijn (vierkant/ruis/golf) -> losse piepjes, alleen bewust gebruiken
@@ -11,9 +12,10 @@ Gebruik: python3 tools/grounded/music_lint.py sound/songs/midi/mus_x.mid [...]
 Exitcode 1 bij fouten (FOUT); waarschuwingen (LET OP) laten het door."""
 import os, re, sys
 import mido
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from musiclib import releases, release_ticks
 
-MAX_CHANS = 8           # src/m4a.c: m4aSoundMode(... (8 << SOUND_MODE_MAXCHN_SHIFT))
-TAIL = 24               # ticks (bij 96 tpb) die een kanaal na de note-off nog uitklinkt
+MAX_CHANS = 10          # src/m4a.c mixt 12 kanalen; 2 houden we vrij voor geluidseffecten
 CFG = 'sound/songs/midi/midi.cfg'
 VG_DIR = 'sound/voicegroups'
 
@@ -71,6 +73,8 @@ def lint(mid):
         warns.append('voicegroup onbekend (%s); PSG-controle overgeslagen' % vg)
     tempo = next((x.tempo for t in m.tracks for x in t if x.type == 'set_tempo'), 500000)
     sec = lambda tick: tick / m.ticks_per_beat * tempo / 1e6
+    rel = releases(vg) if voices else {}
+    bpm = 60e6 / tempo
     ds_notes = []
     for ti, t in enumerate(m.tracks):
         tick, on, prog, seen = 0, {}, {}, set()
@@ -103,7 +107,7 @@ def lint(mid):
                 else:
                     if x.note < 28:
                         warns.append('spoor %d noot %d (< E1) op %.2f s: vervormde dreun?' % (ti, x.note, sec(s)))
-                    ds_notes.append((s, tick + int(TAIL / scale), ti))
+                    ds_notes.append((s, tick + release_ticks(rel.get(p, 200), m.ticks_per_beat, bpm), ti))
     # polyfonie
     starts = sorted(set(n[0] for n in ds_notes))
     over = []

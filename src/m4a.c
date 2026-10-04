@@ -75,7 +75,7 @@ void m4aSoundInit(void)
     m4aSoundMode(SOUND_MODE_DA_BIT_8
                | SOUND_MODE_FREQ_13379
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (8 << SOUND_MODE_MAXCHN_SHIFT)); // Project Grounded: 8 i.p.v. 5 kanalen (minder afgekapte noten)
+               | (12 << SOUND_MODE_MAXCHN_SHIFT)); // Project Grounded: 12 i.p.v. 5 kanalen (muziek max. 10, 2 vrij voor effecten)
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {

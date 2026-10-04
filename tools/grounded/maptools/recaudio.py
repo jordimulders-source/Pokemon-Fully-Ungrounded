@@ -24,13 +24,18 @@ a=np.array(rec,dtype=np.int16)
 # hoorbare tik). Herkennen aan een sprong > 12000 naar een sample dat buren met exact 0 heeft; lineair overbruggen.
 st=a.reshape(-1,2).astype(np.int32); fixed=0
 for c in (0,1):
-    x=st[:,c]; i=1
-    while i<len(x)-1:
-        if abs(x[i]-x[i-1])>12000 and (x[i+1]==0 or x[i-1]==0):
+    x=st[:,c]
+    for _ in range(4):                     # herhalen tot er geen sprongen meer zijn
+        bad=np.where(abs(np.diff(x))>12000)[0]
+        if not len(bad): break
+        i=0
+        while i<len(bad):
             j=i
-            while j<len(x)-1 and j-i<32 and (abs(x[j])>12000 or x[j]==0): j+=1
-            lo=max(0,i-1); x[lo:j+1]=np.linspace(x[lo],x[min(j,len(x)-1)],j+1-lo).astype(np.int32); fixed+=1; i=j
-        i+=1
+            while j+1<len(bad) and bad[j+1]-bad[j]<24: j+=1
+            lo=max(0,bad[i]-2); hi=min(len(x)-1,bad[j]+18)
+            x[lo:hi+1]=np.linspace(x[lo],x[hi],hi+1-lo).astype(np.int32); fixed+=1; i=j+1
+    left=len(np.where(abs(np.diff(x))>12000)[0])
+    if left: print('LET OP: nog %d sprongen in kanaal %d'%(left,c))
 a=np.clip(st,-32768,32767).astype(np.int16).reshape(-1)
 if fixed: print('glitches weggewerkt:',fixed)
 w=wave.open(out,'wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(32768); w.writeframes(a.tobytes()); w.close()

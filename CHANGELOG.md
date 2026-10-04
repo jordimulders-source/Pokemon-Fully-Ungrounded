@@ -16309,3 +16309,15 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - `tools/grounded/MUZIEK.md` is het geheugen voor muziekwerk: werkwijze, engine-limieten, smaak van Jordi en een log per feedbackronde.
   - `tools/grounded/music_lint.py` controleert elke MIDI automatisch op te veel noten tegelijk, dubbele noten, PSG-piepjes, drumnoten buiten de kit en te lage bas.
   - `recaudio.py` werkt de buffer-glitches van mGBA weg; die gaven de snips op 3 en 11 s in de previews.
+
+### [v.0.9.26] - Wally ronde 2, 12 geluidskanalen, Poison Chain
+- **Wally 1** is nu dorps en rustgevend: fluit een octaaf lager (geen schel deuntje), akoestische gitaar, accordeon, huppelende pizzicato-bas, kick en tamboerijn, en niet meer zo traag.
+- **Wally 5** is strak heavy metal: de drums uit de bron plus crashes, power chords en distortion-bas. De dubbele bassdrum is eruit, want die verdrong andere instrumenten.
+- **Wally 1–5:** inzetten die in de bron een 32ste te vroeg vallen (x.875, "gehaast" rond 6 s) staan nu op de tel. Bas- en cello-akkoorden zijn uitgedund en de gitaren hebben een kortere release. Het script meldt zelf hoeveel noten er per spoor wegvallen.
+- **Geluidsengine naar 12 DirectSound-kanalen** (was 5), waarvan muziek er max. 10 gebruikt. Zo kappen geluidseffecten geen muzieknoten meer af.
+- **Muziekgereedschap:**
+  - `musiclib.py`: gedeelde bouwstenen met release-bewuste uitklinktijd per instrument uit de voicegroup.
+  - `music_lint.py`: rekent nu ook met de echte release per instrument.
+  - `recaudio.py`: overbrugt alle buffer-glitches van mGBA. Die gaven de snips op 3 en 12 s in de previews; ze zitten niet in de game.
+  - De lessen staan in `tools/grounded/MUZIEK.md`.
+- **Loyal Three** (Okidogi, Munkidori, Fezandipiti): eigen Poison Chain-transitie (`B_TRANSITION_POISON_CHAIN`). Paarse schakels haken in elkaar tot een ketting, dan een stilstaand beeld. Okidogi staat in debug "Battle test…". Een tweede versie met de dikke donut-ketting uit de artwork volgt.

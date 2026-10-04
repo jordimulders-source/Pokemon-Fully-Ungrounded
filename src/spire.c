@@ -38,6 +38,7 @@ EWRAM_DATA u16 gSpireEnemyHp[PARTY_SIZE] = {0}; // HP-vermenigvuldiger per vijan
 
 EWRAM_DATA u8 gSpirePattern[PARTY_SIZE][8] = {0};   // vaste patronen van de vijanden (moveslots 1-4)
 EWRAM_DATA u8 gSpirePatternStep[PARTY_SIZE] = {0};
+EWRAM_DATA u8 gSpireHiddenIntent = 0;
 
 // act-factor van het blok (procenten), per act 1-3
 static const u8 sActBlockFactor[] = {100, 100, 125, 150};
@@ -349,6 +350,8 @@ u8 *Spire_GetIntentText(u8 *dst, u32 battler)
     move = gBattleMons[battler].moves[moveIndex];
     if (move == MOVE_NONE)
         return dst;
+    if (gSpireHiddenIntent & (1u << gBattlerPartyIndexes[battler]))
+        return StringCopy(dst, COMPOUND_STRING("??? (unreadable)"));
 
     afterMove = StringCopy(dst, GetMoveName(move));
     if (IsBattleMoveStatus(move))

@@ -75,6 +75,7 @@ enum SpireGimmick
 {
     SPIRE_GIMMICK_NONE,
     SPIRE_GIMMICK_SLEEP,    // begint 3 beurten in slaap
+    SPIRE_GIMMICK_HIDDEN,   // intentie onleesbaar ("???"): Wobbuffet, steen-papier-schaar
 };
 
 struct SpireBiome
@@ -188,6 +189,7 @@ extern const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT];
 extern const struct SpireBiome gSpireBiomes[SPIRE_BIOME_COUNT];
 extern u8 gSpirePattern[PARTY_SIZE][8];
 extern u8 gSpireStartingStatus;
+extern u8 gSpireHiddenIntent;   // bit per vijandelijke partyplek
 extern u8 gSpireEnvironment;
 extern u8 gSpireEvolveMon;
 extern u8 gSpirePatternStep[PARTY_SIZE];
@@ -244,6 +246,12 @@ void Spire_DebugOpen(void);
 
 // spire_map.c
 void Spire_OpenMap(void);
+
+// spire_shop.c: Poké Mart (scrollende lijst)
+void Spire_OpenShop(void (*onDone)(void));
+
+// spire_draft.c: tien rentals, kies er twee
+void Spire_OpenDraft(void (*onDone)(void));
 
 // spire_rest.c: Snorlax-kamp en upgrades ("+")
 void Spire_OpenRest(void (*onDone)(void));

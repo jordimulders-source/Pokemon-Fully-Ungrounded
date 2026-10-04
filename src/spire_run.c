@@ -443,10 +443,7 @@ static void NewRun(void)
 
 static void DraftDone(void)
 {
-    if (++sDraftStep < 2)
-        Spire_OpenCards(SPIRE_CARDS_DRAFT, DraftDone);
-    else
-        Spire_OpenMap();
+    Spire_OpenMap();
 }
 
 // special: vanuit een script (lockall; special Spire_Enter; waitstate; releaseall)
@@ -456,7 +453,7 @@ void Spire_Enter(void)
     if (!Spire_RunActive())
     {
         NewRun();
-        Spire_OpenCards(SPIRE_CARDS_DRAFT, DraftDone);
+        Spire_OpenDraft(DraftDone); // tien rentals, kies er twee
     }
     else if (RUN.inRoom)
     {
@@ -481,7 +478,7 @@ void Spire_DebugOpen(void)
     switch (gSpecialVar_0x8004)
     {
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
-    case 1:  Spire_OpenCards(SPIRE_CARDS_SHOP, Spire_ReturnToField); break;
+    case 1:  Spire_OpenShop(Spire_ReturnToField); break;
     case 2:  Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_ReturnToField); break;
     case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
     case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
@@ -623,7 +620,7 @@ void Spire_EnterRoom(u32 floor, u32 node)
         Spire_OpenRest(Spire_RoomFinished);
         break;
     case SPIRE_ROOM_SHOP:
-        Spire_OpenCards(SPIRE_CARDS_SHOP, Spire_RoomFinished);
+        Spire_OpenShop(Spire_RoomFinished);
         break;
     default:
         Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_RoomFinished);
@@ -829,6 +826,8 @@ static void CreateFoe(u32 partyIndex, const struct SpireFoe *foe)
     }
     if (foe->item != ITEM_NONE)
         SetMonData(mon, MON_DATA_HELD_ITEM, &foe->item);
+    if (foe->gimmick == SPIRE_GIMMICK_HIDDEN)
+        gSpireHiddenIntent |= 1u << partyIndex;
     if (foe->gimmick == SPIRE_GIMMICK_SLEEP)
     {
         u32 status = STATUS1_SLEEP_TURN(3);
@@ -888,6 +887,7 @@ static void StartEncounter(const struct SpireEncounter *enc, u32 song)
 
     ZeroEnemyPartyMons();
     memset(gQueuedStatBoosts, 0, sizeof(gQueuedStatBoosts));
+    gSpireHiddenIntent = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         gSpireEnemyHp[i] = 100;

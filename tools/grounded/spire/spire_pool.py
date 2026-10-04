@@ -42,6 +42,8 @@ BANNED = {
         'RUINATION', 'ENDEAVOR', 'PAIN_SPLIT', 'FINAL_GAMBIT', 'GUILLOTINE', 'HORN_DRILL', 'FISSURE',
         'SHEER_COLD', 'GUARDIAN_OF_ALOLA', 'BIDE'],
     'KO ongeacht HP (breekt bazen met xHP)': ['PERISH_SONG', 'DESTINY_BOND'],
+    'jezelf opofferen (zonder wissel blijft je partner alleen; Jordi: nutteloos)': [
+        'EXPLOSION', 'SELF_DESTRUCT', 'MISTY_EXPLOSION'],
     'items stelen of ruilen (items zijn je relics)': [
         'TRICK', 'SWITCHEROO', 'COVET', 'THIEF', 'KNOCK_OFF', 'INCINERATE', 'CORROSIVE_GAS'],
     'objectief slechter dan een andere move (Jordi)': [
@@ -78,6 +80,8 @@ def dominated_by(a, b):
     if A['contact'] is False and B['contact'] is True:
         return False  # contact kan nadelig zijn (Rocky Helmet, Static)
     acc_a, acc_b = A['acc'] or 101, B['acc'] or 101
+    if B['power'] > A['power'] + 20 or B['pp'] < A['pp']:
+        return False  # een andere krachtklasse of minder PP is een afweging, geen 'objectief beter'
     return B['power'] >= A['power'] and acc_b >= acc_a and (B['power'] > A['power'] or acc_b > acc_a)
 
 
@@ -518,7 +522,37 @@ def analyse():
     # dus sterkere eenstaps-soorten (Heracross, Gholdengo, ...) breken act 1. Die komen alleen via events.
     single_max = act_med[2] * 1.05
     v_all = sorted(x['V'] for x in rows)
-    for x in rows:
+    # Een te zwakke eerste vorm sluit de lijn niet uit (Jordi): de lijn begint dan een stap later
+    # (Magikarp -> Gyarados, Caterpie -> Butterfree). Zelfde drempels, dus het blijft eerlijk.
+    queue = list(rows)
+    seen = {x['base'] for x in rows}
+    while queue:
+        x = queue.pop(0)
+        evaluate(x, T, act_med, med, single_min, single_max, dominated)
+        early = [r for r in x['reasons'] if r.startswith('act 1') or r.startswith('act 2')]
+        if early and x['stages'] >= 2:
+            for t in evo_targets(x['base']):
+                if t in seen:
+                    continue
+                seen.add(t)
+                forms, stages = line_forms(t)
+                y = dict(base=t, forms=forms, stages=stages, r=[rating_raw(f) for f in forms], later=x['base'])
+                y['R'] = [v * 100 / med for v in y['r']]
+                y['V'] = 100 * sum(w * y['R'][a] / act_med[a] for a, w in enumerate(ACT_WEIGHT))
+                rows.append(y)
+                queue.append(y)
+    ok = [x for x in rows if x['ok'] and not x.get('eventOnly')]
+    events = [x for x in rows if x['ok'] and x.get('eventOnly')]
+    vs = sorted(x['V'] for x in ok)
+    q = lambda p: vs[int(len(vs) * p)]
+    cut = (q(0.30), q(0.60), q(0.85))
+    for x in ok:
+        x['tier'] = 0 if x['V'] < cut[0] else 1 if x['V'] < cut[1] else 2 if x['V'] < cut[2] else 3
+    return dict(rows=rows, ok=ok, events=events, single_max=single_max, T=T, single_min=single_min, act_med=act_med, cut=cut, dominated=dominated, med=med)
+
+
+def evaluate(x, T, act_med, med, single_min, single_max, dominated):
+    if True:
         reasons = []
         for a in range(3):
             if x['R'][a] < T[a]:
@@ -526,7 +560,11 @@ def analyse():
         if x['stages'] == 1:
             if x['R'][0] > single_max:
                 x['eventOnly'] = True   # te sterk voor de draft: alleen via events (met een prijs)
-            if x['R'][0] < single_min:
+            if x['R'][0] < single_min and x.get('later') and x['R'][2] >= T[2]:
+                # later begonnen eindvorm (Butterfree): rekenkundig gelijk aan Luvdisc, dus niet in de draft,
+                # maar wel beschikbaar via events
+                x['eventOnly'] = True
+            elif x['R'][0] < single_min:
                 reasons.append('geen evolutie en zwakker dan een gemiddelde act-2-vorm (%.0f < %.0f)' % (x['R'][0], single_min))
         learn = line_learnset(x['forms'])
         cat, ratio = attack_category(x['forms'])
@@ -549,14 +587,6 @@ def analyse():
             reasons.append('geen grounded move')
         x['reasons'] = reasons
         x['ok'] = not reasons
-    ok = [x for x in rows if x['ok'] and not x.get('eventOnly')]
-    events = [x for x in rows if x['ok'] and x.get('eventOnly')]
-    vs = sorted(x['V'] for x in ok)
-    q = lambda p: vs[int(len(vs) * p)]
-    cut = (q(0.30), q(0.60), q(0.85))
-    for x in ok:
-        x['tier'] = 0 if x['V'] < cut[0] else 1 if x['V'] < cut[1] else 2 if x['V'] < cut[2] else 3
-    return dict(rows=rows, ok=ok, events=events, single_max=single_max, T=T, single_min=single_min, act_med=act_med, cut=cut, dominated=dominated, med=med)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -768,6 +798,11 @@ def write_report(res, pools):
     L += ['', '## Verboden moves', '']
     for reason, lst in BANNED.items():
         L.append('- **%s:** %s' % (reason, ', '.join(MOVES[m]['name'] for m in lst if m in MOVES)))
+    L += ['', '## Later beginnen', '',
+          'Is de eerste vorm in act 1 of 2 te zwak, dan begint de lijn een stap later (zelfde drempels):']
+    for x in sorted([x for x in rows if x.get('later') and x['ok']], key=lambda x: x['base']):
+        L.append('- %s in plaats van %s%s' % (SPECIES[x['base']]['dispname'], SPECIES[x['later']]['dispname'],
+                 ' (alleen via events)' if x.get('eventOnly') else ''))
     L += ['', '## Objectief slechtere moves (automatisch)', '',
           'Zelfde type, categorie, doelwit en prioriteit; de andere is minstens even sterk en accuraat en heeft alle bijeffecten ook. Niet als startmove of beloning (tegenstanders mogen ze wel).', '']
     dom = res['dominated']

@@ -271,7 +271,7 @@ static const struct SpireEvent sEvents[] =
      {OPT_EV_CANDLE_OFFER, OPT_EV_LEAVE, OPT_EV_LEAVE}},
     {COMPOUND_STRING("A STRONG STRANGER"), COMPOUND_STRING("A wild Pokémon blocks the stairs. It is strong.\nIt wants a fight, or a team."),
      {OPT_EV_RECRUIT, OPT_EV_LEAVE, OPT_EV_LEAVE}},
-    {COMPOUND_STRING("FREE SAMPLES"), COMPOUND_STRING("A Kecleon runs a free sample stand.\nIt is suspiciously free."),
+    {COMPOUND_STRING("FREE SAMPLES"), COMPOUND_STRING("A Meowth runs a free sample stand.\nIt is suspiciously free."),
      {OPT_EV_SAMPLE, OPT_EV_STEAL, OPT_EV_LEAVE}},
     {COMPOUND_STRING("WRITING ON THE WALL"), COMPOUND_STRING("An Unown spells out a word on the wall.\nIt is an insult. About you."),
      {OPT_EV_READ, OPT_EV_GRAMMAR, OPT_EV_LEAVE}},
@@ -295,7 +295,7 @@ static const struct SpireOption sOptions[] =
     [OPT_EVOLVE_1]   = {COMPOUND_STRING("Evolve"), COMPOUND_STRING("your second"), COMPOUND_STRING("Pokémon"), COMPOUND_STRING("Evolve now. Stronger, bigger,\nslightly more opinionated."), SPECIES_NONE},
     [OPT_POTION]     = {COMPOUND_STRING("Potion"), COMPOUND_STRING("Heal both"), COMPOUND_STRING("for 30%"), COMPOUND_STRING("A Potion for the whole team.\nShaken, not stirred."), SPECIES_NONE},
     [OPT_EV_SAMPLE]  = {COMPOUND_STRING("Taste it"), COMPOUND_STRING("Heal 30%"), COMPOUND_STRING("...or not"), COMPOUND_STRING("Probably food. Probably."), SPECIES_NONE},
-    [OPT_EV_STEAL]   = {COMPOUND_STRING("Steal it"), COMPOUND_STRING("+40 ¥"), COMPOUND_STRING("-15% HP"), COMPOUND_STRING("Kecleon can turn invisible.\nAnd it hits hard."), SPECIES_NONE},
+    [OPT_EV_STEAL]   = {COMPOUND_STRING("Steal it"), COMPOUND_STRING("+40 ¥"), COMPOUND_STRING("-15% HP"), COMPOUND_STRING("Meowth counts its coins.\nAll of them. Twice."), SPECIES_NONE},
     [OPT_EV_LEAVE]   = {COMPOUND_STRING("Leave"), COMPOUND_STRING("Nothing"), COMPOUND_STRING("happens"), COMPOUND_STRING("The safest choice.\nThe tower judges you for it."), SPECIES_NONE},
     [OPT_EV_READ]    = {COMPOUND_STRING("Read it"), COMPOUND_STRING("Learn a"), COMPOUND_STRING("rare move"), COMPOUND_STRING("Say the word out loud.\nSomething answers."), SPECIES_NONE},
     [OPT_EV_GRAMMAR] = {COMPOUND_STRING("Correct it"), COMPOUND_STRING("+30 ¥"), COMPOUND_STRING(""), COMPOUND_STRING("Fix the spelling. The Unown\npays you to go away."), SPECIES_NONE},
@@ -1466,7 +1466,7 @@ static void PickOption(u32 opt)
     case OPT_EV_STEAL:
         AddGold(40);
         LoseHp(15);
-        ShowMessage(COMPOUND_STRING("You grab 40¥. Kecleon grabs you back."), FALSE);
+        ShowMessage(COMPOUND_STRING("You grab 40¥. Meowth grabs you back."), FALSE);
         break;
     case OPT_EV_READ:
         StartTeach(Spire_RandomMove(2, Random()));

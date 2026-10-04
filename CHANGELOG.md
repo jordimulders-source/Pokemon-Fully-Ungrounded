@@ -16371,3 +16371,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Loop:** het koraal op koper en koor boven de bas-ostinato. Halverwege zakt hij nog één keer in ("bijkomen"): tempo omlaag, drums weg. Daarna komt hij met een paukenroffel terug op vol gas.
 - Het thema speelt in het Regigigas-event en in de debug-legendarylijst. De andere Regi's houden het gewone Regi-thema.
 - Muziekgereedschap: `musiclib.detach()` voor legato-partijen en `allocate()` met een uitklinktijd per partij.
+
+### [v.0.9.39] - Toxic Chain slingert
+- De ketting van de Loyal Three valt nu van boven in beeld en slingert als een zware ketting uitdempend heen en weer rond de nek (het eindstuk zwaait het verst) en deint daarbij op en neer. Na ±1,3 s volgt de fade naar het gevecht. Het geluid is Bind bij binnenkomst en Toxic bij het laatste uitzwaaien.
+- Technisch: drie vooraf getekende standen plus een draaiing per scanline (HBlank) voor de tussenhoeken. De tabellen komen uit `route_transitions.py`.

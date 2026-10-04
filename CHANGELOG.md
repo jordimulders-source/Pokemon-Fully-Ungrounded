@@ -16091,3 +16091,14 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
   3. Na Deoxys (gevangen of verslagen) staat Zinnia bij de meteoriet naast Birch: afsluiter, 3 Comet Shards.
 - Nieuwe specials `Grounded_CaughtRayquaza` en `Grounded_PartyHasShinyRayquaza`; trainer `TRAINER_ZINNIA_DELTA`; `VAR_DELTA_STATE` (0x40F8); flags 0x26C–0x270 en 0x285.
 - **Credits:** N (Delgatron), izzyvicious, en de nieuw aangeleverde sprite-sheets (HG/SS-trainers verzameld door Dann-The-Yoshi, overworlds door PurpleZaffre, de rest met bron "onbekend") in `CREDITS.md`.
+
+### [v.0.9.1] - Archie en Maxie: werkstraf in het Weather Institute
+- **Post-game:** Archie en Maxie staan na de Hall of Fame met een dweil in het Weather Institute (Route 119, begane grond). Taakstraf van zeshonderd uur voor "ongeplande klimaatgebeurtenissen".
+- In hun pauze mag je **één dubbelgevecht per dag** tegen allebei tegelijk (`trainerbattle_two_trainers`, je hebt twee Pokémon nodig). Na elke overwinning komen ze de volgende dag sterker terug, in vier rondes:
+  1. lv 70: Pelipper, Sharpedo, Overqwil / Camerupt, Claydol, Scovillain.
+  2. lv 76 (met EV's): Pelipper, Archaludon, Sharpedo / Tyranitar, Excadrill, Camerupt.
+  3. lv 82: Crobat, Archaludon, Mega-Sharpedo / Heatran, Tyranitar, Mega-Camerupt.
+  4. lv 90 (perfecte IV's; daarna blijft het deze ronde): Pelipper, Archaludon, Mega-Sharpedo / Hippowdon, Heatran, Mega-Camerupt.
+- Regen tegen zand op hetzelfde veld: ze werken samen, maar hun weer niet.
+- Nieuw: trainers `TRAINER_ARCHIE_SERVICE_1–4` en `TRAINER_MAXIE_SERVICE_1–4`, `VAR_WEATHER_SERVICE_TIER` (0x40FC), dagelijkse flag `FLAG_DAILY_WEATHER_SERVICE_BATTLE`, `FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE` (0x286). Getest in de emulator (ronde 3, overwinning, Archie en Maxie blijven staan).
+- Ontwerpkeuze: dagelijks in plaats van wekelijks (de game respecteert de tijd van de speler); wekelijks kan alsnog.

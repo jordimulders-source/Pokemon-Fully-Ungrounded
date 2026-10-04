@@ -981,8 +981,16 @@
 #define TRAINER_MUSTARD                     966
 #define TRAINER_STADIUM_MUSTARD             967
 #define TRAINER_ZINNIA_DELTA                968 // Project Grounded: Zinnia in Mossdeep (Delta Episode)
+#define TRAINER_ARCHIE_SERVICE_1               969 // Project Grounded: werkstraf in het Weather Institute, ronde 1
+#define TRAINER_MAXIE_SERVICE_1               970 // Project Grounded: werkstraf in het Weather Institute, ronde 1
+#define TRAINER_ARCHIE_SERVICE_2               971 // Project Grounded: werkstraf in het Weather Institute, ronde 2
+#define TRAINER_MAXIE_SERVICE_2               972 // Project Grounded: werkstraf in het Weather Institute, ronde 2
+#define TRAINER_ARCHIE_SERVICE_3               973 // Project Grounded: werkstraf in het Weather Institute, ronde 3
+#define TRAINER_MAXIE_SERVICE_3               974 // Project Grounded: werkstraf in het Weather Institute, ronde 3
+#define TRAINER_ARCHIE_SERVICE_4               975 // Project Grounded: werkstraf in het Weather Institute, ronde 4
+#define TRAINER_MAXIE_SERVICE_4               976 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 
-#define TRAINERS_COUNT                      969
+#define TRAINERS_COUNT                      977
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -8,10 +8,9 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde
 1. **Muziek uit MP3:** niet als gestreamd sample (kost ±5 MB; Jordi: ROM-ruimte is kostbaar). Alleen als MIDI (paar KB). Zinnia-gevechtsmuziek bestaat al als MIDI (`oras_zinnia.mid`). Voor Wally's Theme, Battle! Wally, The Heirs to Eternity en The Lament of Falling Stars: MIDI-versies nodig (Jordi levert aan of we zoeken ze).
-2. ~~**Shiny Rayquaza** en 3. **Delta Episode**~~ (gedaan, v0.9.0; open: definitieve beloning van Zinnia, nu 3 Comet Shards).
-2. (oud) **Shiny Rayquaza:** tweede ontmoeting op de Sky Pillar (zelfde soort, gegarandeerd shiny), pas nadat de gewone Rayquaza gevangen is. Pas daarna kan de Delta Episode. Alleen met de shiny Rayquaza in je team mag je de ruimte in ("zodat je kan blijven ademen").
-3. **Delta Episode met Zinnia:** Zinnia-gevecht op het lanceerplatform in Mossdeep → ruimte/Deoxys zoals nu → afsluiter bij de meteoriet. Met de MP3-muziek.
-4. **Archie en Maxie post-game: werkstraf.** Vrijwilligers in de Lilycove-museumtuin/het Weather Institute, wekelijkse tag battle-rematch met steeds sterkere teams. (Ook in de Stadium-pool.)
+2. ~~**Shiny Rayquaza**~~ (gedaan, v0.9.0): tweede ontmoeting op de Sky Pillar (zelfde soort, gegarandeerd shiny), pas nadat de gewone Rayquaza gevangen is. Pas daarna kan de Delta Episode. Alleen met de shiny Rayquaza in je team mag je de ruimte in ("zodat je kan blijven ademen").
+3. ~~**Delta Episode met Zinnia**~~ (gedaan, v0.9.0; open: definitieve beloning, nu 3 Comet Shards): Zinnia-gevecht op het lanceerplatform in Mossdeep → ruimte/Deoxys zoals nu → afsluiter bij de meteoriet. Met de MP3-muziek.
+4. ~~**Archie en Maxie post-game: werkstraf**~~ (gedaan, v0.9.1, dagelijks i.p.v. wekelijks). Vrijwilligers in de Lilycove-museumtuin/het Weather Institute, wekelijkse tag battle-rematch met steeds sterkere teams. (Ook in de Stadium-pool.)
 5. **Signature moves, met eigen animaties:**
    - Cofagrigus: **Mummy's Curse** (soort Curse, maar unieker; zelf bedenken).
    - Stunfisk: move waarbij hij zelf dubbelklapt en de tegenstander klemt; Stunfisk en Galar-Stunfisk elk een eigen variant.

@@ -690,7 +690,7 @@
 #define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
 #define FLAG_KUBFU_EVOLVED  0x284 // Project Grounded: een toren van de dojo voltooid, Kubfu geevolueerd
 #define FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE 0x285 // Project Grounded: Zinnia bij de meteoriet (Delta Episode, afsluiter)
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
+#define FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE 0x286 // Project Grounded: Archie en Maxie (werkstraf); in OnTransition gezet/gewist
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
 #define FLAG_RECEIVED_LIBERTY_PASS        0x289 // Project Grounded: Liberty Pass gekregen (uitnodiging voor de Victory-gauntlet, post-game)
@@ -1574,7 +1574,7 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_WEATHER_SERVICE_BATTLE           (DAILY_FLAGS_START + 0x3)  // Project Grounded: Archie en Maxie vandaag al bevochten
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag

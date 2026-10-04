@@ -269,7 +269,7 @@
 #define VAR_SKY_PILLAR_REVERSE_STATE                     0x40F9 // Project Grounded: omgekeerde Sky Pillar (0 niets, 1 gat open, 2 gezien, 3 geland op B1F, 4 B2F gezien)
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_WEATHER_SERVICE_TIER                         0x40FC // Project Grounded: werkstraf Archie & Maxie, gewonnen rondes (0-3; ronde = tier+1)
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

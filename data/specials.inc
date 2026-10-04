@@ -593,3 +593,4 @@ gSpecials::
 	def_special Stadium_ShowUnlocks
 	def_special Stadium_HasNewUnlocks
 	def_special Stadium_DebugUnlockAll
+	def_special Stadium_GetRecord

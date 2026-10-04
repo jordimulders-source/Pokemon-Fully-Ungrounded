@@ -99,6 +99,18 @@ static void SetBit(u32 *bits, u32 i)
     bits[i / 32] |= 1u << (i % 32);
 }
 
+// De rivaal van het andere geslacht dan de speler bestaat niet: niet tonen
+bool32 Stadium_IsCompanionVisible(u32 i)
+{
+    u16 p = sStadiumCompanions[i].partnerId;
+
+    if (p == PARTNER_STADIUM_BRENDAN)
+        return gSaveBlock2Ptr->playerGender != MALE;
+    if (p == PARTNER_STADIUM_MAY)
+        return gSaveBlock2Ptr->playerGender == MALE;
+    return TRUE;
+}
+
 bool32 Stadium_IsCompanionUnlocked(u32 i)
 {
     const struct StadiumCompanion *c = &sStadiumCompanions[i];
@@ -490,4 +502,12 @@ void Stadium_DebugUnlockAll(void)
     for (i = 0; i < ARRAY_COUNT(sStadiumCompanions); i++)
         SetBit(SAVE.seen, i);
     SAVE.points = 9999;
+}
+
+// Bord in de lobby: gStringVar1-3 = titels singles/doubles, gewonnen wedstrijden
+void Stadium_GetRecord(void)
+{
+    ConvertIntToDecimalStringN(gStringVar1, SAVE.titles[STADIUM_SINGLES], STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar2, SAVE.titles[STADIUM_DOUBLES], STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar3, SAVE.matchesWon, STR_CONV_MODE_LEFT_ALIGN, 5);
 }

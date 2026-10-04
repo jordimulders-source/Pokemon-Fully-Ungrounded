@@ -1,17 +1,16 @@
 @ Project Grounded: lobby van het Battle Stadium (toernooien à la Pokémon World Tournament).
-@ Placeholders: de toernooi-engine wordt later aan deze scripts gehangen.
+@ De balies starten het toernooi (data/scripts/battle_stadium.inc). Teksten zijn placeholders.
 BattleFrontier_StadiumLobby_MapScripts::
 	.byte 0
 
 BattleFrontier_StadiumLobby_EventScript_SinglesDesk::
-	msgbox BattleFrontier_StadiumLobby_Text_SinglesDesk, MSGBOX_NPC
-	end
+	goto BattleStadium_EventScript_Singles
 
 BattleFrontier_StadiumLobby_EventScript_DoublesDesk::
-	msgbox BattleFrontier_StadiumLobby_Text_DoublesDesk, MSGBOX_NPC
-	end
+	goto BattleStadium_EventScript_Doubles
 
 BattleFrontier_StadiumLobby_EventScript_Board::
+	special Stadium_GetRecord
 	msgbox BattleFrontier_StadiumLobby_Text_Board, MSGBOX_SIGN
 	end
 
@@ -27,24 +26,13 @@ BattleFrontier_StadiumLobby_EventScript_Snacks::
 	msgbox BattleFrontier_StadiumLobby_Text_Snacks, MSGBOX_NPC
 	end
 
-BattleFrontier_StadiumLobby_Text_SinglesDesk:
-	.string "Welcome to the BATTLE STADIUM!\n"
-	.string "SINGLE BATTLE tournaments, right here.\p"
-	.string "Registration opens soon. Our\n"
-	.string "bracket printer is still warming up.$"
-
-BattleFrontier_StadiumLobby_Text_DoublesDesk:
-	.string "DOUBLE BATTLE tournaments!\n"
-	.string "Twice the POKéMON, twice the paperwork.\p"
-	.string "Please come back once the forms\n"
-	.string "have been printed. In duplicate.$"
-
 BattleFrontier_StadiumLobby_Text_Board:
-	.string "TOURNAMENT BRACKET\p"
-	.string "Round 1: TBA vs. TBA\n"
-	.string "Round 2: Winner vs. also TBA\p"
-	.string "Someone has drawn a tiny trophy\n"
-	.string "in the corner. It looks smug.$"
+	.string "BATTLE STADIUM - YOUR RECORD\p"
+	.string "Singles trophies: {STR_VAR_1}\n"
+	.string "Doubles trophies: {STR_VAR_2}\p"
+	.string "Matches won: {STR_VAR_3}\n"
+	.string "Someone drew a tiny trophy next to\l"
+	.string "your name. It looks smug.$"
 
 BattleFrontier_StadiumLobby_Text_Fan:
 	.string "I bought a season ticket before they\n"

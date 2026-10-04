@@ -71,6 +71,7 @@ void Stadium_ChooseCompanion(void);
 void Stadium_ShowUnlocks(void);
 void Stadium_HasNewUnlocks(void);
 void Stadium_DebugUnlockAll(void);
+void Stadium_GetRecord(void);
 
 // stadium.c -> stadium_screens.c
 u32 Stadium_PoolCount(void);
@@ -78,6 +79,7 @@ const struct StadiumEntrant *Stadium_GetEntrant(u32 i);
 u32 Stadium_CompanionCount(void);
 const struct StadiumCompanion *Stadium_GetCompanion(u32 i);
 bool32 Stadium_IsCompanionUnlocked(u32 i);
+bool32 Stadium_IsCompanionVisible(u32 i);
 u16 Stadium_EntrantTrainer(u8 slot, u32 member);    // trainer van bracketplek (lid 0/1 bij doubles)
 void Stadium_GetEntrantName(u8 slot, u8 *dst);
 u16 Stadium_EntrantPic(u8 slot);

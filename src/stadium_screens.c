@@ -62,6 +62,8 @@ struct StadiumScreen
     u8 icons[PARTY_SIZE];
     u8 iconCount;
     u8 shownPicFor;
+    u8 list[STADIUM_MAX_COMPANIONS];   // zichtbare compagnons (cursor/scroll wijzen hierin)
+    u8 listCount;
 };
 
 static EWRAM_DATA struct StadiumScreen *sScr = NULL;
@@ -323,9 +325,19 @@ static const struct Trainer *PartnerData(u32 companion)
     return &gBattlePartners[GetBattlePartnerDifficultyLevel(id)][id - TRAINER_PARTNER(PARTNER_NONE)];
 }
 
+static void BuildCompanionList(void)
+{
+    u32 i;
+
+    sScr->listCount = 0;
+    for (i = 0; i < Stadium_CompanionCount(); i++)
+        if (Stadium_IsCompanionVisible(i))
+            sScr->list[sScr->listCount++] = i;
+}
+
 static void DrawCompanionDetail(void)
 {
-    u32 c = sScr->cursor, i;
+    u32 c = sScr->list[sScr->cursor], i;
     const struct Trainer *t = PartnerData(c);
     bool32 unlocked = Stadium_IsCompanionUnlocked(c);
     const struct StadiumCompanion *sc = Stadium_GetCompanion(c);
@@ -364,12 +376,12 @@ static void DrawCompanionDetail(void)
 
 static void DrawCompanionList(void)
 {
-    u32 r, n = Stadium_CompanionCount(), unlocked = 0;
+    u32 r, n = sScr->listCount, unlocked = 0;
     u8 buf[24];
 
     FillWindowPixelRect(WIN, PIXEL_FILL(PAPER), 0, 0, 120, 144);
     for (r = 0; r < n; r++)
-        unlocked += Stadium_IsCompanionUnlocked(r);
+        unlocked += Stadium_IsCompanionUnlocked(sScr->list[r]);
     PrintText(FONT_NORMAL, 4, 0, sColor_Dark, COMPOUND_STRING("PARTNERS"));
     ConvertIntToDecimalStringN(buf, unlocked, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringAppend(buf, COMPOUND_STRING("/"));
@@ -377,10 +389,10 @@ static void DrawCompanionList(void)
     PrintText(FONT_SMALL, 76, 3, sColor_Gray, buf);
     for (r = 0; r < LIST_ROWS && sScr->scroll + r < n; r++)
     {
-        u32 i = sScr->scroll + r;
+        u32 i = sScr->list[sScr->scroll + r];
         bool32 open = Stadium_IsCompanionUnlocked(i);
 
-        if (i == sScr->cursor)
+        if (sScr->scroll + r == sScr->cursor)
             PrintText(FONT_SMALL_NARROW, 2, 18 + r * 14, sColor_Red, COMPOUND_STRING("▶"));
         PrintText(FONT_SMALL_NARROW, 10, 18 + r * 14, open ? sColor_Dark : sColor_Gray,
                   open ? PartnerData(i)->trainerName : COMPOUND_STRING("??????"));
@@ -528,7 +540,7 @@ static void Task_StadiumScreen(u8 taskId)
         break;
     case SCREEN_COMPANIONS:
     {
-        u32 n = Stadium_CompanionCount(), cur = sScr->cursor;
+        u32 n = sScr->listCount, cur = sScr->cursor;
 
         if (JOY_REPEAT(DPAD_UP) && cur > 0)
             cur--;
@@ -536,13 +548,13 @@ static void Task_StadiumScreen(u8 taskId)
             cur++;
         else if (JOY_NEW(A_BUTTON))
         {
-            if (!Stadium_IsCompanionUnlocked(cur))
+            if (!Stadium_IsCompanionUnlocked(sScr->list[cur]))
             {
                 PlaySE(SE_FAILURE);
                 break;
             }
             PlaySE(SE_SELECT);
-            Stadium_SetCompanionIndex(cur);
+            Stadium_SetCompanionIndex(sScr->list[cur]);
             gSpecialVar_Result = TRUE;
             Exit();
             break;
@@ -587,12 +599,22 @@ void Stadium_ChooseCompanion(void)
 
     CleanupOverworldWindowsAndTilemaps();
     OpenScreen(SCREEN_COMPANIONS, ReturnToField);
+    BuildCompanionList();
     // begin bij de laatst gekozen (of de eerste die vrij is)
-    for (i = 0; i < Stadium_CompanionCount() && !Stadium_IsCompanionUnlocked(i); i++)
-        ;
-    sScr->cursor = i < Stadium_CompanionCount() ? i : 0;
-    if (STADIUM_SAVE.lastCompanion < Stadium_CompanionCount() && Stadium_IsCompanionUnlocked(STADIUM_SAVE.lastCompanion))
-        sScr->cursor = STADIUM_SAVE.lastCompanion;
+    sScr->cursor = 0;
+    for (i = 0; i < sScr->listCount; i++)
+    {
+        if (sScr->list[i] == STADIUM_SAVE.lastCompanion && Stadium_IsCompanionUnlocked(sScr->list[i]))
+        {
+            sScr->cursor = i;
+            break;
+        }
+    }
+    if (i == sScr->listCount)
+        for (i = 0; i < sScr->listCount && !Stadium_IsCompanionUnlocked(sScr->list[i]); i++)
+            sScr->cursor = i + 1;
+    if (sScr->cursor >= sScr->listCount)
+        sScr->cursor = 0;
     sScr->scroll = sScr->cursor >= LIST_ROWS ? sScr->cursor - LIST_ROWS + 1 : 0;
     Redraw();
 }

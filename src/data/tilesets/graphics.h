@@ -596,6 +596,29 @@ const u16 gTilesetPalettes_MeteorFalls[][16] =
     INCBIN_U16("data/tilesets/secondary/meteor_falls/palettes/15.gbapal"),
 };
 
+// Project Grounded: meteoriet in de ruimte (Deoxys)
+const u32 gTilesetTiles_MeteorSpace[] = INCBIN_U32("data/tilesets/secondary/meteor_space/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_MeteorSpace[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/meteor_space/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_OceanicMuseum[] = INCBIN_U32("data/tilesets/secondary/oceanic_museum/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_OceanicMuseum[][16] =
@@ -1726,3 +1749,88 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.fastSmol");
+
+const u32 gTilesetTiles_FlowerParadise[] = INCBIN_U32("data/tilesets/secondary/flower_paradise/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_FlowerParadise[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/flower_paradise/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_SkyPillarReverse[] = INCBIN_U32("data/tilesets/secondary/sky_pillar_reverse/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_SkyPillarReverse[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/palettes/15.gbapal"),
+};
+
+// Project Grounded: Darkrai's nachtmerrie
+const u16 gTilesetPalettes_NightmareGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/nightmare_general/palettes/15.gbapal"),
+};
+
+const u16 gTilesetPalettes_NightmareFacility[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/nightmare_facility/palettes/15.gbapal"),
+};

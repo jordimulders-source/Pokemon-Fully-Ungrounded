@@ -15776,3 +15776,306 @@ Ontwerp Jordi: Snowscape blijft, Hail wordt Snow Storm, en Snow Storm is een zwa
 
 ### [v.0.8.99] - Ontwerp The Spire
 - `SPIRE_DESIGN.md`: alle afspraken over de roguelike-faciliteit The Spire (doubles met 2 rentals, intenties, DEFEND in plaats van POKéMON, moves als kaarten, relics, winkel, rust, BP naar rato). Nog niets gebouwd.
+
+### [v.0.8.100] - The Spire: rekenscript en prototypegevecht
+- **Rekenscript** `tools/grounded/spire/balance.py` (met `gamedata.py`, leest soorten, moves en typetabel uit de broncode): simuleert gevechten met de echte schadeformule, 2 rentals in doubles tegen normale tegenstanders, elites en bazen, per act. `--run` speelt hele acts na, `--set sleutel=waarde` probeert andere instellingen. Startwaarden staan in `SPIRE_DESIGN.md` (speler ×4 HP, normaal ×1, elite ×2,5, baas ×4,5; normaal gevecht = 2 tegenstanders; heal na gevecht 20%, rustplek 50%; bazen niet harder laten slaan, dreiging via patronen en support).
+- **Prototypegevecht** (debugmenu > Utilities > **Spire prototype**): je eigen team gaat even aan de kant; je krijgt twee rentals op lv 50 (Gardevoir en Swampert) en vecht in doubles tegen WARDEN: Tyranitar (baas, ×4,5 HP) met Whimsicott ernaast en Klefki als tweede golf. Na afloop (winst of verlies, geen whiteout) krijg je je eigen team terug. Geen exp; rentals luisteren altijd.
+- **Spire-modus in gevechten** (`src/spire.c`, `gSpireBattle`):
+  - **DEFEND** vervangt POKéMON in het actiemenu. Kies met links/rechts: jezelf, je partner of beide; het vak toont meteen hoeveel blok dat geeft (in % van de max HP). DEFEND kost de beurt en gaat altijd vóór alle moves ("Gardevoir guards the team!").
+  - **Blok** = 15% van eigen max HP × verdedigingsfactor (gemiddelde Def/SpD t.o.v. een base-80-stat) × act-factor; over beide verdeeld 60% elk. Vangt alleen directe schade van moves op (multi-hit per klap), vervalt aan het eind van de beurt. Melding: "The block absorbed the hit!" of "The block softened the hit!".
+  - **Intenties**: in het vak links onderin staat wat beide tegenstanders deze beurt gaan doen (boven = bovenste levensbalk), bijv. `▶Crunch→Swampert 17%` of `▶Dragon Dance`. Schade in % van de max HP van het doel (in doubles zie je je eigen HP-getallen niet). Past de naam niet, dan `→L`/`→R`. De AI legt zijn keuze al vóór jouw keuze vast; die wordt getoond en uitgevoerd.
+  - Tegenstanders wisselen niet (de AI-wissel staat uit); een nieuwe tegenstander komt alleen als golf na flauwvallen.
+  - HP-vermenigvuldigers en de rest staan als constanten in `include/spire.h`.
+- Getest in de emulator: intenties, DEFEND op alle drie de doelen, blokmelding, volledig gevecht gewonnen in 7 beurten, eigen team daarna terug.
+
+### [v.0.8.101] - The Spire: losse Pokémon i.p.v. trainer, KO-markering
+- **Geen trainer meer** in het prototype: je vecht tegen losse Pokémon (wild dubbelgevecht, "Wild Tyranitar and Whimsicott appeared!"), maar met de slimme trainer-AI, zodat intenties blijven werken. Geen trainer-intro, geen "sent out", geen geld. `TRAINER_SPIRE_PROTO` is weer weg. Golven (een derde Pokémon die invalt) kunnen nu niet: wilde gevechten vullen niet aan. Klefki is dus uit het prototype; de baas staat alleen met Whimsicott.
+- **KO-markering in de intenties:** `Crunch→Gardevoir 38% KO` als de klap je Pokémon zeker uitschakelt, `KO?` als dat alleen met een hoge rol gebeurt (crits niet meegerekend). Bij spread-aanvallen per doel, bijv. `Earthquake→ 23%KO/15%`.
+
+### [v.0.8.102] - The Spire: beloningsscherm en run
+- **Beloningsscherm** na een gewonnen Spire-gevecht (`src/spire_reward.c`): kop met "VICTORY!", BP en +20% HP; drie movekaarten met naam, type-icoon (uit de game), fysiek/speciaal/status, kracht, PP en zeldzaamheid (grijs common, blauw uncommon, goud rare; kansen 60/30/10%). De PC-hand wijst de gekozen kaart aan. Onderaan de uitleg van de move en je twee Pokémon met icoon, HP-balk, % en **STAB** als het type past.
+  - A: kiezen → met ▶ kies je wie hem leert → en welke move hij vergeet. "X learned Y!". Kent hij hem al, dan zegt het scherm dat en ga je terug naar de kaarten.
+  - B: overslaan (of een stap terug).
+  - Movepools per zeldzaamheid staan voorlopig vast in `spire_reward.c` (later per act).
+- **Run (prototype):** je twee rentals blijven bewaard tussen gevechten, met hun HP, PP en nieuwe moves. Na een gewonnen gevecht +20% HP; wie flauwviel doet het volgende gevecht mee met 1 HP. Verdieping 1-3 zijn gewone gevechten tegen twee willekeurige wilde Pokémon (lv 48, act-1-pool uit het rekenscript), verdieping 4 is de baas (Tyranitar + Whimsicott). Verlies je of win je van de baas, dan is de run voorbij. Nog niet in de save (alleen geheugen).
+- Debugmenu > Utilities: **Spire prototype** start het volgende gevecht van de run, **Spire: reset run** begint opnieuw.
+- Getest in de emulator: gevecht gewonnen → beloningsscherm → move geleerd → terug naar de overworld → volgend gevecht met dezelfde rentals (PP en moves bewaard).
+
+### [v.0.8.103] - The Spire: beta
+De roguelike-faciliteit is speelbaar van begin tot eind (voorlopig via debugmenu > Utilities > **The Spire**).
+- **Run in de save** (`SaveBlock2`, 288 bytes): act, verdieping, gekozen pad, kaart-seed, BP, geld, relics en je twee rentals (met HP, PP en moves). Pauzeer je, dan staat de run er na opslaan en uitzetten nog. **The Spire** hervat waar je was; **Spire: reset run** wist hem.
+- **Draft:** je kiest twee keer één van drie rentals (middelste evolutiestap, lv 50). Elke kaart toont icoon, types en base stats. Startermoves: STAB uit de common-pool + Protect, aangevuld met eigen level-up-moves.
+- **Act-kaart** (`src/spire_map.c`), zoals de goedgekeurde mockup: PokéNav-stippen, gele routes met rand (zonder kruisingen), gelopen pad rood, kamers als icoontjes (Poké Ball, Substitute met geel aura, Chansey, Mart-embleem, Unown-?), baas bovenaan op een rood plateau, Brendan- of May-hoofdje op je plek, rode hoekhaken als cursor. 7 verdiepingen + baas; de kaart scrolt (omhoog/omlaag). Rechts: act, verdieping, team met HP, BP, geld en relics; onderaan wat de gekozen kamer inhoudt. START of B: pauzeren / opgeven.
+- **Kamers:**
+  - Gevecht: twee wilde Pokémon uit de pool van die act (lv 48/50/52). Winst: +20% HP, geld, BP, en een keuze uit drie moves.
+  - Elite: een sterke Pokémon (×2,5 HP) met een partner. Winst: eerst een keuze uit drie relics, dan moves.
+  - Baas: per act één van drie (act 1 Milotic/Aggron/Flygon, act 2 Salamence/Metagross/Tyranitar, act 3 Groudon/Kyogre/Rayquaza; ×4,5 HP) met een support-lakei. Winst: relic + moves + volgende act.
+  - Rust (Pokémon Center): helen (50%, alle PP, status weg) of een rental laten evolueren.
+  - Winkel (Poké Mart): een move (40/70¥), een relic (100¥) of een Potion voor het team (30¥). Meerdere dingen kopen kan; B = weg.
+  - Event: vier placeholders met drie keuzes (Kecleon-gratis-proeverij, Unown-scheldwoord, Ditto-schatkist, behulpzame Hiker).
+- **Relics:** Leftovers (+10% heal na gevecht), Amulet Coin (+50% geld), King's Rock (+30% blok), Scope Lens (+1 crit-stage), Muscle Band (+10% schade), Wide Lens (spread-moves zonder verlies), Soothe Bell (rust heelt 80%), Focus Sash (op volle HP een KO-klap overleven).
+- **Acts:** na de baas van act 1 en 2 evolueren je rentals (als dat kan), heal 50% en alle PP, nieuwe kaart. Na act 3 is de run gewonnen. BP van de run gaan altijd naar je BP-totaal (ook bij verlies). BP: gevecht 1, elite 3, baas 10, × act.
+- **In gevechten:** geen tas; RUN = pauzeren (lukt altijd; je begint die kamer opnieuw als je terugkomt). Verlies = run voorbij.
+- **Kaartenscherm** (`src/spire_cards.c`, vervangt `spire_reward.c`) weer in de stijl van de mockup: paarse torenstenen, rode rand om de gekozen kaart, kleurige kop (BP blauw, geld goud, HP groen), PC-hand als cursor. Fix: het tekenen van de rand wiste de kaartinhoud, waardoor tekst soms wegviel.
+- Graphics: `tools/grounded/spire/spire_gfx.py` maakt de kaarticoontjes in `graphics/grounded/spire/` uit dezelfde bronnen als de mockup.
+
+### [v.0.8.104] - The Spire: rekenwerk, biomes, puzzelgevechten, kamp, winkel, events en de toren
+Grote ronde aan The Spire na Jordi's feedback. Alle getallen en de onderbouwing staan in `SPIRE_BALANS.md` (gegenereerd), de afspraken in `SPIRE_DESIGN.md`.
+- **Kernprincipes** vastgelegd in `SPIRE_DESIGN.md`: eerlijke winkans bij goed spel, elk gevecht een puzzel, passief spel steeds meer afgestraft, Pokémon- én Slay-kennis belonen, creatief maar grounded (eerst een bestaande Pokémon-mechanic zoeken), altijd wiskundig, alles lv 100.
+- **Rekenscripts** (`tools/grounded/spire/`):
+  - `spiredata.py` leest soorten (stats, types, abilities, evoluties, leersets) en moves (effect, bijeffecten, prioriteit) uit de broncode.
+  - `spire_pool.py` → `src/data/spire_pool.h` + `SPIRE_BALANS.md`: rating per vorm (aanval^0,55 × bulk^0,45 × snelheid × ability), runwaarde over drie acts, toelating (elke act ≥75% van de mediaan; eenstaps-soorten alleen als ze minstens zo sterk zijn als een gemiddelde act-2-vorm, de té sterke alleen via events), tiers C/B/A/S, startkits, verboden moves, automatisch bepaalde "objectief slechtere" moves, beloningspools per zeldzaamheid, itemgetallen (Life Orb, Leftovers).
+  - `encounters.py` → `src/data/spire_encounters.h`: alle biomes, ontmoetingen en bazen, met controle (soort, move leerbaar in een willekeurige game via `all_learnables.json`, ability, item, patroon) en een beurt-voor-beurt-simulatie (patronen, Swords Dance, Rage, Echoed Voice, totem, items). Kalibratie: per act en soort gevecht een HP-factor zodat de mediaan op het doel valt (zwak 2,5 beurten/7%, gewoon 3/11%, elite 4,5/24%, baas 9/55%); bazen elk apart. Alle bazen en groepen vallen binnen hun doel.
+- **Rentals:** de draft biedt nu de eerste vorm van een lijn (Gible, Pikachu, Bulbasaur, ...) op **lv 100**, met de berekende startkit (bijv. Bulbasaur: Mega Drain, Acid, Growth, Leech Seed; Pikachu: Thunder Shock, Growl, Thunder Wave). De draftkaart toont startmoves, zeldzaamheid en de evoluties per act. Na de baas van act 1 en act 2 evolueert elke rental die kan; bij een vertakking kies je (Eevee, Kirlia, Gloom, ...). Geen gratis Protect meer.
+- **Verboden moves** (speler, beloningen én vijanden): wisselen/vluchten, moves die niets doen, vaste of procentuele schade (o.a. Super Fang, OHKO-moves, Pain Split), Perish Song en Destiny Bond, items stelen, en Jordi's lijst (Bubble, ...).
+- **Biomes** (twee per act): Overgrown Grove / Sunken Docks, The Hive / Frostbite Hollow, Gilded Court / The Abyss. 72 ontmoetingen die op Slay-vijanden lijken (Vine Shambler = Tangela, Fogmog = Foongus met Rage Powder, Gremlin Nob = Primeape met Defiant en Rage, Byrdonis = Trumbeak met Echoed Voice, Lagavulin = slapende Avalugg, Time Eater = Bronzong in Trick Room, ...). Verdieping 1-2 uit de zwakke pool; niet twee keer dezelfde per act; dezelfde vijanden als je een gepauzeerde kamer hervat.
+- **Gimmicks met Pokémon-mechanics:** vaste patronen (de AI volgt een moveslot-volgorde, de intentie toont precies wat komt; kan het niet, dan kiest de AI zelf), vaste abilities en items, totem-boosts (elites zijn totems met +1 op hun aanvalsstat, "aura flared"), beginveld (Grassy/Electric Terrain, Trick Room), slapend beginnen. Vijanden hebben geen willekeurige wilde items meer. Elk biome heeft een eigen gevechtsachtergrond (lang gras, vijver, zand, ijs, Frontier, Sidney), bazen een arena.
+- **Bazen** (Jordi + Claude): act 1 Venusaur & Blastoise, Totem Wishiwashi + Araquanid, Totem Alola-Marowak + Salazzle, Gigantamax Pikachu + Plusle; act 2 Mega Metagross + Beldum, Darkrai + Misdreavus, Mewtwo & Mew, Dialga & Palkia; act 3 Mega Mewtwo Y + Mew, Ultra Necrozma + Lunatone, Eternamax Eternatus, Mega Rayquaza + Altaria, Terapagos (Terastal) + Carbink. Daarvoor staan `P_MEGA_EVOLUTIONS`, `P_ULTRA_BURST_FORMS`, `P_GIGANTAMAX_FORMS` en `P_TERA_FORMS` aan (ROM 24,1 van 32 MB; in de hoofdgame verandert niets, er zijn geen Key Stone/Dynamax Band).
+- **Snorlax-kamp** (rustplek, `src/spire_rest.c`): kaarticoon is nu Snorlax. Eigen scherm met de gevechtsachtergrond van het biome in schemertinten, Snorlax slapend in het midden, links Chansey (rust: 40% HP, alle PP, status weg; Soothe Bell +30%) en rechts Porygon2 (upgrade één move: aanval +30% kracht, statusmove één stage extra en mist nooit, max PP; "+" achter de naam in gevechten en schermen). Evolueren zit niet meer in het kamp (dat gebeurt na elke act).
+- **Act-kaart:** geen witte stippen meer: PokéNav-stippen in de kleur van het biome, met een verloop naar karmozijn bovenin (richting de baas). Infovak met transparante tekstachtergrond (regels wisten elkaar).
+- **Winkel:** twee schappen (UP/DOWN). Schap 1: twee moves en een relic; schap 2: twee vasthouditems en de **Move Relearner** (altijd; 50¥ + 25¥ per eerder gebruik, betalen pas als er iets geleerd is; elke level-up-move van de huidige soort, ongeacht level). Prijzen in `SPIRE_BALANS.md`. Potion is weg (daar is het kamp voor).
+- **Vasthouditems:** één per Pokémon, gebruikt = weg voor de rest van de run. Spire-regels: Life Orb 2% terugslag (i.p.v. 10%), Focus Sash op elke HP, Leftovers 1/32 (rare). Nutteloze items (Red Card, Eject Button, Everstone, Up-Grade, ...) zitten niet in de pool.
+- **Relics** zijn nu trainerspullen voor het hele team: Berry Pouch (+10% heal na gevecht), Amulet Coin, Guard Spec. (+30% blok), Dire Hit (crits), Muscle Band, Wide Lens, Soothe Bell, **Sacred Ash** (nieuw: flauwgevallen na een gewonnen gevecht terug met 30% i.p.v. 1 HP).
+- **Events** (16, elk één keer per run): A Very Special Ditto (shiny, 31 IV, Imposter, Choice Scarf; vervangt een Pokémon), Mushroom Path (bessen, maar sporen: slapend het volgende gevecht in), A Floor of Spikes (+90¥, drie gevechten 40% kans op gif; Poison/Steel/Heavy-Duty Boots veilig), The Move Deleter (gemeen), Move Tutor, Snorlax's Lunch (Big Fish), Gimmighoul's Chest (Golden Idol), Nurse on a Break (Cleric), Spinda's Wheel (Wheel of Change), A Fainted Ace (Dead Adventurer, kan een elitegevecht worden), A Glitch in the Wall (Shining Light), Litwick's Candle (Bonfire Spirits), A Strong Stranger (sterke eenstaps-Pokémon uit de eventpool sluit zich aan voor 25% HP), plus Kecleon, Unown en de Hiker. Blijvende max-HP-effecten (Rare Candy +5%, lunch box −8%) staan per rental in de save.
+- **Balans:** heal na een gevecht 10% (was 20%), rustplek 40%; met de nieuwe gevechten is een gewoon gevecht anders altijd gratis. HP-plafond van rentals 9999.
+- **De toren in de wereld** (Battle Frontier West, noordrand van het Dome-plein): opgebouwd uit de echte Battle Tower-gevel (wit glas, baksteenrode pijlers, blauwe ruiten), vier trappen smaller tot een antennenaald, 28 rijen hoog; schuifdeur met de Battle Tower-animatie. Bouwscript `tools/grounded/maptools/spire_tower.py` (idempotent). `BattleFrontier_OutsideWest` is 24 rijen hoger (56×96): events, verbindingen met East, veerboot-aankomst (Slateport/Lilycove, nu 19,91) en de Frontier Pass (`SPIRE_WEST_EXTRA_ROWS`) zijn mee aangepast. De tileset zat vol: de nieuwe tiles staan op ongebruikte plekken. Lobby `BattleFrontier_SpireLobby` (Battle Pike-lobby) met receptioniste (`special Spire_Enter`), een veteraan en een regelbord (placeholders). Een eerste versie (obsidiaanzwarte stekel) is vervangen: die paste niet bij de game.
+- **Debug:** `special Spire_DebugOpen` met `VAR_0x8004` 0 kamp, 1 winkel, 2 event, 3 kaart, 4 elite, 5 baas (zonder run: snelle run met twee rentals).
+- Getest in de emulator: draft, kaart, gewoon gevecht, elite (patroon + intenties), baas (Gmax Pikachu), kamp (rust en upgrade), winkel (beide schappen, item kopen, relearner), events.
+
+### [v.0.8.105] - The Spire: slanke toren, draft, Mart-winkel, HP% en nieuwe vijanden
+- Jordi: "het ontwerp is goed, maar hij mag dunner; het moet echt een spits zijn." De toren in BattleFrontier_OutsideWest is nu een slanke spits in dezelfde Frontier-stijl (Battle Tower-gevel: wit glas, baksteenrode pijlers, blauwe ruiten, leien luifel, oranje/rode dakranden).
+- Voet 9 breed (x 29-37) i.p.v. 15, met de echte Battle Tower-ingang (luifel, glazen zuildeuren, geanimeerde schuifdeur op (33, 26), warp id 11 naar de lobby, ongewijzigd).
+- Trappen 9 -> 7 -> 5 -> 3 breed, elke trap korter dan de vorige (schacht 7, 4, 3 en 2 rijen), met een dakrand per trap; bovenop een lange antennenaald van 4 rijen met rood baken en drie oranje ringen. Totaal 28 rijen hoog.
+- Smalle pijlers en ruiten zijn samengesteld uit twee halve Battle Tower-kolommen (linkerhelft + rechterhelft), zodat ze beide randen houden; alleen kleuren uit de bestaande paletten 9/10 (gelijk aan East).
+- Plein hersteld: hek op de noordrand loopt weer tot tegen de toren, vlaggen op x 27 en 39 staan er weer, de rots in zee rechts van de toren (x 41-42) is terug.
+- Kost nu 41 metatiles en 47 tiles (vorige versie meer); de rest van de oude brede toren is vrijgegeven.
+- Bouwscript: `tools/grounded/maptools/spire_tower.py` (idempotent vanaf commit 6744d697). Getest in de emulator: plein -> deur -> lobby -> terug naar buiten.
+- **Draft:** bij het begin van een run kies je 2 uit 10 Pokémon (5×2 raster, info met types, stats, moves en evoluties; A kiest, B maakt ongedaan, A met 2 gekozen = beginnen). `src/spire_draft.c`.
+- **Winkel als Poké Mart:** scrollende lijst (`src/spire_shop.c`) met 14 waren: 5 moves (eerste 4 passend bij je types), 4 held items (25% kans op een upgrade), tot 2 relics, Super Potion (+25% HP), Max Elixir (alle PP) en altijd de Move Relearner (50¥ + 25¥ per keer, pas betalen als je iets leert). Voorbeeldvak rechts, beschrijving onder, positie in de kop. Winkelhouder: **Banette** (afgedankte pop met een wrok; Kecleon is van Keccles). Het Kecleon-event "FREE SAMPLES" is nu een Meowth.
+- **Levels weg uit gevechten:** in de Spire staat op de plek van het level het HP-percentage (alles is toch lv 100).
+- **Later beginnen:** soorten waarvan de basisvorm te zwak is (Magikarp, Caterpie, Weedle, Bunnelby, Feebas, Kricketot) zijn niet meer onbereikbaar: ze komen via events binnen als latere vorm. Butterfree/Beedrill/Diggersby rekenen als Luvdisc (te zwak voor de draft), Gyarados/Milotic/Kricketune zijn te sterk voor act 1: allemaal alleen via events.
+- **Verboden:** Explosion, Self-Destruct en Misty Explosion (jezelf opofferen is in een run met 2 Pokémon zinloos). Vijanden die ze hadden, kregen iets anders (Koffing Sludge, Forretress Body Press, Glalie Ice Fang, Electrode Electro Ball + Aftermath).
+- **Nieuwe ontmoetingen (80 + 13 bazen):** Secret Santa (Delibird met Present: alle kanten op), Rock, Paper, Wobbuffet (intentie onleesbaar: "???"; Counter/Mirror Coat raden), Moonlight Recital (2× Clefairy Metronome), Just Two Magikarp, Ice Dancers (Spinda + Jynx), Nightmare (Hypno met Bad Dreams), The Costume (Mimikyu + Banette), The Sloth (Slaking met Truant).
+
+### [v.0.8.106] - The Spire: 55 events, eigen eventscherm
+- **Nieuw eventscherm** (`src/spire_event.c`): bovenaan het verhaal (4 regels, geen overlap meer), daaronder de opties als lijst met per optie een effectregel (groen = winst, rood = kost, blauw = gok, grijs = kan niet), onderaan het team met HP. De Pokémon van het event staat naast de titel. Na de keuze: uitkomst in het verhaalvak, daarna eventueel kiezen wie een move leert / een item vasthoudt / plaatsmaakt (B = overslaan).
+- **Datagedreven:** alle events staan in `tools/grounded/spire/events.py` (→ `src/data/spire_events.h`). Het script maakt de effectregels zelf uit de effecten en controleert breedtes, regels, soorten en items. Nieuwe events = een regel Python.
+- **Type-opties:** sommige keuzes vragen een type in je team (Poison over de Toxic Spikes, Ghost bij Gimmighoul, Fire bij Litwick en de bijenkorf, Flying over Dugtrio's tol, Water voor Feebas en Pyukumuku, Electric bij de automaat, Fairy, Fighting, Psychic). Zonder dat type staat er "Needs a ... type".
+- **55 events** (was 16), in Jordi's droge stijl met een Slay-mindset; een paar zijn bewust gemeen (Mimikyu's verjaardag: wegsluipen kost blijvend max HP; de Pelipper-rekening; Persian's muntje), altijd met een goedkope uitweg:
+  - Oud, herschreven: Very Special Ditto, Mushroom Path, Floor of Spikes, Move Deleter, Move Tutor, Snorlax's Lunch, Gimmighoul's Chest, Nurse on a Break, Spinda's Wheel, A Fainted Ace, Glitch in the Wall, Litwick's Candle, A Strong Stranger (icoon = de rekruut), Free Samples (Meowth), Writing on the Wall, A Helpful Hiker.
+  - Nieuw: The Magikarp Salesman (Gyarados), Butterfree Migration, Feebas in a Puddle (Milotic), The Hive (Beedrill), A Hole in the Floor (Diggersby), A Violin Solo (Kricketune), Delibird's Gifts, Moonlight Dance (vroeg evolueren), The Eviolite Stand, Coin Toss, The Vending Machine (Rotom), The Slowpoke Well, Second-Hand Items (Banette), The Collector (Dusknoir: zelf een move vergeten), An Empty Shell (Shedinja), An Abandoned Egg, Sableye's Stash, The Trash Heap, The Atelier (Smeargle), Mimikyu's Birthday, The Ceiling (Zubat), The Dojo, Dugtrio's Toll, Shuckle Juice, The Seer (Xatu), A Wishing Star (Jirachi, act 2-3), The Old Rod (bewust slecht), A Warning (Absol), A Red Balloon (Drifloon), The TM Library, The Wind Chime, Meditation (Medicham), Three Poké Balls (Voltorb), A Sword in the Stone (Honedge), Mail (Pelipper), Blocked Stairs (Pyukumuku), Wonder Trade, Two of You (Zorua), A Check-up (Audino).
+- **Later beginnen** via events: Gyarados, Butterfree, Milotic, Beedrill, Diggersby, Kricketune, Absol.
+- Save: `eventsSeen2` achteraan `SpireSave` (64 events; een gepauzeerde run blijft geldig).
+- Debug: Spire_DebugOpen met `VAR_0x8004` = 2 en `VAR_0x8005` = eventnummer (1-55) opent dat event.
+- Opgeruimd: `src/spire_cards.c` bevat alleen nog de beloningsschermen (moves, relics), de vertakte evolutie en berichten; de oude draft-, rust-, winkel- en eventcode is weg (2056 → 1048 regels).
+
+### [v.0.8.107] - The Spire: speelklaar, Gholdengo/Snorlax/pseudo-events, debugwarp
+- **Debugmenu > Utilities > Warp to the Spire** (bovenaan): meteen naar de lobby van The Spire, ongeacht je voortgang. Zet de Battle Frontier op de kaart, `FLAG_SYS_POKEMON_GET`, en geeft het S.S. Ticket als je dat nog niet had (zodat je met de veerboot weer weg kunt).
+- **Receptioniste met ja/nee:** "Shall I open the stairs?"; loopt er al een run: doorgaan? Zo niet: opgeven (je houdt de BP)? Nieuwe specials `Spire_IsRunActive` en `Spire_GiveUpFromField`.
+- **Nieuwe events (58 totaal):**
+  - *999 Coins*: een Gimmighoul telt al jaren tot 998. Geef al je geld (minstens 120¥) en hij wordt een Gholdengo die met je meegaat (en het geld houdt). Of één munt: 10% kans.
+  - *The Stairs Are Asleep*: Snorlax op de trap. Voer hem alle vasthouditems van je team en hij volgt de voedselbron (jij). Of slaap mee: volle heal, maar slaperig het volgende gevecht.
+  - *A Rare Sight* (zeldzaam, gewicht 1 i.p.v. 4): een willekeurige pseudo-legendary (Dratini, Larvitar, Bagon, Beldum, Gible, Deino, Goomy, Jangmo-o, Dreepy, Frigibax-lijn) sluit zich aan, één stadium verder dan de act (act 1 = middelste vorm, daarna eindvorm).
+- Events hebben nu een **gewicht** (kans om gekozen te worden).
+- **Bugfixes uit de testbot:** geëvolueerde rentals hielden hun oude naam (Charmeleon heette nog "Charmander"; geldt voor alle evoluties tussen acts en in events); de receptioniste zag een gepauzeerde run niet (`specialvar` i.p.v. `special`).
+- **Testbot** (scratch): doorloopt een volledige run vanaf de debugwarp (receptioniste → draft → kaart → gevechten, winkel, rust, events, beloningen, act-overgang, baas → terug in de lobby) zonder vastlopers.
+- **The Spire is eindeloos:** de smalle schacht loopt door tot de bovenrand van de kaart en wordt daar afgekapt (geen naald, geen dak); je ziet het einde nooit. Elke 8 rijen een oranje sierring in de kleuren van de dakranden.
+- BattleFrontier_OutsideWest is 56 rijen zee hoger (kaart 56×128, binnen MAX_MAP_DATA_SIZE). Events, de verbinding met OutsideEast, de veerboot-aankomst (19, 123) en het spelerhoofd op de Frontier Pass-kaart (`SPIRE_WEST_EXTRA_ROWS`) schuiven mee. Voet, deur (33, 58) en trappen ongewijzigd; getest: deur in/uit, veerboot, verbinding.
+
+### [v.0.8.108] - The Spire: balans tegen Slay the Spire, Battle Stadium (begin)
+- **Rekenscript `tools/grounded/spire/runsim.py`:** speelt hele runs na (echte kaartgenerator, ontmoetingen, events, geld en prijzen) en vergelijkt alles met Slay the Spire; tabellen en conclusies onderaan `SPIRE_BALANS.md`. Volgorde: `spire_pool.py` → `encounters.py` → `runsim.py`.
+- Heal na een gevecht 10 → 8% (Burning Blood), rustplek 40 → 30% (zoals Slay; nu een echte keuze tussen rusten en upgraden), nieuwe act blijft 40% (`SPIRE_ACT_HEAL`).
+- Je begint een run met 75¥; een relic in de winkel kost 150¥ (was 120).
+- Act-kaart: meer events (25%), minder winkels (7%) en rustplekken (8%); geen winkels meer op verdieping 2.
+- Gevechten worden per act zwaarder: gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65% HP-verlies (act 1/2/3). Winkans van het model: goed 89%, gemiddeld 78%, slordig 34% (Slay: 70-90 / 40-60 / <15).
+- Event Mimikyu's Birthday: het cadeau kost 75¥ (was 40). Events: als alle opties dicht zitten (geen geld, geen type), kun je met B doorlopen (was een softlock bij de Rotom-automaat).
+- **Battle Stadium (in aanbouw):** ontwerp in `STADIUM_DESIGN.md` (level 50 wiskundig onderbouwd), pool en compagnons via `tools/grounded/stadium/pool.py` met synergie-keuze (weer/terrein met zetter, Trick Room, ace altijd; overzicht in `STADIUM_TEAMS.md`), motor in `src/stadium.c` (toernooi, simulatie, level 50, geen geld/EXP/white-out).
+
+### [v.0.8.109] - Battle Stadium: prototype speelbaar
+- **Battle Stadium (Pokémon World Tournament) speelbaar** in een nieuw stadion op het Battle Frontier-eiland: BattleFrontier_OutsideEast is onderaan 18 rijen langer (72×90); het plein linksonder loopt door naar een plateau met hek, vlaggen en klif in Frontier-stijl, met het grootste gebouw van het eiland (ovale kom met tribunes en grasveld, witte pilaren, blauw glas, rode banieren met Poké Ball, Battle Dome-deur). Er verschuift niets (warps, verbinding met West, veerboot). Bouwscript `tools/grounded/maptools/stadium.py`. Lobby `BattleFrontier_StadiumLobby` (singles- en doublesbalie, recordbord, drie toeschouwers) en `BattleFrontier_StadiumArena` (Dome-zaal met publiek, nog niet in gebruik).
+- **Singles:** 32 deelnemers, 5 rondes, 4v4. **Doubles:** 16 duo's, 4 rondes, multi battle: jij (3) + een compagnon (3) tegen twee trainers (elk 3). Alles **level 50** (jouw team wordt per gevecht als kopie geschaald, omhoog én omlaag; na het toernooi krijg je je eigen team terug). Geen restricties bij het kiezen. Geen geld, EXP of white-out; wel BP: 1/1/2/3/5 per gewonnen ronde (12 voor een titel).
+- **Pool van 77 trainers**, elk met zijn sterkste team; tegenstanders nemen hun 4 (singles) of 3 (doubles) beste Pokémon met **synergie** (weer/terrein altijd met zetter, Trick Room met trage Pokémon, ace altijd mee; overzicht in `STADIUM_TEAMS.md`). 45 nieuwe trainers met trainerfoto: Kanto uit FRLG (alle gymleiders, Elite Four, Giovanni, Blue, sterkere Brock/Red/Oak), Sinnoh uit Platinum (gymleiders, Elite Four, Cynthia, Cyrus en commandanten, Barry, Frontier Brains) en de zeven Emerald Frontier Brains. Nieuwe klassen BOSS, COMMANDER, TOWER TYCOON, HALL MATRON, ARCADE STAR. Johto/Unova: geen schone bron bereikbaar.
+- **Schermen:** wedstrijdkaart (jij en je tegenstander groot tegenover elkaar), vanaf de kwartfinale de **bracket op papier** (acht trainers, rode lijn voor de winnaars, verliezers verbleekt), na elke winst **"NEW PARTNER!"**.
+- **Compagnons (Vampire Survivors-stijl):** start met de rivaal, Keccles en Wally; iedereen die je in het Stadium verslaat wordt compagnon. Collectiescherm met plaatje, team en hoe je ze vrijspeelt. Compagnons zonder rugplaatje staan met hun voorplaatje naast je (zoals de Frontier-tag battles).
+- **Debugmenu > Utilities:** Warp to the Stadium, Stadium: singles / doubles (toernooi van overal), Stadium: unlock all.
+- Getest in de emulator: lobby → balie → toernooi → winst/verlies → team terug; doubles met compagnon; bracket en meldingen.
+- **Arena-opkomst per wedstrijd** (Battle Dome-zaal met publiek): de presentator kondigt de ronde aan, jij (en in doubles je compagnon) loopt naar binnen, het publiek juicht, tegenstander(s) staan klaar; daarna het gevecht. Na de wedstrijd: bracket en eventueel nieuwe partners, dan de volgende ronde in de arena of terug naar de lobby voor de uitslag (team terug, BP). Tegenstanders en compagnons hebben een overworld-sprite: eigen sprites waar die bestaan (Hoenn-leiders, E4, Steven, Wally, Archie/Maxie, Birch, Brock, Oak, Red, Colress, Zinnia, Frontier Brains; Keccles = Kecleon, Mimi = Mimikyu), anders een passende generieke (`GFX` in pool.py).
+- **Pokémon-balans:** rapport `POKEMON_BALANS.md` met rekenscripts in `tools/grounded/balance/` (sweep-simulatie tegen de 13 grote gevechten, zwakke eindvormen, bereikbaarheid, changelog-tegen-code). Geen balanswijzigingen doorgevoerd; voorstellen wachten op Jordi. Wel gerepareerd: **Marill evolueert op lv 25** (stond zo in v0.4.0, de code had nog 18).
+
+### [v.0.8.110] - Deoxys: de ruimte in vanuit Mossdeep
+- **Deoxys-ruimte-event (post-game):** de wetenschapper links in het Space Center van Mossdeep vraagt na de Hall of Fame of je de ruimte in wilt (ja/nee). Aftellen, het gebouw schudt, een witte flits en je valt met een klap op een meteoriet (nieuwe special `DoMeteorSpaceFallWarp`, valwarp).
+- **Nieuwe kaart OUTER SPACE** (`MeteorSpace`, 44×64), gebouwd door `tools/grounded/maptools/meteor_space.py` met een eigen tileset `meteor_space`: donkere Meteor Falls-grond, zwarte ruimte met sterren, de aarde, een komeet, zwevende rotsen, gloeiende kristallen en zwevende Minior/Lunatone/Solrock/Elgyem/Beheeyem. Lang slingerend pad met drie zijpaden (Star Piece, Moon Stone, Comet Shard), drie radioberichten van het Space Center, een kartonnen landingsdoos om terug naar huis te gaan.
+- **Rode driehoek aan het eind** (`OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED`): geen puzzel, wel de opbouw van Birth Island (de steen spat uiteen, Deoxys lv 70 zakt uit de ruimte, gevecht met de Deoxys-transitie). Daarna haalt het Space Center je terug. Flags gedeeld met Birth Island (gevangen = weg, verslagen = terug na de League).
+- **Wilde Pokémon op de meteoriet** (12 unieke soorten, lv 45–53): Minior, Lunatone, Solrock, Elgyem, Clefairy, Metang, Beheeyem, Cleffa, Gothitelle, Clefable, Porygon-Z, Metagross.
+- **Gevechtsachtergrond in de ruimte:** `BATTLE_ENVIRONMENT_SPACE` = de grot met een donker paars palet.
+
+### [v.0.8.111] - Battle Stadium: gasten, Ditto, meme-trainers, collecties
+- **Gasten in de pool** (klasse GUEST STAR): Wario, Yoshi (de ongebruikte huilende), gen 1-Golbat en -Grimer, Boo, Mew (onder de truck vandaan), vier Shy Guys (SHY GUY, SHYER GUY, FLY GUY, SHADY GUY) met elk een Ogerpon-masker als ace, en de Burglar uit Red/Blue (klasse BURGLAR). Bronnen in `graphics/grounded/trainers/guests/`, tool `tools/grounded/guest_trainer_pics.py` (raster teruggevonden, ruis uit JPEG/WebP verwijderd).
+- **Ditto-trainer:** een Youngster met een Ditto-gezicht die alleen "..." en ":)" zegt, met het Pokopia-team (PEAKYCHU, CHEF, PROFESSOR, MOSSLAX, SMEARGURU, Tinkaton). Nog niet in de overwereld (voorstel: Route 115).
+- **Youngster Joey** met een absurd sterke shiny Poochyena (top percentage, plus Rattata, Mightyena en Obstagoon); **Rich Boy Winston** volledig shiny met luxe-items.
+- **Meme-trainers** als Stadium-versie (de grap blijft, op lv 50): Donald (zes Ditto die hij "bugs" noemt), Ivan (Magikarp met Hydro Pump, rode Gyarados), Johnson (alleen Metronome), Thomas (de Zangoose-familie).
+- Stadium-tegenstanders hebben een eigen intro (trainer slide, `src/data/stadium_slides.h`) en eigen nederlaag- en winsttekst.
+- **Zeventien collecties als compagnon** (klasse "THE": "THE REGIS sent out Regirock!"), vrij te spelen met Stadium-punten: MASCOTS 1, STARTERS 3, FOSSILS 6, EEVEES 10, LAKE TRIO 15, REGIS 20, BIRDS 25, BEASTS 30, PSEUDOS 35, SWORDS 40, LOYAL 3 45, TAPUS 50, GENIES 55, ULTRAS 60, TREASURES 70, WEATHER 85, CREATORS 100. In de arena staan ze als hun eerste Pokémon.
+- Pool nu 94 deelnemers en 111 compagnons. Fix: een compagnon met voorplaatje staat naast de speler in plaats van eroverheen.
+
+### [v.0.8.112] - QA-ronde
+- **QA over de hele ROM** (rapport `QA_RAPPORT.md`): alle 73 gevechtstransities frame voor frame, de opening, alle gymleiders, Birch, Oak, Brock, Mimi, Colress, Zinnia, Heatran, de legendary beasts, alle Regi-puzzels, Wally, de multi battles, de Spire (drie bot-runs, één tot en met act 3) en het Stadium. Geen vastlopers gevonden.
+- **Gevechtstransities:** bij Sky Pillar, Gabby & Ty, strandbal, regenwoud, Meteor Falls en Psyduck flitste vlak voor het eind de gewone wereld een frame terug; dat is weg (het beeld wordt eerst vastgezet, `RT_FreezePalettes`). Meteor Falls, Jagged Pass, regenwoud en Psyduck eindigen niet meer onnodig in wit maar faden naar zwart; even lang als voorheen.
+- **The Spire:** de elemental monkeys zitten niet meer in de draft. Na het vergeten van een move schuiven de moves dicht (met PP en upgrade), zodat de cursor in gevecht nooit meer op een leeg slot staat.
+- **Teksten:** Nate en Nicholas (Mossdeep Gym) en acht regels met POKéBLOCK (Lilycove, Mossdeep, Fan Club, Lydia) passen weer in het tekstvak; `tools/dialogen/import.py` telt `{POKEBLOCK}`/`{PKMN}` nu mee.
+- **Evolutieregel:** Archie's Archaludon lv 50 (evolueert op 50), Katelynn's Kingambit lv 49, Blissey onder lv 36 bij Nob en Cyndy is weer Chansey, Jupiter (Stadium) heeft Crobat i.p.v. Golbat. Miguel (door Jordi ontworpen) ongewijzigd.
+- **Klok bij de start:** de vraag "Is this the correct time?" staat nu standaard op YES (QoL).
+
+### [v.0.8.113] - Battle Stadium: feedback van de ochtend
+- **Bracket:** de kleine plaatjes in de bracket worden niet meer verkleind maar als portret uitgesneden (hoofd en schouders, 32×32, op ware grootte) met een inktlijntje eromheen.
+- **Gen 4-trainers** (Cynthia, Sinnoh-leiders, Frontier Brains ...): de afgeknipte onderkant loopt nu met een geditherde fade weg in plaats van een harde rand (`fade_bottom` in `stadium_trainer_pics.py`).
+- **Ditto-trainer:** gezicht is nu derpy (ogen wijd, scheve glimlach) in plaats van kwaadaardig.
+- **Wario:** nieuwe sprite, meer van de zijkant (zijn staande pose uit de sheet van Jordi), kijkt naar links zoals de andere tegenstanders.
+- **Vrijspelen van compagnons:** niet meer willekeurig maar een onzichtbare puntenteller met drempels. 70 punten per uitgespeeld toernooi, +10 per gewonnen wedstrijd, +20 voor een titel; de eerste compagnon bij 1 punt, daarna elke 100 (±één nieuwe per toernooi, singles of doubles maakt niet uit). Volgorde van gewoon naar episch, de laatste vier: Cynthia, Red, THE WEATHER, THE CREATORS. Volledige volgorde onderaan `STADIUM_TEAMS.md`. Nieuwe compagnons worden in de lobby gemeld na het toernooi.
+
+### [v.0.8.114] - Battle Stadium: antwoorden van Jordi, Ditto op Route 115
+- **Arena kort:** geen opkomst en geen presentatortekst meer. Na het toernooischerm sta je meteen in de arena, iedereen staat al tegenover elkaar (in doubles ook de compagnon en de tweede tegenstander), het publiek juicht en het gevecht begint.
+- **Wario:** nieuwe trainerfoto, de dubbele biceps-flex uit Jordi's sheet. Te breed voor 2x, dus vergroot met Scale3x en gehalveerd (1,5x, nette randen; `scale3x` in `guest_trainer_pics.py`).
+- **Ivan:** Gyarados is eruit (de lv 3-grap werkt niet op level 50); nieuwe ace: een shiny Bruxish (Strong Jaw, Swords Dance, Psychic Fangs, Wave Crash, Ice Fang).
+- **Thomas → Lyle:** Thomas (Zangoose-maffia) is vervangen door Lyle uit Petalburg Woods, de Bug Catcher met de geëvolueerde bugs van zijn broer. In het Stadium heeft hij ze eindelijk getraind (Scizor, Yanmega, Pinsir, Kleavor, Golisopod, Ninjask), maar nog steeds met 0 IV's. Scizor en Yanmega doen altijd mee. `TRAINER_STADIUM_THOMAS` heet nu `TRAINER_STADIUM_LYLE` (zelfde nummer).
+- **Ditto op Route 115:** de Ditto-jongen staat op het strand (x 13, y 51) en kijkt naar zee. Zegt "…", na het gevecht ":)". Team = zijn Pokopia-team op lv 30 (Pikachu "PEAKYCHU" lv 32, Tinkatuff i.p.v. Tinkaton). Na het gevecht bijt er bij vissen op dat strand in de helft van de gevallen een Ditto (lv 30–35; `CheckDittoSpot` in `src/wild_encounter.c`).
+
+### [v.0.8.115] - Stadium: Kanto-sprites, doubles-regel; Deoxys alleen in de ruimte
+- **Kanto in de arena:** Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Blue, Lorelei, Bruno, Agatha en Lance hebben hun echte FRLG-overworld (pret/pokefirered, `OBJ_EVENT_GFX_MISTY` … `OBJ_EVENT_GFX_LANCE`, 3 frames uitgebreid naar 9 zoals Brock). Paletten zoals in FRLG; drie nieuwe paletten (`kanto_npc_b/c/d.pal`), Surge en Blue delen het palet van Brock. Ook als compagnon.
+- **Doubles = singles min één (Jordi):** de drie Pokémon van een tegenstander (en van een compagnon) in doubles komen altijd uit zijn vier van singles; `pool.py` dwingt dat nu af (was in de praktijk al zo). De speler kiest zijn vier (of drie) één keer vóór het toernooi.
+- **Ditto-gezicht:** variant B (twee stipjes, brede Ditto-glimlach).
+- **Deoxys alleen in de ruimte:** het Aurora Ticket is uit de Exchange Service Corner (Birth Island is daarmee niet meer bereikbaar). Ruimte-Deoxys blijft lv 70, muziek blijft `MUS_SEALED_CHAMBER`.
+- **Ruimte-encounters:** Gothitelle eruit, Starmie erin (zelfde 4%-plek, lv 48–50; volgens de Pokédex komt Staryu/Starmie misschien uit de ruimte).
+
+### [v.0.8.116] - Pokémon Revisie: buffs uit het balansrapport, verborgen abilities naar slot 2
+Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Tail Glow, Linoone, Octillery, Kricketune, Crawdaunt, Magcargo/Desolate Land, Grumpig, Beldum) blijven bewust zoals ze zijn: die buffs wil Jordi eerst in de game testen.
+
+**Verborgen abilities zijn in deze romhack niet verkrijgbaar** (geen Ability Patch, geen DexNav). Daarom staat de sterke verborgen ability van deze soorten nu in **slot 2**; de oude slot 2 wordt de verborgen ability (alleen nog voor trainers). Hele evolutielijnen zijn meegenomen, zodat de ability bij het evolueren meegaat.
+- Pokémon Revisie: Volbeat — Levitate / **Prankster** (slot 2 was leeg).
+- Pokémon Revisie: Sandshrew, Sandslash — Sand Rush / **Tough Claws** / verborgen Rough Skin.
+- Pokémon Revisie: Mawile — Intimidate / **Sheer Force** / verborgen Hyper Cutter.
+- Pokémon Revisie: Bagon — Rock Head / **Sheer Force**; Shelgon — Rock Head / **Overcoat**; Salamence — Intimidate / **Moxie** (slot 2 was leeg).
+- Pokémon Revisie: Trapinch — Hyper Cutter / **Sheer Force** / verborgen Arena Trap.
+- Pokémon Revisie: Magikarp — Swift Swim / Rattled; Gyarados — Intimidate / **Moxie** (slot 2 was leeg). Magikarp-levels ongewijzigd.
+- Pokémon Revisie: Poochyena — Strong Jaw / Rattled / verborgen Intimidate; Mightyena — Strong Jaw / **Moxie** / verborgen Intimidate.
+- Pokémon Revisie: Pinsir — Hyper Cutter / **Moxie** / verborgen Mold Breaker. Heracross — Skill Link / **Moxie** / verborgen Guts.
+- Pokémon Revisie: Roserade — Natural Cure / **Technician** / verborgen Poison Point.
+- Pokémon Revisie: Sigilyph — Wonder Skin / **Tinted Lens** / verborgen Magic Guard.
+- Pokémon Revisie: Chinchou — Volt Absorb / **Water Absorb** / verborgen Illuminate (zoals Lanturn).
+- Pokémon Revisie: Venomoth — **Magic Guard** / Pollen Season / verborgen Shield Dust.
+- Pokémon Revisie: Kecleon — Color Change / **Protean**.
+- Niet verplaatst (Jordi: zo laten): Cacturne (Water Absorb), Feebas (Adaptability), Carvanha/Sharpedo (Strong Jaw blijft in slot 2) en Makuhita/Hariyama (Technician/Purifying Salt blijven in slot 2; in v0.8.116 eerst wel verplaatst, in v0.8.117 teruggezet).
+
+**Buffs:**
+- Pokémon Revisie: Delibird — Atk 55 → 85, Spe 75 → 95. Learnset: Present 1, Ice Shard 1, Ice Punch 15, Drill Peck 25, Icicle Crash 30, Brave Bird 40, Freeze-Dry 45. Present blijft (grap).
+- Pokémon Revisie: Lumineon — SpA 69 → 84. Scald 26 (i.p.v. Attract), Ice Beam 38, Hurricane 44.
+- Pokémon Revisie: Plusle — Nasty Plot op 25 (i.p.v. Fake Tears).
+- Pokémon Revisie: Minun — abilities **Volt Absorb** / Minus; Calm Mind op 22 (i.p.v. Copycat).
+- Pokémon Revisie: Beautifly — abilities Competitive / **Pollen Season** (i.p.v. Rivalry); HP 60 → 70.
+- Pokémon Revisie: Dustox — SpA 50 → 75 (bulky Quiver Dance-mot).
+- Pokémon Revisie: Clamperl — evolueert nu ook op **lv 30**: mannetje → Huntail, vrouwtje → Gorebyss. De Deep Sea Tooth/Scale blijven werken.
+
+**Marill (evolueert op 25):** de wilde Azumarill van 1% op Route 117 (lv 18–22) is nu een Marill; de trainer-Azumarill op lv 20 (Pokéfan-team naast Vanessa) ook.
+
+### [v.0.8.117] - Sharpedo en Hariyama terug
+- Pokémon Revisie: Carvanha, Sharpedo — weer Rough Skin / **Strong Jaw** / verborgen Speed Boost (Jordi's revisie uit v0.2.1).
+- Pokémon Revisie: Makuhita — weer Guts / **Technician**; Hariyama — weer Thick Fat / **Purifying Salt**; Sheer Force blijft verborgen (Jordi's revisie uit v0.2.1).
+
+### [v.0.8.118] - The Spire: 50 relics, Toxic en Leech Seed zeldzaam
+- **Relics 8 → 50** (Jordi: "ga maar naar 50"): 16 common, 15 uncommon, 8 rare, 3 winkel, 8 baas. Eén lijst in `tools/grounded/spire/relics.py` (controleert tekstbreedtes en iconen, maakt `include/spire_relics.h` en `src/data/spire_relics.h`). Elites bieden 3 relics (50/33/17% common/uncommon/rare), bazen 3 baasrelics, de winkel een gewone en een winkelrelic, events een gewone. Is een zeldzaamheid op, dan schuift het naar de naastliggende: de pool raakt in het model nooit meer op (was 28%). Nutteloze combinaties worden niet aangeboden. Zeldzaamheid in kleur op de kaarten; nieuw: **R op de kaart** toont je relics. Save: nieuw veld `relics2` achteraan (oude runs blijven werken; SaveBlock2 even groot). Volledige lijst in `SPIRE_DESIGN.md`.
+- Baasrelics met een nadeel (Slay-stijl): Awakening (+20% schade, niet meer rusten), Relic Crown (+1 Atk/SpA, geen geld), Odd Keystone (+1 Def/SpD, intenties ???), Meteorite, Dubious Disc, Max Mushrooms, Star Piece, Gracidea.
+- **Toxic, Leech Seed en andere %-moves** (gif/brand, Curse, Salt Cure, vastgrijpers, schadeweer, Pollen Haze, %-heals) blijven werken zoals ze werken, maar zijn zeldzaam: niet meer in startkits (±60 rentals kregen een andere startmove; ook Jordi's handkeuzes Bulbasaur Leech Seed → Worry Seed en Oddish Moonlight → Aromatherapy), en als beloning of in de winkel alleen nog als een kwart van de rare kaarten (±2,5% per kaart).
+- **Speelduur:** `runsim.py` schat nu de tijd voor een mens (35 s per beurt plus vaste tijden): een gewonnen run ±76 minuten (63–90 bij 25–45 s per beurt), binnen het doel van 1u–1u20. Actlengte blijft 7.
+- **Balans:** volgens het model maken de relics act 2–3 makkelijker (winkans gemiddeld 78% → 83%). Bewust niet bijgesteld; na echte testruns eventueel act 2 ×1,15 en act 3 ×1,35 (`TARGET_ACT` in encounters.py).
+- **Bug:** `Spire_EndTurn` liep meer dan één keer per beurt bij effecten aan het eind van de beurt (gif, weer, Leftovers), waardoor vaste vijandpatronen stappen oversloegen. Nu precies één keer.
+- Debug: `Spire_DebugOpen` met VAR_0x8004 = 6 opent een relic-beloning (VAR_0x8005 0 = elite, 1 = baas).
+- Spire-rekenscripts opnieuw gedraaid na de Pokémon-revisie van v0.8.116–0.8.117.
+
+### [v.0.8.119] - Kortere overgangen
+Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en move-animaties zelf blijven.
+- **Route- en soorttransities** (alle eigen transities via `RouteTransition_Run`, ook Pikachu, Colress, Zangoose enz.): het eindbeeld blijft 2 i.p.v. 10 frames staan en de fade naar zwart duurt 8 i.p.v. 16 frames (ook de hittegolf). New Mauville: 3 i.p.v. 8 frames zwart. De animaties zelf zijn ongewijzigd.
+- **Legendary-transities:** Suicune, Deoxys, Entei (12→6), Raikou (16→8) en Birch (20→10) houden het witte/bruine beeld korter vast; Raikou/Entei faden sneller naar zwart.
+- **Deuren:** openen en sluiten in 12 i.p.v. 20 frames.
+- **Warps:** de game wachtte na het zwart worden nog tot de oude muziek was uitgefaded (32 frames naar binnen, 64 naar buiten); nu 16. De fade bij deuren/trappen/warps is iets sneller.
+- **Grotten:** de lichtovergang bij in- en uitgaan gaat twee keer zo snel.
+- **Einde gevecht:** de fade naar zwart duurt ~16 i.p.v. ~35 frames; terug in het veld (en na menu's) fadet het beeld iets sneller in.
+- **White-out:** 30 i.p.v. 120 frames zwart scherm na het verliezen.
+- Gemeten (knop → weer besturing): deur in 121→85, deur uit 135→75, grot in 147→91, grot uit 154→88 frames; wegrennen uit een wild gevecht 114→93; as-transitie tot gevecht 148→132.
+- Bleef zoals het was: vanilla-transities, `WeatherDuo_FadeOut`, `warpwhitefade`/`FadeInFromWhite` in cutscenes, de laadtijd van een gevecht.
+
+### [v.0.8.120] - Genesect en Mewtwo (post-game legendary-events)
+- **Genesect** (lv 70): de kapotte monitor in de Raikou-grot onder New Mauville is na de Hall of Fame een terminal. Kies "OFF AND ON AGAIN" (of eerst "HIT IT"/"CALL WATTSON" voor de grap) en er gaat een kluisdeur open in de achterwand. Daarachter de serverkluis (`NewMauville_ServerVault`) met Genesect. De linkertank in de Raikou-grot is een tegel opgeschoven voor de deur.
+- **Mewtwo** (lv 70): na de Hall of Fame een grotopening in Meteor Falls 1F (pilarengebied, x 12). Cerulean Cave-hommage over twee verdiepingen: 1F = kopie van Altering Cave met een ladder op het plateau, B1F = de ongebruikte Ruby/Sapphire-spiraalkaart (nooit eerder te zien), Mewtwo op de plek van het gat. Items: Max Revive (1F), Max Elixir (B1F).
+- Wilde Pokémon in de Mewtwo-grot (12 unieke soorten per tabel): 1F lv 60-64 Crobat, Ditto, Magneton, Electrode, Parasect, Sandslash, Marowak, Hypno, Wobbuffet, Chansey, Lickitung, Clefable; B1F lv 64-68 Alakazam, Ditto, Rhydon, Machamp, Venomoth, Primeape, Arbok, Dodrio, Raichu, Kangaskhan, Snorlax, Aerodactyl.
+- Eigen transities: **Genesect** = CRT-scanlijnen, een rood vizier dat van doel naar doel springt en op de speler vastklikt ("LOCKED ON"), dan een Techno Blast-straal die het scherm vult. **Mewtwo** = het beeld wordt diep paars, twee gloeiende boze ogen gaan open, en een psychische schokgolf rolt in ringen over het scherm.
+- Muziek: Genesect de Regi-gevechtsmuziek, Mewtwo het Mewtwo-thema uit FireRed/LeafGreen.
+- Beide staan in het debugmenu (Legendary). Bouwscript: `tools/grounded/maptools/legend_maps.py`. Flags 0x271-0x275.
+
+### [v.0.8.121] - Giratina: de omgekeerde Sky Pillar
+- Post-game: na Rayquaza (gevangen of verslagen) scheurt de vloer van Sky Pillar 1F open (gat op 11,11, korte scène met schudden en Giratina's kreet). Wie erin springt, valt in de omgekeerde Sky Pillar.
+- Drie verdiepingen (B1F/B2F/B3F): de layouts van 1F, 2F en 5F op hun kop, met een eigen tileset `sky_pillar_reverse` (Sky Pillar-metatiles verticaal gespiegeld, Distortion World-kleuren: grauw paars, zwarte put, vaal groene muren, rood i.p.v. goud). Bouwscript: `tools/grounded/maptools/reverse_pillar.py` (controleert de bereikbaarheid).
+- B1F: de ingangsmat bovenin leidt terug naar buiten. B2F: boven en onder zijn omgedraaid (UP/DOWN gewisseld in `DoCB1_Overworld`). B3F: Giratina (Origin Forme, lv 70, met Griseous Core) zweeft voor de put.
+- Eigen transitie `B_TRANSITION_GIRATINA`: paarse scheuren over het scherm, de wereld klapt ondersteboven (HBlank-scroll per beeldlijn) en de zes schaduwvleugels sluiten het beeld af. Muziek: `MUS_GROUNDED_VS_GIRATINA` (Platinum).
+- Wilde encounters op B1F (lv 56–60) en B2F (lv 58–63): ghost/dragon/psychic, 12 unieke soorten per tabel (zeldzaam: Spiritomb, Haxorus, Polteageist, Dragapult).
+- Flag `FLAG_HIDE_SKY_PILLAR_GIRATINA` (was 0x279), var `VAR_SKY_PILLAR_REVERSE_STATE` (was 0x40F9). Teksten zijn placeholders.
+
+### [v.0.8.122] - Victini: de Victory-gauntlet
+- Post-game: vijf nieuwe Victory-uitdagers verspreid over Hoenn, in vrije volgorde te verslaan (lv 70, ace 72): Vance (Black Belt, Dewford; Fighting), Vernon (Rich Boy, Slateport-markt; "gekochte overwinning", Kingambit), Vega (Psychic, Fortree; Trick Room, Hatterene), Vesna (Hex Maniac, Mossdeep; "morele overwinning", Houndstone met Last Respects) en V (Expert, Ever Grande; alleen Pokémon met een V, Volcarona). Vóór de Hall of Fame weigeren ze.
+- Elke overwinning geeft een Victory-stempel (geteld uit de trainer-flags). De Victory-commissaris in de haven van Lilycove legt het uit, zegt wie er nog over is en geeft na vijf stempels de **Liberty Pass** (nieuw key item).
+- Met de Liberty Pass vraagt de baliemedewerker van de S.S. Tidal of je naar Liberty Garden wilt.
+- **Liberty Garden:** nieuw eilandje (Southern Island-buitenkant met een tuin: plein, fontein, lantaarns, bloemen; bouwscript `tools/grounded/maptools/liberty_garden.py`, mapsec LIBERTY GARDEN). Victini lv 70 bij de fontein.
+- **Eigen transitie** `B_TRANSITION_VICTINI` (idee van Jordi): een grote vlammende V vliegt van onder het beeld omhoog (V-create), slaat wit-heet in en zet het hele scherm in brand. Muziek: Mew-thema.
+- V staat in de Battle Stadium-pool (95 deelnemers, 112 compagnons; de puntendrempels schuiven één plek op).
+- Flags: FLAG_RECEIVED_LIBERTY_PASS (0x289), FLAG_HIDE_LIBERTY_GARDEN_VICTINI (0x28A), FLAG_VICTORY_GAUNTLET_EXPLAINED (0x28B).
+
+### [v.0.8.123] - Wilde tabellen: geen dubbele soorten meer
+- 225 dubbele slots in 111 wilde tabellen (land, surf, Rock Smash, per hengel) vervangen, zodat elke tabel alleen unieke soorten heeft. Alleen het dubbele slot is vervangen: geen soort verdwijnt, levels en zeldzaamheid blijven gelijk.
+- Voorkeur voor soorten die nog weinig of niet in de game zaten (geteld over alle wilde tabellen en trainers), passend bij de plek. Voorbeelden: Lillipup/Starly/Igglybuff/Happiny op Route 101, Nickit/Spinarak/Bonsly op Route 102, Basculin in vijvers en rivieren, Carnivine en Lurantis op Route 120, Pumpkaboo/Drifloon/Alola-Marowak in Mt. Pyre, Fearow op Jagged Pass en Sky Pillar, Gigalith in de Seafloor Cavern.
+- Keuzes vooral om de lore (Jordi, even kijken): Rotom-Wash aan de Super Rod op Route 122, Tatsugiri naast Dondozo in Ever Grande, Milotic in Sootopolis, Camerupt in de Magma Hideout, Basculegion in het meer van Mt. Pyre, een surfende Pikachu naast de surfende Alola-Raichu in Dewford. Safari Southwest/Southeast houden het starterthema (middenstadia van weinig gebruikte starterlijnen).
+- Dubbele paradoxen vervangen (Seafloor Room 8: Weavile, Victory Road B2F: Kingambit).
+- Bewust ongemoeid: Ashfrost (stadsuitzondering), Altering Cave, Artisan Cave, de ongebruikte Cave of Origin-kaarten, Battle Pyramid/Pike.
+- Volledig overzicht: `WILDE_TABELLEN.md`.
+
+### [v.0.8.124] - Jirachi en Darkrai
+- **Jirachi (post-game, 's nachts):** in de oude meteorietkrater in Fallarbor Town (linksonder) gaan staan en een wens doen; Jirachi daalt uit de lucht neer (lv 70, Mew-gevechtsmuziek). Gevlucht = Jirachi vliegt weg, je kunt opnieuw wensen. De Expert M in Fallarbor geeft na de Hall of Fame een hint. **Eigen transitie** (idee Jordi): een tuimelende, fladderende wensster met een spoor van fonkelingen, die draaiend naar het midden duikt; alles wordt goudwit.
+- **Darkrai (post-game, 's nachts):** wie op de top van Mt. Pyre voor het heiligdom stapt, valt in slaap en belandt in een nachtmerrie (nieuwe kaart `MtPyre_Nightmare`: de top in donkerpaarse kleuren, zwevend in het zwart, extra graven, Lavender Town-muziek). Darkrai (lv 70, Giratina-gevechtsmuziek) zweeft voor het heiligdom; na het gevecht word je wakker op de top. **Eigen transitie:** nachtmerrierook kruipt van boven en onder dicht (oogleden), daarna gaat één blauw oog met rode kraag open en komt op je af.
+- Techniek: special `IsNightTime`; flags 0x269–0x26B (`FLAG_HIDE_FALLARBOR_JIRACHI`, `FLAG_DEFEATED_JIRACHI`, `FLAG_DEFEATED_DARKRAI`); `VAR_NIGHT_LEGEND_STATE` (0x40F7); tilesets `nightmare_general`/`nightmare_facility` (alleen eigen paletten); bouwscript `tools/grounded/maptools/darkrai_nightmare.py`; debugmenu Legendary: Jirachi en Darkrai.
+
+### [v.0.8.125] - Shaymin en de Kubfu-dojo
+- **Shaymin (Flower Paradise):** nieuw **Bloom Ticket** voor 200 BP in de Exchange Service Corner (de ongebruikte Rainbow Pass, hernoemd; een nieuw item-ID zou de save verschuiven). Met het ticket vaart de S.S. Tidal vanuit Lilycove naar **FLOWER PARADISE** (nieuwe mapsec): een steiger (`FlowerParadise_Shore`, kopie van Southern Island) en een open plek vol roze en witte Gracidea (`FlowerParadise_Meadow`, eigen tileset `flower_paradise` = Fortree + Gracidea-metatiles, bouwscript `tools/grounded/maptools/flower_paradise.py`). Shaymin lv 70 (post-game); na het vangen krijg je een Gracidea (Sky Forme overdag). Verslagen Shaymin verstopt zich en is er weer als je terugkomt.
+- **Eigen transitie** `B_TRANSITION_SHAYMIN` (idee Jordi: rondvliegende bloempjes): drie draaiende spiraalarmen van Gracidea-blaadjes en bloemen, de wereld kleurt donkergroen, daarna een bloementapijt vanuit het midden dat het hele scherm bedekt.
+- **Veerboot:** de bestemmingslijst is nu dynamisch; met meer dan 6 keuzes wordt hij scrollbaar en toont hij alleen de eilanden waarvoor je een ticket hebt.
+- **Kubfu-dojo (Route 112):** een rotsheuvel met grotopening op het plein voor de Fiery Path leidt naar de dojo van meester **Mustard**. Hij geeft je **Kubfu lv 22**. Boven twee torens: de **Tower of Darkness** (Hex Maniac Vesper, Black Belt Kage, torenwachter Obsidian) en de **Tower of Waters** (Swimmer Marina, Black Belt Ryu, torenwachter Tide), lv 25–27. Versla de torenwachter met Kubfu in je team en Kubfu evolueert ter plekke tot **Urshifu Single Strike** (Darkness) of **Rapid Strike** (Waters) (`Grounded_EvolveKubfu`; `EVO_SCRIPT_TRIGGER` van expansion kiest altijd de eerste vorm). Daarna kun je Mustard zelf uitdagen (lv 28–29, Urshifu Rapid Strike als ace). Bouwscript `tools/grounded/maptools/kubfu_dojo.py`.
+- **Battle Stadium:** Mustard in de toernooipool met zijn sterkste team (Kommo-o, Corviknight, Luxray, Mienshao, Galar-Slowking, Urshifu Rapid Strike).
+- Trainers 960–967 (`TRAINERS_COUNT` 968; na de Victory-uitdagers 955–959). Flags: `FLAG_HIDE_FLOWER_PARADISE_SHAYMIN` (0x281), `FLAG_RECEIVED_GRACIDEA` (0x282), `FLAG_RECEIVED_KUBFU` (0x283), `FLAG_KUBFU_EVOLVED` (0x284).
+
+### [v.0.8.126] - Mustard krijgt eigen sprites; kaartgroep-fix
+- **Mustard** (Kubfu-dojo, ook in het Battle Stadium) heeft een eigen **Gen 3-trainerfoto**, gemaakt naar zijn artwork (`graphics/mustard2.jpg` van Jordi): eerst per pixel naar een vast Gen 3-palet en per blok de meerderheid, daarna het hoofd met de hand getekend (bruine hoed met turquoise strepen, lang wit haar, halfdichte ogen, brede grijns). En een eigen **overworld** uit Jordi's sheet (`graphics/mustard.png`, 16×24 frames → 9 Gen 3-frames, eigen palet `OBJ_EVENT_PAL_TAG_MUSTARD`). Script: `tools/grounded/mustard_sprites.py`; bronnen in `graphics/grounded/trainers/mustard/`.
+- **Bug:** de Kubfu-dojo en de torens lieten het spel vastlopen bij het laden: `gMapGroup_Dungeons` had 131 kaarten en warpdata gebruikt `s8` voor het kaartnummer (max. 127). De dojo-kaarten staan nu in een nieuwe groep **`gMapGroup_Grounded`** (achteraan).
+
+### [v.0.8.127] - Rotom alleen via het event; Rotom-apparaten in Lilycove
+- **Rotom niet meer in het wild** (Jordi): Rotom krijg je alleen via het event in de kelder van `MauvilleCity_House2_B1F`. Alle 11 wilde Rotom-slots vervangen (zelfde levels en zeldzaamheid, unieke soorten per tabel): Abandoned Ship B1F (surf, 1%) Golisopod; Route 108 (surf) Finizen; New Mauville Entrance Pawmo; New Mauville Inside Elekid; Route 122 (vissen) Basculin White Striped (Old Rod), Jellicent, Hisui-Qwilfish, Skrelp (Good Rod), Dhelmise, Overqwil en Dragalge (1%) (Super Rod). Details in `WILDE_TABELLEN.md`.
+- **Rotom-apparaten als Key Items:** Microwave Oven, Washing Machine, Refrigerator, Electric Fan en Lawn Mower (₽3000 per stuk), bij een nieuwe verkoper achter de toonbank op 5F van het Lilycove Department Store, tussen de meubels voor de secret base ("Every product is legally haunted."). Vanuit de tas op Rotom gebruiken geeft die vorm met de signature move (Overheat, Hydro Pump, Blizzard, Air Slash, Leaf Storm), nog eens gebruiken zet hem terug (Thunder Shock). Items 857–861; iconen: `tools/grounded/rotom_appliance_icons.py`.
+
+### [v.0.8.128] - Battle Stadium: de omroeper
+- Vóór elke wedstrijd kondigt de omroeper de tegenstander aan met één grappige zin, in één tekstvak; daarna juicht het publiek en begint het gevecht. In doubles kiest hij willekeurig één van de twee tegenstanders.
+- Zinnen voor alle 96 trainers in de pool plus een terugval, elk in de grap van het personage. Mustard: "Mustard on the beat, ho! The dojo master himself... MUSTAAAAAAAAAARD!" (Kendrick Lamar-producertag). Drake: "Not that one. Do NOT play the Kendrick song." Ditto laat zijn verklaring voorlezen: "..." ":)". Birch: Macarena en zijn "samples". SickBlik: "He made this romhack. Beat him and he nerfs you next patch."
+- Bewerken: `tools/grounded/stadium/announcer.py` en draaien (breekt af zoals de Dialoogstudio, max. 2 regels, waarschuwt bij een trainer zonder zin); overzicht in `STADIUM_OMROEPER.md`. Special `Stadium_GetAnnouncerLine`.
+- **Bug (sinds v0.8.114):** in de doubles-arena ontbraken de compagnon en de tweede tegenstander: de arena had 17 objecten + de speler, het spel toont er maar 16. Drie publieksleden op de achterste rij zijn weg.
+
+### [v.0.8.129] - Mewtwo- en Shaymin-transitie vernieuwd; teksten van de post-game events
+- **Mewtwo:** nieuwe transitie vol lore. Het lab op Cinnabar Island: Mewtwo zweeft als silhouet in een gloeiende kweektank (belletjes, consoles met een DNA-streng en een hartslag). Onderaan typt het dagboek uit de Pokémon Mansion zich uit ("Feb. 6 Mew gave birth. We named the newborn MEWTWO." en "Sept. 1 MEWTWO is far too powerful..."). Dan Mewtwo's kreet, gloeiende ogen, het glas barst in drie stappen en de tank spat uiteen (zoals in *Mewtwo Strikes Back*): een psychische schokgolf met glasscherven, Mewtwo met witte ogen in een paars veld.
+- **Shaymin:** veel kleuriger: drie paletten (roze/rood/fuchsia, geel/oranje/zalm, blauw/paars/lila), 24 kleine bloemsoorten (Gracidea, roos, tulpen, cosmea, madeliefje, boterbloem, goudsbloem, vergeet-mij-nietje, viooltje, klokjes, lavendel, blaadjes) en 6 grote (Gracidea, roos, zonnebloem, margriet, winde, clematis); voller, tuimelend, en het eindigt in een tapijt van bloemen. Gegevens vooraf berekend, zodat hij op volle snelheid draait.
+- **Teksten in huisstijl** (47 teksten van de nieuwe events; logica ongewijzigd): Genesect-terminal als Clippy, "HASTA LA VISTA, BABY.", de bug at de stagiair; Mewtwo klaagt over Stevens metal bij de waterval; Giratina's toren is "the Upside Down"; Jirachi: je wenst een POKéMON-game met een echte moeilijkheidsgraad; Darkrai: "One, two, DARKRAI's coming for you"; Shaymin is "a hedgehog that is also a salad"; Mustard (pensioen, verzekerde heup, Gen Z-Kubfu), torentrainers met Mortal Kombat, Street Fighter, een oude emo en een oude surfer. Overzicht voor/na: `TEKSTEN_EVENTS.md`.
+
+### [v.0.8.130] - Victini-gauntlet op Liberty Garden
+- De **Liberty Pass is nu een uitnodiging** (Jordi): de Victory-commissaris in de haven van Lilycove geeft hem na de Hall of Fame, zonder stempels ("An invitation to five fights and a small miracle.").
+- De vijf Victory-uitdagers staan niet meer in Dewford, Slateport, Fortree, Mossdeep en Ever Grande, maar op **Liberty Garden**: Vance, Vernon, Vega en Vesna bewaken elk een knelpunt op het pad van de steiger naar de fontein (ze zien je, op volgorde, niet te omzeilen), V wacht bij de fontein. Teams ongewijzigd (lv 70, ace 72).
+- **Echte gauntlet:** geen heal op het eiland; wie het eiland verlaat (terugvaren of white-out) voordat alle vijf verslagen zijn, begint bij de volgende aankomst opnieuw (terug te draaien: de `cleartrainerflag`-regels in `LibertyGarden_OnTransition`). Bord op de steiger met de spelregels.
+- Na de vijfde overwinning verschijnt **Victini** op de rechterlantaarn en springt naar de fontein (lv 70, transitie en muziek ongewijzigd). Kom je later terug, dan wacht hij daar.
+- Alle teksten (commissaris, veerboot, schipper, borden, uitdagers) herschreven in de huisstijl. Bouwscript `liberty_garden.py` controleert bereikbaarheid en dat geen uitdager te omzeilen is.
+- Flags: `FLAG_VICTORY_GAUNTLET_EXPLAINED` (0x28B) vervangen door `FLAG_DEFEATED_LIBERTY_VICTINI`.
+
+### [v.0.8.131] - Mustards gezicht, arena-opstelling
+- **Mustard (trainerfoto):** gezicht opnieuw getekend naar de artwork (Jordi): het witte "haar" zijn zijn lange golvende **wenkbrauwen**, die over de ogen boogt en langs de wangen naar beneden valt; een **puntig wit sikje** onder de kin; **grotere ogen** met pupil en zware oogleden; oor zichtbaar.
+- **Arena-opstelling:** iedereen staat even ver van het midden van het veld (midden = tussen x 8/9 en rij 6/7). Singles: speler (6,6) tegen (11,6); doubles: speler en compagnon op (6,6)/(6,7), tegenstanders op (11,6)/(11,7). Eerder stond de tweede tegenstander op rij 5, waar de bovenrand van het veld over zijn hoofd viel.

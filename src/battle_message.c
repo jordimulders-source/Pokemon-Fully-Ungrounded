@@ -3,6 +3,7 @@
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_message.h"
+#include "stadium.h"
 #include "battle_setup.h"
 #include "battle_tower.h"
 #include "battle_z_move.h"
@@ -312,6 +313,11 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNSOAKEDUPPOLLEN]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} soaked up\nthe pollen!"),
     [STRINGID_POLLENHAZEBLOWNAWAY]                  = COMPOUND_STRING("The wind blew the pollen away!\nAhchoo!"),
     [STRINGID_PKMNMADEPOLLENHAZE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nfilled the air with pollen!"),
+    [STRINGID_SPIREDEFENDSELF]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} braces itself!"),
+    [STRINGID_SPIREDEFENDALLY]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} shields\n{B_DEF_NAME_WITH_PREFIX}!"),
+    [STRINGID_SPIREDEFENDBOTH]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} guards the team!"),
+    [STRINGID_SPIREBLOCKABSORBED]                   = COMPOUND_STRING("The block absorbed the hit!"),
+    [STRINGID_SPIREBLOCKSOFTENED]                   = COMPOUND_STRING("The block softened the hit!"),
     [STRINGID_PKMNGOTENCORE]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} must do an encore!"),
     [STRINGID_PKMNGOTENCOREDMOVE]                   = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} can only use {B_CURRENT_MOVE}!\p"),
     [STRINGID_PKMNENCOREENDED]                      = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} ended its encore!"),
@@ -2929,7 +2935,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER1_WIN_TEXT: // trainerA win text
-                if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+                if (gStadiumBattle)
+                    toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentA);
+                else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {
                     CopyFrontierTrainerText(FRONTIER_PLAYER_LOST_TEXT, TRAINER_BATTLE_PARAM.opponentA);
                     toCpy = gStringVar4;
@@ -3048,7 +3056,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER2_WIN_TEXT:
-                if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+                if (gStadiumBattle)
+                    toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentB);
+                else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {
                     CopyFrontierTrainerText(FRONTIER_PLAYER_LOST_TEXT, TRAINER_BATTLE_PARAM.opponentB);
                     toCpy = gStringVar4;

@@ -301,7 +301,8 @@ SlateportCity_PokemonFanClub_Text_GiveMonMorePokeblocks:
 	.string "Mediocre.\p"
 	.string "You, the TRAINER, must put in more\n"
 	.string "effort!\p"
-	.string "May I suggest more {POKEBLOCK}S? It looks hungry.$"
+	.string "May I suggest more {POKEBLOCK}S?\n"
+	.string "It looks hungry.$"
 
 SlateportCity_PokemonFanClub_Text_NoSpaceForReward:
 	.string "Oh, my…\p"

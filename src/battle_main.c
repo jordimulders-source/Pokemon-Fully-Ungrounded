@@ -9,6 +9,8 @@
 #include "battle_hold_effects.h"
 #include "battle_interface.h"
 #include "battle_main.h"
+#include "spire.h"
+#include "stadium.h"
 #include "battle_message.h"
 #include "battle_pyramid.h"
 #include "battle_scripts.h"
@@ -357,6 +359,14 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PROFESSOR] = { _("PROFESSOR"), 20 }, // Project Grounded
     [TRAINER_CLASS_SCIENTIST] = { _("SCIENTIST"), 25 }, // Project Grounded: Colress
     [TRAINER_CLASS_LOREKEEPER] = { _("LOREKEEPER"), 25 }, // Project Grounded: Zinnia
+    [TRAINER_CLASS_BOSS] = { _("BOSS"), 50, BALL_MASTER }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_COMMANDER] = { _("COMMANDER"), 25, BALL_ULTRA }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_TOWER_TYCOON] = { _("TOWER TYCOON"), 50, BALL_ULTRA }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_HALL_MATRON] = { _("HALL MATRON"), 50, BALL_ULTRA }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_ARCADE_STAR] = { _("ARCADE STAR"), 50, BALL_ULTRA }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_GUEST_STAR] = { _("GUEST STAR"), 50, BALL_CHERISH }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_BURGLAR] = { _("BURGLAR"), 30 }, // Project Grounded: Battle Stadium
+    [TRAINER_CLASS_COLLECTION] = { _("THE"), 0, BALL_MASTER }, // Project Grounded: trio-compagnons ("THE REGIS")
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
@@ -391,6 +401,7 @@ static void (*const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED]               = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED]        = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL]             = HandleAction_ThrowBall,
+    [B_ACTION_SPIRE_DEFEND]           = HandleAction_SpireDefend, // Project Grounded: The Spire
 };
 
 static void (*const sEndTurnFuncsTable[])(void) =
@@ -522,6 +533,8 @@ static void CB2_InitBattleInternal(void)
     {
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
     }
+    if (gSpireBattle) // Project Grounded: The Spire, achtergrond van het biome
+        gBattleEnvironment = gSpireEnvironment;
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
     if (TestRunner_Battle_GetForcedEnvironment())
@@ -530,7 +543,8 @@ static void CB2_InitBattleInternal(void)
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL
-                                                                        | BATTLE_TYPE_RECORDED)))
+                                                                        | BATTLE_TYPE_RECORDED))
+        && !gStadiumBattle) // Project Grounded: het Stadium bepaalt zelf singles of doubles
     {
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
@@ -571,6 +585,7 @@ static void CB2_InitBattleInternal(void)
                 CreateNPCTrainerParty(&gEnemyParty[PARTY_SIZE / 2], TRAINER_BATTLE_PARAM.opponentB, FALSE);
             SetWildMonHeldItem();
             CalculateEnemyPartyCount();
+            Spire_OnEnemyPartyCreated(); // Project Grounded: The Spire (HP-vermenigvuldigers)
         }
     }
 
@@ -2030,6 +2045,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+    if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50
+        return Stadium_BuildTrainerParty(party, trainerNum, firstTrainer);
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         struct Trainer tempTrainer;
@@ -3761,6 +3778,11 @@ static void DoBattleIntro(void)
                 gBattleStruct->startingStatus = GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentA);
                 gBattleStruct->startingStatusTimer = 0; // infinite
             }
+            else if (gSpireBattle) // Project Grounded: The Spire, beginveld van de ontmoeting
+            {
+                gBattleStruct->startingStatus = gSpireStartingStatus;
+                gBattleStruct->startingStatusTimer = 0;
+            }
             else if (B_VAR_STARTING_STATUS != 0)
             {
                 gBattleStruct->startingStatus = VarGet(B_VAR_STARTING_STATUS);
@@ -3942,6 +3964,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         memset(&gSpecialStatuses, 0, sizeof(gSpecialStatuses));
         BattlePutTextOnWindow(gText_EmptyString3, B_WIN_MSG);
         AssignUsableGimmicks();
+        Spire_OnFirstTurn(); // Project Grounded: The Spire, relic Iron Plate (blok in de eerste beurt)
         gBattleMainFunc = HandleTurnActionSelectionState;
         ResetSentPokesToOpponentValue();
 
@@ -4008,6 +4031,9 @@ void BattleTurnPassed(void)
         return;
 
     gBattleStruct->eventState.faintedAction = 0;
+    // Project Grounded: blok vervalt aan het eind van de beurt, patronen schuiven door. Hier (niet bovenaan):
+    // BattleTurnPassed wordt opnieuw aangeroepen na elk effect aan het eind van de beurt (gif, weer, Leftovers).
+    Spire_EndTurn();
 
     TurnValuesCleanUp(FALSE);
     gHitMarker &= ~HITMARKER_UNABLE_TO_USE_MOVE;
@@ -4083,6 +4109,9 @@ u8 IsRunningFromBattleImpossible(u32 battler)
 {
     enum HoldEffect holdEffect;
     u32 i;
+
+    if (gSpireBattle) // Project Grounded: RUN = pauzeren in The Spire
+        return BATTLE_RUN_SUCCESS;
 
     if (FlagGet(B_FLAG_NO_RUNNING))
     {
@@ -4317,7 +4346,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag())
+                    if ((ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag()) || gSpireBattle) // Project Grounded: geen tas in The Spire
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;
@@ -4428,6 +4457,9 @@ static void HandleTurnActionSelectionState(void)
                 case B_ACTION_DEBUG:
                     BtlController_EmitDebugMenu(battler, B_COMM_TO_CONTROLLER);
                     MarkBattlerForControllerExec(battler);
+                    break;
+                case B_ACTION_SPIRE_DEFEND: // Project Grounded: doel zit in byte 2
+                    gSpireDefendTarget[battler] = gBattleResources->bufferB[battler][2];
                     break;
                 }
 
@@ -4608,6 +4640,9 @@ static void HandleTurnActionSelectionState(void)
                     break;
                 case B_ACTION_DEBUG:
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                    break;
+                case B_ACTION_SPIRE_DEFEND:
+                    gBattleCommunication[battler]++;
                     break;
                 }
             }
@@ -5082,7 +5117,8 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] == B_ACTION_USE_ITEM
                   || gChosenActionByBattler[battler] == B_ACTION_SWITCH
-                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL)
+                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL
+                  || gChosenActionByBattler[battler] == B_ACTION_SPIRE_DEFEND)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5093,7 +5129,8 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] != B_ACTION_USE_ITEM
                   && gChosenActionByBattler[battler] != B_ACTION_SWITCH
-                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL)
+                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL
+                  && gChosenActionByBattler[battler] != B_ACTION_SPIRE_DEFEND)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5120,7 +5157,9 @@ static void SetActionsAndBattlersTurnOrder(void)
                         && gActionsByTurnOrder[i] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[j] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[i] != B_ACTION_THROW_BALL
-                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL)
+                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL
+                        && gActionsByTurnOrder[i] != B_ACTION_SPIRE_DEFEND
+                        && gActionsByTurnOrder[j] != B_ACTION_SPIRE_DEFEND)
                     {
                         if (GetWhichBattlerFaster(&ctx, FALSE) == -1)
                             SwapTurnOrder(i, j);
@@ -5635,7 +5674,17 @@ static void HandleEndTurn_FinishBattle(void)
             TryPutBreakingNewsOnAir();
         }
 
-        BeginFastPaletteFade(3);
+        // Project Grounded: sneller naar zwart aan het eind van het gevecht (de "fast fade" duurde ~35 frames, nu ~16).
+        // Eerst het huidige beeld vastzetten, zodat de fade vanaf precies dit beeld vertrekt.
+        if (!gPaletteFade.active)
+        {
+            CpuCopy32(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+            BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, RGB_BLACK);
+        }
+        else
+        {
+            BeginFastPaletteFade(3);
+        }
         FadeOutMapMusic(5);
         if (B_TRAINERS_KNOCK_OFF_ITEMS == TRUE || B_RESTORE_HELD_BATTLE_ITEMS >= GEN_9)
             TryRestoreHeldItems();
@@ -6167,6 +6216,8 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
 
 bool32 IsWildMonSmart(void)
 {
+    if (gSpireBattle) // Project Grounded: The Spire, losse Pokémon met trainer-AI (intenties)
+        return TRUE;
 #if B_SMART_WILD_AI_FLAG != 0
     return (FlagGet(B_SMART_WILD_AI_FLAG));
 #else

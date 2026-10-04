@@ -251,7 +251,7 @@ static void Task_ExitCaveTransition3(u8 taskId)
     SetGpuReg(REG_OFFSET_BLDALPHA, blend);
     if (count <= 16)
     {
-        gTasks[taskId].data[1]++;
+        gTasks[taskId].data[1] += 2; // Project Grounded: twee keer zo snel (was ++)
     }
     else
     {
@@ -276,7 +276,7 @@ static void Task_ExitCaveTransition4(u8 taskId)
     {
         LoadPalette(sCaveTransitionPalette_White, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
         gTasks[taskId].func = Task_ExitCaveTransition5;
-        gTasks[taskId].data[2] = 8;
+        gTasks[taskId].data[2] = 2; // Project Grounded: wit kort vasthouden (was 8)
     }
 }
 
@@ -355,7 +355,7 @@ static void Task_EnterCaveTransition4(u8 taskId)
     SetGpuReg(REG_OFFSET_BLDALPHA, blend);
     if (count)
     {
-        gTasks[taskId].data[1]++;
+        gTasks[taskId].data[1] += 2; // Project Grounded: twee keer zo snel (was ++)
     }
     else
     {

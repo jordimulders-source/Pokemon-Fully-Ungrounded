@@ -6931,6 +6931,108 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_SixPack,
     },
 
+    [ITEM_LIBERTY_PASS] = // Project Grounded
+    {
+        .name = ITEM_NAME("Liberty Pass"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An invitation to\n"
+            "five fights and a\n"
+            "small miracle."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_LibertyPass,
+        .iconPalette = gItemIconPalette_LibertyPass,
+    },
+
+    // Project Grounded: Rotom-apparaten. Op Rotom gebruiken = die vorm; nog eens = gewone Rotom.
+    [ITEM_MICROWAVE_OVEN] =
+    {
+        .name = ITEM_NAME("Microwave Oven"),
+        .price = 3000,
+        .importance = 1,
+        .secondaryId = 1,
+        .description = COMPOUND_STRING(
+            "A Rotom appliance.\n"
+            "Heats leftovers\n"
+            "and Pokémon alike."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomAppliance,
+        .iconPic = gItemIcon_MicrowaveOven,
+        .iconPalette = gItemIconPalette_MicrowaveOven,
+    },
+
+    [ITEM_WASHING_MACHINE] =
+    {
+        .name = ITEM_NAME("Washing Machine"),
+        .price = 3000,
+        .importance = 1,
+        .secondaryId = 2,
+        .description = COMPOUND_STRING(
+            "A Rotom appliance.\n"
+            "Spins, rinses and\n"
+            "sometimes fights."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomAppliance,
+        .iconPic = gItemIcon_WashingMachine,
+        .iconPalette = gItemIconPalette_WashingMachine,
+    },
+
+    [ITEM_REFRIGERATOR] =
+    {
+        .name = ITEM_NAME("Refrigerator"),
+        .price = 3000,
+        .importance = 1,
+        .secondaryId = 3,
+        .description = COMPOUND_STRING(
+            "A Rotom appliance.\n"
+            "Keeps leftovers\n"
+            "and grudges cold."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomAppliance,
+        .iconPic = gItemIcon_Refrigerator,
+        .iconPalette = gItemIconPalette_Refrigerator,
+    },
+
+    [ITEM_ELECTRIC_FAN] =
+    {
+        .name = ITEM_NAME("Electric Fan"),
+        .price = 3000,
+        .importance = 1,
+        .secondaryId = 4,
+        .description = COMPOUND_STRING(
+            "A Rotom appliance.\n"
+            "Cools you down.\n"
+            "Mostly blows."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomAppliance,
+        .iconPic = gItemIcon_ElectricFan,
+        .iconPalette = gItemIconPalette_ElectricFan,
+    },
+
+    [ITEM_LAWN_MOWER] =
+    {
+        .name = ITEM_NAME("Lawn Mower"),
+        .price = 3000,
+        .importance = 1,
+        .secondaryId = 5,
+        .description = COMPOUND_STRING(
+            "A Rotom appliance.\n"
+            "Mows lawns and\n"
+            "opponents' hopes."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomAppliance,
+        .iconPic = gItemIcon_LawnMower,
+        .iconPalette = gItemIconPalette_LawnMower,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000
@@ -14297,15 +14399,15 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_TriPass,
     },
 
-    [ITEM_RAINBOW_PASS] =
+    [ITEM_RAINBOW_PASS] = // Project Grounded: Bloom Ticket (Shaymin, Flower Paradise)
     {
-        .name = ITEM_NAME("Rainbow Pass"),
-        .pluralName = ITEM_PLURAL_NAME("Rainbow Passes"),
+        .name = ITEM_NAME("Bloom Ticket"),
+        .pluralName = ITEM_PLURAL_NAME("Bloom Tickets"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "For ferries serving\n"
-            "Vermilion and the\n"
-            "Sevii Islands."),
+            "A ferry ticket to\n"
+            "Flower Paradise.\n"
+            "Pack tissues."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

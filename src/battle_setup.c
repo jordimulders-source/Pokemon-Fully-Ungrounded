@@ -473,6 +473,12 @@ void BattleSetup_StartLatiBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+// Project Grounded: The Spire (src/spire.c zet partijen en het eindcallback klaar)
+void BattleSetup_StartSpireBattle(void)
+{
+    CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_FRONTIER_BRAIN);
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();
@@ -518,6 +524,33 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
+    case SPECIES_SHAYMIN_SKY:
+        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
+    case SPECIES_GENESECT_DOUSE:
+    case SPECIES_GENESECT_SHOCK:
+    case SPECIES_GENESECT_BURN:
+    case SPECIES_GENESECT_CHILL:
+        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
+        break;
+    case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
+        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
+        break;
+    case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels
+    case SPECIES_GIRATINA_ORIGIN:
+        CreateBattleStartTask(B_TRANSITION_GIRATINA, MUS_GROUNDED_VS_GIRATINA);
+        break;
+    case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), Mew-muziek (ook een mythische)
+        CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_VS_MEW);
+        break;
+    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, mythical-muziek (zoals Mew)
+        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_VS_MEW);
+        break;
+    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
+        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);
         break;
     }
 
@@ -652,6 +685,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         PlayerGetDestCoords(&x, &y);
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+
+    // Project Grounded: de meteoriet in de ruimte (Deoxys-event)
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_METEOR_SPACE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_METEOR_SPACE))
+        return BATTLE_ENVIRONMENT_SPACE;
 
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;

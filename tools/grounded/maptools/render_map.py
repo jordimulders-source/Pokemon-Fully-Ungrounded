@@ -38,7 +38,9 @@ def load(sym):
             lines=b.decode().split('\n')[3:19]; pals.append([tuple(map(int,l.split())) for l in lines])
     return tiles,mts,pals
 def load2(dirn):
-    tiles=open(dirn+'/tiles.4bpp','rb').read(); mts=open(dirn+'/metatiles.bin','rb').read()
+    base=dirn  # tileset met alleen eigen paletten (bijv. nightmare_general): BASE noemt de tileset met tiles/metatiles
+    if os.path.exists(dirn+'/BASE'): base=os.path.join(os.path.dirname(dirn),open(dirn+'/BASE').read().strip())
+    tiles=open(base+'/tiles.4bpp','rb').read(); mts=open(base+'/metatiles.bin','rb').read()
     pals=[]
     for i in range(16):
         f=f'{dirn}/palettes/{i:02}.pal'

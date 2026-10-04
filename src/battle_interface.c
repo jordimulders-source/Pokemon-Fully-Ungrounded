@@ -4,6 +4,7 @@
 #include "pokemon.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
+#include "spire.h"
 #include "battle_z_move.h"
 #include "graphics.h"
 #include "sprite.h"
@@ -901,6 +902,8 @@ void InitBattlerHealthboxCoords(u8 battler)
     UpdateSpritePos(gHealthboxSpriteIds[battler], x, y);
 }
 
+static struct Pokemon *sSpireHpMon; // Project Grounded: The Spire, mon waarvan het HP-percentage komt
+
 static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
 {
     u32 windowId, spriteTileNum;
@@ -917,6 +920,19 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         xPos = 5 * (3 - (objVram - (text + 2))) - 1;
         UpdateIndicatorLevelData(healthboxSpriteId, lvl);
         UpdateIndicatorVisibilityAndType(healthboxSpriteId, FALSE);
+    }
+    else if (gSpireBattle)
+    {
+        // Project Grounded: The Spire, alles is lv 100; op die plek staat het HP-percentage
+        // gBattleMons is bij het tekenen van de eerste healthbox nog leeg: lees de mon zelf
+        u32 maxHp = sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_MAX_HP) : gBattleMons[battler].maxHP;
+        u32 hp = sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_HP) : gBattleMons[battler].hp;
+
+        objVram = ConvertIntToDecimalStringN(text, maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0, STR_CONV_MODE_LEFT_ALIGN, 3);
+        *objVram++ = CHAR_PERCENT;
+        *objVram = EOS;
+        xPos = 5 * (4 - (objVram - text));
+        UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
     }
     else
     {
@@ -1989,6 +2005,11 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
     u32 battler = gSprites[healthboxSpriteId].hMain_Battler;
     s32 maxHp = GetMonData(mon, MON_DATA_MAX_HP);
     s32 currHp = GetMonData(mon, MON_DATA_HP);
+
+    sSpireHpMon = mon;
+    // Project Grounded: The Spire, het HP-percentage (op de plek van het level) meeverversen
+    if (gSpireBattle && (elementId == HEALTHBOX_HEALTH_BAR || elementId == HEALTHBOX_CURRENT_HP))
+        UpdateLvlInHealthbox(healthboxSpriteId, 100);
 
     if (IsOnPlayerSide(battler))
     {

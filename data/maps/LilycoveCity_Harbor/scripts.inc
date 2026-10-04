@@ -9,6 +9,7 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
+	call VictoryGauntlet_EventScript_TryFerry @ Project Grounded: Liberty Pass -> Liberty Garden (Victini)
 	call_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_CheckEonTicketBeforeGameClear
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
@@ -46,7 +47,8 @@ LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect::
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRock
 	case 4, LilycoveCity_Harbor_EventScript_GoToBirthIsland
 	case 5, LilycoveCity_Harbor_EventScript_GoToFarawayIsland
-	case 6, LilycoveCity_Harbor_EventScript_ExitSailSelect
+	case 6, LilycoveCity_Harbor_EventScript_GoToFlowerParadise
+	case 7, LilycoveCity_Harbor_EventScript_ExitSailSelect
 	case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitSailSelect
 	end
 
@@ -78,6 +80,14 @@ LilycoveCity_Harbor_EventScript_GoToFarawayIsland::
 	release
 	end
 
+@ Project Grounded: Flower Paradise (Shaymin), met het Bloom Ticket
+LilycoveCity_Harbor_EventScript_GoToFlowerParadise::
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_FLOWER_PARADISE_SHORE, 13, 22
+	waitstate
+	release
+	end
+
 LilycoveCity_Harbor_EventScript_GoToSlateport::
 	msgbox LilycoveCity_Harbor_Text_SlateportItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
@@ -92,7 +102,7 @@ LilycoveCity_Harbor_EventScript_GoToBattleFrontier::
 	msgbox LilycoveCity_Harbor_Text_BattleFrontierItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
 	call LilycoveCity_Harbor_EventScript_BoardFerry
-	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67
+	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 123
 	waitstate
 	release
 	end
@@ -292,7 +302,7 @@ LilycoveCity_Harbor_EventScript_MultipleEventTicketsFirstTime::
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRockFirstTime
 	case 4, LilycoveCity_Harbor_EventScript_GoToBirthIslandFirstTime
 	case 5, LilycoveCity_Harbor_EventScript_GoToFarawayIslandFirstTime
-	case 6, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
+	case 7, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
 	case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitFirstTimeTicketSailSelect
 	release
 	end
@@ -372,7 +382,7 @@ LilycoveCity_Harbor_EventScript_GoToBattleFrontierUnused::
 	msgbox LilycoveCity_Harbor_Text_BattleFrontierItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
 	call LilycoveCity_Harbor_EventScript_BoardFerry
-	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67
+	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 123
 	waitstate
 	release
 	end

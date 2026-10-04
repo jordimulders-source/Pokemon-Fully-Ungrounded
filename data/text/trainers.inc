@@ -2444,8 +2444,8 @@ Route117_Text_LydiaRematchDefeat:
 	.string "Growing admirably.$"
 
 Route117_Text_LydiaPostRematch:
-	.string "POKéMON like different {POKEBLOCK}S depending on\n"
-	.string "their nature.\p"
+	.string "POKéMON like different {POKEBLOCK}S\n"
+	.string "depending on their nature.\p"
 	.string "Mine like fries. Don't tell anyone.$"
 
 Route117_Text_DylanIntro:

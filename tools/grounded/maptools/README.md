@@ -10,6 +10,10 @@ Hulpscripts waarmee Claude kaarten bouwt, rendert en test. Draai alles vanuit de
 | `route135.py [voorbeeld.png]` | Bouwt `data/layouts/Route135/map.bin` opnieuw (vaste seed, dus identiek). |
 | `route136.py`, `grotto136.py` | Bouwen Route 136 en de kristalgrot opnieuw. |
 | `ashfrost.py [voorbeeld.png]` | Bouwt Ashfrost Village (primary `snow_town_base` + secondary `snow_town`, via `use_tileset('snow_town')` in `snowlib`). `SOFT=1` meldt objecten die niet passen in plaats van te stoppen. |
+| `meteor_space.py [voorbeeld.png]` | Bouwt de Deoxys-meteoriet in de ruimte: eigen tileset `meteor_space` (donkere Meteor Falls-grond, randen per pixel getekend, sterren, aarde, kristallen), layout en map.json (44x64), gevechtsachtergrond `cave/space.pal`. Vaste seed, controleert de bereikbaarheid. |
+| `reverse_pillar.py [rendermap]` | Bouwt de omgekeerde Sky Pillar (Giratina): tileset `sky_pillar_reverse` (Sky Pillar-metatiles op hun kop, Distortion World-kleuren), B1F/B2F/B3F als gespiegelde 1F/2F/5F, registreert layouts/maps/tileset en controleert de bereikbaarheid. |
+| `liberty_garden.py` | Bouwt Liberty Garden (Victini-eiland, post-game): Southern Island-buitenkant met de grot dicht en een tuin met fontein, lantaarns en bloemen (Rustboro-tiles); layout, map.json, map_groups en event_scripts. Controleert de bereikbaarheid. |
+| `darkrai_nightmare.py [voorbeeld.png]` | Bouwt Darkrai's nachtmerrie (`MtPyre_Nightmare`): uitsnede van de top van Mt. Pyre in zwarte leegte, eigen donkerpaarse paletten (`nightmare_general`/`nightmare_facility` lenen tiles van General/Facility; `BASE`-bestand voor `render_map.py`). |
 | `icepuzzle_search.py <seed> <iteraties>` | Zoekt een ijsglijpuzzel die oplosbaar blijft voor elke combinatie van opgepakte items (gebruikt voor Coldstep ijskamer 2). |
 | `emu.py` | Headless mGBA: `Emu(rom)`, `press()`, `debug_script(e, k)`. |
 | `testrom.py <map> "script 1" [...]` | Test-ROM met tijdelijke debug-scripts (regels met `;`), zet `debug.inc` daarna terug en maakt een savestate na de intro. |

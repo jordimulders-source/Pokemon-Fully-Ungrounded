@@ -900,7 +900,88 @@
 #define TRAINER_COLRESS_MAGMA                   889 // Project Grounded: Colress in de Magma Hideout
 #define TRAINER_ZINNIA                          890 // Project Grounded: Zinnia voor de Sky Pillar
 
-#define TRAINERS_COUNT                      891
+// Project Grounded: Battle Stadium (toernooi, alles lv 50)
+#define TRAINER_STADIUM_BROCK                   891
+#define TRAINER_STADIUM_MISTY                   892
+#define TRAINER_STADIUM_LT_SURGE                893
+#define TRAINER_STADIUM_ERIKA                   894
+#define TRAINER_STADIUM_KOGA                    895
+#define TRAINER_STADIUM_SABRINA                 896
+#define TRAINER_STADIUM_BLAINE                  897
+#define TRAINER_STADIUM_GIOVANNI                898
+#define TRAINER_STADIUM_LORELEI                 899
+#define TRAINER_STADIUM_BRUNO                   900
+#define TRAINER_STADIUM_AGATHA                  901
+#define TRAINER_STADIUM_LANCE                   902
+#define TRAINER_STADIUM_BLUE                    903
+#define TRAINER_STADIUM_RED                     904
+#define TRAINER_STADIUM_OAK                     905
+#define TRAINER_STADIUM_ROARK                   906
+#define TRAINER_STADIUM_GARDENIA                907
+#define TRAINER_STADIUM_MAYLENE                 908
+#define TRAINER_STADIUM_WAKE                    909
+#define TRAINER_STADIUM_FANTINA                 910
+#define TRAINER_STADIUM_BYRON                   911
+#define TRAINER_STADIUM_CANDICE                 912
+#define TRAINER_STADIUM_VOLKNER                 913
+#define TRAINER_STADIUM_AARON                   914
+#define TRAINER_STADIUM_BERTHA                  915
+#define TRAINER_STADIUM_FLINT                   916
+#define TRAINER_STADIUM_LUCIAN                  917
+#define TRAINER_STADIUM_CYNTHIA                 918
+#define TRAINER_STADIUM_CYRUS                   919
+#define TRAINER_STADIUM_BARRY                   920
+#define TRAINER_STADIUM_MARS                    921
+#define TRAINER_STADIUM_JUPITER                 922
+#define TRAINER_STADIUM_SATURN                  923
+#define TRAINER_STADIUM_PALMER                  924
+#define TRAINER_STADIUM_THORTON                 925
+#define TRAINER_STADIUM_ARGENTA                 926
+#define TRAINER_STADIUM_DAHLIA                  927
+#define TRAINER_STADIUM_RILEY                   928
+#define TRAINER_STADIUM_ANABEL                  929
+#define TRAINER_STADIUM_TUCKER                  930
+#define TRAINER_STADIUM_SPENSER                 931
+#define TRAINER_STADIUM_GRETA                   932
+#define TRAINER_STADIUM_NOLAND                  933
+#define TRAINER_STADIUM_LUCY                    934
+#define TRAINER_STADIUM_BRANDON                 935
+// Project Grounded: Battle Stadium, gasten, Ditto en meme-trainers
+#define TRAINER_STADIUM_WARIO                   936
+#define TRAINER_STADIUM_YOSHI                   937
+#define TRAINER_STADIUM_GOLBAT                  938
+#define TRAINER_STADIUM_GRIMER                  939
+#define TRAINER_STADIUM_BOO                     940
+#define TRAINER_STADIUM_MEW                     941
+#define TRAINER_STADIUM_SHY_GUY_RED             942
+#define TRAINER_STADIUM_SHY_GUY_GREEN           943
+#define TRAINER_STADIUM_SHY_GUY_PINK            944
+#define TRAINER_STADIUM_SHY_GUY_BLACK           945
+#define TRAINER_STADIUM_BURGLAR                 946
+#define TRAINER_STADIUM_DITTO                   947
+#define TRAINER_STADIUM_JOEY                    948
+#define TRAINER_STADIUM_WINSTON                 949
+#define TRAINER_STADIUM_DONALD                  950
+#define TRAINER_STADIUM_IVAN                    951
+#define TRAINER_STADIUM_JOHNSON                 952
+#define TRAINER_STADIUM_LYLE                    953
+#define TRAINER_DITTO                           954
+#define TRAINER_VICTORY_VANCE                   955
+#define TRAINER_VICTORY_VERNON                  956
+#define TRAINER_VICTORY_VEGA                    957
+#define TRAINER_VICTORY_VESNA                   958
+#define TRAINER_VICTORY_V                       959
+// Project Grounded: Kubfu-dojo op Route 112
+#define TRAINER_DOJO_DARK_1                 960
+#define TRAINER_DOJO_DARK_2                 961
+#define TRAINER_DOJO_DARK_KEEPER            962
+#define TRAINER_DOJO_WATER_1                963
+#define TRAINER_DOJO_WATER_2                964
+#define TRAINER_DOJO_WATER_KEEPER           965
+#define TRAINER_MUSTARD                     966
+#define TRAINER_STADIUM_MUSTARD             967
+
+#define TRAINERS_COUNT                      968
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

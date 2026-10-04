@@ -52,6 +52,9 @@ $(TILESETGFXDIR)/secondary/fortree/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/pacifidlog/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
 
+$(TILESETGFXDIR)/secondary/sky_pillar_reverse/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
+
 $(TILESETGFXDIR)/secondary/sootopolis/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 328 -Wnum_tiles
 

@@ -44,6 +44,7 @@
 #include "regions.h"
 #include "rtc.h"
 #include "sound.h"
+#include "spire.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -6095,6 +6096,12 @@ u16 GetBattleBGM(void)
         case SPECIES_ENTEI:
         case SPECIES_SUICUNE:
             return MUS_C_VS_LEGEND_BEAST;
+        case SPECIES_JIRACHI: // Project Grounded: wens-event in Fallarbor
+            return MUS_VS_MEW;
+        case SPECIES_DARKRAI: // Project Grounded: nachtmerrie op Mt. Pyre
+        case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
+        case SPECIES_GIRATINA_ORIGIN:
+            return MUS_GROUNDED_VS_GIRATINA;
         default:
             return MUS_RG_VS_LEGEND;
         }
@@ -6137,7 +6144,9 @@ u16 GetBattleBGM(void)
             return MUS_GROUNDED_VS_ZINNIA;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
             return MUS_VS_AQUA_MAGMA_LEADER;
+        case TRAINER_CLASS_COMMANDER: // Project Grounded: Battle Stadium
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
@@ -6162,6 +6171,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_FACTORY_HEAD:
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
+        case TRAINER_CLASS_TOWER_TYCOON: // Project Grounded: Battle Stadium
+        case TRAINER_CLASS_HALL_MATRON:
+        case TRAINER_CLASS_ARCADE_STAR:
             return MUS_VS_FRONTIER_BRAIN;
         default:
             return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
@@ -6384,6 +6396,8 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
+    if (gSpireBattle) // Project Grounded: The Spire, vijanden hebben alleen hun vaste items
+        return;
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
     {
         u16 rnd;

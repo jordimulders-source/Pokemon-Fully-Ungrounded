@@ -1306,11 +1306,9 @@ void Overworld_ChangeMusicTo(u16 newMusic)
 
 u8 GetMapMusicFadeoutSpeed(void)
 {
-    const struct MapHeader *mapHeader = GetDestinationWarpMapHeader();
-    if (IsMapTypeIndoors(mapHeader->mapType) == TRUE)
-        return 2;
-    else
-        return 4;
+    // Project Grounded: de warp wacht tot de oude muziek weg is; het scherm is dan al zwart. Uitfaden in 16 frames
+    // (was 32 naar binnen en 64 naar buiten).
+    return 1;
 }
 
 void TryFadeOutOldMapMusic(void)
@@ -1538,6 +1536,16 @@ bool32 IsOverworldLinkActive(void)
 static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
 {
     struct FieldInput inputStruct;
+
+    // Project Grounded: op B2F van de omgekeerde Sky Pillar zijn boven en onder omgedraaid
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SKY_PILLAR_REVERSE_B2F)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SKY_PILLAR_REVERSE_B2F))
+    {
+        if (((newKeys & DPAD_UP) != 0) != ((newKeys & DPAD_DOWN) != 0))
+            newKeys ^= DPAD_UP | DPAD_DOWN;
+        if (((heldKeys & DPAD_UP) != 0) != ((heldKeys & DPAD_DOWN) != 0))
+            heldKeys ^= DPAD_UP | DPAD_DOWN;
+    }
 
     UpdatePlayerAvatarTransitionState();
     FieldClearPlayerInput(&inputStruct);
@@ -1823,7 +1831,7 @@ void CB2_WhiteOut(void)
 {
     u8 state;
 
-    if (++gMain.state >= 120)
+    if (++gMain.state >= 30) // Project Grounded: was 120 frames zwart scherm na het verliezen
     {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();

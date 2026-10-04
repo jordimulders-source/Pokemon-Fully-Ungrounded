@@ -2755,7 +2755,7 @@
       "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_WEST",
       "name": "BattleFrontier_OutsideWest_Layout",
       "width": 56,
-      "height": 72,
+      "height": 128,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
       "border_filepath": "data/layouts/BattleFrontier_OutsideWest/border.bin",
@@ -3052,6 +3052,16 @@
       "blockdata_filepath": "data/layouts/SouthernIsland_Interior/map.bin"
     },
     {
+      "id": "LAYOUT_LIBERTY_GARDEN",
+      "name": "LibertyGarden_Layout",
+      "width": 33,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/LibertyGarden/border.bin",
+      "blockdata_filepath": "data/layouts/LibertyGarden/map.bin"
+    },
+    {
       "id": "LAYOUT_JAGGED_PASS",
       "name": "JaggedPass_Layout",
       "width": 30,
@@ -3170,6 +3180,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MtPyre_Summit/border.bin",
       "blockdata_filepath": "data/layouts/MtPyre_Summit/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_PYRE_NIGHTMARE",
+      "name": "MtPyre_Nightmare_Layout",
+      "width": 31,
+      "height": 22,
+      "primary_tileset": "gTileset_NightmareGeneral",
+      "secondary_tileset": "gTileset_NightmareFacility",
+      "border_filepath": "data/layouts/MtPyre_Nightmare/border.bin",
+      "blockdata_filepath": "data/layouts/MtPyre_Nightmare/map.bin"
     },
     {
       "id": "LAYOUT_SEALED_CHAMBER_INNER_ROOM",
@@ -3595,7 +3615,7 @@
       "id": "LAYOUT_BATTLE_FRONTIER_OUTSIDE_EAST",
       "name": "BattleFrontier_OutsideEast_Layout",
       "width": 72,
-      "height": 72,
+      "height": 90,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
       "border_filepath": "data/layouts/BattleFrontier_OutsideEast/border.bin",
@@ -3640,6 +3660,36 @@
       "secondary_tileset": "gTileset_BattlePike",
       "border_filepath": "data/layouts/BattleFrontier_BattlePikeLobby/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_BattlePikeLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_SPIRE_LOBBY",
+      "name": "BattleFrontier_SpireLobby_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattlePike",
+      "border_filepath": "data/layouts/BattleFrontier_SpireLobby/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_SpireLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_STADIUM_LOBBY",
+      "name": "BattleFrontier_StadiumLobby_Layout",
+      "width": 23,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleDome",
+      "border_filepath": "data/layouts/BattleFrontier_StadiumLobby/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_StadiumLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_STADIUM_ARENA",
+      "name": "BattleFrontier_StadiumArena_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleDome",
+      "border_filepath": "data/layouts/BattleFrontier_StadiumArena/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_StadiumArena/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR",
@@ -4192,6 +4242,46 @@
       "blockdata_filepath": "data/layouts/BirthIsland_Exterior/map.bin"
     },
     {
+      "id": "LAYOUT_METEOR_SPACE",
+      "name": "MeteorSpace_Layout",
+      "width": 44,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorSpace",
+      "border_filepath": "data/layouts/MeteorSpace/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorSpace/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAUVILLE_SERVER_VAULT",
+      "name": "NewMauville_ServerVault_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/NewMauville_ServerVault/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_ServerVault/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_UNKNOWN_CAVE_1F",
+      "name": "MeteorFalls_UnknownCave_1F_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MeteorFalls_UnknownCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_UnknownCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_UNKNOWN_CAVE_B1F",
+      "name": "MeteorFalls_UnknownCave_B1F_Layout",
+      "width": 19,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MeteorFalls_UnknownCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_UnknownCave_B1F/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLAND_HARBOR",
       "name": "IslandHarbor_Layout",
       "width": 17,
@@ -4532,6 +4622,36 @@
       "blockdata_filepath": "data/layouts/SkyPillar_Top_Clean/map.bin"
     },
     {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B3F",
+      "name": "SkyPillar_ReverseB3F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB3F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B2F",
+      "name": "SkyPillar_ReverseB2F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB2F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SKY_PILLAR_REVERSE_B1F",
+      "name": "SkyPillar_ReverseB1F_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SkyPillarReverse",
+      "border_filepath": "data/layouts/SkyPillar_ReverseB1F/border.bin",
+      "blockdata_filepath": "data/layouts/SkyPillar_ReverseB1F/map.bin"
+    },
+    {
       "id": "LAYOUT_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
       "name": "SootopolisCity_MysteryEventsHouse_1F_Layout",
       "width": 11,
@@ -4590,6 +4710,56 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/MtChimney_EnteiLair/border.bin",
       "blockdata_filepath": "data/layouts/MtChimney_EnteiLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOWER_PARADISE_SHORE",
+      "name": "FlowerParadise_Shore_Layout",
+      "width": 33,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/FlowerParadise_Shore/border.bin",
+      "blockdata_filepath": "data/layouts/FlowerParadise_Shore/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOWER_PARADISE_MEADOW",
+      "name": "FlowerParadise_Meadow_Layout",
+      "width": 29,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FlowerParadise",
+      "border_filepath": "data/layouts/FlowerParadise_Meadow/border.bin",
+      "blockdata_filepath": "data/layouts/FlowerParadise_Meadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_DOJO",
+      "name": "Route112_Dojo_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_Dojo/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_Dojo/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_TOWER_OF_DARKNESS",
+      "name": "Route112_TowerOfDarkness_Layout",
+      "width": 9,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_TowerOfDarkness/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_TowerOfDarkness/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE112_TOWER_OF_WATERS",
+      "name": "Route112_TowerOfWaters_Layout",
+      "width": 9,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Route112_TowerOfWaters/border.bin",
+      "blockdata_filepath": "data/layouts/Route112_TowerOfWaters/map.bin"
     }
   ]
 }

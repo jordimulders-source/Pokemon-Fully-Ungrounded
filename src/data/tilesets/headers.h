@@ -311,6 +311,17 @@ const struct Tileset gTileset_MeteorFalls =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_MeteorSpace = // Project Grounded: meteoriet in de ruimte (Deoxys), uit Meteor Falls via meteor_space.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MeteorSpace,
+    .palettes = gTilesetPalettes_MeteorSpace,
+    .metatiles = gMetatiles_MeteorSpace,
+    .metatileAttributes = gMetatileAttributes_MeteorSpace,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_OceanicMuseum =
 {
     .isCompressed = TRUE,
@@ -872,5 +883,51 @@ const struct Tileset gTileset_UnionRoom =
     .palettes = gTilesetPalettes_UnionRoom,
     .metatiles = gMetatiles_UnionRoom,
     .metatileAttributes = gMetatileAttributes_UnionRoom,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_FlowerParadise = // Project Grounded: Flower Paradise (Shaymin), Fortree + Gracidea, flower_paradise.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FlowerParadise,
+    .palettes = gTilesetPalettes_FlowerParadise,
+    .metatiles = gMetatiles_FlowerParadise,
+    .metatileAttributes = gMetatileAttributes_FlowerParadise,
+    .callback = InitTilesetAnim_Fortree,
+};
+
+const struct Tileset gTileset_SkyPillarReverse = // Project Grounded: omgekeerde Sky Pillar (Giratina), via reverse_pillar.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SkyPillarReverse,
+    .palettes = gTilesetPalettes_SkyPillarReverse,
+    .metatiles = gMetatiles_SkyPillarReverse,
+    .metatileAttributes = gMetatileAttributes_SkyPillarReverse,
+    .callback = NULL,
+};
+
+// Project Grounded: Darkrai's nachtmerrie (MtPyre_Nightmare): tiles en metatiles van General/Facility met donkerpaarse
+// paletten (tools/grounded/maptools/darkrai_nightmare.py)
+const struct Tileset gTileset_NightmareGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_NightmareGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_NightmareFacility =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Facility,
+    .palettes = gTilesetPalettes_NightmareFacility,
+    .metatiles = gMetatiles_Facility,
+    .metatileAttributes = gMetatileAttributes_Facility,
     .callback = NULL,
 };

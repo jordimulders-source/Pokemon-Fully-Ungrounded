@@ -1,6 +1,17 @@
 # The Spire – ontwerp (roguelike-faciliteit, Battle Frontier)
 
-Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de bron voor de volgende sessie.
+Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volgende sessie.
+
+**Beta (v0.8.103):** volledige run speelbaar via debugmenu > Utilities > The Spire: draft, act-kaart, kamers (gevecht, elite, rust, winkel, event, baas), relics, 3 acts met evolutie, pauzeren in de save. Code: `src/spire.c` (gevecht), `src/spire_run.c` (run, kaartgeneratie, kamers, relics), `src/spire_map.c` (kaart), `src/spire_cards.c` (kaartenschermen). Nog niet: ingang in de wereld, codex, intenties met patronen voor bazen, golven, echte event-teksten. Eerder: rekenscript (`tools/grounded/spire/`) en een prototypegevecht (debugmenu > Utilities > Spire prototype) met ×HP, DEFEND/blok en intenties; code in `src/spire.c`, constanten in `include/spire.h`. Nog niet: toren, kaart, drops, winkel, relics, RUN = pauzeren/opgeven, Spire-codex, act-overgang.
+
+## Kernprincipes (Jordi, okt 2026)
+- **Altijd een eerlijke winkans bij goed spel**, zoals in Slay the Spire: slordig spelen kost je meestal de run (tenzij je veel relic-geluk hebt), maar zelfs de zwaarste seed is te winnen. Daarom spelen pro's in Slay lange reeksen op A10/A20.
+- **Elk gevecht is een puzzel**: verkeerd aangepakt een obstakel, goed aangepakt makkelijk. Vijanden beginnen zwak en krijgen per act meer gimmicks en kracht; passief spelen wordt steeds meer afgestraft.
+- **Pokémon-kennis én Slay-kennis worden beloond** (types, abilities, look-alikes herkennen; patronen, tempo, kaartkeuzes).
+- **Creatief, maar altijd grounded**: eerst kijken of er al een Pokémon-mechanic voor is (Ritual = Rage, opladen = Quiver Dance/Machine Learning/Acupressure, start-buff = totem-boost, Gremlin Nob = Defiant). Zoveel mogelijk binnen de Pokémon-wereld.
+- **Altijd wiskundig onderbouwd**: elke keuze komt uit het rekenwerk (`SPIRE_BALANS.md`, gegenereerd door `tools/grounded/spire/spire_pool.py` en `encounters.py`). Breekt een voorstel de balans, dan meldt Claude dat meteen.
+- **Alles is lv 100** (speler en vijanden); level is nooit een knop.
+- Meer variatie dan Slay 1 en 2 mag: er zijn 1000+ Pokémon (al is een groot deel nutteloos voor deze modus).
 
 ## Concept
 - Nieuwe, enorm hoge toren op het Battle Frontier-eiland: **The Spire**. Roguelike à la Slay the Spire.
@@ -17,6 +28,8 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - **Switchen bestaat niet.**
 
 ## Tegenstanders
+- **Geen trainers** (Jordi, v0.8.101): je vecht tegen losse Pokémon (wild dubbelgevecht met trainer-AI). Golven vragen nog engine-werk (wilde gevechten vullen niet aan).
+- Intenties tonen **KO** (zeker dodelijk) of **KO?** (alleen met een hoge rol).
 - 1 of meerdere tegenstanders: **2 tegen 1** (baas) kan, 2 tegen 2 ook. Meer dan 2 tegelijk kan de engine niet, wel **golven** (valt een lakei, dan komt de volgende uit de party).
 - Bazen/lakeien: een **grote pool aan bazen** met vaste patronen (memoriseren zoals in Slay, maar meer variatie). Lakeien = zwakke support-Pokémon (weer, Tailwind, schermen, buffs).
 - **Abilities van tegenstanders verborgen**; de ability-popup van expansion onthult ze. Idee: een **Spire-codex** (met R) die onthoudt wat je ooit zag (ability, moves, patroon).
@@ -40,18 +53,26 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - Elke rental begint met **startermoves** (zoals Strike/Defend in Slay).
 - Na elk gevecht kies je een move uit een drop (zoals kaartbeloningen). **Elke Pokémon kan elke move leren** als hij hem in een drop krijgt. **STAB** blijft gelden.
 - Moves gecategoriseerd zoals kaarten (aanval / skill / power), met **zeldzaamheid**: de echt goede moves zijn **rare drops**.
+- **Procent-moves zeldzaam** (Jordi, 5 okt): Toxic, Leech Seed, vastgrijpen, zandstorm/hagel en procentuele heals (Recover, Roost, Moonlight, ...) negeren de HP-vermenigvuldiger. Mechaniek blijft, maar ze zitten in geen startkit en komen als beloning alleen als een kwart van de rare kaarten (`spire_pool.py`, `PERCENT_TOOLS`).
 - **PP als kosten**: zeldzaam = sterk maar weinig PP. PP kan doorlopen over gevechten heen (bijv. Protect-achtige moves een paar keer per act, aangevuld op rustplekken).
 
 ## Relics, winkel, rust, events
-- **Relics** = elite-drops, willekeurig uit een pool (run-brede effecten, simpele haken in de gevechtscode).
+- **Relics** = elite-, baas-, winkel- en event-beloningen (run-brede effecten, simpele haken in de gevechtscode). Sinds v0.8.115 50 stuks, zie *Relics* onderaan.
 - **Winkel**: zelf kiezen welke moves, relics, een **ability** kopen, potions/items.
 - **Rustplek**: helen, of een move verbeteren, of (vanaf act 1) evolueren.
 - **Events**: tekstkeuzes met risico/beloning (Jordi's humor); ook kans op een andere Pokémon.
 - **Kleine heal na elk gevecht** (orde 10%, exact getal bepalen tijdens het testen; relics kunnen het verhogen).
 
 ## Balans / HP
-- HP van speler en tegenstanders verhogen (voorstel **×3**, speler eventueel iets meer). Eerste schatting op lv 50: normale klap ≈ 12% HP, super effective ≈ 25% met ×3 HP. Nog doorrekenen.
-- Volgende stap: **rekenscript** (Python, echte schadeformule van expansion) dat duizenden aanvallen tussen typische rentals en tegenstanders per act simuleert → HP-vermenigvuldiger, Defend-X en act-groei vastleggen.
+- **Rekenscript:** `tools/grounded/spire/balance.py` (echte Gen 5+-schadeformule, soorten/typetabel uit de broncode; `--run` speelt hele acts na, `--set sleutel=waarde` voor andere instellingen). Speler is een simpele bot zonder potions/relics/drops, dus de echte speler doet het beter.
+- **Startwaarden (v0.8.100):**
+  - HP-vermenigvuldiger: **speler ×4**, normale tegenstander ×1, elite ×2,5, baas ×4,5. Levels: speler 50, vijand 48 / 50 / 52 per act.
+  - Normaal gevecht = **2 tegenstanders** (geen golf): ±3 beurten, ±15% HP kwijt. Elite ±4 beurten, ±25%. Baas (+ 2 support-lakeien) ±11 beurten, ±65%, bot wint 60–80%.
+  - Klap van een tegenstander ≈ 7–15% van je max HP; jouw STAB-klap ≈ 45% van een normale tegenstander, 13–17% van een elite, ±7% van een baas.
+  - **Bazen niet sterker laten slaan**: bewegingskracht 75/80/85 (STAB) per act; dreiging komt uit patronen en support (lakeien die de baas buffen: +15% schade per buff, max +60%), niet uit ruwe kracht. Met 90–110 kracht en een totem-boost won de bot <5%.
+  - **Heal na gevecht 20%**, rustplek 50%. Met 10% / 30% strandde de bot al in de gewone gevechten van act 1.
+  - **DEFEND**: 15% van eigen max HP × verdedigingsfactor × act-factor (1 / 1,25 / 1,5) ≈ één klap. Helpt vooral in act 3 (bot haalt act 3 in 68% i.p.v. 46%); in act 1 neutraal. Eventueel act 1 iets hoger (×1,2).
+  - Resultaat bot per act (vers team): act 1 48%, act 2 74%, act 3 68% gehaald; vrijwel alleen gestrand op de baas.
 
 ## Beloning (BP naar rato)
 - Ook bij een paar gewonnen gevechten BP. Voorstel: 1 BP per gevecht, 3 per elite, 10 per baas, bonus per act; act 2/3 ×2/×3. Volledige run grofweg 100–150 BP (tickets kosten 200).
@@ -64,7 +85,52 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Nog niets gebouwd. Dit document is de
 - Intentie: AI kiest een beurt vooruit en moet zich eraan houden; schadeschatting uit de AI-schadeberekening.
 
 ## Nog open
-- HP-vermenigvuldigers en Defend-formule (rekenscript).
+- HP-vermenigvuldigers en Defend-formule: startwaarden staan hierboven; bijstellen na het prototype.
 - Aantal verdiepingen per act, bag-slots, exacte heal na gevecht.
 - Inhoud: rentalpool, startermoves per Pokémon, movepool met zeldzaamheden, relicpool, bazenpool met patronen, events.
-- Prototypevoorstel: één gevecht (2 tegen 1 baas) met intenties, DEFEND en ×HP om het gevoel te testen; daarna toren, kaart, drops, winkel.
+- Prototype staat (zie boven); Jordi speelt het eerst. Daarna: toren, kaart, drops, winkel.
+- Intenties staan nu in het vraagvak links onderin (bovenaan is geen ruimte: levensbalken en sprites vullen het scherm). Blok en schade in % van max HP, omdat je in doubles je eigen HP-getallen niet ziet.
+
+## Schermen (mockups, akkoord Jordi)
+- Flow: gevecht → beloningsscherm (3 moves, A kiezen, B overslaan, SELECT kaart) → act-kaart → volgende kamer. Geen overworld ertussen.
+- Act-kaart scrolt (±4 verdiepingen in beeld), PokéNav-stippenachtergrond, schuine gele routes met rand, gelopen pad rood, Brendan- of May-hoofdje = speler (volgt het gekozen geslacht, zoals de Town Map), rode hoekhaken = cursor, alleen de baas zichtbaar (icoon op rood plateau).
+- Kamericonen: gevecht = Poké Ball (item-icoon), elite = Substitute (overworld-sprite) met een klein geel Super Saiyan-aura, rust = Chansey (icoon), winkel = blauw Mart-embleem (dak), event = Unown-?.
+- Relics: eerste twee in het zijpaneel + "+N"; R opent de relic-lijst met uitleg. Cursor in menu's = de PC-hand.
+- Mockups: `tools/grounded/spire/mockups.py <uitmap> v2|v4`.
+
+## Beta-keuzes (v0.8.103, bijstellen na testen)
+- Act = 7 verdiepingen + baas. Verdieping 1 altijd gevechten, verdieping 7 altijd rust, elites vanaf verdieping 3.
+- Geld (¥) per gevecht 15–25, elite 35–45, baas 80; winkel: move 40/70, relic 100, Potion 30.
+- BP: gevecht 1, elite 3, baas 10, × act; altijd naar je totaal (ook bij verlies).
+- RUN in een gevecht = pauzeren (kamer opnieuw bij terugkomst). Tas is uit in de Spire.
+- Relics als run-brede effecten (v0.8.103: 8 stuks; v0.8.115: 50, zie *Relics*).
+
+## Uitwerking v0.8.104 (zie SPIRE_BALANS.md voor alle getallen)
+- **Rentals:** 315 lijnen toegelaten (rekenscript): eerste (niet-baby) vorm, evolueert na act 1 en na act 2 (Gible → Gabite → Garchomp); bij een vertakking (Eevee, Kirlia, Gloom, ...) kies je. Afgevallen: Magikarp, Caterpie, Ralts, Feebas e.d. (een act te zwak), Luvdisc en andere eenstaps-soorten die niet sterker zijn dan een gemiddelde act-2-vorm. Eenstaps-soorten die té sterk zijn (Heracross, Snorlax, Gholdengo, ...) komen alleen via een event. Tiers C/B/A/S = draft-zeldzaamheid 35/35/22/8%.
+- **Startkit:** STAB 40-50 per type (fysiek/speciaal naar de hoogste aanvalsstat over de run), basis-statusmove (gekozen met een verwachtingswaardemodel: Growl wint meestal, Tail Whip bij fysieke aanvallers) en een grounded move (Leech Seed, Sing, Thunder Wave, Moonlight, ...). Eén type = 3 moves (een vrije slot voor beloningen).
+- **Verboden moves:** wisselen/vluchten (Teleport, U-turn, Roar, ...), doet niets (Splash, Sweet Scent, ...), vaste/procentuele schade (Psywave, Super Fang, OHKO, Pain Split, ...), KO ongeacht HP (Perish Song, Destiny Bond), items stelen (Trick, Knock Off, ...), plus Jordi's lijst (Bubble, Pound, ...). Objectief slechtere moves (automatisch bepaald) komen niet als beloning of startmove.
+- **Biomes:** twee per act (Overgrown Grove/Sunken Docks, The Hive/Frostbite Hollow, Gilded Court/The Abyss), elk met zwakke (verdieping 1-2), gewone en elite-ontmoetingen die op Slay-vijanden lijken (Vine Shambler = Tangela, Fogmog = Amoonguss, Gremlin Nob = Primeape met Defiant en Rage, Lagavulin = slapende Avalugg, ...). Gevechtsachtergrond per biome; kaart in de kleur van het biome met een verloop naar karmozijn bovenin.
+- **Gimmicks met Pokémon-mechanics:** vaste patronen (de AI volgt een moveslot-volgorde; de intentie toont precies wat komt), abilities, vasthouditems, totem-boosts (elites zijn totems: +1 op hun aanvalsstat), beginveld (Grassy Terrain, Trick Room, ...), slapend beginnen.
+- **Bazen per act:** act 1 Venusaur & Blastoise, Totem Wishiwashi + Araquanid, Totem Alola-Marowak + Salazzle, Gigantamax Pikachu + Plusle; act 2 Mega Metagross, Darkrai, Mewtwo & Mew, Dialga & Palkia; act 3 Mega Mewtwo Y, Ultra Necrozma, Eternamax Eternatus, Mega Rayquaza, Terapagos (Terastal). Mega-, Ultra Burst-, Gmax- en Tera-vormen staan daarvoor aan in `include/config/species_enabled.h`.
+- **Rustplek = Snorlax-kamp:** Chansey (30% HP sinds v0.8.107, alle PP, status weg) of Porygon2 (upgrade: aanval +30%, statusmove +1 stage en mist niet, max PP; "+" achter de naam).
+- **Winkel:** twee schappen (UP/DOWN): 2 moves + 1 relic; 2 vasthouditems + Move Relearner (altijd; 50¥ + 25¥ per gebruik; elke level-up-move van de huidige soort, ongeacht level).
+- **Items:** vasthouditems (één per Pokémon, gebruikt = weg) met Spire-regels: Life Orb 2%, Focus Sash op elke HP, Leftovers 1/32. **Relics** zijn trainerspullen voor het hele team (zie *Relics*).
+- **Events (55, v0.8.105):** datagedreven: `tools/grounded/spire/events.py` → `src/data/spire_events.h`, uitgevoerd door `src/spire_event.c`. Per event een verhaal en 1-3 opties; de effectregel naast elke optie wordt uit de effecten gemaakt (groen = winst, rood = kost, blauw = gok), dus tekst en effect kloppen altijd. Opties met een type-eis (bijv. Poison over Toxic Spikes, Flying over Dugtrio) belonen Pokémon-kennis. Effecten: geld, HP, max HP, BP, relic (winnen/verliezen), vasthouditem, move leren (willekeurig/eigen type/vast), upgrade, vergeten (willekeurig of zelf kiezen), slaap of Toxic Spikes in volgende gevechten, elitegevecht, rekruteren, speciale Ditto, Wonder Trade, vroeg evolueren, Spinda's rad. Een paar events zijn bewust gemeen (Mimikyu: wegsluipen kost max HP); er is dan altijd een goedkope uitweg. Later beginnen: Gyarados (Magikarp-verkoper), Butterfree, Milotic (Feebas), Beedrill, Diggersby, Kricketune en Absol komen via events. Elk event één keer per run (64 bits in de save).
+- **Toren:** in de Battle Frontier (noordkant, Frontier-stijl), lobby `BattleFrontier_SpireLobby`.
+
+
+## Relics (v0.8.115, Jordi: "relics mogen er echt veel meer, ga maar naar 50")
+- **Bron:** `tools/grounded/spire/relics.py` (naam, icoon = item, zeldzaamheid, uitleg, conflicten, rekenmodel voor `runsim.py`) → `include/spire_relics.h` (enum) en `src/data/spire_relics.h` (tabel). Effecten in de C-code: zoek op `SPIRE_RELIC_<NAAM>` (gevecht: `Spire_RelicDamageModifier`, `Spire_TryRelicEndure`, `Spire_OnFirstTurn`, `Spire_EndTurn` in `src/spire.c`; begin gevecht: `ApplyRelicsToEncounter`, na gevecht: `ApplyRelicsAfterBattle` in `src/spire_run.c`; rust, winkel, events en kaart in hun eigen bestand). De eerste acht houden hun nummer (gepauzeerde runs); bit 32-63 staan in `relics2` achteraan de save.
+- **Zeldzaamheid zoals Slay:** elites bieden 3 relics, elk 50/33/17% common/uncommon/rare; bazen 3 **boss-relics** (sterk, vaak met een nadeel); de winkel een gewone en een **winkel-relic**; events een gewone. Een relic die door een andere relic nutteloos wordt, komt niet meer (bijv. Soothe Bell en Poké Flute na Awakening, Amulet Coin na Relic Crown). Is een zeldzaamheid op, dan de naastgelegen: de pool loopt niet leeg (was 28% van de runs).
+- **Kaartkleur:** common grijs, uncommon blauw, rare goud, winkel groen, baas rood (onderaan de kaart).
+- **R op de kaart** opent de relic-lijst (drie per pagina, LEFT/RIGHT bladert, A/B terug).
+- **Stat-boosts bij het begin** (X Speed, Relic Crown, ...) gaan via de totem-boost van de engine ("Attack rose!"), dus Simple, Contrary en Clear Body werken gewoon mee.
+- **Common (16):** Berry Pouch (Heal 10% more HP after every battle); Amulet Coin (Earn 50% more money in every battle); Guard Spec. (DEFEND gives 30% more Block); Soothe Bell (Resting at camp heals 30% more HP); X Speed (Both your Pokémon start every battle with +1 Speed); Black Flute (Foes start every battle with -1 Speed. It is that out of tune); Ring Target (Elites start with 20% less HP. They feel watched); Quick Ball (Foes in normal battles start with 15% less HP); Iron Plate (First turn: both your Pokémon start with Block, as if both DEFENDED); Adrenaline Orb (First turn of every battle: your moves deal 30% more); Lava Cookie (Super-effective hits on your team deal 20% less. Crunchy armor); HP Up (+8% max HP for both your Pokémon. Tastes like chalk); PP Max (When you get it: two random moves are upgraded (+)); Oran Berry (After a battle, a Pokémon below 50% HP heals 12% more); Leppa Berry (After every battle, each move gets 3 PP back); Luck Incense (Gambles in events succeed 20% more often than the odds say).
+- **Uncommon (15):** Dire Hit (Your Pokémon land critical hits more often); Muscle Band (Your Pokémon deal 10% more damage); Wide Lens (Your moves that hit both foes lose no power); X Defense (Both your Pokémon start every battle with +1 Defense); X Sp. Def (Both your Pokémon start every battle with +1 Sp. Def); Rusted Shield (DEFEND on both Pokémon gives each 85% of the Block instead of 60%); Berserk Gene (Below 50% HP, your Pokémon deal 25% more damage); Reaper Cloth (Your moves deal 25% more to foes with a status condition); Poké Flute (Resting at camp also upgrades a random move. Snorlax hates it); Up-Grade (Upgrading at camp also upgrades a second, random move); TM Case (Better move rewards: 25% rare and 45% uncommon (normally 10/30)); Sweet Heart (Skip a move reward (B) and both Pokémon get +3% max HP instead); Focus Band (A Pokémon fighting alone deals 30% more damage and takes 20% less); Hyper Potion (Before every boss battle, heal 30% HP); Scanner (Your super-effective hits deal 25% more damage).
+- **Rare (8):** Sacred Ash (Fainted Pokémon come back with 30% HP, not 1 HP); X Attack (Both your Pokémon start elite and boss battles with +1 Attack); X Sp. Atk (Both your Pokémon start elite and boss battles with +1 Sp. Atk); Shed Shell (Block no longer vanishes at the end of a turn: half of it stays); Resist Feather (Once per battle, each Pokémon survives a knockout hit with 1 HP); Acro Bike (3 times: hop to any room on the next floor, path or no path); Razor Claw (Your critical hits deal 2x damage instead of 1.5x); Iron Ball (Every hit on your team does 2% of max HP less. Heavy, but worth it).
+- **Winkel (3):** Rainbow Pass (Everything in the Poké Mart costs 30% less); Heart Scale (The Move Relearner always costs 25¥. It is in love); Big Malasada (When you get it: +10% max HP and a full heal. Alolan cardio).
+- **Baas (8):** Awakening (Your Pokémon deal 20% more damage. No more resting at camp); Relic Crown (Start every battle with +1 Attack and +1 Sp. Atk. Battles pay no money); Odd Keystone (Start every battle with +1 Defense and +1 Sp. Def. All intents read ???); Meteorite (Your Pokémon deal 35% more damage, but also take 15% more); Dubious Disc (Your team takes 20% less damage. Porygon2 refuses to upgrade moves); Max Mushrooms (+25% max HP for both Pokémon. No more healing after battles); Star Piece (Elites give two relic rewards instead of one); Gracidea (Every new act fully heals your team (normally 40%)).
+
+## Nog open
+- Spire-codex, golven (derde vijand), dramatischer baas-intro, ja/nee-vraag bij de receptioniste, definitieve teksten (events, hints, lobby) door Jordi.
+- Balans bijstellen na Jordi's testfeedback (de rekensheets herberekenen alles). Run-structuur tegen Slay the Spire: `tools/grounded/spire/runsim.py` (v0.8.107: heal na gevecht 8%, rust 30%, nieuwe act 40%, startgeld 75¥, relic 150¥, kaartkansen 45/25/15/7/8, gevechten zwaarder per act).

@@ -96,6 +96,13 @@ enum BattleTransition
     B_TRANSITION_ZANGOOSE, // Project Grounded: wilde Zangoose, een reuzenklauw scheurt het scherm open
     B_TRANSITION_SEVIPER, // Project Grounded: wilde Seviper, een schermvullende Poison Fang
     B_TRANSITION_HEATRAN, // Project Grounded: Heatran, lavapluimen en een uitbarsting
+    B_TRANSITION_SHAYMIN, // Project Grounded: Shaymin, een wervelwind van bloemen in alle kleuren en een bloementapijt
+    B_TRANSITION_GENESECT, // Project Grounded: Genesect, scanlijnen, rood vizier en Techno Blast
+    B_TRANSITION_MEWTWO, // Project Grounded: Mewtwo, kweektank in het Cinnabar-lab, dagboek, glas spat uiteen
+    B_TRANSITION_GIRATINA, // Project Grounded: Giratina, het scherm scheurt, klapt om en de schaduwvleugels sluiten het af
+    B_TRANSITION_VICTINI, // Project Grounded: Victini, een grote V in vuur (V-create)
+    B_TRANSITION_JIRACHI, // Project Grounded: Jirachi, een wensster tuimelt fladderend over het beeld
+    B_TRANSITION_DARKRAI, // Project Grounded: Darkrai, nachtmerrierook sluit het beeld en een blauw oog gaat open
     B_TRANSITION_COUNT
 };
 

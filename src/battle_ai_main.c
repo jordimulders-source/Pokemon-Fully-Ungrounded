@@ -5,6 +5,7 @@
 #include "battle_anim.h"
 #include "battle_ai_util.h"
 #include "battle_ai_main.h"
+#include "spire.h"
 #include "battle_controllers.h"
 #include "battle_factory.h"
 #include "battle_setup.h"
@@ -378,6 +379,7 @@ void ComputeBattlerDecisions(u32 battler)
 
         // AI's move scoring
         gAiBattleData->chosenMoveIndex[battler] = BattleAI_ChooseMoveIndex(battler); // Calculate score and chose move index
+        Spire_ApplyPattern(battler); // Project Grounded: The Spire, vaste patronen (intenties)
         if (isAiBattler)
             BattlerChooseNonMoveAction();
         ModifySwitchAfterMoveScoring(battler);

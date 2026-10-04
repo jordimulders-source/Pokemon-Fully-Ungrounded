@@ -1,5 +1,20 @@
 NewMauville_ThunderCave_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, NewMauville_ThunderCave_OnLoad
 	.byte 0
+
+NewMauville_ThunderCave_OnLoad:
+	call_if_set FLAG_NEW_MAUVILLE_VAULT_OPEN, NewMauville_ThunderCave_EventScript_SetVaultDoor
+	end
+
+@ Project Grounded: kluisdeur naar Genesect in de bovenwand (x 6-8), zelfde deur als de ingang
+NewMauville_ThunderCave_EventScript_SetVaultDoor::
+	setmetatile 6, 0, 0x2C3, TRUE
+	setmetatile 7, 0, 0x2C4, TRUE
+	setmetatile 8, 0, 0x2C5, TRUE
+	setmetatile 6, 1, 0x2CB, TRUE
+	setmetatile 7, 1, 0x2CC, FALSE
+	setmetatile 8, 1, 0x2CD, TRUE
+	return
 
 @ Project Grounded: Raikou in het kapotte ondergrondse datacenter onder New Mauville
 NewMauville_ThunderCave_EventScript_Raikou::
@@ -25,8 +40,62 @@ NewMauville_ThunderCave_EventScript_Rubble::
 	msgbox NewMauville_ThunderCave_Text_Rubble, MSGBOX_SIGN
 	end
 
+@ Project Grounded: post-game terminal: de kluis met Genesect herstarten (de juiste keuze is uit- en weer aanzetten)
 NewMauville_ThunderCave_EventScript_Monitor1::
-	msgbox NewMauville_ThunderCave_Text_Monitor1, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_NEW_MAUVILLE_VAULT_OPEN, NewMauville_ThunderCave_EventScript_TerminalDone
+	goto_if_unset FLAG_SYS_GAME_CLEAR, NewMauville_ThunderCave_EventScript_TerminalLocked
+	msgbox NewMauville_ThunderCave_Text_TerminalBoot, MSGBOX_DEFAULT
+NewMauville_ThunderCave_EventScript_TerminalMenu::
+	message NewMauville_ThunderCave_Text_TerminalPrompt
+	waitmessage
+	dynmultichoice 17, 1, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, NewMauville_ThunderCave_Text_OptHit, NewMauville_ThunderCave_Text_OptWattson, NewMauville_ThunderCave_Text_OptReboot, NewMauville_ThunderCave_Text_OptLogOut
+	switch VAR_RESULT
+	case 0, NewMauville_ThunderCave_EventScript_TerminalHit
+	case 1, NewMauville_ThunderCave_EventScript_TerminalWattson
+	case 2, NewMauville_ThunderCave_EventScript_TerminalReboot
+	msgbox NewMauville_ThunderCave_Text_TerminalLogOut, MSGBOX_DEFAULT
+	releaseall
+	end
+
+NewMauville_ThunderCave_EventScript_TerminalLocked::
+	msgbox NewMauville_ThunderCave_Text_Monitor1, MSGBOX_DEFAULT
+	releaseall
+	end
+
+NewMauville_ThunderCave_EventScript_TerminalHit::
+	playse SE_M_DOUBLE_SLAP
+	waitse
+	msgbox NewMauville_ThunderCave_Text_TerminalHit, MSGBOX_DEFAULT
+	goto NewMauville_ThunderCave_EventScript_TerminalMenu
+
+NewMauville_ThunderCave_EventScript_TerminalWattson::
+	playse SE_POKENAV_CALL
+	waitse
+	msgbox NewMauville_ThunderCave_Text_TerminalWattson, MSGBOX_DEFAULT
+	goto NewMauville_ThunderCave_EventScript_TerminalMenu
+
+NewMauville_ThunderCave_EventScript_TerminalReboot::
+	msgbox NewMauville_ThunderCave_Text_TerminalShutdown, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PC_OFF
+	fadescreen FADE_TO_BLACK
+	delay 40
+	playse SE_PC_ON
+	fadescreen FADE_FROM_BLACK
+	msgbox NewMauville_ThunderCave_Text_TerminalBooting, MSGBOX_DEFAULT
+	setflag FLAG_NEW_MAUVILLE_VAULT_OPEN
+	call NewMauville_ThunderCave_EventScript_SetVaultDoor
+	special DrawWholeMapView
+	playse SE_BANG
+	waitse
+	msgbox NewMauville_ThunderCave_Text_VaultOpened, MSGBOX_DEFAULT
+	releaseall
+	end
+
+NewMauville_ThunderCave_EventScript_TerminalDone::
+	msgbox NewMauville_ThunderCave_Text_TerminalDone, MSGBOX_DEFAULT
+	releaseall
 	end
 
 NewMauville_ThunderCave_EventScript_Monitor2::
@@ -54,3 +123,62 @@ NewMauville_ThunderCave_Text_Monitor3:
 	.string "A cracked monitor. Last message:\p"
 	.string "WATTSON, PLEASE PAY THE POWER BILL.\n"
 	.string "Sent: 1998.$"
+
+NewMauville_ThunderCave_Text_TerminalBoot:
+	.string "The screen flickers.\n"
+	.string "ERROR: FUTURE NOT FOUND.\p"
+	.string "SECTOR B: 1 UNREGISTERED LIFEFORM.\n"
+	.string "BUG-TYPE. ARMED. HOLDS GRUDGES.\p"
+	.string "It looks like you're trying to open a\n"
+	.string "vault. Would you like help?$"
+
+NewMauville_ThunderCave_Text_TerminalPrompt:
+	.string "SELECT RECOVERY PROCEDURE:$"
+
+NewMauville_ThunderCave_Text_OptHit:
+	.string "HIT IT$"
+
+NewMauville_ThunderCave_Text_OptWattson:
+	.string "CALL WATTSON$"
+
+NewMauville_ThunderCave_Text_OptReboot:
+	.string "OFF AND ON AGAIN$"
+
+NewMauville_ThunderCave_Text_OptLogOut:
+	.string "LOG OUT$"
+
+NewMauville_ThunderCave_Text_TerminalHit:
+	.string "You give the server a firm slap.\p"
+	.string "Percussive maintenance. Your dad would\n"
+	.string "be proud. The server is not.$"
+
+NewMauville_ThunderCave_Text_TerminalWattson:
+	.string "Calling WATTSON…\p"
+	.string "“Wahahahah! Just turn it off and on\n"
+	.string "again! That's how I fix the city's power\l"
+	.string "grid!”\p"
+	.string "He hangs up. That was actually helpful.\n"
+	.string "Don't tell him.$"
+
+NewMauville_ThunderCave_Text_TerminalLogOut:
+	.string "You log out. Behind the wall, something\n"
+	.string "metal sighs and goes back to plotting.$"
+
+NewMauville_ThunderCave_Text_TerminalShutdown:
+	.string "SHUTTING DOWN…\n"
+	.string "SAVING CRYPTO WALLET… FAILED.$"
+
+NewMauville_ThunderCave_Text_TerminalBooting:
+	.string "BOOTING NEW MAUVILLE OS 98…\n"
+	.string "INSTALLING 4,271 UPDATES… SKIPPED.\p"
+	.string "VAULT DOOR: UNLOCKED. Have a nice day.\n"
+	.string "Please do not open the vault.$"
+
+NewMauville_ThunderCave_Text_VaultOpened:
+	.string "Something heavy clicks open in the back\n"
+	.string "wall. It sounded like a bad decision.$"
+
+NewMauville_ThunderCave_Text_TerminalDone:
+	.string "VAULT DOOR: UNLOCKED.\n"
+	.string "USER HAS ACCEPTED THE TERMS AND\l"
+	.string "CONDITIONS. NOBODY READ THEM.$"

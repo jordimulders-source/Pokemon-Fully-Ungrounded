@@ -976,6 +976,18 @@ bool8 DoesCurrentMapHaveFishingMons(void)
         return FALSE;
 }
 
+// Project Grounded: na het gevecht met de Ditto-jongen (Route 115, strand) bijt er bij hem vaak een Ditto
+static bool32 CheckDittoSpot(void)
+{
+    s16 x = gSaveBlock1Ptr->pos.x, y = gSaveBlock1Ptr->pos.y;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE115)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE115)
+     || !HasTrainerBeenFought(TRAINER_DITTO))
+        return FALSE;
+    return x >= 9 && x <= 20 && y >= 44 && y <= 56 && (Random() % 2) == 0;
+}
+
 void FishingWildEncounter(u8 rod)
 {
     u16 species;
@@ -989,6 +1001,11 @@ void FishingWildEncounter(u8 rod)
 
         species = sWildFeebas.species;
         CreateWildMon(species, level);
+    }
+    else if (CheckDittoSpot())
+    {
+        species = SPECIES_DITTO;
+        CreateWildMon(species, 30 + Random() % 6);
     }
     else
     {

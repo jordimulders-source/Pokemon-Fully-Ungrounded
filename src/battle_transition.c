@@ -152,6 +152,13 @@ static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
 static void Task_Heatran(u8); // Project Grounded
+static void Task_Shaymin(u8); // Project Grounded
+static void Task_Genesect(u8); // Project Grounded
+static void Task_Mewtwo(u8); // Project Grounded
+static void Task_Giratina(u8); // Project Grounded
+static void Task_Victini(u8); // Project Grounded
+static void Task_Jirachi(u8); // Project Grounded
+static void Task_Darkrai(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -441,6 +448,34 @@ static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
 static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
+static const u16 sShaymin_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.4bpp");
+static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
+static const u8 sShaymin_Petals[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_petals.bin");
+static const u8 sShaymin_Carpet[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_carpet.bin");
+static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_genesect.4bpp");
+static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
+static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
+static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
+static const u16 sMewtwo_Lab[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_lab.bin");
+static const u16 sMewtwo_Crack[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_crack.bin");
+static const u16 sMewtwo_Page[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_page.bin");
+static const u16 sMewtwo_Burst[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_burst.bin");
+static const u16 sGiratina_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_giratina.4bpp");
+static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
+static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
+static const u8 sGiratina_CrackTime[] = INCBIN_U8("graphics/battle_transitions/route_giratina_crack_t.bin");
+static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/route_giratina_wing.bin");
+static const u16 sVictini_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_victini.4bpp");
+static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
+static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
+static const u16 sJirachi_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.4bpp");
+static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.gbapal");
+static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
+static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
+static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
+static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
+static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
+static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -546,6 +581,13 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
     [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
     [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
+    [B_TRANSITION_SHAYMIN] = Task_Shaymin, // Project Grounded
+    [B_TRANSITION_GENESECT] = Task_Genesect, // Project Grounded
+    [B_TRANSITION_MEWTWO] = Task_Mewtwo, // Project Grounded
+    [B_TRANSITION_GIRATINA] = Task_Giratina, // Project Grounded
+    [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
+    [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
+    [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -5133,7 +5175,7 @@ static bool8 Aurora_Brighten(struct Task *task)
         // wit vastzetten, zodat het uitfaden van wit naar zwart gaat (en de kleuren niet terugkomen)
         CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
-        task->tAuroraDelay = 12;
+        task->tAuroraDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5232,7 +5274,7 @@ static bool8 Deoxys_Flash(struct Task *task)
         CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-        task->tDeoxysDelay = 12;
+        task->tDeoxysDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5349,7 +5391,7 @@ static bool8 Birch_Drip(struct Task *task)
             for (c = 0; c < 32; c++)
                 tilemap[r * 32 + c] = Birch_SolidTile(r, c);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-        task->tBirchDelay = 20;
+        task->tBirchDelay = 10; // Project Grounded: korter vasthouden (was 20)
         task->tState++;
     }
     return FALSE;
@@ -5388,7 +5430,7 @@ static void Beasts_SetAllWhite(void)
 
 static bool8 Beasts_FadeOutAll(struct Task *task)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
     task->tState++;
     return FALSE;
 }
@@ -5465,7 +5507,7 @@ static bool8 Raikou_Storm(struct Task *task)
         // laatste klap: alles wit
         PlaySE(SE_THUNDER);
         Beasts_SetAllWhite();
-        task->tRaikouDelay = 16;
+        task->tRaikouDelay = 8; // Project Grounded: korter wit vasthouden (was 16)
         task->tState++;
     }
     return FALSE;
@@ -5606,7 +5648,7 @@ static bool8 Entei_Brighten(struct Task *task)
     if (task->tEnteiStep > 16)
     {
         Beasts_SetAllWhite();
-        task->tEnteiDelay = 12;
+        task->tEnteiDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5682,6 +5724,13 @@ static void RT_LoadPalette(const struct RouteTransition *rt, struct Task *task)
     LoadPalette(&rt->palettes[frame * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 }
 
+// het huidige (getinte) beeld als basis vastzetten. Daarna blendt een fade naar wit/zwart vanaf dit beeld, in plaats van
+// eerst een frame de ongetinte wereld te tonen (BlendPalettes rekent vanaf de "unfaded" paletten).
+static void RT_FreezePalettes(void)
+{
+    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+}
+
 static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
 {
     struct Task *task = &gTasks[taskId];
@@ -5707,7 +5756,7 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
         RT_LoadPalette(rt, task);
         if (rt->update(task))
         {
-            task->tRtDelay = 10;
+            task->tRtDelay = 2; // Project Grounded: kort vasthouden (was 10)
             task->tState++;
         }
         task->tRtTimer++;
@@ -5719,7 +5768,7 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
             if (rt->sound)
                 m4aSongNumStop(rt->sound);
             CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
-            BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
             task->tState++;
         }
         break;
@@ -6150,7 +6199,7 @@ static void Task_RouteHeat(u8 taskId)
             if (t >= 75)
             {
                 CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
-                BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
                 task->tState++;
             }
         }
@@ -6249,6 +6298,8 @@ static bool8 RTSky_Update(struct Task *task)
         PlaySE(SE_M_SKY_UPPERCUT);
     if (t >= 62)
     {
+        if (t == 62)
+            RT_FreezePalettes();
         BlendPalettes(PALETTES_ALL, min((t - 62) * 2, 16), RGB_WHITE);
         return t >= 70;
     }
@@ -6420,7 +6471,7 @@ static void Task_RouteShort(u8 taskId)
             }
             else
             {
-                task->tRtDelay = 8;
+                task->tRtDelay = 3; // Project Grounded: was 8
                 task->tState++;
             }
         }
@@ -6551,7 +6602,10 @@ static bool8 RTMeteor_Update(struct Task *task)
         PlaySE(SE_M_WING_ATTACK);
     if (t >= 70)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 70) * 2, 16), RGB_WHITE);
+        // het donker in (niet wit: in een grot is er geen reden voor een witte flits)
+        if (t == 70)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 70) * 2, 16), RGB_BLACK);
         return t >= 78;
     }
     return FALSE;
@@ -6604,7 +6658,7 @@ static bool8 RTJagged_Update(struct Task *task)
         PlaySE(SE_M_ROCK_THROW);
     if (t >= 84)
     {
-        BlendPalette(BG_PLTT_ID(15), 16, min((t - 84) * 2, 16), RGB_WHITE);
+        BlendPalette(BG_PLTT_ID(15), 16, min((t - 84) * 2, 16), RGB_BLACK);
         return t >= 92;
     }
     return FALSE;
@@ -6653,7 +6707,10 @@ static bool8 RTRainforest_Update(struct Task *task)
         PlaySE(SE_M_RAZOR_WIND);
     if (t >= 72)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 72) * 2, 16), RGB_WHITE);
+        // het dichte bos in: donker, geen witte flits
+        if (t == 72)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 72) * 2, 16), RGB_BLACK);
         return t >= 80;
     }
     return FALSE;
@@ -6948,6 +7005,8 @@ static bool8 RTGabbyTy_Update(struct Task *task)
     BlendPalettes(RT_SCENE_PALETTES, min(t / 8, 4), RGB(12, 12, 12));
     if (t >= 76)
     {
+        if (t == 76)
+            RT_FreezePalettes();
         BlendPalettes(PALETTES_ALL, min((t - 76) * 4, 16), RGB_WHITE); // flits
         return t >= 80;
     }
@@ -7019,7 +7078,10 @@ static bool8 RTPsyduck_Update(struct Task *task)
     RT_SetSprite(task, 120, 80, min(scale, 512), task->tRtA);
     if (t >= 84)
     {
-        BlendPalettes(PALETTES_ALL, min((t - 84) * 2, 16), RGB_WHITE);
+        // geen witte flits: het vraagteken draait het beeld uit
+        if (t == 84)
+            RT_FreezePalettes();
+        BlendPalettes(PALETTES_ALL, min((t - 84) * 2, 16), RGB_BLACK);
         return t >= 92;
     }
     return FALSE;
@@ -7105,7 +7167,10 @@ static bool8 RTBeachball_Update(struct Task *task)
     {
         // pats! het beeld schudt en wordt wit
         if (t == 60)
+        {
             PlaySE(SE_M_MEGA_KICK);
+            RT_FreezePalettes();
+        }
         SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 7) - 3) & 0x1FF);
         x += (Random() % 7) - 3;
         BlendPalettes(PALETTES_ALL, min((t - 60) * 3, 16), RGB_WHITE);
@@ -7423,4 +7488,788 @@ static const struct RouteTransition sRT_Heatran =
 static void Task_Heatran(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Heatran);
+}
+
+// ---------------- Shaymin: drie spiraalarmen van bloemen in alle kleuren (Gracidea, rozen, tulpen, zonnebloemen,
+// madeliefjes, vergeet-mij-nietjes, viooltjes, lavendel, blaadjes) draaien om het midden van het scherm, de wereld
+// wordt donker zodat de bloemen oplichten, en dan bedekt een bloementapijt vanuit het midden het hele beeld.
+// Drie paletten: BG 15 (roze/rood/fuchsia), 14 (geel/oranje/zalm), 13 (blauw/paars/lila), elk met een schittering.
+// tiles (route_transitions.py, "shaymin"): 1-24 kleine bloemen en blaadjes, 25-48 zes grote bloemen (2x2), 49-63
+// tapijt (gras met een bloem). Het beeld wordt eerst in een buffer opgebouwd en dan in een keer gekopieerd (geen scheuren).
+#define SHAYMIN_PETALS 210
+#define SHAYMIN_CARPET_START 54
+#define SHAYMIN_SMALL 24
+#define SHAYMIN_BIG 6
+#define SHAYMIN_CARPET (1 + SHAYMIN_SMALL + SHAYMIN_BIG * 4)
+#define SHAYMIN_CARPET_TILES 15
+#define SHAYMIN_SCENE_PALETTES (PALETTES_ALL & ~(7 << 13))
+
+// palet per tile (index 0 = leeg)
+static const u8 sShaymin_TilePal[SHAYMIN_CARPET + SHAYMIN_CARPET_TILES] =
+{
+    0,
+    15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13, 13, 13, 13,
+    15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13, 13, 13, 13,
+    15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13,
+};
+
+// cel: bit 0-5 tile, bit 6-7 horizontaal/verticaal spiegelen
+static void RTShaymin_Put(u8 *cells, s32 x, s32 y, u8 cell)
+{
+    if (x >= 0 && x < 30 && y >= 0 && y < 20 && (cells[y * 30 + x] & 0x3F) < SHAYMIN_CARPET) // niet over het tapijt
+        cells[y * 30 + x] = cell;
+}
+
+static bool8 RTShaymin_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, n, r, base, ang, x, y, carpet, dx, dy, b;
+    u8 cells[30 * 20];
+    const u8 *p;
+    u32 f = (t / 4) % 4;
+
+    LoadPalette(&sShaymin_Palette[(4 + f) * 16], BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+    LoadPalette(&sShaymin_Palette[(8 + f) * 16], BG_PLTT_ID(13), PLTT_SIZE_4BPP);
+
+    // het bloementapijt: een cirkel vanuit het midden die steeds groter wordt (patroon uit sShaymin_Carpet)
+    carpet = (t >= SHAYMIN_CARPET_START) ? (t - SHAYMIN_CARPET_START) * 3 / 2 : -1;
+    for (y = 0; y < 20; y++)
+    {
+        dy = (y * 2 - 19) * 3;
+        for (x = 0; x < 30; x++)
+        {
+            dx = x * 4 - 58;
+            cells[y * 30 + x] = (carpet >= 0 && dx * dx + dy * dy <= carpet * carpet * 16) ? sShaymin_Carpet[y * 30 + x] : 0;
+        }
+    }
+
+    // de wervelwind: drie spiraalarmen die naar buiten draaien; elke zesde is een grote bloem. Per bloem staan straal,
+    // hoek en tile vooraf in sShaymin_Petals (geen delingen per frame: anders haalt de GBA het niet in een frame)
+    n = min(16 + t * 6, SHAYMIN_PETALS);
+    base = (t * 3) % 150;
+    for (i = 0, p = sShaymin_Petals; i < n; i++, p += 3)
+    {
+        r = p[0] + base;
+        if (r >= 150)
+            r -= 150;
+        ang = (p[1] + r + t * 5) & 0xFF;
+        x = 15 + (Cos(ang, r) >> 3);
+        y = 10 + ((Sin(ang, r) * 171) >> 11);       // r * 2/3, dan /8
+        if (p[2] & 0x80)
+        {
+            b = 1 + SHAYMIN_SMALL + (p[2] & 0x7F) * 4;
+            RTShaymin_Put(cells, x, y, b);
+            RTShaymin_Put(cells, x + 1, y, b + 1);
+            RTShaymin_Put(cells, x, y + 1, b + 2);
+            RTShaymin_Put(cells, x + 1, y + 1, b + 3);
+        }
+        else
+        {
+            // elke kleine bloem een andere soort; ze tuimelen (spiegelen met de draaihoek)
+            RTShaymin_Put(cells, x, y, p[2] | ((ang >> 6) << 6));
+        }
+    }
+
+    for (y = 0; y < 20; y++)
+    {
+        for (x = 0; x < 30; x++)
+        {
+            b = cells[y * 30 + x];
+            tilemap[y * 32 + x] = (b & 0x3F) ? ((b & 0x3F) | ((b >> 6) << 10) | (sShaymin_TilePal[b & 0x3F] << 12)) : 0;
+        }
+    }
+
+    if (t == 0 || t == 30)
+        PlaySE(SE_M_PETAL_DANCE);
+    // de wereld wordt donkergroen; als het tapijt het beeld vult nog een korte, zachte lichtflits over de bloemen
+    BlendPalettes(SHAYMIN_SCENE_PALETTES, min(t / 4, 10), RGB(3, 8, 5));
+    if (carpet >= 22)
+        BlendPalettes(PALETTES_ALL & ~SHAYMIN_SCENE_PALETTES, max(0, 6 - abs(carpet - 25) * 2), RGB(31, 28, 30));
+    return carpet >= 31;
+}
+
+static const struct RouteTransition sRT_Shaymin =
+{
+    sShaymin_Tileset, sizeof(sShaymin_Tileset), sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
+};
+
+static void Task_Shaymin(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Shaymin);
+}
+
+// ---------------- Genesect: CRT-scanlijnen, een rood vizier springt van doel naar doel tot het op het midden vastklikt
+// ("LOCKED ON"), dan een Techno Blast-straal die van links het beeld in schiet en het hele scherm vult.
+// tiles: 1 scanlijnen, 2 scanbalk, 3-66 vizier (8x8), 67-88 "LOCKED ON" (11x2), 89/90/91 straal boven/kern/onder
+#define GENESECT_HOPS 7
+static const u8 sGenesectHopX[GENESECT_HOPS] = {2, 19, 4, 18, 8, 14, 11};
+static const u8 sGenesectHopY[GENESECT_HOPS] = {1, 10, 11, 2, 4, 8, 6};
+#define GENESECT_HOP_START 6
+#define GENESECT_LOCK (GENESECT_HOP_START + (GENESECT_HOPS - 1) * 5)
+#define GENESECT_BEAM 52
+
+static bool8 RTGenesect_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, i, r, c, w, h;
+    bool32 show;
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = RT_TILE(1);
+    if (t < 40)
+    {
+        r = (t * 2) % 20;
+        for (c = 0; c < 32; c++)
+        {
+            tilemap[r * 32 + c] = RT_TILE(2);
+            tilemap[((r + 1) % 20) * 32 + c] = RT_TILE(2);
+        }
+    }
+    if (t == 0)
+        PlaySE(SE_PC_LOGIN);
+
+    if (t >= GENESECT_HOP_START)
+    {
+        i = min((t - GENESECT_HOP_START) / 5, GENESECT_HOPS - 1);
+        if (t < GENESECT_LOCK && (t - GENESECT_HOP_START) % 5 == 0)
+            PlaySE(SE_SELECT);
+        if (t == GENESECT_LOCK)
+            PlaySE(SE_M_LOCK_ON);
+        show = (t < GENESECT_LOCK || t >= GENESECT_LOCK + 12 || ((t - GENESECT_LOCK) / 3) % 2 == 0);
+        if (show)
+        {
+            RT_PutBlock(tilemap, sGenesectHopX[i], sGenesectHopY[i], 3, 8, 8);
+            if (t >= GENESECT_LOCK)
+                RT_PutBlock(tilemap, 9, 15, 67, 11, 2);
+        }
+    }
+
+    if (t >= GENESECT_BEAM)
+    {
+        if (t == GENESECT_BEAM)
+            PlaySE(SE_M_HYPER_BEAM);
+        w = min((t - GENESECT_BEAM) * 6 + 2, 32);
+        h = (t >= GENESECT_BEAM + 5) ? (t - GENESECT_BEAM - 5) : 0;
+        // kern op rij 9-10, groeit naar boven en onder; rand boven (89) en onder (91)
+        for (r = 8 - h; r <= 11 + h; r++)
+        {
+            if (r < 0 || r >= 20)
+                continue;
+            for (c = 0; c < w; c++)
+                tilemap[r * 32 + c] = RT_TILE(r == 8 - h ? 89 : (r == 11 + h ? 91 : 90));
+        }
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 2, 9), RGB(10, 0, 3));
+    if (t >= GENESECT_BEAM + 15)
+    {
+        BlendPalettes(PALETTES_ALL, min((t - GENESECT_BEAM - 15) * 4, 16), RGB_WHITE);
+        return t >= GENESECT_BEAM + 19;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Genesect =
+{
+    sGenesect_Tileset, sizeof(sGenesect_Tileset), sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
+};
+
+static void Task_Genesect(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Genesect);
+}
+
+// ---------------- Mewtwo: het lab op Cinnabar Island. Mewtwo zweeft als silhouet in een gloeiende kweektank (belletjes
+// stijgen, de consoles tonen een DNA-streng en een hartslag), het dagboek uit de Pokémon Mansion verschijnt regel voor
+// regel ("Feb. 6: Mew gave birth. We named the newborn MEWTWO." / "Sept. 1: MEWTWO is far too powerful. We have failed
+// to curb its vicious tendencies..."), dan gaan de ogen open, barst het glas in drie stappen en spat de tank uiteen in
+// een psychische schokgolf (scherven vliegen weg, daarachter Mewtwo met witte ogen in een paars veld).
+// tiles en tilemaps: route_transitions.py ("mewtwo"): 1-3 rand van de golf (buiten/fel/binnen), 4-7 scherven.
+// Paletten: 0-2 rustig, 3-5 ontwaakt, 6-8 schokgolf (elk een kleurcyclus van 3 standen).
+#define MEWTWO_LAB    8
+#define MEWTWO_PAGE1  14
+#define MEWTWO_PAGE2  50
+#define MEWTWO_LINE   15    // frames per regel (2 tiles per frame)
+#define MEWTWO_EYES   88
+#define MEWTWO_CRACK  96    // barst 1, +6 barst 2, +12 barst 3
+#define MEWTWO_BURST  114
+#define MEWTWO_SHARDS 14
+
+static bool8 RTMewtwo_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, r, c, k, dx, dy, d2, rad, page, line, reveal, ang, dist, x, y;
+    const u16 *map = sMewtwo_Lab;
+    u16 v;
+
+    if (t >= MEWTWO_CRACK)
+        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / 6, 2) * 600];
+    rad = (t >= MEWTWO_BURST) ? 12 + (t - MEWTWO_BURST) * 9 : -1;
+    page = (t >= MEWTWO_PAGE2) ? 1 : 0;
+
+    // elk vak in een keer zijn eindwaarde geven (niet eerst wissen: dat geeft scheuren)
+    for (r = 0; r < 20; r++)
+    {
+        for (c = 0; c < 30; c++)
+        {
+            v = 0;
+            if (t >= MEWTWO_LAB)
+            {
+                v = map[r * 30 + c];
+                if (r >= 16 && t >= MEWTWO_PAGE1)
+                {
+                    line = (r - 16) / 2;
+                    reveal = (t - (page ? MEWTWO_PAGE2 : MEWTWO_PAGE1) - line * MEWTWO_LINE) * 2;
+                    if (c < reveal)
+                        v = sMewtwo_Page[page * 120 + (r - 16) * 30 + c];
+                }
+            }
+            if (rad >= 0)
+            {
+                dx = c * 8 + 4 - 120;
+                dy = r * 8 + 4 - 64;
+                d2 = dx * dx + dy * dy;
+                if (rad > 16 && d2 < (rad - 16) * (rad - 16))
+                    v = sMewtwo_Burst[r * 30 + c];
+                else if (rad > 8 && d2 < (rad - 8) * (rad - 8))
+                    v = 3;
+                else if (d2 < rad * rad)
+                    v = 2;
+                else if (d2 < (rad + 8) * (rad + 8))
+                    v = 1;
+            }
+            tilemap[r * 32 + c] = v ? RT_TILE(v) : 0;
+        }
+    }
+
+    // glasscherven vliegen vooruit de schokgolf uit
+    if (rad >= 0)
+    {
+        for (k = 0; k < MEWTWO_SHARDS; k++)
+        {
+            ang = (k * 256 / MEWTWO_SHARDS + (k * 37) % 11) & 0xFF;
+            dist = 30 + (t - MEWTWO_BURST) * (12 + (k % 3) * 3);
+            x = 120 + Cos(ang, dist);
+            y = 64 + Sin(ang, dist) * 3 / 4;
+            if (x < 0 || x >= 240 || y < 0 || y >= 160 || dist < rad + 10)
+                continue;
+            tilemap[(y / 8) * 32 + x / 8] = RT_TILE(4 + k % 4) | ((k & 1) << 10) | ((k & 2) << 10);
+        }
+    }
+
+    // paletten: rustig (via de runner), ontwaakt (ogen gloeien, vloeistof flakkert), schokgolf (ringen naar buiten)
+    if (t >= MEWTWO_BURST)
+        LoadPalette(&sMewtwo_Palette[(6 + (t / 2) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    else if (t >= MEWTWO_EYES)
+        LoadPalette(&sMewtwo_Palette[(3 + (t / 3) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 8)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) * 2, RGB_BLACK); // het lab komt uit het donker
+
+    // trillen: licht bij het barsten, harder bij de schokgolf
+    if (t >= MEWTWO_BURST)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 5) - 2) & 0x1FF);
+    }
+    else if (t >= MEWTWO_CRACK)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+
+    if (t == MEWTWO_LAB)
+        PlaySE(SE_M_BUBBLE);
+    if (t == MEWTWO_EYES)
+        PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
+    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + 6 || t == MEWTWO_CRACK + 12)
+        PlaySE(SE_ICE_CRACK);
+    if (t == MEWTWO_BURST)
+        PlaySE(SE_ICE_BREAK);
+    if (t == MEWTWO_BURST + 3)
+        PlaySE(SE_M_PSYBEAM);
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t * 2, 16), RGB_BLACK);
+    if (t >= MEWTWO_BURST + 26)
+    {
+        BlendPalettes(PALETTES_ALL, min((t - MEWTWO_BURST - 26) * 4, 16), RGB(31, 28, 31));
+        return t >= MEWTWO_BURST + 30;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Mewtwo =
+{
+    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
+};
+
+static void Task_Mewtwo(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Mewtwo);
+}
+
+// ---------------- Giratina: het scherm scheurt open (paarse breuklijnen vanuit het midden, het beeld golft), dan klapt
+// de wereld ondersteboven (HBlank-scroll van BG1-3 per beeldlijn, zoals een kaart die omdraait) en sluiten de zes
+// schaduwvleugels van de Origin Forme het beeld af, van links en rechts. Tiles: route_transitions.py ("giratina").
+#define GIRATINA_FLIP_START 30
+#define GIRATINA_FLIP_LEN   26
+#define GIRATINA_WING_START (GIRATINA_FLIP_START + GIRATINA_FLIP_LEN)
+#define GIRATINA_WING_LEN   28
+
+static void VBlankCB_Giratina(void)
+{
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+}
+
+// schrijft tijdens de HBlank van lijn y de scroll van lijn y + 1 (BG1-3 horizontaal en verticaal)
+static void HBlankCB_Giratina(void)
+{
+    u32 y = REG_VCOUNT;
+    u16 h, v;
+
+    if (y >= 227)
+        y = 0;
+    else if (y >= DISPLAY_HEIGHT - 1)
+        return;
+    else
+        y++;
+    h = gScanlineEffectRegBuffers[1][y];
+    v = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + y];
+    REG_BG1HOFS = h;
+    REG_BG2HOFS = h;
+    REG_BG3HOFS = h;
+    REG_BG1VOFS = v;
+    REG_BG2VOFS = v;
+    REG_BG3VOFS = v;
+}
+
+static void RTGiratina_Init(struct Task *task)
+{
+    u32 i;
+
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    for (i = 0; i < DISPLAY_HEIGHT; i++)
+    {
+        gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = sTransitionData->cameraX;
+        gScanlineEffectRegBuffers[0][DISPLAY_HEIGHT + i] = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + i] = sTransitionData->cameraY;
+    }
+    SetVBlankCallback(VBlankCB_Giratina);
+    SetHBlankCallback(HBlankCB_Giratina);
+    EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
+}
+
+static bool8 RTGiratina_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    u16 *buf = gScanlineEffectRegBuffers[0];
+    s32 t = task->tRtTimer, i, r, c, cc, k, amp, half, off, p;
+
+    sTransitionData->VBlank_DMA = FALSE;
+
+    // tilemap in een keer per vak (niet eerst wissen: dat geeft scheuren in beeld omdat het scherm al getekend wordt)
+    // scheuren: elk vak verschijnt op zijn eigen moment, vanuit het midden naar buiten. Daarover de zes schaduwvleugels,
+    // die van links en rechts het beeld in schuiven (rechts = links 180 graden gedraaid; ze delen nooit een tile)
+    off = 30;
+    if (t >= GIRATINA_WING_START)
+    {
+        p = min(t - GIRATINA_WING_START, GIRATINA_WING_LEN);
+        off = 30 * (GIRATINA_WING_LEN - p) * (GIRATINA_WING_LEN - p) / (GIRATINA_WING_LEN * GIRATINA_WING_LEN);
+    }
+    for (r = 0; r < 20; r++)
+    {
+        for (c = 0; c < 30; c++)
+        {
+            u16 v = 0, w;
+            if (sGiratina_CrackTime[r * 30 + c] <= t * 3 / 2)
+                v = RT_TILE(sGiratina_Crack[r * 30 + c]);
+            cc = c + off;
+            if (cc < 30 && (w = sGiratina_Wing[r * 30 + cc]) != 0)
+                v = RT_TILE(w);
+            cc = 29 - c + off;
+            if (cc < 30 && (w = sGiratina_Wing[(19 - r) * 30 + cc]) != 0)
+                v = RT_TILE(w) | 0x0C00;
+            tilemap[r * 32 + c] = v;
+        }
+    }
+
+    // golvend beeld (horizontaal), dat tijdens het omklappen weer rustig wordt
+    amp = (t < GIRATINA_FLIP_START) ? t / 4 : max(0, 7 - (t - GIRATINA_FLIP_START) / 3);
+    SetSinWave((s16 *)buf, sTransitionData->cameraX, t * 10, 5, amp, DISPLAY_HEIGHT);
+
+    if (t < GIRATINA_FLIP_START)
+    {
+        BlendPalettes(RT_SCENE_PALETTES, min(t / 4, 6), RGB(10, 6, 14));
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            buf[DISPLAY_HEIGHT + i] = sTransitionData->cameraY;
+    }
+    else
+    {
+        // omklappen om de horizontale middellijn: lijn y toont beeldlijn 80 + (y - 80) / k, k van 1 naar -1
+        p = min(t - GIRATINA_FLIP_START, GIRATINA_FLIP_LEN);
+        k = Cos((p * 128 / GIRATINA_FLIP_LEN) & 0xFF, 256);
+        half = 80 * abs(k) / 256;
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+        {
+            s32 src = i;
+            if (abs(k) >= 6)
+                src = (159 + (2 * i - 159) * 256 / k) / 2;
+            buf[DISPLAY_HEIGHT + i] = sTransitionData->cameraY + src - i;
+        }
+        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
+        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(80 - half, 80 + half));
+        SetGpuReg(REG_OFFSET_WININ, abs(k) >= 6 ? WININ_WIN0_BG_ALL : WININ_WIN0_BG0);
+        SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0);
+        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+        BlendPalettes(RT_SCENE_PALETTES, min(6 + (t - GIRATINA_FLIP_START) / 4, 11), RGB(7, 0, 11));
+        gPlttBufferFaded[0] = RGB_BLACK; // de leegte buiten het omklappende beeld
+        if (t == GIRATINA_FLIP_START)
+            PlaySE(SE_M_TELEPORT);
+        if (t == GIRATINA_FLIP_START + GIRATINA_FLIP_LEN / 2)
+            PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
+    }
+
+    if (t >= GIRATINA_WING_START)
+    {
+        SetGpuReg(REG_OFFSET_BG0VOFS, Sin((t * 8) & 0xFF, 2) & 0x1FF);
+        if (t == GIRATINA_WING_START)
+            PlaySE(SE_M_NIGHTMARE);
+        if (t == GIRATINA_WING_START + 10)
+            PlaySE(SE_M_WING_ATTACK);
+    }
+    if (t == 0)
+        PlaySE(SE_M_SCREECH);
+    if (t == 14)
+        PlaySE(SE_M_DETECT);
+    sTransitionData->VBlank_DMA++;
+    return t >= GIRATINA_WING_START + GIRATINA_WING_LEN + 4;
+}
+
+static void RTGiratina_Finish(struct Task *task)
+{
+    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+    SetGpuReg(REG_OFFSET_WININ, 0);
+    SetGpuReg(REG_OFFSET_WINOUT, 0);
+    SetHBlankCallback(NULL);
+}
+
+static const struct RouteTransition sRT_Giratina =
+{
+    sGiratina_Tileset, sizeof(sGiratina_Tileset), sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
+};
+
+static void Task_Giratina(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Giratina);
+}
+
+// ---------------- Victini: een grote V komt in vuur van onder het beeld aanvliegen (V-create), met een vlammenspoor
+// onder de punt. Hij slaat in (wit-heet, het beeld schudt) en dan vliegt alles in brand.
+// tiles (tools/grounded/route_transitions.py): 1-3 vuur, 4-5 vlammentongen, 6 vonken, daarna de V (30x18, sVictini_V)
+#define VICTINI_RISE_START  6
+#define VICTINI_RISE_LEN    26
+#define VICTINI_IMPACT      (VICTINI_RISE_START + VICTINI_RISE_LEN)
+#define VICTINI_FLOOD_START (VICTINI_IMPACT + 16)
+
+// het beeld wordt in een buffer opgebouwd en pas de volgende frame (direct na de VBlank) in één keer naar VRAM gekopieerd,
+// samen met de scroll; anders zie je halve frames (de V flitst door de vlammen heen)
+#define VICTINI_ROWS 21
+static EWRAM_DATA u16 sVictini_Map[VICTINI_ROWS * 32] = {0};
+static EWRAM_DATA s16 sVictini_Scroll[2] = {0};
+
+static void RTVictini_Fire(u16 *map, s32 r, s32 c, s32 t, bool32 top)
+{
+    if (r < 0 || r >= VICTINI_ROWS)
+        return;
+    map[r * 32 + (c & 31)] = RT_TILE(top ? 4 + ((c + t / 3) & 1) : 1 + ((r + c + t / 2) % 3));
+}
+
+static bool8 RTVictini_Update(struct Task *task)
+{
+    u16 *map = sVictini_Map;
+    s32 t = task->tRtTimer, i, r, c, p, base, flood, ground;
+
+    if (t > 0)
+    {
+        CpuCopy16(sVictini_Map, RT_Tilemap(), sizeof(sVictini_Map));
+        SetGpuReg(REG_OFFSET_BG0HOFS, sVictini_Scroll[0] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, sVictini_Scroll[1] & 0x1FF);
+    }
+    CpuFill16(0, sVictini_Map, sizeof(sVictini_Map));
+
+    // positie van de V in pixels (bovenkant), van onder het beeld naar boven met een uitloop
+    if (t < VICTINI_RISE_START)
+        p = 176;
+    else if (t < VICTINI_IMPACT)
+    {
+        s32 u = VICTINI_RISE_LEN - (t - VICTINI_RISE_START); // aflopend
+        p = 8 + 168 * u * u / (VICTINI_RISE_LEN * VICTINI_RISE_LEN);
+    }
+    else
+        p = 8;
+    base = p >> 3;
+
+    // vonken stijgen op over het beeld
+    for (i = 0; i < 6; i++)
+        map[((19 - ((t / 2 + i * 7) % 20)) * 32) + ((i * 11 + t / 5) % 30)] = RT_TILE(6);
+
+    // vuur aan de onderrand, groeit de eerste frames aan
+    ground = min(t / 4, 2);
+    for (c = 0; c < 31; c++)
+        for (r = 21 - ground; r <= 20; r++)
+            RTVictini_Fire(map, r, c, t, r == 21 - ground);
+
+    // vlammenspoor onder de punt zolang hij vliegt
+    if (t >= VICTINI_RISE_START && t < VICTINI_IMPACT + 6)
+    {
+        for (r = max(base + 17, 0); r <= 20; r++)
+        {
+            for (c = 14; c <= 15; c++)
+                RTVictini_Fire(map, r, c, t, FALSE);
+            if (((r + t) & 1) == 0)
+            {
+                map[r * 32 + 13] = RT_TILE(6);
+                map[r * 32 + 16] = RT_TILE(6);
+            }
+        }
+    }
+
+    // de V zelf
+    for (r = 0; r < 18; r++)
+    {
+        if (base + r < 0 || base + r >= VICTINI_ROWS)
+            continue;
+        for (c = 0; c < 30; c++)
+            if (sVictini_V[r * 30 + c])
+                map[(base + r) * 32 + c] = RT_TILE(sVictini_V[r * 30 + c]);
+    }
+
+    // de vloed: alles vliegt in brand
+    flood = (t >= VICTINI_FLOOD_START) ? (t - VICTINI_FLOOD_START) * 2 : 0;
+    for (r = 21 - min(flood, 22); r <= 20; r++)
+        for (c = 0; c < 31; c++)
+            RTVictini_Fire(map, r, c, t, r == 21 - flood);
+
+    // scroll voor de volgende frame: fijne verschuiving van de V, en schudden na de inslag
+    sVictini_Scroll[0] = 0;
+    sVictini_Scroll[1] = -(p & 7);
+    if (t >= VICTINI_IMPACT)
+    {
+        sVictini_Scroll[0] = (Random() % 5) - 2;
+        sVictini_Scroll[1] += (Random() % 5) - 2;
+    }
+
+    if (t == 0)
+        PlaySE(SE_M_FLAME_WHEEL);
+    if (t == VICTINI_RISE_START + 10)
+        PlayCry_Normal(SPECIES_VICTINI, 0);
+    if (t == VICTINI_IMPACT)
+        PlaySE(SE_M_SACRED_FIRE);
+    if (t == VICTINI_FLOOD_START)
+        PlaySE(SE_M_EXPLOSION);
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 3, t >= VICTINI_IMPACT ? 12 : 8), RGB(16, 3, 0));
+    // inslag: de V wordt even wit-heet
+    if (t >= VICTINI_IMPACT && t < VICTINI_IMPACT + 8)
+        BlendPalettes(1 << 15, 12 - (t - VICTINI_IMPACT) * 3 / 2, RGB_WHITE);
+    if (flood >= 24)
+    {
+        BlendPalettes(PALETTES_ALL, min((flood - 24) * 4, 16), RGB(31, 30, 20));
+        return flood >= 32;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Victini =
+{
+    sVictini_Tileset, sizeof(sVictini_Tileset), sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
+};
+
+static void Task_Victini(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Victini);
+}
+
+// ---------------- Jirachi: een wensster tuimelt fladderend van links naar rechts over het (nachtelijk donker wordende)
+// beeld en laat een spoor van fonkelingen achter; dan komt hij terug, duikt draaiend en groeiend naar het midden en het
+// hele beeld wordt goudwit. BG-tiles: 1-4 fonkelingen (kleurcyclus = twinkelen), sprite: de ster met wenslabels.
+#define JIRACHI_DIVE  44
+#define JIRACHI_FLASH 68
+
+static void RTJirachi_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sJirachiStar_Gfx, sJirachiStar_Palette, -40, 44);
+    RT_SetSprite(task, -40, 44, 256, 0);
+}
+
+static void RTJirachi_Sparkle(u16 *tilemap, s32 x, s32 y)
+{
+    s32 c = (x + (Random() % 17) - 8) / 8, r = (y + (Random() % 17) - 8) / 8;
+    if (c >= 0 && c < 30 && r >= 0 && r < 20)
+        tilemap[r * 32 + c] = RT_TILE(1 + Random() % 4);
+}
+
+static bool8 RTJirachi_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    struct Sprite *star = &gSprites[task->tRtSprite];
+    s32 t = task->tRtTimer, x, y, scale, flip, d, i;
+
+    if (t < JIRACHI_DIVE)
+    {
+        // heen: fladderend (op en neer) en tuimelend (om zijn verticale as) van links naar rechts
+        task->tRtA += 0x0900;
+        x = -40 + t * 7;
+        y = 44 + Sin((t * 14) & 0xFF, 22) + t / 2;
+        scale = 256;
+    }
+    else
+    {
+        // terug: in een boog van rechtsonder naar het midden, steeds sneller draaiend en groter
+        d = min(t - JIRACHI_DIVE, 22);
+        task->tRtA += 0x0900 + d * 0x180;
+        x = 260 - d * 140 / 22;
+        y = 120 - d * 40 / 22 - Sin((d * 6) & 0xFF, 34);
+        scale = 256 + d * 256 / 22;
+    }
+    flip = Cos((t * 9) & 0xFF, scale);
+    if (flip > -40 && flip < 40)
+        flip = (flip < 0) ? -40 : 40;
+    star->x = x;
+    star->y = y;
+    SetOamMatrixRotationScaling(star->oam.matrixNum, flip, scale, task->tRtA);
+
+    // spoor van fonkelingen; bij aankomst in het midden een uitbarsting van fonkelingen over het hele beeld
+    if (t < JIRACHI_FLASH)
+    {
+        RTJirachi_Sparkle(tilemap, x, y);
+        if (t & 1)
+            RTJirachi_Sparkle(tilemap, x - 10, y + 4);
+    }
+    if (t >= JIRACHI_DIVE + 22 && t < JIRACHI_FLASH + 4)
+        for (i = 0; i < 6; i++)
+            RTJirachi_Sparkle(tilemap, Random() % 240, Random() % 160);
+
+    if (t == 0)
+        PlaySE(SE_M_MOONLIGHT);
+    if (t == JIRACHI_DIVE)
+        PlaySE(SE_M_COSMIC_POWER);
+    if (t == JIRACHI_DIVE + 22)
+        PlaySE(SE_SHINY);
+
+    if (t < JIRACHI_FLASH)
+    {
+        BlendPalettes(RT_SceneWithoutSprite(), min(t / 3, 11), RGB(1, 2, 9)); // het wordt nacht
+    }
+    else
+    {
+        // de wens: alles wordt goudwit
+        if (t == JIRACHI_FLASH)
+        {
+            PlaySE(SE_M_HEAL_BELL);
+            RT_FreezePalettes();
+        }
+        BlendPalettes(PALETTES_ALL, min((t - JIRACHI_FLASH) * 2, 16), RGB(31, 30, 21));
+    }
+    return t >= JIRACHI_FLASH + 10;
+}
+
+static const struct RouteTransition sRT_Jirachi =
+{
+    sJirachi_Tileset, sizeof(sJirachi_Tileset), sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
+};
+
+static void Task_Jirachi(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Jirachi);
+}
+
+// ---------------- Darkrai: zwarte nachtmerrierook kruipt van boven en van onder dicht, als oogleden die zwaar worden,
+// en de wereld zakt weg in paars-zwart. Dan gaat midden in het donker één blauw oog open boven een rode kraag; het oog
+// komt op je af en alles wordt zwart. BG-tiles: 1 zwart, 2-4 rookrand onder, 5-7 rookrand boven, 8-9 slierten.
+#define DARKRAI_CLOSED 40
+#define DARKRAI_EYE    46
+#define DARKRAI_LUNGE  70
+
+static void RTDarkrai_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sDarkraiEye_Gfx, sDarkraiEye_Palette, 120, 80);
+    RT_SetSprite(task, 120, 80, 256, 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTDarkrai_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    struct Sprite *eye = &gSprites[task->tRtSprite];
+    s32 t = task->tRtTimer, r, c, top, bottom, d, open, scale;
+
+    for (r = 0; r < 20; r++)
+        for (c = 0; c < 32; c++)
+            tilemap[r * 32 + c] = 0;
+
+    // rook van onder en van boven: per kolom een golvende rand die langzaam omhoog/omlaag kruipt
+    for (c = 0; c < 30; c++)
+    {
+        d = min(t, DARKRAI_CLOSED);
+        bottom = d * 11 / DARKRAI_CLOSED + Sin((c * 23 + t * 5) & 0xFF, 2) + 1;
+        top = d * 11 / DARKRAI_CLOSED + Sin((c * 31 - t * 4 + 64) & 0xFF, 2) + 1;
+        for (r = 0; r < 20; r++)
+        {
+            u16 tileNum = 0;
+            if (t >= DARKRAI_CLOSED || r > 20 - bottom || r < top - 1)
+                tileNum = 1;
+            else if (r == 20 - bottom)
+                tileNum = 2 + (c + t / 6) % 3;
+            else if (r == top - 1)
+                tileNum = 5 + (c + t / 7) % 3;
+            else if (r == 20 - bottom - 2 && (c + t / 4) % 5 == 0)
+                tileNum = 8;
+            else if (r == top + 1 && (c * 3 + t / 5) % 7 == 0)
+                tileNum = 9;
+            if (tileNum)
+                tilemap[r * 32 + c] = RT_TILE(tileNum);
+        }
+    }
+    BlendPalettes(RT_SceneWithoutSprite(), min(t / 3, 13), RGB(3, 0, 6)); // de wereld zakt weg in paars-zwart
+
+    if (t == 0)
+        PlaySE(SE_M_HAZE);
+    if (t == DARKRAI_EYE)
+        PlaySE(SE_M_NIGHTMARE);
+
+    // het oog gaat open (verticaal opschalen), kijkt even, en komt dan op je af
+    if (t >= DARKRAI_EYE)
+    {
+        eye->invisible = FALSE;
+        open = min((t - DARKRAI_EYE) * 24, 256);
+        scale = (t >= DARKRAI_LUNGE) ? 256 + (t - DARKRAI_LUNGE) * 20 : 256;
+        if (scale > 512)
+            scale = 512;
+        SetOamMatrixRotationScaling(eye->oam.matrixNum, scale, max(open * scale / 256, 12), 0);
+        if (t >= DARKRAI_LUNGE)
+        {
+            if (t == DARKRAI_LUNGE)
+            {
+                PlaySE(SE_M_FAINT_ATTACK);
+                RT_FreezePalettes();
+            }
+            if (t >= DARKRAI_LUNGE + 8)
+                BlendPalettes(PALETTES_ALL, min(t - DARKRAI_LUNGE - 8, 16), RGB_BLACK);
+        }
+    }
+    return t >= DARKRAI_LUNGE + 24;
+}
+
+static const struct RouteTransition sRT_Darkrai =
+{
+    sDarkrai_Tileset, sizeof(sDarkrai_Tileset), sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
+};
+
+static void Task_Darkrai(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Darkrai);
 }

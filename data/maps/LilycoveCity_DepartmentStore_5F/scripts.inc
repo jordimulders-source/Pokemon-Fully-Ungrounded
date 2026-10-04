@@ -111,6 +111,26 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Mats:
 	.2byte DECOR_SPIN_MAT
 	pokemartlistend
 
+@ Project Grounded: Rotom-apparaten (Key Items) tussen de andere meubels voor je secret base
+LilycoveCity_DepartmentStore_5F_EventScript_ApplianceClerk::
+	lock
+	faceplayer
+	message LilycoveCity_DepartmentStore_5F_Text_ApplianceWelcome
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_5F_Pokemart_Appliances
+	msgbox LilycoveCity_DepartmentStore_5F_Text_ApplianceBye, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_5F_Pokemart_Appliances:
+	.2byte ITEM_MICROWAVE_OVEN
+	.2byte ITEM_WASHING_MACHINE
+	.2byte ITEM_REFRIGERATOR
+	.2byte ITEM_ELECTRIC_FAN
+	.2byte ITEM_LAWN_MOWER
+	pokemartlistend
+
 LilycoveCity_DepartmentStore_5F_EventScript_PokefanF::
 	msgbox LilycoveCity_DepartmentStore_5F_Text_PlaceFullOfCuteDolls, MSGBOX_NPC
 	end
@@ -163,3 +183,14 @@ LilycoveCity_DepartmentStore_5F_Text_ClosedRooftopForWeather:
 	.string "They closed the rooftop because of the\n"
 	.string "weather.\p"
 	.string "Good. Now I can't leave either.$"
+
+LilycoveCity_DepartmentStore_5F_Text_ApplianceWelcome:
+	.string "Welcome to APPLIANCES.\n"
+	.string "Every product is legally haunted.\p"
+	.string "Show one to a ROTOM and it moves in.\n"
+	.string "Show it again and it moves back out.\p"
+	.string "Like a teenager. But with a warranty.$"
+
+LilycoveCity_DepartmentStore_5F_Text_ApplianceBye:
+	.string "No refunds if your fridge starts\n"
+	.string "having opinions.$"

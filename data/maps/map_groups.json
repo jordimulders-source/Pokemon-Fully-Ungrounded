@@ -33,7 +33,8 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_IndoorRoute124",
+    "gMapGroup_Grounded"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -457,7 +458,15 @@
     "RegielekiCave",
     "RegidragoCave",
     "RegigigasTemple",
-    "FieryPath_HeatranLair"
+    "FieryPath_HeatranLair",
+    "MeteorSpace",
+    "NewMauville_ServerVault",
+    "MeteorFalls_UnknownCave_1F",
+    "MeteorFalls_UnknownCave_B1F",
+    "SkyPillar_ReverseB1F",
+    "SkyPillar_ReverseB2F",
+    "SkyPillar_ReverseB3F",
+    "MtPyre_Nightmare"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -611,7 +620,13 @@
     "NavelRock_Down10",
     "NavelRock_Down11",
     "NavelRock_Bottom",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "BattleFrontier_SpireLobby",
+    "BattleFrontier_StadiumLobby",
+    "BattleFrontier_StadiumArena",
+    "LibertyGarden",
+    "FlowerParadise_Shore",
+    "FlowerParadise_Meadow"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
@@ -648,5 +663,10 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
+  ],
+  "gMapGroup_Grounded": [
+    "Route112_Dojo",
+    "Route112_TowerOfDarkness",
+    "Route112_TowerOfWaters"
   ]
 }

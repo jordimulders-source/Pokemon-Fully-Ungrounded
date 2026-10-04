@@ -182,4 +182,3 @@ FortreeCity_Text_GymSign:
 	.string "LEADER: WINONA\p"
 	.string "“The soaring superstar! Currently\n"
 	.string "jetlagged. Do not disturb.”$"
-

@@ -201,7 +201,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
+#define VAR_STADIUM_STATE                                0x40B8 // Project Grounded: Battle Stadium (2 = kampioen, 3 = verloren; de lobby rondt af)
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
 #define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
@@ -264,9 +264,9 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
+#define VAR_NIGHT_LEGEND_STATE                           0x40F7 // Project Grounded: nachtelijke legendaries (Jirachi, Darkrai): 1 = trigger op deze kaart staat aan, 2 = net in de nachtmerrie, 3 = net wakker
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
+#define VAR_SKY_PILLAR_REVERSE_STATE                     0x40F9 // Project Grounded: omgekeerde Sky Pillar (0 niets, 1 gat open, 2 gezien, 3 geland op B1F, 4 B2F gezien)
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var

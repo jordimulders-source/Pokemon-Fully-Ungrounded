@@ -661,23 +661,23 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_135_ICE_HEAL  0x266 // Project Grounded: Route 135
 #define FLAG_HIDDEN_ITEM_ROUTE_136_STAR_PIECE  0x267 // Project Grounded: Route 136
 #define FLAG_HIDDEN_ITEM_ROUTE_136_MAX_REPEL  0x268 // Project Grounded: Route 136
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
+#define FLAG_HIDE_FALLARBOR_JIRACHI 0x269 // Project Grounded: Jirachi (object) bij de wenssteen in Fallarbor, verborgen tot je een wens doet
+#define FLAG_DEFEATED_JIRACHI       0x26A // Project Grounded: Jirachi gevangen of verslagen (wens-event klaar)
+#define FLAG_DEFEATED_DARKRAI       0x26B // Project Grounded: Darkrai gevangen of verslagen (nachtmerrie op Mt. Pyre klaar)
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
+#define FLAG_NEW_MAUVILLE_VAULT_OPEN  0x271 // Project Grounded: serverkluis onder New Mauville herstart (terminal in de Raikou-grot), deur naar Genesect open
+#define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static) in de serverkluis onder New Mauville
+#define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
+#define FLAG_ITEM_UNKNOWN_CAVE_1F_MAX_REVIVE  0x274 // Project Grounded: item in de verborgen grot achter Meteor Falls (1F)
+#define FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR  0x275 // Project Grounded: item in de verborgen grot achter Meteor Falls (B1F)
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
+#define FLAG_HIDE_SKY_PILLAR_GIRATINA  0x279 // Project Grounded: Giratina (static) onderin de omgekeerde Sky Pillar
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
@@ -685,17 +685,17 @@
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
+#define FLAG_HIDE_FLOWER_PARADISE_SHAYMIN  0x281 // Project Grounded: Shaymin gevangen
+#define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
+#define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
+#define FLAG_KUBFU_EVOLVED  0x284 // Project Grounded: een toren van de dojo voltooid, Kubfu geevolueerd
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
+#define FLAG_RECEIVED_LIBERTY_PASS        0x289 // Project Grounded: Liberty Pass gekregen (uitnodiging voor de Victory-gauntlet, post-game)
+#define FLAG_HIDE_LIBERTY_GARDEN_VICTINI  0x28A // Project Grounded: Victini-object in Liberty Garden (verborgen tot de gauntlet af is)
+#define FLAG_DEFEATED_LIBERTY_VICTINI     0x28B // Project Grounded: Victini in Liberty Garden verslagen/gevangen
 #define FLAG_UNUSED_0x28C  0x28C // Unused Flag
 #define FLAG_UNUSED_0x28D  0x28D // Unused Flag
 #define FLAG_UNUSED_0x28E  0x28E // Unused Flag
@@ -1308,10 +1308,10 @@
 #define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
 #define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
+#define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
+#define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte
+#define FLAG_ITEM_METEOR_SPACE_MOON_STONE                           0x4EB // Project Grounded: meteoriet in de ruimte
+#define FLAG_METEOR_SPACE_RETURNED                                  0x4EC // Project Grounded: een keer heelhuids terug uit de ruimte (kortere teksten daarna)
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag

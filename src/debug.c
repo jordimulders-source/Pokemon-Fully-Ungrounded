@@ -391,9 +391,20 @@ extern const u8 Debug_EventScript_Legend_Latios[];
 extern const u8 Debug_EventScript_Legend_Lugia[];
 extern const u8 Debug_EventScript_Legend_HoOh[];
 extern const u8 Debug_EventScript_Legend_Heatran[];
+extern const u8 Debug_EventScript_Legend_Genesect[];
+extern const u8 Debug_EventScript_Legend_Mewtwo[];
+extern const u8 Debug_EventScript_Legend_Jirachi[];
+extern const u8 Debug_EventScript_Legend_Darkrai[];
 extern const u8 Debug_EventScript_WildFromMap[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
+extern const u8 Debug_EventScript_SpirePrototype[];
+extern const u8 Debug_EventScript_SpireResetRun[];
+extern const u8 Debug_EventScript_SpireWarp[];
+extern const u8 Debug_EventScript_StadiumWarp[];
+extern const u8 BattleStadium_EventScript_Singles[];
+extern const u8 BattleStadium_EventScript_Doubles[];
+extern const u8 Debug_EventScript_StadiumUnlockAll[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -574,11 +585,17 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
     { COMPOUND_STRING("Lugia"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Lugia },
     { COMPOUND_STRING("Ho-Oh"), DebugAction_ExecuteScript, Debug_EventScript_Legend_HoOh },
     { COMPOUND_STRING("Heatran"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Heatran },
+    { COMPOUND_STRING("Genesect"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Genesect },
+    { COMPOUND_STRING("Mewtwo"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Mewtwo },
+    { COMPOUND_STRING("Jirachi"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Jirachi },
+    { COMPOUND_STRING("Darkrai"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Darkrai },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
+    { COMPOUND_STRING("Warp to the Spire"), DebugAction_ExecuteScript, Debug_EventScript_SpireWarp },
+    { COMPOUND_STRING("Warp to the Stadium"), DebugAction_ExecuteScript, Debug_EventScript_StadiumWarp },
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
     { COMPOUND_STRING("Warp to map warp…"), DebugAction_Util_Warp_Warp },
     { COMPOUND_STRING("Set weather…"),      DebugAction_Util_Weather },
@@ -594,6 +611,11 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
+    { COMPOUND_STRING("The Spire"),         DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
+    { COMPOUND_STRING("Spire: reset run"),  DebugAction_ExecuteScript, Debug_EventScript_SpireResetRun },
+    { COMPOUND_STRING("Stadium: singles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Singles },
+    { COMPOUND_STRING("Stadium: doubles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Doubles },
+    { COMPOUND_STRING("Stadium: unlock all"), DebugAction_ExecuteScript, Debug_EventScript_StadiumUnlockAll },
     { NULL }
 };
 

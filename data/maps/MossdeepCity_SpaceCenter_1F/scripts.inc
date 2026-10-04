@@ -90,6 +90,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_Scientist::
 	lock
 	faceplayer
 	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma
+	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_1F_EventScript_DeoxysMeteor
 	msgbox MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection, MSGBOX_DEFAULT
 	release
 	end
@@ -98,6 +99,64 @@ MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma::
 	msgbox MossdeepCity_SpaceCenter_1F_Text_MagmaHaveSightsOnSpaceCenter, MSGBOX_DEFAULT
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
+	release
+	end
+
+@ Project Grounded: Deoxys-event. Na de Hall of Fame schiet deze wetenschapper je de ruimte in (MeteorSpace).
+@ Niet meer zolang Deoxys gevangen is (FLAG_BATTLED_DEOXYS) of verslagen (FLAG_DEFEATED_DEOXYS, tot de volgende League).
+MossdeepCity_SpaceCenter_1F_EventScript_DeoxysMeteor::
+	goto_if_set FLAG_BATTLED_DEOXYS, MossdeepCity_SpaceCenter_1F_EventScript_DeoxysCaught
+	goto_if_set FLAG_DEFEATED_DEOXYS, MossdeepCity_SpaceCenter_1F_EventScript_DeoxysGone
+	goto_if_set FLAG_METEOR_SPACE_RETURNED, MossdeepCity_SpaceCenter_1F_EventScript_LaunchAgain
+	msgbox MossdeepCity_SpaceCenter_1F_Text_MeteorIncoming, MSGBOX_YESNO
+	goto MossdeepCity_SpaceCenter_1F_EventScript_LaunchAnswer
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_LaunchAgain::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_LaunchAgain, MSGBOX_YESNO
+	goto MossdeepCity_SpaceCenter_1F_EventScript_LaunchAnswer
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_LaunchAnswer::
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_SpaceCenter_1F_EventScript_NoLaunch
+	msgbox MossdeepCity_SpaceCenter_1F_Text_StrapIn, MSGBOX_DEFAULT
+	closemessage
+	goto MossdeepCity_SpaceCenter_1F_EventScript_LaunchToSpace
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_NoLaunch::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_NoLaunch, MSGBOX_DEFAULT
+	release
+	end
+
+@ lancering: aftellen, het gebouw trilt, witte flits, dan zwart en je valt op de meteoriet (valwarp)
+MossdeepCity_SpaceCenter_1F_EventScript_LaunchToSpace::
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Countdown, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_EXPLOSION
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 24
+	setvar VAR_0x8007, 3
+	special ShakeCamera
+	waitstate
+	playse SE_M_SKY_UPPERCUT
+	fadescreenspeed FADE_TO_WHITE, 2
+	setvar VAR_0x8004, 9
+	setvar VAR_0x8005, 57
+	special DoMeteorSpaceFallWarp
+	waitstate
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_DeoxysCaught::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_DeoxysCaught, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_DeoxysGone::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_DeoxysGone, MSGBOX_DEFAULT
 	release
 	end
 
@@ -420,3 +479,57 @@ MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice:
 	.string "“Let there be more land! TEAM MAGMA”\p"
 	.string "…I'm going to be an astronaut. I'll eat\n"
 	.string "space ice cream every day.$"
+
+@ Project Grounded: Deoxys-event (placeholders; Jordi herschrijft)
+MossdeepCity_SpaceCenter_1F_Text_MeteorIncoming:
+	.string "Ah. You. The CHAMPION. Perfect timing.\p"
+	.string "Our telescope found a meteorite\n"
+	.string "heading straight for Hoenn. It hits in…\l"
+	.string "soon. “Soon” is a scientific term.\p"
+	.string "Something on it is sending signals.\n"
+	.string "Shaped like DNA. We don't know what\l"
+	.string "that means, but it sounds terrible.\p"
+	.string "We need to shoot someone with very\n"
+	.string "strong POKéMON into space. You're the\l"
+	.string "strongest person we know. Also the only\l"
+	.string "one who didn't run.\p"
+	.string "So. Can we launch you into space? Your\n"
+	.string "POKéMON come too. Legally they have to.$"
+
+MossdeepCity_SpaceCenter_1F_Text_LaunchAgain:
+	.string "The meteorite is still up there, still\n"
+	.string "sending DNA-shaped signals.\p"
+	.string "Another trip into space?$"
+
+MossdeepCity_SpaceCenter_1F_Text_StrapIn:
+	.string "Wonderful! Sign here. And here. And\n"
+	.string "here, which says “no refunds”.\p"
+	.string "The rocket is in the back. Well. The\n"
+	.string "rocket was in the back. Budget cuts.\p"
+	.string "You'll be going up in a cardboard box\n"
+	.string "that says FRAGILE. It's very\l"
+	.string "aerodynamic if you don't think about it.$"
+
+MossdeepCity_SpaceCenter_1F_Text_NoLaunch:
+	.string "Understood. We'll send the intern.\p"
+	.string "He has a SLAKOTH. We're all going to die.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Countdown:
+	.string "Launching in three…\n"
+	.string "two…\p"
+	.string "One is a scary number. We skip that.\p"
+	.string "LIFTOFF!$"
+
+MossdeepCity_SpaceCenter_1F_Text_DeoxysCaught:
+	.string "The meteorite stopped sending signals.\n"
+	.string "So did our coffee machine. Unrelated,\l"
+	.string "probably.\p"
+	.string "Thanks for saving the planet. We can't\n"
+	.string "pay you, but you can keep the box.$"
+
+MossdeepCity_SpaceCenter_1F_Text_DeoxysGone:
+	.string "The meteorite has gone quiet. For now.\p"
+	.string "Our instruments say the signal comes\n"
+	.string "back after your next visit to the\l"
+	.string "POKéMON LEAGUE. Don't ask how\l"
+	.string "instruments know that.$"

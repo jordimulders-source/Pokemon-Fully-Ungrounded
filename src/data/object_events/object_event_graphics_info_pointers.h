@@ -64,6 +64,19 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanAcro
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBirch;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mustard;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Koga;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lance;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Colress;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinnia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man4;
@@ -235,6 +248,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deoxys;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangleRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brandon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
@@ -322,8 +336,22 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PROF_BIRCH] =               &gObjectEventGraphicsInfo_ProfBirch,
     [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
     [OBJ_EVENT_GFX_BROCK] =                    &gObjectEventGraphicsInfo_Brock,
+    [OBJ_EVENT_GFX_MUSTARD] =                  &gObjectEventGraphicsInfo_Mustard,
+    [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_KOGA] =                      &gObjectEventGraphicsInfo_Koga, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_SABRINA] =                   &gObjectEventGraphicsInfo_Sabrina, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_BLAINE] =                    &gObjectEventGraphicsInfo_Blaine, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_GIOVANNI] =                  &gObjectEventGraphicsInfo_Giovanni, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_BLUE] =                      &gObjectEventGraphicsInfo_Blue, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_LORELEI] =                   &gObjectEventGraphicsInfo_Lorelei, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_BRUNO] =                     &gObjectEventGraphicsInfo_Bruno, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_AGATHA] =                    &gObjectEventGraphicsInfo_Agatha, // Project Grounded (FRLG)
+    [OBJ_EVENT_GFX_LANCE] =                     &gObjectEventGraphicsInfo_Lance, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_COLRESS] =                  &gObjectEventGraphicsInfo_Colress,
     [OBJ_EVENT_GFX_ZINNIA] =                   &gObjectEventGraphicsInfo_Zinnia,
+    [OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED] =      &gObjectEventGraphicsInfo_DeoxysTriangleRed, // Project Grounded
     [OBJ_EVENT_GFX_MAN_4] =                    &gObjectEventGraphicsInfo_Man4,
     [OBJ_EVENT_GFX_MAN_5] =                    &gObjectEventGraphicsInfo_Man5,
     [OBJ_EVENT_GFX_REPORTER_M] =               &gObjectEventGraphicsInfo_ReporterM,

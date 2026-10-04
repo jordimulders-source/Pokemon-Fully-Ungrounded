@@ -1235,6 +1235,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak = {
 };
 
 // Project Grounded
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mustard = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MUSTARD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Mustard,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BROCK,
@@ -1251,6 +1271,246 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Brock,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_D,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Misty,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BROCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_LtSurge,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_D,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Erika,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Koga = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_C,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Koga,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_D,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Sabrina,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_B,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Blaine,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_C,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Giovanni,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BROCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Blue,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_C,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Lorelei,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_C,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Bruno,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_B,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Agatha,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded (FRLG)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lance = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KANTO_NPC_C,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Lance,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4489,6 +4749,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deoxys = {
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_BirthIslandStone,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: dezelfde steen, maar meteen rood (de meteoriet van het Deoxys-event heeft geen puzzel)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangleRed = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE_RED,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,

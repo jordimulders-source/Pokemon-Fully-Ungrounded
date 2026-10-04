@@ -4,7 +4,16 @@ MeteorFalls_1F_1R_MapScripts::
 
 MeteorFalls_1F_1R_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_OpenStevensCave
+	call_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_OpenUnknownCave
 	end
+
+@ Project Grounded: na de Hall of Fame een grotopening naar de verborgen grot met Mewtwo (Cerulean Cave-hommage)
+MeteorFalls_1F_1R_EventScript_OpenUnknownCave::
+	setmetatile 12, 25, METATILE_MeteorFalls_CaveEntrance_Top, TRUE
+	setmetatile 11, 26, METATILE_MeteorFalls_CaveEntrance_Left, TRUE
+	setmetatile 12, 26, METATILE_MeteorFalls_CaveEntrance_Bottom, FALSE
+	setmetatile 13, 26, METATILE_MeteorFalls_CaveEntrance_Right, TRUE
+	return
 
 MeteorFalls_1F_1R_EventScript_OpenStevensCave::
 	setmetatile 4, 1, METATILE_MeteorFalls_CaveEntrance_Top, TRUE

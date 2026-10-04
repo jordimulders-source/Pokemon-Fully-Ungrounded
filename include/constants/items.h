@@ -911,6 +911,7 @@
 #define ITEM_SILPH_SCOPE 752
 #define ITEM_TRI_PASS 753
 #define ITEM_RAINBOW_PASS 754
+#define ITEM_BLOOM_TICKET ITEM_RAINBOW_PASS // Project Grounded: ticket naar Flower Paradise (Shaymin)
 #define ITEM_TEA 755
 #define ITEM_RUBY 756
 #define ITEM_SAPPHIRE 757
@@ -1023,7 +1024,16 @@
 
 #define ITEM_SIX_PACK 855 // Project Grounded: healt het hele team (60 HP per Pokémon)
 
-#define ITEMS_COUNT 856
+#define ITEM_LIBERTY_PASS 856 // Project Grounded: uitnodiging voor de Victory-gauntlet op Liberty Garden (Victini)
+
+// Project Grounded: Rotom-apparaten (Key Items, te koop in Lilycove); veranderen Rotom van vorm
+#define ITEM_MICROWAVE_OVEN 857
+#define ITEM_WASHING_MACHINE 858
+#define ITEM_REFRIGERATOR 859
+#define ITEM_ELECTRIC_FAN 860
+#define ITEM_LAWN_MOWER 861
+
+#define ITEMS_COUNT 862
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

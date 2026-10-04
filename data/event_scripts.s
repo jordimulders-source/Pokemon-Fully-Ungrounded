@@ -636,6 +636,7 @@ gStdScripts_End::
 	.include "data/scripts/grounded_debug.inc"
 	.include "data/scripts/battle_stadium.inc"
 	.include "data/scripts/regi_dots.inc"
+	.include "data/scripts/burglar.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
@@ -1205,6 +1206,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+	.include "data/text/burglar.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"

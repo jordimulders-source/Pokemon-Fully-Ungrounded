@@ -994,7 +994,13 @@
 #define TRAINER_STADIUM_N                   977
 #define TRAINER_STADIUM_GHETSIS             978
 
-#define TRAINERS_COUNT                      979
+#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden (1-2 badges)
+#define TRAINER_BURGLAR_2                   980 // 3-4 badges
+#define TRAINER_BURGLAR_3                   981 // 5-6 badges
+#define TRAINER_BURGLAR_4                   982 // 7-8 badges
+#define TRAINER_BURGLAR_5                   983 // na de Elite Four
+
+#define TRAINERS_COUNT                      984
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

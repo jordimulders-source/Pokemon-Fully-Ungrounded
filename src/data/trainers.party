@@ -33261,3 +33261,264 @@ Nature: Timid
 - Draco Meteor
 - Flamethrower
 - Earth Power
+
+=== TRAINER_BURGLAR_1 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Koffing
+Level: 19
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Air Pollution
+- Smokescreen
+- Clear Smog
+- Thief
+- Assurance
+
+Vulpix
+Level: 19
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flash Fire
+- Ember
+- Quick Attack
+- Confuse Ray
+- Hex
+
+Growlithe @ Oran Berry
+Level: 20
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Intimidate
+- Bite
+- Flame Wheel
+- Howl
+- Thief
+
+=== TRAINER_BURGLAR_2 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Koffing
+Level: 28
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge
+- Thief
+- Destiny Bond
+
+Ponyta
+Level: 28
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Flash Fire
+- Flame Charge
+- Stomp
+- Low Kick
+- Agility
+
+Charmeleon @ Charcoal
+Level: 28
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Blaze
+- Fire Fang
+- Dragon Breath
+- Slash
+- Smokescreen
+
+Growlithe @ Sitrus Berry
+Level: 29
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Intimidate
+- Fire Fang
+- Crunch
+- Wild Charge
+- Thief
+
+=== TRAINER_BURGLAR_3 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Weezing
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Thief
+
+Muk @ Black Sludge
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Sticky Hold
+- Knock Off
+- Poison Jab
+- Shadow Sneak
+- Curse
+
+Rapidash
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Flash Fire
+- Flare Blitz
+- High Horsepower
+- Wild Charge
+- Morning Sun
+
+Magmar
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunder Punch
+- Confuse Ray
+- Thief
+
+Arcanine @ Sitrus Berry
+Level: 41
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Play Rough
+
+=== TRAINER_BURGLAR_4 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Rocky Helmet
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Muk @ Black Sludge
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sticky Hold
+- Knock Off
+- Gunk Shot
+- Shadow Sneak
+- Drain Punch
+
+Rapidash
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flash Fire
+- Flare Blitz
+- High Horsepower
+- Wild Charge
+- Thief
+
+Ninetales @ Heat Rock
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Nasty Plot
+- Extrasensory
+
+Charizard @ Charcoal
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Blaze
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Roost
+
+Arcanine @ Sitrus Berry
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Close Combat
+
+=== TRAINER_BURGLAR_5 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Rocky Helmet
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Muk_Alola @ Leftovers
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Gluttony
+- Knock Off
+- Poison Jab
+- Shadow Sneak
+- Drain Punch
+
+Magmortar @ Expert Belt
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Psychic
+
+Ninetales @ Heat Rock
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Nasty Plot
+- Extrasensory
+
+Arcanine @ Sitrus Berry
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Close Combat
+
+Charizard @ Charizardite Y
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Blaze
+- Flamethrower
+- Solar Beam
+- Focus Blast
+- Roost

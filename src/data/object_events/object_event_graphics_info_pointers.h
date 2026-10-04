@@ -68,6 +68,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mustard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaShinyStill;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghetsis;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -343,6 +344,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL] =     &gObjectEventGraphicsInfo_RayquazaShinyStill,
     [OBJ_EVENT_GFX_N] =                        &gObjectEventGraphicsInfo_N,
     [OBJ_EVENT_GFX_GHETSIS] =                  &gObjectEventGraphicsInfo_Ghetsis,
+    [OBJ_EVENT_GFX_BURGLAR] =                  &gObjectEventGraphicsInfo_Burglar,
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)

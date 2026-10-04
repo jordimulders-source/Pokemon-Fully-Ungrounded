@@ -272,7 +272,8 @@
 #define OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL            261 // Project Grounded: shiny Rayquaza (zelfde sprite, zwart palet)
 #define OBJ_EVENT_GFX_N                               262 // Project Grounded (sheet van Delgatron, 32x32)
 #define OBJ_EVENT_GFX_GHETSIS                         263 // Project Grounded (sheet van PurpleZaffre, 32x32)
-#define NUM_OBJ_EVENT_GFX                        264
+#define OBJ_EVENT_GFX_BURGLAR                         264 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
+#define NUM_OBJ_EVENT_GFX                        265
 
 
 // These are dynamic object gfx ids.
@@ -355,6 +356,8 @@
 #define LOCALID_BERRY_BLENDER_PLAYER_END   240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
 #define LOCALID_FOLLOWING_POKEMON          254
 #define LOCALID_PLAYER                     255
+#define LOCALID_BURGLAR_THIEF              200 // Project Grounded: gespawnd door src/burglar.c (geen kaartobject)
+#define LOCALID_BURGLAR_RESIDENT           201 // Project Grounded: bewoner van het beroofde huis
 #define OBJ_EVENT_ID_FOLLOWER              0xFE
 #define OBJ_EVENT_ID_NPC_FOLLOWER          0xFD
 
@@ -413,6 +416,7 @@
 #define OBJ_EVENT_PAL_TAG_RAYQUAZA_SHINY           0x1130 // Project Grounded
 #define OBJ_EVENT_PAL_TAG_N                        0x112D // Project Grounded
 #define OBJ_EVENT_PAL_TAG_GHETSIS                  0x112E // Project Grounded
+#define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

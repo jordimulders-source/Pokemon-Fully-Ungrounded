@@ -116,6 +116,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Regigigas v5: de climax-trompet en -hoorn werden berekend maar nooit weggeschreven (oude lege 'fanfare' in de
   uitvoerlijst), dus Jordi hoorde 'geen climax'. Laat een script altijd controleren dat elke niet-lege partij in de
   MIDI staat (assert in regigigas_theme.py), en luister/meet de climax apart (RMS per sectie).
+- Regigigas: een extra stem op exact dezelfde noten/ligging als het origineel versmelt (trompet niet hoorbaar) ->
+  een octaaf hoger. Klokken (tubular bell, 6689 Hz) een octaaf omhoog klinken kort en dun -> in de ligging van de
+  melodie, op volle sterkte en per maat opnieuw luiden. Prioriteit: wat Jordi wil horen (trompet) eerst.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

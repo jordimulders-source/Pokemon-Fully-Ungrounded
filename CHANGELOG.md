@@ -16445,3 +16445,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.50] - Regigigas: trompet een octaaf hoger, buisklokken
 - Vanaf de loop speelt de Hoenn-trompet de Regi-melodie een octaaf hoger. Daarvoor versmolt hij met de strijkers en hoorn van het origineel.
 - Buisklokken slaan het begin van elke lange koraalnoot aan, in de loop en in de climax. Dat is versie B uit een A/B-test; zonder klokken (A) bouw je met `REGI_BELLS=0 python3 tools/grounded/regigigas_theme.py`.
+
+### [v.0.9.51] - Regigigas: hoorbare tempelklokken
+- De buisklokken waren te zacht en te kort (één korte slag per noot, een octaaf hoog). Ze luiden nu in de ligging van de melodie, op volle sterkte, en worden op elke maat opnieuw aangeslagen zolang de koraalnoot klinkt, als een tempelklok.
+- De trompet blijft voorgaan bij de kanaalverdeling.

@@ -157,9 +157,21 @@ def build():
     add['trumpet'] = [[s, e, n + 12, 112] for s, e, n, v in thin(T[1], 1, 'top')
                       if LOOP_START <= bar_of(s) < LOOP_END and bar_of(s) not in QUIET] + add['trumpet']
     # buisklokken op het begin van elke lange koraalnoot (loop + climax): snijdt door de massa, oeroude tempel
-    add['bells'] = [[s, s + 48, n + 12, 116] for s, e, n, v in thin(T[1], 1, 'top')
-                    if LOOP_START <= bar_of(s) < LOOP_END and bar_of(s) not in QUIET and e - s >= TPB] if USE_BELLS else []
-    add['bells'] += [[s, s + 48, n + 12, 120] for s, e, n, v in mv(thin(T[1], 1, 'top')) if e - s >= TPB] if USE_BELLS else []
+    # (v1: één korte klok per noot, een octaaf hoog -> Jordi hoorde ze niet. Nu: in de ligging van de melodie, lang
+    # uitklinkend en op elke maat opnieuw geluid zolang de koraalnoot klinkt, als een tempelklok.)
+    def toll(ev, vel):
+        out = []
+        for s, e, n, v in ev:
+            if e - s < TPB:
+                continue
+            t = s
+            while t < e - TPB:
+                out.append([t, min(e, t + 2 * TPB), n, vel])
+                t = (bar_of(t) + 1) * BAR
+        return out
+    add['bells'] = toll([e for e in thin(T[1], 1, 'top') if LOOP_START <= bar_of(e[0]) < LOOP_END
+                         and bar_of(e[0]) not in QUIET], 124) if USE_BELLS else []
+    add['bells'] += toll(mv(thin(T[1], 1, 'top')), 127) if USE_BELLS else []
     add['horn'] = [[s, e, n, 112] for s, e, n, v in mv(thin(T[2], 1, 'top'))]
     add['choir'] += [[s, e, n - 12, 118] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
     # tweestemmig: een diatonische terts erboven (E-mineur, de toonsoort van de climax)
@@ -244,7 +256,7 @@ def build():
     kept['choir'] = sorted(kept['choir'] + kept['choir2'])
     for k, prog, vol, ch, pan in (('trumpet', TRUMPET, 110, 8, 72), ('horn', HORN, 104, 11, 52), ('choir', CHOIR, 84, 10, 60),
                                   ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
-                                  ('crash', DRUMS, 100, 15, 64), ('bells', BELLS, 92, 9, 80)):
+                                  ('crash', DRUMS, 100, 15, 64), ('bells', BELLS, 127, 9, 64)):
         out.tracks.append(note_track(kept[k], prog, vol, ch, pan))
         written.add(k)
     missing = [k for k in kept if kept[k] and k not in written and k not in ('trumpet2', 'choir2', 'hits')]

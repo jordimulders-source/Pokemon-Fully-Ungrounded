@@ -15980,3 +15980,13 @@ Besluiten van Jordi (5 okt) op `POKEMON_BALANS.md`. De OP-kandidaten (Volbeat Ta
 ### [v.0.8.117] - Sharpedo en Hariyama terug
 - Pokémon Revisie: Carvanha, Sharpedo — weer Rough Skin / **Strong Jaw** / verborgen Speed Boost (Jordi's revisie uit v0.2.1).
 - Pokémon Revisie: Makuhita — weer Guts / **Technician**; Hariyama — weer Thick Fat / **Purifying Salt**; Sheer Force blijft verborgen (Jordi's revisie uit v0.2.1).
+
+### [v.0.8.118] - The Spire: 50 relics, Toxic en Leech Seed zeldzaam
+- **Relics 8 → 50** (Jordi: "ga maar naar 50"): 16 common, 15 uncommon, 8 rare, 3 winkel, 8 baas. Eén lijst in `tools/grounded/spire/relics.py` (controleert tekstbreedtes en iconen, maakt `include/spire_relics.h` en `src/data/spire_relics.h`). Elites bieden 3 relics (50/33/17% common/uncommon/rare), bazen 3 baasrelics, de winkel een gewone en een winkelrelic, events een gewone. Is een zeldzaamheid op, dan schuift het naar de naastliggende: de pool raakt in het model nooit meer op (was 28%). Nutteloze combinaties worden niet aangeboden. Zeldzaamheid in kleur op de kaarten; nieuw: **R op de kaart** toont je relics. Save: nieuw veld `relics2` achteraan (oude runs blijven werken; SaveBlock2 even groot). Volledige lijst in `SPIRE_DESIGN.md`.
+- Baasrelics met een nadeel (Slay-stijl): Awakening (+20% schade, niet meer rusten), Relic Crown (+1 Atk/SpA, geen geld), Odd Keystone (+1 Def/SpD, intenties ???), Meteorite, Dubious Disc, Max Mushrooms, Star Piece, Gracidea.
+- **Toxic, Leech Seed en andere %-moves** (gif/brand, Curse, Salt Cure, vastgrijpers, schadeweer, Pollen Haze, %-heals) blijven werken zoals ze werken, maar zijn zeldzaam: niet meer in startkits (±60 rentals kregen een andere startmove; ook Jordi's handkeuzes Bulbasaur Leech Seed → Worry Seed en Oddish Moonlight → Aromatherapy), en als beloning of in de winkel alleen nog als een kwart van de rare kaarten (±2,5% per kaart).
+- **Speelduur:** `runsim.py` schat nu de tijd voor een mens (35 s per beurt plus vaste tijden): een gewonnen run ±76 minuten (63–90 bij 25–45 s per beurt), binnen het doel van 1u–1u20. Actlengte blijft 7.
+- **Balans:** volgens het model maken de relics act 2–3 makkelijker (winkans gemiddeld 78% → 83%). Bewust niet bijgesteld; na echte testruns eventueel act 2 ×1,15 en act 3 ×1,35 (`TARGET_ACT` in encounters.py).
+- **Bug:** `Spire_EndTurn` liep meer dan één keer per beurt bij effecten aan het eind van de beurt (gif, weer, Leftovers), waardoor vaste vijandpatronen stappen oversloegen. Nu precies één keer.
+- Debug: `Spire_DebugOpen` met VAR_0x8004 = 6 opent een relic-beloning (VAR_0x8005 0 = elite, 1 = baas).
+- Spire-rekenscripts opnieuw gedraaid na de Pokémon-revisie van v0.8.116–0.8.117.

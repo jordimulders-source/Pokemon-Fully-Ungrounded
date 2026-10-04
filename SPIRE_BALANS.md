@@ -60,6 +60,7 @@ Is de eerste vorm in act 1 of 2 te zwak, dan begint de lijn een stap later (zelf
 - Diggersby in plaats van Bunnelby (alleen via events)
 - Dolliv in plaats van Smoliv
 - Dottler in plaats van Blipbug
+- Dustox in plaats van Cascoon (alleen via events)
 - Flaaffy in plaats van Mareep
 - Frosmoth in plaats van Snom
 - Gyarados in plaats van Magikarp (alleen via events)
@@ -141,11 +142,13 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Cryogonal | Cryogonal | 126 (103/103/103) | Icy Wind, Acid Armor, Haze |
 | Bouffalant | Bouffalant | 126 (103/103/103) | Tackle, Leer, Focus Energy |
 | Sableye | Sableye | 126 (103/103/103) | Rock Throw, Shadow Sneak, Leer, Confuse Ray |
+| Sandshrew | Sandshrew → Sandslash | 125 (73/124/124) | Bulldoze, Sand Attack, Rototiller |
 | Sneasel | Sneasel → Weavile | 125 (91/111/111) | Bite, Ice Shard, Leer, Taunt |
 | Togetic | Togetic → Togekiss | 125 (79/119/119) | Fairy Wind, Gust, Growl, Sweet Kiss |
 | Miltank | Miltank | 125 (102/102/102) | Tackle, Growl, Heal Bell |
 | Bruxish | Bruxish | 125 (102/102/102) | Aqua Jet, Heart Stamp, Screech, Disable |
 | Lucario | Lucario | 125 (102/102/102) | Vacuum Wave, Mirror Shot, Work Up, Detect |
+| Roselia | Roselia → Roserade | 124 (81/117/117) | Mega Drain, Acid, Growth, Stun Spore |
 | Chimecho | Chimecho | 124 (102/102/102) | Confusion, Mirror Shot, Growl, Heal Bell |
 | Yanma | Yanma → Yanmega | 124 (81/116/116) | Struggle Bug, Gust, Supersonic, Detect |
 | Throh | Throh | 124 (102/102/102) | Rock Smash, Leer, Wide Guard |
@@ -159,7 +162,6 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Spinda | Spinda | 122 (100/100/100) | Tackle, Rock Smash, Fake Tears, Teeter Dance |
 | Hitmontop | Hitmontop | 122 (100/100/100) | Mach Punch, Focus Energy, Quick Guard |
 | Glimmet | Glimmet → Glimmora | 121 (74/118/118) | Ancient Power, Acid Spray, Harden, Mortal Spin |
-| Roselia | Roselia → Roserade | 121 (81/112/112) | Mega Drain, Acid, Growth, Stun Spore |
 | Illumise | Illumise | 121 (99/99/99) | Struggle Bug, Thunder Shock, Growth, String Shot |
 | Gligar | Gligar → Gliscor | 121 (87/107/107) | Bulldoze, Wing Attack, Sand Attack, Agility |
 | Lapras | Lapras | 121 (99/99/99) | Aqua Jet, Ice Shard, Tickle, Mist |
@@ -170,7 +172,6 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Hawlucha | Hawlucha | 120 (99/99/99) | Rock Smash, Wing Attack, Feather Dance, Detect |
 | Hitmonchan | Hitmonchan | 120 (98/98/98) | Mach Punch, Focus Energy, Quick Guard |
 | Porygon | Porygon → Porygon2 → Porygon-Z | 119 (76/99/124) | Thunder Shock, Defense Curl, Magic Coat |
-| Sandshrew | Sandshrew → Sandslash | 119 (70/118/118) | Bulldoze, Sand Attack, Rototiller |
 | Wailmer | Wailmer → Wailord | 119 (78/111/111) | Aqua Jet, Tickle, Soak |
 | Growlithe | Growlithe → Arcanine | 119 (67/119/119) | Flame Charge, Rock Throw, Leer, Howl |
 | Anorith | Anorith → Armaldo | 119 (80/109/109) | Accelerock, Pounce, Sand Attack, Rock Polish |
@@ -183,6 +184,7 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 |---|---|---|---|
 | Cufant | Cufant → Copperajah | 118 (74/113/113) | Bullet Punch, Growl, Iron Defense |
 | Drilbur | Drilbur → Excadrill | 118 (69/117/117) | Bulldoze, Iron Defense, Mud-Slap |
+| Mawile | Mawile | 118 (97/97/97) | Bullet Punch, Disarming Voice, Tickle, Iron Defense |
 | Frosmoth | Frosmoth | 118 (97/97/97) | Icy Wind, Struggle Bug, Feather Dance, Snowscape |
 | Darumaka | Darumaka → Darmanitan | 118 (70/115/115) | Ice Shard, Work Up, Taunt |
 | Rotom | Rotom | 117 (96/96/96) | Thunder Shock, Infernal Parade, Charge, Thunder Wave |
@@ -218,18 +220,18 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Aipom | Aipom → Ambipom | 111 (73/104/104) | Quick Attack, Tail Whip, Tickle |
 | Nuzleaf | Nuzleaf → Shiftry | 111 (69/106/106) | Mega Drain, Disarming Voice, Growth, Grass Whistle |
 | Timburr | Timburr → Gurdurr → Conkeldurr | 111 (71/91/116) | Mach Punch, Leer, Focus Energy |
-| Poochyena | Poochyena → Mightyena | 111 (60/112/112) | Bite, Howl, Hone Claws |
+| Bagon | Bagon → Shelgon → Salamence | 110 (62/80/135) | Breaking Swipe, Leer, Scary Face |
 | Axew | Axew → Fraxure → Haxorus | 110 (66/88/123) | Breaking Swipe, Leer, Taunt |
 | Pancham | Pancham → Pangoro | 110 (71/104/104) | Rock Smash, Leer, Taunt |
 | Gible | Gible → Gabite → Garchomp | 110 (60/85/133) | Breaking Swipe, Bulldoze, Sand Attack, Mud Shot |
 | Mankey | Mankey → Primeape → Annihilape | 110 (63/96/121) | Rock Smash, Leer, Counter |
 | Tangela | Tangela → Tangrowth | 110 (82/96/96) | Mega Drain, Growth, Stun Spore |
+| Poochyena | Poochyena → Mightyena | 109 (58/112/112) | Bite, Howl, Hone Claws |
 | Varoom | Varoom → Revavroom | 109 (61/110/110) | Bullet Punch, Poison Fang, Screech, Taunt |
 | Tranquill | Tranquill → Unfezant | 109 (69/104/104) | Quick Attack, Peck, Leer, Swagger |
 | Stufful | Stufful → Bewear | 109 (67/106/106) | Tackle, Mach Punch, Leer, Endure |
 | Swadloon | Swadloon → Leavanny | 109 (69/104/104) | Pounce, Vine Whip, Screech, String Shot |
 | Cacnea | Cacnea → Cacturne | 109 (73/102/102) | Vine Whip, Leer, Cotton Spore |
-| Bagon | Bagon → Shelgon → Salamence | 109 (59/80/135) | Breaking Swipe, Leer, Scary Face |
 | Pawmo | Pawmo → Pawmot | 109 (70/103/103) | Spark, Mach Punch, Growl, Charge |
 | Tentacool | Tentacool → Tentacruel | 109 (61/109/109) | Water Gun, Acid, Tickle, Barrier |
 | Loudred | Loudred → Exploud | 108 (71/102/102) | Mirror Shot, Thunder Shock, Growl, Nuzzle |
@@ -265,18 +267,19 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Zigzagoon | Zigzagoon → Linoone | 105 (56/107/107) | Tackle, Tail Whip, Trailblaze |
 | Sandile | Sandile → Krokorok → Krookodile | 105 (64/77/122) | Bulldoze, Bite, Leer, Hone Claws |
 | Vigoroth | Vigoroth → Slaking | 105 (100/76/76) | Quick Attack, Tickle, Encore |
-| Nosepass | Nosepass → Probopass | 105 (66/100/100) | Ancient Power, Charge Beam, Harden, Magnetic Flux |
 
-### Tier B (101)
+### Tier B (102)
 
 | soort | acts | V | startmoves |
 |---|---|---|---|
+| Nosepass | Nosepass → Probopass | 105 (66/100/100) | Ancient Power, Charge Beam, Harden, Magnetic Flux |
 | Omanyte | Omanyte → Omastar | 105 (70/97/97) | Ancient Power, Water Gun, Sand Attack, Leer |
 | Exeggcute | Exeggcute → Exeggutor | 105 (62/103/103) | Mega Drain, Confusion, Growth, Reflect |
 | Nidorina | Nidorina → Nidoqueen | 105 (67/99/99) | Poison Sting, Tail Whip, Flatter |
 | Munna | Munna → Musharna | 105 (63/102/102) | Confusion, Defense Curl, Magic Coat |
 | Chinchou | Chinchou → Lanturn | 105 (64/101/101) | Water Gun, Thunder Shock, Supersonic, Parabolic Charge |
 | Lileep | Lileep → Cradily | 105 (73/95/95) | Ancient Power, Mega Drain, Growth, Confuse Ray |
+| Trapinch | Trapinch → Vibrava → Flygon | 104 (69/77/114) | Pounce, Bulldoze, Sand Attack, Struggle Bug |
 | Golett | Golett → Golurk | 104 (63/101/101) | Bulldoze, Shadow Sneak, Defense Curl, Mud-Slap |
 | Whirlipede | Whirlipede → Scolipede | 104 (64/101/101) | Pounce, Poison Sting, Defense Curl, Venom Drench |
 | Lickitung | Lickitung → Lickilicky | 104 (72/95/95) | Quick Attack, Supersonic, Disable |
@@ -305,7 +308,6 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Skorupi | Skorupi → Drapion | 103 (60/101/101) | Poison Sting, Pounce, Leer, Hone Claws |
 | Swablu | Swablu → Altaria | 103 (57/104/104) | Quick Attack, Peck, Growl, Sing |
 | Slugma | Slugma → Magcargo | 103 (61/101/101) | Ember, Smokescreen, Yawn |
-| Trapinch | Trapinch → Vibrava → Flygon | 103 (66/77/114) | Pounce, Bulldoze, Sand Attack, Struggle Bug |
 | Aron | Aron → Lairon → Aggron | 103 (66/85/106) | Metal Claw, Harden, Autotomize |
 | Houndour | Houndour → Houndoom | 102 (62/100/100) | Shadow Siphon, Ember, Leer, Beat Up |
 | Sizzlipede | Sizzlipede → Centiskorch | 102 (58/102/102) | Flame Charge, Pounce, Smokescreen, Lunge |
@@ -396,6 +398,7 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Joltik | Joltik → Galvantula | 97 (59/94/94) | Struggle Bug, Charge Beam, Screech, Electroweb |
 | Litten | Litten → Torracat → Incineroar | 97 (59/80/105) | Flame Charge, Growl, Scary Face |
 | Shroodle | Shroodle → Grafaiai | 97 (57/95/95) | Poison Fang, Quick Attack, Leer, Substitute |
+| Finneon | Finneon → Lumineon | 97 (59/94/94) | Water Gun, Tickle, Rain Dance |
 | Skitty | Skitty → Delcatty | 97 (57/95/95) | Quick Attack, Tickle, Heal Bell |
 | Goomy | Goomy → Sliggoo → Goodra | 97 (54/81/110) | Twister, Acid Armor, Protect |
 | Horsea | Horsea → Seadra → Kingdra | 97 (56/86/104) | Water Gun, Smokescreen, Rain Dance |
@@ -438,7 +441,6 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Ducklett | Ducklett → Swanna | 93 (55/91/91) | Aqua Jet, Wing Attack, Feather Dance, Tailwind |
 | Capsakid | Capsakid → Scovillain | 92 (55/90/90) | Leafage, Leer, Spicy Extract |
 | Wingull | Wingull → Pelipper | 92 (54/91/91) | Water Gun, Gust, Growl, Tailwind |
-| Finneon | Finneon → Lumineon | 92 (59/87/87) | Aqua Jet, Tickle, Rain Dance |
 | Applin | Applin → Appletun | 92 (49/94/94) | Mega Drain, Twister, Growth, Protect |
 | Shellder | Shellder → Cloyster | 92 (56/89/89) | Aqua Jet, Leer, Supersonic |
 | Yungoos | Yungoos → Gumshoos | 92 (55/89/89) | Tackle, Leer, Yawn |
@@ -485,26 +487,27 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 
 - Gholdengo (129): Mirror Shot, Infernal Parade, Metal Sound, Confuse Ray
 - Gyarados (128): Aqua Jet, Peck, Scary Face, Rain Dance
-- Heracross (121): Pounce, Rock Smash, Leer, Counter
+- Heracross (123): Pounce, Rock Smash, Leer, Counter
 - Milotic (116): Chilling Water, Tickle, Rain Dance
 - Tauros (115): Mach Punch, Tail Whip, Scary Face
 - Kricketune (113): Pounce, Growl, Leech Life
 - Volbeat (113): Ember, Thunder Shock, Flash, Confuse Ray
+- Pinsir (113): Pounce, Bulldoze, Focus Energy, Lunge
 - Solrock (111): Accelerock, Heart Stamp, Harden, Sunny Day
 - Zangoose (111): Quick Attack, Leer, Hone Claws
 - Tauros (110): Tackle, Tail Whip, Scary Face
 - Passimian (110): Rock Smash, Leer, Focus Energy
 - Snorlax (110): Tackle, Defense Curl, Metronome
-- Pinsir (109): Pounce, Bulldoze, Focus Energy, Lunge
 - Sawk (108): Rock Smash, Leer, Quick Guard
 - Sigilyph (108): Confusion, Gust, Cosmic Power, Hypnosis
 - Kangaskhan (108): Quick Attack, Tail Whip, Focus Energy
 - Absol (107): Bite, Disarming Voice, Leer, Snarl
 - Seviper (107): Poison Tail, Bullet Punch, Screech, Gastro Acid
 - Vespiquen (84): Pounce, Peck, Defend Order, Struggle Bug
+- Dustox (83): Struggle Bug, Acid Spray, Harden, Stun Spore
 - Sunflora (83): Mega Drain, Growth, Worry Seed
+- Beautifly (82): Struggle Bug, Gust, Harden, Tailwind
 - Beedrill (80): Pounce, Poison Sting, Harden, String Shot
-- Beautifly (80): Struggle Bug, Gust, Harden, Tailwind
 - Butterfree (80): Struggle Bug, Gust, Supersonic, Rage Powder
 - Diggersby (79): Quick Attack, Bulldoze, Leer, Laser Focus
 
@@ -520,7 +523,7 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 - Bunnelby: act 1 te zwak (BUNNELBY 44 < 45)
 - Carbink: geen evolutie en zwakker dan een gemiddelde act-2-vorm (78 < 95)
 - Carnivine: geen evolutie en zwakker dan een gemiddelde act-2-vorm (88 < 95)
-- Cascoon: act 1 te zwak (CASCOON 44 < 45); act 3 te zwak (DUSTOX 72 < 76)
+- Cascoon: act 1 te zwak (CASCOON 44 < 45)
 - Caterpie: act 1 te zwak (CATERPIE 39 < 45); act 2 te zwak (METAPOD 40 < 71)
 - Chatot: geen evolutie en zwakker dan een gemiddelde act-2-vorm (83 < 95)
 - Cherubi: act 2 te zwak (CHERUBI 56 < 71); act 3 te zwak (CHERUBI 56 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (56 < 95)
@@ -532,14 +535,13 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 - Cutiefly: geen basis-statusmove
 - Darumaka: act 2 te zwak (DARUMAKA 70 < 71); act 3 te zwak (DARUMAKA 70 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (70 < 95)
 - Dedenne: geen evolutie en zwakker dan een gemiddelde act-2-vorm (87 < 95)
-- Delibird: act 2 te zwak (DELIBIRD 62 < 71); act 3 te zwak (DELIBIRD 62 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (62 < 95); geen basis-statusmove
+- Delibird: act 3 te zwak (DELIBIRD 74 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (74 < 95); geen basis-statusmove
 - Dewpider: geen basis-statusmove
 - Ditto: act 2 te zwak (DITTO 52 < 71); act 3 te zwak (DITTO 52 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (52 < 95); geen basis-statusmove
 - Dracovish: geen basis-statusmove
 - Dracozolt: geen grounded move
 - Drampa: geen basis-statusmove
 - Dunsparce: geen evolutie en zwakker dan een gemiddelde act-2-vorm (76 < 95)
-- Dustox: act 3 te zwak (DUSTOX 72 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (72 < 95)
 - Emolga: geen evolutie en zwakker dan een gemiddelde act-2-vorm (80 < 95)
 - Espurr: act 2 te zwak (ESPURR 67 < 71); act 3 te zwak (ESPURR 67 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (67 < 95)
 - Falinks: geen evolutie en zwakker dan een gemiddelde act-2-vorm (92 < 95)
@@ -561,7 +563,6 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 - Maractus: geen evolutie en zwakker dan een gemiddelde act-2-vorm (87 < 95)
 - Mareanie: geen basis-statusmove
 - Mareep: act 2 te zwak (FLAAFFY 71 < 71)
-- Mawile: geen evolutie en zwakker dan een gemiddelde act-2-vorm (92 < 95)
 - Metapod: act 1 te zwak (METAPOD 40 < 45)
 - Mienfoo: geen basis-statusmove
 - Milcery: act 2 te zwak (MILCERY 52 < 71); act 3 te zwak (MILCERY 52 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (52 < 95)
@@ -652,14 +653,14 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | boss:Totem Wishiwashi | +0 | ×1.0 | 9.5 | 56% |
 | 1 | boss:Venusaur & Blastoise | +0 | ×0.8 | 12.5 | 41% |
 | 1 | elite | +0 | ×0.7 | 4.5 | 26% |
-| 1 | normal | +0 | ×1.0 | 3.5 | 12% |
+| 1 | normal | +0 | ×0.9 | 2.5 | 11% |
 | 1 | weak | +0 | ×0.6 | 2.5 | 8% |
 | 2 | boss:Darkrai | +0 | ×1.3 | 9.5 | 58% |
 | 2 | boss:Dialga & Palkia | +0 | ×0.8 | 7.5 | 65% |
 | 2 | boss:Mega Metagross | +0 | ×1.4 | 12.5 | 56% |
 | 2 | boss:Mewtwo & Mew | +0 | ×1.4 | 11.5 | 66% |
 | 2 | elite | +0 | ×1.0 | 5.0 | 27% |
-| 2 | normal | +0 | ×1.7 | 3.5 | 13% |
+| 2 | normal | +0 | ×1.7 | 3.5 | 14% |
 | 2 | weak | +0 | ×1.5 | 2.5 | 7% |
 | 3 | boss:Eternamax Eternatus | +0 | ×0.5 | 10.5 | 67% |
 | 3 | boss:Mega Mewtwo Y | +0 | ×1.2 | 9.5 | 66% |
@@ -675,12 +676,12 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | Overgrown Grove | weak | Fuzzy Crawlers (Grubbin + Cutiefly) | 1.5 | 8% |  |
 | 1 | Overgrown Grove | weak | Snapping Berries (Cherubi + Bounsweet) | 2.5 | 6% |  |
 | 1 | Overgrown Grove | weak | Leaf Slimes (Gulpin + Shroomish) | 2.5 | 10% |  |
-| 1 | Overgrown Grove | normal | Vine Shambler (Tangela + Sewaddle) | 4.5 | 18% |  |
-| 1 | Overgrown Grove | normal | Fogmog (Foongus + Paras) | 3.5 | 10% |  |
+| 1 | Overgrown Grove | normal | Vine Shambler (Tangela + Sewaddle) | 3.5 | 18% |  |
+| 1 | Overgrown Grove | normal | Fogmog (Foongus + Paras) | 2.5 | 10% |  |
 | 1 | Overgrown Grove | normal | Overgrown Statue (Sudowoodo + Bonsly) | 4.5 | 11% |  |
 | 1 | Overgrown Grove | normal | Slithering Strangler (Ekans + Seedot) | 2.5 | 9% |  |
-| 1 | Overgrown Grove | normal | Mawler (Teddiursa + Skwovet) | 3.5 | 17% |  |
-| 1 | Overgrown Grove | normal | Jungle Ambush (Bellsprout + Hoppip) | 22.5 | 25% | te zwaar |
+| 1 | Overgrown Grove | normal | Mawler (Teddiursa + Skwovet) | 2.5 | 14% |  |
+| 1 | Overgrown Grove | normal | Jungle Ambush (Bellsprout + Hoppip) | 2.5 | 5% | te makkelijk |
 | 1 | Overgrown Grove | normal | Moonlight Recital (Clefairy + Clefairy) | 3.5 | 11% |  |
 | 1 | Overgrown Grove | elite | Gremlin Nob (Primeape + Mankey) | 4.5 | 34% |  |
 | 1 | Overgrown Grove | elite | Byrdonis (Trumbeak + Pikipek) | 3.5 | 42% | te zwaar |
@@ -690,11 +691,11 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 1 | Sunken Docks | weak | Toadpoles (Tympole + Poliwag) | 1.5 | 6% |  |
 | 1 | Sunken Docks | weak | Seapunks (Tentacool + Clauncher) | 2.5 | 11% |  |
 | 1 | Sunken Docks | weak | Just Two Magikarp (Magikarp + Magikarp) | 1.5 | 3% | te makkelijk |
-| 1 | Sunken Docks | normal | Secret Santa (Delibird + Wingull) | 2.5 | 8% |  |
-| 1 | Sunken Docks | normal | Gremlin Mercs (Purrloin + Impidimp) | 2.5 | 9% |  |
-| 1 | Sunken Docks | normal | Living Fog (Koffing + Stunky) | 3.5 | 13% |  |
+| 1 | Sunken Docks | normal | Secret Santa (Delibird + Wingull) | 2.5 | 14% |  |
+| 1 | Sunken Docks | normal | Gremlin Mercs (Purrloin + Impidimp) | 1.5 | 6% | te makkelijk |
+| 1 | Sunken Docks | normal | Living Fog (Koffing + Stunky) | 2.5 | 10% |  |
 | 1 | Sunken Docks | normal | Haunted Ship (Dhelmise + Frillish) | 4.5 | 27% | te zwaar |
-| 1 | Sunken Docks | normal | Sewer Clam (Shellder + Clamperl) | 23.5 | 62% | te zwaar |
+| 1 | Sunken Docks | normal | Sewer Clam (Shellder + Clamperl) | 2.5 | 11% |  |
 | 1 | Sunken Docks | normal | Two-Tailed Rats (Tandemaus + Rattata) | 2.5 | 22% | te zwaar |
 | 1 | Sunken Docks | normal | Cultists (Wooper + Lotad) | 2.5 | 7% |  |
 | 1 | Sunken Docks | elite | Terror Eel (Eelektross + Tynamo) | 4.5 | 37% | te zwaar |
@@ -715,7 +716,7 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 2 | Frostbite Hollow | weak | Snow Hares (Snorunt + Cubchoo) | 2.5 | 7% |  |
 | 2 | Frostbite Hollow | weak | Living Icicles (Bergmite + Snom) | 2.5 | 6% |  |
 | 2 | Frostbite Hollow | weak | Seal Pups (Spheal + Seel) | 2.5 | 8% |  |
-| 2 | Frostbite Hollow | normal | Frost Byrds (Delibird + Swablu) | 3.5 | 13% |  |
+| 2 | Frostbite Hollow | normal | Frost Byrds (Delibird + Swablu) | 3.5 | 16% |  |
 | 2 | Frostbite Hollow | normal | Glass Sentries (Cryogonal + Snover) | 4.5 | 11% |  |
 | 2 | Frostbite Hollow | normal | Beartic Brute (Beartic + Cubchoo) | 3.5 | 25% | te zwaar |
 | 2 | Frostbite Hollow | normal | The Lost and the Forgotten (Froslass + Glalie) | 5.5 | 16% |  |
@@ -778,9 +779,9 @@ Gegenereerd door `tools/grounded/spire/runsim.py` (Monte Carlo over de echte kaa
 
 | kamer | Slay (15 + baas) | Spire act 1 | act 2 | act 3 | Spire ×15/7 |
 |---|---|---|---|---|---|
-| gevecht | 5-7 | 3.1 | 3.2 | 3.3 | 6.8 |
-| elite | 1-3 | 1.1 | 1.2 | 1.2 | 2.5 |
-| event | 3-5 | 1.2 | 0.9 | 0.9 | 2.1 |
+| gevecht | 5-7 | 3.2 | 3.2 | 3.3 | 6.9 |
+| elite | 1-3 | 1.1 | 1.2 | 1.3 | 2.5 |
+| event | 3-5 | 1.0 | 0.9 | 0.9 | 2.0 |
 | winkel | 1-2 | 0.3 | 0.4 | 0.3 | 0.7 |
 | rust | 2-4 | 1.3 | 1.3 | 1.3 | 2.7 |
 
@@ -790,32 +791,32 @@ Kaart: gevecht ±45%, event 22%, elite 8% (A0) / 13% (A1+), rust 12%, winkel 5%;
 
 | | Slay | act 1 | act 2 | act 3 |
 |---|---|---|---|---|
-| verlies gevecht | 5-15% | 12% (p10 3%, p90 24%) | 7% (p10 2%, p90 13%) | 6% (p10 2%, p90 12%) |
-| verlies elite | 20-35% | 24% (p10 6%, p90 49%) | 18% (p10 5%, p90 37%) | 13% (p10 5%, p90 25%) |
-| verlies baas | 30-50% | 45% (p10 24%, p90 71%) | 35% (p10 18%, p90 57%) | 26% (p10 13%, p90 41%) |
-| aankomst bij de baas | ±70-90% | 92% (p10 73%, p90 100%) | 93% (p10 76%, p90 100%) | 95% (p10 81%, p90 100%) |
-| na de baas | ±40-70% | 59% (p10 30%, p90 83%) | 70% (p10 43%, p90 90%) | 80% (p10 58%, p90 98%) |
-| heal: na gevecht (effectief, per act) | Ironclad 6 HP (7,5%), Silent 0 per gevecht | 38% | 41% | 41% |
-| heal: rust (effectief, per act) | 30% per rustplek | 20% | 12% | 6% |
+| verlies gevecht | 5-15% | 10% (p10 3%, p90 20%) | 7% (p10 2%, p90 14%) | 6% (p10 2%, p90 11%) |
+| verlies elite | 20-35% | 24% (p10 6%, p90 49%) | 18% (p10 5%, p90 37%) | 14% (p10 5%, p90 27%) |
+| verlies baas | 30-50% | 45% (p10 24%, p90 72%) | 35% (p10 18%, p90 56%) | 26% (p10 13%, p90 42%) |
+| aankomst bij de baas | ±70-90% | 94% (p10 78%, p90 100%) | 93% (p10 77%, p90 100%) | 94% (p10 80%, p90 100%) |
+| na de baas | ±40-70% | 60% (p10 31%, p90 83%) | 70% (p10 43%, p90 91%) | 80% (p10 57%, p90 98%) |
+| heal: na gevecht (effectief, per act) | Ironclad 6 HP (7,5%), Silent 0 per gevecht | 39% | 41% | 41% |
+| heal: rust (effectief, per act) | 30% per rustplek | 19% | 12% | 6% |
 | heal: event (effectief, per act) | wisselend | 2% | 2% | 1% |
-| heal: winkel (effectief, per act) | potions | 2% | 1% | 1% |
+| heal: winkel (effectief, per act) | potions | 1% | 1% | 0% |
 | heal: act-overgang (effectief, per act) | 100% (A0-4), 75% van het tekort (A5+) | 29% | 25% | 0% |
-| schade uit events (per act) | ±5-15% | 4% | 3% | 3% |
-| rustplek: heal / upgrade | ±60/40 (act 1) | 63/36 | 48/51 | 43/56 |
+| schade uit events (per act) | ±5-15% | 3% | 3% | 3% |
+| rustplek: heal / upgrade | ±60/40 (act 1) | 59/40 | 47/52 | 43/56 |
 
 ### Geld en winkel (gemiddeld niveau)
 
 | | Slay | act 1 | act 2 | act 3 |
 |---|---|---|---|---|
-| geld uit gevecht | ±90 | 61¥ | 40¥ | 23¥ |
-| geld uit elite | ±60 | 44¥ | 29¥ | 18¥ |
-| geld uit baas | ±100 | 72¥ | 48¥ | 28¥ |
-| geld uit event | ±30 | 15¥ | 14¥ | 14¥ |
-| totaal per act | ±250 (+99 start) | 192¥ | 131¥ | 82¥ |
-| uitgegeven per act | ±200-300 | 39¥ | 89¥ | 78¥ |
-| aankopen per winkelbezoek | 2-3 | 1.4 | 2.5 | 2.4 |
-| relic-prijs / geld per act | 0,6-1,2 | 0.78 | 1.15 | 1.82 |
-| goedkoopste move / geld per act | ±0,2 | 0.23 | 0.34 | 0.55 |
+| geld uit gevecht | ±90 | 65¥ | 40¥ | 21¥ |
+| geld uit elite | ±60 | 43¥ | 29¥ | 17¥ |
+| geld uit baas | ±100 | 74¥ | 48¥ | 25¥ |
+| geld uit event | ±30 | 13¥ | 15¥ | 14¥ |
+| totaal per act | ±250 (+99 start) | 195¥ | 131¥ | 77¥ |
+| uitgegeven per act | ±200-300 | 38¥ | 93¥ | 78¥ |
+| aankopen per winkelbezoek | 2-3 | 1.4 | 2.6 | 2.4 |
+| relic-prijs / geld per act | 0,6-1,2 | 0.77 | 1.14 | 1.95 |
+| goedkoopste move / geld per act | ±0,2 | 0.23 | 0.34 | 0.59 |
 
 Prijzen Slay: kaart 45-55 / 68-82 / 135-165, relic 143-315, verwijderen 75+25n, potion 48-105. Spire: move 45/70/120¥, item 50/85/140¥, relic 150¥, Super Potion 35¥ (25%), Move Relearner 50+25n¥; startgeld 75¥.
 
@@ -823,11 +824,11 @@ Prijzen Slay: kaart 45-55 / 68-82 / 135-165, relic 143-315, verwijderen 75+25n, 
 
 | niveau | act 1 gehaald | act 2 | act 3 | hele run | Slay |
 |---|---|---|---|---|---|
-| goed | 95% | 97% | 99% | **91%** | ±70-90% (ervaren, A0) |
-| gemiddeld | 89% | 95% | 98% | **83%** | 40-60% (redelijke speler, A0) |
-| slordig | 65% | 81% | 91% | **48%** | <15% |
+| goed | 97% | 98% | 99% | **94%** | ±70-90% (ervaren, A0) |
+| gemiddeld | 92% | 96% | 98% | **86%** | 40-60% (redelijke speler, A0) |
+| slordig | 70% | 80% | 91% | **51%** | <15% |
 
-**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ×0.65 → 95%, ×0.80 → 91%, ×1.00 → 83%, ×1.25 → 69%, ×1.50 → 48%, ×2.00 → 18%. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.
+**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ×0.65 → 97%, ×0.80 → 94%, ×1.00 → 86%, ×1.25 → 70%, ×1.50 → 51%, ×2.00 → 19%. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.
 
 ### Speelduur van een run (schatting voor een mens)
 
@@ -835,44 +836,44 @@ Doel (Jordi): een run duurt voor een mens ±1u-1u20. Een mens denkt per beurt ve
 
 | | beurten | duur bij 25 s/beurt | 35 s/beurt | 45 s/beurt |
 |---|---|---|---|---|
-| gewonnen run | 82 | 63 min | 76 min | 90 min |
+| gewonnen run | 78 | 61 min | 74 min | 87 min |
 
-Verloren runs duren gemiddeld 35 min (35 s/beurt). Per act: ±27 beurten in gevechten, ±10 min buiten gevechten. Conclusie: een gewonnen run zit met 76 min (25-45 s per beurt: 63-90 min) binnen het doel van 60-80 min; de actlengte (7 verdiepingen) blijft zoals hij is.
+Verloren runs duren gemiddeld 33 min (35 s/beurt). Per act: ±26 beurten in gevechten, ±10 min buiten gevechten. Conclusie: een gewonnen run zit met 74 min (25-45 s per beurt: 61-87 min) binnen het doel van 60-80 min; de actlengte (7 verdiepingen) blijft zoals hij is.
 
 **Waar runs eindigen** (gemiddeld niveau; Slay: act-1-elites en de act-1/2-baas zijn de grote killers, act 2 ook gewone gevechten):
 
-act 1 baas 34%, act 1 gevecht 16%, act 2 baas 15%, act 1 elite 14%, act 2 elite 7%, act 3 baas 6%, act 3 elite 4%, act 2 gevecht 3%, act 3 gevecht 1%
+act 1 baas 38%, act 1 elite 17%, act 2 baas 16%, act 2 elite 9%, act 3 baas 8%, act 1 gevecht 5%, act 3 elite 4%, act 2 gevecht 2%, act 3 gevecht 1%
 
 ### Events (verwachtingswaarde van de beste optie voor de bot, ¥)
 
 Slay: een event is gemiddeld ±50-100 goud waard, met gemene uitzonderingen. Doel hier (events.py): ±60-120¥; >180 = te gul, <15 = zinloos.
 
-Gemiddeld **46¥** per event (58 events). Hoogste: clefairy 253, dojo 185, ace 137, jirachi 135, lunch 116, chest 116. Laagste: magikarp 0, persian 0, pelipper 0, rotom -4, zubat -7, dugtrio -17.
+Gemiddeld **45¥** per event (58 events). Hoogste: clefairy 253, dojo 187, ace 139, jirachi 134, lunch 116, chest 116. Laagste: persian 0, pelipper 0, magikarp 0, rotom -1, zubat -6, dugtrio -17.
 
 ### Voor en na
 
 | | vóór | na |
 |---|---|---|
-| gevecht per act | 3.20 | 3.18 |
+| gevecht per act | 3.20 | 3.24 |
 | elite per act | 1.13 | 1.16 |
-| event per act | 1.00 | 0.99 |
+| event per act | 1.00 | 0.94 |
 | winkel per act | 0.35 | 0.33 |
-| rust per act | 1.25 | 1.27 |
-| geld per act | 232¥ | 135¥ |
-| aankomst baas act 1 | 93% | 92% |
-| verlies gevecht act 1/2/3 | 12% / 9% / 10% | 12% / 7% / 6% |
-| verlies elite act 1/2/3 | 25% / 24% / 22% | 24% / 18% / 13% |
+| rust per act | 1.25 | 1.28 |
+| geld per act | 232¥ | 134¥ |
+| aankomst baas act 1 | 93% | 94% |
+| verlies gevecht act 1/2/3 | 12% / 9% / 10% | 10% / 7% / 6% |
+| verlies elite act 1/2/3 | 25% / 24% / 22% | 24% / 18% / 14% |
 | verlies baas act 1/2/3 | 47% / 48% / 45% | 45% / 35% / 26% |
 | aankopen per winkel act 1 | 1.4 | 1.4 |
-| rust: heal act 1 | 61% | 63% |
+| rust: heal act 1 | 61% | 59% |
 | relic-pool leeg (runs) | 28% | 0% |
-| winkans goed | 89% | 91% |
-| act 1 gehaald (goed) | 94% | 95% |
-| winkans gemiddeld | 78% | 83% |
-| act 1 gehaald (gemiddeld) | 89% | 89% |
-| winkans slordig | 34% | 48% |
-| act 1 gehaald (slordig) | 66% | 65% |
-| event-EV (gemiddeld) | 45¥ | 46¥ |
+| winkans goed | 89% | 94% |
+| act 1 gehaald (goed) | 94% | 97% |
+| winkans gemiddeld | 78% | 86% |
+| act 1 gehaald (gemiddeld) | 89% | 92% |
+| winkans slordig | 34% | 51% |
+| act 1 gehaald (slordig) | 66% | 70% |
+| event-EV (gemiddeld) | 45¥ | 45¥ |
 
 ### Aanpassingen (v0.8.115) en waarom
 
@@ -883,11 +884,11 @@ Gemiddeld **46¥** per event (58 events). Hoogste: clefairy 253, dojo 185, ace 1
 
 ### Conclusies
 
-- Per kamer zit de Spire in de Slay-banden: gang ±9%, elite ±19%, baas ±36% van de team-HP (gemiddeld niveau, alle acts).
-- Kamerverdeling per act (×15/7 om met Slay te vergelijken): 6.8 gevechten, 2.5 elites, 2.1 events, 0.7 winkels, 2.7 rustplekken. Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.
-- HP-economie: aankomst bij de act-1-baas 92% (Slay ±70-90%); rustplekken heal/upgrade 63/36, 48/51, 43/56 per act (Slay: vroeg vaak rusten, later smeden).
-- Doodsoorzaken: baas 55%, elite 25%, gang 20%. In Slay zijn act-1-elites een grotere killer; hier weegt de bot het risico mee (elites alleen als je gezond bent).
-- Events zijn gemiddeld 46¥ waard (Slay ±50-100): iets minder dan een gevecht (±20¥ + een move). De dure ruil-events (betaal X voor Y tegen winkelprijs) zijn bewust neutraal; de type-opties maken ze voor het juiste team goed.
+- Per kamer zit de Spire in de Slay-banden: gang ±8%, elite ±19%, baas ±36% van de team-HP (gemiddeld niveau, alle acts).
+- Kamerverdeling per act (×15/7 om met Slay te vergelijken): 6.9 gevechten, 2.5 elites, 2.0 events, 0.7 winkels, 2.7 rustplekken. Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.
+- HP-economie: aankomst bij de act-1-baas 94% (Slay ±70-90%); rustplekken heal/upgrade 59/40, 47/52, 43/56 per act (Slay: vroeg vaak rusten, later smeden).
+- Doodsoorzaken: baas 62%, elite 30%, gang 8%. In Slay zijn act-1-elites een grotere killer; hier weegt de bot het risico mee (elites alleen als je gezond bent).
+- Events zijn gemiddeld 45¥ waard (Slay ±50-100): iets minder dan een gevecht (±20¥ + een move). De dure ruil-events (betaal X voor Y tegen winkelprijs) zijn bewust neutraal; de type-opties maken ze voor het juiste team goed.
 
 ### Voor Jordi (beslissen of testen)
 

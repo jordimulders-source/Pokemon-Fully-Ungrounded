@@ -6931,6 +6931,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_SixPack,
     },
 
+    [ITEM_LIBERTY_PASS] = // Project Grounded
+    {
+        .name = ITEM_NAME("Liberty Pass"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A ferry ticket to\n"
+            "Liberty Garden.\n"
+            "Smells of victory."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_LibertyPass,
+        .iconPalette = gItemIconPalette_LibertyPass,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000

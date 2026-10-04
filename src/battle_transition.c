@@ -152,6 +152,7 @@ static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
 static void Task_Heatran(u8); // Project Grounded
+static void Task_Victini(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -441,6 +442,9 @@ static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
 static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
+static const u16 sVictini_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_victini.4bpp");
+static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
+static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -546,6 +550,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
     [B_TRANSITION_SEVIPER] = Task_Seviper, // Project Grounded
     [B_TRANSITION_HEATRAN] = Task_Heatran, // Project Grounded
+    [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -7446,4 +7451,131 @@ static const struct RouteTransition sRT_Heatran =
 static void Task_Heatran(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Heatran);
+}
+
+// ---------------- Victini: een grote V komt in vuur van onder het beeld aanvliegen (V-create), met een vlammenspoor
+// onder de punt. Hij slaat in (wit-heet, het beeld schudt) en dan vliegt alles in brand.
+// tiles (tools/grounded/route_transitions.py): 1-3 vuur, 4-5 vlammentongen, 6 vonken, daarna de V (30x18, sVictini_V)
+#define VICTINI_RISE_START  6
+#define VICTINI_RISE_LEN    26
+#define VICTINI_IMPACT      (VICTINI_RISE_START + VICTINI_RISE_LEN)
+#define VICTINI_FLOOD_START (VICTINI_IMPACT + 16)
+
+// het beeld wordt in een buffer opgebouwd en pas de volgende frame (direct na de VBlank) in één keer naar VRAM gekopieerd,
+// samen met de scroll; anders zie je halve frames (de V flitst door de vlammen heen)
+#define VICTINI_ROWS 21
+static EWRAM_DATA u16 sVictini_Map[VICTINI_ROWS * 32] = {0};
+static EWRAM_DATA s16 sVictini_Scroll[2] = {0};
+
+static void RTVictini_Fire(u16 *map, s32 r, s32 c, s32 t, bool32 top)
+{
+    if (r < 0 || r >= VICTINI_ROWS)
+        return;
+    map[r * 32 + (c & 31)] = RT_TILE(top ? 4 + ((c + t / 3) & 1) : 1 + ((r + c + t / 2) % 3));
+}
+
+static bool8 RTVictini_Update(struct Task *task)
+{
+    u16 *map = sVictini_Map;
+    s32 t = task->tRtTimer, i, r, c, p, base, flood, ground;
+
+    if (t > 0)
+    {
+        CpuCopy16(sVictini_Map, RT_Tilemap(), sizeof(sVictini_Map));
+        SetGpuReg(REG_OFFSET_BG0HOFS, sVictini_Scroll[0] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, sVictini_Scroll[1] & 0x1FF);
+    }
+    CpuFill16(0, sVictini_Map, sizeof(sVictini_Map));
+
+    // positie van de V in pixels (bovenkant), van onder het beeld naar boven met een uitloop
+    if (t < VICTINI_RISE_START)
+        p = 176;
+    else if (t < VICTINI_IMPACT)
+    {
+        s32 u = VICTINI_RISE_LEN - (t - VICTINI_RISE_START); // aflopend
+        p = 8 + 168 * u * u / (VICTINI_RISE_LEN * VICTINI_RISE_LEN);
+    }
+    else
+        p = 8;
+    base = p >> 3;
+
+    // vonken stijgen op over het beeld
+    for (i = 0; i < 6; i++)
+        map[((19 - ((t / 2 + i * 7) % 20)) * 32) + ((i * 11 + t / 5) % 30)] = RT_TILE(6);
+
+    // vuur aan de onderrand, groeit de eerste frames aan
+    ground = min(t / 4, 2);
+    for (c = 0; c < 31; c++)
+        for (r = 21 - ground; r <= 20; r++)
+            RTVictini_Fire(map, r, c, t, r == 21 - ground);
+
+    // vlammenspoor onder de punt zolang hij vliegt
+    if (t >= VICTINI_RISE_START && t < VICTINI_IMPACT + 6)
+    {
+        for (r = max(base + 17, 0); r <= 20; r++)
+        {
+            for (c = 14; c <= 15; c++)
+                RTVictini_Fire(map, r, c, t, FALSE);
+            if (((r + t) & 1) == 0)
+            {
+                map[r * 32 + 13] = RT_TILE(6);
+                map[r * 32 + 16] = RT_TILE(6);
+            }
+        }
+    }
+
+    // de V zelf
+    for (r = 0; r < 18; r++)
+    {
+        if (base + r < 0 || base + r >= VICTINI_ROWS)
+            continue;
+        for (c = 0; c < 30; c++)
+            if (sVictini_V[r * 30 + c])
+                map[(base + r) * 32 + c] = RT_TILE(sVictini_V[r * 30 + c]);
+    }
+
+    // de vloed: alles vliegt in brand
+    flood = (t >= VICTINI_FLOOD_START) ? (t - VICTINI_FLOOD_START) * 2 : 0;
+    for (r = 21 - min(flood, 22); r <= 20; r++)
+        for (c = 0; c < 31; c++)
+            RTVictini_Fire(map, r, c, t, r == 21 - flood);
+
+    // scroll voor de volgende frame: fijne verschuiving van de V, en schudden na de inslag
+    sVictini_Scroll[0] = 0;
+    sVictini_Scroll[1] = -(p & 7);
+    if (t >= VICTINI_IMPACT)
+    {
+        sVictini_Scroll[0] = (Random() % 5) - 2;
+        sVictini_Scroll[1] += (Random() % 5) - 2;
+    }
+
+    if (t == 0)
+        PlaySE(SE_M_FLAME_WHEEL);
+    if (t == VICTINI_RISE_START + 10)
+        PlayCry_Normal(SPECIES_VICTINI, 0);
+    if (t == VICTINI_IMPACT)
+        PlaySE(SE_M_SACRED_FIRE);
+    if (t == VICTINI_FLOOD_START)
+        PlaySE(SE_M_EXPLOSION);
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t / 3, t >= VICTINI_IMPACT ? 12 : 8), RGB(16, 3, 0));
+    // inslag: de V wordt even wit-heet
+    if (t >= VICTINI_IMPACT && t < VICTINI_IMPACT + 8)
+        BlendPalettes(1 << 15, 12 - (t - VICTINI_IMPACT) * 3 / 2, RGB_WHITE);
+    if (flood >= 24)
+    {
+        BlendPalettes(PALETTES_ALL, min((flood - 24) * 4, 16), RGB(31, 30, 20));
+        return flood >= 32;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_Victini =
+{
+    sVictini_Tileset, sizeof(sVictini_Tileset), sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
+};
+
+static void Task_Victini(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Victini);
 }

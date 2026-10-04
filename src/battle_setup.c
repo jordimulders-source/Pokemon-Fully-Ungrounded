@@ -525,6 +525,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), Mew-muziek (ook een mythische)
+        CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_VS_MEW);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

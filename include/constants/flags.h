@@ -693,9 +693,9 @@
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
+#define FLAG_RECEIVED_LIBERTY_PASS        0x289 // Project Grounded: Liberty Pass gekregen (na vijf Victory-stempels)
+#define FLAG_HIDE_LIBERTY_GARDEN_VICTINI  0x28A // Project Grounded: Victini in Liberty Garden (verslagen/gevangen)
+#define FLAG_VICTORY_GAUNTLET_EXPLAINED   0x28B // Project Grounded: de Victory-commissaris in de haven heeft de gauntlet uitgelegd
 #define FLAG_UNUSED_0x28C  0x28C // Unused Flag
 #define FLAG_UNUSED_0x28D  0x28D // Unused Flag
 #define FLAG_UNUSED_0x28E  0x28E // Unused Flag

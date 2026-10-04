@@ -1023,7 +1023,9 @@
 
 #define ITEM_SIX_PACK 855 // Project Grounded: healt het hele team (60 HP per Pokémon)
 
-#define ITEMS_COUNT 856
+#define ITEM_LIBERTY_PASS 856 // Project Grounded: ticket naar Liberty Garden (Victini), na de Victory-gauntlet
+
+#define ITEMS_COUNT 857
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -1266,6 +1266,10 @@
     {
       "id": "MAPSEC_OUTER_SPACE",
       "name": "OUTER SPACE"
+    },
+    {
+      "id": "MAPSEC_LIBERTY_GARDEN",
+      "name": "LIBERTY GARDEN"
     }
   ]
 }

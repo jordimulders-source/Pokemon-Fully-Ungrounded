@@ -33,7 +33,8 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_IndoorRoute124",
+    "gMapGroup_Grounded"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -465,10 +466,7 @@
     "SkyPillar_ReverseB1F",
     "SkyPillar_ReverseB2F",
     "SkyPillar_ReverseB3F",
-    "MtPyre_Nightmare",
-    "Route112_Dojo",
-    "Route112_TowerOfDarkness",
-    "Route112_TowerOfWaters"
+    "MtPyre_Nightmare"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -665,5 +663,10 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
+  ],
+  "gMapGroup_Grounded": [
+    "Route112_Dojo",
+    "Route112_TowerOfDarkness",
+    "Route112_TowerOfWaters"
   ]
 }

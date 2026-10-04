@@ -179,7 +179,8 @@
 #define TRAINER_PIC_TRIO_RUIN              161 // Project Grounded: Battle Stadium (trio-compagnon)
 #define TRAINER_PIC_TRIO_WEATHER           162 // Project Grounded: Battle Stadium (trio-compagnon)
 #define TRAINER_PIC_TRIO_CREATORS          163 // Project Grounded: Battle Stadium (trio-compagnon)
-#define TRAINER_PIC_COUNT                 164
+#define TRAINER_PIC_MUSTARD               164 // Project Grounded: Kubfu-dojo (Gen 3-versie van zijn artwork)
+#define TRAINER_PIC_COUNT                 165
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

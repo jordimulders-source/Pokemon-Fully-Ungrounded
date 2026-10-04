@@ -102,6 +102,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Zwarte leegte op een kaart:** metatile 0 is niet zwart (layer NORMAL tekent grasbasis op BG3); gebruik Facility-metatile 0x201. Kleine kaarten tonen de border: rondom aanvullen. `build/emerald/data/maps.o` volgt `map.bin`/`border.bin` niet: na een wijziging verwijderen.
 - **Kubfu evolueren:** `EVO_SCRIPT_TRIGGER` negeert zijn parameter (altijd Single Strike); gebruik `Grounded_EvolveKubfu` (VAR_0x8004 0/1). Testtruc: battle style SET via `u16[gSaveBlock2Ptr+0x14] |= 1<<9` (anders blijft A-mashen hangen op "Will you switch?").
 - **Agent-branches met conflicten:** `graft.py`-aanpak: onze versie + de pure toevoegingen van de agent (diff base→agent), wijzigingen met de hand; trainernummers en gegenereerde bestanden (pool.py) daarna opnieuw.
+- **Max. 128 kaarten per kaartgroep** (`struct WarpData` gebruikt `s8 mapNum`; kaart 128+ laat het spel vastlopen in `CB2_LoadMap2`). `gMapGroup_Dungeons` zit vol (128): nieuwe kaarten in `gMapGroup_Grounded` (achteraan `group_order`).
+- **Nieuw item-icoon:** ook een `extern` in `include/graphics.h`, naast `src/data/graphics/items.h`.
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)
@@ -131,7 +133,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 ### Testen
 - `python3 tools/grounded/maptools/testrom.py <scratchmap> "regels script 1" ["regels script 2" ...]` bouwt een test-ROM met tijdelijke debug-scripts (bijv. `warp MAP_X, x, y; waitstate`) en zet `debug.inc` terug. Daarna in Python: `Emu(rom)`, `load(e, intro)`, `debug_script(e, 1)` (`emu.py`). Bouw daarna opnieuw voor een schone ROM.
 - **Testgevechten:** altijd met een **Arceus lv 100** met Dark Pulse, Psychic, Thunderbolt en Ice Beam (`givemon SPECIES_ARCEUS, 100, move1=MOVE_DARK_PULSE, move2=MOVE_PSYCHIC, move3=MOVE_THUNDERBOLT, move4=MOVE_ICE_BEAM`), tenzij een gevecht een ander soort Pokémon vereist. Zet in het testscript ook **alle badges** aan (`setflag FLAG_BADGE01_GET` t/m `FLAG_BADGE08_GET`), anders luistert Arceus niet.
-- Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; grote JSON-bestanden (`wild_encounters.json`, `layouts.json`, `map_groups.json`) tekstueel bewerken, niet via `json.dump`; trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`); nieuwe kaarten achteraan hun groep in `map_groups.json`.
+- Valkuilen: savestates zijn ongeldig na een rebuild; `data/scripts/debug.inc` nooit committen; grote JSON-bestanden (`wild_encounters.json`, `layouts.json`, `map_groups.json`) tekstueel bewerken, niet via `json.dump`; trainer-AI in `trainers.party` met bestaande namen (bijv. `Check Bad Move / Try To Faint`); nieuwe kaarten achteraan hun groep in `map_groups.json` (nieuwe eigen kaarten in `gMapGroup_Grounded`).
 
 ### Afronden van een stuk werk
 `make -j4` slaagt → changelogsectie → **Stand van zaken** bijwerken (kort) → commit en push. Bij een kaart: één render van de hele kaart naar Jordi (plus emulatorbeelden als er iets te zien valt). Geen ROM tenzij gevraagd.

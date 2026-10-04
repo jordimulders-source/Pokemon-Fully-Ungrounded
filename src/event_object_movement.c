@@ -562,6 +562,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
     {gObjectEventPal_Brock,                 OBJ_EVENT_PAL_TAG_BROCK}, // Project Grounded
+    {gObjectEventPal_Mustard,               OBJ_EVENT_PAL_TAG_MUSTARD}, // Project Grounded
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoC,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_C}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoD,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_D}, // Project Grounded (FRLG)

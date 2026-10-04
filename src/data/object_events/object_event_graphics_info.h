@@ -1235,6 +1235,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak = {
 };
 
 // Project Grounded
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mustard = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MUSTARD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Mustard,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BROCK,

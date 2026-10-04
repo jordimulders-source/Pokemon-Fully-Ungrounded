@@ -450,10 +450,16 @@ static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
 static const u16 sShaymin_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.4bpp");
 static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
+static const u8 sShaymin_Petals[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_petals.bin");
+static const u8 sShaymin_Carpet[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_carpet.bin");
 static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_genesect.4bpp");
 static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
 static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
 static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
+static const u16 sMewtwo_Lab[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_lab.bin");
+static const u16 sMewtwo_Crack[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_crack.bin");
+static const u16 sMewtwo_Page[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_page.bin");
+static const u16 sMewtwo_Burst[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_burst.bin");
 static const u16 sGiratina_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_giratina.4bpp");
 static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
 static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
@@ -7484,71 +7490,102 @@ static void Task_Heatran(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Heatran);
 }
 
-// ---------------- Shaymin: drie spiraalarmen van Gracidea-bloemen en -blaadjes draaien om het midden van het scherm,
-// de wereld wordt donker zodat de bloemen oplichten, en dan bedekt een bloementapijt vanuit het midden het hele beeld.
-// tiles: 1-2 Gracidea (roze / wit), 3-6 roze blaadje, 7-8 wit blaadje, 9 bloementapijt, 10 lichtroze, 11-14 grote
-// Gracidea (2x2). Het beeld wordt eerst in een buffer opgebouwd en dan in een keer gekopieerd (geen scheuren).
-#define SHAYMIN_PETALS 120
-#define SHAYMIN_CARPET_START 46
+// ---------------- Shaymin: drie spiraalarmen van bloemen in alle kleuren (Gracidea, rozen, tulpen, zonnebloemen,
+// madeliefjes, vergeet-mij-nietjes, viooltjes, lavendel, blaadjes) draaien om het midden van het scherm, de wereld
+// wordt donker zodat de bloemen oplichten, en dan bedekt een bloementapijt vanuit het midden het hele beeld.
+// Drie paletten: BG 15 (roze/rood/fuchsia), 14 (geel/oranje/zalm), 13 (blauw/paars/lila), elk met een schittering.
+// tiles (route_transitions.py, "shaymin"): 1-24 kleine bloemen en blaadjes, 25-48 zes grote bloemen (2x2), 49-63
+// tapijt (gras met een bloem). Het beeld wordt eerst in een buffer opgebouwd en dan in een keer gekopieerd (geen scheuren).
+#define SHAYMIN_PETALS 210
+#define SHAYMIN_CARPET_START 54
+#define SHAYMIN_SMALL 24
+#define SHAYMIN_BIG 6
+#define SHAYMIN_CARPET (1 + SHAYMIN_SMALL + SHAYMIN_BIG * 4)
+#define SHAYMIN_CARPET_TILES 15
+#define SHAYMIN_SCENE_PALETTES (PALETTES_ALL & ~(7 << 13))
 
-static void RTShaymin_Put(u8 *cells, s32 x, s32 y, u8 tile)
+// palet per tile (index 0 = leeg)
+static const u8 sShaymin_TilePal[SHAYMIN_CARPET + SHAYMIN_CARPET_TILES] =
 {
-    if (x >= 0 && x < 30 && y >= 0 && y < 20 && cells[y * 30 + x] < 9) // niet over het tapijt (doorzichtige randen)
-        cells[y * 30 + x] = tile;
+    0,
+    15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13, 13, 13, 13,
+    15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13, 13, 13, 13,
+    15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13,
+};
+
+// cel: bit 0-5 tile, bit 6-7 horizontaal/verticaal spiegelen
+static void RTShaymin_Put(u8 *cells, s32 x, s32 y, u8 cell)
+{
+    if (x >= 0 && x < 30 && y >= 0 && y < 20 && (cells[y * 30 + x] & 0x3F) < SHAYMIN_CARPET) // niet over het tapijt
+        cells[y * 30 + x] = cell;
 }
 
 static bool8 RTShaymin_Update(struct Task *task)
 {
     u16 *tilemap = RT_Tilemap();
-    s32 t = task->tRtTimer, i, n, r, ang, x, y, carpet, dx, dy;
+    s32 t = task->tRtTimer, i, n, r, base, ang, x, y, carpet, dx, dy, b;
     u8 cells[30 * 20];
+    const u8 *p;
+    u32 f = (t / 4) % 4;
 
-    // het bloementapijt: een cirkel vanuit het midden die steeds groter wordt
+    LoadPalette(&sShaymin_Palette[(4 + f) * 16], BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+    LoadPalette(&sShaymin_Palette[(8 + f) * 16], BG_PLTT_ID(13), PLTT_SIZE_4BPP);
+
+    // het bloementapijt: een cirkel vanuit het midden die steeds groter wordt (patroon uit sShaymin_Carpet)
     carpet = (t >= SHAYMIN_CARPET_START) ? (t - SHAYMIN_CARPET_START) * 3 / 2 : -1;
     for (y = 0; y < 20; y++)
     {
+        dy = (y * 2 - 19) * 3;
         for (x = 0; x < 30; x++)
         {
-            dx = x * 2 - 29;
-            dy = (y * 2 - 19) * 3 / 2;
-            cells[y * 30 + x] = (carpet >= 0 && dx * dx + dy * dy <= carpet * carpet * 4) ? (((x + y + t / 3) % 5) ? 9 : 10) : 0;
+            dx = x * 4 - 58;
+            cells[y * 30 + x] = (carpet >= 0 && dx * dx + dy * dy <= carpet * carpet * 16) ? sShaymin_Carpet[y * 30 + x] : 0;
         }
     }
 
-    // de wervelwind: drie spiraalarmen die naar buiten draaien; elke achtste is een grote bloem
-    n = min(12 + t * 4, SHAYMIN_PETALS);
-    for (i = 0; i < n; i++)
+    // de wervelwind: drie spiraalarmen die naar buiten draaien; elke zesde is een grote bloem. Per bloem staan straal,
+    // hoek en tile vooraf in sShaymin_Petals (geen delingen per frame: anders haalt de GBA het niet in een frame)
+    n = min(16 + t * 6, SHAYMIN_PETALS);
+    base = (t * 3) % 150;
+    for (i = 0, p = sShaymin_Petals; i < n; i++, p += 3)
     {
-        r = ((i / 3) * 7 + t * 3) % 150;
-        ang = ((i % 3) * 85 + r + t * 5 + (i * 13) % 20) & 0xFF;
-        x = 15 + Cos(ang, r) / 8;
-        y = 10 + Sin(ang, r * 2 / 3) / 8;
-        if (i % 8 == 0)
+        r = p[0] + base;
+        if (r >= 150)
+            r -= 150;
+        ang = (p[1] + r + t * 5) & 0xFF;
+        x = 15 + (Cos(ang, r) >> 3);
+        y = 10 + ((Sin(ang, r) * 171) >> 11);       // r * 2/3, dan /8
+        if (p[2] & 0x80)
         {
-            RTShaymin_Put(cells, x, y, 11);
-            RTShaymin_Put(cells, x + 1, y, 12);
-            RTShaymin_Put(cells, x, y + 1, 13);
-            RTShaymin_Put(cells, x + 1, y + 1, 14);
+            b = 1 + SHAYMIN_SMALL + (p[2] & 0x7F) * 4;
+            RTShaymin_Put(cells, x, y, b);
+            RTShaymin_Put(cells, x + 1, y, b + 1);
+            RTShaymin_Put(cells, x, y + 1, b + 2);
+            RTShaymin_Put(cells, x + 1, y + 1, b + 3);
         }
-        else if (i % 5 == 0)
-            RTShaymin_Put(cells, x, y, 1 + (i / 5) % 2);
-        else if (i % 3 == 0)
-            RTShaymin_Put(cells, x, y, 7 + ((ang >> 6) & 1));
         else
-            RTShaymin_Put(cells, x, y, 3 + (ang >> 6));
+        {
+            // elke kleine bloem een andere soort; ze tuimelen (spiegelen met de draaihoek)
+            RTShaymin_Put(cells, x, y, p[2] | ((ang >> 6) << 6));
+        }
     }
 
     for (y = 0; y < 20; y++)
+    {
         for (x = 0; x < 30; x++)
-            tilemap[y * 32 + x] = cells[y * 30 + x] ? RT_TILE(cells[y * 30 + x]) : 0;
+        {
+            b = cells[y * 30 + x];
+            tilemap[y * 32 + x] = (b & 0x3F) ? ((b & 0x3F) | ((b >> 6) << 10) | (sShaymin_TilePal[b & 0x3F] << 12)) : 0;
+        }
+    }
 
     if (t == 0 || t == 30)
         PlaySE(SE_M_PETAL_DANCE);
-    if (carpet < 22)
-        BlendPalettes(RT_SCENE_PALETTES, min(t / 4, 10), RGB(3, 8, 5));    // de wereld wordt donkergroen
-    else
-        BlendPalettes(PALETTES_ALL, min(10 + (carpet - 22), 16), RGB(31, 28, 30));
-    return carpet >= 28;
+    // de wereld wordt donkergroen; als het tapijt het beeld vult nog een korte, zachte lichtflits over de bloemen
+    BlendPalettes(SHAYMIN_SCENE_PALETTES, min(t / 4, 10), RGB(3, 8, 5));
+    if (carpet >= 22)
+        BlendPalettes(PALETTES_ALL & ~SHAYMIN_SCENE_PALETTES, max(0, 6 - abs(carpet - 25) * 2), RGB(31, 28, 30));
+    return carpet >= 31;
 }
 
 static const struct RouteTransition sRT_Shaymin =
@@ -7644,78 +7681,127 @@ static void Task_Genesect(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Genesect);
 }
 
-// ---------------- Mewtwo: het beeld kleurt diep paars, twee gloeiende ogen gaan open, en dan een psychische schokgolf
-// die vanuit het midden in ringen over het hele scherm rolt. tiles: 1-54 ogen (3 standen van 6x3, linkeroog; het
-// rechteroog is gespiegeld), 55 rand buiten, 56 rand fel, 57 rand binnen, 58-59 psychische vulling (kleurcyclus)
-#define MEWTWO_WAVE 30
-
-static void RTMewtwo_PutEyes(u16 *tilemap, u32 first)
-{
-    u32 i, j;
-    for (j = 0; j < 3; j++)
-    {
-        for (i = 0; i < 6; i++)
-        {
-            tilemap[(7 + j) * 32 + 8 + i] = RT_TILE(first + j * 6 + i);
-            tilemap[(7 + j) * 32 + 16 + i] = RT_TILE(first + j * 6 + (5 - i)) | 0x400; // horizontaal gespiegeld
-        }
-    }
-}
+// ---------------- Mewtwo: het lab op Cinnabar Island. Mewtwo zweeft als silhouet in een gloeiende kweektank (belletjes
+// stijgen, de consoles tonen een DNA-streng en een hartslag), het dagboek uit de Pokémon Mansion verschijnt regel voor
+// regel ("Feb. 6: Mew gave birth. We named the newborn MEWTWO." / "Sept. 1: MEWTWO is far too powerful. We have failed
+// to curb its vicious tendencies..."), dan gaan de ogen open, barst het glas in drie stappen en spat de tank uiteen in
+// een psychische schokgolf (scherven vliegen weg, daarachter Mewtwo met witte ogen in een paars veld).
+// tiles en tilemaps: route_transitions.py ("mewtwo"): 1-3 rand van de golf (buiten/fel/binnen), 4-7 scherven.
+// Paletten: 0-2 rustig, 3-5 ontwaakt, 6-8 schokgolf (elk een kleurcyclus van 3 standen).
+#define MEWTWO_LAB    8
+#define MEWTWO_PAGE1  14
+#define MEWTWO_PAGE2  50
+#define MEWTWO_LINE   15    // frames per regel (2 tiles per frame)
+#define MEWTWO_EYES   88
+#define MEWTWO_CRACK  96    // barst 1, +6 barst 2, +12 barst 3
+#define MEWTWO_BURST  114
+#define MEWTWO_SHARDS 14
 
 static bool8 RTMewtwo_Update(struct Task *task)
 {
     u16 *tilemap = RT_Tilemap();
-    s32 t = task->tRtTimer, i, r, c, dx, dy, d2, rad;
+    s32 t = task->tRtTimer, r, c, k, dx, dy, d2, rad, page, line, reveal, ang, dist, x, y;
+    const u16 *map = sMewtwo_Lab;
+    u16 v;
 
-    for (i = 0; i < 20 * 32; i++)
-        tilemap[i] = 0;
+    if (t >= MEWTWO_CRACK)
+        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / 6, 2) * 600];
+    rad = (t >= MEWTWO_BURST) ? 12 + (t - MEWTWO_BURST) * 9 : -1;
+    page = (t >= MEWTWO_PAGE2) ? 1 : 0;
 
-    if (t >= MEWTWO_WAVE)
+    // elk vak in een keer zijn eindwaarde geven (niet eerst wissen: dat geeft scheuren)
+    for (r = 0; r < 20; r++)
     {
-        rad = (t - MEWTWO_WAVE) * 8;
-        if (t == MEWTWO_WAVE)
-            PlaySE(SE_M_PSYBEAM);
-        for (r = 0; r < 20; r++)
+        for (c = 0; c < 30; c++)
         {
-            for (c = 0; c < 30; c++)
+            v = 0;
+            if (t >= MEWTWO_LAB)
+            {
+                v = map[r * 30 + c];
+                if (r >= 16 && t >= MEWTWO_PAGE1)
+                {
+                    line = (r - 16) / 2;
+                    reveal = (t - (page ? MEWTWO_PAGE2 : MEWTWO_PAGE1) - line * MEWTWO_LINE) * 2;
+                    if (c < reveal)
+                        v = sMewtwo_Page[page * 120 + (r - 16) * 30 + c];
+                }
+            }
+            if (rad >= 0)
             {
                 dx = c * 8 + 4 - 120;
-                dy = r * 8 + 4 - 80;
+                dy = r * 8 + 4 - 64;
                 d2 = dx * dx + dy * dy;
                 if (rad > 16 && d2 < (rad - 16) * (rad - 16))
-                    tilemap[r * 32 + c] = RT_TILE(58 + ((r + c + t / 4) & 1));
+                    v = sMewtwo_Burst[r * 30 + c];
                 else if (rad > 8 && d2 < (rad - 8) * (rad - 8))
-                    tilemap[r * 32 + c] = RT_TILE(57);
+                    v = 3;
                 else if (d2 < rad * rad)
-                    tilemap[r * 32 + c] = RT_TILE(56);
+                    v = 2;
                 else if (d2 < (rad + 8) * (rad + 8))
-                    tilemap[r * 32 + c] = RT_TILE(55);
+                    v = 1;
             }
+            tilemap[r * 32 + c] = v ? RT_TILE(v) : 0;
         }
+    }
+
+    // glasscherven vliegen vooruit de schokgolf uit
+    if (rad >= 0)
+    {
+        for (k = 0; k < MEWTWO_SHARDS; k++)
+        {
+            ang = (k * 256 / MEWTWO_SHARDS + (k * 37) % 11) & 0xFF;
+            dist = 30 + (t - MEWTWO_BURST) * (12 + (k % 3) * 3);
+            x = 120 + Cos(ang, dist);
+            y = 64 + Sin(ang, dist) * 3 / 4;
+            if (x < 0 || x >= 240 || y < 0 || y >= 160 || dist < rad + 10)
+                continue;
+            tilemap[(y / 8) * 32 + x / 8] = RT_TILE(4 + k % 4) | ((k & 1) << 10) | ((k & 2) << 10);
+        }
+    }
+
+    // paletten: rustig (via de runner), ontwaakt (ogen gloeien, vloeistof flakkert), schokgolf (ringen naar buiten)
+    if (t >= MEWTWO_BURST)
+        LoadPalette(&sMewtwo_Palette[(6 + (t / 2) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    else if (t >= MEWTWO_EYES)
+        LoadPalette(&sMewtwo_Palette[(3 + (t / 3) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 8)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) * 2, RGB_BLACK); // het lab komt uit het donker
+
+    // trillen: licht bij het barsten, harder bij de schokgolf
+    if (t >= MEWTWO_BURST)
+    {
         SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 5) - 2) & 0x1FF);
         SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 5) - 2) & 0x1FF);
     }
-
-    // de ogen blijven boven de golf gloeien tot het scherm bijna vol is
-    if (t >= 8 && t < MEWTWO_WAVE + 14)
+    else if (t >= MEWTWO_CRACK)
     {
-        if (t == 14)
-            PlaySE(SE_M_CONFUSE_RAY);
-        RTMewtwo_PutEyes(tilemap, t < 11 ? 1 : (t < 14 ? 19 : 37));
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
     }
 
-    BlendPalettes(RT_SCENE_PALETTES, min(t, 13), RGB(5, 0, 9));
-    if (t >= MEWTWO_WAVE + 21)
+    if (t == MEWTWO_LAB)
+        PlaySE(SE_M_BUBBLE);
+    if (t == MEWTWO_EYES)
+        PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
+    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + 6 || t == MEWTWO_CRACK + 12)
+        PlaySE(SE_ICE_CRACK);
+    if (t == MEWTWO_BURST)
+        PlaySE(SE_ICE_BREAK);
+    if (t == MEWTWO_BURST + 3)
+        PlaySE(SE_M_PSYBEAM);
+
+    BlendPalettes(RT_SCENE_PALETTES, min(t * 2, 16), RGB_BLACK);
+    if (t >= MEWTWO_BURST + 26)
     {
-        BlendPalettes(PALETTES_ALL, min((t - MEWTWO_WAVE - 21) * 4, 16), RGB(31, 28, 31));
-        return t >= MEWTWO_WAVE + 25;
+        BlendPalettes(PALETTES_ALL, min((t - MEWTWO_BURST - 26) * 4, 16), RGB(31, 28, 31));
+        return t >= MEWTWO_BURST + 30;
     }
     return FALSE;
 }
 
 static const struct RouteTransition sRT_Mewtwo =
 {
-    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 4, 4, 0, NULL, RTMewtwo_Update, NULL
+    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
 };
 
 static void Task_Mewtwo(u8 taskId)

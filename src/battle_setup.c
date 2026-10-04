@@ -525,7 +525,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van Gracidea-bloemen
+    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
     case SPECIES_SHAYMIN_SKY:
         CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
         break;
@@ -536,7 +536,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_GENESECT_CHILL:
         CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
         break;
-    case SPECIES_MEWTWO: // Project Grounded: gloeiende ogen en een psychische schokgolf, het Mewtwo-thema uit FRLG
+    case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
         CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
         break;
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels

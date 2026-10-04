@@ -4,6 +4,7 @@ met Slow Start (Jordi).
 
 - Maat 0 t/m tel 1 van maat 3 (±5 s, de gevechtstransitie): precies het originele Regi-thema.
 - Vanaf ±5 s: Slow Start. Het tempo zakt in drie tellen naar 55% en versnelt vanaf maat 4 per maat terug naar 100%.
+- Vanaf maat 20: de Hoenn-trompet (Elite Four) speelt de Regi-melodie mee.
 - Vanaf maat 8: bombast bovenop het origineel (tuba-grondtonen, taiko, crashes), in de loop (maat 20-39) een koor
   onder het koraal. Het koper zit al in het origineel.
 - Maat 28-31 (begin van een frase): hij zakt nog één keer in ("bijkomen"), tel voor tel vertragend, zonder drums en
@@ -148,6 +149,9 @@ def build():
     src_rng = lambda ev: [e for e in ev if CLIMAX_FROM <= bar_of(e[0]) < CLIMAX_FROM + 8]
     mv = lambda ev, tr=SHIFT: [[s + off, e + off, n + tr, v] for s, e, n, v in src_rng(ev)]
     add['trumpet'] = [[s, e, n, 120] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
+    # de iconische Hoenn-trompet (Elite Four: voicegroup_trumpet_keysplit) speelt de Regi-melodie mee in de loop
+    add['trumpet'] = [[s, e, n, 104] for s, e, n, v in thin(T[1], 1, 'top')
+                      if LOOP_START <= bar_of(s) < LOOP_END and bar_of(s) not in QUIET] + add['trumpet']
     add['horn'] = [[s, e, n, 112] for s, e, n, v in mv(thin(T[2], 1, 'top'))]
     add['choir'] += [[s, e, n - 12, 118] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
     # tweestemmig: een diatonische terts erboven (E-mineur, de toonsoort van de climax)
@@ -156,7 +160,7 @@ def build():
         pcs = sorted(range(n + 1, n + 6), key=lambda x: x)
         up = [x for x in pcs if x % 12 in scale]
         return up[1] if len(up) > 1 else n + 3
-    add['trumpet2'] = [[s, e, third(n), 108] for s, e, n, v in add['trumpet']]
+    add['trumpet2'] = [[s, e, third(n), 108] for s, e, n, v in add['trumpet'] if bar_of(s) >= CLIMAX_START]
     add['choir2'] = [[s, e, third(n), 108] for s, e, n, v in add['choir'] if bar_of(s) >= CLIMAX_START]
     for b in range(CLIMAX_START, CLIMAX_END):
         r = roots[b - CLIMAX_START + CLIMAX_FROM] + SHIFT

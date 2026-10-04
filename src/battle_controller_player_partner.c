@@ -238,12 +238,13 @@ static void PlayerPartnerHandleDrawTrainerPic(u32 battler)
     else
         isFrontPic = TRUE;
 
-    // Project Grounded: Battle Stadium-compagnon zonder rugplaatje staat met zijn voorplaatje naast je (Frontier-tag battles)
+    // Project Grounded: Battle Stadium-compagnon zonder rugplaatje staat met zijn voorplaatje naast je (Frontier-tag battles);
+    // rechts (90), want de speler staat met zijn rugplaatje links (32) en zou anders achter de compagnon verdwijnen
     if (Stadium_PartnerUsesFrontPic())
     {
         trainerPicId = gBattlePartners[difficulty][gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerPic;
         isFrontPic = TRUE;
-        xPos = 32;
+        xPos = 90;
         yPos = 80;
     }
 

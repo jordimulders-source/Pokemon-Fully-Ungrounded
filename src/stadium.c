@@ -372,6 +372,54 @@ static void Task_StartStadiumBattle(u8 taskId)
 
 static const u8 sText_StadiumDefeat[] = _("What a match!\nThe crowd is on its feet!");
 
+// Eigen teksten per trainer (placeholders; Jordi herschrijft): nederlaag en winst. De intro staat in
+// src/data/stadium_slides.h (trainer slide voor de eerste beurt). Ditto praat niet.
+struct StadiumQuote
+{
+    u16 trainerId;
+    const u8 *defeat;
+    const u8 *win;
+};
+
+static const struct StadiumQuote sStadiumQuotes[] =
+{
+    {TRAINER_STADIUM_WARIO, COMPOUND_STRING("WAAAH! I demand a recount! And a refund! And garlic!"), COMPOUND_STRING("Wahaha! Pay up! Cash only. No coupons.")},
+    {TRAINER_STADIUM_YOSHI, COMPOUND_STRING("Yoshi... sniff...\p(He cried. You did this.)"), COMPOUND_STRING("Yoshi! Yoshi!\p(Happy tears this time.)")},
+    {TRAINER_STADIUM_GOLBAT, COMPOUND_STRING("skree...\p(It flaps back into the cave of your childhood.)"), COMPOUND_STRING("SKREEEEE!\p(It will be waiting in every cave. Forever.)")},
+    {TRAINER_STADIUM_GRIMER, COMPOUND_STRING("Blorp... blorp.\p(It seeps away through the floor. The janitor sighs.)"), COMPOUND_STRING("BLORP!\p(The arena smells like this now.)")},
+    {TRAINER_STADIUM_BOO, COMPOUND_STRING("You looked! You LOOKED! That's cheating!"), COMPOUND_STRING("Heh heh... You turned your back for one second.")},
+    {TRAINER_STADIUM_MEW, COMPOUND_STRING("Mew...\p(It crawls back under the truck. See you in 1998.)"), COMPOUND_STRING("Mew! Mew!\p(It used TRANSFORM on your dignity.)")},
+    {TRAINER_STADIUM_SHY_GUY_RED, COMPOUND_STRING("...!\p(He hides behind his own mask.)"), COMPOUND_STRING("...\p(A tiny victory dance. Very shy. Still a dance.)")},
+    {TRAINER_STADIUM_SHY_GUY_GREEN, COMPOUND_STRING("(He has left the building. His POKéMON stayed to apologize.)"), COMPOUND_STRING("(He whispers gg. Then he hides under the bleachers.)")},
+    {TRAINER_STADIUM_SHY_GUY_PINK, COMPOUND_STRING("Bzz... bzz...\p(Battery low.)"), COMPOUND_STRING("BZZZZZ!\p(A victory loop. The referee is not amused.)")},
+    {TRAINER_STADIUM_SHY_GUY_BLACK, COMPOUND_STRING("This never happened. We never met. Nice mask, though."), COMPOUND_STRING("Pleasure doing business. Your wallet's in my pocket now.")},
+    {TRAINER_STADIUM_BURGLAR, COMPOUND_STRING("Fine. I'll just steal the trophy later. When nobody's looking."), COMPOUND_STRING("Thanks for the win. And for your wallet.")},
+    {TRAINER_STADIUM_DITTO, COMPOUND_STRING("... :)"), COMPOUND_STRING(":)")},
+    {TRAINER_STADIUM_JOEY, COMPOUND_STRING("Ouch! A scrape!\pMy POOCHYENA is still top percentage, though."), COMPOUND_STRING("Told you. Top percentage. Maybe even top percent-percentage.")},
+    {TRAINER_STADIUM_WINSTON, COMPOUND_STRING("Dolla Dolla Bill yo!\pI'll just buy the next tournament."), COMPOUND_STRING("Money can't buy happiness. But it bought this win.")},
+    {TRAINER_STADIUM_DONALD, COMPOUND_STRING("I wish we'd never met... All six of them wish that too."), COMPOUND_STRING("Your own team, but purple. I call it DITTO MANIA.")},
+    {TRAINER_STADIUM_IVAN, COMPOUND_STRING("Blupblup..."), COMPOUND_STRING("Very rare fishies. Told you. Blupblup!")},
+    {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("Tik... tok...\pTime's up."), COMPOUND_STRING("Tik tok. The METRONOME has spoken.")},
+    {TRAINER_STADIUM_THOMAS, COMPOUND_STRING("...I'm not GIOVANNI, by the way. Still watching THE SOPRANOS. Fifth time."), COMPOUND_STRING("Nothing personal, kid. It's just business.")},
+};
+
+static const struct StadiumQuote *GetQuote(u32 trainerId)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sStadiumQuotes); i++)
+        if (sStadiumQuotes[i].trainerId == trainerId)
+            return &sStadiumQuotes[i];
+    return NULL;
+}
+
+static const u8 *GetDefeatText(u32 trainerId)
+{
+    const struct StadiumQuote *q = GetQuote(trainerId);
+
+    return q ? q->defeat : sText_StadiumDefeat;
+}
+
 void Stadium_StartMatch(void)
 {
     u32 pos = PlayerPos(sT.round);
@@ -380,12 +428,12 @@ void Stadium_StartMatch(void)
     BuildPlayerParty();
     memset(&gTrainerBattleParameter, 0, sizeof(gTrainerBattleParameter));
     TRAINER_BATTLE_PARAM.opponentA = Stadium_EntrantTrainer(opp, 0);
-    TRAINER_BATTLE_PARAM.defeatTextA = (u8 *)sText_StadiumDefeat;
+    TRAINER_BATTLE_PARAM.defeatTextA = (u8 *)GetDefeatText(TRAINER_BATTLE_PARAM.opponentA);
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
     if (sT.mode == STADIUM_DOUBLES)
     {
         TRAINER_BATTLE_PARAM.opponentB = Stadium_EntrantTrainer(opp, 1);
-        TRAINER_BATTLE_PARAM.defeatTextB = (u8 *)sText_StadiumDefeat;
+        TRAINER_BATTLE_PARAM.defeatTextB = (u8 *)GetDefeatText(TRAINER_BATTLE_PARAM.opponentB);
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
         gPartnerTrainerId = TRAINER_PARTNER(sStadiumCompanions[sT.companion].partnerId);
         FillPartnerParty(gPartnerTrainerId);
@@ -483,7 +531,10 @@ const u8 *Stadium_GetWinText(u32 opponent)
     static const u8 sWin1[] = _("That's how it's done in the Stadium!");
     static const u8 sWin2[] = _("Better luck next tournament.\nThe crowd still loves you. A bit.");
     static const u8 sWin3[] = _("The bracket has spoken.");
+    const struct StadiumQuote *q = GetQuote(opponent);
 
+    if (q != NULL)
+        return q->win;
     switch (Random() % 3)
     {
     case 0:  return sWin1;

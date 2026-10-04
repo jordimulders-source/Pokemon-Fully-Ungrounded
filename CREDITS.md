@@ -13,6 +13,14 @@
 - **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
 - **Battle Stadium-trainerfoto's (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Lorelei, Bruno, Agatha, Lance en Blue uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bronnen in `graphics/grounded/trainers/stadium_bron/frlg/`.
 - **Battle Stadium-trainerfoto's (Sinnoh)**: gymleiders, Elite Four, Cynthia, Cyrus, Mars, Jupiter, Saturn, Barry, Palmer, Thorton, Argenta, Dahlia en Riley uit Pokémon Platinum, via de decompilatie **pret/pokeplatinum**; bijgesneden naar 64x64 met `tools/grounded/stadium_trainer_pics.py`. Bronnen in `graphics/grounded/trainers/stadium_bron/platinum/`.
+- **Battle Stadium-gasten** (trainerfoto's, teruggezet op hun pixelraster en naar 64x64 met `tools/grounded/guest_trainer_pics.py`; bronnen in `graphics/grounded/trainers/guests/`):
+  - **Wario**: Wario Land 4 (Nintendo), sprite-sheet aangeleverd door Jordi.
+  - **Yoshi**: de ongebruikte "bijna in tranen"-Yoshi uit Yoshi's Island (Nintendo), via **tcrf.net** (gebruiker Zetaman, File:YI_PLAYER-boyon.png).
+  - **Boo**: Super Mario-geesten, sheet **geript door A.J. Nitro** ("Ghost Enemies ripped by A.J. Nitro").
+  - **Shy Guys**: custom Shy Guy-sprites **door DarkSB24** (rode Shy Guy oorspronkelijk Yoshi's Island, Nintendo; sheet met dank aan Cheeseman).
+  - **Golbat, Grimer, Mew**: Pokémon Red / Blue / Yellow (Game Freak).
+  - **Ditto**: de Youngster-trainerfoto uit Emerald met een Ditto-gezicht (idee: Jordi).
+- **Trio-compagnons**: voorplaatjes van de Pokémon zelf (pokeemerald-expansion).
 
 ### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)
 - **Zinnia** (gevechtsmuziek voor de Sky Pillar): ORAS / Delta Episode, MIDI aangeleverd door Jordi.

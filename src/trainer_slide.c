@@ -56,6 +56,7 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+#include "data/stadium_slides.h" // Project Grounded: Battle Stadium
     },
 };
 

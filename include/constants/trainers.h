@@ -150,7 +150,36 @@
 #define TRAINER_PIC_ARGENTA                132 // Project Grounded: Battle Stadium (Platinum)
 #define TRAINER_PIC_DAHLIA                 133 // Project Grounded: Battle Stadium (Platinum)
 #define TRAINER_PIC_RILEY                  134 // Project Grounded: Battle Stadium (Platinum)
-#define TRAINER_PIC_COUNT                 135
+#define TRAINER_PIC_GUEST_WARIO            135 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_YOSHI            136 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_GOLBAT           137 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_GRIMER           138 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_BOO              139 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_MEW              140 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_SHY_GUY_RED      141 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_SHY_GUY_GREEN    142 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_SHY_GUY_PINK     143 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_SHY_GUY_BLACK    144 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_DITTO            145 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_GUEST_BURGLAR          146 // Project Grounded: Battle Stadium (gast)
+#define TRAINER_PIC_TRIO_MASCOTS           147 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_STARTERS          148 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_FOSSILS           149 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_EEVEES            150 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_LAKE              151 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_REGIS             152 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_BIRDS             153 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_BEASTS            154 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_PSEUDOS           155 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_SWORDS            156 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_LOYAL             157 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_TAPUS             158 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_GENIES            159 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_ULTRAS            160 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_RUIN              161 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_WEATHER           162 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_TRIO_CREATORS          163 // Project Grounded: Battle Stadium (trio-compagnon)
+#define TRAINER_PIC_COUNT                 164
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -404,6 +433,9 @@ enum TrainerClassID
     TRAINER_CLASS_TOWER_TYCOON, // Project Grounded: Battle Stadium (Palmer)
     TRAINER_CLASS_HALL_MATRON, // Project Grounded: Battle Stadium (Argenta)
     TRAINER_CLASS_ARCADE_STAR, // Project Grounded: Battle Stadium (Dahlia)
+    TRAINER_CLASS_GUEST_STAR, // Project Grounded: Battle Stadium (gasten: Wario, Yoshi, Boo, ...)
+    TRAINER_CLASS_BURGLAR, // Project Grounded: Battle Stadium (Burglar uit Red/Blue)
+    TRAINER_CLASS_COLLECTION, // Project Grounded: Battle Stadium (trio-compagnons: "THE REGIS")
     TRAINER_CLASS_COUNT,
 };
 

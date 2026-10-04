@@ -397,6 +397,7 @@ extern const u8 Debug_EventScript_ForcedEncounterOff[];
 extern const u8 Debug_EventScript_SpirePrototype[];
 extern const u8 Debug_EventScript_SpireResetRun[];
 extern const u8 Debug_EventScript_SpireWarp[];
+extern const u8 Debug_EventScript_StadiumWarp[];
 extern const u8 BattleStadium_EventScript_Singles[];
 extern const u8 BattleStadium_EventScript_Doubles[];
 extern const u8 Debug_EventScript_StadiumUnlockAll[];
@@ -586,6 +587,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Warp to the Spire"), DebugAction_ExecuteScript, Debug_EventScript_SpireWarp },
+    { COMPOUND_STRING("Warp to the Stadium"), DebugAction_ExecuteScript, Debug_EventScript_StadiumWarp },
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
     { COMPOUND_STRING("Warp to map warp…"), DebugAction_Util_Warp_Warp },
     { COMPOUND_STRING("Set weather…"),      DebugAction_Util_Weather },

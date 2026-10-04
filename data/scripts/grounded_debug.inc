@@ -204,6 +204,19 @@ Debug_EventScript_SpireWarpGo::
 	release
 	end
 
+@ Project Grounded: debugmenu Utilities > Warp to the Stadium - meteen naar de lobby van het Battle Stadium
+Debug_EventScript_StadiumWarp::
+	setflag FLAG_LANDMARK_BATTLE_FRONTIER
+	setflag FLAG_SYS_POKEMON_GET
+	checkitem ITEM_SS_TICKET
+	goto_if_eq VAR_RESULT, TRUE, Debug_EventScript_StadiumWarpGo
+	additem ITEM_SS_TICKET
+Debug_EventScript_StadiumWarpGo::
+	warp MAP_BATTLE_FRONTIER_STADIUM_LOBBY, 11, 14
+	waitstate
+	release
+	end
+
 Debug_EventScript_SpirePrototype::
 	lockall
 	special Spire_Enter

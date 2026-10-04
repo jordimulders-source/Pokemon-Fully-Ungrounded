@@ -16346,3 +16346,6 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - De geluidsmixer draait nu op **21.024 Hz** in plaats van 13.379 Hz. Er is ±40% minder 8-bit-ruis (het "vinyl"-geluid), in alle muziek en geluidseffecten. Jordi koos dit na een A/B-test met Wally 2 en 5.
 - Gemeten: geen extra vertraagde frames in de overworld (regen op Route 119 met Wally 5), en 1 à 5 per 900 frames tijdens gevechtsintro's.
 - Wally 1–5 zijn klaar en zitten in de game: de nieuwe mixer, zonder de gehaaste voorslag, en met de drums in hun volle lengte.
+
+### [v.0.9.33] - Toxic Chain v5
+- Het eindstuk van de ketting is een ♀-vorm: een korte steel die uitwaaiert in een brede, platte voet (zoals bij Munkidori en Fezandipiti) in plaats van de Y. Op de eindring zitten twee bulten, zoals bij Okidogi.

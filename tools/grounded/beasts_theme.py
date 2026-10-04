@@ -2,9 +2,9 @@
 """Project Grounded: drie varianten van het legendary beasts-thema (MUS_C_VS_LEGEND_BEAST), à la HGSS (Jordi):
 grotendeels hetzelfde nummer, met per beest één kenmerkende laag bovenop het ongewijzigde origineel.
 
-- Suicune: heldere, galmende klokken op de melodie (zuiverheid, rust, regen) + glockenspiel-druppels op de arpeggio's.
+- Suicune: heldere, galmende klokken op de hoofdmelodie (zuiverheid, rust) + glockenspiel-druppels op de begeleiding (regen).
 - Entei:   elektrische gitaar: overdrive-lead op de melodie + distortion-power-chords op de baslijn (vuur, vulkaan).
-- Raikou:  scherpe, zoemende synths: een smalle blokgolf (12,5%) op de melodie, snelle 'zaps' op de arpeggio's en
+- Raikou:  scherpe, zoemende synths: een smalle blokgolf (12,5%) op de hoofdmelodie, snelle 'zaps' op de begeleiding en
            zachte ruis-knetters (elektriciteit, snelheid, onweer). PSG: kost geen DirectSound-kanalen.
 De drie originele sporen worden 1-op-1 gekopieerd; voicegroup_grounded_beasts = voicegroup_dummy (die het origineel
 gebruikt) + de extra instrumenten op 98-105. Zie tools/grounded/MUZIEK.md.
@@ -21,7 +21,7 @@ TPB = 24
 BPM = 60e6 / 322580
 BELL, GLOCK, OVERDRIVE, DIST_HI, DIST_LO, BUZZ, ZAP, CRACKLE = 98, 99, 100, 101, 102, 103, 104, 105
 EXTRA = {
-    BELL: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 242',
+    BELL: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 220',
     GLOCK: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 170',   # korte druppels
     OVERDRIVE: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 170',
     DIST_HI: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 160',
@@ -42,6 +42,22 @@ def voicegroup():
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(out) + '\n')
 
 
+def strip(track, remove):
+    """Spoor kopiëren zonder de noten (start, noot) in `remove` (die neemt een nieuwe lead over)."""
+    out, tick, last, skip = mido.MidiTrack(), 0, 0, set()
+    for x in track:
+        tick += x.time
+        if x.type == 'note_on' and x.velocity and (tick, x.note) in remove:
+            skip.add(x.note)
+            continue
+        if x.type in ('note_on', 'note_off') and not (x.type == 'note_on' and x.velocity) and x.note in skip:
+            skip.discard(x.note)
+            continue
+        out.append(x.copy(time=tick - last))
+        last = tick
+    return out
+
+
 def note_track(notes, prog, vol, ch, pan=64):
     t = mido.MidiTrack()
     t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
@@ -59,15 +75,43 @@ def note_track(notes, prog, vol, ch, pan=64):
 def build(beast):
     src = mido.MidiFile(SRC)
     T = {i: notes_of(src.tracks[i]) for i in (1, 2, 3)}
-    melody = [e for e in T[1] if e[2] >= 72 and e[1] - e[0] >= TPB // 2]      # melodienoten (vanaf C5, >= 8e)
-    arps = [e for e in T[2] if e[2] >= 84]                                     # de hoge fonkelende arpeggio's
+    # hoofdmelodie (Jordi: 'de melodie die telkens terugkomt', zoals in HGSS): de lange noten van spoor 2 op
+    # strijkers/trompet (programma 48/56); de hoge piano-passages (programma 1, vanaf C7) zijn dezelfde melodie twee
+    # octaven hoger en lopen mee (-24). Spoor 1 is de snelle begeleidingsfiguur.
+    def with_prog(track):
+        tick, prog, on, out = 0, 0, {}, []
+        for x in track:
+            tick += x.time
+            if x.type == 'program_change':
+                prog = x.program
+            if x.type == 'note_on' and x.velocity:
+                on.setdefault(x.note, []).append((tick, prog, x.velocity))
+            elif x.type in ('note_on', 'note_off') and on.get(x.note):
+                st, pr, v = on[x.note].pop(0)
+                out.append([st, tick, x.note, v, pr])
+        return sorted(out)
+    melody = []
+    for s, e, n, v, pr in with_prog(src.tracks[2]):
+        if pr in (48, 56) and n >= 55 and e - s >= TPB // 2:
+            melody.append([s, e, n, v])
+        elif pr == 1 and n >= 84:
+            melody.append([s, e, n - 24, v])
+    melody = thin(melody, 1, 'top')
+    figure = [e for e in T[1] if e[2] >= 57]                                   # de begeleidingsfiguur (vanaf A3)
     bass = T[3]
     layers = []                                                                # (naam, noten, programma, volume, pan, DS?)
+    replace = set()                                        # (start, noot) van spoor 2 die de nieuwe lead overneemt
     if beast == 'suicune':
-        layers.append(('bells', [[s, min(e, s + 2 * TPB), n, 127] for s, e, n, v in melody], BELL, 127, 64, True))
-        layers.append(('glock', [[s, s + TPB // 2, n - 12, 100] for s, e, n, v in arps], GLOCK, 96, 88, True))
+        bell_notes, prev = [], None
+        for s_, e_, n_, v_ in melody:                     # klokken: lange noten en nieuwe toonhoogtes, niet elke herhaling
+            if e_ - s_ >= TPB or n_ != prev:
+                bell_notes.append([s_, min(e_, s_ + TPB), n_, 127])
+            prev = n_
+        layers.append(('bells', bell_notes, BELL, 127, 64, True))
+        layers.append(('glock', [[s, s + TPB // 2, n + 24, 80] for s, e, n, v in figure if s % TPB == 0], GLOCK, 80, 88, True))
     elif beast == 'entei':
-        layers.append(('lead', [[s, e, n - 12, 112] for s, e, n, v in melody], OVERDRIVE, 104, 72, True))
+        layers.append(('lead', [[s, e, n, 116] for s, e, n, v in melody], OVERDRIVE, 110, 72, True))
+        replace = {(s, n) for s, e, n, v in melody} | {(s, n + 24) for s, e, n, v in melody}   # de gitaar neemt over
         chords, seen = [], set()
         for s, e, n, v in bass:                       # één power chord per tel (grondtoon + kwint), strak
             beat = s // TPB
@@ -79,7 +123,7 @@ def build(beast):
         layers.append(('power', chords, DIST_LO, 96, 52, True))
     elif beast == 'raikou':
         layers.append(('buzz', [[s, e, n, 112] for s, e, n, v in melody], BUZZ, 72, 64, False))
-        layers.append(('zap', [[s, s + TPB // 4, n - 12, 100] for s, e, n, v in arps], ZAP, 40, 90, False))
+        layers.append(('zap', [[s, s + TPB // 4, n + 12, 100] for s, e, n, v in figure], ZAP, 36, 90, False))
         end = max(e for s, e, n, v in bass)
         layers.append(('crackle', [[t, t + 4, 72 + (t // TPB) % 5, 60] for t in range(0, end, TPB * 2)
                                    if (t // TPB) % 8 in (3, 6)], CRACKLE, 30, 40, False))
@@ -87,7 +131,8 @@ def build(beast):
     rel = releases(VG)
     preset = []
     for i in (1, 2, 3):
-        preset += ds_occupancy(src.tracks[i], rel, TPB, BPM)
+        tr = strip(src.tracks[i], replace) if i == 2 else src.tracks[i]
+        preset += ds_occupancy(tr, rel, TPB, BPM)
     ds = {k: notes for k, notes, prog, vol, pan, isds in layers if isds}
     tail = {k: release_ticks(rel.get(prog, 200), TPB, BPM) for k, notes, prog, vol, pan, isds in layers if isds}
     for k in ds:
@@ -97,8 +142,8 @@ def build(beast):
         if len(kept[k]) < len(ds[k]) * 0.97:
             print('  %s/%s: %d van %d noten vallen weg (te vol)' % (beast, k, len(ds[k]) - len(kept[k]), len(ds[k])))
     out = mido.MidiFile(type=1, ticks_per_beat=TPB)
-    for t in src.tracks:
-        out.tracks.append(t.copy() if hasattr(t, 'copy') else mido.MidiTrack(t))
+    for i, t in enumerate(src.tracks):
+        out.tracks.append(strip(t, replace) if i == 2 else mido.MidiTrack(t))
     for ch, (k, notes, prog, vol, pan, isds) in enumerate(layers, start=4):
         out.tracks.append(note_track(kept.get(k, notes) if isds else notes, prog, vol, ch, pan))
     out.save(OUT % beast)

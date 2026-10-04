@@ -16501,3 +16501,9 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   - **Raikou** (`MUS_GROUNDED_VS_RAIKOU`): scherpe, zoemende synths, met een smalle blokgolf op de melodie, snelle "zaps" op de arpeggio's en zachte knetters (elektriciteit, onweer).
 - Elk beest speelt zijn eigen variant in zijn event en in de debug-lijst "Battle test…".
 - `musiclib.ds_occupancy()` rekent de kanaalbezetting per noot uit, ook als een spoor van instrument wisselt.
+
+### [v.0.9.59] - Beasts: de instrumenten op de hoofdmelodie
+- Jordi: de kenmerkende instrumenten stonden op de achtergrond (de snelle begeleidingsfiguur en de hoge piano-echo's). Ze spelen nu de terugkerende hoofdmelodie, zoals in HGSS: de lange noten van spoor 2 op strijkers en trompet, met de hoge piano-passages twee octaven lager.
+  - **Suicune:** de buisklokken slaan op de hoofdmelodie aan (lange noten en elke nieuwe toonhoogte), en het glockenspiel speelt de begeleiding.
+  - **Entei:** de overdrive-gitaar neemt de hoofdmelodie over van de strijkers en trompet; de power chords blijven op de bas.
+  - **Raikou:** de zoemende blokgolf zit op de hoofdmelodie, en de zaps op de begeleiding.

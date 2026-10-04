@@ -1,0 +1,91 @@
+{
+  "id": "MAP_VICTORY_ROAD_SHARK_DEN",
+  "name": "VictoryRoad_SharkDen",
+  "layout": "LAYOUT_VICTORY_ROAD_SHARK_DEN",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_VR_SHARK_DEN_GARCHOMP",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GARCHOMP)",
+      "x": 33,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_SharkDen_EventScript_Garchomp",
+      "flag": "FLAG_HIDE_VICTORY_ROAD_GARCHOMP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 31,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LIFE_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_LIFE_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 36,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_EVIOLITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_EVIOLITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 34,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DRAGON_FANG",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_DRAGON_FANG"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 30,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_B1F",
+      "dest_warp_id": "8"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "VictoryRoad_SharkDen_EventScript_Backpacks"
+    }
+  ]
+}

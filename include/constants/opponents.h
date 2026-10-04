@@ -1006,7 +1006,12 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINERS_COUNT                      989
+#define TRAINER_VR_BRENT                    989 // Project Grounded: Victory Road, wachtkamer (gauntlet 1)
+#define TRAINER_VR_NADIA                    990 // gauntlet 2
+#define TRAINER_VR_OSKAR                    991 // gauntlet 3
+#define TRAINER_VR_REGINALD                 992 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
+
+#define TRAINERS_COUNT                      993
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

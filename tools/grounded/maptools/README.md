@@ -16,6 +16,7 @@ Hulpscripts waarmee Claude kaarten bouwt, rendert en test. Draai alles vanuit de
 | `liberty_garden.py` | Bouwt Liberty Garden (Victini-eiland, post-game): Southern Island-buitenkant met de grot dicht en een tuin met fontein, lantaarns en bloemen (Rustboro-tiles); layout, map.json, map_groups en event_scripts. Controleert de bereikbaarheid. |
 | `darkrai_nightmare.py [voorbeeld.png]` | Bouwt Darkrai's nachtmerrie (`MtPyre_Nightmare`): uitsnede van de top van Mt. Pyre in zwarte leegte, eigen donkerpaarse paletten (`nightmare_general`/`nightmare_facility` lenen tiles van General/Facility; `BASE`-bestand voor `render_map.py`). |
 | `icepuzzle_search.py <seed> <iteraties>` | Zoekt een ijsglijpuzzel die oplosbaar blijft voor elke combinatie van opgepakte items (gebruikt voor Coldstep ijskamer 2). |
+| `victory_road_ext.py [voorbeeld.png]` | Bouwt de vier optionele Victory Road-kamers (Wachtkamer/gauntlet, Kluis/Strength-puzzel, Kluizenaar/Reginald, Haaienbak/Garchomp) en hun ingangen in 1F/B1F/B2F; controleert bereikbaarheid (HM-poorten) en lost de blokpuzzel op (geen val, niets gratis). |
 | `emu.py` | Headless mGBA: `Emu(rom)`, `press()`, `debug_script(e, k)`. |
 | `testrom.py <map> "script 1" [...]` | Test-ROM met tijdelijke debug-scripts (regels met `;`), zet `debug.inc` daarna terug en maakt een savestate na de intro. |
 | `make_intro_state.py <rom> <uit.bin>` | Savestate na de intro (opnieuw maken na elke rebuild). |

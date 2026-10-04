@@ -1,5 +1,11 @@
 VictoryRoad_B1F_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, VictoryRoad_B1F_OnResume
 	.byte 0
+
+@ Project Grounded: het gat in de nis rechts (35,22) valt in het Garchomp-hol
+VictoryRoad_B1F_OnResume:
+	setholewarp MAP_VICTORY_ROAD_SHARK_DEN
+	end
 
 VictoryRoad_B1F_EventScript_Samuel::
 	trainerbattle_single TRAINER_SAMUEL, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat

@@ -668,6 +668,10 @@
     "Route112_Dojo",
     "Route112_TowerOfDarkness",
     "Route112_TowerOfWaters",
-    "FortreeJungle"
+    "FortreeJungle",
+    "VictoryRoad_WaitingRoom",
+    "VictoryRoad_Vault",
+    "VictoryRoad_Hermit",
+    "VictoryRoad_SharkDen"
   ]
 }

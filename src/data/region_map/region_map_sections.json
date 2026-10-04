@@ -1282,6 +1282,14 @@
       "y": 1,
       "width": 1,
       "height": 2
+    },
+    {
+      "id": "MAPSEC_TOADSTOOL_HOLLOW",
+      "name": "TOADSTOOL HOLLOW",
+      "x": 0,
+      "y": 8,
+      "width": 1,
+      "height": 1
     }
   ]
 }

@@ -991,6 +991,75 @@
           }
         },
         {
+          "map": "MAP_TOADSTOOL_HOLLOW",
+          "base_label": "gToadstoolHollow",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 11,
+                "max_level": 14,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 11,
+                "max_level": 14,
+                "species": "SPECIES_MORELULL"
+              },
+              {
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_VENONAT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_SHROOMISH"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_SPINARAK"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PHANTUMP"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_CUTIEFLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_AMOONGUSS"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_PETALBURG_WOODS",
           "base_label": "gPetalburgWoods",
           "land_mons": {

@@ -1006,7 +1006,11 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINERS_COUNT                      989
+#define TRAINER_HOLLOW_OSKAR                989 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_MORELLE              990 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_GERRIT               991 // Project Grounded: Toadstool Hollow
+
+#define TRAINERS_COUNT                      992
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -942,3 +942,14 @@ const struct Tileset gTileset_FortreeJungle = // Project Grounded: Fortree Jungl
     .metatileAttributes = gMetatileAttributes_FortreeJungle,
     .callback = InitTilesetAnim_Fortree,
 };
+
+const struct Tileset gTileset_ToadstoolHollow = // Project Grounded: Toadstool Hollow (paddenstoelenbos), mushroom_forest.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ToadstoolHollow,
+    .palettes = gTilesetPalettes_ToadstoolHollow,
+    .metatiles = gMetatiles_ToadstoolHollow,
+    .metatileAttributes = gMetatileAttributes_ToadstoolHollow,
+    .callback = NULL,
+};

@@ -17,6 +17,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
 7. Pas dan naar Jordi (regel van Jordi: geen zoemtonen of andere dingen die gehoorschade kunnen geven).
 
 ## De engine (m4a)
+- **Mixer op 21.024 Hz** (`src/m4a.c`, was 13.379): ±40% minder 8-bit-ruis ('vinyl'), door Jordi gekozen na A/B.
+  Gemeten: geen extra lag in de overworld, 1–5 frames per 900 tijdens gevechtsintro's. Previews en metingen dus
+  altijd met deze mixer; `recpcm.py` leest de frequentie uit de game.
 - **12 DirectSound-kanalen** (`src/m4a.c`, was 5 in vanilla; elk kanaal kost ±1% CPU per frame). Muziek krijgt
   er max. **10** (`MAX_VOICES`/`MAX_CHANS`), zodat geluidseffecten (aanvallen, cries) geen muzieknoten afkappen. Meer noten tegelijk = kanaalroof: een nieuwe noot
   kapt een andere af. Dat hoort Jordi als **snips** / "overhaast eindigende maat". Ook uitklinkende noten (release)
@@ -79,6 +82,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
   transcriptie). Vergelijk bij zo'n klacht frase 1 en 2 noot voor noot; ritmes die herhaald horen te worden, moeten
   gelijk zijn. Bas-anticipaties die in élke frase terugkomen zijn groove: laten staan.
 - Ruis/'vinyl': de 8-bit-mixer op 13.379 Hz. Zarude valt minder op door schone PSG-sporen. Op 21.024 Hz is de hoge
-  ruis ±40% lager (A/B voorgelegd aan Jordi; kost CPU, eerst lag meten).
+  ruis ±40% lager; Jordi koos die (v0.9.32). Lag meten: tijdelijke teller in de hoofdlus van `src/main.c`
+  vergelijken met `gMain.vblankCounter1` (verschil = vertraagde frames).
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.

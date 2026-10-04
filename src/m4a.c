@@ -73,9 +73,9 @@ void m4aSoundInit(void)
     SoundInit(&gSoundInfo);
     MPlayExtender(gCgbChans);
     m4aSoundMode(SOUND_MODE_DA_BIT_8
-               | SOUND_MODE_FREQ_13379
+               | SOUND_MODE_FREQ_21024
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (12 << SOUND_MODE_MAXCHN_SHIFT)); // Project Grounded: 12 i.p.v. 5 kanalen (muziek max. 10, 2 vrij voor effecten)
+               | (12 << SOUND_MODE_MAXCHN_SHIFT)); // Project Grounded: 21024 Hz i.p.v. 13379 (minder 8-bit-ruis) en 12 i.p.v. 5 kanalen (muziek max. 10, 2 vrij voor effecten)
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {

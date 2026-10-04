@@ -16341,3 +16341,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.31] - Toxic Chain v4, Wally zonder gehaaste tweede frase
 - **Toxic Chain (Loyal Three):** de ketting volgt nu de artwork. Eén glanzende magenta buis met in elkaar gegoten ringen ("ooo"), en als eindstuk de herkenbare "halve schedel": een dikke ring met een groot oog en daaronder een steel met twee bolle lobben, groot in beeld.
 - **Wally 1–5:** de bron-MIDI had alleen in de tweede frase een extra voorslagnoot (tel 11,875), waardoor die gehaast klonk. Die noot is weg uit melodie, riff en viool. De bas-anticipaties staan weer op hun plek, want die horen bij de groove.
+
+### [v.0.9.32] - Geluidsmixer op 21.024 Hz
+- De geluidsmixer draait nu op **21.024 Hz** in plaats van 13.379 Hz. Er is ±40% minder 8-bit-ruis (het "vinyl"-geluid), in alle muziek en geluidseffecten. Jordi koos dit na een A/B-test met Wally 2 en 5.
+- Gemeten: geen extra vertraagde frames in de overworld (regen op Route 119 met Wally 5), en 1 à 5 per 900 frames tijdens gevechtsintro's.
+- Wally 1–5 zijn klaar en zitten in de game: de nieuwe mixer, zonder de gehaaste voorslag, en met de drums in hun volle lengte.

@@ -931,3 +931,14 @@ const struct Tileset gTileset_NightmareFacility =
     .metatileAttributes = gMetatileAttributes_Facility,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_FortreeJungle = // Project Grounded: Fortree Jungle, Fortree + tropische tiles achteraan, jungle_tileset.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FortreeJungle,
+    .palettes = gTilesetPalettes_FortreeJungle,
+    .metatiles = gMetatiles_FortreeJungle,
+    .metatileAttributes = gMetatileAttributes_FortreeJungle,
+    .callback = InitTilesetAnim_Fortree,
+};

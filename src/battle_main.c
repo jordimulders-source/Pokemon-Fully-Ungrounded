@@ -3964,6 +3964,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         memset(&gSpecialStatuses, 0, sizeof(gSpecialStatuses));
         BattlePutTextOnWindow(gText_EmptyString3, B_WIN_MSG);
         AssignUsableGimmicks();
+        Spire_OnFirstTurn(); // Project Grounded: The Spire, relic Iron Plate (blok in de eerste beurt)
         gBattleMainFunc = HandleTurnActionSelectionState;
         ResetSentPokesToOpponentValue();
 
@@ -4021,7 +4022,6 @@ void BattleTurnPassed(void)
     gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
 
     TurnValuesCleanUp(TRUE);
-    Spire_EndTurn(); // Project Grounded: blok vervalt aan het eind van de beurt, patronen schuiven door
 
     if (gBattleOutcome == 0 && DoEndTurnEffects())
         return;
@@ -4031,6 +4031,9 @@ void BattleTurnPassed(void)
         return;
 
     gBattleStruct->eventState.faintedAction = 0;
+    // Project Grounded: blok vervalt aan het eind van de beurt, patronen schuiven door. Hier (niet bovenaan):
+    // BattleTurnPassed wordt opnieuw aangeroepen na elk effect aan het eind van de beurt (gif, weer, Leftovers).
+    Spire_EndTurn();
 
     TurnValuesCleanUp(FALSE);
     gHitMarker &= ~HITMARKER_UNABLE_TO_USE_MOVE;

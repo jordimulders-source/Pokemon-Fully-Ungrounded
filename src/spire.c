@@ -39,6 +39,7 @@ EWRAM_DATA u16 gSpireEnemyHp[PARTY_SIZE] = {0}; // HP-vermenigvuldiger per vijan
 EWRAM_DATA u8 gSpirePattern[PARTY_SIZE][8] = {0};   // vaste patronen van de vijanden (moveslots 1-4)
 EWRAM_DATA u8 gSpirePatternStep[PARTY_SIZE] = {0};
 EWRAM_DATA u8 gSpireHiddenIntent = 0;
+EWRAM_DATA static u8 sRelicEndureUsed = 0;    // Resist Feather: bit per partyplek van de speler
 
 // act-factor van het blok (procenten), per act 1-3
 static const u8 sActBlockFactor[] = {100, 100, 125, 150};
@@ -64,6 +65,7 @@ void Spire_OnEnemyPartyCreated(void)
     if (!gSpireBattle)
         return;
     Spire_ClearBlocks();
+    sRelicEndureUsed = 0;
     for (i = 0; i < PARTY_SIZE; i++)
         Spire_ScaleMonHp(&gEnemyParty[i], gSpireEnemyHp[i]);
 }
@@ -125,15 +127,101 @@ uq4_12_t Spire_UpgradeDamageModifier(u32 battlerAtk, u32 move)
     return Spire_IsMoveUpgraded(battlerAtk, move) ? UQ_4_12(1.3) : UQ_4_12(1.0);
 }
 
+static bool32 IsAlone(u32 battler)
+{
+    return !IsBattlerAlive(BATTLE_PARTNER(battler));
+}
+
+// Relics in de schadeberekening (GetOtherModifiers in battle_util.c; ook in de schatting van de intenties).
+// Speler valt aan: meer schade; speler wordt geraakt: minder (of meer, Meteorite).
+uq4_12_t Spire_RelicDamageModifier(u32 battlerAtk, u32 battlerDef, bool32 isCrit, uq4_12_t typeEffectiveness)
+{
+    uq4_12_t mod = UQ_4_12(1.0);
+
+    if (!gSpireBattle)
+        return mod;
+    if (IsOnPlayerSide(battlerAtk) && !IsOnPlayerSide(battlerDef))
+    {
+        if (Spire_HasRelic(SPIRE_RELIC_MUSCLE_BAND))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.1));
+        if (Spire_HasRelic(SPIRE_RELIC_ADRENALINE_ORB) && gBattleResults.battleTurnCounter == 0)
+            mod = uq4_12_multiply(mod, UQ_4_12(1.3));
+        if (Spire_HasRelic(SPIRE_RELIC_BERSERK_GENE) && gBattleMons[battlerAtk].hp * 2 < gBattleMons[battlerAtk].maxHP)
+            mod = uq4_12_multiply(mod, UQ_4_12(1.25));
+        if (Spire_HasRelic(SPIRE_RELIC_REAPER_CLOTH) && (gBattleMons[battlerDef].status1 & STATUS1_ANY))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.25));
+        if (Spire_HasRelic(SPIRE_RELIC_RAZOR_CLAW) && isCrit)
+            mod = uq4_12_multiply(mod, UQ_4_12(1.3333)); // 1,5x -> 2x
+        if (Spire_HasRelic(SPIRE_RELIC_SCANNER) && typeEffectiveness > UQ_4_12(1.0))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.25));
+        if (Spire_HasRelic(SPIRE_RELIC_FOCUS_BAND) && IsAlone(battlerAtk))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.3));
+        if (Spire_HasRelic(SPIRE_RELIC_AWAKENING))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.2));
+        if (Spire_HasRelic(SPIRE_RELIC_METEORITE))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.35));
+    }
+    else if (IsOnPlayerSide(battlerDef) && !IsOnPlayerSide(battlerAtk))
+    {
+        if (Spire_HasRelic(SPIRE_RELIC_LAVA_COOKIE) && typeEffectiveness > UQ_4_12(1.0))
+            mod = uq4_12_multiply(mod, UQ_4_12(0.8));
+        if (Spire_HasRelic(SPIRE_RELIC_FOCUS_BAND) && IsAlone(battlerDef))
+            mod = uq4_12_multiply(mod, UQ_4_12(0.8));
+        if (Spire_HasRelic(SPIRE_RELIC_DUBIOUS_DISC))
+            mod = uq4_12_multiply(mod, UQ_4_12(0.8));
+        if (Spire_HasRelic(SPIRE_RELIC_METEORITE))
+            mod = uq4_12_multiply(mod, UQ_4_12(1.15));
+    }
+    return mod;
+}
+
+// Resist Feather (relic): één keer per gevecht overleeft elke Pokémon van de speler een KO-klap met 1 HP.
+bool32 Spire_TryRelicEndure(u32 battlerDef)
+{
+    u32 bit;
+
+    if (!gSpireBattle || !IsOnPlayerSide(battlerDef) || !Spire_HasRelic(SPIRE_RELIC_RESIST_FEATHER))
+        return FALSE;
+    bit = 1u << gBattlerPartyIndexes[battlerDef];
+    if (sRelicEndureUsed & bit)
+        return FALSE;
+    sRelicEndureUsed |= bit;
+    return TRUE;
+}
+
+// Eén keer per beurt (battle_main.c, na de effecten aan het eind van de beurt).
 void Spire_EndTurn(void)
 {
     u32 i;
 
     if (!gSpireBattle)
         return;
-    Spire_ClearBlocks();
+    for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+    {
+        // Shed Shell (relic): de helft van het blok van je eigen Pokémon blijft staan
+        gSpireBlock[i] = (Spire_HasRelic(SPIRE_RELIC_SHED_SHELL) && IsOnPlayerSide(i)) ? gSpireBlock[i] / 2 : 0;
+        gSpireBlockAbsorbed[i] = 0;
+    }
     for (i = 0; i < PARTY_SIZE; i++)
         gSpirePatternStep[i]++;
+}
+
+// Iron Plate (relic): de eerste beurt begint met blok op beide, alsof ze allebei DEFEND kozen.
+void Spire_OnFirstTurn(void)
+{
+    u32 i;
+
+    if (!gSpireBattle || !Spire_HasRelic(SPIRE_RELIC_IRON_PLATE))
+        return;
+    for (i = 0; i < gBattlersCount; i++)
+        if (IsOnPlayerSide(i) && IsBattlerAlive(i))
+            gSpireBlock[i] += Spire_BlockAmount(i) * Spire_BlockSplit() / 100;
+}
+
+// DEFEND op beide: elk dit percentage van het blok (Rusted Shield: 85 i.p.v. 60).
+u32 Spire_BlockSplit(void)
+{
+    return Spire_HasRelic(SPIRE_RELIC_RUSTED_SHIELD) ? 85 : SPIRE_BLOCK_SPLIT;
 }
 
 void Spire_ClearBlocks(void)
@@ -175,7 +263,12 @@ void Spire_AbsorbDamage(u32 battlerDef)
     s16 *dmg = &gBattleStruct->moveDamage[battlerDef];
     u32 absorbed;
 
-    if (!gSpireBattle || gSpireBlock[battlerDef] == 0 || *dmg <= 0)
+    if (!gSpireBattle || *dmg <= 0)
+        return;
+    // Iron Ball (relic): elke klap op je team 2% van de max HP minder (minstens 1 schade)
+    if (IsOnPlayerSide(battlerDef) && Spire_HasRelic(SPIRE_RELIC_IRON_BALL))
+        *dmg = max(1, *dmg - (s32)(gBattleMons[battlerDef].maxHP * 2 / 100));
+    if (gSpireBlock[battlerDef] == 0)
         return;
     absorbed = min((u32)*dmg, gSpireBlock[battlerDef]);
     if (absorbed == (u32)*dmg)
@@ -211,7 +304,7 @@ void HandleAction_SpireDefend(void)
     gBattle_BG0_Y = 0;
     if (target == SPIRE_DEFEND_BOTH && partnerAlive)
     {
-        amount = amount * SPIRE_BLOCK_SPLIT / 100;
+        amount = amount * Spire_BlockSplit() / 100;
         gSpireBlock[battler] += amount;
         gSpireBlock[partner] += amount;
         gBattlerTarget = partner;

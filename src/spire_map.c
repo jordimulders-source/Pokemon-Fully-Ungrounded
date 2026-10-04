@@ -65,6 +65,8 @@ enum
     MENU_CANCEL,
 };
 
+#define EXIT_RELICS 0xFE    // sMap->exiting: naar de relic-lijst (0xFF = kamer in)
+
 struct SpireMapScreen
 {
     struct SpireActMap map;
@@ -327,7 +329,17 @@ static void DrawInfo(void)
         PrintText(WIN_INFO, FONT_NORMAL, 0, 0, type == SPIRE_ROOM_BOSS || type == SPIRE_ROOM_ELITE ? sColor_Red : sColor_Dark, sRoomText[type][0]);
         // transparante achtergrond, anders wist elke regel de onderkant van de regel erboven
         PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 12, sColor_DarkT, sRoomText[type][1]);
-        PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 21, sColor_DarkT, sRoomText[type][2]);
+        if (RUN.floor < SPIRE_FLOORS && sMap->choiceCount > 0 && Spire_IsAcroJump(&sMap->map, RUN.floor, sMap->choices[sMap->choice]))
+        {
+            // Acro Bike (relic): deze kamer ligt niet op je pad, de sprong kost een lading
+            ConvertIntToDecimalStringN(gStringVar1, RUN.relicCharges, STR_CONV_MODE_LEFT_ALIGN, 1);
+            StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Acro hop ({STR_VAR_1})"));
+            PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 21, sColor_DarkT, gStringVar4);
+        }
+        else
+        {
+            PrintText(WIN_INFO, FONT_SMALL_NARROW, 0, 21, sColor_DarkT, sRoomText[type][2]);
+        }
     }
     CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
 }
@@ -366,19 +378,19 @@ static void DrawPanel(void)
     ConvertIntToDecimalStringN(buf, RUN.gold, STR_CONV_MODE_LEFT_ALIGN, 4);
     StringAppend(buf, COMPOUND_STRING("¥"));
     PrintText(WIN_PANEL, FONT_SMALL_NARROW, 28, 60, sColor_Gold, buf);
-    for (i = 0; i < SPIRE_RELIC_COUNT; i++)
-        if (RUN.relics & (1u << i))
-            n++;
+    n = Spire_CountRelics();
     if (n > 2)
     {
         ConvertIntToDecimalStringN(gStringVar1, n - 2, STR_CONV_MODE_LEFT_ALIGN, 2);
         StringExpandPlaceholders(buf, COMPOUND_STRING("+{STR_VAR_1}"));
-        PrintText(WIN_PANEL, FONT_SMALL_NARROW, 46, 78, sColor_Dark, buf);
+        PrintText(WIN_PANEL, FONT_SMALL_NARROW, 44, 72, sColor_Dark, buf);
     }
     else if (n == 0)
     {
         PrintText(WIN_PANEL, FONT_SMALL_NARROW, 0, 76, sColor_Dark, COMPOUND_STRING("No relics"));
     }
+    if (n > 0) // R: lijst met uitleg
+        PrintText(WIN_PANEL, FONT_SMALL_NARROW, 46, 84, sColor_Blue, COMPOUND_STRING("R"));
     CopyWindowToVram(WIN_PANEL, COPYWIN_FULL);
 }
 
@@ -489,7 +501,7 @@ static void CreateSprites(void)
 
         for (i = 0; i < SPIRE_RELIC_COUNT && n < 2; i++)
         {
-            if (RUN.relics & (1u << i))
+            if (Spire_HasRelic(i))
             {
                 u8 id = AddItemIconSprite(TAG_RELIC + n, TAG_RELIC + n, gSpireRelics[i].item);
 
@@ -684,6 +696,8 @@ static void Task_SpireMap(u8 taskId)
             Spire_SuspendRun();
         else if (action == MENU_GIVE_UP)
             Spire_GiveUpRun();
+        else if (action == EXIT_RELICS)
+            Spire_OpenCards(SPIRE_CARDS_RELIC_LIST, Spire_OpenMap);
         else
             Spire_EnterRoom(floor, node);
         return;
@@ -751,5 +765,12 @@ static void Task_SpireMap(u8 taskId)
         PlaySE(SE_SELECT);
         sMap->menu = MENU_PAUSE;
         DrawInfo();
+    }
+    else if (JOY_NEW(R_BUTTON) && Spire_CountRelics() > 0)
+    {
+        // R: je relics met uitleg (kaartenscherm), daarna terug naar de kaart
+        PlaySE(SE_SELECT);
+        sMap->exiting = EXIT_RELICS;
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     }
 }

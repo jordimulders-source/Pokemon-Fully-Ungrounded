@@ -504,7 +504,7 @@ static void SpireShowDefendTarget(u32 battler)
     {
         u32 left = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT), right = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
 
-        amount = amount * SPIRE_BLOCK_SPLIT / 100;
+        amount = amount * Spire_BlockSplit() / 100;
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, Spire_BlockPercent(amount, left));
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff2, 3, Spire_BlockPercent(amount, right));
         BattleStringExpandPlaceholdersToDisplayedString(sText_DefendBoth);

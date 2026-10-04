@@ -135,6 +135,11 @@ static const u8 sColor_Red[]    = {0, 11, 12};
 static const u8 sColor_Purple[] = {0, 14, 15};
 static const u8 *const sRarityColor[] = {sColor_Dark, sColor_Blue, sColor_Gold};
 static const u8 *const sRarityName[] = {COMPOUND_STRING("Common"), COMPOUND_STRING("Uncommon"), COMPOUND_STRING("Rare")};
+static const u8 *const sRelicTierColor[SPIRE_RELIC_TIER_COUNT] = {sColor_Dark, sColor_Blue, sColor_Gold, sColor_Green, sColor_Red};
+static const u8 *const sRelicTierName[SPIRE_RELIC_TIER_COUNT] =
+{
+    COMPOUND_STRING("Common"), COMPOUND_STRING("Uncommon"), COMPOUND_STRING("Rare"), COMPOUND_STRING("Shop"), COMPOUND_STRING("Boss"),
+};
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -160,9 +165,17 @@ static const u16 sItemPrice[] = {50, 85, 140};
 #define POTION_PRICE  35
 #define ELIXIR_PRICE  40
 
+// Relics: Rainbow Pass (alles 30% goedkoper), Heart Scale (Move Relearner altijd 25¥).
+static u16 Discount(u16 price)
+{
+    return Spire_HasRelic(SPIRE_RELIC_RAINBOW_PASS) ? price * 7 / 10 : price;
+}
+
 static u16 RelearnPrice(void)
 {
-    return 50 + 25 * RUN.relearns;
+    if (Spire_HasRelic(SPIRE_RELIC_HEART_SCALE))
+        return Discount(25);
+    return Discount(50 + 25 * RUN.relearns);
 }
 
 // --- hulpjes ----------------------------------------------------------------------------------
@@ -248,7 +261,7 @@ static const u8 *WareDesc(const struct Ware *w)
 
 static u16 WarePrice(const struct Ware *w)
 {
-    return w->kind == WARE_RELEARN ? RelearnPrice() : w->price;
+    return w->kind == WARE_RELEARN ? RelearnPrice() : Discount(w->price);
 }
 
 // --- waren --------------------------------------------------------------------------------------
@@ -308,18 +321,21 @@ static void BuildWares(void)
         }
         AddWare(WARE_ITEM, rarity, item, sItemPrice[rarity]);
     }
-    for (i = 0; i < 2; i++)
+    // relics: één gewone (common/uncommon/rare) en één winkel-relic (zoals Slay; op = een gewone)
     {
-        u32 relic = SPIRE_RELIC_COUNT;
+        u8 offered[2];
+        u32 n = 0;
 
-        for (tries = 0; tries < 20; tries++)
+        for (i = 0; i < 2; i++)
         {
-            relic = Spire_RandomNewRelic(i * 3 + tries);
-            if (relic >= SPIRE_RELIC_COUNT || !Taken(sShop->count, WARE_RELIC, relic))
-                break;
+            u32 relic = Spire_RandomRelic(i == 0 ? SPIRE_RELIC_FROM_SHOP : SPIRE_RELIC_FROM_SHOP_SPECIAL, i * 3, offered, n);
+
+            if (relic < SPIRE_RELIC_COUNT)
+            {
+                offered[n++] = relic;
+                AddWare(WARE_RELIC, gSpireRelics[relic].tier, relic, RELIC_PRICE);
+            }
         }
-        if (relic < SPIRE_RELIC_COUNT && !Taken(sShop->count, WARE_RELIC, relic))
-            AddWare(WARE_RELIC, 2, relic, RELIC_PRICE);
     }
     AddWare(WARE_POTION, 0, ITEM_SUPER_POTION, POTION_PRICE);
     AddWare(WARE_ELIXIR, 0, ITEM_MAX_ELIXIR, ELIXIR_PRICE);
@@ -529,6 +545,7 @@ static void DrawPreview(void)
             ShowItemIcon(gSpireRelics[w->value].item);
             PrintText(WIN_PREVIEW, FONT_SMALL_NARROW, 4, 40, sColor_Gold, COMPOUND_STRING("Relic"));
             PrintText(WIN_PREVIEW, FONT_SMALL_NARROW, 4, 51, sColor_Gray, COMPOUND_STRING("whole team"));
+            PrintText(WIN_PREVIEW, FONT_SMALL_NARROW, 4, 66, sRelicTierColor[gSpireRelics[w->value].tier], sRelicTierName[gSpireRelics[w->value].tier]);
             break;
         default:
             ShowItemIcon(w->value);
@@ -693,7 +710,7 @@ static void Refund(void)
 
     if (w->sold && w->kind != WARE_RELEARN)
     {
-        RUN.gold += w->price;
+        RUN.gold += WarePrice(w);
         w->sold = FALSE;
     }
 }

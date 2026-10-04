@@ -25,7 +25,7 @@ Gemaakt met `tools/grounded/spire/spire_pool.py`; opnieuw draaien na wijzigingen
   Uitkomst in het kort: **Growl** (−1 Atk op beide) wint van Sand Attack/Double Team (één doel −25%%) zolang de helft van de vijanden fysiek is;
   **Tail Whip/Leer** wint bij een fysieke aanvaller; alle statusmoves zijn netto negatief in gewone gevechten van 3 beurten en verdienen zich terug bij elites en bazen. Precies zoals Defend in Slay.
 - **Grounded move**: uit de eigen level-up/eimoves, iets wat de soort typeert (zeldzaam onder alle soorten, eigen type, vroeg geleerd), maximaal sterkte 3 (dus geen Spore, Sleep Powder, Swords Dance).
-  Vast: Bulbasaur Leech Seed, Pikachu Thunder Wave, Jigglypuff Sing, Oddish Moonlight.
+  Vast: Pikachu Thunder Wave, Jigglypuff Sing. Nooit een procent-move (Toxic, Leech Seed, Moonlight, vastgrijpen, ...; zie Beloningsmoves).
 
 ### Pikachu: Thunder Wave, Double Team of Growl?
 
@@ -131,11 +131,11 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Aerodactyl | Aerodactyl | 129 (106/106/106) | Accelerock, Wing Attack, Supersonic, Scary Face |
 | Sneasel | Sneasel → Sneasler | 128 (91/115/115) | Rock Smash, Poison Fang, Leer, Taunt |
 | Flamigo | Flamigo | 128 (105/105/105) | Peck, Mach Punch, Focus Energy, Detect |
-| Lunatone | Lunatone | 128 (105/105/105) | Ancient Power, Confusion, Cosmic Power, Lunar Blessing |
+| Lunatone | Lunatone | 128 (105/105/105) | Ancient Power, Confusion, Cosmic Power, Rock Polish |
 | Electabuzz | Electabuzz → Electivire | 127 (95/111/111) | Thunder Fang, Leer, Thunder Wave |
 | Dondozo | Dondozo | 127 (104/104/104) | Aqua Jet, Tickle, Soak |
 | Druddigon | Druddigon | 126 (104/104/104) | Breaking Swipe, Leer, Scary Face |
-| Relicanth | Relicanth | 126 (104/104/104) | Aqua Jet, Rock Throw, Harden, Whirlpool |
+| Relicanth | Relicanth | 126 (104/104/104) | Aqua Jet, Rock Throw, Harden, Yawn |
 | Magmar | Magmar → Magmortar | 126 (95/109/109) | Ember, Smokescreen, Sunny Day |
 | Farfetch'd | Farfetch'd | 126 (103/103/103) | Mach Punch, Peck, Leer, Feather Dance |
 | Cryogonal | Cryogonal | 126 (103/103/103) | Icy Wind, Acid Armor, Haze |
@@ -147,11 +147,11 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Bruxish | Bruxish | 125 (102/102/102) | Aqua Jet, Heart Stamp, Screech, Disable |
 | Lucario | Lucario | 125 (102/102/102) | Vacuum Wave, Mirror Shot, Work Up, Detect |
 | Chimecho | Chimecho | 124 (102/102/102) | Confusion, Mirror Shot, Growl, Heal Bell |
-| Yanma | Yanma → Yanmega | 124 (81/116/116) | Struggle Bug, Gust, Supersonic, Pollen Haze |
+| Yanma | Yanma → Yanmega | 124 (81/116/116) | Struggle Bug, Gust, Supersonic, Detect |
 | Throh | Throh | 124 (102/102/102) | Rock Smash, Leer, Wide Guard |
 | Dhelmise | Dhelmise | 124 (101/101/101) | Shadow Sneak, Vine Whip, Growth, Mega Drain |
 | Larvesta | Larvesta → Volcarona | 124 (71/123/123) | Struggle Bug, Ember, Harden, String Shot |
-| Qwilfish | Qwilfish → Overqwil | 123 (91/109/109) | Bite, Poison Sting, Harden, Toxic |
+| Qwilfish | Qwilfish → Overqwil | 123 (91/109/109) | Bite, Poison Sting, Harden, Acupressure |
 | Bombirdier | Bombirdier | 123 (101/101/101) | Peck, Bite, Leer, Hone Claws |
 | Misdreavus | Misdreavus → Mismagius | 122 (91/107/107) | Ominous Wind, Growl, Confuse Ray |
 | Durant | Durant | 122 (100/100/100) | Pounce, Metal Claw, Sand Attack, Iron Defense |
@@ -161,8 +161,8 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Glimmet | Glimmet → Glimmora | 121 (74/118/118) | Ancient Power, Acid Spray, Harden, Mortal Spin |
 | Roselia | Roselia → Roserade | 121 (81/112/112) | Mega Drain, Acid, Growth, Stun Spore |
 | Illumise | Illumise | 121 (99/99/99) | Struggle Bug, Thunder Shock, Growth, String Shot |
-| Gligar | Gligar → Gliscor | 121 (87/107/107) | Sand Tomb, Wing Attack, Sand Attack, Agility |
-| Lapras | Lapras | 121 (99/99/99) | Aqua Jet, Ice Shard, Tickle, Life Dew |
+| Gligar | Gligar → Gliscor | 121 (87/107/107) | Bulldoze, Wing Attack, Sand Attack, Agility |
+| Lapras | Lapras | 121 (99/99/99) | Aqua Jet, Ice Shard, Tickle, Mist |
 | Stantler | Stantler → Wyrdeer | 120 (94/102/102) | Tackle, Leer, Hypnosis |
 | Hitmonlee | Hitmonlee | 120 (99/99/99) | Mach Punch, Focus Energy, Wide Guard |
 | Komala | Komala | 120 (99/99/99) | Rapid Spin, Defense Curl, Yawn |
@@ -182,11 +182,11 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | soort | acts | V | startmoves |
 |---|---|---|---|
 | Cufant | Cufant → Copperajah | 118 (74/113/113) | Bullet Punch, Growl, Iron Defense |
-| Drilbur | Drilbur → Excadrill | 118 (69/117/117) | Sand Tomb, Iron Defense, Mud-Slap |
+| Drilbur | Drilbur → Excadrill | 118 (69/117/117) | Bulldoze, Iron Defense, Mud-Slap |
 | Frosmoth | Frosmoth | 118 (97/97/97) | Icy Wind, Struggle Bug, Feather Dance, Snowscape |
 | Darumaka | Darumaka → Darmanitan | 118 (70/115/115) | Ice Shard, Work Up, Taunt |
 | Rotom | Rotom | 117 (96/96/96) | Thunder Shock, Infernal Parade, Charge, Thunder Wave |
-| Comfey | Comfey | 117 (96/96/96) | Draining Kiss, Growth, Floral Healing |
+| Comfey | Comfey | 117 (96/96/96) | Draining Kiss, Growth, Charm |
 | Cyclizar | Cyclizar | 117 (96/96/96) | Breaking Swipe, Quick Attack, Growl, Rapid Spin |
 | Maschiff | Maschiff → Mabosstiff | 117 (71/114/114) | Bite, Leer, Hone Claws |
 | Lokix | Lokix | 117 (96/96/96) | Pounce, Bite, Leer, Struggle Bug |
@@ -197,19 +197,19 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Mudbray | Mudbray → Mudsdale | 116 (79/106/106) | Bulldoze, Iron Defense, Mud-Slap |
 | Togedemaru | Togedemaru | 115 (95/95/95) | Spark, Bullet Punch, Tickle, Charge |
 | Teddiursa | Teddiursa → Ursaring → Ursaluna | 115 (66/104/124) | Quick Attack, Leer, Scary Face |
-| Goldeen | Goldeen → Seaking | 115 (73/110/110) | Aqua Jet, Tail Whip, Aqua Ring |
+| Goldeen | Goldeen → Seaking | 115 (73/110/110) | Aqua Jet, Tail Whip, Soak |
 | Doduo | Doduo → Dodrio | 115 (70/112/112) | Bulldoze, Peck, Growl, Mud-Slap |
-| Cetoddle | Cetoddle → Cetitan | 114 (67/113/113) | Ice Shard, Growl, Rest |
+| Cetoddle | Cetoddle → Cetitan | 114 (67/113/113) | Ice Shard, Growl, Amnesia |
 | Frigibax | Frigibax → Arctibax → Baxcalibur | 114 (65/87/136) | Breaking Swipe, Ice Shard, Leer, Snowscape |
 | Cranidos | Cranidos → Rampardos | 114 (76/105/105) | Accelerock, Leer, Focus Energy |
 | Grimer | Grimer → Muk | 113 (71/109/109) | Poison Fang, Harden, Venom Drench |
-| Grimer | Grimer → Muk | 113 (71/109/109) | Poison Fang, Bite, Harden, Poison Gas |
-| Hippopotas | Hippopotas → Hippowdon | 113 (70/109/109) | Sand Tomb, Sand Attack, Yawn |
+| Grimer | Grimer → Muk | 113 (71/109/109) | Poison Fang, Bite, Harden, Acid Armor |
+| Hippopotas | Hippopotas → Hippowdon | 113 (70/109/109) | Bulldoze, Sand Attack, Yawn |
 | Litleo | Litleo → Pyroar | 113 (72/107/107) | Ember, Swift, Work Up, Leer |
 | Eevee | Eevee → Espeon | 113 (64/113/113) | Swift, Growl, Helping Hand |
 | Ekans | Ekans → Arbok | 113 (66/111/111) | Poison Sting, Leer, Jaw Lock |
 | Staryu | Staryu → Starmie | 112 (67/110/110) | Water Gun, Harden, Thunder Wave |
-| Ponyta | Ponyta → Rapidash | 112 (81/100/100) | Flame Charge, Tail Whip, Fire Spin |
+| Ponyta | Ponyta → Rapidash | 112 (81/100/100) | Flame Charge, Tail Whip, Agility |
 | Ponyta | Ponyta → Rapidash | 112 (81/100/100) | Heart Stamp, Tail Whip, Agility |
 | Pawniard | Pawniard → Bisharp → Kingambit | 112 (68/102/115) | Bite, Metal Claw, Leer, Torment |
 | Rhyhorn | Rhyhorn → Rhydon → Rhyperior | 112 (71/100/111) | Rock Throw, Tail Whip, Rototiller |
@@ -221,15 +221,15 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Poochyena | Poochyena → Mightyena | 111 (60/112/112) | Bite, Howl, Hone Claws |
 | Axew | Axew → Fraxure → Haxorus | 110 (66/88/123) | Breaking Swipe, Leer, Taunt |
 | Pancham | Pancham → Pangoro | 110 (71/104/104) | Rock Smash, Leer, Taunt |
-| Gible | Gible → Gabite → Garchomp | 110 (60/85/133) | Breaking Swipe, Sand Tomb, Sand Attack, Bulldoze |
+| Gible | Gible → Gabite → Garchomp | 110 (60/85/133) | Breaking Swipe, Bulldoze, Sand Attack, Mud Shot |
 | Mankey | Mankey → Primeape → Annihilape | 110 (63/96/121) | Rock Smash, Leer, Counter |
 | Tangela | Tangela → Tangrowth | 110 (82/96/96) | Mega Drain, Growth, Stun Spore |
-| Varoom | Varoom → Revavroom | 109 (61/110/110) | Bullet Punch, Poison Fang, Screech, Poison Gas |
+| Varoom | Varoom → Revavroom | 109 (61/110/110) | Bullet Punch, Poison Fang, Screech, Taunt |
 | Tranquill | Tranquill → Unfezant | 109 (69/104/104) | Quick Attack, Peck, Leer, Swagger |
 | Stufful | Stufful → Bewear | 109 (67/106/106) | Tackle, Mach Punch, Leer, Endure |
 | Swadloon | Swadloon → Leavanny | 109 (69/104/104) | Pounce, Vine Whip, Screech, String Shot |
-| Cacnea | Cacnea → Cacturne | 109 (73/102/102) | Vine Whip, Leer, Ingrain |
-| Bagon | Bagon → Shelgon → Salamence | 109 (59/80/135) | Breaking Swipe, Leer, Roost |
+| Cacnea | Cacnea → Cacturne | 109 (73/102/102) | Vine Whip, Leer, Cotton Spore |
+| Bagon | Bagon → Shelgon → Salamence | 109 (59/80/135) | Breaking Swipe, Leer, Scary Face |
 | Pawmo | Pawmo → Pawmot | 109 (70/103/103) | Spark, Mach Punch, Growl, Charge |
 | Tentacool | Tentacool → Tentacruel | 109 (61/109/109) | Water Gun, Acid, Tickle, Barrier |
 | Loudred | Loudred → Exploud | 108 (71/102/102) | Mirror Shot, Thunder Shock, Growl, Nuzzle |
@@ -239,31 +239,31 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Murkrow | Murkrow → Honchkrow | 108 (76/97/97) | Feint Attack, Peck, Screech, Taunt |
 | Phanpy | Phanpy → Donphan | 108 (65/105/105) | Bulldoze, Growl, Endure |
 | Pikachu | Pikachu → Raichu | 107 (70/101/101) | Thunder Shock, Growl, Thunder Wave |
-| Nidorino | Nidorino → Nidoking | 107 (69/101/101) | Poison Sting, Leer, Acid Rain |
+| Nidorino | Nidorino → Nidoking | 107 (69/101/101) | Poison Sting, Leer, Focus Energy |
 | Kirlia | Kirlia → Gardevoir | 107 (55/111/111) | Confusion, Disarming Voice, Growl, Hypnosis |
 | Deino | Deino → Zweilous → Hydreigon | 107 (59/80/131) | Bite, Breaking Swipe, Work Up, Focus Energy |
 | Karrablast | Karrablast → Escavalier | 107 (63/105/105) | Pounce, Leer, Iron Defense |
-| Corphish | Corphish → Crawdaunt | 107 (69/101/101) | Aqua Jet, Leer, Clamp |
+| Corphish | Corphish → Crawdaunt | 107 (69/101/101) | Aqua Jet, Leer, Protect |
 | Zigzagoon | Zigzagoon → Linoone → Obstagoon | 107 (56/102/115) | Bite, Tackle, Leer, Hone Claws |
-| Naclstack | Naclstack → Garganacl | 106 (67/101/101) | Salt Cure, Harden, Rock Polish |
-| Surskit | Surskit → Masquerain | 106 (54/111/111) | Struggle Bug, Chilling Water, Agility, Infestation |
+| Naclstack | Naclstack → Garganacl | 106 (67/101/101) | Rock Throw, Harden, Rock Polish |
+| Surskit | Surskit → Masquerain | 106 (54/111/111) | Struggle Bug, Chilling Water, Agility, Scary Face |
 | Magnemite | Magnemite → Magneton → Magnezone | 106 (67/95/108) | Thunder Shock, Mirror Shot, Supersonic, Magnetic Flux |
 | Scraggy | Scraggy → Scrafty | 106 (72/98/98) | Feint Attack, Power-Up Punch, Leer, Torment |
-| Gastly | Gastly → Haunter → Gengar | 106 (69/91/107) | Infernal Parade, Clear Smog, Scary Face, Curse |
-| Charcadet | Charcadet → Ceruledge | 106 (48/114/114) | Flame Charge, Leer, Will-O-Wisp |
-| Palpitoad | Palpitoad → Seismitoad | 106 (70/99/99) | Aqua Jet, Sand Tomb, Growl, Aqua Ring |
+| Gastly | Gastly → Haunter → Gengar | 106 (69/91/107) | Infernal Parade, Clear Smog, Scary Face, Confuse Ray |
+| Charcadet | Charcadet → Ceruledge | 106 (48/114/114) | Flame Charge, Leer, Quick Guard |
+| Palpitoad | Palpitoad → Seismitoad | 106 (70/99/99) | Aqua Jet, Bulldoze, Growl, Mud Shot |
 | Electrike | Electrike → Manectric | 106 (63/104/104) | Charge Beam, Leer, Thunder Wave |
 | Natu | Natu → Xatu | 106 (61/105/105) | Confusion, Gust, Cosmic Power, Tailwind |
 | Binacle | Binacle → Barbaracle | 106 (60/106/106) | Accelerock, Aqua Jet, Tickle, Rock Polish |
 | Shuppet | Shuppet → Banette | 106 (64/103/103) | Shadow Sneak, Screech, Confuse Ray |
-| Corsola | Corsola → Cursola | 106 (75/95/95) | Infernal Parade, Harden, Curse |
-| Amaura | Amaura → Aurorus | 106 (67/101/101) | Ancient Power, Icy Wind, Growl, Snow Storm |
+| Corsola | Corsola → Cursola | 106 (75/95/95) | Infernal Parade, Harden, Disable |
+| Amaura | Amaura → Aurorus | 106 (67/101/101) | Ancient Power, Icy Wind, Growl, Mist |
 | Tinkatuff | Tinkatuff → Tinkaton | 106 (71/98/98) | Fairy Wind, Metal Claw, Sweet Kiss, Draining Kiss |
-| Larvitar | Larvitar → Pupitar → Tyranitar | 105 (61/77/126) | Rock Throw, Sand Tomb, Leer, Sandstorm |
+| Larvitar | Larvitar → Pupitar → Tyranitar | 105 (61/77/126) | Rock Throw, Bulldoze, Leer, Scary Face |
 | Abra | Abra → Kadabra → Alakazam | 105 (69/88/108) | Confusion, Flash, Barrier |
 | Kabuto | Kabuto → Kabutops | 105 (65/102/102) | Accelerock, Aqua Jet, Leer, Mud Shot |
 | Zigzagoon | Zigzagoon → Linoone | 105 (56/107/107) | Tackle, Tail Whip, Trailblaze |
-| Sandile | Sandile → Krokorok → Krookodile | 105 (64/77/122) | Sand Tomb, Bite, Leer, Hone Claws |
+| Sandile | Sandile → Krokorok → Krookodile | 105 (64/77/122) | Bulldoze, Bite, Leer, Hone Claws |
 | Vigoroth | Vigoroth → Slaking | 105 (100/76/76) | Quick Attack, Tickle, Encore |
 | Nosepass | Nosepass → Probopass | 105 (66/100/100) | Ancient Power, Charge Beam, Harden, Magnetic Flux |
 
@@ -273,18 +273,18 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 |---|---|---|---|
 | Omanyte | Omanyte → Omastar | 105 (70/97/97) | Ancient Power, Water Gun, Sand Attack, Leer |
 | Exeggcute | Exeggcute → Exeggutor | 105 (62/103/103) | Mega Drain, Confusion, Growth, Reflect |
-| Nidorina | Nidorina → Nidoqueen | 105 (67/99/99) | Poison Sting, Tail Whip, Acid Rain |
+| Nidorina | Nidorina → Nidoqueen | 105 (67/99/99) | Poison Sting, Tail Whip, Flatter |
 | Munna | Munna → Musharna | 105 (63/102/102) | Confusion, Defense Curl, Magic Coat |
 | Chinchou | Chinchou → Lanturn | 105 (64/101/101) | Water Gun, Thunder Shock, Supersonic, Parabolic Charge |
-| Lileep | Lileep → Cradily | 105 (73/95/95) | Ancient Power, Mega Drain, Growth, Ingrain |
-| Golett | Golett → Golurk | 104 (63/101/101) | Sand Tomb, Shadow Sneak, Defense Curl, Curse |
+| Lileep | Lileep → Cradily | 105 (73/95/95) | Ancient Power, Mega Drain, Growth, Confuse Ray |
+| Golett | Golett → Golurk | 104 (63/101/101) | Bulldoze, Shadow Sneak, Defense Curl, Mud-Slap |
 | Whirlipede | Whirlipede → Scolipede | 104 (64/101/101) | Pounce, Poison Sting, Defense Curl, Venom Drench |
 | Lickitung | Lickitung → Lickilicky | 104 (72/95/95) | Quick Attack, Supersonic, Disable |
 | Grookey | Grookey → Thwackey → Rillaboom | 104 (60/85/117) | Branch Poke, Growth, Grassy Terrain |
-| Torchic | Torchic → Combusken → Blaziken | 104 (58/80/124) | Flame Charge, Peck, Growl, Roost |
-| Skiddo | Skiddo → Gogoat | 104 (64/101/101) | Vine Whip, Tail Whip, Synthesis |
+| Torchic | Torchic → Combusken → Blaziken | 104 (58/80/124) | Flame Charge, Peck, Growl, Detect |
+| Skiddo | Skiddo → Gogoat | 104 (64/101/101) | Vine Whip, Tail Whip, Worry Seed |
 | Steenee | Steenee → Tsareena | 104 (52/109/109) | Vine Whip, Aromatic Mist, Grass Whistle |
-| Slowpoke | Slowpoke → Slowking | 104 (65/99/99) | Confusion, Growl, Toxic |
+| Slowpoke | Slowpoke → Slowking | 104 (65/99/99) | Confusion, Growl, Amnesia |
 | Petilil | Petilil → Lilligant | 104 (59/104/104) | Vine Whip, Growth, Stun Spore |
 | Vullaby | Vullaby → Mandibuzz | 104 (68/97/97) | Bite, Pluck, Leer, Tailwind |
 | Machop | Machop → Machoke → Machamp | 104 (67/86/108) | Mach Punch, Leer, Quick Guard |
@@ -292,31 +292,31 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Psyduck | Psyduck → Golduck | 104 (60/103/103) | Water Gun, Confusion, Cosmic Power, Amnesia |
 | Jigglypuff | Jigglypuff → Wigglytuff | 104 (66/98/98) | Swift, Disarming Voice, Sweet Kiss, Sing |
 | Baltoy | Baltoy → Claydol | 103 (63/101/101) | Mud Shot, Confusion, Cosmic Power, Power Split |
-| Zorua | Zorua → Zoroark | 103 (63/100/100) | Swift, Infernal Parade, Leer, Curse |
+| Zorua | Zorua → Zoroark | 103 (63/100/100) | Swift, Infernal Parade, Leer, Hone Claws |
 | Dottler | Dottler → Orbeetle | 103 (62/101/101) | Struggle Bug, Confusion, Supersonic, Magic Coat |
 | Krabby | Krabby → Kingler | 103 (65/99/99) | Aqua Jet, Leer, Protect |
 | Elgyem | Elgyem → Beheeyem | 103 (68/97/97) | Confusion, Growl, Power Split |
 | Cubchoo | Cubchoo → Beartic | 103 (58/104/104) | Ice Shard, Growl, Snowscape |
-| Vulpix | Vulpix → Ninetales | 103 (57/104/104) | Ember, Tail Whip, Will-O-Wisp |
-| Salandit | Salandit → Salazzle | 103 (64/99/99) | Acid, Ember, Sand Attack, Poison Gas |
-| Dratini | Dratini → Dragonair → Dragonite | 103 (57/80/124) | Breaking Swipe, Leer, Roost |
+| Vulpix | Vulpix → Ninetales | 103 (57/104/104) | Ember, Tail Whip, Confuse Ray |
+| Salandit | Salandit → Salazzle | 103 (64/99/99) | Acid, Ember, Sand Attack, Encore |
+| Dratini | Dratini → Dragonair → Dragonite | 103 (57/80/124) | Breaking Swipe, Leer, Thunder Wave |
 | Scorbunny | Scorbunny → Raboot → Cinderace | 103 (62/86/112) | Flame Charge, Growl, Agility |
-| Lombre | Lombre → Ludicolo | 103 (70/95/95) | Aqua Jet, Vine Whip, Tickle, Life Dew |
+| Lombre | Lombre → Ludicolo | 103 (70/95/95) | Aqua Jet, Vine Whip, Tickle, Rain Dance |
 | Skorupi | Skorupi → Drapion | 103 (60/101/101) | Poison Sting, Pounce, Leer, Hone Claws |
 | Swablu | Swablu → Altaria | 103 (57/104/104) | Quick Attack, Peck, Growl, Sing |
 | Slugma | Slugma → Magcargo | 103 (61/101/101) | Ember, Smokescreen, Yawn |
-| Trapinch | Trapinch → Vibrava → Flygon | 103 (66/77/114) | Pounce, Sand Tomb, Sand Attack, Bulldoze |
+| Trapinch | Trapinch → Vibrava → Flygon | 103 (66/77/114) | Pounce, Bulldoze, Sand Attack, Struggle Bug |
 | Aron | Aron → Lairon → Aggron | 103 (66/85/106) | Metal Claw, Harden, Autotomize |
 | Houndour | Houndour → Houndoom | 102 (62/100/100) | Shadow Siphon, Ember, Leer, Beat Up |
 | Sizzlipede | Sizzlipede → Centiskorch | 102 (58/102/102) | Flame Charge, Pounce, Smokescreen, Lunge |
 | Numel | Numel → Camerupt | 102 (66/97/97) | Ember, Mud Shot, Growth, Bulldoze |
-| Silicobra | Silicobra → Sandaconda | 102 (60/101/101) | Sand Tomb, Sand Attack, Bulldoze |
+| Silicobra | Silicobra → Sandaconda | 102 (60/101/101) | Bulldoze, Sand Attack, Mud-Slap |
 | Zorua | Zorua → Zoroark | 102 (61/100/100) | Shadow Siphon, Leer, Hone Claws |
 | Snubbull | Snubbull → Granbull | 102 (66/96/96) | Disarming Voice, Tail Whip, Charm |
-| Stunky | Stunky → Skuntank | 102 (64/97/97) | Poison Fang, Bite, Leer, Poison Gas |
+| Stunky | Stunky → Skuntank | 102 (64/97/97) | Poison Fang, Bite, Leer, Focus Energy |
 | Paras | Paras → Parasect | 102 (66/96/96) | Pounce, Vine Whip, Growth, Fungal Control |
 | Shroomish | Shroomish → Breloom | 102 (56/103/103) | Vine Whip, Growth, Stun Spore |
-| Clamperl | Clamperl → Huntail | 101 (64/97/97) | Aqua Jet, Supersonic, Clamp |
+| Clamperl | Clamperl → Huntail | 101 (64/97/97) | Aqua Jet, Supersonic, Rain Dance |
 | Drifloon | Drifloon → Drifblim | 101 (65/96/96) | Infernal Parade, Gust, Focus Energy, Tailwind |
 | Beldum | Beldum → Metang → Metagross | 101 (58/78/120) | Bullet Punch, Heart Stamp, Iron Defense, Transmutation |
 | Sobble | Sobble → Drizzile → Inteleon | 101 (62/87/108) | Water Gun, Growl, Soak |
@@ -325,12 +325,12 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Slowpoke | Slowpoke → Slowbro | 101 (65/95/95) | Water Gun, Confusion, Growl, Amnesia |
 | Noibat | Noibat → Noivern | 101 (47/108/108) | Gust, Twister, Supersonic, Tailwind |
 | Spoink | Spoink → Grumpig | 101 (71/91/91) | Confusion, Swift, Cosmic Power, Psychic Terrain |
-| Greavard | Greavard → Houndstone | 101 (59/99/99) | Shadow Sneak, Tail Whip, Rest |
-| Venonat | Venonat → Venomoth | 101 (58/100/100) | Struggle Bug, Acid, Supersonic, Poison Powder |
+| Greavard | Greavard → Houndstone | 101 (59/99/99) | Shadow Sneak, Tail Whip, Helping Hand |
+| Venonat | Venonat → Venomoth | 101 (58/100/100) | Struggle Bug, Acid, Supersonic, Leech Life |
 | Bergmite | Bergmite → Avalugg | 101 (62/98/98) | Ice Shard, Harden, Icy Wind |
 | Solosis | Solosis → Duosion → Reuniclus | 101 (67/82/103) | Confusion, Charm, Reflect |
 | Pidgeotto | Pidgeotto → Pidgeot | 101 (66/95/95) | Quick Attack, Wing Attack, Sand Attack, Tailwind |
-| Oddish | Oddish → Gloom → Vileplume | 101 (66/79/107) | Mega Drain, Acid, Growth, Moonlight |
+| Oddish | Oddish → Gloom → Vileplume | 101 (66/79/107) | Mega Drain, Acid, Growth, Aromatherapy |
 | Vulpix | Vulpix → Ninetales | 100 (55/102/102) | Icy Wind, Tail Whip, Mist |
 | Barboach | Barboach → Whiscash | 100 (59/99/99) | Aqua Jet, Bulldoze, Tickle, Mud-Slap |
 | Tirtouga | Tirtouga → Carracosta | 100 (68/92/92) | Aqua Jet, Rock Throw, Withdraw, Wide Guard |
@@ -338,40 +338,40 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Helioptile | Helioptile → Heliolisk | 100 (57/101/101) | Thunder Shock, Swift, Tail Whip, Parabolic Charge |
 | Ledyba | Ledyba → Ledian | 100 (52/103/103) | Pounce, Tackle, Supersonic, Safeguard |
 | Buneary | Buneary → Lopunny | 100 (68/93/93) | Quick Attack, Cosmic Power, After You |
-| Geodude | Geodude → Graveler → Golem | 100 (66/81/104) | Rock Throw, Sand Tomb, Cosmic Power, Rock Polish |
+| Geodude | Geodude → Graveler → Golem | 100 (66/81/104) | Rock Throw, Bulldoze, Cosmic Power, Rock Polish |
 | Snorunt | Snorunt → Froslass | 100 (57/100/100) | Icy Wind, Leer, Confuse Ray |
 | Toedscool | Toedscool → Toedscruel | 100 (58/99/99) | Mud Shot, Mega Drain, Growth, Stun Spore |
-| Marill | Marill → Azumarill | 100 (57/100/100) | Water Gun, Disarming Voice, Tickle, Aqua Ring |
-| Ferroseed | Ferroseed → Ferrothorn | 100 (62/96/96) | Vine Whip, Metal Claw, Harden, Ingrain |
-| Litwick | Litwick → Lampent → Chandelure | 100 (60/76/115) | Infernal Parade, Ember, Acid Armor, Will-O-Wisp |
-| Roggenrola | Roggenrola → Boldore → Gigalith | 100 (60/80/111) | Accelerock, Sand Attack, Sandstorm |
+| Marill | Marill → Azumarill | 100 (57/100/100) | Water Gun, Disarming Voice, Tickle, Charm |
+| Ferroseed | Ferroseed → Ferrothorn | 100 (62/96/96) | Vine Whip, Metal Claw, Harden, Iron Defense |
+| Litwick | Litwick → Lampent → Chandelure | 100 (60/76/115) | Infernal Parade, Ember, Acid Armor, Confuse Ray |
+| Roggenrola | Roggenrola → Boldore → Gigalith | 100 (60/80/111) | Accelerock, Sand Attack, Iron Defense |
 | Fennekin | Fennekin → Braixen → Delphox | 100 (58/81/113) | Ember, Tail Whip, Light Screen |
-| Seel | Seel → Dewgong | 99 (58/98/98) | Water Gun, Growl, Aqua Ring |
+| Seel | Seel → Dewgong | 99 (58/98/98) | Water Gun, Growl, Icy Wind |
 | Clobbopus | Clobbopus → Grapploct | 99 (61/96/96) | Rock Smash, Leer, Octolock |
 | Jangmo-o | Jangmo-o → Hakamo-o → Kommo-o | 99 (56/77/118) | Breaking Swipe, Leer, Protect |
-| Trubbish | Trubbish → Garbodor | 99 (60/96/96) | Poison Fang, Sand Attack, Poison Gas |
-| Dreepy | Dreepy → Drakloak → Dragapult | 99 (53/81/117) | Breaking Swipe, Shadow Sneak, Agility, Infestation |
+| Trubbish | Trubbish → Garbodor | 99 (60/96/96) | Poison Fang, Sand Attack, Swallow |
+| Dreepy | Dreepy → Drakloak → Dragapult | 99 (53/81/117) | Breaking Swipe, Shadow Sneak, Agility, Confuse Ray |
 | Spritzee | Spritzee → Aromatisse | 99 (67/91/91) | Fairy Wind, Sweet Kiss, Misty Terrain |
-| Swinub | Swinub → Piloswine → Mamoswine | 99 (49/89/115) | Ice Shard, Sand Tomb, Amnesia, Mist |
+| Swinub | Swinub → Piloswine → Mamoswine | 99 (49/89/115) | Ice Shard, Bulldoze, Amnesia, Mist |
 | Arrokuda | Arrokuda → Barraskewda | 99 (55/100/100) | Aqua Jet, Focus Energy, Agility |
 | Wimpod | Wimpod → Golisopod | 99 (45/106/106) | Pounce, Aqua Jet, Sand Attack, Struggle Bug |
-| Gulpin | Gulpin → Swalot | 98 (62/94/94) | Acid Spray, Amnesia, Poison Gas |
+| Gulpin | Gulpin → Swalot | 98 (62/94/94) | Acid Spray, Amnesia, Yawn |
 | Blitzle | Blitzle → Zebstrika | 98 (56/98/98) | Spark, Tail Whip, Thunder Wave |
 | Carvanha | Carvanha → Sharpedo | 98 (59/96/96) | Aqua Jet, Bite, Leer, Focus Energy |
 | Quaxly | Quaxly → Quaxwell → Quaquaval | 98 (59/78/110) | Aqua Jet, Work Up, Counter |
 | Drowzee | Drowzee → Hypno | 98 (58/97/97) | Confusion, Barrier, Hypnosis |
 | Tadbulb | Tadbulb → Bellibolt | 98 (55/99/99) | Thunder Shock, Charge, Electric Terrain |
-| Turtwig | Turtwig → Grotle → Torterra | 98 (63/80/103) | Vine Whip, Tickle, Synthesis |
-| Fuecoco | Fuecoco → Crocalor → Skeledirge | 98 (60/81/106) | Ember, Leer, Will-O-Wisp |
+| Turtwig | Turtwig → Grotle → Torterra | 98 (63/80/103) | Vine Whip, Tickle, Mega Drain |
+| Fuecoco | Fuecoco → Crocalor → Skeledirge | 98 (60/81/106) | Ember, Leer, Yawn |
 | Voltorb | Voltorb → Electrode | 98 (65/91/91) | Thunder Shock, Mega Drain, Charge, Stun Spore |
-| Clefairy | Clefairy → Clefable | 98 (62/93/93) | Disarming Voice, Growl, Moonlight |
+| Clefairy | Clefairy → Clefable | 98 (62/93/93) | Disarming Voice, Growl, Sweet Kiss |
 | Flittle | Flittle → Espathra | 98 (50/102/102) | Confusion, Growl, Agility |
 | Lillipup | Lillipup → Herdier → Stoutland | 98 (56/78/114) | Tackle, Leer, Helping Hand |
-| Phantump | Phantump → Trevenant | 98 (60/95/95) | Shadow Sneak, Branch Poke, Growth, Leech Seed |
+| Phantump | Phantump → Trevenant | 98 (60/95/95) | Shadow Sneak, Branch Poke, Growth, Confuse Ray |
 | Frillish | Frillish → Jellicent | 98 (64/92/92) | Water Gun, Infernal Parade, Acid Armor, Rain Dance |
-| Sandygast | Sandygast → Palossand | 98 (64/92/92) | Infernal Parade, Mud Shot, Sand Attack, Sand Tomb |
+| Sandygast | Sandygast → Palossand | 98 (64/92/92) | Infernal Parade, Mud Shot, Sand Attack, Bulldoze |
 | Fidough | Fidough → Dachsbun | 98 (60/95/95) | Disarming Voice, Tail Whip, Charm |
-| Croagunk | Croagunk → Toxicroak | 98 (54/98/98) | Poison Sting, Rock Smash, Meditate, Acid Rain |
+| Croagunk | Croagunk → Toxicroak | 98 (54/98/98) | Poison Sting, Rock Smash, Meditate, Flatter |
 
 ### Tier C (101)
 
@@ -379,12 +379,12 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 |---|---|---|---|
 | Popplio | Popplio → Brionne → Primarina | 98 (61/79/106) | Water Gun, Growl, Misty Terrain |
 | Panpour | Panpour → Simipour | 97 (57/96/96) | Aqua Jet, Leer, Taunt |
-| Pansage | Pansage → Simisage | 97 (57/96/96) | Vine Whip, Leer, Leech Seed |
+| Pansage | Pansage → Simisage | 97 (57/96/96) | Vine Whip, Leer, Grass Whistle |
 | Pansear | Pansear → Simisear | 97 (57/96/96) | Flame Charge, Leer, Yawn |
 | Sprigatito | Sprigatito → Floragato → Meowscarada | 97 (59/81/106) | Leafage, Tail Whip, Worry Seed |
 | Remoraid | Remoraid → Octillery | 97 (54/98/98) | Water Gun, Supersonic, Soak |
 | Zubat | Zubat → Golbat → Crobat | 97 (48/91/111) | Poison Fang, Wing Attack, Supersonic, Venom Drench |
-| Charmander | Charmander → Charmeleon → Charizard | 97 (57/79/110) | Ember, Growl, Fire Spin |
+| Charmander | Charmander → Charmeleon → Charizard | 97 (57/79/110) | Ember, Growl, Scary Face |
 | Cyndaquil | Cyndaquil → Quilava → Typhlosion | 97 (57/79/110) | Ember, Smokescreen, Leer |
 | Dwebble | Dwebble → Crustle | 97 (61/93/93) | Pounce, Accelerock, Sand Attack, Rock Polish |
 | Meowth | Meowth → Persian | 97 (59/95/95) | Shadow Siphon, Growl, Taunt |
@@ -392,91 +392,91 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 | Totodile | Totodile → Croconaw → Feraligatr | 97 (61/76/107) | Aqua Jet, Leer, Scary Face |
 | Meowth | Meowth → Perrserker | 97 (60/93/93) | Metal Claw, Growl, Iron Defense |
 | Archen | Archen → Archeops | 97 (63/92/92) | Rock Throw, Pluck, Leer, Tailwind |
-| Wattrel | Wattrel → Kilowattrel | 97 (54/98/98) | Thunder Shock, Gust, Growl, Roost |
+| Wattrel | Wattrel → Kilowattrel | 97 (54/98/98) | Thunder Shock, Gust, Growl, Agility |
 | Joltik | Joltik → Galvantula | 97 (59/94/94) | Struggle Bug, Charge Beam, Screech, Electroweb |
 | Litten | Litten → Torracat → Incineroar | 97 (59/80/105) | Flame Charge, Growl, Scary Face |
 | Shroodle | Shroodle → Grafaiai | 97 (57/95/95) | Poison Fang, Quick Attack, Leer, Substitute |
 | Skitty | Skitty → Delcatty | 97 (57/95/95) | Quick Attack, Tickle, Heal Bell |
 | Goomy | Goomy → Sliggoo → Goodra | 97 (54/81/110) | Twister, Acid Armor, Protect |
-| Horsea | Horsea → Seadra → Kingdra | 97 (56/86/104) | Water Gun, Smokescreen, Whirlpool |
+| Horsea | Horsea → Seadra → Kingdra | 97 (56/86/104) | Water Gun, Smokescreen, Rain Dance |
 | Treecko | Treecko → Grovyle → Sceptile | 97 (59/79/104) | Leafage, Leer, Mega Drain |
-| Bramblin | Bramblin → Brambleghast | 96 (53/98/98) | Vine Whip, Shadow Sneak, Defense Curl, Curse |
+| Bramblin | Bramblin → Brambleghast | 96 (53/98/98) | Vine Whip, Shadow Sneak, Defense Curl, Mega Drain |
 | Swirlix | Swirlix → Slurpuff | 96 (63/90/90) | Fairy Wind, Fake Tears, Draining Kiss |
 | Rellor | Rellor → Rabsca | 96 (54/97/97) | Struggle Bug, Cosmic Power, Speed Swap |
 | Skwovet | Skwovet → Greedent | 96 (56/95/95) | Tackle, Tail Whip, Stuff Cheeks |
 | Wooloo | Wooloo → Dubwool | 96 (50/100/100) | Tackle, Growl, Guard Split |
 | Tepig | Tepig → Pignite → Emboar | 96 (59/80/103) | Flame Charge, Tail Whip, Endure |
-| Mudkip | Mudkip → Marshtomp → Swampert | 96 (60/80/102) | Aqua Jet, Growl, Life Dew |
-| Yamask | Yamask → Cofagrigus | 96 (59/93/93) | Infernal Parade, Fake Tears, Curse |
-| Yamask | Yamask → Runerigus | 96 (59/93/93) | Sand Tomb, Shadow Sneak, Scary Face, Curse |
-| Taillow | Taillow → Swellow | 96 (59/93/93) | Peck, Growl, Roost |
+| Mudkip | Mudkip → Marshtomp → Swampert | 96 (60/80/102) | Aqua Jet, Growl, Mud-Slap |
+| Yamask | Yamask → Cofagrigus | 96 (59/93/93) | Infernal Parade, Fake Tears, Crafty Shield |
+| Yamask | Yamask → Runerigus | 96 (59/93/93) | Bulldoze, Shadow Sneak, Scary Face, Crafty Shield |
+| Taillow | Taillow → Swellow | 96 (59/93/93) | Peck, Growl, Tailwind |
 | Grubbin | Grubbin → Charjabug → Vikavolt | 96 (56/77/109) | Struggle Bug, Charge, String Shot |
 | Klink | Klink → Klang → Klinklang | 96 (57/80/105) | Bullet Punch, Charge, Gear Up |
-| Bulbasaur | Bulbasaur → Ivysaur → Venusaur | 96 (60/76/104) | Mega Drain, Acid, Growth, Leech Seed |
+| Bulbasaur | Bulbasaur → Ivysaur → Venusaur | 96 (60/76/104) | Mega Drain, Acid, Growth, Worry Seed |
 | Snover | Snover → Abomasnow | 95 (61/91/91) | Leafage, Ice Shard, Leer, Mist |
-| Skrelp | Skrelp → Dragalge | 95 (60/91/91) | Acid, Water Gun, Smokescreen, Acid Rain |
+| Skrelp | Skrelp → Dragalge | 95 (60/91/91) | Acid, Water Gun, Smokescreen, Venom Drench |
 | Froakie | Froakie → Frogadier → Greninja | 95 (58/80/102) | Water Gun, Growl, Role Play |
 | Starly | Starly → Staravia → Staraptor | 95 (49/75/117) | Quick Attack, Wing Attack, Growl, Agility |
-| Chespin | Chespin → Quilladin → Chesnaught | 95 (60/75/103) | Vine Whip, Growl, Leech Seed |
+| Chespin | Chespin → Quilladin → Chesnaught | 95 (60/75/103) | Vine Whip, Growl, Spiky Shield |
 | Oshawott | Oshawott → Dewott → Samurott | 95 (58/76/104) | Water Gun, Tail Whip, Soak |
 | Shelmet | Shelmet → Accelgor | 94 (55/93/93) | Struggle Bug, Acid Armor, Yawn |
-| Spheal | Spheal → Sealeo → Walrein | 94 (58/77/102) | Icy Wind, Water Gun, Growl, Snow Storm |
-| Koffing | Koffing → Weezing | 94 (61/89/89) | Poison Fang, Smokescreen, Poison Gas |
+| Spheal | Spheal → Sealeo → Walrein | 94 (58/77/102) | Icy Wind, Water Gun, Growl, Encore |
+| Koffing | Koffing → Weezing | 94 (61/89/89) | Poison Fang, Smokescreen, Misty Terrain |
 | Geodude | Geodude → Graveler → Golem | 94 (62/76/99) | Rock Throw, Spark, Defense Curl, Rock Polish |
-| Piplup | Piplup → Prinplup → Empoleon | 94 (59/75/102) | Water Gun, Growl, Whirlpool |
-| Rowlet | Rowlet → Dartrix → Decidueye | 94 (59/77/100) | Leafage, Peck, Growl, Synthesis |
+| Piplup | Piplup → Prinplup → Empoleon | 94 (59/75/102) | Water Gun, Growl, Swagger |
+| Rowlet | Rowlet → Dartrix → Decidueye | 94 (59/77/100) | Leafage, Peck, Growl, Feather Dance |
 | Chansey | Chansey → Blissey | 94 (62/88/88) | Swift, Tail Whip, Sing |
 | Honedge | Honedge → Doublade | 94 (65/86/86) | Bullet Punch, Shadow Sneak, Iron Defense, Autotomize |
-| Vanillite | Vanillite → Vanillish → Vanilluxe | 94 (58/73/105) | Icy Wind, Harden, Snow Storm |
+| Vanillite | Vanillite → Vanillish → Vanilluxe | 94 (58/73/105) | Icy Wind, Harden, Mist |
 | Glameow | Glameow → Purugly | 94 (60/89/89) | Quick Attack, Tail Whip, Fake Out |
-| Onix | Onix → Steelix | 93 (61/88/88) | Rock Throw, Sand Tomb, Harden, Autotomize |
+| Onix | Onix → Steelix | 93 (61/88/88) | Rock Throw, Bulldoze, Harden, Autotomize |
 | Cottonee | Cottonee → Whimsicott | 93 (53/94/94) | Mega Drain, Fairy Wind, Growth, Stun Spore |
 | Bronzor | Bronzor → Bronzong | 93 (53/93/93) | Bullet Punch, Heart Stamp, Iron Defense, Hypnosis |
-| Chimchar | Chimchar → Monferno → Infernape | 93 (56/76/104) | Flame Charge, Leer, Fire Spin |
-| Pikipek | Pikipek → Trumbeak → Toucannon | 93 (57/76/101) | Quick Attack, Peck, Growl, Roost |
+| Chimchar | Chimchar → Monferno → Infernape | 93 (56/76/104) | Flame Charge, Leer, Taunt |
+| Pikipek | Pikipek → Trumbeak → Toucannon | 93 (57/76/101) | Quick Attack, Peck, Growl, Supersonic |
 | Shinx | Shinx → Luxio → Luxray | 93 (55/72/107) | Spark, Leer, Electric Terrain |
-| Ducklett | Ducklett → Swanna | 93 (55/91/91) | Aqua Jet, Wing Attack, Feather Dance, Aqua Ring |
+| Ducklett | Ducklett → Swanna | 93 (55/91/91) | Aqua Jet, Wing Attack, Feather Dance, Tailwind |
 | Capsakid | Capsakid → Scovillain | 92 (55/90/90) | Leafage, Leer, Spicy Extract |
 | Wingull | Wingull → Pelipper | 92 (54/91/91) | Water Gun, Gust, Growl, Tailwind |
 | Finneon | Finneon → Lumineon | 92 (59/87/87) | Aqua Jet, Tickle, Rain Dance |
-| Applin | Applin → Appletun | 92 (49/94/94) | Mega Drain, Twister, Growth, Leech Seed |
-| Shellder | Shellder → Cloyster | 92 (56/89/89) | Aqua Jet, Leer, Whirlpool |
+| Applin | Applin → Appletun | 92 (49/94/94) | Mega Drain, Twister, Growth, Protect |
+| Shellder | Shellder → Cloyster | 92 (56/89/89) | Aqua Jet, Leer, Supersonic |
 | Yungoos | Yungoos → Gumshoos | 92 (55/89/89) | Tackle, Leer, Yawn |
-| Snivy | Snivy → Servine → Serperior | 92 (55/76/100) | Vine Whip, Leer, Leech Seed |
+| Snivy | Snivy → Servine → Serperior | 92 (55/76/100) | Vine Whip, Leer, Mega Drain |
 | Skiploom | Skiploom → Jumpluff | 91 (62/84/84) | Vine Whip, Peck, Tail Whip, Stun Spore |
 | Squirtle | Squirtle → Wartortle → Blastoise | 91 (57/72/100) | Water Gun, Tail Whip, Rain Dance |
 | Foongus | Foongus → Amoonguss | 91 (58/87/87) | Vine Whip, Poison Fang, Growth, Stun Spore |
-| Spearow | Spearow → Fearow | 91 (53/90/90) | Quick Attack, Peck, Leer, Roost |
-| Pineco | Pineco → Forretress | 91 (59/85/85) | Pounce, Iron Defense, Curse |
-| Chikorita | Chikorita → Bayleef → Meganium | 91 (57/72/99) | Mega Drain, Growl, Synthesis |
+| Spearow | Spearow → Fearow | 91 (53/90/90) | Quick Attack, Peck, Leer, Focus Energy |
+| Pineco | Pineco → Forretress | 91 (59/85/85) | Pounce, Iron Defense, Protect |
+| Chikorita | Chikorita → Bayleef → Meganium | 91 (57/72/99) | Mega Drain, Growl, Reflect |
 | Gothita | Gothita → Gothorita → Gothitelle | 90 (57/75/96) | Confusion, Tickle, Hypnosis |
-| Hatenna | Hatenna → Hattrem → Hatterene | 90 (54/74/100) | Confusion, Aromatic Mist, Heal Pulse |
+| Hatenna | Hatenna → Hattrem → Hatterene | 90 (54/74/100) | Confusion, Aromatic Mist, After You |
 | Meowth | Meowth → Persian | 90 (57/86/86) | Pay Day, Tail Whip, Fake Out |
 | Nickit | Nickit → Thievul | 90 (48/92/92) | Shadow Siphon, Tail Whip, Hone Claws |
-| Fomantis | Fomantis → Lurantis | 89 (48/91/91) | Leafage, Growth, Ingrain |
+| Fomantis | Fomantis → Lurantis | 89 (48/91/91) | Leafage, Growth, Sunny Day |
 | Impidimp | Impidimp → Morgrem → Grimmsnarl | 89 (51/72/101) | Bite, Disarming Voice, Confide, Flatter |
-| Nincada | Nincada → Ninjask | 89 (52/88/88) | Pounce, Sand Tomb, Sand Attack, Leech Life |
-| Morelull | Morelull → Shiinotic | 89 (60/82/82) | Mega Drain, Disarming Voice, Growth, Moonlight |
+| Nincada | Nincada → Ninjask | 89 (52/88/88) | Pounce, Bulldoze, Sand Attack, Leech Life |
+| Morelull | Morelull → Shiinotic | 89 (60/82/82) | Mega Drain, Disarming Voice, Growth, Absorb |
 | Rattata | Rattata → Raticate | 88 (53/86/86) | Quick Attack, Tail Whip, Laser Focus |
 | Diglett | Diglett → Dugtrio | 88 (51/87/87) | Bulldoze, Metal Claw, Growl, Mud-Slap |
-| Hoothoot | Hoothoot → Noctowl | 88 (48/89/89) | Swift, Gust, Growl, Roost |
+| Hoothoot | Hoothoot → Noctowl | 88 (48/89/89) | Swift, Gust, Growl, Reflect |
 | Woobat | Woobat → Swoobat | 88 (59/81/81) | Confusion, Gust, Supersonic, Amnesia |
 | Fletchling | Fletchling → Fletchinder → Talonflame | 88 (52/75/94) | Quick Attack, Peck, Growl, Tailwind |
-| Gossifleur | Gossifleur → Eldegoss | 87 (50/86/86) | Mega Drain, Growth, Synthesis |
+| Gossifleur | Gossifleur → Eldegoss | 87 (50/86/86) | Mega Drain, Growth, Aromatherapy |
 | Shieldon | Shieldon → Bastiodon | 86 (58/80/80) | Accelerock, Bullet Punch, Screech, Iron Defense |
-| Cubone | Cubone → Marowak | 86 (58/80/80) | Sand Tomb, Tail Whip, Mud-Slap |
+| Cubone | Cubone → Marowak | 86 (58/80/80) | Bulldoze, Tail Whip, Mud-Slap |
 | Diglett | Diglett → Dugtrio | 86 (51/85/85) | Bulldoze, Growl, Mud-Slap |
 | Purrloin | Purrloin → Liepard | 86 (51/84/84) | Feint Attack, Growl, Hone Claws |
 | Rookidee | Rookidee → Corvisquire → Corviknight | 86 (47/72/98) | Peck, Leer, Iron Defense |
 | Rattata | Rattata → Raticate | 85 (52/83/83) | Bite, Quick Attack, Tail Whip, Focus Energy |
 | Patrat | Patrat → Watchog | 85 (51/83/83) | Tackle, Leer, Rototiller |
-| Wooper | Wooper → Clodsire | 85 (47/86/86) | Poison Tail, Sand Tomb, Tail Whip, Toxic |
-| Wiglett | Wiglett → Wugtrio | 85 (48/85/85) | Aqua Jet, Sand Attack, Wrap |
+| Wooper | Wooper → Clodsire | 85 (47/86/86) | Poison Tail, Bulldoze, Tail Whip, Mud Shot |
+| Wiglett | Wiglett → Wugtrio | 85 (48/85/85) | Aqua Jet, Sand Attack, Mud-Slap |
 | Sentret | Sentret → Furret | 84 (46/85/85) | Quick Attack, Defense Curl, Follow Me |
 | Bidoof | Bidoof → Bibarel | 83 (50/82/82) | Tackle, Growl, Yawn |
 | Rolycoly | Rolycoly → Carkol → Coalossal | 83 (46/73/93) | Accelerock, Smokescreen, Tar Shot |
-| Wooper | Wooper → Quagsire | 83 (47/83/83) | Aqua Jet, Sand Tomb, Tail Whip, Rain Dance |
-| Spinarak | Spinarak → Ariados | 82 (52/78/78) | Pounce, Poison Sting, String Shot, Toxic Thread |
+| Wooper | Wooper → Quagsire | 83 (47/83/83) | Aqua Jet, Bulldoze, Tail Whip, Rain Dance |
+| Spinarak | Spinarak → Ariados | 82 (52/78/78) | Pounce, Poison Sting, String Shot, Scary Face |
 | Tarountula | Tarountula → Spidops | 78 (45/78/78) | Pounce, String Shot, Struggle Bug |
 
 ### Alleen via events (te sterk voor de draft)
@@ -484,25 +484,25 @@ Gewogen break-even: **1.3%** van de max HP per aanval. Gekozen: **2%** (de norma
 Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In act 1 zouden ze bijna 2× zo sterk zijn als een eerste vorm en daarmee act 1 breken; via een event kosten ze iets (HP, geld of een move).
 
 - Gholdengo (129): Mirror Shot, Infernal Parade, Metal Sound, Confuse Ray
-- Gyarados (128): Aqua Jet, Peck, Scary Face, Whirlpool
-- Heracross (121): Pounce, Rock Smash, Leer, Pollen Haze
-- Milotic (116): Chilling Water, Tickle, Aqua Ring
+- Gyarados (128): Aqua Jet, Peck, Scary Face, Rain Dance
+- Heracross (121): Pounce, Rock Smash, Leer, Counter
+- Milotic (116): Chilling Water, Tickle, Rain Dance
 - Tauros (115): Mach Punch, Tail Whip, Scary Face
-- Kricketune (113): Pounce, Growl, Infestation
-- Volbeat (113): Ember, Thunder Shock, Flash, Fire Spin
-- Solrock (111): Accelerock, Heart Stamp, Harden, Morning Sun
+- Kricketune (113): Pounce, Growl, Leech Life
+- Volbeat (113): Ember, Thunder Shock, Flash, Confuse Ray
+- Solrock (111): Accelerock, Heart Stamp, Harden, Sunny Day
 - Zangoose (111): Quick Attack, Leer, Hone Claws
 - Tauros (110): Tackle, Tail Whip, Scary Face
 - Passimian (110): Rock Smash, Leer, Focus Energy
 - Snorlax (110): Tackle, Defense Curl, Metronome
-- Pinsir (109): Pounce, Bulldoze, Focus Energy, Pollen Haze
+- Pinsir (109): Pounce, Bulldoze, Focus Energy, Lunge
 - Sawk (108): Rock Smash, Leer, Quick Guard
 - Sigilyph (108): Confusion, Gust, Cosmic Power, Hypnosis
 - Kangaskhan (108): Quick Attack, Tail Whip, Focus Energy
 - Absol (107): Bite, Disarming Voice, Leer, Snarl
 - Seviper (107): Poison Tail, Bullet Punch, Screech, Gastro Acid
-- Vespiquen (84): Pounce, Peck, Defend Order, Roost
-- Sunflora (83): Mega Drain, Growth, Ingrain
+- Vespiquen (84): Pounce, Peck, Defend Order, Struggle Bug
+- Sunflora (83): Mega Drain, Growth, Worry Seed
 - Beedrill (80): Pounce, Poison Sting, Harden, String Shot
 - Beautifly (80): Struggle Bug, Gust, Harden, Tailwind
 - Butterfree (80): Struggle Bug, Gust, Supersonic, Rage Powder
@@ -602,7 +602,7 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 - Tandemaus: act 2 te zwak (TANDEMAUS 58 < 71); act 3 te zwak (TANDEMAUS 58 < 76); geen evolutie en zwakker dan een gemiddelde act-2-vorm (58 < 95)
 - Tinkatink: act 2 te zwak (TINKATUFF 71 < 71)
 - Torkoal: geen evolutie en zwakker dan een gemiddelde act-2-vorm (87 < 95)
-- Tropius: geen evolutie en zwakker dan een gemiddelde act-2-vorm (90 < 95)
+- Tropius: geen evolutie en zwakker dan een gemiddelde act-2-vorm (90 < 95); geen grounded move
 - Turtonator: geen evolutie en zwakker dan een gemiddelde act-2-vorm (87 < 95)
 - Tympole: act 2 te zwak (PALPITOAD 70 < 71)
 - Tynamo: geen basis-statusmove
@@ -615,11 +615,29 @@ Eenstaps-soorten met een rating boven 106 (5% boven de mediaan van act 3). In ac
 
 ## Beloningsmoves
 
-**Common (129):** Acid Armor, Acrobatics, Aerial Ace, After You, Agility, Air Cutter, Air Slash, Amnesia, Ancient Power, Aqua Ring, Assurance, Aurora Beam, Avalanche, Barrier, Bite, Breaking Swipe, Brick Break, Brine, Brutal Swing, Bubble Beam, Bug Bite, Bulldoze, Charge Beam, Charm, Chilling Water, Clear Smog, Confuse Ray, Confusion, Cut, Detect, Dragon Breath, Dragon Rush, Draining Kiss, Dynamic Punch, Endure, Facade, Fake Tears, Feint Attack, Fire Fang, Fire Punch, Flame Burst, Flame Charge, Flame Wheel, Focus Energy, Force Palm, Freeze-Dry, Growl, Harden, Helping Hand, Hex, Hone Claws, Horn Attack, Howl, Hurricane, Ice Fang, Ice Punch, Icicle Crash, Icy Wind, Ingrain, Iron Defense, Iron Tail, Lager Lagoon, Laser Beam, Laser Focus, Leer, Low Sweep, Magical Leaf, Metal Claw, Metal Sound, Mist, Mud Bomb, Mud Shot, Mystical Fire, Ominous Wind, Payback, Pluck, Poison Fang, Poison Powder, Poison Tail, Protect, Psybeam, Psycho Cut, Punishment, Quick Guard, Rain Dance, Rapid Spin, Razor Leaf, Retaliate, Revenge, Rock Climb, Rock Polish, Rock Throw, Rock Tomb, Safeguard, Sandstorm, Scary Face, Secret Power, Shadow Claw, Shadow Punch, Shadow Siphon, Shock Wave, Signal Beam, Silver Wind, Skitter Smack, Sludge, Smack Down, Smelling Salts, Snarl, Snowscape, Spark, Steel Wing, Stockpile, Stomping Tantrum, Struggle Bug, Sunny Day, Supersonic, Swift, Thunder, Thunder Fang, Thunder Punch, Venoshock, Vintage Spill, Vise Grip, Wake-Up Slap, Water Pulse, Weather Ball, Wing Attack, Work Up, Zen Headbutt
+Kaartzeldzaamheid 60/30/10% (TM Case: 30/45/25%). Een rare kaart is in een kwart van de gevallen een **procent-move** (zie hieronder): per beloningskaart ±2,5%, per gevecht (3 kaarten) ±7%.
 
-**Uncommon (121):** Acupressure, Aromatherapy, Aura Sphere, Baneful Bunker, Blizzard, Body Press, Body Slam, Bug Buzz, Bulk Up, Calm Mind, Coaching, Coil, Cosmic Power, Crabhammer, Crunch, Crush Claw, Curse, Dark Pulse, Decorate, Disable, Discharge, Dragon Claw, Drain Punch, Drill Peck, Earth Power, Electric Terrain, Encore, Energy Ball, Extrasensory, Fell Stinger, Fiery Dance, Fire Blast, Flamethrower, Flash Cannon, Flatter, Follow Me, Foul Play, Giga Drain, Grassy Terrain, Grass Whistle, Guard Split, Gunk Shot, Hammer Arm, Haze, Heal Bell, Heal Pulse, High Horsepower, Horn Leech, Hydro Pump, Hypnosis, Ice Beam, Inferno, Iron Head, Jaw Lock, King's Shield, Lava Plume, Leaf Blade, Leech Life, Leech Seed, Life Dew, Light Screen, Liquidation, Lunge, Mega Kick, Meteor Mash, Misty Terrain, Moonblast, Moonlight, Morning Sun, Muddy Water, Noble Roar, Play Rough, Poison Jab, Power Gem, Power Split, Psychic, Psychic Fangs, Psychic Terrain, Psyshock, Rage Powder, Reflect, Rock Slide, Roost, Sacred Sword, Scald, Seed Bomb, Shadow Ball, Sing, Slam, Sludge Bomb, Soak, Spiky Shield, Stomp, Stone Edge, Strength, Stun Spore, Submission, Substitute, Sucker Punch, Swagger, Synthesis, Tailwind, Take Down, Tar Shot, Taunt, Throat Chop, Thunderbolt, Thunder Wave, Tickle, Topsy-Turvy, Toxic, Tri Attack, Vital Throw, Waterfall, Wide Guard, Wild Charge, Will-O-Wisp, Wish, X-Scissor, Yawn, Zap Cannon
+**Common (125):** Acid Armor, Acrobatics, Aerial Ace, After You, Agility, Air Cutter, Air Slash, Amnesia, Ancient Power, Assurance, Aurora Beam, Avalanche, Barrier, Bite, Breaking Swipe, Brick Break, Brine, Brutal Swing, Bubble Beam, Bug Bite, Bulldoze, Charge Beam, Charm, Chilling Water, Clear Smog, Confuse Ray, Confusion, Cut, Detect, Dragon Breath, Dragon Rush, Draining Kiss, Dynamic Punch, Endure, Facade, Fake Tears, Feint Attack, Fire Fang, Fire Punch, Flame Burst, Flame Charge, Flame Wheel, Focus Energy, Force Palm, Freeze-Dry, Growl, Harden, Helping Hand, Hex, Hone Claws, Horn Attack, Howl, Hurricane, Ice Fang, Ice Punch, Icicle Crash, Icy Wind, Iron Defense, Iron Tail, Lager Lagoon, Laser Beam, Laser Focus, Leer, Low Sweep, Magical Leaf, Metal Claw, Metal Sound, Mist, Mud Bomb, Mud Shot, Mystical Fire, Ominous Wind, Payback, Pluck, Poison Fang, Poison Tail, Protect, Psybeam, Psycho Cut, Punishment, Quick Guard, Rain Dance, Rapid Spin, Razor Leaf, Retaliate, Revenge, Rock Climb, Rock Polish, Rock Throw, Rock Tomb, Safeguard, Scary Face, Secret Power, Shadow Claw, Shadow Punch, Shadow Siphon, Shock Wave, Signal Beam, Silver Wind, Skitter Smack, Sludge, Smack Down, Smelling Salts, Snarl, Snowscape, Spark, Steel Wing, Stockpile, Stomping Tantrum, Struggle Bug, Sunny Day, Supersonic, Swift, Thunder, Thunder Fang, Thunder Punch, Venoshock, Vintage Spill, Vise Grip, Wake-Up Slap, Water Pulse, Weather Ball, Wing Attack, Work Up, Zen Headbutt
 
-**Rare (64):** Acid Rain, Aurora Veil, Belly Drum, Boomburst, Brave Bird, Clangorous Soul, Close Combat, Cotton Guard, Dazzling Gleam, Double-Edge, Dragon Cheer, Dragon Dance, Earthquake, Eruption, Extreme Speed, Fillet Away, First Impression, Flare Blitz, Fungal Control, Glare, Head Smash, Heal Order, Heat Wave, High Jump Kick, Hyper Voice, Implosion, Jungle Healing, Leaf Storm, Lovely Kiss, Lunar Blessing, Machine Learning, Megahorn, Milk Drink, Nasty Plot, No Retreat, Outrage, Overheat, Petal Blizzard, Petal Dance, Pollen Haze, Power Whip, Quiver Dance, Recover, Seltzer Surge, Shell Smash, Shift Gear, Shore Up, Slack Off, Sleep Powder, Sludge Wave, Soft-Boiled, Spore, Strength Sap, Superpower, Surf, Swords Dance, Thrash, Tidy Up, Transmutation, Trick Room, Victory Dance, Water Spout, Wave Crash, Wood Hammer
+**Uncommon (110):** Acupressure, Aromatherapy, Aura Sphere, Baneful Bunker, Blizzard, Body Press, Body Slam, Bug Buzz, Bulk Up, Calm Mind, Coaching, Coil, Cosmic Power, Crabhammer, Crunch, Crush Claw, Dark Pulse, Decorate, Disable, Discharge, Dragon Claw, Drain Punch, Drill Peck, Earth Power, Electric Terrain, Encore, Energy Ball, Extrasensory, Fell Stinger, Fiery Dance, Fire Blast, Flamethrower, Flash Cannon, Flatter, Follow Me, Foul Play, Giga Drain, Grassy Terrain, Grass Whistle, Guard Split, Gunk Shot, Hammer Arm, Haze, Heal Bell, High Horsepower, Horn Leech, Hydro Pump, Hypnosis, Ice Beam, Inferno, Iron Head, Jaw Lock, King's Shield, Lava Plume, Leaf Blade, Leech Life, Light Screen, Liquidation, Lunge, Mega Kick, Meteor Mash, Misty Terrain, Moonblast, Muddy Water, Noble Roar, Play Rough, Poison Jab, Power Gem, Power Split, Psychic, Psychic Fangs, Psychic Terrain, Psyshock, Rage Powder, Reflect, Rock Slide, Sacred Sword, Scald, Seed Bomb, Shadow Ball, Sing, Slam, Sludge Bomb, Soak, Spiky Shield, Stomp, Stone Edge, Strength, Stun Spore, Submission, Substitute, Sucker Punch, Swagger, Tailwind, Take Down, Tar Shot, Taunt, Throat Chop, Thunderbolt, Thunder Wave, Tickle, Topsy-Turvy, Tri Attack, Vital Throw, Waterfall, Wide Guard, Wild Charge, X-Scissor, Yawn, Zap Cannon
+
+**Rare (54):** Aurora Veil, Belly Drum, Boomburst, Brave Bird, Clangorous Soul, Close Combat, Cotton Guard, Dazzling Gleam, Double-Edge, Dragon Cheer, Dragon Dance, Earthquake, Eruption, Extreme Speed, Fillet Away, First Impression, Flare Blitz, Fungal Control, Glare, Head Smash, Heat Wave, High Jump Kick, Hyper Voice, Implosion, Leaf Storm, Lovely Kiss, Machine Learning, Megahorn, Nasty Plot, No Retreat, Outrage, Overheat, Petal Blizzard, Petal Dance, Power Whip, Quiver Dance, Seltzer Surge, Shell Smash, Shift Gear, Sleep Powder, Sludge Wave, Spore, Strength Sap, Superpower, Surf, Swords Dance, Thrash, Tidy Up, Transmutation, Trick Room, Victory Dance, Water Spout, Wave Crash, Wood Hammer
+
+**Procent-moves (34, zeldzaam):** Acid Rain, Aqua Ring, Clamp, Curse, Floral Healing, Snow Storm, Heal Order, Heal Pulse, Ingrain, Jungle Healing, Leech Seed, Life Dew, Lunar Blessing, Magma Storm, Milk Drink, Moonlight, Morning Sun, Poison Gas, Poison Powder, Pollen Haze, Recover, Rest, Roost, Salt Cure, Sandstorm, Shore Up, Slack Off, Soft-Boiled, Synthesis, Thunder Cage, Toxic, Toxic Thread, Will-O-Wisp, Wish
+
+### Procentuele schade en heals (Jordi, 5 okt: zo laten, maar zeldzaam)
+
+Gif doet 1/8 van de max HP per beurt (Toxic oplopend), ook bij een baas met ×4,5 HP; Leech Seed 1/8; vastgrijpen 1/8; zandstorm/hagel 1/16; Recover en co. helen de helft van jouw ×4 HP. Die moves negeren dus de HP-vermenigvuldiger: Toxic doodt elke baas in ±6 beurten. De mechaniek blijft, maar ze zijn zeldzaam:
+
+- **nooit in een startkit** (ook niet als STAB-aanval of grounded move; Bulbasaur had Leech Seed, Oddish Moonlight);
+- als beloning en in de winkel alleen via de rare kaarten: een rare kaart is in 1 op 4 gevallen een procent-move (±2,5% per kaart, ±7% per gevecht; eerder zaten Toxic en Leech Seed bij de uncommons: ±0,25% per kaart per move, maar 30% van de kaarten was uncommon);
+- events geven ze niet vast; vijanden houden ze (hun movesets staan in `encounters.py`).
+
+- **gif en brand (1/8 of 1/16 per beurt, Toxic loopt op):** Toxic, Poison Powder, Poison Gas, Toxic Thread, Will-O-Wisp
+- **zaad, vloek en zout (procent per beurt):** Leech Seed, Curse, Salt Cure
+- **vastgrijpen (1/8 per beurt):** Whirlpool, Fire Spin, Sand Tomb, Infestation, Wrap, Bind, Clamp, Magma Storm, Snap Trap, Thunder Cage
+- **weer met schade of heal (1/16 per beurt):** Sandstorm, Snow Storm, Acid Rain, Pollen Haze
+- **procentuele heal:** Recover, Soft-Boiled, Milk Drink, Slack Off, Roost, Shore Up, Synthesis, Moonlight, Morning Sun, Wish, Life Dew, Heal Pulse, Floral Healing, Jungle Healing, Lunar Blessing, Heal Order, Rest, Ingrain, Aqua Ring
 
 ## Ontmoetingen (gegenereerd door encounters.py)
 
@@ -748,7 +766,7 @@ Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; spel
 | 3 | Boss | boss | Mega Rayquaza (Rayquaza + Altaria) | 7.5 | 68% |  |
 | 3 | Boss | boss | Terapagos (Terapagos + Carbink) | 11.5 | 65% |  |
 
-## Vergelijking met Slay the Spire (v0.8.107)
+## Vergelijking met Slay the Spire (v0.8.115)
 
 Gegenereerd door `tools/grounded/spire/runsim.py` (Monte Carlo over de echte kaartgenerator, ontmoetingen, events, geld en prijzen uit de C-code; 3000 runs per niveau). Referentie: Slay the Spire 1, A0 (Ironclad/Silent).
 
@@ -760,11 +778,11 @@ Gegenereerd door `tools/grounded/spire/runsim.py` (Monte Carlo over de echte kaa
 
 | kamer | Slay (15 + baas) | Spire act 1 | act 2 | act 3 | Spire ×15/7 |
 |---|---|---|---|---|---|
-| gevecht | 5-7 | 3.1 | 3.2 | 3.2 | 6.8 |
-| elite | 1-3 | 1.0 | 1.1 | 1.2 | 2.4 |
+| gevecht | 5-7 | 3.1 | 3.2 | 3.3 | 6.8 |
+| elite | 1-3 | 1.1 | 1.2 | 1.2 | 2.5 |
 | event | 3-5 | 1.2 | 0.9 | 0.9 | 2.1 |
-| winkel | 1-2 | 0.3 | 0.4 | 0.4 | 0.8 |
-| rust | 2-4 | 1.3 | 1.2 | 1.2 | 2.7 |
+| winkel | 1-2 | 0.3 | 0.4 | 0.3 | 0.7 |
+| rust | 2-4 | 1.3 | 1.3 | 1.3 | 2.7 |
 
 Kaart: gevecht ±45%, event 22%, elite 8% (A0) / 13% (A1+), rust 12%, winkel 5%; verdieping 1 gevecht, 9 schatkist, 15 rust; geen elite/rust vóór verdieping 6. Spire: 7 verdiepingen + baas; verdieping 1 gevecht, 7 rust; elites vanaf verdieping 3, rust vanaf 4; kansen gevecht/event/elite/winkel/rust = 45/25/15/7/8%.
 
@@ -772,32 +790,32 @@ Kaart: gevecht ±45%, event 22%, elite 8% (A0) / 13% (A1+), rust 12%, winkel 5%;
 
 | | Slay | act 1 | act 2 | act 3 |
 |---|---|---|---|---|
-| verlies gevecht | 5-15% | 12% (p10 3%, p90 24%) | 9% (p10 3%, p90 18%) | 10% (p10 4%, p90 19%) |
-| verlies elite | 20-35% | 25% (p10 6%, p90 50%) | 24% (p10 8%, p90 49%) | 22% (p10 8%, p90 42%) |
-| verlies baas | 30-50% | 47% (p10 25%, p90 72%) | 48% (p10 25%, p90 77%) | 45% (p10 24%, p90 69%) |
-| aankomst bij de baas | ±70-90% | 93% (p10 75%, p90 100%) | 97% (p10 90%, p90 100%) | 98% (p10 93%, p90 100%) |
-| na de baas | ±40-70% | 60% (p10 31%, p90 85%) | 67% (p10 37%, p90 90%) | 72% (p10 48%, p90 93%) |
-| heal: na gevecht (effectief, per act) | Ironclad 6 HP (7,5%), Silent 0 per gevecht | 42% | 56% | 69% |
-| heal: rust (effectief, per act) | 30% per rustplek | 20% | 16% | 12% |
+| verlies gevecht | 5-15% | 12% (p10 3%, p90 24%) | 7% (p10 2%, p90 13%) | 6% (p10 2%, p90 12%) |
+| verlies elite | 20-35% | 24% (p10 6%, p90 49%) | 18% (p10 5%, p90 37%) | 13% (p10 5%, p90 25%) |
+| verlies baas | 30-50% | 45% (p10 24%, p90 71%) | 35% (p10 18%, p90 57%) | 26% (p10 13%, p90 41%) |
+| aankomst bij de baas | ±70-90% | 92% (p10 73%, p90 100%) | 93% (p10 76%, p90 100%) | 95% (p10 81%, p90 100%) |
+| na de baas | ±40-70% | 59% (p10 30%, p90 83%) | 70% (p10 43%, p90 90%) | 80% (p10 58%, p90 98%) |
+| heal: na gevecht (effectief, per act) | Ironclad 6 HP (7,5%), Silent 0 per gevecht | 38% | 41% | 41% |
+| heal: rust (effectief, per act) | 30% per rustplek | 20% | 12% | 6% |
 | heal: event (effectief, per act) | wisselend | 2% | 2% | 1% |
-| heal: winkel (effectief, per act) | potions | 2% | 2% | 1% |
-| heal: act-overgang (effectief, per act) | 100% (A0-4), 75% van het tekort (A5+) | 28% | 26% | 0% |
+| heal: winkel (effectief, per act) | potions | 2% | 1% | 1% |
+| heal: act-overgang (effectief, per act) | 100% (A0-4), 75% van het tekort (A5+) | 29% | 25% | 0% |
 | schade uit events (per act) | ±5-15% | 4% | 3% | 3% |
-| rustplek: heal / upgrade | ±60/40 (act 1) | 61/38 | 47/52 | 33/66 |
+| rustplek: heal / upgrade | ±60/40 (act 1) | 63/36 | 48/51 | 43/56 |
 
 ### Geld en winkel (gemiddeld niveau)
 
 | | Slay | act 1 | act 2 | act 3 |
 |---|---|---|---|---|
-| geld uit gevecht | ±90 | 62¥ | 73¥ | 84¥ |
-| geld uit elite | ±60 | 43¥ | 53¥ | 66¥ |
-| geld uit baas | ±100 | 75¥ | 90¥ | 107¥ |
-| geld uit event | ±30 | 16¥ | 14¥ | 14¥ |
-| totaal per act | ±250 (+99 start) | 196¥ | 230¥ | 271¥ |
-| uitgegeven per act | ±200-300 | 39¥ | 101¥ | 97¥ |
-| aankopen per winkelbezoek | 2-3 | 1.4 | 2.8 | 2.8 |
-| relic-prijs / geld per act | 0,6-1,2 | 0.77 | 0.65 | 0.55 |
-| goedkoopste move / geld per act | ±0,2 | 0.23 | 0.20 | 0.17 |
+| geld uit gevecht | ±90 | 61¥ | 40¥ | 23¥ |
+| geld uit elite | ±60 | 44¥ | 29¥ | 18¥ |
+| geld uit baas | ±100 | 72¥ | 48¥ | 28¥ |
+| geld uit event | ±30 | 15¥ | 14¥ | 14¥ |
+| totaal per act | ±250 (+99 start) | 192¥ | 131¥ | 82¥ |
+| uitgegeven per act | ±200-300 | 39¥ | 89¥ | 78¥ |
+| aankopen per winkelbezoek | 2-3 | 1.4 | 2.5 | 2.4 |
+| relic-prijs / geld per act | 0,6-1,2 | 0.78 | 1.15 | 1.82 |
+| goedkoopste move / geld per act | ±0,2 | 0.23 | 0.34 | 0.55 |
 
 Prijzen Slay: kaart 45-55 / 68-82 / 135-165, relic 143-315, verwijderen 75+25n, potion 48-105. Spire: move 45/70/120¥, item 50/85/140¥, relic 150¥, Super Potion 35¥ (25%), Move Relearner 50+25n¥; startgeld 75¥.
 
@@ -805,72 +823,76 @@ Prijzen Slay: kaart 45-55 / 68-82 / 135-165, relic 143-315, verwijderen 75+25n, 
 
 | niveau | act 1 gehaald | act 2 | act 3 | hele run | Slay |
 |---|---|---|---|---|---|
-| goed | 94% | 97% | 98% | **89%** | ±70-90% (ervaren, A0) |
-| gemiddeld | 89% | 92% | 95% | **78%** | 40-60% (redelijke speler, A0) |
-| slordig | 66% | 69% | 75% | **34%** | <15% |
+| goed | 95% | 97% | 99% | **91%** | ±70-90% (ervaren, A0) |
+| gemiddeld | 89% | 95% | 98% | **83%** | 40-60% (redelijke speler, A0) |
+| slordig | 65% | 81% | 91% | **48%** | <15% |
 
-**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ×0.65 → 95%, ×0.80 → 89%, ×1.00 → 78%, ×1.25 → 56%, ×1.50 → 34%, ×2.00 → 9%. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.
+**Gevoeligheid** (winkans van de hele run tegen de HP-verliesfactor van de speler; 1,0 = het ontmoetingsmodel): ×0.65 → 95%, ×0.80 → 91%, ×1.00 → 83%, ×1.25 → 69%, ×1.50 → 48%, ×2.00 → 18%. De curve is steil, zoals in Slay: hoeveel spelkwaliteit scheelt, bepalen de gimmicks van de ontmoetingen (puzzels), niet de economie.
+
+### Speelduur van een run (schatting voor een mens)
+
+Doel (Jordi): een run duurt voor een mens ±1u-1u20. Een mens denkt per beurt veel langer na dan de bot. Aannames per beurt: twee keuzes (FIGHT/DEFEND, move, doel) met de intenties lezen ±2×10 s plus ±15 s animaties en berichten (tekst Fast, gevechtsanimaties al ingekort) = **35 s per beurt**. Per gevecht 25 s intro/uitslag en 25 s beloningsscherm (+20 s relic), event 60 s, winkel 90 s, rustplek 25 s, kaart 10 s per kamer, draft 120 s, act-overgang 45 s.
+
+| | beurten | duur bij 25 s/beurt | 35 s/beurt | 45 s/beurt |
+|---|---|---|---|---|
+| gewonnen run | 82 | 63 min | 76 min | 90 min |
+
+Verloren runs duren gemiddeld 35 min (35 s/beurt). Per act: ±27 beurten in gevechten, ±10 min buiten gevechten. Conclusie: een gewonnen run zit met 76 min (25-45 s per beurt: 63-90 min) binnen het doel van 60-80 min; de actlengte (7 verdiepingen) blijft zoals hij is.
 
 **Waar runs eindigen** (gemiddeld niveau; Slay: act-1-elites en de act-1/2-baas zijn de grote killers, act 2 ook gewone gevechten):
 
-act 1 baas 25%, act 2 baas 21%, act 1 gevecht 13%, act 1 elite 11%, act 2 elite 9%, act 3 baas 9%, act 3 elite 6%, act 2 gevecht 3%, act 3 gevecht 2%
+act 1 baas 34%, act 1 gevecht 16%, act 2 baas 15%, act 1 elite 14%, act 2 elite 7%, act 3 baas 6%, act 3 elite 4%, act 2 gevecht 3%, act 3 gevecht 1%
 
 ### Events (verwachtingswaarde van de beste optie voor de bot, ¥)
 
 Slay: een event is gemiddeld ±50-100 goud waard, met gemene uitzonderingen. Doel hier (events.py): ±60-120¥; >180 = te gul, <15 = zinloos.
 
-Gemiddeld **45¥** per event (55 events). Hoogste: clefairy 236, dojo 163, jirachi 134, ace 127, chest 116, lunch 116. Laagste: persian 0, pelipper 0, magikarp 0, rotom -0, zubat -7, dugtrio -16.
+Gemiddeld **46¥** per event (58 events). Hoogste: clefairy 253, dojo 185, ace 137, jirachi 135, lunch 116, chest 116. Laagste: magikarp 0, persian 0, pelipper 0, rotom -4, zubat -7, dugtrio -17.
 
 ### Voor en na
 
 | | vóór | na |
 |---|---|---|
-| gevecht per act | 3.14 | 3.20 |
-| elite per act | 1.23 | 1.13 |
-| event per act | 0.67 | 1.00 |
-| winkel per act | 0.60 | 0.35 |
-| rust per act | 1.31 | 1.25 |
-| geld per act | 237¥ | 232¥ |
-| aankomst baas act 1 | 96% | 93% |
-| verlies gevecht act 1/2/3 | 13% / 7% / 10% | 12% / 9% / 10% |
-| verlies elite act 1/2/3 | 20% / 21% / 18% | 25% / 24% / 22% |
-| verlies baas act 1/2/3 | 47% / 42% / 37% | 47% / 48% / 45% |
-| aankopen per winkel act 1 | 0.5 | 1.4 |
-| rust: heal act 1 | 48% | 61% |
-| relic-pool leeg (runs) | 46% | 28% |
-| winkans goed | 95% | 89% |
-| act 1 gehaald (goed) | 97% | 94% |
-| winkans gemiddeld | 86% | 78% |
-| act 1 gehaald (gemiddeld) | 91% | 89% |
-| winkans slordig | 51% | 34% |
-| act 1 gehaald (slordig) | 71% | 66% |
-| event-EV (gemiddeld) | 43¥ | 45¥ |
+| gevecht per act | 3.20 | 3.18 |
+| elite per act | 1.13 | 1.16 |
+| event per act | 1.00 | 0.99 |
+| winkel per act | 0.35 | 0.33 |
+| rust per act | 1.25 | 1.27 |
+| geld per act | 232¥ | 135¥ |
+| aankomst baas act 1 | 93% | 92% |
+| verlies gevecht act 1/2/3 | 12% / 9% / 10% | 12% / 7% / 6% |
+| verlies elite act 1/2/3 | 25% / 24% / 22% | 24% / 18% / 13% |
+| verlies baas act 1/2/3 | 47% / 48% / 45% | 45% / 35% / 26% |
+| aankopen per winkel act 1 | 1.4 | 1.4 |
+| rust: heal act 1 | 61% | 63% |
+| relic-pool leeg (runs) | 28% | 0% |
+| winkans goed | 89% | 91% |
+| act 1 gehaald (goed) | 94% | 95% |
+| winkans gemiddeld | 78% | 83% |
+| act 1 gehaald (gemiddeld) | 89% | 89% |
+| winkans slordig | 34% | 48% |
+| act 1 gehaald (slordig) | 66% | 65% |
+| event-EV (gemiddeld) | 45¥ | 46¥ |
 
-### Aanpassingen (v0.8.107) en waarom
+### Aanpassingen (v0.8.115) en waarom
 
-- `SPIRE_HEAL_AFTER` 10 → **8%** (`include/spire.h`): Slay's Burning Blood is 6 van 80 HP (7,5%), Silent heeft niets. Met 10% was een gewoon act-1-gevecht (±12%) bijna gratis en kwam de bot met 96% bij de baas; nu kost een gang netto een paar procent en blijft HP de grondstof over de hele act.
-- `SPIRE_REST_HEAL` 40 → **30%**: zoals Slay. Rust/elite-verhouding was 40/24 = 1,7 (Slay 30/±27 ≈ 1,1); nu ±1,2: één rustplek betaalt één elite. Upgraden (±40% HP waard over de run) wint nu als je gezond bent: de echte Smith/Rest-keuze. Status gaat weg vanaf 30% (de drempel volgt de constante).
-- `SPIRE_ACT_HEAL` **40%** (nieuw; was `SPIRE_REST_HEAL`): de act-overgang los van de rustplek, zelfde 40%. Slay A0 heelt alles, A5+ 75% van het tekort (±30-40% na een baas): bewust de strengere variant.
-- `SPIRE_START_GOLD` 0 → **75¥** (`NewRun`): Slay begint met 99 goud (±40% van een act). Zonder startgeld kocht de bot in een act-1-winkel gemiddeld 0,5 dingen; nu ±1,4, en een eerste winkel is een echte keuze (relic sparen of nu een move).
-- Relic in de winkel 120 → **150¥** (`src/spire_shop.c`): relic-prijs gedeeld door het geld van een act was 0,5 (Slay 0,6-1,2, gewone relic 150 op ±250). Relics zijn het sterkste in de winkel en de pool is klein: vóór liep hij in bijna de helft van de runs leeg.
-- Kaart (`Spire_GenerateMap`): gevecht/event/elite/winkel/rust **45/25/15/7/8%** (was 45/20/15/10/10); te vroeg voor een elite = gevecht, te vroeg voor een winkel = event. Vóór had verdieping 2 25% winkels (de elite-kans viel door naar de winkel) terwijl je daar nog geen geld hebt; events per act 0,7 → 1,0 (Slay ×7/15: ±1,5-2), winkels ±0,35 per act (Slay 1-2 per 15 kamers).
-- Ontmoetingen (`encounters.py`): kalibratie op **HP-verlies per act** (zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65%), eerder alleen op duur (alle acts gelijk). Daardoor waren act-2-gangen goedkoper dan act 1 (11% en 5% tegen 12% en 8%) en act-3-elites lichter dan act-1-elites; in Slay doet elke act meer pijn en de speler groeit (relics, upgrades, items). HP-factoren in `src/data/spire_encounters.h` opnieuw berekend; act-1-gangen gelijk, act-1-elites ×0,6 → ×0,7 (terug op het oude doel van 24%).
-- Event *Mimikyu's Birthday*, *Bring a gift* 40 → **75¥** (`events.py`): een relic voor 40¥ was een kwart van de winkelprijs (EV +100¥, het op twee na gulste event); nu de halve prijs.
+- **Relics 8 → 50** (Jordi, 5 okt; `relics.py` → `include/spire_relics.h` en `src/data/spire_relics.h`): 16 common, 15 uncommon, 8 rare, 3 shop, 8 boss. Elites bieden 3 relics met elk 50/33/17% common/uncommon/rare (zoals Slay), bazen 3 boss-relics (sterk, vaak met een nadeel: Awakening = niet rusten, Relic Crown = geen geld, Odd Keystone = geen intenties, ...), de winkel een gewone en een winkel-relic, events een gewone. Relics die door een andere relic nutteloos worden, worden niet aangeboden (Soothe Bell na Awakening, ...). De relic-pool loopt niet meer leeg (was 28% van de runs); een gewonnen run heeft ±8 relics.
+- Run-model (`runsim.py`): relics komen nu uit `relics.py` met hun eigen rekenmodel (HP-verlies per soort gevecht, heal, geld, max HP, rust/upgrade, winkelprijzen, act-heal); de bot kiest uit de aangeboden relics zoals de game ze aanbiedt. De factoren zijn schattingen (+X% schade ≈ gevecht X% korter ≈ minder schade incasseren) en moeten na testen bijgesteld worden.
+- **Procent-moves zeldzaam** (Jordi: Toxic, Leech Seed en vergelijkbare moves zo laten, maar zeldzaam; `spire_pool.py`): nooit meer in een startkit, en als beloning alleen nog als een kwart van de rare kaarten (±2,5% per kaart). Zie *Beloningsmoves* hierboven.
+- Patronen en blok aan het eind van de beurt (`Spire_EndTurn`): werd vaker dan één keer per beurt aangeroepen zodra er effecten aan het eind van de beurt waren (gif, weer, Leftovers), waardoor vaste patronen een stap oversloegen. Nu precies één keer per beurt.
 
 ### Conclusies
 
-- Per kamer zit de Spire in de Slay-banden: gang ±11%, elite ±24%, baas ±46% van de team-HP (gemiddeld niveau, alle acts).
-- Kamerverdeling per act (×15/7 om met Slay te vergelijken): 6.8 gevechten, 2.4 elites, 2.1 events, 0.8 winkels, 2.7 rustplekken. Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.
-- HP-economie: aankomst bij de act-1-baas 93% (Slay ±70-90%); rustplekken heal/upgrade 61/38, 47/52, 33/66 per act (Slay: vroeg vaak rusten, later smeden).
-- Doodsoorzaken: baas 55%, elite 26%, gang 19%. In Slay zijn act-1-elites een grotere killer; hier weegt de bot het risico mee (elites alleen als je gezond bent).
-- Events zijn gemiddeld 45¥ waard (Slay ±50-100): iets minder dan een gevecht (±20¥ + een move). De dure ruil-events (betaal X voor Y tegen winkelprijs) zijn bewust neutraal; de type-opties maken ze voor het juiste team goed.
+- Per kamer zit de Spire in de Slay-banden: gang ±9%, elite ±19%, baas ±36% van de team-HP (gemiddeld niveau, alle acts).
+- Kamerverdeling per act (×15/7 om met Slay te vergelijken): 6.8 gevechten, 2.5 elites, 2.1 events, 0.7 winkels, 2.7 rustplekken. Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.
+- HP-economie: aankomst bij de act-1-baas 92% (Slay ±70-90%); rustplekken heal/upgrade 63/36, 48/51, 43/56 per act (Slay: vroeg vaak rusten, later smeden).
+- Doodsoorzaken: baas 55%, elite 25%, gang 20%. In Slay zijn act-1-elites een grotere killer; hier weegt de bot het risico mee (elites alleen als je gezond bent).
+- Events zijn gemiddeld 46¥ waard (Slay ±50-100): iets minder dan een gevecht (±20¥ + een move). De dure ruil-events (betaal X voor Y tegen winkelprijs) zijn bewust neutraal; de type-opties maken ze voor het juiste team goed.
 
 ### Voor Jordi (beslissen of testen)
 
-- **Gif, Leech Seed, weer en %-heals schalen niet mee met ×HP.** Gif doet 1/8 van de (×4) max HP = 12,5% van de balk per beurt, terwijl een klap ±10% doet. Toxic doodt elke baas (×4,5 HP) in ±6 beurten ongeacht zijn HP-vermenigvuldiger; Recover/Roost/Wish helen de helft van de balk. Het event *Toxic Spikes* kost daardoor ±20% HP per gevecht per vergiftigde Pokémon (tot de volgende rustplek). Voorstel: in de Spire schade/heal in % van de max HP delen door de HP-vermenigvuldiger (engine, `battle_util.c`), of bewust zo laten (Pokémon-kennis) maar dan Toxic/Leech Seed als rare.
+- **Relics maken act 2 en 3 goedkoper** (model): met ±8 relics per run (en sterkere boss-relics) zakt het verlies bij de act-3-baas van ±45% naar ±25% en stijgt de winkans (gemiddeld/slordig) met ±5/15 procentpunt; zie de voor/na-tabel. Volgens het model herstelt act 2 ×1,15 en act 3 ×1,35 zwaarder (encounters.py, `TARGET_ACT`) de oude winkansen (78/36%). Niet aangepast: eerst testen hoe sterk de relics in het echt zijn (de factoren in relics.py zijn schattingen). Slay doet hetzelfde: elke act doet meer pijn omdat de speler groeit. Geld per act daalt in het model (±135¥) doordat de bot na de eerste baas graag Relic Crown neemt (geen geld meer uit gevechten).
 - **Vastloper:** in een event waarvan elke optie geld of een type vraagt (nu *The Vending Machine*/Rotom: 20¥, 30¥ of Electric) kun je niet verder als je te weinig geld hebt en geen Electric-type. Voorstel: B = weglopen als alles op slot zit (`spire_event.c`), of een Leave-optie.
-- **Relic-pool (8) is te klein** voor een Slay-ritme (±2-3 elites + baas + winkel per act = 7-10 relics per run): ook na de prijsverhoging loopt hij in ±30% van de runs leeg en dan geven elites/bazen niets meer. Slay heeft 100+ relics; 20-25 zou hier genoeg zijn.
-- **Winkans:** volgens het model is de Spire nog steeds iets milder dan Slay A0 (gemiddeld niveau ±75-80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. De economie (HP, geld, rust) is nu Slay-achtig; wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de ontmoetingen en is pas na testen te meten: houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.
-- **Act-escalatie in de praktijk:** in het model wordt de speler per act ±15-35% sterker door relics/upgrades/items (schatting), waardoor gangen en elites in act 2/3 in de praktijk even duur blijven als in act 1 (Slay: ±1,5× zo duur in act 3). Na testen eventueel act 3 nog zwaarder (gewoon 18-20%).
-- **Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). Kort en snappy, maar de run heeft daardoor ±10 beloningen minder; 9 verdiepingen zou dichter bij Slay zitten (ontwerpkeuze, niet aangepast).
+- **Winkans:** volgens het model is de Spire nog steeds milder dan Slay A0 (gemiddeld niveau ±80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. Wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de ontmoetingen en is pas na testen te meten: houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.
+- **Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). De speelduur zit wel op het doel (zie *Speelduur*); de actlengte blijft.
 - Uitschieters in de ontmoetingen (al gemarkeerd *te zwaar*), zoals Sewer Clam (62% HP) en Jungle Ambush (22 beurten), maken de gang-doden in act 1: eerst die bijstellen.

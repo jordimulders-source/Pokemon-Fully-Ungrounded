@@ -55,6 +55,23 @@ for _lst in BANNED.values():
         if _m not in MOVES:
             print('waarschuwing: onbekende move', _m, file=sys.stderr)
 
+# Procentuele schade over tijd en procentuele heals: die negeren de HP-vermenigvuldiger (gif doet 1/8 van de
+# max HP, ook bij een baas met x4,5 HP; Recover heelt de helft van jouw x4 HP). Jordi (5 okt): mechaniek zo laten,
+# maar zeldzaam maken. Dus: nooit in een startkit, en als beloning/winkel alleen als 'procent-move' (eigen pool,
+# zelden: een kwart van de rare kaarten, zie Spire_RandomMove in src/spire_run.c).
+PERCENT_TOOLS = {
+    'gif en brand (1/8 of 1/16 per beurt, Toxic loopt op)': [
+        'TOXIC', 'POISON_POWDER', 'POISON_GAS', 'TOXIC_THREAD', 'WILL_O_WISP'],
+    'zaad, vloek en zout (procent per beurt)': ['LEECH_SEED', 'CURSE', 'SALT_CURE'],
+    'vastgrijpen (1/8 per beurt)': ['WHIRLPOOL', 'FIRE_SPIN', 'SAND_TOMB', 'INFESTATION', 'WRAP', 'BIND', 'CLAMP',
+                                    'MAGMA_STORM', 'SNAP_TRAP', 'THUNDER_CAGE'],
+    'weer met schade of heal (1/16 per beurt)': ['SANDSTORM', 'HAIL', 'ACID_RAIN', 'POLLEN_HAZE'],
+    'procentuele heal': ['RECOVER', 'SOFT_BOILED', 'MILK_DRINK', 'SLACK_OFF', 'ROOST', 'SHORE_UP', 'SYNTHESIS',
+                         'MOONLIGHT', 'MORNING_SUN', 'WISH', 'LIFE_DEW', 'HEAL_PULSE', 'FLORAL_HEALING',
+                         'JUNGLE_HEALING', 'LUNAR_BLESSING', 'HEAL_ORDER', 'REST', 'INGRAIN', 'AQUA_RING'],
+}
+PERCENT_SET = {m for lst in PERCENT_TOOLS.values() for m in lst if m in MOVES}
+
 # 'Kale' schadeffecten: alleen deze worden op dominantie vergeleken.
 PLAIN_EFFECTS = {'HIT'}
 
@@ -282,7 +299,7 @@ def attack_category(forms):
 def stab_candidates(t, cat, lo=40, hi=50):
     out = []
     for n, m in MOVES.items():
-        if m['type'] != t or m['cat'] != cat or not (lo <= m['power'] <= hi) or n in BANNED_SET:
+        if m['type'] != t or m['cat'] != cat or not (lo <= m['power'] <= hi) or n in BANNED_SET or n in PERCENT_SET:
             continue
         if m['zmove'] or m['charge'] or m['recharge'] or (m['acc'] and m['acc'] < 85) or m['strikes'] > 1:
             continue
@@ -461,11 +478,12 @@ GROUNDED = {
     'TICKLE': 1, 'CHARM': 2, 'FEATHER_DANCE': 2, 'SCARY_FACE': 2, 'STRING_SHOT': 2, 'COTTON_SPORE': 2,
     'SPITE_': 0, 'SPIDER_WEB_': 0, 'BEAT_UP': 2,
 }
-GROUNDED = {k: v for k, v in GROUNDED.items() if v and k in MOVES and k not in BANNED_SET}
+GROUNDED = {k: v for k, v in GROUNDED.items() if v and k in MOVES and k not in BANNED_SET and k not in PERCENT_SET}
 
-# Jordi's voorbeelden en handmatige keuzes
+# Jordi's voorbeelden en handmatige keuzes. Bulbasaur (Leech Seed) en Oddish (Moonlight) vervallen sinds
+# 5 okt: procent-moves zijn zeldzaam en zitten in geen enkele startkit meer (zie PERCENT_TOOLS).
 GROUNDED_OVERRIDE = {
-    'BULBASAUR': 'LEECH_SEED', 'PIKACHU': 'THUNDER_WAVE', 'JIGGLYPUFF': 'SING', 'ODDISH': 'MOONLIGHT',
+    'PIKACHU': 'THUNDER_WAVE', 'JIGGLYPUFF': 'SING',
 }
 
 
@@ -664,9 +682,14 @@ def damaging_score(n):
 
 
 def reward_pools(dominated):
-    pools = {0: [], 1: [], 2: []}
+    pools = {0: [], 1: [], 2: [], 'percent': []}
+    for n in sorted(PERCENT_SET):
+        m = MOVES[n]
+        if n in BANNED_SET or m['zmove'] or m['signature'] or (is_damaging(m) and m['power'] < 50 and n != 'SALT_CURE'):
+            continue  # zwakke vastgrijp-moves (Wrap, Fire Spin, ...) blijven helemaal buiten de beloningen
+        pools['percent'].append(n)
     for n, m in MOVES.items():
-        if n in BANNED_SET or m['zmove'] or n in dominated or m['signature']:
+        if n in BANNED_SET or m['zmove'] or n in dominated or m['signature'] or n in PERCENT_SET:
             continue
         if learner_count(n) < 8:
             continue
@@ -678,7 +701,7 @@ def reward_pools(dominated):
             pools[r].append(n)
     for r, lst in STATUS_RARITY.items():
         for n in lst:
-            if n in MOVES and n not in BANNED_SET:
+            if n in MOVES and n not in BANNED_SET and n not in PERCENT_SET:
                 pools[r].append(n)
     return {r: sorted(set(v)) for r, v in pools.items()}
 
@@ -748,8 +771,10 @@ def write_header(res, pools):
         L.append('    ' + ' '.join('MOVE_%s,' % b for b in banned[i:i + 4]))
     L.append('};')
     L.append('')
-    for r, name in ((0, 'Common'), (1, 'Uncommon'), (2, 'Rare')):
+    for r, name in ((0, 'Common'), (1, 'Uncommon'), (2, 'Rare'), ('percent', 'Percent')):
         lst = pools[r]
+        if r == 'percent':
+            L.append('// Procentuele schade/heal (negeert de HP-vermenigvuldiger): zeldzaam, een kwart van de rare kaarten.')
         L.append('static const u16 sSpire%sMoves[] =' % name)
         L.append('{')
         for i in range(0, len(lst), 4):
@@ -790,7 +815,7 @@ def write_report(res, pools):
          '  Uitkomst in het kort: **Growl** (−1 Atk op beide) wint van Sand Attack/Double Team (één doel −25%%) zolang de helft van de vijanden fysiek is;',
          '  **Tail Whip/Leer** wint bij een fysieke aanvaller; alle statusmoves zijn netto negatief in gewone gevechten van 3 beurten en verdienen zich terug bij elites en bazen. Precies zoals Defend in Slay.',
          '- **Grounded move**: uit de eigen level-up/eimoves, iets wat de soort typeert (zeldzaam onder alle soorten, eigen type, vroeg geleerd), maximaal sterkte 3 (dus geen Spore, Sleep Powder, Swords Dance).',
-         '  Vast: Bulbasaur Leech Seed, Pikachu Thunder Wave, Jigglypuff Sing, Oddish Moonlight.',
+         '  Vast: Pikachu Thunder Wave, Jigglypuff Sing. Nooit een procent-move (Toxic, Leech Seed, Moonlight, vastgrijpen, ...; zie Beloningsmoves).',
          '', '### Pikachu: Thunder Wave, Double Team of Growl?', '']
     pk = next((x for x in rows if x['base'] == 'PIKACHU'), None)
     if pk:
@@ -854,10 +879,26 @@ def write_report(res, pools):
     L += ['', '## Afgevallen', '']
     for x in sorted([x for x in rows if not x['ok']], key=lambda x: x['base']):
         L.append('- %s: %s' % (SPECIES[x['base']]['dispname'], '; '.join(x['reasons'])))
-    L += ['', '## Beloningsmoves', '']
+    L += ['', '## Beloningsmoves', '',
+          'Kaartzeldzaamheid 60/30/10% (TM Case: 30/45/25%). Een rare kaart is in een kwart van de gevallen een **procent-move** '
+          '(zie hieronder): per beloningskaart ±2,5%, per gevecht (3 kaarten) ±7%.', '']
     for r, name in ((0, 'Common'), (1, 'Uncommon'), (2, 'Rare')):
         L.append('**%s (%d):** %s' % (name, len(pools[r]), ', '.join(MOVES[m]['name'] for m in pools[r])))
         L.append('')
+    L.append('**Procent-moves (%d, zeldzaam):** %s' % (len(pools['percent']), ', '.join(MOVES[m]['name'] for m in pools['percent'])))
+    L.append('')
+    L += ['### Procentuele schade en heals (Jordi, 5 okt: zo laten, maar zeldzaam)', '',
+          'Gif doet 1/8 van de max HP per beurt (Toxic oplopend), ook bij een baas met ×4,5 HP; Leech Seed 1/8; vastgrijpen 1/8; '
+          'zandstorm/hagel 1/16; Recover en co. helen de helft van jouw ×4 HP. Die moves negeren dus de HP-vermenigvuldiger: '
+          'Toxic doodt elke baas in ±6 beurten. De mechaniek blijft, maar ze zijn zeldzaam:', '',
+          '- **nooit in een startkit** (ook niet als STAB-aanval of grounded move; Bulbasaur had Leech Seed, Oddish Moonlight);',
+          '- als beloning en in de winkel alleen via de rare kaarten: een rare kaart is in 1 op 4 gevallen een procent-move '
+          '(±2,5% per kaart, ±7% per gevecht; eerder zaten Toxic en Leech Seed bij de uncommons: ±0,25% per kaart per move, '
+          'maar 30% van de kaarten was uncommon);',
+          '- events geven ze niet vast; vijanden houden ze (hun movesets staan in `encounters.py`).', '']
+    for reason, lst in PERCENT_TOOLS.items():
+        L.append('- **%s:** %s' % (reason, ', '.join(MOVES[m]['name'] for m in lst if m in MOVES)))
+    L.append('')
     with open(path, 'w') as f:
         f.write('\n'.join(L) + '\n')
     return path
@@ -882,6 +923,9 @@ def main():
     print('kandidaten %d, toegelaten %d; tiers %s' % (len(res['rows']), len(res['ok']),
           [sum(1 for x in res['ok'] if x['tier'] == t) for t in range(4)]))
     print('pools', {k: len(v) for k, v in pools.items()})
+    starters = sorted({m for x in res['ok'] + res['events'] for m in [mm for mm, _ in x['stabs']] + [x['status'], x['grounded']] if m in PERCENT_SET})
+    if starters:
+        print('waarschuwing: procent-moves in startkits:', starters)
     if not a.no_write:
         print(write_header(res, pools))
         print(write_report(res, pools))

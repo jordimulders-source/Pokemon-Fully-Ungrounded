@@ -30,6 +30,7 @@
 STATIC_ASSERT(sizeof(struct SpireSave) <= SPIRE_SAVE_SIZE, SpireSaveFitsInSaveBlock2);
 
 EWRAM_DATA struct SpireResult gSpireResult = {0};
+EWRAM_DATA u8 gSpireRelicSource = 0;   // bron van het volgende relic-kaartenscherm (enum SpireRelicSource)
 EWRAM_DATA static struct Pokemon sSavedParty[PARTY_SIZE] = {0};
 EWRAM_DATA static u8 sSavedPartyCount = 0;
 EWRAM_DATA static u8 sRoomType = 0;
@@ -37,6 +38,8 @@ EWRAM_DATA static u8 sDraftStep = 0;
 EWRAM_DATA static u8 sEndMessage[160] = {0};
 
 static void StartRoomBattle(u32 type);
+static void RewardSecondRelic(void);
+static void ApplyRelicsAfterBattle(void);
 static void CB2_EndSpireBattle(void);
 static void NextAct(void);
 static void PickBiome(void);
@@ -44,48 +47,195 @@ static void PickBiome(void);
 // ---------------------------------------------------------------------------------------------
 // Relics
 
-const struct SpireRelicInfo gSpireRelics[SPIRE_RELIC_COUNT] =
-{
-    [SPIRE_RELIC_BERRY_POUCH] = {ITEM_BERRY_POUCH, COMPOUND_STRING("Berry Pouch"), COMPOUND_STRING("Heal 10% more HP\nafter every battle.")},
-    [SPIRE_RELIC_AMULET_COIN] = {ITEM_AMULET_COIN, COMPOUND_STRING("Amulet Coin"), COMPOUND_STRING("Earn 50% more money\nin every battle.")},
-    [SPIRE_RELIC_GUARD_SPEC]  = {ITEM_GUARD_SPEC,  COMPOUND_STRING("Guard Spec."), COMPOUND_STRING("DEFEND gives 30%\nmore Block.")},
-    [SPIRE_RELIC_DIRE_HIT]    = {ITEM_DIRE_HIT,    COMPOUND_STRING("Dire Hit"),    COMPOUND_STRING("Your Pokémon land\ncritical hits more often.")},
-    [SPIRE_RELIC_MUSCLE_BAND] = {ITEM_MUSCLE_BAND, COMPOUND_STRING("Muscle Band"), COMPOUND_STRING("Your Pokémon deal\n10% more damage.")},
-    [SPIRE_RELIC_WIDE_LENS]   = {ITEM_WIDE_LENS,   COMPOUND_STRING("Wide Lens"),   COMPOUND_STRING("Your moves that hit\nboth foes lose no power.")},
-    [SPIRE_RELIC_SOOTHE_BELL] = {ITEM_SOOTHE_BELL, COMPOUND_STRING("Soothe Bell"), COMPOUND_STRING("Resting at camp heals\n30% more HP.")},
-    [SPIRE_RELIC_SACRED_ASH]  = {ITEM_SACRED_ASH,  COMPOUND_STRING("Sacred Ash"),  COMPOUND_STRING("Fainted Pokémon come back\nwith 30% HP, not 1 HP.")},
-};
+#include "data/spire_relics.h"
 
 bool32 Spire_RunActive(void)
 {
     return RUN.magic == SPIRE_SAVE_MAGIC;
 }
 
+// Bitveld over twee u32's (relics 0-31 en 32-63; de tweede staat achteraan in de save).
+static bool32 OwnsRelic(u32 relic)
+{
+    if (relic >= SPIRE_RELIC_COUNT)
+        return FALSE;
+    return relic < 32 ? (RUN.relics & (1u << relic)) != 0 : (RUN.relics2 & (1u << (relic - 32))) != 0;
+}
+
 bool32 Spire_HasRelic(u32 relic)
 {
-    return Spire_RunActive() && (RUN.relics & (1u << relic));
+    return Spire_RunActive() && OwnsRelic(relic);
+}
+
+u32 Spire_CountRelics(void)
+{
+    u32 i, n = 0;
+
+    for (i = 0; i < SPIRE_RELIC_COUNT; i++)
+        if (OwnsRelic(i))
+            n++;
+    return n;
+}
+
+// Extra max HP uit relics (procentpunten van de gewone max HP, zoals hpBonus); geldt ook voor nieuwe rentals.
+u32 Spire_RelicHpBonus(void)
+{
+    return (OwnsRelic(SPIRE_RELIC_HP_UP) ? 8 : 0) + (OwnsRelic(SPIRE_RELIC_BIG_MALASADA) ? 10 : 0)
+         + (OwnsRelic(SPIRE_RELIC_MAX_MUSHROOMS) ? 25 : 0);
+}
+
+// Max HP opnieuw berekenen (relic erbij of eraf); erbij = de nieuwe HP komt er ook bij, eraf = afkappen.
+void Spire_RefreshMaxHp(void)
+{
+    u32 i;
+
+    for (i = 0; i < 2; i++)
+    {
+        struct Pokemon *mon = &RUN.mons[i];
+        u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP), newMax;
+
+        if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
+            continue;
+        CalculateMonStats(mon);
+        Spire_ScaleMonHp(mon, Spire_PlayerHpPercent(i));
+        newMax = GetMonData(mon, MON_DATA_MAX_HP);
+        if (hp != 0)
+            hp = (newMax > maxHp) ? min(newMax, hp + newMax - maxHp) : max(1, min(hp, newMax));
+        SetMonData(mon, MON_DATA_HP, &hp);
+    }
+}
+
+// Een willekeurige move zonder upgrade upgraden; MOVE_NONE als alles al "+" is.
+u16 Spire_UpgradeRandomMove(u32 *monOut)
+{
+    u32 tries;
+
+    for (tries = 0; tries < 40; tries++)
+    {
+        u32 i = Random() & 1, slot = Random() % MAX_MON_MOVES;
+        struct Pokemon *mon = &RUN.mons[i];
+        u16 move = GetMonData(mon, MON_DATA_MOVE1 + slot);
+
+        if (move == MOVE_NONE || Spire_IsSlotUpgraded(mon, slot))
+            continue;
+        Spire_UpgradeSlot(mon, slot);
+        if (monOut != NULL)
+            *monOut = i;
+        return move;
+    }
+    return MOVE_NONE;
 }
 
 void Spire_AddRelic(u32 relic)
 {
-    RUN.relics |= 1u << relic;
+    if (relic >= SPIRE_RELIC_COUNT || OwnsRelic(relic))
+        return;
+    if (relic < 32)
+        RUN.relics |= 1u << relic;
+    else
+        RUN.relics2 |= 1u << (relic - 32);
+    // effecten bij het oppakken
+    switch (relic)
+    {
+    case SPIRE_RELIC_HP_UP:
+    case SPIRE_RELIC_MAX_MUSHROOMS:
+        Spire_RefreshMaxHp();
+        break;
+    case SPIRE_RELIC_BIG_MALASADA:
+        Spire_RefreshMaxHp();
+        Spire_HealRun(100);
+        break;
+    case SPIRE_RELIC_PP_MAX:
+        Spire_UpgradeRandomMove(NULL);
+        Spire_UpgradeRandomMove(NULL);
+        break;
+    case SPIRE_RELIC_ACRO_BIKE:
+        RUN.relicCharges = 3;
+        break;
+    }
 }
 
-// Een relic die je nog niet hebt; SPIRE_RELIC_COUNT als je alles al hebt.
-u32 Spire_RandomNewRelic(u32 salt)
+void Spire_RemoveRelic(u32 relic)
+{
+    if (!OwnsRelic(relic))
+        return;
+    if (relic < 32)
+        RUN.relics &= ~(1u << relic);
+    else
+        RUN.relics2 &= ~(1u << (relic - 32));
+    if (relic == SPIRE_RELIC_HP_UP || relic == SPIRE_RELIC_MAX_MUSHROOMS || relic == SPIRE_RELIC_BIG_MALASADA)
+        Spire_RefreshMaxHp();
+    if (relic == SPIRE_RELIC_ACRO_BIKE)
+        RUN.relicCharges = 0;
+}
+
+static bool32 CanOfferRelic(u32 relic, u32 source, const u8 *exclude, u32 excludeCount)
+{
+    const struct SpireRelicInfo *info = &gSpireRelics[relic];
+    u32 i;
+
+    if (OwnsRelic(relic))
+        return FALSE;
+    for (i = 0; i < excludeCount; i++)
+        if (exclude[i] == relic)
+            return FALSE;
+    for (i = 0; i < ARRAY_COUNT(info->conflicts); i++)
+        if (OwnsRelic(info->conflicts[i]))
+            return FALSE;
+    if ((source == SPIRE_RELIC_FROM_SHOP || source == SPIRE_RELIC_FROM_SHOP_SPECIAL) && info->noShop)
+        return FALSE;
+    return TRUE;
+}
+
+static u32 PickRelicOfTier(u32 tier, u32 source, u32 salt, const u8 *exclude, u32 excludeCount)
 {
     u32 i, n = 0, pick;
 
     for (i = 0; i < SPIRE_RELIC_COUNT; i++)
-        if (!(RUN.relics & (1u << i)))
+        if (gSpireRelics[i].tier == tier && CanOfferRelic(i, source, exclude, excludeCount))
             n++;
     if (n == 0)
         return SPIRE_RELIC_COUNT;
-    pick = (Random() + salt) % n;
+    pick = (Random() + salt * 7) % n;
     for (i = 0; i < SPIRE_RELIC_COUNT; i++)
-    {
-        if (!(RUN.relics & (1u << i)) && pick-- == 0)
+        if (gSpireRelics[i].tier == tier && CanOfferRelic(i, source, exclude, excludeCount) && pick-- == 0)
             return i;
+    return SPIRE_RELIC_COUNT;
+}
+
+// Een relic die je nog niet hebt (en die niet in exclude staat), met de zeldzaamheid van de bron (zoals Slay):
+// elite/event/winkel common 50 / uncommon 33 / rare 17%; baas: boss-relics; tweede winkelplek: shop-relics.
+// Is die zeldzaamheid op, dan de naastgelegen; SPIRE_RELIC_COUNT als er echt niets meer is.
+u32 Spire_RandomRelic(u32 source, u32 salt, const u8 *exclude, u32 excludeCount)
+{
+    static const u8 sFallback[][SPIRE_RELIC_TIER_COUNT] =
+    {
+        [SPIRE_RELIC_TIER_COMMON]   = {SPIRE_RELIC_TIER_COMMON, SPIRE_RELIC_TIER_UNCOMMON, SPIRE_RELIC_TIER_RARE, SPIRE_RELIC_TIER_SHOP, SPIRE_RELIC_TIER_BOSS},
+        [SPIRE_RELIC_TIER_UNCOMMON] = {SPIRE_RELIC_TIER_UNCOMMON, SPIRE_RELIC_TIER_COMMON, SPIRE_RELIC_TIER_RARE, SPIRE_RELIC_TIER_SHOP, SPIRE_RELIC_TIER_BOSS},
+        [SPIRE_RELIC_TIER_RARE]     = {SPIRE_RELIC_TIER_RARE, SPIRE_RELIC_TIER_UNCOMMON, SPIRE_RELIC_TIER_COMMON, SPIRE_RELIC_TIER_SHOP, SPIRE_RELIC_TIER_BOSS},
+        [SPIRE_RELIC_TIER_SHOP]     = {SPIRE_RELIC_TIER_SHOP, SPIRE_RELIC_TIER_UNCOMMON, SPIRE_RELIC_TIER_COMMON, SPIRE_RELIC_TIER_RARE, SPIRE_RELIC_TIER_BOSS},
+        [SPIRE_RELIC_TIER_BOSS]     = {SPIRE_RELIC_TIER_BOSS, SPIRE_RELIC_TIER_RARE, SPIRE_RELIC_TIER_UNCOMMON, SPIRE_RELIC_TIER_COMMON, SPIRE_RELIC_TIER_SHOP},
+    };
+    u32 tier, i, relic, roll = (Random() + salt * 13) % 100;
+
+    if (source == SPIRE_RELIC_FROM_BOSS)
+        tier = SPIRE_RELIC_TIER_BOSS;
+    else if (source == SPIRE_RELIC_FROM_SHOP_SPECIAL)
+        tier = SPIRE_RELIC_TIER_SHOP;
+    else
+        tier = roll < 50 ? SPIRE_RELIC_TIER_COMMON : roll < 83 ? SPIRE_RELIC_TIER_UNCOMMON : SPIRE_RELIC_TIER_RARE;
+    for (i = 0; i < SPIRE_RELIC_TIER_COUNT; i++)
+    {
+        u32 t = sFallback[tier][i];
+
+        // boss- en shop-relics alleen via hun eigen bron (de rest valt pas als laatste terug op elkaar)
+        if (t == SPIRE_RELIC_TIER_BOSS && source != SPIRE_RELIC_FROM_BOSS && i < SPIRE_RELIC_TIER_COUNT - 1)
+            continue;
+        if (t == SPIRE_RELIC_TIER_SHOP && source != SPIRE_RELIC_FROM_SHOP_SPECIAL && source != SPIRE_RELIC_FROM_SHOP)
+            continue;
+        relic = PickRelicOfTier(t, source, salt, exclude, excludeCount);
+        if (relic < SPIRE_RELIC_COUNT)
+            return relic;
     }
     return SPIRE_RELIC_COUNT;
 }
@@ -180,33 +330,63 @@ bool32 Spire_IsMoveBanned(u16 move)
 static const u16 *const sMovePools[] = {sSpireCommonMoves, sSpireUncommonMoves, sSpireRareMoves};
 static const u16 sMovePoolSizes[] = {ARRAY_COUNT(sSpireCommonMoves), ARRAY_COUNT(sSpireUncommonMoves), ARRAY_COUNT(sSpireRareMoves)};
 
-u16 Spire_RandomMove(u32 rarity, u32 salt)
+// Procent-moves (Toxic, Leech Seed, Recover, ...; negeren de HP-vermenigvuldiger): Jordi wil ze zeldzaam.
+// Ze zitten in geen startkit en komen alleen als rare kaart, in een kwart van de gevallen (spire_pool.py).
+#define PERCENT_MOVE_CHANCE 25
+
+static void GetMovePool(u32 rarity, u32 salt, const u16 **pool, u32 *size)
 {
     rarity = min(rarity, 2);
-    return sMovePools[rarity][(Random() + salt * 7) % sMovePoolSizes[rarity]];
+    if (rarity == 2 && (Random() + salt * 3) % 100 < PERCENT_MOVE_CHANCE)
+    {
+        *pool = sSpirePercentMoves;
+        *size = ARRAY_COUNT(sSpirePercentMoves);
+    }
+    else
+    {
+        *pool = sMovePools[rarity];
+        *size = sMovePoolSizes[rarity];
+    }
 }
 
-// Een move van dit type (TYPE_NONE = alles); geen move van dit type in de pool, dan een willekeurige.
+u16 Spire_RandomMove(u32 rarity, u32 salt)
+{
+    const u16 *pool;
+    u32 size;
+
+    GetMovePool(rarity, salt, &pool, &size);
+    return pool[(Random() + salt * 7) % size];
+}
+
+// Een move van dit type (TYPE_NONE = alles); geen move van dit type in de pool, dan een willekeurige
+// uit de gewone pool van die zeldzaamheid.
 u16 Spire_RandomMoveOfType(u32 rarity, u32 type, u32 salt)
 {
     const u16 *pool;
-    u32 i, n = 0, pick;
+    u32 i, n = 0, pick, size;
 
-    rarity = min(rarity, 2);
-    pool = sMovePools[rarity];
-    if (type != TYPE_NONE)
+    GetMovePool(rarity, salt, &pool, &size);
+    if (type == TYPE_NONE)
+        return pool[(Random() + salt * 7) % size];
+    for (i = 0; i < size; i++)
+        if (GetMoveType(pool[i]) == type)
+            n++;
+    if (n == 0 && pool == sSpirePercentMoves)
     {
-        for (i = 0; i < sMovePoolSizes[rarity]; i++)
+        // geen procent-move van dit type: dan een gewone rare van dit type
+        pool = sMovePools[2];
+        size = sMovePoolSizes[2];
+        for (i = 0; i < size; i++)
             if (GetMoveType(pool[i]) == type)
                 n++;
     }
     if (n == 0)
-        return Spire_RandomMove(rarity, salt);
+        return pool[(Random() + salt * 7) % size];
     pick = (Random() + salt * 7) % n;
-    for (i = 0; i < sMovePoolSizes[rarity]; i++)
+    for (i = 0; i < size; i++)
         if (GetMoveType(pool[i]) == type && pick-- == 0)
             return pool[i];
-    return Spire_RandomMove(rarity, salt);
+    return sMovePools[min(rarity, 2)][0];
 }
 
 // Draft: kans per tier (C, B, A, S), zoals de zeldzaamheid van kaarten.
@@ -246,10 +426,10 @@ const struct SpireRental *Spire_FindRental(u16 species)
     return NULL;
 }
 
-// Max-HP-percentage van een rental: x4 plus blijvende event-effecten (bijv. -10).
+// Max-HP-percentage van een rental: x4 plus blijvende event-effecten (bijv. -10) en relics (HP Up, ...).
 u32 Spire_PlayerHpPercent(u32 i)
 {
-    s32 pct = SPIRE_HP_PLAYER + 4 * RUN.hpBonus[i];
+    s32 pct = SPIRE_HP_PLAYER + 4 * (RUN.hpBonus[i] + (s32)Spire_RelicHpBonus());
 
     return pct < 100 ? 100 : pct;
 }
@@ -365,14 +545,25 @@ static u32 PathNode(u32 floor)
     return (RUN.path >> (2 * floor)) & 3;
 }
 
+static bool32 IsLinked(const struct SpireActMap *map, u32 floor, u32 node)
+{
+    return floor == 0 || (map->nodes[floor - 1][PathNode(floor - 1)].links & (1u << node)) != 0;
+}
+
 // Kun je deze kamer nu kiezen? RUN.floor = aantal afgeronde verdiepingen in deze act.
+// Acro Bike (relic): met sprongen over is elke kamer op de volgende verdieping bereikbaar.
 bool32 Spire_IsReachable(const struct SpireActMap *map, u32 floor, u32 node)
 {
     if (floor != RUN.floor || node >= map->count[floor])
         return FALSE;
-    if (floor == 0)
+    if (IsLinked(map, floor, node))
         return TRUE;
-    return (map->nodes[floor - 1][PathNode(floor - 1)].links & (1u << node)) != 0;
+    return Spire_HasRelic(SPIRE_RELIC_ACRO_BIKE) && RUN.relicCharges > 0;
+}
+
+bool32 Spire_IsAcroJump(const struct SpireActMap *map, u32 floor, u32 node)
+{
+    return floor < SPIRE_FLOORS && !IsLinked(map, floor, node);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -466,7 +657,8 @@ void Spire_Enter(void)
     }
 }
 
-// Debug (testscripts): VAR_0x8004 = 0 rustplek, 1 winkel, 2 event, 3 kaart, 4 elite, 5 baas. Zonder run: snelle run met twee rentals.
+// Debug (testscripts): VAR_0x8004 = 0 rustplek, 1 winkel, 2 event, 3 kaart, 4 elite, 5 baas, 6 relic-beloning
+// (VAR_0x8005: 0 elite, 1 baas). Zonder run: snelle run met twee rentals.
 void Spire_DebugOpen(void)
 {
     CleanupOverworldWindowsAndTilemaps();
@@ -483,6 +675,10 @@ void Spire_DebugOpen(void)
     case 2:  gSpireForcedEvent = gSpecialVar_0x8005; Spire_OpenEvent(Spire_ReturnToField); break;
     case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
     case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
+    case 6:  // relic-beloning: VAR_0x8005 = 0 elite, 1 baas
+        gSpireRelicSource = gSpecialVar_0x8005 ? SPIRE_RELIC_FROM_BOSS : SPIRE_RELIC_FROM_ELITE;
+        Spire_OpenCards(SPIRE_CARDS_RELICS, Spire_ReturnToField);
+        break;
     default: Spire_OpenMap(); break;
     }
 }
@@ -616,12 +812,22 @@ void Spire_EnterRoom(u32 floor, u32 node)
 {
     struct SpireActMap map;
     u32 type;
+    bool32 resumed = RUN.inRoom; // gepauzeerd gevecht: geen eenmalige effecten opnieuw
 
     Spire_GenerateMap(&map, RUN.seed);
     if (floor >= SPIRE_FLOORS)
         type = SPIRE_ROOM_BOSS;
     else
         type = map.nodes[floor][node].type;
+    if (!resumed)
+    {
+        // Acro Bike: een sprong buiten het pad kost een lading
+        if (floor < SPIRE_FLOORS && Spire_IsAcroJump(&map, floor, node) && RUN.relicCharges > 0)
+            RUN.relicCharges--;
+        // Hyper Potion: heal vóór elk baasgevecht
+        if (type == SPIRE_ROOM_BOSS && Spire_HasRelic(SPIRE_RELIC_HYPER_POTION))
+            Spire_HealRun(30);
+    }
     RUN.floor = floor;
     RUN.node = node;
     RUN.inRoom = TRUE;
@@ -739,7 +945,7 @@ static void NextAct(void)
     RUN.seed = Random32();
     PickBiome();
     StringCopy(sEndMessage, gSpireBiomes[RUN.biome].desc);
-    Spire_HealRun(SPIRE_ACT_HEAL);
+    Spire_HealRun(Spire_HasRelic(SPIRE_RELIC_GRACIDEA) ? 100 : SPIRE_ACT_HEAL);
     Spire_RestorePP();
     sEvolveStep = 0;
     ContinueActEvolutions();
@@ -814,6 +1020,7 @@ static void MarkEncounterUsed(u32 index)
 
 EWRAM_DATA static s16 sEncounterIndex = 0;
 EWRAM_DATA u8 gSpireStartingStatus = 0;
+EWRAM_DATA u8 gSpireEncounterKind = 0;
 EWRAM_DATA u8 gSpireEnvironment = 0;
 
 static u32 AbilitySlot(u16 species, u16 ability)
@@ -901,6 +1108,51 @@ static void ApplyEventEffects(void)
         RUN.toxicFights--;
 }
 
+// Relics bij het begin van een gevecht: HP van de vijanden en stat-boosts (zoals de totem-boosts van de elites:
+// "Attack rose!" bij het begin). Spelers staan op battler 0 (links) en 2 (rechts), vijanden op 1 en 3.
+static void QueueBoost(u32 battler, u32 stat, s32 change)
+{
+    s32 total = gQueuedStatBoosts[battler].statChanges[stat - STAT_ATK] + change;
+
+    gQueuedStatBoosts[battler].statChanges[stat - STAT_ATK] = max(-6, min(6, total));
+    gQueuedStatBoosts[battler].stats |= 1 << (stat - STAT_ATK);
+}
+
+static void ApplyRelicsToEncounter(const struct SpireEncounter *enc)
+{
+    static const u8 sPlayers[] = {B_POSITION_PLAYER_LEFT, B_POSITION_PLAYER_RIGHT};
+    static const u8 sFoes[] = {B_POSITION_OPPONENT_LEFT, B_POSITION_OPPONENT_RIGHT};
+    bool32 big = (enc->kind == SPIRE_ENC_ELITE || enc->kind == SPIRE_ENC_BOSS);
+    u32 i;
+
+    for (i = 0; i < 2; i++)
+    {
+        u32 p = sPlayers[i];
+
+        memset(&gQueuedStatBoosts[p], 0, sizeof(gQueuedStatBoosts[p]));
+        if (Spire_HasRelic(SPIRE_RELIC_X_SPEED))
+            QueueBoost(p, STAT_SPEED, 1);
+        if (Spire_HasRelic(SPIRE_RELIC_X_DEFENSE) || Spire_HasRelic(SPIRE_RELIC_ODD_KEYSTONE))
+            QueueBoost(p, STAT_DEF, Spire_HasRelic(SPIRE_RELIC_X_DEFENSE) + Spire_HasRelic(SPIRE_RELIC_ODD_KEYSTONE));
+        if (Spire_HasRelic(SPIRE_RELIC_X_SP_DEF) || Spire_HasRelic(SPIRE_RELIC_ODD_KEYSTONE))
+            QueueBoost(p, STAT_SPDEF, Spire_HasRelic(SPIRE_RELIC_X_SP_DEF) + Spire_HasRelic(SPIRE_RELIC_ODD_KEYSTONE));
+        if (Spire_HasRelic(SPIRE_RELIC_RELIC_CROWN) || (big && Spire_HasRelic(SPIRE_RELIC_X_ATTACK)))
+            QueueBoost(p, STAT_ATK, Spire_HasRelic(SPIRE_RELIC_RELIC_CROWN) + (big && Spire_HasRelic(SPIRE_RELIC_X_ATTACK)));
+        if (Spire_HasRelic(SPIRE_RELIC_RELIC_CROWN) || (big && Spire_HasRelic(SPIRE_RELIC_X_SP_ATK)))
+            QueueBoost(p, STAT_SPATK, Spire_HasRelic(SPIRE_RELIC_RELIC_CROWN) + (big && Spire_HasRelic(SPIRE_RELIC_X_SP_ATK)));
+        if (Spire_HasRelic(SPIRE_RELIC_BLACK_FLUTE) && enc->foes[i].species != SPECIES_NONE)
+            QueueBoost(sFoes[i], STAT_SPEED, -1);
+        // HP van de vijanden (procent): Ring Target bij elites, Quick Ball bij gewone gevechten
+        if (enc->kind == SPIRE_ENC_ELITE && Spire_HasRelic(SPIRE_RELIC_RING_TARGET))
+            gSpireEnemyHp[i] = gSpireEnemyHp[i] * 80 / 100;
+        if ((enc->kind == SPIRE_ENC_WEAK || enc->kind == SPIRE_ENC_NORMAL) && Spire_HasRelic(SPIRE_RELIC_QUICK_BALL))
+            gSpireEnemyHp[i] = gSpireEnemyHp[i] * 85 / 100;
+    }
+    // Odd Keystone: alle intenties onleesbaar
+    if (Spire_HasRelic(SPIRE_RELIC_ODD_KEYSTONE))
+        gSpireHiddenIntent = 0xFF;
+}
+
 static void StartEncounter(const struct SpireEncounter *enc, u32 song)
 {
     u32 i;
@@ -917,6 +1169,8 @@ static void StartEncounter(const struct SpireEncounter *enc, u32 song)
         if (enc->foes[i].species != SPECIES_NONE)
             CreateFoe(i, &enc->foes[i]);
     gSpireStartingStatus = enc->field;
+    gSpireEncounterKind = enc->kind;
+    ApplyRelicsToEncounter(enc);
 
     SaveParty();
     ZeroPlayerPartyMons();
@@ -965,6 +1219,42 @@ static void RewardMoves(void)
     Spire_OpenCards(SPIRE_CARDS_MOVES, Spire_RoomFinished);
 }
 
+static void RewardSecondRelic(void)
+{
+    gSpireRelicSource = SPIRE_RELIC_FROM_ELITE;
+    Spire_OpenCards(SPIRE_CARDS_RELICS, RewardMoves);
+}
+
+// Relics na een gewonnen gevecht (na de gewone heal): Oran Berry, Leppa Berry.
+static void ApplyRelicsAfterBattle(void)
+{
+    u32 i, j;
+
+    for (i = 0; i < 2; i++)
+    {
+        struct Pokemon *mon = &RUN.mons[i];
+        u32 hp = GetMonData(mon, MON_DATA_HP), maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+
+        if (Spire_HasRelic(SPIRE_RELIC_ORAN_BERRY) && hp != 0 && hp * 2 < maxHp)
+        {
+            hp = min(maxHp, hp + maxHp * 12 / 100);
+            SetMonData(mon, MON_DATA_HP, &hp);
+        }
+        if (Spire_HasRelic(SPIRE_RELIC_LEPPA_BERRY))
+        {
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                u32 move = GetMonData(mon, MON_DATA_MOVE1 + j);
+                u32 maxPp = CalculatePPWithBonus(move, GetMonData(mon, MON_DATA_PP_BONUSES), j);
+                u32 pp = min(maxPp, GetMonData(mon, MON_DATA_PP1 + j) + 3);
+
+                if (move != MOVE_NONE)
+                    SetMonData(mon, MON_DATA_PP1 + j, &pp);
+            }
+        }
+    }
+}
+
 static void CB2_EndSpireBattle(void)
 {
     u32 i, gold, heal;
@@ -991,7 +1281,10 @@ static void CB2_EndSpireBattle(void)
     if (sEncounterIndex >= 0)
         MarkEncounterUsed(sEncounterIndex);
     heal = SPIRE_HEAL_AFTER + (Spire_HasRelic(SPIRE_RELIC_BERRY_POUCH) ? 10 : 0);
+    if (Spire_HasRelic(SPIRE_RELIC_MAX_MUSHROOMS))
+        heal = 0; // flauwgevallen komen wel terug met 1 HP (of 30% met Sacred Ash)
     Spire_HealRun(heal);
+    ApplyRelicsAfterBattle();
     switch (sRoomType)
     {
     case SPIRE_ROOM_BOSS:  gold = 80; gSpireResult.bp = 10; break;
@@ -1000,14 +1293,27 @@ static void CB2_EndSpireBattle(void)
     }
     if (Spire_HasRelic(SPIRE_RELIC_AMULET_COIN))
         gold = gold * 3 / 2;
+    if (Spire_HasRelic(SPIRE_RELIC_RELIC_CROWN))
+        gold = 0;
     gSpireResult.bp *= RUN.act;
     gSpireResult.gold = gold;
     gSpireResult.healPercent = heal;
     RUN.gold = min(9999, RUN.gold + gold);
     RUN.bp += gSpireResult.bp;
 
-    if (sRoomType == SPIRE_ROOM_ELITE || sRoomType == SPIRE_ROOM_BOSS)
+    if (sRoomType == SPIRE_ROOM_BOSS)
+    {
+        gSpireRelicSource = SPIRE_RELIC_FROM_BOSS;
         Spire_OpenCards(SPIRE_CARDS_RELICS, RewardMoves);
+    }
+    else if (sRoomType == SPIRE_ROOM_ELITE)
+    {
+        gSpireRelicSource = SPIRE_RELIC_FROM_ELITE;
+        // Star Piece: twee relic-beloningen na een elite
+        Spire_OpenCards(SPIRE_CARDS_RELICS, Spire_HasRelic(SPIRE_RELIC_STAR_PIECE) ? RewardSecondRelic : RewardMoves);
+    }
     else
+    {
         RewardMoves();
+    }
 }

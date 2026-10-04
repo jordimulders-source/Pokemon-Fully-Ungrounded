@@ -6,6 +6,24 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
+## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde
+1. **Muziek uit MP3** (`*.mp3` in de repo-root): Delta Episode (Battle! Lorekeeper Zinnia, The Heirs to Eternity, The Lament of Falling Stars) en Wally (Wally's Theme, Battle! Wally). Omzetten als gestreamd sample (MIDI-transcriptie klinkt slecht).
+2. **Shiny Rayquaza:** tweede ontmoeting op de Sky Pillar (zelfde soort, gegarandeerd shiny), pas nadat de gewone Rayquaza gevangen is. Pas daarna kan de Delta Episode. Alleen met de shiny Rayquaza in je team mag je de ruimte in ("zodat je kan blijven ademen").
+3. **Delta Episode met Zinnia:** Zinnia-gevecht op het lanceerplatform in Mossdeep → ruimte/Deoxys zoals nu → afsluiter bij de meteoriet. Met de MP3-muziek.
+4. **Archie en Maxie post-game: werkstraf.** Vrijwilligers in de Lilycove-museumtuin/het Weather Institute, wekelijkse tag battle-rematch met steeds sterkere teams. (Ook in de Stadium-pool.)
+5. **Signature moves, met eigen animaties:**
+   - Cofagrigus: **Mummy's Curse** (soort Curse, maar unieker; zelf bedenken).
+   - Stunfisk: move waarbij hij zelf dubbelklapt en de tegenstander klemt; Stunfisk en Galar-Stunfisk elk een eigen variant.
+   - Mightyena: **Pack Howl** (+1 Atk team in dubbel / +1 Atk +1 Spe solo).
+   - Wailord: **Whale Song** (raakt alles, 30% slaap). Luvdisc: **Heartbreak**.
+   - Daarna een voorstel: welke saaie/niet-unieke Pokémon (of met lore/power-reden) verdienen nog een signature move of buff?
+6. **Burglar in de overwereld:** kleine kans als je een stad binnenloopt (meerdere steden, vooral 's nachts in Mauville) dat hij uit een huis komt; jij spot hem, gevecht (team zoals de Burglars in andere games). Na verlies staat hij verbijsterd, de bewoner komt naar buiten en pakt zijn/haar spullen terug, hij rent weg en laat een Nugget vallen.
+7. **Gebieden (volgorde akkoord):**
+   1. **Safari-uitbreiding:** openingen in de Safari Zone naar nieuwe zones (warps, dus eigen tilesets), voor ondervertegenwoordigde soorten/types. Voorstel zones: zie changelog/antwoord 4 okt; wacht op Jordi's keuze.
+   2. **Jungle onder Fortree** (Ogerpon/Zarude): echt wild, dicht bebost tropisch regenwoud met veel regen.
+   3. Moeras (aangeleverde moeras-tileset).
+   4. Oostkant: eilandjes en Dive-grotten.
+
 ## Besloten met Jordi (2 okt 2026), nog te bouwen
 1. ~~Fungal Control~~ (gedaan, v0.8.45)
 2. ~~Transmutation~~ (gedaan, v0.8.46)

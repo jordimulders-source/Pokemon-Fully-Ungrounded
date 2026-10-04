@@ -1867,8 +1867,8 @@ PC_E = np.array((122.0, 52.0))
 PC_F = unit((0.62, 0.78))
 PC_ER, PC_ET = 21.0, 10.5                     # hartlijnstraal en buisstraal van het oog
 # ketting: van linksonder naar het oog
-PC_DIR = unit(PC_E - np.array((-20.0, 168.0)))
-PC_R, PC_RA, PC_RB = 7.0, 15.0, 20.0          # buis, ring langs / dwars
+PC_DIR = unit(PC_E - np.array((-20.0, 118.0)))   # ketting komt van links in, vrij van de tanden
+PC_R, PC_RA, PC_RB = 6.0, 13.0, 17.0          # buis, ring langs / dwars
 PC_RINGS = 3
 PC_GAP = -3.0                                 # ringen raken elkaar (in elkaar gegoten)
 

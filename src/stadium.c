@@ -30,6 +30,7 @@
 #define SAVE STADIUM_SAVE
 
 #include "data/stadium_pool.h"
+#include "data/stadium_announcer.h"
 
 STATIC_ASSERT(sizeof(struct StadiumSave) <= STADIUM_SAVE_SIZE, StadiumSaveFits);
 STATIC_ASSERT(ARRAY_COUNT(sStadiumPool) <= STADIUM_MAX_POOL, StadiumPoolFits);
@@ -609,6 +610,28 @@ void Stadium_GetMatchNames(void)
     }
     Stadium_GetEntrantName(CurrentOpponent(), gStringVar2);
     StringCopy(gStringVar3, sRounds[min(sT.round + (5 - sT.rounds), 4)]);
+}
+
+// Omroeper in de arena: gStringVar4 = één zin over de tegenstander (doubles: één van de twee, willekeurig).
+// Teksten in src/data/stadium_announcer.h (tools/grounded/stadium/announcer.py).
+void Stadium_GetAnnouncerLine(void)
+{
+    u8 opp = CurrentOpponent();
+    u16 trainerId = Stadium_EntrantTrainer(opp, 0);
+    const u8 *text = sStadiumAnnouncerFallback;
+    u32 i;
+
+    if (sT.mode == STADIUM_DOUBLES && (Random() & 1) && Stadium_EntrantTrainer(opp, 1) != TRAINER_NONE)
+        trainerId = Stadium_EntrantTrainer(opp, 1);
+    for (i = 0; i < ARRAY_COUNT(sStadiumAnnouncerLines); i++)
+    {
+        if (sStadiumAnnouncerLines[i].trainerId == trainerId)
+        {
+            text = sStadiumAnnouncerLines[i].text;
+            break;
+        }
+    }
+    StringCopy(gStringVar4, text);
 }
 
 // gStringVar1 = verdiende BP (opnieuw, na de meldingsschermen)

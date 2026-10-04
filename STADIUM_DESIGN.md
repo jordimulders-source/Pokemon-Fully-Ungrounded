@@ -11,7 +11,7 @@ trainers uit de game en uit andere generaties. Teksten zijn placeholders; Jordi 
 - **Doubles 6v6 = multi battle**: jij (3) + een compagnon (3) tegen twee trainers (elk 3). Werkt als de tag battles van Sword/Shield en de Frontier.
 - **Iedereen gebruikt zijn sterkste team** (laatste rematch / post-game-versie).
 - **BP per gewonnen gevecht** (zie Beloning).
-- **Arena kort (Jordi, 5 okt):** na het toernooischerm meteen de arena in, iedereen staat al klaar, publiek juicht, gevecht. Geen opkomst of presentatortekst.
+- **Arena kort (Jordi, 5 okt):** na het toernooischerm meteen de arena in, iedereen staat al klaar; de omroeper kondigt de tegenstander aan met één grappige zin (één tekstvak, `tools/grounded/stadium/announcer.py`, overzicht in `STADIUM_OMROEPER.md`), publiek juicht, gevecht. Geen opkomst.
 - **Bracket op papier vanaf de kwartfinale**: acht trainers met hun plaatje, wie tegen wie, winnaars lopen door naar het midden.
 - **Nieuwe personages** in de game komen ook in de pool (staat in CLAUDE.md).
 

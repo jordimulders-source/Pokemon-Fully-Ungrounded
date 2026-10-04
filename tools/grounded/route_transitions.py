@@ -1830,120 +1830,137 @@ save_sprite('zarude_silhouette', zsil, ZSPAL)
 
 
 # ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
-# Poison Chain zoals op de artwork: grote, glanzende ringen (om en om van voren met een groot rond gat en op hun
-# kant als slanke staaf), in elkaar gehaakt, fel magenta bij de "nek" linksonder en donkerder paars naar het
-# uiteinde rechtsboven, waar een open ring (haak) hangt. De schakels komen kort na elkaar op, daarna een stilstaand beeld.
+# Toxic Chain zoals op de artwork: een doorlopende, glanzende magenta buis in ovale ringen, kort aan elkaar gegoten, met
+# als uiteinde de "halve schedel": een dikke ring (het oog) met een korte steel en een uitlopende voet met twee bolle
+# lobben (zoals bij Okidogi rechtsboven, Munkidori's hoofdband en Fezandipiti's uiteinden). De ketting komt van
+# linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
+# Het geheel is één afstandsveld (buizen en een vlak "kussen" met een zachte unie), zodat alles vloeiend in elkaar loopt.
 # route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
-# flip-bits) met de eerste k schakels. Tiles ook gespiegeld ontdubbeld.
+# flip-bits) met de eerste k stukken. Tiles ook gespiegeld ontdubbeld.
 import numpy as np
 from scipy import ndimage
+from scipy.spatial import cKDTree
+from PIL import Image, ImageDraw
 PC_PAL = [(0, 0, 0), (3, 0, 5), (5, 1, 8), (9, 2, 12),                         # 1 omlijning, 2-3 zachte gloed
-          (6, 2, 8), (10, 4, 12), (14, 6, 15), (18, 8, 17), (22, 9, 19), (25, 11, 20), # 4-13 schakels: donker paars
+          (6, 2, 8), (10, 4, 12), (14, 6, 15), (18, 8, 17), (22, 9, 19), (25, 11, 20), # 4-13 buis: donker paars
           (28, 14, 23), (30, 19, 26), (31, 24, 29), (31, 30, 31)]                   # -> magenta -> roze glans
 PC_SS = 3
-PC_END, PC_DIR = np.array((218.0, 26.0)), np.array((210.0, -136.0))   # haak rechtsboven, richting van de ketting
-PC_PITCH = 53.0
-PC_RO, PC_RI = 36.0, 17.0                    # ring van voren: buiten- en gatstraal (groot rond gat)
-PC_BAR_L, PC_BAR_W = PC_RO + 2, 9.0             # ring op zijn kant (slanke staaf): halve lengte, halve dikte
-PC_HOOK_RO, PC_HOOK_RI = 27.0, 14.0            # open ring aan het eind
-PC_ELEMS = 5                                  # 2 ringen, 2 staven en de open eindring
-axis = PC_DIR / np.hypot(*PC_DIR)
-PC_START = PC_END - axis * PC_PITCH * (PC_ELEMS - 1)
-centers = [PC_START + axis * PC_PITCH * k for k in range(PC_ELEMS)]
-PC_N = PC_ELEMS
-
 H, W = 160 * PC_SS, 240 * PC_SS
 yy, xx = np.mgrid[0:H, 0:W]
 X, Y = (xx + 0.5) / PC_SS, (yy + 0.5) / PC_SS
-LV = np.array((-0.55, -0.65, 0.75)); LV /= np.linalg.norm(LV)   # licht linksboven-voor
+P = np.stack([X.ravel(), Y.ravel()], axis=1)
+LV = np.array((-0.55, -0.65, 0.75)); LV /= np.linalg.norm(LV)
 
 
-def pc_shade(nx, ny, nz):
-    lam = np.clip(nx * LV[0] + ny * LV[1] + nz * LV[2], 0, 1)
-    spec = np.clip(lam, 0, 1) ** 18
-    return lam, spec
+def unit(v):
+    v = np.array(v, float)
+    return v / np.hypot(*v)
 
 
-def pc_elem(k):
-    """(binnen-masker, kleurindex-float, u langs de ketting) van element k"""
-    cx, cy = centers[k]
-    tx, ty = axis
-    dx, dy = X - cx, Y - cy
-    u = dx * tx + dy * ty
-    v = -dx * ty + dy * tx
-    grad = 1 - k / (PC_ELEMS - 1)                       # 1 bij de nek, 0 aan het eind
-    if k == PC_ELEMS - 1 or k % 2 == 0:
-        ro, ri = (PC_HOOK_RO, PC_HOOK_RI) if k == PC_ELEMS - 1 else (PC_RO, PC_RI)
-        R, r = (ro + ri) / 2, (ro - ri) / 2
-        rho = np.hypot(dx, dy)
-        q = (rho - R) / r
-        inside = np.abs(q) <= 1
-        nz = np.sqrt(np.clip(1 - q * q, 0, 1))
-        nx, ny = q * dx / np.maximum(rho, 1e-6), q * dy / np.maximum(rho, 1e-6)
-        if k == PC_ELEMS - 1:
-            # open ring: opening schuin rechtsonder, met ronde uiteinden
-            ang = np.arctan2(v, u)
-            gap0, gap1 = 0.15, 1.05                       # hoekbereik (rad) van de opening
-            inside &= ~((ang > gap0) & (ang < gap1))
-            for a in (gap0, gap1):
-                ex, ey = R * np.cos(a), R * np.sin(a)
-                ddx, ddy = u - ex, v - ey
-                dd = np.hypot(ddx, ddy)
-                cap = dd <= r
-                cz = np.sqrt(np.clip(1 - (dd / r) ** 2, 0, 1))
-                cnx = (ddx * tx - ddy * ty) / r
-                cny = (ddx * ty + ddy * tx) / r
-                nx, ny, nz = np.where(cap, cnx, nx), np.where(cap, cny, ny), np.where(cap, cz, nz)
-                inside |= cap
+def perp(v):
+    return np.array((-v[1], v[0]))
+
+
+# eindstuk: ring (oog) met het midden op PC_E, steel en voet in richting PC_F (schuin naar beneden)
+PC_E = np.array((122.0, 52.0))
+PC_F = unit((0.42, 0.91))
+PC_ER, PC_ET = 21.0, 10.5                     # hartlijnstraal en buisstraal van het oog
+# ketting: van linksonder naar het oog
+PC_DIR = unit(PC_E - np.array((-20.0, 168.0)))
+PC_R, PC_RA, PC_RB = 7.0, 15.0, 20.0          # buis, ring langs / dwars
+PC_RINGS = 3
+PC_GAP = -3.0                                 # ringen raken elkaar (in elkaar gegoten)
+
+
+def tube_ellipse(c, d, ra, rb):
+    t = np.linspace(0, 2 * np.pi, 500, endpoint=False)
+    return [c + d * ra * np.cos(a) + perp(d) * rb * np.sin(a) for a in t]
+
+
+def seg(p, q, n=60):
+    return [p + (q - p) * s for s in np.linspace(0, 1, n)]
+
+
+def tube_field(pts, r):
+    d, _ = cKDTree(np.array(pts)).query(P)
+    return (d - r).reshape(H, W)
+
+
+def foot_field():
+    """voet als vlak kussen: steel die uitloopt in een brede voet met twee bolle lobben (afstandsveld van een vorm)"""
+    s0 = PC_E + PC_F * (PC_ER + PC_ET - 3)    # begin van de steel (onderrand van het oog)
+    n = perp(PC_F)
+    loc = lambda x, y: tuple((s0 + PC_F * x + n * y) * PC_SS)
+    im = Image.new('L', (W, H), 0)
+    d = ImageDraw.Draw(im)
+    d.polygon([loc(-10, -11), loc(-10, 11), loc(8, 10), loc(20, 20), loc(31, 18), loc(28, 0), loc(31, -18),
+               loc(20, -20), loc(8, -10)], fill=255)
+    for y in (-13, 13):                        # twee bolle lobben onderaan
+        cx, cy = loc(25, y)
+        r = 8.5 * PC_SS
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=255)
+    m = ndimage.gaussian_filter(np.array(im, float), 2.5 * PC_SS) > 127
+    inside = ndimage.distance_transform_edt(m) / PC_SS
+    outside = ndimage.distance_transform_edt(~m) / PC_SS
+    return np.where(m, -inside, outside)
+
+
+pieces = []
+eye_in = PC_E - PC_DIR * (PC_ER + PC_ET * 0.4)              # waar de ketting het oog raakt
+c = eye_in - PC_DIR * (PC_GAP + PC_RA + PC_R)
+centers = []
+for k in range(PC_RINGS):
+    centers.insert(0, c)
+    c = c - PC_DIR * (2 * PC_RA + 2 * PC_R + PC_GAP)
+PC_O = centers[0] - PC_DIR * PC_RA
+for k, c in enumerate(centers):
+    if k:
+        pieces.append(tube_field(seg(centers[k - 1] + PC_DIR * PC_RA, c - PC_DIR * PC_RA), PC_R + 1.5))
     else:
-        half = PC_BAR_L - PC_BAR_W
-        du = np.clip(np.abs(u) - half, 0, None) * np.sign(u)
-        dist = np.hypot(du, v)
-        inside = dist <= PC_BAR_W
-        s = dist / PC_BAR_W
-        nz = np.sqrt(np.clip(1 - s * s, 0, 1))
-        nx = (du * tx - v * ty) / PC_BAR_W
-        ny = (du * ty + v * tx) / PC_BAR_W
-    lam, spec = pc_shade(nx, ny, nz)
-    val = 4 + lam * 5.0 + grad * 3.0 + spec * 3
-    return inside, np.clip(val, 4, 13.49), u
+        pieces.append(np.minimum(tube_field(seg(c - PC_DIR * 60, c - PC_DIR * PC_RA), PC_R + 1.5), 1e9))
+        pieces[0] = np.minimum(pieces[0], tube_field(tube_ellipse(c, PC_DIR, PC_RA, PC_RB), PC_R))
+        continue
+    pieces.append(tube_field(tube_ellipse(c, PC_DIR, PC_RA, PC_RB), PC_R))
+pieces.append(tube_field(seg(centers[-1] + PC_DIR * PC_RA, eye_in), PC_R + 1.5))
+# het eindstuk komt in een keer: oog (iets ovaal, schuin) + steel + voet
+eye = tube_field([PC_E + perp(PC_F) * PC_ER * np.cos(a) * 0.92 + PC_F * PC_ER * np.sin(a)
+                  for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
+pieces.append(np.minimum(eye, foot_field()))
+PC_N = len(pieces)
+PC_LEN = float(np.dot(PC_E + PC_F * 60 - PC_O, PC_DIR))
 
 
-PC_E = [pc_elem(k) for k in range(PC_ELEMS)]
+def smin(a, b, k=3.5):
+    h = np.clip(0.5 + 0.5 * (b - a) / k, 0, 1)
+    return b * (1 - h) + a * h - k * h * (1 - h)
 
 
 def pc_render(n):
-    """beeld (160x240, paletindex) met de eerste n elementen"""
-    body = np.zeros((H, W), bool)
-    val = np.zeros((H, W))
-    ol = np.zeros((H, W), bool)
-
-    def paint(mask):
-        nonlocal body, val, ol
-        ring = ndimage.binary_dilation(mask, iterations=PC_SS * 1 + 1) & ~mask
-        body &= ~ring                       # omlijning van het bovenste stuk snijdt in wat eronder ligt
-        ol |= ring
-        ol &= ~mask
-        body |= mask
-
-    # donuts eerst, de staven erover: hun ronde uiteinden liggen op de rand van de donuts, tot vlak voor het gat
-    order = [k for k in range(n) if k % 2 == 0 or k == PC_ELEMS - 1] + \
-            [k for k in range(n) if k % 2 == 1 and k != PC_ELEMS - 1]
-    for k in order:
-        ins, vv, u = PC_E[k]
-        paint(ins)
-        val = np.where(ins, vv, val)
+    """beeld (160x240, paletindex) met de eerste n stukken"""
+    f = pieces[0]
+    for k in range(1, n):
+        f = smin(f, pieces[k])
+    inside = f <= 0
+    gy, gx = np.gradient(f)
+    g = np.maximum(np.hypot(gx, gy), 1e-6)
+    s = np.clip(-f / 9.0, 0, 1)               # 0 aan de rand, 1 vanaf ±9 px naar binnen (bol, dan vlak)
+    nz = np.sqrt(1 - (1 - s) ** 2)
+    nx, ny = gx / g * (1 - s), gy / g * (1 - s)
+    lam = np.clip(nx * LV[0] + ny * LV[1] + nz * LV[2], 0, 1)
+    spec = lam ** 24
+    along = np.clip(((X - PC_O[0]) * PC_DIR[0] + (Y - PC_O[1]) * PC_DIR[1]) / PC_LEN, 0, 1)
+    val = np.clip(4 + lam * 5.4 + (1 - along) * 2.4 + spec * 3, 4, 13.49)
 
     def down(m):
         return m.reshape(160, PC_SS, 240, PC_SS).mean(axis=(1, 3))
-    bodyf = down(body.astype(float))
-    valf = down(np.where(body, val, 0)) / np.maximum(bodyf, 1e-6)
-    olf = down(ol.astype(float))
+    bodyf = down(inside.astype(float))
+    valf = down(np.where(inside, val, 0)) / np.maximum(bodyf, 1e-6)
+    olf = down(((f > 0) & (f <= 1.3)).astype(float))
     img = np.zeros((160, 240), np.uint8)
     solid = bodyf >= 0.5
-    edge = (~solid) & (olf >= 0.25)
+    edge = (~solid) & (olf + bodyf >= 0.3)
     dist = ndimage.distance_transform_edt(~(solid | edge))
-    outside = ~ndimage.binary_fill_holes(solid | edge)      # gloed alleen buitenom, niet in de gaten
+    outside = ~ndimage.binary_fill_holes(solid | edge)
     img[outside & (dist <= 4.5)] = 2
     img[outside & (dist <= 2)] = 3
     img[edge] = 1

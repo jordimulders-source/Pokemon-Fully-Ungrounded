@@ -8617,17 +8617,17 @@ static void Task_Zarude(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Zarude);
 }
 
-// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Poison Chain zoals op de artwork. Grote, glanzende
-// ringen (om en om van voren met een groot gat en op hun kant) verschijnen om de 7 frames vanaf de "nek" linksonder en lopen
-// schuin naar rechtsboven, eindigend in een open ring; het beeld wordt donker-paars. Dan een stilstaand beeld, kort
-// vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Toxic Chain zoals op de artwork. Een glanzende
+// magenta buis in ringen komt om de 4 frames verder van linksonder het beeld in en eindigt groot in het midden in de
+// "halve schedel" (een dikke ring met een steel en een voet met twee lobben); het beeld wordt donker-paars. Dan een
+// stilstaand beeld, kort vasthouden en de gewone fade. Tilemaps per stap: route_transitions.py.
 #define POISONCHAIN_LINKS ((s32)(sizeof(sPoisonChain_Map) / (600 * 2)))
-#define POISONCHAIN_STEP  7
+#define POISONCHAIN_STEP  4
 #define POISONCHAIN_HOLD  20
 
 static bool8 RTPoisonChain_Update(struct Task *task)
 {
-    s32 t = task->tRtTimer, n = min(((t * 37) >> 8) + 1, POISONCHAIN_LINKS); // (t * 37) >> 8 = t / POISONCHAIN_STEP
+    s32 t = task->tRtTimer, n = min((t >> 2) + 1, POISONCHAIN_LINKS); // t >> 2 = t / POISONCHAIN_STEP
 
     // een nieuwe schakel: elk vak in een keer zijn eindwaarde (niet eerst wissen), en alleen de vakken die ten opzichte
     // van de vorige stap veranderen

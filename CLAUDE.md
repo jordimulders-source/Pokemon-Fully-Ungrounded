@@ -16,6 +16,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Grap-trainers blijven een grap:** extreem lage levels op sterke Pokémon zijn bewust (bijv. Ivan's Gyarados lv 3, Lyle's Scizor/Yanmega lv 6). Ze moeten schrikken, niet onverslaanbaar zijn.
 - **Humor:** dialogen zijn bewust absurd en donker-humoristisch. Niet "netjes maken"; wel tekstregels afbreken zodat ze passen (`\n`, `\l`, `\p`).
 - **Intro kort houden:** geen truck-intro, geen tv-scène. Mom houdt haar humoristische standaardtekst; healen, PokéNav-registratie en post-game-dialoog werken wel.
+- **Battle Stadium-pool (Jordi):** elk nieuw iconisch personage (trainer, NPC-gevecht, grap-trainer met een eigen naam; bijv. Colress, Zinnia, Mimi, Keccles) komt ook in de toernooipool van het Battle Stadium, met zijn sterkste team.
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) zijn bewust weggelaten.
 - **National Dex** is vanaf het begin beschikbaar.
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.

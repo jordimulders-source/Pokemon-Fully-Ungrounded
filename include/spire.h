@@ -144,8 +144,9 @@ struct SpireSave
     u8 toxicFights;     // events: zoveel gevechten nog Toxic Spikes-risico
     u8 fungalMask;      // events: deze rentals (bit 0/1) zijn het volgende gevecht besmet
     s8 hpBonus[2];      // events: blijvende max-HP-verandering in procentpunten (bijv. -10)
-    u32 eventsSeen;     // events die deze run al geweest zijn
+    u32 eventsSeen;     // events die deze run al geweest zijn (0-31)
     struct Pokemon mons[2];
+    u32 eventsSeen2;    // events 32-63 (achteraan, zodat een gepauzeerde run blijft werken)
 };
 
 #define SPIRE_SAVE (*(struct SpireSave *)gSaveBlock2Ptr->spireData)
@@ -263,6 +264,41 @@ void Spire_LoadBiomeBackground(u16 tint, u32 amount);
 bool32 Spire_IsMoveUpgraded(u32 battler, u32 move);
 uq4_12_t Spire_UpgradeDamageModifier(u32 battlerAtk, u32 move);
 
+// spire_event.c: events (data uit tools/grounded/spire/events.py)
+enum SpireFx
+{
+    SPIRE_FX_NONE,
+    SPIRE_FX_GOLD,
+    SPIRE_FX_GOLD_PCT,
+    SPIRE_FX_HEAL,
+    SPIRE_FX_HURT_ONE,
+    SPIRE_FX_MAXHP,
+    SPIRE_FX_BP,
+    SPIRE_FX_RELIC,
+    SPIRE_FX_LOSE_RELIC,
+    SPIRE_FX_ITEM,
+    SPIRE_FX_GIVE,
+    SPIRE_FX_LOSE_ITEMS,
+    SPIRE_FX_TEACH,
+    SPIRE_FX_TEACH_TYPE,
+    SPIRE_FX_TEACH_MOVE,
+    SPIRE_FX_UPGRADE,
+    SPIRE_FX_FORGET,
+    SPIRE_FX_REMOVE,
+    SPIRE_FX_FULLHEAL,
+    SPIRE_FX_PP,
+    SPIRE_FX_SLEEP,
+    SPIRE_FX_TOXIC,
+    SPIRE_FX_ELITE,
+    SPIRE_FX_RECRUIT,
+    SPIRE_FX_RECRUIT_SPECIES,
+    SPIRE_FX_DITTO,
+    SPIRE_FX_WONDER,
+    SPIRE_FX_EVOLVE,
+    SPIRE_FX_WHEEL,
+};
+extern u8 gSpireForcedEvent;    // debug: 0 = willekeurig, anders event-index + 1
+void Spire_OpenEvent(void (*onDone)(void));
 // spire_cards.c
 enum SpireCardMode
 {

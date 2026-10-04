@@ -479,7 +479,7 @@ void Spire_DebugOpen(void)
     {
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
     case 1:  Spire_OpenShop(Spire_ReturnToField); break;
-    case 2:  Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_ReturnToField); break;
+    case 2:  gSpireForcedEvent = gSpecialVar_0x8005; Spire_OpenEvent(Spire_ReturnToField); break;
     case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
     case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
     default: Spire_OpenMap(); break;
@@ -623,7 +623,7 @@ void Spire_EnterRoom(u32 floor, u32 node)
         Spire_OpenShop(Spire_RoomFinished);
         break;
     default:
-        Spire_OpenCards(SPIRE_CARDS_EVENT, Spire_RoomFinished);
+        Spire_OpenEvent(Spire_RoomFinished);
         break;
     }
 }

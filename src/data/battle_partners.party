@@ -3049,6 +3049,90 @@ Nature: Timid
 - Heat Wave
 - Roost
 
+=== PARTNER_STADIUM_N ===
+Name: N
+Class: King
+Pic: N
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Vanilluxe @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Aurora Veil
+- Flash Cannon
+
+Archeops @ Life Orb
+Level: 50
+Ability: Defeatist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Head Smash
+- Dual Wingbeat
+- Earthquake
+- U-turn
+
+Zekrom @ Life Orb
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bolt Strike
+- Dragon Claw
+- Dragon Dance
+- Crunch
+
+=== PARTNER_STADIUM_GHETSIS ===
+Name: GHETSIS
+Class: Plasma Boss
+Pic: Ghetsis
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Seismitoad @ Life Orb
+Level: 50
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Scald
+- Earth Power
+- Sludge Wave
+- Stealth Rock
+
+Kyurem-Black @ Choice Band
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Fusion Bolt
+- Icicle Spear
+- Dragon Claw
+- Outrage
+
+Hydreigon @ Choice Specs
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power
+
 === PARTNER_STADIUM_ALBERT ===
 Name: Dave
 Class: Cooltrainer

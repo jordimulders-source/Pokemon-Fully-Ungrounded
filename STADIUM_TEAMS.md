@@ -79,6 +79,8 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_NOLAND | 546 | Starmie, Typhlosion, Gardevoir, Metagross | Starmie, Typhlosion, Metagross | - |
 | STADIUM_LUCY | 524 | Shuckle, Steelix, Gyarados, Milotic | Shuckle, Gyarados, Milotic | zand |
 | STADIUM_BRANDON | 580 | Regirock, Registeel, Regice, Zapdos | Regirock, Registeel, Zapdos | - |
+| STADIUM_N | 576 | Vanilluxe, Archeops, Klinklang, Zekrom | Vanilluxe, Archeops, Zekrom | sneeuw |
+| STADIUM_GHETSIS | 581 | Seismitoad, Eelektross, Kyurem, Hydreigon | Seismitoad, Kyurem, Hydreigon | - |
 | ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
 | SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
 | OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
@@ -185,33 +187,35 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 7600 | AGATHA |
 | 7700 | CYRUS |
 | 7800 | DAHLIA |
-| 7900 | LAKE |
-| 8000 | LOYAL |
-| 8100 | REGIS |
-| 8200 | BIRDS |
-| 8300 | NORMAN |
-| 8400 | BEASTS |
-| 8500 | NOLAND |
-| 8600 | STEVEN |
-| 8700 | GIOVANNI |
-| 8800 | ZINNIA |
-| 8900 | SWORDS |
-| 9000 | TAPUS |
-| 9100 | ARGENTA |
-| 9200 | ULTRAS |
-| 9300 | DRAKE |
-| 9400 | PSEUDOS |
-| 9500 | BRANDON |
-| 9600 | RUIN |
-| 9700 | GENIES |
-| 9800 | ANABEL |
-| 9900 | WALLACE |
-| 10000 | PALMER |
-| 10100 | LANCE |
-| 10200 | SPENSER |
-| 10300 | TUCKER |
-| 10400 | BLUE |
-| 10500 | CYNTHIA |
-| 10600 | RED |
-| 10700 | WEATHER |
-| 10800 | CREATORS |
+| 7900 | N |
+| 8000 | LAKE |
+| 8100 | LOYAL |
+| 8200 | REGIS |
+| 8300 | GHETSIS |
+| 8400 | BIRDS |
+| 8500 | NORMAN |
+| 8600 | BEASTS |
+| 8700 | NOLAND |
+| 8800 | STEVEN |
+| 8900 | GIOVANNI |
+| 9000 | ZINNIA |
+| 9100 | SWORDS |
+| 9200 | TAPUS |
+| 9300 | ARGENTA |
+| 9400 | ULTRAS |
+| 9500 | DRAKE |
+| 9600 | PSEUDOS |
+| 9700 | BRANDON |
+| 9800 | RUIN |
+| 9900 | GENIES |
+| 10000 | ANABEL |
+| 10100 | WALLACE |
+| 10200 | PALMER |
+| 10300 | LANCE |
+| 10400 | SPENSER |
+| 10500 | TUCKER |
+| 10600 | BLUE |
+| 10700 | CYNTHIA |
+| 10800 | RED |
+| 10900 | WEATHER |
+| 11000 | CREATORS |

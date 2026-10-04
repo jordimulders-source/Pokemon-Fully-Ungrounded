@@ -980,8 +980,11 @@
 #define TRAINER_DOJO_WATER_KEEPER           965
 #define TRAINER_MUSTARD                     966
 #define TRAINER_STADIUM_MUSTARD             967
+// Project Grounded: Battle Stadium (Pokémon Black/White)
+#define TRAINER_STADIUM_N                   968
+#define TRAINER_STADIUM_GHETSIS             969
 
-#define TRAINERS_COUNT                      968
+#define TRAINERS_COUNT                      970
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

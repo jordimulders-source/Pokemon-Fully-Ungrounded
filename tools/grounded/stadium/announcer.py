@@ -107,6 +107,9 @@ LINES = {
     'STADIUM_NOLAND': "FACTORY HEAD NOLAND! He'll borrow your POKéMON. He won't give them back.",
     'STADIUM_LUCY': "PIKE QUEEN LUCY! She hasn't smiled since 2004. Neither has her SEVIPER.",
     'STADIUM_BRANDON': "PYRAMID KING BRANDON! He brought all three REGIS. They didn't ask to come.",
+    # Unova
+    'STADIUM_N': "N, the KING of TEAM PLASMA! He wants to free your POKéMON. Ticket refunds: no.",
+    'STADIUM_GHETSIS': "GHETSIS! He'd like everyone to sit down. Yes, you too. Especially you.",
     # Jordi en zijn maten
     'ALBERT': "From VICTORY ROAD: DAVE! WAKE UP! Grab a brush and put a little make-up!",
     'SAMUEL': "MITCH! He has stage fright. Thousands of fans. Everybody, stare at him!",

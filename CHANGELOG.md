@@ -16196,3 +16196,12 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Haaienbak** (gat in de vloer op B1F): een vaste **Garchomp lv 58** die slaapt op de rugzakken van mislukte kampioenen, met Life Orb, Eviolite en Dragon Fang. Donker, zoals Victory Road.
 - Bouwscript `tools/grounded/maptools/victory_road_ext.py`; trainers 1003–1006 (`TRAINER_VR_*`); flags 0x2A8–0x2AF, 0x4AB–0x4AF.
 - **Battle! Zarude v4:** de klap op de backbeat (tel 2 en 4) is eruit; die gaf vanaf de loop een metronoomachtig bliepje.
+
+### [v.0.9.15] - Team Rocket steelt de Safari-sleutels (de nieuwe zones gaan open)
+- **Route 121:** vlak voor de Safari-deur loopt een Team Rocket-grunt je omver (`MUS_RG_ENCOUNTER_ROCKET`), mompelt iets over zijn "condo in een boom" en rent weg. Binnen vertelt de balie dat de **ZONE KEYS** gestolen zijn en dat de dief in de jungle onder Fortree zit (`VAR_ROCKET_QUEST`, 0x40FD).
+- **Fortree Jungle:** een **holle reuzenpalm** met een wachtpost ervoor (alleen tijdens de quest). Via het bouwscript; alleen 15 vakken veranderen.
+- **Rocket-hideout** (`tools/grounded/maptools/rocket_hideout.py`, stukken van de Aqua Hideout met Rocket-paletten in antraciet en bordeaux, `MUS_RG_ROCKET_HIDEOUT`): opslag (1F) met teleportvlakken, een **teleportdoolhof** (B1F, 22 vlakken opnieuw gekoppeld) en het kantoor (B2F).
+- **Trainers** (lv 37–43, klasse TEAM ROCKET / ROCKET EXEC, FRLG-foto's en -overworlds): Guard (camouflage: Leavanny, Shiinotic, Cacturne), Smuggler (Sneasel met Pickpocket, Murkrow, Sableye), Motto (Jessie-parodie: Arbok, Wobbuffet, Weezing), Scientist (Magneton, Klang, Porygon2), Thief (alleen gestolen Pokémon, o.a. Farfetch'd zonder lauch) en executive **Petrel** ("Kneel before GIOVANNI…"; Zoroark vermomd als Persian, Ditto met Imposter, Galar-Weezing, Honchkrow, Persian). Foto van Petrel uit de HG/SS-sheet (verzameld door Dann-The-Yoshi).
+- **Transitie `B_TRANSITION_ROCKET`:** zwarte balken met een rode rand schuiven dicht, rode strepen, dan een grote rode R die draaiend inzoomt en met een klap, witte flits en schuddend beeld stempelt.
+- Na Petrel krijg je de sleutels terug, hij verdwijnt met een rookbom, een nooduitgang leidt naar de jungle. Terug bij de balie: `FLAG_SAFARI_ZONES_OPEN`, de blokkades verdwijnen en de eerstvolgende Safari-ronde is **gratis**.
+- Nummers: trainers 1020–1025, trainerfoto's 172–174, overworlds 270–272; flags 0x493–0x49B. Getest in de emulator van botsing tot gratis ronde.

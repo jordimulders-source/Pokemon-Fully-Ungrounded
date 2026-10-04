@@ -20,6 +20,7 @@
 - **MissingNo.** (in de New Mauville-gevechtstransitie): Pokémon Red / Blue; afbeelding aangeleverd door Jordi (`graphics/grounded/missingno.png`).
 - **Colress**: trainerfoto en VS-portret uit Pokémon Black 2 / White 2; **overworld-sprite door PizzaSun**. Bestanden in `graphics/grounded/trainers/colress/`.
 - **Burglar** (trainerfoto): Pokémon Red / Blue. `graphics/grounded/trainers/burglar/`.
+- **Team Rocket** (grunts M/F, trainerfoto's en overworlds): Pokémon FireRed / LeafGreen, via **pret/pokefirered** (`graphics/grounded/trainers/rocket/`). **Petrel**: HG/SS-trainerfoto, verzameld door Dann-The-Yoshi; overworld = FRLG-grunt met paarse kuif.
 - **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
 - **Battle Stadium-trainerfoto's (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Lorelei, Bruno, Agatha, Lance en Blue uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bronnen in `graphics/grounded/trainers/stadium_bron/frlg/`.
 - **Battle Stadium-overworlds (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Blue, Lorelei, Bruno, Agatha en Lance uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bestanden in `graphics/object_events/pics/people/` (3 frames verdubbeld naar 9) en `graphics/object_events/palettes/kanto_npc_*.pal`.

@@ -273,7 +273,12 @@
 #define OBJ_EVENT_GFX_N                               262 // Project Grounded (sheet van Delgatron, 32x32)
 #define OBJ_EVENT_GFX_GHETSIS                         263 // Project Grounded (sheet van PurpleZaffre, 32x32)
 #define OBJ_EVENT_GFX_BURGLAR                         264 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
-#define NUM_OBJ_EVENT_GFX                        265
+#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M            265 // Project Grounded (Neo Plasma-grunt (man), sheet ±2x verkleind)
+#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F            266 // Project Grounded (Neo Plasma-grunt (vrouw), sheet van PurpleZaffre, 32x32)
+#define OBJ_EVENT_GFX_ZINZOLIN                      267 // Project Grounded (Expert omgekleurd)
+#define OBJ_EVENT_GFX_ROOD                          268 // Project Grounded (Expert omgekleurd)
+#define OBJ_EVENT_GFX_SHADOW_TRIAD                  269 // Project Grounded (Black Belt omgekleurd)
+#define NUM_OBJ_EVENT_GFX                        270
 
 
 // These are dynamic object gfx ids.
@@ -417,6 +422,11 @@
 #define OBJ_EVENT_PAL_TAG_N                        0x112D // Project Grounded
 #define OBJ_EVENT_PAL_TAG_GHETSIS                  0x112E // Project Grounded
 #define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M       0x1132 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F       0x1133 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ZINZOLIN                 0x1134 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ROOD                     0x1135 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_SHADOW_TRIAD             0x1136 // Project Grounded (Neo Plasma)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -22,6 +22,11 @@ STADIUM_INTRO(TRAINER_STADIUM_IVAN, "I'm the WATER POKéMON expert! I got some v
 STADIUM_INTRO(TRAINER_STADIUM_JOHNSON, "Tik tok, tik tok, tik tok."),
 STADIUM_INTRO(TRAINER_STADIUM_LYLE, "My brother evolved them, and this time I actually levelled them!\pI'm indestructible! For real now!"),
 STADIUM_INTRO(TRAINER_STADIUM_N, "Your POKéMON are talking to me.\pThey say the ball is cramped and the snacks are bad.\pLet's see whose truth is louder. Mine has a dragon."),
+STADIUM_INTRO(TRAINER_STADIUM_ZINZOLIN, "Brrr... I froze an entire city once.\pI also froze myself. I have not been warm since 2012.\pLet's make this quick. My toes are filing a complaint."),
+STADIUM_INTRO(TRAINER_STADIUM_ROOD, "I left TEAM PLASMA to care for POKéMON.\pThen someone signed me up for a tournament. Old habits.\pDon't worry. My team heals faster than you can feel guilty."),
+STADIUM_INTRO(TRAINER_STADIUM_SHADOW_TRIAD, "We are three. You see one.\pThe other two are behind you.\p...No, don't look. That's rude."),
+STADIUM_INTRO(TRAINER_STADIUM_PLASMA_GRUNT_M, "NEO TEAM PLASMA is back! New logo, same shady business!\pWe used to free POKéMON. Now we just steal them. It's called rebranding."),
+STADIUM_INTRO(TRAINER_STADIUM_PLASMA_GRUNT_F, "I joined for the cool ship and the dental plan.\pThere is no dental plan.\pSomeone is going to pay for that. Probably you."),
 STADIUM_INTRO(TRAINER_STADIUM_GHETSIS, "Sit down! ...You ARE sitting? Then sit down HARDER!\pI have six POKéMON, one stolen dragon and zero shame."),
 
 #undef STADIUM_INTRO

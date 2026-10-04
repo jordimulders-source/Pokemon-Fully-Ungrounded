@@ -3133,6 +3133,216 @@ Nature: Timid
 - Flamethrower
 - Earth Power
 
+=== PARTNER_STADIUM_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Cryogonal @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Vanilluxe @ Choice Specs
+Level: 50
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Weavile @ Razor Claw
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== PARTNER_STADIUM_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Mandibuzz @ Leftovers
+Level: 50
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Gothitelle @ Choice Scarf
+Level: 50
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover
+
+=== PARTNER_STADIUM_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Greninja @ Expert Belt
+Level: 50
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Bisharp @ Eviolite
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== PARTNER_STADIUM_PLASMA_GRUNT_M ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Garbodor @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Gunk Shot
+- Drain Punch
+- Toxic Spikes
+- Spikes
+
+Crobat @ Sharp Beak
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Golurk @ Life Orb
+Level: 50
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dynamic Punch
+- Earthquake
+- Poltergeist
+- Stone Edge
+
+=== PARTNER_STADIUM_PLASMA_GRUNT_F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Klinklang @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gear Grind
+- Wild Charge
+- Substitute
+
+Mienshao @ Life Orb
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- High Jump Kick
+- U-turn
+- Knock Off
+
+Chandelure @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Fire Blast
+- Energy Ball
+- Trick
+
 === PARTNER_STADIUM_ALBERT ===
 Name: Dave
 Class: Cooltrainer

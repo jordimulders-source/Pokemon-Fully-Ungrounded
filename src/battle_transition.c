@@ -159,6 +159,7 @@ static void Task_Giratina(u8); // Project Grounded
 static void Task_Victini(u8); // Project Grounded
 static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
+static void Task_NeoPlasma(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
@@ -473,6 +474,9 @@ static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
 static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
 static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
+static const u16 sNeoPlasma_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.4bpp"); // Project Grounded
+static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
+static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
@@ -588,6 +592,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
     [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
+    [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -8272,4 +8277,80 @@ static const struct RouteTransition sRT_Darkrai =
 static void Task_Darkrai(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Darkrai);
+}
+
+// ---------------- Neo Team Plasma (Black 2/White 2): nagemaakt naar de BW2-transitie (2,58 s). Een blauwe P op een donker
+// raster; een gloeiende lichtbol komt van rechts en trekt een Z door de P; alles wordt wit; het Plasma-schild verschijnt,
+// flitst twee keer en dan schieten bliksems van het schild naar de randen en flakkeren. Tiles en tilemaps (30x20, palet
+// 15 al ingevuld): tools/grounded/neo_plasma_transition.py. Tilemap 0 = P, 1-9 = lichtbol, 10 = volledige Z, 11 = schild,
+// 12-17 = bliksemvarianten. Palet 0 = normaal, palet 1 = bliksems fel (flakkeren).
+#define NP_ZSTART   14     // GIF-frame 1 (na 240 ms)
+#define NP_ZFULL    32     // GIF-frame 6: Z af (9 sleutelbeelden van 2 frames)
+#define NP_WHITE    47     // GIF-frames 7-9: naar wit
+#define NP_SHIELD   58     // GIF-frame 10: schild uit het wit
+#define NP_FLASH    86     // GIF-frames 12-13: schild flitst twee keer
+#define NP_BOLTS    94     // GIF-frames 14-30: bliksems
+#define NP_END      150
+#define NP_KEY_Z    10
+#define NP_KEY_SHIELD 11
+#define NP_KEY_BOLT 12
+#define NP_NUM_BOLT 6
+
+static bool8 RTNeoPlasma_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, key, r, white = 0;
+
+    if (t < NP_ZSTART)
+        key = 0;
+    else if (t < NP_ZFULL)
+        key = 1 + (t - NP_ZSTART) / 2;
+    else if (t < NP_SHIELD)
+        key = NP_KEY_Z;
+    else if (t < NP_BOLTS)
+        key = NP_KEY_SHIELD;
+    else
+        key = NP_KEY_BOLT + ((t - NP_BOLTS) / 4) % NP_NUM_BOLT;
+
+    // alleen bij een nieuw beeld de hele tilemap in een keer overschrijven (niet eerst wissen)
+    if (task->tRtA != key + 1)
+    {
+        for (r = 0; r < 20; r++)
+            CpuCopy16(&sNeoPlasma_Maps[key * 600 + r * 30], &tilemap[r * 32], 30 * 2);
+        task->tRtA = key + 1;
+    }
+
+    // de rest van het beeld (overworld, sprites) zwart; het raster dekt het hele scherm
+    BlendPalettes(RT_SCENE_PALETTES, 16, RGB_BLACK);
+    if (t >= NP_BOLTS && (t & 2))
+        LoadPalette(&sNeoPlasma_Palette[16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+
+    if (t < 4)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - t * 4, RGB_BLACK);
+    else if (t >= NP_WHITE && t < NP_WHITE + 7)
+        white = 2 + (t - NP_WHITE) * 2;
+    else if (t >= NP_WHITE + 7 && t < NP_SHIELD)
+        white = 16;
+    else if (t >= NP_SHIELD && t < NP_SHIELD + 4)
+        white = 10 - (t - NP_SHIELD) * 3;
+    else if (t >= NP_FLASH && t < NP_FLASH + 4)
+        white = 9;
+    else if (t >= NP_FLASH + 4 && t < NP_BOLTS)
+        white = 13;
+    else if (t >= NP_BOLTS && t < NP_BOLTS + 4)
+        white = 4;
+    if (white > 0)
+        BlendPalette(BG_PLTT_ID(15), 16, white, RGB_WHITE);
+
+    return t >= NP_END;
+}
+
+static const struct RouteTransition sRT_NeoPlasma =
+{
+    sNeoPlasma_Tileset, sizeof(sNeoPlasma_Tileset), sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
+};
+
+static void Task_NeoPlasma(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_NeoPlasma);
 }

@@ -1010,7 +1010,14 @@
 #define TRAINER_HOLLOW_MORELLE              990 // Project Grounded: Toadstool Hollow
 #define TRAINER_HOLLOW_GERRIT               991 // Project Grounded: Toadstool Hollow
 
-#define TRAINERS_COUNT                      992
+// Project Grounded: Battle Stadium (Neo Team Plasma, Pokémon Black 2/White 2)
+#define TRAINER_STADIUM_ZINZOLIN            992
+#define TRAINER_STADIUM_SHADOW_TRIAD        993
+#define TRAINER_STADIUM_PLASMA_GRUNT_M      994
+#define TRAINER_STADIUM_PLASMA_GRUNT_F      995
+#define TRAINER_STADIUM_ROOD                996
+
+#define TRAINERS_COUNT                      997
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

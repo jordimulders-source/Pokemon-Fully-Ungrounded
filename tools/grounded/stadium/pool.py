@@ -49,6 +49,8 @@ POOL = [
     'STADIUM_ANABEL', 'STADIUM_TUCKER', 'STADIUM_SPENSER', 'STADIUM_GRETA', 'STADIUM_NOLAND', 'STADIUM_LUCY', 'STADIUM_BRANDON',
     # Unova (Black/White): eigen sprites (tools/grounded/plasma_sprites.py)
     'STADIUM_N', 'STADIUM_GHETSIS',
+    # Neo Team Plasma (Black 2/White 2): tools/grounded/neo_plasma_sprites.py, transitie B_TRANSITION_NEO_PLASMA
+    'STADIUM_ZINZOLIN', 'STADIUM_ROOD', 'STADIUM_SHADOW_TRIAD', 'STADIUM_PLASMA_GRUNT_M', 'STADIUM_PLASMA_GRUNT_F',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
     'ALBERT', 'SAMUEL', 'OWEN',
     # gasten (graphics/grounded/trainers/guests/, tools/grounded/guest_trainer_pics.py)
@@ -69,7 +71,8 @@ COMPANIONS = [('BRENDAN', 'BRENDAN_ROUTE_136_TREECKO', 'start'), ('MAY', 'MAY_RO
 def companion_name(t):
     special = {'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
-               'SHY_GUY_BLACK': 'SHY_GUY_BLACK'}
+               'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
+               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F'}
     t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
     return special.get(t, special.get(t2, t2.split('_')[0]))
 
@@ -189,6 +192,8 @@ GFX = {
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
     'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'BURGLAR', 'DITTO': 'SPECIES(DITTO)',
     'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
+    'ZINZOLIN': 'ZINZOLIN', 'ROOD': 'ROOD', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
+    'PLASMA_GRUNT_M': 'NEO_PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'NEO_PLASMA_GRUNT_F',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
 }

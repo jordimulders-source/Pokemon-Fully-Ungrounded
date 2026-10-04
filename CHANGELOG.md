@@ -16488,3 +16488,8 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 ### [v.0.9.56] - Muziekbuffer naar EWRAM, meer stackmarge
 - De sporenbuffer van de muziekspeler (16 sporen, 1280 bytes) staat nu in het grote werkgeheugen (EWRAM) in plaats van het kleine, snelle geheugen (IWRAM). IWRAM gaat van 89% naar 85%.
 - Gemeten in een gevecht: de stack gebruikt ±2,4 KB, en er blijft nu 2032 bytes marge over. Met de originele 10 sporen was dat 1344 bytes, dus er is meer ruimte dan vóór de uitbreiding.
+
+### [v.0.9.57] - Stackmarge: draadloze buffer naar EWRAM
+- De muziekbuffer (16 sporen) staat weer in het snelle IWRAM. In plaats daarvan is de buffer van de draadloze adapter (`gRfu`, 3,3 KB, in deze romhack ongebruikt) naar EWRAM verplaatst.
+- IWRAM staat nu op 79% (was 89%). Gemeten in een gevecht: de stack gebruikt ±2,2 KB, en er blijft 4240 bytes marge over (met de originele opzet was dat 1344).
+- Vertraagde frames in gevechten: gelijk in beide opzetten (de verschillen per run komen van de moves en animaties).

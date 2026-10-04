@@ -943,28 +943,24 @@ static void HandleChooseMon(void)
     else if (JOY_NEW(A_BUTTON))
     {
         struct Pokemon *mon = Spire_GetRunMon(sCards->mon);
+        u32 i;
 
-        PlaySE(SE_SELECT);
         if (MonKnowsMove(mon, sCards->teachMove))
         {
-            GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
-            StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} already knows it!"));
-            ShowMessage(gStringVar4, TRUE);
+            // kent hij al: blijf kiezen (de ander, of B)
+            PlaySE(SE_FAILURE);
+            return;
         }
-        else
+        PlaySE(SE_SELECT);
+        // lege plek? die staat al geselecteerd
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            u32 i;
-
-            // lege plek? dan meteen leren
-            for (i = 0; i < MAX_MON_MOVES; i++)
-            {
-                if (GetMonData(mon, MON_DATA_MOVE1 + i) == MOVE_NONE)
-                    break;
-            }
-            sCards->slot = (i < MAX_MON_MOVES) ? i : 0;
-            sCards->state = STATE_CHOOSE_SLOT;
-            Redraw();
+            if (GetMonData(mon, MON_DATA_MOVE1 + i) == MOVE_NONE)
+                break;
         }
+        sCards->slot = (i < MAX_MON_MOVES) ? i : 0;
+        sCards->state = STATE_CHOOSE_SLOT;
+        Redraw();
     }
     else if (JOY_NEW(B_BUTTON))
     {

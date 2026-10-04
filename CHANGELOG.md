@@ -16002,3 +16002,11 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 - **White-out:** 30 i.p.v. 120 frames zwart scherm na het verliezen.
 - Gemeten (knop → weer besturing): deur in 121→85, deur uit 135→75, grot in 147→91, grot uit 154→88 frames; wegrennen uit een wild gevecht 114→93; as-transitie tot gevecht 148→132.
 - Bleef zoals het was: vanilla-transities, `WeatherDuo_FadeOut`, `warpwhitefade`/`FadeInFromWhite` in cutscenes, de laadtijd van een gevecht.
+
+### [v.0.8.120] - Genesect en Mewtwo (post-game legendary-events)
+- **Genesect** (lv 70): de kapotte monitor in de Raikou-grot onder New Mauville is na de Hall of Fame een terminal. Kies "OFF AND ON AGAIN" (of eerst "HIT IT"/"CALL WATTSON" voor de grap) en er gaat een kluisdeur open in de achterwand. Daarachter de serverkluis (`NewMauville_ServerVault`) met Genesect. De linkertank in de Raikou-grot is een tegel opgeschoven voor de deur.
+- **Mewtwo** (lv 70): na de Hall of Fame een grotopening in Meteor Falls 1F (pilarengebied, x 12). Cerulean Cave-hommage over twee verdiepingen: 1F = kopie van Altering Cave met een ladder op het plateau, B1F = de ongebruikte Ruby/Sapphire-spiraalkaart (nooit eerder te zien), Mewtwo op de plek van het gat. Items: Max Revive (1F), Max Elixir (B1F).
+- Wilde Pokémon in de Mewtwo-grot (12 unieke soorten per tabel): 1F lv 60-64 Crobat, Ditto, Magneton, Electrode, Parasect, Sandslash, Marowak, Hypno, Wobbuffet, Chansey, Lickitung, Clefable; B1F lv 64-68 Alakazam, Ditto, Rhydon, Machamp, Venomoth, Primeape, Arbok, Dodrio, Raichu, Kangaskhan, Snorlax, Aerodactyl.
+- Eigen transities: **Genesect** = CRT-scanlijnen, een rood vizier dat van doel naar doel springt en op de speler vastklikt ("LOCKED ON"), dan een Techno Blast-straal die het scherm vult. **Mewtwo** = het beeld wordt diep paars, twee gloeiende boze ogen gaan open, en een psychische schokgolf rolt in ringen over het scherm.
+- Muziek: Genesect de Regi-gevechtsmuziek, Mewtwo het Mewtwo-thema uit FireRed/LeafGreen.
+- Beide staan in het debugmenu (Legendary). Bouwscript: `tools/grounded/maptools/legend_maps.py`. Flags 0x271-0x275.

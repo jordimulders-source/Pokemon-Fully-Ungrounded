@@ -93,6 +93,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Kleine trainerfoto's** (bracket): niet verkleinen (`SetOamMatrix` geeft lelijke pixels) maar een 32×32-uitsnede van het hoofd uit de gedecomprimeerde foto (`AddPortrait` in `stadium_screens.c`). DS-sprites hoger dan 64 px: onderkant geditherd laten wegvallen (`fade_bottom`).
 - **Overworld-GFX-ID's boven 255** (Kanto-sprites 248–259+): het Stadium en scripts kunnen het aan, maar `src/vs_seeker.c` gebruikt nog `u8 graphicsId`; zulke sprites niet als gewone rematch-trainer op een kaart zetten.
 - **Fades en wachttijden:** paletfades wisselen BG en sprites af (`objPaletteToggle`), dus elke stap kost 2 frames + 4 frames afronden; een warp wacht ook op het uitfaden van de oude muziek (`GetMapMusicFadeoutSpeed`). Eigen transities: eindbeeld max ±2 frames vasthouden, fade ±8 frames (v0.8.119).
+- **Warp-elevation** moet gelijk zijn aan die van de tegel (0 = elke); vanilla-grotplateaus zijn soms elevation 4 (Altering Cave).
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 
 ## Werkwijzen (herhaalde taken)

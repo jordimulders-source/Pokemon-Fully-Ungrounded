@@ -6138,7 +6138,9 @@ u16 GetBattleBGM(void)
             return MUS_GROUNDED_VS_ZINNIA;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
             return MUS_VS_AQUA_MAGMA_LEADER;
+        case TRAINER_CLASS_COMMANDER: // Project Grounded: Battle Stadium
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
@@ -6163,6 +6165,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_FACTORY_HEAD:
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
+        case TRAINER_CLASS_TOWER_TYCOON: // Project Grounded: Battle Stadium
+        case TRAINER_CLASS_HALL_MATRON:
+        case TRAINER_CLASS_ARCADE_STAR:
             return MUS_VS_FRONTIER_BRAIN;
         default:
             return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)

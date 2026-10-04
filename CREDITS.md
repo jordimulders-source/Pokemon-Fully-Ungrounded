@@ -11,6 +11,8 @@
 - **Colress**: trainerfoto en VS-portret uit Pokémon Black 2 / White 2; **overworld-sprite door PizzaSun**. Bestanden in `graphics/grounded/trainers/colress/`.
 - **Burglar** (trainerfoto): Pokémon Red / Blue. `graphics/grounded/trainers/burglar/`.
 - **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
+- **Battle Stadium-trainerfoto's (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Lorelei, Bruno, Agatha, Lance en Blue uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bronnen in `graphics/grounded/trainers/stadium_bron/frlg/`.
+- **Battle Stadium-trainerfoto's (Sinnoh)**: gymleiders, Elite Four, Cynthia, Cyrus, Mars, Jupiter, Saturn, Barry, Palmer, Thorton, Argenta, Dahlia en Riley uit Pokémon Platinum, via de decompilatie **pret/pokeplatinum**; bijgesneden naar 64x64 met `tools/grounded/stadium_trainer_pics.py`. Bronnen in `graphics/grounded/trainers/stadium_bron/platinum/`.
 
 ### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)
 - **Zinnia** (gevechtsmuziek voor de Sky Pillar): ORAS / Delta Episode, MIDI aangeleverd door Jordi.

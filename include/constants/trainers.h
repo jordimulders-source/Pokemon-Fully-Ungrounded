@@ -115,7 +115,42 @@
 #define TRAINER_PIC_BROCK                 97 // Project Grounded: Brock (sprite uit FRLG)
 #define TRAINER_PIC_COLRESS               98 // Project Grounded: Colress (B2W2)
 #define TRAINER_PIC_ZINNIA                99 // Project Grounded: Zinnia
-#define TRAINER_PIC_COUNT                 100
+#define TRAINER_PIC_MISTY                  100 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_LT_SURGE               101 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_ERIKA                  102 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_KOGA                   103 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_SABRINA                104 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_BLAINE                 105 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_GIOVANNI               106 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_LORELEI                107 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_BRUNO                  108 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_AGATHA                 109 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_LANCE                  110 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_BLUE                   111 // Project Grounded: Battle Stadium (FRLG)
+#define TRAINER_PIC_ROARK                  112 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_GARDENIA               113 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_MAYLENE                114 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_WAKE                   115 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_FANTINA                116 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_BYRON                  117 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_CANDICE                118 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_VOLKNER                119 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_AARON                  120 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_BERTHA                 121 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_FLINT                  122 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_LUCIAN                 123 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_CYNTHIA                124 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_CYRUS                  125 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_MARS                   126 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_JUPITER                127 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_SATURN                 128 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_BARRY                  129 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_PALMER                 130 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_THORTON                131 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_ARGENTA                132 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_DAHLIA                 133 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_RILEY                  134 // Project Grounded: Battle Stadium (Platinum)
+#define TRAINER_PIC_COUNT                 135
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -364,6 +399,11 @@ enum TrainerClassID
     TRAINER_CLASS_PROFESSOR, // Project Grounded: Prof. Birch
     TRAINER_CLASS_SCIENTIST, // Project Grounded: Colress
     TRAINER_CLASS_LOREKEEPER, // Project Grounded: Zinnia
+    TRAINER_CLASS_BOSS, // Project Grounded: Battle Stadium (Giovanni, Cyrus)
+    TRAINER_CLASS_COMMANDER, // Project Grounded: Battle Stadium (Mars, Jupiter, Saturn)
+    TRAINER_CLASS_TOWER_TYCOON, // Project Grounded: Battle Stadium (Palmer)
+    TRAINER_CLASS_HALL_MATRON, // Project Grounded: Battle Stadium (Argenta)
+    TRAINER_CLASS_ARCADE_STAR, // Project Grounded: Battle Stadium (Dahlia)
     TRAINER_CLASS_COUNT,
 };
 

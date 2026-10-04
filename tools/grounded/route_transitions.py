@@ -2001,8 +2001,10 @@ def pc_tile_id(t):
 
 
 PC_POSES = (-7.0, 0.0, 7.0)                   # vooraf getekende standen (graden, positief = met de klok mee)
+pc_maps_img = []
 for th in PC_POSES:
     im = pc_render(th)
+    pc_maps_img.append(im)
     for ty in range(20):
         for tx in range(30):
             pc_maps.append(pc_tile_id(tuple(im[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8].flatten())))
@@ -2010,19 +2012,42 @@ assert len(pc_tiles) < 760, len(pc_tiles)
 open(OUT + 'route_poisonchain_map.bin', 'wb').write(struct.pack('<%dH' % len(pc_maps), *pc_maps))
 save('poisonchain', pc_tiles, [pad(PC_PAL)])
 
-# beweging per frame: binnenvallen van boven (BG0VOFS 90 -> 0), uitdempend slingeren rond de nek en wat op en neer
-# deinen na de val. Het restje draaihoek t.o.v. de getoonde stand doet de code per scanline (HOFS = rest * (y - draaipunt
-# y)); het verticale deel ervan benaderen we met één VOFS-verschuiving, gemeten in het midden van de ketting (PC_XC).
+# beweging per frame: binnenvallen van boven (BG0VOFS 90 -> 0), uitdempend slingeren rond de nek en flink op en neer
+# bungelen na de val (veerachtig, eerste stuiter het grootst). Het restje draaihoek t.o.v. de getoonde stand doet de code
+# per scanline (HOFS = rest * (y - draaipunt y)); het verticale deel ervan benaderen we met één VOFS-verschuiving,
+# gemeten in het midden van de ketting (PC_XC). Na de val blijft de ketting boven, onder en rechts binnen het scherm
+# (links komt hij het beeld in): dat controleert het script per frame op de echte tilemaps.
 PC_FRAMES, PC_DROP = 80, 14
 PC_XC = 60.0
-pc_anim = []
+PC_BOB, PC_BOB_PERIOD, PC_BASE = 28.0, 26.0, -3.0
+pc_anim, pc_frames = [], []
 for t in range(PC_FRAMES):
     th = -10.0 * math.exp(-t / 28.0) * math.cos(2 * math.pi * t / 30.0)
     k = min(range(len(PC_POSES)), key=lambda i: abs(th - PC_POSES[i]))
     rest = math.radians(th - PC_POSES[k])
     drop = 90.0 * (1 - t / PC_DROP) ** 2 if t < PC_DROP else 0.0
-    bob = 9.0 * math.exp(-(t - PC_DROP) / 22.0) * math.sin(2 * math.pi * (t - PC_DROP) / 18.0) if t >= PC_DROP else 0.0
-    vofs = drop - bob - rest * (PC_XC - PC_PIVOT[0])           # positieve VOFS schuift het beeld omhoog
-    pc_anim += [k, int(round(rest * 4096)), int(round(vofs))]
+    bob = PC_BOB * math.exp(-(t - PC_DROP) / 22.0) * math.sin(2 * math.pi * (t - PC_DROP) / PC_BOB_PERIOD) \
+        if t >= PC_DROP else 0.0
+    vofs = drop - bob - rest * (PC_XC - PC_PIVOT[0]) + PC_BASE    # positieve VOFS schuift het beeld omhoog
+    pc_frames.append((k, int(round(rest * 4096)), int(round(vofs))))
+    pc_anim += pc_frames[-1]
 open(OUT + 'route_poisonchain_anim.bin', 'wb').write(struct.pack('<%dh' % len(pc_anim), *pc_anim))
-print('poisonchain', len(PC_POSES), 'standen,', PC_FRAMES, 'frames, draaipunt y', round(PC_PIVOT[1]))
+
+
+def pc_bbox(k, rest, vofs, py=126):
+    """randen (boven, onder, links, rechts) van de ketting op het scherm, zoals de code hem tekent"""
+    m = np.zeros((256, 256), np.uint8)
+    m[:160, :240] = pc_maps_img[k]
+    ys, x0, x1 = [], [], []
+    for y in range(160):
+        nz = np.nonzero(m[(y + vofs) & 255])[0]
+        if len(nz):
+            h = (rest * (y + vofs - py)) >> 12
+            ys.append(y); x0.append(int(nz.min()) - h); x1.append(int(nz.max()) - h)
+    return min(ys), max(ys), min(x0), max(x1)
+
+
+pc_bb = [pc_bbox(*f) for f in pc_frames[PC_DROP:]]
+pc_edges = (min(b[0] for b in pc_bb), max(b[1] for b in pc_bb), min(b[2] for b in pc_bb), max(b[3] for b in pc_bb))
+assert pc_edges[0] >= 1 and pc_edges[1] <= 158 and pc_edges[3] <= 238, pc_edges
+print('poisonchain', len(PC_POSES), 'standen,', PC_FRAMES, 'frames, randen na de val (boven, onder, links, rechts):', pc_edges)

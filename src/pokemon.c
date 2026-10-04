@@ -6146,6 +6146,10 @@ u16 GetBattleBGM(void)
             return MUS_GROUNDED_VS_N;
         case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
             return MUS_GROUNDED_VS_GHETSIS;
+        case TRAINER_CLASS_SAGE: // Project Grounded: Neo Plasma (Battle Stadium)
+        case TRAINER_CLASS_SHADOW_TRIAD:
+        case TRAINER_CLASS_NEO_PLASMA:
+            return MUS_GROUNDED_VS_NEO_PLASMA;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
         case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium

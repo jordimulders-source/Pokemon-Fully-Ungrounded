@@ -557,6 +557,7 @@
 #define MUS_GROUNDED_VS_BROKEN_PIER 619 // Project Grounded: Broken Pier (Mario Kart: Super Circuit), keuze bij WILD MUSIC
 #define MUS_GROUNDED_VS_SUNSET_WILDS 620 // Project Grounded: Sunset Wilds (Mario Kart: Super Circuit), keuze bij WILD MUSIC
 #define MUS_GROUNDED_VS_ZINNIA      621 // Project Grounded: Zinnia-gevechtsmuziek (ORAS), Zinnia voor de Sky Pillar
+#define MUS_GROUNDED_VS_NEO_PLASMA  622 // Project Grounded: Neo Team Plasma-gevechtsmuziek (Black 2/White 2, MIDI van Byabbington)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

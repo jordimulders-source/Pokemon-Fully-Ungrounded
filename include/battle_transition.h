@@ -103,6 +103,7 @@ enum BattleTransition
     B_TRANSITION_VICTINI, // Project Grounded: Victini, een grote V in vuur (V-create)
     B_TRANSITION_JIRACHI, // Project Grounded: Jirachi, een wensster tuimelt fladderend over het beeld
     B_TRANSITION_DARKRAI, // Project Grounded: Darkrai, nachtmerrierook sluit het beeld en een blauw oog gaat open
+    B_TRANSITION_NEO_PLASMA, // Project Grounded: Neo Team Plasma (BW2): blauwe P, lichtstreep-Z, flits, schild, bliksems
     B_TRANSITION_COUNT
 };
 

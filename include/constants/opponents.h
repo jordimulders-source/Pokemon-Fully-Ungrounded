@@ -1006,7 +1006,14 @@
 #define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
 
-#define TRAINERS_COUNT                      989
+// Project Grounded: Battle Stadium (Neo Team Plasma, Pokémon Black 2/White 2)
+#define TRAINER_STADIUM_ZINZOLIN            989
+#define TRAINER_STADIUM_SHADOW_TRIAD        990
+#define TRAINER_STADIUM_PLASMA_GRUNT_M      991
+#define TRAINER_STADIUM_PLASMA_GRUNT_F      992
+#define TRAINER_STADIUM_ROOD                993
+
+#define TRAINERS_COUNT                      994
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

@@ -182,7 +182,12 @@
 #define TRAINER_PIC_MUSTARD               164 // Project Grounded: Kubfu-dojo (Gen 3-versie van zijn artwork)
 #define TRAINER_PIC_N                     165 // Project Grounded: Battle Stadium (N, sheet van Delgatron)
 #define TRAINER_PIC_GHETSIS               166 // Project Grounded: Battle Stadium (Ghetsis, schreeuwend)
-#define TRAINER_PIC_COUNT                 167
+#define TRAINER_PIC_ZINZOLIN              167 // Project Grounded: Battle Stadium (Neo Plasma, BW2-sprite)
+#define TRAINER_PIC_SHADOW_TRIAD          168 // Project Grounded: Battle Stadium (Neo Plasma, BW2-sprite)
+#define TRAINER_PIC_NEO_PLASMA_GRUNT_M    169 // Project Grounded: Battle Stadium (Neo Plasma, BW2-sprite)
+#define TRAINER_PIC_NEO_PLASMA_GRUNT_F    170 // Project Grounded: Battle Stadium (Neo Plasma, BW2-sprite)
+#define TRAINER_PIC_ROOD                  171 // Project Grounded: Battle Stadium (Neo Plasma, BW2-sprite)
+#define TRAINER_PIC_COUNT                 172
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -441,6 +446,9 @@ enum TrainerClassID
     TRAINER_CLASS_COLLECTION, // Project Grounded: Battle Stadium (trio-compagnons: "THE REGIS")
     TRAINER_CLASS_KING, // Project Grounded: Battle Stadium (N)
     TRAINER_CLASS_PLASMA_BOSS, // Project Grounded: Battle Stadium (Ghetsis)
+    TRAINER_CLASS_SAGE, // Project Grounded: Battle Stadium (Zinzolin, Rood)
+    TRAINER_CLASS_SHADOW_TRIAD, // Project Grounded: Battle Stadium (Shadow Triad)
+    TRAINER_CLASS_NEO_PLASMA, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     TRAINER_CLASS_COUNT,
 };
 

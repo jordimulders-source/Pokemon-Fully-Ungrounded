@@ -33689,3 +33689,378 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Knock Off
 - U-turn
 - Bulk Up
+
+=== TRAINER_STADIUM_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Froslass @ Focus Sash
+Level: 50
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Spikes
+- Ice Beam
+- Shadow Ball
+- Destiny Bond
+
+Cryogonal @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Abomasnow @ Leftovers
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Giga Drain
+- Earth Power
+- Ice Shard
+
+Vanilluxe @ Choice Specs
+Level: 50
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Mamoswine @ Life Orb
+Level: 50
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Weavile @ Razor Claw
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== TRAINER_STADIUM_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Banette @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Will-O-Wisp
+- Poltergeist
+- Knock Off
+- Destiny Bond
+
+Absol @ Life Orb
+Level: 50
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Greninja @ Expert Belt
+Level: 50
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Honchkrow @ Choice Band
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Superpower
+
+Bisharp @ Eviolite
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_STADIUM_PLASMA_GRUNT_M ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Watchog @ Focus Sash
+Level: 50
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Hypnosis
+- Super Fang
+- Knock Off
+- Low Kick
+
+Garbodor @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Gunk Shot
+- Drain Punch
+- Toxic Spikes
+- Spikes
+
+Scrafty @ Leftovers
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 SpD
+Nature: Careful
+- Bulk Up
+- Drain Punch
+- Knock Off
+- Rest
+
+Crobat @ Sharp Beak
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Durant @ Choice Scarf
+Level: 50
+Ability: Hustle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Iron Head
+- X-Scissor
+- Superpower
+- Rock Slide
+
+Golurk @ Life Orb
+Level: 50
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dynamic Punch
+- Earthquake
+- Poltergeist
+- Stone Edge
+
+=== TRAINER_STADIUM_PLASMA_GRUNT_F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Liepard @ Focus Sash
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 Spe
+Nature: Timid
+- Thunder Wave
+- Encore
+- Foul Play
+- Fake Out
+
+Galvantula @ Focus Sash
+Level: 50
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sticky Web
+- Thunder
+- Bug Buzz
+- Energy Ball
+
+Amoonguss @ Black Sludge
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 SpA / 252 SpD
+Nature: Calm
+- Spore
+- Giga Drain
+- Sludge Bomb
+- Clear Smog
+
+Klinklang @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gear Grind
+- Wild Charge
+- Substitute
+
+Mienshao @ Life Orb
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- High Jump Kick
+- U-turn
+- Knock Off
+
+Chandelure @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Fire Blast
+- Energy Ball
+- Trick
+
+=== TRAINER_STADIUM_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Audino @ Leftovers
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Wish
+- Protect
+- Heal Bell
+- Knock Off
+
+Alomomola @ Rocky Helmet
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Scald
+- Wish
+- Protect
+- Toxic
+
+Mandibuzz @ Leftovers
+Level: 50
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Musharna @ Leftovers
+Level: 50
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+Nature: Bold
+- Calm Mind
+- Moonblast
+- Psyshock
+- Moonlight
+
+Gothitelle @ Choice Scarf
+Level: 50
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover

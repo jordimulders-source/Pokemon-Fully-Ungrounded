@@ -628,6 +628,7 @@ gSongTable::
 	song mus_grounded_vs_broken_pier, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_sunset_wilds, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zinnia, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_neo_plasma, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

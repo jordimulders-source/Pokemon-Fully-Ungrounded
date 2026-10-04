@@ -1334,6 +1334,106 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntM = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_NeoPlasmaGruntM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntF = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_NeoPlasmaGruntF,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinzolin = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ZINZOLIN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Zinzolin,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ROOD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Rood,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Battle Stadium (Neo Plasma)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadowTriad = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHADOW_TRIAD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShadowTriad,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 // Project Grounded
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .tileTag = TAG_NONE,

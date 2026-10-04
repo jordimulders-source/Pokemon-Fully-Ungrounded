@@ -1827,3 +1827,152 @@ for i in (14, 15, 2):
 ZSPAL[8] = (31, 4, 2)                                           # ogen
 ZSPAL[12] = (6, 6, 5)                                           # tanden
 save_sprite('zarude_silhouette', zsil, ZSPAL)
+
+
+# ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): de
+# Poison Chain. Paarse, gloeiende ovale schakels, om en om plat en op hun kant, haken in elkaar en vormen een ketting
+# die in een boog over het (donker-paarse) beeld loopt; de schakels komen kort na elkaar op en blijven dan staan.
+# route_poisonchain.png (tiles) + route_poisonchain_map.bin: per stap k (1..PC_N) een 30x20 tilemap (u16, met
+# flip-bits) met de eerste k schakels. Tiles ook gespiegeld ontdubbeld. 4 paletten: de gloed pulseert licht.
+import numpy as np
+from scipy import ndimage
+from PIL import Image
+PC_BASE = [(0, 0, 0), (3, 0, 6), (6, 0, 10), (11, 1, 17), (17, 3, 24), (9, 1, 15), (15, 3, 22), (21, 5, 28),
+           (26, 9, 31), (29, 16, 31), (31, 25, 31)]
+PC_SS = 3                                                     # supersampling
+
+
+def pc_curve(s):
+    """kwadratische bezier: linksonder buiten beeld -> boog -> rechtsboven buiten beeld"""
+    p0, p1, p2 = np.array((-35.0, 170.0)), np.array((75.0, 40.0)), np.array((280.0, 5.0))
+    return (1 - s) ** 2 * p0 + 2 * (1 - s) * s * p1 + s * s * p2
+
+
+ss = np.linspace(0, 1, 4001)
+pts = np.array([pc_curve(s) for s in ss])
+arc = np.concatenate([[0], np.cumsum(np.hypot(*np.diff(pts, axis=0).T))])
+PC_PITCH, PC_LEN, PC_WID, PC_TH = 40.0, 60.0, 36.0, 8.0
+links = []
+d = 8.0
+while d < arc[-1] - 4:
+    i = np.searchsorted(arc, d)
+    a, b = pts[max(0, i - 3)], pts[min(len(pts) - 1, i + 3)]
+    t = (b - a) / np.hypot(*(b - a))
+    links.append((pts[i], t))
+    d += PC_PITCH
+PC_N = len(links)
+
+H, W = 160 * PC_SS, 240 * PC_SS
+yy, xx = np.mgrid[0:H, 0:W]
+X, Y = (xx + 0.5) / PC_SS, (yy + 0.5) / PC_SS
+LIGHT = np.array((-0.6, -0.8))                                 # licht van linksboven
+
+
+def pc_link(k):
+    """(masker, helderheid 0..1, omlijning) van schakel k op supersample-resolutie"""
+    (cx, cy), (tx, ty) = links[k]
+    u = (X - cx) * tx + (Y - cy) * ty                          # langs de ketting
+    v = -(X - cx) * ty + (Y - cy) * tx                         # dwars
+    if k % 2 == 0:
+        # plat: ovale ring (stadionvorm), buis van dikte PC_TH
+        b = PC_WID / 2
+        r = b - PC_TH / 2
+        half = PC_LEN / 2 - b
+        du = np.clip(np.abs(u) - half, 0, None)
+        dist = np.hypot(du, v)
+        q = dist - r
+        inside = np.abs(q) <= PC_TH / 2
+        prof = q / (PC_TH / 2)
+        w = PC_TH / 2
+    else:
+        # op zijn kant: smal en langwerpig, met een donkere spleet tussen de twee draden
+        w = PC_TH * 0.95
+        half = PC_LEN / 2 - w
+        du = np.clip(np.abs(u) - half, 0, None)
+        dist = np.hypot(du, v)
+        inside = dist <= w
+        q = dist
+        prof = dist / w
+    nx = (np.sign(u) * du * tx - v * ty) / np.maximum(dist, 1e-6)
+    ny = (np.sign(u) * du * ty + v * tx) / np.maximum(dist, 1e-6)
+    lam = (nx * LIGHT[0] + ny * LIGHT[1]) * np.clip(prof, -1, 1)
+    bright = 0.3 + 0.45 * lam + 0.35 * np.sqrt(np.clip(1 - prof ** 2, 0, 1))
+    if k % 2 == 1:
+        slot = (np.abs(u) < half - 1) & (np.abs(v) < 0.9)
+        bright = np.where(slot, 0.1, bright)
+        outline = dist <= w + 1.2
+    else:
+        outline = np.abs(q) <= w + 1.2
+    return inside, np.clip(bright, 0, 1), outline
+
+
+PC_LINKS = [pc_link(k) for k in range(PC_N)]
+
+
+def pc_render(n):
+    """beeld (160x240, paletindex) met de eerste n schakels"""
+    body = np.zeros((H, W), bool)
+    br = np.zeros((H, W))
+    ol = np.zeros((H, W), bool)
+    # platte ringen eerst, de schakels op hun kant eroverheen (die haken door de ringen)
+    for k in [k for k in range(n) if k % 2 == 0] + [k for k in range(n) if k % 2 == 1]:
+        ins, b, o = PC_LINKS[k]
+        body &= ~(o & ~ins)                                    # rand van de bovenste schakel snijdt de onderste
+        ol |= o & ~ins
+        br = np.where(ins, b, br)
+        body |= ins
+        ol &= ~body
+
+    def down(m):
+        return m.reshape(160, PC_SS, 240, PC_SS).mean(axis=(1, 3))
+    bodyf = down(body.astype(float))
+    brf = down(np.where(body, br, 0)) / np.maximum(bodyf, 1e-6)
+    olf = down(ol.astype(float))
+    img = np.zeros((160, 240), np.uint8)
+    solid = bodyf >= 0.5
+    edge = (~solid) & (olf >= 0.3)
+    dist = ndimage.distance_transform_edt(~(solid | edge))
+    img[(dist > 0) & (dist <= 9)] = 2
+    img[(dist > 0) & (dist <= 5.5)] = 3
+    img[(dist > 0) & (dist <= 2.5)] = 4
+    img[edge] = 1
+    lv = np.clip((brf * 6).astype(int), 0, 5)
+    img[solid] = 5 + lv[solid]
+    return img
+
+
+pc_tiles, pc_idx, pc_maps = [], {}, []
+
+
+def pc_tile_id(t):
+    """tile-index met flip-bits (bit 10 = h, bit 11 = v); 0 = leeg"""
+    if not any(t):
+        return 0
+    a = np.array(t, np.uint8).reshape(8, 8)
+    for flip, var in ((0, a), (0x400, a[:, ::-1]), (0x800, a[::-1, :]), (0xC00, a[::-1, ::-1])):
+        key = var.tobytes()
+        if key in pc_idx:
+            return pc_idx[key] | flip
+    pc_tiles.append([int(v) for v in t])
+    pc_idx[a.tobytes()] = len(pc_tiles)
+    return len(pc_tiles)
+
+
+for n in range(1, PC_N + 1):
+    im = pc_render(n)
+    for ty in range(20):
+        for tx in range(30):
+            pc_maps.append(pc_tile_id(tuple(im[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8].flatten())))
+assert len(pc_tiles) < 760, len(pc_tiles)
+open(OUT + 'route_poisonchain_map.bin', 'wb').write(struct.pack('<%dH' % len(pc_maps), *pc_maps))
+pc_pals = []
+for f in range(4):
+    g = [0, 1, 2, 1][f]                                         # gloed: dof, half, fel, half
+    pal = list(PC_BASE)
+    pal[2] = (6 + g, 0, 10 + 2 * g)
+    pal[3] = (11 + 2 * g, 1 + g // 2, 17 + 2 * g)
+    pal[4] = (17 + 2 * g, 3 + g, 24 + 2 * g)
+    pal[10] = (31, 25 + g * 2, 31)
+    pc_pals.append(pad(pal))
+save('poisonchain', pc_tiles, pc_pals)
+print('poisonchain', PC_N, 'schakels')

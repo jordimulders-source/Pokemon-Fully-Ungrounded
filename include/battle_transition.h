@@ -106,6 +106,7 @@ enum BattleTransition
     B_TRANSITION_NEO_PLASMA, // Project Grounded: Neo Team Plasma (BW2): blauwe P, lichtstreep-Z, flits, schild, bliksems
     B_TRANSITION_ROCKET, // Project Grounded: Team Rocket, zwarte balken met rode strepen en een stempelende rode R
     B_TRANSITION_ZARUDE, // Project Grounded: Zarude, de jungle groeit dicht, lianen, drie klauwkrassen en een silhouet met rode ogen
+    B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
     B_TRANSITION_COUNT
 };
 

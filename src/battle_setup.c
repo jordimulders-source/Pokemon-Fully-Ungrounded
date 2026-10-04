@@ -577,10 +577,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_ZARUDE_DADA:
         CreateBattleStartTask(B_TRANSITION_ZARUDE, MUS_GROUNDED_VS_ZARUDE);
         break;
-    case SPECIES_OKIDOGI: // Project Grounded: Ogerpon-quest, de Loyal Three: gif-doodshoofd (Toxic Chain)
+    case SPECIES_OKIDOGI: // Project Grounded: Ogerpon-quest, de Loyal Three: hun paarse Poison Chain
     case SPECIES_MUNKIDORI:
     case SPECIES_FEZANDIPITI:
-        CreateBattleStartTask(B_TRANSITION_KOFFING, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_OGERPON_TEAL: // Project Grounded: Ogerpon in Fortree Jungle, door het regenwoud
     case SPECIES_OGERPON_WELLSPRING:

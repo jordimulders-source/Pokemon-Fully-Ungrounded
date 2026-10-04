@@ -559,9 +559,11 @@
 #define MUS_GROUNDED_VS_ZINNIA      621 // Project Grounded: Zinnia-gevechtsmuziek (ORAS), Zinnia voor de Sky Pillar
 #define MUS_GROUNDED_VS_ZARUDE      622 // Project Grounded: "Battle! Zarude", eigen compositie (tools/grounded/zarude_theme.py)
 #define MUS_GROUNDED_VS_NEO_PLASMA  623 // Project Grounded: Neo Team Plasma-gevechtsmuziek (Black 2/White 2, MIDI van Byabbington)
-#define MUS_GROUNDED_VS_WALLY_1     624 // Project Grounded: Battle! Wally, kneuzerige versie (Mauville)
-#define MUS_GROUNDED_VS_WALLY_2     625 // Project Grounded: Battle! Wally, groeiende versie (Meteor Falls)
-#define MUS_GROUNDED_VS_WALLY_3     626 // Project Grounded: Battle! Wally, eindversie (Victory Road)
+#define MUS_GROUNDED_VS_WALLY_1     624 // Project Grounded: Battle! Wally 1, fluitje + akoestisch, traag (nog vrij gevecht)
+#define MUS_GROUNDED_VS_WALLY_2     625 // Project Grounded: Battle! Wally 2, fluit + akoestisch (nog vrij gevecht)
+#define MUS_GROUNDED_VS_WALLY_3     626 // Project Grounded: Battle! Wally 3, kneuzerig (Mauville)
+#define MUS_GROUNDED_VS_WALLY_4     627 // Project Grounded: Battle! Wally 4, groeiend (Meteor Falls)
+#define MUS_GROUNDED_VS_WALLY_5     628 // Project Grounded: Battle! Wally 5, heavy metal (Victory Road, rematches)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

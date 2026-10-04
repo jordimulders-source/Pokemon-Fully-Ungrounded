@@ -16280,3 +16280,32 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - Je vecht met een tijdelijk testteam van 2× Arceus lv 100, dat altijd gehoorzaamt. Party, geld, Pokédex, statistieken en flags worden na afloop teruggezet: de save blijft onveranderd, ook bij vangen of verliezen.
 - Route-transities zitten er niet in (die hangen van de kaart af); daarvoor blijft "Wild battle (map)".
 - Fix: het debugmenu had ruimte voor 20 items, maar Utilities en "Legendary battle…" hadden er meer (schrijven buiten de buffer). De limiet is nu 50.
+
+### [v.0.9.24] - Signature moves ronde 2
+- Negen nieuwe signature moves, elk met een eigen animatie (constanten 866–874; tests in `test/battle/grounded/signature_moves_2.c`, 16/16):
+  - **Eclipse** (Solrock/Lunatone, 80): Rock/fysiek als Attack hoger is (zon), anders Psychic/speciaal (maan). ×1,5 op het eigen moment van de dag (echte klok).
+  - **Tipsy Waltz** (Spinda, Normal 80/90, dans): 50% verwarring. Is Spinda zelf verward, dan dubbele kracht en raakt hij zichzelf niet.
+  - **Weather Report** (Castform, 50/100): zet het weer waar het doelwit het zwakst tegen is (ook Snow Storm, Acid Rain, Pollen Haze) en slaat toe als Weather Ball. "Castform checked the forecast…"
+  - **Venom Dust** (Dustox, status): vergiftigt beide tegenstanders en verlaagt hun Speed.
+  - **Straight Line** (Linoone, Normal 70, +1 prioriteit): dubbel als hij vorige beurt ook Straight Line deed.
+  - **Wind Chime** (Chimecho, Psychic 60, geluid, beide tegenstanders): healt het eigen team 1/8. Met Tailwind dubbele kracht en 1/4 heal, tegen een doelwit met status ×1,5. Chimecho leert Tailwind op lv 30.
+  - **Primeval Ward** (Relicanth, status; naam uit Living Fossil, alternatieven Timeless Scales / Abyssal Bulwark): +1 Def/Sp. Def, tegenstanders kunnen zijn stats niet meer verlagen tot hij wisselt. "Relicanth hasn't changed in 100 million years. Why start now?"
+  - **Gulp Down** (Swalot, Poison 70): slikt het item van het doelwit in, healt 25% en houdt het effect van dat item als tweede item (Leftovers, Life Orb, Choice-boost zonder lock, Assault Vest, Rocky Helmet…). Bessen worden meteen gegeten, verbruiksitems doen niets ("It tasted of absolutely nothing.").
+  - **Nine Lives** (Delcatty, 1× per gevecht): overleeft de volgende KO met 1 HP en geneest zijn status. "…landed on its feet! Eight lives to go."
+
+### [v.0.9.25] - Wally in vijf versies, geen afgekapte noten meer
+- **Battle! Wally** heeft nu vijf versies:
+  - 1: fluitje + akoestische gitaar, traag en wimpy.
+  - 2: fluit, klarinet en akoestische gitaar.
+  - 3 (Mauville) en 4 (Meteor Falls): de vorige 1 en 2.
+  - 5 (Victory Road en rematches): heavy metal, sneller, met distortion-gitaar en -bas, dubbele bassdrum en crashes.
+  - 1 en 2 (`MUS_GROUNDED_VS_WALLY_1/2`) zijn vrij voor Jordi's nieuwe Wally-gevechten. In het debugmenu staan nu Wally 3/4/5.
+- **Snips opgelost:**
+  - De engine mixte maar 5 DirectSound-kanalen, terwijl Wally tot 17 noten tegelijk speelde. Elke nieuwe noot kapte dan een andere af.
+  - De engine mixt nu 8 kanalen (`src/m4a.c`). Alle muziek profiteert daarvan.
+  - Een stemverdeler in `wally_theme.py` houdt het aantal noten tegelijk eronder, met voorrang voor de melodie.
+  - De dubbele noten in de bron-MIDI worden ontdubbeld.
+- **Zelflerend componeren:**
+  - `tools/grounded/MUZIEK.md` is het geheugen voor muziekwerk: werkwijze, engine-limieten, smaak van Jordi en een log per feedbackronde.
+  - `tools/grounded/music_lint.py` controleert elke MIDI automatisch op te veel noten tegelijk, dubbele noten, PSG-piepjes, drumnoten buiten de kit en te lage bas.
+  - `recaudio.py` werkt de buffer-glitches van mGBA weg; die gaven de snips op 3 en 11 s in de previews.

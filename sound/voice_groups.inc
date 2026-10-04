@@ -206,3 +206,4 @@
 .include "sound/voicegroups/grounded_wally.inc"
 .include "sound/voicegroups/grounded_dave.inc"
 .include "sound/voicegroups/grounded_mewtwo.inc"
+.include "sound/voicegroups/grounded_beasts.inc"

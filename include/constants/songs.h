@@ -567,6 +567,9 @@
 #define MUS_GROUNDED_VS_REGIGIGAS   629 // Project Grounded: Battle! Regigigas, bombastische remix van het Regi-thema met Slow Start
 #define MUS_GROUNDED_VS_DAVE        630 // Project Grounded: Dave (Victory Road, Stadium), Freed From Desire (Gala)
 #define MUS_GROUNDED_VS_MEWTWO      631 // Project Grounded: Battle! Mewtwo, eigen compositie (trance, de imperfecte kloon)
+#define MUS_GROUNDED_VS_SUICUNE     632 // Project Grounded: beasts-thema + klokken (zuiverheid, regen)
+#define MUS_GROUNDED_VS_ENTEI       633 // Project Grounded: beasts-thema + elektrische gitaar (vuur)
+#define MUS_GROUNDED_VS_RAIKOU      634 // Project Grounded: beasts-thema + zoemende synths (onweer)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

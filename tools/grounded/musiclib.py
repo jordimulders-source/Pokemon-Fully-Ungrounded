@@ -162,3 +162,24 @@ def release_ticks(rel, tpb, bpm):
         return tpb * 4
     frames = math.log(1 / 16) / math.log(max(rel, 1) / 256) if rel > 0 else 1
     return int(frames * tpb * bpm / 3600) + 1
+
+
+def ds_occupancy(track, rel, tpb, bpm, drum_len=None):
+    """(start, eind) per DirectSound-noot van een bestaand spoor, met het instrument dat op dát moment actief is
+    (sporen wisselen soms van programma). PSG-noten tellen niet mee; drums (programma 0/127 drumkit) kort."""
+    tick, prog, on, out = 0, 0, {}, []
+    for x in track:
+        tick += x.time
+        if x.type == 'program_change':
+            prog = x.program
+        if x.type == 'note_on' and x.velocity:
+            on.setdefault(x.note, []).append((tick, prog))
+        elif x.type in ('note_on', 'note_off') and on.get(x.note):
+            s, p = on[x.note].pop(0)
+            r = rel.get(p, 200)
+            if r is None:
+                if drum_len:
+                    out.append((s, min(tick, s + drum_len)))
+                continue
+            out.append((s, tick + release_ticks(r, tpb, bpm)))
+    return out

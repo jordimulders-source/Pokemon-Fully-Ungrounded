@@ -6191,10 +6191,12 @@ u16 GetBattleBGM(void)
         return MUS_VS_REGI;
     case SPECIES_REGIGIGAS: // Project Grounded: eigen thema met Slow Start
         return MUS_GROUNDED_VS_REGIGIGAS;
-    case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema
+    case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema, per beest een eigen laag (HGSS-stijl)
+        return MUS_GROUNDED_VS_RAIKOU;
     case SPECIES_ENTEI:
+        return MUS_GROUNDED_VS_ENTEI;
     case SPECIES_SUICUNE:
-        return MUS_C_VS_LEGEND_BEAST;
+        return MUS_GROUNDED_VS_SUICUNE;
     case SPECIES_JIRACHI: // Project Grounded: wens-event in Fallarbor
         return MUS_VS_MEW;
     case SPECIES_DARKRAI: // Project Grounded: nachtmerrie op Mt. Pyre

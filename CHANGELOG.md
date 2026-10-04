@@ -16493,3 +16493,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - De muziekbuffer (16 sporen) staat weer in het snelle IWRAM. In plaats daarvan is de buffer van de draadloze adapter (`gRfu`, 3,3 KB, in deze romhack ongebruikt) naar EWRAM verplaatst.
 - IWRAM staat nu op 79% (was 89%). Gemeten in een gevecht: de stack gebruikt ±2,2 KB, en er blijft 4240 bytes marge over (met de originele opzet was dat 1344).
 - Vertraagde frames in gevechten: gelijk in beide opzetten (de verschillen per run komen van de moves en animaties).
+
+### [v.0.9.58] - Legendary beasts: elk hun eigen variant
+- Raikou, Entei en Suicune krijgen elk een eigen variant van het beasts-thema (`tools/grounded/beasts_theme.py`), in HGSS-stijl. Het originele nummer blijft ongewijzigd; per beest komt er één kenmerkende laag bovenop:
+  - **Suicune** (`MUS_GROUNDED_VS_SUICUNE`): heldere, galmende buisklokken op de melodie (zuiverheid, rust), plus glockenspiel-druppels op de arpeggio's (regen).
+  - **Entei** (`MUS_GROUNDED_VS_ENTEI`): een elektrische gitaar, met een overdrive-lead op de melodie en distortion-power-chords op de baslijn (vuur, vulkaan).
+  - **Raikou** (`MUS_GROUNDED_VS_RAIKOU`): scherpe, zoemende synths, met een smalle blokgolf op de melodie, snelle "zaps" op de arpeggio's en zachte knetters (elektriciteit, onweer).
+- Elk beest speelt zijn eigen variant in zijn event en in de debug-lijst "Battle test…".
+- `musiclib.ds_occupancy()` rekent de kanaalbezetting per noot uit, ook als een spoor van instrument wisselt.

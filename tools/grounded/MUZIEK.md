@@ -134,6 +134,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   filmisch vertraagd en op de maten van de muziek gelegd (1 maat = 112 frames bij 128 bpm), daarna 1 ademmaat voor
   de cry + 1 opbouwmaat. 'Maximalistischer zonder het bestaande te veranderen' -> lagen op de vrije PSG-kanalen
   (delay-arp op vierkant 2, sub op de golf, shaker en riser op ruis): kosten geen DirectSound-kanalen.
+- Beasts (`beasts_theme.py`): origineel (voicegroup_dummy, 3 sporen die van instrument wisselen) + één laag per beest.
+  Sporen die midden in het nummer van programma wisselen: bezetting per noot rekenen (`musiclib.ds_occupancy`),
+  anders klopt de stemverdeling niet met de lint. Glockenspiel met korte release (170) i.p.v. 242.
 - Open: `mus_grounded_vs_zarude.mid` geeft nog meldingen in de lint (dubbele noten in de tomroffel, soms 9–10
   noten tegelijk). Jordi keurde hem goed; repareren bij de volgende Zarude-ronde.
 - Dave / Freed From Desire (v1, `freed_theme.py`): bladmuziek voor **Bb-trompet** staat een grote secunde hoger

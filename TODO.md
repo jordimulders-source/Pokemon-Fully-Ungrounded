@@ -4,7 +4,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Muziek: Neo Plasma-thema verbeteren** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington, BW2). Jordi is er nog niet helemaal tevreden over; eerst vragen wat er beter moet. Werkwijze en controles: `tools/grounded/MUZIEK.md` (lint, max. 16 sporen, kanaalverdeling, opname met recaudio/recpcm).
+- **Muziek: Neo Plasma-thema verbeteren** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington, BW2). Jordi: "het is een puur synth-deuntje geworden; qua instrumentgebruik lijkt het totaal niet op het origineel dat ik heb toegevoegd." Dus: per spoor van de bron-MIDI het GM-instrument uitlezen (program_change) en het dichtstbijzijnde echte sample kiezen (strijkers, koper, piano, drums…) i.p.v. PSG/synth; het origineel als voorbeeld nemen, net als bij Dave. Werkwijze en controles: `tools/grounded/MUZIEK.md` (lint, max. 16 sporen, kanaalverdeling, opname met recaudio/recpcm).
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde

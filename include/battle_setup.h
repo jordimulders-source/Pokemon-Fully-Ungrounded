@@ -60,6 +60,7 @@ void BattleSetup_StartScriptedDoubleWildBattle(void);
 void BattleSetup_StartLatiBattle(void);
 void BattleSetup_StartLegendaryBattle(void);
 void BattleSetup_StartSpireBattle(void);
+void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCallback)(void)); // Project Grounded: debugmenu
 void StartGroudonKyogreBattle(void);
 void StartRegiBattle(void);
 enum BattleEnvironments BattleSetup_GetEnvironmentId(void);

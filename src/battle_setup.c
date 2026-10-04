@@ -479,6 +479,27 @@ void BattleSetup_StartSpireBattle(void)
     CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_FRONTIER_BRAIN);
 }
 
+// Project Grounded: debugmenu "Battle test…": een trainergevecht met dezelfde transitie en muziek als in de game,
+// maar zonder trainerflags, Match Call of white-out (het eindcallback komt uit debug.c). Met een tweede trainer
+// wordt het een dubbel tegen twee trainers (zoals Archie + Maxie in Sootopolis).
+void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCallback)(void))
+{
+    memset(gTrainerBattleParameter.data, 0, sizeof(TrainerBattleParameter));
+    sTrainerBattleEndScript = NULL;
+    TRAINER_BATTLE_PARAM.opponentA = trainerA;
+    TRAINER_BATTLE_PARAM.opponentB = trainerB;
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+    if (trainerB != TRAINER_NONE)
+        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+    sNoOfPossibleTrainerRetScripts = 0;
+    gNoOfApproachingTrainers = 0;
+    sShouldCheckTrainerBScript = FALSE;
+    gWhichTrainerToFaceAfterBattle = 0;
+    gMain.savedCallback = endCallback;
+    LockPlayerFieldControls();
+    CreateBattleStartTask(GetTrainerBattleTransition(), 0);
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();

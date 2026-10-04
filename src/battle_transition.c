@@ -5133,7 +5133,7 @@ static bool8 Aurora_Brighten(struct Task *task)
         // wit vastzetten, zodat het uitfaden van wit naar zwart gaat (en de kleuren niet terugkomen)
         CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
-        task->tAuroraDelay = 12;
+        task->tAuroraDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5232,7 +5232,7 @@ static bool8 Deoxys_Flash(struct Task *task)
         CpuFill16(RGB_WHITE, &gPlttBufferUnfaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         CpuFill16(RGB_WHITE, &gPlttBufferFaded[BG_PLTT_ID(15)], PLTT_SIZE_4BPP);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-        task->tDeoxysDelay = 12;
+        task->tDeoxysDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5349,7 +5349,7 @@ static bool8 Birch_Drip(struct Task *task)
             for (c = 0; c < 32; c++)
                 tilemap[r * 32 + c] = Birch_SolidTile(r, c);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-        task->tBirchDelay = 20;
+        task->tBirchDelay = 10; // Project Grounded: korter vasthouden (was 20)
         task->tState++;
     }
     return FALSE;
@@ -5388,7 +5388,7 @@ static void Beasts_SetAllWhite(void)
 
 static bool8 Beasts_FadeOutAll(struct Task *task)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
     task->tState++;
     return FALSE;
 }
@@ -5465,7 +5465,7 @@ static bool8 Raikou_Storm(struct Task *task)
         // laatste klap: alles wit
         PlaySE(SE_THUNDER);
         Beasts_SetAllWhite();
-        task->tRaikouDelay = 16;
+        task->tRaikouDelay = 8; // Project Grounded: korter wit vasthouden (was 16)
         task->tState++;
     }
     return FALSE;
@@ -5606,7 +5606,7 @@ static bool8 Entei_Brighten(struct Task *task)
     if (task->tEnteiStep > 16)
     {
         Beasts_SetAllWhite();
-        task->tEnteiDelay = 12;
+        task->tEnteiDelay = 6; // Project Grounded: korter wit vasthouden (was 12)
         task->tState++;
     }
     return FALSE;
@@ -5714,7 +5714,7 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
         RT_LoadPalette(rt, task);
         if (rt->update(task))
         {
-            task->tRtDelay = 10;
+            task->tRtDelay = 2; // Project Grounded: kort vasthouden (was 10)
             task->tState++;
         }
         task->tRtTimer++;
@@ -5726,7 +5726,7 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
             if (rt->sound)
                 m4aSongNumStop(rt->sound);
             CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
-            BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
             task->tState++;
         }
         break;
@@ -6157,7 +6157,7 @@ static void Task_RouteHeat(u8 taskId)
             if (t >= 75)
             {
                 CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
-                BeginNormalPaletteFade(PALETTES_ALL, 1, 0, 16, RGB_BLACK);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); // Project Grounded: snellere fade (was 1)
                 task->tState++;
             }
         }
@@ -6429,7 +6429,7 @@ static void Task_RouteShort(u8 taskId)
             }
             else
             {
-                task->tRtDelay = 8;
+                task->tRtDelay = 3; // Project Grounded: was 8
                 task->tState++;
             }
         }

@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Dave (Freed From Desire). Gegenereerd door tools/grounded/freed_theme.py.
-@ 2 = piano met korte release (stoten), 80 = zacht vierkant (50%) voor de hook, 81 = plukkend vierkant (25%) voor de saw-bas.
+@ 2 = piano met korte release (stoten), 80 = zacht vierkant (50%) voor de melodie, 81 = plukkend vierkant (25%) voor de saw-bas.
 voice_group grounded_dave
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1

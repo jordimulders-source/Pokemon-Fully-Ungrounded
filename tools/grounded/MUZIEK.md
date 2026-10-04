@@ -111,3 +111,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   `musiclib.allocate` accepteert nu een uitklinktijd per spoor (`tail={naam: ticks}`).
 - `recpcm.py` meldt veel "sprongen>40" bij hihat/tamboerijn (ruis-samples, 21 kHz): geen glitch zolang ze niet op
   framegrenzen (elke 352 samples) liggen.
+- Dave ronde 2 (Jordi: "lijkt een remix, melodieën in de verkeerde volgorde en door elkaar"): een bekend nummer
+  **niet** herschikken of uit losse secties samenstellen. Neem één aaneengesloten stuk van de bron in de originele
+  volgorde (Dave: bronmaat 49-52 intro, 53-85 loop) en kopieer de sporen 1-op-1; alleen instrumenten mappen, drums
+  omzetten, uitdunnen. Loop op een maatgrens met dezelfde overgang als in het nummer (85 C -> 53 Dm = 37 -> 38).
+  Melodie = het zangspoor van de MIDI; bladmuziek alleen als controle, nooit als extra stem erbovenop. Eén melodie
+  tegelijk (unisono-dubbeling mag); haal ook legato-overlap van 1-2 ticks in het melodiespoor weg.
+- Opname-glitch (mGBA): een venster met >= 4 exacte nullen binnen 12 samples terwijl de omgeving niet stil is;
+  overbruggen (±32 samples, lineair). Dave: één bij 11,5 s.

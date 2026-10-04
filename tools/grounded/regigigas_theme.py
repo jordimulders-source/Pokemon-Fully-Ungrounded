@@ -23,8 +23,10 @@ VG = 'grounded_regigigas'
 TPB = 24
 BAR = TPB * 4
 BASE_TEMPO = 375000                     # 160 bpm, zoals het origineel
-TRUMPET, HORN, CHOIR, TUBA, TAIKO, TIMPANI, DRUMS = 84, 85, 86, 87, 88, 47, 0
+TRUMPET, HORN, CHOIR, TUBA, TAIKO, TIMPANI, DRUMS, BELLS = 84, 85, 86, 87, 88, 47, 0, 89
 EXTRA = {84: 56, 85: 60, 86: 52, 87: 58, 88: 116}   # nieuwe programma's -> instrument uit grounded_gm
+BELL_LINE = 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 242'
+USE_BELLS = os.environ.get('REGI_BELLS', '1') == '1'   # buisklokken op de koraalnoten (A/B-test: REGI_BELLS=0)
 LOOP_START, LOOP_END = 20, 40
 # Climax (Jordi: 'epischer, de leider van de Regi's'): na maat 39 nog 8 maten = het hoofdthema (maat 20-27) een hele
 # toon hoger, met een vol koperkoor dat de melodie overneemt, taiko, crashes en pauken; daarna terug naar maat 20.
@@ -54,6 +56,7 @@ def voicegroup():
     out += [l for l in src if l.strip().startswith('voice_') and not l.strip().startswith('voice_group')]
     for prog in sorted(EXTRA):
         out.append('%s  @ %d' % (gm[EXTRA[prog]], prog))
+    out.append('\t%s  @ %d' % (BELL_LINE, BELLS))
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(out) + '\n')
 
 
@@ -150,8 +153,13 @@ def build():
     mv = lambda ev, tr=SHIFT: [[s + off, e + off, n + tr, v] for s, e, n, v in src_rng(ev)]
     add['trumpet'] = [[s, e, n, 120] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
     # de iconische Hoenn-trompet (Elite Four: voicegroup_trumpet_keysplit) speelt de Regi-melodie mee in de loop
-    add['trumpet'] = [[s, e, n, 104] for s, e, n, v in thin(T[1], 1, 'top')
+    # een octaaf hoger, anders versmelt hij met de strijkers/hoorn van het origineel (Jordi: 'hoor ik niet')
+    add['trumpet'] = [[s, e, n + 12, 112] for s, e, n, v in thin(T[1], 1, 'top')
                       if LOOP_START <= bar_of(s) < LOOP_END and bar_of(s) not in QUIET] + add['trumpet']
+    # buisklokken op het begin van elke lange koraalnoot (loop + climax): snijdt door de massa, oeroude tempel
+    add['bells'] = [[s, s + 48, n + 12, 116] for s, e, n, v in thin(T[1], 1, 'top')
+                    if LOOP_START <= bar_of(s) < LOOP_END and bar_of(s) not in QUIET and e - s >= TPB] if USE_BELLS else []
+    add['bells'] += [[s, s + 48, n + 12, 120] for s, e, n, v in mv(thin(T[1], 1, 'top')) if e - s >= TPB] if USE_BELLS else []
     add['horn'] = [[s, e, n, 112] for s, e, n, v in mv(thin(T[2], 1, 'top'))]
     add['choir'] += [[s, e, n - 12, 118] for s, e, n, v in mv(thin(T[1], 1, 'top'))]
     # tweestemmig: een diatonische terts erboven (E-mineur, de toonsoort van de climax)
@@ -194,12 +202,12 @@ def build():
                 continue
             preset.append((s, min(e, s + TPB) if prog == 0 else e + release_ticks(r, TPB, 160)))
     rel = releases(VG)
-    progs = {'trumpet2': TRUMPET, 'crash': DRUMS, 'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
+    progs = {'bells': BELLS, 'trumpet2': TRUMPET, 'crash': DRUMS, 'trumpet': TRUMPET, 'horn': HORN, 'choir': CHOIR, 'choir2': CHOIR, 'tuba': TUBA, 'taiko': TAIKO,
              'roll': TIMPANI, 'hits': TIMPANI, 'fanfare': TRUMPET}
     tail = {k: release_ticks(rel.get(p, 200), TPB, 160) for k, p in progs.items()}
     for k in ('choir', 'choir2', 'tuba', 'trumpet', 'trumpet2', 'horn'):
         add[k] = detach(add[k], tail[k])
-    order = ['roll', 'crash', 'trumpet', 'horn', 'choir', 'trumpet2', 'tuba', 'choir2', 'hits', 'taiko']
+    order = ['roll', 'crash', 'trumpet', 'bells', 'horn', 'choir', 'trumpet2', 'tuba', 'choir2', 'hits', 'taiko']
     kept = allocate(add, order, tail=tail, drum_parts=(), drum_len=None, max_voices=11, preset=preset)   # legendary: 11, 1 vrij voor effecten
     for k in order:
         if len(kept[k]) < len(add[k]) * 0.97:
@@ -236,7 +244,7 @@ def build():
     kept['choir'] = sorted(kept['choir'] + kept['choir2'])
     for k, prog, vol, ch, pan in (('trumpet', TRUMPET, 110, 8, 72), ('horn', HORN, 104, 11, 52), ('choir', CHOIR, 84, 10, 60),
                                   ('tuba', TUBA, 84, 12, 60), ('taiko', TAIKO, 88, 13, 64), ('roll', TIMPANI, 100, 14, 64),
-                                  ('crash', DRUMS, 100, 15, 64)):
+                                  ('crash', DRUMS, 100, 15, 64), ('bells', BELLS, 92, 9, 80)):
         out.tracks.append(note_track(kept[k], prog, vol, ch, pan))
         written.add(k)
     missing = [k for k in kept if kept[k] and k not in written and k not in ('trumpet2', 'choir2', 'hits')]

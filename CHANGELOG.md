@@ -16441,3 +16441,7 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 
 ### [v.0.9.49] - Regigigas: de Hoenn-trompet speelt mee
 - De iconische Hoenn-trompet uit de Elite Four-gevechten (`voicegroup_trumpet_keysplit`) speelt in de hele loop de Regi-melodie mee, en in de climax tweestemmig.
+
+### [v.0.9.50] - Regigigas: trompet een octaaf hoger, buisklokken
+- Vanaf de loop speelt de Hoenn-trompet de Regi-melodie een octaaf hoger. Daarvoor versmolt hij met de strijkers en hoorn van het origineel.
+- Buisklokken slaan het begin van elke lange koraalnoot aan, in de loop en in de climax. Dat is versie B uit een A/B-test; zonder klokken (A) bouw je met `REGI_BELLS=0 python3 tools/grounded/regigigas_theme.py`.

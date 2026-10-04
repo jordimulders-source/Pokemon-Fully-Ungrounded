@@ -89,3 +89,4 @@ voice_group grounded_regigigas
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 86
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 87
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 88
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 242  @ 89

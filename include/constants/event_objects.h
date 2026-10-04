@@ -269,7 +269,8 @@
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 #define OBJ_EVENT_GFX_MUSTARD                         260 // Project Grounded (Jordi's sheet)
-#define NUM_OBJ_EVENT_GFX                        261
+#define OBJ_EVENT_GFX_BURGLAR                         261 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
+#define NUM_OBJ_EVENT_GFX                        262
 
 
 // These are dynamic object gfx ids.
@@ -352,6 +353,8 @@
 #define LOCALID_BERRY_BLENDER_PLAYER_END   240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
 #define LOCALID_FOLLOWING_POKEMON          254
 #define LOCALID_PLAYER                     255
+#define LOCALID_BURGLAR_THIEF              200 // Project Grounded: gespawnd door src/burglar.c (geen kaartobject)
+#define LOCALID_BURGLAR_RESIDENT           201 // Project Grounded: bewoner van het beroofde huis
 #define OBJ_EVENT_ID_FOLLOWER              0xFE
 #define OBJ_EVENT_ID_NPC_FOLLOWER          0xFD
 
@@ -407,6 +410,7 @@
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x112A // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x112B // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_MUSTARD                  0x112C // Project Grounded
+#define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

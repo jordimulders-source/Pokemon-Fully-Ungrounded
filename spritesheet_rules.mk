@@ -316,6 +316,9 @@ $(OBJEVENTGFXDIR)/people/brock.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/mustard.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/burglar.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/misty.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

@@ -980,8 +980,13 @@
 #define TRAINER_DOJO_WATER_KEEPER           965
 #define TRAINER_MUSTARD                     966
 #define TRAINER_STADIUM_MUSTARD             967
+#define TRAINER_BURGLAR_1                   968 // Project Grounded: inbreker-event in de steden (1-2 badges)
+#define TRAINER_BURGLAR_2                   969 // 3-4 badges
+#define TRAINER_BURGLAR_3                   970 // 5-6 badges
+#define TRAINER_BURGLAR_4                   971 // 7-8 badges
+#define TRAINER_BURGLAR_5                   972 // na de Elite Four
 
-#define TRAINERS_COUNT                      968
+#define TRAINERS_COUNT                      973
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

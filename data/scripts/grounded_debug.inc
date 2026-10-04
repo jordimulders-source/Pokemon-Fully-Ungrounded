@@ -275,3 +275,27 @@ Debug_EventScript_Legend_Darkrai::
 	waitstate
 	releaseall
 	end
+
+@ Project Grounded: debugmenu Utilities > Burglar: force - de Burglar staat gegarandeerd klaar in deze stad (of de
+@ volgende inbrekersstad die je binnenloopt); loop vlak voor het huis langs om de scene te starten.
+Debug_EventScript_BurglarForce::
+	lockall
+	special Burglar_DebugForce
+	goto_if_eq VAR_RESULT, FALSE, Debug_EventScript_BurglarForce_Next
+	msgbox Debug_Text_BurglarForce_Here, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_EventScript_BurglarForce_Next::
+	msgbox Debug_Text_BurglarForce_Next, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Debug_Text_BurglarForce_Here:
+	.string "Burglar staat klaar in deze stad.\n"
+	.string "Loop vlak voor zijn huis langs.$"
+
+Debug_Text_BurglarForce_Next:
+	.string "Burglar komt in de volgende stad: Mauville,\n"
+	.string "Slateport, Lilycove, Rustboro, Verdanturf,\l"
+	.string "Fallarbor of Petalburg.$"

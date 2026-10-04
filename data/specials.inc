@@ -602,3 +602,14 @@ gSpecials::
 	def_special Grounded_PartyHasKubfu
 	def_special Grounded_EvolveKubfu
 	def_special IsNightTime
+	def_special Burglar_SetupVars
+	def_special Burglar_SpawnThief
+	def_special Burglar_SpawnResident
+	def_special Burglar_RestoreThief
+	def_special Burglar_ThiefApproachPlayer
+	def_special Burglar_ResidentApproachThief
+	def_special Burglar_ThiefFlee
+	def_special Burglar_ResidentGoHome
+	def_special Burglar_RemoveActor
+	def_special Burglar_Finish
+	def_special Burglar_DebugForce

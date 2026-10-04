@@ -396,6 +396,7 @@ extern const u8 Debug_EventScript_Legend_Mewtwo[];
 extern const u8 Debug_EventScript_Legend_Jirachi[];
 extern const u8 Debug_EventScript_Legend_Darkrai[];
 extern const u8 Debug_EventScript_WildFromMap[];
+extern const u8 Debug_EventScript_BurglarForce[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
 extern const u8 Debug_EventScript_SpirePrototype[];
@@ -609,6 +610,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },
+    { COMPOUND_STRING("Burglar: force"),    DebugAction_ExecuteScript, Debug_EventScript_BurglarForce },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
     { COMPOUND_STRING("The Spire"),         DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },

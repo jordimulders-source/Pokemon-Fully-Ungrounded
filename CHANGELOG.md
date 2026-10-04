@@ -16246,3 +16246,10 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **Top van Mt. Chimney:** drie extra nissen en twee rotspartijen (terrassen minder rechthoekig), plukken as-gras, dode bomen en stronken, gestolde lavastromen vanaf het kratermeer, zwavel langs de kraterrand en tien stoompluimen. Paden, events, zichtlijnen en het Strength-pad blijven vrij (gecontroleerd door `chimney_ext.py`).
 - **Mangrove Mire:** TM Rain Dance (lag er dubbel; TM's zijn herbruikbaar) vervangen door een **Toxic Orb**.
 - **Geen dubbele TM's meer** (Jordi): in Toadstool Hollow ligt een **Misty Seed** i.p.v. TM Giga Drain; Reginald (Victory Road) geeft een **Utility Umbrella** i.p.v. TM Flamethrower ("bewaard voor Sidney's begrafenis; het regent altijd op begrafenissen"). Beide items waren nog nergens te krijgen.
+
+### [v.0.9.20] - Wally's thema groeit met hem mee
+- **"Battle! Wally"** (ORAS, MIDI van Jordi) in drie arrangementen met dezelfde noten en dus dezelfde iconische melodie (`tools/grounded/wally_theme.py`):
+  1. **Mauville** (`MUS_GROUNDED_VS_WALLY_1`, kneuzerig): blokfluit op de melodie, Wally's eerste gitaar (nylon) op de riff, plukkende bas, alleen kick en tamboerijn, 12% trager.
+  2. **Meteor Falls** (`_2`): overdrive-gitaar, trompet op de melodie, trombone, zachte strijkers, vollere drums.
+  3. **Victory Road en de rematches** (`_3`): het eindresultaat met distortion-gitaar (in ORAS is de "piano" een elektrische gitaar), hoorn, viool, cello, trombone, volle drums.
+- Nieuwe voicegroup `grounded_wally` (= `grounded_gm` met echte gitaarsamples op 24–31 i.p.v. PSG-vierkantsgolven). Drumnoten 37 en 52 uit de MIDI zijn PSG-piepjes in `rs_drumset` en zijn omgezet naar snare en crash.

@@ -6137,8 +6137,13 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_CLASS_RIVAL:
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             return MUS_VS_RIVAL;
+        // Project Grounded: Wally's eigen thema groeit met hem mee (kneuzerig -> eindversie)
+        if (trainerId == TRAINER_WALLY_MAUVILLE)
+            return MUS_GROUNDED_VS_WALLY_1;
+        if (trainerId == TRAINER_WALLY_METEOR_FALLS)
+            return MUS_GROUNDED_VS_WALLY_2;
         if (!StringCompare(GetTrainerNameFromId(trainerId), gText_BattleWallyName))
-            return MUS_VS_TRAINER;
+            return MUS_GROUNDED_VS_WALLY_3;
         return MUS_VS_RIVAL;
     case TRAINER_CLASS_ELITE_FOUR:
         return MUS_VS_ELITE_FOUR;

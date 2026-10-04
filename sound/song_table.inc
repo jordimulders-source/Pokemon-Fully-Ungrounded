@@ -630,6 +630,9 @@ gSongTable::
 	song mus_grounded_vs_zinnia, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zarude, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_neo_plasma, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_1, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_2, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_3, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

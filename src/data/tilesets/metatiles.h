@@ -77,6 +77,8 @@ const u16 gMetatiles_SnowTown[] = INCBIN_U16("data/tilesets/secondary/snow_town/
 const u16 gMetatileAttributes_SnowTown[] = INCBIN_U16("data/tilesets/secondary/snow_town/metatile_attributes.bin");
 const u16 gMetatiles_MeteorFalls[] = INCBIN_U16("data/tilesets/secondary/meteor_falls/metatiles.bin");
 const u16 gMetatileAttributes_MeteorFalls[] = INCBIN_U16("data/tilesets/secondary/meteor_falls/metatile_attributes.bin");
+const u16 gMetatiles_MeteorSpace[] = INCBIN_U16("data/tilesets/secondary/meteor_space/metatiles.bin"); // Project Grounded: Deoxys-meteoriet
+const u16 gMetatileAttributes_MeteorSpace[] = INCBIN_U16("data/tilesets/secondary/meteor_space/metatile_attributes.bin");
 
 const u16 gMetatiles_OceanicMuseum[] = INCBIN_U16("data/tilesets/secondary/oceanic_museum/metatiles.bin");
 const u16 gMetatileAttributes_OceanicMuseum[] = INCBIN_U16("data/tilesets/secondary/oceanic_museum/metatile_attributes.bin");

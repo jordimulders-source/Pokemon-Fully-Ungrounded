@@ -4823,6 +4823,27 @@
           }
         },
         {
+          "map": "MAP_METEOR_SPACE",
+          "base_label": "gMeteorSpace",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_MINIOR_METEOR" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_LUNATONE" },
+              { "min_level": 47, "max_level": 49, "species": "SPECIES_SOLROCK" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_ELGYEM" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_CLEFAIRY" },
+              { "min_level": 46, "max_level": 48, "species": "SPECIES_METANG" },
+              { "min_level": 49, "max_level": 51, "species": "SPECIES_BEHEEYEM" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_CLEFFA" },
+              { "min_level": 48, "max_level": 50, "species": "SPECIES_GOTHITELLE" },
+              { "min_level": 50, "max_level": 51, "species": "SPECIES_CLEFABLE" },
+              { "min_level": 52, "max_level": 52, "species": "SPECIES_PORYGON_Z" },
+              { "min_level": 53, "max_level": 53, "species": "SPECIES_METAGROSS" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE102_MINI_FOREST",
           "base_label": "gRoute102_MiniForest",
           "land_mons": {

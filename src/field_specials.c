@@ -3346,6 +3346,15 @@ void SetDeoxysRockPalette(void)
     CpuFill16(RGB_BLACK, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], PLTT_SIZE_4BPP);
 }
 
+// Project Grounded: lancering vanuit het Space Center naar de meteoriet (Deoxys-event).
+// Valwarp zoals een gat in de vloer: de speler valt van boven het scherm op (VAR_0x8004, VAR_0x8005) en het beeld schudt.
+void DoMeteorSpaceFallWarp(void)
+{
+    SetWarpDestination(MAP_GROUP(MAP_METEOR_SPACE), MAP_NUM(MAP_METEOR_SPACE), WARP_ID_NONE, gSpecialVar_0x8004, gSpecialVar_0x8005);
+    DoFallWarp();
+    ResetInitialPlayerAvatarState();
+}
+
 void SetPCBoxToSendMon(u8 boxId)
 {
     sPCBoxToSendMon = boxId;

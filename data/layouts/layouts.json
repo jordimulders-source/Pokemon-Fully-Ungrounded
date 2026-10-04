@@ -4222,6 +4222,16 @@
       "blockdata_filepath": "data/layouts/BirthIsland_Exterior/map.bin"
     },
     {
+      "id": "LAYOUT_METEOR_SPACE",
+      "name": "MeteorSpace_Layout",
+      "width": 44,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorSpace",
+      "border_filepath": "data/layouts/MeteorSpace/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorSpace/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLAND_HARBOR",
       "name": "IslandHarbor_Layout",
       "width": 17,

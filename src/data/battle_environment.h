@@ -29,6 +29,7 @@ const u32 gBattleEnvironmentTilemap_Rock[] = INCBIN_U32("graphics/battle_environ
 const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environment/cave/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environment/cave/map.bin.smolTM");
+const u16 gBattleEnvironmentPalette_Space[] = INCBIN_U16("graphics/battle_environment/cave/space.gbapal"); // Project Grounded: Deoxys-meteoriet (meteor_space.py)
 
 const u16 gBattleEnvironmentPalette_Plain[] = INCBIN_U16("graphics/battle_environment/plain/palette.gbapal");
 
@@ -407,6 +408,15 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_DRACO_METEOR,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_DRAGON,
+        // Project Grounded: de meteoriet van het Deoxys-event: de grot met een donker paars palet
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Cave,
+            .tilemap = gBattleEnvironmentTilemap_Cave,
+            .entryTileset = gBattleEnvironmentAnimTiles_Cave,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Cave,
+            .palette = gBattleEnvironmentPalette_Space,
+        },
     },
 
     [BATTLE_ENVIRONMENT_ULTRA_SPACE] =

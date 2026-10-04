@@ -1308,10 +1308,10 @@
 #define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
 #define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
+#define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
+#define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte
+#define FLAG_ITEM_METEOR_SPACE_MOON_STONE                           0x4EB // Project Grounded: meteoriet in de ruimte
+#define FLAG_METEOR_SPACE_RETURNED                                  0x4EC // Project Grounded: een keer heelhuids terug uit de ruimte (kortere teksten daarna)
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag

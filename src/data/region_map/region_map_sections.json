@@ -1262,6 +1262,10 @@
     {
       "id": "MAPSEC_CRYSTAL_CAVITY",
       "name": "CRYSTAL CAVITY"
+    },
+    {
+      "id": "MAPSEC_OUTER_SPACE",
+      "name": "OUTER SPACE"
     }
   ]
 }

@@ -235,6 +235,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deoxys;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangleRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brandon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireBrendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
@@ -324,6 +325,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BROCK] =                    &gObjectEventGraphicsInfo_Brock,
     [OBJ_EVENT_GFX_COLRESS] =                  &gObjectEventGraphicsInfo_Colress,
     [OBJ_EVENT_GFX_ZINNIA] =                   &gObjectEventGraphicsInfo_Zinnia,
+    [OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED] =      &gObjectEventGraphicsInfo_DeoxysTriangleRed, // Project Grounded
     [OBJ_EVENT_GFX_MAN_4] =                    &gObjectEventGraphicsInfo_Man4,
     [OBJ_EVENT_GFX_MAN_5] =                    &gObjectEventGraphicsInfo_Man5,
     [OBJ_EVENT_GFX_REPORTER_M] =               &gObjectEventGraphicsInfo_ReporterM,

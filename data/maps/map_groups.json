@@ -457,7 +457,8 @@
     "RegielekiCave",
     "RegidragoCave",
     "RegigigasTemple",
-    "FieryPath_HeatranLair"
+    "FieryPath_HeatranLair",
+    "MeteorSpace"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -659,6 +659,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
+    // Project Grounded: de meteoriet in de ruimte (Deoxys-event)
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_METEOR_SPACE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_METEOR_SPACE))
+        return BATTLE_ENVIRONMENT_SPACE;
+
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))

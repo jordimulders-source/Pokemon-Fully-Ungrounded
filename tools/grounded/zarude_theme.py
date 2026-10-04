@@ -82,8 +82,12 @@ def groove(bar, full=True, soft=False):
         drums.note(bar, p, 1, nt, v - (18 if p in (3, 13, 15) else 0))
     if not full:
         return
-    for p in (0, 6, 10):
-        drums.note(bar, p, 1, 36, 120)               # kick
+    for p in (0, 6, 10, 14):
+        drums.note(bar, p, 1, 36, 120 if p != 14 else 96)   # kick
+    for p in range(0, 16, 2):                        # gesloten hi-hat in achtsten (sample, geen PSG)
+        drums.note(bar, p, 1, 42, 72 if p % 4 == 2 else 52)
+    for p in (4, 12):                                # tamboerijn op de backbeat (sample)
+        drums.note(bar, p, 1, 54, 74)
     for p in range(16):
         noise.note(bar, p, 0.5, 60, 50 if p % 2 else 80)
 

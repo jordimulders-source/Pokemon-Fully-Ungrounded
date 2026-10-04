@@ -16215,3 +16215,4 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
 - **De top van Mt. Chimney** (`MtChimney_Summit`, 36×40, as-weer): een trap in de bergkam noordoost van Mt. Chimney, vanaf badge 5 (een vulkanoloog houdt je eerder tegen). Drie terrassen naar een kratermeer met een vaste **Volcarona lv 40** ("de tweede zon boven de as"), een vulkanoloog die een **Flame Orb** geeft, een Magmarizer en een verborgen Star Piece.
   - Trainers (lv 37–39): Hiker Grant, Kindler Pyro (zonteam met Drought en Solar Power), Expert Vera.
 - Trainers 1007–1012; flags 0x4B3–0x4BD. Getest in de emulator (beide ingangen, de trap, de wachtpost, een trainer- en een wild gevecht, de Strength-nis).
+- **Battle! Zarude v6** (Jordi: "puup is eruit, groove iets minder kaal"): zachte gesloten hi-hat in achtsten, tamboerijn op de backbeat en een vierde kickslag in de loop. Alleen echte samples (gecontroleerd: geen PSG-drumnoten).

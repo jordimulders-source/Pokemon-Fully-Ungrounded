@@ -108,6 +108,9 @@ enum BattleTransition
     B_TRANSITION_ZARUDE, // Project Grounded: Zarude, de jungle groeit dicht, lianen, drie klauwkrassen en een silhouet met rode ogen
     B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
     B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
+    B_TRANSITION_STEVEN, // Project Grounded: Steven, verzamelkast, gloeiende steen met de badges in de facetten, spat uiteen
+    B_TRANSITION_WALLY_VHS, // Project Grounded: Wally (Victory Road), VHS-band van zijn groei, bevriest op zijn gezicht
+    B_TRANSITION_RAYQUAZA_PILLAR, // Project Grounded: Rayquaza, groene ring rond de Sky Pillar, Rayquaza breekt eruit
     B_TRANSITION_COUNT
 };
 

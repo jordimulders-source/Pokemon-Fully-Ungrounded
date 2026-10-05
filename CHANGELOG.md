@@ -16921,3 +16921,14 @@ Volgens Jordi's GBA-instructies per leider:
   - **Winona:** donkere dance pop (supersaw, reese, harde snare).
   - **Tate & Liza:** Goa op 138 bpm met K-B-B-B-bas en galop-arpeggio's. De melodie is modaal verduisterd.
 - **Batchcontrole:** alle 11 0 overlopen, piek ≤ 114/127.
+
+### [v0.9.89] - Brawly v4 en Neo Plasma v10 (Jordi's Gemini-feedback)
+- **Brawly v4** (nu-metal, referentie Stemm "Face the Pain"):
+  - De "speelgoedaccordeon" bleken de korte chugs (±40 ms stoten van een aangehouden distortion-akkoord), de "tokkelgitaar" was de bas (noten van 5 ticks) en de "scratch" was eigenlijk een glijfluitje (koor-aah). Gemeten met solo-opnames per spoor.
+  - Nieuw: muur van powerchords op een tweede distortion-gitaar (tel 1 + elke akkoordwissel, aangehouden), echte palm-mutes, overdrive-bas in strakke achtsten met de kick (+40% t.o.v. de lead), zware kick, heavy-rock-snare op 2 en 4, open hihats op de PSG-ruis (. x . x), breedbandige vinylscratches op de overgangen (o.a. 0:07 en 0:15). Melodie ongewijzigd.
+  - `kermis_meter` keurt nu ook fluitjes, tokkel-begeleiding en een holle lage laag af. Nieuwe tool `gba_sim.py` (offline m4a-weergave).
+- **Neo Plasma v10:**
+  - Intro-run nu als glijdende synth-brass (pitch bend van E2 naar C6, velocity 127) i.p.v. losse 16e-tikjes.
+  - "Foute noten in het tweede thema" (0:22–0:35) klopten niet: de lead volgt het origineel daar noot voor noot (gecontroleerd op de Spleeter-stems). Wél fout rond 1:08: orgelakkoorden, sawtooth en 8-bit-sinus stonden in maat 50–62 een octaaf te hoog (bron-MIDI); die staan nu goed.
+  - Dikkere bas (sample met eigen grondtoon, +33% RMS, luider), basstoten x . x x . x . x in de bridge, hihats lopen door in de halftime-break.
+  - Harde controles in het script: niets boven C6 in melodiesporen, geen akoestische/trage-attack-samples.

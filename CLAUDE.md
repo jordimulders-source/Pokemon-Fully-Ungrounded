@@ -129,6 +129,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Samples tussen thema's:** laat een thema nooit samples van een ander thema gebruiken (SickBlik brak toen Heatran v3 `heatran_closed_hat` verwijderde); kopieer ze onder een eigen naam. Na elke muziekmerge: alle `DirectSoundWaveData_*` uit `sound/voicegroups/**` moeten in `direct_sound_data.inc` staan, en elk label daar moet een `.wav` hebben (oude `.bin`'s lokaal verbergen een ontbrekende wav).
 - **Afgekapte trainerfoto's:** een figuur die hard op de onderrand stopt (benen eraf) krijgt de Bayer-fade (`fade_trainer_pics.py` / `fade_bottom`); Jordi vindt een harde snede onnatuurlijk.
 - **Muziek die 'niet klinkt als de bron':** meet de balans met `tools/grounded/balance.py` (FluidR3-referentie vs. GBA-solo) en maak ontbrekende instrumenten met `gm_samples.py` (eigen samples in `sound/direct_sound_samples/grounded/`).
+- **Gemini-feedback op muziek:** de klachten (instrument klinkt als X) kloppen vaak, maar de genoemde noten/toonsoorten en oorzaken niet; meet eerst (solo per spoor + GM-klankvergelijking, Spleeter-stems). Korte stoten van een aangehouden sample klinken als accordeon/mondharmonica.
 - **Platinum-trainerfoto's:** frame 0 van de DS-animatie is niet altijd van voren (Aaron, Fantina); kies per trainer het frame in `stadium_trainer_pics.py`.
 
 ## Werkwijzen (herhaalde taken)
@@ -208,11 +209,12 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 ## Sessies en overdracht
 - **Takenlijst:** `TODO.md` (openstaande taken op volgorde, goedgekeurde QoL, backlog). Afgeronde taken daar weghalen en in de changelog zetten.
 - Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
-- Branch: `claude/youthful-bohr-mvgsdk` (fase 0.9; nog geen PR naar `master`). Is die gemerged, begin dan een nieuwe branch vanaf `master`.
+- Branch: `claude/wonderful-brahmagupta-xz8pik` (fase 0.9, bevat youthful-bohr; nog geen PR naar `master`). Is die gemerged, begin dan een nieuwe branch vanaf `master`.
 - Commit en push na elk afgerond stuk, met een changelogsectie.
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
+- **5 okt nacht (v0.9.89):** branch `claude/wonderful-brahmagupta-xz8pik` (= youthful-bohr + master). Brawly v4 en Neo Plasma v10 naar Jordi's Gemini-feedback; wacht op zijn oordeel. Daarna: Stadium-bugs in `TODO.md`.
 - **5 okt laat (v0.9.88, ROM opgeleverd):** muziekbatch 5; Jordi "zeer tot gematigd tevreden", behalve **Neo Plasma en Brawly** ("lijken nergens op"; hij geeft feedback via Gemini met een vaste prompt). Dave-voetbaltransitie (GOAL!) in de maak. Referentie-mp3's (Kyuss Odyssey/Green Machine, Stemm Face the Pain, Hallucinogen LSD, Neo Plasma-origineel) stonden alleen in de scratchpad: opnieuw laten uploaden als nodig.
 - **5 okt avond (v0.9.81–0.9.87):** muziek in batches (`batchrec.py`): Victini/Darkrai/Genesect (644–646, v2), gymleider-remixes 647–654 (Wattson + Wallace goedgekeurd, rest ronde 2), Heatran v6 (gemeten op Kyuss-referenties, snel deel 94 bpm; anti-Bowser-Castle-lint), Mitch v4, Neo Plasma v8; wachten op Jordi. Trainernamen consistent (`TRAINER_NAMEN.md`), Wallace/Steven-fixes. Spire: Jordi test met `SPIRE_TESTCHECKLIST.txt`; wensen in TODO. Volgende muziek: Burglar, Battle Stadium, route-remixes (`MUZIEK_KANDIDATEN.md`). Opruimen: ongebruikte samples van oude versies (gym_*, gym2_*, mitch_*, np_*) uit de ROM.
 - **Spire v0.9.80:** bugs uit Jordi's testrun opgelost, schadelimieten (opening 60%, klap 40% = voorstel), 13 verdiepingen per act; v0.9.82: vijandkracht per act (klap_check), iconen uitgelijnd, Vending Machine B = weglopen.

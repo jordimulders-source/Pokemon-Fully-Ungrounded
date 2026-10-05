@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Project Grounded: samples voor Brawly v4 (gymleider-remix, nu-metal; gym_remixes.py). Voorvoegsel gym_bra4_.
+"""Project Grounded: samples voor Brawly v4/v5 (gymleider-remix, nu-metal; gym_remixes.py). Voorvoegsel gym_bra4_/gym_bra5_.
+
+v5: gym_bra5_wall/_bass/_chug/_kick vervangen de v4-versies (zie het v5-blok onderaan: de bas klonk twee octaven te
+hoog, de chug een octaaf te laag).
 
 Ronde 4 (Jordi over v3: 'speelgoedaccordeon/fluitje, blije akoestische tokkels, onhoorbare bas, dunne drums, de
 scratches zijn weg'). Gemeten oorzaak: zie gym_remixes.py (brawly) en MUZIEK.md. Nieuwe samples, de oude gym_bra_*
@@ -231,13 +234,93 @@ def chirp():
     return _scratch([(0.06, fwd, 1), (0.06, back, 1), (0.05, fwd, 1), (0.07, back, 1)], 7)
 
 
+# ---- v5 (Jordi via Gemini over v4: 'muur, bas en hats zijn er niet') -------------------------------------------------
+# Gemeten: gba_tone(naam, m, dur, base) moet base = de echte toonhoogte van de sample op zijn eigen samplerate krijgen.
+# v4 gaf de fingered bass (klinkt C4 op 53.516 Hz) base=36: gym_bra4_bass klonk C4 (261 Hz) met label C2 = de bas
+# speelde twee octaven te hoog, midden in het register van lead en muur (89% van de energie 250-700 Hz, 0% < 100 Hz).
+# De low-distortiongitaar klinkt C3 op toets 60 (niet C4): gym_bra4_chug klonk een octaaf te laag (C1 = 32 Hz).
+SD90_LOW_PITCH, BASS_PITCH = 48, 60          # echte toonhoogte op de eigen samplerate (FFT-gemeten)
+
+
+def wall5(dur=1.8):
+    """Muur v5: dezelfde powerchord C3-G3-C4 (label 48) maar dikker en ronkender: de hoge Emerald-distortion
+    dubbelgetrackt (±7 cent) + de lage Emerald-distortion op dezelfde toonhoogtes (body 100-400 Hz), lage-middenboost,
+    meer gain (aaneengesloten ruis/zaag i.p.v. een lichte akkoordklank) en een zachte plectrumaanslag."""
+    a = np.zeros(int(dur * GR))
+    for cents in (-7, 7):
+        for m, g in ((48, 1.0), (55, 0.85), (60, 0.45)):
+            a += g * gba_tone('sd90_classical_distortion_guitar_high', m + cents / 100.0, dur)
+    lo = sum(g * gba_tone('sd90_classical_distortion_guitar_low', m + 0.03, dur, base=SD90_LOW_PITCH)
+             for m, g in ((48, 1.0), (55, 0.8)))
+    a = norm(a) + 0.8 * norm(lo)
+    a = flt(a, 75, 'highpass', fs=GR)
+    a = a + 1.2 * flt(flt(a, 110, 'highpass', fs=GR), 380, 'lowpass', fs=GR)
+    a = flt(a, 105, 'highpass', 2, fs=GR)                             # onder 105 Hz is van de bas    # ronk: +6 dB rond 110-380 Hz
+    a = np.tanh(norm(a) * 4.0)
+    a = flt(a, 3800, 'lowpass', 4, fs=GR)
+    return norm(a) + 0.35 * pick(len(a))
+
+
+def chug5(dur=0.34):
+    """Palm-mute v5: zelfde aanslag en dichtklappende lowpass als v4, nu op de juiste hoogte (C2-G2-C3 voor label 36;
+    v4 klonk een octaaf te laag) en zonder de extra 65 Hz-'chunk' (die zit nu in de bas)."""
+    n = int(dur * GR)
+    t = np.arange(n) / GR
+    a = sum(g * gba_tone('sd90_classical_distortion_guitar_low', m, dur, base=SD90_LOW_PITCH)
+            for m, g in ((36, 1.0), (43, 0.8), (48, 0.5)))
+    a = np.tanh(norm(a) * 2.5)
+    early = flt(a, 3000, 'lowpass', 2, fs=GR)
+    late = flt(a, 700, 'lowpass', 2, fs=GR)
+    mix = np.clip(t / 0.05, 0, 1)
+    a = early * (1 - mix) + late * mix
+    a = a * (0.25 + 0.75 * np.exp(-t / 0.05)) * np.exp(-t / 0.12)
+    a = norm(a) + 0.45 * pick(n)
+    return fade_out(norm(a), 0.04, fs=GR)
+
+
+def obass5(dur=1.2):
+    """Overdrive-/pickbas v5 (label 36 = echt C2, 65 Hz): de Emerald-fingered bass twee octaven omlaag (v4: op C4
+    blijven staan), de grondtoon versterkt met een bandfilter op het signaal zelf (fasevast, loopt mee in de loop),
+    overdrive voor de grom (600-2000 Hz: hoorbaar op kleine speakers), plectrumklik en een punch-envelope in de
+    eerste 40 ms (elke achtste slaat opnieuw aan)."""
+    a = gba_tone('sc88pro_fingered_bass', 36, dur, base=BASS_PITCH, R=GR)
+    n = len(a)
+    t = np.arange(n) / GR
+    fund = norm(flt(flt(a, 45, 'highpass', 2, fs=GR), 95, 'lowpass', 2, fs=GR))
+    drv = np.tanh(norm(a + 1.5 * flt(a, 200, 'lowpass', 2, fs=GR)) * 10.0)    # hard: bijna blokgolf = grom
+    drv = flt(drv, 1800, 'lowpass', 4, fs=GR)
+    grind = flt(flt(drv, 250, 'highpass', 2, fs=GR), 1300, 'lowpass', 2, fs=GR)   # grom 250-1300 Hz: +12 dB
+    a = np.tanh(norm(norm(drv) + 0.7 * fund + 7.0 * norm(grind)) * 3.5)      # nog eens zacht geklemd: luid, vlak
+    a = a * (1.0 + 0.3 * np.exp(-t / 0.04))                      # punch (aanslag +2 dB)
+    a = norm(a) + 0.25 * pick(n, seed=17)
+    return flt(a, 32, 'highpass', 2, fs=GR)
+
+
+def kick5():
+    """Kick v5: v4 met een langere subtoon (zakt naar 48 Hz, tau 0,2 s): de onderkant < 60 Hz die Face the Pain wel
+    heeft (11-19% tegen 2,5%)."""
+    n = int(0.42 * FS)
+    t = np.arange(n) / FS
+    k = np.zeros(n)
+    p = drum(POWER, 36, 0.42, 127)
+    k[:min(n, len(p))] = p[:n]
+    f = 48 + 72 * np.exp(-t / 0.025)
+    thump = np.sin(2 * np.pi * np.cumsum(f) / FS) * np.exp(-t / 0.20)
+    click = flt(np.random.default_rng(3).standard_normal(n), [2500, 7000], 'bandpass') * np.exp(-t / 0.004)
+    a = 0.7 * norm(k) + 1.15 * thump + 0.4 * click
+    return fade_out(norm(np.tanh(norm(a) * 1.8)), 0.05)
+
+
+OLD = ('gym_bra4_wall', 'gym_bra4_bass', 'gym_bra4_chug', 'gym_bra4_kick')     # vervangen door gym_bra5_*
+
+
 def build():
     """naam -> (signaal, samplerate van het signaal, samplerate in de rom, label-toets, loop?)"""
     return {
-        'gym_bra4_wall': (wall(), GR, GR, 48, True),
-        'gym_bra4_bass': (obass(), GR, GR, 36, True),
-        'gym_bra4_chug': (chug(), GR, GR, 36, False),
-        'gym_bra4_kick': (kick(), FS, 16000, 60, False),
+        'gym_bra5_wall': (wall5(), GR, GR, 48, True),
+        'gym_bra5_bass': (obass5(), GR, GR, 36, True),
+        'gym_bra5_chug': (chug5(), GR, GR, 36, False),
+        'gym_bra5_kick': (kick5(), FS, 16000, 60, False),
         'gym_bra4_snare': (snare(), FS, 16000, 60, False),
         'gym_bra4_scratch': (scratch(), FS, 16000, 60, False),
         'gym_bra4_chirp': (chirp(), FS, 16000, 60, False),
@@ -246,6 +329,10 @@ def build():
 
 def main():
     inc = open(DATA).read()
+    for name in OLD:                                    # v4-samples die v5 vervangt: wav en label weg
+        if os.path.exists(OUT + name + '.wav'):
+            os.remove(OUT + name + '.wav')
+        inc = inc.replace('\n\t.align 2\nDirectSoundWaveData_%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (name, name), '\n')
     for name, (a, fs, rate, key, loop) in build().items():
         a = norm(resample(np.asarray(a, float), fs, rate) if fs != rate else np.asarray(a, float), 0.97)
         lpnt = None

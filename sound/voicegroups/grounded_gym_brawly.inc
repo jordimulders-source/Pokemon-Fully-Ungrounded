@@ -96,7 +96,7 @@ voice_group grounded_gym_brawly
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead_60, 255, 0, 255, 170  @ 92
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead_72, 255, 0, 255, 170  @ 93
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead_84, 255, 0, 255, 170  @ 94
-	voice_directsound 60, 0, DirectSoundWaveData_gym_bra4_chug, 255, 0, 255, 120  @ 95
-	voice_directsound 60, 0, DirectSoundWaveData_gym_bra4_wall, 255, 0, 255, 165  @ 96
-	voice_directsound 60, 0, DirectSoundWaveData_gym_bra4_bass, 255, 0, 255, 110  @ 97
-	voice_noise_alt 60, 0, 0, 0, 2, 0, 0  @ 98
+	voice_directsound 60, 0, DirectSoundWaveData_gym_bra5_chug, 255, 0, 255, 120  @ 95
+	voice_directsound 60, 0, DirectSoundWaveData_gym_bra5_wall, 255, 0, 255, 165  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_gym_bra5_bass, 255, 0, 255, 110  @ 97
+	voice_noise_alt 60, 0, 0, 0, 1, 5, 1  @ 98

@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Project Grounded: samples voor Battle! Neo Team Plasma v5 (np_*), naar Jordi's feedback op v4:
+"""Project Grounded: samples voor Battle! Neo Team Plasma v6 (np_*).
+v6 (Jordi over v5: 'te kale, schelle 8-bit sound, hoge tonen snijden, mist dynamiek en gelaagdheid'):
+- lead: warme, volle pulse-lead als DirectSound-sample i.p.v. de PSG-blokgolf: twee licht ontstemde pulsen (25% en
+  50%) gemengd, lowpass (24 dB/oct, ±3 kHz op C4; meeschuivend met de toonhoogte zoals een key-tracked filter),
+  met een iets helderdere aanzet (filter dat kort opengaat) voor de articulatie;
+- synth brass: vollere zaagtand-brass (twee ontstemde zaagtanden, lowpass ±2,5 kHz) met een filterstoot in de eerste
+  ±60 ms = body + punch; aparte sample op C2 voor de lage partij.
+v5 (naar Jordi's feedback op v4):
 - bas: diepe, strakke pulse-bas (25%-pulsgolf, iets afgerond), gelabeld een octaaf hoger dan hij klinkt, zodat de
   MIDI-noten van de bron (Eb2-Ab4) een octaaf lager klinken zonder noten onder E1 in de MIDI;
 - 'gitaar'-spoor: heldere synth brass met een zeer snelle, felle aanzet (eerste ±40 ms extra helder = de 'stoot'),
@@ -11,7 +18,10 @@ Gebruik: python3 tools/grounded/neo_plasma_samples.py"""
 import os, sys
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from heatran_samples import OUT, DATA, write_wav
+from sample_utils import write_wav
+
+OUT = "sound/direct_sound_samples/grounded/"
+DATA = "sound/direct_sound_data.inc"
 
 
 def additive(f0, per, amps, n_loop, attack=0.0, bright=None, detune=0, dur_extra=0.0):
@@ -70,11 +80,57 @@ def organ():
     return additive(f0, 32, amps, 64, attack=0.05, bright=bright)
 
 
+def osc_mix(f0, per, amps2, n_loop, detune, attack=0.0, bright=None):
+    """Zoals additive(), maar met een eigen harmonischenreeks voor de tweede (ontstemde) oscillator: amps2."""
+    rate = int(round(f0 * per))
+    f0 = rate / per
+    n_att = int(np.ceil(attack * f0)) * per
+    n = n_att + n_loop * per
+    t = np.arange(n) / rate
+    a = np.zeros(n)
+    fd = f0 * (n_loop + detune) / n_loop
+    for (amp1, amp2), k in zip(amps2, range(1, len(amps2) + 1)):
+        a += amp1 * np.sin(2 * np.pi * k * f0 * t)
+        a += amp2 * np.sin(2 * np.pi * k * fd * t + 0.9 * k)
+    if bright is not None and attack > 0:
+        env = np.maximum(0, 1 - t / attack) ** 2
+        for k, amp in enumerate(bright, 1):
+            a += env * amp * np.sin(2 * np.pi * k * f0 * t)
+    a /= np.abs(a).max()
+    a *= 0.97
+    return a, rate, (n_att, n)
+
+
+def lp(f, fc, order=4):
+    return 1 / np.sqrt(1 + (f / fc) ** order)
+
+
+def lead_warm():
+    """Warme pulse-lead op C4: puls 25% + puls 50% (licht ontstemd: zweving ±1,6 Hz op C4), lowpass 3 kHz."""
+    f0, per, kmax = 261.63, 64, 30
+    amps = []
+    for k in range(1, kmax + 1):
+        g = lp(k * f0, 3000) * (1.25 if k == 1 else 1.0)          # iets meer grondtoon = voller
+        amps.append((0.6 * pulse(k, 0.25) * g, 0.5 * pulse(k, 0.5) * g))
+    bright = [0.35 * pulse(k, 0.25) * lp(k * f0, 4500) * (k >= 3) for k in range(1, kmax + 1)]
+    return osc_mix(f0, per, amps, 160, 1, attack=0.035, bright=bright)
+
+
+def saw_brass(f0, per, kmax, fc):
+    amps = []
+    for k in range(1, kmax + 1):
+        g = lp(k * f0, fc) / k * (1 + 0.6 * np.exp(-((np.log2(k * f0 / 900)) ** 2) / 0.6))   # body rond 0,5-1,5 kHz
+        amps.append((g, 0.85 * g))
+    bright = [0.8 / k * lp(k * f0, fc * 2.2) * (k >= 3) for k in range(1, kmax + 1)]
+    return osc_mix(f0, per, amps, 128, 1, attack=0.06, bright=bright)
+
+
 SAMPLES = {
     # naam: (functie, label-noot); label = noot waarop de sample in de MIDI 'thuis' is
     'np_pulse_bass': (bass, 48),        # klinkt C2, gelabeld C3: alles een octaaf lager dan geschreven
-    'np_brass_stab': (lambda: brass(261.63, 64, 18), 60),
-    'np_brass_stab_lo': (lambda: brass(65.406, 256, 46), 36),
+    'np_lead_warm': (lead_warm, 60),
+    'np_brass_full': (lambda: saw_brass(261.63, 64, 30, 2500), 60),
+    'np_brass_full_lo': (lambda: saw_brass(65.406, 256, 110, 2000), 36),
     'np_organ_sharp': (organ, 72),
 }
 

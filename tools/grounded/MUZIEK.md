@@ -304,3 +304,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
   (`muff()`: 150-700 Hz +6 dB, twee tanh-stadia, lowpass 3,4 kHz); een octaaffuzzbas verliest zijn grondtoon in de
   fuzz -> schoon laag (< 160 Hz) erbij mengen (bas-blend). Laat de stopmaat aan het eind van de loop gelijk zijn aan
   de laatste intromaat (naadloze loop). -V100: piek 110/127, 0 overlopen, RMS 2911.
+- PSG-drums opgeruimd (v0.9.67) in Zinnia, Colress, Giratina, Birch, Sunset Wilds, Yoshi's Castle en Broken Pier via
+  `drum_map` (ook in `prepare()`; waarde `(noot, factor)` schaalt de velocity, bv. side stick -> snare x0,6).
+  **Drumnoten buiten rs_drumset (36-64) lezen de buren in het geheugen**: boven 64 = `frlg_drumset` (noot n -> frlg
+  n-29; Birch' open triangel 81 = frlg 52 = PSG-blokgolf), onder 36 = het einde van `dummy.inc` (35 = hyoushigi,
+  33 = unknown_snare). Reken het na met `arm-none-eabi-nm pokeemerald.elf | grep drumset` (label = begin - 36x12).

@@ -25,7 +25,7 @@ De melodie blijft hetzelfde en duidelijk herkenbaar; alleen de instrumenten en h
 | Norman | Muziek van een bekende blockbuster-tv-serie |
 | Winona | Girly popmuziek |
 | Tate & Liza | Psytrance |
-| Juan | Franse loungemuziek (Jordi schreef "Wallace"; de 8e gymleider in Emerald is Juan; nagevraagd) |
+| Wallace (gymleider 8 in deze romhack; Steven is kampioen) | Franse loungemuziek |
 
 ### C. Remixes van route- en overworld-thema's
 | # | Gebied | Idee |

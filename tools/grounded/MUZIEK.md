@@ -99,6 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v11 wacht op Jordi (zuivere pulse-lead zonder zweving, blikkerige bas) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -499,3 +500,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   geklemd), muur dikker (lage distortion erbij, HPF 105 Hz), hats decay 1/sustain 5/release 1 op 18 ticks vol 127,
   kick 16 ticks, lead 106 -> 68, chugs 84 -> 60, -V076. In-game: hats 15% (>6 kHz 2,8% = Face the Pain), bas/lead
   A-gewogen 0,10 -> 0,23, < 60 Hz 2,4 -> 7%, 0 overlopen, piek 88/127, RMS 3231 (iets boven 3000).
+- Neo Plasma v11 (Gemini: 'theremin met vibrato op de lead, houtachtige tik-bas'): **de 'vibrato' zat in de sample, niet
+  in bends** (die gingen terug naar c_v+0): `sc88pro_square_wave` is zelf een gechorusde blokgolf (7-10 dB tremolo op
+  1,7-5 Hz, zwaartepunt schommelt 28%, 93% energie op de grondtoon = fluittoon); meet een lead-sample met
+  `sample_tremolo()` (neo_plasma_theme.py, nu een harde regel). 'Tikkende bas' = 16en van 27 ticks door detach met een
+  lange release: korte release (50) + langere noot geeft dezelfde kanaalbezetting. **Spleeter-model leeg** (download
+  faalde: h2/302) geeft 4 identieke stems zonder fout: md5 controleren; model met curl -L van de GitHub-release halen.

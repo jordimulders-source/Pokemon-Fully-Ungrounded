@@ -166,6 +166,83 @@ def gliss_brass(root):
     return a, rate, loop
 
 
+def _bandlimited(f0, per, amps, lp_hz, order=2):
+    """Eén periode (per samples) met harmonischen amps (index 0 = grondtoon), gedempt door een lowpass van `order`
+    (x 6 dB/oct) op lp_hz; geen detune, dus exact periodiek (geen zweving)."""
+    x = np.arange(per) / per
+    y = np.zeros(per)
+    for k, a in enumerate(amps, 1):
+        if a == 0 or k >= per // 2:
+            continue
+        g = 1 / np.sqrt(1 + (k * f0 / lp_hz) ** (2 * order))
+        y += a * g * np.sin(2 * np.pi * k * x)
+    return y
+
+
+def pulse_lead(root):
+    """v11 (Jordi/Gemini over v10: 'theremin / ijle fluittoon met vibrato die zweeft; moet een strakke, fel aangeslagen
+    GBA pulse/square-lead zijn'). Gemeten: sc88pro_square_wave (en np_lead_fat, dat eruit is opgebouwd) is zelf een
+    ontstemde/gechorusde blokgolf: in de sustain 8-10 dB tremolo op 1,7-5 Hz en het spectrale zwaartepunt schommelt 28%
+    = precies 'zwevend vibrato'. Hier één zuivere pulsgolf (25%) + een vleugje 50% in fase, exact periodiek (geen
+    zweving: 0 dB tremolo, 0 cent), lowpass 2e orde op 4,5 kHz (niet schel), licht verzadigd (tanh x1,8: even luid als
+    de oude lead), en een felle aanslag: de eerste 25 ms 1,35x zo luid met de volle bovenharmonischen (filter dicht in
+    60 ms)."""
+    f0 = 440 * 2 ** ((root - 69) / 12)
+    per = 32 if root >= 60 else 128
+    rate = int(round(f0 * per))
+    f0 = rate / per
+    nh = per // 2 - 1
+    pulse = [np.sin(np.pi * k * 0.25) / k for k in range(1, nh + 1)]
+    sq = [(1 / k if k % 2 else 0) for k in range(1, nh + 1)]
+    amps = [p + 0.35 * s for p, s in zip(pulse, sq)]
+    body = _bandlimited(f0, per, amps, 4500)
+    bright = _bandlimited(f0, per, amps, 9000, order=1)
+    n_att = int(np.ceil(0.09 * f0)) * per                    # aanslag: hele perioden, dan de loop (16 perioden)
+    n = n_att + 16 * per
+    t = np.arange(n) / rate
+    w = np.clip(1 - t / 0.06, 0, 1) ** 2                     # helderheid: in 60 ms dicht
+    g = 1 + 0.35 * np.clip(1 - np.maximum(0, t - 0.025) / 0.04, 0, 1)  # knal: 25 ms 1,35x, in 40 ms terug
+    idx = np.arange(n) % per
+    pk = np.abs(body).max()
+    a = np.tanh(1.8 * g * ((1 - w) * body[idx] + w * bright[idx]) / pk)    # verzadigd: lage crest = luid
+    a[n_att:] = np.tanh(1.8 * body[idx[n_att:]] / pk)
+    a = a / np.abs(a).max() * 0.97
+    return a, rate, (n_att, n)
+
+
+def bass_buzz():
+    """v11 (Jordi/Gemini over v10: 'zacht, dof, houtachtig tikkend; moet een zware, blikkerige staccato synth-bass
+    zijn die de track doordrukt, 25% luider'). Gemeten: np_bass_fat speelde de 16en als noten van 27 ticks (24 ms;
+    detach met de v7-release) = een tik, geen toon, en de sample zelf is hol (sc88pro_synth_bass). De basstem van het
+    origineel (Spleeter, maat 13-42): energie < 150 Hz 49%, 150-600 30%, 600-2k 12%, > 2 kHz 9%, en de toon houdt de
+    hele 16e aan (2e helft/1e helft 0,88). Nieuw: zaagtand + 25%-puls met twee resonanties (±1 kHz = 'blikkerig',
+    ±330 Hz = body; amplitude x4 / x2,5), lowpass 1e orde op 5 kHz, verzadigd (tanh x2: lage crest = luid), exact
+    periodiek (geen zweving). Aanslag: de eerste 30 ms helderder (filter open) voor de punch. Klinkt op C2 en is op 48
+    gelabeld (zoals np_bass_fat: de MIDI-noten klinken een octaaf lager, Eb1-Ab3)."""
+    root = 36
+    f0 = 440 * 2 ** ((root - 69) / 12)
+    per = 256
+    rate = int(round(f0 * per))
+    f0 = rate / per
+    nh = per // 2 - 1
+    bump = lambda fk, fc, w: np.exp(-0.5 * (np.log2(fk / fc) / w) ** 2)
+    amps = [(1 / k + 0.8 * np.sin(np.pi * k * 0.25) / k) * (1 + 3 * bump(k * f0, 1000, 0.6) + 1.5 * bump(k * f0, 330, 0.5))
+            for k in range(1, nh + 1)]
+    body = _bandlimited(f0, per, amps, 5000, order=1)
+    bright = _bandlimited(f0, per, amps, 12000, order=1)
+    n_att = int(np.ceil(0.05 * f0)) * per
+    n = n_att + 8 * per
+    t = np.arange(n) / rate
+    idx = np.arange(n) % per
+    w = np.clip(1 - t / 0.03, 0, 1) ** 2
+    a = (1 - w) * body[idx] + w * bright[idx]
+    pk = np.abs(a).max()
+    a = np.tanh(2.0 * a / pk)
+    a[n_att:] = np.tanh(2.0 * body[idx[n_att:]] / pk)
+    a = a / np.abs(a).max() * 0.97
+    return a, rate, (n_att, n)
+
+
 def sine():
     f0, per = 523.25, 32
     return additive(f0, per, [1.0, 0.08], 64)
@@ -175,16 +252,17 @@ SAMPLES = {
     # naam: (functie, label-noot); label = noot waarop de sample in de MIDI 'thuis' is (None: de functie geeft hem)
     'np_sine': (sine, 72),
     'np_organ_sharp': (organ, 72),
-    # v8: de GBA-synth bass (sc88pro_synth_bass), een octaaf hoger gelabeld: de MIDI-noten van de bron (Eb2-Ab4)
-    # klinken een octaaf lager, zonder noten onder E1 in de MIDI (zoals np_pulse_bass in v5-v7)
-    'np_synth_bass': (lambda: gba_copy('sc88pro_synth_bass', 12), None),
+    # (v8 np_synth_bass en v10 np_bass_fat: sinds v11 ongebruikt, weg; bass_fat() blijft als geschiedenis)
     # v9: vette lead voor de opening-run en het loopbegin (GBA-blokgolf x2 + GBA-synth brass)
     'np_lead_fat': (fat_lead, 72),
     'np_lead_fat_lo': (lambda: fat_lead(lo=True), 48),
-    # v10: dikke bas (grondtoon erbij) en synth brass voor de glissando-intro
-    'np_bass_fat': (bass_fat, None),
+    # v10: synth brass voor de glissando-intro
     'np_gbrass_lo': (lambda: gliss_brass(48), 48),
     'np_gbrass_hi': (lambda: gliss_brass(72), 72),
+    # v11: zuivere pulse-lead (geen zweving) en blikkerige synth-bass
+    'np_plead_hi': (lambda: pulse_lead(72), 72),
+    'np_plead_lo': (lambda: pulse_lead(48), 48),
+    'np_bass_buzz': (bass_buzz, 48),
 }
 
 

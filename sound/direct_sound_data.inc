@@ -6463,3 +6463,23 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_bassoon::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_bassoon.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_woodblock::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_woodblock.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_vibraslap::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_vibraslap.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_kazoo::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_kazoo.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_boing::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_boing.bin"

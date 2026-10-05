@@ -207,3 +207,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Het was drumnoot 49 = PSG in rs_drumset. **Lint-meldingen 'drumnoot is PSG' altijd oplossen** (`drum_map`), nooit
   laten staan. Niet aankomen wat Jordi goed vond (de vocalen).
 
+- Magikarp v1 (`magikarp_theme.py`, komisch, 150 bpm, Bes): **glijtonen via pitch bend werken** in mid2agb/m4a:
+  CC20 = BENDR (bereik in halve tonen), pitchwheel → BEND (alleen de MSB telt: ±64 = ±BENDR), CC1 = MOD (vibrato),
+  CC21 = LFOS. `Song.add(..., extra=[(tick, mido.Message)])` schrijft ze weg (na note-offs, vóór note-ons op dezelfde
+  tick). Zet de bend pas terug bij de volgende noot (niet bij de note-off: dan springt de uitklinkende staart omhoog).
+  In de .s staan na de eerste `BEND` alleen nog waarden (running status), dus `grep -c BEND` telt niet alles.
+  Eigen samples: fagot/woodblock/vibraslap uit FluidR3 (drumnoten via `('drum', n)` in gm_samples), kazoo als
+  gesynthetiseerde zoempuls met formanten, boing als synth-oneshot (`ONESHOTS`). Fluitje (sd90 whistle) + BENDR 12
+  = slide whistle. -V108: piek 89/127, RMS 2377.

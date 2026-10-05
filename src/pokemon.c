@@ -6176,6 +6176,41 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     }
     }
 
+// Project Grounded: alleen Magikarp (wild of een trainer met een team van alleen Magikarp) -> Battle! Magikarp
+static bool32 IsMagikarpOnlyTrainer(u16 trainerId)
+{
+    const struct Trainer *trainer;
+    u32 i;
+
+    if (trainerId == TRAINER_NONE)
+        return TRUE;
+    trainer = GetTrainerStructFromId(trainerId);
+    if (trainer->partySize == 0)
+        return FALSE;
+    for (i = 0; i < trainer->partySize; i++)
+    {
+        if (trainer->party[i].species != SPECIES_MAGIKARP)
+            return FALSE;
+    }
+    return TRUE;
+}
+
+static bool32 IsMagikarpOnlyWildBattle(void)
+{
+    u32 i, count = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u32 species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, NULL);
+        if (species == SPECIES_NONE)
+            continue;
+        if (species != SPECIES_MAGIKARP)
+            return FALSE;
+        count++;
+    }
+    return count != 0;
+}
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
@@ -6231,10 +6266,18 @@ u16 GetBattleBGM(void)
         if (songB != GetChosenTrainerBattleMusic())
             song = songB;
     }
+    if (song == GetChosenTrainerBattleMusic()
+     && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && IsMagikarpOnlyTrainer(TRAINER_BATTLE_PARAM.opponentA)
+     && (!(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) || IsMagikarpOnlyTrainer(TRAINER_BATTLE_PARAM.opponentB))
+     && TRAINER_BATTLE_PARAM.opponentA != TRAINER_NONE)
+        song = MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: een team van alleen Magikarp (Gyarados niet)
     return song;
     }
     else
     {
+    if (IsMagikarpOnlyWildBattle())
+        return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }

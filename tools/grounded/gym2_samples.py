@@ -271,6 +271,132 @@ def layer(kind, notes, R=13379):
     return mix / np.abs(mix).max() * 0.97, R
 
 
+# ---- ronde 3 (v3): Winona (donkere dance pop / hyperpop) en Tate & Liza (Goa/psytrance) ------------------------
+# Jordi: beide klonken als 'kermis/circus'. Alle begeleiding opnieuw, alleen synths/drums uit het genre: geen
+# blazers, fluitjes, klokjes, piano. Gelust = exact periodiek (hele perioden per stem, detune als (n+1)/n), zodat er
+# geen klik in de loop zit. Nieuwe namen (gym2_w_*, gym2_tl_*): de v2-samples blijven byte-identiek.
+SYNTH3 = ['gym2_w_saw', 'gym2_w_saw_dark', 'gym2_w_reese', 'gym2_w_stab_min', 'gym2_w_stab_maj', 'gym2_w_stab_sus',
+          'gym2_w_stab_5', 'gym2_w_snare', 'gym2_tl_pluck', 'gym2_tl_pluck_b', 'gym2_tl_lead', 'gym2_tl_pad_min',
+          'gym2_tl_pad_maj']
+# akkoordstoten (Winona): intervallen boven de grondtoon (gelabeld op C4); de remix speelt ze op de grondtoon
+W_STABS = {'min': (0, 3, 7, 10, 12), 'maj': (0, 4, 7, 12, 14), 'sus': (0, 5, 7, 10, 12), '5': (0, 7, 12)}
+# pads (Tate & Liza): reine stemming (gehele verhoudingen = exacte loop): mineur 10:12:15, majeur 4:5:6 (x2 = 8:10:12)
+TL_PADS = {'min': (20, 24, 30), 'maj': (16, 20, 24)}
+
+
+def saw_loop(per, cycles, cutoff_h, drive=0.0, square=False):
+    """Bandbegrensde zaagtand(en) als exacte loop: lengte per x cycles[0]; stem j doet cycles[j] perioden.
+    cutoff_h = harmonische waarop een zacht laagdoorlaatfilter (4e orde) begint."""
+    L = per * cycles[0]
+    t = np.arange(L) / L * 2 * np.pi
+    a = np.zeros(L)
+    for c in cycles:
+        kmax = int(per * cycles[0] / c * 0.45)
+        for k in range(1, kmax):
+            if square and k % 2 == 0:
+                continue
+            a += (1 / k) / np.sqrt(1 + (k / cutoff_h) ** 4) * np.sin(k * c * t + 1.7 * k * c / cycles[0])
+    a /= np.abs(a).max()
+    if drive:
+        a = np.tanh(drive * a) / np.tanh(drive)
+    return a / np.abs(a).max() * 0.97
+
+
+def chord_oneshot(freqs, rate, dur, cut0, cut1, tau_cut, tau_amp, detune=0.006, drive=1.6, square=False, hp=0, res=0.0):
+    """Eenmalige akkoordstoot/pluk: per toon twee licht ontstemde zaagtanden met een sluitend filter."""
+    n = int(rate * dur)
+    tt = np.arange(n) / rate
+    cut = cut1 + (cut0 - cut1) * np.exp(-tt / tau_cut)
+    a = np.zeros(n)
+    for f0 in freqs:
+        for d in (1 - detune, 1 + detune):
+            f = f0 * d
+            for k in range(1, 60):
+                fk = k * f
+                if fk > rate * 0.45:
+                    break
+                if square and k % 2 == 0:
+                    continue
+                g = 1 / np.sqrt(1 + (hp / fk) ** 4) if hp else 1
+                if res:                                         # resonantiepiek op de filterfrequentie (psy-'squelch')
+                    g = g * (1 + res * np.exp(-((fk - cut) / (0.3 * cut)) ** 2))
+                a += g * (1 / k) * np.sin(2 * np.pi * fk * tt + k) / np.sqrt(1 + (fk / cut) ** 4)
+    a *= np.minimum(1, tt / 0.002) * np.exp(-tt / tau_amp)
+    a = np.tanh(drive * a / np.abs(a).max())
+    fade = int(rate * 0.02)
+    a[-fade:] *= np.linspace(1, 0, fade)
+    return a / np.abs(a).max() * 0.97
+
+
+def synth3(name):
+    """-> (golf, samplerate, label-toets, loop)"""
+    C2, C3, C4, C5 = 65.406, 130.813, 261.626, 523.251
+    if name == 'gym2_w_saw':
+        # Winona-lead: scherpe zaagtand, drie stemmen ±13 cent (supersaw-achtig), licht overstuurd; C5, 4096 samples
+        a = saw_loop(32, (128, 127, 129), 11, drive=1.8)
+        return a, int(round(C5 * 32)), 72, (0, len(a))
+    if name == 'gym2_w_saw_dark':
+        # tweede stem/harmonie: dezelfde zaag, donker gefilterd (3e harmonische), C4
+        a = saw_loop(64, (128, 129), 3.5, drive=1.3)
+        return a, int(round(C4 * 64)), 60, (0, len(a))
+    if name == 'gym2_w_reese':
+        # ronkende reese-bas: twee zaagtanden 17 cent uit elkaar (langzame zweving 0,65 Hz), filter 6e harmonische,
+        # overstuurd; C2, loop 1,5 s
+        a = saw_loop(256, (100, 101), 6, drive=2.2)
+        return a, int(round(C2 * 256)), 36, (0, len(a))
+    if name.startswith('gym2_w_stab_'):
+        iv = W_STABS[name.rsplit('_', 1)[1]]
+        # hoogdoorlaat 260 Hz: een korte middenstoot, de grondtoon laat hij aan de reese over
+        a = chord_oneshot([C3 * 2 ** (i / 12) for i in iv], 22050, 0.30, 5200, 900, 0.06, 0.11, drive=2.4, hp=260)
+        return a, 22050, 60, None
+    if name == 'gym2_w_snare':
+        # droge harde snare: FluidR3 Power-kit-snare + 909-clap (GM-drumkit) + ruisstoot, overstuurd, 0,17 s, geen galm
+        rate = 22050
+        a = render([('drum', 16, 38), ('drum', 25, 39)], 0.25, 127)
+        start = int(np.argmax(np.abs(a) > 0.002))
+        a = resample(a[start:start + int(0.17 * FS)], FS, rate)
+        tt = np.arange(len(a)) / rate
+        rng = np.random.default_rng(38)
+        nz = lowpass(rng.standard_normal(len(a)), rate, 7000) * np.exp(-tt / 0.035)
+        a = a / np.abs(a).max() + 0.55 * nz / np.abs(nz).max()
+        a *= np.exp(-tt / 0.07)
+        a = np.tanh(3.0 * a / np.abs(a).max())
+        a[-int(rate * 0.015):] *= np.linspace(1, 0, int(rate * 0.015))
+        return a / np.abs(a).max() * 0.97, rate, 60, None
+    if name == 'gym2_tl_pluck':
+        # Tate: psy-pluk (zaagtand, filter 5 kHz -> 700 Hz in 70 ms), 0,22 s, C4 (ref-leads: 38% in 1-4 kHz)
+        a = chord_oneshot([C4], 22050, 0.22, 5000, 900, 0.10, 0.09, detune=0.004, drive=1.8, res=3.0)
+        return a, 22050, 60, None
+    if name == 'gym2_tl_pluck_b':
+        # Liza: holle blokgolf-pluk (oneven harmonischen), trager filter, iets langer, C4
+        a = chord_oneshot([C4], 22050, 0.26, 3800, 800, 0.12, 0.12, detune=0.007, drive=1.5, square=True, res=2.0)
+        return a, 22050, 60, None
+    if name == 'gym2_tl_lead':
+        # 'mind-control'-lead voor de lange noten met pitch bends: twee zaagtanden 7 cent, filter 8e harmonische, C4
+        a = saw_loop(64, (256, 257), 8.0, drive=1.5)
+        return a, int(round(C4 * 64)), 60, (0, len(a))
+    if name.startswith('gym2_tl_pad_'):
+        # donkere pad: drieklank in reine stemming + grondtoon een octaaf lager, elke toon met een ontstemde tweeling
+        # (+1 periode per loop), filter 900 Hz; C3, loop 1,5 s
+        r = TL_PADS[name.rsplit('_', 1)[1]]
+        per = 128                                 # C3 doet 200 perioden per loop
+        L = per * 200
+        rate = int(round(C3 * per))
+        t = np.arange(L) / L * 2 * np.pi
+        a = np.zeros(L)
+        cyc = [100] + [200 * x // r[0] for x in r]
+        for c0 in cyc:
+            for c in (c0, c0 + 1):
+                for k in range(1, 40):
+                    fk = k * c / 200 * C3
+                    if fk > rate * 0.45:
+                        break
+                    a += (1 / k) / np.sqrt(1 + (fk / 900) ** 4) * np.sin(k * c * t + 0.9 * k * c)
+        a /= np.abs(a).max()
+        return a * 0.97, rate, 48, (0, len(a))
+    raise ValueError(name)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
@@ -302,7 +428,12 @@ def main():
         write_wav(OUT + name + '.wav', a, rate, 60, None)
         names.append(name)
         print('%-17s %s %s, %d samples @ %d Hz' % (name, kind, notes, len(a), rate))
-    pw = open('sound/programmable_wave_data.inc').read()
+    for name in SYNTH3:
+        a, rate, key, lpts = synth3(name)
+        write_wav(OUT + name + '.wav', a, rate, key, lpts)
+        names.append(name)
+        print('%-17s synth (v3), %d samples @ %d Hz, loop %s' % (name, len(a), rate, lpts))
+    pw =open('sound/programmable_wave_data.inc').read()
     for name, vals in WAVES.items():
         open('sound/programmable_wave_samples/%s.pcm' % name, 'wb').write(
             bytes((vals[2 * i] << 4) | vals[2 * i + 1] for i in range(16)))

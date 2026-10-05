@@ -101,7 +101,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v2 (GBA-instructies), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
-| Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace goedgekeurd; Norman/Winona/Tate & Liza v2 | "Gymleiders" |
+| Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -395,3 +395,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
 - **Ronde 7 (Jordi):** Heatran v6 "te saai, statisch" → v7: meerdere actieve riffs met palm-mutes/slides/bends, ±130 bpm snel deel, stops en tomfills (de 'saai-afdwingende' controles weg, anti-ska-controles blijven). Mitch v4 "95%": lead zachter, bas/growl + snare luider. Neo Plasma v8: intro-run vetter, valse noten in de B-sectie, bridge niet stilvallen. Victini v2: intro rommelig. Darkrai v2: mist een climax. Genesect: v2 (Prodigy) afgekeurd, terug naar v1 ("cyber-funk") maar strakker.
 - **Previews altijd vanaf 0 s** laten beginnen (of de offset noemen): Jordi geeft tijdstempels; de Neo Plasma-preview begon op 13 s, waardoor zijn "intro" eigenlijk het loopbegin was.
 - **Gymleiders ronde 3 (Jordi):** Norman goedgekeurd (+ Wattson, Wallace). Roxanne, Brawly, Flannery, Winona en Tate & Liza klonken alle vijf als "kermis/ska/circus": waarschijnlijk doordat begeleidingssporen van het origineel (PSG-tegenlijnen, koperstoten, pizzicato) bleven meespelen of een vrolijk instrument kregen. Bij een genre-remix: alleen de melodie (+ harmonie als skelet) van het origineel houden en alle begeleiding opnieuw bouwen; anti-kermis-controle in de scripts. Referenties: Stemm "Face the Pain" (Brawly), Hallucinogen "LSD" (Tate & Liza) in `scratchpad/gymref/` (niet in de repo).
+- Winona/Tate & Liza v3 (Jordi: 'kermis/circus'): **oorzaak gemeten** (`kermis_check()` in `gym_remixes2.py` op v2): de
+  originele PSG-sporen 4/5 bleven op blokgolf en speelden de melodie een octaaf hóger (tot C7: 26-36 noten > C6, 21-36%
+  van hun noten boven de melodie), plus celesta/piano/buisklok/tamboerijn/pop-pluk/zaps, en 6-8% van de nootduur op E/A
+  (C-mixolydisch = vrolijk). v3: alleen melodie (+ B-motief spoor 4) en grondtonen blijven, modaal verduisterd (Winona
+  C-eolisch, Tate C-frygisch = het B-deel van het origineel), alle begeleiding nieuw; het script faalt op die vijf punten.
+  Referentie 'LSD' (Spleeter): 137 bpm, bas alleen op 16en 2-4, hats op alle 16en, leads 2,5 aanslagen/tel in D3-C#5.

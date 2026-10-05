@@ -93,16 +93,16 @@ voice_group grounded_gym2_tate
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 0, 255, 140  @ 89
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_7, 0, 7, 15, 2  @ 90
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_psy_lead_a, 255, 0, 255, 110  @ 92
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_psy_lead_b, 255, 0, 255, 110  @ 93
-	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_gym2_saw, 0, 0, 15, 0  @ 94
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_psy_acid, 255, 0, 255, 80  @ 95
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_pop_pluck, 255, 0, 255, 150  @ 96
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 97
-	voice_noise 60, 0, 0, 7, 0, 15, 2  @ 98
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_psy_lead_b, 255, 0, 255, 150  @ 99
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 100
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 101
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_tl_pluck, 255, 0, 255, 60  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_tl_pluck_b, 255, 0, 255, 60  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_tl_lead, 255, 0, 255, 150  @ 94
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_gym2_saw, 0, 0, 15, 0  @ 95
+	voice_square_2 60, 0, 2, 0, 1, 5, 1  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_psy_acid, 255, 0, 255, 80  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_tl_pad_min, 255, 0, 255, 170  @ 98
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_tl_pad_maj, 255, 0, 255, 170  @ 99
+	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 100
+	voice_noise 60, 0, 0, 7, 0, 15, 2  @ 101
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 102
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 103
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 104

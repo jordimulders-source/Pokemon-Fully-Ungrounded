@@ -16951,3 +16951,8 @@ Volgens Jordi's GBA-instructies per leider:
 - Na de mugshot zit je aan tafel bij een dampende Chinese yin-yang-hotpot (rode mala- en witte bouillon), met borden vlees, garnalen, tofu, groenten, eetstokjes en biertjes (stoom en bubbels als paletanimatie, bubbelgeluid).
 - Harde cut naar het bovenaanzicht: de S-scheiding trekt recht tot de zwarte band, de pan wordt de rand, de ingrediënten zinken weg en een blokje tofu drijft naar het midden en wordt de knop. Als de Poké Ball af is (SE_BALL_OPEN): het gevecht. Hotpot-deel ±3,3 s, met mugshot ±5 s.
 - Ook in het Battle Stadium (als SickBlik de tegenstander is). Bouwscript `tools/grounded/sickblik_transition.py` (30 morph-sleutelbeelden, dubbele tilebuffer tegen tearing).
+
+### [v0.9.93] - Battle! Burglar (eigen compositie)
+- **`MUS_GROUNDED_VS_BURGLAR` (655)** voor Simon de inbreker (stadsevent, alle vijf de versies) en in het Battle Stadium.
+- Noir-jazz-heist in D-klein: intro met alarmstoot en vibrafoon; A = sluipen (150 bpm swing, walking bass, vingerknippen, gedempte trompet op de tenen, bari antwoordt); B = de kluis (side stick als tik-tak, kraak-riff); dan gaat het alarm af (tweetonige stoten, PSG-sirene, roffel, accelerando) naar C = de achtervolging (176 bpm, drums vol, bas in achtsten met sub), C2 een halve toon hoger, D = kwijt (ritardando terug). Eigen melodie, anti-kermis-controle in het script (`burglar_theme.py`, samples `burglar_samples.py`, eigen drumkit).
+- In de game opgenomen: 0 overlopen, piek 68/127 bij -V090 → volume naar -V112 (was te zacht).

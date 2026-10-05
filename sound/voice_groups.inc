@@ -226,3 +226,4 @@
 .include "sound/voicegroups/grounded_jirachi.inc"
 .include "sound/voicegroups/grounded_heatran.inc"
 .include "sound/voicegroups/grounded_rayquaza.inc"
+.include "sound/voicegroups/grounded_ashfrost.inc"

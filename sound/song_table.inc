@@ -647,6 +647,7 @@ gSongTable::
 	song mus_grounded_vs_heatran, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_shaymin, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_rayquaza, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_ashfrost, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

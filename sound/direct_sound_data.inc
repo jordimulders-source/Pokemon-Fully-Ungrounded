@@ -6827,3 +6827,15 @@ DirectSoundWaveData_magikarp_cry_stutter::
 	.align 2
 DirectSoundWaveData_magikarp_cry_rev::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_rev.bin"
+
+	.align 2
+DirectSoundWaveData_ashfrost_sleigh::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_sleigh.bin"
+
+	.align 2
+DirectSoundWaveData_ashfrost_warm_pad::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_warm_pad.bin"
+
+	.align 2
+DirectSoundWaveData_ashfrost_recorder::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_recorder.bin"

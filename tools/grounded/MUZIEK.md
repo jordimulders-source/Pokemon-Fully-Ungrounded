@@ -353,3 +353,15 @@ herkennen is, komt ook als controle in `music_lint.py`.
   een constante lage lijn = een te lang uitklinkende, gestemde kick op achtsten (bromde op 52 Hz -> kick korter, op C2).
 - Spleeter-stems zijn bruikbaar voor drumpatronen (aanslag per band per 16e) en octaafcontrole per spoor (energie op f0/2,
   f0, 2f0), maar harmonische vingerafdrukken uit een volle mix zijn onbetrouwbaar (te veel overlap).
+- Ashfrost v1 (`ashfrost_theme.py`, wintervariant van Fallarbor, 148 -> 138 bpm): het origineel spoor voor spoor gekopieerd
+  (noten, CC7-swells), alleen programma's gewisseld + sleebellen/wind erbij. **Het vanilla-origineel zelf haalt de lint
+  niet** (tot 19 noten door harp-/glockenspiel-releases 242/249): in een eigen kopie van de voicegroup de releases korter
+  (harp 175, glock 200, fluit 135), legato-partijen op een andere klank (pad, contrabas, hoorn) een uitklinktijd eerder
+  loslaten, korte doorgangsnoten in een pad met trage aanzet weglaten, en een parallelle draaier in de tegenstem tot één
+  noot. **FluidR3-klarinet (GM 71) is onbruikbaar als lead:** 87% van zijn energie zit in de 3e boventoon (2-4 kHz) =
+  schel in de GBA-mix (solo 300-550 'boven 3 kHz' vs. 50 voor de fluit). Meet de helderheid van een GM-programma vóór je
+  het kiest (`render()` + FFT; fluit/blokfluit/ocarina/hobo < 3,5% boven 2 kHz). Blokfluit (GM 74) op D5 gerenderd = zacht.
+  Een aanhoudende lead op de plek van een uitklinkende nylon klinkt ±3 dB luider (CC7 x 0,75). PSG-ruis als wind: toets
+  ±50 (LFSR ±1 kHz = laag 'whoosh'), stem `voice_noise 60,0,0,7,0,15,7` + CC7-zwelling met top 14-20 (100 = luider dan
+  de hele mix). Een windnoot op tick 0 bleef stil: begin de eerste vlaag een maat later. -V116: piek 65/127, RMS 1924
+  (origineel Fallarbor 1939).

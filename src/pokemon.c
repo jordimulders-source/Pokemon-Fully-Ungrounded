@@ -6106,6 +6106,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     if (trainerId == TRAINER_ALBERT)
         return MUS_GROUNDED_VS_DAVE;
 
+    // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+        return MUS_GROUNDED_VS_KECCLES;
+
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
      && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))

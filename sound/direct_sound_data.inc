@@ -7278,26 +7278,6 @@ DirectSoundWaveData_victini_mute::
 	.incbin "sound/direct_sound_samples/grounded/victini_mute.bin"
 
 	.align 2
-DirectSoundWaveData_np_pulse_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_warm::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_warm.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_full::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_full_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
 DirectSoundWaveData_darkrai_music_box::
 	.incbin "sound/direct_sound_samples/grounded/darkrai_music_box.bin"
 
@@ -7364,3 +7344,23 @@ DirectSoundWaveData_mitch3_wob_db2::
 	.align 2
 DirectSoundWaveData_mitch3_wob_eb2::
 	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_eb2.bin"
+
+	.align 2
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
+
+	.align 2
+DirectSoundWaveData_np_lead_warm::
+	.incbin "sound/direct_sound_samples/grounded/np_lead_warm.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_full::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_full.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_full_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_full_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_organ_sharp::
+	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"

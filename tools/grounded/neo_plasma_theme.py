@@ -158,7 +158,7 @@ FAT_LO, FAT_HI, FARP_LO, FARP_HI, HOLD = 88, 89, 90, 91, 92      # v9
 LEAD_REL, BASS_REL = 60, 50                                         # v11: korte releases (afgekapt per noot)
 # v12: de stemverdeler (welke noot blijft, hoe lang) rekent met de releases van v11, zodat noten, ritme en lengtes
 # exact v11 blijven; de nieuwe stemmen hebben dezelfde (of een kortere) release.
-V11_REL = {17: 90, 38: 50, 62: 110, 63: 110, 80: 60, 81: None, 82: None, 84: None, 85: 140, 86: 100, 87: 110,
+V11_REL = {17: 90, 38: 50, 62: 60, 63: 60, 80: 60, 81: None, 82: None, 84: None, 85: 140, 86: 100, 87: 110,
            88: 60, 89: 60, 90: 40, 91: 40, 92: 100, 127: None}
 # v12 (Jordi: 'de noten heb je te pakken, maar de instrumenten klinken alsof een computer met een kapotte speaker
 # speelt; gewone Emerald-instrumenten'): alleen stock-samples uit de Emerald-voicegroups, eenvoudige ADSR, geen eigen
@@ -181,8 +181,8 @@ VOICES = {
     BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 7, 1',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
     SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
-    BRASS:    'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
-    BRASS_LO: 'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
+    BRASS:    'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',     # v12g: release 60
+    BRASS_LO: 'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',
     BASS:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, %d' % BASS_REL,
     ORGAN:    'voice_directsound 60, 0, %s, 255, 0, 255, 90' % ORGAN2,
     STAB:     'voice_directsound 60, 0, %s, 255, 215, 40, 100' % ORGAN2,
@@ -897,6 +897,9 @@ def build():
     # exact v7 blijft; alleen de lead wordt daarna legato. ds_check() meet de bezetting met de echte v8-releases.
     rel = dict(rel)
     rel.update({BASS: 120, BRASS: 120, BRASS_LO: 110, LEAD: 140, STAB: 100, PLUCK: 150})
+    # v12g (Jordi: 'op 17, 19 en 22 s valt hij weer weg'): de herhaalde 16en van de gitaarmelodie klonken door de lange
+    # trompet-release (110) maar 20 ms: de melodie (brass/brass_lo) krijgt de korte lead-release (60) en de lead-keysplit
+    rel.update({BRASS: LEAD_REL, BRASS_LO: LEAD_REL})
     rel[BASS] = BASS_REL            # v11: de bas rekent met zijn echte (korte) release; zie BASS_LEN
     progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': PLUCK, 'brass_lo': BRASS_LO,
              'arp': PLUCK, 'stab': STAB, 'dsine': DSINE}

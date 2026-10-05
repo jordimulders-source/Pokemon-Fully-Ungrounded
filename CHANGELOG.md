@@ -17020,3 +17020,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Japanse lettertypes** uit de ROM (+133 KB; schakelaar `JAPANESE_FONTS` in `include/fonts.h`). Geen enkele tekst in de game is Japans.
 - **Pokémon-overworldsprites** alleen voor de 59 soorten die echt op een kaart of in een script staan (+1,10 MB). `tools/grounded/ow_species_keep.py` maakt de lijst bij elke build automatisch; een nieuwe soort op een kaart komt er vanzelf bij. Schakelaar `OW_ONLY_USED_SPECIES` in `include/config/overworld.h`. Gevolg: de sprite-viewer in het debugmenu toont voor andere soorten een vraagteken.
 - Vrij: 1,74 MB → **3,25 MB**.
+
+### [v0.9.106] - Neo Plasma v12g: de herhaalde noten van de melodie klinken weer
+- Jordi: op 0:17, 0:19 en 0:22 valt de melodie weg. Daar speelt de gitaarmelodie herhaalde 16en (C3/C4, "dudududu"); door de lange release van de trompet (bedoeld voor akkoordstoten) kortte het script die noten in tot 20 ms, een tikje. De melodie krijgt nu de korte lead-release (60): de kortste noten klinken ±55 ms. Geen noten weg, 0 overlopen.

@@ -10,6 +10,7 @@
 .include "sound/voicegroups/drumsets/magikarp.inc"
 .include "sound/voicegroups/drumsets/jirachi.inc"
 .include "sound/voicegroups/drumsets/heatran.inc"
+.include "sound/voicegroups/drumsets/neo_plasma.inc"
 .include "sound/voicegroups/drumsets/rayquaza.inc"
 
 @ key splits

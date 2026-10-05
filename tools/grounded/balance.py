@@ -58,38 +58,42 @@ def reference(src, groups, sec):
     return res
 
 
-def gba(rom, state, groups, sec, ntracks):
+def record(rom, state, mute, sec):
+    """Neemt `sec` seconden op (emulator-audio incl. PSG, 32768 Hz, mono) met de m4a-sporen in `mute` op volume 0."""
     from emu import Emu, load
     base = int(re.search(r'(0x[0-9a-f]+)\s+gMPlayTrack_BGM\n', open('pokeemerald.map').read()).group(1), 16)
+    e = Emu(rom); load(e, state)
+    mem = e.core.memory
+    buf = e.core.get_audio_channels(); buf.set_rate(32768)
+    rec, on = [], [False]
+
+    def frame():
+        for t in mute:                       # volX = 0 + MPT_FLG_VOLCHG, elke frame (de MIDI zet vol opnieuw)
+            a = base + 0x50 * t
+            mem.u8[a + 19] = 0
+            mem.u8[a] = mem.u8[a] | 0x03
+        e.core.run_frame()
+        av = buf.available
+        if av:
+            s = buf.read(av)
+            if on[0]: rec.extend(s)
+    e.core.set_keys(3); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
+    e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
+    for _ in range(5):
+        e.core.set_keys(7); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(6)]
+    e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
+    on[0] = True
+    e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys()
+    for _ in range(int(60 * sec)):
+        frame()
+    return np.array(rec, dtype=np.int16).reshape(-1, 2).astype(float).mean(1)
+
+
+def gba(rom, state, groups, sec, ntracks):
     res = {}
     for name, g in groups.items():
         mute = [i - 1 for i in range(1, ntracks) if i not in g['out']]
-        e = Emu(rom); load(e, state)
-        mem = e.core.memory
-        buf = e.core.get_audio_channels(); buf.set_rate(32768)
-        rec, on = [], [False]
-
-        def frame():
-            for t in mute:                       # volX = 0 + MPT_FLG_VOLCHG, elke frame (de MIDI zet vol opnieuw)
-                a = base + 0x50 * t
-                mem.u8[a + 19] = 0
-                mem.u8[a] = mem.u8[a] | 0x03
-            e.core.run_frame()
-            av = buf.available
-            if av:
-                s = buf.read(av)
-                if on[0]: rec.extend(s)
-        e.core.set_keys(3); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
-        e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
-        for _ in range(5):
-            e.core.set_keys(7); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(6)]
-        e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys(); [frame() for _ in range(30)]
-        on[0] = True
-        e.core.set_keys(0); [frame() for _ in range(4)]; e.core.set_keys()
-        for _ in range(int(60 * sec)):
-            frame()
-        x = np.array(rec, dtype=np.int16).reshape(-1, 2).astype(float).mean(1)
-        res[name] = rms(x)
+        res[name] = rms(record(rom, state, mute, sec))
     return res
 
 

@@ -93,10 +93,12 @@ class Song:
     def tempo(self, tick, factor):
         self.tempo_map.append((int(tick), factor))
 
-    def add(self, notes, program, volume, channel, pan=None, extra=()):
+    def add(self, notes, program, volume, channel, pan=None, extra=(), ccs=()):
         """extra: [(tick, mido.Message)] zoals pitchwheel/control_change (BENDR = CC20, MOD = CC1, LFOS = CC21);
-        op dezelfde tick komen ze na de note-offs en vóór de note-ons."""
-        self.tracks.append((notes, program, volume, channel, pan, list(extra)))
+        op dezelfde tick komen ze na de note-offs en vóór de note-ons.
+        ccs: extra controllers [(tick, controller, waarde)], bv. CC7-automatisering per sectie (dynamiek) of een
+        programmawissel (controller 'prog'). mid2agb kent alleen CC7 (VOL), CC10 (PAN) en CC1 (MOD); CC11 doet niets."""
+        self.tracks.append((notes, program, volume, channel, pan, list(extra), list(ccs)))
 
     def save(self, path, end):
         out = mido.MidiFile(type=1, ticks_per_beat=self.tpb)
@@ -113,18 +115,27 @@ class Song:
             cond.append(m.copy(time=t - last))
             last = t
         out.tracks.append(cond)
-        for notes, prog, vol, ch, pan, extra in self.tracks:
+        for notes, prog, vol, ch, pan, extra, ccs in self.tracks:
             t = mido.MidiTrack()
             t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
             t.append(mido.Message('control_change', channel=ch, control=7, value=vol, time=0))
             if pan is not None:
                 t.append(mido.Message('control_change', channel=ch, control=10, value=pan, time=0))
-            msgs = sorted([(s, 2, n, v, None) for s, e, n, v in notes] + [(e, 0, n, 0, None) for s, e, n, v in notes]
-                          + [(tk, 1, i, 0, m) for i, (tk, m) in enumerate(extra)], key=lambda x: x[:4])
+            # volgorde per tick: note-offs, dan controllers/programma's, dan note-ons
+            msgs = ([(s, 2, n, v, None) for s, e, n, v in notes] + [(e, 0, n, 0, None) for s, e, n, v in notes]
+                    + [(tk, 1, i, 0, m) for i, (tk, m) in enumerate(extra)] + [(tk, 1, c, v, None) for tk, c, v in ccs])
+            # (twee sorteringen zodat bestaande nummers byte-gelijk blijven: Keccles v2 sorteerde met ccs op str(noot))
+            msgs.sort(key=(lambda x: (x[0], x[1], str(x[2]))) if ccs else (lambda x: x[:4]))
             last = 0
             for tk, kind, n, v, m in msgs:
                 if kind == 1:
-                    t.append(m.copy(channel=ch, time=tk - last))
+                    if m is not None:
+                        t.append(m.copy(channel=ch, time=tk - last))
+                    elif n == 'prog':
+                        t.append(mido.Message('program_change', channel=ch, program=v, time=tk - last))
+                    else:
+                        t.append(mido.Message('control_change', channel=ch, control=n, value=max(0, min(127, int(v))),
+                                              time=tk - last))
                 else:
                     t.append(mido.Message('note_on' if kind else 'note_off', channel=ch, note=n,
                                           velocity=max(1, min(127, int(v))) if kind else 0, time=tk - last))

@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Keccles (salsa dura). Gegenereerd door tools/grounded/keccles_theme.py.
-@ 0 = piano met korte release (montuno), 57 = trompet (trombone-ligging), 121 = güiro (ruis), 127 = salsa-drumkit.
+@ 0 = piano met korte release (montuno), 24 = cuatro, 56 = trompet, 57 = trombone (FluidR3), 121/122 = güiro/maracas (ruis), 127 = salsa-drumkit.
 voice_group grounded_keccles
 	voice_keysplit voicegroup_keccles_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -25,7 +25,7 @@ voice_group grounded_keccles
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 21
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 22
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 23
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 24
+	voice_directsound 60, 0, DirectSoundWaveData_kc_cuatro, 255, 0, 255, 140  @ 24
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 25
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 27
@@ -58,7 +58,7 @@ voice_group grounded_keccles
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 57
+	voice_keysplit voicegroup_keccles_trombone_keysplit, keysplit_french_horn  @ 57
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60

@@ -392,3 +392,5 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   PSG-lead op blokgolf 1 = alle tegenstemmen op blokgolf 1 naar DirectSound (anders stelen ze de lead). Melodie
   als 16e-arpeggio's: melodienoot op zijn eigen tick + op elke tel, daartussen akkoordtonen; controle = elke
   (tick, toets) van het origineel zit er nog in.
+- **Ronde 7 (Jordi):** Heatran v6 "te saai, statisch" → v7: meerdere actieve riffs met palm-mutes/slides/bends, ±130 bpm snel deel, stops en tomfills (de 'saai-afdwingende' controles weg, anti-ska-controles blijven). Mitch v4 "95%": lead zachter, bas/growl + snare luider. Neo Plasma v8: intro-run vetter, valse noten in de B-sectie, bridge niet stilvallen. Victini v2: intro rommelig. Darkrai v2: mist een climax. Genesect: v2 (Prodigy) afgekeurd, terug naar v1 ("cyber-funk") maar strakker.
+- **Previews altijd vanaf 0 s** laten beginnen (of de offset noemen): Jordi geeft tijdstempels; de Neo Plasma-preview begon op 13 s, waardoor zijn "intro" eigenlijk het loopbegin was.

@@ -99,7 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
-| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v11 wacht op Jordi (zuivere pulse-lead zonder zweving, blikkerige bas) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v12 wacht op Jordi (noten v11, alleen stock-Emerald-instrumenten: trompet-lead, fingered bass, organ2, PSG, rs-kit) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -511,3 +511,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   niet lineair op de waargenomen balans**: lead 100 -> 67 (-3,5 dB) haalde zijn A-gewogen aandeel maar van 63 naar 50%.
   Stock-toonhoogtes (FFT) op toets 60: distortion_low, trinity_big_boned/30303 = C3; tubular_bell, trompet_60 = C4;
   fingered bass C4 (C2 = toets 36, in de game gemeten Bb1 = 59 Hz). Emerald heeft geen synth-brass: trompet+hoorn (56/60).
+- Neo Plasma v12 (Jordi: 'kapotte speaker'; alleen stock-instrumenten): **instrumenten wisselen zonder de noten te
+  raken** = de stemverdeler laten rekenen met een bevroren release-tabel (V11_REL) en dan pas de voicegroup vervangen.
+  **Klinkende hoogte van stock-samples meten** (harmonic product spectrum): fingered/synth bass, trompet, square_wave
+  klinken op de geschreven noot, sc88pro_organ2 een octaaf lager. Een keysplit in een eigen bestand
+  (`keysplits/<naam>.inc`): musiclib/lint lezen de release alleen uit `<naam>.inc` (anders 200 = valse DS-overload).
+  rs_drumset-releases (kick 242) bezetten kanalen: release per kitnoot overnemen van de oude kit.

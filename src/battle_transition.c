@@ -122,6 +122,7 @@ static void Task_Aurora(u8); // Project Grounded
 static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
 static void Task_Regigigas(u8); // Project Grounded
+static void Task_Dave(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
 static void Task_Raikou(u8); // Project Grounded
@@ -496,6 +497,12 @@ static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/rou
 static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
 static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
 static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
+static const u16 sDave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_dave.4bpp"); // Project Grounded
+static const u16 sDave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_dave.gbapal");
+static const u16 sDave_Maps[] = INCBIN_U16("graphics/battle_transitions/route_dave.bin");
+static const s16 sDave_Ball[] = INCBIN_S16("graphics/battle_transitions/route_dave_ball.bin");
+static const u32 sDaveBall_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_dave_ball.4bpp");
+static const u16 sDaveBall_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_dave_ball.gbapal");
 static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
 static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
 static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
@@ -619,6 +626,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
     [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
     [B_TRANSITION_REGIGIGAS] = Task_Regigigas, // Project Grounded
+    [B_TRANSITION_DAVE] = Task_Dave, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -8760,4 +8768,139 @@ static const struct RouteTransition sRT_PoisonChain =
 static void Task_PoisonChain(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_PoisonChain);
+}
+
+// ---------------- Dave (Freed From Desire): penalty vanuit de schutter. Het veld gaat open als een tv-beeld, de bal
+// wipt op de riff, wordt op een riffnoot getrapt en zit op de volgende strak in de winkelhaak (paal-tik, net bolt),
+// dan GOAL! groot in beeld (pop-in, schudden, knipperen) en op de klap van tel 5 naar het gevecht.
+// Tiles/tilemaps/bal/baan: tools/grounded/dave_transition.py. Tilemaps zijn 32x22 (rij 21 = rij 0 voor boven het beeld).
+// Muziek (128 BPM, gMPlayInfo_BGM.clock 24 per tel): riffnoten op klok 0/24/42/60/84 = muziekframe 0/28/50/71/99,
+// klappen op klok 24/72/120 = muziekframe 28/85/141 (gemeten in mGBA).
+// De transitie begint DAVE_MUSIC_OFS frames na de muziek (gemeten met gMPlayInfo_BGM.clock).
+#define DAVE_MUSIC_OFS 19                 // gemeten: rij 9/10 verschijnt op muziekframe 19
+#define DAVE_T(m)      ((m) - DAVE_MUSIC_OFS)
+#define DAVE_REVEAL    10                 // beeld gaat open vanuit het midden
+#define DAVE_HOP       DAVE_T(50)         // riffnoot 3: de bal wipt even op
+#define DAVE_KICK      DAVE_T(71)         // riffnoot 4: trap
+#define DAVE_FLIGHT    28
+#define DAVE_HIT       (DAVE_KICK + DAVE_FLIGHT) // riffnoot 5 (muziekframe 99): in de winkelhaak
+#define DAVE_GOAL      (DAVE_HIT + 3)
+#define DAVE_END       (DAVE_T(141) - 3)  // klap op tel 5: de fade naar het gevecht begint (na 2 frames vasthouden)
+#define DAVE_KEY_NET   1
+#define DAVE_KEY_GOAL  5
+
+static const s8 sDaveHop[] = {2, 4, 5, 6, 6, 5, 4, 2};
+static const s8 sDaveHitShake[] = {2, -2, 2, -1, 1, -1, 1, 0};
+static const s8 sDaveGoalShake[] = {4, -4, 3, -3, 3, -2, 2, -2, 1, -1, 1, 0};
+// na de inslag: het net neemt de bal mee naar achteren (dx, dy, schaal) en laat hem in de hoek hangen
+static const s8 sDaveNetBall[][3] = {{-1, -1, -2}, {-2, -1, -4}, {-2, 0, -5}, {-1, 1, -4}, {0, 1, -3}, {0, 2, -2}, {0, 2, -1}, {0, 3, 0}};
+
+static void RTDave_DrawKey(struct Task *task, u32 key)
+{
+    u16 *tilemap = RT_Tilemap();
+    if (task->tRtB == (s16)key)
+        return;
+    task->tRtB = key;
+    CpuCopy16(&sDave_Maps[key * 32 * 22], tilemap, 32 * 21 * 2);
+    CpuCopy16(&sDave_Maps[key * 32 * 22 + 21 * 32], &tilemap[31 * 32], 32 * 2);
+}
+
+static void RTDave_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sDaveBall_Gfx, sDaveBall_Palette, sDave_Ball[0], sDave_Ball[1]);
+    RT_SetSprite(task, sDave_Ball[0], sDave_Ball[1], sDave_Ball[2], 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+    task->tRtA = 0;  // draaihoek van de bal
+    task->tRtB = -1; // getekende tilemap
+}
+
+static bool8 RTDave_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, x, y, scale, shake = 0, key = 0;
+
+    // 1. beeld gaat open vanuit het midden (elke rij in één keer zijn eindwaarde)
+    if (t < DAVE_REVEAL)
+    {
+        s32 r, k = t + 1;
+        for (r = 10 - k; r < 10 + k; r++)
+            CpuCopy16(&sDave_Maps[r * 32], &tilemap[r * 32], 32 * 2);
+        if (t == DAVE_REVEAL - 1)
+        {
+            RTDave_DrawKey(task, 0);
+            gSprites[task->tRtSprite].invisible = FALSE;
+        }
+        return FALSE;
+    }
+
+    // 2. de bal
+    x = sDave_Ball[0];
+    y = sDave_Ball[1];
+    scale = sDave_Ball[2];
+    if (t >= DAVE_HOP && t < DAVE_HOP + (s32)ARRAY_COUNT(sDaveHop))
+        y -= sDaveHop[t - DAVE_HOP];
+    if (t == DAVE_KICK)
+        PlaySE(SE_M_MEGA_KICK);
+    if (t >= DAVE_KICK && t <= DAVE_HIT)
+    {
+        const s16 *b = &sDave_Ball[(t - DAVE_KICK) * 3];
+        x = b[0];
+        y = b[1];
+        scale = b[2];
+        task->tRtA -= 0x1500;
+    }
+    else if (t > DAVE_HIT)
+    {
+        u32 i = min(t - DAVE_HIT - 1, (s32)ARRAY_COUNT(sDaveNetBall) - 1);
+        const s16 *b = &sDave_Ball[DAVE_FLIGHT * 3];
+        x = b[0] + sDaveNetBall[i][0];
+        y = b[1] + sDaveNetBall[i][1];
+        scale = b[2] + sDaveNetBall[i][2];
+        if (t < DAVE_HIT + 8)
+            task->tRtA -= 0x0600;
+    }
+
+    // 3. net en GOAL!
+    if (t == DAVE_HIT)
+        PlaySE(SE_BALL_BOUNCE_1); // tik tegen de binnenkant van paal en lat
+    if (t >= DAVE_HIT && t < DAVE_HIT + 2)
+        key = DAVE_KEY_NET;
+    else if (t >= DAVE_HIT + 2 && t < DAVE_HIT + 5)
+        key = DAVE_KEY_NET + 1;
+    else if (t >= DAVE_HIT + 5 && t < DAVE_HIT + 8)
+        key = DAVE_KEY_NET + 2;
+    else if (t >= DAVE_HIT + 8 && t < DAVE_HIT + 11)
+        key = DAVE_KEY_NET + 3;
+    if (t >= DAVE_HIT && t - DAVE_HIT < (s32)ARRAY_COUNT(sDaveHitShake))
+        shake = sDaveHitShake[t - DAVE_HIT];
+    if (t >= DAVE_GOAL)
+    {
+        if (t < DAVE_GOAL + 2)
+            key = DAVE_KEY_GOAL;
+        else if (t < DAVE_GOAL + 5)
+            key = DAVE_KEY_GOAL + 1;
+        else
+            key = DAVE_KEY_GOAL + 2;
+        if (t == DAVE_GOAL)
+            PlaySE(SE_M_MEGA_KICK2);
+        if (t - DAVE_GOAL < (s32)ARRAY_COUNT(sDaveGoalShake))
+            shake = sDaveGoalShake[t - DAVE_GOAL];
+        if (t >= DAVE_GOAL + 8 && ((t - DAVE_GOAL) & 4))
+            LoadPalette(&sDave_Palette[16], BG_PLTT_ID(15), PLTT_SIZE_4BPP); // GOAL! knippert
+    }
+    RTDave_DrawKey(task, key);
+    SetGpuReg(REG_OFFSET_BG0HOFS, shake & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+    RT_SetSprite(task, x - shake, y - shake / 2, scale, task->tRtA);
+    return t >= DAVE_END;
+}
+
+static const struct RouteTransition sRT_Dave =
+{
+    sDave_Tileset, sizeof(sDave_Tileset), sDave_Palette, 1, 1, 0, RTDave_Init, RTDave_Update, RT_FinishSprite
+};
+
+static void Task_Dave(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Dave);
 }

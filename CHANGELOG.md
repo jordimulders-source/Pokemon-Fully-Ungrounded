@@ -16922,7 +16922,16 @@ Volgens Jordi's GBA-instructies per leider:
   - **Tate & Liza:** Goa op 138 bpm met K-B-B-B-bas en galop-arpeggio's. De melodie is modaal verduisterd.
 - **Batchcontrole:** alle 11 0 overlopen, piek ≤ 114/127.
 
-### [v0.9.89] - Brawly v4 en Neo Plasma v10 (Jordi's Gemini-feedback)
+### [v0.9.89] - Dave: eigen gevechtstransitie (GOAL!)
+- **Dave krijgt een penalty-transitie, gezien vanuit de schutter**, op de riff van Freed From Desire:
+  - Het voetbalveld met tribune en goal gaat open als een tv-beeld en de bal wipt op de stip.
+  - Op de volgende riffnoot wordt hij getrapt (met effect).
+  - Op de laatste noot zit hij strak in de winkelhaak: tik tegen paal en lat, het net bolt, het beeld schudt.
+  - Dan komt GOAL! groot en schuddend in beeld, en op de klap van tel 5 gaat het naar het gevecht.
+- **Sync:** gemeten met `gMPlayInfo_BGM.clock`; de transitie begint 19 frames na de muziek.
+- **Waar:** alleen Dave, ook in het Battle Stadium.
+- **Bouwscript:** `tools/grounded/dave_transition.py`; de baan van de bal is vooraf berekend in 3D-perspectief.
+### [v0.9.90] - Brawly v4 en Neo Plasma v10 (Jordi's Gemini-feedback)
 - **Brawly v4** (nu-metal, referentie Stemm "Face the Pain"):
   - De "speelgoedaccordeon" bleken de korte chugs (±40 ms stoten van een aangehouden distortion-akkoord), de "tokkelgitaar" was de bas (noten van 5 ticks) en de "scratch" was eigenlijk een glijfluitje (koor-aah). Gemeten met solo-opnames per spoor.
   - Nieuw: muur van powerchords op een tweede distortion-gitaar (tel 1 + elke akkoordwissel, aangehouden), echte palm-mutes, overdrive-bas in strakke achtsten met de kick (+40% t.o.v. de lead), zware kick, heavy-rock-snare op 2 en 4, open hihats op de PSG-ruis (. x . x), breedbandige vinylscratches op de overgangen (o.a. 0:07 en 0:15). Melodie ongewijzigd.

@@ -16983,3 +16983,8 @@ Volgens Jordi's GBA-instructies per leider:
 - v1–v5 geschrapt. Nieuw: 80s arena-rock op de melodie van het originele gym leader theme, met alleen stock Emerald-instrumenten (distortiongitaar en bas uit vs_gym_leader, trompet/hoorn, standaard kick/snare/crash). Geen hi-hats, geen PSG, geen eigen samples, max. vijf lagen tegelijk.
 - Intro: boksbel "ding ding" + aanzwellend snareroffel. Dan harde powerchord-stoten met stilte ertussen (dun-dun-dun ... dun), dikke snare met galm op 2 en 4, bas mee met de stoten; montage-deel waarin het koper de melodie overneemt en kick/bas achtsten spelen. 106 bpm gevoeld (half-time).
 - In de game: 0 overlopen, piek 96/127, alle lagen hoorbaar (lead 50%, stoten 23%, drums 18%, bas 10%).
+
+### [v0.9.99] - Neo Plasma v12: alleen gewone Emerald-instrumenten
+- Op Jordi's voorstel: noten, ritme, tempo (176), opbouw en drums van v11 exact gehouden, maar alle eigen samples en effecten eruit ("een computer met een kapotte speaker"). Elke partij speelt nu op een stock-instrument uit de vanilla Emerald-gevechtsnummers: lead op de trompet-keysplit (vs_gym_leader/vs_elite_four) met de PSG-blokgolf een octaaf eronder, akkoordstoten op trompet, orgel-16en/arpeggio's op het orgel uit vs_frontier_brain, bas op de fingered bass van vs_gym_leader, standaard rs-drumkit.
+- De opening-run is weer een gewone ladder (geen pitch bends). Alle np_*-samples en `neo_plasma_samples.py` zijn weg.
+- In dezelfde ROM gemeten tegen het gewone gym leader theme: even schoon (minder niet-harmonische ruis), 0 overlopen, piek 90/127.

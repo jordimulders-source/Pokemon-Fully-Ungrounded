@@ -1,24 +1,32 @@
 #!/usr/bin/env python3
-"""Project Grounded: "Battle! Keccles", een eigen compositie in salsa dura-stijl (Fania, Willie Colón, Héctor Lavoe).
-Keccles is een Kecleon met een PhD en existentiële angst; hij vecht op een harde New York-salsa.
+"""Project Grounded: "Battle! Keccles" v2, eigen compositie in de stijl van Willie Colón (Fania-jaren: 'El Malo',
+'La Murga', 'Che Che Colé', 'Calle Luna Calle Sol', 'Juanito Alimaña'). Keccles is een Kecleon met een PhD en
+existentiële angst; hij vecht op harde New Yorkse salsa dura.
 
-190 bpm (4/4, in 'cut time' gedacht), A-mineur, clave 2-3 (even maten = 2-kant, oneven = 3-kant).
-  maat 0-1   intro: piano-montuno + clave + güiro, conga's komen erbij
-  maat 2     bloque: koperstoten op de clave (E7)
-  maat 3     koperloop omhoog + timbale-abanico            (= maat 51, zodat de loop naadloos is)
-Loop (48 maten, ±60 s):
-  A  4-19    de hook: trompet + trombone in octaven (arpeggio omhoog, G#-draaitje); 2e helft met een tweede trompet
-  B  20-31   'coro': trombone-melodie over Dm7-G7-Cmaj7-Fmaj7-Bm7b5-E7-Am, trompetstoten op de clave
-  M  32-47   mambo: trombone-moña, campana, trompetten eerst op de clave, dan een eigen tegenmelodie
-  break 48-51 bloque-stoten, timbalesolo, koperloop -> terug naar A
-Bas = tumbao (2+ en 4, anticipeert de volgende maat), conga = tumbao (slap op 2, open tonen op 4 en 4+),
-timbales = cascara op de zijkant (A/B), fills naar elke nieuwe sectie. Güiro op het PSG-ruiskanaal (kost geen
-DirectSound-kanaal).
+v1 (Jordi: 'klinkt goed, maar te eentonig, meer reguliere salsa'): de hook, het tempo en de groove blijven.
+v2 voegt toe wat Colón-salsa is: brallende trombones voorop (2-3 in harmonie, eigen FluidR3-sample), trompet alleen
+voor kleur, cuatro (Yomo Toro) met tremolo-fills, een coro, veel soorten percussie en echte dynamiek (CC7 per sectie).
 
-Voicegroup grounded_keccles (gegenereerd) = grounded_gm met: 0 = piano met korte release (montuno-stoten),
-57 = trompet-keysplit (trombone-ligging, nooit onder C3), 121 = güiro (ruis), 127 = eigen salsa-drumkit
-(drumsets/keccles.inc, alles DirectSound, geen PSG-piepjes).
-Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/keccles_theme.py"""
+190 bpm (4/4, 'cut time'), A-mineur, clave 2-3 (even maten = 2-kant, oneven = 3-kant).
+  0-3    intro: montuno + clave + maracas, bongó/conga erbij, bloque (koperstoten), koperloop + abanico (= maat 67)
+Loop (64 maten, ±81 s):
+  A  4-19   de hook: eerst alleen twee trombones in tertsen (rauw), dan trompet erbovenop; maat 19 = corte (tutti
+            stoot op de 3-kant, dan stilte) met een cuatro-oploopje naar de coro
+  B 20-35   coro (zacht): koor 'aah' in tertsen (vraag), cuatro-tremolo antwoordt (inspiración); alleen montuno,
+            bas, conga, maracas. Daarna bongó + clave, dan cascara + trombone in het koor, crescendo; het laatste
+            antwoord is een koperstoot
+  P 36-39   piano-montunosolo (octaven, blokakkoorden) over bas + percussie, güiro
+  D 40-47   descarga: alleen bas + percussie (bongó, conga, clave, güiro, maracas); dan een cuatro-solo met
+            cascara, en een trombone-swell (CC7-ramp) naar de mambo
+  M 48-63   mambo: trombone-moña in tertsen + campana + bongo-bel, dan de trompetriff erbovenop (gestapeld), dan
+            trompetten in tertsen, dan drie trombones; crescendo
+  K 64-67   bloque-stoten, timbalesolo, koperloop -> terug naar A
+Percussie (eigen drumkit drumsets/keccles.inc, alles DirectSound): bongó-martillo (in de mambo de bongo-bel), conga-
+tumbao, timbales (cascara, campana, abanico, fills), clave, güiro (sample + PSG-ruis), maracas (PSG-ruis), crash.
+
+Voicegroup grounded_keccles (gegenereerd) = grounded_gm met: 0 = piano met korte release (montuno), 24 = cuatro,
+56 = trompet, 57 = trombone (FluidR3 GM 57, 2 samples), 121 = güiro (PSG-ruis), 122 = maracas (PSG-ruis),
+127 = salsa-drumkit. Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/keccles_theme.py"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import dedupe, detach, allocate, releases, release_ticks, Song
@@ -29,11 +37,12 @@ TPB, BPM = 48, 190
 E = TPB // 2                   # een achtste
 S16 = TPB // 4
 BAR = TPB * 4
-PIANO, TRUMPET, TROMBONE, BASS, GUIRO, DRUMS = 0, 56, 57, 33, 121, 127
+PIANO, CUATRO, CORO, TRUMPET, TROMBONE, BASS, GUIRO_PSG, MARACAS, DRUMS = 0, 24, 52, 56, 57, 33, 121, 122, 127
 # eigen drumkit (drumsets/keccles.inc, vanaf noot 36)
-KICK, CLAVE, CASCARA, HEMBRA, MACHO, CAMPANA, SLAP, TUMBA, CONGA_HI, CRASH, RIM = range(36, 47)
+(KICK, CLAVE, CASCARA, HEMBRA, MACHO, CAMPANA, SLAP, TUMBA, CONGA_HI, CRASH, RIM,
+ BONGO_HI, BONGO_LO, BELL_MOUTH, BELL_HEEL, GUIRO_L, GUIRO_S) = range(36, 53)
 
-A0, B0, M0, K0, END = 4, 20, 32, 48, 52      # secties (maat); de loop = maat 4-52
+A0, B0, P0, D0, M0, K0, END = 4, 20, 36, 40, 48, 64, 68      # secties (maat); de loop = maat 4-68
 
 N = {'C': 0, 'C#': 1, 'D': 2, 'D#': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
 
@@ -46,34 +55,47 @@ def p(name):
 CH = {'Am': [9, 0, 4], 'Dm': [2, 5, 9], 'E7': [4, 8, 11, 2], 'Dm7': [2, 5, 9, 0], 'G7': [7, 11, 2, 5],
       'Cmaj7': [0, 4, 7, 11], 'Fmaj7': [5, 9, 0, 4], 'Bm7b5': [11, 2, 5, 9]}
 PROG = (['Am', 'Dm', 'E7', 'E7']
-        + ['Am', 'Am', 'Dm', 'E7'] * 4
-        + ['Dm7', 'G7', 'Cmaj7', 'Fmaj7', 'Bm7b5', 'E7', 'Am', 'Am', 'Dm', 'E7', 'Am', 'E7']
-        + ['Am', 'Dm', 'E7', 'Am'] * 4
-        + ['Dm', 'E7', 'E7', 'E7'])
+        + ['Am', 'Am', 'Dm', 'E7'] * 4                    # A
+        + ['Dm7', 'G7', 'Cmaj7', 'E7'] * 4                # B: coro-vamp
+        + ['Am', 'Dm', 'E7', 'Am']                        # P
+        + ['Am', 'Dm', 'E7', 'Am'] * 2                    # D
+        + ['Am', 'Dm', 'E7', 'Am'] * 4                    # M
+        + ['Dm', 'E7', 'E7', 'E7'])                       # K
 assert len(PROG) == END
 
-SCALE = [9, 11, 0, 2, 4, 5, 8]          # A harmonisch mineur
+HARM = [9, 11, 0, 2, 4, 5, 8]          # A harmonisch mineur (hook, mambo)
+NAT = [9, 11, 0, 2, 4, 5, 7]           # A natuurlijk mineur / C groot (coro-vamp)
 
 
-def third_below(n):
-    """Diatonische terts onder n (A harmonisch mineur): de tweede trompet."""
+def third_below(n, scale=HARM):
+    """Diatonische terts onder n: de tweede stem."""
+    lo = n - 1
     for d in range(1, 6):
-        if (n - d) % 12 in SCALE:
+        if (n - d) % 12 in scale:
             lo = n - d
             break
     for d in range(1, 6):
-        if (lo - d) % 12 in SCALE:
+        if (lo - d) % 12 in scale:
             return lo - d
     return n - 3
 
 
-def mel(pattern, bar, vel=116, shift=0):
-    """[(achtste, lengte in achtsten, 'A4'), ...] -> punchy koper: korte noten staccato."""
+def mel(pattern, bar, vel=116, shift=0, stac=0.7):
+    """[(achtste, lengte in achtsten, 'A4'), ...] -> punchy koper: korte noten staccato, accent op 1 en 2+."""
     out = []
     for st, ln, nm in pattern:
-        s = bar * BAR + st * E
-        dur = int(E * 0.7) if ln == 1 else ln * E - 6
+        s = bar * BAR + int(st * E)
+        dur = int(E * stac) if ln == 1 else int(ln * E) - 6
         out.append([s, s + dur, p(nm) + shift, vel + (6 if st in (0, 3) else 0)])
+    return out
+
+
+def harm(notes, scale=HARM, lo=48, vel=-12):
+    """Tweede stem een diatonische terts lager (nooit onder `lo`: koper onder C3 = 'puuup')."""
+    out = []
+    for s, e, n, v in notes:
+        t = third_below(n, scale)
+        out.append([s, e, t + 12 if t < lo else t, v + vel])
     return out
 
 
@@ -85,19 +107,28 @@ HOOK = [   # A: de hook (4 maten: Am Am Dm E7); de vierde maat verschilt per her
 ]
 HOOK_END = [[(1, 1, 'G#5'), (2, 1, 'B5'), (3, 1, 'D6'), (4, 3, 'E6')],                       # open (vraag)
             [(1, 1, 'G#5'), (2, 1, 'B5'), (3, 1, 'D6'), (4, 1, 'C6'), (5, 1, 'B5'), (6, 2, 'G#5')]]  # naar de herhaling
-CORO = [   # B: trombone-melodie (een octaaf onder de trompetligging), lang en zangerig
-    [(0, 3, 'F5'), (3, 3, 'A5'), (6, 2, 'C6')],
-    [(0, 4, 'B5'), (4, 2, 'D6'), (6, 2, 'F5')],
-    [(0, 6, 'E5'), (6, 2, 'D5')],
-    [(0, 4, 'C5'), (4, 2, 'A4'), (6, 2, 'C5')],
-    [(0, 3, 'D5'), (3, 3, 'F5'), (6, 2, 'A5')],
-    [(0, 4, 'G#5'), (4, 2, 'F5'), (6, 2, 'D5')],
-    [(0, 7, 'C5')],
-    [(0, 2, 'E5'), (3, 1, 'C5'), (4, 1, 'E5'), (5, 1, 'A5'), (6, 2, 'G#5')],
-    [(0, 1, 'A5'), (1, 1, 'F5'), (2, 1, 'D5'), (3, 2, 'F5'), (5, 1, 'E5'), (6, 2, 'D5')],
-    [(0, 1, 'B4'), (1, 1, 'D5'), (2, 1, 'E5'), (3, 2, 'G#5'), (5, 1, 'B5'), (6, 2, 'D6')],
-    [(0, 3, 'C6'), (3, 1, 'B5'), (4, 1, 'A5'), (5, 1, 'E5'), (6, 2, 'C5')],
-    [(0, 1, 'B4'), (1, 1, 'D5'), (2, 1, 'E5'), (3, 1, 'G#5'), (4, 1, 'B5'), (5, 1, 'D6'), (6, 1, 'E6')],
+CORO_MEL = [   # B: de coro (vraag, 2 maten Dm7 G7), koor in tertsen
+    [(1, 1, 'D5'), (2, 1, 'C5'), (3, 2, 'A4'), (5, 1, 'C5'), (6, 2, 'D5')],
+    [(0, 1, 'F5'), (1, 1, 'E5'), (2, 1, 'D5'), (3, 3, 'B4'), (6, 1, 'G4'), (7, 1, 'B4')],
+]
+# cuatro-inspiraciones (antwoord, 2 maten Cmaj7 E7): (achtste, achtsten, noot, tremolo)
+CUATRO_ANS = [
+    [[(0, 2, 'E5', 1), (2, 2, 'G5', 1), (4, 1, 'E5', 0), (5, 1, 'D5', 0), (6, 1, 'C5', 0), (7, 1, 'B4', 0)],
+     [(0, 2, 'G#4', 1), (2, 1, 'B4', 0), (3, 1, 'D5', 0), (4, 3, 'E5', 1)]],
+    [[(0, 4, 'G5', 1), (4, 1, 'B5', 0), (5, 1, 'A5', 0), (6, 1, 'G5', 0), (7, 1, 'E5', 0)],
+     [(0, 1, 'F5', 0), (1, 1, 'E5', 0), (2, 1, 'D5', 0), (3, 1, 'B4', 0), (4, 2, 'G#4', 1), (6, 1, 'B4', 0), (7, 1, 'D5', 0)]],
+    [[(0, 1, 'C5', 0), (1, 1, 'E5', 0), (2, 1, 'G5', 0), (3, 3, 'B5', 1), (6, 1, 'A5', 0), (7, 1, 'G5', 0)],
+     [(0, 2, 'E5', 1), (2, 1, 'D5', 0), (3, 1, 'C5', 0), (4, 1, 'B4', 0), (5, 1, 'G#4', 0), (6, 2, 'E4', 1)]],
+]
+BRASS_ANS = [   # laatste antwoord in de coro: koperstoot omhoog naar de pianosolo
+    [(0, 1, 'E5'), (1, 1, 'G5'), (2, 1, 'B5'), (3, 2, 'C6'), (5, 1, 'B5'), (6, 2, 'G5')],
+    [(0, 1, 'G#5'), (1, 1, 'B5'), (2, 1, 'D6'), (3, 2, 'E6'), (6, 1, 'E6'), (7, 1, 'E6')],
+]
+PIANO_SOLO = [   # P: montunosolo in octaven (Am Dm E7 Am); 'chord' = blokakkoord
+    [(0, 1, 'A5'), (1, 1, 'A5'), (3, 1, 'C6'), (4, 1, 'B5'), (5, 1, 'A5'), (6, 2, 'E5')],
+    [(1, 1, 'F5'), (2, 1, 'A5'), (3, 1, 'D6'), (5, 1, 'C6'), (6, 1, 'A5'), (7, 1, 'F5')],
+    [(0, 1, 'G#5'), (1, 1, 'B5'), (2, 1, 'D6'), (3, 1, 'F6'), (4, 1, 'E6'), (5, 1, 'D6'), (6, 1, 'B5'), (7, 1, 'G#5')],
+    [(0, 1, 'chord'), (3, 1, 'chord'), (5, 1, 'G#5'), (6, 1, 'A5'), (7, 1, 'B5')],
 ]
 MONA = {   # mambo: trombone-moña (ostinato)
     'Am': [(1, 1, 'E4'), (2, 1, 'E4'), (3, 1, 'A4'), (5, 1, 'E4'), (6, 2, 'G4')],
@@ -105,7 +136,7 @@ MONA = {   # mambo: trombone-moña (ostinato)
     'E7': [(1, 1, 'G#4'), (2, 1, 'G#4'), (3, 1, 'B4'), (5, 1, 'G#4'), (6, 2, 'D4')],
     'Am2': [(0, 2, 'C4'), (3, 1, 'E4'), (4, 1, 'A3'), (6, 1, 'A3'), (7, 1, 'C4')],
 }
-MAMBO_TPT = {   # mambo, tweede helft: tegenmelodie van de trompetten in de gaten van de moña
+MAMBO_TPT = {   # mambo: tegenriff van de trompetten in de gaten van de moña (gestapeld)
     'Am': [(0, 2, 'C6'), (3, 1, 'B5'), (4, 1, 'A5'), (6, 2, 'E5')],
     'Dm': [(0, 2, 'D6'), (3, 1, 'C6'), (4, 1, 'A5'), (6, 2, 'F5')],
     'E7': [(0, 1, 'E6'), (1, 1, 'D6'), (2, 1, 'B5'), (3, 1, 'G#5'), (4, 1, 'E5'), (5, 1, 'F5'), (6, 2, 'G#5')],
@@ -119,8 +150,43 @@ def clave_pos(bar):
     return (2, 4) if bar % 2 == 0 else (0, 3, 6)     # 2-3: even maat = 2-kant
 
 
+def section(b):
+    if b < A0:
+        return 'intro'
+    if b < B0:
+        return 'A1' if b < A0 + 8 else 'A2'
+    if b < P0:
+        u = (b - B0) // 4
+        return 'B12' if u < 2 else 'B3' if u == 2 else 'B4'
+    if b < D0:
+        return 'P'
+    if b < M0:
+        return 'D1' if b < D0 + 4 else 'D2'
+    if b < K0:
+        return 'M%d' % ((b - M0) // 4 + 1)
+    return 'K'
+
+
+# ---- dynamiek: CC7 per spoor per sectie (Jordi: 'ik mis de dynamiek') ------------------------------------------------
+TRACKS = [   # naam, programma, basisvolume (vol), pan
+    ('tpt', TRUMPET, 104, 84), ('tpt2', TRUMPET, 88, 96), ('trb', TROMBONE, 118, 52), ('trb2', TROMBONE, 106, 40),
+    ('trb3', TROMBONE, 96, 64), ('piano', PIANO, 90, 72), ('bass', BASS, 118, 64), ('cuatro', CUATRO, 104, 88),
+    ('coro', CORO, 100, 60), ('bongo', DRUMS, 92, 84), ('conga', DRUMS, 96, 46), ('timb', DRUMS, 100, 70),
+    ('clave', DRUMS, 88, 58), ('noise', GUIRO_PSG, 40, 64),
+]
+GAIN = {'intro': .92, 'A1': .84, 'A2': .90, 'B12': .50, 'B3': .64, 'B4': .80, 'P': .84, 'D1': .82, 'D2': .88,
+        'M1': .88, 'M2': .93, 'M3': 1.0, 'M4': 1.0, 'K': 1.0}
+GAIN_OVR = {   # sporen die in een sectie de hoofdrol hebben
+    ('coro', 'B12'): .86, ('coro', 'B3'): .92, ('coro', 'B4'): 1.0, ('cuatro', 'B12'): .90, ('cuatro', 'B3'): .95,
+    ('cuatro', 'D2'): 1.0, ('cuatro', 'K'): .9, ('cuatro', 'A2'): .9, ('piano', 'P'): 1.0, ('bass', 'D1'): 1.0,
+    ('bass', 'D2'): 1.0, ('bass', 'B12'): .66, ('noise', 'B12'): .85, ('conga', 'D1'): .95, ('bongo', 'D1'): .95,
+    ('trb', 'B4'): .9,
+}
+
+
 def build():
-    parts = {k: [] for k in ('tpt', 'tpt2', 'trb', 'piano', 'bass', 'clave', 'conga', 'bell', 'timb', 'crash', 'guiro')}
+    parts = {k: [] for k, *_ in TRACKS}
+    parts['noise_prog'] = []
 
     def hit(part, bar, e8, note, vel, ln=S16):
         s = bar * BAR + int(e8 * E)
@@ -130,144 +196,285 @@ def build():
         lead, second, low = BLOQUE[chord]
         for e8 in positions:
             hit('tpt', bar, e8, p(lead), vel, int(E * 0.7))
-            hit('tpt2', bar, e8, p(second), vel - 8, int(E * 0.7))
-            hit('trb', bar, e8, p(low), vel - 4, int(E * 0.7))
+            hit('trb', bar, e8, p(lead) - 12, vel + 4, int(E * 0.7))
+            hit('trb2', bar, e8, p(second) - 12, vel, int(E * 0.7))
+            hit('trb3', bar, e8, p(low) + 12 if p(low) < 60 else p(low), vel - 4, int(E * 0.7))
             hit('bass', bar, e8, bass_root(CH[chord][0]), 120, int(E * 0.8))
             for o in (0, 12):
                 hit('piano', bar, e8, p(lead) - 12 + o, 100, int(E * 0.5))
-            hit('timb', bar, e8, RIM, 110)
+            hit('timb', bar, e8, RIM, 112)
 
-    def run(bar):        # maat 3 = maat 51: koperloop + abanico, eindigt precies op de maatgrens
-        parts['tpt'] += mel(RUN, bar, 112)
-        parts['trb'] += mel(RUN, bar, 108, shift=-12)
+    def run(bar):        # maat 3 = maat 67: koperloop (trombones in tertsen) + abanico, eindigt op de maatgrens
+        parts['tpt'] += mel(RUN, bar, 110)
+        parts['trb'] += mel(RUN, bar, 116, shift=-12)
+        parts['trb2'] += harm(mel(RUN, bar, 116, shift=-12))
         hit('bass', bar, 0, bass_root(4), 118, int(E * 0.8))
         hit('bass', bar, 4, bass_root(4) + 12, 110, int(E * 0.8))
-        for k in range(4):                                             # abanico: rimshot-roffel naar de crash
-            hit('timb', bar, 6 + k * 0.5, RIM if k % 2 else MACHO, 90 + k * 10)
+        abanico(bar)
+
+    def abanico(bar, start=6):   # rimshot-roffel naar de 1 (de 'abanico' van de timbalero)
+        for k in range(4):
+            hit('timb', bar, start + k * 0.5, RIM if k % 2 else MACHO, 90 + k * 10)
+
+    def tremolo(part, bar, figure, vel=100, shift=0):
+        """cuatro: (achtste, achtsten, noot, tremolo) -> tokkel-tremolo in 16e (aanslag + zachtere terugslag)."""
+        for st, ln, nm, trem in figure:
+            s = bar * BAR + int(st * E)
+            if trem:
+                for k in range(int(ln * 2)):
+                    t = s + k * S16
+                    parts[part].append([t, t + S16 - 1, p(nm) + shift, vel - (14 if k % 2 else 0)])
+            else:
+                parts[part].append([s, s + int(E * 0.8), p(nm) + shift, vel + 6])
 
     # ---- intro + break -------------------------------------------------------------------------------------------
     bloque(2, 'E7', (0, 3, 6))
     bloque(K0, 'Dm', (0, 3, 6))
     bloque(K0 + 1, 'E7', (2, 4, 6, 7))
-    hit('crash', K0, 0, CRASH, 110, E)
-    for k in range(16):                                                 # timbalesolo (maat 50)
+    hit('timb', K0, 0, CRASH, 112, E)
+    for k in range(16):                                                 # timbalesolo (maat 66)
         nt = [MACHO, MACHO, HEMBRA, RIM][k % 4] if k < 12 else [HEMBRA, HEMBRA, MACHO, RIM][k - 12]
-        hit('timb', K0 + 2, k * 0.5, nt, 70 + k * 3 + (14 if k % 4 == 0 else 0))
+        hit('timb', K0 + 2, k * 0.5, nt, 74 + k * 3 + (14 if k % 4 == 0 else 0))
     run(3)
     run(END - 1)
+
+    # ---- corte (maat 19): tutti op de 3-kant (1, 2+), dan stilte; cuatro loopt op naar de coro -------------------
+    corte = A0 + 15
+    for e8 in (0, 3):
+        for part, nm, v in (('tpt', 'D6', 124), ('trb', 'G#4', 124), ('trb2', 'E4', 118),
+                            ('trb3', 'D4', 112)):
+            hit(part, corte, e8, p(nm), v, int(E * 0.75))
+        hit('bass', corte, e8, bass_root(4), 124, int(E * 0.8))
+        for nt in (p('G#4'), p('B4'), p('D5')):
+            hit('piano', corte, e8, nt, 104, int(E * 0.5))
+        hit('timb', corte, e8, RIM, 116)
+        hit('conga', corte, e8, SLAP, 112, S16)
+    hit('timb', corte, 0, CRASH, 116, E)
+    tremolo('cuatro', corte, [(5, 1, 'E5', 1), (6, 1, 'G#5', 0), (7, 1, 'B5', 0)], 96)
 
     # ---- bas (tumbao), piano (montuno) ----------------------------------------------------------------------------
     for b in range(END):
         ch, nxt = PROG[b], PROG[(b + 1) if b + 1 < END else A0]
         root, nroot = CH[ch][0], CH[nxt][0]
-        rhythm = (A0 <= b < K0) or b == 1
+        sec = section(b)
+        rhythm = (b == 1) or (A0 <= b < K0 and b != corte)
+        bv = -14 if sec == 'B12' else 0
         if rhythm:
-            if b in (1, A0, B0, M0):
-                hit('bass', b, 0, bass_root(root), 116, 3 * E - 6)
-            hit('bass', b, 3, fifth(root), 108, 3 * E - 6)
+            if b in (1, A0, B0, P0, D0, M0) or (sec.startswith('D') and b % 2 == 0):
+                hit('bass', b, 0, bass_root(root), 116 + bv, 3 * E - 6)
+            hit('bass', b, 3, fifth(root), 108 + bv, 3 * E - 6)
             # 4: de grondtoon van de volgende maat, doorgehouden over de maatgrens (anticipatie)
-            ln = 2 * E - 6 if b + 1 in (K0, 2) else 5 * E - 6
-            hit('bass', b, 6, bass_root(nroot), 120, ln)
-        if b < 2 or (A0 <= b < K0):
-            montuno(parts, b, ch, nxt, 92 if b < 2 else 86)
+            ln = 2 * E - 6 if b + 1 in (K0, 2, corte) else 5 * E - 6
+            hit('bass', b, 6, bass_root(nroot), 120 + bv, ln)
+            if sec.startswith('D') and b % 4 == 3 and b + 1 < M0:          # descarga: loopje naar de volgende maat
+                parts['bass'] = [n for n in parts['bass'] if not (n[0] == b * BAR + 6 * E)]
+                nr = bass_root(nroot)
+                for k, nt in enumerate((fifth(root), nr - 3, nr - 2, nr - 1)):   # kwint, dan chromatisch omhoog
+                    hit('bass', b, 4 + k, nt + (12 if nr - 3 < 28 else 0), 112, E - 4)
+        if b < 2 or (A0 <= b < P0 and b != corte):
+            vel = {'intro': 92, 'A1': 86, 'A2': 90, 'B12': 76, 'B3': 80, 'B4': 86}[sec]
+            montuno(parts, b, ch, nxt, vel)
+        elif M0 <= b < K0:
+            montuno(parts, b, ch, nxt, 88, octaves=False)               # mambo: enkele noten (ruimte voor koper)
 
-    # ---- koper ---------------------------------------------------------------------------------------------------
-    for i in range(16):                                                 # A: hook, 4 keer
+    # ---- A: de hook ----------------------------------------------------------------------------------------------
+    for i in range(16):
         b = A0 + i
+        if b == corte:
+            continue
         k = i % 4
         pat = HOOK[k] if k < 3 else HOOK_END[0] if i in (3, 11) else HOOK_END[1]   # vraag, antwoord
-        parts['tpt'] += mel(pat, b, 114)
-        parts['trb'] += mel(pat, b, 108, shift=-12)
-        if i >= 8:                                                      # tweede helft: tweede trompet (tertsen)
-            parts['tpt2'] += [[s, e, third_below(n), v - 16] for s, e, n, v in mel(pat, b, 114)]
-    for i, pat in enumerate(CORO):                                      # B: trombone zingt, trompetten steken
-        b = B0 + i
-        parts['trb'] += mel(pat, b, 112, shift=-12)
-        if i >= 8:                                                      # opbouw naar de mambo: trompet erbij
-            parts['tpt'] += mel(pat, b, 108)
-        else:
-            tones = CH[PROG[b]]
-            for e8 in clave_pos(b):
-                for part, idx, v in (('tpt', 1, 104), ('tpt2', 3 if len(tones) > 3 else 2, 96)):
-                    hit(part, b, e8, top(tones[idx], 74, 86), v, int(E * 0.6))
-    for i in range(16):                                                 # mambo
+        trb = mel(pat, b, 118, shift=-12)
+        parts['trb'] += trb                                             # Colón: trombones voorop, in tertsen
+        parts['trb2'] += harm(trb, vel=-8)
+        if i >= 8:                                                      # tweede helft: trompet erbovenop (kleur)
+            parts['tpt'] += mel(pat, b, 106)
+        elif k == 3:                                                    # eerste helft: trompet-antwoord op de 4
+            parts['tpt'] += mel([(6, 1, 'E6'), (7, 1, 'E6')], b, 100)
+
+    # ---- B: coro ------------------------------------------------------------------------------------------------
+    for u in range(4):
+        b = B0 + u * 4
+        for j in range(2):                                              # koor (vraag), in tertsen
+            ctop = mel(CORO_MEL[j], b + j, 92 + u * 6, stac=0.85)
+            parts['coro'] += ctop + harm(ctop, NAT, lo=52, vel=-10)
+            if u == 3:                                                  # laatste keer: trombone zingt mee
+                parts['trb'] += mel(CORO_MEL[j], b + j, 100, shift=-12, stac=0.85)
+        if u < 3:                                                       # cuatro (antwoord)
+            for j in range(2):
+                tremolo('cuatro', b + 2 + j, CUATRO_ANS[u][j], 98 + u * 4)
+        else:                                                           # koperstoot naar de pianosolo
+            for j in range(2):
+                t = mel(BRASS_ANS[j], b + 2 + j, 118)
+                parts['tpt'] += t
+                parts['trb'] += mel(BRASS_ANS[j], b + 2 + j, 120, shift=-12)
+                parts['trb2'] += harm(mel(BRASS_ANS[j], b + 2 + j, 120, shift=-12), NAT)
+
+    # ---- P: pianosolo ---------------------------------------------------------------------------------------------
+    for i, pat in enumerate(PIANO_SOLO):
+        b = P0 + i
+        for st, ln, nm in pat:
+            s = b * BAR + st * E
+            dur = 10 if ln == 1 else ln * E - 14
+            if nm == 'chord':
+                for nt in (p('A4'), p('C5'), p('E5')):
+                    parts['piano'].append([s, s + 10, nt, 112])
+            else:
+                for o in (0, -12):
+                    parts['piano'].append([s, s + dur, p(nm) + o, 108 + (8 if st in (0, 3) else 0)])
+
+    # ---- D: descarga (bas + percussie), dan cuatro-solo en trombone-swell ---------------------------------------
+    for i in range(4):                                                  # cuatro speelt de hook als tremolo-solo
+        b = D0 + 4 + i
+        pat = HOOK[i] if i < 3 else HOOK_END[0]
+        tremolo('cuatro', b, [(st, ln, nm, 1 if ln > 1 else 0) for st, ln, nm in pat], 104)
+    swell = (M0 - 2) * BAR + 4 * E
+    for part, nm, v in (('trb', 'D4', 120), ('trb2', 'B3', 116), ('trb3', 'G#3', 112)):
+        parts[part].append([swell, M0 * BAR - 4, p(nm), v])
+
+    # ---- M: mambo ------------------------------------------------------------------------------------------------
+    for i in range(16):
         b = M0 + i
         key = PROG[b] if i % 4 != 3 else 'Am2'
-        parts['trb'] += mel(MONA[key], b, 116)
-        if 4 <= i < 8:                                                  # trompetten op de clave
-            for e8 in clave_pos(b):
-                tones = CH[PROG[b]]
-                hit('tpt', b, e8, top(tones[1], 76, 88), 112, int(E * 0.6))
-                hit('tpt2', b, e8, top(tones[2], 72, 84), 100, int(E * 0.6))
-        elif i >= 8:                                                    # tegenmelodie, in tertsen
-            parts['tpt'] += mel(MAMBO_TPT[key], b, 116)
-            parts['tpt2'] += [[s, e, third_below(n), v - 14] for s, e, n, v in mel(MAMBO_TPT[key], b, 116)]
+        trb = mel(MONA[key], b, 118 + (4 if i >= 8 else 0))
+        parts['trb'] += trb
+        if not 8 <= i < 12:                                             # M3: trompetten in tertsen, 1 trombone
+            parts['trb2'] += harm(trb, vel=-6)
+        if i >= 12:                                                     # climax: drie trombones
+            parts['trb3'] += harm(harm(trb, vel=-6), vel=-6)
+        if i >= 4:                                                      # gestapelde riff: trompet erbovenop
+            tp = mel(MAMBO_TPT[key], b, 110 + (6 if i >= 8 else 0))
+            parts['tpt'] += tp
+            if 8 <= i < 12:                                             # trompetten in tertsen (max. 3 koperstemmen)
+                parts['tpt2'] += harm(tp, vel=-10)
 
     # ---- percussie -----------------------------------------------------------------------------------------------
     for b in range(END):
-        for e8 in clave_pos(b):
-            hit('clave', b, e8, CLAVE, 104)
-        if b >= 1 and b != K0 + 2:                                      # conga-tumbao (niet in de timbalesolo)
-            soft = 0 if b >= A0 else -20
+        sec = section(b)
+        ending = b in (2, 3, corte, K0, K0 + 1, K0 + 2, K0 + 3)
+        # clave (niet in de zachte coro; in de volle stukken dragen cascara en campana hem)
+        if sec not in ('B12', 'A2', 'B4', 'M1', 'M2', 'M3', 'M4') and b != corte:   # volle stukken: cascara draagt de clave
+            for e8 in clave_pos(b):
+                hit('clave', b, e8, CLAVE, 100 if sec != 'B3' else 84)
+        # conga-tumbao
+        if b >= 1 and b != K0 + 2 and b != corte:
+            soft = {'intro': -20, 'B12': -24, 'B3': -12}.get(sec, 0)
             for e8, nt, v in ((0, SLAP, 46), (2, SLAP, 112), (4, SLAP, 46), (6, TUMBA, 104),
                               (7, CONGA_HI if b % 2 else TUMBA, 100)):
-                if b in (2, 3, K0, K0 + 1) and e8 != 2:
+                if ending and e8 != 2:
                     continue                                            # bloque/loop: alleen de slap
                 hit('conga', b, e8, nt, v + soft, S16 + 4)
-            if M0 <= b < K0:
+            if sec.startswith('M') or sec.startswith('D'):
                 hit('conga', b, 5, CONGA_HI, 84, S16 + 4)
-        if (A0 <= b < M0) or b in (0, 1):                               # cascara op de zijkant van de timbales
+        # bongó: martillo; in de mambo de bongo-bel (cencerro)
+        if (b in (1,) or sec in ('A1', 'A2', 'B3', 'B4', 'P', 'D1', 'D2')) and not ending:
+            for e8, nt, v in ((0, BONGO_HI, 104), (1, BONGO_HI, 58), (2, BONGO_HI, 86), (3, BONGO_HI, 58),
+                              (4, BONGO_HI, 100), (5, BONGO_HI, 58), (6, BONGO_LO, 108), (7, BONGO_HI, 64)):
+                if v < 70 and sec in ('A2', 'B4'):
+                    continue                                            # volle stukken: geen spookslagen (ruimte)
+                hit('bongo', b, e8, nt, v - (10 if sec == 'B3' else 0), S16)
+            if sec == 'D1' and b % 2:                                   # descarga: bongó improviseert (repiques)
+                for k in range(4):
+                    hit('bongo', b, 4 + k * 0.5, BONGO_HI if k % 2 == 0 else BONGO_LO, 92 + k * 4, S16 - 2)
+        elif sec.startswith('M'):
+            for e8, nt, v in ((0, BELL_MOUTH, 110), (2, BELL_HEEL, 82), (4, BELL_MOUTH, 106), (6, BELL_HEEL, 82),
+                              (7, BELL_HEEL, 62)):
+                hit('bongo', b, e8, nt, v, E - 6)
+        # timbales: cascara (A, coro-opbouw, solo's), campana (mambo)
+        if sec in ('intro', 'A1', 'A2', 'B4', 'P', 'D2') and not ending:
             for e8 in ((0, 2, 4, 5, 7) if b % 2 == 0 else (0, 2, 3, 5, 7)):
-                hit('bell', b, e8, CASCARA, 92 if e8 in clave_pos(b) else 64, S16)
-        if M0 <= b < K0:                                                # campana in de mambo
+                v = 92 if e8 in clave_pos(b) else 64
+                hit('timb', b, e8, CASCARA, v - (16 if sec == 'B4' else 0), S16)
+        if sec.startswith('M'):
             for e8, v in ((0, 112), (2, 86), (3, 70), (4, 106), (6, 86), (7, 70)):
-                hit('bell', b, e8, CAMPANA, v, E - 4)
+                hit('timb', b, e8, CAMPANA, v + (6 if sec in ('M3', 'M4') else 0), E - 4)
+        # güiro: PSG-ruis in A en de mambo (lang-kort-kort), sample in de pianosolo/descarga
+        if sec in ('A1', 'A2') or sec.startswith('M') or b in (2, 3, END - 1):
+            if b != corte:
+                for beat in range(4):
+                    s = b * BAR + beat * TPB
+                    parts['noise'] += [[s, s + 18, 76, 72], [s + E, s + E + 8, 79, 48], [s + E + S16, s + E + S16 + 8, 79, 48]]
+        elif sec in ('P', 'D1', 'D2'):
+            for beat in range(4):
+                hit('clave', b, beat * 2, GUIRO_L, 70 if beat % 2 == 0 else 58, E - 4)
+                hit('clave', b, beat * 2 + 1, GUIRO_S, 52, S16 - 2)
+        # maracas (PSG-ruis): intro, coro, solo's
+        if sec in ('intro', 'B12', 'B3', 'B4', 'P', 'D1', 'D2') and b not in (2, 3):
+            for e8 in range(8):
+                s = b * BAR + e8 * E
+                parts['noise'].append([s, s + 6, 88, 70 if e8 % 2 == 0 else 46])
+                parts['noise'].append([s + S16, s + S16 + 4, 91, 30])
+        # fills
         rel = b - A0
-        if A0 <= b < K0 and rel % 4 == 3 and b + 1 not in (B0, M0, K0):  # kleine fill elke 4 maten
-            for k, nt in enumerate((MACHO, MACHO, HEMBRA, HEMBRA)):
+        if A0 <= b < K0 and rel % 4 == 3 and b + 1 not in (B0, P0, D0, M0, K0) and b != corte \
+                and sec not in ('B12', 'B3', 'D1'):
+            for k, nt in enumerate((MACHO, MACHO, HEMBRA, HEMBRA)):    # kleine fill elke 4 maten
                 hit('timb', b, 6 + k * 0.5, nt, 84 + k * 6)
-        if b + 1 in (B0, M0, K0):                                       # grote fill naar een nieuwe sectie
+        if b + 1 in (P0, M0, K0) or b == D0 + 3:                       # grote fill naar een nieuwe sectie
             for k in range(8):
                 hit('timb', b, 4 + k * 0.5, [MACHO, HEMBRA][k // 4] if k < 7 else RIM, 80 + k * 6)
-        if b in (A0, B0, M0):
-            hit('crash', b, 0, CRASH, 112, E)
+        if b in (A0, P0, M0, M0 + 8, D0 + 4) or (sec in ('M3', 'M4') and b % 2 == 0 and b != M0 + 8):
+            hit('timb', b, 0, CRASH, 112 if b in (A0, M0, M0 + 8) else 96, E)
             hit('timb', b, 0, RIM, 112)
-        # güiro (PSG-ruis): lang-kort-kort per tel
-        if b < K0 or b == END - 1 or b in (2, 3):
-            for beat in range(4):
-                s = b * BAR + beat * TPB
-                parts['guiro'] += [[s, s + 18, 76, 70], [s + E, s + E + 8, 79, 46], [s + E + S16, s + E + S16 + 8, 79, 46]]
+        if b in (B0 + 8, B0 + 12):
+            abanico(b - 1)
 
-    for k in parts:
+    # programma's van het ruisspoor: güiro (121) of maracas (122) per sectie
+    prog_cc, last = [], None
+    for b in range(END):
+        sec = section(b)
+        pr = GUIRO_PSG if (sec in ('A1', 'A2') or sec.startswith('M') or b in (2, 3, END - 1)) else MARACAS
+        if pr != last or b == A0:
+            prog_cc.append((b * BAR, 'prog', pr))
+            last = pr
+
+    for k in list(parts):
         parts[k] = dedupe(parts[k])
 
     write_voicegroup()
     rel = releases(VG)
-    progs = {'tpt': TRUMPET, 'tpt2': TRUMPET, 'trb': TROMBONE, 'piano': PIANO, 'bass': BASS}
-    tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
-    for k in ('clave', 'conga', 'bell', 'timb', 'crash'):
+    melodic = {'tpt': TRUMPET, 'tpt2': TRUMPET, 'trb': TROMBONE, 'trb2': TROMBONE, 'trb3': TROMBONE, 'piano': PIANO,
+               'bass': BASS, 'cuatro': CUATRO, 'coro': CORO}
+    tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in melodic.items()}
+    for k in ('bongo', 'conga', 'timb', 'clave'):
         tail[k] = 2
-    for k in ('tpt', 'tpt2', 'trb', 'bass'):
+    for k in ('tpt', 'tpt2', 'trb', 'trb2', 'trb3', 'bass', 'coro', 'cuatro'):
         parts[k] = detach(parts[k], tail[k])
-    order = ['tpt', 'trb', 'clave', 'bass', 'crash', 'timb', 'piano', 'conga', 'tpt2', 'bell']
+    # stemverdeler: melodie > trombones > koor/cuatro > bas > timbales > montuno > conga/bongó > tweede stemmen
+    order = ['trb', 'tpt', 'coro', 'cuatro', 'bass', 'timb', 'trb2', 'piano', 'trb3', 'clave', 'conga', 'bongo', 'tpt2']
     ds = {k: parts[k] for k in order}
     kept = allocate(ds, order, tail)
     print('tail (ticks):', tail)
     for k in order:
         n = len(ds[k])
-        print('  %-6s %4d noten, %3d vallen weg (%.1f%%)' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / max(n, 1)))
+        gone = sorted({e[0] // BAR for e in ds[k] if e not in kept[k]})
+        print('  %-6s %4d noten, %3d vallen weg (%.1f%%)%s' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / max(n, 1),
+                                                             ' maten %s' % gone if gone else ''))
         parts[k] = kept[k]
 
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
     song.loop = (A0 * BAR, END * BAR)
-    layout = [('tpt', TRUMPET, 112, 0, 76), ('trb', TROMBONE, 104, 1, 52), ('tpt2', TRUMPET, 90, 2, 88),
-              ('piano', PIANO, 92, 3, 40), ('bass', BASS, 118, 4, 64), ('guiro', GUIRO, 38, 5, 84)]
-    for k, prog, vol, ch, pan in layout:
-        song.add(parts[k], prog, vol, ch, pan)
-    drums = ('clave', 'conga', 'bell', 'timb', 'crash')
-    song.add(sorted(sum((parts[k] for k in drums), [])), DRUMS, 108, 9)
-    written = {k for k, *_ in layout} | set(drums)
+    for ch, (k, prog, vol, pan) in enumerate(TRACKS):
+        ccs, lastv = [], None
+        for b in range(END):
+            sec = section(b)
+            g = GAIN_OVR.get((k, sec), GAIN[sec])
+            if sec == 'B4':                                             # crescendo naar de pianosolo
+                g *= 0.92 + 0.04 * (b - (B0 + 12))
+            v = round(vol * g)
+            if v != lastv or b == A0 or (b and section(b) != section(b - 1)):   # elke sectie (en het loopbegin) opnieuw
+                ccs.append((b * BAR, 7, v))
+                lastv = v
+        if k in ('trb', 'trb2', 'trb3'):                                # swell naar de mambo (maat 46.5-47)
+            ccs = [c for c in ccs if not (M0 - 2) * BAR < c[0] < M0 * BAR]
+            for j in range(13):
+                ccs.append((swell + j * (M0 * BAR - swell) // 13, 7, round(vol * (0.35 + 0.65 * j / 12))))
+        if k == 'noise':
+            ccs += prog_cc
+        song.add(parts[k], prog, ccs[0][2] if ccs and ccs[0][0] == 0 else vol, ch, pan,
+                 ccs=[c for c in ccs if c[0] > 0 or c[1] == 'prog'])
+    written = {k for k, *_ in TRACKS} | {'noise_prog'}
     assert not [k for k in parts if parts[k] and k not in written], 'partij niet weggeschreven'
     song.save(OUT, END * BAR)
     print(OUT, '%.1f s intro, %.1f s loop' % (A0 * 4 * 60 / BPM, (END - A0) * 4 * 60 / BPM))
@@ -293,7 +500,7 @@ def top(pc, lo, hi):
     return n if n < hi else n - 12
 
 
-def montuno(parts, b, ch, nxt, vel):
+def montuno(parts, b, ch, nxt, vel, octaves=True):
     """Piano-montuno in octaven: 2-maats-cel, gesyncopeerd, de laatste achtste anticipeert de volgende akkoord."""
     tones = sorted(top(pc, 64, 76) for pc in CH[ch][:3])
     ntones = sorted(top(pc, 64, 76) for pc in CH[nxt][:3])
@@ -305,20 +512,25 @@ def montuno(parts, b, ch, nxt, vel):
     cell.append((7, min(ntones, key=lambda n: abs(n - last))))
     for e8, nt in cell:
         s = b * BAR + e8 * E
-        for o in (0, 12):
-            parts['piano'].append([s, s + 11, nt + o, vel + (8 if e8 in (2, 7) else 0)])
+        for o in ((0, 12) if octaves else (12,)):
+            parts['piano'].append([s, s + 10, nt + o, vel + (8 if e8 in (2, 7) else 0)])
 
 
 def write_voicegroup():
-    """grounded_gm + piano met korte release (0), trompet als trombone (57), güiro (121), salsa-drumkit (127)."""
+    """grounded_gm + piano met korte release (0), cuatro (24), trompet (56), trombone (57), güiro/maracas (121/122),
+    salsa-drumkit (127)."""
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
     lines[0] = '@ Project Grounded: grounded_gm voor Battle! Keccles (salsa dura). Gegenereerd door tools/grounded/keccles_theme.py.'
-    lines[1] = '@ 0 = piano met korte release (montuno), 57 = trompet (trombone-ligging), 121 = güiro (ruis), 127 = salsa-drumkit.'
+    lines[1] = ('@ 0 = piano met korte release (montuno), 24 = cuatro, 56 = trompet, 57 = trombone (FluidR3), 121/122 = '
+                'güiro/maracas (ruis), 127 = salsa-drumkit.')
     lines[2] = 'voice_group %s' % VG
     repl = {
         '@ 0': '\tvoice_keysplit voicegroup_keccles_piano_keysplit, keysplit_piano  @ 0',
-        '@ 57': '\tvoice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 57',
+        '@ 24': '\tvoice_directsound 60, 0, DirectSoundWaveData_kc_cuatro, 255, 0, 255, 140  @ 24',
+        '@ 56': '\tvoice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56',
+        '@ 57': '\tvoice_keysplit voicegroup_keccles_trombone_keysplit, keysplit_french_horn  @ 57',
         '@ 121': '\tvoice_noise_alt 60, 0, 0, 0, 2, 6, 0  @ 121',
+        '@ 122': '\tvoice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 122',
         '@ 127': '\tvoice_keysplit_all voicegroup_keccles_drumset  @ 127',
     }
     out = []
@@ -331,22 +543,35 @@ def write_voicegroup():
         'voice_group keccles_piano_keysplit\n'
         + ''.join('\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_piano1_%d, 255, 250, 0, 150\n' % k
                   for k in (48, 60, 72, 84)) + '\n')
+    open('sound/voicegroups/keysplits/keccles_trombone.inc', 'w').write(
+        '@ Project Grounded: trombone (FluidR3 GM 57, gm_samples.py) voor Battle! Keccles; tabel keysplit_french_horn\n'
+        '@ (t/m noot 66 = sample op G3, daarboven = sample op G4). Korte release: salsa-stoten.\n'
+        'voice_group keccles_trombone_keysplit\n'
+        '\tvoice_directsound 55, 0, DirectSoundWaveData_kc_trombone_55, 255, 0, 255, 150\n'
+        '\tvoice_directsound 67, 0, DirectSoundWaveData_kc_trombone_67, 255, 0, 255, 150\n\n')
     kit = [   # vanaf noot 36; alles DirectSound (geen PSG-piepjes)
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_sc88pro_rnd_kick, 255, 0, 255, 0',          # 36 kick
-        'voice_directsound 66, 64, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 100',            # 37 clave
+        'voice_directsound 60, 64, DirectSoundWaveData_kc_claves, 255, 0, 255, 100',                            # 37 clave
         'voice_directsound 79, 88, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 80',             # 38 cascara
-        'voice_directsound 70, 50, DirectSoundWaveData_unused_sc55_tom, 255, 220, 60, 140',                     # 39 timbal hembra
-        'voice_directsound 77, 78, DirectSoundWaveData_unused_sc55_tom, 255, 220, 60, 140',                     # 40 timbal macho
+        'voice_directsound 60, 54, DirectSoundWaveData_kc_timbale_lo, 255, 0, 255, 140',                        # 39 timbal hembra
+        'voice_directsound 60, 82, DirectSoundWaveData_kc_timbale_hi, 255, 0, 255, 140',                        # 40 timbal macho
         'voice_directsound_no_resample 64, 72, DirectSoundWaveData_sd90_cowbell, 255, 0, 255, 120',             # 41 campana
         'voice_directsound_no_resample 64, 54, DirectSoundWaveData_sc88pro_mute_high_conga, 255, 0, 255, 60',   # 42 conga slap
         'voice_directsound 60, 46, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 60',                # 43 tumbadora open
         'voice_directsound 66, 58, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 60',                # 44 conga open
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',     # 45 crash
         'voice_directsound 72, 64, DirectSoundWaveData_sc88pro_orchestra_snare, 255, 0, 255, 100',              # 46 rimshot
+        'voice_directsound 60, 90, DirectSoundWaveData_kc_bongo_hi, 255, 0, 255, 80',                           # 47 bongó macho
+        'voice_directsound 60, 84, DirectSoundWaveData_kc_bongo_lo, 255, 0, 255, 80',                           # 48 bongó hembra
+        'voice_directsound 54, 88, DirectSoundWaveData_kc_cowbell, 255, 0, 255, 120',                           # 49 bongo-bel (mond)
+        'voice_directsound 57, 88, DirectSoundWaveData_kc_cowbell, 255, 0, 255, 100',                           # 50 bongo-bel (hiel)
+        'voice_directsound 60, 40, DirectSoundWaveData_kc_guiro_long, 255, 0, 255, 160',                        # 51 güiro lang
+        'voice_directsound 62, 40, DirectSoundWaveData_kc_guiro_long, 255, 0, 255, 60',                         # 52 güiro kort
     ]
     open('sound/voicegroups/drumsets/keccles.inc', 'w').write(
         '@ Project Grounded: salsa-drumkit voor Battle! Keccles (keccles_theme.py): 36 kick, 37 clave, 38 cascara,\n'
-        '@ 39/40 timbales (hembra/macho), 41 campana, 42 conga slap, 43 tumbadora, 44 conga open, 45 crash, 46 rimshot.\n'
+        '@ 39/40 timbales (hembra/macho), 41 campana, 42 conga slap, 43 tumbadora, 44 conga open, 45 crash, 46 rimshot,\n'
+        '@ 47/48 bongó (macho/hembra), 49/50 bongo-bel (mond/hiel), 51/52 güiro (lang/kort). kc_* = FluidR3 (gm_samples.py).\n'
         'voice_group keccles_drumset, 36\n' + ''.join('\t%s\n' % k for k in kit) + '\n')
 
 

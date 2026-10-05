@@ -207,3 +207,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Het was drumnoot 49 = PSG in rs_drumset. **Lint-meldingen 'drumnoot is PSG' altijd oplossen** (`drum_map`), nooit
   laten staan. Niet aankomen wat Jordi goed vond (de vocalen).
 
+- Keccles v2 (Jordi: 'te eentonig, reguliere salsa i.p.v. Colóns salsa dura'): structuur met contrast i.p.v. meer
+  noten: hook eerst alleen 2 trombones in tertsen, corte (tutti-stoot + stilte), zachte coro (koor + cuatro-antwoord,
+  geen clave/bongó), pianosolo, descarga (bas + percussie), gestapelde mambo, en **CC7 per spoor per sectie**
+  (`Song.add(..., ccs=[(tick, 7, v)])`; mid2agb kent alleen CC7/CC10/CC1, CC11 doet niets). Zet de CC7 op elk
+  sectiebegin opnieuw (ook het loopbegin; mid2agb zet een VOL op de looptick ná het label, dus dat werkt). Meet de
+  RMS per sectie (niet per 5 s): coro 1600 vs. mambo 2700-3170.
+- Eigen samples uit de GM-drumkit: `gm_samples.py` met programma 'drum' (kanaal 10, grondtoon 60) en `loop='auto'`
+  voor koper (loop van hele perioden + crossfade). Trombone = FluidR3 GM 57 op vel 127 (brallend), 2 samples op de
+  keysplit-tabel french_horn.
+- Montuno-octaven: nootlengte + uitklinktijd moet ≤ een achtste zijn (10 + 14 ticks), 1 tick overlap = 2 extra stemmen
+  op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
+- Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
+  melodieën een achtervoegsel (`CORO_MEL`).

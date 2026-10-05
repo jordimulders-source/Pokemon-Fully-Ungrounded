@@ -93,8 +93,10 @@ class Song:
     def tempo(self, tick, factor):
         self.tempo_map.append((int(tick), factor))
 
-    def add(self, notes, program, volume, channel, pan=None):
-        self.tracks.append((notes, program, volume, channel, pan))
+    def add(self, notes, program, volume, channel, pan=None, ccs=()):
+        """ccs: extra controllers [(tick, controller, waarde)], bv. CC7-automatisering per sectie (dynamiek) of een
+        programmawissel (controller 'prog'). mid2agb kent alleen CC7 (VOL), CC10 (PAN) en CC1 (MOD); CC11 doet niets."""
+        self.tracks.append((notes, program, volume, channel, pan, list(ccs)))
 
     def save(self, path, end):
         out = mido.MidiFile(type=1, ticks_per_beat=self.tpb)
@@ -111,17 +113,26 @@ class Song:
             cond.append(m.copy(time=t - last))
             last = t
         out.tracks.append(cond)
-        for notes, prog, vol, ch, pan in self.tracks:
+        for notes, prog, vol, ch, pan, ccs in self.tracks:
             t = mido.MidiTrack()
             t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
             t.append(mido.Message('control_change', channel=ch, control=7, value=vol, time=0))
             if pan is not None:
                 t.append(mido.Message('control_change', channel=ch, control=10, value=pan, time=0))
-            msgs = sorted([(s, 1, n, v) for s, e, n, v in notes] + [(e, 0, n, 0) for s, e, n, v in notes])
+            # volgorde per tick: note-offs, dan controllers/programma's, dan note-ons
+            msgs = sorted([(s, 2, n, v) for s, e, n, v in notes] + [(e, 0, n, 0) for s, e, n, v in notes]
+                          + [(tk, 1, c, v) for tk, c, v in ccs], key=lambda m: (m[0], m[1], str(m[2])))
             last = 0
             for tk, kind, n, v in msgs:
-                t.append(mido.Message('note_on' if kind else 'note_off', channel=ch, note=n,
-                                      velocity=max(1, min(127, int(v))) if kind else 0, time=tk - last))
+                if kind == 1:
+                    if n == 'prog':
+                        t.append(mido.Message('program_change', channel=ch, program=v, time=tk - last))
+                    else:
+                        t.append(mido.Message('control_change', channel=ch, control=n, value=max(0, min(127, int(v))),
+                                              time=tk - last))
+                else:
+                    t.append(mido.Message('note_on' if kind else 'note_off', channel=ch, note=n,
+                                          velocity=max(1, min(127, int(v))) if kind else 0, time=tk - last))
                 last = tk
             out.tracks.append(t)
         out.save(path)

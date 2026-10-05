@@ -6463,3 +6463,43 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_kc_trombone_55::
+	.incbin "sound/direct_sound_samples/grounded/kc_trombone_55.bin"
+
+	.align 2
+DirectSoundWaveData_kc_trombone_67::
+	.incbin "sound/direct_sound_samples/grounded/kc_trombone_67.bin"
+
+	.align 2
+DirectSoundWaveData_kc_cuatro::
+	.incbin "sound/direct_sound_samples/grounded/kc_cuatro.bin"
+
+	.align 2
+DirectSoundWaveData_kc_bongo_hi::
+	.incbin "sound/direct_sound_samples/grounded/kc_bongo_hi.bin"
+
+	.align 2
+DirectSoundWaveData_kc_bongo_lo::
+	.incbin "sound/direct_sound_samples/grounded/kc_bongo_lo.bin"
+
+	.align 2
+DirectSoundWaveData_kc_claves::
+	.incbin "sound/direct_sound_samples/grounded/kc_claves.bin"
+
+	.align 2
+DirectSoundWaveData_kc_cowbell::
+	.incbin "sound/direct_sound_samples/grounded/kc_cowbell.bin"
+
+	.align 2
+DirectSoundWaveData_kc_timbale_hi::
+	.incbin "sound/direct_sound_samples/grounded/kc_timbale_hi.bin"
+
+	.align 2
+DirectSoundWaveData_kc_timbale_lo::
+	.incbin "sound/direct_sound_samples/grounded/kc_timbale_lo.bin"
+
+	.align 2
+DirectSoundWaveData_kc_guiro_long::
+	.incbin "sound/direct_sound_samples/grounded/kc_guiro_long.bin"

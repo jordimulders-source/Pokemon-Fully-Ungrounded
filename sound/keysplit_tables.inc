@@ -34,13 +34,19 @@ keysplit french_horn, 36
 	split 0, 66
 	split 1, 108
 
-@ Project Grounded: Battle! Heatran v5 (heatran_theme.py): een eigen sample per riffnoot C2 Eb2 F2 Gb2 G2 Bb2 C3
-@ (0-6), zodat niets ver getransponeerd wordt.
+@ Project Grounded: Battle! Heatran v6 (heatran_theme.py): een eigen sample per riffnoot C2 Db2 Eb2 F2 Gb2 G2 Ab2 Bb2 C3
+@ (0-8), zodat niets ver getransponeerd wordt (spectrum blijft gelijk); heatran_lead: C4 (0) en G4 (1).
 keysplit heatran, 36
-	split 0, 38
-	split 1, 41
-	split 2, 42
-	split 3, 43
-	split 4, 45
-	split 5, 48
-	split 6, 108
+	split 0, 37
+	split 1, 38
+	split 2, 40
+	split 3, 42
+	split 4, 43
+	split 5, 44
+	split 6, 45
+	split 7, 47
+	split 8, 108
+
+keysplit heatran_lead, 48
+	split 0, 64
+	split 1, 108

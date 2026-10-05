@@ -92,7 +92,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Rayquaza (gamelan) | `rayquaza_theme.py` | goedgekeurd (v4) | "Rayquaza" |
 | SickBlik | `sickblik_theme.py` | goedgekeurd (v2) | "SickBlik" |
 | Ashfrost (winter) | `ashfrost_theme.py` | goedgekeurd | "Ashfrost" |
-| Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
+| Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | nieuw | v1 in de maak | – |
@@ -295,3 +295,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
 - **Victini v1:** basis goed, maar nog niet euforisch/triomfantelijk genoeg → v2: jubelender koper met grote stijgende intervallen, key change in het tweede deel, buitelende arpeggio's/bells, octaafbas en snare-rolls naar de drops.
 - **Darkrai v1: "heel goed, 80%".** v2: duisterder, Giratina-achtig: asymmetrische/wisselende maten, schurender (tritonus, ijzige akkoordwendingen), rauwe brass-stabs en lage drones; het wiegelied blijft als contrast.
 - **Genesect v1:** klonk als een funk-groove → v2: keiharde snelle Prodigy-breakbeat, distorted bas/synths, industriële stabs, hoekige riffs, korte risers en harde drops.
+- Heatran v6 (from scratch na 'Mario Kart/Bowser's Castle'; eerste versie mét audioreferentie): **eerst de referentie
+  meten** (Spleeter 4 stems + librosa-autocorrelatie per stem + basic-pitch op de basstem). Odyssey: traag intro 77 bpm,
+  daarna 94-96 bpm (snare om de 0,64 s, 8e-puls 188/min; 'snel' = de 8en, níet 130 bpm), Green Machine 90 bpm; gitaar-
+  sustain (P20/P90 van de envelop) 0,55-0,63, gitaarstem < 250 Hz 49-72 %, hihat-accent 69-81 % op de tel, C-klein /
+  G-frygisch, bas 56-78 % op de pedaaltoon. v5: 136 bpm (8e-puls 272/min = +45 %), riff gem. 0,36 tel (stoten), open hihat
+  op de 'en', chromatische riffloopjes, gitaar < 250 Hz 12-19 % / > 2 kHz 18-27 %. **Die getallen zijn nu harde controles**
+  (`stoner_checks()` in het script, generiek `music_lint.py --genre stoner --tonic C`; v5 faalt op 20 punten). Kyuss-
+  sustain op de GBA: riffs níet detachen (legato, release 150) en de 2e gitaar als 'muur' (herhaalde chugs = één noot).

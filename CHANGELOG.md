@@ -16868,3 +16868,15 @@ Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Mel
   - Strakke breakbeat zonder syncopen, ghost notes of swing.
   - Overstuurde bas in rechte achtsten, industriële stoten, risers en drops.
 - **Batchcontrole:** alle zes 0 overlopen, piek 72–109/127.
+
+### [v0.9.86] - Wallace en Steven consistent
+- **Gym 8-rematches** (Wallace 2–5) heetten nog JUAN, met Juans foto. Nu WALLACE met zijn eigen foto.
+- **Battle Stadium:**
+  - WALLACE is nu gymleider Wallace, met zijn sterkste rematchteam, eigen sprite en een omroeptekst.
+  - Het oude vanilla-kampioenteam is weg.
+  - JUAN (Route 129) staat er nu als eigen personage in ("He taught WALLACE everything. Then WALLACE took his gym. Awkward.").
+  - Steven blijft de kampioen in de pool.
+  - Puntendrempels van sommige compagnons verschuiven daardoor (gegenereerd).
+- **Match Call:** het oude contact "WALLACE, CHAMPION" verschijnt nooit meer; Steven staat al als contact in de lijst.
+- **Hall of Fame:** Steven loopt mee in plaats van Wallace, met nieuwe metal-teksten ("Forged in steel, like a METAL album." / "Horns up!").
+- **Kampioenszaal:** scriptlabels hernoemd naar Steven; `TRAINER_NAMEN.md` bijgewerkt.

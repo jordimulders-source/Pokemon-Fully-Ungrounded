@@ -119,10 +119,12 @@ def write_voicegroup(path='sound/voicegroups/grounded_gm.inc'):
 
 def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                  drop_channels=(), channel_category=None, transpose=None, max_note=None,
-                 volume=None, min_note=None):
+                 volume=None, min_note=None, drum_map=None):
     """drop_channels: MIDI-kanalen die wegvallen; channel_category: {kanaal: categorie} om het instrument
     te overschrijven (bv. rips met niet-GM-programma's); transpose: {kanaal: halve tonen};
     max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen);
+    drum_map: {drumnoot: drumnoot}: andere noot in de kit (bv. PSG-noten in rs_drumset -> een DirectSound-sample:
+    een PSG-'crash' klinkt als een lange 'puuup', Ghetsis v0.9.65);
     min_note: {kanaal: noot}: lagere noten gaan per octaaf omhoog (een sample ver omlaag gestemd = lange 'puuup');
     volume: {categorie: 0-127} spoorvolume (standaard 127), om de balans tussen bas en midden te regelen."""
     channel_category = channel_category or {}
@@ -151,6 +153,8 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                 cat = 'drums' if ch == 9 else channel_category.get(ch, gm_category(prog.get(ch, 0))[0])
                 v = int(msg.velocity * vol.get(ch, 100) / 127 * expr.get(ch, 127) / 127)
                 n = msg.note + transpose.get(ch, 0)
+                if ch == 9 and drum_map:
+                    n = drum_map.get(n, n)
                 if max_note is not None and ch != 9:
                     while n > max_note:
                         n -= 12

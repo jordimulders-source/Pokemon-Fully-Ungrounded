@@ -202,3 +202,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
   prioriteit. -V100 gaf piek 127/127 (geen overloop, maar op de grens) -> -V088: piek 111, RMS 2560.
   Loop naadloos: de maat vóór het loopbegin in de intro (3) is gelijk aan de laatste maat van de loop (51), en
   geen noot loopt over de loopgrens (tumbao-anticipatie daar inkorten).
+- Ghetsis ronde 3 (v0.9.65): ik zocht de 'puuup' twee keer in het verkeerde spoor (koper). **Vind een geluid eerst met
+  solo-opnames per spoor** (volX = 0 op de rest, zie `balance.gba`; vensters van 0,25 s) i.p.v. te gokken uit de MIDI.
+  Het was drumnoot 49 = PSG in rs_drumset. **Lint-meldingen 'drumnoot is PSG' altijd oplossen** (`drum_map`), nooit
+  laten staan. Niet aankomen wat Jordi goed vond (de vocalen).
+

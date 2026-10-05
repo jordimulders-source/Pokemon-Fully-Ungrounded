@@ -29,7 +29,11 @@ for src, dst in [
     prepare_auto(f'{SRC}/{src}', f'{DST}/{dst}')
 # Ghetsis: de koperpartij (kanaal 6) speelt de 'Ghetsis!'-koorakkoorden twee octaven te laag mee (noot 18-27) en de
 # e-piano (kanaal 7) heeft noten 7/13: een trompet-/pianosample zo ver omlaag geeft lange 'puuup'-tonen (Jordi).
-prepare_auto(f'{SRC}/bw_ghetsis.mid', f'{DST}/mus_grounded_vs_ghetsis.mid', min_note={6: 48, 7: 36})
+# v0.9.65: de 'puuup' vóór de koorstukken (88 s, 92,5 s) was drumnoot 49 = PSG in rs_drumset; nu echte samples.
+# Koper terug op min. C2 (v0.9.60; Jordi: de vocalen waren goed).
+RS_PSG_FIX = {37: 38, 44: 42, 49: 57, 51: 59, 52: 57}
+prepare_auto(f'{SRC}/bw_ghetsis.mid', f'{DST}/mus_grounded_vs_ghetsis.mid', min_note={6: 36, 7: 36},
+             drum_map=RS_PSG_FIX)
 for src, dst in [
     ('yoshi_castle.mid',      'mus_grounded_vs_yoshi_castle.mid'),
     ('mksc_broken_pier.mid',  'mus_grounded_vs_broken_pier.mid'),

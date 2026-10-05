@@ -16556,3 +16556,9 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   conga's, timbales, cascara, güiro (PSG-ruis). Eigen drumkit en piano-keysplit. 0 keer overlopen (-V088).
 - Klinkt bij Keccles 1-3 (Route 115, Fortree, Route 136) en in het Battle Stadium; het multi battle in Sootopolis houdt
   de Archie/Maxie-muziek.
+
+### [v.0.9.65] - Ghetsis: de echte 'puuup' gevonden
+- Jordi: "de vocalen waren niks mis mee, het is die puup die ervoor komt". Solo-opnames per spoor uit de game lieten zien
+  dat het het **drumspoor** was: drumnoot 49 (crashbekken) is in `rs_drumset` een PSG-geluid, een vaste toon van ±1 s
+  (88 s en 92,5 s). Nu een echte crash-sample (49 -> 57; ook de andere PSG-drumnoten 37/44/51/52 omgezet,
+  `prepare_auto(..., drum_map=...)`). Het koper staat weer zoals in v0.9.60. -V082: 0 keer overlopen, piek 115/127.

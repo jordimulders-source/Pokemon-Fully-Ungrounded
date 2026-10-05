@@ -7088,3 +7088,111 @@ DirectSoundWaveData_np_brass_stab_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_cmaj9::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_cmaj9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_b7alt::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_b7alt.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_am9::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_am9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_d13::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_d13.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_gmu::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_gmu.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_fmaj7s11::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_fmaj7s11.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_fsm7b5::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_fsm7b5.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rh_cmu::
+	.incbin "sound/direct_sound_samples/grounded/sb_rh_cmu.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_em9::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_em9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_a13::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_a13.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_cmaj9::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_cmaj9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_b7alt::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_b7alt.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_am9::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_am9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_d13::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_d13.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_gmu::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_gmu.bin"
+
+	.align 2
+DirectSoundWaveData_sb_br_fmaj7s11::
+	.incbin "sound/direct_sound_samples/grounded/sb_br_fmaj7s11.bin"
+
+	.align 2
+DirectSoundWaveData_sb_mute_tpt::
+	.incbin "sound/direct_sound_samples/grounded/sb_mute_tpt.bin"
+
+	.align 2
+DirectSoundWaveData_sb_mute_tpt_hi::
+	.incbin "sound/direct_sound_samples/grounded/sb_mute_tpt_hi.bin"
+
+	.align 2
+DirectSoundWaveData_sb_jazz_oct::
+	.incbin "sound/direct_sound_samples/grounded/sb_jazz_oct.bin"
+
+	.align 2
+DirectSoundWaveData_sb_bass_harm::
+	.incbin "sound/direct_sound_samples/grounded/sb_bass_harm.bin"
+
+	.align 2
+DirectSoundWaveData_sb_kick::
+	.incbin "sound/direct_sound_samples/grounded/sb_kick.bin"
+
+	.align 2
+DirectSoundWaveData_sb_snare::
+	.incbin "sound/direct_sound_samples/grounded/sb_snare.bin"
+
+	.align 2
+DirectSoundWaveData_sb_open_hat::
+	.incbin "sound/direct_sound_samples/grounded/sb_open_hat.bin"
+
+	.align 2
+DirectSoundWaveData_sb_crash::
+	.incbin "sound/direct_sound_samples/grounded/sb_crash.bin"
+
+	.align 2
+DirectSoundWaveData_sb_side_stick::
+	.incbin "sound/direct_sound_samples/grounded/sb_side_stick.bin"
+
+	.align 2
+DirectSoundWaveData_sb_floor_tom::
+	.incbin "sound/direct_sound_samples/grounded/sb_floor_tom.bin"
+
+	.align 2
+DirectSoundWaveData_sb_jazz_oct_hi::
+	.incbin "sound/direct_sound_samples/grounded/sb_jazz_oct_hi.bin"

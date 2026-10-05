@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! SickBlik (slap-funk). Gegenereerd door tools/grounded/sickblik_theme.py.
-@ 4/5 = Rhodes Em9/A13, 7 = clavinet, 26/27 = wah-chank A9/Em9, 28 = scratch, 29 = gedempte gitaar, 34-37 = slap bass (thumb, pop, dode thumb, dode pop), 61/62 = hoorns, 85 = talkbox, 127 = drumkit.
+@ 4/5 = Rhodes Em9/A13, 7 = clavinet, 26/27 = wah-chank A9/Em9, 28 = scratch, 29 = gedempte gitaar, 34-37 = slap bass (thumb, pop, dode thumb, dode pop), 38 = flageolet, 30/31 = jazzgitaar-octaven, 59/60 = gedempte trompet, 61/62 = hoorns, 80 = PSG-synth, 85 = talkbox, 90-97 = Rhodes-akkoorden, 100-107 = blazersakkoorden, 127 = drumkit.
 voice_group grounded_sickblik
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -31,15 +31,15 @@ voice_group grounded_sickblik
 	voice_directsound 60, 0, DirectSoundWaveData_sb_gtr_wah_m9, 255, 0, 255, 150  @ 27
 	voice_directsound 60, 0, DirectSoundWaveData_sb_gtr_scratch, 255, 0, 255, 120  @ 28
 	voice_directsound 60, 0, DirectSoundWaveData_sb_gtr_mute, 255, 0, 255, 140  @ 29
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
+	voice_directsound 60, 0, DirectSoundWaveData_sb_jazz_oct, 255, 0, 255, 200  @ 30
+	voice_directsound 60, 0, DirectSoundWaveData_sb_jazz_oct_hi, 255, 0, 255, 200  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
 	voice_directsound 60, 0, DirectSoundWaveData_sb_slap_thumb, 255, 0, 255, 150  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sb_slap_pop, 255, 0, 255, 150  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sb_dead_thumb, 255, 0, 255, 100  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sb_dead_pop, 255, 0, 255, 100  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_sb_bass_harm, 255, 0, 255, 225  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -60,8 +60,8 @@ voice_group grounded_sickblik
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
-	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
+	voice_directsound 60, 0, DirectSoundWaveData_sb_mute_tpt, 255, 0, 255, 170  @ 59
+	voice_directsound 60, 0, DirectSoundWaveData_sb_mute_tpt_hi, 255, 0, 255, 170  @ 60
 	voice_directsound 60, 0, DirectSoundWaveData_sb_horns, 255, 0, 255, 160  @ 61
 	voice_directsound 60, 0, DirectSoundWaveData_sb_horns_hi, 255, 0, 255, 160  @ 62
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 63
@@ -81,7 +81,7 @@ voice_group grounded_sickblik
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
+	voice_square_2 60, 0, 1, 0, 1, 9, 2  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
@@ -91,24 +91,24 @@ voice_group grounded_sickblik
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 96
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_cmaj9, 255, 0, 255, 200  @ 90
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_b7alt, 255, 0, 255, 200  @ 91
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_am9, 255, 0, 255, 200  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_d13, 255, 0, 255, 200  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_gmu, 255, 0, 255, 200  @ 94
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_fmaj7s11, 255, 0, 255, 200  @ 95
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_fsm7b5, 255, 0, 255, 200  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_sb_rh_cmu, 255, 0, 255, 200  @ 97
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 98
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 99
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 100
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 101
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 102
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 103
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 104
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 105
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 106
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 107
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_em9, 255, 0, 255, 190  @ 100
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_a13, 255, 0, 255, 190  @ 101
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_cmaj9, 255, 0, 255, 190  @ 102
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_b7alt, 255, 0, 255, 190  @ 103
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_am9, 255, 0, 255, 190  @ 104
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_d13, 255, 0, 255, 190  @ 105
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_gmu, 255, 0, 255, 190  @ 106
+	voice_directsound 60, 0, DirectSoundWaveData_sb_br_fmaj7s11, 255, 0, 255, 190  @ 107
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 108
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 109
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 110

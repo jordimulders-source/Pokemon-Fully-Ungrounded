@@ -93,7 +93,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 205, 0, 110  @ 87
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 60  @ 88
 	voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet  @ 89
-	voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet  @ 90
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 40  @ 90
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 40  @ 91
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 100  @ 92
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 93

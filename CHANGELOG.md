@@ -16978,3 +16978,8 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.97] - Rayquaza-intro: de echte Emerald-cutscene i.p.v. het nephoofd
 - Na de groene ring en flits kantelt de camera weg van de Sky Pillar de lucht in; door het gat in de wolken duikt de **echte Rayquaza uit de Emerald-cutscene** (waarin hij Kyogre en Groudon uit elkaar haalt) naar beneden, dan de grote Rayquaza met snelheidsstrepen die trilt, terugdeinst en op de camera af schiet tot zijn kop het beeld vult. Geluiden zoals in de cutscene (Dragon Rage, Fly, Hyper Beam). ±4,5 s.
 - Filmspeler: na het laatste beeld flitsten bij het uitfaden losse tiles in oude kleuren (ook bij Steven/Wally); opgelost.
+
+### [v0.9.98] - Brawly v6: Rocky / Eye of the Tiger (opnieuw vanaf de tekentafel)
+- v1–v5 geschrapt. Nieuw: 80s arena-rock op de melodie van het originele gym leader theme, met alleen stock Emerald-instrumenten (distortiongitaar en bas uit vs_gym_leader, trompet/hoorn, standaard kick/snare/crash). Geen hi-hats, geen PSG, geen eigen samples, max. vijf lagen tegelijk.
+- Intro: boksbel "ding ding" + aanzwellend snareroffel. Dan harde powerchord-stoten met stilte ertussen (dun-dun-dun ... dun), dikke snare met galm op 2 en 4, bas mee met de stoten; montage-deel waarin het koper de melodie overneemt en kick/bas achtsten spelen. 106 bpm gevoeld (half-time).
+- In de game: 0 overlopen, piek 96/127, alle lagen hoorbaar (lead 50%, stoten 23%, drums 18%, bas 10%).

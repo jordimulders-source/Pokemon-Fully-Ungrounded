@@ -16723,3 +16723,17 @@ Jordi's eerste testrun:
   - Staccato-angsels: alles valt 1,5 tel stil en slaat dan weer samen in.
   - Kendang-intermezzo met versnelling in maat 35.
   - Elke frase van 4 maten eindigt met een zware gong ageng, met de laagste gongbas en pauken.
+
+### [v0.9.78] - Mitch v2 (Pokémon x Chase & Status) en Neo Plasma v6 (voller en warmer)
+- **Mitch v2:** 174 bpm in F-klein.
+  - Waarom v1 traag klonk (gemeten): de hihats waren onhoorbaar, de snare had geen crack en de bas lag op de kicks, waardoor je de groove op halve snelheid hoorde.
+  - Drums: nieuwe punchy kick, snare met crack, echte hihats in 16en, ghost notes, amen-varianten en fills.
+  - Bas: rauwe reese met stotterfiguren ("bad-da-DAN"), dives en scoops, plus een wobble op vol tempo.
+  - Lead: de echte Pokémon-trompet met zaagtand en PSG unisono.
+  - Opbouw: dreigende battle-intro, snare-roffel in 8sten → 16den → 32sten, en een drop waarin alles tegelijk inslaat. Drop 2 nu op vol tempo i.p.v. halftime.
+- **Neo Plasma v6:** het schelle geluid zat in de PSG-lead en de drums hadden te weinig hoog.
+  - Lead: een warme DirectSound-lead, een octaaf lager.
+  - Akkoordspoor: vollere synth brass met punch.
+  - Drums: een duidelijke GBA-drumkit (kick, clap, snare, hihats).
+  - Arpeggio's: veel zachter.
+  - Orgel en bas: ongewijzigd.

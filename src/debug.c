@@ -642,7 +642,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Joey (Poochyena)"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_JOEY, TRAINER_NONE) },
     { COMPOUND_STRING("Keccles (rival)"),        DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_KECCLES_1, TRAINER_NONE) },
     { COMPOUND_STRING("Mustard (mugshot)"),      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MUSTARD, TRAINER_NONE) },
-    { COMPOUND_STRING("Dave (Freed From Desire)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ALBERT, TRAINER_NONE) },
+    { COMPOUND_STRING("Dave (Freed From Desire)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_DAVE, TRAINER_NONE) },
     // Wilde legendaries: transitie + thema uit het echte event
     { COMPOUND_STRING("Zarude"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZARUDE, 50) },
     { COMPOUND_STRING("Okidogi (Loyal 3)"),      DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_OKIDOGI, 65) },

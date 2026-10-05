@@ -24,7 +24,7 @@ static const struct GymLeaderRematch sGymLeaderRematches[] = {
     { REMATCH_NORMAN,        FLAG_DAILY_REMATCH_NORMAN },
     { REMATCH_WINONA,        FLAG_DAILY_REMATCH_WINONA },
     { REMATCH_TATE_AND_LIZA, FLAG_DAILY_REMATCH_TATE_AND_LIZA },
-    { REMATCH_JUAN,          FLAG_DAILY_REMATCH_JUAN },
+    { REMATCH_WALLACE,          FLAG_DAILY_REMATCH_WALLACE },
 };
 
 static s32 GetGymLeaderEntry(u32 rematchIdx)
@@ -133,7 +133,7 @@ static const u8 sText_RefuseTateLiza[] = _(
     "TATE: We foresaw this call.\p"
     "LIZA: We also foresaw\n"
     "saying no. Tomorrow!$");
-static const u8 sText_RefuseJuan[] = _(
+static const u8 sText_RefuseWallace[] = _(
     "WALLACE: Again? I'm two\n"
     "glasses into forgetting\l"
     "today's battle.\p"
@@ -148,7 +148,7 @@ static const u8 *const sRefuseTexts[] = {
     sText_RefuseNorman,
     sText_RefuseWinona,
     sText_RefuseTateLiza,
-    sText_RefuseJuan,
+    sText_RefuseWallace,
 };
 
 // Match Call: de speler belt een gymleider en vraagt om een rematch.

@@ -42,8 +42,8 @@ Route123_EventScript_BerryMastersHouseSign::
 	msgbox Route123_Text_BerryMastersHouse, MSGBOX_SIGN
 	end
 
-Route123_EventScript_Wendy::
-	trainerbattle_single TRAINER_WENDY, Route123_Text_WendyIntro, Route123_Text_WendyDefeat
+Route123_EventScript_Scarlet::
+	trainerbattle_single TRAINER_SCARLET, Route123_Text_WendyIntro, Route123_Text_WendyDefeat
 	msgbox Route123_Text_WendyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -139,8 +139,8 @@ Route123_EventScript_Jonas::
 	msgbox Route123_Text_JonasPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route123_EventScript_Jazmyn::
-	trainerbattle_single TRAINER_JAZMYN, Route123_Text_JazmynIntro, Route123_Text_JazmynDefeat
+Route123_EventScript_VioletCooltrainer::
+	trainerbattle_single TRAINER_VIOLET_COOLTRAINER, Route123_Text_JazmynIntro, Route123_Text_JazmynDefeat
 	msgbox Route123_Text_JazmynPostBattle, MSGBOX_AUTOCLOSE
 	end
 

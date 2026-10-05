@@ -3382,7 +3382,7 @@ Nature: Timid
 - Sludge Bomb
 - Focus Blast
 
-=== PARTNER_STADIUM_ALBERT ===
+=== PARTNER_STADIUM_DAVE ===
 Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3403,7 +3403,7 @@ Kingambit
 Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== PARTNER_STADIUM_SAMUEL ===
+=== PARTNER_STADIUM_MITCH ===
 Name: Mitch
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3439,7 +3439,7 @@ Ability: Regenerator
 - Earthquake
 - Aqua Tail
 
-=== PARTNER_STADIUM_OWEN ===
+=== PARTNER_STADIUM_SICKBLIK ===
 Name: SickBlik
 Class: Cooltrainer
 Pic: Cooltrainer M

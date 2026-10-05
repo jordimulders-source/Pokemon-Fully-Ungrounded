@@ -7,8 +7,8 @@ VictoryRoad_B1F_OnResume:
 	setholewarp MAP_VICTORY_ROAD_SHARK_DEN
 	end
 
-VictoryRoad_B1F_EventScript_Samuel::
-	trainerbattle_single TRAINER_SAMUEL, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat
+VictoryRoad_B1F_EventScript_Mitch::
+	trainerbattle_single TRAINER_MITCH, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat
 	msgbox VictoryRoad_B1F_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
 	end
 

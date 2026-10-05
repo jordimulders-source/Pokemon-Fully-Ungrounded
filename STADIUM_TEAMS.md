@@ -12,12 +12,12 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | NORMAN_5 | 541 | Wobbuffet, Arboliva, Ursaluna, Slaking | Arboliva, Ursaluna, Slaking | Trick Room |
 | WINONA_5 | 509 | Xatu, Dodrio, Ninjask, Altaria | Xatu, Ninjask, Altaria | - |
 | TATE_AND_LIZA_5 | 492 | Slowking, Solrock, Reuniclus, Lunatone | Slowking, Solrock, Lunatone | Trick Room |
-| JUAN_5 | 511 | Masquerain, Ludicolo, Golduck, Milotic | Masquerain, Golduck, Milotic | regen |
+| WALLACE_5 | 511 | Masquerain, Ludicolo, Golduck, Milotic | Masquerain, Golduck, Milotic | regen |
 | SIDNEY | 511 | Arbok, Hypno, Obstagoon, Absol | Hypno, Obstagoon, Absol | - |
 | PHOEBE | 513 | Dusknoir, Porygon-Z, Runerigus, Parasect | Dusknoir, Porygon-Z, Parasect | - |
 | GLACIA | 508 | Shiftry, Walrein, Glalie, Darmanitan | Shiftry, Walrein, Darmanitan | sneeuw |
 | DRAKE | 564 | Flygon, Archaludon, Dracovish, Salamence | Flygon, Archaludon, Salamence | - |
-| WALLACE | 540 | Wailord, Tentacruel, Ludicolo, Milotic | Wailord, Ludicolo, Milotic | regen |
+| WALLACE_OLD_CHAMPION | 540 | Wailord, Tentacruel, Ludicolo, Milotic | Wailord, Ludicolo, Milotic | regen |
 | STEVEN | 542 | Claydol, Cradily, Armaldo, Metagross | Claydol, Armaldo, Metagross | - |
 | WALLY_VR_5 | 548 | Dondozo, Baxcalibur, Annihilape, Gallade | Baxcalibur, Annihilape, Gallade | - |
 | ARCHIE_SOOTOPOLIS | 530 | Overqwil, Sharpedo, Archaludon | Overqwil, Sharpedo, Archaludon | - |
@@ -87,9 +87,9 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_PLASMA_GRUNT_M | 499 | Garbodor, Scrafty, Crobat, Golurk | Garbodor, Crobat, Golurk | zure regen |
 | STADIUM_PLASMA_GRUNT_F | 504 | Amoonguss, Klinklang, Mienshao, Chandelure | Klinklang, Mienshao, Chandelure | - |
 | STADIUM_PETREL | 448 | Ditto, Weezing, Honchkrow, Zoroark | Ditto, Weezing, Zoroark | - |
-| ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
-| SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
-| OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
+| DAVE | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
+| MITCH | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
+| SICKBLIK | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
 | STADIUM_WARIO | 501 | Grafaiai, Garbodor, Muk, Hariyama | Garbodor, Muk, Hariyama | zure regen |
 | STADIUM_YOSHI | 546 | Blissey, Lickilicky, Exeggutor, Tyranitar | Lickilicky, Exeggutor, Tyranitar | Trick Room, zand |
 | STADIUM_GOLBAT | 449 | Zubat, Porygon-Z, Crobat, Golbat | Zubat, Porygon-Z, Golbat | - |
@@ -167,7 +167,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 5000 | WINONA |
 | 5100 | MAYLENE |
 | 5200 | COLRESS |
-| 5300 | OWEN |
+| 5300 | SICKBLIK |
 | 5400 | BOO |
 | 5500 | RILEY |
 | 5600 | GLACIA |
@@ -180,7 +180,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 6300 | MUSTARD |
 | 6400 | GRETA |
 | 6500 | FANTINA |
-| 6600 | SAMUEL |
+| 6600 | MITCH |
 | 6700 | VOLKNER |
 | 6800 | BRUNO |
 | 6900 | SIDNEY |
@@ -193,7 +193,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 7600 | LT_SURGE |
 | 7700 | PHOEBE |
 | 7800 | LORELEI |
-| 7900 | ALBERT |
+| 7900 | DAVE |
 | 8000 | THORTON |
 | 8100 | LUCY |
 | 8200 | AGATHA |

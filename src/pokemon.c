@@ -6089,7 +6089,7 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-     && (trainerId == TRAINER_REED || trainerId == TRAINER_BROCK))
+     && (trainerId == TRAINER_JUAN || trainerId == TRAINER_BROCK))
         return MUS_RG_VS_GYM_LEADER;
 
     // Project Grounded: Prof. Oak vecht op het lab-thema uit FRLG
@@ -6103,14 +6103,14 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
-    if (trainerId == TRAINER_ALBERT)
+    if (trainerId == TRAINER_DAVE)
         return MUS_GROUNDED_VS_DAVE;
 
     // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
-    if (trainerId == TRAINER_SAMUEL)
+    if (trainerId == TRAINER_MITCH)
         return MUS_GROUNDED_VS_MITCH;
     // Project Grounded: SickBlik (= Jordi; Cooltrainer, Victory Road B2F; ook in het Stadium) vecht op smerige slap-funk
-    if (trainerId == TRAINER_OWEN)
+    if (trainerId == TRAINER_SICKBLIK)
         return MUS_GROUNDED_VS_SICKBLIK;
 
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
@@ -6118,7 +6118,7 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_GROUNDED_VS_KECCLES;
 
     // Project Grounded: gymleider-remixes 5-8 van het gymleiderthema (tools/grounded/gym_remixes2.py), incl. rematches
-    // en het Stadium. Gym 8 = Wallace (TRAINER_WALLACE_1; de rematch-slots heten nog TRAINER_JUAN_2-5).
+    // en het Stadium. Gym 8 = Wallace (TRAINER_WALLACE_1 t/m _5; zie TRAINER_NAMEN.md).
     // Niet in de Frontier/Trainer Hill: daar is trainerId een eigen nummering (botst met 269-272).
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL)))
     switch (trainerId)
@@ -6142,10 +6142,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_TATE_AND_LIZA_5:
         return MUS_GROUNDED_VS_TATE_LIZA;
     case TRAINER_WALLACE_1:
-    case TRAINER_JUAN_2:
-    case TRAINER_JUAN_3:
-    case TRAINER_JUAN_4:
-    case TRAINER_JUAN_5:
+    case TRAINER_WALLACE_2:
+    case TRAINER_WALLACE_3:
+    case TRAINER_WALLACE_4:
+    case TRAINER_WALLACE_5:
         return MUS_GROUNDED_VS_WALLACE;
     }
     // Project Grounded: gymleiders 1-4 (+ rematches; _5 ook in het Stadium) vechten op een eigen remix van het

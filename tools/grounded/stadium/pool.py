@@ -30,9 +30,9 @@ END = '/* --- einde Battle Stadium --- */'
 # Deelnemers: de sterkste versie van elk personage. 'rival' = alleen als de speler het andere geslacht is.
 POOL = [
     # Hoenn-gymleiders (laatste rematch)
-    'ROXANNE_5', 'BRAWLY_5', 'WATTSON_5', 'FLANNERY_5', 'NORMAN_5', 'WINONA_5', 'TATE_AND_LIZA_5', 'JUAN_5',
+    'ROXANNE_5', 'BRAWLY_5', 'WATTSON_5', 'FLANNERY_5', 'NORMAN_5', 'WINONA_5', 'TATE_AND_LIZA_5', 'WALLACE_5',
     # Elite Four en kampioenen
-    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'WALLACE', 'STEVEN',
+    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'WALLACE_OLD_CHAMPION', 'STEVEN',
     # verhaal
     'WALLY_VR_5', 'ARCHIE_SOOTOPOLIS', 'MAXIE_SOOTOPOLIS', 'BIRCH_UNDERWATER', 'KECCLES_3', 'COLRESS_MAGMA',
     'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'STADIUM_JOEY', 'STADIUM_WINSTON', 'STADIUM_MUSTARD',
@@ -54,7 +54,7 @@ POOL = [
     # Team Rocket (Rocket-hideout): Petrel, vermommingsteam
     'STADIUM_PETREL',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
-    'ALBERT', 'SAMUEL', 'OWEN',
+    'DAVE', 'MITCH', 'SICKBLIK',
     # gasten (graphics/grounded/trainers/guests/, tools/grounded/guest_trainer_pics.py)
     'STADIUM_WARIO', 'STADIUM_YOSHI', 'STADIUM_GOLBAT', 'STADIUM_GRIMER', 'STADIUM_BOO', 'STADIUM_MEW',
     'STADIUM_SHY_GUY_RED', 'STADIUM_SHY_GUY_GREEN', 'STADIUM_SHY_GUY_PINK', 'STADIUM_SHY_GUY_BLACK',
@@ -71,7 +71,8 @@ RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'
 COMPANIONS = [('BRENDAN', 'BRENDAN_ROUTE_136_TREECKO', 'start'), ('MAY', 'MAY_ROUTE_136_TORCHIC', 'start'),
               ('KECCLES', 'KECCLES_3', 'start'), ('WALLY', 'WALLY_VR_5', 'start')]
 def companion_name(t):
-    special = {'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
+    special = {'WALLACE_5': 'JUAN', 'WALLACE_OLD_CHAMPION': 'WALLACE',
+               'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
                'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
                'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F'}
@@ -174,6 +175,7 @@ BACK_PICS = {'Brendan': 'Brendan', 'May': 'May', 'Red': 'Red', 'Leaf': 'Leaf', '
 
 # Overworld-sprite in de arena: eigen sprite waar die bestaat, anders een Pokémon of een passende generieke
 GFX = {
+    'WALLACE_5': 'JUAN',   # TRAINER_WALLACE_5 heet in de game nog JUAN (Name/Pic in trainers.party)
     'ROXANNE': 'ROXANNE', 'BRAWLY': 'BRAWLY', 'WATTSON': 'WATTSON', 'FLANNERY': 'FLANNERY', 'NORMAN': 'NORMAN',
     'WINONA': 'WINONA', 'TATE_AND_LIZA': 'TATE', 'JUAN': 'JUAN', 'SIDNEY': 'SIDNEY', 'PHOEBE': 'PHOEBE',
     'GLACIA': 'GLACIA', 'DRAKE': 'DRAKE', 'WALLACE': 'WALLACE', 'STEVEN': 'STEVEN', 'WALLY': 'WALLY',
@@ -189,7 +191,7 @@ GFX = {
     'GARDENIA': 'PICNICKER', 'ERIKA': 'ERIKA', 'FANTINA': 'BEAUTY', 'CANDICE': 'GIRL_3', 'VOLKNER': 'MAN_5',
     'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'WOMAN_5', 'MARS': 'WOMAN_2',
     'JUPITER': 'WOMAN_2', 'SATURN': 'MAN_2', 'PALMER': 'MAN_4', 'THORTON': 'SCIENTIST_2', 'ARGENTA': 'WOMAN_3',
-    'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'ALBERT': 'MAN_3', 'SAMUEL': 'MAN_3', 'OWEN': 'MAN_3', 'WINSTON': 'RICH_BOY',
+    'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'DAVE': 'MAN_3', 'MITCH': 'MAN_3', 'SICKBLIK': 'MAN_3', 'WINSTON': 'RICH_BOY',
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
     'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'BURGLAR', 'DITTO': 'SPECIES(DITTO)',

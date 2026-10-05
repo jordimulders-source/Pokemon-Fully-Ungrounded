@@ -33,3 +33,16 @@ keysplit tuba, 24
 keysplit french_horn, 36
 	split 0, 66
 	split 1, 108
+
+@ Project Grounded: Battle! Heatran (heatran_theme.py): een eigen sample per riffnoot C2 Eb2 F2 G2 Bb2 C3 (0-5)
+@ en per leadnoot C4 F4 Bb4 (6-8), zodat niets omhoog getransponeerd wordt.
+keysplit heatran, 36
+	split 0, 38
+	split 1, 41
+	split 2, 43
+	split 3, 46
+	split 4, 48
+	split 5, 51
+	split 6, 62
+	split 7, 68
+	split 8, 108

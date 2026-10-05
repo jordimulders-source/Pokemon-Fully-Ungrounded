@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Battle! Heatran (stoner rock). Gegenereerd door tools/grounded/heatran_theme.py.
-@ 27 = warme schone gitaar, 28 = palm-mute-powerchord, 30 = fuzz-powerchord (1 sample = 1 kanaal), 31 = fuzz-lead, 34 = SVT-fuzzbas, 127 = drumkit.
+@ Project Grounded: grounded_gm voor Battle! Heatran (Kyuss-desert rock). Gegenereerd door tools/grounded/heatran_theme.py.
+@ 28 = palm-mute, 29 = riffnoot, 30 = powerchord, 31 = cocked-wah-lead, 34 = fuzzbas (keysplit_heatran, één sample per toonhoogte), 127 = drumkit.
 voice_group grounded_heatran
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -28,14 +28,14 @@ voice_group grounded_heatran
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 24
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 25
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
-	voice_directsound 48, 0, DirectSoundWaveData_heatran_warm_clean, 255, 0, 255, 200  @ 27
-	voice_directsound 60, 0, DirectSoundWaveData_heatran_doom_mute, 255, 0, 255, 140  @ 28
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
-	voice_directsound 60, 0, DirectSoundWaveData_heatran_doom_power, 255, 0, 255, 185  @ 30
-	voice_directsound 60, 0, DirectSoundWaveData_heatran_doom_lead, 255, 0, 255, 200  @ 31
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 27
+	voice_keysplit voicegroup_heatran_mute_keysplit, keysplit_heatran  @ 28
+	voice_keysplit voicegroup_heatran_note_keysplit, keysplit_heatran  @ 29
+	voice_keysplit voicegroup_heatran_power_keysplit, keysplit_heatran  @ 30
+	voice_keysplit voicegroup_heatran_lead_keysplit, keysplit_heatran  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
-	voice_directsound 60, 0, DirectSoundWaveData_heatran_svt_bass, 255, 0, 255, 170  @ 34
+	voice_keysplit voicegroup_heatran_bass_keysplit, keysplit_heatran  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37

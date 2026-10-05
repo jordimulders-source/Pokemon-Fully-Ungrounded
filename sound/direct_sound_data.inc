@@ -6629,10 +6629,6 @@ DirectSoundWaveData_heatran_open_hat::
 	.incbin "sound/direct_sound_samples/grounded/heatran_open_hat.bin"
 
 	.align 2
-DirectSoundWaveData_heatran_ride::
-	.incbin "sound/direct_sound_samples/grounded/heatran_ride.bin"
-
-	.align 2
 DirectSoundWaveData_heatran_floor_tom::
 	.incbin "sound/direct_sound_samples/grounded/heatran_floor_tom.bin"
 
@@ -6775,30 +6771,6 @@ DirectSoundWaveData_magikarp_cry_rev::
 	.align 2
 DirectSoundWaveData_jirachi_vox::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_vox.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_doom_power::
-	.incbin "sound/direct_sound_samples/grounded/heatran_doom_power.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_doom_mute::
-	.incbin "sound/direct_sound_samples/grounded/heatran_doom_mute.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_svt_bass::
-	.incbin "sound/direct_sound_samples/grounded/heatran_svt_bass.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_doom_lead::
-	.incbin "sound/direct_sound_samples/grounded/heatran_doom_lead.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_warm_clean::
-	.incbin "sound/direct_sound_samples/grounded/heatran_warm_clean.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_china::
-	.incbin "sound/direct_sound_samples/grounded/heatran_china.bin"
 
 	.align 2
 DirectSoundWaveData_sb_slap_thumb::
@@ -6988,3 +6960,131 @@ DirectSoundWaveData_np_brass_stab_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pw_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pw_48.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_nt_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_nt_48.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_pm_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_pm_48.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_bs_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_bs_48.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ld_60::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ld_60.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ld_65::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ld_65.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ld_70::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ld_70.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ky_kick::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ky_kick.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ky_snare::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ky_snare.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ky_hat::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ky_hat.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ky_crash::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ky_crash.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ky_floor_tom::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ky_floor_tom.bin"

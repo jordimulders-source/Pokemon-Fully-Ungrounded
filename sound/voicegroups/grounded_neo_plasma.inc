@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v4. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 perc. orgel, 37 slap bass 2, 62/63 synth brass, 81/84 saw, 114 steel drums, 127 neo_plasma_drumset (np_*).
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v5. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 pulse-bas, 62/63 synth brass-stoot, 80/81 PSG-lead, 114 steel drums, 122 PSG-hihat, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -18,7 +18,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 14
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 15
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 16
-	voice_directsound 60, 0, DirectSoundWaveData_np_organ, 255, 0, 255, 120  @ 17
+	voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90  @ 17
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 18
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 19
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 20
@@ -38,8 +38,8 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
-	voice_directsound 60, 0, DirectSoundWaveData_np_slap_bass, 255, 0, 255, 160  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
+	voice_directsound 60, 0, DirectSoundWaveData_np_pulse_bass, 255, 210, 140, 120  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -63,8 +63,8 @@ voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61
-	voice_directsound 60, 0, DirectSoundWaveData_np_synth_brass, 255, 0, 255, 185  @ 62
-	voice_directsound 60, 0, DirectSoundWaveData_np_synth_brass_lo, 255, 0, 255, 170  @ 63
+	voice_directsound 60, 0, DirectSoundWaveData_np_brass_stab, 255, 200, 120, 120  @ 62
+	voice_directsound 60, 0, DirectSoundWaveData_np_brass_stab_lo, 255, 200, 120, 110  @ 63
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 64
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 65
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 66
@@ -81,11 +81,11 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80
-	voice_directsound 60, 0, DirectSoundWaveData_gm_saw_lead, 255, 0, 255, 175  @ 81
+	voice_square_1 60, 0, 0, 1, 0, 2, 10, 1  @ 80
+	voice_square_2 60, 0, 0, 0, 2, 9, 1  @ 81
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1  @ 82
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_2, 0, 7, 15, 1  @ 83
-	voice_directsound 60, 0, DirectSoundWaveData_gm_saw_lead, 255, 0, 255, 150  @ 84
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87

@@ -6765,16 +6765,16 @@ DirectSoundWaveData_jirachi_kick::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_kick.bin"
 
 	.align 2
-DirectSoundWaveData_np_synth_brass::
-	.incbin "sound/direct_sound_samples/grounded/np_synth_brass.bin"
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
 
 	.align 2
-DirectSoundWaveData_np_synth_brass_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_synth_brass_lo.bin"
+DirectSoundWaveData_np_brass_stab::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab.bin"
 
 	.align 2
-DirectSoundWaveData_np_slap_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_slap_bass.bin"
+DirectSoundWaveData_np_brass_stab_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab_lo.bin"
 
 	.align 2
 DirectSoundWaveData_np_organ::
@@ -6831,3 +6831,7 @@ DirectSoundWaveData_heatran_warm_clean::
 	.align 2
 DirectSoundWaveData_heatran_china::
 	.incbin "sound/direct_sound_samples/grounded/heatran_china.bin"
+
+	.align 2
+DirectSoundWaveData_np_organ_sharp::
+	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"

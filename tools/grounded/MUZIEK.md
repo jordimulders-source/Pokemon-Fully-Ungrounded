@@ -387,3 +387,19 @@ herkennen is, komt ook als controle in `music_lint.py`.
   (programma 16 op kanaal 10). Meetscripts: zwaartepunt / % < 500 Hz / % > 2 kHz per sectie, nootlengtes en
   off-beat-aandeel per spoor. **Dezelfde toonhoogte mag in één spoor niet overlappen** (arpeggio's die doorklinken):
   de note-off van de eerste kapt de tweede af; inkorten tot de volgende aanslag. -V090: piek 107/127, RMS 2938.
+
+- Neo Plasma v5 (Jordi over v4: melodie strak, tempo exact, scherpe pulse-lead, punchy brass, diepe staccato-bas,
+  standaard drumkit, melodie voorop). **De GBA speelt elk tempo 0,45% te traag** (59,73 i.p.v. 60 frames/s) en kent
+  alleen even bpm's (`TEMPO` = bpm/2): 176 klinkt als 175,2 (gemeten). Moet het exact gelijk lopen met een opname
+  (hier 175,96 bpm, gemeten met een kickraster over het hele nummer), wissel dan per tel 176/178 (Bresenham,
+  `tempo_map` in neo_plasma_theme.py): gemeten 175,965. **Timing van een transcriptie per spoor controleren**: schuif
+  de noten van één spoor ±48 ticks en zoek waar de toonhoogte-specifieke aanslagen (spectrale flux op de harmonischen
+  van elke noot) in de opname het sterkst zijn, t.o.v. de andere sporen. Het sawtooth-spoor stond 17 ticks te vroeg,
+  het orgel 'strumde' 24 ticks vóór de tel (`tools/grounded/transcript_check.py`). Noot-voor-noot-controle met
+  harmonische salience (eigen toonhoogte vs. ±1/±2 halve toon, buren die een ander spoor verklaart niet meetellen) vond
+  in de melodie geen consistente fouten; meldingen in snelle 16e-arpeggio's onder C4 zijn ruis van de volle mix.
+- Bas een octaaf lager zonder noten < E1 in de MIDI: **label de sample een octaaf te hoog** (`write_wav(..., key)`:
+  gesynthetiseerd op C2, gelabeld C3) en laat de MIDI-noten staan. Een gestemde kick op B1 (62 Hz) gaf in de
+  chroma-vergelijking op elke tel een 'extra B' t.o.v. het origineel: drums ook tonaal controleren.
+- Staccato-partijen (16e-stoten brass/orgel) bezetten met de release 2 kanalen per noot: `detach()` op elke
+  DirectSound-partij (orgel 11% -> 0,2% weggevallen, steel drums 38% -> 1%).

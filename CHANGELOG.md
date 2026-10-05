@@ -16607,3 +16607,26 @@ Jordi's eerste testrun:
 - **Meer elites**: altijd minstens één elite vóór en één na de schatkist (elite = gevecht of event dat wordt omgezet).
   Over 10.000 kaarten: bijna altijd 2+ elites, en in 65% kun je er op één route twee halen. Getest met een
   Python-kopie van de generator (`scratchpad`) en in de emulator.
+
+### [v.0.9.69] - Muziekfeedback ronde 2 (agents) + PSG-drums (M2)
+- **Keccles v3**: een riffende elektrische gitaar à la 'Vigilante' (Willie Colón) in de descarga (korte solo met slides
+  en bends) en in de mambo (met de trombone-moña mee en een tegenriff). Verder niets veranderd (alle andere sporen
+  identiek aan v2).
+- **Magikarp v2**: het hoofdmotief een octaaf lager (kazoo F3-D5, xylofoon en fluitje lager/zachter; >2 kHz in de
+  A-delen van 31% naar 14%). De **echte Magikarp-cry als DJ-scratch** als punchline na de mislukte heldenfanfare
+  (±35 s): "Ma-", "Ma-", dan de hele cry, op de maat en net onder de lead.
+- **Jirachi v2**: na ±42 s een opbouw (152 -> 168 bpm, filter dat opengaat, versnellende roffel, riser) naar een
+  euforische trance-drop (supersaw-lead met het wensmotief, gated akkoorden, off-beat bas, four-on-the-floor),
+  breakdown, tweede drop, en dan terug naar het thema een octaaf hoger in E-groot. Eigen supersaw-samples.
+- **Heatran v2**: echte stoner rock in drop C, 100 bpm met halftempo-refreinen. Strofen alleen bas + drums (later met
+  de gedempte refreinriff), zware trage refreinen met twee fuzzgitaren (Big Muff-achtige fuzz), rustig middenstuk met
+  getokkelde gitaar, opbouw, climax met bluesy solo. Strofen ±7 dB zachter dan refreinen.
+- **Shaymin v2**: gevechtsversie: 6/8 op 112 (jig-drive), intro-stoten, bas-ostinato, spiccato, doorlopende percussie,
+  een spannend B-deel met opbouw en een grotere A'. Thema en instrumenten gelijk.
+- **Rayquaza v2**: de weggevallen tonen verklaard en hersteld: in v1 waren de pauken (het herkenbare G-C-ostinato) en
+  beide PSG-lijnen van het origineel vervangen en speelde de bas maar één noot per tel; de pelog-kotekan botste
+  (Db/Eb tegen D/E). Nu: gestemde kendang op het ostinato, PSG-lijnen 1-op-1 terug, volledige baslijn op een gongbas,
+  kotekan in de toonladder van het origineel, plus een laag mannenkoor en extra gongs.
+- **M2: PSG-drums vervangen** door echte samples in Zinnia, Colress, Giratina, Birch, Sunset Wilds, Yoshi's Castle en
+  Broken Pier (crash/china -> orkestcrash, pedaal-hihat -> gesloten hihat, side stick -> zachte snare, conga/bongo/
+  triangel waar nodig). Alleen drumnoten veranderd; 0 keer overlopen. `prepare()` kan nu ook `drum_map`.

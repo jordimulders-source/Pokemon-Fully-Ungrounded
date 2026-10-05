@@ -223,3 +223,24 @@ const u16 gMetatileAttributes_FlowerParadise[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatiles.bin");
 const u16 gMetatileAttributes_SkyPillarReverse[] = INCBIN_U16("data/tilesets/secondary/sky_pillar_reverse/metatile_attributes.bin");
+
+const u16 gMetatiles_FortreeJungle[] = INCBIN_U16("data/tilesets/secondary/fortree_jungle/metatiles.bin");
+const u16 gMetatileAttributes_FortreeJungle[] = INCBIN_U16("data/tilesets/secondary/fortree_jungle/metatile_attributes.bin");
+
+const u16 gMetatiles_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatiles.bin");
+const u16 gMetatileAttributes_ToadstoolHollow[] = INCBIN_U16("data/tilesets/secondary/toadstool_hollow/metatile_attributes.bin");
+
+
+const u16 gMetatiles_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatiles.bin");
+const u16 gMetatileAttributes_SafariFairy[] = INCBIN_U16("data/tilesets/secondary/safari_fairy/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatiles.bin");
+const u16 gMetatileAttributes_SafariThunder[] = INCBIN_U16("data/tilesets/secondary/safari_thunder/metatile_attributes.bin");
+
+const u16 gMetatiles_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatiles.bin");
+const u16 gMetatileAttributes_SafariSpook[] = INCBIN_U16("data/tilesets/secondary/safari_spook/metatile_attributes.bin");
+
+const u16 gMetatiles_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorched_slab/metatiles.bin"); // Project Grounded: Scorched Slab
+const u16 gMetatileAttributes_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorched_slab/metatile_attributes.bin");
+const u16 gMetatiles_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatiles.bin");
+const u16 gMetatileAttributes_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatile_attributes.bin");

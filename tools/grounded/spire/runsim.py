@@ -31,7 +31,7 @@ import relics as RELICDATA  # noqa: E402
 
 ROOT = ENC.ROOT
 SECTION = '## Vergelijking met Slay the Spire'
-VERSION = 'v0.8.115'
+VERSION = 'v0.9.70'
 
 
 def _read(p):
@@ -57,6 +57,8 @@ def load_config():
     shop = _read('src/spire_shop.c')
     cfg = dict(
         floors=c_define(h, 'SPIRE_FLOORS'),
+        weak_floors=c_define(h, 'SPIRE_WEAK_FLOORS', 2),
+        treasure_floor=c_define(h, 'SPIRE_TREASURE_FLOOR', -1),
         heal_after=c_define(h, 'SPIRE_HEAL_AFTER'),
         rest_heal=c_define(h, 'SPIRE_REST_HEAL'),
         start_gold=c_define(h, 'SPIRE_START_GOLD', 0),
@@ -76,7 +78,8 @@ def load_config():
     cfg['map_src'] = gen
     cfg['odds'] = [int(x) for x in re.findall(r'else if \(r < (\d+)\)', gen)]
     for room in ('ELITE', 'SHOP', 'REST'):
-        cfg[room.lower() + '_from'] = int(re.search(r'\(f >= (\d+)\) \? SPIRE_ROOM_%s' % room, gen).group(1))
+        x = re.search(r'\(f >= (\w+)(?: && [^)]*)?\) \? SPIRE_ROOM_%s' % room, gen).group(1)
+        cfg[room.lower() + '_from'] = int(x) if x.isdigit() else c_define(h, x)
     assert len(cfg['odds']) == 4, cfg['odds']
     # winkel
     cfg['move_price'] = [int(x) for x in re.search(r'sMovePrice\[\] = \{([^}]*)\}', shop).group(1).split(',')]
@@ -90,101 +93,77 @@ def load_config():
 # ---------------------------------------------------------------------------------------------
 # Kaartgenerator (port van Spire_GenerateMap; controle: zelfde uitvoer als de C-code, zie --check-map)
 
-FIGHT, ELITE, REST, SHOP, EVENT, BOSS = 1, 2, 3, 4, 5, 6
-NAMES = {FIGHT: 'gevecht', ELITE: 'elite', REST: 'rust', SHOP: 'winkel', EVENT: 'event', BOSS: 'baas'}
+FIGHT, ELITE, REST, SHOP, EVENT, BOSS, TREASURE = 1, 2, 3, 4, 5, 6, 7
+NAMES = {FIGHT: 'gevecht', ELITE: 'elite', REST: 'rust', SHOP: 'winkel', EVENT: 'event', BOSS: 'baas', TREASURE: 'schatkist'}
+
+_MAPLIB = {}
 
 
-class Lcg:
-    def __init__(self, seed):
-        self.s = seed & 0xFFFFFFFF
-
-    def __call__(self):
-        self.s = (self.s * 1103515245 + 12345) & 0xFFFFFFFF
-        return (self.s >> 16) & 0x7FFF
-
-
-def room_type(cfg, f, r):
-    F = cfg['floors']
-    o = cfg['odds']          # drempels: gevecht, event, elite, winkel, rest = rust
-    if f == 0:
-        return FIGHT
-    if f == F - 1:
-        return REST
-    if r < o[0]:
-        return FIGHT
-    if r < o[1]:
-        return EVENT
-    if r < o[2]:
-        return ELITE if f >= cfg['elite_from'] else FIGHT
-    if r < o[3]:
-        return SHOP if f >= cfg['shop_from'] else EVENT
-    return REST if f >= cfg['rest_from'] else FIGHT
-
-
-def node_count(cfg, f, st):
-    F = cfg['floors']
-    if f == 0:
-        return 3
-    if f == F - 1:
-        return 2
-    return 2 + st() % 3
+def _map_lib(cfg):
+    """Spire_GenerateMap uit src/spire_run.c (Lcg t/m Spire_GenerateMap), gecompileerd met gcc en via ctypes
+    aangeroepen: de kaart in het rekenwerk is precies de kaart in de game (schatkist, Spire_WeighMap, ...)."""
+    import ctypes, subprocess, tempfile, hashlib
+    run = _read('src/spire_run.c')
+    a = run.index('static u32 Lcg(u32 *state)')
+    b = run.index('\n}\n', run.index('void Spire_GenerateMap(')) + 3
+    h = _read('include/spire.h')
+    defs = ''.join('#define %s %d\n' % (n, c_define(h, n, 0)) for n in
+                   ('SPIRE_FLOORS', 'SPIRE_MAX_NODES', 'SPIRE_TREASURE_FLOOR', 'SPIRE_ELITE_FROM', 'SPIRE_WEAK_FLOORS'))
+    src = ('#include <stdint.h>\ntypedef uint32_t u32; typedef uint8_t u8; typedef int32_t bool32;\n#define TRUE 1\n#define FALSE 0\n' + defs +
+           'enum {SPIRE_ROOM_NONE,SPIRE_ROOM_FIGHT,SPIRE_ROOM_ELITE,SPIRE_ROOM_REST,SPIRE_ROOM_SHOP,SPIRE_ROOM_EVENT,SPIRE_ROOM_BOSS,SPIRE_ROOM_TREASURE};\n'
+           'struct SpireMapNode{u8 type,x,links;};\n'
+           'struct SpireActMap{u8 count[SPIRE_FLOORS];struct SpireMapNode nodes[SPIRE_FLOORS][SPIRE_MAX_NODES];};\n'
+           + run[a:b] + '\nvoid gen(u32 seed, u8 *out){struct SpireActMap m;Spire_GenerateMap(&m,seed);'
+           'for(int f=0;f<SPIRE_FLOORS;f++){out[f*9]=m.count[f];for(int i=0;i<SPIRE_MAX_NODES;i++){out[f*9+1+2*i]=m.nodes[f][i].type;out[f*9+2+2*i]=m.nodes[f][i].links;}}}\n')
+    key = hashlib.md5(src.encode()).hexdigest()
+    if key not in _MAPLIB:
+        d = tempfile.mkdtemp()
+        open(os.path.join(d, 'm.c'), 'w').write(src)
+        subprocess.check_call(['gcc', '-O1', '-shared', '-fPIC', '-o', os.path.join(d, 'm.so'), os.path.join(d, 'm.c')])
+        _MAPLIB[key] = ctypes.CDLL(os.path.join(d, 'm.so'))
+    return _MAPLIB[key]
 
 
 def generate_map(cfg, seed):
+    import ctypes
+    lib = _map_lib(cfg)
     F = cfg['floors']
-    st = Lcg(seed)
-    count, nodes = [], []
-    for f in range(F):
-        n = node_count(cfg, f, st)
-        count.append(n)
-        row = []
-        for i in range(n):
-            r = st() % 100
-            st()  # x-positie
-            row.append(dict(type=room_type(cfg, f, r), links=0))
-        nodes.append(row)
-    for f in range(F - 1):
-        n0, n1 = count[f], count[f + 1]
-        j0s = [0 if n0 == 1 else (i * (n1 - 1) + (n0 - 1) // 2) // (n0 - 1) for i in range(n0)]
-        incoming = 0
-        for i in range(n0):
-            nodes[f][i]['links'] |= 1 << j0s[i]
-            if j0s[i] + 1 < n1 and (i + 1 >= n0 or j0s[i + 1] > j0s[i]) and st() % 2:
-                nodes[f][i]['links'] |= 1 << (j0s[i] + 1)
-            incoming |= nodes[f][i]['links']
-        for j in range(n1):
-            if not incoming & (1 << j):
-                frm = 0
-                for i in range(n0):
-                    if j0s[i] < j:
-                        frm = i
-                nodes[f][frm]['links'] |= 1 << j
-    return nodes
+    buf = (ctypes.c_uint8 * (F * 9))()
+    lib.gen(ctypes.c_uint32(seed & 0xFFFFFFFF), buf)
+    return [[dict(type=buf[f * 9 + 1 + 2 * i], links=buf[f * 9 + 2 + 2 * i]) for i in range(buf[f * 9])] for f in range(F)]
 
 
-def check_map(cfg):
-    """Vergelijk met de C-code (gcc): zelfde seeds, zelfde kaart."""
-    import subprocess, tempfile
-    d = tempfile.mkdtemp()
-    fn = cfg['map_src'].replace('void Spire_GenerateMap', 'static u32 Lcg(u32 *state)\n{\n    *state = *state * 1103515245 + 12345;\n'
-                                '    return (*state >> 16) & 0x7FFF;\n}\n\nvoid Spire_GenerateMap')
-    src = ('#include <stdio.h>\n#include <stdint.h>\ntypedef uint32_t u32; typedef uint8_t u8;\n'
-           '#define SPIRE_FLOORS %d\n#define SPIRE_MAX_NODES 4\n'
-           'enum {SPIRE_ROOM_NONE,SPIRE_ROOM_FIGHT,SPIRE_ROOM_ELITE,SPIRE_ROOM_REST,SPIRE_ROOM_SHOP,SPIRE_ROOM_EVENT,SPIRE_ROOM_BOSS};\n'
-           'struct SpireMapNode{u8 type,x,links;};\n'
-           'struct SpireActMap{u8 count[SPIRE_FLOORS];struct SpireMapNode nodes[SPIRE_FLOORS][SPIRE_MAX_NODES];};\n%s\n'
-           'int main(void){for(u32 s=1;s<=300;s++){struct SpireActMap m;Spire_GenerateMap(&m,s*2654435761u);'
-           'for(int f=0;f<SPIRE_FLOORS;f++){for(int i=0;i<m.count[f];i++)printf("%%d:%%d ",m.nodes[f][i].type,m.nodes[f][i].links);'
-           'printf("|");}printf("\\n");}return 0;}\n') % (cfg['floors'], fn)
-    open(os.path.join(d, 'm.c'), 'w').write(src)
-    subprocess.check_call(['gcc', '-O1', '-o', os.path.join(d, 'm'), os.path.join(d, 'm.c')])
-    out = subprocess.check_output([os.path.join(d, 'm')]).decode().splitlines()
-    for s, line in zip(range(1, 301), out):
-        nodes = generate_map(cfg, (s * 2654435761) & 0xFFFFFFFF)
-        py = ''.join(''.join('%d:%d ' % (n['type'], n['links']) for n in row) + '|' for row in nodes)
-        if py != line:
-            raise SystemExit('kaart wijkt af bij seed %d:\n C  %s\n py %s' % (s, line, py))
-    print('kaartgenerator: Python-port == C-code (300 seeds)')
+def check_map(cfg, n=5000):
+    """Controle van de kaartregels (Jordi): geen rust/elite/winkel twee keer achter elkaar op een route, schatkist op de
+    middelste verdieping, Snorlax (rust) vlak voor de baas, minstens één elite vóór en één na de schatkist, elke kamer
+    bereikbaar."""
+    F, T = cfg['floors'], cfg['treasure_floor']
+    bad = Counter()
+    for s_ in range(1, n + 1):
+        nodes = generate_map(cfg, (s_ * 2654435761) & 0xFFFFFFFF)
+        for f in range(F - 1):
+            for i, nd in enumerate(nodes[f]):
+                for j, nx in enumerate(nodes[f + 1]):
+                    if nd['links'] & (1 << j) and nd['type'] == nx['type'] and nd['type'] in (ELITE, REST, SHOP) and f + 1 != F - 1:
+                        bad['%s twee keer op rij' % NAMES[nd['type']]] += 1
+        if T >= 0 and any(nd['type'] != TREASURE for nd in nodes[T]):
+            bad['schatkist niet op verdieping %d' % (T + 1)] += 1
+        if any(nd['type'] != REST for nd in nodes[F - 1]):
+            bad['geen rust vlak voor de baas'] += 1
+        if not any(nd['type'] == ELITE for f in range(T) for nd in nodes[f]):
+            bad['geen elite vóór de schatkist'] += 1
+        if not any(nd['type'] == ELITE for f in range(T + 1, F - 1) for nd in nodes[f]):
+            bad['geen elite na de schatkist'] += 1
+        for f in range(1, F):
+            inc = 0
+            for nd in nodes[f - 1]:
+                inc |= nd['links']
+            if inc != (1 << len(nodes[f])) - 1:
+                bad['onbereikbare kamer'] += 1
+    for k, v in bad.items():
+        print('kaart: %s in %d van %d kaarten' % (k, v, n))
+    print('kaartgenerator (C-code via ctypes): %d kaarten gecontroleerd, %d fouten' % (n, sum(bad.values())))
+    return bad
 
 
 # ---------------------------------------------------------------------------------------------
@@ -205,12 +184,14 @@ def load_encounters():
         key = (b['act'], e['kind'] if e['kind'] != 'boss' else 'boss:' + e['name'])
         e['calkey'] = key
         groups.setdefault(key, []).append(e)
-    ENC.calibrate(groups)
+    # v0.9.70: HP-verlies per ontmoeting uit echte gevechten (matchups.py, geschreven door encounters.py)
+    import matchups as M
+    _, stats = M.load_calib()
     out = defaultdict(list)   # (biome of 'BOSS<act>', kind) -> [(verlies 0-1, beurten)]
     for b, e in rows:
-        d = ENC.difficulty(e, b['act'], e['kind'], *ENC.CALIB[e['calkey']][:2])
+        d = stats[e['name']]
         k = b['key'] if b['key'] != 'BOSS' else 'BOSS%d' % b['act']
-        out[(k, e['kind'])].append((d['lost'] / 100, d['turns'], e['name']))
+        out[(k, e['kind'])].append((d['loss'] / 100, d['turns'], e['name']))
     return out
 
 
@@ -678,7 +659,7 @@ class Run:
         heal_after = 0 if self.rs('noheal') else cfg['heal_after'] + (10 if self.has('BERRY_POUCH') else 0)
         for idx, t in enumerate(path):
             if t in (FIGHT, ELITE, BOSS):
-                kind = 'boss' if t == BOSS else 'elite' if t == ELITE else ('weak' if self.floor + idx < 2 else 'normal')
+                kind = 'boss' if t == BOSS else 'elite' if t == ELITE else ('weak' if self.floor + idx < self.sim.cfg['weak_floors'] else 'normal')
                 m = self.exp_loss(kind)
                 pd = p_exceed(m, CV[kind], hp)
                 alive *= 1 - pd
@@ -689,7 +670,7 @@ class Run:
                 gold += g
                 val += alive * (g * 0.6 + V['reward_move'] + (V['relic'] if t in (ELITE, BOSS) else 0))
             elif t == REST:
-                nxt_boss = idx + 1 == len(path) - 1 or path[idx + 1] == BOSS
+                nxt_boss = idx + 1 < len(path) and path[idx + 1] == BOSS
                 if hp < (0.9 if nxt_boss else 0.6) and not self.rs('norest'):
                     gain = min(self.rest_amount() / 100, 1 - hp)
                     hp += gain
@@ -704,19 +685,22 @@ class Run:
                 gold -= spend
             elif t == EVENT:
                 val += alive * self.sim.event_ev
+            elif t == TREASURE:
+                val += alive * V['relic']
         val += alive * hp * 100 * V['hp'] * 0.5      # HP na de baas (act-overgang heelt maar deels)
         val -= (1 - alive) * V['run']
         return val
 
-    def paths_from(self, nodes, f, i):
-        """Alle paden vanaf kamer i op verdieping f (types)."""
+    def paths_from(self, nodes, f, i, depth=7):
+        """Alle paden vanaf kamer i op verdieping f (types), hooguit depth verdiepingen vooruit (13 verdiepingen geven
+        anders duizenden paden; een Slay-speler kijkt ook een stuk vooruit, niet tot de baas)."""
         t = nodes[f][i]['type']
-        if f == len(nodes) - 1:
+        if f == len(nodes) - 1 or depth <= 1:
             return [[t]]
         out = []
         for j in range(len(nodes[f + 1])):
             if nodes[f][i]['links'] & (1 << j):
-                for p in self.paths_from(nodes, f + 1, j):
+                for p in self.paths_from(nodes, f + 1, j, depth - 1):
                     out.append([t] + p)
         return out
 
@@ -737,7 +721,7 @@ class Run:
             best, bv = None, -1e18
             for j in cands:
                 for p in self.paths_from(nodes, f, j):
-                    v = self.plan_value(p + [BOSS], F)
+                    v = self.plan_value(p + ([BOSS] if f + len(p) >= F else []), F)
                     if v > bv:
                         best, bv = j, v
             cur = best
@@ -746,7 +730,7 @@ class Run:
             self.time += DUR['room']
             self.log['rooms'][(act, t)] += 1
             if t == FIGHT:
-                ok = self.fight('weak' if f < 2 else 'normal')
+                ok = self.fight('weak' if f < S.cfg['weak_floors'] else 'normal')
             elif t == ELITE:
                 ok = self.fight('elite')
             elif t == REST:
@@ -755,6 +739,9 @@ class Run:
             elif t == SHOP:
                 self.shop()
                 self.log['shopvisit'][act] += 1
+                ok = True
+            elif t == TREASURE:
+                self.add_relic('elite')     # schatkist: één relic (Spire_OpenCards, bron elite)
                 ok = True
             else:
                 ok = self.event()
@@ -932,6 +919,8 @@ def report(sim, logs, changes, before, sens=None):
                   statistics.mean(tl) / 60 if tl else 0, statistics.mean(tu) / 3, other / 3 / 60, statistics.mean(tw) / 60,
                   (statistics.mean(tu) * 25 + other) / 60, (statistics.mean(tu) * 45 + other) / 60,
                   'binnen' if 60 <= statistics.mean(tw) / 60 <= 80 else 'buiten', cfg['floors'])]
+        L[-1] = L[-1].replace('de actlengte (%d verdiepingen) blijft zoals hij is.' % cfg['floors'],
+                              'de acts zijn bewust langer (%d verdiepingen, Jordi); zie *Voor Jordi*.' % cfg['floors'])
     L += ['', '**Waar runs eindigen** (gemiddeld niveau; Slay: act-1-elites en de act-1/2-baas zijn de grote killers, act 2 ook gewone gevechten):', '']
     deaths = g['died']
     tot_d = max(1, sum(deaths.values()))
@@ -990,34 +979,23 @@ def fmtv(v):
 
 
 CHANGES = [
-    '**Relics 8 → 50** (Jordi, 5 okt; `relics.py` → `include/spire_relics.h` en `src/data/spire_relics.h`): 16 common, 15 uncommon, 8 rare, 3 shop, '
-    '8 boss. Elites bieden 3 relics met elk 50/33/17% common/uncommon/rare (zoals Slay), bazen 3 boss-relics (sterk, vaak met een nadeel: '
-    'Awakening = niet rusten, Relic Crown = geen geld, Odd Keystone = geen intenties, ...), de winkel een gewone en een winkel-relic, events een gewone. '
-    'Relics die door een andere relic nutteloos worden, worden niet aangeboden (Soothe Bell na Awakening, ...). '
-    'De relic-pool loopt niet meer leeg (was 28% van de runs); een gewonnen run heeft ±8 relics.',
-    'Run-model (`runsim.py`): relics komen nu uit `relics.py` met hun eigen rekenmodel (HP-verlies per soort gevecht, heal, geld, max HP, '
-    'rust/upgrade, winkelprijzen, act-heal); de bot kiest uit de aangeboden relics zoals de game ze aanbiedt. De factoren zijn schattingen '
-    '(+X% schade ≈ gevecht X% korter ≈ minder schade incasseren) en moeten na testen bijgesteld worden.',
-    '**Procent-moves zeldzaam** (Jordi: Toxic, Leech Seed en vergelijkbare moves zo laten, maar zeldzaam; `spire_pool.py`): nooit meer in een '
-    'startkit, en als beloning alleen nog als een kwart van de rare kaarten (±2,5% per kaart). Zie *Beloningsmoves* hierboven.',
-    'Patronen en blok aan het eind van de beurt (`Spire_EndTurn`): werd vaker dan één keer per beurt aangeroepen zodra er effecten aan het eind van '
-    'de beurt waren (gif, weer, Leftovers), waardoor vaste patronen een stap oversloegen. Nu precies één keer per beurt.',
+    '**Acts 7 -> 13 verdiepingen + baas** (Jordi, 5 okt: "de acts mogen wat langer, zoals in Slay the Spire"): schatkist op verdieping 7, '
+    'Snorlax op 13, elites en rust vanaf verdieping 5, zwakke gevechten op 1-3. Per act nu ±6 gevechten, ±1,9 elites, ±1,9 events (Slay 5-7 / 1-3 / 3-5). '
+    'De kaart in dit rekenwerk is nu de C-code zelf (`Spire_GenerateMap` via gcc/ctypes, met schatkist en `Spire_WeighMap`), geen port meer.',
+    '**HP-verlies per gevecht uit echte gevechten** (`matchups.py`, via `spire_calib.json`): types, abilities, patronen, DEFEND, '
+    'openingsbescherming en klap-limiet tellen mee; eerder kwam het uit het gemiddelde-teammodel van encounters.py.',
+    '**Doelen per gevecht** (encounters.py, `TARGET_ACT`): gewone gevechten 12/14/16 -> 15/17/19% (Jordi: "alle reguliere encounters waren super makkelijk"), '
+    'elites 24/27/30 -> 22/24/26%, bazen 55/60/65 -> 35/38/40% (met types verliest een slecht passend team ±2x het gemiddelde; zie *Slechtste startcombinatie*). '
+    'Per act zijn er bijna twee keer zoveel gevechten, dus de druk over een act blijft.',
 ]
 
 OPEN = [
-    '**Relics maken act 2 en 3 goedkoper** (model): met ±8 relics per run (en sterkere boss-relics) zakt het verlies bij de act-3-baas van ±45% naar ±25% '
-    'en stijgt de winkans (gemiddeld/slordig) met ±5/15 procentpunt; zie de voor/na-tabel. Volgens het model herstelt act 2 ×1,15 en act 3 ×1,35 '
-    'zwaarder (encounters.py, `TARGET_ACT`) de oude winkansen (78/36%). Niet aangepast: eerst testen hoe sterk de relics in het echt zijn '
-    '(de factoren in relics.py zijn schattingen). Slay doet hetzelfde: elke act doet meer pijn omdat de speler groeit. '
-    'Geld per act daalt in het model (±135¥) doordat de bot na de eerste baas graag Relic Crown neemt (geen geld meer uit gevechten).',
-    '**Vastloper:** in een event waarvan elke optie geld of een type vraagt (nu *The Vending Machine*/Rotom: 20¥, 30¥ of Electric) kun je niet verder als je '
-    'te weinig geld hebt en geen Electric-type. Voorstel: B = weglopen als alles op slot zit (`spire_event.c`), of een Leave-optie.',
-    '**Winkans:** volgens het model is de Spire nog steeds milder dan Slay A0 (gemiddeld niveau ±80% gewonnen, Slay 40-60%); bijna alle runs eindigen bij een baas. '
-    'Wat overblijft is hoeveel slordig spel kost (gevoeligheid hierboven). Dat hangt aan de gimmicks van de ontmoetingen en is pas na testen te meten: '
-    'houd in een paar runs bij hoeveel HP elk gevecht kost, dan kan `runsim.py` de factor ijken.',
-    '**Lengte:** 7 verdiepingen + baas tegen 15 + baas in Slay: per act ±3 gevechten, 1,1 elite, 1 event (Slay ±6, 2-3, 3-5). De speelduur zit wel op het doel '
-    '(zie *Speelduur*); de actlengte blijft.',
-    'Uitschieters in de ontmoetingen (al gemarkeerd *te zwaar*), zoals Sewer Clam (62% HP) en Jungle Ambush (22 beurten), maken de gang-doden in act 1: eerst die bijstellen.',
+    '**Speelduur:** met 13 verdiepingen duurt een gewonnen run volgens het model ±2 uur (was ±75 min). Korter kan met `SPIRE_FLOORS` 11 '
+    '(alles schaalt mee: kaart, schatkist in het midden, rekenwerk).',
+    '**Winkans:** het model zit (gemiddeld niveau ±80%) nog boven Slay A0 (40-60%); de spreiding tussen teams komt nu uit echte gevechten. '
+    'Houd in een paar runs bij hoeveel HP elk gevecht kost; dan kan `matchups.py` (de bot) geijkt worden.',
+    '**Vastloper:** in een event waarvan elke optie geld of een type vraagt (*The Vending Machine*/Rotom) kun je niet verder zonder geld of Electric-type. '
+    'Voorstel: B = weglopen als alles op slot zit (`spire_event.c`).',
 ]
 
 
@@ -1037,7 +1015,7 @@ def conclusions(sim, logs):
             pct(statistics.mean(x for a in (1, 2, 3) for x in g['loss'][(a, 'elite')])),
             pct(statistics.mean(x for a in (1, 2, 3) for x in g['loss'][(a, 'baas')]))),
         'Kamerverdeling per act (×15/%d om met Slay te vergelijken): %.1f gevechten, %.1f elites, %.1f events, %.1f winkels, %.1f rustplekken. '
-        'Elites en rust kloppen; events en winkels zijn wat dun door de korte acts.' % (
+        'Elites en rust kloppen; events en winkels zitten aan de onderkant van Slay.' % (
             sim.cfg['floors'], rooms[FIGHT] * 15 / sim.cfg['floors'], rooms[ELITE] * 15 / sim.cfg['floors'], rooms[EVENT] * 15 / sim.cfg['floors'],
             rooms[SHOP] * 15 / sim.cfg['floors'], rooms[REST] * 15 / sim.cfg['floors']),
         'HP-economie: aankomst bij de act-1-baas %s (Slay ±70-90%%); rustplekken heal/upgrade %s per act (Slay: vroeg vaak rusten, later smeden).' % (
@@ -1063,8 +1041,9 @@ def main():
     for kv in args.set:
         k, v = kv.split('=')
         cfg[k] = eval(v)
-    if args.check_map:
-        check_map(cfg)
+    # kaartregels altijd controleren (Jordi: geen twee Marts/rustplekken/elites achter elkaar, ...)
+    if check_map(cfg, 3000 if not args.check_map else 20000):
+        raise SystemExit('kaartgenerator breekt een kaartregel (zie hierboven)')
     sim = Sim(cfg)
     # event-EV voor de planner: eerst een korte ronde
     lg = sim.run_many(400, 'gemiddeld', seed=7)

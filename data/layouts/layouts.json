@@ -1344,8 +1344,8 @@
     {
       "id": "LAYOUT_METEOR_FALLS_B1F_2R",
       "name": "MeteorFalls_B1F_2R_Layout",
-      "width": 11,
-      "height": 18,
+      "width": 40,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_B1F_2R/border.bin",
@@ -1470,6 +1470,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MtChimney/border.bin",
       "blockdata_filepath": "data/layouts/MtChimney/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CHIMNEY_SUMMIT",
+      "name": "MtChimney_Summit_Layout",
+      "width": 36,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MtChimney_Summit/border.bin",
+      "blockdata_filepath": "data/layouts/MtChimney_Summit/map.bin"
     },
     {
       "id": "LAYOUT_MT_PYRE_1F",
@@ -3002,6 +3012,46 @@
       "blockdata_filepath": "data/layouts/VictoryRoad_B2F/map.bin"
     },
     {
+      "id": "LAYOUT_VICTORY_ROAD_SHARK_DEN",
+      "name": "VictoryRoad_SharkDen_Layout",
+      "width": 42,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_SharkDen/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_SharkDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_HERMIT",
+      "name": "VictoryRoad_Hermit_Layout",
+      "width": 17,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Hermit/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Hermit/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_VAULT",
+      "name": "VictoryRoad_Vault_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Vault/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Vault/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_WAITING_ROOM",
+      "name": "VictoryRoad_WaitingRoom_Layout",
+      "width": 13,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_WaitingRoom/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_WaitingRoom/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE104_PROTOTYPE",
       "name": "Route104_Prototype_Layout",
       "width": 1,
@@ -3070,6 +3120,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/JaggedPass/border.bin",
       "blockdata_filepath": "data/layouts/JaggedPass/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAGGED_PASS_LAVA_TUBE",
+      "name": "JaggedPass_LavaTube_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/JaggedPass_LavaTube/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_LavaTube/map.bin"
     },
     {
       "id": "LAYOUT_FIERY_PATH",
@@ -3267,9 +3327,49 @@
       "width": 15,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_ScorchedSlab",
       "border_filepath": "data/layouts/ScorchedSlab/border.bin",
       "blockdata_filepath": "data/layouts/ScorchedSlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_SCORCHED_SLAB",
+      "name": "Underwater_ScorchedSlab_Layout",
+      "width": 18,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_ScorchedSlab/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_ScorchedSlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SANCTUM",
+      "name": "ScorchedSlab_Sanctum_Layout",
+      "width": 23,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_Sanctum/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_Sanctum/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SPRING",
+      "name": "ScorchedSlab_Spring_Layout",
+      "width": 25,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_Spring/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_Spring/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_SUN_HALL",
+      "name": "ScorchedSlab_SunHall_Layout",
+      "width": 27,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ScorchedSlab",
+      "border_filepath": "data/layouts/ScorchedSlab_SunHall/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_SunHall/map.bin"
     },
     {
       "id": "LAYOUT_CAVE_OF_ORIGIN_UNUSED_B4F_LAVA",
@@ -4552,6 +4652,66 @@
       "blockdata_filepath": "data/layouts/MeteorFalls_StevensCave/map.bin"
     },
     {
+      "id": "LAYOUT_METEOR_FALLS_HIDDEN_FALLS",
+      "name": "MeteorFalls_HiddenFalls_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_HiddenFalls/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_HiddenFalls/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_STARFALL_GROTTO",
+      "name": "MeteorFalls_StarfallGrotto_Layout",
+      "width": 47,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_StarfallGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_StarfallGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_ECHO_CHAMBER",
+      "name": "MeteorFalls_EchoChamber_Layout",
+      "width": 20,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_EchoChamber/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_EchoChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_DRACONID_SHRINE",
+      "name": "MeteorFalls_DraconidShrine_Layout",
+      "width": 22,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_DraconidShrine/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_DraconidShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_STAR_CORE",
+      "name": "MeteorFalls_StarCore_Layout",
+      "width": 26,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_StarCore/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_StarCore/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_TUNNELS",
+      "name": "MeteorFalls_Tunnels_Layout",
+      "width": 47,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_Tunnels/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_Tunnels/map.bin"
+    },
+    {
       "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE",
       "name": "LittlerootTown_ProfessorBirchsLabWithTable_Layout",
       "width": 13,
@@ -4760,6 +4920,126 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Route112_TowerOfWaters/border.bin",
       "blockdata_filepath": "data/layouts/Route112_TowerOfWaters/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_JUNGLE",
+      "name": "FortreeJungle_Layout",
+      "width": 40,
+      "height": 68,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FortreeJungle",
+      "border_filepath": "data/layouts/FortreeJungle/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeJungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_TOADSTOOL_HOLLOW",
+      "name": "ToadstoolHollow_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ToadstoolHollow",
+      "border_filepath": "data/layouts/ToadstoolHollow/border.bin",
+      "blockdata_filepath": "data/layouts/ToadstoolHollow/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_FAIRY_FOREST",
+      "name": "SafariZone_FairyForest_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariFairyGeneral",
+      "secondary_tileset": "gTileset_SafariFairy",
+      "border_filepath": "data/layouts/SafariZone_FairyForest/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_FairyForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_THUNDER_PLAINS",
+      "name": "SafariZone_ThunderPlains_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariThunderGeneral",
+      "secondary_tileset": "gTileset_SafariThunder",
+      "border_filepath": "data/layouts/SafariZone_ThunderPlains/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_ThunderPlains/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAFARI_ZONE_HAUNTED_CAMP",
+      "name": "SafariZone_HauntedCamp_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_SafariSpookGeneral",
+      "secondary_tileset": "gTileset_SafariSpook",
+      "border_filepath": "data/layouts/SafariZone_HauntedCamp/border.bin",
+      "blockdata_filepath": "data/layouts/SafariZone_HauntedCamp/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_1F",
+      "name": "RocketHideout_1F_Layout",
+      "width": 15,
+      "height": 17,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_1F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_B1F",
+      "name": "RocketHideout_B1F_Layout",
+      "width": 51,
+      "height": 24,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_HIDEOUT_B2F",
+      "name": "RocketHideout_B2F_Layout",
+      "width": 20,
+      "height": 15,
+      "primary_tileset": "gTileset_RocketGeneral",
+      "secondary_tileset": "gTileset_RocketFacility",
+      "border_filepath": "data/layouts/RocketHideout_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketHideout_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANGROVE_MIRE",
+      "name": "MangroveMire_Layout",
+      "width": 56,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MangroveMire",
+      "border_filepath": "data/layouts/MangroveMire/border.bin",
+      "blockdata_filepath": "data/layouts/MangroveMire/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_CORNERSTONE_ROOM",
+      "name": "GraniteCave_CornerstoneRoom_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_CornerstoneRoom/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_CornerstoneRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_FIERY_PATH_EMBER_HOLLOW",
+      "name": "FieryPath_EmberHollow_Layout",
+      "width": 18,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/FieryPath_EmberHollow/border.bin",
+      "blockdata_filepath": "data/layouts/FieryPath_EmberHollow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE127_WELLSPRING_GROTTO",
+      "name": "Route127_WellspringGrotto_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route127_WellspringGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/Route127_WellspringGrotto/map.bin"
     }
   ]
 }

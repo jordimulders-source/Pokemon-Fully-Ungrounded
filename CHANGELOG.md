@@ -16079,3 +16079,855 @@ Jordi: alles wat geen visueel spektakel is mag korter; gevechtstransities en mov
 ### [v.0.8.131] - Mustards gezicht, arena-opstelling
 - **Mustard (trainerfoto):** gezicht opnieuw getekend naar de artwork (Jordi): het witte "haar" zijn zijn lange golvende **wenkbrauwen**, die over de ogen boogt en langs de wangen naar beneden valt; een **puntig wit sikje** onder de kin; **grotere ogen** met pupil en zware oogleden; oor zichtbaar.
 - **Arena-opstelling:** iedereen staat even ver van het midden van het veld (midden = tussen x 8/9 en rij 6/7). Singles: speler (6,6) tegen (11,6); doubles: speler en compagnon op (6,6)/(6,7), tegenstanders op (11,6)/(11,7). Eerder stond de tweede tegenstander op rij 5, waar de bovenrand van het veld over zijn hoofd viel.
+
+### [v.0.9.0] - Begin van fase 0.9: shiny Rayquaza en de Delta Episode met Zinnia
+- **Fase 0.9** (Jordi, 4 okt): de laatste fase vóór de beta. Besluiten en volgorde in `TODO.md` ("Fase v0.9"): muziek alleen als MIDI, shiny Rayquaza + Delta Episode, Archie en Maxie als werkstrafvrijwilligers, signature moves, de Burglar door de steden, Safari-uitbreiding, jungle, moeras, oostkant en uitbreidingen van bijna elke dungeon.
+- **MP3-muziek:** de vijf MP3's (Lorekeeper Zinnia, Wally, Wally's Theme, The Heirs to Eternity, The Lament of Falling Stars) kunnen als gestreamd sample (getest: naadloze lussen gevonden), maar dat kost samen ±5,3 MB ROM. Op Jordi's verzoek niet gedaan; alleen MIDI-versies komen erin. De Zinnia-gevechtsmuziek bestaat al als MIDI.
+- **Shiny Rayquaza:** heb je de gewone Rayquaza op de Sky Pillar gevangen (Pokédex), dan wacht er bij het volgende bezoek een tweede, **gegarandeerd shiny Rayquaza** (lv 75) op dezelfde plek. Eigen overworld-sprite: de opgerolde Rayquaza met een zwart-gouden palet (`OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL`). Shiny via `P_FLAG_FORCE_SHINY` = `FLAG_FORCE_SHINY`, alleen aan tijdens het aanmaken van de wilde Pokémon.
+- Verslagen (niet gevangen) Rayquaza's komen na de League terug, zodat de Delta Episode altijd te halen is.
+- **Delta Episode:**
+  1. Na het vangen van de shiny Rayquaza staat **Zinnia** bij het Space Center in Mossdeep. Gevecht tegen haar volle team (lv 75–77, met Aster de Whismur en Mega-Salamence als ace; Zinnia-muziek).
+  2. De wetenschapper in het Space Center schiet je pas de ruimte in als Zinnia verslagen is **én de shiny Rayquaza in je team zit** ("de enige life support die we kunnen betalen"; Rayquaza leeft in de ozonlaag en maakt lucht). Daarna de ruimte en Deoxys zoals in v0.8.110.
+  3. Na Deoxys (gevangen of verslagen) staat Zinnia bij de meteoriet naast Birch: afsluiter, 3 Comet Shards.
+- Nieuwe specials `Grounded_CaughtRayquaza` en `Grounded_PartyHasShinyRayquaza`; trainer `TRAINER_ZINNIA_DELTA`; `VAR_DELTA_STATE` (0x40F8); flags 0x26C–0x270 en 0x285.
+- **Credits:** N (Delgatron), izzyvicious, en de nieuw aangeleverde sprite-sheets (HG/SS-trainers verzameld door Dann-The-Yoshi, overworlds door PurpleZaffre, de rest met bron "onbekend") in `CREDITS.md`.
+
+### [v.0.9.1] - Archie en Maxie: werkstraf in het Weather Institute
+- **Post-game:** Archie en Maxie staan na de Hall of Fame met een dweil in het Weather Institute (Route 119, begane grond). Taakstraf van zeshonderd uur voor "ongeplande klimaatgebeurtenissen".
+- In hun pauze mag je **één dubbelgevecht per dag** tegen allebei tegelijk (`trainerbattle_two_trainers`, je hebt twee Pokémon nodig). Na elke overwinning komen ze de volgende dag sterker terug, in vier rondes:
+  1. lv 70: Pelipper, Sharpedo, Overqwil / Camerupt, Claydol, Scovillain.
+  2. lv 76 (met EV's): Pelipper, Archaludon, Sharpedo / Tyranitar, Excadrill, Camerupt.
+  3. lv 82: Crobat, Archaludon, Mega-Sharpedo / Heatran, Tyranitar, Mega-Camerupt.
+  4. lv 90 (perfecte IV's; daarna blijft het deze ronde): Pelipper, Archaludon, Mega-Sharpedo / Hippowdon, Heatran, Mega-Camerupt.
+- Regen tegen zand op hetzelfde veld: ze werken samen, maar hun weer niet.
+- Nieuw: trainers `TRAINER_ARCHIE_SERVICE_1–4` en `TRAINER_MAXIE_SERVICE_1–4`, `VAR_WEATHER_SERVICE_TIER` (0x40FC), dagelijkse flag `FLAG_DAILY_WEATHER_SERVICE_BATTLE`, `FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE` (0x286). Getest in de emulator (ronde 3, overwinning, Archie en Maxie blijven staan).
+- Ontwerpkeuze: dagelijks in plaats van wekelijks (de game respecteert de tijd van de speler); wekelijks kan alsnog.
+
+### [v.0.9.2] - Battle Stadium: N en Ghetsis
+- **N** (klasse KING) en **Ghetsis** (klasse PLASMA BOSS) uit Black/White staan in de toernooipool, met hun eigen BW-muziek (de MIDI's bestonden al), mugshot, intro-slide, omroeperzinnen en placeholder-teksten.
+  - N (lv 50): Zoroark (vermomd als Zekrom, Illusion), Carracosta, Vanilluxe, Archeops, Klinklang, Zekrom.
+  - Ghetsis (lv 50): Cofagrigus, Seismitoad, Eelektross, Bisharp, Kyurem-Black, Hydreigon. Samen de top van de pool (sterkte 581/576).
+- Trainerfoto's en overworlds (32×32: de figuren zijn te breed voor 16 px) via `tools/grounded/plasma_sprites.py`: N uit de sheet van Delgatron, Ghetsis' overworld van PurpleZaffre, zijn trainerfoto uit de schreeuwende pixel-art. Bronnen in `graphics/grounded/trainers/n/` en `.../ghetsis/`.
+- Nummers na het samenvoegen: `OBJ_EVENT_GFX_N` 262, `OBJ_EVENT_GFX_GHETSIS` 263, `TRAINER_STADIUM_N` 977, `TRAINER_STADIUM_GHETSIS` 978; `pool.py` opnieuw gedraaid.
+
+### [v.0.9.3] - De Burglar (SIMON) breekt in
+- **Inbreker-event in zeven steden:** loop je Mauville, Slateport, Lilycove, Rustboro, Verdanturf, Fallarbor of Petalburg binnen, dan is er een kans van 1 op 12 (in Mauville 's nachts 1 op 3; max. één keer per dag, vanaf de eerste badge) dat **SIMON de Burglar** met buit uit een huis komt. Uitroepteken, `MUS_ENCOUNTER_SUSPICIOUS`, hij loopt naar je toe en vecht.
+- Na zijn nederlaag staat hij verbijsterd (?-emote, om zich heen kijken), de bewoner komt naar buiten en pakt de buit terug (tv, anker, schilderij, pensioensok, opa's urn, meteorietje, Normans servet), hij rent weg en laat een **Nugget** vallen (na de Elite Four een Big Nugget). Heb je hem al eens verslagen: "Oh, come ON. You again?".
+- Team in het vuur-en-gif-thema van de Red/Blue- en GSC-Burglars (met Thief en Air Pollution), groeit mee met de badges: lv 19–20 (Koffing, Vulpix, Growlithe) tot lv 66–68 na de Elite Four (o.a. Alolan Muk, Magmortar, Mega-Charizard Y).
+- Eigen overworld (FRLG Rocket omgekleurd naar de trainerfoto: pet, masker, buitzak; `tools/grounded/burglar_overworld.py`), ook in het Battle Stadium. Code in `src/burglar.c`, script `data/scripts/burglar.inc`, teksten `data/text/burglar.inc`; geen kaartobjecten nodig (gespawnd, lokale id's 200/201). `VAR_BURGLAR_DEFEATS` (0x40FA), `VAR_BURGLAR_LAST_DAY` (0x40FB), `TRAINER_BURGLAR_1–5` (979–983), `OBJ_EVENT_GFX_BURGLAR` 264.
+- **Forceren:** debugmenu Utilities > "Burglar: force" (of `special Burglar_DebugForce`), daarna langs het huis lopen. Getest in Mauville en Petalburg.
+
+### [v.0.9.4] - Signature moves: Cofagrigus, Stunfisk, Mightyena, Wailord, Luvdisc
+Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_bandage.png` en `broken_heart.png`). Tests: `test/battle/grounded/signature_moves.c` (13/13).
+- **Mummy's Curse** (Cofagrigus, bij evolutie/lv 1): Ghost, speciaal 60/100, 10 PP. Bindt 4–5 beurten (1/8 schade, kan niet wisselen) en het doelwit krijgt de ability **Mummy**, dus wie hem met contact raakt wordt ook een mummie. Ability Shield en onoverschrijfbare abilities beschermen. Animatie: paars veld, zes linnen windsels draaien om het doelwit, een geest stijgt op; eigen beurtanimatie voor het knellen.
+- **Zap Trap** (Stunfisk, lv 28): Electric, fysiek 80/100, contact, bijt. Doelwit kan niet wisselen, 30% verlamming. Stunfisk klapt plat dubbel, kaken klappen dicht, bliksem.
+- **Steel Trap** (Galar-Stunfisk, lv 28): Steel, fysiek 70/100, contact, bijt. Berenklem: 4–5 beurten 1/8 schade ("bloeden") en Speed −1. Stalen klem van vier kanten, metaalsplinters, rode flits.
+- **Pack Howl** (Mightyena, bij evolutie/lv 1): Dark, status, geluid. Met partner +1 Atk voor beiden, alleen +1 Atk en +1 Spe. Nacht, volle maan, twee schaduwwolven huilen mee.
+- **Whale Song** (Wailord, bij evolutie/lv 1): Water, speciaal 70/100, geluid; raakt alle andere Pokémon (ook de partner), door Substitute, 30% slaap. Muzieknoten over het hele veld, golfringen, bubbels.
+- **Heartbreak** (Luvdisc, lv 29): Fairy, speciaal 60/100, 15 PP. Dubbele kracht tegen het andere geslacht of bij verliefdheid; altijd Sp. Atk −1. Een hart barst in tweeën, het doelwit huilt.
+- Yamask en Wailmer leren ze bewust niet (echte signatures).
+
+### [v.0.9.5] - Fortree Jungle
+- **Nieuwe kaart FORTREE JUNGLE** (40×68, General + Fortree, `tools/grounded/maptools/fortree_jungle.py`, seed 893): dicht tropisch regenwoud direct onder Fortree, bereikbaar via twee openingen in de zuidrand van Fortree (connection). Smalle paden tussen massieve bomen, veel hoog gras, poelen en regenplassen, reuzenpalmen, verborgen hoekjes. Het script controleert de bereikbaarheid.
+- **Weer:** nieuw `WEATHER_JUNGLE_CYCLE` wisselt per dag tussen regen, onweer en stortbui (in gevechten regen). Muziek van Route 119.
+- **Vrijgehouden voor later:** een open plek voor **Zarude** (zuidwest, met een waarschuwingsbord) en een **Ogerpon-heiligdom** (zuidoost, stenen altaar met bloemen, een "maskerhoedster" als placeholder).
+- **Wilde Pokémon** (lv 31–36, 12 unieke soorten): Swadloon, Weepinbell, Venomoth, Nuzleaf, Steenee, Vigoroth, Fomantis, Ariados, Passimian, Oranguru, Heracross, Lokix. Surfen: Palpitoad, Araquanid, Masquerain, Quagsire, Ludicolo. Vissen: Chewtle/Tympole, Poliwhirl/Basculin/Drednaw, Seismitoad/Poliwrath/Politoed/Whiscash/Gyarados.
+- **Trainers** (lv 35–37, placeholders in de huisstijl): Bug Catcher Bram, Ranger Maya, Ninja Boy Hanzo (vermomd als boom), Aroma Lady Flora, Hiker Dirk (`TRAINER_JUNGLE_*`, 984–988).
+- **Items:** Big Root, Max Revive, Miracle Seed, TM U-turn (alleen surfend), verborgen Leaf Stone en Revival Herb (flags 0x287, 0x288, 0x28C–0x28F).
+- Mapsec `MAPSEC_FORTREE_JUNGLE` met popup en plek op de Town Map onder Fortree.
+- Open: Zarude staat op Route 119 nog in een 1%-slot (eruit zodra het event komt); het altaar is een geleende Fortree-tegel.
+
+### [v.0.9.6] - Battle Stadium zonder back sprites aan onze kant
+- Jordi (4 okt): back sprites voor de 109 compagnons zonder eigen back worden niet getekend (de concepten van Archie en Maxie waren niet overtuigend). In plaats daarvan staan in **Stadium-gevechten** (singles én doubles) **onze Pokémon meteen op het veld** met hun healthbox: geen speler of compagnon die inschuift of gooit, geen balletjesbalk en geen "Go! X!". De tegenstanders schuiven gewoon in met hun front sprite en sturen hun Pokémon uit. Buiten het Stadium verandert er niets.
+- Code: `BtlController_StadiumIntroPlayerMon` / `SpriteCB_StadiumPlayerMon` in `src/battle_controllers.c`, en `DoBattleIntro` in `src/battle_main.c` slaat voor onze kant de trainer-pic en balletjesbalk over. Getest: singles tegen Archie (gewonnen) en doubles met Roxanne tegen Archie en Aaron.
+- Testtruc Stadium-gevecht: debugscript met `givemon` ×3, `setvar VAR_0x8004, STADIUM_SINGLES/DOUBLES`, `special Stadium_PrepareChooseParty`, `special Stadium_StartTournament`, `special Stadium_StartMatch`, `waitstate`.
+
+### [v.0.9.7] - Stadium-intro met worp, Aaron en Fantina van voren
+- **Stadium-intro (Jordi):** onze kant van het veld is eerst leeg (speler en compagnon zijn onzichtbaar, de balletjesbalk staat er wel), daarna gewoon "Go, X!" en de ballen vliegen erin. Vervangt de oplossing uit v0.9.6 waarin onze Pokémon er al stonden. Code: één regel in `BtlController_HandleDrawTrainerPic` (`invisible` voor onze kant als `gStadiumBattle`). Getest in doubles (Brawly als compagnon tegen Dave en Expert V).
+- **Aaron** (Elite Four Sinnoh) sprong in zijn trainerfoto weg met zijn achterhoofd naar ons toe (frame 0 van de Platinum-animatie); nu frame 8: gezicht zichtbaar, armen gespreid. **Fantina** stond met haar rug naar ons; nu frame 6 (gezicht, arm naar de speler). Overige Platinum-foto's nagekeken.
+
+### [v.0.9.8] - Fortree Jungle tropischer
+- **Eigen tileset `fortree_jungle`** (kopie van Fortree met 193 nieuwe tiles en 65 metatiles achteraan, `tools/grounded/maptools/jungle_tileset.py`), zodat de overgang met Fortree naadloos blijft.
+- Dieper in de jungle worden de bomen donker blauwgroen, met **lianen** (48) langs stammen en kruinen en rode/roze **bromelia's** (40) in de kruinen. Verder: omgevallen bemoste stammen, **bananenplanten en heliconia's**, **hibiscus** en **monstera**, **varens** langs de bosranden, bosbodem met gevallen blad en mos, paarse **orchideeën**, **waterlelies met lotus** op de grote poel, en 14 reuzenpalmen.
+- **Mangroves** (groot en klein) met **wortelbogen** bij de poel, uit de Ekat99-moerassheet.
+- Layout, events en bereikbaarheid ongewijzigd (blokkerend decor alleen waar de controle slaagt). Getest: overgang Fortree ↔ jungle zonder glitches, regen.
+- Met een eigen jungle-tileset (brede bladrand in plaats van Hoenn-dennen, donkere modderbodem, hangende lianen over paden, 2×2-planten, bruin/groen water, mossige ruïnes) kan het nog tropischer; zie `VRAGEN_VOLGENDE.md`.
+
+### [v.0.9.9] - Eigen jungle-gevechtsmuziek; muziek bij twee tegenstanders
+- **"Battle! Zarude"** (`MUS_GROUNDED_VS_ZARUDE`): eerste zelfgecomponeerde gevechtsmuziek, gegenereerd door `tools/grounded/zarude_theme.py` (MIDI → `voicegroup_grounded_gm`). Legendary-stijl in D mineur, 168 bpm: een opbouw van ±11 s die niet herhaalt (taiko en strijkerstremolo tijdens de transitie, koperfanfare, congas en slapbas komen erbij, marimba-ostinato, tomroffel en strijkersloop, crash), daarna een groovy loop van ±23 s: bongo/conga-groove met kick, klap en tamboerijn, funky slapbas, marimba, fluitmelodie met PSG-tertsen; tweede helft strijkers, trompetstoten en call-and-response. Preview opgenomen uit de emulator. Nog niet gekoppeld: dat gebeurt met het Zarude-event.
+- **Muziek bij twee tegenstanders** (Stadium-doubles, tag battles; Jordi): heeft de eerste trainer een eigen thema, dan speelt dat (bijv. Archie + Steven = Archie's thema). Heeft alleen de tweede een eigen thema, dan krijgt dat voorrang op de gewone gevechtsmuziek. Nieuwe hulpfunctie `GetTrainerBattleBGM` in `src/pokemon.c`.
+
+### [v.0.9.10] - Toadstool Hollow: het verborgen paddenstoelenbos
+- **Verborgen ingang** in de oostrand van Petalburg Woods (rechtsboven): je loopt achter een boom door en vindt een pijl naar het oosten. Twee rode paddenstoeltjes in het gras ervoor zijn de hint.
+- **Nieuwe kaart TOADSTOOL HOLLOW** (44×40, `tools/grounded/maptools/mushroom_forest.py`, seed 285, eigen tileset `toadstool_hollow`): donker blauwgroen bos met groepjes paddenstoelen (rood met witte stippen, bruin, paars en blauw gloeiend met sporen), mos, gloeiende sporen, omgevallen stammen, een **heksenkring** en reuzenpaddenstoelen (3×3 rood, 2×2 paars/blauw; je loopt achter de hoed langs). Weer: schaduw, muziek: Viridian Forest (FRLG). Op de Town Map valt het onder Petalburg Woods (blijft verborgen).
+- **Wilde Pokémon** (lv 11–16): Foongus, Morelull, Venonat, Shroomish, Paras, Pumpkaboo, Hoothoot, Spinarak, Phantump, Cutiefly; zeldzaam Shiinotic en Amoonguss.
+- **Trainers:** Bug Catcher Oskar, Aroma Lady Morelle (bij de heksenkring) en Hiker Gerrit (al drie weken verdwaald).
+- **Items:** Tiny Mushroom, Big Mushroom, TM Giga Drain (ook op Route 123; hier een vroege beloning), verborgen Balm Mushroom midden in de heksenkring en een Tiny Mushroom aan het eind van een stam (flags 0x2B0–0x2B4).
+
+### [v.0.9.11] - Drie nieuwe Safari-zones (nog op slot)
+- **Fairy Forest** (44×40): betoverd bos met roze-lila bomen, mintgrond en glinsterbloemen (blauw/roze/lila) in een sprookjesring rond een vijver. Floette (willekeurige bloemkleur), Cottonee, Spritzee, Swirlix, Granbull, Dedenne, Comfey, Dachsbun, Hatenna, Impidimp; zeldzaam Milcery en Togetic (lv 28–34). Items: Pixie Plate, Fairy Feather, verborgen Shiny Stone. Ingang: gat in de bomenrand van Safari Zone Southwest.
+- **Thunder Plains** (48×40): savanne met acacia's, droog hoog gras, een bergwand en drinkplaats, onweer. Luxio, Gumshoos, Helioptile, Dubwool, Manectric, Pachirisu, Boltund, Maschiff, Plusle, Minun; zeldzaam Morpeko en Togedemaru (lv 28–33). Items: Zap Plate, Magnet, verborgen Thunder Stone. Ingang: grot in de bergwand van Safari Zone Northeast.
+- **Haunted Camp** (44×40): vervallen kamp met een dichtgetimmerd theehuis, kapotte lantaarns, kampvuurkring, scheef hek en mist; Mt. Pyre-muziek. Sinistea, Poltchageist, Gimmighoul, Skuntank, Greavard, Phantump, Drifblim, Sandygast, Pumpkaboo, Hisui-Zorua; zeldzaam Lampent en Spiritomb (lv 28–35). Items: Spooky Plate, Reaper Cloth, verborgen Dusk Stone en Spell Tag. Ingang: Safari Zone Northwest.
+- Echte Safari-kaarten (stappenteller, ballen, aas, modder); eigen herkleurde tilesets van vanilla Hoenn-sets (`tools/grounded/maptools/safari_zones.py`, `safari_tilesets.py`).
+- **Op slot** tot `FLAG_SAFARI_ZONES_OPEN` (0x290): bij elke opening staat een Safari-medewerker; de zonesleutels zijn gestolen door "een man in het zwart met een grote rode R" (de Team Rocket-sidequest volgt). Testen: debugmenu Flags → 0x290.
+- **Battle! Zarude v2** (Jordi): de bongo's in de intro bouwen langzamer op (maat 2 taiko in achtsten i.p.v. een conga-roffel; daarna conga's op de tellen, dan achtsten, pas in maat 6 de groove); alle PSG-sporen (vierkantsgolf-harmonie, arpeggio, ruis-shaker) eruit, die gaven losse piepjes.
+
+### [v.0.9.12] - Battle Stadium: Neo Team Plasma, met BW2-transitie
+- **Vijf nieuwe deelnemers** uit Black 2/White 2 (lv 50): **Zinzolin** (klasse SAGE; ijs, ace Weavile), **Rood** (SAGE; heal/stall, ace Reuniclus), **Shadow Triad** (Banette, Absol, Greninja, Krookodile, Honchkrow, ace Bisharp), en twee **Neo Plasma-grunts** (♂ ace Golurk met No Guard + Dynamic Punch; ♀ ace Chandelure). Placeholder-teksten in de huisstijl ("I joined for the cool ship and the dental plan. There is no dental plan."). Trainerfoto's uit de BW2-sheet, overworlds (grunts uit de aangeleverde sheets; Zinzolin, Rood en de Triad omgekleurde vanilla-sprites), `tools/grounded/neo_plasma_sprites.py`.
+- **Transitie `B_TRANSITION_NEO_PLASMA`**, nagemaakt naar de BW2-GIF (±2,7 s): blauwe P op een donker raster, een lichtbol trekt de Z, alles wit, het Plasma-schild verschijnt en flitst twee keer, daarna zes flakkerende bliksems naar de randen (`tools/grounded/neo_plasma_transition.py`). Alleen voor de Neo Plasma-deelnemers; Ghetsis en Colress houden hun eigen intro en muziek.
+- **Muziek "Battle! Neo Team Plasma"** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington), ook als keuze "NEO PLASMA" in het optiemenu.
+- Nummers na het samenvoegen: trainers 992–996, lied 623.
+
+### [v.0.9.13] - Meteor Falls: verborgen kamers, gangen en de Draconid-schrijn
+- **De kamer naar beneden** (`MeteorFalls_B1F_2R`) is uitgebreid van 11×18 naar 40×50 (`tools/grounded/maptools/meteor_falls_ext.py`): ingangshal met meteorietbrokken en kraters, een **Strength-nis** (Rare Candy), een middenlaag met trap en een **brede waterval** (Waterfall) naar een bovenmeer met de Dragon Claw-TM en Dragon Tamer Drake.
+- **Verborgen kamers:** een grotgat **achter de waterval** (Surf) naar Hidden Falls (Dragon Scale, Max Elixir), een **scheur in de noordwand** (Rock Smash) naar het gangenstelsel, en een **gat in de vloer** onder een brokkelrots in de gangen naar de Starfall Grotto (Comet Shard, Star Piece).
+- **Gangenstelsel** (47×44): doolhof met Hiker Boulderman, Psychic Orion, Dragon Tamer Vesper en Cooltrainer Nova (lv 47–49), Dragon Fang, Full Restore, Stardust, en drie grotgaten naar de events:
+  - **Meteorietkern** (Star Core): vijf rondzwervende Minior (lv 48, komen terug) en een vaste **Salamence lv 55** ("de Bagon die de meteoriet won").
+  - **Draconid-schrijn:** Draconid-oudere **Selene** vertelt over Zinnia en Rayquaza, vecht (lv 52–54, ace Hydreigon) en geeft één keer een Draco Plate.
+  - **Echokamer:** roep in het donker; de echo verraadt het gat onder de brokkelrots.
+- Wilde Pokémon (12 unieke soorten per kaart, lv 44–52): o.a. Noivern, Gigalith, Hakamo-o, Sliggoo, Gabite, Drakloak, Minior, Glimmora, Dragalge, Kommo-o; zeldzaam Haxorus, Dragonite, Metagross, Kingdra, Salamence.
+- Trainers 997–1002 (`TRAINER_METEOR_*`, `TRAINER_DRACONID_ELDER`); flags 0x2A0–0x2A7, 0x4A3–0x4A7.
+- **Battle! Zarude v3** (Jordi): een extra spanningsmaat (taiko in achtsten, strijkers-tremolo een octaaf hoger), zodat de blazers pas na de transitie inzetten (±4,3 s i.p.v. 2,9 s); intro nu 12,9 s. De tamboerijn op elke offbeat is eruit (klonk als een metronoompiepje).
+
+### [v.0.9.14] - Victory Road: vier optionele kamers
+- **Wachtkamer** (achter een Rock Smash-rots in de noordwand van 1F): "de rij voor de Elite Four", een Ace Trainer-gauntlet van drie Cooltrainers die je niet kunt ontwijken (Brent, Nadia, Oskar, lv 54–56), een kaartjesautomaat ("No. 4,813, wachttijd 31 jaar") en de gevonden voorwerpen: **Choice Scarf** en **Choice Specs**.
+- **Kluis van Hiker Gordon** (gang linksonder op B1F): Strength-blokpuzzel (opgelost en gecontroleerd door het bouwscript; opnieuw binnenkomen zet alles terug), met **Big Nugget**, **Ability Capsule** (wisselt alleen tussen slot 1 en 2), **PP Max** en een verstopte Max Elixir.
+- **Kluizenaar** (surfend naar een eilandje in het bovenmeer van B2F): **Reginald**, de "vijfde" van de Elite Four, die al dertig jaar wacht tot er iemand met pensioen gaat of doodgaat (Expert met mugshot, lv 58–60, ace Slaking @ Choice Band). Daarna **TM Flamethrower** ("bewaard voor Sidney's begrafenis"). Ook een Expert Belt en zijn afgewezen sollicitatie.
+- **Haaienbak** (gat in de vloer op B1F): een vaste **Garchomp lv 58** die slaapt op de rugzakken van mislukte kampioenen, met Life Orb, Eviolite en Dragon Fang. Donker, zoals Victory Road.
+- Bouwscript `tools/grounded/maptools/victory_road_ext.py`; trainers 1003–1006 (`TRAINER_VR_*`); flags 0x2A8–0x2AF, 0x4AB–0x4AF.
+- **Battle! Zarude v4:** de klap op de backbeat (tel 2 en 4) is eruit; die gaf vanaf de loop een metronoomachtig bliepje.
+
+### [v.0.9.15] - Team Rocket steelt de Safari-sleutels (de nieuwe zones gaan open)
+- **Route 121:** vlak voor de Safari-deur loopt een Team Rocket-grunt je omver (`MUS_RG_ENCOUNTER_ROCKET`), mompelt iets over zijn "condo in een boom" en rent weg. Binnen vertelt de balie dat de **ZONE KEYS** gestolen zijn en dat de dief in de jungle onder Fortree zit (`VAR_ROCKET_QUEST`, 0x40FD).
+- **Fortree Jungle:** een **holle reuzenpalm** met een wachtpost ervoor (alleen tijdens de quest). Via het bouwscript; alleen 15 vakken veranderen.
+- **Rocket-hideout** (`tools/grounded/maptools/rocket_hideout.py`, stukken van de Aqua Hideout met Rocket-paletten in antraciet en bordeaux, `MUS_RG_ROCKET_HIDEOUT`): opslag (1F) met teleportvlakken, een **teleportdoolhof** (B1F, 22 vlakken opnieuw gekoppeld) en het kantoor (B2F).
+- **Trainers** (lv 37–43, klasse TEAM ROCKET / ROCKET EXEC, FRLG-foto's en -overworlds): Guard (camouflage: Leavanny, Shiinotic, Cacturne), Smuggler (Sneasel met Pickpocket, Murkrow, Sableye), Motto (Jessie-parodie: Arbok, Wobbuffet, Weezing), Scientist (Magneton, Klang, Porygon2), Thief (alleen gestolen Pokémon, o.a. Farfetch'd zonder lauch) en executive **Petrel** ("Kneel before GIOVANNI…"; Zoroark vermomd als Persian, Ditto met Imposter, Galar-Weezing, Honchkrow, Persian). Foto van Petrel uit de HG/SS-sheet (verzameld door Dann-The-Yoshi).
+- **Transitie `B_TRANSITION_ROCKET`:** zwarte balken met een rode rand schuiven dicht, rode strepen, dan een grote rode R die draaiend inzoomt en met een klap, witte flits en schuddend beeld stempelt.
+- Na Petrel krijg je de sleutels terug, hij verdwijnt met een rookbom, een nooduitgang leidt naar de jungle. Terug bij de balie: `FLAG_SAFARI_ZONES_OPEN`, de blokkades verdwijnen en de eerstvolgende Safari-ronde is **gratis**.
+- Nummers: trainers 1020–1025, trainerfoto's 172–174, overworlds 270–272; flags 0x493–0x49B. Getest in de emulator van botsing tot gratis ronde.
+- **Geen Jessie en James** (Jordi): de Jessie-parodie in de Rocket-hideout (1F) is vervangen door een **recruiter-grunt** die je probeert te werven ("Have you considered a career in organized crime?"; Hypno met Bad Dreams, Bombirdier met Rocky Payload, Grafaiai met Prankster). Ook de verwijzing naar het motto/"blasting off" bij Petrel is weg (`TRAINER_ROCKET_RECRUITER`).
+- **Battle! Zarude v5:** de "puup" vlak voor 13 s was drumnoot 44 in de tomroffel aan het eind van de opbouw: in `rs_drumset` is dat geen tom maar een PSG-vierkantsgolf. Nu toms 41/43/45/47; het script gebruikt geen PSG-drumnoten meer (gecontroleerd).
+
+### [v.0.9.16] - Jagged Pass ondergronds en de top van Mt. Chimney
+- **Lavabuis onder Jagged Pass** (`JaggedPass_LavaTube`, 40×30, Magma Hideout-stijl; `tools/grounded/maptools/chimney_ext.py`): ingang achter een Rock Smash-rots in de klif vlak onder de trap naar Mt. Chimney, uitgang op het plateau halverwege Jagged Pass (naast de Magma Hideout). Magmapoelen, een rotspilaar met een grap-inscriptie en een Strength-nis (badge 4) met **TM Fire Blast** en Heat Rock als terugkeerbeloning. Verder Charcoal, Fire Stone en een verborgen Lava Cookie.
+  - Wilde Pokémon (lv 22–27): Roggenrola, Heatmor, Sizzlipede, Stunky, Carkol, Diglett, Varoom, Magby, Glimmet, Salandit; zeldzaam Druddigon en Larvesta.
+  - Trainers (lv 28): Hiker Hank, Kindler Ignace, Picnicker Daisy (verdwaald).
+- **De top van Mt. Chimney** (`MtChimney_Summit`, 36×40, as-weer): een trap in de bergkam noordoost van Mt. Chimney, vanaf badge 5 (een vulkanoloog houdt je eerder tegen). Drie terrassen naar een kratermeer met een vaste **Volcarona lv 40** ("de tweede zon boven de as"), een vulkanoloog die een **Flame Orb** geeft, een Magmarizer en een verborgen Star Piece.
+  - Trainers (lv 37–39): Hiker Grant, Kindler Pyro (zonteam met Drought en Solar Power), Expert Vera.
+- Trainers 1007–1012; flags 0x4B3–0x4BD. Getest in de emulator (beide ingangen, de trap, de wachtpost, een trainer- en een wild gevecht, de Strength-nis).
+- **Battle! Zarude v6** (Jordi: "puup is eruit, groove iets minder kaal"): zachte gesloten hi-hat in achtsten, tamboerijn op de backbeat en een vierde kickslag in de loop. Alleen echte samples (gecontroleerd: geen PSG-drumnoten).
+- **Battle! Zarude v7** (Jordi: intro langer): na maat 1–2 nu vier spanningsmaten (taiko in achtsten, strijkerstremolo die een octaaf omhoog gaat, bas, lage conga-puls vanaf de tweede maat, laatste maat taiko in zestienden), alles zwelt aan; de koperblazers zetten in op ±8,6 s. Intro 17,1 s, loop 22,9 s. De Zarude-transitie wordt ±5 s, zodat de blazers inzetten als het gevecht in beeld komt.
+- **Battle! Zarude v8** (Jordi): het stuk dat in v7 vanaf ±6 s nieuw was (octaafsprong van de strijkers, taiko in zestienden) is eruit. De opbouw die op ±3 s inzet (taiko in achtsten, strijkerstremolo, bas, vanaf de tweede maat lage conga's) duurt twee maten en leidt naar de blazers op ±5,7 s; intro 14,3 s. De Zarude-transitie wordt ±3 s, zodat transitie + gevechtsintro samen tot de blazers lopen.
+
+### [v.0.9.17] - Scorched Slab: de zonnetempel
+- **Ingang** (de vanilla Scorched Slab, nu met warm palet): Sunny Day blijft liggen; nieuw is een grotopening in de noordwand met een inscriptie.
+- **Zonnezaal** (27×21, Regi-kamerstijl): drie kapellen, elk met een **zonnesteen** (Strength) en een **lichtschacht**. Staan alle drie de stenen tegelijk in het licht, dan schudt de zaal en gaat de **zonnedeur** open (melding per steen: 1/2/3). Kindler Ray, de Sun Stone, heet zand, een ladder naar beneden.
+- **Koele bron** (25×19): meer met Surf, verdwaalde duiker Marco, Damp Rock op een oever die je alleen surfend bereikt, en een **Dive**-plek naar een onderwaterkamer met een verborgen Big Nugget.
+- **Zonnesanctum** (23×20): hogepriesteres **Helia** (Bronzong, Espeon, Heliolisk, Armarouge), een vaste **Volcarona lv 42** in een grote lichtvlek, Heat Rock, **TM59 Weather Ball** (nieuwe TM) en een muurschildering.
+- Wilde Pokémon (zonnezaal lv 31–35): Sunflora, Hippowdon, Cherrim, Heliolisk, Sandaconda, Maractus, Heatmor, Pyroar, Rabsca, Brambleghast; zeldzaam Espeon en Larvesta. Bron: Psyduck, Dewpider, Golduck, Araquanid, Masquerain; vissen o.a. Basculin (rood en blauw) en Drednaw.
+- Tileset `scorched_slab` (Cave-tiles met een warmer palet en zonlichtvlekken), bouwscript `tools/grounded/maptools/scorched_slab_ext.py` (lost de puzzel zelf op en controleert de bereikbaarheid). Trainers 1013–1015; flags 0x4C0–0x4C6.
+- **Engine:** Strength-blokken onthouden na elke duw hun positie zolang je op de kaart blijft (`OverrideTemplateCoordsForObjectEvent`); anders sprongen blokken die buiten beeld raakten terug. Bij opnieuw binnenkomen staan ze weer op hun beginplek.
+- **Battle! Zarude v9** (Jordi: opbouw op 4–5 s epischer): in de laatste spanningsmaat een aanzwellende paukenroffel (nieuw spoor), een strijkerstremolo die klimt (D-F-G-A), een tomroffel omlaag op de laatste tel en een crash precies op de inzet van de blazers.
+
+### [v.0.9.18] - Zarude in de jungle, Mangrove Mire
+- **Zarude (post-game):** na de Hall of Fame zit Zarude verstopt in de boomkruin boven een **ruïne** op de open plek in Fortree Jungle (stenen plateau met klauwkrassen en treden, een hele en een afgebroken zuil met klimop, een omgevallen zuil; `tools/grounded/maptools/zarude_ruins.py`). Stap op de vloerplaat en hij springt in twee sprongen naar je toe: gevecht op lv 70 met **"Battle! Zarude"**. Gevangen = weg, verslagen = terug na de League, gevlucht = terug de boom in. Flags 0x4D0–0x4D2.
+- **Transitie `B_TRANSITION_ZARUDE`** (±3 s): het bladerdek groeit van de randen dicht, vijf lianen zwiepen naar beneden, drie klauwkrassen met een schok op de taiko-slagen, dan Zarude's silhouet met pulserende rode ogen. Valt samen met de opbouw van de muziek.
+- Route 119: het 1%-slot van Zarude is nu Charjabug.
+- **Mangrove Mire** (nieuwe kaart, 56×44, `tools/grounded/maptools/mangrove_swamp.py`, eigen tileset `mangrove_mire`): troebel water en modder met plankenpaden en een visserssteiger, mangroves en wortelbogen (Ekat99-moerasset), waterlelies; regencyclus van de jungle. Tussen **Fortree Jungle** (het doodlopende pad bij de Miracle Seed loopt nu door naar het oosten) en **Route 120** (westkant; warps, Scorched Slab niet aangeraakt). Op de Town Map tussen de jungle en Route 120.
+  - Wilde Pokémon (lv 31–37): Clodsire, Skuntank, Amoonguss, Swalot, Tadbulb, Shiinotic, Yanma, Gastrodon, Goomy, Mudsdale; zeldzaam Galar-Stunfisk en Swampert. Surfen: Skrelp, Golduck, Marshtomp, Dragalge, Stunfisk; vissen o.a. Corphish, Crawdaunt, Whiscash, Politoed.
+  - Trainers (lv 37–38): Fisherman Otto, moerasheks Griselda, Ranger Fern, Ninja Boy Kappa (vermomd als boom).
+  - Items: Black Sludge, Mystic Water (alleen surfend), Absorb Bulb, TM Rain Dance (ook in de Abandoned Ship), verborgen Big Root en Ultra Ball.
+- Trainers 1030–1033; flags 0x4D3–0x4D8.
+- **Battle! Zarude v10** (Jordi: intro van v9 + de catchy loop van v1): de loop klinkt weer als v1, met de PSG-tertsen onder de fluitmelodie, het arpeggio in het tweede deel, de ruis-shaker, klap op de backbeat en tamboerijn op de offbeat. In v2 waren die PSG-sporen weggehaald vanwege "losse piepjes", maar die bleken van drumnoot 44 (PSG in `rs_drumset`) in de tomroffel te komen. De intro (tot 14,3 s) blijft die van v9, zonder PSG.
+
+### [v.0.9.19] - Lavabuis en de top van Mt. Chimney minder kaal
+- **Nieuw decor achteraan Lavaridge** (`tools/grounded/lavaridge_decor.py`, eigen palet 12; bestaande kaarten veranderen niet): gele **zwavelkristallen**, **gloeiende scheuren**, as-hoopjes, kleine en grote keien, **gestolde lava** (beloopbaar), een stronk en een dode, verkoolde boom, telkens op grotgrind en op berggrond.
+- **Lavabuis:** zes nissen met zwavelkristallen, gestolde lavaplekken, keien, as en scheuren, meer variatie in de vloer.
+- **Top van Mt. Chimney:** drie extra nissen en twee rotspartijen (terrassen minder rechthoekig), plukken as-gras, dode bomen en stronken, gestolde lavastromen vanaf het kratermeer, zwavel langs de kraterrand en tien stoompluimen. Paden, events, zichtlijnen en het Strength-pad blijven vrij (gecontroleerd door `chimney_ext.py`).
+- **Mangrove Mire:** TM Rain Dance (lag er dubbel; TM's zijn herbruikbaar) vervangen door een **Toxic Orb**.
+- **Geen dubbele TM's meer** (Jordi): in Toadstool Hollow ligt een **Misty Seed** i.p.v. TM Giga Drain; Reginald (Victory Road) geeft een **Utility Umbrella** i.p.v. TM Flamethrower ("bewaard voor Sidney's begrafenis; het regent altijd op begrafenissen"). Beide items waren nog nergens te krijgen.
+
+### [v.0.9.20] - Wally's thema groeit met hem mee
+- **"Battle! Wally"** (ORAS, MIDI van Jordi) in drie arrangementen met dezelfde noten en dus dezelfde iconische melodie (`tools/grounded/wally_theme.py`):
+  1. **Mauville** (`MUS_GROUNDED_VS_WALLY_1`, kneuzerig): blokfluit op de melodie, Wally's eerste gitaar (nylon) op de riff, plukkende bas, alleen kick en tamboerijn, 12% trager.
+  2. **Meteor Falls** (`_2`): overdrive-gitaar, trompet op de melodie, trombone, zachte strijkers, vollere drums.
+  3. **Victory Road en de rematches** (`_3`): het eindresultaat met distortion-gitaar (in ORAS is de "piano" een elektrische gitaar), hoorn, viool, cello, trombone, volle drums.
+- Nieuwe voicegroup `grounded_wally` (= `grounded_gm` met echte gitaarsamples op 24–31 i.p.v. PSG-vierkantsgolven). Drumnoten 37 en 52 uit de MIDI zijn PSG-piepjes in `rs_drumset` en zijn omgezet naar snare en crash.
+
+### [v.0.9.21] - Toadstool Hollow in de mist, Petrel in het Stadium, schone muziekpreviews
+- **Toadstool Hollow:** weer `WEATHER_FOG_HORIZONTAL` met een donkerdere menging (7/12, alleen op deze kaart via `IsDarkFogMap()` in `src/field_weather_effect.c`), zodat het bos niet wit wordt gewassen. Bomen, kroontjes en reuzenpaddenstoelen staan nu op COVERED, zodat de mist ook de boomtoppen bedekt (in vanilla ligt de bovenlaag altijd boven de mist). Het tekstvak blijft boven de mist.
+- **Paddenstoelen opnieuw getekend** in Gen 3-stijl (`mushroom_forest.py`): ronde lichtbanden met licht van linksboven, meeshadende stippen, lamellen, steel met manchet, slagschaduw en grassprieten over de voet; paletten 7 en 8 nieuw. Ook de omgevallen stam, de heksenkring en de mospollen.
+- **Petrel** (ROCKET EXEC, `TRAINER_STADIUM_PETREL` 1016, partner 87) in de Battle Stadium-pool: Persian, Ditto (altijd mee via een `KEEP`-regel in `pool.py`), Galar-Weezing, Honchkrow, Mimikyu, ace Zoroark. Doet zich voor als Giovanni ("The voice? I have a cold."). Rode R-transitie via de klasse.
+- **Muziekpreviews:** de "gehoorschade" in de eerste Wally-previews kwam niet uit de game maar uit de opname: de audiobuffer van mGBA liep over tijdens het menu-navigeren. Nieuw: `tools/grounded/maptools/recaudio.py` (leest elke frame) en `audiocheck.py` (pieken, constante tonen, RMS). Wally 1/2/3 opnieuw opgenomen en gecontroleerd; de muziek zelf is ongewijzigd.
+
+### [v.0.9.22] - Ogerpon-quest (post-game)
+- Na de Hall of Fame vertelt de maskerhoedster in Fortree Jungle het echte verhaal: de Loyal Three waren de schurken, Ogerpon beschermde het dorp. Ze hebben de maskers gestolen.
+- **Drie schuilplaatsen** (nieuwe kaarten in `gMapGroup_Grounded`, bouwscript `ogerpon_quest.py`), open na het verhaal:
+  - Okidogi met het Cornerstone Mask: `GraniteCave_CornerstoneRoom`, achter de Rock Smash-rotsen in Granite Cave B2F.
+  - Munkidori met het Hearthflame Mask: `FieryPath_EmberHollow`, een lavagrot linksonder in Fiery Path.
+  - Fezandipiti met het Wellspring Mask: `Route127_WellspringGrotto`, via een zwemgat in Underwater Route 127.
+- Elk is een legendary-gevecht op lv 65, vangbaar. Bij winst of vangst valt het masker. Wie verslagen maar niet gevangen is, komt terug na de League.
+- **Finale:** met de drie maskers legt de hoedster ze op het altaar en verschijnt Ogerpon (lv 70). Daarna krijg je de maskers terug als hold items (vormwissel via expansion).
+- Transities: de Loyal Three de Koffing-gifschedel, Ogerpon het regenwoud. Muziek `MUS_RG_VS_LEGEND`. Flags 0x4D9–0x4E7.
+- Placeholderteksten in huisstijl. Ongetest: de gevechten tegen Munkidori en Fezandipiti (hetzelfde script als Okidogi, dat wel getest is).
+
+### [v.0.9.23] - Debugmenu: Battle test…
+- START → DEBUG → Utilities… → **Battle test…**: één lijst met 46 voorbeeldgevechten om muziek en transities te testen.
+  - 18 unieke trainers: Wally 1/2/3, Birch, Oak, Brock, Colress, Zinnia, N, Ghetsis, Neo Plasma, Rocket, Petrel, Archie + Maxie, Gabby & Ty, Joey, Keccles en Mustard.
+  - 17 legendaries via het echte legendary-pad.
+  - 5 Regi's.
+  - 6 wilde soorten met een eigen transitie.
+- Je vecht met een tijdelijk testteam van 2× Arceus lv 100, dat altijd gehoorzaamt. Party, geld, Pokédex, statistieken en flags worden na afloop teruggezet: de save blijft onveranderd, ook bij vangen of verliezen.
+- Route-transities zitten er niet in (die hangen van de kaart af); daarvoor blijft "Wild battle (map)".
+- Fix: het debugmenu had ruimte voor 20 items, maar Utilities en "Legendary battle…" hadden er meer (schrijven buiten de buffer). De limiet is nu 50.
+
+### [v.0.9.24] - Signature moves ronde 2
+- Negen nieuwe signature moves, elk met een eigen animatie (constanten 866–874; tests in `test/battle/grounded/signature_moves_2.c`, 16/16):
+  - **Eclipse** (Solrock/Lunatone, 80): Rock/fysiek als Attack hoger is (zon), anders Psychic/speciaal (maan). ×1,5 op het eigen moment van de dag (echte klok).
+  - **Tipsy Waltz** (Spinda, Normal 80/90, dans): 50% verwarring. Is Spinda zelf verward, dan dubbele kracht en raakt hij zichzelf niet.
+  - **Weather Report** (Castform, 50/100): zet het weer waar het doelwit het zwakst tegen is (ook Snow Storm, Acid Rain, Pollen Haze) en slaat toe als Weather Ball. "Castform checked the forecast…"
+  - **Venom Dust** (Dustox, status): vergiftigt beide tegenstanders en verlaagt hun Speed.
+  - **Straight Line** (Linoone, Normal 70, +1 prioriteit): dubbel als hij vorige beurt ook Straight Line deed.
+  - **Wind Chime** (Chimecho, Psychic 60, geluid, beide tegenstanders): healt het eigen team 1/8. Met Tailwind dubbele kracht en 1/4 heal, tegen een doelwit met status ×1,5. Chimecho leert Tailwind op lv 30.
+  - **Primeval Ward** (Relicanth, status; naam uit Living Fossil, alternatieven Timeless Scales / Abyssal Bulwark): +1 Def/Sp. Def, tegenstanders kunnen zijn stats niet meer verlagen tot hij wisselt. "Relicanth hasn't changed in 100 million years. Why start now?"
+  - **Gulp Down** (Swalot, Poison 70): slikt het item van het doelwit in, healt 25% en houdt het effect van dat item als tweede item (Leftovers, Life Orb, Choice-boost zonder lock, Assault Vest, Rocky Helmet…). Bessen worden meteen gegeten, verbruiksitems doen niets ("It tasted of absolutely nothing.").
+  - **Nine Lives** (Delcatty, 1× per gevecht): overleeft de volgende KO met 1 HP en geneest zijn status. "…landed on its feet! Eight lives to go."
+
+### [v.0.9.25] - Wally in vijf versies, geen afgekapte noten meer
+- **Battle! Wally** heeft nu vijf versies:
+  - 1: fluitje + akoestische gitaar, traag en wimpy.
+  - 2: fluit, klarinet en akoestische gitaar.
+  - 3 (Mauville) en 4 (Meteor Falls): de vorige 1 en 2.
+  - 5 (Victory Road en rematches): heavy metal, sneller, met distortion-gitaar en -bas, dubbele bassdrum en crashes.
+  - 1 en 2 (`MUS_GROUNDED_VS_WALLY_1/2`) zijn vrij voor Jordi's nieuwe Wally-gevechten. In het debugmenu staan nu Wally 3/4/5.
+- **Snips opgelost:**
+  - De engine mixte maar 5 DirectSound-kanalen, terwijl Wally tot 17 noten tegelijk speelde. Elke nieuwe noot kapte dan een andere af.
+  - De engine mixt nu 8 kanalen (`src/m4a.c`). Alle muziek profiteert daarvan.
+  - Een stemverdeler in `wally_theme.py` houdt het aantal noten tegelijk eronder, met voorrang voor de melodie.
+  - De dubbele noten in de bron-MIDI worden ontdubbeld.
+- **Zelflerend componeren:**
+  - `tools/grounded/MUZIEK.md` is het geheugen voor muziekwerk: werkwijze, engine-limieten, smaak van Jordi en een log per feedbackronde.
+  - `tools/grounded/music_lint.py` controleert elke MIDI automatisch op te veel noten tegelijk, dubbele noten, PSG-piepjes, drumnoten buiten de kit en te lage bas.
+  - `recaudio.py` werkt de buffer-glitches van mGBA weg; die gaven de snips op 3 en 11 s in de previews.
+
+### [v.0.9.26] - Wally ronde 2, 12 geluidskanalen, Poison Chain
+- **Wally 1** is nu dorps en rustgevend: fluit een octaaf lager (geen schel deuntje), akoestische gitaar, accordeon, huppelende pizzicato-bas, kick en tamboerijn, en niet meer zo traag.
+- **Wally 5** is strak heavy metal: de drums uit de bron plus crashes, power chords en distortion-bas. De dubbele bassdrum is eruit, want die verdrong andere instrumenten.
+- **Wally 1–5:** inzetten die in de bron een 32ste te vroeg vallen (x.875, "gehaast" rond 6 s) staan nu op de tel. Bas- en cello-akkoorden zijn uitgedund en de gitaren hebben een kortere release. Het script meldt zelf hoeveel noten er per spoor wegvallen.
+- **Geluidsengine naar 12 DirectSound-kanalen** (was 5), waarvan muziek er max. 10 gebruikt. Zo kappen geluidseffecten geen muzieknoten meer af.
+- **Muziekgereedschap:**
+  - `musiclib.py`: gedeelde bouwstenen met release-bewuste uitklinktijd per instrument uit de voicegroup.
+  - `music_lint.py`: rekent nu ook met de echte release per instrument.
+  - `recaudio.py`: overbrugt alle buffer-glitches van mGBA. Die gaven de snips op 3 en 12 s in de previews; ze zitten niet in de game.
+  - De lessen staan in `tools/grounded/MUZIEK.md`.
+- **Loyal Three** (Okidogi, Munkidori, Fezandipiti): eigen Poison Chain-transitie (`B_TRANSITION_POISON_CHAIN`). Paarse schakels haken in elkaar tot een ketting, dan een stilstaand beeld. Okidogi staat in debug "Battle test…". Een tweede versie met de dikke donut-ketting uit de artwork volgt.
+
+### [v.0.9.27] - Shy Guys op Sunset Wilds
+- De vier Shy Guys in het Battle Stadium (Shy Guy, Shyer Guy, Fly Guy, Shady Guy) vechten op **Sunset Wilds** (Mario Kart: Super Circuit, `MUS_GROUNDED_VS_SUNSET_WILDS`).
+
+### [v.0.9.28] - Poison Chain met donut-schakels
+- De transitie van de Loyal Three gebruikt nu hun echte ketting uit de artwork. Dikke, glanzende magenta donuts wisselen af met ovale staven en lopen van een halsband linksonder diagonaal naar een open ring rechtsboven. De kleur verloopt van fel magenta naar donkerpaars.
+- De ketting staat na 0,5 s, daarna volgen 20 frames stilstaand beeld en de fade.
+
+### [v.0.9.29] - Wally ronde 3
+- Drumnoten worden niet meer ingekort: crashes en snares klinken volledig uit. Ze werden afgekapt tot een 16e ("tweede beat te snel afgekapt").
+- **Wally 5:** de melodie wordt nu gespeeld door een leadgitaar (overdrive), de riff door een luidere distortion-gitaar, met daaronder een distortion-bas.
+- Wally 1–5 staan op songvolume 125 (was 90): de 8-bit-mix gebruikte maar een klein deel van zijn bereik, waardoor de ruis opviel ("vinyl").
+- Nieuwe opnametool `recpcm.py`: neemt op uit de mixbuffer van de game zelf, dus precies wat de GBA afspeelt, zonder emulator-glitches. Lessen in `MUZIEK.md`.
+
+### [v.0.9.30] - Poison Chain v3
+- De ketting van de Loyal Three is dichter bij de artwork. Grotere ringen (72 px) met een groot gat en een dunnere rand, slanke tussenschakels, en in totaal 5 stukken: halsband, staaf, ring, staaf en een open eindring.
+
+### [v.0.9.31] - Toxic Chain v4, Wally zonder gehaaste tweede frase
+- **Toxic Chain (Loyal Three):** de ketting volgt nu de artwork. Eén glanzende magenta buis met in elkaar gegoten ringen ("ooo"), en als eindstuk de herkenbare "halve schedel": een dikke ring met een groot oog en daaronder een steel met twee bolle lobben, groot in beeld.
+- **Wally 1–5:** de bron-MIDI had alleen in de tweede frase een extra voorslagnoot (tel 11,875), waardoor die gehaast klonk. Die noot is weg uit melodie, riff en viool. De bas-anticipaties staan weer op hun plek, want die horen bij de groove.
+
+### [v.0.9.32] - Geluidsmixer op 21.024 Hz
+- De geluidsmixer draait nu op **21.024 Hz** in plaats van 13.379 Hz. Er is ±40% minder 8-bit-ruis (het "vinyl"-geluid), in alle muziek en geluidseffecten. Jordi koos dit na een A/B-test met Wally 2 en 5.
+- Gemeten: geen extra vertraagde frames in de overworld (regen op Route 119 met Wally 5), en 1 à 5 per 900 frames tijdens gevechtsintro's.
+- Wally 1–5 zijn klaar en zitten in de game: de nieuwe mixer, zonder de gehaaste voorslag, en met de drums in hun volle lengte.
+
+### [v.0.9.33] - Toxic Chain v5
+- Het eindstuk van de ketting is een ♀-vorm: een korte steel die uitwaaiert in een brede, platte voet (zoals bij Munkidori en Fezandipiti) in plaats van de Y. Op de eindring zitten twee bulten, zoals bij Okidogi.
+
+### [v.0.9.34] - Toxic Chain v6, Wally's tweede frase volgens de tab
+- **Toxic Chain:** het eindstuk is nu een halve schedel. Het is een ronde ring met aan de onderkant twee brede tanden en een donkere spleet ertussen.
+- **Wally 1–5:** in de tweede frase speelt nu een B van een halve tel (G-A-F#-B-A-G), zoals in de tab die Jordi vond. De bron had daar een korte E met een voorslag-B. Het ritme blijft gelijk.
+- Tweede Wally-bron toegevoegd als referentie: `sound/songs/grounded_src/wally_battle_ss17.mid`.
+
+### [v.0.9.35] - Toxic Chain v7
+- Het eindstuk van de ketting heeft twee brede tanden die ±38° schuin uit elkaar waaieren, met een brede U-inkeping ertussen. Ze wijzen weg van de ketting (naar rechts en rechtsonder), zoals bij Okidogi.
+- Bron voor Dave's nieuwe thema toegevoegd: `sound/songs/grounded_src/freed_from_desire.mid` (Gala, "Freed From Desire").
+
+### [v.0.9.36] - Dave is on fire
+- De Stadium-omroeper kondigt Dave aan met "From VICTORY ROAD: DAVE is on fire! Your defense is terrified!". Dat is een grap die Dave nooit zal kunnen waarderen.
+
+### [v.0.9.37] - Toxic Chain v8
+- De ketting van de Loyal Three is kleiner en dunner en komt vlakker van links binnen. Zo raakt de onderste tand van het eindstuk de ketting niet meer. Eindring en tanden zijn niet veranderd.
+
+### [v.0.9.38] - Battle! Regigigas
+- Regigigas heeft een eigen gevechtsthema (`MUS_GROUNDED_VS_REGIGIGAS`, `tools/grounded/regigigas_theme.py`): een bombastische remix van het Regi-thema met **Slow Start**.
+  - **Intro:** begint op 55% tempo en versnelt per maat. Regigigas wordt laag voor laag wakker: eerst orgel en bas, dan pauken en toms, dan de robot-arpeggio's (PSG, zoals in het origineel), en daarna het hele orkest met trompet, hoorn, koor, tuba, taiko en crashes.
+  - **Loop:** het koraal op koper en koor boven de bas-ostinato. Halverwege zakt hij nog één keer in ("bijkomen"): tempo omlaag, drums weg. Daarna komt hij met een paukenroffel terug op vol gas.
+- Het thema speelt in het Regigigas-event en in de debug-legendarylijst. De andere Regi's houden het gewone Regi-thema.
+- Muziekgereedschap: `musiclib.detach()` voor legato-partijen en `allocate()` met een uitklinktijd per partij.
+
+### [v.0.9.39] - Toxic Chain slingert
+- De ketting van de Loyal Three valt nu van boven in beeld en slingert als een zware ketting uitdempend heen en weer rond de nek (het eindstuk zwaait het verst) en deint daarbij op en neer. Na ±1,3 s volgt de fade naar het gevecht. Het geluid is Bind bij binnenkomst en Toxic bij het laatste uitzwaaien.
+- Technisch: drie vooraf getekende standen plus een draaiing per scanline (HBlank) voor de tussenhoeken. De tabellen komen uit `route_transitions.py`.
+
+### [v.0.9.40] - Dave vecht op Freed From Desire
+- Dave (`TRAINER_ALBERT`, Victory Road 1F en het Battle Stadium) vecht op **Freed From Desire** (Gala), als eurodance-gevechtsthema (`MUS_GROUNDED_VS_DAVE`, `tools/grounded/freed_theme.py`, voicegroup `grounded_dave`).
+  - **Intro:** 4 maten "na na na"-hook met een opbouw naar de loop.
+  - **Loop:** riff, couplet, refrein en "na na na" vol, op 132 bpm.
+  - De melodie komt uit Jordi's bladmuziek, de begeleiding en de drums uit de MIDI. De hook is een trompet met een zacht PSG-vierkant in unisono.
+- Dave staat in debug "Battle test…".
+
+### [v.0.9.41] - Regigigas v2, Toxic Chain bungelt
+- **Battle! Regigigas** opnieuw opgebouwd (Jordi: "veel kaler dan het origineel"):
+  - Het originele Regi-thema staat er nu 1-op-1 in, met dezelfde sporen en instrumenten.
+  - Daarbovenop komen een koor onder het koraal, tuba-grondtonen, taiko, crashes en een paukenroffel.
+  - De eerste ±6 s (de transitie) zijn precies het Regi-thema. Zodra het gevecht begint, komt de Slow Start: het tempo zakt naar 55% en versnelt per maat terug.
+  - Het inzinken halverwege begint nu op een frasegrens (maat 28) en vertraagt tel voor tel. Daarna volgen een paukenroffel en een crash op de nieuwe frase.
+- **Toxic Chain:** de ketting bungelt veerachtig ±28 px op en neer (was ±9) en blijft na de val binnen het scherm.
+- **Muziekgereedschap:**
+  - `musiclib.allocate()` kan de noten van een origineel als vaste bezetting meetellen.
+  - De lint kende de instrumentnummers bij voicegroups zonder nummering één plaats verkeerd toe; dat is opgelost.
+  - `recaudio` herkent een tweede soort mGBA-glitch.
+
+### [v.0.9.42] - Dave: Freed From Desire, trouw aan het origineel
+- Het Dave-thema is opnieuw opgebouwd uit één aaneengesloten stuk van de bron (Jordi: "lijkt meer een remix, melodieën door elkaar"), op 128 bpm.
+  - **Intro:** bronmaat 49–52, de orgel-riff.
+  - **Loop:** bronmaat 53–85, in de originele volgorde (couplet, "want more and more", refrein, "na na na").
+- De melodie is het zangspoor uit de MIDI, als één stem: trompet met een PSG-vierkant in unisono. De bladmuziek wordt niet meer als extra stem gebruikt.
+- De loop springt op een natuurlijke plek terug: dezelfde overgang als in het nummer zelf.
+
+### [v.0.9.43] - Regigigas v3: inzinking op de rust, climax op volle kracht
+- **Inzinking:** de vertraging begint nu al aan het eind van maat 27, vlak voor de rust in de melodie (maat 28–29). Daar is hij het traagst, daarna bouwt hij in de lange noten weer op.
+- **Climax (maat 32–39), iets dat de originele Regi-deuntjes niet hebben:**
+  - Regigigas gaat voorbij zijn normale tempo (1,06×).
+  - Een trompetfanfare op de grondtonen.
+  - Pauken op 1 en 3, en crashes om de 2 maten.
+- **Previews zonder snips:** `recaudio.py` neemt twee keer op (32768 en 44100 Hz). Elke mGBA-glitch wordt vervangen door het echte geluid uit de andere opname, niet meer door een rechte lijn.
+
+### [v.0.9.44] - Regigigas-gevechtstransitie
+- Regigigas heeft een eigen transitie (`B_TRANSITION_REGIGIGAS`), met dezelfde animatie en timing als de andere Regi's: weven, oplichten, de cirkel sluit.
+- Het patroon is Regigigas' zes ogen, symmetrisch in drie rijen: 2 rood (het verst uit elkaar), 2 blauw (iets dichter) en 2 wit (nog iets dichter). Elk oog heeft een witte stip in het midden en kleine oortjes opzij, en licht op in zijn eigen kleur.
+- Script: `tools/grounded/regigigas_transition.py`.
+
+### [v.0.9.45] - Dave: intro zoals het origineel
+- Freed From Desire begint nu zoals het nummer zelf: de "tududu-tututu"-riff solo op het orgel, zonder beat (bronmaat 2–4). Daarna volgen één kick met een crash en het couplet met de volle begeleiding (bronmaat 53–85, in de originele volgorde).
+- De loop springt terug naar het begin van het couplet, niet naar de solo-intro.
+
+### [v.0.9.46] - Regigigas v4: echte climax, Slow Start op 5 s
+- **Slow Start:** begint nu op ±5 s, waar de transitie eindigt. In drie tellen remt hij af naar 55%, daarna versnelt hij weer per maat.
+- **Climax:** na de loop volgen 8 extra maten. Het hoofdthema komt daarin een hele toon hoger terug (D → E).
+  - Het originele koper zwijgt daar; een vol koperkoor (trompet, hoorn en koor) neemt de melodie luid over.
+  - Daaronder taiko op elke tel, een crash op elke maat en pauken op de grondtoon.
+  - Het tempo gaat nog iets omhoog (1,08×). Daarna springt hij terug naar het begin van de loop, van de dominant naar de tonica.
+- **Opname:** het begin van de nummers werd in de previews afgeknipt (±0,2 s). Dat is opgelost in `recaudio`/`recpcm`; in de game was het nooit weg.
+
+### [v.0.9.47] - Dave: de opbouw van het origineel
+- Freed From Desire volgt nu het origineel van begin tot eind (bronmaat 2–85, doorlopend).
+  - **Opbouw zoals in het nummer:** eerst de riff solo, dan couplet 1 met strijkers. Daarna komen piano, synthstrings en ride erbij, dan hihats en de pad met een snareroffel. Op maat 30 volgt de drop met bas en volle beat, dan "na na na", couplet 2, refrein en "na na na".
+  - **Loop:** van maat 85 terug naar 38, dezelfde overgang als in het nummer.
+  - Voorheen sprong hij van de intro meteen naar het volle couplet 2, waardoor alles abrupt inviel.
+- De ride en de pedaal-hihat worden nu gespeeld (als hihat), want die dragen de opbouw. Ze hebben een lage prioriteit, zodat ze de strijkers niet verdringen.
+
+### [v.0.9.48] - Regigigas v5: de climax klinkt echt
+- **Bugfix:** in v4 werden de trompet- en hoornpartij van de climax wel berekend, maar nooit in het nummer gezet. Daardoor was er in de climax geen koper te horen. Het script controleert nu dat elke partij echt in de MIDI staat.
+- **Climax nu:** tweestemmig koper (trompet met een terts erboven) en hoorn op de melodie, plus een tweestemmig koor. Daaronder tuba, taiko, een crash op elke maat en pauken op de grondtoon. Koper en koor klinken hier luider dan in de rest van het nummer.
+- Het originele slagwerk en de originele pauken zwijgen in de climax, zodat er kanalen vrij zijn voor het koper en het koor.
+
+### [v.0.9.49] - Regigigas: de Hoenn-trompet speelt mee
+- De iconische Hoenn-trompet uit de Elite Four-gevechten (`voicegroup_trumpet_keysplit`) speelt in de hele loop de Regi-melodie mee, en in de climax tweestemmig.
+
+### [v.0.9.50] - Regigigas: trompet een octaaf hoger, buisklokken
+- Vanaf de loop speelt de Hoenn-trompet de Regi-melodie een octaaf hoger. Daarvoor versmolt hij met de strijkers en hoorn van het origineel.
+- Buisklokken slaan het begin van elke lange koraalnoot aan, in de loop en in de climax. Dat is versie B uit een A/B-test; zonder klokken (A) bouw je met `REGI_BELLS=0 python3 tools/grounded/regigigas_theme.py`.
+
+### [v.0.9.51] - Regigigas: hoorbare tempelklokken
+- De buisklokken waren te zacht en te kort (één korte slag per noot, een octaaf hoog). Ze luiden nu in de ligging van de melodie, op volle sterkte, en worden op elke maat opnieuw aangeslagen zolang de koraalnoot klinkt, als een tempelklok.
+- De trompet blijft voorgaan bij de kanaalverdeling.
+
+### [v.0.9.52] - Battle! Mewtwo (eigen compositie)
+- Mewtwo heeft een eigen gevechtsthema (`MUS_GROUNDED_VS_MEWTWO`, `tools/grounded/mewtwo_theme.py`), naar het idee van Jordi: euforische trance, melancholisch én evil tegelijk, de imperfecte kloon. 128 bpm, A-mineur.
+  - **Intro (= de transitie):** een donkere drone met een hartslag. Als de ogen in de tank oplichten volgt een tritonus-aanslag, bij de drie barsten drie glasslagen, en als de tank uiteenspat een crash, waarna de beat losbarst.
+  - **A, hoog tempo:** een jagende 16e-bas en four-on-the-floor, met een kwaadaardig staccato-motief met een frygische Bb.
+  - **B, trance-breakdown:** zonder kick, met pads en koor en een melancholische melodie. Elke frase krijgt een zachte echo een halve toon ernaast: de imperfecte kloon. Een snareroffel leidt naar de drop.
+  - **C, euforische drop:** de hook vol op Am–F–C–G, de tweede keer eindigend op een dreigend E-groot. Daarna loopt hij terug naar A.
+- De FRLG-Mewtwo-muziek is vervangen door dit thema.
+
+### [v.0.9.53] - Mewtwo v2: ruimte voor de cry, voller, kwaadaardiger
+- **Cry:** na de explosie van de tank volgt nu een "ademmaat" met alleen een lage drone en een paar zachte slagen, zodat Mewtwo's cry vrij klinkt. Daarna valt het hoge tempo in. De loop begint na de ademmaat.
+- **Voller:** pompende trance-strijkers in achtsten in de beat-secties, en een koor onder de evil-sectie en de drop.
+- **Kwaadaardiger:** de melodie speelt nu op een kerkorgel. In de euforische drop speelt de blokgolf mee, een octaaf lager en zachter, zodat hij minder schel is.
+
+### [v.0.9.54] - Mewtwo v3: filmische intro
+- **Transitie ±2,5× trager en op de maat:**
+  - Het lab komt langzaam uit het donker en de dagboekpagina's worden rustig geschreven.
+  - De ogen lichten op op 3,75 s, de drie barsten vallen op de maat en de tank spat uiteen op 5,6 s.
+  - De cry in de transitie is weg; alleen de cry bij de start van het gevecht blijft.
+- **Muziek:**
+  - **Intro van 3 maten die met de transitie meeloopt:** drone en koor, een langzame hartslag, orgelakkoorden bij de pagina's, een tritonus-aanslag bij de ogen, glas bij de barsten en een crash bij de explosie.
+  - **Daarna:** een ademmaat voor de cry en een opbouwmaat (snareroffel, riser, stijgende strijkers), dan barst de beat los.
+- **Maximalistischer, zonder het bestaande te veranderen:** extra lagen op de vrije chiptune-kanalen, zodat er niets wegvalt:
+  - een delay-arpeggio;
+  - een sub-bas;
+  - een shaker;
+  - een riser naar de drop.
+
+### [v.0.9.55] - Muziekspeler 16 sporen (Mewtwo v4, Regigigas compleet)
+- **Gevonden:** de muziekspeler speelde maximaal 10 sporen per nummer en sloeg de rest stilletjes over.
+  - **Mewtwo v3** (14 sporen) miste daardoor de drums, de sub-bas, de shaker en de riser.
+  - **Regigigas** (16 sporen) miste het koor, de tuba, de taiko, de pauken, de crashes en de tempelklokken. Daarom waren de klokken en de climax nauwelijks te horen.
+- **Opgelost:** `NUM_TRACKS_BGM` gaat van 10 naar 16 (`sound/music_player_table.inc`, +480 bytes IWRAM, nu 89%). Alle originele nummers hebben 10 sporen of minder en blijven ongewijzigd.
+- **Zarude** had 11 sporen; het 11e (een PSG-shaker) speelde dus nooit. Om de goedgekeurde versie gelijk te houden, is dat spoor eruit gehaald.
+- `music_lint.py` meldt nu een fout als een nummer meer sporen heeft dan de speler aankan.
+
+### [v.0.9.56] - Muziekbuffer naar EWRAM, meer stackmarge
+- De sporenbuffer van de muziekspeler (16 sporen, 1280 bytes) staat nu in het grote werkgeheugen (EWRAM) in plaats van het kleine, snelle geheugen (IWRAM). IWRAM gaat van 89% naar 85%.
+- Gemeten in een gevecht: de stack gebruikt ±2,4 KB, en er blijft nu 2032 bytes marge over. Met de originele 10 sporen was dat 1344 bytes, dus er is meer ruimte dan vóór de uitbreiding.
+
+### [v.0.9.57] - Stackmarge: draadloze buffer naar EWRAM
+- De muziekbuffer (16 sporen) staat weer in het snelle IWRAM. In plaats daarvan is de buffer van de draadloze adapter (`gRfu`, 3,3 KB, in deze romhack ongebruikt) naar EWRAM verplaatst.
+- IWRAM staat nu op 79% (was 89%). Gemeten in een gevecht: de stack gebruikt ±2,2 KB, en er blijft 4240 bytes marge over (met de originele opzet was dat 1344).
+- Vertraagde frames in gevechten: gelijk in beide opzetten (de verschillen per run komen van de moves en animaties).
+
+### [v.0.9.58] - Legendary beasts: elk hun eigen variant
+- Raikou, Entei en Suicune krijgen elk een eigen variant van het beasts-thema (`tools/grounded/beasts_theme.py`), in HGSS-stijl. Het originele nummer blijft ongewijzigd; per beest komt er één kenmerkende laag bovenop:
+  - **Suicune** (`MUS_GROUNDED_VS_SUICUNE`): heldere, galmende buisklokken op de melodie (zuiverheid, rust), plus glockenspiel-druppels op de arpeggio's (regen).
+  - **Entei** (`MUS_GROUNDED_VS_ENTEI`): een elektrische gitaar, met een overdrive-lead op de melodie en distortion-power-chords op de baslijn (vuur, vulkaan).
+  - **Raikou** (`MUS_GROUNDED_VS_RAIKOU`): scherpe, zoemende synths, met een smalle blokgolf op de melodie, snelle "zaps" op de arpeggio's en zachte knetters (elektriciteit, onweer).
+- Elk beest speelt zijn eigen variant in zijn event en in de debug-lijst "Battle test…".
+- `musiclib.ds_occupancy()` rekent de kanaalbezetting per noot uit, ook als een spoor van instrument wisselt.
+
+### [v.0.9.59] - Beasts: de instrumenten op de hoofdmelodie
+- Jordi: de kenmerkende instrumenten stonden op de achtergrond (de snelle begeleidingsfiguur en de hoge piano-echo's). Ze spelen nu de terugkerende hoofdmelodie, zoals in HGSS: de lange noten van spoor 2 op strijkers en trompet, met de hoge piano-passages twee octaven lager.
+  - **Suicune:** de buisklokken slaan op de hoofdmelodie aan (lange noten en elke nieuwe toonhoogte), en het glockenspiel speelt de begeleiding.
+  - **Entei:** de overdrive-gitaar neemt de hoofdmelodie over van de strijkers en trompet; de power chords blijven op de bas.
+  - **Raikou:** de zoemende blokgolf zit op de hoofdmelodie, en de zaps op de begeleiding.
+
+### [v.0.9.60] - Zinnia zonder knapperen, Ghetsis zonder 'puuup', Raikou luider, trainerfoto's
+- **Zinnia-thema knapperde soms**: de 8-bit-mixer van de GBA klemt niet maar slaat om (een te harde golf springt van
+  -93 naar +123), op stapels strijkers + synthbas + kick (1,7-3,1 s, 10 s, 21 s). Strijkers, synthbas, orgel en drums
+  zachter (`midi_songs.py`) en `-V072`: in een opname uit de mixbuffer over het hele nummer 0 keer overlopen.
+- **Ghetsis-thema**: de lange 'puuup'-tonen bij de 'Ghetsis!'-koorstukken kwamen van de koperpartij, die het koor twee
+  octaven te laag meespeelde (trompetsample ver omlaag gestemd), en van een paar e-pianonoten op toonhoogte 7/13. Die
+  noten gaan nu een of meer octaven omhoog (`prepare_auto(..., min_note=...)`).
+- **Raikou**: de zoemende synth op de hoofdmelodie viel weg; nu op vol volume en met een vollere blokgolf (25%).
+  Suicune en Entei goedgekeurd door Jordi.
+- **Ghetsis-trainerfoto**: de volledige figuur (BW2, zwarte mantel met Plasma-staf) in plaats van alleen het
+  schreeuwende hoofd; onderkant geditherd weg zoals N.
+- **Mustard en Colress**: hun benen waren hard afgekapt aan de onderrand; nu vloeien ze weg met hetzelfde dither als
+  de DS-trainerfoto's (`tools/grounded/fade_trainer_pics.py`).
+- `recpcm.py` meldt nu het aantal keer dat de mixer overloopt (moet 0 zijn).
+
+
+### [v.0.9.61] - Neo Plasma-thema met echte instrumenten
+- Jordi: "een puur synth-deuntje, lijkt qua instrumenten niet op het origineel". De automatische omzetting groepeerde per
+  GM-categorie: gitaar en sawtooth samen op één blokgolf, de steel drums als crashbekken. Nu per bronspoor een echt
+  sample in een eigen voicegroup (`tools/grounded/neo_plasma_theme.py`): slap bass, distortion/overdrive-gitaar,
+  kerkorgel, e-piano voor de steel drums (geen steel-drum-sample; alternatief xylofoon/glockenspiel), DirectSound-
+  blokgolf voor de 8-bit-lead, sinus/driehoek zacht op de PSG. Lint OK, 0 keer overlopen.
+
+### [v.0.9.62] - Ghetsis zonder 'puuup' (ronde 2), Raikou iets zachter
+- **Ghetsis**: bij de koorakkoorden (±1:33) speelde het koper nog op C#2/G2, ver onder een trompet; nu alles onder C3
+  een octaaf omhoog (`min_note={6: 48}`). Daardoor iets voller, dus `-V082` (0 keer overlopen, piek 119/127).
+- **Raikou**: zoemsynth goedgekeurd, nog net iets zachter (spoorvolume 127 -> 110). Trainerfoto's van v0.9.60 goedgekeurd.
+
+### [v.0.9.63] - Neo Plasma v3: dezelfde instrumenten én balans als de bron
+- Jordi over v2: "rotzooi, klinkt totaal niet zoals de bron". Twee oorzaken:
+  - **instrumenten**: GM 27 in de bron is een *schone* e-gitaar; v2 maakte er distortion/overdrive van (zestiende-akkoorden
+    van zes noten = brij). De game had geen schone gitaar, sawtooth of steel drums.
+  - **balans**: in de bron dragen gitaar en orgel het nummer; in v2 zaten die 9 en 7 dB te zacht onder saw, bas en drums.
+- Nieuw: **eigen samples uit de GM-soundfont FluidR3** (`tools/grounded/gm_samples.py`): schone gitaar (GM 27), steel
+  drums (GM 114) en een sawtooth-loop (GM 81). Staan in `sound/direct_sound_samples/grounded/`.
+- Nieuw: **`tools/grounded/balance.py`**: rendert per instrumentgroep de bron solo met FluidR3 en neemt de GBA-versie solo
+  op (andere sporen in het geheugen op volume 0), en stelt per spoor een volume voor. Neo Plasma zit nu per groep binnen
+  1 dB van de bron. Velocity overal 127 (bron: 50), -V108 (0 keer overlopen, piek 86/127).
+- Sawtooth-spoor gesplitst: bovenste noot = melodie, octaaf eronder op de PSG-blokgolf, overige noten een tweede lijn.
+
+
+### [v.0.9.64] - Battle! Keccles (salsa dura)
+- Eigen compositie (`tools/grounded/keccles_theme.py`, `MUS_GROUNDED_VS_KECCLES`): salsa dura à la Fania, 190 bpm,
+  A-mineur, clave 2-3. Intro (montuno, bloque, koperloop), A = de hook op trompet + trombone in octaven, B = coro met
+  trombone-melodie, mambo met moña en campana, break met timbale-solo, naadloos terug. Piano-montuno, tumbao-bas,
+  conga's, timbales, cascara, güiro (PSG-ruis). Eigen drumkit en piano-keysplit. 0 keer overlopen (-V088).
+- Klinkt bij Keccles 1-3 (Route 115, Fortree, Route 136) en in het Battle Stadium; het multi battle in Sootopolis houdt
+  de Archie/Maxie-muziek.
+
+### [v.0.9.65] - Ghetsis: de echte 'puuup' gevonden
+- Jordi: "de vocalen waren niks mis mee, het is die puup die ervoor komt". Solo-opnames per spoor uit de game lieten zien
+  dat het het **drumspoor** was: drumnoot 49 (crashbekken) is in `rs_drumset` een PSG-geluid, een vaste toon van ±1 s
+  (88 s en 92,5 s). Nu een echte crash-sample (49 -> 57; ook de andere PSG-drumnoten 37/44/51/52 omgezet,
+  `prepare_auto(..., drum_map=...)`). Het koper staat weer zoals in v0.9.60. -V082: 0 keer overlopen, piek 115/127.
+
+### [v.0.9.66] - Zes nieuwe/vernieuwde thema's (nachtronde, agents)
+Alles met eigen samples waar instrumenten ontbraken (FluidR3/synthese), lint OK, 0 keer overlopen in de mixbuffer.
+- **Keccles v2** (`keccles_theme.py`), Willie Colón-stijl op Jordi's feedback ("meer blazers, meer soorten percussie,
+  gitaren, dynamiek"): de hook op twee rauwe **trombones** (nieuwe trombone-sample, GM 57), trompet als kleur, een zachte
+  **coro** (koor + cuatro-antwoorden), piano-montunosolo, descarga met alleen bas en percussie en daarna een cuatro-solo, en
+  een **mambo** met gestapelde trombone-/trompetriffs en de campana. Percussie: bongó (martillo, bongo-bel), conga's,
+  timbales, clave, güiro, maracas. Dynamiek via CC7 per sectie: de coro is ±5 dB zachter dan de mambo.
+- **Battle! Magikarp** (`MUS_GROUNDED_VS_MAGIKARP`, `magikarp_theme.py`): onnozel spartelen. Kazoo, fagot, tuba,
+  xylofoon, slide whistle via pitch bend, boing, plons, vibraslap. Maten van 5/8 en 7/8, een heldenfanfare die in elkaar
+  zakt ("Splash!" ... er gebeurt niets). Wilde gevechten tegen alleen Magikarp en trainers met alleen Magikarp (nu
+  Darian); Gyarados niet.
+- **Battle! Jirachi** (`MUS_GROUNDED_VS_JIRACHI`, `jirachi_theme.py`): hoopvol, D-groot, climax in E. Een "wens"-motief op
+  fluit en glockenspiel, speeldoos, celesta, harp, windgong; de intro valt in sync met de transitie (flits op tel 4).
+- **Battle! Heatran** (`MUS_GROUNDED_VS_HEATRAN`, `heatran_theme.py`): stoner metal à la Kyuss, 116 bpm, drop D. Fuzzende
+  powerchords (één sample per akkoord), dubbele gitaar links/rechts, fuzzbas, een loom halftempo-stuk, een break met
+  alleen bas en drums, en een bluesy solo met bends.
+- **Battle! Shaymin** (`MUS_GROUNDED_VS_SHAYMIN`, `shaymin_theme.py`): relaxt, 6/8, D-groot. Fluit en klarinet, harp,
+  nylongitaar, dwarrelende celesta-blaadjes, pizzicato, shaker, triangel en bongo's; geen drumstel.
+- **Rayquaza als gamelan** (`MUS_GROUNDED_VS_RAYQUAZA`, `rayquaza_theme.py`): het weather trio-thema maat voor maat als
+  Balinese gong kebyar. Gesynthetiseerde gangsa/reyong/jegogan/gong (inharmonisch, met ombak-zweving), kotekan
+  (in elkaar grijpende 16en), kendang, suling, ceng-ceng, byar-explosies en versnellingen. Alle wilde Rayquaza-gevechten
+  (ook de shiny/Delta Episode); Groudon en Kyogre houden het origineel.
+- Samplegeneratoren per thema: `gm_samples.py` (gedeeld), `heatran_samples.py`, `rayquaza_samples.py`, `keccles_samples.py`.
+  Elk samplelabel in `direct_sound_data.inc` staat nu achter een `.align 2`.
+- Strength-puzzels in de Seafloor Cavern nagelopen: duwen werkt, blokken staan na opnieuw binnenkomen weer op hun plek.
+
+### [v.0.9.67] - Reuzen-Wailord op zee
+- Jordi's idee: een gigantische **Wailord** als grappig obstakel. Het zijaanzicht uit de follower-sprite is 4x vergroot
+  (Scale2x, twee keer) tot 192x96 (±10 tegels lang), met de buik onder de waterlijn en een schuimrand
+  (`tools/grounded/giant_wailord.py`, `OBJ_EVENT_GFX_GIANT_WAILORD`, 9 subsprites van 64x32).
+- Elke dag 25% kans dat hij er ligt, op één van drie plekken in open zee: Route 124, Route 128 of Route 129. De plek
+  komt uit het dagnummer, dus de hele dag dezelfde (`Grounded_GiantWailordSpot`; testen met `VAR_GIANT_WAILORD_DEBUG`).
+- Hij blokkeert de waterlijn over 11x2 tegels en je kunt hem vanaf elke kant aanspreken: hij ligt te chillen. Grote
+  objecten verschijnen niet meer pas als hun ankertegel in beeld komt (extra marge).
+
+### [v.0.9.68] - The Spire: schatkist, gewogen routes, meer elites
+Jordi's eerste testrun:
+- **Schatkist** (nieuw kamertype, icoon: Gimmighoul in zijn kist): de middelste verdieping van elke act is altijd een
+  rij schatkisten met een gratis relic (zoals Slay the Spire), dus je kunt hem niet mislopen.
+- **Gewogen routes**: vlak voor de baas staat altijd Snorlax (rust). Geen rust op de verdieping daarvoor, en nergens
+  twee rustplekken, twee elites of twee winkels direct na elkaar op één route.
+- **Meer elites**: altijd minstens één elite vóór en één na de schatkist (elite = gevecht of event dat wordt omgezet).
+  Over 10.000 kaarten: bijna altijd 2+ elites, en in 65% kun je er op één route twee halen. Getest met een
+  Python-kopie van de generator (`scratchpad`) en in de emulator.
+
+### [v.0.9.69] - Muziekfeedback ronde 2 (agents) + PSG-drums (M2)
+- **Keccles v3**: een riffende elektrische gitaar à la 'Vigilante' (Willie Colón) in de descarga (korte solo met slides
+  en bends) en in de mambo (met de trombone-moña mee en een tegenriff). Verder niets veranderd (alle andere sporen
+  identiek aan v2).
+- **Magikarp v2**: het hoofdmotief een octaaf lager (kazoo F3-D5, xylofoon en fluitje lager/zachter; >2 kHz in de
+  A-delen van 31% naar 14%). De **echte Magikarp-cry als DJ-scratch** als punchline na de mislukte heldenfanfare
+  (±35 s): "Ma-", "Ma-", dan de hele cry, op de maat en net onder de lead.
+- **Jirachi v2**: na ±42 s een opbouw (152 -> 168 bpm, filter dat opengaat, versnellende roffel, riser) naar een
+  euforische trance-drop (supersaw-lead met het wensmotief, gated akkoorden, off-beat bas, four-on-the-floor),
+  breakdown, tweede drop, en dan terug naar het thema een octaaf hoger in E-groot. Eigen supersaw-samples.
+- **Heatran v2**: echte stoner rock in drop C, 100 bpm met halftempo-refreinen. Strofen alleen bas + drums (later met
+  de gedempte refreinriff), zware trage refreinen met twee fuzzgitaren (Big Muff-achtige fuzz), rustig middenstuk met
+  getokkelde gitaar, opbouw, climax met bluesy solo. Strofen ±7 dB zachter dan refreinen.
+- **Shaymin v2**: gevechtsversie: 6/8 op 112 (jig-drive), intro-stoten, bas-ostinato, spiccato, doorlopende percussie,
+  een spannend B-deel met opbouw en een grotere A'. Thema en instrumenten gelijk.
+- **Rayquaza v2**: de weggevallen tonen verklaard en hersteld: in v1 waren de pauken (het herkenbare G-C-ostinato) en
+  beide PSG-lijnen van het origineel vervangen en speelde de bas maar één noot per tel; de pelog-kotekan botste
+  (Db/Eb tegen D/E). Nu: gestemde kendang op het ostinato, PSG-lijnen 1-op-1 terug, volledige baslijn op een gongbas,
+  kotekan in de toonladder van het origineel, plus een laag mannenkoor en extra gongs.
+- **M2: PSG-drums vervangen** door echte samples in Zinnia, Colress, Giratina, Birch, Sunset Wilds, Yoshi's Castle en
+  Broken Pier (crash/china -> orkestcrash, pedaal-hihat -> gesloten hihat, side stick -> zachte snare, conga/bongo/
+  triangel waar nodig). Alleen drumnoten veranderd; 0 keer overlopen. `prepare()` kan nu ook `drum_map`.
+
+### [v.0.9.70] - Neo Plasma v4, nagebouwd naar het origineel (mp3)
+- Jordi leverde het BW2-origineel als mp3 aan. Gescheiden in stems (Spleeter; demucs werd door de proxy geblokkeerd),
+  per stem getranscribeerd (basic-pitch) en per sectie vergeleken met de MIDI-bron.
+- **Gevonden:** het "gitaar"-spoor is in het origineel een aanhoudende **synth brass/pad**, de bas een **Slap Bass 2 een
+  octaaf lager**, het orgel een **percussief rockorgel**, de off-beats zijn **hihats** (geen snares), en een grote laag
+  gestemde elektronische **kick op elke tel** draagt het nummer. Melodie en arpeggio's klinken door (lange lijnen).
+- **Nieuw:** eigen samples (`tools/grounded/neo_plasma_samples.py`), eigen drumkit, loop zoals in de game (intro +
+  64 maten i.p.v. het hele bestand twee keer). Balans gemeten tegen de mp3 met `tools/grounded/balance_orig.py`:
+  per octaafband zit de mix nu binnen ±1,5 dB van het origineel (v3: tot 9 dB te dun in het laag en 5 dB te schel).
+- A/B-fragment (origineel, dan v4) voor Jordi. 0 keer overlopen, piek 100/127.
+
+### [v.0.9.71] - Reuzen-Wailord hertekend
+- Jordi: "te dikke lijnen, lijkt niet echt op een Pokémon-sprite meer, misschien hertekenen i.p.v. uitrekken". De
+  Wailord is nu op ware grootte opnieuw getekend als Gen 3-sprite (`tools/grounded/giant_wailord_draw.py`): gladde
+  contour met een omlijning van 1 px, schaduwbanden, ovale rugvlekken, oog, witte onderkaak met groeven, borstvin,
+  staart, en een dunne schuimlijn. Vorm afgeleid van het follower-zijaanzicht; eigen palet van 13 kleuren.
+
+### [v.0.9.72] - Magikarp v3
+- De kazoo-lead 3,7 dB zachter (spoorvolume 100 -> 67; totaal -V120 zodat de rest niet kaal wordt).
+- De cry-scratch nu vijf keer per loop: een stotterende "Ma-Ma-Ma-Ma-" aan het eind van de eerste A (±16 s), de
+  bekende "Ma- Ma- MAGIKARP!" na de heldenfanfare (35 s), "Ma-?" en "MA-?!" als antwoord in het spartel-C-deel
+  (±43 s), en de hele cry achterstevoren onder de slotfanfare (±53 s). Steeds 4-6 dB onder de lead.
+- (v0.9.72, Wailord) Na Jordi's voorbeeld (het HGSS-sprite opgeblazen tot ware grootte): nu met hele pixels 4x
+  vergroot (`giant_wailord_draw.py`), dikke blokrand zoals in het voorbeeld ("houd het maar gewoon dik, is humor"),
+  onderkant onder water met een schuimlijn. Een dunnere rand kan met `LINE = 1`.
+
+
+### [v.0.9.73] - Rayquaza v3
+- Op Jordi's punten: **tempo exact als het origineel** (196 bpm vast, intro 9,8 s, loop 39,2 s; v2 had een statige/
+  versnellende intro). **Melodie naar voren** op de originele GBA-instrumenten (trompet/strijkers/hoorn zoals het
+  origineel, met de kwint erbij), reyong alleen als korte kleur, kotekan zachter: de melodie zit nu 6-11 dB boven de
+  kotekan (v2: 2-4 dB). **Kebyar-accenten**: angsel (alles kapt af op tel 4) om de 4 maten met unisono-klappen, en om
+  de 2 maten een zware maatovergang (gong ageng, lage gongbas, pauken, ceng-ceng op vol); snelle kotekan op een hoge
+  synth in de lange noten en de break. 0 keer overlopen.
+
+### [v.0.9.74] - Jirachi v3 en Heatran v3
+- **Jirachi v3**, zoals Jordi het bedoelde: de gewone delen weer als v1 (geen versnelling), met een **tussenstuk**
+  (48,9-72,4 s) waarin lange 'aaah'-vocals het wensmotief vergroot zingen (één noot glijdt via pitch bend over 4-6
+  maten, met vibrato en aanzwellen) boven een snelle trance-beat op 164 bpm (four-on-the-floor, off-beat bas,
+  supersaw-pad, plucks). Daarna abrupt terug naar 152 bpm en het thema een octaaf hoger in E-groot. Eigen vocalsample
+  (`jirachi_vox`, FluidR3 Choir Aahs + Voice Oohs, ademende loop).
+- **Heatran v3**, volgens Jordi's (Gemini-)briefing: de oorzaak van het surf/ska-gevoel was vooral het **ritme** (korte
+  riffstoten, drukke 16e-bas, kick en hihat naast de tel, rock-'n-roll-opstapjes). Nu 84 bpm in drop C, lang
+  aanhoudende powerchords met slides, bas unisono met de riff, bekkens alleen op de tellen, halftempo-refreinen,
+  bezwerende C-mineur-pentatonische riffs met b5. Nieuwe fuzzketen (Big Muff met middenscoop + SVT/Sunn-kast, lowpass
+  3,2 kHz), FluidR3 Power-kit. Strofen 1700-2000 RMS, refreinen 3500-3900.
+
+### [v.0.9.75] - Neo Plasma v5, Ashfrost-winter, Mitch (DnB), SickBlik (slap-funk)
+- **Neo Plasma v5** op Jordi's punten: tempo exact (175,96 bpm, gemeten; afwisselend 176/178 per tel omdat de GBA
+  alleen even bpm kent en 0,45% te traag speelt), het sawtooth-spoor stond in de bron 17 ticks te vroeg en de
+  orgelakkoorden waren 'gestrumd' (nu op de tel), bas volledig een octaaf lager. Lead = PSG-blokgolf (snelle attack,
+  korte decay), 'gitaar' = punchy synth-brass-stoot zonder swell, bas = diepe staccato pulse-bas, arpeggio's = steel
+  drums zacht, orgel scherper met korte release, drums = GBA-kit met PSG-hihats. Ontbreekt nog: een glijdende synthlijn
+  in de orgelsectie die niet in de bron-MIDI staat.
+- **Ashfrost Village** (`MUS_GROUNDED_ASHFROST`): wintervariant van Fallarbor, 7% trager. Blokfluit/fluit als lead,
+  celesta-sneeuwvlokjes, speeldoos, warme pad, getokkelde contrabas, sleebellen in het vrolijke deel en heel zachte
+  windvlagen. Ook in de huizen van Ashfrost.
+- **Battle! Mitch** (`MUS_GROUNDED_VS_MITCH`, Victory Road B1F + Stadium): Drum & Bass op 174 bpm in F-klein. Intro met
+  opbouw, drop 1 met two-step-breaks en een 'pratende' reese-hook, breakdown, valse drop met een **DJ-rewind en
+  luchthoorn**, drop 2 halftime met wobble, dan weer dubbel tempo.
+- **Battle! SickBlik** (`MUS_GROUNDED_VS_SICKBLIK`, = Jordi, Victory Road B2F + Stadium): smerige slap-funk op 108 bpm
+  in E-dorisch. Slap bass met aparte samples voor thumb, pop en dode noten (ghost notes, hammer-ons, slides),
+  'Dean Town'-achtige unisono-hook met hoorns, bassolo-breakdown, wah-gitaar, clavinet, Rhodes en een talkbox.
+
+### [v0.9.76] - Heatran v4 (Kyuss) en Jirachi v4 (euforisch tussenstuk)
+- **Heatran v4** (Jordi: "100% Kyuss"): 80 bpm, C-standard, C-mineur-pentatonisch met b5.
+  - Strofe → refrein → strofe → refrein → hypnotische brug → refrein met wah-lead.
+  - Gitaarketen: nek-pickup met toon dicht → fuzz → cocked wah (800 Hz) → SVT-versterker, niets boven ±4 kHz.
+  - Eén sample per riffnoot, zodat transponeren de klank niet verschuift.
+  - De bas speelt de riff unisono met modderige tube-fuzz.
+  - Drums simpel en bot: zware kick, doffe snare, één fill.
+  - Scripts: `heatran_theme.py`, `heatran_samples.py`.
+- **Jirachi v4:** het snelle tussenstuk is strikt majeur.
+  - D–A–Bm–G, dan G–A–F#m–Bm, op 164 bpm.
+  - Korte stijgende vocal-stoten in plaats van lange tonen.
+  - Heldere PSG-arpeggio's in 16en, strakke four-on-the-floor.
+  - De rest van het nummer is noot voor noot gelijk aan v3.
+- **Techniek:** gedeelde samplehulpjes staan nu in `tools/grounded/sample_utils.py`; Mitch importeerde ze uit Heatran's script en brak toen v4 dat veranderde.
+
+### [v0.9.77] - SickBlik v2 (Steely Dan) en Rayquaza v4 (kebyar-intro, breaks, gong ageng)
+- **SickBlik v2:** de slap bas van v1 is noot voor noot gebleven; er zijn drie nieuwe delen bij.
+  - Twee smooth refreinen in Steely Dan-stijl:
+    - Akkoorden: Cmaj9, B7#9b13, Em9, A13, Am9, D13, het 'Mu Major'-akkoord, Fmaj7#11 en B7alt.
+    - Leads: legato gedempte trompet, Rhodes-comping, jazzgitaar in octaven.
+    - Blazers: zachte pads en stoten.
+  - Een virtuoos slap-deel: double thumbing, pop-octaven in 32en, flageoletten en tapping.
+  - De drumkit heeft nu eigen samples (`sb_*`) in plaats van die van Heatran.
+- **Rayquaza v4:** de trompet/melodie-balans van v3 is ongewijzigd (per spoor gecontroleerd en in de game gemeten).
+  - Nieuwe felle kebyar-intro: op de eerste tik slaat alles tegelijk in, gevolgd door een byar, een kendang-intermezzo en de gong ageng. Er is geen fade-in meer.
+  - Staccato-angsels: alles valt 1,5 tel stil en slaat dan weer samen in.
+  - Kendang-intermezzo met versnelling in maat 35.
+  - Elke frase van 4 maten eindigt met een zware gong ageng, met de laagste gongbas en pauken.
+
+### [v0.9.78] - Mitch v2 (Pokémon x Chase & Status) en Neo Plasma v6 (voller en warmer)
+- **Mitch v2:** 174 bpm in F-klein.
+  - Waarom v1 traag klonk (gemeten): de hihats waren onhoorbaar, de snare had geen crack en de bas lag op de kicks, waardoor je de groove op halve snelheid hoorde.
+  - Drums: nieuwe punchy kick, snare met crack, echte hihats in 16en, ghost notes, amen-varianten en fills.
+  - Bas: rauwe reese met stotterfiguren ("bad-da-DAN"), dives en scoops, plus een wobble op vol tempo.
+  - Lead: de echte Pokémon-trompet met zaagtand en PSG unisono.
+  - Opbouw: dreigende battle-intro, snare-roffel in 8sten → 16den → 32sten, en een drop waarin alles tegelijk inslaat. Drop 2 nu op vol tempo i.p.v. halftime.
+- **Neo Plasma v6:** het schelle geluid zat in de PSG-lead en de drums hadden te weinig hoog.
+  - Lead: een warme DirectSound-lead, een octaaf lager.
+  - Akkoordspoor: vollere synth brass met punch.
+  - Drums: een duidelijke GBA-drumkit (kick, clap, snare, hihats).
+  - Arpeggio's: veel zachter.
+  - Orgel en bas: ongewijzigd.
+
+### [v0.9.79] - Gymleider-rematches zonder toeval (Jordi: optie a+b)
+- **Altijd klaar na de Hall of Fame:** alle gymleiders staan meteen klaar voor een rematch in hun gym. Wattson pas zodra hij na New Mauville terug is. Het willekeurige systeem (31% na elk 20e/60e gevecht) is weg.
+- **Eén rematch per leider per dag (RTC):** na een overwinning is dezelfde leider de volgende dag weer klaar, met het team van de volgende ronde (max. ronde 5). De oude grens "alleen ronde 2 vóór New Mauville" is vervallen.
+- **Match Call:** bel een gymleider om een rematch aan te vragen. Heeft hij/zij vandaag al verloren, dan volgt een weigering (bijv. Winona: "My birds have unionized. One battle a day.").
+- **Techniek:**
+  - Dagelijkse flags 0x935–0x93C (`FLAG_DAILY_REMATCH_*`).
+  - De Match Call-teksten "gym is klaar" zijn opnieuw afgebroken voor het smallere vak.
+
+### [v0.9.80] - The Spire: bugs, geen one-shots meer, langere acts
+- **Bugs (Jordi's testrun):**
+  - HP% liep niet mee: wordt nu tijdens het aflopen van de HP-balk berekend.
+  - Tekst van de onderste twee moves bij een upgrade verdween: moves nu als 2×2-raster met een voorbeeld van de upgrade ("Power 40 → 52").
+  - Sprite verdween soms bij DEFEND op de partner: knippermasker per battler (0 van 432 timings fout, was 162).
+  - Twee Marts achter elkaar: in de huidige generator onmogelijk (20.000 kaarten gecontroleerd); de simulatie stopt nu bij een overtreding.
+  - Extra gevonden: Totem Wishiwashi verloor zijn ×HP bij Schooling.
+- **Geen kansloze runs (SPIRE_DESIGN.md):**
+  - In beurt 1–3 verliest elk teamlid per beurt hooguit 60% HP (`SPIRE_OPENING_CAP`).
+  - Eén vijandelijke klap doet hooguit 40% HP (`SPIRE_HIT_CAP`; voorstel, zet op 100 om uit te zetten).
+  - Intenties tonen de begrensde schade.
+- **Balans:** nieuwe gevechtssimulatie `tools/grounded/spire/matchups.py`. Elke elite/baas moet met het slechtste realistische startpaar minstens 10% winkans geven (`encounters.py` faalt anders). Beldum + Zorua tegen Wishiwashi: 54% → 95% met alleen de startkit.
+- **Langere acts:** 13 verdiepingen + baas (was 7), schatkist op 7, elites en rust vanaf 5. Een gewonnen run duurt ±2 uur (was ±75 min). Oude gepauzeerde runs zijn ongeldig (save-magic).
+
+### [v0.9.81] - Muziekbatch: Victini, Darkrai, Genesect (nieuw), Heatran v5, Mitch v3, Neo Plasma v7
+- **Battle! Victini** (song 644, `victini_theme.py`): episch anime-overwinningsthema, 172 bpm in D-groot.
+  - Een V-fanfare, het heldenthema op trompet en hoorns, en een "struggle" in B-mineur.
+  - Daarna de doorbraak: het thema in E-groot, met four-on-the-floor.
+- **Battle! Darkrai** (song 645, `darkrai_theme.py`): een ontsporend speeldoos-wiegelied in 7/8; deel B wisselt tussen 9/8, 7/8 en 5/8.
+  - Een tritonus waar je de leidtoon verwacht, en een bitonale canon.
+  - Achterstevoren klanken: het wiegelied, de cry en een bekken.
+  - De climax breekt na één tel af ("It never learned the rest of the song").
+- **Battle! Genesect** (song 646, `genesect_theme.py`): industrial/big beat à la The Prodigy, 144 bpm, E-frygisch.
+  - Een distorted bassriff, hoover-lead en 303-acid.
+  - Metalen percussie en kanonschoten.
+  - Een hard-techno-deel met rumble-kick.
+- **Heatran v5:** naar Kyuss' "Odyssey". Trage sludge (76 bpm) wisselt af met desert pump (136 bpm), met versnellingen en vertragingen per tel.
+  - Gen 3-klank: eigen gitaarsamples op 13.379 Hz/8 bit, een synth-bas die de riff volgt en de doffe Gen 3-kit.
+- **Mitch v3:** duistere DnB op 172 bpm.
+  - Laag koperthema en rauwe reese met portamento.
+  - Kick op 1 en 3-en, droge snare op 2 en 4, met ducking (CC7-dip) van bas en synths op elke snare.
+  - Opbouw: intro → build-up → 1 tel stilte → drop. Alle piepende loopjes zijn eruit.
+- **Neo Plasma v7:**
+  - De lead speelt ook een octaaf lager op PSG.
+  - Een sub onder de bas.
+  - Arpeggio's gesplitst links/rechts (alleen hoorbaar met Sound op stereo).
+  - Off-beat-stoten.
+  - Four-on-the-floor met ghost-snares en 16e-hats.
+  - Het tempo blijft 176 bpm.
+- **Nieuwe werkwijze:** muziek wordt in batches gecontroleerd met `tools/grounded/maptools/batchrec.py`, 8 nummers per test-ROM. Alle zes: 0 overlopen, piek 82–102/127, geen pieken.
+
+### [v0.9.82] - The Spire: vijanden passend bij het moment, iconen, kaarttekst, Vending Machine
+- **Nieuwe regel** (Jordi: "Araquanid had al STAB Leech Life en Liquidation, die je op dat moment niet kan tanken"):
+  - Eén aanval van een vijand mag per act en soort gevecht hooguit een bepaald deel van je HP kosten:
+
+    | Soort gevecht | Act 1 | Act 2 | Act 3 |
+    |---|---|---|---|
+    | zwak | 6% | 8% | 10% |
+    | gewoon | 10% | 12% | 14% |
+    | elite | 14% | 15% | 17% |
+    | baas | 15% | 17% | 22% |
+
+  - Lakeien van elites en bazen tellen als een gewoon gevecht.
+  - In act 1 heeft elke vijand hooguit één sterke aanval.
+  - Opgeladen aanvallen mogen harder: twee beurten, rust erna, Dream Eater, Truant.
+  - `encounters.py` controleert dit (`matchups.py`, `klap_check`); zie `SPIRE_DESIGN.md`.
+- **Aangepast:**
+  - **Act 1, bazen:** Totem Wishiwashi (Water Pulse; Araquanid: Water Gun + Bug Bite), Totem Marowak (Fire Punch; Salazzle: Smog + Ember).
+  - **Act 1, elites:** Gremlin Nob (Primeape: Speed-aura, Fury Swipes; Mankey: Karate Chop), Bygone Effigy (Tackle, Heavy Slam na twee Curses), Terror Eel (Charge Beam), Skulking Colony (Astonish), Phantasmal Gardeners (Water Gun).
+  - **Act 1, gewone gevechten:** Secret Santa (Peck), Haunted Ship (Mega Drain, Astonish), Two-Tailed Rats (Double Hit), Overgrown Statue (Tackle).
+  - **Act 2/3:** Beartic Brute, Ice Dancers (Confusion), Turret Operator (Bubble Beam), Frog Knight (Revenge), Soul Nexus.
+  - Rekenwerk opnieuw gedraaid: de slechtste startcombinatie per elite/baas houdt minstens 10% winkans.
+- **Snorlax-kamp:** de vakken met je Pokémon zijn hoger. Fuecoco (en elk ander icoon) staat er nu helemaal in, met de naam naast het icoon. Iconen worden op alle Spire-schermen op hun zichtbare deel uitgelijnd (`Spire_IconYOffset`).
+- **Act-kaart:** de tekst onder 'Battle' viel weg ("Two wild ones" was te breed). Nu "2 wild ones", "upgrade +", "Strong foe" en "Buy stuff".
+- **Vending Machine:** B = weglopen ("B: walk away"). `events.py` controleert dat elk event zonder gratis optie zo'n uitweg heeft.
+
+### [v0.9.83] - Gymleider-remixes (alle acht leiders)
+Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Melodie, vorm en loop zijn noot voor noot die van het origineel; alleen instrumenten, groove en tempo veranderen. Dit geldt voor de leiders, hun rematches en het Battle Stadium, maar niet in de Frontier.
+
+| Song | Leider | Genre |
+|---|---|---|
+| 647 | Roxanne | hardrock-powerballad: overdrive-lead, powerchords, half-time drums |
+| 648 | Brawly | nu-metal / "bro metal": drop-chugs, breakdown, china, dubbele bassdrum |
+| 649 | Wattson | gabber/happy hardcore: gabberkick, supersaw, hoover, happy-hardcore-piano |
+| 650 | Flannery | flamenco (rumba): nylongitaar met trémolo, rasgueado, palmas, cajón, castagnetten |
+| 651 | Norman | blockbuster-tv-orkest: epische cello, strijkersostinato, taiko, koperbraam |
+| 652 | Winona | bubblegum-dancepop: glanzende synthlead, 909-clap, four-on-the-floor |
+| 653 | Tate & Liza | psytrance: tweeling links/rechts (acid-zaagtand + blokgolf), rollende bas |
+| 654 | Wallace (gym 8) | Franse lounge/bossa: vibrafoon, accordeon, Rhodes, contrabas, brushes |
+
+- Scripts: `tools/grounded/gym_remixes.py` (647–650) en `gym_remixes2.py` (651–654).
+- Batchcontrole: alle acht 0 overlopen, piek 68–108/127.
+
+### [v0.9.84] - Trainernamen consistent
+- **Constanten, flags en labels heten nu naar het personage in de game:**
+  - Gym 8 = Wallace: `TRAINER_WALLACE_1`–`_5`, `REMATCH_WALLACE`, `FLAG_DAILY_REMATCH_WALLACE`, `FLAG_ENABLE_WALLACE_MATCH_CALL`.
+  - Het oude kampioen-slot heet `TRAINER_WALLACE_OLD_CHAMPION` / `REMATCH_OLD_CHAMPION`.
+  - Juan op Route 129 = `TRAINER_JUAN` (was `TRAINER_REED`).
+  - Charles = `TRAINER_CHARLES_1`–`_5` (was Wilton).
+  - Nog 21 trainers met een eigen naam, onder meer Gi-Hun, Dave, Mitch, SickBlik en Bas Rutten.
+- **Alleen namen:** de ROM is byte voor byte gelijk en saves blijven werken. Tekstlabels zijn niet hernoemd, omdat de Dialoogstudio ze als sleutel gebruikt.
+- **Naamlijst voor Jordi/Gemini:** `TRAINER_NAMEN.md`.
+
+### [v0.9.85] - Muziekbatch 3: Heatran v6, Mitch v4, Neo Plasma v8, Victini v2, Darkrai v2, Genesect v2
+- **Heatran v6:** from scratch, gemeten op Jordi's referenties (Kyuss "Odyssey" en "Green Machine").
+  - Traag deel op 76 bpm (sludge, halftime, lange powerchords); snel deel op 94 bpm met 8en, zoals het snelle deel van Odyssey (94–96 bpm) en Green Machine (90 bpm).
+  - C-klein blues/frygisch, gitaar en bas legato, de bas verdubbelt de riff.
+  - Gen 3-kit (alleen gesloten hihat, geen accent op de 'en') en bitcrushed fuzz-samples.
+  - Waarom v5 als Bowser's Castle (Mario Kart Super Circuit) klonk, is gemeten:
+    - 272 achtsten per minuut;
+    - korte stoten;
+    - 41% aanslagen op de 'en';
+    - chromatische loopjes en swing.
+  - Nieuw: `music_lint.py --genre stoner` keurt dat af.
+- **Mitch v4:** ritme en structuur zoals v3 ("spot-on Chase & Status").
+  - De wobble is veel luider en agressiever: ontstemde zaagtanden, distortion, diep filter-LFO op tempo.
+  - Drogere, hardere kick en snare, met ducking op elke kick én snare.
+- **Neo Plasma v8:** noten en timing exact v7, alleen andere instrumenten.
+  - GBA-blokgolflead (legato, aanhoudend), `sc88pro_synth_bass` en een pulse-pluk voor de arpeggio's.
+  - Trompet-keysplit als synth brass, orgelstoten, en een GM-kit (kick 36, snare 38/40).
+- **Victini v2:**
+  - Opener, stijgend koper met grote sprongen.
+  - Key change E → F in de climax.
+  - Buitelende bells, stijgende arpeggio's, octaafbas en snare-roffels naar de drops.
+- **Darkrai v2:** duisterder, maar bijgewerkt in plaats van herschreven.
+  - Steeds wisselende maten (5–11 achtsten).
+  - Rauwe koperstoten (verminderd akkoord, tritonuscluster) en een lage orgeldrone.
+  - Het wiegelied blijft.
+- **Genesect v2:** Prodigy big beat / hard techno op 152 bpm.
+  - Strakke breakbeat zonder syncopen, ghost notes of swing.
+  - Overstuurde bas in rechte achtsten, industriële stoten, risers en drops.
+- **Batchcontrole:** alle zes 0 overlopen, piek 72–109/127.
+
+### [v0.9.86] - Wallace en Steven consistent
+- **Gym 8-rematches** (Wallace 2–5) heetten nog JUAN, met Juans foto. Nu WALLACE met zijn eigen foto.
+- **Battle Stadium:**
+  - WALLACE is nu gymleider Wallace, met zijn sterkste rematchteam, eigen sprite en een omroeptekst.
+  - Het oude vanilla-kampioenteam is weg.
+  - JUAN (Route 129) staat er nu als eigen personage in ("He taught WALLACE everything. Then WALLACE took his gym. Awkward.").
+  - Steven blijft de kampioen in de pool.
+  - Puntendrempels van sommige compagnons verschuiven daardoor (gegenereerd).
+- **Match Call:** het oude contact "WALLACE, CHAMPION" verschijnt nooit meer; Steven staat al als contact in de lijst.
+- **Hall of Fame:** Steven loopt mee in plaats van Wallace, met nieuwe metal-teksten ("Forged in steel, like a METAL album." / "Horns up!").
+- **Kampioenszaal:** scriptlabels hernoemd naar Steven; `TRAINER_NAMEN.md` bijgewerkt.
+
+### [v0.9.87] - Gymleider-remixes ronde 2 (Wattson en Wallace goedgekeurd)
+Volgens Jordi's GBA-instructies per leider:
+
+| Leider | Wat er veranderde |
+|---|---|
+| Roxanne | Emerald-rock-snare (gated) met een PSG-tik, slapbas, dubbele distortion-lead in tertsen met vibrato |
+| Brawly | drop-gestemde distortion-chugs, extreem kort op de off-beats; double kick op PSG-ruis; scratch-sweeps op de overgangen |
+| Flannery | GBA-nylon met rasgueado, palmas (rimshot/side stick in 16en), castagnetten op PSG-ruis |
+| Norman | melodie terug op de Emerald-instrumenten; walking bass (finger/fretless), ride, gelaagde brass-stoten, pizzicato op de 'en' |
+| Winona | geen koper meer; PSG-blokgolflead, celesta, synthpluck, pads, buisklokken, synth bass, dance-kick, clap op 2 en 4 |
+| Tate & Liza | psy-bas op het PSG-golfkanaal (eigen 4-bit zaagtand) in 16en; melodie als 16e-arpeggio's (Liza omlaag, Tate omhoog) met pitch-bend-sweeps; 144 bpm |
+
+- Batchcontrole: 0 overlopen, piek 82–105/127.
+
+### [v0.9.88] - Muziekbatch 5 (11 nummers)
+- **Heatran v7:** actief en dynamisch, met 5 riffs en 4 tempowissels (74 ↔ 130 bpm).
+  - Dreigende intro met slides en bends, dan een drumfill naar een stompende palm-mute-riff (Green Machine-achtig).
+  - Daarna een Gardenia-achtige groove, sludge met kreunende lead, een beukriff met crashes, een lead-climax en de Regi-dreiging.
+  - Stops en tomfills vóór elke riffwissel.
+  - De lint keurt nu ook saaiheid af, naast ska.
+- **Mitch v5:**
+  - Lead 25% zachter; reese en wobble voller en luider.
+  - Hardere kick en snare, met ducking van 1–2 frames.
+- **Neo Plasma v9:**
+  - Vette synth-brass/pulse-lead op de opening-run en het loopbegin (+25%).
+  - Valse noten gecorrigeerd: G→A in de gitaar (fout in de bron), G uit de E-akkoorden, 49 off-beat-stoten op een oud akkoord.
+  - De bridge krijgt stijgende arpeggio's en bas-stoten.
+- **Victini v3:** nieuwe, strakke intro met stijgende koperstoten en een V-fanfare. De loop is gelijk aan v2.
+- **Darkrai v3:**
+  - Opbouw vanuit het wiegelied naar een zware climax halverwege, met lage koperstoten en schurende clusterakkoorden.
+  - De climax ligt ±4,7 dB boven het begin.
+  - -V078 (piek 128 → 111).
+- **Genesect v3:** terug naar v1 (cyber-funk), met strakkere fills, roffels en stops.
+- **Gymleiders ronde 3** (oorzaak "kermis": hoempa-bas, originele PSG- en koperbegeleiding, ska-skank). Alle begeleiding is opnieuw gebouwd; alleen de melodie komt uit het origineel.
+  - **Roxanne:** 80s hard rock in half-time, diepe rock-snare, powerchords, distortion-lead met bends.
+  - **Brawly:** nu-metal met drop-C-chugs op tel 1, double kick en de scratches van v1.
+  - **Flannery:** rumba flamenca met palmas, cajón, rasgueado en een funky fretloze bas.
+  - **Winona:** donkere dance pop (supersaw, reese, harde snare).
+  - **Tate & Liza:** Goa op 138 bpm met K-B-B-B-bas en galop-arpeggio's. De melodie is modaal verduisterd.
+- **Batchcontrole:** alle 11 0 overlopen, piek ≤ 114/127.
+
+### [v0.9.89] - Dave: eigen gevechtstransitie (GOAL!)
+- **Dave krijgt een penalty-transitie, gezien vanuit de schutter**, op de riff van Freed From Desire:
+  - Het voetbalveld met tribune en goal gaat open als een tv-beeld en de bal wipt op de stip.
+  - Op de volgende riffnoot wordt hij getrapt (met effect).
+  - Op de laatste noot zit hij strak in de winkelhaak: tik tegen paal en lat, het net bolt, het beeld schudt.
+  - Dan komt GOAL! groot en schuddend in beeld, en op de klap van tel 5 gaat het naar het gevecht.
+- **Sync:** gemeten met `gMPlayInfo_BGM.clock`; de transitie begint 19 frames na de muziek.
+- **Waar:** alleen Dave, ook in het Battle Stadium.
+- **Bouwscript:** `tools/grounded/dave_transition.py`; de baan van de bal is vooraf berekend in 3D-perspectief.

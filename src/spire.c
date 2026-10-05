@@ -40,6 +40,7 @@ EWRAM_DATA u8 gSpirePattern[PARTY_SIZE][8] = {0};   // vaste patronen van de vij
 EWRAM_DATA u8 gSpirePatternStep[PARTY_SIZE] = {0};
 EWRAM_DATA u8 gSpireHiddenIntent = 0;
 EWRAM_DATA static u8 sRelicEndureUsed = 0;    // Resist Feather: bit per partyplek van de speler
+EWRAM_DATA static u16 sOpeningTaken[MAX_BATTLERS_COUNT] = {0}; // openingsbescherming: schade deze beurt
 
 // act-factor van het blok (procenten), per act 1-3
 static const u8 sActBlockFactor[] = {100, 100, 125, 150};
@@ -55,6 +56,27 @@ void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent)
         maxHp = 9999;
     SetMonData(mon, MON_DATA_MAX_HP, &maxHp);
     SetMonData(mon, MON_DATA_HP, &maxHp);
+}
+
+// Vormwissel in een gevecht (Schooling, Zen Mode, Disguise, ...): CalculateMonStats rekent de max HP opnieuw uit
+// zonder de Spire-vermenigvuldiger (Totem Wishiwashi had na het scholen 220 i.p.v. 440 HP). Zet hem terug en houd
+// het verschil in HP zoals CalculateMonStats dat doet.
+void Spire_RescaleAfterRecalc(u32 battler, struct Pokemon *mon, u32 hpBefore, u32 oldMaxHp)
+{
+    u32 party = gBattlerPartyIndexes[battler];
+    u32 percent, maxHp;
+    s32 hp;
+
+    if (!gSpireBattle || party >= PARTY_SIZE)
+        return;
+    percent = IsOnPlayerSide(battler) ? Spire_PlayerHpPercent(party) : gSpireEnemyHp[party];
+    if (percent == 0 || percent == 100)
+        return;
+    maxHp = min(9999, GetMonData(mon, MON_DATA_MAX_HP) * percent / 100);
+    hp = (hpBefore == 0) ? 0 : (s32)hpBefore + (s32)maxHp - (s32)oldMaxHp;
+    hp = max(hpBefore ? 1 : 0, min((s32)maxHp, hp));
+    SetMonData(mon, MON_DATA_MAX_HP, &maxHp);
+    SetMonData(mon, MON_DATA_HP, &hp);
 }
 
 // Na het aanmaken van de vijandelijke party: de eerste is de baas, de rest normaal.
@@ -201,6 +223,7 @@ void Spire_EndTurn(void)
         // Shed Shell (relic): de helft van het blok van je eigen Pokémon blijft staan
         gSpireBlock[i] = (Spire_HasRelic(SPIRE_RELIC_SHED_SHELL) && IsOnPlayerSide(i)) ? gSpireBlock[i] / 2 : 0;
         gSpireBlockAbsorbed[i] = 0;
+        sOpeningTaken[i] = 0;
     }
     for (i = 0; i < PARTY_SIZE; i++)
         gSpirePatternStep[i]++;
@@ -232,7 +255,29 @@ void Spire_ClearBlocks(void)
     {
         gSpireBlock[i] = 0;
         gSpireBlockAbsorbed[i] = 0;
+        sOpeningTaken[i] = 0;
     }
+}
+
+// Klap-limiet: hoeveel één klap van een vijand hooguit doet bij een Pokémon van de speler (0xFFFF = geen grens).
+u32 Spire_HitCap(u32 battlerAtk, u32 battlerDef)
+{
+    if (!gSpireBattle || !IsOnPlayerSide(battlerDef) || IsOnPlayerSide(battlerAtk) || SPIRE_HIT_CAP >= 100)
+        return 0xFFFF;
+    return max(1, gBattleMons[battlerDef].maxHP * SPIRE_HIT_CAP / 100);
+}
+
+// Openingsbescherming: hoeveel schade een vijand deze beurt nog mag doen bij een Pokémon van de speler
+// (0xFFFF = geen grens). Zie SPIRE_OPENING_CAP in spire.h.
+u32 Spire_OpeningCapLeft(u32 battlerAtk, u32 battlerDef)
+{
+    u32 cap;
+
+    if (!gSpireBattle || !IsOnPlayerSide(battlerDef) || IsOnPlayerSide(battlerAtk)
+     || gBattleResults.battleTurnCounter >= SPIRE_OPENING_TURNS)
+        return 0xFFFF;
+    cap = gBattleMons[battlerDef].maxHP * SPIRE_OPENING_CAP / 100;
+    return cap > sOpeningTaken[battlerDef] ? cap - sOpeningTaken[battlerDef] : 0;
 }
 
 // Blok = 15% van max HP x (gemiddelde Def/SpD gedeeld door een base-80-stat op dit level) x act-factor.
@@ -265,17 +310,31 @@ void Spire_AbsorbDamage(u32 battlerDef)
 
     if (!gSpireBattle || *dmg <= 0)
         return;
+    // klap-limiet (SPIRE_HIT_CAP): één klap van een vijand hooguit 40% van de max HP
+    *dmg = min((s32)*dmg, (s32)Spire_HitCap(gBattlerAttacker, battlerDef));
     // Iron Ball (relic): elke klap op je team 2% van de max HP minder (minstens 1 schade)
     if (IsOnPlayerSide(battlerDef) && Spire_HasRelic(SPIRE_RELIC_IRON_BALL))
         *dmg = max(1, *dmg - (s32)(gBattleMons[battlerDef].maxHP * 2 / 100));
-    if (gSpireBlock[battlerDef] == 0)
-        return;
-    absorbed = min((u32)*dmg, gSpireBlock[battlerDef]);
-    if (absorbed == (u32)*dmg)
-        absorbed |= SPIRE_FULL_BLOCK;
-    *dmg -= absorbed & ~SPIRE_FULL_BLOCK;
-    gSpireBlock[battlerDef] -= absorbed & ~SPIRE_FULL_BLOCK;
-    gSpireBlockAbsorbed[battlerDef] = absorbed;
+    if (gSpireBlock[battlerDef] != 0)
+    {
+        absorbed = min((u32)*dmg, gSpireBlock[battlerDef]);
+        if (absorbed == (u32)*dmg)
+            absorbed |= SPIRE_FULL_BLOCK;
+        *dmg -= absorbed & ~SPIRE_FULL_BLOCK;
+        gSpireBlock[battlerDef] -= absorbed & ~SPIRE_FULL_BLOCK;
+        gSpireBlockAbsorbed[battlerDef] = absorbed;
+    }
+    // openingsbescherming (beurt 1-3): na het blok, alle klappen van deze beurt samen
+    if (*dmg > 0)
+    {
+        u32 left = Spire_OpeningCapLeft(gBattlerAttacker, battlerDef);
+
+        if (left != 0xFFFF)
+        {
+            *dmg = max(1, min((s32)*dmg, (s32)left));
+            sOpeningTaken[battlerDef] += *dmg;
+        }
+    }
 }
 
 // Uit Cmd_resultmessage: meld hoeveel het blok heeft opgevangen.
@@ -332,9 +391,14 @@ void HandleAction_SpireDefend(void)
 static const u8 sText_Both[] = _("both");
 
 // Schade als percentage van de max HP van het doel (in doubles staan er geen HP-getallen bij je eigen Pokémon).
+static u32 CappedDamage(u32 battler, u32 target, u32 dmg)
+{
+    return min(min(dmg, Spire_HitCap(battler, target)), Spire_OpeningCapLeft(battler, target));
+}
+
 static u32 DamagePercent(u32 battler, u32 target, u32 moveIndex)
 {
-    u32 dmg = gAiLogicData->simulatedDmg[battler][target][moveIndex].median;
+    u32 dmg = CappedDamage(battler, target, gAiLogicData->simulatedDmg[battler][target][moveIndex].median);
     u32 pct;
 
     if (gBattleMons[target].maxHP == 0)
@@ -358,11 +422,11 @@ static u8 *AppendKoMark(u8 *dst, u32 battler, u32 target, u32 moveIndex)
 {
     const struct SimulatedDamage *dmg = &gAiLogicData->simulatedDmg[battler][target][moveIndex];
 
-    if (dmg->maximum >= gBattleMons[target].hp)
+    if (CappedDamage(battler, target, dmg->maximum) >= gBattleMons[target].hp)
     {
         *dst++ = CHAR_K;
         *dst++ = CHAR_O;
-        if (dmg->minimum < gBattleMons[target].hp)
+        if (CappedDamage(battler, target, dmg->minimum) < gBattleMons[target].hp)
             *dst++ = CHAR_QUESTION_MARK;
     }
     *dst = EOS;
@@ -373,7 +437,7 @@ static u8 *AppendDamage(u8 *dst, u32 battler, u32 target, u32 moveIndex)
 {
     *dst++ = CHAR_SPACE;
     dst = AppendPercent(dst, DamagePercent(battler, target, moveIndex));
-    if (gAiLogicData->simulatedDmg[battler][target][moveIndex].maximum >= gBattleMons[target].hp)
+    if (CappedDamage(battler, target, gAiLogicData->simulatedDmg[battler][target][moveIndex].maximum) >= gBattleMons[target].hp)
         *dst++ = CHAR_SPACE;
     return AppendKoMark(dst, battler, target, moveIndex);
 }

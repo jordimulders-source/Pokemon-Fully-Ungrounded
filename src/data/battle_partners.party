@@ -468,10 +468,10 @@ Ability: Levitate
 - Psychic
 - Lunar Blessing
 
-=== PARTNER_STADIUM_JUAN ===
-Name: JUAN
+=== PARTNER_STADIUM_WALLACE ===
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Back Pic: Brendan
@@ -636,38 +636,41 @@ Ability: Intimidate
 - Earthquake
 - Dragon Dance
 
-=== PARTNER_STADIUM_WALLACE ===
-Name: WALLACE
-Class: Champion
-Pic: Champion Wallace
+=== PARTNER_STADIUM_JUAN ===
+Name: Juan
+Class: Rival
+Pic: Leader Juan
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Basic Trainer
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_PREDICT_SWITCH
 
-Wailord
+Kingdra @ Haban Berry
 Level: 50
+Ability: Swift Swim 
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
-
-Ludicolo
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
-
-Milotic @ Sitrus Berry
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
+- Hydro Pump
 - Ice Beam
+- Dragon Pulse
+
+Walrein @ Leftovers
+Level: 50
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
+- Sheer Cold
+- Super Fang
+- Surf
+
+Relicanth @ Damp Rock
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slack Off
+- Earthquake
+- Wave Crash
+- Head Smash
 
 === PARTNER_STADIUM_STEVEN ===
 Name: STEVEN
@@ -3049,7 +3052,340 @@ Nature: Timid
 - Heat Wave
 - Roost
 
-=== PARTNER_STADIUM_ALBERT ===
+=== PARTNER_STADIUM_N ===
+Name: N
+Class: King
+Pic: N
+Gender: Male
+Music: Cool
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Vanilluxe @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Aurora Veil
+- Flash Cannon
+
+Archeops @ Life Orb
+Level: 50
+Ability: Defeatist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Head Smash
+- Dual Wingbeat
+- Earthquake
+- U-turn
+
+Zekrom @ Life Orb
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bolt Strike
+- Dragon Claw
+- Dragon Dance
+- Crunch
+
+=== PARTNER_STADIUM_GHETSIS ===
+Name: GHETSIS
+Class: Plasma Boss
+Pic: Ghetsis
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Kingambit @ Black Glasses
+Level: 50
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Swords Dance
+- Sucker Punch
+- Iron Head
+- Knock Off
+
+Kyurem-Black @ Choice Band
+Level: 50
+Ability: Teravolt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Fusion Bolt
+- Icicle Spear
+- Dragon Claw
+- Outrage
+
+Hydreigon @ Choice Specs
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power
+
+=== PARTNER_STADIUM_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Cryogonal @ Light Clay
+Level: 50
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Vanilluxe @ Choice Specs
+Level: 50
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Weavile @ Razor Claw
+Level: 50
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== PARTNER_STADIUM_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Mandibuzz @ Leftovers
+Level: 50
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Gothitelle @ Choice Scarf
+Level: 50
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 50
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover
+
+=== PARTNER_STADIUM_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Greninja @ Expert Belt
+Level: 50
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 50
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Bisharp @ Eviolite
+Level: 50
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== PARTNER_STADIUM_PLASMA_GRUNT_M ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Garbodor @ Black Sludge
+Level: 50
+Ability: Air Pollution
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Gunk Shot
+- Drain Punch
+- Toxic Spikes
+- Spikes
+
+Crobat @ Sharp Beak
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+Golurk @ Life Orb
+Level: 50
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Dynamic Punch
+- Earthquake
+- Poltergeist
+- Stone Edge
+
+=== PARTNER_STADIUM_PLASMA_GRUNT_F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Klinklang @ Leftovers
+Level: 50
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Shift Gear
+- Gear Grind
+- Wild Charge
+- Substitute
+
+Mienshao @ Life Orb
+Level: 50
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- High Jump Kick
+- U-turn
+- Knock Off
+
+Chandelure @ Choice Specs
+Level: 50
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Fire Blast
+- Energy Ball
+- Trick
+
+=== PARTNER_STADIUM_PETREL ===
+Name: PETREL
+Class: Rocket Exec
+Pic: Petrel
+Gender: Male
+Music: Rocket
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ditto @ Choice Scarf
+Level: 50
+Ability: Imposter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Relaxed
+- Transform
+
+Weezing_Galar @ Black Sludge
+Level: 50
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Strange Steam
+- Will-O-Wisp
+- Pain Split
+- Defog
+
+Zoroark @ Choice Specs
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Night Daze
+- Flamethrower
+- Sludge Bomb
+- Focus Blast
+
+=== PARTNER_STADIUM_DAVE ===
 Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3070,7 +3406,7 @@ Kingambit
 Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== PARTNER_STADIUM_SAMUEL ===
+=== PARTNER_STADIUM_MITCH ===
 Name: Mitch
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -3106,7 +3442,7 @@ Ability: Regenerator
 - Earthquake
 - Aqua Tail
 
-=== PARTNER_STADIUM_OWEN ===
+=== PARTNER_STADIUM_SICKBLIK ===
 Name: SickBlik
 Class: Cooltrainer
 Pic: Cooltrainer M

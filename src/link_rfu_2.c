@@ -78,7 +78,7 @@ struct RfuDebug
 };
 
 COMMON_DATA u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {0};
-COMMON_DATA struct RfuManager gRfu = {0};
+EWRAM_DATA struct RfuManager gRfu = {0}; // Project Grounded: uit IWRAM (draadloze adapter wordt niet gebruikt; ruimte voor de stack)
 
 static u8 sHeldKeyCount;
 static u8 sResendBlock8[CMD_LENGTH * 2];

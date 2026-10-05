@@ -931,3 +931,141 @@ const struct Tileset gTileset_NightmareFacility =
     .metatileAttributes = gMetatileAttributes_Facility,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_FortreeJungle = // Project Grounded: Fortree Jungle, Fortree + tropische tiles achteraan, jungle_tileset.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FortreeJungle,
+    .palettes = gTilesetPalettes_FortreeJungle,
+    .metatiles = gMetatiles_FortreeJungle,
+    .metatileAttributes = gMetatileAttributes_FortreeJungle,
+    .callback = InitTilesetAnim_Fortree,
+};
+
+const struct Tileset gTileset_ToadstoolHollow = // Project Grounded: Toadstool Hollow (paddenstoelenbos), mushroom_forest.py
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ToadstoolHollow,
+    .palettes = gTilesetPalettes_ToadstoolHollow,
+    .metatiles = gMetatiles_ToadstoolHollow,
+    .metatileAttributes = gMetatileAttributes_ToadstoolHollow,
+    .callback = NULL,
+};
+
+
+// Project Grounded: Safari Zone, fairy (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariFairyGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariFairyGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariFairy =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariFairy,
+    .palettes = gTilesetPalettes_SafariFairy,
+    .metatiles = gMetatiles_SafariFairy,
+    .metatileAttributes = gMetatileAttributes_SafariFairy,
+    .callback = InitTilesetAnim_Fortree,
+};
+
+// Project Grounded: Safari Zone, thunder (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariThunderGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariThunderGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariThunder =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariThunder,
+    .palettes = gTilesetPalettes_SafariThunder,
+    .metatiles = gMetatiles_SafariThunder,
+    .metatileAttributes = gMetatileAttributes_SafariThunder,
+    .callback = InitTilesetAnim_Fallarbor,
+};
+
+// Project Grounded: Safari Zone, spook (tools/grounded/maptools/safari_tilesets.py)
+const struct Tileset gTileset_SafariSpookGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SafariSpookGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SafariSpook =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SafariSpook,
+    .palettes = gTilesetPalettes_SafariSpook,
+    .metatiles = gMetatiles_SafariSpook,
+    .metatileAttributes = gMetatileAttributes_SafariSpook,
+    .callback = InitTilesetAnim_Lilycove,
+};
+
+// Project Grounded: Rocket-hideout onder Fortree Jungle. Tiles/metatiles van General en Facility, eigen (Rocket-)paletten
+// (tools/grounded/maptools/rocket_hideout.py)
+const struct Tileset gTileset_RocketGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_RocketGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_RocketFacility =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Facility,
+    .palettes = gTilesetPalettes_RocketFacility,
+    .metatiles = gMetatiles_Facility,
+    .metatileAttributes = gMetatileAttributes_Facility,
+    .callback = NULL,
+};
+
+
+const struct Tileset gTileset_ScorchedSlab = // Project Grounded: Scorched Slab (Cave-tiles, warme paletten, lichtvlekken)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cave,
+    .palettes = gTilesetPalettes_ScorchedSlab,
+    .metatiles = gMetatiles_ScorchedSlab,
+    .metatileAttributes = gMetatileAttributes_ScorchedSlab,
+    .callback = InitTilesetAnim_Cave,
+};
+const struct Tileset gTileset_MangroveMire = // Project Grounded: Mangrove Mire, eigen moerastiles (mangrove_swamp.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MangroveMire,
+    .palettes = gTilesetPalettes_MangroveMire,
+    .metatiles = gMetatiles_MangroveMire,
+    .metatileAttributes = gMetatileAttributes_MangroveMire,
+    .callback = NULL,
+};

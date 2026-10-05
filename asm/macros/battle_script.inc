@@ -2469,3 +2469,28 @@
 	.macro tryabsorbtoxicspikesonfaint
 	callnative BS_TryAbsorbToxicSpikesOnFaint
 	.endm
+
+	@ Project Grounded: signature moves
+	.macro trysetninelives failInstr:req
+	callnative BS_TrySetNineLives
+	.4byte \failInstr
+	.endm
+
+	.macro ninelivescurestatus
+	callnative BS_NineLivesCureStatus
+	.endm
+
+	.macro trywindchimeheal battler:req, failInstr:req
+	callnative BS_TryWindChimeHeal
+	.byte \battler
+	.4byte \failInstr
+	.endm
+
+	.macro trysetweatherreport noChangeInstr:req
+	callnative BS_TrySetWeatherReport
+	.4byte \noChangeInstr
+	.endm
+
+	.macro recalcmovetype
+	callnative BS_RecalcMoveType
+	.endm

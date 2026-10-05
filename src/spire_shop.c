@@ -659,7 +659,8 @@ void Spire_OpenShop(void (*onDone)(void))
     {
         struct Pokemon *mon = Spire_GetRunMon(i);
 
-        sShop->monIconIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon, 160 + 14, 32 + 14 + i * 38,
+        sShop->monIconIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon, 160 + 14,
+                                             32 + 14 + i * 38 + Spire_IconYAdjust(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_PERSONALITY)),
                                              0, GetMonData(mon, MON_DATA_PERSONALITY));
         gSprites[sShop->monIconIds[i]].oam.priority = 0;
     }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "burglar.h"
 #include "battle_setup.h"
 #include "bike.h"
 #include "coord_event_weather.h"
@@ -625,6 +626,8 @@ static bool8 TryStartStepBasedScript(struct MapPosition *position, u16 metatileB
     if (TryStartCoordEventScript(position) == TRUE)
         return TRUE;
     if (TryStartWarpEventScript(position, metatileBehavior) == TRUE)
+        return TRUE;
+    if (Burglar_TryTriggerOnStep(position->x, position->y)) // Project Grounded
         return TRUE;
     if (TryStartMiscWalkingScripts(metatileBehavior) == TRUE)
         return TRUE;

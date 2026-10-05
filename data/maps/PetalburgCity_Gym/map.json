@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Mary",
+      "script": "PetalburgCity_Gym_EventScript_Daenarys",
       "flag": "0"
     },
     {
@@ -51,7 +51,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Randall",
+      "script": "PetalburgCity_Gym_EventScript_GiHun",
       "flag": "0"
     },
     {
@@ -64,7 +64,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Parker",
+      "script": "PetalburgCity_Gym_EventScript_Jonas",
       "flag": "0"
     },
     {
@@ -77,7 +77,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Alexia",
+      "script": "PetalburgCity_Gym_EventScript_Michonne",
       "flag": "0"
     },
     {
@@ -90,7 +90,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_George",
+      "script": "PetalburgCity_Gym_EventScript_Harvey",
       "flag": "0"
     },
     {
@@ -103,7 +103,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Jody",
+      "script": "PetalburgCity_Gym_EventScript_Eleven",
       "flag": "0"
     },
     {
@@ -116,7 +116,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_Gym_EventScript_Berke",
+      "script": "PetalburgCity_Gym_EventScript_Horatio",
       "flag": "0"
     },
     {

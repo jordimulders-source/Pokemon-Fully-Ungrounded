@@ -103,6 +103,12 @@ enum BattleTransition
     B_TRANSITION_VICTINI, // Project Grounded: Victini, een grote V in vuur (V-create)
     B_TRANSITION_JIRACHI, // Project Grounded: Jirachi, een wensster tuimelt fladderend over het beeld
     B_TRANSITION_DARKRAI, // Project Grounded: Darkrai, nachtmerrierook sluit het beeld en een blauw oog gaat open
+    B_TRANSITION_NEO_PLASMA, // Project Grounded: Neo Team Plasma (BW2): blauwe P, lichtstreep-Z, flits, schild, bliksems
+    B_TRANSITION_ROCKET, // Project Grounded: Team Rocket, zwarte balken met rode strepen en een stempelende rode R
+    B_TRANSITION_ZARUDE, // Project Grounded: Zarude, de jungle groeit dicht, lianen, drie klauwkrassen en een silhouet met rode ogen
+    B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
+    B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
+    B_TRANSITION_DAVE, // Project Grounded: Dave (Freed From Desire), een penalty strak in de winkelhaak, dan GOAL!
     B_TRANSITION_COUNT
 };
 

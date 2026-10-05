@@ -429,6 +429,8 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
     case FIRST_EVENT_BLOCK_HEAL_ITEMS:
         if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsLeftoversActivation))
             effect = TRUE;
+        else if (SwallowedItemBattleEffects(battler, 0, IsLeftoversActivation)) // Project Grounded: Gulp Down
+            effect = TRUE;
         gBattleStruct->eventState.endTurnBlock = 0;
         gBattleStruct->eventState.endTurnBattler++;
         break;

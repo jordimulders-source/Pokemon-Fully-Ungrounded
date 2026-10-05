@@ -140,6 +140,13 @@
       "elevation": 0,
       "dest_map": "MAP_FIERY_PATH_HEATRAN_LAIR",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_FIERY_PATH_EMBER_HOLLOW",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

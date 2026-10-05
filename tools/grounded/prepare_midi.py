@@ -8,9 +8,20 @@
 # Gebruik: zie tools/grounded/midi_songs.py
 import mido
 
-def prepare(src, dst, drop_tracks=(), channel_map=None, program_map=None, loop=True):
+def drum_remap(drum_map, note, vel):
+    """drum_map-waarde: noot, of (noot, velocityfactor) (bv. side stick -> zachtere snare)."""
+    if not drum_map or note not in drum_map:
+        return note, vel
+    t = drum_map[note]
+    if isinstance(t, tuple):
+        return t[0], (max(1, min(127, round(vel * t[1]))) if vel else 0)
+    return t, vel
+
+
+def prepare(src, dst, drop_tracks=(), channel_map=None, program_map=None, loop=True, drum_map=None):
     channel_map = channel_map or {}   # {track_index: new_channel}
     program_map = program_map or {}   # {track_index: new_program}
+    # drum_map: zie prepare_auto (PSG-drumnoten in rs_drumset -> DirectSound)
     m = mido.MidiFile(src)
     out = mido.MidiFile(type=1, ticks_per_beat=m.ticks_per_beat)
     end_tick = 0
@@ -25,6 +36,9 @@ def prepare(src, dst, drop_tracks=(), channel_map=None, program_map=None, loop=T
                 msg = msg.copy(channel=ch)
                 if ch == 9:
                     is_drum = True
+                    if drum_map and msg.type in ('note_on', 'note_off'):
+                        n, v = drum_remap(drum_map, msg.note, msg.velocity)
+                        msg = msg.copy(note=n, velocity=v)
                 if msg.type == 'program_change':
                     if ch == 9:
                         msg = msg.copy(program=127)
@@ -119,10 +133,13 @@ def write_voicegroup(path='sound/voicegroups/grounded_gm.inc'):
 
 def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                  drop_channels=(), channel_category=None, transpose=None, max_note=None,
-                 volume=None):
+                 volume=None, min_note=None, drum_map=None):
     """drop_channels: MIDI-kanalen die wegvallen; channel_category: {kanaal: categorie} om het instrument
     te overschrijven (bv. rips met niet-GM-programma's); transpose: {kanaal: halve tonen};
     max_note: noten hoger dan dit gaan per octaaf omlaag (tegen piepende hoge tonen);
+    drum_map: {drumnoot: drumnoot of (drumnoot, velocityfactor)}: andere noot in de kit (bv. PSG-noten in rs_drumset -> een DirectSound-sample:
+    een PSG-'crash' klinkt als een lange 'puuup', Ghetsis v0.9.65);
+    min_note: {kanaal: noot}: lagere noten gaan per octaaf omhoog (een sample ver omlaag gestemd = lange 'puuup');
     volume: {categorie: 0-127} spoorvolume (standaard 127), om de balans tussen bas en midden te regelen."""
     channel_category = channel_category or {}
     transpose = transpose or {}
@@ -150,9 +167,13 @@ def prepare_auto(src, dst, max_tracks=10, loop=True, report=True,
                 cat = 'drums' if ch == 9 else channel_category.get(ch, gm_category(prog.get(ch, 0))[0])
                 v = int(msg.velocity * vol.get(ch, 100) / 127 * expr.get(ch, 127) / 127)
                 n = msg.note + transpose.get(ch, 0)
+                if ch == 9 and drum_map:
+                    n, v = drum_remap(drum_map, n, v)
                 if max_note is not None and ch != 9:
                     while n > max_note:
                         n -= 12
+                while min_note and n < min_note.get(ch, 0):
+                    n += 12
                 n = max(0, min(127, n))
                 notes.setdefault(cat, []).append((tick, 1, n, max(1, min(127, v))))
                 active.setdefault((ch, msg.note), []).append((cat, n))

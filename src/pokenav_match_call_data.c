@@ -480,23 +480,23 @@ static const struct MatchCallStructTrainer sTateLizaMatchCallHeader =
     .textData = sTateLizaTextScripts
 };
 
-static const match_call_text_data_t sJuanTextScripts[] = {
-    { MatchCall_Text_Juan1, 0xFFFE,              0xFFFF },
-    { MatchCall_Text_Juan2, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Juan3, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Juan4, FLAG_SYS_GAME_CLEAR, 0xFFFF },
+static const match_call_text_data_t sWallaceTextScripts[] = {
+    { MatchCall_Text_Wallace1, 0xFFFE,              0xFFFF },
+    { MatchCall_Text_Wallace2, 0xFFFF,              0xFFFF },
+    { MatchCall_Text_Wallace3, 0xFFFF,              0xFFFF },
+    { MatchCall_Text_Wallace4, FLAG_SYS_GAME_CLEAR, 0xFFFF },
     { NULL,                 0xFFFF,              0xFFFF }
 };
 
-static const struct MatchCallStructTrainer sJuanMatchCallHeader =
+static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_SOOTOPOLIS_CITY,
-    .flag = FLAG_ENABLE_JUAN_MATCH_CALL,
-    .rematchTableIdx = REMATCH_JUAN,
+    .flag = FLAG_ENABLE_WALLACE_MATCH_CALL,
+    .rematchTableIdx = REMATCH_WALLACE,
     .desc = COMPOUND_STRING("DANDY CHARM"),
     .name = NULL,
-    .textData = sJuanTextScripts
+    .textData = sWallaceTextScripts
 };
 
 static const u8 gText_EliteFourMatchCallDesc[] = _("ELITE FOUR");
@@ -565,20 +565,20 @@ static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
     .textData = sDrakeTextScripts
 };
 
-static const match_call_text_data_t sWallaceTextScripts[] = {
-    { MatchCall_Text_Wallace, 0xFFFF, 0xFFFF },
+static const match_call_text_data_t sOldChampionTextScripts[] = {
+    { MatchCall_Text_OldChampion, 0xFFFF, 0xFFFF },
     { NULL,                   0xFFFF, 0xFFFF }
 };
 
-static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
+static const struct MatchCallStructTrainer sOldChampionMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_EVER_GRANDE_CITY,
-    .flag = FLAG_REGISTERED_WALLACE,
-    .rematchTableIdx = REMATCH_WALLACE,
+    .flag = FLAG_REGISTERED_OLD_CHAMPION,
+    .rematchTableIdx = REMATCH_OLD_CHAMPION,
     .desc = COMPOUND_STRING("CHAMPION"),
     .name = NULL,
-    .textData = sWallaceTextScripts
+    .textData = sOldChampionTextScripts
 };
 
 static const match_call_t sMatchCallHeaders[] = {
@@ -597,12 +597,12 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_FLANNERY]   = {.leader = &sFlanneryMatchCallHeader},
     [MC_HEADER_WINONA]     = {.leader = &sWinonaMatchCallHeader},
     [MC_HEADER_TATE_LIZA]  = {.leader = &sTateLizaMatchCallHeader},
-    [MC_HEADER_JUAN]       = {.leader = &sJuanMatchCallHeader},
+    [MC_HEADER_WALLACE]       = {.leader = &sWallaceMatchCallHeader},
     [MC_HEADER_SIDNEY]     = {.leader = &sSidneyMatchCallHeader},
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader}
+    [MC_HEADER_OLD_CHAMPION]    = {.leader = &sOldChampionMatchCallHeader}
 };
 
 static bool32 (*const sMatchCallGetEnabledFuncs[])(match_call_t) = {
@@ -755,6 +755,10 @@ bool32 MatchCall_GetEnabled(u32 idx)
     u32 i;
 
     if (idx >= ARRAY_COUNT(sMatchCallHeaders))
+        return FALSE;
+    // Project Grounded: Steven is de kampioen en staat al als STEVEN (MC_HEADER_STEVEN) in de lijst; het oude
+    // kampioen-contact (vanilla Wallace) blijft als lege plek bestaan (rematch-tabel/flags), maar verschijnt nooit.
+    if (idx == MC_HEADER_OLD_CHAMPION)
         return FALSE;
     matchCall = sMatchCallHeaders[idx];
     i = MatchCallGetFunctionIndex(matchCall);
@@ -991,7 +995,14 @@ static void MatchCall_GetMessage_Trainer(match_call_t matchCall, u8 *dest)
     if (matchCall.common->type != MC_TYPE_LEADER)
         MatchCall_BufferCallMessageText(matchCall.trainer->textData, dest);
     else
-        MatchCall_BufferCallMessageTextByRematchTeam(matchCall.leader->textData, matchCall.leader->rematchTableIdx, dest);
+    {
+        // Project Grounded: bellen = om een rematch vragen (of een weigering als het vandaag al was).
+        const u8 *refusal = GymLeaderRematch_TryRequestByCall(matchCall.leader->rematchTableIdx);
+        if (refusal != NULL)
+            StringExpandPlaceholders(dest, refusal);
+        else
+            MatchCall_BufferCallMessageTextByRematchTeam(matchCall.leader->textData, matchCall.leader->rematchTableIdx, dest);
+    }
 }
 
 static void MatchCall_GetMessage_Wally(match_call_t matchCall, u8 *dest)

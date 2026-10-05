@@ -121,6 +121,8 @@ static void Task_Kyogre(u8);
 static void Task_Aurora(u8); // Project Grounded
 static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
+static void Task_Regigigas(u8); // Project Grounded
+static void Task_Dave(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
 static void Task_Birch(u8); // Project Grounded
 static void Task_Raikou(u8); // Project Grounded
@@ -159,10 +161,15 @@ static void Task_Giratina(u8); // Project Grounded
 static void Task_Victini(u8); // Project Grounded
 static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
+static void Task_NeoPlasma(u8); // Project Grounded
+static void Task_Rocket(u8); // Project Grounded
+static void Task_Zarude(u8); // Project Grounded
+static void Task_PoisonChain(u8); // Project Grounded
 static void Task_AquaMagma(u8); // Project Grounded
 static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
 static bool8 Regieleki_Init(struct Task *);
+static bool8 Regigigas_Init(struct Task *);
 static void Task_Groudon(u8);
 static void Task_Rayquaza(u8);
 static void Task_ShredSplit(u8);
@@ -376,6 +383,9 @@ static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
 static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
 static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
+static const u16 sRegigigas_Tileset[] = INCBIN_U16("graphics/battle_transitions/regigigas.4bpp");
+static const u16 sRegigigas_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regigigas.bin");
+static const u16 sRegigigas_Palette[] = INCBIN_U16("graphics/battle_transitions/regigigas.gbapal");
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
 static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deoxys.bin");
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
@@ -473,9 +483,32 @@ static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
 static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
 static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
+static const u16 sNeoPlasma_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.4bpp"); // Project Grounded
+static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
+static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
+static const u16 sRocket_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rocket.4bpp");
+static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
+static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
+static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
+static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zarude.4bpp"); // Project Grounded
+static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
+static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
+static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
+static const u16 sDave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_dave.4bpp"); // Project Grounded
+static const u16 sDave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_dave.gbapal");
+static const u16 sDave_Maps[] = INCBIN_U16("graphics/battle_transitions/route_dave.bin");
+static const s16 sDave_Ball[] = INCBIN_S16("graphics/battle_transitions/route_dave_ball.bin");
+static const u32 sDaveBall_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_dave_ball.4bpp");
+static const u16 sDaveBall_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_dave_ball.gbapal");
+static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
+static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
+static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
+static const u16 sPoisonChain_Anim[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_anim.bin");
+static const u32 sZarudeSil_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zarude_silhouette.4bpp");
+static const u16 sZarudeSil_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zarude_silhouette.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
@@ -588,6 +621,12 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_VICTINI] = Task_Victini, // Project Grounded
     [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
+    [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
+    [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
+    [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
+    [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
+    [B_TRANSITION_REGIGIGAS] = Task_Regigigas, // Project Grounded
+    [B_TRANSITION_DAVE] = Task_Dave, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -683,6 +722,15 @@ static const TransitionStateFunc sRegidrago_Funcs[] =
 static const TransitionStateFunc sRegieleki_Funcs[] =
 {
     Regieleki_Init,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+static const TransitionStateFunc sRegigigas_Funcs[] =
+{
+    Regigigas_Init,
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
@@ -1600,6 +1648,11 @@ static void Task_Regieleki(u8 taskId)
     while (sRegieleki_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_Regigigas(u8 taskId)
+{
+    while (sRegigigas_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void Task_Kyogre(u8 taskId)
 {
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1704,6 +1757,12 @@ static bool8 Regidrago_Init(struct Task *task)
 static bool8 Regieleki_Init(struct Task *task)
 {
     NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
+    return FALSE;
+}
+
+static bool8 Regigigas_Init(struct Task *task)
+{
+    NewRegi_SetGfx(task, sRegigigas_Tileset, sizeof(sRegigigas_Tileset), sRegigigas_Tilemap, sRegigigas_Palette);
     return FALSE;
 }
 
@@ -7688,13 +7747,16 @@ static void Task_Genesect(u8 taskId)
 // een psychische schokgolf (scherven vliegen weg, daarachter Mewtwo met witte ogen in een paars veld).
 // tiles en tilemaps: route_transitions.py ("mewtwo"): 1-3 rand van de golf (buiten/fel/binnen), 4-7 scherven.
 // Paletten: 0-2 rustig, 3-5 ontwaakt, 6-8 schokgolf (elk een kleurcyclus van 3 standen).
-#define MEWTWO_LAB    8
-#define MEWTWO_PAGE1  14
-#define MEWTWO_PAGE2  50
-#define MEWTWO_LINE   15    // frames per regel (2 tiles per frame)
-#define MEWTWO_EYES   88
-#define MEWTWO_CRACK  96    // barst 1, +6 barst 2, +12 barst 3
-#define MEWTWO_BURST  114
+// Filmisch (Jordi): ±2,5x trager, getimed op Battle! Mewtwo (128 bpm, 1 maat = 112 frames):
+// ogen op maat 2 (224), barsten op maat 2 tel 2 / 2,67 / 3,33, de tank spat uiteen op maat 3 (336).
+#define MEWTWO_LAB    20
+#define MEWTWO_PAGE1  36
+#define MEWTWO_PAGE2  128
+#define MEWTWO_LINE   38    // frames per regel
+#define MEWTWO_EYES   224
+#define MEWTWO_CRACK  280   // barst 1, +MEWTWO_CRACK_GAP barst 2, +2x barst 3
+#define MEWTWO_CRACK_GAP 19
+#define MEWTWO_BURST  336
 #define MEWTWO_SHARDS 14
 
 static bool8 RTMewtwo_Update(struct Task *task)
@@ -7705,7 +7767,7 @@ static bool8 RTMewtwo_Update(struct Task *task)
     u16 v;
 
     if (t >= MEWTWO_CRACK)
-        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / 6, 2) * 600];
+        map = &sMewtwo_Crack[min((t - MEWTWO_CRACK) / MEWTWO_CRACK_GAP, 2) * 600];
     rad = (t >= MEWTWO_BURST) ? 12 + (t - MEWTWO_BURST) * 9 : -1;
     page = (t >= MEWTWO_PAGE2) ? 1 : 0;
 
@@ -7764,8 +7826,8 @@ static bool8 RTMewtwo_Update(struct Task *task)
         LoadPalette(&sMewtwo_Palette[(6 + (t / 2) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     else if (t >= MEWTWO_EYES)
         LoadPalette(&sMewtwo_Palette[(3 + (t / 3) % 3) * 16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 8)
-        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) * 2, RGB_BLACK); // het lab komt uit het donker
+    if (t >= MEWTWO_LAB && t < MEWTWO_LAB + 32)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - (t - MEWTWO_LAB) / 2, RGB_BLACK); // het lab komt langzaam uit het donker
 
     // trillen: licht bij het barsten, harder bij de schokgolf
     if (t >= MEWTWO_BURST)
@@ -7781,9 +7843,8 @@ static bool8 RTMewtwo_Update(struct Task *task)
 
     if (t == MEWTWO_LAB)
         PlaySE(SE_M_BUBBLE);
-    if (t == MEWTWO_EYES)
-        PlayCry_Normal(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL), 0);
-    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + 6 || t == MEWTWO_CRACK + 12)
+    // (geen cry bij de ogen: die klinkt al bij de start van het gevecht; de muziek geeft hier een aanslag)
+    if (t == MEWTWO_CRACK || t == MEWTWO_CRACK + MEWTWO_CRACK_GAP || t == MEWTWO_CRACK + 2 * MEWTWO_CRACK_GAP)
         PlaySE(SE_ICE_CRACK);
     if (t == MEWTWO_BURST)
         PlaySE(SE_ICE_BREAK);
@@ -8272,4 +8333,574 @@ static const struct RouteTransition sRT_Darkrai =
 static void Task_Darkrai(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Darkrai);
+}
+
+// ---------------- Neo Team Plasma (Black 2/White 2): nagemaakt naar de BW2-transitie (2,58 s). Een blauwe P op een donker
+// raster; een gloeiende lichtbol komt van rechts en trekt een Z door de P; alles wordt wit; het Plasma-schild verschijnt,
+// flitst twee keer en dan schieten bliksems van het schild naar de randen en flakkeren. Tiles en tilemaps (30x20, palet
+// 15 al ingevuld): tools/grounded/neo_plasma_transition.py. Tilemap 0 = P, 1-9 = lichtbol, 10 = volledige Z, 11 = schild,
+// 12-17 = bliksemvarianten. Palet 0 = normaal, palet 1 = bliksems fel (flakkeren).
+#define NP_ZSTART   14     // GIF-frame 1 (na 240 ms)
+#define NP_ZFULL    32     // GIF-frame 6: Z af (9 sleutelbeelden van 2 frames)
+#define NP_WHITE    47     // GIF-frames 7-9: naar wit
+#define NP_SHIELD   58     // GIF-frame 10: schild uit het wit
+#define NP_FLASH    86     // GIF-frames 12-13: schild flitst twee keer
+#define NP_BOLTS    94     // GIF-frames 14-30: bliksems
+#define NP_END      150
+#define NP_KEY_Z    10
+#define NP_KEY_SHIELD 11
+#define NP_KEY_BOLT 12
+#define NP_NUM_BOLT 6
+
+static bool8 RTNeoPlasma_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, key, r, white = 0;
+
+    if (t < NP_ZSTART)
+        key = 0;
+    else if (t < NP_ZFULL)
+        key = 1 + (t - NP_ZSTART) / 2;
+    else if (t < NP_SHIELD)
+        key = NP_KEY_Z;
+    else if (t < NP_BOLTS)
+        key = NP_KEY_SHIELD;
+    else
+        key = NP_KEY_BOLT + ((t - NP_BOLTS) / 4) % NP_NUM_BOLT;
+
+    // alleen bij een nieuw beeld de hele tilemap in een keer overschrijven (niet eerst wissen)
+    if (task->tRtA != key + 1)
+    {
+        for (r = 0; r < 20; r++)
+            CpuCopy16(&sNeoPlasma_Maps[key * 600 + r * 30], &tilemap[r * 32], 30 * 2);
+        task->tRtA = key + 1;
+    }
+
+    // de rest van het beeld (overworld, sprites) zwart; het raster dekt het hele scherm
+    BlendPalettes(RT_SCENE_PALETTES, 16, RGB_BLACK);
+    if (t >= NP_BOLTS && (t & 2))
+        LoadPalette(&sNeoPlasma_Palette[16], BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+
+    if (t < 4)
+        BlendPalette(BG_PLTT_ID(15), 16, 16 - t * 4, RGB_BLACK);
+    else if (t >= NP_WHITE && t < NP_WHITE + 7)
+        white = 2 + (t - NP_WHITE) * 2;
+    else if (t >= NP_WHITE + 7 && t < NP_SHIELD)
+        white = 16;
+    else if (t >= NP_SHIELD && t < NP_SHIELD + 4)
+        white = 10 - (t - NP_SHIELD) * 3;
+    else if (t >= NP_FLASH && t < NP_FLASH + 4)
+        white = 9;
+    else if (t >= NP_FLASH + 4 && t < NP_BOLTS)
+        white = 13;
+    else if (t >= NP_BOLTS && t < NP_BOLTS + 4)
+        white = 4;
+    if (white > 0)
+        BlendPalette(BG_PLTT_ID(15), 16, white, RGB_WHITE);
+
+    return t >= NP_END;
+}
+
+static const struct RouteTransition sRT_NeoPlasma =
+{
+    sNeoPlasma_Tileset, sizeof(sNeoPlasma_Tileset), sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
+};
+
+static void Task_NeoPlasma(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_NeoPlasma);
+}
+
+// ---------------- Team Rocket: zwarte balken schuiven om en om van links en rechts dicht (rode voorrand), rode
+// snelheidsstrepen schieten over het zwart, en een grote rode R zoomt draaiend in en stempelt met een klap
+// (witte flits, het beeld schudt). Alle grunts en Petrel (zie GetTrainerBattleTransition in battle_setup.c).
+// tiles: 1 zwart, 2/3 rode voorrand (balk van links / van rechts), 4 streep-lijf, 5 streep-kop, 6 streep-staart
+#define ROCKET_STAMP 18 // frame waarop de R neerkomt
+
+// snelheid per rij (tiles per frame) en een vertraging (frames), zodat de balken niet tegelijk aankomen
+static const u8 sRocketBarSpeed[20] = {4, 3, 5, 3, 4, 5, 3, 4, 3, 5, 4, 3, 5, 4, 3, 4, 5, 3, 4, 3};
+static const u8 sRocketBarDelay[20] = {0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 0, 1};
+// snelheidsstrepen: rij, snelheid in tiles per frame (negatief = naar links), startframe
+static const s8 sRocketStreaks[][3] = {
+    {2, 3, 8}, {5, -4, 9}, {8, 5, 10}, {11, -3, 11}, {14, 4, 9}, {17, -5, 12},
+    {3, -4, 20}, {7, 5, 22}, {12, -5, 21}, {16, 4, 23}, {1, 5, 28}, {18, -4, 27}, {10, 3, 30}, {6, -5, 32},
+};
+// schaal van de R (256 = 1x, 512 = 2x) en draaiing per frame vanaf het verschijnen
+static const u16 sRocketScale[] = {24, 48, 88, 140, 200, 268, 340, 412, 468, 512};
+static const s16 sRocketAngle[] = {-0x2400, -0x2000, -0x1A00, -0x1400, -0x0E00, -0x0900, -0x0500, -0x0200, -0x0080, 0};
+// schudden na de klap (pixels), steeds minder
+static const s8 sRocketShake[] = {5, -5, 4, -4, 4, -3, 3, -2, 2, -1, 1, 0};
+
+static void RTRocket_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sRocketR_Gfx, sRocketR_Palette, 120, 76);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTRocket_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, r, c, len, n, shake = 0;
+    s16 streakHead[20];
+    s8 streakDir[20];
+    u32 i;
+
+    // snelheidsstrepen (5 tiles: staart, 3x lijf, kop) over het zwart, per rij hoogstens een; pas als de balk dicht is
+    for (r = 0; r < 20; r++)
+    {
+        streakDir[r] = 0;
+        streakHead[r] = 0;
+    }
+    for (i = 0; i < ARRAY_COUNT(sRocketStreaks); i++)
+    {
+        s32 row = sRocketStreaks[i][0], v = sRocketStreaks[i][1], start = sRocketStreaks[i][2];
+        if (t < start || (t - sRocketBarDelay[row]) * sRocketBarSpeed[row] <= 33)
+            continue;
+        streakHead[row] = (v > 0) ? (t - start) * v : 29 + (t - start) * v;
+        streakDir[row] = (v > 0) ? 1 : -1;
+    }
+    // balken: rij r komt van links (even) of rechts (oneven); len = aantal zwarte tiles. De hele tilemap van 32x32 doet
+    // mee, zodat er bij het schudden geen wereld langs de randen piept. Elk vak krijgt in een keer zijn eindwaarde.
+    for (r = 0; r < 32; r++)
+    {
+        s32 rr = (r < 20) ? r : r - 20;
+        len = (t - sRocketBarDelay[rr]) * sRocketBarSpeed[rr];
+        if (len < 0)
+            len = 0;
+        for (c = 0; c < 32; c++)
+        {
+            u16 tileNum = 0;
+            n = (r & 1) ? (31 - c) : c; // afstand vanaf de kant waar de balk vandaan komt
+            if (n < len - 1 || len > 32)
+                tileNum = 1;
+            else if (n == len - 1)
+                tileNum = (r & 1) ? 3 : 2;
+            if (r < 20 && streakDir[r] != 0 && c < 30)
+            {
+                s32 k = (streakDir[r] > 0) ? streakHead[r] - c : c - streakHead[r];
+                if (k >= 0 && k < 5)
+                    tileNum = (k == 0) ? 5 : (k == 4 ? 6 : 4);
+            }
+            tilemap[r * 32 + c] = tileNum ? RT_TILE(tileNum) : 0;
+        }
+    }
+    // 3. de R: verschijnt op frame 9, zoomt draaiend in en stempelt op ROCKET_STAMP
+    if (t == 2)
+        PlaySE(SE_M_RAZOR_WIND);
+    if (t >= ROCKET_STAMP - 9)
+    {
+        struct Sprite *sprite = &gSprites[task->tRtSprite];
+        u32 f = min(t - (ROCKET_STAMP - 9), 9);
+        if (t >= ROCKET_STAMP && t - ROCKET_STAMP < (s32)ARRAY_COUNT(sRocketShake))
+            shake = sRocketShake[t - ROCKET_STAMP];
+        sprite->invisible = FALSE;
+        RT_SetSprite(task, 120 + shake, 76 - shake / 2, sRocketScale[f], (u16)sRocketAngle[f]);
+        SetGpuReg(REG_OFFSET_BG0HOFS, (-shake) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+        if (t == ROCKET_STAMP)
+        {
+            PlaySE(SE_M_MEGA_KICK2);
+            SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        }
+        // witte flits op de R bij de klap
+        if (t >= ROCKET_STAMP && t < ROCKET_STAMP + 6)
+            BlendPalettes(1 << (16 + IndexOfSpritePaletteTag(RT_SPRITE_TAG)), 15 - (t - ROCKET_STAMP) * 3, RGB_WHITE);
+    }
+    return t >= ROCKET_STAMP + 26;
+}
+
+static const struct RouteTransition sRT_Rocket =
+{
+    sRocket_Tileset, sizeof(sRocket_Tileset), sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
+};
+
+static void Task_Rocket(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Rocket);
+}
+
+// ---------------- Zarude: de jungle groeit van de randen dicht (bladerdek), lianen zwiepen van boven naar beneden, drie
+// klauwkrassen scheuren door het blad op de taiko-slagen van "Battle! Zarude" (168 BPM: maat = 86 frames) en op de
+// accent in maat 2 doemt Zarude's silhouet op met gloeiende rode ogen die op de achtsten pulseren. Daarna zwart, net voor de koperfanfare.
+// tiles (tools/grounded/route_transitions.py): 1-4 bladerdek, 5-7 bladrand, 8-9 liaan, 10 liaantip, 11.. klauwen
+#define ZARUDE_CLAW1   15
+#define ZARUDE_CLAW2   26
+#define ZARUDE_CLAW3   47
+#define ZARUDE_REVEAL  72
+#define ZARUDE_DARK    118
+#define ZARUDE_END     128
+
+static const u8 sZarudeVineCol[] = {3, 9, 16, 22, 27};
+static const u8 sZarudeVineStart[] = {4, 10, 18, 7, 24};
+static const u8 sZarudeVineLen[] = {9, 13, 7, 11, 14};
+static const s8 sZarudeVineBounce[] = {1, 2, 2, 1, 0, -1, -1, 0};
+static const u8 sZarudeClawStart[] = {ZARUDE_CLAW1, ZARUDE_CLAW2, ZARUDE_CLAW3};
+static const s8 sZarudeShake[] = {4, -4, 3, -3, 2, -1, 1, 0};
+
+static void RTZarude_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sZarudeSil_Gfx, sZarudeSil_Palette, 120, 84);
+    RT_SetSprite(task, 120, 84, 256, 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTZarude_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, r, c, k, threshold, shake = 0;
+    const u8 *depth = sZarude_Depth;
+
+    // 1. bladerdek: een vak is dicht als zijn diepte (afstand tot de rand) onder de drempel ligt; de drempel groeit.
+    // Per vak alleen een vergelijking (de hele update moet ruim binnen een frame blijven).
+    threshold = (t * 54) >> 4; // ±3 s incl. de flits vooraf (blazers op ±5,7 s, na de gevechtsintro)
+    for (r = 0; r < 20; r++)
+    {
+        u16 *row = &tilemap[r * 32];
+        for (c = 0; c < 30; c++)
+        {
+            s32 d = *depth++;
+            if (d < threshold - 14)
+                row[c] = RT_TILE(1 + ((r * 7 + c * 3) & 3));
+            else if (d < threshold)
+                row[c] = RT_TILE(5 + ((r + c + (t >> 3)) & 1) + ((r & 2) >> 1));
+            else
+                row[c] = 0;
+        }
+    }
+    // 2. lianen zwiepen van boven naar beneden (met een kleine stuiter)
+    for (k = 0; k < (s32)ARRAY_COUNT(sZarudeVineCol); k++)
+    {
+        s32 d = t - sZarudeVineStart[k], len;
+        if (d <= 0)
+            continue;
+        if (d < sZarudeVineLen[k])
+            len = d;
+        else
+            len = sZarudeVineLen[k] + sZarudeVineBounce[min(d - sZarudeVineLen[k], (s32)ARRAY_COUNT(sZarudeVineBounce) - 1)];
+        for (r = 0; r < len && r < 20; r++)
+            tilemap[r * 32 + sZarudeVineCol[k]] = RT_TILE((r == len - 1) ? 10 : 8 + ((r + k) & 1));
+    }
+    // 3. klauwkrassen: vegen in een paar frames over het beeld en blijven staan
+    for (k = 0; k < 3; k++)
+    {
+        const u16 *claw = &sZarude_Claws[k * 600];
+        s32 prog = (t - sZarudeClawStart[k]) * 12;
+        if (prog < 0)
+            continue;
+        for (r = 0; r < 20; r++)
+        {
+            for (c = 0; c < 30; c++)
+            {
+                u16 cl = *claw++;
+                if (cl != 0 && ((k == 1) ? r + c : r + 29 - c) <= prog)
+                    tilemap[r * 32 + c] = RT_TILE(cl);
+            }
+        }
+    }
+
+    // klap bij elke kras: het beeld schudt even
+    for (k = 0; k < 3; k++)
+    {
+        s32 d = t - sZarudeClawStart[k];
+        if (d >= 0 && d < (s32)ARRAY_COUNT(sZarudeShake))
+            shake = sZarudeShake[d];
+        if (d == 0)
+            PlaySE(SE_M_RAZOR_WIND);
+    }
+    SetGpuReg(REG_OFFSET_BG0HOFS, shake & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+
+    if (t == 0)
+        PlaySE(SE_M_GRASSWHISTLE);
+    if (t == sZarudeVineStart[0])
+        PlaySE(SE_M_BIND);
+
+    // de wereld wordt jungle-donker
+    if (t < ZARUDE_DARK)
+        BlendPalettes(RT_SceneWithoutSprite(), min(t >> 3, 10), RGB(1, 6, 2));
+
+    // silhouet: komt in maat 3 op, groeit langzaam; ogen pulseren op de achtsten (11 frames)
+    if (t >= ZARUDE_REVEAL)
+    {
+        struct Sprite *sil = &gSprites[task->tRtSprite];
+        s32 d = t - ZARUDE_REVEAL;
+        u32 palNum = IndexOfSpritePaletteTag(RT_SPRITE_TAG);
+        sil->invisible = FALSE;
+        RT_SetSprite(task, 120, 84 - (d >> 2), min(200 + d * 10, 512), 0);
+        if (d == 4)
+            PlayCry_Normal(SPECIES_ZARUDE, 0);
+        if (d < 12)
+            BlendPalettes(1 << (16 + palNum), 12 - d, RGB_BLACK); // uit het donker
+        // ogen fel/dof
+        gPlttBufferFaded[OBJ_PLTT_ID(palNum) + 8] = ((d % 11) < 4) ? RGB(31, 12, 6) : RGB(24, 2, 1);
+    }
+    if (t == ZARUDE_DARK)
+    {
+        PlaySE(SE_M_SCREECH);
+        RT_FreezePalettes();
+    }
+    if (t >= ZARUDE_DARK)
+        BlendPalettes(PALETTES_ALL, min((t - ZARUDE_DARK) * 2, 16), RGB_BLACK);
+    return t >= ZARUDE_END;
+}
+
+static const struct RouteTransition sRT_Zarude =
+{
+    sZarude_Tileset, sizeof(sZarude_Tileset), sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
+};
+
+static void Task_Zarude(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Zarude);
+}
+
+// ---------------- Loyal Three (Okidogi, Munkidori, Fezandipiti): hun Toxic Chain zoals op de artwork (magenta buis in
+// ringen, met als eindstuk de "halve schedel": een ring met twee uitwaaierende tanden). De ketting valt van boven in beeld
+// en slingert als een zware ketting uitdempend heen en weer rond de nek (links buiten beeld), terwijl hij wat op en neer
+// deint; het beeld wordt donker-paars, dan de gewone fade. Drie vooraf getekende standen; het restje draaihoek per
+// scanline als BG0HOFS (HBlank) en als één BG0VOFS. De standwissel en de scroll gaan samen in de VBlank (geen scheuren).
+// Alles per frame staat vooraf in route_poisonchain_anim.bin (route_transitions.py).
+#define POISONCHAIN_FRAMES ((s32)(sizeof(sPoisonChain_Anim) / (3 * 2)))
+#define POISONCHAIN_PIVOT_Y 126
+#define tPcPending data[0] // sTransitionData: stand die in de volgende VBlank getekend wordt
+#define tPcShown   data[1] // sTransitionData: stand die nu in de tilemap staat
+
+static void VBlankCB_PoisonChain(void)
+{
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
+    {
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+        sTransitionData->VBlank_DMA = FALSE;
+    }
+    if (sTransitionData->tPcPending != sTransitionData->tPcShown)
+    {
+        // nieuwe stand: alleen de vakken die verschillen, elk in een keer zijn eindwaarde
+        u16 *tilemap = RT_Tilemap();
+        const u16 *map = &sPoisonChain_Map[sTransitionData->tPcPending * 600];
+        const u16 *prev = (sTransitionData->tPcShown >= 0) ? &sPoisonChain_Map[sTransitionData->tPcShown * 600] : NULL;
+        u32 r, c;
+        for (r = 0; r < 20; r++)
+        {
+            for (c = 0; c < 30; c++, map++)
+            {
+                if (prev != NULL && *map == *prev++)
+                    continue;
+                tilemap[r * 32 + c] = *map ? RT_TILE(*map) : 0;
+            }
+        }
+        sTransitionData->tPcShown = sTransitionData->tPcPending;
+    }
+}
+
+static void HBlankCB_PoisonChain(void)
+{
+    u32 y = REG_VCOUNT;
+
+    if (y >= 227)
+        y = 0;
+    else if (y >= DISPLAY_HEIGHT - 1)
+        return;
+    else
+        y++;
+    REG_BG0HOFS = gScanlineEffectRegBuffers[1][y];
+    REG_BG0VOFS = gScanlineEffectRegBuffers[1][DISPLAY_HEIGHT + y];
+}
+
+// scrollwaarden van frame t in buffer 0: per scanline HOFS = restje draaihoek (Q12) * (beeldlijn - draaipunt)
+static void PoisonChain_SetScroll(s32 t)
+{
+    const s16 *anim = (const s16 *)&sPoisonChain_Anim[t * 3];
+    s32 rest = anim[1], vofs = anim[2], y;
+    u16 *buf = gScanlineEffectRegBuffers[0];
+
+    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    {
+        buf[y] = ((rest * (y + vofs - POISONCHAIN_PIVOT_Y)) >> 12) & 0x1FF;
+        buf[DISPLAY_HEIGHT + y] = vofs & 0x1FF;
+    }
+    sTransitionData->tPcPending = anim[0];
+}
+
+static void RTPoisonChain_Init(struct Task *task)
+{
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    sTransitionData->tPcShown = -1;
+    PoisonChain_SetScroll(0);
+    CpuCopy16(gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2 * 2);
+    SetVBlankCallback(VBlankCB_PoisonChain);
+    SetHBlankCallback(HBlankCB_PoisonChain);
+    EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
+}
+
+static bool8 RTPoisonChain_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t < POISONCHAIN_FRAMES)
+    {
+        PoisonChain_SetScroll(t);
+        sTransitionData->VBlank_DMA = TRUE;
+    }
+    if (t == 0)
+        PlaySE(SE_M_BIND);
+    else if (t == 62)
+        PlaySE(SE_M_TOXIC);
+    BlendPalettes(RT_SCENE_PALETTES, min(t >> 1, 14), RGB(2, 0, 4));
+    return t >= POISONCHAIN_FRAMES;
+}
+
+static void RTPoisonChain_Finish(struct Task *task)
+{
+    SetHBlankCallback(NULL);
+    SetVBlankCallback(VBlankCB_BattleTransition);
+}
+
+#undef tPcPending
+#undef tPcShown
+
+static const struct RouteTransition sRT_PoisonChain =
+{
+    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
+};
+
+static void Task_PoisonChain(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_PoisonChain);
+}
+
+// ---------------- Dave (Freed From Desire): penalty vanuit de schutter. Het veld gaat open als een tv-beeld, de bal
+// wipt op de riff, wordt op een riffnoot getrapt en zit op de volgende strak in de winkelhaak (paal-tik, net bolt),
+// dan GOAL! groot in beeld (pop-in, schudden, knipperen) en op de klap van tel 5 naar het gevecht.
+// Tiles/tilemaps/bal/baan: tools/grounded/dave_transition.py. Tilemaps zijn 32x22 (rij 21 = rij 0 voor boven het beeld).
+// Muziek (128 BPM, gMPlayInfo_BGM.clock 24 per tel): riffnoten op klok 0/24/42/60/84 = muziekframe 0/28/50/71/99,
+// klappen op klok 24/72/120 = muziekframe 28/85/141 (gemeten in mGBA).
+// De transitie begint DAVE_MUSIC_OFS frames na de muziek (gemeten met gMPlayInfo_BGM.clock).
+#define DAVE_MUSIC_OFS 19                 // gemeten: rij 9/10 verschijnt op muziekframe 19
+#define DAVE_T(m)      ((m) - DAVE_MUSIC_OFS)
+#define DAVE_REVEAL    10                 // beeld gaat open vanuit het midden
+#define DAVE_HOP       DAVE_T(50)         // riffnoot 3: de bal wipt even op
+#define DAVE_KICK      DAVE_T(71)         // riffnoot 4: trap
+#define DAVE_FLIGHT    28
+#define DAVE_HIT       (DAVE_KICK + DAVE_FLIGHT) // riffnoot 5 (muziekframe 99): in de winkelhaak
+#define DAVE_GOAL      (DAVE_HIT + 3)
+#define DAVE_END       (DAVE_T(141) - 3)  // klap op tel 5: de fade naar het gevecht begint (na 2 frames vasthouden)
+#define DAVE_KEY_NET   1
+#define DAVE_KEY_GOAL  5
+
+static const s8 sDaveHop[] = {2, 4, 5, 6, 6, 5, 4, 2};
+static const s8 sDaveHitShake[] = {2, -2, 2, -1, 1, -1, 1, 0};
+static const s8 sDaveGoalShake[] = {4, -4, 3, -3, 3, -2, 2, -2, 1, -1, 1, 0};
+// na de inslag: het net neemt de bal mee naar achteren (dx, dy, schaal) en laat hem in de hoek hangen
+static const s8 sDaveNetBall[][3] = {{-1, -1, -2}, {-2, -1, -4}, {-2, 0, -5}, {-1, 1, -4}, {0, 1, -3}, {0, 2, -2}, {0, 2, -1}, {0, 3, 0}};
+
+static void RTDave_DrawKey(struct Task *task, u32 key)
+{
+    u16 *tilemap = RT_Tilemap();
+    if (task->tRtB == (s16)key)
+        return;
+    task->tRtB = key;
+    CpuCopy16(&sDave_Maps[key * 32 * 22], tilemap, 32 * 21 * 2);
+    CpuCopy16(&sDave_Maps[key * 32 * 22 + 21 * 32], &tilemap[31 * 32], 32 * 2);
+}
+
+static void RTDave_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sDaveBall_Gfx, sDaveBall_Palette, sDave_Ball[0], sDave_Ball[1]);
+    RT_SetSprite(task, sDave_Ball[0], sDave_Ball[1], sDave_Ball[2], 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+    task->tRtA = 0;  // draaihoek van de bal
+    task->tRtB = -1; // getekende tilemap
+}
+
+static bool8 RTDave_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, x, y, scale, shake = 0, key = 0;
+
+    // 1. beeld gaat open vanuit het midden (elke rij in één keer zijn eindwaarde)
+    if (t < DAVE_REVEAL)
+    {
+        s32 r, k = t + 1;
+        for (r = 10 - k; r < 10 + k; r++)
+            CpuCopy16(&sDave_Maps[r * 32], &tilemap[r * 32], 32 * 2);
+        if (t == DAVE_REVEAL - 1)
+        {
+            RTDave_DrawKey(task, 0);
+            gSprites[task->tRtSprite].invisible = FALSE;
+        }
+        return FALSE;
+    }
+
+    // 2. de bal
+    x = sDave_Ball[0];
+    y = sDave_Ball[1];
+    scale = sDave_Ball[2];
+    if (t >= DAVE_HOP && t < DAVE_HOP + (s32)ARRAY_COUNT(sDaveHop))
+        y -= sDaveHop[t - DAVE_HOP];
+    if (t == DAVE_KICK)
+        PlaySE(SE_M_MEGA_KICK);
+    if (t >= DAVE_KICK && t <= DAVE_HIT)
+    {
+        const s16 *b = &sDave_Ball[(t - DAVE_KICK) * 3];
+        x = b[0];
+        y = b[1];
+        scale = b[2];
+        task->tRtA -= 0x1500;
+    }
+    else if (t > DAVE_HIT)
+    {
+        u32 i = min(t - DAVE_HIT - 1, (s32)ARRAY_COUNT(sDaveNetBall) - 1);
+        const s16 *b = &sDave_Ball[DAVE_FLIGHT * 3];
+        x = b[0] + sDaveNetBall[i][0];
+        y = b[1] + sDaveNetBall[i][1];
+        scale = b[2] + sDaveNetBall[i][2];
+        if (t < DAVE_HIT + 8)
+            task->tRtA -= 0x0600;
+    }
+
+    // 3. net en GOAL!
+    if (t == DAVE_HIT)
+        PlaySE(SE_BALL_BOUNCE_1); // tik tegen de binnenkant van paal en lat
+    if (t >= DAVE_HIT && t < DAVE_HIT + 2)
+        key = DAVE_KEY_NET;
+    else if (t >= DAVE_HIT + 2 && t < DAVE_HIT + 5)
+        key = DAVE_KEY_NET + 1;
+    else if (t >= DAVE_HIT + 5 && t < DAVE_HIT + 8)
+        key = DAVE_KEY_NET + 2;
+    else if (t >= DAVE_HIT + 8 && t < DAVE_HIT + 11)
+        key = DAVE_KEY_NET + 3;
+    if (t >= DAVE_HIT && t - DAVE_HIT < (s32)ARRAY_COUNT(sDaveHitShake))
+        shake = sDaveHitShake[t - DAVE_HIT];
+    if (t >= DAVE_GOAL)
+    {
+        if (t < DAVE_GOAL + 2)
+            key = DAVE_KEY_GOAL;
+        else if (t < DAVE_GOAL + 5)
+            key = DAVE_KEY_GOAL + 1;
+        else
+            key = DAVE_KEY_GOAL + 2;
+        if (t == DAVE_GOAL)
+            PlaySE(SE_M_MEGA_KICK2);
+        if (t - DAVE_GOAL < (s32)ARRAY_COUNT(sDaveGoalShake))
+            shake = sDaveGoalShake[t - DAVE_GOAL];
+        if (t >= DAVE_GOAL + 8 && ((t - DAVE_GOAL) & 4))
+            LoadPalette(&sDave_Palette[16], BG_PLTT_ID(15), PLTT_SIZE_4BPP); // GOAL! knippert
+    }
+    RTDave_DrawKey(task, key);
+    SetGpuReg(REG_OFFSET_BG0HOFS, shake & 0x1FF);
+    SetGpuReg(REG_OFFSET_BG0VOFS, (shake / 2) & 0x1FF);
+    RT_SetSprite(task, x - shake, y - shake / 2, scale, task->tRtA);
+    return t >= DAVE_END;
+}
+
+static const struct RouteTransition sRT_Dave =
+{
+    sDave_Tileset, sizeof(sDave_Tileset), sDave_Palette, 1, 1, 0, RTDave_Init, RTDave_Update, RT_FinishSprite
+};
+
+static void Task_Dave(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Dave);
 }

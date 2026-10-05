@@ -359,6 +359,16 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_MACHINE_LEARNING, // Project Grounded: steeds meer stats +1, 20% kans op hallucinatie (Metronome)
     EFFECT_ACID_RAIN, // Project Grounded: zure regen (weer)
     EFFECT_POLLEN_HAZE, // Project Grounded: stuifmeel (weer)
+    EFFECT_PACK_HOWL, // Project Grounded: dubbel +1 Atk voor het team, solo +1 Atk +1 Spe
+    EFFECT_HEARTBREAK, // Project Grounded: dubbele kracht tegen het andere geslacht of een verliefd doelwit
+    EFFECT_ECLIPSE, // Project Grounded: Rock/fysiek of Psychic/speciaal, sterker op het eigen moment van de dag
+    EFFECT_TIPSY_WALTZ, // Project Grounded: dubbele kracht als de gebruiker verward is, en dan geen zelfschade
+    EFFECT_WEATHER_REPORT, // Project Grounded: zet het weer waar het doelwit het zwakst tegen is, dan Weather Ball
+    EFFECT_STRAIGHT_LINE, // Project Grounded: dubbele kracht bij herhaling
+    EFFECT_WIND_CHIME, // Project Grounded: healt het team, sterker met Tailwind en tegen status
+    EFFECT_PRIMEVAL_WARD, // Project Grounded: +1 Def/SpDef en geen stat-verlagingen tot wisselen
+    EFFECT_GULP_DOWN, // Project Grounded: slikt het item van het doelwit in
+    EFFECT_NINE_LIVES, // Project Grounded: één keer per gevecht een KO overleven
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

@@ -20,10 +20,26 @@
 #define SPIRE_BLOCK_PERCENT     15
 #define SPIRE_BLOCK_SPLIT       60
 
-#define SPIRE_SAVE_MAGIC        0x5A
+// Openingsbescherming (Jordi, 5 okt: 'vijanden horen je niet te one-shotten in beurt 1, 2 of 3 zonder counter'):
+// in de eerste SPIRE_OPENING_TURNS beurten verliest een Pokémon van de speler per beurt hooguit SPIRE_OPENING_CAP%
+// van zijn max HP door aanvallen van vijanden (alle klappen van die beurt samen, na het blok). De intenties tonen
+// de begrensde schade. Rekenwerk: tools/grounded/spire/matchups.py (zelfde regel).
+#define SPIRE_OPENING_TURNS     3
+#define SPIRE_OPENING_CAP       60
+// Klap-limiet (de hele run): één klap van een vijand doet hooguit SPIRE_HIT_CAP% van de max HP (vóór het blok).
+// Een supereffectieve klap blijft sterk, maar een volle Pokémon gaat nooit in minder dan drie klappen neer.
+// matchups.py: zonder deze grens had ±5-15% van de startparen geen kans tegen sommige bazen. 100 = uit.
+#define SPIRE_HIT_CAP           40
+
+#define SPIRE_SAVE_MAGIC        0x5B    // v0.9.70: 0x5A -> 0x5B (langere acts, RUN.path u32): een oude gepauzeerde run vervalt
 #define SPIRE_ACTS              3
-#define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
+// v0.9.70 (Jordi: 'de acts mogen wat langer, zoals in Slay the Spire'): 7 -> 13 verdiepingen + baas (Slay: 15 + baas).
+// De act-kaart scrolt (spire_map.c tekent de routes in een ringbuffer van 32 tegelrijen); RUN.path heeft 2 bits per verdieping.
+#define SPIRE_FLOORS            13  // verdiepingen per act; daarboven de baas
 #define SPIRE_MAX_NODES         4   // kamers per verdieping
+#define SPIRE_TREASURE_FLOOR    6   // middelste verdieping: altijd een schatkist (Jordi, 5 okt)
+#define SPIRE_WEAK_FLOORS       3   // de eerste verdiepingen: zwakke ontmoetingen (Slay: de eerste drie gevechten)
+#define SPIRE_ELITE_FROM        4   // eerste verdieping met elites en rustplekken (Slay: 6 van 15)
 // v0.8.107: getallen uit tools/grounded/spire/runsim.py (vergelijking met Slay the Spire, zie SPIRE_BALANS.md)
 #define SPIRE_HEAL_AFTER        8   // procent HP na een gewonnen gevecht (Slay: Burning Blood 6 van 80 HP = 7,5%)
 #define SPIRE_REST_HEAL         30  // procent HP op een rustplek (Chansey); Slay 30%. Vanaf dit percentage gaat status weg
@@ -39,6 +55,7 @@ enum SpireRoom
     SPIRE_ROOM_SHOP,
     SPIRE_ROOM_EVENT,
     SPIRE_ROOM_BOSS,
+    SPIRE_ROOM_TREASURE,    // schatkist (Gimmighoul): gratis relic, altijd de middelste verdieping (Jordi, 5 okt)
 };
 
 // Relics (50, tools/grounded/spire/relics.py): enum SpireRelic en enum SpireRelicTier
@@ -132,7 +149,7 @@ struct SpireSave
     u8 floor;           // aantal afgeronde verdiepingen in deze act (SPIRE_FLOORS = baas aan de beurt)
     u8 node;            // gekozen kamer op die verdieping
     u32 seed;           // seed van de kaart van deze act
-    u16 path;           // gekozen kamers per verdieping (2 bits per verdieping)
+    u32 path;           // gekozen kamers per verdieping (2 bits per verdieping, SPIRE_FLOORS <= 16)
     u16 bp;             // BP van deze run (gaan naar je totaal als de run eindigt)
     u16 gold;           // geld voor de winkel
     u8 inRoom:1;        // kamer gestart maar nog niet klaar (gevecht gepauzeerd)
@@ -208,11 +225,14 @@ void Spire_OnEnemyPartyCreated(void);
 void Spire_ClearBlocks(void);
 u32 Spire_BlockAmount(u32 battler);
 u32 Spire_BlockPercent(u32 amount, u32 target);
+u32 Spire_OpeningCapLeft(u32 battlerAtk, u32 battlerDef);
+u32 Spire_HitCap(u32 battlerAtk, u32 battlerDef);
 void Spire_AbsorbDamage(u32 battlerDef);
 void HandleAction_SpireDefend(void);
 bool32 Spire_TryPrintBlockAbsorbed(void);
 u8 *Spire_GetIntentText(u8 *dst, u32 battler);
 void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent);
+void Spire_RescaleAfterRecalc(u32 battler, struct Pokemon *mon, u32 hpBefore, u32 oldMaxHp);
 void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves);
 void Spire_ApplyPattern(u32 battler);
 void Spire_EndTurn(void);
@@ -225,6 +245,9 @@ void Spire_OnFirstTurn(void);
 // spire_run.c: run
 bool32 Spire_RunActive(void);
 struct Pokemon *Spire_GetRunMon(u32 i);
+s32 Spire_IconYOffset(u16 species, u32 personality);
+// t.o.v. een gemiddeld icoon (dat staat 4 px onder het midden): schermen die op gewone iconen zijn afgesteld
+#define Spire_IconYAdjust(species, personality) (Spire_IconYOffset(species, personality) + 4)
 bool32 Spire_HasRelic(u32 relic);
 void Spire_AddRelic(u32 relic);
 void Spire_RemoveRelic(u32 relic);

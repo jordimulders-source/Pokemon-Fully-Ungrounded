@@ -9,7 +9,114 @@ MossdeepCity_OnTransition:
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call MossdeepCity_EventScript_SetupDeltaZinnia
 	end
+
+@ Project Grounded: Delta Episode (VAR_DELTA_STATE: 1 Zinnia bij het Space Center, 2 verslagen, 3 Deoxys klaar, 4 afgerond)
+MossdeepCity_EventScript_SetupDeltaZinnia::
+	setflag FLAG_HIDE_MOSSDEEP_ZINNIA
+	setflag FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE
+	call_if_eq VAR_DELTA_STATE, 2, MossdeepCity_EventScript_DeltaCheckDeoxys
+	call_if_eq VAR_DELTA_STATE, 1, MossdeepCity_EventScript_DeltaShowZinnia
+	call_if_eq VAR_DELTA_STATE, 3, MossdeepCity_EventScript_DeltaShowZinniaMeteorite
+	return
+
+MossdeepCity_EventScript_DeltaCheckDeoxys::
+	goto_if_set FLAG_BATTLED_DEOXYS, MossdeepCity_EventScript_DeltaDeoxysDone
+	goto_if_set FLAG_DEFEATED_DEOXYS, MossdeepCity_EventScript_DeltaDeoxysDone
+	return
+
+MossdeepCity_EventScript_DeltaDeoxysDone::
+	setvar VAR_DELTA_STATE, 3
+	return
+
+MossdeepCity_EventScript_DeltaShowZinnia::
+	clearflag FLAG_HIDE_MOSSDEEP_ZINNIA
+	return
+
+MossdeepCity_EventScript_DeltaShowZinniaMeteorite::
+	clearflag FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE
+	return
+
+MossdeepCity_EventScript_Zinnia::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_ZINNIA_DELTA, MossdeepCity_EventScript_ZinniaAfterBattle
+	msgbox MossdeepCity_Text_ZinniaDeltaIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ZINNIA_DELTA, MossdeepCity_Text_ZinniaDeltaDefeat
+MossdeepCity_EventScript_ZinniaAfterBattle::
+	msgbox MossdeepCity_Text_ZinniaDeltaAfter, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_DELTA_STATE, 2
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_MOSSDEEP_ZINNIA
+	setflag FLAG_HIDE_MOSSDEEP_ZINNIA
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+MossdeepCity_EventScript_ZinniaEpilogue::
+	lock
+	faceplayer
+	msgbox MossdeepCity_Text_ZinniaEpilogue, MSGBOX_DEFAULT
+	giveitem ITEM_COMET_SHARD, 3
+	msgbox MossdeepCity_Text_ZinniaEpilogue2, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_DELTA_STATE, 4
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_MOSSDEEP_ZINNIA_METEORITE
+	setflag FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+MossdeepCity_Text_ZinniaDeltaIntro:
+	.string "ZINNIA: There you are. And there\n"
+	.string "IT is. The black RAYQUAZA.\p"
+	.string "My people waited three thousand\n"
+	.string "years for a dragon like that.\l"
+	.string "You waited, what, a weekend?\p"
+	.string "That meteorite up there is talking\n"
+	.string "in DNA. Nobody talks in DNA unless\l"
+	.string "they're planning something.\p"
+	.string "The SPACE CENTER wants to fire you\n"
+	.string "at it in a cardboard box. Cute.\p"
+	.string "There's no air up there, by the way.\n"
+	.string "Your RAYQUAZA will make some.\l"
+	.string "It eats the ozone layer for breakfast.\p"
+	.string "But first I want to know if you\n"
+	.string "deserve the trip. ASTER, wake up.\l"
+	.string "We're fighting the CHAMPION.$"
+
+MossdeepCity_Text_ZinniaDeltaDefeat:
+	.string "Fine. FINE. The sky likes you.\n"
+	.string "I'm telling the elders.$"
+
+MossdeepCity_Text_ZinniaDeltaAfter:
+	.string "ZINNIA: Go on, then. Get in the box.\p"
+	.string "Keep the black RAYQUAZA in your team,\n"
+	.string "or you'll find out what “vacuum”\l"
+	.string "means the fast way.\p"
+	.string "I'll be at the meteorite when you\n"
+	.string "land. Somebody has to identify\l"
+	.string "the body. Kidding. Mostly.$"
+
+MossdeepCity_Text_ZinniaEpilogue:
+	.string "ZINNIA: You came back. With all\n"
+	.string "your limbs. I owe ASTER money.\p"
+	.string "The signals stopped. The sky is quiet.\n"
+	.string "The prophecy is fulfilled, or at least\l"
+	.string "it's stopped texting me.\p"
+	.string "BIRCH says this rock is space poop.\n"
+	.string "I've decided not to correct him.\l"
+	.string "Some people should stay happy.\p"
+	.string "Here. Bits of the meteor. Sell them,\n"
+	.string "wear them, throw them at BIRCH.$"
+
+MossdeepCity_Text_ZinniaEpilogue2:
+	.string "ZINNIA: My people will write a song\n"
+	.string "about you. It'll be bad. Long, too.\p"
+	.string "Don't come to the premiere.$"
 
 MossdeepCity_EventScript_PokefanF::
 	lock

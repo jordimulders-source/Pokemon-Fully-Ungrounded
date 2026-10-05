@@ -50,9 +50,11 @@ TITLE_W = 140       # titel (FONT_NORMAL)
 VAR_W = 50          # {STR_VAR_3} (soortnaam)
 
 E = []
-def ev(key, title, icon, story, options, acts=(1, 2, 3), weight=4):
+def ev(key, title, icon, story, options, acts=(1, 2, 3), weight=4, walk=None):
     # weight: kans om gekozen te worden (4 = normaal, 1 = zeldzaam)
-    E.append(dict(key=key, title=title, icon=icon, story=story, options=options, acts=acts, weight=weight))
+    # walk: B = weglopen met deze tekst (v0.9.82, Jordi: Vending Machine). Verplicht als alle opties dicht kunnen
+    # zitten (geld, type, relic of item nodig) en er geen gratis optie is; anders loop je vast of moet je iets kopen.
+    E.append(dict(key=key, title=title, icon=icon, story=story, options=options, acts=acts, weight=weight, walk=walk))
 def opt(name, fx=(), result='', need=None, **kw):
     d = dict(name=name, fx=list(fx), result=result, need=need)
     d.update(kw)
@@ -208,7 +210,8 @@ ev('rotom', 'THE VENDING MACHINE', 'ROTOM',
    'A vending machine hums in the corner. A Rotom lives inside. Prices are high. The drinks are suspicious.',
    [opt('Fresh Water', [('gold', -20), ('heal', 20)], 'It is water. Rotom charged it a little.'),
     opt('Soda Pop', [('gold', -30), ('pp',)], 'Your team is buzzing. Possibly literally.'),
-    opt('Kick it', [('heal', 30), ('gold', 30)], 'Your Electric type gives it a friendly jolt. Rotom recognises a colleague and pays out.', need='ELECTRIC')])
+    opt('Kick it', [('heal', 30), ('gold', 30)], 'Your Electric type gives it a friendly jolt. Rotom recognises a colleague and pays out.', need='ELECTRIC')],
+   walk='You walk away thirsty. The machine flashes "THANK YOU" anyway. Rotom is being sarcastic.')
 ev('slowpoke', 'THE SLOWPOKE WELL', 'SLOWPOKE',
    'A Slowpoke dangles its tail into a well. It has been fishing for nine days. Something has been nibbling for eight.',
    [gamble('Pull the tail', 50, [('item', 2)], 'Something comes up with it. Something good. Slowpoke notices next Tuesday.',
@@ -544,6 +547,13 @@ def check_outcome(ev_key, name, fx, text):
     return lines
 
 
+def always_open(o):
+    """Kan deze optie altijd gekozen worden (geen geld, type, relic of item nodig)?"""
+    fx = o['fx']
+    return (not o['need'] and not any(f[0] == 'gold' and f[1] < 0 for f in fx)
+            and not any(f[0] in ('loserelic', 'loseitems') for f in fx))
+
+
 def c_str(s):
     # aanhalingstekens: “ en ” (een gewone " bestaat niet in de charmap)
     out, open_q = '', True
@@ -600,10 +610,19 @@ for e in E:
             'TRUE' if any(f[0] == 'gold' and f[1] < 0 for f in o['fx']) else 'FALSE',
             o.get('chance', 100), c_fx(o['fx']), c_fx(o.get('fxb', [])),
             c_str('\\n'.join(ra)), c_str('\\n'.join(rb)) if rb else 'NULL'))
+    # nooit vastlopen: zonder geld of het juiste type moet er altijd iets te kiezen zijn (of B = weglopen)
+    if not any(always_open(o) for o in e['options']) and not e['walk']:
+        errors.append(f"{e['key']}: alle opties kunnen dicht zitten (geld/type/relic/item) en er is geen walk-tekst (B = weglopen)")
+    walk = 'NULL'
+    if e['walk']:
+        if len(story) > 3:
+            errors.append(f"{e['key']}: verhaal {len(story)} regels; met B = weglopen max. 3 (de vierde regel is 'B: walk away')")
+        wl = check_outcome(e['key'], 'B', [], e['walk'])
+        walk = c_str('\\n'.join(wl))
     acts = sum(1 << (a - 1) for a in e['acts'])
-    rows.append('    {%s, %s, %s, %d, %d, %d, {\n%s\n    }},' % (
+    rows.append('    {%s, %s, %s, %d, %d, %d, {\n%s\n    }, %s},' % (
         c_str(e['title']), c_str('\\n'.join(story)), 'SPIRE_EVENT_ICON_RECRUIT' if e['icon'] == 'RECRUIT' else 'SPIRE_EVENT_ICON_PSEUDO' if e['icon'] == 'PSEUDO' else ('SPECIES_' + e['icon']) if e['icon'] else 'SPECIES_NONE',
-        acts, e['weight'], len(e['options']), '\n'.join(opts)))
+        acts, e['weight'], len(e['options']), '\n'.join(opts), walk))
 
 if errors:
     print('\n'.join(errors))
@@ -612,7 +631,7 @@ if errors:
 with open(OUT, 'w', encoding='utf-8') as f:
     f.write('// Gegenereerd door tools/grounded/spire/events.py; niet met de hand bewerken.\n')
     f.write('// {titel, verhaal, icoon, acts (bitmasker), gewicht, aantal opties, {naam, effectregel, type-eis, kost geld,\n')
-    f.write('//  kans (%), effecten, effecten bij mislukken, uitkomst, uitkomst bij mislukken}}\n\n')
+    f.write('//  kans (%), effecten, effecten bij mislukken, uitkomst, uitkomst bij mislukken}, B = weglopen (tekst of NULL)}\n\n')
     f.write('static const struct SpireEventData sSpireEvents[] =\n{\n')
     f.write('\n'.join(rows))
     f.write('\n};\n')

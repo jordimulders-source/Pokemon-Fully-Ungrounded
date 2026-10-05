@@ -389,7 +389,7 @@
 #define FLAG_REGISTERED_LILA_AND_ROY         (TRAINER_REGISTERED_FLAGS_START + REMATCH_LILA_AND_ROY)
 #define FLAG_REGISTERED_CRISTIN              (TRAINER_REGISTERED_FLAGS_START + REMATCH_CRISTIN)
 #define FLAG_REGISTERED_BROOKE               (TRAINER_REGISTERED_FLAGS_START + REMATCH_BROOKE)
-#define FLAG_REGISTERED_WILTON               (TRAINER_REGISTERED_FLAGS_START + REMATCH_WILTON)
+#define FLAG_REGISTERED_CHARLES              (TRAINER_REGISTERED_FLAGS_START + REMATCH_CHARLES)
 #define FLAG_REGISTERED_VALERIE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_VALERIE)
 #define FLAG_REGISTERED_CINDY                (TRAINER_REGISTERED_FLAGS_START + REMATCH_CINDY)
 #define FLAG_REGISTERED_THALIA               (TRAINER_REGISTERED_FLAGS_START + REMATCH_THALIA)
@@ -453,12 +453,12 @@
 #define FLAG_REGISTERED_NORMAN               (TRAINER_REGISTERED_FLAGS_START + REMATCH_NORMAN)
 #define FLAG_REGISTERED_WINONA               (TRAINER_REGISTERED_FLAGS_START + REMATCH_WINONA)
 #define FLAG_REGISTERED_TATE_AND_LIZA        (TRAINER_REGISTERED_FLAGS_START + REMATCH_TATE_AND_LIZA)
-#define FLAG_REGISTERED_JUAN                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_JUAN)
+#define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 #define FLAG_REGISTERED_SIDNEY               (TRAINER_REGISTERED_FLAGS_START + REMATCH_SIDNEY)
 #define FLAG_REGISTERED_PHOEBE               (TRAINER_REGISTERED_FLAGS_START + REMATCH_PHOEBE)
 #define FLAG_REGISTERED_GLACIA               (TRAINER_REGISTERED_FLAGS_START + REMATCH_GLACIA)
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
-#define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
+#define FLAG_REGISTERED_OLD_CHAMPION         (TRAINER_REGISTERED_FLAGS_START + REMATCH_OLD_CHAMPION)
 
 #define FLAG_HIDE_REGIDRAGO                  0x1AA // Project Grounded
 #define FLAG_HIDE_REGIGIGAS                  0x1AB // Project Grounded
@@ -508,7 +508,7 @@
 #define FLAG_ENABLE_FLANNERY_MATCH_CALL      0x1D6
 #define FLAG_ENABLE_WINONA_MATCH_CALL        0x1D7
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
-#define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
+#define FLAG_ENABLE_WALLACE_MATCH_CALL       0x1D9
 
 #define FLAG_HIDE_FIERY_PATH_HEATRAN         0x1DA // Project Grounded: Heatran (static) in de lavagrot onder Fiery Path
 
@@ -664,11 +664,11 @@
 #define FLAG_HIDE_FALLARBOR_JIRACHI 0x269 // Project Grounded: Jirachi (object) bij de wenssteen in Fallarbor, verborgen tot je een wens doet
 #define FLAG_DEFEATED_JIRACHI       0x26A // Project Grounded: Jirachi gevangen of verslagen (wens-event klaar)
 #define FLAG_DEFEATED_DARKRAI       0x26B // Project Grounded: Darkrai gevangen of verslagen (nachtmerrie op Mt. Pyre klaar)
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_FORCE_SHINY            0x26C // Project Grounded: P_FLAG_FORCE_SHINY (alleen tijdens het shiny Rayquaza-gevecht aan)
+#define FLAG_DEFEATED_SHINY_RAYQUAZA 0x26D // Project Grounded: shiny Rayquaza gevangen of verslagen (verslagen: terug na de League)
+#define FLAG_CAUGHT_SHINY_RAYQUAZA  0x26E // Project Grounded: shiny Rayquaza gevangen
+#define FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA 0x26F // Project Grounded: wordt elke keer in OnTransition gezet/gewist
+#define FLAG_HIDE_MOSSDEEP_ZINNIA   0x270 // Project Grounded: Zinnia in Mossdeep (Delta Episode); in OnTransition gezet/gewist
 #define FLAG_NEW_MAUVILLE_VAULT_OPEN  0x271 // Project Grounded: serverkluis onder New Mauville herstart (terminal in de Raikou-grot), deur naar Genesect open
 #define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static) in de serverkluis onder New Mauville
 #define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
@@ -689,54 +689,54 @@
 #define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
 #define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
 #define FLAG_KUBFU_EVOLVED  0x284 // Project Grounded: een toren van de dojo voltooid, Kubfu geevolueerd
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
+#define FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE 0x285 // Project Grounded: Zinnia bij de meteoriet (Delta Episode, afsluiter)
+#define FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE 0x286 // Project Grounded: Archie en Maxie (werkstraf); in OnTransition gezet/gewist
+#define FLAG_ITEM_FORTREE_JUNGLE_BIG_ROOT  0x287 // Project Grounded: Fortree Jungle
+#define FLAG_ITEM_FORTREE_JUNGLE_MAX_REVIVE  0x288 // Project Grounded: Fortree Jungle
 #define FLAG_RECEIVED_LIBERTY_PASS        0x289 // Project Grounded: Liberty Pass gekregen (uitnodiging voor de Victory-gauntlet, post-game)
 #define FLAG_HIDE_LIBERTY_GARDEN_VICTINI  0x28A // Project Grounded: Victini-object in Liberty Garden (verborgen tot de gauntlet af is)
 #define FLAG_DEFEATED_LIBERTY_VICTINI     0x28B // Project Grounded: Victini in Liberty Garden verslagen/gevangen
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
+#define FLAG_ITEM_FORTREE_JUNGLE_TM_U_TURN  0x28C // Project Grounded: Fortree Jungle
+#define FLAG_ITEM_FORTREE_JUNGLE_MIRACLE_SEED  0x28D // Project Grounded: Fortree Jungle
+#define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_LEAF_STONE  0x28E // Project Grounded: Fortree Jungle
+#define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_REVIVAL_HERB  0x28F // Project Grounded: Fortree Jungle
+#define FLAG_SAFARI_ZONES_OPEN  0x290 // Project Grounded: Safari-zones open (zonesleutels terug; later de Team Rocket-sidequest)
+#define FLAG_ITEM_SAFARI_FAIRY_PIXIE_PLATE  0x291 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_FAIRY_FAIRY_FEATHER  0x292 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_FAIRY_SHINY_STONE  0x293 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_THUNDER_ZAP_PLATE  0x294 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_THUNDER_MAGNET  0x295 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_THUNDER_THUNDER_STONE  0x296 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_SPOOK_SPOOKY_PLATE  0x297 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_ITEM_SAFARI_SPOOK_REAPER_CLOTH  0x298 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE  0x299 // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG  0x29A // Project Grounded: Safari Zone (nieuwe zones)
+#define FLAG_HIDE_GIANT_WAILORD  0x29B // Project Grounded: reuzen-Wailord verborgen (per kaartbezoek gezet, zie Grounded_GiantWailordSpot)
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
 #define FLAG_UNUSED_0x29E  0x29E // Unused Flag
 #define FLAG_UNUSED_0x29F  0x29F // Unused Flag
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
-#define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
-#define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
-#define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
-#define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
-#define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
-#define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
+#define FLAG_ITEM_METEOR_FALLS_B1F_2R_RARE_CANDY 0x2A0 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_B1F_2R_STAR_PIECE 0x2A1 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_HIDDEN_FALLS_DRAGON_SCALE 0x2A2 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_HIDDEN_FALLS_MAX_ELIXIR 0x2A3 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_TUNNELS_DRAGON_FANG 0x2A4 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_TUNNELS_FULL_RESTORE 0x2A5 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_TUNNELS_STARDUST 0x2A6 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_HIDE_METEOR_FALLS_SALAMENCE 0x2A7 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_VICTORY_ROAD_WAITING_ROOM_ROCK 0x2A8 // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_WAITING_ROOM_CHOICE_SCARF 0x2A9 // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_WAITING_ROOM_CHOICE_SPECS 0x2AA // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_BIG_NUGGET 0x2AB // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_ABILITY_CAPSULE 0x2AC // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_VAULT_PP_MAX 0x2AD // Project Grounded: Victory Road-zijkamers
+#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_VAULT_MAX_ELIXIR 0x2AE // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_HERMIT_EXPERT_BELT 0x2AF // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_TOADSTOOL_HOLLOW_TINY_MUSHROOM  0x2B0 // Project Grounded: Toadstool Hollow
+#define FLAG_ITEM_TOADSTOOL_HOLLOW_BIG_MUSHROOM  0x2B1 // Project Grounded: Toadstool Hollow
+#define FLAG_ITEM_TOADSTOOL_HOLLOW_MISTY_SEED  0x2B2 // Project Grounded: Toadstool Hollow
+#define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_BALM_MUSHROOM  0x2B3 // Project Grounded: Toadstool Hollow (midden van de heksenkring)
+#define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_TINY_MUSHROOM  0x2B4 // Project Grounded: Toadstool Hollow (einde van een stam)
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
@@ -1222,15 +1222,15 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
+#define FLAG_HIDE_ROUTE121_ROCKET_RUNNER                            0x493 // Project Grounded: Rocket-sidequest: grunt die bij de Safari tegen je aan loopt
+#define FLAG_HIDE_JUNGLE_ROCKET_GUARD                               0x494 // Project Grounded: Rocket-sidequest: wachtpost bij de holle boom in Fortree Jungle
+#define FLAG_HIDE_ROCKET_HIDEOUT_GRUNTS                             0x495 // Project Grounded: Rocket-sidequest: grunts in de hideout (weg na de quest)
+#define FLAG_HIDE_ROCKET_EXEC                                       0x496 // Project Grounded: Rocket-sidequest: Petrel en de dief (weg na het gevecht)
+#define FLAG_ROCKET_FREE_SAFARI                                     0x497 // Project Grounded: Rocket-sidequest: gratis Safari-ronde tegoed
+#define FLAG_ITEM_ROCKET_HIDEOUT_FULL_HEAL                          0x498 // Project Grounded: Rocket-hideout 1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_MAX_POTION                         0x499 // Project Grounded: Rocket-hideout B1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_PP_UP                              0x49A // Project Grounded: Rocket-hideout B1F
+#define FLAG_ITEM_ROCKET_HIDEOUT_NUGGET                             0x49B // Project Grounded: Rocket-hideout B1F
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
@@ -1238,42 +1238,42 @@
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_ITEM_METEOR_FALLS_STAR_CORE_COMET_SHARD 0x4A3 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_ECHO_CHAMBER_MAX_ETHER 0x4A4 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_STARFALL_COMET_SHARD 0x4A5 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_ITEM_METEOR_FALLS_STARFALL_STAR_PIECE 0x4A6 // Project Grounded: Meteor Falls (diepte)
+#define FLAG_RECEIVED_METEOR_FALLS_ELDER_GIFT 0x4A7 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
+#define FLAG_RECEIVED_UMBRELLA_REGINALD 0x4AB // Project Grounded: Victory Road-zijkamers
+#define FLAG_HIDE_VICTORY_ROAD_GARCHOMP 0x4AC // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_LIFE_ORB 0x4AD // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_EVIOLITE 0x4AE // Project Grounded: Victory Road-zijkamers
+#define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_DRAGON_FANG 0x4AF // Project Grounded: Victory Road-zijkamers
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
+#define FLAG_JAGGED_PASS_LAVA_TUBE_ROCK                             0x4B3 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_CHARCOAL                                0x4B4 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_FIRE_STONE                              0x4B5 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_HEAT_ROCK                               0x4B6 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST                           0x4B7 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDDEN_ITEM_LAVA_TUBE_LAVA_COOKIE                      0x4B8 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDE_MT_CHIMNEY_TRAIL_GUARD                            0x4B9 // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDE_MT_CHIMNEY_SUMMIT_VOLCARONA                       0x4BA // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_ITEM_MT_CHIMNEY_SUMMIT_MAGMARIZER                      0x4BB // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_RECEIVED_FLAME_ORB_VOLCANOLOGIST                       0x4BC // Project Grounded: Lavabuis / top van Mt. Chimney
+#define FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE               0x4BD // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
+#define FLAG_SCORCHED_SLAB_SUN_DOOR_OPEN                            0x4C0 // Project Grounded: Scorched Slab
+#define FLAG_HIDE_SCORCHED_SLAB_VOLCARONA                           0x4C1 // Project Grounded: Scorched Slab
+#define FLAG_ITEM_SCORCHED_SLAB_SUN_STONE                           0x4C2 // Project Grounded: Scorched Slab
+#define FLAG_ITEM_SCORCHED_SLAB_DAMP_ROCK                           0x4C3 // Project Grounded: Scorched Slab
+#define FLAG_ITEM_SCORCHED_SLAB_HEAT_ROCK                           0x4C4 // Project Grounded: Scorched Slab
+#define FLAG_ITEM_SCORCHED_SLAB_TM_WEATHER_BALL                     0x4C5 // Project Grounded: Scorched Slab
+#define FLAG_HIDDEN_ITEM_SCORCHED_SLAB_BIG_NUGGET                   0x4C6 // Project Grounded: Scorched Slab
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
 #define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
@@ -1283,30 +1283,30 @@
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
 #define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
-#define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
-#define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
-#define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
-#define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
-#define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
-#define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
-#define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
-#define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
-#define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
-#define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
-#define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
-#define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
-#define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
+#define FLAG_DEFEATED_ZARUDE                                        0x4D0 // Project Grounded: Zarude gevangen of verslagen (Fortree Jungle; verslagen = terug na de League)
+#define FLAG_CAUGHT_ZARUDE                                          0x4D1 // Project Grounded: Zarude gevangen
+#define FLAG_HIDE_FORTREE_JUNGLE_ZARUDE                             0x4D2 // Project Grounded: Zarude-object in de boomkruin (verborgen tot de scene)
+#define FLAG_ITEM_MANGROVE_MIRE_BLACK_SLUDGE                        0x4D3 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_MYSTIC_WATER                        0x4D4 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_ABSORB_BULB                         0x4D5 // Project Grounded: Mangrove Mire
+#define FLAG_ITEM_MANGROVE_MIRE_TOXIC_ORB                           0x4D6 // Project Grounded: Mangrove Mire (Toxic Orb)
+#define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_BIG_ROOT                     0x4D7 // Project Grounded: Mangrove Mire
+#define FLAG_HIDDEN_ITEM_MANGROVE_MIRE_ULTRA_BALL                   0x4D8 // Project Grounded: Mangrove Mire
+#define FLAG_OGERPON_QUEST_STARTED                                  0x4D9 // Project Grounded: Ogerpon-quest: maskerhoedster heeft het verhaal verteld (openingen naar de schuilplaatsen)
+#define FLAG_DEFEATED_OKIDOGI                                       0x4DA // Project Grounded: Ogerpon-quest: Okidogi gevangen of verslagen (Granite Cave; verslagen = terug na de League)
+#define FLAG_CAUGHT_OKIDOGI                                         0x4DB // Project Grounded: Ogerpon-quest: Okidogi gevangen
+#define FLAG_DEFEATED_MUNKIDORI                                     0x4DC // Project Grounded: Ogerpon-quest: Munkidori gevangen of verslagen (Fiery Path; verslagen = terug na de League)
+#define FLAG_CAUGHT_MUNKIDORI                                       0x4DD // Project Grounded: Ogerpon-quest: Munkidori gevangen
+#define FLAG_DEFEATED_FEZANDIPITI                                   0x4DE // Project Grounded: Ogerpon-quest: Fezandipiti gevangen of verslagen (Route 127 onderwater; verslagen = terug na de League)
+#define FLAG_CAUGHT_FEZANDIPITI                                     0x4DF // Project Grounded: Ogerpon-quest: Fezandipiti gevangen
+#define FLAG_RECEIVED_CORNERSTONE_MASK                              0x4E0 // Project Grounded: Ogerpon-quest: Cornerstone Mask terugveroverd (Okidogi)
+#define FLAG_RECEIVED_HEARTHFLAME_MASK                              0x4E1 // Project Grounded: Ogerpon-quest: Hearthflame Mask terugveroverd (Munkidori)
+#define FLAG_RECEIVED_WELLSPRING_MASK                               0x4E2 // Project Grounded: Ogerpon-quest: Wellspring Mask terugveroverd (Fezandipiti)
+#define FLAG_OGERPON_MASKS_PLACED                                   0x4E3 // Project Grounded: Ogerpon-quest: de maskers liggen op het altaar in Fortree Jungle (Ogerpon is verschenen)
+#define FLAG_DEFEATED_OGERPON                                       0x4E4 // Project Grounded: Ogerpon-quest: Ogerpon gevangen of verslagen (verslagen = terug na de League)
+#define FLAG_CAUGHT_OGERPON                                         0x4E5 // Project Grounded: Ogerpon-quest: Ogerpon gevangen
+#define FLAG_HIDE_FORTREE_JUNGLE_OGERPON                            0x4E6 // Project Grounded: Ogerpon-quest: Ogerpon-object achter het altaar
+#define FLAG_OGERPON_MASKS_RETURNED                                 0x4E7 // Project Grounded: Ogerpon-quest: de speler heeft de drie maskers terug als hold items
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
 #define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte
@@ -1574,7 +1574,7 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_WEATHER_SERVICE_BATTLE           (DAILY_FLAGS_START + 0x3)  // Project Grounded: Archie en Maxie vandaag al bevochten
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
@@ -1593,14 +1593,14 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
-#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
+#define FLAG_DAILY_REMATCH_ROXANNE                  (DAILY_FLAGS_START + 0x15) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_BRAWLY                   (DAILY_FLAGS_START + 0x16) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_WATTSON                  (DAILY_FLAGS_START + 0x17) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_FLANNERY                 (DAILY_FLAGS_START + 0x18) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_NORMAN                   (DAILY_FLAGS_START + 0x19) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_WINONA                   (DAILY_FLAGS_START + 0x1A) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_TATE_AND_LIZA            (DAILY_FLAGS_START + 0x1B) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_WALLACE                  (DAILY_FLAGS_START + 0x1C) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
 #define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag

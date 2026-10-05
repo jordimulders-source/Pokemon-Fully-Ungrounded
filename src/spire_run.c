@@ -13,6 +13,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "pokemon.h"
+#include "pokemon_icon.h"
 #include "random.h"
 #include "script.h"
 #include "sound.h"
@@ -28,6 +29,9 @@
 #define RUN SPIRE_SAVE
 
 STATIC_ASSERT(sizeof(struct SpireSave) <= SPIRE_SAVE_SIZE, SpireSaveFitsInSaveBlock2);
+STATIC_ASSERT(SPIRE_FLOORS * 2 <= 32, SpirePathFitsInU32);
+
+EWRAM_DATA static u8 sDebugBoss = 0;   // debug: baas-index + 1 (Spire_DebugOpen, VAR_0x8008)
 
 EWRAM_DATA struct SpireResult gSpireResult = {0};
 EWRAM_DATA u8 gSpireRelicSource = 0;   // bron van het volgende relic-kaartenscherm (enum SpireRelicSource)
@@ -243,6 +247,39 @@ u32 Spire_RandomRelic(u32 source, u32 salt, const u8 *exclude, u32 excludeCount)
 struct Pokemon *Spire_GetRunMon(u32 i)
 {
     return &RUN.mons[i];
+}
+
+// Verticale verschuiving waarmee het zichtbare deel van een Pokémon-icoon (32x32, eerste frame) in het midden van
+// het 32-pixelvak valt (v0.9.82, Jordi: Fuecoco viel buiten zijn venster). Iconen staan meestal onderaan hun vak
+// (Fuecoco tot de onderste rij) of juist hoog (vliegers); zo past elke soort in een venster van 24 px.
+s32 Spire_IconYOffset(u16 species, u32 personality)
+{
+    const u8 *tiles = GetMonIconPtr(species, personality);
+    s32 top = -1, bottom = -1;
+    u32 row, tx;
+
+    if (tiles == NULL)
+        return 0;
+    for (row = 0; row < 32; row++)
+    {
+        // 4x4 tegels van 32 bytes (1D), per tegelrij 4 bytes per pixelrij
+        for (tx = 0; tx < 4; tx++)
+        {
+            const u8 *p = tiles + ((row / 8) * 4 + tx) * 32 + (row % 8) * 4;
+
+            if (p[0] | p[1] | p[2] | p[3])
+                break;
+        }
+        if (tx < 4)
+        {
+            if (top < 0)
+                top = row;
+            bottom = row;
+        }
+    }
+    if (top < 0)
+        return 0;
+    return 16 - (top + bottom + 1) / 2;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -473,6 +510,73 @@ static u32 Lcg(u32 *state)
     return (*state >> 16) & 0x7FFF;
 }
 
+// Gewogen kaart (Jordi, 5 okt): (1) geen elite, rust of winkel direct na dezelfde soort op een pad (anders twee
+// rustplekken of twee elites op rij); (2) minstens één elite vóór en één na de schatkist.
+static bool32 Spire_ParentHasType(const struct SpireActMap *map, u32 f, u32 j, u32 type)
+{
+    u32 i;
+
+    if (f == 0)
+        return FALSE;
+    for (i = 0; i < map->count[f - 1]; i++)
+        if ((map->nodes[f - 1][i].links & (1u << j)) && map->nodes[f - 1][i].type == type)
+            return TRUE;
+    return FALSE;
+}
+
+static bool32 Spire_ChildHasType(const struct SpireActMap *map, u32 f, u32 i, u32 type)
+{
+    u32 j;
+
+    if (f + 1 >= SPIRE_FLOORS)
+        return FALSE;
+    for (j = 0; j < map->count[f + 1]; j++)
+        if ((map->nodes[f][i].links & (1u << j)) && map->nodes[f + 1][j].type == type)
+            return TRUE;
+    return FALSE;
+}
+
+static void Spire_EnsureElite(struct SpireActMap *map, u32 *st, u32 lo, u32 hi)
+{
+    u32 f, i, tries;
+
+    for (f = lo; f <= hi; f++)
+        for (i = 0; i < map->count[f]; i++)
+            if (map->nodes[f][i].type == SPIRE_ROOM_ELITE)
+                return;
+    for (tries = 0; tries < 40; tries++)
+    {
+        f = lo + Lcg(st) % (hi - lo + 1);
+        i = Lcg(st) % map->count[f];
+        if ((map->nodes[f][i].type == SPIRE_ROOM_FIGHT || map->nodes[f][i].type == SPIRE_ROOM_EVENT)
+         && !Spire_ParentHasType(map, f, i, SPIRE_ROOM_ELITE) && !Spire_ChildHasType(map, f, i, SPIRE_ROOM_ELITE))
+        {
+            map->nodes[f][i].type = SPIRE_ROOM_ELITE;
+            return;
+        }
+    }
+}
+
+static void Spire_WeighMap(struct SpireActMap *map, u32 *st)
+{
+    u32 f, i;
+
+    for (f = 1; f < SPIRE_FLOORS - 1; f++)
+    {
+        for (i = 0; i < map->count[f]; i++)
+        {
+            u8 *type = &map->nodes[f][i].type;
+
+            if ((*type == SPIRE_ROOM_ELITE || *type == SPIRE_ROOM_REST || *type == SPIRE_ROOM_SHOP)
+             && (Spire_ParentHasType(map, f, i, *type) || Spire_ChildHasType(map, f, i, *type)))
+                *type = SPIRE_ROOM_FIGHT;
+        }
+    }
+    // minstens één elite vóór de schatkist en één erna (tot vóór de rust), zodat één route er twee kan halen
+    Spire_EnsureElite(map, st, SPIRE_ELITE_FROM, SPIRE_TREASURE_FLOOR - 1);
+    Spire_EnsureElite(map, st, SPIRE_TREASURE_FLOOR + 1, SPIRE_FLOORS - 2);
+}
+
 void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
 {
     u32 f, i, j, st = seed;
@@ -492,19 +596,22 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             if (f == 0)
                 node->type = SPIRE_ROOM_FIGHT;
             else if (f == SPIRE_FLOORS - 1)
-                node->type = SPIRE_ROOM_REST;
+                node->type = SPIRE_ROOM_REST;       // altijd Snorlax vlak voor de baas
+            else if (f == SPIRE_TREASURE_FLOOR)
+                node->type = SPIRE_ROOM_TREASURE;   // altijd een schatkist in het midden (Slay the Spire)
             // kansen (runsim.py, vergelijking met Slay): gevecht 45, event 25, elite 15, winkel 7, rust 8%.
             // Te vroeg voor een elite = gevecht, te vroeg voor een winkel = event (eerder: winkel 25% op verdieping 2).
+            // Geen rust op de verdieping vóór de Snorlax (twee rustplekken op rij).
             else if (r < 45)
                 node->type = SPIRE_ROOM_FIGHT;
             else if (r < 70)
                 node->type = SPIRE_ROOM_EVENT;
             else if (r < 85)
-                node->type = (f >= 2) ? SPIRE_ROOM_ELITE : SPIRE_ROOM_FIGHT;
+                node->type = (f >= SPIRE_ELITE_FROM) ? SPIRE_ROOM_ELITE : SPIRE_ROOM_FIGHT;
             else if (r < 92)
                 node->type = (f >= 2) ? SPIRE_ROOM_SHOP : SPIRE_ROOM_EVENT;
             else
-                node->type = (f >= 3) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
+                node->type = (f >= SPIRE_ELITE_FROM && f < SPIRE_FLOORS - 2) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
         }
     }
     // verbindingen zonder kruisingen: kamer i gaat naar j0(i) (oplopend met i) en soms ook naar j0(i)+1,
@@ -538,6 +645,7 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             }
         }
     }
+    Spire_WeighMap(map, &st);
 }
 
 static u32 PathNode(u32 floor)
@@ -668,12 +776,18 @@ void Spire_DebugOpen(void)
         Spire_SetRental(0, Spire_RandomRental(1));
         Spire_SetRental(1, Spire_RandomRental(2));
     }
+    // VAR_0x8006/0x8007: vaste rentals (soort), VAR_0x8008: baas-index + 1 (testen van één baas)
+    if (gSpecialVar_0x8006 != SPECIES_NONE)
+        Spire_SetRental(0, gSpecialVar_0x8006);
+    if (gSpecialVar_0x8007 != SPECIES_NONE)
+        Spire_SetRental(1, gSpecialVar_0x8007);
+    sDebugBoss = gSpecialVar_0x8008;
     switch (gSpecialVar_0x8004)
     {
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
     case 1:  Spire_OpenShop(Spire_ReturnToField); break;
     case 2:  gSpireForcedEvent = gSpecialVar_0x8005; Spire_OpenEvent(Spire_ReturnToField); break;
-    case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
+    case 4:  RUN.floor = SPIRE_ELITE_FROM; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
     case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
     case 6:  // relic-beloning: VAR_0x8005 = 0 elite, 1 baas
         gSpireRelicSource = gSpecialVar_0x8005 ? SPIRE_RELIC_FROM_BOSS : SPIRE_RELIC_FROM_ELITE;
@@ -846,6 +960,10 @@ void Spire_EnterRoom(u32 floor, u32 node)
     case SPIRE_ROOM_SHOP:
         Spire_OpenShop(Spire_RoomFinished);
         break;
+    case SPIRE_ROOM_TREASURE:   // schatkist: één relic, zoals een elite (geen gevecht)
+        gSpireRelicSource = SPIRE_RELIC_FROM_ELITE;
+        Spire_OpenCards(SPIRE_CARDS_RELICS, Spire_RoomFinished);
+        break;
     default:
         Spire_OpenEvent(Spire_RoomFinished);
         break;
@@ -959,6 +1077,9 @@ static const struct SpireEncounter *GetBoss(void)
 {
     u32 i, n = 0, pick;
 
+    if (sDebugBoss != 0 && sDebugBoss <= ARRAY_COUNT(sSpireBosses))
+        return &sSpireBosses[sDebugBoss - 1];
+
     for (i = 0; i < ARRAY_COUNT(sSpireBosses); i++)
         if (sSpireBosses[i].biome == RUN.act)
             n++;
@@ -978,7 +1099,7 @@ u16 Spire_GetBossSpecies(void)
 // verdieping 1-2 uit de zwakke pool, daarna gewoon; elites apart. Niet twee keer dezelfde in een act.
 static u32 PickEncounter(u32 type)
 {
-    u32 kind = (type == SPIRE_ROOM_ELITE) ? SPIRE_ENC_ELITE : (RUN.floor < 2) ? SPIRE_ENC_WEAK : SPIRE_ENC_NORMAL;
+    u32 kind = (type == SPIRE_ROOM_ELITE) ? SPIRE_ENC_ELITE : (RUN.floor < SPIRE_WEAK_FLOORS) ? SPIRE_ENC_WEAK : SPIRE_ENC_NORMAL;
     u32 i, n = 0, local = 0, pick, fresh = 0;
     u32 st = RUN.seed ^ (RUN.floor * 0x9E3779B1) ^ (RUN.node * 0x85EBCA6B);
 

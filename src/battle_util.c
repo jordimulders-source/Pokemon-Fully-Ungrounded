@@ -11,6 +11,7 @@
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
 #include "battle_hold_effects.h"
+#include "rtc.h"
 #include "generational_changes.h"
 #include "party_menu.h"
 #include "pokemon.h"
@@ -51,6 +52,7 @@
 #include "constants/species.h"
 #include "constants/trainers.h"
 #include "spire.h"
+#include "debug.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
 
@@ -2307,7 +2309,8 @@ static enum MoveCanceler CancelerConfused(struct BattleContext *ctx)
         if (gBattleMons[ctx->battlerAtk].volatiles.confusionTurns)
         {
              // confusion dmg
-            if (RandomPercentage(RNG_CONFUSION, (GetConfig(B_CONFUSION_SELF_DMG_CHANCE) >= GEN_7 ? 33 : 50)))
+            if (GetMoveEffect(ctx->currentMove) != EFFECT_TIPSY_WALTZ // Project Grounded: Spinda danst er gewoon doorheen
+             && RandomPercentage(RNG_CONFUSION, (GetConfig(B_CONFUSION_SELF_DMG_CHANCE) >= GEN_7 ? 33 : 50)))
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
                 struct DamageContext dmgCtx = {0};
@@ -6578,6 +6581,8 @@ u8 GetAttackerObedienceForAction()
         return OBEYS;
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER || gSpireBattle) // Project Grounded: rentals in The Spire
         return OBEYS;
+    if (gDebugBattleTest) // Project Grounded: testteam van debugmenu "Battle test"
+        return OBEYS;
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         return OBEYS;
     if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
@@ -7214,8 +7219,27 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_WEATHER_BALL:
+    case EFFECT_WEATHER_REPORT: // Project Grounded
         if (ctx->weather & B_WEATHER_ANY)
             basePower *= 2;
+        break;
+    case EFFECT_ECLIPSE: // Project Grounded: Solrock overdag, Lunatone 's nachts
+        if (IsEclipseTimeBoosted(GetCategoryBasedOnStats(battlerAtk) == DAMAGE_CATEGORY_PHYSICAL, GetTimeOfDay()))
+            basePower = basePower * 3 / 2;
+        break;
+    case EFFECT_TIPSY_WALTZ: // Project Grounded: Spinda danst beter met een stuk in zijn kraag
+        if (gBattleMons[battlerAtk].volatiles.confusionTurns)
+            basePower *= 2;
+        break;
+    case EFFECT_STRAIGHT_LINE: // Project Grounded: tweede keer achter elkaar = dubbel
+        if (gBattleStruct->metronomeItemCounter[battlerAtk] > 0)
+            basePower *= 2;
+        break;
+    case EFFECT_WIND_CHIME: // Project Grounded: met Tailwind dubbel, tegen een doelwit met status x1,5
+        if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_TAILWIND)
+            basePower *= 2;
+        if (gBattleMons[battlerDef].status1 & STATUS1_ANY)
+            basePower = basePower * 3 / 2;
         break;
     case EFFECT_PURSUIT:
         if (gBattleStruct->battlerState[battlerDef].pursuitTarget)
@@ -7252,6 +7276,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             else
                 basePower = sTrumpCardPowerTable[gBattleMons[battlerAtk].pp[i]];
         }
+        break;
+    case EFFECT_HEARTBREAK: // Project Grounded: Luvdisc. Het is uit.
+        if (AreBattlersOfOppositeGender(battlerAtk, battlerDef)
+         || gBattleMons[battlerDef].volatiles.infatuation
+         || gBattleMons[battlerAtk].volatiles.infatuation)
+            basePower *= 2;
         break;
     case EFFECT_ACROBATICS:
         if (gBattleMons[battlerAtk].item == ITEM_NONE
@@ -7707,6 +7737,30 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     }
 
+    // Project Grounded: Gulp Down, een ingeslikt item werkt vanuit de maag
+    {
+        u32 swallowed = GetBattlerSwallowedItem(battlerAtk);
+        uq4_12_t swallowedModifier = uq4_12_add(UQ_4_12(1.0), PercentToUQ4_12_Floored(min(GetItemHoldEffectParam(swallowed), 100)));
+        switch (GetBattlerSwallowedHoldEffect(battlerAtk))
+        {
+        case HOLD_EFFECT_MUSCLE_BAND:
+            if (IsBattleMovePhysical(move))
+                modifier = uq4_12_multiply(modifier, swallowedModifier);
+            break;
+        case HOLD_EFFECT_WISE_GLASSES:
+            if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, swallowedModifier);
+            break;
+        case HOLD_EFFECT_TYPE_POWER:
+        case HOLD_EFFECT_PLATE:
+            if (moveType == GetItemSecondaryId(swallowed))
+                modifier = uq4_12_multiply(modifier, uq4_12_add(UQ_4_12(1.0), PercentToUQ4_12(min(GetItemHoldEffectParam(swallowed), 100))));
+            break;
+        default:
+            break;
+        }
+    }
+
     // Terastallization boosts weak, non-priority, non-multi hit moves after modifiers to 60 BP.
     if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA
         && (moveType == GetBattlerTeraType(battlerAtk)
@@ -8038,6 +8092,21 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         break;
     }
 
+    // Project Grounded: Gulp Down, ingeslikte Choice Band/Specs (zonder vast te zitten aan één move)
+    switch (GetBattlerSwallowedHoldEffect(battlerAtk))
+    {
+    case HOLD_EFFECT_CHOICE_BAND:
+        if (IsBattleMovePhysical(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case HOLD_EFFECT_CHOICE_SPECS:
+        if (IsBattleMoveSpecial(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    default:
+        break;
+    }
+
     modifier = ApplyOffensiveBadgeBoost(modifier, battlerAtk, move);
 
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);
@@ -8225,6 +8294,21 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
          && (gBattleMons[battlerDef].species == SPECIES_LATIAS || gBattleMons[battlerDef].species == SPECIES_LATIOS)
          && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
          && !usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    default:
+        break;
+    }
+
+    // Project Grounded: Gulp Down, ingeslikte Assault Vest/Eviolite
+    switch (GetBattlerSwallowedHoldEffect(battlerDef))
+    {
+    case HOLD_EFFECT_EVIOLITE:
+        if (CanEvolve(gBattleMons[battlerDef].species))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case HOLD_EFFECT_ASSAULT_VEST:
+        if (!usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     default:
@@ -8601,6 +8685,8 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderAbilitiesModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderPartnerAbilitiesModifier(battlerDefPartner));
         DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->holdEffectAtk));
+        if (GetBattlerSwallowedHoldEffect(ctx->battlerAtk) == HOLD_EFFECT_LIFE_ORB || GetBattlerSwallowedHoldEffect(ctx->battlerAtk) == HOLD_EFFECT_EXPERT_BELT) // Project Grounded: Gulp Down
+            DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, GetBattlerSwallowedHoldEffect(ctx->battlerAtk)));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderItemsModifier(ctx));
     }
     else
@@ -8610,6 +8696,8 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
         DAMAGE_MULTIPLY_MODIFIER(GetAttackerAbilitiesModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->isCrit, ctx->abilityAtk));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderItemsModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->holdEffectAtk));
+        if (GetBattlerSwallowedHoldEffect(ctx->battlerAtk) == HOLD_EFFECT_LIFE_ORB || GetBattlerSwallowedHoldEffect(ctx->battlerAtk) == HOLD_EFFECT_EXPERT_BELT) // Project Grounded: Gulp Down
+            DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, GetBattlerSwallowedHoldEffect(ctx->battlerAtk)));
     }
     return finalModifier;
 }
@@ -9874,6 +9962,7 @@ void SetDynamicMoveCategory(u32 battlerAtk, u32 battlerDef, u32 move)
     switch (GetMoveEffect(move))
     {
     case EFFECT_PHOTON_GEYSER:
+    case EFFECT_ECLIPSE: // Project Grounded
         gBattleStruct->swapDamageCategory = (GetCategoryBasedOnStats(battlerAtk) == DAMAGE_CATEGORY_PHYSICAL);
         break;
     case EFFECT_SHELL_SIDE_ARM:
@@ -10277,6 +10366,7 @@ void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
     u32 hp = GetMonData(mon, MON_DATA_HP);
     u32 oldMaxHp = GetMonData(mon, MON_DATA_MAX_HP);
     CalculateMonStats(mon);
+    Spire_RescaleAfterRecalc(battler, mon, hp, oldMaxHp); // Project Grounded: The Spire, ×HP blijft na een vormwissel (Schooling)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && gChosenActionByBattler[battler] != B_ACTION_SWITCH)
     {
         ApplyDynamaxHPMultiplier(mon);
@@ -11483,4 +11573,55 @@ bool32 IsMimikyuDisguised(u32 battler)
 {
     return gBattleMons[battler].species == SPECIES_MIMIKYU_DISGUISED
         || gBattleMons[battler].species == SPECIES_MIMIKYU_TOTEM_DISGUISED;
+}
+
+// Project Grounded: Eclipse. Fysiek (Solrock, Rock) is sterker overdag, speciaal (Lunatone, Psychic) 's nachts.
+bool32 IsEclipseTimeBoosted(bool32 physical, enum TimeOfDay timeOfDay)
+{
+    if (physical)
+        return timeOfDay == TIME_MORNING || timeOfDay == TIME_DAY;
+    return timeOfDay == TIME_EVENING || timeOfDay == TIME_NIGHT;
+}
+
+// Project Grounded: Gulp Down. Het ingeslikte item hoort bij het teamlid en blijft het hele gevecht.
+u32 GetBattlerSwallowedItem(u32 battler)
+{
+    if (!gMain.inBattle || gBattleStruct == NULL)
+        return ITEM_NONE;
+    return gBattleStruct->swallowedItem[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]];
+}
+
+// Alleen passieve items werken vanuit de maag (zie IsSwallowableHoldEffect).
+enum HoldEffect GetBattlerSwallowedHoldEffect(u32 battler)
+{
+    u32 item = GetBattlerSwallowedItem(battler);
+    if (item == ITEM_NONE)
+        return HOLD_EFFECT_NONE;
+    return GetItemHoldEffect(item);
+}
+
+bool32 IsSwallowableHoldEffect(enum HoldEffect holdEffect)
+{
+    switch (holdEffect)
+    {
+    case HOLD_EFFECT_LEFTOVERS:
+    case HOLD_EFFECT_BLACK_SLUDGE:
+    case HOLD_EFFECT_SHELL_BELL:
+    case HOLD_EFFECT_LIFE_ORB:
+    case HOLD_EFFECT_EXPERT_BELT:
+    case HOLD_EFFECT_MUSCLE_BAND:
+    case HOLD_EFFECT_WISE_GLASSES:
+    case HOLD_EFFECT_TYPE_POWER:
+    case HOLD_EFFECT_PLATE:
+    case HOLD_EFFECT_CHOICE_BAND:
+    case HOLD_EFFECT_CHOICE_SPECS:
+    case HOLD_EFFECT_CHOICE_SCARF:
+    case HOLD_EFFECT_SCOPE_LENS:
+    case HOLD_EFFECT_ASSAULT_VEST:
+    case HOLD_EFFECT_EVIOLITE:
+    case HOLD_EFFECT_ROCKY_HELMET:
+        return TRUE;
+    default:
+        return FALSE;
+    }
 }

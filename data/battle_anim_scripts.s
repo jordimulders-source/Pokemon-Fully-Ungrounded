@@ -31423,6 +31423,8 @@ gBattleAnimGeneral_TurnTrap::
 	jumpargeq 0, TRAP_ANIM_INFESTATION, Status_Infestation
 	jumpargeq 0, TRAP_ANIM_SNAP_TRAP, Status_Snap_Trap
 	jumpargeq 0, TRAP_ANIM_THUNDER_CAGE, Status_Thunder_Cage
+	jumpargeq 0, TRAP_ANIM_MUMMYS_CURSE, Status_MummysCurse
+	jumpargeq 0, TRAP_ANIM_STEEL_TRAP, Status_SteelTrap
 	goto Status_BindWrap
 Status_BindWrap:
 	loadspritegfx ANIM_TAG_TENDRILS
@@ -38359,5 +38361,522 @@ gBattleAnimGeneral_DynamaxGrowth:: @ PORTED FROM CFRU
 	createvisualtask SoundTask_PlayDynamaxCry, 0
 	delay 8
 	createvisualtask AnimTask_DynamaxGrowth, 0x5, 0x1, 0x0
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Mummy's Curse. De sarcofaag rammelt, vervloekte windsels draaien van onder naar boven
+@ om het doelwit, dat even linnenkleurig wordt (gemummificeerd), en er ontsnapt een geest.
+gBattleAnimMove_MummysCurse::
+	loadspritegfx ANIM_TAG_MUMMY_BANDAGE
+	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 12, RGB(4, 1, 7)
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 2, 0, 14, 1
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	loopsewithpan SE_M_BIND, SOUND_PAN_TARGET, 12, 5
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 0, 0, 44, 14
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 5, 128, 44, 14
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 10, 64, 44, 14
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 15, 192, 44, 14
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 20, 32, 44, 14
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 25, 160, 44, 14
+	delay 20
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 11, RGB(26, 24, 18)
+	waitforvisualfinish
+	playsewithpan SE_M_VICEGRIP, SOUND_PAN_TARGET
+	createsprite gMummyBandageStaticSpriteTemplate, ANIM_TARGET, 1, -5, -8, 44
+	createsprite gMummyBandageStaticSpriteTemplate, ANIM_TARGET, 1, 4, 1, 44
+	createsprite gMummyBandageStaticSpriteTemplate, ANIM_TARGET, 1, -3, 10, 44
+	createsprite gMummyBandageStaticSpriteTemplate, ANIM_TARGET, 1, 5, 19, 44
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 10, 1
+	delay 14
+	playsewithpan SE_M_CONFUSE_RAY, SOUND_PAN_TARGET
+	createsprite gCurseGhostSpriteTemplate, ANIM_TARGET, 2
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 11, 0, RGB(26, 24, 18)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 12, 0, RGB(4, 1, 7)
+	waitforvisualfinish
+	end
+
+@ Elke beurt: de windsels knellen.
+Status_MummysCurse:
+	loadspritegfx ANIM_TAG_MUMMY_BANDAGE
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 0, 0, 24, 16
+	createsprite gMummyBandageWrapSpriteTemplate, ANIM_TARGET, 2, 4, 128, 24, 16
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB(26, 24, 18)
+	delay 18
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 8, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 9, 0, RGB(26, 24, 18)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Zap Trap. Stunfisk klapt dubbel (plat en breed), schiet naar voren en klapt
+@ als een val dicht op het doelwit; dan een elektrische schok.
+gBattleAnimMove_ZapTrap::
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	loadspritegfx ANIM_TAG_LIGHTNING
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SHARP_TEETH, 0, 9, 9, RGB(24, 19, 7)
+	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, 7, -9, 9, ANIM_ATTACKER, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 0, 10, RGB(31, 31, 8)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 10, 0, RGB(31, 31, 8)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, RGB_BLACK
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 3
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=-32, animation=0, x_velocity=0/256, y_velocity=819/256, half_duration=10
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=32, animation=4, x_velocity=0/256, y_velocity=-819/256, half_duration=10
+	delay 10
+	playsewithpan SE_M_VICEGRIP, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 18, 1
+	delay 4
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_TARGET
+	createsprite gLightningSpriteTemplate, ANIM_TARGET, 2, 0, -48
+	delay 1
+	createsprite gLightningSpriteTemplate, ANIM_TARGET, 2, 0, -16
+	delay 1
+	createsprite gLightningSpriteTemplate, ANIM_TARGET, 2, 0, 16
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 0, 13, RGB(31, 31, 8)
+	delay 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 13, 0, RGB(31, 31, 8)
+	delay 8
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 0, 13, RGB(31, 31, 8)
+	delay 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 13, 0, RGB(31, 31, 8)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Steel Trap. Galar-Stunfisk klapt dubbel en een stalen berenklem slaat van vier
+@ kanten dicht; metaalsplinters, en het doelwit kleurt rood (bloeden).
+gBattleAnimMove_SteelTrap::
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	loadspritegfx ANIM_TAG_CLAMP
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_METAL_BITS
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SHARP_TEETH, 0, 11, 11, RGB(21, 22, 25)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CLAMP, 0, 11, 11, RGB(21, 22, 25)
+	playsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, 7, -9, 9, ANIM_ATTACKER, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 0, 10, RGB(27, 28, 31)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 10, 0, RGB(27, 28, 31)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 9, RGB(4, 4, 6)
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 3
+	playsewithpan SE_M_VICEGRIP, SOUND_PAN_TARGET
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=-32, animation=0, x_velocity=0/256, y_velocity=819/256, half_duration=10
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=32, animation=4, x_velocity=0/256, y_velocity=-819/256, half_duration=10
+	create_clamp_jaw_sprite ANIM_ATTACKER, 2, x=-32, y=0, animation=2, x_velocity=819/256, y_velocity=0/256, half_duration=10
+	create_clamp_jaw_sprite ANIM_ATTACKER, 2, x=32, y=0, animation=6, x_velocity=-819/256, y_velocity=0/256, half_duration=10
+	delay 10
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 4, 16, 1
+	createsprite gAutotomizeMetalShardsTemplate, ANIM_TARGET, 2, 1, 0
+	createsprite gAutotomizeMetalShardsTemplate, ANIM_TARGET, 2, 1, 1
+	createsprite gAutotomizeMetalShardsTemplate, ANIM_TARGET, 2, 1, 2
+	createsprite gAutotomizeMetalShardsTemplate, ANIM_TARGET, 2, 1, 3
+	delay 4
+	playsewithpan SE_M_HARDEN, SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 11, RGB(26, 2, 2)
+	delay 14
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 11, 0, RGB(26, 2, 2)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 9, 0, RGB(4, 4, 6)
+	waitforvisualfinish
+	end
+
+@ Elke beurt: de klem knijpt nog eens door.
+Status_SteelTrap:
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SHARP_TEETH, 0, 11, 11, RGB(21, 22, 25)
+	playsewithpan SE_M_VICEGRIP, SOUND_PAN_TARGET
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=-24, animation=0, x_velocity=0/256, y_velocity=614/256, half_duration=10
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=24, animation=4, x_velocity=0/256, y_velocity=-614/256, half_duration=10
+	delay 10
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 2, 10, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 10, RGB(26, 2, 2)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 10, 0, RGB(26, 2, 2)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Pack Howl. De nacht valt, een volle maan; Mightyena wordt een silhouet en twee
+@ schaduwen van de roedel stappen naast hem tevoorschijn en huilen mee.
+gBattleAnimMove_PackHowl::
+	loadspritegfx ANIM_TAG_NOISE_LINE
+	loadspritegfx ANIM_TAG_MOON
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 13, RGB(1, 1, 6)
+	waitforvisualfinish
+	createsprite gPackHowlMoonSpriteTemplate, ANIM_ATTACKER, 40, 120, 40, 150
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 0, 13, RGB(2, 1, 6)
+	delay 28
+	setalpha 12, 8
+	createvisualtask AnimTask_PackHowlShadows, 5, 56
+	delay 16
+	createvisualtask AnimTask_DeepInhale, 2, ANIM_ATTACKER
+	delay 12
+	createvisualtask SoundTask_PlayCryWithEcho, 5, FALSE
+	call RoarEffect
+	delay 12
+	call RoarEffect
+	waitforvisualfinish
+	blendoff
+	createvisualtask SoundTask_WaitForCry, 5
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 13, 0, RGB(2, 1, 6)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 13, 0, RGB(1, 1, 6)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Whale Song. De zee wordt diep en donker, Wailord zwelt op en zingt; blauwe noten
+@ cirkelen over het hele veld en golven raken iedereen.
+gBattleAnimMove_WhaleSong::
+	loadspritegfx ANIM_TAG_MUSIC_NOTES_2
+	loadspritegfx ANIM_TAG_BLUE_RING_2
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_MUSIC_NOTES_2, 0, 10, 10, RGB(10, 22, 31)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 11, RGB(0, 6, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -4, -4, 16, ANIM_ATTACKER, 0
+	createvisualtask SoundTask_PlayCryWithEcho, 5, FALSE
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 0, 0, 0
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 2, 1, 32
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 4, 2, 64
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 6, 0, 96
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 8, 2, 128
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 10, 2, 160
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 12, 1, 192
+	createsprite gPerishSongMusicNoteSpriteTemplate, ANIM_ATTACKER, 4, 14, 3, 224
+	createsprite gPerishSongMusicNote2SpriteTemplate, ANIM_ATTACKER, 4, 14, 0, 0
+	panse SE_M_SING, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, -2, 0
+	delay 30
+	createsprite gWaterPulseRingSpriteTemplate, ANIM_TARGET, 2, 0, 0, 40, 15
+	playsewithpan SE_M_GIGA_DRAIN, SOUND_PAN_TARGET
+	delay 6
+	createsprite gWaterPulseRingSpriteTemplate, ANIM_TARGET, 2, 0, 0, 40, 15
+	delay 6
+	createsprite gWaterPulseRingSpriteTemplate, ANIM_TARGET, 2, 0, 0, 40, 15
+	createsprite gSmallBubblePairSpriteTemplate, ANIM_TARGET, 2, 10, 10, 25, 1
+	createsprite gSmallBubblePairSpriteTemplate, ANIM_TARGET, 2, -15, 0, 25, 1
+	delay 10
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 16, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 2, 0, 16, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATK_PARTNER, 2, 0, 16, 1
+	delay 40
+	createvisualtask SoundTask_WaitForCry, 5
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 11, 0, RGB(0, 6, 16)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Heartbreak. Luvdisc stuurt een hartje, het hart trilt, barst en valt in twee
+@ helften uit elkaar; het doelwit wordt blauw van verdriet en huilt.
+gBattleAnimMove_Heartbreak::
+	loadspritegfx ANIM_TAG_RED_HEART
+	loadspritegfx ANIM_TAG_BROKEN_HEART
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 4, 4, RGB(12, 11, 31)
+	loopsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER, 12, 2
+	createvisualtask AnimTask_SwayMon, 5, 0, 12, 4096, 2, ANIM_ATTACKER
+	delay 10
+	createsprite gRedHeartProjectileSpriteTemplate, ANIM_TARGET, 3, 20, -8
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 10, RGB(6, 6, 12)
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_TARGET
+	createsprite gBrokenHeartSpriteTemplate, ANIM_TARGET, 2, 0, 26, -14
+	createsprite gBrokenHeartSpriteTemplate, ANIM_TARGET, 2, 1, 26, -14
+	delay 18
+	playsewithpan SE_ICE_CRACK, SOUND_PAN_TARGET
+	delay 8
+	playsewithpan SE_ICE_BREAK, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 8, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB(8, 10, 26)
+	delay 10
+	create_tear_drop_sprite ANIM_TARGET, 2, relative_to=1, type=0
+	create_tear_drop_sprite ANIM_TARGET, 2, relative_to=1, type=2
+	delay 8
+	create_tear_drop_sprite ANIM_TARGET, 2, relative_to=1, type=1
+	create_tear_drop_sprite ANIM_TARGET, 2, relative_to=1, type=3
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 9, 0, RGB(8, 10, 26)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 10, 0, RGB(6, 6, 12)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Eclipse. Het veld wordt nacht, een donkere maan schuift voor het licht (gouden corona),
+@ de gebruiker gloeit op en een lichtstraal van zon of maan slaat in op het doelwit.
+gBattleAnimMove_Eclipse::
+	loadspritegfx ANIM_TAG_MOON
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_GOLD_RING
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 15, RGB(1, 1, 3)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_MOON, 0, 8, 8, RGB(4, 3, 8)
+	createsprite gPackHowlMoonSpriteTemplate, ANIM_ATTACKER, 40, 120, 36, 70
+	playsewithpan SE_M_MOONLIGHT, 0
+	delay 12
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_THIN_RING, 0, 12, 12, RGB(31, 24, 4)
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 41, 0, 0, 0, 0
+	delay 6
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 41, 0, 0, 0, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 0, 12, RGB(31, 26, 10)
+	delay 14
+	playsewithpan SE_M_SOLAR_BEAM, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 12, 0, RGB(31, 26, 10)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 0, 14, RGB(31, 28, 16)
+	createsprite gGoldRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, 12
+	delay 3
+	createsprite gGoldRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, 12
+	delay 3
+	createsprite gGoldRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, 12
+	delay 10
+	playsewithpan SE_M_HYPER_BEAM, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 12, 1
+	delay 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 14, 0, RGB(31, 28, 16)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 15, 0, RGB(1, 1, 3)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Tipsy Waltz. Spinda wiebelt heen en weer met eendjes om zijn hoofd, danst met
+@ muzieknoten en waggelt dan tegen het doelwit aan.
+gBattleAnimMove_TipsyWaltz::
+	loadspritegfx ANIM_TAG_DUCK
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_SwayMon, 5, 0, 10, 2048, 3, ANIM_ATTACKER
+	createsprite gTipsyDuckSpriteTemplate, ANIM_ATTACKER, 2, 0, 64
+	createsprite gTipsyDuckSpriteTemplate, ANIM_ATTACKER, 2, 85, 64
+	createsprite gTipsyDuckSpriteTemplate, ANIM_ATTACKER, 2, 170, 64
+	loopsewithpan SE_M_TEETER_DANCE, SOUND_PAN_ATTACKER, 18, 3
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 7, 0, 12
+	delay 10
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 2, 1, 12
+	delay 10
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 5, 2, 12
+	waitforvisualfinish
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 24, 6, 1, 5
+	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	delay 4
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 6, 1
+	create_basic_hitsplat_sprite ANIM_TARGET, 4, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	playsewithpan SE_M_DIZZY_PUNCH, SOUND_PAN_TARGET
+	createvisualtask AnimTask_SwayMon, 5, 0, 8, 2048, 2, ANIM_TARGET
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Weather Report. Castform kijkt naar de lucht (wolkjes en flitsen), meldt het weerbericht
+@ en gooit dan een Weather Ball in het weer dat net is opgekomen.
+gBattleAnimMove_WeatherReport::
+	loadspritegfx ANIM_TAG_PINK_CLOUD
+	loadspritegfx ANIM_TAG_THIN_RING
+	createvisualtask AnimTask_RockMonBackAndForth, 5, ANIM_ATTACKER, 2, 0
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, -16, 0, 0
+	playsewithpan SE_M_DETECT, SOUND_PAN_ATTACKER
+	delay 8
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, -16, 0, 0
+	delay 8
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, -16, 0, 0
+	waitforvisualfinish
+	goto gBattleAnimMove_WeatherBall
+
+@ Project Grounded: Venom Dust. Dustox fladdert, giftig paars stof dwarrelt over beide tegenstanders.
+gBattleAnimMove_VenomDust::
+	loadspritegfx ANIM_TAG_POISON_POWDER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_POISON_POWDER, 0, 6, 6, RGB(20, 4, 24)
+	createvisualtask AnimTask_SwayMon, 5, 0, 6, 4096, 3, ANIM_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 7, RGB(10, 2, 14)
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 6
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-30, y=-22, duration=100, y_velocity=80/256, wave_amplitude=5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=10, y=-22, duration=100, y_velocity=80/256, wave_amplitude=-5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-25, y=-22, duration=100, y_velocity=112/256, wave_amplitude=5, wave_speed=3
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=40, y=-22, duration=100, y_velocity=96/256, wave_amplitude=-5, wave_speed=2
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-60, y=-22, duration=100, y_velocity=90/256, wave_amplitude=6, wave_speed=1
+	delay 12
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-5, y=-22, duration=100, y_velocity=80/256, wave_amplitude=-5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=5, y=-22, duration=100, y_velocity=96/256, wave_amplitude=5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=30, y=-22, duration=100, y_velocity=69/256, wave_amplitude=-5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-45, y=-22, duration=100, y_velocity=112/256, wave_amplitude=5, wave_speed=2
+	delay 12
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-15, y=-22, duration=100, y_velocity=112/256, wave_amplitude=5, wave_speed=2
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=15, y=-22, duration=100, y_velocity=80/256, wave_amplitude=-5, wave_speed=1
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=50, y=-22, duration=100, y_velocity=96/256, wave_amplitude=7, wave_speed=2
+	create_poison_powder_particle_sprite ANIM_TARGET, 2, x=-55, y=-22, duration=100, y_velocity=90/256, wave_amplitude=-8, wave_speed=0
+	delay 30
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_DEF_SIDE, 2, 0, 10, RGB(20, 4, 24)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_DEF_SIDE, 2, 10, 0, RGB(20, 4, 24)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 7, 0, RGB(10, 2, 14)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Straight Line. Linoone duikt in elkaar, laat een witte streep achter en dendert
+@ kaarsrecht op het doelwit af.
+gBattleAnimMove_StraightLine::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_SPEED_DUST
+	monbg ANIM_ATK_PARTNER
+	setalpha 12, 8
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, 6, -6, 6, ANIM_ATTACKER, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 0, 0, 8, RGB_WHITE
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 3
+	createvisualtask AnimTask_TraceMonBlended, 2, 0, 3, 8, 4
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	delay 3
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 6, 0, 8, 1
+	create_basic_hitsplat_sprite ANIM_TARGET, 4, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	delay 2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 8, 0, RGB_WHITE
+	waitforvisualfinish
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 6
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	end
+
+@ Project Grounded: Wind Chime. Een windbel klingelt boven Chimecho, noten waaien naar beide
+@ tegenstanders en het eigen team glanst groen op (heal).
+gBattleAnimMove_WindChime::
+	loadspritegfx ANIM_TAG_BELL
+	loadspritegfx ANIM_TAG_MUSIC_NOTES_2
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_LoadMusicNotesPals, 5
+	createsprite gBellSpriteTemplate, ANIM_ATTACKER, 2, 0, -24, 0, 1
+	delay 10
+	call HealBellRing
+	createsprite gHealBellMusicNoteSpriteTemplate, ANIM_ATTACKER, 40, 0, -24, 80, -24, 30, 0, 0
+	createsprite gHealBellMusicNoteSpriteTemplate, ANIM_ATTACKER, 40, 0, -24, 110, -40, 34, 1, 1
+	delay 20
+	call HealBellRing
+	createsprite gHealBellMusicNoteSpriteTemplate, ANIM_ATTACKER, 40, 0, -24, 96, -30, 30, 2, 2
+	createsprite gHealBellMusicNoteSpriteTemplate, ANIM_ATTACKER, 40, 0, -24, 124, -46, 34, 3, 3
+	delay 18
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 10, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 2, 0, 10, 1
+	create_basic_hitsplat_sprite ANIM_TARGET, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=2
+	playsewithpan SE_M_HEAL_BELL, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createvisualtask AnimTask_FreeMusicNotesPals, 5
+	playsewithpan SE_SHINY, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATK_SIDE, 2, 0, 10, RGB(16, 31, 18)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATK_SIDE, 2, 10, 0, RGB(16, 31, 18)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Primeval Ward. Oeroude stenen rijzen op rond Relicanth, hij versteent tot een
+@ grijs fossiel en een beschermende ring sluit zich.
+gBattleAnimMove_PrimevalWard::
+	loadspritegfx ANIM_TAG_ROCKS
+	loadspritegfx ANIM_TAG_THIN_RING
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 8, RGB(12, 9, 4)
+	shake_mon_or_platform velocity=3, shake_timer=1, shake_duration=10, type=1
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 20, 32, -48, 50, 2
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, -20, 32, -38, 25, 5
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, -28, 40, 3
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 15, 32, -48, 25, 5
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, -10, 32, -42, 30, 4
+	delay 10
+	playsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 13, RGB(14, 13, 11)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_THIN_RING, 0, 10, 10, RGB(20, 16, 8)
+	createsprite gThinRingShrinkingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0
+	playsewithpan SE_M_REFLECT, SOUND_PAN_ATTACKER
+	delay 20
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 13, 0, RGB(14, 13, 11)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 8, 0, RGB(12, 9, 4)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Gulp Down. Swalot zwelt op, het item van het doelwit vliegt in zijn bek, hij slikt
+@ (platgedrukt) en kleurt even paars van genot.
+gBattleAnimMove_GulpDown::
+	loadspritegfx ANIM_TAG_ITEM_BAG
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, 8, 8, 12, ANIM_ATTACKER, 0
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	delay 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 3
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=-32, animation=0, x_velocity=0/256, y_velocity=819/256, half_duration=10
+	create_sharp_teeth_sprite ANIM_ATTACKER, 2, x=0, y=32, animation=4, x_velocity=0/256, y_velocity=-819/256, half_duration=10
+	delay 10
+	create_basic_hitsplat_sprite ANIM_TARGET, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 10, 1
+	waitforvisualfinish
+	create_item_steal_sprite ANIM_ATTACKER, 2, initial_x=0, initial_y=-5, unk2=10, unk3=2, unk4=-1
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_TARGET
+	delay 58
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, 6, -8, 8, ANIM_ATTACKER, 0
+	playsewithpan SE_M_SPIT_UP, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 0, 9, RGB(22, 8, 26)
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 1, 9, 0, RGB(22, 8, 26)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Nine Lives. Negen pootafdrukken verschijnen één voor één in een kring om Delcatty,
+@ die daarna wit oplicht.
+gBattleAnimMove_NineLives::
+	loadspritegfx ANIM_TAG_PAW_PRINT
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 9, RGB(8, 6, 14)
+	waitforvisualfinish
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 44, -8, 60
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 34, 9, 56
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 8, 18, 52
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, -22, 15, 48
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, -41, 1, 44
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, -41, -17, 40
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, -22, -31, 36
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 8, -34, 32
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 4
+	createsprite gNineLivesPawSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 34, -25, 28
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 10
+	playsewithpan SE_SHINY, SOUND_PAN_ATTACKER
+	createsprite gSparklingStarsSpriteTemplate, ANIM_ATTACKER, 16, -15, 0, 0, 0, 32, 60, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 12, RGB_WHITE
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB_WHITE
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 9, 0, RGB(8, 6, 14)
 	waitforvisualfinish
 	end

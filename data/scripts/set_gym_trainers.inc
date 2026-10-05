@@ -13,16 +13,16 @@ Common_EventScript_SetGymTrainers::
 RustboroCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_JOSH
 	settrainerflag TRAINER_TOMMY
-	settrainerflag TRAINER_MARC
+	settrainerflag TRAINER_DIO
 	return
 
 DewfordTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_TAKAO
-	settrainerflag TRAINER_JOCELYN
-	settrainerflag TRAINER_LAURA
-	settrainerflag TRAINER_BRENDEN
+	settrainerflag TRAINER_TITO
+	settrainerflag TRAINER_ROMERO
+	settrainerflag TRAINER_MCGREGOR
+	settrainerflag TRAINER_BAS_RUTTEN
 	settrainerflag TRAINER_CRISTIAN
-	settrainerflag TRAINER_LILITH
+	settrainerflag TRAINER_ROGAN
 	return
 
 MauvilleCity_Gym_SetGymTrainers::
@@ -45,13 +45,13 @@ LavaridgeTown_Gym_SetGymTrainers::
 	return
 
 PetalburgCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_RANDALL
-	settrainerflag TRAINER_PARKER
-	settrainerflag TRAINER_GEORGE
-	settrainerflag TRAINER_BERKE
-	settrainerflag TRAINER_MARY
-	settrainerflag TRAINER_ALEXIA
-	settrainerflag TRAINER_JODY
+	settrainerflag TRAINER_GI_HUN
+	settrainerflag TRAINER_JONAS_PETALBURG
+	settrainerflag TRAINER_HARVEY
+	settrainerflag TRAINER_HORATIO
+	settrainerflag TRAINER_DAENARYS
+	settrainerflag TRAINER_MICHONNE
+	settrainerflag TRAINER_ELEVEN
 	return
 
 FortreeCity_Gym_SetGymTrainers::
@@ -64,7 +64,7 @@ FortreeCity_Gym_SetGymTrainers::
 	return
 
 MossdeepCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_PRESTON
+	settrainerflag TRAINER_URI
 	settrainerflag TRAINER_VIRGIL
 	settrainerflag TRAINER_BLAKE
 	settrainerflag TRAINER_HANNAH

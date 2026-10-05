@@ -265,13 +265,13 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_NIGHT_LEGEND_STATE                           0x40F7 // Project Grounded: nachtelijke legendaries (Jirachi, Darkrai): 1 = trigger op deze kaart staat aan, 2 = net in de nachtmerrie, 3 = net wakker
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
+#define VAR_DELTA_STATE                                  0x40F8 // Project Grounded: Delta Episode (0 niets, 1 Zinnia wacht bij het Space Center, 2 Zinnia verslagen: lancering mag, 3 Deoxys klaar: Zinnia bij de meteoriet, 4 afgerond)
 #define VAR_SKY_PILLAR_REVERSE_STATE                     0x40F9 // Project Grounded: omgekeerde Sky Pillar (0 niets, 1 gat open, 2 gezien, 3 geland op B1F, 4 B2F gezien)
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_WEATHER_SERVICE_TIER                         0x40FC // Project Grounded: werkstraf Archie & Maxie, gewonnen rondes (0-3; ronde = tier+1)
+#define VAR_BURGLAR_DEFEATS                              0x40FA // Project Grounded: zo vaak is de Burglar (SIMON) in de steden verslagen
+#define VAR_BURGLAR_LAST_DAY                             0x40FB // Project Grounded: RTC-dag + 1 van de laatste inbraak (max. één per dag)
+#define VAR_ROCKET_QUEST                                 0x40FD // Project Grounded: Rocket-sidequest (0 niets, 1 dief gevlucht, 2 quest actief, 3 sleutels terug, 4 klaar)
+#define VAR_GIANT_WAILORD_DEBUG                          0x40FE // Project Grounded: reuzen-Wailord forceren (0 normaal, 1-3 plek, 4 nergens)
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

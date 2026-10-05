@@ -1647,3 +1647,407 @@ ed.ellipse((25, 29, 39, 38), fill=4)
 ed.rectangle((31, 29, 33, 38), fill=9)                       # spleetpupil
 ed.point([(28, 31), (29, 31), (28, 32)], fill=2)             # glinstering
 save_sprite('darkrai_eye', ei, EPAL)
+
+
+# ------------------------------------------------------------------ Team Rocket: zwarte balken schuiven dicht met een
+# rode voorrand, rode snelheidsstrepen schieten over het zwart, en een grote rode R zoomt in en stempelt met een klap.
+# BG-tiles: 1 zwart, 2 rode voorrand (balk van links), 3 idem van rechts, 4 streep-lijf, 5 streep-kop, 6 streep-staart
+RPAL = pad([(0, 0, 0), (2, 0, 1), (31, 4, 4), (18, 1, 2), (8, 0, 1), (31, 22, 20)])
+def rocket_edge(x, y, right):
+    d = (7 - x) if right else x                      # 0 = kant van het zwart, 7 = kant van de wereld
+    if d <= 3:
+        return 1
+    return 3 if d == 4 else 2 if d < 7 else 5
+def rocket_streak(x, y, part):
+    if y in (3, 4):
+        if part == 'head':
+            return 5 if x >= 5 else 2
+        if part == 'tail':
+            return 4 if x < 4 else 3
+        return 2 if y == 3 else 3
+    if y in (2, 5) and part == 'body' and (x + y) % 3 == 0:
+        return 4
+    return 1
+rtiles = [tile(lambda x, y: 1), tile(lambda x, y: rocket_edge(x, y, False)), tile(lambda x, y: rocket_edge(x, y, True)),
+          tile(lambda x, y: rocket_streak(x, y, 'body')), tile(lambda x, y: rocket_streak(x, y, 'head')),
+          tile(lambda x, y: rocket_streak(x, y, 'tail'))]
+save('rocket', rtiles, [RPAL])
+
+# de R (64x64-sprite, in het spel 2x geschaald): rood met lichte bovenrand, donkere schaduwrand en zwarte omlijning
+RSPAL = pad([(0, 0, 0), (2, 0, 1), (16, 0, 2), (29, 3, 4), (31, 14, 12), (31, 31, 31)])
+SERIF = '/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf'
+font = ImageFont.truetype(SERIF, 64)
+x0, y0, x1, y1 = font.getbbox('R')
+rm = Image.new('1', (64, 64), 0)
+ImageDraw.Draw(rm).text(((64 - (x1 - x0)) // 2 - x0, (64 - (y1 - y0)) // 2 - y0), 'R', font=font, fill=1)
+assert rm.getbbox()[0] >= 3 and rm.getbbox()[1] >= 3 and rm.getbbox()[2] <= 61 and rm.getbbox()[3] <= 61, rm.getbbox()
+ri = Image.new('P', (64, 64), 0)
+inR = lambda x, y: 0 <= x < 64 and 0 <= y < 64 and rm.getpixel((x, y))
+for y in range(64):
+    for x in range(64):
+        if inR(x, y):
+            if not inR(x + 2, y + 2) or not inR(x + 1, y + 1):
+                c = 2                                 # schaduwrand rechtsonder
+            elif not inR(x - 1, y - 1) or not inR(x - 2, y):
+                c = 4                                 # lichtrand linksboven
+            else:
+                c = 3
+            ri.putpixel((x, y), c)
+        elif any(inR(x + dx, y + dy) for dx in (-2, -1, 0, 1, 2) for dy in (-2, -1, 0, 1, 2)):
+            ri.putpixel((x, y), 1)
+save_sprite('rocket_r', ri, RSPAL)
+
+
+# ------------------------------------------------------------------ Zarude: de jungle groeit dicht, lianen zwiepen naar
+# beneden, drie klauwkrassen (op de taiko-slagen van "Battle! Zarude") en dan Zarude's silhouet met rode ogen.
+# BG-tiles (palet ZRPAL): 1-4 dicht bladerdek (vol), 5-7 bladrand (met gaten), 8-9 liaan, 10 liaantip,
+# daarna de klauwkrassen (3 x 30x20 tilemaps in route_zarude_claws.bin, ontdubbeld) en de dieptekaart
+# route_zarude_depth.bin (30x20 u8: hoe ver een vak van de rand ligt; het bladerdek groeit van de rand naar binnen).
+ZRPAL = pad([(0, 0, 0), (1, 3, 1), (2, 6, 2), (3, 10, 3), (5, 14, 4), (8, 19, 5), (13, 24, 7), (4, 3, 1), (9, 6, 3),
+             (14, 10, 5), (0, 1, 0), (10, 26, 6), (22, 31, 12), (6, 18, 8)])
+zr = random.Random(893)
+
+
+def zleaf_layer(img, n, seed, opaque):
+    """Overlappende bladeren (ellipsen met nerf) op een 8x8-tile; opaque = de hele tile gevuld (donkere ondergrond)."""
+    rr = random.Random(seed)
+    if opaque:
+        for y in range(8):
+            for x in range(8):
+                img[y][x] = 1 if rr.random() < 0.6 else 2
+    for _ in range(n):
+        cx, cy = rr.uniform(-1, 9), rr.uniform(-1, 9)
+        a = rr.uniform(0, math.pi)
+        L, Wd = rr.uniform(3.0, 4.6), rr.uniform(1.3, 2.0)
+        ca, sa = math.cos(a), math.sin(a)
+        shade = rr.choice((3, 4, 4, 5))
+        for y in range(8):
+            for x in range(8):
+                u = (x - cx) * ca + (y - cy) * sa
+                v = -(x - cx) * sa + (y - cy) * ca
+                if (u / L) ** 2 + (v / Wd) ** 2 <= 1:
+                    c = shade
+                    if abs(v) < 0.5:
+                        c = 13 if shade >= 4 else 2              # nerf
+                    elif v < -0.6 and shade < 6:
+                        c = shade + 1                            # licht van boven
+                    img[y][x] = c
+    return img
+
+
+def ztile(n, seed, opaque):
+    img = zleaf_layer([[0] * 8 for _ in range(8)], n, seed, opaque)
+    return [img[y][x] for y in range(8) for x in range(8)]
+
+
+zr_tiles = [ztile(5, 10 + k, True) for k in range(4)] + [ztile(3, 30 + k, False) for k in range(3)]
+
+
+def zvine(x, y, seed):
+    rr = random.Random(seed)
+    sx = 3 + int(round(1.2 * math.sin(y * 0.8 + seed)))
+    if x in (sx, sx + 1):
+        return 8 if x == sx else 7
+    if (y + seed) % 4 == 0 and x in (sx + 2, sx + 3, sx + 4):
+        return 6 if x != sx + 4 else 5                          # blaadje rechts
+    if (y + seed) % 4 == 2 and x in (sx - 1, sx - 2, sx - 3):
+        return 5 if x != sx - 3 else 4                          # blaadje links
+    return 0
+
+
+zr_tiles += [tile(lambda x, y: zvine(x, y, 1)), tile(lambda x, y: zvine(x, y, 3)),
+             tile(lambda x, y: (zvine(x, y, 1) if y < 4 else (5 if 2 <= x <= 5 and y < 7 and abs(x - 3.5) < 7 - y else 0)))]
+NZ = len(zr_tiles)                                               # 10: de klauwtiles beginnen bij 11
+
+# dieptekaart: 0 = hoek, ~240 = midden, met wat ruis zodat de bladrand rafelig binnenkomt
+zdepth = []
+for r in range(20):
+    for c in range(30):
+        dx, dy = (c + 0.5 - 15) / 15, (r + 0.5 - 10) / 10
+        d = (1.45 - math.sqrt(dx * dx + dy * dy)) * 168 + zr.uniform(-14, 14)
+        zdepth.append(max(0, min(250, int(d))))
+open(OUT + 'route_zarude_depth.bin', 'wb').write(bytes(zdepth))
+
+
+def zclaw(direction, cx, cy, length, bend):
+    """Drie evenwijdige, licht gebogen klauwkrassen (240x160): zwarte scheur met een smalle, giftig groene gloed.
+    direction 1 = van rechtsboven naar linksonder, -1 = van linksboven naar rechtsonder; (cx, cy) = midden."""
+    im = Image.new('P', (240, 160), 0)
+    d = ImageDraw.Draw(im)
+    ux, uy = (-0.80, 0.60) if direction > 0 else (0.80, 0.60)       # richting van de kras
+    nx, ny = -uy, ux                                                # dwars
+    for k in (-1, 0, 1):
+        pts = []
+        L = length * (0.86 if k else 1.0)
+        for i in range(161):
+            s = i / 160 - 0.5
+            off = k * 17 + bend * (s * s * 4 - 1) * 6
+            x = cx + ux * s * L + nx * off + (k * 6 if k else 0) * ux
+            y = cy + uy * s * L + ny * off + (k * 6 if k else 0) * uy
+            w = 9.0 * math.sin(math.pi * (s + 0.5)) ** 0.7 + 0.6
+            pts.append((x, y, w))
+        for col, extra in ((11, 1.6), (12, 0.7), (10, 0)):
+            for x, y, w in pts:
+                rr2 = max(0.5, w / 2 + extra - (0 if col == 10 else 0.6))
+                d.ellipse((x - rr2, y - rr2, x + rr2, y + rr2), fill=col)
+    return im
+
+
+zc_idx = {}
+zc_maps = []
+for direction, cx, cy, length, bend in ((1, 170, 62, 150, 1), (-1, 74, 96, 150, -1), (1, 118, 82, 230, 1)):
+    im = zclaw(direction, cx, cy, length, bend)
+    m = []
+    for ty in range(20):
+        for tx in range(30):
+            t = tuple(im.getpixel((tx * 8 + x, ty * 8 + y)) for y in range(8) for x in range(8))
+            if not any(t):
+                m.append(0)
+                continue
+            if t not in zc_idx:
+                zc_idx[t] = NZ + 1 + len(zc_idx)
+                zr_tiles.append(list(t))
+            m.append(zc_idx[t])
+    zc_maps += m
+open(OUT + 'route_zarude_claws.bin', 'wb').write(struct.pack('<%dH' % len(zc_maps), *zc_maps))
+assert len(zr_tiles) < 760, len(zr_tiles)
+save('zarude', zr_tiles, [ZRPAL])
+
+# silhouet-sprite: de front-sprite van Zarude, alles bijna zwart met een donkergroene glans en twee rode ogen
+zs = Image.open('graphics/pokemon/zarude/front.png')
+zsil = Image.new('P', (64, 64), 0)
+for y in range(64):
+    for x in range(64):
+        zsil.putpixel((x, y), zs.getpixel((x, y)) & 15)
+ZSPAL = [(0, 0, 0)] + [(1, 2, 1)] * 15
+for i in (7, 9, 13):                                            # groene delen: een vleugje groen in het donker
+    ZSPAL[i] = (2, 6, 2)
+for i in (14, 15, 2):
+    ZSPAL[i] = (0, 0, 0)
+ZSPAL[8] = (31, 4, 2)                                           # ogen
+ZSPAL[12] = (6, 6, 5)                                           # tanden
+save_sprite('zarude_silhouette', zsil, ZSPAL)
+
+
+# ------------------------------------------------------------------ Loyal Three (Okidogi, Munkidori, Fezandipiti): hun
+# Toxic Chain zoals op de artwork: een doorlopende, glanzende magenta buis in ovale ringen, kort aan elkaar gegoten, met
+# als uiteinde de "halve schedel": een ronde ring (de schedel, met het gat) met direct aan de onderkant twee korte,
+# brede tanden die schuin naar buiten waaieren, met een brede U-inkeping ertussen (zoals bij Okidogi rechtsboven, Munkidori's hoofdband en Fezandipiti's uiteinden). De ketting komt van
+# linksonder het beeld in; het eindstuk staat groot in het midden. Magenta bij de nek, paarser naar het eind.
+# Het geheel is één afstandsveld (buizen en een vlak "kussen" met een zachte unie), zodat alles vloeiend in elkaar loopt.
+# De ketting slingert: hij valt van boven in beeld en zwaait uitdempend heen en weer rond de nek (links buiten beeld),
+# terwijl hij wat op en neer deint. Drie vooraf getekende standen (PC_POSES graden) en daartussen per scanline een
+# horizontale verschuiving (BG0HOFS via HBlank) plus een verticale verschuiving voor het restje draaihoek.
+# route_poisonchain.png (tiles), route_poisonchain_map.bin (per stand een 30x20 tilemap, u16 met flip-bits; tiles ook
+# gespiegeld ontdubbeld) en route_poisonchain_anim.bin (per frame s16: stand, restje draaihoek in Q12 radialen, BG0VOFS).
+import numpy as np
+from scipy import ndimage
+from scipy.spatial import cKDTree
+from PIL import Image, ImageDraw
+PC_PAL = [(0, 0, 0), (3, 0, 5), (5, 1, 8), (9, 2, 12),                         # 1 omlijning, 2-3 zachte gloed
+          (6, 2, 8), (10, 4, 12), (14, 6, 15), (18, 8, 17), (22, 9, 19), (25, 11, 20), # 4-13 buis: donker paars
+          (28, 14, 23), (30, 19, 26), (31, 24, 29), (31, 30, 31)]                   # -> magenta -> roze glans
+PC_SS = 3
+H, W = 160 * PC_SS, 240 * PC_SS
+yy, xx = np.mgrid[0:H, 0:W]
+X, Y = (xx + 0.5) / PC_SS, (yy + 0.5) / PC_SS
+P = np.stack([X.ravel(), Y.ravel()], axis=1)
+LV = np.array((-0.55, -0.65, 0.75)); LV /= np.linalg.norm(LV)
+
+
+def unit(v):
+    v = np.array(v, float)
+    return v / np.hypot(*v)
+
+
+def perp(v):
+    return np.array((-v[1], v[0]))
+
+
+# ruststand: eindstuk (oog) met het midden op PC_E0, tanden rond richting PC_F0; de ketting komt van links (PC_DIR0)
+PC_E0 = np.array((122.0, 52.0))
+PC_F0 = unit((0.62, 0.78))
+PC_ER, PC_ET = 21.0, 10.5                     # hartlijnstraal en buisstraal van het oog
+PC_DIR0 = unit(PC_E0 - np.array((-20.0, 118.0)))
+PC_PIVOT = PC_E0 - PC_DIR0 * 175.0                # scharnierpunt (de nek), links buiten beeld
+PC_R, PC_RA, PC_RB = 6.0, 13.0, 17.0          # buis, ring langs / dwars
+PC_RINGS = 3
+PC_GAP = -3.0                                 # ringen raken elkaar (in elkaar gegoten)
+
+
+def tube_ellipse(c, d, ra, rb):
+    t = np.linspace(0, 2 * np.pi, 500, endpoint=False)
+    return [c + d * ra * np.cos(a) + perp(d) * rb * np.sin(a) for a in t]
+
+
+def seg(p, q, n=60):
+    return [p + (q - p) * s for s in np.linspace(0, 1, n)]
+
+
+def tube_field(pts, r):
+    d, _ = cKDTree(np.array(pts)).query(P)
+    return (d - r).reshape(H, W)
+
+
+PC_TOOTH_ANG = 38.0                          # tanden waaieren uit: graden links/rechts van "onder" (PC_F)
+PC_TOOTH_TIP = 52.0                          # afstand van het ringmidden tot de platte tandpunt
+
+
+def foot_field(PC_E, PC_F):
+    """de twee tanden: korte, brede poten die vanuit de ring schuin naar buiten waaieren (links- en rechtsonder),
+    met hol gebogen zijkanten, een brede, afgerond-platte punt en een brede U-inkeping ertussen"""
+    n = perp(PC_F)
+    im = Image.new('L', (W, H), 0)
+    d = ImageDraw.Draw(im)
+    for sgn in (-1, 1):
+        ang = np.radians(PC_TOOTH_ANG) * sgn
+        u = PC_F * np.cos(ang) + n * np.sin(ang)          # richting van de tand
+        v = perp(u)
+        loc = lambda a, b: tuple((PC_E + u * a + v * b) * PC_SS)
+        us = np.linspace(PC_ER, PC_TOOTH_TIP - 1.5, 14)
+        half = 10.0 + 4.0 * ((us - PC_ER) / (PC_TOOTH_TIP - 1.5 - PC_ER)) ** 2.0   # hol uitlopend
+        right = [loc(a, w) for a, w in zip(us, half)] + [loc(PC_TOOTH_TIP, 13.5)]
+        left = [loc(a, -w) for a, w in zip(us, half)] + [loc(PC_TOOTH_TIP, -13.5)]
+        d.polygon(right + left[::-1], fill=255)
+    m = ndimage.gaussian_filter(np.array(im, float), 1.8 * PC_SS) > 127
+    inside = ndimage.distance_transform_edt(m) / PC_SS
+    outside = ndimage.distance_transform_edt(~m) / PC_SS
+    return np.where(m, -inside, outside)
+
+
+def smin(a, b, k=3.5):
+    h = np.clip(0.5 + 0.5 * (b - a) / k, 0, 1)
+    return b * (1 - h) + a * h - k * h * (1 - h)
+
+
+def pc_pieces(theta):
+    """alle stukken van de ketting, gedraaid over theta graden (positief = met de klok mee) rond het scharnierpunt bij
+    de nek (PC_PIVOT, links buiten beeld): zo zwaait het eindstuk het verst en de nek het minst"""
+    c, s_ = np.cos(np.radians(theta)), np.sin(np.radians(theta))
+    rot = lambda v: np.array((c * v[0] - s_ * v[1], s_ * v[0] + c * v[1]))
+    E, F, D = PC_PIVOT + rot(PC_E0 - PC_PIVOT), rot(PC_F0), rot(PC_DIR0)
+    pieces = []
+    eye_in = E - D * (PC_ER + PC_ET * 0.4)                  # waar de ketting het oog raakt
+    cc = eye_in - D * (PC_GAP + PC_RA + PC_R)
+    centers = []
+    for k in range(PC_RINGS):
+        centers.insert(0, cc)
+        cc = cc - D * (2 * PC_RA + 2 * PC_R + PC_GAP)
+    O = centers[0] - D * PC_RA
+    for k, cc in enumerate(centers):
+        ring = tube_field(tube_ellipse(cc, D, PC_RA, PC_RB), PC_R)
+        if k:
+            pieces.append(tube_field(seg(centers[k - 1] + D * PC_RA, cc - D * PC_RA), PC_R + 1.5))
+            pieces.append(ring)
+        else:
+            pieces.append(np.minimum(tube_field(seg(cc - D * 90, cc - D * PC_RA), PC_R + 1.5), ring))
+    pieces.append(tube_field(seg(centers[-1] + D * PC_RA, eye_in), PC_R + 1.5))
+    # eindstuk: oog (iets ovaal) + de twee tanden
+    eye = tube_field([E + perp(F) * PC_ER * np.cos(a) * 0.92 + F * PC_ER * np.sin(a)
+                      for a in np.linspace(0, 2 * np.pi, 600, endpoint=False)], PC_ET)
+    pieces.append(smin(eye, foot_field(E, F), 4.0))
+    return pieces, O, D, float(np.dot(E + F * 60 - O, D))
+
+
+def pc_render(theta):
+    """beeld (160x240, paletindex) van de hele ketting in de stand theta"""
+    pieces, PC_O, PC_DIR, PC_LEN = pc_pieces(theta)
+    f = pieces[0]
+    for k in range(1, len(pieces)):
+        f = smin(f, pieces[k])
+    inside = f <= 0
+    gy, gx = np.gradient(f)
+    g = np.maximum(np.hypot(gx, gy), 1e-6)
+    s = np.clip(-f / 9.0, 0, 1)               # 0 aan de rand, 1 vanaf ±9 px naar binnen (bol, dan vlak)
+    nz = np.sqrt(1 - (1 - s) ** 2)
+    nx, ny = gx / g * (1 - s), gy / g * (1 - s)
+    lam = np.clip(nx * LV[0] + ny * LV[1] + nz * LV[2], 0, 1)
+    spec = lam ** 24
+    along = np.clip(((X - PC_O[0]) * PC_DIR[0] + (Y - PC_O[1]) * PC_DIR[1]) / PC_LEN, 0, 1)
+    val = np.clip(4 + lam * 5.4 + (1 - along) * 2.4 + spec * 3, 4, 13.49)
+
+    def down(m):
+        return m.reshape(160, PC_SS, 240, PC_SS).mean(axis=(1, 3))
+    bodyf = down(inside.astype(float))
+    valf = down(np.where(inside, val, 0)) / np.maximum(bodyf, 1e-6)
+    olf = down(((f > 0) & (f <= 1.3)).astype(float))
+    img = np.zeros((160, 240), np.uint8)
+    solid = bodyf >= 0.5
+    edge = (~solid) & (olf + bodyf >= 0.3)
+    dist = ndimage.distance_transform_edt(~(solid | edge))
+    outside = ~ndimage.binary_fill_holes(solid | edge)
+    img[outside & (dist <= 4.5)] = 2
+    img[outside & (dist <= 2)] = 3
+    img[edge] = 1
+    img[solid] = np.rint(valf[solid]).astype(np.uint8)
+    return img
+
+
+pc_tiles, pc_idx, pc_maps = [], {}, []
+
+
+def pc_tile_id(t):
+    """tile-index met flip-bits (bit 10 = h, bit 11 = v); 0 = leeg"""
+    if not any(t):
+        return 0
+    a = np.array(t, np.uint8).reshape(8, 8)
+    for flip, var in ((0, a), (0x400, a[:, ::-1]), (0x800, a[::-1, :]), (0xC00, a[::-1, ::-1])):
+        key = var.tobytes()
+        if key in pc_idx:
+            return pc_idx[key] | flip
+    pc_tiles.append([int(v) for v in t])
+    pc_idx[a.tobytes()] = len(pc_tiles)
+    return len(pc_tiles)
+
+
+PC_POSES = (-7.0, 0.0, 7.0)                   # vooraf getekende standen (graden, positief = met de klok mee)
+pc_maps_img = []
+for th in PC_POSES:
+    im = pc_render(th)
+    pc_maps_img.append(im)
+    for ty in range(20):
+        for tx in range(30):
+            pc_maps.append(pc_tile_id(tuple(im[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8].flatten())))
+assert len(pc_tiles) < 760, len(pc_tiles)
+open(OUT + 'route_poisonchain_map.bin', 'wb').write(struct.pack('<%dH' % len(pc_maps), *pc_maps))
+save('poisonchain', pc_tiles, [pad(PC_PAL)])
+
+# beweging per frame: binnenvallen van boven (BG0VOFS 90 -> 0), uitdempend slingeren rond de nek en flink op en neer
+# bungelen na de val (veerachtig, eerste stuiter het grootst). Het restje draaihoek t.o.v. de getoonde stand doet de code
+# per scanline (HOFS = rest * (y - draaipunt y)); het verticale deel ervan benaderen we met één VOFS-verschuiving,
+# gemeten in het midden van de ketting (PC_XC). Na de val blijft de ketting boven, onder en rechts binnen het scherm
+# (links komt hij het beeld in): dat controleert het script per frame op de echte tilemaps.
+PC_FRAMES, PC_DROP = 80, 14
+PC_XC = 60.0
+PC_BOB, PC_BOB_PERIOD, PC_BASE = 28.0, 26.0, -3.0
+pc_anim, pc_frames = [], []
+for t in range(PC_FRAMES):
+    th = -10.0 * math.exp(-t / 28.0) * math.cos(2 * math.pi * t / 30.0)
+    k = min(range(len(PC_POSES)), key=lambda i: abs(th - PC_POSES[i]))
+    rest = math.radians(th - PC_POSES[k])
+    drop = 90.0 * (1 - t / PC_DROP) ** 2 if t < PC_DROP else 0.0
+    bob = PC_BOB * math.exp(-(t - PC_DROP) / 22.0) * math.sin(2 * math.pi * (t - PC_DROP) / PC_BOB_PERIOD) \
+        if t >= PC_DROP else 0.0
+    vofs = drop - bob - rest * (PC_XC - PC_PIVOT[0]) + PC_BASE    # positieve VOFS schuift het beeld omhoog
+    pc_frames.append((k, int(round(rest * 4096)), int(round(vofs))))
+    pc_anim += pc_frames[-1]
+open(OUT + 'route_poisonchain_anim.bin', 'wb').write(struct.pack('<%dh' % len(pc_anim), *pc_anim))
+
+
+def pc_bbox(k, rest, vofs, py=126):
+    """randen (boven, onder, links, rechts) van de ketting op het scherm, zoals de code hem tekent"""
+    m = np.zeros((256, 256), np.uint8)
+    m[:160, :240] = pc_maps_img[k]
+    ys, x0, x1 = [], [], []
+    for y in range(160):
+        nz = np.nonzero(m[(y + vofs) & 255])[0]
+        if len(nz):
+            h = (rest * (y + vofs - py)) >> 12
+            ys.append(y); x0.append(int(nz.min()) - h); x1.append(int(nz.max()) - h)
+    return min(ys), max(ys), min(x0), max(x1)
+
+
+pc_bb = [pc_bbox(*f) for f in pc_frames[PC_DROP:]]
+pc_edges = (min(b[0] for b in pc_bb), max(b[1] for b in pc_bb), min(b[2] for b in pc_bb), max(b[3] for b in pc_bb))
+assert pc_edges[0] >= 1 and pc_edges[1] <= 158 and pc_edges[3] <= 238, pc_edges
+print('poisonchain', len(PC_POSES), 'standen,', PC_FRAMES, 'frames, randen na de val (boven, onder, links, rechts):', pc_edges)

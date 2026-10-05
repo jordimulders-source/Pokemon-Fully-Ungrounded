@@ -200,6 +200,12 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_OUTER_SPACE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: Deoxys-meteoriet
     [MAPSEC_FLOWER_PARADISE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Shaymin
     [MAPSEC_LIBERTY_GARDEN - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Victini-eiland
+    [MAPSEC_FORTREE_JUNGLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: jungle onder Fortree
+    [MAPSEC_TOADSTOOL_HOLLOW - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: verborgen paddenstoelenbos
+    [MAPSEC_SAFARI_FAIRY_FOREST - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Safari Zone
+    [MAPSEC_SAFARI_THUNDER_PLAINS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Safari Zone
+    [MAPSEC_SAFARI_HAUNTED_CAMP - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: Safari Zone
+    [MAPSEC_MANGROVE_MIRE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: mangrovemoeras
 };
 
 #if OW_POPUP_GENERATION == GEN_5
@@ -329,6 +335,12 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_OUTER_SPACE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Deoxys-meteoriet
     [MAPSEC_FLOWER_PARADISE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Shaymin
     [MAPSEC_LIBERTY_GARDEN - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Victini-eiland
+    [MAPSEC_FORTREE_JUNGLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: jungle onder Fortree
+    [MAPSEC_TOADSTOOL_HOLLOW - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: verborgen paddenstoelenbos
+    [MAPSEC_SAFARI_FAIRY_FOREST - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Safari Zone
+    [MAPSEC_SAFARI_THUNDER_PLAINS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Safari Zone
+    [MAPSEC_SAFARI_HAUNTED_CAMP - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Safari Zone
+    [MAPSEC_MANGROVE_MIRE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: mangrovemoeras
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");

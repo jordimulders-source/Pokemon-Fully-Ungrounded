@@ -296,6 +296,46 @@ static const struct SpriteFrameImage sPicTable_Brock[] = {
 static const struct SpriteFrameImage sPicTable_Mustard[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_Mustard, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_N[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_N, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Ghetsis[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_Ghetsis, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Burglar[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_Burglar, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_NeoPlasmaGruntM[] = { // Project Grounded (Neo Plasma)
+    overworld_ascending_frames(gObjectEventPic_NeoPlasmaGruntM, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_NeoPlasmaGruntF[] = { // Project Grounded (Neo Plasma)
+    overworld_ascending_frames(gObjectEventPic_NeoPlasmaGruntF, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Zinzolin[] = { // Project Grounded (Neo Plasma)
+    overworld_ascending_frames(gObjectEventPic_Zinzolin, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_Rood[] = { // Project Grounded (Neo Plasma)
+    overworld_ascending_frames(gObjectEventPic_Rood, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_ShadowTriad[] = { // Project Grounded (Neo Plasma)
+    overworld_ascending_frames(gObjectEventPic_ShadowTriad, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_RocketGruntM[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_RocketGruntM, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_RocketGruntF[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_RocketGruntF, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_GiantWailord[] = { // Project Grounded
+    obj_frame_tiles(gObjectEventPic_GiantWailord),
+};
+
+static const struct SpriteFrameImage sPicTable_Petrel[] = { // Project Grounded
+    overworld_ascending_frames(gObjectEventPic_Petrel, 2, 4),
+};
 static const struct SpriteFrameImage sPicTable_Misty[] = {
     overworld_ascending_frames(gObjectEventPic_Misty, 2, 4),
 };

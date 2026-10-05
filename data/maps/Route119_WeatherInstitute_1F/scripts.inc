@@ -4,6 +4,87 @@ Route119_WeatherInstitute_1F_MapScripts::
 
 Route119_WeatherInstitute_1F_OnTransition:
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 0, Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
+	setflag FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE
+	call_if_set FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_1F_EventScript_ShowArchieMaxie
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ShowArchieMaxie::
+	clearflag FLAG_HIDE_WEATHER_INSTITUTE_ARCHIE_MAXIE
+	return
+
+@ Project Grounded: Archie en Maxie doen post-game hun werkstraf in het Weather Institute (ze hebben het weer gesloopt).
+@ Eén dubbelgevecht per dag tegen allebei; na elke overwinning een sterkere ronde (VAR_WEATHER_SERVICE_TIER, max. ronde 4).
+Route119_WeatherInstitute_1F_EventScript_ArchieMaxie::
+	lock
+	faceplayer
+	goto_if_set FLAG_DAILY_WEATHER_SERVICE_BATTLE, Route119_WeatherInstitute_1F_EventScript_ServiceDone
+	specialvar VAR_RESULT, GetMonsStateToDoubles
+	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, Route119_WeatherInstitute_1F_EventScript_ServiceNeedTwo
+	call_if_eq VAR_WEATHER_SERVICE_TIER, 0, Route119_WeatherInstitute_1F_EventScript_ServiceIntroFirst
+	call_if_ne VAR_WEATHER_SERVICE_TIER, 0, Route119_WeatherInstitute_1F_EventScript_ServiceIntroAgain
+	closemessage
+	switch VAR_WEATHER_SERVICE_TIER
+	case 0, Route119_WeatherInstitute_1F_EventScript_ServiceBattle1
+	case 1, Route119_WeatherInstitute_1F_EventScript_ServiceBattle2
+	case 2, Route119_WeatherInstitute_1F_EventScript_ServiceBattle3
+	goto Route119_WeatherInstitute_1F_EventScript_ServiceBattle4
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceIntroFirst::
+	msgbox Route119_WeatherInstitute_1F_Text_ServiceIntroFirst, MSGBOX_DEFAULT
+	return
+
+Route119_WeatherInstitute_1F_EventScript_ServiceIntroAgain::
+	msgbox Route119_WeatherInstitute_1F_Text_ServiceIntroAgain, MSGBOX_DEFAULT
+	return
+
+Route119_WeatherInstitute_1F_EventScript_ServiceBattle1::
+	cleartrainerflag TRAINER_ARCHIE_SERVICE_1
+	cleartrainerflag TRAINER_MAXIE_SERVICE_1
+	trainerbattle_two_trainers TRAINER_ARCHIE_SERVICE_1, Route119_WeatherInstitute_1F_Text_ArchieServiceDefeat, TRAINER_MAXIE_SERVICE_1, Route119_WeatherInstitute_1F_Text_MaxieServiceDefeat
+	goto Route119_WeatherInstitute_1F_EventScript_ServiceWon
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceBattle2::
+	cleartrainerflag TRAINER_ARCHIE_SERVICE_2
+	cleartrainerflag TRAINER_MAXIE_SERVICE_2
+	trainerbattle_two_trainers TRAINER_ARCHIE_SERVICE_2, Route119_WeatherInstitute_1F_Text_ArchieServiceDefeat, TRAINER_MAXIE_SERVICE_2, Route119_WeatherInstitute_1F_Text_MaxieServiceDefeat
+	goto Route119_WeatherInstitute_1F_EventScript_ServiceWon
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceBattle3::
+	cleartrainerflag TRAINER_ARCHIE_SERVICE_3
+	cleartrainerflag TRAINER_MAXIE_SERVICE_3
+	trainerbattle_two_trainers TRAINER_ARCHIE_SERVICE_3, Route119_WeatherInstitute_1F_Text_ArchieServiceDefeat, TRAINER_MAXIE_SERVICE_3, Route119_WeatherInstitute_1F_Text_MaxieServiceDefeat
+	goto Route119_WeatherInstitute_1F_EventScript_ServiceWon
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceBattle4::
+	cleartrainerflag TRAINER_ARCHIE_SERVICE_4
+	cleartrainerflag TRAINER_MAXIE_SERVICE_4
+	trainerbattle_two_trainers TRAINER_ARCHIE_SERVICE_4, Route119_WeatherInstitute_1F_Text_ArchieServiceDefeat, TRAINER_MAXIE_SERVICE_4, Route119_WeatherInstitute_1F_Text_MaxieServiceDefeat
+	goto Route119_WeatherInstitute_1F_EventScript_ServiceWon
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceWon::
+	setflag FLAG_DAILY_WEATHER_SERVICE_BATTLE
+	call_if_lt VAR_WEATHER_SERVICE_TIER, 3, Route119_WeatherInstitute_1F_EventScript_ServiceTierUp
+	msgbox Route119_WeatherInstitute_1F_Text_ServiceWon, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceTierUp::
+	addvar VAR_WEATHER_SERVICE_TIER, 1
+	return
+
+Route119_WeatherInstitute_1F_EventScript_ServiceDone::
+	msgbox Route119_WeatherInstitute_1F_Text_ServiceDone, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ServiceNeedTwo::
+	msgbox Route119_WeatherInstitute_1F_Text_ServiceNeedTwo, MSGBOX_DEFAULT
+	release
 	end
 
 Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos::
@@ -124,3 +205,51 @@ Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo:
 Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed… Let's take a rest.$"
 
+
+Route119_WeatherInstitute_1F_Text_ServiceIntroFirst:
+	.string "ARCHIE: Oh. It's you. Don't look at\n"
+	.string "the mop. The mop is temporary.\p"
+	.string "MAXIE: Community service. Six hundred\n"
+	.string "hours. For “unscheduled climate\l"
+	.string "events”, the judge called it.\p"
+	.string "ARCHIE: I flooded a continent.\n"
+	.string "He dried it. We're basically even.\p"
+	.string "MAXIE: The judge disagreed.\p"
+	.string "ARCHIE: Anyway, the institute lets us\n"
+	.string "battle in our break. Builds character.\l"
+	.string "Ours, not yours. Yours is fine.\p"
+	.string "MAXIE: Two of us, two of yours.\n"
+	.string "Please. I have mopped since dawn.$"
+
+Route119_WeatherInstitute_1F_Text_ServiceIntroAgain:
+	.string "ARCHIE: Break time! We trained!\n"
+	.string "Between the mopping!\p"
+	.string "MAXIE: We have also been reading\n"
+	.string "the weather reports. For revenge.$"
+
+Route119_WeatherInstitute_1F_Text_ArchieServiceDefeat:
+	.string "ARCHIE: The sea is still bigger\n"
+	.string "than you. Just so you know.$"
+
+Route119_WeatherInstitute_1F_Text_MaxieServiceDefeat:
+	.string "MAXIE: Statistically, this was\n"
+	.string "the land's fault.$"
+
+Route119_WeatherInstitute_1F_Text_ServiceWon:
+	.string "ARCHIE: Same time tomorrow? We'll\n"
+	.string "be here. Legally we have to be.\p"
+	.string "MAXIE: We'll come back stronger.\n"
+	.string "The court gave us a lot of free time.$"
+
+Route119_WeatherInstitute_1F_Text_ServiceDone:
+	.string "MAXIE: Break's over. The probation\n"
+	.string "officer is watching. Come back\l"
+	.string "tomorrow.\p"
+	.string "ARCHIE: Bring sunscreen. Or an\n"
+	.string "umbrella. We're not allowed to say.$"
+
+Route119_WeatherInstitute_1F_Text_ServiceNeedTwo:
+	.string "ARCHIE: Two against one? We're\n"
+	.string "villains, not monsters.\p"
+	.string "MAXIE: Come back with at least\n"
+	.string "two POKéMON that can still stand.$"

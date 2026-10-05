@@ -422,6 +422,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_MT_CHIMNEY_WALLY"
+    },
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_TRAIL_GUARD",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 32,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtChimney_EventScript_TrailGuard",
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAIL_GUARD"
     }
   ],
   "warp_events": [
@@ -459,9 +473,42 @@
       "elevation": 0,
       "dest_map": "MAP_MT_CHIMNEY_ENTEI_PASSAGE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CHIMNEY_SUMMIT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CHIMNEY_SUMMIT",
+      "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "MtChimney_EventScript_TrailClosed"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "MtChimney_EventScript_TrailClosed"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

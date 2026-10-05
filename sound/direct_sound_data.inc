@@ -6743,3 +6743,11 @@ DirectSoundWaveData_shaymin_tom_lo::
 	.align 2
 DirectSoundWaveData_shaymin_tom_hi::
 	.incbin "sound/direct_sound_samples/grounded/shaymin_tom_hi.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_choir::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_choir.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_gongbass::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_gongbass.bin"

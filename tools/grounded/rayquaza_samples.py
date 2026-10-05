@@ -44,6 +44,10 @@ ADDITIVE = {
     'rayquaza_gong':    (36, 5.0, 8000, 1.4, (0.30, 25, 0.15),
                          [(1.0, 1.0, 7.0), (2.0, 0.55, 4.5), (2.97, 0.30, 2.5), (4.18, 0.16, 1.4), (5.46, 0.10, 0.9),
                           (7.10, 0.06, 0.5), (9.2, 0.03, 0.3)]),
+    # v2 'dikkere bas': lage bronzen staaf/ketel met sterke harmonische boventonen (2x, 3x), zodat de originele baslijn
+    # (G1-E2) ook op kleine speakers hoorbaar is; korter uitklinkend dan de jegogan (gedempt, 'tutup')
+    'rayquaza_gongbass': (36, 1.8, 8000, 0.8, (0.25, 12, 0.3),
+                          [(1.0, 1.0, 1.6), (2.0, 0.65, 1.1), (3.0, 0.35, 0.7), (4.16, 0.14, 0.35), (5.43, 0.07, 0.2)]),
 }
 
 
@@ -100,6 +104,46 @@ def render(prog, note, dur):
     return a / 32768.0
 
 
+def render_chord(progs, notes, dur, vel=110):
+    """Akkoord (meerdere noten, eventueel meerdere GM-programma's op eigen kanalen) als één noot renderen."""
+    m = mido.MidiFile(ticks_per_beat=480)
+    t = mido.MidiTrack(); m.tracks.append(t)
+    for ch, prog in enumerate(progs):
+        t.append(mido.Message('program_change', channel=ch, program=prog, time=0))
+    for ch in range(len(progs)):
+        for n in notes:
+            t.append(mido.Message('note_on', channel=ch, note=n, velocity=vel, time=0))
+    first = True
+    for ch in range(len(progs)):
+        for n in notes:
+            t.append(mido.Message('note_off', channel=ch, note=n, velocity=0, time=int(dur * 960) if first else 0))
+            first = False
+    with tempfile.TemporaryDirectory() as d:
+        mid, wav = os.path.join(d, 'n.mid'), os.path.join(d, 'n.wav')
+        m.save(mid)
+        subprocess.run(['fluidsynth', '-ni', '-g', '1.0', '-R', '0', '-C', '0', '-r', '44100', '-F', wav, SF2, mid],
+                       check=True, capture_output=True)
+        w = wave.open(wav)
+        a = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, w.getnchannels()).mean(1)
+    return a / 32768.0
+
+
+def auto_loop(a, rate, note, at=0.8, length=0.45, xfade=0.12):
+    """Aanhoudende klank: loop [s, e) van een geheel aantal perioden van de grondtoon, het einde gecrossfade met het
+    stuk vóór s (geen klik bij de sprong e -> s). Geeft (a[:e], (s, e)). Zie keccles_samples.py."""
+    per = rate / (440.0 * 2 ** ((note - 69) / 12))
+    best = min(range(max(1, int(length * rate / per)), int(2 * length * rate / per) + 1),
+               key=lambda m: abs(m * per - round(m * per)))
+    L = int(round(best * per))
+    e = int(at * rate) + L
+    s = e - L
+    x = int(xfade * rate)
+    w = np.linspace(0, 1, x)
+    a = a.copy()
+    a[e - x:e] = a[e - x:e] * (1 - w) + a[s - x:s] * w
+    return a[:e], (s, e)
+
+
 def resample(a, src, dst):
     n = int(len(a) * dst / src)
     return np.interp(np.arange(n) * src / dst, np.arange(len(a)), a)
@@ -121,6 +165,12 @@ def write_wav(path, x, rate, key, loop):
 
 SAMPLES = {k: v for k, v in SAMPLES.items() if k.startswith('rayquaza_')}
 WAVES = {}
+# lage mannenkoren (v2, Jordi: 'nog wat lage koren erbij'): FluidR3 choir aahs (52) + voice oohs (53) samen, als
+# kwint-tweeklank in één sample (één kanaal per akkoord, zoals de powerchords van Heatran), met een gecrossfade loop.
+# naam: (GM-programma's, noten, grondtoon, lengte s, samplerate)
+CHOIRS = {
+    'rayquaza_choir': ((52, 53), (48, 55), 48, 2.4, 16000),
+}
 
 def main():
     os.makedirs(OUT, exist_ok=True)
@@ -152,6 +202,17 @@ def main():
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
         print('%-18s additief, noot %d, %d samples @ %d Hz' % (name, key, len(a), rate))
+    for name, (progs, notes, key, dur, rate) in CHOIRS.items():
+        a = render_chord(progs, notes, dur)
+        start = np.argmax(np.abs(a) > 0.002)
+        a = resample(a[start:start + int(dur * 44100)], 44100, rate)
+        a = a / max(1e-6, np.abs(a).max()) * 0.97
+        a, loop = auto_loop(a, rate, key)
+        write_wav(OUT + name + '.wav', a, rate, key, loop)
+        label = 'DirectSoundWaveData_' + name
+        if label + '::' not in inc:
+            inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
+        print('%-18s koor %s %s, loop %s, %d samples @ %d Hz' % (name, progs, notes, loop, len(a), rate))
     open(DATA, 'w').write(inc)
 
 

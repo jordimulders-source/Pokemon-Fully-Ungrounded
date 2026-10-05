@@ -16737,3 +16737,11 @@ Jordi's eerste testrun:
   - Drums: een duidelijke GBA-drumkit (kick, clap, snare, hihats).
   - Arpeggio's: veel zachter.
   - Orgel en bas: ongewijzigd.
+
+### [v0.9.79] - Gymleider-rematches zonder toeval (Jordi: optie a+b)
+- **Altijd klaar na de Hall of Fame:** alle gymleiders staan meteen klaar voor een rematch in hun gym. Wattson pas zodra hij na New Mauville terug is. Het willekeurige systeem (31% na elk 20e/60e gevecht) is weg.
+- **Eén rematch per leider per dag (RTC):** na een overwinning is dezelfde leider de volgende dag weer klaar, met het team van de volgende ronde (max. ronde 5). De oude grens "alleen ronde 2 vóór New Mauville" is vervallen.
+- **Match Call:** bel een gymleider om een rematch aan te vragen. Heeft hij/zij vandaag al verloren, dan volgt een weigering (bijv. Winona: "My birds have unionized. One battle a day.").
+- **Techniek:**
+  - Dagelijkse flags 0x935–0x93C (`FLAG_DAILY_REMATCH_*`).
+  - De Match Call-teksten "gym is klaar" zijn opnieuw afgebroken voor het smallere vak.

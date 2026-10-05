@@ -68,3 +68,19 @@ van deze nodig:
 een bekken. Dezelfde soort noten zit ook in: Zinnia, Colress, Giratina, Birch (Macarena), Sunset Wilds, Yoshi's Castle
 en Broken Pier. Je keurde die al goed, dus ik heb niets veranderd. Voorstel: ik vervang ze net als bij Ghetsis door
 echte samples en stuur van elk een voor/na-fragment. Ja/nee?
+
+## O. Oostkant: eilandjes en Dive-grotten (volgende gebied, voorstel 5 okt)
+Nu zijn er op Route 130–133 geen onderwaterkaarten, en de bestaande duikplekken bevatten vooral zeewier. Voorstel (kies of
+schrap, "O1 ja, O3b nee" mag):
+- **O1. Drie kleine duikgrotten** via zwemgaten in bestaande onderwaterkaarten (zoals de Wellspring Grotto):
+  - a. **Koraalkathedraal** (Route 126): hoge koraalzalen met Corsola/Cursola, Alomomola en Luvdisc.
+  - b. **Wrak op de zeebodem** (Route 129): een gezonken vrachtschip met Dhelmise, Frillish/Jellicent en Clauncher, en
+    een schat achter een schakelpuzzel.
+  - c. **Luchtbel-grot** (Route 128): een droge grot boven het water met een kluizenaar en Relicanth-lore.
+- **O2. Eilandjes met trainers:** a. vogelrots op Route 131/132 (Cramorant, Bombirdier, Squawkabilly); b. vuurtoreneiland op
+  Route 133 met een vuurtorenwachter.
+- **O3. Nieuwe onderwaterkaarten** voor Route 130–133 met diepe troggen, items en duik-Pokémon die nu nergens zitten
+  (Relicanth, Clamperl, Chinchou, Mantyke, Finneon, Wishiwashi).
+- **O4. Verzamelquest:** in elke duikplek ligt een "Sea Shard"; bij de Diving Treasure Hunter (Route 124) ruil je ze in
+  voor een beloning.
+Vraag: welke onderdelen, en is er een beloning die je in gedachten hebt (geen TM, die liggen al allemaal)?

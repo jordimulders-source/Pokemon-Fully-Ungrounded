@@ -16838,3 +16838,33 @@ Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Mel
   - Nog 21 trainers met een eigen naam, onder meer Gi-Hun, Dave, Mitch, SickBlik en Bas Rutten.
 - **Alleen namen:** de ROM is byte voor byte gelijk en saves blijven werken. Tekstlabels zijn niet hernoemd, omdat de Dialoogstudio ze als sleutel gebruikt.
 - **Naamlijst voor Jordi/Gemini:** `TRAINER_NAMEN.md`.
+
+### [v0.9.85] - Muziekbatch 3: Heatran v6, Mitch v4, Neo Plasma v8, Victini v2, Darkrai v2, Genesect v2
+- **Heatran v6:** from scratch, gemeten op Jordi's referenties (Kyuss "Odyssey" en "Green Machine").
+  - Traag deel op 76 bpm (sludge, halftime, lange powerchords); snel deel op 94 bpm met 8en, zoals het snelle deel van Odyssey (94–96 bpm) en Green Machine (90 bpm).
+  - C-klein blues/frygisch, gitaar en bas legato, de bas verdubbelt de riff.
+  - Gen 3-kit (alleen gesloten hihat, geen accent op de 'en') en bitcrushed fuzz-samples.
+  - Waarom v5 als Bowser's Castle (Mario Kart Super Circuit) klonk, is gemeten:
+    - 272 achtsten per minuut;
+    - korte stoten;
+    - 41% aanslagen op de 'en';
+    - chromatische loopjes en swing.
+  - Nieuw: `music_lint.py --genre stoner` keurt dat af.
+- **Mitch v4:** ritme en structuur zoals v3 ("spot-on Chase & Status").
+  - De wobble is veel luider en agressiever: ontstemde zaagtanden, distortion, diep filter-LFO op tempo.
+  - Drogere, hardere kick en snare, met ducking op elke kick én snare.
+- **Neo Plasma v8:** noten en timing exact v7, alleen andere instrumenten.
+  - GBA-blokgolflead (legato, aanhoudend), `sc88pro_synth_bass` en een pulse-pluk voor de arpeggio's.
+  - Trompet-keysplit als synth brass, orgelstoten, en een GM-kit (kick 36, snare 38/40).
+- **Victini v2:**
+  - Opener, stijgend koper met grote sprongen.
+  - Key change E → F in de climax.
+  - Buitelende bells, stijgende arpeggio's, octaafbas en snare-roffels naar de drops.
+- **Darkrai v2:** duisterder, maar bijgewerkt in plaats van herschreven.
+  - Steeds wisselende maten (5–11 achtsten).
+  - Rauwe koperstoten (verminderd akkoord, tritonuscluster) en een lage orgeldrone.
+  - Het wiegelied blijft.
+- **Genesect v2:** Prodigy big beat / hard techno op 152 bpm.
+  - Strakke breakbeat zonder syncopen, ghost notes of swing.
+  - Overstuurde bas in rechte achtsten, industriële stoten, risers en drops.
+- **Batchcontrole:** alle zes 0 overlopen, piek 72–109/127.

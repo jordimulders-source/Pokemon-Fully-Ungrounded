@@ -4,7 +4,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Muziek: Neo Plasma** (gepauzeerd): wacht op Jordi (VRAGEN_VOLGENDE.md M1: onlinesequencer-link of mp3). v3 = echte instrumenten + gemeten balans.
+- **Muziek: Neo Plasma**: v4 (v0.9.70) naar Jordi's mp3; wacht op zijn oordeel (open: 'gitaar' = synth brass of strings? bas octaaf lager?).
 - **Contests reworken** (Jordi, 5 okt): de Pokémon Contests helemaal herzien en leuker maken. Eerst een voorstel (wat is er saai, welke mechanics, QoL, beloningen), dan bouwen.
 - **Gymleider-rematches makkelijker beschikbaar** (Jordi, 5 okt): nu via Match Call na de Hall of Fame en willekeurig. Voorstel: bv. direct na de E4 vast aan te vragen bij de gym, of via een knop in Match Call.
 - **Trick House vervangen?** (Jordi overweegt het weg te halen voor iets nieuws). Kost maar ±40-50 KB (11 kaarten, puzzels, teksten, tileset) van de 6,5 MB vrij: ruimte is geen reden, gameplay wel. Wacht op Jordi's idee.

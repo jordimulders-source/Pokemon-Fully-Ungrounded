@@ -16630,3 +16630,14 @@ Jordi's eerste testrun:
 - **M2: PSG-drums vervangen** door echte samples in Zinnia, Colress, Giratina, Birch, Sunset Wilds, Yoshi's Castle en
   Broken Pier (crash/china -> orkestcrash, pedaal-hihat -> gesloten hihat, side stick -> zachte snare, conga/bongo/
   triangel waar nodig). Alleen drumnoten veranderd; 0 keer overlopen. `prepare()` kan nu ook `drum_map`.
+
+### [v.0.9.70] - Neo Plasma v4, nagebouwd naar het origineel (mp3)
+- Jordi leverde het BW2-origineel als mp3 aan. Gescheiden in stems (Spleeter; demucs werd door de proxy geblokkeerd),
+  per stem getranscribeerd (basic-pitch) en per sectie vergeleken met de MIDI-bron.
+- **Gevonden:** het "gitaar"-spoor is in het origineel een aanhoudende **synth brass/pad**, de bas een **Slap Bass 2 een
+  octaaf lager**, het orgel een **percussief rockorgel**, de off-beats zijn **hihats** (geen snares), en een grote laag
+  gestemde elektronische **kick op elke tel** draagt het nummer. Melodie en arpeggio's klinken door (lange lijnen).
+- **Nieuw:** eigen samples (`tools/grounded/neo_plasma_samples.py`), eigen drumkit, loop zoals in de game (intro +
+  64 maten i.p.v. het hele bestand twee keer). Balans gemeten tegen de mp3 met `tools/grounded/balance_orig.py`:
+  per octaafband zit de mix nu binnen ±1,5 dB van het origineel (v3: tot 9 dB te dun in het laag en 5 dB te schel).
+- A/B-fragment (origineel, dan v4) voor Jordi. 0 keer overlopen, piek 100/127.

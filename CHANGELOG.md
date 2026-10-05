@@ -16677,3 +16677,20 @@ Jordi's eerste testrun:
   aanhoudende powerchords met slides, bas unisono met de riff, bekkens alleen op de tellen, halftempo-refreinen,
   bezwerende C-mineur-pentatonische riffs met b5. Nieuwe fuzzketen (Big Muff met middenscoop + SVT/Sunn-kast, lowpass
   3,2 kHz), FluidR3 Power-kit. Strofen 1700-2000 RMS, refreinen 3500-3900.
+
+### [v.0.9.75] - Neo Plasma v5, Ashfrost-winter, Mitch (DnB), SickBlik (slap-funk)
+- **Neo Plasma v5** op Jordi's punten: tempo exact (175,96 bpm, gemeten; afwisselend 176/178 per tel omdat de GBA
+  alleen even bpm kent en 0,45% te traag speelt), het sawtooth-spoor stond in de bron 17 ticks te vroeg en de
+  orgelakkoorden waren 'gestrumd' (nu op de tel), bas volledig een octaaf lager. Lead = PSG-blokgolf (snelle attack,
+  korte decay), 'gitaar' = punchy synth-brass-stoot zonder swell, bas = diepe staccato pulse-bas, arpeggio's = steel
+  drums zacht, orgel scherper met korte release, drums = GBA-kit met PSG-hihats. Ontbreekt nog: een glijdende synthlijn
+  in de orgelsectie die niet in de bron-MIDI staat.
+- **Ashfrost Village** (`MUS_GROUNDED_ASHFROST`): wintervariant van Fallarbor, 7% trager. Blokfluit/fluit als lead,
+  celesta-sneeuwvlokjes, speeldoos, warme pad, getokkelde contrabas, sleebellen in het vrolijke deel en heel zachte
+  windvlagen. Ook in de huizen van Ashfrost.
+- **Battle! Mitch** (`MUS_GROUNDED_VS_MITCH`, Victory Road B1F + Stadium): Drum & Bass op 174 bpm in F-klein. Intro met
+  opbouw, drop 1 met two-step-breaks en een 'pratende' reese-hook, breakdown, valse drop met een **DJ-rewind en
+  luchthoorn**, drop 2 halftime met wobble, dan weer dubbel tempo.
+- **Battle! SickBlik** (`MUS_GROUNDED_VS_SICKBLIK`, = Jordi, Victory Road B2F + Stadium): smerige slap-funk op 108 bpm
+  in E-dorisch. Slap bass met aparte samples voor thumb, pop en dode noten (ghost notes, hammer-ons, slides),
+  'Dean Town'-achtige unisono-hook met hoorns, bassolo-breakdown, wah-gitaar, clavinet, Rhodes en een talkbox.

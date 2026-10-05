@@ -5026,8 +5026,11 @@ bool32 NoAliveMonsForPlayer(void)
             ineligibleMonsCount++;
     }
 
+    // Project Grounded: in het Stadium is de opgeslagen party het echte team buiten het toernooi
+    // (doet niet mee); verloren pas als jij én je partner niets meer hebben (HP_count hieronder).
     if (B_MULTI_BATTLE_WHITEOUT > GEN_3 && gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)
-     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest())) // Multibattle tests appear to not save the player party data for the check below.
+     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest()) // Multibattle tests appear to not save the player party data for the check below.
+     && !gStadiumBattle)
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {

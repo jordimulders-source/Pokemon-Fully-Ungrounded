@@ -8,6 +8,23 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
   Elke dag 25% kans dat hij er is, op één van 2-3 plekken. (Gedaan, v0.9.67: Route 124/128/129.)
 - **Vragen M2** (PSG-drums) ja; **Neo Plasma** via een mp3 die als MIDI wordt nagebouwd.
 
+## Besluiten 5 okt (tweede ronde)
+- **Eb en vloed: ja.** Het moet de helft van de dag zijn, zodat je allebei op één avond ziet (de meeste spelers spelen 's avonds).
+  Voorstel: om het uur wisselen (even uur eb, oneven uur vloed). Je wacht dan hooguit een uur, nooit tot het weekend.
+- **Scheepswrakkenkerkhof, zeetempel (Manaphy), drijvende markt, stoomeiland, Lugia: ja.**
+- **Vuurtoren: ja, maar** er zijn geen assets voor (Emerald/FRLG hebben geen vuurtoren). Zelf tekenen of uit een bronsheet halen; eerst een
+  ingezoomde schets aan Jordi.
+- **Visserstoernooi:** alleen zonder minigame (Jordi heeft een hekel aan frustrerende minigames). Voorstel: je laat bij de jury
+  de grootste vis uit je team wegen (zoals de Lotad/Seedot-meter); de recordhouder is altijd iemands Magikarp.
+- **Juan:** staat gewoon op een eiland klaar om met je te vechten (eiland mooier maken, idee 5).
+- **Strandresort:** gasten Misty, Erika, Cynthia, Lorelei en Wallace, plus een hele zooi dronken fans.
+  - Wallace geeft in een grote kamer een demonstratie van zijn nieuwe wijn, met snobistische connoisseurbeschrijvingen,
+    fans en wijndrinkers, en een paar oude mannen die na het proeven in emmers spugen.
+  - Brendan/May chillt hier post-game.
+  - Birch staat op het strand weer naar een stuk stront te kijken, dit keer een echte conventionele drol.
+  - Sprites: Erika, Lorelei, Wallace, Brendan/May zijn er; Cynthia heeft nog een overworld-sprite nodig.
+- **Draaikolkeiland = Lugia**; Jirachi blijft in Fallarbor.
+
 ## Ideeën van Jordi
 1. **Eilanden in de Sootopolis-stijl** rond Sootopolis (zelfde tileset).
 2. **Tapu-eiland** (post-game): de vier Tapu's één voor één.

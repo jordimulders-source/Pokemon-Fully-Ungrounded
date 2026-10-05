@@ -6,6 +6,8 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 
 ## Kernprincipes (Jordi, okt 2026)
 - **Altijd een eerlijke winkans bij goed spel**, zoals in Slay the Spire: slordig spelen kost je meestal de run (tenzij je veel relic-geluk hebt), maar zelfs de zwaarste seed is te winnen. Daarom spelen pro's in Slay lange reeksen op A10/A20.
+- **Nooit 0% winkans** (Jordi, 5 okt, na een kansloze run tegen Wishiwashi + Araquanid): vijanden horen je **niet te one-shotten in beurt 1, 2 of 3 zonder dat je daar een counter voor hebt**. Elke baas/elite moet met elk startteam te winnen zijn; dat wordt gecontroleerd in het rekenwerk (slechtste combinatie > 0%).
+- **Acts zo lang als in Slay the Spire** (Jordi: 'je gaat er aan het begin best snel doorheen'); gewone gevechten mogen niet allemaal triviaal zijn.
 - **Elk gevecht is een puzzel**: verkeerd aangepakt een obstakel, goed aangepakt makkelijk. Vijanden beginnen zwak en krijgen per act meer gimmicks en kracht; passief spelen wordt steeds meer afgestraft.
 - **Pokémon-kennis én Slay-kennis worden beloond** (types, abilities, look-alikes herkennen; patronen, tempo, kaartkeuzes).
 - **Creatief, maar altijd grounded**: eerst kijken of er al een Pokémon-mechanic voor is (Ritual = Rage, opladen = Quiver Dance/Machine Learning/Acupressure, start-buff = totem-boost, Gremlin Nob = Defiant). Zoveel mogelijk binnen de Pokémon-wereld.

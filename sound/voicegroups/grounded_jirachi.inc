@@ -40,7 +40,7 @@ voice_group grounded_jirachi
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 38
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_sawbass, 255, 0, 255, 120  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 42
@@ -85,15 +85,15 @@ voice_group grounded_jirachi
 	voice_square_2 60, 0, 3, 0, 1, 4, 1  @ 81
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_dark, 255, 0, 255, 110  @ 88
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_mid, 255, 0, 255, 110  @ 89
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_bright, 255, 0, 255, 110  @ 90
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_lead, 255, 0, 255, 190  @ 91
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_mid, 255, 224, 0, 110  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
@@ -122,8 +122,8 @@ voice_group grounded_jirachi
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 118
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 119
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 121
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 122
+	voice_noise_alt 60, 0, 0, 3, 0, 15, 2  @ 121
+	voice_noise_alt 60, 0, 0, 0, 0, 15, 1  @ 122
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 123
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 124
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 125

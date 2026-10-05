@@ -6711,3 +6711,27 @@ DirectSoundWaveData_kc_timbale_lo::
 	.align 2
 DirectSoundWaveData_kc_guiro_long::
 	.incbin "sound/direct_sound_samples/grounded/kc_guiro_long.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_dark::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_dark.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_mid::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_mid.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_bright::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_bright.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_lead::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_sawbass::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_sawbass.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_kick::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_kick.bin"

@@ -259,3 +259,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Jirachi v2 (Jordi: 'vet om tussen 40-50 s op te bouwen naar een climax met een stuk hogere BPM, euforische
+  Ibiza-trance, en dan terug naar de hoofdmelodie een octaaf hoger'): begin 1-op-1 behouden (MIDI tot de opbouw
+  noot voor noot vergeleken met v1), dan opbouw -> drop -> breakdown -> drop -> ritardando naar het thema in E.
+  **Tempowissel per tel** via `Song.tempo` (152 -> 168, ease-in; ritardando per achtste terug); 138-140 'trance-bpm'
+  zou trager zijn dan de 152 van het thema, dus 'hoger' = 168 + four-on-the-floor. **Supersaw als één sample**
+  (`jirachi_samples.py`): 7 zaagtanden met M+k trillingen per loop van M perioden = exacte loop mét zweving (M = 128 ->
+  13,5 cent per stap); 1 kanaal per akkoordnoot. 'Filter dat opengaat' = drie samples (dark/mid/bright) waartussen het
+  spoor per maat wisselt + CC7-ramp per tel. Weinig harmonischen in de sample (de GBA transponeert zonder filter:
+  aliasing); de lead krijgt een eigen sample op C5. Hihats, riser en sub op PSG (ruis met programmawissel per sectie,
+  golf) kosten geen kanalen. Trance-partijen op sporen van instrumenten die dan zwijgen (programmawissel + CC7 via
+  `ccs`, terugzetten op de sectie erna; max. 16 sporen). Een opbouw is snel luider dan de drop (aangehouden supersaw
+  + roffel + riser): RMS per seconde meten en de opbouw zachter beginnen, anders 'valt' de drop weg. -V100: piek
+  102/127, RMS drops 3470-3550, opbouw 3340, breakdown 2500.

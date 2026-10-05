@@ -166,6 +166,10 @@ static void Task_SickBlik(u8); // Project Grounded
 static void Task_Steven(u8); // Project Grounded
 static void Task_WallyVhs(u8); // Project Grounded
 static void Task_RayquazaPillar(u8); // Project Grounded
+static void Task_KyogreMural(u8); // Project Grounded
+static void Task_GroudonMural(u8); // Project Grounded
+static void Task_Ogerpon(u8); // Project Grounded
+static void Task_WeatherService(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
 static void Task_PoisonChain(u8); // Project Grounded
@@ -644,6 +648,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_STEVEN] = Task_Steven, // Project Grounded
     [B_TRANSITION_WALLY_VHS] = Task_WallyVhs, // Project Grounded
     [B_TRANSITION_RAYQUAZA_PILLAR] = Task_RayquazaPillar, // Project Grounded
+    [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
+    [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
+    [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
+    [B_TRANSITION_WEATHER_SERVICE] = Task_WeatherService, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -9439,4 +9447,179 @@ static const struct RouteTransition sRT_RayquazaPillar =
 static void Task_RayquazaPillar(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_RayquazaPillar);
+}
+
+// ---------------- Kyogre/Groudon (Marine Cave / Terra Cave): een oude muurschildering van hun strijd (Groudon met de
+// bergen, Kyogre met de golven, braille "DONT WAKE THEM"). Er lopen barsten door vanuit de borst van degene die je wekt;
+// door de barsten stroomt water of lava tot het beeld vol is, en daarin gaan de gloeiende Primal-markeringen aan.
+// Vervangt B_TRANSITION_KYOGRE/GROUDON (die blijven bestaan). Zie primal_mural_transition.py.
+static const u32 sFilmMuralKyogre_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_tiles.bin");
+static const u32 sFilmMuralKyogre_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_loads.bin");
+static const u32 sFilmMuralKyogre_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_runs.bin");
+static const u32 sFilmMuralKyogre_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_maps.bin");
+static const u32 sFilmMuralKyogre_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_mapofs.bin");
+static const u32 sFilmMuralKyogre_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_seq.bin");
+static const u16 sFilmMuralKyogre_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mural_kyogre_pal.bin");
+static const struct Film sFilm_MuralKyogre = FILM(FilmMuralKyogre);
+static const u32 sFilmMuralGroudon_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_tiles.bin");
+static const u32 sFilmMuralGroudon_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_loads.bin");
+static const u32 sFilmMuralGroudon_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_runs.bin");
+static const u32 sFilmMuralGroudon_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_maps.bin");
+static const u32 sFilmMuralGroudon_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_mapofs.bin");
+static const u32 sFilmMuralGroudon_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_seq.bin");
+static const u16 sFilmMuralGroudon_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mural_groudon_pal.bin");
+static const struct Film sFilm_MuralGroudon = FILM(FilmMuralGroudon);
+
+#define MURAL_CRACK 40
+#define MURAL_LEAK  78
+#define MURAL_POOL  92
+#define MURAL_MARK  176
+
+static bool8 RTMural_Update(struct Task *task, const struct Film *film, bool32 lava)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == MURAL_CRACK || t == MURAL_CRACK + 8 || t == MURAL_CRACK + 18)
+        PlaySE(SE_ICE_CRACK);
+    if (t == MURAL_CRACK + 28)
+        PlaySE(SE_M_ROCK_THROW);
+    if (t == MURAL_LEAK)
+        PlaySE(lava ? SE_M_EMBER : SE_M_BUBBLE);
+    if (t == MURAL_POOL)
+        PlaySE(lava ? SE_M_HEAT_WAVE : SE_M_WATERFALL);
+    if (t == MURAL_POOL + 44)
+        PlaySE(lava ? SE_M_FLAMETHROWER : SE_M_SURF);
+    if (t == MURAL_MARK + 20)
+        PlaySE(SE_M_DETECT);
+    // de muur trilt terwijl hij barst
+    if (t >= MURAL_CRACK && t < MURAL_CRACK + 30 && (t & 1))
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+    else if (t == MURAL_CRACK + 30 || !(t & 1))
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, film);
+}
+
+static bool8 RTKyogreMural_Update(struct Task *task)
+{
+    return RTMural_Update(task, &sFilm_MuralKyogre, FALSE);
+}
+
+static bool8 RTGroudonMural_Update(struct Task *task)
+{
+    return RTMural_Update(task, &sFilm_MuralGroudon, TRUE);
+}
+
+static const struct RouteTransition sRT_KyogreMural =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMuralKyogre_Pal, 1, 1, 0, Film_Init, RTKyogreMural_Update, Film_Finish
+};
+
+static const struct RouteTransition sRT_GroudonMural =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMuralGroudon_Pal, 1, 1, 0, Film_Init, RTGroudonMural_Update, Film_Finish
+};
+
+static void Task_KyogreMural(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_KyogreMural);
+}
+
+static void Task_GroudonMural(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_GroudonMural);
+}
+
+// ---------------- Ogerpon (Fortree Jungle, einde van de quest): een maskerkraam op een nachtfestival. Vier maskers
+// (uit de echte Ogerpon-sprites), één lege haak ("STOLEN"), het Teal-masker "NOT FOR SALE". De lantaarns gaan uit, de
+// camera zoomt in, de ogen van het masker gaan branden en Ogerpon springt in een wolk bladeren. Zie ogerpon_transition.py.
+static const u32 sFilmOgerpon_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_tiles.bin");
+static const u32 sFilmOgerpon_Loads[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_loads.bin");
+static const u32 sFilmOgerpon_Runs[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_runs.bin");
+static const u32 sFilmOgerpon_Maps[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_maps.bin");
+static const u32 sFilmOgerpon_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_mapofs.bin");
+static const u32 sFilmOgerpon_Seq[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_seq.bin");
+static const u16 sFilmOgerpon_Pal[] = INCBIN_U16("graphics/battle_transitions/film_ogerpon_pal.bin");
+static const struct Film sFilm_Ogerpon = FILM(FilmOgerpon);
+
+#define OGERPON_OUT   30
+#define OGERPON_ZOOM  50
+#define OGERPON_EYES  122
+#define OGERPON_LEAP  164
+
+static bool8 RTOgerpon_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    // lantaarns gaan uit (om de 4 frames een)
+    if (t >= OGERPON_OUT && t < OGERPON_OUT + 24 && ((t - OGERPON_OUT) & 7) == 0)
+        PlaySE(SE_M_MINIMIZE);
+    if (t == OGERPON_ZOOM)
+        PlaySE(SE_M_SWAGGER);
+    if (t == OGERPON_EYES)
+        PlaySE(SE_M_LEER);
+    if (t == OGERPON_LEAP)
+        PlaySE(SE_M_RAZOR_WIND);
+    if (t == OGERPON_LEAP + 16)
+        PlaySE(SE_M_GIGA_DRAIN);
+    return Film_Update(task, &sFilm_Ogerpon);
+}
+
+static const struct RouteTransition sRT_Ogerpon =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmOgerpon_Pal, 1, 1, 0, Film_Init, RTOgerpon_Update, Film_Finish
+};
+
+static void Task_Ogerpon(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Ogerpon);
+}
+
+// ---------------- Archie + Maxie (werkstraf, Weather Institute): het prikbord van de pauzeruimte. Een druppel koffie
+// op het rooster; de vlek wordt Groudon, dan Kyogre. Het rooster scheurt: links brand, rechts doorweekt. Eronder:
+// "VOLUNTEER OF THE MONTH" met allebei erop, "(DISPUTED)". Zie service_transition.py.
+static const u32 sFilmService_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_service_tiles.bin");
+static const u32 sFilmService_Loads[] = INCBIN_U32("graphics/battle_transitions/film_service_loads.bin");
+static const u32 sFilmService_Runs[] = INCBIN_U32("graphics/battle_transitions/film_service_runs.bin");
+static const u32 sFilmService_Maps[] = INCBIN_U32("graphics/battle_transitions/film_service_maps.bin");
+static const u32 sFilmService_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_service_mapofs.bin");
+static const u32 sFilmService_Seq[] = INCBIN_U32("graphics/battle_transitions/film_service_seq.bin");
+static const u16 sFilmService_Pal[] = INCBIN_U16("graphics/battle_transitions/film_service_pal.bin");
+static const struct Film sFilm_Service = FILM(FilmService);
+
+#define SERVICE_SPLAT 38
+#define SERVICE_MORPH 84
+#define SERVICE_TEAR  124
+#define SERVICE_SPLIT 140
+
+static bool8 RTWeatherService_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == SERVICE_SPLAT)
+        PlaySE(SE_M_BUBBLE3);
+    if (t == SERVICE_MORPH)
+        PlaySE(SE_M_BUBBLE);
+    if (t == SERVICE_TEAR)
+        PlaySE(SE_M_CUT);
+    if (t == SERVICE_SPLIT)
+        PlaySE(SE_M_FLAME_WHEEL);
+    if (t == SERVICE_SPLIT + 14)
+        PlaySE(SE_M_WATERFALL);
+    return Film_Update(task, &sFilm_Service);
+}
+
+static const struct RouteTransition sRT_WeatherService =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmService_Pal, 1, 1, 0, Film_Init, RTWeatherService_Update, Film_Finish
+};
+
+static void Task_WeatherService(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_WeatherService);
 }

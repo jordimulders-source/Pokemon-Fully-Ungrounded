@@ -456,3 +456,16 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   piek/mediaan 16. Brawly-referentie (Face the Pain, librosa): ±112 bpm, kick 2-2,7 en gitaar 1-2 aanslagen per tel
   (gesyncopeerde zestienden), 49% < 250 Hz; Spleeter werkt hier niet (typer-fout).
 
+- Brawly v4 (Jordi over v3: 'speelgoedaccordeon/fluitje + akoestische tokkels, onhoorbare bas, blikken kick, scratches
+  weg'): **oorzaak gemeten met solo-opnames in één test-ROM** + klankvergelijking (`gba_sim.timbre_rank(..., audio=solo)`:
+  dezelfde noten met elk GM-instrument via FluidR3 gerenderd, MFCC-afstand): de chugs (gym_bra_epower, 2 ticks + rel 70
+  = ±40 ms) lagen het dichtst bij mondharmonica/tango-accordeon, de bas (5 ticks) bij pick bass/pizzicato, de lead bij
+  piano/koper (= Jordi's 'koper/synth-lead'); de scratch was een koor-'aah' met sinusvormige snelheid = zuivere
+  glijtoon (flatness 0,005, ±900 Hz) = glijfluitje. Kortom: korte stoten van een aangehouden GBA-distortionakkoord
+  zonder plectrumaanslag klinken als riet. `kermis_meter` keurt nu af: tonale kit-effecten (flatness < 0,03 en > 400 Hz),
+  en met `metal=True` begeleidingsnoten < 110 ms (incl. uitklinktijd) en een lage laag die < 80% van de loop klinkt.
+  De GM-klankvergelijking is alleen info: hij noemt elk vervormd GBA-akkoord 'koper/zaagtand' (ook FluidR3-distortion).
+  Fix: palm-mute-sample met plectrum + dichtklappende lowpass, muur-powerchords (tweede Emerald-distortion) op tel 1 en
+  elke akkoordwissel, overdrive-bas uit de Emerald-fingered bass in achtsten, PSG-ruis open hats (. x . x), breedbandige
+  scratches alleen op de overgangen. Bas t.o.v. lead +40%, t.o.v. drums +34%, t.o.v. de rest +25% (de muur is erbij).
+  -V068: 0 overlopen, piek 81/127, RMS 2960. Restverschil met Face the Pain: < 60 Hz 2,5% tegen 11-19% (subkick).

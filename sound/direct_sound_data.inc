@@ -6176,55 +6176,155 @@ DirectSoundWaveData_sd90_special_scream_drive::
 .if PHONEMES_SHARED == TRUE
 	.align 2
 DirectSoundWaveData_Phoneme_1::
+
+	.align 2
 DirectSoundWaveData_Phoneme_2::
+
+	.align 2
 DirectSoundWaveData_Phoneme_3::
+
+	.align 2
 DirectSoundWaveData_Phoneme_4::
+
+	.align 2
 DirectSoundWaveData_Phoneme_5::
+
+	.align 2
 DirectSoundWaveData_Phoneme_6::
+
+	.align 2
 DirectSoundWaveData_Phoneme_7::
+
+	.align 2
 DirectSoundWaveData_Phoneme_8::
+
+	.align 2
 DirectSoundWaveData_Phoneme_9::
+
+	.align 2
 DirectSoundWaveData_Phoneme_10::
+
+	.align 2
 DirectSoundWaveData_Phoneme_11::
+
+	.align 2
 DirectSoundWaveData_Phoneme_12::
+
+	.align 2
 DirectSoundWaveData_Phoneme_13::
+
+	.align 2
 DirectSoundWaveData_Phoneme_14::
+
+	.align 2
 DirectSoundWaveData_Phoneme_15::
+
+	.align 2
 DirectSoundWaveData_Phoneme_16::
+
+	.align 2
 DirectSoundWaveData_Phoneme_17::
+
+	.align 2
 DirectSoundWaveData_Phoneme_18::
+
+	.align 2
 DirectSoundWaveData_Phoneme_19::
+
+	.align 2
 DirectSoundWaveData_Phoneme_20::
+
+	.align 2
 DirectSoundWaveData_Phoneme_21::
+
+	.align 2
 DirectSoundWaveData_Phoneme_22::
+
+	.align 2
 DirectSoundWaveData_Phoneme_23::
+
+	.align 2
 DirectSoundWaveData_Phoneme_24::
+
+	.align 2
 DirectSoundWaveData_Phoneme_25::
+
+	.align 2
 DirectSoundWaveData_Phoneme_26::
+
+	.align 2
 DirectSoundWaveData_Phoneme_27::
+
+	.align 2
 DirectSoundWaveData_Phoneme_28::
+
+	.align 2
 DirectSoundWaveData_Phoneme_29::
+
+	.align 2
 DirectSoundWaveData_Phoneme_30::
+
+	.align 2
 DirectSoundWaveData_Phoneme_31::
+
+	.align 2
 DirectSoundWaveData_Phoneme_32::
+
+	.align 2
 DirectSoundWaveData_Phoneme_33::
+
+	.align 2
 DirectSoundWaveData_Phoneme_34::
+
+	.align 2
 DirectSoundWaveData_Phoneme_35::
+
+	.align 2
 DirectSoundWaveData_Phoneme_36::
+
+	.align 2
 DirectSoundWaveData_Phoneme_37::
+
+	.align 2
 DirectSoundWaveData_Phoneme_38::
+
+	.align 2
 DirectSoundWaveData_Phoneme_39::
+
+	.align 2
 DirectSoundWaveData_Phoneme_40::
+
+	.align 2
 DirectSoundWaveData_Phoneme_41::
+
+	.align 2
 DirectSoundWaveData_Phoneme_42::
+
+	.align 2
 DirectSoundWaveData_Phoneme_43::
+
+	.align 2
 DirectSoundWaveData_Phoneme_44::
+
+	.align 2
 DirectSoundWaveData_Phoneme_45::
+
+	.align 2
 DirectSoundWaveData_Phoneme_46::
+
+	.align 2
 DirectSoundWaveData_Phoneme_47::
+
+	.align 2
 DirectSoundWaveData_Phoneme_48::
+
+	.align 2
 DirectSoundWaveData_Phoneme_49::
+
+	.align 2
 DirectSoundWaveData_Phoneme_50::
+
+	.align 2
 DirectSoundWaveData_Phoneme_51::
 	.incbin "sound/direct_sound_samples/phonemes/shared.bin"
 
@@ -6483,6 +6583,8 @@ DirectSoundWaveData_shaymin_flute::
 	.align 2
 DirectSoundWaveData_shaymin_clarinet::
 	.incbin "sound/direct_sound_samples/grounded/shaymin_clarinet.bin"
+
+	.align 2
 DirectSoundWaveData_magikarp_bassoon::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_bassoon.bin"
 
@@ -6501,6 +6603,8 @@ DirectSoundWaveData_magikarp_kazoo::
 	.align 2
 DirectSoundWaveData_magikarp_boing::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_boing.bin"
+
+	.align 2
 DirectSoundWaveData_jirachi_celesta::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_celesta.bin"
 
@@ -6511,3 +6615,43 @@ DirectSoundWaveData_jirachi_music_box::
 	.align 2
 DirectSoundWaveData_jirachi_chimes::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_chimes.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_power::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_power.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_low::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_low.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_lead::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_lead.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_bass::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_bass.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_kick::
+	.incbin "sound/direct_sound_samples/grounded/heatran_kick.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_snare::
+	.incbin "sound/direct_sound_samples/grounded/heatran_snare.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_open_hat::
+	.incbin "sound/direct_sound_samples/grounded/heatran_open_hat.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ride::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ride.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_floor_tom::
+	.incbin "sound/direct_sound_samples/grounded/heatran_floor_tom.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_crash::
+	.incbin "sound/direct_sound_samples/grounded/heatran_crash.bin"

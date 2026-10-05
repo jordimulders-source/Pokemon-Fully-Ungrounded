@@ -6727,3 +6727,19 @@ DirectSoundWaveData_magikarp_cry::
 	.align 2
 DirectSoundWaveData_magikarp_cry_scratch::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_scratch.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_upright::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_upright.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_kick::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_kick.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_tom_lo::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_tom_lo.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_tom_hi::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_tom_hi.bin"

@@ -274,3 +274,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   (grondtoon 60, eigen generator `magikarp_samples.py`); DJ-scratch = varispeed (aantrekken 0,35x -> 1,15x, afkappen,
   kort achteruit). In de drumkit + een eigen spoor met hetzelfde programma 127 = eigen volume. Niet in de intro: de
   echte cry van een wilde Pokémon klinkt daar al (±2,3-3 s). Solo-RMS cry 1300 vs. kazoo 1850 = net onder de lead.
+- Shaymin v2 (Jordi: 'thema uitstekend, maar meer route- dan battle-theme'): zelfde melodieën/instrumenten, maar
+  gestippelde kwart 88 -> 112, intro-stoot (D - C/D - Bb/D tutti + toms), bas-ostinato in achtsten (contrabas uit
+  FluidR3, `shaymin_samples.py`), spiccato-strijkers (string_ensemble met harde aanzet, release 130) en een lichte kit
+  (FluidR3-bassdrum/toms, orchestra snare, tamboerijn, kc-bongo's). Het B-deel half-time met tom-hartslag en dan een
+  opbouw (snare 8sten -> 16den, spiccato-tremolo). **Een routenummer battle-waardig maken = ritme, niet meer lagen:**
+  harp-/bas-/spiccatonoten zo kort dat nootlengte + uitklinktijd ≤ een achtste is (eerst 67% celesta weg, daarna 0%);
+  gitaar/pizzicato uit de drukke delen (C: pizzicato speelt de spiccato-figuur = lichter). audiocheck '37-43 Hz' = de
+  grondtoon van de bassdrum op elke tel, geen brom. -V088: piek 102/127, RMS 2790.

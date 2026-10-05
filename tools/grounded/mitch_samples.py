@@ -30,7 +30,7 @@ import numpy as np
 import mido
 from scipy.signal import butter, sosfilt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from heatran_samples import resample, auto_loop, write_wav
+from sample_utils import resample, auto_loop, write_wav
 
 SF2 = '/usr/share/sounds/sf2/FluidR3_GM.sf2'
 OUT = 'sound/direct_sound_samples/grounded/'

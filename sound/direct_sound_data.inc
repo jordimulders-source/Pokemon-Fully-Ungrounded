@@ -6946,22 +6946,6 @@ DirectSoundWaveData_ashfrost_recorder::
 	.incbin "sound/direct_sound_samples/grounded/ashfrost_recorder.bin"
 
 	.align 2
-DirectSoundWaveData_np_pulse_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_stab::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_stab.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_stab_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_stab_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
 DirectSoundWaveData_heatran_pw_36::
 	.incbin "sound/direct_sound_samples/grounded/heatran_pw_36.bin"
 
@@ -7088,3 +7072,19 @@ DirectSoundWaveData_heatran_ky_crash::
 	.align 2
 DirectSoundWaveData_heatran_ky_floor_tom::
 	.incbin "sound/direct_sound_samples/grounded/heatran_ky_floor_tom.bin"
+
+	.align 2
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_stab::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_stab_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_organ_sharp::
+	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"

@@ -322,3 +322,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   `ccs`, terugzetten op de sectie erna; max. 16 sporen). Een opbouw is snel luider dan de drop (aangehouden supersaw
   + roffel + riser): RMS per seconde meten en de opbouw zachter beginnen, anders 'valt' de drop weg. -V100: piek
   102/127, RMS drops 3470-3550, opbouw 3340, breakdown 2500.
+- Ronde 2 (5 okt): **goedgekeurd**: Keccles v3 ("niet helemaal wat ik bedoelde, maar leuk, perfect zo"), Shaymin v2,
+  M2 (PSG-drums: Giratina, Sunset Wilds, Broken Pier, Yoshi's Castle "overduidelijke verbetering"). Zinnia klinkt Jordi
+  'niet als GBA', maar is gewoon grounded_gm (game-samples): een strak gearrangeerde bron met weinig gelijktijdige
+  partijen in het goede register is wat het doet klinken.
+- Jordi's Jirachi-idee was **geen tempo-opbouw van de bestaande delen**, maar een **tussenstuk met lang uitgerekte
+  'wahhh'-vocalen boven een snelle beat**, daarna terug. Vraag bij een vaag idee door of geef twee varianten.
+

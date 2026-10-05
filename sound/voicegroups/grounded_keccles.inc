@@ -30,7 +30,7 @@ voice_group grounded_keccles
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 27
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 28
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
+	voice_keysplit voicegroup_keccles_guitar_keysplit, keysplit_french_horn  @ 29
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32

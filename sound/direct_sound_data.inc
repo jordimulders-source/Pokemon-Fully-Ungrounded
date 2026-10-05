@@ -6711,3 +6711,11 @@ DirectSoundWaveData_kc_timbale_lo::
 	.align 2
 DirectSoundWaveData_kc_guiro_long::
 	.incbin "sound/direct_sound_samples/grounded/kc_guiro_long.bin"
+
+	.align 2
+DirectSoundWaveData_kc_guitar_57::
+	.incbin "sound/direct_sound_samples/grounded/kc_guitar_57.bin"
+
+	.align 2
+DirectSoundWaveData_kc_guitar_69::
+	.incbin "sound/direct_sound_samples/grounded/kc_guitar_69.bin"

@@ -259,3 +259,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Keccles v3 (Jordi: 'ruimte voor een riffende elektrische gitaar à la Vigilante? Niks weghalen'): een laag
+  tóévoegen zonder iets te veranderen = nieuw spoor áchteraan (`TRACKS`, eigen kanaal) en **als laatste in de
+  `allocate`-volgorde** (de verdeler is gretig per spoor: de bestaande partijen houden exact dezelfde noten en
+  weggevallen percentages). Controleer met een diff per MIDI-spoor (noten/CC's identiek). Waar de mix al vol zit
+  (maat 47: trombone-swell + timbalefill) viel de hele gitaarfill weg: daar niets zetten. FluidR3 GM 29
+  (Overdriven) is in de 2-4 kHz al zo fuzzy als een distortion; lichte crunch = GM 27 (clean) door `tanh` x4 +
+  lowpass 3,5 kHz (`CRUNCH` in keccles_samples.py). Solo-meting gitaar: descarga -3 dB onder de rest (solo), mambo
+  -9 dB (kruiding).

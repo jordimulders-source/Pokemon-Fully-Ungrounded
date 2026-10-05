@@ -642,6 +642,9 @@ gSongTable::
 	song mus_grounded_vs_entei, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_raikou, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0 @ 636: plekhouder (nummer van een andere muziekagent)
+	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0 @ 637: plekhouder (nummer van een andere muziekagent)
+	song mus_grounded_vs_heatran, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

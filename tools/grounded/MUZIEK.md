@@ -207,3 +207,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Het was drumnoot 49 = PSG in rs_drumset. **Lint-meldingen 'drumnoot is PSG' altijd oplossen** (`drum_map`), nooit
   laten staan. Niet aankomen wat Jordi goed vond (de vocalen).
 
+- Heatran v1 (`heatran_theme.py`, stoner metal à la Kyuss, 116 bpm, D/drop D): **een powerchord als één sample**
+  (G2+D3+G3 samen door de FluidR3-fuzz gerenderd) = 1 kanaal per akkoord en klinkt echter dan losse noten (de
+  intermodulatie van een echte versterker zit erin). Dubbele opname = tweede spoor rechts met een vaste pitchbend van
+  +3 (±9 cent). `gm_samples.py` kan nu akkoorden (noot als tuple), GM-drums (programma 128), een automatische
+  gecrossfade loop (`'auto'`, voor aanhoudende fuzz) en extra overdrive (`DRIVE`, fuzzbas = picked bass + tanh);
+  nieuwe samples krijgen een anti-aliasfilter bij het omlaag resamplen (fuzz zit vol hoge tonen). Bends en vibrato
+  op de lead: pitchwheel/CC1 pas terugzetten op de volgende noot (bij de note-off zakt de uitklinktijd mee).
+  Fuzzbas (tanh) is veel dichter dan de gitaar: spoorvolume 54 i.p.v. 84 (solo-RMS gemeten). -V112: piek 99/127.

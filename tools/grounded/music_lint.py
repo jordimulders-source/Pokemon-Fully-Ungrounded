@@ -19,7 +19,8 @@ from musiclib import releases, release_ticks
 MAX_CHANS = 10          # src/m4a.c mixt 12 kanalen; 2 houden we vrij voor geluidseffecten
 # uitzonderingen: legendary-gevechten mogen 11 (1 kanaal vrij voor effecten)
 MAX_PER_SONG = {'mus_grounded_vs_regigigas.mid': 11, 'mus_grounded_vs_suicune.mid': 11,
-                'mus_grounded_vs_entei.mid': 11, 'mus_grounded_vs_raikou.mid': 11}
+                'mus_grounded_vs_entei.mid': 11, 'mus_grounded_vs_raikou.mid': 11,
+                'mus_grounded_vs_heatran.mid': 11}
 CFG = 'sound/songs/midi/midi.cfg'
 VG_DIR = 'sound/voicegroups'
 

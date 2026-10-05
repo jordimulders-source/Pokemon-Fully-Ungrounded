@@ -543,8 +543,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_GROUNDED_VS_SUICUNE);
         break;
-    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
-        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
+    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
+        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner metal à la Kyuss)
         break;
     case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
     case SPECIES_SHAYMIN_SKY:

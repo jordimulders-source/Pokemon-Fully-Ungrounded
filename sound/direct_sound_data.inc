@@ -6463,3 +6463,43 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_power::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_power.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_low::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_low.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_lead::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_lead.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_fuzz_bass::
+	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_bass.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_kick::
+	.incbin "sound/direct_sound_samples/grounded/heatran_kick.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_snare::
+	.incbin "sound/direct_sound_samples/grounded/heatran_snare.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_open_hat::
+	.incbin "sound/direct_sound_samples/grounded/heatran_open_hat.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_ride::
+	.incbin "sound/direct_sound_samples/grounded/heatran_ride.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_floor_tom::
+	.incbin "sound/direct_sound_samples/grounded/heatran_floor_tom.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_crash::
+	.incbin "sound/direct_sound_samples/grounded/heatran_crash.bin"

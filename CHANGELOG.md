@@ -16745,3 +16745,17 @@ Jordi's eerste testrun:
 - **Techniek:**
   - Dagelijkse flags 0x935–0x93C (`FLAG_DAILY_REMATCH_*`).
   - De Match Call-teksten "gym is klaar" zijn opnieuw afgebroken voor het smallere vak.
+
+### [v0.9.80] - The Spire: bugs, geen one-shots meer, langere acts
+- **Bugs (Jordi's testrun):**
+  - HP% liep niet mee: wordt nu tijdens het aflopen van de HP-balk berekend.
+  - Tekst van de onderste twee moves bij een upgrade verdween: moves nu als 2×2-raster met een voorbeeld van de upgrade ("Power 40 → 52").
+  - Sprite verdween soms bij DEFEND op de partner: knippermasker per battler (0 van 432 timings fout, was 162).
+  - Twee Marts achter elkaar: in de huidige generator onmogelijk (20.000 kaarten gecontroleerd); de simulatie stopt nu bij een overtreding.
+  - Extra gevonden: Totem Wishiwashi verloor zijn ×HP bij Schooling.
+- **Geen kansloze runs (SPIRE_DESIGN.md):**
+  - In beurt 1–3 verliest elk teamlid per beurt hooguit 60% HP (`SPIRE_OPENING_CAP`).
+  - Eén vijandelijke klap doet hooguit 40% HP (`SPIRE_HIT_CAP`; voorstel, zet op 100 om uit te zetten).
+  - Intenties tonen de begrensde schade.
+- **Balans:** nieuwe gevechtssimulatie `tools/grounded/spire/matchups.py`. Elke elite/baas moet met het slechtste realistische startpaar minstens 10% winkans geven (`encounters.py` faalt anders). Beldum + Zorua tegen Wishiwashi: 54% → 95% met alleen de startkit.
+- **Langere acts:** 13 verdiepingen + baas (was 7), schatkist op 7, elites en rust vanaf 5. Een gewonnen run duurt ±2 uur (was ±75 min). Oude gepauzeerde runs zijn ongeldig (save-magic).

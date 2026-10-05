@@ -1,33 +1,42 @@
-# Muziekkandidaten (5 okt)
+# Muziekkandidaten (5 okt): keuzes van Jordi
 
-Kies wat je wilt (bijv. "1, 6, 8b") en de volgorde. In aanbouw: **Ashfrost** (wintervariant van Fallarbor).
+**Niet doen:** Archie en Maxie (werkstraf), Team Rocket (Petrel), Deoxys (bestaand thema, Jordi is er fan van).
 
-## Remixes van route- en overworld-thema's (onze eigen gebieden draaien nu op vanilla-nummers)
+## Goedgekeurd, in deze volgorde
 
-| # | Gebied | Nu | Idee |
-|---|---|---|---|
-| 1 | Route 135 en 136 | Route 120 / Victory Road | Winterversies van die nummers. Route 135 (sneeuwstorm + as) grimmiger, met windvlagen; Route 136 milder naarmate je Ashfrost nadert. |
-| 2 | Fortree Jungle | Route 119 | Tropische versie: marimba, steel drums, bongo's, vogelroepjes, fluit. |
-| 3 | Mangrove Mire | Route 119 | Bayou/moeras: banjo, mondharmonica, loom ritme, kikkerachtig plukwerk. |
-| 4 | Toadstool Hollow | Viridian Forest (FRLG) | Grillig sprookjesbos: fagot, pizzicato, celesta, een 'sluipend' ritme. |
-| 5a | Safari: Fairy Forest | Safari Zone | Harp, speeldoos, glockenspiel, dromerig. |
-| 5b | Safari: Thunder Plains | Safari Zone | Synth-arpeggio's, zoemende bas, onweersrommel. |
-| 5c | Safari: Haunted Camp | Mt. Pyre (buiten) | Spookversie van de Safari Zone: theremin-achtige lead, orgel. |
-| 6 | The Spire | (vanilla Frontier-muziek) | Eigen torenthema per act (rustig → dreigend), plus elite- en baasmuziek, à la Slay the Spire. |
-| 7 | Meteor Falls (nieuwe kamers) | Cave of Origin | Kosmische grotversie: kristalklokjes, diepe pads, 'sterrenstof'. |
-| 8 | Flower Paradise / Liberty Garden | Route 38 (GSC) / Sootopolis | Eigen lente- en tuinthema's (Shaymin-motief, Victini-motief). |
-
-## Nieuwe gevechtsthema's
-
-| # | Wie | Idee |
+### A. Nieuwe gevechtsthema's
+| # | Wie | Richting (Jordi) |
 |---|---|---|
-| 9 | Gymleiders | Een eigen variant per leider, zoals Wally 1-5: Flannery flamenco, Winona luchtig/zwevend, Juan vintage strijkers, Tate & Liza tweestemmig/synth, Brawly surfrock, Wattson elektro-swing, Roxanne steengoed/percussief, Norman strak/militair. |
-| 10 | Victini | Opzwepend 'overwinnings'-thema met fanfare (Liberty Garden). |
-| 11 | Darkrai | Nachtmerrie: verstoorde wiegelied-melodie, achterstevoren klanken. |
-| 12 | Genesect | Industrieel/techno (New Mauville-kluis). |
-| 13 | Deoxys | Ruimte-synth, morse-achtige ritmes. |
-| 14 | Burglar / Team Rocket (Petrel) | Sluipende heistfilm-jazz (contrabas, vibrafoon, brushes). |
-| 15 | Archie en Maxie (werkstraf) | Hun thema, maar met bezems en emmers als percussie. |
-| 16 | Battle Stadium | Eigen arenathema / finalethema. |
+| 1 | Victini (Liberty Garden) | Episch overwinningsthema in anime-stijl: de held wint na afleveringen lang worstelen; adrenaline. |
+| 2 | Darkrai | Moet echt fucked up klinken: dissonant, alsof er iets mis is, ongewone maatsoort (bijv. 7/8, 5/4). Verstoorde wiegelied-melodie. |
+| 3 | Genesect (New Mauville-kluis) | Industrial/big beat à la The Prodigy, met hard-techno-invloed. |
+| 4 | Burglar | Echte neo-noir (heistfilm, contrabas, vibrafoon, brushes, gedempte trompet). |
+| 5 | Battle Stadium | Eigen arena- en finalethema. |
 
-**Voorstel volgorde:** 6 (The Spire, je speelt er nu veel), dan 1, dan 10–13 (de legendaries zonder eigen thema).
+### B. Gymleiders: remix van het originele gymleiderthema
+De melodie blijft hetzelfde en duidelijk herkenbaar; alleen de instrumenten en het genre veranderen.
+
+| Leider | Genre |
+|---|---|
+| Roxanne | Hardrock-powerballad |
+| Brawly | Bro-metal uit de Halo-compilaties van midden jaren 2000 (Slipknot, Drowning Pool "Bodies", Stemm "Face the Pain"; UFC-muziek) |
+| Wattson | Gabber / happy hardcore |
+| Flannery | Flamenco |
+| Norman | Muziek van een bekende blockbuster-tv-serie |
+| Winona | Girly popmuziek |
+| Tate & Liza | Psytrance |
+| Juan | Franse loungemuziek (Jordi schreef "Wallace"; de 8e gymleider in Emerald is Juan; nagevraagd) |
+
+### C. Remixes van route- en overworld-thema's
+| # | Gebied | Idee |
+|---|---|---|
+| 1 | Route 135 en 136 | Wintervarianten (Route 135 grimmig met windvlagen, Route 136 milder). |
+| 2 | Fortree Jungle | Tropisch: marimba, steeldrums, bongo's, vogels, fluit. |
+| 3 | Mangrove Mire | Bayou: banjo, mondharmonica, loom ritme. |
+| 4 | Toadstool Hollow | Grillig sprookjesbos: fagot, pizzicato, celesta. |
+| 5a/b/c | Safari: Fairy Forest / Thunder Plains / Haunted Camp | Harp en speeldoos / synth-arpeggio's en onweer / theremin en orgel. |
+| 6 | The Spire | Torenthema per act (rustig → dreigend) plus elite- en baasmuziek. |
+| 7 | Meteor Falls (nieuwe kamers) | Kosmische grotversie. |
+| 8 | Flower Paradise / Liberty Garden | Lente- en tuinthema's (Shaymin- en Victini-motief). |
+
+**Werkwijze:** zodra ronde 4 (Heatran, Jirachi, Rayquaza, Neo Plasma, Mitch, SickBlik) is samengevoegd, telkens 2–3 agents tegelijk (disk en cpu). Volgorde: A1–A3, dan de gymleiders, dan A4/A5, dan C.

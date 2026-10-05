@@ -29,6 +29,14 @@ kotekan in pelog (die bovendien Db/Eb tegen de D/E van het origineel speelde). v
 past zich aan de toon van het origineel aan en wijkt in de melodiematen, plus een laag mannenkoor (kwint-tweeklank
 in één sample), spookslagen in de kendang en meer gongs.
 
+v3 (Jordi: 'te rustig/ingehouden, melodie valt weg tegen het getokkel, kebyar mag feller'): tempo exact het
+origineel (196 bpm, geen statig intro/versnelling meer); de melodie (spoor 1) weer op de originele GBA-instrumenten
+(trompet 8-15, strijkers 16-27, hoorn 28-31, zoals in het origineel) met de reyong alleen nog als korte aanslag erbij
+(geen opnieuw aanslaan); kotekan zachter/droger onder de melodie en op een hoge synth (DirectSound-blokgolf) in de
+lange melodienoten en de break; angsel om de 4 maten (alles stopt op tel 4, alleen unisono-klappen op 4 en 4+, waar
+het origineel zelf al zijn pauken/bas/PSG-stoten heeft); om de 2 maten gong + lage gongbas + echte pauken (47) keihard
+op de maatovergang. De jegogan is weg (de gongbas speelt de hele lijn); kempur deelt het gongspoor, byar het gangsaspoor.
+
 Samples (eigen, additief met inharmonische partialen, zie gm_samples.py ADDITIVE): rayquaza_gangsa, _reyong,
 _jegogan, _gong. Suling = sd90_classical_shakuhachi; kendang = heart_of_asia indian drum + conga's + kotsuzumi.
 Voicegroup grounded_rayquaza = grounded_gm met 10-15 gamelan, 75 suling, 112 kempli (golf), 121 ceng-ceng (ruis),
@@ -45,7 +53,7 @@ TPB, BAR, S16, E8 = 24, 96, 6, 12
 BASE_TEMPO = 306122                      # 196 bpm, zoals het origineel
 BPM = 196
 LOOP_START, END = 8, 40
-KOT, GANGSA, REYONG, JEGOG, GONG, KEMPUR, SULING, KEMPLI, CENG, KIT = 10, 11, 12, 13, 14, 15, 75, 112, 121, 127
+KOT, GANGSA, REYONG, _JEGOG, GONG, KEMPUR, SULING, KEMPLI, CENG, KIT = 10, 11, 12, 13, 14, 15, 75, 112, 121, 127
 GBAS, KOOR, PSG_B, PSG_A1, PSG_A2 = 16, 52, 80, 82, 83  # v2: gongbas, laag mannenkoor, de PSG-sporen van het origineel
 DAG, TUT, PEK, KA, DAG2 = 36, 37, 38, 39, 40          # drumsets/rayquaza.inc
 # v2: gestemde open kendangslagen voor het pauken-ostinato (open conga 222 Hz, gestemd op G3, C4, Bb3, Eb4);
@@ -54,11 +62,13 @@ TG, TC, TBB, TEB = 41, 42, 43, 45
 TUNED = {7: TG, 0: TC, 10: TBB, 3: TEB}                 # toonklasse van de pauk -> kendangnoot
 KLEN = {DAG: 22, TUT: 10, PEK: 8, KA: 20, DAG2: 26, TG: 10, TC: 10, TBB: 10, TEB: 10}   # lengte van de slag in ticks
 # tempo: (maat, factor)
-TEMPO = [(0, 0.82), (4, 0.88), (5, 0.96), (6, 1.04), (7, 1.12), (8, 1.0), (36, 1.0), (37, 1.04), (38, 1.08), (39, 1.12)]
-GONGS = [0, 3, 8, 12, 16, 20, 24, 28, 32, 36]         # gong ageng (v2: ook halverwege de secties)
-KEMPURS = [1, 2, 10, 14, 18, 22, 26, 30, 34, 38]
+TEMPO = [(0, 1.0)]                                     # v3: exact het origineel (v1/v2: 0,82-1,12)
+GONGS = [0, 3] + list(range(4, END, 2))                # v3: gong ageng om de 2 maten (met gongbas + pauken)
+KEMPURS = [1, 2] + list(range(5, END, 4))           # (niet in de angselmaten)
 BYARS = [0, 8, 20, 28, 32]
-ANGSEL = [19, 27]                                      # plotse stop op tel 4, dan byar
+ANGSEL = [7, 11, 15, 19, 23, 27, 31, 35, 39]           # v3: om de 4 maten plotse stop op tel 4 (unisono-klappen)
+LEAD, SYNTH, TIMP, TIMP_SHORT = 56, 84, 47, 46                        # v3: originele trompet/strijkers/hoorn, hoge synth, pauken
+LEAD_PROGS = [(8, 56), (16, 48), (28, 60)]             # programmawissels van spoor 1 in het origineel
 
 
 def root_of(bar):
@@ -82,18 +92,21 @@ def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().rstrip('\n').split('\n')
     lines[0] = '@ Project Grounded: grounded_gm met gamelan voor Battle! Rayquaza. Gegenereerd door tools/grounded/rayquaza_theme.py.'
     lines[1] = ('@ 10 kotekan-gangsa (gedempt), 11 gangsa, 12 reyong, 13 jegogan, 14 gong ageng, 15 kempur, 16 gongbas, '
-                '52 laag koor, 75 suling, 80/82/83 PSG-leads van het origineel, 112 kempli, 121 ceng-ceng, 127 kendang.')
+                '52 laag koor, 75 suling, 80/82/83 PSG-leads van het origineel, 84 hoge synth (kotekan), 112 kempli, '
+                '121 ceng-ceng, 127 kendang; 47/48/56/60 = pauken/strijkers/trompet/hoorn van het origineel.')
     lines[2] = 'voice_group %s' % VG
     repl = {
         10: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gangsa, 255, 0, 255, 140',   # v2: droger (175 -> 140)
         11: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gangsa, 255, 0, 255, 226',
-        12: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_reyong, 255, 0, 255, 228',
+        12: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_reyong, 255, 0, 255, 205',   # v3: strakker (228)
         13: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_jegogan, 255, 0, 255, 232',
-        14: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gong, 255, 0, 255, 220',
+        14: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gong, 255, 0, 255, 236',   # v3: langere uitklink
         15: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gong, 255, 0, 255, 220',
         75: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 200',
         112: 'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 1, 0, 0',
         121: 'voice_noise_alt 60, 0, 0, 0, 1, 5, 2',
+        TIMP_SHORT: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 165',
+        SYNTH: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 150',
         GBAS: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gongbass, 255, 0, 255, 180',
         KOOR: 'voice_directsound 60, 0, DirectSoundWaveData_rayquaza_choir, 40, 0, 255, 215',
         # de PSG-leads van het origineel (vs_kyogre_groudon.inc), ongewijzigd: kosten geen DirectSound-kanaal
@@ -138,24 +151,22 @@ def build():
     assert src.ticks_per_beat == TPB
     T = {i: notes_of(src.tracks[i]) for i in range(1, 7)}
     bar = lambda t: t // BAR
-    P = {k: [] for k in ('reyong', 'gangsa', 'suling', 'jegog', 'gong', 'kempur', 'kendang', 'polos', 'sangsih',
-                         'kempli', 'ceng', 'byar', 'bas', 'koor', 'psg_a', 'psg_b', 'ghost')}
+    P = {k: [] for k in ('reyong', 'gangsa', 'suling', 'gong', 'kempur', 'kendang', 'polos', 'sangsih',
+                         'kempli', 'ceng', 'byar', 'bas', 'koor', 'psg_a', 'psg_b', 'ghost', 'lead', 'synth', 'timp',
+                         'accbas', 'angsel_hi', 'angsel_lo')}
 
     # ---- melodie en harmonie (bron 1-op-1, andere instrumenten) ------------------------------------------------
     for s, e, n, v in T[1]:
         b = bar(s)
-        if b < 8 and b >= 4 or b >= 32:       # pauken (G2) in spoor 1 -> gestemde kendang op G
-            P['kendang'].append([s, s + KLEN[TG], TG, 108 + (10 if s % 48 == 0 else 0)])
+        if b < 8 and b >= 4 or b >= 32:       # v3: pauken (G2) in spoor 1 -> weer echte pauken, zoals het origineel
+            P['timp'].append([s, s + min(e - s, 10), n, 112 + (15 if s % 48 == 0 else 0)])
             continue
         if b < 4:                              # buisklok C3 -> byar (hieronder)
             continue
-        vel = 118
-        P['reyong'].append([s, s + min(e - s, 20), n, vel])
-        if e - s >= 72:                        # lange noot: om de halve noot opnieuw aanslaan (gamelan houdt niet aan)
-            for t in range(s + 48, e - 12, 48):
-                P['reyong'].append([t, t + 16, n, 84])
-            if not 20 <= b < 28:               # (maat 20-27: suling speelt de fluitmelodie uit spoor 2)
-                P['suling'].append([s, e, n + 12 if n + 12 <= 84 else n, 100])
+        # v3: de melodie op het originele instrument (trompet/strijkers/hoorn), strak en luid; de reyong slaat alleen
+        # nog kort mee als kleur (v2 sloeg lange noten om de halve noot opnieuw aan: dat vertroebelde het ritme)
+        P['lead'].append([s, e, n, 127])
+        P['reyong'].append([s, s + min(e - s, 12), n, 100])
     for s, e, n, v in T[2]:
         b = bar(s)
         if b < 4:
@@ -169,22 +180,22 @@ def build():
         if prog_flute:
             P['suling'].append([s, e, n, 112])
         else:
-            P['gangsa'].append([s, s + min(e - s, 24), n, 112])
+            if b < 20:
+                # v3: in maat 8-19 speelt spoor 2 (kwint erboven) in het origineel op hetzelfde instrument als de
+                # melodie (trompet/strijkers): weer zo, op het melodiespoor (de gangsa zwijgt hier)
+                P['lead'].append([s, e, n, 116])
+            else:
+                P['gangsa'].append([s, s + min(e - s, 24), n, 112])
             if 24 <= b < 28 and e - s >= 72:
                 P['suling'].append([s, e, n, 104])
     # bas -> jegogan (een octaaf hoger)
     # jegogan speelt traag (pokok): alleen de basnoten op de tel; de achtste-ostinato's (maat 24-31) op de tellen
-    beats = [x for x in T[3] if x[0] % 48 == 0]     # v2: alleen op tel 1 en 3 (de gongbas speelt de hele lijn)
-    for s, e, n, v in beats:
-        if 24 <= bar(s) < 32:
-            continue                           # v2: daar speelt de gongbas de octaafachtsten
-        nxt = min([x[0] for x in beats if x[0] > s] + [s + 48])
-        P['jegog'].append([s, s + min(40, nxt - s), n + 12, 104])
+    # v3: geen jegogan meer (de gongbas speelt de hele lijn; scheelt kanalen voor de melodie)
     # v2: de originele baslijn volledig (ook de octaafachtsten van maat 24-31) op de gongbas, in de originele ligging
     for s, e, n, v in T[3]:
         nxt = min([x[0] for x in T[3] if x[0] > s] + [s + 96])
         ln = min(e - s, nxt - s, 10 if 24 <= bar(s) < 32 else 96)    # octaafachtsten: kort (1 kanaal + uitklinken)
-        P['bas'].append([s, s + ln, n, 127 if s % BAR == 0 and bar(s) in BYARS else 112])
+        P['bas'].append([s, s + ln, n, 127 if s % BAR == 0 and bar(s) in GONGS else 88])
     # v2: de PSG-sporen van het origineel 1-op-1 terug (spoor 5: melodie een octaaf lager + de herhaalde achtsten onder
     # de lange noten; spoor 4: kwint-verdubbeling, de Db5 in maat 23/27 en de tegenmelodie van maat 28-31). In v1 waren
     # die vervangen door de kotekan; daardoor vielen de herkenbare begeleidingsfiguren weg.
@@ -249,27 +260,31 @@ def build():
         t = 3 * BAR + i * S16
         P['byar'].append([t, t + 5, 72 + (7 if i % 2 else 0), 70 + i * 3])
 
-    # angsel: alles stopt op tel 4 na een unisono-klap
-    for b in ANGSEL + [7, 39]:
-        t = b * BAR + 72
-        P['byar'] += [[t, t + 8, 79, 120], [t + 12, t + 20, 79, 124], [t + 12, t + 20, 67, 124]]
-        P['ceng'] += [[t, t + 6, 80, 110], [t + 12, t + 24, 78, 124]]
 
     # ---- kolotomisch: gong ageng, kempur, kempli ---------------------------------------------------------
     for i, b in enumerate(GONGS):
         nxt = GONGS[i + 1] if i + 1 < len(GONGS) else END
-        P['gong'].append([b * BAR, b * BAR + min(2 * BAR, (nxt - b) * BAR - 4), 36 + root_of(b), 127])
+        # v3: de noot stopt een uitklinktijd vóór de volgende gong (de release 236 laat hem lang naklinken)
+        end = b * BAR + max(BAR // 2, (nxt - b) * BAR - 48)
+        if b + 1 in ANGSEL:       # de gong mag de angsel niet volgalmen: uitgeklonken vóór tel 4
+            end = min(end, (b + 1) * BAR + 72 - 44)
+        P['gong'].append([b * BAR, end, 36 + root_of(b), 127])
+        if b >= 4:
+            # v3: zware maatovergang: gong + lage gongbas (octaaf onder de baslijn) + pauken, keihard
+            P['accbas'].append([b * BAR, b * BAR + 30, 36 + root_of(b), 127])
+            P['timp'].append([b * BAR, b * BAR + 16, 36 + root_of(b), 127])
+            P['ceng'].append([b * BAR, b * BAR + 18, 78, 120])
     for b in KEMPURS:
         r = root_of(b)
         n = 36 + (r + 7) % 12                  # kwint van de grondtoon, G2-F#3
-        P['kempur'].append([b * BAR, b * BAR + BAR, n + 12 if n < 42 else n, 110])
+        P['kempur'].append([b * BAR, b * BAR + 60, n + 12 if n < 42 else n, 110])
     for b in range(4, END):
         for beat in range(4):
             t = b * BAR + beat * TPB
             P['kempli'].append([t, t + 4, 72, 90 if beat in (0, 2) else 70])
 
     # ---- kotekan: polos + sangsih in pelog (maat 6-31 en 36-39) -----------------------------------------------
-    def scale_at(t):
+    def scale_at(t, lo=67, hi=87):
         # v2: pelog, maar een toon van het origineel die er niet in zit (D, E, B, Bb ...) vervangt de pelogtonen een
         # halve toon ernaast; anders botst de kotekan (Db/Eb tegen de D van spoor 2) en klinkt de melodie 'vals'
         b = bar(t)
@@ -280,11 +295,11 @@ def build():
             if pc not in pcs:
                 pcs -= {(pc + 1) % 12, (pc - 1) % 12}
                 pcs.add(pc)
-        return [n for n in range(67, 87) if n % 12 in pcs]
+        return [n for n in range(lo, hi) if n % 12 in pcs]
 
-    def pokok(t):
+    def pokok(t, lo=67, hi=87):
         b = bar(t)
-        sc = scale_at(t)
+        sc = scale_at(t, lo, hi)
         on = active(T[2], t) or active(T[1], t)
         n = max(x[2] for x in on) if on and b >= 8 else 72 + root_of(b)
         while n < 70:
@@ -292,7 +307,11 @@ def build():
         while n > 84:
             n -= 12
         return sc, sc.index(snap(n, sc))
-    kot_bars = list(range(6, 32)) + list(range(36, 40))
+    def fill(t):
+        # v3: waar de melodie een lange noot houdt (en in de break) neemt de hoge synth de kotekan over, fel en kort
+        b, o = bar(t), t % BAR
+        return b >= 32 or (8 <= b < 20 and b % 2 == 1 and 24 <= o < 72) or (20 <= b < 32 and b % 2 == 1 and o < 72)
+    kot_bars = list(range(6, 40))
     for b in kot_bars:
         for beat in range(4):
             t0 = b * BAR + beat * TPB
@@ -300,25 +319,23 @@ def build():
                 continue                                   # angsel: stilte
             if b in BYARS and beat == 0:
                 continue                                   # byar: eerst de klap laten uitgalmen
-            sc, k = pokok(t0)
-            _, q = pokok(t0 + TPB)
+            syn = fill(t0)
+            lo, hi = (72, 90) if syn else (67, 87)
+            sc, k = pokok(t0, lo, hi)
+            _, q = pokok(t0 + TPB, lo, hi)
             last = q - 1 if q > k else q + 1 if q < k else k + (1 if beat % 2 == 0 else -1)
             fig = [k, k + 1, k - 1, last] if beat % 2 == 0 else [k, k - 1, k + 1, last]
             fig = [max(0, min(len(sc) - 1, x)) for x in fig]
             if b < 8:
                 base = 54 + (b - 6) * 26 + beat * 6        # binnenkomen: aanzwellen
-            elif b >= 36:
-                base = 84 + (b - 36) * 9
-            elif 8 <= b < 20 and b % 2 == 0:
-                base = 70                                  # v2: maat met de melodie-aanslagen: kotekan op de achtergrond
-            elif 28 <= b < 32:
-                base = 80                                  # v2: ruimte voor de tegenmelodie (spoor 4)
+            elif syn:
+                base = 84 + (b - 36) * 8 if b >= 36 else 84   # hoge synth: opvulling/break, de versnelling zwelt aan
             else:
-                base = 96 if b >= 20 else 88
+                base = 58                                  # v3: onder de melodie zacht en droog
             for i, x in enumerate(fig):
                 t = t0 + i * S16
-                part = 'polos' if i % 2 == 0 else 'sangsih'
-                P[part].append([t, t + 5, sc[x], min(127, base + (14 if i == 0 else 0))])
+                part = 'synth' if syn else 'polos' if i % 2 == 0 else 'sangsih'
+                P[part].append([t, t + (3 if syn else 4), sc[x], min(127, base + (14 if i == 0 else 0))])
 
     # ---- ceng-ceng: 'cek' op de achtsten in de loop, zestienden in de break en de versnelling ------------------
     for b in range(8, END):
@@ -334,7 +351,7 @@ def build():
                 t = b * BAR + i * S16
                 P['ceng'].append([t, t + 3, 84, 44 + (b - 4) * 12 + (16 if i % 4 == 2 else 0)])
     # kendang-roffel naar de byar's (maat 7, 19, 27, 39 tel 3)
-    for b in (7, 19, 27, 39):
+    for b in ANGSEL:
         for i in range(8, 12):
             t = b * BAR + i * S16
             P['kendang'].append([t, t + KLEN[KA], KA if i % 2 else PEK, 96 + i * 2])
@@ -347,9 +364,41 @@ def build():
             if i % 4 == 3 or (b >= 24 and i % 4 == 1):
                 t = b * BAR + i * S16
                 P['ghost'].append([t, t + KLEN[PEK], PEK, 72 if i % 4 == 3 else 62])
+    # v3: angsel: op tel 4 stopt alles abrupt; alleen op 4 en 4+ (waar het origineel zelf zijn stoten heeft) een
+    # unisono-klap: originele noten op die ticks blijven als stoot staan, de rest zwijgt tot de gong op de volgende maat
+    timp_prog = []                    # v3: angselpauken op een korte release (programma 46), daarna terug
+    for b in ANGSEL:
+        w0, w1 = b * BAR + 72, b * BAR + 96
+        for k in P:
+            if k in ('byar', 'gong', 'kempur', 'timp', 'accbas', 'angsel_hi', 'angsel_lo'):
+                continue
+            hits = k in ('lead', 'reyong', 'gangsa', 'suling', 'bas', 'koor', 'psg_a', 'psg_b', 'kendang')
+            new = []
+            for a, z, n, v in P[k]:
+                if a < w0 < z:
+                    z = w0
+                elif w0 <= a < w1:
+                    if not hits or a - w0 not in (0, 12):
+                        continue
+                    z = min(z, a + 5)
+                new.append([a, z, n, v])
+            P[k] = new
+        t6 = {x[0]: x[2] for x in T[6]}
+        for t in (w0, w0 + 12):
+            d = t6.get(t, 43 if t == w0 else 48)
+            top = d + 36 if d + 36 <= 84 else d + 24
+            # klappen op de gedempte gangsa (release 140, op de kotekansporen die hier zwijgen) en korte pauken
+            P['angsel_hi'].append([t, t + 4, top, 127])
+            if t == w0:
+                P['angsel_lo'].append([t, t + 4, top - 12, 127])
+            P['synth'].append([t, t + 4, top, 120])
+            P['timp'].append([t, t + 6, d, 120 + 7 * (t > w0)])
+            timp_prog += [(t, TIMP_SHORT), (t + 6, TIMP)]
+            P['kendang'].append([t, t + KLEN[KA], KA, 127])
+            P['ceng'].append([t, t + 6, 78, 118 + 6 * (t > w0)])
     # kendang zwijgt op de eerste tel van een byar; de roffels gaan voor op wat er op dezelfde tick valt
     P['kendang'] = [e for e in P['kendang'] if not (bar(e[0]) in BYARS and e[0] % BAR < TPB)]
-    rolls = {e[0] for e in P['kendang'] if e[2] == KA and e[0] % BAR >= 48 and bar(e[0]) in (7, 19, 27, 39)}
+    rolls = {e[0] for e in P['kendang'] if e[2] == KA and e[0] % BAR >= 48 and bar(e[0]) in ANGSEL}
     P['kendang'] = [e for e in P['kendang'] if e[0] not in rolls or e[2] in (KA, PEK) and e[3] >= 96 + 16]
     for k in P:
         P[k] = dedupe(P[k])
@@ -357,21 +406,38 @@ def build():
     P['kempli'] = mono(P['kempli'])
 
     # ---- stemverdeler (11 DirectSound-noten: legendary) -------------------------------------------------------
+    # v3: lage accentbas niet op dezelfde toon als de baslijn (die krijgt op de gongmaten zelf al velocity 127)
+    bas_at = {(e[0], e[2]) for e in P['bas']}
+    P['accbas'] = [e for e in P['accbas'] if (e[0], e[2]) not in bas_at]
     rel = releases(VG)
-    progs = {'reyong': REYONG, 'gangsa': GANGSA, 'byar': GANGSA, 'suling': SULING, 'jegog': JEGOG, 'gong': GONG,
-             'kempur': KEMPUR, 'polos': KOT, 'sangsih': KOT, 'bas': GBAS, 'koor': KOOR}
-    tail = {k: release_ticks(rel.get(p, 200), TPB, BPM * 1.12) for k, p in progs.items()}
+    progs = {'lead': LEAD, 'reyong': REYONG, 'gangsa': GANGSA, 'byar': GANGSA, 'suling': SULING, 'gong': GONG,
+             'kempur': KEMPUR, 'polos': KOT, 'sangsih': KOT, 'bas': GBAS, 'accbas': GBAS, 'koor': KOOR,
+             'synth': SYNTH, 'timp': TIMP, 'angsel_hi': KOT, 'angsel_lo': KOT}
+    tail = {k: release_ticks(rel.get(p, 200), TPB, BPM) for k, p in progs.items()}
+    tail['lead'] = release_ticks(max(rel[p] for _, p in LEAD_PROGS), TPB, BPM)   # trompet 127, strijkers 196, hoorn 165
+    tail['kempur'] = tail['gong']                    # kempur deelt het gongspoor (release van programma 14)
     tail['kendang'] = tail['ghost'] = 1
-    for k in ('suling', 'jegog', 'reyong', 'gangsa', 'bas', 'koor'):   # eenstemmige lijnen: de vorige noot laat op tijd los
+    for k in ('lead', 'suling', 'reyong', 'gangsa', 'bas', 'koor'):   # eenstemmige lijnen: de vorige noot laat op tijd los
         P[k] = detach(P[k], tail[k])
-    order = ['reyong', 'gong', 'byar', 'suling', 'gangsa', 'bas', 'koor', 'kendang', 'jegog', 'kempur', 'polos', 'sangsih', 'ghost']
+    order = ['lead', 'gong', 'timp', 'angsel_hi', 'angsel_lo', 'bas', 'accbas', 'byar', 'reyong', 'suling', 'gangsa', 'kendang', 'synth', 'koor',
+             'kempur', 'polos', 'sangsih', 'ghost']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, max_voices=11)
+    if os.environ.get("RQ_DEBUG"):
+        for k in order:
+            print(k, sorted(set((e[0] // BAR, e[0] % BAR) for e in ds[k] if e not in kept[k])))
     print('tail (ticks):', tail)
     for k in order:
         n = len(ds[k])
         print('  %-8s %4d noten, %3d vallen weg (%.1f%%)' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / max(n, 1)))
         P[k] = kept[k]
+    assert len(P['lead']) == len(ds['lead']), 'melodie valt weg'
+    # v3: partijen met hetzelfde instrument delen een spoor (max. 16 sporen)
+    P['gangsa'] = sorted(P['gangsa'] + P.pop('byar'))
+    P['gong'] = sorted(P['gong'] + [[a, z, n, v * 100 // 127] for a, z, n, v in P.pop('kempur')])
+    P['bas'] = sorted(P['bas'] + P.pop('accbas'))
+    P['polos'] = sorted(P['polos'] + P.pop('angsel_hi'))
+    P['sangsih'] = sorted(P['sangsih'] + P.pop('angsel_lo'))
 
     # ---- wegschrijven ------------------------------------------------------------------------------------------
     out = mido.MidiFile(type=1, ticks_per_beat=TPB)
@@ -385,15 +451,17 @@ def build():
         last = t
     out.tracks.append(cond)
     layout = [  # partij, programma, volume, kanaal, pan, extra CC's
-        ('reyong', REYONG, 110, 0, 54, []), ('gangsa', GANGSA, 100, 1, 76, []), ('byar', GANGSA, 104, 2, 64, []),
-        ('suling', SULING, 92, 3, 70, [(21, 18), (1, 3)]), ('jegog', JEGOG, 112, 4, 64, []),
-        ('gong', GONG, 127, 5, 64, []), ('kempur', KEMPUR, 100, 6, 58, []),
-        ('polos', KOT, 82, 7, 36, []), ('sangsih', KOT, 82, 8, 92, []),
-        ('kendang', KIT, 100, 9, 64, []), ('kempli', KEMPLI, 52, 10, 64, []), ('ceng', CENG, 46, 11, 70, []),
-        ('bas', GBAS, 127, 12, 64, []), ('koor', KOOR, 124, 13, 64, []),
+        ('lead', LEAD, 127, 0, 64, []), ('reyong', REYONG, 96, 1, 54, []), ('gangsa', GANGSA, 100, 2, 76, []),
+        ('suling', SULING, 92, 3, 70, [(21, 18), (1, 3)]), ('gong', GONG, 127, 4, 64, []),
+        ('timp', TIMP, 127, 5, 40, []), ('synth', SYNTH, 80, 6, 88, []),
+        ('polos', KOT, 76, 7, 36, []), ('sangsih', KOT, 76, 8, 92, []),
+        ('kendang', KIT, 92, 9, 64, []), ('kempli', KEMPLI, 52, 10, 64, []), ('ceng', CENG, 46, 11, 70, []),
+        ('bas', GBAS, 127, 12, 64, []), ('koor', KOOR, 116, 13, 64, []),
         ('psg_a', PSG_A1, 120, 14, 112, []), ('psg_b', PSG_B, 120, 15, 16, []),
     ]
-    extra = {'psg_a': src_events(src.tracks[5]), 'psg_b': src_events(src.tracks[4], LOOP_START * BAR)}
+    extra = {'psg_a': src_events(src.tracks[5]), 'psg_b': src_events(src.tracks[4], LOOP_START * BAR),
+             'lead': [(b * BAR, mido.Message('program_change', program=p)) for b, p in LEAD_PROGS],
+             'timp': [(t, mido.Message('program_change', program=p)) for t, p in timp_prog]}
     P['kendang'] = sorted(P['kendang'] + P.pop('ghost'))   # spookslagen (laagste prioriteit) op het kendangspoor
     for k in P:                                   # naadloze loop: geen noot over de loopgrens
         P[k] = [[a, min(b, END * BAR), n, v] for a, b, n, v in P[k] if a < END * BAR]
@@ -403,7 +471,7 @@ def build():
     assert not [k for k in P if P[k] and k not in written], 'partij berekend maar niet weggeschreven'
     out.save(OUT)
     secs = lambda b0, b1: sum(60 / (BPM * f_at(b)) * 4 for b in range(b0, b1))
-    print(OUT, '%.1f s intro, %.1f s loop, %d sporen' % (secs(0, LOOP_START), secs(LOOP_START, END), len(out.tracks) - 1))
+    print(OUT, '%.2f s intro, %.2f s loop, %d sporen' % (secs(0, LOOP_START), secs(LOOP_START, END), len(out.tracks) - 1))
 
 
 def f_at(b):

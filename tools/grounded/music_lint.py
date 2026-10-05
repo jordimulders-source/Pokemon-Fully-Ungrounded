@@ -9,7 +9,7 @@ Leest de voicegroup uit midi.cfg (-G_...) en meldt de fouten die we eerder maakt
   - drumnoten die in de drumkit PSG zijn (piepjes) of buiten de kit vallen (stilte)
   - melodische programma's die PSG zijn (vierkant/ruis/golf) -> losse piepjes, alleen bewust gebruiken
   - extreem lage noten (< E1) op DirectSound -> vervormde dreun
-Gebruik: python3 tools/grounded/music_lint.py sound/songs/midi/mus_x.mid [...]
+Gebruik: python3 tools/grounded/music_lint.py sound/songs/midi/mus_x.mid [...] [--genre stoner [--tonic C]]
 Exitcode 1 bij fouten (FOUT); waarschuwingen (LET OP) laten het door."""
 import os, re, sys
 import mido
@@ -141,10 +141,121 @@ def lint(mid):
     return errors, warns
 
 
+STONER_HELP = """--genre stoner [--tonic C]: extra controles tegen 'ska/surf/Mario Kart Bowser's Castle' (Heatran v1-v5),
+afgeleid van Kyuss' 'Odyssey'/'Green Machine' (gemeten, zie MUZIEK.md 'Heatran v6'):
+  - hihat: max. 3,3 aanslagen/s per 4 maten (referentie 3,0-3,2), geen open hihat op de 'en', accent op de tel
+  - geen chromatische loopjes (3 noten in halve tonen dezelfde kant op) in melodische sporen
+  - geen staccato: max. 10% korte noten (< 1/2 tel) met stilte erna
+  - geen 'skank': aanslag naast de tel terwijl het spoor op die tel stil was (max. 5%)
+  - geen wandelende 8e-bas: het laagste spoor wisselt bij snelle aanslagen (<= 1/2 tel) max. 50% van toon
+  - met --tonic: geen grote terts boven de grondtoon (alleen mineur/blues)"""
+NOTE_PC = {'C': 0, 'Db': 1, 'C#': 1, 'D': 2, 'Eb': 3, 'D#': 3, 'E': 4, 'F': 5, 'Gb': 6, 'F#': 6, 'G': 7, 'Ab': 8,
+           'G#': 8, 'A': 9, 'Bb': 10, 'A#': 10, 'B': 11}
+
+
+def kit_hats(mid):
+    """drumnoten -> 'hat' / 'ohat' uit de drumkit van de voicegroup (samplenaam), anders GM-nummers."""
+    vg = voicegroup_of(mid)
+    voices = load_voices(vg) if vg else None
+    kit = next((k[6:] for k in (voices or {}).values() if k.startswith('drums:')), None)
+    path = os.path.join(VG_DIR, 'drumsets', (kit or '').replace('_drumset', '') + '.inc')
+    if kit and os.path.exists(path):
+        lines = [l.strip() for l in open(path) if l.strip().startswith(('voice_', 'voice_group'))]
+        first = int(lines[0].split(',')[1])
+        out = {}
+        for i, l in enumerate(lines[1:]):
+            if 'open_hihat' in l or 'open_hi_hat' in l:
+                out[first + i] = 'ohat'
+            elif 'hihat' in l or 'hi_hat' in l:
+                out[first + i] = 'hat'
+        return out
+    return {42: 'hat', 44: 'hat', 46: 'ohat'}
+
+
+def stoner_lint(mid, tonic=None):
+    m = mido.MidiFile(mid)
+    tpb = m.ticks_per_beat
+    tempo, tracks = [], []
+    for t in m.tracks:
+        tick, on, ns, ch = 0, {}, [], None
+        for x in t:
+            tick += x.time
+            if x.type == 'set_tempo':
+                tempo.append((tick, x.tempo))
+            if x.type == 'note_on' and x.velocity:
+                on[x.note] = (tick, x.velocity)
+                ch = x.channel
+            elif x.type in ('note_on', 'note_off') and x.note in on:
+                s, v = on.pop(x.note)
+                ns.append((s, tick, x.note, v))
+        if ns:
+            tracks.append((ch, sorted(ns)))
+    tempo.sort()
+    us = lambda tick: [tp for t, tp in tempo if t <= tick][-1] if tempo else 500000
+    errors = []
+    hatmap = kit_hats(mid)
+    drums = [n for ch, ns in tracks if ch == 9 for n in ns]
+    hats = [n for n in drums if n[2] in hatmap]
+    # hihat-snelheid per 4 maten
+    end = max(n[0] for ch, ns in tracks for n in ns)
+    win = 16 * tpb
+    for w0 in range(0, end, win):
+        hs = [n for n in hats if w0 <= n[0] < w0 + win and hatmap[n[2]] == 'hat']
+        sec = win / tpb * us(w0) / 1e6
+        if len(hs) / sec > 3.3:
+            errors.append('stoner: %.1f hihats/s rond %.0f s (referentie <= 3,2/s)' % (len(hs) / sec, w0 / tpb * us(w0) / 1e6))
+            break
+    oh = [n for n in hats if hatmap[n[2]] == 'ohat' and n[0] % tpb]
+    if oh:
+        errors.append('stoner: %d open hihats naast de tel (ska/disco)' % len(oh))
+    on_v = [n[3] for n in hats if n[0] % tpb == 0]
+    off_v = [n[3] for n in hats if n[0] % tpb]
+    if on_v and off_v and sum(off_v) / len(off_v) >= sum(on_v) / len(on_v):
+        errors.append('stoner: hihat op de en gemiddeld even hard als op de tel (off-beat-accent)')
+    mel = [ns for ch, ns in tracks if ch != 9]
+    if mel:
+        lowest = min(mel, key=lambda ns: sum(n[2] for n in ns) / len(ns))
+    for i, ns in enumerate(mel):
+        starts = sorted(set(n[0] for n in ns))
+        line = [min(n[2] for n in ns if n[0] == s) for s in starts]
+        st = [b - a for a, b in zip(line, line[1:]) if b != a]
+        runs = sum(1 for x, y in zip(st, st[1:]) if abs(x) == 1 and x == y)
+        if runs:
+            errors.append('stoner: melodisch spoor %d heeft %d chromatische loopjes' % (i, runs))
+        nxt = {s: b for s, b in zip(starts, starts[1:])}
+        short = sum(1 for n in ns if n[1] - n[0] < tpb / 2 and nxt.get(n[0], n[1]) - n[1] >= tpb / 4)
+        if short > 0.10 * len(ns):
+            errors.append('stoner: melodisch spoor %d: %.0f%% staccato-noten' % (i, 100 * short / len(ns)))
+        sounding = lambda t: any(n[0] <= t < n[1] for n in ns)
+        skank = sum(1 for s in starts if s % tpb and not sounding(s - s % tpb))
+        if skank > 0.05 * len(starts):
+            errors.append('stoner: melodisch spoor %d: %d off-beat-stoten na een stille tel (skank)' % (i, skank))
+        if tonic is not None and any(n[2] % 12 == (tonic + 4) % 12 for n in ns):
+            errors.append('stoner: melodisch spoor %d speelt de grote terts boven de grondtoon' % i)
+    if mel:
+        starts = sorted(set(n[0] for n in lowest))
+        line = [min(n[2] for n in lowest if n[0] == s) for s in starts]
+        fast = [(a, b) for (sa, a), (sb, b) in zip(zip(starts, line), zip(starts[1:], line[1:])) if sb - sa <= tpb / 2]
+        if fast and sum(1 for a, b in fast if a != b) > 0.5 * len(fast):
+            errors.append('stoner: laagste spoor wandelt (%.0f%% toonwissels bij snelle aanslagen)' % (
+                100 * sum(1 for a, b in fast if a != b) / len(fast)))
+    return errors
+
+
 if __name__ == '__main__':
+    args = sys.argv[1:]
+    genre = tonic = None
+    if '--genre' in args:
+        i = args.index('--genre'); genre = args[i + 1]; del args[i:i + 2]
+    if '--tonic' in args:
+        i = args.index('--tonic'); tonic = NOTE_PC[args[i + 1]]; del args[i:i + 2]
+    if genre not in (None, 'stoner'):
+        sys.exit('onbekend genre %s\n%s' % (genre, STONER_HELP))
     bad = 0
-    for f in sys.argv[1:]:
+    for f in args:
         e, w = lint(f)
+        if genre == 'stoner':
+            e += stoner_lint(f, tonic)
         print('%s: %s' % (os.path.basename(f), 'OK' if not e else '%d fout(en)' % len(e)))
         for x in e[:12]:
             print('  FOUT  ', x)

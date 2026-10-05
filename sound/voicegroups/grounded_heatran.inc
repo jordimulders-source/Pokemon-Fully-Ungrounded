@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Battle! Heatran v5 (Kyuss' Odyssey op de GBA). Gegenereerd door tools/grounded/heatran_theme.py.
-@ 27 = feedback (sd90 overdrive), 28/29/30 = palm-mute/riffnoot/powerchord (keysplit_heatran, één sample per riffnoot), 31 = lead (sd90 distortion), 34 = synthbas, 127 = drumkit.
+@ Project Grounded: grounded_gm voor Battle! Heatran v6 (Kyuss op de GBA). Gegenereerd door tools/grounded/heatran_theme.py.
+@ 27 = feedback (sd90 overdrive), 30 = powerchord (keysplit_heatran, één sample per riffnoot), 31 = fuzzlead (keysplit_heatran_lead), 34 = synthbas, 127 = drumkit.
 voice_group grounded_heatran
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -29,13 +29,13 @@ voice_group grounded_heatran
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 25
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 200  @ 27
-	voice_keysplit voicegroup_heatran_mute_keysplit, keysplit_heatran  @ 28
-	voice_keysplit voicegroup_heatran_note_keysplit, keysplit_heatran  @ 29
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 28
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
 	voice_keysplit voicegroup_heatran_power_keysplit, keysplit_heatran  @ 30
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 180  @ 31
+	voice_keysplit voicegroup_heatran_lead_keysplit, keysplit_heatran_lead  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 250, 200, 140  @ 34
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 0, 255, 160  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37

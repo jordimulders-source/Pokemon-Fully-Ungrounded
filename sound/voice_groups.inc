@@ -39,6 +39,7 @@
 .include "sound/voicegroups/keysplits/heatran_note.inc"
 .include "sound/voicegroups/keysplits/heatran_mute.inc"
 .include "sound/voicegroups/keysplits/np_trumpet.inc"
+.include "sound/voicegroups/keysplits/heatran_lead.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"

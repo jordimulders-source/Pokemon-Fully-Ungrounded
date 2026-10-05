@@ -95,6 +95,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
+| Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
+| Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | nieuw | v1 in de maak | – |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 
@@ -331,3 +334,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   Een vanilla-sample een octaaf lager = byte-kopie met root +12 (`gba_copy`, np_synth_bass). Gedeelde keysplit met een
   andere release = eigen voicegroup op dezelfde tabel (`keysplits/np_trumpet.inc` + keysplit_trumpet). Drumkit in
   GM-indeling (36/38/39/40/42/46/49/55) met stille DS-vulregels. recpcm -V092: 0 overlopen, piek 109/127.
+- Heatran v6 (from scratch na 'Mario Kart/Bowser's Castle'; eerste versie mét audioreferentie): **eerst de referentie
+  meten** (Spleeter 4 stems + librosa-autocorrelatie per stem + basic-pitch op de basstem). Odyssey: traag intro 77 bpm,
+  daarna 94-96 bpm (snare om de 0,64 s, 8e-puls 188/min; 'snel' = de 8en, níet 130 bpm), Green Machine 90 bpm; gitaar-
+  sustain (P20/P90 van de envelop) 0,55-0,63, gitaarstem < 250 Hz 49-72 %, hihat-accent 69-81 % op de tel, C-klein /
+  G-frygisch, bas 56-78 % op de pedaaltoon. v5: 136 bpm (8e-puls 272/min = +45 %), riff gem. 0,36 tel (stoten), open hihat
+  op de 'en', chromatische riffloopjes, gitaar < 250 Hz 12-19 % / > 2 kHz 18-27 %. **Die getallen zijn nu harde controles**
+  (`stoner_checks()` in het script, generiek `music_lint.py --genre stoner --tonic C`; v5 faalt op 20 punten). Kyuss-
+  sustain op de GBA: riffs níet detachen (legato, release 150) en de 2e gitaar als 'muur' (herhaalde chugs = één noot).

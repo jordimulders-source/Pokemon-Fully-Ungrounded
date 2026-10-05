@@ -7282,6 +7282,10 @@ DirectSoundWaveData_gym2_cello::
 	.incbin "sound/direct_sound_samples/grounded/gym2_cello.bin"
 
 	.align 2
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
+
+	.align 2
 DirectSoundWaveData_gym2_ostinato::
 	.incbin "sound/direct_sound_samples/grounded/gym2_ostinato.bin"
 
@@ -7644,3 +7648,47 @@ DirectSoundWaveData_mitch4_wob_eb2::
 	.align 2
 DirectSoundWaveData_np_synth_bass::
 	.incbin "sound/direct_sound_samples/grounded/np_synth_bass.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_37::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_37.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_42::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_42.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_44::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_44.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pw_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_48.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_lead_60::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_lead_60.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_lead_67::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_lead_67.bin"

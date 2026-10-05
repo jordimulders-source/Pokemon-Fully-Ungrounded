@@ -259,3 +259,12 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Heatran v2 (Jordi: 'geen stoner metal maar Bowser's Castle-metal; meer heavy, meer fuzz', met een genrebeschrijving):
+  **een genre = een vorm, niet alleen een klank.** v1 had de juiste instrumenten maar een metalstructuur (riff na riff,
+  alles vol). v2 (100 bpm, drop C) volgt de vorm: strofen alleen fuzzbas + drums (melodische baslijn, hihat/ride, ghost
+  notes), later zacht de **refreinriff palm-muted**; refreinen halftempo (snare op 3) met de riff voluit, bas + gitaren
+  unisono, syncopen en een stopmaat; rustig middenstuk met cleane arpeggio's (dorisch) en opbouw. Dynamiek meten per
+  sectie (RMS via recaudio: strofe 1500-2500, refrein 3500-3800). 'Big Muff' = eigen fuzz in `heatran_samples.py`
+  (`muff()`: 150-700 Hz +6 dB, twee tanh-stadia, lowpass 3,4 kHz); een octaaffuzzbas verliest zijn grondtoon in de
+  fuzz -> schoon laag (< 160 Hz) erbij mengen (bas-blend). Laat de stopmaat aan het eind van de loop gelijk zijn aan
+  de laatste intromaat (naadloze loop). -V100: piek 110/127, 0 overlopen, RMS 2911.

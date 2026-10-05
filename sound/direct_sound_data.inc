@@ -6711,3 +6711,11 @@ DirectSoundWaveData_kc_timbale_lo::
 	.align 2
 DirectSoundWaveData_kc_guiro_long::
 	.incbin "sound/direct_sound_samples/grounded/kc_guiro_long.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_scratch::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_scratch.bin"

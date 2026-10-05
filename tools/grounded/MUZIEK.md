@@ -259,3 +259,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Magikarp v2 (Jordi: 'het eerste dominante deuntje te hoog, tot het irritante aan toe'): kazoo een octaaf lager (F3-D5),
+  xylofoon-verdubbeling een octaaf boven de kazoo (i.p.v. twee) en zachter, fluitje niet boven D6. **Meet 'schel'**:
+  aandeel van het spectrum boven 2 kHz per sectie (A: 31% -> 14%, boven 4 kHz 9,8% -> 2,8%, zwaartepunt 1660 -> 1070 Hz).
+  **Een echte cry als sample**: de Gen 3-cry (`cries/<soort>.wav`, 8 bit 10.512 Hz) kan zo als gewone DirectSound-sample
+  (grondtoon 60, eigen generator `magikarp_samples.py`); DJ-scratch = varispeed (aantrekken 0,35x -> 1,15x, afkappen,
+  kort achteruit). In de drumkit + een eigen spoor met hetzelfde programma 127 = eigen volume. Niet in de intro: de
+  echte cry van een wilde Pokémon klinkt daar al (±2,3-3 s). Solo-RMS cry 1300 vs. kazoo 1850 = net onder de lead.

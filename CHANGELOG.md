@@ -16967,3 +16967,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **"Valse noten, F-E-D-C#-D":** opnieuw gemeten op het origineel: die reeks staat er niet in, en de lead en bas volgen het origineel. Geen noten veranderd.
 - **"Doffe, houtachtige bas":** klopte: de zestienden klonken maar 24 ms (een tik) op een holle sample. Nieuwe blikkerige zaagtand/puls-synthbas met volle noten, ±3 dB luider. Een octaaf lager kan niet (zou onder E1 komen).
 - Script-controles: geen bends buiten de intro, geen modulatie/vibrato, geen zwevende samples op de lead. -V064 → -V060 (luidere bas).
+
+### [v0.9.96] - Cinematische intro's: Steven, Wally en Rayquaza (+ filmspeler)
+- **Filmspeler voor transities** (`tools/grounded/film.py` + `Film_*` in `battle_transition.c`): een filmpje per gameframe op BG0 met drie paletten, ontdubbelde tiles (LZ77), VRAM als cache en dubbel gebufferde tilemaps (geen scheuren). Hiermee kunnen intro's echte filmscènes zijn.
+- **Steven** (kampioen + post-game, ook in het Stadium; vervangt de mugshot): zijn verzamelkast vol stenen met bordjes ("ROCK", "ROCK (WET)", "NICE ROCK", "ALSO ROCK", in het midden "THE ROCK"). De middelste steen gloeit, de camera zoomt in op de briljant, in de acht facetten verschijnen de badges één voor één (met een stijgende toonladder), dan barst de steen en spat uiteen. ±4,5 s.
+- **Wally** (laatste gevecht, Victory Road; rematches houden de mugshot): een VHS-band ("WALLY - 1ST POKEMON / (DAD: DO NOT TAPE OVER)"). PLAY: Route 102, Wally vangt Ralts ("Gotcha! RALTS was caught!"); FF: Mauville (Kirlia), Meteor Falls ("Wow! Very beaut! Train much team."), Kirlia evolueert in Gallade; dan PLAY, zoom op zijn vastberaden gezicht in Victory Road, PAUSE, sneeuw. Met tracking-ruis en golvend beeld. ±5 s.
+- **Rayquaza** (alle Rayquaza-gevechten op de Sky Pillar, ook shiny/Delta): je kijkt omhoog langs de pilaar door de wolken, een groene streep cirkelt steeds sneller om de top tot een ring, groene flits, en Rayquaza breekt eruit recht op de camera af tot zijn kop het beeld vult. ±3,4 s.
+- ROM +475 KB (30,3 van 32 MB).

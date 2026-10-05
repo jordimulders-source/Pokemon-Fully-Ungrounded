@@ -6763,3 +6763,27 @@ DirectSoundWaveData_heatran_closed_hat::
 	.align 2
 DirectSoundWaveData_heatran_side_stick::
 	.incbin "sound/direct_sound_samples/grounded/heatran_side_stick.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_dark::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_dark.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_mid::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_mid.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_bright::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_bright.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_supersaw_lead::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_supersaw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_sawbass::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_sawbass.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_kick::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_kick.bin"

@@ -15,15 +15,18 @@ muziek, dus transitieframe t valt op muziektel 1 + t / 23,7.
   tel 4 (t = 68)   : de wens, alles wordt goudwit = maat 1 tel 0 -> bekken, triangel, belakkoord, pauk
   maat 1-4         : speeldoos speelt het wensmotief (het gevechtsscherm komt op; de cry van Jirachi valt in maat 2-3)
   maat 5-6         : opbouw: pizzicato, stijgende strijkers, roffel, pauken, harpglissando + windgong
-Loop (44 maten, ±70 s):
+Loop (56 maten, ±85 s; v2 = v1 tot de opbouw, daarna een euforische trance-climax op verzoek van Jordi):
   A  (0-7)   thema op fluit + glockenspiel, pizzicato, harp-arpeggio's, huppelende bas
   A' (8-15)  thema op strijkers + fluit een octaaf hoger, hogere afsluiting
-  B  (16-23) avontuur: hoorn met een heldhaftig tegenthema, spiccato-strijkers, celesta-antwoorden, pauken
-  C  (24-31) de wens (half-time): speeldoos + celesta, harp in 16en, koor, IV-iv-I ('When You Wish'-kleur)
-  D  (32-39) climax: thema in E-groot (fluit + strijkers + glockenspiel), hoorn, koor, bekkens
-  E  (40-43) C-D-G-A: het wensmotief stijgt in sequens, roffel + harpglissando terug naar A
+  B  (16-19) avontuur: hoorn met een heldhaftig tegenthema, spiccato-strijkers, celesta-antwoorden, pauken
+  opbouw (20-23, 42,6 s) Bm-G-Em-A, tempo 152 -> 168: supersaw 'filter' gaat open, roffel versnelt, riser, adem
+  drop 1 (24-31, 48,7 s) trance 168 bpm: wensmotief op supersaw-lead, gated supersaw, off-beat bas, 4/4-kick, clap
+  breakdown (32-35, 60,1 s) G-Gm-D-A, alleen pad + lead (+ speeldoos), mini-opbouw
+  drop 2 (36-43, 65,8 s) groter (glockenspiel op de lead, koor), laatste maat ritardando naar 152 + glissando
+  D  (44-51, 77,3 s) het thema in E-groot een octaaf hoger (fluit + strijkers + glockenspiel), hoorn, koor, bekkens
+  E  (52-55) C-D-G-A: het wensmotief stijgt in sequens, roffel + harpglissando terug naar A
 Voicegroup grounded_jirachi = grounded_gm + eigen samples (gm_samples.py: jirachi_celesta, jirachi_music_box,
-jirachi_chimes) + eigen drumkit (drumsets/jirachi.inc, alles DirectSound). Zie tools/grounded/MUZIEK.md.
+jirachi_chimes; jirachi_samples.py: supersaws, sawbas, trancekick) + eigen drumkit (drumsets/jirachi.inc, alles DirectSound). Zie tools/grounded/MUZIEK.md.
 Gebruik: python3 tools/grounded/jirachi_theme.py"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -40,13 +43,25 @@ MAX_VOICES = 11                     # legendary
 
 CELESTA, GLOCK, MBOX, PIZZ, HARP, TIMP, STR, CHOIR, HORN, FLUTE, BASS, DRUMS = 8, 9, 10, 45, 46, 47, 48, 52, 60, 73, 33, 127
 SPARK, SHAKER = 81, 120            # PSG
+# trance-climax (v2): eigen samples uit jirachi_samples.py
+SAW_DARK, SAW_MID, SAW_BRIGHT, SAW_LEAD, SAW_PLUCK, SAW_BASS = 88, 89, 90, 91, 92, 39
+SUB, RISER, HATS = 84, 121, 122    # PSG: golf (sub), ruis (riser, open/dichte hihats)
+BPM_TR = 168                       # tempo van de climax
+TKICK, CLAP, TSNARE = 43, 44, 45
 # eigen drumkit (drumsets/jirachi.inc, vanaf noot 36)
 KICK, ROLL, SNARE, CRASH, TRI, CHIMES, JINGLE = 36, 37, 38, 39, 40, 41, 42
 
 INTRO_BARS = 6                      # maat 1-6
 LOOP_BAR = INTRO_BARS + 1           # songmaat 7 = loopmaat 0
-LOOP_LEN = 44
-A0, A1, B0, C0, D0, E0 = 0, 8, 16, 24, 32, 40
+LOOP_LEN = 56
+A0, A1, B0, BUILD0, DROP1, BREAK0, DROP2, D0, E0 = 0, 8, 16, 20, 24, 32, 36, 44, 52
+SECTIONS = [('A', A0), ('A2', A1), ('B', B0), ('BUILD', BUILD0), ('DROP1', DROP1), ('BREAK', BREAK0),
+            ('DROP2', DROP2), ('D', D0), ('E', E0)]
+
+
+def section(lb):
+    name, st = [x for x in SECTIONS if x[1] <= lb][-1]
+    return name, lb - st
 
 N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'D#': 3, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'Ab': 8,
      'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
@@ -80,8 +95,11 @@ def chord(name):
 INTRO = ['D', 'Bm', 'G', 'A', 'G', 'A']
 LOOP = (['D', 'Bm', 'G', 'A', 'D', 'B7', ('Em', 'Gm'), ('D', 'A')] +                    # A
         ['D', 'Bm', 'G', 'A', 'D', 'G', ('Em7', 'A7'), 'D'] +                          # A'
-        ['Bm', 'G', 'D', 'A', 'Bm', 'G', 'Em', 'F#7'] +                                # B
-        ['G', 'Gm', 'D', 'B7', 'Em', 'Gm', 'D', ('F#m7', 'B7')] +                      # C
+        ['Bm', 'G', 'D', 'A'] +                                                        # B (eerste helft)
+        ['Bm', 'G', 'Em', 'A'] +                                                       # opbouw (152 -> 168 bpm)
+        ['D', 'Bm', 'G', 'A', 'D', 'Bm', 'G', 'A'] +                                   # drop 1 (trance, 168 bpm)
+        ['G', 'Gm', 'D', 'A'] +                                                        # breakdown (pad + lead)
+        ['D', 'Bm', 'G', 'A', 'D', 'Bm', 'G', 'B7'] +                                  # drop 2 (ritardando -> E)
         ['E', 'C#m', 'A', 'B', 'E', 'A', ('F#m7', 'B7'), 'E'] +                        # D (A' in E)
         ['C', 'D', 'G', 'A'])                                                          # E
 assert len(LOOP) == LOOP_LEN
@@ -151,8 +169,113 @@ RISE = [   # E: het motief in sequens omhoog
     [(0, 8, 'E5'), (8, 4, 'C#5'), (12, 4, 'E5')],                                   # A
 ]
 
+BUILD_MEL = [   # opbouw maat 2-3: het wensmotief op de supersaw-lead, tel 4 van de laatste maat stil (de adem vóór de drop)
+    [(0, 4, 'B4'), (4, 6, 'G5'), (10, 2, 'F#5'), (12, 4, 'E5')],                    # Em
+    [(0, 4, 'C#5'), (4, 4, 'E5'), (8, 4, 'A5')],                                    # A
+]
+BREAK_MEL = WISH[:3] + [[(0, 8, 'E5'), (8, 4, 'C#5')]]                              # breakdown: G Gm D A
+DROP_END = [(0, 6, 'F#5'), (6, 2, 'D#5'), (8, 4, 'F#5'), (12, 4, 'A5')]             # drop 2, laatste maat (B7 -> E)
+
 PARTS = ('flute', 'glock', 'strmel', 'horn', 'mbox', 'celesta', 'harp', 'pizz', 'strings', 'choir', 'bass', 'timp',
-         'drums', 'perc', 'spark', 'shaker')
+         'drums', 'perc', 'spark', 'shaker',
+         'tlead', 'tsaw', 'tbass', 'tpluck', 'tdrums', 'sub')
+
+
+def trance(P, lb, s, sec, k, halves, gliss):
+    """De euforische climax: opbouw (152 -> 168 bpm, 'filter' gaat open, roffel versnelt, riser), drop 1, breakdown
+    (alleen pad + lead + speeldoos), drop 2 (groter: glockenspiel op de lead, koor in twee stemmen) en een ritardando
+    terug naar 152 bpm en het thema in E (sectie D)."""
+    name = halves[0][1]
+    r = bass_note(name)
+    pad = tones(name, 62, 76)[:3]
+    last = sec == 'BUILD' and k == 3 or sec == 'BREAK' and k == 3      # tel 4 stil: de adem vóór de drop
+    end = s + (3 * TPB if last else BAR)
+    if sec == 'BUILD':
+        if k < 2:                                                       # het heldhaftige tegenthema loopt door
+            P['horn'] += mel(HEROIC[4 + k], s, 120)
+        else:
+            P['tlead'] += mel(BUILD_MEL[k - 2], s, 92 + 8 * (k - 2))
+        if k == 0:
+            P['perc'] += [[s, s + 2 * TPB, CRASH, 100]]
+            P['timp'] += [[s, s + TPB, r + 12 if r < 45 else r, 108]]
+        # supersaw-akkoord, filter gaat per maat verder open (dark -> mid -> bright; CC7 loopt mee op)
+        P['tsaw'] += [[s, end - 8, n, 70 + 2 * k] for n in pad]
+        # pluck-arpeggio: 16en, elke maat een register hoger
+        tn = tones(name, 62 + 5 * k, 90)
+        P['tpluck'] += [[s + i * S16, s + i * S16 + 8, tn[min((0, 1, 2, 1, 2, 3, 2, 3)[i % 8] + (i // 8), len(tn) - 1)], 52 + 6 * k + i]
+                        for i in range(12 if last else 16)]
+        # bas: achtsten, de laatste maat 16en
+        step = S16 if k == 3 else E8
+        P['tbass'] += [[s + i * step, s + i * step + step - 8, r, 82 + 6 * k] for i in range((3 * TPB) // step if last else BAR // step)]
+        # kick in kwarten; roffel versnelt: kwarten -> achtsten -> 16en -> 32en
+        P['tdrums'] += [[s + i * TPB, s + i * TPB + E8, TKICK, 100 + 4 * k] for i in range(3 if last else 4)]
+        if k < 3:
+            step = (TPB, E8, S16)[k]
+            P['tdrums'] += [[s + i * step, s + i * step + step // 2 + 4, TSNARE, 56 + 10 * k + i * (12 // (BAR // step) + 1)]
+                            for i in range(BAR // step)]
+        else:
+            P['tdrums'] += [[s + i * S16, s + i * S16 + 10, TSNARE, 78 + i] for i in range(8)]
+            P['tdrums'] += [[s + 2 * TPB + i * 12, s + 2 * TPB + i * 12 + 8, TSNARE, 88 + i * 2] for i in range(8)]
+        if k >= 2:                                                      # stijgende strijkers (zoals de intro)
+            rise = ['F#4', 'G4', 'A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'G5', 'A5', 'B5', 'C#6', 'D6', 'E6']
+            P['strmel'] += [[s + i * E8, s + i * E8 + E8, p(n), 66 + i * 2] for i, n in enumerate(rise[(k - 2) * 8:(k - 2) * 8 + 8])
+                            if not (last and i >= 6)]
+            P['choir'] += [[s, end - 8, tones(name, 66, 78)[0], 70 + 6 * (k - 2)]]
+        # PSG-riser (ruis), vier maten lang omhoog, ook door de stille tel heen
+        P['shaker'] += [[s + i * TPB, s + i * TPB + TPB, 48 + 2 * (4 * k + i), 50 + 4 * (4 * k + i)] for i in range(4)]
+        return
+    if sec == 'BREAK':
+        P['tsaw'] += [[s, end - 8, n, 84] for n in pad]
+        P['tlead'] += mel(BREAK_MEL[k], s, 100)
+        P['mbox'] += mel(BREAK_MEL[k], s, 92, 12)
+        P['choir'] += [[s, end - 8, tones(name, 66, 78)[0], 80]]
+        if k == 0:
+            P['perc'] += [[s, s + 2 * TPB, CRASH, 90]]
+            P['tbass'] += [[s, s + TPB, r, 100]]
+        if k == 3:                                                      # mini-opbouw naar drop 2
+            P['tdrums'] += [[s + i * TPB, s + i * TPB + E8, TKICK, 100 + 6 * i] for i in range(3)]
+            P['tdrums'] += [[s + i * S16, s + i * S16 + 10, TSNARE, 70 + 3 * i] for i in range(12)]
+            P['shaker'] += [[s + i * TPB, s + i * TPB + TPB, 60 + 4 * i, 70 + 10 * i] for i in range(4)]
+        return
+    # ---- drops ----
+    big = sec == 'DROP2'
+    fill = big and k == 7                                               # laatste maat: ritardando + fill naar E
+    m = DROP_END if fill else THEME[k % 4]
+    P['tlead'] += mel(m, s, 112 if big else 104)
+    if big:
+        P['glock'] += mel(m, s, 88, 12)
+    for hs, nm in halves:
+        tn = tones(nm, 62, 76)[:3]
+        rr = bass_note(nm)
+        for i in range(4):                                              # gated supersaw-akkoorden (achtsten)
+            if fill and hs + i * E8 >= s + 2 * TPB:
+                break
+            P['tsaw'] += [[hs + i * E8, hs + i * E8 + 22, n, 92] for n in tn]
+        P['tbass'] += [[hs + i * TPB + E8, hs + i * TPB + E8 + 22, rr, 110] for i in range(2)]   # off-beat bas
+        P['sub'] += [[hs + i * TPB + E8, hs + i * TPB + E8 + 26, rr, 100] for i in range(2)]
+        top = tones(nm, 66, 78)
+        ln = BAR if halves[0][1] == halves[1][1] else 2 * TPB
+        if hs == s or halves[0][1] != halves[1][1]:
+            P['choir'] += [[hs, hs + ln - 8, top[0], 84 if big else 76]]
+            if big:
+                P['choir'] += [[hs, hs + ln - 8, top[1], 72]]
+    # pluck-arpeggio in 16en (de tweede helft een octaaf hoger), met een delay-echo op het PSG-vierkant
+    tn = tones(name, 74, 93)
+    P['tpluck'] += [[s + i * S16, s + i * S16 + 8, tn[min((0, 1, 2, 1)[i % 4] + (3 if i % 8 >= 4 else 0), len(tn) - 1)], 74]
+                    for i in range(8 if fill else 16)]
+    # drums: four on the floor, clap op 2 en 4, crash elke 4 maten (drop 2: elke 2)
+    P['tdrums'] += [[s + i * TPB, s + i * TPB + E8, TKICK, 127] for i in range(4)]
+    P['tdrums'] += [[s + i * TPB, s + i * TPB + E8 + S16, CLAP, 100] for i in (1, 3)]
+    if k % (2 if big else 4) == 0:
+        P['perc'] += [[s, s + 2 * TPB, CRASH, 108 if k == 0 else 92]]
+    # hihats op het PSG-ruiskanaal: open op de off-beat, dicht op de andere 16en
+    for i in range(16):
+        if i % 4 == 0:
+            continue
+        P['shaker'] += [[s + i * S16, s + i * S16 + (16 if i % 4 == 2 else 3), 84 if i % 4 == 2 else 92, 100 if i % 4 == 2 else 56]]
+    if fill:                                                            # roffel + harpglissando (E-pentatonisch)
+        P['tdrums'] += [[s + 2 * TPB + i * S16, s + 2 * TPB + i * S16 + 10, TSNARE, 80 + 4 * i] for i in range(8)]
+        gliss(s + 3 * TPB, p('B4'), p('B6'), 8, 12, 104, tonic=4)
 
 
 def build():
@@ -235,8 +358,10 @@ def build():
         s = lt(lb)
         halves = chords_at(LOOP, s, lb)
         main = halves[0][1]
-        sec = 'A' if lb < A1 else 'A2' if lb < B0 else 'B' if lb < C0 else 'C' if lb < D0 else 'D' if lb < E0 else 'E'
-        k = lb % 8
+        sec, k = section(lb)
+        if sec in ('BUILD', 'DROP1', 'BREAK', 'DROP2'):
+            trance(P, lb, s, sec, k, halves, gliss)
+            continue
         # ---- melodie ----
         if sec == 'A':
             P['flute'] += mel(THEME[k], s, 116)
@@ -253,9 +378,6 @@ def build():
             tn = tones(halves[1][1], p('D6'), p('D7'))
             P['celesta'] += [[s + 2 * TPB + i * S16, s + 2 * TPB + i * S16 + S16, tn[min(i, len(tn) - 1) if k % 2 == 0
                               else max(len(tn) - 1 - i, 0)], 72 + i * 4] for i in range(4)]
-        elif sec == 'C':
-            P['mbox'] += mel(WISH[k], s, 118)
-            P['celesta'] += mel(WISH[k], s, 70, -12)
         elif sec == 'D':
             m = THEME[k] if k < 4 else THEME2_END[k - 4]
             P['flute'] += mel(m, s, 108, 2 + (12 if k < 4 else 0))
@@ -277,24 +399,19 @@ def build():
                 P['bass'] += [[hs + i * E8, hs + i * E8 + E8 - 8, r + (12 if i == 3 else 0), 104] for i in range(4)]
                 tn = tones(name, 62, 76)
                 P['strings'] += [[hs + i * E8, hs + i * E8 + 14, tn[(0, 1, 2, 1)[i]], 92] for i in range(4)]   # spiccato
-            elif sec == 'C':
-                harp_arp(hs, name, 70, sixteenths=True, ln=12)
-                P['bass'] += [[hs, hs + 2 * TPB - 10, bass_note(name), 92]]
             else:  # E
                 r = bass_note(name)
                 P['bass'] += [[hs + i * TPB, hs + i * TPB + TPB - 10, r + (0, 7)[i], 108] for i in range(2)]
                 tn = tones(name, 62, 79)
                 P['pizz'] += [[hs + i * E8, hs + i * E8 + 12, tn[i % len(tn)], 84] for i in range(4)]
         # pads: koor (1 stem; 2 in C) en hoorn-tegenstem in D
-        if sec in ('A', 'A2', 'D', 'C', 'E'):
+        if sec in ('A', 'A2', 'D', 'E'):
             for hs, name in halves:
                 if hs != s and halves[0][1] == halves[1][1]:
                     continue
                 ln = BAR if halves[0][1] == halves[1][1] else 2 * TPB
                 top = tones(name, 66, 78)
-                P['choir'] += [[hs, hs + ln - 8, top[0], 72 if sec != 'C' else 88]]
-                if sec == 'C':
-                    P['choir'] += [[hs, hs + ln - 8, top[1], 80]]
+                P['choir'] += [[hs, hs + ln - 8, top[0], 72]]
                 if sec == 'D':
                     P['horn'] += [[hs, hs + ln - 8, tones(name, 57, 67)[-1], 92]]
         # timpani
@@ -322,21 +439,6 @@ def build():
             shaker(s, loud=(0, 4, 8, 12))
             if k in (0, 4):
                 P['perc'] += [[s, s + 2 * TPB, CRASH, 100]]
-        elif sec == 'C':
-            P['drums'] += [[s, s + S16, KICK, 96]]
-            if k < 6:
-                P['drums'] += [[s + 2 * TPB, s + 2 * TPB + E8, SNARE, 60]]
-                P['perc'] += [[s, s + TPB, TRI, 80]]
-            if k in (0, 4):
-                P['perc'] += [[s, s + 2 * TPB, CHIMES, 100]]
-            if k == 6:                                                            # opbouw naar de climax
-                P['drums'] += [[s + i * E8, s + i * E8 + S16, ROLL, 44 + i * 4] for i in range(8)]
-                shaker(s, 16, loud=(0, 4, 8, 12))
-            if k == 7:
-                P['drums'] += [[s + i * S16, s + i * S16 + S16, ROLL, 64 + i * 3] for i in range(16)]
-                P['drums'] += [[s + i * TPB, s + i * TPB + S16, KICK, 100 + i * 6] for i in range(4)]
-                gliss(s + 3 * TPB, p('B4'), p('B6'), 8, 12, 104, tonic=4)   # E-groot
-                shaker(s)
         else:  # E: four on the floor, roffel naar de loop
             P['drums'] += [[s + i * TPB, s + i * TPB + S16, KICK, 118] for i in range(4)]
             shaker(s, loud=(0, 4, 8, 12))
@@ -352,6 +454,9 @@ def build():
     # PSG: zachte fonkel-echo van de harp (vierkant), 3 16en later, alleen in A/A'/D
     P['spark'] = [[a + 3 * S16, b + 3 * S16, n + 12, 50] for a, b, n, v in P['harp']
                   if lt(A0) <= a < lt(B0) or lt(D0) <= a < lt(E0)]
+    # en in de drops: delay-echo van de pluck (3 16en later)
+    P['spark'] += [[a + 3 * S16, b + 3 * S16, n, 40] for a, b, n, v in P['tpluck'] if lt(DROP1) <= a < lt(D0) - 3 * S16
+                   and not lt(BREAK0) - 3 * S16 <= a < lt(DROP2)]
 
     # niets over de loopgrenzen laten lopen
     for k in P:
@@ -369,17 +474,20 @@ def build():
     progs = {'flute': FLUTE, 'glock': GLOCK, 'strmel': STR, 'horn': HORN, 'mbox': MBOX, 'celesta': CELESTA,
              'harp': HARP, 'pizz': PIZZ, 'strings': STR, 'choir': CHOIR, 'bass': BASS, 'timp': TIMP}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
-    tail['drums'] = tail['perc'] = 0
-    for k in ('flute', 'strmel', 'horn', 'choir', 'bass'):
+    # trance-partijen: uitklinktijd bij het hoogste tempo (meer ticks per frame = veilige kant)
+    tprogs = {'tlead': SAW_LEAD, 'tsaw': SAW_BRIGHT, 'tbass': SAW_BASS, 'tpluck': SAW_PLUCK}
+    tail.update({k: release_ticks(rel.get(pr, 200), TPB, BPM_TR) for k, pr in tprogs.items()})
+    tail['drums'] = tail['perc'] = tail['tdrums'] = 0
+    for k in ('flute', 'strmel', 'horn', 'choir', 'bass', 'tlead'):
         P[k] = detach(P[k], tail[k])
     # lange koornoten in stukken van 2 tellen (zacht pulserend), zodat een vol moment er maar één stukje kost
     P['choir'] = [[a, min(b, a + 2 * TPB - tail['choir']), n, v] for a0, b, n, v in P['choir']
                   for a in range(a0, b, 2 * TPB) if b - a > tail['choir'] + 12]
     # drumnoten: de lint telt de nootlengte (max. 2 tellen)
-    for k in ('drums', 'perc'):
+    for k in ('drums', 'perc', 'tdrums'):
         P[k] = [[a, min(b, a + 2 * TPB), n, v] for a, b, n, v in P[k]]
-    order = ['flute', 'horn', 'mbox', 'strmel', 'bass', 'drums', 'glock', 'perc', 'harp', 'timp', 'celesta', 'pizz',
-             'choir', 'strings']
+    order = ['flute', 'tlead', 'horn', 'mbox', 'strmel', 'bass', 'drums', 'tdrums', 'tbass', 'glock', 'perc', 'harp',
+             'timp', 'celesta', 'tsaw', 'tpluck', 'pizz', 'choir', 'strings']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, max_voices=MAX_VOICES)
     for k in order:
@@ -390,20 +498,57 @@ def build():
 
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
+    # opbouw: per tel sneller (152 -> 168, eerst langzaam, dan steeds harder); drop 2 maat 8: ritardando terug
+    for i in range(16):
+        song.tempo(lt(BUILD0) + i * TPB, (BPM + (BPM_TR - BPM) * ((i + 1) / 16) ** 1.6) / 120)
+    for i, b in enumerate((164, 160, 157, 154)):
+        song.tempo(lt(D0 - 1) + 2 * TPB + i * E8, b / 120)
+    song.tempo(lt(D0), BPM / 120)
     song.loop = (LOOP_START, LOOP_END)
+    # sporen die in de climax een ander instrument/volume krijgen: (tick, 'prog'/7, waarde), terug bij sectie D
+    tb, d = lt(BUILD0), lt(D0)
+    ramp = [(tb + i * TPB, 7, 38 + 2 * i) for i in range(16)]                    # het 'filter' gaat open
+    ccs = {
+        'flute': [(tb, 'prog', SAW_LEAD), (tb, 7, 92), (d, 'prog', FLUTE), (d, 7, 108)],
+        'celesta': [(tb, 'prog', SAW_PLUCK), (tb, 7, 66), (d, 'prog', CELESTA), (d, 7, 84)],
+        'strings': [(tb, 'prog', SAW_DARK), (lt(BUILD0 + 1), 'prog', SAW_MID), (lt(BUILD0 + 3), 'prog', SAW_BRIGHT)]
+                   + ramp + [(lt(DROP1), 7, 70), (lt(BREAK0), 7, 66), (lt(DROP2), 7, 74),
+                             (d, 'prog', STR), (d, 7, 72)],
+        'bass': [(tb, 'prog', SAW_BASS), (tb, 7, 100), (d, 'prog', BASS), (d, 7, 112)],
+        'shaker': [(tb, 'prog', RISER), (tb, 7, 28), (lt(DROP1), 'prog', HATS), (lt(DROP1), 7, 34),
+                   (lt(BREAK0), 'prog', RISER), (lt(BREAK0), 7, 28), (lt(DROP2), 'prog', HATS), (lt(DROP2), 7, 34),
+                   (d, 'prog', SHAKER), (d, 7, 30)],
+    }
+    # trance-partijen op de sporen van instrumenten die dan zwijgen
+    P['flute'] = sorted(P['flute'] + P['tlead'])
+    P['celesta'] = sorted(P['celesta'] + P['tpluck'])
+    P['strings'] = sorted(P['strings'] + P['tsaw'])
+    P['bass'] = sorted(P['bass'] + P['tbass'])
     layout = [('flute', FLUTE, 108, 0, 64), ('glock', GLOCK, 72, 1, 80), ('strmel', STR, 100, 2, 56),
               ('horn', HORN, 104, 3, 52), ('mbox', MBOX, 110, 4, 72), ('celesta', CELESTA, 84, 5, 88),
               ('harp', HARP, 84, 6, 40), ('pizz', PIZZ, 76, 7, 76), ('strings', STR, 72, 8, 60),
               ('choir', CHOIR, 66, 10, 64), ('bass', BASS, 112, 11, 64), ('timp', TIMP, 96, 12, 64),
-              ('spark', SPARK, 24, 13, 96), ('shaker', SHAKER, 30, 14, 70)]
+              ('spark', SPARK, 24, 13, 96), ('shaker', SHAKER, 30, 14, 70), ('sub', SUB, 56, 15, 64)]
     for k, prog, vol, ch, pan in layout:
-        song.add(P[k], prog, vol, ch, pan)
-    song.add(sorted(P['drums'] + P['perc']), DRUMS, 100, 9)
-    written = {k for k, *_ in layout} | {'drums', 'perc'}
+        song.add(P[k], prog, vol, ch, pan, ccs=ccs.get(k, ()))
+    song.add(sorted(P['drums'] + P['perc'] + P['tdrums']), DRUMS, 100, 9)
+    written = {k for k, *_ in layout} | {'drums', 'perc', 'tdrums', 'tlead', 'tpluck', 'tsaw', 'tbass'}
     assert not [k for k in P if P[k] and k not in written], 'partij niet weggeschreven'
     song.save(OUT, LOOP_END)
-    print(OUT, '%d sporen, intro %.1f s, loop %.1f s' % (len(layout) + 1, LOOP_START / TPB * 60 / BPM,
-                                                         (LOOP_END - LOOP_START) / TPB * 60 / BPM))
+    tm = sorted(song.tempo_map)
+
+    def sec_at(tick):
+        out, last, bpm = 0.0, 0, BPM
+        for tk, f in tm:
+            if tk >= tick:
+                break
+            out += (tk - last) / TPB * 60 / bpm
+            last, bpm = tk, f * 120
+        return out + (tick - last) / TPB * 60 / bpm
+    print(OUT, '%d sporen, intro %.1f s, loop %.1f s' % (len(layout) + 1, sec_at(LOOP_START), sec_at(LOOP_END) - sec_at(LOOP_START)))
+    for nm, st in SECTIONS:
+        print('  %-6s loopmaat %2d  %5.1f s' % (nm, st, sec_at(lt(st))))
+    print('  einde          %5.1f s' % sec_at(LOOP_END))
 
 
 def write_voicegroup():
@@ -416,6 +561,15 @@ def write_voicegroup():
         '@ 9': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 170  @ 9',
         '@ 10': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_music_box, 255, 248, 0, 190  @ 10',
         '@ 33': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149  @ 33',
+        '@ 39': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_sawbass, 255, 0, 255, 120  @ 39',
+        '@ 84': '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84',
+        '@ 88': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_dark, 255, 0, 255, 110  @ 88',
+        '@ 89': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_mid, 255, 0, 255, 110  @ 89',
+        '@ 90': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_bright, 255, 0, 255, 110  @ 90',
+        '@ 91': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_lead, 255, 0, 255, 190  @ 91',
+        '@ 92': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_mid, 255, 224, 0, 110  @ 92',
+        '@ 121': '\tvoice_noise_alt 60, 0, 0, 3, 0, 15, 2  @ 121',
+        '@ 122': '\tvoice_noise_alt 60, 0, 0, 0, 0, 15, 1  @ 122',
         '@ 45': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 226, 0, 99  @ 45',
         '@ 46': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 170  @ 46',
         '@ 47': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 190  @ 47',
@@ -436,10 +590,14 @@ def write_voicegroup():
         'voice_directsound_no_resample 64, 80, DirectSoundWaveData_sd90_open_triangle, 255, 242, 103, 188',     # 40 triangel
         'voice_directsound 96, 50, DirectSoundWaveData_jirachi_chimes, 255, 252, 0, 200',                       # 41 windgong
         'voice_directsound_no_resample 64, 84, DirectSoundWaveData_sc88pro_jingle_bell, 255, 0, 255, 120',      # 42 belletjes
+        'voice_directsound_no_resample 60, 64, DirectSoundWaveData_jirachi_kick, 255, 0, 255, 0',               # 43 trancekick
+        'voice_directsound_no_resample 60, 60, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 0, 255, 0',    # 44 clap
+        'voice_directsound_no_resample 60, 68, DirectSoundWaveData_unknown_synth_snare, 255, 0, 255, 60',       # 45 roffelsnare
     ]
     open('sound/voicegroups/drumsets/jirachi.inc', 'w').write(
         '@ Project Grounded: drumkit voor Battle! Jirachi (jirachi_theme.py), alles DirectSound: 36 kick, 37 roffel,\n'
-        '@ 38 snare, 39 crash, 40 triangel, 41 windgong (jirachi_chimes), 42 belletjes.\n'
+        '@ 38 snare, 39 crash, 40 triangel, 41 windgong (jirachi_chimes), 42 belletjes, 43 trancekick (jirachi_kick),\n'
+        '@ 44 clap (909), 45 snare voor de roffel in de opbouw.\n'
         'voice_group jirachi_drumset, 36\n' + ''.join('\t%s\n' % k for k in kit) + '\n')
 
 

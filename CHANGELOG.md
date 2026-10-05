@@ -16961,3 +16961,9 @@ Volgens Jordi's GBA-instructies per leider:
 - Gemeten (solo per spoor uit de game, A-gewogen): in v4 was de lead 74% van wat je hoort, de muur 15%, de bas 7% en de hats 0,4%. De bas klonk bovendien **twee octaven te hoog** (C4 i.p.v. C2: verkeerde grondtoon van de bronsample), de chugs een octaaf te laag, de hats waren tikjes van 90 ms en de kick werd afgekapt.
 - v5: echte C2-overdrive-bas met grom en punch, dikkere powerchord-muur (luider), open hats op de tussen-achtsten die je hoort, langere kick met subtoon, chugs op de juiste octaaf en zachter, lead zachter. Melodie, tempo, ritme, opener en snare-accenten ongewijzigd.
 - Nu: hats 15%, muur 26%, bas ±50% luider t.o.v. de lead; 0 overlopen, piek 88/127.
+
+### [v0.9.95] - Neo Plasma v11 (strakke lead, blikkerige bas)
+- **"Theremin met vibrato":** klopte, maar de oorzaak was de lead-sample zelf (gechorusde blokgolf met 7–10 dB tremolo), niet de pitch bends (die gaan na de intro netjes terug). Nieuwe lead: zuivere, fel aangeslagen 25%-pulsgolf, afgekapt per noot. De glijdende intro blijft.
+- **"Valse noten, F-E-D-C#-D":** opnieuw gemeten op het origineel: die reeks staat er niet in, en de lead en bas volgen het origineel. Geen noten veranderd.
+- **"Doffe, houtachtige bas":** klopte: de zestienden klonken maar 24 ms (een tik) op een holle sample. Nieuwe blikkerige zaagtand/puls-synthbas met volle noten, ±3 dB luider. Een octaaf lager kan niet (zou onder E1 komen).
+- Script-controles: geen bends buiten de intro, geen modulatie/vibrato, geen zwevende samples op de lead. -V064 → -V060 (luidere bas).

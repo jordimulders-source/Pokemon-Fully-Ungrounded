@@ -16956,3 +16956,8 @@ Volgens Jordi's GBA-instructies per leider:
 - **`MUS_GROUNDED_VS_BURGLAR` (655)** voor Simon de inbreker (stadsevent, alle vijf de versies) en in het Battle Stadium.
 - Noir-jazz-heist in D-klein: intro met alarmstoot en vibrafoon; A = sluipen (150 bpm swing, walking bass, vingerknippen, gedempte trompet op de tenen, bari antwoordt); B = de kluis (side stick als tik-tak, kraak-riff); dan gaat het alarm af (tweetonige stoten, PSG-sirene, roffel, accelerando) naar C = de achtervolging (176 bpm, drums vol, bas in achtsten met sub), C2 een halve toon hoger, D = kwijt (ritardando terug). Eigen melodie, anti-kermis-controle in het script (`burglar_theme.py`, samples `burglar_samples.py`, eigen drumkit).
 - In de game opgenomen: 0 overlopen, piek 68/127 bij -V090 → volume naar -V112 (was te zacht).
+
+### [v0.9.94] - Brawly v5 (muur, bas en hats hoorbaar)
+- Gemeten (solo per spoor uit de game, A-gewogen): in v4 was de lead 74% van wat je hoort, de muur 15%, de bas 7% en de hats 0,4%. De bas klonk bovendien **twee octaven te hoog** (C4 i.p.v. C2: verkeerde grondtoon van de bronsample), de chugs een octaaf te laag, de hats waren tikjes van 90 ms en de kick werd afgekapt.
+- v5: echte C2-overdrive-bas met grom en punch, dikkere powerchord-muur (luider), open hats op de tussen-achtsten die je hoort, langere kick met subtoon, chugs op de juiste octaaf en zachter, lead zachter. Melodie, tempo, ritme, opener en snare-accenten ongewijzigd.
+- Nu: hats 15%, muur 26%, bas ±50% luider t.o.v. de lead; 0 overlopen, piek 88/127.

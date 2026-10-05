@@ -31,12 +31,15 @@
 #define RUN SPIRE_SAVE
 
 #define MAP_W       168
-#define MAP_H       256     // hele act (BG van 32 tegels hoog)
-#define FLOOR_GAP   30
+#define FLOOR_GAP   26
 #define BOSS_X      84
 #define BOSS_Y      22
+#define MAP_H       (18 + FLOOR_GAP * (SPIRE_FLOORS - 1) + 58)  // hele act (13 verdiepingen: 388 px)
 #define FLOOR_Y(f)  (MAP_H - 18 - FLOOR_GAP * (f))
 #define SCROLL_MAX  (MAP_H - 160)
+#define MAP_ROWS    ((MAP_H + 7) / 8)
+#define RING_ROWS   32      // BG1 is 32 tegelrijen hoog: ringbuffer
+#define BOSS_ROWS   6       // baasplateau + "BOSS": rij 0-5 worden samen getekend
 
 enum
 {
@@ -83,6 +86,7 @@ struct SpireMapScreen
     s16 scroll;
     s16 scrollTarget;
     u16 timer;
+    s16 ringRow[RING_ROWS];         // welke kaartrij in elke rij van de ringbuffer staat (-1 = geen)
 };
 
 static EWRAM_DATA struct SpireMapScreen *sMap = NULL;
@@ -195,11 +199,29 @@ static void NodePos(u32 floor, u32 node, s16 *x, s16 *y)
     *y = FLOOR_Y(floor);
 }
 
-static void DrawLine(s16 x0, s16 y0, s16 x1, s16 y1, u8 col, u8 edge)
+// De routes staan op BG1 (256 px hoog), de act is hoger (MAP_H): BG1 is een ringbuffer van 32 tegelrijen. Kaartrij r
+// staat in ringrij r % 32; bij het scrollen tekent EnsureRows de rijen die in beeld komen (alleen wat in die 8 pixels valt).
+static void FillClipped(s32 x, s32 y, s32 w, s32 h, u8 fill, s32 top, s32 bottom)
+{
+    s32 a = max(y, top), b = min(y + h, bottom);
+
+    if (x < 0)
+    {
+        w += x;
+        x = 0;
+    }
+    if (w <= 0 || a >= b)
+        return;
+    FillWindowPixelRect(WIN_LINES, PIXEL_FILL(fill), x, a % (RING_ROWS * 8), w, b - a);
+}
+
+static void DrawLine(s16 x0, s16 y0, s16 x1, s16 y1, u8 col, u8 edge, s32 top, s32 bottom)
 {
     s32 n = max(abs(x1 - x0), abs(y1 - y0));
     s32 s, pass;
 
+    if (max(y0, y1) + 2 < top || min(y0, y1) - 2 >= bottom)
+        return;
     for (pass = 0; pass < 2; pass++)
     {
         for (s = 0; s <= n; s++)
@@ -207,20 +229,21 @@ static void DrawLine(s16 x0, s16 y0, s16 x1, s16 y1, u8 col, u8 edge)
             s32 x = x0 + (x1 - x0) * s / (n ? n : 1);
             s32 y = y0 + (y1 - y0) * s / (n ? n : 1);
 
+            if (y + 2 < top || y - 2 >= bottom)
+                continue;
             if (pass == 0)
-                FillWindowPixelRect(WIN_LINES, PIXEL_FILL(edge), max(0, x - 2), max(0, y - 2), 4, 4);
+                FillClipped(x - 2, y - 2, 4, 4, edge, top, bottom);
             else
-                FillWindowPixelRect(WIN_LINES, PIXEL_FILL(col), max(0, x - 1), max(0, y - 1), 2, 2);
+                FillClipped(x - 1, y - 1, 2, 2, col, top, bottom);
         }
     }
 }
 
-static void DrawRoutes(void)
+// Alles wat in kaartpixels [top, bottom) valt: eerst gewone routes, dan het gelopen pad, het baasplateau en "BOSS".
+static void DrawBand(s32 top, s32 bottom)
 {
     u32 f, i, j, done;
 
-    FillWindowPixelBuffer(WIN_LINES, PIXEL_FILL(0));
-    // eerst gewone routes, dan het gelopen pad eroverheen
     for (done = 0; done < 2; done++)
     {
         for (f = 0; f < SPIRE_FLOORS; f++)
@@ -235,7 +258,7 @@ static void DrawRoutes(void)
                     bool32 taken = OnPath(f, i) && RUN.floor > SPIRE_FLOORS;
 
                     if (taken == done)
-                        DrawLine(x0, y0, BOSS_X, BOSS_Y + 8, taken ? 3 : 1, taken ? 4 : 2);
+                        DrawLine(x0, y0, BOSS_X, BOSS_Y + 8, taken ? 3 : 1, taken ? 4 : 2, top, bottom);
                     continue;
                 }
                 for (j = 0; j < sMap->map.count[f + 1]; j++)
@@ -248,27 +271,74 @@ static void DrawRoutes(void)
                     if (taken != done)
                         continue;
                     NodePos(f + 1, j, &x1, &y1);
-                    DrawLine(x0, y0, x1, y1, taken ? 3 : 1, taken ? 4 : 2);
+                    DrawLine(x0, y0, x1, y1, taken ? 3 : 1, taken ? 4 : 2, top, bottom);
                 }
             }
         }
     }
+    if (top >= BOSS_ROWS * 8)
+        return;
     // baasplateau: rode ovaal
     for (j = 0; j < 19; j++)
     {
         s32 dy = (s32)j - 9;
-        s32 half = 17 * (81 - dy * dy) / 81;
         u32 w = 0;
 
         while ((s32)(w * w) < (s32)(17 * 17 - (17 * 17 * dy * dy) / 81))
             w++;
-        (void)half;
-        FillWindowPixelRect(WIN_LINES, PIXEL_FILL(6), BOSS_X - w - 1, BOSS_Y - 8 + j, 2 * w + 2, 1);
+        FillClipped(BOSS_X - w - 1, BOSS_Y - 8 + j, 2 * w + 2, 1, 6, top, bottom);
         if (w > 1)
-            FillWindowPixelRect(WIN_LINES, PIXEL_FILL(5), BOSS_X - w + 1, BOSS_Y - 8 + j, 2 * w - 2, 1);
+            FillClipped(BOSS_X - w + 1, BOSS_Y - 8 + j, 2 * w - 2, 1, 5, top, bottom);
     }
     PrintText(WIN_LINES, FONT_SMALL_NARROW, BOSS_X + 20, BOSS_Y - 6, sColor_Boss, COMPOUND_STRING("BOSS"));
-    CopyWindowToVram(WIN_LINES, COPYWIN_FULL);
+}
+
+static void CopyRingRows(u32 ring, u32 count)
+{
+    u32 w = GetWindowAttribute(WIN_LINES, WINDOW_WIDTH);
+    u8 *tiles = (u8 *)GetWindowAttribute(WIN_LINES, WINDOW_TILE_DATA);
+
+    LoadBgTiles(1, tiles + ring * w * TILE_SIZE_4BPP, count * w * TILE_SIZE_4BPP,
+                GetWindowAttribute(WIN_LINES, WINDOW_BASE_BLOCK) + ring * w);
+}
+
+static void DrawMapRow(u32 r)
+{
+    u32 k;
+
+    if (r < BOSS_ROWS)
+    {
+        // het baasplateau (met de tekst "BOSS") in één keer: rij 0-5
+        FillWindowPixelRect(WIN_LINES, PIXEL_FILL(0), 0, 0, MAP_W, BOSS_ROWS * 8);
+        DrawBand(0, BOSS_ROWS * 8);
+        for (k = 0; k < BOSS_ROWS; k++)
+            sMap->ringRow[k] = k;
+        CopyRingRows(0, BOSS_ROWS);
+        return;
+    }
+    FillWindowPixelRect(WIN_LINES, PIXEL_FILL(0), 0, (r % RING_ROWS) * 8, MAP_W, 8);
+    DrawBand(r * 8, r * 8 + 8);
+    sMap->ringRow[r % RING_ROWS] = r;
+    CopyRingRows(r % RING_ROWS, 1);
+}
+
+// Tekent de kaartrijen die (bijna) in beeld zijn en nog niet in de ringbuffer staan.
+static void EnsureRows(void)
+{
+    s32 first = max(0, sMap->scroll / 8 - 1);
+    s32 last = min(MAP_ROWS - 1, (sMap->scroll + 159) / 8 + 1);
+    s32 r;
+
+    for (r = first; r <= last; r++)
+        if (sMap->ringRow[r % RING_ROWS] != r)
+            DrawMapRow(r);
+}
+
+static void DrawRoutes(void)
+{
+    memset(sMap->ringRow, 0xFF, sizeof(sMap->ringRow));
+    FillWindowPixelBuffer(WIN_LINES, PIXEL_FILL(0));
+    EnsureRows();
 }
 
 static const u8 sText_Battle[] = _("Battle");
@@ -358,10 +428,10 @@ static void DrawPanel(void)
     ConvertIntToDecimalStringN(gStringVar1, RUN.act, STR_CONV_MODE_LEFT_ALIGN, 1);
     StringExpandPlaceholders(buf, COMPOUND_STRING("ACT {STR_VAR_1}"));
     PrintText(WIN_PANEL, FONT_NORMAL, 0, 0, sColor_Purple, buf);
-    ConvertIntToDecimalStringN(gStringVar1, min(RUN.floor + 1, SPIRE_FLOORS + 1), STR_CONV_MODE_LEFT_ALIGN, 1);
-    ConvertIntToDecimalStringN(gStringVar2, SPIRE_FLOORS + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    ConvertIntToDecimalStringN(gStringVar1, min(RUN.floor + 1, SPIRE_FLOORS + 1), STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar2, SPIRE_FLOORS + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
     StringExpandPlaceholders(buf, COMPOUND_STRING("{STR_VAR_1}/{STR_VAR_2}"));
-    PrintText(WIN_PANEL, FONT_SMALL_NARROW, 38, 2, sColor_Dark, buf);
+    PrintText(WIN_PANEL, FONT_SMALL_NARROW, 56 - GetStringWidth(FONT_SMALL_NARROW, buf, 0), 2, sColor_Dark, buf);
     for (i = 0; i < 2; i++)
     {
         struct Pokemon *mon = Spire_GetRunMon(i);
@@ -447,10 +517,8 @@ static void UpdateSpritePositions(void)
     }
     else
     {
-        PlaceSpriteOnMap(sMap->headSpriteId, BOSS_X, MAP_H + 8);
-        gSprites[sMap->headSpriteId].y = 150;
-        gSprites[sMap->headSpriteId].x = 84;
-        gSprites[sMap->headSpriteId].invisible = FALSE;
+        // nog geen kamer gekozen: onder de eerste verdieping (scrolt mee met de kaart)
+        PlaceSpriteOnMap(sMap->headSpriteId, BOSS_X, FLOOR_Y(0) + 10);
     }
     if (RUN.floor >= SPIRE_FLOORS)
         PlaceSpriteOnMap(sMap->cursorSpriteId, BOSS_X, BOSS_Y);
@@ -461,8 +529,9 @@ static void UpdateSpritePositions(void)
     }
     if ((sMap->timer & 0x1F) >= 0x18)
         gSprites[sMap->cursorSpriteId].invisible = TRUE;
-    SetGpuReg(REG_OFFSET_BG1VOFS, sMap->scroll);
-    SetGpuReg(REG_OFFSET_BG2VOFS, sMap->scroll);
+    SetGpuReg(REG_OFFSET_BG1VOFS, sMap->scroll);    // wikkelt per 256 px: de ringbuffer
+    // stippen: parallax binnen 96 px, zodat het verloop (toren) niet herhaalt
+    SetGpuReg(REG_OFFSET_BG2VOFS, sMap->scroll * 96 / SCROLL_MAX);
 }
 
 static void CreateSprites(void)
@@ -684,6 +753,7 @@ static void Task_SpireMap(u8 taskId)
     if (sMap->scroll != sMap->scrollTarget)
         sMap->scroll += (sMap->scrollTarget > sMap->scroll) ? min(4, sMap->scrollTarget - sMap->scroll)
                                                              : -min(4, sMap->scroll - sMap->scrollTarget);
+    EnsureRows();
     UpdateSpritePositions();
     if (gPaletteFade.active)
         return;

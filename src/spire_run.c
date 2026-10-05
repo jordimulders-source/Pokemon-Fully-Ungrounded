@@ -28,6 +28,7 @@
 #define RUN SPIRE_SAVE
 
 STATIC_ASSERT(sizeof(struct SpireSave) <= SPIRE_SAVE_SIZE, SpireSaveFitsInSaveBlock2);
+STATIC_ASSERT(SPIRE_FLOORS * 2 <= 32, SpirePathFitsInU32);
 
 EWRAM_DATA static u8 sDebugBoss = 0;   // debug: baas-index + 1 (Spire_DebugOpen, VAR_0x8008)
 
@@ -537,8 +538,8 @@ static void Spire_WeighMap(struct SpireActMap *map, u32 *st)
                 *type = SPIRE_ROOM_FIGHT;
         }
     }
-    // minstens één elite vóór de schatkist (verdieping 2) en één erna (4..vóór de rust), zodat één route er twee kan halen
-    Spire_EnsureElite(map, st, 2, SPIRE_TREASURE_FLOOR - 1);
+    // minstens één elite vóór de schatkist en één erna (tot vóór de rust), zodat één route er twee kan halen
+    Spire_EnsureElite(map, st, SPIRE_ELITE_FROM, SPIRE_TREASURE_FLOOR - 1);
     Spire_EnsureElite(map, st, SPIRE_TREASURE_FLOOR + 1, SPIRE_FLOORS - 2);
 }
 
@@ -572,11 +573,11 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             else if (r < 70)
                 node->type = SPIRE_ROOM_EVENT;
             else if (r < 85)
-                node->type = (f >= 2) ? SPIRE_ROOM_ELITE : SPIRE_ROOM_FIGHT;
+                node->type = (f >= SPIRE_ELITE_FROM) ? SPIRE_ROOM_ELITE : SPIRE_ROOM_FIGHT;
             else if (r < 92)
                 node->type = (f >= 2) ? SPIRE_ROOM_SHOP : SPIRE_ROOM_EVENT;
             else
-                node->type = (f >= 3 && f < SPIRE_FLOORS - 2) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
+                node->type = (f >= SPIRE_ELITE_FROM && f < SPIRE_FLOORS - 2) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
         }
     }
     // verbindingen zonder kruisingen: kamer i gaat naar j0(i) (oplopend met i) en soms ook naar j0(i)+1,
@@ -752,7 +753,7 @@ void Spire_DebugOpen(void)
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
     case 1:  Spire_OpenShop(Spire_ReturnToField); break;
     case 2:  gSpireForcedEvent = gSpecialVar_0x8005; Spire_OpenEvent(Spire_ReturnToField); break;
-    case 4:  RUN.floor = 3; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
+    case 4:  RUN.floor = SPIRE_ELITE_FROM; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_ELITE; StartRoomBattle(SPIRE_ROOM_ELITE); break;
     case 5:  RUN.floor = SPIRE_FLOORS; RUN.inRoom = TRUE; sRoomType = SPIRE_ROOM_BOSS; StartRoomBattle(SPIRE_ROOM_BOSS); break;
     case 6:  // relic-beloning: VAR_0x8005 = 0 elite, 1 baas
         gSpireRelicSource = gSpecialVar_0x8005 ? SPIRE_RELIC_FROM_BOSS : SPIRE_RELIC_FROM_ELITE;
@@ -1064,7 +1065,7 @@ u16 Spire_GetBossSpecies(void)
 // verdieping 1-2 uit de zwakke pool, daarna gewoon; elites apart. Niet twee keer dezelfde in een act.
 static u32 PickEncounter(u32 type)
 {
-    u32 kind = (type == SPIRE_ROOM_ELITE) ? SPIRE_ENC_ELITE : (RUN.floor < 2) ? SPIRE_ENC_WEAK : SPIRE_ENC_NORMAL;
+    u32 kind = (type == SPIRE_ROOM_ELITE) ? SPIRE_ENC_ELITE : (RUN.floor < SPIRE_WEAK_FLOORS) ? SPIRE_ENC_WEAK : SPIRE_ENC_NORMAL;
     u32 i, n = 0, local = 0, pick, fresh = 0;
     u32 st = RUN.seed ^ (RUN.floor * 0x9E3779B1) ^ (RUN.node * 0x85EBCA6B);
 

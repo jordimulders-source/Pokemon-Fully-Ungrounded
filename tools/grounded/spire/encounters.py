@@ -90,7 +90,7 @@ ENCOUNTERS = {
           foes=[dict(s='CLEFAIRY', m=['METRONOME', 'MOONLIGHT', 'FOLLOW_ME', 'DISARMING_VOICE'], a='MAGIC_GUARD', p=[1, 1, 3, 1, 2]),
                 dict(s='CLEFAIRY', m=['METRONOME', 'MOONLIGHT', 'COSMIC_POWER', 'DISARMING_VOICE'], a='FRIEND_GUARD', p=[1, 1, 1, 2])]),
         E(kind='elite', name='Gremlin Nob', hint='Primeape hates being lowered (Defiant) and every hit makes it angrier (Rage).',
-          foes=[dict(s='PRIMEAPE', m=['RAGE', 'CROSS_CHOP', 'SCREECH', 'STOMPING_TANTRUM'], a='DEFIANT', hp=2.4, lv=-2,
+          foes=[dict(s='PRIMEAPE', m=['RAGE', 'LOW_SWEEP', 'SCREECH', 'STOMPING_TANTRUM'], a='DEFIANT', hp=2.4, lv=-2,
                      p=[1, 3, 2, 1, 4]),
                 dict(s='MANKEY', m=['RAGE', 'LOW_KICK', 'FOCUS_ENERGY', 'SEISMIC_TOSS_'], a='ANGER_POINT')]),
         E(kind='elite', name='Byrdonis', hint='Trumbeak shouts louder every turn. Echoed Voice doubles until it is stopped.',
@@ -98,11 +98,11 @@ ENCOUNTERS = {
                      p=[1, 1, 1, 1, 4]),
                 dict(s='PIKIPEK', m=['PECK', 'GROWL', 'ECHOED_VOICE', 'SUPERSONIC'])]),
         E(kind='elite', name='Bygone Effigy', hint='Snorlax sleeps for three turns. Prepare, then pray.',
-          foes=[dict(s='SNORLAX', m=['CURSE', 'BODY_SLAM', 'HEAVY_SLAM', 'YAWN'], a='THICK_FAT', hp=2.0, lv=-4, g='SLEEP3',
+          foes=[dict(s='SNORLAX', m=['CURSE', 'BODY_SLAM', 'HEAVY_SLAM', 'YAWN'], a='THICK_FAT', hp=2.0, lv=-4, g='SLEEP3', b={'def': 1},
                      p=[1, 2, 1, 3]),
                 dict(s='MUNCHLAX', m=['METRONOME', 'LICK', 'DEFENSE_CURL', 'RECYCLE_'])]),
         E(kind='elite', name='Phrog Parasite', hint='Pyukumuku spits its guts at whoever lands the killing blow.',
-          foes=[dict(s='PYUKUMUKU', m=['COUNTER', 'MIRROR_COAT', 'PURIFY', 'TOXIC'], a='INNARDS_OUT', hp=2.5,
+          foes=[dict(s='PYUKUMUKU', m=['COUNTER', 'MIRROR_COAT', 'PURIFY', 'SOAK'], a='INNARDS_OUT', hp=2.5,
                      p=[4, 1, 2, 3]),
                 dict(s='CROAGUNK', m=['POISON_JAB', 'MUD_SLAP', 'TAUNT', 'FEINT_ATTACK_'], a='DRY_SKIN')]),
     ],
@@ -147,9 +147,9 @@ ENCOUNTERS = {
                      i='ITEM_PETAYA_BERRY', p=[3, 1, 2]),
                 dict(s='TYNAMO', m=['SPARK', 'TACKLE', 'THUNDER_WAVE', 'CHARGE_BEAM'])]),
         E(kind='elite', name='Skulking Colony', hint='Corsola ignores small hits. Hit hard or not at all.',
-          foes=[dict(s='CORSOLA_GALAR', m=['CURSE', 'HEX', 'STRENGTH_SAP', 'NIGHT_SHADE_'], a='WEAK_ARMOR', hp=2.5,
-                     i='ITEM_EVIOLITE', p=[2, 3, 2, 1]),
-                dict(s='MAREANIE', m=['TOXIC', 'POISON_JAB', 'BITE', 'RECOVER'], a='MERCILESS')]),
+          foes=[dict(s='CORSOLA_GALAR', m=['HEX', 'POWER_GEM', 'ANCIENT_POWER'], a='WEAK_ARMOR', hp=2.5,
+                     p=[1, 3, 1, 2]),
+                dict(s='MAREANIE', m=['POISON_JAB', 'BITE', 'PIN_MISSILE', 'ACID_SPRAY'], a='MERCILESS')]),
         E(kind='elite', name='Phantasmal Gardeners', hint='Two ghosts that hide behind Substitute. Multi-hit moves break it.',
           foes=[dict(s='FRILLISH', m=['SUBSTITUTE', 'WATER_PULSE', 'HEX', 'WILL_O_WISP'], a='CURSED_BODY', hp=1.6, p=[1, 4, 3, 2]),
                 dict(s='DREEPY', m=['SUBSTITUTE', 'INFESTATION', 'ASTONISH', 'QUICK_ATTACK'], a='INFILTRATOR', hp=1.6, p=[1, 2, 3, 2])]),
@@ -185,16 +185,16 @@ ENCOUNTERS = {
           foes=[dict(s='TRAPINCH', m=['SAND_TOMB', 'BITE', 'BULLDOZE', 'FEINT'], a='ARENA_TRAP'),
                 dict(s='SILICOBRA', m=['SANDSTORM', 'SAND_TOMB', 'COIL', 'BRUTAL_SWING'], a='SAND_SPIT', p=[1, 3, 2, 4])]),
         E(kind='elite', name='Decimillipede', hint='Scolipede accelerates and sharpens. Steelworkers and Ghosts laugh.',
-          foes=[dict(s='SCOLIPEDE', m=['MEGAHORN', 'POISON_JAB', 'SWORDS_DANCE', 'PROTECT'], a='SPEED_BOOST', hp=2.4, lv=-2,
+          foes=[dict(s='SCOLIPEDE', m=['X_SCISSOR', 'POISON_JAB', 'SWORDS_DANCE', 'PROTECT'], a='SPEED_BOOST', hp=2.4, lv=-2,
                      p=[3, 1, 4, 2, 1]),
-                dict(s='WHIRLIPEDE', m=['IRON_DEFENSE', 'POISON_TAIL', 'BUG_BITE', 'TOXIC'], a='POISON_POINT')]),
+                dict(s='WHIRLIPEDE', m=['IRON_DEFENSE', 'POISON_TAIL', 'BUG_BITE', 'POISON_STING'], a='POISON_POINT')]),
         E(kind='elite', name='Entomancer', hint='Every hit on Ribombee scatters pollen. Few big hits beat many small ones.',
-          foes=[dict(s='RIBOMBEE', m=['QUIVER_DANCE', 'POLLEN_PUFF', 'MOONBLAST', 'STUN_SPORE'], a='SHIELD_DUST', hp=2.2,
-                     i='ITEM_LEFTOVERS', p=[1, 3, 2, 3]),
-                dict(s='VOLBEAT', m=['TAIL_GLOW', 'BUG_BUZZ', 'ENCORE', 'THUNDERBOLT'], a='PRANKSTER')]),
-        E(kind='elite', name='The Insatiable', hint='Sandaconda swallows the pit around you. Five turns, then it bites for real.',
-          foes=[dict(s='SANDACONDA', m=['COIL', 'SAND_TOMB', 'STONE_EDGE', 'EARTHQUAKE'], a='SAND_SPIT', hp=2.6, lv=-2,
-                     p=[2, 1, 1, 3, 4]),
+          foes=[dict(s='RIBOMBEE', m=['QUIVER_DANCE', 'ENERGY_BALL', 'DRAINING_KISS', 'STUN_SPORE'], a='SHIELD_DUST', hp=2.2,
+                     i='ITEM_LEFTOVERS', p=[1, 3, 2, 3, 2, 3]),
+                dict(s='VOLBEAT', m=['TAIL_GLOW', 'BUG_BUZZ', 'ENCORE', 'THUNDERBOLT'], a='PRANKSTER', p=[3, 2, 4, 2])]),
+        E(kind='elite', name='The Insatiable', hint='Sandaconda stares you stiff, coils up, then bites for real. Every coil makes the next bite worse.',
+          foes=[dict(s='SANDACONDA', m=['COIL', 'GLARE', 'ROCK_TOMB', 'DRILL_RUN'], a='SAND_SPIT', hp=2.6, lv=-2,
+                     p=[2, 1, 3, 4, 3]),
                 dict(s='GLIGAR', m=['U_TURN_', 'KNOCK_OFF_', 'POISON_JAB', 'DIG_'], a='HYPER_CUTTER')]),
     ],
     # ===== ACT 2 – FROSTBITE HOLLOW ========================================================
@@ -230,18 +230,18 @@ ENCOUNTERS = {
           foes=[dict(s='SPINDA', m=['TEETER_DANCE', 'SUCKER_PUNCH', 'ICE_PUNCH', 'FAKE_OUT'], a='TANGLED_FEET', p=[4, 1, 3, 2, 3]),
                 dict(s='JYNX', m=['LOVELY_KISS', 'ICE_BEAM', 'FAKE_TEARS', 'PSYCHIC'], a='DRY_SKIN', p=[3, 1, 2, 4, 2])]),
         E(kind='elite', name='Lagavulin Matriarch', hint='Avalugg sleeps behind a shell. Wake it on your terms.',
-          foes=[dict(s='AVALUGG', m=['CURSE', 'AVALANCHE', 'BODY_PRESS', 'RECOVER'], a='STURDY', hp=2.6, lv=-4, g='SLEEP3',
-                     p=[1, 3, 2, 3, 4]),
+          foes=[dict(s='AVALUGG', m=['GYRO_BALL', 'CRUNCH', 'RAPID_SPIN'], a='STURDY', hp=2.6, lv=-4, g='SLEEP3',
+                     p=[1, 2, 1, 3]),
                 dict(s='BERGMITE', m=['ICY_WIND', 'BITE', 'IRON_DEFENSE', 'PROTECT'])]),
         E(kind='elite', name='Frozen Knight', hint='Glalie freezes your moves with Torment, then Explosion if it must.',
           foes=[dict(s='GLALIE', m=['TORMENT', 'FREEZE_DRY', 'CRUNCH', 'ICE_FANG'], a='MOODY', hp=2.4, lv=-2,
                      i='ITEM_SITRUS_BERRY', p=[1, 2, 3, 2, 3, 4]),
                 dict(s='SNOVER', m=['BLIZZARD', 'INGRAIN', 'RAZOR_LEAF', 'MIST'], a='SNOW_WARNING')]),
         E(kind='elite', name='Kaiser Crab', hint='Crabominable and Kingler fight as one. Kill one and the other goes berserk.',
-          foes=[dict(s='CRABOMINABLE', m=['ICE_HAMMER', 'CLOSE_COMBAT', 'BULK_UP', 'PROTECT'], a='ANGER_POINT', hp=1.7, lv=-4,
-                     p=[3, 1, 2]),
-                dict(s='KINGLER', m=['CRABHAMMER', 'X_SCISSOR', 'SWORDS_DANCE', 'PROTECT'], a='HYPER_CUTTER', hp=1.7, lv=-4,
-                     p=[1, 2, 3, 1])]),
+          foes=[dict(s='CRABOMINABLE', m=['BUBBLE_BEAM', 'CRABHAMMER', 'BULK_UP', 'PROTECT'], a='ANGER_POINT', hp=1.7, lv=-4,
+                     p=[3, 1, 2, 1, 2]),
+                dict(s='KINGLER', m=['CRABHAMMER', 'X_SCISSOR', 'SWORDS_DANCE', 'PROTECT'], a='HYPER_CUTTER', hp=1.2, lv=-4,
+                     p=[1, 2, 4, 1, 2, 3])]),
     ],
     # ===== ACT 3 – GILDED COURT ============================================================
     'COURT': [
@@ -284,11 +284,11 @@ ENCOUNTERS = {
                      p=[1, 2, 3, 2])]),
         E(kind='elite', name='Mecha Knight', hint='Metagross charges, then hammers. Telegraphed, but very loud.',
           foes=[dict(s='METAGROSS', m=['AGILITY', 'METEOR_MASH', 'ZEN_HEADBUTT', 'BULLET_PUNCH'], a='CLEAR_BODY', hp=2.4, lv=-4,
-                     i='ITEM_ASSAULT_VEST_', p=[1, 2, 2, 3]),
+                     i='ITEM_ASSAULT_VEST_', p=[1, 2, 4, 3]),
                 dict(s='BRONZONG', m=['TRICK_ROOM', 'GYRO_BALL', 'HYPNOSIS', 'EXTRASENSORY'], a='HEATPROOF', p=[1, 3, 2, 4])]),
         E(kind='elite', name='Soul Nexus', hint='Chandelure. No tricks. Just a lot of fire.',
-          foes=[dict(s='CHANDELURE', m=['FLAMETHROWER', 'SHADOW_BALL', 'WILL_O_WISP', 'HEAT_WAVE'], a='FLASH_FIRE', hp=2.6, lv=-2,
-                     i='ITEM_LIFE_ORB'),
+          foes=[dict(s='CHANDELURE', m=['FLAME_BURST', 'HEX', 'WILL_O_WISP', 'HEAT_WAVE'], a='FLASH_FIRE', hp=2.6, lv=-2,
+                     p=[3, 2, 1, 2, 4]),
                 dict(s='LAMPENT', m=['HEX', 'WILL_O_WISP', 'CONFUSE_RAY', 'FLAME_BURST_'], a='FLAME_BODY')]),
     ],
     # ===== ACT 3 – THE ABYSS ===============================================================
@@ -330,16 +330,16 @@ ENCOUNTERS = {
                 dict(s='BANETTE', m=['WILL_O_WISP', 'SHADOW_SNEAK', 'KNOCK_OFF_', 'CURSE'], a='CURSED_BODY')]),
         E(kind='elite', name='Time Eater', hint='Celebi-less clockwork: Bronzong reverses time. Slow Pokémon move first.',
           field='TRICK_ROOM',
-          foes=[dict(s='BRONZONG', m=['TRICK_ROOM', 'GYRO_BALL', 'EARTHQUAKE', 'IRON_DEFENSE'], a='LEVITATE', hp=2.6, lv=-2,
+          foes=[dict(s='BRONZONG', m=['TRICK_ROOM', 'GYRO_BALL', 'EARTHQUAKE', 'EXTRASENSORY'], a='LEVITATE', hp=2.6, lv=-2,
                      p=[4, 2, 3, 2, 1]),
-                dict(s='CONKELDURR', m=['MACH_PUNCH', 'DRAIN_PUNCH', 'ICE_PUNCH', 'BULK_UP'], a='IRON_FIST', lv=-6)]),
+                dict(s='GURDURR', m=['MACH_PUNCH', 'DRAIN_PUNCH', 'ICE_PUNCH', 'ROCK_SLIDE'], a='IRON_FIST', lv=-6)]),
         E(kind='elite', name='Awakened One', hint='Honchkrow rises twice as angry when you buff in front of it.',
           foes=[dict(s='HONCHKROW', m=['NASTY_PLOT', 'DARK_PULSE', 'HEAT_WAVE', 'SUCKER_PUNCH'], a='MOXIE', hp=2.4, lv=-2,
                      p=[1, 2, 3, 2]),
                 dict(s='MURKROW', m=['TAILWIND', 'FEINT_ATTACK_', 'HAZE', 'PECK_'], a='PRANKSTER')]),
         E(kind='elite', name='Donu and Deca', hint='Solrock buffs, Lunatone shields. They are twins: both must fall.',
-          foes=[dict(s='SOLROCK', m=['COSMIC_POWER', 'ROCK_SLIDE', 'ZEN_HEADBUTT', 'WILL_O_WISP'], a='LEVITATE', hp=1.8, p=[1, 2, 3, 4]),
-                dict(s='LUNATONE', m=['LIGHT_SCREEN', 'POWER_GEM', 'PSYCHIC', 'HYPNOSIS'], a='LEVITATE', hp=1.8, p=[1, 3, 2, 4])]),
+          foes=[dict(s='SOLROCK', m=['COSMIC_POWER', 'HEAT_WAVE', 'WILL_O_WISP'], a='LEVITATE', hp=1.8, p=[1, 2, 3, 2]),
+                dict(s='LUNATONE', m=['LIGHT_SCREEN', 'POWER_GEM', 'MOONBLAST', 'HYPNOSIS'], a='LEVITATE', hp=1.8, p=[1, 3, 2, 4])]),
     ],
 }
 
@@ -351,25 +351,25 @@ BOSSES = {
         E(name='Venusaur & Blastoise', hint='Rain for one, sun for the other. They fight over the weather.',
           foes=[dict(s='BLASTOISE', m=['RAIN_DANCE', 'WATER_PULSE', 'AURA_SPHERE', 'PROTECT'], a='RAIN_DISH', hp=2.4, lv=-6,
                      p=[1, 2, 3, 2, 4]),
-                dict(s='VENUSAUR', m=['SUNNY_DAY', 'GIGA_DRAIN', 'SLUDGE_BOMB', 'LEECH_SEED'], a='CHLOROPHYLL', hp=2.4, lv=-6,
-                     p=[4, 1, 2, 3, 2])]),
+                dict(s='VENUSAUR', m=['SUNNY_DAY', 'GIGA_DRAIN', 'SLUDGE_BOMB'], a='CHLOROPHYLL', hp=2.4, lv=-6,
+                     p=[1, 2, 3, 2])]),
         E(name='Totem Wishiwashi', hint='A school of fish with an aura. Below a quarter HP it falls apart: race it there.',
-          foes=[dict(s='WISHIWASHI', m=['SOAK', 'LIQUIDATION', 'AQUA_RING', 'BEAT_UP'], a='SCHOOLING', hp=2.0, b={'atk': 1, 'def': 1},
+          foes=[dict(s='WISHIWASHI', m=['SOAK', 'LIQUIDATION', 'TEARFUL_LOOK', 'BEAT_UP'], a='SCHOOLING', hp=2.0, b={'def': 1},
                      p=[2, 4, 2, 1, 3]),
-                dict(s='ARAQUANID', m=['WIDE_GUARD', 'LIQUIDATION', 'LEECH_LIFE', 'MIRROR_COAT'], a='WATER_BUBBLE', lv=-6,
+                dict(s='ARAQUANID', m=['WIDE_GUARD', 'BUBBLE_BEAM', 'LEECH_LIFE', 'MIRROR_COAT'], a='WATER_BUBBLE', lv=-6,
                      p=[1, 2, 3, 4])]),
         E(name='Totem Marowak', hint='A bone club, a flame dance and a lizard that poisons everything it touches.',
           foes=[dict(s='MAROWAK_ALOLA_TOTEM', m=['FLARE_BLITZ', 'SHADOW_BONE', 'BONEMERANG', 'WILL_O_WISP'], 
-                     hp=3.2, lv=-4, i='ITEM_THICK_CLUB', b={'def': 1}, p=[4, 2, 1, 3]),
-                dict(s='SALAZZLE', m=['TOXIC', 'FLAMETHROWER', 'VENOSHOCK', 'FAKE_TEARS'], a='CORROSION', lv=-8, p=[1, 4, 3, 3])]),
+                     hp=3.2, lv=-4, b={'def': 1}, p=[4, 2, 1, 3]),
+                dict(s='SALAZZLE', m=['POISON_FANG', 'FLAMETHROWER', 'VENOSHOCK', 'FAKE_TEARS'], a='CORROSION', lv=-8, p=[1, 4, 3, 3])]),
         E(name='Gigantamax Pikachu', hint='Huge, loud and charged. Ground types are a very good idea.',
           foes=[dict(s='PIKACHU_GMAX', m=['CHARGE', 'THUNDERBOLT', 'IRON_TAIL', 'NUZZLE'], a='LIGHTNING_ROD', hp=4.0, lv=2,
-                     i='ITEM_LIGHT_BALL', p=[4, 1, 2, 2, 3]),
+                     p=[4, 1, 2, 2, 3]),
                 dict(s='PLUSLE', m=['HELPING_HAND', 'ENCORE', 'ELECTRO_BALL', 'NASTY_PLOT'], a='PLUS', lv=-8, p=[1, 2, 1, 3])]),
     ],
     2: [
         E(name='Mega Metagross', hint='Bronze Automaton: it charges, it fires, it rests. Strike in the rest.',
-          foes=[dict(s='METAGROSS_MEGA', m=['IRON_DEFENSE', 'METEOR_MASH', 'HYPER_BEAM', 'ZEN_HEADBUTT'], a='TOUGH_CLAWS', hp=3.6,
+          foes=[dict(s='METAGROSS_MEGA', m=['HONE_CLAWS', 'METEOR_MASH', 'HYPER_BEAM', 'ZEN_HEADBUTT'], a='TOUGH_CLAWS', hp=3.6,
                      lv=-2, p=[1, 2, 4, 3, 2]),
                 dict(s='BELDUM', m=['TAKE_DOWN', 'IRON_HEAD', 'ZEN_HEADBUTT', 'IRON_DEFENSE'], a='CLEAR_BODY')]),
         E(name='Darkrai', hint='It puts one of you to sleep and feeds on the nightmare. Wake up.',
@@ -377,7 +377,7 @@ BOSSES = {
                      p=[1, 2, 3, 2, 4, 2]),
                 dict(s='MISDREAVUS', m=['HEX', 'CONFUSE_RAY', 'SHADOW_BALL', 'PROTECT'], a='LEVITATE', lv=-2, p=[2, 1, 3, 4])]),
         E(name='Mewtwo & Mew', hint='The clone hits, the original copies. Kill order?',
-          foes=[dict(s='MEWTWO', m=['PSYSTRIKE', 'AURA_SPHERE', 'CALM_MIND', 'RECOVER'], a='PRESSURE', hp=2.4, lv=-6, p=[3, 1, 2, 1, 4]),
+          foes=[dict(s='MEWTWO', m=['PSYSTRIKE', 'SHADOW_BALL', 'NASTY_PLOT', 'PROTECT'], a='PRESSURE', hp=2.4, lv=-6, p=[3, 1, 2, 1, 4]),
                 dict(s='MEW', m=['TRANSFORM', 'HELPING_HAND', 'PSYCHIC', 'METRONOME'], a='SYNCHRONIZE', hp=1.8, lv=-8, p=[2, 3, 4])]),
         E(name='Dialga & Palkia', hint='Time and space. One reverses the turn order, the other warps it.',
           foes=[dict(s='DIALGA', m=['TRICK_ROOM', 'ROAR_OF_TIME', 'FLASH_CANNON', 'DRAGON_PULSE'], a='PRESSURE', hp=2.2, lv=-8,
@@ -385,16 +385,16 @@ BOSSES = {
                 dict(s='PALKIA', m=['SPACIAL_REND', 'HYDRO_PUMP', 'AQUA_TAIL', 'DRAGON_CLAW'], a='PRESSURE', hp=2.2, lv=-8)]),
     ],
     3: [
-        E(name='Mega Mewtwo Y', hint='Calm Mind, then Psystrike. Every buff is a step on the clock.',
-          foes=[dict(s='MEWTWO_MEGA_Y', m=['CALM_MIND', 'PSYSTRIKE', 'FLAMETHROWER', 'RECOVER'], a='INSOMNIA', hp=4.0, lv=-4,
+        E(name='Mega Mewtwo Y', hint='Psystrike hits your Defense, Flamethrower and Shadow Ball the rest. Protect is its only breath.',
+          foes=[dict(s='MEWTWO_MEGA_Y', m=['SHADOW_BALL', 'PSYSTRIKE', 'FLAMETHROWER', 'PROTECT'], a='INSOMNIA', hp=4.0, lv=-4,
                      p=[1, 2, 3, 2, 4]),
                 dict(s='MEW', m=['HELPING_HAND', 'AFTER_YOU', 'PSYCHIC', 'REFLECT'], a='SYNCHRONIZE', lv=-8, p=[4, 1, 2, 1])]),
         E(name='Ultra Necrozma', hint='Blinding light. It ignores your abilities and grows with every hit.',
-          foes=[dict(s='NECROZMA_ULTRA', m=['DRAGON_DANCE', 'PHOTON_GEYSER', 'PSYCHO_CUT', 'EARTHQUAKE'], a='NEUROFORCE', hp=4.0,
-                     lv=-6, p=[1, 2, 3, 2, 4]),
-                dict(s='LUNATONE', m=['LIGHT_SCREEN', 'POWER_GEM', 'PSYCHIC', 'HYPNOSIS'], a='LEVITATE', lv=-4, p=[1, 3, 2, 4])]),
+          foes=[dict(s='NECROZMA_ULTRA', m=['DRAGON_DANCE', 'PHOTON_GEYSER', 'DRAGON_PULSE', 'IRON_HEAD'], a='NEUROFORCE', hp=4.0,
+                     lv=-6, p=[1, 2, 4, 3, 2, 4]),
+                dict(s='LUNATONE', m=['MOONBLAST', 'POWER_GEM', 'PSYCHIC', 'HYPNOSIS'], a='LEVITATE', lv=-4, p=[2, 3, 1, 4])]),
         E(name='Eternamax Eternatus', hint='The heart of the tower. Meteor Beam charges first: that is your window.',
-          foes=[dict(s='ETERNATUS_ETERNAMAX', m=['DYNAMAX_CANNON', 'SLUDGE_BOMB', 'FLAMETHROWER', 'METEOR_BEAM'], a='PRESSURE', hp=3.2,
+          foes=[dict(s='ETERNATUS_ETERNAMAX', m=['DYNAMAX_CANNON', 'SLUDGE_BOMB', 'FLASH_CANNON', 'METEOR_BEAM'], a='PRESSURE', hp=3.2,
                      b={'spa': 1}, p=[4, 1, 2, 3, 1])]),
         E(name='Mega Rayquaza', hint='Delta Stream: no weather but its own. Dragon Ascent costs it defense.',
           foes=[dict(s='RAYQUAZA_MEGA', m=['DRAGON_DANCE', 'DRAGON_ASCENT', 'EXTREME_SPEED', 'EARTHQUAKE'], a='DELTA_STREAM', hp=4.0,
@@ -648,10 +648,15 @@ TARGET_MID = {'weak': (2.5, 7), 'normal': (3.0, 11), 'elite': (4.5, 24), 'boss':
 # (act-2-gangen doen pijn, act-3-bazen het meest). Kalibratie op HP-verlies (beurten wegen mee). Eerder viel act 2
 # goedkoper uit dan act 1 (gewoon 11% / zwak 5%) en waren act-3-elites lichter dan act-1-elites (20% / 21%),
 # terwijl de speler per act sterker wordt (relics, upgrades, items). Act-1-elites op het oude doel (24%).
-TARGET_ACT = {('weak', 1): (2.5, 8), ('weak', 2): (2.5, 8), ('weak', 3): (2.5, 10),
-              ('normal', 1): (3.0, 12), ('normal', 2): (3.5, 14), ('normal', 3): (4.0, 16),
-              ('elite', 1): (4.5, 24), ('elite', 2): (5.0, 27), ('elite', 3): (5.5, 30),
-              ('boss', 1): (9.0, 55), ('boss', 2): (9.0, 60), ('boss', 3): (9.0, 65)}
+TARGET_ACT = {('weak', 1): (2.5, 9), ('weak', 2): (2.5, 10), ('weak', 3): (2.5, 12),
+              ('normal', 1): (3.0, 15), ('normal', 2): (3.5, 17), ('normal', 3): (4.0, 19),
+              ('elite', 1): (4.5, 22), ('elite', 2): (5.0, 24), ('elite', 3): (5.5, 26),
+              ('boss', 1): (9.0, 35), ('boss', 2): (9.0, 38), ('boss', 3): (9.0, 40)}
+# v0.9.70 (echte gevechten, matchups.py): bazen 55/60/65% -> 35/38/40%, elites 24/27/30% -> 22/24/26% (acts zijn bijna 2x zo lang: ±2,5 elites per act). In het oude gemiddelde-teammodel was 55% een
+# gemiddelde; met types en abilities verliest een team met twee zwakke types (v) en weinig schade (w) ongeveer
+# (v/w) x het gemiddelde, dus 55% maakte zulke teams kansloos (Jordi: 'een 0% winkans mag in geen enkele run ontstaan').
+# Slay: een baas kost 30-50% van je HP. Gewone gevechten 12/14/16 -> 15/17/19%, zwak 8/8/10 -> 9/10/12% (Jordi: 'alle
+# reguliere encounters waren super makkelijk').
 CALIB = {}   # (act, kind) -> (levelverschuiving, HP-factor)
 
 
@@ -696,12 +701,20 @@ def foe_c(f, dlv=0, hfac=1.0):
                0, round(f.get('hp', 1.0) * hfac * 10), GIMMICKS[f.get('g')], boosts, ', '.join(map(str, pat))))
 
 
+def foe_hfac(e, f, hfac):
+    """De kalibratiefactor geldt bij elites en bazen alleen voor de grote vijanden (eigen hp > 1); lakeien (hp 1)
+    blijven klein (Slay: minions). Anders kreeg Lunatone naast Ultra Necrozma ook 3x HP en was de lakei een tweede baas."""
+    if e.get('kind') in ('elite', 'boss') and any(x.get('hp', 1.0) > 1.0 for x in e['foes']) and f.get('hp', 1.0) <= 1.0:
+        return 1.0
+    return hfac
+
+
 def enc_c(e, biome, kind, cal=(0, 1.0)):
     foes = e['foes'] + [dict(s='NONE', m=[])] * (2 - len(e['foes']))
     return ('    {%s, %s, %s, COMPOUND_STRING("%s"), COMPOUND_STRING("%s"),\n     {%s,\n      %s}},'
             % (biome, kind, FIELDS[e.get('field')], c_str(e['name']), c_str(e['hint']),
-               foe_c(foes[0], *cal) if foes[0]['s'] != 'NONE' else '{SPECIES_NONE}',
-               foe_c(foes[1], *cal) if foes[1]['s'] != 'NONE' else '{SPECIES_NONE}'))
+               foe_c(foes[0], cal[0], foe_hfac(e, foes[0], cal[1])) if foes[0]['s'] != 'NONE' else '{SPECIES_NONE}',
+               foe_c(foes[1], cal[0], foe_hfac(e, foes[1], cal[1])) if foes[1]['s'] != 'NONE' else '{SPECIES_NONE}'))
 
 
 def totem_elites():
@@ -733,14 +746,18 @@ def main():
             rows.append((dict(key='BOSS', act=act, name='Boss'), e, difficulty(e, act, 'boss')))
     for w in warns:
         print('!', w)
-    groups = {}
     for b, e, d in rows:
         # bazen elk apart (iedere baas moet zelf op het doel uitkomen), de rest per act en soort
-        key = (b['act'], e['kind'] if e['kind'] != 'boss' else 'boss:' + e['name'])
-        e['calkey'] = key
-        groups.setdefault(key, []).append(e)
-    calibrate(groups)
-    rows = [(b, e, difficulty(e, b['act'], e['kind'], *CALIB[e['calkey']][:2])) for b, e, _ in rows]
+        e['calkey'] = (b['act'], e['kind'] if e['kind'] != 'boss' else 'boss:' + e['name'])
+    # v0.9.70: kalibratie met echte gevechten (matchups.py: types, abilities, patronen, willekeurige draftparen)
+    # i.p.v. het gemiddelde-teammodel hierboven (dat zag Wishiwashi + Araquanid niet als gevaarlijk)
+    import matchups as M
+    mrows = [(b['act'], e['kind'], b['name'], e) for b, e, _ in rows]
+    cal, stats = M.calibrate_sim(mrows, verbose=True)
+    CALIB.clear()
+    CALIB.update(cal)
+    M.save_calib(cal, stats)
+    rows = [(b, e, stats[e['name']]) for b, e, _ in rows]
     # C
     L = ['// Gegenereerd door tools/grounded/spire/encounters.py - niet met de hand bewerken.', '']
     L.append('const struct SpireBiome gSpireBiomes[SPIRE_BIOME_COUNT] =')
@@ -766,22 +783,28 @@ def main():
         f.write('\n'.join(L) + '\n')
     # rapport
     R = ['', '## Ontmoetingen (gegenereerd door encounters.py)', '',
-         'Geschat HP-verlies van een gemiddeld team in die act (zelfde schadeformule; speler ×4 HP, 2 aanvallen per beurt op de gevaarlijkste vijand eerst; vijanden vallen in 80% van de beurten aan). '
-         'Gimmicks (patronen, totem, abilities) zitten er niet in: die maken een gevecht makkelijker als je ze doorziet en zwaarder als je ze negeert. Doel per gevecht: zwak 3–12%, gewoon 6–18%, elite 15–35%, baas 40–75%.', '',
-         '**Kalibratie** (automatisch): per act en soort gevecht een levelverschuiving en HP-factor zodat de mediaan precies op het doel valt '
-         '(in act 1/2/3: zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65% bij ±9 beurten; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel, en elke act doet meer pijn). Level hooguit ±6 (een Grubbin op lv 66 klopt niet). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, '
-         'en ligt het gemiddelde vast.', '',
-         '| act | soort | level | HP-factor | mediaan beurten | mediaan HP-verlies |', '|---|---|---|---|---|---|']
+         'Gemeten met echte gevechten (`matchups.py`, sinds v0.9.70): %d willekeurige draftparen (C/B/A/S 35/35/22/8%%) in de vorm van die act, '
+         'met de moves die een speler daar ongeveer heeft (startkit + STAB-beloningen; bij elites en bazen een dekkingsmove) en een bot die de intenties leest. '
+         'Types, abilities, items, patronen, totem-boosts, DEFEND en de openingsbescherming tellen mee. HP-verlies = deel van de team-HP (verloren gevecht = alle HP bij aankomst). '
+         'Doel per gevecht: zwak 3–12%%, gewoon 6–18%%, elite 15–35%%, baas 40–75%%.' % M.CALIB_PAIRS, '',
+         '**Kalibratie** (automatisch): per act en soort gevecht (bazen elk apart) één HP-factor zodat de mediaan op het doel valt '
+         '(act 1/2/3: zwak 8/8/10%, gewoon 12/14/16%, elite 24/27/30%, baas 55/60/65%; zoals Slay: gewone gevechten kosten weinig, elites en bazen veel, en elke act doet meer pijn). '
+         'Level is geen knop (alles lv 100). Zo blijft de verhouding tussen de gevechten in een groep (de puzzel) staan, en ligt het gemiddelde vast.', '',
+         '| act | soort | HP-factor | mediaan beurten | mediaan HP-verlies |', '|---|---|---|---|---|']
     for (act, kind), (dlv, h, mt, ml) in sorted(CALIB.items()):
-        R.append('| %d | %s | %+d | ×%.1f | %.1f | %.0f%% |' % (act, kind, dlv, h, mt, ml))
-    R += ['', '| act | biome | soort | ontmoeting | beurten | HP-verlies | |', '|---|---|---|---|---|---|---|']
+        R.append('| %d | %s | ×%.2f | %.1f | %.0f%% |' % (act, kind, h, mt, ml))
+    R += ['', '| act | biome | soort | ontmoeting | beurten | HP-verlies | winkans | |', '|---|---|---|---|---|---|---|---|']
     for b, e, d in rows:
         lo, hi = TARGET[e['kind']]
-        flag = '' if lo <= d['lost'] <= hi else ('te makkelijk' if d['lost'] < lo else 'te zwaar')
-        R.append('| %d | %s | %s | %s (%s) | %.1f | %.0f%% | %s |' % (b['act'], b['name'], e['kind'], e['name'],
-                 ' + '.join(SPECIES[f['s']]['dispname'] if f['s'] in SPECIES else f['s'] for f in e['foes']), d['turns'], d['lost'], flag))
+        flag = '' if lo <= d['loss'] <= hi else ('te makkelijk' if d['loss'] < lo else 'te zwaar')
+        R.append('| %d | %s | %s | %s (%s) | %.1f | %.0f%% | %.0f%% | %s |' % (b['act'], b['name'], e['kind'], e['name'],
+                 ' + '.join(SPECIES[f['s']]['dispname'] if f['s'] in SPECIES else f['s'] for f in e['foes']), d['turns'], d['loss'], 100 * d['win'], flag))
         if flag:
-            print('%-6s %-28s %5.1f%% %s' % (e['kind'], e['name'], d['lost'], flag))
+            print('%-6s %-28s %5.1f%% %s' % (e['kind'], e['name'], d['loss'], flag))
+    # Jordi (5 okt): een 0% winkans mag in geen enkele run ontstaan -> slechtste startcombinatie per elite/baas
+    worst = M.worst_case(mrows, cal)
+    R += M.report(worst)
+    bad = M.check(worst)
     path = os.path.join(ROOT, 'SPIRE_BALANS.md')
     txt = open(path).read()
     keep = ''
@@ -791,6 +814,12 @@ def main():
     open(path, 'w').write(txt)
     print('ontmoetingen: %d, bazen: %d, waarschuwingen: %d' % (sum(len(v) for v in ENCOUNTERS.values()),
                                                                sum(len(v) for v in BOSSES.values()), len(warns)))
+    M.print_worst(worst)
+    if bad:
+        print('\nONDER DE EIS: slechtste startcombinatie < %d%% winkans' % (M.MIN_WIN * 100))
+        for b in bad:
+            print('  ' + b)
+        sys.exit(1)
 
 
 if __name__ == '__main__':

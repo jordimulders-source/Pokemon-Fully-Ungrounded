@@ -259,6 +259,14 @@ void Spire_ClearBlocks(void)
     }
 }
 
+// Klap-limiet: hoeveel één klap van een vijand hooguit doet bij een Pokémon van de speler (0xFFFF = geen grens).
+u32 Spire_HitCap(u32 battlerAtk, u32 battlerDef)
+{
+    if (!gSpireBattle || !IsOnPlayerSide(battlerDef) || IsOnPlayerSide(battlerAtk) || SPIRE_HIT_CAP >= 100)
+        return 0xFFFF;
+    return max(1, gBattleMons[battlerDef].maxHP * SPIRE_HIT_CAP / 100);
+}
+
 // Openingsbescherming: hoeveel schade een vijand deze beurt nog mag doen bij een Pokémon van de speler
 // (0xFFFF = geen grens). Zie SPIRE_OPENING_CAP in spire.h.
 u32 Spire_OpeningCapLeft(u32 battlerAtk, u32 battlerDef)
@@ -302,6 +310,8 @@ void Spire_AbsorbDamage(u32 battlerDef)
 
     if (!gSpireBattle || *dmg <= 0)
         return;
+    // klap-limiet (SPIRE_HIT_CAP): één klap van een vijand hooguit 40% van de max HP
+    *dmg = min((s32)*dmg, (s32)Spire_HitCap(gBattlerAttacker, battlerDef));
     // Iron Ball (relic): elke klap op je team 2% van de max HP minder (minstens 1 schade)
     if (IsOnPlayerSide(battlerDef) && Spire_HasRelic(SPIRE_RELIC_IRON_BALL))
         *dmg = max(1, *dmg - (s32)(gBattleMons[battlerDef].maxHP * 2 / 100));
@@ -383,7 +393,7 @@ static const u8 sText_Both[] = _("both");
 // Schade als percentage van de max HP van het doel (in doubles staan er geen HP-getallen bij je eigen Pokémon).
 static u32 CappedDamage(u32 battler, u32 target, u32 dmg)
 {
-    return min(dmg, Spire_OpeningCapLeft(battler, target));
+    return min(min(dmg, Spire_HitCap(battler, target)), Spire_OpeningCapLeft(battler, target));
 }
 
 static u32 DamagePercent(u32 battler, u32 target, u32 moveIndex)

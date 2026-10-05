@@ -1,0 +1,603 @@
+{
+ "calib": {
+  "1|boss:Gigantamax Pikachu": [
+   0,
+   3.26,
+   10.0,
+   28.122969088194633
+  ],
+  "1|boss:Totem Marowak": [
+   0,
+   0.95,
+   6.0,
+   51.308347662958866
+  ],
+  "1|boss:Totem Wishiwashi": [
+   0,
+   2.6,
+   9.0,
+   31.5912951810978
+  ],
+  "1|boss:Venusaur & Blastoise": [
+   0,
+   0.76,
+   7.0,
+   41.87262435426334
+  ],
+  "1|elite": [
+   0,
+   0.68,
+   5.0,
+   21.852543605976145
+  ],
+  "1|normal": [
+   0,
+   1.67,
+   4.0,
+   14.887227386241802
+  ],
+  "1|weak": [
+   0,
+   0.85,
+   3.0,
+   7.945604802208149
+  ],
+  "2|boss:Darkrai": [
+   0,
+   0.95,
+   7.0,
+   49.651452672777694
+  ],
+  "2|boss:Dialga & Palkia": [
+   0,
+   1.12,
+   8.0,
+   43.954794976485736
+  ],
+  "2|boss:Mega Metagross": [
+   0,
+   2.08,
+   9.0,
+   38.015457931624574
+  ],
+  "2|boss:Mewtwo & Mew": [
+   0,
+   1.49,
+   8.0,
+   49.775396083608186
+  ],
+  "2|elite": [
+   0,
+   2.33,
+   7.0,
+   17.75179553280467
+  ],
+  "2|normal": [
+   0,
+   2.2,
+   4.0,
+   16.407347520944477
+  ],
+  "2|weak": [
+   0,
+   3.09,
+   4.0,
+   6.383315215022428
+  ],
+  "3|boss:Eternamax Eternatus": [
+   0,
+   0.68,
+   8.0,
+   41.47370316047059
+  ],
+  "3|boss:Mega Mewtwo Y": [
+   0,
+   1.86,
+   9.0,
+   23.728476946643042
+  ],
+  "3|boss:Mega Rayquaza": [
+   0,
+   4.07,
+   9.0,
+   43.30387102341817
+  ],
+  "3|boss:Terapagos": [
+   0,
+   1.86,
+   10.0,
+   19.600775840688705
+  ],
+  "3|boss:Ultra Necrozma": [
+   0,
+   2.91,
+   9.5,
+   27.592478162370114
+  ],
+  "3|elite": [
+   0,
+   2.91,
+   7.0,
+   18.491189638082673
+  ],
+  "3|normal": [
+   0,
+   2.61,
+   5.0,
+   18.99608517406544
+  ],
+  "3|weak": [
+   0,
+   1.58,
+   3.5,
+   9.551141416970628
+  ]
+ },
+ "stats": {
+  "Avalanche": {
+   "loss": 6.245185387709574,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Awakened One": {
+   "loss": 13.954488212189911,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Axebots": {
+   "loss": 22.436080196432908,
+   "turns": 6.0,
+   "win": 0.925
+  },
+  "Beartic Brute": {
+   "loss": 16.486916254654336,
+   "turns": 3.5,
+   "win": 1.0
+  },
+  "Bowlbugs": {
+   "loss": 22.758496961065585,
+   "turns": 7.0,
+   "win": 0.975
+  },
+  "Bygone Effigy": {
+   "loss": 24.040710421386574,
+   "turns": 8.0,
+   "win": 1.0
+  },
+  "Byrdonis": {
+   "loss": 4.750636575463846,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Corpse Slugs": {
+   "loss": 9.1188404521883,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Cultists": {
+   "loss": 4.103333669491307,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Darklings": {
+   "loss": 6.453528423747976,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Darkrai": {
+   "loss": 49.651452672777694,
+   "turns": 7.0,
+   "win": 0.85
+  },
+  "Decimillipede": {
+   "loss": 32.5319469347628,
+   "turns": 6.0,
+   "win": 0.975
+  },
+  "Devoted Sculptor": {
+   "loss": 6.7377639048793485,
+   "turns": 2.0,
+   "win": 1.0
+  },
+  "Dialga & Palkia": {
+   "loss": 43.954794976485736,
+   "turns": 8.0,
+   "win": 0.95
+  },
+  "Donu and Deca": {
+   "loss": 38.726054748947625,
+   "turns": 11.0,
+   "win": 0.875
+  },
+  "Entomancer": {
+   "loss": 12.705239997746654,
+   "turns": 5.0,
+   "win": 0.975
+  },
+  "Eternamax Eternatus": {
+   "loss": 41.47370316047059,
+   "turns": 8.0,
+   "win": 0.95
+  },
+  "Exoskeletons": {
+   "loss": 5.07612267186504,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Exploders": {
+   "loss": 12.364518929061909,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Fabricator": {
+   "loss": 27.480283727632216,
+   "turns": 5.0,
+   "win": 0.875
+  },
+  "Fogmog": {
+   "loss": 11.009549651374204,
+   "turns": 4.0,
+   "win": 0.95
+  },
+  "Frog Knight": {
+   "loss": 18.776198581247748,
+   "turns": 4.0,
+   "win": 0.975
+  },
+  "Frost Byrds": {
+   "loss": 6.274779067148467,
+   "turns": 3.0,
+   "win": 0.975
+  },
+  "Frozen Knight": {
+   "loss": 11.015028064408895,
+   "turns": 9.0,
+   "win": 1.0
+  },
+  "Fuzzy Crawlers": {
+   "loss": 7.945604802208149,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Giant Head": {
+   "loss": 3.3313774802811875,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Gigantamax Pikachu": {
+   "loss": 28.122969088194633,
+   "turns": 10.0,
+   "win": 0.975
+  },
+  "Glass Sentries": {
+   "loss": 6.114640832913084,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Globe Head": {
+   "loss": 15.60283916032378,
+   "turns": 8.0,
+   "win": 1.0
+  },
+  "Gremlin Mercs": {
+   "loss": 7.854437309232183,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Gremlin Nob": {
+   "loss": 21.852543605976145,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Haunted Ship": {
+   "loss": 36.466866041798454,
+   "turns": 7.0,
+   "win": 0.875
+  },
+  "Hunter Killer": {
+   "loss": 19.8541615135377,
+   "turns": 4.0,
+   "win": 0.975
+  },
+  "Ice Dancers": {
+   "loss": 8.496962793510173,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Jungle Ambush": {
+   "loss": -8.721700387027699,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Just Two Magikarp": {
+   "loss": 1.1720417185096157,
+   "turns": 2.0,
+   "win": 1.0
+  },
+  "Kaiser Crab": {
+   "loss": 22.798351067862686,
+   "turns": 6.0,
+   "win": 0.975
+  },
+  "Knights Trio": {
+   "loss": 12.192744982840141,
+   "turns": 11.0,
+   "win": 1.0
+  },
+  "Lagavulin Matriarch": {
+   "loss": 7.419447349967596,
+   "turns": 8.0,
+   "win": 1.0
+  },
+  "Leaf Slimes": {
+   "loss": 20.69817812354558,
+   "turns": 4.0,
+   "win": 0.95
+  },
+  "Living Fog": {
+   "loss": 27.439809810795296,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Living Icicles": {
+   "loss": 5.537581853653917,
+   "turns": 3.5,
+   "win": 1.0
+  },
+  "Louse Progenitor": {
+   "loss": 15.793346870810987,
+   "turns": 7.0,
+   "win": 1.0
+  },
+  "Mawler": {
+   "loss": 14.55706887882461,
+   "turns": 5.5,
+   "win": 1.0
+  },
+  "Mecha Knight": {
+   "loss": 20.75866330584846,
+   "turns": 7.0,
+   "win": 0.975
+  },
+  "Mega Metagross": {
+   "loss": 38.015457931624574,
+   "turns": 9.0,
+   "win": 0.95
+  },
+  "Mega Mewtwo Y": {
+   "loss": 23.728476946643042,
+   "turns": 9.0,
+   "win": 1.0
+  },
+  "Mega Rayquaza": {
+   "loss": 43.30387102341817,
+   "turns": 9.0,
+   "win": 1.0
+  },
+  "Mewtwo & Mew": {
+   "loss": 49.775396083608186,
+   "turns": 8.0,
+   "win": 0.875
+  },
+  "Moonlight Recital": {
+   "loss": 13.10689694729301,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Mytes": {
+   "loss": 21.974782049518534,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Nemesis": {
+   "loss": 18.99608517406544,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Nightmare": {
+   "loss": 28.190543709921904,
+   "turns": 5.5,
+   "win": 0.95
+  },
+  "Overgrown Statue": {
+   "loss": 21.869908461580458,
+   "turns": 6.0,
+   "win": 0.95
+  },
+  "Ovicopter": {
+   "loss": 3.2749255037684275,
+   "turns": 5.0,
+   "win": 0.85
+  },
+  "Owl Magistrate": {
+   "loss": 15.367168919888785,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Phantasmal Gardeners": {
+   "loss": 6.145969811011328,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Phrog Parasite": {
+   "loss": 8.41201826045739,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Reptomancer": {
+   "loss": 17.209129163016723,
+   "turns": 2.0,
+   "win": 0.975
+  },
+  "Rock, Paper, Wobbuffet": {
+   "loss": 20.115041986793038,
+   "turns": 7.0,
+   "win": 1.0
+  },
+  "Sandpit Worms": {
+   "loss": 16.407347520944477,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Scrolls of Biting": {
+   "loss": 4.0477346049688006,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Seal Pups": {
+   "loss": 7.229048576390938,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Seapunks": {
+   "loss": 12.073137619777972,
+   "turns": 3.0,
+   "win": 0.975
+  },
+  "Secret Santa": {
+   "loss": 11.684880384295177,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Sewer Clam": {
+   "loss": 15.217385893658994,
+   "turns": 5.0,
+   "win": 1.0
+  },
+  "Skulking Colony": {
+   "loss": 39.66466087141409,
+   "turns": 6.0,
+   "win": 0.9
+  },
+  "Slimed Berserker": {
+   "loss": 53.12712423625652,
+   "turns": 7.0,
+   "win": 0.825
+  },
+  "Slithering Strangler": {
+   "loss": 31.276482663778708,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Snapping Berries": {
+   "loss": 2.634659460512373,
+   "turns": 2.0,
+   "win": 1.0
+  },
+  "Snow Hares": {
+   "loss": 5.192500836820401,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Soul Nexus": {
+   "loss": 37.94995792258153,
+   "turns": 6.0,
+   "win": 0.975
+  },
+  "Spiny Toad": {
+   "loss": 63.04047155017975,
+   "turns": 9.0,
+   "win": 0.4
+  },
+  "Spire Growth": {
+   "loss": 3.780327462506313,
+   "turns": 5.0,
+   "win": 0.85
+  },
+  "Terapagos": {
+   "loss": 19.600775840688705,
+   "turns": 10.0,
+   "win": 0.975
+  },
+  "Terror Eel": {
+   "loss": 35.552905823813965,
+   "turns": 5.0,
+   "win": 0.95
+  },
+  "The Costume": {
+   "loss": 11.39861450412845,
+   "turns": 4.5,
+   "win": 1.0
+  },
+  "The Insatiable": {
+   "loss": 28.088164037081942,
+   "turns": 8.0,
+   "win": 0.925
+  },
+  "The Lost and the Forgotten": {
+   "loss": 26.897140047701782,
+   "turns": 6.0,
+   "win": 0.975
+  },
+  "The Maw": {
+   "loss": 20.54698400439524,
+   "turns": 6.5,
+   "win": 0.975
+  },
+  "The Sloth": {
+   "loss": 20.706851864246996,
+   "turns": 7.0,
+   "win": 1.0
+  },
+  "Time Eater": {
+   "loss": 16.22371597031689,
+   "turns": 7.0,
+   "win": 1.0
+  },
+  "Toadpoles": {
+   "loss": 4.853114325957368,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Totem Marowak": {
+   "loss": 51.308347662958866,
+   "turns": 6.0,
+   "win": 0.9
+  },
+  "Totem Wishiwashi": {
+   "loss": 31.5912951810978,
+   "turns": 9.0,
+   "win": 1.0
+  },
+  "Transient": {
+   "loss": 24.915889186572898,
+   "turns": 7.0,
+   "win": 0.675
+  },
+  "Tunneler": {
+   "loss": 16.83398848992759,
+   "turns": 3.0,
+   "win": 1.0
+  },
+  "Turret Operator": {
+   "loss": 12.533660947300183,
+   "turns": 5.0,
+   "win": 0.975
+  },
+  "Two-Tailed Rats": {
+   "loss": 20.323017189534273,
+   "turns": 4.0,
+   "win": 1.0
+  },
+  "Ultra Necrozma": {
+   "loss": 27.592478162370114,
+   "turns": 9.5,
+   "win": 0.975
+  },
+  "Venusaur & Blastoise": {
+   "loss": 41.87262435426334,
+   "turns": 7.0,
+   "win": 1.0
+  },
+  "Vine Shambler": {
+   "loss": 29.990357761147262,
+   "turns": 4.5,
+   "win": 0.925
+  },
+  "Writhing Mass": {
+   "loss": 15.425204539634723,
+   "turns": 4.0,
+   "win": 1.0
+  }
+ }
+}

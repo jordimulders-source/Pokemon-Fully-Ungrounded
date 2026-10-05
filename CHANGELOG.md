@@ -16653,3 +16653,7 @@ Jordi's eerste testrun:
 - De cry-scratch nu vijf keer per loop: een stotterende "Ma-Ma-Ma-Ma-" aan het eind van de eerste A (±16 s), de
   bekende "Ma- Ma- MAGIKARP!" na de heldenfanfare (35 s), "Ma-?" en "MA-?!" als antwoord in het spartel-C-deel
   (±43 s), en de hele cry achterstevoren onder de slotfanfare (±53 s). Steeds 4-6 dB onder de lead.
+- (v0.9.72, Wailord) Na Jordi's voorbeeld (het HGSS-sprite opgeblazen tot ware grootte): nu met hele pixels 4x
+  vergroot (`giant_wailord_draw.py`), dikke blokrand zoals in het voorbeeld ("houd het maar gewoon dik, is humor"),
+  onderkant onder water met een schuimlijn. Een dunnere rand kan met `LINE = 1`.
+

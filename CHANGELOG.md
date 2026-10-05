@@ -17011,3 +17011,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Colosseum-koppeling** (multiboot-image voor de GameCube) eruit: 160 KB. Het copyrightscherm start de handshake niet meer; getest: koude start tot het titelscherm.
 - **SickBlik-intro** ingepakt (LZ77 per sleutelbeeld): 128 → 58 KB, pixel-identiek getest.
 - Vrij: 327 KB → **1,74 MB**.
+
+### [v0.9.104] - Neo Plasma v12f: de melodie valt niet meer weg bij de overgangen
+- De melodie wisselt in de bron tussen de elektrische gitaar en de sawtooth-lead. In v12e stond de lead vanaf 0:14 overal zachter, ook waar hij de melodie overneemt (o.a. ±0:52–0:55 en ±1:03–1:23). Nu staat de lead alleen zachter in de maten waarin de gitaar speelt (≥ 4 aanslagen per maat), elders weer op 127.

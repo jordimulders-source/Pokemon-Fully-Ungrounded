@@ -134,6 +134,7 @@ diepe staccato-bas, zachte steel-drum-arpeggio's, standaard GBA-drumkit, melodie
                                    hihats op 16en op het PSG-ruiskanaal.
 
 Gebruik: python3 tools/grounded/neo_plasma_theme.py (v12: alleen stock-samples; de v11-samplegenerator staat in de geschiedenis)"""
+import collections
 import os, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -972,7 +973,15 @@ def build():
     # v12: lead op de trompet; < C3 op de synth bass (koper niet onder C3)
     lead_prog = lambda n, s_: FAT_LO if n < 48 else LEAD
     arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
-    lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
+    # v12f (Jordi: 'de melodie valt daarna meermaals kort weg'): de melodie wisselt in de bron tussen de gitaar (brass) en
+    # de sawtooth-lead; de lead alleen terug in de maten waar de gitaar hem speelt (>= 4 aanslagen per maat), elders 127
+    gtr = collections.Counter(s_ // BAR for s_, e_, n, v in p['brass'] + p['brass_lo'])
+    lead_vol = [(0, 127)]
+    for b_ in range(LOOP0 // BAR, END // BAR):
+        v_ = 84 if gtr[b_] >= 4 else 127
+        if v_ != lead_vol[-1][1]:
+            lead_vol.append((b_ * BAR, v_))
+    lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in lead_vol]
     arp_notes = sorted(p['farp'] + p['arp'])
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [

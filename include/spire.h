@@ -20,6 +20,13 @@
 #define SPIRE_BLOCK_PERCENT     15
 #define SPIRE_BLOCK_SPLIT       60
 
+// Openingsbescherming (Jordi, 5 okt: 'vijanden horen je niet te one-shotten in beurt 1, 2 of 3 zonder counter'):
+// in de eerste SPIRE_OPENING_TURNS beurten verliest een Pokémon van de speler per beurt hooguit SPIRE_OPENING_CAP%
+// van zijn max HP door aanvallen van vijanden (alle klappen van die beurt samen, na het blok). De intenties tonen
+// de begrensde schade. Rekenwerk: tools/grounded/spire/matchups.py (zelfde regel).
+#define SPIRE_OPENING_TURNS     3
+#define SPIRE_OPENING_CAP       60
+
 #define SPIRE_SAVE_MAGIC        0x5A
 #define SPIRE_ACTS              3
 #define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
@@ -210,11 +217,13 @@ void Spire_OnEnemyPartyCreated(void);
 void Spire_ClearBlocks(void);
 u32 Spire_BlockAmount(u32 battler);
 u32 Spire_BlockPercent(u32 amount, u32 target);
+u32 Spire_OpeningCapLeft(u32 battlerAtk, u32 battlerDef);
 void Spire_AbsorbDamage(u32 battlerDef);
 void HandleAction_SpireDefend(void);
 bool32 Spire_TryPrintBlockAbsorbed(void);
 u8 *Spire_GetIntentText(u8 *dst, u32 battler);
 void Spire_ScaleMonHp(struct Pokemon *mon, u32 percent);
+void Spire_RescaleAfterRecalc(u32 battler, struct Pokemon *mon, u32 hpBefore, u32 oldMaxHp);
 void Spire_CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 iv, u32 ev, const u16 *moves);
 void Spire_ApplyPattern(u32 battler);
 void Spire_EndTurn(void);

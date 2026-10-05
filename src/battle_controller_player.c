@@ -489,6 +489,28 @@ static void WildInfo_OpenSummary(u32 battler)
     }
 }
 
+// Knipperen als doel van DEFEND. Alleen starten als hij nog niet knippert en alleen stoppen als hij knippert:
+// SpriteCB_ShowAsMoveTarget onthoudt de huidige zichtbaarheid (data[4]) en HideAsMoveTarget zet die terug.
+// Opnieuw starten tijdens een onzichtbare knipperfase, of stoppen zonder te knipperen (data[4] van een
+// andere callback), liet de sprite onzichtbaar achter (Jordi: "de sprite valt soms weg").
+static EWRAM_DATA u8 sSpireDefendBlinkMask = 0;
+
+static void SpireSetDefendBlink(u32 battler, bool32 on)
+{
+    struct Sprite *sprite = &gSprites[gBattlerSpriteIds[battler]];
+
+    if (on && !(sSpireDefendBlinkMask & (1u << battler)))
+    {
+        sSpireDefendBlinkMask |= 1u << battler;
+        SpriteCB_ShowAsMoveTarget(sprite);
+    }
+    else if (!on && (sSpireDefendBlinkMask & (1u << battler)))
+    {
+        sSpireDefendBlinkMask &= ~(1u << battler);
+        SpriteCB_HideAsMoveTarget(sprite);
+    }
+}
+
 // Project Grounded: The Spire - DEFEND op jezelf (0), je partner (1) of beide (2), met de blokwaarde erbij.
 static void SpireShowDefendTarget(u32 battler)
 {
@@ -498,8 +520,8 @@ static void SpireShowDefendTarget(u32 battler)
     u32 amount = Spire_BlockAmount(battler);
     u32 choice = gMultiUsePlayerCursor;
 
-    gSprites[gBattlerSpriteIds[battler]].callback = (choice != 1) ? SpriteCB_ShowAsMoveTarget : SpriteCB_HideAsMoveTarget;
-    gSprites[gBattlerSpriteIds[partner]].callback = (choice != 0) ? SpriteCB_ShowAsMoveTarget : SpriteCB_HideAsMoveTarget;
+    SpireSetDefendBlink(battler, choice != 1);
+    SpireSetDefendBlink(partner, choice != 0);
     if (choice == 2)
     {
         u32 left = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT), right = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
@@ -534,16 +556,16 @@ static void HandleInputSpireDefendTarget(u32 battler)
         else if (target == 1)
             target = partner;
         PlaySE(SE_RG_BALL_CLICK);
-        gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_HideAsMoveTarget;
-        gSprites[gBattlerSpriteIds[partner]].callback = SpriteCB_HideAsMoveTarget;
+        SpireSetDefendBlink(battler, FALSE);
+        SpireSetDefendBlink(partner, FALSE);
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SPIRE_DEFEND, target);
         BtlController_Complete(battler);
     }
     else if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_RG_BALL_CLICK);
-        gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_HideAsMoveTarget;
-        gSprites[gBattlerSpriteIds[partner]].callback = SpriteCB_HideAsMoveTarget;
+        SpireSetDefendBlink(battler, FALSE);
+        SpireSetDefendBlink(partner, FALSE);
         PlayerHandleChooseAction(battler);
     }
     else if (JOY_NEW(DPAD_LEFT | DPAD_UP))

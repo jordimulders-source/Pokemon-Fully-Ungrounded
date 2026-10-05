@@ -8,6 +8,7 @@
 #include "stadium.h"
 #include "battle_gfx_sfx_util.h"
 #include "battle_interface.h"
+#include "spire.h"
 #include "battle_message.h"
 #include "battle_setup.h"
 #include "battle_tv.h"
@@ -2109,11 +2110,25 @@ static void Controller_HandleTrainerSlideBack(u32 battler)
     }
 }
 
+static EWRAM_DATA u8 sSpireShownPercent[MAX_BATTLERS_COUNT] = {0};
+
 void Controller_WaitForHealthBar(u32 battler)
 {
     s16 hpValue = MoveBattleBar(battler, gHealthboxSpriteIds[battler], HEALTH_BAR, 0);
 
     SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
+    if (gSpireBattle) // Project Grounded: The Spire, HP-percentage loopt mee met de balk
+    {
+        // aan het eind: de eindwaarde van de balk (gBattleMons.hp volgt pas bij datahpupdate, na de balk)
+        struct BattleBarInfo *bar = &gBattleSpritesDataPtr->battleBars[battler];
+        s32 maxHp = bar->maxValue;
+        s32 hp = (hpValue != -1) ? hpValue : min(maxHp, max(0, bar->oldValue - bar->receivedValue));
+        u8 pct = maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0;
+
+        if (hpValue == -1 || pct != sSpireShownPercent[battler])
+            Spire_UpdateHealthboxPercent(gHealthboxSpriteIds[battler], hp, maxHp);
+        sSpireShownPercent[battler] = pct;
+    }
     if (hpValue != -1)
     {
         UpdateHpTextInHealthbox(gHealthboxSpriteIds[battler], HP_CURRENT, hpValue, gBattleMons[battler].maxHP);

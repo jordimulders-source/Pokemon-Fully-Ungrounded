@@ -29,6 +29,8 @@
 
 STATIC_ASSERT(sizeof(struct SpireSave) <= SPIRE_SAVE_SIZE, SpireSaveFitsInSaveBlock2);
 
+EWRAM_DATA static u8 sDebugBoss = 0;   // debug: baas-index + 1 (Spire_DebugOpen, VAR_0x8008)
+
 EWRAM_DATA struct SpireResult gSpireResult = {0};
 EWRAM_DATA u8 gSpireRelicSource = 0;   // bron van het volgende relic-kaartenscherm (enum SpireRelicSource)
 EWRAM_DATA static struct Pokemon sSavedParty[PARTY_SIZE] = {0};
@@ -739,6 +741,12 @@ void Spire_DebugOpen(void)
         Spire_SetRental(0, Spire_RandomRental(1));
         Spire_SetRental(1, Spire_RandomRental(2));
     }
+    // VAR_0x8006/0x8007: vaste rentals (soort), VAR_0x8008: baas-index + 1 (testen van één baas)
+    if (gSpecialVar_0x8006 != SPECIES_NONE)
+        Spire_SetRental(0, gSpecialVar_0x8006);
+    if (gSpecialVar_0x8007 != SPECIES_NONE)
+        Spire_SetRental(1, gSpecialVar_0x8007);
+    sDebugBoss = gSpecialVar_0x8008;
     switch (gSpecialVar_0x8004)
     {
     case 0:  Spire_OpenRest(Spire_ReturnToField); break;
@@ -1033,6 +1041,9 @@ static void NextAct(void)
 static const struct SpireEncounter *GetBoss(void)
 {
     u32 i, n = 0, pick;
+
+    if (sDebugBoss != 0 && sDebugBoss <= ARRAY_COUNT(sSpireBosses))
+        return &sSpireBosses[sDebugBoss - 1];
 
     for (i = 0; i < ARRAY_COUNT(sSpireBosses); i++)
         if (sSpireBosses[i].biome == RUN.act)

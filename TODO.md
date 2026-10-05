@@ -6,6 +6,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Neo Plasma**: v4 (v0.9.70) naar Jordi's mp3; wacht op zijn oordeel (open: 'gitaar' = synth brass of strings? bas octaaf lager?).
 - **Contests reworken** (Jordi, 5 okt): de Pokémon Contests helemaal herzien en leuker maken. Eerst een voorstel (wat is er saai, welke mechanics, QoL, beloningen), dan bouwen.
+- **Spire (Jordi test eerst verder; daarna):** gewone gevechten per deel van de act (begin/midden/eind, zoals Slay the Spire), elites één pool per act. Gevechten meer als puzzel: elk gevecht iets unieks dat een veelzijdig team beloont, niet alleen je sterkste move (met de Pokémon-uitzondering dat je soms precies de perfecte counter hebt). Testchecklist: `SPIRE_TESTCHECKLIST.txt`.
 - **Trick House vervangen?** (Jordi overweegt het weg te halen voor iets nieuws). Kost maar ±40-50 KB (11 kaarten, puzzels, teksten, tileset) van de 6,5 MB vrij: ruimte is geen reden, gameplay wel. Wacht op Jordi's idee.
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 

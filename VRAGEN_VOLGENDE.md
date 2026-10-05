@@ -53,3 +53,18 @@ De jungle is nu getekend op een kopie van Fortree. Echt tropisch wordt het met e
 ## Nog open van eerder
 - **Gen 4+-trainersprites (Greenphx) en Johto/Unova voor het Stadium:** je nieuwe sheets (HG/SS-trainers, BW/HGSS/Pt-overworlds) staan in `graphics/`. Welke personages wil je er als eerste uit?
 - **V** (Expert M-foto): eigen sprite gewenst?
+
+## Muziek (5 okt, nacht)
+**M1. Neo Plasma (gepauzeerd).** Jouw bron-MIDI ("Battle! Neo Team Plasma - Pokemon Black_White 2.mid", Byabbington,
+onlinesequencer) bevat alleen noten, met overal dezelfde aanslag. De klanken van onlinesequencer (8-Bit Sawtooth, 2013/909/
+Electric Drum Kit, Steel Drums) en het volume, de galm en de delay per instrument zitten níet in het bestand. In een
+gewone MIDI-speler klinkt hij daarom eentoniger, zoals `neo_plasma_bron_gm.mp3`. Het is niet onmogelijk, maar ik heb één
+van deze nodig:
+- a. de **link naar de sequence op onlinesequencer.net**: daar kan ik de instrumentinstellingen uitlezen;
+- b. een **mp3/YouTube-link** van hoe het moet klinken (het origineel uit BW2 of de onlinesequencer-versie);
+- c. of: ik maak hem vanaf nul na naar het échte BW2-nummer (niet naar deze MIDI).
+
+**M2. PSG-'puups' in andere nummers.** De Ghetsis-puup was een drumnoot die in de drumkit een PSG-toon is in plaats van
+een bekken. Dezelfde soort noten zit ook in: Zinnia, Colress, Giratina, Birch (Macarena), Sunset Wilds, Yoshi's Castle
+en Broken Pier. Je keurde die al goed, dus ik heb niets veranderd. Voorstel: ik vervang ze net als bij Ghetsis door
+echte samples en stuur van elk een voor/na-fragment. Ja/nee?

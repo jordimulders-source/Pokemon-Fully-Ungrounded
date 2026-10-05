@@ -16709,3 +16709,17 @@ Jordi's eerste testrun:
   - Heldere PSG-arpeggio's in 16en, strakke four-on-the-floor.
   - De rest van het nummer is noot voor noot gelijk aan v3.
 - **Techniek:** gedeelde samplehulpjes staan nu in `tools/grounded/sample_utils.py`; Mitch importeerde ze uit Heatran's script en brak toen v4 dat veranderde.
+
+### [v0.9.77] - SickBlik v2 (Steely Dan) en Rayquaza v4 (kebyar-intro, breaks, gong ageng)
+- **SickBlik v2:** de slap bas van v1 is noot voor noot gebleven; er zijn drie nieuwe delen bij.
+  - Twee smooth refreinen in Steely Dan-stijl:
+    - Akkoorden: Cmaj9, B7#9b13, Em9, A13, Am9, D13, het 'Mu Major'-akkoord, Fmaj7#11 en B7alt.
+    - Leads: legato gedempte trompet, Rhodes-comping, jazzgitaar in octaven.
+    - Blazers: zachte pads en stoten.
+  - Een virtuoos slap-deel: double thumbing, pop-octaven in 32en, flageoletten en tapping.
+  - De drumkit heeft nu eigen samples (`sb_*`) in plaats van die van Heatran.
+- **Rayquaza v4:** de trompet/melodie-balans van v3 is ongewijzigd (per spoor gecontroleerd en in de game gemeten).
+  - Nieuwe felle kebyar-intro: op de eerste tik slaat alles tegelijk in, gevolgd door een byar, een kendang-intermezzo en de gong ageng. Er is geen fade-in meer.
+  - Staccato-angsels: alles valt 1,5 tel stil en slaat dan weer samen in.
+  - Kendang-intermezzo met versnelling in maat 35.
+  - Elke frase van 4 maten eindigt met een zware gong ageng, met de laagste gongbas en pauken.

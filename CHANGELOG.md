@@ -16597,3 +16597,13 @@ Alles met eigen samples waar instrumenten ontbraken (FluidR3/synthese), lint OK,
   komt uit het dagnummer, dus de hele dag dezelfde (`Grounded_GiantWailordSpot`; testen met `VAR_GIANT_WAILORD_DEBUG`).
 - Hij blokkeert de waterlijn over 11x2 tegels en je kunt hem vanaf elke kant aanspreken: hij ligt te chillen. Grote
   objecten verschijnen niet meer pas als hun ankertegel in beeld komt (extra marge).
+
+### [v.0.9.68] - The Spire: schatkist, gewogen routes, meer elites
+Jordi's eerste testrun:
+- **Schatkist** (nieuw kamertype, icoon: Gimmighoul in zijn kist): de middelste verdieping van elke act is altijd een
+  rij schatkisten met een gratis relic (zoals Slay the Spire), dus je kunt hem niet mislopen.
+- **Gewogen routes**: vlak voor de baas staat altijd Snorlax (rust). Geen rust op de verdieping daarvoor, en nergens
+  twee rustplekken, twee elites of twee winkels direct na elkaar op één route.
+- **Meer elites**: altijd minstens één elite vóór en één na de schatkist (elite = gevecht of event dat wordt omgezet).
+  Over 10.000 kaarten: bijna altijd 2+ elites, en in 65% kun je er op één route twee halen. Getest met een
+  Python-kopie van de generator (`scratchpad`) en in de emulator.

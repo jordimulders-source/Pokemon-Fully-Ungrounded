@@ -98,6 +98,8 @@ static const u32 sNodeShopGfx[] = INCBIN_U32("graphics/grounded/spire/node_shop.
 static const u16 sNodeShopPal[] = INCBIN_U16("graphics/grounded/spire/node_shop.gbapal");
 static const u32 sNodeEventGfx[] = INCBIN_U32("graphics/grounded/spire/node_event.4bpp");
 static const u16 sNodeEventPal[] = INCBIN_U16("graphics/grounded/spire/node_event.gbapal");
+static const u32 sNodeTreasureGfx[] = INCBIN_U32("graphics/grounded/spire/node_treasure.4bpp");
+static const u16 sNodeTreasurePal[] = INCBIN_U16("graphics/grounded/spire/node_treasure.gbapal");
 static const u32 sCursorGfx[] = INCBIN_U32("graphics/grounded/spire/cursor.4bpp");
 static const u16 sCursorPal[] = INCBIN_U16("graphics/grounded/spire/cursor.gbapal");
 static const u32 sBrendanHeadGfx[] = INCBIN_U32("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -110,12 +112,12 @@ static const u16 sDotsPal[] = INCBIN_U16("graphics/pokenav/bg_dots.gbapal");
 static const u32 *const sNodeGfx[] =
 {
     [SPIRE_ROOM_FIGHT] = sNodeFightGfx, [SPIRE_ROOM_ELITE] = sNodeEliteGfx, [SPIRE_ROOM_REST] = sNodeRestGfx,
-    [SPIRE_ROOM_SHOP] = sNodeShopGfx, [SPIRE_ROOM_EVENT] = sNodeEventGfx,
+    [SPIRE_ROOM_SHOP] = sNodeShopGfx, [SPIRE_ROOM_EVENT] = sNodeEventGfx, [SPIRE_ROOM_TREASURE] = sNodeTreasureGfx,
 };
 static const u16 *const sNodePal[] =
 {
     [SPIRE_ROOM_FIGHT] = sNodeFightPal, [SPIRE_ROOM_ELITE] = sNodeElitePal, [SPIRE_ROOM_REST] = sNodeRestPal,
-    [SPIRE_ROOM_SHOP] = sNodeShopPal, [SPIRE_ROOM_EVENT] = sNodeEventPal,
+    [SPIRE_ROOM_SHOP] = sNodeShopPal, [SPIRE_ROOM_EVENT] = sNodeEventPal, [SPIRE_ROOM_TREASURE] = sNodeTreasurePal,
 };
 
 // routes: 1 geel, 2 bruine rand, 3 rood (gelopen), 4 donkerrode rand, 5 plateau, 6 plateaurand, 7 wit
@@ -285,6 +287,8 @@ static const u8 sText_Spend[] = _("Spend your ¥");
 static const u8 sText_WhoKnows[] = _("Who knows?");
 static const u8 sText_NextAct[] = _("+ next act");
 static const u8 sText_Empty[] = _("");
+static const u8 sText_Treasure[] = _("Treasure");
+static const u8 sText_FreeRelic[] = _("A free relic");
 
 static const u8 *const sRoomText[][3] =
 {
@@ -295,6 +299,7 @@ static const u8 *const sRoomText[][3] =
     [SPIRE_ROOM_SHOP]  = {sText_Mart, sText_Spend, sText_Empty},
     [SPIRE_ROOM_EVENT] = {sText_Event, sText_WhoKnows, sText_Empty},
     [SPIRE_ROOM_BOSS]  = {sText_Boss, sText_WinRelic, sText_NextAct},
+    [SPIRE_ROOM_TREASURE] = {sText_Treasure, sText_FreeRelic, sText_Empty},
 };
 
 static u32 ChoiceType(void)

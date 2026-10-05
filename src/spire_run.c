@@ -473,6 +473,73 @@ static u32 Lcg(u32 *state)
     return (*state >> 16) & 0x7FFF;
 }
 
+// Gewogen kaart (Jordi, 5 okt): (1) geen elite, rust of winkel direct na dezelfde soort op een pad (anders twee
+// rustplekken of twee elites op rij); (2) minstens één elite vóór en één na de schatkist.
+static bool32 Spire_ParentHasType(const struct SpireActMap *map, u32 f, u32 j, u32 type)
+{
+    u32 i;
+
+    if (f == 0)
+        return FALSE;
+    for (i = 0; i < map->count[f - 1]; i++)
+        if ((map->nodes[f - 1][i].links & (1u << j)) && map->nodes[f - 1][i].type == type)
+            return TRUE;
+    return FALSE;
+}
+
+static bool32 Spire_ChildHasType(const struct SpireActMap *map, u32 f, u32 i, u32 type)
+{
+    u32 j;
+
+    if (f + 1 >= SPIRE_FLOORS)
+        return FALSE;
+    for (j = 0; j < map->count[f + 1]; j++)
+        if ((map->nodes[f][i].links & (1u << j)) && map->nodes[f + 1][j].type == type)
+            return TRUE;
+    return FALSE;
+}
+
+static void Spire_EnsureElite(struct SpireActMap *map, u32 *st, u32 lo, u32 hi)
+{
+    u32 f, i, tries;
+
+    for (f = lo; f <= hi; f++)
+        for (i = 0; i < map->count[f]; i++)
+            if (map->nodes[f][i].type == SPIRE_ROOM_ELITE)
+                return;
+    for (tries = 0; tries < 40; tries++)
+    {
+        f = lo + Lcg(st) % (hi - lo + 1);
+        i = Lcg(st) % map->count[f];
+        if ((map->nodes[f][i].type == SPIRE_ROOM_FIGHT || map->nodes[f][i].type == SPIRE_ROOM_EVENT)
+         && !Spire_ParentHasType(map, f, i, SPIRE_ROOM_ELITE) && !Spire_ChildHasType(map, f, i, SPIRE_ROOM_ELITE))
+        {
+            map->nodes[f][i].type = SPIRE_ROOM_ELITE;
+            return;
+        }
+    }
+}
+
+static void Spire_WeighMap(struct SpireActMap *map, u32 *st)
+{
+    u32 f, i;
+
+    for (f = 1; f < SPIRE_FLOORS - 1; f++)
+    {
+        for (i = 0; i < map->count[f]; i++)
+        {
+            u8 *type = &map->nodes[f][i].type;
+
+            if ((*type == SPIRE_ROOM_ELITE || *type == SPIRE_ROOM_REST || *type == SPIRE_ROOM_SHOP)
+             && (Spire_ParentHasType(map, f, i, *type) || Spire_ChildHasType(map, f, i, *type)))
+                *type = SPIRE_ROOM_FIGHT;
+        }
+    }
+    // minstens één elite vóór de schatkist (verdieping 2) en één erna (4..vóór de rust), zodat één route er twee kan halen
+    Spire_EnsureElite(map, st, 2, SPIRE_TREASURE_FLOOR - 1);
+    Spire_EnsureElite(map, st, SPIRE_TREASURE_FLOOR + 1, SPIRE_FLOORS - 2);
+}
+
 void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
 {
     u32 f, i, j, st = seed;
@@ -492,9 +559,12 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             if (f == 0)
                 node->type = SPIRE_ROOM_FIGHT;
             else if (f == SPIRE_FLOORS - 1)
-                node->type = SPIRE_ROOM_REST;
+                node->type = SPIRE_ROOM_REST;       // altijd Snorlax vlak voor de baas
+            else if (f == SPIRE_TREASURE_FLOOR)
+                node->type = SPIRE_ROOM_TREASURE;   // altijd een schatkist in het midden (Slay the Spire)
             // kansen (runsim.py, vergelijking met Slay): gevecht 45, event 25, elite 15, winkel 7, rust 8%.
             // Te vroeg voor een elite = gevecht, te vroeg voor een winkel = event (eerder: winkel 25% op verdieping 2).
+            // Geen rust op de verdieping vóór de Snorlax (twee rustplekken op rij).
             else if (r < 45)
                 node->type = SPIRE_ROOM_FIGHT;
             else if (r < 70)
@@ -504,7 +574,7 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             else if (r < 92)
                 node->type = (f >= 2) ? SPIRE_ROOM_SHOP : SPIRE_ROOM_EVENT;
             else
-                node->type = (f >= 3) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
+                node->type = (f >= 3 && f < SPIRE_FLOORS - 2) ? SPIRE_ROOM_REST : SPIRE_ROOM_FIGHT;
         }
     }
     // verbindingen zonder kruisingen: kamer i gaat naar j0(i) (oplopend met i) en soms ook naar j0(i)+1,
@@ -538,6 +608,7 @@ void Spire_GenerateMap(struct SpireActMap *map, u32 seed)
             }
         }
     }
+    Spire_WeighMap(map, &st);
 }
 
 static u32 PathNode(u32 floor)
@@ -845,6 +916,10 @@ void Spire_EnterRoom(u32 floor, u32 node)
         break;
     case SPIRE_ROOM_SHOP:
         Spire_OpenShop(Spire_RoomFinished);
+        break;
+    case SPIRE_ROOM_TREASURE:   // schatkist: één relic, zoals een elite (geen gevecht)
+        gSpireRelicSource = SPIRE_RELIC_FROM_ELITE;
+        Spire_OpenCards(SPIRE_CARDS_RELICS, Spire_RoomFinished);
         break;
     default:
         Spire_OpenEvent(Spire_RoomFinished);

@@ -24,6 +24,7 @@
 #define SPIRE_ACTS              3
 #define SPIRE_FLOORS            7   // verdiepingen per act; daarboven de baas
 #define SPIRE_MAX_NODES         4   // kamers per verdieping
+#define SPIRE_TREASURE_FLOOR    3   // middelste verdieping: altijd een schatkist (Jordi, 5 okt)
 // v0.8.107: getallen uit tools/grounded/spire/runsim.py (vergelijking met Slay the Spire, zie SPIRE_BALANS.md)
 #define SPIRE_HEAL_AFTER        8   // procent HP na een gewonnen gevecht (Slay: Burning Blood 6 van 80 HP = 7,5%)
 #define SPIRE_REST_HEAL         30  // procent HP op een rustplek (Chansey); Slay 30%. Vanaf dit percentage gaat status weg
@@ -39,6 +40,7 @@ enum SpireRoom
     SPIRE_ROOM_SHOP,
     SPIRE_ROOM_EVENT,
     SPIRE_ROOM_BOSS,
+    SPIRE_ROOM_TREASURE,    // schatkist (Gimmighoul): gratis relic, altijd de middelste verdieping (Jordi, 5 okt)
 };
 
 // Relics (50, tools/grounded/spire/relics.py): enum SpireRelic en enum SpireRelicTier

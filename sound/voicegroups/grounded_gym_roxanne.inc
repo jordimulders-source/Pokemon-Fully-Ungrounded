@@ -1,5 +1,5 @@
 @ Project Grounded: voicegroup_vs_gym_leader + instrumenten voor de remix van Roxanne.
-@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_roxanne.inc), daarna overdrive-lead (C4/C5/C6), powerchord (A2), cleane gitaar.
+@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_roxanne.inc: Emerald-kick/-snare/-hihat/-crash/-toms), daarna Emerald-distortiongitaar (dual lead), powerchord (A2), cleane gitaar, Emerald-slapbas, PSG-ruis (gated snare).
 voice_group grounded_gym_roxanne
 	voice_keysplit_all voicegroup_rs_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
@@ -101,9 +101,9 @@ voice_group grounded_gym_roxanne
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 0, 255, 180  @ 97
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_84, 255, 0, 255, 180  @ 98
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 0, 255, 120  @ 99
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_lead_60, 255, 0, 255, 175  @ 100
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_lead_72, 255, 0, 255, 175  @ 101
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_lead_84, 255, 0, 255, 175  @ 102
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_power, 255, 0, 255, 180  @ 103
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_60, 255, 0, 255, 160  @ 104
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_72, 255, 0, 255, 160  @ 105
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 165  @ 100
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_power, 255, 0, 255, 180  @ 101
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_60, 255, 0, 255, 160  @ 102
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_72, 255, 0, 255, 160  @ 103
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 104
+	voice_noise 60, 0, 0, 0, 0, 15, 0  @ 105

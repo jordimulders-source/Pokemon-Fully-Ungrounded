@@ -7,8 +7,11 @@ sample_utils.py. Melodische instrumenten met een groot bereik krijgen een sample
 noot het programma met de dichtstbijzijnde grondtoon), zodat niets ver getransponeerd wordt.
 Akkoorden (powerchords, rasgueado, supersaw-stoten) zijn één sample = één kanaal per aanslag, zonder terts (de
 harmonie van het origineel is grondtoon + kwint veilig: C, Bb, Db, Eb).
+Ronde 2 (Jordi: 'echte Emerald-/GBA-samples'): byte-kopieën van GBA-samples met een andere label-toets (COPIES)
+en gym_bra_epower, een powerchord die alleen uit de Emerald-distortiongitaar (sd90_classical_distortion_guitar_low)
+bestaat, offline een octaaf (en een kwint) omlaag getransponeerd = drop-tuning.
 Gebruik: python3 tools/grounded/gym_samples.py"""
-import os, subprocess, sys, tempfile, wave
+import os, struct, subprocess, sys, tempfile, wave
 import numpy as np
 import mido
 from scipy.signal import butter, sosfilt
@@ -182,6 +185,46 @@ def scratch():
     return fade_out(norm(hp(a, 200)))
 
 
+# ---- GBA-samples (ronde 2) -----------------------------------------------------------------------------------------
+def gba_load(name):
+    """GBA-sample uit sound/direct_sound_samples/<name>.wav: (signaal -1..1, samplerate, loop (begin, eind) of None)."""
+    path = 'sound/direct_sound_samples/%s.wav' % name
+    w = wave.open(path)
+    assert w.getsampwidth() == 1
+    a = (np.frombuffer(w.readframes(w.getnframes()), np.uint8).astype(float) - 128) / 127
+    d = open(path, 'rb').read()
+    i = d.index(b'smpl')
+    sm = struct.unpack('<9I', d[i + 8:i + 44])
+    loop = None
+    if sm[7]:
+        lp_ = struct.unpack('<6I', d[i + 44:i + 68])
+        loop = (lp_[2], lp_[3] + 1)
+    return a, w.getframerate(), loop, sm[3]
+
+
+# byte-kopie: naam -> (GBA-sample, label-toets). Het label zegt op welke MIDI-toets de sample zijn opgenomen
+# toonhoogte speelt: de Gen 3-nylongitaar is een C3 die in de vanilla-voicegroups op toets 60 staat (klinkt een
+# octaaf lager dan geschreven); met label 48 klinkt elke MIDI-noot op zijn eigen hoogte.
+COPIES = {'gym_fla_gba_nylon': ('sc88pro_nylon_str_guitar', 48)}
+
+
+def emerald_power(dur=1.3):
+    """Drop-gestemde powerchord uit de Emerald-distortiongitaar (C3): dezelfde sample op halve snelheid (C2), x0,749
+    (G2) en origineel (C3), gemengd en op 13.379 Hz gelaten (geen FluidR3, geen eigen versterker)."""
+    a, rate, loop, key = gba_load('sd90_classical_distortion_guitar_low')
+    n = int(dur * rate)
+    body = list(a[:loop[1]])
+    while len(body) < 2 * n + 10:                 # loop uitrollen
+        body += list(a[loop[0]:loop[1]])
+    body = np.array(body)
+    out = np.zeros(n)
+    for ratio, gain in ((0.5, 1.0), (0.5 * 2 ** (7 / 12), 0.75), (1.0, 0.5)):
+        pos = np.arange(n) * ratio
+        out += gain * np.interp(pos, np.arange(len(body)), body)
+    out = hp(resample(out, rate, FS), 45)
+    return norm(np.tanh(norm(out) * 1.6))
+
+
 # ---- de lijst --------------------------------------------------------------------------------------------------------
 def build():
     """naam -> (signaal op 44,1 kHz, samplerate, label-toets, loop?)"""
@@ -262,6 +305,9 @@ def build():
     S['gym_fla_cajon_bass'] = (cajon_bass(), 16000, 60, False)
     S['gym_fla_cajon_slap'] = (cajon_slap(), 16000, 60, False)
     S['gym_fla_castanets'] = (drum(STANDARD, 85, 0.15), 16000, 60, False)
+
+    # ronde 2: Brawly drop-gestemd met de Emerald-distortiongitaar (C2 = toets 36)
+    S['gym_bra_epower'] = (emerald_power(), 13379, 36, True)
     return S
 
 
@@ -283,6 +329,13 @@ def main():
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
         print('%-22s %6d samples @ %5d Hz, toets %d, loop %s' % (name, len(a), rate, key, lpnt))
+    for name, (src, key) in COPIES.items():          # byte-kopieën met een ander label
+        a, rate, loop, _ = gba_load(src)
+        write_wav(OUT + name + '.wav', a, rate, key, loop)
+        label = 'DirectSoundWaveData_' + name
+        if label + '::' not in inc:
+            inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
+        print('%-22s kopie van %s, toets %d' % (name, src, key))
     open(DATA, 'w').write(inc)
     print('totaal %.0f KB' % (total / 1024))
 

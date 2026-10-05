@@ -1,0 +1,60 @@
+THE SPIRE - TESTCHECKLIST (Project Grounded, v0.9.82)
+=====================================================
+
+Tip: noteer bij elk punt act + verdieping + vijand, en maak een screenshot.
+Na de run: hoe lang duurde hij, en heb je gewonnen of verloren (waar)?
+
+1. START EN DRAFT
+[ ] Voelen de 2 startkeuzes als een echte keuze, of is er altijd een duidelijk "beste"?
+[ ] Snap je meteen wat je startkit doet?
+[ ] Kies je je team om de types en moves, of puur om de Pokemon zelf?
+
+2. DE KAART (ROUTE KIEZEN)
+[ ] Maak je echte afwegingen (elite vs. rust vs. winkel), of loop je steeds dezelfde soort route?
+[ ] Ligt de schatkist (verdieping 7) logisch? Komt Snorlax netjes voor de baas?
+[ ] Te veel of te weinig events / winkels / rustplekken?
+[ ] Is de kaart goed leesbaar (iconen, teksten, scrollen)?
+
+3. GEWONE GEVECHTEN
+[ ] Hoe vaak won je door gewoon je sterkste move te spammen? (Dat moet zeldzaam zijn.)
+[ ] Welk gevecht voelde als een leuke puzzel? En welk gevecht was saai of "hetzelfde"?
+[ ] Zijn de eerste verdiepingen van een act te makkelijk of al te zwaar?
+[ ] Gebruik je DEFEND echt, of is het nutteloos / juist verplicht?
+[ ] Kloppen de intenties (doel, schade, KO/KO?) met wat er daarna echt gebeurt?
+[ ] Werd je ergens in beurt 1-3 bijna weggevaagd zonder counter?
+[ ] Hoeveel HP raak je gemiddeld kwijt per gevecht? Voelt de heal na een gevecht genoeg?
+
+4. ELITES EN BAZEN
+[ ] Moest je je aanpak aanpassen per elite/baas, of werkte dezelfde tactiek overal?
+[ ] Was er een elite/baas zonder enige kans met jouw team? (= bug in de balans, melden!)
+[ ] Was er een elite/baas die veel te makkelijk was?
+[ ] Snap je het patroon of de gimmick van een baas na een paar beurten?
+[ ] Voelt een baas als het hoogtepunt van de act?
+
+5. BELONINGEN (MOVES, RELICS, EVOLUTIES)
+[ ] Krijg je genoeg keuze in moves? Kies je soms bewust NIETS?
+[ ] Welke relic was te sterk? Welke nutteloos?
+[ ] Maken upgrades en evoluties een merkbaar verschil?
+[ ] Wordt je team veelzijdiger naarmate de run vordert, of alleen sterker?
+
+6. WINKEL, RUST EN EVENTS
+[ ] Zijn de prijzen goed? Hou je geld over, of heb je altijd te weinig?
+[ ] Rustplek: kies je wel eens upgraden/evolueren boven healen?
+[ ] Events: grappig? Duidelijk wat een keuze kost? Ergens vastgelopen?
+
+7. TEMPO EN LENGTE
+[ ] Een gewonnen run duurt nu +-2 uur. Te lang, goed, of te kort?
+[ ] Waar ging het te traag (teksten, animaties, menu's, wachten)?
+[ ] Zijn er momenten waarop je op de automatische piloot speelde?
+
+8. TECHNISCH / UI
+[ ] Teksten die wegvallen of afgekapt zijn (welk scherm?)
+[ ] Sprites/iconen die buiten beeld vallen of verdwijnen
+[ ] Vastlopers, zwart scherm, rare geluiden
+[ ] Pauzeren via RUN en later verdergaan: werkt het? Klopt je eigen team daarna weer?
+[ ] Klopt de BP-beloning naar rato na winst of verlies?
+
+9. GEVOEL (in 1 zin per vraag)
+- Wanneer had je het meeste plezier?
+- Wanneer baalde je, en was dat terecht (eigen fout) of oneerlijk?
+- Wil je meteen nog een run doen? Waarom wel/niet?

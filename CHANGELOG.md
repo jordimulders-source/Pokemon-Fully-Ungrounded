@@ -16921,3 +16921,13 @@ Volgens Jordi's GBA-instructies per leider:
   - **Winona:** donkere dance pop (supersaw, reese, harde snare).
   - **Tate & Liza:** Goa op 138 bpm met K-B-B-B-bas en galop-arpeggio's. De melodie is modaal verduisterd.
 - **Batchcontrole:** alle 11 0 overlopen, piek ≤ 114/127.
+
+### [v0.9.89] - Dave: eigen gevechtstransitie (GOAL!)
+- **Dave krijgt een penalty-transitie, gezien vanuit de schutter**, op de riff van Freed From Desire:
+  - Het voetbalveld met tribune en goal gaat open als een tv-beeld en de bal wipt op de stip.
+  - Op de volgende riffnoot wordt hij getrapt (met effect).
+  - Op de laatste noot zit hij strak in de winkelhaak: tik tegen paal en lat, het net bolt, het beeld schudt.
+  - Dan komt GOAL! groot en schuddend in beeld, en op de klap van tel 5 gaat het naar het gevecht.
+- **Sync:** gemeten met `gMPlayInfo_BGM.clock`; de transitie begint 19 frames na de muziek.
+- **Waar:** alleen Dave, ook in het Battle Stadium.
+- **Bouwscript:** `tools/grounded/dave_transition.py`; de baan van de bal is vooraf berekend in 3D-perspectief.

@@ -9144,7 +9144,13 @@ static bool8 Film_Update(struct Task *task, const struct Film *film)
     const u8 *src;
 
     if (t >= film->numFrames)
+    {
+        // RT_LoadPalette heeft net paletset 0 teruggezet: het laatste beeld houdt zijn eigen paletten (anders flitsen
+        // er bij het uitfaden losse tiles in de oude kleuren door het witte eindbeeld)
+        pal = film->seq[(film->numFrames - 1) * 2 + 1] & 0xFF;
+        LoadPalette(&film->pals[pal * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
         return TRUE;
+    }
     e = film->seq[t * 2];
     map = e & 0xFFFF;
     load = e >> 16;
@@ -9396,9 +9402,11 @@ static const struct Film sFilm_Rayquaza = FILM(FilmRayquaza);
 
 // tijden: zie rayquaza_transition.py
 #define RAYQUAZA_STREAK 22
-#define RAYQUAZA_RING   104
-#define RAYQUAZA_BURST  124
-#define RAYQUAZA_FILL   166
+#define RAYQUAZA_RING   100
+#define RAYQUAZA_FLASH  116
+#define RAYQUAZA_PAN    142
+#define RAYQUAZA_S3     194
+#define RAYQUAZA_S4     244
 
 static bool8 RTRayquazaPillar_Update(struct Task *task)
 {
@@ -9408,24 +9416,18 @@ static bool8 RTRayquazaPillar_Update(struct Task *task)
         PlaySE(SE_M_GUST);
     if (t == RAYQUAZA_STREAK + 30)
         PlaySE(SE_M_GUST2);
-    if (t == RAYQUAZA_RING - 16)
+    if (t == RAYQUAZA_RING - 12)
         PlaySE(SE_M_TWISTER);
-    if (t == RAYQUAZA_BURST)
+    if (t == RAYQUAZA_FLASH - 4)
         PlaySE(SE_M_DRAGON_RAGE);
-    if (t == RAYQUAZA_FILL - 8)
+    // Rayquaza duikt door het gat in de wolken
+    if (t == RAYQUAZA_PAN + 12)
+        PlaySE(SE_M_FLY);
+    // de aanval: zoals in de cutscene om de 8 frames SE_INTRO_BLAST, dan schiet hij naar voren
+    if (t >= RAYQUAZA_S3 && t < RAYQUAZA_S3 + 24 && ((t - RAYQUAZA_S3) & 7) == 0)
+        PlaySE(SE_INTRO_BLAST);
+    if (t == RAYQUAZA_S3 + 24)
         PlaySE(SE_M_HYPER_BEAM);
-    // de pilaar beeft als Rayquaza eruit breekt
-    if (t >= RAYQUAZA_BURST && t < RAYQUAZA_FILL + 8)
-    {
-        s32 a = (t < RAYQUAZA_BURST + 16) ? 1 : 2;
-        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % (2 * a + 1)) - a) & 0x1FF);
-        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % (2 * a + 1)) - a) & 0x1FF);
-    }
-    else
-    {
-        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
-        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-    }
     return Film_Update(task, &sFilm_Rayquaza);
 }
 

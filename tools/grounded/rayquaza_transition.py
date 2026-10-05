@@ -2,9 +2,10 @@
 """Project Grounded: B_TRANSITION_RAYQUAZA_PILLAR (Rayquaza op de Sky Pillar, ook de shiny/Delta Episode).
 
 Je kijkt omhoog langs de Sky Pillar, door de wolken. Een groene streep cirkelt om de top, steeds sneller en langer, tot
-hij een gesloten, gloeiende ring is. Uit de ring breekt het silhouet van Rayquaza recht op de camera af: kop eerst,
-de lange hoornvinnen naar achteren, het lijf in een S achter hem aan tot in de ring, de gele markeringen (ogen, bek,
-vinnen, de ringen om het lijf) gloeien. De kop vult het beeld, groene flits, wit, gevecht.
+hij een gesloten, gloeiende ring is: groene flits. De camera kantelt weg van de toren, omhoog naar het wolkendek, en
+dan volgt de echte Emerald-cutscene (src/rayquaza_scene.c, graphics/rayquaza_scene/): een lichtbundel valt door het
+gat in de wolken en Rayquaza duikt erdoor naar beneden ('descends'), dan stormt hij tussen de snelheidsstrepen op de
+camera af ('charges'): trillen, terugdeinzen, naar voren schieten tot hij het beeld vult. Groen, wit, gevecht.
 
 Film (zie film.py): film_rayquaza*. Gebruik: python3 tools/grounded/rayquaza_transition.py [voorbeeldmap]
 """
@@ -19,10 +20,12 @@ from film import W, H
 # ------------------------------------------------------------------ tijdlijn
 T_IN = 8
 T_STREAK = 22      # de streep verschijnt
-T_RING = 104       # de streep is een gesloten ring
-T_BURST = 124      # Rayquaza breekt eruit
-T_FILL = 166       # de kop vult het beeld
-T_END = 180
+T_RING = 100       # de streep is een gesloten ring
+T_FLASH = 116      # groene flits; de camera kantelt omhoog
+T_PAN = 142        # het wolkendek (scene 3) staat in beeld
+T_S3 = 194         # Rayquaza is door de wolken gedoken: snede naar de aanval (scene 4)
+T_S4 = 244         # Rayquaza vult het beeld
+T_END = 252
 
 # ------------------------------------------------------------------ kleuren
 SKY = [(8, 12, 44), (14, 26, 74), (26, 46, 110), (42, 76, 150), (70, 112, 190)]
@@ -239,7 +242,7 @@ def redraw_pillar_front(img, base):
 
 def ring_frame(base, t):
     """Fase 2: de gesloten ring draait en zwelt aan, lichtstralen."""
-    u = (t - T_RING) / float(T_BURST - T_RING)
+    u = (t - T_RING) / float(T_FLASH - T_RING)
     a = t * 0.9
     thick = 10 + 5 * u + 2 * math.sin(t * 0.9)
     img = draw_arc(base, a, 2 * math.pi, thick, front_only=False)
@@ -255,96 +258,194 @@ def ring_frame(base, t):
     return img
 
 
-# ------------------------------------------------------------------ Rayquaza
-# kop van voren (iets van onderen): breed plat voorhoofd, smalle snuit, open bek met tanden (hij brult je toe),
-# twee lange hoorns die schuin naar achteren/buiten steken, kleinere vinnen bij de kaak. Eenheid = breedte van de kop.
-SKULL = [(-0.5, -0.32), (-0.2, -0.46), (0.2, -0.46), (0.5, -0.32), (0.44, -0.06), (0.24, 0.16), (0.16, 0.24),
-         (-0.16, 0.24), (-0.24, 0.16), (-0.44, -0.06)]
-JAW = [(-0.3, 0.3), (0.3, 0.3), (0.2, 0.6), (0.08, 0.68), (-0.08, 0.68), (-0.2, 0.6)]
-MAW = [(-0.2, 0.2), (0.2, 0.2), (0.25, 0.34), (-0.25, 0.34)]                  # donkere bek tussen de kaken
-HORN = [(-0.3, -0.36), (-0.62, -0.62), (-1.55, -0.98), (-0.9, -0.5), (-0.46, -0.2)]
-HORN2 = [(-0.44, -0.12), (-0.86, -0.18), (-1.3, -0.08), (-0.82, -0.02), (-0.44, 0.02)]
-JAWFIN = [(-0.22, 0.42), (-0.58, 0.66), (-0.16, 0.56)]
-EYE = [(-0.42, -0.2), (-0.16, -0.27), (-0.12, -0.2), (-0.34, -0.13)]
-PUPIL = [(-0.27, -0.25), (-0.24, -0.25), (-0.23, -0.16), (-0.26, -0.16)]
-HORN_LINE = [(-0.42, -0.38), (-0.7, -0.6), (-1.36, -0.92)]
-HORN2_LINE = [(-0.52, -0.08), (-0.9, -0.11), (-1.18, -0.08)]
-LIP = [(-0.22, 0.17), (-0.1, 0.22), (0.1, 0.22), (0.22, 0.17)]
-FANGS = [[(-0.18, 0.2), (-0.13, 0.2), (-0.155, 0.29)], [(0.13, 0.2), (0.18, 0.2), (0.155, 0.29)],
-         [(-0.12, 0.34), (-0.07, 0.34), (-0.095, 0.27)], [(0.07, 0.34), (0.12, 0.34), (0.095, 0.27)]]
-SNOUT_MARK = [(-0.07, -0.42), (0.0, -0.1), (0.07, -0.42)]
+# ------------------------------------------------------------------ de vanilla-cutscene (src/rayquaza_scene.c)
+# Na de flits kijkt de camera omhoog, weg van de toren, naar het wolkendek ('Rayquaza descends', scene 3): een lichtbundel
+# valt door het gat in de wolken en Rayquaza duikt erdoor naar beneden. Dan de aanval op de camera ('Rayquaza charges',
+# scene 4): de grote Rayquaza tussen de snelheidsstrepen, hij trilt, deinst terug en schiet naar voren tot hij het beeld
+# vult. Alle art komt uit graphics/rayquaza_scene/ (tiles + tilemaps + paletten), samengesteld zoals de GBA dat doet.
+RS = os.path.join(film.ROOT, 'graphics/rayquaza_scene')
+BAR = 24                                   # zwarte balken boven/onder (scene 3 in de tilemap, scene 4 met WIN0)
 
 
-def mirror(pts):
-    return [(-x, y) for x, y in pts]
+def _jasc(p):
+    v = open(p).read().split()
+    n = int(v[2])
+    a = list(map(int, v[3:3 + 3 * n]))
+    return [tuple(a[i * 3:i * 3 + 3]) for i in range(n)]
 
 
-def draw_rayquaza(img, cx, cy, s, glow, shake=(0, 0)):
-    """Silhouet met gloeiende markeringen. s = breedte van de kop in pixels; (cx, cy) = midden van de kop.
-    Het lijf loopt in een S van de kop terug naar het midden van de ring (perspectief), met gele ringen."""
-    pil = Image.fromarray(img)
-    d = ImageDraw.Draw(pil)
-    ox, oy = shake
-    gold = GOLD[2] if glow > 0.5 else GOLD[1]
+def _pngpal(p, n=16):
+    v = Image.open(p).getpalette()[:3 * n]
+    return [tuple(v[i * 3:i * 3 + 3]) for i in range(n)]
 
-    def P(pts, x0=cx, y0=cy, sc=1.0):
-        return [(x0 + ox + x * s * sc, y0 + oy + y * s * sc) for x, y in pts]
-    # lijf: van de ring (ver, klein) naar de kop (dichtbij, groot)
-    n = 22
-    for i in range(n, 0, -1):
-        f = i / float(n)                               # 1 = bij de ring, 0 = bij de kop
-        k = 1.0 / (1.0 + 7.0 * f)                      # perspectief
-        bx = cx + (RC[0] - cx) * f ** 0.8 + math.sin(f * 7.0) * s * 0.55 * k
-        by = cy + (RC[1] - cy) * f ** 0.8 + math.cos(f * 5.0) * s * 0.2 * k - s * 0.15 * k
-        r = 0.34 * s * k
-        if r < 0.7:
+
+def layer(binf, pngf, pal):
+    """Tilemap (32x32, 4bpp) -> (rgb 256x256x3, ondoorzichtig 256x256): index 0 van elk palet is doorzichtig."""
+    t = np.array(Image.open(os.path.join(RS, pngf)))
+    raw = open(os.path.join(RS, binf), 'rb').read()
+    m = np.frombuffer(raw, '<u2')
+    tw = t.shape[1] // 8
+    P = np.array(list(pal) + [(0, 0, 0)] * (64 - len(pal)), np.uint8)
+    rgb = np.zeros((256, 256, 3), np.uint8)
+    op = np.zeros((256, 256), bool)
+    for i, v in enumerate(m):
+        r, c = divmod(i, 32)
+        ty, tx = divmod(int(v) & 0x3FF, tw)
+        if ty * 8 >= t.shape[0]:
             continue
-        d.ellipse([bx + ox - r, by + oy - r, bx + ox + r, by + oy + r], fill=RAY[0], outline=RAY[2])
-        if i % 3 == 0 and r > 2:
-            rr = r * 0.78
-            d.ellipse([bx + ox - rr, by + oy - rr * 0.45, bx + ox + rr, by + oy + rr * 0.45], outline=gold,
-                      width=max(1, int(r * 0.14)))
-    lw = max(1, int(round(s * 0.03)))
-    for poly in (HORN, mirror(HORN), HORN2, mirror(HORN2), JAWFIN, mirror(JAWFIN)):
-        d.polygon(P(poly), fill=RAY[0], outline=RAY[2])
-    for line in (HORN_LINE, mirror(HORN_LINE), HORN2_LINE, mirror(HORN2_LINE)):
-        d.line(P(line), fill=GOLD[1], width=lw)
-    d.polygon(P(JAW), fill=RAY[0], outline=RAY[2])
-    d.polygon(P([(-0.3, 0.3), (0.0, 0.3), (0.0, 0.68), (-0.08, 0.68), (-0.2, 0.6)]), fill=RAY[1])
-    d.polygon(P(MAW), fill=K)
-    if s > 40:
-        for fang in FANGS:
-            d.polygon(P(fang), fill=WH)
-    d.polygon(P(SKULL), fill=RAY[1], outline=RAY[2])
-    # rechterhelft in de schaduw (licht van de ring linksboven), een lichte rand over het midden
-    d.polygon(P([(0.02, -0.46), (0.2, -0.46), (0.5, -0.32), (0.44, -0.06), (0.24, 0.16), (0.16, 0.24), (0.02, 0.24)]),
-              fill=RAY[0])
-    d.line(P([(0.0, -0.44), (0.0, 0.2)]), fill=RAY[2], width=lw)
-    d.line(P(LIP), fill=gold, width=lw)
-    d.line(P(mirror(LIP)), fill=gold, width=lw)
-    for eye, pupil in ((EYE, PUPIL), (mirror(EYE), mirror(PUPIL))):
-        if s > 24:
-            d.polygon(P([(x * 1.12 - 0.01 * (1 if x < 0 else -1), y * 1.08) for x, y in eye]), fill=GOLD[0])
-        d.polygon(P(eye), fill=GOLD[2] if glow > 0.3 else GOLD[1])
-        if s > 60:
-            d.polygon(P(pupil), fill=K)
-    return np.array(pil)
+        b = t[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8]
+        if v & 0x400:
+            b = b[:, ::-1]
+        if v & 0x800:
+            b = b[::-1]
+        rgb[r * 8:r * 8 + 8, c * 8:c * 8 + 8] = P[b.astype(int) + (int(v) >> 12) * 16]
+        op[r * 8:r * 8 + 8, c * 8:c * 8 + 8] = b != 0
+    return rgb, op
 
 
-def burst_frame(base, t):
-    u = (t - T_BURST) / float(T_FILL - T_BURST)
-    s = 6 * math.exp(math.log(420 / 6.0) * u ** 1.25)         # kopbreedte 6 -> 420 px
-    cx = RC[0]
-    cy = RC[1] + (74 - RC[1]) * min(1.0, u * 1.3)
-    img = base.copy()
-    # de ring (al uiteenvallend) achter Rayquaza
-    if u < 0.6:
-        img = draw_arc(img, t * 0.9, 2 * math.pi, 12 * (1 - u / 0.6) + 1, front_only=None)
-    rng = np.random.RandomState(t)
-    sh = (rng.randint(-2, 3), rng.randint(-2, 3)) if u > 0.3 else (0, 0)
-    glow = 0.5 + 0.5 * math.sin(t * 0.8)
-    img = draw_rayquaza(img, cx, cy, s, glow, sh)
+def sprite_sheet(pngf, pal):
+    a = np.array(Image.open(os.path.join(RS, pngf)))
+    return np.array(pal, np.uint8)[a], a != 0
+
+
+def blit(img, src, op, x0, y0):
+    """Plakt src (met ondoorzichtig-masker) met linksboven op (x0, y0), afgekapt op het scherm."""
+    h, w = op.shape
+    x0, y0 = int(round(x0)), int(round(y0))
+    sx0, sy0 = max(0, -x0), max(0, -y0)
+    dx0, dy0 = max(0, x0), max(0, y0)
+    w2, h2 = min(w - sx0, W - dx0), min(h - sy0, H - dy0)
+    if w2 <= 0 or h2 <= 0:
+        return
+    m = op[sy0:sy0 + h2, sx0:sx0 + w2]
+    img[dy0:dy0 + h2, dx0:dx0 + w2][m] = src[sy0:sy0 + h2, sx0:sx0 + w2][m]
+
+
+def scroll(rgb, op, sx, sy):
+    """Een BG van 256x256 zoals de GBA hem toont met scroll (sx, sy): de 240x160 linksboven, met wrap."""
+    ys = (np.arange(H) + int(sy)) % 256
+    xs = (np.arange(W) + int(sx)) % 256
+    return rgb[ys][:, xs], op[ys][:, xs]
+
+
+def bars(img, b):
+    b = int(round(b))
+    if b > 0:
+        img[:b] = 0
+        img[H - b:] = 0
     return img
+
+
+# --- scene 3: Rayquaza daalt door het wolkendek
+P3 = _jasc(os.path.join(RS, 'scene_3/bg.pal'))
+RAYPAL = _pngpal(os.path.join(RS, 'scene_2/rayquaza.png'))       # 'takes flight'-palet, ook voor de sprite in scene 3
+S3_BG, S3_BGOP = layer('scene_3/bg.bin', 'scene_3/bg.png', P3)
+S3_LIGHT, S3_LIGHTOP = layer('scene_3/light.bin', 'scene_3/light.png', P3)
+S3_RAY, S3_RAYOP = sprite_sheet('scene_3/rayquaza.png', RAYPAL)            # 64x128: twee beelden van 64x64
+S3_TAIL, S3_TAILOP = sprite_sheet('scene_3/rayquaza_tail.png', RAYPAL)     # 16x128: beelden van 16x32
+WHITE = (255, 255, 255)                                                    # de achtergrondkleur (BG-palet 0 = wit)
+
+
+def s3_frame(t, reveal, rx, ry, anim):
+    """Scene 3 zoals rayquaza_scene.c hem samenstelt: BG3 (wolken), de sprite (prioriteit 3), BG1 (bovenste 8 rijen
+    wolken, vóór de sprite: hij komt door het gat), BG0 = de lichtbundel, alfa 8/16 over 13/16, tot regel 24+reveal."""
+    img = np.empty((H, W, 3), np.uint8)
+    img[:] = WHITE
+    bg, op = S3_BG[:H, :W], S3_BGOP[:H, :W]
+    img[op] = bg[op]
+    front = op.copy()
+    front[64:] = False                                  # BG1 = alleen de rijen 0..7
+    # de lichtbundel
+    lo, lop = S3_LIGHT[:H, :W], S3_LIGHTOP[:H, :W].copy()
+    lop[:24] = False
+    lop[24 + int(reveal) + 1:] = False
+    below_bd = lop & ~op                                 # boven de achtergrondkleur: geen tweede doel, dus niet gemengd
+    mixm = lop & ~below_bd
+    a = lo.astype(np.int32) * 8 // 16 + img.astype(np.int32) * 13 // 16
+    img[mixm] = np.minimum(a, 255).astype(np.uint8)[mixm]
+    img[below_bd] = lo[below_bd]
+    # Rayquaza zelf: in de cutscene mengt de bundel ook over hem heen (dan is hij een bleek spookje); hier vóór het licht,
+    # zodat je hem echt ziet, maar nog wel achter het bovenste wolkendek (BG1)
+    f = anim & 1
+    blit(img, S3_RAY[f * 64:f * 64 + 64], S3_RAYOP[f * 64:f * 64 + 64], rx - 32, ry - 32)
+    blit(img, S3_TAIL[f * 32:f * 32 + 32], S3_TAILOP[f * 32:f * 32 + 32], rx + 24 - 8, ry - 48 - 16)
+    img[front] = bg[front]
+    return img
+
+
+# --- scene 4: Rayquaza valt aan
+P4 = _jasc(os.path.join(RS, 'scene_4/bg.pal'))
+S4_BG, S4_BGOP = layer('scene_4/bg.bin', 'scene_4/bg.png', P4)
+S4_RAY, S4_RAYOP = layer('scene_4/rayquaza.bin', 'scene_4/rayquaza.png', P4)
+S4_STREAK, S4_STREAKOP = layer('scene_4/streaks.bin', 'scene_4/streaks.png', P4)
+S4_ORB, S4_ORBOP = layer('scene_4/orbs.bin', 'scene_4/streaks.png', P4)
+HEAD = (88, 92)            # ongeveer het midden van de kop in de Rayquaza-tilemap (laagcoördinaten)
+
+
+def s4_frame(t, rdx, rdy, zoom=1.0, hx=None, hy=None):
+    """Scene 4: BG3 verloop, BG2 strepen (8 px/frame), BG1 Rayquaza (verschoven met rdx/rdy, of ingezoomd rond zijn kop
+    met de kop op (hx, hy); zonder wrap), BG0 gele lichtjes (4 px/frame), balken via WIN0 (achtergrond zwart)."""
+    if hx is None:
+        hx, hy = HEAD[0] + rdx, HEAD[1] + rdy
+    img = np.zeros((H, W, 3), np.uint8)
+    bg, op = scroll(S4_BG, S4_BGOP, 0, 0)
+    img[op] = bg[op]
+    s, o = scroll(S4_STREAK, S4_STREAKOP, -8 * t, 8 * t)
+    img[o] = s[o]
+    ys = np.floor((np.arange(H) - hy) / zoom + HEAD[1]).astype(int)
+    xs = np.floor((np.arange(W) - hx) / zoom + HEAD[0]).astype(int)
+    ok = ((ys >= 0) & (ys < 232))[:, None] & ((xs >= 0) & (xs < 256))[None, :]   # rij 29+ = losse staartpunt (wrap)
+    yc, xc = np.clip(ys, 0, 255), np.clip(xs, 0, 255)
+    r, o = S4_RAY[yc][:, xc], S4_RAYOP[yc][:, xc] & ok
+    img[o] = r[o]
+    s, o = scroll(S4_ORB, S4_ORBOP, -4 * t, 4 * t)
+    img[o] = s[o]
+    return bars(img, BAR)
+
+
+def edge_palette(imgs, pa, pb, n=15):
+    """Derde palet: k-means op de pixels van tiles die met palet A en B allebei slecht te tekenen zijn."""
+    wts = np.array([3.0, 6.0, 2.0])
+    A = np.array([film.gba(c) for c in pa], np.float64)
+    B = np.array([film.gba(c) for c in pb], np.float64)
+    px = []
+    for img in imgs:
+        t = img.reshape(20, 8, 30, 8, 3).transpose(0, 2, 1, 3, 4).reshape(600, 64, 3).astype(np.float64)
+        ea = (((t[:, :, None] - A[None, None]) ** 2) * wts).sum(3).min(2).sum(1)
+        eb = (((t[:, :, None] - B[None, None]) ** 2) * wts).sum(3).min(2).sum(1)
+        bad = np.minimum(ea, eb) > 64 * 60
+        px.append(t[bad].reshape(-1, 3))
+    px = np.concatenate(px) if px else np.zeros((0, 3))
+    if len(px) < n:
+        return list(pa[:n])
+    keys, inv = np.unique(px.astype(np.int64) @ np.array([1, 256, 65536]), return_inverse=True)
+    cols = np.stack([keys % 256, (keys // 256) % 256, keys // 65536], 1).astype(np.float64)
+    cw = np.bincount(inv)
+    c = cols[np.argsort(-cw)[:n]].copy()
+    rng = np.random.RandomState(3)
+    for _ in range(16):
+        d = (((cols[:, None] - c[None]) ** 2) * wts).sum(2)
+        a = d.argmin(1)
+        for j in range(len(c)):
+            m = a == j
+            if m.any():
+                c[j] = np.average(cols[m], axis=0, weights=cw[m])
+            else:
+                c[j] = cols[rng.randint(len(cols))]
+    return [tuple(int(v) for v in x) for x in c]
+
+
+def tint(f, pals, fade=1.0, green=0.0, white=0.0):
+    def tr(c):
+        c = mix((0, 0, 0), c, fade)
+        c = mix(c, (60, 255, 120), green)
+        return mix(c, (255, 255, 255), white)
+    return f.palset(*[[tr(c) for c in p] for p in pals])
+
+
+def ease(u):
+    u = min(1.0, max(0.0, u))
+    return u * u * (3 - 2 * u)
 
 
 # ------------------------------------------------------------------ film
@@ -352,7 +453,6 @@ def build(preview=None):
     f = film.Film('rayquaza')
     f.ref = palset(f)
     base = background()
-    dim_bg = base
     for t in range(T_IN):
         f.add(None, palset(f, fade=0))
     for t in range(T_IN, T_STREAK):
@@ -363,21 +463,98 @@ def build(preview=None):
             cur = streak_frame(base, t)
         u = (t - T_STREAK) / float(T_RING - T_STREAK)
         f.add(cur, palset(f, dim=0.4 * u, glow=0.5 * u))
-    for t in range(T_RING, T_BURST):
+    for t in range(T_RING, T_FLASH):
         if (t - T_RING) % 2 == 0:
             cur = ring_frame(base, t)
-        u = (t - T_RING) / float(T_BURST - T_RING)
+        u = (t - T_RING) / float(T_FLASH - T_RING)
         f.add(cur, palset(f, dim=0.4 + 0.3 * u, glow=0.5 + 0.5 * math.sin(t * 0.5) ** 2,
-                          green=0.35 * max(0, (t - T_BURST + 4) / 4.0)))
-    for t in range(T_BURST, T_FILL):
-        if (t - T_BURST) % 2 == 0:
-            cur = burst_frame(base, t)
-        f.add(cur, palset(f, dim=0.7, glow=0.6 + 0.4 * math.sin(t * 0.8) ** 2,
-                          green=0.3 * max(0.0, 1 - (t - T_BURST) / 6.0)))
-    last = cur
-    for t in range(T_FILL, T_END):
-        k = (t - T_FILL + 1) / float(T_END - T_FILL)
-        f.add(last, palset(f, dim=0.7, glow=1.0, green=min(1.0, k * 1.6) * 0.6, white=max(0.0, k * 1.4 - 0.4)))
+                          green=0.85 * max(0, (t - T_FLASH + 6) / 6.0) ** 1.5))
+
+    # --- de camera kantelt omhoog: de toren zakt weg, het wolkendek van scene 3 komt van boven in beeld
+    s3_top = S3_BG[BAR:H - BAR, :W].copy()                     # de 112 rijen wolken en lucht zonder balken
+    s3_top[~S3_BGOP[BAR:H - BAR, :W]] = WHITE                  # het gat in de wolken: de (witte) achtergrondkleur
+    band = 64
+    tall = np.zeros((s3_top.shape[0] + band + H, W, 3), np.uint8)
+    tall[:s3_top.shape[0]] = s3_top
+    grad = [tuple(int(v) for v in s3_top[-1, 0])] + SKY[::-1]       # van de lucht onder het wolkendek naar de nacht
+    lv = (np.arange(band)[:, None] + 0.5) / band * (len(grad) - 1) + np.zeros((1, W))
+    by = BAYER[np.arange(band)[:, None] % 4, np.arange(W)[None] % 4]
+    li = np.clip(np.floor(lv + by), 0, len(grad) - 1).astype(int)
+    tall[s3_top.shape[0]:s3_top.shape[0] + band] = np.array(grad, np.uint8)[li]
+    tall[s3_top.shape[0] + band:] = base
+    y_from = s3_top.shape[0] + band                           # toren in beeld
+    y_to = -BAR                                               # het wolkendek met de balken van scene 3
+    p3_world = [c for c in P3[2:16]] + [WHITE]           # wolkendek
+    pan_pals = [p3_world, [K] + STONE + MOSS + SKY[:4] + CLOUD[:2], [K] + SKY + CLOUD]
+    n_pan = T_PAN - T_FLASH
+    for i in range(n_pan):
+        if i % 2 == 0:
+            u = ease((i + 2) / float(n_pan))
+            y = int(round(y_from + (y_to - y_from) * u))
+            img = np.zeros((H, W, 3), np.uint8)
+            lo, hi = max(0, y), min(tall.shape[0], y + H)
+            img[lo - y:hi - y] = tall[lo:hi]
+            img = bars(img, BAR * u)
+        q = tint(f, pan_pals)
+        f.add(img, tint(f, pan_pals, green=0.85 * max(0.0, 1 - i / 10.0) ** 1.5), q=q)
+
+    # --- scene 3: de lichtbundel en Rayquaza die erdoor naar beneden duikt
+    n3 = T_S3 - T_PAN
+    s3 = []
+    for i in range(0, n3, 2):
+        reveal = min(112, i * 5)
+        u = max(0.0, (i - 6) / float(n3 - 6))
+        # zoals in de cutscene schuin naar linksonder (dx:dy = 2:3) en steeds sneller, maar verder: tot midden in beeld
+        k = u ** 1.6
+        rx = 162 - 66 * k
+        ry = 4 + 100 * k
+        s3.append(s3_frame(i, reveal, rx, ry, (i // 8) & 1))
+    ray15 = RAYPAL[1:16]
+    p3_15 = [c for c in P3[2:16]] + [WHITE]
+    p3_pals = [ray15, p3_15, edge_palette(s3, ray15, p3_15)]
+    for i in range(n3):
+        img = s3[i // 2]
+        q = tint(f, p3_pals)
+        f.add(img, q, q=q)
+
+    # --- scene 4: de aanval
+    n4 = T_S4 - T_S3
+    T_BACK, T_LAUNCH = 16, 24                                 # trillen 0..16, terugdeinzen 16..26, dan naar voren
+    rng = np.random.RandomState(7)
+    s4 = []
+    shx = shy = 0
+    bx = by = 0.0
+    ofs = 6
+    for i in range(n4):
+        if i < T_BACK:
+            if i % 4 == 0:
+                shx, shy = rng.randint(-4, 4), rng.randint(-4, 4)
+            img = s4_frame(i, shx, shy) if i % 2 == 0 else s4[-1][0]
+        elif i < T_LAUNCH:
+            bx += ofs
+            by -= ofs
+            ofs = max(1, ofs - 1)
+            img = s4_frame(i, bx, by) if i % 2 == 0 else s4[-1][0]
+        else:
+            u = (i - T_LAUNCH + 1) / float(n4 - T_LAUNCH)
+            z = 1.0 + 1.9 * u ** 1.6
+            # de kop schiet van zijn plek (teruggedeinsd) naar het midden en komt op de camera af
+            hx0, hy0 = HEAD[0] + bx, HEAD[1] + by
+            hx = hx0 + (122 - hx0) * ease(u * 1.3)
+            hy = hy0 + (86 - hy0) * ease(u * 1.3)
+            img = s4_frame(i, 0, 0, z, hx, hy) if i % 2 == 0 else s4[-1][0]
+        s4.append((img, i))
+    ray4 = P4[1:16]
+    bg4 = P4[17:23] + [(0, 0, 0)] + [P4[33], P4[34], P4[35], P4[50], P4[51]]
+    p4_pals = [ray4, bg4, edge_palette([x[0] for x in s4[::4]], ray4, bg4)]
+    for img, i in s4:
+        q = tint(f, p4_pals)
+        f.add(img, q, q=q)
+    last = s4[-1][0]
+    for t in range(T_S4, T_END):
+        k = (t - T_S4 + 1) / float(T_END - T_S4)
+        q = tint(f, p4_pals)
+        f.add(last, tint(f, p4_pals, green=min(1.0, k * 2) * 0.5, white=max(0.0, k * 1.5 - 0.5)), q=q)
     f.encode(preview)
     return f
 
@@ -387,4 +564,5 @@ if __name__ == '__main__':
     f = build(d)
     if d:
         fr = f.preview_frames
-        film.sheet(fr, [18, 40, 60, 80, 96, 110, 126, 136, 146, 154, 162, 174], os.path.join(d, 'rayquaza_keys.png'))
+        film.sheet(fr, [40, 80, 104, 116, 124, 132, 140, 150, 162, 174, 186, 196, 204, 214, 222, 232, 240, 248],
+                   os.path.join(d, 'rayquaza_keys.png'), cols=3)

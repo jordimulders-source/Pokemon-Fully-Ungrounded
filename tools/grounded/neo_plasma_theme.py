@@ -4,6 +4,14 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v12 (Jordi over v11: 'de noten heb je te pakken, alleen klinken de instrumenten alsof een computer met een kapotte
+speaker speelt; haal ze er allemaal af, houd ritme/bpm/noten vast en koppel er logische Emerald-instrumenten aan'):
+noten, ritme, tempo, structuur en drumpatroon exact v11 (de stemverdeler rekent met de v11-releases, V11_REL), alleen
+programma's/volumes/ADSR nieuw, alles stock-samples uit de vanilla Emerald-voicegroups (zie VOICES), geen eigen
+samples meer (de np_*-samples en neo_plasma_samples.py zijn weg), geen pitch bends: de opening-run (maat 2-4) speelt
+weer als ladder van gewone noten op de trompet (< C3 synth bass) + PSG-octaaf. Klinkende hoogte gelijk aan v11:
+organ2-sporen een octaaf hoger geschreven, de bas een octaaf lager (fingered bass klinkt op de geschreven noot).
+
 v11 (Jordi via Gemini over v10; drums, tempo en de achtergrond-arpeggio's blijven; preview v10 vanaf 0 s, maat =
 seconde / 1,364). Elk punt eerst gemeten:
 1. 'Theremin / fluittoon met vibrato en pitch-bends op de lead, 0:08-0:18 en 0:45-0:55': de bends van de intro-glide
@@ -125,7 +133,7 @@ diepe staccato-bas, zachte steel-drum-arpeggio's, standaard GBA-drumkit, melodie
                                    een felle elektronische snare/clap, 1-8 kHz) en vol in fills, crashes; snelle
                                    hihats op 16en op het PSG-ruiskanaal.
 
-Gebruik: python3 tools/grounded/neo_plasma_theme.py (samples: tools/grounded/neo_plasma_samples.py)"""
+Gebruik: python3 tools/grounded/neo_plasma_theme.py (v12: alleen stock-samples; de v11-samplegenerator staat in de geschiedenis)"""
 import os, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -136,6 +144,7 @@ OUT = 'sound/songs/midi/mus_grounded_vs_neo_plasma.mid'
 VG = 'sound/voicegroups/grounded_neo_plasma.inc'
 DRUMSET = 'sound/voicegroups/drumsets/neo_plasma.inc'
 KEYSPLIT = 'sound/voicegroups/keysplits/np_trumpet.inc'
+LEAD_KEYSPLIT = 'sound/voicegroups/keysplits/np_lead.inc'     # v12: trompet-lead (eigen bestand: musiclib/lint lezen de release)
 TPB, BAR, BEAT, S16 = 384, 1536, 384, 96
 BPM = 176
 LOOP0, END = 10 * BAR, 74 * BAR
@@ -145,51 +154,56 @@ SAW_SHIFT = 17              # sawtooth vanaf maat 5: 17 ticks te vroeg in de bro
 BASS, BRASS, BRASS_LO, ORGAN, LEAD, DRUMS = 38, 62, 63, 17, 80, 127
 BODY, SUB, ARPB, DSINE, STAB, PLUCK = 81, 82, 84, 85, 86, 87
 FAT_LO, FAT_HI, FARP_LO, FARP_HI, HOLD = 88, 89, 90, 91, 92      # v9
-GL_LO, GL_HI = 93, 94                                               # v10: glissando-synth brass
 LEAD_REL, BASS_REL = 60, 50                                         # v11: korte releases (afgekapt per noot)
+# v12: de stemverdeler (welke noot blijft, hoe lang) rekent met de releases van v11, zodat noten, ritme en lengtes
+# exact v11 blijven; de nieuwe stemmen hebben dezelfde (of een kortere) release.
+V11_REL = {17: 90, 38: 50, 62: 110, 63: 110, 80: 60, 81: None, 82: None, 84: None, 85: 140, 86: 100, 87: 110,
+           88: 60, 89: 60, 90: 40, 91: 40, 92: 100, 127: None}
+# v12 (Jordi: 'de noten heb je te pakken, maar de instrumenten klinken alsof een computer met een kapotte speaker
+# speelt; gewone Emerald-instrumenten'): alleen stock-samples uit de Emerald-voicegroups, eenvoudige ADSR, geen eigen
+# samples, geen bends. Basis = voicegroup vs_gym_leader.
+#   lead (>= C3)    trompet-keysplit (sc88pro_trumpet_60/72/84; trumpet_keysplit van vs_gym_leader/vs_elite_four)
+#   lead (< C3)     sc88pro_synth_bass (vs_elite_four 38): koper niet onder C3
+#   lead-octaaf     PSG-blokgolf 1 (vs_gym_leader 82)
+#   akkoordstoten   trompet-keysplit (korte release)
+#   orgel, arpeggio's, sinus, hold, orgelstoot   sc88pro_organ2 (vs_frontier_brain 17): zuiver, geen zweving; de
+#                   sample klinkt een octaaf lager dan geschreven, dus die sporen staan een octaaf hoger (klinkend = v11)
+#   bas             sc88pro_fingered_bass (vs_gym_leader 33), klinkt op de geschreven hoogte: een octaaf lager
+#                   geschreven dan in v11 (np_bass_buzz klonk een octaaf onder de geschreven noot); < E1 een octaaf op
+#   sub / arp B     PSG-golf / PSG-blokgolf 2 (vs_gym_leader 3)
+#   drums           rs_drumset-regels (standaard Emerald-kit), crash = de orkestcrash van rs_drumset 57
+ORGAN2 = 'DirectSoundWaveData_sc88pro_organ2'
 VOICES = {
-    # v10: glissando in de opening-run (dikke synth brass, harde aanslag, aanhouden; neo_plasma_samples.gliss_brass)
-    GL_LO:    'voice_directsound 48, 0, DirectSoundWaveData_np_gbrass_lo, 255, 0, 255, 150',
-    GL_HI:    'voice_directsound 72, 0, DirectSoundWaveData_np_gbrass_hi, 255, 0, 255, 150',
-    # v11: de lead op een zuivere pulse-lead (np_plead_hi/lo: geen zweving, felle aanslag) met een korte release:
-    # sc88pro_square_wave en np_lead_fat zweven zelf (8-10 dB tremolo op 1,7-5 Hz = Gemini's 'theremin met vibrato')
-    LEAD:     'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, %d' % LEAD_REL,
-    BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 12, 3',
+    LEAD:     'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',
+    FAT_HI:   'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',
+    FAT_LO:   'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, %d' % LEAD_REL,
+    BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 7, 1',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
-    DSINE:    'voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140',
-    STAB:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100',
-    PLUCK:    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110',
-    # v11: blikkerige synth-bass (np_bass_buzz, zaagtand + puls + resonantie ±1 kHz), volle sustain, korte release:
-    # de 16en klinken als toon (63 ticks) i.p.v. de tik van v10 (27 ticks np_bass_fat)
-    BASS:     'voice_directsound 48, 0, DirectSoundWaveData_np_bass_buzz, 255, 0, 255, %d' % BASS_REL,
+    SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
     BRASS:    'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     BRASS_LO: 'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
-    ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
-    SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
+    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, %d' % BASS_REL,
+    ORGAN:    'voice_directsound 60, 0, %s, 255, 0, 255, 90' % ORGAN2,
+    STAB:     'voice_directsound 60, 0, %s, 255, 215, 40, 100' % ORGAN2,
+    DSINE:    'voice_directsound 60, 0, %s, 255, 220, 200, 140' % ORGAN2,
+    PLUCK:    'voice_directsound 60, 0, %s, 255, 205, 0, 110' % ORGAN2,
+    FARP_LO:  'voice_directsound 60, 0, %s, 255, 0, 255, 40' % ORGAN2,
+    FARP_HI:  'voice_directsound 60, 0, %s, 255, 0, 255, 40' % ORGAN2,
+    HOLD:     'voice_directsound 60, 0, %s, 255, 0, 255, 100' % ORGAN2,
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
-    # v9: vette GBA-lead (blokgolf x2 + synth brass, neo_plasma_samples.fat_lead) voor de opening-run en het
-    # loopbegin; als arpeggio met een korte release (geen tokkel: aanhouden en snel los)
-    # v11: de lead van maat 0-21 ook op de zuivere pulse-lead (FAT_LO/FAT_HI = lead laag/hoog)
-    FAT_LO:   'voice_directsound 48, 0, DirectSoundWaveData_np_plead_lo, 255, 0, 255, %d' % LEAD_REL,
-    FAT_HI:   'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, %d' % LEAD_REL,
-    FARP_LO:  'voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40',
-    FARP_HI:  'voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40',
-    # v9: aangehouden sawtooth-akkoordtonen uit de bron (vielen in v5-v8 weg door de mono lead/arpeggio)
-    # (v11: ook zonder zweving; aangehouden tonen in het register van de melodie)
-    HOLD:     'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, 100',
 }
+# organ2 klinkt een octaaf onder de geschreven noot: deze sporen schrijven een octaaf hoger (klinkend = v11; de
+# orgelstoot stond in v11 al op organ2 en blijft zoals hij was)
+OCT_UP = (ORGAN, DSINE, PLUCK, FARP_LO, FARP_HI, HOLD)
+SOUND_OFS = {p: -12 for p in OCT_UP + (STAB,)}
 # drumkit (noot -> regel); standaard GBA-samples in de GM-indeling (v8; v7 had 36-43 op een rij)
 KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, CRASH, SPLASH = 36, 38, 39, 40, 42, 46, 49, 55
-KITV = {
-    KICK:      'voice_directsound 67, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 0',
-    SNARE:     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 220',
-    SNARE_OFF: 'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 0, 255, 180',
-    SNARE24:   'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_synth_snare, 255, 0, 255, 200',
-    CHAT:      'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 255, 0',
-    OHAT:      'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_open_hihat, 255, 242, 141, 0',
-    CRASH:     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',
-    SPLASH:    'voice_directsound 67, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 200, 0, 140',
-}
+RS = [l.strip() for l in open('sound/voicegroups/drumsets/rs.inc') if l.startswith('\tvoice')]   # noot 36 = RS[0]
+KITV = {k: RS[k - 36] for k in (KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, SPLASH)}
+KITV[CRASH] = RS[57 - 36]           # rs_drumset 49 is PSG: de orkestcrash (57) op 49
+# release zoals de v11-kit (kick/hats 0: geen staart die een kanaal bezet; de stemverdeling rekent daarmee)
+KIT_REL = {KICK: 0, SNARE: 220, SNARE_OFF: 180, SNARE24: 200, CHAT: 0, OHAT: 0, CRASH: 165, SPLASH: 140}
+KITV = {k: v.rsplit(',', 1)[0] + ', %d' % KIT_REL[k] for k, v in KITV.items()}
 # ongebruikte noten in de kit: een stille DirectSound-regel (geen PSG: een verdwaalde noot mag niet piepen)
 KIT = [KITV.get(k, 'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 0, 0')
        for k in range(36, max(KITV) + 1)]
@@ -208,8 +222,8 @@ OCT_ORGAN = (set(range(50, 63)) - {53})
 OCT_SAW = {52, 54, 55, 61}
 OCT_SINE = {50, 52, 54, 56, 57}
 TOP = 84                                    # v10 (Jordi: 'geen piepjes boven C6'): geen melodische noot > C6
-GLISS = (2 * BAR + S16, 5 * BAR)            # v10: de opening-run (E2 -> C6) als glissando
-BENDR = 12
+GLISS = (2 * BAR + S16, 5 * BAR)            # de opening-run (E2 -> C6); v12: gewoon noten, geen glissando
+BENDR = 12                                  # v12: alleen nog voor de bezettingsberekening (gliss())
 ORGAN_BARS = set(range(49, 62)) | set(range(65, 71))    # daar speelt het orgel al 16e-stoten: geen extra stoten
 SNARE_LEN, GHOST_VEL, BACK_VEL = 192, 58, 118
 UNISONO_BARS = set(range(46, 50))           # unisono-riff (bas + saw): geen akkoordstoten
@@ -221,8 +235,12 @@ ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 te
 # iets terug omdat ze nu aanhouden
 # v11: bas 127 -> 92: de nieuwe bas (langere noten, luidere sample) is op 127 2,0x zo luid (RMS, gba_sim maat 13-42);
 # op 92 1,45x = +3,2 dB = 'ongeveer 25% luider' (luidheid verdubbelt per ±10 dB)
-VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=92, sub=127, steel=38, arp=34, arpb=40,
-           dsine=40, stab=45, drums=80)
+# v12: de trompet-lead is per sample 8-10 dB zachter dan de pulse-lead van v11 en kan niet boven CC7 127: de lead op
+# 127 en de rest x0,65 t.o.v. v11, gecorrigeerd voor het luidheidsverschil van de nieuwe sample (RMS eerste 80 ms;
+# organ2 -2,8 dB t.o.v. np_organ_sharp, +4,2 t.o.v. np_sine; fingered bass +1,5 t.o.v. np_bass_buzz; PSG-blokgolf
+# sustain 7 i.p.v. 12), -V060 -> -V095
+VOL = dict(lead=127, body=74, brass=63, brass_lo=53, organ=29, bass=71, sub=83, steel=23, arp=24, arpb=26,
+           dsine=42, stab=29, drums=62)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 # v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
 # arpeggio-thema), daarna de v8-blokgolf. Leadvolume (CC7) per stuk: de opening-run (maat 2-4) en het loopbegin
@@ -230,37 +248,43 @@ LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag a
 FAT_END = 22 * BAR
 # v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
 # (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
-LEAD_VOL = [(0, 124), (2 * BAR, 115), (5 * BAR, 124), (10 * BAR, 127), (14 * BAR, 124), (FAT_END, 92)]
-VOL_HOLD = 35
+LEAD_VOL = [(0, 127)]                         # v12: overal 127 (zie VOL)
+VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
 # tel 2 tot maat 50.
 BRIDGE = (44 * BAR + BEAT, 50 * BAR)
-VOL_ARPB_BRIDGE = 72
-VOL_BARP = 64               # v9: het brug-arpeggio op DirectSound (vette lead, korte release)
+VOL_ARPB_BRIDGE = 47
+VOL_BARP = 61               # v9: het brug-arpeggio op DirectSound (vette lead, korte release)
 
 
 def voicegroup():
-    lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v11. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 pulse-lead laag/hoog, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.'
-    lines[2] = 'voice_group grounded_neo_plasma'
-    out = []
-    for l in lines:
-        k = l.rsplit('@', 1)[1].strip() if '@' in l and l.startswith('\tvoice') else None
-        if k and k.isdigit() and int(k) in VOICES:
-            l = '\t%s  @ %s' % (VOICES[int(k)], k)
-        out.append(l)
-    open(VG, 'w').write('\n'.join(out))
+    """v12: op basis van de vanilla voicegroup vs_gym_leader; alleen de programma's van VOICES wijken af."""
+    base = [l.strip() for l in open('sound/voicegroups/vs_gym_leader.inc') if l.startswith('\tvoice')]
+    filler = 'voice_square_1 60, 0, 0, 2, 0, 0, 15, 0'          # zoals de lege plekken in vs_gym_leader
+    out = ['@ Project Grounded: Battle! Neo Team Plasma (BW2) v12, op basis van vs_gym_leader (alleen stock-samples).',
+           '@ Gegenereerd door tools/grounded/neo_plasma_theme.py. 17 orgel, 38 bas, 62/63 akkoordstoten (trompet),',
+           '@ 80/89 lead (trompet), 88 lead < C3 (synth bass), 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG),',
+           '@ 85 sinus, 86 orgelstoot, 87/90/91 arpeggio, 92 hold (organ2), 127 drums.',
+           'voice_group grounded_neo_plasma']
+    for k in range(128):
+        out.append('\t%s  @ %d' % (VOICES.get(k, base[k] if k < len(base) else filler), k))
+    open(VG, 'w').write('\n'.join(out) + '\n')
+    ks = lambda name, rel: 'voice_group %s\n' % name + ''.join(
+        '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_trumpet_%d, 255, 0, 193, %d\n' % (k, rel)
+        for k in (60, 72, 84))
     open(KEYSPLIT, 'w').write(
-        '@ Project Grounded: synth brass voor Battle! Neo Team Plasma v8 (neo_plasma_theme.py) = de GBA-trompetten\n'
-        '@ (sc88pro_trumpet_60/72/84, tabel keysplit_trumpet) zoals trumpet.inc, met een korte release (110, v7-brass: 110-120): stoten.\n'
-        'voice_group np_trumpet_keysplit\n' + ''.join(
-            '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_trumpet_%d, 255, 0, 193, 110\n' % k for k in (60, 72, 84)))
+        '@ Project Grounded: trompetten voor Battle! Neo Team Plasma (neo_plasma_theme.py) = de GBA-trompetten\n'
+        '@ (sc88pro_trumpet_60/72/84, tabel keysplit_trumpet) zoals trumpet.inc, met een kortere release:\n'
+        '@ akkoordstoten (release 110). De lead staat in np_lead.inc.\n' + ks('np_trumpet_keysplit', 110))
+    open(LEAD_KEYSPLIT, 'w').write(
+        '@ Project Grounded: trompet-lead voor Battle! Neo Team Plasma v12 (neo_plasma_theme.py): de GBA-trompetten\n'
+        '@ (sc88pro_trumpet_60/72/84, tabel keysplit_trumpet) met release %d (afgekapt per noot).\n' % LEAD_REL
+        + ks('np_lead_keysplit', LEAD_REL))
     open(DRUMSET, 'w').write(
-        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v8 (neo_plasma_theme.py): standaard GBA-samples\n'
-        '@ in de GM-indeling: 36 kick (+7 halve tonen), 38 snare (fills), 39 off-beat-clap (909), 40 felle snare\n'
-        '@ (2 en 4, ghosts), 42 dichte hihat, 46 open hihat, 49 crash, 55 splash. Alles DirectSound.\n'
+        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v12 (neo_plasma_theme.py): de regels van rs_drumset\n'
+        '@ (standaard Emerald-kit): 36 kick, 38 snare, 39 clap, 40 orkestsnare, 42 dichte hihat, 46 open hihat,\n'
+        '@ 49 crash (rs_drumset 57, want 49 is daar PSG), 55 crash. Alles DirectSound.\n'
         'voice_group neo_plasma_drumset, 36\n' + ''.join('\t%s\n' % k for k in KIT))
 
 
@@ -579,97 +603,87 @@ def sample_tremolo(name, note=72, dur=1.5):
 
 
 def rules_check(path):
-    """v10: Jordi's 'niet doen'-regels als harde controles op de geschreven MIDI + voicegroup:
-    1. geen noot boven C6 in een melodisch spoor (alles behalve drums);
-    2. geen akoestische instrumenten (fluit/piano/akoestische gitaar/marimba ...) en geen strijkers/pads/koren: elke
-       gebruikte DirectSound-sample (ook via keysplits/kit) gecontroleerd op naam;
-    3. geen trage aanzet: attack 255 (DirectSound) of 0 (PSG) bij elke gebruikte stem, keysplits en kit inbegrepen;
-    4. pitch bend: elk spoor met bends zet eerst BENDR (CC20) = BENDR, en elke bend blijft binnen +-BENDR;
-    5. v11 (Gemini: 'geen pitch-glide of zwevend vibrato op de lead'): bends alleen in de intro-run (GLISS), daarna
-       staat elk spoor met bends weer op het midden (0); nergens MOD/LFO-controllers (CC1/21/22/26);
-    6. v11: de lead (MIDI-kanaal 0) gebruikt buiten de glissando alleen samples zonder zweving (tremolo <
-       LEAD_MAX_TREMOLO dB) en een release <= LEAD_MAX_REL (afgekapt, geen staart die over de volgende noot glijdt).
-    Faalt met een AssertionError (het script schrijft dan niets meer)."""
-    import re
+    """v12: Jordi's regels als harde controles op de geschreven MIDI + voicegroup:
+    1. klinkende hoogte (geschreven + SOUND_OFS) van elke melodische noot tussen E1 en C6;
+    2. alleen stock-samples: elke gebruikte DirectSound-sample (ook via keysplits/kit) staat in
+       sound/direct_sound_samples/ (niet in grounded/) en in een vanilla voicegroup (niet grounded_*);
+       geen akoestische instrumenten/strijkers/pads (FORBIDDEN);
+    3. geen trage aanzet: attack 255 (DirectSound) of <= 1 (PSG);
+    4. geen pitch bends, geen BENDR, geen MOD/LFO-controllers;
+    5. de lead (MIDI-kanaal 0) gebruikt alleen samples zonder zweving (tremolo < LEAD_MAX_TREMOLO dB) en een release
+       <= LEAD_MAX_REL.
+    Faalt met een AssertionError."""
+    import re, glob
     m = mido.MidiFile(path)
     vg = {}
     for l in open(VG):
         mm = re.match(r'\t(voice_\w+) (.*?)\s+@ (\d+)', l)
         if mm:
             vg[int(mm.group(3))] = (mm.group(1), mm.group(2))
+    groups_ = {}
+    for f in (KEYSPLIT, LEAD_KEYSPLIT, DRUMSET):
+        cur = None
+        for l in open(f):
+            if l.startswith('voice_group'):
+                cur = l.split()[1].rstrip(',')
+                groups_[cur] = []
+            elif l.startswith('\tvoice'):
+                groups_[cur].append(tuple(l.strip().split(' ', 1)))
+    vanilla = set()
+    for f in glob.glob('sound/voicegroups/**/*.inc', recursive=True):
+        if 'grounded' in f or f in (VG, KEYSPLIT, LEAD_KEYSPLIT, DRUMSET):
+            continue
+        vanilla |= set(re.findall(r'DirectSoundWaveData_(\w+)', open(f).read()))
+
     def lines_of(prog):
         kind, args = vg[prog]
         if kind.startswith('voice_keysplit'):
-            sub = args.split(',')[0].strip().replace('voicegroup_', '')
-            f = KEYSPLIT if sub == 'np_trumpet_keysplit' else DRUMSET
-            return [tuple(l.strip().split(' ', 1)) for l in open(f) if l.startswith('\tvoice')]
+            return groups_[args.split(',')[0].strip().replace('voicegroup_', '')]
         return [(kind, args)]
     bad = []
     for i, t in enumerate(m.tracks):
-        progs = {x.program for x in t if x.type == 'program_change'}
         drum = any(x.channel == 9 for x in t if x.type == 'note_on')
-        top = max([x.note for x in t if x.type == 'note_on' and x.velocity] or [0])
-        if not drum and top > TOP:
-            bad.append('spoor %d: noot %d > C6' % (i, top))
-        for p in progs:
+        tt, cur, used = 0, None, set()
+        for x in t:
+            tt += x.time
+            if x.type == 'program_change':
+                cur = x.program
+            if x.type == 'note_on' and x.velocity:
+                used.add(cur)
+                snd = x.note + SOUND_OFS.get(cur, 0)
+                if not drum and not 28 <= snd <= TOP:
+                    bad.append('spoor %d: klinkende noot %d buiten E1-C6 (tick %d)' % (i, snd, tt))
+            if x.type == 'pitchwheel' or (x.type == 'control_change' and x.control == 20):
+                bad.append('spoor %d: pitch bend/BENDR op tick %d' % (i, tt))
+            if x.type == 'control_change' and x.control in MOD_CCS:
+                bad.append('spoor %d: %s (CC%d) op tick %d' % (i, MOD_CCS[x.control], x.control, tt))
+        for p in used:
             for kind, args in lines_of(p):
                 a = [x.strip() for x in args.split(',')]
                 if kind.startswith('voice_directsound'):
-                    words = re.split(r'[_\d]+', a[2].lower().replace('directsoundwavedata', ''))
+                    smp = a[2].replace('DirectSoundWaveData_', '')
+                    if not os.path.exists('sound/direct_sound_samples/%s.wav' % smp) or smp not in vanilla:
+                        bad.append('spoor %d prog %d: geen stock-sample %s' % (i, p, smp))
+                    words = re.split(r'[_\d]+', smp.lower())
                     if any(w.startswith(f) for w in words for f in FORBIDDEN):
-                        bad.append('spoor %d prog %d: sample %s' % (i, p, a[2]))
+                        bad.append('spoor %d prog %d: sample %s' % (i, p, smp))
                     if int(a[3]) != 255 and int(a[5]) > 0:
                         bad.append('spoor %d prog %d: trage aanzet (attack %s)' % (i, p, a[3]))
+                    if i == 1 or any(x.channel == 0 for x in t if x.type == 'note_on'):
+                        tr = sample_tremolo(smp, 60 if smp.endswith('_60') or 'bass' in smp else 72)
+                        if tr >= LEAD_MAX_TREMOLO:
+                            bad.append('lead prog %d: sample %s zweeft (%.1f dB tremolo)' % (p, smp, tr))
+                        if int(a[6]) > LEAD_MAX_REL:
+                            bad.append('lead prog %d: release %s > %d' % (p, a[6], LEAD_MAX_REL))
                 elif kind.startswith(('voice_square', 'voice_programmable', 'voice_noise')):
+                    if drum:
+                        bad.append('spoor %d: PSG-drumnoot (prog %d)' % (i, p))
                     att = int(a[-4])
                     if att > 1:
                         bad.append('spoor %d prog %d: PSG-attack %d' % (i, p, att))
-        tt, lastbend = 0, 0
-        lead = any(x.channel == 0 for x in t if x.type == 'note_on')
-        for x in t:
-            tt += x.time
-            if x.type == 'control_change' and x.control in MOD_CCS:
-                bad.append('spoor %d: %s (CC%d) op tick %d' % (i, MOD_CCS[x.control], x.control, tt))
-            if x.type == 'pitchwheel':
-                # na de run mag de laatste glijnoot zijn eindtoon aanhouden (zelfde bend) tot hij terug naar 0 gaat
-                if x.pitch and not GLISS[0] <= tt < GLISS[1] and not (tt >= GLISS[1] and x.pitch == lastbend):
-                    bad.append('spoor %d: pitch bend %d buiten de intro-run (tick %d)' % (i, x.pitch, tt))
-                lastbend = x.pitch
-        if lastbend:
-            bad.append('spoor %d: de bend gaat niet terug naar het midden' % i)
-        if lead:
-            tt, cur, used = 0, None, set()
-            for x in t:
-                tt += x.time
-                if x.type == 'program_change':
-                    cur = x.program
-                if x.type == 'note_on' and x.velocity and not GLISS[0] <= tt < GLISS[1]:
-                    used.add(cur)
-            for p in used:
-                kind, args = vg[p]
-                a = [x.strip() for x in args.split(',')]
-                assert kind.startswith('voice_directsound'), 'lead: geen DirectSound-stem'
-                smp = a[2].replace('DirectSoundWaveData_', '')
-                tr = sample_tremolo(smp, int(a[0]))
-                if tr >= LEAD_MAX_TREMOLO:
-                    bad.append('lead prog %d: sample %s zweeft (%.1f dB tremolo)' % (p, smp, tr))
-                if int(a[6]) > LEAD_MAX_REL:
-                    bad.append('lead prog %d: release %s > %d' % (p, a[6], LEAD_MAX_REL))
-        bends = [x for x in t if x.type == 'pitchwheel']
-        if bends:
-            tt, first_br, first_bend = 0, None, None
-            for x in t:
-                tt += x.time
-                if x.type == 'control_change' and x.control == 20 and first_br is None:
-                    first_br = (tt, x.value)
-                if x.type == 'pitchwheel' and first_bend is None:
-                    first_bend = tt
-            if not first_br or first_br[1] != BENDR or first_br[0] > first_bend:
-                bad.append('spoor %d: BENDR %s niet vóór de eerste bend' % (i, first_br))
     assert not bad, 'regels van Jordi geschonden: ' + '; '.join(bad)
-    print('  regels: geen noot > C6, geen akoestische/trage samples, BENDR %d vóór elke bend, bends alleen in de '
-          'intro-run en terug naar 0, geen MOD/LFO, lead zonder zweving (< %.0f dB) en release <= %d: OK'
-          % (BENDR, LEAD_MAX_TREMOLO, LEAD_MAX_REL))
+    print('  regels: klinkend E1-C6, alleen stock-samples, geen akoestische/trage samples, geen bends/MOD/LFO, '
+          'lead zonder zweving (< %.0f dB) en release <= %d: OK' % (LEAD_MAX_TREMOLO, LEAD_MAX_REL))
 
 
 def staccato(ev, f, lo, hi):
@@ -872,7 +886,7 @@ def build():
     parts['lead'] = cap_top(clip(lead))
 
     voicegroup()
-    rel = releases('grounded_neo_plasma')
+    rel = dict(V11_REL)              # v12: notenberekening met de v11-releases (noten exact v11)
     # v8: de stemverdeler (en detach) rekent met de releases van v7, zodat élke noot (aanslag, lengte, toonhoogte)
     # exact v7 blijft; alleen de lead wordt daarna legato. ds_check() meet de bezetting met de echte v8-releases.
     rel = dict(rel)
@@ -893,15 +907,18 @@ def build():
     order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'farp', 'arp', 'brass_lo']
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
-    real = releases('grounded_neo_plasma')
+    real = V11_REL
     res['lead'] = trim_legato(res, order, {k: 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
                                            for k in order})
     # v11: afgekapt per noot: elke leadnoot laat los een uitklinktijd vóór de volgende aanslag (geen staart die over
     # de volgende noot heen 'glijdt'); de glissando-noten hieronder houden hun eigen lengte
     res['lead'] = detach(res['lead'], release_ticks(LEAD_REL, TPB, BPM))
-    res['lead'], gl_ev = gliss(res['lead'])
-    parts['lead'] = res['lead']                     # (de ladder is bewust 3 glijnoten geworden)
-    body = [[s_, e_, n - 12, 96] for s_, e_, n, v in res['lead'] if n - 12 >= 40]
+    # v12: de opening-run speelt weer als ladder (gewone noten, geen bends); de stemverdeling hieronder rekent nog met
+    # de 3 glijnoten van v11 (zelfde bezetting: hold/brug/basvulling blijven exact v11)
+    ladder = res['lead']
+    res['lead'], _ = gliss(res['lead'])
+    parts['lead'] = res['lead']
+    body = [[s_, e_, n - 12, 96] for s_, e_, n, v in ladder if n - 12 >= 40]
     # v9: aangehouden sawtooth-akkoordtonen (>= 3 16en, >= C3) die nergens meer klinken: eigen spoor 'hold', alleen
     # waar een kanaal vrij is (uitklinktijden van alle andere partijen meegerekend)
     res['hold'] = held_tones(T[4], res, order, progs, real)
@@ -935,6 +952,7 @@ def build():
     for k in order:
         n, kept = len(parts[k]), len(res[k])
         print('  %-9s %4d noten, %3d vallen weg (%.1f%%)' % (k, n, n - kept, 100 * (n - kept) / max(n, 1)))
+    res['lead'] = parts['lead'] = ladder
     p = res
     # arpeggio spoor B (PSG): alle arpeggio's/steel drums (ook wat in A wegviel), 1/24 tel later
     arpb = mono([[s_ + ARPB_DELAY, e_ + ARPB_DELAY, n, v] for s_, e_, n, v in parts['farp'] + parts['arp'] + parts['steel']])
@@ -946,17 +964,15 @@ def build():
     song = Song(TPB, 500000)
     tempo_map(song, END)
     song.loop = (LOOP0, END)
-    # v11: buiten de glissando de zuivere pulse-lead: < C4 de lage sample (FAT_LO), daarboven FAT_HI (maat 0-21) of
-    # LEAD (zelfde sample; eigen programma zodat de CC7-stappen van v9 per stuk blijven kloppen)
-    lead_prog = lambda n, s_: ((GL_HI if n >= 60 else GL_LO) if GLISS[0] <= s_ < GLISS[1] else
-                               FAT_LO if n < 60 else FAT_HI if s_ < FAT_END else LEAD)
+    # v12: lead op de trompet; < C3 op de synth bass (koper niet onder C3)
+    lead_prog = lambda n, s_: FAT_LO if n < 48 else LEAD
     arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
     arp_notes = sorted(p['farp'] + p['arp'])
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [
-        (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc, gl_ev),
-        (psg['body'], BODY, VOL['body'], 1, 64, (), gl_ev),
+        (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
+        (psg['body'], BODY, VOL['body'], 1, 64),
         (p['brass'], BRASS, VOL['brass'], 2, 56),
         (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
@@ -974,6 +990,12 @@ def build():
     written = 0
     for notes, prog, vol, ch, pan, *cc in tracks:
         assert notes, 'lege partij'
+        # v12: klinkende hoogte = v11 (organ2 klinkt een octaaf onder de geschreven noot; de fingered bass op de
+        # geschreven noot, np_bass_buzz klonk een octaaf lager)
+        if prog in OCT_UP:
+            notes = [[s_, e_, n + 12, v] for s_, e_, n, v in notes]
+        elif prog == BASS:
+            notes = [[s_, e_, n - 12 if n - 12 >= 28 else n, v] for s_, e_, n, v in notes]
         song.add(notes, prog, vol, ch, pan, extra=cc[1] if len(cc) > 1 else (), ccs=cc[0] if cc else ())
         written += len(notes)
     assert written == sum(len(p[k]) for k in order) + sum(len(v) for v in psg.values()), 'niet elke partij staat in de MIDI'

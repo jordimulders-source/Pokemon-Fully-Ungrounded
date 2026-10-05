@@ -7526,14 +7526,6 @@ DirectSoundWaveData_gym_fla_castanets::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_castanets.bin"
 
 	.align 2
-DirectSoundWaveData_np_sine::
-	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
 DirectSoundWaveData_mitch4_kick::
 	.incbin "sound/direct_sound_samples/grounded/mitch4_kick.bin"
 
@@ -7762,14 +7754,6 @@ DirectSoundWaveData_mitch5_wob_eb2::
 	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_eb2.bin"
 
 	.align 2
-DirectSoundWaveData_np_lead_fat::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_fat.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_fat_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_fat_lo.bin"
-
-	.align 2
 DirectSoundWaveData_gym2_w_saw::
 	.incbin "sound/direct_sound_samples/grounded/gym2_w_saw.bin"
 
@@ -7898,14 +7882,6 @@ DirectSoundWaveData_gym_bra4_chirp::
 
 
 	.align 2
-DirectSoundWaveData_np_gbrass_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_gbrass_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_gbrass_hi::
-	.incbin "sound/direct_sound_samples/grounded/np_gbrass_hi.bin"
-
-	.align 2
 DirectSoundWaveData_bg_upright::
 	.incbin "sound/direct_sound_samples/grounded/bg_upright.bin"
 
@@ -7992,15 +7968,3 @@ DirectSoundWaveData_gym_bra5_chug::
 	.align 2
 DirectSoundWaveData_gym_bra5_kick::
 	.incbin "sound/direct_sound_samples/grounded/gym_bra5_kick.bin"
-
-	.align 2
-DirectSoundWaveData_np_plead_hi::
-	.incbin "sound/direct_sound_samples/grounded/np_plead_hi.bin"
-
-	.align 2
-DirectSoundWaveData_np_plead_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_plead_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_bass_buzz::
-	.incbin "sound/direct_sound_samples/grounded/np_bass_buzz.bin"

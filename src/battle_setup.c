@@ -519,7 +519,8 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
-        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_GROUNDED_VS_RAYQUAZA); // Project Grounded: gamelan-remix
+        // Project Grounded: eigen film (groene ring rond de Sky Pillar); de oude B_TRANSITION_RAYQUAZA blijft bestaan
+        CreateBattleStartTask(B_TRANSITION_RAYQUAZA_PILLAR, MUS_GROUNDED_VS_RAYQUAZA); // gamelan-remix
         break;
     case SPECIES_DEOXYS_NORMAL:
     case SPECIES_DEOXYS_ATTACK:
@@ -994,6 +995,14 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
     if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
         return B_TRANSITION_ROCKET;
+
+    // Project Grounded: Steven (kampioen, post-game en Battle Stadium): zijn verzamelkast, de badges in de facetten van
+    // een gloeiende steen. Vervangt de mugshot: de film stelt Steven zelf al voor, en mugshot + film samen duurt te lang.
+    if (trainerId == TRAINER_CHAMPION_STEVEN || trainerId == TRAINER_STEVEN)
+        return B_TRANSITION_STEVEN;
+    // Project Grounded: het laatste Wally-gevecht (Victory Road): een VHS-band van zijn groei
+    if (trainerId == TRAINER_WALLY_VR_1)
+        return B_TRANSITION_WALLY_VHS;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;

@@ -163,6 +163,9 @@ static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
 static void Task_NeoPlasma(u8); // Project Grounded
 static void Task_SickBlik(u8); // Project Grounded
+static void Task_Steven(u8); // Project Grounded
+static void Task_WallyVhs(u8); // Project Grounded
+static void Task_RayquazaPillar(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
 static void Task_PoisonChain(u8); // Project Grounded
@@ -638,6 +641,9 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
     [B_TRANSITION_REGIGIGAS] = Task_Regigigas, // Project Grounded
     [B_TRANSITION_DAVE] = Task_Dave, // Project Grounded
+    [B_TRANSITION_STEVEN] = Task_Steven, // Project Grounded
+    [B_TRANSITION_WALLY_VHS] = Task_WallyVhs, // Project Grounded
+    [B_TRANSITION_RAYQUAZA_PILLAR] = Task_RayquazaPillar, // Project Grounded
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -9072,4 +9078,363 @@ static const struct RouteTransition sRT_Dave =
 static void Task_Dave(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Dave);
+}
+
+//------------------------------------------------------------------------
+// Project Grounded: filmtransities (Steven, Wally, Rayquaza). Een film is per gameframe een tilemap (LZ77), een
+// paletset (BG 13-15) en eventueel een laadactie: de tiles (LZ77) die het nieuwe beeld nog mist, met per run de plek in
+// VRAM. De encoder kiest alleen plekken die het getoonde beeld niet gebruikt, en elke nieuwe tilemap gaat naar het
+// schermblok dat niet getoond wordt (31 of 27); BG0CNT wisselt pas in de VBlank. Zo is het beeld nooit half beschreven
+// en wordt een stilstaande achtergrond maar één keer geladen. Gemaakt met tools/grounded/film.py (+
+// steven_transition.py, wally_transition.py, rayquaza_transition.py).
+//------------------------------------------------------------------------
+#define FILM_BLANK      0xFFFF
+#define FILM_SCREEN_B   27          // tweede schermblok (tiles 704-767 van charblock 2; de film gebruikt 1-702)
+#define FILM_TILE_BUF   (351 * TILE_SIZE_4BPP)
+#define FILM_MAP_BUF    (32 * 20 * 2)
+#define FILM_SCENE_PALETTES (PALETTES_ALL & ~(7 << 13))
+#define tFilmMap    data[11]
+#define tFilmScreen data[12]
+#define tFilmCnt    data[13]
+
+struct Film
+{
+    const u32 *tiles;   // LZ77-blokken per laadactie
+    const u32 *loads;   // per laadactie: u32 offset in tiles, u32 aantal runs | eerste run << 16
+    const u32 *runs;    // per run: doeltile | aantal << 16
+    const u32 *maps;    // LZ77-tilemaps (32x20)
+    const u32 *mapOfs;  // per tilemap de offset in maps
+    const u32 *seq;     // per gameframe 2 x u32: tilemap | laadactie << 16, paletset
+    const u16 *pals;    // paletsets van 3 x 16 kleuren
+    u16 numFrames;
+};
+
+static EWRAM_DATA u8 *sFilmBuffer = NULL;
+static const u16 sFilm_EmptyTile[16] = {0};
+
+static u16 *Film_Screen(struct Task *task, u32 which)
+{
+    u32 base = which ? FILM_SCREEN_B : ((u16)task->tFilmCnt >> 8) & 0x1F;
+    return (u16 *)(BG_VRAM + base * BG_SCREEN_SIZE);
+}
+
+static void Film_Init(struct Task *task)
+{
+    sFilmBuffer = Alloc(FILM_TILE_BUF + FILM_MAP_BUF);
+    task->tFilmMap = -1;    // = FILM_BLANK: beide schermen zijn leeg
+    task->tFilmScreen = 0;
+    task->tFilmCnt = GetGpuReg(REG_OFFSET_BG0CNT);
+    CpuFill16(0, Film_Screen(task, 1), BG_SCREEN_SIZE);
+}
+
+static void Film_Finish(struct Task *task)
+{
+    SetGpuReg(REG_OFFSET_BG0CNT, (u16)task->tFilmCnt);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    TRY_FREE_AND_SET_NULL(sFilmBuffer);
+}
+
+// toont gameframe t van de film; TRUE als de film af is
+static bool8 Film_Update(struct Task *task, const struct Film *film)
+{
+    s32 t = task->tRtTimer;
+    u32 e, map, load, pal, next, i, n, r, run;
+    u16 *screen, *tilemap, *tileset;
+    const u8 *src;
+
+    if (t >= film->numFrames)
+        return TRUE;
+    e = film->seq[t * 2];
+    map = e & 0xFFFF;
+    load = e >> 16;
+    pal = film->seq[t * 2 + 1] & 0xFF;
+    LoadPalette(&film->pals[pal * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    // de wereld eronder wordt zwart (ook de sprites); daarna dekt de film hem af. Alleen tijdens het uitfaden: BlendPalettes
+    // over 29 paletten kost ±60 beeldlijnen per frame
+    if (t <= 8)
+        BlendPalettes(FILM_SCENE_PALETTES, min(t * 2, 16), RGB_BLACK);
+
+    if (sFilmBuffer == NULL)
+        return FALSE;
+    if (load != FILM_BLANK)
+    {
+        // de ontbrekende tiles, in plekken die het getoonde beeld niet gebruikt
+        GetBg0TilesDst(&tilemap, &tileset);
+        FastLZ77UnCompWram(&film->tiles[film->loads[load * 2] / 4], sFilmBuffer);
+        n = film->loads[load * 2 + 1] & 0xFFFF;
+        r = film->loads[load * 2 + 1] >> 16;
+        src = sFilmBuffer;
+        for (i = 0; i < n; i++)
+        {
+            run = film->runs[r + i];
+            CpuCopy32(src, (u8 *)tileset + (run & 0xFFFF) * TILE_SIZE_4BPP, (run >> 16) * TILE_SIZE_4BPP);
+            src += (run >> 16) * TILE_SIZE_4BPP;
+        }
+    }
+    if (map == (u16)task->tFilmMap)
+        return FALSE;
+    next = task->tFilmScreen ^ 1;
+    screen = Film_Screen(task, next);
+    if (map == FILM_BLANK)
+    {
+        CpuFill16(0, screen, BG_SCREEN_SIZE);
+    }
+    else
+    {
+        FastLZ77UnCompWram(&film->maps[film->mapOfs[map] / 4], sFilmBuffer + FILM_TILE_BUF);
+        CpuFastCopy(sFilmBuffer + FILM_TILE_BUF, screen, FILM_MAP_BUF);
+        // rij 20 = rij 19 en rij 31 = rij 0, voor verticaal trillen
+        CpuFastCopy(&screen[19 * 32], &screen[20 * 32], 64);
+        CpuFastCopy(&screen[0], &screen[31 * 32], 64);
+    }
+    SetGpuReg(REG_OFFSET_BG0CNT, ((u16)task->tFilmCnt & ~(0x1F << 8)) | ((next ? FILM_SCREEN_B : (((u16)task->tFilmCnt >> 8) & 0x1F)) << 8));
+    task->tFilmScreen = next;
+    task->tFilmMap = map;
+    return FALSE;
+}
+
+#define FILM(name) \
+    { s##name##_Tiles, s##name##_Loads, s##name##_Runs, s##name##_Maps, s##name##_MapOfs, s##name##_Seq, s##name##_Pal, \
+      ARRAY_COUNT(s##name##_Seq) / 2 }
+
+// ---------------- Steven: zijn verzamelkast met edelstenen op donker fluweel ("ROCK", "ALSO ROCK", "THE ROCK"). De
+// middelste steen gaat gloeien, de camera zoomt in op de facetten en in de acht kite-facetten verschijnen een voor een
+// de badges (elk een noot hoger). Dan barst de steen en spat hij uiteen. Vervangt de mugshot (zie battle_setup.c).
+static const u32 sFilmSteven_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_steven_tiles.bin");
+static const u32 sFilmSteven_Loads[] = INCBIN_U32("graphics/battle_transitions/film_steven_loads.bin");
+static const u32 sFilmSteven_Runs[] = INCBIN_U32("graphics/battle_transitions/film_steven_runs.bin");
+static const u32 sFilmSteven_Maps[] = INCBIN_U32("graphics/battle_transitions/film_steven_maps.bin");
+static const u32 sFilmSteven_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_steven_mapofs.bin");
+static const u32 sFilmSteven_Seq[] = INCBIN_U32("graphics/battle_transitions/film_steven_seq.bin");
+static const u16 sFilmSteven_Pal[] = INCBIN_U16("graphics/battle_transitions/film_steven_pal.bin");
+static const struct Film sFilm_Steven = FILM(FilmSteven);
+
+// tijden: zie steven_transition.py
+#define STEVEN_GLOW     56
+#define STEVEN_ZOOM     96
+#define STEVEN_BADGE    146
+#define STEVEN_BADGE_GAP 6
+#define STEVEN_CRACK    200
+#define STEVEN_SHATTER  218
+
+static const u16 sStevenBadgeNotes[8] =
+{
+    SE_NOTE_C, SE_NOTE_D, SE_NOTE_E, SE_NOTE_F, SE_NOTE_G, SE_NOTE_A, SE_NOTE_B, SE_NOTE_C_HIGH
+};
+
+static bool8 RTSteven_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == STEVEN_GLOW)
+        PlaySE(SE_SHINY);
+    if (t == STEVEN_ZOOM)
+        PlaySE(SE_M_HARDEN);
+    if (t >= STEVEN_BADGE && t < STEVEN_BADGE + 8 * STEVEN_BADGE_GAP && (t - STEVEN_BADGE) % STEVEN_BADGE_GAP == 0)
+        PlaySE(sStevenBadgeNotes[(t - STEVEN_BADGE) / STEVEN_BADGE_GAP]);
+    if (t == STEVEN_CRACK || t == STEVEN_CRACK + 6 || t == STEVEN_CRACK + 12)
+        PlaySE(SE_ICE_CRACK);
+    if (t == STEVEN_SHATTER)
+        PlaySE(SE_ICE_BREAK);
+    if (t >= STEVEN_CRACK && t < STEVEN_SHATTER + 14)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, &sFilm_Steven);
+}
+
+static const struct RouteTransition sRT_Steven =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmSteven_Pal, 1, 1, 0, Film_Init, RTSteven_Update, Film_Finish
+};
+
+static void Task_Steven(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Steven);
+}
+
+// ---------------- Wally (Victory Road): een oude VHS-band. Blauw scherm met PLAY en het etiket, Route 102 (Wally vangt
+// Ralts met de geleende Zigzagoon), doorspoelen door zijn groei (Mauville, zijn rondje in Meteor Falls, Kirlia wordt
+// Gallade), dan een snelle zoom op zijn vastberaden gezicht, PAUSE, sneeuw. De sporingsband en het trillen doet de
+// HBlank: per gameframe staat in film_wally_fx.bin de y van de band (255 = geen) en de sterkte | vlaggen.
+static const u32 sFilmWally_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_wally_tiles.bin");
+static const u32 sFilmWally_Loads[] = INCBIN_U32("graphics/battle_transitions/film_wally_loads.bin");
+static const u32 sFilmWally_Runs[] = INCBIN_U32("graphics/battle_transitions/film_wally_runs.bin");
+static const u32 sFilmWally_Maps[] = INCBIN_U32("graphics/battle_transitions/film_wally_maps.bin");
+static const u32 sFilmWally_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_wally_mapofs.bin");
+static const u32 sFilmWally_Seq[] = INCBIN_U32("graphics/battle_transitions/film_wally_seq.bin");
+static const u16 sFilmWally_Pal[] = INCBIN_U16("graphics/battle_transitions/film_wally_pal.bin");
+static const u8 sFilmWally_Fx[] = INCBIN_U8("graphics/battle_transitions/film_wally_fx.bin");
+static const struct Film sFilm_Wally = FILM(FilmWally);
+
+#define WALLY_FX_SHAKE  0x40
+#define WALLY_FX_WOBBLE 0x80
+#define WALLY_BAND_H    10
+// tijden: zie wally_transition.py
+#define WALLY_PLAY      8
+#define WALLY_THROW     42
+#define WALLY_CATCH     62
+#define WALLY_WOBBLE    84      // drie keer wiebelen: +0, +8, +16
+#define WALLY_CLICK     104
+#define WALLY_FF        124
+#define WALLY_ZOOM      222
+#define WALLY_PAUSE     236
+#define WALLY_SNOW      270
+
+// de HOFS per beeldlijn gaat met HBlank-DMA (geen interrupt per lijn: dat kostte ±30 beeldlijnen rekentijd per frame)
+static void VBlankCB_WallyVhs(void)
+{
+    VBlankCB_BattleTransition();
+    DmaStop(0);
+    if (sTransitionData->VBlank_DMA)
+    {
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
+        sTransitionData->VBlank_DMA = FALSE;
+    }
+    REG_BG0HOFS = gScanlineEffectRegBuffers[1][0];
+    DmaSet(0, &gScanlineEffectRegBuffers[1][1], &REG_BG0HOFS,
+           ((DMA_ENABLE | DMA_START_HBLANK | DMA_REPEAT | DMA_SRC_INC | DMA_DEST_RELOAD | DMA_16BIT) << 16) | 1);
+}
+
+static void RTWallyVhs_Init(struct Task *task)
+{
+    u32 i;
+
+    Film_Init(task);
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    for (i = 0; i < DISPLAY_HEIGHT; i++)
+        gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = 0;
+    SetVBlankCallback(VBlankCB_WallyVhs);
+}
+
+static void RTWallyVhs_Finish(struct Task *task)
+{
+    DmaStop(0);
+    SetVBlankCallback(VBlankCB_BattleTransition);
+    Film_Finish(task);
+}
+
+static bool8 RTWallyVhs_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer, y, band = 255, amp = 0, flags = 0, wob;
+    u16 *buf = gScanlineEffectRegBuffers[0];
+
+    if (t < (s32)ARRAY_COUNT(sFilmWally_Fx) / 2)
+    {
+        band = sFilmWally_Fx[t * 2];
+        amp = sFilmWally_Fx[t * 2 + 1] & 0x3F;
+        flags = sFilmWally_Fx[t * 2 + 1] & 0xC0;
+    }
+    // per beeldlijn een horizontale verschuiving: de sporingsband scheurt, bij doorspoelen golft alles, en altijd
+    // een paar lijnen die een pixel verspringen (de band is oud)
+    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    {
+        s32 h = 0;
+        if (band != 255 && y >= band && y < band + WALLY_BAND_H)
+            h = (Random() % (2 * amp + 1)) - amp;
+        if (flags & WALLY_FX_WOBBLE)
+        {
+            wob = Sin(((y * 6 + t * 13) & 0xFF), 2);
+            h += wob;
+        }
+        buf[y] = h & 0x1FF;
+    }
+    for (y = 0; y < 3; y++)
+        buf[Random() % DISPLAY_HEIGHT] = ((Random() & 1) ? 1 : 0x1FF);
+    sTransitionData->VBlank_DMA = TRUE;
+    // PAUSE: het stilstaande beeld trilt een lijn op en neer
+    SetGpuReg(REG_OFFSET_BG0VOFS, (flags & WALLY_FX_SHAKE) ? ((t / 2) & 1) : 0);
+
+    if (t == WALLY_PLAY)
+        PlaySE(SE_PC_ON);
+    if (t == WALLY_THROW)
+        PlaySE(SE_BALL_THROW);
+    if (t == WALLY_CATCH)
+        PlaySE(SE_BALL_OPEN);
+    if (t == WALLY_WOBBLE || t == WALLY_WOBBLE + 8 || t == WALLY_WOBBLE + 16)
+        PlaySE(SE_BALL_BOUNCE_1);
+    if (t == WALLY_CLICK)
+        PlaySE(SE_RG_BALL_CLICK);
+    if (t >= WALLY_FF && t < WALLY_ZOOM && (t - WALLY_FF) % 18 == 0)
+        PlaySE(SE_DEX_SCROLL);
+    if (t == WALLY_PAUSE)
+        PlaySE(SE_CLICK);
+    if (t == WALLY_SNOW)
+        PlaySE(SE_PC_OFF);
+    return Film_Update(task, &sFilm_Wally);
+}
+
+static const struct RouteTransition sRT_WallyVhs =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmWally_Pal, 1, 1, 0, RTWallyVhs_Init, RTWallyVhs_Update, RTWallyVhs_Finish
+};
+
+static void Task_WallyVhs(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_WallyVhs);
+}
+
+// ---------------- Rayquaza (Sky Pillar, ook de shiny en de Delta Episode): je kijkt omhoog langs de pilaar, door de
+// wolken; een groene streep cirkelt steeds sneller om de top tot hij een ring is, en daaruit breekt Rayquaza's silhouet
+// recht op de camera af (kop eerst, gele markeringen gloeien). Vervangt B_TRANSITION_RAYQUAZA (die blijft bestaan).
+static const u32 sFilmRayquaza_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_tiles.bin");
+static const u32 sFilmRayquaza_Loads[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_loads.bin");
+static const u32 sFilmRayquaza_Runs[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_runs.bin");
+static const u32 sFilmRayquaza_Maps[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_maps.bin");
+static const u32 sFilmRayquaza_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_mapofs.bin");
+static const u32 sFilmRayquaza_Seq[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_seq.bin");
+static const u16 sFilmRayquaza_Pal[] = INCBIN_U16("graphics/battle_transitions/film_rayquaza_pal.bin");
+static const struct Film sFilm_Rayquaza = FILM(FilmRayquaza);
+
+// tijden: zie rayquaza_transition.py
+#define RAYQUAZA_STREAK 22
+#define RAYQUAZA_RING   104
+#define RAYQUAZA_BURST  124
+#define RAYQUAZA_FILL   166
+
+static bool8 RTRayquazaPillar_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == 2)
+        PlaySE(SE_M_GUST);
+    if (t == RAYQUAZA_STREAK + 30)
+        PlaySE(SE_M_GUST2);
+    if (t == RAYQUAZA_RING - 16)
+        PlaySE(SE_M_TWISTER);
+    if (t == RAYQUAZA_BURST)
+        PlaySE(SE_M_DRAGON_RAGE);
+    if (t == RAYQUAZA_FILL - 8)
+        PlaySE(SE_M_HYPER_BEAM);
+    // de pilaar beeft als Rayquaza eruit breekt
+    if (t >= RAYQUAZA_BURST && t < RAYQUAZA_FILL + 8)
+    {
+        s32 a = (t < RAYQUAZA_BURST + 16) ? 1 : 2;
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % (2 * a + 1)) - a) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % (2 * a + 1)) - a) & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, &sFilm_Rayquaza);
+}
+
+static const struct RouteTransition sRT_RayquazaPillar =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmRayquaza_Pal, 1, 1, 0, Film_Init, RTRayquazaPillar_Update, Film_Finish
+};
+
+static void Task_RayquazaPillar(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_RayquazaPillar);
 }

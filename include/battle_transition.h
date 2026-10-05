@@ -113,6 +113,9 @@ enum BattleTransition
     B_TRANSITION_STEVEN, // Project Grounded: Steven, verzamelkast, gloeiende steen met de badges in de facetten, spat uiteen
     B_TRANSITION_WALLY_VHS, // Project Grounded: Wally (Victory Road), VHS-band van zijn groei, bevriest op zijn gezicht
     B_TRANSITION_RAYQUAZA_PILLAR, // Project Grounded: Rayquaza, groene ring rond de Sky Pillar, Rayquaza breekt eruit
+    B_TRANSITION_MIMI, // Project Grounded: Mimi, poppenkast in een donkere kinderkamer, het nekje van de Pikachu-pop knakt
+    B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
+    B_TRANSITION_BURGLAR, // Project Grounded: Burglar, bewakingscamera, de Gen 1-Burglar kijkt in de lens, alarm
     B_TRANSITION_COUNT
 };
 

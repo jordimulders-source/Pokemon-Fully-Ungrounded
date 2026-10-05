@@ -576,6 +576,7 @@
 #define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran, eigen compositie in stoner rock à la Kyuss (tools/grounded/heatran_theme.py)
 #define MUS_GROUNDED_VS_SHAYMIN     639 // Project Grounded: Battle! Shaymin, eigen compositie (relaxte bloemenweide in 6/8, tools/grounded/shaymin_theme.py)
 #define MUS_GROUNDED_VS_RAYQUAZA    640 // Project Grounded: weather trio-thema als Balinese gamelan (gong kebyar), tools/grounded/rayquaza_theme.py
+#define MUS_GROUNDED_ASHFROST       641 // Project Grounded: Ashfrost Village, wintervariant van het Fallarbor-thema (tools/grounded/ashfrost_theme.py)
 #define MUS_GROUNDED_VS_MITCH      642 // Project Grounded: Battle! Mitch, eigen compositie in Drum & Bass (Victory Road, Stadium; tools/grounded/mitch_theme.py)
 #define MUS_GROUNDED_VS_SICKBLIK    643 // Project Grounded: Battle! SickBlik (TRAINER_OWEN = Jordi), eigen compositie: smerige slap-funk (tools/grounded/sickblik_theme.py)
 

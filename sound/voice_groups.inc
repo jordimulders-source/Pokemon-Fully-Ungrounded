@@ -230,3 +230,4 @@
 .include "sound/voicegroups/grounded_rayquaza.inc"
 .include "sound/voicegroups/grounded_sickblik.inc"
 .include "sound/voicegroups/grounded_mitch.inc"
+.include "sound/voicegroups/grounded_ashfrost.inc"

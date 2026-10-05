@@ -161,6 +161,7 @@ static void Task_Victini(u8); // Project Grounded
 static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
 static void Task_NeoPlasma(u8); // Project Grounded
+static void Task_SickBlik(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
 static void Task_PoisonChain(u8); // Project Grounded
@@ -485,6 +486,15 @@ static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/ro
 static const u16 sNeoPlasma_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.4bpp"); // Project Grounded
 static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
 static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
+// Project Grounded: SickBlik (tools/grounded/sickblik_transition.py)
+static const u32 sSickBlik_TableTiles[] = INCBIN_U32("graphics/battle_transitions/sickblik_table_tiles.bin");
+static const u16 sSickBlik_TableMap[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_map.bin");
+static const u16 sSickBlik_TablePals[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_pals.bin");
+static const u32 sSickBlik_TopStatic[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_static.bin");
+static const u32 sSickBlik_TopDyn[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_dyn.bin");
+static const u16 sSickBlik_TopMaps[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_maps.bin");
+static const u16 sSickBlik_TopPals[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_pals.bin");
+#include "data/sickblik_transition.h"
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
@@ -615,6 +625,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
     [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
+    [B_TRANSITION_SICKBLIK] = Task_SickBlik, // Project Grounded
     [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
     [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
     [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
@@ -8402,6 +8413,164 @@ static void Task_NeoPlasma(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_NeoPlasma);
 }
+
+// ---------------- SickBlik (Jordi): eerst de mugshot; vanuit het witte scherm zit je aan tafel bij een yin-yang-hotpot
+// (stoom en bubbels via een kleurcyclus). Harde cut naar het bovenaanzicht: de S-scheiding trekt recht tot de band, de rand
+// wordt zwart, de ingrediënten zinken en een blokje tofu wordt de knop: de hotpot is een Poké Ball. Het bovenaanzicht
+// bestaat uit SB_KEYS sleutelbeelden; hun tiles gaan om en om in twee buffers achter de vaste tiles (nooit in de buffer die
+// in beeld is). Paletten 13-15, alles uit tabellen (tools/grounded/sickblik_transition.py).
+#define SB_PALS      ((1 << 13) | (1 << 14) | (1 << 15))
+#define SB_TABLE_END 84   // frames aan tafel
+#define SB_HOLD0     8    // het eerste bovenaanzicht
+#define SB_KEY_LEN   3    // frames per sleutelbeeld
+#define SB_CYCLE_LEN 5    // frames per stap van de stoom/bubbel-cyclus
+#define tSbKey      tRtB
+#define tSbCount    tRtC
+#define tSbCycle    data[5]
+#define tSbCycleT   data[6]
+#define tSickBlikPhase data[15]
+#define tSbFlash    data[5]
+
+static void SB_ShowMap(const u16 *map)
+{
+    u16 *tilemap = RT_Tilemap();
+    u32 r;
+    for (r = 0; r < 20; r++)
+        CpuCopy16(&map[r * 30], &tilemap[r * 32], 30 * 2);
+}
+
+static u32 *SB_Tileset(void)
+{
+    u16 *tilemap, *tileset;
+    GetBg0TilesDst(&tilemap, &tileset);
+    return (u32 *)tileset;
+}
+
+static void SB_UploadKey(u32 key)
+{
+    CpuCopy32(&sSickBlik_TopDyn[sSickBlik_KeyTiles[key][0] * 8],
+              &SB_Tileset()[(1 + SB_TOP_STATIC + (key & 1) * SB_TOP_DMAX) * 8], sSickBlik_KeyTiles[key][1] * 32);
+}
+
+static void RTSickBlik_Init(struct Task *task)
+{
+    SB_ShowMap(sSickBlik_TableMap);
+    task->tSbCycle = 0;
+    task->tSbCycleT = 0;
+    LoadPalette(sSickBlik_TablePals, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    BlendPalettes(SB_PALS, 16, RGB_WHITE);
+}
+
+static bool8 RTSickBlik_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    // de rest van het beeld (overworld, sprites) zwart; de tafel dekt het hele scherm
+    BlendPalettes(PALETTES_ALL & ~SB_PALS, 16, RGB_BLACK);
+    if (t < SB_TABLE_END)
+    {
+        // aan tafel: stoom stijgt en de bouillon borrelt (paletcyclus); vanuit het witte scherm infaden
+        if (++task->tSbCycleT == SB_CYCLE_LEN)
+        {
+            task->tSbCycleT = 0;
+            if (++task->tSbCycle == SB_CYCLE)
+                task->tSbCycle = 0;
+        }
+        LoadPalette(&sSickBlik_TablePals[task->tSbCycle * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        if (t < 8)
+            BlendPalettes(SB_PALS, 16 - t * 2, RGB_WHITE);
+        if (t == 4)
+            PlaySE(SE_M_BUBBLE3);
+        return FALSE;
+    }
+    if (t == SB_TABLE_END)
+    {
+        // camera-cut: een zwart beeld, daarin worden de tiles van het bovenaanzicht geladen
+        BlendPalettes(SB_PALS, 16, RGB_BLACK);
+        return FALSE;
+    }
+    if (t == SB_TABLE_END + 1)
+    {
+        CpuCopy32(sSickBlik_TopStatic, &SB_Tileset()[8], SB_TOP_STATIC * 32);
+        SB_UploadKey(0);
+        SB_ShowMap(sSickBlik_TopMaps);
+        task->tSbKey = 0;
+        task->tSbCount = 0;
+        LoadPalette(sSickBlik_TopPals, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        BlendPalettes(SB_PALS, 16, RGB_BLACK);
+        return FALSE;
+    }
+    // bovenaanzicht: de morph. Het volgende sleutelbeeld wordt een frame na de wissel in de vrije buffer geladen.
+    task->tSbCount++;
+    if (task->tSbCount == 1 && task->tSbKey + 1 < SB_KEYS)
+        SB_UploadKey(task->tSbKey + 1);
+    if (task->tSbCount >= (task->tSbKey == 0 ? SB_HOLD0 : SB_KEY_LEN))
+    {
+        task->tSbKey++;
+        task->tSbCount = 0;
+        SB_ShowMap(&sSickBlik_TopMaps[task->tSbKey * 600]);
+    }
+    LoadPalette(&sSickBlik_TopPals[task->tSbKey * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    if (task->tSbKey == SB_KEYS - 1)
+    {
+        PlaySE(SE_BALL_OPEN); // klik: het is een Poké Ball
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_SickBlik =
+{
+    (const u16 *)sSickBlik_TableTiles, sizeof(sSickBlik_TableTiles), &sSickBlik_TablePals[32], 1, 1, 0,
+    RTSickBlik_Init, RTSickBlik_Update, NULL
+};
+
+static void Task_SickBlik(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    if (task->tSickBlikPhase == 0)
+    {
+        // de mugshot tot de slides klaar zijn; de trage witte fade van de mugshot slaan we over (scheelt ruim een seconde)
+        while (task->tState < 6 && sMugshot_Funcs[task->tState](task))
+            ;
+        if (task->tState == 6)
+        {
+            task->tSbFlash = 0;
+            task->tSickBlikPhase = 1;
+        }
+        return;
+    }
+    if (task->tSickBlikPhase == 1)
+    {
+        // snelle witte flits (4 frames), dan alles van de mugshot opruimen zoals bij Colress
+        task->tSbFlash += 4;
+        BlendPalettes(PALETTES_ALL, task->tSbFlash, RGB_WHITE);
+        if (task->tSbFlash >= 16)
+        {
+            SetVBlankCallback(NULL);
+            DmaStop(0);
+            SetHBlankCallback(NULL);
+            SetGpuReg(REG_OFFSET_BLDCNT, 0);
+            SetGpuReg(REG_OFFSET_BLDY, 0);
+            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON);
+            SetVBlankCallback(VBlankCB_BattleTransition);
+            gSprites[task->data[11]].invisible = TRUE; // tOpponentSpriteAId
+            gSprites[task->data[14]].invisible = TRUE; // tPlayerSpriteId
+            task->tState = 0;
+            task->tSickBlikPhase = 2;
+        }
+        return;
+    }
+    RouteTransition_Run(taskId, &sRT_SickBlik);
+}
+
+#undef tSbKey
+#undef tSbCount
+#undef tSbCycle
+#undef tSbCycleT
+#undef tSickBlikPhase
+#undef tSbFlash
 
 // ---------------- Team Rocket: zwarte balken schuiven om en om van links en rechts dicht (rode voorrand), rode
 // snelheidsstrepen schieten over het zwart, en een grote rode R zoomt draaiend in en stempelt met een klap

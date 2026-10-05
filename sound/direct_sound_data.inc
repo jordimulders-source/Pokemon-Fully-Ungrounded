@@ -7884,3 +7884,15 @@ DirectSoundWaveData_gym_fla_pclara::
 	.align 2
 DirectSoundWaveData_gym_fla_psorda::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_psorda.bin"
+
+	.align 2
+DirectSoundWaveData_np_bass_fat::
+	.incbin "sound/direct_sound_samples/grounded/np_bass_fat.bin"
+
+	.align 2
+DirectSoundWaveData_np_gbrass_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_gbrass_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_gbrass_hi::
+	.incbin "sound/direct_sound_samples/grounded/np_gbrass_hi.bin"

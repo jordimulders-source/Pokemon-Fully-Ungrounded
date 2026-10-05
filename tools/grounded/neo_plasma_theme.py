@@ -4,6 +4,21 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v10 (Jordi via Gemini over v9; tempo, drumgroove en de achtergrond-arpeggio's blijven; preview v9 begon op 0 s,
+dus 0:22 = maat 16, 0:45 = maat 33, 1:08 = maat 50). Feiten gecontroleerd tegen de mp3 (Spleeter-stems, CQT):
+1. 'Foute melodienoten 0:22-0:35 en 1:08-1:21': in maat 16-26 klopt elke toonklasse van de lead met het origineel
+   (geen consistente fout; de 'F-E-D-C#-D'-lijn komt daar niet voor, de D-mineur-arpeggio's in maat 18-21 wel en die
+   speelt v9 al). Wél gevonden: octaaffouten van de transcriptie in het orgeldeel (maat 50-62): orgelakkoorden,
+   sawtooth en 8-bit-sinus een octaaf te hoog (OCT_*; fix_octaves). Alle melodische noten <= C6 (cap_top).
+2. Intro: de opening-run (maat 2-4) wordt een echte glissando: drie aangehouden noten op een dikke synth brass
+   (np_gbrass_lo/hi, velocity 127) met een pitch bend (BENDR 12) die de ladder volgt (gliss()); het octaaf
+   eronder (PSG) glijdt mee.
+3. Brug: de bas klonk hol (sc88pro_synth_bass heeft maar 17% energie op de grondtoon): np_bass_fat (grondtoon
+   erbij), bas en sub CC7 127 (+6% / +32%), vul-stoten in de brug (x . x x . x . x waar de bas zwijgt), de PSG-
+   bas-stoten van v9 weg; in de halftime-break 34-36 spelen de 16e-hats door (zoals in het origineel). -V064.
+4. Controles (rules_check): geen noot > C6, geen akoestische/strijker/pad-samples, geen trage aanzet, BENDR vóór
+   elke bend.
+
 v9 (Jordi over v8: 'het ritme zit er erg goed in, maar de iconische eerste seconden kloppen niet qua instrumentatie
 en impact'; ritmische basis van v8 blijft):
 1. Opening-run en loopbegin: maat 0-21 (de stijgende chromatische run van de intro, de 64e-loopjes, en het
@@ -109,14 +124,19 @@ SAW_SHIFT = 17              # sawtooth vanaf maat 5: 17 ticks te vroeg in de bro
 BASS, BRASS, BRASS_LO, ORGAN, LEAD, DRUMS = 38, 62, 63, 17, 80, 127
 BODY, SUB, ARPB, DSINE, STAB, PLUCK = 81, 82, 84, 85, 86, 87
 FAT_LO, FAT_HI, FARP_LO, FARP_HI, HOLD = 88, 89, 90, 91, 92      # v9
+GL_LO, GL_HI = 93, 94                                               # v10: glissando-synth brass
 VOICES = {
+    # v10: glissando in de opening-run (dikke synth brass, harde aanslag, aanhouden; neo_plasma_samples.gliss_brass)
+    GL_LO:    'voice_directsound 48, 0, DirectSoundWaveData_np_gbrass_lo, 255, 0, 255, 150',
+    GL_HI:    'voice_directsound 72, 0, DirectSoundWaveData_np_gbrass_hi, 255, 0, 255, 150',
     LEAD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140',
     BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 12, 3',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
     DSINE:    'voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140',
     STAB:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100',
     PLUCK:    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110',
-    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_synth_bass, 255, 245, 60, 110',
+    # v10: np_bass_fat (sc88pro_synth_bass + zijn grondtoon: klonk hol, een octaaf te hoog)
+    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_bass_fat, 255, 245, 60, 110',
     BRASS:    'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     BRASS_LO: 'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
@@ -151,7 +171,18 @@ DRUM_MAP = {36: (KICK, 190, 96), 37: (SNARE_OFF, 160, 127), 38: (SNARE, 192, 120
             49: (CRASH, 384, 100), 57: (CRASH, 384, 100), 55: (SPLASH, 288, 90)}
 HAT_LEN, HAT_ACC, HAT_A, HAT_B = 80, 127, 92, 74   # dichte hihat: 77 ms = 82 ticks; accent op de kwart
 BREAK = {34, 35, 36, 64, 65}                # breaks (halftime / zonder bas): geen four-on-the-floor/hihats/stoten
-NO_HATS = set(range(0, 10)) | BREAK         # intro en breaks: geen 16e-hihats
+# intro en breaks: geen 16e-hihats. v10: in de halftime-break 34-36 spelen de 16e-hats in het origineel door
+# (drumstem 5-10 kHz: op elke 16e een aanslag); alleen 64-65 zijn echt kaal
+NO_HATS = set(range(0, 10)) | {64, 65}
+# v10: octaaffouten in de bron (octcheck tegen de Spleeter-stem 'other': op de noot zelf vs. een octaaf lager,
+# gemiddeld per maat, >= 6 dB verschil): het orgel speelt de 16e-akkoorden in maat 50-62 (niet 53) op C4-Eb4-G4 i.p.v. C5
+# (10-12 dB), de sawtooth-tonen in maat 52/54/55/61 (9-15 dB) en de 8-bit-sinus in 50/52/54/56/57 (9-16 dB) ook.
+OCT_ORGAN = (set(range(50, 63)) - {53})
+OCT_SAW = {52, 54, 55, 61}
+OCT_SINE = {50, 52, 54, 56, 57}
+TOP = 84                                    # v10 (Jordi: 'geen piepjes boven C6'): geen melodische noot > C6
+GLISS = (2 * BAR + S16, 5 * BAR)            # v10: de opening-run (E2 -> C6) als glissando
+BENDR = 12
 ORGAN_BARS = set(range(49, 62)) | set(range(65, 71))    # daar speelt het orgel al 16e-stoten: geen extra stoten
 SNARE_LEN, GHOST_VEL, BACK_VEL = 192, 58, 118
 UNISONO_BARS = set(range(46, 50))           # unisono-riff (bas + saw): geen akkoordstoten
@@ -160,7 +191,7 @@ ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 te
 # spoorvolumes (CC7), afgesteld met solo-RMS en balance_orig.py tegen de mp3
 # v8: nieuwe samples op dezelfde luidheid als v7 gezet (RMS van de eerste 80 ms per sample), lead en lead-octaaf
 # iets terug omdat ze nu aanhouden
-VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=114, sub=96, steel=38, arp=34, arpb=40,
+VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=127, sub=127, steel=38, arp=34, arpb=40,
            dsine=40, stab=45, drums=80)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 # v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
@@ -179,8 +210,8 @@ VOL_BARP = 64               # v9: het brug-arpeggio op DirectSound (vette lead, 
 
 def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v9. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 127 drums.'
+    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v10. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
+    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.'
     lines[2] = 'voice_group grounded_neo_plasma'
     out = []
     for l in lines:
@@ -218,7 +249,27 @@ def fixed_source(m):
         org.append([q, q + (e - s), n, v])
     T[6] = dedupe(org)
     fix_b_section(T)
+    fix_octaves(T)
     return T
+
+
+def fix_octaves(T):
+    """v10: octaaffouten van de transcriptie (zie OCT_*): orgelakkoorden (>= 2 tonen tegelijk; de chromatische
+    64e-loopjes in maat 49/53/56 kloppen wel) in OCT_ORGAN, sawtooth in OCT_SAW en 8-bit-sinus in OCT_SINE een octaaf
+    omlaag."""
+    bar = lambda s_: s_ // BAR
+    on = {}
+    for e in T[6]:
+        on[e[0]] = on.get(e[0], 0) + 1
+    n = 0
+    for i, bars, pred in ((6, OCT_ORGAN, lambda e: on[e[0]] >= 2), (4, OCT_SAW, lambda e: True),
+                          (7, OCT_SINE, lambda e: True), (9, OCT_SINE, lambda e: True)):
+        for e in T[i]:
+            if bar(e[0]) in bars and pred(e):
+                e[2] -= 12
+                n += 1
+        T[i] = dedupe(T[i])
+    print('  octaaffix (v10): %d brontonen een octaaf omlaag' % n)
 
 
 def fix_b_section(T):
@@ -347,7 +398,7 @@ def held_tones(saw, res, order, progs, real):
         e_ = min(e_, END)
         cov = sum(max(0, min(e_, b) - max(s_, a)) for a, b, m in out_n if m == n)
         if cov < 0.6 * (e_ - s_):
-            cand.append([s_, e_, n, 127])
+            cand.append([s_, e_, n - 12 * max(0, -(-(n - TOP) // 12)), 127])
     by = {}
     for e in sorted(dedupe(cand)):
         by.setdefault(e[2], []).append(e)
@@ -383,10 +434,27 @@ def bridge_arp(T, bass):
             steps = [0, 7, 12, 19, 24, 31] if (r + 7) % 12 in pcs else [0, 12, 24, 36]
             up = 12 if t >= 47 * BAR else 0
             n = r % 12 + 60 + up + steps[((t - o) // S16) % len(steps)]
-        while n > 96:
+        while n > TOP:
             n -= 12
         frac = (t - BRIDGE[0]) / (BRIDGE[1] - BRIDGE[0])
         out.append([t, t + 80, n, int(64 + 60 * frac)])
+    return out
+
+
+def bass_fill(bass):
+    """v10: vul-stoten voor de bas in de brug op het raster x . x x . x . x (16en), alleen waar geen basnoot klinkt;
+    lengte tot uiterlijk 8 ticks vóór de volgende basnoot (geen overlap van dezelfde toon in één spoor)."""
+    out = []
+    for t in range(BRIDGE[0], BRIDGE[1], S16):
+        if (t // S16) % 8 not in (0, 2, 3, 5, 7):
+            continue
+        if any(a <= t < b + 8 for a, b, n, v in bass) or any(t <= a < t + S16 for a, b, n, v in bass):
+            continue
+        prev = max((e for e in bass if e[0] <= t), key=lambda e: e[0])
+        nxt = min([e[0] for e in bass if e[0] > t] + [t + 9999])
+        end = min(t + 56, nxt - 8)
+        if end - t >= 32:
+            out.append([t, end, prev[2], 100])
     return out
 
 
@@ -401,6 +469,116 @@ def bridge_sub(bass):
         frac = (t - 45 * BAR) / (BRIDGE[1] - 45 * BAR)
         out.append([t, t + 72, n, 127 if t in ons else int(92 + 24 * frac)])
     return out
+
+
+def gliss(lead):
+    """v10 (Jordi/Gemini: 'geen tokkel die losse nootjes omhoog tikt, maar dikke synth brass met een continue pitch bend
+    van laag naar hoog, harde aanslag'): de opening-run (maat 2-4, E2 -> C6, in de bron een chromatische ladder van
+    ±1 noot per 16e; in het origineel hoor je doorlopende glijlijnen, CQT van de stem 'other') wordt drie aangehouden
+    noten (per maat één, velocity 127) op de glissando-brass, elk op het midden van zijn stuk van de ladder, met een
+    pitch bend (BENDR 12) die elke 16 ticks (mid2agb-resolutie) de ladder volgt (lineair tussen de aanslagen).
+    Geeft (nieuwe leadnoten, bend-events)."""
+    g0, g1 = GLISS
+    run = sorted(e for e in lead if g0 <= e[0] < g1)
+    rest = [e for e in lead if not g0 <= e[0] < g1]
+    nxt = min(e[0] for e in rest if e[0] >= g1)
+    pts = [(e[0], e[2]) for e in run]
+    segs = [[p for p in pts if b * BAR <= p[0] < (b + 1) * BAR] for b in (2, 3, 4)]
+    notes, ev = [], []
+    for i, sg in enumerate(segs):
+        t0 = sg[0][0]
+        t1 = segs[i + 1][0][0] if i + 1 < len(segs) else nxt
+        lo, hi = sg[0][1], sg[-1][1]
+        c = (lo + hi + 1) // 2
+        assert hi - c <= BENDR and c - lo <= BENDR
+        notes.append([t0, t1, c, 127])
+        # ladder inclusief de eerste toon van het volgende stuk (doorlopend glijden tot de volgende aanslag)
+        lad = sg + ([segs[i + 1][0]] if i + 1 < len(segs) else [])
+        for t in range(t0, t1, S16 // 6):
+            prev = [p for p in lad if p[0] <= t][-1]
+            later = [p for p in lad if p[0] > t]
+            if later:
+                q = later[0]
+                pitch = prev[1] + (q[1] - prev[1]) * (t - prev[0]) / (q[0] - prev[0])
+            else:
+                pitch = prev[1]
+            pitch = min(hi, max(lo, pitch)) if i + 1 == len(segs) else min(pitch, c + BENDR)
+            ev.append((t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, int(round(8192 * (pitch - c) / BENDR)))))))
+    ev.append((nxt, mido.Message('pitchwheel', pitch=0)))
+    ev = [(0, mido.Message('control_change', control=20, value=BENDR))] + ev
+    print('  glissando: %d ladder-noten -> %d aangehouden noten met %d bend-stappen' % (len(run), len(notes), len(ev) - 2))
+    return sorted(rest + notes), ev
+
+
+def cap_top(ev):
+    """v10: geen melodische noot boven C6 (TOP): een octaaf (of meer) omlaag."""
+    out = []
+    for s_, e_, n, v in ev:
+        while n > TOP:
+            n -= 12
+        out.append([s_, e_, n, v])
+    return dedupe(out)
+
+
+FORBIDDEN = ('flute', 'piano', 'nylon', 'acoustic', 'marimba', 'string', 'pad', 'choir', 'violin', 'cello',
+             'harp', 'recorder', 'ocarina', 'xylo')
+
+
+def rules_check(path):
+    """v10: Jordi's 'niet doen'-regels als harde controles op de geschreven MIDI + voicegroup:
+    1. geen noot boven C6 in een melodisch spoor (alles behalve drums);
+    2. geen akoestische instrumenten (fluit/piano/akoestische gitaar/marimba ...) en geen strijkers/pads/koren: elke
+       gebruikte DirectSound-sample (ook via keysplits/kit) gecontroleerd op naam;
+    3. geen trage aanzet: attack 255 (DirectSound) of 0 (PSG) bij elke gebruikte stem, keysplits en kit inbegrepen;
+    4. pitch bend: elk spoor met bends zet eerst BENDR (CC20) = BENDR, en elke bend blijft binnen +-BENDR.
+    Faalt met een AssertionError (het script schrijft dan niets meer)."""
+    import re
+    m = mido.MidiFile(path)
+    vg = {}
+    for l in open(VG):
+        mm = re.match(r'\t(voice_\w+) (.*?)\s+@ (\d+)', l)
+        if mm:
+            vg[int(mm.group(3))] = (mm.group(1), mm.group(2))
+    def lines_of(prog):
+        kind, args = vg[prog]
+        if kind.startswith('voice_keysplit'):
+            sub = args.split(',')[0].strip().replace('voicegroup_', '')
+            f = KEYSPLIT if sub == 'np_trumpet_keysplit' else DRUMSET
+            return [tuple(l.strip().split(' ', 1)) for l in open(f) if l.startswith('\tvoice')]
+        return [(kind, args)]
+    bad = []
+    for i, t in enumerate(m.tracks):
+        progs = {x.program for x in t if x.type == 'program_change'}
+        drum = any(x.channel == 9 for x in t if x.type == 'note_on')
+        top = max([x.note for x in t if x.type == 'note_on' and x.velocity] or [0])
+        if not drum and top > TOP:
+            bad.append('spoor %d: noot %d > C6' % (i, top))
+        for p in progs:
+            for kind, args in lines_of(p):
+                a = [x.strip() for x in args.split(',')]
+                if kind.startswith('voice_directsound'):
+                    words = re.split(r'[_\d]+', a[2].lower().replace('directsoundwavedata', ''))
+                    if any(w.startswith(f) for w in words for f in FORBIDDEN):
+                        bad.append('spoor %d prog %d: sample %s' % (i, p, a[2]))
+                    if int(a[3]) != 255 and int(a[5]) > 0:
+                        bad.append('spoor %d prog %d: trage aanzet (attack %s)' % (i, p, a[3]))
+                elif kind.startswith(('voice_square', 'voice_programmable', 'voice_noise')):
+                    att = int(a[-4])
+                    if att > 1:
+                        bad.append('spoor %d prog %d: PSG-attack %d' % (i, p, att))
+        bends = [x for x in t if x.type == 'pitchwheel']
+        if bends:
+            tt, first_br, first_bend = 0, None, None
+            for x in t:
+                tt += x.time
+                if x.type == 'control_change' and x.control == 20 and first_br is None:
+                    first_br = (tt, x.value)
+                if x.type == 'pitchwheel' and first_bend is None:
+                    first_bend = tt
+            if not first_br or first_br[1] != BENDR or first_br[0] > first_bend:
+                bad.append('spoor %d: BENDR %s niet vóór de eerste bend' % (i, first_br))
+    assert not bad, 'regels van Jordi geschonden: ' + '; '.join(bad)
+    print('  regels: geen noot > C6, geen akoestische/trage samples, BENDR %d vóór elke bend: OK' % BENDR)
 
 
 def staccato(ev, f, lo, hi):
@@ -599,8 +777,8 @@ def build():
     brass = [e for e in brass if e[0] not in st or e[2] == hi[e[0]]]
     parts = {'drums': dr, 'bass': bass, 'brass': brass, 'organ': organ, 'brass_lo': brass_lo, 'steel': T[8],
              'arp': arp, 'stab': stab, 'dsine': T[7] + T[9]}
-    parts = {k: dedupe(clip(v)) for k, v in parts.items()}
-    parts['lead'] = dedupe(clip(lead))
+    parts = {k: cap_top(clip(v)) for k, v in parts.items()}
+    parts['lead'] = cap_top(clip(lead))
 
     voicegroup()
     rel = releases('grounded_neo_plasma')
@@ -626,6 +804,8 @@ def build():
     real = releases('grounded_neo_plasma')
     res['lead'] = trim_legato(res, order, {k: 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
                                            for k in order})
+    res['lead'], gl_ev = gliss(res['lead'])
+    parts['lead'] = res['lead']                     # (de ladder is bewust 3 glijnoten geworden)
     body = [[s_, e_, n - 12, 96] for s_, e_, n, v in res['lead'] if n - 12 >= 40]
     # v9: aangehouden sawtooth-akkoordtonen (>= 3 16en, >= C3) die nergens meer klinken: eigen spoor 'hold', alleen
     # waar een kanaal vrij is (uitklinktijden van alle andere partijen meegerekend)
@@ -644,6 +824,17 @@ def build():
     order.append('barp')
     progs['barp'] = FARP_HI
     parts['barp'] = barp
+    # v10: brug: de bas drukt door (Gemini 'x . x x . x . x' per 16e): vul-stoten op de dikke bas waar de bas zelf
+    # zwijgt, op de toon van de laatste basnoot, zachter dan de basnoten zelf (de 3-3-2 van de riff blijft hoorbaar)
+    busy = []
+    for k in order:
+        t_ = 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
+        busy += [(a, b + t_) for a, b, n, v in res[k]]
+    bf = bass_fill(res['bass'])
+    res['bfill'] = allocate({'bfill': bf}, ['bfill'], {'bfill': release_ticks(real[BASS], TPB, BPM)}, preset=busy)['bfill']
+    order.append('bfill')
+    progs['bfill'] = BASS
+    parts['bfill'] = bf
     ds_check(res, progs, order)
     print('drumnoten buiten de kit (weg): %d, lage sawtooth-noten (basverdubbeling, weg): %d' % (drum_drop, saw_low))
     for k in order:
@@ -655,23 +846,24 @@ def build():
     # v9: brug: stijgende arpeggio's op arp B en staccato bas-stoten in achtsten op de sub
     arpb = [e for e in arpb if not BRIDGE[0] <= e[0] < BRIDGE[1]] + \
         [[s_ + ARPB_DELAY, e_ + ARPB_DELAY, n, v] for s_, e_, n, v in bridge_arp(T, res['bass'])]
-    sub = [e for e in sub if not 45 * BAR <= e[0] < BRIDGE[1]] + bridge_sub(res['bass'])
+    # v10: de PSG-bas-stoten van v9 in de brug ('zacht, hol piepje') weg: de sub speelt weer zoals in v8
     psg = {'body': dedupe(clip(body)), 'sub': dedupe(clip(sorted(sub))), 'arpb': dedupe(clip(sorted(arpb)))}
     song = Song(TPB, 500000)
     tempo_map(song, END)
     song.loop = (LOOP0, END)
-    lead_prog = lambda n, s_: (FAT_HI if n >= 60 else FAT_LO) if s_ < FAT_END else LEAD
+    lead_prog = lambda n, s_: ((GL_HI if n >= 60 else GL_LO) if GLISS[0] <= s_ < GLISS[1] else
+                               (FAT_HI if n >= 60 else FAT_LO) if s_ < FAT_END else LEAD)
     arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
     arp_notes = sorted(p['farp'] + p['arp'])
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [
-        (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
-        (psg['body'], BODY, VOL['body'], 1, 64),
+        (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc, gl_ev),
+        (psg['body'], BODY, VOL['body'], 1, 64, (), gl_ev),
         (p['brass'], BRASS, VOL['brass'], 2, 56),
         (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
-        (p['bass'], BASS, VOL['bass'], 5, 64),
+        (sorted(p['bass'] + p['bfill']), BASS, VOL['bass'], 5, 64),
         (psg['sub'], SUB, VOL['sub'], 6, 64),
         (arp_notes, arp_prog(arp_notes[0][2], 0), VOL['arp'], 7, 35, prog_events(arp_notes, arp_prog)),
         (p['steel'], PLUCK, VOL['steel'], 8, 35),
@@ -685,10 +877,11 @@ def build():
     written = 0
     for notes, prog, vol, ch, pan, *cc in tracks:
         assert notes, 'lege partij'
-        song.add(notes, prog, vol, ch, pan, ccs=cc[0] if cc else ())
+        song.add(notes, prog, vol, ch, pan, extra=cc[1] if len(cc) > 1 else (), ccs=cc[0] if cc else ())
         written += len(notes)
     assert written == sum(len(p[k]) for k in order) + sum(len(v) for v in psg.values()), 'niet elke partij staat in de MIDI'
     song.save(OUT, END)
+    rules_check(OUT)
     print('PSG: body %d, sub %d, arp B %d noten' % tuple(len(psg[k]) for k in ('body', 'sub', 'arpb')))
     print(OUT, '(%d sporen, intro %.1f s, loop %.1f s)' % (len(song.tracks), LOOP0 / TPB * 60 / 175.96,
                                                            (END - LOOP0) / TPB * 60 / 175.96))

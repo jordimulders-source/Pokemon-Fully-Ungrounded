@@ -184,3 +184,14 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Ghetsis ronde 2: min_note 36 was niet genoeg; koper (trompet-keysplit) onder C3 klinkt nog als 'puuup'. Voor koper
   min. C3 (48), voor piano/strijkers is C2 (36) prima. Raikou: buzz 110 = goed (127 net te hard, 72 viel weg).
 
+- Keccles v1 (`keccles_theme.py`, salsa dura, 190 bpm, Am, clave 2-3): er is geen trombone-sample; trombone =
+  trompet-keysplit een octaaf lager (A3-D5, nooit onder C3). Eigen drumkit in `drumsets/keccles.inc` (naam
+  `<x>_drumset`, dan vindt de lint hem): clave/cascara = hyoushigi (66/79), timbales = sc55-tom hoog (70/77),
+  campana = sd90_cowbell, conga's = mute_high/open_low, rimshot = orchestra_snare op 72; alles DirectSound. Güiro
+  op het PSG-ruiskanaal (lang-kort-kort per tel) kost geen kanaal. Eigen keysplit `keysplits/<x>.inc` met
+  `voice_group <x>_keysplit`: dan rekenen `releases()` en de lint met de echte release. Montuno-piano in octaven op
+  elke achtste: release 150 + nootlengte 11 ticks (= precies een achtste bezet), anders 4 pianonoten tegelijk.
+  Timbale-fills vielen eerst weg (11%) achter piano/conga: fills en rimshots op de sectiegrens boven piano in de
+  prioriteit. -V100 gaf piek 127/127 (geen overloop, maar op de grens) -> -V088: piek 111, RMS 2560.
+  Loop naadloos: de maat vóór het loopbegin in de intro (3) is gelijk aan de laatste maat van de loop (51), en
+  geen noot loopt over de loopgrens (tumbao-anticipatie daar inkorten).

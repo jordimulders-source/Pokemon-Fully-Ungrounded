@@ -157,3 +157,83 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
 - **Heatran → v5:** gebaseerd op Kyuss' "Odyssey": traag sludge-stuk (~75 bpm) wisselt met snelle desert-pump (~135 bpm). Moet klinken alsof Kyuss de originele R/S-Heatran-baasmuziek op de GBA inspeelde: crunchy low-bitrate gitaarsamples (C-standard), doffe fuzz-synthbas die de gitaar volgt, doffe Gen 3-drums (doffe snare, blikkerige crashes). Geen moderne studioklank.
 - **Mitch → v3:** v2 klonk als drukke chiptune/happy hardcore; alleen het stuk rond 1:00 had de juiste sfeer. Duister, minder pieperig (leads 1–2 octaven lager), less is more, two-step 172 bpm met keiharde droge snare + ducking, lage reese met portamento, intro → build-up → 1 tel stilte → drop.
 - **Neo Plasma → v7:** te kaal/dun. Octaafverdubbeling van de lead, sub onder de bas, gesplitste arpeggio's L/R, staccato off-beat-akkoordstoten, four-on-the-floor met ghost-snares en 16e-hats met accenten (tempo blijft 176, bevestigd door Jordi).
+- Heatran v4 (Jordi over v3: 'nog te netjes, helder en vrolijk; 100% Kyuss', met productieregels per punt): de regels
+  letterlijk als keten in `heatran_samples.py`: nek-pickup + toonknop dicht (lowpass 900 Hz vóór de fuzz) ->
+  asymmetrische fuzz -> **cocked wah** (bandpass 800 Hz, Q 4, +8 dB) -> SVT (shelf +11 dB < 220 Hz, +6 dB rond 700 Hz,
+  2x 8-polige lowpass 3,6/4 kHz). **Een sample per riffnoot** (keysplit `keysplit_heatran`, 21.024 Hz = mixfrequentie):
+  één C2-sample op Bb2 schuift het hele spectrum x1,8 omhoog (4 kHz -> 7 kHz); zo blijft 'niets boven 4 kHz' ook in
+  de game waar. Gemeten (sample, aandeel energie): v3-powerchord 500-1k 7%, piek 281 Hz -> v4 42-68%, piek 707-891 Hz,
+  > 4 kHz 0,0%. In de game per sectie (recpcm): refrein v3 500-1k 12-15%, > 2 kHz 7-10% -> v4 35-40%, 1,7-1,9%.
+  Bas = exact dezelfde MIDI-noten als de gitaar, de bassample een octaaf te hoog gelabeld (klinkt C1 bij C2).
+  **Samples van een ander thema kunnen gedeeld zijn**: SickBlik gebruikt de v3-drums (heatran_kick/snare/crash/
+  floor_tom/open_hat/side_stick); niet hergenereren of weggooien (linkerfout), v4 heeft eigen `heatran_ky_*`.
+  audiocheck 'constante tonen' 62-133 Hz = de riffgrondtonen C2/F2/G2/Bb2/C3 (pedaal op C), geen brom.
+  -V086: 0 overlopen, piek 97/127, RMS 2862.
+- Jirachi v4 (Jordi over het v3-tussenstuk: 'te donker/spookachtig, wil euforische uplifting trance'): **'donker' meten met
+  chroma**: Krumhansl-toonsoort van het tussenstuk v3 = Bm (0,66), v4 = D (0,85); de drieklank per maat volgt nu de
+  geschreven progressie (D-A-Bm-G, G-A-F#m-Bm). Lange glijdende vocals = spookachtig; korte stoten (3+3+2 achtsten) in
+  stijgende akkoordtonen + een diatonische terts eronder = euforisch. Gated vocals in achtsten: gate 0,25 tel + release
+  150 (= 23 ticks bij 164 bpm), anders bezet elke stem 2 kanalen (tsaw 25% -> 3% weggevallen). Heldere lead-arpeggio's
+  op de PSG-vierkanten (sporen van fonkel-echo/speeldoos die dan zwijgen) kosten geen kanalen; delay-echo = dezelfde
+  noten 3 16en later op vierkant 1. Laag minder dominant (kick-velocity -8, PSG-sub 56 -> 40): < 150 Hz 59% -> 48%,
+  zwaartepunt 480 -> 653 Hz. -V100: 0 overlopen, piek 107/127.
+- SickBlik v2 (Jordi: 'hybride van battle-urgentie en Steely Dan-jazzfunk; de slap bass zoveel mogelijk intact'): de
+  v1-secties blijven noot voor noot staan (diff per basspoor per sectie: 0 verschillen, ook de bends) en er komen
+  secties tússen (refrein 1 na de hook, virtuoos slap-deel + refrein 2 vóór de laatste hook). **Steely Dan-akkoorden
+  als één sample per voicing** (rootless close voicings: Cmaj9, B7#9b13, Am9, D13, G-'mu', Fmaj7#11, F#m7b5, C-'Mu
+  Major' C-D-E-G), gespeeld op de grondtoon uit de smpl-chunk (geen transpositie) = 1 kanaal per Rhodes-/blazersakkoord;
+  de bas speelt de grondtoon. Pushes (akkoord op de '&' van 4) laten de eerste aanslag van de volgende maat vervallen,
+  anders overlapt dezelfde noot in één spoor. Naadloze overgang = dezelfde drumgroove als A1 + de bestaande stop/basfill
+  (Bb-B) die naar C oplost (bedrieglijke slot B7 -> Cmaj9). Jazzgitaar-octaven als één sample (GM 26, twee noten).
+  FluidR3 Muted Trumpet (GM 59) heeft 20-30% energie > 5 kHz (harmon-zoem): lowpass 3,8 kHz. Partijen die een spoor
+  delen (flageolet op deadP, jazzgitaar op talkbox) krijgen hun eigen CC7 bij elke wissel (`part_vol_fx`). Solo-RMS:
+  tegenstem-trompet (1675) stond luider dan de gitaarmelodie (1307) -> CC7 55%. Geen samples van andere thema's: de
+  Heatran-drums zijn als sb_* gekopieerd. -V112: 0 overlopen, piek 115/127, RMS 2431. audiocheck '81 Hz' = E2, de
+  grondtoon die de bas het hele nummer pompt (zat ook in v1), geen brom.
+- Rayquaza v4 (Jordi: 'balans trompet/melodie v3 precies zo; fellere kebyar-intro, breaks, gong ageng op de laatste tel
+  van elke frase'): **breaks zonder de melodie aan te raken = in de rusten van de melodie** (rasterkaart per spoor per
+  zestiende: in maat 8-19 rust de trompet van tel 4+ tot tel 2 van de oneven maat; maat 32-39 heeft geen melodie) en een
+  `stop()` die alleen niet-beschermde partijen afkapt. Controle: diff per MIDI-spoor (lead/suling/PSG noot voor noot
+  identiek) + solo_rms v3 vs v4 (melodie 893 vs 892, kotekan 565 vs 562). Een stemverdeler die gretig per partij werkt
+  houdt de melodiepartijen exact gelijk zolang ze vóór alle nieuwe partijen in de volgorde staan; check met een
+  `RQ_AT=<tick>`-dump wie de kanalen op een gat bezet (bar 8: vijf pauken tegelijk door uitklinktijden). Snelle
+  unisono-figuren op de gedempte gangsa (release 140), niet op de gangsa (226): 8 zestienden in octaven = 12 kanalen.
+  Gong ageng meten: RMS < 150 Hz in de eerste 0,2 s van elke tel, opname uitlijnen op de eerste aanslag (±0,04 s) en de
+  tijdas x 60/59,73 (GBA-framerate; zonder dat schuift het na 30 s een halve tel). Onset-kruiscorrelatie over alle
+  noten koos twee keer een andere offset (0,125/0,285 s): niet betrouwbaar bij een dicht 16e-raster.
+  -V070: 0 overlopen, piek 112/127, RMS 2814; ageng +4,4..+7,7 dB (F/Eb-secties het zwakst), audiocheck 196 Hz = kendang G3.
+- Mitch v2 (Jordi: 'ECHTE HYBRIDE episch Pokémon-baasgevecht x Chase & Status; de beat klinkt te recht/langzaam, mist de
+  agressieve DnB-fundering; geen wandelende bas'). **Diagnose eerst meten:** het v1-patroon wás two-step (K 1, S 2,
+  K 3-en, S 4), maar in de opname (aanslag per 16e per band, `diag_audio.py`-achtig: spectrale flux op het 16e-raster,
+  gemiddeld over 8 maten) zaten de PSG-hihats 14 dB onder de kick, waren de 16den onhoorbaar (alleen de achtste 'en'),
+  was de snare-aanslag 2-3x zwakker dan de reese-aanslagen in 150-1500 Hz en verdwenen de ghosts in de ruis. Je hoorde
+  de lange basnoten op de kicks = halve snelheid. **Een DnB-beat staat of valt met hoorbare 16den en een snare met
+  crack**: hihats als DirectSound-sample (FluidR3 + ruis > 6 kHz, 60 ms, accent 127/84/108/88, kost ±1 kanaal),
+  snare = FluidR3 38+40 + ruisstoot 1,8-6,5 kHz door tanh x4 (de crack moet boven de trompet uit, die in dezelfde band
+  zit), kick x0,85. Resultaat drop: hihats > 6 kHz +5 dB, snare-aanslag 2x de rest in 1,5-5 kHz, aandeel > 2 kHz van
+  < 2% naar ±30%. Bas: 'bad-da-DAN' (16de, 16de, lang op de kick van 3-en) + pitch-bend-dives/-scoops (BENDR 12,
+  terugzetten bij de volgende noot). Lead = de sc88pro-trompet-keysplit (de echte Pokémon-trompet) + een zaagtand-
+  sample unisono (DirectSound, spoorvolume 84) + PSG-blokgolf unisono: solo gemeten t.o.v. de rest in 0,6-5 kHz van
+  -1,4 dB (alleen trompet) naar ±+2 dB. Een hete snare liet de mixer omslaan (-V090: 100x overlopen, -V078: 6x) ->
+  -V070: 0, piek 103/127. Crash vóór de leadlaag in de stemverdeler (anders viel 36% van de drop-crashes weg).
+- Neo Plasma v6 (Jordi over v5: 'te ver doorgeslagen naar kale, schelle 8-bit; hoge tonen snijden, geen dynamiek/
+  gelaagdheid'): **'schel' zat niet in het totaalspectrum** (v5 had boven 2 kHz zelfs iets mínder dan het origineel),
+  maar in wélke partij het hoog draagt: bij v5 de PSG-lead (25%-blokgolf, > 3 kHz 5%, luidste groep) en vrijwel geen
+  hihats/snare (drums 4-8 kHz 7-10 dB te zwak). Meet per solo-groep de banden (`bands.py`-achtig) naast de Spleeter-
+  stems van het origineel. Fix: lead een octaaf lager op een warme DS-sample (puls 25% + 50% ontstemd, lowpass 3 kHz
+  op C4; > 3 kHz 5,2% -> 0,6%), drums volledig DirectSound (909-clap, `unknown_close_hihat` op 16en, kick 7 halve
+  tonen hoger) -> drums 4-8 kHz zoals de drumstem. **Een kitregel `voice_directsound 60` speelt de sample op de
+  eigen toonhoogte**; rnd_kick (51 Hz, 55 ms) was een subdreun, de kick van het origineel zit op 65-200 Hz.
+- 'Koper niet onder C3' geldt ook voor eigen synth-brass: de lage gitaarpartij (E1-B2) op een C2-brass-sample gaf
+  30-60 Hz +5 dB t.o.v. het origineel; per octaaf omhoog tot >= C3 (en weg als het akkoord die toon al speelt).
+- NNLS-gewichten (balance_orig) tegen een origineel met een ander leadtimbre zeggen 'lead -11 dB te luid': negeren
+  als de opdracht 'melodie voorop' is; gebruik dan de solo-RMS t.o.v. de mix (lead -6,6, drums -4,8 ≈ drumstem -3,8).
+- Genesect v1 (`genesect_theme.py`, industrial/big beat à la The Prodigy + hard techno, 144 bpm, E-frygisch; samples
+  `genesect_samples.py`): motief = baslijn-riff (E E G E Bb A E E D | ... F F G E) in elk deel + een hook-lead erboven.
+  Kanon (Techno Blast) op het witte scherm van de transitie (maat 1 = 4 tellen na de start: muziek ±25 frames vóór het
+  beeld, wit op frame ±71 van de transitie), de cry valt in een riffmaat zonder drop. Hard-techno-rumble = kick door
+  een ruisgalm, vervormd, lowpass 420 Hz, als losse kitnoot op de 16den ná elke kick (k-r-r-r, velocity aflopend).
+  303 = zaagtand door een Chamberlin-SVF met cutoff per sample + tanh, twee samples (gewoon/accent) en een
+  programmawissel per noot. Gemeten (recaudio, -V090): 0 overlopen, piek 114/127, maar RMS 3500-3900 en < 150 Hz 46-65%
+  (kick + rumble + sub-octaaf in de bassample): sub-octaaf in de bas 0,8 -> 0,35, PSG-sub 52 -> 38, hats 92 -> 120,
+  kick x0,88 en -V074. Alles boven 4 kHz bleef < 4,5%: met lowpass 7-8 kHz in de samples is industrial niet schel.

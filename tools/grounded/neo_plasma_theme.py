@@ -37,18 +37,16 @@ BPM = 176
 END = 138 * BAR
 
 # programma's in voicegroup_grounded_neo_plasma
-ORGAN, GTR_HI, GTR_LO, SLAP, SYNTH_BASS, LEAD, LEAD_PSG, SINE, TRI, STEEL, DRUMS = 19, 29, 31, 36, 38, 81, 80, 82, 83, 114, 127
+ORGAN, GTR, SLAP, SAW, LEAD_PSG, SINE, TRI, STEEL, DRUMS = 19, 27, 36, 81, 80, 82, 83, 114, 127
 VOICES = {
     ORGAN:      'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_high, 255, 76, 154, 120',
-    GTR_HI:     'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 130',
-    GTR_LO:     'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 130',
+    GTR:        'voice_directsound 60, 0, DirectSoundWaveData_gm_clean_guitar, 255, 0, 255, 140',      # GM 27: schoon
     SLAP:       'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99',
-    SYNTH_BASS: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115',
-    LEAD:       'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 120',
+    SAW:        'voice_directsound 60, 0, DirectSoundWaveData_gm_saw_lead, 255, 0, 255, 120',          # GM 81
     LEAD_PSG:   'voice_square_1 60, 0, 0, 2, 0, 2, 9, 1',
     SINE:       'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
     TRI:        'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_2, 0, 7, 15, 1',
-    STEEL:      'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_high, 255, 225, 0, 170',
+    STEEL:      'voice_directsound 60, 0, DirectSoundWaveData_gm_steel_drums, 255, 0, 255, 150',       # GM 114
 }
 # drums (rs_drumset, eerste noot 36): (noot, lengte in ticks). De bron heeft overal 16e (96); echte lengtes.
 # 37 (side stick) is PSG in rs_drumset -> snare iets zachter; 44 (pedaal-hihat, PSG) -> gesloten hihat;
@@ -100,7 +98,9 @@ def drums(ev):
 def build():
     m = mido.MidiFile(SRC)
     assert m.ticks_per_beat == TPB
-    T = {i: notes_of(m.tracks[i]) for i in range(10)}
+    # de bron heeft overal velocity 50 (de mix zat in onlinesequencer); vol op 127 en de balans via het spoorvolume,
+    # gemeten met tools/grounded/balance.py tegen een FluidR3-render van de bron (v3)
+    T = {i: [[a, b, n, 127] for a, b, n, v in notes_of(m.tracks[i])] for i in range(10)}
     clip = lambda ev: [[s, min(e, END), n, v] for s, e, n, v in ev if s < END]
     dr, drum_drop = drums(T[0] + T[1] + T[2])
     main = [e for e in dr if e[2] in (36, 38)]
@@ -111,13 +111,17 @@ def build():
     for g in groups(T[3]):
         bass.append(g[0])
         bass_oct += g[1:2] if len(g) > 1 else []
-    # sawtooth: noten < C3 = bas-loopjes (synthbas); de rest: bovenste noot op PSG, de tweede (of de enige) op DS
-    saw_lo = [e for e in T[4] if e[2] < 48]
-    lead, lead_psg = [], []
-    for g in groups([e for e in T[4] if e[2] >= 48]):
-        lead_psg.append(g[-1])
-        lead.append(g[-2] if len(g) > 1 else list(g[-1]))
-    saw_lo = thin(saw_lo, 1, 'top')         # octaven D#1+D#2: de bovenste (onder E1 dreunt het)
+    # sawtooth (bron draagt meerdere partijen tegelijk): bovenste noot = melodie (DS-saw); precies een octaaf
+    # eronder = verdubbeling op het PSG-vierkant; overige noten = tweede (lagere) lijn, ook DS-saw (lage prioriteit).
+    lead, lead_psg, saw_lo = [], [], []
+    for g in groups(T[4]):
+        top = g[-1]
+        lead.append(list(top))
+        for e in g[:-1]:
+            (lead_psg if e[2] == top[2] - 12 else saw_lo).append(list(e))
+    for e in saw_lo + lead:
+        while e[2] < 36:                    # onder C2 dreunt de saw-sample
+            e[2] += 12
     # gitaar: onderste en bovenste noot van elk akkoord (octaaf/powerchord-omlijsting)
     gtr = []
     for g in groups(T[5]):
@@ -130,8 +134,8 @@ def build():
 
     voicegroup()
     rel = releases('grounded_neo_plasma')
-    progs = {'lead': LEAD, 'bass': SLAP, 'bass_oct': SLAP, 'guitar': GTR_HI, 'organ': ORGAN, 'steel': STEEL,
-             'saw_lo': SYNTH_BASS}
+    progs = {'lead': SAW, 'bass': SLAP, 'bass_oct': SLAP, 'guitar': GTR, 'organ': ORGAN, 'steel': STEEL,
+             'saw_lo': SAW}
     tail = {k: release_ticks(rel[p], TPB, BPM) for k, p in progs.items()}
     tail.update(drums=0, cym=0)
     for k in progs:                                   # legato/16e: vorige noot een uitklinktijd eerder los
@@ -147,18 +151,17 @@ def build():
     song.tempo(0, BPM / 120)
     song.loop = (0, END)
     tracks = [
-        (p['lead'], LEAD, 114, 0, 64),
-        (psg['lead_psg'], LEAD_PSG, 44, 1, 64),
-        ([e for e in p['guitar'] if e[2] >= 50], GTR_HI, 116, 2, 44),
-        ([e for e in p['guitar'] if e[2] < 50], GTR_LO, 120, 3, 44),
-        (p['organ'], ORGAN, 106, 4, 84),
-        (p['bass'], SLAP, 127, 5, 64),
-        (p['bass_oct'], SLAP, 96, 6, 64),
-        (p['saw_lo'], SYNTH_BASS, 114, 7, 64),
-        (p['steel'], STEEL, 124, 8, 76),
-        (psg['sine'], SINE, 48, 10, 64),
-        (psg['tri'], TRI, 44, 11, 64),
-        (sorted(p['drums'] + p['cym']), DRUMS, 127, 9, None),
+        (p['lead'], SAW, 24, 0, 64),
+        (psg['lead_psg'], LEAD_PSG, 12, 1, 64),
+        (p['guitar'], GTR, 124, 2, 44),
+        (p['organ'], ORGAN, 96, 4, 84),
+        (p['bass'], SLAP, 26, 5, 64),
+        (p['bass_oct'], SLAP, 20, 6, 64),
+        (p['saw_lo'], SAW, 19, 7, 64),
+        (p['steel'], STEEL, 45, 8, 76),
+        (psg['sine'], SINE, 18, 10, 64),
+        (psg['tri'], TRI, 18, 11, 64),
+        (sorted(p['drums'] + p['cym']), DRUMS, 30, 9, None),
     ]
     written = 0
     for notes, prog, vol, ch, pan in tracks:

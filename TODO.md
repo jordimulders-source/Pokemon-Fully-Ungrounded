@@ -10,6 +10,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Jirachi-thema** (Jordi, 4 okt): heel hoopvol, licht en vrolijk, passend bij een wishmaker (celesta/klokjes, strijkers, fluit; sterrenmotief). Voor het Jirachi-event (Fallarbor, 's nachts).
 - **Muziek: Heatran-thema** (Jordi, 4 okt): **stoner metal à la Kyuss** (laaggestemde, fuzzy gitaarriffs, groovende log-zware drums, woestijnhitte, lange jams). Voor het Heatran-hol (post-game, Fiery Path) + de cutscene op Route 111.
 - **Muziek: Shaymin-thema** (Jordi, 4 okt): heel relaxt, 'dwarrelende bloemenweide' (zachte harp/fluit/celesta, wiegend 6/8 of rustig tempo, licht en luchtig). Voor Flower Paradise.
+- **Muziek: Rayquaza-thema** (Jordi, 5 okt): het weather trio-legendary-thema (Groudon/Kyogre/Rayquaza, `MUS_VS_KYOGRE_GROUDON`/`MUS_VS_RAYQUAZA`) remixen naar **gamelan** (metallofoons, gongs, kendang; slendro/pelog-kleur). Voor Rayquaza (Sky Pillar).
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde

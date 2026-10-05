@@ -6451,3 +6451,15 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+	.align 2
+DirectSoundWaveData_gm_clean_guitar::
+	.incbin "sound/direct_sound_samples/grounded/gm_clean_guitar.bin"
+
+	.align 2
+DirectSoundWaveData_gm_steel_drums::
+	.incbin "sound/direct_sound_samples/grounded/gm_steel_drums.bin"
+
+	.align 2
+DirectSoundWaveData_gm_saw_lead::
+	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"

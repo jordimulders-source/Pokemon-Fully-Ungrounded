@@ -183,4 +183,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   lijnen op veelvouden van 59,73 Hz. Geen bromtoon (zit ook in de oude versie); controleer met een opname per spoor.
 - Ghetsis ronde 2: min_note 36 was niet genoeg; koper (trompet-keysplit) onder C3 klinkt nog als 'puuup'. Voor koper
   min. C3 (48), voor piano/strijkers is C2 (36) prima. Raikou: buzz 110 = goed (127 net te hard, 72 viel weg).
+- Neo Plasma v3: **balans meten i.p.v. raden.** `balance.py` (FluidR3-render van de bron per groep vs. GBA-solo via volX
+  = 0 op de andere sporen) liet zien dat gitaar/orgel 7-9 dB te zacht zaten. Bij een bron met overal dezelfde velocity
+  (onlinesequencer) is de GM-render de beste referentie. Velocity op 127 en balans met CC7 geeft meer ruimte.
+- **Ontbrekend instrument? Maak een sample** met `gm_samples.py` (FluidR3, `apt-get install fluidsynth
+  fluid-soundfont-gm`): uitklinkende instrumenten zonder loop, aanhoudende golven als exacte loop van een paar perioden.
+  Liever het juiste instrument dan een 'verwante' sample (schone gitaar ≠ distortion).
+- -V127 liep over (26x) terwijl -V108 maar piek 86 gaf: niet lineair, dus altijd opnieuw meten.
 

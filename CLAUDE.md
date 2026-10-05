@@ -118,6 +118,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Muziek (componeren, arrangeren, opnemen):** lees en vul `tools/grounded/MUZIEK.md` aan (werkwijze, engine-limieten, smaak van Jordi, log per feedbackronde). Elke MIDI eerst door `tools/grounded/music_lint.py`, elke preview door `recaudio.py` + `audiocheck.py`. Nieuwe automatisch herkenbare fouten worden een controle in de lint.
 - **TM's zijn herbruikbaar:** nooit een TM die al ergens ligt of te koop is nog eens als beloning leggen (Jordi). Alle TM01–TM59 liggen al; nieuwe TM's komen later (richting 100). Tot dan: een ander item als beloning.
 - **Afgekapte trainerfoto's:** een figuur die hard op de onderrand stopt (benen eraf) krijgt de Bayer-fade (`fade_trainer_pics.py` / `fade_bottom`); Jordi vindt een harde snede onnatuurlijk.
+- **Muziek die 'niet klinkt als de bron':** meet de balans met `tools/grounded/balance.py` (FluidR3-referentie vs. GBA-solo) en maak ontbrekende instrumenten met `gm_samples.py` (eigen samples in `sound/direct_sound_samples/grounded/`).
 - **Platinum-trainerfoto's:** frame 0 van de DS-animatie is niet altijd van voren (Aaron, Fantina); kies per trainer het frame in `stadium_trainer_pics.py`.
 
 ## Werkwijzen (herhaalde taken)

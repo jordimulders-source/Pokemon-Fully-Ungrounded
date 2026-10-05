@@ -16536,3 +16536,15 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   een octaaf omhoog (`min_note={6: 48}`). Daardoor iets voller, dus `-V082` (0 keer overlopen, piek 119/127).
 - **Raikou**: zoemsynth goedgekeurd, nog net iets zachter (spoorvolume 127 -> 110). Trainerfoto's van v0.9.60 goedgekeurd.
 
+### [v.0.9.63] - Neo Plasma v3: dezelfde instrumenten én balans als de bron
+- Jordi over v2: "rotzooi, klinkt totaal niet zoals de bron". Twee oorzaken:
+  - **instrumenten**: GM 27 in de bron is een *schone* e-gitaar; v2 maakte er distortion/overdrive van (zestiende-akkoorden
+    van zes noten = brij). De game had geen schone gitaar, sawtooth of steel drums.
+  - **balans**: in de bron dragen gitaar en orgel het nummer; in v2 zaten die 9 en 7 dB te zacht onder saw, bas en drums.
+- Nieuw: **eigen samples uit de GM-soundfont FluidR3** (`tools/grounded/gm_samples.py`): schone gitaar (GM 27), steel
+  drums (GM 114) en een sawtooth-loop (GM 81). Staan in `sound/direct_sound_samples/grounded/`.
+- Nieuw: **`tools/grounded/balance.py`**: rendert per instrumentgroep de bron solo met FluidR3 en neemt de GBA-versie solo
+  op (andere sporen in het geheugen op volume 0), en stelt per spoor een volume voor. Neo Plasma zit nu per groep binnen
+  1 dB van de bron. Velocity overal 127 (bron: 50), -V108 (0 keer overlopen, piek 86/127).
+- Sawtooth-spoor gesplitst: bovenste noot = melodie, octaaf eronder op de PSG-blokgolf, overige noten een tweede lijn.
+

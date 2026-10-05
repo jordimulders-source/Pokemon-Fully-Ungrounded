@@ -28,11 +28,11 @@ voice_group grounded_neo_plasma
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 24
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 25
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 27
+	voice_directsound 60, 0, DirectSoundWaveData_gm_clean_guitar, 255, 0, 255, 140  @ 27
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 28
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 130  @ 29
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 130  @ 31
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 34
@@ -82,7 +82,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 120  @ 81
+	voice_directsound 60, 0, DirectSoundWaveData_gm_saw_lead, 255, 0, 255, 120  @ 81
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1  @ 82
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_2, 0, 7, 15, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
@@ -115,7 +115,7 @@ voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 111
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 112
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 113
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_high, 255, 225, 0, 170  @ 114
+	voice_directsound 60, 0, DirectSoundWaveData_gm_steel_drums, 255, 0, 255, 150  @ 114
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 115
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 116
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 117

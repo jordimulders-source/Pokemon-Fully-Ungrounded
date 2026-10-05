@@ -69,8 +69,8 @@ def render(prog, note, dur, vel=110):
     return a / 32768.0
 
 
-def resample(a, src, dst):
-    if dst < src:                                     # alles boven 0,45 x de nieuwe samplerate eruit (anti-alias)
+def resample(a, src, dst, antialias=True):
+    if antialias and dst < src:                                     # alles boven 0,45 x de nieuwe samplerate eruit (anti-alias)
         f = np.fft.rfft(a)
         f[int(len(f) * 0.9 * dst / src):] = 0
         a = np.fft.irfft(f, len(a))

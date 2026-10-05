@@ -16665,3 +16665,15 @@ Jordi's eerste testrun:
   kotekan (v2: 2-4 dB). **Kebyar-accenten**: angsel (alles kapt af op tel 4) om de 4 maten met unisono-klappen, en om
   de 2 maten een zware maatovergang (gong ageng, lage gongbas, pauken, ceng-ceng op vol); snelle kotekan op een hoge
   synth in de lange noten en de break. 0 keer overlopen.
+
+### [v.0.9.74] - Jirachi v3 en Heatran v3
+- **Jirachi v3**, zoals Jordi het bedoelde: de gewone delen weer als v1 (geen versnelling), met een **tussenstuk**
+  (48,9-72,4 s) waarin lange 'aaah'-vocals het wensmotief vergroot zingen (één noot glijdt via pitch bend over 4-6
+  maten, met vibrato en aanzwellen) boven een snelle trance-beat op 164 bpm (four-on-the-floor, off-beat bas,
+  supersaw-pad, plucks). Daarna abrupt terug naar 152 bpm en het thema een octaaf hoger in E-groot. Eigen vocalsample
+  (`jirachi_vox`, FluidR3 Choir Aahs + Voice Oohs, ademende loop).
+- **Heatran v3**, volgens Jordi's (Gemini-)briefing: de oorzaak van het surf/ska-gevoel was vooral het **ritme** (korte
+  riffstoten, drukke 16e-bas, kick en hihat naast de tel, rock-'n-roll-opstapjes). Nu 84 bpm in drop C, lang
+  aanhoudende powerchords met slides, bas unisono met de riff, bekkens alleen op de tellen, halftempo-refreinen,
+  bezwerende C-mineur-pentatonische riffs met b5. Nieuwe fuzzketen (Big Muff met middenscoop + SVT/Sunn-kast, lowpass
+  3,2 kHz), FluidR3 Power-kit. Strofen 1700-2000 RMS, refreinen 3500-3900.

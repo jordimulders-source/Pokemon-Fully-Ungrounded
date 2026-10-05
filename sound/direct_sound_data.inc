@@ -6719,3 +6719,11 @@ DirectSoundWaveData_kc_guitar_57::
 	.align 2
 DirectSoundWaveData_kc_guitar_69::
 	.incbin "sound/direct_sound_samples/grounded/kc_guitar_69.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_scratch::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_scratch.bin"

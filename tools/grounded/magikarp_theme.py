@@ -5,11 +5,12 @@ héél serieus neemt (Splash: er gebeurt niets).
 150 bpm, Bes-groot (B-deel G-klein), oom-pah met tuba + fagot, kazoo als zanger, glijtonen (pitch bend) en een
 fluitje als slide whistle. Spartelende maten: af en toe een 5/8 of 7/8, en één 'verkeerde' extra tel van 3/8.
   intro  I1 fanfare (F7), I2 'TA-DAA!' + het fluitje zakt in elkaar, I3 5/8 geflap        (±4 s)
-Loop (±52 s):
-  A   (8 maten) de hook op kazoo: twee keer 'flip-flop' omhoog, dan een plop omlaag (boing); maat 4 = 5/8;
+Loop (±49 s):
+  A   (8 maten) de hook op kazoo (v2: een octaaf lager, F3-D5; v1 was 'te hoog, tot het irritante aan toe'): twee keer 'flip-flop' omhoog, dan een plop omlaag (boing); maat 4 = 5/8;
       maat 8: heldhaftige klim ... en de kazoo duikt een octaaf omlaag (plons)
-  A'  idem, xylofoon een octaaf hoger erbij, pizzicato-plinks, kleine snare; eindigt op D7 (naar G-klein)
-  B   (8 maten) quasi-dramatisch in G-klein: trompetfanfare, pauken, roffels ... 'Splash!' = een klein bubbeltje,
+  A'  idem, xylofoon een octaaf boven de kazoo erbij (zachter), pizzicato-plinks, kleine snare; eindigt op D7 (naar G-klein)
+  B   (8 maten) quasi-dramatisch in G-klein: trompetfanfare, pauken, roffels ... B5 = de punchline: Magikarp's
+      eigen cry als DJ-scratch op de maat ('Ma-' 'Ma-' 'MAGIKARP', tel 1, 1-en, 2; eigen spoor) + een bubbeltje,
       treurtrompet 'wah wah wah waaah'; tweede poging nog pompeuzer, fluitje omhoog ... en dan een lege 3/8-maat
       met alleen een vibraslap (er gebeurt niets)
   C   (8 maten) spartelen: xylofoon flapt heen en weer, kazoo antwoordt met boings, maten van 8/5/8/7/8/5/8;
@@ -17,7 +18,7 @@ Loop (±52 s):
 Voicegroup grounded_magikarp (gegenereerd) = grounded_gm met eigen samples (gm_samples.py): 70 fagot (FluidR3),
 84 kazoo (gesynthetiseerde zoempuls), 78 fluitje (slide whistle), 45 pizzicato, 47 pauken met korte release,
 127 eigen drumkit (drumsets/magikarp.inc): kick, snare, woodblock hoog/laag (FluidR3), boing (synth), plons
-(bubbels), vibraslap (FluidR3), crash. Alles DirectSound; de shaker is PSG-ruis (kost geen kanaal).
+(bubbels), vibraslap (FluidR3), crash; 44/45 cry-scratch en cry (magikarp_samples.py, uit de echte Gen 3-cry). Alles DirectSound; de shaker is PSG-ruis (kost geen kanaal).
 Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/magikarp_theme.py"""
 import math, os, sys
 import mido
@@ -30,9 +31,12 @@ TPB, BPM = 48, 150
 E = TPB // 2                   # een achtste
 S16 = TPB // 4
 XYLO, PIZZ, TIMP, TRUMPET, TUBA, BASSOON, WHISTLE, KAZOO, SHAKER, DRUMS = 13, 45, 47, 56, 58, 70, 78, 84, 120, 127
-KICK, SNARE, WB_HI, WB_LO, BOING, PLONS, VIBRA, CRASH = range(36, 44)
-DRUM_LEN = {KICK: 20, SNARE: 22, WB_HI: 8, WB_LO: 8, BOING: 88, PLONS: 36, VIBRA: 120, CRASH: 96}
+KICK, SNARE, WB_HI, WB_LO, BOING, PLONS, VIBRA, CRASH, CRY_SCRATCH, CRY = range(36, 46)
+DRUM_LEN = {KICK: 20, SNARE: 22, WB_HI: 8, WB_LO: 8, BOING: 88, PLONS: 36, VIBRA: 120, CRASH: 96,
+            CRY_SCRATCH: 23, CRY: 108}          # cry: 0,19 s / 0,90 s bij 150 bpm (8,33 ms per tick)
+KAZOO_SHIFT = -12             # v2 (Jordi: 'het eerste deuntje te hoog, tot het irritante aan toe'): kazoo een octaaf lager
 BENDR = {'kazoo': 12, 'whistle': 12, 'tpt': 2}
+CRY_VOL = 90
 
 N = {'C': 0, 'C#': 1, 'D': 2, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'Ab': 8, 'A': 9, 'Bb': 10, 'B': 11}
 
@@ -123,7 +127,7 @@ def third_below(n, scale):
 
 def build():
     parts = {k: [] for k in ('kazoo', 'xylo', 'tpt', 'tpt2', 'tuba', 'bassoon', 'pizz', 'timp', 'whistle', 'drums',
-                             'shaker')}
+                             'shaker', 'cry')}
     fx = {k: [] for k in BENDR}            # (start, eind, effect) per spoor met pitch bend
 
     def note(part, bar, e8, ln8, nm, vel, eff=None, stacc=True):
@@ -195,7 +199,7 @@ def build():
     note('timp', 'I2', 0, 1, 'Bb2', 120)
     drum('I2', 0, CRASH, 110)
     drum('I2', 0, KICK, 112)
-    note('whistle', 'I2', 3, 3.5, 'Bb6', 104, 'fall', stacc=False)
+    note('whistle', 'I2', 3, 3.5, 'Bb5', 104, 'fall', stacc=False)   # v2: Bb5 i.p.v. Bb6 (minder schel)
     drum('I2', 7, PLONS, 110)
     # I3 (5/8): geflap
     drum('I3', 0, BOING, 112)
@@ -209,14 +213,13 @@ def build():
         for name, ln, ch in A:
             bar = name + prime
             key = name if not (prime and name == 'A8') else "A8'"
-            mel('kazoo', bar, HOOK[key], 104)
+            mel('kazoo', bar, HOOK[key], 104, shift=KAZOO_SHIFT)
             oompah(bar, ln)
             spartel(bar, ln, 80 if not prime else 72)
             shaker(bar, ln)
-            if prime:                                               # xylofoon een octaaf hoger, snare op 2 en 4
+            if prime:                                               # xylofoon een octaaf boven de kazoo, snare op 2 en 4
                 for x in HOOK[key]:
-                    n = p(x[2]) + 12
-                    note('xylo', bar, x[0], min(x[1], 1), n if n <= 96 else n - 12, 92)
+                    note('xylo', bar, x[0], min(x[1], 1), p(x[2]) + KAZOO_SHIFT + 12, 80)
                 for e8 in ((2, 6) if ln == 8 else (2,)):
                     drum(bar, e8, SNARE, 70)
                 for e8 in ((3, 7) if ln == 8 else (4,)):            # pizzicato-plinks op de achteraan-tel
@@ -258,11 +261,12 @@ def build():
         roll('drums', bar, 6, 8, SNARE, 70, 112, step=0.25)
     for bar in ('B1', 'B7'):
         drum(bar, 0, CRASH, 112)
-    # B5: 'Splash!' ... een klein bubbeltje, één tok, het fluitje zakt
-    drum('B5', 0, PLONS, 72)
-    drum('B5', 1.5, WB_LO, 70)
-    note('whistle', 'B5', 3, 4, 'G6', 92, 'fall', stacc=False)
-    drum('B5', 7, WB_LO, 64)
+    # B5: de punchline van de heldenfanfare: Magikarp's eigen cry als DJ-scratch, 'Ma- Ma- MAGIKARP!' (tel 1, 1-en,
+    # 2), dan alleen een klein bubbeltje (Splash: er gebeurt niets)
+    for e8, n in ((0, CRY_SCRATCH), (1, CRY_SCRATCH), (2, CRY)):
+        s = START['B5'] + e8 * E
+        parts['cry'].append([s, s + DRUM_LEN[n], n, 127])
+    drum('B5', 7, PLONS, 72)
     # B6: wah wah wah waaah (treurtrompet, tuba eronder)
     mel('tpt', 'B6', DRAMA['B6'], 110)
     for x in DRAMA['B6']:
@@ -279,7 +283,7 @@ def build():
                 if nm:
                     note('xylo', name, k / 2, 0.5, nm, 100 if k % 4 == 0 else 86)
         if name in ANSWER:
-            mel('kazoo', name, ANSWER[name], 104)
+            mel('kazoo', name, ANSWER[name], 104, shift=KAZOO_SHIFT)
             drum(name, 0, BOING, 104)
         spartel(name, ln, 84)
         shaker(name, ln)
@@ -292,7 +296,7 @@ def build():
                     note('pizz', name, e, 1, top(o, 55, 67), 92)
     drum('C1', 0, CRASH, 96)
     note('whistle', 'C3', 4, 4, 'D6', 88, 'wiggle', stacc=False)
-    note('whistle', 'C7', 0, 4, 'F6', 92, 'rise', stacc=False)
+    note('whistle', 'C7', 0, 4, 'F5', 92, 'rise', stacc=False)   # v2: F5 i.p.v. F6
     fanfare('C8')
 
     for k in parts:
@@ -402,10 +406,12 @@ def write_voicegroup():
         'voice_directsound 60, 64, DirectSoundWaveData_sc88pro_bubbles, 255, 0, 255, 0',                       # 41 plons
         'voice_directsound 60, 64, DirectSoundWaveData_magikarp_vibraslap, 255, 0, 255, 0',                    # 42 vibraslap
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',    # 43 crash
+        'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry_scratch, 255, 0, 255, 0',                  # 44 cry-scratch
+        'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry, 255, 0, 255, 0',                          # 45 cry
     ]
     open('sound/voicegroups/drumsets/magikarp.inc', 'w').write(
         '@ Project Grounded: drumkit voor Battle! Magikarp (magikarp_theme.py): 36 kick, 37 snare, 38/39 woodblock,\n'
-        '@ 40 boing (springveer), 41 plons (bubbels), 42 vibraslap, 43 crash.\n'
+        '@ 40 boing (springveer), 41 plons (bubbels), 42 vibraslap, 43 crash, 44 cry-scratch, 45 cry (magikarp_samples.py).\n'
         'voice_group magikarp_drumset, 36\n' + ''.join('\t%s\n' % k for k in kit) + '\n')
 
 
@@ -416,10 +422,10 @@ def main():
     progs = {'kazoo': KAZOO, 'xylo': XYLO, 'tpt': TRUMPET, 'tpt2': TRUMPET, 'tuba': TUBA, 'bassoon': BASSOON,
              'pizz': PIZZ, 'timp': TIMP, 'whistle': WHISTLE}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
-    tail['drums'] = 0
+    tail['drums'] = tail['cry'] = 0
     for k in ('kazoo', 'tpt', 'tpt2', 'tuba'):
         parts[k] = detach(parts[k], tail[k])
-    order = ['kazoo', 'tpt', 'drums', 'whistle', 'xylo', 'tuba', 'bassoon', 'tpt2', 'pizz', 'timp']
+    order = ['cry', 'kazoo', 'tpt', 'drums', 'whistle', 'xylo', 'tuba', 'bassoon', 'tpt2', 'pizz', 'timp']
     ds = {k: parts[k] for k in order}
     kept = allocate(ds, order, tail)
     print('tail (ticks):', tail)
@@ -433,13 +439,14 @@ def main():
     song.loop = (LOOP, END)
     layout = [('kazoo', KAZOO, 100, 0, 64), ('xylo', XYLO, 84, 1, 84), ('tpt', TRUMPET, 104, 2, 54),
               ('tpt2', TRUMPET, 88, 3, 74), ('tuba', TUBA, 112, 4, 64), ('bassoon', BASSOON, 96, 5, 44),
-              ('pizz', PIZZ, 84, 6, 92), ('timp', TIMP, 96, 7, 64), ('whistle', WHISTLE, 84, 8, 70),
+              ('pizz', PIZZ, 84, 6, 92), ('timp', TIMP, 96, 7, 64), ('whistle', WHISTLE, 76, 8, 70),
               ('shaker', SHAKER, 40, 10, 80)]
     for k, prog, vol, ch, pan in layout:
         extra = bend_events(k, parts[k], fx[k]) if k in fx else ()
         song.add(parts[k], prog, vol, ch, pan, extra)
     song.add(parts['drums'], DRUMS, 104, 9)
-    written = {k for k, *_ in layout} | {'drums'}
+    song.add(parts['cry'], DRUMS, CRY_VOL, 11, 64)               # eigen spoor: volume los van de drums
+    written = {k for k, *_ in layout} | {'drums', 'cry'}
     assert not [k for k in parts if parts[k] and k not in written], 'partij niet weggeschreven'
     song.save(OUT, END)
     print(OUT, '%.1f s intro, %.1f s loop' % (LOOP / TPB * 60 / BPM, (END - LOOP) / TPB * 60 / BPM))

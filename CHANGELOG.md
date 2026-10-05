@@ -16880,3 +16880,17 @@ Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Mel
 - **Match Call:** het oude contact "WALLACE, CHAMPION" verschijnt nooit meer; Steven staat al als contact in de lijst.
 - **Hall of Fame:** Steven loopt mee in plaats van Wallace, met nieuwe metal-teksten ("Forged in steel, like a METAL album." / "Horns up!").
 - **Kampioenszaal:** scriptlabels hernoemd naar Steven; `TRAINER_NAMEN.md` bijgewerkt.
+
+### [v0.9.87] - Gymleider-remixes ronde 2 (Wattson en Wallace goedgekeurd)
+Volgens Jordi's GBA-instructies per leider:
+
+| Leider | Wat er veranderde |
+|---|---|
+| Roxanne | Emerald-rock-snare (gated) met een PSG-tik, slapbas, dubbele distortion-lead in tertsen met vibrato |
+| Brawly | drop-gestemde distortion-chugs, extreem kort op de off-beats; double kick op PSG-ruis; scratch-sweeps op de overgangen |
+| Flannery | GBA-nylon met rasgueado, palmas (rimshot/side stick in 16en), castagnetten op PSG-ruis |
+| Norman | melodie terug op de Emerald-instrumenten; walking bass (finger/fretless), ride, gelaagde brass-stoten, pizzicato op de 'en' |
+| Winona | geen koper meer; PSG-blokgolflead, celesta, synthpluck, pads, buisklokken, synth bass, dance-kick, clap op 2 en 4 |
+| Tate & Liza | psy-bas op het PSG-golfkanaal (eigen 4-bit zaagtand) in 16en; melodie als 16e-arpeggio's (Liza omlaag, Tate omhoog) met pitch-bend-sweeps; 144 bpm |
+
+- Batchcontrole: 0 overlopen, piek 82–105/127.

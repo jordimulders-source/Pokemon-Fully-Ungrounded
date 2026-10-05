@@ -445,3 +445,15 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Jordi geeft nu gedetailleerde briefings (vaak met Gemini geschreven); volg ze punt voor punt en houd wat hij goed
   vond expliciet ongewijzigd (diff per spoor).
 
+- Rayquaza v4 (Jordi: 'balans trompet/melodie v3 precies zo; fellere kebyar-intro, breaks, gong ageng op de laatste tel
+  van elke frase'): **breaks zonder de melodie aan te raken = in de rusten van de melodie** (rasterkaart per spoor per
+  zestiende: in maat 8-19 rust de trompet van tel 4+ tot tel 2 van de oneven maat; maat 32-39 heeft geen melodie) en een
+  `stop()` die alleen niet-beschermde partijen afkapt. Controle: diff per MIDI-spoor (lead/suling/PSG noot voor noot
+  identiek) + solo_rms v3 vs v4 (melodie 893 vs 892, kotekan 565 vs 562). Een stemverdeler die gretig per partij werkt
+  houdt de melodiepartijen exact gelijk zolang ze vóór alle nieuwe partijen in de volgorde staan; check met een
+  `RQ_AT=<tick>`-dump wie de kanalen op een gat bezet (bar 8: vijf pauken tegelijk door uitklinktijden). Snelle
+  unisono-figuren op de gedempte gangsa (release 140), niet op de gangsa (226): 8 zestienden in octaven = 12 kanalen.
+  Gong ageng meten: RMS < 150 Hz in de eerste 0,2 s van elke tel, opname uitlijnen op de eerste aanslag (±0,04 s) en de
+  tijdas x 60/59,73 (GBA-framerate; zonder dat schuift het na 30 s een halve tel). Onset-kruiscorrelatie over alle
+  noten koos twee keer een andere offset (0,125/0,285 s): niet betrouwbaar bij een dicht 16e-raster.
+  -V070: 0 overlopen, piek 112/127, RMS 2814; ageng +4,4..+7,7 dB (F/Eb-secties het zwakst), audiocheck 196 Hz = kendang G3.

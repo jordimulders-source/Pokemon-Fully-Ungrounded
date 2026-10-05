@@ -248,10 +248,7 @@ LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag a
 FAT_END = 22 * BAR
 # v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
 # (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
-LEAD_VOL = [(0, 127), (LOOP0, 96)]            # v12: 127; v12b (Jordi): vanaf het loopbegin (0:14) lead -25%
-# v12b (Jordi: 'de bas die vanaf 14 s wegvalt is waar het hele nummer op draait'): vanaf het loopbegin bas luider
-# en het koper (akkoorden + lead-octaaf) 25-30% zachter; de intro blijft zoals hij was
-LOOP_VOL = dict(bass=112, brass=45, brass_lo=38, body=55)
+LEAD_VOL = [(0, 127)]                         # v12: overal 127 (zie VOL)
 VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
@@ -975,11 +972,11 @@ def build():
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [
         (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
-        (psg['body'], BODY, VOL['body'], 1, 64, [(LOOP0, 7, LOOP_VOL['body'])]),
-        (p['brass'], BRASS, VOL['brass'], 2, 56, [(LOOP0, 7, LOOP_VOL['brass'])]),
-        (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64, [(LOOP0, 7, LOOP_VOL['brass_lo'])]),
+        (psg['body'], BODY, VOL['body'], 1, 64),
+        (p['brass'], BRASS, VOL['brass'], 2, 56),
+        (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
-        (sorted(p['bass'] + p['bfill']), BASS, VOL['bass'], 5, 64, [(LOOP0, 7, LOOP_VOL['bass'])]),
+        (sorted(p['bass'] + p['bfill']), BASS, VOL['bass'], 5, 64),
         (psg['sub'], SUB, VOL['sub'], 6, 64),
         (arp_notes, arp_prog(arp_notes[0][2], 0), VOL['arp'], 7, 35, prog_events(arp_notes, arp_prog)),
         (p['steel'], PLUCK, VOL['steel'], 8, 35),

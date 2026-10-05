@@ -6655,3 +6655,19 @@ DirectSoundWaveData_heatran_floor_tom::
 	.align 2
 DirectSoundWaveData_heatran_crash::
 	.incbin "sound/direct_sound_samples/grounded/heatran_crash.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_gangsa::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_gangsa.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_reyong::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_reyong.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_jegogan::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_jegogan.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_gong::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_gong.bin"

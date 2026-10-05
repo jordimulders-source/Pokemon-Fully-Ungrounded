@@ -237,3 +237,12 @@ herkennen is, komt ook als controle in `music_lint.py`.
   nieuwe samples krijgen een anti-aliasfilter bij het omlaag resamplen (fuzz zit vol hoge tonen). Bends en vibrato
   op de lead: pitchwheel/CC1 pas terugzetten op de volgende noot (bij de note-off zakt de uitklinktijd mee).
   Fuzzbas (tanh) is veel dichter dan de gitaar: spoorvolume 54 i.p.v. 84 (solo-RMS gemeten). -V112: piek 99/127.
+- Rayquaza v1 (`rayquaza_theme.py`, gamelan/gong kebyar): het weather trio-thema maat voor maat behouden, alleen
+  instrumenten vervangen + gamelanlagen. **Pelog selisir op de grondtoon (R, R+1, R+3, R+7, R+8)** valt op C samen
+  met de kerntonen van het thema (C-C#-G-G#-D#): melodie intact, kotekan/kempli in pelog. Gamelan-samples zelf gemaakt
+  (`gm_samples.py` ADDITIVE: inharmonische partialen met t60 per partiaal, geen loop); **ombak in de sample bakken**
+  (tweede, licht ontstemde kopie) kost één kanaal per paar. Kotekan: polos/sangsih om en om op de zestienden
+  (nooit tegelijk) met release 175 = ±2 kanalen. Gong/kempur: noot kort (2 maten / 1 maat) houden, anders zit de
+  gong de stemverdeler 4 maten dwars. Eenstemmige metallofoonlijnen `detach()`en. Kendang (indian drum/conga's op
+  elke achtste) geeft in audiocheck een 'constante toon' rond 175-180 Hz: de toonhoogte van de trommels, geen brom
+  (solo-opname: kendang 12% van het spectrum in die band). -V076: 0 overlopen, piek 94/127, RMS 2800.

@@ -6217,8 +6217,8 @@ u16 GetBattleBGM(void)
     {
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
-    case SPECIES_RAYQUAZA:
-        return MUS_VS_RAYQUAZA;
+    case SPECIES_RAYQUAZA: // Project Grounded: weather trio-thema als gamelan (tools/grounded/rayquaza_theme.py)
+        return MUS_GROUNDED_VS_RAYQUAZA;
     case SPECIES_KYOGRE:
     case SPECIES_GROUDON:
         return MUS_VS_KYOGRE_GROUDON;

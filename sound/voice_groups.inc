@@ -10,6 +10,7 @@
 .include "sound/voicegroups/drumsets/magikarp.inc"
 .include "sound/voicegroups/drumsets/jirachi.inc"
 .include "sound/voicegroups/drumsets/heatran.inc"
+.include "sound/voicegroups/drumsets/rayquaza.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -220,3 +221,4 @@
 .include "sound/voicegroups/grounded_magikarp.inc"
 .include "sound/voicegroups/grounded_jirachi.inc"
 .include "sound/voicegroups/grounded_heatran.inc"
+.include "sound/voicegroups/grounded_rayquaza.inc"

@@ -6827,3 +6827,68 @@ DirectSoundWaveData_magikarp_cry_stutter::
 	.align 2
 DirectSoundWaveData_magikarp_cry_rev::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_rev.bin"
+
+	.align 2
+DirectSoundWaveData_sb_slap_thumb::
+	.incbin "sound/direct_sound_samples/grounded/sb_slap_thumb.bin"
+
+	.align 2
+DirectSoundWaveData_sb_slap_pop::
+	.incbin "sound/direct_sound_samples/grounded/sb_slap_pop.bin"
+
+	.align 2
+DirectSoundWaveData_sb_dead_thumb::
+	.incbin "sound/direct_sound_samples/grounded/sb_dead_thumb.bin"
+
+	.align 2
+DirectSoundWaveData_sb_dead_pop::
+	.incbin "sound/direct_sound_samples/grounded/sb_dead_pop.bin"
+
+
+	.align 2
+DirectSoundWaveData_sb_gtr_scratch::
+	.incbin "sound/direct_sound_samples/grounded/sb_gtr_scratch.bin"
+
+	.align 2
+DirectSoundWaveData_sb_gtr_mute::
+	.incbin "sound/direct_sound_samples/grounded/sb_gtr_mute.bin"
+
+	.align 2
+DirectSoundWaveData_sb_clav::
+	.incbin "sound/direct_sound_samples/grounded/sb_clav.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rhodes_m9::
+	.incbin "sound/direct_sound_samples/grounded/sb_rhodes_m9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_rhodes_13::
+	.incbin "sound/direct_sound_samples/grounded/sb_rhodes_13.bin"
+
+	.align 2
+DirectSoundWaveData_sb_horns::
+	.incbin "sound/direct_sound_samples/grounded/sb_horns.bin"
+
+	.align 2
+DirectSoundWaveData_sb_pedal_hat::
+	.incbin "sound/direct_sound_samples/grounded/sb_pedal_hat.bin"
+
+	.align 2
+DirectSoundWaveData_sb_clap::
+	.incbin "sound/direct_sound_samples/grounded/sb_clap.bin"
+
+	.align 2
+DirectSoundWaveData_sb_talkbox::
+	.incbin "sound/direct_sound_samples/grounded/sb_talkbox.bin"
+
+	.align 2
+DirectSoundWaveData_sb_gtr_wah_m9::
+	.incbin "sound/direct_sound_samples/grounded/sb_gtr_wah_m9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_gtr_wah_9::
+	.incbin "sound/direct_sound_samples/grounded/sb_gtr_wah_9.bin"
+
+	.align 2
+DirectSoundWaveData_sb_horns_hi::
+	.incbin "sound/direct_sound_samples/grounded/sb_horns_hi.bin"

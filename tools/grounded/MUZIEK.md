@@ -353,3 +353,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   een constante lage lijn = een te lang uitklinkende, gestemde kick op achtsten (bromde op 52 Hz -> kick korter, op C2).
 - Spleeter-stems zijn bruikbaar voor drumpatronen (aanslag per band per 16e) en octaafcontrole per spoor (energie op f0/2,
   f0, 2f0), maar harmonische vingerafdrukken uit een volle mix zijn onbetrouwbaar (te veel overlap).
+- SickBlik v1 (`sickblik_theme.py`, slap-funk à la 'Dean Town', 108 bpm, E-dorisch): **articulaties = aparte programma's
+  met eigen samples** (thumb, pop, dode thumb, dode pop; `sickblik_samples.py`), elk op een eigen spoor, maar als één
+  snaar behandeld (`one_string()`: elke noot stopt bij de volgende, minstens de halve afstand). **Hammer-on = pitch bend
+  op de klinkende noot** (geen nieuwe aanslag), slide = bend van -2 halve tonen omhoog in 4 stappen van 3 ticks.
+  FluidR3 Slap Bass 1/2 hebben geen velocitylagen en zijn dof (2-5 kHz 2-4% in de aanslag): eigen aanslag (hoog deel
+  > 1,5 kHz x6 met 20 ms-envelope + ruisstoot) -> 15%, geen 'zaag' (> 5 kHz < 1%). Dode noten = dezelfde aanslag die in
+  12-20 ms uitsterft. FluidR3-pops beginnen +3 halve tonen hoog en zakken in 30 ms (zoals een echte snaar): een
+  toonhoogtemeting van korte pops in de game (80 ms-venster) geeft +0,5-1 halve toon; geen stemfout (na 40 ms +10 c).
+- Unisono-blazers als één sample (trompet + tenorsax een octaaf lager samen gerenderd) = 1 kanaal per noot; een tweede
+  sample vanaf C5 (minder transponeren). In de drukste hook de hihat in 8en i.p.v. 16en: de clavinetverdubbeling viel
+  dan nog maar 5% weg i.p.v. 17%.
+- `solo_rms.py` rekent met 24 ticks per tel in de MIDI (`sec_at`); bij TPB 96 een kopie met eigen secties maken.
+  -V125: 0 overlopen, piek 99/127, RMS 2223 (A 1800-2000, hook 2400-2600).

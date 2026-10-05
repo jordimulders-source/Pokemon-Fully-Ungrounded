@@ -16974,3 +16974,7 @@ Volgens Jordi's GBA-instructies per leider:
 - **Wally** (laatste gevecht, Victory Road; rematches houden de mugshot): een VHS-band ("WALLY - 1ST POKEMON / (DAD: DO NOT TAPE OVER)"). PLAY: Route 102, Wally vangt Ralts ("Gotcha! RALTS was caught!"); FF: Mauville (Kirlia), Meteor Falls ("Wow! Very beaut! Train much team."), Kirlia evolueert in Gallade; dan PLAY, zoom op zijn vastberaden gezicht in Victory Road, PAUSE, sneeuw. Met tracking-ruis en golvend beeld. ±5 s.
 - **Rayquaza** (alle Rayquaza-gevechten op de Sky Pillar, ook shiny/Delta): je kijkt omhoog langs de pilaar door de wolken, een groene streep cirkelt steeds sneller om de top tot een ring, groene flits, en Rayquaza breekt eruit recht op de camera af tot zijn kop het beeld vult. ±3,4 s.
 - ROM +475 KB (30,3 van 32 MB).
+
+### [v0.9.97] - Rayquaza-intro: de echte Emerald-cutscene i.p.v. het nephoofd
+- Na de groene ring en flits kantelt de camera weg van de Sky Pillar de lucht in; door het gat in de wolken duikt de **echte Rayquaza uit de Emerald-cutscene** (waarin hij Kyogre en Groudon uit elkaar haalt) naar beneden, dan de grote Rayquaza met snelheidsstrepen die trilt, terugdeinst en op de camera af schiet tot zijn kop het beeld vult. Geluiden zoals in de cutscene (Dragon Rage, Fly, Hyper Beam). ±4,5 s.
+- Filmspeler: na het laatste beeld flitsten bij het uitfaden losse tiles in oude kleuren (ook bij Steven/Wally); opgelost.

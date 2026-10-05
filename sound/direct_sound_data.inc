@@ -6463,3 +6463,23 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_harp::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_harp.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_celesta::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_celesta.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_nylon::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_nylon.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_flute::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_flute.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_clarinet::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_clarinet.bin"

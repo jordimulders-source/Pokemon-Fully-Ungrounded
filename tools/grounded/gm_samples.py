@@ -16,6 +16,14 @@ DATA = 'sound/direct_sound_data.inc'
 SAMPLES = {
     'gm_clean_guitar': (27, 60, 1.6, 16000, None),
     'gm_steel_drums':  (114, 72, 0.9, 22050, None),
+    # Shaymin (shaymin_theme.py): harp, celesta en nylon zonder loop; fluit en klarinet met een loop van exacte
+    # perioden (loop = (begin in s, perioden); de samplerate wordt dan grondtoon x 32 of 64, zodat een periode precies
+    # een geheel aantal samples is, en het loopeinde vloeit over in het loopbegin)
+    'shaymin_harp':     (46, 60, 1.6, 16000, None),
+    'shaymin_celesta':  (8, 72, 1.2, 22050, None),
+    'shaymin_nylon':    (24, 60, 1.4, 16000, None),
+    'shaymin_flute':    (73, 72, 0.9, None, (0.35, 16)),
+    'shaymin_clarinet': (71, 60, 0.9, None, (0.35, 8)),
 }
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
@@ -70,13 +78,26 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     for name, (prog, note, dur, rate, loop) in SAMPLES.items():
-        a = render(prog, note, dur)
+        a = render(prog, note, dur + (1.0 if loop else 0))
         start = np.argmax(np.abs(a) > 0.002)                       # stilte vooraan weg
-        a = resample(a[start:start + int(dur * 44100)], 44100, rate)
-        a = a / max(1e-6, np.abs(a).max()) * 0.97                  # 8 bit: volle schaal
+        a = a[start:start + int((dur + (1.0 if loop else 0)) * 44100)]
         if loop is None:
+            a = resample(a, 44100, rate)
+            a = a / max(1e-6, np.abs(a).max()) * 0.97              # 8 bit: volle schaal
             fade = int(rate * 0.05)
             a[-fade:] *= np.linspace(1, 0, fade)
+        else:
+            per = 64 if note < 66 else 32
+            f0 = 440 * 2 ** ((note - 69) / 12)
+            rate = int(round(f0 * per))
+            a = resample(a, 44100, f0 * per)                       # precies `per` samples per periode
+            ls = int(loop[0] * rate) // per * per
+            ln = loop[1] * per
+            w = np.linspace(0, 1, ln)
+            body = a[ls:ls + ln] * (1 - w) + a[ls - ln:ls] * w     # loopeinde gaat vloeiend over in a[ls]
+            a = np.concatenate([a[:ls], body])
+            a = a / max(1e-6, np.abs(a).max()) * 0.97
+            loop = (ls, ls + ln)
         write_wav(OUT + name + '.wav', a, rate, note, loop)
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:

@@ -207,3 +207,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Het was drumnoot 49 = PSG in rs_drumset. **Lint-meldingen 'drumnoot is PSG' altijd oplossen** (`drum_map`), nooit
   laten staan. Niet aankomen wat Jordi goed vond (de vocalen).
 
+- Shaymin v1 (`shaymin_theme.py`, 6/8, gestippelde kwart 88, D-groot): eigen samples uit FluidR3 voor harp, celesta,
+  nylon, fluit en klarinet. `gm_samples.py` kan nu ook **aanhoudende instrumenten met een loop** renderen
+  (`loop=(begin_s, perioden)`): samplerate = grondtoon x 32/64, loop van exacte perioden, het loopeinde vloeit over in
+  het loopbegin (geen klik). Stemverdeler-trucs: gitaar wijkt vooraf voor de celesta-blaadjes (anders willekeurige gaten,
+  22% -> 7%), pad per halve maat; bongo's (0,1 s-sample) niet als `drum_parts` tellen (drum_len 1 tel overschat ze),
+  alleen de triangel. -V100: piek 87/127, RMS 2770.

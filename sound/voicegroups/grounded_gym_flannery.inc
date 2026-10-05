@@ -1,5 +1,5 @@
 @ Project Grounded: voicegroup_vs_gym_leader + instrumenten voor de remix van Flannery.
-@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_flannery.inc: cajón, Emerald-snare als rimshot/side stick), daarna GBA-nylongitaar (melodie, rasgueado), viool, fretloze bas, PSG-ruis (castagnetten).
+@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_flannery.inc: cajón, palmas claras/sordas), daarna Emerald-nylongitaar (melodie), fretloze bas, nylon-strums (down/up/golpe/rasgueado, open kwinten en majeur).
 voice_group grounded_gym_flannery
 	voice_keysplit_all voicegroup_rs_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
@@ -94,8 +94,12 @@ voice_group grounded_gym_flannery
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_7, 0, 7, 15, 2
 	voice_keysplit_all voicegroup_gym_flannery_drumset  @ 91
 	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_gba_nylon, 255, 249, 25, 90  @ 92
-	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_gba_nylon, 255, 245, 25, 50  @ 93
-	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_violin_60, 255, 0, 255, 175  @ 94
-	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_violin_72, 255, 0, 255, 175  @ 95
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 0, 255, 120  @ 96
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 0, 255, 100  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_down_five, 255, 0, 255, 150  @ 94
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_up_five, 255, 0, 255, 150  @ 95
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_golpe_five, 255, 0, 255, 150  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_rasg_five, 255, 0, 255, 150  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_down_maj, 255, 0, 255, 150  @ 98
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_up_maj, 255, 0, 255, 150  @ 99
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_golpe_maj, 255, 0, 255, 150  @ 100
+	voice_directsound 60, 0, DirectSoundWaveData_gym_fla_rasg_maj, 255, 0, 255, 150  @ 101

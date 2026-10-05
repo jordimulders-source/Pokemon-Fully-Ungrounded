@@ -103,6 +103,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v3 (ronde 7), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v2 (GBA-instructies), wacht op opname | "Gymleiders" |
+| Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
+| Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v3 (anti-kermis, half-time), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 
@@ -436,3 +438,21 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (C-mixolydisch = vrolijk). v3: alleen melodie (+ B-motief spoor 4) en grondtonen blijven, modaal verduisterd (Winona
   C-eolisch, Tate C-frygisch = het B-deel van het origineel), alle begeleiding nieuw; het script faalt op die vijf punten.
   Referentie 'LSD' (Spleeter): 137 bpm, bas alleen op 16en 2-4, hats op alle 16en, leads 2,5 aanslagen/tel in D3-C#5.
+- Gymleiders ronde 3 (Roxanne, Brawly, Flannery 'kermis/ska'; `gym_remixes.py`): **oorzaak gemeten met `kermis_meter()`**
+  (op de v2-MIDI's): (1) de drie PSG-sporen van het origineel speelden 1-op-1 mee (vierkant-arpeggio's in achtsten,
+  20-35% van de melodietijd bóven de melodie); (2) spoor 1 = de hoorn/trompet-tweede stem in tertsen/sexten (een
+  blazerssectie) bleef als tweede gitaar/strijkers/viool, plus piano; (3) de bas van het origineel is een **hoempa-bas**
+  (grondtoon op de tel, kwint een octaaf hoger op 94% van de 'en'-noten) met de snare op 2 en 4 van 188-196 bpm =
+  polka/ska; (4) Brawly's chugs 163x op de 'en' tegen 100x op de tel (skank); Flannery's nylonmelodie in trémolo (mandoline),
+  percussie op het gestippelde paukenritme, PSG-castagnetten van 2 ticks en een snare met sustain 0 = stotterend;
+  Roxanne's sd90_solo_snare ringt op 553 Hz (piek/mediaan 54 = 'tonk') en werd na 120 ms gegate + PSG-ruistik.
+  **Fix: alleen de melodie (`melody_src`: per sectie het spoor dat hem draagt; noot voor noot gecontroleerd) + grondtonen/
+  akkoordkwaliteit per halve maat houden, alle begeleiding nieuw en in half-time** (gevoelde tel = halve maat: 100/108/104
+  bpm). `kermis_meter()` weigert te schrijven bij blazers/fluit/klokjes/orgel/piano/strijkers/PSG-tonen, > 1 aanslag op de
+  'en' per aanslag op de tel of > 25% maten zonder tel 1 (begeleiding), hoempa (> 25% 'en'-sprongen omhoog in de bas),
+  < 85% maten met kick op 1, of tegenlijnen boven/in het register van de melodie. Een rasgueado-roffel die 9 ticks vóór de
+  tel begint telt als 'op de tel'. Strums als één sample per slag uit de Emerald-nylon (getransponeerd per snaar,
+  `nylon_strum`): 438 slagen, 0% weg. Rock-snare `gym_rox_rsnare`: Power-snare + vel 185 Hz + kamernaklink, -20 dB na 0,54 s,
+  piek/mediaan 16. Brawly-referentie (Face the Pain, librosa): ±112 bpm, kick 2-2,7 en gitaar 1-2 aanslagen per tel
+  (gesyncopeerde zestienden), 49% < 250 Hz; Spleeter werkt hier niet (typer-fout).
+

@@ -7824,3 +7824,63 @@ DirectSoundWaveData_gym2_tl_pad_min::
 	.align 2
 DirectSoundWaveData_gym2_tl_pad_maj::
 	.incbin "sound/direct_sound_samples/grounded/gym2_tl_pad_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym_rox_rsnare::
+	.incbin "sound/direct_sound_samples/grounded/gym_rox_rsnare.bin"
+
+	.align 2
+DirectSoundWaveData_gym_rox_ride::
+	.incbin "sound/direct_sound_samples/grounded/gym_rox_ride.bin"
+
+	.align 2
+DirectSoundWaveData_gym_rox_open::
+	.incbin "sound/direct_sound_samples/grounded/gym_rox_open.bin"
+
+	.align 2
+DirectSoundWaveData_gym_rox_pbass::
+	.incbin "sound/direct_sound_samples/grounded/gym_rox_pbass.bin"
+
+	.align 2
+DirectSoundWaveData_gym_bra_scratch2::
+	.incbin "sound/direct_sound_samples/grounded/gym_bra_scratch2.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_down_five::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_down_five.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_up_five::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_up_five.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_golpe_five::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_golpe_five.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_rasg_five::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_rasg_five.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_down_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_down_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_up_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_up_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_golpe_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_golpe_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_rasg_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_rasg_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_pclara::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_pclara.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_psorda::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_psorda.bin"

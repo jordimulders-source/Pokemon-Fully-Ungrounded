@@ -1,5 +1,5 @@
 @ Project Grounded: voicegroup_vs_gym_leader + instrumenten voor de remix van Roxanne.
-@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_roxanne.inc: Emerald-kick/-snare/-hihat/-crash/-toms), daarna Emerald-distortiongitaar (dual lead), powerchord (A2), cleane gitaar, Emerald-slapbas, PSG-ruis (gated snare).
+@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_roxanne.inc: Emerald-kick, diepe rock-snare met naklink, hihat, ride, crash, Emerald-toms), daarna Emerald-distortiongitaar (lead), powerchord, cleane gitaar (brug), pick-bas.
 voice_group grounded_gym_roxanne
 	voice_keysplit_all voicegroup_rs_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
@@ -93,17 +93,8 @@ voice_group grounded_gym_roxanne
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_7, 0, 7, 15, 2
 	voice_keysplit_all voicegroup_gym_roxanne_drumset  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_piano1_48, 255, 250, 0, 150  @ 92
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_piano1_60, 255, 250, 0, 150  @ 93
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_piano1_72, 255, 250, 0, 150  @ 94
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_piano1_84, 255, 250, 0, 150  @ 95
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_60, 255, 0, 255, 180  @ 96
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 0, 255, 180  @ 97
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_84, 255, 0, 255, 180  @ 98
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 0, 255, 120  @ 99
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 165  @ 100
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_power, 255, 0, 255, 180  @ 101
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_60, 255, 0, 255, 160  @ 102
-	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_72, 255, 0, 255, 160  @ 103
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 104
-	voice_noise 60, 0, 0, 0, 0, 15, 0  @ 105
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 190  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_open, 255, 0, 255, 170  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_60, 255, 0, 255, 160  @ 94
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_clean_72, 255, 0, 255, 160  @ 95
+	voice_directsound 60, 0, DirectSoundWaveData_gym_rox_pbass, 255, 0, 255, 120  @ 96

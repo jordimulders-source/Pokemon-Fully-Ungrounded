@@ -225,6 +225,134 @@ def emerald_power(dur=1.3):
     return norm(np.tanh(norm(out) * 1.6))
 
 
+# ---- ronde 3 (anti-kermis) -------------------------------------------------------------------------------------------
+GR = 13379                                       # samplerate van de Gen 3-samples
+
+
+def gba_tone(name, m, dur, base=60, R=GR):
+    """Een GBA-sample getransponeerd naar MIDI-toon m (base = de toon die de sample op zijn eigen samplerate
+    speelt), aangehouden via zijn loop, op samplerate R."""
+    a, rate, loop, _ = gba_load(name)
+    eff = rate * 2 ** ((m - base) / 12.0)
+    need = int(dur * eff) + 8
+    if loop and len(a) < need:
+        reps = (need - loop[0]) // (loop[1] - loop[0]) + 1
+        a = np.concatenate([a[:loop[0]]] + [a[loop[0]:loop[1]]] * reps)
+    a = resample(a[:need], eff, R)
+    out = np.zeros(int(dur * R))
+    out[:min(len(a), len(out))] = a[:len(out)]
+    return out
+
+
+VOICING = {'five': (45, 52, 57, 64), 'maj': (45, 52, 57, 61, 64)}   # A2-E3-A3-(C#4)-E4, open snaren
+
+
+def nylon_strum(kind, quality):
+    """Strum op de Emerald-nylongitaar (sc88pro_nylon_str_guitar, opgenomen als C3) als één sample = één kanaal:
+    down (alle snaren laag -> hoog, 14 ms per snaar), up (hoge snaren hoog -> laag, zachter), golpe (gedempte slag +
+    tik op het klankblad) en rasg (rasgueado: vier vingers e-a-m-i vlak na elkaar, dan de accentslag op 0,112 s;
+    gym_remixes.py zet deze noot 0,112 s vóór de tel). Natuurlijke uitsterving, niets afgekapt."""
+    v = VOICING[quality]
+    dur = {'down': 1.2, 'up': 0.8, 'golpe': 0.3, 'rasg': 1.3}[kind]
+    n = int(dur * GR)
+    tt = np.arange(n) / GR
+    tone = {m: gba_tone('sc88pro_nylon_str_guitar', m, dur, base=48) for m in v}
+
+    def stroke(t0, keys, gap, gain, tau):
+        out = np.zeros(n)
+        for i, m in enumerate(keys):
+            s = int((t0 + i * gap) * GR)
+            if s >= n:
+                break
+            x = tone[m][:n - s] * np.exp(-np.arange(n - s) / GR / tau)
+            out[s:] += x * gain * (1.0 - 0.06 * i)
+        return out
+    if kind == 'down':
+        a = stroke(0, v, 0.014, 1.0, 0.55)
+    elif kind == 'up':
+        a = stroke(0, v[::-1][:4], 0.010, 0.75, 0.35)
+    elif kind == 'golpe':
+        a = stroke(0, v, 0.004, 0.9, 0.035)
+        rng = np.random.default_rng(31)
+        knock = lp(rng.standard_normal(n), 2200) * np.exp(-tt / 0.006) * 0.5
+        thump = np.sin(2 * np.pi * 120 * tt) * np.exp(-tt / 0.02) * 0.6
+        a = a / max(1e-9, np.abs(a).max()) + knock + thump
+    else:
+        a = np.zeros(n)
+        for j, g in enumerate((0.45, 0.55, 0.65, 0.75)):
+            a += stroke(j * 0.028, v, 0.005, g, 0.06)
+        a += stroke(0.112, v, 0.008, 1.0, 0.55)
+    a = resample(a, GR, FS)
+    return fade_out(norm(a), 0.04)
+
+
+def room(n, tau, lo, hi, seed, pre=0.006):
+    """Natuurlijke naklink (geen gate): ruis door een bandfilter, exponentieel uitstervend, na een korte pre-delay."""
+    rng = np.random.default_rng(seed)
+    t = np.arange(n) / FS
+    x = bp(rng.standard_normal(n), lo, hi) * np.exp(-np.maximum(0, t - pre) / tau) * (t >= pre)
+    return x
+
+
+def rock_snare():
+    """Diepe, volle 80s rock-snare: FluidR3 Power-snare + een vel dat op ±190 Hz zakt + een natuurlijke kamer-
+    naklink van ±0,8 s (geen gated reverb, geen tonale 'tonk': sd90_solo_snare ringt op 553 Hz, piek/mediaan 54)."""
+    n = int(0.95 * FS)
+    t = np.arange(n) / FS
+    sn = np.zeros(n)
+    s0 = drum(POWER, 38, 0.6, 127)
+    sn[:len(s0)] = s0[:n]
+    f = 185 + 60 * np.exp(-t / 0.012)
+    body = np.sin(2 * np.pi * np.cumsum(f) / FS) * np.exp(-t / 0.09)
+    tail = lp(room(n, 0.30, 250, 6000, 41), 4200) * 0.4 + lp(room(n, 0.45, 120, 2000, 43), 1500) * 0.6
+    a = norm(sn) + 1.1 * body + tail
+    a = np.tanh(norm(a) * 1.4)
+    return fade_out(norm(a), 0.08)
+
+
+def emerald_power_open(dur=1.6):
+    """Langgerekte powerchord (I-V-I') uit de Emerald-distortiongitaar (sd90_classical_distortion_guitar_low, C3):
+    de sample op C3, G3 en C4 opgeteld, op 13.379 Hz gelaten; label 48."""
+    a = sum(g * gba_tone('sd90_classical_distortion_guitar_low', m, dur, base=48)
+            for m, g in ((48, 1.0), (55, 0.8), (60, 0.55)))
+    a = hp(resample(a, GR, FS), 60)
+    return norm(np.tanh(norm(a) * 1.3))
+
+
+def scratch2():
+    """Tweede DJ-scratch (chirp): het koor-'aah' van scratch() één keer snel vooruit en terug, fader dicht op de
+    terugweg-helft."""
+    src = norm(note(52, 64, 0.6, 120))
+    n = int(0.22 * FS)
+    t = np.arange(n) / FS
+    speed = 3.2 * np.sin(2 * np.pi * t / 0.22)
+    pos = np.clip(0.06 * FS + np.cumsum(speed), 0, len(src) - 2)
+    fader = np.where(t < 0.13, 1.0, np.clip((0.16 - t) / 0.03, 0, 1)) * np.minimum(1, np.abs(speed) * 1.2)
+    a = np.interp(pos, np.arange(len(src)), src) * fader
+    return fade_out(norm(hp(a, 250)))
+
+
+def palmas(kind):
+    """Palmas: clara (scherp: side stick + handklap, drie mensen net niet tegelijk) of sorda (holle handen,
+    gedempt). Met een korte kamernaklink zodat niets afgekapt klinkt."""
+    n = int((0.38 if kind == 'clara' else 0.28) * FS)
+    out = np.zeros(n)
+    st = drum(STANDARD, 37, 0.2, 120)
+    cl = drum(STANDARD, 39, 0.25, 118)
+    for off, sp, g in ((0, 1.0, 1.0), (0.008, 0.95, 0.8), (0.017, 1.06, 0.7)):
+        x = cl if kind == 'sorda' else 0.7 * st[:min(len(st), len(cl))] + 0.6 * hp(cl[:min(len(st), len(cl))], 1200)
+        x = resample(x, FS, FS / sp, antialias=False)
+        s = int(off * FS)
+        k = min(len(x), n - s)
+        out[s:s + k] += g * x[:k]
+    if kind == 'sorda':
+        out = lp(out, 1100)
+        out += room(n, 0.06, 300, 2500, 51) * 0.25
+    else:
+        out += room(n, 0.09, 900, 6500, 53) * 0.3
+    return fade_out(norm(out), 0.05)
+
+
 # ---- de lijst --------------------------------------------------------------------------------------------------------
 def build():
     """naam -> (signaal op 44,1 kHz, samplerate, label-toets, loop?)"""
@@ -308,6 +436,18 @@ def build():
 
     # ronde 2: Brawly drop-gestemd met de Emerald-distortiongitaar (C2 = toets 36)
     S['gym_bra_epower'] = (emerald_power(), 13379, 36, True)
+
+    # ronde 3 (anti-kermis): Roxanne 80s hard rock, Brawly-scratch 2, Flannery rumba flamenca
+    S['gym_rox_rsnare'] = (rock_snare(), 16000, 60, False)
+    S['gym_rox_ride'] = (fade_out(hp(drum(STANDARD, 51, 1.1, 100), 300), 0.1), 16000, 60, False)
+    S['gym_rox_open'] = (emerald_power_open(), GR, 48, True)
+    S['gym_rox_pbass'] = (lp(np.tanh(norm(note(34, 36, 0.9, 120)) * 2.2), 2200), GR, 36, True)
+    S['gym_bra_scratch2'] = (scratch2(), 16000, 60, False)
+    for q in VOICING:
+        for kind in ('down', 'up', 'golpe', 'rasg'):
+            S['gym_fla_%s_%s' % (kind, q)] = (nylon_strum(kind, q), GR, 45, False)
+    S['gym_fla_pclara'] = (palmas('clara'), 16000, 60, False)
+    S['gym_fla_psorda'] = (palmas('sorda'), 16000, 60, False)
     return S
 
 

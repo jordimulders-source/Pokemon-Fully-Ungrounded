@@ -93,8 +93,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | SickBlik | `sickblik_theme.py` | goedgekeurd (v2) | "SickBlik" |
 | Ashfrost (winter) | `ashfrost_theme.py` | goedgekeurd | "Ashfrost" |
 | Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
-| Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
-| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
+| Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | nieuw | v1 in de maak | – |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 
@@ -315,3 +315,19 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   in de voicegroup. `fit()` (noot + uitklinktijd eindigt vóór de volgende aanslag) op bas/kick/chugs/rasgueado bracht
   alle hoofdpartijen op 0% weg. Controle: elke noot van spoor 1-3 komt met dezelfde toonhoogte (of toonklasse, bij
   powerchords/hoover) op dezelfde tick terug. Geen test-ROM (coördinator neemt op met batchrec.py).
+- Mitch v4 (Jordi over v3: 'ritme/structuur spot-on; wobble luider/agressiever, kick/snare keihard + sidechain'): alleen
+  klank/volume/CC's (diff per spoor: noten, programma's en bends identiek). **Diepe wobble ondanks distortion: eerst
+  vervormen, dán het tijdvariante resonante filter** (Chamberlin-SVF, twee rondes over de periodieke loop = naadloos);
+  filter vóór de tanh (v3) laat de LFO-diepte wegvallen. Pitch-LFO in een exacte loop: fase = cyc x (ph + D), D = integraal
+  van (ratio - gemiddelde). Luid zonder pieken: tanh op het 99,7e percentiel + periodiek FFT-lowpass, 2x (crest 5,6 -> 2,1).
+  Volume per sectie via de basis van de duck-curve (`reese_base`: CC7 118 zolang een wobble-programma klinkt). Ducking op
+  kick én snare: dips eindigen waar de volgende begint. Solo in de game: wobble -1,3 dB t.o.v. alle rest, kick+snare +10,5 dB
+  in 30 ms. -V070 -> 088 (piek 72 -> 92); -V100 liep over op de roffel-einden van de build-up (9,9/43,9/77,5 s).
+- Neo Plasma v8 (Jordi: 'noten/timing perfect, alleen de instrumenten aan het GBA-soundfont koppelen'): **noten exact
+  houden terwijl releases wisselen = de stemverdeler (en detach) laten rekenen met de oude releases**, de nieuwe releases
+  niet langer dan de oude (anders faalt de lint), en pas daarna de lead legato maken (`trim_legato`: tot de volgende aanslag,
+  maar ingekort waar anders > 10 kanalen klinken, uitklinktijden en de andere leadnoten meegerekend; 96% gelukt).
+  m4a steelt bij te weinig kanalen eerst een kanaal in release (`ply_note`), maar de lint rekent conservatief: houd hem OK.
+  Een vanilla-sample een octaaf lager = byte-kopie met root +12 (`gba_copy`, np_synth_bass). Gedeelde keysplit met een
+  andere release = eigen voicegroup op dezelfde tabel (`keysplits/np_trumpet.inc` + keysplit_trumpet). Drumkit in
+  GM-indeling (36/38/39/40/42/46/49/55) met stille DS-vulregels. recpcm -V092: 0 overlopen, piek 109/127.

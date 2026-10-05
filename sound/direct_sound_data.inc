@@ -7626,13 +7626,33 @@ DirectSoundWaveData_np_sine::
 	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
 
 	.align 2
-DirectSoundWaveData_np_brass_full::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_full_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full_lo.bin"
-
-	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_kick::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_kick.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_snare::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_snare.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_wob_f1::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_f1.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_wob_c2::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_c2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_wob_db2::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_db2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch4_wob_eb2::
+	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_eb2.bin"
+
+	.align 2
+DirectSoundWaveData_np_synth_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_synth_bass.bin"

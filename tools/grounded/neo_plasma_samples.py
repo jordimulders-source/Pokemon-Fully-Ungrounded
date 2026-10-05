@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Project Grounded: samples voor Battle! Neo Team Plasma v7 (np_*).
+"""Project Grounded: samples voor Battle! Neo Team Plasma (np_*).
+v8 (Jordi over v7: 'koppel de sporen aan de juiste instrumenten uit het GBA-soundfont'): lead, akkoorden, stoten en
+arpeggio's gebruiken nu GBA-samples zelf (sc88pro_square_wave, de trompet-keysplit, sc88pro_organ2); daarvoor zijn
+np_lead_pulse, np_pulse_bass, np_stab en np_brass_full(_lo) weg. Nieuw: np_synth_bass = sc88pro_synth_bass byte voor
+byte, een octaaf hoger gelabeld (de bas klinkt een octaaf onder de MIDI-noten, zoals in v5-v7). Blijven: np_sine en
+het orgel (np_organ_sharp, ongewijzigd sinds v5). Hieronder de geschiedenis van de oude samples.
 v7 (Jordi over v6: 'te kaal, dun en los zand'; lagen à la GBA-componisten):
 - lead op de bronhoogte: pulse-lead (25% + 50% ontstemd) gelabeld op C5 met een vaste lowpass van 3,6 kHz, zodat
   de hoge ligging niet schel wordt (de laag een octaaf lager speelt op het PSG-vierkant: geen sample nodig);
@@ -21,7 +26,7 @@ v5 (naar Jordi's feedback op v4):
 Alles additief gesynthetiseerd (exacte loop: samplerate = grondtoon x samples per periode). De drums komen uit de
 standaard GBA-kit (rs_drumset), de lead is een PSG-blokgolf: daar zijn geen samples voor nodig.
 Gebruik: python3 tools/grounded/neo_plasma_samples.py"""
-import os, sys
+import os, struct, sys, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sample_utils import write_wav
@@ -56,27 +61,6 @@ def additive(f0, per, amps, n_loop, attack=0.0, bright=None, detune=0, dur_extra
     return a, rate, (n_att, n)
 
 
-def pulse(k, duty):
-    return 2 / (np.pi * k) * np.sin(np.pi * k * duty)
-
-
-def bass():
-    f0 = 65.406                                           # C2
-    amps = [pulse(k, 0.25) / (1 + (k * f0 / 1400) ** 2) for k in range(1, 40)]
-    bright = [0.5 * pulse(k, 0.25) * (k > 3) for k in range(1, 40)]
-    return additive(f0, 256, amps, 4, attack=0.03, bright=bright)
-
-
-def brass(f0, per, kmax):
-    def amp(k):
-        f = k * f0
-        formant = 1 + 1.2 * np.exp(-((np.log2(f / 1400)) ** 2) / 0.5)      # helder koper rond 1-2 kHz
-        return formant / k / (1 + (f / 5000) ** 4)
-    amps = [amp(k) for k in range(1, kmax + 1)]
-    bright = [0.9 * amp(k) * (k >= 4) for k in range(1, kmax + 1)]
-    return additive(f0, per, amps, 128, attack=0.04, bright=bright, detune=1)
-
-
 def organ():
     f0 = 523.25                                           # C5
     amps = [0] * 6
@@ -86,71 +70,20 @@ def organ():
     return additive(f0, 32, amps, 64, attack=0.05, bright=bright)
 
 
-def osc_mix(f0, per, amps2, n_loop, detune, attack=0.0, bright=None):
-    """Zoals additive(), maar met een eigen harmonischenreeks voor de tweede (ontstemde) oscillator: amps2."""
-    rate = int(round(f0 * per))
-    f0 = rate / per
-    n_att = int(np.ceil(attack * f0)) * per
-    n = n_att + n_loop * per
-    t = np.arange(n) / rate
-    a = np.zeros(n)
-    fd = f0 * (n_loop + detune) / n_loop
-    for (amp1, amp2), k in zip(amps2, range(1, len(amps2) + 1)):
-        a += amp1 * np.sin(2 * np.pi * k * f0 * t)
-        a += amp2 * np.sin(2 * np.pi * k * fd * t + 0.9 * k)
-    if bright is not None and attack > 0:
-        env = np.maximum(0, 1 - t / attack) ** 2
-        for k, amp in enumerate(bright, 1):
-            a += env * amp * np.sin(2 * np.pi * k * f0 * t)
-    a /= np.abs(a).max()
-    a *= 0.97
-    return a, rate, (n_att, n)
-
-
-def lp(f, fc, order=4):
-    return 1 / np.sqrt(1 + (f / fc) ** order)
-
-
-def lead_warm():
-    """Warme pulse-lead op C4: puls 25% + puls 50% (licht ontstemd: zweving ±1,6 Hz op C4), lowpass 3 kHz."""
-    f0, per, kmax = 261.63, 64, 30
-    amps = []
-    for k in range(1, kmax + 1):
-        g = lp(k * f0, 3000) * (1.25 if k == 1 else 1.0)          # iets meer grondtoon = voller
-        amps.append((0.6 * pulse(k, 0.25) * g, 0.5 * pulse(k, 0.5) * g))
-    bright = [0.35 * pulse(k, 0.25) * lp(k * f0, 4500) * (k >= 3) for k in range(1, kmax + 1)]
-    return osc_mix(f0, per, amps, 160, 1, attack=0.035, bright=bright)
-
-
-def saw_brass(f0, per, kmax, fc):
-    amps = []
-    for k in range(1, kmax + 1):
-        g = lp(k * f0, fc) / k * (1 + 0.6 * np.exp(-((np.log2(k * f0 / 900)) ** 2) / 0.6))   # body rond 0,5-1,5 kHz
-        amps.append((g, 0.85 * g))
-    bright = [0.8 / k * lp(k * f0, fc * 2.2) * (k >= 3) for k in range(1, kmax + 1)]
-    return osc_mix(f0, per, amps, 128, 1, attack=0.06, bright=bright)
-
-
-def lead_pulse():
-    """Pulse-lead op C5: puls 25% + puls 50% (licht ontstemd), vaste lowpass 3,6 kHz (24 dB/oct), korte heldere aanzet."""
-    f0, per, kmax = 523.25, 32, 15
-    amps = []
-    for k in range(1, kmax + 1):
-        g = lp(k * f0, 3600) * (1.2 if k == 1 else 1.0)
-        amps.append((0.6 * pulse(k, 0.25) * g, 0.5 * pulse(k, 0.5) * g))
-    bright = [0.3 * pulse(k, 0.25) * lp(k * f0, 5000) * (k >= 3) for k in range(1, kmax + 1)]
-    return osc_mix(f0, per, amps, 256, 1, attack=0.03, bright=bright)
-
-
-def stab():
-    """Punchy synth-brass-stoot op C4: zaagtand + blokgolf (ontstemd), lowpass 2,4 kHz, felle filterstoot (25 ms)."""
-    f0, per, kmax = 261.63, 64, 30
-    amps = []
-    for k in range(1, kmax + 1):
-        g = lp(k * f0, 2400) * (1 + 0.5 * np.exp(-((np.log2(k * f0 / 1000)) ** 2) / 0.6))
-        amps.append((g / k, 0.7 * g * pulse(k, 0.5)))
-    bright = [1.0 / k * lp(k * f0, 6000) * (k >= 3) for k in range(1, kmax + 1)]
-    return osc_mix(f0, per, amps, 128, 1, attack=0.025, bright=bright)
+def gba_copy(name, shift):
+    """Een sample uit het GBA-soundfont (sound/direct_sound_samples/<name>.wav), byte voor byte gelijk, alleen
+    `shift` halve tonen hoger gelabeld (klinkt dan zoveel lager)."""
+    w = wave.open('sound/direct_sound_samples/%s.wav' % name)
+    assert w.getsampwidth() == 1
+    a = (np.frombuffer(w.readframes(w.getnframes()), np.uint8).astype(float) - 128) / 127
+    d = open('sound/direct_sound_samples/%s.wav' % name, 'rb').read()
+    i = d.index(b'smpl')
+    sm = struct.unpack('<9I', d[i + 8:i + 44])
+    loop = None
+    if sm[7]:
+        lp = struct.unpack('<6I', d[i + 44:i + 68])
+        loop = (lp[2], lp[3] + 1)
+    return a, w.getframerate(), loop, sm[3] + shift
 
 
 def sine():
@@ -159,29 +92,29 @@ def sine():
 
 
 SAMPLES = {
-    # naam: (functie, label-noot); label = noot waarop de sample in de MIDI 'thuis' is
-    'np_pulse_bass': (bass, 48),        # klinkt C2, gelabeld C3: alles een octaaf lager dan geschreven
-    'np_lead_pulse': (lead_pulse, 72),
-    'np_stab': (stab, 60),
+    # naam: (functie, label-noot); label = noot waarop de sample in de MIDI 'thuis' is (None: de functie geeft hem)
     'np_sine': (sine, 72),
-    'np_brass_full': (lambda: saw_brass(261.63, 64, 30, 2500), 60),
-    'np_brass_full_lo': (lambda: saw_brass(65.406, 256, 110, 2000), 36),
     'np_organ_sharp': (organ, 72),
+    # v8: de GBA-synth bass (sc88pro_synth_bass), een octaaf hoger gelabeld: de MIDI-noten van de bron (Eb2-Ab4)
+    # klinken een octaaf lager, zonder noten onder E1 in de MIDI (zoals np_pulse_bass in v5-v7)
+    'np_synth_bass': (lambda: gba_copy('sc88pro_synth_bass', 12), None),
 }
 
 
 def main():
     inc = open(DATA).read()
-    # v4-samples (alleen door Neo Plasma gebruikt) eruit
+    # oude np_-samples (alleen door Neo Plasma gebruikt) eruit; bestaande labels blijven op hun plek
     blocks = inc.split('\n\n')
-    inc = '\n\n'.join(b for b in blocks if 'DirectSoundWaveData_np_' not in b).rstrip('\n') + '\n'
+    inc = '\n\n'.join(b for b in blocks if 'DirectSoundWaveData_np_' not in b
+                       or any('DirectSoundWaveData_%s::' % k in b for k in SAMPLES)).rstrip('\n') + '\n'
     for f in os.listdir(OUT):
         if f.startswith('np_') and f[:-4] not in SAMPLES:
             os.remove(os.path.join(OUT, f))
     for name, (fn, key) in SAMPLES.items():
-        a, rate, loop = fn()
-        write_wav(OUT + name + '.wav', a, rate, key, loop)
-        inc = inc.rstrip('\n') + '\n\n\t.align 2\nDirectSoundWaveData_%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (name, name)
+        a, rate, loop, *k = fn()
+        write_wav(OUT + name + '.wav', a, rate, k[0] if key is None else key, loop)
+        if 'DirectSoundWaveData_%s::' % name not in inc:
+            inc = inc.rstrip('\n') + '\n\n\t.align 2\nDirectSoundWaveData_%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (name, name)
         print('%-18s %6d samples @ %5d Hz, loop %s' % (name, len(a), rate, loop))
     open(DATA, 'w').write(inc)
 

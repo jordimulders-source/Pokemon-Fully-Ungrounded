@@ -4,6 +4,25 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v8 (Jordi over v7: 'ritme en noot-timing perfect, maar de sporen hangen niet aan de juiste instrumenten uit het
+GBA-soundfont; laat noten en timing EXACT staan en verander alleen de instrument-toewijzing'). Diff per spoor t.o.v.
+v7: aanslagen, toonhoogtes en velocity's identiek; alleen programma's/voices, releases, CC7 en de nootlengtes van
+de lead (legato) wijzigen.
+1. Lead: de GBA-blokgolf sc88pro_square_wave (DirectSound) met volle sustain (v7: decay naar 200) en release 140, legato:
+   elke noot houdt aan tot de volgende aanslag (bij een rust van > 1 tel blijft de bronlengte). De octaaf eronder
+   (PSG-vierkant 1) ook legato en met een hoge sustain i.p.v. de korte tik.
+2. Bas: sc88pro_synth_bass (strak, kort, veel laag), als np_synth_bass een octaaf hoger gelabeld zodat hij klinkt
+   waar de pulse-bas klonk (een octaaf onder de MIDI-noten). Sub op de PSG-golf blijft.
+3. Begeleiding/arpeggio's: spoor A (en de steel-drums-partij) = sc88pro_square_wave als zachte pluk (korte decay),
+   spoor B blijft het zachte 50%-PSG-vierkant.
+4. Akkoorden: de gitaarakkoorden = 'Synth Brass' van het GBA-soundfont (trompet-keysplit sc88pro_trumpet_60/72/84,
+   zoals GM 62/63 in grounded_gm), de off-beat-stoten = percussief orgel (sc88pro_organ2, snelle decay).
+   Het orgelspoor (np_organ_sharp) blijft ongewijzigd.
+5. Drums: eigen kit in de standaard-GM/GBA-indeling: 36 kick (drum_and_percussion_kick, Emerald-kit), 38 snare
+   (sc88pro_rnd_snare, fills), 39 handclap (909), 40 felle snare (unknown_synth_snare: backbeat 2/4 + ghosts),
+   42 dichte hihat, 46 open hihat, 49 crash, 55 splash. Alles DirectSound, geen PSG-drumnoten. Alleen de
+   nootnummers in het drumspoor veranderen (zelfde tijden, lengtes en velocity's).
+
 v7 (Jordi over v6: 'te kaal, dun en los zand'; GBA-productietechnieken voor een vol, gelaagd geluid). Tempo blijft
 gemeten 175,96 bpm (Jordi bevestigd: 176; de 150-155 uit de opdracht was een fout), noten/toonsoort uit de bron,
 het orgel (sample, ligging, volume, partij) ongewijzigd.
@@ -66,40 +85,44 @@ SRC = 'sound/songs/grounded_src/b2w2_neo_plasma.mid'
 OUT = 'sound/songs/midi/mus_grounded_vs_neo_plasma.mid'
 VG = 'sound/voicegroups/grounded_neo_plasma.inc'
 DRUMSET = 'sound/voicegroups/drumsets/neo_plasma.inc'
+KEYSPLIT = 'sound/voicegroups/keysplits/np_trumpet.inc'
 TPB, BAR, BEAT, S16 = 384, 1536, 384, 96
 BPM = 176
 LOOP0, END = 10 * BAR, 74 * BAR
 SAW_SHIFT = 17              # sawtooth vanaf maat 5: 17 ticks te vroeg in de bron
 
 # programma's in voicegroup_grounded_neo_plasma
-BASS, BRASS, BRASS_LO, ORGAN, LEAD, STEEL, DRUMS = 38, 62, 63, 17, 80, 114, 127
-BODY, SUB, ARPB, DSINE, STAB = 81, 82, 84, 85, 86
+BASS, BRASS, BRASS_LO, ORGAN, LEAD, DRUMS = 38, 62, 63, 17, 80, 127
+BODY, SUB, ARPB, DSINE, STAB, PLUCK = 81, 82, 84, 85, 86, 87
 VOICES = {
-    LEAD:     'voice_directsound 72, 0, DirectSoundWaveData_np_lead_pulse, 255, 235, 200, 140',
-    BODY:     'voice_square_1 60, 0, 0, 2, 0, 2, 9, 1',
+    LEAD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140',
+    BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 12, 3',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
     DSINE:    'voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140',
-    STAB:     'voice_directsound 60, 0, DirectSoundWaveData_np_stab, 255, 200, 120, 100',
-    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_pulse_bass, 255, 210, 140, 120',
-    BRASS:    'voice_directsound 60, 0, DirectSoundWaveData_np_brass_full, 255, 215, 150, 120',
-    BRASS_LO: 'voice_directsound 60, 0, DirectSoundWaveData_np_brass_full_lo, 255, 210, 150, 110',
+    STAB:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100',
+    PLUCK:    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110',
+    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_synth_bass, 255, 245, 60, 110',
+    BRASS:    'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
+    BRASS_LO: 'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
     SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
-    STEEL:    'voice_directsound 60, 0, DirectSoundWaveData_gm_steel_drums, 255, 0, 255, 150',
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
 }
-# drumkit (noot -> regel); standaard GBA-samples (rs_drumset e.d.)
-KICK, SNARE_OFF, SNARE, OHAT, CRASH, SPLASH, CHAT, SNARE24 = 36, 37, 38, 39, 40, 41, 42, 43
-KIT = [
-    'voice_directsound 67, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 0',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 0, 255, 180',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 220',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_open_hihat, 255, 242, 141, 0',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',
-    'voice_directsound 67, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 200, 0, 140',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 255, 0',
-    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_synth_snare, 255, 0, 255, 200',
-]
+# drumkit (noot -> regel); standaard GBA-samples in de GM-indeling (v8; v7 had 36-43 op een rij)
+KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, CRASH, SPLASH = 36, 38, 39, 40, 42, 46, 49, 55
+KITV = {
+    KICK:      'voice_directsound 67, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 0',
+    SNARE:     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 220',
+    SNARE_OFF: 'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 0, 255, 180',
+    SNARE24:   'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_synth_snare, 255, 0, 255, 200',
+    CHAT:      'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 255, 0',
+    OHAT:      'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_open_hihat, 255, 242, 141, 0',
+    CRASH:     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',
+    SPLASH:    'voice_directsound 67, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 200, 0, 140',
+}
+# ongebruikte noten in de kit: een stille DirectSound-regel (geen PSG: een verdwaalde noot mag niet piepen)
+KIT = [KITV.get(k, 'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 0, 0')
+       for k in range(36, max(KITV) + 1)]
 # bron-drumnoot -> (kitnoot, lengte in ticks, velocity 0-127); 42/44 = dichte hihat
 DRUM_MAP = {36: (KICK, 190, 96), 37: (SNARE_OFF, 160, 127), 38: (SNARE, 192, 120), 46: (OHAT, 192, 70),
             49: (CRASH, 384, 100), 57: (CRASH, 384, 100), 55: (SPLASH, 288, 90)}
@@ -112,14 +135,17 @@ UNISONO_BARS = set(range(46, 50))           # unisono-riff (bas + saw): geen akk
 ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 tel later (±1 frame)
 
 # spoorvolumes (CC7), afgesteld met solo-RMS en balance_orig.py tegen de mp3
-VOL = dict(lead=110, body=80, brass=72, brass_lo=60, organ=62, bass=121, sub=96, steel=40, arp=36, arpb=40,
-           dsine=40, stab=56, drums=80)
+# v8: nieuwe samples op dezelfde luidheid als v7 gezet (RMS van de eerste 80 ms per sample), lead en lead-octaaf
+# iets terug omdat ze nu aanhouden
+VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=114, sub=96, steel=38, arp=34, arpb=40,
+           dsine=40, stab=45, drums=80)
+LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 
 
 def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v7. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 pulse-bas, 62/63 synth brass, 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 stoot, 114 steel drums, 127 drums.'
+    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v8. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
+    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 127 drums.'
     lines[2] = 'voice_group grounded_neo_plasma'
     out = []
     for l in lines:
@@ -128,10 +154,15 @@ def voicegroup():
             l = '\t%s  @ %s' % (VOICES[int(k)], k)
         out.append(l)
     open(VG, 'w').write('\n'.join(out))
+    open(KEYSPLIT, 'w').write(
+        '@ Project Grounded: synth brass voor Battle! Neo Team Plasma v8 (neo_plasma_theme.py) = de GBA-trompetten\n'
+        '@ (sc88pro_trumpet_60/72/84, tabel keysplit_trumpet) zoals trumpet.inc, met een korte release (110, v7-brass: 110-120): stoten.\n'
+        'voice_group np_trumpet_keysplit\n' + ''.join(
+            '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_trumpet_%d, 255, 0, 193, 110\n' % k for k in (60, 72, 84)))
     open(DRUMSET, 'w').write(
-        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v7 (neo_plasma_theme.py): standaard GBA-samples.\n'
-        '@ 36 kick (+7 halve tonen), 37 off-beat-clap (909), 38 snare, 39 open hihat, 40 crash, 41 splash,\n'
-        '@ 42 dichte hihat, 43 scherpe snare (2 en 4, ghosts). Alles DirectSound.\n'
+        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v8 (neo_plasma_theme.py): standaard GBA-samples\n'
+        '@ in de GM-indeling: 36 kick (+7 halve tonen), 38 snare (fills), 39 off-beat-clap (909), 40 felle snare\n'
+        '@ (2 en 4, ghosts), 42 dichte hihat, 46 open hihat, 49 crash, 55 splash. Alles DirectSound.\n'
         'voice_group neo_plasma_drumset, 36\n' + ''.join('\t%s\n' % k for k in KIT))
 
 
@@ -172,6 +203,64 @@ def mono(ev):
     for a, b in zip(ev, ev[1:]):
         a[1] = min(a[1], b[0])
     return [e for e in ev if e[1] > e[0]]
+
+
+def legato(ev, gap=LEGATO_GAP):
+    """v8: elke noot houdt aan tot de volgende aanslag (aanslagmomenten blijven gelijk), behalve vóór een rust > gap."""
+    ev = [list(e) for e in sorted(ev)]
+    for a, b in zip(ev, ev[1:]):
+        if b[0] - a[1] <= gap:
+            a[1] = b[0]
+    return ev
+
+
+def trim_legato(res, order, tails):
+    """v8: lead legato (tot de volgende aanslag), maar nooit zo lang dat er ergens meer dan 10 DS-noten tegelijk
+    klinken, uitklinktijden (v8-releases) meegerekend: anders stopt de leadnoot eerder (nooit korter dan in v7, dat
+    paste al). tails = uitklinktijd per partij in ticks."""
+    rest = [(s_, e_ + tails[k]) for k in order if k != 'lead' for s_, e_, n, v in res[k]]
+    tl = tails['lead']
+    v7, leg = sorted(res['lead']), legato(res['lead'])
+    out = []
+    for i, ((s_, e7, n, v), (_, eleg, _, _)) in enumerate(zip(v7, leg)):
+        # de andere leadnoten tellen ook mee: de vorige met hun nieuwe lengte, de volgende (nog) met die van v7
+        others = rest + [(a, b + tl) for a, b, _, _ in out] + [(a, b + tl) for a, b, _, _ in v7[i + 1:]]
+        starts = sorted({a for a, b in others})
+        end = e7
+        # de volgende leadnoot telt mee (zijn eigen kanaal); kandidaat-eindes: het legato-einde of vlak vóór een
+        # aanslag die anders geen kanaal heeft
+        cands = sorted({eleg} | {t - tl for t in starts if e7 + tl <= t < eleg + tl and t - tl > e7}, reverse=True)
+        for E in cands:
+            pts = [t for t in starts if s_ <= t < E + tl]
+            if all(sum(1 for a, b in others if a <= t < b) < 10 for t in pts):
+                end = E
+                break
+        out.append([s_, max(e7, end), n, v])
+    full = sum(b - a for a, b, _, _ in leg) - sum(b - a for a, b, _, _ in v7)
+    got = sum(b - a for a, b, _, _ in out) - sum(b - a for a, b, _, _ in v7)
+    print('  lead legato: %d van %d noten langer dan in v7; %.0f%% van de volle legato-verlenging (de rest ingekort waar '
+          'anders > 10 kanalen klinken)' % (sum(o[1] > e[1] for o, e in zip(out, v7)), len(v7), 100 * got / max(1, full)))
+    return out
+
+
+def ds_check(res, progs, order):
+    """v8: DirectSound-bezetting met de echte releases van v8 (lead legato): hoeveel aanslagen vinden geen vrij
+    kanaal (max. 10)? Die noten kapen in de game een kanaal (kanaalroof) of vallen weg."""
+    real = releases('grounded_neo_plasma')
+    iv = []
+    for k in order:
+        t = 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
+        iv += [(s_, e_ + t, k) for s_, e_, n, v in res[k]]
+    hold = [(s_, e_) for k in order for s_, e_, n, v in res[k]]
+    over, hard = {}, 0
+    for s_, e_, k in sorted(iv):
+        if sum(1 for a, b, _ in iv if a <= s_ < b) > 10:
+            over[k] = over.get(k, 0) + 1
+        if sum(1 for a, b in hold if a <= s_ < b) > 10:
+            hard += 1
+    tot = sum(len(res[k]) for k in order)
+    print('  bezetting (v8-releases): %d van %d aanslagen met > 10 aangehouden noten (kanaalroof); %d keer wordt alleen '
+          'een uitklinkende staart afgekapt (m4a pakt eerst een kanaal in release) %s' % (hard, tot, sum(over.values()), over))
 
 
 def staccato(ev, f, lo, hi):
@@ -322,7 +411,6 @@ def build():
             else:
                 saw_low += 1
     lead = mono(quantize_runs(lead))
-    body = [[s_, e_, n - 12, 96] for s_, e_, n, v in lead if n - 12 >= 40]
     arp = mono(quantize_runs(thin(arp, 1, 'top')))
     # 'gitaar' = synth brass-stoten: akkoorden vanaf C3 (3 bovenste stemmen), daaronder de lage partij (1 stem)
     guitar = thin([e for e in T[5] if e[2] >= 48], 3, 'top')
@@ -361,14 +449,24 @@ def build():
 
     voicegroup()
     rel = releases('grounded_neo_plasma')
-    progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': STEEL, 'brass_lo': BRASS_LO,
-             'arp': STEEL, 'stab': STAB, 'dsine': DSINE}
+    # v8: de stemverdeler (en detach) rekent met de releases van v7, zodat élke noot (aanslag, lengte, toonhoogte)
+    # exact v7 blijft; alleen de lead wordt daarna legato. ds_check() meet de bezetting met de echte v8-releases.
+    rel = dict(rel)
+    rel.update({BASS: 120, BRASS: 120, BRASS_LO: 110, LEAD: 140, STAB: 100, PLUCK: 150})
+    progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': PLUCK, 'brass_lo': BRASS_LO,
+             'arp': PLUCK, 'stab': STAB, 'dsine': DSINE}
     tail = {k: release_ticks(rel[p], TPB, BPM) for k, p in progs.items()}
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
     order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'arp', 'brass_lo']
     res = allocate(parts, order, tail)
+    assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
+    real = releases('grounded_neo_plasma')
+    res['lead'] = trim_legato(res, order, {k: 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
+                                           for k in order})
+    body = [[s_, e_, n - 12, 96] for s_, e_, n, v in res['lead'] if n - 12 >= 40]
+    ds_check(res, progs, order)
     print('drumnoten buiten de kit (weg): %d, lage sawtooth-noten (basverdubbeling, weg): %d' % (drum_drop, saw_low))
     for k in order:
         n, kept = len(parts[k]), len(res[k])
@@ -388,8 +486,8 @@ def build():
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
         (p['bass'], BASS, VOL['bass'], 5, 64),
         (psg['sub'], SUB, VOL['sub'], 6, 64),
-        (p['arp'], STEEL, VOL['arp'], 7, 35),
-        (p['steel'], STEEL, VOL['steel'], 8, 35),
+        (p['arp'], PLUCK, VOL['arp'], 7, 35),
+        (p['steel'], PLUCK, VOL['steel'], 8, 35),
         (psg['arpb'], ARPB, VOL['arpb'], 10, 85),
         (p['stab'], STAB, VOL['stab'], 11, 60),
         (p['dsine'], DSINE, VOL['dsine'], 12, 64),

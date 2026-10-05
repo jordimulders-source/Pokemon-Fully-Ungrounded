@@ -35,6 +35,16 @@ v3 (Jordi: 'te veel drukke chiptune/happy hardcore; duistere Chase & Status-DnB,
       sample = 1 kanaal), licht vervormd; lo op F3 (F2+F3), hi op Eb4 (Eb3+Eb4).
   mitch3_pluck : donkere synthpluk (twee ontstemde zaagtanden, filterenvelope dicht), voor de arpeggio's.
   mitch3_wob_<noot> : wobble op 172 bpm (de 'lagere synths' van v2 rond 1:00), trager en dreigender LFO-patroon.
+v4 (Jordi over v3: 'ritme en structuur spot-on; de wobble moet AANZIENLIJK luider/agressiever, kick en snare keihard'):
+  mitch4_wob_<noot> : screaming wobble: vier ontstemde zaagtanden (±1 en ±3 trillingen per loop) met pitch-LFO (+35
+      cent als het filter opengaat = het 'wowowow'), asymmetrische distortion op 4x de samplerate, dán een resonant
+      4-polig lowpass met een diepe, snelle LFO op tempo (90 Hz -> 2,8 kHz; achtsten, triolen, 16den; elke wobble
+      begint dicht), verzadiging en een periodiek FFT-lowpass (±5 kHz), grondtoon zachter (de PSG-sub draagt het
+      laag), +8 dB 'snij'-band rond 1,5 kHz, tot slot twee rondes zachte begrenzing (crest ±2,3: luid). Hogere samplerate dan
+      v3 (256/192 samples per periode i.p.v. 128/96), zodat de grit niet weggefilterd wordt.
+  mitch4_kick  : nog kortere, drogere punch met een harde klik (2-7 kHz, 2,5 ms) en een tik van 3 kHz; 22 kHz.
+  mitch4_snare : keiharde, droge crack: zelfde bronnen als v3, crack en body korter, harder verzadigd en na 40 ms
+      gegate (0,15 s).
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
 Gebruik: python3 tools/grounded/mitch_samples.py"""
 import os, subprocess, sys, tempfile, wave
@@ -413,6 +423,117 @@ def pluck3(rate=22050, dur=0.3):
     return fade_out(norm(a), rate, 0.05), rate
 
 
+# ---------------------------------------------------------------- v4: schreeuwende wobble, keiharde kit
+def wob_lfo4(bars=2):
+    """v4: (filter 0..1, per tel tempo): maat 1 achtsten, achtsten, triolen, 16den; maat 2 achtsten, 16den, triolen,
+    16den. Elke wobble begint dicht; diep (bijna dicht -> wijd open)."""
+    segs = [(0, 1, 2), (1, 1, 2), (2, 1, 3), (3, 1, 4), (4, 1, 2), (5, 1, 4), (6, 1, 3), (7, 1, 4)]
+    beats = 4 * bars
+
+    def f(ph):
+        b = ph * beats
+        out = np.zeros_like(ph)
+        for st, ln, r in segs:
+            m = (b >= st) & (b < st + ln)
+            x = (b[m] - st) * r
+            out[m] = (0.5 - 0.5 * np.cos(2 * np.pi * x)) ** 1.3
+        return out
+    return f
+
+
+def svf_lp(x, fc, q, fs):
+    """Tijdvariant resonant lowpass (Chamberlin-SVF, 2-polig). Twee keer over de (periodieke) loop: de tweede ronde
+    start met de toestand van het eind van de eerste, dus de loop sluit naadloos."""
+    f = 2 * np.sin(np.pi * np.minimum(fc, fs / 7) / fs)
+    damp = 1.0 / q
+    lo = bp = 0.0
+    out = np.empty_like(x)
+    for rnd in range(2):
+        for i in range(len(x)):
+            lo += f[i] * bp
+            hp = x[i] - lo - damp * bp
+            bp += f[i] * hp
+            out[i] = lo
+    return out
+
+
+def wob4(note, per, over=4, top=90, cents=35.0):
+    """Screaming wobble (exacte loop van twee maten op 172 bpm): ontstemde zaagtanden met pitch-LFO -> asymmetrische
+    distortion -> resonant lowpass met de LFO (90 Hz dicht -> 2,8 kHz open, exponentieel, 4-polig: de distortion
+    zit vóór het filter, zodat de wobble diep blijft) -> verzadiging -> periodiek FFT-lowpass/EQ."""
+    f0 = hz(note)
+    M = int(round(8 * BEAT3 * f0))
+    rate = int(round(f0 * per))
+    n = per * M
+    N = n * over
+    fs = rate * over
+    ph = np.arange(N) / N
+    lfo = wob_lfo4()(ph)
+    ratio = 2 ** (cents * lfo / 1200)                    # pitch-LFO: omhoog als het filter opengaat
+    D = np.cumsum(ratio - ratio.mean()) / N             # integraal zonder trend -> exacte loop
+    D -= D[0]
+    rng = np.random.default_rng(41)
+    a = np.zeros(N)
+    for k, amp in ((-3, 0.7), (-1, 1.0), (1, 1.0), (3, 0.7)):
+        cyc = M + k
+        p0 = rng.uniform(0, 2 * np.pi)
+        base = 2 * np.pi * cyc * (ph + D)
+        for h in range(1, top + 1):
+            if h * cyc * f0 / M > 7000:
+                break
+            a += amp * np.sin(h * (base + p0)) / h
+    a /= np.abs(a).max()
+    a = np.tanh(3.0 * (a + 0.2)) - np.tanh(0.6)          # asymmetrisch: schurend
+    fc = 90 * (2800 / 90) ** lfo
+    a = svf_lp(svf_lp(a, fc, 2.6, fs), fc, 0.9, fs)
+    a = np.tanh(2.2 * a / np.abs(a).max())
+    F = np.fft.rfft(a)
+    fr = np.arange(len(F)) * f0 / M
+    F *= 1 / np.sqrt(1 + (fr / 5000.0) ** 8)
+    F[fr < 0.6 * f0] = 0
+    F[fr < 1.5 * f0] *= 0.5                             # grondtoon zachter: de PSG-sub draagt het laag
+    F *= 1 / np.sqrt(1 + (110 / np.maximum(fr, 1)) ** 4)   # en ook de 2e harmonische van F1 niet te dik
+    F *= 1 + 1.5 * np.exp(-((np.log2(np.maximum(fr, 1) / 1500)) / 0.8) ** 2)
+    F = F[:n // 2 + 1]
+    out = np.fft.irfft(F, n)
+    # luid: twee rondes zachte begrenzing + periodiek lowpass (geen aliasing, loop blijft exact)
+    frn = np.arange(n // 2 + 1) * f0 / M
+    for _ in range(2):
+        out = np.tanh(1.8 * out / np.percentile(np.abs(out), 99.7))
+        out = np.fft.irfft(np.fft.rfft(out) / np.sqrt(1 + (frn / 5000.0) ** 8), n)
+    return norm(out), rate
+
+
+def kick4(rate=22050):
+    """Kortere, drogere DnB-kick met een harde klik: toonhoogteval 260 -> 56 Hz in ±12 ms, dreun 45 ms."""
+    n = int(rate * 0.12)
+    t = np.arange(n) / rate
+    f = 56 + 204 * np.exp(-t / 0.012)
+    body = np.sin(2 * np.pi * np.cumsum(f) / rate) * np.exp(-t / 0.045)
+    click = sosfilt(butter(2, [2000, 7000], 'bandpass', fs=rate, output='sos'),
+                    np.random.default_rng(29).uniform(-1, 1, n)) * np.exp(-t / 0.0025)
+    tick = np.sin(2 * np.pi * 3000 * t) * np.exp(-t / 0.0015)
+    a = np.tanh(3.6 * (body + 1.6 * norm(click) + 0.8 * tick))
+    return fade_out(norm(a), rate, 0.025), rate
+
+
+def snare4(rate=22050, dur=0.15):
+    """Keiharde droge klap: FluidR3-snare + handklap, crack 1,5-7,5 kHz (22 ms), body 190 Hz, tanh x6, gate na 40 ms."""
+    n = int(rate * dur)
+    t = np.arange(n) / rate
+    m = int(dur * 44100)
+    two = [np.pad(x[:m], (0, m - len(x[:m]))) for x in (render(0, [38], dur, kit=0, vel=127), render(0, [39], dur, kit=0, vel=127))]
+    fl = resample(0.7 * two[0] + 0.6 * two[1], 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    noise = np.random.default_rng(31).uniform(-1, 1, n)
+    crack = sosfilt(butter(2, [1500, 7500], 'bandpass', fs=rate, output='sos'), noise) * np.exp(-t / 0.022)
+    body = np.sin(2 * np.pi * 190 * t) * np.exp(-t / 0.02)
+    a = norm(fl) + 1.7 * norm(crack) + 0.6 * body
+    a = sosfilt(butter(2, 180, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(6.0 * norm(a)) * np.exp(-np.maximum(0, t - 0.04) / 0.03)
+    return fade_out(norm(a), rate, 0.03), rate
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
@@ -477,6 +598,12 @@ def main():
         a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.45, drive=2.4, lfo=wob_lfo3(), top=40,
                      formants=((8, 4, 3.0),), detune=((-2, 0.8), (-1, 1.0), (1, 1.0), (2, 0.8)))
         jobs['mitch3_wob_' + nm] = (a, r, note, (0, len(a)))
+    # ---- v4
+    a, r = kick4(); jobs['mitch4_kick'] = (a, r, 60, None)
+    a, r = snare4(); jobs['mitch4_snare'] = (a, r, 60, None)
+    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
+        a, r = wob4(note, 256 if note < 36 else 192)
+        jobs['mitch4_wob_' + nm] = (a, r, note, (0, len(a)))
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

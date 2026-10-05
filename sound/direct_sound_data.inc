@@ -7636,3 +7636,67 @@ DirectSoundWaveData_genesect_snare2::
 	.align 2
 DirectSoundWaveData_genesect_roll2::
 	.incbin "sound/direct_sound_samples/grounded/genesect_roll2.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_celesta::
+	.incbin "sound/direct_sound_samples/grounded/gym2_celesta.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_wpad_dom::
+	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_dom.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_wpad_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_wpad_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_wpad_sus::
+	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_sus.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_wpad_5::
+	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_5.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_nb_dom::
+	.incbin "sound/direct_sound_samples/grounded/gym2_nb_dom.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_nb_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_nb_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_nb_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_nb_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_nb_sus::
+	.incbin "sound/direct_sound_samples/grounded/gym2_nb_sus.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_nb_5::
+	.incbin "sound/direct_sound_samples/grounded/gym2_nb_5.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_np_dom::
+	.incbin "sound/direct_sound_samples/grounded/gym2_np_dom.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_np_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_np_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_np_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_np_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_np_sus::
+	.incbin "sound/direct_sound_samples/grounded/gym2_np_sus.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_np_5::
+	.incbin "sound/direct_sound_samples/grounded/gym2_np_5.bin"

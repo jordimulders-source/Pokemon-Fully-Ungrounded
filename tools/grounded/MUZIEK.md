@@ -100,6 +100,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
+| Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace goedgekeurd; Norman/Winona/Tate & Liza v2 | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -363,3 +364,15 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   tritonusstoot `genesect_istab`, kick2/snare2 (tanh x5/x7; de 909-clap zit ín de snare: los clappen kostte een kanaal),
   risers (ruis + sirene-bend) en een 16de stilte vóór elke drop (`stop()`).
 - **Gymleider-remixes ronde 1 (Jordi):** Wattson en Wallace "fenomenaal, done" (niet meer aanraken). Roxanne, Brawly, Flannery, Norman, Winona, Tate & Liza: tweede ronde met concrete GBA-instructies per leider (tekst in de agent-opdracht): echte Emerald-samples (rock-snare, overdrive/slap bass, distortion/nylon/finger bass, pizzicato, synth bass, dance-kick), PSG-ruis als aanvulling (gated snare, double kick, castagnetten), dual-guitar-tertsen + vibrato (Roxanne), off-beat-staccato-chugs + scratches (Brawly), rasgueado-arpeggio's (Flannery), walking bass + ride + brass-stoten (Norman), geen brass (Winona), psy-bas op de PSG-golf in 16en + melodie als 16e-arpeggio's met sweeps op 138–145 bpm (Tate & Liza).
+- Gymleiders ronde 2: Norman, Winona, Tate & Liza v2 (`gym_remixes2.py`, samples `gym2_samples.py`). **Een
+  goedgekeurd nummer dat een voicegroup deelt: niet die voicegroup aanpassen maar de anderen een eigen geven**
+  (`grounded_gym2_norman/_winona/_tate`, zelfde basis 0-91, eigen instrumenten 92-126, kit op 127); Wallace' MIDI,
+  `grounded_gym2.inc` en `gym2_wallace.inc` bleven byte-identiek (git diff leeg). **'Gelaagde akkoorden op de echte
+  Emerald-samples' = de vanilla-wav per toon transponeren en optellen** (`layer()`: smpl-chunk lezen, toon m klinkt
+  bij rate x 2^((m-key)/12), loop uitrekken voor sustain): brass section = hoorn-grondtoon + 3 trompetten, pizzicato-
+  akkoorden, één kanaal per stoot. Walking bass = kwarten uit de grondtonen per halve maat + chromatische nadering
+  van de volgende grondtoon. **PSG-golfbas onder C2**: eigen golf met één periode per 32 stappen
+  (`ProgrammableWaveData_gym2_saw`) klinkt een octaaf lager dan genoteerd; noteer +12 (m4a klemt PSG-toetsen < 36).
+  PSG-lead op blokgolf 1 = alle tegenstemmen op blokgolf 1 naar DirectSound (anders stelen ze de lead). Melodie
+  als 16e-arpeggio's: melodienoot op zijn eigen tick + op elke tel, daartussen akkoordtonen; controle = elke
+  (tick, toets) van het origineel zit er nog in.

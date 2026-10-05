@@ -61,15 +61,21 @@ EXTRA = {
 nr = lambda s, rel, adsr='255, 0, 255': 'voice_directsound_no_resample 60, 0, DirectSoundWaveData_%s, %s, %d' % (s, adsr, rel)
 # drumkits: noot -> regel (vanaf 36; gaten worden met de eerste regel gevuld, die noten gebruiken we niet)
 KITS = {
-    'norman': ('blockbuster-tv-orkest: 36 concert-basdrum, 38 orkestsnare, 41 lage tom, 43 taiko, 49 orkestcrash',
-               {36: nr('gym2_concert_bd', 200), 38: nr('sc88pro_orchestra_snare', 200), 41: nr('gym2_low_tom', 180),
-                43: nr('sc88pro_taiko', 0), 49: ds('sc88pro_orchestra_cymbal_crash', 216, adsr='255, 246, 0')}),
-    'winona': ('bubblegum-dancepop: 36 kick, 38 synthsnare, 39 909-clap, 42 dichte hihat, 46 open hihat, 49 crash, 54 tamboerijn',
-               {36: nr('gym2_pop_kick', 100), 38: nr('unknown_synth_snare', 120), 39: nr('sc88pro_tr909_hand_clap', 127, '255, 255, 255'),
+    # ronde 2 (v2): de drie kits hieronder horen bij grounded_gym2_<leider> (programma 127); grounded_gym2 (Wallace)
+    # verwijst er ook nog naar op 123-125, maar Wallace speelt ze niet.
+    'norman': ('TV-orkest/big band (v2): 36 kick, 38 orkestsnare, 41/45 toms, 42 dichte hihat, 49 orkestcrash, 51 ride',
+               {36: nr('sc88pro_rnd_kick', 100), 38: nr('sc88pro_orchestra_snare', 200),
+                41: 'voice_directsound 64, 0, DirectSoundWaveData_sd90_ambient_tom, 255, 0, 255, 200',
+                42: nr('unknown_close_hihat', 150, '255, 127, 0'),
+                45: 'voice_directsound 72, 0, DirectSoundWaveData_sd90_ambient_tom, 255, 0, 255, 200',
+                49: ds('sc88pro_orchestra_cymbal_crash', 216, adsr='255, 246, 0'),
+                51: nr('dance_drums_ride_bell', 180, '255, 165, 103')}),
+    'winona': ('girly pop (v2): 36 Emerald-dance-kick, 38 synthsnare, 39 909-clap, 42 dichte hihat, 46 open hihat, 49 crash, 54 tamboerijn',
+               {36: nr('drum_and_percussion_kick', 120), 38: nr('unknown_synth_snare', 120), 39: nr('sc88pro_tr909_hand_clap', 127, '255, 255, 255'),
                 42: nr('unknown_close_hihat', 150, '255, 127, 0'), 46: nr('unknown_open_hihat', 60, '255, 242, 141'),
                 49: nr('trinity_cymbal_crash', 165, '255, 235, 0'), 54: nr('sc88pro_tambourine', 150, '255, 127, 77')}),
-    'tate': ('psytrance: 36 psy-kick, 38 snare (rolls), 39 909-clap, 42 dichte hihat, 46 open hihat, 49 crash, 50 zap',
-             {36: nr('gym2_psy_kick', 0), 38: nr('unknown_synth_snare', 100), 39: nr('sc88pro_tr909_hand_clap', 127, '255, 255, 255'),
+    'tate': ('psytrance (v2): 36 Emerald-dance-kick (kort), 38 snare (rolls), 39 909-clap, 42 dichte hihat, 46 open hihat, 49 crash, 50 zap',
+             {36: nr('drum_and_percussion_kick', 110), 38: nr('unknown_synth_snare', 100), 39: nr('sc88pro_tr909_hand_clap', 127, '255, 255, 255'),
               42: nr('unknown_close_hihat', 150, '255, 127, 0'), 46: nr('unknown_open_hihat', 40, '255, 242, 141'),
               49: nr('trinity_cymbal_crash', 165, '255, 235, 0'), 50: nr('gym2_psy_zap', 60)}),
     'wallace': ('lounge/bossa: 36 zachte kick, 37 cross-stick, 38 brush-tik, 40 brush-swirl, 49 ride (als crash), 51 ride',
@@ -267,98 +273,261 @@ def timp_positions(bar):
 A1, A2, B1, B2, BRK, BUILD = bars(10, 21), bars(22, 33), bars(34, 36), bars(37, 48), bars(49, 53), bars(54, 61)
 
 
+# ---- ronde 2 (v2): Norman, Winona, Tate & Liza, elk met een eigen voicegroup -------------------------------------
+# Wallace (goedgekeurd) houdt voicegroup_grounded_gym2 en zijn kit byte-identiek; de andere drie krijgen
+# grounded_gym2_<leider>: dezelfde basis (0-91: het origineel + korte intro-varianten op 87-89 + kortere pauken)
+# en hun eigen instrumenten op 92-126, drumkit op 127.
+PIANO_MID_, PIANO_HI_, STR_SHORT_ = P['PIANO_MID'], P['PIANO_HI'], P['STR_SHORT']
+HITOM = 45
+
+
+def base_lines():
+    src = [l.strip() for l in open('sound/voicegroups/vs_gym_leader.inc') if l.strip().startswith('voice_')
+           and not l.strip().startswith('voice_group')]
+    src.append(src[80])
+    src[TIMPANI] = ds('sc88pro_timpani', 190, adsr='255, 246, 0')
+    src[87], src[88], src[89] = EXTRA['PIANO_MID'], EXTRA['PIANO_HI'], EXTRA['STR_SHORT']
+    return src
+
+
+FILL = 'voice_square_1 60, 0, 0, 2, 0, 0, 15, 0'
+PSG_LEAD = 'voice_square_1 60, 0, 0, 2, 0, 1, 11, 2'      # blokgolf 50% (25% was 'schel' bij Neo Plasma v5)
+NOISE_HAT_L = 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0'
+NOISE_RISE_L = 'voice_noise 60, 0, 0, 7, 0, 15, 2'
+TYPES = ('dom', 'maj', 'min', 'sus', '5')
+NORMAN = dict(BASS_F=92, BASS_FL=93, **{'NB_' + t: 94 + i for i, t in enumerate(TYPES)},
+              **{'NP_' + t: 99 + i for i, t in enumerate(TYPES)}, KIT=127)
+WINONA = dict(LEAD_SQ=92, CELESTA=93, **{'PAD_' + t: 94 + i for i, t in enumerate(TYPES)}, SYNTHBASS=99,
+              POPPLUCK=100, TUBBELL=101, NOISE_HAT=102, KIT=127)
+TATE = dict(LEAD_A=92, LEAD_B=93, PSYBASS=94, ACID=95, POPPLUCK=96, NOISE_HAT=97, NOISE_RISE=98, DRONE=99, KIT=127)
+LEADER_VG = {
+    'norman': ('grounded_gym2_norman', {
+        92: ds('sc88pro_fingered_bass', 140, adsr='255, 253, 0'),     # walking bass (Emerald finger bass)
+        93: ds('sc88pro_fretless_bass', 150, adsr='255, 253, 0'),     # B-deel en break: fretless
+        **{94 + i: ds('gym2_nb_' + t, 110) for i, t in enumerate(TYPES)},   # brass-section-stoten (trompet + hoorn)
+        **{99 + i: ds('gym2_np_' + t, 90) for i, t in enumerate(TYPES)},    # pizzicato-akkoorden
+        127: 'voice_keysplit_all voicegroup_gym2_norman_drumset'}),
+    'winona': ('grounded_gym2_winona', {
+        92: PSG_LEAD, 93: ds('gym2_celesta', 175),
+        **{94 + i: ds('gym2_wpad_' + t, 140) for i, t in enumerate(TYPES)},
+        99: ds('sc88pro_synth_bass', 100, adsr='255, 252, 0'), 100: ds('gym2_pop_pluck', 150),
+        101: ds('sc88pro_tubular_bell', 190, adsr='255, 165, 90'), 102: NOISE_HAT_L,
+        127: 'voice_keysplit_all voicegroup_gym2_winona_drumset'}),
+    'tate_liza': ('grounded_gym2_tate', {
+        92: ds('gym2_psy_lead_a', 110), 93: ds('gym2_psy_lead_b', 110),
+        94: 'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_gym2_saw, 0, 0, 15, 0',   # psy-bas (PSG-golf)
+        95: ds('gym2_psy_acid', 80), 96: ds('gym2_pop_pluck', 150), 97: NOISE_HAT_L, 98: NOISE_RISE_L,
+        99: ds('gym2_psy_lead_b', 150),
+        127: 'voice_keysplit_all voicegroup_gym2_tate_drumset'}),
+}
+
+
+def write_leader_voicegroups():
+    inc = open('sound/voice_groups.inc').read()
+    for leader, (vg, extra) in LEADER_VG.items():
+        lines = base_lines() + [FILL] * (128 - 92)
+        for p, l in extra.items():
+            lines[p] = l
+        out = ['@ Project Grounded: gymleider-remix v2 (%s): voicegroup_vs_gym_leader + eigen instrumenten op 92-127.' % leader,
+               '@ Gegenereerd door tools/grounded/gym_remixes2.py (samples: gym2_samples.py).', 'voice_group %s' % vg]
+        out += ['\t%s  @ %d' % (l, i) for i, l in enumerate(lines)]
+        open('sound/voicegroups/%s.inc' % vg, 'w').write('\n'.join(out) + '\n')
+        line = '.include "sound/voicegroups/%s.inc"' % vg
+        if line not in inc:
+            anchor = '.include "sound/voicegroups/%s.inc"' % VG
+            inc = inc.replace(anchor, anchor + '\n' + line)
+    open('sound/voice_groups.inc', 'w').write(inc)
+
+
+def section(b):
+    for name, rng in (('A1', A1), ('A2', A2), ('B1', B1), ('B2', B2), ('BRK', BRK), ('BUILD', BUILD)):
+        if b in rng:
+            return name
+    return 'INTRO'
+
+
+WALK = {'dom': [0, 7, 9, 10], 'sus': [0, 5, 7, 10], 'min': [0, 3, 7, 10], 'maj': [0, 4, 7, 9], '5': [0, 7, 10, 12]}
+
+
+def place(pc, near, lo=33, hi=47):
+    """Toets met toonklasse pc tussen lo en hi, zo dicht mogelijk bij `near`."""
+    return min((n for n in range(lo, hi + 1) if n % 12 == pc), key=lambda n: (abs(n - near), n))
+
+
+def walking_bass(barlist, prog_of, vel_of):
+    """Dynamische walking bass in kwarten: 1 = grondtoon, 2-3 = akkoordtonen (kwint, octaafsprong, septiem/sext),
+    4 = chromatische nadering (halve toon boven/onder) van de grondtoon van de volgende maat; elke 4e maat een
+    achtste-'skip' op tel 4 en naar elke nieuwe sectie een chromatische loop omhoog in achtsten."""
+    out, prev = [], 36
+    for b in barlist:
+        typ = ctype(b, 0)
+        tones = WALK[typ]
+        r0 = place(root_pc(b, 0), prev)
+        nb = b + 1 if b + 1 < END else LOOP
+        nroot = place(root_pc(nb, 0), r0)
+        appr = nroot + (1 if b % 2 else -1)
+        if appr > 47:
+            appr -= 2
+        v = b % 4
+        up = r0 + 12 if r0 + 12 <= 50 else r0 - 5
+        if v == 0:
+            line = [r0, r0 + 7, r0 + tones[2], appr]
+        elif v == 1:
+            line = [r0, up, r0 + 7, appr]
+        elif v == 2:
+            line = [r0, r0 + tones[1], r0 + tones[3], appr]
+        else:
+            line = [r0, r0 + 7, up, None]
+        if root_pc(b, 1) != root_pc(b, 0):
+            line[2] = place(root_pc(b, 1), r0)
+        base = vel_of(b)
+        acc = [0, -16, -6, -10]
+        prog = prog_of(b)
+        mine = []
+        for k, n in enumerate(line):
+            if n is not None:
+                hit(mine, b * BAR + 24 * k, n, base + acc[k], 22, prog)
+        if line[3] is None:                                   # 'skip': twee achtsten op tel 4
+            hit(mine, b * BAR + 72, r0 + tones[3] if r0 + tones[3] <= 50 else r0 + tones[1], base - 14, 10, prog)
+            hit(mine, b * BAR + 84, appr, base - 4, 10, prog)
+        if b in (21, 33, 36, 48, 61):                         # chromatische loop omhoog naar de nieuwe sectie
+            mine = [n for n in mine if n[0] < b * BAR + 48]
+            for k in range(4):
+                hit(mine, b * BAR + 48 + 12 * k, nroot - 4 + k, base - 8 + 4 * k, 10, prog)
+        out += mine
+        prev = r0
+    return out
+
+
 def norman():
-    """Blockbuster-tv: de melodie blijft op de originele strijkers/trompet/piano, de hoornmelodie (spoor 1) wordt een
-    epische cello; tegenmelodieën van de PSG-vierkanten (80/84) worden violen. Bas -> strijkersostinato (cello +
-    contrabas in octaven, accenten op het pauken-ritme). Taiko op het pauken-ritme, concert-basdrum en crash op de
-    sectiebegins, orkestsnare op 2 en 4 (zoals het origineel), roffels/toms naar de secties, koper-braam op C, koor
-    in de opbouw (maat 54-61)."""
-    K = P['KIT_NORMAN']
+    """TV-orkest (Jordi ronde 2): walking bass op de Emerald finger/fretless bass, ride (Emerald ride bell) en
+    hihat-voet op 2 en 4, gelaagde brass-section-stoten (Emerald trompet + hoorn als één sample per akkoord) op het
+    pauken-ritme met snare/kick die ze 'vangen' (big band), pizzicato-akkoorden (Emerald pizzicato) als staccato
+    opvulling op de achtste-en. De melodie staat weer op de originele instrumenten (hoorn, strijkers, trompet,
+    piano); de PSG-tegenmelodieën worden strijkers, de originele pauken blijven."""
+    N = NORMAN
+    K = N['KIT']
     tr, parts = {}, []
-    t1, n1 = copy_track(1, lambda p, t: {HORN: P['CELLO'], PIANO: P['PIANO_MID']}.get(p, P['STR_SHORT'] if p == STRINGS and t < 2 * BAR else p), 1.0)
-    t2, n2 = copy_track(2, lambda p, t: (P['PIANO_HI'] if t < 2 * BAR else P['PIANO_MID']) if p == PIANO else p, 0.92)
-    t4, n4 = copy_track(4, lambda p, t: STRINGS if p in (80, 84) else p, 0.62)
-    t5, n5 = copy_track(5, lambda p, t: STRINGS if p == 80 else p, 0.62)
+    t1, n1 = copy_track(1, lambda p, t: PIANO_MID_ if p == PIANO else (STR_SHORT_ if p == STRINGS and t < 2 * BAR else p), 1.0)
+    t2, n2 = copy_track(2, lambda p, t: (PIANO_HI_ if t < 2 * BAR else PIANO_MID_) if p == PIANO else p, 0.92)
+    t4, n4 = copy_track(4, lambda p, t: STRINGS if p in (80, 84) else p, 0.60)
+    t5, n5 = copy_track(5, lambda p, t: STRINGS if p == 80 else p, 0.60)
     t6, n6 = copy_track(6, lambda p, t: p, 0.70)
-    t8, n8 = copy_track(8, lambda p, t: p, 0.86)
+    t8, n8 = copy_track(8, lambda p, t: p, 0.78)
     for k, (t, n) in {'mel2': (t2, n2), 'mel1': (t1, n1), 'cnt4': (t4, n4), 'cnt5': (t5, n5), 'wave': (t6, n6),
                       'timp': (t8, n8)}.items():
         tr[k] = t
         parts.append(Part(k, k, n))
-    # strijkersostinato = de originele baslijn (zelfde noten/ritme), kort gestreken, accenten op het pauken-ritme
-    ost = []
+    # --- bas: intro en break = de originele baslijn, de rest walking
+    sec_vel = {'A1': 106, 'A2': 118, 'B1': 112, 'B2': 104, 'BUILD': 122, 'BRK': 100, 'INTRO': 110}
+    bass = []
     for s, e, n, v, p in BASS:
-        b, pos = divmod(s, BAR)
-        acc = pos in timp_positions(b) or pos == 0
-        hit(ost, s, n, 124 if acc else 92, min(e - s, 10), P['OSTINATO'])
-    tr['ost'] = Track(2, P['OSTINATO'], 110, 64)
-    parts.append(Part('ost', 'ost', ost))
-    # drums
-    kick, snare, perc, crash = [], [], [], []
-    for b in bars(2, END - 1):
-        loud = b in A2 or b in B2 or b in BUILD or b >= 6
+        b = s // BAR
+        if b < 10 or b in bars(49, 53):
+            hit(bass, s, n, 112 if s % 24 == 0 else 96, min(e - s, 10), N['BASS_FL'] if b >= 49 else N['BASS_F'])
+    walk_bars = list(bars(10, 48)) + list(bars(54, END - 1))
+    bass += walking_bass(walk_bars, lambda b: N['BASS_FL'] if b in B2 else N['BASS_F'], lambda b: sec_vel[section(b)])
+    tr['bass'] = Track(2, N['BASS_F'], 118, 64)
+    parts.append(Part('bass', 'bass', bass))
+    # --- brass-stoten en pizzicato
+    brass, pizz = [], []
+    big = (10, 22, 26, 30, 34, 37, 41, 45, 54, 58)
+    for b in bars(10, END - 1):
+        sec = section(b)
         for pos in timp_positions(b):
-            if (b in BRK or b in BUILD) and pos not in (0, 48):
-                continue                                # opbouw: pauken spelen 4x per maat, taiko alleen op 1 en 3
-            hit(perc, b * BAR + pos, TAIKO, (118 if pos == 0 else 96) if loud else 80, 12, K)
-        if b not in BRK or b >= 52:
-            for s in (b * BAR + 24, b * BAR + 72):
-                if s in SNARE_POS:
-                    hit(snare, s, SNARE, 104 if b in A2 or b in BUILD or b in B2 else 84, 18, K)
-    for b in (2, 6, 10, 14, 18, 22, 24, 26, 28, 30, 32, 34, 37, 41, 45, 49, 54, 56, 58, 60):
-        hit(kick, b * BAR, KICK, 120, 24, K)
-    crash_at(crash, (2, 10, 22, 26, 30, 34, 37, 45, 54, 58), K, 112)
+            half = 0 if pos < 48 else 1
+            prog, note = N['NB_' + ctype(b, half)], chord_note(b, half)
+            if (b, pos) == (59, 84):
+                continue                              # melodie E4 tegen de F van Bb-mineur (zie ctype)
+            if pos == 0 and b in big:
+                hit(brass, b * BAR, note, 124, 30, prog)
+            elif sec in ('A2', 'B1', 'BUILD') and pos:
+                hit(brass, b * BAR + pos, note, 110 if pos != 84 else 116, 8, prog)
+            elif sec == 'A1' and pos == 84 and b % 2:
+                hit(brass, b * BAR + pos, note, 100, 8, prog)
+        if b == 53:
+            for k, pos in enumerate((0, 24, 48, 72)):
+                hit(brass, b * BAR + pos, chord_note(b, pos // 48), 96 + 9 * k, 8, N['NB_' + ctype(b, pos // 48)])
+        if sec == 'BRK':
+            if b <= 52:
+                for k, pos in enumerate((0, 24, 48, 72)):
+                    hit(pizz, b * BAR + pos, chord_note(b, pos // 48), 72 + 6 * (b - 49) + 2 * k, 8,
+                        N['NP_' + ctype(b, pos // 48)])
+            continue
+        offs = (12, 36, 60, 84) if sec == 'B2' else (12, 60)
+        for pos in offs:
+            half = 0 if pos < 48 else 1
+            hit(pizz, b * BAR + pos, chord_note(b, half), 96 if sec != 'A1' else 88, 8, N['NP_' + ctype(b, half)])
+    tr['brass'] = Track(10, N['NB_dom'], 104, 64)
+    tr['pizz'] = Track(11, N['NP_dom'], 92, 72)
+    parts.append(Part('brass', 'brass', brass))
+    parts.append(Part('pizz', 'pizz', pizz))
+    # --- drums
+    kick, snare, ride, hat, crash, perc = [], [], [], [], [], []
+    swing = [(0, 100), (24, 80), (36, 64), (48, 96), (72, 80), (84, 64)]
+    for b in bars(2, END - 1):
+        sec = section(b)
+        loud = sec in ('A2', 'BUILD')
+        if b < 10:
+            for k in range(8):
+                hit(hat, b * BAR + 12 * k, CHAT, 74 if k % 2 == 0 else 52, 6, K)
+        elif sec == 'BRK':
+            if b <= 52:
+                for k in range(4):
+                    hit(hat, b * BAR + 24 * k, CHAT, 60 + 6 * (b - 49), 6, K)
+        else:
+            for pos, v in swing:
+                hit(ride, b * BAR + pos, RIDE, v + (8 if loud else 0) - (10 if sec == 'B2' else 0), 12, K)
+            for pos in (24, 72):
+                hit(hat, b * BAR + pos, CHAT, 66, 6, K)
+            hit(kick, b * BAR, KICK, 96 if not loud else 108, 12, K)
+        for s in (b * BAR + 24, b * BAR + 72):
+            if s in SNARE_POS and (sec != 'BRK' or b >= 52):
+                hit(snare, s, SNARE, 92 if loud else 78, 12, K)
+    for s, e, n, v, p in brass:                       # de drummer 'vangt' de stoten (snare + kick, big band)
+        if s % BAR:
+            hit(snare, s, SNARE, min(127, v - 4), 12, K)
+            hit(kick, s, KICK, 112, 12, K)
+        else:
+            hit(kick, s, KICK, 124, 12, K)
+    crash_at(crash, (2,) + big, K, 112)
     snare_roll(snare, 9, 9, K, SNARE, 50, 110, start=48)
-    snare_roll(snare, 33, 33, K, SNARE, 60, 120, start=48)
+    snare_roll(snare, 33, 33, K, SNARE, 60, 118, start=48)
     snare_roll(snare, 53, 53, K, SNARE, 40, 120)
-    snare_roll(snare, 61, 61, K, SNARE, 60, 124, start=48)
-    for b in (21, 36, 48):            # tomfills naar de volgende sectie
+    snare_roll(snare, 61, 61, K, SNARE, 60, 122, start=48)
+    for b in (21, 36, 48):
         for k, pos in enumerate((48, 60, 72, 84)):
-            hit(perc, b * BAR + pos, LOTOM, 90 + 8 * k, 12, K)
-    tr['drums'] = Track(9, K, 118, 64)
-    for k, notes in (('kick', kick), ('snare', snare), ('perc', perc), ('crash', crash)):
+            hit(perc, b * BAR + pos, (HITOM, HITOM, LOTOM, LOTOM)[k], 92 + 8 * k, 12, K)
+    tr['drums'] = Track(9, K, 116, 64)
+    for k, notes in (('kick', kick), ('snare', snare), ('ride', ride), ('hat', hat), ('crash', crash), ('perc', perc)):
         parts.append(Part(k, 'drums', notes, drums=True))
-    # koper-braam op C aan het begin van de grote secties (C3+G3+C4 in één sample)
-    braam = []
-    for b in (10, 22, 37, 54):
-        hit(braam, b * BAR, 48, 118, 60, P['BRAAM'])
-    tr['braam'] = Track(10, P['BRAAM'], 100, 64)
-    parts.append(Part('braam', 'braam', braam))
-    # koor in de opbouw: de lange noten van spoor 2 (strijkers) mee, in stukken van 2 tellen (MUZIEK.md: pads)
-    choir = []
-    for s, e, n, v, p in n2:
-        if 54 * BAR <= s < END * BAR:
-            for t in range(s, e, 48):
-                hit(choir, t, n, 96, min(44, e - t - 2), P['CHOIR'])
-    tr['choir'] = Track(11, P['CHOIR'], 84, 64)
-    parts.append(Part('choir', 'choir', choir))
-    order = ['mel2', 'mel1', 'ost', 'cnt4', 'kick', 'snare', 'timp', 'braam', 'crash', 'perc', 'cnt5', 'choir']
-    return dict(bpm=188, tracks=tr, parts=parts, order=order)
+    order = ['mel2', 'mel1', 'bass', 'kick', 'snare', 'brass', 'cnt4', 'ride', 'crash', 'pizz', 'cnt5', 'timp',
+             'hat', 'perc']
+    return dict(bpm=188, tracks=tr, parts=parts, order=order, vg=LEADER_VG['norman'][0])
 
 
 def winona():
-    """Bubblegum-dancepop: melodie op glanzende synths (spoor 2 = zaagtand/blokgolf-lead, spoor 1 = blokgolfsample),
-    trompetstukken op synthbrass, piano blijft piano, pizzicato -> pluk. Four-on-the-floor, clap op de originele
-    snare-posities, open hihat op de achtste-en, PSG-ruis-hihats op de 16en, synthbrass-stoten op het pauken-ritme
-    (1, 2-en, 4-en) met de akkoorden van het origineel (sus2 / kwint), glockenspiel-glitter op de melodie in A2.
-    Bas = de originele huppelende achtsten (C-G) staccato op de synthbas. Pauze (49-53): clap-opbouw zonder kick."""
-    K = P['KIT_WINONA']
+    """Girly pop (Jordi ronde 2): géén koper meer. Bovenstem (spoor 2) = PSG-blokgolf (50%), onderstem (spoor 1) =
+    celesta, de PSG-tegenmelodieën op blokgolf 1 (die de lead nu gebruikt) -> synthpluk; polysynth-pad-akkoorden
+    (één sample per voicing) als 2-tels-pad in de rustige delen en als off-beat-stoten (pomp) in A2/opbouw,
+    buisklokken op de sectiebegins. Strakke synthbas (Emerald) op de originele achtsten, Emerald-dance-kick op
+    elke tel, 909-clap op 2 en 4, open hihat op de en, tamboerijn, PSG-ruis-16en."""
+    W = WINONA
+    K = W['KIT']
     tr, parts = {}, []
-    lead = lambda p, t: {STRINGS: P['POPLEAD'], HORN: P['POPLEAD'], TRUMPET: P['POPBRASS'], 45: P['POPPLUCK'],
-                         PIANO: P['PIANO_HI'] if t < 2 * BAR else P['PIANO_MID']}.get(p, p)
-    t1, n1 = copy_track(1, lambda p, t: {STRINGS: P['SQUARE'], HORN: P['SQUARE'], TRUMPET: P['POPBRASS'],
-                                         PIANO: P['PIANO_MID']}.get(p, p), 0.80, pan=44)
-    t2, n2 = copy_track(2, lead, 0.92, pan=84)
-    t4, n4 = copy_track(4, lambda p, t: p, 0.80)
-    t5, n5 = copy_track(5, lambda p, t: p, 0.80)
+    t1, n1 = copy_track(1, lambda p, t: PIANO_MID_ if p == PIANO else W['CELESTA'], 0.84, pan=44)
+    t2, n2 = copy_track(2, lambda p, t: W['LEAD_SQ'], 0.74)
+    sq1 = (5, 7, 82, 83, 85, 86)                      # blokgolf 1 = de lead; die tegenstemmen worden synthpluk
+    t4, n4 = copy_track(4, lambda p, t: W['POPPLUCK'] if p in sq1 else p, 0.78)
+    t5, n5 = copy_track(5, lambda p, t: W['POPPLUCK'] if p in sq1 else p, 0.78)
     t6, n6 = copy_track(6, lambda p, t: p, 0.80)
     for k, (t, n) in {'mel2': (t2, n2), 'mel1': (t1, n1), 'cnt4': (t4, n4), 'cnt5': (t5, n5), 'wave': (t6, n6)}.items():
         tr[k] = t
         parts.append(Part(k, k, n))
     bass = []
     for s, e, n, v, p in BASS:
-        hit(bass, s, n, 120 if (s % 24) == 0 else 104, min(e - s, 9), P['SYNTHBASS'])
-    tr['bass'] = Track(2, P['SYNTHBASS'], 112, 64)
+        hit(bass, s, n, 122 if (s % 24) == 0 else 104, min(e - s, 8), W['SYNTHBASS'])
+    tr['bass'] = Track(2, W['SYNTHBASS'], 112, 64)
     parts.append(Part('bass', 'bass', bass))
     kick, clap, hat, crash, perc = [], [], [], [], []
     for b in bars(0, END - 1):
@@ -366,17 +535,17 @@ def winona():
         for beat in range(4):
             t = b * BAR + beat * 24
             if four:
-                hit(kick, t, KICK, 122 if beat in (0, 2) else 114, 12, K)
+                hit(kick, t, KICK, 124 if beat in (0, 2) else 116, 12, K)
             if (b >= 10 and b not in BRK) or b in bars(6, 9):
                 hit(hat, t + 12, OHAT, 92 if b >= 10 else 70, 12, K)
             if b in BRK and b <= 51:
-                hit(clap, t, CLAP, 70 + 10 * (b - 49), 12, K)       # clap op elke tel: opbouw zonder kick
+                hit(clap, t, CLAP, 70 + 10 * (b - 49), 12, K)
         for s in (b * BAR + 24, b * BAR + 72):
             if s in SNARE_POS and b not in BRK:
-                hit(clap, s, CLAP, 118, 12, K)
+                hit(clap, s, CLAP, 120, 12, K)
         if b in A2 or b in BUILD:
             for s in (b * BAR + 24, b * BAR + 72):
-                hit(perc, s + 6, TAMB, 64, 6, K)                 # tamboerijn net na de clap (huppel)
+                hit(perc, s + 6, TAMB, 64, 6, K)
     snare_roll(clap, 52, 52, K, SNARE, 60, 100, step=12)
     snare_roll(clap, 53, 53, K, SNARE, 70, 122)
     snare_roll(clap, 1, 1, K, CLAP, 50, 110, step=12)
@@ -385,49 +554,132 @@ def winona():
     tr['drums'] = Track(9, K, 116, 64)
     for k, notes in (('kick', kick), ('clap', clap), ('hat', hat), ('crash', crash), ('perc', perc)):
         parts.append(Part(k, 'drums', notes, drums=True))
-    # synthbrass-stoten op het pauken-ritme (akkoorden uit het origineel; in maat 2-9 en het Db/Eb-deel kwinten)
-    stab = []
-    for b in list(A1)[4:] + list(A2) + list(B2) + list(BUILD):
-        for pos in timp_positions(b):
-            half = 0 if pos < 48 else 1
-            typ = ctype(b, half)
-            prog = P['POPSTAB5'] if typ in ('min', '5') or b in B2 else P['POPSTAB']
-            hit(stab, b * BAR + pos, chord_note(b, half), 104 if pos == 0 else 92, 10, prog)
-    tr['stab'] = Track(10, P['POPSTAB'], 92, 64)
-    parts.append(Part('stab', 'stab', stab))
-    # glockenspiel: de bovenstem een octaaf hoger in A2 (glitter)
-    glock = [[s, min(e, s + 12), n + 12, 88, P['GLOCK']] for s, e, n, v, p in n2 if 22 * BAR <= s < 34 * BAR]
-    tr['glock'] = Track(11, P['GLOCK'], 72, 88)
-    parts.append(Part('glock', 'glock', glock))
-    # 16e-hihats op de PSG-ruis (kost geen kanaal)
+    # pads: 2 tellen per halve maat (rustig) of off-beat-stoten (pomp)
+    pad = []
+    for b in bars(10, END - 1):
+        sec = section(b)
+        if sec == 'BRK' and b < 52:
+            continue
+        for half in (0, 1):
+            prog, note = W['PAD_' + ctype(b, half)], chord_note(b, half)
+            if sec in ('A2', 'BUILD', 'BRK'):
+                for pos in (12, 36):
+                    if (b, half * 48 + pos) == (59, 84):
+                        continue                      # melodie E4 tegen de F van Bb-mineur
+                    hit(pad, b * BAR + half * 48 + pos, note, 88 if sec != 'BRK' else 70 + 8 * (b - 52), 9, prog)
+            else:
+                hit(pad, b * BAR + half * 48, note, 78, 44, prog)
+    tr['pad'] = Track(10, W['PAD_dom'], 84, 64)
+    parts.append(Part('pad', 'pad', pad))
+    # buisklokken op de sectiebegins: de melodienoot van dat moment
+    bell = []
+    for b in (10, 22, 34, 37, 45, 54, 58):
+        m = [n for s, e, n, v, p in SRC_T[2][0] if s == b * BAR] or [72 + root_pc(b, 0)]
+        hit(bell, b * BAR, m[0], 104, 40, W['TUBBELL'])
+    tr['bell'] = Track(11, W['TUBBELL'], 80, 76)
+    parts.append(Part('bell', 'bell', bell))
     nh = []
     for b in bars(2, END - 1):
         if b in BRK and b < 52:
             continue
         for k in range(16):
             if k % 4 == 2:
-                continue                                       # daar zit de open hihat
-            hit(nh, b * BAR + 6 * k, 72, 70 if k % 4 == 0 else 46, 3, P['NOISE_HAT'])
-    tr['nhat'] = Track(12, P['NOISE_HAT'], 40, 64)
+                continue
+            hit(nh, b * BAR + 6 * k, 72, 70 if k % 4 == 0 else 46, 3, W['NOISE_HAT'])
+    tr['nhat'] = Track(12, W['NOISE_HAT'], 40, 64)
     parts.append(Part('nhat', 'nhat', nh))
-    order = ['mel2', 'mel1', 'bass', 'kick', 'clap', 'hat', 'stab', 'crash', 'perc', 'glock']
-    return dict(bpm=168, tracks=tr, parts=parts, order=order)
+    order = ['mel2', 'mel1', 'bass', 'kick', 'clap', 'hat', 'pad', 'bell', 'crash', 'perc', 'cnt4', 'cnt5']
+    return dict(bpm=168, tracks=tr, parts=parts, order=order, vg=LEADER_VG['winona'][0])
+
+
+ARP = {'dom': (0, 7, 10), 'sus': (0, 5, 10), 'min': (0, 3, 7), 'maj': (0, 4, 7), '5': (0, 7)}
+
+
+def arp_tones(m, b, half, down):
+    """Twee akkoordtonen onder (down) of boven de melodienoot, minstens een kleine terts ertussen."""
+    root = root_pc(b, half)
+    pcs = {(root + i) % 12 for i in ARP[ctype(b, half)]}
+    out, cur = [], m
+    for _ in range(2):
+        rng = range(cur - 3, cur - 13, -1) if down else range(cur + 3, cur + 13)
+        nxt = next((n for n in rng if n % 12 in pcs), cur - 12 if down else cur + 12)
+        out.append(nxt)
+        cur = nxt
+    return out
+
+
+def arpeggiate(notes, down, bends):
+    """Melodie -> 16e-arpeggio's (Jordi: 'verdeel het thema in snelle zestiende-noot arpeggio's'): elke melodienoot
+    blijft op zijn eigen tick en toonhoogte staan (met zijn velocity), de 16en daarna lopen langs twee akkoordtonen
+    eronder (Liza) of erboven (Tate) en op elke tel van de noot terug naar de melodienoot. Intro (maat 2-9):
+    octaafflutter. `bends`: pitch-bend-sweeps (BENDR 2): lange noten glijden erin (scoop van onder bij Liza, van
+    boven bij Tate), frase-einden (>= 90 ticks) zweven in de laatste tel weg (tegengesteld)."""
+    out = []
+    sign = -1 if down else 1
+    for s, e, n, v, p in notes:
+        b = s // BAR
+        L = e - s
+        if b < 2 or L < 12:
+            out.append([s, e, n, v, p])
+            bends.append((s, 0.0))
+            continue
+        if b < 10:
+            seq = [n, n - 12 if down else n + 12] * 2
+        else:
+            c1, c2 = arp_tones(n, b, 1 if (s % BAR) >= 48 else 0, down)
+            seq = [n, c1, c2, c1]
+        for k, t in enumerate(range(s, e - 2, 6)):
+            x = n if (t - s) % 24 == 0 else seq[k % 4]
+            x = max(48, min(96, x))
+            out.append([t, t + 4, x, v if (t - s) % 24 == 0 else max(1, int(v * 0.8)), p])
+        if L >= 36:
+            for i in range(7):
+                bends.append((s + 2 * i, sign * 2.0 * (1 - i / 6)))
+        else:
+            bends.append((s, 0.0))
+        if L >= 90:
+            for i in range(1, 9):
+                bends.append((e - 24 + 3 * i, -sign * 2.0 * (i / 8) ** 1.5))
+    return out
+
+
+def bend_events(bends, ch):
+    ev = [(0, mido.Message('control_change', channel=ch, control=20, value=2))]
+    last = {}
+    for t, semis in sorted(bends):
+        last[t] = semis
+    last[LOOP * BAR] = last.get(LOOP * BAR, 0.0)        # op het loopbegin altijd zuiver
+    val = None
+    for t in sorted(last):
+        pw = max(-8192, min(8191, int(round(8192 * last[t] / 2))))
+        if pw != val or t == LOOP * BAR:
+            ev.append((t, mido.Message('pitchwheel', channel=ch, pitch=pw)))
+            val = pw
+    return [(t, x) for t, x in ev if t < END * BAR]
 
 
 def tate_liza():
-    """Psytrance: Tate (spoor 1, links) = acid-zaagtand, Liza (spoor 2, rechts) = holle blokgolf: de twee originele
-    melodiestemmen als tweeling. De bas rolt: kick op elke tel, dan grondtoon / de originele off-beat-noot / grondtoon
-    op de 16en ertussen (de originele C-G-achtsten blijven op hun plek). Open hihat op de achtste-en, PSG-ruis-16en,
-    clap zacht op 2 en 4, zaps op het pauken-ritme, acid-lijnen in de rustige delen (37-39, 49-53), break 49-52
-    zonder kick/bas, snare-roffel + ruis-riser naar de drop (53, 60-61)."""
-    K = P['KIT_TATE']
+    """Psytrance (Jordi ronde 2), 144 bpm: Emerald-dance-kick op elke tel; rollende psy-bas op het PSG-golfkanaal
+    (eigen 4-bit-zaagtand, één periode = een octaaf lager dan genoteerd) in 16en tussen de kicks: grondtoon /
+    originele off-beat-noot (accent) / grondtoon; de melodie (Tate links = acid-zaagtand, Liza rechts = holle
+    blokgolf) als 16e-arpeggio's met pitch-bend-sweeps. Clap op 2 en 4, open hihat op de en, PSG-ruis-16en,
+    zaps op het pauken-ritme, acid-lijnen in de rustige delen, ruis-risers naar de drops."""
+    T = TATE
+    K = T['KIT']
     tr, parts = {}, []
-    t1, n1 = copy_track(1, lambda p, t: P['LEAD_A'], 0.86, pan=30)
-    t2, n2 = copy_track(2, lambda p, t: P['POPPLUCK'] if (p == PIANO and t < 2 * BAR) or p == 45 else P['LEAD_B'], 0.90, pan=98)
+    t1, n1 = copy_track(1, lambda p, t: T['LEAD_A'], 0.84, pan=30)
+    t2, n2 = copy_track(2, lambda p, t: T['POPPLUCK'] if (p == PIANO and t < 2 * BAR) or p == 45 else T['LEAD_B'], 0.88, pan=98)
+    b1, b2 = [], []
+    n1, n2 = arpeggiate(n1, False, b1), arpeggiate(n2, True, b2)
+    t1.other += bend_events(b1, t1.ch)
+    t2.other += bend_events(b2, t2.ch)
     t4, n4 = copy_track(4, lambda p, t: p, 0.78)
     t5, n5 = copy_track(5, lambda p, t: p, 0.78)
-    t6, n6 = copy_track(6, lambda p, t: p, 0.80)
-    for k, (t, n) in {'mel2': (t2, n2), 'mel1': (t1, n1), 'cnt4': (t4, n4), 'cnt5': (t5, n5), 'wave': (t6, n6)}.items():
+    # origineel golfspoor: maat 0-1 blijft PSG (de bas begint pas in maat 2); daarna botst het met de psy-bas op het
+    # golfkanaal -> DirectSound-drone; maat 37-44 = de grondtonen van de bas (C2/C#2/Eb2), die speelt de psy-bas al
+    t6, n6 = copy_track(6, lambda p, t: p if t < 2 * BAR else T['DRONE'], 0.62)
+    n6 = [n for n in n6 if not (37 * BAR <= n[0] < 45 * BAR)]
+    for k, (t, n) in {'mel2': (t2, n2), 'mel1': (t1, n1), 'cnt4': (t4, n4), 'cnt5': (t5, n5), 'drone': (t6, n6)}.items():
         tr[k] = t
         parts.append(Part(k, k, n))
     nobass = set(bars(49, 52))
@@ -438,10 +690,10 @@ def tate_liza():
             if b < 2:
                 continue
             if b not in nobass:
-                hit(kick, t, KICK, 124, 12, K)
+                hit(kick, t, KICK, 124, 5, K)
                 root, off = bass_at(t), bass_at(t + 12)
                 for k, n in ((1, root), (2, off), (3, root)):
-                    hit(bass, t + 6 * k, n, (112, 120, 104)[k - 1], 5, P['PSYBASS'])
+                    hit(bass, t + 6 * k, n + 12, (84, 127, 100)[k - 1], 4, T['PSYBASS'])
             if (b >= 6 and b not in nobass):
                 hit(hat, t + 12, OHAT, 96 if b >= 10 else 72, 12, K)
         if b >= 10 and b not in nobass:
@@ -451,13 +703,12 @@ def tate_liza():
         if b in A2 or b in B2 or b in BUILD:
             for pos in timp_positions(b):
                 if pos:
-                    hit(fx, b * BAR + pos, ZAP, 84, 8, K)
+                    hit(fx, b * BAR + pos, ZAP, 80, 8, K)
     snare_roll(clap, 52, 53, K, SNARE, 40, 124, step=12)
     snare_roll(clap, 53, 53, K, SNARE, 70, 124)
     snare_roll(clap, 61, 61, K, SNARE, 50, 124)
     snare_roll(clap, 9, 9, K, SNARE, 50, 110, start=48)
     crash_at(crash, (2, 10, 22, 34, 37, 54), K, 110)
-    # acid-lijn (303) in de delen zonder melodie: 16en op de grondtoon met octaafsprongen en accenten
     pat = [0, 0, 12, 0, 7, 0, 12, 0, 0, 12, 0, 7, 0, 0, 10, 12]
     acc = [1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0]
     for b in list(bars(37, 39)) + list(bars(49, 53)):
@@ -465,15 +716,14 @@ def tate_liza():
             r = bass_at(b * BAR + 6 * k) % 12
             n = 36 + r + pat[k]
             n = n + 12 if n < 40 else n
-            hit(acid, b * BAR + 6 * k, n, 118 if acc[k] else 84, 4, P['ACID'])
-    tr['bass'] = Track(2, P['PSYBASS'], 118, 64)
+            hit(acid, b * BAR + 6 * k, n, 118 if acc[k] else 84, 4, T['ACID'])
+    tr['bass'] = Track(2, T['PSYBASS'], 66, 64)
     tr['drums'] = Track(9, K, 116, 64)
-    tr['acid'] = Track(10, P['ACID'], 92, 76)
+    tr['acid'] = Track(10, T['ACID'], 92, 76)
     parts.append(Part('bass', 'bass', bass))
     for k, notes in (('kick', kick), ('clap', clap), ('hat', hat), ('crash', crash), ('fx', fx)):
         parts.append(Part(k, 'drums', notes, drums=True))
     parts.append(Part('acid', 'acid', acid))
-    # PSG-ruis: 16e-hihats (accent op de achtsten) en risers (één lange ruisnoot + CC7-zwelling) naar de drops
     nh, ccs = [], []
     risers = {(0, 1), (8, 9), (52, 53), (60, 61)}
     rbars = {b for r in risers for b in bars(*r)}
@@ -483,18 +733,18 @@ def tate_liza():
         for k in range(16):
             if k % 4 == 2:
                 continue
-            hit(nh, b * BAR + 6 * k, 74, 76 if k % 2 == 0 else 50, 3, P['NOISE_HAT'])
+            hit(nh, b * BAR + 6 * k, 74, 76 if k % 2 == 0 else 50, 3, T['NOISE_HAT'])
     for r0, r1 in sorted(risers):
         s, e = r0 * BAR, (r1 + 1) * BAR
-        hit(nh, s, 60, 100, e - s - 2, P['NOISE_RISE'])
+        hit(nh, s, 60, 100, e - s - 2, T['NOISE_RISE'])
         for k in range(17):
             ccs.append((s + (e - s) * k // 16, 7, 6 + 34 * k // 16))
         ccs.append((e, 7, 38))
-    tr['nhat'] = Track(12, P['NOISE_HAT'], 38, 64)
+    tr['nhat'] = Track(12, T['NOISE_HAT'], 38, 64)
     tr['nhat'].other = [(t, mido.Message('control_change', channel=12, control=7, value=v)) for t, c, v in ccs]
     parts.append(Part('nhat', 'nhat', nh))
-    order = ['mel2', 'mel1', 'kick', 'bass', 'clap', 'hat', 'acid', 'crash', 'fx']
-    return dict(bpm=144, tracks=tr, parts=parts, order=order, prog_switch={'nhat'})
+    order = ['mel2', 'mel1', 'kick', 'clap', 'hat', 'acid', 'crash', 'fx', 'drone']
+    return dict(bpm=144, tracks=tr, parts=parts, order=order, vg=LEADER_VG['tate_liza'][0])
 
 
 def wallace():
@@ -569,7 +819,7 @@ def wallace():
     tr['nhat'] = Track(12, P['NOISE_HAT'], 30, 64)
     parts.append(Part('nhat', 'nhat', nh))
     order = ['mel2', 'mel1', 'bass', 'cnt4', 'kick', 'stick', 'rhodes', 'brush', 'cnt5', 'swirl', 'ride']
-    return dict(bpm=156, tracks=tr, parts=parts, order=order)
+    return dict(bpm=156, tracks=tr, parts=parts, order=order, vg=VG)
 
 
 LEADERS = [
@@ -613,7 +863,8 @@ def detach_part(notes, kinds, rel, bpm):
 
 
 def arrange(spec):
-    kinds, rel = load_voices(VG), releases(VG)
+    vg = spec.get('vg', VG)
+    kinds, rel = load_voices(vg), releases(vg)
     busy, report = [], []
     by_name = {p.name: p for p in spec['parts']}
     for part in spec['parts']:
@@ -721,16 +972,18 @@ def check_unchanged(spec, leader):
         b = sorted((s, n) for s, e, n, v, p in SRC_T[i][0])
         orig = {(s, n): e for s, e, n, v, p in SRC_T[i][0]}
         assert all(e <= orig[(s, n)] for s, e, n, v, p in part.notes if (s, n) in orig), leader
+        if leader == 'tate_liza':                    # arpeggio's: elke melodienoot staat nog op zijn tick
+            a = sorted(set(a) & set(b))
         if a != b:
             lost = sorted(set(b) - set(a))
             print('!! %s: %s wijkt af van het origineel (%d vs %d noten), bijv. %s' % (leader, name, len(a), len(b), lost[:6]))
             FAILS.append(leader)
 
 
-def set_cfg(song, vol):
+def set_cfg(song, vol, vg=VG):
     cfg = 'sound/songs/midi/midi.cfg'
     lines = open(cfg).read().rstrip('\n').split('\n')
-    line = '%s.mid: -E -R50 -G_%s -V%03d' % (song, VG, vol)
+    line = '%s.mid: -E -R50 -G_%s -V%03d' % (song, vg, vol)
     lines = [line if l.startswith(song + '.mid:') else l for l in lines]
     if line not in lines:
         lines.append(line)
@@ -739,13 +992,14 @@ def set_cfg(song, vol):
 
 def main():
     write_voicegroup()
+    write_leader_voicegroups()
     for leader, num, song, fn, vol in LEADERS:
         spec = fn()
         rep = arrange(spec)
         check_unchanged(spec, leader)
         path = 'sound/songs/midi/%s.mid' % song
         write_midi(spec, path)
-        set_cfg(song, vol)
+        set_cfg(song, vol, spec['vg'])
         dur = END * BAR / TPB * 60 / spec['bpm']
         print('%s (%d): %d bpm, %.1f s (intro %.1f s + loop %.1f s) -> %s' % (
             leader, num, spec['bpm'], dur, LOOP * 4 * 60 / spec['bpm'], (END - LOOP) * 4 * 60 / spec['bpm'], path))

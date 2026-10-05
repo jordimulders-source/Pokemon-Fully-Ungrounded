@@ -6173,6 +6173,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     switch (trainerClass)
     {
+    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-5, ook TRAINER_STADIUM_BURGLAR)
+        return MUS_GROUNDED_VS_BURGLAR;
     case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
         return MUS_GROUNDED_VS_COLRESS;
     case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia

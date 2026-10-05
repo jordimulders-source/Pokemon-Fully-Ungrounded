@@ -590,6 +590,7 @@
 #define MUS_GROUNDED_VS_WINONA      652 // Project Grounded: gymleider-remix (Winona): bubblegum-dancepop (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_TATE_LIZA   653 // Project Grounded: gymleider-remix (Tate & Liza): psytrance (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_WALLACE     654 // Project Grounded: gymleider-remix (Wallace, gym 8): Franse lounge/bossa (tools/grounded/gym_remixes2.py)
+#define MUS_GROUNDED_VS_BURGLAR     655 // Project Grounded: Battle! Burglar (SIMON), eigen compositie: noir-jazz-heist -> achtervolging (tools/grounded/burglar_theme.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

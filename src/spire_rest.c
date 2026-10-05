@@ -279,6 +279,27 @@ static void DrawHpBar(u32 win, u32 x, u32 y, struct Pokemon *mon)
         FillWindowPixelRect(win, PIXEL_FILL(col), x + 1, y + 1, w, 2);
 }
 
+// Rechtervenster bij het kiezen van een move: wat Porygon2 ermee doet.
+static const u8 *UpgradePreview(struct Pokemon *mon, u32 slot)
+{
+    u32 move = GetMonData(mon, MON_DATA_MOVE1 + slot);
+    u32 power;
+
+    if (move == MOVE_NONE)
+        return COMPOUND_STRING("Empty slot.");
+    if (Spire_IsSlotUpgraded(mon, slot))
+        return COMPOUND_STRING("Already upgraded.");
+    if (IsBattleMoveStatus(move))
+        return COMPOUND_STRING("+1 stage, never miss");
+    power = GetMovePower(move);
+    if (power <= 1)
+        return COMPOUND_STRING("+30% damage");
+    ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, power * 13 / 10, STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar3, COMPOUND_STRING("Power {STR_VAR_1} {RIGHT_ARROW} {STR_VAR_2}"));
+    return gStringVar3;
+}
+
 // Linker/rechter venster: de twee keuzes, of je twee Pokémon (welke move?), of de moves van één Pokémon.
 static void DrawOptions(void)
 {
@@ -306,27 +327,20 @@ static void DrawOptions(void)
         }
         else if (sRest->state == STATE_CHOOSE_MOVE)
         {
+            // links: wiens move (icoon + naam), rechts: wat de upgrade doet. De vier moves staan onderin
+            // (twee regels passen niet in een venster van 16 px: de onderste regel viel weg, Jordi).
             struct Pokemon *mon = Spire_GetRunMon(sRest->mon);
-            u32 k;
 
-            sel = (sRest->slot % 2 == i);
-            for (k = 0; k < 2; k++)
+            sel = FALSE;
+            if (i == 0)
             {
-                u32 slot = k * 2 + i;
-                u32 m = GetMonData(mon, MON_DATA_MOVE1 + slot);
-                u8 *p;
-
-                if (m == MOVE_NONE)
-                {
-                    PrintText(win, FONT_SMALL_NARROW, 10, k * 8, sColor_Gray, COMPOUND_STRING("-"));
-                    continue;
-                }
-                p = StringCopy(gStringVar4, GetMoveName(m));
-                if (Spire_IsSlotUpgraded(mon, slot))
-                    StringCopy(p, COMPOUND_STRING("+"));
-                if (sRest->slot == slot)
-                    PrintText(win, FONT_SMALL_NARROW, 2, k * 8, sColor_Red, COMPOUND_STRING("▶"));
-                PrintText(win, FONT_SMALL_NARROW, 10, k * 8, Spire_IsSlotUpgraded(mon, slot) ? sColor_Gold : sColor_Dark, gStringVar4);
+                GetMonData(mon, MON_DATA_NICKNAME, buf);
+                PrintText(win, FONT_SMALL_NARROW, 26, 3, sColor_Dark, buf);
+                PrintText(win, FONT_SMALL_NARROW, 72, 3, sColor_Gray, COMPOUND_STRING("B: back"));
+            }
+            else
+            {
+                PrintText(win, FONT_SMALL_NARROW, 4, 3, sColor_Blue, UpgradePreview(mon, sRest->slot));
             }
         }
         else if (i == CHOICE_REST)
@@ -377,18 +391,44 @@ static void DrawBottom(void)
         PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Blue, COMPOUND_STRING("Whose move does Porygon2 rewrite?"));
         break;
     case STATE_CHOOSE_MOVE:
-        GetMonData(Spire_GetRunMon(sRest->mon), MON_DATA_NICKNAME, gStringVar1);
-        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Which move of {STR_VAR_1}? (B: back)"));
-        PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Blue, gStringVar4);
+    {
+        // 2 x 2: regels op y 0 en 11 (FONT_SMALL_NARROW is ±12 px hoog, het venster 24 px)
+        struct Pokemon *mon = Spire_GetRunMon(sRest->mon);
+
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            u32 m = GetMonData(mon, MON_DATA_MOVE1 + i);
+            u32 x = (i % 2) * 112, y = (i / 2) * 11;
+            u8 *p;
+
+            if (sRest->slot == i)
+                PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x + 2, y, sColor_Red, COMPOUND_STRING("▶"));
+            if (m == MOVE_NONE)
+            {
+                PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x + 10, y, sColor_Gray, COMPOUND_STRING("-"));
+                continue;
+            }
+            p = StringCopy(gStringVar4, GetMoveName(m));
+            if (Spire_IsSlotUpgraded(mon, i))
+                StringCopy(p, COMPOUND_STRING("+"));
+            PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, x + 10, y, Spire_IsSlotUpgraded(mon, i) ? sColor_Gold : sColor_Dark, gStringVar4);
+        }
         break;
+    }
     case STATE_MESSAGE:
         PrintText(WIN_BOTTOM, FONT_SMALL_NARROW, 2, 0, sColor_Dark, sRest->message);
         break;
     }
     CopyWindowToVram(WIN_BOTTOM, COPYWIN_FULL);
     for (i = 0; i < 2; i++)
-        if (sRest->iconSpriteIds[i] != SPRITE_NONE)
-            gSprites[sRest->iconSpriteIds[i]].invisible = (sRest->state != STATE_CHOOSE_MON);
+    {
+        if (sRest->iconSpriteIds[i] == SPRITE_NONE)
+            continue;
+        // bij het kiezen van een move staat het icoon van die Pokémon in het linkervenster
+        gSprites[sRest->iconSpriteIds[i]].x = (sRest->state == STATE_CHOOSE_MOVE) ? 8 + 20 : 8 + 20 + i * 120;
+        gSprites[sRest->iconSpriteIds[i]].invisible = !(sRest->state == STATE_CHOOSE_MON
+                                                     || (sRest->state == STATE_CHOOSE_MOVE && sRest->mon == i));
+    }
 }
 
 static void Redraw(void)

@@ -903,6 +903,8 @@ void InitBattlerHealthboxCoords(u8 battler)
 }
 
 static struct Pokemon *sSpireHpMon; // Project Grounded: The Spire, mon waarvan het HP-percentage komt
+static bool8 sSpireHpOverride;      // Project Grounded: The Spire, HP tijdens het aflopen van de levensbalk
+static s16 sSpireHpCur, sSpireHpMax;
 
 static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
 {
@@ -925,8 +927,8 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     {
         // Project Grounded: The Spire, alles is lv 100; op die plek staat het HP-percentage
         // gBattleMons is bij het tekenen van de eerste healthbox nog leeg: lees de mon zelf
-        u32 maxHp = sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_MAX_HP) : gBattleMons[battler].maxHP;
-        u32 hp = sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_HP) : gBattleMons[battler].hp;
+        u32 maxHp = sSpireHpOverride ? sSpireHpMax : sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_MAX_HP) : gBattleMons[battler].maxHP;
+        u32 hp = sSpireHpOverride ? sSpireHpCur : sSpireHpMon ? GetMonData(sSpireHpMon, MON_DATA_HP) : gBattleMons[battler].hp;
 
         objVram = ConvertIntToDecimalStringN(text, maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0, STR_CONV_MODE_LEFT_ALIGN, 3);
         *objVram++ = CHAR_PERCENT;
@@ -1998,6 +2000,19 @@ static void UpdateLeftNoOfBallsTextOnHealthbox(u8 healthboxSpriteId)
     SafariTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x2C0) + spriteTileNum, windowTileData, 2);
     SafariTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0xA00) + spriteTileNum, windowTileData + 0x40, 4);
     RemoveWindowOnHealthbox(windowId);
+}
+
+// Project Grounded: The Spire, het HP-percentage (op de plek van het level) tijdens het aflopen van de levensbalk.
+// Controller_WaitForHealthBar werkt alleen de HP-getallen bij; die staan in doubles niet in beeld (Jordi: "HP% verandert niet mee").
+void Spire_UpdateHealthboxPercent(u8 healthboxSpriteId, s16 hp, s16 maxHp)
+{
+    if (hp < 0)
+        hp = 0;
+    sSpireHpOverride = TRUE;
+    sSpireHpCur = hp;
+    sSpireHpMax = maxHp;
+    UpdateLvlInHealthbox(healthboxSpriteId, 100);
+    sSpireHpOverride = FALSE;
 }
 
 void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elementId)

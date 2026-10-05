@@ -10366,6 +10366,7 @@ void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
     u32 hp = GetMonData(mon, MON_DATA_HP);
     u32 oldMaxHp = GetMonData(mon, MON_DATA_MAX_HP);
     CalculateMonStats(mon);
+    Spire_RescaleAfterRecalc(battler, mon, hp, oldMaxHp); // Project Grounded: The Spire, ×HP blijft na een vormwissel (Schooling)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && gChosenActionByBattler[battler] != B_ACTION_SWITCH)
     {
         ApplyDynamaxHPMultiplier(mon);

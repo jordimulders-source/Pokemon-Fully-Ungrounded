@@ -585,72 +585,22 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     jobs = {}           # naam -> (signaal, rate, grondtoon, loop)
-    # reese: grondtoon C2 (36), 128 samples per periode (8372 Hz), loop 128 perioden (±1,96 s, zweving ±0,5 Hz)
-    for name, fc, res, fm in (('dark', 4.0, 0.6, ()), ('mid', 9.0, 0.9, ((7, 3, 1.5),)), ('bright', 20.0, 0.7, ((9, 4, 2.0),))):
-        a, r = reese(36, 128, 128, fc, res, formants=fm, sub=0.15 if name == 'dark' else 0.0, fund=1.0 if name == 'dark' else 0.45)
-        jobs['mitch_reese_' + name] = (a, r, 36, (0, len(a)))
-    a, r = reese(36, 128, 128, 14.0, 0.5, drive=2.6, formants=((10, 3, 4.0), (19, 4, 3.0)), detune=((-1, 1.0), (2, 0.9)), sub=0.0, fund=0.45)
-    jobs['mitch_growl'] = (a, r, 36, (0, len(a)))
-    # wobble: twee maten per loop; M = aantal perioden in twee maten (afgerond: < 0,4% tempoverschil)
-    for nm, note in (('f1', 29), ('ab1', 32), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        M = int(round(8 * BEAT * hz(note)))
-        per = 96 if note >= 36 else 128
-        a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.5, drive=2.0, lfo=wob_lfo(), top=40, formants=((8, 4, 3.5),))
-        jobs['mitch_wob_' + nm] = (a, r, note, (0, len(a)))
-    a, r = reese(72, 32, 128, None, 0, sub=0, drive=1.2, top=13, detune=((-1, 1.0), (1, 0.9)))
-    jobs['mitch_lead'] = (a, r, 72, (0, len(a)))
-    a, r = stab([60, 63, 67, 72])
-    jobs['mitch_stab_min'] = (a, r, 60, None)
-    a, r = stab([60, 64, 67, 72])
-    jobs['mitch_stab_maj'] = (a, r, 60, None)
+    # v1-v4-samples die geen nummer meer gebruikt (reese, wobbles, lead, stabs, horns, kicks/snares, rewind, airhorn,
+    # mitch3_kick/snare/wob, mitch4_*) zijn in v0.9.103 verwijderd (ROM-ruimte); de functies staan er nog.
     for nm, notes in (('min', [60, 63, 67]), ('maj', [60, 64, 67])):
-        a, r, lp = gm_chord(61, notes, 0.5, 22050, False)
-        jobs['mitch_horn_' + nm] = (a, r, 60, lp)
         a, r, lp = gm_chord(89, notes, 2.0, 16000, True)
         jobs['mitch_pad_' + nm] = (a, r, 60, lp)
-    k, kr = kick2()
-    s, sr = snare2()
-    jobs['mitch_kick'] = (k, kr, 60, None)
-    jobs['mitch_snare'] = (s, sr, 60, None)
-    g, gr = snare2(ghost=True)
-    jobs['mitch_ghost'] = (g, gr, 60, None)
     a, r = hat()
     jobs['mitch_hat'] = (a, r, 60, None)
-    a, r = hat(open_=True)
-    jobs['mitch_ohat'] = (a, r, 60, None)
-    a, r = reese_raw()
-    jobs['mitch_reese_raw'] = (a, r, 36, (0, len(a)))
-    a, r = reese_raw(cut=1100.0, drive=4.5, saws=((-2, 0.8), (-1, 1.0), (1, 1.0), (3, 0.8)))
-    jobs['mitch_reese_raw_dark'] = (a, r, 36, (0, len(a)))
     a, r = revcym()
     jobs['mitch_revcym'] = (a, r, 60, None)
     a = norm(resample(render(0, [51], 0.9, kit=0, vel=112), 44100, 22050, antialias=True))
     jobs['mitch_ride'] = (fade_out(a, 22050, 0.3), 22050, 60, None)
-    rb, rr = jobs['mitch_reese_mid'][:2]
-    a, r = rewind({'kick': (k, kr), 'snare': (s, sr), 'reese': (np.tile(rb, 4), rr * 2 ** (-7 / 12)),
-                   'stab': jobs['mitch_stab_min'][:2]})
-    jobs['mitch_rewind'] = (a, r, 60, None)
-    a, r = airhorn()
-    jobs['mitch_airhorn'] = (a, r, 60, None)
     # ---- v3
-    a, r = kick3(); jobs['mitch3_kick'] = (a, r, 60, None)
-    a, r = snare3(); jobs['mitch3_snare'] = (a, r, 60, None)
     a, r = snare3(ghost=True); jobs['mitch3_ghost'] = (a, r, 60, None)
     a, r = brass3([41, 53], 53); jobs['mitch3_brass_lo'] = (a, r, 53, None)
     a, r = brass3([51, 63], 63); jobs['mitch3_brass_hi'] = (a, r, 63, None)
     a, r = pluck3(); jobs['mitch3_pluck'] = (a, r, 60, None)
-    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        M = int(round(8 * BEAT3 * hz(note)))
-        per = 96 if note >= 36 else 128
-        a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.45, drive=2.4, lfo=wob_lfo3(), top=40,
-                     formants=((8, 4, 3.0),), detune=((-2, 0.8), (-1, 1.0), (1, 1.0), (2, 0.8)))
-        jobs['mitch3_wob_' + nm] = (a, r, note, (0, len(a)))
-    # ---- v4
-    a, r = kick4(); jobs['mitch4_kick'] = (a, r, 60, None)
-    a, r = snare4(); jobs['mitch4_snare'] = (a, r, 60, None)
-    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        a, r = wob4(note, 256 if note < 36 else 192)
-        jobs['mitch4_wob_' + nm] = (a, r, note, (0, len(a)))
     # ---- v5 (Jordi over v4: 'bas moet baas zijn'): luidere, vollere bas en wobble; hardere kick en snare
     a, r = kick5(); jobs['mitch5_kick'] = (a, r, 60, None)
     a, r = snare5(); jobs['mitch5_snare'] = (a, r, 60, None)

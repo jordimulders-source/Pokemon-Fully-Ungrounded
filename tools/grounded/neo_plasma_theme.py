@@ -158,7 +158,7 @@ LEAD_REL, BASS_REL = 60, 50                                         # v11: korte
 # v12: de stemverdeler (welke noot blijft, hoe lang) rekent met de releases van v11, zodat noten, ritme en lengtes
 # exact v11 blijven; de nieuwe stemmen hebben dezelfde (of een kortere) release.
 V11_REL = {17: 90, 38: 50, 62: 110, 63: 110, 80: 60, 81: None, 82: None, 84: None, 85: 140, 86: 100, 87: 110,
-           88: 60, 89: 60, 90: 40, 91: 40, 92: 100, 127: None}
+           88: 60, 89: 60, 90: 60, 91: 40, 92: 100, 127: None}
 # v12 (Jordi: 'de noten heb je te pakken, maar de instrumenten klinken alsof een computer met een kapotte speaker
 # speelt; gewone Emerald-instrumenten'): alleen stock-samples uit de Emerald-voicegroups, eenvoudige ADSR, geen eigen
 # samples, geen bends. Basis = voicegroup vs_gym_leader.
@@ -187,14 +187,14 @@ VOICES = {
     STAB:     'voice_directsound 60, 0, %s, 255, 215, 40, 100' % ORGAN2,
     DSINE:    'voice_directsound 60, 0, %s, 255, 220, 200, 140' % ORGAN2,
     PLUCK:    'voice_directsound 60, 0, %s, 255, 205, 0, 110' % ORGAN2,
-    FARP_LO:  'voice_directsound 60, 0, %s, 255, 0, 255, 40' % ORGAN2,
+    FARP_LO:  'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',   # v12c: het arpeggio-thema op de trompet
     FARP_HI:  'voice_directsound 60, 0, %s, 255, 0, 255, 40' % ORGAN2,
     HOLD:     'voice_directsound 60, 0, %s, 255, 0, 255, 100' % ORGAN2,
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
 }
 # organ2 klinkt een octaaf onder de geschreven noot: deze sporen schrijven een octaaf hoger (klinkend = v11; de
 # orgelstoot stond in v11 al op organ2 en blijft zoals hij was)
-OCT_UP = (ORGAN, DSINE, PLUCK, FARP_LO, FARP_HI, HOLD)
+OCT_UP = (ORGAN, DSINE, PLUCK, FARP_HI, HOLD)
 SOUND_OFS = {p: -12 for p in OCT_UP + (STAB,)}
 # drumkit (noot -> regel); standaard GBA-samples in de GM-indeling (v8; v7 had 36-43 op een rij)
 KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, CRASH, SPLASH = 36, 38, 39, 40, 42, 46, 49, 55
@@ -239,7 +239,7 @@ ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 te
 # 127 en de rest x0,65 t.o.v. v11, gecorrigeerd voor het luidheidsverschil van de nieuwe sample (RMS eerste 80 ms;
 # organ2 -2,8 dB t.o.v. np_organ_sharp, +4,2 t.o.v. np_sine; fingered bass +1,5 t.o.v. np_bass_buzz; PSG-blokgolf
 # sustain 7 i.p.v. 12), -V060 -> -V095
-VOL = dict(lead=127, body=74, brass=63, brass_lo=53, organ=29, bass=71, sub=83, steel=23, arp=24, arpb=26,
+VOL = dict(lead=127, body=74, brass=63, brass_lo=53, organ=29, bass=71, sub=83, steel=23, arp=112, arpb=26,
            dsine=42, stab=29, drums=62)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 # v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
@@ -248,7 +248,7 @@ LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag a
 FAT_END = 22 * BAR
 # v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
 # (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
-LEAD_VOL = [(0, 127)]                         # v12: overal 127 (zie VOL)
+LEAD_VOL = [(0, 127), (LOOP0, 96)]            # v12: 127; v12c: vanaf het loopbegin wat terug, het arpeggio-thema voor
 VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
@@ -893,18 +893,18 @@ def build():
     rel.update({BASS: 120, BRASS: 120, BRASS_LO: 110, LEAD: 140, STAB: 100, PLUCK: 150})
     rel[BASS] = BASS_REL            # v11: de bas rekent met zijn echte (korte) release; zie BASS_LEN
     progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': PLUCK, 'brass_lo': BRASS_LO,
-             'arp': PLUCK, 'stab': STAB, 'dsine': DSINE}
+             'arp': FARP_LO, 'stab': STAB, 'dsine': DSINE}
     # v9: het arpeggio in de opening (maat 0-21) op de vette lead met een korte release (FARP: aanhouden en snel los
     # i.p.v. de tokkel van de blokgolf-pluk): een eigen partij met een eigen uitklinktijd, vlak vóór 'arp'
     parts['farp'] = [e for e in parts['arp'] if e[0] < FAT_END]
     parts['arp'] = [e for e in parts['arp'] if e[0] >= FAT_END]
     progs['farp'] = FARP_LO
-    rel[FARP_LO] = 40
+    rel[FARP_LO] = LEAD_REL         # v12c: trompet-release
     tail = {k: release_ticks(rel[p], TPB, BPM) for k, p in progs.items()}
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
-    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'farp', 'arp', 'brass_lo']
+    order = ['drums', 'lead', 'farp', 'arp', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'brass_lo']
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL
@@ -966,7 +966,9 @@ def build():
     song.loop = (LOOP0, END)
     # v12: lead op de trompet; < C3 op de synth bass (koper niet onder C3)
     lead_prog = lambda n, s_: FAT_LO if n < 48 else LEAD
-    arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
+    # v12c (Jordi: 'de iconische melodie vanaf 0:14 valt weg'): het arpeggio-thema (farp + arp) is de hoofdmelodie:
+    # overal op de trompet (FARP_LO), luid en vooraan in de stemverdeling
+    arp_prog = lambda n, s_: FARP_LO
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
     arp_notes = sorted(p['farp'] + p['arp'])
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]

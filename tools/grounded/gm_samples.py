@@ -24,28 +24,60 @@ SAMPLES = {
     'shaymin_nylon':    (24, 60, 1.4, 16000, None),
     'shaymin_flute':    (73, 72, 0.9, None, (0.35, 16)),
     'shaymin_clarinet': (71, 60, 0.9, None, (0.35, 8)),
+    # Battle! Magikarp (magikarp_theme.py); ('drum', n) = GM-drumkanaal 10, noot n
+    'magikarp_bassoon':   (70, 48, 1.2, 16000, None),
+    'magikarp_woodblock': (115, 72, 0.3, 22050, None),
+    'magikarp_vibraslap': (('drum', 58), 60, 1.1, 16000, None),
 }
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
     'gm_saw_lead': ('saw', 24),
+    'magikarp_kazoo': ('kazoo', 24),     # zoemende, nasale puls met formanten (kazoo)
+}
+# gesynthetiseerde eenmalige geluiden: naam -> (functie, samplerate)
+ONESHOTS = {
+    'magikarp_boing': ('boing', 16000),  # springveer/mondharp: 'bwoiiing'
 }
 
 
 def synth(kind, harm, per=64, cycles=4):
     t = np.arange(per * cycles) / per * 2 * np.pi
     a = np.zeros_like(t)
+    if kind == 'kazoo':
+        # kazoo: veel boventonen (zoem) met twee formanten rond de 4e en 9e harmonische (nasaal 'oe-ie')
+        for k in range(1, harm + 1):
+            amp = k ** -0.55 * (0.5 + np.exp(-((k - 4) / 1.6) ** 2) + 0.6 * np.exp(-((k - 9) / 2.5) ** 2))
+            a += amp * np.sin(k * t + 0.3 * k * k)
+        return a / np.abs(a).max() * 0.97, int(round(261.6256 * per))
     for k in range(1, harm + 1):
         roll = 1.0 if k <= harm // 2 else np.cos((k - harm // 2) / (harm // 2) * np.pi / 2) ** 2   # zachte bovenkant
         a += roll * np.sin(k * t) / k
     return a / np.abs(a).max() * 0.97, int(round(261.6256 * per))
 
 
+def oneshot(kind, rate):
+    if kind == 'boing':
+        # springveer: toon die snel omhoog schiet en met een trage, brede vibrato uitzwiept; boventonen = twang
+        n = int(rate * 0.75)
+        t = np.arange(n) / rate
+        f = 150 + 170 * (1 - np.exp(-t / 0.035)) + 55 * np.sin(2 * np.pi * 9 * t) * np.exp(-t / 0.35)
+        ph = 2 * np.pi * np.cumsum(f) / rate
+        a = np.sin(ph) + 0.55 * np.sin(2 * ph) * np.exp(-t / 0.12) + 0.3 * np.sin(3 * ph) * np.exp(-t / 0.08)
+        env = np.minimum(1, t / 0.004) * np.exp(-t / 0.22)
+        return a * env
+    raise ValueError(kind)
+
+
 def render(prog, note, dur):
     m = mido.MidiFile(ticks_per_beat=480)
     t = mido.MidiTrack(); m.tracks.append(t)
-    t.append(mido.Message('program_change', program=prog, time=0))
-    t.append(mido.Message('note_on', note=note, velocity=110, time=0))
-    t.append(mido.Message('note_off', note=note, velocity=0, time=int(dur * 960)))   # 120 bpm: 960 ticks/s
+    ch = 0
+    if isinstance(prog, tuple):          # ('drum', n): GM-drumkanaal, noot n
+        ch, note = 9, prog[1]
+    else:
+        t.append(mido.Message('program_change', program=prog, time=0))
+    t.append(mido.Message('note_on', channel=ch, note=note, velocity=110, time=0))
+    t.append(mido.Message('note_off', channel=ch, note=note, velocity=0, time=int(dur * 960)))   # 120 bpm: 960 ticks/s
     with tempfile.TemporaryDirectory() as d:
         mid, wav = os.path.join(d, 'n.mid'), os.path.join(d, 'n.wav')
         m.save(mid)
@@ -102,7 +134,7 @@ def main():
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
-        print('%-18s GM %3d noot %d, %d samples @ %d Hz' % (name, prog, note, len(a), rate))
+        print('%-18s GM %-10s noot %d, %d samples @ %d Hz' % (name, prog, note, len(a), rate))
     for name, (kind, harm) in WAVES.items():
         a, rate = synth(kind, harm)
         write_wav(OUT + name + '.wav', a, rate, 60, (0, len(a)))
@@ -110,6 +142,14 @@ def main():
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
         print('%-18s %s, loop %d samples @ %d Hz' % (name, kind, len(a), rate))
+    for name, (kind, rate) in ONESHOTS.items():
+        a = oneshot(kind, rate)
+        a = a / np.abs(a).max() * 0.97
+        write_wav(OUT + name + '.wav', a, rate, 60, None)
+        label = 'DirectSoundWaveData_' + name
+        if label + '::' not in inc:
+            inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
+        print('%-18s %s, %d samples @ %d Hz' % (name, kind, len(a), rate))
     open(DATA, 'w').write(inc)
 
 

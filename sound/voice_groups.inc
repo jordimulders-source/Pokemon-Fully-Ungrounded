@@ -7,6 +7,7 @@
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 .include "sound/voicegroups/drumsets/keccles.inc"
 .include "sound/voicegroups/drumsets/shaymin.inc"
+.include "sound/voicegroups/drumsets/magikarp.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -214,3 +215,4 @@
 .include "sound/voicegroups/grounded_neo_plasma.inc"
 .include "sound/voicegroups/grounded_keccles.inc"
 .include "sound/voicegroups/grounded_shaymin.inc"
+.include "sound/voicegroups/grounded_magikarp.inc"

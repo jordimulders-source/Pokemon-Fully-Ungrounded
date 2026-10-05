@@ -213,3 +213,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   het loopbegin (geen klik). Stemverdeler-trucs: gitaar wijkt vooraf voor de celesta-blaadjes (anders willekeurige gaten,
   22% -> 7%), pad per halve maat; bongo's (0,1 s-sample) niet als `drum_parts` tellen (drum_len 1 tel overschat ze),
   alleen de triangel. -V100: piek 87/127, RMS 2770.
+- Magikarp v1 (`magikarp_theme.py`, komisch, 150 bpm, Bes): **glijtonen via pitch bend werken** in mid2agb/m4a:
+  CC20 = BENDR (bereik in halve tonen), pitchwheel → BEND (alleen de MSB telt: ±64 = ±BENDR), CC1 = MOD (vibrato),
+  CC21 = LFOS. `Song.add(..., extra=[(tick, mido.Message)])` schrijft ze weg (na note-offs, vóór note-ons op dezelfde
+  tick). Zet de bend pas terug bij de volgende noot (niet bij de note-off: dan springt de uitklinkende staart omhoog).
+  In de .s staan na de eerste `BEND` alleen nog waarden (running status), dus `grep -c BEND` telt niet alles.
+  Eigen samples: fagot/woodblock/vibraslap uit FluidR3 (drumnoten via `('drum', n)` in gm_samples), kazoo als
+  gesynthetiseerde zoempuls met formanten, boing als synth-oneshot (`ONESHOTS`). Fluitje (sd90 whistle) + BENDR 12
+  = slide whistle. -V108: piek 89/127, RMS 2377.

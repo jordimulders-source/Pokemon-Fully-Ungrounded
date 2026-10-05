@@ -642,7 +642,7 @@ gSongTable::
 	song mus_grounded_vs_entei, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_raikou, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 636 (plaatshouder, andere muziekagent)
+	song mus_grounded_vs_magikarp, MUSIC_PLAYER_BGM, 0
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 637 (plaatshouder, andere muziekagent)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 638 (plaatshouder, andere muziekagent)
 	song mus_grounded_vs_shaymin, MUSIC_PLAYER_BGM, 0

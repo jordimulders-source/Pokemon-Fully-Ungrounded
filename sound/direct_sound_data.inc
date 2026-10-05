@@ -6483,3 +6483,21 @@ DirectSoundWaveData_shaymin_flute::
 	.align 2
 DirectSoundWaveData_shaymin_clarinet::
 	.incbin "sound/direct_sound_samples/grounded/shaymin_clarinet.bin"
+DirectSoundWaveData_magikarp_bassoon::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_bassoon.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_woodblock::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_woodblock.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_vibraslap::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_vibraslap.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_kazoo::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_kazoo.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_boing::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_boing.bin"

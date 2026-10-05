@@ -16641,3 +16641,9 @@ Jordi's eerste testrun:
   64 maten i.p.v. het hele bestand twee keer). Balans gemeten tegen de mp3 met `tools/grounded/balance_orig.py`:
   per octaafband zit de mix nu binnen ±1,5 dB van het origineel (v3: tot 9 dB te dun in het laag en 5 dB te schel).
 - A/B-fragment (origineel, dan v4) voor Jordi. 0 keer overlopen, piek 100/127.
+
+### [v.0.9.71] - Reuzen-Wailord hertekend
+- Jordi: "te dikke lijnen, lijkt niet echt op een Pokémon-sprite meer, misschien hertekenen i.p.v. uitrekken". De
+  Wailord is nu op ware grootte opnieuw getekend als Gen 3-sprite (`tools/grounded/giant_wailord_draw.py`): gladde
+  contour met een omlijning van 1 px, schaduwbanden, ovale rugvlekken, oog, witte onderkaak met groeven, borstvin,
+  staart, en een dunne schuimlijn. Vorm afgeleid van het follower-zijaanzicht; eigen palet van 13 kleuren.

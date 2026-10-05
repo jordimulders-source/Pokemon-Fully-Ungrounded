@@ -281,7 +281,7 @@
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_M                  270 // Project Grounded: Rocket-sidequest (FRLG)
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_F                  271 // Project Grounded: Rocket-sidequest (FRLG)
 #define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
-#define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord.py)
+#define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
 
 #define NUM_OBJ_EVENT_GFX                        274
 

@@ -653,6 +653,10 @@ gSongTable::
 	song mus_grounded_vs_victini, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_darkrai, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_genesect, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_roxanne, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_brawly, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wattson, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_flannery, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

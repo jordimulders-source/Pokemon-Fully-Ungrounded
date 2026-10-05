@@ -468,10 +468,10 @@ Ability: Levitate
 - Psychic
 - Lunar Blessing
 
-=== PARTNER_STADIUM_JUAN ===
-Name: JUAN
+=== PARTNER_STADIUM_WALLACE ===
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Back Pic: Brendan
@@ -636,38 +636,41 @@ Ability: Intimidate
 - Earthquake
 - Dragon Dance
 
-=== PARTNER_STADIUM_WALLACE ===
-Name: WALLACE
-Class: Champion
-Pic: Champion Wallace
+=== PARTNER_STADIUM_JUAN ===
+Name: Juan
+Class: Rival
+Pic: Leader Juan
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Basic Trainer
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_PREDICT_SWITCH
 
-Wailord
+Kingdra @ Haban Berry
 Level: 50
+Ability: Swift Swim 
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
-
-Ludicolo
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
-
-Milotic @ Sitrus Berry
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
+- Hydro Pump
 - Ice Beam
+- Dragon Pulse
+
+Walrein @ Leftovers
+Level: 50
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
+- Sheer Cold
+- Super Fang
+- Surf
+
+Relicanth @ Damp Rock
+Level: 50
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slack Off
+- Earthquake
+- Wave Crash
+- Head Smash
 
 === PARTNER_STADIUM_STEVEN ===
 Name: STEVEN

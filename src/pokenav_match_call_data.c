@@ -756,6 +756,10 @@ bool32 MatchCall_GetEnabled(u32 idx)
 
     if (idx >= ARRAY_COUNT(sMatchCallHeaders))
         return FALSE;
+    // Project Grounded: Steven is de kampioen en staat al als STEVEN (MC_HEADER_STEVEN) in de lijst; het oude
+    // kampioen-contact (vanilla Wallace) blijft als lege plek bestaan (rematch-tabel/flags), maar verschijnt nooit.
+    if (idx == MC_HEADER_OLD_CHAMPION)
+        return FALSE;
     matchCall = sMatchCallHeaders[idx];
     i = MatchCallGetFunctionIndex(matchCall);
     return sMatchCallGetEnabledFuncs[i](matchCall);

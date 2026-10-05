@@ -21,11 +21,11 @@ trainer op Route 129.
 | Personage | Constante(n) | Oude naam | Nummer | Verslagen-flag | Waar |
 |---|---|---|---|---|---|
 | Wallace (gymleider 8) | `TRAINER_WALLACE_1` | (zelfde) | 272 | 0x610 | Sootopolis Gym (`SootopolisCity_Gym_1F/scripts.inc`) |
-| Wallace (gym-rematches) | `TRAINER_WALLACE_2` … `TRAINER_WALLACE_5` | `TRAINER_JUAN_2` … `_5` | 798–801 | 0x81E–0x821 | rematch-tabel (`src/battle_setup.c`), Stadium |
+| Wallace (gym-rematches) | `TRAINER_WALLACE_2` … `TRAINER_WALLACE_5` | `TRAINER_JUAN_2` … `_5` | 798–801 | 0x81E–0x821 | rematch-tabel (`src/battle_setup.c`); `WALLACE_5` in het Stadium (`WALLACE`). Sinds v0.9.85 ook `Name: WALLACE` / `Pic: Champion Wallace` |
 | Steven (kampioen) | `TRAINER_CHAMPION_STEVEN` | (zelfde) | 855 | 0x857 | `EverGrandeCity_ChampionsRoom` |
 | Steven (post-game) | `TRAINER_STEVEN` | (zelfde) | 804 | 0x824 + `FLAG_DEFEATED_METEOR_FALLS_STEVEN` | Meteor Falls, Steven's Cave; Stadium |
-| Wallace (oud kampioenteam) | `TRAINER_WALLACE_OLD_CHAMPION` | `TRAINER_WALLACE` | 335 | 0x64F | niet meer in het verhaal; alleen het Stadium (`WALLACE`) |
-| Juan | `TRAINER_JUAN` | `TRAINER_REED` | 675 | 0x7A3 | Route 129 (`Route129_EventScript_Juan`), FRLG-gymleidermuziek |
+| Wallace (oud kampioenteam) | `TRAINER_WALLACE_OLD_CHAMPION` | `TRAINER_WALLACE` | 335 | 0x64F | ongebruikt (niet in het verhaal, sinds v0.9.85 ook niet meer in het Stadium) |
+| Juan | `TRAINER_JUAN` | `TRAINER_REED` | 675 | 0x7A3 | Route 129 (`Route129_EventScript_Juan`), FRLG-gymleidermuziek; Stadium (`JUAN`, op de oude poolplek van het vanilla-kampioenteam) |
 
 Bijbehorende constanten van gym 8 (Wallace):
 
@@ -49,8 +49,14 @@ Het oude kampioen-slot (vanilla: Wallace als kampioen):
 |---|---|---|---|
 | Rematch-index (Ever Grande) | `REMATCH_OLD_CHAMPION` | `REMATCH_WALLACE` | 77 |
 | Match Call geregistreerd | `FLAG_REGISTERED_OLD_CHAMPION` | `FLAG_REGISTERED_WALLACE` | 0x1A9 |
-| Match Call-contact | `MC_HEADER_OLD_CHAMPION`, `sOldChampion…`, `MatchCall_Text_OldChampion`, `MCFLAVOR(OldChampion_Wallace)` | `MC_HEADER_WALLACE`, `sWallace…`, `MatchCall_Text_Wallace`, `Champion_Wallace` | |
+| Match Call-contact | `MC_HEADER_OLD_CHAMPION`, `sOldChampion…`, `MatchCall_Text_OldChampion`, `MCFLAVOR(OldChampion_Wallace)` | `MC_HEADER_WALLACE`, `sWallace…`, `MatchCall_Text_Wallace`, `Champion_Wallace` | lege plek: `MatchCall_GetEnabled` geeft altijd FALSE (Steven staat al als `MC_HEADER_STEVEN` in de lijst) |
 | Steven in de kampioenszaal | `LOCALID_CHAMPIONS_ROOM_STEVEN` | `LOCALID_CHAMPIONS_ROOM_WALLACE` | object 1 |
+| Kampioenszaal-scripts | `EverGrandeCity_ChampionsRoom_EventScript_Steven`, `_Movement_PlayerApproachSteven`, `_Movement_StevenExit(Start)` | `…Wallace…` | tekstlabels `_Text_WallaceComeWithMe`/`_Text_WallaceWaitOutside` niet hernoemd (Steven-teksten) |
+| Steven in de Hall of Fame | `LOCALID_HALL_OF_FAME_STEVEN` (sprite `OBJ_EVENT_GFX_STEVEN`) | `LOCALID_HALL_OF_FAME_WALLACE` | object 1 |
+
+Battle Stadium (`tools/grounded/stadium/pool.py`): `WALLACE` = gymleider Wallace (`TRAINER_WALLACE_5`, partner
+`PARTNER_STADIUM_WALLACE`), `JUAN` = Juan van Route 129 (`TRAINER_JUAN`, `PARTNER_STADIUM_JUAN`), `STEVEN` = Steven
+(post-game-team `TRAINER_STEVEN`). Het oude kampioenteam van Wallace zit er niet meer in.
 
 **Let op, `REMATCH_WALLACE` en `FLAG_REGISTERED_WALLACE` betekenen nu gymleider Wallace**, niet meer het
 kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).

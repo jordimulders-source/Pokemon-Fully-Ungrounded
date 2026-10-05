@@ -104,7 +104,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v3 (ronde 7), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v2 (GBA-instructies), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
-| Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace goedgekeurd; Norman/Winona/Tate & Liza v2 | "Gymleiders" |
+| Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -430,3 +430,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   Spleeter-stem 'other'+'vocals' (veel schoner dan de mix) vond twee transcriptiefouten in binnenstemmen (G4 i.p.v. A4
   in maat 32-33, G3 in kwintakkoorden). Een mono lead + uitgedund arpeggio kapt aangehouden akkoordtonen af (107 tonen;
   het Bb-akkoord in maat 35 klonk zo als F): meet de dekking per bronnoot. Previews: Jordi's tijden + preview-start!
+- Winona/Tate & Liza v3 (Jordi: 'kermis/circus'): **oorzaak gemeten** (`kermis_check()` in `gym_remixes2.py` op v2): de
+  originele PSG-sporen 4/5 bleven op blokgolf en speelden de melodie een octaaf hóger (tot C7: 26-36 noten > C6, 21-36%
+  van hun noten boven de melodie), plus celesta/piano/buisklok/tamboerijn/pop-pluk/zaps, en 6-8% van de nootduur op E/A
+  (C-mixolydisch = vrolijk). v3: alleen melodie (+ B-motief spoor 4) en grondtonen blijven, modaal verduisterd (Winona
+  C-eolisch, Tate C-frygisch = het B-deel van het origineel), alle begeleiding nieuw; het script faalt op die vijf punten.
+  Referentie 'LSD' (Spleeter): 137 bpm, bas alleen op 16en 2-4, hats op alle 16en, leads 2,5 aanslagen/tel in D3-C#5.

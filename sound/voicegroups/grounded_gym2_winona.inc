@@ -93,17 +93,17 @@ voice_group grounded_gym2_winona
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 0, 255, 140  @ 89
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_7, 0, 7, 15, 2  @ 90
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 91
-	voice_square_1 60, 0, 0, 2, 0, 1, 11, 2  @ 92
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_celesta, 255, 0, 255, 175  @ 93
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_wpad_dom, 255, 0, 255, 140  @ 94
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_wpad_maj, 255, 0, 255, 140  @ 95
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_wpad_min, 255, 0, 255, 140  @ 96
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_wpad_sus, 255, 0, 255, 140  @ 97
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_wpad_5, 255, 0, 255, 140  @ 98
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 100  @ 99
-	voice_directsound 60, 0, DirectSoundWaveData_gym2_pop_pluck, 255, 0, 255, 150  @ 100
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 165, 90, 190  @ 101
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 102
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_saw, 255, 0, 255, 140  @ 92
+	voice_square_1 60, 0, 0, 1, 0, 1, 9, 1  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_saw_dark, 255, 0, 255, 140  @ 94
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_reese, 255, 0, 255, 110  @ 95
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_gym2_saw, 0, 0, 15, 0  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_stab_min, 255, 0, 255, 90  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_stab_maj, 255, 0, 255, 90  @ 98
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_stab_sus, 255, 0, 255, 90  @ 99
+	voice_directsound 60, 0, DirectSoundWaveData_gym2_w_stab_5, 255, 0, 255, 90  @ 100
+	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 101
+	voice_noise 60, 0, 0, 7, 0, 15, 2  @ 102
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 103
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 104
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 105

@@ -7772,3 +7772,55 @@ DirectSoundWaveData_np_lead_fat::
 	.align 2
 DirectSoundWaveData_np_lead_fat_lo::
 	.incbin "sound/direct_sound_samples/grounded/np_lead_fat_lo.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_saw::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_saw.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_saw_dark::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_saw_dark.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_reese::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_reese.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_stab_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_stab_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_stab_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_stab_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_stab_sus::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_stab_sus.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_stab_5::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_stab_5.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_w_snare::
+	.incbin "sound/direct_sound_samples/grounded/gym2_w_snare.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_tl_pluck::
+	.incbin "sound/direct_sound_samples/grounded/gym2_tl_pluck.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_tl_pluck_b::
+	.incbin "sound/direct_sound_samples/grounded/gym2_tl_pluck_b.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_tl_lead::
+	.incbin "sound/direct_sound_samples/grounded/gym2_tl_lead.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_tl_pad_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_tl_pad_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_tl_pad_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_tl_pad_maj.bin"

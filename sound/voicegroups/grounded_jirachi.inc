@@ -86,7 +86,7 @@ voice_group grounded_jirachi
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_vox, 255, 0, 255, 200  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
 	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_dark, 255, 0, 255, 110  @ 88

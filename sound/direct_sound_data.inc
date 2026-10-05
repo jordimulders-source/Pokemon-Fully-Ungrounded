@@ -6787,3 +6787,7 @@ DirectSoundWaveData_jirachi_sawbass::
 	.align 2
 DirectSoundWaveData_jirachi_kick::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_kick.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_vox::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_vox.bin"

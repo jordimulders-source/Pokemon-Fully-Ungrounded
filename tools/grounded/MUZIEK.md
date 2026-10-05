@@ -329,3 +329,14 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Jordi's Jirachi-idee was **geen tempo-opbouw van de bestaande delen**, maar een **tussenstuk met lang uitgerekte
   'wahhh'-vocalen boven een snelle beat**, daarna terug. Vraag bij een vaag idee door of geef twee varianten.
 
+- Heatran v3 (Jordi: 'nog steeds surf rock/ska-punk/60s rock', strikte briefing Kyuss/Sleep): **een genregevoel eerst
+  meten, dan pas klank.** De v2-mix was al vrij donker (zwaartepunt 400-1000 Hz); het 'surf/ska' zat vooral in het
+  ritme en de wendingen: 100 bpm, korte riffstoten (gem. 0,78 tel; losse noten 0,07 tel na detach), 16e-baslijn (2,9
+  aanslagen/s), kick 60% naast de tel, ghost notes, hihat-8en met open hihat op de laatste 'en', chromatische
+  opstapjes (G-Bb-B -> C). En in de klank: Muff mét middenboost (= 60s-fuzz-honk), fuzzlead 46% > 2 kHz, schone GM 27
+  (twang) in het middenstuk. v3: 84 bpm, aangehouden powerchords (gem. 1,2 tel), slides i.p.v. opstapjes, bas 1,2
+  aanslagen/s, bekkens 0% naast de tel (kwarten), snare op 3 in de refreinen; fuzzketen = schone gitaar -> Muff
+  (middenscoop) -> SVT/kast (lage shelf, steile lowpass 3,2 kHz) in `heatran_samples.py`; FluidR3 'Power'-kit
+  (programma 16 op kanaal 10). Meetscripts: zwaartepunt / % < 500 Hz / % > 2 kHz per sectie, nootlengtes en
+  off-beat-aandeel per spoor. **Dezelfde toonhoogte mag in één spoor niet overlappen** (arpeggio's die doorklinken):
+  de note-off van de eerste kapt de tweede af; inkorten tot de volgende aanslag. -V090: piek 107/127, RMS 2938.

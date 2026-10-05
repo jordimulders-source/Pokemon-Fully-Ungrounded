@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
-"""Project Grounded: "Battle! Heatran" v2, eigen compositie in échte stoner rock (Kyuss 'Green Machine'/'Thumb'/
-'Gardenia', vroege Queens of the Stone Age, Sleep, Fu Manchu). Jordi over v1: 'geen stoner, eerder Bowser's Castle-
-metal'. v2 volgt zijn beschrijving punt voor punt:
-  - strofen: alleen fuzzbas + drums (groovende, melodische baslijn, losse drums met hihat/ride); in de 2e helft
-    zacht de refreinriff palm-muted op de gitaar
-  - refreinen: zwaar, traag, headbangend: halftempo (snare op tel 3), de refreinriff voluit in drop C met dikke
-    'Big Muff'-fuzz, bas en gitaren unisono, crash/open hihat, syncopen en pauzes in de riff
-  - rustig middenstuk: bas + getokkelde cleane gitaararpeggio's (dorisch, woestijn), dan opbouw terug naar de riff
-  - warm, bluesy, C-mineur-pentatonisch + blue note Gb; groove boven drama
-100 bpm (refreinen voelen als 50: halftempo), drop C (laagste powerchord = C2).
+"""Project Grounded: "Battle! Heatran" v3, eigen compositie in desert/stoner rock & heavy psych (Kyuss 'Welcome to
+Sky Valley'/'Gardenia', Fu Manchu, Truckfighters, Sleep, Electric Wizard).
 
-  maat 0-1   intro: fuzz-powerchord C zwelt aan + hoge feedback, lava-rommel op de floor tom
-  maat 2-4   de refreinriff één keer voluit (statement), maat 4 = de stop (akkoord laten hangen, baspickup)
-Loop (48 maten, 115 s):
-  V1  5-12   strofe: bas + drums (hihat); maat 9-12 de refreinriff zacht palm-muted links
-  R1 13-20   refrein: riff voluit, halftempo, crash/open hihat; maat 20 = stop
-  V2 21-28   strofe 2: bas + drums (ride), palm-muted riff links en rechts, zacht
-  R2 29-36   refrein 2: riff + de leadgitaar 'zingt' erboven
-  M  37-44   middenstuk: bas + cleane arpeggio's, ride/sidestick; 41-44 opbouw (toms, feedback, snareroffel)
-  R3 45-52   refrein 3: riff + bluesy solo met bends; maat 52 = stop -> terug naar de strofe (= maat 4 -> 5)
-Gitaren: één sample = een complete fuzz-powerchord (C2+G2+C3 samen door FluidR3 + eigen Big Muff-fuzz) = 1 kanaal
-per akkoord; links/rechts, de rechter +9 cent (dubbele opname). Palm-mute = eigen sample (GM 28 door dezelfde fuzz).
-Fuzzbas met octaaffuzz + schoon laag (blend). Dynamiek met CC7 per spoor per sectie.
+Jordi over v2: 'klinkt te veel als surf rock, ska-punk of upbeat 60s rock'. Gemeten oorzaken in v2 (zie MUZIEK.md):
+  - ritme: 100 bpm met een riff vol korte 16e-stoten (powerchords gem. 0,78 tel, losse noten 0,07 tel na detach),
+    een drukke melodische 16e-baslijn (2,9 aanslagen/s, 70% <= een 8e), kick 60% naast de tel, ghost notes,
+    hihat in 8en met een open hihat op de laatste 'en' = upbeat rock/ska;
+  - rock-'n-roll-wendingen: chromatische opstapjes (G-Bb-B -> C, Eb-D, Gb-F-Eb): 21% chromatische stappen in de riff;
+  - klank: 'Big Muff' met middenboost 150-700 Hz (= 60s-fuzz-honk), fuzzlead met 46% energie > 2 kHz, schone
+    middenstukgitaar (GM 27) = twang.
+v3 volgt de briefing strikt:
+  - C standard / drop C, extreem laag; fuzz = schone gitaar door eigen 'Big Muff' (middenscoop) + 'SVT/Sunn + kast'
+    (heatran_samples.py): donker, wollig, geen treble;
+  - 84 bpm; refreinen halftempo (snare op 3 = 42 bpm-gevoel), strofen trage zware groove; bekkens alleen óp de tellen
+    (kwarten, open en gruizig), geen 8e-hihat, geen off-beats, geen ghost notes;
+  - riffs: lange aangehouden powerchords, C-mineur-pentatonisch + b5 (Gb), b6 (Ab) als doomkleur, slides i.p.v.
+    chromatische opstapjes; bas (SVT-fuzz) verdubbelt de riff unisono;
+  - vorm (Jordi): strofen alleen bas + drums, later de refreinriff palm-muted (lange gedempte 8e-chugs); refreinen
+    zwaar en headbangend; hard/zacht; rustig middenstuk met bas en getokkel (warme, donkere gitaar), dan opbouw.
+
+  maat 0-1   intro: fuzz-powerchord C zwelt aan + feedback, floor tom rommelt in 8en
+  maat 2-4   de refreinriff als statement (2 maten), maat 4 = de stop (akkoord hangt, feedback, baspickup)
+Loop (48 maten, 137 s):
+  V1  5-12   strofe: bas + drums (halfopen hihat in kwarten); 9-12 de refreinriff palm-muted, zacht links
+  R1 13-20   refrein: riff voluit, halftempo, crash/china om de 2 maten, open hihat op de tellen; 20 = stop
+  V2 21-28   strofe 2: bas (variant met octaafsprong) + drums (ride in kwarten); palm-mute links en rechts
+  R2 29-36   refrein 2: riff + de leadgitaar 'zingt' erboven (lange noten, bends)
+  M  37-44   middenstuk: bas + getokkelde warme gitaar, ride zacht; 41-44 opbouw (floor tom, feedback, roffel)
+  R3 45-52   refrein 3: riff + bluesy solo; 52 = stop -> terug naar de strofe (= maat 4 -> 5)
 Samples: tools/grounded/heatran_samples.py. Gebruikt musiclib.py; zie MUZIEK.md. Gebruik: python3 tools/grounded/heatran_theme.py"""
 import os, sys
 import mido
@@ -30,23 +36,24 @@ from musiclib import dedupe, detach, allocate, releases, release_ticks
 
 OUT = 'sound/songs/midi/mus_grounded_vs_heatran.mid'
 VG = 'grounded_heatran'
-TPB, BPM = 96, 100
+TPB, BPM = 96, 84
 S = TPB // 4                   # een 16e
+E = TPB // 2                   # een 8e
 BAR = TPB * 4
-LAY = 4                        # snare iets achter de tel (laid back)
-CLEAN, MUTE, SINGLE, POWER, LEAD, BASS, DRUMS = 27, 28, 29, 30, 31, 34, 127
+LAY = 3                        # snare iets achter de tel (lome groove)
+CLEAN, MUTE, POWER, LEAD, BASS, DRUMS = 27, 28, 30, 31, 34, 127
+R_BEND = 3 * 128               # rechter gitaar ±9 cent hoger (dubbele opname)
 # eigen drumkit (drumsets/heatran.inc, vanaf noot 36)
-KICK, SNARE, OHH, RIDE, FTOM, MTOM, CRASH, CRASH2, CHH, STICK, BELL = range(36, 47)
-DRUM_REL = {KICK: 0, SNARE: 0, OHH: 200, RIDE: 210, FTOM: 0, MTOM: 0, CRASH: 220, CRASH2: 220, CHH: 0, STICK: 0,
-            BELL: 200}
-DRUM_LEN = {KICK: TPB // 2, SNARE: TPB * 3 // 4, OHH: TPB // 2 - 6, RIDE: TPB, FTOM: TPB // 2, MTOM: TPB // 2,
-            CRASH: TPB * 2, CRASH2: TPB * 2, CHH: S, STICK: S, BELL: TPB // 2}
+KICK, SNARE, OHH, RIDE, FTOM, MTOM, CRASH, CHINA, STICK, BELL, HHALF = range(36, 47)
+DRUM_REL = {KICK: 0, SNARE: 0, OHH: 215, RIDE: 215, FTOM: 0, MTOM: 0, CRASH: 225, CHINA: 220, STICK: 0, BELL: 200,
+            HHALF: 0}
+DRUM_LEN = {KICK: TPB // 2, SNARE: TPB, OHH: TPB, RIDE: TPB, FTOM: TPB // 2, MTOM: TPB // 2, CRASH: TPB * 3,
+            CHINA: TPB * 2, STICK: S, BELL: TPB // 2, HHALF: TPB // 3}
 
 INTRO_RIFF, STOP0 = 2, 4
 V1, R1, V2, R2, M, R3, END = 5, 13, 21, 29, 37, 45, 53      # secties (maat); loop = maat 5-53
 
-N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'Gb': 6, 'G': 7, 'Ab': 8, 'A': 9,
-     'Bb': 10, 'B': 11}
+N = {'C': 0, 'Db': 1, 'D': 2, 'Eb': 3, 'E': 4, 'F': 5, 'Gb': 6, 'G': 7, 'Ab': 8, 'A': 9, 'Bb': 10, 'B': 11}
 
 
 def p(name):
@@ -54,30 +61,28 @@ def p(name):
     return 12 * (int(name[-1]) + 1) + N[name[:-1]]
 
 
-# ---- de refreinriff (drop C): (16e, lengte in 16en, 'P' powerchord | 'N' losse noot, grondtoon) ---------------
-# syncopen (de Eb vóór tel 3, de Gb op de 'e' van 4) en pauzes (R2: tel 4 leeg, dan een pickup)
-RIFF_A = [(0, 5, 'P', 'C2'), (6, 1, 'N', 'C2'), (7, 3, 'P', 'Eb2'), (10, 2, 'P', 'F2'), (12, 1, 'N', 'C2'),
-          (13, 2, 'P', 'Gb2'), (15, 1, 'N', 'F2')]
-RIFF_B = [(0, 3, 'P', 'G2'), (3, 3, 'P', 'F2'), (6, 2, 'P', 'Eb2'), (8, 4, 'P', 'C2'), (14, 1, 'N', 'Eb2'),
-          (15, 1, 'N', 'D2')]
-RIFF_TURN = [(0, 3, 'P', 'Ab2'), (3, 1, 'N', 'Ab2'), (4, 2, 'P', 'Bb2'), (6, 2, 'N', 'Bb2'), (8, 6, 'P', 'C3'),
-             (14, 1, 'N', 'Bb2'), (15, 1, 'N', 'G2')]
+# ---- de refreinriff (drop C): (16e, lengte in 16en, soort, grondtoon) ------------------------------------------
+# 'P' = aangehouden powerchord, 'S' = powerchord die erin glijdt (slide van 2 halve tonen eronder), 'M' = één
+# gedempte chug (palm-mute) tussen twee akkoorden. Lange, doorklinkende akkoorden; geen chromatische opstapjes.
+RIFF_A1 = [(0, 6, 'P', 'C2'), (6, 2, 'M', 'C2'), (8, 4, 'P', 'Eb2'), (12, 4, 'S', 'F2')]
+RIFF_A2 = [(0, 2, 'P', 'Gb2'), (2, 2, 'P', 'F2'), (4, 4, 'P', 'Eb2'), (8, 8, 'P', 'C2')]
+RIFF_B1 = [(0, 6, 'P', 'C2'), (6, 2, 'M', 'C2'), (8, 4, 'P', 'G2'), (12, 4, 'S', 'Bb2')]
+RIFF_B2 = [(0, 6, 'P', 'Ab2'), (6, 2, 'P', 'G2'), (8, 8, 'P', 'F2')]
+RIFF_TURN = [(0, 8, 'P', 'Ab2'), (8, 8, 'S', 'Bb2')]
 RIFF_STOP = [(0, 8, 'P', 'C2')]                                    # akkoord hangt 2 tellen, dan stilte
-STOP_BASS = [(0, 8, 'C2'), (12, 2, 'G1'), (14, 1, 'Bb1'), (15, 1, 'B1')]   # chromatische pickup naar de strofe
-CHORUS = [RIFF_A, RIFF_B, RIFF_A, RIFF_B, RIFF_A, RIFF_B, RIFF_TURN, RIFF_STOP]
+STOP_BASS = [(0, 8, 'C2'), (12, 2, 'G1'), (14, 2, 'Bb1')]          # pentatonische pickup naar de strofe
+CHORUS = [RIFF_A1, RIFF_A2, RIFF_A1, RIFF_A2, RIFF_B1, RIFF_B2, RIFF_TURN, RIFF_STOP]
 
-# ---- strofe: de melodische fuzzbas (16e, lengte, noot) -------------------------------------------------------------
-VB_A = [(0, 3, 'C2'), (3, 1, 'C2'), (4, 2, 'Eb2'), (6, 1, 'C2'), (7, 1, 'F2'), (8, 2, 'G2'), (10, 1, 'Bb2'),
-        (11, 1, 'G2'), (12, 2, 'C3'), (14, 1, 'Bb2'), (15, 1, 'G2')]
-VB_B = [(0, 3, 'F2'), (3, 1, 'F2'), (4, 1, 'Ab2'), (5, 1, 'F2'), (6, 2, 'Gb2'), (8, 3, 'F2'), (11, 1, 'Eb2'),
-        (12, 3, 'C2'), (15, 1, 'Bb1')]
-VB_C = [(0, 3, 'C2'), (3, 1, 'C2'), (4, 2, 'Eb2'), (6, 1, 'C2'), (7, 1, 'F2'), (8, 2, 'G2'), (10, 1, 'Bb2'),
-        (11, 1, 'C3'), (12, 1, 'Eb3'), (13, 1, 'C3'), (14, 1, 'Bb2'), (15, 1, 'G2')]       # variant (hoger loopje)
-VB_TURN = [(0, 3, 'C2'), (3, 1, 'C2'), (4, 2, 'Eb2'), (6, 2, 'F2'), (8, 2, 'Gb2'), (10, 2, 'G2'), (12, 4, 'Bb2')]
-VERSE_BASS = [VB_A, VB_B, VB_A, VB_B, VB_C, VB_B, VB_A, VB_TURN]
-VERSE2_BASS = [VB_C, VB_B, VB_A, VB_B, VB_C, VB_B, VB_C, VB_TURN]
+# ---- strofe: de fuzzbas-groove (16e, lengte, noot); trage, aangehouden noten ------------------------------------
+VB_1 = [(0, 6, 'C2'), (6, 2, 'C2'), (8, 2, 'Eb2'), (10, 2, 'F2'), (12, 4, 'G2')]
+VB_2 = [(0, 3, 'F2'), (3, 1, 'Gb2'), (4, 4, 'F2'), (8, 4, 'Eb2'), (12, 4, 'C2')]
+VB_3 = [(0, 6, 'C2'), (6, 2, 'C3'), (8, 2, 'Bb2'), (10, 2, 'G2'), (12, 4, 'F2')]      # Kyuss-octaafsprong
+VB_4 = [(0, 4, 'Eb2'), (4, 2, 'F2'), (6, 2, 'Eb2'), (8, 6, 'C2'), (14, 2, 'Bb1')]
+VB_T = [(0, 8, 'G1'), (8, 8, 'Bb1')]                                # naar het refrein
+VERSE_BASS = [VB_1, VB_2, VB_1, VB_4, VB_1, VB_2, VB_1, VB_T]
+VERSE2_BASS = [VB_1, VB_2, VB_3, VB_4, VB_1, VB_2, VB_3, VB_T]
 
-# ---- middenstuk: cleane arpeggio's (8en) en de bas ------------------------------------------------------------------
+# ---- middenstuk: getokkelde warme gitaar (8en, laten doorklinken) en de bas -----------------------------------
 ARP = [['C3', 'G3', 'Bb3', 'D4', 'Eb4', 'D4', 'Bb3', 'G3'],      # Cm9
        ['C3', 'G3', 'Bb3', 'D4', 'Eb4', 'D4', 'Bb3', 'G3'],
        ['F2', 'C3', 'A3', 'Eb4', 'G4', 'Eb4', 'A3', 'C3'],       # F9 (dorisch: de woestijn-IV)
@@ -85,39 +90,32 @@ ARP = [['C3', 'G3', 'Bb3', 'D4', 'Eb4', 'D4', 'Bb3', 'G3'],      # Cm9
        ['Ab2', 'Eb3', 'G3', 'C4', 'Eb4', 'C4', 'G3', 'Eb3'],     # Abmaj7
        ['Bb2', 'F3', 'Bb3', 'D4', 'F4', 'D4', 'Bb3', 'F3'],      # Bb
        ['C3', 'G3', 'C4', 'Eb4', 'G4', 'Eb4', 'C4', 'G3'],       # Cm
-       ['G2', 'D3', 'F3', 'B3', 'Bb3', 'B3', 'D4', 'F4']]        # G7#9 -> refrein
-MID_BASS = [[(0, 12, 'C2'), (12, 2, 'Bb1'), (14, 2, 'G1')],
-            [(0, 8, 'C2'), (8, 4, 'Eb2'), (12, 4, 'G2')],
-            [(0, 12, 'F2'), (12, 2, 'Eb2'), (14, 2, 'C2')],
-            [(0, 8, 'F2'), (8, 4, 'A2'), (12, 2, 'C3'), (14, 2, 'A2')],
-            [(0, 12, 'Ab1'), (12, 4, 'Eb2')],
-            [(0, 12, 'Bb1'), (12, 4, 'F2')],
-            [(0, 6, 'C2'), (6, 2, 'C2'), (8, 4, 'Eb2'), (12, 4, 'G2')],
-            [(0, 4, 'G1'), (4, 2, 'G1'), (6, 2, 'Bb1'), (8, 2, 'B1'), (10, 2, 'D2'), (12, 2, 'F2'), (14, 2, 'Ab2')]]
+       ['G2', 'D3', 'F3', 'Bb3', 'D4', 'Bb3', 'F3', 'D3']]       # Gm7 -> refrein
+MID_BASS = [[(0, 16, 'C2')], [(0, 12, 'C2'), (12, 4, 'Bb1')],
+            [(0, 16, 'F2')], [(0, 12, 'F2'), (12, 4, 'Eb2')],
+            [(0, 16, 'Ab1')], [(0, 16, 'Bb1')],
+            [(0, 16, 'C2')], [(0, 8, 'G1'), (8, 8, 'Bb1')]]
 
 # ---- leadgitaar: (16e, lengte, noot, extra) ; 'b' = bend van 2 halve tonen eronder, 'v' = vibrato ----------------
-SING = [   # R2: de 'zang'-melodie (John Garcia) op de leadgitaar, C-mineur-pentatonisch
-    [(2, 2, 'G4', ''), (4, 6, 'Bb4', 'v'), (10, 2, 'G4', ''), (12, 4, 'F4', '')],
-    [(0, 8, 'G4', 'bv'), (10, 2, 'Eb4', ''), (12, 4, 'C4', '')],
-    [(2, 2, 'G4', ''), (4, 6, 'Bb4', 'v'), (10, 2, 'C5', ''), (12, 4, 'Bb4', '')],
+SING = [   # R2: de 'zang'-melodie (John Garcia) op de leadgitaar, C-mineur-pentatonisch, lange noten
+    [(4, 4, 'G4', ''), (8, 8, 'Bb4', 'v')],
+    [(0, 8, 'G4', 'bv'), (10, 2, 'Eb4', ''), (12, 4, 'C4', 'v')],
+    [(4, 4, 'G4', ''), (8, 6, 'Bb4', 'v'), (14, 2, 'C5', '')],
     [(0, 12, 'G4', 'v')],
-    [(2, 2, 'C5', ''), (4, 6, 'Eb5', 'v'), (10, 2, 'C5', ''), (12, 4, 'Bb4', '')],
-    [(0, 8, 'C5', 'bv'), (8, 4, 'Bb4', ''), (12, 4, 'G4', '')],
-    [(2, 2, 'F4', ''), (4, 4, 'G4', ''), (8, 4, 'Bb4', ''), (12, 4, 'C5', '')],
-    [(0, 6, 'G4', 'v'), (6, 2, 'F4', ''), (8, 8, 'C4', 'v')],
+    [(4, 4, 'C5', ''), (8, 8, 'Eb5', 'v')],
+    [(0, 8, 'C5', 'bv'), (8, 4, 'Bb4', ''), (12, 4, 'G4', 'v')],
+    [(0, 8, 'F4', 'v'), (8, 8, 'G4', 'bv')],
+    [(0, 12, 'C4', 'v')],
 ]
 SOLO = [
-    [(0, 2, 'G4', ''), (2, 2, 'Bb4', ''), (4, 4, 'C5', 'b'), (8, 2, 'Bb4', ''), (10, 2, 'G4', ''), (12, 4, 'F4', 'v')],
-    [(0, 2, 'G4', ''), (2, 1, 'F4', ''), (3, 1, 'Eb4', ''), (4, 4, 'C4', 'v'), (10, 2, 'Eb4', ''), (12, 2, 'F4', ''),
-     (14, 2, 'Gb4', '')],
+    [(0, 4, 'G4', ''), (4, 4, 'C5', 'b'), (8, 2, 'Bb4', ''), (10, 2, 'G4', ''), (12, 4, 'F4', 'v')],
+    [(0, 4, 'G4', 'b'), (4, 2, 'F4', ''), (6, 2, 'Eb4', ''), (8, 8, 'C4', 'v')],
     [(0, 6, 'G4', 'bv'), (6, 2, 'Bb4', ''), (8, 2, 'C5', ''), (10, 2, 'Eb5', ''), (12, 4, 'C5', 'v')],
-    [(0, 2, 'Bb4', ''), (2, 2, 'G4', ''), (4, 2, 'Bb4', ''), (6, 2, 'G4', ''), (8, 8, 'F4', 'v')],
-    [(0, 1, 'C5', ''), (1, 1, 'Bb4', ''), (2, 1, 'G4', ''), (3, 1, 'F4', ''), (4, 1, 'G4', ''), (5, 1, 'Bb4', ''),
-     (6, 1, 'C5', ''), (7, 1, 'Eb5', ''), (8, 4, 'F5', 'bv'), (12, 2, 'Eb5', ''), (14, 2, 'C5', '')],
-    [(0, 1, 'Eb5', ''), (1, 1, 'C5', ''), (2, 1, 'Bb4', ''), (3, 1, 'C5', ''), (4, 1, 'Eb5', ''), (5, 1, 'C5', ''),
-     (6, 1, 'Bb4', ''), (7, 1, 'G4', ''), (8, 4, 'Bb4', ''), (12, 4, 'G4', 'v')],
-    [(0, 8, 'C5', 'bv'), (8, 2, 'Eb5', ''), (10, 2, 'F5', ''), (12, 4, 'G5', 'b')],
-    [(0, 8, 'C5', 'v'), (8, 8, 'C5', 'v')],                     # de stop: lang uitzingen boven het hangende akkoord
+    [(0, 2, 'Bb4', ''), (2, 2, 'G4', ''), (4, 2, 'Gb4', ''), (6, 2, 'F4', ''), (8, 8, 'Eb4', 'v')],
+    [(0, 2, 'C5', ''), (2, 2, 'Eb5', ''), (4, 4, 'F5', 'bv'), (8, 2, 'Eb5', ''), (10, 2, 'C5', ''), (12, 4, 'Bb4', '')],
+    [(0, 8, 'C5', 'bv'), (8, 2, 'Bb4', ''), (10, 2, 'G4', ''), (12, 4, 'Gb4', 'v')],
+    [(0, 8, 'F4', 'bv'), (8, 8, 'G4', 'bv')],
+    [(0, 12, 'C5', 'v')],                                     # de stop: lang uitzingen boven het hangende akkoord
 ]
 
 
@@ -132,9 +130,9 @@ def bass_note(n):
 
 class Parts:
     def __init__(self):
-        self.n = {k: [] for k in ('pwrL', 'pwrR', 'sglL', 'sglR', 'muteL', 'muteR', 'clean', 'bass', 'lead', 'fb',
-                                  'kick', 'snare', 'hat', 'ride', 'tom', 'crash')}
-        self.fx = {k: [] for k in self.n}     # (tick, 'vol'|'mod'|'bend', waarde) per spoor; 'vol' = CC7 in %
+        self.n = {k: [] for k in ('pwrL', 'pwrR', 'muteL', 'muteR', 'clean', 'bass', 'lead', 'fb',
+                                  'kick', 'snare', 'cym', 'tom')}
+        self.fx = {k: [] for k in list(self.n) + ['drums']}   # (tick, 'vol'|'mod'|'bend', waarde); 'vol' = CC7 in %
 
     def add(self, part, start, length, note, vel):
         self.n[part].append([int(start), int(start + length), note, vel])
@@ -144,136 +142,161 @@ class Parts:
             self.fx[k].append((bar * BAR, 'vol', pct))
 
 
+def slide(P, part, s, cents=2):
+    """In de noot glijden: begint `cents` halve tonen lager, in een 8e omhoog (pitchwheel; bereik 2 halve tonen)."""
+    for k in range(0, 7):
+        P.fx[part].append((s + k * E // 6, 'bend', min(8191, int(8192 * (k / 6 - 1)))))
+
+
 def riff(P, bar, pattern, vel=112, guitars=True, bass=True, right=True):
     for st, ln, kind, nm in pattern:
         s = bar * BAR + st * S
-        acc = 10 if st in (0, 8) else (0 if kind == 'P' else -12)
+        acc = 8 if st in (0, 8) else 0
         if guitars:
-            side = ('L', 'R') if right else ('L',)
-            for sd in side:
-                P.add(('pwr' if kind == 'P' else 'sgl') + sd, s, ln * S, p(nm), vel + acc - (6 if sd == 'R' else 0))
+            for sd in (('L', 'R') if right else ('L',)):
+                if kind == 'M':
+                    P.add('mute' + sd, s, ln * S, p(nm), 116 - (4 if sd == 'R' else 0))
+                else:
+                    P.add('pwr' + sd, s, ln * S, p(nm), vel + acc - (6 if sd == 'R' else 0))
+                    if kind == 'S':
+                        slide(P, 'pwr' + sd, s)
         if bass:
-            P.add('bass', s, ln * S, bass_note(p(nm)), 116 + (8 if st in (0, 8) else 0))
+            P.add('bass', s, ln * S, bass_note(p(nm)), 114 + (8 if st in (0, 8) else 0))
 
 
 def palm_mute(P, bar, pattern, sides=('L',), vel=104):
-    """De refreinriff gedempt: elke noot als korte chug, lange noten herhaald op elke 8e (zoals een echte palm-mute)."""
+    """De refreinriff gedempt: elke akkoordnoot als gedempte chugs op elke 8e, zolang de noot duurt."""
     for st, ln, kind, nm in pattern:
         for k in range(0, ln, 2):
             s = bar * BAR + (st + k) * S
             for sd in sides:
-                P.add('mute' + sd, s, S + S // 2, p(nm) if p(nm) <= p('G2') else p(nm) - 12,
-                      vel + (10 if st + k in (0, 8) else 0) - (4 if sd == 'R' else 0))
+                P.add('mute' + sd, s, E, p(nm), vel + (10 if st + k in (0, 8) else 0) - (4 if sd == 'R' else 0))
 
 
 def lead(P, bar, phrase, vel=118, part='lead'):
     for st, ln, nm, fx in phrase:
         s = bar * BAR + st * S
-        n = p(nm)
-        if 'b' in fx:                                       # bend: begin 2 halve tonen lager, in een 16e omhoog
-            P.add(part, s, ln * S, n - 2, vel)
+        P.add(part, s, ln * S, p(nm) - (2 if 'b' in fx else 0), vel)
+        if 'b' in fx:                                       # bend: begint 2 halve tonen lager, in een 8e omhoog
             for k in range(1, 7):
-                P.fx[part].append((s + k * S // 6, 'bend', min(8191, int(8192 * k / 6))))
-        else:
-            P.add(part, s, ln * S, n, vel)
+                P.fx[part].append((s + k * E // 6, 'bend', min(8191, int(8192 * k / 6))))
         if 'v' in fx and ln >= 4:                           # vertraagd vibrato (na een 8e)
-            P.fx[part].append((s + 2 * S, 'mod', 9))
+            P.fx[part].append((s + E, 'mod', 8))
 
 
 def verse_drums(P, bar, i, cym='hat'):
-    """Strofe: vol tempo, los en laid back: kick, snare op 2 en 4, ghost notes, hihat of ride in 8en."""
+    """Strofe: trage zware groove. Kick op 1 (+ één 8e-duw), snare op 2 en 4, bekken alleen op de tellen."""
     b = bar * BAR
-    kicks = (0, 7, 10) if i % 2 == 0 else (0, 3, 10, 13)
+    kicks = (0, 6, 8) if i % 2 == 0 else (0, 8, 10)
     for k in kicks:
-        P.add('kick', b + k * S, DRUM_LEN[KICK], KICK, 100 if k == 0 else 88)
+        P.add('kick', b + k * S, DRUM_LEN[KICK], KICK, 118 if k == 0 else 104)
     for q in (4, 12):
-        P.add('snare', b + q * S + LAY, DRUM_LEN[SNARE], SNARE, 108)
-    for g in ((7, 14) if i % 2 else (14,)):                 # ghost notes
-        P.add('snare', b + g * S + LAY, S, SNARE, 44)
-    for e in range(8):
+        P.add('snare', b + q * S + LAY, DRUM_LEN[SNARE], SNARE, 112)
+    for q in range(4):
+        if i == 0 and q == 0:
+            continue                                         # crash op 1 van de strofe
         if cym == 'hat':
-            if i % 2 and e == 7:
-                P.add('hat', b + e * 2 * S, DRUM_LEN[OHH], OHH, 76)        # open hihat op de laatste 'en'
+            if i % 4 == 3 and q == 3:
+                P.add('cym', b + q * TPB, DRUM_LEN[OHH], OHH, 90)            # open hihat óp tel 4
             else:
-                P.add('hat', b + e * 2 * S, DRUM_LEN[CHH], CHH, 84 if e % 2 == 0 else 58)
+                P.add('cym', b + q * TPB, DRUM_LEN[HHALF], HHALF, 82 if q % 2 == 0 else 70)
         else:
-            P.add('ride', b + e * 2 * S, DRUM_LEN[RIDE] // 2, RIDE, 88 if e % 2 == 0 else 62)
+            P.add('cym', b + q * TPB, DRUM_LEN[RIDE], BELL if q == 0 else RIDE, 84 if q % 2 == 0 else 72)
+    if i == 0:
+        P.add('cym', b, DRUM_LEN[CRASH], CRASH, 108)
 
 
 def chorus_drums(P, bar, pattern, i, cym='hat'):
-    """Refrein: halftempo, snare op tel 3, kick op de accenten van de riff, crash om de 2 maten, open hihat of
-    ride op de tellen."""
+    """Refrein: halftempo, snare op tel 3, kick op de akkoorden van de riff, crash/china om de 2 maten, open hihat
+    of ride op de tellen (gruizig, lang)."""
     b = bar * BAR
-    kicks = sorted({st for st, ln, kind, nm in pattern if kind == 'P'} - {8})
+    kicks = sorted({st for st, ln, kind, nm in pattern if kind != 'M'} - {8})
     for k in kicks:
-        P.add('kick', b + k * S, DRUM_LEN[KICK], KICK, 124 if k == 0 else 110)
+        P.add('kick', b + k * S, DRUM_LEN[KICK], KICK, 127 if k == 0 else 114)
     if pattern is RIFF_STOP:
-        P.add('crash', b, DRUM_LEN[CRASH2], CRASH2, 118)
+        P.add('cym', b, DRUM_LEN[CHINA], CHINA, 116)
         return
     P.add('snare', b + 8 * S + LAY, DRUM_LEN[SNARE], SNARE, 127)
     if i % 2 == 0:
-        P.add('crash', b, DRUM_LEN[CRASH], CRASH if i % 4 == 0 else CRASH2, 120)
+        P.add('cym', b, DRUM_LEN[CRASH], CRASH if i % 4 == 0 else CHINA, 108)
     for q in range(4):
         if i % 2 == 0 and q == 0:
             continue
         if cym == 'hat':
-            P.add('hat', b + q * TPB, DRUM_LEN[OHH], OHH, 104 if q % 2 == 0 else 90)
+            P.add('cym', b + q * TPB, DRUM_LEN[OHH], OHH, 84 if q % 2 == 0 else 72)
         else:
-            P.add('ride', b + q * TPB, DRUM_LEN[RIDE], BELL if q % 2 else RIDE, 104 if q % 2 == 0 else 96)
+            P.add('cym', b + q * TPB, DRUM_LEN[RIDE], RIDE, 86 if q % 2 == 0 else 76)
 
 
-def fill(P, bar, start16=12):
-    """Tomfill (snare + toms in 16en) naar de crash van de volgende maat; vervangt de groove vanaf start16."""
+def fill(P, bar, start16=8, step=2):
+    """Trage tomfill (snare + floor tom in 8en) naar de crash van de volgende maat; vervangt de groove."""
     b = bar * BAR
-    for k in ('hat', 'ride', 'snare', 'kick'):
+    for k in ('cym', 'snare', 'kick'):
         P.n[k] = [x for x in P.n[k] if not (b + start16 * S <= x[0] < b + BAR)]
-    seq = [SNARE, SNARE, MTOM, MTOM, FTOM, FTOM, FTOM, SNARE][-(16 - start16):]
-    for i, nt in enumerate(seq):
-        P.add('snare' if nt == SNARE else 'tom', b + (start16 + i) * S, S, nt, 96 + i * 4)
+    seq = list(range(start16, 16, step))
+    for j, st in enumerate(seq):
+        nt = (SNARE, FTOM, MTOM, FTOM)[j % 4] if j < len(seq) - 1 else SNARE
+        P.add('snare' if nt == SNARE else 'tom', b + st * S, E, nt, 98 + j * 5)
+        if nt != SNARE:
+            P.add('kick', b + st * S, DRUM_LEN[KICK], KICK, 100)
 
 
-def chorus(P, bar0, cym='hat', lead_phrases=None, right=True):
+def chorus(P, bar0, cym='hat', lead_phrases=None):
     for i, pat in enumerate(CHORUS):
         b = bar0 + i
         if pat is RIFF_STOP:
-            riff(P, b, pat, bass=False, right=right)
+            riff(P, b, pat, bass=False)
             for st, ln, nm in STOP_BASS:
                 P.add('bass', b * BAR + st * S, ln * S, bass_note(p(nm)), 120)
         else:
-            riff(P, b, pat, right=right)
+            riff(P, b, pat)
         chorus_drums(P, b, pat, i, cym)
         if lead_phrases:
             lead(P, b, lead_phrases[i], 116)
-    fill(P, bar0 + 6, 12)                                    # de turnaround rolt naar de stop
+    fill(P, bar0 + 6, 8)                                     # de turnaround rolt naar de stop
 
 
 def stop_feedback(P, bar, note='C5'):
     """Na de stop: de versterker blijft huilen (feedback) zolang het akkoord hangt."""
     s = bar * BAR
-    P.add('fb', s + S * 2, 6 * S, p(note), 110)
-    for j in range(7):
-        P.fx['fb'].append((s + S * 2 + j * S, 'vol', int(30 + 70 * j / 6)))
-    P.fx['fb'] += [(s + S * 2, 'mod', 0), (s + S * 5, 'mod', 10)]
+    P.add('fb', s + S * 2, 10 * S, p(note), 110)
+    for j in range(9):
+        P.fx['fb'].append((s + S * 2 + j * S, 'vol', int(30 + 70 * j / 8)))
+    P.fx['fb'] += [(s + S * 2, 'mod', 0), (s + S * 6, 'mod', 10)]
+
+
+def verse(P, bar0, bass_bars, cym, mute_from, sides_from):
+    for i in range(8):
+        b = bar0 + i
+        for st, ln, nm in bass_bars[i]:
+            P.add('bass', b * BAR + st * S, ln * S, bass_note(p(nm)), 112 + (10 if st in (0, 8) else 0))
+        verse_drums(P, b, i, cym)
+        if i >= mute_from and i < 7:
+            pat = CHORUS[(i - mute_from) % 6]
+            palm_mute(P, b, pat, ('L', 'R') if i >= sides_from else ('L',), 96 + (6 if i >= 4 else 0))
+        elif i == 7:
+            palm_mute(P, b, RIFF_TURN, ('L', 'R') if i >= sides_from else ('L',), 104)
+    fill(P, bar0 + 7, 8)
 
 
 def build():
     P = Parts()
-    G = ('pwrL', 'pwrR', 'sglL', 'sglR')
+    G = ('pwrL', 'pwrR')
 
     # ---- intro: zwelling, dan de riff één keer als statement ----------------------------------------------------
     P.add('pwrL', 0, 2 * BAR - S, p('C2'), 112)
     P.add('pwrR', 0, 2 * BAR - S, p('C2'), 106)
     for k in range(33):                                     # powerchord zwelt in 2 maten aan
-        for sd in ('pwrL', 'pwrR'):
+        for sd in G:
             P.fx[sd].append((k * 2 * BAR // 32, 'vol', int(((k / 32) ** 1.6) * 100)))
     P.add('fb', BAR // 2, BAR + BAR // 2 - S, p('G4'), 110)      # hoge feedbacktoon zwelt mee
     for k in range(25):
         P.fx['fb'].append((BAR // 2 + k * (BAR + BAR // 2) // 24, 'vol', int(((k / 24) ** 1.3) * 100)))
     P.fx['fb'] += [(BAR, 'mod', 4), (BAR + BAR // 2, 'mod', 10)]
-    for k in range(16):                                     # lava-rommel op de floor tom in maat 1
-        P.add('tom', BAR + k * S, S, FTOM, 50 + k * 4)
+    for k in range(8):                                      # lava-rommel: floor tom in 8en die aanzwelt
+        P.add('tom', BAR + k * E, E, FTOM, 60 + k * 8)
     P.vol(G + ('bass',), INTRO_RIFF, 100)
-    for i, pat in enumerate((RIFF_A, RIFF_B, RIFF_STOP)):
+    for i, pat in enumerate((RIFF_A1, RIFF_A2, RIFF_STOP)):
         b = INTRO_RIFF + i
         if pat is RIFF_STOP:
             riff(P, b, pat, bass=False)
@@ -284,83 +307,84 @@ def build():
         chorus_drums(P, b, pat, i)
     stop_feedback(P, STOP0)
 
-    # ---- V1: alleen bas + drums; daarna zacht de palm-muted refreinriff ------------------------------------------
+    # ---- V1: alleen bas + drums; vanaf maat 9 zacht de palm-muted refreinriff links ------------------------------
     P.vol(('bass',), V1, 100)
-    P.vol(('muteL', 'muteR'), V1, 100)
-    for i in range(8):
-        b = V1 + i
-        for st, ln, nm in VERSE_BASS[i]:
-            P.add('bass', b * BAR + st * S, ln * S, bass_note(p(nm)), 112 + (10 if st in (0, 8) else 0))
-        verse_drums(P, b, i, 'hat')
-        if i >= 4:
-            palm_mute(P, b, CHORUS[i - 4] if i < 7 else RIFF_B, ('L',), 96)
-    fill(P, R1 - 1, 12)
+    P.vol(('muteL', 'muteR'), V1, 92)
+    P.fx['drums'].append((V1 * BAR, 'vol', 86))
+    verse(P, V1, VERSE_BASS, 'hat', 4, 99)
 
     # ---- R1: het refrein -----------------------------------------------------------------------------------------
     P.vol(G, R1, 100)
-    P.vol(('bass',), R1, 92)
+    P.vol(('bass',), R1, 94)
+    P.vol(('muteL', 'muteR'), R1, 100)
+    P.fx['drums'].append((R1 * BAR, 'vol', 100))
     chorus(P, R1)
     stop_feedback(P, R1 + 7)
 
-    # ---- V2: bas + drums (ride), palm-muted riff links en rechts --------------------------------------------------
+    # ---- V2: bas (octaafsprong) + drums (ride), palm-muted riff links en rechts -------------------------------------
     P.vol(('bass',), V2, 100)
-    for i in range(8):
-        b = V2 + i
-        for st, ln, nm in VERSE2_BASS[i]:
-            P.add('bass', b * BAR + st * S, ln * S, bass_note(p(nm)), 112 + (10 if st in (0, 8) else 0))
-        verse_drums(P, b, i, 'ride')
-        pat = CHORUS[i % 6] if i < 7 else RIFF_B
-        palm_mute(P, b, pat, ('L', 'R') if i >= 2 else ('L',), 92 + (6 if i >= 4 else 0))
-    fill(P, R2 - 1, 8)
+    P.vol(('muteL', 'muteR'), V2, 96)
+    P.fx['drums'].append((V2 * BAR, 'vol', 88))
+    verse(P, V2, VERSE2_BASS, 'ride', 2, 4)
 
     # ---- R2: refrein + de leadgitaar zingt -----------------------------------------------------------------------
-    P.vol(('bass',), R2, 92)
+    P.vol(('bass',), R2, 94)
+    P.vol(('muteL', 'muteR'), R2, 100)
+    P.fx['drums'].append((R2 * BAR, 'vol', 100))
     chorus(P, R2, 'ride', SING)
 
-    # ---- M: middenstuk, bas + cleane arpeggio's; 41-44 opbouw -----------------------------------------------------
-    P.vol(('bass',), M, 100)
+    # ---- M: middenstuk, bas + getokkelde warme gitaar; 41-44 opbouw -----------------------------------------------
+    P.vol(('bass',), M, 78)
     P.vol(('clean',), M, 100)
+    P.fx['drums'].append((M * BAR, 'vol', 62))
     for i in range(8):
         b = M + i
         for e, nm in enumerate(ARP[i]):
-            P.add('clean', b * BAR + e * 2 * S, 4 * S, p(nm), 100 + (14 if e == 0 else 0) - (0 if i < 4 else -6))
+            P.add('clean', b * BAR + e * E, 3 * E, p(nm), 104 + (12 if e == 0 else 0) + (6 if i >= 4 else 0))
         for st, ln, nm in MID_BASS[i]:
             P.add('bass', b * BAR + st * S, ln * S, bass_note(p(nm)), 108 + (10 if st == 0 else 0))
         bb = b * BAR
-        if i < 4:                                           # ruimte: ride op de tellen, sidestick op 3, zachte kick
-            P.add('kick', bb, DRUM_LEN[KICK], KICK, 84)
+        if i == 4:
+            P.vol(('bass',), b, 88)
+            P.fx['drums'].append((bb, 'vol', 76))
+        if i == 6:
+            P.vol(('bass',), b, 96)
+            P.fx['drums'].append((bb, 'vol', 90))
+        if i < 4:                                           # ruimte: ride zacht op de tellen, kick op 1
+            P.add('kick', bb, DRUM_LEN[KICK], KICK, 92)
             for q in range(4):
-                P.add('ride', bb + q * TPB, DRUM_LEN[RIDE], RIDE, 70 if q else 82)
-            P.add('snare', bb + 8 * S + LAY, S, STICK, 80)
-        elif i < 6:                                         # de groove komt terug (ride in 8en, sidestick 2 en 4)
-            for k in (0, 10):
-                P.add('kick', bb + k * S, DRUM_LEN[KICK], KICK, 96)
-            for e in range(8):
-                P.add('ride', bb + e * 2 * S, DRUM_LEN[RIDE] // 2, RIDE, 84 if e % 2 == 0 else 64)
-            for q in (4, 12):
-                P.add('snare', bb + q * S + LAY, S, STICK, 92)
+                P.add('cym', bb + q * TPB, DRUM_LEN[RIDE], RIDE, 64 if q else 76)
+        elif i < 6:                                         # hartslag: floor tom op 1 en 3, sidestick op 2 en 4
+            for q in range(4):
+                P.add('cym', bb + q * TPB, DRUM_LEN[RIDE], RIDE, 72 if q else 84)
+                if q % 2 == 0:
+                    P.add('tom', bb + q * TPB, DRUM_LEN[FTOM], FTOM, 92)
+                    P.add('kick', bb + q * TPB, DRUM_LEN[KICK], KICK, 96)
+                else:
+                    P.add('snare', bb + q * TPB + LAY, S, STICK, 92)
         else:                                               # floor tom in 8en die aanzwelt, kick op de tellen
             for e in range(8):
-                P.add('tom', bb + e * 2 * S, S, FTOM, 70 + (i - 6) * 24 + e * 3)
+                P.add('tom', bb + e * E, E, FTOM, 80 + (i - 6) * 22 + e * 3)
             for q in range(4):
-                P.add('kick', bb + q * TPB, DRUM_LEN[KICK], KICK, 96 + (i - 6) * 16)
-    for k in range(8):                                      # snareroffel in 16en over tel 3-4 van de laatste maat
-        P.add('snare', (R3 - 1) * BAR + (8 + k) * S, S, SNARE, 80 + k * 6)
+                P.add('kick', bb + q * TPB, DRUM_LEN[KICK], KICK, 100 + (i - 6) * 14)
+    for k in range(4):                                      # snareroffel in 16en over tel 4 van de laatste maat
+        P.add('snare', (R3 - 1) * BAR + (12 + k) * S, S, SNARE, 96 + k * 8)
     s = (M + 6) * BAR                                       # feedback zwelt aan over de laatste 2 maten
     P.add('fb', s, 2 * BAR - S, p('G4'), 110)
     for j in range(33):
         P.fx['fb'].append((s + j * 2 * BAR // 32, 'vol', int(((j / 32) ** 1.4) * 100)))
     P.fx['fb'] += [(s, 'mod', 0), (s + BAR, 'mod', 8)]
-    # in de laatste maat van het middenstuk zwelt de powerchord G al mee
-    P.add('pwrL', (M + 7) * BAR, BAR - S, p('G2'), 104)
+    P.add('pwrL', (M + 7) * BAR, BAR - S, p('G2'), 104)      # de powerchord G zwelt al mee
     for j in range(17):
         P.fx['pwrL'].append(((M + 7) * BAR + j * BAR // 16, 'vol', int(((j / 16) ** 2) * 90)))
 
     # ---- R3: refrein + solo --------------------------------------------------------------------------------------
     P.vol(G, R3, 100)
-    P.vol(('bass',), R3, 92)
-    chorus(P, R3, 'hat', SOLO)                              # climax: beide gitaren + solo
-    P.add('crash', R3 * BAR, DRUM_LEN[CRASH2], CRASH2, 116)
+    P.vol(('bass',), R3, 94)
+    P.fx['drums'].append((R3 * BAR, 'vol', 100))
+    chorus(P, R3, 'hat', SOLO)
+    P.fx['drums'].append((END * BAR - BAR, 'vol', 100))
+    # de stop aan het eind van de loop = de stop van de intro (maat 4): naadloos terug naar de strofe
 
     for k in P.n:
         P.n[k] = dedupe(P.n[k])
@@ -368,20 +392,19 @@ def build():
 
 
 def write_voicegroup():
-    """grounded_gm + 27 cleane gitaar, 28 palm-mute, 29 fuzz (losse noten), 30 fuzz-powerchord, 31 fuzz-lead,
-    34 fuzzbas, 127 stoner-drumkit."""
+    """grounded_gm + 27 warme schone gitaar, 28 palm-mute, 30 fuzz-powerchord, 31 fuzz-lead,
+    34 SVT-fuzzbas, 127 stoner-drumkit."""
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
     lines[0] = '@ Project Grounded: grounded_gm voor Battle! Heatran (stoner rock). Gegenereerd door tools/grounded/heatran_theme.py.'
-    lines[1] = ('@ 27 = cleane gitaar, 28 = palm-mute-powerchord, 29 = fuzz (losse noten), 30 = fuzz-powerchord '
-                '(1 sample = 1 kanaal), 31 = fuzz-lead, 34 = octaaffuzzbas, 127 = drumkit.')
+    lines[1] = ('@ 27 = warme schone gitaar, 28 = palm-mute-powerchord, 30 = fuzz-powerchord '
+                '(1 sample = 1 kanaal), 31 = fuzz-lead, 34 = SVT-fuzzbas, 127 = drumkit.')
     lines[2] = 'voice_group %s' % VG
     repl = {
-        '@ 27': '\tvoice_directsound 60, 0, DirectSoundWaveData_gm_clean_guitar, 255, 0, 255, 190  @ 27',
-        '@ 28': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_mute_power, 255, 0, 255, 120  @ 28',
-        '@ 29': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_muff_low, 255, 0, 255, 165  @ 29',
-        '@ 30': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_muff_power, 255, 0, 255, 170  @ 30',
-        '@ 31': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_fuzz_lead, 255, 0, 255, 200  @ 31',
-        '@ 34': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_octfuzz_bass, 255, 0, 255, 160  @ 34',
+        '@ 27': '\tvoice_directsound 48, 0, DirectSoundWaveData_heatran_warm_clean, 255, 0, 255, 200  @ 27',
+        '@ 28': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_doom_mute, 255, 0, 255, 140  @ 28',
+        '@ 30': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_doom_power, 255, 0, 255, 185  @ 30',
+        '@ 31': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_doom_lead, 255, 0, 255, 200  @ 31',
+        '@ 34': '\tvoice_directsound 60, 0, DirectSoundWaveData_heatran_svt_bass, 255, 0, 255, 170  @ 34',
         '@ 127': '\tvoice_keysplit_all voicegroup_heatran_drumset  @ 127',
     }
     out = []
@@ -391,40 +414,43 @@ def write_voicegroup():
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(out))
     kit = [   # vanaf noot 36; alles DirectSound
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_heatran_kick, 255, 0, 255, %d' % DRUM_REL[KICK],
-        'voice_directsound_no_resample 60, 60, DirectSoundWaveData_heatran_snare, 255, 0, 255, %d' % DRUM_REL[SNARE],
-        'voice_directsound_no_resample 60, 84, DirectSoundWaveData_heatran_open_hat, 255, 0, 255, %d' % DRUM_REL[OHH],
+        'voice_directsound_no_resample 60, 62, DirectSoundWaveData_heatran_snare, 255, 0, 255, %d' % DRUM_REL[SNARE],
+        'voice_directsound_no_resample 60, 80, DirectSoundWaveData_heatran_open_hat, 255, 0, 255, %d' % DRUM_REL[OHH],
         'voice_directsound_no_resample 60, 44, DirectSoundWaveData_heatran_ride, 255, 0, 255, %d' % DRUM_REL[RIDE],
         'voice_directsound 60, 40, DirectSoundWaveData_heatran_floor_tom, 255, 0, 255, %d' % DRUM_REL[FTOM],
-        'voice_directsound 66, 80, DirectSoundWaveData_heatran_floor_tom, 255, 0, 255, %d' % DRUM_REL[MTOM],
+        'voice_directsound 65, 76, DirectSoundWaveData_heatran_floor_tom, 255, 0, 255, %d' % DRUM_REL[MTOM],
         'voice_directsound_no_resample 60, 36, DirectSoundWaveData_heatran_crash, 255, 0, 255, %d' % DRUM_REL[CRASH],
-        'voice_directsound 57, 92, DirectSoundWaveData_heatran_crash, 255, 0, 255, %d' % DRUM_REL[CRASH2],
-        'voice_directsound_no_resample 60, 76, DirectSoundWaveData_heatran_closed_hat, 255, 0, 255, %d' % DRUM_REL[CHH],
+        'voice_directsound_no_resample 60, 92, DirectSoundWaveData_heatran_china, 255, 0, 255, %d' % DRUM_REL[CHINA],
         'voice_directsound_no_resample 60, 56, DirectSoundWaveData_heatran_side_stick, 255, 0, 255, %d' % DRUM_REL[STICK],
-        'voice_directsound 67, 40, DirectSoundWaveData_heatran_ride, 255, 0, 255, %d' % DRUM_REL[BELL],
+        'voice_directsound 66, 40, DirectSoundWaveData_heatran_ride, 255, 0, 255, %d' % DRUM_REL[BELL],
+        'voice_directsound_no_resample 60, 70, DirectSoundWaveData_heatran_open_hat, 255, 0, 255, %d' % DRUM_REL[HHALF],
     ]
     open('sound/voicegroups/drumsets/heatran.inc', 'w').write(
-        '@ Project Grounded: stoner-drumkit voor Battle! Heatran (heatran_theme.py), samples uit FluidR3 (heatran_samples.py):\n'
-        '@ 36 kick, 37 snare, 38 open hihat, 39 ride, 40 floor tom, 41 middentom, 42 crash (links), 43 crash (rechts, lager),\n'
-        '@ 44 gesloten hihat, 45 sidestick, 46 ride hoger (bel).\n'
+        '@ Project Grounded: stoner-drumkit voor Battle! Heatran (heatran_theme.py), FluidR3 Power-kit (heatran_samples.py):\n'
+        '@ 36 kick, 37 snare, 38 open hihat, 39 ride, 40 floor tom, 41 middentom, 42 crash, 43 china,\n'
+        '@ 44 sidestick, 45 ride hoger (bel), 46 halfopen hihat (kort, open-hihatsample afgekapt).\n'
         'voice_group heatran_drumset, 36\n' + ''.join('\t%s\n' % k for k in kit) + '\n')
 
 
-def fx_events(fx, notes):
-    """bend/mod terugzetten op het begin van de volgende noot (niet bij de note-off: dan zakt de uitklinktijd)."""
+def fx_events(fx, notes, base=0):
+    """bend/mod terugzetten op het begin van de volgende noot (niet bij de note-off: dan zakt de uitklinktijd).
+    base = vaste bend van het spoor (rechter gitaar); bends komen erbovenop."""
     starts = sorted(set(n[0] for n in notes))
     ev = [x for x in fx if x[1] == 'vol']
     pm = [x for x in fx if x[1] != 'vol']
+    pm_ticks = {(t, k) for t, k, v in pm}
     for t, kind, v in pm:
-        ev.append((t, kind, v))
+        ev.append((t, kind, v + (base if kind == 'bend' else 0)))
         nxt = next((s for s in starts if s > t), None)
-        if nxt is not None:
-            ev.append((nxt, kind, 0))
+        if nxt is not None and (nxt, kind) not in pm_ticks:
+            ev.append((nxt, kind, base if kind == 'bend' else 0))
     best = {}
     for t, kind, v in ev:
-        if kind == 'vol':
-            best[(t, kind)] = v                              # laatste waarde op een tick wint
-        elif (t, kind) not in best or v:
-            best[(t, kind)] = v if (t, kind) not in best else max(best[(t, kind)], v)
+        if kind == 'vol' or (t, kind) not in best or (t, kind) in pm_ticks:
+            if (t, kind) in pm_ticks and (t, kind) in best and kind != 'vol':
+                if v == (base if kind == 'bend' else 0):
+                    continue                                 # een reset wint niet van een eigen waarde
+            best[(t, kind)] = v
     return [(t, k, v) for (t, k), v in best.items()]
 
 
@@ -436,24 +462,22 @@ def save(P, path):
     cond.append(mido.MetaMessage('marker', text=']', time=(END - V1) * BAR))
     out.tracks.append(cond)
     layout = [  # naam, programma, volume (100%), kanaal, pan, vaste bend
-        ('pwrL', POWER, 100, 0, 22, 0),
-        ('pwrR', POWER, 96, 1, 106, 3 * 128),
-        ('sglL', SINGLE, 96, 2, 28, 0),
-        ('sglR', SINGLE, 92, 3, 100, 3 * 128),
-        ('muteL', MUTE, 64, 4, 34, 0),
-        ('muteR', MUTE, 60, 5, 94, 3 * 128),
-        ('clean', CLEAN, 80, 6, 76, 0),
-        ('bass', BASS, 80, 7, 64, 0),
-        ('lead', LEAD, 108, 8, 80, 0),
-        ('fb', LEAD, 92, 10, 50, 0),
+        ('pwrL', POWER, 100, 0, 24, 0),
+        ('pwrR', POWER, 96, 1, 104, R_BEND),
+        ('muteL', MUTE, 84, 4, 34, 0),
+        ('muteR', MUTE, 80, 5, 94, R_BEND),
+        ('clean', CLEAN, 66, 6, 76, 0),
+        ('bass', BASS, 84, 7, 64, 0),
+        ('lead', LEAD, 100, 8, 74, 0),
+        ('fb', LEAD, 84, 10, 50, 0),
     ]
     for name, prog, vol, ch, pan, bend in layout:
-        fx = fx_events(P.fx[name], P.n[name])
+        fx = fx_events(P.fx[name], P.n[name], bend)
         if bend:
-            fx = [(0, 'bend', bend)] + fx
+            fx = [(0, 'bend', bend)] + [x for x in fx if not (x[0] == 0 and x[1] == 'bend')]
         add_track(out, P.n[name], prog, vol, ch, pan, fx)
-    drums = ('kick', 'snare', 'hat', 'ride', 'tom', 'crash')
-    add_track(out, sorted(sum((P.n[k] for k in drums), [])), DRUMS, 120, 9, 64, [])
+    drums = ('kick', 'snare', 'cym', 'tom')
+    add_track(out, sorted(sum((P.n[k] for k in drums), [])), DRUMS, 118, 9, 64, P.fx['drums'])
     written = {k for k, *_ in layout} | set(drums)
     assert not [k for k in P.n if P.n[k] and k not in written], 'partij niet weggeschreven'
     out.save(path)
@@ -471,7 +495,7 @@ def add_track(out, notes, prog, vol, ch, pan, fx):
         elif kind == 'mod':
             ev.append((tk, 1, mido.Message('control_change', channel=ch, control=1, value=v)))
         elif kind == 'bend':
-            ev.append((tk, 1, mido.Message('pitchwheel', channel=ch, pitch=v)))
+            ev.append((tk, 1, mido.Message('pitchwheel', channel=ch, pitch=max(-8192, min(8191, v)))))
     for s, e, n, v in notes:
         ev.append((e, 0, mido.Message('note_off', channel=ch, note=n, velocity=0)))
         ev.append((s, 2, mido.Message('note_on', channel=ch, note=n, velocity=max(1, min(127, int(v))))))
@@ -486,21 +510,22 @@ def main():
     P = build()
     write_voicegroup()
     rel = releases(VG)
-    progs = {'pwrL': POWER, 'pwrR': POWER, 'sglL': SINGLE, 'sglR': SINGLE, 'muteL': MUTE, 'muteR': MUTE,
-             'clean': CLEAN, 'bass': BASS, 'lead': LEAD, 'fb': LEAD}
+    progs = {'pwrL': POWER, 'pwrR': POWER, 'muteL': MUTE, 'muteR': MUTE, 'clean': CLEAN, 'bass': BASS,
+             'lead': LEAD, 'fb': LEAD}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
-    for k, nt in (('kick', KICK), ('snare', SNARE), ('hat', OHH), ('ride', RIDE), ('tom', FTOM), ('crash', CRASH)):
-        tail[k] = release_ticks(DRUM_REL[nt], TPB, BPM) if DRUM_REL[nt] else 0
-    for k in ('bass', 'lead', 'fb', 'muteL', 'muteR'):
+    tail['kick'] = tail['snare'] = tail['tom'] = 0
+    tail['cym'] = release_ticks(DRUM_REL[CRASH], TPB, BPM)
+    for k in ('bass', 'lead', 'fb', 'muteL', 'muteR', 'pwrL', 'pwrR'):         # de getokkelde gitaar mag doorklinken
         P.n[k] = detach(P.n[k], tail[k])
-    # een powerchord en een losse noot op dezelfde gitaar overlappen nooit: samen één partij voor de detach
-    for side in 'LR':
-        both = detach(sorted(P.n['pwr' + side] + P.n['sgl' + side]), tail['pwr' + side])
-        pw = {(s, n) for s, e, n, v in P.n['pwr' + side]}
-        P.n['pwr' + side] = [x for x in both if (x[0], x[2]) in pw]
-        P.n['sgl' + side] = [x for x in both if (x[0], x[2]) not in pw]
-    order = ['lead', 'pwrL', 'sglL', 'bass', 'kick', 'snare', 'crash', 'clean', 'muteL', 'fb', 'tom', 'hat', 'ride',
-             'pwrR', 'sglR', 'muteR']
+    # zelfde toonhoogte mag in één spoor niet overlappen (de note-off van de eerste zou de tweede afkappen)
+    for k in P.n:
+        ns = sorted(P.n[k])
+        for i, x in enumerate(ns):
+            nxt = next((y[0] for y in ns[i + 1:] if y[2] == x[2] and y[0] >= x[0]), None)
+            if nxt is not None and nxt < x[1]:
+                x[1] = max(x[0] + 6, nxt - 1)
+        P.n[k] = ns
+    order = ['lead', 'pwrL', 'bass', 'kick', 'snare', 'clean', 'muteL', 'cym', 'fb', 'tom', 'pwrR', 'muteR']
     kept = allocate({k: P.n[k] for k in order}, order, tail, max_voices=11)
     print('tail (ticks):', tail)
     for k in order:

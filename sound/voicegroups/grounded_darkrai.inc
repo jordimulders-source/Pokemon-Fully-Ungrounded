@@ -20,7 +20,7 @@ voice_group grounded_darkrai
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 16
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 17
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 18
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 19
+	voice_directsound 60, 0, DirectSoundWaveData_darkrai_drone, 255, 0, 255, 150  @ 19
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 20
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 21
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 22
@@ -62,8 +62,8 @@ voice_group grounded_darkrai
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 62
+	voice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_dim, 255, 0, 255, 140  @ 61
+	voice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_tt, 255, 0, 255, 140  @ 62
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 63
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 64
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 65

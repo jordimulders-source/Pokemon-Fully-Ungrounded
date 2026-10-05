@@ -22,6 +22,9 @@ Loop (maat 4-45, 42 maten = 58,6 s):
               pauken; opbouw G-A-B (bVI-bVII-I) en één tel stilte
   D  (36-43)  DOORBRAAK: het thema +2 (E-groot), four-on-the-floor, koor, crashes, bas in octaven
   T  (44-45)  C-D-koperstoten (bVI-bVII van E), dan maat 45 = maat 3 (A, opbouw) -> terug naar A in D (naadloos)
+v2 (Jordi: euforischer/triomfantelijker): open heldenthema met octaafsprongen, hoorn in decimen, key change
+E -> F midden in D (maat 3 = scharnier B -> C7), T = F-G-A-stoten; stijgende PSG-arpeggio's, buitelende bellen op de
+PSG-golf, 32sten-risers, snare-roffels naar elke drop, octaafbas in achtsten.
 Gebruikt tools/grounded/musiclib.py; voicegroup_grounded_victini = grounded_gm + eigen powerchords
 (victini_samples.py), spiccato-strijkers en een eigen kit (drumsets/victini.inc, alles DirectSound).
 Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/victini_theme.py"""
@@ -37,7 +40,7 @@ BAR = TPB * 4
 MAXV = 11                                 # legendary: 11 DirectSound-noten
 # programma's
 TRUMPET, HORN, STRINGS, SPICC, POWER, MUTE, BASS, CHOIR, TIMPANI, KIT = 56, 60, 48, 49, 29, 28, 33, 52, 47, 127
-SQ_LEAD, SQ_ARP, NOISE = 80, 81, 121       # PSG (kost geen DirectSound-kanalen)
+SQ_LEAD, SQ_ARP, BELL, NOISE = 80, 81, 82, 121   # PSG (kost geen DirectSound-kanalen); 82 = golf-'bel'
 # kit (drumsets/victini.inc)
 KICK, SNARE, ROLL, CLAP, CRASH, BIGCRASH, HAT = 36, 37, 38, 39, 40, 41, 42
 TOMS = (43, 44, 45, 46)                    # laag -> hoog
@@ -71,11 +74,13 @@ for i, c in enumerate(['G', 'A', 'F#m', 'Bm', 'G', 'A', 'Bm', 'A']):
 for i, c in enumerate([[(0, 'Bm')], [(0, 'G')], [(0, 'Em')], [(0, 'F#')], [(0, 'Bm')], [(0, 'G')],
                        [(0, 'G'), (8, 'A')], [(0, 'Bsus'), (8, 'B')]]):
     PROG[C0 + i] = c
-SHIFT = {}                                     # climax: hele toon hoger
+SHIFT = {}                                     # climax: hele toon hoger, halverwege nog een halve (key change)
 for i, c in enumerate(THEME_CH):
     PROG[D0 + i] = c
-    SHIFT[D0 + i] = 2
-PROG[T0] = [(0, 'C'), (8, 'D')]
+    SHIFT[D0 + i] = 2 if i < 4 else 3
+PROG[D0 + 3] = [(0, 'B'), (8, 'C7')]          # V van E -> V van F (de key change)
+SHIFT[D0 + 3] = 0
+PROG[T0] = [(0, 'G'), (8, 'A')]                # F -> G -> A: stijgende hele tonen terug naar A (V van D)
 PROG[T0 + 1] = [(0, 'A')]
 
 
@@ -99,16 +104,18 @@ FANFARE = [  # V-motief: daalt en springt weer omhoog
     [(0, 2, 'A5'), (2, 2, 'F#5'), (4, 2, 'D5'), (6, 2, 'A4'), (8, 2, 'D5'), (10, 2, 'F#5'), (12, 4, 'A5')],
     [(0, 4, 'B5'), (4, 2, 'A5'), (6, 2, 'G5'), (8, 7, 'A5')],
 ]
-THEME = [
-    [(0, 4, 'A4'), (4, 2, 'D5'), (6, 6, 'A5'), (12, 2, 'G5'), (14, 2, 'F#5')],
-    [(0, 6, 'G5'), (6, 2, 'F#5'), (8, 2, 'E5'), (10, 2, 'D5'), (12, 4, 'E5')],
-    [(0, 4, 'F#5'), (4, 2, 'B4'), (6, 6, 'B5'), (12, 2, 'A5'), (14, 2, 'F#5')],
-    [(0, 6, 'A5'), (6, 2, 'G5'), (8, 4, 'F#5'), (12, 4, 'E5')],
-    [(0, 4, 'A4'), (4, 2, 'D5'), (6, 6, 'A5'), (12, 2, 'G5'), (14, 2, 'F#5')],
-    [(0, 6, 'B5'), (6, 2, 'A5'), (8, 2, 'B5'), (10, 2, 'C#6'), (12, 4, 'D6')],
-    [(0, 4, 'B5'), (4, 4, 'G5'), (8, 4, 'A5'), (12, 4, 'C#6')],
+THEME = [   # v2: open, stijgende heldenintervallen (kwart + kwint = octaaf, octaafsprongen), top D6
+    [(0, 2, 'A4'), (2, 2, 'D5'), (4, 8, 'A5'), (12, 2, 'B5'), (14, 2, 'C#6')],
+    [(0, 6, 'D6'), (6, 2, 'B5'), (8, 2, 'G5'), (10, 2, 'A5'), (12, 4, 'B5')],
+    [(0, 2, 'B4'), (2, 2, 'F#5'), (4, 6, 'B5'), (10, 2, 'A5'), (12, 2, 'F#5'), (14, 2, 'A5')],
+    [(0, 4, 'C#6'), (4, 2, 'B5'), (6, 2, 'A5'), (8, 4, 'E5'), (12, 2, 'C#5'), (14, 2, 'A4')],
+    [(0, 2, 'D5'), (2, 6, 'D6'), (8, 2, 'C#6'), (10, 2, 'B5'), (12, 4, 'A5')],
+    [(0, 2, 'B4'), (2, 2, 'D5'), (4, 2, 'G5'), (6, 6, 'B5'), (12, 2, 'A5'), (14, 2, 'B5')],
+    [(0, 2, 'E5'), (2, 2, 'G5'), (4, 4, 'B5'), (8, 2, 'A5'), (10, 2, 'B5'), (12, 4, 'C#6')],
     [(0, 12, 'D6')],
 ]
+# D, maat 3: de key change (E -> F): eerste helft het thema in E, dan een dalende aanloop over C7 die op F5 oplost
+KEYCHANGE_BAR = [(0, 4, 'D#6'), (4, 2, 'C#6'), (6, 2, 'B5'), (8, 2, 'C6'), (10, 2, 'A#5'), (12, 2, 'G5'), (14, 2, 'E5')]
 THEME_TURN = [(0, 4, 'C#6'), (4, 4, 'A#5'), (8, 7, 'F#5')]          # A2 maat 8: kantelt naar F#7 (-> B-mineur)
 THEME_TURN_HORN = [(0, 4, 'A#5'), (4, 4, 'F#5'), (8, 7, 'C#5')]
 STR_MEL = [   # B: de strijkers zingen (royal road)
@@ -154,7 +161,7 @@ def mel(pattern, bar, vel, shift=0, gap=3):
 
 def build():
     parts = {k: [] for k in ('lead', 'horn', 'strmel', 'spicc', 'power', 'mute', 'bass', 'choir', 'timp', 'drums',
-                             'sqlead', 'sqarp', 'hats')}
+                             'sqlead', 'sqarp', 'bells', 'hats')}
 
     def drum(bar, step, note, vel, ln=1):
         t = bar * BAR + step * S16
@@ -187,12 +194,14 @@ def build():
                     parts[prog].append([t, t + (ln or l * S16 - 8), r, vel + (8 if s % 4 == 0 else 0)])
 
     def bass(bar, steps=range(0, 16, 2), octave=False, vel=108):
+        """octave: 'anime-opening'-octaafbas, elke achtste om en om grondtoon/octaaf (v2)."""
         for st, en, (pc, iv) in chords_in(bar):
             r = reg(pc, 28)
             for i in steps:
                 if st <= i < en:
                     t = bar * BAR + i * S16
-                    parts['bass'].append([t, t + 2 * S16 - 10, r + (12 if octave and i % 4 == 2 else 0), vel])
+                    up = octave and i % 4 == 2
+                    parts['bass'].append([t, t + 2 * S16 - 10, r + (12 if up else 0), vel - (6 if up else 0)])
 
     def choir(bar, vel=84):
         for st, en, (pc, iv) in chords_in(bar):
@@ -200,12 +209,46 @@ def build():
             for h in range(st, en, 8):
                 parts['choir'].append([bar * BAR + h * S16, bar * BAR + min(h + 8, en) * S16, top, vel])
 
-    def arp(bar, vel=60):
+    def arp(bar, vel=60, lo=62):
+        """v2: snelle stijgende chiptune-arpeggio's: per halve maat 8 zestienden omhoog over twee octaven."""
         for st, en, (pc, iv) in chords_in(bar):
-            tones = [reg(pc, 72) + x for x in (0, iv[1], iv[2], 12)]
+            r = reg(pc, lo)
+            run = [r + o + x for o in (0, 12, 24) for x in (0, iv[1], iv[2])]
             for i in range(st, en):
                 t = bar * BAR + i * S16
-                parts['sqarp'].append([t, t + S16 - 4, tones[i % 4], vel])
+                parts['sqarp'].append([t, t + S16 - 4, run[i % 8], vel + (8 if i % 8 == 0 else 0)])
+
+    def riser(bar, start=8, vel=56):
+        """stijgende 32sten (chiptune-riser) naar een drop."""
+        (pc, iv) = chords_in(bar)[-1][2]
+        run = [reg(pc, 60) + o + x for o in (0, 12, 24, 36) for x in (0, iv[1], iv[2])]
+        parts['sqarp'] = [a for a in parts['sqarp'] if a[0] < bar * BAR + start * S16 or a[0] >= (bar + 1) * BAR]
+        for k in range((16 - start) * 2):
+            t = bar * BAR + start * S16 + k * S16 // 2
+            parts['sqarp'].append([t, t + S16 // 2 - 2, run[min(k, len(run) - 1)], vel + k])
+
+    def bells(bar, pat, shift=0, vel=64):
+        """v2: hoge bellen (PSG-golf) die over de melodie buitelen: in elke lange melodienoot een dalend-stijgend
+        zestiendenfiguurtje op akkoordtonen, een octaaf boven de melodie."""
+        for stn, ln, n in pat:
+            if ln < 6:
+                continue
+            for i in range(stn + 2, stn + ln):
+                pc, iv = [c for c in chords_in(bar) if c[0] <= i < c[1]][0][2]
+                tones = sorted(reg((pc + x) % 12, 74) for x in iv[:3])
+                fig = [tones[2], tones[1], tones[0], tones[1], tones[2], tones[0] + 12]
+                t = bar * BAR + i * S16
+                parts['bells'].append([t, t + S16 - 3, fig[(i - stn - 2) % 6], vel])
+
+    def roll(bar, start=8, vel=64, step=6):
+        """snare-roll naar een drop: zestienden, de laatste tel in 32sten, crescendo."""
+        for i in range(start, 16):
+            if i < 12:
+                drum(bar, i, SNARE, vel + (i - start) * step)
+            else:
+                for h in (0, S16 // 2):
+                    t = bar * BAR + i * S16 + h
+                    parts['drums'].append([t, t + S16 // 2, ROLL, min(127, vel + (i - start) * step + (h > 0) * 3)])
 
     def timp(bar, step, vel=110, ln=4):
         pc = chords_in(bar)[0][2][0]
@@ -258,11 +301,11 @@ def build():
     def turn(b):
         spicc(b, vel=74)
         power(b, [(i, 2) for i in range(0, 16, 2)], 92)
-        bass(b)
+        bass(b, octave=True)
         for s in (0, 4, 8, 12):
             drum(b, s, KICK, 104 + s)
-        for i in range(8, 16):
-            drum(b, i, SNARE if i % 2 == 0 else ROLL, 60 + (i - 8) * 8)
+        roll(b, 8, 60, 8)                                   # v2: snare-roll in 16en/32sten + riser naar de drop
+        riser(b, 8, 50)
         for i in range(8, 16, 2):
             timp(b, i, 80 + (i - 8) * 5, 2)
         hats(b, range(0, 8))
@@ -287,7 +330,7 @@ def build():
         if shift:                                            # climax: hoorn een octaaf onder (unisono-kracht)
             parts['horn'] += mel(pat, b, 106, shift - 12)
         else:
-            parts['horn'] += [[s, e, third_below(n), 98] for s, e, n, v in mel(pat, b, 0)]
+            parts['horn'] += [[s, e, third_below(n) - 12, 100] for s, e, n, v in mel(pat, b, 0)]   # v2: decimen = open
         if sq:
             parts['sqlead'] += mel(pat, b, 70, shift)
 
@@ -302,15 +345,24 @@ def build():
                 parts['sqlead'] += mel(THEME_TURN, b, 70)
             else:
                 theme_bar(k, b, choir_on=sec == A2, sq=sec == A2)
+                if sec == A2:
+                    bells(b, THEME[k], vel=60)
             spicc(b)
             power(b, [(i, 2) for i in range(0, 16, 2)], 98)
-            bass(b)
-            rock(b, fill=last, crash=k % 4 == 0)
+            bass(b, octave=True)
+            rock(b, fill=last and sec == A2, crash=k % 4 == 0)
+            if last and sec == A0:                                   # snare-roll naar B
+                parts['drums'] = [d for d in parts['drums'] if not (d[2] == SNARE and d[0] >= b * BAR + 8 * S16)]
+                roll(b, 8, 70)
             if k % 4 == 0:
                 timp(b, 0, 118)
             if sec == A2:
                 choir(b, 80)
-                arp(b, 44)
+                arp(b, 46)
+            else:
+                arp(b, 34)
+            if last:
+                riser(b, 8, 48)
 
     # B: royal road, de strijkers zingen
     for k in range(8):
@@ -331,8 +383,9 @@ def build():
             timp(b, 0, 112)
         hats(b, range(0, 16, 2), 64)
         if k == 7:                                                               # snareopbouw naar A2
-            for i in range(8, 16):
-                drum(b, i, SNARE, 70 + (i - 8) * 7)
+            parts['drums'] = [d for d in parts['drums'] if not (d[2] == SNARE and d[0] >= b * BAR + 8 * S16)]
+            roll(b, 8, 66, 7)
+            riser(b, 8, 50)
 
     # C: de struggle (B-mineur), half-time, galop
     gallop = [(0, 2), (2, 1), (3, 1), (4, 2), (6, 1), (7, 1), (8, 2), (10, 1), (11, 1), (12, 2), (14, 1), (15, 1)]
@@ -390,32 +443,42 @@ def build():
             parts['choir'] = [c for c in parts['choir'] if not (b * BAR + 12 * S16 <= c[0])]
             parts['choir'] = [[s, min(e, b * BAR + 12 * S16 - 6), n, v] for s, e, n, v in parts['choir']]
 
-    # D: DOORBRAAK, het thema in E-groot
+    # D: DOORBRAAK, het thema in E-groot; maat 3 = de key change, maat 4-7 in F-groot (v2)
     for k in range(8):
         b = D0 + k
-        theme_bar(k, b, shift=2, sq=True)
+        sh = SHIFT[b]
+        if k == 3:
+            parts['lead'] += mel(KEYCHANGE_BAR, b, 120)
+            parts['horn'] += mel(KEYCHANGE_BAR, b, 106, -12)
+            parts['sqlead'] += mel(KEYCHANGE_BAR, b, 70)
+        else:
+            theme_bar(k, b, shift=sh, sq=True)
+            bells(b, THEME[k], shift=sh, vel=68)
         spicc(b, lo=52)
-        power(b, [(i, 2) for i in range(0, 16, 2)], 106)
+        power(b, [(i, 2) for i in range(0, 16, 2)], 106 + (4 if k >= 4 else 0))
         bass(b, octave=True, vel=112)
-        choir(b, 92)
-        arp(b, 52)
+        choir(b, 92 if k < 4 else 100)
+        arp(b, 52 if k < 4 else 58)
         for s in (0, 4, 8, 12):
             drum(b, s, KICK, 124)
         for s in (4, 12):
-            drum(b, s, SNARE, 118)
-        if k % 2 == 0:
-            drum(b, 0, BIGCRASH if k == 0 else CRASH, 120 if k == 0 else 108, 8)
+            if not (k in (3, 7) and s == 12):
+                drum(b, s, SNARE, 118)
+        if k % 2 == 0 or k == 3:
+            if k != 3:
+                drum(b, 0, BIGCRASH if k in (0, 4) else CRASH, 120 if k in (0, 4) else 108, 8)
             timp(b, 0, 124)
-        if k == 7:
-            tomfill(b, 12, 104)
-            hats(b, range(12), 80)
+        if k in (3, 7):                                            # snare-roll + riser naar de key change / T
+            roll(b, 8, 76, 6)
+            riser(b, 8, 56)
+            hats(b, range(8), 80)
         else:
             drum(b, 14, SNARE, 84)
             hats(b, range(16), 80)
 
-    # T: C-D-koperstoten, dan de opbouwmaat
+    # T: F -> G -> A: stijgende koperstoten, dan de opbouwmaat
     b = T0
-    for half, top, low in ((0, ('E5', 'E5', 'G5'), ('C5', 'C5', 'E5')), (8, ('F#5', 'F#5', 'A5'), ('D5', 'D5', 'F#5'))):
+    for half, top, low in ((0, ('B5', 'B5', 'D6'), ('G5', 'G5', 'B5')), (8, ('C#6', 'C#6', 'E6'), ('A5', 'A5', 'C#6'))):
         for (s, l), n, h in zip(STABS, top, low):
             t = b * BAR + (half + s) * S16
             parts['lead'].append([t, t + l * S16 - 10, p(n), 122])
@@ -457,7 +520,8 @@ def build():
     layout = [('lead', TRUMPET, 112, 0, 64), ('horn', HORN, 92, 1, 52), ('strmel', STRINGS, 100, 2, 76),
               ('spicc', SPICC, 70, 3, 84), ('power', POWER, 72, 4, 44), ('mute', MUTE, 78, 5, 44),
               ('bass', BASS, 104, 6, 64), ('choir', CHOIR, 72, 7, 64), ('timp', TIMPANI, 96, 8, 64),
-              ('sqlead', SQ_LEAD, 36, 10, 70), ('sqarp', SQ_ARP, 30, 11, 88), ('hats', NOISE, 40, 12, 72)]
+              ('sqlead', SQ_LEAD, 36, 10, 70), ('sqarp', SQ_ARP, 30, 11, 88), ('hats', NOISE, 40, 12, 72),
+              ('bells', BELL, 50, 13, 40)]
     for k, prog, vol, ch, pan in layout:
         song.add(parts[k], prog, vol, ch, pan)
     song.add(parts['drums'], KIT, 110, 9)
@@ -472,7 +536,7 @@ def write_voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
     lines[0] = '@ Project Grounded: grounded_gm voor Battle! Victini. Gegenereerd door tools/grounded/victini_theme.py.'
     lines[1] = ('@ 28 palm-mute-powerchord, 29 distortion-powerchord (victini_samples.py), 49 spiccato, '
-                '80/81 PSG-lead/arpeggio, 121 PSG-hihat, 127 kit (drumsets/victini.inc).')
+                '80/81 PSG-lead/arpeggio, 82 golf-bellen, 121 PSG-hihat, 127 kit (drumsets/victini.inc).')
     lines[2] = 'voice_group %s' % VG
     repl = {
         '@ 28': '\tvoice_directsound 60, 0, DirectSoundWaveData_victini_mute, 255, 0, 255, 140  @ 28',
@@ -481,6 +545,7 @@ def write_voicegroup():
         '@ 49': '\tvoice_keysplit voicegroup_victini_spicc_keysplit, keysplit_strings  @ 49',
         '@ 80': '\tvoice_square_1 60, 0, 0, 1, 0, 0, 12, 1  @ 80',
         '@ 81': '\tvoice_square_2 60, 0, 2, 0, 1, 6, 1  @ 81',
+        '@ 82': '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_5, 0, 2, 6, 1  @ 82',
         '@ 121': '\tvoice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 121',
         '@ 127': '\tvoice_keysplit_all voicegroup_victini_drumset  @ 127',
     }

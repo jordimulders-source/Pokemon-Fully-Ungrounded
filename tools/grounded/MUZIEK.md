@@ -270,3 +270,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   RMS in 40 ms na elke 16de, gemiddeld over de drop (`lvl.py`-achtig): v3-eerste mix snare 1,5-5 kHz +5..7 dB boven de
   rest, maar breedband maar 1-2 dB boven de off-beat-basstoten/koper -> reese 92 -> 80, koper 118 -> 100, stoten
   vel 120 -> 110, -V070 -> 080 (eerste meting -V070: 0 overlopen, piek 85/127).
+- Heatran v5 (Kyuss' 'Odyssey' op de GBA; sludge 76 bpm met swing <-> desert pump 136 bpm): **'Gen 3-klank' = de echte
+  Gen 3-samples** waar ze bestaan: lead `sd90_classical_distortion_guitar_high` (C4), feedback `sd90_classical_overdrive_guitar`,
+  bas `sc88pro_synth_bass`, drums uit rs_drumset zónder de PSG-noten in een eigen kit (rnd_kick, rnd_snare = doffe snare,
+  orchestra/trinity crash = blikkerig, sc55-toms). De Gen 3-gitaren liggen op C3/C4 (`distortion_guitar_low` = C3, de
+  'power_chord'-sample rond C4); voor C-standard (C2) eigen samples gemaakt zoals een Gen 3-sample: hard gecomprimeerd
+  (crest 1,8), 13.379 Hz, 8 bit, korte loop; spectrum gemeten tegen `distortion_guitar_low` (zwaartepunt 900-1300 vs 946 Hz,
+  > 2 kHz 18-30% vs 16%). **Tempowissels:** mid2agb zet een TEMPO op de tick van het loopeinde ná de GOTO (wordt nooit
+  gespeeld): zet het tempo van het loopbegin op de looptick zelf (dan staat het direct na het label). De lint rekent
+  uitklinktijden met het eerste tempo; de stemverdeler in het script rekent met het snelste (meeste ticks).

@@ -35,10 +35,10 @@ voice_group grounded_mitch
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw, 255, 0, 255, 160  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw_dark, 255, 0, 255, 160  @ 33
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_f1, 255, 0, 255, 170  @ 34
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_c2, 255, 0, 255, 170  @ 35
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_db2, 255, 0, 255, 170  @ 36
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_eb2, 255, 0, 255, 170  @ 37
+	voice_directsound 60, 0, DirectSoundWaveData_mitch4_wob_f1, 255, 0, 255, 170  @ 34
+	voice_directsound 60, 0, DirectSoundWaveData_mitch4_wob_c2, 255, 0, 255, 170  @ 35
+	voice_directsound 60, 0, DirectSoundWaveData_mitch4_wob_db2, 255, 0, 255, 170  @ 36
+	voice_directsound 60, 0, DirectSoundWaveData_mitch4_wob_eb2, 255, 0, 255, 170  @ 37
 	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_lo, 255, 0, 255, 160  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_hi, 255, 0, 255, 160  @ 39
 	voice_directsound 60, 0, DirectSoundWaveData_mitch3_pluck, 255, 0, 255, 150  @ 40

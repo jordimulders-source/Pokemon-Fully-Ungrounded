@@ -15,7 +15,7 @@ v3: 172 bpm (TEMPO 86), F-klein. 1 tel = 20,8 frames, 1 maat = 1,40 s. Alles wat
   Ducking: op elke snare zakt het spoorvolume (CC7) van reese, sub, koper, arpeggio en pad naar 30% en komt in een
     16de terug (30 -> 55 -> 80 -> 100%): de klap snijdt door de mix.
   Bas: rauwe reese (mitch_reese_raw/_raw_dark) F1-F2 met portamento (pitch bend vanaf de vorige noot), om en om een
-    lange dreigende noot en een maat off-beat-stoten; in drop B de wobble (mitch3_wob_*, op 172 bpm) = de groove van
+    lange dreigende noot en een maat off-beat-stoten; in drop B de wobble (mitch3_wob_*, v4: mitch4_wob_*, op 172 bpm) = de groove van
     v2 rond 1:00. PSG-sub eronder.
   Lead: koperstoten in octaven (mitch3_brass_lo/hi, F3-C5 = 1-2 octaven lager dan v2), staccato, 3-3-2-ritmes.
   Arpeggio: donkere pluk (mitch3_pluck) in achtsten, C3-Ab4.
@@ -33,6 +33,16 @@ Loop (48 maten, 67,0 s)
   52-55 build-up (= 4-7), terug naar maat 8
 Max. 10 DirectSound-noten (gewone trainer): snare > kick > koper > reese > hihats > crash > ghost > arpeggio > pad.
 Voicegroup grounded_mitch = grounded_gm + eigen samples (mitch_samples.py) + eigen drumkit (drumsets/mitch.inc).
+v4 (Jordi over v3: 'ritme en structuur ECHT spot-on Chase & Status, we zijn er bijna; maak er een headbang-banger
+van'): noten, ritme en vorm exact v3 (diff per spoor: alleen klank, volume en CC's). (1) De wobble ('wowowow', drop B
+vanaf 0:45) op nieuwe samples mitch4_wob_* (ontstemde zaagtanden + distortion vóór een diep, snel resonant filter-LFO
++ pitch-LFO, luid begrensd) en het reese-spoor op CC7 118 i.p.v. 80 zolang een wobble klinkt. (2) Kick en snare
+keihard en droog (mitch4_kick: harde klik + tik, mitch4_snare: korte crack, gegate) en de kick op CC7 127;
+ducking (sidechain) nu op elke kick én snare, dieper: snare 20 -> 50 -> 80 -> 100%, kick 30 -> 60 -> 85 -> 100%.
+De rest (koper, hihats, bekkens, arpeggio, pad) iets zachter, zodat de mixer niet overloopt.
+Gemeten in de game (solo via volX): wobble t.o.v. al de rest in drop B -1,3 dB (v3 ±-7 dB: sample +3 dB, CC7 +3,4 dB);
+kick+snare in de 30 ms na de slag +10,5 dB boven de (geduckte) rest. midi.cfg -V088 (was -V070; -V100 liep over
+op de roffel-einden): recpcm 0 overlopen, piek 92/127.
 Zie tools/grounded/MUZIEK.md.
 Gebruik: python3 tools/grounded/mitch_theme.py"""
 import os, sys
@@ -55,8 +65,8 @@ BRASS_LO, BRASS_HI, PLUCK, PAD_MIN, PAD_MAJ = 38, 39, 40, 41, 42
 SUB, RISER, DRUMS = 84, 121, 127
 # drumkit (drumsets/mitch.inc, vanaf 36): naam, sample, release, lengte (ticks; ±de samplelengte)
 KIT = [
-    ('KICK', 'mitch3_kick', 150, 44),
-    ('SNARE', 'mitch3_snare', 140, 52),
+    ('KICK', 'mitch4_kick', 150, 44),
+    ('SNARE', 'mitch4_snare', 140, 52),
     ('GHOST', 'mitch3_ghost', 120, 20),
     ('HAT', 'mitch_hat', 110, 16),
     ('RIDE', 'mitch_ride', 170, 48),
@@ -80,8 +90,9 @@ def n(name):
 CHORDS = {'Fm': ('F', 'min'), 'Db': ('Db', 'maj'), 'Eb': ('Eb', 'maj'), 'C': ('C', 'maj')}
 DROP_CH = ['Fm', 'Fm', 'Db', 'Eb', 'Fm', 'Fm', 'Db', 'C']
 BASS_ROOT = {'Fm': 'F1', 'Db': 'Db2', 'Eb': 'Eb2', 'C': 'C2'}
-VOL = {'reese': 80, 'brass': 100, 'arp': 58, 'pad': 56, 'sub': 60}       # basisvolume (CC7) per spoor
-DUCK = [(0, 0.30), (12, 0.55), (24, 0.80), (36, 1.0)]                    # ducking na elke snare (ticks, factor)
+VOL = {'reese': 80, 'wob': 118, 'brass': 92, 'arp': 52, 'pad': 50, 'sub': 60}   # basisvolume (CC7) per spoor
+DUCK = [(0, 0.20), (10, 0.50), (20, 0.80), (32, 1.0)]                    # ducking na elke snare (ticks, factor)
+DUCK_K = [(0, 0.30), (8, 0.60), (16, 0.85), (26, 1.0)]                   # v4: en na elke kick
 
 
 def t(bar, pos=0):
@@ -114,10 +125,12 @@ def build():
     prog = {'reese': [], 'brass': [], 'pad': []}
     bendev = []                    # (tick, pitchwheel) voor de reese
     snares = []                    # ticks van de hoofdsnares (ducking)
+    kicks = []                     # v4: ticks van de kicks (ducking)
 
     # ---------------- drums ----------------
     def K(b, p, v=127):
         P['kick'].append([t(b, p), t(b, p) + KITLEN[KICK], KICK, v])
+        kicks.append(t(b, p))
 
     def SN(b, p, v=127, duck=True):
         P['snare'].append([t(b, p), t(b, p) + KITLEN[SNARE], SNARE, v])
@@ -277,7 +290,7 @@ def build():
         bass_bar(b0 + 7, 'C', BASS_ST)
     motif(48, with_pad=True)                                   # break (= intro 0-3)
     build_up(52)                                               # = intro 4-7
-    return P, prog, bendev, sorted(set(snares))
+    return P, prog, bendev, sorted(set(snares)), sorted(set(kicks))
 
 
 def clip_loop(notes):
@@ -337,15 +350,21 @@ def reese_bends(notes, bendev):
     return [(tk, m) for tk, m in ev if tk < LOOP_END]
 
 
-def duck_ccs(base, snares):
-    cc = [(0, 7, base), (LOOP_START, 7, base)]
-    for s in snares:
-        cc += [(s + d, 7, max(1, int(round(base * f)))) for d, f in DUCK if s + d < LOOP_END]
+def duck_ccs(base, snares, kicks=(), base_at=None):
+    """CC7-ducking: op elke snare (DUCK) en kick (DUCK_K) kort omlaag; een dip stopt waar de volgende begint (de
+    snare wint als ze samenvallen). base_at(tick) = basisvolume op dat moment (v4: luider zolang de wobble klinkt);
+    `changes` = ticks waarop het basisvolume wisselt."""
+    at = base_at or (lambda tk: base)
+    ev = sorted({**{k: DUCK_K for k in kicks}, **{s: DUCK for s in snares}}.items())
+    cc = [(0, 7, at(0)), (LOOP_START, 7, at(LOOP_START))]
+    for i, (s, curve) in enumerate(ev):
+        nxt = ev[i + 1][0] if i + 1 < len(ev) else LOOP_END
+        cc += [(s + d, 7, max(1, int(round(at(s + d) * f)))) for d, f in curve if s + d < min(nxt, LOOP_END)]
     return cc
 
 
 def main():
-    P, prog_, bendev, snares = build()
+    P, prog_, bendev, snares, kicks = build()
     for k in P:
         P[k] = same_pitch_overlap(clip_loop(P[k]))
     # golfkanaal: een golf van één periode klinkt een octaaf lager dan genoteerd (zie MUZIEK.md)
@@ -384,19 +403,30 @@ def main():
     def first(lst, dflt):
         return sorted(lst)[0][1] if lst else dflt
 
+    # v4: het reese-spoor staat luider zolang een wobble-programma klinkt
+    rp = sorted(set(prog_['reese']))
+    wobs = set(WOB.values())
+
+    def reese_base(tk):
+        cur = [p for t_, p in rp if t_ <= tk]
+        return VOL['wob'] if cur and cur[-1] in wobs else VOL['reese']
+    reese_ccs = duck_ccs(VOL['reese'], snares, kicks, reese_base)
+    hits = set(snares) | set(kicks)
+    reese_ccs += [(t_, 7, reese_base(t_)) for t_, p in rp
+                  if t_ < LOOP_END and t_ not in hits and reese_base(t_) != reese_base(t_ - 1)]
     layout = [  # naam, noten, programma, volume, kanaal, pan, ccs, extra
         ('reese', P['reese'], first(prog_['reese'], REESE['dark']), VOL['reese'], 0, 64,
-         progs(prog_['reese']) + duck_ccs(VOL['reese'], snares), reese_bends(P['reese'], bendev)),
+         progs(prog_['reese']) + reese_ccs, reese_bends(P['reese'], bendev)),
         ('brass', P['brass'], first(prog_['brass'], BRASS_LO), VOL['brass'], 1, 60,
-         progs(prog_['brass']) + duck_ccs(VOL['brass'], snares), ()),
-        ('arp', P['arp'], PLUCK, VOL['arp'], 2, 84, duck_ccs(VOL['arp'], snares), ()),
-        ('pad', P['pad'], PAD_MIN, VOL['pad'], 3, 44, progs(prog_['pad']) + duck_ccs(VOL['pad'], snares), ()),
-        ('kick', sorted(P['kick'] + P['ghost']), DRUMS, 112, 9, 64, (), ()),
+         progs(prog_['brass']) + duck_ccs(VOL['brass'], snares, kicks), ()),
+        ('arp', P['arp'], PLUCK, VOL['arp'], 2, 84, duck_ccs(VOL['arp'], snares, kicks), ()),
+        ('pad', P['pad'], PAD_MIN, VOL['pad'], 3, 44, progs(prog_['pad']) + duck_ccs(VOL['pad'], snares, kicks), ()),
+        ('kick', sorted(P['kick'] + P['ghost']), DRUMS, 127, 9, 64, (), ()),
         ('snare', P['snare'], DRUMS, 127, 10, 64, (), ()),
-        ('hats', P['hat'], DRUMS, 100, 8, 76, (), ()),
-        ('cym', sorted(P['ride'] + P['crash'] + P['fx']), DRUMS, 92, 11, 54, (), ()),
+        ('hats', P['hat'], DRUMS, 88, 8, 76, (), ()),
+        ('cym', sorted(P['ride'] + P['crash'] + P['fx']), DRUMS, 84, 11, 54, (), ()),
         ('noise', P['noise'], RISER, 64, 12, 70, (), ()),
-        ('sub', P['sub'], SUB, VOL['sub'], 13, 64, duck_ccs(VOL['sub'], snares), ()),
+        ('sub', P['sub'], SUB, VOL['sub'], 13, 64, duck_ccs(VOL['sub'], snares, kicks), ()),
     ]
     for name, notes, prog, vol, ch, pan, ccs, extr in layout:
         song.add(notes, prog, vol, ch, pan, extra=extr, ccs=ccs)
@@ -421,8 +451,8 @@ def write_voicegroup():
         '\tvoice_directsound %d, 0, DirectSoundWaveData_%s, %d, %d, %d, %d' % (key, smp, att, dec, sus, rel)
     rep = {
         32: ds('mitch_reese_raw', 160), 33: ds('mitch_reese_raw_dark', 160),
-        34: ds('mitch3_wob_f1', 170), 35: ds('mitch3_wob_c2', 170), 36: ds('mitch3_wob_db2', 170),
-        37: ds('mitch3_wob_eb2', 170),
+        34: ds('mitch4_wob_f1', 170), 35: ds('mitch4_wob_c2', 170), 36: ds('mitch4_wob_db2', 170),
+        37: ds('mitch4_wob_eb2', 170),
         38: ds('mitch3_brass_lo', 160), 39: ds('mitch3_brass_hi', 160), 40: ds('mitch3_pluck', 150),
         41: ds('mitch_pad_min', 200, att=40), 42: ds('mitch_pad_maj', 200, att=40),
         84: '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1',

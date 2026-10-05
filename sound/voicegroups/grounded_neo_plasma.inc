@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v7. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 orgel, 38 pulse-bas, 62/63 synth brass, 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 stoot, 114 steel drums, 127 drums.
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v8. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -39,7 +39,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_np_pulse_bass, 255, 210, 140, 120  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_np_synth_bass, 255, 245, 60, 110  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -63,8 +63,8 @@ voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61
-	voice_directsound 60, 0, DirectSoundWaveData_np_brass_full, 255, 215, 150, 120  @ 62
-	voice_directsound 60, 0, DirectSoundWaveData_np_brass_full_lo, 255, 210, 150, 110  @ 63
+	voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet  @ 62
+	voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet  @ 63
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 64
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 65
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 66
@@ -81,14 +81,14 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_directsound 72, 0, DirectSoundWaveData_np_lead_pulse, 255, 235, 200, 140  @ 80
-	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 81
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140  @ 80
+	voice_square_1 60, 0, 0, 2, 0, 1, 12, 3  @ 81
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 2, 6, 1  @ 84
 	voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140  @ 85
-	voice_directsound 60, 0, DirectSoundWaveData_np_stab, 255, 200, 120, 100  @ 86
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100  @ 86
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110  @ 87
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
@@ -115,7 +115,7 @@ voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 111
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 112
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 113
-	voice_directsound 60, 0, DirectSoundWaveData_gm_steel_drums, 255, 0, 255, 150  @ 114
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 114
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 115
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 116
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 117

@@ -522,3 +522,12 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - **Heatran → v5:** gebaseerd op Kyuss' "Odyssey": traag sludge-stuk (~75 bpm) wisselt met snelle desert-pump (~135 bpm). Moet klinken alsof Kyuss de originele R/S-Heatran-baasmuziek op de GBA inspeelde: crunchy low-bitrate gitaarsamples (C-standard), doffe fuzz-synthbas die de gitaar volgt, doffe Gen 3-drums (doffe snare, blikkerige crashes). Geen moderne studioklank.
 - **Mitch → v3:** v2 klonk als drukke chiptune/happy hardcore; alleen het stuk rond 1:00 had de juiste sfeer. Duister, minder pieperig (leads 1–2 octaven lager), less is more, two-step 172 bpm met keiharde droge snare + ducking, lage reese met portamento, intro → build-up → 1 tel stilte → drop.
 - **Neo Plasma → v7:** te kaal/dun. Octaafverdubbeling van de lead, sub onder de bas, gesplitste arpeggio's L/R, staccato off-beat-akkoordstoten, four-on-the-floor met ghost-snares en 16e-hats met accenten.
+- Heatran v5 (Kyuss' 'Odyssey' op de GBA; sludge 76 bpm met swing <-> desert pump 136 bpm): **'Gen 3-klank' = de echte
+  Gen 3-samples** waar ze bestaan: lead `sd90_classical_distortion_guitar_high` (C4), feedback `sd90_classical_overdrive_guitar`,
+  bas `sc88pro_synth_bass`, drums uit rs_drumset zónder de PSG-noten in een eigen kit (rnd_kick, rnd_snare = doffe snare,
+  orchestra/trinity crash = blikkerig, sc55-toms). De Gen 3-gitaren liggen op C3/C4 (`distortion_guitar_low` = C3, de
+  'power_chord'-sample rond C4); voor C-standard (C2) eigen samples gemaakt zoals een Gen 3-sample: hard gecomprimeerd
+  (crest 1,8), 13.379 Hz, 8 bit, korte loop; spectrum gemeten tegen `distortion_guitar_low` (zwaartepunt 900-1300 vs 946 Hz,
+  > 2 kHz 18-30% vs 16%). **Tempowissels:** mid2agb zet een TEMPO op de tick van het loopeinde ná de GOTO (wordt nooit
+  gespeeld): zet het tempo van het loopbegin op de looptick zelf (dan staat het direct na het label). De lint rekent
+  uitklinktijden met het eerste tempo; de stemverdeler in het script rekent met het snelste (meeste ticks).

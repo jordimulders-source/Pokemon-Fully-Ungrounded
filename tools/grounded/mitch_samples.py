@@ -15,10 +15,14 @@ trillingen per loop, zodat de zweving in de sample zit en hij naadloos rondloopt
   mitch_rewind : DJ-rewind: een stukje van de drop (kick, snare, reese, stoot) achterstevoren, eerst snel
       versnellend en dan uitlopend, eenmalig.
   mitch_airhorn: MC-luchthoorn (twee zaagtanden in een kleine secunde, bandpass, vervormd), eenmalig.
+  mitch_reese_raw / _raw_dark (v2): rauwe distorted reese: vijf ontstemde zaagtanden, tanh-fuzz op 8x de samplerate,
+      periodiek FFT-lowpass ±2,5 kHz (dark: 1,1 kHz), grondtoon zachter (de PSG-sub draagt het laag), +5 dB rond 1,1 kHz.
+Drums v2 (Jordi: 'te recht/langzaam, mist de agressieve DnB-fundering'):
+  mitch_kick   : sinus 190 -> 52 Hz (snelle val) + klik 2-5,5 kHz + een beetje FluidR3-elektronische kick, verzadigd.
+  mitch_snare  : FluidR3 standard 38 + electric 40, ruisstoot 1,8-6,5 kHz (crack) + toon 190 Hz, hard verzadigd.
+  mitch_ghost  : dezelfde snare, 90 ms (ghost notes en roffels).
+  mitch_hat / mitch_ohat : FluidR3-hihat (42/46) + ruis > 6 kHz, gesloten 60 ms (16den op 174 bpm), open 0,32 s.
 Uit FluidR3 (fluidsynth, kit/programma per sample) en daarna bewerkt:
-  mitch_kick   : Power-kit-kick + een gesynthetiseerde sub-dreun (sinus 110 -> 48 Hz), verzadigd.
-  mitch_snare  : Room-kit-snare (de 'kamer' van een gesamplede break) + ruisaanzet, verzadigd en hooggefilterd.
-  mitch_ghost  : dezelfde snare, kort (ghost notes en roffels).
   mitch_revcym : crash achterstevoren (aanloop naar een drop).
   mitch_ride   : ride (Standard-kit), voor de Pendulum-achtige ride in de drops.
   mitch_horn_min / _maj : brass section (GM 61) als akkoord in één sample (hoornstoot).
@@ -242,6 +246,83 @@ def gm_chord(prog, notes, dur, rate, loop):
     return fade_out(a, rate, 0.08), rate, None
 
 
+# ---------------------------------------------------------------- v2: rauwe reese, punchy kit
+def reese_raw(note=36, per=128, M=128, cut=2500.0, drive=3.2, saws=((-2, 0.7), (-1, 1.0), (0, 0.8), (1, 1.0), (2, 0.7)),
+              fund=0.55, over=8):
+    """Rauwe distorted reese: vijf licht ontstemde zaagtanden (M + k trillingen per loop: zweving 0,5-1 Hz in de
+    sample), vervormd (tanh) op 8x de samplerate en daarna met een periodiek FFT-lowpass (±cut Hz, 24 dB/oct)
+    teruggebracht naar `per` samples per periode: geen aliasing en een exacte loop."""
+    f0 = hz(note)
+    n = per * M * over
+    ph = np.arange(n) / n
+    rng = np.random.default_rng(11)
+    a = np.zeros(n)
+    for k, amp in saws:
+        cyc = M + k
+        p0 = rng.uniform(0, 2 * np.pi)
+        for h in range(1, 60):
+            g = fund if h == 1 else 1.0
+            a += amp * g * np.sin(2 * np.pi * h * cyc * ph + h * p0) / h
+    a = np.tanh(drive * a / np.abs(a).max())
+    F = np.fft.rfft(a)
+    fr = np.arange(len(F)) * f0 / M                    # bin k = k / M x f0
+    F *= 1 / np.sqrt(1 + (fr / cut) ** 8)
+    F[fr < 0.6 * f0] = 0                               # geen DC/infrasoon
+    F[fr < 1.5 * f0] *= 0.4                            # grondtoon zachter: de PSG-sub draagt het laag
+    F *= 1 + 0.8 * np.exp(-((np.log2(np.maximum(fr, 1) / 1100)) / 0.6) ** 2)    # +5 dB rond 1,1 kHz: grit
+    F = F[:per * M // 2 + 1]
+    out = np.fft.irfft(F, per * M)
+    return norm(out), int(round(f0 * per))
+
+
+def kick2(rate=16000):
+    """Strakke DnB-kick: sinus met snelle toonhoogteval (190 -> 52 Hz), korte dreun, klik 2-5 kHz, verzadigd."""
+    n = int(rate * 0.24)
+    t = np.arange(n) / rate
+    f = 52 + 138 * np.exp(-t / 0.022)
+    body = np.sin(2 * np.pi * np.cumsum(f) / rate) * np.exp(-t / 0.10)
+    click = sosfilt(butter(2, [2000, 5500], 'bandpass', fs=rate, output='sos'),
+                    np.random.default_rng(9).uniform(-1, 1, n)) * np.exp(-t / 0.004)
+    fl = resample(render(0, [36], 0.24, kit=24, vel=127), 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    a = np.tanh(2.4 * (body + 1.4 * click + 0.35 * norm(fl)))
+    return fade_out(norm(a), rate, 0.04), rate
+
+
+def snare2(rate=22050, dur=0.24, ghost=False):
+    """Snare met crack: FluidR3 (standard-kit 38 + electric 40) + ruisstoot 1,8-6 kHz + toon 190 Hz, hooggefilterd."""
+    n = int(rate * dur)
+    t = np.arange(n) / rate
+    m = int(dur * 44100)
+    two = [np.pad(x[:m], (0, m - len(x[:m]))) for x in (render(0, [38], dur, kit=0, vel=127), render(0, [40], dur, kit=0, vel=127))]
+    fl = resample(0.6 * two[0] + 0.6 * two[1], 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    noise = np.random.default_rng(5).uniform(-1, 1, n)
+    crack = sosfilt(butter(2, [1800, 6500], 'bandpass', fs=rate, output='sos'), noise) * np.exp(-t / 0.045)
+    body = np.sin(2 * np.pi * 190 * t) * np.exp(-t / 0.035)
+    a = norm(fl) + 1.3 * norm(crack) + 0.5 * body
+    a = sosfilt(butter(2, 160, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(4.0 * norm(a))                         # hard: de crack moet boven de trompet uit
+    if ghost:
+        a = a[:int(rate * 0.09)]
+        return fade_out(norm(a), rate, 0.05), rate
+    return fade_out(norm(a), rate, 0.07), rate
+
+
+def hat(rate=22050, open_=False):
+    """Hihat: FluidR3 (gesloten 42 / open 46) + ruis boven 6 kHz; kort en helder (16den op 174 bpm = 86 ms)."""
+    dur = 0.32 if open_ else 0.06
+    n = int(rate * dur)
+    t = np.arange(n) / rate
+    fl = resample(render(0, [46 if open_ else 42], dur, kit=0, vel=120), 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    nz = sosfilt(butter(2, 6500, 'highpass', fs=rate, output='sos'), np.random.default_rng(13).uniform(-1, 1, n))
+    a = norm(fl) + 0.8 * norm(nz) * np.exp(-t / (0.12 if open_ else 0.018))
+    a = sosfilt(butter(2, 4500, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(2.5 * norm(a))
+    return fade_out(norm(a), rate, 0.1 if open_ else 0.015), rate
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
@@ -269,12 +350,20 @@ def main():
         jobs['mitch_horn_' + nm] = (a, r, 60, lp)
         a, r, lp = gm_chord(89, notes, 2.0, 16000, True)
         jobs['mitch_pad_' + nm] = (a, r, 60, lp)
-    k, kr = kick()
-    s, sr = snare()
+    k, kr = kick2()
+    s, sr = snare2()
     jobs['mitch_kick'] = (k, kr, 60, None)
     jobs['mitch_snare'] = (s, sr, 60, None)
-    g, gr = snare(ghost=True)
+    g, gr = snare2(ghost=True)
     jobs['mitch_ghost'] = (g, gr, 60, None)
+    a, r = hat()
+    jobs['mitch_hat'] = (a, r, 60, None)
+    a, r = hat(open_=True)
+    jobs['mitch_ohat'] = (a, r, 60, None)
+    a, r = reese_raw()
+    jobs['mitch_reese_raw'] = (a, r, 36, (0, len(a)))
+    a, r = reese_raw(cut=1100.0, drive=4.5, saws=((-2, 0.8), (-1, 1.0), (1, 1.0), (3, 0.8)))
+    jobs['mitch_reese_raw_dark'] = (a, r, 36, (0, len(a)))
     a, r = revcym()
     jobs['mitch_revcym'] = (a, r, 60, None)
     a = norm(resample(render(0, [51], 0.9, kit=0, vel=112), 44100, 22050, antialias=True))

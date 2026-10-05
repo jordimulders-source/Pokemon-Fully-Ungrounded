@@ -7196,3 +7196,19 @@ DirectSoundWaveData_np_brass_stab_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_hat::
+	.incbin "sound/direct_sound_samples/grounded/mitch_hat.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_ohat::
+	.incbin "sound/direct_sound_samples/grounded/mitch_ohat.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_reese_raw::
+	.incbin "sound/direct_sound_samples/grounded/mitch_reese_raw.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_reese_raw_dark::
+	.incbin "sound/direct_sound_samples/grounded/mitch_reese_raw_dark.bin"

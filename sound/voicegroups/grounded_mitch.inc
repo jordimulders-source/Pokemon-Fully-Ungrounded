@@ -33,17 +33,17 @@ voice_group grounded_mitch
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_dark, 255, 0, 255, 170  @ 32
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_mid, 255, 0, 255, 170  @ 33
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_bright, 255, 0, 255, 170  @ 34
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_growl, 255, 0, 255, 170  @ 35
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_dark, 255, 0, 255, 150  @ 32
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_mid, 255, 0, 255, 150  @ 33
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_bright, 255, 0, 255, 150  @ 34
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_growl, 255, 0, 255, 150  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_f1, 255, 0, 255, 170  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_ab1, 255, 0, 255, 170  @ 37
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_c2, 255, 0, 255, 170  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_db2, 255, 0, 255, 170  @ 39
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_eb2, 255, 0, 255, 170  @ 40
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 42
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw, 255, 0, 255, 150  @ 41
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw_dark, 255, 0, 255, 150  @ 42
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
@@ -83,7 +83,7 @@ voice_group grounded_mitch
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 2  @ 80
 	voice_square_2 60, 0, 1, 0, 2, 4, 1  @ 81
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
+	voice_square_1 60, 0, 0, 1, 0, 1, 10, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
@@ -93,7 +93,7 @@ voice_group grounded_mitch
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_maj, 40, 0, 255, 200  @ 89
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_stab_min, 255, 0, 255, 170  @ 90
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_stab_maj, 255, 0, 255, 170  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_lead, 255, 0, 255, 190  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_lead, 255, 0, 255, 160  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
@@ -121,7 +121,7 @@ voice_group grounded_mitch
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 117
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 118
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 119
-	voice_noise_alt 60, 0, 0, 0, 0, 15, 1  @ 120
+	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120
 	voice_noise_alt 60, 0, 0, 3, 0, 15, 2  @ 121
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 122
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 123

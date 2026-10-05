@@ -32,7 +32,13 @@ SAMPLES = {
     'kc_timbale_hi':   ('drum', 65, 0.45, 22050, None),
     'kc_timbale_lo':   ('drum', 66, 0.5, 22050, None),
     'kc_guiro_long':   ('drum', 74, 0.45, 22050, None),
+    # Keccles v3: riffende elektrische gitaar à la 'Vigilante' (Colón/Blades 1983): FluidR3 GM 27 (clean) door een
+    # lichte overdrive (CRUNCH; GM 29 van FluidR3 is al zo fuzzy als een distortion), met loop (aanhoudende bends);
+    # tabel keysplit_french_horn (t/m 66 = A3, daarboven = A4)
+    'kc_guitar_57':    (27, 57, 1.2, 22050, 'auto'),
+    'kc_guitar_69':    (27, 69, 1.2, 22050, 'auto'),
 }
+CRUNCH = {'kc_guitar_57': (4.0, 3500), 'kc_guitar_69': (4.0, 3500)}   # (tanh-versterking, lowpass Hz)
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
     'gm_saw_lead': ('saw', 24),
@@ -87,6 +93,17 @@ def auto_loop(a, rate, note, at=0.45, length=0.12, xfade=0.03):
     return a[:e], (s, e)
 
 
+def drive(a, rate, gain, lp):
+    """Lichte overdrive: tanh-verzadiging en een eenpolige lowpass (de scherpe kant eraf)."""
+    a = np.tanh(a / max(1e-6, np.abs(a).max()) * gain)
+    k = np.exp(-2 * np.pi * lp / rate)
+    out, y = np.empty_like(a), 0.0
+    for i, x in enumerate(a):
+        y = (1 - k) * x + k * y
+        out[i] = y
+    return out
+
+
 def write_wav(path, x, rate, key, loop):
     q = np.clip(np.round(x * 127), -128, 127).astype(np.int16) + 128
     data = q.astype(np.uint8).tobytes()
@@ -104,11 +121,16 @@ def write_wav(path, x, rate, key, loop):
 SAMPLES = {k: v for k, v in SAMPLES.items() if k.startswith('kc_')}
 WAVES = {}
 
-def main():
+def main(only=()):
+    """only: alleen deze samples (opnieuw) maken, bv. `keccles_samples.py kc_guitar_57 kc_guitar_69`."""
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     for name, (prog, note, dur, rate, loop) in SAMPLES.items():
-        a = render(prog, note, dur, 127 if prog in range(56, 64) else 110)   # koper: vol = brallend (FluidR3-filter)
+        if only and name not in only:
+            continue
+        a = render(prog, note, dur, 127 if prog in range(56, 64) else 110)
+        if name in CRUNCH:
+            a = drive(a, 44100, *CRUNCH[name])   # koper: vol = brallend (FluidR3-filter)
         start = np.argmax(np.abs(a) > 0.002)                       # stilte vooraan weg
         a = resample(a[start:start + int(dur * 44100)], 44100, rate)
         a = a / max(1e-6, np.abs(a).max()) * 0.97                  # 8 bit: volle schaal
@@ -133,4 +155,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    main(sys.argv[1:])

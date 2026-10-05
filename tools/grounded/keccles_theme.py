@@ -28,6 +28,7 @@ Voicegroup grounded_keccles (gegenereerd) = grounded_gm met: 0 = piano met korte
 56 = trompet, 57 = trombone (FluidR3 GM 57, 2 samples), 121 = güiro (PSG-ruis), 122 = maracas (PSG-ruis),
 127 = salsa-drumkit. Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/keccles_theme.py"""
 import os, sys
+import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import dedupe, detach, allocate, releases, release_ticks, Song
 
@@ -38,6 +39,7 @@ E = TPB // 2                   # een achtste
 S16 = TPB // 4
 BAR = TPB * 4
 PIANO, CUATRO, CORO, TRUMPET, TROMBONE, BASS, GUIRO_PSG, MARACAS, DRUMS = 0, 24, 52, 56, 57, 33, 121, 122, 127
+GUITAR = 29                    # v3: riffende elektrische gitaar (lichte overdrive)
 # eigen drumkit (drumsets/keccles.inc, vanaf noot 36)
 (KICK, CLAVE, CASCARA, HEMBRA, MACHO, CAMPANA, SLAP, TUMBA, CONGA_HI, CRASH, RIM,
  BONGO_HI, BONGO_LO, BELL_MOUTH, BELL_HEEL, GUIRO_L, GUIRO_S) = range(36, 53)
@@ -172,7 +174,7 @@ TRACKS = [   # naam, programma, basisvolume (vol), pan
     ('tpt', TRUMPET, 104, 84), ('tpt2', TRUMPET, 88, 96), ('trb', TROMBONE, 118, 52), ('trb2', TROMBONE, 106, 40),
     ('trb3', TROMBONE, 96, 64), ('piano', PIANO, 90, 72), ('bass', BASS, 118, 64), ('cuatro', CUATRO, 104, 88),
     ('coro', CORO, 100, 60), ('bongo', DRUMS, 92, 84), ('conga', DRUMS, 96, 46), ('timb', DRUMS, 100, 70),
-    ('clave', DRUMS, 88, 58), ('noise', GUIRO_PSG, 40, 64),
+    ('clave', DRUMS, 88, 58), ('noise', GUIRO_PSG, 40, 64), ('gtr', GUITAR, 100, 80),
 ]
 GAIN = {'intro': .92, 'A1': .84, 'A2': .90, 'B12': .50, 'B3': .64, 'B4': .80, 'P': .84, 'D1': .82, 'D2': .88,
         'M1': .88, 'M2': .93, 'M3': 1.0, 'M4': 1.0, 'K': 1.0}
@@ -180,7 +182,26 @@ GAIN_OVR = {   # sporen die in een sectie de hoofdrol hebben
     ('coro', 'B12'): .86, ('coro', 'B3'): .92, ('coro', 'B4'): 1.0, ('cuatro', 'B12'): .90, ('cuatro', 'B3'): .95,
     ('cuatro', 'D2'): 1.0, ('cuatro', 'K'): .9, ('cuatro', 'A2'): .9, ('piano', 'P'): 1.0, ('bass', 'D1'): 1.0,
     ('bass', 'D2'): 1.0, ('bass', 'B12'): .66, ('noise', 'B12'): .85, ('conga', 'D1'): .95, ('bongo', 'D1'): .95,
-    ('trb', 'B4'): .9,
+    ('trb', 'B4'): .9, ('gtr', 'D1'): 1.0, ('gtr', 'M1'): .96,
+}
+
+# ---- v3: riffende elektrische gitaar à la 'Vigilante' (Colón/Blades): (achtste, achtsten, noot, effect) ------------
+# effect: '' gewoon, 'x' gedempte spookslag, 's' slide (van een hele toon onder), 'b' bend (een hele toon omhoog
+# vanaf de geschreven noot - 2), 'v' vibrato, combinaties mogen ('bv').
+GTR_DESCARGA = [   # D1 (maat 40-43, Am Dm E7 Am): de gitaar riffs over bas + percussie, tussen de bongó-repiques
+    [(0.5, .5, 'A3', 'x'), (1, .5, 'A3', 'x'), (1.5, .5, 'C4', ''), (2, .5, 'D4', ''), (2.5, 1, 'E4', 's'),
+     (4, .5, 'G4', ''), (4.5, 1.5, 'A4', 'bv'), (6.5, .5, 'G4', ''), (7, .5, 'E4', ''), (7.5, .5, 'D4', '')],
+    [(0, 1, 'C4', ''), (1, .5, 'A3', ''), (2, .5, 'D4', 'x'), (2.5, .5, 'D4', ''), (3, .5, 'F4', ''), (3.5, .5, 'A4', ''),
+     (4, 2.5, 'D5', 'bv'), (7, .5, 'C5', ''), (7.5, .5, 'A4', '')],
+    [(0.5, .5, 'B3', 'x'), (1, .5, 'E4', ''), (1.5, .5, 'G#4', ''), (2, .5, 'B4', ''), (2.5, .5, 'D5', ''),
+     (3, 1.5, 'E5', 'sv'), (5, .5, 'D5', ''), (5.5, .5, 'B4', ''), (6, .5, 'G#4', ''), (6.5, .5, 'F4', ''), (7, 1, 'E4', 'v')],
+    [(0, .5, 'A4', ''), (0.5, .5, 'A4', 'x'), (1.5, 1, 'C5', 'b'), (2.5, .5, 'A4', 'x'), (3, .5, 'A4', ''),
+     (4, .8, 'E4', ''), (5, .8, 'F#4', ''), (6, .8, 'G4', ''), (7, .8, 'G#4', '')],   # 4-7: met het basloopje mee
+]
+GTR_MONA = {   # M1 (maat 50-51): tegenriff in de gaten van de trombone-moña (op 1, 3 en de 16e-opmaten)
+    'E7': [(0, .5, 'E5', ''), (0.5, .5, 'E5', 'x'), (4, .5, 'D5', ''), (4.5, .5, 'B4', ''), (7, .5, 'B4', ''), (7.5, .5, 'D5', '')],
+    'Am2': [(1.5, .5, 'E5', ''), (2, 1, 'A5', 'b'), (5, .5, 'G5', ''), (5.5, .5, 'E5', ''), (6, .5, 'C5', 'x'),
+            (6.5, .5, 'E5', ''), (7.5, .5, 'G#4', '')],
 }
 
 
@@ -348,6 +369,27 @@ def build():
             if 8 <= i < 12:                                             # trompetten in tertsen (max. 3 koperstemmen)
                 parts['tpt2'] += harm(tp, vel=-10)
 
+    # ---- v3: elektrische gitaar (descarga-riffs, moña-dubbel en tegenriff) -----------------
+    gfx = {}
+
+    def guitar(bar, figure, vel=104, shift=0):
+        for st, ln, nm, fx in figure:
+            s = bar * BAR + int(round(st * E))
+            n = p(nm) + shift - (2 if ('s' in fx or 'b' in fx) else 0)
+            dur = 6 if 'x' in fx else int(round(ln * E)) - (2 if ln < 1 else 4)
+            v = 64 if 'x' in fx else vel + (8 if st in (0, 3, 4.5) else 0)
+            parts['gtr'].append([s, s + dur, n, v])
+            if fx.replace('x', ''):
+                gfx[(s, n)] = fx
+
+    for i, fig in enumerate(GTR_DESCARGA):
+        guitar(D0 + i, fig, 104)
+    for i in range(2):                                                  # M1, maat 48-49: moña een octaaf hoger mee
+        b = M0 + i
+        guitar(b, [(st, ln, nm, '') for st, ln, nm in MONA[PROG[b]]], 98, shift=12)
+    guitar(M0 + 2, GTR_MONA['E7'], 100)
+    guitar(M0 + 3, GTR_MONA['Am2'], 100)
+
     # ---- percussie -----------------------------------------------------------------------------------------------
     for b in range(END):
         sec = section(b)
@@ -434,14 +476,16 @@ def build():
     write_voicegroup()
     rel = releases(VG)
     melodic = {'tpt': TRUMPET, 'tpt2': TRUMPET, 'trb': TROMBONE, 'trb2': TROMBONE, 'trb3': TROMBONE, 'piano': PIANO,
-               'bass': BASS, 'cuatro': CUATRO, 'coro': CORO}
+               'bass': BASS, 'cuatro': CUATRO, 'coro': CORO, 'gtr': GUITAR}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in melodic.items()}
     for k in ('bongo', 'conga', 'timb', 'clave'):
         tail[k] = 2
-    for k in ('tpt', 'tpt2', 'trb', 'trb2', 'trb3', 'bass', 'coro', 'cuatro'):
+    for k in ('tpt', 'tpt2', 'trb', 'trb2', 'trb3', 'bass', 'coro', 'cuatro', 'gtr'):
         parts[k] = detach(parts[k], tail[k])
     # stemverdeler: melodie > trombones > koor/cuatro > bas > timbales > montuno > conga/bongó > tweede stemmen
-    order = ['trb', 'tpt', 'coro', 'cuatro', 'bass', 'timb', 'trb2', 'piano', 'trb3', 'clave', 'conga', 'bongo', 'tpt2']
+    # v3: de gitaar als laatste (laagste prioriteit): hij wijkt, de bestaande partijen blijven exact zoals in v2
+    order = ['trb', 'tpt', 'coro', 'cuatro', 'bass', 'timb', 'trb2', 'piano', 'trb3', 'clave', 'conga', 'bongo', 'tpt2',
+             'gtr']
     ds = {k: parts[k] for k in order}
     kept = allocate(ds, order, tail)
     print('tail (ticks):', tail)
@@ -472,12 +516,35 @@ def build():
                 ccs.append((swell + j * (M0 * BAR - swell) // 13, 7, round(vol * (0.35 + 0.65 * j / 12))))
         if k == 'noise':
             ccs += prog_cc
-        song.add(parts[k], prog, ccs[0][2] if ccs and ccs[0][0] == 0 else vol, ch, pan,
+        extra = gtr_bends(parts['gtr'], gfx) if k == 'gtr' else ()
+        song.add(parts[k], prog, ccs[0][2] if ccs and ccs[0][0] == 0 else vol, ch, pan, extra=extra,
                  ccs=[c for c in ccs if c[0] > 0 or c[1] == 'prog'])
     written = {k for k, *_ in TRACKS} | {'noise_prog'}
     assert not [k for k in parts if parts[k] and k not in written], 'partij niet weggeschreven'
     song.save(OUT, END * BAR)
     print(OUT, '%.1f s intro, %.1f s loop' % (A0 * 4 * 60 / BPM, (END - A0) * 4 * 60 / BPM))
+
+
+def gtr_bends(notes, gfx):
+    """Slides/bends (pitchwheel, BENDR 2 = een hele toon) en vibrato (CC1) voor de gitaar; alleen voor noten die de
+    stemverdeler liet staan. Terugzetten pas op de volgende noot (anders zakt de uitklinkende staart mee)."""
+    ev = [(0, mido.Message('control_change', control=20, value=2)), (0, mido.Message('pitchwheel', pitch=0)),
+          (0, mido.Message('control_change', control=21, value=40)), (0, mido.Message('control_change', control=1, value=0))]
+    notes = sorted(notes)
+    for i, (s, e, n, v) in enumerate(notes):
+        fx = gfx.get((s, n), '')
+        if not fx:
+            continue
+        nxt = notes[i + 1][0] if i + 1 < len(notes) else e + TPB
+        if 's' in fx or 'b' in fx:
+            steps = 3 if 's' in fx else 6                               # slide snel, bend langzamer
+            for k in range(1, steps + 1):
+                ev.append((s + k * 2, mido.Message('pitchwheel', pitch=min(8191, round(8192 * k / steps)))))
+            ev.append((nxt, mido.Message('pitchwheel', pitch=0)))
+        if 'v' in fx and e - s > E:
+            ev.append((s + E, mido.Message('control_change', control=1, value=36)))
+            ev.append((nxt, mido.Message('control_change', control=1, value=0)))
+    return ev
 
 
 def bass_root(pc):
@@ -527,6 +594,7 @@ def write_voicegroup():
     repl = {
         '@ 0': '\tvoice_keysplit voicegroup_keccles_piano_keysplit, keysplit_piano  @ 0',
         '@ 24': '\tvoice_directsound 60, 0, DirectSoundWaveData_kc_cuatro, 255, 0, 255, 140  @ 24',
+        '@ 29': '\tvoice_keysplit voicegroup_keccles_guitar_keysplit, keysplit_french_horn  @ 29',
         '@ 56': '\tvoice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56',
         '@ 57': '\tvoice_keysplit voicegroup_keccles_trombone_keysplit, keysplit_french_horn  @ 57',
         '@ 121': '\tvoice_noise_alt 60, 0, 0, 0, 2, 6, 0  @ 121',
@@ -549,6 +617,12 @@ def write_voicegroup():
         'voice_group keccles_trombone_keysplit\n'
         '\tvoice_directsound 55, 0, DirectSoundWaveData_kc_trombone_55, 255, 0, 255, 150\n'
         '\tvoice_directsound 67, 0, DirectSoundWaveData_kc_trombone_67, 255, 0, 255, 150\n\n')
+    open('sound/voicegroups/keysplits/keccles_guitar.inc', 'w').write(
+        '@ Project Grounded: elektrische gitaar met lichte overdrive (FluidR3 GM 29, keccles_samples.py) voor Battle!\n'
+        '@ Keccles v3; tabel keysplit_french_horn (t/m noot 66 = sample op A3, daarboven = A4). Korte release: riffs.\n'
+        'voice_group keccles_guitar_keysplit\n'
+        '\tvoice_directsound 57, 0, DirectSoundWaveData_kc_guitar_57, 255, 0, 255, 150\n'
+        '\tvoice_directsound 69, 0, DirectSoundWaveData_kc_guitar_69, 255, 0, 255, 150\n\n')
     kit = [   # vanaf noot 36; alles DirectSound (geen PSG-piepjes)
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_sc88pro_rnd_kick, 255, 0, 255, 0',          # 36 kick
         'voice_directsound 60, 64, DirectSoundWaveData_kc_claves, 255, 0, 255, 100',                            # 37 clave

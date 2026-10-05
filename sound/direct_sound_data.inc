@@ -7558,10 +7558,6 @@ DirectSoundWaveData_mitch4_wob_eb2::
 	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_eb2.bin"
 
 	.align 2
-DirectSoundWaveData_np_synth_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_synth_bass.bin"
-
-	.align 2
 DirectSoundWaveData_heatran_st_pw_36::
 	.incbin "sound/direct_sound_samples/grounded/heatran_st_pw_36.bin"
 
@@ -7914,13 +7910,21 @@ DirectSoundWaveData_gym_bra4_chug::
 	.incbin "sound/direct_sound_samples/grounded/gym_bra4_chug.bin"
 
 	.align 2
-DirectSoundWaveData_np_bass_fat::
-	.incbin "sound/direct_sound_samples/grounded/np_bass_fat.bin"
-
-	.align 2
 DirectSoundWaveData_np_gbrass_lo::
 	.incbin "sound/direct_sound_samples/grounded/np_gbrass_lo.bin"
 
 	.align 2
 DirectSoundWaveData_np_gbrass_hi::
 	.incbin "sound/direct_sound_samples/grounded/np_gbrass_hi.bin"
+
+	.align 2
+DirectSoundWaveData_np_plead_hi::
+	.incbin "sound/direct_sound_samples/grounded/np_plead_hi.bin"
+
+	.align 2
+DirectSoundWaveData_np_plead_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_plead_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_bass_buzz::
+	.incbin "sound/direct_sound_samples/grounded/np_bass_buzz.bin"

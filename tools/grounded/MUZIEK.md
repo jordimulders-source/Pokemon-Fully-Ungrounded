@@ -99,6 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v11 wacht op Jordi (zuivere pulse-lead zonder zweving, blikkerige bas) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -480,3 +481,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   meten zonder extra ROM**: volX (MusicPlayerTrack +19, standaard 64, x = vol*volX>>5) per spoor elke frame zetten +
   vlag 0x03 (anders pakt m4a het niet op) bootst CC7- en -V-wijzigingen exact na in recpcm/recaudio. -V064: 0
   overlopen, piek 86/127, RMS 3157; < 150 Hz in de brug 42% (met de dunne bas 34%, origineel 52%).
+- Neo Plasma v11 (Gemini: 'theremin met vibrato op de lead, houtachtige tik-bas'): **de 'vibrato' zat in de sample, niet
+  in bends** (die gingen terug naar c_v+0): `sc88pro_square_wave` is zelf een gechorusde blokgolf (7-10 dB tremolo op
+  1,7-5 Hz, zwaartepunt schommelt 28%, 93% energie op de grondtoon = fluittoon); meet een lead-sample met
+  `sample_tremolo()` (neo_plasma_theme.py, nu een harde regel). 'Tikkende bas' = 16en van 27 ticks door detach met een
+  lange release: korte release (50) + langere noot geeft dezelfde kanaalbezetting. **Spleeter-model leeg** (download
+  faalde: h2/302) geeft 4 identieke stems zonder fout: md5 controleren; model met curl -L van de GitHub-release halen.

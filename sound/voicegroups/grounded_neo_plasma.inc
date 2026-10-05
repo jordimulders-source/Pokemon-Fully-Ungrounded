@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v10. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v11. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 pulse-lead laag/hoog, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -39,7 +39,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_np_bass_fat, 255, 245, 60, 110  @ 38
+	voice_directsound 48, 0, DirectSoundWaveData_np_bass_buzz, 255, 0, 255, 50  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -81,7 +81,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140  @ 80
+	voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, 60  @ 80
 	voice_square_1 60, 0, 0, 2, 0, 1, 12, 3  @ 81
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
@@ -89,11 +89,11 @@ voice_group grounded_neo_plasma
 	voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140  @ 85
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100  @ 86
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110  @ 87
-	voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 120  @ 88
-	voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 120  @ 89
+	voice_directsound 48, 0, DirectSoundWaveData_np_plead_lo, 255, 0, 255, 60  @ 88
+	voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, 60  @ 89
 	voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40  @ 90
 	voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 100  @ 92
+	voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, 100  @ 92
 	voice_directsound 48, 0, DirectSoundWaveData_np_gbrass_lo, 255, 0, 255, 150  @ 93
 	voice_directsound 72, 0, DirectSoundWaveData_np_gbrass_hi, 255, 0, 255, 150  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95

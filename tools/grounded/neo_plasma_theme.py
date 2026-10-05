@@ -4,6 +4,27 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v11 (Jordi via Gemini over v10; drums, tempo en de achtergrond-arpeggio's blijven; preview v10 vanaf 0 s, maat =
+seconde / 1,364). Elk punt eerst gemeten:
+1. 'Theremin / fluittoon met vibrato en pitch-bends op de lead, 0:08-0:18 en 0:45-0:55': de bends van de intro-glide
+   gaan op beide sporen (lead + PSG-octaaf) terug naar het midden (BEND c_v+0 op tick 7936) en er zijn geen MOD/LFO-
+   controllers. De zweving zat in de samples: sc88pro_square_wave (de lead vanaf maat 22) en np_lead_fat (maat 0-21,
+   daaruit opgebouwd) zijn zelf gechorusde blokgolven: 7-10 dB tremolo op 1,7-5 Hz, spectraal zwaartepunt schommelt
+   28%, en 90-93% van de energie op de grondtoon (= een fluittoon). Nu np_plead_hi/lo (neo_plasma_samples.pulse_lead):
+   zuivere 25%-puls, 0 dB tremolo, felle aanslag, release 60, en elke leadnoot laat een uitklinktijd vóór de volgende
+   los (detach: 16en = 60 ticks + 37 uitklink). De glissando (maat 2-4) blijft. Hold-tonen ook op np_plead_hi.
+2. 'Valse noten 0:20-0:35, F-E-D-C#-D, D-mineur': F-E-D-C#-D komt in de bron-MIDI, in v11 en in de stem 'other' +
+   'vocals' van het origineel (sterkste toon >= C4/C5 per 16e, eerste 100 s) nergens voor; het origineel is C-chromatisch
+   (chroma 0-60 s: C, D, C#, E ...), alleen maat 18-21 is D-mineur. De lead-toonklassen in maat 14-25 kloppen met het
+   origineel (chroma: 1-4 van 16 zwak per maat, alleen hoge C6/Bb5-tonen); de secunde-wrijving tussen bas en de rest is
+   met de nieuwe bas niet gegroeid (maat 14-26: 13,7 -> 13,0 tellen) en zit ook in het origineel (maat 20: A-octaven
+   tegen de chromatische bas Ab, beide sterk in de opname). Geen noten veranderd.
+3. 'Bas dof, houtachtig tikkend': de 16en klonken 27 ticks (24 ms) op een holle sample = een tik. Nu np_bass_buzz
+   (zaagtand + puls + resonantie ±1 kHz, zoals de basstem van het origineel: < 150 Hz 49%, 150-600 30%, 600-2k 12%),
+   volle sustain, release 50, noten 85% van de bronlengte (16en 64 ticks; kanaalbezetting gelijk aan v10), CC7 92:
+   +3,2 dB t.o.v. v10 (gba_sim, maat 13-42). Een octaaf lager kan niet: de bas klinkt al Eb1-Ab3 (C2-C3 in de riff).
+4. rules_check: ook geen bends buiten de intro-run, terug naar 0, geen MOD/LFO, lead zonder zweving en release <= 80.
+
 v10 (Jordi via Gemini over v9; tempo, drumgroove en de achtergrond-arpeggio's blijven; preview v9 begon op 0 s,
 dus 0:22 = maat 16, 0:45 = maat 33, 1:08 = maat 50). Feiten gecontroleerd tegen de mp3 (Spleeter-stems, CQT):
 1. 'Foute melodienoten 0:22-0:35 en 1:08-1:21': in maat 16-26 klopt elke toonklasse van de lead met het origineel
@@ -125,18 +146,22 @@ BASS, BRASS, BRASS_LO, ORGAN, LEAD, DRUMS = 38, 62, 63, 17, 80, 127
 BODY, SUB, ARPB, DSINE, STAB, PLUCK = 81, 82, 84, 85, 86, 87
 FAT_LO, FAT_HI, FARP_LO, FARP_HI, HOLD = 88, 89, 90, 91, 92      # v9
 GL_LO, GL_HI = 93, 94                                               # v10: glissando-synth brass
+LEAD_REL, BASS_REL = 60, 50                                         # v11: korte releases (afgekapt per noot)
 VOICES = {
     # v10: glissando in de opening-run (dikke synth brass, harde aanslag, aanhouden; neo_plasma_samples.gliss_brass)
     GL_LO:    'voice_directsound 48, 0, DirectSoundWaveData_np_gbrass_lo, 255, 0, 255, 150',
     GL_HI:    'voice_directsound 72, 0, DirectSoundWaveData_np_gbrass_hi, 255, 0, 255, 150',
-    LEAD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140',
+    # v11: de lead op een zuivere pulse-lead (np_plead_hi/lo: geen zweving, felle aanslag) met een korte release:
+    # sc88pro_square_wave en np_lead_fat zweven zelf (8-10 dB tremolo op 1,7-5 Hz = Gemini's 'theremin met vibrato')
+    LEAD:     'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, %d' % LEAD_REL,
     BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 12, 3',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
     DSINE:    'voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140',
     STAB:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100',
     PLUCK:    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110',
-    # v10: np_bass_fat (sc88pro_synth_bass + zijn grondtoon: klonk hol, een octaaf te hoog)
-    BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_bass_fat, 255, 245, 60, 110',
+    # v11: blikkerige synth-bass (np_bass_buzz, zaagtand + puls + resonantie ±1 kHz), volle sustain, korte release:
+    # de 16en klinken als toon (63 ticks) i.p.v. de tik van v10 (27 ticks np_bass_fat)
+    BASS:     'voice_directsound 48, 0, DirectSoundWaveData_np_bass_buzz, 255, 0, 255, %d' % BASS_REL,
     BRASS:    'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     BRASS_LO: 'voice_keysplit voicegroup_np_trumpet_keysplit, keysplit_trumpet',
     ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
@@ -144,12 +169,14 @@ VOICES = {
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
     # v9: vette GBA-lead (blokgolf x2 + synth brass, neo_plasma_samples.fat_lead) voor de opening-run en het
     # loopbegin; als arpeggio met een korte release (geen tokkel: aanhouden en snel los)
-    FAT_LO:   'voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 120',
-    FAT_HI:   'voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 120',
+    # v11: de lead van maat 0-21 ook op de zuivere pulse-lead (FAT_LO/FAT_HI = lead laag/hoog)
+    FAT_LO:   'voice_directsound 48, 0, DirectSoundWaveData_np_plead_lo, 255, 0, 255, %d' % LEAD_REL,
+    FAT_HI:   'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, %d' % LEAD_REL,
     FARP_LO:  'voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40',
     FARP_HI:  'voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40',
     # v9: aangehouden sawtooth-akkoordtonen uit de bron (vielen in v5-v8 weg door de mono lead/arpeggio)
-    HOLD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 100',
+    # (v11: ook zonder zweving; aangehouden tonen in het register van de melodie)
+    HOLD:     'voice_directsound 72, 0, DirectSoundWaveData_np_plead_hi, 255, 0, 255, 100',
 }
 # drumkit (noot -> regel); standaard GBA-samples in de GM-indeling (v8; v7 had 36-43 op een rij)
 KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, CRASH, SPLASH = 36, 38, 39, 40, 42, 46, 49, 55
@@ -186,20 +213,25 @@ BENDR = 12
 ORGAN_BARS = set(range(49, 62)) | set(range(65, 71))    # daar speelt het orgel al 16e-stoten: geen extra stoten
 SNARE_LEN, GHOST_VEL, BACK_VEL = 192, 58, 118
 UNISONO_BARS = set(range(46, 50))           # unisono-riff (bas + saw): geen akkoordstoten
+BASS_LEN = 0.85                             # v11: basnoten 85% van de bronlengte (v10 0,6), dan detach
 ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 tel later (±1 frame)
 
 # spoorvolumes (CC7), afgesteld met solo-RMS en balance_orig.py tegen de mp3
 # v8: nieuwe samples op dezelfde luidheid als v7 gezet (RMS van de eerste 80 ms per sample), lead en lead-octaaf
 # iets terug omdat ze nu aanhouden
-VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=127, sub=127, steel=38, arp=34, arpb=40,
+# v11: bas 127 -> 92: de nieuwe bas (langere noten, luidere sample) is op 127 2,0x zo luid (RMS, gba_sim maat 13-42);
+# op 92 1,45x = +3,2 dB = 'ongeveer 25% luider' (luidheid verdubbelt per ±10 dB)
+VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=92, sub=127, steel=38, arp=34, arpb=40,
            dsine=40, stab=45, drums=80)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 # v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
 # arpeggio-thema), daarna de v8-blokgolf. Leadvolume (CC7) per stuk: de opening-run (maat 2-4) en het loopbegin
 # (maat 10-13) +25% (92 -> 115), de rest van maat 0-21 104.
 FAT_END = 22 * BAR
-LEAD_VOL = [(0, 104), (2 * BAR, 115), (5 * BAR, 104), (10 * BAR, 115), (14 * BAR, 104), (FAT_END, 92)]
-VOL_HOLD = 46
+# v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
+# (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
+LEAD_VOL = [(0, 124), (2 * BAR, 115), (5 * BAR, 124), (10 * BAR, 127), (14 * BAR, 124), (FAT_END, 92)]
+VOL_HOLD = 35
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
 # tel 2 tot maat 50.
@@ -210,8 +242,8 @@ VOL_BARP = 64               # v9: het brug-arpeggio op DirectSound (vette lead, 
 
 def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v10. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.'
+    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v11. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
+    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 pulse-lead laag/hoog, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.'
     lines[2] = 'voice_group grounded_neo_plasma'
     out = []
     for l in lines:
@@ -521,7 +553,29 @@ def cap_top(ev):
 
 
 FORBIDDEN = ('flute', 'piano', 'nylon', 'acoustic', 'marimba', 'string', 'pad', 'choir', 'violin', 'cello',
-             'harp', 'recorder', 'ocarina', 'xylo')
+             'harp', 'recorder', 'ocarina', 'xylo', 'oboe', 'bassoon', 'whistle', 'theremin', 'clarinet')
+MOD_CCS = {1: 'MOD', 21: 'LFOS', 22: 'MODT', 26: 'LFODL'}     # mid2agb: vibrato/LFO-controllers
+LEAD_MAX_TREMOLO, LEAD_MAX_REL = 1.0, 80                       # v11: lead zonder zweving, afgekapt
+
+
+def sample_tremolo(name, note=72, dur=1.5):
+    """v11: amplitudeschommeling (dB, p5-p95 van de RMS per 4 perioden) van de aangehouden sample `name` op toon
+    `note`, na de aanslag (0,2 s): een gechorusde/ontstemde sample (sc88pro_square_wave 8 dB, np_lead_fat 10 dB) zweeft
+    = 'theremin met vibrato'; een zuivere golf ±0 dB."""
+    import numpy as np
+    import gba_sim
+    a, rate, lab, loop = gba_sim.sample(name)
+    sr = gba_sim.MIX
+    pos = np.arange(int(dur * sr)) * rate * 2 ** ((note - lab) / 12) / sr
+    if loop:
+        L = loop[1] - loop[0]
+        o = pos >= loop[1]
+        pos[o] = loop[0] + (pos[o] - loop[0]) % L
+    pos = pos[pos < len(a) - 1]
+    y = a[pos.astype(int)][int(0.2 * sr):]
+    w = int(round(4 * sr / (440 * 2 ** ((note - 69) / 12))))
+    r = np.array([np.sqrt((y[k:k + w] ** 2).mean()) for k in range(0, len(y) - w, max(1, w // 4))])
+    return 20 * np.log10(np.percentile(r, 95) / max(1e-9, np.percentile(r, 5)))
 
 
 def rules_check(path):
@@ -530,7 +584,11 @@ def rules_check(path):
     2. geen akoestische instrumenten (fluit/piano/akoestische gitaar/marimba ...) en geen strijkers/pads/koren: elke
        gebruikte DirectSound-sample (ook via keysplits/kit) gecontroleerd op naam;
     3. geen trage aanzet: attack 255 (DirectSound) of 0 (PSG) bij elke gebruikte stem, keysplits en kit inbegrepen;
-    4. pitch bend: elk spoor met bends zet eerst BENDR (CC20) = BENDR, en elke bend blijft binnen +-BENDR.
+    4. pitch bend: elk spoor met bends zet eerst BENDR (CC20) = BENDR, en elke bend blijft binnen +-BENDR;
+    5. v11 (Gemini: 'geen pitch-glide of zwevend vibrato op de lead'): bends alleen in de intro-run (GLISS), daarna
+       staat elk spoor met bends weer op het midden (0); nergens MOD/LFO-controllers (CC1/21/22/26);
+    6. v11: de lead (MIDI-kanaal 0) gebruikt buiten de glissando alleen samples zonder zweving (tremolo <
+       LEAD_MAX_TREMOLO dB) en een release <= LEAD_MAX_REL (afgekapt, geen staart die over de volgende noot glijdt).
     Faalt met een AssertionError (het script schrijft dan niets meer)."""
     import re
     m = mido.MidiFile(path)
@@ -566,6 +624,37 @@ def rules_check(path):
                     att = int(a[-4])
                     if att > 1:
                         bad.append('spoor %d prog %d: PSG-attack %d' % (i, p, att))
+        tt, lastbend = 0, 0
+        lead = any(x.channel == 0 for x in t if x.type == 'note_on')
+        for x in t:
+            tt += x.time
+            if x.type == 'control_change' and x.control in MOD_CCS:
+                bad.append('spoor %d: %s (CC%d) op tick %d' % (i, MOD_CCS[x.control], x.control, tt))
+            if x.type == 'pitchwheel':
+                # na de run mag de laatste glijnoot zijn eindtoon aanhouden (zelfde bend) tot hij terug naar 0 gaat
+                if x.pitch and not GLISS[0] <= tt < GLISS[1] and not (tt >= GLISS[1] and x.pitch == lastbend):
+                    bad.append('spoor %d: pitch bend %d buiten de intro-run (tick %d)' % (i, x.pitch, tt))
+                lastbend = x.pitch
+        if lastbend:
+            bad.append('spoor %d: de bend gaat niet terug naar het midden' % i)
+        if lead:
+            tt, cur, used = 0, None, set()
+            for x in t:
+                tt += x.time
+                if x.type == 'program_change':
+                    cur = x.program
+                if x.type == 'note_on' and x.velocity and not GLISS[0] <= tt < GLISS[1]:
+                    used.add(cur)
+            for p in used:
+                kind, args = vg[p]
+                a = [x.strip() for x in args.split(',')]
+                assert kind.startswith('voice_directsound'), 'lead: geen DirectSound-stem'
+                smp = a[2].replace('DirectSoundWaveData_', '')
+                tr = sample_tremolo(smp, int(a[0]))
+                if tr >= LEAD_MAX_TREMOLO:
+                    bad.append('lead prog %d: sample %s zweeft (%.1f dB tremolo)' % (p, smp, tr))
+                if int(a[6]) > LEAD_MAX_REL:
+                    bad.append('lead prog %d: release %s > %d' % (p, a[6], LEAD_MAX_REL))
         bends = [x for x in t if x.type == 'pitchwheel']
         if bends:
             tt, first_br, first_bend = 0, None, None
@@ -578,7 +667,9 @@ def rules_check(path):
             if not first_br or first_br[1] != BENDR or first_br[0] > first_bend:
                 bad.append('spoor %d: BENDR %s niet vóór de eerste bend' % (i, first_br))
     assert not bad, 'regels van Jordi geschonden: ' + '; '.join(bad)
-    print('  regels: geen noot > C6, geen akoestische/trage samples, BENDR %d vóór elke bend: OK' % BENDR)
+    print('  regels: geen noot > C6, geen akoestische/trage samples, BENDR %d vóór elke bend, bends alleen in de '
+          'intro-run en terug naar 0, geen MOD/LFO, lead zonder zweving (< %.0f dB) en release <= %d: OK'
+          % (BENDR, LEAD_MAX_TREMOLO, LEAD_MAX_REL))
 
 
 def staccato(ev, f, lo, hi):
@@ -761,7 +852,7 @@ def build():
     brass_lo = lifted
     # bas: onderstem, staccato (klinkt een octaaf lager door de sample); sub = zelfde ritme op de PSG-golf, op de
     # klinkende toonhoogte van de bas
-    bass = staccato(mono([g[0] for g in groups(T[3])]), 0.6, 48, 150)
+    bass = staccato(mono([g[0] for g in groups(T[3])]), BASS_LEN, 64, 300)
     # (PSG-noten onder C2 klinken in m4a allemaal als C2: MidiKeyToCgbFreq klemt key <= 35. Waar de bas onder C2
     # klinkt (Eb1-B1), speelt de sub de geschreven noot = een octaaf boven de grondtoon, op hetzelfde ritme.)
     sub = [[s_, e_, n - 12 if n - 12 >= 36 else n, 127] for s_, e_, n, v in bass]
@@ -786,6 +877,7 @@ def build():
     # exact v7 blijft; alleen de lead wordt daarna legato. ds_check() meet de bezetting met de echte v8-releases.
     rel = dict(rel)
     rel.update({BASS: 120, BRASS: 120, BRASS_LO: 110, LEAD: 140, STAB: 100, PLUCK: 150})
+    rel[BASS] = BASS_REL            # v11: de bas rekent met zijn echte (korte) release; zie BASS_LEN
     progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': PLUCK, 'brass_lo': BRASS_LO,
              'arp': PLUCK, 'stab': STAB, 'dsine': DSINE}
     # v9: het arpeggio in de opening (maat 0-21) op de vette lead met een korte release (FARP: aanhouden en snel los
@@ -804,6 +896,9 @@ def build():
     real = releases('grounded_neo_plasma')
     res['lead'] = trim_legato(res, order, {k: 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
                                            for k in order})
+    # v11: afgekapt per noot: elke leadnoot laat los een uitklinktijd vóór de volgende aanslag (geen staart die over
+    # de volgende noot heen 'glijdt'); de glissando-noten hieronder houden hun eigen lengte
+    res['lead'] = detach(res['lead'], release_ticks(LEAD_REL, TPB, BPM))
     res['lead'], gl_ev = gliss(res['lead'])
     parts['lead'] = res['lead']                     # (de ladder is bewust 3 glijnoten geworden)
     body = [[s_, e_, n - 12, 96] for s_, e_, n, v in res['lead'] if n - 12 >= 40]
@@ -851,8 +946,10 @@ def build():
     song = Song(TPB, 500000)
     tempo_map(song, END)
     song.loop = (LOOP0, END)
+    # v11: buiten de glissando de zuivere pulse-lead: < C4 de lage sample (FAT_LO), daarboven FAT_HI (maat 0-21) of
+    # LEAD (zelfde sample; eigen programma zodat de CC7-stappen van v9 per stuk blijven kloppen)
     lead_prog = lambda n, s_: ((GL_HI if n >= 60 else GL_LO) if GLISS[0] <= s_ < GLISS[1] else
-                               (FAT_HI if n >= 60 else FAT_LO) if s_ < FAT_END else LEAD)
+                               FAT_LO if n < 60 else FAT_HI if s_ < FAT_END else LEAD)
     arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
     arp_notes = sorted(p['farp'] + p['arp'])

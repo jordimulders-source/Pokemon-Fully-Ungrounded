@@ -6962,6 +6962,18 @@ DirectSoundWaveData_mitch_ride::
 	.incbin "sound/direct_sound_samples/grounded/mitch_ride.bin"
 
 	.align 2
+DirectSoundWaveData_ashfrost_sleigh::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_sleigh.bin"
+
+	.align 2
+DirectSoundWaveData_ashfrost_warm_pad::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_warm_pad.bin"
+
+	.align 2
+DirectSoundWaveData_ashfrost_recorder::
+	.incbin "sound/direct_sound_samples/grounded/ashfrost_recorder.bin"
+
+	.align 2
 DirectSoundWaveData_np_pulse_bass::
 	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
 
@@ -6976,15 +6988,3 @@ DirectSoundWaveData_np_brass_stab_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
-DirectSoundWaveData_ashfrost_sleigh::
-	.incbin "sound/direct_sound_samples/grounded/ashfrost_sleigh.bin"
-
-	.align 2
-DirectSoundWaveData_ashfrost_warm_pad::
-	.incbin "sound/direct_sound_samples/grounded/ashfrost_warm_pad.bin"
-
-	.align 2
-DirectSoundWaveData_ashfrost_recorder::
-	.incbin "sound/direct_sound_samples/grounded/ashfrost_recorder.bin"

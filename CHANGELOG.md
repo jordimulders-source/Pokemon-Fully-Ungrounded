@@ -17014,3 +17014,9 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.104] - Neo Plasma v12f: de melodie valt niet meer weg bij de overgangen
 - De melodie wisselt in de bron tussen de elektrische gitaar en de sawtooth-lead. In v12e stond de lead vanaf 0:14 overal zachter, ook waar hij de melodie overneemt (o.a. ±0:52–0:55 en ±1:03–1:23). Nu staat de lead alleen zachter in de maten waarin de gitaar speelt (≥ 4 aanslagen per maat), elders weer op 127.
+
+### [v0.9.105] - ROM opgeruimd: Bard weg, Japanse lettertypes weg, overworld-sprites alleen voor gebruikte soorten (+1,51 MB)
+- **De Bard in Mauville** zingt niet meer (zangsysteem, 51 phoneme-nummers en samples eruit: +282 KB). Hij zegt nu: "I'm the BARD. Well, I was. / Someone decided my singing took up too many kilobytes. / So they deleted my voice to make room for real music. / I still hum sometimes. Nobody can hear it. Not even me." Save-indeling ongewijzigd; de andere Mauville-mannen werken gewoon.
+- **Japanse lettertypes** uit de ROM (+133 KB; schakelaar `JAPANESE_FONTS` in `include/fonts.h`). Geen enkele tekst in de game is Japans.
+- **Pokémon-overworldsprites** alleen voor de 59 soorten die echt op een kaart of in een script staan (+1,10 MB). `tools/grounded/ow_species_keep.py` maakt de lijst bij elke build automatisch; een nieuwe soort op een kaart komt er vanzelf bij. Schakelaar `OW_ONLY_USED_SPECIES` in `include/config/overworld.h`. Gevolg: de sprite-viewer in het debugmenu toont voor andere soorten een vraagteken.
+- Vrij: 1,74 MB → **3,25 MB**.

@@ -573,7 +573,7 @@
 #define MUS_GROUNDED_VS_KECCLES     635 // Project Grounded: Battle! Keccles, eigen compositie in salsa dura-stijl (tools/grounded/keccles_theme.py)
 #define MUS_GROUNDED_VS_MAGIKARP    636 // Project Grounded: Battle! Magikarp, eigen compositie (spartelen, Splash; tools/grounded/magikarp_theme.py)
 #define MUS_GROUNDED_VS_JIRACHI     637 // Project Grounded: Battle! Jirachi, eigen compositie (hoopvol, sterrenhemel; tools/grounded/jirachi_theme.py)
-#define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran v6, eigen compositie: Kyuss-stoner (traag 76 / trein 94 bpm) op de GBA (tools/grounded/heatran_theme.py)
+#define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran v7, eigen compositie: Kyuss-desert rock (dreigende intro 74, stomp/groove/beuk 130, sludge/dreiging 74 bpm) op de GBA (tools/grounded/heatran_theme.py)
 #define MUS_GROUNDED_VS_SHAYMIN     639 // Project Grounded: Battle! Shaymin, eigen compositie (relaxte bloemenweide in 6/8, tools/grounded/shaymin_theme.py)
 #define MUS_GROUNDED_VS_RAYQUAZA    640 // Project Grounded: weather trio-thema als Balinese gamelan (gong kebyar), tools/grounded/rayquaza_theme.py
 #define MUS_GROUNDED_ASHFROST       641 // Project Grounded: Ashfrost Village, wintervariant van het Fallarbor-thema (tools/grounded/ashfrost_theme.py)

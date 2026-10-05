@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Project Grounded: de Heatran-samples (heatran_st_*), v6: Kyuss-fuzz ('Odyssey'/'Green Machine') als Gen 3-sample.
+"""Project Grounded: de Heatran-samples (heatran_st_*), v6 + v7 (palm-mute heatran_st_pm_*): Kyuss-fuzz ('Odyssey'/'Green Machine') als Gen 3-sample.
 
 v6 is gemeten aan Jordi's audioreferenties (Spleeter-'other'-stem = de gitaren, per sectie, zie MUZIEK.md):
   aandeel energie  < 250 Hz | 250-500 | 500-1k | 1-2k | > 2 kHz
@@ -15,6 +15,8 @@ Keten (st = stoner): FluidR3 Distortion Guitar (GM 30) als powerchord (grondtoon
   -> basversterker: lage shelf +3 dB (<150 Hz), middenscoop -6 dB rond 900 Hz, 8-polige lowpass 2,4 kHz
   -> lichte compressie (tanh x1,4) en weer lowpass 3,4 kHz -> 13.379 Hz, 8 bit.
   Gemeten per sample (C2/Gb2/C3): < 250 Hz ±75/68/48 %, > 2 kHz 1-3 % (Odyssey-gitaarstem: 49-72 % / 1-3 %).
+Palm-mute (st_pm, v7): FluidR3 Electric Guitar (muted, GM 28) grondtoon + kwint door dezelfde keten (highpass 90 Hz, midden +2 dB, kast 2,6 kHz),
+  daarna een chug-envelop (30 ms vol, dan exp. 70 ms), 0,3 s, geen loop: de pompende 16en van het snelle deel.
 Lead (st_lead): dezelfde keten op één noot met octaaf eronder (C4/G4), kast 1,9 kHz (donker, geen felle lead).
 
 Rendert met fluidsynth, schrijft 8-bit WAV's met smpl-chunk; make maakt er .bin van. Gebruik:
@@ -43,6 +45,8 @@ for k in RIFF_KEYS:
     SAMPLES['heatran_st_pw_%d' % k] = (30, (k, k + 7, k + 12), 0.9, 'st', k)        # powerchord, 1 kanaal
 for k in LEAD_KEYS:
     SAMPLES['heatran_st_lead_%d' % k] = (30, (k, k - 12), 0.9, 'lead' if k < 64 else 'leadhi', k)   # + octaaf eronder
+for k in RIFF_KEYS:   # v7: palm-mute-chug per riffnoot (FluidR3 Electric Guitar muted, grondtoon + kwint), geen loop
+    SAMPLES['heatran_st_pm_%d' % k] = (28, (k, k + 7), 0.3, 'pm', k)
 
 
 def old_samples():
@@ -119,6 +123,10 @@ def chain(kind, a):
         return stoner(a)
     if kind == 'lead':                                           # donker: geen felle lead
         return stoner(a, mid_hz=700, mid_db=0.0, cab=1900)
+    if kind == 'pm':                                             # palm-mute: zelfde fuzz, kast dichter, korte chug
+        a = stoner(sosfilt(sos('highpass', 90, 2), a), mid_hz=800, mid_db=2.0, cab=2600)
+        t = np.arange(len(a)) / FS
+        return a * np.where(t < 0.03, 1.0, np.exp(-(t - 0.03) / 0.07))
     if kind == 'leadhi':                                         # G4: de kast nog verder dicht (zelfde klankkleur)
         return stoner(a, mid_hz=1200, mid_db=-4.0, cab=1300)
     return a
@@ -165,6 +173,8 @@ def build(name):
     a = resample(a, FS, RATE)
     a = norm(a) * 0.97                                             # 8 bit: volle schaal
     low = min(note)
+    if kind == 'pm':                                               # one-shot: geen loop
+        return np.round(a * 127) / 127, None, key
     a, loop = auto_loop(a, RATE, RATE / (440 * 2 ** ((low - 69) / 12)))
     a = np.round(a * 127) / 127                                    # 8 bit (zoals in de ROM)
     return a, loop, key

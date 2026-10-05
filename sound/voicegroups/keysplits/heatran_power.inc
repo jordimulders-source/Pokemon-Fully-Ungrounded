@@ -1,4 +1,4 @@
-@ Project Grounded: Battle! Heatran v6, powerchord (grondtoon+kwint+octaaf) per riffnoot (heatran_samples.py),
+@ Project Grounded: Battle! Heatran v6/v7, powerchord (grondtoon+kwint+octaaf) per riffnoot (heatran_samples.py),
 @ tabel keysplit_heatran (sound/keysplit_tables.inc). Gegenereerd door tools/grounded/heatran_theme.py.
 voice_group heatran_power_keysplit
 	voice_directsound 36, 0, DirectSoundWaveData_heatran_st_pw_36, 255, 0, 255, 150

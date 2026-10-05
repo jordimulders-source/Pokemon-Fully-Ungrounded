@@ -7696,3 +7696,39 @@ DirectSoundWaveData_darkrai_brass_low::
 	.align 2
 DirectSoundWaveData_darkrai_scream::
 	.incbin "sound/direct_sound_samples/grounded/darkrai_scream.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_36::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_36.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_37::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_37.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_39::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_39.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_41::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_41.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_42::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_42.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_43::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_43.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_44::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_44.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_46::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_46.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_st_pm_48::
+	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_48.bin"

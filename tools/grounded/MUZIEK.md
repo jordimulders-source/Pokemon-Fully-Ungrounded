@@ -95,7 +95,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
-| Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
+| Heatran | `heatran_theme.py` | v7 wacht op opname (v6 'saai': meerdere riffs, 74/130 bpm, palm-mutes/slides) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v3 (ronde 7), wacht op opname | "Victini", "Darkrai", "Genesect" |
@@ -401,3 +401,17 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   sectie Darkrai v2 A/B/D = 3085/3202/3517 (1 dB verschil); v3 climax halverwege (A-B-R-D-C), MIDI-niveau
   (vel x CC7)^2 per sectie: A +1,1 / B +2,0 / R -4,5 -> +5,8 / D +5,8 dB. Genesect: v1 byte-identiek teruggezet uit
   git, dan alleen ghosts/fills/stops/crashes; `groove_checks()` bewaakt dat de swing blijft.
+- Heatran v7 (Jordi over v6: 'veel te saai, statisch, eentonig'; recept Odyssey: dreigende slide-intro -> felle
+  drumfill -> 130 bpm, afwisseling slopend/beukend, meerdere riffs, palm-mutes, slides/bends, crashes, stops,
+  tomfills). **Controles die een fout moesten voorkomen kunnen de volgende afdwingen**: v6 haalde 'niet ska' door
+  minimale nootlengte, max. hihats/s, pedaaltoon en een stilstaande bas te eisen = saai. Nu blijven alleen de
+  anti-ska-regels (toonladder, geen grote terts, geen skank, geen open hihat op de 'en', geen chromatische loopjes van
+  4+, recht raster, accent óp de tel) en komen er 'niet saai'-regels bij (`stoner_checks` + `music_lint.py --genre
+  stoner`): >= 3 riffs, >= 2 tempowissels per loop, stop/fill vóór elke riffwissel, palm-mute >= 40% van de 8e/16e-
+  aanslagen, slides/bends/min, max. 10-15% lange akkoorden, crash op elke sectiestart, >= 3 tomfills; v6 faalt nu op
+  10 punten, v5 op 16. Referenties (Spleeter, `riffs.py`): drums 65-68% óp de tel, 22% 'en', 9-12% 'a', 0% 'e';
+  bas 2-2,5 sterke aanslagen/tel over alle 16en, 19-41 slides/min. **Palm-mute + open op één spoor** = programmawissel
+  per noot (28 palm-mute-keysplit op dezelfde `keysplit_heatran`-tabel, 30 open), slides = BENDR 12 + bend-ramp aan
+  het eind van de noot (zelfde events op gitaar, muur en bas). Palm-mute-sample: GM 28 door de stoner-keten + chug-
+  envelop (30 ms, dan exp. 70 ms), noot 14 ticks + release 100 = 1 kanaal per 16e. Stemverdeler: 0% weg (11).
+

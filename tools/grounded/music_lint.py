@@ -141,20 +141,27 @@ def lint(mid):
     return errors, warns
 
 
-STONER_HELP = """--genre stoner [--tonic C]: extra controles tegen 'ska/surf/Mario Kart Bowser's Castle' (Heatran v1-v5),
-afgeleid van Kyuss' 'Odyssey'/'Green Machine' (gemeten, zie MUZIEK.md 'Heatran v6'):
-  - hihat: max. 3,3 aanslagen/s per 4 maten (referentie 3,0-3,2), geen open hihat op de 'en', accent op de tel
-  - geen chromatische loopjes (3 noten in halve tonen dezelfde kant op) in melodische sporen
-  - geen staccato: max. 10% korte noten (< 1/2 tel) met stilte erna
+STONER_HELP = """--genre stoner [--tonic C]: extra controles voor stoner/desert rock (Heatran, zie MUZIEK.md 'Heatran v6/v7').
+Anti-ska / anti-vrolijk (v1-v5 klonken als ska-punk/'Bowser's Castle'):
+  - geen open hihat op de 'en', hihat-accent op de tel
+  - geen chromatische Mario-loopjes (4+ noten in halve tonen dezelfde kant op) in melodische sporen
   - geen 'skank': aanslag naast de tel terwijl het spoor op die tel stil was (max. 5%)
-  - geen wandelende 8e-bas: het laagste spoor wisselt bij snelle aanslagen (<= 1/2 tel) max. 50% van toon
-  - met --tonic: geen grote terts boven de grondtoon (alleen mineur/blues)"""
+  - met --tonic: geen grote terts boven de grondtoon (alleen mineur/pentatonisch/blues)
+Niet saai (v6 was 'saai, statisch, eentonig': lange akkoorden, één riff); gemeten binnen de loop ([ ]):
+  - minstens 2 tempowissels per loop (incl. de terugsprong)
+  - minstens 6 verschillende maatpatronen in het laagste spoor, geen patroon in > 40% van de maten
+  - vóór elke riffwissel (maatpatronen van de volgende 2 maten komen in de 4 ervoor niet voor) een stop (alle
+    melodische sporen >= een 8e stil in de laatste tel) of een fill (>= 3 tom-/snareklappen in de laatste tel),
+    vlak vóór de wisselmaat of aan het eind ervan (slotvariant)
+  - palm-mute (programma met een '_pm_'/'mute'-sample): >= 40% van de snelle (8e/16e) aanslagen van het
+    slaggitaarspoor (het spoor met het hoogste aandeel)
+  - max. 15% van de tijd van het laagste spoor in noten van meer dan 2 tellen"""
 NOTE_PC = {'C': 0, 'Db': 1, 'C#': 1, 'D': 2, 'Eb': 3, 'D#': 3, 'E': 4, 'F': 5, 'Gb': 6, 'F#': 6, 'G': 7, 'Ab': 8,
            'G#': 8, 'A': 9, 'Bb': 10, 'A#': 10, 'B': 11}
 
 
-def kit_hats(mid):
-    """drumnoten -> 'hat' / 'ohat' uit de drumkit van de voicegroup (samplenaam), anders GM-nummers."""
+def kit_lines(mid):
+    """drumnoot -> regel uit de drumkit van de voicegroup (samplenaam), of None."""
     vg = voicegroup_of(mid)
     voices = load_voices(vg) if vg else None
     kit = next((k[6:] for k in (voices or {}).values() if k.startswith('drums:')), None)
@@ -162,49 +169,86 @@ def kit_hats(mid):
     if kit and os.path.exists(path):
         lines = [l.strip() for l in open(path) if l.strip().startswith(('voice_', 'voice_group'))]
         first = int(lines[0].split(',')[1])
-        out = {}
-        for i, l in enumerate(lines[1:]):
-            if 'open_hihat' in l or 'open_hi_hat' in l:
-                out[first + i] = 'ohat'
-            elif 'hihat' in l or 'hi_hat' in l:
-                out[first + i] = 'hat'
+        return {first + i: l for i, l in enumerate(lines[1:])}
+    return None
+
+
+def kit_hats(mid):
+    """drumnoten -> 'hat' / 'ohat' uit de drumkit van de voicegroup (samplenaam), anders GM-nummers."""
+    kl = kit_lines(mid)
+    if kl is None:
+        return {42: 'hat', 44: 'hat', 46: 'ohat'}
+    out = {}
+    for k, l in kl.items():
+        if 'open_hihat' in l or 'open_hi_hat' in l:
+            out[k] = 'ohat'
+        elif 'hihat' in l or 'hi_hat' in l:
+            out[k] = 'hat'
+    return out
+
+
+def kit_kind(mid, names, gm):
+    kl = kit_lines(mid)
+    if kl is None:
+        return set(gm)
+    return {k for k, l in kl.items() if any(x in l for x in names)}
+
+
+def pm_programs(mid):
+    """programma's waarvan de sample(s) palm-mute zijn ('_pm_' of 'mute' in de samplenaam, ook in een keysplit)."""
+    vg = voicegroup_of(mid)
+    path = os.path.join(VG_DIR, (vg or '') + '.inc')
+    out, prog = set(), 0
+    if not vg or not os.path.exists(path):
         return out
-    return {42: 'hat', 44: 'hat', 46: 'ohat'}
+    for line in open(path):
+        line = line.strip()
+        if not line.startswith('voice_') or line.startswith('voice_group'):
+            continue
+        mm = re.search(r'@\s*(\d+)', line)
+        if mm:
+            prog = int(mm.group(1))
+        text = line.lower()
+        if line.startswith('voice_keysplit') and not line.startswith('voice_keysplit_all'):
+            sub = os.path.join(VG_DIR, 'keysplits', line.split('voicegroup_')[1].split('_keysplit')[0] + '.inc')
+            if os.path.exists(sub):
+                text = open(sub).read().lower()
+        if '_pm_' in text or 'mute' in text:
+            out.add(prog)
+        prog += 1
+    return out
 
 
 def stoner_lint(mid, tonic=None):
     m = mido.MidiFile(mid)
     tpb = m.ticks_per_beat
-    tempo, tracks = [], []
+    tempo, tracks, loop = [], [], [None, None]
     for t in m.tracks:
-        tick, on, ns, ch = 0, {}, [], None
+        tick, on, ns, ch, prog = 0, {}, [], None, 0
         for x in t:
             tick += x.time
             if x.type == 'set_tempo':
                 tempo.append((tick, x.tempo))
+            if x.type == 'marker' and x.text in ('[', ']'):
+                loop['[]'.index(x.text)] = tick
+            if x.type == 'program_change':
+                prog = x.program
             if x.type == 'note_on' and x.velocity:
-                on[x.note] = (tick, x.velocity)
+                on[x.note] = (tick, x.velocity, prog)
                 ch = x.channel
             elif x.type in ('note_on', 'note_off') and x.note in on:
-                s, v = on.pop(x.note)
-                ns.append((s, tick, x.note, v))
+                s, v, pr = on.pop(x.note)
+                ns.append((s, tick, x.note, v, pr))
         if ns:
             tracks.append((ch, sorted(ns)))
     tempo.sort()
-    us = lambda tick: [tp for t, tp in tempo if t <= tick][-1] if tempo else 500000
     errors = []
     hatmap = kit_hats(mid)
     drums = [n for ch, ns in tracks if ch == 9 for n in ns]
     hats = [n for n in drums if n[2] in hatmap]
-    # hihat-snelheid per 4 maten
-    end = max(n[0] for ch, ns in tracks for n in ns)
-    win = 16 * tpb
-    for w0 in range(0, end, win):
-        hs = [n for n in hats if w0 <= n[0] < w0 + win and hatmap[n[2]] == 'hat']
-        sec = win / tpb * us(w0) / 1e6
-        if len(hs) / sec > 3.3:
-            errors.append('stoner: %.1f hihats/s rond %.0f s (referentie <= 3,2/s)' % (len(hs) / sec, w0 / tpb * us(w0) / 1e6))
-            break
+    end = max(n[1] for ch, ns in tracks for n in ns)
+    ls, le = loop[0] or 0, loop[1] or end
+    # ===== anti-ska / anti-vrolijk =====
     oh = [n for n in hats if hatmap[n[2]] == 'ohat' and n[0] % tpb]
     if oh:
         errors.append('stoner: %d open hihats naast de tel (ska/disco)' % len(oh))
@@ -213,32 +257,75 @@ def stoner_lint(mid, tonic=None):
     if on_v and off_v and sum(off_v) / len(off_v) >= sum(on_v) / len(on_v):
         errors.append('stoner: hihat op de en gemiddeld even hard als op de tel (off-beat-accent)')
     mel = [ns for ch, ns in tracks if ch != 9]
-    if mel:
-        lowest = min(mel, key=lambda ns: sum(n[2] for n in ns) / len(ns))
     for i, ns in enumerate(mel):
         starts = sorted(set(n[0] for n in ns))
         line = [min(n[2] for n in ns if n[0] == s) for s in starts]
         st = [b - a for a, b in zip(line, line[1:]) if b != a]
-        runs = sum(1 for x, y in zip(st, st[1:]) if abs(x) == 1 and x == y)
+        runs = sum(1 for x, y, z in zip(st, st[1:], st[2:]) if abs(x) == 1 and x == y == z)
         if runs:
-            errors.append('stoner: melodisch spoor %d heeft %d chromatische loopjes' % (i, runs))
-        nxt = {s: b for s, b in zip(starts, starts[1:])}
-        short = sum(1 for n in ns if n[1] - n[0] < tpb / 2 and nxt.get(n[0], n[1]) - n[1] >= tpb / 4)
-        if short > 0.10 * len(ns):
-            errors.append('stoner: melodisch spoor %d: %.0f%% staccato-noten' % (i, 100 * short / len(ns)))
+            errors.append('stoner: melodisch spoor %d heeft %d chromatische loopjes van 4+ noten' % (i, runs))
         sounding = lambda t: any(n[0] <= t < n[1] for n in ns)
         skank = sum(1 for s in starts if s % tpb and not sounding(s - s % tpb))
         if skank > 0.05 * len(starts):
             errors.append('stoner: melodisch spoor %d: %d off-beat-stoten na een stille tel (skank)' % (i, skank))
         if tonic is not None and any(n[2] % 12 == (tonic + 4) % 12 for n in ns):
             errors.append('stoner: melodisch spoor %d speelt de grote terts boven de grondtoon' % i)
-    if mel:
-        starts = sorted(set(n[0] for n in lowest))
-        line = [min(n[2] for n in lowest if n[0] == s) for s in starts]
-        fast = [(a, b) for (sa, a), (sb, b) in zip(zip(starts, line), zip(starts[1:], line[1:])) if sb - sa <= tpb / 2]
-        if fast and sum(1 for a, b in fast if a != b) > 0.5 * len(fast):
-            errors.append('stoner: laagste spoor wandelt (%.0f%% toonwissels bij snelle aanslagen)' % (
-                100 * sum(1 for a, b in fast if a != b) / len(fast)))
+    if not mel:
+        return errors
+    # ===== niet saai =====
+    bar = 4 * tpb
+    tl = [tp for t, tp in tempo if ls <= t < le]
+    t0 = [tp for t, tp in tempo if t <= ls]
+    if t0 and (not tl or tl[0] != t0[-1] or [t for t, tp in tempo if t == ls] == []):
+        tl = [t0[-1]] + tl
+    seq = [x for i, x in enumerate(tl) if i == 0 or x != tl[i - 1]]
+    changes = len(seq) - 1 + (1 if len(seq) > 1 and seq[-1] != seq[0] else 0)
+    if changes < 2:
+        errors.append('stoner/saai: maar %d tempowissels per loop (min. 2: traag <-> snel)' % changes)
+    lowest = min(mel, key=lambda ns: sum(n[2] for n in ns) / len(ns))
+    bars = {}
+    for b in range(ls // bar, (le + bar - 1) // bar):
+        bars[b] = tuple(sorted((n[0] - b * bar, n[2]) for n in lowest if b * bar <= n[0] < (b + 1) * bar))
+    pats = [p for p in bars.values() if p]
+    if len(set(pats)) < 6:
+        errors.append('stoner/saai: maar %d verschillende maatpatronen in het laagste spoor (één riff?)' % len(set(pats)))
+    if pats and max(pats.count(p) for p in set(pats)) > 0.4 * len(pats):
+        errors.append('stoner/saai: één maatpatroon in %.0f%% van de maten' % (100 * max(pats.count(p) for p in set(pats)) / len(pats)))
+    toms = kit_kind(mid, ('_tom',), (41, 43, 45, 47, 48, 50))
+    snares = kit_kind(mid, ('snare',), (38, 40))
+    allmel = [n for ns in mel for n in ns]
+    bl = sorted(bars)
+    for i, b in enumerate(bl[1:], 1):
+        nxt = {bars.get(b), bars.get(b + 1)} - {()}
+        prev = {bars.get(x) for x in range(b - 4, b)} - {(), None}
+        if not nxt or not prev or nxt & prev:
+            continue
+        ok = False
+        for w1 in (b * bar, (b + 1) * bar):          # vlak vóór de wisselmaat, of aan het eind ervan (slotvariant)
+            w0 = w1 - tpb
+            sil = sum(1 for j in range(w0, w1, tpb // 4) if not any(n[0] <= j < n[1] for n in allmel))
+            hits = len({n[0] for n in drums if n[2] in toms | snares and w0 <= n[0] < w1})
+            ok |= sil >= 2 or hits >= 3
+        if not ok:
+            errors.append('stoner/saai: riffwissel op maat %d zonder stop of fill ervoor' % b)
+    pmp = pm_programs(mid)
+    share = 0.0
+    for ns in mel:                                    # het slaggitaarspoor (het beste spoor) telt
+        starts = sorted(set(n[0] for n in ns))
+        nx = {s: b for s, b in zip(starts, starts[1:])}
+        quick = [n for n in ns if ls <= n[0] < le and nx.get(n[0], 1 << 30) - n[0] <= tpb // 2]
+        if len(quick) >= 20:
+            share = max(share, sum(1 for n in quick if n[4] in pmp) / len(quick))
+    if not pmp:
+        errors.append('stoner/saai: geen palm-mute-instrument in de voicegroup')
+    else:
+        if share < 0.4:
+            errors.append('stoner/saai: maar %.0f%% van de 8e/16e-aanslagen palm-muted (min. 40%%)' % (100 * share))
+    lo = [n for n in lowest if ls <= n[0] < le]
+    tot = sum(n[1] - n[0] for n in lo)
+    lng = sum(n[1] - n[0] for n in lo if n[1] - n[0] > 2 * tpb)
+    if tot and lng > 0.15 * tot:
+        errors.append('stoner/saai: %.0f%% van het laagste spoor in noten > 2 tellen (lange akkoorden)' % (100 * lng / tot))
     return errors
 
 

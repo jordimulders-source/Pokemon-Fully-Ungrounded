@@ -516,3 +516,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   30-60 Hz +5 dB t.o.v. het origineel; per octaaf omhoog tot >= C3 (en weg als het akkoord die toon al speelt).
 - NNLS-gewichten (balance_orig) tegen een origineel met een ander leadtimbre zeggen 'lead -11 dB te luid': negeren
   als de opdracht 'melodie voorop' is; gebruik dan de solo-RMS t.o.v. de mix (lead -6,6, drums -4,8 ≈ drumstem -3,8).
+- Victini v1 (`victini_theme.py`, anime-overwinningsfanfare, 172 bpm, D-groot -> climax E-groot; samples
+  `victini_samples.py`): intro op de transitie via een **tempokaart binnen maat 0** (tel 0-2 op 174, tel 2-4 op 224 bpm)
+  zodat inslag (t = 32) en explosie (t = 48) precies op tel 3 en maat 1 vallen (aanname: route-transitie start ±25
+  frames na de muziek, gemeten bij Jirachi; nog niet in de game nagemeten). **Powerchord als één sample** (FluidR3 GM 30,
+  A2+E3+A3, auto-loop) + palm-mute (GM 28) = 1 kanaal per akkoord. Spiccato-keysplit met release 130 (16en = 1 kanaal),
+  pauken release 200 (226 klonk door de stilte-tel vóór de climax). **De lint rekent uitklinktijden met de eerste
+  tempo van het bestand** (hier 174): reken de tails in de stemverdeler met dezelfde bpm (+2 ticks), anders meldt de lint
+  overlap van 1 tick bij gedetachte partijen. Geen test-ROM-opname (coördinator neemt samen op met batchrec.py).

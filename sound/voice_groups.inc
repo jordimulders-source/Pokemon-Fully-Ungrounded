@@ -14,6 +14,7 @@
 .include "sound/voicegroups/drumsets/rayquaza.inc"
 .include "sound/voicegroups/drumsets/sickblik.inc"
 .include "sound/voicegroups/drumsets/mitch.inc"
+.include "sound/voicegroups/drumsets/victini.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -25,6 +26,7 @@
 .include "sound/voicegroups/keysplits/keccles_piano.inc"
 .include "sound/voicegroups/keysplits/shaymin_strings.inc"
 .include "sound/voicegroups/keysplits/shaymin_spicc.inc"
+.include "sound/voicegroups/keysplits/victini_spicc.inc"
 .include "sound/voicegroups/keysplits/keccles_trombone.inc"
 .include "sound/voicegroups/keysplits/keccles_guitar.inc"
 .include "sound/voicegroups/keysplits/heatran_power.inc"
@@ -236,3 +238,4 @@
 .include "sound/voicegroups/grounded_sickblik.inc"
 .include "sound/voicegroups/grounded_mitch.inc"
 .include "sound/voicegroups/grounded_ashfrost.inc"
+.include "sound/voicegroups/grounded_victini.inc"

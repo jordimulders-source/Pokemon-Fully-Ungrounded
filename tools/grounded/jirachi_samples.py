@@ -7,6 +7,10 @@ Alles gesynthetiseerd (geen soundfont nodig), met een exacte loop:
   jirachi_supersaw_lead : dezelfde supersaw op C5 (32 samples per periode) voor de lead in de hoge ligging.
   jirachi_sawbass : twee ontstemde zaagtanden + sub-octaaf (sinus), rond gefilterd, voor de off-beat trancebas.
   jirachi_kick    : trancekick (sinus met toonhoogtesweep 150 -> 45 Hz, klik, zachte saturatie), eenmalig.
+  jirachi_vox     : (v3) de lang uitgerekte 'aaah'-vocal van het trance-tussenstuk: FluidR3 GM 52 (Choir Aahs) +
+      53 (Voice Oohs) op C5, plus een kopie +7 cent (breedte, twee lagen in één kanaal); de luidheid na de aanzet
+      geëgaliseerd (het FluidR3-koor pulseert). Loop van ±1,1 s (de eigen
+      ademlus van het FluidR3-koor, gezocht met autocorrelatie, 35% gecrossfade); lowpass 4,5 kHz (tegen aliasing tot D6).
 Exacte loop: de loop is M perioden van de grondtoon (per samples per periode); zaagtand k heeft precies M + k
 trillingen per loop, dus elke stem loopt naadloos rond (de zweving zit in de sample: M = 128 -> 13,5 cent per stap).
 Labels achteraan sound/direct_sound_data.inc (na .align 2). gm_samples.py blijft ongemoeid (alleen write_wav).
@@ -14,7 +18,7 @@ Gebruik: python3 tools/grounded/jirachi_samples.py"""
 import os, sys
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gm_samples import write_wav
+from gm_samples import write_wav, render, resample
 
 OUT = 'sound/direct_sound_samples/grounded/'
 DATA = 'sound/direct_sound_data.inc'
@@ -59,6 +63,41 @@ def kick(rate=16000, dur=0.34):
     return a / np.abs(a).max() * 0.97, rate
 
 
+def vox(rate=14000, key=72):
+    """Koor-'aaah' met een lange, ademende loop (zie docstring)."""
+    from scipy.signal import butter, sosfiltfilt
+    lay = []
+    for prog, g in ((52, 0.6), (53, 0.6)):
+        a = render(prog, key, 3.4)
+        a = a[np.argmax(np.abs(a) > 0.002):]
+        lay.append(g * a / np.sqrt(np.mean(a[44100:] ** 2)))
+    n = min(len(x) for x in lay)
+    a = lay[0][:n] + lay[1][:n]
+    b = resample(a, 44100 * 2 ** (7 / 1200), 44100)                             # tweede laag +7 cent
+    a = a[:len(b)] + 0.35 * b
+    a = sosfiltfilt(butter(6, 4500, fs=44100, output='sos'), a)
+    a = resample(a, 44100, rate)
+    # het FluidR3-koor 'pulseert' (Aahs: luidheid x0,6-x2 per 50 ms): na de aanzet egaliseren (omhullende 60 ms)
+    win = int(0.06 * rate)
+    env = np.sqrt(np.convolve(a ** 2, np.ones(win) / win, 'same')) + 1e-4
+    ref = np.median(env[int(0.5 * rate):int(2.5 * rate)])
+    x = np.clip((np.arange(len(a)) / rate - 0.2) / 0.15, 0, 1)                   # vanaf 0,2 s geleidelijk egaliseren
+    a = a * ((1 - x) + x * np.clip(ref / env, 0.5, 2.0))
+    s0, want, w = int(1.0 * rate), int(1.1 * rate), int(0.08 * rate)
+    L = max(range(int(want * 0.85), int(want * 1.15)),
+            key=lambda L: np.dot(a[s0:s0 + w], a[s0 + L:s0 + L + w]) / (np.linalg.norm(a[s0 + L:s0 + L + w]) + 1e-9))
+    e, f = s0 + L, int(L * 0.35)
+    x = np.linspace(0, 1, f)
+    a = a[:e].copy()
+    a[e - f:e] = a[e - f:e] * (1 - x) + a[s0 - f:s0] * x                       # loopeinde vloeit over in het begin
+    # de crossfade dooft deels uit (fasen): de loop rondom (cyclisch) nog eens egaliseren
+    body = a[s0:e]
+    ext = np.concatenate([body, body, body])
+    env = np.sqrt(np.convolve(ext ** 2, np.ones(win) / win, 'same'))[len(body):2 * len(body)] + 1e-4
+    a[s0:e] = body * np.clip(ref / env, 0.5, 2.5)
+    return a / np.abs(a).max() * 0.97, (s0, e)
+
+
 def main():
     inc = open(DATA).read()
     jobs = {
@@ -74,7 +113,10 @@ def main():
     a, rate = kick()
     write_wav(OUT + 'jirachi_kick.wav', a, rate, 60, None)
     print('%-24s %d samples @ %d Hz' % ('jirachi_kick', len(a), rate))
-    for name in list(jobs) + ['jirachi_kick']:
+    a, loop = vox()
+    write_wav(OUT + 'jirachi_vox.wav', a, 14000, 72, loop)
+    print('%-24s %d samples, loop %s @ 14000 Hz' % ('jirachi_vox', len(a), loop))
+    for name in list(jobs) + ['jirachi_kick', 'jirachi_vox']:
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)

@@ -366,3 +366,13 @@ herkennen is, komt ook als controle in `music_lint.py`.
   tellen. Partijen met hetzelfde programma delen na de stemverdeler een spoor (byar->gangsa, kempur->gong) om onder de
   16 sporen te blijven; let dan op de release van het programma van dat spoor (lint rekent daarmee). -V074: piek
   94/127, RMS 2970. audiocheck '133 Hz' = gong/gongbas/pauken op C (16% van hun solospectrum), geen brom.
+- Jirachi v3 (tussenstuk i.p.v. versnelling): reguliere delen weer noot voor noot v1 (gecontroleerd met een diff per
+  MIDI-kanaal), deel C vervangen door een tussenstuk van 16 maten op 164 bpm (abrupte tempowissel erin en eruit, geen
+  ease). **Lang uitgerekte vocals = één noot-aan met pitch bend:** BENDR 4 geeft exact 16 BEND-stappen per halve toon
+  (BENDR 12 = 5,33: vals), zodat G5 -> F#5 -> E5 of D6 -> C#6 -> D6 -> B5 als één 'aaah' van 4-6 maten glijdt; scoop
+  van een halve toon onder de noot bij de inzet, MOD (vibrato) pas na een tel laten opkomen, aanzwellen via CC7.
+  **FluidR3 Choir Aahs (52) pulseert** (luidheid x0,6-x2 per 50 ms; Voice Oohs 53 is stabiel): na de aanzet egaliseren
+  met een omhullende van 60 ms, en ná de loop-crossfade nog eens cyclisch over de loop (de crossfade doofde 40% uit).
+  Balans gemeten met `solo_rms.py` (vocals vs. rest): totaal -4 dB door de kick, maar boven 200 Hz +3,5 dB = de vocals
+  leiden. Een programmawissel op een spoor dat in de maat ervoor nog speelt (hoorn in B) pas op de eerste tick van het
+  tussenstuk zetten, anders zingt de vocal-sample de hoornnoten.

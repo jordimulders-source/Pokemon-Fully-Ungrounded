@@ -7402,34 +7402,6 @@ DirectSoundWaveData_gym2_psy_acid::
 	.incbin "sound/direct_sound_samples/grounded/gym2_psy_acid.bin"
 
 	.align 2
-DirectSoundWaveData_np_pulse_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_pulse::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_pulse.bin"
-
-	.align 2
-DirectSoundWaveData_np_stab::
-	.incbin "sound/direct_sound_samples/grounded/np_stab.bin"
-
-	.align 2
-DirectSoundWaveData_np_sine::
-	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_full::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_full_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_full_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
 DirectSoundWaveData_gym_rox_power::
 	.incbin "sound/direct_sound_samples/grounded/gym_rox_power.bin"
 
@@ -7636,3 +7608,31 @@ DirectSoundWaveData_gym_fla_cajon_slap::
 	.align 2
 DirectSoundWaveData_gym_fla_castanets::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_castanets.bin"
+
+	.align 2
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
+
+	.align 2
+DirectSoundWaveData_np_lead_pulse::
+	.incbin "sound/direct_sound_samples/grounded/np_lead_pulse.bin"
+
+	.align 2
+DirectSoundWaveData_np_stab::
+	.incbin "sound/direct_sound_samples/grounded/np_stab.bin"
+
+	.align 2
+DirectSoundWaveData_np_sine::
+	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_full::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_full.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_full_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_full_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_organ_sharp::
+	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"

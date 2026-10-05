@@ -36,6 +36,7 @@
 .include "sound/voicegroups/keysplits/keccles_trombone.inc"
 .include "sound/voicegroups/keysplits/keccles_guitar.inc"
 .include "sound/voicegroups/keysplits/heatran_power.inc"
+.include "sound/voicegroups/keysplits/heatran_pm.inc"
 .include "sound/voicegroups/keysplits/np_trumpet.inc"
 .include "sound/voicegroups/keysplits/heatran_lead.inc"
 

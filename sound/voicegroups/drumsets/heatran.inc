@@ -1,4 +1,4 @@
-@ Project Grounded: drumkit voor Battle! Heatran v6 (heatran_theme.py): de Gen 3-drums uit rs_drumset zonder
+@ Project Grounded: drumkit voor Battle! Heatran v6/v7 (heatran_theme.py): de Gen 3-drums uit rs_drumset zonder
 @ PSG-noten: 36 kick, 37 snare (dof), 38 hihat, 39 open hihat (ongebruikt), 40 crash, 41-43 toms
 @ laag/midden/hoog, 44 trinity-crash (blikkerig).
 voice_group heatran_drumset, 36

@@ -6617,10 +6617,6 @@ DirectSoundWaveData_jirachi_chimes::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_chimes.bin"
 
 	.align 2
-DirectSoundWaveData_heatran_fuzz_lead::
-	.incbin "sound/direct_sound_samples/grounded/heatran_fuzz_lead.bin"
-
-	.align 2
 DirectSoundWaveData_heatran_kick::
 	.incbin "sound/direct_sound_samples/grounded/heatran_kick.bin"
 
@@ -6741,26 +6737,6 @@ DirectSoundWaveData_rayquaza_gongbass::
 	.incbin "sound/direct_sound_samples/grounded/rayquaza_gongbass.bin"
 
 	.align 2
-DirectSoundWaveData_heatran_muff_power::
-	.incbin "sound/direct_sound_samples/grounded/heatran_muff_power.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_muff_low::
-	.incbin "sound/direct_sound_samples/grounded/heatran_muff_low.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_mute_power::
-	.incbin "sound/direct_sound_samples/grounded/heatran_mute_power.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_octfuzz_bass::
-	.incbin "sound/direct_sound_samples/grounded/heatran_octfuzz_bass.bin"
-
-	.align 2
-DirectSoundWaveData_heatran_closed_hat::
-	.incbin "sound/direct_sound_samples/grounded/heatran_closed_hat.bin"
-
-	.align 2
 DirectSoundWaveData_heatran_side_stick::
 	.incbin "sound/direct_sound_samples/grounded/heatran_side_stick.bin"
 
@@ -6831,3 +6807,27 @@ DirectSoundWaveData_magikarp_cry_rev::
 	.align 2
 DirectSoundWaveData_jirachi_vox::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_vox.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_doom_power::
+	.incbin "sound/direct_sound_samples/grounded/heatran_doom_power.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_doom_mute::
+	.incbin "sound/direct_sound_samples/grounded/heatran_doom_mute.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_svt_bass::
+	.incbin "sound/direct_sound_samples/grounded/heatran_svt_bass.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_doom_lead::
+	.incbin "sound/direct_sound_samples/grounded/heatran_doom_lead.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_warm_clean::
+	.incbin "sound/direct_sound_samples/grounded/heatran_warm_clean.bin"
+
+	.align 2
+DirectSoundWaveData_heatran_china::
+	.incbin "sound/direct_sound_samples/grounded/heatran_china.bin"

@@ -522,3 +522,14 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - **Heatran → v5:** gebaseerd op Kyuss' "Odyssey": traag sludge-stuk (~75 bpm) wisselt met snelle desert-pump (~135 bpm). Moet klinken alsof Kyuss de originele R/S-Heatran-baasmuziek op de GBA inspeelde: crunchy low-bitrate gitaarsamples (C-standard), doffe fuzz-synthbas die de gitaar volgt, doffe Gen 3-drums (doffe snare, blikkerige crashes). Geen moderne studioklank.
 - **Mitch → v3:** v2 klonk als drukke chiptune/happy hardcore; alleen het stuk rond 1:00 had de juiste sfeer. Duister, minder pieperig (leads 1–2 octaven lager), less is more, two-step 172 bpm met keiharde droge snare + ducking, lage reese met portamento, intro → build-up → 1 tel stilte → drop.
 - **Neo Plasma → v7:** te kaal/dun. Octaafverdubbeling van de lead, sub onder de bas, gesplitste arpeggio's L/R, staccato off-beat-akkoordstoten, four-on-the-floor met ghost-snares en 16e-hats met accenten.
+- Mitch v3 (Jordi over v2: 'drukke chiptune/happy hardcore; alleen rond 1:00 de juiste sfeer'): 1:00 in v2 = maat 44 =
+  de wobble-sectie (two-step + lange wobble + thema). **Less is more = schrappen, niet dempen**: geen PSG-lead, geen
+  16den-loopjes, geen stinger/luchthoorn/rewind; PSG alleen nog sub (golf) en riser (ruis). 172 bpm, koperstoten in
+  octaven als één sample (`mitch3_brass_lo/hi`, F3-C5), melodienoten nooit op de snaretellen (4 en 12), anders
+  verdwijnen ze in de ducking. **Ducking op de GBA** = CC7-dip per spoor op elke hoofdsnare (30 -> 55 -> 80 -> 100%
+  in een 16de; VOL werkt ook op al klinkende noten en op PSG). **Portamento** = pitch bend op de starttick van elke
+  reese-noot vanaf de vorige toonhoogte (max. ±12 bij BENDR 12) en in 6 stappen naar 0; de rise van de build-up
+  eindigt een octaaf hoger, zodat de drop er (ook na de loopsprong) uit omlaag duikt. Meten van 'snare snijdt door':
+  RMS in 40 ms na elke 16de, gemiddeld over de drop (`lvl.py`-achtig): v3-eerste mix snare 1,5-5 kHz +5..7 dB boven de
+  rest, maar breedband maar 1-2 dB boven de off-beat-basstoten/koper -> reese 92 -> 80, koper 118 -> 100, stoten
+  vel 120 -> 110, -V070 -> 080 (eerste meting -V070: 0 overlopen, piek 85/127).

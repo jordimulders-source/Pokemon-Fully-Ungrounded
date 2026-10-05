@@ -33,17 +33,17 @@ voice_group grounded_mitch
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_dark, 255, 0, 255, 150  @ 32
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_mid, 255, 0, 255, 150  @ 33
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_bright, 255, 0, 255, 150  @ 34
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_growl, 255, 0, 255, 150  @ 35
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_f1, 255, 0, 255, 170  @ 36
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_ab1, 255, 0, 255, 170  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_c2, 255, 0, 255, 170  @ 38
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_db2, 255, 0, 255, 170  @ 39
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_wob_eb2, 255, 0, 255, 170  @ 40
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw, 255, 0, 255, 150  @ 41
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw_dark, 255, 0, 255, 150  @ 42
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw, 255, 0, 255, 160  @ 32
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_reese_raw_dark, 255, 0, 255, 160  @ 33
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_f1, 255, 0, 255, 170  @ 34
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_c2, 255, 0, 255, 170  @ 35
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_db2, 255, 0, 255, 170  @ 36
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_wob_eb2, 255, 0, 255, 170  @ 37
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_lo, 255, 0, 255, 160  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_hi, 255, 0, 255, 160  @ 39
+	voice_directsound 60, 0, DirectSoundWaveData_mitch3_pluck, 255, 0, 255, 150  @ 40
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_min, 40, 0, 255, 200  @ 41
+	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_maj, 40, 0, 255, 200  @ 42
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
@@ -62,8 +62,8 @@ voice_group grounded_mitch
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_horn_min, 255, 0, 255, 190  @ 61
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_horn_maj, 255, 0, 255, 190  @ 62
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 62
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 63
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 64
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 255, 165, 154, 127  @ 65
@@ -81,19 +81,19 @@ voice_group grounded_mitch
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 2  @ 80
-	voice_square_2 60, 0, 1, 0, 2, 4, 1  @ 81
-	voice_square_1 60, 0, 0, 1, 0, 1, 10, 1  @ 82
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_min, 40, 0, 255, 200  @ 88
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_maj, 40, 0, 255, 200  @ 89
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_stab_min, 255, 0, 255, 170  @ 90
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_stab_maj, 255, 0, 255, 170  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_mitch_lead, 255, 0, 255, 160  @ 92
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95

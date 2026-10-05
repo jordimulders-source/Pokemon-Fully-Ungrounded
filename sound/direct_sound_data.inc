@@ -7216,3 +7216,43 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_kick::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_kick.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_snare::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_snare.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_ghost::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_ghost.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_brass_lo::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_lo.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_brass_hi::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_hi.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_pluck::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_pluck.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_wob_f1::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_f1.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_wob_c2::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_c2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_wob_db2::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_db2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch3_wob_eb2::
+	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_eb2.bin"

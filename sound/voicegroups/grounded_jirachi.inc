@@ -81,12 +81,12 @@ voice_group grounded_jirachi
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
+	voice_square_1 60, 0, 0, 1, 0, 2, 7, 1  @ 80
 	voice_square_2 60, 0, 3, 0, 1, 4, 1  @ 81
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
+	voice_square_2 60, 0, 1, 0, 2, 10, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84
-	voice_directsound 60, 0, DirectSoundWaveData_jirachi_vox, 255, 0, 255, 200  @ 85
+	voice_directsound 60, 0, DirectSoundWaveData_jirachi_vox, 255, 0, 255, 150  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
 	voice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_dark, 255, 0, 255, 110  @ 88

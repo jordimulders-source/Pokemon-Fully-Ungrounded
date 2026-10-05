@@ -16786,3 +16786,28 @@ Jordi's eerste testrun:
   - Four-on-the-floor met ghost-snares en 16e-hats.
   - Het tempo blijft 176 bpm.
 - **Nieuwe werkwijze:** muziek wordt in batches gecontroleerd met `tools/grounded/maptools/batchrec.py`, 8 nummers per test-ROM. Alle zes: 0 overlopen, piek 82–102/127, geen pieken.
+
+### [v0.9.82] - The Spire: vijanden passend bij het moment, iconen, kaarttekst, Vending Machine
+- **Nieuwe regel** (Jordi: "Araquanid had al STAB Leech Life en Liquidation, die je op dat moment niet kan tanken"):
+  - Eén aanval van een vijand mag per act en soort gevecht hooguit een bepaald deel van je HP kosten:
+
+    | Soort gevecht | Act 1 | Act 2 | Act 3 |
+    |---|---|---|---|
+    | zwak | 6% | 8% | 10% |
+    | gewoon | 10% | 12% | 14% |
+    | elite | 14% | 15% | 17% |
+    | baas | 15% | 17% | 22% |
+
+  - Lakeien van elites en bazen tellen als een gewoon gevecht.
+  - In act 1 heeft elke vijand hooguit één sterke aanval.
+  - Opgeladen aanvallen mogen harder: twee beurten, rust erna, Dream Eater, Truant.
+  - `encounters.py` controleert dit (`matchups.py`, `klap_check`); zie `SPIRE_DESIGN.md`.
+- **Aangepast:**
+  - **Act 1, bazen:** Totem Wishiwashi (Water Pulse; Araquanid: Water Gun + Bug Bite), Totem Marowak (Fire Punch; Salazzle: Smog + Ember).
+  - **Act 1, elites:** Gremlin Nob (Primeape: Speed-aura, Fury Swipes; Mankey: Karate Chop), Bygone Effigy (Tackle, Heavy Slam na twee Curses), Terror Eel (Charge Beam), Skulking Colony (Astonish), Phantasmal Gardeners (Water Gun).
+  - **Act 1, gewone gevechten:** Secret Santa (Peck), Haunted Ship (Mega Drain, Astonish), Two-Tailed Rats (Double Hit), Overgrown Statue (Tackle).
+  - **Act 2/3:** Beartic Brute, Ice Dancers (Confusion), Turret Operator (Bubble Beam), Frog Knight (Revenge), Soul Nexus.
+  - Rekenwerk opnieuw gedraaid: de slechtste startcombinatie per elite/baas houdt minstens 10% winkans.
+- **Snorlax-kamp:** de vakken met je Pokémon zijn hoger. Fuecoco (en elk ander icoon) staat er nu helemaal in, met de naam naast het icoon. Iconen worden op alle Spire-schermen op hun zichtbare deel uitgelijnd (`Spire_IconYOffset`).
+- **Act-kaart:** de tekst onder 'Battle' viel weg ("Two wild ones" was te breed). Nu "2 wild ones", "upgrade +", "Strong foe" en "Buy stuff".
+- **Vending Machine:** B = weglopen ("B: walk away"). `events.py` controleert dat elk event zonder gratis optie zo'n uitweg heeft.

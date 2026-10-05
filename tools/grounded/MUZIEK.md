@@ -522,3 +522,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - **Heatran → v5:** gebaseerd op Kyuss' "Odyssey": traag sludge-stuk (~75 bpm) wisselt met snelle desert-pump (~135 bpm). Moet klinken alsof Kyuss de originele R/S-Heatran-baasmuziek op de GBA inspeelde: crunchy low-bitrate gitaarsamples (C-standard), doffe fuzz-synthbas die de gitaar volgt, doffe Gen 3-drums (doffe snare, blikkerige crashes). Geen moderne studioklank.
 - **Mitch → v3:** v2 klonk als drukke chiptune/happy hardcore; alleen het stuk rond 1:00 had de juiste sfeer. Duister, minder pieperig (leads 1–2 octaven lager), less is more, two-step 172 bpm met keiharde droge snare + ducking, lage reese met portamento, intro → build-up → 1 tel stilte → drop.
 - **Neo Plasma → v7:** te kaal/dun. Octaafverdubbeling van de lead, sub onder de bas, gesplitste arpeggio's L/R, staccato off-beat-akkoordstoten, four-on-the-floor met ghost-snares en 16e-hats met accenten.
+- Neo Plasma v7 (Jordi over v6: 'kaal, dun, los zand'; GBA-lagen): lead op bronhoogte (DS) + octaaf lager op PSG-
+  vierkant 1 (vel 96), sub op de PSG-golf, arpeggio B op PSG-vierkant 2 (16 ticks later, pan 85), off-beat-tweeklanken
+  (np_stab) alleen uit brontonen (gitaar is meestal 16e-octaven = alleen grondtoon -> arpeggiotonen van die tel; geen
+  secundes, niet in unisono-riffs), four-on-the-floor, snare 2/4 + ghosts, 16e-hats met accent op de kwart.
+  **PSG-noten onder C2 (36) klinken allemaal als C2** (`MidiKeyToCgbFreq` klemt key <= 35): een sub-bas op de golf kan
+  niet onder 65 Hz. **De game staat standaard op mono** (`optionsSound`): panning hoor je alleen in stereo; maak een
+  L/R-splitsing ook in mono zinvol (ander timbre/kleine vertraging). Lagen op PSG kosten geen DS-kanalen: daarmee bleef
+  de stemverdeler binnen 10 (melodie/bas/drums 0% weg). Tempo-check op de mp3 (fold-scherpte): 175,96 scherp, 150-155 vlak.

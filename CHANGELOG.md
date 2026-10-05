@@ -16694,3 +16694,18 @@ Jordi's eerste testrun:
 - **Battle! SickBlik** (`MUS_GROUNDED_VS_SICKBLIK`, = Jordi, Victory Road B2F + Stadium): smerige slap-funk op 108 bpm
   in E-dorisch. Slap bass met aparte samples voor thumb, pop en dode noten (ghost notes, hammer-ons, slides),
   'Dean Town'-achtige unisono-hook met hoorns, bassolo-breakdown, wah-gitaar, clavinet, Rhodes en een talkbox.
+
+### [v0.9.76] - Heatran v4 (Kyuss) en Jirachi v4 (euforisch tussenstuk)
+- **Heatran v4** (Jordi: "100% Kyuss"): 80 bpm, C-standard, C-mineur-pentatonisch met b5.
+  - Strofe → refrein → strofe → refrein → hypnotische brug → refrein met wah-lead.
+  - Gitaarketen: nek-pickup met toon dicht → fuzz → cocked wah (800 Hz) → SVT-versterker, niets boven ±4 kHz.
+  - Eén sample per riffnoot, zodat transponeren de klank niet verschuift.
+  - De bas speelt de riff unisono met modderige tube-fuzz.
+  - Drums simpel en bot: zware kick, doffe snare, één fill.
+  - Scripts: `heatran_theme.py`, `heatran_samples.py`.
+- **Jirachi v4:** het snelle tussenstuk is strikt majeur.
+  - D–A–Bm–G, dan G–A–F#m–Bm, op 164 bpm.
+  - Korte stijgende vocal-stoten in plaats van lange tonen.
+  - Heldere PSG-arpeggio's in 16en, strakke four-on-the-floor.
+  - De rest van het nummer is noot voor noot gelijk aan v3.
+- **Techniek:** gedeelde samplehulpjes staan nu in `tools/grounded/sample_utils.py`; Mitch importeerde ze uit Heatran's script en brak toen v4 dat veranderde.

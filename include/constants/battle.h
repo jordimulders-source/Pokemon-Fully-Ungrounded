@@ -219,7 +219,8 @@ enum VolatileFlags
     F(VOLATILE_VESSEL_OF_RUIN,              vesselOfRuin,                  (u32, 1)) \
     F(VOLATILE_SWORD_OF_RUIN,               swordOfRuin,                   (u32, 1)) \
     F(VOLATILE_TABLETS_OF_RUIN,             tabletsOfRuin,                 (u32, 1)) \
-    F(VOLATILE_BEADS_OF_RUIN,               beadsOfRuin,                   (u32, 1))
+    F(VOLATILE_BEADS_OF_RUIN,               beadsOfRuin,                   (u32, 1)) \
+    F(VOLATILE_PRIMEVAL_WARD,               primevalWard,                  (u32, 1)) /* Project Grounded: Relicanth */
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */
@@ -521,6 +522,7 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_LOWER_SPEED_2_SIDE,
     MOVE_EFFECT_FIRE_SPIN_SIDE,
     MOVE_EFFECT_FIXED_POWER,
+    MOVE_EFFECT_MUMMIFY, // Project Grounded: Mummy's Curse, ability van het doelwit wordt Mummy
     // Max move effects end. They can be used for (custom) normal moves.
 
     NUM_MOVE_EFFECTS

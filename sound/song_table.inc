@@ -628,6 +628,39 @@ gSongTable::
 	song mus_grounded_vs_broken_pier, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_sunset_wilds, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zinnia, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_zarude, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_neo_plasma, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_1, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_2, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_3, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_4, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wally_5, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_regigigas, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_dave, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_mewtwo, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_suicune, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_entei, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_raikou, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_magikarp, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_jirachi, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_heatran, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_shaymin, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_rayquaza, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_ashfrost, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_mitch, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_sickblik, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_victini, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_darkrai, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_genesect, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_roxanne, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_brawly, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wattson, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_flannery, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_norman, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_winona, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tate_liza, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wallace, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

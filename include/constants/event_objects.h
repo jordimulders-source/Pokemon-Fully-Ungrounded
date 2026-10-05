@@ -269,7 +269,21 @@
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 #define OBJ_EVENT_GFX_MUSTARD                         260 // Project Grounded (Jordi's sheet)
-#define NUM_OBJ_EVENT_GFX                        261
+#define OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL            261 // Project Grounded: shiny Rayquaza (zelfde sprite, zwart palet)
+#define OBJ_EVENT_GFX_N                               262 // Project Grounded (sheet van Delgatron, 32x32)
+#define OBJ_EVENT_GFX_GHETSIS                         263 // Project Grounded (sheet van PurpleZaffre, 32x32)
+#define OBJ_EVENT_GFX_BURGLAR                         264 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
+#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M            265 // Project Grounded (Neo Plasma-grunt (man), sheet ±2x verkleind)
+#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F            266 // Project Grounded (Neo Plasma-grunt (vrouw), sheet van PurpleZaffre, 32x32)
+#define OBJ_EVENT_GFX_ZINZOLIN                      267 // Project Grounded (Expert omgekleurd)
+#define OBJ_EVENT_GFX_ROOD                          268 // Project Grounded (Expert omgekleurd)
+#define OBJ_EVENT_GFX_SHADOW_TRIAD                  269 // Project Grounded (Black Belt omgekleurd)
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_M                  270 // Project Grounded: Rocket-sidequest (FRLG)
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_F                  271 // Project Grounded: Rocket-sidequest (FRLG)
+#define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
+#define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
+
+#define NUM_OBJ_EVENT_GFX                        274
 
 
 // These are dynamic object gfx ids.
@@ -352,6 +366,8 @@
 #define LOCALID_BERRY_BLENDER_PLAYER_END   240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
 #define LOCALID_FOLLOWING_POKEMON          254
 #define LOCALID_PLAYER                     255
+#define LOCALID_BURGLAR_THIEF              200 // Project Grounded: gespawnd door src/burglar.c (geen kaartobject)
+#define LOCALID_BURGLAR_RESIDENT           201 // Project Grounded: bewoner van het beroofde huis
 #define OBJ_EVENT_ID_FOLLOWER              0xFE
 #define OBJ_EVENT_ID_NPC_FOLLOWER          0xFD
 
@@ -407,6 +423,18 @@
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x112A // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x112B // Project Grounded (FRLG)
 #define OBJ_EVENT_PAL_TAG_MUSTARD                  0x112C // Project Grounded
+#define OBJ_EVENT_PAL_TAG_RAYQUAZA_SHINY           0x1130 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_N                        0x112D // Project Grounded
+#define OBJ_EVENT_PAL_TAG_GHETSIS                  0x112E // Project Grounded
+#define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M       0x1132 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F       0x1133 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ZINZOLIN                 0x1134 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ROOD                     0x1135 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_SHADOW_TRIAD             0x1136 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ROCKET                   0x1137 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

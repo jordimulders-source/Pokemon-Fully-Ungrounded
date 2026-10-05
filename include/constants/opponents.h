@@ -74,28 +74,28 @@
 #define TRAINER_RICKY_3                      68
 #define TRAINER_RICKY_4                      69
 #define TRAINER_RICKY_5                      70
-#define TRAINER_RANDALL                      71
-#define TRAINER_PARKER                       72
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
+#define TRAINER_GI_HUN                       71
+#define TRAINER_JONAS_PETALBURG              72
+#define TRAINER_HARVEY                       73
+#define TRAINER_HORATIO                      74
 #define TRAINER_BRAXTON                      75
 #define TRAINER_VINCENT                      76
 #define TRAINER_LEROY                        77
-#define TRAINER_WILTON_1                     78
+#define TRAINER_CHARLES_1                    78
 #define TRAINER_EDGAR                        79
-#define TRAINER_ALBERT                       80
-#define TRAINER_SAMUEL                       81
+#define TRAINER_DAVE                         80
+#define TRAINER_MITCH                        81
 #define TRAINER_VITO                         82
-#define TRAINER_OWEN                         83
-#define TRAINER_WILTON_2                     84
-#define TRAINER_WILTON_3                     85
-#define TRAINER_WILTON_4                     86
-#define TRAINER_WILTON_5                     87
+#define TRAINER_SICKBLIK                     83
+#define TRAINER_CHARLES_2                    84
+#define TRAINER_CHARLES_3                    85
+#define TRAINER_CHARLES_4                    86
+#define TRAINER_CHARLES_5                    87
 #define TRAINER_WARREN                       88
-#define TRAINER_MARY                         89
-#define TRAINER_ALEXIA                       90
-#define TRAINER_JODY                         91
-#define TRAINER_WENDY                        92
+#define TRAINER_DAENARYS                     89
+#define TRAINER_MICHONNE                     90
+#define TRAINER_ELEVEN                       91
+#define TRAINER_SCARLET                      92
 #define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94
 #define TRAINER_JENNIFER                     95
@@ -182,7 +182,7 @@
 #define TRAINER_TONY_3                      176
 #define TRAINER_TONY_4                      177
 #define TRAINER_TONY_5                      178
-#define TRAINER_TAKAO                       179
+#define TRAINER_TITO                        179
 #define TRAINER_HITOSHI                     180
 #define TRAINER_KIYO                        181
 #define TRAINER_KOICHI                      182
@@ -236,7 +236,7 @@
 #define TRAINER_JEFFREY_4                   230
 #define TRAINER_JEFFREY_5                   231
 #define TRAINER_EDWARD                      232
-#define TRAINER_PRESTON                     233
+#define TRAINER_URI                         233
 #define TRAINER_VIRGIL                      234
 #define TRAINER_BLAKE                       235
 #define TRAINER_WILLIAM                     236
@@ -338,7 +338,7 @@
 #define TRAINER_EDDIE                       332
 #define TRAINER_ALLEN                       333
 #define TRAINER_TIMMY                       334
-#define TRAINER_WALLACE                     335
+#define TRAINER_WALLACE_OLD_CHAMPION        335
 #define TRAINER_ANDREW                      336
 #define TRAINER_IVAN                        337
 #define TRAINER_CLAUDE                      338
@@ -355,7 +355,7 @@
 #define TRAINER_ELLIOT_5                    349
 #define TRAINER_RONALD                      350
 #define TRAINER_JACOB                       351
-#define TRAINER_ANTHONY                     352
+#define TRAINER_ARMSTRONG                   352
 #define TRAINER_BENJAMIN_1                  353
 #define TRAINER_BENJAMIN_2                  354
 #define TRAINER_BENJAMIN_3                  355
@@ -428,8 +428,8 @@
 #define TRAINER_LAO_3                       422
 #define TRAINER_LAO_4                       423
 #define TRAINER_LAO_5                       424
-#define TRAINER_JOCELYN                     425
-#define TRAINER_LAURA                       426
+#define TRAINER_ROMERO                      425
+#define TRAINER_MCGREGOR                    426
 #define TRAINER_CYNDY_1                     427
 #define TRAINER_CORA                        428
 #define TRAINER_PAULA                       429
@@ -506,7 +506,7 @@
 #define TRAINER_ERNEST_5                    500
 #define TRAINER_ELI                         501
 #define TRAINER_ANNIKA                      502
-#define TRAINER_JAZMYN                      503
+#define TRAINER_VIOLET_COOLTRAINER          503
 #define TRAINER_JONAS                       504
 #define TRAINER_KAYLEY                      505
 #define TRAINER_AURON                       506
@@ -574,9 +574,9 @@
 #define TRAINER_GRUNT_UNUSED                568
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
-#define TRAINER_MARC                        571
-#define TRAINER_BRENDEN                     572
-#define TRAINER_LILITH                      573
+#define TRAINER_DIO                         571
+#define TRAINER_BAS_RUTTEN                  572
+#define TRAINER_ROGAN                       573
 #define TRAINER_CRISTIAN                    574
 #define TRAINER_SYLVIA                      575
 #define TRAINER_LEONARDO                    576
@@ -678,7 +678,7 @@
 #define TRAINER_KOJI_1                      672
 #define TRAINER_WAYNE                       673
 #define TRAINER_AIDAN                       674
-#define TRAINER_REED                        675
+#define TRAINER_JUAN                        675
 #define TRAINER_TISHA                       676
 #define TRAINER_TORI_AND_TIA                677
 #define TRAINER_KIM_AND_IRIS                678
@@ -705,7 +705,7 @@
 #define TRAINER_KALEB                       699
 #define TRAINER_JOSEPH                      700
 #define TRAINER_ALYSSA                      701
-#define TRAINER_MARCOS                      702
+#define TRAINER_BLACKMORE                   702
 #define TRAINER_RHETT                       703
 #define TRAINER_TYRON                       704
 #define TRAINER_CELINA                      705
@@ -801,10 +801,10 @@
 #define TRAINER_TATE_AND_LIZA_3             795
 #define TRAINER_TATE_AND_LIZA_4             796
 #define TRAINER_TATE_AND_LIZA_5             797
-#define TRAINER_JUAN_2                      798
-#define TRAINER_JUAN_3                      799
-#define TRAINER_JUAN_4                      800
-#define TRAINER_JUAN_5                      801
+#define TRAINER_WALLACE_2                   798
+#define TRAINER_WALLACE_3                   799
+#define TRAINER_WALLACE_4                   800
+#define TRAINER_WALLACE_5                   801
 #define TRAINER_ANGELO                      802
 #define TRAINER_DARIUS                      803
 #define TRAINER_STEVEN                      804
@@ -980,8 +980,82 @@
 #define TRAINER_DOJO_WATER_KEEPER           965
 #define TRAINER_MUSTARD                     966
 #define TRAINER_STADIUM_MUSTARD             967
+#define TRAINER_ZINNIA_DELTA                968 // Project Grounded: Zinnia in Mossdeep (Delta Episode)
+#define TRAINER_ARCHIE_SERVICE_1               969 // Project Grounded: werkstraf in het Weather Institute, ronde 1
+#define TRAINER_MAXIE_SERVICE_1               970 // Project Grounded: werkstraf in het Weather Institute, ronde 1
+#define TRAINER_ARCHIE_SERVICE_2               971 // Project Grounded: werkstraf in het Weather Institute, ronde 2
+#define TRAINER_MAXIE_SERVICE_2               972 // Project Grounded: werkstraf in het Weather Institute, ronde 2
+#define TRAINER_ARCHIE_SERVICE_3               973 // Project Grounded: werkstraf in het Weather Institute, ronde 3
+#define TRAINER_MAXIE_SERVICE_3               974 // Project Grounded: werkstraf in het Weather Institute, ronde 3
+#define TRAINER_ARCHIE_SERVICE_4               975 // Project Grounded: werkstraf in het Weather Institute, ronde 4
+#define TRAINER_MAXIE_SERVICE_4               976 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 
-#define TRAINERS_COUNT                      968
+// Project Grounded: Battle Stadium (Pokémon Black/White)
+#define TRAINER_STADIUM_N                   977
+#define TRAINER_STADIUM_GHETSIS             978
+
+#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden (1-2 badges)
+#define TRAINER_BURGLAR_2                   980 // 3-4 badges
+#define TRAINER_BURGLAR_3                   981 // 5-6 badges
+#define TRAINER_BURGLAR_4                   982 // 7-8 badges
+#define TRAINER_BURGLAR_5                   983 // na de Elite Four
+
+#define TRAINER_JUNGLE_BRAM                 984 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_MAYA                 985 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_HANZO                986 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_FLORA                987 // Project Grounded: Fortree Jungle
+#define TRAINER_JUNGLE_DIRK                 988 // Project Grounded: Fortree Jungle
+
+#define TRAINER_HOLLOW_OSKAR                989 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_MORELLE              990 // Project Grounded: Toadstool Hollow
+#define TRAINER_HOLLOW_GERRIT               991 // Project Grounded: Toadstool Hollow
+
+// Project Grounded: Battle Stadium (Neo Team Plasma, Pokémon Black 2/White 2)
+#define TRAINER_STADIUM_ZINZOLIN            992
+#define TRAINER_STADIUM_SHADOW_TRIAD        993
+#define TRAINER_STADIUM_PLASMA_GRUNT_M      994
+#define TRAINER_STADIUM_PLASMA_GRUNT_F      995
+#define TRAINER_STADIUM_ROOD                996
+
+
+#define TRAINER_METEOR_DRAKE                997 // Project Grounded: Meteor Falls B1F (Bagon-bekken)
+#define TRAINER_METEOR_BOULDERMAN           998 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_ORION                999 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_VESPER               1000 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_METEOR_NOVA                 1001 // Project Grounded: Meteor Falls, Draconid-gangen
+#define TRAINER_DRACONID_ELDER              1002 // Project Grounded: Meteor Falls, Draconid-schrijn
+
+
+#define TRAINER_VR_BRENT                    1003 // Project Grounded: Victory Road, wachtkamer (gauntlet 1)
+#define TRAINER_VR_NADIA                    1004 // gauntlet 2
+#define TRAINER_VR_OSKAR                    1005 // gauntlet 3
+#define TRAINER_VR_REGINALD                 1006 // Project Grounded: Victory Road, de "vijfde" van de Elite Four
+// 1007-1011: andere agents (Fortree Jungle/Team Rocket, Jagged Pass)
+#define TRAINER_SLAB_RAY                    1013 // Project Grounded: Scorched Slab, zonnezaal (Kindler)
+#define TRAINER_SLAB_MARCO                  1014 // Project Grounded: Scorched Slab, koele bron (verdwaalde duiker)
+#define TRAINER_SLAB_HELIA                  1015 // Project Grounded: Scorched Slab, zonnesanctum (hogepriesteres)
+#define TRAINER_STADIUM_PETREL              1016 // Project Grounded: Battle Stadium (Rocket-executive, vermommingen)
+
+#define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis
+#define TRAINER_LAVA_TUBE_DAISY             1009 // Project Grounded: Jagged Pass, lavabuis (verdwaald)
+#define TRAINER_SUMMIT_GRANT                1010 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_PYRO                 1011 // Project Grounded: top van Mt. Chimney
+#define TRAINER_SUMMIT_VERA                 1012 // Project Grounded: top van Mt. Chimney
+
+#define TRAINER_ROCKET_GUARD                1020 // Project Grounded: Rocket-sidequest (wachtpost Fortree Jungle)
+#define TRAINER_ROCKET_SMUGGLER             1021 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_RECRUITER                1022 // Project Grounded: Rocket-hideout 1F
+#define TRAINER_ROCKET_SCIENTIST            1023 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_ROCKET_THIEF                1024 // Project Grounded: Rocket-hideout B1F
+#define TRAINER_PETREL                      1025 // Project Grounded: Rocket-hideout B2F (executive)
+
+#define TRAINER_MIRE_OTTO                   1030 // Project Grounded: Mangrove Mire (Fisherman op de steiger)
+#define TRAINER_MIRE_GRISELDA               1031 // Project Grounded: Mangrove Mire (moerasheks)
+#define TRAINER_MIRE_FERN                   1032 // Project Grounded: Mangrove Mire (Pokemon Ranger)
+#define TRAINER_MIRE_KAPPA                  1033 // Project Grounded: Mangrove Mire (Ninja Boy, vermomd als boom)
+
+#define TRAINERS_COUNT                      1034
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

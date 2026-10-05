@@ -6625,6 +6625,24 @@ BattleScript_MoveEffectWrap::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+@ Project Grounded: Mummy's Curse. De ability van het doelwit wordt Mummy.
+BattleScript_MoveEffectMummify::
+	copybyte gBattlerAbility, gEffectBattler
+	call BattleScript_AbilityPopUpOverwriteThenNormal
+	recordability BS_EFFECT_BATTLER
+	printstring STRINGID_PKMNMUMMIFIED
+	waitmessage B_WAIT_TIME_LONG
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	tryendneutralizinggas
+	return
+
+@ Project Grounded: Pack Howl. Met een partner: +1 Atk voor beiden (zoals Howl); alleen: +1 Atk en +1 Spe.
+BattleScript_EffectPackHowl::
+	jumpifnoally BS_ATTACKER, BattleScript_EffectDragonDance
+	goto BattleScript_EffectAttackUpUserAlly
+
 BattleScript_MoveEffectConfusion::
 	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
 	printstring STRINGID_PKMNWASCONFUSED
@@ -9174,4 +9192,124 @@ BattleScript_SpireBlockAbsorbed::
 BattleScript_SpireBlockSoftened::
 	printstring STRINGID_SPIREBLOCKSOFTENED
 	waitmessage B_WAIT_TIME_MED
+	return
+
+@ Project Grounded: Weather Report (Castform). Zet het weer waar het doelwit het zwakst tegen is en slaat dan toe.
+BattleScript_EffectWeatherReport::
+	attackcanceler
+	trysetweatherreport BattleScript_WeatherReportHit
+	printstring STRINGID_WEATHERREPORTFORECAST
+	waitmessage B_WAIT_TIME_SHORT
+	printfromtable gMoveWeatherChangeStringIds
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+BattleScript_WeatherReportHit:
+	recalcmovetype
+	goto BattleScript_HitFromAccCheck
+
+@ Project Grounded: Wind Chime (Chimecho). Na de klap healt het de gebruiker en zijn partner (1/8, met Tailwind 1/4).
+BattleScript_EffectWindChime::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	trywindchimeheal BS_ATTACKER, BattleScript_WindChimeTryPartner
+	call BattleScript_WindChimeHealRet
+BattleScript_WindChimeTryPartner:
+	trywindchimeheal BS_ATTACKER_PARTNER, BattleScript_MoveEnd
+	call BattleScript_WindChimeHealRet
+	goto BattleScript_MoveEnd
+BattleScript_WindChimeHealRet:
+	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	printstring STRINGID_WINDCHIMEHEAL
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Primeval Ward (Relicanth). +1 Def/SpDef en tot het wisselen geen stat-verlagingen door anderen.
+BattleScript_EffectPrimevalWard::
+	attackcanceler
+	jumpifvolatile BS_ATTACKER, VOLATILE_PRIMEVAL_WARD, BattleScript_PrimevalWardCheckStats
+	goto BattleScript_PrimevalWardDoAnim
+BattleScript_PrimevalWardCheckStats:
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_PrimevalWardDoAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_PrimevalWardDoAnim:
+	attackanimation
+	waitanimation
+	jumpifvolatile BS_ATTACKER, VOLATILE_PRIMEVAL_WARD, BattleScript_PrimevalWardStats
+	setvolatile BS_ATTACKER, VOLATILE_PRIMEVAL_WARD
+	printstring STRINGID_PRIMEVALWARD
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PrimevalWardStats:
+	setstatchanger STAT_DEF, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PrimevalWardTrySpDef, BIT_SPDEF
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PrimevalWardTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PrimevalWardTrySpDef:
+	setstatchanger STAT_SPDEF, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PrimevalWardEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PrimevalWardEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PrimevalWardEnd:
+	goto BattleScript_MoveEnd
+
+BattleScript_PrimevalWardProtected::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PRIMEVALWARDPROTECTS
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Nine Lives (Delcatty). Eén keer per gevecht: de volgende KO overleeft hij met 1 HP.
+BattleScript_EffectNineLives::
+	attackcanceler
+	trysetninelives BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_NINELIVESREADY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_NineLivesActivates::
+	printstring STRINGID_NINELIVESUSED
+	waitmessage B_WAIT_TIME_LONG
+	ninelivescurestatus
+	updatestatusicon BS_TARGET
+	waitstate
+	return
+
+@ Project Grounded: Gulp Down (Swalot).
+BattleScript_GulpDownCommon:
+	printstring STRINGID_GULPEDDOWN
+	waitmessage B_WAIT_TIME_LONG
+	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_GulpDownCommonEnd
+	jumpiffullhp BS_ATTACKER, BattleScript_GulpDownCommonEnd
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_GULPDOWNHEALED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_GulpDownCommonEnd:
+	return
+
+BattleScript_GulpDownBerry::
+	call BattleScript_GulpDownCommon
+	orword gHitMarker, HITMARKER_DISABLE_ANIMATION
+	setbyte sBERRY_OVERRIDE, 1
+	savetarget
+	consumeberry BS_ATTACKER, FALSE
+	bicword gHitMarker, HITMARKER_DISABLE_ANIMATION
+	setbyte sBERRY_OVERRIDE, 0
+	restoretarget
+	return
+
+BattleScript_GulpDownKept::
+	call BattleScript_GulpDownCommon
+	printstring STRINGID_GULPEDITEMKEPT
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_GulpDownUseless::
+	call BattleScript_GulpDownCommon
+	printstring STRINGID_GULPEDUSELESS
+	waitmessage B_WAIT_TIME_LONG
 	return

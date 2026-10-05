@@ -9803,3 +9803,330 @@ const struct SpriteTemplate gFungalControlMushroomSpriteTemplate =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSpriteOnMonPos,
 };
+
+// Project Grounded: Heartbreak - een hart dat in twee helften breekt.
+// arg0: helft (0 = links, 1 = rechts), arg1: frames heel blijven, arg2: y-offset
+static const union AnimCmd sAnim_BrokenHeartLeft[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_BrokenHeartRight[] =
+{
+    ANIMCMD_FRAME(16, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_BrokenHeart[] =
+{
+    sAnim_BrokenHeartLeft,
+    sAnim_BrokenHeartRight,
+};
+
+static void AnimBrokenHeartHalf_Step(struct Sprite *sprite)
+{
+    if (sprite->data[0] > 0)
+    {
+        sprite->data[0]--;
+        // Vlak voor het breken: trillen
+        if (sprite->data[0] < 10)
+            sprite->x2 = (sprite->data[0] & 2) ? 1 : -1;
+        return;
+    }
+
+    sprite->data[4]++;
+    // Eerst een kier, dan vallen de helften uit elkaar
+    if (sprite->data[4] <= 6)
+    {
+        sprite->x2 = sprite->data[1] * sprite->data[4] / 2;
+        return;
+    }
+    sprite->x2 = sprite->data[1] * (3 + (sprite->data[4] - 6));
+    sprite->data[2] += 3;
+    sprite->data[3] += sprite->data[2];
+    sprite->y2 = sprite->data[3] / 16;
+    if (sprite->data[4] > 22)
+        sprite->invisible = (sprite->data[4] & 1);
+    if (sprite->data[4] > 36)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimBrokenHeartHalf(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[2];
+    StartSpriteAnim(sprite, gBattleAnimArgs[0] ? 1 : 0);
+    sprite->data[0] = gBattleAnimArgs[1];
+    sprite->data[1] = gBattleAnimArgs[0] ? 1 : -1;
+    sprite->data[2] = -40; // eerst een klein sprongetje omhoog
+    sprite->data[3] = 0;
+    sprite->data[4] = 0;
+    sprite->callback = AnimBrokenHeartHalf_Step;
+}
+
+const struct SpriteTemplate gBrokenHeartSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BROKEN_HEART,
+    .paletteTag = ANIM_TAG_BROKEN_HEART,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_BrokenHeart,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimBrokenHeartHalf,
+};
+
+static const struct OamData sOamData_MummyBandage_32x8 =
+{
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(32x8),
+    .size = SPRITE_SIZE(32x8),
+    .priority = 2,
+};
+
+// Project Grounded: Mummy's Curse - windsels draaien van onder naar boven om het doelwit heen.
+// Aan de achterkant is het windsel onzichtbaar, zodat het lijkt alsof het eromheen gaat.
+// arg0: wachttijd, arg1: startfase (0-255), arg2: duur van het omwikkelen, arg3: draaisnelheid
+static void AnimMummyBandageWrap_Step(struct Sprite *sprite)
+{
+    s16 angle;
+
+    if (sprite->data[0] > 0)
+    {
+        sprite->data[0]--;
+        return;
+    }
+
+    angle = (sprite->data[1] + sprite->data[7] * sprite->data[2]) & 0xFF;
+    sprite->x2 = Sin(angle, sprite->data[5]);
+    sprite->y2 = -(sprite->data[6] * sprite->data[2]) / sprite->data[3];
+    sprite->invisible = (Cos(angle, 16) < 0);
+    if (++sprite->data[2] > sprite->data[3])
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimMummyBandageWrap(struct Sprite *sprite)
+{
+    u8 battler = gBattleAnimTarget;
+    s16 top = GetBattlerSpriteCoordAttr(battler, BATTLER_COORD_ATTR_TOP);
+    s16 bottom = GetBattlerSpriteCoordAttr(battler, BATTLER_COORD_ATTR_BOTTOM);
+    s16 width = GetBattlerSpriteCoordAttr(battler, BATTLER_COORD_ATTR_WIDTH);
+
+    sprite->x = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+    sprite->y = bottom - 6;
+    sprite->invisible = TRUE;
+    sprite->subpriority = GetBattlerSpriteSubpriority(battler) - 1;
+    sprite->data[0] = gBattleAnimArgs[0];
+    sprite->data[1] = gBattleAnimArgs[1];
+    sprite->data[2] = 0;
+    sprite->data[3] = gBattleAnimArgs[2] > 0 ? gBattleAnimArgs[2] : 1;
+    sprite->data[5] = width / 3 + 4;
+    sprite->data[6] = (bottom - top) - 12;
+    if (sprite->data[6] < 8)
+        sprite->data[6] = 8;
+    sprite->data[7] = gBattleAnimArgs[3];
+    sprite->callback = AnimMummyBandageWrap_Step;
+}
+
+const struct SpriteTemplate gMummyBandageWrapSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MUMMY_BANDAGE,
+    .paletteTag = ANIM_TAG_MUMMY_BANDAGE,
+    .oam = &sOamData_MummyBandage_32x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMummyBandageWrap,
+};
+
+// Een windsel dat stil over het doelwit ligt. arg0: x-offset, arg1: y-offset, arg2: duur
+static void AnimMummyBandageStatic(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+    sprite->subpriority = GetBattlerSpriteSubpriority(gBattleAnimTarget) - 1;
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+const struct SpriteTemplate gMummyBandageStaticSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MUMMY_BANDAGE,
+    .paletteTag = ANIM_TAG_MUMMY_BANDAGE,
+    .oam = &sOamData_MummyBandage_32x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMummyBandageStatic,
+};
+
+// Project Grounded: Pack Howl - twee schaduwen van de roedel stappen naast de aanvaller tevoorschijn.
+// arg0: hoe lang ze blijven staan (frames)
+#define tState      data[0]
+#define tTimer      data[1]
+#define tHold       data[2]
+#define tSpriteL    data[3]
+#define tSpriteR    data[4]
+#define PACK_SLIDE  18
+
+static void PackHowlPlaceShadows(struct Task *task, s16 offset, s16 bob)
+{
+    if (task->tSpriteL >= 0)
+    {
+        gSprites[task->tSpriteL].x2 = -offset;
+        gSprites[task->tSpriteL].y2 = -offset / 4 + bob;
+    }
+    if (task->tSpriteR >= 0)
+    {
+        gSprites[task->tSpriteR].x2 = offset;
+        gSprites[task->tSpriteR].y2 = -offset / 4 - bob;
+    }
+}
+
+static void AnimTask_PackHowlShadows_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    switch (task->tState)
+    {
+    case 0: // naar buiten schuiven
+        task->tTimer++;
+        PackHowlPlaceShadows(task, task->tTimer * 2, 0);
+        if (task->tTimer >= PACK_SLIDE)
+        {
+            task->tTimer = 0;
+            task->tState++;
+        }
+        break;
+    case 1: // staan en mee-huilen (kleine sprongetjes)
+        task->tTimer++;
+        PackHowlPlaceShadows(task, PACK_SLIDE * 2, -((Sin((task->tTimer * 16) & 0xFF, 3) < 0) ? 0 : Sin((task->tTimer * 16) & 0xFF, 3)));
+        if (task->tTimer >= task->tHold)
+        {
+            task->tTimer = PACK_SLIDE;
+            task->tState++;
+        }
+        break;
+    case 2: // terug in de schaduw
+        task->tTimer--;
+        PackHowlPlaceShadows(task, task->tTimer * 2, 0);
+        if (task->tTimer <= 0)
+        {
+            if (task->tSpriteL >= 0)
+                DestroySpriteWithActiveSheet(&gSprites[task->tSpriteL]);
+            if (task->tSpriteR >= 0)
+                DestroySpriteWithActiveSheet(&gSprites[task->tSpriteR]);
+            DestroyAnimVisualTask(taskId);
+        }
+        break;
+    }
+}
+
+void AnimTask_PackHowlShadows(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u8 attackerSpriteId = GetAnimBattlerSpriteId(ANIM_ATTACKER);
+
+    task->tState = 0;
+    task->tTimer = 0;
+    task->tHold = gBattleAnimArgs[0];
+    task->tSpriteL = CloneBattlerSpriteWithBlend(ANIM_ATTACKER);
+    if (task->tSpriteL >= 0)
+    {
+        gSprites[task->tSpriteL].callback = SpriteCallbackDummy;
+        gSprites[task->tSpriteL].subpriority = gSprites[attackerSpriteId].subpriority + 1;
+    }
+    task->tSpriteR = CloneBattlerSpriteWithBlend(ANIM_ATTACKER);
+    if (task->tSpriteR >= 0)
+    {
+        gSprites[task->tSpriteR].callback = SpriteCallbackDummy;
+        gSprites[task->tSpriteR].subpriority = gSprites[attackerSpriteId].subpriority + 1;
+    }
+    task->func = AnimTask_PackHowlShadows_Step;
+}
+
+#undef tState
+#undef tTimer
+#undef tHold
+#undef tSpriteL
+#undef tSpriteR
+#undef PACK_SLIDE
+
+// Project Grounded: Pack Howl - een volle maan in de lucht. arg0: x, arg1: y, arg2: duur (frames)
+static void AnimPackHowlMoon(struct Sprite *sprite)
+{
+    sprite->x = gBattleAnimArgs[0];
+    sprite->y = gBattleAnimArgs[1];
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+const struct SpriteTemplate gPackHowlMoonSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MOON,
+    .paletteTag = ANIM_TAG_MOON,
+    .oam = &gOamData_AffineOff_ObjNormal_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimPackHowlMoon,
+};
+
+// Project Grounded: een sprite die stil op een vaste plek bij een battler staat en na een tijd verdwijnt.
+// arg0: battler (ANIM_ATTACKER/ANIM_TARGET), arg1: x-offset, arg2: y-offset, arg3: duur (frames)
+static void AnimGroundedStaticSprite(struct Sprite *sprite)
+{
+    u8 battler = (gBattleAnimArgs[0] == ANIM_ATTACKER) ? gBattleAnimAttacker : gBattleAnimTarget;
+
+    sprite->x = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2) + gBattleAnimArgs[1];
+    sprite->y = GetBattlerSpriteCoord(battler, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[2];
+    sprite->data[0] = gBattleAnimArgs[3];
+    sprite->callback = DestroyAnimSpriteAfterTimer;
+}
+
+// Nine Lives: negen pootafdrukken in een kring om Delcatty
+const struct SpriteTemplate gNineLivesPawSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PAW_PRINT,
+    .paletteTag = ANIM_TAG_PAW_PRINT,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimGroundedStaticSprite,
+};
+
+// Project Grounded: Tipsy Waltz - eendjes die boven het hoofd van de aanvaller rondcirkelen.
+// arg0: startfase (0-255), arg1: duur (frames)
+static void AnimTipsyDuck_Step(struct Sprite *sprite)
+{
+    sprite->x2 = Cos(sprite->data[0], 30);
+    sprite->y2 = Sin(sprite->data[0], 10);
+    sprite->oam.priority = ((u16)sprite->data[0] < 128) ? 1 : 3;
+    sprite->data[0] = (sprite->data[0] + 4) & 0xFF;
+    if (--sprite->data[1] <= 0)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimTipsyDuck(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    sprite->y = GetBattlerSpriteCoordAttr(gBattleAnimAttacker, BATTLER_COORD_ATTR_TOP) + 4;
+    sprite->data[0] = gBattleAnimArgs[0];
+    sprite->data[1] = gBattleAnimArgs[1];
+    sprite->callback = AnimTipsyDuck_Step;
+    sprite->callback(sprite);
+}
+
+const struct SpriteTemplate gTipsyDuckSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_DUCK,
+    .paletteTag = ANIM_TAG_DUCK,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimTipsyDuck,
+};

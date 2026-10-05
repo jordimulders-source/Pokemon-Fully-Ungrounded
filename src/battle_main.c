@@ -367,6 +367,13 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_GUEST_STAR] = { _("GUEST STAR"), 50, BALL_CHERISH }, // Project Grounded: Battle Stadium
     [TRAINER_CLASS_BURGLAR] = { _("BURGLAR"), 30 }, // Project Grounded: Battle Stadium
     [TRAINER_CLASS_COLLECTION] = { _("THE"), 0, BALL_MASTER }, // Project Grounded: trio-compagnons ("THE REGIS")
+    [TRAINER_CLASS_KING] = { _("KING"), 50, BALL_POKE }, // Project Grounded: Battle Stadium (N)
+    [TRAINER_CLASS_PLASMA_BOSS] = { _("PLASMA BOSS"), 50, BALL_MASTER }, // Project Grounded: Battle Stadium (Ghetsis)
+    [TRAINER_CLASS_SAGE] = { _("SAGE"), 40, BALL_ULTRA }, // Project Grounded: Battle Stadium (Neo Plasma)
+    [TRAINER_CLASS_SHADOW_TRIAD] = { _("SHADOW"), 40, BALL_DUSK }, // Project Grounded: Battle Stadium (Neo Plasma; met de naam TRIAD: "SHADOW TRIAD")
+    [TRAINER_CLASS_NEO_PLASMA] = { _("NEO PLASMA"), 20, BALL_GREAT }, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
+    [TRAINER_CLASS_TEAM_ROCKET] = { _("TEAM ROCKET"), 10 }, // Project Grounded: Rocket-sidequest
+    [TRAINER_CLASS_ROCKET_EXEC] = { _("ROCKET EXEC"), 25, BALL_ULTRA }, // Project Grounded: Rocket-sidequest
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
@@ -4854,6 +4861,10 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
     else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].volatiles.transformed))
         speed *= 2;
 
+    // Project Grounded: Gulp Down, ingeslikte Choice Scarf
+    if (GetBattlerSwallowedHoldEffect(battler) == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+        speed = (speed * 150) / 100;
+
     // various effects
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
         speed *= 2;
@@ -5882,6 +5893,7 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
         break;
     case EFFECT_HIDDEN_POWER:
     case EFFECT_WEATHER_BALL:
+    case EFFECT_WEATHER_REPORT:
     case EFFECT_NATURAL_GIFT:
     case EFFECT_CHANGE_TYPE_ON_ITEM:
     case EFFECT_REVELATION_DANCE:
@@ -5950,6 +5962,18 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
 
     switch (moveEffect)
     {
+    case EFFECT_ECLIPSE: // Project Grounded: fysiek = Rock (zon), speciaal = Psychic (maan)
+        if (state == MON_IN_BATTLE)
+        {
+            if (GetCategoryBasedOnStats(battler) == DAMAGE_CATEGORY_PHYSICAL)
+                return TYPE_ROCK;
+        }
+        else if (GetMonData(mon, MON_DATA_ATK) > GetMonData(mon, MON_DATA_SPATK))
+        {
+            return TYPE_ROCK;
+        }
+        break;
+    case EFFECT_WEATHER_REPORT: // Project Grounded: zoals Weather Ball
     case EFFECT_WEATHER_BALL:
         if (state == MON_IN_BATTLE)
         {
@@ -6146,6 +6170,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
           && moveEffect != EFFECT_NATURAL_GIFT
           && moveEffect != EFFECT_HIDDEN_POWER
           && moveEffect != EFFECT_WEATHER_BALL
+          && moveEffect != EFFECT_WEATHER_REPORT
           && ability == ABILITY_NORMALIZE
           && gimmick != GIMMICK_Z_MOVE)
     {

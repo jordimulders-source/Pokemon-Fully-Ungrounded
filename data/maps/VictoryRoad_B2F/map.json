@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "VictoryRoad_B2F_EventScript_Owen",
+      "script": "VictoryRoad_B2F_EventScript_SickBlik",
       "flag": "0"
     },
     {
@@ -134,6 +134,13 @@
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_B1F",
       "dest_warp_id": "6"
+    },
+    {
+      "x": 20,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_HERMIT",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

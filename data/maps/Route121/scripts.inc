@@ -1,5 +1,76 @@
 Route121_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route121_OnTransition
 	.byte 0
+
+@ Project Grounded: Rocket-sidequest. De dief staat (verborgen) in de deur van de Safari Zone en komt pas tevoorschijn
+@ als de coord-trigger voor de deur afgaat (VAR_ROCKET_QUEST 0 -> 1).
+Route121_OnTransition:
+	setflag FLAG_HIDE_ROUTE121_ROCKET_RUNNER
+	end
+
+Route121_EventScript_RocketRunner::
+	lockall
+	opendoor 37, 5
+	waitdooranim
+	clearflag FLAG_HIDE_ROUTE121_ROCKET_RUNNER
+	addobject LOCALID_ROUTE121_ROCKET_RUNNER
+	playse SE_M_DOUBLE_SLAP
+	applymovement LOCALID_PLAYER, Route121_Movement_PlayerKnockedBack
+	waitmovement 0
+	applymovement LOCALID_ROUTE121_ROCKET_RUNNER, Route121_Movement_RunnerBumps
+	waitmovement 0
+	closedoor 37, 5
+	waitdooranim
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+	applymovement LOCALID_ROUTE121_ROCKET_RUNNER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route121_Text_RocketRunner, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE121_ROCKET_RUNNER, Route121_Movement_RunnerFlees
+	waitmovement 0
+	removeobject LOCALID_ROUTE121_ROCKET_RUNNER
+	setflag FLAG_HIDE_ROUTE121_ROCKET_RUNNER
+	fadedefaultbgm
+	setvar VAR_ROCKET_QUEST, 1
+	releaseall
+	end
+
+Route121_Movement_PlayerKnockedBack:
+	lock_facing_direction
+	walk_faster_down
+	unlock_facing_direction
+	step_end
+
+Route121_Movement_RunnerBumps:
+	walk_faster_down
+	step_end
+
+Route121_Movement_RunnerFlees:
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_up
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	step_end
+
+Route121_Text_RocketRunner:
+	.string "Outta my way, kid! I'm on a very\n"
+	.string "important, very legal errand!\p"
+	.string "These? These aren't the ZONE KEYS\n"
+	.string "to the new Safari Zones. No sir.\p"
+	.string "They're the keys to my condo.\n"
+	.string "My secret jungle condo.\p"
+	.string "Inside a tree. Like a normal guy.\n"
+	.string "With a normal condo.\p"
+	.string "...I've said too much. Bye!$"
+
 
 Route121_EventScript_Woman::
 	msgbox Route121_Text_AheadLoomsMtPyre, MSGBOX_NPC

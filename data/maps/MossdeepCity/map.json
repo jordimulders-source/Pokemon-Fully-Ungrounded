@@ -284,6 +284,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_EventScript_Meteorite",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MOSSDEEP_ZINNIA",
+      "graphics_id": "OBJ_EVENT_GFX_ZINNIA",
+      "x": 62,
+      "y": 16,
+      "elevation": 9,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_EventScript_Zinnia",
+      "flag": "FLAG_HIDE_MOSSDEEP_ZINNIA"
+    },
+    {
+      "local_id": "LOCALID_MOSSDEEP_ZINNIA_METEORITE",
+      "graphics_id": "OBJ_EVENT_GFX_ZINNIA",
+      "x": 61,
+      "y": 25,
+      "elevation": 7,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_EventScript_ZinniaEpilogue",
+      "flag": "FLAG_HIDE_MOSSDEEP_ZINNIA_METEORITE"
     }
   ],
   "warp_events": [

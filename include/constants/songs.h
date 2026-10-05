@@ -557,6 +557,39 @@
 #define MUS_GROUNDED_VS_BROKEN_PIER 619 // Project Grounded: Broken Pier (Mario Kart: Super Circuit), keuze bij WILD MUSIC
 #define MUS_GROUNDED_VS_SUNSET_WILDS 620 // Project Grounded: Sunset Wilds (Mario Kart: Super Circuit), keuze bij WILD MUSIC
 #define MUS_GROUNDED_VS_ZINNIA      621 // Project Grounded: Zinnia-gevechtsmuziek (ORAS), Zinnia voor de Sky Pillar
+#define MUS_GROUNDED_VS_ZARUDE      622 // Project Grounded: "Battle! Zarude", eigen compositie (tools/grounded/zarude_theme.py)
+#define MUS_GROUNDED_VS_NEO_PLASMA  623 // Project Grounded: Neo Team Plasma-gevechtsmuziek (Black 2/White 2, MIDI van Byabbington)
+#define MUS_GROUNDED_VS_WALLY_1     624 // Project Grounded: Battle! Wally 1, fluitje + akoestisch, traag (nog vrij gevecht)
+#define MUS_GROUNDED_VS_WALLY_2     625 // Project Grounded: Battle! Wally 2, fluit + akoestisch (nog vrij gevecht)
+#define MUS_GROUNDED_VS_WALLY_3     626 // Project Grounded: Battle! Wally 3, kneuzerig (Mauville)
+#define MUS_GROUNDED_VS_WALLY_4     627 // Project Grounded: Battle! Wally 4, groeiend (Meteor Falls)
+#define MUS_GROUNDED_VS_WALLY_5     628 // Project Grounded: Battle! Wally 5, heavy metal (Victory Road, rematches)
+#define MUS_GROUNDED_VS_REGIGIGAS   629 // Project Grounded: Battle! Regigigas, bombastische remix van het Regi-thema met Slow Start
+#define MUS_GROUNDED_VS_DAVE        630 // Project Grounded: Dave (Victory Road, Stadium), Freed From Desire (Gala)
+#define MUS_GROUNDED_VS_MEWTWO      631 // Project Grounded: Battle! Mewtwo, eigen compositie (trance, de imperfecte kloon)
+#define MUS_GROUNDED_VS_SUICUNE     632 // Project Grounded: beasts-thema + klokken (zuiverheid, regen)
+#define MUS_GROUNDED_VS_ENTEI       633 // Project Grounded: beasts-thema + elektrische gitaar (vuur)
+#define MUS_GROUNDED_VS_RAIKOU      634 // Project Grounded: beasts-thema + zoemende synths (onweer)
+#define MUS_GROUNDED_VS_KECCLES     635 // Project Grounded: Battle! Keccles, eigen compositie in salsa dura-stijl (tools/grounded/keccles_theme.py)
+#define MUS_GROUNDED_VS_MAGIKARP    636 // Project Grounded: Battle! Magikarp, eigen compositie (spartelen, Splash; tools/grounded/magikarp_theme.py)
+#define MUS_GROUNDED_VS_JIRACHI     637 // Project Grounded: Battle! Jirachi, eigen compositie (hoopvol, sterrenhemel; tools/grounded/jirachi_theme.py)
+#define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran v7, eigen compositie: Kyuss-desert rock (dreigende intro 74, stomp/groove/beuk 130, sludge/dreiging 74 bpm) op de GBA (tools/grounded/heatran_theme.py)
+#define MUS_GROUNDED_VS_SHAYMIN     639 // Project Grounded: Battle! Shaymin, eigen compositie (relaxte bloemenweide in 6/8, tools/grounded/shaymin_theme.py)
+#define MUS_GROUNDED_VS_RAYQUAZA    640 // Project Grounded: weather trio-thema als Balinese gamelan (gong kebyar), tools/grounded/rayquaza_theme.py
+#define MUS_GROUNDED_ASHFROST       641 // Project Grounded: Ashfrost Village, wintervariant van het Fallarbor-thema (tools/grounded/ashfrost_theme.py)
+#define MUS_GROUNDED_VS_MITCH      642 // Project Grounded: Battle! Mitch, eigen compositie in Drum & Bass (Victory Road, Stadium; tools/grounded/mitch_theme.py)
+#define MUS_GROUNDED_VS_SICKBLIK    643 // Project Grounded: Battle! SickBlik (TRAINER_SICKBLIK = Jordi), eigen compositie: smerige slap-funk (tools/grounded/sickblik_theme.py)
+#define MUS_GROUNDED_VS_VICTINI     644 // Project Grounded: Battle! Victini, eigen compositie: anime-overwinningsfanfare (tools/grounded/victini_theme.py)
+#define MUS_GROUNDED_VS_DARKRAI     645 // Project Grounded: Battle! Darkrai, eigen compositie: ontsporend speeldoos-wiegelied in 7/8 (tools/grounded/darkrai_theme.py)
+#define MUS_GROUNDED_VS_GENESECT    646 // Project Grounded: Battle! Genesect, eigen compositie: industrial/big beat à la The Prodigy + hard techno (tools/grounded/genesect_theme.py)
+#define MUS_GROUNDED_VS_ROXANNE     647 // Project Grounded: gymleider-remix (hard rock power ballad) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
+#define MUS_GROUNDED_VS_BRAWLY      648 // Project Grounded: gymleider-remix (nu-metal) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
+#define MUS_GROUNDED_VS_WATTSON     649 // Project Grounded: gymleider-remix (gabber/happy hardcore) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
+#define MUS_GROUNDED_VS_FLANNERY    650 // Project Grounded: gymleider-remix (flamenco) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
+#define MUS_GROUNDED_VS_NORMAN      651 // Project Grounded: gymleider-remix (Norman): blockbuster-tv-orkest (tools/grounded/gym_remixes2.py)
+#define MUS_GROUNDED_VS_WINONA      652 // Project Grounded: gymleider-remix (Winona): bubblegum-dancepop (tools/grounded/gym_remixes2.py)
+#define MUS_GROUNDED_VS_TATE_LIZA   653 // Project Grounded: gymleider-remix (Tate & Liza): psytrance (tools/grounded/gym_remixes2.py)
+#define MUS_GROUNDED_VS_WALLACE     654 // Project Grounded: gymleider-remix (Wallace, gym 8): Franse lounge/bossa (tools/grounded/gym_remixes2.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

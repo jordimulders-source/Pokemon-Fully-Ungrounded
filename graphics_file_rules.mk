@@ -44,7 +44,7 @@ $(TILESETGFXDIR)/secondary/mauville/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/lavaridge/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 450 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 501 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/fortree/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 493 -Wnum_tiles

@@ -386,6 +386,26 @@ const u32 gTrainerFrontPic_GuestShyGuyBlack[] = INCBIN_U32("graphics/trainers/fr
 const u16 gTrainerPalette_GuestShyGuyBlack[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_black.gbapal");
 const u32 gTrainerFrontPic_Mustard[] = INCBIN_U32("graphics/trainers/front_pics/mustard.4bpp.smol"); // Project Grounded
 const u16 gTrainerPalette_Mustard[] = INCBIN_U16("graphics/trainers/front_pics/mustard.gbapal");
+const u32 gTrainerFrontPic_N[] = INCBIN_U32("graphics/trainers/front_pics/n.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_N[] = INCBIN_U16("graphics/trainers/front_pics/n.gbapal");
+const u32 gTrainerFrontPic_Ghetsis[] = INCBIN_U32("graphics/trainers/front_pics/ghetsis.4bpp.smol"); // Project Grounded: Battle Stadium
+const u16 gTrainerPalette_Ghetsis[] = INCBIN_U16("graphics/trainers/front_pics/ghetsis.gbapal");
+const u32 gTrainerFrontPic_Zinzolin[] = INCBIN_U32("graphics/trainers/front_pics/zinzolin.4bpp.smol"); // Project Grounded: Battle Stadium (Neo Plasma)
+const u16 gTrainerPalette_Zinzolin[] = INCBIN_U16("graphics/trainers/front_pics/zinzolin.gbapal");
+const u32 gTrainerFrontPic_ShadowTriad[] = INCBIN_U32("graphics/trainers/front_pics/shadow_triad.4bpp.smol"); // Project Grounded: Battle Stadium (Neo Plasma)
+const u16 gTrainerPalette_ShadowTriad[] = INCBIN_U16("graphics/trainers/front_pics/shadow_triad.gbapal");
+const u32 gTrainerFrontPic_NeoPlasmaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/neo_plasma_grunt_m.4bpp.smol"); // Project Grounded: Battle Stadium (Neo Plasma)
+const u16 gTrainerPalette_NeoPlasmaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/neo_plasma_grunt_m.gbapal");
+const u32 gTrainerFrontPic_NeoPlasmaGruntF[] = INCBIN_U32("graphics/trainers/front_pics/neo_plasma_grunt_f.4bpp.smol"); // Project Grounded: Battle Stadium (Neo Plasma)
+const u16 gTrainerPalette_NeoPlasmaGruntF[] = INCBIN_U16("graphics/trainers/front_pics/neo_plasma_grunt_f.gbapal");
+const u32 gTrainerFrontPic_Rood[] = INCBIN_U32("graphics/trainers/front_pics/rood.4bpp.smol"); // Project Grounded: Battle Stadium (Neo Plasma)
+const u16 gTrainerPalette_Rood[] = INCBIN_U16("graphics/trainers/front_pics/rood.gbapal");
+const u32 gTrainerFrontPic_RocketGruntM[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_m.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_RocketGruntM[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_m.gbapal");
+const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_pics/rocket_grunt_f.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_RocketGruntF[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_f.gbapal");
+const u32 gTrainerFrontPic_Petrel[] = INCBIN_U32("graphics/trainers/front_pics/petrel.4bpp.smol"); // Project Grounded: Rocket-sidequest
+const u16 gTrainerPalette_Petrel[] = INCBIN_U16("graphics/trainers/front_pics/petrel.gbapal");
 const u32 gTrainerFrontPic_GuestDitto[] = INCBIN_U32("graphics/trainers/front_pics/guest_ditto.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_GuestDitto[] = INCBIN_U16("graphics/trainers/front_pics/guest_ditto.gbapal");
 const u32 gTrainerFrontPic_GuestBurglar[] = INCBIN_U32("graphics/trainers/front_pics/guest_burglar.4bpp.smol"); // Project Grounded: Battle Stadium
@@ -602,6 +622,16 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_GUEST_SHY_GUY_BLACK, gTrainerFrontPic_GuestShyGuyBlack, gTrainerPalette_GuestShyGuyBlack),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_DITTO, gTrainerFrontPic_GuestDitto, gTrainerPalette_GuestDitto),
     TRAINER_SPRITE(TRAINER_PIC_MUSTARD, gTrainerFrontPic_Mustard, gTrainerPalette_Mustard),
+    TRAINER_SPRITE(TRAINER_PIC_N, gTrainerFrontPic_N, gTrainerPalette_N),
+    TRAINER_SPRITE(TRAINER_PIC_GHETSIS, gTrainerFrontPic_Ghetsis, gTrainerPalette_Ghetsis),
+    TRAINER_SPRITE(TRAINER_PIC_ZINZOLIN, gTrainerFrontPic_Zinzolin, gTrainerPalette_Zinzolin),
+    TRAINER_SPRITE(TRAINER_PIC_SHADOW_TRIAD, gTrainerFrontPic_ShadowTriad, gTrainerPalette_ShadowTriad),
+    TRAINER_SPRITE(TRAINER_PIC_NEO_PLASMA_GRUNT_M, gTrainerFrontPic_NeoPlasmaGruntM, gTrainerPalette_NeoPlasmaGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_NEO_PLASMA_GRUNT_F, gTrainerFrontPic_NeoPlasmaGruntF, gTrainerPalette_NeoPlasmaGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_ROOD, gTrainerFrontPic_Rood, gTrainerPalette_Rood),
+    TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_M, gTrainerFrontPic_RocketGruntM, gTrainerPalette_RocketGruntM),
+    TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_F, gTrainerFrontPic_RocketGruntF, gTrainerPalette_RocketGruntF),
+    TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_MASCOTS, gTrainerFrontPic_TrioMascots, gTrainerPalette_TrioMascots),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_STARTERS, gTrainerFrontPic_TrioStarters, gTrainerPalette_TrioStarters),

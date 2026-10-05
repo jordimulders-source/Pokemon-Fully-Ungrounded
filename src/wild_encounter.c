@@ -583,6 +583,15 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
+    // Project Grounded: in de Fairy Forest (Safari Zone) heeft elke Floette een willekeurige bloemkleur
+    if (wildMonInfo->wildPokemon[wildMonIndex].species == SPECIES_FLOETTE_RED
+     && gMapHeader.mapLayoutId == LAYOUT_SAFARI_ZONE_FAIRY_FOREST)
+    {
+        static const u16 sFloetteColors[] = {SPECIES_FLOETTE_RED, SPECIES_FLOETTE_YELLOW, SPECIES_FLOETTE_ORANGE,
+                                             SPECIES_FLOETTE_BLUE, SPECIES_FLOETTE_WHITE};
+        CreateWildMon(sFloetteColors[Random() % ARRAY_COUNT(sFloetteColors)], level);
+        return TRUE;
+    }
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }

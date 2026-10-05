@@ -117,6 +117,9 @@
 #define METATILE_Building_TV_Off  0x002
 #define METATILE_Building_TV_On   0x003
 
+// gTileset_ScorchedSlab (Project Grounded; verder dezelfde nummers als gTileset_Cave)
+#define METATILE_ScorchedSlab_SunLight                   0x3AA
+
 // gTileset_Cave
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
@@ -186,6 +189,9 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Bottom    0x34F
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
+
+// gTileset_FortreeJungle
+#define METATILE_FortreeJungle_RocketHollow                0x359 // Project Grounded: tools/grounded/maptools/fortree_jungle.py
 
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F

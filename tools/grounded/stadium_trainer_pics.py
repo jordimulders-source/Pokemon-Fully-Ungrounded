@@ -35,11 +35,11 @@ PLATINUM = {
     'leader_gardenia': ('leader_gardenia', 0),
     'leader_maylene': ('leader_maylene', 0),
     'leader_wake': ('leader_wake', 2),  # frame 0 heeft de armen te wijd (73 px)
-    'leader_fantina': ('leader_fantina', 0),
+    'leader_fantina': ('leader_fantina', 6),  # frame 0 staat met de rug naar ons; 6 = gezicht, arm naar de speler
     'leader_byron': ('leader_byron', 0),
     'leader_candice': ('leader_candice', 0),
     'leader_volkner': ('leader_volkner', 0),
-    'elite_four_aaron': ('elite_four_aaron', 0),
+    'elite_four_aaron': ('elite_four_aaron', 8),  # frame 0 springt weg (achterhoofd); 8 = gezicht, armen gespreid
     'elite_four_bertha': ('elite_four_bertha', 0),
     'elite_four_flint': ('elite_four_flint', 0),
     'elite_four_lucian': ('elite_four_lucian', 0),

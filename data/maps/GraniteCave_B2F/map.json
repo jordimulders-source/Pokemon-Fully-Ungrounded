@@ -167,6 +167,13 @@
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B1F",
       "dest_warp_id": "6"
+    },
+    {
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_CORNERSTONE_ROOM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

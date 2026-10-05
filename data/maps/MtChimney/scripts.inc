@@ -14,7 +14,43 @@ MtChimney_EventScript_EnteiCaveHidden:
 
 MtChimney_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
+	@ Project Grounded: trap naar de top (noordoostkam). Tot badge 5 houdt de vulkanoloog je tegen;
+	@ hij staat er pas als Team Magma weg is. VAR_TEMP_1 = 1: de trap is open.
+	setflag FLAG_HIDE_MT_CHIMNEY_TRAIL_GUARD
+	setvar VAR_TEMP_1, 0
+	goto_if_set FLAG_BADGE05_GET, MtChimney_EventScript_TrailOpen
+	goto_if_unset FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA, MtChimney_EventScript_TrailEnd
+	clearflag FLAG_HIDE_MT_CHIMNEY_TRAIL_GUARD
 	end
+MtChimney_EventScript_TrailOpen:
+	setvar VAR_TEMP_1, 1
+MtChimney_EventScript_TrailEnd:
+	end
+
+MtChimney_EventScript_TrailClosed::
+	lockall
+	msgbox MtChimney_Text_TrailClosed, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
+MtChimney_EventScript_TrailGuard::
+	msgbox MtChimney_Text_TrailGuard, MSGBOX_NPC
+	end
+
+MtChimney_Text_TrailClosed:
+	.string "Whoa, whoa! The trail to the true\n"
+	.string "summit is closed.\p"
+	.string "Seismic activity. Also my insurance\n"
+	.string "only covers people with five BADGES.$"
+
+MtChimney_Text_TrailGuard:
+	.string "I'm a volcanologist. I stand here so\n"
+	.string "the mountain has someone to blame.\p"
+	.string "Come back with five BADGES. The\n"
+	.string "summit only eats experienced people.$"
 
 MtChimney_OnResume:
 	setstepcallback STEP_CB_ASH

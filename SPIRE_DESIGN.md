@@ -6,6 +6,13 @@ Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volge
 
 ## Kernprincipes (Jordi, okt 2026)
 - **Altijd een eerlijke winkans bij goed spel**, zoals in Slay the Spire: slordig spelen kost je meestal de run (tenzij je veel relic-geluk hebt), maar zelfs de zwaarste seed is te winnen. Daarom spelen pro's in Slay lange reeksen op A10/A20.
+- **Nooit 0% winkans** (Jordi, 5 okt, na een kansloze run tegen Wishiwashi + Araquanid): vijanden horen je **niet te one-shotten in beurt 1, 2 of 3 zonder dat je daar een counter voor hebt**. Elke baas/elite moet met elk startteam te winnen zijn; dat wordt gecontroleerd in het rekenwerk (slechtste combinatie > 0%).
+- **Kracht van vijanden past bij het moment in de run** (Jordi, 5 okt: 'Araquanid had al STAB Leech Life en Liquidation, die je op dat moment met je defenses niet kan tanken'). Gemeten als **klap**: één aanval (hoogste roll, geen crit, met STAB, abilities, items en totem-boosts) in % van de max HP van een speler-Pokémon in de vorm van die act (×4 HP), mediaan over alle rentals (`matchups.py`, `klap_check`; `encounters.py` stopt als een regel geschonden wordt).
+  - Plafond (act 1 / 2 / 3): zwak 6 / 8 / 10%, gewoon 10 / 12 / 14%, elite 14 / 15 / 17%, baas 15 / 17 / 22%. Lakeien van elites en bazen hooguit het plafond van een gewoon gevecht in die act.
+  - **Sterke aanvallen** (klap vanaf 8 / 10 / 12%, bij elites en bazen vanaf 2/3 van hun plafond): in act 1 hooguit **één** per vijand; in act 2 één in zwakke/gewone gevechten en twee bij elites/bazen; in act 3 twee.
+  - **Opgeladen** aanvallen mogen ×1,5 boven het plafond en tellen niet als sterk: twee beurten (Meteor Beam), daarna rust (Hyper Beam, Roar of Time), alleen na een aangekondigde voorbereiding (Dream Eater na Hypnosis) of om de beurt (Truant). De speler ziet ze aankomen en krijgt een open beurt.
+  - Met een patroon tellen alleen de moves uit het patroon (de AI volgt het patroon); een sterke move die hij nooit gebruikt, telt niet.
+- **Acts zo lang als in Slay the Spire** (Jordi: 'je gaat er aan het begin best snel doorheen'); gewone gevechten mogen niet allemaal triviaal zijn.
 - **Elk gevecht is een puzzel**: verkeerd aangepakt een obstakel, goed aangepakt makkelijk. Vijanden beginnen zwak en krijgen per act meer gimmicks en kracht; passief spelen wordt steeds meer afgestraft.
 - **Pokémon-kennis én Slay-kennis worden beloond** (types, abilities, look-alikes herkennen; patronen, tempo, kaartkeuzes).
 - **Creatief, maar altijd grounded**: eerst kijken of er al een Pokémon-mechanic voor is (Ritual = Rage, opladen = Quiver Dance/Machine Learning/Acupressure, start-buff = totem-boost, Gremlin Nob = Defiant). Zoveel mogelijk binnen de Pokémon-wereld.

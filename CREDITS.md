@@ -1,7 +1,17 @@
 ## Project Grounded
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
-- **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin** (nog niet in gebruik): **Ekat99** (DeviantArt). Bron in `graphics/grounded/tilesets/`.
+- **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin**: **Ekat99** (DeviantArt). Bron in `graphics/grounded/tilesets/`. De mangroves en wortelbogen in Fortree Jungle komen uit de moerassheet; de overige jungle-tiles (lianen, bromelia's, bananenplant, heliconia, hibiscus, monstera, varens, waterlelies) zijn voor Project Grounded getekend.
+- **N** (trainerfoto en overworld): sprite sheet van **Delgatron** (DeviantArt, "N sprite sheet"). Bron: `graphics/grounded/trainers/n/n_sheet_delgatron_bron.jpg`, omgezet met `tools/grounded/plasma_sprites.py`.
+- **Ghetsis** (overworld): **PurpleZaffre** (DeviantArt, "Team Plasma Boss Ghetsis BW"); trainerfoto uit een pixel-art van Ghetsis (Redbubble-print, maker nog onbekend). Bronnen in `graphics/grounded/trainers/ghetsis/`.
+- **izzyvicious** (DeviantArt): sprites aangeleverd door Jordi (N/Ghetsis-reeks).
+- **Sprite-sheets aangeleverd door Jordi (okt 2026, nog niet allemaal in gebruik; bronnen in `graphics/`):**
+  - HG/SS-trainerfoto's (Pokémon HeartGold / SoulSilver, Game Freak), **verzameld door Dann-The-Yoshi** (`d2dp76j-…png`; `288-2882990_…gen-5.png` is een kopie van dezelfde sheet).
+  - Overworlds uit Black/White, Black 2/White 2, HG/SS en Platinum, **sheet door PurpleZaffre** (DeviantArt) (`DV3PUrC.png`).
+  - Overworld-sheets in DS-stijl (`793a0482460ea8b6fc50b14a394fb483.jpg`, `dan096t-…png`) en Kanto-trainers in GBC-stijl (`2gnAy4D.png`): maker nog onbekend.
+  - Ghetsis die dabt (`graphics/grounded/trainers/ghetsis/ghetsis_dab_rachxt_bron.jpg`, niet gebruikt): **rachxt** (Redbubble).
+  - `5xgc4ca.png` is een schermafbeelding van een map met Gen 5-trainerfoto's (Black/White); te klein om te gebruiken, de losse bestanden zijn nodig.
+- **Neo Plasma** (Black 2/White 2: grunts, Zinzolin, Shadow Triad, sage; trainerfoto's en overworlds): **aveontrainer**, **xMachaku** en **PurpleZaffre** (DeviantArt). Muziek "Battle! Neo Team Plasma" (MIDI): **Byabbington** (onlinesequencer.net). Transitie nagemaakt naar Pokémon Black 2/White 2 (op basis van een GIF). Overworld van de grunt (vrouw): PurpleZaffre; die van de grunt (man): maker onbekend. Bronnen in `graphics/grounded/trainers/neo_plasma/`.
 - **Zinnia** (trainerfoto en overworld): fan-art, aangeleverd door Jordi (`graphics/grounded/trainers/zinnia/`); maker nog aanvullen (zie de Zinnia-credits in `TODO.md`).
 
 ### Graphics uit andere Pokémon-games (© Nintendo / Creatures Inc. / GAME FREAK inc.)
@@ -10,6 +20,7 @@
 - **MissingNo.** (in de New Mauville-gevechtstransitie): Pokémon Red / Blue; afbeelding aangeleverd door Jordi (`graphics/grounded/missingno.png`).
 - **Colress**: trainerfoto en VS-portret uit Pokémon Black 2 / White 2; **overworld-sprite door PizzaSun**. Bestanden in `graphics/grounded/trainers/colress/`.
 - **Burglar** (trainerfoto): Pokémon Red / Blue. `graphics/grounded/trainers/burglar/`.
+- **Team Rocket** (grunts M/F, trainerfoto's en overworlds): Pokémon FireRed / LeafGreen, via **pret/pokefirered** (`graphics/grounded/trainers/rocket/`). **Petrel**: HG/SS-trainerfoto, verzameld door Dann-The-Yoshi; overworld = FRLG-grunt met paarse kuif.
 - **Overworld-NPC's** uit Pokémon FireRed / LeafGreen: `graphics/grounded/overworld/frlg_overworld_npcs.png`.
 - **Battle Stadium-trainerfoto's (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Lorelei, Bruno, Agatha, Lance en Blue uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bronnen in `graphics/grounded/trainers/stadium_bron/frlg/`.
 - **Battle Stadium-overworlds (Kanto)**: Misty, Lt. Surge, Erika, Koga, Sabrina, Blaine, Giovanni, Blue, Lorelei, Bruno, Agatha en Lance uit Pokémon FireRed / LeafGreen, via **pret/pokefirered**. Bestanden in `graphics/object_events/pics/people/` (3 frames verdubbeld naar 9) en `graphics/object_events/palettes/kanto_npc_*.pal`.

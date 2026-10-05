@@ -4,6 +4,8 @@ Route128_MapScripts::
 	.byte 0
 
 Route128_OnTransition:
+	setvar VAR_0x8004, 2
+	call Common_EventScript_GiantWailordSpawn
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 

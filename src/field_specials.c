@@ -4437,3 +4437,62 @@ bool8 IsNightTime(void)
 {
     return GetTimeOfDay() == TIME_NIGHT;
 }
+
+// Project Grounded: Delta Episode. 1 als de gewone Rayquaza gevangen is (Pokédex), dan verschijnt de shiny op de Sky Pillar.
+bool8 Grounded_CaughtRayquaza(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAYQUAZA), FLAG_GET_CAUGHT) != 0;
+}
+
+// Project Grounded: 1 als er een shiny Rayquaza in het team zit. Alleen met hem kun je in de ruimte ademen.
+bool8 Grounded_PartyHasShinyRayquaza(void)
+{
+    u32 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_RAYQUAZA
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+         && GetMonData(&gPlayerParty[i], MON_DATA_IS_SHINY))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Project Grounded: Scorched Slab-zonnezaal. Telt de zonnestenen (Strength-blokken) die op een lichtschacht
+// (METATILE_ScorchedSlab_SunLight) staan; het script opent de zonnedeur als het er drie zijn. Via de templates
+// (PushBoulder_End werkt die bij), want blokken buiten beeld zijn geen actief object.
+u16 ScorchedSlab_CountLitStones(void)
+{
+    u32 i, count = 0;
+
+    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    {
+        const struct ObjectEventTemplate *t = &gSaveBlock1Ptr->objectEventTemplates[i];
+        if (t->localId == 0 || t->graphicsId != OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+            continue;
+        if (MapGridGetMetatileIdAt(t->x + MAP_OFFSET, t->y + MAP_OFFSET) == METATILE_ScorchedSlab_SunLight)
+            count++;
+    }
+    return count;
+}
+
+// Project Grounded: reuzen-Wailord als grappig obstakel op zee (ZEE_PLAN.md). Per dag 25% kans dat hij er ligt, op
+// één van drie plekken: 1 = Route 124, 2 = Route 128, 3 = Route 129. Afgeleid uit het RTC-dagnummer en de trainer-id,
+// dus de hele dag dezelfde plek. VAR_GIANT_WAILORD_DEBUG (1-3 plek, 4 nergens) forceert het voor tests.
+u16 Grounded_GiantWailordSpot(void)
+{
+    u32 h;
+    u16 dbg = VarGet(VAR_GIANT_WAILORD_DEBUG);
+
+    if (dbg != 0)
+        return dbg <= 3 ? dbg : 0;
+    RtcCalcLocalTime();
+    h = (u32)gLocalTime.days * 2654435761u ^ ((gSaveBlock2Ptr->playerTrainerId[0] | (gSaveBlock2Ptr->playerTrainerId[1] << 8)) * 40503u);
+    h ^= h >> 15;
+    h *= 2246822519u;
+    h ^= h >> 13;
+    if ((h & 3) != 0)
+        return 0;
+    return 1 + (h >> 8) % 3;
+}

@@ -402,6 +402,14 @@ static const struct StadiumQuote sStadiumQuotes[] =
     {TRAINER_STADIUM_DONALD, COMPOUND_STRING("I wish we'd never met... All six of them wish that too."), COMPOUND_STRING("Your own team, but purple. I call it DITTO MANIA.")},
     {TRAINER_STADIUM_IVAN, COMPOUND_STRING("Blupblup..."), COMPOUND_STRING("Very rare fishies. Told you. Blupblup!")},
     {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("Tik... tok...\pTime's up."), COMPOUND_STRING("Tik tok. The METRONOME has spoken.")},
+    {TRAINER_STADIUM_N, COMPOUND_STRING("Your POKéMON... they actually like you.\pThat was not in my equations.\pI need a moment. Or a ferris wheel."), COMPOUND_STRING("I set your POKéMON free. They came back. They want a rematch.")},
+    {TRAINER_STADIUM_GHETSIS, COMPOUND_STRING("Impossible! I am perfect! This bracket is rigged!\pI'll be in my castle. Sulking. Majestically."), COMPOUND_STRING("Bow before me! Or sit down. Sitting is also fine.")},
+    {TRAINER_STADIUM_ZINZOLIN, COMPOUND_STRING("Defeated... and STILL cold.\pSomebody bring me a blanket. And a new career."), COMPOUND_STRING("Cold, isn't it? Welcome to my life.")},
+    {TRAINER_STADIUM_ROOD, COMPOUND_STRING("A wonderful battle. Your POKéMON look happy.\pI'll still write you a strongly worded letter. Kindly."), COMPOUND_STRING("Everyone gets a WISH. Except your team. They get a nap.")},
+    {TRAINER_STADIUM_SHADOW_TRIAD, COMPOUND_STRING("We vanish now.\p...The door is locked. We'll wait for the next round."), COMPOUND_STRING("You blinked. We won. That's the whole technique.")},
+    {TRAINER_STADIUM_PLASMA_GRUNT_M, COMPOUND_STRING("Lost again? My boss is going to yell at me.\pHe yells at everyone. It's his whole personality."), COMPOUND_STRING("Ha! Hand over your POKéMON! ...No? Okay. Worth a shot.")},
+    {TRAINER_STADIUM_PLASMA_GRUNT_F, COMPOUND_STRING("Fine. I'm unionizing the grunts.\pFirst demand: a dental plan."), COMPOUND_STRING("Grunt of the month! Again! There's no prize, but still.")},
+    {TRAINER_STADIUM_PETREL, COMPOUND_STRING("Unmasked by a child. Again.\pI'll tell the boss it was someone else.\pI'm very good at being someone else."), COMPOUND_STRING("You fought a MIMIKYU, a ZOROARK and yourself. Only one of them was real.")},
     {TRAINER_STADIUM_LYLE, COMPOUND_STRING("Level 50 and still... Maybe I should start training their IVs... hmm."), COMPOUND_STRING("Told you! Indestructible! I'm calling my brother.")},
 };
 

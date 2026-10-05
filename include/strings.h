@@ -1911,15 +1911,15 @@ extern const u8 MatchCall_Text_TateLiza1[];
 extern const u8 MatchCall_Text_TateLiza2[];
 extern const u8 MatchCall_Text_TateLiza3[];
 extern const u8 MatchCall_Text_TateLiza4[];
-extern const u8 MatchCall_Text_Juan1[];
-extern const u8 MatchCall_Text_Juan2[];
-extern const u8 MatchCall_Text_Juan3[];
-extern const u8 MatchCall_Text_Juan4[];
+extern const u8 MatchCall_Text_Wallace1[];
+extern const u8 MatchCall_Text_Wallace2[];
+extern const u8 MatchCall_Text_Wallace3[];
+extern const u8 MatchCall_Text_Wallace4[];
 extern const u8 MatchCall_Text_Sidney[];
 extern const u8 MatchCall_Text_Phoebe[];
 extern const u8 MatchCall_Text_Glacia[];
 extern const u8 MatchCall_Text_Drake[];
-extern const u8 MatchCall_Text_Wallace[];
+extern const u8 MatchCall_Text_OldChampion[];
 
 // Contest Link
 extern const u8 gText_ColorDarkGray[];

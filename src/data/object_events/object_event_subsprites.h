@@ -2895,3 +2895,26 @@ static const struct SubspriteTable sOamTables_48x48[] = {
     SUBSPRITE_TABLE_ENTRY(sOamTable_48x48_Grass2), // long grass
     SUBSPRITE_TABLE_ENTRY(sOamTable_48x48_Grass1) // long grass priority 1
 };
+
+// Project Grounded: reuzen-Wailord 192x96 als 3x3 blokken van 64x32 (tiles per blok, -mwidth 8 -mheight 4)
+static const struct Subsprite sOamTable_192x96[] = {
+    {.x = -96, .y = -48, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 0, .priority = 2},
+    {.x = -32, .y = -48, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 32, .priority = 2},
+    {.x = 32, .y = -48, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 64, .priority = 2},
+    {.x = -96, .y = -16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 96, .priority = 2},
+    {.x = -32, .y = -16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 128, .priority = 2},
+    {.x = 32, .y = -16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 160, .priority = 2},
+    {.x = -96, .y = 16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 192, .priority = 2},
+    {.x = -32, .y = 16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 224, .priority = 2},
+    {.x = 32, .y = 16, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 256, .priority = 2},
+};
+
+static const struct SubspriteTable sOamTables_192x96[] = {
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+    {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
+};
+

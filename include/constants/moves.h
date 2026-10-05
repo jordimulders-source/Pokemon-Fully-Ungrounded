@@ -919,8 +919,24 @@
 #define MOVE_SHADOW_SIPHON 857 // Project Grounded: Dark-versie van Draining Kiss
 #define MOVE_ACID_RAIN 858 // Project Grounded: TM57, zure regen
 #define MOVE_POLLEN_HAZE 859 // Project Grounded: TM58, stuifmeel (Bug-weer)
+#define MOVE_MUMMYS_CURSE 860 // Project Grounded: Cofagrigus
+#define MOVE_ZAP_TRAP 861 // Project Grounded: Stunfisk
+#define MOVE_STEEL_TRAP 862 // Project Grounded: Galar-Stunfisk
+#define MOVE_PACK_HOWL 863 // Project Grounded: Mightyena
+#define MOVE_WHALE_SONG 864 // Project Grounded: Wailord
+#define MOVE_HEARTBREAK 865 // Project Grounded: Luvdisc
 
-#define MOVES_COUNT_GEN9 860
+#define MOVE_ECLIPSE 866 // Project Grounded: Solrock/Lunatone
+#define MOVE_TIPSY_WALTZ 867 // Project Grounded: Spinda
+#define MOVE_WEATHER_REPORT 868 // Project Grounded: Castform
+#define MOVE_VENOM_DUST 869 // Project Grounded: Dustox
+#define MOVE_STRAIGHT_LINE 870 // Project Grounded: Linoone
+#define MOVE_WIND_CHIME 871 // Project Grounded: Chimecho
+#define MOVE_PRIMEVAL_WARD 872 // Project Grounded: Relicanth
+#define MOVE_GULP_DOWN 873 // Project Grounded: Swalot
+#define MOVE_NINE_LIVES 874 // Project Grounded: Delcatty
+
+#define MOVES_COUNT_GEN9 875
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

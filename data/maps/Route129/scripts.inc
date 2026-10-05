@@ -10,6 +10,8 @@ Route129_OnLoad:
 	end
 
 Route129_OnTransition:
+	setvar VAR_0x8004, 3
+	call Common_EventScript_GiantWailordSpawn
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route129_EventScript_CheckSetAbnormalWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_StartKyogreWeather
@@ -34,8 +36,8 @@ Route129_EventScript_Allison::
 	msgbox Route129_Text_AllisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route129_EventScript_Reed::
-	trainerbattle_single TRAINER_REED, Route129_Text_ReedIntro, Route129_Text_ReedDefeat
+Route129_EventScript_Juan::
+	trainerbattle_single TRAINER_JUAN, Route129_Text_ReedIntro, Route129_Text_ReedDefeat
 	msgbox Route129_Text_ReedPostBattle, MSGBOX_AUTOCLOSE
 	end
 

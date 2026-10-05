@@ -208,8 +208,8 @@ MossdeepCity_Gym_EventScript_WarpToEntrance::
 	releaseall
 	end
 
-MossdeepCity_Gym_EventScript_Preston::
-	trainerbattle_single TRAINER_PRESTON, MossdeepCity_Gym_Text_PrestonIntro, MossdeepCity_Gym_Text_PrestonDefeat
+MossdeepCity_Gym_EventScript_Uri::
+	trainerbattle_single TRAINER_URI, MossdeepCity_Gym_Text_PrestonIntro, MossdeepCity_Gym_Text_PrestonDefeat
 	msgbox MossdeepCity_Gym_Text_PrestonPostBattle, MSGBOX_AUTOCLOSE
 	end
 

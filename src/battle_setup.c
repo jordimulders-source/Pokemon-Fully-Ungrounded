@@ -158,7 +158,7 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_LILA_AND_ROY] = REMATCH(TRAINER_LILA_AND_ROY_1, TRAINER_LILA_AND_ROY_2, TRAINER_LILA_AND_ROY_3, TRAINER_LILA_AND_ROY_4, TRAINER_LILA_AND_ROY_5, MAP_ROUTE124),
     [REMATCH_CRISTIN] = REMATCH(TRAINER_CRISTIN_1, TRAINER_CRISTIN_2, TRAINER_CRISTIN_3, TRAINER_CRISTIN_4, TRAINER_CRISTIN_5, MAP_ROUTE121),
     [REMATCH_BROOKE] = REMATCH(TRAINER_BROOKE_1, TRAINER_BROOKE_2, TRAINER_BROOKE_3, TRAINER_BROOKE_4, TRAINER_BROOKE_5, MAP_ROUTE111),
-    [REMATCH_WILTON] = REMATCH(TRAINER_WILTON_1, TRAINER_WILTON_2, TRAINER_WILTON_3, TRAINER_WILTON_4, TRAINER_WILTON_5, MAP_ROUTE111),
+    [REMATCH_CHARLES] = REMATCH(TRAINER_CHARLES_1, TRAINER_CHARLES_2, TRAINER_CHARLES_3, TRAINER_CHARLES_4, TRAINER_CHARLES_5, MAP_ROUTE111),
     [REMATCH_VALERIE] = REMATCH(TRAINER_VALERIE_1, TRAINER_VALERIE_2, TRAINER_VALERIE_3, TRAINER_VALERIE_4, TRAINER_VALERIE_5, MAP_MT_PYRE_6F),
     [REMATCH_CINDY] = REMATCH(TRAINER_CINDY_1, TRAINER_CINDY_3, TRAINER_CINDY_4, TRAINER_CINDY_5, TRAINER_CINDY_6, MAP_ROUTE104),
     [REMATCH_THALIA] = REMATCH(TRAINER_THALIA_1, TRAINER_THALIA_2, TRAINER_THALIA_3, TRAINER_THALIA_4, TRAINER_THALIA_5, MAP_ABANDONED_SHIP_ROOMS_1F),
@@ -222,12 +222,12 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_NORMAN] = REMATCH(TRAINER_NORMAN_1, TRAINER_NORMAN_2, TRAINER_NORMAN_3, TRAINER_NORMAN_4, TRAINER_NORMAN_5, MAP_PETALBURG_CITY),
     [REMATCH_WINONA] = REMATCH(TRAINER_WINONA_1, TRAINER_WINONA_2, TRAINER_WINONA_3, TRAINER_WINONA_4, TRAINER_WINONA_5, MAP_FORTREE_CITY),
     [REMATCH_TATE_AND_LIZA] = REMATCH(TRAINER_TATE_AND_LIZA_1, TRAINER_TATE_AND_LIZA_2, TRAINER_TATE_AND_LIZA_3, TRAINER_TATE_AND_LIZA_4, TRAINER_TATE_AND_LIZA_5, MAP_MOSSDEEP_CITY),
-    [REMATCH_JUAN] = REMATCH(TRAINER_WALLACE_1, TRAINER_JUAN_2, TRAINER_JUAN_3, TRAINER_JUAN_4, TRAINER_JUAN_5, MAP_SOOTOPOLIS_CITY),
+    [REMATCH_WALLACE] = REMATCH(TRAINER_WALLACE_1, TRAINER_WALLACE_2, TRAINER_WALLACE_3, TRAINER_WALLACE_4, TRAINER_WALLACE_5, MAP_SOOTOPOLIS_CITY),
     [REMATCH_SIDNEY] = REMATCH(TRAINER_SIDNEY, TRAINER_SIDNEY, TRAINER_SIDNEY, TRAINER_SIDNEY, TRAINER_SIDNEY, MAP_EVER_GRANDE_CITY),
     [REMATCH_PHOEBE] = REMATCH(TRAINER_PHOEBE, TRAINER_PHOEBE, TRAINER_PHOEBE, TRAINER_PHOEBE, TRAINER_PHOEBE, MAP_EVER_GRANDE_CITY),
     [REMATCH_GLACIA] = REMATCH(TRAINER_GLACIA, TRAINER_GLACIA, TRAINER_GLACIA, TRAINER_GLACIA, TRAINER_GLACIA, MAP_EVER_GRANDE_CITY),
     [REMATCH_DRAKE] = REMATCH(TRAINER_DRAKE, TRAINER_DRAKE, TRAINER_DRAKE, TRAINER_DRAKE, TRAINER_DRAKE, MAP_EVER_GRANDE_CITY),
-    [REMATCH_WALLACE] = REMATCH(TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, MAP_EVER_GRANDE_CITY),
+    [REMATCH_OLD_CHAMPION] = REMATCH(TRAINER_WALLACE_OLD_CHAMPION, TRAINER_WALLACE_OLD_CHAMPION, TRAINER_WALLACE_OLD_CHAMPION, TRAINER_WALLACE_OLD_CHAMPION, TRAINER_WALLACE_OLD_CHAMPION, MAP_EVER_GRANDE_CITY),
 };
 
 #define tState data[0]
@@ -479,6 +479,27 @@ void BattleSetup_StartSpireBattle(void)
     CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_FRONTIER_BRAIN);
 }
 
+// Project Grounded: debugmenu "Battle test…": een trainergevecht met dezelfde transitie en muziek als in de game,
+// maar zonder trainerflags, Match Call of white-out (het eindcallback komt uit debug.c). Met een tweede trainer
+// wordt het een dubbel tegen twee trainers (zoals Archie + Maxie in Sootopolis).
+void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCallback)(void))
+{
+    memset(gTrainerBattleParameter.data, 0, sizeof(TrainerBattleParameter));
+    sTrainerBattleEndScript = NULL;
+    TRAINER_BATTLE_PARAM.opponentA = trainerA;
+    TRAINER_BATTLE_PARAM.opponentB = trainerB;
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+    if (trainerB != TRAINER_NONE)
+        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+    sNoOfPossibleTrainerRetScripts = 0;
+    gNoOfApproachingTrainers = 0;
+    sShouldCheckTrainerBScript = FALSE;
+    gWhichTrainerToFaceAfterBattle = 0;
+    gMain.savedCallback = endCallback;
+    LockPlayerFieldControls();
+    CreateBattleStartTask(GetTrainerBattleTransition(), 0);
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();
@@ -498,7 +519,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
-        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
+        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_GROUNDED_VS_RAYQUAZA); // Project Grounded: gamelan-remix
         break;
     case SPECIES_DEOXYS_NORMAL:
     case SPECIES_DEOXYS_ATTACK:
@@ -514,43 +535,58 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
     case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
-        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_C_VS_LEGEND_BEAST);
+        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_GROUNDED_VS_RAIKOU);
         break;
     case SPECIES_ENTEI: // Project Grounded: steekvlam die het hele scherm overneemt
-        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_C_VS_LEGEND_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_GROUNDED_VS_ENTEI);
         break;
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
-        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);
+        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_GROUNDED_VS_SUICUNE);
         break;
-    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting, Kanto-legendary-muziek
-        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND);
+    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
+        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
         break;
     case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
     case SPECIES_SHAYMIN_SKY:
-        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_GROUNDED_VS_SHAYMIN); // eigen thema (relaxte bloemenweide, 6/8)
         break;
-    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
+    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast
     case SPECIES_GENESECT_DOUSE:
     case SPECIES_GENESECT_SHOCK:
     case SPECIES_GENESECT_BURN:
     case SPECIES_GENESECT_CHILL:
-        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_GROUNDED_VS_GENESECT); // eigen thema (industrial/big beat + hard techno)
         break;
     case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
-        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_GROUNDED_VS_MEWTWO); // eigen thema (trance, de imperfecte kloon)
         break;
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels
     case SPECIES_GIRATINA_ORIGIN:
         CreateBattleStartTask(B_TRANSITION_GIRATINA, MUS_GROUNDED_VS_GIRATINA);
         break;
-    case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), Mew-muziek (ook een mythische)
-        CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_VS_MEW);
+    case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
+        CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
-    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, mythical-muziek (zoals Mew)
-        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_VS_MEW);
+    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
+        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;
-    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
-        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);
+    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, eigen thema (ontsporend wiegelied, 7/8)
+        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_DARKRAI);
+        break;
+    case SPECIES_ZARUDE: // Project Grounded: de jungle groeit dicht, klauwkrassen op de taiko, eigen "Battle! Zarude"
+    case SPECIES_ZARUDE_DADA:
+        CreateBattleStartTask(B_TRANSITION_ZARUDE, MUS_GROUNDED_VS_ZARUDE);
+        break;
+    case SPECIES_OKIDOGI: // Project Grounded: Ogerpon-quest, de Loyal Three: hun paarse Poison Chain
+    case SPECIES_MUNKIDORI:
+    case SPECIES_FEZANDIPITI:
+        CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_OGERPON_TEAL: // Project Grounded: Ogerpon in Fortree Jungle, door het regenwoud
+    case SPECIES_OGERPON_WELLSPRING:
+    case SPECIES_OGERPON_HEARTHFLAME:
+    case SPECIES_OGERPON_CORNERSTONE:
+        CreateBattleStartTask(B_TRANSITION_ROUTE_RAINFOREST, MUS_RG_VS_LEGEND);
         break;
     }
 
@@ -604,11 +640,15 @@ void StartRegiBattle(void)
     case SPECIES_REGIELEKI:
         transitionId = B_TRANSITION_REGIELEKI;
         break;
+    case SPECIES_REGIGIGAS:
+        transitionId = B_TRANSITION_REGIGIGAS;
+        break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
         break;
     }
-    CreateBattleStartTask(transitionId, MUS_VS_REGI);
+    // Project Grounded: Regigigas krijgt zijn eigen thema (Slow Start)
+    CreateBattleStartTask(transitionId, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_REGIGIGAS ? MUS_GROUNDED_VS_REGIGIGAS : MUS_VS_REGI);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -941,6 +981,13 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
 
+    // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
+    if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)
+        return B_TRANSITION_NEO_PLASMA;
+    // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
+    if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
+        return B_TRANSITION_ROCKET;
+
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 
@@ -1076,16 +1123,15 @@ static void CB2_EndFirstBattle(void)
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
+// Project Grounded: geen toeval meer; alleen de stand van de gymleiders bijwerken.
 static void TryUpdateGymLeaderRematchFromWild(void)
 {
-    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 60 == 0)
-        UpdateGymLeaderRematch();
+    UpdateGymLeaderRematch();
 }
 
 static void TryUpdateGymLeaderRematchFromTrainer(void)
 {
-    if (GetGameStat(GAME_STAT_TRAINER_BATTLES) % 20 == 0)
-        UpdateGymLeaderRematch();
+    UpdateGymLeaderRematch();
 }
 
 static u16 GetTrainerAFlag(void)
@@ -1365,7 +1411,7 @@ static void TrySetInverseBattleFlag(void)
 {
     u32 trainerId = TRAINER_BATTLE_PARAM.opponentA;
 
-    if (trainerId == TRAINER_WILTON_1 || (trainerId >= TRAINER_WILTON_2 && trainerId <= TRAINER_WILTON_5))
+    if (trainerId == TRAINER_CHARLES_1 || (trainerId >= TRAINER_CHARLES_2 && trainerId <= TRAINER_CHARLES_5))
         FlagSet(B_FLAG_INVERSE_BATTLE);
 }
 
@@ -1669,6 +1715,9 @@ void PlayTrainerEncounterMusic(void)
             break;
         case TRAINER_ENCOUNTER_MUSIC_RICH:
             music = MUS_ENCOUNTER_RICH;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_ROCKET: // Project Grounded: Team Rocket
+            music = MUS_RG_ENCOUNTER_ROCKET;
             break;
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;
@@ -2090,6 +2139,7 @@ bool8 ShouldTryRematchBattle(void)
 
 bool8 ShouldTryRematchBattleForTrainerId(u16 trainerId)
 {
+    UpdateGymLeaderRematch();
     if (IsFirstTrainerIdReadyForRematch(gRematchTable, trainerId))
         return TRUE;
 
@@ -2098,6 +2148,7 @@ bool8 ShouldTryRematchBattleForTrainerId(u16 trainerId)
 
 bool8 IsTrainerReadyForRematch(void)
 {
+    UpdateGymLeaderRematch();
     return IsTrainerReadyForRematch_(gRematchTable, TRAINER_BATTLE_PARAM.opponentA);
 }
 
@@ -2106,6 +2157,7 @@ static void HandleRematchVarsOnBattleEnd(void)
     if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) && (I_VS_SEEKER_CHARGING != 0))
         ClearRematchMovementByTrainerId();
 
+    GymLeaderRematch_OnRematchWon(TRAINER_BATTLE_PARAM.opponentA);
     ClearTrainerWantRematchState(gRematchTable, TRAINER_BATTLE_PARAM.opponentA);
     SetBattledTrainersFlags();
 }

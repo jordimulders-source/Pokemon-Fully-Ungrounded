@@ -30,9 +30,10 @@ END = '/* --- einde Battle Stadium --- */'
 # Deelnemers: de sterkste versie van elk personage. 'rival' = alleen als de speler het andere geslacht is.
 POOL = [
     # Hoenn-gymleiders (laatste rematch)
-    'ROXANNE_5', 'BRAWLY_5', 'WATTSON_5', 'FLANNERY_5', 'NORMAN_5', 'WINONA_5', 'TATE_AND_LIZA_5', 'JUAN_5',
-    # Elite Four en kampioenen
-    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'WALLACE', 'STEVEN',
+    'ROXANNE_5', 'BRAWLY_5', 'WATTSON_5', 'FLANNERY_5', 'NORMAN_5', 'WINONA_5', 'TATE_AND_LIZA_5', 'WALLACE_5',
+    # Elite Four en kampioen (Steven). JUAN (Route 129) staat op de oude plek van het vanilla-kampioenteam van
+    # Wallace: de 'verslagen'-bits in de save zijn per poolplek, dus plekken niet verschuiven.
+    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'JUAN', 'STEVEN',
     # verhaal
     'WALLY_VR_5', 'ARCHIE_SOOTOPOLIS', 'MAXIE_SOOTOPOLIS', 'BIRCH_UNDERWATER', 'KECCLES_3', 'COLRESS_MAGMA',
     'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'STADIUM_JOEY', 'STADIUM_WINSTON', 'STADIUM_MUSTARD',
@@ -47,8 +48,14 @@ POOL = [
     'STADIUM_CYNTHIA', 'STADIUM_CYRUS', 'STADIUM_BARRY', 'STADIUM_MARS', 'STADIUM_JUPITER', 'STADIUM_SATURN',
     'STADIUM_PALMER', 'STADIUM_THORTON', 'STADIUM_ARGENTA', 'STADIUM_DAHLIA', 'STADIUM_RILEY',
     'STADIUM_ANABEL', 'STADIUM_TUCKER', 'STADIUM_SPENSER', 'STADIUM_GRETA', 'STADIUM_NOLAND', 'STADIUM_LUCY', 'STADIUM_BRANDON',
+    # Unova (Black/White): eigen sprites (tools/grounded/plasma_sprites.py)
+    'STADIUM_N', 'STADIUM_GHETSIS',
+    # Neo Team Plasma (Black 2/White 2): tools/grounded/neo_plasma_sprites.py, transitie B_TRANSITION_NEO_PLASMA
+    'STADIUM_ZINZOLIN', 'STADIUM_ROOD', 'STADIUM_SHADOW_TRIAD', 'STADIUM_PLASMA_GRUNT_M', 'STADIUM_PLASMA_GRUNT_F',
+    # Team Rocket (Rocket-hideout): Petrel, vermommingsteam
+    'STADIUM_PETREL',
     # Jordi en zijn maten (Ace Trainers in Victory Road)
-    'ALBERT', 'SAMUEL', 'OWEN',
+    'DAVE', 'MITCH', 'SICKBLIK',
     # gasten (graphics/grounded/trainers/guests/, tools/grounded/guest_trainer_pics.py)
     'STADIUM_WARIO', 'STADIUM_YOSHI', 'STADIUM_GOLBAT', 'STADIUM_GRIMER', 'STADIUM_BOO', 'STADIUM_MEW',
     'STADIUM_SHY_GUY_RED', 'STADIUM_SHY_GUY_GREEN', 'STADIUM_SHY_GUY_PINK', 'STADIUM_SHY_GUY_BLACK',
@@ -65,9 +72,11 @@ RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'
 COMPANIONS = [('BRENDAN', 'BRENDAN_ROUTE_136_TREECKO', 'start'), ('MAY', 'MAY_ROUTE_136_TORCHIC', 'start'),
               ('KECCLES', 'KECCLES_3', 'start'), ('WALLY', 'WALLY_VR_5', 'start')]
 def companion_name(t):
-    special = {'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
+    special = {'WALLACE_5': 'WALLACE',
+               'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
-               'SHY_GUY_BLACK': 'SHY_GUY_BLACK'}
+               'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
+               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F'}
     t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
     return special.get(t, special.get(t2, t2.split('_')[0]))
 
@@ -182,11 +191,14 @@ GFX = {
     'GARDENIA': 'PICNICKER', 'ERIKA': 'ERIKA', 'FANTINA': 'BEAUTY', 'CANDICE': 'GIRL_3', 'VOLKNER': 'MAN_5',
     'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'WOMAN_5', 'MARS': 'WOMAN_2',
     'JUPITER': 'WOMAN_2', 'SATURN': 'MAN_2', 'PALMER': 'MAN_4', 'THORTON': 'SCIENTIST_2', 'ARGENTA': 'WOMAN_3',
-    'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'ALBERT': 'MAN_3', 'SAMUEL': 'MAN_3', 'OWEN': 'MAN_3', 'WINSTON': 'RICH_BOY',
+    'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'DAVE': 'MAN_3', 'MITCH': 'MAN_3', 'SICKBLIK': 'MAN_3', 'WINSTON': 'RICH_BOY',
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
-    'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'MAN_2', 'DITTO': 'SPECIES(DITTO)',
-    'MUSTARD': 'MUSTARD',
+    'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'BURGLAR', 'DITTO': 'SPECIES(DITTO)',
+    'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
+    'ZINZOLIN': 'ZINZOLIN', 'ROOD': 'ROOD', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
+    'PLASMA_GRUNT_M': 'NEO_PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'NEO_PLASMA_GRUNT_F',
+    'PETREL': 'PETREL',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
 }
@@ -305,6 +317,7 @@ KEEP = {
     'STADIUM_MEW': [0],       # PIKABLU
     'STADIUM_JOEY': [1, 2, 0],  # Mightyena en Obstagoon (Jordi), Rattata (top percentage)
     'STADIUM_GOLBAT': [0],    # Zubat: de grot in Red/Blue
+    'STADIUM_PETREL': [1],    # Ditto met Imposter: vermommingsteam (Zoroark is de ace)
 }
 # Sterkte met de hand: zes keer Ditto met Imposter is zo sterk als de tegenstander (gemiddelde van de pool)
 RATING = {'STADIUM_DONALD': 520, 'STADIUM_JOEY': 480}  # Joey: Poochyena is top percentage

@@ -112,22 +112,22 @@ DewfordTown_Gym_EventScript_AnimateFlashFullBrightness::
 
 DewfordTown_Gym_EventScript_CountTrainersDefeated::
 	setvar VAR_0x8000, 0
-	goto_if_not_defeated TRAINER_TAKAO, DewfordTown_Gym_EventScript_CheckJocelyn
+	goto_if_not_defeated TRAINER_TITO, DewfordTown_Gym_EventScript_CheckRomero
 	addvar VAR_0x8000, 1
-DewfordTown_Gym_EventScript_CheckJocelyn::
-	goto_if_not_defeated TRAINER_JOCELYN, DewfordTown_Gym_EventScript_CheckLaura
+DewfordTown_Gym_EventScript_CheckRomero::
+	goto_if_not_defeated TRAINER_ROMERO, DewfordTown_Gym_EventScript_CheckMcGregor
 	addvar VAR_0x8000, 1
-DewfordTown_Gym_EventScript_CheckLaura::
-	goto_if_not_defeated TRAINER_LAURA, DewfordTown_Gym_EventScript_CheckBrenden
+DewfordTown_Gym_EventScript_CheckMcGregor::
+	goto_if_not_defeated TRAINER_MCGREGOR, DewfordTown_Gym_EventScript_CheckBasRutten
 	addvar VAR_0x8000, 1
-DewfordTown_Gym_EventScript_CheckBrenden::
-	goto_if_not_defeated TRAINER_BRENDEN, DewfordTown_Gym_EventScript_CheckCristian
+DewfordTown_Gym_EventScript_CheckBasRutten::
+	goto_if_not_defeated TRAINER_BAS_RUTTEN, DewfordTown_Gym_EventScript_CheckCristian
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_CheckCristian::
-	goto_if_not_defeated TRAINER_CRISTIAN, DewfordTown_Gym_EventScript_CheckLilith
+	goto_if_not_defeated TRAINER_CRISTIAN, DewfordTown_Gym_EventScript_CheckRogan
 	addvar VAR_0x8000, 1
-DewfordTown_Gym_EventScript_CheckLilith::
-	goto_if_not_defeated TRAINER_LILITH, DewfordTown_Gym_EventScript_StopCountingTrainers
+DewfordTown_Gym_EventScript_CheckRogan::
+	goto_if_not_defeated TRAINER_ROGAN, DewfordTown_Gym_EventScript_StopCountingTrainers
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_StopCountingTrainers::
 	return
@@ -187,42 +187,42 @@ DewfordTown_Gym_EventScript_BrawlyRematch::
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_Takao::
-	trainerbattle_single TRAINER_TAKAO, DewfordTown_Gym_Text_TakaoIntro, DewfordTown_Gym_Text_TakaoDefeat, DewfordTown_Gym_EventScript_TakaoBrightenRoom
+DewfordTown_Gym_EventScript_Tito::
+	trainerbattle_single TRAINER_TITO, DewfordTown_Gym_Text_TakaoIntro, DewfordTown_Gym_Text_TakaoDefeat, DewfordTown_Gym_EventScript_TitoBrightenRoom
 	msgbox DewfordTown_Gym_Text_TakaoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_TakaoBrightenRoom::
+DewfordTown_Gym_EventScript_TitoBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
 
-DewfordTown_Gym_EventScript_Jocelyn::
-	trainerbattle_single TRAINER_JOCELYN, DewfordTown_Gym_Text_JocelynIntro, DewfordTown_Gym_Text_JocelynDefeat, DewfordTown_Gym_EventScript_JocelynBrightenRoom
+DewfordTown_Gym_EventScript_Romero::
+	trainerbattle_single TRAINER_ROMERO, DewfordTown_Gym_Text_JocelynIntro, DewfordTown_Gym_Text_JocelynDefeat, DewfordTown_Gym_EventScript_RomeroBrightenRoom
 	msgbox DewfordTown_Gym_Text_JocelynPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_JocelynBrightenRoom::
+DewfordTown_Gym_EventScript_RomeroBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
 
-DewfordTown_Gym_EventScript_Laura::
-	trainerbattle_single TRAINER_LAURA, DewfordTown_Gym_Text_LauraIntro, DewfordTown_Gym_Text_LauraDefeat, DewfordTown_Gym_EventScript_LauraBrightenRoom
+DewfordTown_Gym_EventScript_McGregor::
+	trainerbattle_single TRAINER_MCGREGOR, DewfordTown_Gym_Text_LauraIntro, DewfordTown_Gym_Text_LauraDefeat, DewfordTown_Gym_EventScript_McGregorBrightenRoom
 	msgbox DewfordTown_Gym_Text_LauraPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_LauraBrightenRoom::
+DewfordTown_Gym_EventScript_McGregorBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
 
-DewfordTown_Gym_EventScript_Brenden::
-	trainerbattle_single TRAINER_BRENDEN, DewfordTown_Gym_Text_BrendenIntro, DewfordTown_Gym_Text_BrendenDefeat, DewfordTown_Gym_EventScript_BrendenBrightenRoom
+DewfordTown_Gym_EventScript_BasRutten::
+	trainerbattle_single TRAINER_BAS_RUTTEN, DewfordTown_Gym_Text_BrendenIntro, DewfordTown_Gym_Text_BrendenDefeat, DewfordTown_Gym_EventScript_BasRuttenBrightenRoom
 	msgbox DewfordTown_Gym_Text_BrendenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_BrendenBrightenRoom::
+DewfordTown_Gym_EventScript_BasRuttenBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end
@@ -237,12 +237,12 @@ DewfordTown_Gym_EventScript_CristianBrightenRoom::
 	release
 	end
 
-DewfordTown_Gym_EventScript_Lilith::
-	trainerbattle_single TRAINER_LILITH, DewfordTown_Gym_Text_LilithIntro, DewfordTown_Gym_Text_LilithDefeat, DewfordTown_Gym_EventScript_LilithBrightenRoom
+DewfordTown_Gym_EventScript_Rogan::
+	trainerbattle_single TRAINER_ROGAN, DewfordTown_Gym_Text_LilithIntro, DewfordTown_Gym_Text_LilithDefeat, DewfordTown_Gym_EventScript_RoganBrightenRoom
 	msgbox DewfordTown_Gym_Text_LilithPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-DewfordTown_Gym_EventScript_LilithBrightenRoom::
+DewfordTown_Gym_EventScript_RoganBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
 	release
 	end

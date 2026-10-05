@@ -1,0 +1,110 @@
+# Trainernamen: welke constante hoort bij welk personage
+
+Sinds v0.9.84 heten de constanten naar het personage dat je in de game ziet (niet meer naar de vanilla-trainer
+wiens plek hij inneemt). Alleen de **namen** zijn veranderd: nummers, tabelvolgorde, flagnummers en de save-indeling
+zijn gelijk gebleven (de ROM was byte voor byte identiek), dus oude saves werken gewoon.
+
+Handig om te weten:
+- **Verslagen-flag** van een trainer = `TRAINER_FLAGS_START` (0x500) + het trainernummer. Er is geen aparte
+  `FLAG_DEFEATED_<NAAM>`; scripts gebruiken `goto_if_defeated TRAINER_X` / `call_if_defeated TRAINER_X`.
+- **Match Call-registratie** = `FLAG_REGISTERED_<NAAM>` = `TRAINER_REGISTERED_FLAGS_START` (0x15C) + rematch-index.
+- **Labels in de kaartscripts:** `*_EventScript_*`-labels zijn mee hernoemd; de **tekstlabels** (`*_Text_*`) niet,
+  omdat de Dialoogstudio daarop sleutelt (bijv. `SootopolisCity_Gym_1F_Text_JuanIntro` is gewoon Wallace' tekst,
+  `Route111_Text_WiltonIntro` die van Charles).
+- Hernoemd in v0.9.84; in `CHANGELOG.md` staan van vóór die versie nog de oude namen.
+
+## Gymleider 8 en de kampioen
+
+In deze romhack is **Wallace gymleider 8** (Sootopolis) en **Steven de kampioen**. Juan bestaat nog als losse
+trainer op Route 129.
+
+| Personage | Constante(n) | Oude naam | Nummer | Verslagen-flag | Waar |
+|---|---|---|---|---|---|
+| Wallace (gymleider 8) | `TRAINER_WALLACE_1` | (zelfde) | 272 | 0x610 | Sootopolis Gym (`SootopolisCity_Gym_1F/scripts.inc`) |
+| Wallace (gym-rematches) | `TRAINER_WALLACE_2` … `TRAINER_WALLACE_5` | `TRAINER_JUAN_2` … `_5` | 798–801 | 0x81E–0x821 | rematch-tabel (`src/battle_setup.c`); `WALLACE_5` in het Stadium (`WALLACE`). Sinds v0.9.85 ook `Name: WALLACE` / `Pic: Champion Wallace` |
+| Steven (kampioen) | `TRAINER_CHAMPION_STEVEN` | (zelfde) | 855 | 0x857 | `EverGrandeCity_ChampionsRoom` |
+| Steven (post-game) | `TRAINER_STEVEN` | (zelfde) | 804 | 0x824 + `FLAG_DEFEATED_METEOR_FALLS_STEVEN` | Meteor Falls, Steven's Cave; Stadium |
+| Wallace (oud kampioenteam) | `TRAINER_WALLACE_OLD_CHAMPION` | `TRAINER_WALLACE` | 335 | 0x64F | ongebruikt (niet in het verhaal, sinds v0.9.85 ook niet meer in het Stadium) |
+| Juan | `TRAINER_JUAN` | `TRAINER_REED` | 675 | 0x7A3 | Route 129 (`Route129_EventScript_Juan`), FRLG-gymleidermuziek; Stadium (`JUAN`, op de oude poolplek van het vanilla-kampioenteam) |
+
+Bijbehorende constanten van gym 8 (Wallace):
+
+| Wat | Nieuwe naam | Oude naam | Waarde |
+|---|---|---|---|
+| Rematch-index | `REMATCH_WALLACE` | `REMATCH_JUAN` | 72 |
+| Match Call geregistreerd | `FLAG_REGISTERED_WALLACE` | `FLAG_REGISTERED_JUAN` | 0x15C + 72 = 0x1A4 |
+| Match Call aan (na de badge) | `FLAG_ENABLE_WALLACE_MATCH_CALL` | `FLAG_ENABLE_JUAN_MATCH_CALL` | 0x1D9 |
+| Rematch vandaag al gewonnen | `FLAG_DAILY_REMATCH_WALLACE` | `FLAG_DAILY_REMATCH_JUAN` | `DAILY_FLAGS_START` + 0x1C |
+| Match Call-contact | `MC_HEADER_WALLACE`, `sWallaceMatchCallHeader`, `sWallaceTextScripts` | `MC_HEADER_JUAN`, `sJuan…` | `src/pokenav_match_call_data.c` |
+| Match Call-teksten | `MatchCall_Text_Wallace1` … `4` | `MatchCall_Text_Juan1` … `4` | `data/text/match_call.inc` |
+| Match Call-profiel | `MCFLAVOR(DandyCharm_Wallace)` | `DandyCharm_Juan` | `src/data/text/match_call_messages.h` |
+| Weigertekst rematch | `sText_RefuseWallace` | `sText_RefuseJuan` | `src/gym_leader_rematch.c` |
+| Gymscript | `SootopolisCity_Gym_1F_EventScript_Wallace(Defeated/Rematch)` | `…_EventScript_Juan…` | |
+| Gevechtsmuziek | `MUS_GROUNDED_VS_WALLACE` voor `TRAINER_WALLACE_1` … `_5` | | `GetTrainerBattleBGM` in `src/pokemon.c` |
+| Badge/gym verslagen | `FLAG_BADGE08_GET`, `FLAG_DEFEATED_SOOTOPOLIS_GYM` | (zelfde) | |
+
+Het oude kampioen-slot (vanilla: Wallace als kampioen):
+
+| Wat | Nieuwe naam | Oude naam | Waarde |
+|---|---|---|---|
+| Rematch-index (Ever Grande) | `REMATCH_OLD_CHAMPION` | `REMATCH_WALLACE` | 77 |
+| Match Call geregistreerd | `FLAG_REGISTERED_OLD_CHAMPION` | `FLAG_REGISTERED_WALLACE` | 0x1A9 |
+| Match Call-contact | `MC_HEADER_OLD_CHAMPION`, `sOldChampion…`, `MatchCall_Text_OldChampion`, `MCFLAVOR(OldChampion_Wallace)` | `MC_HEADER_WALLACE`, `sWallace…`, `MatchCall_Text_Wallace`, `Champion_Wallace` | lege plek: `MatchCall_GetEnabled` geeft altijd FALSE (Steven staat al als `MC_HEADER_STEVEN` in de lijst) |
+| Steven in de kampioenszaal | `LOCALID_CHAMPIONS_ROOM_STEVEN` | `LOCALID_CHAMPIONS_ROOM_WALLACE` | object 1 |
+| Kampioenszaal-scripts | `EverGrandeCity_ChampionsRoom_EventScript_Steven`, `_Movement_PlayerApproachSteven`, `_Movement_StevenExit(Start)` | `…Wallace…` | tekstlabels `_Text_WallaceComeWithMe`/`_Text_WallaceWaitOutside` niet hernoemd (Steven-teksten) |
+| Steven in de Hall of Fame | `LOCALID_HALL_OF_FAME_STEVEN` (sprite `OBJ_EVENT_GFX_STEVEN`) | `LOCALID_HALL_OF_FAME_WALLACE` | object 1 |
+
+Battle Stadium (`tools/grounded/stadium/pool.py`): `WALLACE` = gymleider Wallace (`TRAINER_WALLACE_5`, partner
+`PARTNER_STADIUM_WALLACE`), `JUAN` = Juan van Route 129 (`TRAINER_JUAN`, `PARTNER_STADIUM_JUAN`), `STEVEN` = Steven
+(post-game-team `TRAINER_STEVEN`). Het oude kampioenteam van Wallace zit er niet meer in.
+
+**Let op, `REMATCH_WALLACE` en `FLAG_REGISTERED_WALLACE` betekenen nu gymleider Wallace**, niet meer het
+kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
+
+## Charles (Route 111, met Match Call en rematches)
+
+| Wat | Nieuwe naam | Oude naam | Waarde |
+|---|---|---|---|
+| Trainer | `TRAINER_CHARLES_1` … `TRAINER_CHARLES_5` | `TRAINER_WILTON_1` … `_5` | 78, 84–87 (flags 0x54E, 0x554–0x557) |
+| Rematch-index | `REMATCH_CHARLES` | `REMATCH_WILTON` | 8 |
+| Match Call geregistreerd | `FLAG_REGISTERED_CHARLES` | `FLAG_REGISTERED_WILTON` | 0x164 |
+| Match Call-profiel | `MCFLAVOR(Cooltrainer_Charles)` | `Cooltrainer_Wilton` | |
+| Scripts | `Route111_EventScript_Charles`, `_RegisterCharles`, `_RematchCharles` | `…Wilton` | |
+
+## Overige trainers met een eigen naam
+
+| Naam in de game | Constante | Oude naam | Nummer | Verslagen-flag | Waar |
+|---|---|---|---|---|---|
+| Gi-Hun | `TRAINER_GI_HUN` | `TRAINER_RANDALL` | 71 | 0x547 | Cooltrainer, Petalburg Gym |
+| Jonas | `TRAINER_JONAS_PETALBURG` | `TRAINER_PARKER` | 72 | 0x548 | Cooltrainer, Petalburg Gym (`TRAINER_JONAS` = Ninja Boy op Route 123) |
+| Harvey | `TRAINER_HARVEY` | `TRAINER_GEORGE` | 73 | 0x549 | Cooltrainer, Petalburg Gym |
+| Horatio | `TRAINER_HORATIO` | `TRAINER_BERKE` | 74 | 0x54A | Cooltrainer, Petalburg Gym |
+| Daenarys | `TRAINER_DAENARYS` | `TRAINER_MARY` | 89 | 0x559 | Cooltrainer, Petalburg Gym |
+| Michonne | `TRAINER_MICHONNE` | `TRAINER_ALEXIA` | 90 | 0x55A | Cooltrainer, Petalburg Gym |
+| Eleven | `TRAINER_ELEVEN` | `TRAINER_JODY` | 91 | 0x55B | Cooltrainer, Petalburg Gym |
+| Tito | `TRAINER_TITO` | `TRAINER_TAKAO` | 179 | 0x5B3 | Black Belt, Dewford Gym |
+| Romero | `TRAINER_ROMERO` | `TRAINER_JOCELYN` | 425 | 0x6A9 | Black Belt, Dewford Gym |
+| McGregor | `TRAINER_MCGREGOR` | `TRAINER_LAURA` | 426 | 0x6AA | Black Belt, Dewford Gym |
+| Bas Rutten | `TRAINER_BAS_RUTTEN` | `TRAINER_BRENDEN` | 572 | 0x73C | Sailor, Dewford Gym |
+| Rogan | `TRAINER_ROGAN` | `TRAINER_LILITH` | 573 | 0x73D | Black Belt, Dewford Gym |
+| Dio | `TRAINER_DIO` | `TRAINER_MARC` | 571 | 0x73B | Dragon Tamer, Rustboro Gym |
+| Uri | `TRAINER_URI` | `TRAINER_PRESTON` | 233 | 0x5E9 | Psychic, Mossdeep Gym |
+| Blackmore | `TRAINER_BLACKMORE` | `TRAINER_MARCOS` | 702 | 0x7BE | Guitarist, Route 103 |
+| Armstrong | `TRAINER_ARMSTRONG` | `TRAINER_ANTHONY` | 352 | 0x660 | Triathlete, Route 110 |
+| Violet | `TRAINER_VIOLET_COOLTRAINER` | `TRAINER_JAZMYN` | 503 | 0x6F7 | Cooltrainer, Route 123 (`TRAINER_VIOLET` = Aroma Lady op dezelfde route) |
+| Scarlet | `TRAINER_SCARLET` | `TRAINER_WENDY` | 92 | 0x55C | Cooltrainer, Route 123 |
+| Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F + Stadium (`PARTNER_STADIUM_DAVE`) |
+| Mitch | `TRAINER_MITCH` | `TRAINER_SAMUEL` | 81 | 0x551 | Cooltrainer, Victory Road B1F + Stadium (`PARTNER_STADIUM_MITCH`) |
+| SickBlik | `TRAINER_SICKBLIK` | `TRAINER_OWEN` | 83 | 0x553 | Cooltrainer, Victory Road B2F + Stadium (`PARTNER_STADIUM_SICKBLIK`) |
+
+De scriptlabels volgen dezelfde namen (bijv. `PetalburgCity_Gym_EventScript_GiHun`,
+`DewfordTown_Gym_EventScript_CheckRomero`, `VictoryRoad_B2F_EventScript_SickBlik`); de tekstlabels niet (zie boven).
+
+Niet hernoemd, omdat de naam een rol beschrijft en niet misleidt: `TRAINER_LOCAL_CELEBRITY` (Brad),
+`TRAINER_DRACONID_ELDER` (Selene), `TRAINER_DOJO_*`, `TRAINER_BURGLAR_*` / `TRAINER_STADIUM_BURGLAR` (Simon),
+`TRAINER_STADIUM_SHY_GUY_*`, de duo's (`TRAINER_X_AND_Y`) en de generieke grunts/admins.
+
+## Nieuwe trainer of hernoeming
+
+Hernoem met een script over alle bestanden (behalve `CHANGELOG.md`), draai daarna
+`tools/grounded/stadium/pool.py` en `announcer.py`, en vergelijk de ROM vóór en na met `cmp`: die moet identiek zijn.

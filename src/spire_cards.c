@@ -843,8 +843,9 @@ static void SetupScreen(void)
         if (sCards->mode != SPIRE_CARDS_MESSAGE && sCards->mode != SPIRE_CARDS_EVOLVE && sCards->mode != SPIRE_CARDS_RELIC_LIST
          && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
         {
-            sCards->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
-                                                     8 + 24 + i * 104, 104 + 22 + 10, 0, GetMonData(mon, MON_DATA_PERSONALITY));
+            sCards->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon, 8 + 24 + i * 104,
+                                                     104 + 22 + 10 + Spire_IconYAdjust(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_PERSONALITY)),
+                                                     0, GetMonData(mon, MON_DATA_PERSONALITY));
             gSprites[sCards->iconSpriteIds[i]].oam.priority = 0;
         }
     }

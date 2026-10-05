@@ -34,13 +34,13 @@ LINES = {
     'NORMAN_5': "NORMAN paused his series for this. Make it quick, he's on a cliffhanger.",
     'WINONA_5': "WINONA landed twenty minutes ago and is still looking for suitcase number 36.",
     'TATE_AND_LIZA_5': "TATE & LIZA! Two bodies, one soul, zero spoons. Lawyers in row one.",
-    'JUAN_5': "JUAN! He taught WALLACE everything he knows. Except how to share a spotlight.",
+    'WALLACE_5': "WALLACE! Contest star, GYM LEADER, and the reason HOENN ran out of glitter.",
     # Elite Four en kampioenen
     'SIDNEY': "SIDNEY of the ELITE FOUR! Everyone at home has money on him. Bet responsibly.",
     'PHOEBE': "PHOEBE! Her ghosts are already complaining about the hot dogs in here.",
     'GLACIA': "GLACIA! An ice master who moved to a tropical region. On purpose. Twice.",
     'DRAKE': "DRAKE, the DRAGON master! Not that one. Do NOT play the Kendrick song.",
-    'WALLACE': "WALLACE! He'll pair your defeat with a nice absinthe. Notes of tears.",
+    'JUAN': "JUAN! He taught WALLACE everything. Then WALLACE took his gym. Awkward.",
     'STEVEN': "STEVEN STONE! HE'S MADE OF METAL! HIS CIRCUITS GLEAM! His wallet too.",
     # verhaal
     'WALLY_VR_5': "WALLY! He once needed help catching a RALTS. Now he owns a FLUTTER MANE.",
@@ -107,10 +107,21 @@ LINES = {
     'STADIUM_NOLAND': "FACTORY HEAD NOLAND! He'll borrow your POKéMON. He won't give them back.",
     'STADIUM_LUCY': "PIKE QUEEN LUCY! She hasn't smiled since 2004. Neither has her SEVIPER.",
     'STADIUM_BRANDON': "PYRAMID KING BRANDON! He brought all three REGIS. They didn't ask to come.",
+    # Unova
+    'STADIUM_N': "N, the KING of TEAM PLASMA! He wants to free your POKéMON. Ticket refunds: no.",
+    'STADIUM_GHETSIS': "GHETSIS! He'd like everyone to sit down. Yes, you too. Especially you.",
+    # Team Rocket (Rocket-hideout, Project Grounded)
+    'STADIUM_PETREL': "ROCKET EXEC PETREL! Or GIOVANNI. Or a DITTO. Nobody checked his ID.",
+    # Neo Team Plasma (Black 2/White 2)
+    'STADIUM_ZINZOLIN': "SAGE ZINZOLIN! He froze a whole city. Then himself. Do not lick him.",
+    'STADIUM_ROOD': "SAGE ROOD! Ex-villain, current grandpa. His POKéMON heal. His knees don't.",
+    'STADIUM_SHADOW_TRIAD': "THE SHADOW TRIAD! Three ninjas, one ticket. Security is still looking.",
+    'STADIUM_PLASMA_GRUNT_M': "A NEO PLASMA GRUNT! Nobody knows his name. Including him.",
+    'STADIUM_PLASMA_GRUNT_F': "A NEO PLASMA GRUNT! She joined for the dental plan. There is no dental plan.",
     # Jordi en zijn maten
-    'ALBERT': "From VICTORY ROAD: DAVE! WAKE UP! Grab a brush and put a little make-up!",
-    'SAMUEL': "MITCH! He has stage fright. Thousands of fans. Everybody, stare at him!",
-    'OWEN': "SICKBLIK! He made this romhack. Beat him and he nerfs you next patch.",
+    'DAVE': "From VICTORY ROAD: DAVE is on fire! Your defense is terrified!",
+    'MITCH': "MITCH! He has stage fright. Thousands of fans. Everybody, stare at him!",
+    'SICKBLIK': "SICKBLIK! He made this romhack. Beat him and he nerfs you next patch.",
     # gasten
     'STADIUM_WARIO': "WARIO! Here for the prize money and the free buffet. Mostly the buffet.",
     'STADIUM_YOSHI': "YOSHI! Please be gentle, he cries. We have tissues on standby.",

@@ -65,6 +65,19 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBirch;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mustard;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaShinyStill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghetsis;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeoPlasmaGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinzolin;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShadowTriad;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailord;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -337,6 +350,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
     [OBJ_EVENT_GFX_BROCK] =                    &gObjectEventGraphicsInfo_Brock,
     [OBJ_EVENT_GFX_MUSTARD] =                  &gObjectEventGraphicsInfo_Mustard,
+    [OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL] =     &gObjectEventGraphicsInfo_RayquazaShinyStill,
+    [OBJ_EVENT_GFX_N] =                        &gObjectEventGraphicsInfo_N,
+    [OBJ_EVENT_GFX_GHETSIS] =                  &gObjectEventGraphicsInfo_Ghetsis,
+    [OBJ_EVENT_GFX_BURGLAR] =                  &gObjectEventGraphicsInfo_Burglar,
+    [OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M] = &gObjectEventGraphicsInfo_NeoPlasmaGruntM, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F] = &gObjectEventGraphicsInfo_NeoPlasmaGruntF, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_ZINZOLIN] = &gObjectEventGraphicsInfo_Zinzolin, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_ROOD] = &gObjectEventGraphicsInfo_Rood, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_SHADOW_TRIAD] = &gObjectEventGraphicsInfo_ShadowTriad, // Project Grounded (Neo Plasma)
+    [OBJ_EVENT_GFX_ROCKET_GRUNT_M] =           &gObjectEventGraphicsInfo_RocketGruntM,
+    [OBJ_EVENT_GFX_ROCKET_GRUNT_F] =           &gObjectEventGraphicsInfo_RocketGruntF,
+    [OBJ_EVENT_GFX_PETREL] =                   &gObjectEventGraphicsInfo_Petrel,
+    [OBJ_EVENT_GFX_GIANT_WAILORD] =            &gObjectEventGraphicsInfo_GiantWailord,
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)

@@ -12,12 +12,12 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | NORMAN_5 | 541 | Wobbuffet, Arboliva, Ursaluna, Slaking | Arboliva, Ursaluna, Slaking | Trick Room |
 | WINONA_5 | 509 | Xatu, Dodrio, Ninjask, Altaria | Xatu, Ninjask, Altaria | - |
 | TATE_AND_LIZA_5 | 492 | Slowking, Solrock, Reuniclus, Lunatone | Slowking, Solrock, Lunatone | Trick Room |
-| JUAN_5 | 511 | Masquerain, Ludicolo, Golduck, Milotic | Masquerain, Golduck, Milotic | regen |
+| WALLACE_5 | 511 | Masquerain, Ludicolo, Golduck, Milotic | Masquerain, Golduck, Milotic | regen |
 | SIDNEY | 511 | Arbok, Hypno, Obstagoon, Absol | Hypno, Obstagoon, Absol | - |
 | PHOEBE | 513 | Dusknoir, Porygon-Z, Runerigus, Parasect | Dusknoir, Porygon-Z, Parasect | - |
 | GLACIA | 508 | Shiftry, Walrein, Glalie, Darmanitan | Shiftry, Walrein, Darmanitan | sneeuw |
 | DRAKE | 564 | Flygon, Archaludon, Dracovish, Salamence | Flygon, Archaludon, Salamence | - |
-| WALLACE | 540 | Wailord, Tentacruel, Ludicolo, Milotic | Wailord, Ludicolo, Milotic | regen |
+| JUAN | 520 | Politoed, Kingdra, Walrein, Relicanth | Kingdra, Walrein, Relicanth | regen |
 | STEVEN | 542 | Claydol, Cradily, Armaldo, Metagross | Claydol, Armaldo, Metagross | - |
 | WALLY_VR_5 | 548 | Dondozo, Baxcalibur, Annihilape, Gallade | Baxcalibur, Annihilape, Gallade | - |
 | ARCHIE_SOOTOPOLIS | 530 | Overqwil, Sharpedo, Archaludon | Overqwil, Sharpedo, Archaludon | - |
@@ -79,9 +79,17 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_NOLAND | 546 | Starmie, Typhlosion, Gardevoir, Metagross | Starmie, Typhlosion, Metagross | - |
 | STADIUM_LUCY | 524 | Shuckle, Steelix, Gyarados, Milotic | Shuckle, Gyarados, Milotic | zand |
 | STADIUM_BRANDON | 580 | Regirock, Registeel, Regice, Zapdos | Regirock, Registeel, Zapdos | - |
-| ALBERT | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
-| SAMUEL | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
-| OWEN | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
+| STADIUM_N | 576 | Vanilluxe, Archeops, Klinklang, Zekrom | Vanilluxe, Archeops, Zekrom | sneeuw |
+| STADIUM_GHETSIS | 590 | Seismitoad, Kingambit, Kyurem, Hydreigon | Kingambit, Kyurem, Hydreigon | - |
+| STADIUM_ZINZOLIN | 514 | Cryogonal, Abomasnow, Vanilluxe, Weavile | Cryogonal, Vanilluxe, Weavile | sneeuw |
+| STADIUM_ROOD | 494 | Mandibuzz, Musharna, Gothitelle, Reuniclus | Mandibuzz, Gothitelle, Reuniclus | - |
+| STADIUM_SHADOW_TRIAD | 511 | Greninja, Krookodile, Honchkrow, Bisharp | Greninja, Krookodile, Bisharp | - |
+| STADIUM_PLASMA_GRUNT_M | 499 | Garbodor, Scrafty, Crobat, Golurk | Garbodor, Crobat, Golurk | zure regen |
+| STADIUM_PLASMA_GRUNT_F | 504 | Amoonguss, Klinklang, Mienshao, Chandelure | Klinklang, Mienshao, Chandelure | - |
+| STADIUM_PETREL | 448 | Ditto, Weezing, Honchkrow, Zoroark | Ditto, Weezing, Zoroark | - |
+| DAVE | 566 | Ceruledge, Iron Valiant, Garchomp, Kingambit | Iron Valiant, Garchomp, Kingambit | - |
+| MITCH | 554 | Flygon, Metagross, Milotic, Swampert | Flygon, Metagross, Swampert | - |
+| SICKBLIK | 551 | Dragapult, Electrode, Volcarona, Octillery | Dragapult, Volcarona, Octillery | - |
 | STADIUM_WARIO | 501 | Grafaiai, Garbodor, Muk, Hariyama | Garbodor, Muk, Hariyama | zure regen |
 | STADIUM_YOSHI | 546 | Blissey, Lickilicky, Exeggutor, Tyranitar | Lickilicky, Exeggutor, Tyranitar | Trick Room, zand |
 | STADIUM_GOLBAT | 449 | Zubat, Porygon-Z, Crobat, Golbat | Zubat, Porygon-Z, Golbat | - |
@@ -111,107 +119,115 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 200 | IVAN |
 | 300 | GOLBAT |
 | 400 | JOEY |
-| 500 | MEW |
-| 600 | MIMI |
-| 700 | DITTO |
-| 800 | SHELLY |
-| 900 | WARIO |
-| 1000 | TABITHA |
-| 1100 | LYLE |
-| 1200 | MAXIE |
-| 1300 | SHY_GUY_RED |
-| 1400 | WINSTON |
-| 1500 | GABBY_AND_TY |
-| 1600 | MARS |
-| 1700 | SHY_GUY_BLACK |
-| 1800 | TATE_AND_LIZA |
-| 1900 | BURGLAR |
-| 2000 | FOSSILS |
-| 2100 | JOHNSON |
-| 2200 | FLANNERY |
-| 2300 | SHY_GUY_PINK |
-| 2400 | BRAWLY |
-| 2500 | JUPITER |
-| 2600 | ARCHIE |
-| 2700 | BIRCH |
-| 2800 | STARTERS |
-| 2900 | ERIKA |
-| 3000 | EEVEES |
-| 3100 | CANDICE |
-| 3200 | SATURN |
-| 3300 | VICTORY |
-| 3400 | WAKE |
-| 3500 | BYRON |
-| 3600 | GRIMER |
-| 3700 | JUAN |
-| 3800 | SHY_GUY_GREEN |
-| 3900 | ROXANNE |
-| 4000 | SABRINA |
-| 4100 | GARDENIA |
-| 4200 | MATT |
-| 4300 | YOSHI |
-| 4400 | WINONA |
-| 4500 | MAYLENE |
-| 4600 | COLRESS |
-| 4700 | OWEN |
-| 4800 | BOO |
-| 4900 | RILEY |
-| 5000 | GLACIA |
-| 5100 | BARRY |
-| 5200 | WATTSON |
-| 5300 | BLAINE |
-| 5400 | MISTY |
-| 5500 | OAK |
-| 5600 | KOGA |
-| 5700 | MUSTARD |
-| 5800 | GRETA |
-| 5900 | FANTINA |
-| 6000 | SAMUEL |
-| 6100 | VOLKNER |
-| 6200 | BRUNO |
-| 6300 | SIDNEY |
-| 6400 | LUCIAN |
-| 6500 | FLINT |
-| 6600 | ROARK |
-| 6700 | AARON |
-| 6800 | BROCK |
-| 6900 | BERTHA |
-| 7000 | LT_SURGE |
-| 7100 | PHOEBE |
-| 7200 | LORELEI |
-| 7300 | ALBERT |
-| 7400 | THORTON |
-| 7500 | LUCY |
-| 7600 | AGATHA |
-| 7700 | CYRUS |
-| 7800 | DAHLIA |
-| 7900 | LAKE |
-| 8000 | LOYAL |
-| 8100 | REGIS |
-| 8200 | BIRDS |
-| 8300 | NORMAN |
-| 8400 | BEASTS |
-| 8500 | NOLAND |
-| 8600 | STEVEN |
-| 8700 | GIOVANNI |
-| 8800 | ZINNIA |
-| 8900 | SWORDS |
-| 9000 | TAPUS |
-| 9100 | ARGENTA |
-| 9200 | ULTRAS |
-| 9300 | DRAKE |
-| 9400 | PSEUDOS |
-| 9500 | BRANDON |
-| 9600 | RUIN |
-| 9700 | GENIES |
-| 9800 | ANABEL |
-| 9900 | WALLACE |
-| 10000 | PALMER |
-| 10100 | LANCE |
-| 10200 | SPENSER |
-| 10300 | TUCKER |
-| 10400 | BLUE |
-| 10500 | CYNTHIA |
-| 10600 | RED |
-| 10700 | WEATHER |
-| 10800 | CREATORS |
+| 500 | PETREL |
+| 600 | MEW |
+| 700 | MIMI |
+| 800 | DITTO |
+| 900 | ROOD |
+| 1000 | PLASMA_GRUNT_M |
+| 1100 | SHELLY |
+| 1200 | WARIO |
+| 1300 | TABITHA |
+| 1400 | LYLE |
+| 1500 | MAXIE |
+| 1600 | SHADOW_TRIAD |
+| 1700 | PLASMA_GRUNT_F |
+| 1800 | SHY_GUY_RED |
+| 1900 | WINSTON |
+| 2000 | GABBY_AND_TY |
+| 2100 | ZINZOLIN |
+| 2200 | MARS |
+| 2300 | SHY_GUY_BLACK |
+| 2400 | TATE_AND_LIZA |
+| 2500 | BURGLAR |
+| 2600 | FOSSILS |
+| 2700 | JOHNSON |
+| 2800 | FLANNERY |
+| 2900 | SHY_GUY_PINK |
+| 3000 | BRAWLY |
+| 3100 | JUPITER |
+| 3200 | ARCHIE |
+| 3300 | BIRCH |
+| 3400 | STARTERS |
+| 3500 | ERIKA |
+| 3600 | EEVEES |
+| 3700 | CANDICE |
+| 3800 | SATURN |
+| 3900 | VICTORY |
+| 4000 | WAKE |
+| 4100 | JUAN |
+| 4200 | BYRON |
+| 4300 | GRIMER |
+| 4400 | SHY_GUY_GREEN |
+| 4500 | ROXANNE |
+| 4600 | SABRINA |
+| 4700 | GARDENIA |
+| 4800 | MATT |
+| 4900 | YOSHI |
+| 5000 | WINONA |
+| 5100 | MAYLENE |
+| 5200 | COLRESS |
+| 5300 | SICKBLIK |
+| 5400 | BOO |
+| 5500 | RILEY |
+| 5600 | GLACIA |
+| 5700 | BARRY |
+| 5800 | WATTSON |
+| 5900 | BLAINE |
+| 6000 | MISTY |
+| 6100 | OAK |
+| 6200 | KOGA |
+| 6300 | MUSTARD |
+| 6400 | GRETA |
+| 6500 | FANTINA |
+| 6600 | MITCH |
+| 6700 | VOLKNER |
+| 6800 | BRUNO |
+| 6900 | SIDNEY |
+| 7000 | LUCIAN |
+| 7100 | FLINT |
+| 7200 | ROARK |
+| 7300 | AARON |
+| 7400 | BROCK |
+| 7500 | BERTHA |
+| 7600 | LT_SURGE |
+| 7700 | PHOEBE |
+| 7800 | WALLACE |
+| 7900 | LORELEI |
+| 8000 | DAVE |
+| 8100 | THORTON |
+| 8200 | LUCY |
+| 8300 | AGATHA |
+| 8400 | CYRUS |
+| 8500 | DAHLIA |
+| 8600 | N |
+| 8700 | LAKE |
+| 8800 | LOYAL |
+| 8900 | REGIS |
+| 9000 | BIRDS |
+| 9100 | NORMAN |
+| 9200 | BEASTS |
+| 9300 | NOLAND |
+| 9400 | STEVEN |
+| 9500 | GIOVANNI |
+| 9600 | GHETSIS |
+| 9700 | ZINNIA |
+| 9800 | SWORDS |
+| 9900 | TAPUS |
+| 10000 | ARGENTA |
+| 10100 | ULTRAS |
+| 10200 | DRAKE |
+| 10300 | PSEUDOS |
+| 10400 | BRANDON |
+| 10500 | RUIN |
+| 10600 | GENIES |
+| 10700 | ANABEL |
+| 10800 | PALMER |
+| 10900 | LANCE |
+| 11000 | SPENSER |
+| 11100 | TUCKER |
+| 11200 | BLUE |
+| 11300 | CYNTHIA |
+| 11400 | RED |
+| 11500 | WEATHER |
+| 11600 | CREATORS |

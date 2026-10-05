@@ -2051,8 +2051,8 @@ MatchCall_Text_Roxanne2::
 	.string "rematch!$"
 
 MatchCall_Text_Roxanne3::
-	.string "ROXANNE: {PLAYER}! My GYM is ready! Here\n"
-	.string "I go again!\p"
+	.string "ROXANNE: {PLAYER}! My GYM is\n"
+	.string "ready! Here I go again!\p"
 	.string "Come to RUSTBORO!$"
 
 MatchCall_Text_Roxanne4::
@@ -2072,7 +2072,8 @@ MatchCall_Text_Brawly2::
 	.string "run it back!$"
 
 MatchCall_Text_Brawly3::
-	.string "BRAWLY: Fight week! My GYM's ready!\n"
+	.string "BRAWLY: Fight week!\n"
+	.string "My GYM's ready!\p"
 	.string "Come to DEWFORD!$"
 
 MatchCall_Text_Brawly4::
@@ -2091,8 +2092,9 @@ MatchCall_Text_Wattson2::
 	.string "Wahahahaha!$"
 
 MatchCall_Text_Wattson3::
-	.string "WATTSON: My GYM's ready! Visit\n"
-	.string "MAUVILLE! Bring coins! Wahahahaha!$"
+	.string "WATTSON: My GYM's ready!\n"
+	.string "Visit MAUVILLE!\p"
+	.string "Bring coins! Wahahahaha!$"
 
 MatchCall_Text_Wattson4::
 	.string "WATTSON: Wahahaha! Battling you uses\n"
@@ -2114,8 +2116,9 @@ MatchCall_Text_Flannery2::
 	.string "Grandpa doesn't know what a phone is.$"
 
 MatchCall_Text_Flannery3::
-	.string "FLANNERY: Our GYM's ready! Come to\n"
-	.string "LAVARIDGE for a soak and a challenge!\l"
+	.string "FLANNERY: Our GYM's ready!\n"
+	.string "Come to LAVARIDGE for a soak\l"
+	.string "and a challenge!\p"
 	.string "Bring aspirin.$"
 
 MatchCall_Text_Flannery4::
@@ -2135,8 +2138,9 @@ MatchCall_Text_Winona2::
 	.string "same.$"
 
 MatchCall_Text_Winona3::
-	.string "WINONA: Our GYM is open again. Come to\n"
-	.string "FORTREE. Quickly, I want to go home.$"
+	.string "WINONA: Our GYM is open again.\n"
+	.string "Come to FORTREE.\p"
+	.string "Quickly, I want to go home.$"
 
 MatchCall_Text_Winona4::
 	.string "WINONA: I lost, but my wings won't break.\n"
@@ -2158,10 +2162,10 @@ MatchCall_Text_TateLiza2::
 	.string "…until Mercury leaves retrograde.$"
 
 MatchCall_Text_TateLiza3::
-	.string "TATE: The GYM is ready! LIZA: The moon\n"
-	.string "is full!\p"
-	.string "TATE: Come to MOSSDEEP… LIZA: …and\n"
-	.string "bring crystals!$"
+	.string "TATE: The GYM is ready!\n"
+	.string "LIZA: The moon is full!\p"
+	.string "TATE: Come to MOSSDEEP…\n"
+	.string "LIZA: …and bring crystals!$"
 
 MatchCall_Text_TateLiza4::
 	.string "TATE: Our battle… LIZA: …was written in\n"
@@ -2169,23 +2173,23 @@ MatchCall_Text_TateLiza4::
 	.string "TATE: Again? LIZA: The horoscope says\n"
 	.string "yes.$"
 
-MatchCall_Text_Juan1::
+MatchCall_Text_Wallace1::
 	.string "WALLACE: {PLAYER}{KUN}… Our battle had a\n"
 	.string "lovely bouquet.\p"
 	.string "Perhaps you're a talent that ages like\n"
 	.string "fine wine.$"
 
-MatchCall_Text_Juan2::
+MatchCall_Text_Wallace2::
 	.string "WALLACE: You've reached the peak. I\n"
 	.string "opened a bottle in your honor.\p"
 	.string "Two, actually. I hope we meet again.$"
 
-MatchCall_Text_Juan3::
+MatchCall_Text_Wallace3::
 	.string "WALLACE: Our SOOTOPOLIS GYM has\n"
 	.string "reopened. The bar too.\p"
 	.string "Visit anytime. Santé!$"
 
-MatchCall_Text_Juan4::
+MatchCall_Text_Wallace4::
 	.string "WALLACE: Battling you is like the finest\n"
 	.string "vintage.\p"
 	.string "When I close my eyes, I see you… Or it's\n"
@@ -2227,7 +2231,7 @@ MatchCall_Text_Drake::
 	.string "the POKéMON LEAGUE!\p"
 	.string "Don't you agree, {PLAYER}?$"
 
-MatchCall_Text_Wallace::
+MatchCall_Text_OldChampion::
 	.string "WALLACE: Have you met STEVEN?\n"
 	.string "Incredibly skilled. But he'd rather\l"
 	.string "headbang at rocks.\p"
@@ -2645,8 +2649,9 @@ MatchCall_Text_Norman7::
 	.string "episode.$"
 
 MatchCall_Text_Norman8::
-	.string "DAD: Good timing! I finished my show.\n"
-	.string "Now I challenge you to battle.\p"
+	.string "DAD: Good timing! I finished\n"
+	.string "my show. Now I challenge you\l"
+	.string "to battle.\p"
 	.string "PETALBURG GYM. Anytime!$"
 
 MatchCall_Text_Norman9::

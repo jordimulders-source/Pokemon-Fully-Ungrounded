@@ -31,6 +31,7 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/items.h"
+#include "constants/metatile_labels.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
@@ -1710,6 +1711,8 @@ static void HideShowWarpArrow(struct ObjectEvent *objectEvent)
 
 /* Strength */
 
+extern const u8 ScorchedSlab_SunHall_EventScript_StoneInLight[];
+
 #define tState        data[0]
 #define tBoulderObjId data[1]
 #define tDirection    data[2]
@@ -1774,6 +1777,14 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
         ObjectEventClearHeldMovementIfFinished(boulder);
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
+        // Project Grounded: het blok onthoudt zijn plek tot je de kaart verlaat. Zonder dit springt een blok dat
+        // buiten beeld raakt (en opnieuw wordt geladen) terug naar zijn beginplek (grote kaarten zoals de zonnezaal).
+        OverrideTemplateCoordsForObjectEvent(boulder);
+        // Project Grounded: Scorched Slab-zonnezaal; een zonnesteen die in een lichtschacht belandt, start een script.
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCORCHED_SLAB_SUN_HALL)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCORCHED_SLAB_SUN_HALL)
+         && MapGridGetMetatileIdAt(boulder->currentCoords.x, boulder->currentCoords.y) == METATILE_ScorchedSlab_SunLight)
+            ScriptContext_SetupScript(ScorchedSlab_SunHall_EventScript_StoneInLight);
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
     }
     return FALSE;

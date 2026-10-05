@@ -63,6 +63,7 @@ struct SpireEventData
     u8 weight;              // kans om gekozen te worden (4 = normaal, 1 = zeldzaam)
     u8 count;
     struct SpireEventOption options[3];
+    const u8 *walk;         // B = weglopen met deze tekst (NULL: alleen als alles dicht zit), zie events.py
 };
 
 #define SPIRE_EVENT_ICON_RECRUIT 0xFFFF   // icoon = de soort van {STR_VAR_3}
@@ -308,6 +309,8 @@ static void DrawStory(void)
     case STATE_OPTIONS:
         Expand(gStringVar4, sEv->ev->story);
         PrintText(WIN_STORY, FONT_SMALL_NARROW, 2, 0, sColor_Dark, gStringVar4);
+        if (sEv->ev->walk != NULL)   // het verhaal is dan hooguit 3 regels (events.py controleert het)
+            PrintRight(WIN_STORY, FONT_SMALL_NARROW, 222, 36, sColor_Gray, COMPOUND_STRING("B: walk away"));
         break;
     case STATE_MESSAGE:
         PrintText(WIN_STORY, FONT_SMALL_NARROW, 2, 0, sColor_Dark, sEv->message);
@@ -1096,8 +1099,10 @@ void Spire_OpenEvent(void (*onDone)(void))
     {
         u16 species = (sEv->ev->species >= SPIRE_EVENT_ICON_PSEUDO) ? sEv->recruit : sEv->ev->species;
 
+        // midden van de kop (y 8-24), zichtbaar deel van het icoon gecentreerd
         sEv->iconSpriteId = CreateMonIconNoPersonality(species, SpriteCB_MonIcon,
-                                                       8 + 4 + GetStringWidth(FONT_NORMAL, sEv->ev->title, 0) + 20, 8 + 6, 0);
+                                                       8 + 4 + GetStringWidth(FONT_NORMAL, sEv->ev->title, 0) + 20,
+                                                       16 + Spire_IconYOffset(species, 0), 0);
         gSprites[sEv->iconSpriteId].oam.priority = 0;
     }
 
@@ -1150,6 +1155,12 @@ static void Task_SpireEvent(u8 taskId)
         else if (JOY_NEW(A_BUTTON))
         {
             PickOption();
+        }
+        else if (JOY_NEW(B_BUTTON) && sEv->ev->walk != NULL)
+        {
+            // B = weglopen (Jordi, v0.9.82: Vending Machine), zonder effect
+            PlaySE(SE_SELECT);
+            ShowMessage(sEv->ev->walk);
         }
         else if (JOY_NEW(B_BUTTON) && AllLocked())
         {

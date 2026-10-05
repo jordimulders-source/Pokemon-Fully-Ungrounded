@@ -333,6 +333,7 @@ gSpecials::
 	def_special BattleSetup_StartLegendaryBattle
 	def_special StartRegiBattle
 	def_special Debug_StartMapWildBattle
+	def_special Debug_BattleTest_Start
 	def_special Debug_ClearForcedEncounter
 	def_special RegiDots_OnLoad
 	def_special RegiDots_Step
@@ -602,3 +603,18 @@ gSpecials::
 	def_special Grounded_PartyHasKubfu
 	def_special Grounded_EvolveKubfu
 	def_special IsNightTime
+	def_special Grounded_CaughtRayquaza
+	def_special Grounded_PartyHasShinyRayquaza
+	def_special Burglar_SetupVars
+	def_special Burglar_SpawnThief
+	def_special Burglar_SpawnResident
+	def_special Burglar_RestoreThief
+	def_special Burglar_ThiefApproachPlayer
+	def_special Burglar_ResidentApproachThief
+	def_special Burglar_ThiefFlee
+	def_special Burglar_ResidentGoHome
+	def_special Burglar_RemoveActor
+	def_special Burglar_Finish
+	def_special Burglar_DebugForce
+	def_special ScorchedSlab_CountLitStones
+	def_special Grounded_GiantWailordSpot

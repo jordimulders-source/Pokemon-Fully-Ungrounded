@@ -16988,3 +16988,6 @@ Volgens Jordi's GBA-instructies per leider:
 - Op Jordi's voorstel: noten, ritme, tempo (176), opbouw en drums van v11 exact gehouden, maar alle eigen samples en effecten eruit ("een computer met een kapotte speaker"). Elke partij speelt nu op een stock-instrument uit de vanilla Emerald-gevechtsnummers: lead op de trompet-keysplit (vs_gym_leader/vs_elite_four) met de PSG-blokgolf een octaaf eronder, akkoordstoten op trompet, orgel-16en/arpeggio's op het orgel uit vs_frontier_brain, bas op de fingered bass van vs_gym_leader, standaard rs-drumkit.
 - De opening-run is weer een gewone ladder (geen pitch bends). Alle np_*-samples en `neo_plasma_samples.py` zijn weg.
 - In dezelfde ROM gemeten tegen het gewone gym leader theme: even schoon (minder niet-harmonische ruis), 0 overlopen, piek 90/127.
+
+### [v0.9.100] - Neo Plasma v12d: het orgel-thema vanaf 0:14 hoorbaar
+- v12b (bas luider) en v12c (thema op de trompet) teruggedraaid. Jordi: de iconische melodie vanaf 0:14 ("tuuuuu-dudududu-TUDUDU", vanaf 0:25 een octaaf hoger) valt weg, en het is het orgel. Dat arpeggio-thema stond op CC7 24 en achteraan in de stemverdeling (14% van de noten viel weg). Nu: zelfde orgelklank, CC7 96, vooraan (0 noten weg); de lead vanaf het loopbegin iets terug (127 → 100). 0 overlopen, piek 87/127.

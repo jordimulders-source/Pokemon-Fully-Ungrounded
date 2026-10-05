@@ -239,7 +239,7 @@ ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 te
 # 127 en de rest x0,65 t.o.v. v11, gecorrigeerd voor het luidheidsverschil van de nieuwe sample (RMS eerste 80 ms;
 # organ2 -2,8 dB t.o.v. np_organ_sharp, +4,2 t.o.v. np_sine; fingered bass +1,5 t.o.v. np_bass_buzz; PSG-blokgolf
 # sustain 7 i.p.v. 12), -V060 -> -V095
-VOL = dict(lead=127, body=74, brass=63, brass_lo=53, organ=29, bass=71, sub=83, steel=23, arp=24, arpb=26,
+VOL = dict(lead=127, body=74, brass=63, brass_lo=53, organ=29, bass=71, sub=83, steel=23, arp=96, arpb=26,
            dsine=42, stab=29, drums=62)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
 # v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
@@ -248,7 +248,9 @@ LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag a
 FAT_END = 22 * BAR
 # v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
 # (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
-LEAD_VOL = [(0, 127)]                         # v12: overal 127 (zie VOL)
+LEAD_VOL = [(0, 127), (LOOP0, 100)]           # v12: 127; v12d: vanaf het loopbegin iets terug
+# v12d (Jordi: 'de iconische melodie vanaf 0:14 valt weg; het is het orgel'): het arpeggio-thema (farp + arp, orgel)
+# luid en vooraan in de stemverdeling; klank (organ2) blijft
 VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
@@ -904,7 +906,7 @@ def build():
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
-    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'farp', 'arp', 'brass_lo']
+    order = ['drums', 'lead', 'farp', 'arp', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'brass_lo']   # v12d
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL

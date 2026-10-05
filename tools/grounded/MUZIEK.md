@@ -445,3 +445,17 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Jordi geeft nu gedetailleerde briefings (vaak met Gemini geschreven); volg ze punt voor punt en houd wat hij goed
   vond expliciet ongewijzigd (diff per spoor).
 
+- Mitch v2 (Jordi: 'ECHTE HYBRIDE episch Pokémon-baasgevecht x Chase & Status; de beat klinkt te recht/langzaam, mist de
+  agressieve DnB-fundering; geen wandelende bas'). **Diagnose eerst meten:** het v1-patroon wás two-step (K 1, S 2,
+  K 3-en, S 4), maar in de opname (aanslag per 16e per band, `diag_audio.py`-achtig: spectrale flux op het 16e-raster,
+  gemiddeld over 8 maten) zaten de PSG-hihats 14 dB onder de kick, waren de 16den onhoorbaar (alleen de achtste 'en'),
+  was de snare-aanslag 2-3x zwakker dan de reese-aanslagen in 150-1500 Hz en verdwenen de ghosts in de ruis. Je hoorde
+  de lange basnoten op de kicks = halve snelheid. **Een DnB-beat staat of valt met hoorbare 16den en een snare met
+  crack**: hihats als DirectSound-sample (FluidR3 + ruis > 6 kHz, 60 ms, accent 127/84/108/88, kost ±1 kanaal),
+  snare = FluidR3 38+40 + ruisstoot 1,8-6,5 kHz door tanh x4 (de crack moet boven de trompet uit, die in dezelfde band
+  zit), kick x0,85. Resultaat drop: hihats > 6 kHz +5 dB, snare-aanslag 2x de rest in 1,5-5 kHz, aandeel > 2 kHz van
+  < 2% naar ±30%. Bas: 'bad-da-DAN' (16de, 16de, lang op de kick van 3-en) + pitch-bend-dives/-scoops (BENDR 12,
+  terugzetten bij de volgende noot). Lead = de sc88pro-trompet-keysplit (de echte Pokémon-trompet) + een zaagtand-
+  sample unisono (DirectSound, spoorvolume 84) + PSG-blokgolf unisono: solo gemeten t.o.v. de rest in 0,6-5 kHz van
+  -1,4 dB (alleen trompet) naar ±+2 dB. Een hete snare liet de mixer omslaan (-V090: 100x overlopen, -V078: 6x) ->
+  -V070: 0, piek 103/127. Crash vóór de leadlaag in de stemverdeler (anders viel 36% van de drop-crashes weg).

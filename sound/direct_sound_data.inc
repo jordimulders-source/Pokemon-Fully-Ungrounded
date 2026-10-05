@@ -6463,3 +6463,15 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_celesta::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_celesta.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_music_box::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_music_box.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_chimes::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_chimes.bin"

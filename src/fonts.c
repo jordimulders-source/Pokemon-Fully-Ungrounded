@@ -1,4 +1,5 @@
 #include "global.h"
+#include "fonts.h"
 
 ALIGNED(4) const u16 gFontSmallNarrowLatinGlyphs[] = INCBIN_U16("graphics/fonts/small_narrow.latfont");
 ALIGNED(4) const u8 gFontSmallNarrowLatinGlyphWidths[] = {
@@ -324,6 +325,7 @@ ALIGNED(4) const u8 gFontShortNarrowerLatinGlyphWidths[] = {
     8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  3,
 };
 
+#if JAPANESE_FONTS
 ALIGNED(4) const u16 gFontSmallJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/small.hwjpnfont");
 ALIGNED(4) const u16 gFontNormalJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/normal.hwjpnfont");
 
@@ -434,3 +436,4 @@ ALIGNED(4) const u8 gFontShortJapaneseGlyphWidths[] = {
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
 };
+#endif // JAPANESE_FONTS

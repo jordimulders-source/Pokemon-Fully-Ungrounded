@@ -687,6 +687,12 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
     },
 };
 
+// Grounded: met OW_ONLY_USED_SPECIES zijn de overworld-graphics static, zodat ongebruikte niet gelinkt worden.
+#if OW_POKEMON_OBJECT_EVENTS && OW_ONLY_USED_SPECIES
+#define OW_PIC_STORAGE static
+#else
+#define OW_PIC_STORAGE
+#endif
 #include "data/graphics/pokemon.h"
 
 #include "data/pokemon/trainer_class_lookups.h"

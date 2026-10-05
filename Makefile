@@ -247,6 +247,17 @@ $(INCLUDE_DIRS)/constants/script_commands.h: $(MISC_TOOL_DIR)/make_scr_cmd_const
 	python3  $(MISC_TOOL_DIR)/make_scr_cmd_constants.py
 
 $(C_BUILDDIR)/wild_encounter.o: c_dep += $(DATA_SRC_SUBDIR)/wild_encounters.h
+
+# Grounded: welke Pokémon-overworldsprites in de ROM komen (OW_ONLY_USED_SPECIES). Draait via `make generated`
+# (vóór de echte bouw); het script schrijft de header alleen bij een wijziging, dus pokemon.o wordt dan pas opnieuw gebouwd.
+OW_KEEP_HEADER := $(DATA_SRC_SUBDIR)/pokemon/ow_species_keep.h
+OW_KEEP_STAMP := $(OBJ_DIR)/ow_species_keep.stamp
+AUTO_GEN_TARGETS += $(OW_KEEP_STAMP)
+OW_KEEP_DEPS := $(filter-out $(OW_KEEP_HEADER),$(shell find data src include -type f \( -name '*.json' -o -name '*.inc' -o -name '*.s' -o -name '*.pory' -o -name '*.c' -o -name '*.h' -o -name '*.party' \) 2>/dev/null))
+$(OW_KEEP_STAMP): tools/grounded/ow_species_keep.py $(OW_KEEP_DEPS)
+	@mkdir -p $(@D)
+	python3 tools/grounded/ow_species_keep.py
+	@touch $@
 $(C_BUILDDIR)/trainer_see.o: c_dep += $(INCLUDE_DIRS)/constants/script_commands.h
 $(C_BUILDDIR)/vs_seeker.o: c_dep += $(INCLUDE_DIRS)/constants/script_commands.h
 

@@ -116,12 +116,9 @@ gSpecials::
 	def_special ShowEasyChatScreen
 	def_special ShowEasyChatProfile
 	def_special Script_GetCurrentMauvilleMan
-	def_special HasBardSongBeenChanged
-	def_special SaveBardSongLyrics
 	def_special HasHipsterTaughtWord
 	def_special SetHipsterTaughtWord
 	def_special HipsterTryTeachWord
-	def_special PlayBardSong
 	def_special SetMauvilleOldManObjEventGfx
 	def_special GenerateGiddyLine
 	def_special GiddyShouldTellAnotherTale

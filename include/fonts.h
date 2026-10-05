@@ -1,6 +1,10 @@
 #ifndef GUARD_FONTS_H
 #define GUARD_FONTS_H
 
+// Grounded: de Japanse glyphs (Normal/Small/Short/FRLG) staan niet in de ROM (~180 KB).
+// Japanse tekst ({JPN}) valt terug op de Latin-glyphs. TRUE zet ze terug.
+#define JAPANESE_FONTS FALSE
+
 extern const u16 gFontNormalLatinGlyphs[];
 extern const u8 gFontNormalLatinGlyphWidths[];
 extern const u16 gFontNormalJapaneseGlyphs[];

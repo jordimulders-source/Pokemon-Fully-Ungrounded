@@ -17005,3 +17005,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Keccles:** een handheld camera zoekt door een leeg lab vol schoolborden ("KECLEON = WALL", "P(YOU WIN) < 0.01", THE PLAN: "1. BE THE WALL / 2. WAIT / 3. ??? / 4. LEAGUE" met jouw gezicht omcirkeld); alleen een rode zigzag zweeft op het bord (de streep die een Kecleon niet kan camoufleren); een oog gaat open, de camouflage golft weg, Keccles staat er, het krijt schrijft "Q.E.D.". Vervangt de mugshot. 3,6 s.
 - **Burglar:** groenig bewakingscamerabeeld ("CAM 03 LIVING ROOM", tijdstempel, knipperende REC); de echte Gen 1-Burglar sluipt op zijn tenen door de kamer, draait zich om, digitale zoom 2X en 4X recht in de lens, dan ALARM. 3,6 s. Ook in het Stadium.
 - Samen ±271 KB. ROM: ±327 KB vrij.
+
+### [v0.9.103] - ROM opgeruimd: +1,41 MB vrij
+- **91 ongebruikte muzieksamples** van oude versies verwijderd (oude gymremixes, Brawly v1–v5, Mitch v1–v4, losse gm-samples): ±1,18 MB. De generatoren maken ze niet meer aan; alle 38 muziekscripts draaien nog byte-identiek.
+- **Colosseum-koppeling** (multiboot-image voor de GameCube) eruit: 160 KB. Het copyrightscherm start de handshake niet meer; getest: koude start tot het titelscherm.
+- **SickBlik-intro** ingepakt (LZ77 per sleutelbeeld): 128 → 58 KB, pixel-identiek getest.
+- Vrij: 327 KB → **1,74 MB**.

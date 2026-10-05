@@ -248,7 +248,12 @@ LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag a
 FAT_END = 22 * BAR
 # v11: de pulse-lead is in maat 0-21 1,7 dB zachter dan np_lead_fat: daar x1,2 (104 -> 124, 115 -> 127); de glissando
 # (eigen sample) blijft 115. Hold: de nieuwe sample is 2,5 dB luider: 46 -> 35
-LEAD_VOL = [(0, 127)]                         # v12: overal 127 (zie VOL)
+LEAD_VOL = [(0, 127), (LOOP0, 84)]            # v12: 127; v12e: vanaf het loopbegin terug (zie LOOP_VOL)
+# v12e (Jordi neuriede de melodie die vanaf 0:14 wegvalt; pyin op de Spleeter-stem 'other' van het origineel: 14,4 s
+# lange C, dan G-D#-G#-G, vanaf 25,4 s hetzelfde op D): dat is de elektrische gitaar van de bron (lange octaafnoten +
+# achtsten) = de partijen 'brass' en 'brass_lo', die op CC7 63/53 onder de lead (127, sawtooth-16en) verdwenen.
+# Vanaf het loopbegin: melodie voor, de 16e-lead terug; de intro blijft zoals hij was.
+LOOP_VOL = dict(brass=120, brass_lo=96)
 VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
@@ -904,7 +909,7 @@ def build():
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
-    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'farp', 'arp', 'brass_lo']
+    order = ['drums', 'brass', 'lead', 'bass', 'brass_lo', 'organ', 'steel', 'dsine', 'stab', 'farp', 'arp']   # v12e: melodie eerst
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL
@@ -973,8 +978,8 @@ def build():
     tracks = [
         (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
         (psg['body'], BODY, VOL['body'], 1, 64),
-        (p['brass'], BRASS, VOL['brass'], 2, 56),
-        (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
+        (p['brass'], BRASS, VOL['brass'], 2, 56, [(LOOP0, 7, LOOP_VOL['brass'])]),
+        (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64, [(LOOP0, 7, LOOP_VOL['brass_lo'])]),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
         (sorted(p['bass'] + p['bfill']), BASS, VOL['bass'], 5, 64),
         (psg['sub'], SUB, VOL['sub'], 6, 64),

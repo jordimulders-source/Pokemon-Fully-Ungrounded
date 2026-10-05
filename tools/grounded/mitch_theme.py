@@ -43,6 +43,15 @@ De rest (koper, hihats, bekkens, arpeggio, pad) iets zachter, zodat de mixer nie
 Gemeten in de game (solo via volX): wobble t.o.v. al de rest in drop B -1,3 dB (v3 ±-7 dB: sample +3 dB, CC7 +3,4 dB);
 kick+snare in de 30 ms na de slag +10,5 dB boven de (geduckte) rest. midi.cfg -V088 (was -V070; -V100 liep over
 op de roffel-einden): recpcm 0 overlopen, piek 92/127.
+v5 (Jordi over v4: 'wauw, heel vet, 95%; alleen nog de mix: bas moet baas zijn'): opbouw, tempo, noten, programma's
+en drums exact v4 (diff per MIDI-spoor: alleen CC7/ducking; daarnaast nieuwe samples). (1) De hoge koperlead 25%
+zachter (CC7 92 -> 69); reese en wobble op nieuwe, vollere samples (mitch5_reese_raw(_dark), mitch5_wob_*: vollere
+grondtoon, +laag-midden rond 220 Hz, lagere crest = +3..6 dB bij dezelfde piek), CC7 reese 80 -> 60, wobble 118 -> 110
+(netto ±+4 en +2,5 dB), PSG-sub 60 -> 84. (2) Kick en snare op mitch5_kick (dieper, harder) en mitch5_snare (de
+ruis-crack ±1,4x, tanh x11, gate na 40 ms; RMS +3 dB); hihats 88 -> 76, bekkens 84 -> 72, arpeggio 52 -> 44, pad
+50 -> 44. (3) Ducking korter en dieper: snare 10 -> 50 -> 100% in 10 ticks, kick 15 -> 55 -> 100% (1-2 frames).
+Balans afgesteld met solo-opnames in de game (recpcm, volX = 0) en offline gemengd met gains (lineair, gecontroleerd:
+som van de solo's = de mix, r = 0,996); zie MUZIEK.md (Log, Mitch v5). midi.cfg -V066 (Jordi hoorde v4 op -V070).
 Zie tools/grounded/MUZIEK.md.
 Gebruik: python3 tools/grounded/mitch_theme.py"""
 import os, sys
@@ -65,8 +74,8 @@ BRASS_LO, BRASS_HI, PLUCK, PAD_MIN, PAD_MAJ = 38, 39, 40, 41, 42
 SUB, RISER, DRUMS = 84, 121, 127
 # drumkit (drumsets/mitch.inc, vanaf 36): naam, sample, release, lengte (ticks; ±de samplelengte)
 KIT = [
-    ('KICK', 'mitch4_kick', 150, 44),
-    ('SNARE', 'mitch4_snare', 140, 52),
+    ('KICK', 'mitch5_kick', 150, 44),
+    ('SNARE', 'mitch5_snare', 140, 52),
     ('GHOST', 'mitch3_ghost', 120, 20),
     ('HAT', 'mitch_hat', 110, 16),
     ('RIDE', 'mitch_ride', 170, 48),
@@ -90,9 +99,13 @@ def n(name):
 CHORDS = {'Fm': ('F', 'min'), 'Db': ('Db', 'maj'), 'Eb': ('Eb', 'maj'), 'C': ('C', 'maj')}
 DROP_CH = ['Fm', 'Fm', 'Db', 'Eb', 'Fm', 'Fm', 'Db', 'C']
 BASS_ROOT = {'Fm': 'F1', 'Db': 'Db2', 'Eb': 'Eb2', 'C': 'C2'}
-VOL = {'reese': 80, 'wob': 118, 'brass': 92, 'arp': 52, 'pad': 50, 'sub': 60}   # basisvolume (CC7) per spoor
-DUCK = [(0, 0.20), (10, 0.50), (20, 0.80), (32, 1.0)]                    # ducking na elke snare (ticks, factor)
-DUCK_K = [(0, 0.30), (8, 0.60), (16, 0.85), (26, 1.0)]                   # v4: en na elke kick
+# v5: lead (koper) -25%, reese/wobble/sub luider, arpeggio/pad/hihats/bekkens iets terug (v4: reese 80, wob 118,
+# brass 92, arp 52, pad 50, sub 60, hats 88, cym 84)
+VOL = {'reese': 60, 'wob': 110, 'brass': 69, 'arp': 44, 'pad': 44, 'sub': 84, 'hats': 76, 'cym': 72}
+# v5: korter en dieper (1-2 frames; 1 frame = 4,6 ticks op 172 bpm). v4: snare 20->50->80->100% in 32 ticks,
+# kick 30->60->85->100% in 26 ticks
+DUCK = [(0, 0.10), (5, 0.50), (10, 1.0)]                                 # ducking na elke snare (ticks, factor)
+DUCK_K = [(0, 0.15), (5, 0.55), (10, 1.0)]                               # en na elke kick
 
 
 def t(bar, pos=0):
@@ -423,8 +436,8 @@ def main():
         ('pad', P['pad'], PAD_MIN, VOL['pad'], 3, 44, progs(prog_['pad']) + duck_ccs(VOL['pad'], snares, kicks), ()),
         ('kick', sorted(P['kick'] + P['ghost']), DRUMS, 127, 9, 64, (), ()),
         ('snare', P['snare'], DRUMS, 127, 10, 64, (), ()),
-        ('hats', P['hat'], DRUMS, 88, 8, 76, (), ()),
-        ('cym', sorted(P['ride'] + P['crash'] + P['fx']), DRUMS, 84, 11, 54, (), ()),
+        ('hats', P['hat'], DRUMS, VOL['hats'], 8, 76, (), ()),
+        ('cym', sorted(P['ride'] + P['crash'] + P['fx']), DRUMS, VOL['cym'], 11, 54, (), ()),
         ('noise', P['noise'], RISER, 64, 12, 70, (), ()),
         ('sub', P['sub'], SUB, VOL['sub'], 13, 64, duck_ccs(VOL['sub'], snares, kicks), ()),
     ]
@@ -450,9 +463,9 @@ def write_voicegroup():
     ds = lambda smp, rel, key=60, att=255, dec=0, sus=255: \
         '\tvoice_directsound %d, 0, DirectSoundWaveData_%s, %d, %d, %d, %d' % (key, smp, att, dec, sus, rel)
     rep = {
-        32: ds('mitch_reese_raw', 160), 33: ds('mitch_reese_raw_dark', 160),
-        34: ds('mitch4_wob_f1', 170), 35: ds('mitch4_wob_c2', 170), 36: ds('mitch4_wob_db2', 170),
-        37: ds('mitch4_wob_eb2', 170),
+        32: ds('mitch5_reese_raw', 160), 33: ds('mitch5_reese_raw_dark', 160),
+        34: ds('mitch5_wob_f1', 170), 35: ds('mitch5_wob_c2', 170), 36: ds('mitch5_wob_db2', 170),
+        37: ds('mitch5_wob_eb2', 170),
         38: ds('mitch3_brass_lo', 160), 39: ds('mitch3_brass_hi', 160), 40: ds('mitch3_pluck', 150),
         41: ds('mitch_pad_min', 200, att=40), 42: ds('mitch_pad_maj', 200, att=40),
         84: '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1',

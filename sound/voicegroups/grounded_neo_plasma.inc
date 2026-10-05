@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v8. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 127 drums.
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v9. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -89,11 +89,11 @@ voice_group grounded_neo_plasma
 	voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140  @ 85
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 215, 40, 100  @ 86
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 205, 0, 110  @ 87
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
+	voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 120  @ 88
+	voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 120  @ 89
+	voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40  @ 90
+	voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40  @ 91
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 100  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95

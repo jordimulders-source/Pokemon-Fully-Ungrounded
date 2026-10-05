@@ -7732,3 +7732,43 @@ DirectSoundWaveData_heatran_st_pm_46::
 	.align 2
 DirectSoundWaveData_heatran_st_pm_48::
 	.incbin "sound/direct_sound_samples/grounded/heatran_st_pm_48.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_kick::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_kick.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_snare::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_snare.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_reese_raw::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_reese_raw.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_reese_raw_dark::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_reese_raw_dark.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_wob_f1::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_f1.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_wob_c2::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_c2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_wob_db2::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_db2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch5_wob_eb2::
+	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_eb2.bin"
+
+	.align 2
+DirectSoundWaveData_np_lead_fat::
+	.incbin "sound/direct_sound_samples/grounded/np_lead_fat.bin"
+
+	.align 2
+DirectSoundWaveData_np_lead_fat_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_lead_fat_lo.bin"

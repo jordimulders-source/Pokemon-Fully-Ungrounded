@@ -25,11 +25,13 @@ v5 (naar Jordi's feedback op v4):
 - orgel: scherp drawbar-orgel (8', 4', 2 2/3', 2', 1 3/5', 1 1/3') met een klikje in de aanzet.
 Alles additief gesynthetiseerd (exacte loop: samplerate = grondtoon x samples per periode). De drums komen uit de
 standaard GBA-kit (rs_drumset), de lead is een PSG-blokgolf: daar zijn geen samples voor nodig.
+v9 (Jordi over v8: 'de iconische eerste seconden: de stijgende opening-run moet een vette, agressieve GBA Synth
+Brass / Pulse Lead zijn'): np_lead_fat (C5) en np_lead_fat_lo (C3), gelaagd uit de GBA-samples zelf (zie fat_lead()).
 Gebruik: python3 tools/grounded/neo_plasma_samples.py"""
 import os, struct, sys, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from sample_utils import write_wav
+from sample_utils import resample, auto_loop, write_wav
 
 OUT = "sound/direct_sound_samples/grounded/"
 DATA = "sound/direct_sound_data.inc"
@@ -86,6 +88,42 @@ def gba_copy(name, shift):
     return a, w.getframerate(), loop, sm[3] + shift
 
 
+def gba_tone(name, note, R, dur, cents=0.0):
+    """v9: een GBA-sample (klinkt C4 op zijn eigen samplerate, gemeten) als toon `note` (+cents) op samplerate R,
+    `dur` s lang; de sustain via de loop van de sample zelf."""
+    a, r, loop, key = gba_copy(name, 0)
+    eff = r * 2 ** ((note - key + cents / 100) / 12)      # samples per seconde waarmee deze toon klinkt
+    need = int(dur * eff) + 8
+    if loop and len(a) < need:
+        reps = (need - loop[0]) // (loop[1] - loop[0]) + 1
+        a = np.concatenate([a[:loop[0]]] + [a[loop[0]:loop[1]]] * reps)
+    out = resample(a[:need], eff, R)[:int(dur * R)]
+    return np.pad(out, (0, int(dur * R) - len(out)))
+
+
+def fat_lead(lo=False):
+    """v9 (Jordi: 'de stijgende opening-run moet een vette, agressieve GBA Synth Brass / Pulse Lead zijn, snelle attack,
+    veel volume, niet dun of tokkelend'): de GBA-blokgolf (sc88pro_square_wave) twee keer, ±12 cent uit elkaar
+    (zweving = breed), plus de GBA-synth brass (sc88pro_trumpet_72) in unisono, in één sample = 1 kanaal. Aanzet: de
+    eerste 35 ms 1,6x zo luid (de 'knal'), dan in 60 ms naar de sustain; verzadigd (tanh x2,2: vetter, lagere
+    crest, de sustain ±+2 dB t.o.v. de kale blokgolf).
+    lo: op C3 voor de lage noten (< C4) zónder trompet (koper niet onder C3: 'puuup'), met de blokgolf een octaaf
+    hoger erbij voor de helderheid."""
+    R, dur = 13379, 0.9
+    note = 48 if lo else 72
+    a = gba_tone('sc88pro_square_wave', note, R, dur) + 0.75 * gba_tone('sc88pro_square_wave', note, R, dur, 12)
+    if lo:
+        a += 0.5 * gba_tone('sc88pro_square_wave', note + 12, R, dur, -7)
+    else:
+        a += 0.9 * gba_tone('sc88pro_trumpet_72', note, R, dur)
+    t = np.arange(len(a)) / R
+    a /= np.abs(a[int(0.2 * R):]).max()                    # sustain op 1
+    a *= 1 + 0.6 * np.clip(1 - np.maximum(0, t - 0.035) / 0.06, 0, 1)
+    a = np.tanh(2.2 * a)
+    a, loop = auto_loop(a / np.abs(a).max() * 0.97, R)
+    return a, R, loop
+
+
 def sine():
     f0, per = 523.25, 32
     return additive(f0, per, [1.0, 0.08], 64)
@@ -98,6 +136,9 @@ SAMPLES = {
     # v8: de GBA-synth bass (sc88pro_synth_bass), een octaaf hoger gelabeld: de MIDI-noten van de bron (Eb2-Ab4)
     # klinken een octaaf lager, zonder noten onder E1 in de MIDI (zoals np_pulse_bass in v5-v7)
     'np_synth_bass': (lambda: gba_copy('sc88pro_synth_bass', 12), None),
+    # v9: vette lead voor de opening-run en het loopbegin (GBA-blokgolf x2 + GBA-synth brass)
+    'np_lead_fat': (fat_lead, 72),
+    'np_lead_fat_lo': (lambda: fat_lead(lo=True), 48),
 }
 
 

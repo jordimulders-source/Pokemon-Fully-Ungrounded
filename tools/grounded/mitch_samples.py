@@ -45,6 +45,14 @@ v4 (Jordi over v3: 'ritme en structuur spot-on; de wobble moet AANZIENLIJK luide
   mitch4_kick  : nog kortere, drogere punch met een harde klik (2-7 kHz, 2,5 ms) en een tik van 3 kHz; 22 kHz.
   mitch4_snare : keiharde, droge crack: zelfde bronnen als v3, crack en body korter, harder verzadigd en na 40 ms
       gegate (0,15 s).
+v5 (Jordi over v4: '95%; bas moet baas zijn, lead zachter, kick/snare harder, droger en snijdender'):
+  mitch5_kick  : harder en dieper: val 300 -> 50 Hz in 10 ms, dreun 70 ms, klik + tik, tanh x5 (lage crest).
+  mitch5_snare : droger en snijdender: de ruis-crack (1,5-8 kHz) ±1,4x zo luid en langer (30 ms), tanh x11, gate na
+      40 ms (0,12 s; RMS +3,5 dB t.o.v. mitch4_snare).
+  mitch5_reese_raw / _raw_dark : de v2-reese met een vollere grondtoon (de bas draagt), +laag-midden rond 220 Hz en
+      twee rondes zachte begrenzing (lagere crest = luider bij dezelfde piek).
+  mitch5_wob_<noot> : de v4-wobble met een vollere grondtoon (0,7 i.p.v. 0,5), minder highpass (80 i.p.v. 110 Hz),
+      een iets kleinere 1,5 kHz-snijband en drie rondes begrenzing: zwaarder in het laag/laag-midden en luider.
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
 Gebruik: python3 tools/grounded/mitch_samples.py"""
 import os, subprocess, sys, tempfile, wave
@@ -266,7 +274,7 @@ def gm_chord(prog, notes, dur, rate, loop):
 
 # ---------------------------------------------------------------- v2: rauwe reese, punchy kit
 def reese_raw(note=36, per=128, M=128, cut=2500.0, drive=3.2, saws=((-2, 0.7), (-1, 1.0), (0, 0.8), (1, 1.0), (2, 0.7)),
-              fund=0.55, over=8):
+              fund=0.55, over=8, grit=0.8, low=0.4, lowmid=0.0, limit=0):
     """Rauwe distorted reese: vijf licht ontstemde zaagtanden (M + k trillingen per loop: zweving 0,5-1 Hz in de
     sample), vervormd (tanh) op 8x de samplerate en daarna met een periodiek FFT-lowpass (±cut Hz, 24 dB/oct)
     teruggebracht naar `per` samples per periode: geen aliasing en een exacte loop."""
@@ -286,10 +294,16 @@ def reese_raw(note=36, per=128, M=128, cut=2500.0, drive=3.2, saws=((-2, 0.7), (
     fr = np.arange(len(F)) * f0 / M                    # bin k = k / M x f0
     F *= 1 / np.sqrt(1 + (fr / cut) ** 8)
     F[fr < 0.6 * f0] = 0                               # geen DC/infrasoon
-    F[fr < 1.5 * f0] *= 0.4                            # grondtoon zachter: de PSG-sub draagt het laag
-    F *= 1 + 0.8 * np.exp(-((np.log2(np.maximum(fr, 1) / 1100)) / 0.6) ** 2)    # +5 dB rond 1,1 kHz: grit
+    F[fr < 1.5 * f0] *= low                            # grondtoon zachter: de PSG-sub draagt het laag
+    F *= 1 + grit * np.exp(-((np.log2(np.maximum(fr, 1) / 1100)) / 0.6) ** 2)    # +5 dB rond 1,1 kHz: grit
+    F *= 1 + lowmid * np.exp(-((np.log2(np.maximum(fr, 1) / 220)) / 0.9) ** 2)   # v5: laag-midden (±220 Hz) erbij
     F = F[:per * M // 2 + 1]
     out = np.fft.irfft(F, per * M)
+    n2 = per * M
+    frn = np.arange(n2 // 2 + 1) * f0 / M
+    for _ in range(limit):                             # v5: luid (lage crest) zonder aliasing, loop blijft exact
+        out = np.tanh(1.8 * out / np.percentile(np.abs(out), 99.7))
+        out = np.fft.irfft(np.fft.rfft(out) / np.sqrt(1 + (frn / cut) ** 8), n2)
     return norm(out), int(round(f0 * per))
 
 
@@ -457,7 +471,7 @@ def svf_lp(x, fc, q, fs):
     return out
 
 
-def wob4(note, per, over=4, top=90, cents=35.0):
+def wob4(note, per, over=4, top=90, cents=35.0, fund=0.5, hp=110.0, cutband=1.5, rounds=2):
     """Screaming wobble (exacte loop van twee maten op 172 bpm): ontstemde zaagtanden met pitch-LFO -> asymmetrische
     distortion -> resonant lowpass met de LFO (90 Hz dicht -> 2,8 kHz open, exponentieel, 4-polig: de distortion
     zit vóór het filter, zodat de wobble diep blijft) -> verzadiging -> periodiek FFT-lowpass/EQ."""
@@ -491,14 +505,14 @@ def wob4(note, per, over=4, top=90, cents=35.0):
     fr = np.arange(len(F)) * f0 / M
     F *= 1 / np.sqrt(1 + (fr / 5000.0) ** 8)
     F[fr < 0.6 * f0] = 0
-    F[fr < 1.5 * f0] *= 0.5                             # grondtoon zachter: de PSG-sub draagt het laag
-    F *= 1 / np.sqrt(1 + (110 / np.maximum(fr, 1)) ** 4)   # en ook de 2e harmonische van F1 niet te dik
-    F *= 1 + 1.5 * np.exp(-((np.log2(np.maximum(fr, 1) / 1500)) / 0.8) ** 2)
+    F[fr < 1.5 * f0] *= fund                            # grondtoon zachter: de PSG-sub draagt het laag
+    F *= 1 / np.sqrt(1 + (hp / np.maximum(fr, 1)) ** 4)    # en ook de 2e harmonische van F1 niet te dik
+    F *= 1 + cutband * np.exp(-((np.log2(np.maximum(fr, 1) / 1500)) / 0.8) ** 2)
     F = F[:n // 2 + 1]
     out = np.fft.irfft(F, n)
     # luid: twee rondes zachte begrenzing + periodiek lowpass (geen aliasing, loop blijft exact)
     frn = np.arange(n // 2 + 1) * f0 / M
-    for _ in range(2):
+    for _ in range(rounds):
         out = np.tanh(1.8 * out / np.percentile(np.abs(out), 99.7))
         out = np.fft.irfft(np.fft.rfft(out) / np.sqrt(1 + (frn / 5000.0) ** 8), n)
     return norm(out), rate
@@ -532,6 +546,39 @@ def snare4(rate=22050, dur=0.15):
     a = sosfilt(butter(2, 180, 'highpass', fs=rate, output='sos'), a)
     a = np.tanh(6.0 * norm(a)) * np.exp(-np.maximum(0, t - 0.04) / 0.03)
     return fade_out(norm(a), rate, 0.03), rate
+
+
+# ---------------------------------------------------------------- v5: bas is baas, harde droge klappen
+def kick5(rate=22050):
+    """v5: harder en dieper dan kick4: toonhoogteval 300 -> 50 Hz in ±10 ms, dreun 70 ms (laag dominant), harde klik
+    2-7 kHz en een tik van 3 kHz; zwaar verzadigd (lage crest = luid)."""
+    n = int(rate * 0.15)
+    t = np.arange(n) / rate
+    f = 50 + 250 * np.exp(-t / 0.010)
+    body = np.sin(2 * np.pi * np.cumsum(f) / rate) * np.exp(-t / 0.070)
+    click = sosfilt(butter(2, [2000, 7000], 'bandpass', fs=rate, output='sos'),
+                    np.random.default_rng(29).uniform(-1, 1, n)) * np.exp(-t / 0.0025)
+    tick = np.sin(2 * np.pi * 3000 * t) * np.exp(-t / 0.0015)
+    a = np.tanh(5.0 * (body + 1.3 * norm(click) + 0.7 * tick))
+    return fade_out(norm(a), rate, 0.03), rate
+
+
+def snare5(rate=22050, dur=0.12):
+    """v5: nog droger en snijdender dan snare4: dezelfde bronnen, de ruis-crack (1,5-8 kHz) ±1,4x zo luid en langer
+    (30 ms), minder body, tanh x11 en een gate na 40 ms (0,12 s)."""
+    n = int(rate * dur)
+    t = np.arange(n) / rate
+    m = int(dur * 44100)
+    two = [np.pad(x[:m], (0, m - len(x[:m]))) for x in (render(0, [38], dur, kit=0, vel=127), render(0, [39], dur, kit=0, vel=127))]
+    fl = resample(0.7 * two[0] + 0.6 * two[1], 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    noise = np.random.default_rng(31).uniform(-1, 1, n)
+    crack = sosfilt(butter(2, [1500, 8000], 'bandpass', fs=rate, output='sos'), noise) * np.exp(-t / 0.030)
+    body = np.sin(2 * np.pi * 190 * t) * np.exp(-t / 0.018)
+    a = 1.0 * norm(fl) + 2.4 * norm(crack) + 0.6 * body
+    a = sosfilt(butter(2, 200, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(11.0 * norm(a)) * np.exp(-np.maximum(0, t - 0.04) / 0.025)
+    return fade_out(norm(a), rate, 0.025), rate
 
 
 def main():
@@ -604,6 +651,17 @@ def main():
     for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
         a, r = wob4(note, 256 if note < 36 else 192)
         jobs['mitch4_wob_' + nm] = (a, r, note, (0, len(a)))
+    # ---- v5 (Jordi over v4: 'bas moet baas zijn'): luidere, vollere bas en wobble; hardere kick en snare
+    a, r = kick5(); jobs['mitch5_kick'] = (a, r, 60, None)
+    a, r = snare5(); jobs['mitch5_snare'] = (a, r, 60, None)
+    a, r = reese_raw(fund=0.8, low=0.6, grit=0.8, lowmid=1.0, limit=2)
+    jobs['mitch5_reese_raw'] = (a, r, 36, (0, len(a)))
+    a, r = reese_raw(cut=1100.0, drive=4.5, saws=((-2, 0.8), (-1, 1.0), (1, 1.0), (3, 0.8)), fund=0.8, low=0.6, grit=0.8,
+                     lowmid=1.0, limit=2)
+    jobs['mitch5_reese_raw_dark'] = (a, r, 36, (0, len(a)))
+    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
+        a, r = wob4(note, 256 if note < 36 else 192, fund=0.7, hp=80.0, cutband=1.3, rounds=3)
+        jobs['mitch5_wob_' + nm] = (a, r, note, (0, len(a)))
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

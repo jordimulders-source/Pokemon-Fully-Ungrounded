@@ -6866,22 +6866,6 @@ DirectSoundWaveData_sb_horns_hi::
 	.incbin "sound/direct_sound_samples/grounded/sb_horns_hi.bin"
 
 	.align 2
-DirectSoundWaveData_np_pulse_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_stab::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_stab.bin"
-
-	.align 2
-DirectSoundWaveData_np_brass_stab_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_brass_stab_lo.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
 DirectSoundWaveData_sb_closed_hat::
 	.incbin "sound/direct_sound_samples/grounded/sb_closed_hat.bin"
 
@@ -6976,3 +6960,19 @@ DirectSoundWaveData_mitch_airhorn::
 	.align 2
 DirectSoundWaveData_mitch_ride::
 	.incbin "sound/direct_sound_samples/grounded/mitch_ride.bin"
+
+	.align 2
+DirectSoundWaveData_np_pulse_bass::
+	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_stab::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab.bin"
+
+	.align 2
+DirectSoundWaveData_np_brass_stab_lo::
+	.incbin "sound/direct_sound_samples/grounded/np_brass_stab_lo.bin"
+
+	.align 2
+DirectSoundWaveData_np_organ_sharp::
+	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"

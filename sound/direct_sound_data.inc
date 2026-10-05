@@ -7636,3 +7636,35 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_brass_dim::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_brass_dim.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_brass_tt::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_brass_tt.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_drone::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_drone.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_dbass::
+	.incbin "sound/direct_sound_samples/grounded/genesect_dbass.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_istab::
+	.incbin "sound/direct_sound_samples/grounded/genesect_istab.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_kick2::
+	.incbin "sound/direct_sound_samples/grounded/genesect_kick2.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_snare2::
+	.incbin "sound/direct_sound_samples/grounded/genesect_snare2.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_roll2::
+	.incbin "sound/direct_sound_samples/grounded/genesect_roll2.bin"

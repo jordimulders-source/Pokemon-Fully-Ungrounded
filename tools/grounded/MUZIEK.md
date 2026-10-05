@@ -95,7 +95,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
-| Victini, Darkrai, Genesect | nieuw | v1 in de maak | – |
+| Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
@@ -315,3 +315,23 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   in de voicegroup. `fit()` (noot + uitklinktijd eindigt vóór de volgende aanslag) op bas/kick/chugs/rasgueado bracht
   alle hoofdpartijen op 0% weg. Controle: elke noot van spoor 1-3 komt met dezelfde toonhoogte (of toonklasse, bij
   powerchords/hoover) op dezelfde tick terug. Geen test-ROM (coördinator neemt op met batchrec.py).
+- Victini v2 (Jordi: 'euforischer, triomfantelijker'): thema met open sprongen (kwart+kwint = octaaf, octaafsprongen,
+  top D6), hoorn in decimen (terts eronder - 12) i.p.v. tertsen = opener koper. **Key change midden in de melodie** =
+  `SHIFT` per maat (E +2 -> F +3) + één scharniermaat met absolute akkoorden (B -> C7) en een dalende aanloop die via de
+  leidtoon (E) op F oplost; terug naar D via stijgende hele tonen F-G-A. Buitelende bellen op de PSG-golf
+  (`ProgrammableWaveData_5`, env 0/2/6/1) alleen in lange melodienoten (>= 6 zestienden), stijgende arpeggio's (8 16den
+  over twee octaven) op vierkant 2, 32sten-risers en snare-roffels (16den -> 32sten) naar elke drop, octaafbas in
+  achtsten: alles PSG of drums, dus de stemverdeler bleef gelijk (alleen pauken 17% weg, zoals v1).
+- Darkrai v2 (Jordi: '80%, duisterder, Giratina-achtig'): bijwerken = lagen wisselen, de C-sectie (ritardando,
+  achterstevoren wiegelied) onaangeroerd. Maten A 7-7-6-7-5-9-7-8, B 9-7-10-5-9-6-11-5, D 7-6-8-5-7-10-5-7; `fit()`
+  kort een wiegeliedmaat nu van achteren in (de oude versie gaf bij 5 achtsten een maat van 6). **Rauwe koperstoten als
+  één sample per voicing** (FluidR3 61+62, verminderd E-G-Bb-E en cluster E-Bb-E-F, tanh x3, 13.379 Hz) op één spoor
+  met een programmawissel per noot (`ccs` 'prog'); een orgeldrone E1-Bb1-E2 (GM 19, gelust) verving de strijkerspads:
+  strijkers 43% -> 4% weg, koper/drone 0%. 16 sporen = het maximum.
+- Genesect v2 (Jordi: 'klonk als funk'): **`funk_meter()` meet waarom** (loop, MIDI): v1 kick op oneven 16den 18%,
+  bas op oneven 16den 23%, ghost-snares 1,6 per maat, hat-accentspreiding 0,44 (118/70/96/74), octaaf-'pops' in de bas
+  6,5% (E2 -> D3). v2: 0,027 (alleen de 16den-kicks van de build-up) / 0 / 0 / 0,097 / 0; het script weigert te
+  schrijven als het weer 'funk' wordt. Recht achtstenraster, geen ghosts, roffels alleen als felle 16den/32sten
+  (`genesect_roll2`), 152 bpm (maat 0 blijft 144 voor de transitiesync), overstuurde bas `genesect_dbass` (tanh x6),
+  tritonusstoot `genesect_istab`, kick2/snare2 (tanh x5/x7; de 909-clap zit ín de snare: los clappen kostte een kanaal),
+  risers (ruis + sirene-bend) en een 16de stilte vóór elke drop (`stop()`).

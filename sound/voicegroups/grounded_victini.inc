@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Victini. Gegenereerd door tools/grounded/victini_theme.py.
-@ 28 palm-mute-powerchord, 29 distortion-powerchord (victini_samples.py), 49 spiccato, 80/81 PSG-lead/arpeggio, 121 PSG-hihat, 127 kit (drumsets/victini.inc).
+@ 28 palm-mute-powerchord, 29 distortion-powerchord (victini_samples.py), 49 spiccato, 80/81 PSG-lead/arpeggio, 82 golf-bellen, 121 PSG-hihat, 127 kit (drumsets/victini.inc).
 voice_group grounded_victini
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -83,7 +83,7 @@ voice_group grounded_victini
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 1, 0, 0, 12, 1  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 6, 1  @ 81
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_5, 0, 2, 6, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85

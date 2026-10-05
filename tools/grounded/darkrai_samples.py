@@ -9,12 +9,17 @@
 - darkrai_lullaby_rev   het hele wiegelied (4 maten 7/8, 150 bpm) op de speeldoos, achterstevoren, precies 5,6 s: één kanaal.
 - darkrai_cry_rev       de Gen 3-cry van Darkrai achterstevoren en op 0,8x (dieper, trager), grondtoon 60.
 - darkrai_revcym        crashbekken (FluidR3 drum 49) achterstevoren, precies 1 maat 7/8 (1,4 s) lang: riser.
+v2 (Giratina-achtig, duisterder):
+- darkrai_brass_dim     rauwe koperstoot (FluidR3 Brass Section 61 + Synth Brass 62) E3-G3-Bb3-E4 (verminderd),
+                        door tanh x3 en op 13.379 Hz (Gen 3-korrel): één kanaal per akkoord, grondtoon E3 (52).
+- darkrai_brass_tt      idem als cluster E3-Bb3-E4-F4 (tritonus + kleine none): de schurendste stoot.
+- darkrai_drone         kerkorgel (GM 19) E1-Bb1-E2 (tritonus-drone), gelust, label E2 (40): speel 40 = E1-Bb1-E2.
 Gebruik: python3 tools/grounded/darkrai_samples.py  (vereist fluidsynth + FluidR3_GM, zie MUZIEK.md)"""
 import os, sys, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gm_samples import render                     # FluidR3-render van één noot / loopje (alleen gelezen)
-from sample_utils import resample, write_wav
+from sample_utils import resample, write_wav, auto_loop
 
 OUT = 'sound/direct_sound_samples/grounded/'
 DATA = 'sound/direct_sound_data.inc'
@@ -101,9 +106,24 @@ def main():
     cy = cy * np.linspace(0.15, 1, L) ** 1.5           # langzamer aanzwellen, laatste stuk het luidst
     out['darkrai_revcym'] = (fade(norm(resample(cy, SR, 16000), 0.85), 16000, 0.1, 0.004), 16000, 60)
 
+    # v2: rauwe brass-stabs (één sample per voicing) en een tritonus-orgeldrone
+    def stab(notes):
+        n = int(0.55 * SR)
+        pad = lambda a: np.pad(a, (0, max(0, n - len(a))))[:n]
+        x = 0.6 * pad(trim(render(61, 0, 0.5, run=notes))) + 0.5 * pad(trim(render(62, 0, 0.5, run=notes)))
+        x = np.tanh(3.0 * norm(x, 1.0))
+        return fade(norm(resample(x, SR, 13379), 0.95), 13379, 0, 0.06)
+    out['darkrai_brass_dim'] = (stab([52, 55, 58, 64]), 13379, 52)
+    out['darkrai_brass_tt'] = (stab([52, 58, 64, 65]), 13379, 52)
+    org = trim(render(19, 0, 3.0, run=[28, 34, 40]))[:int(2.6 * SR)]
+    org = norm(resample(np.tanh(1.5 * norm(org, 1.0)), SR, 13379), 0.9)
+    org, lp = auto_loop(org, 13379)
+    out['darkrai_drone'] = (org, 13379, 40, lp)
+
     inc = open(DATA).read()
-    for name, (x, r, key) in out.items():
-        write_wav(OUT + name + '.wav', x, r, key, None)
+    for name, v in out.items():
+        x, r, key = v[:3]
+        write_wav(OUT + name + '.wav', x, r, key, v[3] if len(v) > 3 else None)
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)

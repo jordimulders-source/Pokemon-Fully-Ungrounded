@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Project Grounded: samples voor Battle! Neo Team Plasma v6 (np_*).
+"""Project Grounded: samples voor Battle! Neo Team Plasma v7 (np_*).
+v7 (Jordi over v6: 'te kaal, dun en los zand'; lagen à la GBA-componisten):
+- lead op de bronhoogte: pulse-lead (25% + 50% ontstemd) gelabeld op C5 met een vaste lowpass van 3,6 kHz, zodat
+  de hoge ligging niet schel wordt (de laag een octaaf lager speelt op het PSG-vierkant: geen sample nodig);
+- np_stab: korte, punchy synth-brass-stoot (zaagtand + blok, filterstoot) voor de off-beat-akkoorden;
+- np_sine: zachte sinus (met een vleugje 2e harmonische) voor de oude 8-bit-sinuspartij, die het PSG-golfkanaal
+  afstaat aan de sub-bas.
 v6 (Jordi over v5: 'te kale, schelle 8-bit sound, hoge tonen snijden, mist dynamiek en gelaagdheid'):
 - lead: warme, volle pulse-lead als DirectSound-sample i.p.v. de PSG-blokgolf: twee licht ontstemde pulsen (25% en
   50%) gemengd, lowpass (24 dB/oct, ±3 kHz op C4; meeschuivend met de toonhoogte zoals een key-tracked filter),
@@ -125,10 +131,39 @@ def saw_brass(f0, per, kmax, fc):
     return osc_mix(f0, per, amps, 128, 1, attack=0.06, bright=bright)
 
 
+def lead_pulse():
+    """Pulse-lead op C5: puls 25% + puls 50% (licht ontstemd), vaste lowpass 3,6 kHz (24 dB/oct), korte heldere aanzet."""
+    f0, per, kmax = 523.25, 32, 15
+    amps = []
+    for k in range(1, kmax + 1):
+        g = lp(k * f0, 3600) * (1.2 if k == 1 else 1.0)
+        amps.append((0.6 * pulse(k, 0.25) * g, 0.5 * pulse(k, 0.5) * g))
+    bright = [0.3 * pulse(k, 0.25) * lp(k * f0, 5000) * (k >= 3) for k in range(1, kmax + 1)]
+    return osc_mix(f0, per, amps, 256, 1, attack=0.03, bright=bright)
+
+
+def stab():
+    """Punchy synth-brass-stoot op C4: zaagtand + blokgolf (ontstemd), lowpass 2,4 kHz, felle filterstoot (25 ms)."""
+    f0, per, kmax = 261.63, 64, 30
+    amps = []
+    for k in range(1, kmax + 1):
+        g = lp(k * f0, 2400) * (1 + 0.5 * np.exp(-((np.log2(k * f0 / 1000)) ** 2) / 0.6))
+        amps.append((g / k, 0.7 * g * pulse(k, 0.5)))
+    bright = [1.0 / k * lp(k * f0, 6000) * (k >= 3) for k in range(1, kmax + 1)]
+    return osc_mix(f0, per, amps, 128, 1, attack=0.025, bright=bright)
+
+
+def sine():
+    f0, per = 523.25, 32
+    return additive(f0, per, [1.0, 0.08], 64)
+
+
 SAMPLES = {
     # naam: (functie, label-noot); label = noot waarop de sample in de MIDI 'thuis' is
     'np_pulse_bass': (bass, 48),        # klinkt C2, gelabeld C3: alles een octaaf lager dan geschreven
-    'np_lead_warm': (lead_warm, 60),
+    'np_lead_pulse': (lead_pulse, 72),
+    'np_stab': (stab, 60),
+    'np_sine': (sine, 72),
     'np_brass_full': (lambda: saw_brass(261.63, 64, 30, 2500), 60),
     'np_brass_full_lo': (lambda: saw_brass(65.406, 256, 110, 2000), 36),
     'np_organ_sharp': (organ, 72),

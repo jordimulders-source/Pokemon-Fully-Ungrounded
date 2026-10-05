@@ -279,3 +279,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   > 2 kHz 18-30% vs 16%). **Tempowissels:** mid2agb zet een TEMPO op de tick van het loopeinde ná de GOTO (wordt nooit
   gespeeld): zet het tempo van het loopbegin op de looptick zelf (dan staat het direct na het label). De lint rekent
   uitklinktijden met het eerste tempo; de stemverdeler in het script rekent met het snelste (meeste ticks).
+- Neo Plasma v7 (Jordi over v6: 'kaal, dun, los zand'; GBA-lagen): lead op bronhoogte (DS) + octaaf lager op PSG-
+  vierkant 1 (vel 96), sub op de PSG-golf, arpeggio B op PSG-vierkant 2 (16 ticks later, pan 85), off-beat-tweeklanken
+  (np_stab) alleen uit brontonen (gitaar is meestal 16e-octaven = alleen grondtoon -> arpeggiotonen van die tel; geen
+  secundes, niet in unisono-riffs), four-on-the-floor, snare 2/4 + ghosts, 16e-hats met accent op de kwart.
+  **PSG-noten onder C2 (36) klinken allemaal als C2** (`MidiKeyToCgbFreq` klemt key <= 35): een sub-bas op de golf kan
+  niet onder 65 Hz. **De game staat standaard op mono** (`optionsSound`): panning hoor je alleen in stereo; maak een
+  L/R-splitsing ook in mono zinvol (ander timbre/kleine vertraging). Lagen op PSG kosten geen DS-kanalen: daarmee bleef
+  de stemverdeler binnen 10 (melodie/bas/drums 0% weg). Tempo-check op de mp3 (fold-scherpte): 175,96 scherp, 150-155 vlak.

@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v6. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 orgel, 38 pulse-bas, 62/63 synth brass, 80 warme pulse-lead, 114 steel drums, 127 drums.
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v7. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 pulse-bas, 62/63 synth brass, 80 pulse-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 stoot, 114 steel drums, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -81,13 +81,13 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_directsound 60, 0, DirectSoundWaveData_np_lead_warm, 255, 235, 200, 140  @ 80
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
+	voice_directsound 72, 0, DirectSoundWaveData_np_lead_pulse, 255, 235, 200, 140  @ 80
+	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 81
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1  @ 82
-	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_2, 0, 7, 15, 1  @ 83
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
+	voice_square_2 60, 0, 2, 0, 2, 6, 1  @ 84
+	voice_directsound 72, 0, DirectSoundWaveData_np_sine, 255, 220, 200, 140  @ 85
+	voice_directsound 60, 0, DirectSoundWaveData_np_stab, 255, 200, 120, 100  @ 86
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89

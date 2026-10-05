@@ -7282,8 +7282,16 @@ DirectSoundWaveData_np_pulse_bass::
 	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
 
 	.align 2
-DirectSoundWaveData_np_lead_warm::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_warm.bin"
+DirectSoundWaveData_np_lead_pulse::
+	.incbin "sound/direct_sound_samples/grounded/np_lead_pulse.bin"
+
+	.align 2
+DirectSoundWaveData_np_stab::
+	.incbin "sound/direct_sound_samples/grounded/np_stab.bin"
+
+	.align 2
+DirectSoundWaveData_np_sine::
+	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
 
 	.align 2
 DirectSoundWaveData_np_brass_full::

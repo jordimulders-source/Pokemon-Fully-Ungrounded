@@ -166,6 +166,9 @@ static void Task_SickBlik(u8); // Project Grounded
 static void Task_Steven(u8); // Project Grounded
 static void Task_WallyVhs(u8); // Project Grounded
 static void Task_RayquazaPillar(u8); // Project Grounded
+static void Task_Mimi(u8); // Project Grounded
+static void Task_Keccles(u8); // Project Grounded
+static void Task_Burglar(u8); // Project Grounded
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -648,6 +651,9 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_STEVEN] = Task_Steven, // Project Grounded
     [B_TRANSITION_WALLY_VHS] = Task_WallyVhs, // Project Grounded
     [B_TRANSITION_RAYQUAZA_PILLAR] = Task_RayquazaPillar, // Project Grounded
+    [B_TRANSITION_MIMI] = Task_Mimi, // Project Grounded
+    [B_TRANSITION_KECCLES] = Task_Keccles, // Project Grounded
+    [B_TRANSITION_BURGLAR] = Task_Burglar, // Project Grounded
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -8997,10 +9003,11 @@ static void RTDave_Init(struct Task *task)
     task->tRtB = -1; // getekende tilemap
 }
 
-static bool8 RTDave_Update(struct Task *task)
+// de penalty zelf (ongewijzigd); t = 0 is het begin van de penalty (na de tribune, zie RTDaveFull_Update)
+static bool8 RTDave_Penalty(struct Task *task, s32 t)
 {
     u16 *tilemap = RT_Tilemap();
-    s32 t = task->tRtTimer, x, y, scale, shake = 0, key = 0;
+    s32 x, y, scale, shake = 0, key = 0;
 
     // 1. beeld gaat open vanuit het midden (elke rij in één keer zijn eindwaarde)
     if (t < DAVE_REVEAL)
@@ -9078,15 +9085,7 @@ static bool8 RTDave_Update(struct Task *task)
     return t >= DAVE_END;
 }
 
-static const struct RouteTransition sRT_Dave =
-{
-    sDave_Tileset, sizeof(sDave_Tileset), sDave_Palette, 1, 1, 0, RTDave_Init, RTDave_Update, RT_FinishSprite
-};
-
-static void Task_Dave(u8 taskId)
-{
-    RouteTransition_Run(taskId, &sRT_Dave);
-}
+// sRT_Dave en Task_Dave staan na de filmspeler (de tribune vooraf is een film)
 
 //------------------------------------------------------------------------
 // Project Grounded: filmtransities (Steven, Wally, Rayquaza). Een film is per gameframe een tilemap (LZ77), een
@@ -9447,6 +9446,262 @@ static const struct RouteTransition sRT_RayquazaPillar =
 static void Task_RayquazaPillar(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_RayquazaPillar);
+}
+
+// ---------------- gedeelde hulpjes voor de filmtransities hieronder: geluid op vaste frames en trillen
+struct FilmSfx
+{
+    u16 frame;
+    u16 se;
+};
+
+static void Film_PlaySfx(s32 t, const struct FilmSfx *sfx, u32 n)
+{
+    u32 i;
+    for (i = 0; i < n; i++)
+    {
+        if (sfx[i].frame == t)
+            PlaySE(sfx[i].se);
+    }
+}
+
+// trillen (amp px) tussen t0 en t1, anders stil
+static void Film_Shake(s32 t, s32 t0, s32 t1, u32 amp)
+{
+    if (t >= t0 && t < t1)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+}
+
+
+// ---------------- Dave (Freed From Desire), deel 1: de tribune. Een wave loopt rond, op de laatste noot van de eerste
+// riff gaat het spandoek DP PENNINGS omhoog, op de klap een close-up, op de eerste noot van de tweede riff flitsen de
+// camera's. Dan de penalty (RTDave_Penalty, ongewijzigd) op de tweede riff: die begint DAVE_STADIUM frames later
+// (klok 192 = 225 muziekframes), dus alle penaltytijden blijven op de maat. Film: tools/grounded/dave_stadium.py.
+static const u32 sFilmDaveStadium_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_tiles.bin");
+static const u32 sFilmDaveStadium_Loads[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_loads.bin");
+static const u32 sFilmDaveStadium_Runs[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_runs.bin");
+static const u32 sFilmDaveStadium_Maps[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_maps.bin");
+static const u32 sFilmDaveStadium_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_mapofs.bin");
+static const u32 sFilmDaveStadium_Seq[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_seq.bin");
+static const u16 sFilmDaveStadium_Pal[] = INCBIN_U16("graphics/battle_transitions/film_dave_stadium_pal.bin");
+static const struct Film sFilm_DaveStadium = FILM(FilmDaveStadium);
+
+#define DAVE_STADIUM    225     // lengte van de tribunefilm = één keer de riff (2 maten)
+#define DAVE_SWITCH     (DAVE_STADIUM - 5) // de film is hier al zwart: penalty-tiles laden
+
+static const struct FilmSfx sDaveStadiumSfx[] =
+{
+    {10, SE_APPLAUSE},
+    {122, SE_APPLAUSE},
+};
+
+static void RTDaveFull_Init(struct Task *task)
+{
+    RTDave_Init(task);
+    Film_Init(task);
+}
+
+static bool8 RTDaveFull_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+    u16 *tilemap, *tileset;
+
+    if (t < DAVE_SWITCH)
+    {
+        Film_PlaySfx(t, sDaveStadiumSfx, ARRAY_COUNT(sDaveStadiumSfx));
+        Film_Shake(t, 206, 212, 2);
+        Film_Update(task, &sFilm_DaveStadium);
+        return FALSE;
+    }
+    if (t == DAVE_SWITCH)
+    {
+        // beide filmschermen leeg, het oorspronkelijke scherm terug, de penalty-tiles en het balpalet (de film heeft
+        // de sprites zwart geblend) opnieuw laden
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        CpuFill16(0, Film_Screen(task, 0), BG_SCREEN_SIZE);
+        CpuFill16(0, Film_Screen(task, 1), BG_SCREEN_SIZE);
+        SetGpuReg(REG_OFFSET_BG0CNT, (u16)task->tFilmCnt);
+        GetBg0TilesDst(&tilemap, &tileset);
+        CpuCopy16(sDave_Tileset, tileset, sizeof(sDave_Tileset));
+        LoadPalette(sDaveBall_Palette, OBJ_PLTT_ID(IndexOfSpritePaletteTag(RT_SPRITE_TAG)), PLTT_SIZE_4BPP);
+        TRY_FREE_AND_SET_NULL(sFilmBuffer);
+        return FALSE;
+    }
+    if (t < DAVE_STADIUM)
+        return FALSE;
+    return RTDave_Penalty(task, t - DAVE_STADIUM);
+}
+
+static void RTDaveFull_Finish(struct Task *task)
+{
+    RT_FinishSprite(task);
+    Film_Finish(task);
+}
+
+static const struct RouteTransition sRT_Dave =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sDave_Palette, 1, 1, 0, RTDaveFull_Init, RTDaveFull_Update, RTDaveFull_Finish
+};
+
+static void Task_Dave(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Dave);
+}
+
+// ---------------- Mimi (Mimikyu, Mimic Circle Route 119; ook in het Battle Stadium): een donkere kinderkamer met een
+// poppenkast ("THE PIKACHU SHOW"). Het doek gaat open, de Pikachu-pop draait langzaam zijn kop opzij tot het nekje
+// knakt (busted), het licht flikkert en gaat uit, en onder het doek gaan twee ogen open. Film: mimi_transition.py.
+static const u32 sFilmMimi_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mimi_tiles.bin");
+static const u32 sFilmMimi_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mimi_loads.bin");
+static const u32 sFilmMimi_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mimi_runs.bin");
+static const u32 sFilmMimi_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mimi_maps.bin");
+static const u32 sFilmMimi_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mimi_mapofs.bin");
+static const u32 sFilmMimi_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mimi_seq.bin");
+static const u16 sFilmMimi_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mimi_pal.bin");
+static const struct Film sFilm_Mimi = FILM(FilmMimi);
+
+// tijden: zie mimi_transition.py
+#define MIMI_SNAP 150
+
+static const struct FilmSfx sMimiSfx[] =
+{
+    {30, SE_CONTEST_CURTAIN_RISE},
+    {80, SE_ROTATING_GATE},
+    {108, SE_ROTATING_GATE},
+    {132, SE_ROTATING_GATE},
+    {MIMI_SNAP, SE_ICE_CRACK},
+    {166, SE_M_THUNDER_WAVE},
+    {192, SE_SWITCH},
+    {201, SE_M_LEER},
+};
+
+static bool8 RTMimi_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sMimiSfx, ARRAY_COUNT(sMimiSfx));
+    Film_Shake(t, MIMI_SNAP, MIMI_SNAP + 8, 2);
+    return Film_Update(task, &sFilm_Mimi);
+}
+
+static const struct RouteTransition sRT_Mimi =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMimi_Pal, 1, 1, 0, Film_Init, RTMimi_Update, Film_Finish
+};
+
+static void Task_Mimi(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Mimi);
+}
+
+// ---------------- Keccles (Kecleon, het meesterbrein; ook in het Battle Stadium): een verlaten lab vol schoolborden.
+// De camera zoekt (handheld): het lege lab, de formules, THE PLAN met jouw gezicht omcirkeld. Een rode zigzag hangt in
+// de lucht, een oog gaat open in het krijt, de camouflage golft weg en Keccles staat er. Q.E.D. Film:
+// keccles_transition.py.
+static const u32 sFilmKeccles_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_keccles_tiles.bin");
+static const u32 sFilmKeccles_Loads[] = INCBIN_U32("graphics/battle_transitions/film_keccles_loads.bin");
+static const u32 sFilmKeccles_Runs[] = INCBIN_U32("graphics/battle_transitions/film_keccles_runs.bin");
+static const u32 sFilmKeccles_Maps[] = INCBIN_U32("graphics/battle_transitions/film_keccles_maps.bin");
+static const u32 sFilmKeccles_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_keccles_mapofs.bin");
+static const u32 sFilmKeccles_Seq[] = INCBIN_U32("graphics/battle_transitions/film_keccles_seq.bin");
+static const u16 sFilmKeccles_Pal[] = INCBIN_U16("graphics/battle_transitions/film_keccles_pal.bin");
+static const struct Film sFilm_Keccles = FILM(FilmKeccles);
+
+// tijden: zie keccles_transition.py
+#define KECCLES_SHOT3 98
+
+static const struct FilmSfx sKecclesSfx[] =
+{
+    {54, SE_M_LOCK_ON},
+    {KECCLES_SHOT3, SE_M_LOCK_ON},
+    {126, SE_M_LEER},
+    {148, SE_M_TELEPORT},
+    {194, SE_M_SKETCH},
+};
+
+// handheld: een langzaam zwalkende camera (in pixels, per 4 frames een stap)
+static const s8 sKecclesWobbleX[16] = {0, 1, 1, 2, 2, 1, 1, 0, 0, -1, -1, -2, -2, -1, -1, 0};
+static const s8 sKecclesWobbleY[16] = {0, 0, 1, 1, 1, 1, 0, 0, -1, -1, -1, 0, 0, 1, 0, 0};
+
+static bool8 RTKeccles_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sKecclesSfx, ARRAY_COUNT(sKecclesSfx));
+    if (t < KECCLES_SHOT3)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, sKecclesWobbleX[(t >> 2) & 15] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, sKecclesWobbleY[((t >> 2) + 5) & 15] & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, &sFilm_Keccles);
+}
+
+static const struct RouteTransition sRT_Keccles =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmKeccles_Pal, 1, 1, 0, Film_Init, RTKeccles_Update, Film_Finish
+};
+
+static void Task_Keccles(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Keccles);
+}
+
+// ---------------- Burglar (Simon, het inbreker-event; ook in het Battle Stadium): bewakingscamera CAM 03, de Burglar
+// uit Red/Blue sluipt door de woonkamer, draait zich naar de camera, digitale zoom (2X, 4X), REC knippert, alarm. Film:
+// burglar_transition.py.
+static const u32 sFilmBurglar_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_burglar_tiles.bin");
+static const u32 sFilmBurglar_Loads[] = INCBIN_U32("graphics/battle_transitions/film_burglar_loads.bin");
+static const u32 sFilmBurglar_Runs[] = INCBIN_U32("graphics/battle_transitions/film_burglar_runs.bin");
+static const u32 sFilmBurglar_Maps[] = INCBIN_U32("graphics/battle_transitions/film_burglar_maps.bin");
+static const u32 sFilmBurglar_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_burglar_mapofs.bin");
+static const u32 sFilmBurglar_Seq[] = INCBIN_U32("graphics/battle_transitions/film_burglar_seq.bin");
+static const u16 sFilmBurglar_Pal[] = INCBIN_U16("graphics/battle_transitions/film_burglar_pal.bin");
+static const struct Film sFilm_Burglar = FILM(FilmBurglar);
+
+// tijden: zie burglar_transition.py
+#define BURGLAR_ALARM 182
+
+static const struct FilmSfx sBurglarSfx[] =
+{
+    {8, SE_PC_ON},
+    {106, SE_PIN},
+    {124, SE_M_LOCK_ON},
+    {142, SE_M_LOCK_ON},
+    {BURGLAR_ALARM, SE_M_SCREECH},
+    {BURGLAR_ALARM + 16, SE_M_SCREECH},
+};
+
+static bool8 RTBurglar_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sBurglarSfx, ARRAY_COUNT(sBurglarSfx));
+    Film_Shake(t, BURGLAR_ALARM, BURGLAR_ALARM + 36, 1);
+    return Film_Update(task, &sFilm_Burglar);
+}
+
+static const struct RouteTransition sRT_Burglar =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmBurglar_Pal, 1, 1, 0, Film_Init, RTBurglar_Update, Film_Finish
+};
+
+static void Task_Burglar(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Burglar);
 }
 
 // ---------------- Kyogre/Groudon (Marine Cave / Terra Cave): een oude muurschildering van hun strijd (Groudon met de

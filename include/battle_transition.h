@@ -117,6 +117,9 @@ enum BattleTransition
     B_TRANSITION_GROUDON_MURAL, // Project Grounded: Groudon, dezelfde schildering, lava stroomt door de barsten
     B_TRANSITION_OGERPON, // Project Grounded: Ogerpon, maskerkraam op een nachtfestival, het Teal-masker kijkt terug
     B_TRANSITION_WEATHER_SERVICE, // Project Grounded: Archie + Maxie (werkstraf), koffievlek Groudon/Kyogre, rooster scheurt
+    B_TRANSITION_MIMI, // Project Grounded: Mimi, poppenkast in een donkere kinderkamer, het nekje van de Pikachu-pop knakt
+    B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
+    B_TRANSITION_BURGLAR, // Project Grounded: Burglar, bewakingscamera, de Gen 1-Burglar kijkt in de lens, alarm
     B_TRANSITION_COUNT
 };
 

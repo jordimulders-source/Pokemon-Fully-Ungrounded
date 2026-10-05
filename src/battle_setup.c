@@ -996,6 +996,14 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
     if (trainerId == TRAINER_SICKBLIK)
         return B_TRANSITION_SICKBLIK;
+    // Project Grounded: Mimi (poppenkast), Keccles (camouflage in het lab) en de Burglar (bewakingscamera), ook in het
+    // Battle Stadium. Vervangen de mugshot, zoals bij Steven.
+    if (trainerId == TRAINER_MIMI)
+        return B_TRANSITION_MIMI;
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+        return B_TRANSITION_KECCLES;
+    if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5) || trainerId == TRAINER_STADIUM_BURGLAR)
+        return B_TRANSITION_BURGLAR;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)

@@ -16894,3 +16894,30 @@ Volgens Jordi's GBA-instructies per leider:
 | Tate & Liza | psy-bas op het PSG-golfkanaal (eigen 4-bit zaagtand) in 16en; melodie als 16e-arpeggio's (Liza omlaag, Tate omhoog) met pitch-bend-sweeps; 144 bpm |
 
 - Batchcontrole: 0 overlopen, piek 82–105/127.
+
+### [v0.9.88] - Muziekbatch 5 (11 nummers)
+- **Heatran v7:** actief en dynamisch, met 5 riffs en 4 tempowissels (74 ↔ 130 bpm).
+  - Dreigende intro met slides en bends, dan een drumfill naar een stompende palm-mute-riff (Green Machine-achtig).
+  - Daarna een Gardenia-achtige groove, sludge met kreunende lead, een beukriff met crashes, een lead-climax en de Regi-dreiging.
+  - Stops en tomfills vóór elke riffwissel.
+  - De lint keurt nu ook saaiheid af, naast ska.
+- **Mitch v5:**
+  - Lead 25% zachter; reese en wobble voller en luider.
+  - Hardere kick en snare, met ducking van 1–2 frames.
+- **Neo Plasma v9:**
+  - Vette synth-brass/pulse-lead op de opening-run en het loopbegin (+25%).
+  - Valse noten gecorrigeerd: G→A in de gitaar (fout in de bron), G uit de E-akkoorden, 49 off-beat-stoten op een oud akkoord.
+  - De bridge krijgt stijgende arpeggio's en bas-stoten.
+- **Victini v3:** nieuwe, strakke intro met stijgende koperstoten en een V-fanfare. De loop is gelijk aan v2.
+- **Darkrai v3:**
+  - Opbouw vanuit het wiegelied naar een zware climax halverwege, met lage koperstoten en schurende clusterakkoorden.
+  - De climax ligt ±4,7 dB boven het begin.
+  - -V078 (piek 128 → 111).
+- **Genesect v3:** terug naar v1 (cyber-funk), met strakkere fills, roffels en stops.
+- **Gymleiders ronde 3** (oorzaak "kermis": hoempa-bas, originele PSG- en koperbegeleiding, ska-skank). Alle begeleiding is opnieuw gebouwd; alleen de melodie komt uit het origineel.
+  - **Roxanne:** 80s hard rock in half-time, diepe rock-snare, powerchords, distortion-lead met bends.
+  - **Brawly:** nu-metal met drop-C-chugs op tel 1, double kick en de scratches van v1.
+  - **Flannery:** rumba flamenca met palmas, cajón, rasgueado en een funky fretloze bas.
+  - **Winona:** donkere dance pop (supersaw, reese, harde snare).
+  - **Tate & Liza:** Goa op 138 bpm met K-B-B-B-bas en galop-arpeggio's. De melodie is modaal verduisterd.
+- **Batchcontrole:** alle 11 0 overlopen, piek ≤ 114/127.

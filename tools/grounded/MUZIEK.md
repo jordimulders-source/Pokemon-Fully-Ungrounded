@@ -259,3 +259,20 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Neo Plasma v4 (Jordi over v2/v3: 'rotzooi, klinkt totaal niet zoals de bron, eentoniger'): **meet tegen een opname van
+  het origineel, niet tegen een GM-render van de MIDI.** Werkwijze: (1) bronscheiding met Spleeter 4 stems (`pip install
+  --no-deps spleeter` + typer/pandas/future/norbert/ffmpeg-python; model `4stems.tar.gz` van de GitHub-release van
+  deezer/spleeter; demucs-/torch-downloads zijn geblokkeerd); (2) uitlijnen: onset-kruiscorrelatie per 8 maten (de
+  MIDI liep exact gelijk met de mp3, maat k = 0,75 s + k x 1,364 s) en structuur: de MIDI bevatte de loop twee keer
+  (74-137 = 10-73) -> v4 = intro 0-9 + loop 10-73; (3) **instrument per spoor kiezen met NNLS**: render elk bronspoor
+  solo met kandidaat-GM-programma's en kijk welke combinatie het mel-spectrogram van het origineel het best verklaart
+  (per sectie): 'Electric Guitar' bleek een aanhoudende synth brass, de bas Slap Bass 2 een octaaf lager, het orgel
+  percussief, de kit een grote elektronische kick (de MIDI-snares op de off-beats zijn hihats); (4) balans met
+  `tools/grounded/balance_orig.py` (GBA-solo per groep, NNLS tegen het origineel + octaafbanden per sectie).
+  v3 had 31-125 Hz 4-9 dB te weinig en 0,5-8 kHz 4-5 dB te veel (dun, schel); v4 zit overal binnen ±1,5 dB (8 kHz +4).
+- Uitlijnen op aanslagen (kick op elke tel) kan precies één tel verkeerd vallen; `balance_orig.align` lijnt uit op chroma.
+- Spectrogrammen (CQT, log-frequentie) van origineel en GBA naast elkaar als PNG bekijken werkt goed om rollen te zien:
+  lange lijnen = doorklinkende noten (het origineel liet arpeggio's/akkoorden doorklinken; de MIDI had korte noten),
+  een constante lage lijn = een te lang uitklinkende, gestemde kick op achtsten (bromde op 52 Hz -> kick korter, op C2).
+- Spleeter-stems zijn bruikbaar voor drumpatronen (aanslag per band per 16e) en octaafcontrole per spoor (energie op f0/2,
+  f0, 2f0), maar harmonische vingerafdrukken uit een volle mix zijn onbetrouwbaar (te veel overlap).

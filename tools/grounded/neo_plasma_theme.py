@@ -4,6 +4,20 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v9 (Jordi over v8: 'het ritme zit er erg goed in, maar de iconische eerste seconden kloppen niet qua instrumentatie
+en impact'; ritmische basis van v8 blijft):
+1. Opening-run en loopbegin: maat 0-21 (de stijgende chromatische run van de intro, de 64e-loopjes, en het
+   arpeggio-thema vanaf het loopbegin) op een vette GBA-lead (np_lead_fat: sc88pro_square_wave x2 ontstemd +
+   sc88pro_trumpet = synth brass, harde aanzet; < C4 np_lead_fat_lo zonder trompet). Het arpeggio eronder ook (korte
+   release i.p.v. de tokkelende pluk). Lead-CC7 in de run (maat 2-4) en het loopbegin (maat 10-13) 92 -> 115 (+25%).
+2. Valse noten in de B-sectie (Jordi 0:22-0:35 = maat 25,7-35,3 van het nummer), gemeten tegen zijn mp3
+   (fix_b_section, stabs, held_tones): bron-transcriptiefouten G4 -> A4 (maat 32-33) en G3 weg uit de E-akkoorden
+   (maat 22-29); de off-beat-stoten van v7 met een oud akkoord (49 van 79) kregen een tweeklank uit de tonen die dan
+   klinken (28) of vervallen (21); aangehouden sawtooth-akkoordtonen (o.a. Bb5/Bb4 in maat 35) die de mono lead
+   afkapte, klinken weer (spoor 'hold', 62 tonen).
+3. Brug (Jordi 0:48 = maat 44,8): stijgende 16e-arpeggio's (crescendo) op de vette lead + PSG-vierkant 2 en
+   staccato bas-stoten in achtsten op de PSG-sub, maat 44 tel 2 t/m 49.
+
 v8 (Jordi over v7: 'ritme en noot-timing perfect, maar de sporen hangen niet aan de juiste instrumenten uit het
 GBA-soundfont; laat noten en timing EXACT staan en verander alleen de instrument-toewijzing'). Diff per spoor t.o.v.
 v7: aanslagen, toonhoogtes en velocity's identiek; alleen programma's/voices, releases, CC7 en de nootlengtes van
@@ -94,6 +108,7 @@ SAW_SHIFT = 17              # sawtooth vanaf maat 5: 17 ticks te vroeg in de bro
 # programma's in voicegroup_grounded_neo_plasma
 BASS, BRASS, BRASS_LO, ORGAN, LEAD, DRUMS = 38, 62, 63, 17, 80, 127
 BODY, SUB, ARPB, DSINE, STAB, PLUCK = 81, 82, 84, 85, 86, 87
+FAT_LO, FAT_HI, FARP_LO, FARP_HI, HOLD = 88, 89, 90, 91, 92      # v9
 VOICES = {
     LEAD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 140',
     BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 12, 3',
@@ -107,6 +122,14 @@ VOICES = {
     ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
     SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
+    # v9: vette GBA-lead (blokgolf x2 + synth brass, neo_plasma_samples.fat_lead) voor de opening-run en het
+    # loopbegin; als arpeggio met een korte release (geen tokkel: aanhouden en snel los)
+    FAT_LO:   'voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 120',
+    FAT_HI:   'voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 120',
+    FARP_LO:  'voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40',
+    FARP_HI:  'voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40',
+    # v9: aangehouden sawtooth-akkoordtonen uit de bron (vielen in v5-v8 weg door de mono lead/arpeggio)
+    HOLD:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 100',
 }
 # drumkit (noot -> regel); standaard GBA-samples in de GM-indeling (v8; v7 had 36-43 op een rij)
 KICK, SNARE, SNARE_OFF, SNARE24, CHAT, OHAT, CRASH, SPLASH = 36, 38, 39, 40, 42, 46, 49, 55
@@ -140,12 +163,24 @@ ARPB_DELAY = 16                             # spoor B van de arpeggio's: 1/24 te
 VOL = dict(lead=92, body=66, brass=97, brass_lo=81, organ=62, bass=114, sub=96, steel=38, arp=34, arpb=40,
            dsine=40, stab=45, drums=80)
 LEGATO_GAP = BEAT           # lead: een noot houdt aan tot de volgende aanslag als de rust ertussen <= 1 tel is
+# v9: vette lead + arpeggio in de intro en het openingsdeel van de loop (maat 0-21: de opening-run en het
+# arpeggio-thema), daarna de v8-blokgolf. Leadvolume (CC7) per stuk: de opening-run (maat 2-4) en het loopbegin
+# (maat 10-13) +25% (92 -> 115), de rest van maat 0-21 104.
+FAT_END = 22 * BAR
+LEAD_VOL = [(0, 104), (2 * BAR, 115), (5 * BAR, 104), (10 * BAR, 115), (14 * BAR, 104), (FAT_END, 92)]
+VOL_HOLD = 46
+# v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
+# en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
+# tel 2 tot maat 50.
+BRIDGE = (44 * BAR + BEAT, 50 * BAR)
+VOL_ARPB_BRIDGE = 72
+VOL_BARP = 64               # v9: het brug-arpeggio op DirectSound (vette lead, korte release)
 
 
 def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v8. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 127 drums.'
+    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v9. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
+    lines[1] = '@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 127 drums.'
     lines[2] = 'voice_group grounded_neo_plasma'
     out = []
     for l in lines:
@@ -182,7 +217,31 @@ def fixed_source(m):
         q = ((s - 72) // S16) * S16 + S16 if s % S16 >= 70 else s
         org.append([q, q + (e - s), n, v])
     T[6] = dedupe(org)
+    fix_b_section(T)
     return T
+
+
+def fix_b_section(T):
+    """v9 (Jordi: 'valse noten in de B-sectie, 0:22-0:35' = maat 25,7-35,3 van het nummer). Noot voor noot gemeten
+    tegen Jordi's mp3 (harmonische salience op de Spleeter-stem 'other'+'vocals', zie MUZIEK.md):
+    - maat 32-33: het gitaarakkoord is D-A-D zoals in maat 30-31 (A4 overal sterk, G4 afwezig); de bron had G4: die
+      G4 schuurde twee maten lang tegen de melodie (F#5/A5/C#5) -> A4.
+    - maat 22-29: het gitaarakkoord is een kwintakkoord E-B-E (G3 komt in de opname niet voor, F/A wel: de
+      tegenlijn G-Bb-A van de lage gitaar); de G3 van de bron gaf met die tegenlijn (G3/Bb3/A3, v6 een octaaf
+      omhoog) secundes -> weg."""
+    gtr = T[5]
+    on = {}
+    for e in gtr:
+        on.setdefault(e[0], set()).add(e[2])
+    out = []
+    for e in gtr:
+        s_, n = e[0], e[2]
+        if 32 * BAR <= s_ < 34 * BAR and n == 67:
+            e = [e[0], e[1], 69, e[3]]
+        elif 22 * BAR <= s_ < 30 * BAR and n == 55 and {52, 59, 64} <= on[s_]:
+            continue
+        out.append(e)
+    T[5] = out
 
 
 def quantize_runs(ev, grid=16):
@@ -263,6 +322,87 @@ def ds_check(res, progs, order):
           'een uitklinkende staart afgekapt (m4a pakt eerst een kanaal in release) %s' % (hard, tot, sum(over.values()), over))
 
 
+def prog_events(notes, prog_of):
+    """v9: programmawissels per noot (alleen bij een wissel), en op het loopbegin opnieuw (de sprong terug)."""
+    out, cur, looped = [], None, False
+    for s_, e_, n, v in sorted(notes):
+        p = prog_of(n, s_)
+        if p != cur or (s_ >= LOOP0 and not looped):
+            out.append((s_, 'prog', p))
+            cur = p
+        if s_ >= LOOP0:
+            looped = True
+    return out
+
+
+def held_tones(saw, res, order, progs, real):
+    """v9: sawtooth-noten >= C3 van >= 3 16en die in de uitvoer (lead/arpeggio's/steel) korter dan 60% op dezelfde
+    toonhoogte klinken (de mono lead en het uitgedunde arpeggio kappen aangehouden akkoordtonen af: in maat 34-44 en
+    9 klonk zo het halve akkoord niet, bv. de Bb5/Bb4 in maat 35). Alleen waar een DS-kanaal vrij is."""
+    out_n = [(a, b, n) for k in ('lead', 'farp', 'arp', 'steel') for a, b, n, v in res[k]]
+    cand = []
+    for s_, e_, n, v in sorted(saw):
+        if n < 48 or e_ - s_ < 3 * S16 or s_ >= END:
+            continue
+        e_ = min(e_, END)
+        cov = sum(max(0, min(e_, b) - max(s_, a)) for a, b, m in out_n if m == n)
+        if cov < 0.6 * (e_ - s_):
+            cand.append([s_, e_, n, 127])
+    by = {}
+    for e in sorted(dedupe(cand)):
+        by.setdefault(e[2], []).append(e)
+    for lst in by.values():                     # zelfde toonhoogte mag in één spoor niet overlappen
+        for a, b in zip(lst, lst[1:]):
+            a[1] = min(a[1], b[0])
+    th = release_ticks(100, TPB, BPM)
+    cand = detach(sorted(e for lst in by.values() for e in lst if e[1] > e[0]), th)
+    busy = []
+    for k in order:
+        t = 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
+        busy += [(a, b + t) for a, b, n, v in res[k]]
+    kept = allocate({'hold': cand}, ['hold'], {'hold': th}, preset=busy)['hold']
+    print('  hold: %d aangehouden akkoordtonen terug, %d passen niet (geen kanaal vrij)' % (len(kept), len(cand) - len(kept)))
+    return kept
+
+
+def bridge_arp(T, bass):
+    """v9: stijgende arpeggio's (16en, crescendo) in de brug. Maat 44 (tel 2-4): de tonen van het aangehouden akkoord
+    B5/G5/B4 (alleen G en B: de bas loopt er C/Eb onder), per tel een stap hoger. Vanaf maat 45 (unisono-riff en de
+    3-3-2-brug in kwinten): bij elke nieuwe basnoot opnieuw stijgend vanaf zijn grondtoon, met de kwint (als die toon in de bron dan klinkt;
+    anders octaven), vanaf maat 47 een octaaf hoger: zo volgt het arpeggio de 3-3-2-wissels."""
+    src = [(a, b, n) for i in (3, 4, 5) for a, b, n, v in T[i]]
+    out = []
+    for t in range(BRIDGE[0], BRIDGE[1], S16):
+        if t < 45 * BAR:
+            tones = [67, 71, 79, 83, 91, 95]                      # G4 B4 G5 B5 G6 B6 (de aangehouden tonen)
+            k, i = (t - 44 * BAR) // BEAT - 1, (t % BEAT) // S16
+            n = tones[k + i]
+        else:
+            o, _, r, _ = max([e for e in bass if e[0] <= t], key=lambda e: e[0])
+            pcs = {m % 12 for a, b, m in src if a < o + S16 and b > o}
+            steps = [0, 7, 12, 19, 24, 31] if (r + 7) % 12 in pcs else [0, 12, 24, 36]
+            up = 12 if t >= 47 * BAR else 0
+            n = r % 12 + 60 + up + steps[((t - o) // S16) % len(steps)]
+        while n > 96:
+            n -= 12
+        frac = (t - BRIDGE[0]) / (BRIDGE[1] - BRIDGE[0])
+        out.append([t, t + 80, n, int(64 + 60 * frac)])
+    return out
+
+
+def bridge_sub(bass):
+    """v9: staccato bas-stoten in achtsten op de PSG-sub (maat 45-49) op de toonhoogte van de laatst aangeslagen
+    basnoot (zelfde octaaf als de sub), accent waar de bas zelf aanslaat, crescendo."""
+    ons = {e[0] for e in bass}
+    out = []
+    for t in range(45 * BAR, BRIDGE[1], BEAT // 2):
+        n = max([e for e in bass if e[0] <= t], key=lambda e: e[0])[2]
+        n = n - 12 if n - 12 >= 36 else n
+        frac = (t - 45 * BAR) / (BRIDGE[1] - 45 * BAR)
+        out.append([t, t + 72, n, 127 if t in ons else int(92 + 24 * frac)])
+    return out
+
+
 def staccato(ev, f, lo, hi):
     return [[s, s + max(lo, min(hi, int((e - s) * f))), n, v] for s, e, n, v in ev]
 
@@ -334,7 +474,7 @@ def octave_down(ev):
     return out
 
 
-def stabs(guitar, arp):
+def stabs(guitar, arp, src=None):
     """v7: staccato akkoordstoten (2 stemmen, G3-D5) op elke 'en' (8e off-beat) in de gevechtsmaten zonder orgel.
     De gitaar speelt meestal 16e-octaven (alleen de grondtoon), dus akkoord = een gitaarakkoord met >= 2 toonklassen
     (aanzet <= 2 tellen eerder; geen stoot als het akkoord precies op deze 'en' zelf slaat), anders de
@@ -344,7 +484,7 @@ def stabs(guitar, arp):
     for s_, e_, n, v in guitar:
         onsets.setdefault(s_, set()).add(n)
     chords = sorted(t for t, ns in onsets.items() if len({n % 12 for n in ns}) >= 2)
-    out = []
+    out, skipped, replaced = [], 0, 0
     for b in range(10, 74):
         if b in BREAK or b in ORGAN_BARS or b in UNISONO_BARS:
             continue
@@ -367,8 +507,22 @@ def stabs(guitar, arp):
                 voiced[n % 12] = n
             vs = sorted(voiced.values(), reverse=True)
             pair = next(((hi, lo) for i, hi in enumerate(vs) for lo in vs[i + 1:] if 3 <= hi - lo <= 9), None)
+            if pair and src is not None:
+                # v9: een stoot mag alleen tonen bevatten die de bron op dat moment (t .. t + 72) laat klinken, en
+                # geen kleine secunde maken met een brontoon: v7 nam het laatste akkoord tot 2 tellen
+                # terug, en dat schuurde (C4 tegen C#/D in maat 25/27/29, C#4 tegen D in maat 18-21, F4/A3 tegen Em
+                # in maat 42). Is de v7-tweeklank fout, dan een tweeklank uit de tonen die nu klinken; anders geen.
+                now = {n % 12 for a, b, n in src if a < t + 72 and b > t}
+                ok = lambda n: n % 12 in now and not any((n - m) % 12 in (1, 11) for m in now)
+                if not all(ok(n) for n in pair):
+                    vs2 = sorted({n % 12: 55 + (n - 55) % 12 for n in now if ok(n)}.values(), reverse=True)
+                    pair = next(((hi, lo) for i, hi in enumerate(vs2) for lo in vs2[i + 1:] if 3 <= hi - lo <= 9), None)
+                    replaced += pair is not None
+                    skipped += pair is None
             if pair:
                 out += [[t, t + 72, n, 100] for n in pair]
+    print('  stoten: %d (v9: %d met een andere tweeklank, %d weggelaten: geen passende tonen)' % (len(out) // 2, replaced,
+                                                                                               skipped))
     return out
 
 
@@ -435,7 +589,8 @@ def build():
     sub = [[s_, e_, n - 12 if n - 12 >= 36 else n, 127] for s_, e_, n, v in bass]
     # orgel: zelfde register, kort en scherp (ongewijzigd sinds v5)
     organ = staccato(thin(T[6], 3, 'top'), 0.7, 20, 200)
-    stab = stabs(guitar, arp)
+    srcmel = [(a, b, n) for i in range(3, 10) for a, b, n, v in T[i]]
+    stab = stabs(guitar, arp, srcmel)
     # waar een stoot valt en de brass een octaaf-chug speelt: alleen de bovenste noot van de chug (scheelt een kanaal)
     st = {e[0] for e in stab}
     hi = {}
@@ -455,17 +610,40 @@ def build():
     rel.update({BASS: 120, BRASS: 120, BRASS_LO: 110, LEAD: 140, STAB: 100, PLUCK: 150})
     progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': PLUCK, 'brass_lo': BRASS_LO,
              'arp': PLUCK, 'stab': STAB, 'dsine': DSINE}
+    # v9: het arpeggio in de opening (maat 0-21) op de vette lead met een korte release (FARP: aanhouden en snel los
+    # i.p.v. de tokkel van de blokgolf-pluk): een eigen partij met een eigen uitklinktijd, vlak vóór 'arp'
+    parts['farp'] = [e for e in parts['arp'] if e[0] < FAT_END]
+    parts['arp'] = [e for e in parts['arp'] if e[0] >= FAT_END]
+    progs['farp'] = FARP_LO
+    rel[FARP_LO] = 40
     tail = {k: release_ticks(rel[p], TPB, BPM) for k, p in progs.items()}
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
-    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'arp', 'brass_lo']
+    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'steel', 'dsine', 'stab', 'farp', 'arp', 'brass_lo']
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = releases('grounded_neo_plasma')
     res['lead'] = trim_legato(res, order, {k: 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
                                            for k in order})
     body = [[s_, e_, n - 12, 96] for s_, e_, n, v in res['lead'] if n - 12 >= 40]
+    # v9: aangehouden sawtooth-akkoordtonen (>= 3 16en, >= C3) die nergens meer klinken: eigen spoor 'hold', alleen
+    # waar een kanaal vrij is (uitklinktijden van alle andere partijen meegerekend)
+    res['hold'] = held_tones(T[4], res, order, progs, real)
+    order.append('hold')
+    progs['hold'] = HOLD
+    parts['hold'] = res['hold']
+    # v9: het brug-arpeggio ook op DirectSound (vette lead, release 40: 1 kanaal), waar een kanaal vrij is; de
+    # PSG-kopie op arp B klinkt 1/24 tel later (zoals elders in het nummer)
+    barp = [[s_, s_ + 64, n, v] for s_, e_, n, v in bridge_arp(T, res['bass'])]
+    busy = []
+    for k in order:
+        t_ = 0 if k == 'drums' else release_ticks(real[progs[k]], TPB, BPM)
+        busy += [(a, b + t_) for a, b, n, v in res[k]]
+    res['barp'] = allocate({'barp': barp}, ['barp'], {'barp': release_ticks(40, TPB, BPM)}, preset=busy)['barp']
+    order.append('barp')
+    progs['barp'] = FARP_HI
+    parts['barp'] = barp
     ds_check(res, progs, order)
     print('drumnoten buiten de kit (weg): %d, lage sawtooth-noten (basverdubbeling, weg): %d' % (drum_drop, saw_low))
     for k in order:
@@ -473,30 +651,41 @@ def build():
         print('  %-9s %4d noten, %3d vallen weg (%.1f%%)' % (k, n, n - kept, 100 * (n - kept) / max(n, 1)))
     p = res
     # arpeggio spoor B (PSG): alle arpeggio's/steel drums (ook wat in A wegviel), 1/24 tel later
-    arpb = mono([[s_ + ARPB_DELAY, e_ + ARPB_DELAY, n, v] for s_, e_, n, v in parts['arp'] + parts['steel']])
-    psg = {'body': dedupe(clip(body)), 'sub': dedupe(clip(sub)), 'arpb': dedupe(clip(arpb))}
+    arpb = mono([[s_ + ARPB_DELAY, e_ + ARPB_DELAY, n, v] for s_, e_, n, v in parts['farp'] + parts['arp'] + parts['steel']])
+    # v9: brug: stijgende arpeggio's op arp B en staccato bas-stoten in achtsten op de sub
+    arpb = [e for e in arpb if not BRIDGE[0] <= e[0] < BRIDGE[1]] + \
+        [[s_ + ARPB_DELAY, e_ + ARPB_DELAY, n, v] for s_, e_, n, v in bridge_arp(T, res['bass'])]
+    sub = [e for e in sub if not 45 * BAR <= e[0] < BRIDGE[1]] + bridge_sub(res['bass'])
+    psg = {'body': dedupe(clip(body)), 'sub': dedupe(clip(sorted(sub))), 'arpb': dedupe(clip(sorted(arpb)))}
     song = Song(TPB, 500000)
     tempo_map(song, END)
     song.loop = (LOOP0, END)
+    lead_prog = lambda n, s_: (FAT_HI if n >= 60 else FAT_LO) if s_ < FAT_END else LEAD
+    arp_prog = lambda n, s_: (FARP_HI if n >= 60 else FARP_LO) if s_ < FAT_END else PLUCK
+    lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in LEAD_VOL]
+    arp_notes = sorted(p['farp'] + p['arp'])
+    arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [
-        (p['lead'], LEAD, VOL['lead'], 0, 64),
+        (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
         (psg['body'], BODY, VOL['body'], 1, 64),
         (p['brass'], BRASS, VOL['brass'], 2, 56),
         (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
         (p['bass'], BASS, VOL['bass'], 5, 64),
         (psg['sub'], SUB, VOL['sub'], 6, 64),
-        (p['arp'], PLUCK, VOL['arp'], 7, 35),
+        (arp_notes, arp_prog(arp_notes[0][2], 0), VOL['arp'], 7, 35, prog_events(arp_notes, arp_prog)),
         (p['steel'], PLUCK, VOL['steel'], 8, 35),
-        (psg['arpb'], ARPB, VOL['arpb'], 10, 85),
+        (psg['arpb'], ARPB, VOL['arpb'], 10, 85, arpb_cc),
         (p['stab'], STAB, VOL['stab'], 11, 60),
         (p['dsine'], DSINE, VOL['dsine'], 12, 64),
         (p['drums'], DRUMS, VOL['drums'], 9, None),
+        (p['hold'], HOLD, VOL_HOLD, 13, 92),
+        (p['barp'], FARP_HI, VOL_BARP, 14, 40),
     ]
     written = 0
-    for notes, prog, vol, ch, pan in tracks:
+    for notes, prog, vol, ch, pan, *cc in tracks:
         assert notes, 'lege partij'
-        song.add(notes, prog, vol, ch, pan)
+        song.add(notes, prog, vol, ch, pan, ccs=cc[0] if cc else ())
         written += len(notes)
     assert written == sum(len(p[k]) for k in order) + sum(len(v) for v in psg.values()), 'niet elke partij staat in de MIDI'
     song.save(OUT, END)

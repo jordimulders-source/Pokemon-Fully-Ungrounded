@@ -93,8 +93,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | SickBlik | `sickblik_theme.py` | goedgekeurd (v2) | "SickBlik" |
 | Ashfrost (winter) | `ashfrost_theme.py` | goedgekeurd | "Ashfrost" |
 | Heatran | `heatran_theme.py` | v5 in de maak (Kyuss "Odyssey" x GBA) | "Heatran" |
-| Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
-| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
+| Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -392,3 +392,15 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   PSG-lead op blokgolf 1 = alle tegenstemmen op blokgolf 1 naar DirectSound (anders stelen ze de lead). Melodie
   als 16e-arpeggio's: melodienoot op zijn eigen tick + op elke tel, daartussen akkoordtonen; controle = elke
   (tick, toets) van het origineel zit er nog in.
+- Mitch v5 (Jordi over v4: '95%; bas moet baas zijn, lead 20-30% zachter, kick/snare harder en droger, kortere diepere
+  sidechain'): **'bas luider' en 'drums harder' botsen**: de eerste v5-mix (reese CC7 112 op samples die al +6 dB
+  luider waren) gaf kick+snare in 30 ms nog maar +6,5 dB boven de rest (v4 +10,5). Niet nog een test-ROM: **solo-opnames
+  (recpcm + volX = 0, `solopcm.py`-achtig) zijn additief** (som = de mix, r 0,996; negeer de eerste 0,5 s) en laten zich
+  offline met gains mengen. Ducking van 1-2 frames werkt (bas -10 dB op de slag, terug in ±30 ms). Merges kunnen een
+  -V terugzetten (Heatran v6 zette Mitch -V088 terug op -V070): midi.cfg na elke merge per nummer controleren.
+- Neo Plasma v9 ('valse noten in de B-sectie'): **eerst de eigen lagen controleren** (`pccheck`: per uitvoernoot de
+  toonklasse t.o.v. de brontonen die dan klinken): de v7-off-beat-stoten met 'het laatste akkoord tot 2 tellen terug'
+  schuurden in 49 van 79 gevallen (C4 tegen C#/D). Daarna de bron tegen de opname: harmonische salience op de
+  Spleeter-stem 'other'+'vocals' (veel schoner dan de mix) vond twee transcriptiefouten in binnenstemmen (G4 i.p.v. A4
+  in maat 32-33, G3 in kwintakkoorden). Een mono lead + uitgedund arpeggio kapt aangehouden akkoordtonen af (107 tonen;
+  het Bb-akkoord in maat 35 klonk zo als F): meet de dekking per bronnoot. Previews: Jordi's tijden + preview-start!

@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm met gamelan voor Battle! Rayquaza. Gegenereerd door tools/grounded/rayquaza_theme.py.
-@ 10 kotekan-gangsa (gedempt), 11 gangsa, 12 reyong, 13 jegogan, 14 gong ageng, 15 kempur, 75 suling, 112 kempli, 121 ceng-ceng, 127 kendang.
+@ 10 kotekan-gangsa (gedempt), 11 gangsa, 12 reyong, 13 jegogan, 14 gong ageng, 15 kempur, 16 gongbas, 52 laag koor, 75 suling, 80/82/83 PSG-leads van het origineel, 112 kempli, 121 ceng-ceng, 127 kendang.
 voice_group grounded_rayquaza
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -11,13 +11,13 @@ voice_group grounded_rayquaza
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 7
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 8
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 9
-	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gangsa, 255, 0, 255, 175  @ 10
+	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gangsa, 255, 0, 255, 140  @ 10
 	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gangsa, 255, 0, 255, 226  @ 11
 	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_reyong, 255, 0, 255, 228  @ 12
 	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_jegogan, 255, 0, 255, 232  @ 13
 	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gong, 255, 0, 255, 220  @ 14
 	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gong, 255, 0, 255, 220  @ 15
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 16
+	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_gongbass, 255, 0, 255, 180  @ 16
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 17
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 18
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 19
@@ -53,7 +53,7 @@ voice_group grounded_rayquaza
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 52
+	voice_directsound 60, 0, DirectSoundWaveData_rayquaza_choir, 40, 0, 255, 215  @ 52
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 53
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
@@ -81,10 +81,10 @@ voice_group grounded_rayquaza
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
+	voice_square_2 60, 0, 3, 0, 1, 7, 1  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
+	voice_square_1 60, 0, 0, 3, 0, 1, 7, 1  @ 82
+	voice_square_1 60, 0, 0, 3, 0, 0, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86

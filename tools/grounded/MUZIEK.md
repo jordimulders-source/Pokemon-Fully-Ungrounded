@@ -259,3 +259,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Rayquaza v2 (Jordi: 'pas op 28 s herken ik het, tonen weggevallen 50-60 s en vanaf 1:10; mag intenser, lage
+  koren'): de stemverdeler liet niets vallen; de herkenning zat in sporen die ik had vervangen. **Meet bij een remix
+  eerst per bronspoor solo wat het origineel draagt** (`tools/grounded/solo_rms.py`: RMS per sectie per spoorgroep): in maat 8-19 waren de pauken
+  (G-C-ostinato) het luidste spoor, daarna bas en de PSG-lijnen; de trompetmelodie zelf was zacht. v1 maakte van de
+  pauken ongestemde conga's, liet de PSG-sporen weg (kotekan ervoor in de plaats) en de bas alleen op de tellen.
+  Herkenbaar bleef alleen maat 20-23, waar de fluit (suling) de melodie draagt. Fix: pauken op gestemde
+  kendangslagen (conga 222 Hz -> key 58/63 = G3/C4; toonhoogte van een drumsample meten met een FFT), PSG-sporen
+  1-op-1 terug (incl. programma-/CC-wissels en XCMD-echo: `src_events`), hele baslijn. Pelog-kotekan: een toon van het
+  origineel die niet in de toonladder zit vervangt de buren (anders Db/Eb tegen D). Laag koor als kwint-tweeklank in
+  één sample (FluidR3 52+53 op C3+G3, `rayquaza_samples.py` CHOIRS). Spookslagen als aparte partij met de laagste
+  prioriteit (anders verdringen ze de sangsih: 25% -> 3%). -V070: piek 91/127, RMS 2840. audiocheck '196 Hz' = de
+  op G3 gestemde kendang (45% van zijn solo-spectrum in die band), geen brom.
+

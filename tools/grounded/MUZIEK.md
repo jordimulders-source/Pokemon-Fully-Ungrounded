@@ -259,3 +259,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- PSG-drums opgeruimd (v0.9.67) in Zinnia, Colress, Giratina, Birch, Sunset Wilds, Yoshi's Castle en Broken Pier via
+  `drum_map` (ook in `prepare()`; waarde `(noot, factor)` schaalt de velocity, bv. side stick -> snare x0,6).
+  **Drumnoten buiten rs_drumset (36-64) lezen de buren in het geheugen**: boven 64 = `frlg_drumset` (noot n -> frlg
+  n-29; Birch' open triangel 81 = frlg 52 = PSG-blokgolf), onder 36 = het einde van `dummy.inc` (35 = hyoushigi,
+  33 = unknown_snare). Reken het na met `arm-none-eabi-nm pokeemerald.elf | grep drumset` (label = begin - 36x12).

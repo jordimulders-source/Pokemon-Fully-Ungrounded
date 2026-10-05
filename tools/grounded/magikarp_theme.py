@@ -19,6 +19,8 @@ Voicegroup grounded_magikarp (gegenereerd) = grounded_gm met eigen samples (gm_s
 84 kazoo (gesynthetiseerde zoempuls), 78 fluitje (slide whistle), 45 pizzicato, 47 pauken met korte release,
 127 eigen drumkit (drumsets/magikarp.inc): kick, snare, woodblock hoog/laag (FluidR3), boing (synth), plons
 (bubbels), vibraslap (FluidR3), crash; 44/45 cry-scratch en cry (magikarp_samples.py, uit de echte Gen 3-cry). Alles DirectSound; de shaker is PSG-ruis (kost geen kanaal).
+v3: kazoo 3,7 dB zachter (volume 67), en de cry-scratch vaker: A8 stotterend 'Ma-Ma-Ma-Ma-' onder de duik, C1 als
+antwoord op de xylofoon (gewoon en een kwart hoger), C8 de hele cry achterstevoren tot de terugsprong.
 Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/magikarp_theme.py"""
 import math, os, sys
 import mido
@@ -31,12 +33,14 @@ TPB, BPM = 48, 150
 E = TPB // 2                   # een achtste
 S16 = TPB // 4
 XYLO, PIZZ, TIMP, TRUMPET, TUBA, BASSOON, WHISTLE, KAZOO, SHAKER, DRUMS = 13, 45, 47, 56, 58, 70, 78, 84, 120, 127
-KICK, SNARE, WB_HI, WB_LO, BOING, PLONS, VIBRA, CRASH, CRY_SCRATCH, CRY = range(36, 46)
+KICK, SNARE, WB_HI, WB_LO, BOING, PLONS, VIBRA, CRASH, CRY_SCRATCH, CRY, CRY_HI, CRY_STUT, CRY_REV = range(36, 49)
 DRUM_LEN = {KICK: 20, SNARE: 22, WB_HI: 8, WB_LO: 8, BOING: 88, PLONS: 36, VIBRA: 120, CRASH: 96,
-            CRY_SCRATCH: 23, CRY: 108}          # cry: 0,19 s / 0,90 s bij 150 bpm (8,33 ms per tick)
+            CRY_SCRATCH: 23, CRY: 108,          # cry: 0,19 s / 0,90 s bij 150 bpm (8,33 ms per tick)
+            CRY_HI: 17, CRY_STUT: 10, CRY_REV: 108}   # v3: scratch een kwart hoger, 'Ma' 0,08 s, cry achterstevoren
 KAZOO_SHIFT = -12             # v2 (Jordi: 'het eerste deuntje te hoog, tot het irritante aan toe'): kazoo een octaaf lager
 BENDR = {'kazoo': 12, 'whistle': 12, 'tpt': 2}
-CRY_VOL = 90
+CRY_VOL = 60                   # v3: mee omlaag met de kazoo (blijft net onder de lead)
+KAZOO_VOL = 67                 # v3 (Jordi: 'hoofdtoon iets te luid'): 100 -> 67 = -3,5 dB t.o.v. de rest
 
 N = {'C': 0, 'C#': 1, 'D': 2, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'Ab': 8, 'A': 9, 'Bb': 10, 'B': 11}
 
@@ -267,6 +271,18 @@ def build():
         s = START['B5'] + e8 * E
         parts['cry'].append([s, s + DRUM_LEN[n], n, 127])
     drum('B5', 7, PLONS, 72)
+    # v3 (Jordi: 'de scratch is gelukt, mag vaker'): nog drie scratches, steeds op de maat en net onder de lead.
+    # A8 (einde van de eerste A): terwijl de kazoo een octaaf omlaag duikt, blijft de plaat haken: 'Ma-Ma-Ma-Ma-'
+    for k in range(4):
+        s = START['A8'] + 5 * E + k * S16
+        parts['cry'].append([s, s + DRUM_LEN[CRY_STUT], CRY_STUT, 104 + 6 * k])
+    # C1: de xylofoon flapt, Magikarp antwoordt in de gaten: 'Ma-?' (2-en) ... 'MA-?!' (4-en, een kwart hoger)
+    for e8, n, v in ((3, CRY_SCRATCH, 110), (7, CRY_HI, 120)):
+        s = START['C1'] + e8 * E
+        parts['cry'].append([s, s + DRUM_LEN[n], n, v])
+    # C8: onder de fanfare de hele cry achterstevoren, die precies op de terugsprong (A1, crash) eindigt
+    s = END - 2 - DRUM_LEN[CRY_REV]                                # 2 ticks marge: niet over de loopsprong heen
+    parts['cry'].append([s, END - 2, CRY_REV, 120])
     # B6: wah wah wah waaah (treurtrompet, tuba eronder)
     mel('tpt', 'B6', DRAMA['B6'], 110)
     for x in DRAMA['B6']:
@@ -408,10 +424,14 @@ def write_voicegroup():
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',    # 43 crash
         'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry_scratch, 255, 0, 255, 0',                  # 44 cry-scratch
         'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry, 255, 0, 255, 0',                          # 45 cry
+        'voice_directsound 65, 64, DirectSoundWaveData_magikarp_cry_scratch, 255, 0, 255, 0',                  # 46 cry-scratch hoog
+        'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry_stutter, 255, 0, 255, 0',                  # 47 'Ma' (stotter)
+        'voice_directsound 60, 64, DirectSoundWaveData_magikarp_cry_rev, 255, 0, 255, 0',                      # 48 cry achterstevoren
     ]
     open('sound/voicegroups/drumsets/magikarp.inc', 'w').write(
         '@ Project Grounded: drumkit voor Battle! Magikarp (magikarp_theme.py): 36 kick, 37 snare, 38/39 woodblock,\n'
-        '@ 40 boing (springveer), 41 plons (bubbels), 42 vibraslap, 43 crash, 44 cry-scratch, 45 cry (magikarp_samples.py).\n'
+        '@ 40 boing (springveer), 41 plons (bubbels), 42 vibraslap, 43 crash, 44 cry-scratch, 45 cry, 46 cry-scratch hoog,\n'
+        '@ 47 stotter-scratch, 48 cry achterstevoren (magikarp_samples.py).\n'
         'voice_group magikarp_drumset, 36\n' + ''.join('\t%s\n' % k for k in kit) + '\n')
 
 
@@ -437,7 +457,7 @@ def main():
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
     song.loop = (LOOP, END)
-    layout = [('kazoo', KAZOO, 100, 0, 64), ('xylo', XYLO, 84, 1, 84), ('tpt', TRUMPET, 104, 2, 54),
+    layout = [('kazoo', KAZOO, KAZOO_VOL, 0, 64), ('xylo', XYLO, 84, 1, 84), ('tpt', TRUMPET, 104, 2, 54),
               ('tpt2', TRUMPET, 88, 3, 74), ('tuba', TUBA, 112, 4, 64), ('bassoon', BASSOON, 96, 5, 44),
               ('pizz', PIZZ, 84, 6, 92), ('timp', TIMP, 96, 7, 64), ('whistle', WHISTLE, 76, 8, 70),
               ('shaker', SHAKER, 40, 10, 80)]

@@ -328,6 +328,13 @@ herkennen is, komt ook als controle in `music_lint.py`.
   partijen in het goede register is wat het doet klinken.
 - Jordi's Jirachi-idee was **geen tempo-opbouw van de bestaande delen**, maar een **tussenstuk met lang uitgerekte
   'wahhh'-vocalen boven een snelle beat**, daarna terug. Vraag bij een vaag idee door of geef twee varianten.
+- Magikarp v3 (Jordi: 'hoofdtoon iets te luid; de scratch mag vaker'): **lead zachter = solo-RMS per sectie meten**
+  (kazoo vs. alle andere sporen samen): A 1833 vs. 1527 -> kazoo-volume 100 -> 67 (-3,7 dB gemeten), cry mee omlaag
+  (90 -> 60, elke scratch 4-6 dB onder de kazoo), en het verlies in de totale mix terug met -V108 -> 120 (piek 94/127,
+  RMS 2403). Scratch-varianten als losse drumkit-noten: stotter ('Ma', 0,08 s, in zestienden), dezelfde scratch een
+  kwart hoger (key 65 in de kit = toonhoogte, de gespeelde noot telt niet) en de cry achterstevoren die 2 ticks vóór de
+  loopsprong eindigt (riser naar de crash van A1). Eigen solo-RMS-script met de echte maatgrenzen (5/8, 7/8): kopie van
+  `solo_rms.py` met secties uit `START` van het thema; de eerste 0,2 s van een opname is ruis van de vorige muziek.
 
 - Neo Plasma v4 (Jordi over v2/v3: 'rotzooi, klinkt totaal niet zoals de bron, eentoniger'): **meet tegen een opname van
   het origineel, niet tegen een GM-render van de MIDI.** Werkwijze: (1) bronscheiding met Spleeter 4 stems (`pip install

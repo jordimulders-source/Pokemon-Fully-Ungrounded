@@ -6819,3 +6819,11 @@ DirectSoundWaveData_np_snare::
 	.align 2
 DirectSoundWaveData_np_kick::
 	.incbin "sound/direct_sound_samples/grounded/np_kick.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_stutter::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_stutter.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_rev::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_rev.bin"

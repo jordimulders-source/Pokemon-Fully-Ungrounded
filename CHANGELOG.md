@@ -16941,3 +16941,8 @@ Volgens Jordi's GBA-instructies per leider:
   - "Foute noten in het tweede thema" (0:22–0:35) klopten niet: de lead volgt het origineel daar noot voor noot (gecontroleerd op de Spleeter-stems). Wél fout rond 1:08: orgelakkoorden, sawtooth en 8-bit-sinus stonden in maat 50–62 een octaaf te hoog (bron-MIDI); die staan nu goed.
   - Dikkere bas (sample met eigen grondtoon, +33% RMS, luider), basstoten x . x x . x . x in de bridge, hihats lopen door in de halftime-break.
   - Harde controles in het script: niets boven C6 in melodiesporen, geen akoestische/trage-attack-samples.
+
+### [v0.9.91] - Battle Stadium: drie bugs uit Jordi's test
+- **Partnerkeuzescherm:** Pokémon-iconen kregen de kleuren van de gekozen partner (de trainerfoto overschreef icoonpalet 0). Elke foto krijgt nu een eigen paletslot.
+- **Multi/tag battle:** je verloor zodra jouw drie Pokémon op waren, ook als de partner er nog had (de Gen 4+-regel telde je echte team buiten het toernooi mee). Nu pas verlies als speler én partner op zijn.
+- **Partnerlijst:** LEFT/RIGHT en L/R springen een pagina (9 regels), UP bovenaan springt naar het einde en DOWN onderaan naar het begin. Hulptekst "←→ L/R: page" rechtsboven.

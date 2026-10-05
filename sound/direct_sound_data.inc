@@ -7610,18 +7610,6 @@ DirectSoundWaveData_gym_fla_castanets::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_castanets.bin"
 
 	.align 2
-DirectSoundWaveData_np_pulse_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_pulse_bass.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_pulse::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_pulse.bin"
-
-	.align 2
-DirectSoundWaveData_np_stab::
-	.incbin "sound/direct_sound_samples/grounded/np_stab.bin"
-
-	.align 2
 DirectSoundWaveData_np_sine::
 	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
 

@@ -981,6 +981,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
 
+    // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
+    if (trainerId == TRAINER_DAVE)
+        return B_TRANSITION_DAVE;
+
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)
         return B_TRANSITION_NEO_PLASMA;

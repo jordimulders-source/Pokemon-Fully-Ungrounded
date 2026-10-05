@@ -17,6 +17,10 @@
 .include "sound/voicegroups/drumsets/mitch.inc"
 .include "sound/voicegroups/drumsets/genesect.inc"
 .include "sound/voicegroups/drumsets/victini.inc"
+.include "sound/voicegroups/drumsets/gym2_wallace.inc"
+.include "sound/voicegroups/drumsets/gym2_tate.inc"
+.include "sound/voicegroups/drumsets/gym2_winona.inc"
+.include "sound/voicegroups/drumsets/gym2_norman.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -241,3 +245,4 @@
 .include "sound/voicegroups/grounded_genesect.inc"
 .include "sound/voicegroups/grounded_victini.inc"
 .include "sound/voicegroups/grounded_darkrai.inc"
+.include "sound/voicegroups/grounded_gym2.inc"

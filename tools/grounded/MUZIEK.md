@@ -287,3 +287,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   niet onder 65 Hz. **De game staat standaard op mono** (`optionsSound`): panning hoor je alleen in stereo; maak een
   L/R-splitsing ook in mono zinvol (ander timbre/kleine vertraging). Lagen op PSG kosten geen DS-kanalen: daarmee bleef
   de stemverdeler binnen 10 (melodie/bas/drums 0% weg). Tempo-check op de mp3 (fold-scherpte): 175,96 scherp, 150-155 vlak.
+- Gymleiders 5-8 v1 (`gym_remixes2.py`, samples `gym2_samples.py`, één voicegroup `grounded_gym2` + vier kits
+  `drumsets/gym2_*.inc`): **het vanilla-gymleiderthema haalt de lint zelf niet** (tot 17 noten: pianotriller release 239,
+  strijkers-16en 196, pauken 226 in maat 0-1). Fix zonder noten te schrappen: alle niet-drumpartijen `detach`en
+  (aanslag/toonhoogte gelijk, lengte max. een uitklinktijd korter; het script controleert dat tegen het origineel) +
+  eigen korte intro-varianten (piano1_84 rel 150, strings_72 rel 140, piano1_60 rel 200) -> 0% weg in alle vier.
+  Akkoordlagen bij een remix: grondtoon = **laagste** basnoot per halve maat (de C-G-bas begint soms op G) en per halve
+  maat checken op kleine secunden met de melodie; voicings zonder terts (G-A-Bb-D op C) passen bij zowel E als F.
+  Trainermuziek op trainerId: niet in Frontier/Trainer Hill (eigen nummering botst met TRAINER_NORMAN_1 = 269).

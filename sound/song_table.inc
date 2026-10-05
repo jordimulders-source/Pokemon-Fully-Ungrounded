@@ -650,6 +650,8 @@ gSongTable::
 	song mus_grounded_ashfrost, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_mitch, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_sickblik, MUSIC_PLAYER_BGM, 0
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 644: plaatshouder
+	song mus_grounded_vs_darkrai, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

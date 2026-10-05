@@ -11,6 +11,7 @@
 .include "sound/voicegroups/drumsets/jirachi.inc"
 .include "sound/voicegroups/drumsets/heatran.inc"
 .include "sound/voicegroups/drumsets/neo_plasma.inc"
+.include "sound/voicegroups/drumsets/darkrai.inc"
 .include "sound/voicegroups/drumsets/rayquaza.inc"
 .include "sound/voicegroups/drumsets/sickblik.inc"
 .include "sound/voicegroups/drumsets/mitch.inc"
@@ -236,3 +237,4 @@
 .include "sound/voicegroups/grounded_sickblik.inc"
 .include "sound/voicegroups/grounded_mitch.inc"
 .include "sound/voicegroups/grounded_ashfrost.inc"
+.include "sound/voicegroups/grounded_darkrai.inc"

@@ -516,3 +516,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   30-60 Hz +5 dB t.o.v. het origineel; per octaaf omhoog tot >= C3 (en weg als het akkoord die toon al speelt).
 - NNLS-gewichten (balance_orig) tegen een origineel met een ander leadtimbre zeggen 'lead -11 dB te luid': negeren
   als de opdracht 'melodie voorop' is; gebruik dan de solo-RMS t.o.v. de mix (lead -6,6, drums -4,8 ≈ drumstem -3,8).
+- Darkrai v1 (`darkrai_theme.py`, eigen compositie, 7/8 (2+2+3) en in B 9-7-9-5, 150 bpm, E-klein; samples
+  `darkrai_samples.py`): **ongewone maatsoorten = gewoon een tijdlijn van maten in achtsten** (`BARS`), mid2agb kent geen
+  maatsoort. **Ontstemd = in de sample + pitch bend**: speeldoos met een kopie +22 cent gebakken (zweving) en per noot een
+  bend van 10-40 cent (BENDR 2, 64 = 2 halve tonen, vaste seed); lange noten zakken weg (kromme band). Bends op een
+  drone-spoor aan het eind van een sectie terugzetten (anders blijft de loop vals). **Achterstevoren klanken als samples**:
+  `x[::-1]` van een FluidR3-noot/cluster/bekken (aanslag aan het eind = zuigt naar de tel; de noot een samplelengte vóór
+  de tel starten), het hele wiegelied achterstevoren in één sample (op exact 4 maten geresampled = 1 kanaal), de Gen 3-cry
+  achterstevoren op 0,8x. Ritardando via de tempokaart per achtste (even bpm). Opname door de coördinator (batchrec.py).

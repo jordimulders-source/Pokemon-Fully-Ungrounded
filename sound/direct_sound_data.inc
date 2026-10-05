@@ -7216,3 +7216,31 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_music_box::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_music_box.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_celesta::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_celesta.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_rev_box::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_rev_box.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_rev_cluster::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_rev_cluster.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_lullaby_rev::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_lullaby_rev.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_cry_rev::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_cry_rev.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_revcym::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_revcym.bin"

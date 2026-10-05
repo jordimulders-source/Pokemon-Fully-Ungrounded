@@ -447,7 +447,7 @@ def write_voicegroup():
     kit = [   # vanaf noot 36; alles DirectSound (FluidR3-kit uit heatran_samples.py + sb_pedal_hat/sb_clap)
         'voice_directsound_no_resample 60, 64, DirectSoundWaveData_heatran_kick, 255, 0, 255, %d' % DRUM_REL[KICK],
         'voice_directsound_no_resample 60, 60, DirectSoundWaveData_heatran_snare, 255, 0, 255, %d' % DRUM_REL[SNARE],
-        'voice_directsound_no_resample 60, 84, DirectSoundWaveData_heatran_closed_hat, 255, 0, 255, %d' % DRUM_REL[CHH],
+        'voice_directsound_no_resample 60, 84, DirectSoundWaveData_sb_closed_hat, 255, 0, 255, %d' % DRUM_REL[CHH],  # kopie van Heatran v2's closed hat (Heatran v3 gebruikt hem niet meer)
         'voice_directsound_no_resample 60, 84, DirectSoundWaveData_heatran_open_hat, 255, 0, 255, %d' % DRUM_REL[OHH],
         'voice_directsound_no_resample 60, 80, DirectSoundWaveData_sb_pedal_hat, 255, 0, 255, %d' % DRUM_REL[PHH],
         'voice_directsound_no_resample 60, 40, DirectSoundWaveData_heatran_crash, 255, 0, 255, %d' % DRUM_REL[CRASH],

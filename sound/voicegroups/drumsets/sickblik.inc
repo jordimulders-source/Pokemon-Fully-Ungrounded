@@ -3,7 +3,7 @@
 voice_group sickblik_drumset, 36
 	voice_directsound_no_resample 60, 64, DirectSoundWaveData_heatran_kick, 255, 0, 255, 0
 	voice_directsound_no_resample 60, 60, DirectSoundWaveData_heatran_snare, 255, 0, 255, 0
-	voice_directsound_no_resample 60, 84, DirectSoundWaveData_heatran_closed_hat, 255, 0, 255, 0
+	voice_directsound_no_resample 60, 84, DirectSoundWaveData_sb_closed_hat, 255, 0, 255, 0
 	voice_directsound_no_resample 60, 84, DirectSoundWaveData_heatran_open_hat, 255, 0, 255, 190
 	voice_directsound_no_resample 60, 80, DirectSoundWaveData_sb_pedal_hat, 255, 0, 255, 0
 	voice_directsound_no_resample 60, 40, DirectSoundWaveData_heatran_crash, 255, 0, 255, 220

@@ -108,6 +108,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v3 (anti-kermis, half-time), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
+| Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -480,3 +481,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   meten zonder extra ROM**: volX (MusicPlayerTrack +19, standaard 64, x = vol*volX>>5) per spoor elke frame zetten +
   vlag 0x03 (anders pakt m4a het niet op) bootst CC7- en -V-wijzigingen exact na in recpcm/recaudio. -V064: 0
   overlopen, piek 86/127, RMS 3157; < 150 Hz in de brug 42% (met de dunne bas 34%, origineel 52%).
+- Burglar v1 (`burglar_theme.py`, samples `burglar_samples.py`, kit `drumsets/burglar.inc`; noir-jazz-heist, D-klein):
+  swing 150 bpm (de 'en' op 2/3 van de tel: `tick()`), accelerando per tel 152-174 in de twee alarmmaten -> 176 recht,
+  ritardando terug; tempo van het loopbegin op de looptick. Anti-kermis als harde controle in het script
+  (`anti_kermis()`: geen begeleidingsnoot boven de klinkende melodienoot, voor de alarmstoot de bovenste toon van de
+  voicing; geen bas-sprong >= 5 halve tonen omhoog op een 'en'; PSG-sirene alleen waar de melodie rust). Alarmstoot =
+  één sample per voicing (bari D3 + koper D4/Ab4/C#5, tanh + stootenvelop: FluidR3-koper zwelt anders aan, piek pas op
+  0,43 s). Vingerknip gesynthetiseerd (ruis door bandpass 2,3 kHz, 35 ms). FluidR3 Brush-kit = bank 128 prog 40.
+

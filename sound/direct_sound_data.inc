@@ -7924,3 +7924,75 @@ DirectSoundWaveData_np_gbrass_lo::
 	.align 2
 DirectSoundWaveData_np_gbrass_hi::
 	.incbin "sound/direct_sound_samples/grounded/np_gbrass_hi.bin"
+
+	.align 2
+DirectSoundWaveData_bg_upright::
+	.incbin "sound/direct_sound_samples/grounded/bg_upright.bin"
+
+	.align 2
+DirectSoundWaveData_bg_mtpt::
+	.incbin "sound/direct_sound_samples/grounded/bg_mtpt.bin"
+
+	.align 2
+DirectSoundWaveData_bg_bari::
+	.incbin "sound/direct_sound_samples/grounded/bg_bari.bin"
+
+	.align 2
+DirectSoundWaveData_bg_vibes::
+	.incbin "sound/direct_sound_samples/grounded/bg_vibes.bin"
+
+	.align 2
+DirectSoundWaveData_bg_stab::
+	.incbin "sound/direct_sound_samples/grounded/bg_stab.bin"
+
+	.align 2
+DirectSoundWaveData_bg_kick::
+	.incbin "sound/direct_sound_samples/grounded/bg_kick.bin"
+
+	.align 2
+DirectSoundWaveData_bg_brush_tap::
+	.incbin "sound/direct_sound_samples/grounded/bg_brush_tap.bin"
+
+	.align 2
+DirectSoundWaveData_bg_brush_slap::
+	.incbin "sound/direct_sound_samples/grounded/bg_brush_slap.bin"
+
+	.align 2
+DirectSoundWaveData_bg_ride::
+	.incbin "sound/direct_sound_samples/grounded/bg_ride.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat_pedal::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat_pedal.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat_open::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat_open.bin"
+
+	.align 2
+DirectSoundWaveData_bg_snare::
+	.incbin "sound/direct_sound_samples/grounded/bg_snare.bin"
+
+	.align 2
+DirectSoundWaveData_bg_rim::
+	.incbin "sound/direct_sound_samples/grounded/bg_rim.bin"
+
+	.align 2
+DirectSoundWaveData_bg_crash::
+	.incbin "sound/direct_sound_samples/grounded/bg_crash.bin"
+
+	.align 2
+DirectSoundWaveData_bg_tom_lo::
+	.incbin "sound/direct_sound_samples/grounded/bg_tom_lo.bin"
+
+	.align 2
+DirectSoundWaveData_bg_tom_hi::
+	.incbin "sound/direct_sound_samples/grounded/bg_tom_hi.bin"
+
+	.align 2
+DirectSoundWaveData_bg_snap::
+	.incbin "sound/direct_sound_samples/grounded/bg_snap.bin"

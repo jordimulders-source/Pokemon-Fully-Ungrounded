@@ -6148,6 +6148,23 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_JUAN_5:
         return MUS_GROUNDED_VS_WALLACE;
     }
+    // Project Grounded: gymleiders 1-4 (+ rematches; _5 ook in het Stadium) vechten op een eigen remix van het
+    // gymleiderthema (tools/grounded/gym_remixes.py)
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL)))
+    {
+        switch (trainerId)
+        {
+        case TRAINER_ROXANNE_1: case TRAINER_ROXANNE_2: case TRAINER_ROXANNE_3: case TRAINER_ROXANNE_4: case TRAINER_ROXANNE_5:
+            return MUS_GROUNDED_VS_ROXANNE;
+        case TRAINER_BRAWLY_1: case TRAINER_BRAWLY_2: case TRAINER_BRAWLY_3: case TRAINER_BRAWLY_4: case TRAINER_BRAWLY_5:
+            return MUS_GROUNDED_VS_BRAWLY;
+        case TRAINER_WATTSON_1: case TRAINER_WATTSON_2: case TRAINER_WATTSON_3: case TRAINER_WATTSON_4: case TRAINER_WATTSON_5:
+            return MUS_GROUNDED_VS_WATTSON;
+        case TRAINER_FLANNERY_1: case TRAINER_FLANNERY_2: case TRAINER_FLANNERY_3: case TRAINER_FLANNERY_4: case TRAINER_FLANNERY_5:
+            return MUS_GROUNDED_VS_FLANNERY;
+        }
+    }
+    // Project Grounded: einde gymleiders 1-4
 
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))

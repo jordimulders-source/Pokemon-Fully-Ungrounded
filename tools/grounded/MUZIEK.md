@@ -96,6 +96,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | nieuw | v1 in de maak | – |
+| Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -303,3 +304,14 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   Akkoordlagen bij een remix: grondtoon = **laagste** basnoot per halve maat (de C-G-bas begint soms op G) en per halve
   maat checken op kleine secunden met de melodie; voicings zonder terts (G-A-Bb-D op C) passen bij zowel E als F.
   Trainermuziek op trainerId: niet in Frontier/Trainer Hill (eigen nummering botst met TRAINER_NORMAN_1 = 269).
+- Gymleiders v1 (`gym_remixes.py`, remixes van `mus_vs_gym_leader.mid`; Roxanne power ballad 188, Brawly nu-metal 196,
+  Wattson gabber 176, Flannery flamenco 196; samples `gym_samples.py`): **één script ontleedt het origineel één keer**
+  (noten per spoor mét het programma op dat moment, grondtonen per halve maat uit de bas, ritme van pauken/snare) en per
+  leider bepaalt een routeringsfunctie per noot het nieuwe instrument; de pauken worden kick/cajón, de snare blijft op
+  zijn plek. **Riff-dyaden eerst analyseren**: de riff in maat 2-9 is afwisselend kwarten (C5-Db5-C5 = powerchord) en
+  tertsen/tritonus (E-G, F-Ab, Bb-Db in maat 3/5/7); een powerchord op 'de bovenste noot' gaf daar G5 over C. Alleen
+  kwart/kwint -> powerchord/rasgueado, de rest losse noten. **De vanilla Gen 3-piano (release 221-239) klinkt ±50 ticks
+  na**: de intro-loop in zestienden bezette 10 kanalen; als losse samples (sc88pro_piano1_*) met release 150 opnieuw
+  in de voicegroup. `fit()` (noot + uitklinktijd eindigt vóór de volgende aanslag) op bas/kick/chugs/rasgueado bracht
+  alle hoofdpartijen op 0% weg. Controle: elke noot van spoor 1-3 komt met dezelfde toonhoogte (of toonklasse, bij
+  powerchords/hoover) op dezelfde tick terug. Geen test-ROM (coördinator neemt op met batchrec.py).

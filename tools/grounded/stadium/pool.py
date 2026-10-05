@@ -31,8 +31,9 @@ END = '/* --- einde Battle Stadium --- */'
 POOL = [
     # Hoenn-gymleiders (laatste rematch)
     'ROXANNE_5', 'BRAWLY_5', 'WATTSON_5', 'FLANNERY_5', 'NORMAN_5', 'WINONA_5', 'TATE_AND_LIZA_5', 'WALLACE_5',
-    # Elite Four en kampioenen
-    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'WALLACE_OLD_CHAMPION', 'STEVEN',
+    # Elite Four en kampioen (Steven). JUAN (Route 129) staat op de oude plek van het vanilla-kampioenteam van
+    # Wallace: de 'verslagen'-bits in de save zijn per poolplek, dus plekken niet verschuiven.
+    'SIDNEY', 'PHOEBE', 'GLACIA', 'DRAKE', 'JUAN', 'STEVEN',
     # verhaal
     'WALLY_VR_5', 'ARCHIE_SOOTOPOLIS', 'MAXIE_SOOTOPOLIS', 'BIRCH_UNDERWATER', 'KECCLES_3', 'COLRESS_MAGMA',
     'ZINNIA', 'MIMI', 'GABBY_AND_TY_6', 'STADIUM_JOEY', 'STADIUM_WINSTON', 'STADIUM_MUSTARD',
@@ -71,7 +72,7 @@ RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'
 COMPANIONS = [('BRENDAN', 'BRENDAN_ROUTE_136_TREECKO', 'start'), ('MAY', 'MAY_ROUTE_136_TORCHIC', 'start'),
               ('KECCLES', 'KECCLES_3', 'start'), ('WALLY', 'WALLY_VR_5', 'start')]
 def companion_name(t):
-    special = {'WALLACE_5': 'JUAN', 'WALLACE_OLD_CHAMPION': 'WALLACE',
+    special = {'WALLACE_5': 'WALLACE',
                'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
                'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
@@ -175,7 +176,6 @@ BACK_PICS = {'Brendan': 'Brendan', 'May': 'May', 'Red': 'Red', 'Leaf': 'Leaf', '
 
 # Overworld-sprite in de arena: eigen sprite waar die bestaat, anders een Pokémon of een passende generieke
 GFX = {
-    'WALLACE_5': 'JUAN',   # TRAINER_WALLACE_5 heet in de game nog JUAN (Name/Pic in trainers.party)
     'ROXANNE': 'ROXANNE', 'BRAWLY': 'BRAWLY', 'WATTSON': 'WATTSON', 'FLANNERY': 'FLANNERY', 'NORMAN': 'NORMAN',
     'WINONA': 'WINONA', 'TATE_AND_LIZA': 'TATE', 'JUAN': 'JUAN', 'SIDNEY': 'SIDNEY', 'PHOEBE': 'PHOEBE',
     'GLACIA': 'GLACIA', 'DRAKE': 'DRAKE', 'WALLACE': 'WALLACE', 'STEVEN': 'STEVEN', 'WALLY': 'WALLY',

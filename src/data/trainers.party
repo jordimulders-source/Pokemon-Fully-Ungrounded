@@ -23981,9 +23981,9 @@ Ability: Levitate
 - Lunar Blessing
 
 === TRAINER_WALLACE_2 ===
-Name: JUAN
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -24046,9 +24046,9 @@ Ability: Multiscale
 - Flip Turn
 
 === TRAINER_WALLACE_3 ===
-Name: JUAN
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -24111,9 +24111,9 @@ Ability: Multiscale
 - Flip Turn
 
 === TRAINER_WALLACE_4 ===
-Name: JUAN
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -24176,9 +24176,9 @@ Ability: Multiscale
 - Flip Turn
 
 === TRAINER_WALLACE_5 ===
-Name: JUAN
+Name: WALLACE
 Class: Leader
-Pic: Leader Juan
+Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore

@@ -12,12 +12,12 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `NORMAN_5` | NORMAN paused his series for this. Make it quick, he's on a cliffhanger. |
 | `WINONA_5` | WINONA landed twenty minutes ago and is still looking for suitcase number 36. |
 | `TATE_AND_LIZA_5` | TATE & LIZA! Two bodies, one soul, zero spoons. Lawyers in row one. |
-| `WALLACE_5` | JUAN! He taught WALLACE everything he knows. Except how to share a spotlight. |
+| `WALLACE_5` | WALLACE! Contest star, GYM LEADER, and the reason HOENN ran out of glitter. |
 | `SIDNEY` | SIDNEY of the ELITE FOUR! Everyone at home has money on him. Bet responsibly. |
 | `PHOEBE` | PHOEBE! Her ghosts are already complaining about the hot dogs in here. |
 | `GLACIA` | GLACIA! An ice master who moved to a tropical region. On purpose. Twice. |
 | `DRAKE` | DRAKE, the DRAGON master! Not that one. Do NOT play the Kendrick song. |
-| `WALLACE_OLD_CHAMPION` | WALLACE! He'll pair your defeat with a nice absinthe. Notes of tears. |
+| `JUAN` | JUAN! He taught WALLACE everything. Then WALLACE took his gym. Awkward. |
 | `STEVEN` | STEVEN STONE! HE'S MADE OF METAL! HIS CIRCUITS GLEAM! His wallet too. |
 | `WALLY_VR_5` | WALLY! He once needed help catching a RALTS. Now he owns a FLUTTER MANE. |
 | `ARCHIE_SOOTOPOLIS` | ARCHIE of AQUA SPARKLING WATER! Our official hydration sponsor! |

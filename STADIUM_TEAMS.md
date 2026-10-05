@@ -17,7 +17,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | PHOEBE | 513 | Dusknoir, Porygon-Z, Runerigus, Parasect | Dusknoir, Porygon-Z, Parasect | - |
 | GLACIA | 508 | Shiftry, Walrein, Glalie, Darmanitan | Shiftry, Walrein, Darmanitan | sneeuw |
 | DRAKE | 564 | Flygon, Archaludon, Dracovish, Salamence | Flygon, Archaludon, Salamence | - |
-| WALLACE_OLD_CHAMPION | 540 | Wailord, Tentacruel, Ludicolo, Milotic | Wailord, Ludicolo, Milotic | regen |
+| JUAN | 520 | Politoed, Kingdra, Walrein, Relicanth | Kingdra, Walrein, Relicanth | regen |
 | STEVEN | 542 | Claydol, Cradily, Armaldo, Metagross | Claydol, Armaldo, Metagross | - |
 | WALLY_VR_5 | 548 | Dondozo, Baxcalibur, Annihilape, Gallade | Baxcalibur, Annihilape, Gallade | - |
 | ARCHIE_SOOTOPOLIS | 530 | Overqwil, Sharpedo, Archaludon | Overqwil, Sharpedo, Archaludon | - |
@@ -155,9 +155,9 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 3800 | SATURN |
 | 3900 | VICTORY |
 | 4000 | WAKE |
-| 4100 | BYRON |
-| 4200 | GRIMER |
-| 4300 | JUAN |
+| 4100 | JUAN |
+| 4200 | BYRON |
+| 4300 | GRIMER |
 | 4400 | SHY_GUY_GREEN |
 | 4500 | ROXANNE |
 | 4600 | SABRINA |
@@ -192,36 +192,36 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 7500 | BERTHA |
 | 7600 | LT_SURGE |
 | 7700 | PHOEBE |
-| 7800 | LORELEI |
-| 7900 | DAVE |
-| 8000 | THORTON |
-| 8100 | LUCY |
-| 8200 | AGATHA |
-| 8300 | CYRUS |
-| 8400 | DAHLIA |
-| 8500 | N |
-| 8600 | LAKE |
-| 8700 | LOYAL |
-| 8800 | REGIS |
-| 8900 | BIRDS |
-| 9000 | NORMAN |
-| 9100 | BEASTS |
-| 9200 | NOLAND |
-| 9300 | STEVEN |
-| 9400 | GIOVANNI |
-| 9500 | GHETSIS |
-| 9600 | ZINNIA |
-| 9700 | SWORDS |
-| 9800 | TAPUS |
-| 9900 | ARGENTA |
-| 10000 | ULTRAS |
-| 10100 | DRAKE |
-| 10200 | PSEUDOS |
-| 10300 | BRANDON |
-| 10400 | RUIN |
-| 10500 | GENIES |
-| 10600 | ANABEL |
-| 10700 | WALLACE |
+| 7800 | WALLACE |
+| 7900 | LORELEI |
+| 8000 | DAVE |
+| 8100 | THORTON |
+| 8200 | LUCY |
+| 8300 | AGATHA |
+| 8400 | CYRUS |
+| 8500 | DAHLIA |
+| 8600 | N |
+| 8700 | LAKE |
+| 8800 | LOYAL |
+| 8900 | REGIS |
+| 9000 | BIRDS |
+| 9100 | NORMAN |
+| 9200 | BEASTS |
+| 9300 | NOLAND |
+| 9400 | STEVEN |
+| 9500 | GIOVANNI |
+| 9600 | GHETSIS |
+| 9700 | ZINNIA |
+| 9800 | SWORDS |
+| 9900 | TAPUS |
+| 10000 | ARGENTA |
+| 10100 | ULTRAS |
+| 10200 | DRAKE |
+| 10300 | PSEUDOS |
+| 10400 | BRANDON |
+| 10500 | RUIN |
+| 10600 | GENIES |
+| 10700 | ANABEL |
 | 10800 | PALMER |
 | 10900 | LANCE |
 | 11000 | SPENSER |

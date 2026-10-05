@@ -580,6 +580,7 @@
 #define MUS_GROUNDED_VS_MITCH      642 // Project Grounded: Battle! Mitch, eigen compositie in Drum & Bass (Victory Road, Stadium; tools/grounded/mitch_theme.py)
 #define MUS_GROUNDED_VS_SICKBLIK    643 // Project Grounded: Battle! SickBlik (TRAINER_OWEN = Jordi), eigen compositie: smerige slap-funk (tools/grounded/sickblik_theme.py)
 #define MUS_GROUNDED_VS_VICTINI     644 // Project Grounded: Battle! Victini, eigen compositie: anime-overwinningsfanfare (tools/grounded/victini_theme.py)
+#define MUS_GROUNDED_VS_DARKRAI     645 // Project Grounded: Battle! Darkrai, eigen compositie: ontsporend speeldoos-wiegelied in 7/8 (tools/grounded/darkrai_theme.py)
 #define MUS_GROUNDED_VS_GENESECT    646 // Project Grounded: Battle! Genesect, eigen compositie: industrial/big beat à la The Prodigy + hard techno (tools/grounded/genesect_theme.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().

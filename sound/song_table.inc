@@ -651,7 +651,7 @@ gSongTable::
 	song mus_grounded_vs_mitch, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_sickblik, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_victini, MUSIC_PLAYER_BGM, 0
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 645: plaatshouder (Darkrai)
+	song mus_grounded_vs_darkrai, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_genesect, MUSIC_PLAYER_BGM, 0
 
 	.align 2

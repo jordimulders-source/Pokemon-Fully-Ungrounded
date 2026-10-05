@@ -570,8 +570,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
         CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;
-    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
-        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);
+    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, eigen thema (ontsporend wiegelied, 7/8)
+        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_DARKRAI);
         break;
     case SPECIES_ZARUDE: // Project Grounded: de jungle groeit dicht, klauwkrassen op de taiko, eigen "Battle! Zarude"
     case SPECIES_ZARUDE_DADA:

@@ -259,3 +259,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   op elke tel: daardoor vielen 9% van de bongóslagen weg. Analyse 'wat klinkt er als een noot wegvalt' per maat.
 - Een melodie-constante met dezelfde naam als een programmaconstante (CORO) overschreef het programma: geef
   melodieën een achtervoegsel (`CORO_MEL`).
+- Shaymin v2 (Jordi: 'thema uitstekend, maar meer route- dan battle-theme'): zelfde melodieën/instrumenten, maar
+  gestippelde kwart 88 -> 112, intro-stoot (D - C/D - Bb/D tutti + toms), bas-ostinato in achtsten (contrabas uit
+  FluidR3, `shaymin_samples.py`), spiccato-strijkers (string_ensemble met harde aanzet, release 130) en een lichte kit
+  (FluidR3-bassdrum/toms, orchestra snare, tamboerijn, kc-bongo's). Het B-deel half-time met tom-hartslag en dan een
+  opbouw (snare 8sten -> 16den, spiccato-tremolo). **Een routenummer battle-waardig maken = ritme, niet meer lagen:**
+  harp-/bas-/spiccatonoten zo kort dat nootlengte + uitklinktijd ≤ een achtste is (eerst 67% celesta weg, daarna 0%);
+  gitaar/pizzicato uit de drukke delen (C: pizzicato speelt de spiccato-figuur = lichter). audiocheck '37-43 Hz' = de
+  grondtoon van de bassdrum op elke tel, geen brom. -V088: piek 102/127, RMS 2790.

@@ -6711,3 +6711,19 @@ DirectSoundWaveData_kc_timbale_lo::
 	.align 2
 DirectSoundWaveData_kc_guiro_long::
 	.incbin "sound/direct_sound_samples/grounded/kc_guiro_long.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_upright::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_upright.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_kick::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_kick.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_tom_lo::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_tom_lo.bin"
+
+	.align 2
+DirectSoundWaveData_shaymin_tom_hi::
+	.incbin "sound/direct_sound_samples/grounded/shaymin_tom_hi.bin"

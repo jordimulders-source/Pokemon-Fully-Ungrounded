@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Shaymin. Gegenereerd door tools/grounded/shaymin_theme.py.
-@ 8 celesta, 24 nylon, 45 pizzicato, 46 harp, 48 zachte strijkers, 71 klarinet, 73 fluit, 121 shaker, 127 kit.
+@ 8 celesta, 24 nylon, 32 contrabas, 45 pizzicato, 46 harp, 48 zachte strijkers, 49 spiccato, 71 klarinet, 73 fluit, 121 shaker, 127 kit.
 voice_group grounded_shaymin
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -9,7 +9,7 @@ voice_group grounded_shaymin
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 5
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 6
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 7
-	voice_directsound 60, 0, DirectSoundWaveData_shaymin_celesta, 255, 0, 255, 200  @ 8
+	voice_directsound 60, 0, DirectSoundWaveData_shaymin_celesta, 255, 0, 255, 180  @ 8
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 9
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 242  @ 10
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 11
@@ -25,7 +25,7 @@ voice_group grounded_shaymin
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 21
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 22
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 23
-	voice_directsound 60, 0, DirectSoundWaveData_shaymin_nylon, 255, 0, 255, 190  @ 24
+	voice_directsound 60, 0, DirectSoundWaveData_shaymin_nylon, 255, 0, 255, 160  @ 24
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 25
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 26
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 27
@@ -33,7 +33,7 @@ voice_group grounded_shaymin
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 29
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
+	voice_directsound 60, 0, DirectSoundWaveData_shaymin_upright, 255, 0, 255, 130  @ 32
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
@@ -47,10 +47,10 @@ voice_group grounded_shaymin
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 226, 0, 150  @ 45
-	voice_directsound 60, 0, DirectSoundWaveData_shaymin_harp, 255, 0, 255, 205  @ 46
+	voice_directsound 60, 0, DirectSoundWaveData_shaymin_harp, 255, 0, 255, 180  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
 	voice_keysplit voicegroup_shaymin_strings_keysplit, keysplit_strings  @ 48
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
+	voice_keysplit voicegroup_shaymin_spicc_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 52

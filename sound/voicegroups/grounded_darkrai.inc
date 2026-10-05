@@ -50,7 +50,7 @@ voice_group grounded_darkrai
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 200  @ 47
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
+	voice_directsound 60, 0, DirectSoundWaveData_darkrai_scream, 255, 0, 255, 150  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 160  @ 52
@@ -59,7 +59,7 @@ voice_group grounded_darkrai
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57
-	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
+	voice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_low, 255, 0, 255, 150  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_dim, 255, 0, 255, 140  @ 61

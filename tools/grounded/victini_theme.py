@@ -25,6 +25,10 @@ Loop (maat 4-45, 42 maten = 58,6 s):
 v2 (Jordi: euforischer/triomfantelijker): open heldenthema met octaafsprongen, hoorn in decimen, key change
 E -> F midden in D (maat 3 = scharnier B -> C7), T = F-G-A-stoten; stijgende PSG-arpeggio's, buitelende bellen op de
 PSG-golf, 32sten-risers, snare-roffels naar elke drop, octaafbas in achtsten.
+v3 (Jordi: 'intro slordig en rommelig'): alleen maat 0-3 nieuw, de loop (maat 4-45) is noot voor noot v2.
+  maat 0: drie stijgende koperstoten op de tellen (A-D-F#, met pauk/kick/powerchord), inslag op tel 3, snare-drag;
+  maat 1-2: V-fanfare over begeleiding strak op de kwarten; maat 3: koperstoten 3+3+2 (C#-E-A) + gehouden A,
+  snare in achtsten -> het thema. Geen roffels, rips, risers of 16en-strijkers meer in de intro. Tempokaart gelijk.
 Gebruikt tools/grounded/musiclib.py; voicegroup_grounded_victini = grounded_gm + eigen powerchords
 (victini_samples.py), spiccato-strijkers en een eigen kit (drumsets/victini.inc, alles DirectSound).
 Zie tools/grounded/MUZIEK.md. Gebruik: python3 tools/grounded/victini_theme.py"""
@@ -259,43 +263,69 @@ def build():
         parts['timp'].append([t, t + ln * S16, reg(pc, 38), vel])
 
     # ---------------- maat 0: de transitie (tel 0-2 op 174 bpm, tel 2-4 op 224 bpm) ----------------
-    for i in range(0, 12, 2):                                                  # paukenroffel op D, crescendo
-        parts['timp'].append([i * S16, i * S16 + 2 * S16, p('D2'), 70 + i * 4])
-    for i in range(0, 12):                                                     # snareroffel
-        drum(0, i, ROLL, 40 + i * 5)
-    rip = ['A3', 'D4', 'F#4', 'A4', 'D5', 'F#5', 'A5', 'D6']                   # de V vliegt omhoog
-    for k, n in enumerate(rip):
-        t = (4 + k) * S16
-        parts['spicc'].append([t, t + S16 - 4, p(n), 80 + k * 4])
+    # v3 (Jordi: 'intro slordig en rommelig'): geen roffels/rips meer, maar een strakke koperopbouw op de tellen:
+    # drie stijgende stoten (A-D-F#, tel 0-1-2) met pauk + kick + powerchord, tel 3 = de inslag (tutti A),
+    # één snare-'drag' (twee 16en) naar de explosie op maat 1.
+    for k, (s, tp, hn, tm) in enumerate(((0, 'A4', 'A3', 'D2'), (4, 'D5', 'D4', 'D2'), (8, 'F#5', 'F#4', 'A2'))):
+        t = s * S16
+        parts['lead'].append([t, t + 3 * S16 - 4, p(tp), 104 + k * 6])
+        parts['horn'].append([t, t + 3 * S16 - 4, p(hn), 100 + k * 6])
+        parts['power'].append([t, t + 3 * S16 - 8, reg(2, 40), 100 + k * 6])
+        parts['bass'].append([t, t + 3 * S16 - 10, reg(2, 28), 100 + k * 6])
+        parts['timp'].append([t, t + 4 * S16, p(tm), 100 + k * 8])
+        drum(0, s, KICK, 104 + k * 6)
+    drum(0, 0, CRASH, 96, 4)
     parts['strmel'].append([0, 4 * S16, p('D4'), 70])                          # aanzwellende strijkers
     t = 12 * S16                                                                # tel 3: inslag
-    parts['lead'].append([t, t + S16 - 2, p('A5'), 120])
-    parts['horn'].append([t, t + S16 - 2, p('A4'), 116])
-    parts['power'].append([t, t + S16, reg(2, 40), 120])
+    parts['lead'].append([t, t + 4 * S16 - 6, p('A5'), 122])
+    parts['horn'].append([t, t + 4 * S16 - 6, p('A4'), 116])
+    parts['power'].append([t, t + 2 * S16, reg(2, 40), 120])
     drum(0, 12, CRASH, 116, 4)
     drum(0, 12, KICK, 120)
     parts['timp'].append([t, t + S16, p('A2'), 124])
-    for k, n in enumerate(('D5', 'E5', 'F#5')):                                 # da-da-da ->
-        t = (13 + k) * S16
-        parts['lead'].append([t, t + S16 - 3, p(n), 104 + k * 6])
-        drum(0, 13 + k, SNARE, 90 + k * 12)
+    drum(0, 14, SNARE, 100)
+    drum(0, 15, SNARE, 112)
 
     # ---------------- maat 1-2: de V-fanfare (explosie) ----------------
+    # v3: de begeleiding staat strak op de tellen (powerchord + kick op elke kwart, bas in achtsten), zodat de
+    # V-melodie in achtsten er helder bovenuit komt.
     for b in (1, 2):
         parts['lead'] += mel(FANFARE[b - 1], b, 122)
         parts['horn'] += mel(FANFARE[b - 1], b, 112, shift=-12)
-        power(b, [(0, 6), (6, 2), (8, 6), (14, 2)], 110)
+        power(b, [(0, 3), (4, 3), (8, 3), (12, 3)], 106)
         bass(b)
         hats(b, range(0, 16, 2))
         drum(b, 0, BIGCRASH if b == 1 else CRASH, 124, 8)
-        for s in (0, 6, 8):
+        for s in (0, 4, 8, 12):
             drum(b, s, KICK, 122)
         drum(b, 4, SNARE, 112)
         drum(b, 12, SNARE, 112)
         timp(b, 0, 124)
         timp(b, 8, 110)
-    for i in range(12, 16):
-        drum(2, i, SNARE, 90 + (i - 12) * 8)
+    for i in (8, 10, 12, 14):                                  # snare in achtsten, crescendo naar de opbouwmaat
+        drum(2, i, SNARE, 92 + (i - 8) * 4)
+
+    # ---------------- maat 3: de opbouw op A (v3: strakke koperstoten 3+3+2, dan A gehouden; naar het thema) ----
+    for (s, l), tp, hn in zip(STABS, ('C#5', 'E5', 'A5'), ('A4', 'C#5', 'E5')):
+        t = 3 * BAR + s * S16
+        parts['lead'].append([t, t + l * S16 - 8, p(tp), 118])
+        parts['horn'].append([t, t + l * S16 - 8, p(hn), 106])
+        drum(3, s, KICK, 120)
+    t = 3 * BAR + 8 * S16
+    parts['lead'].append([t, t + 8 * S16 - 6, p('A5'), 120])
+    parts['horn'].append([t, t + 8 * S16 - 6, p('E5'), 104])
+    parts['strmel'].append([3 * BAR, 3 * BAR + 16 * S16 - 6, p('A4'), 96])
+    power(3, list(STABS) + [(i, 2) for i in range(8, 16, 2)], 104)
+    bass(3, steps=[s for s, l in STABS] + list(range(8, 16, 2)))
+    drum(3, 0, CRASH, 112, 8)
+    for s in (8, 12):
+        drum(3, s, KICK, 116)
+    for i in range(8, 16, 2):
+        drum(3, i, SNARE, 90 + (i - 8) * 4)
+    timp(3, 0, 118)
+    timp(3, 8, 104)
+    timp(3, 12, 114)
+    hats(3, range(0, 8, 2))
 
     # ---------------- de opbouwmaat op A (maat 3 = maat 45: naadloze loop) ----------------
     def turn(b):
@@ -309,7 +339,6 @@ def build():
         for i in range(8, 16, 2):
             timp(b, i, 80 + (i - 8) * 5, 2)
         hats(b, range(0, 8))
-    turn(3)
 
     # ---------------- de loop ----------------
     def rock(b, fill=False, crash=False):
@@ -511,6 +540,9 @@ def build():
         lost = n - len(kept[k])
         print('  %-6s %4d noten, %3d weg (%.1f%%)' % (k, n, lost, 100.0 * lost / max(n, 1)))
         parts[k] = kept[k]
+    # v3: de loop blijft noot voor noot v2. Daar viel de pauk op maat 4 tel 0 weg (de paukopbouw van maat 3/45 klinkt
+    # dan nog na, ook bij de terugsprong); de nieuwe, rustigere maat 3 zou hem vrijgeven: bewust weglaten.
+    parts['timp'] = [n for n in parts['timp'] if n[0] != A0 * BAR]
 
     song = Song(TPB, 500000)
     song.tempo(0, 174 / 120)

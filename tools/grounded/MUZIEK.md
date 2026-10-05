@@ -98,7 +98,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
-| Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
+| Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v3 (ronde 7), wacht op opname | "Victini", "Darkrai", "Genesect" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v2 (GBA-instructies), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace goedgekeurd; Norman/Winona/Tate & Liza v2 | "Gymleiders" |
@@ -394,3 +394,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (tick, toets) van het origineel zit er nog in.
 - **Ronde 7 (Jordi):** Heatran v6 "te saai, statisch" → v7: meerdere actieve riffs met palm-mutes/slides/bends, ±130 bpm snel deel, stops en tomfills (de 'saai-afdwingende' controles weg, anti-ska-controles blijven). Mitch v4 "95%": lead zachter, bas/growl + snare luider. Neo Plasma v8: intro-run vetter, valse noten in de B-sectie, bridge niet stilvallen. Victini v2: intro rommelig. Darkrai v2: mist een climax. Genesect: v2 (Prodigy) afgekeurd, terug naar v1 ("cyber-funk") maar strakker.
 - **Previews altijd vanaf 0 s** laten beginnen (of de offset noemen): Jordi geeft tijdstempels; de Neo Plasma-preview begon op 13 s, waardoor zijn "intro" eigenlijk het loopbegin was.
+- Victini/Darkrai/Genesect v3 (ronde 7): **'intro rommelig' = te veel snelle lagen tegelijk** (roffel + strijkers-rip
+  + 32sten-riser + 16en-spiccato): Victini maat 0-3 nu koperstoten op de tellen, begeleiding op de kwarten; de loop is
+  noot voor noot v2 (diff per MIDI-kanaal vanaf maat 4: 0 verschillen). **'Kabbelt' eerst meten**: recaudio-RMS per
+  sectie Darkrai v2 A/B/D = 3085/3202/3517 (1 dB verschil); v3 climax halverwege (A-B-R-D-C), MIDI-niveau
+  (vel x CC7)^2 per sectie: A +1,1 / B +2,0 / R -4,5 -> +5,8 / D +5,8 dB. Genesect: v1 byte-identiek teruggezet uit
+  git, dan alleen ghosts/fills/stops/crashes; `groove_checks()` bewaakt dat de swing blijft.

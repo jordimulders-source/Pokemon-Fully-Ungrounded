@@ -441,3 +441,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
   ±50 (LFSR ±1 kHz = laag 'whoosh'), stem `voice_noise 60,0,0,7,0,15,7` + CC7-zwelling met top 14-20 (100 = luider dan
   de hele mix). Een windnoot op tick 0 bleef stil: begin de eerste vlaag een maat later. -V116: piek 65/127, RMS 1924
   (origineel Fallarbor 1939).
+- Ronde 3 (5 okt): **goedgekeurd**: Ashfrost (wintervariant). Rayquaza v3: balans trompet/melodie "precies zo houden".
+  Jordi geeft nu gedetailleerde briefings (vaak met Gemini geschreven); volg ze punt voor punt en houd wat hij goed
+  vond expliciet ongewijzigd (diff per spoor).
+

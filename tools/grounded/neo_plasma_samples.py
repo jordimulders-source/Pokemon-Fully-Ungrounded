@@ -25,6 +25,8 @@ v5 (naar Jordi's feedback op v4):
 - orgel: scherp drawbar-orgel (8', 4', 2 2/3', 2', 1 3/5', 1 1/3') met een klikje in de aanzet.
 Alles additief gesynthetiseerd (exacte loop: samplerate = grondtoon x samples per periode). De drums komen uit de
 standaard GBA-kit (rs_drumset), de lead is een PSG-blokgolf: daar zijn geen samples voor nodig.
+v10: np_bass_fat (sc88pro_synth_bass + zijn grondtoon: grondtoon 17% -> 49% van de energie, RMS +33%), np_gbrass_lo/hi
+(synth brass voor de glissando-intro). Zie neo_plasma_theme.py.
 v9 (Jordi over v8: 'de iconische eerste seconden: de stijgende opening-run moet een vette, agressieve GBA Synth
 Brass / Pulse Lead zijn'): np_lead_fat (C5) en np_lead_fat_lo (C3), gelaagd uit de GBA-samples zelf (zie fat_lead()).
 Gebruik: python3 tools/grounded/neo_plasma_samples.py"""
@@ -124,6 +126,46 @@ def fat_lead(lo=False):
     return a, R, loop
 
 
+def bass_fat():
+    """v10 (Jordi/Gemini over de brug: 'de bas klinkt als een zacht, hol piepje in het middenregister'): gemeten had
+    sc88pro_synth_bass maar 17% energie op de grondtoon en 46% op de 2e harmonische, dus je hoort hem een octaaf hoger
+    dan hij speelt. Hier dezelfde GBA-sample + zijn eigen grondtoon als sinus (fase gelijk aan die van de sample, exact
+    16 perioden per loop = naadloos), licht verzadigd: grondtoon 49% van de energie (was 17%), RMS +33%, piek even hoog -> dikker en voller, zelfde
+    toonhoogte (label 72, zoals np_synth_bass)."""
+    a, r, loop, key = gba_copy('sc88pro_synth_bass', 12)
+    s, e = loop
+    L = e - s
+    per = 16
+    f0 = per * r / L
+    seg = a[s:e]
+    X = np.fft.rfft(seg)
+    ph = np.angle(X[per])
+    amp1 = 2 * np.abs(X[per]) / L
+    n = np.arange(len(a))
+    env = np.ones(len(a))
+    att = int(0.006 * r)
+    env[:att] = np.linspace(0, 1, att)
+    sub = np.cos(2 * np.pi * f0 * (n - s) / r + ph)
+    out = a + 0.9 * amp1 * env * sub
+    out = np.tanh(1.4 * out / np.abs(out).max())
+    out = out / np.abs(out).max() * 0.97
+    return out, r, loop, key
+
+
+def gliss_brass(root):
+    """v10 (Jordi/Gemini: 'de intro-run: dikke, brede synth brass met een continue pitch bend van laag naar hoog,
+    harde aanslag'): synth brass zoals een GBA-synth: twee ontstemde zaagtanden (zweving, exacte loop), een
+    filterstoot (bovenharmonischen die in 80 ms wegzakken) en een octaaf-onder-blok voor de dikte. Harmonischen
+    begrensd tot 3,6 kHz bij +14 halve tonen (de bend gaat tot ±14 halve tonen van de wortel): geen schelle top."""
+    f0 = 440 * 2 ** ((root - 69) / 12)
+    per = 128 if root < 60 else 32
+    nmax = max(4, int(3600 / (f0 * 2.25)))
+    amps = [(1 / k) * (1 if k < 6 else 0.8 ** (k - 5)) for k in range(1, nmax + 1)]
+    bright = [0] * 2 + [0.5 / k for k in range(3, nmax + 1)]
+    a, rate, loop = additive(f0, per, amps, 32, attack=0.08, bright=bright, detune=1)
+    return a, rate, loop
+
+
 def sine():
     f0, per = 523.25, 32
     return additive(f0, per, [1.0, 0.08], 64)
@@ -139,6 +181,10 @@ SAMPLES = {
     # v9: vette lead voor de opening-run en het loopbegin (GBA-blokgolf x2 + GBA-synth brass)
     'np_lead_fat': (fat_lead, 72),
     'np_lead_fat_lo': (lambda: fat_lead(lo=True), 48),
+    # v10: dikke bas (grondtoon erbij) en synth brass voor de glissando-intro
+    'np_bass_fat': (bass_fat, None),
+    'np_gbrass_lo': (lambda: gliss_brass(48), 48),
+    'np_gbrass_hi': (lambda: gliss_brass(72), 72),
 }
 
 

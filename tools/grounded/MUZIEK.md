@@ -98,6 +98,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Heatran | `heatran_theme.py` | v7 wacht op opname (v6 'saai': meerdere riffs, 74/130 bpm, palm-mutes/slides) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -469,3 +470,13 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   elke akkoordwissel, overdrive-bas uit de Emerald-fingered bass in achtsten, PSG-ruis open hats (. x . x), breedbandige
   scratches alleen op de overgangen. Bas t.o.v. lead +40%, t.o.v. drums +34%, t.o.v. de rest +25% (de muur is erbij).
   -V068: 0 overlopen, piek 81/127, RMS 2960. Restverschil met Face the Pain: < 60 Hz 2,5% tegen 11-19% (subkick).
+- Neo Plasma v10 (Gemini-feedback over v9): **eerst de preview-start vaststellen** (hier 0 s: Gemini's 'arpeggio's
+  0:10-0:30 goed' = de farp van maat 7-22, '1:08' = het orgeldeel maat 50). **Octaaffouten in een transcriptie** vind
+  je met `octcheck` (per maat: CQT van de Spleeter-stem 'other' op de noot vs. een octaaf lager/hoger; lage noten
+  kloppen niet, die zitten in de basstem): orgel/saw/sinus in maat 50-62 een octaaf te hoog (10-16 dB). 'Hol piepje' =
+  te weinig grondtoon in de sample (sc88pro_synth_bass: 17% op f0, 46% op 2f0 = klinkt een octaaf hoger): grondtoon als
+  sinus erbij, fase uit de FFT van de loop, exact 16 perioden per loop. Glissando = één noot per stuk ladder met
+  pitchwheel elke 16 ticks (BENDR 12, ±12 halve tonen; mid2agb schrijft BEND + running status). **Mix-varianten
+  meten zonder extra ROM**: volX (MusicPlayerTrack +19, standaard 64, x = vol*volX>>5) per spoor elke frame zetten +
+  vlag 0x03 (anders pakt m4a het niet op) bootst CC7- en -V-wijzigingen exact na in recpcm/recaudio. -V064: 0
+  overlopen, piek 86/127, RMS 3157; < 150 Hz in de brug 42% (met de dunne bas 34%, origineel 52%).

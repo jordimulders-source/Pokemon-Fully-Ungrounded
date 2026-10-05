@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v9. Gegenereerd door tools/grounded/neo_plasma_theme.py.
-@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 127 drums.
+@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v10. Gegenereerd door tools/grounded/neo_plasma_theme.py.
+@ 17 orgel, 38 synth bass, 62/63 synth brass (trompet-keysplit), 80 square-lead, 81 lead-octaaf (PSG), 82 sub (PSG-golf), 84 arp B (PSG), 85 sinus, 86 orgelstoot, 87 square-pluk, 88/89 vette lead, 90/91 vette arpeggio, 92 hold, 93/94 glissando-brass, 127 drums.
 voice_group grounded_neo_plasma
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -39,7 +39,7 @@ voice_group grounded_neo_plasma
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_np_synth_bass, 255, 245, 60, 110  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_np_bass_fat, 255, 245, 60, 110  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -94,8 +94,8 @@ voice_group grounded_neo_plasma
 	voice_directsound 48, 0, DirectSoundWaveData_np_lead_fat_lo, 255, 0, 255, 40  @ 90
 	voice_directsound 72, 0, DirectSoundWaveData_np_lead_fat, 255, 0, 255, 40  @ 91
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 100  @ 92
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
+	voice_directsound 48, 0, DirectSoundWaveData_np_gbrass_lo, 255, 0, 255, 150  @ 93
+	voice_directsound 72, 0, DirectSoundWaveData_np_gbrass_hi, 255, 0, 255, 150  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 96
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 97

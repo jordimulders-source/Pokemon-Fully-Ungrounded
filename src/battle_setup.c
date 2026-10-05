@@ -519,7 +519,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
-        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
+        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_GROUNDED_VS_RAYQUAZA); // Project Grounded: gamelan-remix
         break;
     case SPECIES_DEOXYS_NORMAL:
     case SPECIES_DEOXYS_ATTACK:

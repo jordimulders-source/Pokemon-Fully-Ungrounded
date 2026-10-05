@@ -6463,3 +6463,19 @@ DirectSoundWaveData_gm_steel_drums::
 	.align 2
 DirectSoundWaveData_gm_saw_lead::
 	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_gangsa::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_gangsa.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_reyong::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_reyong.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_jegogan::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_jegogan.bin"
+
+	.align 2
+DirectSoundWaveData_rayquaza_gong::
+	.incbin "sound/direct_sound_samples/grounded/rayquaza_gong.bin"

@@ -642,6 +642,11 @@ gSongTable::
 	song mus_grounded_vs_entei, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_raikou, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0   @ 636-639: plaatshouders (andere muziekagents), bij samenvoegen vervangen
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_rayquaza, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

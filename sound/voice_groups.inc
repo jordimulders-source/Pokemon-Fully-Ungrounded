@@ -6,6 +6,7 @@
 .include "sound/voicegroups/drumsets/emerald_1.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 .include "sound/voicegroups/drumsets/keccles.inc"
+.include "sound/voicegroups/drumsets/rayquaza.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -211,3 +212,4 @@
 .include "sound/voicegroups/grounded_beasts.inc"
 .include "sound/voicegroups/grounded_neo_plasma.inc"
 .include "sound/voicegroups/grounded_keccles.inc"
+.include "sound/voicegroups/grounded_rayquaza.inc"

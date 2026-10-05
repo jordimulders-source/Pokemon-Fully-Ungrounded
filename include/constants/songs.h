@@ -571,6 +571,7 @@
 #define MUS_GROUNDED_VS_ENTEI       633 // Project Grounded: beasts-thema + elektrische gitaar (vuur)
 #define MUS_GROUNDED_VS_RAIKOU      634 // Project Grounded: beasts-thema + zoemende synths (onweer)
 #define MUS_GROUNDED_VS_KECCLES     635 // Project Grounded: Battle! Keccles, eigen compositie in salsa dura-stijl (tools/grounded/keccles_theme.py)
+#define MUS_GROUNDED_VS_RAYQUAZA    640 // Project Grounded: weather trio-thema als Balinese gamelan (gong kebyar), tools/grounded/rayquaza_theme.py
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

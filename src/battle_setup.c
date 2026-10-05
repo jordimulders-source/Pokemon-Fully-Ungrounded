@@ -567,8 +567,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), Mew-muziek (ook een mythische)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_VS_MEW);
         break;
-    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, mythical-muziek (zoals Mew)
-        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_VS_MEW);
+    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
+        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;
     case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, Platinum-Giratina-muziek
         CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_GROUNDED_VS_GIRATINA);

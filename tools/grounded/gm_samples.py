@@ -28,6 +28,13 @@ SAMPLES = {
     'magikarp_bassoon':   (70, 48, 1.2, 16000, None),
     'magikarp_woodblock': (115, 72, 0.3, 22050, None),
     'magikarp_vibraslap': (('drum', 58), 60, 1.1, 16000, None),
+    'jirachi_celesta':   (8, 72, 1.5, 22050, None),     # Battle! Jirachi (jirachi_theme.py)
+    'jirachi_music_box': (10, 72, 1.5, 22050, None),
+}
+# 'loopjes' van meerdere noten in één sample (bv. een windgong/mark tree): (GM-programma, grondtoon, noten,
+# stap in s, lengte in s, samplerate)
+RUNS = {
+    'jirachi_chimes': (9, 96, [108, 105, 103, 100, 98, 96, 93, 91, 88, 86, 84, 81], 0.045, 1.4, 22050),
 }
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
@@ -68,7 +75,7 @@ def oneshot(kind, rate):
     raise ValueError(kind)
 
 
-def render(prog, note, dur):
+def render(prog, note, dur, run=None, step=0.0):
     m = mido.MidiFile(ticks_per_beat=480)
     t = mido.MidiTrack(); m.tracks.append(t)
     ch = 0
@@ -76,8 +83,15 @@ def render(prog, note, dur):
         ch, note = 9, prog[1]
     else:
         t.append(mido.Message('program_change', program=prog, time=0))
-    t.append(mido.Message('note_on', channel=ch, note=note, velocity=110, time=0))
-    t.append(mido.Message('note_off', channel=ch, note=note, velocity=0, time=int(dur * 960)))   # 120 bpm: 960 ticks/s
+    if run:                                    # loopje: noten na elkaar, allemaal tot het eind laten klinken
+        for i, n in enumerate(run):
+            t.append(mido.Message('note_on', channel=ch, note=n, velocity=100 - i * 3, time=0 if i == 0 else int(step * 960)))
+        t.append(mido.Message('note_off', channel=ch, note=run[0], velocity=0, time=int(dur * 960)))
+        for n in run[1:]:
+            t.append(mido.Message('note_off', channel=ch, note=n, velocity=0, time=0))
+    else:
+        t.append(mido.Message('note_on', channel=ch, note=note, velocity=110, time=0))
+        t.append(mido.Message('note_off', channel=ch, note=note, velocity=0, time=int(dur * 960)))   # 120 bpm: 960 ticks/s
     with tempfile.TemporaryDirectory() as d:
         mid, wav = os.path.join(d, 'n.mid'), os.path.join(d, 'n.wav')
         m.save(mid)
@@ -109,8 +123,10 @@ def write_wav(path, x, rate, key, loop):
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
-    for name, (prog, note, dur, rate, loop) in SAMPLES.items():
-        a = render(prog, note, dur + (1.0 if loop else 0))
+    jobs = [(name, prog, note, dur, rate, loop, None, 0) for name, (prog, note, dur, rate, loop) in SAMPLES.items()]
+    jobs += [(name, prog, key, dur, rate, None, run, step) for name, (prog, key, run, step, dur, rate) in RUNS.items()]
+    for name, prog, note, dur, rate, loop, run, step in jobs:
+        a = render(prog, note, dur + (1.0 if loop else 0), run, step)
         start = np.argmax(np.abs(a) > 0.002)                       # stilte vooraan weg
         a = a[start:start + int((dur + (1.0 if loop else 0)) * 44100)]
         if loop is None:

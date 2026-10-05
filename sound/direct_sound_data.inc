@@ -6501,3 +6501,13 @@ DirectSoundWaveData_magikarp_kazoo::
 	.align 2
 DirectSoundWaveData_magikarp_boing::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_boing.bin"
+DirectSoundWaveData_jirachi_celesta::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_celesta.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_music_box::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_music_box.bin"
+
+	.align 2
+DirectSoundWaveData_jirachi_chimes::
+	.incbin "sound/direct_sound_samples/grounded/jirachi_chimes.bin"

@@ -221,3 +221,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
   Eigen samples: fagot/woodblock/vibraslap uit FluidR3 (drumnoten via `('drum', n)` in gm_samples), kazoo als
   gesynthetiseerde zoempuls met formanten, boing als synth-oneshot (`ONESHOTS`). Fluitje (sd90 whistle) + BENDR 12
   = slide whistle. -V108: piek 89/127, RMS 2377.
+- Jirachi v1 (`jirachi_theme.py`, eigen compositie, 152 bpm, D-groot, climax in E): **sync met een transitie meten,
+  niet uit de code afleiden.** Lees per frame `gMPlayInfo_BGM.clock` (offset 12; 24 per tel) naast de gemiddelde
+  helderheid van het beeld: de route-transitie begint ±25 frames ná de muziek (eerst dimt het beeld), dus de flits
+  (t = 68) viel op tel 4, niet op tel 3. Tempo zo kiezen dat de transitiemomenten op tellen vallen (23,7 frames/tel).
+  Ontbrekende instrumenten via `gm_samples.py`: celesta (GM 8), speeldoos (GM 10) en een windgong als `RUNS`-sample
+  (een loopje glockenspielnoten in één sample = één kanaal). Lange koornoten in stukken van 2 tellen: 36% -> 10%
+  weggevallen. Harp-release 170 (i.p.v. 242) voor 16e-arpeggio's. audiocheck '120 Hz' = 2x framesnelheid (119,45 Hz
+  precies), geen bromtoon.

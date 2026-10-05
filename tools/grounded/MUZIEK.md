@@ -489,3 +489,13 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   één sample per voicing (bari D3 + koper D4/Ab4/C#5, tanh + stootenvelop: FluidR3-koper zwelt anders aan, piek pas op
   0,43 s). Vingerknip gesynthetiseerd (ruis door bandpass 2,3 kHz, 35 ms). FluidR3 Brush-kit = bank 128 prog 40.
 
+- Brawly v5 (Gemini noemde muur, bas en open hats 'ontbrekend' terwijl v4 ze had): **meet hoorbaarheid A-gewogen per
+  solo-spoor** (emulator-audio met volX = 0 op de andere sporen, incl. PSG): lead 74% van de waargenomen luidheid,
+  muur 15%, bas 7%, hats 0,4%. Oorzaken: (1) **`gba_tone(..., base)` = de echte toonhoogte van de bronsample op zijn
+  eigen samplerate** (FFT meten, niet afleiden uit de samplerate): sc88pro_fingered_bass klinkt C4, sd90_..._low C3
+  (toets 60!); v4 gaf base 36/60 en de bas klonk twee octaven te hoog (C4 met label C2), de chug een octaaf te laag;
+  (2) muur op volume 62; (3) PSG-hats: -V schaalt ook PSG, decay 2 tot 0 + release 0 + 8 ticks = tik van 90 ms op
+  ±5/15; (4) kick van 6 ticks kapt zijn subtoon af. v5: bas op echt C2 (grondtoon + grom 250-1300 Hz, nog eens zacht
+  geklemd), muur dikker (lage distortion erbij, HPF 105 Hz), hats decay 1/sustain 5/release 1 op 18 ticks vol 127,
+  kick 16 ticks, lead 106 -> 68, chugs 84 -> 60, -V076. In-game: hats 15% (>6 kHz 2,8% = Face the Pain), bas/lead
+  A-gewogen 0,10 -> 0,23, < 60 Hz 2,4 -> 7%, 0 overlopen, piek 88/127, RMS 3231 (iets boven 3000).

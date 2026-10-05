@@ -800,19 +800,30 @@ def brawly(src):
       drums  zware kick (gym_bra4_kick) op de achtsten, heavy-rock-snare op 2 en 4, PSG-ruis-hihats (open) op de
              tussenliggende achtsten (. x . x), crash/china en tomfills als v3
       fx     echte scratches (gym_bra4_scratch/_chirp: vervormde 'aah' + vinylruis, breedbandig) alleen op de
-             overgangen vóór elke zin (o.a. 0:07 en 0:15); de ritmische scratch-invullingen zijn weg."""
+             overgangen vóór elke zin (o.a. 0:07 en 0:15); de ritmische scratch-invullingen zijn weg.
+    Ronde 5 (Jordi 'echt dichtbij'; Gemini noemde muur, bas en open hats als ontbrekend, terwijl v4 ze had). Gemeten
+    (gba_sim per spoor, A-gewogen = zoals het oor): de lead was 74% van de waargenomen luidheid, muur 14%, bas 6%,
+    drums 2%. Oorzaken: (1) gym_bra4_bass klonk twee octaven te hoog (C4 = 261 Hz met label C2; 0% energie < 100 Hz),
+    (2) de muur stond op spoorvolume 62, (3) de PSG-hats waren tikjes van 90 ms op ±5/15 (decay 2 tot 0, release 0),
+    (4) de kick was 6 ticks lang (de subtoon werd afgekapt). v5 (melodie, ritme, tempo, opener en snare gelijk):
+    gym_bra5_bass op echt C2 met versterkte grondtoon, grom en plectrumpunch; gym_bra5_wall dikker (lage Emerald-
+    distortion erbij, ronk 110-380 Hz) op volume 104; open hats 0,21 s op vol 127 (decay 1, sustain 5, release 1);
+    kick 16 ticks met subtoon naar 48 Hz; lead 106 -> 80 en chugs 84 -> 60 (gym_bra5_chug: nu op de juiste octaaf,
+    v4 klonk C1)."""
     bpm = 216
-    kit = Kit('gym_brawly', [('kick', dk('gym_bra4_kick', 150)), ('snare', dk('gym_bra4_snare', 180)),
+    kit = Kit('gym_brawly', [('kick', dk('gym_bra5_kick', 150)), ('snare', dk('gym_bra4_snare', 180)),
                              ('china', dk('gym_bra_china', 200)), ('crash', dk('gym_bra_crash', 205)),
                              ('tom_lo', dk('gym_bra_tom_41', 170, 54)), ('tom_mid', dk('gym_bra_tom_45', 170, 64)),
                              ('tom_hi', dk('gym_bra_tom_48', 170, 74)),
                              ('scratch', dk('gym_bra4_scratch', 140)), ('chirp', dk('gym_bra4_chirp', 140))])
     vg = Voicegroup('grounded_gym_brawly', kit, {
         'lead': [(k, ds('gym_bra_lead_%d' % k, 170)) for k in (60, 72, 84)],
-        'chug': [(36, ds('gym_bra4_chug', 120))],         # palm-mute-sample (sterft zelf uit) + korte uitklinktijd
-        'wall': [(48, ds('gym_bra4_wall', 165))],
-        'bass': [(36, ds('gym_bra4_bass', 110))],
-        'noise': [(60, 'voice_noise_alt 60, 0, 0, 0, 2, 0, 0')],    # PSG-ruis: open hihat
+        'chug': [(36, ds('gym_bra5_chug', 120))],         # palm-mute-sample (sterft zelf uit) + korte uitklinktijd
+        'wall': [(48, ds('gym_bra5_wall', 165))],
+        'bass': [(36, ds('gym_bra5_bass', 110))],
+        # PSG-ruis: open hihat. v5: decay 1 tot sustain 5/15, dan release 1 (v4: decay 2 tot 0, release 0 = na de
+        # noot van 8 ticks meteen stil, op ±5/15 = een tikje van 90 ms dat niemand hoorde)
+        'noise': [(60, 'voice_noise_alt 60, 0, 0, 0, 1, 5, 1')],
     })
     K = kit.key
     mel = melody_src(src)
@@ -906,14 +917,14 @@ def brawly(src):
         cut = lambda t: fill is None or t < fill
         for t in sorted(x for x in kick_t if t0 <= x < t0 + BAR):
             if cut(t - t0):
-                d(kick, t, 'kick', 124 if (t - t0) % 48 == 0 else 112, 6)
+                d(kick, t, 'kick', 124 if (t - t0) % 48 == 0 else 112, 16)    # v5: 16 ticks = subtoon (fit kort in)
         if t0 not in kick_t:
-            d(kick, t0, 'kick', 124, 6)
+            d(kick, t0, 'kick', 124, 16)
         if b >= 1 and cut(48) and not (sc == 'bridge' and b < 36):
             d(snare, t0 + 48, 'snare', 127, 16)
         if b >= 1 and not (sc == 'bridge' and b < 36):     # open hihats op de tussenliggende achtsten (. x . x)
-            for k in (12, 36, 60, 84):
-                hats.add(t0 + k, t0 + k + 8, NOISE_HAT, 72 if k in (36, 84) else 60, vg.prog('noise'))
+            for k in (12, 36, 60, 84):                     # v5: 18 ticks (0,21 s) open, accent op 2 en 4
+                hats.add(t0 + k, t0 + k + 18, NOISE_HAT, 127 if k in (36, 84) else 112, vg.prog('noise'))
         if sc in ('C1', 'C2', 'build') and cut(48):
             d(cym, t0 + 48, 'china', 92, 20)
         if b in (0, 2, 6, 10, 14, 18, 20, 22, 26, 30, 32, 34, 37, 41, 45, 48, 50, 52, 54, 56, 58, 60):
@@ -936,8 +947,8 @@ def brawly(src):
         fit(prt, vg, bpm)
     order = [lead, kick, snare, bass, wall, gtr, fx, cym, toms]
     return dict(leader='Brawly', key='brawly', bpm=bpm, vg=vg, kit=kit, order=order, psg=[hats], metal=True,
-                vols={'lead': 106, 'gtr': 84, 'wall': 62, 'bass': 127, 'drums': 110, 'cym': 80, 'fx': 100,
-                      'hats': 70},
+                vols={'lead': 68, 'gtr': 60, 'wall': 80, 'bass': 127, 'drums': 110, 'cym': 80, 'fx': 100,
+                      'hats': 127},
                 pans={'lead': 64, 'gtr': 44, 'wall': 84, 'bass': 64, 'drums': 64, 'cym': 72, 'fx': 50, 'hats': 76},
                 desc='91 kit (drumsets/gym_brawly.inc: zware kick, heavy-rock-snare, china, crash, toms, scratches), '
                      'daarna distortion-lead, palm-mute-chug, muur-powerchord (tweede Emerald-distortiongitaar), '
@@ -1228,7 +1239,7 @@ def wattson(src):
 
 
 
-LEADERS = [(647, 'MUS_GROUNDED_VS_ROXANNE', roxanne, 78), (648, 'MUS_GROUNDED_VS_BRAWLY', brawly, 68),
+LEADERS = [(647, 'MUS_GROUNDED_VS_ROXANNE', roxanne, 78), (648, 'MUS_GROUNDED_VS_BRAWLY', brawly, 76),
            (649, 'MUS_GROUNDED_VS_WATTSON', wattson, 74), (650, 'MUS_GROUNDED_VS_FLANNERY', flannery, 84)]
 KERMIS_CHECK = ('roxanne', 'brawly', 'flannery')    # Wattson is goedgekeurd (gabber) en blijft byte-identiek
 COMMENT = {'roxanne': 'hard rock power ballad', 'brawly': 'nu-metal', 'wattson': 'gabber/happy hardcore',

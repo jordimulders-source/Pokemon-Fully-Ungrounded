@@ -6117,6 +6117,38 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
         return MUS_GROUNDED_VS_KECCLES;
 
+    // Project Grounded: gymleider-remixes 5-8 van het gymleiderthema (tools/grounded/gym_remixes2.py), incl. rematches
+    // en het Stadium. Gym 8 = Wallace (TRAINER_WALLACE_1; de rematch-slots heten nog TRAINER_JUAN_2-5).
+    // Niet in de Frontier/Trainer Hill: daar is trainerId een eigen nummering (botst met 269-272).
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL)))
+    switch (trainerId)
+    {
+    case TRAINER_NORMAN_1:
+    case TRAINER_NORMAN_2:
+    case TRAINER_NORMAN_3:
+    case TRAINER_NORMAN_4:
+    case TRAINER_NORMAN_5:
+        return MUS_GROUNDED_VS_NORMAN;
+    case TRAINER_WINONA_1:
+    case TRAINER_WINONA_2:
+    case TRAINER_WINONA_3:
+    case TRAINER_WINONA_4:
+    case TRAINER_WINONA_5:
+        return MUS_GROUNDED_VS_WINONA;
+    case TRAINER_TATE_AND_LIZA_1:
+    case TRAINER_TATE_AND_LIZA_2:
+    case TRAINER_TATE_AND_LIZA_3:
+    case TRAINER_TATE_AND_LIZA_4:
+    case TRAINER_TATE_AND_LIZA_5:
+        return MUS_GROUNDED_VS_TATE_LIZA;
+    case TRAINER_WALLACE_1:
+    case TRAINER_JUAN_2:
+    case TRAINER_JUAN_3:
+    case TRAINER_JUAN_4:
+    case TRAINER_JUAN_5:
+        return MUS_GROUNDED_VS_WALLACE;
+    }
+
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
      && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))

@@ -295,3 +295,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
 - **Victini v1:** basis goed, maar nog niet euforisch/triomfantelijk genoeg → v2: jubelender koper met grote stijgende intervallen, key change in het tweede deel, buitelende arpeggio's/bells, octaafbas en snare-rolls naar de drops.
 - **Darkrai v1: "heel goed, 80%".** v2: duisterder, Giratina-achtig: asymmetrische/wisselende maten, schurender (tritonus, ijzige akkoordwendingen), rauwe brass-stabs en lage drones; het wiegelied blijft als contrast.
 - **Genesect v1:** klonk als een funk-groove → v2: keiharde snelle Prodigy-breakbeat, distorted bas/synths, industriële stabs, hoekige riffs, korte risers en harde drops.
+- Gymleiders 5-8 v1 (`gym_remixes2.py`, samples `gym2_samples.py`, één voicegroup `grounded_gym2` + vier kits
+  `drumsets/gym2_*.inc`): **het vanilla-gymleiderthema haalt de lint zelf niet** (tot 17 noten: pianotriller release 239,
+  strijkers-16en 196, pauken 226 in maat 0-1). Fix zonder noten te schrappen: alle niet-drumpartijen `detach`en
+  (aanslag/toonhoogte gelijk, lengte max. een uitklinktijd korter; het script controleert dat tegen het origineel) +
+  eigen korte intro-varianten (piano1_84 rel 150, strings_72 rel 140, piano1_60 rel 200) -> 0% weg in alle vier.
+  Akkoordlagen bij een remix: grondtoon = **laagste** basnoot per halve maat (de C-G-bas begint soms op G) en per halve
+  maat checken op kleine secunden met de melodie; voicings zonder terts (G-A-Bb-D op C) passen bij zowel E als F.
+  Trainermuziek op trainerId: niet in Frontier/Trainer Hill (eigen nummering botst met TRAINER_NORMAN_1 = 269).

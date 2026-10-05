@@ -7304,3 +7304,127 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_cello::
+	.incbin "sound/direct_sound_samples/grounded/gym2_cello.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_ostinato::
+	.incbin "sound/direct_sound_samples/grounded/gym2_ostinato.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_braam::
+	.incbin "sound/direct_sound_samples/grounded/gym2_braam.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_concert_bd::
+	.incbin "sound/direct_sound_samples/grounded/gym2_concert_bd.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_low_tom::
+	.incbin "sound/direct_sound_samples/grounded/gym2_low_tom.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_stab::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_stab.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_kick::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_kick.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_vibes::
+	.incbin "sound/direct_sound_samples/grounded/gym2_vibes.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_rhodes::
+	.incbin "sound/direct_sound_samples/grounded/gym2_rhodes.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_rh_dom::
+	.incbin "sound/direct_sound_samples/grounded/gym2_rh_dom.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_rh_maj::
+	.incbin "sound/direct_sound_samples/grounded/gym2_rh_maj.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_rh_min::
+	.incbin "sound/direct_sound_samples/grounded/gym2_rh_min.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_rh_sus::
+	.incbin "sound/direct_sound_samples/grounded/gym2_rh_sus.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_upright::
+	.incbin "sound/direct_sound_samples/grounded/gym2_upright.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_flugel::
+	.incbin "sound/direct_sound_samples/grounded/gym2_flugel.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_brush_tap::
+	.incbin "sound/direct_sound_samples/grounded/gym2_brush_tap.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_brush_swirl::
+	.incbin "sound/direct_sound_samples/grounded/gym2_brush_swirl.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_side_stick::
+	.incbin "sound/direct_sound_samples/grounded/gym2_side_stick.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_soft_kick::
+	.incbin "sound/direct_sound_samples/grounded/gym2_soft_kick.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_ride::
+	.incbin "sound/direct_sound_samples/grounded/gym2_ride.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_shaker::
+	.incbin "sound/direct_sound_samples/grounded/gym2_shaker.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_lead::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_lead.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_pluck::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_pluck.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_kick::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_kick.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_bass::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_bass.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_lead_a::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_lead_a.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_lead_b::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_lead_b.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_zap::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_zap.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_stab5::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_stab5.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_pop_brass::
+	.incbin "sound/direct_sound_samples/grounded/gym2_pop_brass.bin"
+
+	.align 2
+DirectSoundWaveData_gym2_psy_acid::
+	.incbin "sound/direct_sound_samples/grounded/gym2_psy_acid.bin"

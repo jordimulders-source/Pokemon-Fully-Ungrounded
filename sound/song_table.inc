@@ -653,6 +653,14 @@ gSongTable::
 	song mus_grounded_vs_victini, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_darkrai, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_genesect, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 647: plaatshouder (gym_remixes.py, andere agent)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 648: plaatshouder (gym_remixes.py, andere agent)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 649: plaatshouder (gym_remixes.py, andere agent)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 650: plaatshouder (gym_remixes.py, andere agent)
+	song mus_grounded_vs_norman, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_winona, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tate_liza, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wallace, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

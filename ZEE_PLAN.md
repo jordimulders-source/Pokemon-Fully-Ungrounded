@@ -5,7 +5,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
 
 ## Besloten (Jordi)
 - **Reuzen-Wailord** als grappig obstakel: de bestaande sprite opgeschaald tot ware grootte, praat = hij ligt te chillen.
-  Elke dag 25% kans dat hij er is, op één van 2-3 plekken. (In aanbouw.)
+  Elke dag 25% kans dat hij er is, op één van 2-3 plekken. (Gedaan, v0.9.67: Route 124/128/129.)
 - **Vragen M2** (PSG-drums) ja; **Neo Plasma** via een mp3 die als MIDI wordt nagebouwd.
 
 ## Ideeën van Jordi

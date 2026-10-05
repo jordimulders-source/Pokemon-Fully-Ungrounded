@@ -574,6 +574,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_ShadowTriad, OBJ_EVENT_PAL_TAG_SHADOW_TRIAD}, // Project Grounded (Neo Plasma)
     {gObjectEventPal_Rocket,                OBJ_EVENT_PAL_TAG_ROCKET}, // Project Grounded
     {gObjectEventPal_Petrel,                OBJ_EVENT_PAL_TAG_PETREL}, // Project Grounded
+    {gObjectEventPal_GiantWailord,          OBJ_EVENT_PAL_TAG_GIANT_WAILORD}, // Project Grounded
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoC,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_C}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoD,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_D}, // Project Grounded (FRLG)
@@ -2760,6 +2761,23 @@ void TrySpawnLightSprites(s16 camX, s16 camY)
     }
 }
 
+// Project Grounded: reuzen-Wailord (192x96): extra marge bij in/uit beeld en een voetafdruk van 11x2 tegels
+// (de waterlijn) voor botsing en aanspreken, i.p.v. alleen de ankertegel.
+#define GIANT_WAILORD_HALF_W  5
+#define GIANT_WAILORD_DEPTH   2
+static s16 GiantObjectViewMargin(u16 graphicsId)
+{
+    return graphicsId == OBJ_EVENT_GFX_GIANT_WAILORD ? 7 : 0;
+}
+
+static bool32 IsInGiantObjectFootprint(const struct ObjectEvent *obj, s16 x, s16 y)
+{
+    if (obj->graphicsId != OBJ_EVENT_GFX_GIANT_WAILORD)
+        return FALSE;
+    return x >= obj->currentCoords.x - GIANT_WAILORD_HALF_W && x <= obj->currentCoords.x + GIANT_WAILORD_HALF_W
+        && y > obj->currentCoords.y - GIANT_WAILORD_DEPTH && y <= obj->currentCoords.y;
+}
+
 void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
 {
     u8 i;
@@ -2784,8 +2802,9 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
             struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
             s16 npcX = template->x + MAP_OFFSET;
             s16 npcY = template->y + MAP_OFFSET;
+            s16 m = GiantObjectViewMargin(template->graphicsId);
 
-            if (top <= npcY && bottom >= npcY && left <= npcX && right >= npcX && !FlagGet(template->flagId))
+            if (top - m <= npcY && bottom + m >= npcY && left - m <= npcX && right + m >= npcX && !FlagGet(template->flagId))
             {
                 if (template->graphicsId == OBJ_EVENT_GFX_LIGHT_SPRITE)
                     SpawnLightSprite(npcX, npcY, cameraX, cameraY, template->trainerRange_berryTreeId); // light sprite instead
@@ -2823,10 +2842,11 @@ void RemoveObjectEventsOutsideView(void)
 
 static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
 {
-    s16 left =   gSaveBlock1Ptr->pos.x - 2;
-    s16 right =  gSaveBlock1Ptr->pos.x + 17;
-    s16 top =    gSaveBlock1Ptr->pos.y;
-    s16 bottom = gSaveBlock1Ptr->pos.y + 16;
+    s16 m = GiantObjectViewMargin(objectEvent->graphicsId);
+    s16 left =   gSaveBlock1Ptr->pos.x - 2 - m;
+    s16 right =  gSaveBlock1Ptr->pos.x + 17 + m;
+    s16 top =    gSaveBlock1Ptr->pos.y - m;
+    s16 bottom = gSaveBlock1Ptr->pos.y + 16 + m;
 
     if (objectEvent->currentCoords.x >= left && objectEvent->currentCoords.x <= right
      && objectEvent->currentCoords.y >= top && objectEvent->currentCoords.y <= bottom)
@@ -3376,8 +3396,8 @@ u8 GetObjectEventIdByPosition(u16 x, u16 y, u8 elevation)
     {
         if (gObjectEvents[i].active)
         {
-            if (gObjectEvents[i].currentCoords.x == x
-             && gObjectEvents[i].currentCoords.y == y
+            if (((gObjectEvents[i].currentCoords.x == x && gObjectEvents[i].currentCoords.y == y)
+              || IsInGiantObjectFootprint(&gObjectEvents[i], x, y))
              && ObjectEventDoesElevationMatch(&gObjectEvents[i], elevation))
                 return i;
         }
@@ -6473,7 +6493,8 @@ u32 GetObjectObjectCollidesWith(struct ObjectEvent *objectEvent, s16 x, s16 y, b
          )
         {
             // check for collision if curObject is active, not the object in question, and not exempt from collisions
-            if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
+            if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y)
+             || IsInGiantObjectFootprint(curObject, x, y))
             {
                 if (AreElevationsCompatible(objectEvent->currentElevation, curObject->currentElevation))
                     return i;

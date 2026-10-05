@@ -711,7 +711,7 @@
 #define FLAG_ITEM_SAFARI_SPOOK_REAPER_CLOTH  0x298 // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE  0x299 // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG  0x29A // Project Grounded: Safari Zone (nieuwe zones)
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
+#define FLAG_HIDE_GIANT_WAILORD  0x29B // Project Grounded: reuzen-Wailord verborgen (per kaartbezoek gezet, zie Grounded_GiantWailordSpot)
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
 #define FLAG_UNUSED_0x29E  0x29E // Unused Flag

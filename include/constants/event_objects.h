@@ -281,7 +281,9 @@
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_M                  270 // Project Grounded: Rocket-sidequest (FRLG)
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_F                  271 // Project Grounded: Rocket-sidequest (FRLG)
 #define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
-#define NUM_OBJ_EVENT_GFX                        273
+#define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord.py)
+
+#define NUM_OBJ_EVENT_GFX                        274
 
 
 // These are dynamic object gfx ids.
@@ -432,6 +434,7 @@
 #define OBJ_EVENT_PAL_TAG_SHADOW_TRIAD             0x1136 // Project Grounded (Neo Plasma)
 #define OBJ_EVENT_PAL_TAG_ROCKET                   0x1137 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

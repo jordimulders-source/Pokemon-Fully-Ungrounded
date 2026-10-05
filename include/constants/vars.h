@@ -271,7 +271,7 @@
 #define VAR_BURGLAR_DEFEATS                              0x40FA // Project Grounded: zo vaak is de Burglar (SIMON) in de steden verslagen
 #define VAR_BURGLAR_LAST_DAY                             0x40FB // Project Grounded: RTC-dag + 1 van de laatste inbraak (max. één per dag)
 #define VAR_ROCKET_QUEST                                 0x40FD // Project Grounded: Rocket-sidequest (0 niets, 1 dief gevlucht, 2 quest actief, 3 sleutels terug, 4 klaar)
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_GIANT_WAILORD_DEBUG                          0x40FE // Project Grounded: reuzen-Wailord forceren (0 normaal, 1-3 plek, 4 nergens)
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

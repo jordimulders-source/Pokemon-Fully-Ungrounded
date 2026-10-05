@@ -617,3 +617,4 @@ gSpecials::
 	def_special Burglar_Finish
 	def_special Burglar_DebugForce
 	def_special ScorchedSlab_CountLitStones
+	def_special Grounded_GiantWailordSpot

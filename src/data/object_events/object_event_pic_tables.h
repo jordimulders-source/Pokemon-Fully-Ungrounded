@@ -329,6 +329,10 @@ static const struct SpriteFrameImage sPicTable_RocketGruntM[] = { // Project Gro
 static const struct SpriteFrameImage sPicTable_RocketGruntF[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_RocketGruntF, 2, 4),
 };
+static const struct SpriteFrameImage sPicTable_GiantWailord[] = { // Project Grounded
+    obj_frame_tiles(gObjectEventPic_GiantWailord),
+};
+
 static const struct SpriteFrameImage sPicTable_Petrel[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_Petrel, 2, 4),
 };

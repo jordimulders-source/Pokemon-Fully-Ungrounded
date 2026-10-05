@@ -16588,3 +16588,12 @@ Alles met eigen samples waar instrumenten ontbraken (FluidR3/synthese), lint OK,
 - Samplegeneratoren per thema: `gm_samples.py` (gedeeld), `heatran_samples.py`, `rayquaza_samples.py`, `keccles_samples.py`.
   Elk samplelabel in `direct_sound_data.inc` staat nu achter een `.align 2`.
 - Strength-puzzels in de Seafloor Cavern nagelopen: duwen werkt, blokken staan na opnieuw binnenkomen weer op hun plek.
+
+### [v.0.9.67] - Reuzen-Wailord op zee
+- Jordi's idee: een gigantische **Wailord** als grappig obstakel. Het zijaanzicht uit de follower-sprite is 4x vergroot
+  (Scale2x, twee keer) tot 192x96 (±10 tegels lang), met de buik onder de waterlijn en een schuimrand
+  (`tools/grounded/giant_wailord.py`, `OBJ_EVENT_GFX_GIANT_WAILORD`, 9 subsprites van 64x32).
+- Elke dag 25% kans dat hij er ligt, op één van drie plekken in open zee: Route 124, Route 128 of Route 129. De plek
+  komt uit het dagnummer, dus de hele dag dezelfde (`Grounded_GiantWailordSpot`; testen met `VAR_GIANT_WAILORD_DEBUG`).
+- Hij blokkeert de waterlijn over 11x2 tegels en je kunt hem vanaf elke kant aanspreken: hij ligt te chillen. Grote
+  objecten verschijnen niet meer pas als hun ankertegel in beeld komt (extra marge).

@@ -5309,3 +5309,22 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
     .images = sPicTable_Petrel,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailord = { // Project Grounded
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_GIANT_WAILORD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 9216,
+    .width = 192,
+    .height = 96,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = sOamTables_192x96,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_GiantWailord,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

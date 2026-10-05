@@ -16647,3 +16647,9 @@ Jordi's eerste testrun:
   Wailord is nu op ware grootte opnieuw getekend als Gen 3-sprite (`tools/grounded/giant_wailord_draw.py`): gladde
   contour met een omlijning van 1 px, schaduwbanden, ovale rugvlekken, oog, witte onderkaak met groeven, borstvin,
   staart, en een dunne schuimlijn. Vorm afgeleid van het follower-zijaanzicht; eigen palet van 13 kleuren.
+
+### [v.0.9.72] - Magikarp v3
+- De kazoo-lead 3,7 dB zachter (spoorvolume 100 -> 67; totaal -V120 zodat de rest niet kaal wordt).
+- De cry-scratch nu vijf keer per loop: een stotterende "Ma-Ma-Ma-Ma-" aan het eind van de eerste A (±16 s), de
+  bekende "Ma- Ma- MAGIKARP!" na de heldenfanfare (35 s), "Ma-?" en "MA-?!" als antwoord in het spartel-C-deel
+  (±43 s), en de hele cry achterstevoren onder de slotfanfare (±53 s). Steeds 4-6 dB onder de lead.

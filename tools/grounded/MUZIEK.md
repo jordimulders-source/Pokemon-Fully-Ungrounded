@@ -506,3 +506,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   `sample_tremolo()` (neo_plasma_theme.py, nu een harde regel). 'Tikkende bas' = 16en van 27 ticks door detach met een
   lange release: korte release (50) + langere noot geeft dezelfde kanaalbezetting. **Spleeter-model leeg** (download
   faalde: h2/302) geeft 4 identieke stems zonder fout: md5 controleren; model met curl -L van de GitHub-release halen.
+- Brawly v6 (Jordi schrapte v1-v5; 'hi-hats als vervelende snare'): opnieuw als Rocky/Eye of the Tiger, alleen stock
+  samples, geen PSG/hats, max. 5 lagen (`brawly_check()` i.p.v. kermis_meter, dat koper/bellen verbiedt). **CC7 werkt
+  niet lineair op de waargenomen balans**: lead 100 -> 67 (-3,5 dB) haalde zijn A-gewogen aandeel maar van 63 naar 50%.
+  Stock-toonhoogtes (FFT) op toets 60: distortion_low, trinity_big_boned/30303 = C3; tubular_bell, trompet_60 = C4;
+  fingered bass C4 (C2 = toets 36, in de game gemeten Bb1 = 59 Hz). Emerald heeft geen synth-brass: trompet+hoorn (56/60).

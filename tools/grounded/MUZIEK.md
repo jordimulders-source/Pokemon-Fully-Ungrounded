@@ -516,3 +516,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   30-60 Hz +5 dB t.o.v. het origineel; per octaaf omhoog tot >= C3 (en weg als het akkoord die toon al speelt).
 - NNLS-gewichten (balance_orig) tegen een origineel met een ander leadtimbre zeggen 'lead -11 dB te luid': negeren
   als de opdracht 'melodie voorop' is; gebruik dan de solo-RMS t.o.v. de mix (lead -6,6, drums -4,8 ≈ drumstem -3,8).
+
+### Feedback ronde 5 (Jordi, 5 okt middag)
+- **Goedgekeurd:** Jirachi v4 ("geweldig, done"), SickBlik v2, Rayquaza v4 ("perfect"). Niet meer aanraken.
+- **Heatran → v5:** gebaseerd op Kyuss' "Odyssey": traag sludge-stuk (~75 bpm) wisselt met snelle desert-pump (~135 bpm). Moet klinken alsof Kyuss de originele R/S-Heatran-baasmuziek op de GBA inspeelde: crunchy low-bitrate gitaarsamples (C-standard), doffe fuzz-synthbas die de gitaar volgt, doffe Gen 3-drums (doffe snare, blikkerige crashes). Geen moderne studioklank.
+- **Mitch → v3:** v2 klonk als drukke chiptune/happy hardcore; alleen het stuk rond 1:00 had de juiste sfeer. Duister, minder pieperig (leads 1–2 octaven lager), less is more, two-step 172 bpm met keiharde droge snare + ducking, lage reese met portamento, intro → build-up → 1 tel stilte → drop.
+- **Neo Plasma → v7:** te kaal/dun. Octaafverdubbeling van de lead, sub onder de bas, gesplitste arpeggio's L/R, staccato off-beat-akkoordstoten, four-on-the-floor met ghost-snares en 16e-hats met accenten.

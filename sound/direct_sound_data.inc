@@ -7618,26 +7618,6 @@ DirectSoundWaveData_darkrai_drone::
 	.incbin "sound/direct_sound_samples/grounded/darkrai_drone.bin"
 
 	.align 2
-DirectSoundWaveData_genesect_dbass::
-	.incbin "sound/direct_sound_samples/grounded/genesect_dbass.bin"
-
-	.align 2
-DirectSoundWaveData_genesect_istab::
-	.incbin "sound/direct_sound_samples/grounded/genesect_istab.bin"
-
-	.align 2
-DirectSoundWaveData_genesect_kick2::
-	.incbin "sound/direct_sound_samples/grounded/genesect_kick2.bin"
-
-	.align 2
-DirectSoundWaveData_genesect_snare2::
-	.incbin "sound/direct_sound_samples/grounded/genesect_snare2.bin"
-
-	.align 2
-DirectSoundWaveData_genesect_roll2::
-	.incbin "sound/direct_sound_samples/grounded/genesect_roll2.bin"
-
-	.align 2
 DirectSoundWaveData_gym_bra_epower::
 	.incbin "sound/direct_sound_samples/grounded/gym_bra_epower.bin"
 
@@ -7708,3 +7688,11 @@ DirectSoundWaveData_gym2_np_sus::
 	.align 2
 DirectSoundWaveData_gym2_np_5::
 	.incbin "sound/direct_sound_samples/grounded/gym2_np_5.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_brass_low::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_brass_low.bin"
+
+	.align 2
+DirectSoundWaveData_darkrai_scream::
+	.incbin "sound/direct_sound_samples/grounded/darkrai_scream.bin"

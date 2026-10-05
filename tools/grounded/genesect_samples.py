@@ -26,12 +26,6 @@ Drums (eigen kit):
   genesect_pipe      : lage metalen buis/plaat (dezelfde opbouw op 190 Hz, langer).
   genesect_press     : machinepers: perslucht-'tssh' + dreun + metalen klank.
   genesect_revcym    : FluidR3-crash achterstevoren (aanloop naar een drop).
-v2 (Jordi: 'klonk als een funk-groove' -> meedogenloze Prodigy big beat / hard techno):
-  genesect_dbass     : overstuurde bas (zaagtand + blokgolf, tanh x6 + middenboost 1,2 kHz), lowpass 3,2 kHz, op E2.
-  genesect_istab     : industriële stoot: tritonus-cluster E3-Bb3-E4 (zaagtanden) + metaalruis, tanh x5, op E3.
-  genesect_kick2     : denderende kick (sinus 190 -> 44 Hz, langer lijf, tanh x5 = plat geslagen).
-  genesect_snare2    : extreem agressieve snare: snare + 909-clap + ruiscrack 1,8-6,5 kHz, tanh x7.
-  genesect_roll2     : dezelfde snare kort (70 ms) voor 16den/32sten-roffels.
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
 Gebruik: python3 tools/grounded/genesect_samples.py"""
 import os, subprocess, sys, tempfile, wave
@@ -327,53 +321,6 @@ def revcym(rate=16000):
     return norm(a), rate
 
 
-# ---------------------------------------------------------------- v2
-def istab(rate=22050, dur=0.42):
-    """Industriële stoot: E3-Bb3-E4 (tritonus) van ontstemde zaagtanden + metaalruis, snelle filterenvelope, tanh x5."""
-    t = np.arange(int(rate * dur)) / rate
-    rng = np.random.default_rng(41)
-    a = np.zeros_like(t)
-    for nt in (52, 58, 64):
-        for c in (-18, 0, 17):
-            a += saw(hz(nt) * 2 ** (c / 1200), t, rng.uniform(0, 6))
-    nz = bp(rng.uniform(-1, 1, len(t)), rate, 2500, 6500) * np.exp(-t / 0.03)
-    a = norm(a) + 0.6 * norm(nz)
-    a = 0.5 * lp(a, rate, 1200) + 0.5 * a * np.exp(-t / 0.05)          # filter klapt dicht na de aanslag
-    env = np.minimum(1, t / 0.0015) * np.exp(-t / 0.11)
-    a = np.tanh(5.0 * norm(a * env))
-    a = lp(a, rate, 6500)
-    return fade_out(norm(a), rate, 0.06), rate
-
-
-def kick2(rate=16000, dur=0.34):
-    n = int(rate * dur)
-    t = np.arange(n) / rate
-    f = 44 + 146 * np.exp(-t / 0.032)
-    body = np.sin(2 * np.pi * np.cumsum(f) / rate) * np.exp(-t / 0.19)
-    click = bp(np.random.default_rng(19).uniform(-1, 1, n), rate, 1800, 5500) * np.exp(-t / 0.005)
-    a = np.tanh(5.0 * (body + 1.2 * click))
-    a = lp(a, rate, 5000)
-    return fade_out(norm(a), rate, 0.06), rate
-
-
-def snare2(rate=22050, dur=0.26, short=False):
-    n = int(rate * dur)
-    t = np.arange(n) / rate
-    fl = resample(0.7 * render(0, [38], dur, kit=16, vel=127) + 0.6 * render(0, [39], dur, kit=24, vel=127)
-                  + 0.4 * render(0, [40], dur, kit=0, vel=127), 44100, rate, antialias=True)[:n]
-    fl = np.pad(fl, (0, n - len(fl)))
-    nz = np.random.default_rng(23).uniform(-1, 1, n)
-    crack = bp(nz, rate, 1800, 6500) * np.exp(-t / 0.06)
-    body = np.sin(2 * np.pi * 210 * t) * np.exp(-t / 0.03)
-    a = norm(fl) + 1.8 * norm(crack) + 0.6 * body
-    a = hp(a, rate, 160)
-    a = np.tanh(7.0 * norm(a))
-    a = lp(a, rate, 7500)
-    if short:
-        return fade_out(norm(a[:int(rate * 0.07)]), rate, 0.03), rate
-    return fade_out(norm(a), rate, 0.08), rate
-
-
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
@@ -404,14 +351,6 @@ def main():
     jobs['genesect_pipe'] = (a, r, 60, None)
     a, r = press(); jobs['genesect_press'] = (a, r, 60, None)
     a, r = revcym(); jobs['genesect_revcym'] = (a, r, 60, None)
-    # v2
-    a, r = periodic(40, 128, 64, [(-1, 1.0, 'saw', 0), (1, 0.9, 'sq', 0), (0, 0.4, 'sq', -1)], 6.0, 3200.0,
-                    sub_fund=0.45, mid_boost=(1200, 1.4), seed=29)
-    jobs['genesect_dbass'] = (a, r, 40, (0, len(a)))
-    a, r = istab(); jobs['genesect_istab'] = (a, r, 52, None)
-    a, r = kick2(); jobs['genesect_kick2'] = (a, r, 60, None)
-    a, r = snare2(); jobs['genesect_snare2'] = (a, r, 60, None)
-    a, r = snare2(short=True); jobs['genesect_roll2'] = (a, r, 60, None)
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

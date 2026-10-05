@@ -14,6 +14,9 @@ v2 (Giratina-achtig, duisterder):
                         door tanh x3 en op 13.379 Hz (Gen 3-korrel): één kanaal per akkoord, grondtoon E3 (52).
 - darkrai_brass_tt      idem als cluster E3-Bb3-E4-F4 (tritonus + kleine none): de schurendste stoot.
 - darkrai_drone         kerkorgel (GM 19) E1-Bb1-E2 (tritonus-drone), gelust, label E2 (40): speel 40 = E1-Bb1-E2.
+v3 (climax):
+- darkrai_brass_low     denderende lage koperstoot: trombone 57 + tuba 58 + brass 61, E2-Bb2-E3-F3, tanh x3, 13.379 Hz.
+- darkrai_scream        schurend clusterakkoord E4-F4-Bb4-B4: tremolo-strijkers 44 + koor 52, tanh x1,8, gelust.
 Gebruik: python3 tools/grounded/darkrai_samples.py  (vereist fluidsynth + FluidR3_GM, zie MUZIEK.md)"""
 import os, sys, wave
 import numpy as np
@@ -119,6 +122,21 @@ def main():
     org = norm(resample(np.tanh(1.5 * norm(org, 1.0)), SR, 13379), 0.9)
     org, lp = auto_loop(org, 13379)
     out['darkrai_drone'] = (org, 13379, 40, lp)
+
+    # v3: de climax (Giratina-dreiging): denderende lage koperstoot en een schurend, aangehouden clusterakkoord
+    def low_stab(notes):
+        n = int(0.75 * SR)
+        pad = lambda a: np.pad(a, (0, max(0, n - len(a))))[:n]
+        x = (0.6 * pad(trim(render(57, 0, 0.7, run=notes))) + 0.55 * pad(trim(render(58, 0, 0.7, run=notes)))
+             + 0.4 * pad(trim(render(61, 0, 0.7, run=notes))))
+        x = np.tanh(3.0 * norm(x, 1.0))
+        return fade(norm(resample(x, SR, 13379), 0.95), 13379, 0, 0.08)
+    out['darkrai_brass_low'] = (low_stab([40, 46, 52, 53]), 13379, 40)     # E2-Bb2-E3-F3, label E2 (40)
+    scr = (0.6 * trim(render(44, 0, 3.0, run=[64, 65, 70, 71]))[:int(2.6 * SR)]
+           + 0.5 * np.pad(trim(render(52, 0, 3.0, run=[64, 65, 70, 71])), (0, SR))[:int(2.6 * SR)])
+    scr = norm(resample(np.tanh(1.8 * norm(scr, 1.0)), SR, 13379), 0.9)
+    scr, lp = auto_loop(scr, 13379)
+    out['darkrai_scream'] = (scr, 13379, 64, lp)                          # E4-F4-Bb4-B4, label E4 (64)
 
     inc = open(DATA).read()
     for name, v in out.items():

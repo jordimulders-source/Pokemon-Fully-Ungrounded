@@ -40,8 +40,8 @@ voice_group grounded_genesect
 	voice_directsound 60, 0, DirectSoundWaveData_genesect_acid_acc, 255, 0, 255, 120  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_genesect_stab, 255, 0, 255, 170  @ 37
 	voice_directsound 60, 0, DirectSoundWaveData_genesect_ohit, 255, 0, 255, 180  @ 38
-	voice_directsound 60, 0, DirectSoundWaveData_genesect_dbass, 255, 0, 255, 130  @ 39
-	voice_directsound 60, 0, DirectSoundWaveData_genesect_istab, 255, 0, 255, 160  @ 40
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 42
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43

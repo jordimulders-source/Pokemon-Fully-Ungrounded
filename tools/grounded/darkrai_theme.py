@@ -27,6 +27,12 @@ Loop:
 v2 (Jordi: "80%", duisterder/Giratina-achtig): wisselende maten (A 7-7-6-7-5-9-7-8, B 9-7-10-5-9-6-11-5,
 D 7-6-8-5-7-10-5-7), rauwe koperstoten (verminderd / tritonus-cluster, één sample per akkoord) en een orgeldrone
 E-Bb onder het wiegelied; C ongewijzigd.
+v3 (Jordi: 'sfeer goed, maar kabbelt op één niveau; mist een epische climax'): nieuwe volgorde A-B-R-D-C. R (4 x 7/8)
+= opbouw vanuit het wiegelied (hartslag -> pauken/taiko -> koperstoten -> snareroffel in 16en, stijgende
+tritonusstoten E-F-F#-G-G#-A-Bb, omgekeerd bekken); D = de climax halverwege de loop: denderende lage koperstoten
+(darkrai_brass_low, E2-Bb2-E3-F3) + taiko op elke groep, schurend clusterakkoord (darkrai_scream, E-F-Bb-B) per maat;
+C (ritardando, achterstevoren) is nu de nasleep vóór de terugsprong. CC7 per sectie (DYN): A rustig, R crescendo,
+D het luidst. rev/revlong/cry delen één spoor (programma + CC7 per noot).
 Gebruikt tools/grounded/musiclib.py; samples uit tools/grounded/darkrai_samples.py.
 Gebruik: python3 tools/grounded/darkrai_theme.py"""
 import os, sys, random
@@ -44,6 +50,7 @@ MAX_VOICES = 11                     # legendary
 PIANO_LO, CELESTA, BOX, REV_BOX, REV_CLUSTER, REV_LULLABY, CRY_REV = 1, 8, 10, 11, 12, 13, 14
 TIMP, STRINGS, CHOIR, GHOST, SUB, BREATH, DRUMS = 47, 48, 52, 81, 84, 121, 127
 BRASS_DIM, BRASS_TT, DRONE = 61, 62, 19         # v2: rauwe koperstoten (verminderd / tritonus-cluster), orgeldrone
+LOWBRASS, SCREAM = 58, 49                       # v3: lage koperstoot (E2-Bb2-E3-F3), schurend clusterakkoord (E-F-Bb-B)
 # drumkit (sound/voicegroups/drumsets/darkrai.inc)
 KICK, SNARE, HAT, CRASH, REVCYM, TAIKO, TOM, HEART, TICK = 36, 37, 38, 39, 40, 41, 42, 43, 44
 
@@ -75,15 +82,26 @@ INTRO = [('I0', 6), ('I1', 6), ('BR1', 7), ('BR2', 7), ('BUILD', 7)]
 A_METER = [7, 7, 6, 7, 5, 9, 7, 8]
 B_METER = [9, 7, 10, 5, 9, 6, 11, 5]
 D_METER = [7, 6, 8, 5, 7, 10, 5, 7]
+R_METER = [7, 7, 7, 7]              # v3: de opbouw (crescendo) van het wiegelied naar de climax
 A = [('A%d' % i, m) for i, m in enumerate(A_METER)]
 B = [('B%d' % i, m) for i, m in enumerate(B_METER)]
 C = [('C%d' % i, 7) for i in range(7)]
 D = [('D%d' % i, m) for i, m in enumerate(D_METER)]
+R = [('R%d' % i, m) for i, m in enumerate(R_METER)]
 BARS, t = {}, 0
-for name, n in INTRO + A + B + C + D:
+for name, n in INTRO + A + B + R + D + C:          # v3: climax halverwege (A-B-R-D), daarna C als nasleep -> A
     BARS[name] = (t, n)
     t += n * E8
 LOOP_START, END = BARS['A0'][0], t
+# v3: dynamiek per sectie (CC7 op drums, bas, koper, drone): A rustig, B midden, R crescendo, D het luidst, C nasleep
+DYN = {'A': {'drums': 76, 'bass': 80, 'brass': 76, 'drone': 62},
+       'B': {'drums': 90, 'bass': 100, 'brass': 88, 'drone': 76},
+       'R0': {'drums': 84, 'bass': 92, 'brass': 84, 'drone': 76},
+       'R1': {'drums': 96, 'bass': 100, 'brass': 92, 'drone': 84},
+       'R2': {'drums': 108, 'bass': 108, 'brass': 100, 'drone': 92},
+       'R3': {'drums': 118, 'bass': 116, 'brass': 108, 'drone': 100},
+       'D': {'drums': 124, 'bass': 120, 'brass': 112, 'drone': 104},
+       'C': {'drums': 100, 'bass': 108, 'brass': 92, 'drone': 84}}
 GROUPS = {11: (0, 2, 4, 7, 9), 10: (0, 3, 6, 8), 9: (0, 2, 4, 6), 8: (0, 3, 6), 7: (0, 2, 4), 6: (0, 2, 4),
           5: (0, 2)}
 # v2: koperstoot per wiegeliedmaat: (grondtoon C3-B3, sample) -> E-dim, C-tt, A-dim, Bb-tt, E-dim, F-tt, D#-dim, E-tt
@@ -131,7 +149,7 @@ def tempo_at(tick):
 def build():
     rnd = random.Random(491)       # vaste seed: de ontstemming is elke keer gelijk
     P = {k: [] for k in ('box', 'celesta', 'rev', 'revlong', 'cry', 'strings', 'smel', 'choir', 'bass', 'timp',
-                         'drums', 'ghost', 'sub', 'breath', 'brass', 'drone')}
+                         'drums', 'ghost', 'sub', 'breath', 'brass', 'drone', 'lowbrass', 'scream')}
     box_bend = []                  # (tick, msb) voor de speeldoos
     str_bend = []
     ghost_bend = []
@@ -238,7 +256,7 @@ def build():
     for i in range(8):
         bar = 'A%d' % i
         s, n = BARS[bar]
-        mel = melody(fit(LULLABY[i], n), s, 104)
+        mel = melody(fit(LULLABY[i], n), s, 96)        # v3: 104 -> 96, het wiegelied rustiger (contrast met de climax)
         box_notes(mel, 0 if i < 4 else 0.6)
         P['ghost'] += [[a + 3 * E8 // 2, b + 3 * E8 // 2, n - 12, 70] for a, b, n, v in mel]   # spookecho
         ostinato(bar, ROOTS[i])
@@ -313,7 +331,61 @@ def build():
     P['drums'].append([s, s + 7 * E8, REVCYM, 112])
     P['bass'] += [[s + g * E8, s + g * E8 + E8 - 12, p('E1'), 90 + 6 * g] for g in (0, 2, 4, 5, 6)]
 
-    # D: climax
+    def reg(pc, lo):
+        return lo + (pc - lo) % 12
+
+    def scream(bar, root, vel, start=0, end=None):
+        """v3: schurend clusterakkoord (E-F-Bb-B, één sample) op de grondtoon, binnen een tritonus van E4."""
+        s, n = BARS[bar]
+        sh = (p(root) % 12 - 4 + 6) % 12 - 6
+        P['scream'].append([s + start * E8, s + (end or n) * E8 - 12, 64 + sh, vel])
+
+    def low(bar, root, at, vel=124, dur=2 * E8 - 10):
+        """v3: denderende lage koperstoot (E2-Bb2-E3-F3 als één sample) op de grondtoon (C2-B2)."""
+        s, n = BARS[bar]
+        for g in at:
+            P['lowbrass'].append([s + g * E8, s + g * E8 + dur, reg(p(root) % 12, 36), vel])
+
+    # R (v3): de opbouw. Het wiegelied keert terug op de speeldoos, rustig, en wordt maat voor maat een nachtmerrie:
+    # hartslag -> pauken -> koperstoten -> snareroffel + stijgende tritonusstoten + omgekeerd bekken -> de climax.
+    for i in range(4):
+        bar = 'R%d' % i
+        s, n = BARS[bar]
+        mel = melody(fit(LULLABY[i], n), s, 88 + 8 * i)
+        box_notes(mel, 0.2 + 0.25 * i)
+        if i >= 2:
+            P['ghost'] += [[a + 3 * E8 // 2, b + 3 * E8 // 2, k - 12, 64 + 6 * i] for a, b, k, v in mel]
+        if i < 3:
+            drone(bar, 72 + 10 * i)
+        P['sub'].append([s, s + n * E8 - 10, p(ROOTS[i]) + 12, 60 + 8 * i])
+        if i == 0:
+            P['drums'] += [[s + g * E8, s + g * E8 + E8, HEART, 80] for g in (0, 4)]
+        elif i == 1:
+            P['drums'] += [[s + g * E8, s + g * E8 + E8, HEART, 92] for g in (0, 2, 4)]
+            P['drums'].append([s, s + Q, TAIKO, 104])
+            P['bass'] += [[s + g * E8, s + g * E8 + 2 * E8 - 14, p(ROOTS[i]), 96] for g in (0, 2, 4)]
+            P['timp'] += [[s + g * E8, s + g * E8 + Q, p(ROOTS[i]) + 12, 88 + 4 * g] for g in (0, 4)]
+            scream(bar, ROOTS[i], 64, 2)
+        elif i == 2:
+            ostinato(bar, ROOTS[i], 104, full=False)
+            P['drums'] += [[s + g * E8, s + g * E8 + E8, KICK, 112] for g in (0, 2, 4)]
+            P['drums'] += [[s, s + Q, TAIKO, 116], [s + 6 * E8, s + 7 * E8, SNARE, 108]]
+            P['drums'] += [[s + g * E8, s + g * E8 + Q, TOM, 84 + 6 * g] for g in (2, 4)]
+            P['timp'] += [[s + g * E8, s + g * E8 + Q, p(ROOTS[i]) + 12, 100 + 3 * g] for g in (0, 2, 4)]
+            stab(bar, i, GROUPS[n], 104)
+            scream(bar, ROOTS[i], 84)
+        else:                       # de laatste maat: alles stijgt, en dan breekt de nachtmerrie los
+            ostinato(bar, ROOTS[i], 116, full=True)
+            for k in range(14):     # snareroffel in 16en, crescendo
+                P['drums'].append([s + k * E8 // 2, s + k * E8 // 2 + E8 // 2, SNARE, 72 + 4 * k])
+            P['drums'] += [[s + g * E8, s + g * E8 + E8, KICK, 100 + 3 * g] for g in range(7)]
+            P['drums'].append([s, s + 7 * E8, REVCYM, 116])
+            for g, root in enumerate(('E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3')):   # stijgende tritonusstoten
+                P['brass'].append([s + g * E8, s + g * E8 + E8 - 8, p(root), 100 + 4 * g, BRASS_TT])
+            scream(bar, ROOTS[i], 104)
+
+    # D: climax (v3: halverwege de loop, na de opbouw; denderende lage koperstoten, schurende clusterakkoorden,
+    # taiko + pauk op elke groep)
     for i in range(8):
         bar = 'D%d' % i
         s, n = BARS[bar]
@@ -322,23 +394,28 @@ def build():
         if i == 7:
             mel = [[a, min(b, s + 2 * E8 - 6), n, v] for a, b, n, v in mel if a < s + 2 * E8]   # breekt af na 1 tel
         box_notes([[a, b, n + 12, v] for a, b, n, v in mel], 0.7)
-        P['choir'] += [[a, b - 4, n, 108] for a, b, n, v in mel]
-        P['smel'] += [[a, b - 4, n - 12, 96] for a, b, n, v in mel]
+        P['choir'] += [[a, b - 4, n, 120] for a, b, n, v in mel]       # v3: 108 -> 120
         P['ghost'] += [[a + 3 * E8 // 2, b + 3 * E8 // 2, n, 76] for a, b, n, v in mel]
         if i < 7:
-            ostinato(bar, ROOTS[i], 120, full=False)          # v2: de orgeldrone draagt het octaaf
-            kit(bar, 'A', 6)
+            # v3: de climax draagt nu het schurende clusterakkoord (i.p.v. orgeldrone, strijkersmelodie en celesta)
+            # en denderende lage koperstoten + taiko op elke groep; geen hihats (de kanalen gaan naar het koper)
+            ostinato(bar, ROOTS[i], 120, full=False)
+            gs = GROUPS[n]
+            P['drums'] += [[s + g * E8, s + g * E8 + E8, KICK, 126] for g in gs if g != gs[1]]
+            P['drums'] += [[s + gs[1] * E8, s + gs[1] * E8 + E8, SNARE, 116], [s + (n - 1) * E8, s + n * E8, SNARE, 120]]
+            P['drums'] += [[s + g * E8, s + g * E8 + Q, TAIKO, 124 if g == 0 else 110] for g in gs]
             P['sub'].append([s, s + n * E8 - 10, p(ROOTS[i]) + 12, 90])
-            P['celesta'] += [[s + g * E8, s + g * E8 + E8, x, 76] for g in (2,) for x in (p('E6'), p('F6'))]
-            drone(bar, 104)
-            stab(bar, i, GROUPS[n], 122)                    # v2: koperstoot op elke groep: het wiegelied als nachtmerrie
+            stab(bar, i, gs, 122)                           # v2: koperstoot op elke groep: het wiegelied als nachtmerrie
             if i % 2 == 0:
-                P['drums'].append([s, s + 2 * Q, CRASH, 112])
+                P['drums'].append([s, s + 2 * Q, CRASH, 116])
+            low(bar, ROOTS[i], gs, 124 if i == 0 else 118)
+            scream(bar, ROOTS[i], 112 if i else 120)
         else:                     # afbreken na de eerste tel; het omgekeerde bekken (1 maat) zuigt terug naar A
             P['drums'] += [[s, s + E8, KICK, 124], [s, s + Q, TAIKO, 124], [s, s + 7 * E8, REVCYM, 112]]
             P['bass'] += [[s, s + 2 * E8 - 14, p('E1'), 120], [s, s + 2 * E8 - 14, p('E2'), 110]]
             P['timp'].append([s, s + Q, p('E2'), 116])
             stab(bar, 7, (0,), 124, Q - 8)
+            low(bar, 'E1', (0,), 127, Q - 10)
 
     # ---------------- voicegroup + drumkit ----------------
     write_voicegroup()
@@ -351,13 +428,15 @@ def build():
     tail['drums'] = 0              # drumnoten: echte lengte (het omgekeerde bekken = 1 maat)
     tail['brass'] = release_ticks(rel[BRASS_DIM], TPB, BPM)
     tail['drone'] = release_ticks(rel[DRONE], TPB, BPM)
+    tail['lowbrass'] = release_ticks(rel[LOWBRASS], TPB, BPM)
+    tail['scream'] = release_ticks(rel[SCREAM], TPB, BPM)
     for k in ('box', 'choir', 'smel'):
         P[k] = detach(P[k], tail[k])
     for k in P:
-        if k not in ('rev', 'revlong', 'cry', 'brass'):
+        if k not in ('rev', 'revlong', 'cry', 'brass', 'lowbrass'):
             P[k] = dedupe(P[k])
-    order = ['box', 'bass', 'drums', 'revlong', 'choir', 'cry', 'brass', 'drone', 'smel', 'rev', 'timp', 'strings',
-             'celesta']
+    order = ['box', 'bass', 'drums', 'revlong', 'choir', 'cry', 'lowbrass', 'scream', 'brass', 'drone', 'smel', 'rev',
+             'timp', 'strings', 'celesta']
     ds = {k: [x[:4] for x in P[k]] for k in order}
     kept = allocate(ds, order, tail, max_voices=MAX_VOICES)
     for k in order:
@@ -396,26 +475,38 @@ def build():
         song.add(sorted(notes), prog, vol, ch, pan, extra=extra, ccs=ccs)
         layout.append(name)
 
+    def dyn(part):
+        """v3: CC7 per sectie (zie DYN), ook op het loopbegin (terugsprong)."""
+        out = []
+        for name, (st, n) in sorted(BARS.items(), key=lambda b: b[1][0]):
+            key = name if name in DYN else name[0]
+            if key in DYN and (name == key or name.endswith('0')):
+                out.append((st, 7, DYN[key][part]))
+        return out
+
     add('box', P['box'], BOX, 100, 0, 64, extra=pw(box_bend), ccs=[(0, 20, 2)])
     add('celesta', P['celesta'], CELESTA, 70, 1, 84)
-    rv = rev_split(P['rev'])
-    add('rev', sorted(rv.get(REV_CLUSTER, [])), REV_CLUSTER, 90, 2, 50)
-    add('revlong', [x[:4] for x in P['revlong']], REV_LULLABY, 110, 3, 64)
-    add('cry', [x[:4] for x in P['cry']], CRY_REV, 96, 4, 76)
+    # v3: omgekeerde clusters, het omgekeerde wiegelied en de omgekeerde cry delen één spoor (programma + volume per
+    # noot), zodat er twee sporen vrijkomen voor de climax
+    fxvol = {REV_CLUSTER: 90, REV_LULLABY: 110, CRY_REV: 96}
+    fx = sorted(P['rev'] + P['revlong'] + P['cry'])
+    add('fx', [x[:4] for x in fx], REV_CLUSTER, 90, 2, 64,
+        ccs=[c for x in fx for c in ((x[0], 'prog', x[4]), (x[0], 7, fxvol[x[4]]))])
+    add('lowbrass', P['lowbrass'], LOWBRASS, 112, 3, 64)
+    add('scream', P['scream'], SCREAM, 92, 4, 68)
     add('strings', P['strings'], STRINGS, 72, 5, 56, extra=pw(str_bend), ccs=[(0, 20, 2)])
-    add('smel', P['smel'], STRINGS, 84, 6, 72)
     add('choir', P['choir'], CHOIR, 84, 7, 64)
-    add('bass', P['bass'], PIANO_LO, 108, 8, 64)
+    add('bass', P['bass'], PIANO_LO, 108, 8, 64, ccs=dyn('bass'))
     add('timp', P['timp'], TIMP, 92, 10, 64)
     add('ghost', P['ghost'], GHOST, 34, 11, 88, extra=[(0, mido.Message('pitchwheel', pitch=12 * 128))],
         ccs=[(0, 20, 1)])                                                     # +19 cent: vals
     add('sub', P['sub'], SUB, 60, 12, 64)
     add('breath', P['breath'], BREATH, 40, 13, 64)
-    add('drums', P['drums'], DRUMS, 100, 9, 64)
+    add('drums', P['drums'], DRUMS, 100, 9, 64, ccs=dyn('drums'))
     br = sorted(P['brass'])
-    add('brass', [x[:4] for x in br], BRASS_DIM, 92, 14, 60, ccs=[(x[0], 'prog', x[4]) for x in br])
-    add('drone', P['drone'], DRONE, 84, 15, 64)
-    assert not [k for k in P if P[k] and k not in layout], 'partij niet weggeschreven'
+    add('brass', [x[:4] for x in br], BRASS_DIM, 92, 14, 60, ccs=[(x[0], 'prog', x[4]) for x in br] + dyn('brass'))
+    add('drone', P['drone'], DRONE, 84, 15, 64, ccs=dyn('drone'))
+    assert not [k for k in P if P[k] and k not in layout + ['rev', 'revlong', 'cry']], 'partij niet weggeschreven'
     song.save(OUT, END)
 
     def sec(tick):
@@ -425,7 +516,7 @@ def build():
             t += E8
         return s
     print(OUT, '%d sporen, intro %.1f s, loop %.1f s' % (len(layout), sec(LOOP_START), sec(END) - sec(LOOP_START)))
-    for nm in ('A0', 'B0', 'C0', 'C3', 'D0', 'D7'):
+    for nm in ('A0', 'B0', 'R0', 'D0', 'D7', 'C0', 'C3'):
         print('  %-3s %5.1f s' % (nm, sec(BARS[nm][0])))
 
 
@@ -446,6 +537,8 @@ def write_voicegroup():
         '@ 47': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 200  @ 47',
         '@ 61': '\tvoice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_dim, 255, 0, 255, 140  @ 61',
         '@ 62': '\tvoice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_tt, 255, 0, 255, 140  @ 62',
+        '@ 58': '\tvoice_directsound 60, 0, DirectSoundWaveData_darkrai_brass_low, 255, 0, 255, 150  @ 58',
+        '@ 49': '\tvoice_directsound 60, 0, DirectSoundWaveData_darkrai_scream, 255, 0, 255, 150  @ 49',
         '@ 52': '\tvoice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 160  @ 52',
         '@ 81': '\tvoice_square_2 60, 0, 2, 0, 2, 9, 2  @ 81',
         '@ 84': '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 2  @ 84',

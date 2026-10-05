@@ -21,7 +21,13 @@ worden met een hoge bpm eronder, daarna switch je weer terug naar het reguliere 
   A  (0-7)   thema op fluit + glockenspiel, pizzicato, harp-arpeggio's, huppelende bas
   A' (8-15)  thema op strijkers + fluit een octaaf hoger, hogere afsluiting
   B  (16-23) avontuur: hoorn met een heldhaftig tegenthema, spiccato-strijkers, celesta-antwoorden, pauken;
-             maat 22-23 = de overgang erin: PSG-riser (i.p.v. de shaker), roffel op tel 3-4 van maat 23
+             maat 22-23 = de overgang erin (v4: G-A, opwaarts): PSG-riser, PSG-lead-arpeggio + loopje omhoog,
+             vocal-opmaat A-C#-E-A, roffel op tel 3-4 van maat 23
+  v4 (Jordi: v3 'te donker, mysterieus, spookachtig' -> euforische, uplifting trance): het tussenstuk in D-groot,
+             D-A-Bm-G (I-V-vi-IV) en G-A-F#m-Bm (IV-V-iii-vi), slot Asus4-A -> E-groot; de vocals als korte stoten
+             (3+3+2) in stijgende akkoordtonen met een terts eronder, in fase 2 gated achtsten; PSG-blokgolf-arpeggio's
+             in 16en omhoog (glinster omlaag op elke 4e maat) + delay-echo op vierkant 1; roffels in maat 7, 14, 15.
+             Onderstaande beschrijving van I is die van v3.
   I  (24-39, 48,9 s) het tussenstuk, abrupt naar 164 bpm (Bm-G-D-A, vocal trance): de 'aaah'-vocal (jirachi_vox)
              zingt het wensmotief in augmentatie (A4 -> G5 -> F#5 -> E5 over 8 maten, noten van 2-6 maten, glijtonen
              via pitch bend, vibrato dat langzaam opkomt, aanzwellen via CC7) boven four-on-the-floor, off-beat
@@ -53,6 +59,7 @@ SPARK, SHAKER = 81, 120            # PSG
 # trance-climax (v2): eigen samples uit jirachi_samples.py
 SAW_DARK, SAW_MID, SAW_BRIGHT, SAW_LEAD, SAW_PLUCK, SAW_BASS = 88, 89, 90, 91, 92, 39
 VOX = 85                           # v3: de 'aaah'-vocal (jirachi_vox)
+LEAD, ECHO = 82, 80                # v4: PSG-blokgolf-lead (vierkant 2) en zijn delay-echo (vierkant 1)
 SUB, RISER, HATS = 84, 121, 122    # PSG: golf (sub), ruis (riser, open/dichte hihats)
 BPM_TR = 164                       # tempo van het tussenstuk
 TKICK, CLAP, TSNARE = 43, 44, 45
@@ -90,7 +97,7 @@ def lt(lb):
 
 LOOP_START, LOOP_END = lt(0), lt(LOOP_LEN)
 
-QUAL = {'': (0, 4, 7), 'm': (0, 3, 7), '7': (0, 4, 7, 10), 'm7': (0, 3, 7, 10)}
+QUAL = {'': (0, 4, 7), 'm': (0, 3, 7), '7': (0, 4, 7, 10), 'm7': (0, 3, 7, 10), 'sus4': (0, 5, 7)}
 
 
 def chord(name):
@@ -102,9 +109,9 @@ def chord(name):
 INTRO = ['D', 'Bm', 'G', 'A', 'G', 'A']
 LOOP = (['D', 'Bm', 'G', 'A', 'D', 'B7', ('Em', 'Gm'), ('D', 'A')] +                    # A
         ['D', 'Bm', 'G', 'A', 'D', 'G', ('Em7', 'A7'), 'D'] +                          # A'
-        ['Bm', 'G', 'D', 'A', 'Bm', 'G', 'Em', 'F#7'] +                                # B (= v1)
-        ['Bm', 'G', 'D', 'A', 'Bm', 'G', 'D', 'A'] +                                   # tussenstuk, 164 bpm
-        ['Bm', 'G', 'D', 'A', 'Bm', 'G', 'Em', 'B7'] +                                 # (vanaf hier 2 vocalstemmen)
+        ['Bm', 'G', 'D', 'A', 'Bm', 'G', 'G', 'A'] +                                   # B (= v1; v4: maat 22-23 IV-V omhoog)
+        ['D', 'A', 'Bm', 'G', 'D', 'A', 'Bm', 'G'] +                                   # tussenstuk, 164 bpm: I-V-vi-IV
+        ['G', 'A', 'F#m', 'Bm', 'G', 'A', 'Bm', ('Asus4', 'A')] +                      # IV-V-iii-vi, A -> E-groot
         ['E', 'C#m', 'A', 'B', 'E', 'A', ('F#m7', 'B7'), 'E'] +                        # D (A' in E)
         ['C', 'D', 'G', 'A'])                                                          # E
 assert len(LOOP) == LOOP_LEN
@@ -154,8 +161,8 @@ HEROIC = [   # B: hoorn
     [(0, 4, 'E5'), (4, 4, 'C#5'), (8, 8, 'A4')],                                    # A
     [(0, 4, 'F#4'), (4, 2, 'B4'), (6, 2, 'C#5'), (8, 6, 'D5'), (14, 2, 'E5')],      # Bm
     [(0, 4, 'D5'), (4, 2, 'E5'), (6, 2, 'F#5'), (8, 8, 'G5')],                      # G
-    [(0, 6, 'G5'), (6, 2, 'F#5'), (8, 4, 'E5'), (12, 4, 'B4')],                     # Em
-    [(0, 8, 'A#4'), (8, 4, 'C#5'), (12, 4, 'E5')],                                  # F#7
+    [(0, 4, 'B4'), (4, 4, 'D5'), (8, 8, 'G5')],                                     # G  (v4: de overgang, opwaarts)
+    [(0, 6, 'E5'), (6, 2, 'F#5'), (8, 4, 'G5'), (12, 4, 'A5')],                     # A
 ]
 WISH = [   # C: het wensmotief vergroot, met de octaafsprong
     [(0, 4, 'D5'), (4, 12, 'D6')],                                                  # G
@@ -174,99 +181,131 @@ RISE = [   # E: het motief in sequens omhoog
     [(0, 8, 'E5'), (8, 4, 'C#5'), (12, 4, 'E5')],                                   # A
 ]
 
-# --- v3: het trance-tussenstuk (loopmaat 24-39) ----------------------------------------------------------------------
-# De vocals in tellen vanaf het begin van het tussenstuk: (begin, lengte, noot, scoop, glijtonen, volume);
-# glijtonen = [(tel na het begin van de noot, halve tonen t.o.v. de noot, duur van de glij in tellen)], BENDR = 4
-# (16 BEND-stappen per halve toon: exact). Het wensmotief A4 -> G5 -> F#5 (-> E5) in augmentatie.
-VOX_LEAD = [
-    (0, 2, 'A4', True, [], 112),                                      # Bm: 'aah' van onderen
-    (2, 14, 'G5', True, [(6, -1, 0.5), (12, -3, 1)], 124),            # G: de sprong; D: G -> F#; A: -> E
-    (16, 2, 'D5', True, [], 112),                                     # Bm
-    (18, 14, 'B5', True, [(6, -2, 0.5), (12, -4, 2)], 124),           # G: B; D: -> A; A: valt weg ('waaah')
-    (32, 2, 'F#5', True, [], 116),                                    # Bm
-    (34, 22, 'D6', True, [(8, -1, 0.5), (12, 0, 0.5), (16, -3, 0.75)], 127),   # het hoogtepunt: 5,5 maat één noot
-    (56, 8, 'B5', True, [(2, -2, 0.5), (7.5, -3, 0.5)], 127),         # Em: B -> A; B7: A ... -> G# (E-groot)
-]
-VOX_HARM = [(st, ln, n[:-1] + str(int(n[-1]) - 1), sc, bd, 96) for st, ln, n, sc, bd, v in VOX_LEAD if st < 32] + [
-    # fase 1: de tweede laag zingt de vocal een octaaf lager mee (breedte); vanaf maat 32 een eigen tweede stem
-    (32, 8, 'D5', True, [], 96), (40, 8, 'A4', True, [], 96), (48, 8, 'B4', True, [], 96), (56, 4, 'G4', True, [], 96),
-    (60, 4, 'D#5', True, [(3.5, 1, 0.5)], 100),                        # B7: D# -> E
-]
-
 PARTS = ('flute', 'glock', 'strmel', 'horn', 'mbox', 'celesta', 'harp', 'pizz', 'strings', 'choir', 'bass', 'timp',
          'drums', 'perc', 'spark', 'shaker',
-         'vox', 'vox2', 'tsaw', 'tbass', 'tpluck', 'tdrums', 'sub')
+         'vox', 'vox2', 'tsaw', 'tbass', 'tpluck', 'tdrums', 'sub', 'lead', 'echo')
 
 
-def vocals(P, ex, cc):
-    """Noten + expressie (BEND/MOD via `ex`, aanzwellen/wegsterven via CC7 in `cc`) van de twee vocalstemmen."""
-    i0 = lt(I0)
-    for part, seq in (('vox', VOX_LEAD), ('vox2', VOX_HARM)):
-        for st, ln, n, scoop, bends, vol in seq:
-            a, b = i0 + int(st * TPB), i0 + int((st + ln) * TPB)
-            P[part].append([a, b, p(n), 127])
-            e, c = ex[part], cc[part]
-            cur = -16 if scoop else 0                                   # BEND-stappen (MSB)
-
-            def bend(tick, v):
-                e.append((tick, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v * 128)))))
-            bend(a, cur)
-            e.append((a, mido.Message('control_change', control=1, value=0)))
-            if scoop:                                                   # van een halve toon onder de noot omhoog
-                for j in range(1, 7):
-                    bend(a + 3 * j, cur + 16 * j // 6)
-                cur = 0
-            # vibrato komt na een tel langzaam op (uitgerekte noot)
-            for j, m in enumerate((8, 14, 20, 26)):
-                if (1 + j * 0.5) * TPB < ln * TPB - TPB // 2:
-                    e.append((a + int((1 + j * 0.5) * TPB), mido.Message('control_change', control=1, value=m)))
-            # aanzwellen: 55% -> 100% in een tel
-            c += [(a + j * (TPB // 6), 7, int(vol * (0.55 + 0.45 * j / 6))) for j in range(7)]
-            for off, semi, gl in bends:
-                t0, steps, tgt = a + int(off * TPB), max(2, int(gl * TPB) // 3), 16 * semi
-                for j in range(1, steps + 1):
-                    bend(t0 + 3 * j, cur + (tgt - cur) * j // steps)
-                if semi <= -4:                                          # de val: tegelijk wegsterven
-                    c += [(t0 + 3 * j, 7, int(vol * (1 - 0.7 * j / steps))) for j in range(1, steps + 1)]
-                cur = tgt
+# --- v4: het trance-tussenstuk (loopmaat 24-39), euforisch in D-groot --------------------------------------------------
+# Jordi over v3: 'te donker, mysterieus, spookachtig; ik wil euforische, uplifting trance'. Dus: I-V-vi-IV (D-A-Bm-G),
+# daarna IV-V-iii-vi (G-A-F#m-Bm), geen mineur-dominant of chromatiek; de 'aah'-vocals als korte stoten op de tellen in
+# stijgende akkoordtonen (tweede stem een diatonische terts lager), in fase 2 gated in achtsten; heldere PSG-blokgolf-
+# arpeggio's in 16en die omhoog dansen (met een dalende glinster aan het eind van elke 4 maten) + een PSG-delay-echo.
+DMAJ = [0, 2, 4, 6, 7, 9, 11]                       # D-groot (toonklassen t.o.v. C)
+STAB = [(0, 1.25), (1.5, 1.25), (3, 0.75)]          # trance-stootritme 3+3+2 achtsten (in tellen)
 
 
-def interlude(P, s, k, name, gliss):
-    """Eén maat van het tussenstuk (k = 0..15, 164 bpm): four-on-the-floor, off-beat zaagtandbas + PSG-sub,
-    PSG-hihats, supersaw (fase 1 aangehouden en 'gepompt' via CC7, fase 2 gated in achtsten), pluck-arpeggio's."""
+def third_below(n):
+    """de diatonische terts onder n in D-groot."""
+    sc = [x for x in range(n - 6, n) if (x % 12) in DMAJ]
+    return sc[-2]
+
+
+def vox_bar(k, chords):
+    """(begin in tellen, lengte, lead, tweede stem) voor maat k van het tussenstuk."""
+    name = chords[0][1]
+    out = []
+    if k == 15:                                     # Asus4 -> A: stoot, dan stijgende achtsten naar E-groot
+        for st, ln, a, b in ((0, 1.25, 'D6', 'A5'), (1.5, 0.5, 'C#6', 'A5'), (2, 0.4, 'A5', 'E5'),
+                             (2.5, 0.4, 'B5', 'E5'), (3, 0.4, 'C#6', 'A5'), (3.5, 0.45, 'E6', 'B5')):
+            out.append((st, ln, p(a), p(b)))
+        return out
+    if k < 8:
+        tn = tones(name, 69, 88) if k < 4 else tones(name, 74, 93)      # tweede helft een octaaf hoger
+        for i, (st, ln) in enumerate(STAB):
+            out.append((st, ln, tn[i], third_below(tn[i])))
+    else:                                           # fase 2: gated achtsten die per halve maat omhoog lopen
+        for i in range(8):
+            nm = chords[0 if i < 4 else 1][1]
+            tn = tones(nm, 74, 93)
+            n = tn[min((0, 1, 2, 3, 1, 2, 3, 4)[i], len(tn) - 1)]
+            out.append((i * 0.5, 0.25, n, third_below(n)))
+    return out
+
+
+def vocals(P, cc):
+    """Korte 'aah'-stoten (geen glijtonen meer), volume per fase via CC7 (opbouw)."""
+    for k in range(16):
+        s = lt(I0 + k)
+        ch = chords_at(LOOP, s, I0 + k)
+        for st, ln, a, b in vox_bar(k, ch):
+            x, y = s + int(st * TPB), s + int((st + ln) * TPB)
+            P['vox'].append([x, y, a, 118 if st == 0 else 108])
+            P['vox2'].append([x, y, b, 104 if st == 0 else 96])
+        v = 96 if k < 4 else 108 if k < 8 else 118
+        if k in (0, 4, 8):
+            cc['vox'].append((s, 7, v))
+            cc['vox2'].append((s, 7, v - 8))
+    # opmaat in maat 23 (de overgang): stijgende stoten A4 C#5 E5 A5 op tel 3-4
+    s = lt(I0 - 1)
+    P['vox'] += [[s + 2 * TPB + i * E8, s + 2 * TPB + i * E8 + 40, p(n), 100 + 6 * i]
+                 for i, n in enumerate(('A4', 'C#5', 'E5', 'A5'))]
+    cc['vox'].append((s, 7, 96))
+
+
+def lead_bar(P, s, k, chords):
+    """PSG-blokgolf: arpeggio's die omhoog dansen (vallende ster omgekeerd), dalende glinster op elke 4e maat."""
+    if k == 15:                                     # loopje omhoog naar E-groot (geen G/G#)
+        run = ['E4', 'F#4', 'A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'A5', 'B5', 'C#6', 'D6', 'E6', 'F#6', 'A6', 'B6']
+        P['lead'] += [[s + i * S16, s + i * S16 + S16 - 2, p(n), 80 + 2 * i] for i, n in enumerate(run)]
+        return
+    step = E8 if k < 4 else S16
+    for i in range(BAR // step):
+        tk = s + i * step
+        nm = chords[0 if tk < chords[1][0] else 1][1]
+        tn = tones(nm, 67 if k < 8 else 62, 93)
+        if k % 4 == 3 and tk >= s + 3 * TPB:        # glinster: dalend vanaf de top
+            j = len(tn) - 1 - (i - 3 * TPB // step)
+        elif step == E8:
+            j = i
+        else:
+            j = (i % 8) + (0 if i < 8 else 2 if k < 8 else 3)
+        P['lead'].append([tk, tk + step - 3, tn[max(0, min(j, len(tn) - 1))], 92 if k >= 8 else 84])
+
+
+def interlude(P, s, k, chords, gliss):
+    """Eén maat van het tussenstuk (k = 0..15, 164 bpm): four-on-the-floor, clap op 2 en 4 (vanaf maat 4), open hihat
+    op de off-beat, off-beat zaagtandbas + PSG-sub, heldere supersaw (fase 1 aangehouden en gepompt, fase 2 gated
+    in achtsten), pluck-arpeggio's, PSG-lead-arpeggio's; roffels in maat 7, 14 en 15."""
+    name = chords[0][1]
     r = bass_note(name)
     big, last = k >= 8, k == 15
     nb = 2 if last else 4                                               # maat 39: de beat valt op tel 3 weg
-    P['tdrums'] += [[s + i * TPB, s + i * TPB + E8, TKICK, 112 if big else 104] for i in range(nb)]
+    P['tdrums'] += [[s + i * TPB, s + i * TPB + E8, TKICK, 98 if big else 92] for i in range(nb)]
     if k >= 4:
-        P['tdrums'] += [[s + i * TPB, s + i * TPB + E8 + S16, CLAP, 90 if big else 80] for i in (1, 3) if i < nb]
+        P['tdrums'] += [[s + i * TPB, s + i * TPB + E8 + S16, CLAP, 94 if big else 84] for i in (1, 3) if i < nb]
     if k in (0, 8):
         P['perc'] += [[s, s + 2 * TPB, CRASH, 110]]
     elif k in (4, 12):
-        P['perc'] += [[s, s + 2 * TPB, CRASH, 84]]
+        P['perc'] += [[s, s + 2 * TPB, CRASH, 88]]
     if k == 7:                                                          # roffel naar fase 2
         P['tdrums'] += [[s + 2 * TPB + i * S16, s + 2 * TPB + i * S16 + 10, TSNARE, 66 + 4 * i] for i in range(8)]
-    if last:                                                            # roffel in 32en + harpglissando naar E
-        P['tdrums'] += [[s + 2 * TPB + i * 12, s + 2 * TPB + i * 12 + 8, TSNARE, 72 + 3 * i] for i in range(16)]
+    if k == 14:                                                         # opbouw: snare in achtsten, aanzwellend
+        P['tdrums'] += [[s + i * E8, s + i * E8 + 10, TSNARE, 60 + 3 * i] for i in range(8)]
+    if last:                                                            # 16en, dan 32en + harpglissando naar E
+        P['tdrums'] += [[s + i * S16, s + i * S16 + 10, TSNARE, 76 + 2 * i] for i in range(8)]
+        P['tdrums'] += [[s + 2 * TPB + i * 12, s + 2 * TPB + i * 12 + 8, TSNARE, 92 + 2 * i] for i in range(16)]
         gliss(s + 3 * TPB, p('B4'), p('B6'), 8, 12, 104, tonic=4)
     for i in range(4 * nb):                                             # hihats: open op de off-beat, dicht op de rest
         if i % 4:
             P['shaker'] += [[s + i * S16, s + i * S16 + (16 if i % 4 == 2 else 3), 84 if i % 4 == 2 else 92,
                              100 if i % 4 == 2 else 56]]
     P['tbass'] += [[s + i * TPB + E8, s + i * TPB + E8 + 22, r, 96 if big else 90] for i in range(nb)]
-    P['sub'] += [[s + i * TPB + E8, s + i * TPB + E8 + 26, r, 100] for i in range(nb)]
-    pad = tones(name, 62, 76)[:3]
-    if not big:
-        P['tsaw'] += [[s, s + BAR - 8, n, 56] for n in pad]
+    P['sub'] += [[s + i * TPB + E8, s + i * TPB + E8 + 26, r, 88] for i in range(nb)]
+    if not big:                                                         # heldere ligging (F#4..A5), geen lage pad
+        P['tsaw'] += [[s, s + BAR - 8, n, 58] for n in tones(name, 66, 81)[:3]]
     else:
-        P['tsaw'] += [[s + i * E8, s + i * E8 + 22, n, 68] for i in range(2 * nb) for n in pad]
-        if last:                                                        # B7 aangehouden onder de glijdende vocals
-            P['tsaw'] += [[s + 2 * TPB, s + BAR - 8, n, 70] for n in tones(name, 63, 75)[:3]]
+        for i in range(2 * nb):
+            nm = chords[0 if i < 4 else 1][1]
+            P['tsaw'] += [[s + i * E8, s + i * E8 + 22, n, 70] for n in tones(nm, 66, 81)[:3]]
+        if last:                                                        # A-groot aangehouden onder de stijgende stoten
+            P['tsaw'] += [[s + 2 * TPB, s + BAR - 8, n, 72] for n in tones('A', 66, 81)[:3]]
     if k >= 4:                                                          # pluck in 16en (fase 2 een octaaf breder)
         tn = tones(name, 74, 93)
         pat = (0, 1, 2, 1) if not big else (0, 1, 2, 3)
         P['tpluck'] += [[s + i * S16, s + i * S16 + 8, tn[min(pat[i % 4] + (3 if big and i % 8 >= 4 else 0), len(tn) - 1)],
                          66 if big else 54] for i in range(4 * nb)]
+    lead_bar(P, s, k, chords)
 
 
 def build():
@@ -351,7 +390,7 @@ def build():
         main = halves[0][1]
         sec, k = section(lb)
         if sec == 'I':
-            interlude(P, s, k, main, gliss)
+            interlude(P, s, k, halves, gliss)
             continue
         # ---- melodie ----
         if sec == 'A':
@@ -367,7 +406,7 @@ def build():
                 P['flute'] += mel(HEROIC[k], s, 84, 12)                           # piccolo-verdubbeling
             # celesta-antwoorden op de lange noten (2e helft van de maat)
             tn = tones(halves[1][1], p('D6'), p('D7'))
-            P['celesta'] += [[s + 2 * TPB + i * S16, s + 2 * TPB + i * S16 + S16, tn[min(i, len(tn) - 1) if k % 2 == 0
+            P['celesta'] += [[s + 2 * TPB + i * S16, s + 2 * TPB + i * S16 + S16, tn[min(i, len(tn) - 1) if k % 2 == 0 or k == 7
                               else max(len(tn) - 1 - i, 0)], 72 + i * 4] for i in range(4)]
         elif sec == 'D':
             m = THEME[k] if k < 4 else THEME2_END[k - 4]
@@ -451,11 +490,18 @@ def build():
     # PSG: zachte fonkel-echo van de harp (vierkant), 3 16en later, alleen in A/A'/D
     P['spark'] = [[a + 3 * S16, b + 3 * S16, n + 12, 50] for a, b, n, v in P['harp']
                   if lt(A0) <= a < lt(B0) or lt(D0) <= a < lt(E0)]
-    # en in het tussenstuk: delay-echo van de pluck (3 16en later)
-    P['spark'] += [[a + 3 * S16, b + 3 * S16, n, 40] for a, b, n, v in P['tpluck'] if a < lt(D0) - 3 * S16]
-    ex = {'vox': [], 'vox2': []}
+    # v4, de overgang (maat 22-23): PSG-lead-arpeggio omhoog (G in achtsten, dan een loopje in 16en op A)
+    s = lt(B0 + 6)
+    P['lead'] += [[s + i * E8, s + i * E8 + E8 - 3, n, 72 + 2 * i] for i, n in enumerate(tones('G', 67, 93)[:8])]
+    run = ['E4', 'F#4', 'A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'A5', 'B5', 'C#6', 'D6', 'E6', 'F#6', 'A6', 'C#7']
+    P['lead'] += [[s + BAR + i * S16, s + BAR + i * S16 + S16 - 2, p(n), 76 + 2 * i] for i, n in enumerate(run)]
+    # de lead op het vierkant van de fonkel-echo (dat zwijgt in B en het tussenstuk); delay-echo (3 16en later,
+    # zachter) op vierkant 1 via het speeldoosspoor (de speeldoos speelt alleen in de intro)
+    P['echo'] = [[a + 3 * S16, b + 3 * S16, n, 70] for a, b, n, v in P['lead'] if lt(I0 + 4) <= a < lt(D0) - 3 * S16]
+    P['spark'] += P['lead']
+    P['mbox'] += P['echo']
     vcc = {'vox': [], 'vox2': []}
-    vocals(P, ex, vcc)
+    vocals(P, vcc)
 
     # niets over de loopgrenzen laten lopen
     for k in P:
@@ -511,16 +557,14 @@ def build():
         'strings': [(ti, 'prog', SAW_MID)] + pump + [(lt(I0 + 8), 'prog', SAW_BRIGHT), (lt(I0 + 8), 7, 60),
                                                     (d, 'prog', STR), (d, 7, 72)],
         'bass': [(ti, 'prog', SAW_BASS), (ti, 7, 100), (d, 'prog', BASS), (d, 7, 112)],
+        'spark': [(lt(B0 + 6), 'prog', LEAD), (lt(B0 + 6), 7, 70), (ti, 7, 76), (d, 'prog', SPARK), (d, 7, 24)],
+        'mbox': [(ti, 'prog', ECHO), (ti, 7, 44), (d, 'prog', MBOX), (d, 7, 110)],
         'shaker': [(lt(B0 + 6), 'prog', RISER), (lt(B0 + 6), 7, 26), (ti, 'prog', HATS), (ti, 7, 34),
                    (d, 'prog', SHAKER), (d, 7, 30)],
     }
-    # vocal-expressie: BENDR 4, LFOS (vibratosnelheid), en bij D alles terug
-    extra = {}
-    for part, tr in (('vox', 'strmel'), ('vox2', 'horn')):
-        st = lt(I0 - 1)
-        extra[tr] = ([(st, mido.Message('control_change', control=20, value=4)),
-                      (st, mido.Message('control_change', control=21, value=22))] + ex[part] +
-                     [(d, mido.Message('pitchwheel', pitch=0)), (d, mido.Message('control_change', control=1, value=0))])
+    # v4: korte vocal-stoten, geen glijtonen of vibrato meer (alleen zeker weten dat bend/MOD op 0 staan)
+    extra = {tr: [(lt(I0 - 1), mido.Message('pitchwheel', pitch=0)), (lt(I0 - 1), mido.Message('control_change', control=1, value=0))]
+             for tr in ('strmel', 'horn')}
     # trance-partijen op de sporen van instrumenten die dan zwijgen
     P['strmel'] = sorted(P['strmel'] + P['vox'])
     P['horn'] = sorted(P['horn'] + P['vox2'])
@@ -531,11 +575,11 @@ def build():
               ('horn', HORN, 104, 3, 52), ('mbox', MBOX, 110, 4, 72), ('celesta', CELESTA, 84, 5, 88),
               ('harp', HARP, 84, 6, 40), ('pizz', PIZZ, 76, 7, 76), ('strings', STR, 72, 8, 60),
               ('choir', CHOIR, 66, 10, 64), ('bass', BASS, 112, 11, 64), ('timp', TIMP, 96, 12, 64),
-              ('spark', SPARK, 24, 13, 96), ('shaker', SHAKER, 30, 14, 70), ('sub', SUB, 56, 15, 64)]
+              ('spark', SPARK, 24, 13, 96), ('shaker', SHAKER, 30, 14, 70), ('sub', SUB, 40, 15, 64)]
     for k, prog, vol, ch, pan in layout:
         song.add(P[k], prog, vol, ch, pan, extra=extra.get(k, ()), ccs=ccs.get(k, ()))
     song.add(sorted(P['drums'] + P['perc'] + P['tdrums']), DRUMS, 100, 9)
-    written = {k for k, *_ in layout} | {'drums', 'perc', 'tdrums', 'vox', 'vox2', 'tpluck', 'tsaw', 'tbass'}
+    written = {k for k, *_ in layout} | {'drums', 'perc', 'tdrums', 'vox', 'vox2', 'tpluck', 'tsaw', 'tbass', 'lead', 'echo'}
     assert not [k for k in P if P[k] and k not in written], 'partij niet weggeschreven'
     song.save(OUT, LOOP_END)
     tm = sorted(song.tempo_map)
@@ -565,7 +609,7 @@ def write_voicegroup():
         '@ 10': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_music_box, 255, 248, 0, 190  @ 10',
         '@ 33': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149  @ 33',
         '@ 39': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_sawbass, 255, 0, 255, 120  @ 39',
-        '@ 85': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_vox, 255, 0, 255, 200  @ 85',
+        '@ 85': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_vox, 255, 0, 255, 150  @ 85',
         '@ 84': '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 0  @ 84',
         '@ 88': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_dark, 255, 0, 255, 110  @ 88',
         '@ 89': '\tvoice_directsound 60, 0, DirectSoundWaveData_jirachi_supersaw_mid, 255, 0, 255, 110  @ 89',
@@ -578,6 +622,8 @@ def write_voicegroup():
         '@ 46': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 170  @ 46',
         '@ 47': '\tvoice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 190  @ 47',
         '@ 81': '\tvoice_square_2 60, 0, 3, 0, 1, 4, 1  @ 81',
+        '@ 82': '\tvoice_square_2 60, 0, 1, 0, 2, 10, 1  @ 82',          # v4: PSG-lead (25%, helder)
+        '@ 80': '\tvoice_square_1 60, 0, 0, 1, 0, 2, 7, 1  @ 80',        # v4: delay-echo van de lead
         '@ 120': '\tvoice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120',
         '@ 127': '\tvoice_keysplit_all voicegroup_jirachi_drumset  @ 127',
     }

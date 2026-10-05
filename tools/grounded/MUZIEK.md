@@ -444,4 +444,11 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Ronde 3 (5 okt): **goedgekeurd**: Ashfrost (wintervariant). Rayquaza v3: balans trompet/melodie "precies zo houden".
   Jordi geeft nu gedetailleerde briefings (vaak met Gemini geschreven); volg ze punt voor punt en houd wat hij goed
   vond expliciet ongewijzigd (diff per spoor).
-
+- Jirachi v4 (Jordi over het v3-tussenstuk: 'te donker/spookachtig, wil euforische uplifting trance'): **'donker' meten met
+  chroma**: Krumhansl-toonsoort van het tussenstuk v3 = Bm (0,66), v4 = D (0,85); de drieklank per maat volgt nu de
+  geschreven progressie (D-A-Bm-G, G-A-F#m-Bm). Lange glijdende vocals = spookachtig; korte stoten (3+3+2 achtsten) in
+  stijgende akkoordtonen + een diatonische terts eronder = euforisch. Gated vocals in achtsten: gate 0,25 tel + release
+  150 (= 23 ticks bij 164 bpm), anders bezet elke stem 2 kanalen (tsaw 25% -> 3% weggevallen). Heldere lead-arpeggio's
+  op de PSG-vierkanten (sporen van fonkel-echo/speeldoos die dan zwijgen) kosten geen kanalen; delay-echo = dezelfde
+  noten 3 16en later op vierkant 1. Laag minder dominant (kick-velocity -8, PSG-sub 56 -> 40): < 150 Hz 59% -> 48%,
+  zwaartepunt 480 -> 653 Hz. -V100: 0 overlopen, piek 107/127.

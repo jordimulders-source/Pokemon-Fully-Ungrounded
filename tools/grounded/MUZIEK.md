@@ -353,3 +353,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   een constante lage lijn = een te lang uitklinkende, gestemde kick op achtsten (bromde op 52 Hz -> kick korter, op C2).
 - Spleeter-stems zijn bruikbaar voor drumpatronen (aanslag per band per 16e) en octaafcontrole per spoor (energie op f0/2,
   f0, 2f0), maar harmonische vingerafdrukken uit een volle mix zijn onbetrouwbaar (te veel overlap).
+- Rayquaza v3 (Jordi: 'te rustig, melodie valt weg tegen het getokkel, kebyar feller, gongs keihard op de
+  maatovergangen'): **een remix speelt in het tempo van het origineel** (196 bpm vast; v2 had een statig intro op 0,82x
+  en was daardoor 1,1 s langer). Melodie weer op de **originele instrumenten van het melodiespoor** (trompet/strijkers/
+  hoorn met dezelfde programmawissels, en spoor 2 in maat 8-19 erbij zoals in het origineel), de gamelan alleen nog als
+  korte kleur (reyong één aanslag, release 205; opnieuw aanslaan van lange noten vertroebelde het ritme). Meten met
+  `solo_rms.py`: melodie t.o.v. kotekan v2 +2..+4 dB -> v3 +6..+11 dB. Angsel = alles afkappen op tel 4 behalve
+  noten die precies op 4 en 4+ beginnen (daar heeft het origineel zelf zijn stoten) + klappen; **de gong moet vóór de
+  angsel uitgeklonken zijn** (anders hoor je geen stop) en de klappen op korte releases (gedempte gangsa 140, pauken via
+  een programmawissel naar een kopie met release 165). Zware maatovergang om de 2 maten = gong + lage gongbas + echte
+  pauken; de gongnoot een uitklinktijd vóór de volgende gong laten stoppen, anders vallen bas/reyong weg op precies die
+  tellen. Partijen met hetzelfde programma delen na de stemverdeler een spoor (byar->gangsa, kempur->gong) om onder de
+  16 sporen te blijven; let dan op de release van het programma van dat spoor (lint rekent daarmee). -V074: piek
+  94/127, RMS 2970. audiocheck '133 Hz' = gong/gongbas/pauken op C (16% van hun solospectrum), geen brom.

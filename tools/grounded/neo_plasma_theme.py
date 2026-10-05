@@ -4,6 +4,17 @@
 Klank, timing en balans: gemeten aan het origineel (BW2-mp3 van Jordi). Structuur zoals in de game: intro maat 0-9,
 loop maat 10-73 (de MIDI speelt die loop twee keer).
 
+v6 (Jordi over v5: 'te ver doorgeslagen naar een kale, schelle 8-bit sound; hoge tonen snijden in de oren, mist
+dynamiek en gelaagdheid'): tempo, noten/timing en het orgel (sample, volume, partij) blijven exact v5.
+- Lead een octaaf lager (per maat: alleen waar de hele maat dan nog boven A2 blijft; de lage arpeggio-maten blijven
+  staan) op een warme DirectSound-pulse-lead (np_lead_warm: puls 25% + 50% ontstemd, lowpass) i.p.v. de PSG-blokgolf.
+  De oude octaafverdubbeling (PSG, lead2) valt daarmee samen: weg.
+- Akkoordenspoor: vollere synth brass (np_brass_full: twee ontstemde zaagtanden met filterstoot) en luider.
+- Drums: duidelijke GBA-kit, alles DirectSound: kick = drum_and_percussion_kick 7 halve tonen hoger (body ±65 Hz,
+  aanzet ±200 Hz, zoals de kick van het origineel), off-beat = TR-909-handclap (fel, 1-8 kHz), snare in fills =
+  sc88pro_rnd_snare, dichte hihat (unknown_close_hihat) op de 16en i.p.v. PSG-ruis.
+- Arpeggio's (steel drums, binnenstemmen, PSG-sinus/-driehoek) ±6 dB zachter: kruiding, nooit boven de melodie.
+
 v5 (Jordi over v4: 'nog steeds niet echt goed'; melodie strak, tempo exact, scherpe pulse-lead, punchy synth brass,
 diepe staccato-bas, zachte steel-drum-arpeggio's, standaard GBA-drumkit, melodie op de voorgrond):
 - Tempo: het origineel loopt op 175,96 bpm (kickraster van de mp3 over 136 maten, drift 0,3 ms/maat). De GBA kan
@@ -18,6 +29,7 @@ diepe staccato-bas, zachte steel-drum-arpeggio's, standaard GBA-drumkit, melodie
     8-Bit Sawtooth, binnenstemmen -> steel drums (arpeggio's, zacht op de achtergrond)
     Electric Guitar (akkoorden) -> synth brass-stoten (np_brass_stab: felle aanzet, geen swell), MIDI-lengtes
     Electric Guitar (< C3)      -> zelfde stoot op een eigen C2-sample (np_brass_stab_lo), één stem
+                                   (v6: per octaaf omhoog tot >= C3)
     Slap Bass                   -> diepe pulse-bas een octaaf lager (np_pulse_bass), staccato
     Church Organ                -> scherp drawbar-orgel, zelfde register, korte noten en korte release
     Steel Drums                 -> steel drums (zacht)
@@ -43,45 +55,43 @@ LOOP0, END = 10 * BAR, 74 * BAR
 SAW_SHIFT = 17              # sawtooth vanaf maat 5: 17 ticks te vroeg in de bron
 
 # programma's in voicegroup_grounded_neo_plasma
-BASS, BRASS, BRASS_LO, ORGAN, LEAD, LEAD2, SINE, TRI, STEEL, HATS, DRUMS = 38, 62, 63, 17, 80, 81, 82, 83, 114, 122, 127
+BASS, BRASS, BRASS_LO, ORGAN, LEAD, SINE, TRI, STEEL, DRUMS = 38, 62, 63, 17, 80, 82, 83, 114, 127
 VOICES = {
-    LEAD:     'voice_square_1 60, 0, 0, 1, 0, 2, 10, 1',          # 25%, aanzet 0, korte decay naar 10/15, kort uit
-    LEAD2:    'voice_square_2 60, 0, 0, 0, 2, 9, 1',              # 12,5%, zachter (CC7)
+    LEAD:     'voice_directsound 60, 0, DirectSoundWaveData_np_lead_warm, 255, 235, 200, 140',
     BASS:     'voice_directsound 60, 0, DirectSoundWaveData_np_pulse_bass, 255, 210, 140, 120',
-    BRASS:    'voice_directsound 60, 0, DirectSoundWaveData_np_brass_stab, 255, 200, 120, 120',
-    BRASS_LO: 'voice_directsound 60, 0, DirectSoundWaveData_np_brass_stab_lo, 255, 200, 120, 110',
+    BRASS:    'voice_directsound 60, 0, DirectSoundWaveData_np_brass_full, 255, 215, 150, 120',
+    BRASS_LO: 'voice_directsound 60, 0, DirectSoundWaveData_np_brass_full_lo, 255, 210, 150, 110',
     ORGAN:    'voice_directsound 60, 0, DirectSoundWaveData_np_organ_sharp, 255, 220, 160, 90',
     SINE:     'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
     TRI:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_2, 0, 7, 15, 1',
     STEEL:    'voice_directsound 60, 0, DirectSoundWaveData_gm_steel_drums, 255, 0, 255, 150',
-    HATS:     'voice_noise_alt 60, 0, 0, 0, 1, 0, 0',
     DRUMS:    'voice_keysplit_all voicegroup_neo_plasma_drumset',
 }
-# drumkit (noot -> regel); standaard GBA-samples uit rs_drumset
-KICK, SNARE_OFF, SNARE, OHAT, CRASH, SPLASH = 36, 37, 38, 39, 40, 41
+# drumkit (noot -> regel); standaard GBA-samples (rs_drumset e.d.)
+KICK, SNARE_OFF, SNARE, OHAT, CRASH, SPLASH, CHAT = 36, 37, 38, 39, 40, 41, 42
 KIT = [
-    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_rnd_kick, 255, 0, 255, 0',
-    'voice_directsound_no_resample 62, 0, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 180',
+    'voice_directsound 67, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 0',
+    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 0, 255, 180',
     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 220',
     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_open_hihat, 255, 242, 141, 0',
     'voice_directsound_no_resample 60, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165',
     'voice_directsound 67, 0, DirectSoundWaveData_trinity_cymbal_crash, 255, 200, 0, 140',
+    'voice_directsound_no_resample 60, 0, DirectSoundWaveData_unknown_close_hihat, 255, 0, 255, 0',
 ]
-# bron-drumnoot -> (kitnoot, lengte in ticks, velocity 0-127); 42/44 (hihat) gaan naar het PSG-ruiskanaal
-DRUM_MAP = {36: (KICK, 128, 127), 37: (SNARE_OFF, 160, 92), 38: (SNARE, 192, 120), 46: (OHAT, 192, 70),
+# bron-drumnoot -> (kitnoot, lengte in ticks, velocity 0-127); 42/44 = dichte hihat
+DRUM_MAP = {36: (KICK, 190, 96), 37: (SNARE_OFF, 160, 127), 38: (SNARE, 192, 120), 46: (OHAT, 192, 70),
             49: (CRASH, 384, 100), 57: (CRASH, 384, 100), 55: (SPLASH, 288, 90)}
-HAT_CLOSED, HAT_ACCENT = 92, 86            # PSG-ruistoonhoogte (hoger = feller)
+HAT_LEN, HAT_VEL, HAT_ACC = 80, 96, 127     # dichte hihat: 77 ms = 82 ticks
 NO_HATS = set(range(0, 10)) | set(range(34, 38)) | set(range(46, 50)) | {64, 65}   # intro en breaks: geen 16e-hihats
 
 # spoorvolumes (CC7), afgesteld met solo-RMS en balance_orig.py tegen de mp3
-VOL = dict(lead=72, lead2=26, brass=68, brass_lo=57, organ=62, bass=121, steel=40, arp=34, sine=24, tri=24,
-           drums=58, hats=26)
+VOL = dict(lead=127, brass=72, brass_lo=60, organ=62, bass=121, steel=26, arp=22, sine=16, tri=16, drums=80)
 
 
 def voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v5. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
-    lines[1] = '@ 17 orgel, 38 pulse-bas, 62/63 synth brass-stoot, 80/81 PSG-lead, 114 steel drums, 122 PSG-hihat, 127 drums.'
+    lines[0] = '@ Project Grounded: grounded_gm voor Neo Team Plasma (BW2) v6. Gegenereerd door tools/grounded/neo_plasma_theme.py.'
+    lines[1] = '@ 17 orgel, 38 pulse-bas, 62/63 synth brass, 80 warme pulse-lead, 114 steel drums, 127 drums.'
     lines[2] = 'voice_group grounded_neo_plasma'
     out = []
     for l in lines:
@@ -91,9 +101,9 @@ def voicegroup():
         out.append(l)
     open(VG, 'w').write('\n'.join(out))
     open(DRUMSET, 'w').write(
-        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v5 (neo_plasma_theme.py): standaard GBA-samples\n'
-        '@ (rs_drumset). 36 kick, 37 off-beat-snare (kort), 38 snare, 39 open hihat, 40 crash,\n'
-        '@ 41 splash. Dichte hihats op het PSG-ruiskanaal (eigen spoor).\n'
+        '@ Project Grounded: drumkit voor Battle! Neo Team Plasma v6 (neo_plasma_theme.py): standaard GBA-samples.\n'
+        '@ 36 kick (+7 halve tonen), 37 off-beat-clap (909), 38 snare, 39 open hihat, 40 crash, 41 splash,\n'
+        '@ 42 dichte hihat. Alles DirectSound.\n'
         'voice_group neo_plasma_drumset, 36\n' + ''.join('\t%s\n' % k for k in KIT))
 
 
@@ -146,7 +156,7 @@ def drums(T):
     snares = sorted(s for s, e, n, v in src if n == 38)
     for s, e, n, v in src:
         if n in (42, 44):
-            hats.append([s, s + 24, HAT_CLOSED, 90])
+            hats.append([s, s + HAT_LEN, CHAT, HAT_ACC])
             continue
         if n not in DRUM_MAP:
             dropped += 1
@@ -170,8 +180,21 @@ def drums(T):
             t = b * BAR + i * S16
             if i % 4 == 0 or t in taken:
                 continue
-            hats.append([t, t + 24, HAT_ACCENT if i % 4 == 2 else HAT_CLOSED, 100 if i % 4 == 2 else 70])
-    return sorted(out), dedupe(hats), dropped
+            hats.append([t, t + HAT_LEN, CHAT, HAT_ACC if i % 4 == 2 else HAT_VEL])
+    return sorted(out + dedupe(hats)), dropped
+
+
+def octave_down(ev):
+    """Lead een octaaf lager, per maat (loopjes blijven heel) als de hele maat daarna nog >= C2 ligt; in maten met
+    lage arpeggio's/sprongen (intro, maat 30-33, 62) alleen de hoge noten (>= Bb4)."""
+    by = {}
+    for e in ev:
+        by.setdefault(e[0] // BAR, []).append(e)
+    out = []
+    for b, lst in sorted(by.items()):
+        whole = min(e[2] for e in lst) - 12 >= 36
+        out += [[s, e, n - 12 if whole or n >= 70 else n, v] for s, e, n, v in lst]
+    return out
 
 
 def tempo_map(song, end):
@@ -196,9 +219,10 @@ def build():
     assert m.ticks_per_beat == TPB
     T = fixed_source(m)
     clip = lambda ev: [[s, min(e, END), n, v] for s, e, n, v in ev if s < END]
-    dr, hats, drum_drop = drums(T)
+    dr, drum_drop = drums(T)
 
-    # sawtooth: bovenstem = lead (PSG), octaaf eronder = lead2 (PSG), binnenstemmen >= C3 = arpeggio (steel drums);
+    # sawtooth: bovenstem = lead (DS, octaaf lager), octaaf eronder (lead2) = unisono met de lead: weg,
+    # binnenstemmen >= C3 = arpeggio (steel drums);
     # lage noten (< C3) verdubbelen de bas: weg (de bas speelt ze al)
     lead, lead2, arp, saw_low = [], [], [], 0
     for g in groups(T[4]):
@@ -211,14 +235,23 @@ def build():
                 arp.append(list(e))
             else:
                 saw_low += 1
-    lead = mono(quantize_runs(lead))
-    lead2 = mono(quantize_runs(lead2))
+    lead = octave_down(mono(quantize_runs(lead)))
     arp = mono(quantize_runs(thin(arp, 1, 'top')))
     # 'gitaar' = synth brass-stoten: akkoorden vanaf C3 (3 bovenste stemmen), daaronder de lage partij (1 stem)
     brass = thin([e for e in T[5] if e[2] >= 48], 3, 'top')
     brass_lo = mono([g[0] for g in groups([e for e in T[5] if e[2] < 48])])
     brass = staccato(brass, 0.85, 60, 9999)
     brass_lo = staccato(brass_lo, 0.7, 50, 9999)
+    # v6: koper niet onder C3 (de lage partij E1-B2 gaf een subdreun op 30-60 Hz): per octaaf omhoog tot >= C3, en
+    # weg waar de akkoordpartij die toon op die tel al speelt
+    have = {(e[0], e[2]) for e in brass}
+    lifted = []
+    for s_, e_, n, v in brass_lo:
+        while n < 48:
+            n += 12
+        if (s_, n) not in have:
+            lifted.append([s_, e_, n, v])
+    brass_lo = lifted
     # bas: onderstem, staccato (klinkt een octaaf lager door de sample)
     bass = staccato(mono([g[0] for g in groups(T[3])]), 0.6, 48, 150)
     # orgel: zelfde register, kort en scherp
@@ -226,17 +259,18 @@ def build():
     parts = {'drums': dr, 'bass': bass, 'brass': brass, 'organ': organ, 'brass_lo': brass_lo, 'steel': T[8],
              'arp': arp}
     parts = {k: dedupe(clip(v)) for k, v in parts.items()}
-    psg = {'lead': dedupe(clip(lead)), 'lead2': dedupe(clip(lead2)), 'sine': dedupe(clip(T[7])),
-           'tri': dedupe(clip(T[9])), 'hats': clip(hats)}
+    parts['lead'] = dedupe(clip(lead))
+    psg = {'sine': dedupe(clip(T[7])), 'tri': dedupe(clip(T[9]))}
 
     voicegroup()
     rel = releases('grounded_neo_plasma')
-    progs = {'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': STEEL, 'brass_lo': BRASS_LO, 'arp': STEEL}
+    progs = {'lead': LEAD, 'bass': BASS, 'brass': BRASS, 'organ': ORGAN, 'steel': STEEL, 'brass_lo': BRASS_LO,
+             'arp': STEEL}
     tail = {k: release_ticks(rel[p], TPB, BPM) for k, p in progs.items()}
     tail.update(drums=0)
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
-    order = ['drums', 'bass', 'brass', 'brass_lo', 'organ', 'steel', 'arp']
+    order = ['drums', 'lead', 'bass', 'organ', 'brass', 'brass_lo', 'steel', 'arp']
     res = allocate(parts, order, tail)
     print('drumnoten buiten de kit (weg): %d, lage sawtooth-noten (basverdubbeling, weg): %d' % (drum_drop, saw_low))
     for k in order:
@@ -247,8 +281,7 @@ def build():
     tempo_map(song, END)
     song.loop = (LOOP0, END)
     tracks = [
-        (psg['lead'], LEAD, VOL['lead'], 0, 64),
-        (psg['lead2'], LEAD2, VOL['lead2'], 1, 64),
+        (p['lead'], LEAD, VOL['lead'], 0, 64),
         (p['brass'], BRASS, VOL['brass'], 2, 56),
         (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),
@@ -257,7 +290,6 @@ def build():
         (p['steel'], STEEL, VOL['steel'], 7, 48),
         (psg['sine'], SINE, VOL['sine'], 10, 64),
         (psg['tri'], TRI, VOL['tri'], 11, 64),
-        (psg['hats'], HATS, VOL['hats'], 12, 64),
         (p['drums'], DRUMS, VOL['drums'], 9, None),
     ]
     written = 0

@@ -245,6 +245,9 @@ void Spire_OnFirstTurn(void);
 // spire_run.c: run
 bool32 Spire_RunActive(void);
 struct Pokemon *Spire_GetRunMon(u32 i);
+s32 Spire_IconYOffset(u16 species, u32 personality);
+// t.o.v. een gemiddeld icoon (dat staat 4 px onder het midden): schermen die op gewone iconen zijn afgesteld
+#define Spire_IconYAdjust(species, personality) (Spire_IconYOffset(species, personality) + 4)
 bool32 Spire_HasRelic(u32 relic);
 void Spire_AddRelic(u32 relic);
 void Spire_RemoveRelic(u32 relic);

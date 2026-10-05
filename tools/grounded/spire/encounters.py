@@ -74,7 +74,7 @@ ENCOUNTERS = {
           foes=[dict(s='FOONGUS', m=['RAGE_POWDER', 'MEGA_DRAIN', 'ASTONISH', 'GROWTH'], a='EFFECT_SPORE', p=[1, 2, 1, 4]),
                 dict(s='PARAS', m=['FURY_CUTTER', 'LEECH_LIFE', 'STUN_SPORE', 'SCRATCH_'], a='DRY_SKIN')]),
         E(kind='normal', name='Overgrown Statue', hint='Sudowoodo hardens before it hits. Hit it before the third turn.',
-          foes=[dict(s='SUDOWOODO', m=['ROCK_POLISH', 'ROCK_THROW', 'LOW_KICK', 'SLAM'], a='STURDY', p=[1, 2, 2, 3]),
+          foes=[dict(s='SUDOWOODO', m=['ROCK_POLISH', 'ROCK_THROW', 'TACKLE', 'SLAM'], a='STURDY', p=[1, 2, 2, 3]),
                 dict(s='BONSLY', m=['ROCK_THROW', 'FAKE_TEARS', 'COPYCAT', 'TACKLE'])]),
         E(kind='normal', name='Slithering Strangler', hint='Ekans wraps you up and paralyses you. Kill it, the rest is noise.',
           foes=[dict(s='EKANS', m=['WRAP', 'GLARE', 'POISON_STING', 'BITE'], p=[1, 2, 3, 4]),
@@ -90,15 +90,15 @@ ENCOUNTERS = {
           foes=[dict(s='CLEFAIRY', m=['METRONOME', 'MOONLIGHT', 'FOLLOW_ME', 'DISARMING_VOICE'], a='MAGIC_GUARD', p=[1, 1, 3, 1, 2]),
                 dict(s='CLEFAIRY', m=['METRONOME', 'MOONLIGHT', 'COSMIC_POWER', 'DISARMING_VOICE'], a='FRIEND_GUARD', p=[1, 1, 1, 2])]),
         E(kind='elite', name='Gremlin Nob', hint='Primeape hates being lowered (Defiant) and every hit makes it angrier (Rage).',
-          foes=[dict(s='PRIMEAPE', m=['RAGE', 'LOW_SWEEP', 'SCREECH', 'STOMPING_TANTRUM'], a='DEFIANT', hp=2.4, lv=-2,
+          foes=[dict(s='PRIMEAPE', m=['RAGE', 'LOW_SWEEP', 'SCREECH', 'FURY_SWIPES'], a='DEFIANT', hp=2.4, lv=-2, b={'spe': 1},
                      p=[1, 3, 2, 1, 4]),
-                dict(s='MANKEY', m=['RAGE', 'LOW_KICK', 'FOCUS_ENERGY', 'SEISMIC_TOSS_'], a='ANGER_POINT')]),
+                dict(s='MANKEY', m=['RAGE', 'KARATE_CHOP', 'FOCUS_ENERGY', 'SEISMIC_TOSS_'], a='ANGER_POINT')]),
         E(kind='elite', name='Byrdonis', hint='Trumbeak shouts louder every turn. Echoed Voice doubles until it is stopped.',
           foes=[dict(s='TRUMBEAK', m=['ECHOED_VOICE', 'PECK', 'ROCK_BLAST', 'SUPERSONIC'], a='SKILL_LINK', hp=2.5,
                      p=[1, 1, 1, 1, 4]),
                 dict(s='PIKIPEK', m=['PECK', 'GROWL', 'ECHOED_VOICE', 'SUPERSONIC'])]),
         E(kind='elite', name='Bygone Effigy', hint='Snorlax sleeps for three turns. Prepare, then pray.',
-          foes=[dict(s='SNORLAX', m=['CURSE', 'BODY_SLAM', 'HEAVY_SLAM', 'YAWN'], a='THICK_FAT', hp=2.0, lv=-4, g='SLEEP3', b={'def': 1},
+          foes=[dict(s='SNORLAX', m=['CURSE', 'TACKLE', 'HEAVY_SLAM', 'YAWN'], a='THICK_FAT', hp=2.0, lv=-4, g='SLEEP3', b={'def': 1},
                      p=[1, 2, 1, 3]),
                 dict(s='MUNCHLAX', m=['METRONOME', 'LICK', 'DEFENSE_CURL', 'RECYCLE_'])]),
         E(kind='elite', name='Phrog Parasite', hint='Pyukumuku spits its guts at whoever lands the killing blow.',
@@ -121,7 +121,7 @@ ENCOUNTERS = {
           foes=[dict(s='MAGIKARP', m=['TACKLE', 'FLAIL', 'BOUNCE_'], a='RATTLED', p=[1, 2]),
                 dict(s='MAGIKARP', m=['TACKLE', 'FLAIL'], a='SWIFT_SWIM', p=[2, 1])]),
         E(kind='normal', name='Secret Santa', hint='Delibird hands out Presents. Some explode, some heal you. Delibird does not know which.',
-          foes=[dict(s='DELIBIRD', m=['PRESENT', 'ICE_SHARD', 'DRILL_PECK', 'FAKE_OUT'], a='HUSTLE', p=[1, 1, 1, 3]),
+          foes=[dict(s='DELIBIRD', m=['PRESENT', 'ICE_SHARD', 'PECK', 'FAKE_OUT'], a='HUSTLE', p=[1, 1, 1, 3]),
                 dict(s='WINGULL', m=['WATER_PULSE', 'AIR_CUTTER', 'MIST', 'SUPERSONIC'], a='HYDRATION')]),
         E(kind='normal', name='Gremlin Mercs', hint='Purrloin steals and flees with your gold. Stop it first.',
           foes=[dict(s='PURRLOIN', m=['FAKE_OUT', 'FURY_SWIPES', 'SAND_ATTACK', 'ASSURANCE'], a='UNBURDEN', i='ITEM_AMULET_COIN',
@@ -131,27 +131,27 @@ ENCOUNTERS = {
           foes=[dict(s='KOFFING', m=['SMOG', 'CLEAR_SMOG', 'SLUDGE', 'HAZE'], a='NEUTRALIZING_GAS', p=[2, 3, 4, 3]),
                 dict(s='STUNKY', m=['POISON_GAS', 'BITE', 'SCREECH', 'FEINT']) ]),
         E(kind='normal', name='Haunted Ship', hint='Dhelmise anchors down and swings. Its partner keeps it company.',
-          foes=[dict(s='DHELMISE', m=['ANCHOR_SHOT', 'GIGA_DRAIN', 'GROWTH', 'SHADOW_BALL'], a='STEELWORKER', lv=-6, p=[3, 1, 2, 4]),
+          foes=[dict(s='DHELMISE', m=['ANCHOR_SHOT', 'MEGA_DRAIN', 'GROWTH', 'ASTONISH'], a='STEELWORKER', lv=-6, p=[3, 1, 2, 4]),
                 dict(s='FRILLISH', m=['WATER_PULSE', 'HEX', 'WILL_O_WISP', 'RECOVER'], a='CURSED_BODY')]),
         E(kind='normal', name='Sewer Clam', hint='Shellder shells up and sharpens. Break it before it opens.',
           foes=[dict(s='SHELLDER', m=['WITHDRAW', 'ICICLE_SPEAR', 'WATER_GUN', 'SUPERSONIC'], a='SKILL_LINK', p=[1, 2, 1, 2]),
                 dict(s='CLAMPERL', m=['WHIRLPOOL', 'WATER_PULSE', 'IRON_DEFENSE', 'CONFUSE_RAY_'])]),
         E(kind='normal', name='Two-Tailed Rats', hint='Tandemaus never stops. Rattata just bites.',
-          foes=[dict(s='TANDEMAUS', m=['POPULATION_BOMB', 'ECHOED_VOICE', 'SUPER_FANG_', 'TICKLE']),
+          foes=[dict(s='TANDEMAUS', m=['DOUBLE_HIT', 'ECHOED_VOICE', 'SUPER_FANG_', 'TICKLE']),
                 dict(s='RATTATA_ALOLA', m=['BITE', 'QUICK_ATTACK', 'FOCUS_ENERGY', 'PURSUIT'], a='HUSTLE')]),
         E(kind='normal', name='Cultists', hint='Wooper and Lotad chant for rain. Then the water hits harder every turn.',
           foes=[dict(s='WOOPER', m=['RAIN_DANCE', 'MUD_SHOT', 'WATER_PULSE', 'YAWN'], a='DAMP', p=[1, 2, 3, 2]),
                 dict(s='LOTAD', m=['RAIN_DANCE', 'BUBBLE_BEAM', 'MEGA_DRAIN', 'GROWL'], a='SWIFT_SWIM', p=[2, 2, 3])]),
         E(kind='elite', name='Terror Eel', hint='Eelektross holds back until half HP, then lets go. Burst it from half to zero.',
-          foes=[dict(s='EELEKTROSS', m=['CRUNCH', 'DISCHARGE', 'COIL', 'WILD_CHARGE'], a='LEVITATE', lv=-6, hp=2.0,
+          foes=[dict(s='EELEKTROSS', m=['CHARGE_BEAM', 'DISCHARGE', 'COIL', 'WILD_CHARGE'], a='LEVITATE', lv=-6, hp=2.0,
                      i='ITEM_PETAYA_BERRY', p=[3, 1, 2]),
                 dict(s='TYNAMO', m=['SPARK', 'TACKLE', 'THUNDER_WAVE', 'CHARGE_BEAM'])]),
         E(kind='elite', name='Skulking Colony', hint='Corsola ignores small hits. Hit hard or not at all.',
-          foes=[dict(s='CORSOLA_GALAR', m=['HEX', 'POWER_GEM', 'ANCIENT_POWER'], a='WEAK_ARMOR', hp=2.5,
+          foes=[dict(s='CORSOLA_GALAR', m=['HEX', 'ASTONISH', 'ANCIENT_POWER'], a='WEAK_ARMOR', hp=2.5,
                      p=[1, 3, 1, 2]),
                 dict(s='MAREANIE', m=['POISON_JAB', 'BITE', 'PIN_MISSILE', 'ACID_SPRAY'], a='MERCILESS')]),
         E(kind='elite', name='Phantasmal Gardeners', hint='Two ghosts that hide behind Substitute. Multi-hit moves break it.',
-          foes=[dict(s='FRILLISH', m=['SUBSTITUTE', 'WATER_PULSE', 'HEX', 'WILL_O_WISP'], a='CURSED_BODY', hp=1.6, p=[1, 4, 3, 2]),
+          foes=[dict(s='FRILLISH', m=['SUBSTITUTE', 'WATER_GUN', 'HEX', 'WILL_O_WISP'], a='CURSED_BODY', hp=1.6, p=[1, 4, 3, 2]),
                 dict(s='DREEPY', m=['SUBSTITUTE', 'INFESTATION', 'ASTONISH', 'QUICK_ATTACK'], a='INFILTRATOR', hp=1.6, p=[1, 2, 3, 2])]),
     ],
     # ===== ACT 2 – THE HIVE ================================================================
@@ -215,7 +215,7 @@ ENCOUNTERS = {
           foes=[dict(s='CRYOGONAL', m=['REFLECT', 'LIGHT_SCREEN', 'FREEZE_DRY', 'HAZE'], a='SNOW_WARNING', lv=-6, p=[1, 3, 2, 3, 4]),
                 dict(s='SNOVER', m=['ICE_SHARD', 'RAZOR_LEAF', 'MIST', 'INGRAIN'], a='SNOW_WARNING')]),
         E(kind='normal', name='Beartic Brute', hint='Beartic rolls up its sleeves twice, then swings.',
-          foes=[dict(s='BEARTIC', m=['SWORDS_DANCE', 'ICICLE_CRASH', 'SUPERPOWER', 'AQUA_JET'], a='SWIFT_SWIM', lv=-6, p=[1, 2, 2, 1, 3]),
+          foes=[dict(s='BEARTIC', m=['SWORDS_DANCE', 'ICICLE_CRASH', 'SUPERPOWER', 'AQUA_JET'], a='SWIFT_SWIM', lv=-6, p=[1, 2, 2, 1, 4]),
                 dict(s='CUBCHOO', m=['FROST_BREATH', 'CHARM', 'FURY_SWIPES', 'BRINE'], a='SLUSH_RUSH')]),
         E(kind='normal', name='The Lost and the Forgotten', hint='Froslass and Glalie steal your strength with every turn you wait.',
           foes=[dict(s='FROSLASS', m=['WILL_O_WISP', 'ICE_SHARD', 'HEX', 'CONFUSE_RAY'], a='CURSED_BODY', lv=-6, p=[1, 3, 4, 3]),
@@ -228,7 +228,7 @@ ENCOUNTERS = {
                 dict(s='WYNAUT', m=['CHARM', 'ENCORE', 'AMNESIA', 'SAFEGUARD'], a='SHADOW_TAG', p=[1, 2, 4, 3])]),
         E(kind='normal', name='Ice Dancers', hint='Spinda makes everyone dizzy, Jynx kisses the dizzy ones to sleep.',
           foes=[dict(s='SPINDA', m=['TEETER_DANCE', 'SUCKER_PUNCH', 'ICE_PUNCH', 'FAKE_OUT'], a='TANGLED_FEET', p=[4, 1, 3, 2, 3]),
-                dict(s='JYNX', m=['LOVELY_KISS', 'ICE_BEAM', 'FAKE_TEARS', 'PSYCHIC'], a='DRY_SKIN', p=[3, 1, 2, 4, 2])]),
+                dict(s='JYNX', m=['LOVELY_KISS', 'ICE_BEAM', 'FAKE_TEARS', 'CONFUSION'], a='DRY_SKIN', p=[3, 1, 2, 4, 2])]),
         E(kind='elite', name='Lagavulin Matriarch', hint='Avalugg sleeps behind a shell. Wake it on your terms.',
           foes=[dict(s='AVALUGG', m=['GYRO_BALL', 'CRUNCH', 'RAPID_SPIN'], a='STURDY', hp=2.6, lv=-4, g='SLEEP3',
                      p=[1, 2, 1, 3]),
@@ -247,7 +247,7 @@ ENCOUNTERS = {
     'COURT': [
         E(kind='weak', name='Turret Operator', hint='Bastiodon guards, Octillery fires. Through the shield or around it?',
           foes=[dict(s='BASTIODON', m=['WIDE_GUARD', 'IRON_DEFENSE', 'METAL_BURST', 'BODY_PRESS'], a='STURDY', lv=-6, p=[1, 2, 4, 3]),
-                dict(s='OCTILLERY', m=['OCTAZOOKA', 'BULLET_SEED', 'ROCK_BLAST', 'LOCK_ON_'], a='SNIPER', lv=-6)]),
+                dict(s='OCTILLERY', m=['BUBBLE_BEAM', 'BULLET_SEED', 'ROCK_BLAST', 'LOCK_ON_'], a='SNIPER', lv=-6)]),
         E(kind='weak', name='Scrolls of Biting', hint='Unown and Bronzor. One reads, one rings.',
           foes=[dict(s='BRONZOR', m=['CONFUSE_RAY', 'GYRO_BALL', 'EXTRASENSORY', 'IRON_DEFENSE'], a='LEVITATE'),
                 dict(s='SIGILYPH', m=['AIR_SLASH', 'PSYSHOCK', 'COSMIC_POWER', 'TAILWIND'], a='MAGIC_GUARD', lv=-6)]),
@@ -265,7 +265,7 @@ ENCOUNTERS = {
           foes=[dict(s='NOCTOWL', m=['ROOST', 'AIR_SLASH', 'HYPNOSIS', 'MOONBLAST'], a='TINTED_LENS', p=[3, 2, 2, 4, 1]),
                 dict(s='XATU', m=['FUTURE_SIGHT', 'TAILWIND', 'PSYCHIC', 'NIGHT_SHADE_'], a='MAGIC_BOUNCE', p=[2, 1, 3, 3])]),
         E(kind='normal', name='Frog Knight', hint='Sirfetch\'d charges at half HP. Keep your guard up when it bleeds.',
-          foes=[dict(s='SIRFETCHD', m=['SWORDS_DANCE', 'LEAF_BLADE', 'BRAVE_BIRD', 'CLOSE_COMBAT'], a='SCRAPPY', lv=-4,
+          foes=[dict(s='SIRFETCHD', m=['SWORDS_DANCE', 'LEAF_BLADE', 'BRAVE_BIRD', 'REVENGE'], a='SCRAPPY', lv=-4,
                      i='ITEM_SALAC_BERRY', p=[3, 2, 1, 4]),
                 dict(s='TOXICROAK', m=['FAKE_OUT', 'POISON_JAB', 'SUCKER_PUNCH', 'TAUNT'], a='DRY_SKIN', lv=-4)]),
         E(kind='normal', name='Globe Head', hint='Rotom swaps your items around. Then it hits the weak spot.',
@@ -288,7 +288,7 @@ ENCOUNTERS = {
                 dict(s='BRONZONG', m=['TRICK_ROOM', 'GYRO_BALL', 'HYPNOSIS', 'EXTRASENSORY'], a='HEATPROOF', p=[1, 3, 2, 4])]),
         E(kind='elite', name='Soul Nexus', hint='Chandelure. No tricks. Just a lot of fire.',
           foes=[dict(s='CHANDELURE', m=['FLAME_BURST', 'HEX', 'WILL_O_WISP', 'HEAT_WAVE'], a='FLASH_FIRE', hp=2.6, lv=-2,
-                     p=[3, 2, 1, 2, 4]),
+                     p=[3, 2, 4, 2]),
                 dict(s='LAMPENT', m=['HEX', 'WILL_O_WISP', 'CONFUSE_RAY', 'FLAME_BURST_'], a='FLAME_BODY')]),
     ],
     # ===== ACT 3 – THE ABYSS ===============================================================
@@ -354,14 +354,14 @@ BOSSES = {
                 dict(s='VENUSAUR', m=['SUNNY_DAY', 'GIGA_DRAIN', 'SLUDGE_BOMB'], a='CHLOROPHYLL', hp=2.4, lv=-6,
                      p=[1, 2, 3, 2])]),
         E(name='Totem Wishiwashi', hint='A school of fish with an aura. Below a quarter HP it falls apart: race it there.',
-          foes=[dict(s='WISHIWASHI', m=['SOAK', 'LIQUIDATION', 'TEARFUL_LOOK', 'BEAT_UP'], a='SCHOOLING', hp=2.0, b={'def': 1},
+          foes=[dict(s='WISHIWASHI', m=['SOAK', 'WATER_PULSE', 'TEARFUL_LOOK', 'BEAT_UP'], a='SCHOOLING', hp=2.0, b={'def': 1},
                      p=[2, 4, 2, 1, 3]),
-                dict(s='ARAQUANID', m=['WIDE_GUARD', 'BUBBLE_BEAM', 'LEECH_LIFE', 'MIRROR_COAT'], a='WATER_BUBBLE', lv=-6,
+                dict(s='ARAQUANID', m=['WIDE_GUARD', 'WATER_GUN', 'BUG_BITE', 'MIRROR_COAT'], a='WATER_BUBBLE', lv=-6,
                      p=[1, 2, 3, 4])]),
         E(name='Totem Marowak', hint='A bone club, a flame dance and a lizard that poisons everything it touches.',
-          foes=[dict(s='MAROWAK_ALOLA_TOTEM', m=['FLARE_BLITZ', 'SHADOW_BONE', 'BONEMERANG', 'WILL_O_WISP'], 
+          foes=[dict(s='MAROWAK_ALOLA_TOTEM', m=['FIRE_PUNCH', 'SHADOW_BONE', 'BONEMERANG', 'WILL_O_WISP'], 
                      hp=3.2, lv=-4, b={'def': 1}, p=[4, 2, 1, 3]),
-                dict(s='SALAZZLE', m=['POISON_FANG', 'FLAMETHROWER', 'VENOSHOCK', 'FAKE_TEARS'], a='CORROSION', lv=-8, p=[1, 4, 3, 3])]),
+                dict(s='SALAZZLE', m=['POISON_FANG', 'EMBER', 'SMOG', 'FAKE_TEARS'], a='CORROSION', lv=-8, p=[1, 4, 3, 2])]),
         E(name='Gigantamax Pikachu', hint='Huge, loud and charged. Ground types are a very good idea.',
           foes=[dict(s='PIKACHU_GMAX', m=['CHARGE', 'THUNDERBOLT', 'IRON_TAIL', 'NUZZLE'], a='LIGHTNING_ROD', hp=4.0, lv=2,
                      p=[4, 1, 2, 2, 3]),
@@ -753,6 +753,13 @@ def main():
     # i.p.v. het gemiddelde-teammodel hierboven (dat zag Wishiwashi + Araquanid niet als gevaarlijk)
     import matchups as M
     mrows = [(b['act'], e['kind'], b['name'], e) for b, e, _ in rows]
+    # v0.9.82: kracht van vijanden per moment in de run (SPIRE_DESIGN.md) - eerst, want herkalibreren kost minuten
+    kbad = M.klap_check(mrows)
+    if kbad:
+        print('\nKLAP TE HOOG voor dit moment in de run (SPIRE_DESIGN.md, \'Kracht van vijanden per moment\'):')
+        for x in kbad:
+            print('  ' + x)
+        sys.exit(1)
     cal, stats = M.calibrate_sim(mrows, verbose=True)
     CALIB.clear()
     CALIB.update(cal)
@@ -803,6 +810,7 @@ def main():
             print('%-6s %-28s %5.1f%% %s' % (e['kind'], e['name'], d['loss'], flag))
     # Jordi (5 okt): een 0% winkans mag in geen enkele run ontstaan -> slechtste startcombinatie per elite/baas
     worst = M.worst_case(mrows, cal)
+    R += M.klap_report(mrows)
     R += M.report(worst)
     bad = M.check(worst)
     path = os.path.join(ROOT, 'SPIRE_BALANS.md')

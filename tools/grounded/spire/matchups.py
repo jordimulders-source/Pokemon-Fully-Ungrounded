@@ -1450,6 +1450,99 @@ def hit_table(rows=None, limit=0.45, kinds=('elite', 'boss')):
     return out
 
 
+# ---------------------------------------------------------------------------------------------
+# Kracht van vijanden per moment in de run (v0.9.82). Jordi: 'Araquanid had al STAB Leech Life en Liquidation, wat
+# hele goede moves zijn, die je op dat moment met je defenses niet kan tanken.' Klap = schade van één aanval (hoogste
+# roll, geen crit, met STAB, abilities, items en totem-boosts) als % van de max HP van een speler-Pokémon in de vorm
+# van die act (x4 HP), mediaan over alle rentals. Zie SPIRE_DESIGN.md, 'Kracht van vijanden per moment'.
+KLAP_CAP = {(1, 'weak'): 6, (1, 'normal'): 10, (1, 'elite'): 14, (1, 'boss'): 15,
+            (2, 'weak'): 8, (2, 'normal'): 12, (2, 'elite'): 15, (2, 'boss'): 17,
+            (3, 'weak'): 10, (3, 'normal'): 14, (3, 'elite'): 17, (3, 'boss'): 22}
+KLAP_STRONG = {1: 8, 2: 10, 3: 12}      # 'sterke aanval' vanaf deze klap (± 80% van het plafond van een gewoon gevecht),
+                                        # bij elites en bazen vanaf 2/3 van hun plafond als dat hoger is
+# zoveel sterke aanvallen per vijand: act 1 overal één (Jordi: niet twee goede STAB-moves tegelijk vroeg in de run),
+# daarna één in zwakke en gewone gevechten, twee bij elites en bazen (act 3: overal twee)
+KLAP_STRONG_MAX = {(1, 'weak'): 1, (1, 'normal'): 1, (1, 'elite'): 1, (1, 'boss'): 1,
+                   (2, 'weak'): 1, (2, 'normal'): 1, (2, 'elite'): 2, (2, 'boss'): 2,
+                   (3, 'weak'): 2, (3, 'normal'): 2, (3, 'elite'): 2, (3, 'boss'): 2}
+KLAP_CHARGED = 1.5            # opgeladen (twee beurten / daarna rust): open beurt voor de speler, mag x1,5 en telt niet als sterk
+KLAP_SETUP = ('DREAM_EATER',)  # werkt alleen na een aangekondigde voorbereiding (slaap): telt als opgeladen
+
+
+def klap_table(rows):
+    """[(act, kind, ontmoeting, vijand-nr, soort, move, klap %, lakei, opgeladen)] voor alle aanvallen die de vijanden
+    echt gebruiken (met een patroon alleen de moves uit het patroon: de AI volgt het patroon)."""
+    rentals, evo = load_rentals()
+    fl = Field()
+    out = []
+    for act, kind, biome, e in rows:
+        fs = foe_mons(e, 1.0)
+        ps = [player_mon(r, act, kind, evo, e) for r in rentals]
+        big = kind in ('elite', 'boss') and any(f.get('hp', 1.0) > 1.0 for f in e['foes'])
+        for idx, (f, fd) in enumerate(zip(fs, e['foes'])):
+            lakei = big and fd.get('hp', 1.0) <= 1.0
+            used = [fd['m'][i - 1] for i in fd.get('p', []) if i <= len(fd['m'])] or f.moves
+            for m in dict.fromkeys(used):
+                if m not in MOVES:
+                    continue
+                mv = MOVES[m]
+                if mv['cat'] == 'STATUS' or mv['effect'] in ('MIRROR_COAT', 'COUNTER', 'METAL_BURST'):
+                    continue
+                spread = mv['target'] in ('BOTH', 'FOES_AND_ALLY')
+                vals = sorted(damage(f, p, m, fl, None, spread=spread, roll=1.0, players=fs) / p.maxhp for p in ps)
+                charged = bool(mv['charge'] or mv['recharge']) or m in KLAP_SETUP or f.ability == 'TRUANT'   # Truant: om de beurt
+                out.append((act, kind, e['name'], idx, fd['s'], m, 100 * vals[len(vals) // 2], lakei, charged))
+    return out
+
+
+def klap_strong(act, kind, lakei=False):
+    if lakei or kind in ('weak', 'normal'):
+        return KLAP_STRONG[act]
+    return max(KLAP_STRONG[act], KLAP_CAP[(act, kind)] * 2 / 3)
+
+
+def klap_check(rows):
+    """Regels (fouten = lijst met teksten):
+    1. geen aanval boven het plafond van die act en dat soort gevecht (opgeladen x1,5);
+    2. lakeien van elites/bazen hooguit het plafond van een gewoon gevecht in die act;
+    3. per vijand hooguit KLAP_STRONG_MAX sterke aanvallen (niet twee goede STAB-moves tegelijk vroeg in de run)."""
+    bad = []
+    strong = {}
+    for act, kind, name, idx, sp, m, k, lakei, charged in klap_table(rows):
+        cap = KLAP_CAP[(act, 'normal' if lakei else kind)]
+        lim = cap * (KLAP_CHARGED if charged else 1)
+        if k > lim + 0.05:
+            bad.append('%s: %s%s %s klap %.1f%% > %.0f%% (act %d, %s)' % (name, sp, ' (lakei)' if lakei else '', m, k, lim, act, kind))
+        if k >= klap_strong(act, kind, lakei) and not charged:
+            strong.setdefault((act, kind, name, idx, sp), []).append('%s %.0f%%' % (m, k))
+    for (act, kind, name, idx, sp), ms in strong.items():
+        if len(ms) > KLAP_STRONG_MAX[(act, kind)]:
+            bad.append('%s: %s heeft %d sterke aanvallen (%s), max %d (act %d, %s)' % (name, sp, len(ms), ', '.join(ms),
+                                                                                  KLAP_STRONG_MAX[(act, kind)], act, kind))
+    return bad
+
+
+def klap_report(rows):
+    """Markdown: hoogste klap per act en soort gevecht naast het plafond."""
+    best = {}
+    for act, kind, name, idx, sp, m, k, lakei, charged in klap_table(rows):
+        key = (act, kind)
+        if key not in best or k > best[key][0]:
+            best[key] = (k, '%s: %s %s%s' % (name, SPECIES[sp]['dispname'] if sp in SPECIES else sp, m.replace('_', ' ').title(),
+                                             ' (opgeladen, plafond ×1,5)' if charged else ''))
+    R = ['', '### Kracht van vijanden per moment (klap, matchups.py)', '',
+         'Klap = één aanval (hoogste roll, geen crit) in %% van de max HP van een speler-Pokémon in de vorm van die act (×4 HP), '
+         'mediaan over alle rentals. Plafond per act en soort gevecht; lakeien van elites/bazen hooguit het plafond van een gewoon gevecht; '
+         'per vijand hooguit één sterke aanval (klap vanaf %s%% in act 1/2/3, bij elites/bazen vanaf 2/3 van hun plafond), vanaf act 2 twee bij elites en bazen '
+         'en vanaf act 3 overal twee; opgeladen aanvallen (twee beurten of daarna rust) ×1,5 en niet sterk. '
+         'Met een patroon tellen alleen de moves uit het patroon (de AI volgt het patroon).' %
+         '/'.join(str(KLAP_STRONG[a]) for a in (1, 2, 3)), '',
+         '| act | soort | plafond | hoogste klap | aanval |', '|---|---|---|---|---|']
+    for key in sorted(best, key=lambda k: (k[0], ['weak', 'normal', 'elite', 'boss'].index(k[1]))):
+        R.append('| %d | %s | %d%% | %.0f%% | %s |' % (key[0], key[1], KLAP_CAP[key], best[key][0], best[key][1]))
+    return R
+
+
 def trace(name, pair, seed=1, turns=30):
     """Eén gevecht beurt voor beurt (debug): python3 -c "import matchups as M; M.trace('Totem Wishiwashi', ('BELDUM', 'ZORUA'))"."""
     rows = calibrated_rows()

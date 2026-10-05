@@ -573,7 +573,7 @@
 #define MUS_GROUNDED_VS_KECCLES     635 // Project Grounded: Battle! Keccles, eigen compositie in salsa dura-stijl (tools/grounded/keccles_theme.py)
 #define MUS_GROUNDED_VS_MAGIKARP    636 // Project Grounded: Battle! Magikarp, eigen compositie (spartelen, Splash; tools/grounded/magikarp_theme.py)
 #define MUS_GROUNDED_VS_JIRACHI     637 // Project Grounded: Battle! Jirachi, eigen compositie (hoopvol, sterrenhemel; tools/grounded/jirachi_theme.py)
-#define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran, eigen compositie in stoner metal à la Kyuss (tools/grounded/heatran_theme.py)
+#define MUS_GROUNDED_VS_HEATRAN     638 // Project Grounded: Battle! Heatran, eigen compositie in stoner rock à la Kyuss (tools/grounded/heatran_theme.py)
 #define MUS_GROUNDED_VS_SHAYMIN     639 // Project Grounded: Battle! Shaymin, eigen compositie (relaxte bloemenweide in 6/8, tools/grounded/shaymin_theme.py)
 #define MUS_GROUNDED_VS_RAYQUAZA    640 // Project Grounded: weather trio-thema als Balinese gamelan (gong kebyar), tools/grounded/rayquaza_theme.py
 

@@ -24,10 +24,16 @@ SAMPLES = {
     'gm_steel_drums':  (114, 72, 0.9, 22050, None),
     # Battle! Heatran (heatran_theme.py, stoner metal à la Kyuss): fuzzgitaar als powerchord (G2+D3+G3) en als
     # losse noot, fuzzbas (picked bass + eigen overdrive), en een rockkit uit FluidR3 (ride, open hihat, toms)
-    'heatran_fuzz_power':  (30, (43, 50, 55), 2.4, 22050, 'auto'),
-    'heatran_fuzz_low':    (30, 43, 2.4, 22050, 'auto'),
     'heatran_fuzz_lead':   (30, 69, 2.0, 22050, 'auto'),
-    'heatran_fuzz_bass':   (34, 38, 2.0, 16000, 'auto'),
+    # v2 (echte stoner rock, drop C): 'Big Muff'-fuzz (lage-middenboost, twee clipstadia, warme lowpass) op de
+    # powerchord C2+G2+C3 en de losse noot, een palm-muted powerchord (GM 28 door dezelfde fuzz, kort) en een
+    # fuzzbas met octaaffuzz (gelijkgericht signaal = octaaf hoger, erbij gemengd)
+    'heatran_muff_power':  (30, (36, 43, 48), 2.4, 22050, 'auto'),
+    'heatran_muff_low':    (30, 41, 2.4, 22050, 'auto'),
+    'heatran_mute_power':  (28, (36, 43, 48), 0.45, 22050, None),
+    'heatran_octfuzz_bass': (34, 36, 2.0, 16000, 'auto'),
+    'heatran_closed_hat':  (128, 42, 0.3, 22050, None),
+    'heatran_side_stick':  (128, 37, 0.3, 22050, None),
     'heatran_kick':        (128, 36, 0.5, 16000, None),
     'heatran_snare':       (128, 38, 0.6, 22050, None),
     'heatran_open_hat':    (128, 46, 0.9, 22050, None),
@@ -36,8 +42,13 @@ SAMPLES = {
     'heatran_crash':       (128, 49, 2.2, 22050, None),
 }
 # extra vervorming na het renderen (naam: (versterking, lowpass in Hz)): tanh-overdrive, daarna de hoogte eraf
-DRIVE = {
-    'heatran_fuzz_bass': (6.0, 3500),
+DRIVE = {}
+# 'Big Muff'-fuzz (naam: (versterking, lowpass in Hz, octaaffuzz-aandeel)); zie muff()
+MUFF = {
+    'heatran_muff_power': (7.0, 3400, 0.0),
+    'heatran_muff_low': (7.0, 3200, 0.0),
+    'heatran_mute_power': (5.0, 2600, 0.0),
+    'heatran_octfuzz_bass': (6.0, 2600, 0.4),
 }
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
@@ -112,6 +123,25 @@ def drive(a, rate, gain, lp):
     return out
 
 
+def muff(a, rate, gain, lp, octave):
+    """Big Muff-achtig: lage middens (150-700 Hz) +6 dB, optioneel octaaffuzz (|x| = octaaf hoger), twee zachte
+    clipstadia, dan een warme 2-polige lowpass en een highpass tegen subrommel/DC. Bij de octaaffuzz (bas) gaat
+    het schone laag (< 160 Hz) er weer bij, zoals een bas-blend: anders verdwijnt de grondtoon in de fuzz."""
+    from scipy.signal import butter, sosfilt
+    a = a / max(1e-6, np.abs(a).max())
+    clean = a
+    a = a + sosfilt(butter(2, [150, 700], 'bandpass', fs=rate, output='sos'), a)
+    if octave:
+        r = np.abs(a)
+        a = a + octave * (r - sosfilt(butter(1, 20, 'lowpass', fs=rate, output='sos'), r))
+    a = np.tanh(a / np.abs(a).max() * gain)
+    a = np.tanh(a * 2.0)
+    a = sosfilt(butter(2, lp, 'lowpass', fs=rate, output='sos'), a)
+    if octave:
+        a = a + 3.0 * sosfilt(butter(2, 160, 'lowpass', fs=rate, output='sos'), clean)
+    return sosfilt(butter(1, 60, 'highpass', fs=rate, output='sos'), a)
+
+
 def write_wav(path, x, rate, key, loop):
     q = np.clip(np.round(x * 127), -128, 127).astype(np.int16) + 128
     data = q.astype(np.uint8).tobytes()
@@ -128,6 +158,7 @@ def write_wav(path, x, rate, key, loop):
 
 SAMPLES = {k: v for k, v in SAMPLES.items() if k.startswith('heatran_')}
 WAVES = {}
+OLD = ('heatran_fuzz_power', 'heatran_fuzz_low', 'heatran_fuzz_bass')
 
 def main():
     os.makedirs(OUT, exist_ok=True)
@@ -138,6 +169,8 @@ def main():
         a = resample(a[start:start + int(dur * 44100)], 44100, rate, antialias=name not in LEGACY)
         if name in DRIVE:
             a = drive(a, rate, *DRIVE[name])
+        if name in MUFF:
+            a = muff(a, rate, *MUFF[name])
         a = a / max(1e-6, np.abs(a).max()) * 0.97                  # 8 bit: volle schaal
         if loop == 'auto':
             a, loop = auto_loop(a, rate)
@@ -156,6 +189,11 @@ def main():
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (label, name)
         print('%-18s %s, loop %d samples @ %d Hz' % (name, kind, len(a), rate))
+    for old in OLD:       # v1-samples die v2 niet meer gebruikt
+        inc = inc.replace('\n\t.align 2\nDirectSoundWaveData_%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (old, old), '')
+        for ext in ('.wav', '.bin'):
+            if os.path.exists(OUT + old + ext):
+                os.remove(OUT + old + ext)
     open(DATA, 'w').write(inc)
 
 

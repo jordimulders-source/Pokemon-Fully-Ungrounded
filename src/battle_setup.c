@@ -984,6 +984,9 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
     if (trainerId == TRAINER_DAVE)
         return B_TRANSITION_DAVE;
+    // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
+    if (trainerId == TRAINER_SICKBLIK)
+        return B_TRANSITION_SICKBLIK;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)

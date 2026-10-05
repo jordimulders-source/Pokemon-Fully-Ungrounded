@@ -109,6 +109,7 @@ enum BattleTransition
     B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
     B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
     B_TRANSITION_DAVE, // Project Grounded: Dave (Freed From Desire), een penalty strak in de winkelhaak, dan GOAL!
+    B_TRANSITION_SICKBLIK, // Project Grounded: SickBlik (Jordi), mugshot, aan tafel bij een hotpot, die van bovenaf een Poké Ball wordt
     B_TRANSITION_COUNT
 };
 

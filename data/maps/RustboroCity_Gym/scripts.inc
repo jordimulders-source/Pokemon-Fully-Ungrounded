@@ -48,8 +48,8 @@ RustboroCity_Gym_EventScript_Tommy::
 	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-RustboroCity_Gym_EventScript_Marc::
-	trainerbattle_single TRAINER_MARC, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
+RustboroCity_Gym_EventScript_Dio::
+	trainerbattle_single TRAINER_DIO, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
 	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
 	end
 

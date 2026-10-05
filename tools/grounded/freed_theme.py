@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Project Grounded: gevechtsmuziek van Dave (TRAINER_ALBERT, Cooltrainer, Victory Road + Battle Stadium):
+"""Project Grounded: gevechtsmuziek van Dave (TRAINER_DAVE, Cooltrainer, Victory Road + Battle Stadium):
 "Freed From Desire" (Gala, 1996).
 
 Volgt de bron-MIDI 1-op-1 (sound/songs/grounded_src/freed_from_desire.mid, D-klein): één aaneengesloten stuk in de

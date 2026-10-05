@@ -38,10 +38,10 @@ const u8 gText_MatchCallCooltrainer_Brooke_Pokemon[] = _("Balance is crucial.");
 const u8 gText_MatchCallCooltrainer_Brooke_Intro1[] = _("My goal is to become the");
 const u8 gText_MatchCallCooltrainer_Brooke_Intro2[] = _("POKéMON CHAMPION.");
 
-const u8 gText_MatchCallCooltrainer_Wilton_Strategy[] = _("Upset the opponent.");
-const u8 gText_MatchCallCooltrainer_Wilton_Pokemon[] = _("Type doesn't matter.");
-const u8 gText_MatchCallCooltrainer_Wilton_Intro1[] = _("I'm a top student at the");
-const u8 gText_MatchCallCooltrainer_Wilton_Intro2[] = _("TRAINER'S SCHOOL.");
+const u8 gText_MatchCallCooltrainer_Charles_Strategy[] = _("Upset the opponent.");
+const u8 gText_MatchCallCooltrainer_Charles_Pokemon[] = _("Type doesn't matter.");
+const u8 gText_MatchCallCooltrainer_Charles_Intro1[] = _("I'm a top student at the");
+const u8 gText_MatchCallCooltrainer_Charles_Intro2[] = _("TRAINER'S SCHOOL.");
 
 const u8 gText_MatchCallHexManiac_Valerie_Strategy[] = _("Slow, steady suffering.");
 const u8 gText_MatchCallHexManiac_Valerie_Pokemon[] = _("Scary to meet at night.");
@@ -358,10 +358,10 @@ const u8 gText_MatchCallMysticDuo_TateAndLiza_Pokemon[] = _("Always friendly POK
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro1[] = _("Papa has trouble telling");
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro2[] = _("the two of us apart!");
 
-const u8 gText_MatchCallDandyCharm_Juan_Strategy[] = _("I use splendid waterpower.");
-const u8 gText_MatchCallDandyCharm_Juan_Pokemon[] = _("POKéMON of elegance!");
-const u8 gText_MatchCallDandyCharm_Juan_Intro1[] = _("The adulation of beautiful");
-const u8 gText_MatchCallDandyCharm_Juan_Intro2[] = _("ladies fills me with energy!");
+const u8 gText_MatchCallDandyCharm_Wallace_Strategy[] = _("I use splendid waterpower.");
+const u8 gText_MatchCallDandyCharm_Wallace_Pokemon[] = _("POKéMON of elegance!");
+const u8 gText_MatchCallDandyCharm_Wallace_Intro1[] = _("The adulation of beautiful");
+const u8 gText_MatchCallDandyCharm_Wallace_Intro2[] = _("ladies fills me with energy!");
 
 const u8 gText_MatchCallEliteFour_Sidney_Strategy[] = _("Offense over defense!");
 const u8 gText_MatchCallEliteFour_Sidney_Pokemon[] = _("The DARK side's beauties.");
@@ -383,10 +383,10 @@ const u8 gText_MatchCallEliteFour_Drake_Pokemon[] = _("The raw power of DRAGONS!
 const u8 gText_MatchCallEliteFour_Drake_Intro1[] = _("I dedicate myself to the");
 const u8 gText_MatchCallEliteFour_Drake_Intro2[] = _("POKéMON that saved me.");
 
-const u8 gText_MatchCallChampion_Wallace_Strategy[] = _("Dignity and respect.");
-const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of grace.");
-const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
-const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
+const u8 gText_MatchCallOldChampion_Wallace_Strategy[] = _("Dignity and respect.");
+const u8 gText_MatchCallOldChampion_Wallace_Pokemon[] = _("I prefer POKéMON of grace.");
+const u8 gText_MatchCallOldChampion_Wallace_Intro1[] = _("I represent beauty as");
+const u8 gText_MatchCallOldChampion_Wallace_Intro2[] = _("well as intelligence.");
 
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
@@ -398,7 +398,7 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_LILA_AND_ROY] = MCFLAVOR(SisAndBro_LilaAndRoy),
     [REMATCH_CRISTIN] = MCFLAVOR(Cooltrainer_Cristin),
     [REMATCH_BROOKE] = MCFLAVOR(Cooltrainer_Brooke),
-    [REMATCH_WILTON] = MCFLAVOR(Cooltrainer_Wilton),
+    [REMATCH_CHARLES] = MCFLAVOR(Cooltrainer_Charles),
     [REMATCH_VALERIE] = MCFLAVOR(HexManiac_Valerie),
     [REMATCH_CINDY] = MCFLAVOR(Lady_Cindy),
     [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia),
@@ -462,10 +462,10 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_NORMAN] = MCFLAVOR(ReliableOne_Dad),
     [REMATCH_WINONA] = MCFLAVOR(SkyTamer_Winona),
     [REMATCH_TATE_AND_LIZA] = MCFLAVOR(MysticDuo_TateAndLiza),
-    [REMATCH_JUAN] = MCFLAVOR(DandyCharm_Juan),
+    [REMATCH_WALLACE] = MCFLAVOR(DandyCharm_Wallace),
     [REMATCH_SIDNEY] = MCFLAVOR(EliteFour_Sidney),
     [REMATCH_PHOEBE] = MCFLAVOR(EliteFour_Phoebe),
     [REMATCH_GLACIA] = MCFLAVOR(EliteFour_Glacia),
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
-    [REMATCH_WALLACE] = MCFLAVOR(Champion_Wallace),
+    [REMATCH_OLD_CHAMPION] = MCFLAVOR(OldChampion_Wallace),
 };

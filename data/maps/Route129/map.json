@@ -79,7 +79,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route129_EventScript_Reed",
+      "script": "Route129_EventScript_Juan",
       "flag": "0"
     },
     {

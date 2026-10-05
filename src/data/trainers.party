@@ -2166,7 +2166,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - DoubleSlap
 - Surf
 
-=== TRAINER_RANDALL ===
+=== TRAINER_GI_HUN ===
 Name: Gi-Hun
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2218,7 +2218,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
 - Knock Off
 
-=== TRAINER_PARKER ===
+=== TRAINER_JONAS_PETALBURG ===
 Name: Jonas
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2279,7 +2279,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
 - Play Rough
 
-=== TRAINER_GEORGE ===
+=== TRAINER_HARVEY ===
 Name: Harvey
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2343,7 +2343,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Trick Room
 - Yawn
 
-=== TRAINER_BERKE ===
+=== TRAINER_HORATIO ===
 Name: Horatio
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2497,7 +2497,7 @@ Chandelure
 Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_WILTON_1 ===
+=== TRAINER_CHARLES_1 ===
 Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2565,7 +2565,7 @@ Garchomp
 Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_ALBERT ===
+=== TRAINER_DAVE ===
 Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2600,7 +2600,7 @@ Kingambit
 Level: 51
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_SAMUEL ===
+=== TRAINER_MITCH ===
 Name: Mitch
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2699,7 +2699,7 @@ Shiftry
 Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_OWEN ===
+=== TRAINER_SICKBLIK ===
 Name: SickBlik
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2764,7 +2764,7 @@ Ability: Protean
 - Moonblast
 - Aura Sphere
 
-=== TRAINER_WILTON_2 ===
+=== TRAINER_CHARLES_2 ===
 Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2798,7 +2798,7 @@ Rhyhorn
 Level: 31
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-=== TRAINER_WILTON_3 ===
+=== TRAINER_CHARLES_3 ===
 Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2832,7 +2832,7 @@ Rhydon
 Level: 34
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-=== TRAINER_WILTON_4 ===
+=== TRAINER_CHARLES_4 ===
 Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2866,7 +2866,7 @@ Rhydon
 Level: 37
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_WILTON_5 ===
+=== TRAINER_CHARLES_5 ===
 Name: CHARLES
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -2934,7 +2934,7 @@ Dusknoir
 Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_MARY ===
+=== TRAINER_DAENARYS ===
 Name: Daenarys
 Class: Cooltrainer
 Pic: Cooltrainer F
@@ -2998,7 +2998,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Noble Roar
 - Will-O-Wisp
 
-=== TRAINER_ALEXIA ===
+=== TRAINER_MICHONNE ===
 Name: Michonne
 Class: Cooltrainer
 Pic: Cooltrainer F
@@ -3062,7 +3062,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Swords Dance
 
-=== TRAINER_JODY ===
+=== TRAINER_ELEVEN ===
 Name: Eleven
 Class: Cooltrainer
 Pic: Cooltrainer F
@@ -3126,7 +3126,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Zen Headbutt
 - Crunch
 
-=== TRAINER_WENDY ===
+=== TRAINER_SCARLET ===
 Name: SCARLET
 Class: Cooltrainer
 Pic: Cooltrainer F
@@ -5492,7 +5492,7 @@ Wailord
 Level: 44
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_TAKAO ===
+=== TRAINER_TITO ===
 Name: TITO
 Class: Black Belt
 Pic: Black Belt
@@ -7071,7 +7071,7 @@ Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Hidden Power
 
-=== TRAINER_PRESTON ===
+=== TRAINER_URI ===
 Name: Uri
 Class: Psychic
 Pic: Psychic M
@@ -10643,7 +10643,7 @@ Dunsparce
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_WALLACE ===
+=== TRAINER_WALLACE_OLD_CHAMPION ===
 Name: WALLACE
 Class: Champion
 Pic: Champion Wallace
@@ -11135,7 +11135,7 @@ Magnemite
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-=== TRAINER_ANTHONY ===
+=== TRAINER_ARMSTRONG ===
 Name: ARMSTRONG
 Class: Triathlete
 Pic: Cycling Triathlete M
@@ -13265,7 +13265,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sludge
 - Self Destruct
 
-=== TRAINER_JOCELYN ===
+=== TRAINER_ROMERO ===
 Name: ROMERO
 Class: Black Belt
 Pic: Black Belt
@@ -13290,7 +13290,7 @@ Flamigo
 Level: 17
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_LAURA ===
+=== TRAINER_MCGREGOR ===
 Name: MCGREGOR
 Class: Black Belt
 Pic: Black Belt
@@ -15177,7 +15177,7 @@ Quaquaval
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_JAZMYN ===
+=== TRAINER_VIOLET_COOLTRAINER ===
 Name: VIOLET
 Class: Cooltrainer 2
 Pic: Cooltrainer F
@@ -17058,7 +17058,7 @@ Roselia
 Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_MARC ===
+=== TRAINER_DIO ===
 Name: DIO
 Class: Dragon Tamer
 Pic: Dragon Tamer
@@ -17079,7 +17079,7 @@ Duskull
 Level: 12
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_BRENDEN ===
+=== TRAINER_BAS_RUTTEN ===
 Name: BAS RUTTEN
 Class: Sailor
 Pic: Sailor
@@ -17104,7 +17104,7 @@ Machop
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_LILITH ===
+=== TRAINER_ROGAN ===
 Name: ROGAN
 Class: Black Belt
 Pic: Black Belt
@@ -19944,7 +19944,7 @@ Unfezant
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_REED ===
+=== TRAINER_JUAN ===
 Name: Juan
 Class: Rival
 Pic: Leader Juan
@@ -20704,7 +20704,7 @@ Flaaffy
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MARCOS ===
+=== TRAINER_BLACKMORE ===
 Name: BLACKMORE
 Class: Guitarist
 Pic: Guitarist
@@ -23980,7 +23980,7 @@ Ability: Levitate
 - Psychic
 - Lunar Blessing
 
-=== TRAINER_JUAN_2 ===
+=== TRAINER_WALLACE_2 ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
@@ -24045,7 +24045,7 @@ Ability: Multiscale
 - Recover
 - Flip Turn
 
-=== TRAINER_JUAN_3 ===
+=== TRAINER_WALLACE_3 ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
@@ -24110,7 +24110,7 @@ Ability: Multiscale
 - Recover
 - Flip Turn
 
-=== TRAINER_JUAN_4 ===
+=== TRAINER_WALLACE_4 ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
@@ -24175,7 +24175,7 @@ Ability: Multiscale
 - Recover
 - Flip Turn
 
-=== TRAINER_JUAN_5 ===
+=== TRAINER_WALLACE_5 ===
 Name: JUAN
 Class: Leader
 Pic: Leader Juan

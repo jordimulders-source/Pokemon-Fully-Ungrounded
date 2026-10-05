@@ -2173,23 +2173,23 @@ MatchCall_Text_TateLiza4::
 	.string "TATE: Again? LIZA: The horoscope says\n"
 	.string "yes.$"
 
-MatchCall_Text_Juan1::
+MatchCall_Text_Wallace1::
 	.string "WALLACE: {PLAYER}{KUN}… Our battle had a\n"
 	.string "lovely bouquet.\p"
 	.string "Perhaps you're a talent that ages like\n"
 	.string "fine wine.$"
 
-MatchCall_Text_Juan2::
+MatchCall_Text_Wallace2::
 	.string "WALLACE: You've reached the peak. I\n"
 	.string "opened a bottle in your honor.\p"
 	.string "Two, actually. I hope we meet again.$"
 
-MatchCall_Text_Juan3::
+MatchCall_Text_Wallace3::
 	.string "WALLACE: Our SOOTOPOLIS GYM has\n"
 	.string "reopened. The bar too.\p"
 	.string "Visit anytime. Santé!$"
 
-MatchCall_Text_Juan4::
+MatchCall_Text_Wallace4::
 	.string "WALLACE: Battling you is like the finest\n"
 	.string "vintage.\p"
 	.string "When I close my eyes, I see you… Or it's\n"
@@ -2231,7 +2231,7 @@ MatchCall_Text_Drake::
 	.string "the POKéMON LEAGUE!\p"
 	.string "Don't you agree, {PLAYER}?$"
 
-MatchCall_Text_Wallace::
+MatchCall_Text_OldChampion::
 	.string "WALLACE: Have you met STEVEN?\n"
 	.string "Incredibly skilled. But he'd rather\l"
 	.string "headbang at rocks.\p"

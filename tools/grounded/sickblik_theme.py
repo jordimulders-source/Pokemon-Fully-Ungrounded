@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Project Grounded: "Battle! SickBlik" (TRAINER_OWEN, Cooltrainer op Victory Road B2F en in het Battle Stadium =
+"""Project Grounded: "Battle! SickBlik" (TRAINER_SICKBLIK, Cooltrainer op Victory Road B2F en in het Battle Stadium =
 Jordi zelf). Eigen compositie: extreem funky, smerige slap bass ('stank face'), à la Vulfpeck 'Dean Town', Victor
 Wooten, Marcus Miller, Louis Cole, Jamiroquai. De bas is de ster en draagt de hook.
 v2 (Jordi: 'hybride van Pokémon-battle-urgentie en Steely Dan-jazzfunk'): de slap-baspartijen van v1 blijven noot

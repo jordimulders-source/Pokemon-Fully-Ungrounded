@@ -36,8 +36,8 @@ Route129_EventScript_Allison::
 	msgbox Route129_Text_AllisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route129_EventScript_Reed::
-	trainerbattle_single TRAINER_REED, Route129_Text_ReedIntro, Route129_Text_ReedDefeat
+Route129_EventScript_Juan::
+	trainerbattle_single TRAINER_JUAN, Route129_Text_ReedIntro, Route129_Text_ReedDefeat
 	msgbox Route129_Text_ReedPostBattle, MSGBOX_AUTOCLOSE
 	end
 

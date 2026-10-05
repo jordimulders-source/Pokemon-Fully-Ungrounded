@@ -16828,3 +16828,13 @@ Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Mel
 
 - Scripts: `tools/grounded/gym_remixes.py` (647–650) en `gym_remixes2.py` (651–654).
 - Batchcontrole: alle acht 0 overlopen, piek 68–108/127.
+
+### [v0.9.84] - Trainernamen consistent
+- **Constanten, flags en labels heten nu naar het personage in de game:**
+  - Gym 8 = Wallace: `TRAINER_WALLACE_1`–`_5`, `REMATCH_WALLACE`, `FLAG_DAILY_REMATCH_WALLACE`, `FLAG_ENABLE_WALLACE_MATCH_CALL`.
+  - Het oude kampioen-slot heet `TRAINER_WALLACE_OLD_CHAMPION` / `REMATCH_OLD_CHAMPION`.
+  - Juan op Route 129 = `TRAINER_JUAN` (was `TRAINER_REED`).
+  - Charles = `TRAINER_CHARLES_1`–`_5` (was Wilton).
+  - Nog 21 trainers met een eigen naam, onder meer Gi-Hun, Dave, Mitch, SickBlik en Bas Rutten.
+- **Alleen namen:** de ROM is byte voor byte gelijk en saves blijven werken. Tekstlabels zijn niet hernoemd, omdat de Dialoogstudio ze als sleutel gebruikt.
+- **Naamlijst voor Jordi/Gemini:** `TRAINER_NAMEN.md`.

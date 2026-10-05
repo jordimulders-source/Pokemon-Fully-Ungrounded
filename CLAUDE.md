@@ -114,7 +114,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Sprites in de Stadium-arena:** rij 5 valt onder de bovenrand van het veld (hoofd weg); het midden ligt tussen x 8/9 en y 6/7.
 - **Startmenu onthoudt de cursor:** na een PokéNav-bezoek in een emulatortest opent START → A de PokéNav i.p.v. het debugmenu.
 - **Gymleider-rematches (v0.9.79):** na de Hall of Fame altijd klaar, 1× per dag per leider (`FLAG_DAILY_REMATCH_*` 0x935–0x93C), bellen via Match Call zet de leider klaar (`src/gym_leader_rematch.c`).
-- **Gymleider 8 is Wallace, kampioen is Steven** (niet Juan/Wallace zoals in vanilla Emerald).
+- **Gymleider 8 is Wallace, kampioen is Steven** (niet Juan/Wallace zoals in vanilla Emerald). Trainerconstanten heten naar het personage in de game (v0.9.84); zie `TRAINER_NAMEN.md` vóór je met trainers/flags werkt, en houd die lijst bij bij elke hernoeming. Tekstlabels (`*_Text_*`) niet hernoemen (Dialoogstudio-sleutels).
 - **Winkelhouders/cameo's:** Kecleon is van Keccles (eigen rol); niet als winkelier of losse NPC gebruiken.
 - **Meteor Falls-wanden** zijn ringen rond de vloer: noord 231/231/23e, west 212/22a/234, oost 210/228/23c, zuid 286, hoeken 213/214 (`Map.rock_tile` in `meteor_falls_ext.py`). In testscripts `additem` i.p.v. `giveitem` (pop-ups blokkeren de debugtest).
 - **Stadium-gevecht testen:** debugscript `givemon` ×3; `setvar VAR_0x8004, STADIUM_DOUBLES`; `special Stadium_PrepareChooseParty`; `special Stadium_StartTournament`; `special Stadium_StartMatch`; `waitstate`. Vooraf in het geheugen `gPlayerParty` (600 bytes) en `gPlayerPartyCount` wissen, `gSelectedOrderFromParty` = 1,2,3, compagnon in `sT`+5. Bij HP-hacks alleen `hp > 1` op 1 zetten (een flauwgevallen Pokémon op 1 zetten haalt hem terug).

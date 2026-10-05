@@ -16657,3 +16657,11 @@ Jordi's eerste testrun:
   vergroot (`giant_wailord_draw.py`), dikke blokrand zoals in het voorbeeld ("houd het maar gewoon dik, is humor"),
   onderkant onder water met een schuimlijn. Een dunnere rand kan met `LINE = 1`.
 
+
+### [v.0.9.73] - Rayquaza v3
+- Op Jordi's punten: **tempo exact als het origineel** (196 bpm vast, intro 9,8 s, loop 39,2 s; v2 had een statige/
+  versnellende intro). **Melodie naar voren** op de originele GBA-instrumenten (trompet/strijkers/hoorn zoals het
+  origineel, met de kwint erbij), reyong alleen als korte kleur, kotekan zachter: de melodie zit nu 6-11 dB boven de
+  kotekan (v2: 2-4 dB). **Kebyar-accenten**: angsel (alles kapt af op tel 4) om de 4 maten met unisono-klappen, en om
+  de 2 maten een zware maatovergang (gong ageng, lage gongbas, pauken, ceng-ceng op vol); snelle kotekan op een hoge
+  synth in de lange noten en de break. 0 keer overlopen.

@@ -6106,6 +6106,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     if (trainerId == TRAINER_ALBERT)
         return MUS_GROUNDED_VS_DAVE;
 
+    // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
+    if (trainerId == TRAINER_SAMUEL)
+        return MUS_GROUNDED_VS_MITCH;
+
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
     if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
         return MUS_GROUNDED_VS_KECCLES;

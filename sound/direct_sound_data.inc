@@ -6827,3 +6827,95 @@ DirectSoundWaveData_magikarp_cry_stutter::
 	.align 2
 DirectSoundWaveData_magikarp_cry_rev::
 	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_rev.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_reese_dark::
+	.incbin "sound/direct_sound_samples/grounded/mitch_reese_dark.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_reese_mid::
+	.incbin "sound/direct_sound_samples/grounded/mitch_reese_mid.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_reese_bright::
+	.incbin "sound/direct_sound_samples/grounded/mitch_reese_bright.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_growl::
+	.incbin "sound/direct_sound_samples/grounded/mitch_growl.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_wob_f1::
+	.incbin "sound/direct_sound_samples/grounded/mitch_wob_f1.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_wob_ab1::
+	.incbin "sound/direct_sound_samples/grounded/mitch_wob_ab1.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_wob_c2::
+	.incbin "sound/direct_sound_samples/grounded/mitch_wob_c2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_wob_db2::
+	.incbin "sound/direct_sound_samples/grounded/mitch_wob_db2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_wob_eb2::
+	.incbin "sound/direct_sound_samples/grounded/mitch_wob_eb2.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_lead::
+	.incbin "sound/direct_sound_samples/grounded/mitch_lead.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_stab_min::
+	.incbin "sound/direct_sound_samples/grounded/mitch_stab_min.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_stab_maj::
+	.incbin "sound/direct_sound_samples/grounded/mitch_stab_maj.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_horn_min::
+	.incbin "sound/direct_sound_samples/grounded/mitch_horn_min.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_pad_min::
+	.incbin "sound/direct_sound_samples/grounded/mitch_pad_min.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_horn_maj::
+	.incbin "sound/direct_sound_samples/grounded/mitch_horn_maj.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_pad_maj::
+	.incbin "sound/direct_sound_samples/grounded/mitch_pad_maj.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_kick::
+	.incbin "sound/direct_sound_samples/grounded/mitch_kick.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_snare::
+	.incbin "sound/direct_sound_samples/grounded/mitch_snare.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_ghost::
+	.incbin "sound/direct_sound_samples/grounded/mitch_ghost.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_revcym::
+	.incbin "sound/direct_sound_samples/grounded/mitch_revcym.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_rewind::
+	.incbin "sound/direct_sound_samples/grounded/mitch_rewind.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_airhorn::
+	.incbin "sound/direct_sound_samples/grounded/mitch_airhorn.bin"
+
+	.align 2
+DirectSoundWaveData_mitch_ride::
+	.incbin "sound/direct_sound_samples/grounded/mitch_ride.bin"

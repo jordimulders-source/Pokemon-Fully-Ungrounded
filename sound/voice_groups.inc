@@ -12,6 +12,7 @@
 .include "sound/voicegroups/drumsets/heatran.inc"
 .include "sound/voicegroups/drumsets/neo_plasma.inc"
 .include "sound/voicegroups/drumsets/rayquaza.inc"
+.include "sound/voicegroups/drumsets/mitch.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -226,3 +227,4 @@
 .include "sound/voicegroups/grounded_jirachi.inc"
 .include "sound/voicegroups/grounded_heatran.inc"
 .include "sound/voicegroups/grounded_rayquaza.inc"
+.include "sound/voicegroups/grounded_mitch.inc"

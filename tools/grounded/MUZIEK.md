@@ -353,3 +353,16 @@ herkennen is, komt ook als controle in `music_lint.py`.
   een constante lage lijn = een te lang uitklinkende, gestemde kick op achtsten (bromde op 52 Hz -> kick korter, op C2).
 - Spleeter-stems zijn bruikbaar voor drumpatronen (aanslag per band per 16e) en octaafcontrole per spoor (energie op f0/2,
   f0, 2f0), maar harmonische vingerafdrukken uit een volle mix zijn onbetrouwbaar (te veel overlap).
+
+- Mitch v1 (`mitch_theme.py`, Drum & Bass, 174 bpm, F-klein; samples `mitch_samples.py`): **het PSG-golfkanaal speelt
+  een golf van één periode (ProgrammableWaveData_8) een octaaf lager dan genoteerd, en kan niet onder ±32,7 Hz** (CGB-
+  frequentieregister); een golf met twee perioden (Data_1, Jirachi) klinkt op de genoteerde hoogte maar dus niet onder
+  ±65 Hz. Een sub op F1 (43,7 Hz) = Data_8 en F2 noteren. Gevonden met een solo-opname (eerst gegokt: 32,7 Hz in elke drop).
+  Reese = twee zaagtanden met M±1 trillingen per loop (zweving in de sample); 'pratende' bas = programmawissel per noot
+  (dicht/half/open/grom). **Wobble op tempo = filter-LFO in de sample**, twee maten per loop, één sample per grondtoon
+  (M = 2 maten x f0 afgerond: < 0,4% tempofout); getransponeerd zou hij versnellen. Eerste mix had 75-85% van het
+  spectrum onder 150 Hz en < 2% boven 2 kHz (snare/hihats verdwenen): grondtoon in de reese-samples x0,45 (de PSG-sub
+  draagt het laag), snare met meer ruis en highpass 230 Hz, hihats (ruis) 40 -> 90, ride 70 -> 112, kick x0,8 met een
+  klik. Meet de banden per sectie (`spec.py`-achtig: <150 / 150-600 / 0,6-2k / >2k). DJ-rewind = een maat drop
+  achterstevoren met een snelheidscurve die ±1 maat materiaal verbruikt (anders is het na 0,4 s op en hoor je stilte).
+  -V100: 0 overlopen, piek 85/127, RMS 2614.

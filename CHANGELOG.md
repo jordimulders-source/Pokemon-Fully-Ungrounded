@@ -16548,3 +16548,11 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   1 dB van de bron. Velocity overal 127 (bron: 50), -V108 (0 keer overlopen, piek 86/127).
 - Sawtooth-spoor gesplitst: bovenste noot = melodie, octaaf eronder op de PSG-blokgolf, overige noten een tweede lijn.
 
+
+### [v.0.9.64] - Battle! Keccles (salsa dura)
+- Eigen compositie (`tools/grounded/keccles_theme.py`, `MUS_GROUNDED_VS_KECCLES`): salsa dura à la Fania, 190 bpm,
+  A-mineur, clave 2-3. Intro (montuno, bloque, koperloop), A = de hook op trompet + trombone in octaven, B = coro met
+  trombone-melodie, mambo met moña en campana, break met timbale-solo, naadloos terug. Piano-montuno, tumbao-bas,
+  conga's, timbales, cascara, güiro (PSG-ruis). Eigen drumkit en piano-keysplit. 0 keer overlopen (-V088).
+- Klinkt bij Keccles 1-3 (Route 115, Fortree, Route 136) en in het Battle Stadium; het multi battle in Sootopolis houdt
+  de Archie/Maxie-muziek.

@@ -16811,3 +16811,20 @@ Jordi's eerste testrun:
 - **Snorlax-kamp:** de vakken met je Pokémon zijn hoger. Fuecoco (en elk ander icoon) staat er nu helemaal in, met de naam naast het icoon. Iconen worden op alle Spire-schermen op hun zichtbare deel uitgelijnd (`Spire_IconYOffset`).
 - **Act-kaart:** de tekst onder 'Battle' viel weg ("Two wild ones" was te breed). Nu "2 wild ones", "upgrade +", "Strong foe" en "Buy stuff".
 - **Vending Machine:** B = weglopen ("B: walk away"). `events.py` controleert dat elk event zonder gratis optie zo'n uitweg heeft.
+
+### [v0.9.83] - Gymleider-remixes (alle acht leiders)
+Elke gymleider vecht nu op een eigen remix van het originele gymleiderthema. Melodie, vorm en loop zijn noot voor noot die van het origineel; alleen instrumenten, groove en tempo veranderen. Dit geldt voor de leiders, hun rematches en het Battle Stadium, maar niet in de Frontier.
+
+| Song | Leider | Genre |
+|---|---|---|
+| 647 | Roxanne | hardrock-powerballad: overdrive-lead, powerchords, half-time drums |
+| 648 | Brawly | nu-metal / "bro metal": drop-chugs, breakdown, china, dubbele bassdrum |
+| 649 | Wattson | gabber/happy hardcore: gabberkick, supersaw, hoover, happy-hardcore-piano |
+| 650 | Flannery | flamenco (rumba): nylongitaar met trémolo, rasgueado, palmas, cajón, castagnetten |
+| 651 | Norman | blockbuster-tv-orkest: epische cello, strijkersostinato, taiko, koperbraam |
+| 652 | Winona | bubblegum-dancepop: glanzende synthlead, 909-clap, four-on-the-floor |
+| 653 | Tate & Liza | psytrance: tweeling links/rechts (acid-zaagtand + blokgolf), rollende bas |
+| 654 | Wallace (gym 8) | Franse lounge/bossa: vibrafoon, accordeon, Rhodes, contrabas, brushes |
+
+- Scripts: `tools/grounded/gym_remixes.py` (647–650) en `gym_remixes2.py` (651–654).
+- Batchcontrole: alle acht 0 overlopen, piek 68–108/127.

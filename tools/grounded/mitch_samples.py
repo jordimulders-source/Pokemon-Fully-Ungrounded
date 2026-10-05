@@ -27,6 +27,14 @@ Uit FluidR3 (fluidsynth, kit/programma per sample) en daarna bewerkt:
   mitch_ride   : ride (Standard-kit), voor de Pendulum-achtige ride in de drops.
   mitch_horn_min / _maj : brass section (GM 61) als akkoord in één sample (hoornstoot).
   mitch_pad_min / _maj  : warme pad (GM 89) als akkoord in één sample, gecrossfade loop.
+v3 (Jordi: 'te veel drukke chiptune/happy hardcore; duistere Chase & Status-DnB, less is more', 172 bpm):
+  mitch3_kick  : hele korte, felle punch: sinus 230 -> 58 Hz in ±20 ms (het laag-midden), dreun van 60 ms, klik.
+  mitch3_snare : droge, keiharde klap: FluidR3-snare (38) + handklap (39) + ruisstoot 1,5-7 kHz, kort (0,19 s).
+  mitch3_ghost : dezelfde snare, 70 ms (ghost notes).
+  mitch3_brass_lo / _hi : koperstoot in octaven (FluidR3 brass section 61 + synth brass 62, twee noten in één
+      sample = 1 kanaal), licht vervormd; lo op F3 (F2+F3), hi op Eb4 (Eb3+Eb4).
+  mitch3_pluck : donkere synthpluk (twee ontstemde zaagtanden, filterenvelope dicht), voor de arpeggio's.
+  mitch3_wob_<noot> : wobble op 172 bpm (de 'lagere synths' van v2 rond 1:00), trager en dreigender LFO-patroon.
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
 Gebruik: python3 tools/grounded/mitch_samples.py"""
 import os, subprocess, sys, tempfile, wave
@@ -323,6 +331,88 @@ def hat(rate=22050, open_=False):
     return fade_out(norm(a), rate, 0.1 if open_ else 0.015), rate
 
 
+# ---------------------------------------------------------------- v3: droog, laag, duister (172 bpm)
+BPM3 = 172
+BEAT3 = 60 / BPM3
+
+
+def wob_lfo3(bars=2):
+    """v3: dreigender: maat 1 halve noot (langzaam open), kwart, achtsten; maat 2 kwarten, achtsten, triolen."""
+    segs = [(0, 2, 0.5), (2, 1, 1), (3, 1, 2), (4, 1, 1), (5, 1, 1), (6, 1, 2), (7, 1, 3)]
+    beats = 4 * bars
+
+    def f(ph):
+        b = ph * beats
+        out = np.full_like(ph, 1.5)
+        for st, ln, r in segs:
+            m = (b >= st) & (b < st + ln)
+            x = (b[m] - st) * r
+            out[m] = 1.5 + 16 * (0.5 - 0.5 * np.cos(2 * np.pi * x)) ** 1.6
+        return out
+    return f
+
+
+def kick3(rate=16000):
+    """Korte, felle DnB-kick: de punch zit in de snelle toonhoogteval 230 -> 58 Hz (laag-midden), korte dreun."""
+    n = int(rate * 0.16)
+    t = np.arange(n) / rate
+    f = 58 + 172 * np.exp(-t / 0.016)
+    body = np.sin(2 * np.pi * np.cumsum(f) / rate) * np.exp(-t / 0.06)
+    click = sosfilt(butter(2, [1500, 5000], 'bandpass', fs=rate, output='sos'),
+                    np.random.default_rng(19).uniform(-1, 1, n)) * np.exp(-t / 0.003)
+    a = np.tanh(2.8 * (body + 1.0 * click))
+    return fade_out(norm(a), rate, 0.03), rate
+
+
+def snare3(rate=22050, dur=0.19, ghost=False):
+    """Droge, harde klap: FluidR3-snare + handklap, ruisstoot 1,5-7 kHz, toon 185 Hz, hard verzadigd en kort."""
+    n = int(rate * dur)
+    t = np.arange(n) / rate
+    m = int(dur * 44100)
+    two = [np.pad(x[:m], (0, m - len(x[:m]))) for x in (render(0, [38], dur, kit=0, vel=127), render(0, [39], dur, kit=0, vel=127))]
+    fl = resample(0.7 * two[0] + 0.6 * two[1], 44100, rate, antialias=True)[:n]
+    fl = np.pad(fl, (0, n - len(fl)))
+    noise = np.random.default_rng(23).uniform(-1, 1, n)
+    crack = sosfilt(butter(2, [1500, 7000], 'bandpass', fs=rate, output='sos'), noise) * np.exp(-t / 0.035)
+    body = np.sin(2 * np.pi * 185 * t) * np.exp(-t / 0.028)
+    a = norm(fl) + 1.4 * norm(crack) + 0.6 * body
+    a = sosfilt(butter(2, 170, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(4.5 * norm(a)) * np.exp(-np.maximum(0, t - 0.06) / 0.05)      # droog: na 60 ms snel weg
+    if ghost:
+        a = a[:int(rate * 0.07)]
+        return fade_out(norm(a), rate, 0.04), rate
+    return fade_out(norm(a), rate, 0.05), rate
+
+
+def brass3(notes, key, rate=22050, dur=0.34):
+    """Koperstoot in octaven: brass section (61) + synth brass (62) samen, licht vervormd, korte staart."""
+    m = int(dur * 44100)
+    parts = [render(p, notes, dur, vel=124) for p in (61, 62)]
+    a = sum(np.pad(x[:m], (0, m - len(x[:m]))) * g for x, g in zip(parts, (1.0, 0.6)))
+    a = resample(a, 44100, rate, antialias=True)
+    a = sosfilt(butter(2, 110, 'highpass', fs=rate, output='sos'), a)
+    a = np.tanh(1.8 * norm(a))
+    t = np.arange(len(a)) / rate
+    a *= np.exp(-np.maximum(0, t - 0.12) / 0.09)
+    return fade_out(norm(a), rate, 0.05), rate
+
+
+def pluck3(rate=22050, dur=0.3):
+    """Donkere pluk op C4: twee ontstemde zaagtanden, lowpass-envelope 2,4 kHz -> 350 Hz."""
+    t = np.arange(int(rate * dur)) / rate
+    a = saw(hz(60) * 2 ** (-8 / 1200), t, 0.3, 6000) + saw(hz(60) * 2 ** (8 / 1200), t, 2.1, 6000)
+    fc = 350 + 2100 * np.exp(-t / 0.045)
+    for _ in range(2):
+        z, out = 0.0, np.empty_like(a)
+        k = np.exp(-2 * np.pi * fc / rate)
+        for i in range(len(a)):
+            z = (1 - k[i]) * a[i] + k[i] * z
+            out[i] = z
+        a = out
+    a = np.tanh(1.5 * norm(a * np.minimum(1, t / 0.002) * np.exp(-t / 0.11)))
+    return fade_out(norm(a), rate, 0.05), rate
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
@@ -374,6 +464,19 @@ def main():
     jobs['mitch_rewind'] = (a, r, 60, None)
     a, r = airhorn()
     jobs['mitch_airhorn'] = (a, r, 60, None)
+    # ---- v3
+    a, r = kick3(); jobs['mitch3_kick'] = (a, r, 60, None)
+    a, r = snare3(); jobs['mitch3_snare'] = (a, r, 60, None)
+    a, r = snare3(ghost=True); jobs['mitch3_ghost'] = (a, r, 60, None)
+    a, r = brass3([41, 53], 53); jobs['mitch3_brass_lo'] = (a, r, 53, None)
+    a, r = brass3([51, 63], 63); jobs['mitch3_brass_hi'] = (a, r, 63, None)
+    a, r = pluck3(); jobs['mitch3_pluck'] = (a, r, 60, None)
+    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
+        M = int(round(8 * BEAT3 * hz(note)))
+        per = 96 if note >= 36 else 128
+        a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.45, drive=2.4, lfo=wob_lfo3(), top=40,
+                     formants=((8, 4, 3.0),), detune=((-2, 0.8), (-1, 1.0), (1, 1.0), (2, 0.8)))
+        jobs['mitch3_wob_' + nm] = (a, r, note, (0, len(a)))
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

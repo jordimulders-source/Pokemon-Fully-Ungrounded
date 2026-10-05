@@ -7288,3 +7288,11 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_victini_power::
+	.incbin "sound/direct_sound_samples/grounded/victini_power.bin"
+
+	.align 2
+DirectSoundWaveData_victini_mute::
+	.incbin "sound/direct_sound_samples/grounded/victini_mute.bin"

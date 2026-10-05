@@ -237,3 +237,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   programmawissel per noot. Gemeten (recaudio, -V090): 0 overlopen, piek 114/127, maar RMS 3500-3900 en < 150 Hz 46-65%
   (kick + rumble + sub-octaaf in de bassample): sub-octaaf in de bas 0,8 -> 0,35, PSG-sub 52 -> 38, hats 92 -> 120,
   kick x0,88 en -V074. Alles boven 4 kHz bleef < 4,5%: met lowpass 7-8 kHz in de samples is industrial niet schel.
+- Victini v1 (`victini_theme.py`, anime-overwinningsfanfare, 172 bpm, D-groot -> climax E-groot; samples
+  `victini_samples.py`): intro op de transitie via een **tempokaart binnen maat 0** (tel 0-2 op 174, tel 2-4 op 224 bpm)
+  zodat inslag (t = 32) en explosie (t = 48) precies op tel 3 en maat 1 vallen (aanname: route-transitie start ±25
+  frames na de muziek, gemeten bij Jirachi; nog niet in de game nagemeten). **Powerchord als één sample** (FluidR3 GM 30,
+  A2+E3+A3, auto-loop) + palm-mute (GM 28) = 1 kanaal per akkoord. Spiccato-keysplit met release 130 (16en = 1 kanaal),
+  pauken release 200 (226 klonk door de stilte-tel vóór de climax). **De lint rekent uitklinktijden met de eerste
+  tempo van het bestand** (hier 174): reken de tails in de stemverdeler met dezelfde bpm (+2 ticks), anders meldt de lint
+  overlap van 1 tick bij gedetachte partijen. Geen test-ROM-opname (coördinator neemt samen op met batchrec.py).

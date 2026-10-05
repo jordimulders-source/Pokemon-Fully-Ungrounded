@@ -6106,6 +6106,9 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     if (trainerId == TRAINER_ALBERT)
         return MUS_GROUNDED_VS_DAVE;
 
+    // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
+    if (trainerId == TRAINER_SAMUEL)
+        return MUS_GROUNDED_VS_MITCH;
     // Project Grounded: SickBlik (= Jordi; Cooltrainer, Victory Road B2F; ook in het Stadium) vecht op smerige slap-funk
     if (trainerId == TRAINER_OWEN)
         return MUS_GROUNDED_VS_SICKBLIK;

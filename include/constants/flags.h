@@ -1593,14 +1593,14 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
-#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
+#define FLAG_DAILY_REMATCH_ROXANNE                  (DAILY_FLAGS_START + 0x15) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_BRAWLY                   (DAILY_FLAGS_START + 0x16) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_WATTSON                  (DAILY_FLAGS_START + 0x17) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_FLANNERY                 (DAILY_FLAGS_START + 0x18) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_NORMAN                   (DAILY_FLAGS_START + 0x19) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_WINONA                   (DAILY_FLAGS_START + 0x1A) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_TATE_AND_LIZA            (DAILY_FLAGS_START + 0x1B) // Project Grounded: gymleider-rematch vandaag al gewonnen
+#define FLAG_DAILY_REMATCH_JUAN                     (DAILY_FLAGS_START + 0x1C) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
 #define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag

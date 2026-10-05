@@ -991,7 +991,14 @@ static void MatchCall_GetMessage_Trainer(match_call_t matchCall, u8 *dest)
     if (matchCall.common->type != MC_TYPE_LEADER)
         MatchCall_BufferCallMessageText(matchCall.trainer->textData, dest);
     else
-        MatchCall_BufferCallMessageTextByRematchTeam(matchCall.leader->textData, matchCall.leader->rematchTableIdx, dest);
+    {
+        // Project Grounded: bellen = om een rematch vragen (of een weigering als het vandaag al was).
+        const u8 *refusal = GymLeaderRematch_TryRequestByCall(matchCall.leader->rematchTableIdx);
+        if (refusal != NULL)
+            StringExpandPlaceholders(dest, refusal);
+        else
+            MatchCall_BufferCallMessageTextByRematchTeam(matchCall.leader->textData, matchCall.leader->rematchTableIdx, dest);
+    }
 }
 
 static void MatchCall_GetMessage_Wally(match_call_t matchCall, u8 *dest)

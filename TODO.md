@@ -5,6 +5,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Neo Plasma**: v4 (v0.9.70) naar Jordi's mp3; wacht op zijn oordeel (open: 'gitaar' = synth brass of strings? bas octaaf lager?).
+- **Battle Stadium-bugs (Jordi test, 5 okt):** (1) partnerkeuzescherm: na het kiezen van een partner krijgen al zijn Pokémon(-iconen) dezelfde kleur als de partner (palet); (2) multi/tag: verloren zodra jouw Pokémon op zijn, ook als de partner er nog heeft (moet pas als beide kanten op zijn); (3) partnerkeuzemenu (doubles) sneller doorbladeren, bijv. L/R of LEFT/RIGHT per pagina (nu tot ±120× omlaag).
 - **Contests reworken** (Jordi, 5 okt): de Pokémon Contests helemaal herzien en leuker maken. Eerst een voorstel (wat is er saai, welke mechanics, QoL, beloningen), dan bouwen.
 - **Spire (Jordi test eerst verder; daarna):** gewone gevechten per deel van de act (begin/midden/eind, zoals Slay the Spire), elites één pool per act. Gevechten meer als puzzel: elk gevecht iets unieks dat een veelzijdig team beloont, niet alleen je sterkste move (met de Pokémon-uitzondering dat je soms precies de perfecte counter hebt). Testchecklist: `SPIRE_TESTCHECKLIST.txt`.
 - **Trick House vervangen?** (Jordi overweegt het weg te halen voor iets nieuws). Kost maar ±40-50 KB (11 kaarten, puzzels, teksten, tileset) van de 6,5 MB vrij: ruimte is geen reden, gameplay wel. Wacht op Jordi's idee.

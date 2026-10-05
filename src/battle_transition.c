@@ -502,7 +502,7 @@ static const u32 sSickBlik_TableTiles[] = INCBIN_U32("graphics/battle_transition
 static const u16 sSickBlik_TableMap[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_map.bin");
 static const u16 sSickBlik_TablePals[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_pals.bin");
 static const u32 sSickBlik_TopStatic[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_static.bin");
-static const u32 sSickBlik_TopDyn[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_dyn.bin");
+static const u32 sSickBlik_TopDyn[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_dyn_lz.bin"); // LZ77 per sleutelbeeld
 static const u16 sSickBlik_TopMaps[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_maps.bin");
 static const u16 sSickBlik_TopPals[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_pals.bin");
 #include "data/sickblik_transition.h"
@@ -8474,14 +8474,27 @@ static u32 *SB_Tileset(void)
     return (u32 *)tileset;
 }
 
+// de tiles van de sleutelbeelden zijn per beeld LZ77-gecomprimeerd (±58 i.p.v. 128 KB): een frame wordt het volgende
+// beeld uitgepakt in een buffer (SB_UnpackKey), een frame later gaat het naar de vrije VRAM-buffer (SB_UploadKey);
+// beide in de dode tijd waarin het getoonde beeld de andere buffer gebruikt
+static EWRAM_DATA u8 *sSickBlik_Buffer = NULL;
+
+static void SB_UnpackKey(u32 key)
+{
+    if (sSickBlik_Buffer != NULL)
+        FastLZ77UnCompWram(&sSickBlik_TopDyn[sSickBlik_KeyTiles[key][0]], sSickBlik_Buffer);
+}
+
 static void SB_UploadKey(u32 key)
 {
-    CpuCopy32(&sSickBlik_TopDyn[sSickBlik_KeyTiles[key][0] * 8],
-              &SB_Tileset()[(1 + SB_TOP_STATIC + (key & 1) * SB_TOP_DMAX) * 8], sSickBlik_KeyTiles[key][1] * 32);
+    if (sSickBlik_Buffer != NULL)
+        CpuCopy32(sSickBlik_Buffer, &SB_Tileset()[(1 + SB_TOP_STATIC + (key & 1) * SB_TOP_DMAX) * 8],
+                  sSickBlik_KeyTiles[key][1] * 32);
 }
 
 static void RTSickBlik_Init(struct Task *task)
 {
+    sSickBlik_Buffer = Alloc(SB_TOP_DMAX * TILE_SIZE_4BPP);
     SB_ShowMap(sSickBlik_TableMap);
     task->tSbCycle = 0;
     task->tSbCycleT = 0;
@@ -8515,6 +8528,7 @@ static bool8 RTSickBlik_Update(struct Task *task)
     {
         // camera-cut: een zwart beeld, daarin worden de tiles van het bovenaanzicht geladen
         BlendPalettes(SB_PALS, 16, RGB_BLACK);
+        SB_UnpackKey(0);
         return FALSE;
     }
     if (t == SB_TABLE_END + 1)
@@ -8531,6 +8545,8 @@ static bool8 RTSickBlik_Update(struct Task *task)
     // bovenaanzicht: de morph. Het volgende sleutelbeeld wordt een frame na de wissel in de vrije buffer geladen.
     task->tSbCount++;
     if (task->tSbCount == 1 && task->tSbKey + 1 < SB_KEYS)
+        SB_UnpackKey(task->tSbKey + 1);
+    if (task->tSbCount == 2 && task->tSbKey + 1 < SB_KEYS)
         SB_UploadKey(task->tSbKey + 1);
     if (task->tSbCount >= (task->tSbKey == 0 ? SB_HOLD0 : SB_KEY_LEN))
     {
@@ -8547,10 +8563,15 @@ static bool8 RTSickBlik_Update(struct Task *task)
     return FALSE;
 }
 
+static void RTSickBlik_Finish(struct Task *task)
+{
+    TRY_FREE_AND_SET_NULL(sSickBlik_Buffer);
+}
+
 static const struct RouteTransition sRT_SickBlik =
 {
     (const u16 *)sSickBlik_TableTiles, sizeof(sSickBlik_TableTiles), &sSickBlik_TablePals[32], 1, 1, 0,
-    RTSickBlik_Init, RTSickBlik_Update, NULL
+    RTSickBlik_Init, RTSickBlik_Update, RTSickBlik_Finish
 };
 
 static void Task_SickBlik(u8 taskId)

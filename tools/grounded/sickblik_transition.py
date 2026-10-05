@@ -807,6 +807,17 @@ def build():
                 dmax=dmax, maps2=maps2, pals2=pals2)
 
 
+def lz77(raw):
+    """LZ77-blok (gbagfx), aangevuld tot een veelvoud van 4 bytes."""
+    import subprocess, tempfile
+    with tempfile.TemporaryDirectory() as d:
+        a, o = os.path.join(d, 'x.bin'), os.path.join(d, 'x.bin.lz')
+        open(a, 'wb').write(raw)
+        subprocess.run([os.path.join(ROOT, 'tools/gbagfx/gbagfx'), a, o], check=True)
+        out = open(o, 'rb').read()
+    return out + bytes((-len(out)) % 4)
+
+
 def save(b):
     ts1, st, dyn = b['ts1'], b['st'], b['dyn']
     w = lambda name, data: open(OUT + name, 'wb').write(data)
@@ -814,24 +825,28 @@ def save(b):
     w('sickblik_table_map.bin', struct.pack('<600H', *b['map1']))
     w('sickblik_table_pals.bin', b''.join(pal_bytes(cycle_pal1(f)) for f in range(SB_CYCLE)))
     w('sickblik_top_static.bin', pack4(st.tiles))
-    alltiles, offs = [], []
+    # v0.9.103: per sleutelbeeld een LZ77-blok (gbagfx, 4-byte uitgelijnd); de C-kant pakt het uit met
+    # FastLZ77UnCompWram in een buffer en kopieert het een frame later naar de vrije VRAM-buffer
+    alltiles, offs, blob = [], [], b''
     for loc, _ in dyn:
-        offs.append((len(alltiles), len(loc)))
+        offs.append((len(blob) // 4, len(loc)))
         alltiles += loc
-    w('sickblik_top_dyn.bin', pack4(alltiles))
+        blob += lz77(pack4(loc))
+    w('sickblik_top_dyn_lz.bin', blob)
     w('sickblik_top_maps.bin', b''.join(struct.pack('<600H', *m) for m in b['maps2']))
     w('sickblik_top_pals.bin', b''.join(pal_bytes(p) for p in b['pals2']))
     with open(HDR, 'w') as fp:
         fp.write('// Gegenereerd door tools/grounded/sickblik_transition.py; niet met de hand bewerken.\n')
         fp.write('#define SB_CYCLE %d\n#define SB_KEYS %d\n#define SB_TOP_STATIC %d\n#define SB_TOP_DMAX %d\n\n'
                  % (SB_CYCLE, SB_KEYS, len(st.tiles), b['dmax']))
-        fp.write('// per sleutelbeeld: eerste tile in sSickBlik_TopDyn en het aantal tiles\n')
+        fp.write('// per sleutelbeeld: begin van het LZ77-blok in sSickBlik_TopDyn (in u32) en het aantal tiles\n')
         fp.write('static const u16 sSickBlik_KeyTiles[SB_KEYS][2] =\n{\n')
         for o, n in offs:
             fp.write('    {%d, %d},\n' % (o, n))
         fp.write('};\n')
     print('sickblik: beeld 1 %d tiles (%d pixels benaderd), beeld 2 %d vaste tiles + 2 x %d, %d sleutelbeelden, %d KB'
-          % (len(ts1.tiles), b['miss1'], len(st.tiles), b['dmax'], SB_KEYS, len(alltiles) * 32 // 1024))
+          ' (LZ77: %d KB)' % (len(ts1.tiles), b['miss1'], len(st.tiles), b['dmax'], SB_KEYS, len(alltiles) * 32 // 1024,
+                              len(blob) // 1024))
 
 
 def preview(b, d):

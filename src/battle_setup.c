@@ -548,7 +548,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
     case SPECIES_SHAYMIN_SKY:
-        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_GROUNDED_VS_SHAYMIN); // eigen thema (relaxte bloemenweide, 6/8)
         break;
     case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
     case SPECIES_GENESECT_DOUSE:

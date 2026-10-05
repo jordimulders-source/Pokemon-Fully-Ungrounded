@@ -7636,3 +7636,11 @@ DirectSoundWaveData_genesect_snare2::
 	.align 2
 DirectSoundWaveData_genesect_roll2::
 	.incbin "sound/direct_sound_samples/grounded/genesect_roll2.bin"
+
+	.align 2
+DirectSoundWaveData_gym_bra_epower::
+	.incbin "sound/direct_sound_samples/grounded/gym_bra_epower.bin"
+
+	.align 2
+DirectSoundWaveData_gym_fla_gba_nylon::
+	.incbin "sound/direct_sound_samples/grounded/gym_fla_gba_nylon.bin"

@@ -99,7 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
 | Victini, Darkrai, Genesect | `victini_theme.py`, `darkrai_theme.py`, `genesect_theme.py` | v2 (ronde 6), wacht op opname | "Victini", "Darkrai", "Genesect" |
-| Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
+| Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v2 (GBA-instructies), wacht op opname | "Gymleiders" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -363,3 +363,18 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   tritonusstoot `genesect_istab`, kick2/snare2 (tanh x5/x7; de 909-clap zit ín de snare: los clappen kostte een kanaal),
   risers (ruis + sirene-bend) en een 16de stilte vóór elke drop (`stop()`).
 - **Gymleider-remixes ronde 1 (Jordi):** Wattson en Wallace "fenomenaal, done" (niet meer aanraken). Roxanne, Brawly, Flannery, Norman, Winona, Tate & Liza: tweede ronde met concrete GBA-instructies per leider (tekst in de agent-opdracht): echte Emerald-samples (rock-snare, overdrive/slap bass, distortion/nylon/finger bass, pizzicato, synth bass, dance-kick), PSG-ruis als aanvulling (gated snare, double kick, castagnetten), dual-guitar-tertsen + vibrato (Roxanne), off-beat-staccato-chugs + scratches (Brawly), rasgueado-arpeggio's (Flannery), walking bass + ride + brass-stoten (Norman), geen brass (Winona), psy-bas op de PSG-golf in 16en + melodie als 16e-arpeggio's met sweeps op 138–145 bpm (Tate & Liza).
+- Gymleiders ronde 2 (Roxanne, Brawly, Flannery; `gym_remixes.py`, Wattson byte-identiek: md5 van MIDI/voicegroup/kit/
+  samples vóór en na): **'echte GBA-samples' = de vanilla-labels, maar let op de opgenomen toonhoogte** (autocorrelatie):
+  distortion_high/overdrive/slap_bass/fingered_bass = C4 op toets 60 (klopt), distortion_low en nylon_str_guitar = C3
+  op toets 60 (klinken een octaaf lager dan geschreven) -> byte-kopie met label 48 (`COPIES` in `gym_samples.py`).
+  Emerald-kit: kick `drum_and_percussion_kick` (96% < 150 Hz; `trinity_big_boned` is een bas), rock-snare
+  `sd90_solo_snare` (na 9 ticks afgekapt = gated), side stick/rimshot = dezelfde snare hoog (kitregel
+  `voice_directsound 70/77`, decay 200/170, sustain 0). Geen castagnetten/seashore/scratch in de bank: PSG-ruis.
+  **Dual lead**: terts onder de melodie, maar de sext eronder als de terts een kleine secunde/none/grote septiem maakt
+  met de rest van het origineel op dat moment (69 noten: 57 tertsen, 12 sexten). **Arpeggio-rasgueado**: `fit()` per
+  noot kapt een slag (noten 1 tick na elkaar) na 3 ticks af; fit per slag (`group`). Rasgueado-release 50, voorslagen
+  2 noten van 1 tick, palmas-ghosts als aparte partij áchter de gitaar in de stemverdeler (accenten 0%, ghosts 11% weg
+  onder de rasgueado's). Staccato-chugs (2 ticks, release 70) haalden Brawly's bekkens van 12% naar 1% weg.
+  PSG-ruis-sweeps = één `voice_noise`-noot (sustain 15, release 0) met BENDR 24 en een bend-curve (de ruistoets
+  telt mee: 21-80).
+

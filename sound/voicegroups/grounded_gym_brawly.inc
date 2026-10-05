@@ -1,5 +1,5 @@
 @ Project Grounded: voicegroup_vs_gym_leader + instrumenten voor de remix van Brawly.
-@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_brawly.inc), daarna distortion-lead, overdrive-lead2, chug, powerchord (C2), bas.
+@ Gegenereerd door tools/grounded/gym_remixes.py. 91 kit (drumsets/gym_brawly.inc, kick = Emerald drum_and_percussion_kick), daarna distortion-lead, overdrive-lead2, chug + powerchord (Emerald-distortiongitaar een octaaf omlaag, C2), bas, PSG-ruis (double-kick, scratch-sweeps).
 voice_group grounded_gym_brawly
 	voice_keysplit_all voicegroup_rs_drumset
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
@@ -107,6 +107,8 @@ voice_group grounded_gym_brawly
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead2_60, 255, 0, 255, 170  @ 103
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead2_72, 255, 0, 255, 170  @ 104
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_lead2_84, 255, 0, 255, 170  @ 105
-	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_chug, 255, 0, 255, 130  @ 106
-	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_power, 255, 0, 255, 165  @ 107
+	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_epower, 255, 0, 255, 70  @ 106
+	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_epower, 255, 0, 255, 160  @ 107
 	voice_directsound 60, 0, DirectSoundWaveData_gym_bra_bass, 255, 0, 255, 120  @ 108
+	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 109
+	voice_noise 60, 0, 0, 0, 0, 15, 0  @ 110

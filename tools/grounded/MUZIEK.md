@@ -516,3 +516,12 @@ herkennen is, komt ook als controle in `music_lint.py`.
   30-60 Hz +5 dB t.o.v. het origineel; per octaaf omhoog tot >= C3 (en weg als het akkoord die toon al speelt).
 - NNLS-gewichten (balance_orig) tegen een origineel met een ander leadtimbre zeggen 'lead -11 dB te luid': negeren
   als de opdracht 'melodie voorop' is; gebruik dan de solo-RMS t.o.v. de mix (lead -6,6, drums -4,8 ≈ drumstem -3,8).
+- Genesect v1 (`genesect_theme.py`, industrial/big beat à la The Prodigy + hard techno, 144 bpm, E-frygisch; samples
+  `genesect_samples.py`): motief = baslijn-riff (E E G E Bb A E E D | ... F F G E) in elk deel + een hook-lead erboven.
+  Kanon (Techno Blast) op het witte scherm van de transitie (maat 1 = 4 tellen na de start: muziek ±25 frames vóór het
+  beeld, wit op frame ±71 van de transitie), de cry valt in een riffmaat zonder drop. Hard-techno-rumble = kick door
+  een ruisgalm, vervormd, lowpass 420 Hz, als losse kitnoot op de 16den ná elke kick (k-r-r-r, velocity aflopend).
+  303 = zaagtand door een Chamberlin-SVF met cutoff per sample + tanh, twee samples (gewoon/accent) en een
+  programmawissel per noot. Gemeten (recaudio, -V090): 0 overlopen, piek 114/127, maar RMS 3500-3900 en < 150 Hz 46-65%
+  (kick + rumble + sub-octaaf in de bassample): sub-octaaf in de bas 0,8 -> 0,35, PSG-sub 52 -> 38, hats 92 -> 120,
+  kick x0,88 en -V074. Alles boven 4 kHz bleef < 4,5%: met lowpass 7-8 kHz in de samples is industrial niet schel.

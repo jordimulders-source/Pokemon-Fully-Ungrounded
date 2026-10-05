@@ -550,12 +550,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_SHAYMIN_SKY:
         CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_GROUNDED_VS_SHAYMIN); // eigen thema (relaxte bloemenweide, 6/8)
         break;
-    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast; de mechanische Regi-muziek
+    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast
     case SPECIES_GENESECT_DOUSE:
     case SPECIES_GENESECT_SHOCK:
     case SPECIES_GENESECT_BURN:
     case SPECIES_GENESECT_CHILL:
-        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_GROUNDED_VS_GENESECT); // eigen thema (industrial/big beat + hard techno)
         break;
     case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
         CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_GROUNDED_VS_MEWTWO); // eigen thema (trance, de imperfecte kloon)

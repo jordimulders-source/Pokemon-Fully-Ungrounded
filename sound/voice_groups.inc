@@ -14,6 +14,7 @@
 .include "sound/voicegroups/drumsets/rayquaza.inc"
 .include "sound/voicegroups/drumsets/sickblik.inc"
 .include "sound/voicegroups/drumsets/mitch.inc"
+.include "sound/voicegroups/drumsets/genesect.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -236,3 +237,4 @@
 .include "sound/voicegroups/grounded_sickblik.inc"
 .include "sound/voicegroups/grounded_mitch.inc"
 .include "sound/voicegroups/grounded_ashfrost.inc"
+.include "sound/voicegroups/grounded_genesect.inc"

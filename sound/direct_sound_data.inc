@@ -7216,3 +7216,75 @@ DirectSoundWaveData_np_brass_full_lo::
 	.align 2
 DirectSoundWaveData_np_organ_sharp::
 	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_bass::
+	.incbin "sound/direct_sound_samples/grounded/genesect_bass.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_bass_dark::
+	.incbin "sound/direct_sound_samples/grounded/genesect_bass_dark.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_lead::
+	.incbin "sound/direct_sound_samples/grounded/genesect_lead.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_acid::
+	.incbin "sound/direct_sound_samples/grounded/genesect_acid.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_acid_acc::
+	.incbin "sound/direct_sound_samples/grounded/genesect_acid_acc.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_stab::
+	.incbin "sound/direct_sound_samples/grounded/genesect_stab.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_ohit::
+	.incbin "sound/direct_sound_samples/grounded/genesect_ohit.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_cannon::
+	.incbin "sound/direct_sound_samples/grounded/genesect_cannon.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_kick::
+	.incbin "sound/direct_sound_samples/grounded/genesect_kick.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_rumble::
+	.incbin "sound/direct_sound_samples/grounded/genesect_rumble.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_snare::
+	.incbin "sound/direct_sound_samples/grounded/genesect_snare.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_ghost::
+	.incbin "sound/direct_sound_samples/grounded/genesect_ghost.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_hat::
+	.incbin "sound/direct_sound_samples/grounded/genesect_hat.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_ohat::
+	.incbin "sound/direct_sound_samples/grounded/genesect_ohat.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_anvil::
+	.incbin "sound/direct_sound_samples/grounded/genesect_anvil.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_pipe::
+	.incbin "sound/direct_sound_samples/grounded/genesect_pipe.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_press::
+	.incbin "sound/direct_sound_samples/grounded/genesect_press.bin"
+
+	.align 2
+DirectSoundWaveData_genesect_revcym::
+	.incbin "sound/direct_sound_samples/grounded/genesect_revcym.bin"

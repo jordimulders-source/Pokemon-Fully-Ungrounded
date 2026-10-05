@@ -511,11 +511,13 @@ void BattleSetup_StartLegendaryBattle(void)
     default:
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
-        CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
+        // Project Grounded: muurschildering die barst, lava door de barsten (Terra Cave); de oude blijft bestaan
+        CreateBattleStartTask(B_TRANSITION_GROUDON_MURAL, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_KYOGRE:
     case SPECIES_KYOGRE_PRIMAL:
-        CreateBattleStartTask(B_TRANSITION_KYOGRE, MUS_VS_KYOGRE_GROUDON);
+        // Project Grounded: dezelfde schildering, water door de barsten (Marine Cave)
+        CreateBattleStartTask(B_TRANSITION_KYOGRE_MURAL, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
@@ -587,7 +589,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_OGERPON_WELLSPRING:
     case SPECIES_OGERPON_HEARTHFLAME:
     case SPECIES_OGERPON_CORNERSTONE:
-        CreateBattleStartTask(B_TRANSITION_ROUTE_RAINFOREST, MUS_RG_VS_LEGEND);
+        // Project Grounded: maskerkraam op een nachtfestival, het Teal-masker kijkt terug (was het regenwoud)
+        CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_RG_VS_LEGEND);
         break;
     }
 
@@ -977,6 +980,11 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
     if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
         return B_TRANSITION_AQUA_MAGMA;
+
+    // Project Grounded: Archie en Maxie met werkstraf (Weather Institute): het prikbord van de pauzeruimte
+    if ((trainerId >= TRAINER_ARCHIE_SERVICE_1 && trainerId <= TRAINER_ARCHIE_SERVICE_4)
+     || (trainerId >= TRAINER_MAXIE_SERVICE_1 && trainerId <= TRAINER_MAXIE_SERVICE_4))
+        return B_TRANSITION_WEATHER_SERVICE;
 
     // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)

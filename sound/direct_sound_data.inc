@@ -7884,18 +7884,6 @@ DirectSoundWaveData_gym_fla_psorda::
 
 
 
-	.align 2
-DirectSoundWaveData_gym_bra4_snare::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra4_snare.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra4_scratch::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra4_scratch.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra4_chirp::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra4_chirp.bin"
-
 
 	.align 2
 DirectSoundWaveData_np_gbrass_lo::
@@ -7976,22 +7964,6 @@ DirectSoundWaveData_bg_tom_hi::
 	.align 2
 DirectSoundWaveData_bg_snap::
 	.incbin "sound/direct_sound_samples/grounded/bg_snap.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra5_wall::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra5_wall.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra5_bass::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra5_bass.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra5_chug::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra5_chug.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra5_kick::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra5_kick.bin"
 
 	.align 2
 DirectSoundWaveData_np_plead_hi::

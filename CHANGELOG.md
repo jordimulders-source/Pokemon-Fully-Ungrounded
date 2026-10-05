@@ -16759,3 +16759,30 @@ Jordi's eerste testrun:
   - Intenties tonen de begrensde schade.
 - **Balans:** nieuwe gevechtssimulatie `tools/grounded/spire/matchups.py`. Elke elite/baas moet met het slechtste realistische startpaar minstens 10% winkans geven (`encounters.py` faalt anders). Beldum + Zorua tegen Wishiwashi: 54% → 95% met alleen de startkit.
 - **Langere acts:** 13 verdiepingen + baas (was 7), schatkist op 7, elites en rust vanaf 5. Een gewonnen run duurt ±2 uur (was ±75 min). Oude gepauzeerde runs zijn ongeldig (save-magic).
+
+### [v0.9.81] - Muziekbatch: Victini, Darkrai, Genesect (nieuw), Heatran v5, Mitch v3, Neo Plasma v7
+- **Battle! Victini** (song 644, `victini_theme.py`): episch anime-overwinningsthema, 172 bpm in D-groot.
+  - Een V-fanfare, het heldenthema op trompet en hoorns, en een "struggle" in B-mineur.
+  - Daarna de doorbraak: het thema in E-groot, met four-on-the-floor.
+- **Battle! Darkrai** (song 645, `darkrai_theme.py`): een ontsporend speeldoos-wiegelied in 7/8; deel B wisselt tussen 9/8, 7/8 en 5/8.
+  - Een tritonus waar je de leidtoon verwacht, en een bitonale canon.
+  - Achterstevoren klanken: het wiegelied, de cry en een bekken.
+  - De climax breekt na één tel af ("It never learned the rest of the song").
+- **Battle! Genesect** (song 646, `genesect_theme.py`): industrial/big beat à la The Prodigy, 144 bpm, E-frygisch.
+  - Een distorted bassriff, hoover-lead en 303-acid.
+  - Metalen percussie en kanonschoten.
+  - Een hard-techno-deel met rumble-kick.
+- **Heatran v5:** naar Kyuss' "Odyssey". Trage sludge (76 bpm) wisselt af met desert pump (136 bpm), met versnellingen en vertragingen per tel.
+  - Gen 3-klank: eigen gitaarsamples op 13.379 Hz/8 bit, een synth-bas die de riff volgt en de doffe Gen 3-kit.
+- **Mitch v3:** duistere DnB op 172 bpm.
+  - Laag koperthema en rauwe reese met portamento.
+  - Kick op 1 en 3-en, droge snare op 2 en 4, met ducking (CC7-dip) van bas en synths op elke snare.
+  - Opbouw: intro → build-up → 1 tel stilte → drop. Alle piepende loopjes zijn eruit.
+- **Neo Plasma v7:**
+  - De lead speelt ook een octaaf lager op PSG.
+  - Een sub onder de bas.
+  - Arpeggio's gesplitst links/rechts (alleen hoorbaar met Sound op stereo).
+  - Off-beat-stoten.
+  - Four-on-the-floor met ghost-snares en 16e-hats.
+  - Het tempo blijft 176 bpm.
+- **Nieuwe werkwijze:** muziek wordt in batches gecontroleerd met `tools/grounded/maptools/batchrec.py`, 8 nummers per test-ROM. Alle zes: 0 overlopen, piek 82–102/127, geen pieken.

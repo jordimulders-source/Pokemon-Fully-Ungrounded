@@ -7,7 +7,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 ## Werkwijze (verplicht, in deze volgorde)
 1. Componeren/arrangeren met een script (`zarude_theme.py`, `wally_theme.py`), nooit met de hand in de MIDI.
 2. `python3 tools/grounded/music_lint.py sound/songs/midi/<nummer>.mid`: moet **OK** zijn.
-3. Test-ROM (pas als het arrangement af is; max. ±2 rondes per versie, alles wat je wilt meten in één ROM via meerdere debugscripts; tussendoor lint + stemverdeler + FluidR3-render): `python3 tools/grounded/maptools/testrom.py <map> "playbgm MUS_X, FALSE"`.
+3. **Controleren in batches** (Jordi): `python3 tools/grounded/maptools/batchrec.py <uitmap> MUS_A:90 MUS_B:120 ...` bouwt per 8 nummers één test-ROM en geeft per nummer overlopen/piek/audiocheck + preview-mp3. Een agent bouwt alleen zelf een test-ROM als een meting echt de game nodig heeft. Losse test-ROM: `python3 tools/grounded/maptools/testrom.py <map> "playbgm MUS_X, FALSE"`.
 4. Opnemen: **`recpcm.py`** (uit de mixbuffer van de game, exact wat de GBA speelt; alleen DirectSound):
    `PYTHONPATH=tools/grounded/maptools python3 tools/grounded/maptools/recpcm.py <rom> <intro.bin> <k> <sec> <uit.wav>`.
    Heeft het nummer PSG-sporen, dan `recaudio.py` (emulator-audio, met glitch-reparatie).

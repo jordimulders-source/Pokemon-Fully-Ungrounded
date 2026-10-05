@@ -97,6 +97,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Kaart op zijn kop** (omgekeerde Sky Pillar, `reverse_pillar.py`): rijen per metatile wisselen + v-flip (bit 11) per tile, `map.bin`-rijen omdraaien, en het gedrag aanpassen (trapdeur 0x60 → zuidpijl, zuidpijl → noordpijl).
 - **Transities die elke frame de BG0-tilemap opnieuw tekenen:** elk vak in één keer de eindwaarde geven, niet eerst wissen (tearing).
 - **Agent-branches samenvoegen:** conflicten achteraan enums/tabellen/map_groups zijn "beide houden"; let op een `}` of komma die op de grens wegvalt. Vlecht git twee nieuwe functieblokken door elkaar (battle_transition.c), bouw het bestand dan op uit onze versie + hun blok.
+- **Muziek in batches controleren** (Jordi): agents leveren lint-schone MIDI's zonder eigen test-ROM; de hoofdsessie neemt ze samen op met `tools/grounded/maptools/batchrec.py` (8 nummers per ROM) en stuurt de previews in één keer.
 - **Max. 3–4 agents tegelijk** (4 cores, krappe schijf, gedeelde gebruikslimiet: met 7 tegelijk stopten ze allemaal op de limiet en moesten ze hervat worden). Ruim gemergde worktrees en grote wav/gba-bestanden in de scratchpad direct op.
 - **Subagents en de scratchpad:** die wordt gedeeld; laat elke agent een eigen submap gebruiken (een `test.gba` van een ander proces gaf een Bus error).
 - **Object toevoegen aan een kaart met `"object_events": []`:** tekstueel vóór `"warp_events"` invoegen belandt in `connections`; controleer met `json.load`.

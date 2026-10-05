@@ -287,3 +287,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   niet onder 65 Hz. **De game staat standaard op mono** (`optionsSound`): panning hoor je alleen in stereo; maak een
   L/R-splitsing ook in mono zinvol (ander timbre/kleine vertraging). Lagen op PSG kosten geen DS-kanalen: daarmee bleef
   de stemverdeler binnen 10 (melodie/bas/drums 0% weg). Tempo-check op de mp3 (fold-scherpte): 175,96 scherp, 150-155 vlak.
+
+### Feedback ronde 6 (Jordi, 5 okt avond)
+- **Heatran v5: "klinkt als vrolijke Mario Kart / ska-punk".** Vijfde keer dat het stoner-genre mis gaat zonder audioreferentie. Regels: alleen mineur/pentatonisch/blues, geen huppelritmes of vrolijke blazers; traag 75 bpm loodzware chug, snel ±130 bpm als stompende stoner-metal-trein (Green Machine / snelle deel Odyssey), níet ska/punk. Basis = het R/S Regi-gevechtsthema (`mus_vs_regi`) "door de shredder" met Kyuss-riffs. Volgende poging pas met een audioreferentie (mp3 van Jordi) en meetbare anti-ska-controles.
+- **Mitch v3: "ECHT spot-on Chase & Status"**, ritme en structuur goed. v4: wobble ('wowowow') veel luider/agressiever, hardere kick/snare-transients, ducking op kick én snare.
+- **Neo Plasma v7: ritme en timing perfect.** v8: alleen instrumenten (pulse-lead met lange release, strakke synth/slap bass, zachte pulse-arpeggio's, synth brass/orgelstabs, standaard GBA-kit).

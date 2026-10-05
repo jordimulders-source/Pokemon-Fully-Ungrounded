@@ -13,6 +13,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "pokemon.h"
+#include "pokemon_icon.h"
 #include "random.h"
 #include "script.h"
 #include "sound.h"
@@ -246,6 +247,39 @@ u32 Spire_RandomRelic(u32 source, u32 salt, const u8 *exclude, u32 excludeCount)
 struct Pokemon *Spire_GetRunMon(u32 i)
 {
     return &RUN.mons[i];
+}
+
+// Verticale verschuiving waarmee het zichtbare deel van een Pokémon-icoon (32x32, eerste frame) in het midden van
+// het 32-pixelvak valt (v0.9.82, Jordi: Fuecoco viel buiten zijn venster). Iconen staan meestal onderaan hun vak
+// (Fuecoco tot de onderste rij) of juist hoog (vliegers); zo past elke soort in een venster van 24 px.
+s32 Spire_IconYOffset(u16 species, u32 personality)
+{
+    const u8 *tiles = GetMonIconPtr(species, personality);
+    s32 top = -1, bottom = -1;
+    u32 row, tx;
+
+    if (tiles == NULL)
+        return 0;
+    for (row = 0; row < 32; row++)
+    {
+        // 4x4 tegels van 32 bytes (1D), per tegelrij 4 bytes per pixelrij
+        for (tx = 0; tx < 4; tx++)
+        {
+            const u8 *p = tiles + ((row / 8) * 4 + tx) * 32 + (row % 8) * 4;
+
+            if (p[0] | p[1] | p[2] | p[3])
+                break;
+        }
+        if (tx < 4)
+        {
+            if (top < 0)
+                top = row;
+            bottom = row;
+        }
+    }
+    if (top < 0)
+        return 0;
+    return 16 - (top + bottom + 1) / 2;
 }
 
 // ---------------------------------------------------------------------------------------------

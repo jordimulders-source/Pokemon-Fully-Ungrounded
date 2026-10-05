@@ -109,9 +109,11 @@ static const struct BgTemplate sBgTemplates[] =
 static const struct WindowTemplate sWindowTemplates[] =
 {
     [WIN_HEADER] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 1, .width = 28, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x001},
-    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 12, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
-    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 16, .tilemapTop = 12, .width = 13, .height = 2, .paletteNum = PAL_TEXT, .baseBlock = 0x053},
-    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 16, .width = 28, .height = 3, .paletteNum = PAL_TEXT, .baseBlock = 0x06D},
+    // links/rechts 24 px hoog (v0.9.82): een Pokémon-icoon (32 px, tot ±26 px zichtbaar) viel in 16 px buiten het
+    // venster (Jordi: Fuecoco). De tekst staat 4 px lager, in het midden.
+    [WIN_LEFT]   = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 11, .width = 13, .height = 3, .paletteNum = PAL_TEXT, .baseBlock = 0x039},
+    [WIN_RIGHT]  = {.bg = 0, .tilemapLeft = 16, .tilemapTop = 11, .width = 13, .height = 3, .paletteNum = PAL_TEXT, .baseBlock = 0x060},
+    [WIN_BOTTOM] = {.bg = 0, .tilemapLeft = 1, .tilemapTop = 16, .width = 28, .height = 3, .paletteNum = PAL_TEXT, .baseBlock = 0x087},
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -232,6 +234,11 @@ static void PrintText(u32 win, u32 font, u32 x, u32 y, const u8 *color, const u8
     AddTextPrinterParameterized3(win, font, x, y, c, TEXT_SKIP_DRAW, str);
 }
 
+static void PrintRight(u32 win, u32 font, u32 right, u32 y, const u8 *color, const u8 *str)
+{
+    PrintText(win, font, right - GetStringWidth(font, str, 0), y, color, str);
+}
+
 static void DrawFrame(u32 win, u32 pal)
 {
     u32 l = GetWindowAttribute(win, WINDOW_TILEMAP_LEFT), t = GetWindowAttribute(win, WINDOW_TILEMAP_TOP);
@@ -319,11 +326,12 @@ static void DrawOptions(void)
 
             sel = (sRest->mon == i);
             GetMonData(mon, MON_DATA_NICKNAME, buf);
-            PrintText(win, FONT_SMALL_NARROW, 26, 0, sel ? sColor_Red : sColor_Dark, buf);
-            DrawHpBar(win, 26, 11, mon);
+            // tekst rechts van het icoon (x 10-42 op het scherm): een breed icoon (Tinkaton, Steelix) lag over de naam
+            PrintText(win, FONT_SMALL_NARROW, 36, 4, sel ? sColor_Red : sColor_Dark, buf);
+            DrawHpBar(win, 36, 15, mon);
             ConvertIntToDecimalStringN(buf, maxHp ? (hp * 100 + maxHp - 1) / maxHp : 0, STR_CONV_MODE_LEFT_ALIGN, 3);
             StringAppend(buf, COMPOUND_STRING("%"));
-            PrintText(win, FONT_SMALL_NARROW, 72, 6, sColor_Dark, buf);
+            PrintRight(win, FONT_SMALL_NARROW, 102, 10, sColor_Dark, buf);
         }
         else if (sRest->state == STATE_CHOOSE_MOVE)
         {
@@ -335,12 +343,13 @@ static void DrawOptions(void)
             if (i == 0)
             {
                 GetMonData(mon, MON_DATA_NICKNAME, buf);
-                PrintText(win, FONT_SMALL_NARROW, 26, 3, sColor_Dark, buf);
-                PrintText(win, FONT_SMALL_NARROW, 72, 3, sColor_Gray, COMPOUND_STRING("B: back"));
+                // naam en 'B: back' onder elkaar, rechts van het icoon
+                PrintText(win, FONT_SMALL_NARROW, 36, 1, sColor_Dark, buf);
+                PrintText(win, FONT_SMALL_NARROW, 36, 12, sColor_Gray, COMPOUND_STRING("B: back"));
             }
             else
             {
-                PrintText(win, FONT_SMALL_NARROW, 4, 3, sColor_Blue, UpgradePreview(mon, sRest->slot));
+                PrintText(win, FONT_SMALL_NARROW, 4, 7, sColor_Blue, UpgradePreview(mon, sRest->slot));
             }
         }
         else if (i == CHOICE_REST)
@@ -351,16 +360,16 @@ static void DrawOptions(void)
             buf[0] = CHAR_PLUS;
             ConvertIntToDecimalStringN(buf + 1, RestPercent(), STR_CONV_MODE_LEFT_ALIGN, 3);
             StringAppend(buf, COMPOUND_STRING("% HP, PP"));
-            PrintText(win, FONT_NORMAL, 4, 0, blocked ? sColor_Gray : sColor_Green, COMPOUND_STRING("REST"));
-            PrintText(win, FONT_SMALL_NARROW, 38, 3, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("Awakening: no") : buf);
+            PrintText(win, FONT_NORMAL, 4, 4, blocked ? sColor_Gray : sColor_Green, COMPOUND_STRING("REST"));
+            PrintText(win, FONT_SMALL_NARROW, 38, 7, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("Awakening: no") : buf);
         }
         else
         {
             bool32 blocked = IsChoiceBlocked(CHOICE_UPGRADE);
 
             sel = (sRest->choice == CHOICE_UPGRADE);
-            PrintText(win, FONT_NORMAL, 4, 0, blocked ? sColor_Gray : sColor_Blue, COMPOUND_STRING("UPGRADE"));
-            PrintText(win, FONT_SMALL_NARROW, 60, 3, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("no") : COMPOUND_STRING("a move +"));
+            PrintText(win, FONT_NORMAL, 4, 4, blocked ? sColor_Gray : sColor_Blue, COMPOUND_STRING("UPGRADE"));
+            PrintText(win, FONT_SMALL_NARROW, 60, 7, blocked ? sColor_Gray : sColor_Dark, blocked ? COMPOUND_STRING("no") : COMPOUND_STRING("a move +"));
         }
         CopyWindowToVram(win, COPYWIN_FULL);
         DrawFrame(win, (sel && sRest->state != STATE_MESSAGE) ? PAL_FRAME_SEL : PAL_FRAME);
@@ -425,7 +434,7 @@ static void DrawBottom(void)
         if (sRest->iconSpriteIds[i] == SPRITE_NONE)
             continue;
         // bij het kiezen van een move staat het icoon van die Pokémon in het linkervenster
-        gSprites[sRest->iconSpriteIds[i]].x = (sRest->state == STATE_CHOOSE_MOVE) ? 8 + 20 : 8 + 20 + i * 120;
+        gSprites[sRest->iconSpriteIds[i]].x = (sRest->state == STATE_CHOOSE_MOVE) ? 8 + 18 : 8 + 18 + i * 120;
         gSprites[sRest->iconSpriteIds[i]].invisible = !(sRest->state == STATE_CHOOSE_MON
                                                      || (sRest->state == STATE_CHOOSE_MOVE && sRest->mon == i));
     }
@@ -460,7 +469,7 @@ static void UpdateSprites(void)
     if (sRest->state == STATE_MAIN)
     {
         hand->x = sRest->choice == CHOICE_REST ? 70 : 206;
-        hand->y = 42 + (((sRest->timer >> 4) & 1) ? 2 : 0);
+        hand->y = 40 + (((sRest->timer >> 4) & 1) ? 2 : 0);
         hand->invisible = FALSE;
     }
     else
@@ -473,9 +482,9 @@ static void CreateSprites(void)
 {
     u32 i;
 
-    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 52, 62, 0, SPECIES_CHANSEY); // palettetag = soort
-    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 58, 0, SPECIES_SNORLAX);
-    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 188, 62, 0, SPECIES_PORYGON2);
+    sRest->picSpriteIds[0] = CreateMonPicSprite(SPECIES_CHANSEY, FALSE, 0, TRUE, 52, 60, 0, SPECIES_CHANSEY); // palettetag = soort
+    sRest->picSpriteIds[1] = CreateMonPicSprite(SPECIES_SNORLAX, FALSE, 0, TRUE, 120, 56, 0, SPECIES_SNORLAX);
+    sRest->picSpriteIds[2] = CreateMonPicSprite(SPECIES_PORYGON2, FALSE, 0, TRUE, 188, 60, 0, SPECIES_PORYGON2);
     for (i = 0; i < 3; i++)
         gSprites[sRest->picSpriteIds[i]].oam.priority = 1;
     // Snorlax slaapt achter de helpers
@@ -486,8 +495,10 @@ static void CreateSprites(void)
     {
         struct Pokemon *mon = Spire_GetRunMon(i);
 
-        sRest->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
-                                                8 + 20 + i * 120, 96 + 8, 0, GetMonData(mon, MON_DATA_PERSONALITY));
+        // midden van het venster (y 88-112), met het zichtbare deel van het icoon in het midden
+        sRest->iconSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon, 8 + 18 + i * 120,
+                                                100 + Spire_IconYOffset(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_PERSONALITY)),
+                                                0, GetMonData(mon, MON_DATA_PERSONALITY));
         gSprites[sRest->iconSpriteIds[i]].oam.priority = 0;
     }
     LoadSpriteSheet(&sSpriteSheet_Hand);

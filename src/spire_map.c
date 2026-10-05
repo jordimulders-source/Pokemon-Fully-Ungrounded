@@ -341,19 +341,21 @@ static void DrawRoutes(void)
     EnsureRows();
 }
 
+// Regels 2 en 3 hooguit ±54 px breed (venster 56 px, FONT_SMALL_NARROW): 'Two wild ones' (58) en 'upgrade a move'
+// (66) vielen eraf (Jordi, v0.9.82). Controle: python3 -c "import mockfont; print(mockfont.width('...', 'small'))".
 static const u8 sText_Battle[] = _("Battle");
 static const u8 sText_Elite[] = _("Elite");
 static const u8 sText_Rest[] = _("Rest");
 static const u8 sText_Mart[] = _("Poké Mart");
 static const u8 sText_Event[] = _("Event");
 static const u8 sText_Boss[] = _("BOSS");
-static const u8 sText_TwoWild[] = _("Two wild ones");
+static const u8 sText_TwoWild[] = _("2 wild ones");
 static const u8 sText_WinMove[] = _("Win: a move");
-static const u8 sText_StrongFoe[] = _("A strong foe");
+static const u8 sText_StrongFoe[] = _("Strong foe");
 static const u8 sText_WinRelic[] = _("Win: relic");
 static const u8 sText_HealOr[] = _("Heal, or");
-static const u8 sText_Evolve[] = _("upgrade a move");
-static const u8 sText_Spend[] = _("Spend your ¥");
+static const u8 sText_Evolve[] = _("upgrade +");
+static const u8 sText_Spend[] = _("Buy stuff");
 static const u8 sText_WhoKnows[] = _("Who knows?");
 static const u8 sText_NextAct[] = _("+ next act");
 static const u8 sText_Empty[] = _("");
@@ -565,8 +567,9 @@ static void CreateSprites(void)
     {
         struct Pokemon *mon = Spire_GetRunMon(i);
 
-        sMap->teamSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon,
-                                               176 + 10, 8 + 16 + i * 22 + 8, 0, GetMonData(mon, MON_DATA_PERSONALITY));
+        sMap->teamSpriteIds[i] = CreateMonIcon(GetMonData(mon, MON_DATA_SPECIES), SpriteCB_MonIcon, 176 + 10,
+                                               8 + 16 + i * 22 + 8 + Spire_IconYAdjust(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_PERSONALITY)),
+                                               0, GetMonData(mon, MON_DATA_PERSONALITY));
         gSprites[sMap->teamSpriteIds[i]].oam.priority = 0;
     }
     // relics: de eerste twee als item-icoon

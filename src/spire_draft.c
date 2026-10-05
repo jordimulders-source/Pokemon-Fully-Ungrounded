@@ -352,7 +352,8 @@ void Spire_OpenDraft(void (*onDone)(void))
         s16 cx, cy;
 
         CellPos(i, &cx, &cy);
-        sDraft->iconSpriteIds[i] = CreateMonIconNoPersonality(sDraft->species[i], SpriteCB_MonIcon, cx, cy, 1);
+        sDraft->iconSpriteIds[i] = CreateMonIconNoPersonality(sDraft->species[i], SpriteCB_MonIcon, cx,
+                                                              cy + Spire_IconYAdjust(sDraft->species[i], 0), 1);
     }
     LoadCompressedSpriteSheet(&gSpriteSheet_MoveTypes);
     LoadPalette(gMoveTypes_Pal, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);

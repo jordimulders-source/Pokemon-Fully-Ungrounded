@@ -16562,3 +16562,29 @@ Elk met een eigen animatie (`src/battle_anim_new.c`, nieuwe sprites `mummy_banda
   dat het het **drumspoor** was: drumnoot 49 (crashbekken) is in `rs_drumset` een PSG-geluid, een vaste toon van ±1 s
   (88 s en 92,5 s). Nu een echte crash-sample (49 -> 57; ook de andere PSG-drumnoten 37/44/51/52 omgezet,
   `prepare_auto(..., drum_map=...)`). Het koper staat weer zoals in v0.9.60. -V082: 0 keer overlopen, piek 115/127.
+
+### [v.0.9.66] - Zes nieuwe/vernieuwde thema's (nachtronde, agents)
+Alles met eigen samples waar instrumenten ontbraken (FluidR3/synthese), lint OK, 0 keer overlopen in de mixbuffer.
+- **Keccles v2** (`keccles_theme.py`), Willie Colón-stijl op Jordi's feedback ("meer blazers, meer soorten percussie,
+  gitaren, dynamiek"): de hook op twee rauwe **trombones** (nieuwe trombone-sample, GM 57), trompet als kleur, een zachte
+  **coro** (koor + cuatro-antwoorden), piano-montunosolo, descarga met alleen bas en percussie en daarna een cuatro-solo, en
+  een **mambo** met gestapelde trombone-/trompetriffs en de campana. Percussie: bongó (martillo, bongo-bel), conga's,
+  timbales, clave, güiro, maracas. Dynamiek via CC7 per sectie: de coro is ±5 dB zachter dan de mambo.
+- **Battle! Magikarp** (`MUS_GROUNDED_VS_MAGIKARP`, `magikarp_theme.py`): onnozel spartelen. Kazoo, fagot, tuba,
+  xylofoon, slide whistle via pitch bend, boing, plons, vibraslap. Maten van 5/8 en 7/8, een heldenfanfare die in elkaar
+  zakt ("Splash!" ... er gebeurt niets). Wilde gevechten tegen alleen Magikarp en trainers met alleen Magikarp (nu
+  Darian); Gyarados niet.
+- **Battle! Jirachi** (`MUS_GROUNDED_VS_JIRACHI`, `jirachi_theme.py`): hoopvol, D-groot, climax in E. Een "wens"-motief op
+  fluit en glockenspiel, speeldoos, celesta, harp, windgong; de intro valt in sync met de transitie (flits op tel 4).
+- **Battle! Heatran** (`MUS_GROUNDED_VS_HEATRAN`, `heatran_theme.py`): stoner metal à la Kyuss, 116 bpm, drop D. Fuzzende
+  powerchords (één sample per akkoord), dubbele gitaar links/rechts, fuzzbas, een loom halftempo-stuk, een break met
+  alleen bas en drums, en een bluesy solo met bends.
+- **Battle! Shaymin** (`MUS_GROUNDED_VS_SHAYMIN`, `shaymin_theme.py`): relaxt, 6/8, D-groot. Fluit en klarinet, harp,
+  nylongitaar, dwarrelende celesta-blaadjes, pizzicato, shaker, triangel en bongo's; geen drumstel.
+- **Rayquaza als gamelan** (`MUS_GROUNDED_VS_RAYQUAZA`, `rayquaza_theme.py`): het weather trio-thema maat voor maat als
+  Balinese gong kebyar. Gesynthetiseerde gangsa/reyong/jegogan/gong (inharmonisch, met ombak-zweving), kotekan
+  (in elkaar grijpende 16en), kendang, suling, ceng-ceng, byar-explosies en versnellingen. Alle wilde Rayquaza-gevechten
+  (ook de shiny/Delta Episode); Groudon en Kyogre houden het origineel.
+- Samplegeneratoren per thema: `gm_samples.py` (gedeeld), `heatran_samples.py`, `rayquaza_samples.py`, `keccles_samples.py`.
+  Elk samplelabel in `direct_sound_data.inc` staat nu achter een `.align 2`.
+- Strength-puzzels in de Seafloor Cavern nagelopen: duwen werkt, blokken staan na opnieuw binnenkomen weer op hun plek.

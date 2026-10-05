@@ -4,13 +4,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
-- **Muziek: Neo Plasma-thema verbeteren** (`MUS_GROUNDED_VS_NEO_PLASMA`, MIDI van Byabbington, BW2). Jordi: "het is een puur synth-deuntje geworden; qua instrumentgebruik lijkt het totaal niet op het origineel dat ik heb toegevoegd." Dus: per spoor van de bron-MIDI het GM-instrument uitlezen (program_change) en het dichtstbijzijnde echte sample kiezen (strijkers, koper, piano, drums…) i.p.v. PSG/synth; het origineel als voorbeeld nemen, net als bij Dave. Werkwijze en controles: `tools/grounded/MUZIEK.md` (lint, max. 16 sporen, kanaalverdeling, opname met recaudio/recpcm).
-- **Muziek: Keccles-thema** (Jordi, 4 okt): een catchy **salsa dura**-gevechtsthema (hard, koperrijk: trombones/trompetten, piano-montuno, conga/timbales/cowbell/clave, tumbao-bas). Eigen compositie, werkwijze `tools/grounded/MUZIEK.md`; daarna aan alle Keccles-gevechten hangen (`battle_setup.c`/`pokemon.c`).
-- **Muziek: Magikarp-thema** (Jordi, 4 okt): heel onnozel en komisch, een 'spartel'-idee (flappende, onhandige ritmes, glijtonen, pizzicato/fagot/kazoo-achtig). Voor wilde/trainer-Magikarp-gevechten. Let op: Magikarp-levels níet aanpassen.
-- **Muziek: Jirachi-thema** (Jordi, 4 okt): heel hoopvol, licht en vrolijk, passend bij een wishmaker (celesta/klokjes, strijkers, fluit; sterrenmotief). Voor het Jirachi-event (Fallarbor, 's nachts).
-- **Muziek: Heatran-thema** (Jordi, 4 okt): **stoner metal à la Kyuss** (laaggestemde, fuzzy gitaarriffs, groovende log-zware drums, woestijnhitte, lange jams). Voor het Heatran-hol (post-game, Fiery Path) + de cutscene op Route 111.
-- **Muziek: Shaymin-thema** (Jordi, 4 okt): heel relaxt, 'dwarrelende bloemenweide' (zachte harp/fluit/celesta, wiegend 6/8 of rustig tempo, licht en luchtig). Voor Flower Paradise.
-- **Muziek: Rayquaza-thema** (Jordi, 5 okt): het weather trio-legendary-thema (Groudon/Kyogre/Rayquaza, `MUS_VS_KYOGRE_GROUDON`/`MUS_VS_RAYQUAZA`) remixen naar **gamelan** (metallofoons, gongs, kendang; slendro/pelog-kleur). Voor Rayquaza (Sky Pillar).
+- **Muziek: Neo Plasma** (gepauzeerd): wacht op Jordi (VRAGEN_VOLGENDE.md M1: onlinesequencer-link of mp3). v3 = echte instrumenten + gemeten balans.
 - **Open vragen voor Jordi:** `VRAGEN_VOLGENDE.md` (shiny Rayquaza, Delta Episode, Archie/Maxie post-game, volgorde gebieden, signature moves, Gen 4+-sprites, Burglar). `VRAGEN_OCHTEND.md` is afgehandeld.
 
 ## Fase v0.9 (Jordi, 4 okt 2026), in deze volgorde

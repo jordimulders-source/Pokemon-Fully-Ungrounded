@@ -6787,3 +6787,11 @@ DirectSoundWaveData_jirachi_sawbass::
 	.align 2
 DirectSoundWaveData_jirachi_kick::
 	.incbin "sound/direct_sound_samples/grounded/jirachi_kick.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_stutter::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_stutter.bin"
+
+	.align 2
+DirectSoundWaveData_magikarp_cry_rev::
+	.incbin "sound/direct_sound_samples/grounded/magikarp_cry_rev.bin"

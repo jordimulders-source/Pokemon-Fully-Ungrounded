@@ -7,6 +7,9 @@ vibraslap, kazoo, boing) staan nog in gm_samples.py; nieuwe samples komen hier.
 - magikarp_cry_scratch  'Ma-': het begin van de cry als DJ-scratch: de plaat wordt vanuit stilstand aangetrokken
                         (versnellen tot iets boven normaal), na ±0,13 s afgekapt en kort teruggetrokken ('wikka').
                         Samen ±0,19 s = net onder een achtste bij 150 bpm.
+- magikarp_cry_stutter  (v3) 'Ma': alleen het aantrekken van de plaat (0,35x -> 1,15x), na 0,08 s afgekapt, voor een
+                        stotterende scratch in zestienden ('Ma-Ma-Ma-Ma-'; een zestiende = 0,1 s bij 150 bpm).
+- magikarp_cry_rev      (v3) de hele cry achterstevoren (zuigt naar de tel toe), zachte inzet.
 Gebruik: python3 tools/grounded/magikarp_samples.py"""
 import struct, wave
 import numpy as np
@@ -56,12 +59,35 @@ def scratch(a, rate):
     return x * env
 
 
+def stutter(a, rate):
+    n = int(0.08 * rate)
+    t = np.arange(n) / rate
+    sp = np.where(t < 0.04, 0.35 + 0.8 * (t / 0.04), 1.15)
+    x = varispeed(a, sp)
+    env = np.ones(n)
+    k = int(0.004 * rate)
+    env[:k] = np.linspace(0, 1, k)
+    f = int(0.015 * rate)
+    env[-f:] *= np.linspace(1, 0, f)
+    return x * env
+
+
+def reverse(a, rate):
+    x = a[::-1].copy()
+    k = int(0.03 * rate)
+    x[:k] *= np.linspace(0, 1, k)                           # zachte inzet (het staartje van de cry)
+    f = int(0.004 * rate)
+    x[-f:] *= np.linspace(1, 0, f)
+    return x
+
+
 def main():
     w = wave.open(CRY)
     rate = w.getframerate()
     a = (np.frombuffer(w.readframes(w.getnframes()), np.uint8).astype(float) - 128) / 128.0
     inc = open(DATA).read()
-    outs = {'magikarp_cry': a.copy(), 'magikarp_cry_scratch': scratch(a, rate)}
+    outs = {'magikarp_cry': a.copy(), 'magikarp_cry_scratch': scratch(a, rate),
+            'magikarp_cry_stutter': stutter(a, rate), 'magikarp_cry_rev': reverse(a, rate)}
     f = int(0.01 * rate)
     outs['magikarp_cry'][-f:] *= np.linspace(1, 0, f)
     for name, x in outs.items():

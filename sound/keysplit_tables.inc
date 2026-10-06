@@ -69,3 +69,15 @@ keysplit hooh_shaku, 48
 	split 0, 65
 	split 1, 72
 	split 2, 108
+
+@ Project Grounded: Battle! Hoopa (hoopa_theme.py / hoopa_samples.py): oud D3 A3 E4 B4, mizmar A3 E4 B4.
+keysplit hoopa_oud, 36
+	split 0, 54
+	split 1, 61
+	split 2, 68
+	split 3, 108
+
+keysplit hoopa_mizmar, 48
+	split 0, 61
+	split 1, 68
+	split 2, 108

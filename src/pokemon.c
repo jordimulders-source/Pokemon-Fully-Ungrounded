@@ -6322,6 +6322,9 @@ u16 GetBattleBGM(void)
     case SPECIES_LANDORUS_INCARNATE:
     case SPECIES_LANDORUS_THERIAN:
         return MUS_GROUNDED_VS_LANDORUS;
+    case SPECIES_HOOPA_CONFINED: // Project Grounded: eigen thema, hijaz/darbuka (tools/grounded/hoopa_theme.py)
+    case SPECIES_HOOPA_UNBOUND:
+        return MUS_GROUNDED_VS_HOOPA;
     default:
         return MUS_RG_VS_LEGEND;
     }

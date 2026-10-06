@@ -5240,6 +5240,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/WhirlIsland_Cave/border.bin",
       "blockdata_filepath": "data/layouts/WhirlIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_TAPU_ISLE",
+      "name": "TapuIsle_Layout",
+      "width": 56,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FortreeJungle",
+      "border_filepath": "data/layouts/TapuIsle/border.bin",
+      "blockdata_filepath": "data/layouts/TapuIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_FULLMOON_ISLAND",
+      "name": "FullmoonIsland_Layout",
+      "width": 38,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/FullmoonIsland/border.bin",
+      "blockdata_filepath": "data/layouts/FullmoonIsland/map.bin"
     }
   ]
 }

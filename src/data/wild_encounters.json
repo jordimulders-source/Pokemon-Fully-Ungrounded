@@ -2707,6 +2707,52 @@
           }
         },
         {
+          "map": "MAP_TAPU_ISLE",
+          "base_label": "gTapuIsle",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_GUMSHOOS" },
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_TOUCANNON" },
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_EXEGGUTOR" },
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_ORICORIO_POM_POM" },
+              { "min_level": 56, "max_level": 58, "species": "SPECIES_LURANTIS" },
+              { "min_level": 57, "max_level": 59, "species": "SPECIES_TSAREENA" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_BEWEAR" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_LYCANROC_MIDDAY" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_KOMALA" },
+              { "min_level": 58, "max_level": 60, "species": "SPECIES_HAWLUCHA" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_VIKAVOLT" },
+              { "min_level": 60, "max_level": 62, "species": "SPECIES_KOMMO_O" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 52, "max_level": 56, "species": "SPECIES_WISHIWASHI" },
+              { "min_level": 53, "max_level": 57, "species": "SPECIES_ARAQUANID" },
+              { "min_level": 54, "max_level": 58, "species": "SPECIES_PYUKUMUKU" },
+              { "min_level": 55, "max_level": 58, "species": "SPECIES_BRUXISH" },
+              { "min_level": 57, "max_level": 60, "species": "SPECIES_DHELMISE" }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_FINNEON" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_LUVDISC" },
+              { "min_level": 45, "max_level": 50, "species": "SPECIES_LUMINEON" },
+              { "min_level": 45, "max_level": 50, "species": "SPECIES_MAREANIE" },
+              { "min_level": 45, "max_level": 50, "species": "SPECIES_CORSOLA" },
+              { "min_level": 55, "max_level": 60, "species": "SPECIES_TOXAPEX" },
+              { "min_level": 55, "max_level": 60, "species": "SPECIES_BRUXISH" },
+              { "min_level": 55, "max_level": 60, "species": "SPECIES_MANTINE" },
+              { "min_level": 56, "max_level": 60, "species": "SPECIES_ALOMOMOLA" },
+              { "min_level": 58, "max_level": 62, "species": "SPECIES_WAILORD" }
+            ]
+          }
+        },
+        {
           "map": "MAP_MANGROVE_MIRE",
           "base_label": "gMangroveMire",
           "land_mons": {

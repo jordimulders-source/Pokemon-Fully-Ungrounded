@@ -577,6 +577,21 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; de wazige overgang is stoom
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_TAPU_KOKO: // Project Grounded: Tapu-eiland, elke beschermgeest een vanilla-overgang in zijn element
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND); // bliksemschichten
+        break;
+    case SPECIES_TAPU_LELE:
+        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND); // psychische draaikolk
+        break;
+    case SPECIES_TAPU_BULU:
+        CreateBattleStartTask(B_TRANSITION_SHUFFLE, MUS_RG_VS_LEGEND); // het woud schuift dicht
+        break;
+    case SPECIES_TAPU_FINI:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND); // de lagune
+        break;
+    case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; golvend als een droom
+        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
         CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;

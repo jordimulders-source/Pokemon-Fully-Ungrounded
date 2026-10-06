@@ -36482,3 +36482,243 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Earth Power
 - Mud Bomb
 - Recover
+
+=== TRAINER_SAILOR_DUNCAN ===
+Name: DUNCAN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Grapploct
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Octolock
+- Brutal Swing
+- Bulk Up
+- Brick Break
+
+Bellibolt
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Parabolic Charge
+- Water Gun
+- Slack Off
+- Charge
+
+Kingler
+Level: 31
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Crabhammer
+- Metal Claw
+- Swords Dance
+- Protect
+
+=== TRAINER_RUIN_MANIAC_SIMON ===
+Name: SIMON
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Golett
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Punch
+- Bulldoze
+- Defense Curl
+- Mega Punch
+
+Nosepass
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Slide
+- Thunder Wave
+- Spark
+- Sandstorm
+
+Klawf
+Level: 31
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Smash
+- Ancient Power
+- Vise Grip
+- Harden
+
+=== TRAINER_OLD_COUPLE_HAL_AND_MAE ===
+Name: HAL & MAE
+Class: Old Couple
+Pic: Old Couple
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Oranguru
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Instruct
+- Psychic
+- Trick Room
+- Nasty Plot
+
+Drampa
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Pulse
+- Hyper Voice
+- Fly
+- Glare
+
+Slowking_Galar
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Sludge Bomb
+- Psyshock
+- Slack Off
+- Toxic
+
+Cofagrigus
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Protect
+
+=== TRAINER_BIRD_KEEPER_OSWALD ===
+Name: OSWALD
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Squawkabilly
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Double-Edge
+- Parting Shot
+- Brave Bird
+- Torment
+
+Bombirdier
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Knock Off
+- Rock Slide
+- Pluck
+- Torment
+
+Oricorio
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Revelation Dance
+- Air Slash
+- Teeter Dance
+- Roost
+
+Toucannon
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Screech
+
+=== TRAINER_SIRENA ===
+Name: SIRENA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move
+
+Primarina
+Level: 6
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sparkling Aria
+- Moonblast
+- Sing
+- Aqua Jet
+
+Milotic
+Level: 5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Attract
+- Recover
+- Ice Beam
+
+Gorebyss
+Level: 7
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Smash
+- Psychic
+- Hydro Pump
+- Attract
+
+=== TRAINER_TWINS_PIP_AND_PEP ===
+Name: PIP & PEP
+Class: Twins
+Pic: Twins
+Gender: Female
+Music: Twins
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint
+
+Slurpuff
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Play Rough
+- Cotton Guard
+- Draining Kiss
+- Fling
+
+Aromatisse
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Moonblast
+- Heal Pulse
+- Calm Mind
+- Psychic
+
+=== TRAINER_RANGER_MARISOL ===
+Name: MARISOL
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Comfey
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draining Kiss
+- Floral Healing
+- Taunt
+- Grass Knot
+
+Brambleghast
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Phantom Force
+- Giga Drain
+- Rapid Spin
+- Infestation
+
+Golisopod
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- First Impression
+- Liquidation
+- Razor Shell
+- Sucker Punch

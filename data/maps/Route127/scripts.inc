@@ -76,3 +76,63 @@ Route127_EventScript_RematchKoji::
 	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_1 (gegenereerd door tools/grounded/maptools/zee_vulling_1.py) ---
+Route127_EventScript_ZVWailmer::
+	lock
+	faceplayer
+	msgbox Route127_Text_ZVWailmer, MSGBOX_DEFAULT
+	playmoncry SPECIES_WAILMER, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_ROUTE_127_WAILMER_RESCUED
+	fadescreen FADE_FROM_BLACK
+	msgbox Route127_Text_ZVWailmerGone, MSGBOX_DEFAULT
+	giveitem ITEM_SHELL_BELL
+	release
+	end
+
+Route127_Text_ZVWailmer:
+	.string "A WAILMER is stranded on the\nsand. It looks at you like you\lowe it money.\pYou push. And push. It rolls into\nthe sea with the grace of a\ldropped piano.$"
+
+Route127_Text_ZVWailmerGone:
+	.string "Far away, a spout of water.\nSomething shiny lands at your feet.\pA tip. From a whale.$"
+
+Route127_EventScript_ZVMarisol::
+	trainerbattle_single TRAINER_RANGER_MARISOL, Route127_Text_ZVMarisol_Intro, Route127_Text_ZVMarisol_Defeat
+	msgbox Route127_Text_ZVMarisol_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route127_Text_ZVMarisol_Intro:
+	.string "Stand back! This WAILMER has been\nstranded for six hours.\pI've been observing it. Taking\nnotes. Very important notes.\lMostly drawings.$"
+
+Route127_Text_ZVMarisol_Defeat:
+	.string "You're right. Pushing it back\nwould also have been an option.$"
+
+Route127_Text_ZVMarisol_Post:
+	.string "Ranger protocol says observe, don't\ninterfere. Ranger protocol has\lnever met a sad whale.$"
+
+Route127_EventScript_ZVTourist::
+	msgbox Route127_Text_ZVTourist, MSGBOX_NPC
+	end
+
+Route127_Text_ZVTourist:
+	.string "Excuse me, is this Kalos?\pMy map says the hotel is right\nhere. The map is of Kalos.\p...Is it upside down? Oh. Oh no.\nThen I swam the wrong way for\ltwo weeks.\pStill. Five stars. Great water.$"
+
+Route127_EventScript_ZVTwins::
+	trainerbattle_double TRAINER_TWINS_PIP_AND_PEP, Route127_Text_ZVTwins_Intro, Route127_Text_ZVTwins_Defeat, Route127_Text_ZVTwins_NotEnough
+	msgbox Route127_Text_ZVTwins_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route127_Text_ZVTwins_Intro:
+	.string "PIP: We swam here on a floatie!\nPEP: The floatie popped!\pPIP: Now we live here!\nPEP: Mom doesn't know yet!$"
+
+Route127_Text_ZVTwins_Defeat:
+	.string "PIP: We lost!\nPEP: Like the floatie!$"
+
+Route127_Text_ZVTwins_NotEnough:
+	.string "PIP: Two against one is unfair.\nPEP: Come back with a friend!$"
+
+Route127_Text_ZVTwins_Post:
+	.string "PIP: If you see Mom, say we're\nat a sleepover.\pPEP: With a sandbank!$"
+@ --- einde zee_vulling_1 ---

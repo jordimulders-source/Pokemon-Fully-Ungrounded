@@ -177,6 +177,71 @@
       "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_127_RARE_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WAILMER)",
+      "x": 11,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route127_EventScript_ZVWailmer",
+      "flag": "FLAG_ROUTE_127_WAILMER_RESCUED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 13,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route127_EventScript_ZVMarisol",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 54,
+      "y": 61,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route127_EventScript_ZVTourist",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
+      "x": 56,
+      "y": 59,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route127_EventScript_ZVTwins",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
+      "x": 57,
+      "y": 59,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route127_EventScript_ZVTwins",
+      "flag": "0"
     }
   ],
   "warp_events": [],
@@ -216,6 +281,30 @@
       "y": 24,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_127_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 49,
+      "y": 25,
+      "elevation": 3,
+      "item": "ITEM_MYSTIC_WATER",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_127_MYSTIC_WATER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 59,
+      "y": 73,
+      "elevation": 3,
+      "item": "ITEM_DAMP_ROCK",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_127_DAMP_ROCK"
     }
   ]
 }

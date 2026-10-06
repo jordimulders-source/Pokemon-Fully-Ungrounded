@@ -192,7 +192,7 @@ def chant_theme():
     return hi, lo
 
 
-INTRO_CHANT = 0.62   # v4: chant maat 1-4 -4 dB (gemeten: chant -2,3 / drums -6,7 dB t.o.v. de mix; origineel -7,0 / -4,1)
+INTRO_CHANT = 0.42   # v4: chant maat 1-4 -7,5 dB (gemeten: chant -2,3 / drums -6,7 dB t.o.v. de mix; origineel -7,0 / -4,1)
 
 
 def chant():
@@ -222,7 +222,7 @@ def chant_lo():
 # ---------------------------------------------------------------- strijkers / pad (stem 'other') ----------------------
 def pad():
     out = []
-    put(out, 1, [(0, 40, ['C5', 'C6'], 72)])                         # maat 1-3 (+ half 4): tritonusakkoord onder de chant
+    put(out, 1, [(0, 40, ['C5', 'C6'], 50)])                         # maat 1-3 (+ half 4): tritonusakkoord (v4 zachter)
     put(out, 7, [(0, 16, ['F4', 'F#4'], 40)])                        # aanzwellende clusters (v4 zachter: drums voorop)
     put(out, 8, [(0, 8, ['G#4', 'A4'], 46), (8, 8, ['G#4', 'A4'], 56)])
     groove_pad = {16: ['G4', 'A#4'], 20: ['A#4', 'D5'], 24: ['G4', 'C5'], 28: ['C5', 'D#5']}
@@ -428,16 +428,20 @@ def drums():
             hit(t, ob, q, BIGTOM if x >= 170 else (TAIKO if x >= 70 else TAIKO_LO), vel(x, 200, 96, 31))
         for q, x in CRACK[ob].items():
             hit(pc, ob, q, KA, vel(x, 90, 84, 40))
+        for q, x in LOW[ob].items():                                  # kick onder de zware slagen
+            if x >= 85:
+                hit(m, ob, q, KICK, 116)
     t = [n for n in t if n[0] != at(1, 0)]
     hit(t, 1, 0, BIGTOM, 127)
     hit(m, 1, 0, TAIKO, 116)
-    for i, q in enumerate((12, 13, 14, 15)):                         # korte roffel naar de HIT
-        hit(m, 4, q, TAIKO, 96 + 10 * i)
+    for i, q in enumerate((8, 9, 10, 11)):                           # korte roffel, dan 4 zestienden stilte vóór de HIT
+        hit(m, 4, q, TAIKO, 96 + 10 * i)                             # (contrast: de klap zit al op de top van de mixer)
+    t = [n for n in t if not at(4, 12) <= n[0] < at(5, 0)]
+    m = [n for n in m if not at(4, 12) <= n[0] < at(5, 0)]
+    pc = [n for n in pc if not at(4, 12) <= n[0] < at(5, 0)]
     # maat 5 = de HIT (v3 zonder 'HOO'): de eerste grote slag: odaiko + taiko + ka + bekken + kick
     # v4 (Jordi: 'de klap op 6 mag ook harder ... meer impact, of meerdere instrumenten tegelijkertijd'): odaiko + eigen
     # impact-sample (lage odaiko + sub-val + orkesthit, 2x) + taiko + bekken, met pauk en hoornstoot
-    # (de ka en de laatste slag van maat 4 vallen weg: kanalen vrij voor de klap)
-    t = [n for n in t if n[0] != at(4, 15)]
     pc = [n for n in pc if n[0] != at(5, 0)]
     # het impact-sample op twee sporen tegelijk (taiko 127 + toms 108, zelfde fase = +5 dB): in v4-test 1 was de klap
     # met één impact op het bekkenspoor even luid als een groove-slag (44 dB per 16e)

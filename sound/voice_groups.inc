@@ -42,6 +42,7 @@
 .include "sound/voicegroups/keysplits/np_trumpet.inc"
 .include "sound/voicegroups/keysplits/np_lead.inc"
 .include "sound/voicegroups/keysplits/heatran_lead.inc"
+.include "sound/voicegroups/keysplits/forces_spicc.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -262,3 +263,4 @@
 .include "sound/voicegroups/grounded_gym_flannery.inc"
 .include "sound/voicegroups/grounded_burglar.inc"
 .include "sound/voicegroups/grounded_tapu.inc"
+.include "sound/voicegroups/grounded_forces.inc"

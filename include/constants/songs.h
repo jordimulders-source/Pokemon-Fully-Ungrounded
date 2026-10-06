@@ -592,6 +592,9 @@
 #define MUS_GROUNDED_VS_WALLACE     654 // Project Grounded: gymleider-remix (Wallace, gym 8): Franse lounge/bossa (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_BURGLAR     655 // Project Grounded: Battle! Burglar (SIMON), eigen compositie: noir-jazz-heist -> achtervolging (tools/grounded/burglar_theme.py)
 #define MUS_GROUNDED_VS_TAPU        656 // Project Grounded: Battle! Tapu (Sun/Moon), transcriptie fase 1: chants + tribal-drums (tools/grounded/tapu_theme.py)
+#define MUS_GROUNDED_VS_TORNADUS    659 // Project Grounded: Battle! Tornadus (Forces of Nature, wind), eigen compositie (tools/grounded/forces_theme.py)
+#define MUS_GROUNDED_VS_THUNDURUS   660 // Project Grounded: Battle! Thundurus (Forces of Nature, bliksem), eigen compositie (tools/grounded/forces_theme.py)
+#define MUS_GROUNDED_VS_LANDORUS    661 // Project Grounded: Battle! Landorus (Forces of Nature, aarde), eigen compositie (tools/grounded/forces_theme.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

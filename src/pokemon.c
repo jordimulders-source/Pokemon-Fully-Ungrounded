@@ -6309,6 +6309,15 @@ u16 GetBattleBGM(void)
     case SPECIES_ZARUDE: // Project Grounded: eigen compositie (tools/grounded/zarude_theme.py)
     case SPECIES_ZARUDE_DADA:
         return MUS_GROUNDED_VS_ZARUDE;
+    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, één motief in drie arrangementen (tools/grounded/forces_theme.py)
+    case SPECIES_TORNADUS_THERIAN:
+        return MUS_GROUNDED_VS_TORNADUS;
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+        return MUS_GROUNDED_VS_THUNDURUS;
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        return MUS_GROUNDED_VS_LANDORUS;
     default:
         return MUS_RG_VS_LEGEND;
     }

@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Battle! Ho-Oh. Gegenereerd door tools/grounded/hooh_theme.py.
-@ alleen stock-samples: 77 shakuhachi, 78 shinobue (whistle), 107 koto, 106 shamisen (koto laag), 30 distortion-gitaar, 127 = drumkit hooh.
+@ Project Grounded: grounded_gm voor Battle! Ho-Oh v2. Gegenereerd door tools/grounded/hooh_theme.py.
+@ eigen samples (hooh_samples.py): 77 shakuhachi, 107 koto, 106 shamisen (keysplits hooh_*), 109 sho, 127 = drumkit hooh; stock: 30 distortion-gitaar, 33 bas, 60 hoorn, 52 koor.
 voice_group grounded_hooh
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -78,8 +78,8 @@ voice_group grounded_hooh
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 74
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 75
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 76
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 165  @ 77
-	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_whistle, 255, 0, 255, 150  @ 78
+	voice_keysplit voicegroup_hooh_shaku_keysplit, keysplit_hooh_shaku  @ 77
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
@@ -107,10 +107,10 @@ voice_group grounded_hooh
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 103
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 104
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 105
-	voice_directsound 60, 0, DirectSoundWaveData_unknown_koto_low, 255, 0, 206, 90  @ 106
-	voice_directsound 60, 0, DirectSoundWaveData_unknown_koto_high, 255, 0, 206, 90  @ 107
+	voice_keysplit voicegroup_hooh_shami_keysplit, keysplit_hooh_shami  @ 106
+	voice_keysplit voicegroup_hooh_koto_keysplit, keysplit_hooh_koto  @ 107
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 108
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 109
+	voice_directsound 60, 0, DirectSoundWaveData_hooh_sho, 14, 0, 255, 200  @ 109
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 110
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 111
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 112

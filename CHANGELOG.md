@@ -17154,3 +17154,7 @@ Volgens Jordi's GBA-instructies per leider:
   - **Tate & Liza** (3,2 s): ouijabord spelt R-I-P, tarotkaarten THE TWINS / THE MOON / DEATH (yours), "The cards have spoken... and they hate you.", psychic overload met buigende lepels, "aaaaaaaaaaaaah (your aura, screaming in lowercase)".
   - **Wallace** (2,9 s): Crater Pub, zwevende fles schenkt een glas vol, "Your spirit has a certain... bouquet.", de wijn wordt Hoenn-blauw ("Notes of brine, regret and KYOGRE."), golf over de pub, "SANTÉ!"
 - Code `src/data/gym_intros_b.h`; art-scripts `tools/grounded/{norman,winona,tateliza,wallace}_transition.py`.
+
+### [v0.9.129] - Wallace-intro bijgesteld, battle tester compleet
+- Wallace-intro: "SANTÉ!" valt niet meer half buiten beeld (accent bovenaan).
+- Debugmenu Utilities > "Battle test…" bevat nu alle gevechten met een eigen intro of thema: de acht gymleiders, Steven, Mitch, SickBlik, Mimi, de Burglar, Shy Guy (Sunset Wilds), Archie + Maxie (werkstraf), Lugia, Ho-Oh, Manaphy, Volcanion, Munkidori, Fezandipiti, Ogerpon en Regigigas (naast de bestaande).

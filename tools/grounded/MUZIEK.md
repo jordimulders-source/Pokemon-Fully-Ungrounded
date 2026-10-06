@@ -110,7 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
-| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v3 wacht op Jordi (geen HOO; synth-lead maat 9-12 naar zijn neurie, synthbas, hardere drums + PSG-hats; HIT 5,54 s) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
 | Lugia | `lugia_theme.py` | v1 wacht op Jordi (beschermersthema <-> storm, één melodie; alleen stock) | "Lugia" |
@@ -557,3 +557,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
   op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
   op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.
+- Tapu v3 (Jordi over v2: 'HOO wimpy', 'TUDUDU onhoorbaar, is een synth', 'baslijn klopt niet', 'drums niet hard
+  genoeg'): **een neurie op het raster leggen** (pyin/basic-pitch, onsets / 0,0862 s): Jordi's 5,9 s = precies maat
+  9-12; vier tonen per halve maat + 16en-trillers. In de stem 'other' stijgt daar een brede synth (E3, B3, E4, F4;
+  basic-pitch + harmonische som per 16e); de eerste sprong (kwint) klopt met de neurie, de rest van de neurie +11.
+  **Spleeter zet een boventoonrijke synthbas half in 'other'**: wat daar in maat 13-60 als 'riff' leek (F4/E4/D4)
+  waren 3e harmonischen van de bas (A#2/A2/G2) -> de bas zelf op een zaagtand-sample (`tapu_synth`, twee ontstemde
+  zaagtanden, loop = kgv(80, 81) samples = exact). Bas per 16e vergelijken (toonklasse MIDI vs. stem): 75% -> 83%.
+  PSG-blokgolf (16en-puls) en PSG-ruis (hats) voor energie zonder DS-kanalen. Opname-offset zelf meten (maat 1 =
+  0,07 s in recsolo/recaudio, niet 0,55). -V076: 0 overlopen, piek 102/127, RMS 3180 (groove 3300-3500, bewust).

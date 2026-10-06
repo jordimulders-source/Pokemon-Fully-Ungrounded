@@ -14,7 +14,9 @@ Stemmen (formantsynthese, additief: elke harmonische van een stembandpuls gewoge
 een groep van 4-6 licht ontstemde stemmen met ademruis; geen audio uit de opname):
   tapu_vox_a   chant-klinker 'aa' (A4, met loop, legato): de bovenstem van het herhalende chant-thema
   tapu_vox_hu  lage 'hu' van een mannengroep (F#3, met loop): de lage tussenroepen
-  tapu_shout   de 'HOO!' op de HIT: mannengroep, glijdt van F#3 omhoog naar A#3, klinker o -> oe (grondtoon A#3)
+  (v3: de 'HOO!'-kreet tapu_shout is weg, Jordi: 'klinkt erg wimpy')
+Synth (v3):
+  tapu_synth   brede zaagtand-synth (twee ontstemde zaagtanden + blokgolf, exacte loop): lead van maat 9-12 en synthbas
 Gebruik: python3 tools/grounded/tapu_samples.py"""
 import os, subprocess, sys, tempfile, wave
 import numpy as np
@@ -213,6 +215,25 @@ def vox(name, sr):
     return x / np.abs(x).max() * 0.97, key
 
 
+def synth(rate):
+    """v3: de synth van maat 9-12 ('TUDUDUDUUUU - TUDUDUDU', Jordi: 'het grootste gebrek') en de synthbas: twee
+    bandbegrensde zaagtanden met perioden van 80 en 81 samples (21.024 Hz: 262,8 + 259,6 Hz, gemiddeld C4) plus een
+    kwart blokgolf voor de 'buzz'. Loop = kgv(80, 81) = 6480 samples = exact (0,31 s, zweving 3,2 Hz = breed/ontstemd).
+    Harmonischen tot ±4,5 kHz (op F4 gespeeld nog onder de Nyquist van de mixer)."""
+    n = 80 * 81
+    t = np.arange(n)
+    x = np.zeros(n)
+    for per, amp in ((80, 1.0), (81, 0.9)):
+        f0 = rate / per
+        for k in range(1, int(4500 / f0) + 1):
+            g = amp / k * (1.0 if k * f0 < 2500 else np.exp(-(k * f0 - 2500) / 1500))
+            x += g * np.sin(2 * np.pi * k * t / per)
+            if k % 2:
+                x += 0.25 * g * np.sin(2 * np.pi * k * t / per + 0.5)
+    x = x / np.abs(x).max() * 0.97
+    return x, 60, (0, n)
+
+
 def lowpass_sr(x, sr, hi):
     f = np.fft.rfft(x); fr = np.fft.rfftfreq(len(x), 1 / sr)
     f[fr > hi] *= np.exp(-(fr[fr > hi] - hi) / 600)
@@ -227,7 +248,7 @@ SAMPLES = {
     'tapu_crash':  ('drum', 1.3, 13379, False),
     'tapu_vox_a':  ('vox', 0.75, 16384, True),
     'tapu_vox_hu': ('vox', 0.75, 16384, True),
-    'tapu_shout':  ('vox', 0.95, 16384, False),
+    'tapu_synth':  ('synth', 0, 21024, True),
 }
 
 
@@ -242,6 +263,8 @@ def main(only=None):
         if kind == 'drum':
             a = resample(drum(short, dur), SR, rate)
             key, lp = 60, None
+        elif kind == 'synth':
+            a, key, lp = synth(rate)
         else:
             a, key = vox(short, rate)
             lp = None

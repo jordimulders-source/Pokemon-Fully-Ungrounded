@@ -173,6 +173,11 @@ static void Task_GymRoxanne(u8); // Project Grounded (src/data/gym_intros_a.h)
 static void Task_GymBrawly(u8); // Project Grounded
 static void Task_GymWattson(u8); // Project Grounded
 static void Task_GymFlannery(u8); // Project Grounded
+
+static void Task_TapuKoko(u8); // Project Grounded
+static void Task_TapuLele(u8);
+static void Task_TapuBulu(u8);
+static void Task_TapuFini(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -662,6 +667,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GYM_BRAWLY] = Task_GymBrawly, // Project Grounded
     [B_TRANSITION_GYM_WATTSON] = Task_GymWattson, // Project Grounded
     [B_TRANSITION_GYM_FLANNERY] = Task_GymFlannery, // Project Grounded
+    [B_TRANSITION_TAPU_KOKO] = Task_TapuKoko, // Project Grounded
+    [B_TRANSITION_TAPU_LELE] = Task_TapuLele,
+    [B_TRANSITION_TAPU_BULU] = Task_TapuBulu,
+    [B_TRANSITION_TAPU_FINI] = Task_TapuFini,
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -1359,6 +1368,9 @@ static void LaunchBattleTransitionTask(u8 transitionId)
 {
     u8 taskId = CreateTask(Task_BattleTransition, 2);
     gTasks[taskId].tTransitionId = transitionId;
+    // Project Grounded: startmoment (VBlanks) bewaren, zodat een transitie op de muziek kan eindigen (Tapu's)
+    gTasks[taskId].data[13] = gMain.vblankCounter1;
+    gTasks[taskId].data[14] = gMain.vblankCounter1 >> 16;
     sTransitionData = AllocZeroed(sizeof(*sTransitionData));
 }
 
@@ -9910,3 +9922,349 @@ static void Task_WeatherService(u8 taskId)
 
 // Project Grounded: gymleider-intro's (Roxanne, Brawly, Wattson, Flannery)
 #include "data/gym_intros_a.h"
+
+// ---------------- Tapu Koko/Lele/Bulu/Fini: lichte intro (geen film). Het gesloten schild verschijnt op een donkere
+// achtergrond in de kleur van de Tapu, met een motief uit het schildpatroon dat via een paletcyclus beweegt
+// (tools/grounded/tapu_transition.py). Het patroon licht op op de beat, bouwt op, en op de eerste grote drumslag
+// (met de chant) van MUS_GROUNDED_VS_TAPU gaat het schild open: licht, flits, gevecht.
+// Alles hangt aan TAPU_HIT_FRAME: het aantal VBlanks vanaf de start van de transitie (= start van de muziek, die
+// CreateBattleStartTask een frame eerder start) tot die drumslag, dus HIT_SECONDS * 60 uit tools/grounded/tapu_theme.py.
+// Er wordt op echte VBlanks geteld (gMain.vblankCounter1), zodat vertraagde frames de sync met de muziek niet breken.
+#define TAPU_HIT_FRAME 240 // = HIT_SECONDS * 60 (tapu_theme.py); de transitie eindigt precies hier
+#define TAPU_BEAT      30  // beat-afstand voor het oplichten (geteld terug vanaf de drumslag)
+#define TAPU_BUILD     48  // opbouw: snellere pulsen, trillen, alles lichter
+#define TAPU_OPEN      10  // het schild gaat open in de laatste TAPU_OPEN frames
+#define TAPU_LATENCY   2   // gemeten: muziekstart -> transitiestart 1 frame, transitie-einde -> CB2_InitBattle 1 frame
+
+enum { TAPU_KOKO, TAPU_LELE, TAPU_BULU, TAPU_FINI };
+
+struct TapuIntro
+{
+    const u32 *tiles;
+    const u32 *map;
+    const u16 *shell; // [0] = lichttile, daarna w x h
+    const u16 *pal;
+    u8 w, h, cycleSpeed;
+    u16 dark, motif, glow;
+};
+
+static const u32 sTapuKoko_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_koko.4bpp.smol");
+static const u32 sTapuKoko_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_koko.bin.smolTM");
+static const u16 sTapuKoko_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_koko_shell.bin");
+static const u16 sTapuKoko_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_koko.gbapal");
+static const u32 sTapuLele_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_lele.4bpp.smol");
+static const u32 sTapuLele_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_lele.bin.smolTM");
+static const u16 sTapuLele_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_lele_shell.bin");
+static const u16 sTapuLele_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_lele.gbapal");
+static const u32 sTapuBulu_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_bulu.4bpp.smol");
+static const u32 sTapuBulu_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_bulu.bin.smolTM");
+static const u16 sTapuBulu_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_bulu_shell.bin");
+static const u16 sTapuBulu_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_bulu.gbapal");
+static const u32 sTapuFini_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_fini.4bpp.smol");
+static const u32 sTapuFini_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_fini.bin.smolTM");
+static const u16 sTapuFini_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_fini_shell.bin");
+static const u16 sTapuFini_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_fini.gbapal");
+
+static const struct TapuIntro sTapuIntros[] =
+{
+    [TAPU_KOKO] = {sTapuKoko_Tiles, sTapuKoko_Map, sTapuKoko_Shell, sTapuKoko_Pal, 12, 18, 2,
+                   RGB(3, 3, 0), RGB(31, 27, 4), RGB(31, 31, 18)},
+    [TAPU_LELE] = {sTapuLele_Tiles, sTapuLele_Map, sTapuLele_Shell, sTapuLele_Pal, 12, 18, 4,
+                   RGB(5, 1, 4), RGB(31, 12, 22), RGB(31, 26, 31)},
+    [TAPU_BULU] = {sTapuBulu_Tiles, sTapuBulu_Map, sTapuBulu_Shell, sTapuBulu_Pal, 18, 16, 5,
+                   RGB(1, 4, 1), RGB(18, 28, 4), RGB(31, 31, 16)},
+    [TAPU_FINI] = {sTapuFini_Tiles, sTapuFini_Map, sTapuFini_Shell, sTapuFini_Pal, 14, 17, 4,
+                   RGB(1, 2, 7), RGB(16, 19, 31), RGB(24, 31, 31)},
+};
+
+// helderheid van de 8 fasen van het motief (fase 0 = de lichtgolf, daarachter een staart)
+static const u8 sTapuCycle[8] = {16, 4, 3, 3, 3, 4, 6, 10};
+// schild open: verschuiving per helft in tiles, en de flits naar wit
+static const u8 sTapuOpenStep[TAPU_OPEN] = {0, 0, 1, 1, 2, 3, 4, 6, 9, 13};
+static const u8 sTapuOpenFlash[TAPU_OPEN] = {2, 4, 5, 6, 8, 9, 11, 13, 15, 16};
+
+#define tTapuState  data[0]
+#define tTapuTimer  data[1]
+#define tTapuPulse  data[2]
+#define tTapuId     data[3]
+#define tTapuHidden data[4]
+#define tTapuPos    data[5] // verticale positie (Bulu valt, Fini stijgt) in 1/16 px
+#define tTapuVel    data[6]
+#define tTapuSin    data[7]
+#define tTapuLast   data[8] // laatst geziene 'r' (frames tot de drumslag), voor beats bij vertraagde frames
+#define tTapuLanded data[9]
+
+static u16 Tapu_Blend(u16 a, u16 b, s32 k)
+{
+    s32 ar = a & 31, ag = (a >> 5) & 31, ab = (a >> 10) & 31;
+    s32 br = b & 31, bg = (b >> 5) & 31, bb = (b >> 10) & 31;
+    if (k <= 0)
+        return a;
+    if (k >= 16)
+        return b;
+    ar += ((br - ar) * k) >> 4;
+    ag += ((bg - ag) * k) >> 4;
+    ab += ((bb - ab) * k) >> 4;
+    return RGB(ar, ag, ab);
+}
+
+// frames sinds de start van de transitie (VBlanks), zie LaunchBattleTransitionTask
+static s32 Tapu_Elapsed(void)
+{
+    u8 id = FindTaskIdByFunc(Task_BattleTransition);
+    u32 start;
+    if (id == TASK_NONE)
+        return 0;
+    start = (u16)gTasks[id].data[13] | ((u32)(u16)gTasks[id].data[14] << 16);
+    return gMain.vblankCounter1 - start;
+}
+
+static void VBlankCB_Tapu(void)
+{
+    DmaStop(0);
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
+    DmaSet(0, gScanlineEffectRegBuffers[1], &REG_BG0HOFS, B_TRANS_DMA_FLAGS);
+}
+
+// schild tekenen met de helften 'step' tiles uit elkaar, de spleet vol licht (over het hele scherm)
+static void Tapu_DrawOpen(const struct TapuIntro *ti, s32 step)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 x0 = 15 - ti->w / 2, y0 = (20 - ti->h) / 2, half = ti->w / 2;
+    s32 r, c;
+    u16 light = ti->shell[0];
+
+    for (r = 0; r < 20; r++)
+    {
+        s32 sr = r - y0;
+        for (c = 15 - step; c < 15 + step; c++)
+            if (c >= 0 && c < 30)
+                tilemap[r * 32 + c] = light;
+        if (sr < 0 || sr >= ti->h)
+            continue;
+        for (c = 0; c < half; c++)
+        {
+            s32 xl = x0 + c - step, xr = 15 + c + step;
+            u16 el = ti->shell[1 + sr * ti->w + c], er = ti->shell[1 + sr * ti->w + half + c];
+            if (xl >= 0 && el)
+                tilemap[r * 32 + xl] = el;
+            if (xr < 30 && er)
+                tilemap[r * 32 + xr] = er;
+        }
+    }
+}
+
+static void Tapu_Finish(u8 taskId)
+{
+    SetVBlankCallback(NULL);
+    DmaStop(0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_BG1_ON | DISPCNT_BG2_ON | DISPCNT_BG3_ON | DISPCNT_OBJ_ON);
+    FadeScreenBlack();
+    DestroyTask(taskId);
+}
+
+static void Tapu_Update(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    const struct TapuIntro *ti = &sTapuIntros[task->tTapuId];
+    s32 t = task->tTapuTimer, r = TAPU_HIT_FRAME - TAPU_LATENCY - Tapu_Elapsed();
+    s32 i, level, bgLevel, glow, flash = 0, shake = 0, wave = 0, cyc;
+    u16 *tilemap, *tileset;
+    u16 *pal14 = &gPlttBufferFaded[BG_PLTT_ID(14)], *pal15 = &gPlttBufferFaded[BG_PLTT_ID(15)];
+    s16 *hofs = (s16 *)gScanlineEffectRegBuffers[0];
+
+    if (task->tTapuState == 0)
+    {
+        InitTransitionData();
+        ScanlineEffect_Clear();
+        GetBg0TilesDst(&tilemap, &tileset);
+        CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+        DecompressDataWithHeaderVram(ti->tiles, tileset);
+        for (i = 0; i < 16; i++)
+            pal14[i] = pal15[i] = ti->dark;
+        CpuCopy16(pal14, &gPlttBufferUnfaded[BG_PLTT_ID(14)], PLTT_SIZE_4BPP * 2);
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = 0;
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        // de wereld (BG 0-13 en alle sprites) zakt weg in de donkere kleur van de Tapu
+        BeginNormalPaletteFade(PALETTES_ALL & ~((1 << 14) | (1 << 15)), 0, 0, 16, ti->dark);
+        task->tTapuPos = (task->tTapuId == TAPU_BULU) ? (96 << 4) : (task->tTapuId == TAPU_FINI) ? -(96 << 4) : 0;
+        task->tTapuVel = 0;
+        task->tTapuLast = r;
+        SetVBlankCallback(VBlankCB_Tapu);
+        task->tTapuState++;
+        return;
+    }
+
+    if (r <= 0)
+    {
+        Tapu_Finish(taskId);
+        return;
+    }
+
+    // eerst zakt de wereld weg; pas dan het beeld tekenen en de tijdlijn starten. Daarna blijven alleen BG0 en de
+    // achtergrondkleur over (dan kan de flits via de achtergrondkleur)
+    if (!task->tTapuHidden)
+    {
+        if (gPaletteFade.active)
+            return;
+        ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_BG1_ON | DISPCNT_BG2_ON | DISPCNT_BG3_ON | DISPCNT_OBJ_ON);
+        DecompressDataWithHeaderVram(ti->map, RT_Tilemap());
+        task->tTapuHidden = TRUE;
+    }
+
+    // verschijnen (frames 8-56): elke Tapu op zijn eigen manier
+    level = (t - 8) * 16 / 40;
+    level = max(0, min(level, 16));
+    bgLevel = max(0, min((t - 40) * 16 / 30, 16));
+    switch (task->tTapuId)
+    {
+    case TAPU_KOKO: // elektrisch: het silhouet flitst aan, scanlijnen springen
+        if (t >= 8 && t < 56 && (Random() & 3) == 0)
+            level = 16;
+        if (t < 56)
+            wave = (56 - t) / 4;
+        break;
+    case TAPU_LELE: // psychisch: weefgolf zoals de Regi's, die uitdooft
+        wave = max(0, 40 - t) / 2;
+        break;
+    case TAPU_BULU: // zwaar: valt van boven, dreun, nadreunen
+        if (t >= 8 && !task->tTapuLanded)
+        {
+            task->tTapuVel += 20;
+            task->tTapuPos -= task->tTapuVel;
+            if (task->tTapuPos <= 0)
+            {
+                task->tTapuPos = 3 << 4; // terugvering, zakt hieronder weer weg
+                task->tTapuLanded = TRUE;
+                task->tTapuPulse = 16;
+            }
+        }
+        break;
+    case TAPU_FINI: // water: stijgt op uit de diepte, golvend
+        if (t >= 8 && task->tTapuPos < 0)
+            task->tTapuPos = -(((96 << 4) * (56 - t) / 48) * (56 - t) / 48);
+        if (t >= 56)
+            task->tTapuPos = 0;
+        wave = 2 + max(0, 56 - t) / 6;
+        break;
+    }
+
+    // beats: teruggeteld vanaf de drumslag; in de opbouw steeds sneller
+    if (t > 56)
+    {
+        s32 beat = r > TAPU_BUILD ? TAPU_BEAT : r > TAPU_BUILD / 2 ? 12 : 6;
+        for (i = task->tTapuLast - 1; i >= r; i--)
+        {
+            if (i > TAPU_OPEN && (i % beat) == 0)
+            {
+                task->tTapuPulse = 16;
+                if (task->tTapuId == TAPU_BULU && r > TAPU_BUILD)
+                    task->tTapuPos = 2 << 4; // dreun
+                break;
+            }
+        }
+    }
+    task->tTapuLast = r;
+
+    glow = task->tTapuPulse;
+    if (r < TAPU_BUILD)
+    {
+        s32 b = (TAPU_BUILD - r) * 10 / TAPU_BUILD;
+        glow = max(glow, b);
+        shake = (TAPU_BUILD - r) / 12;
+    }
+    if (r <= TAPU_OPEN)
+    {
+        Tapu_DrawOpen(ti, sTapuOpenStep[TAPU_OPEN - r]);
+        flash = sTapuOpenFlash[TAPU_OPEN - r];
+        shake = 0;
+    }
+
+    // palet 15: het schild (vanuit donker), het patroon (11-13) licht op, alles naar wit bij de flits
+    for (i = 1; i < 16; i++)
+    {
+        u16 c = Tapu_Blend(ti->dark, ti->pal[i], level);
+        if (i >= 11 && i <= 13)
+            c = Tapu_Blend(c, ti->glow, glow);
+        else if (i == 15)
+            c = ti->glow;
+        else
+            c = Tapu_Blend(c, RGB_WHITE, glow / 5);
+        pal15[i] = Tapu_Blend(c, RGB_WHITE, flash);
+    }
+    // palet 14: het motief, een lichtgolf die rondloopt; op de beat licht alles op
+    cyc = t / ti->cycleSpeed;
+    for (i = 1; i <= 8; i++)
+    {
+        s32 k = sTapuCycle[(i - 1 - cyc) & 7] + glow / 2;
+        if (task->tTapuId == TAPU_KOKO && task->tTapuPulse >= 14)
+            k = 16; // bliksemflits
+        k = min(k, 16) * bgLevel / 16;
+        pal14[i] = Tapu_Blend(Tapu_Blend(ti->dark, ti->motif, k), RGB_WHITE, flash);
+    }
+    gPlttBufferFaded[0] = Tapu_Blend(ti->dark, RGB_WHITE, flash); // achtergrondkleur
+    if (task->tTapuPulse > 0)
+        task->tTapuPulse -= 2;
+
+    // per beeldlijn horizontaal (golf / sprongen) en verticaal (vallen, stijgen, trillen)
+    sTransitionData->VBlank_DMA = FALSE;
+    if (task->tTapuId == TAPU_KOKO)
+    {
+        for (i = 0; i < DISPLAY_HEIGHT; i += 4)
+        {
+            s32 o = wave ? (s32)(Random() % (2 * wave + 1)) - wave : 0;
+            if (task->tTapuPulse >= 12 && (Random() & 1))
+                o += (Random() & 3) - 1;
+            hofs[i] = hofs[i + 1] = hofs[i + 2] = hofs[i + 3] = o;
+        }
+    }
+    else
+    {
+        s32 amp = wave + (task->tTapuId == TAPU_LELE ? task->tTapuPulse / 5 : task->tTapuId == TAPU_FINI ? task->tTapuPulse / 6 : 0);
+        task->tTapuSin += (task->tTapuId == TAPU_FINI) ? 3 : 8;
+        SetSinWave(hofs, 0, task->tTapuSin, task->tTapuId == TAPU_FINI ? 3 : 6, amp, DISPLAY_HEIGHT);
+    }
+    if (shake)
+    {
+        s32 o = (t & 1) ? shake : -shake;
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            hofs[i] += o;
+    }
+    sTransitionData->VBlank_DMA = TRUE;
+
+    {
+        s32 vofs = task->tTapuPos >> 4;
+        if (task->tTapuId == TAPU_BULU && task->tTapuLanded && task->tTapuPos > 0)
+            task->tTapuPos = max(0, task->tTapuPos - 6);
+        SetGpuReg(REG_OFFSET_BG0VOFS, vofs & 0x1FF);
+    }
+    task->tTapuTimer++;
+}
+
+// de taakfunctie blijft per Tapu dezelfde (Transition_WaitForMain zoekt erop)
+static void Tapu_Run(u8 taskId, s16 which)
+{
+    gTasks[taskId].tTapuId = which;
+    Tapu_Update(taskId);
+}
+
+static void Task_TapuKoko(u8 taskId) { Tapu_Run(taskId, TAPU_KOKO); }
+static void Task_TapuLele(u8 taskId) { Tapu_Run(taskId, TAPU_LELE); }
+static void Task_TapuBulu(u8 taskId) { Tapu_Run(taskId, TAPU_BULU); }
+static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
+
+#undef tTapuState
+#undef tTapuTimer
+#undef tTapuPulse
+#undef tTapuId
+#undef tTapuHidden
+#undef tTapuPos
+#undef tTapuVel
+#undef tTapuSin
+#undef tTapuLast
+#undef tTapuLanded

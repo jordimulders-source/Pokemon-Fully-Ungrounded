@@ -500,6 +500,28 @@ void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCa
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
 }
 
+// Project Grounded: de Tapu's (eigen intro per Tapu, eindigt op de grote drumslag van hun thema)
+#ifdef MUS_GROUNDED_VS_TAPU
+#define TAPU_BATTLE_MUSIC MUS_GROUNDED_VS_TAPU
+#else
+#define TAPU_BATTLE_MUSIC MUS_RG_VS_LEGEND
+#endif
+
+static enum BattleTransition GetTapuBattleTransition(void)
+{
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
+    {
+    case SPECIES_TAPU_LELE:
+        return B_TRANSITION_TAPU_LELE;
+    case SPECIES_TAPU_BULU:
+        return B_TRANSITION_TAPU_BULU;
+    case SPECIES_TAPU_FINI:
+        return B_TRANSITION_TAPU_FINI;
+    default:
+        return B_TRANSITION_TAPU_KOKO;
+    }
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();
@@ -577,18 +599,6 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; de wazige overgang is stoom
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_TAPU_KOKO: // Project Grounded: Tapu-eiland, elke beschermgeest een vanilla-overgang in zijn element
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND); // bliksemschichten
-        break;
-    case SPECIES_TAPU_LELE:
-        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND); // psychische draaikolk
-        break;
-    case SPECIES_TAPU_BULU:
-        CreateBattleStartTask(B_TRANSITION_SHUFFLE, MUS_RG_VS_LEGEND); // het woud schuift dicht
-        break;
-    case SPECIES_TAPU_FINI:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND); // de lagune
-        break;
     case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; golvend als een droom
         CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
         break;
@@ -606,6 +616,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MUNKIDORI:
     case SPECIES_FEZANDIPITI:
         CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_TAPU_KOKO: // Project Grounded: de Tapu's, gesloten schild dat op de drumslag opengaat
+    case SPECIES_TAPU_LELE:
+    case SPECIES_TAPU_BULU:
+    case SPECIES_TAPU_FINI:
+        CreateBattleStartTask(GetTapuBattleTransition(), TAPU_BATTLE_MUSIC);
         break;
     case SPECIES_OGERPON_TEAL: // Project Grounded: Ogerpon in Fortree Jungle, door het regenwoud
     case SPECIES_OGERPON_WELLSPRING:
@@ -946,6 +962,11 @@ enum BattleTransition GetWildBattleTransition(void)
     // Project Grounded: sommige wilde Pokemon hebben hun eigen transitie
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
     {
+    case SPECIES_TAPU_KOKO:
+    case SPECIES_TAPU_LELE:
+    case SPECIES_TAPU_BULU:
+    case SPECIES_TAPU_FINI:
+        return GetTapuBattleTransition();
     case SPECIES_PIKACHU:
         return B_TRANSITION_PIKACHU;
     case SPECIES_MAGIKARP:

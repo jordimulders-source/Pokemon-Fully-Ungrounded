@@ -124,6 +124,10 @@ enum BattleTransition
     B_TRANSITION_GYM_BRAWLY, // Project Grounded: Brawly, UFC-walkout, octagon, omroeperbalk, vuist tegen het kooigaas
     B_TRANSITION_GYM_WATTSON, // Project Grounded: Wattson, serverfarm, pop-ups, WATTCOIN crasht, SCAM-stempel, Wahahahah!
     B_TRANSITION_GYM_FLANNERY, // Project Grounded: Flannery, camping, Mt. Chimney ontploft, een lavasteen raakt de camera
+    B_TRANSITION_TAPU_KOKO, // Project Grounded: Tapu's, gesloten schild op het motief van het schild, opent op de drumslag
+    B_TRANSITION_TAPU_LELE,
+    B_TRANSITION_TAPU_BULU,
+    B_TRANSITION_TAPU_FINI,
     B_TRANSITION_COUNT
 };
 

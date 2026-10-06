@@ -110,7 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
-| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v5 wacht op Jordi (v4 goedgekeurd behalve de synth: maat 9-12 nu een opbouwend akkoord E3+E4 / +B3 / E4->F4, B3+F4 liggend tot 13:0, op een eigen synth-brass; HIT 5,54 s) | "Tapu" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v6 wacht op Jordi (v5-akkoord blijft; maat 11-12 nu met de climax-figuur D#5-E5 A#5-B5 E6 F6 op een eigen lead `tapu_lead`, spoor 'pips'; HIT 5,54 s) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 GEPAUZEERD (Jordi: dof, percussie stotterig; volgende sessie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
@@ -606,3 +606,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   v4 maakte er 16 losse 16en van in een eenstemmige lijn (= 'gehaast'). Klank op het harmonischenprofiel gekozen (zwakke
   grondtoon, top op 2e-3e harmonische = synth-brass; eigen sample: 5 ontstemde stemmen, exacte loop, heldere variant
   via programmawissel). Chroma per 16e (FluidR3 vs stem) 0,60 -> 0,88; A-gewogen spectrum game vs stem r = 0,98.
+- Tapu v6 (Jordi over v5: 'vanaf 5 s mis ik het stuk dat de climax verzorgt' + neurie): **een figuur boven een liggend
+  akkoord zoek je met grondtonen t.o.v. het akkoord, niet met piek/pyin per band**: de noten E5/F5/E6/F6 zijn ook
+  boventonen van E3/B3/F4. Werkwijze: FFT per kandidaat-noot (h1 en h2) in het venster tegen een akkoord-only-venster
+  (10:12-10:15): de grondtoon van de figuur stijgt +7..+15 dB, een boventoon van het akkoord niet. Zo ook het octaaf
+  bepalen (E5 op x:0, E6 op x:4; A#4 stijgt niet, A#5 wel). Spleeter zette de hoge helft van de figuur in 'vocals'
+  (stem 'vocals' +12 dB in maat 11). Een tritonus in een neurie is octaaf-dubbelzinnig (A2 onder E3 = A#5 boven E5).
+

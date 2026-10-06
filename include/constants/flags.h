@@ -1276,13 +1276,13 @@
 #define FLAG_HIDDEN_ITEM_SCORCHED_SLAB_BIG_NUGGET                   0x4C6 // Project Grounded: Scorched Slab
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
+#define FLAG_HIDDEN_ITEM_SHIPWRECK_SHOALS_BIG_PEARL                 0x4C9 // Project Grounded: Shipwreck Shoals, verborgen Big Pearl
+#define FLAG_ITEM_SHIPWRECK_SHOALS_REAPER_CLOTH                     0x4CA // Project Grounded: Shipwreck Shoals, Reaper Cloth op de ondiepte
+#define FLAG_GHOST_SHIP_PIECE_BIN                                   0x4CB // Project Grounded: spookschip, kaartstuk uit de prullenbak van de kapitein
+#define FLAG_GHOST_SHIP_PIECE_CABIN                                 0x4CC // Project Grounded: spookschip, kaartstuk in de hut (ook verbergflag van het object)
+#define FLAG_GHOST_SHIP_PIECE_MORGAN                                0x4CD // Project Grounded: spookschip, kaartstuk van Morgan (na het gevecht)
+#define FLAG_GHOST_SHIP_MAP_RETURNED                                0x4CE // Project Grounded: schatkaart terug bij kapitein Grimsby (na het gevecht)
+#define FLAG_SHIPWRECK_TREASURE_FOUND                               0x4CF // Project Grounded: schat van Grimsby opgegraven (Shipwreck Shoals)
 #define FLAG_DEFEATED_ZARUDE                                        0x4D0 // Project Grounded: Zarude gevangen of verslagen (Fortree Jungle; verslagen = terug na de League)
 #define FLAG_CAUGHT_ZARUDE                                          0x4D1 // Project Grounded: Zarude gevangen
 #define FLAG_HIDE_FORTREE_JUNGLE_ZARUDE                             0x4D2 // Project Grounded: Zarude-object in de boomkruin (verborgen tot de scene)

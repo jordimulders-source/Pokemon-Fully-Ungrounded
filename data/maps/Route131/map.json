@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_SHIPWRECK_SHOALS",
+      "offset": 18,
+      "direction": "down"
+    },
+    {
       "map": "MAP_PACIFIDLOG_TOWN",
       "offset": 0,
       "direction": "left"

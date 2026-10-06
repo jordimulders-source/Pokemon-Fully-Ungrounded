@@ -2322,6 +2322,35 @@
           }
         },
         {
+          "map": "MAP_SHIPWRECK_SHOALS",
+          "base_label": "gShipwreckShoals",
+          "water_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              { "min_level": 44, "max_level": 48, "species": "SPECIES_JELLICENT" },
+              { "min_level": 44, "max_level": 48, "species": "SPECIES_LANTURN" },
+              { "min_level": 46, "max_level": 50, "species": "SPECIES_GOLISOPOD" },
+              { "min_level": 46, "max_level": 50, "species": "SPECIES_DHELMISE" },
+              { "min_level": 48, "max_level": 50, "species": "SPECIES_CURSOLA" }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              { "min_level": 20, "max_level": 25, "species": "SPECIES_FRILLISH" },
+              { "min_level": 20, "max_level": 25, "species": "SPECIES_CHINCHOU" },
+              { "min_level": 33, "max_level": 37, "species": "SPECIES_CORSOLA_GALAR" },
+              { "min_level": 35, "max_level": 40, "species": "SPECIES_QWILFISH_HISUI" },
+              { "min_level": 38, "max_level": 42, "species": "SPECIES_HUNTAIL" },
+              { "min_level": 42, "max_level": 46, "species": "SPECIES_RELICANTH" },
+              { "min_level": 42, "max_level": 46, "species": "SPECIES_BRUXISH" },
+              { "min_level": 44, "max_level": 48, "species": "SPECIES_GOREBYSS" },
+              { "min_level": 45, "max_level": 48, "species": "SPECIES_OVERQWIL" },
+              { "min_level": 48, "max_level": 50, "species": "SPECIES_DONDOZO" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE132",
           "base_label": "gRoute132",
           "land_mons": {

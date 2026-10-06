@@ -244,3 +244,6 @@ const u16 gMetatiles_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorch
 const u16 gMetatileAttributes_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorched_slab/metatile_attributes.bin");
 const u16 gMetatiles_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatiles.bin");
 const u16 gMetatileAttributes_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatile_attributes.bin");
+
+const u16 gMetatiles_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatiles.bin");
+const u16 gMetatileAttributes_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatile_attributes.bin");

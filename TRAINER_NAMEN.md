@@ -96,6 +96,8 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F + Stadium (`PARTNER_STADIUM_DAVE`) |
 | Mitch | `TRAINER_MITCH` | `TRAINER_SAMUEL` | 81 | 0x551 | Cooltrainer, Victory Road B1F + Stadium (`PARTNER_STADIUM_MITCH`) |
 | SickBlik | `TRAINER_SICKBLIK` | `TRAINER_OWEN` | 83 | 0x553 | Cooltrainer, Victory Road B2F + Stadium (`PARTNER_STADIUM_SICKBLIK`) |
+| Kapitein Grimsby | `TRAINER_GRIMSBY` | (nieuw) | 1054 | 0x91E | Sailor, spookschip S.S. AGAVE (`GhostShip_CaptainsOffice`, 's nachts via Shipwreck Shoals) + Stadium (`PARTNER_STADIUM_GRIMSBY`) |
+| Spookzeelieden Silas, Morgan, Ned, Percy | `TRAINER_GHOST_SAILOR_SILAS` … `_PERCY` | (nieuw) | 1050–1053 | 0x91A–0x91D | spookschip (dek, gang, hutten) |
 
 De scriptlabels volgen dezelfde namen (bijv. `PetalburgCity_Gym_EventScript_GiHun`,
 `DewfordTown_Gym_EventScript_CheckRomero`, `VictoryRoad_B2F_EventScript_SickBlik`); de tekstlabels niet (zie boven).

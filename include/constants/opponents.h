@@ -1066,7 +1066,14 @@
 #define TRAINER_PLASMA_ZINZOLIN             1041 // ruim (dubbel met Rood)
 #define TRAINER_PLASMA_ROOD                 1042 // ruim (dubbel met Zinzolin)
 
-#define TRAINERS_COUNT                      1043
+// 1034-1049: vrij gehouden voor andere agents (zee)
+#define TRAINER_GHOST_SAILOR_SILAS          1050 // Project Grounded: spookschip S.S. AGAVE, dek (uitkijk)
+#define TRAINER_GHOST_SAILOR_MORGAN         1051 // Project Grounded: spookschip, dek (heeft een kaartstuk)
+#define TRAINER_GHOST_SAILOR_NED            1052 // Project Grounded: spookschip, gang (kok)
+#define TRAINER_GHOST_SAILOR_PERCY          1053 // Project Grounded: spookschip, hutten
+#define TRAINER_GRIMSBY                     1054 // Project Grounded: kapitein Grimsby (spookschip); Battle Stadium
+
+#define TRAINERS_COUNT                      1055
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

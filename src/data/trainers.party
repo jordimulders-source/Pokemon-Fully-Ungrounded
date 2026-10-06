@@ -35928,3 +35928,197 @@ Nature: Modest
 - Psyshock
 - Focus Blast
 - Recover
+
+=== TRAINER_GHOST_SAILOR_SILAS ===
+Name: SILAS
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Drifblim
+Level: 48
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hex
+- Air Slash
+- Will-O-Wisp
+- Strength Sap
+
+Pelipper
+Level: 48
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hurricane
+- Scald
+- Roost
+- Tailwind
+
+Sharpedo
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Liquidation
+- Crunch
+- Ice Fang
+- Aqua Jet
+
+=== TRAINER_GHOST_SAILOR_MORGAN ===
+Name: MORGAN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Cofagrigus
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Nasty Plot
+
+Barraskewda
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Liquidation
+- Psychic Fangs
+- Close Combat
+- Aqua Jet
+
+Jellicent
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hex
+- Scald
+- Recover
+- Will-O-Wisp
+
+=== TRAINER_GHOST_SAILOR_NED ===
+Name: NED
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Clawitzer
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Water Pulse
+- Dark Pulse
+- Aura Sphere
+- Dragon Pulse
+
+Banette
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Claw
+- Knock Off
+- Gunk Shot
+- Sucker Punch
+
+Golurk
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Earthquake
+- Shadow Punch
+- Ice Punch
+- Rock Slide
+
+Polteageist
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Stored Power
+
+=== TRAINER_GHOST_SAILOR_PERCY ===
+Name: PERCY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Toxapex
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Scald
+- Toxic
+- Recover
+- Baneful Bunker
+
+Palossand
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Stealth Rock
+
+Sableye
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Knock Off
+- Will-O-Wisp
+- Recover
+- Shadow Claw
+
+=== TRAINER_GRIMSBY ===
+Name: GRIMSBY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Wailord @ Sitrus Berry
+Level: 51
+Ability: Multiscale
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Spout
+- Ice Beam
+- Heavy Slam
+- Rest
+
+Cursola @ Focus Sash
+Level: 51
+Ability: Weak Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hex
+- Will-O-Wisp
+- Power Gem
+- Earth Power
+
+Basculegion @ Mystic Water
+Level: 52
+Ability: Adaptability
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wave Crash
+- Phantom Force
+- Aqua Jet
+- Crunch
+
+Gengar @ Black Sludge
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Destiny Bond
+
+Dhelmise @ Life Orb
+Level: 53
+Ability: Steelworker
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Phantom Force
+- Power Whip
+- Earthquake

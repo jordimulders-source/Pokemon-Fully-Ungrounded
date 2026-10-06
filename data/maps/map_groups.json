@@ -699,6 +699,11 @@
     "NothingIsland",
     "PlasmaFrigate_Corridor",
     "PlasmaFrigate_Cabins",
-    "PlasmaFrigate_Hold"
+    "PlasmaFrigate_Hold",
+    "ShipwreckShoals",
+    "GhostShip_Deck",
+    "GhostShip_Corridors",
+    "GhostShip_Cabins",
+    "GhostShip_CaptainsOffice"
   ]
 }

@@ -110,7 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
-| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v6 wacht op Jordi (v5-akkoord blijft; maat 11-12 nu met de climax-figuur D#5-E5 A#5-B5 E6 F6 op een eigen lead `tapu_lead`, spoor 'pips'; HIT 5,54 s) | "Tapu" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v6 GOEDGEKEURD en gekoppeld (Jordi, 6 okt) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 GEPAUZEERD (Jordi: dof, percussie stotterig; volgende sessie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |

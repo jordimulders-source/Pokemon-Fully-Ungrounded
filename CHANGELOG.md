@@ -17211,3 +17211,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.139] - Battle! Tapu v6 (climax van de intro)
 - In maat 11 en 12 staat nu de snelle climax-figuur (Jordi's neurie) bovenop het liggende akkoord: D#5 (val-in) – E5 – A#5 – B5 – E6 – F6 aangehouden, het motief E-B-E-F in achtsten, twee octaven hoger. v5 miste hem: hij ligt op 620–1430 Hz (boven het akkoord) en zat in de 'vocals'-stem.
 - Eigen zachte synth-lead (`tapu_lead`, 11 KB) op het spoor dat tot maat 41 stil was. De rest is ongewijzigd.
+
+### [v0.9.140] - Battle! Tapu goedgekeurd en gekoppeld
+- Jordi: "dit is hem". `MUS_GROUNDED_VS_TAPU` speelt nu bij alle vier de Tapu-gevechten; de Tapu-intro's eindigen op de eerste grote slag (5,54 s).

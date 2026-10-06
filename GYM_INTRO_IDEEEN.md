@@ -1,5 +1,9 @@
 # Gymleider-intro's: ideeën (6 okt, voor Jordi)
-Per gymleider één filmintro (±3–4 s), gebaseerd op hun eigen teksten en gym in deze romhack. Zuinig: ±40–80 KB per stuk (veel stilstaande achtergrond, echte game-art). Kies per leider: ja / nee / anders.
+Per gymleider één filmintro (±3–4 s), gebaseerd op hun eigen teksten en gym in deze romhack. Zuinig: ±40–80 KB per stuk (veel stilstaande achtergrond, echte game-art). **Jordi (6 okt): alle acht ja, met deze wijzigingen:**
+- **Wattson:** veel meer een meme: alles wat hij doet is een scam. Chaotischer, met meer elementen uit zijn gym (serverfarm, crypto, influencers, rigged doors, rugpulls).
+- **Flannery:** een camping met een tentje; op de achtergrond ontploft een vulkaan en een stuk vulkanisch gesteente raakt de camera.
+- **Tate & Liza:** tarotkaarten, ouijaborden en allerlei andere vage spirituele shit, uitlopend op een psychic overload.
+
 
 | Leider | Idee | Kosten |
 |---|---|---|

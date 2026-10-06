@@ -670,7 +670,7 @@
 #define FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA 0x26F // Project Grounded: wordt elke keer in OnTransition gezet/gewist
 #define FLAG_HIDE_MOSSDEEP_ZINNIA   0x270 // Project Grounded: Zinnia in Mossdeep (Delta Episode); in OnTransition gezet/gewist
 #define FLAG_NEW_MAUVILLE_VAULT_OPEN  0x271 // Project Grounded: serverkluis onder New Mauville herstart (terminal in de Raikou-grot), deur naar Genesect open
-#define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static) in de serverkluis onder New Mauville
+#define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static), sinds v0.9.110 in het ruim van de Plasma Frigate (Nothing Island)
 #define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
 #define FLAG_ITEM_UNKNOWN_CAVE_1F_MAX_REVIVE  0x274 // Project Grounded: item in de verborgen grot achter Meteor Falls (1F)
 #define FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR  0x275 // Project Grounded: item in de verborgen grot achter Meteor Falls (B1F)
@@ -715,7 +715,7 @@
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
 #define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
+#define FLAG_ITEM_PLASMA_FRIGATE_MAX_REVIVE 0x29F // Project Grounded (was 0x2B9; botste met eb en vloed)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_RARE_CANDY 0x2A0 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_STAR_PIECE 0x2A1 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_HIDDEN_FALLS_DRAGON_SCALE 0x2A2 // Project Grounded: Meteor Falls (diepte)
@@ -737,10 +737,10 @@
 #define FLAG_ITEM_TOADSTOOL_HOLLOW_MISTY_SEED  0x2B2 // Project Grounded: Toadstool Hollow
 #define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_BALM_MUSHROOM  0x2B3 // Project Grounded: Toadstool Hollow (midden van de heksenkring)
 #define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_TINY_MUSHROOM  0x2B4 // Project Grounded: Toadstool Hollow (einde van een stam)
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
+#define FLAG_HIDE_PLASMA_ISLAND_CREW  0x2B5 // Project Grounded: Neo Plasma-grunts en Nigel op Nothing Island (in OnTransition: gezet zolang VAR_PLASMA_FRIGATE 0 is)
+#define FLAG_HIDE_PLASMA_TRIAD        0x2B6 // Project Grounded: Shadow Triad bij het luik van de Plasma Frigate (verdwijnt na het gevecht)
+#define FLAG_HIDE_PLASMA_BOSSES       0x2B7 // Project Grounded: Zinzolin en Rood in het ruim (weg na het Genesect-gevecht)
+#define FLAG_ITEM_PLASMA_FRIGATE_PP_MAX     0x2B8 // Project Grounded
 #define FLAG_HIDDEN_ITEM_ROUTE_132_STAR_PIECE  0x2B9 // Project Grounded: wad Route 132 (alleen bij eb)
 #define FLAG_HIDDEN_ITEM_ROUTE_132_BIG_PEARL  0x2BA // Project Grounded: wad Route 132 (alleen bij eb)
 #define FLAG_TIDE_HIGH  0x2BB // Project Grounded: vloed op Route 132 (gezet bij binnenkomst, oneven uur)

@@ -35414,3 +35414,517 @@ Nature: Timid
 - Flamethrower
 - Sludge Bomb
 - Focus Blast
+
+=== TRAINER_PLASMA_ISLE_LOOKOUT ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Unfezant @ Scope Lens
+Level: 66
+Ability: Super Luck
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brave Bird
+- Night Slash
+- U-turn
+- Roost
+
+Gigalith @ Smooth Rock
+Level: 66
+Ability: Sand Stream
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stone Edge
+- Earthquake
+- Heavy Slam
+- Stealth Rock
+
+Sawk @ Focus Sash
+Level: 66
+Ability: Sturdy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Knock Off
+- Poison Jab
+- Bulk Up
+
+Druddigon @ Rocky Helmet
+Level: 67
+Ability: Rough Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Outrage
+- Gunk Shot
+- Sucker Punch
+- Glare
+
+=== TRAINER_PLASMA_ISLE_GUARD ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Zebstrika @ Life Orb
+Level: 66
+Ability: Lightning Rod
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wild Charge
+- Flare Blitz
+- High Horsepower
+- Volt Switch
+
+Cofagrigus @ Leftovers
+Level: 66
+Ability: Mummy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Nasty Plot
+- Energy Ball
+
+Leavanny @ Focus Sash
+Level: 66
+Ability: Swarm
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- X-Scissor
+- Swords Dance
+- Knock Off
+
+Eelektross @ Assault Vest
+Level: 67
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+=== TRAINER_PLASMA_NIGEL ===
+Name: NIGEL
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 68
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+Excadrill @ Choice Scarf
+Level: 68
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Iron Head
+- Rock Slide
+- X-Scissor
+
+Escavalier @ Assault Vest
+Level: 68
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Megahorn
+- Iron Head
+- Drill Run
+- Knock Off
+
+Ferrothorn @ Leftovers
+Level: 68
+Ability: Iron Barbs
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Spikes
+
+Haxorus @ Life Orb
+Level: 69
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Dragon Dance
+- Outrage
+- Earthquake
+- Poison Jab
+
+=== TRAINER_PLASMA_GUARD_RED ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Darmanitan @ Choice Band
+Level: 67
+Ability: Sheer Force
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flare Blitz
+- U-turn
+- Rock Slide
+- Earthquake
+
+Heatmor @ Life Orb
+Level: 67
+Ability: Flash Fire
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flamethrower
+- Sucker Punch
+- Giga Drain
+- Focus Blast
+
+Emboar @ Leftovers
+Level: 67
+Ability: Blaze
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flare Blitz
+- Close Combat
+- Wild Charge
+- Sucker Punch
+
+Volcarona @ Heavy-Duty Boots
+Level: 68
+Ability: Flame Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+=== TRAINER_PLASMA_GUARD_BLUE ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Seismitoad @ Leftovers
+Level: 67
+Ability: Poison Touch
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Scald
+- Earth Power
+- Sludge Wave
+- Stealth Rock
+
+Jellicent @ Leftovers
+Level: 67
+Ability: Cursed Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Scald
+- Shadow Ball
+- Will-O-Wisp
+- Recover
+
+Carracosta @ White Herb
+Level: 67
+Ability: Solid Rock
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shell Smash
+- Liquidation
+- Stone Edge
+- Aqua Jet
+
+Samurott @ Life Orb
+Level: 68
+Ability: Torrent
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Swords Dance
+- Razor Shell
+- Megahorn
+- Aqua Jet
+
+=== TRAINER_PLASMA_GUARD_WHITE ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Glalie @ Never-Melt Ice
+Level: 67
+Ability: Refrigerate
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Body Slam
+- Earthquake
+- Crunch
+- Spikes
+
+Walrein @ Leftovers
+Level: 67
+Ability: Thick Fat
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Ice Beam
+- Surf
+- Super Fang
+- Protect
+
+Avalugg @ Rocky Helmet
+Level: 67
+Ability: Sturdy
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Avalanche
+- Body Press
+- Rapid Spin
+- Recover
+
+Beartic @ Choice Band
+Level: 68
+Ability: Slush Rush
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Icicle Crash
+- Superpower
+- Aqua Jet
+- Stone Edge
+
+=== TRAINER_PLASMA_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Banette @ Focus Sash
+Level: 69
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Will-O-Wisp
+- Poltergeist
+- Knock Off
+- Destiny Bond
+
+Absol @ Life Orb
+Level: 69
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Greninja @ Expert Belt
+Level: 69
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 69
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Honchkrow @ Choice Band
+Level: 69
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Superpower
+
+Bisharp @ Eviolite
+Level: 69
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_PLASMA_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Froslass @ Focus Sash
+Level: 70
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Spikes
+- Ice Beam
+- Shadow Ball
+- Destiny Bond
+
+Cryogonal @ Light Clay
+Level: 70
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Abomasnow @ Leftovers
+Level: 70
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Giga Drain
+- Earth Power
+- Ice Shard
+
+Vanilluxe @ Choice Specs
+Level: 70
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Mamoswine @ Life Orb
+Level: 70
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Weavile @ Razor Claw
+Level: 70
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== TRAINER_PLASMA_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Audino @ Leftovers
+Level: 70
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Wish
+- Protect
+- Heal Bell
+- Knock Off
+
+Alomomola @ Rocky Helmet
+Level: 70
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Scald
+- Wish
+- Protect
+- Toxic
+
+Mandibuzz @ Leftovers
+Level: 70
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Musharna @ Leftovers
+Level: 70
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+Nature: Bold
+- Calm Mind
+- Moonblast
+- Psyshock
+- Moonlight
+
+Gothitelle @ Choice Scarf
+Level: 70
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 70
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover

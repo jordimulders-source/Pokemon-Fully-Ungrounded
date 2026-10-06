@@ -112,6 +112,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_IVAN, COMPOUND_STRING("IVAN the FISHERMAN! Very rare fishies.\nHis MAGIKARP knows HYDRO PUMP.")},
     {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("JOHNSON! Tik tok, tik tok. Nobody knows\nwhat happens next. Not even him.")},
     {TRAINER_STADIUM_LYLE, COMPOUND_STRING("LYLE! His brother's bugs, finally\ntrained! IVs: still zero. Heart: maxed.")},
+    {TRAINER_PLASMA_NIGEL, COMPOUND_STRING("NIGEL, NEO PLASMA's Head of Logistics!\nHe signed for a GENESECT.")},
     {TRAINER_VICTORY_V, COMPOUND_STRING("V! Only POKéMON with a V! VOLCARONA!\nVIKAVOLT! VICTORY? We'll see.")},
     {TRAINER_BRENDAN_ROUTE_136_TREECKO, COMPOUND_STRING("BRENDAN! Your rival. Still salty about\nwhich starter you picked.")},
     {TRAINER_MAY_ROUTE_136_TORCHIC, COMPOUND_STRING("MAY! Your rival. She swears she's better\nat this than you. Prove it.")},

@@ -112,7 +112,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
-| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
+| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 wacht op Jordi (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 wacht op Jordi (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
@@ -562,3 +562,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   snareroffel, aanzwellende paukenroffel, strijkersloop omhoog) met een **accelerando per tel** 144 -> 164 (maat 18-19),
   C en D op 164. **Tempo terugzetten op het loopbegin**: een TEMPO-event op dezelfde tick als de '['-marker komt in de
   .s ná het loop-label (controleer `grep TEMPO` + `_B1:`), anders blijft de loop op 164. -V078: 0 overlopen, piek 86.
+- Forces v2 (Jordi: 'klinkt heel erg als Megaman, alsof dit voor een SNES is'; Tornadus 'gedragen door dat hoge fluitje,
+  wimpy'; Thundurus 'voller GBA-sound'; Landorus 'saai, een aankondiging i.p.v. een battle theme'): **chiptune-gevoel =
+  PSG-blokgolfleads/-arpeggio's/-echo + PSG-ruis als snare** -> weg (PSG alleen nog als sub en voor wind/bliksem); lead
+  = trompet + strijkers unisono, hoorns als tweede stem, echte snare (rnd + orkest). **Solo A-gewogen meten per laag**
+  (scratch `solo_aw.py`, volX = 0 op de rest): de spiccato-ostinato's waren -18 dB (0-1%) = onhoorbaar, door de
+  keysplit-envelope (sustain 0) en een te lage ligging (D3, A-weging); nu sustain 255/release 110, een octaaf hoger,
+  spoor 127. **Kanaalroof door lagen stapelen**: kick op de taikoslagen, extra crashes en een koor naast een
+  tegenmelodie kostten 60% van het koor; per sectie kiezen (a2 tegenmelodie, C koor) i.p.v. alles tegelijk.
+  **Stereo**: nieuwe saves staan op Mono (`new_game.c`), dus pan-spreiding hoort alleen wie Stereo kiest.

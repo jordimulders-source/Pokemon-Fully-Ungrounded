@@ -46,7 +46,7 @@ voice_group grounded_forces
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 42
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 90  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 200  @ 47
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48

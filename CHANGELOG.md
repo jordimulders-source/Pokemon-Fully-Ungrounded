@@ -17187,3 +17187,12 @@ Volgens Jordi's GBA-instructies per leider:
 - De synth (Jordi's neurie, maat 9–12 = 11,8–17,3 s): eigen zaagtand-sample `tapu_synth` (6,5 KB), stijgende lijn E3–B3–E4–F4 met trillers, luidste laag op die plek, met een PSG-puls eronder.
 - Baslijn opnieuw uitgeschreven (per maat 75% → 83% gelijk aan het origineel), nu een synthbas. Drums harder met kick op 1 en 3, hats vanaf maat 13, taikomotief volgens het gemeten patroon.
 - Nog niet aan de gevechten gekoppeld.
+
+### [v0.9.136] - Legendary-intro's: Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature
+- Vijf lichte intro's (samen ±49 KB, `src/data/legend_intros.h`, `tools/grounded/legend_intros.py`):
+  - **Lugia** (3,6 s): zinken, lichtbundels doven, bubbels, een zilveren veer dwarrelt omlaag; in het donker gaat een gloeiend ooglid open over Lugia's kop, draaikolk, het beeld kantelt de storm in, bliksem, wit.
+  - **Ho-Oh** (3,2 s): Bell Tower bij schemering met sintels en klokgelui, een regenboog veegt over het beeld, een vlammenmuur waaruit Ho-Oh opstijgt, gouden veren als vleugels.
+  - **Volcanion** (3,0 s): manometer ("fine / hm / NOPE", "DO NOT TAP THE GLASS"), de naald kruipt het rood in, klinknagels schieten eruit, stoom van beide kanten tot alles wit is.
+  - **Hoopa** (3,8 s): ringportaal opent, er vallen items uit, een Wailord zwemt achter de ring langs ("past er niet door"), een Magikarp floept eruit, Hoopa kijkt door de ring en zijn hand grijpt de camera.
+  - **Forces of Nature** (3,3 s): weerbericht "HOENN WEATHER / LIVE" ontspoort: Tornadus scheurt de kaart weg, Thundurus slaat drie keer in, Landorus laat de grond barsten met een kaartje "LANDORUS-T / OU usage: very yes / Counterplay: lol".
+- Lugia en Ho-Oh met hun eigen thema; de Forces elk hun eigen thema. Hoopa en de Forces staan in de battle tester.

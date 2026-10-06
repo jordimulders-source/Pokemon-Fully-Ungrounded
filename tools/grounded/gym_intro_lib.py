@@ -183,9 +183,10 @@ def scale(img, k):
 
 # ------------------------------------------------------------------ omzetten naar tiles en tilemaps
 class Encoder:
-    def __init__(self, name, pals):
-        """pals: drie lijsten van max. 15 kleuren (BG-palet 13, 14, 15)."""
+    def __init__(self, name, pals, prefix='gym_'):
+        """pals: drie lijsten van max. 15 kleuren (BG-palet 13, 14, 15). prefix: begin van de bestandsnamen."""
         self.name = name
+        self.prefix = prefix
         self.pals = [pad16(p) for p in pals]
         self.tiles = [np.zeros(64, np.uint8)]
         self.index = {self.tiles[0].tobytes(): (0, 0)}
@@ -255,14 +256,14 @@ class Encoder:
         for i, t in enumerate(tiles):
             img.paste(Image.fromarray(t.reshape(8, 8)), ((i % cols) * 8, (i // cols) * 8))
         img.putpalette([v for c in self.pals[2] for v in c] + [0] * (768 - 48))
-        img.save(OUT + 'gym_%s.png' % self.name)
-        with open(OUT + 'gym_%s.pal' % self.name, 'w', newline='\r\n') as fp:
+        img.save(OUT + '%s%s.png' % (self.prefix, self.name))
+        with open(OUT + '%s%s.pal' % (self.prefix, self.name), 'w', newline='\r\n') as fp:
             fp.write('JASC-PAL\n0100\n48\n')
             for pal in self.pals:
                 for c in pal:
                     fp.write('%d %d %d\n' % c)
         allm = sum(self.maps, [])
-        open(OUT + 'gym_%s_%s.bin' % (self.name, maps_name), 'wb').write(struct.pack('<%dH' % len(allm), *allm))
+        open(OUT + '%s%s_%s.bin' % (self.prefix, self.name, maps_name), 'wb').write(struct.pack('<%dH' % len(allm), *allm))
         print('%s: %d tiles, %d tilemap-vakken' % (self.name, len(tiles), len(allm)))
         assert len(tiles) <= 700, len(tiles)  # noqa
 
@@ -285,7 +286,7 @@ class Encoder:
 
 
 # ------------------------------------------------------------------ sprites
-def save_sprite(name, img, bg=KEY):
+def save_sprite(name, img, bg=KEY, prefix='gym_'):
     """img: PIL RGB met KEY als doorzichtig; max. 15 kleuren. Schrijft gym_<name>.png/.pal (4bpp-tiles in 8x8-volgorde
     zoals gbagfx ze uit een png van w x h leest)."""
     a = np.array(img.convert('RGB'))
@@ -303,8 +304,8 @@ def save_sprite(name, img, bg=KEY):
             c = gba(a[y, x])
             px[x, y] = 0 if c == gba(bg) else cols.index(c) + 1
     out.putpalette([v for c in pal for v in c] + [0] * (768 - 48))
-    out.save(OUT + 'gym_%s.png' % name)
-    with open(OUT + 'gym_%s.pal' % name, 'w', newline='\r\n') as fp:
+    out.save(OUT + '%s%s.png' % (prefix, name))
+    with open(OUT + '%s%s.pal' % (prefix, name), 'w', newline='\r\n') as fp:
         fp.write('JASC-PAL\n0100\n16\n')
         for c in pal:
             fp.write('%d %d %d\n' % c)

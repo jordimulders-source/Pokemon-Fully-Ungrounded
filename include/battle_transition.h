@@ -132,6 +132,11 @@ enum BattleTransition
     B_TRANSITION_GYM_WINONA, // Project Grounded: Winona, WINAIR: vertrekbord DELAYED -> BOARDING, Altaria vliegt over, het koffertje springt open
     B_TRANSITION_GYM_TATE_LIZA, // Project Grounded: Tate & Liza, ouijabord spelt RIP, drie tarotkaarten, psychic overload in lowercase
     B_TRANSITION_GYM_WALLACE, // Project Grounded: Wallace, Crater Pub: een wijnglas schenkt vol, de wijn wordt Hoenn-blauw, een golf over de pub, Santé!
+    B_TRANSITION_LUGIA, // Project Grounded: Lugia, zinken met een zilveren veer, een oog gaat open, draaikolk, storm
+    B_TRANSITION_HO_OH, // Project Grounded: Ho-Oh, Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels
+    B_TRANSITION_VOLCANION, // Project Grounded: Volcanion, manometer in het rood, klinknagels schieten eruit, stoom
+    B_TRANSITION_HOOPA, // Project Grounded: Hoopa, ringportaal, er valt van alles uit, de hand grijpt de camera
+    B_TRANSITION_FORCES, // Project Grounded: Tornadus/Thundurus/Landorus, een weerbericht dat ontspoort
     B_TRANSITION_COUNT
 };
 

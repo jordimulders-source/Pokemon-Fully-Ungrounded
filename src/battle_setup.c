@@ -552,11 +552,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_SPEED:
         CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
         break;
-    case SPECIES_LUGIA: // Project Grounded: eigen thema (beschermer <-> storm); transitie volgt nog
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_GROUNDED_VS_LUGIA);
+    case SPECIES_LUGIA: // Project Grounded: zinken, zilveren veer, het oog gaat open, draaikolk en storm; eigen thema
+        CreateBattleStartTask(B_TRANSITION_LUGIA, MUS_GROUNDED_VS_LUGIA);
         break;
-    case SPECIES_HO_OH: // Project Grounded: eigen thema (vurige rock + Japanse instrumenten, tools/grounded/hooh_theme.py)
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_GROUNDED_VS_HO_OH);
+    case SPECIES_HO_OH: // Project Grounded: Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels; eigen thema
+        CreateBattleStartTask(B_TRANSITION_HO_OH, MUS_GROUNDED_VS_HO_OH);
         break;
     case SPECIES_MANAPHY: // Project Grounded: zeetempel (Route 128), rimpelingen + legendary-thema
     case SPECIES_PHIONE:
@@ -598,8 +598,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
-    case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; de wazige overgang is stoom
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+    case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
+        CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; golvend als een droom
         CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
@@ -631,6 +631,22 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_OGERPON_CORNERSTONE:
         // Project Grounded: maskerkraam op een nachtfestival, het Teal-masker kijkt terug (was het regenwoud)
         CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_HOOPA_CONFINED: // Project Grounded: ringportaal, er valt van alles uit, de hand grijpt de camera
+    case SPECIES_HOOPA_UNBOUND:
+        CreateBattleStartTask(B_TRANSITION_HOOPA, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, een weerbericht dat ontspoort; elk een eigen thema
+    case SPECIES_TORNADUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_TORNADUS);
+        break;
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_THUNDURUS);
+        break;
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
     }
 
@@ -983,6 +999,22 @@ enum BattleTransition GetWildBattleTransition(void)
         return B_TRANSITION_ZANGOOSE;
     case SPECIES_SEVIPER:
         return B_TRANSITION_SEVIPER;
+    case SPECIES_LUGIA: // Project Grounded: legendary-intro's, ook als ze via een gewoon wild gevecht starten
+        return B_TRANSITION_LUGIA;
+    case SPECIES_HO_OH:
+        return B_TRANSITION_HO_OH;
+    case SPECIES_VOLCANION:
+        return B_TRANSITION_VOLCANION;
+    case SPECIES_HOOPA_CONFINED:
+    case SPECIES_HOOPA_UNBOUND:
+        return B_TRANSITION_HOOPA;
+    case SPECIES_TORNADUS_INCARNATE:
+    case SPECIES_TORNADUS_THERIAN:
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        return B_TRANSITION_FORCES;
     }
     if (routeTransition >= 0)
         return routeTransition;

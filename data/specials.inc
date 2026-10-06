@@ -615,3 +615,5 @@ gSpecials::
 	def_special Burglar_DebugForce
 	def_special ScorchedSlab_CountLitStones
 	def_special Grounded_GiantWailordSpot
+	def_special Grounded_UpdateTide
+	def_special Grounded_TideMinutesLeft

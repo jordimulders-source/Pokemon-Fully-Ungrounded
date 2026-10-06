@@ -5040,6 +5040,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route127_WellspringGrotto/border.bin",
       "blockdata_filepath": "data/layouts/Route127_WellspringGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE132_LOW_TIDE",
+      "name": "Route132_LowTide_Layout",
+      "width": 80,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/Route132/border.bin",
+      "blockdata_filepath": "data/layouts/Route132_LowTide/map.bin"
     }
   ]
 }

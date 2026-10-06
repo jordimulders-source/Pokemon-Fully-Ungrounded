@@ -552,7 +552,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_SPEED:
         CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
         break;
-    case SPECIES_LUGIA:
+    case SPECIES_LUGIA: // Project Grounded: eigen thema (beschermer <-> storm); transitie volgt nog
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_GROUNDED_VS_LUGIA);
+        break;
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;

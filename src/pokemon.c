@@ -6294,6 +6294,8 @@ u16 GetBattleBGM(void)
         return MUS_VS_REGI;
     case SPECIES_REGIGIGAS: // Project Grounded: eigen thema met Slow Start
         return MUS_GROUNDED_VS_REGIGIGAS;
+    case SPECIES_LUGIA: // Project Grounded: eigen thema (tools/grounded/lugia_theme.py)
+        return MUS_GROUNDED_VS_LUGIA;
     case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema, per beest een eigen laag (HGSS-stijl)
         return MUS_GROUNDED_VS_RAIKOU;
     case SPECIES_ENTEI:

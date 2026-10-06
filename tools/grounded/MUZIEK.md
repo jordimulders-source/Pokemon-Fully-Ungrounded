@@ -110,6 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
+| Lugia | `lugia_theme.py` | v1 wacht op Jordi (beschermersthema <-> storm, één melodie; alleen stock) | "Lugia" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -522,3 +523,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   eerste slag) en daarna alles per 16e meten: drums per band (laag/mid/hoog, envelop-sprong), bas via basic-pitch op de
   stem, chant via CQT van de vocal-stem per 16e (pyin faalt op koren: 'onstemhebbend'). Transcriptie controleren met
   chroma-correlatie per maat (eigen solo-render vs. stem) en onset-correlatie per 4 maten (drums).
+- Lugia v1 (`lugia_theme.py`, 657, 144 bpm, D-groot/D-klein, alleen stock-samples): **dualiteit = één melodie in twee
+  gedaanten** (groot, breed in halve noten = beschermer; klein met F#->F/B->Bb, dubbel zo snel en dubbel gepunt = storm).
+  Jordi: geen wiegenlied, de beschermer is heldhaftig. **Paukenroffels op een eigen programma met korte release (90)**:
+  16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
+  op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
+  op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.

@@ -662,6 +662,7 @@ gSongTable::
 	song mus_grounded_vs_tate_liza, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_wallace, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_burglar, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tapu, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

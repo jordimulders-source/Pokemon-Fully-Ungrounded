@@ -517,3 +517,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   klinken op de geschreven noot, sc88pro_organ2 een octaaf lager. Een keysplit in een eigen bestand
   (`keysplits/<naam>.inc`): musiclib/lint lezen de release alleen uit `<naam>.inc` (anders 200 = valse DS-overload).
   rs_drumset-releases (kick 242) bezetten kanalen: release per kitnoot overnemen van de oude kit.
+- Tapu fase 1 (`tapu_theme.py`, alleen noten/ritme; geen MIDI van de bron): **eerst het raster vastleggen** (tempo via
+  onset-autocorrelatie over 128 tellen = 174, loop via zelfgelijkenis van mel-spectra = lag 82,80 s = 60 maten, maat 1 =
+  eerste slag) en daarna alles per 16e meten: drums per band (laag/mid/hoog, envelop-sprong), bas via basic-pitch op de
+  stem, chant via CQT van de vocal-stem per 16e (pyin faalt op koren: 'onstemhebbend'). Transcriptie controleren met
+  chroma-correlatie per maat (eigen solo-render vs. stem) en onset-correlatie per 4 maten (drums).

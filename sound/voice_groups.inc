@@ -7,6 +7,7 @@
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 .include "sound/voicegroups/drumsets/keccles.inc"
 .include "sound/voicegroups/drumsets/burglar.inc"
+.include "sound/voicegroups/drumsets/tapu.inc"
 .include "sound/voicegroups/drumsets/shaymin.inc"
 .include "sound/voicegroups/drumsets/magikarp.inc"
 .include "sound/voicegroups/drumsets/jirachi.inc"
@@ -260,3 +261,4 @@
 .include "sound/voicegroups/grounded_gym_wattson.inc"
 .include "sound/voicegroups/grounded_gym_flannery.inc"
 .include "sound/voicegroups/grounded_burglar.inc"
+.include "sound/voicegroups/grounded_tapu.inc"

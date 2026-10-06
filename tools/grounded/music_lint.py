@@ -26,7 +26,8 @@ MAX_PER_SONG = {'mus_grounded_vs_regigigas.mid': 11, 'mus_grounded_vs_suicune.mi
                 'mus_grounded_vs_rayquaza.mid': 11,
                 'mus_grounded_vs_genesect.mid': 11,
                 'mus_grounded_vs_victini.mid': 11,
-                'mus_grounded_vs_darkrai.mid': 11}
+                'mus_grounded_vs_darkrai.mid': 11,
+                'mus_grounded_vs_tapu.mid': 11}
 CFG = 'sound/songs/midi/midi.cfg'
 VG_DIR = 'sound/voicegroups'
 

@@ -3,7 +3,6 @@
 Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeronde taken gaan naar `CHANGELOG.md`.
 
 ## Openstaande taken (in volgorde)
-- **Ho-Oh-thema gepauzeerd (Jordi, 6 okt):** v2 (`hooh_theme.py` + `hooh_samples.py`) klinkt dof en de percussie is stotterig. Volgende sessie verder: helderder (shamisen/koto), percussie herzien (doorlopende taikogroove i.p.v. haperende patronen; lessen Tapu v2: slagen laten uitklinken).
 - **Legendary-thema's + intro's (Jordi, 6 okt):** muziek loopt (Lugia 657, Ho-Oh 658, Tornadus/Thundurus/Landorus 659–661, eigen composities). Daarna: intro's Lugia (zinken + zilveren veer → oog + draaikolk), Ho-Oh (Bell Tower, regenboog, vlammen-feniks), Volcanion (manometer, stoom), Hoopa (ring-portaal, er valt van alles uit, hand grijpt de camera), Forces-trio (ontsporend weerbericht; Landorus met 'usage stats'-kaartje) — goedgekeurd door Jordi, bouwen zodra er agentplek is; thema's Volcanion en Hoopa. Hoopa krijgt een eigen plek: Djinn-sidequest (voorstel in de chat, 6 okt: Mirage Bazaar in de woestijn van Route 111, Prison Bottle, drie 'wensen' met een monkey's-paw-twist (Hoopa vervult ze door het gewenste met zijn ringen bij iemand anders weg te halen; past bij de Dex-lore: hij steelt alles wat hij wil), ringen naar Hoopa's schatkamer vol gestolen Hoenn-spullen, Hoopa Unbound als eindgevecht; thema met Hijaz-toonladder, darbuka, oud-achtig getokkel). Forces-trio: verschijnen af en toe als object op een route, op een plek waar het logisch is (vluchten niet), brengen hun eigen weer mee (ongeacht het normale weer) en je kunt ze daar bevechten; verlaat je de route, dan verdwijnen ze (volgende keer mogelijk ergens anders).
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Neo Plasma**: v4 (v0.9.70) naar Jordi's mp3; wacht op zijn oordeel (open: 'gitaar' = synth brass of strings? bas octaaf lager?).
@@ -67,6 +66,7 @@ Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Later proberen:** (snellere schermovergangen bij warps gedaan in v0.8.36; gevechtsintro eventueel later)
 
 ## Backlog (brainstorm Jordi, okt 2026; nog niet ingepland, Ashfrost eerst)
+- **Ho-Oh-thema na de beta (Jordi, 6 okt):** v2 is voldoende voor de beta ("niet perfect maar voldoende"); later eventueel helderder en de percussie minder stotterig.
 Plan van aanpak en open vragen per onderdeel: `BACKLOG_PLAN.md` (3 okt 2026). Eerst Jordi's antwoorden afwachten.
 Per idee eerst kort afstemmen vóór het bouwen. Credits van externe assets/muziek in de credits zetten.
 - **Ruimte-tijdgrot (Jordi, 5 okt):** een grot waar Palkia en Dialga de dienst uitmaken en je laten teleporteren naar gebieden uit andere Pokémon-games: Cerulean Cave (volledig nagemaakt; de huidige Mewtwo-grot achter Meteor Falls is een placeholder), Lavender Town + Pokémon Tower, National Park, de Gen 4-meren. **Jordi ontwerpt de ruimte-tijdgrot zelf** (6 okt): niet bomvol, vooral nostalgische warps (o.a. Area Zero); geen vogellocaties, Ilex Forest of Fullmoon Island; Ultra Space wordt een los gebied.

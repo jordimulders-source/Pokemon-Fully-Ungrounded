@@ -1027,6 +1027,17 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_WALLY_VR_1)
         return B_TRANSITION_WALLY_VHS;
 
+    // Project Grounded: gymleider-intro's (ook de rematches en het Battle Stadium). Vervangen de mugshot: de intro stelt
+    // de leider zelf voor, en mugshot + intro samen duurt te lang.
+    if (trainerId == TRAINER_ROXANNE_1 || (trainerId >= TRAINER_ROXANNE_2 && trainerId <= TRAINER_ROXANNE_5))
+        return B_TRANSITION_GYM_ROXANNE;
+    if (trainerId == TRAINER_BRAWLY_1 || (trainerId >= TRAINER_BRAWLY_2 && trainerId <= TRAINER_BRAWLY_5))
+        return B_TRANSITION_GYM_BRAWLY;
+    if (trainerId == TRAINER_WATTSON_1 || (trainerId >= TRAINER_WATTSON_2 && trainerId <= TRAINER_WATTSON_5))
+        return B_TRANSITION_GYM_WATTSON;
+    if (trainerId == TRAINER_FLANNERY_1 || (trainerId >= TRAINER_FLANNERY_2 && trainerId <= TRAINER_FLANNERY_5))
+        return B_TRANSITION_GYM_FLANNERY;
+
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 

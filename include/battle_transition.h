@@ -120,6 +120,10 @@ enum BattleTransition
     B_TRANSITION_MIMI, // Project Grounded: Mimi, poppenkast in een donkere kinderkamer, het nekje van de Pikachu-pop knakt
     B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
     B_TRANSITION_BURGLAR, // Project Grounded: Burglar, bewakingscamera, de Gen 1-Burglar kijkt in de lens, alarm
+    B_TRANSITION_GYM_ROXANNE, // Project Grounded: Roxanne, concert: aanstekers, spotlight, rotsblok-versterkers, powerchord
+    B_TRANSITION_GYM_BRAWLY, // Project Grounded: Brawly, UFC-walkout, octagon, omroeperbalk, vuist tegen het kooigaas
+    B_TRANSITION_GYM_WATTSON, // Project Grounded: Wattson, serverfarm, pop-ups, WATTCOIN crasht, SCAM-stempel, Wahahahah!
+    B_TRANSITION_GYM_FLANNERY, // Project Grounded: Flannery, camping, Mt. Chimney ontploft, een lavasteen raakt de camera
     B_TRANSITION_COUNT
 };
 

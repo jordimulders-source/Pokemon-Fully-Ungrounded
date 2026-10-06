@@ -5388,3 +5388,83 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Turd = {
     .images = sPicTable_Turd,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuKoko = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuKoko,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuLele,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuBulu,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuFini,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

@@ -81,6 +81,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailor
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PlasmaFrigate;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Turd;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuKoko;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -369,6 +373,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PLASMA_FRIGATE] =           &gObjectEventGraphicsInfo_PlasmaFrigate, // Project Grounded
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia, // Project Grounded (strandresort)
     [OBJ_EVENT_GFX_TURD] =                     &gObjectEventGraphicsInfo_Turd, // Project Grounded (strandresort)
+    [OBJ_EVENT_GFX_STATUE_TAPU_KOKO] = &gObjectEventGraphicsInfo_StatueTapuKoko, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    [OBJ_EVENT_GFX_STATUE_TAPU_LELE] = &gObjectEventGraphicsInfo_StatueTapuLele, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    [OBJ_EVENT_GFX_STATUE_TAPU_BULU] = &gObjectEventGraphicsInfo_StatueTapuBulu, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    [OBJ_EVENT_GFX_STATUE_TAPU_FINI] = &gObjectEventGraphicsInfo_StatueTapuFini, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)

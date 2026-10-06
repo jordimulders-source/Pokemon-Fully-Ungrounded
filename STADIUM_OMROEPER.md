@@ -110,6 +110,10 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `VICTORY_V` | V! Only POKéMON with a V! VOLCARONA! VIKAVOLT! VICTORY? We'll see. |
 | `GRIMSBY` | CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules. |
 | `SIRENA` | SIRENA! A mermaid! Legally a swimmer! The tail is a rental! |
+| `MORTIMER` | MORTIMER, the undertaker! Business is dead. He's measuring you. |
+| `CAPTAIN_ABE` | CAPTAIN ABE! Hunts a WAILORD the size of a town. Lost two boats. |
+| `EXPERT_DEREK` | DEREK! 47 losses to SIDNEY! Tonight he goes for a new record! |
+| `BRAYDEN` | BRAYDEN! Influencer! Three viewers! Two of them are his dad! |
 | `BRENDAN_ROUTE_136_TREECKO` | BRENDAN! Your rival. Still salty about which starter you picked. |
 | `MAY_ROUTE_136_TORCHIC` | MAY! Your rival. She swears she's better at this than you. Prove it. |
 

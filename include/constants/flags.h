@@ -1266,7 +1266,7 @@
 #define FLAG_RECEIVED_FLAME_ORB_VOLCANOLOGIST                       0x4BC // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE               0x4BD // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_ITEM_WHIRL_ISLAND_SHARP_BEAK           0x4BF // Project Grounded (zeevulling 2): Whirl Island, strand van de lagune
 #define FLAG_SCORCHED_SLAB_SUN_DOOR_OPEN                            0x4C0 // Project Grounded: Scorched Slab
 #define FLAG_HIDE_SCORCHED_SLAB_VOLCARONA                           0x4C1 // Project Grounded: Scorched Slab
 #define FLAG_ITEM_SCORCHED_SLAB_SUN_STONE                           0x4C2 // Project Grounded: Scorched Slab
@@ -1307,14 +1307,14 @@
 #define FLAG_CAUGHT_OGERPON                                         0x4E5 // Project Grounded: Ogerpon-quest: Ogerpon gevangen
 #define FLAG_HIDE_FORTREE_JUNGLE_OGERPON                            0x4E6 // Project Grounded: Ogerpon-quest: Ogerpon-object achter het altaar
 #define FLAG_OGERPON_MASKS_RETURNED                                 0x4E7 // Project Grounded: Ogerpon-quest: de speler heeft de drie maskers terug als hold items
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
+#define FLAG_RECEIVED_WHIRL_ISLAND_KINGS_ROCK       0x4E8 // Project Grounded (zeevulling 2): Whirl Island, zwijgende wachter (King's Rock)
 #define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
 #define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte
 #define FLAG_ITEM_METEOR_SPACE_MOON_STONE                           0x4EB // Project Grounded: meteoriet in de ruimte
 #define FLAG_METEOR_SPACE_RETURNED                                  0x4EC // Project Grounded: een keer heelhuids terug uit de ruimte (kortere teksten daarna)
-#define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_ITEM_ROUTE_134_LIGHT_CLAY              0x4ED // Project Grounded (zeevulling 2): Route 134, bouwplaats vuurtoren
+#define FLAG_ITEM_ROUTE_133_CHOICE_SPECS            0x4EE // Project Grounded (zeevulling 2): Route 133, zandbank van de influencer
+#define FLAG_ITEM_ROUTE_130_EVERSTONE               0x4EF // Project Grounded (zeevulling 2): Route 130, Wynaut-kinderopvang
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
@@ -1326,15 +1326,15 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_ITEM_ROUTE_128_BLACK_BELT              0x4F9 // Project Grounded (zeevulling 2): Route 128, Dereks dojo
+#define FLAG_RECEIVED_ROUTE_124_SMOOTH_ROCK         0x4FA // Project Grounded (zeevulling 2): Route 124, weerman (Smooth Rock)
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
 #define FLAG_DEFEATED_ELITE_4_GLACIA                                0x4FD
 #define FLAG_DEFEATED_ELITE_4_DRAKE                                 0x4FE
 
-#define FLAG_UNUSED_0x4FF                                           0x4FF // Unused Flag
+#define FLAG_RECEIVED_ROUTE_105_FOCUS_SASH          0x4FF // Project Grounded (zeevulling 2): Route 105, schipbreukeling (Focus Sash)
 
 // Trainer Flags
 // Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused
@@ -1516,37 +1516,37 @@
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
-#define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
-#define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
-#define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag
-#define FLAG_UNUSED_0x8F1                           (SYSTEM_FLAGS + 0x91) // Unused Flag
-#define FLAG_UNUSED_0x8F2                           (SYSTEM_FLAGS + 0x92) // Unused Flag
-#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) // Unused Flag
-#define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
-#define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
-#define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
-#define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
-#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
-#define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
-#define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV2_R120_PEARL_STRING      (SYSTEM_FLAGS + 0x8E) // Project Grounded (zeevulling 2): verborgen item (Route120)
+#define FLAG_HIDDEN_ITEM_ZV2_R119_MYSTIC_WATER      (SYSTEM_FLAGS + 0x8F) // Project Grounded (zeevulling 2): verborgen item (Route119)
+#define FLAG_HIDDEN_ITEM_ZV2_R118_HEART_SCALE       (SYSTEM_FLAGS + 0x90) // Project Grounded (zeevulling 2): verborgen item (Route118)
+#define FLAG_HIDDEN_ITEM_ZV2_R115_BIG_PEARL         (SYSTEM_FLAGS + 0x91) // Project Grounded (zeevulling 2): verborgen item (Route115)
+#define FLAG_HIDDEN_ITEM_ZV2_R110_PEARL             (SYSTEM_FLAGS + 0x92) // Project Grounded (zeevulling 2): verborgen item (Route110)
+#define FLAG_HIDDEN_ITEM_ZV2_WHIRL_BIG_NUGGET       (SYSTEM_FLAGS + 0x93) // Project Grounded (zeevulling 2): verborgen item (WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV2_WHIRL_PP_MAX           (SYSTEM_FLAGS + 0x94) // Project Grounded (zeevulling 2): verborgen item (WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV2_R134_ZINC              (SYSTEM_FLAGS + 0x95) // Project Grounded (zeevulling 2): verborgen item (Route134)
+#define FLAG_HIDDEN_ITEM_ZV2_R134_STAR_PIECE        (SYSTEM_FLAGS + 0x96) // Project Grounded (zeevulling 2): verborgen item (Route134)
+#define FLAG_HIDDEN_ITEM_ZV2_R133_PEARL             (SYSTEM_FLAGS + 0x97) // Project Grounded (zeevulling 2): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV2_R133_NUGGET            (SYSTEM_FLAGS + 0x98) // Project Grounded (zeevulling 2): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV2_R131_BIG_PEARL         (SYSTEM_FLAGS + 0x99) // Project Grounded (zeevulling 2): verborgen item (Route131)
+#define FLAG_HIDDEN_ITEM_ZV2_R131_HYPER_POTION      (SYSTEM_FLAGS + 0x9A) // Project Grounded (zeevulling 2): verborgen item (Route131)
+#define FLAG_HIDDEN_ITEM_ZV2_R130_STARDUST          (SYSTEM_FLAGS + 0x9B) // Project Grounded (zeevulling 2): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV2_R130_LUCKY_PUNCH       (SYSTEM_FLAGS + 0x9C) // Project Grounded (zeevulling 2): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV2_R129_ULTRA_BALL        (SYSTEM_FLAGS + 0x9D) // Project Grounded (zeevulling 2): verborgen item (Route129)
+#define FLAG_HIDDEN_ITEM_ZV2_R129_PEARL_STRING      (SYSTEM_FLAGS + 0x9E) // Project Grounded (zeevulling 2): verborgen item (Route129)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_STAR_PIECE        (SYSTEM_FLAGS + 0x9F) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_HP_UP             (SYSTEM_FLAGS + 0xA0) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_PROTEIN           (SYSTEM_FLAGS + 0xA1) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_HEART_SCALE       (SYSTEM_FLAGS + 0xA2) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_BIG_PEARL         (SYSTEM_FLAGS + 0xA3) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_PP_UP             (SYSTEM_FLAGS + 0xA4) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R122_RARE_BONE         (SYSTEM_FLAGS + 0xA5) // Project Grounded (zeevulling 2): verborgen item (Route122)
+#define FLAG_HIDDEN_ITEM_ZV2_R122_SPELL_TAG         (SYSTEM_FLAGS + 0xA6) // Project Grounded (zeevulling 2): verborgen item (Route122)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_METAL_COAT        (SYSTEM_FLAGS + 0xA7) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_NUGGET            (SYSTEM_FLAGS + 0xA8) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_PEARL             (SYSTEM_FLAGS + 0xA9) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_HEART_SCALE       (SYSTEM_FLAGS + 0xAA) // Project Grounded (zeevulling 2): verborgen item (Route105)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_STAR_PIECE        (SYSTEM_FLAGS + 0xAB) // Project Grounded (zeevulling 2): verborgen item (Route105)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_BIG_PEARL         (SYSTEM_FLAGS + 0xAC) // Project Grounded (zeevulling 2): verborgen item (Route105)
 #define FLAG_HIDDEN_ITEM_ROUTE_107_BIG_PEARL        (SYSTEM_FLAGS + 0xAD) // Project Grounded (zeevulling 1): verborgen item
 #define FLAG_HIDDEN_ITEM_ROUTE_107_HARD_STONE       (SYSTEM_FLAGS + 0xAE) // Project Grounded (zeevulling 1): verborgen item
 #define FLAG_HIDDEN_ITEM_ROUTE_126_BERRY_JUICE      (SYSTEM_FLAGS + 0xAF) // Project Grounded (zeevulling 1): verborgen item

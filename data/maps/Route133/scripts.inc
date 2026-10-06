@@ -36,3 +36,25 @@ Route133_EventScript_Conor::
 	msgbox Route133_Text_ConorPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route133_EventScript_ZV2Brayden::
+	trainerbattle_single TRAINER_BRAYDEN, Route133_Text_ZV2Brayden_Intro, Route133_Text_ZV2Brayden_Defeat
+	msgbox Route133_Text_ZV2Brayden_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route133_Text_ZV2Brayden_Intro:
+	.string "Hey guys, BRAYDEN here! We're\nLIVE from a literal sandbank!\pToday's challenge: battle a random\nkid! Smash that LIKE button!\pThe LIKE button is my POKeMON's\nface. Smash it. Respectfully.$"
+
+Route133_Text_ZV2Brayden_Defeat:
+	.string "...Cut that. CUT THAT.\nWe're doing a 'lessons learned'\lvideo now.$"
+
+Route133_Text_ZV2Brayden_Post:
+	.string "My sponsor sent me those glasses.\nI threw them over there.\pThey only let you pick one move.\nMy brand is about OPTIONS.$"
+
+Route133_EventScript_ZV2Cameraman::
+	msgbox Route133_Text_ZV2Cameraman, MSGBOX_NPC
+	end
+
+Route133_Text_ZV2Cameraman:
+	.string "I'm not his cameraman. I'm his\ndad. He pays me in exposure.\pWe've been on this sandbank for\nfour hours. The view count is 3.\lTwo of them are me.$"
+@ --- einde zee_vulling_2 ---

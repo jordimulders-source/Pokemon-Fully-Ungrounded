@@ -1086,7 +1086,24 @@
 #define TRAINER_TWINS_PIP_AND_PEP           1105 // Project Grounded (zeevulling 1): Route 127, tweeling (dubbel)
 #define TRAINER_RANGER_MARISOL              1106 // Project Grounded (zeevulling 1): Route 127, bij de gestrande Wailmer
 
-#define TRAINERS_COUNT                      1107
+// zee_vulling_2 {
+#define TRAINER_BLACK_BELT_KENTA            1110 // Project Grounded (zeevulling 2): Route 105, eilandje van de schipbreukeling
+#define TRAINER_SIS_AND_BRO_JO_AND_LEO      1111 // Project Grounded (zeevulling 2): Route 108, bergingsvlot (dubbel)
+#define TRAINER_MORTIMER                    1112 // Project Grounded (zeevulling 2): Route 122, begrafenisondernemer (Battle Stadium)
+#define TRAINER_SWIMMER_CORA                1113 // Project Grounded (zeevulling 2): Route 122, zwemt baantjes rond Mt. Pyre
+#define TRAINER_BUG_MANIAC_ELLIOT           1114 // Project Grounded (zeevulling 2): Route 124, weerstation (insecten)
+#define TRAINER_CAPTAIN_ABE                 1115 // Project Grounded (zeevulling 2): Route 124, kapitein op walvisjacht (Battle Stadium)
+#define TRAINER_EXPERT_DEREK                1116 // Project Grounded (zeevulling 2): Route 128, eigen dojo-eilandje (Battle Stadium)
+#define TRAINER_BATTLE_GIRL_JUNO            1117 // Project Grounded (zeevulling 2): Route 128, Dereks enige leerling
+#define TRAINER_YOUNG_COUPLE_TOM_AND_TINA   1118 // Project Grounded (zeevulling 2): Route 129, op huwelijksreis (dubbel)
+#define TRAINER_BREEDER_HONEY               1119 // Project Grounded (zeevulling 2): Route 130, Wynaut-kinderopvang
+#define TRAINER_HIKER_BERNARD               1120 // Project Grounded (zeevulling 2): Route 131, verdwaalde bergbeklimmer
+#define TRAINER_BRAYDEN                     1121 // Project Grounded (zeevulling 2): Route 133, influencer op een zandbank (Battle Stadium)
+#define TRAINER_NINJA_BOY_KAGE              1122 // Project Grounded (zeevulling 2): Route 134, ninja op een zandbank
+#define TRAINER_BIRD_KEEPER_SKYE            1123 // Project Grounded (zeevulling 2): Whirl Island, wacht op een grote vogel
+// }
+
+#define TRAINERS_COUNT                      1124
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

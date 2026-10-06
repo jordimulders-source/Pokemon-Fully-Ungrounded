@@ -55,3 +55,37 @@ Route131_EventScript_Kevin::
 	msgbox Route131_Text_KevinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route131_EventScript_ZV2Cousin::
+	lock
+	faceplayer
+	msgbox Route131_Text_ZV2Cousin, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_HEAL
+	waitfanfare
+	special HealPlayerParty
+	fadescreen FADE_FROM_BLACK
+	msgbox Route131_Text_ZV2CousinDone, MSGBOX_DEFAULT
+	release
+	end
+
+Route131_Text_ZV2Cousin:
+	.string "I'm not a NURSE. I'm a nurse's\ncousin. Very different.\pNo license, no POKeMON CENTER,\nno machine. Just vibes.\pHold still.$"
+
+Route131_Text_ZV2CousinDone:
+	.string "There. All better.\nDon't ask what I did.\lLegally I can't tell you.$"
+
+Route131_EventScript_ZV2Bernard::
+	trainerbattle_single TRAINER_HIKER_BERNARD, Route131_Text_ZV2Bernard_Intro, Route131_Text_ZV2Bernard_Defeat
+	msgbox Route131_Text_ZV2Bernard_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route131_Text_ZV2Bernard_Intro:
+	.string "I followed the tallest mountain\nI could see.\pIt was SKY PILLAR. It's a tower.\nI don't do towers. I do rocks.$"
+
+Route131_Text_ZV2Bernard_Defeat:
+	.string "Rocks: 0. Towers: 1. You: 1.\nI hate this scoreboard.$"
+
+Route131_Text_ZV2Bernard_Post:
+	.string "The nurse lady fixed my knee.\nIt's my other knee now. Somehow.$"
+@ --- einde zee_vulling_2 ---

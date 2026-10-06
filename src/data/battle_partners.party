@@ -4283,6 +4283,138 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hydro Pump
 - Attract
 
+=== PARTNER_STADIUM_MORTIMER ===
+Name: MORTIMER
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Cofagrigus
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Protect
+- Hex
+
+Dudunsparce
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hyper Drill
+- Coil
+- Roost
+- Glare
+
+Annihilape
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Close Combat
+
+=== PARTNER_STADIUM_CAPTAIN ===
+Name: ABE
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dhelmise
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Anchor Shot
+- Power Whip
+- Shadow Claw
+- Rapid Spin
+
+Eelektross
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wild Charge
+- Crunch
+- Thunder Punch
+- Acid Spray
+
+Sharpedo
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Crunch
+- Waterfall
+- Ice Fang
+- Aqua Jet
+
+=== PARTNER_STADIUM_EXPERT ===
+Name: DEREK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bewear
+Level: 50
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Hammer Arm
+- Double-Edge
+- Bulk Up
+- Shadow Claw
+
+Lucario
+Level: 50
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Aura Sphere
+- Flash Cannon
+- Dark Pulse
+- Vacuum Wave
+
+Conkeldurr
+Level: 50
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Mach Punch
+- Drain Punch
+- Knock Off
+- Rock Slide
+
+=== PARTNER_STADIUM_BRAYDEN ===
+Name: BRAYDEN
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Toxtricity
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Overdrive
+- Sludge Bomb
+- Boomburst
+- Volt Switch
+
+Hawlucha
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Flying Press
+- Swords Dance
+- Acrobatics
+- Brick Break
+
+Lopunny
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- High Jump Kick
+- Bounce
+- Ice Punch
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

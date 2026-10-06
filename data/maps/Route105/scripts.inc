@@ -91,3 +91,52 @@ Route104_Text_DadPokenavCall:
 Route104_Text_RegisteredDadInPokenav:
 	.string "Registered DAD NORMAN in the POKéNAV.\p"
 	.string "He won't call. But he's there.$"
+
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route105_EventScript_ZV2Castaway::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_ROUTE_105_FOCUS_SASH, Route105_EventScript_ZV2Castaway_After
+	msgbox Route105_Text_ZV2Castaway, MSGBOX_DEFAULT
+	giveitem ITEM_FOCUS_SASH
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_ROUTE_105_FOCUS_SASH
+	release
+	end
+Route105_EventScript_ZV2Castaway_After:
+	msgbox Route105_Text_ZV2CastawayAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route105_Text_ZV2Castaway:
+	.string "Rescue? No thanks.\pI've lived on this sandbank for\nthree years. DEWFORD is right\lthere. I can see the gym.\pI could swim back any time.\nI choose not to. Taxes, you know.\pHere, take this. I don't need it.\nI can't focus on anything except\lthe horizon.$"
+
+Route105_Text_ZV2CastawayAfter:
+	.string "WILSON and I are doing great.\nHe's a very good listener.\lSometimes he explodes. We all do.$"
+
+Route105_EventScript_ZV2Wilson::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, CRY_MODE_NORMAL
+	msgbox Route105_Text_ZV2Wilson, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route105_Text_ZV2Wilson:
+	.string "A VOLTORB with a face painted on it.\p...No, wait. That's just its face.\nIt looks at you like it's waiting\lfor an apology.$"
+
+Route105_EventScript_ZV2Kenta::
+	trainerbattle_single TRAINER_BLACK_BELT_KENTA, Route105_Text_ZV2Kenta_Intro, Route105_Text_ZV2Kenta_Defeat
+	msgbox Route105_Text_ZV2Kenta_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route105_Text_ZV2Kenta_Intro:
+	.string "Every morning I punch the tide\na thousand times.\pThe tide has never lost.\nNeither have I. We're both stubborn.$"
+
+Route105_Text_ZV2Kenta_Defeat:
+	.string "The tide is laughing at me.\nI can hear it. Shhhh. Shhhh.$"
+
+Route105_Text_ZV2Kenta_Post:
+	.string "The castaway says I'm his only\nfriend. Then he talks to the\lVOLTORB for six hours.$"
+@ --- einde zee_vulling_2 ---

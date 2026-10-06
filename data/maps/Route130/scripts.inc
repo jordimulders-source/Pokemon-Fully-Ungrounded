@@ -48,3 +48,61 @@ Route130_EventScript_Santiago::
 	msgbox Route130_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route130_EventScript_ZV2Teacher::
+	msgbox Route130_Text_ZV2Teacher, MSGBOX_NPC
+	end
+
+Route130_Text_ZV2Teacher:
+	.string "Welcome to WYNAUT DAYCARE!\nMotto: 'Why not?'\pSmall print: we are not\nresponsible.\pNot for lost WYNAUT, not for found\nWYNAUT, not for WYNAUT that are\lnow somehow a WOBBUFFET.$"
+
+Route130_EventScript_ZV2WynautA::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautA, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautA:
+	.string "WYNAUT: Wy? Wy? Wynaut!\pIt has asked 'why' 300 times today.\nNobody has an answer.$"
+
+Route130_EventScript_ZV2WynautB::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautB, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautB:
+	.string "WYNAUT: Wynaaaut.\pIt's taking a nap standing up.\nIts tail is still awake.$"
+
+Route130_EventScript_ZV2WynautC::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautC, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautC:
+	.string "WYNAUT: Wy!\pIt's guarding a sandcastle.\nThe sandcastle is just sand.$"
+
+Route130_EventScript_ZV2Honey::
+	trainerbattle_single TRAINER_BREEDER_HONEY, Route130_Text_ZV2Honey_Intro, Route130_Text_ZV2Honey_Defeat
+	msgbox Route130_Text_ZV2Honey_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route130_Text_ZV2Honey_Intro:
+	.string "Shift change! I'm the night\nsupervisor. It is noon.\pBattle me, sweetie. Nap time\nstarts when I win.$"
+
+Route130_Text_ZV2Honey_Defeat:
+	.string "No nap for anyone, then.\nThe WYNAUT will riot.$"
+
+Route130_Text_ZV2Honey_Post:
+	.string "Parents pick them up from MIRAGE\nISLAND. When it's there.\pWhen it isn't... more WYNAUT.$"
+@ --- einde zee_vulling_2 ---

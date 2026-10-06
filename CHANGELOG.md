@@ -17146,3 +17146,11 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.127] - Tapu Isle: kahuna vóór het altaar
 - De kahuna stond op het altaar en leek te zweven; hij staat nu ervoor op de vloer.
+
+### [v0.9.128] - Gymleider-intro's deel 2: Norman, Winona, Tate & Liza, Wallace
+- Eigen intro's (vervangen de mugshot, ook rematches en Stadium), samen ±40 KB:
+  - **Norman** (3,0 s): NORMFLIX "Continue watching for DAD" (HOW TO BE A DAD 0%), "Are you still watching?" → de cursor springt terug van "Go outside (not recommended)"; het beeld krimpt in de tv, Slaking op de bank onder "LIVE LAUGH LOAF" springt op. "Your free trial expires in 10 minutes."
+  - **Winona** (2,9 s): WINAIR-vertrekbord (FORTREE DELAYED → BOARDING, YOUR MILES not found), Altaria vliegt langs het raam, het koffertje springt open: "BAGGAGE FEE!"
+  - **Tate & Liza** (3,2 s): ouijabord spelt R-I-P, tarotkaarten THE TWINS / THE MOON / DEATH (yours), "The cards have spoken... and they hate you.", psychic overload met buigende lepels, "aaaaaaaaaaaaah (your aura, screaming in lowercase)".
+  - **Wallace** (2,9 s): Crater Pub, zwevende fles schenkt een glas vol, "Your spirit has a certain... bouquet.", de wijn wordt Hoenn-blauw ("Notes of brine, regret and KYOGRE."), golf over de pub, "SANTÉ!"
+- Code `src/data/gym_intros_b.h`; art-scripts `tools/grounded/{norman,winona,tateliza,wallace}_transition.py`.

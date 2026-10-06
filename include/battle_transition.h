@@ -128,6 +128,10 @@ enum BattleTransition
     B_TRANSITION_TAPU_LELE,
     B_TRANSITION_TAPU_BULU,
     B_TRANSITION_TAPU_FINI,
+    B_TRANSITION_GYM_NORMAN, // Project Grounded: Norman, NORMFLIX: Are you still watching?, het beeld krimpt in de tv, Slaking op de bank
+    B_TRANSITION_GYM_WINONA, // Project Grounded: Winona, WINAIR: vertrekbord DELAYED -> BOARDING, Altaria vliegt over, het koffertje springt open
+    B_TRANSITION_GYM_TATE_LIZA, // Project Grounded: Tate & Liza, ouijabord spelt RIP, drie tarotkaarten, psychic overload in lowercase
+    B_TRANSITION_GYM_WALLACE, // Project Grounded: Wallace, Crater Pub: een wijnglas schenkt vol, de wijn wordt Hoenn-blauw, een golf over de pub, Santé!
     B_TRANSITION_COUNT
 };
 

@@ -17177,3 +17177,7 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.133] - Battle! Ho-Oh v2 (donkerder, Japanser)
 - Jordi: te vrolijk, trompetten/fluiten schel, niet Japans genoeg. Nu in E-klein (hirajoshi-thema, harmonie i–bVI–bVII), vuurdeel in de in-toonladder, climax een toon hoger. Trompet, whistle en PSG-fonkeling eruit; laag koper alleen als steun.
 - Japanse instrumenten voorop met eigen samples (±131 KB, `tools/grounded/hooh_samples.py`): shakuhachi (laag/midden, buigingen, vibrato), koto (tremolo, glissandi), tsugaru-shamisen (16en-riffs, solo), taiko-ensemble (odaiko, nagado, shime, ka), sho-clusters, kiai-roepen; gitaar/bas/kit eronder als motor.
+
+### [v0.9.134] - Lugia v2 en Forces of Nature v2
+- **Lugia:** op 30–33 s een versnellende drumopbouw (taiko/kick → toms in 16en → snareroffel in 32sten + paukenroffel + strijkersloop); het tempo gaat van 144 naar 164 bpm en blijft daar tot de loop (die springt correct terug naar 144). Het beschermersdeel kreeg een zachte puls.
+- **Forces of Nature:** minder chiptune, volle GBA-orkestratie (PSG alleen nog als sub en voor wind/bliksem/rommel), echte snare, hardere drums, hoorbare spiccato-strijkers. Tornadus: lead trompet + strijkers (fluitje weg), tornadostoten gebleven. Thundurus: zelfde compositie, gitaarlead verdubbeld door strijkers, tuba, pads. Landorus (nu 132 bpm): echte gevechtsgroove (drumstel + taiko, 16en-ostinato, springende bas), tegenmelodieën, vraag-antwoord koper, climax in D-groot met koor, tuba, buisklokken.

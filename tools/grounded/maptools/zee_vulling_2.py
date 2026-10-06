@@ -116,7 +116,69 @@ def rect(x0, y0, x1, y1):
     return {(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)}
 
 
+NEED = {'TL': 'e s se', 'TR': 'w s sw', 'BL': 'n e ne', 'BR': 'n w nw', 'T': 'w e s sw se', 'B': 'w e n nw ne',
+        'L': 'n s e ne se', 'R': 'n s w nw sw', 'C': 'n s w e nw ne sw se'}
+for _k, _d in (('NW', 'nw'), ('NE', 'ne'), ('SW', 'sw'), ('SE', 'se')):
+    NEED[_k] = ' '.join(d for d in NEED['C'].split() if d != _d)
+DIRS = {'n': (0, -1), 's': (0, 1), 'w': (-1, 0), 'e': (1, 0), 'nw': (-1, -1), 'ne': (1, -1), 'sw': (-1, 1), 'se': (1, 1)}
+
+
+def tileable(S):
+    """Elke cel moet met de autotile-stukken te tekenen zijn (geen 1-brede uitsteeksels of dubbele binnenhoeken)."""
+    for (x, y) in S:
+        if not all((x + DIRS[d][0], y + DIRS[d][1]) in S for d in NEED[shape(S, x, y)].split()):
+            return False
+    return True
+
+
+def dilate4(S):
+    return S | {(x + dx, y + dy) for (x, y) in S for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}
+
+
+def organic(M, sand):
+    """Rechthoekig zand -> organische vorm: willekeurige bulten (vaste seed per eiland) die alleen op open zee
+    vallen. Het oorspronkelijke zand blijft (events staan daarop)."""
+    rng = random.Random('%s:%d,%d' % (M.name, min(sand)[0], min(sand)[1]))
+    xs, ys = [p[0] for p in sand], [p[1] for p in sand]
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+
+    def sea(x, y):
+        if not (1 <= x < M.w - 1 and 1 <= y < M.h - 1):
+            return False
+        c = M.v[y][x]
+        return M.beh(c) == 'MB_OCEAN_WATER' and not c & BLOCK
+
+    S = set(sand)
+    base = dilate4(dilate4(sand))
+    want = max(5, x1 - x0 + y1 - y0)
+    for _ in range(want * 20):
+        if want <= 0:
+            break
+        side = rng.choice('nswe')
+        bw, bh = rng.randint(3, 5), rng.randint(2, 3)
+        if side in 'ns':
+            bx = rng.randint(x0 - 1, max(x0 - 1, x1 - bw + 2))
+            by = y0 - rng.randint(1, 2) if side == 'n' else y1 + rng.randint(1, 2) - bh + 1
+        else:
+            bh, bw = bw, bh
+            by = rng.randint(y0 - 1, max(y0 - 1, y1 - bh + 2))
+            bx = x0 - rng.randint(1, 2) if side == 'w' else x1 + rng.randint(1, 2) - bw + 1
+        blob = rect(bx, by, bx + bw - 1, by + bh - 1)
+        T = S | blob
+        if not (S & blob) and not any((x + dx, y + dy) in S for (x, y) in blob for dx, dy in DIRS.values()):
+            continue
+        A = dilate4(T)
+        if not tileable(T) or not tileable(A):
+            continue
+        if not all(sea(x, y) for p in dilate4(A) - base for x, y in [p]):
+            continue
+        S = T
+        want -= 1
+    return dilate4(S), S
+
+
 def islet(M, area, sand, rocks=(), grass=()):
+    area, sand = organic(M, sand)
     orig = ORIG.setdefault(M.layout, {})
     xs, ys = [p[0] for p in area], [p[1] for p in area]
     for cx, cy, dx, dy in ((min(xs), min(ys), 1, 1), (max(xs), min(ys), -1, 1), (min(xs), max(ys), 1, -1),

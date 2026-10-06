@@ -92,6 +92,19 @@ static u32 GetMonSize(u16 species, u16 b)
     return height * unk0 / 10;
 }
 
+// Project Grounded: groottefactor van een Pokémon in promille (290-1800, gemiddeld ±1000), met dezelfde
+// hash en tabel als de Lotad/Seedot-meter. Gebruikt door het visserstoernooi (fishing_tournament.c).
+u32 GetMonSizePermille(struct Pokemon *mon)
+{
+    u32 b = (u16)GetMonSizeHash(mon);
+    u32 idx = TranslateBigMonSizeTableIndex(b);
+    u32 base = sBigMonSizeTable[idx].unk4;
+
+    if (b < base) // vanilla-gat bij de laatste tabelregel: niet laten overlopen
+        return sBigMonSizeTable[idx].unk0;
+    return sBigMonSizeTable[idx].unk0 + (b - base) / sBigMonSizeTable[idx].unk2;
+}
+
 static void FormatMonSizeRecord(u8 *string, u32 size)
 {
     size = (f64)(size / 100);

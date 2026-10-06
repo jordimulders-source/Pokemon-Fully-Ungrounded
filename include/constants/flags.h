@@ -678,13 +678,13 @@
 #define FLAG_RECEIVED_RESORT_WINE  0x277 // Project Grounded: Wallace' wijn (Berry Juice) in het PARADISO RESORT ontvangen
 #define FLAG_HIDE_RESORT_RIVAL     0x278 // Project Grounded: rivaal in het PARADISO RESORT; in OnTransition gezet/gewist (post-game)
 #define FLAG_HIDE_SKY_PILLAR_GIRATINA  0x279 // Project Grounded: Giratina (static) onderin de omgekeerde Sky Pillar
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_FISH_TOURNEY_WEEK_BIT0  0x27A // Project Grounded: visserstoernooi (Dewford), 0x27A-0x27E = (week % 31) + 1 van de laatst opgehaalde prijs
+#define FLAG_FISH_TOURNEY_WEEK_BIT1  0x27B // Project Grounded: visserstoernooi, weekbit 1
+#define FLAG_FISH_TOURNEY_WEEK_BIT2  0x27C // Project Grounded: visserstoernooi, weekbit 2
+#define FLAG_FISH_TOURNEY_WEEK_BIT3  0x27D // Project Grounded: visserstoernooi, weekbit 3
+#define FLAG_FISH_TOURNEY_WEEK_BIT4  0x27E // Project Grounded: visserstoernooi, weekbit 4
+#define FLAG_FISH_TOURNEY_TROPHY     0x27F // Project Grounded: visserstoernooi, trofee (1e plaats) ooit ontvangen
+#define FLAG_FISH_TOURNEY_LUCKY_EGG  0x280 // Project Grounded: visserstoernooi, Lucky Egg (eerste troostprijs) ontvangen
 #define FLAG_HIDE_FLOWER_PARADISE_SHAYMIN  0x281 // Project Grounded: Shaymin gevangen
 #define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
 #define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)

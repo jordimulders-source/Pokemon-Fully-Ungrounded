@@ -10,6 +10,7 @@ op 60-120 Hz en klinkt een slag ±1 s na). Daarom:
   tapu_taiko   middelste taiko (de 'du's): zelfde opbouw, hoger (150 -> 82 Hz), korter
   tapu_ka      stok op de rand ('ka'): korte, droge tik
   tapu_crash   FluidR3 crash (GM-drum 57) met lange uitklank, voor de HIT
+  tapu_impact  v4: de HIT zelf: lage odaiko + sub-val (125 -> 46 Hz) + velslag + orkesthit (E3+B3) + zaal, 1,8 s
 Stemmen (formantsynthese, additief: elke harmonische van een stembandpuls gewogen met de formanten van een klinker,
 een groep van 4-6 licht ontstemde stemmen met ademruis; geen audio uit de opname):
   tapu_vox_a   chant-klinker 'aa' (A4, met loop, legato): de bovenstem van het herhalende chant-thema
@@ -82,6 +83,7 @@ def membrane(f_hi, f_lo, sweep, decay, dur, modes=((1.0, 1.0, 1.0), (1.59, 0.45,
 
 
 def drum(name, dur):
+    global RNG
     if name == 'odaiko':
         body = render(116, 48, 1.2, 127)[:int(dur * SR)]
         syn = membrane(150, 68, 0.035, 0.55, dur)
@@ -106,10 +108,23 @@ def drum(name, dur):
         wood = np.sin(2 * np.pi * 1150 * t) * np.exp(-t / 0.035) + 0.5 * np.sin(2 * np.pi * 2630 * t) * np.exp(-t / 0.02)
         x = click / np.abs(click).max() + 0.8 * wood
         x = room(x, 0.15, 0.04, 4000, 0.25)
+    elif name == 'impact':                            # v4: de HIT (Jordi: 'moet meer impact'): lage odaiko + sub-val
+        RNG = np.random.default_rng(5542)
+        n = int(dur * SR)                              # + velslag + orkesthit (FluidR3 GM 55, E3+B3) + grote zaal
+        body = render(116, 40, 1.6, 127)[:n]
+        syn = membrane(125, 46, 0.06, 0.75, dur, modes=((1.0, 1.0, 1.0), (1.51, 0.5, 0.5), (2.3, 0.2, 0.3)))
+        slap = band(RNG.standard_normal(int(0.2 * SR)), 200, 3000) * np.exp(-np.arange(int(0.2 * SR)) / SR / 0.05)
+        orch = render(55, 52, 0.7, 127)[:n] + 0.7 * render(55, 59, 0.7, 120)[:n]
+        x = np.zeros(n)
+        x[:len(body)] += 0.9 * body / np.abs(body).max()
+        x += 1.0 * syn
+        x[:len(slap)] += 0.8 * slap / np.abs(slap).max()
+        x[:len(orch)] += 0.55 * orch / np.abs(orch).max()
+        x = room(x, 1.4, 0.45, 2500, 0.5)
     elif name == 'crash':
         x = render(None, 57, dur, 120, drum=True)[:int(dur * SR)]
         x = lowpass(x, 6000)
-    if name in ('odaiko', 'taiko'):
+    if name in ('odaiko', 'taiko', 'impact'):
         x = np.tanh(2.2 * x / np.abs(x).max()) / np.tanh(2.2)
         x = band(x, 48, 20000)                       # geen sub onder 48 Hz (audiocheck: brom 37-61 Hz in de groove)
     x = x[:int(dur * SR)]
@@ -249,6 +264,7 @@ SAMPLES = {
     'tapu_vox_a':  ('vox', 0.75, 16384, True),
     'tapu_vox_hu': ('vox', 0.75, 16384, True),
     'tapu_synth':  ('synth', 0, 21024, True),
+    'tapu_impact': ('drum', 1.8, 13379, False),     # v4; achteraan + eigen seed: de andere samples blijven gelijk
 }
 
 

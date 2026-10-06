@@ -53,10 +53,10 @@ END = PRE + NBARS
 CHOIR, CHLO, STR, STR2, HORN, SHAKU, FLUTE, BASS, TIMP, DRUMS = 52, 54, 48, 49, 60, 77, 73, 38, 47, 127
 SYN, PSQ, HAT = 81, 80, 120              # v3: synth-lead (tapu_synth), PSG-blokgolf (16en-puls/verdubbeling), PSG-ruis (hats)
 # drumkit (drumsets/tapu.inc, vanaf 36): TAIKO/TAIKO_LO/BIGTOM/KA = eigen samples (tapu_samples.py)
-TAIKO, TAIKO_LO, BIGTOM, INDIAN, TOM, CONGA_LO, CONGA_HI, KA, KOTSU, CRASH, TAMB, HYOU, KICK = range(36, 49)
+TAIKO, TAIKO_LO, BIGTOM, INDIAN, TOM, CONGA_LO, CONGA_HI, KA, KOTSU, CRASH, TAMB, HYOU, KICK, IMPACT = range(36, 50)
 OHTSU = KA
 RING = {BIGTOM: 8, TAIKO: 4, TAIKO_LO: 5, CRASH: 14, KA: 1, INDIAN: 2, TOM: 2, CONGA_LO: 1, CONGA_HI: 1, KOTSU: 2,
-        TAMB: 2, HYOU: 1, KICK: 2}           # hoe lang een slag maximaal doorklinkt (16en); korter als dezelfde partij opnieuw slaat
+        TAMB: 2, HYOU: 1, KICK: 2, IMPACT: 24}           # hoe lang een slag maximaal doorklinkt (16en); korter als dezelfde partij opnieuw slaat
 
 N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'D#': 3, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'Gb': 6, 'G': 7, 'G#': 8, 'Ab': 8,
      'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
@@ -127,18 +127,10 @@ GROOVE.update({
 
 
 def bass():
+    # v4 (Jordi: 'het begin wordt gedomineerd door een baslijn die helemaal niet bestaat in het origineel'): in de
+    # basstem is maat 1-11 alleen de lage romp van de taiko's (C#2/D2 per slag, pyin-stemhebbendheid 1-40%, geen
+    # aangehouden toon); de eerste echte bastoon is de F2 van maat 12 (aangehouden, 40-67%), dan de groove (maat 13).
     out = []
-    put(out, 1, [(1, 3, 'C#2'), (4, 3, 'D#2'), (7, 2, 'C#2'), (9, 2, 'F2'), (11, 1, 'G2'), (12, 3, 'C#2'), (15, 1, 'D#2')])
-    put(out, 2, [(0, 15, 'C#2'), (15, 1, 'D2')])
-    put(out, 3, [(1, 2, 'C2'), (3, 7, 'F2'), (10, 6, 'E2')])
-    put(out, 4, [(0, 11, 'C#2'), (11, 5, 'C2')])
-    put(out, 5, [(2, 3, 'C#2'), (5, 2, 'D2'), (7, 6, 'D2'), (13, 3, 'G#1')])
-    put(out, 6, [(0, 6, 'G#1'), (6, 10, 'A1')])
-    put(out, 7, [(0, 3, 'B1'), (3, 2, 'C#2'), (5, 1, 'B1'), (6, 2, 'A#1'), (8, 1, 'C2'), (9, 1, 'A#1'), (10, 3, 'A1'),
-                 (13, 1, 'B1'), (14, 2, 'C2')])                       # v3: maat 7-8 per 16e uit de basstem
-    put(out, 8, [(0, 1, 'B1'), (1, 3, 'C2'), (4, 1, 'B1'), (5, 2, 'C#2'), (7, 1, 'C2'), (8, 4, 'A1'), (12, 1, 'C#2'),
-                 (13, 1, 'B1'), (14, 2, 'A#1')])
-    put(out, 11, [(2, 2, 'F#2'), (4, 2, 'E2'), (6, 10, 'F2')])         # v3 (basstem): de bas valt in onder de synth
     put(out, 12, [(0, 16, 'F2')])                                     # b2 onder de chant-inzet
     for ob, pat in GROOVE.items():
         put(out, ob, pat, 104)
@@ -228,8 +220,8 @@ def chant_lo():
 def pad():
     out = []
     put(out, 1, [(0, 40, ['C5', 'C6'], 72)])                         # maat 1-3 (+ half 4): tritonusakkoord onder de chant
-    put(out, 7, [(0, 16, ['F4', 'F#4'], 64)])                        # aanzwellende clusters
-    put(out, 8, [(0, 8, ['G#4', 'A4'], 76), (8, 8, ['G#4', 'A4'], 92)])
+    put(out, 7, [(0, 16, ['F4', 'F#4'], 50)])                        # aanzwellende clusters (v4 zachter: drums voorop)
+    put(out, 8, [(0, 8, ['G#4', 'A4'], 58), (8, 8, ['G#4', 'A4'], 70)])
     groove_pad = {16: ['G4', 'A#4'], 20: ['A#4', 'D5'], 24: ['G4', 'C5'], 28: ['C5', 'D#5']}
     for ob in range(13, 29):
         put(out, ob, [(0, 16, groove_pad.get(ob, ['E4', 'B4']), 62)])
@@ -246,7 +238,9 @@ def pad():
     put(out, 51, [(0, 16, ['F#4', 'G#4', 'C5'], 66)])
     put(out, 52, [(0, 16, ['G#4', 'B4', 'E5'], 66)])
     put(out, 53, [(0, 64, ['A#4', 'C#5'], 70)])
-    put(out, 57, [(0, 64, ['A#3', 'F4'], 74)])
+    # v4: maat 57-60 = de aangehouden tritonus-textuur uit de stem 'other' (A#4/E5, in 59-60 met G5), zie hi()
+    put(out, 57, [(0, 32, ['A#4', 'E5'], 74)])
+    put(out, 59, [(0, 32, ['A#4', 'E5', 'G5'], 74)])
     return dedupe(out)
 
 
@@ -259,21 +253,29 @@ def pad():
 # een toon ('TUDUDUDU'). Hier: de stijging op de gemeten toonhoogtes, de trillers/staart uit de neurie (+11 halve tonen:
 # zijn F#3 = de F4 van het origineel, G3 = F#4, E3 = D#4). Elders in het nummer komt deze lead niet terug (maat 13-60:
 # 'other' bevat daar de boventonen van de synthbas, zie bass()); bij de herhaling van de loop klinkt hij opnieuw.
-SYN_LINE = ('9:0:8:E3 9:8:8:B3 10:0:8:E4 10:8:3:F4 10:11:1:F#4 10:12:1:F4 10:13:2:F#4 10:15:2:F4 '
-            '11:1:1:E4 11:6:2:D#4 11:8:10:F4 12:2:2:D#4 12:4:1:D4 12:5:3:G3 12:8:1:D#4 12:9:1:F#4 12:10:2:F4 '
-            '12:12:1:F4 12:13:1:F4 12:14:2:F#4 13:0:2:F4')
+# v4 (Jordi: 'de synth doet vanaf 13 seconden heel raar, afzwakken, wegvallen, die moet doorgetrokken worden, luister
+# naar mijn neurie'): v3 kortte elke noot met detach() in (uitklinktijd 16 ticks > een 16e: de trillers werden halve
+# stipjes) en had gaten (11:2-11:6, 12:3-12:5). Nu één doorlopende, legato lijn (elke noot tot de volgende aanslag, geen
+# rust) op de tonen van de neurie (basic-pitch op de neurie, maat 9 = 0,31 s): G2 . D3 . | E3 . F#3 G3-F#3-G3-F#3 |
+# (F3) E3 F#3 . . . | E3 D#3 G#2 . E3 G3 F#3 . G3 F#3; in de ligging van de stem (+9 voor de eerste twee, dan +11).
+SYN_LINE = ('9:0:8:E3 9:8:8:B3 10:0:8:E4 10:8:3:F4 10:11:1:F#4 10:12:1:F4 10:13:1:F#4 10:14:3:F4 '
+            '11:1:4:E4 11:5:1:D#4 11:6:11:F4 12:1:1:D#4 12:2:3:G3 12:5:2:D#4 12:7:1:F#4 12:8:4:F4 '
+            '12:12:1:F#4 12:13:5:F4')
 
 
 def synth():
     out = []
     notes_str(out, SYN_LINE, 122)
-    return dedupe(out)
+    out = sorted(dedupe(out))
+    for i in range(len(out) - 1):                                     # legato: geen gaten tussen de tonen
+        out[i][1] = out[i + 1][0]
+    return out
 
 
 def synth_fx():
     """vibrato (MOD) op de lange tonen (de 'DUUUU's)"""
     ev = [(0, mido.Message('control_change', control=21, value=44)), (0, mido.Message('control_change', control=1, value=0))]
-    for ob, q0, q1 in ((9, 4, 8), (9, 12, 16), (10, 4, 8), (11, 11, 18)):
+    for ob, q0, q1 in ((9, 4, 8), (9, 12, 16), (10, 4, 8), (11, 10, 17), (12, 14, 18)):
         ev += [(at(ob, q0), mido.Message('control_change', control=1, value=28)),
                (at(ob, q1) - 1, mido.Message('control_change', control=1, value=0))]
     return ev
@@ -339,16 +341,19 @@ HI_MEL = [   # hoge partij: E6-kwarten (41-48) en de wisselfiguur (49-60)
     '49:0:2:A5 49:2:2:F#5 49:4:2:A5 49:6:2:F#5 49:8:3:A5 49:11:2:F#5 49:13:3:C#6',
     '50:0:1:C#6 50:1:4:A5 50:5:3:A5 50:8:3:A5 50:11:1:A5 50:12:1:C#6 50:13:3:A5',
     '51:1:3:G#5 51:4:2:B5 51:6:3:G#5 51:9:3:G#5 51:12:4:B5 52:0:6:G#5 52:6:2:B5 52:8:3:B5 52:11:5:G#5',
-    '57:0:2:A#5 57:2:2:A#5 57:4:2:A#5 57:6:4:E5 57:10:2:A#5 57:12:2:E5 57:14:1:E5 57:15:1:A#5',
-    '58:0:1:A#5 58:1:4:E5 58:5:2:A#5 58:7:2:E5 58:9:2:E5 58:11:2:E5 58:13:2:A#5 58:15:1:E5',
-    '59:0:1:D#5 59:1:5:G5 59:6:2:E5 59:8:3:E5 59:11:1:E5 59:13:1:E5 59:14:2:G5 60:0:3:E5 60:3:7:G5 60:10:2:E5',
 ]
+# v4 (Jordi over v3: 'het fluitje vanaf 1:06 is wat te hoog. en wat dat fluitje vanaf 1:18 gaat doen snap ik ook
+# niet'): maat 49-56 een octaaf lager (de stem 'other' heeft de wisselfiguur ook op A4/F#4); maat 57-60 was geen melodie
+# maar basic-pitch op een aangehouden tritonus-pad (A#4/E5/A#5, energie per 16e vlak 30-36 dB): weg uit de
+# shakuhachi, als akkoord in pad().
+HI_OCT = -12
 
 
 def horn():
     out = []
     for s in HORN_MEL:
         notes_str(out, s, 100)
+    put(out, 5, [(0, 3, ['E3', 'B3'], 127)])                          # v4: koperstoot op de HIT
     return dedupe(out)
 
 
@@ -377,7 +382,7 @@ def hi():
         notes_str(out, s, 96)
     for ob in range(53, 57):                                          # A#5/C#6 in achtsten
         put(out, ob, [(q * 2, 2, 'A#5' if q % 2 == 0 else 'C#6', 92) for q in range(8)])
-    return dedupe(out)
+    return dedupe([[a, b, n + HI_OCT, v] for a, b, n, v in out])
 
 
 # ---------------------------------------------------------------- drums (stem 'drums', onsets per band per 16e) -------
@@ -413,32 +418,46 @@ def drums():
     vel = lambda x, top, lo=58, span=69: int(min(127, lo + span * min(x, top) / top))
     # maat 1-4 (chant, Jordi: 'eerst de roep, dan de eerste grote slag'): de gemeten slagen, maar zacht (hand-trom-
     # ostinato onder de chant); de openingsslag op maat 1 is een doffe boem, niet de HIT
+    # v4 (Jordi: 'drums heb je wel als een soort van tikken, maar die zijn te zacht'): in het origineel zijn de drums
+    # in maat 1-4 even luid als in de groove (drumstem 39-43 dB per halve maat, de chant 23-33 dB): volle trommen
     for ob in range(1, 5):
         for q, x in LOW[ob].items():
-            hit(t, ob, q, TAIKO_LO if x < 120 else TAIKO, vel(x, 250, 60, 52))   # v3: harder (was 44+40)
+            hit(t, ob, q, BIGTOM if x >= 170 else (TAIKO if x >= 70 else TAIKO_LO), vel(x, 200, 96, 31))
         for q, x in CRACK[ob].items():
-            hit(pc, ob, q, KA, vel(x, 90, 54, 44))
+            hit(pc, ob, q, KA, vel(x, 90, 84, 40))
     t = [n for n in t if n[0] != at(1, 0)]
-    hit(t, 1, 0, BIGTOM, 92)
-    for i, q in enumerate((12, 13, 14, 15)):                         # korte roffel onder de adem vóór de HOO
-        hit(m, 4, q, TAIKO_LO, 64 + 10 * i)
+    hit(t, 1, 0, BIGTOM, 127)
+    hit(m, 1, 0, TAIKO, 116)
+    for i, q in enumerate((12, 13, 14, 15)):                         # korte roffel naar de HIT
+        hit(m, 4, q, TAIKO, 96 + 10 * i)
     # maat 5 = de HIT (v3 zonder 'HOO'): de eerste grote slag: odaiko + taiko + ka + bekken + kick
+    # v4 (Jordi: 'de klap op 6 mag ook harder ... meer impact, of meerdere instrumenten tegelijkertijd'): odaiko + eigen
+    # impact-sample (lage odaiko + sub-val + orkesthit) + taiko + kick + bekken, met pauk en hoornstoot
+    # (de ka en de laatste slag van maat 4 vallen weg: kanalen vrij voor de klap)
+    t = [n for n in t if n[0] != at(4, 15)]
+    pc = [n for n in pc if n[0] != at(5, 0)]
     hit(t, 5, 0, BIGTOM, 127)
-    hit(m, 5, 0, TAIKO, 120)
-    hit(pc, 5, 0, KA, 124)
+    hit(cr, 5, 0, IMPACT, 127)
+    hit(m, 5, 0, TAIKO, 127)
     hit(cr, 5, 0, CRASH, 127)
     hit(m, 5, 0, KICK, 127)
+    hit(tp, 5, 0, p('E2'), 127, 4)
     # maat 5-8: 'dan beginnen de drums' (gemeten, volle sterkte)
     for ob in range(5, 9):
         for q, x in LOW[ob].items():
             if ob == 5 and q == 0:
                 continue
-            hit(t, ob, q, BIGTOM if x >= 170 else (TAIKO if x >= 95 else TAIKO_LO), vel(x, 230))
+            # v4 (Jordi: 'tussen 7 en 11 moeten de drums domineren'): harder, kleinere dynamiek
+            hit(t, ob, q, BIGTOM if x >= 150 else (TAIKO if x >= 70 else TAIKO_LO), vel(x, 200, 100, 27))
         for q, x in CRACK[ob].items():
             if not (ob == 5 and q == 0):
-                hit(pc, ob, q, KA, vel(x, 90, 70, 57))
+                hit(pc, ob, q, KA, vel(x, 90, 92, 35))
+        if ob >= 6:                                                   # kick onder de zware slagen (punch)
+            for q, x in LOW[ob].items():
+                if x >= 85:
+                    hit(m, ob, q, KICK, 120)
     for q in range(8, 16):                                            # maat 8: pauk-roffel crescendo naar maat 9
-        hit(tp, 8, q, p('E2'), 70 + (q - 8) * 7, 1)
+        hit(tp, 8, q, p('E2'), 84 + (q - 8) * 6, 1)
     # maat 9-12 (v3): het 'TUDUDU' is de synth (Jordi), geen taikomotief meer. Drumstem per 16e (flux per band):
     # laag sterk op 16e 9 ('3-en') en 12 (4), middel op 8 (3), tel 1 matig -> 1 . . . | 3 3-en . 4
     for ob in range(9, 13):
@@ -506,7 +525,7 @@ def build(render_dir=None, frag_dir=None):
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in melodic.items()}
     for k in ('taiko', 'toms', 'perc', 'cym'):                        # per partij de langste release van zijn kitnoten
         tail[k] = max(release_ticks(kitrel[n[2]], TPB, BPM) for n in parts[k]) + 2
-    for k in ('chlo', 'syn', 'horn', 'hi', 'pips', 'bass', 'pulse', 'timp', 'pad'):
+    for k in ('chlo', 'horn', 'hi', 'pips', 'bass', 'pulse', 'timp', 'pad'):   # v4: syn niet (legato, doorgetrokken)
         parts[k] = detach(parts[k], tail[k])
     parts['chant'] = legato(parts['chant'])                           # gezongen: noten lopen in elkaar over
     order = ['taiko', 'syn', 'bass', 'cym', 'chant', 'chlo', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
@@ -550,6 +569,7 @@ KIT = [   # vanaf noot 36; eigen samples (tapu_samples.py) + stock Emerald; een 
     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tambourine, 255, 0, 255, 90',             # 46 tamboerijn
     'voice_directsound 60, 0, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 90',      # 47 hyoushigi
     'voice_directsound 60, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 120',      # 48 kick
+    'voice_directsound 60, 0, DirectSoundWaveData_tapu_impact, 255, 0, 255, 230',                   # 49 v4: HIT-impact
 ]
 
 
@@ -584,7 +604,7 @@ def write_voicegroup():
 GM_PROG = {'chant': 52, 'chlo': 53, 'syn': 81, 'horn': 60, 'hi': 77, 'pips': 72, 'bass': 38, 'pad': 48, 'pulse': 45,
            'synp': 80, 'hat': 122, 'timp': 47}
 GM_DRUM = {TAIKO: 41, TAIKO_LO: 43, BIGTOM: 35, INDIAN: 45, TOM: 47, CONGA_LO: 64, CONGA_HI: 62, OHTSU: 60,
-           KOTSU: 61, CRASH: 49, TAMB: 54, HYOU: 76, KICK: 36}
+           KOTSU: 61, CRASH: 49, TAMB: 54, HYOU: 76, KICK: 36, IMPACT: 35}
 
 
 def gm_midi(path, only=None):

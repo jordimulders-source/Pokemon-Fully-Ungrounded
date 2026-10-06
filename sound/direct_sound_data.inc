@@ -7309,3 +7309,7 @@ DirectSoundWaveData_hooh_ka::
 	.align 2
 DirectSoundWaveData_hooh_kiai::
 	.incbin "sound/direct_sound_samples/grounded/hooh_kiai.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_impact::
+	.incbin "sound/direct_sound_samples/grounded/tapu_impact.bin"

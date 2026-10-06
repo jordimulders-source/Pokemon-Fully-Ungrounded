@@ -17196,3 +17196,10 @@ Volgens Jordi's GBA-instructies per leider:
   - **Hoopa** (3,8 s): ringportaal opent, er vallen items uit, een Wailord zwemt achter de ring langs ("past er niet door"), een Magikarp floept eruit, Hoopa kijkt door de ring en zijn hand grijpt de camera.
   - **Forces of Nature** (3,3 s): weerbericht "HOENN WEATHER / LIVE" ontspoort: Tornadus scheurt de kaart weg, Thundurus slaat drie keer in, Landorus laat de grond barsten met een kaartje "LANDORUS-T / OU usage: very yes / Counterplay: lol".
 - Lugia en Ho-Oh met hun eigen thema; de Forces elk hun eigen thema. Hoopa en de Forces staan in de battle tester.
+
+### [v0.9.137] - Battle! Tapu v4 (begin 0–25 s)
+- Bas pas vanaf maat 12 (de "bas" in de intro was de lage klank van de taiko's). Drums in maat 1–8 veel harder en dominant, de chant eronder.
+- De slag op 5,54 s gelaagd: nieuw sample `tapu_impact` (odaiko + dreun + orkesthit + galm, 24 KB) op twee sporen, met odaiko, taiko, crash, pauk en hoornstoot; vier zestienden stilte ervoor voor contrast.
+- Synth vanaf 11,8 s één doorlopende legato-lijn volgens Jordi's neurie (geen gaten of wegvallen meer).
+- Fluit rond 1:06 een octaaf lager; de "fluit" rond 1:18 was een verkeerd overgeschreven akkoord en is nu een strijkersakkoord.
+- Nog niet aan de gevechten gekoppeld.

@@ -9930,8 +9930,8 @@ static void Task_WeatherService(u8 taskId)
 // Alles hangt aan TAPU_HIT_FRAME: het aantal VBlanks vanaf de start van de transitie (= start van de muziek, die
 // CreateBattleStartTask een frame eerder start) tot die drumslag, dus HIT_SECONDS * 60 uit tools/grounded/tapu_theme.py.
 // Er wordt op echte VBlanks geteld (gMain.vblankCounter1), zodat vertraagde frames de sync met de muziek niet breken.
-#define TAPU_HIT_FRAME 240 // = HIT_SECONDS * 60 (tapu_theme.py); de transitie eindigt precies hier
-#define TAPU_BEAT      30  // beat-afstand voor het oplichten (geteld terug vanaf de drumslag)
+#define TAPU_HIT_FRAME 249 // = HIT_SECONDS_GBA (4,156 s) * 60 (tapu_theme.py); de transitie eindigt precies hier
+#define TAPU_BEAT      21  // 174 bpm = 20,7 frames per tel; beat-afstand voor het oplichten (geteld terug vanaf de drumslag)
 #define TAPU_BUILD     48  // opbouw: snellere pulsen, trillen, alles lichter
 #define TAPU_OPEN      10  // het schild gaat open in de laatste TAPU_OPEN frames
 #define TAPU_LATENCY   2   // gemeten: muziekstart -> transitiestart 1 frame, transitie-einde -> CB2_InitBattle 1 frame

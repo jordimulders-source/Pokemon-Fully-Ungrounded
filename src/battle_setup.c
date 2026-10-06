@@ -501,7 +501,7 @@ void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCa
 }
 
 // Project Grounded: de Tapu's (eigen intro per Tapu, eindigt op de grote drumslag van hun thema)
-#ifdef MUS_GROUNDED_VS_TAPU
+#if 0 // Project Grounded: aan (1) zodra Jordi de noten van het Tapu-thema goedkeurt
 #define TAPU_BATTLE_MUSIC MUS_GROUNDED_VS_TAPU
 #else
 #define TAPU_BATTLE_MUSIC MUS_RG_VS_LEGEND

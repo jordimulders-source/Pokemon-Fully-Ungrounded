@@ -17134,3 +17134,8 @@ Volgens Jordi's GBA-instructies per leider:
 - Elke Tapu een eigen lichte intro (±12 KB samen): de wereld zakt weg in de kleur van de Tapu, het gesloten schild (uit Jordi's png's) verschijnt (Koko scanlijnen, Lele weefgolf, Bulu valt met een dreun, Fini stijgt golvend op), achtergrondmotief uit het schildpatroon pulseert op de beat, bouwt op, en het schild splijt open → wit → gevecht.
 - Duur 240 frames (4 s), instelbaar met `TAPU_HIT_FRAME` (= eerste grote drumslag van het Tapu-thema) en `TAPU_BEAT`; getimed op echte VBlanks. Generator `tools/grounded/tapu_transition.py`.
 - Op soort gekoppeld (wild en legendary). Muziek nog `MUS_RG_VS_LEGEND` tot het Tapu-thema er is.
+
+### [v0.9.125] - Battle! Tapu, fase 1 (transcriptie)
+- `MUS_GROUNDED_VS_TAPU` (656, `tools/grounded/tapu_theme.py`): transcriptie van het Sun/Moon-Tapu-thema op stock-instrumenten, 174 bpm, loop van 60 maten. Taiko-drumkit (`drumsets/tapu.inc`), koor (choir aahs) voor de chants, mannenstem voor de kreten, strijkers/hoorn/shakuhachi, fingered bass, pauk.
+- 3 maten voorspel (pauk-roffel, handtrommen, aanzwellend koor, taiko-opbouw), dan de eerste grote slag + koor op 4,156 s: daar begint het gevecht. De Tapu-intro's eindigen nu precies daar (`TAPU_HIT_FRAME` 249, beats op 174 bpm).
+- Nog niet aan de gevechten gekoppeld (eerst Jordi's oordeel over de noten; dan `#if 0` → `1` in `battle_setup.c`). Fragmenten per partij naast het origineel ter vergelijking.

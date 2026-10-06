@@ -17077,3 +17077,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **Prijzen, één keer per week:** verliezen = troostprijs, de eerste keer een **Lucky Egg**, daarna Rare Candy, PP Up, Exp. Candy M, Big Pearl, Dive Ball of Heart Scale. Winnen = **één Poké Ball** (de eerste keer ook een Silver Shield-trofee) en geen troostprijs ("Rules are rules").
 - Een opschepper die al 312 weken op rij tweede wordt, en een visser die al 40 jaar onder de steiger naar Feebas vist. Teksten: Engelse placeholders. ROM +4,4 KB. Flags 0x27A–0x280.
 - Vragen: moet het record echt onverslaanbaar (nu kan een flinke Wailord in zwakke weken winnen)? Alleen echte vissen tellen, of elke Water-Pokémon?
+
+### [v0.9.117] - Zee-fixes uit Jordi's review
+- **Drijvende markt:** zeldzame bessen kosten nu 2500–5000 (eigen prijzen per winkel via `CreatePokemartMenuWithPrices`; andere winkels ongewijzigd).
+- **Route 134:** de placeholders Volcanion, Manaphy, Phione en Arctibax uit de vistabel; nu Remoraid, Seadra, Relicanth, Mantine, Huntail, Gorebyss, Kingler, Dragonair, Octillery en zeldzaam Kingdra. Surfen: Duraludon → Palafin.
+- **Visserstoernooi:** het record van de Magikarp is nu echt onverslaanbaar (altijd zwaarder dan de zwaarst mogelijke vis); alleen echte vissen tellen (expliciete lijst, van Magikarp tot Dondozo en Stunfisk), en de jury leest het "OFFICIAL LIST OF FISH, page 1 of 1" voor ("seahorses are fish. I checked. Twice", "Jellyfish… The name lies"). Grandma Truus heet nu Grandma Dorothy.
+- **Paradiso Resort** verhuisd naar het zuiden van Route 129 (buiten het zicht van Mr. Briney's boot; Town Map (24,11)). Alle gevechten daar vragen eerst ja/nee ("GARCHOMP is always disappointed").
+- **Zeestroming** op Route 132–134 veel minder straffend: alleen nog korte westwaartse geulen (6 tegels, met rustig water ertussen); een script controleert dat alles bereikbaar blijft (`calm_currents.py`). Daarbij gevonden: de drijvende markt was vanaf Route 133 onbereikbaar (rotsrij); er is nu een vaargeul.

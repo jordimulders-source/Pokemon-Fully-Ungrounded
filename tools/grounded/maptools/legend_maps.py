@@ -1,5 +1,5 @@
 """Project Grounded: kaarten voor de post-game legendary-events Genesect en Mewtwo.
-- NewMauville_ServerVault (Genesect lv 70): serverkluis achter de Raikou-grot onder New Mauville. Stijl en bouwstenen
+- NewMauville_ServerVault (was Genesect lv 70; sinds v0.9.110 leeg, met de vrachtbrief naar Nothing Island): serverkluis achter de Raikou-grot onder New Mauville. Stijl en bouwstenen
   zoals NewMauville_ThunderCave (beasts_maps.py): rotswanden uit NewMauville_Entrance, tanks en computers uit
   AquaHideout_B2F. Ingang: kluisdeur in de bovenwand van de Raikou-grot (x 6-8), verschijnt na de herstart via de
   terminal (FLAG_NEW_MAUVILLE_VAULT_OPEN, scripts in NewMauville_ThunderCave/scripts.inc).
@@ -148,11 +148,10 @@ for (dx, dy) in ((2, 8), (10, 8)):                            # serverkasten (sc
     paste(17, 6, 3, 4, dx, dy)
 save_layout(VAULT, g, 'NewMauville_Entrance')
 add_layout(VAULT, VAULT_C, W, H, 'gTileset_Facility')
-GENESECT = (7, 9)
-r = reachable(g, (7, 2), {GENESECT})
-assert next_to(r, *GENESECT), 'Genesect onbereikbaar'
-for sx, sy in ((2, 10), (3, 10), (10, 10), (11, 10)):
-    assert (sx, sy + 1) in r, ('server', sx, sy)
+# sinds v0.9.110 is Genesect weg (Neo Plasma, Plasma Frigate bij Nothing Island): lege capsules + printer met de vrachtbrief
+r = reachable(g, (7, 2), set())
+for sx, sy in ((2, 10), (3, 10), (10, 10), (11, 10), (3, 6), (4, 6), (10, 6), (11, 6)):
+    assert (sx, sy + 1) in r, ('server/capsule', sx, sy)
 
 # Raikou-grot: warp naar de kluis (alleen bereikbaar als de deur er is)
 tc = json.load(open('data/maps/NewMauville_ThunderCave/map.json'))
@@ -164,11 +163,11 @@ tcw = [i for i, w in enumerate(tc['warp_events']) if w['dest_map'] == 'MAP_' + V
 os.makedirs('data/maps/' + VAULT, exist_ok=True)
 write_json('data/maps/%s/map.json' % VAULT, map_json(
     VAULT_C, VAULT, VAULT_C, 'MUS_RG_SILPH', 'MAPSEC_NEW_MAUVILLE',
-    [obj('LOCALID_SERVER_VAULT_GENESECT', 'OBJ_EVENT_GFX_SPECIES(GENESECT)', GENESECT[0], GENESECT[1],
-         VAULT + '_EventScript_Genesect', 'FLAG_HIDE_NEW_MAUVILLE_GENESECT', 'MOVEMENT_TYPE_FACE_UP')],
+    [],
     [{'x': 7, 'y': 1, 'elevation': 0, 'dest_map': 'MAP_NEW_MAUVILLE_THUNDER_CAVE', 'dest_warp_id': str(tcw)}],
     [sign(2, 10, VAULT + '_EventScript_Server1'), sign(3, 10, VAULT + '_EventScript_Server1'),
-     sign(10, 10, VAULT + '_EventScript_Server2'), sign(11, 10, VAULT + '_EventScript_Server2')]))
+     sign(10, 10, VAULT + '_EventScript_Printer'), sign(11, 10, VAULT + '_EventScript_Printer')]
+    + [sign(x, 6, VAULT + '_EventScript_Capsule') for x in (3, 4, 10, 11)]))
 add_to_groups(VAULT, 'MeteorSpace')
 add_include(VAULT, 'MeteorSpace')
 

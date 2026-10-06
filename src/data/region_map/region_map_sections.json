@@ -1322,6 +1322,14 @@
       "y": 3,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_NOTHING_ISLAND",
+      "name": "NOTHING ISLAND",
+      "x": 0,
+      "y": 10,
+      "width": 1,
+      "height": 1
     }
   ]
 }

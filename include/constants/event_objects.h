@@ -283,7 +283,9 @@
 #define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
 #define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
 
-#define NUM_OBJ_EVENT_GFX                        274
+#define OBJ_EVENT_GFX_PLASMA_FRIGATE                  274 // Project Grounded: Plasma Frigate (S.S. Tidal-sprite, eigen palet; Nothing Island)
+
+#define NUM_OBJ_EVENT_GFX                        275
 
 
 // These are dynamic object gfx ids.
@@ -435,6 +437,7 @@
 #define OBJ_EVENT_PAL_TAG_ROCKET                   0x1137 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
+#define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x113A // Project Grounded: Plasma Frigate
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

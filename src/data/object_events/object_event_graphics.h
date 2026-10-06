@@ -285,6 +285,7 @@ const u32 gObjectEventPic_CableCar[] = INCBIN_U32("graphics/object_events/pics/m
 const u16 gObjectEventPal_CableCar[] = INCBIN_U16("graphics/object_events/palettes/cable_car.gbapal");
 const u32 gObjectEventPic_SSTidal[] = INCBIN_U32("graphics/object_events/pics/misc/ss_tidal.4bpp");
 const u16 gObjectEventPal_SSTidal[] = INCBIN_U16("graphics/object_events/palettes/ss_tidal.gbapal");
+const u16 gObjectEventPal_PlasmaFrigate[] = INCBIN_U16("graphics/object_events/palettes/plasma_frigate.gbapal"); // Project Grounded
 const u32 gFieldEffectObjectPic_Sparkle[] = INCBIN_U32("graphics/field_effects/pics/sparkle.4bpp");
 const u32 gObjectEventPic_BerryTreeDirtPile[] = INCBIN_U32("graphics/object_events/pics/berry_trees/dirt_pile.4bpp");
 const u32 gObjectEventPic_BerryTreeSprout[] = INCBIN_U32("graphics/object_events/pics/berry_trees/sprout.4bpp");

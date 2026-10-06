@@ -5040,6 +5040,46 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route127_WellspringGrotto/border.bin",
       "blockdata_filepath": "data/layouts/Route127_WellspringGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_NOTHING_ISLAND",
+      "name": "NothingIsland_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/NothingIsland/border.bin",
+      "blockdata_filepath": "data/layouts/NothingIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_CORRIDOR",
+      "name": "PlasmaFrigate_Corridor_Layout",
+      "width": 18,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Corridor/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Corridor/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_CABINS",
+      "name": "PlasmaFrigate_Cabins_Layout",
+      "width": 36,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Cabins/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Cabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_HOLD",
+      "name": "PlasmaFrigate_Hold_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Hold/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Hold/map.bin"
     }
   ]
 }

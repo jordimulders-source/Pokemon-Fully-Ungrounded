@@ -1055,7 +1055,18 @@
 #define TRAINER_MIRE_FERN                   1032 // Project Grounded: Mangrove Mire (Pokemon Ranger)
 #define TRAINER_MIRE_KAPPA                  1033 // Project Grounded: Mangrove Mire (Ninja Boy, vermomd als boom)
 
-#define TRAINERS_COUNT                      1034
+// Project Grounded: Nothing Island en de Plasma Frigate (Genesect-sidequest, tools/grounded/maptools/plasma_frigate.py)
+#define TRAINER_PLASMA_ISLE_LOOKOUT         1034 // Nothing Island, uitkijkpost
+#define TRAINER_PLASMA_ISLE_GUARD           1035 // Nothing Island, zuidkant
+#define TRAINER_PLASMA_NIGEL                1036 // Nothing Island, steiger (hoofd logistiek)
+#define TRAINER_PLASMA_GUARD_RED            1037 // Plasma Frigate, deur 2 (rode code)
+#define TRAINER_PLASMA_GUARD_BLUE           1038 // deur 3 (blauwe code)
+#define TRAINER_PLASMA_GUARD_WHITE          1039 // deur 4 (witte code)
+#define TRAINER_PLASMA_SHADOW_TRIAD         1040 // luik naar het ruim
+#define TRAINER_PLASMA_ZINZOLIN             1041 // ruim (dubbel met Rood)
+#define TRAINER_PLASMA_ROOD                 1042 // ruim (dubbel met Zinzolin)
+
+#define TRAINERS_COUNT                      1043
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

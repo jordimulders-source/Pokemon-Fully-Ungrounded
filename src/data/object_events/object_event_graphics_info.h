@@ -3197,6 +3197,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSTidal = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: Plasma Frigate (zelfde beelden als de S.S. Tidal, eigen palet)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PlasmaFrigate = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1920,
+    .width = 96,
+    .height = 40,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = sOamTables_96x40,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_SSTidal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubmarineShadow = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW,

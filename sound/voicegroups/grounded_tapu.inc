@@ -82,8 +82,8 @@ voice_group grounded_tapu
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80
-	voice_directsound 60, 0, DirectSoundWaveData_tapu_synth, 255, 0, 255, 160  @ 81
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_brass, 255, 0, 255, 200  @ 81
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_brass_hi, 255, 0, 255, 200  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85

@@ -17,7 +17,9 @@ een groep van 4-6 licht ontstemde stemmen met ademruis; geen audio uit de opname
   tapu_vox_hu  lage 'hu' van een mannengroep (F#3, met loop): de lage tussenroepen
   (v3: de 'HOO!'-kreet tapu_shout is weg, Jordi: 'klinkt erg wimpy')
 Synth (v3):
-  tapu_synth   brede zaagtand-synth (twee ontstemde zaagtanden + blokgolf, exacte loop): lead van maat 9-12 en synthbas
+  tapu_synth   brede zaagtand-synth (twee ontstemde zaagtanden + blokgolf, exacte loop): synthbas (v3/v4 ook de lead)
+Synth-brass (v5):
+  tapu_brass / tapu_brass_hi  lead van maat 9-12: vijf ontstemde stemmen met het gemeten koperprofiel (zie brass())
 Gebruik: python3 tools/grounded/tapu_samples.py"""
 import os, subprocess, sys, tempfile, wave
 import numpy as np
@@ -249,6 +251,45 @@ def synth(rate):
     return x, 60, (0, n)
 
 
+# v5: de lead van maat 9-12 is een synth-brass (koperachtige synth), geen kale zaagtand. Gemeten op de stem 'other'
+# (alleen E3 klinkt in maat 9:2-9:7, de mix geeft hetzelfde profiel): harmonischen 1-8 = -6 -5 0 -10 -11 -10 -21 -17 dB
+# (zwakke grondtoon, top op de 2e-3e harmonische = koperformant ±350-550 Hz), daarna vlak tot ±4 kHz (-18..-26 dB);
+# toonhoogte stabiel (pyin: std 0,2 halve toon, geen vibrato), wel een zweving van 13-17 dB op 2,5-3,5 en 8-9 Hz
+# = een ensemble van licht ontstemde stemmen. In maat 11-12 gaat het filter open: 1,6-4 kHz 6-8 dB sterker.
+BRASS_H = [-4, -2, -1, -8, -11, -13, -17, -15, -20, -21, -20, -20, -22, -24, -25, -25, -26, -27, -28, -29,
+           -30, -31, -32, -33, -35, -37, -39, -41]
+BRASS_VOICES = ((129, 0.55), (130, 0.85), (131, 1.0), (132, 0.85), (133, 0.55))   # cycli per loop van 0,5 s
+
+
+def brass(rate, bright):
+    """Vijf ontstemde stemmen (258-266 Hz, +-26 cent; elke stem een heel aantal perioden in de loop van 10512
+    samples = exact) met het gemeten harmonischenprofiel; aanzet 80 ms met een kleine val-in van onderen
+    (-0,35 halve toon, zoals de E3 van maat 9) en een korte, heldere 'blaas'. bright: het open filter van maat 11-12."""
+    rng = np.random.default_rng(5150 + bright)
+    L = rate // 2
+    A = int(0.08 * rate)
+    n = A + L
+    t = np.arange(n) / rate
+    scoop = np.where(t < 0.06, -0.35 * (1 - t / 0.06) ** 2, 0.0)            # halve tonen
+    ratio = 2 ** (scoop / 12)
+    integ = np.concatenate([[0], np.cumsum(ratio[:-1])]) / rate             # integraal van de toonhoogteverhouding
+    gain = np.array(BRASS_H, float)
+    if bright:
+        k = np.arange(1, len(gain) + 1)
+        gain += 7 * np.clip((k - 4) / 4, 0, 1)
+    x = np.zeros(n)
+    for cyc, amp in BRASS_VOICES:
+        f0 = cyc * rate / L                                                # Hz
+        for k, g in enumerate(gain, 1):
+            if k * f0 * 2 ** (5 / 12) > rate * 0.48:                       # tot F4 (+5) onder de Nyquist van de mixer
+                break
+            blast = 1 + 0.6 * (k > 4) * np.exp(-t / 0.05)                  # heldere aanblaas
+            x += amp * 10 ** (g / 20) * blast * np.sin(2 * np.pi * k * f0 * integ + rng.uniform(0, 2 * np.pi))
+    x *= np.minimum(1, t / 0.02)
+    x = x / np.abs(x).max() * 0.97
+    return x, 60, (A, n)
+
+
 def lowpass_sr(x, sr, hi):
     f = np.fft.rfft(x); fr = np.fft.rfftfreq(len(x), 1 / sr)
     f[fr > hi] *= np.exp(-(fr[fr > hi] - hi) / 600)
@@ -265,6 +306,8 @@ SAMPLES = {
     'tapu_vox_hu': ('vox', 0.75, 16384, True),
     'tapu_synth':  ('synth', 0, 21024, True),
     'tapu_impact': ('drum', 1.8, 13379, False),     # v4; achteraan + eigen seed: de andere samples blijven gelijk
+    'tapu_brass':  ('brass', 0, 21024, True),       # v5: synth-brass-lead maat 9-12 (eigen seed)
+    'tapu_brass_hi': ('brass_hi', 0, 21024, True),  # v5: idem, filter open (maat 11-12)
 }
 
 
@@ -281,6 +324,8 @@ def main(only=None):
             key, lp = 60, None
         elif kind == 'synth':
             a, key, lp = synth(rate)
+        elif kind.startswith('brass'):
+            a, key, lp = brass(rate, kind == 'brass_hi')
         else:
             a, key = vox(short, rate)
             lp = None

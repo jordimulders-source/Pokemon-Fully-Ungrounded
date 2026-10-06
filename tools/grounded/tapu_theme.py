@@ -261,39 +261,37 @@ def pad():
 # stipjes) en had gaten (11:2-11:6, 12:3-12:5). Nu één doorlopende, legato lijn (elke noot tot de volgende aanslag, geen
 # rust) op de tonen van de neurie (basic-pitch op de neurie, maat 9 = 0,31 s): G2 . D3 . | E3 . F#3 G3-F#3-G3-F#3 |
 # (F3) E3 F#3 . . . | E3 D#3 G#2 . E3 G3 F#3 . G3 F#3; in de ligging van de stem (+9 voor de eerste twee, dan +11).
-SYN_LINE = ('9:0:8:E3 9:8:8:B3 10:0:8:E4 10:8:3:F4 10:11:1:F#4 10:12:1:F4 10:13:1:F#4 10:14:3:F4 '
-            '11:1:4:E4 11:5:1:D#4 11:6:11:F4 12:1:1:D#4 12:2:3:G3 12:5:2:D#4 12:7:1:F#4 12:8:4:F4 '
-            '12:12:1:F#4 12:13:5:F4')
+# v5 (Jordi over v4: 'alles behalve de synth klopt; klinkt wat gehaast, kloppen de noten, is synth het juiste
+# instrument?'): opnieuw getranscribeerd uit de stem 'other' (drie methodes per 16e: piek-tracking, pyin per band,
+# basic-pitch; tabel in de rapportmap). Het is GEEN melodielijn maar een akkoord dat zich opbouwt en dan blijft liggen:
+# E3 + E4 (octaaf) op 9:0, B3 erbij op 9:8, E4 opnieuw aangezet op 10:0 (basic-pitch: nieuwe aanzet, Jordi's 3e toon),
+# E4 schuift naar F4 op 10:8, E3 valt weg op 11:8, en B3 + F4 (tritonus) liggen tot 13:0 (40 zestienden). De bovenstem
+# (wat je neuriet) = E3 . B3 . E4 . F4 - - - - -, elke stap een halve maat op de taikoslagen (9:0 9:8 10:0 10:8).
+# De neurie heeft dezelfde vorm en hetzelfde ritme (stappen +7 +2 +2 i.p.v. +7 +5 +1: kleinere sprongen, gewoon
+# neuriën), en zijn 'TUDUDU'-gewiebel op 10:8-11:0 is de zweving van de synth (ensemble, 2,5-9 Hz), geen triller;
+# de 'woeps' omhoog op 11:0 en 12:0 = de synth die daar opnieuw aanzet en helderder wordt (filter open).
+# v4 maakte van dat gewiebel en die woepsen 16 losse 16en-noten (F#4/F4-trillers, D#4, G3) in een eenstemmige lijn
+# die elke vorige toon afkapte, plus een PSG-16en-puls: dat was het 'gehaast'. Klank: synth-brass (tapu_brass).
+SYN_LINE = ('9:0:40:E3:110 9:0:16:E4:84 9:8:24:B3:112 10:0:8:E4:118 10:8:8:F4:124 '
+            '11:0:15:B3:116 11:0:15:F4:124 12:0:13:B3:118 12:0:13:F4:127')
+SYN_BRIGHT = 82        # tapu_brass_hi: vanaf 11:0 (filter open), terug naar 81 op 9:0
 
 
 def synth():
     out = []
-    notes_str(out, SYN_LINE, 122)
-    out = sorted(dedupe(out))
-    for i in range(len(out) - 1):                                     # legato: geen gaten tussen de tonen
-        out[i][1] = out[i + 1][0]
-    return out
+    notes_str(out, SYN_LINE)
+    return sorted(dedupe(out))
 
 
-def synth_fx():
-    """vibrato (MOD) op de lange tonen (de 'DUUUU's)"""
-    ev = [(0, mido.Message('control_change', control=21, value=44)), (0, mido.Message('control_change', control=1, value=0))]
-    for ob, q0, q1 in ((9, 4, 8), (9, 12, 16), (10, 4, 8), (11, 10, 17), (12, 14, 18)):
-        ev += [(at(ob, q0), mido.Message('control_change', control=1, value=28)),
-               (at(ob, q1) - 1, mido.Message('control_change', control=1, value=0))]
-    return ev
+def synth_ccs():
+    """programmawissels: de heldere synth-brass voor de aanzetten van 11:0 en 12:0, de donkere vanaf 9:0."""
+    return [(at(9, 0), 'prog', SYN), (at(11, 0), 'prog', SYN_BRIGHT)]
 
 
 def synth_psg():
-    """PSG-blokgolf (kost geen DS-kanaal): maat 9-12 de 16en-puls van de synth (de tonen die al klinken, om en om,
-    crescendo = het 'TUDUDUDU' onder de lead); maat 17-20 en 25-28 de bovenlaag van de synthbas (stem 'other':
-    het basriff een octaaf hoger)."""
+    """PSG-blokgolf (kost geen DS-kanaal): maat 17-20 en 25-28 de bovenlaag van de synthbas (stem 'other': het
+    basriff een octaaf hoger). v5: de 16en-puls van maat 9-12 is weg (de synth daar pulseert niet)."""
     out = []
-    chord = {9: (['E3'] * 8 + ['E3', 'B3'] * 4), 10: (['B3', 'E4'] * 4 + ['B3', 'F4'] * 4), 11: ['B3', 'F4'] * 8,
-             12: ['B3', 'F4'] * 6}
-    for ob, ns in chord.items():
-        for q, n in enumerate(ns):
-            put(out, ob, [(q, 1, n, min(127, 70 + (ob - 9) * 12 + q * 2))])
     for ob in list(range(17, 21)) + list(range(25, 29)):
         put(out, ob, [(q, ln, p(n) + 12, 92) for q, ln, n in GROOVE[ob]])
     return dedupe(out)
@@ -557,7 +555,7 @@ def build(render_dir=None, frag_dir=None):
     song.loop = (0, END * BAR)                                        # terug naar maat 1 (chant), zoals het origineel
     for ch, (k, prog, vol, pan) in enumerate(TRACKS):
         notes = parts[k]
-        song.add(notes, prog, vol, ch, pan, extra=synth_fx() if k == 'syn' else ())
+        song.add(notes, prog, vol, ch, pan, ccs=synth_ccs() if k == 'syn' else ())
     song.save(OUT, END * BAR)
     print(OUT, 'HIT op %.3f s (GBA %.3f s = TAPU_HIT_FRAME %d), loop %.1f s' % (
         HIT_SECONDS, HIT_SECONDS_GBA, round(HIT_SECONDS_GBA * 60), NBARS * 4 * 60 / BPM))
@@ -595,7 +593,8 @@ def write_voicegroup():
         '@ 52': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_vox_a, 255, 0, 255, 90  @ 52',
         '@ 38': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_synth, 255, 0, 255, 120  @ 38',
         '@ 80': '\tvoice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80',
-        '@ 81': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_synth, 255, 0, 255, 160  @ 81',
+        '@ 81': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_brass, 255, 0, 255, 200  @ 81',
+        '@ 82': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_brass_hi, 255, 0, 255, 200  @ 82',
         '@ 54': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_vox_hu, 255, 0, 255, 150  @ 54',
         '@ 77': '\tvoice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 160  @ 77',
         '@ 127': '\tvoice_keysplit_all voicegroup_tapu_drumset  @ 127',
@@ -613,7 +612,7 @@ def write_voicegroup():
 
 
 # ---- offline-render (FluidR3 GM; andere klanken dan de GBA, wel noten/vorm/tempo) ------------------------------------
-GM_PROG = {'chant': 52, 'chlo': 53, 'syn': 81, 'horn': 60, 'hi': 77, 'pips': 72, 'bass': 38, 'pad': 48, 'pulse': 45,
+GM_PROG = {'chant': 52, 'chlo': 53, 'syn': 62, 'horn': 60, 'hi': 77, 'pips': 72, 'bass': 38, 'pad': 48, 'pulse': 45,
            'synp': 80, 'hat': 122, 'timp': 47}
 GM_DRUM = {TAIKO: 41, TAIKO_LO: 43, BIGTOM: 35, INDIAN: 45, TOM: 47, CONGA_LO: 64, CONGA_HI: 62, OHTSU: 60,
            KOTSU: 61, CRASH: 49, TAMB: 54, HYOU: 76, KICK: 36, IMPACT: 35}

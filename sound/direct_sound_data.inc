@@ -7313,3 +7313,11 @@ DirectSoundWaveData_hooh_kiai::
 	.align 2
 DirectSoundWaveData_tapu_impact::
 	.incbin "sound/direct_sound_samples/grounded/tapu_impact.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_brass::
+	.incbin "sound/direct_sound_samples/grounded/tapu_brass.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_brass_hi::
+	.incbin "sound/direct_sound_samples/grounded/tapu_brass_hi.bin"

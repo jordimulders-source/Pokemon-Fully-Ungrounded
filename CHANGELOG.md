@@ -17119,3 +17119,9 @@ Volgens Jordi's GBA-instructies per leider:
   - Verborgen items op al die kaarten + in het water van Route 110/115/118/119/120.
 - Battle Stadium: Mortimer, Captain Abe, Derek en Brayden in de pool.
 - Wild (één slot vervangen, volgorde behouden): Rattata (101, 104), Meowth (103), Caterpie (104, Petalburg Woods), Skwovet (Petalburg Woods), Glameow (110, 121), Buneary (116), Raticate (118), Komala (119, Fortree Jungle), Greedent (120).
+
+### [v0.9.122] - Organische eilandjes, Tapu Isle en Fullmoon Island
+- **Zeevulling 2:** de eilandjes zijn geen rechthoeken meer. Het bouwscript laat er willekeurige bulten aan groeien (vaste seed per eiland, alleen op open zee, alleen vormen die de autotiles kunnen tekenen; bootjes blijven op zee). Het script telt `TRAINERS_COUNT` nu over alle trainers.
+- **Tapu Isle** (Midden-zee, boven Route 132; `tapu_cresselia.py`): jungle-eiland met een kahuna-plein en vier ruïnes. Tapu Koko → Lele → Bulu → Fini (lv 70), elk wekt de volgende en laat een Terrain Seed achter. Pas na de Hall of Fame (daarvoor houdt mist je tegen); verslagen Tapu's komen terug na de League. In Route 132 is één zeerots weggehaald voor een vaargeul. Trainers Kaimana, Leilani, Makoa en Nalu (1130–1133). Wild: o.a. Bewear, Komala, Exeggutor, Lycanroc en Oricorio Pom-Pom (nieuw wild), zeldzaam Vikavolt en Kommo-o.
+- **Fullmoon Island** (West-zee, rechts van Route 105): halvemaaneiland met een maanmeertje. Cresselia lv 60, 's nachts en na de Hall of Fame; daarna een "LUNAR FEATHER" (een Pretty Feather). Slapeloze zeeman verwijst naar Darkrai.
+- Voorlopig vanilla-transities en `MUS_RG_VS_LEGEND`; de eigen Tapu-intro's en het Tapu-thema volgen.

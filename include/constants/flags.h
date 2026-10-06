@@ -516,12 +516,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_CAUGHT_TAPU_KOKO                0x1DE // Project Grounded: Tapu-eiland: Tapu Koko gevangen
+#define FLAG_CAUGHT_TAPU_LELE                0x1DF // Project Grounded: Tapu-eiland: Tapu Lele gevangen
+#define FLAG_CAUGHT_TAPU_BULU                0x1E0 // Project Grounded: Tapu-eiland: Tapu Bulu gevangen
+#define FLAG_CAUGHT_TAPU_FINI                0x1E1 // Project Grounded: Tapu-eiland: Tapu Fini gevangen
+#define FLAG_DEFEATED_TAPU_KOKO              0x1E2 // Project Grounded: Tapu-eiland: Tapu Koko verslagen/gevangen (terug na de League als niet gevangen)
+#define FLAG_DEFEATED_TAPU_LELE              0x1E3 // Project Grounded: Tapu-eiland: Tapu Lele verslagen/gevangen
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -1350,7 +1350,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_DEFEATED_TAPU_BULU                      (SYSTEM_FLAGS + 0x3) // Project Grounded: Tapu-eiland: Tapu Bulu verslagen/gevangen
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1387,13 +1387,13 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_DEFEATED_TAPU_FINI                     (SYSTEM_FLAGS + 0x21) // Project Grounded: Tapu-eiland: Tapu Fini verslagen/gevangen
+#define FLAG_TAPU_LELE_AWAKE                        (SYSTEM_FLAGS + 0x22) // Project Grounded: Tapu-eiland: Tapu Lele wakker (Koko een keer verslagen/gevangen)
+#define FLAG_TAPU_BULU_AWAKE                        (SYSTEM_FLAGS + 0x23) // Project Grounded: Tapu-eiland: Tapu Bulu wakker (na Lele)
+#define FLAG_TAPU_FINI_AWAKE                        (SYSTEM_FLAGS + 0x24) // Project Grounded: Tapu-eiland: Tapu Fini wakker (na Bulu)
+#define FLAG_CAUGHT_CRESSELIA                       (SYSTEM_FLAGS + 0x25) // Project Grounded: Fullmoon Island: Cresselia gevangen
+#define FLAG_DEFEATED_CRESSELIA                     (SYSTEM_FLAGS + 0x26) // Project Grounded: Fullmoon Island: Cresselia verslagen/gevangen (terug na de League als niet gevangen)
+#define FLAG_HIDDEN_ITEM_TAPU_ISLE_BIG_PEARL        (SYSTEM_FLAGS + 0x27) // Project Grounded: Tapu-eiland: verborgen Big Pearl
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)
@@ -1403,8 +1403,8 @@
 #define FLAG_SYS_SAFARI_MODE                        (SYSTEM_FLAGS + 0x2C)
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
-#define FLAG_UNUSED_0x88E                           (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
+#define FLAG_ITEM_TAPU_ISLE_STAR_PIECE              (SYSTEM_FLAGS + 0x2E) // Project Grounded: Tapu-eiland: Star Piece (Bulu-ruine)
+#define FLAG_HIDDEN_ITEM_FULLMOON_ISLAND_MOON_STONE (SYSTEM_FLAGS + 0x2F) // Project Grounded: Fullmoon Island: verborgen Moon Stone
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)

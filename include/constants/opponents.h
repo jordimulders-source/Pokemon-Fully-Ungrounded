@@ -1086,6 +1086,12 @@
 #define TRAINER_TWINS_PIP_AND_PEP           1105 // Project Grounded (zeevulling 1): Route 127, tweeling (dubbel)
 #define TRAINER_RANGER_MARISOL              1106 // Project Grounded (zeevulling 1): Route 127, bij de gestrande Wailmer
 
+
+#define TRAINER_BLACK_BELT_KAIMANA          1130 // Project Grounded: Tapu-eiland, pad naar de bliksemruine (Koko)
+#define TRAINER_AROMA_LADY_LEILANI          1131 // Project Grounded: Tapu-eiland, pad naar de bloemenruine (Lele)
+#define TRAINER_RANGER_MAKOA                1132 // Project Grounded: Tapu-eiland, pad naar de woudruine (Bulu)
+#define TRAINER_EXPERT_NALU                 1133 // Project Grounded: Tapu-eiland, oever van de lagune (Fini)
+
 // zee_vulling_2 {
 #define TRAINER_BLACK_BELT_KENTA            1110 // Project Grounded (zeevulling 2): Route 105, eilandje van de schipbreukeling
 #define TRAINER_SIS_AND_BRO_JO_AND_LEO      1111 // Project Grounded (zeevulling 2): Route 108, bergingsvlot (dubbel)
@@ -1103,7 +1109,7 @@
 #define TRAINER_BIRD_KEEPER_SKYE            1123 // Project Grounded (zeevulling 2): Whirl Island, wacht op een grote vogel
 // }
 
-#define TRAINERS_COUNT                      1124
+#define TRAINERS_COUNT                      1134
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

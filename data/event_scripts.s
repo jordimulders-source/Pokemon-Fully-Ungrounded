@@ -457,6 +457,8 @@ gStdScripts_End::
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
 	.include "data/maps/MangroveMire/scripts.inc"
+	.include "data/maps/FullmoonIsland/scripts.inc"
+	.include "data/maps/TapuIsle/scripts.inc"
 	.include "data/maps/ParadisoResort_Bar/scripts.inc"
 	.include "data/maps/ParadisoResort_WineHall/scripts.inc"
 	.include "data/maps/ParadisoResort_Lobby/scripts.inc"

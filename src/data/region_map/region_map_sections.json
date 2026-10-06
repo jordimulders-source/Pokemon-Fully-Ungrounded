@@ -1386,6 +1386,22 @@
       "y": 3,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_TAPU_ISLE",
+      "name": "TAPU ISLE",
+      "x": 15,
+      "y": 8,
+      "width": 2,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_FULLMOON_ISLAND",
+      "name": "FULLMOON ISLAND",
+      "x": 1,
+      "y": 11,
+      "width": 2,
+      "height": 2
     }
   ]
 }

@@ -36723,6 +36723,182 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Razor Shell
 - Sucker Punch
 
+=== TRAINER_BLACK_BELT_KAIMANA ===
+Name: KAIMANA
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Hawlucha
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- High Jump Kick
+- Acrobatics
+- Swords Dance
+- Roost
+
+Crabominable
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ice Hammer
+- Close Combat
+- Earthquake
+- Bulk Up
+
+Passimian
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Gunk Shot
+- Knock Off
+- U-turn
+
+Togedemaru
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Zing Zap
+- Iron Head
+- Nuzzle
+- Spiky Shield
+
+=== TRAINER_AROMA_LADY_LEILANI ===
+Name: LEILANI
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Shiinotic
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Spore
+- Moonblast
+- Giga Drain
+- Strength Sap
+
+Lilligant
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Quiver Dance
+- Petal Dance
+- Sleep Powder
+- Dazzling Gleam
+
+Ribombee
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Pollen Puff
+- Moonblast
+- Sticky Web
+- Psychic
+
+Tsareena
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Trop Kick
+- High Jump Kick
+- Triple Axel
+- Rapid Spin
+
+=== TRAINER_RANGER_MAKOA ===
+Name: MAKOA
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Toucannon
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Roost
+
+Exeggutor
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Storm
+- Psychic
+- Sleep Powder
+- Trick Room
+
+Bewear
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hammer Arm
+- Double-Edge
+- Darkest Lariat
+- Swords Dance
+
+Kommo-o
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Clanging Scales
+- Close Combat
+- Poison Jab
+- Dragon Dance
+
+=== TRAINER_EXPERT_NALU ===
+Name: NALU
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Araquanid
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
+
+Toxapex
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Baneful Bunker
+- Toxic
+- Recover
+- Scald
+
+Bruxish
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic Fangs
+- Aqua Jet
+- Crunch
+- Ice Fang
+
+Dhelmise
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Power Whip
+- Poltergeist
+- Earthquake
+
+Wishiwashi
+Level: 70
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Liquidation
+- Earthquake
+- Endeavor
+- Soak
+
 /* --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) --- */
 
 === TRAINER_BLACK_BELT_KENTA ===

@@ -135,6 +135,9 @@ def dilate4(S):
     return S | {(x + dx, y + dy) for (x, y) in S for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}
 
 
+SEA_KEEP = {'Route122': rect(5, 33, 6, 35), 'Route124': rect(38, 30, 41, 32), 'Route129': rect(58, 30, 61, 32)}  # bootjes blijven op zee
+
+
 def organic(M, sand):
     """Rechthoekig zand -> organische vorm: willekeurige bulten (vaste seed per eiland) die alleen op open zee
     vallen. Het oorspronkelijke zand blijft (events staan daarop)."""
@@ -170,7 +173,7 @@ def organic(M, sand):
         A = dilate4(T)
         if not tileable(T) or not tileable(A):
             continue
-        if not all(sea(x, y) for p in dilate4(A) - base for x, y in [p]):
+        if not all(sea(x, y) for p in dilate4(A) - base for x, y in [p]) or dilate4(A) & SEA_KEEP.get(M.name, set()):
             continue
         S = T
         want -= 1
@@ -285,7 +288,7 @@ def write_trainers():
     op = re.sub(r'\n// zee_vulling_2 \{\n.*?// \}\n', '\n', op, flags=re.S)
     block = '// zee_vulling_2 {\n' + ''.join('#define %-35s %d // Project Grounded (zeevulling 2): %s\n' % (c, i, d)
                                              for c, i, d, _ in TRAINERS) + '// }\n'
-    last = TRAINERS[-1][1] + 1
+    last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', op)]) + 1  # ook trainers van andere scripts
     op = re.sub(r'\n(#define TRAINERS_COUNT\s+)(\d+)', lambda m: '\n' + block + '\n' + m.group(1) + str(max(last, 1107)), op)
     op = re.sub(r'\n{3,}(// zee_vulling_2 \{)', r'\n\n\1', op)
     op = re.sub(r'// \}\n{2,}#define TRAINERS_COUNT', '// }\n\n#define TRAINERS_COUNT', op)

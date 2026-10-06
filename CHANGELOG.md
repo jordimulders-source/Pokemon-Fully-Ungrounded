@@ -17203,3 +17203,7 @@ Volgens Jordi's GBA-instructies per leider:
 - Synth vanaf 11,8 s één doorlopende legato-lijn volgens Jordi's neurie (geen gaten of wegvallen meer).
 - Fluit rond 1:06 een octaaf lager; de "fluit" rond 1:18 was een verkeerd overgeschreven akkoord en is nu een strijkersakkoord.
 - Nog niet aan de gevechten gekoppeld.
+
+### [v0.9.138] - Battle! Tapu v5 (de synth)
+- De lead in maat 9–12 is geen melodielijn maar een akkoord dat zich opbouwt en blijft liggen: E3 → B3 → E4 → F4 (elke stap een halve maat, op de taikoslagen), daarna F4 boven B3 tot maat 13; op 11:0 en 12:0 een nieuwe aanzet met een helderder klank. v4 kapte elke toon af en las de zweving uit de neurie als trillers (vandaar "gehaast"); de PSG-puls eronder is weg.
+- Nieuw instrument: synth-brass (`tapu_brass` + `tapu_brass_hi`, vijf ontstemde stemmen, 24 KB), klankcorrelatie met het origineel 0,93 (zaagtand was 0,79). Overeenkomst per 16e met het origineel: 0,60 → 0,88.

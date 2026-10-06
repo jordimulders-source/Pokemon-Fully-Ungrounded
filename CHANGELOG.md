@@ -17023,3 +17023,6 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.106] - Neo Plasma v12g: de herhaalde noten van de melodie klinken weer
 - Jordi: op 0:17, 0:19 en 0:22 valt de melodie weg. Daar speelt de gitaarmelodie herhaalde 16en (C3/C4, "dudududu"); door de lange release van de trompet (bedoeld voor akkoordstoten) kortte het script die noten in tot 20 ms, een tikje. De melodie krijgt nu de korte lead-release (60): de kortste noten klinken ±55 ms. Geen noten weg, 0 overlopen.
+
+### [v0.9.107] - Neo Plasma v12i: ruimte voor de gitaarmelodie (v12h teruggedraaid)
+- v12h (distortiongitaar) klonk niet: teruggedraaid naar de trompet van v12g. Jordi koos optie B: niet de melodie harder, maar de concurrenten stiller. In de maten waar de gitaarmelodie speelt: de broken chords van de lead dunner (de 16en tussen de achtsten op 45% velocity) en het PSG-lead-octaaf (dat precies in het register van de melodie, C3–C4, speelde) bijna weg (CC7 74 → 18). Melodie en de rest ongewijzigd; 0 overlopen, piek 90/127.

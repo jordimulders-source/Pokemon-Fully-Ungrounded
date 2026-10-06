@@ -985,11 +985,23 @@ def build():
         if v_ != lead_vol[-1][1]:
             lead_vol.append((b_ * BAR, v_))
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in lead_vol]
+    # v12i (Jordi koos B: ruimte maken, melodie ongewijzigd): in de maten waar de gitaarmelodie speelt de broken chords
+    # van de lead dunner (de 16en tussen de achtsten op lage velocity) en het PSG-lead-octaaf (body, C3-C4 = het register
+    # van de melodie) bijna weg
+    gbars = {b_ for b_ in range(LOOP0 // BAR, END // BAR) if gtr[b_] >= 4}
+    for e in p['lead']:
+        if e[0] // BAR in gbars and (e[0] % (2 * S16)) >= S16:
+            e[3] = max(1, e[3] * 45 // 100)
+    body_cc = []
+    for b_ in range(LOOP0 // BAR, END // BAR + 1):
+        v_ = 18 if b_ in gbars else VOL['body']
+        if not body_cc or body_cc[-1][2] != v_:
+            body_cc.append((b_ * BAR, 7, v_))
     arp_notes = sorted(p['farp'] + p['arp'])
     arpb_cc = [(BRIDGE[0], 7, VOL_ARPB_BRIDGE), (BRIDGE[1], 7, VOL['arpb'])]
     tracks = [
         (p['lead'], lead_prog(p['lead'][0][2], 0), LEAD_VOL[0][1], 0, 64, lead_cc),
-        (psg['body'], BODY, VOL['body'], 1, 64),
+        (psg['body'], BODY, VOL['body'], 1, 64, body_cc),
         (p['brass'], BRASS, VOL['brass'], 2, 56, [(LOOP0, 7, LOOP_VOL['brass'])]),
         (p['brass_lo'], BRASS_LO, VOL['brass_lo'], 3, 64, [(LOOP0, 7, LOOP_VOL['brass_lo'])]),
         (p['organ'], ORGAN, VOL['organ'], 4, 72),

@@ -7033,6 +7033,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LawnMower,
     },
 
+    [ITEM_SILVER_WING] =
+    {
+        .name = ITEM_NAME("Silver Wing"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Smells of storms.\n"
+            "Points north of\n"
+            "Sootopolis. Down."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PrettyFeather,
+        .iconPalette = gItemIconPalette_PrettyFeather,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000

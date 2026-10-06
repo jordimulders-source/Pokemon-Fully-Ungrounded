@@ -1,0 +1,37 @@
+{
+  "id": "MAP_WHIRL_ISLAND",
+  "name": "WhirlIsland",
+  "layout": "LAYOUT_WHIRL_ISLAND",
+  "music": "MUS_ROUTE119",
+  "region_map_section": "MAPSEC_WHIRL_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_WHIRL_ISLAND_CAVE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "WhirlIsland_EventScript_Bottle"
+    }
+  ]
+}

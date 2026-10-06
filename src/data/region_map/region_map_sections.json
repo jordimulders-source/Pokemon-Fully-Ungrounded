@@ -1346,6 +1346,22 @@
       "y": 12,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_SEA_TEMPLE",
+      "name": "SEA TEMPLE",
+      "x": 24,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WHIRL_ISLAND",
+      "name": "WHIRL ISLAND",
+      "x": 21,
+      "y": 3,
+      "width": 1,
+      "height": 1
     }
   ]
 }

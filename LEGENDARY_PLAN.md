@@ -1,3 +1,5 @@
+> **Jordi (6 okt): legendaries voorlopig gepauzeerd** ("daar bedenken we wel iets voor, alles op zijn tijd"). Wél: Type: Null (Devon) en Magearna (Colress) als gifts, het **Tapu-eiland**, en **Cresselia op een nieuw eiland**. De rest wacht.
+
 # LEGENDARY_PLAN: alle Pokémon verkrijgbaar (6 okt 2026)
 
 Bronnen: `DEX_ANALYSE.md` (99 niet-verkrijgbaar), `KAART_REVIEW.md`, `ZEE_PLAN.md`, `TODO.md`, CHANGELOG (v0.8.120-125, v0.9.18/22). Dit is een voorstel; niets gebouwd.

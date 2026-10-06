@@ -5180,6 +5180,66 @@
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/ParadisoResort/border.bin",
       "blockdata_filepath": "data/layouts/ParadisoResort/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_SEA_TEMPLE",
+      "name": "Underwater_SeaTemple_Layout",
+      "width": 22,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_SeaTemple/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_SeaTemple/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEA_TEMPLE_HALL",
+      "name": "SeaTemple_Hall_Layout",
+      "width": 21,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SeaTemple_Hall/border.bin",
+      "blockdata_filepath": "data/layouts/SeaTemple_Hall/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEA_TEMPLE_SANCTUM",
+      "name": "SeaTemple_Sanctum_Layout",
+      "width": 21,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SeaTemple_Sanctum/border.bin",
+      "blockdata_filepath": "data/layouts/SeaTemple_Sanctum/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND",
+      "name": "WhirlIsland_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/WhirlIsland/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_WHIRL_ISLAND",
+      "name": "Underwater_WhirlIsland_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_WhirlIsland/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_WhirlIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND_CAVE",
+      "name": "WhirlIsland_Cave_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/WhirlIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland_Cave/map.bin"
     }
   ]
 }

@@ -212,6 +212,8 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_FLOATING_MARKET - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: drijvende markt
     [MAPSEC_STEAM_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: stoomeiland
     [MAPSEC_PARADISO_RESORT - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_MARBLE, // Project Grounded: strandresort
+    [MAPSEC_SEA_TEMPLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: zeetempel (Manaphy)
+    [MAPSEC_WHIRL_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: Whirl Island (Lugia)
 };
 
 #if OW_POPUP_GENERATION == GEN_5
@@ -353,6 +355,8 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_FLOATING_MARKET - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: drijvende markt
     [MAPSEC_STEAM_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: stoomeiland
     [MAPSEC_PARADISO_RESORT - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: strandresort
+    [MAPSEC_SEA_TEMPLE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: zeetempel (Manaphy)
+    [MAPSEC_WHIRL_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Whirl Island (Lugia)
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");

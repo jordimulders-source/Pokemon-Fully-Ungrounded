@@ -711,6 +711,12 @@
     "ParadisoResort",
     "ParadisoResort_Lobby",
     "ParadisoResort_WineHall",
-    "ParadisoResort_Bar"
+    "ParadisoResort_Bar",
+    "Underwater_SeaTemple",
+    "SeaTemple_Hall",
+    "SeaTemple_Sanctum",
+    "Underwater_WhirlIsland",
+    "WhirlIsland",
+    "WhirlIsland_Cave"
   ]
 }

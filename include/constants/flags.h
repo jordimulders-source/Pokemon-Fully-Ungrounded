@@ -712,9 +712,9 @@
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE  0x299 // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG  0x29A // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDE_GIANT_WAILORD  0x29B // Project Grounded: reuzen-Wailord verborgen (per kaartbezoek gezet, zie Grounded_GiantWailordSpot)
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
+#define FLAG_SEA_TEMPLE_DOOR_OPEN  0x29C // Project Grounded: zeetempel (Route 128), stenenpuzzel opgelost, deur naar het heiligdom open
+#define FLAG_CAUGHT_SEA_TEMPLE_MANAPHY  0x29D // Project Grounded: zeetempel, Manaphy gevangen (ook verbergflag; verslagen = komt terug)
+#define FLAG_RECEIVED_SEA_TEMPLE_EGG  0x29E // Project Grounded: zeetempel, Phione-ei + Silver Wing van het altaar
 #define FLAG_ITEM_PLASMA_FRIGATE_MAX_REVIVE 0x29F // Project Grounded (was 0x2B9; botste met eb en vloed)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_RARE_CANDY 0x2A0 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_STAR_PIECE 0x2A1 // Project Grounded: Meteor Falls (diepte)
@@ -1274,8 +1274,8 @@
 #define FLAG_ITEM_SCORCHED_SLAB_HEAT_ROCK                           0x4C4 // Project Grounded: Scorched Slab
 #define FLAG_ITEM_SCORCHED_SLAB_TM_WEATHER_BALL                     0x4C5 // Project Grounded: Scorched Slab
 #define FLAG_HIDDEN_ITEM_SCORCHED_SLAB_BIG_NUGGET                   0x4C6 // Project Grounded: Scorched Slab
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
+#define FLAG_CAUGHT_WHIRL_ISLAND_LUGIA                              0x4C7 // Project Grounded: Whirl Island, Lugia gevangen (verslagen = komt terug)
+#define FLAG_SEA_TEMPLE_MANAPHY_BATTLED                             0x4C8 // Project Grounded: zeetempel, eerste gevecht met Manaphy gehad (ei verschijnt op het altaar)
 #define FLAG_HIDDEN_ITEM_SHIPWRECK_SHOALS_BIG_PEARL                 0x4C9 // Project Grounded: Shipwreck Shoals, verborgen Big Pearl
 #define FLAG_ITEM_SHIPWRECK_SHOALS_REAPER_CLOTH                     0x4CA // Project Grounded: Shipwreck Shoals, Reaper Cloth op de ondiepte
 #define FLAG_GHOST_SHIP_PIECE_BIN                                   0x4CB // Project Grounded: spookschip, kaartstuk uit de prullenbak van de kapitein

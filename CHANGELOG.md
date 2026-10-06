@@ -17169,3 +17169,7 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.131] - Battle! Ho-Oh
 - `MUS_GROUNDED_VS_HO_OH` (658, `tools/grounded/hooh_theme.py`): eigen compositie, vurige rock op 180 bpm met Japanse instrumenten (shakuhachi, shinobue, koto, shamisen, taiko/odaiko, hyoshigi, tsuzumi, atarigane) naast distortion-gitaar en koper. Melodie in de in-toonladder op E, "regenboog"-sectie in de yo-toonladder, "heilig vuur"-sectie met alleen Japanse trommen, climax een toon hoger. Alleen stock-samples (±6 KB).
 - Gekoppeld aan wilde Ho-Oh.
+
+### [v0.9.132] - Battle! Lugia en de Forces of Nature-thema's
+- `MUS_GROUNDED_VS_LUGIA` (657, `tools/grounded/lugia_theme.py`), 144 bpm: één eigen "beschermersthema" in twee gedaanten: heldhaftig en breed in D-groot (beschermer) en dubbel zo snel in D-klein (storm). Intro: zinken in de diepte, drie reusachtige vleugelslagen; A storm, B de storm van 40 dagen (climax, dan alleen wind), C het oog van de storm = de beschermer (Silver Wing-glinstering), D ontwaken: de beschermer kantelt terug naar de vernietiger. Alleen stock-samples. Gekoppeld aan wilde Lugia.
+- Forces of Nature (`tools/grounded/forces_theme.py`): één motief, drie arrangementen. `MUS_GROUNDED_VS_TORNADUS` (659, 176 bpm, fluit, wervelende loopjes, windvlagen), `MUS_GROUNDED_VS_THUNDURUS` (660, 152 bpm, distortion-lead, gesyncopeerd, bliksemcracks), `MUS_GROUNDED_VS_LANDORUS` (661, 112 bpm, hoorns/tuba/pauken/taiko, triomf in D-groot met koor en buisklokken). Gekoppeld per soort (Incarnate + Therian); de soorten zitten nog niet in de wereld.

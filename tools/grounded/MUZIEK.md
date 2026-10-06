@@ -113,6 +113,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
+| Lugia | `lugia_theme.py` | v1 wacht op Jordi (beschermersthema <-> storm, één melodie; alleen stock) | "Lugia" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -550,3 +551,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   bouwfunctie en een SHIFT** (Tornadus +2/176 bpm, Thundurus -2/152, Landorus 0/112). **Elke DS-partij door `detach`**
   (noot + uitklinktijd vóór de volgende aanslag), anders kost een 16e-ostinato 2 kanalen (Landorus: koor 67% en klokken
   100% weg -> 0%). **sc88pro_taiko klinkt 88 Hz op toets 60**: op C3 gaf hij 29% energie < 60 Hz (piek 45 Hz) -> toets 57.
+- Lugia v1 (`lugia_theme.py`, 657, 144 bpm, D-groot/D-klein, alleen stock-samples): **dualiteit = één melodie in twee
+  gedaanten** (groot, breed in halve noten = beschermer; klein met F#->F/B->Bb, dubbel zo snel en dubbel gepunt = storm).
+  Jordi: geen wiegenlied, de beschermer is heldhaftig. **Paukenroffels op een eigen programma met korte release (90)**:
+  16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
+  op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
+  op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.

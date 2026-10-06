@@ -7241,3 +7241,71 @@ DirectSoundWaveData_tapu_vox_hu::
 	.align 2
 DirectSoundWaveData_tapu_shout::
 	.incbin "sound/direct_sound_samples/grounded/tapu_shout.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_52::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_52.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_59::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_59.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_66::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_66.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_73::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_73.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_57::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_57.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_64::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_64.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_71::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_71.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_78::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_78.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_62::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_62.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_69::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_69.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_76::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_76.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_sho::
+	.incbin "sound/direct_sound_samples/grounded/hooh_sho.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_odaiko::
+	.incbin "sound/direct_sound_samples/grounded/hooh_odaiko.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_nagado::
+	.incbin "sound/direct_sound_samples/grounded/hooh_nagado.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shime::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shime.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_ka::
+	.incbin "sound/direct_sound_samples/grounded/hooh_ka.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_kiai::
+	.incbin "sound/direct_sound_samples/grounded/hooh_kiai.bin"

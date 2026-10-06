@@ -111,7 +111,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
-| Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
+| Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 wacht op Jordi (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
 | Lugia | `lugia_theme.py` | v1 wacht op Jordi (beschermersthema <-> storm, één melodie; alleen stock) | "Lugia" |
 
@@ -557,3 +557,13 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
   op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
   op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.
+- Ho-Oh v2 (Jordi over v1: 'te vrolijk, trompetten/fluiten schel, niet Japans genoeg'): **eigen Japanse samples per
+  ±7 halve tonen** (`hooh_samples.py`, keysplits hooh_shami/koto/shaku, 132 KB): FluidR3-shamisen mist in de lage
+  ligging de grondtoon (E3 begint bij de 3e harmonische) -> 1e/2e erbij + bachi-tik + sawari; FluidR3-shakuhachi is
+  bijna een sinus -> 2e/3e harmonische + ademruis rond de grondtoon, lowpass 3,2 kHz. Expressie via pitch bend (meri
+  omhoog, yuri-vibrato, kari-val). **'Vrolijk' meten met Krumhansl**: v1 groot/klein liepen gelijk op (marge 0,02),
+  v2 Em/F#m 0,72-0,89 met marge 0,13-0,29. **Drumpartij = één speler** (`ring_gates` laat de slag los vóór de
+  volgende slag mínus de release): taiko 1,8 -> 1,1 kanaal; koto/shamisen release 100 = 16en op 1 kanaal. Lange
+  pads/koper krijgen voorrang op kleine percussie (anders 65-90% weg). Harmonische-som-toonhoogtemeting faalt op de
+  shamisen (inharmonisch): controleer met een piekenlijst. -V080: 0 overlopen, piek 80/127, RMS 2000-2700; leads
+  > 4 kHz 0,1-0,9%; A-gewogen shakuhachi 55 > shamisen/koto 50-52 > bas/gitaar 45-48 dB.

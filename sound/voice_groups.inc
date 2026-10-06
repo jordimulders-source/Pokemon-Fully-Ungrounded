@@ -47,6 +47,9 @@
 .include "sound/voicegroups/keysplits/forces_spicc.inc"
 .include "sound/voicegroups/keysplits/lugia_spicc.inc"
 .include "sound/voicegroups/keysplits/lugia_strings.inc"
+.include "sound/voicegroups/keysplits/hooh_shami.inc"
+.include "sound/voicegroups/keysplits/hooh_koto.inc"
+.include "sound/voicegroups/keysplits/hooh_shaku.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"

@@ -91,6 +91,25 @@ void UpdateShoalTideFlag(void)
     }
 }
 
+// Project Grounded: eb en vloed op Route 132 (wad ten noorden van het zandeiland).
+// Even uur = eb, oneven uur = vloed. Alleen bij het binnenkomen van de kaart (ON_TRANSITION), zodat je nooit
+// ineens in het water staat; de layout volgt FLAG_TIDE_HIGH (ook na het laden van een save).
+void Grounded_UpdateTide(void)
+{
+    RtcCalcLocalTime();
+    if (gLocalTime.hours % 2 == 0)
+        FlagClear(FLAG_TIDE_HIGH);
+    else
+        FlagSet(FLAG_TIDE_HIGH);
+}
+
+// VAR_RESULT = minuten tot het volgende hele uur (dan keert het getij).
+void Grounded_TideMinutesLeft(void)
+{
+    RtcCalcLocalTime();
+    gSpecialVar_Result = 60 - gLocalTime.minutes;
+}
+
 static void Task_WaitWeather(u8 taskId)
 {
     if (IsWeatherChangeComplete())

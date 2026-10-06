@@ -51,3 +51,60 @@ Route129_EventScript_Clarence::
 	msgbox Route129_Text_ClarencePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+
+@ Project Grounded: Juans eiland (waterpodium, leerling, fans, Walrein)
+Route129_EventScript_JuanStudent::
+	msgbox Route129_Text_JuanStudent, MSGBOX_NPC
+	end
+
+Route129_EventScript_JuanFan::
+	msgbox Route129_Text_JuanFan, MSGBOX_NPC
+	end
+
+Route129_EventScript_JuanCritic::
+	msgbox Route129_Text_JuanCritic, MSGBOX_NPC
+	end
+
+Route129_EventScript_JuanWalrein::
+	lock
+	playmoncry SPECIES_WALREIN, CRY_MODE_NORMAL
+	msgbox Route129_Text_JuanWalrein, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route129_EventScript_SandWriting::
+	msgbox Route129_Text_SandWriting, MSGBOX_SIGN
+	end
+
+Route129_Text_JuanStudent:
+	.string "Master JUAN says I'm not swimming.\n"
+	.string "I'm “a living fountain.”\p"
+	.string "I've been a living fountain for six\n"
+	.string "hours. I can't feel my legs.\p"
+	.string "Very elegant, though.$"
+
+Route129_Text_JuanFan:
+	.string "JUAN used to lead the SOOTOPOLIS\n"
+	.string "GYM. He taught WALLACE everything.\p"
+	.string "Then WALLACE took the GYM.\p"
+	.string "Now JUAN has his own island.\n"
+	.string "Honestly? Better view.$"
+
+Route129_Text_JuanCritic:
+	.string "I review JUAN's water shows.\p"
+	.string "Three stars. The water was wet.\n"
+	.string "The drama was wetter.\p"
+	.string "I come back every day. Not for the\n"
+	.string "show. My boat sank in 2003.$"
+
+Route129_Text_JuanWalrein:
+	.string "WALREIN is sunbathing.\n"
+	.string "It refuses to be part of the show.$"
+
+Route129_Text_SandWriting:
+	.string "Words are drawn in the sand:\p"
+	.string "JUAN'S OPEN-AIR WATER ACADEMY\n"
+	.string "Lessons: free. Dignity: extra.\p"
+	.string "Looking for the SOOTOPOLIS GYM?\n"
+	.string "Ask WALLACE. (Sore subject.)$"

@@ -741,9 +741,9 @@
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_132_STAR_PIECE  0x2B9 // Project Grounded: wad Route 132 (alleen bij eb)
+#define FLAG_HIDDEN_ITEM_ROUTE_132_BIG_PEARL  0x2BA // Project Grounded: wad Route 132 (alleen bij eb)
+#define FLAG_TIDE_HIGH  0x2BB // Project Grounded: vloed op Route 132 (gezet bij binnenkomst, oneven uur)
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1619,7 +1619,7 @@
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
 #define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x94F                           (DAILY_FLAGS_START + 0x2F) // Unused Flag
+#define FLAG_DAILY_BEACHCOMBER_FIND                 (DAILY_FLAGS_START + 0x2F) // Project Grounded: strandjutter Route 132 gaf vandaag al iets
 #define FLAG_UNUSED_0x950                           (DAILY_FLAGS_START + 0x30) // Unused Flag
 #define FLAG_UNUSED_0x951                           (DAILY_FLAGS_START + 0x31) // Unused Flag
 #define FLAG_UNUSED_0x952                           (DAILY_FLAGS_START + 0x32) // Unused Flag

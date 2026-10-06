@@ -288,7 +288,12 @@
 #define OBJ_EVENT_GFX_CYNTHIA                         275 // Project Grounded: strandresort (sheet cynthia.png, 2x -> 1x)
 #define OBJ_EVENT_GFX_TURD                            276 // Project Grounded: drol op het strand van het resort (Birch)
 
-#define NUM_OBJ_EVENT_GFX                        277
+#define OBJ_EVENT_GFX_STATUE_TAPU_KOKO               277 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_LELE               278 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_BULU               279 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_FINI               280 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+
+#define NUM_OBJ_EVENT_GFX                        281
 
 
 // These are dynamic object gfx ids.
@@ -443,6 +448,7 @@
 #define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x113A // Project Grounded: Plasma Frigate
 #define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x113B // Project Grounded: strandresort
 #define OBJ_EVENT_PAL_TAG_TURD                     0x113C // Project Grounded: strandresort (drol)
+#define OBJ_EVENT_PAL_TAG_STONE_STATUE             0x113D // Project Grounded: stenen beelden (Tapu-heiligdom)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

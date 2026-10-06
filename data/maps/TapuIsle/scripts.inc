@@ -99,6 +99,23 @@ TapuIsle_EventScript_Tourist::
 	msgbox TapuIsle_Text_Tourist, MSGBOX_NPC
 	end
 
+@ ---------------------------------------------------------------- stenen beelden op het heiligdom (objecten)
+TapuIsle_EventScript_StatueKoko::
+	msgbox TapuIsle_Text_StatueKoko, MSGBOX_SIGN
+	end
+
+TapuIsle_EventScript_StatueLele::
+	msgbox TapuIsle_Text_StatueLele, MSGBOX_SIGN
+	end
+
+TapuIsle_EventScript_StatueBulu::
+	msgbox TapuIsle_Text_StatueBulu, MSGBOX_SIGN
+	end
+
+TapuIsle_EventScript_StatueFini::
+	msgbox TapuIsle_Text_StatueFini, MSGBOX_SIGN
+	end
+
 @ ---------------------------------------------------------------- altaren (zonder Tapu erop)
 TapuIsle_EventScript_DaisKoko::
 	goto_if_set FLAG_DEFEATED_TAPU_KOKO, TapuIsle_EventScript_DaisEmpty
@@ -340,6 +357,28 @@ TapuIsle_Text_Tablet:
 	.string "Below, in fresh chalk:\n"
 	.string "“KOKO FIRST. THEN LELE. THEN BULU.\l"
 	.string "THEN FINI. NO CUTTING IN LINE.”$"
+
+TapuIsle_Text_StatueKoko:
+	.string "A stone TAPU KOKO. Someone carved\n"
+	.string "“KOKO FIRST” into the base. Twice.\p"
+	.string "The handwriting looks suspiciously\n"
+	.string "like lightning.$"
+
+TapuIsle_Text_StatueLele:
+	.string "A stone TAPU LELE. Touching it cures\n"
+	.string "your headache.\p"
+	.string "And then gives you a slightly\n"
+	.string "different one. Free of charge.$"
+
+TapuIsle_Text_StatueBulu:
+	.string "A stone TAPU BULU. Even carved in\n"
+	.string "rock, it looks like it would rather\l"
+	.string "be asleep. Relatable.$"
+
+TapuIsle_Text_StatueFini:
+	.string "A stone TAPU FINI. The base is damp.\p"
+	.string "It hasn't rained here in a month.\n"
+	.string "Nobody asks questions anymore.$"
 
 TapuIsle_Text_Tourist:
 	.string "I booked “an authentic island\n"

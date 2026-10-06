@@ -2,8 +2,9 @@
 
   TapuIsle        Tropisch eiland in de Midden-zee (Town Map x 15-16, y 8-9), ten noorden van Route 132
                   (verbinding, x 14-65 van Route 132). General + fortree_jungle (jungle-groene bomen, reuzenpalmen,
-                  tropische bloemen en de stenen ruinestukken van Zarude). Zandstrand rondom, een plein met de oude
-                  kahuna in het midden en vier ruines in de vier hoeken:
+                  tropische bloemen en de stenen ruinestukken van Zarude). Zandstrand rondom, in het midden een
+                  verhoogd heiligdom (terras met klifwanden, stenen trap in de zuidwand) met de kahuna op een altaar
+                  en vier stenen Tapu-beelden (objecten, statue_sprites.py), en vier ruines in de vier hoeken:
                     noordoost  Tapu Koko  (bliksemruine: gebroken/omgevallen zuilen, losse blokken)
                     zuidoost   Tapu Lele  (bloemenruine: bloemenveld, hibiscus, heliconia)
                     noordwest  Tapu Bulu  (woudruine: dichte jungle, stammen, monstera, bananen)
@@ -269,10 +270,32 @@ REEF_GAP = (27, 2)                  # zeerots (2x2) in het rif bovenaan Route 13
 FOG_Y = 45                          # mist voor de Hall of Fame (hele rij coord-triggers)
 SAFE_ROWS = 10                      # onderste rijen alleen primary (grens met Route 132)
 CX, CY = 28, 22                     # midden van het eiland (plein)
+SHRINE = (22, 14, 35, 25)           # verhoogd heiligdom (x0, y0, x1, y1 incl. wanden; zuidwand = 2 rijen)
+STAIRS_X = 28                       # stenen trap (2 breed) midden in de zuidwand
+# stenen Tapu-beelden (objecten, tools/grounded/statue_sprites.py), elk in de hoek van zijn eigen ruine
+STATUES = {'BULU': (25, 17), 'KOKO': (32, 17), 'FINI': (25, 21), 'LELE': (32, 21)}
+ALTAR = (27, 16)                    # stenen altaar (3x2) achter op het terras; de kahuna staat op het voorvak
 # altaren (linksboven van 3x2); de Tapu staat op het middelste voorvak, de speler eronder
 DAIS_AT = {'KOKO': (40, 8), 'LELE': (40, 28), 'BULU': (14, 8), 'FINI': (14, 28)}
 CLEARING = {'KOKO': (41, 12, 4.8), 'LELE': (41, 32, 5.0), 'BULU': (15, 12, 4.4)}
 LAGOON = (15, 31, 5.8, 4.5)         # midden, halve breedte, halve hoogte
+
+
+STAIRS = (0x0AF, 0x0CF)              # stenen Hoenn-trap (General 175 links / 207 rechts)
+WALL = dict(W=0x070, E=0x072, FACE=0x07C, FACE_W=0x070, FACE_E=0x072, FOOT=0x079, FOOT_W=0x078, FOOT_E=0x07A)
+
+
+def shrine_wall(x, y):
+    """Klifwand van het terras (General, zoals Route 119/121): zijwanden links/rechts, zuidwand van 2 rijen
+    (bovenrij FACE, onderrij FOOT met schaduw), hoeken waar ze samenkomen. Rechte rechthoek, geen schuine hoeken."""
+    sx0, sy0, sx1, sy1 = SHRINE
+    side = 'W' if x == sx0 else 'E' if x == sx1 else ''
+    if y == sy1:
+        return WALL['FOOT_' + side] if side else WALL['FOOT']
+    if y == sy1 - 1:
+        return WALL['FACE_' + side] if side else WALL['FACE']
+    assert side, ('wand midden op het terras', x, y)
+    return WALL[side]
 
 
 def tapu_pos(k):
@@ -326,16 +349,17 @@ def tapu_isle():
             if land[y][x]:
                 C.c[y][x] = 'S' if d[y][x] <= 3 else 'g' if d[y][x] == 4 else 'T'
     J = set('TgLpf')
-    C.disc(CX, CY, 4.6, 'g', only=J)                                    # plein
-    C.path([(CX, CY + 3), (CX, 38)], 3, 'g', only=J)                    # zuid: strand -> plein
+    sx0, sy0, sx1, sy1 = SHRINE
+    C.rect(sx0 - 2, sy0 + 1, sx1 + 2, sy1 + 3, 'g', only=J)             # hof rond het heiligdom
+    C.path([(CX, sy1 + 2), (CX, 38)], 3, 'g', only=J)                   # zuid: strand -> hof
     for k, (x, y, r) in CLEARING.items():
         C.disc(x, y, r, 'g', only=J)
-    C.path([(CX + 3, CY - 3), (CX + 7, CY - 7), (CX + 11, CY - 9)], 2, 'g', only=J)          # Koko
-    C.path([(CX + 3, CY + 2), (CX + 7, CY + 6), (CX + 10, CY + 9)], 2, 'g', only=J)          # Lele
-    C.path([(CX - 3, CY - 2), (CX - 6, CY - 4), (CX - 8, CY - 8), (CX - 11, CY - 10)], 2, 'g', only=J)  # Bulu
+    C.path([(sx1 + 2, sy0 + 2), (sx1 + 4, sy0), (CX + 12, CY - 9)], 2, 'g', only=J)            # Koko
+    C.path([(sx1 + 2, sy1 + 2), (sx1 + 3, sy1 + 5), (CX + 10, CY + 9)], 2, 'g', only=J)        # Lele
+    C.path([(sx0 - 2, sy0 + 2), (sx0 - 4, sy0), (CX - 11, CY - 10)], 2, 'g', only=J)           # Bulu
     lx, ly, lw, lh = LAGOON
     C.disc(lx, ly, lw + 1.2, 'g', only=J)                               # oever van de lagune
-    C.path([(CX - 3, CY + 2), (CX - 6, CY + 5), (CX - 7, CY + 7)], 2, 'g', only=J)           # Fini
+    C.path([(sx0 - 2, sy1 + 2), (sx0 - 3, sy1 + 4)], 2, 'g', only=J)                           # Fini
     for y in range(TH):
         for x in range(TW):
             if ((x - lx) / lw) ** 2 + ((y - ly) / lh) ** 2 <= 1 and C.c[y][x] == 'g':
@@ -345,16 +369,21 @@ def tapu_isle():
     for k, (x, y) in DAIS_AT.items():                                   # ruimte rond de altaren
         if k != 'FINI':
             C.rect(x - 1, y, x + 3, y + 2, 'g', only=J)
-    # plaveisel rond het plein en voor de altaren
-    for y in range(TH):
-        for x in range(TW):
-            if C.c[y][x] == 'g' and 2.2 <= math.hypot(x - CX, (y - CY) * 1.15) <= 3.4:
-                C.c[y][x] = 'p'
+    # het heiligdom: verhoogd terras (W = klifwand, H = trap) met een stenen vloer, ervoor een geplaveid voorplein
+    C.rect(sx0, sy0, sx1, sy1, 'W')
+    C.rect(sx0 + 1, sy0, sx1 - 1, sy1 - 2, 'p')
+    for x in range(sx0 + 1, sx1):                                      # mos/gras langs de randen van het terras
+        C.c[sy0][x] = 'g'
+    for y in range(sy0, sy1 - 1):
+        C.c[y][sx0 + 1] = C.c[y][sx1 - 1] = 'g'
+    for y in (sy1 - 1, sy1):
+        C.c[y][STAIRS_X] = C.c[y][STAIRS_X + 1] = 'H'
+    C.rect(STAIRS_X - 1, sy1 + 1, STAIRS_X + 2, sy1 + 3, 'p')
     for k, (x, y) in DAIS_AT.items():
         if k != 'FINI':
             C.rect(x, y + 2, x + 2, y + 2, 'p')
     # lang gras (plukken langs de paden en aan de randen van de open plekken)
-    for cx_, cy_, r in ((CX + 7, CY - 6, 2.0), (CX + 7, CY + 6, 2.0), (CX - 7, CY - 5, 2.0), (CX - 6, CY + 8, 1.6),
+    for cx_, cy_, r in ((CX + 10, CY - 9, 1.6), (CX + 8, CY + 8, 1.6), (CX - 9, CY - 9, 1.6), (CX - 6, CY + 8, 1.6),
                         (CX + 4, CY + 11, 2.2), (CX - 4, CY + 12, 1.8), (44, 15, 1.8), (37, 36, 1.8),
                         (18, 9, 1.4), (11, 14, 1.4)):
         C.disc(cx_, cy_, r, 'L', only='g')
@@ -378,7 +407,7 @@ def tapu_isle():
     while st:
         x, y = st.pop()
         for n in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
-            if C.inb(*n) and n not in seen and C.c[n[1]][n[0]] != 'T':
+            if C.inb(*n) and n not in seen and C.c[n[1]][n[0]] not in 'TW':
                 seen.add(n); st.append(n)
     for y in range(TH):
         for x in range(TW):
@@ -388,9 +417,9 @@ def tapu_isle():
         print('\n'.join('%2d ' % y + ''.join(r) for y, r in enumerate(C.c)))
     # ---- events
     P = name + '_EventScript_'
-    KAHUNA = (CX, CY - 2)
+    KAHUNA = (ALTAR[0] + 1, ALTAR[1] + 1)
     HIDDEN_PEARL = (52, 22)
-    TABLET = (CX, CY)
+    TABLET = (STAIRS_X - 1, SHRINE[3] - 3)            # de stenen tafel met de volgorde, links boven aan de trap
     objs = [
         obj('OBJ_EVENT_GFX_OLD_MAN', KAHUNA[0], KAHUNA[1], P + 'Kahuna', local_id='LOCALID_TAPU_ISLE_KAHUNA'),
         obj('OBJ_EVENT_GFX_FAT_MAN', CX + 5, 39, P + 'Tourist', move='MOVEMENT_TYPE_FACE_LEFT'),
@@ -402,12 +431,14 @@ def tapu_isle():
             local_id='LOCALID_TAPU_ISLE_BULU'),
         obj('OBJ_EVENT_GFX_SPECIES(TAPU_FINI)', *tapu_pos('FINI'), P + 'TapuFini', 'FLAG_TEMP_15',
             local_id='LOCALID_TAPU_ISLE_FINI'),
-        trainer('OBJ_EVENT_GFX_BLACK_BELT', CX + 8, CY - 8, P + 'Kaimana', 'LEFT', 3),
-        trainer('OBJ_EVENT_GFX_WOMAN_2', CX + 7, CY + 6, P + 'Leilani', 'LEFT', 3),
-        trainer('OBJ_EVENT_GFX_MAN_4', CX - 7, CY - 6, P + 'Makoa', 'RIGHT', 3),
-        trainer('OBJ_EVENT_GFX_EXPERT_F', CX - 5, CY + 4, P + 'Nalu', 'RIGHT', 3),
+        trainer('OBJ_EVENT_GFX_BLACK_BELT', SHRINE[2] + 2, SHRINE[1] + 2, P + 'Kaimana', 'DOWN', 3),
+        trainer('OBJ_EVENT_GFX_WOMAN_2', SHRINE[2] - 1, SHRINE[3] + 3, P + 'Leilani', 'LEFT', 3),
+        trainer('OBJ_EVENT_GFX_MAN_4', SHRINE[0] - 1, SHRINE[1] + 6, P + 'Makoa', 'UP', 3),
+        trainer('OBJ_EVENT_GFX_EXPERT_F', SHRINE[0] + 1, SHRINE[3] + 1, P + 'Nalu', 'RIGHT', 3),
         cx.item(11, 11, 'ITEM_STAR_PIECE', 'FLAG_ITEM_TAPU_ISLE_STAR_PIECE'),
     ]
+    for k, (x, y) in STATUES.items():
+        objs.append(obj('OBJ_EVENT_GFX_STATUE_TAPU_' + k, x, y, P + 'Statue' + k.capitalize()))
     bgs = [sign(TABLET[0], TABLET[1], P + 'Tablet')]
     for k in DAIS_AT:
         bgs.append(sign(*tapu_pos(k), P + 'Dais' + k.capitalize()))
@@ -434,6 +465,10 @@ def tapu_isle():
                 g[y][x] = val(jv[rng.choice(TRUNK if below != 'T' else FOREST)], 1, 0)
             elif k == 'w':
                 g[y][x] = pond_tile(C, x, y)
+            elif k == 'W':
+                g[y][x] = val(shrine_wall(x, y), 1, 3)
+            elif k == 'H':
+                g[y][x] = val(STAIRS[x - STAIRS_X], 0, 3)
             elif below == 'T':
                 g[y][x] = val(jv[rng.choice(CANOPY)], 0, 3)
             elif k == 'L':
@@ -454,9 +489,18 @@ def tapu_isle():
         px, py = tapu_pos(k)
         assert C.c[py + 1][px] in 'gpfL', ('voor het altaar moet je kunnen staan', k)
 
+    ax, ay = ALTAR
+    for j in range(2):
+        for i in range(3):
+            assert C.c[ay + j][ax + i] in 'gp', 'altaar van de kahuna niet op het terras'
+            g[ay + j][ax + i] = val(DAIS[j][i], 1, 3)
+    assert C.c[ay + 2][ax + 1] in 'gp', 'voor de kahuna moet je kunnen staan'
+
     # ---- vaste decor per ruine (overgeslagen als het niet op open grond past; de controle hieronder vangt de rest)
     EVENT = {(o['x'], o['y']) for o in objs} | {(b_['x'], b_['y']) for b_ in bgs}
     EVENT |= {(tapu_pos(k)[0], tapu_pos(k)[1] + 1) for k in DAIS_AT}
+    EVENT |= {(KAHUNA[0], KAHUNA[1] + 1)} | {(x + dx, y - dy) for x, y in STATUES.values() for dx in (-1, 0, 1)
+                                              for dy in (1, 2)}
     EVENT_OBJ = {(o['x'], o['y']) for o in objs}
     DECOR = []
     def can(cells):
@@ -506,9 +550,11 @@ def tapu_isle():
         x, y = rel('FINI', x, y)
         if C.c[y][x] == 'w' and mt(g[y][x]) == POND['C']:
             g[y][x] = val(m, 0, 1)
-    # plein: vier gebroken zuilen in een kring, de stenen tafel in het midden
-    for dx, dy in ((-4, -3), (4, -3)):                  # de zuidkant is ingestort (daar lopen de paden)
-        col(CX + dx, CY + dy, PILLAR_BROKEN, 'plein')
+    # heiligdom: zuilen op de hoeken van het terras, het altaar met de kahuna, de stenen tafel naast de trap
+    sx0, sy0, sx1, sy1 = SHRINE
+    for x in (sx0 + 1, sx1 - 1):
+        col(x, sy0, PILLAR, 'heiligdom')
+        col(x, sy1 - 3, PILLAR_BROKEN, 'heiligdom')
     g[TABLET[1]][TABLET[0]] = val(BLOCK[0], 1, 3)
 
     # ---- strooidecor (alleen begaanbaar: varens, bladeren, bloempjes) op gras in het bos

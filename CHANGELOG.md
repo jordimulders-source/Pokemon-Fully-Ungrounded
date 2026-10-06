@@ -17023,7 +17023,3 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.106] - Neo Plasma v12g: de herhaalde noten van de melodie klinken weer
 - Jordi: op 0:17, 0:19 en 0:22 valt de melodie weg. Daar speelt de gitaarmelodie herhaalde 16en (C3/C4, "dudududu"); door de lange release van de trompet (bedoeld voor akkoordstoten) kortte het script die noten in tot 20 ms, een tikje. De melodie krijgt nu de korte lead-release (60): de kortste noten klinken ±55 ms. Geen noten weg, 0 overlopen.
-
-### [v0.9.107] - Neo Plasma v12h: de gitaarmelodie als echte gitaar, gedragen
-- Jordi: op 0:17, 0:19 en 0:22 valt de melodie nog naar de achtergrond. Gemeten: in het origineel klinken de herhaalde C's daar als een gedragen toon (0,5–1 s); bij ons losse tikjes van 55 ms.
-- De melodie (in de bron een elektrische gitaar) speelt nu op de Emerald-distortiongitaar (uit b_dome/b_pyramid) i.p.v. de trompet, zodat hij door de trompet-lead heen snijdt; elke noot klinkt door tot vlak voor de volgende aanslag. De lead in die maten iets verder terug (84 → 64). 0 overlopen, piek 90/127; daarvoor vallen wat meer arpeggio-/steeldrumnoten weg (die spelen ook op de PSG).

@@ -16,7 +16,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
 - **Vuurtoren: ja, maar** er zijn geen assets voor (Emerald/FRLG hebben geen vuurtoren). Zelf tekenen of uit een bronsheet halen; eerst een
   ingezoomde schets aan Jordi.
   (Jordi: "probeer maar een vuurtoren te tekenen".)
-- **Visserstoernooi:** alleen zonder minigame (Jordi heeft een hekel aan frustrerende minigames). Voorstel: je laat bij de jury
+- ~~**Visserstoernooi:**~~ (gedaan, v0.9.116: Dewford) alleen zonder minigame (Jordi heeft een hekel aan frustrerende minigames). Voorstel: je laat bij de jury
   de grootste vis uit je team wegen (zoals de Lotad/Seedot-meter); de recordhouder is altijd iemands Magikarp.
   Je krijgt altijd een troostprijs die stiekem nuttiger is dan de hoofdprijs (bijv. Lucky Egg); 1e plaats = iets nutteloos
   (een trofee, één Poké Ball).

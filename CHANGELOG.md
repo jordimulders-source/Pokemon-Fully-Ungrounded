@@ -17091,3 +17091,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Route 127:** een gestrande Wailmer die je terugduwt (Shell Bell als fooi) met Ranger Marisol, een verdwaalde toerist met een kaart van Kalos, de tweeling Pip & Pep (dubbel) en verborgen items.
 - **Onderwater 105, 125, 128, 129:** eindelijk eigen wilde Pokémon in het zeewier (alleen echte zeebewoners: o.a. Finneon, Binacle, Clauncher, Inkay, Clobbopus, Grapploct, Skrelp, Dragalge, Bruxish, Finizen, Palafin, Mantyke; zeldzaam de fossielen Kabuto, Anorith, Lileep en Arctovish; lv 34–44), een zeemansgraf ("Captain Barnaby kon geen uur zijn adem inhouden") met een Big Nugget, een duiker die voor een goed doel zijn adem inhoudt ("DAY 3"), en verborgen items.
 - 7 nieuwe trainers (1100–1106). Teksten: Engelse placeholders. ROM +23 KB.
+
+### [v0.9.119] - Sirena krijgt een echt team
+- Grap-trainer Sirena (Route 126, "mermaid, legally a swimmer") had Primarina lv 6, Milotic lv 5 en Gorebyss lv 7: zo laat in de game is dat tijdverspilling (Jordi). Nu lv 42–43 met een slimmere AI; ook in het Battle Stadium. Regel in CLAUDE.md: grap-trainers met extreem lage levels alleen vroeg in de game.

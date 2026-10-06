@@ -112,6 +112,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
+| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -544,3 +545,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   laag gestemde taiko 90; geloopte toms/bekkens = noot + release); met één staart voor de hele kit viel 65% van de
   strijkers weg. Koto/shamisen in 16en: release 90 + noot tot 'volgende aanslag - staart' = 1 kanaal. -V090: 0
   overlopen, piek 99/127, RMS ±3000; audiocheck '54-85 Hz' = bas (E/A/F in achtsten) + taiko + framerate, geen brom.
+- Forces v1 (`forces_theme.py`, songs 659-661, alleen stock-samples, één voicegroup `grounded_forces` + keysplit
+  `forces_spicc`): **drie arrangementen van één motief = één materiaalblok (MEL/PROG in D-klein) + per thema een
+  bouwfunctie en een SHIFT** (Tornadus +2/176 bpm, Thundurus -2/152, Landorus 0/112). **Elke DS-partij door `detach`**
+  (noot + uitklinktijd vóór de volgende aanslag), anders kost een 16e-ostinato 2 kanalen (Landorus: koor 67% en klokken
+  100% weg -> 0%). **sc88pro_taiko klinkt 88 Hz op toets 60**: op C3 gaf hij 29% energie < 60 Hz (piek 45 Hz) -> toets 57.

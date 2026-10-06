@@ -665,6 +665,9 @@ gSongTable::
 	song mus_grounded_vs_tapu, MUSIC_PLAYER_BGM, 0
 	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 657: plaatshouder (Lugia, andere agent)
 	song mus_grounded_vs_ho_oh, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tornadus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_thundurus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_landorus, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

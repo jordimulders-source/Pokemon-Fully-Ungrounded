@@ -914,6 +914,17 @@ def build():
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
     order = ['drums', 'brass', 'lead', 'bass', 'brass_lo', 'organ', 'steel', 'dsine', 'stab', 'farp', 'arp']   # v12e: melodie eerst
+    # v12j (solo-opname: de gitaarmelodie zelf zakt op 0:17-0:19 en 0:22-0:24 ±40% in, precies op de herhaalde C3/C4-16en:
+    # tikjes van 60 ticks met stilte ertussen; in het origineel een gedragen toon): elke melodienoot klinkt door tot
+    # vlak voor de volgende aanslag (max. 2 tellen); zelfde trompet, zelfde volume. Alleen 'brass' (brass_lo verdubbelt
+    # de lage C's; samen kost het te veel kanalen: 20% van de arpeggio's viel weg)
+    for k_ in ('brass',):
+        ons = sorted(set(e[0] for e in parts[k_]))
+        nxt = {a_: b_ for a_, b_ in zip(ons, ons[1:])}
+        for e in parts[k_]:
+            n_ = nxt.get(e[0])
+            if n_ is not None and n_ - e[0] <= 2 * BEAT:
+                e[1] = max(e[1], n_ - 6)
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL

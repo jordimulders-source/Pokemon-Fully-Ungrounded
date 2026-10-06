@@ -17026,3 +17026,7 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.107] - Neo Plasma v12i: ruimte voor de gitaarmelodie (v12h teruggedraaid)
 - v12h (distortiongitaar) klonk niet: teruggedraaid naar de trompet van v12g. Jordi koos optie B: niet de melodie harder, maar de concurrenten stiller. In de maten waar de gitaarmelodie speelt: de broken chords van de lead dunner (de 16en tussen de achtsten op 45% velocity) en het PSG-lead-octaaf (dat precies in het register van de melodie, C3–C4, speelde) bijna weg (CC7 74 → 18). Melodie en de rest ongewijzigd; 0 overlopen, piek 90/127.
+
+### [v0.9.108] - Neo Plasma v12j: de gitaarmelodie zakt niet meer in
+- Gemeten met een solo-opname van de melodie uit de game: op 0:17–0:19 en 0:22–0:24 zakte de melodie zelf ±40% in, precies op de herhaalde C3/C4-16en (tikjes van 60 ticks met stilte ertussen; in het origineel een gedragen toon). Elke melodienoot klinkt nu door tot vlak voor de volgende aanslag; zelfde trompet en volume. Solo nu op die plekken even luid als de rest van de melodie.
+- v12i (lead dunner, PSG-octaaf weg) blijft. Iets meer arpeggio-noten vallen weg (farp 4 → 9%); de steeldrums spelen ook op de PSG.

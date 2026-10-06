@@ -17057,3 +17057,11 @@ Volgens Jordi's GBA-instructies per leider:
 - **Volcanion** (lv 70, post-game) in de stoomgrot in de vulkaan, open na de Hall of Fame (zoals het Heatran-hol); verslagen = terug na de volgende League.
 - Teksten: Engelse placeholders. ROM +11 KB. Flags 0x4A1–0x4A2, dagflag 0x95F (laatste vrije dagflag).
 - Let op: Volcanion en Manaphy zaten al als vis-encounter (lv 50) op Route 134.
+
+### [v0.9.114] - Paradiso Resort (strandresort)
+- **Paradiso Resort** (nieuw zandeiland direct ten zuiden van Route 109, onder het strand van Slateport): een groot all-in hotel, een strandbar, parasols, ligstoelen en een "INFINITY POOL" die gewoon de zee is. Buiten: **Birch** kijkt naar een echte, klassieke drol (nieuwe sprite, met een papieren parasolletje in de tekst), **Brendan/May** ligt post-game op een ligstoel, **Misty** bij de lagune, **Erika** onder een parasol, dronken fans, een badmeester en een verbrande toerist.
+- **Lobby:** inchecken bij de receptie healt je team meteen (geen ja/nee-vraag); **Cynthia** zit hier (nu met een eigen overworld-sprite, ook in het Battle Stadium).
+- **Wijnzaal:** **Wallace** presenteert zijn nieuwe wijn ("CHÂTEAU MILOTIC") met snobistische proefnotities, sommeliers en fans, en drie oude mannen die in een emmer spugen; hij geeft één keer 3× Berry Juice ("for legal reasons").
+- **Strandbar:** **Lorelei**, de barman en een dronken zeeman.
+- **Post-game gevechten** (elk één keer, na de Hall of Fame) met hun Stadium-teams: Misty, Erika, Lorelei (lv 75–78), Cynthia (lv 78, Garchomp 80) en Birch (strontteam + Pyukumuku, Hoenn-Muk als ace, met zijn eigen transitie en de Macarena).
+- Teksten: Engelse placeholders. ROM +17 KB. Flags 0x277–0x278. Lobby en wijnzaal hergebruiken de contest-layouts (er hangt nog wat contestdecor).

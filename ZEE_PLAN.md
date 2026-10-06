@@ -21,7 +21,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
   Je krijgt altijd een troostprijs die stiekem nuttiger is dan de hoofdprijs (bijv. Lucky Egg); 1e plaats = iets nutteloos
   (een trofee, één Poké Ball).
 - ~~**Juan:**~~ (gedaan, v0.9.110) staat gewoon op een eiland klaar om met je te vechten (eiland mooier maken, idee 5).
-- **Strandresort:** gasten Misty, Erika, Cynthia, Lorelei en Wallace, plus een hele zooi dronken fans.
+- ~~**Strandresort:**~~ (gedaan, v0.9.114: Paradiso Resort onder Route 109) gasten Misty, Erika, Cynthia, Lorelei en Wallace, plus een hele zooi dronken fans.
   - Wallace geeft in een grote kamer een demonstratie van zijn nieuwe wijn, met snobistische connoisseurbeschrijvingen,
     fans en wijndrinkers, en een paar oude mannen die na het proeven in emmers spugen.
   - Brendan/May chillt hier post-game.

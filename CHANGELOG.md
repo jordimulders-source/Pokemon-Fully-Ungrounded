@@ -17165,3 +17165,7 @@ Volgens Jordi's GBA-instructies per leider:
 - Eigen samples (77,8 KB, `tapu_*`): odaiko, taiko, ka, bekken, en formant-gesynthetiseerde stemmen (chant-'aa', lage 'hu', zesstemmige 'HOO!'-kreet). Slagen klinken uit tot de volgende slag.
 - Het "fluitje" (maat 41–48) zijn korte E6-tikjes op de tellen met de staccato-fluit.
 - Nog niet aan de gevechten gekoppeld (wacht op Jordi).
+
+### [v0.9.131] - Battle! Ho-Oh
+- `MUS_GROUNDED_VS_HO_OH` (658, `tools/grounded/hooh_theme.py`): eigen compositie, vurige rock op 180 bpm met Japanse instrumenten (shakuhachi, shinobue, koto, shamisen, taiko/odaiko, hyoshigi, tsuzumi, atarigane) naast distortion-gitaar en koper. Melodie in de in-toonladder op E, "regenboog"-sectie in de yo-toonladder, "heilig vuur"-sectie met alleen Japanse trommen, climax een toon hoger. Alleen stock-samples (±6 KB).
+- Gekoppeld aan wilde Ho-Oh.

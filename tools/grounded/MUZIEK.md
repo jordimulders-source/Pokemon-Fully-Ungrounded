@@ -111,6 +111,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
+| Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -536,3 +537,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   opname-audio: additieve formantsynthese (harmonischen x formanten van een klinker, groep van 4-6 ontstemde stemmen,
   ademruis), 16en-chant legato (geen detach: dat maakte stipjes). Het 'fluitje' (maat 41-48) waren korte E6-tikjes,
   geen kwarten: 1 zestiende op een staccato-fluit. -V082: 0 overlopen, piek 96/127, RMS 3134 (drums bewust luid).
+- Ho-Oh v1 (song 658, eigen compositie, 180 bpm): **grondtoon van stock-samples meten** (harmonischenreeks, niet
+  alleen autocorrelatie: die vindt een suboctaaf): shakuhachi en koto_high klinken C5 op toets 60, whistle C6,
+  koto_low C4, distortion_low C3 -> per instrument een OCT-verschuiving in het script, noten op klinkende hoogte.
+  **Drums in de stemverdeler per sample**: bezet = min(lengte sample, noot + release) (rnd_kick 12 ticks, taiko 60,
+  laag gestemde taiko 90; geloopte toms/bekkens = noot + release); met één staart voor de hele kit viel 65% van de
+  strijkers weg. Koto/shamisen in 16en: release 90 + noot tot 'volgende aanslag - staart' = 1 kanaal. -V090: 0
+  overlopen, piek 99/127, RMS ±3000; audiocheck '54-85 Hz' = bas (E/A/F in achtsten) + taiko + framerate, geen brom.

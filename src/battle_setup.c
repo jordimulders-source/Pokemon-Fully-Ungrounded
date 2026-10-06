@@ -553,8 +553,10 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
         break;
     case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_HO_OH: // Project Grounded: eigen thema (vurige rock + Japanse instrumenten, tools/grounded/hooh_theme.py)
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_GROUNDED_VS_HO_OH);
         break;
     case SPECIES_MANAPHY: // Project Grounded: zeetempel (Route 128), rimpelingen + legendary-thema
     case SPECIES_PHIONE:

@@ -182,6 +182,11 @@ static void Task_GymNorman(u8); // Project Grounded (src/data/gym_intros_b.h)
 static void Task_GymWinona(u8); // Project Grounded (src/data/gym_intros_b.h)
 static void Task_GymTateLiza(u8); // Project Grounded (src/data/gym_intros_b.h)
 static void Task_GymWallace(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_LegendLugia(u8); // Project Grounded (src/data/legend_intros.h)
+static void Task_LegendHooh(u8);
+static void Task_LegendVolcanion(u8);
+static void Task_LegendHoopa(u8);
+static void Task_LegendForces(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -679,6 +684,11 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GYM_WINONA] = Task_GymWinona, // Project Grounded
     [B_TRANSITION_GYM_TATE_LIZA] = Task_GymTateLiza, // Project Grounded
     [B_TRANSITION_GYM_WALLACE] = Task_GymWallace, // Project Grounded
+    [B_TRANSITION_LUGIA] = Task_LegendLugia, // Project Grounded
+    [B_TRANSITION_HO_OH] = Task_LegendHooh,
+    [B_TRANSITION_VOLCANION] = Task_LegendVolcanion,
+    [B_TRANSITION_HOOPA] = Task_LegendHoopa,
+    [B_TRANSITION_FORCES] = Task_LegendForces,
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -10278,3 +10288,5 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #undef tTapuLanded
 // Project Grounded: gymleider-intro's deel B (Norman, Winona, Tate & Liza, Wallace)
 #include "data/gym_intros_b.h"
+// Project Grounded: legendary-intro's (Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature)
+#include "data/legend_intros.h"

@@ -112,8 +112,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v3 wacht op Jordi (geen HOO; synth-lead maat 9-12 naar zijn neurie, synthbas, hardere drums + PSG-hats; HIT 5,54 s) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 GEPAUZEERD (Jordi: dof, percussie stotterig; volgende sessie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
-| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 wacht op Jordi (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
-| Lugia | `lugia_theme.py` | v2 wacht op Jordi (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
+| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
+| Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 

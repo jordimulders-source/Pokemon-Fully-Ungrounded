@@ -39,7 +39,7 @@ voice_group grounded_tapu
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_synth, 255, 0, 255, 120  @ 38
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 40
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 41
@@ -54,7 +54,7 @@ voice_group grounded_tapu
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
 	voice_directsound 60, 0, DirectSoundWaveData_tapu_vox_a, 255, 0, 255, 90  @ 52
-	voice_directsound 60, 0, DirectSoundWaveData_tapu_shout, 255, 0, 255, 210  @ 53
+	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 53
 	voice_directsound 60, 0, DirectSoundWaveData_tapu_vox_hu, 255, 0, 255, 150  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
@@ -81,8 +81,8 @@ voice_group grounded_tapu
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 160  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
+	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_synth, 255, 0, 255, 160  @ 81
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84

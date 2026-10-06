@@ -17181,3 +17181,9 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.134] - Lugia v2 en Forces of Nature v2
 - **Lugia:** op 30–33 s een versnellende drumopbouw (taiko/kick → toms in 16en → snareroffel in 32sten + paukenroffel + strijkersloop); het tempo gaat van 144 naar 164 bpm en blijft daar tot de loop (die springt correct terug naar 144). Het beschermersdeel kreeg een zachte puls.
 - **Forces of Nature:** minder chiptune, volle GBA-orkestratie (PSG alleen nog als sub en voor wind/bliksem/rommel), echte snare, hardere drums, hoorbare spiccato-strijkers. Tornadus: lead trompet + strijkers (fluitje weg), tornadostoten gebleven. Thundurus: zelfde compositie, gitaarlead verdubbeld door strijkers, tuba, pads. Landorus (nu 132 bpm): echte gevechtsgroove (drumstel + taiko, 16en-ostinato, springende bas), tegenmelodieën, vraag-antwoord koper, climax in D-groot met koor, tuba, buisklokken.
+
+### [v0.9.135] - Battle! Tapu v3
+- De "HOO" is weg (de grote slag op 5,54 s blijft, nu met kick en bekken).
+- De synth (Jordi's neurie, maat 9–12 = 11,8–17,3 s): eigen zaagtand-sample `tapu_synth` (6,5 KB), stijgende lijn E3–B3–E4–F4 met trillers, luidste laag op die plek, met een PSG-puls eronder.
+- Baslijn opnieuw uitgeschreven (per maat 75% → 83% gelijk aan het origineel), nu een synthbas. Drums harder met kick op 1 en 3, hats vanaf maat 13, taikomotief volgens het gemeten patroon.
+- Nog niet aan de gevechten gekoppeld.

@@ -7239,8 +7239,8 @@ DirectSoundWaveData_tapu_vox_hu::
 	.incbin "sound/direct_sound_samples/grounded/tapu_vox_hu.bin"
 
 	.align 2
-DirectSoundWaveData_tapu_shout::
-	.incbin "sound/direct_sound_samples/grounded/tapu_shout.bin"
+DirectSoundWaveData_tapu_synth::
+	.incbin "sound/direct_sound_samples/grounded/tapu_synth.bin"
 
 	.align 2
 DirectSoundWaveData_hooh_shami_52::

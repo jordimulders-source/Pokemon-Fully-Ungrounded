@@ -65,8 +65,8 @@ voice_group grounded_neo_plasma
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 61
-	voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet  @ 62
-	voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet  @ 63
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 60  @ 62
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 60  @ 63
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 64
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 65
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 66

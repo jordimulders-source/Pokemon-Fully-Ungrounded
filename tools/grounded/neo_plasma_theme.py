@@ -181,8 +181,10 @@ VOICES = {
     BODY:     'voice_square_1 60, 0, 0, 2, 0, 1, 7, 1',
     ARPB:     'voice_square_2 60, 0, 2, 0, 2, 6, 1',
     SUB:      'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_1, 0, 7, 15, 1',
-    BRASS:    'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',     # v12g: release 60
-    BRASS_LO: 'voice_keysplit voicegroup_np_lead_keysplit, keysplit_trumpet',
+    # v12h: de melodie is in de bron een elektrische gitaar: de Emerald-distortiongitaar (b_dome/b_pyramid), die snijdt
+    # door de trompet-lead heen i.p.v. erin op te gaan
+    BRASS:    'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 60',
+    BRASS_LO: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 60',
     BASS:     'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, %d' % BASS_REL,
     ORGAN:    'voice_directsound 60, 0, %s, 255, 0, 255, 90' % ORGAN2,
     STAB:     'voice_directsound 60, 0, %s, 255, 215, 40, 100' % ORGAN2,
@@ -254,7 +256,7 @@ LEAD_VOL = [(0, 127), (LOOP0, 84)]            # v12: 127; v12e: vanaf het loopbe
 # lange C, dan G-D#-G#-G, vanaf 25,4 s hetzelfde op D): dat is de elektrische gitaar van de bron (lange octaafnoten +
 # achtsten) = de partijen 'brass' en 'brass_lo', die op CC7 63/53 onder de lead (127, sawtooth-16en) verdwenen.
 # Vanaf het loopbegin: melodie voor, de 16e-lead terug; de intro blijft zoals hij was.
-LOOP_VOL = dict(brass=120, brass_lo=96)
+LOOP_VOL = dict(brass=100, brass_lo=84)    # v12h: distortiongitaar (luider dan de trompet)
 VOL_HOLD = 36
 # v9: brug (Jordi '0:48' = maat 44,8 in het nummer): niet stilvallen. Staccato bas-stoten in achtsten op de PSG-sub
 # en stijgende arpeggio's (16en, crescendo) op de vette lead (DirectSound) + PSG-vierkant 2 (arp B), van maat 44
@@ -914,6 +916,16 @@ def build():
     for k in progs:                                 # staccato-partijen: release valt binnen de eigen 16e
         parts[k] = detach(parts[k], tail[k])
     order = ['drums', 'brass', 'lead', 'bass', 'brass_lo', 'organ', 'steel', 'dsine', 'stab', 'farp', 'arp']   # v12e: melodie eerst
+    # v12h (Jordi: 'op 17, 19 en 22 s valt hij nog steeds naar de achtergrond'): in het origineel klinken de herhaalde
+    # C's van de gitaarmelodie als een gedragen toon (pyin: 0,5-1 s); bij ons waren het tikjes van 55 ms met stilte
+    # ertussen. Elke melodienoot klinkt nu door tot vlak voor de volgende aanslag in dezelfde partij (max. 2 tellen).
+    for k_ in ('brass',):     # brass_lo (de lage C's) blijft kort: scheelt kanalen
+        ons = sorted(set(e[0] for e in parts[k_]))
+        nxt = {a_: b_ for a_, b_ in zip(ons, ons[1:])}
+        for e in parts[k_]:
+            n_ = nxt.get(e[0])
+            if n_ is not None and n_ - e[0] <= 2 * BEAT:
+                e[1] = max(e[1], n_ - 6)
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL
@@ -981,7 +993,7 @@ def build():
     gtr = collections.Counter(s_ // BAR for s_, e_, n, v in p['brass'] + p['brass_lo'])
     lead_vol = [(0, 127)]
     for b_ in range(LOOP0 // BAR, END // BAR):
-        v_ = 84 if gtr[b_] >= 4 else 127
+        v_ = 64 if gtr[b_] >= 4 else 127   # v12h: 84 -> 64
         if v_ != lead_vol[-1][1]:
             lead_vol.append((b_ * BAR, v_))
     lead_cc = prog_events(p['lead'], lead_prog) + [(t, 7, v) for t, v in lead_vol]

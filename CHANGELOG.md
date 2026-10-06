@@ -17125,3 +17125,7 @@ Volgens Jordi's GBA-instructies per leider:
 - **Tapu Isle** (Midden-zee, boven Route 132; `tapu_cresselia.py`): jungle-eiland met een kahuna-plein en vier ruïnes. Tapu Koko → Lele → Bulu → Fini (lv 70), elk wekt de volgende en laat een Terrain Seed achter. Pas na de Hall of Fame (daarvoor houdt mist je tegen); verslagen Tapu's komen terug na de League. In Route 132 is één zeerots weggehaald voor een vaargeul. Trainers Kaimana, Leilani, Makoa en Nalu (1130–1133). Wild: o.a. Bewear, Komala, Exeggutor, Lycanroc en Oricorio Pom-Pom (nieuw wild), zeldzaam Vikavolt en Kommo-o.
 - **Fullmoon Island** (West-zee, rechts van Route 105): halvemaaneiland met een maanmeertje. Cresselia lv 60, 's nachts en na de Hall of Fame; daarna een "LUNAR FEATHER" (een Pretty Feather). Slapeloze zeeman verwijst naar Darkrai.
 - Voorlopig vanilla-transities en `MUS_RG_VS_LEGEND`; de eigen Tapu-intro's en het Tapu-thema volgen.
+
+### [v0.9.123] - Organisch gras op de eilandjes, Stadium-pool opgeschoond
+- Zeevulling 2: het hoge gras op de eilandjes is geen rechthoek meer (hoeken eraf, bulten erbij).
+- Battle Stadium: Sirena, Mortimer, Captain Abe, Derek en Brayden uit de pool gehaald (gewone NPC's zonder eigen sprite/verhaal). Regel aangescherpt: alleen echt iconische personages in de pool.

@@ -200,6 +200,23 @@ def islet(M, area, sand, rocks=(), grass=()):
             cx, cy = px + i % 2, py + i // 2
             assert (M.v[cy][cx] & 0x3FF) == SAND['C'], '2x2-rots (%d,%d) niet op vol zand' % (px, py)
             M.v[cy][cx] = M.cell(ROCK_SAND[i], True)
+    if grass:  # gras ook organisch: hoeken eraf, bulten erbij (alleen op vol zand)
+        rng = random.Random('gras:%s:%d,%d' % (M.name, min(grass)[0], min(grass)[1]))
+        G = set(grass)
+        gx, gy = [p[0] for p in G], [p[1] for p in G]
+        for cx, cy, dx, dy in ((min(gx), min(gy), 1, 1), (max(gx), min(gy), -1, 1), (min(gx), max(gy), 1, -1),
+                               (max(gx), max(gy), -1, -1)):
+            if rng.random() < 0.6:
+                G.discard((cx, cy))
+        goal = len(grass) * 3 // 2
+        for _ in range(len(grass) * 30):
+            if len(G) >= goal:
+                break
+            x, y = rng.choice(sorted(G))
+            dx, dy = rng.choice(((1, 0), (-1, 0), (0, 1), (0, -1)))
+            if (M.v[y + dy][x + dx] & 0x3FF) == SAND['C']:
+                G.add((x + dx, y + dy))
+        grass = G
     for (x, y) in grass:
         assert (M.v[y][x] & 0x3FF) == SAND['C'], '%s: gras (%d,%d) niet op vol zand' % (M.name, x, y)
         M.v[y][x] = M.cell(TALL_GRASS)

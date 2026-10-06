@@ -20,6 +20,8 @@ Synth (v3):
   tapu_synth   brede zaagtand-synth (twee ontstemde zaagtanden + blokgolf, exacte loop): synthbas (v3/v4 ook de lead)
 Synth-brass (v5):
   tapu_brass / tapu_brass_hi  lead van maat 9-12: vijf ontstemde stemmen met het gemeten koperprofiel (zie brass())
+Climax-lead (v6):
+  tapu_lead    de snelle figuur van maat 11-12 (D#5-E5 A#5-B5 E6 F6): zachte synth-lead, sterke grondtoon (zie lead())
 Gebruik: python3 tools/grounded/tapu_samples.py"""
 import os, subprocess, sys, tempfile, wave
 import numpy as np
@@ -290,6 +292,33 @@ def brass(rate, bright):
     return x, 60, (A, n)
 
 
+# v6: de climax-figuur van maat 11-12 (Jordi's neurie tapu_hum_climax.ogg). Gemeten in de mix (FFT per noot, t.o.v.
+# het liggende akkoord in 10:12-10:15): A#5 h1 +8..+10 dB, h2 -13..-17, h3 -16..-18, h4 -19..-22 dB onder de grondtoon;
+# E5 h2 -14..-16, h3 -19..-21 dB. Dus een zachte lead met een dominante grondtoon (bijna een driehoek/gefilterde zaag),
+# geen koperformant. Grondtoon A5 (880 Hz, toets 81): tot F6 (+8) blijven 7 harmonischen onder de Nyquist van de mixer.
+LEAD_H = [0, -12, -16, -20, -24, -27, -30]
+LEAD_VOICES = ((438, 0.55), (440, 1.0), (442, 0.55))     # cycli per loop van 0,5 s: +-4 cent, zachte zweving (snel spel)
+
+
+def lead(rate):
+    rng = np.random.default_rng(7171)
+    L = rate // 2
+    A = int(0.03 * rate)
+    n = A + L
+    t = np.arange(n) / rate
+    x = np.zeros(n)
+    for cyc, amp in LEAD_VOICES:
+        f0 = cyc * rate / L
+        for k, g in enumerate(LEAD_H, 1):
+            if k * f0 * 2 ** (8 / 12) > rate * 0.48:
+                break
+            blast = 1 + 0.8 * (k > 1) * np.exp(-t / 0.025)                 # korte heldere aanzet (snelle noten)
+            x += amp * 10 ** (g / 20) * blast * np.sin(2 * np.pi * k * f0 * t + rng.uniform(0, 2 * np.pi))
+    x *= np.minimum(1, t / 0.006)
+    x = x / np.abs(x).max() * 0.97
+    return x, 81, (A, n)
+
+
 def lowpass_sr(x, sr, hi):
     f = np.fft.rfft(x); fr = np.fft.rfftfreq(len(x), 1 / sr)
     f[fr > hi] *= np.exp(-(fr[fr > hi] - hi) / 600)
@@ -308,6 +337,7 @@ SAMPLES = {
     'tapu_impact': ('drum', 1.8, 13379, False),     # v4; achteraan + eigen seed: de andere samples blijven gelijk
     'tapu_brass':  ('brass', 0, 21024, True),       # v5: synth-brass-lead maat 9-12 (eigen seed)
     'tapu_brass_hi': ('brass_hi', 0, 21024, True),  # v5: idem, filter open (maat 11-12)
+    'tapu_lead':   ('lead', 0, 21024, True),        # v6: climax-figuur maat 11-12 (eigen seed)
 }
 
 
@@ -324,6 +354,8 @@ def main(only=None):
             key, lp = 60, None
         elif kind == 'synth':
             a, key, lp = synth(rate)
+        elif kind == 'lead':
+            a, key, lp = lead(rate)
         elif kind.startswith('brass'):
             a, key, lp = brass(rate, kind == 'brass_hi')
         else:

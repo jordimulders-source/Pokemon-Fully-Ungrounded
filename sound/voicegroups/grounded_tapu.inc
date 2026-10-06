@@ -84,7 +84,7 @@ voice_group grounded_tapu
 	voice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80
 	voice_directsound 60, 0, DirectSoundWaveData_tapu_brass, 255, 0, 255, 200  @ 81
 	voice_directsound 60, 0, DirectSoundWaveData_tapu_brass_hi, 255, 0, 255, 200  @ 82
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
+	voice_directsound 81, 0, DirectSoundWaveData_tapu_lead, 255, 0, 255, 170  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86

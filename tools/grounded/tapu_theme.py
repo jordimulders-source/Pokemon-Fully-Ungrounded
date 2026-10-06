@@ -26,6 +26,8 @@ energiek, drums niet hard genoeg'): geen HOO meer (de slag op de HIT blijft), sy
 op tapu_synth (hergemeten per 16e), harder slagwerk + kick, PSG-hats en PSG-puls (geen DS-kanalen).
 v5 (Jordi over v4: alleen de synth klopt niet, 'gehaast'): maat 9-12 is een opbouwend, liggend akkoord (E3+E4, +B3,
 E4 -> F4, B3+F4 tot 13:0) op een synth-brass (tapu_brass/_hi), geen eenstemmige lijn met trillers; zie synth().
+v6 (Jordi: 'ik mis het stuk dat de climax verzorgt' + neurie): in maat 11-12 de snelle figuur D#5-E5 A#5-B5 E6 F6
+bovenop het akkoord (eigen lead tapu_lead, programma 83, op het spoor 'pips'); zie climax().
 Voicegroup grounded_tapu (gegenereerd) = grounded_gm met: 52 chant 'aa' (tapu_vox_a), 38 synthbas (tapu_synth),
 81/82 synth-brass-lead donker/helder (tapu_brass, tapu_brass_hi), 80 PSG-blokgolf, 120 PSG-ruis (hats),
 54 lage 'hu' (tapu_vox_hu) (eigen formant-samples, tools/grounded/tapu_samples.py), 48-50 strijkers (keysplit),
@@ -290,6 +292,35 @@ def synth_ccs():
     return [(at(9, 0), 'prog', SYN), (at(11, 0), 'prog', SYN_BRIGHT)]
 
 
+# v6 (Jordi over v5: 'lead_SOLO maat 8-13: vanaf 5 seconden gaat het fout, ik mis precies het stuk dat de climax
+# verzorgt van de intro' + neurie tapu_hum_climax.ogg, 3,2 s = maat 11-12): bovenop het liggende akkoord speelt in
+# maat 11 en 12 een snelle figuur ('TUDUDUDU'), die v5 had weggelaten. Neurie (pyin + onsets): twee keer dezelfde
+# frase met 1,41 s (= 1 maat) ertussen, tonen in achtsten: D#3 (val-in) - A2>B2 - E3 - F#3 (aangehouden). Origineel
+# (FFT per noot in de mix t.o.v. het akkoord van 10:12-10:15, grondtoon +7..+15 dB; zelfde in beide maten):
+#   x-1:15.5 D#5 (val-in, 1/32) | x:0 E5 (2) | x:2 A#5 (1) > x:3 B5 (1) | x:4 E6 (2) | x:6 F6 tot het eind van de maat
+# = het motief van maat 9-10 (E-B-E-F, halve maten) in achtsten en twee octaven hoger. De neurie heeft dezelfde tonen
+# (zijn A2>B2 is de A#5>B5, een tritonus onder i.p.v. boven E: met neuriën onbereikbaar). v5 miste hem: piek/pyin per
+# band zochten tussen 140-420 Hz (het akkoord), en E5/F5/E6/F6 zijn ook boventonen van E3/B3/F4; alleen A#5 en de
+# grondtonen t.o.v. het akkoord verraden de figuur. Klank: sterke grondtoon (A#5: h2 -13..-17, h3 -16..-18 dB) =
+# zachte synth-lead, eigen sample tapu_lead (programma 83) op het spoor 'pips' (dat is in maat 9-40 stil).
+LEAD = 83
+
+
+def climax():
+    out = []
+    for ob in (11, 12):
+        end = at(ob, 16) if ob == 11 else at(ob, 13)
+        out += [[at(ob, 0) - S16 // 2, at(ob, 0), p('D#5'), 92], [at(ob, 0), at(ob, 2), p('E5'), 116],
+                [at(ob, 2), at(ob, 3), p('A#5'), 112], [at(ob, 3), at(ob, 4), p('B5'), 114],
+                [at(ob, 4), at(ob, 6), p('E6'), 120], [at(ob, 6), end, p('F6'), 124]]
+    return out
+
+
+def climax_ccs():
+    """spoor 'pips': climax-lead in maat 11-12 (programma 83, luider), daarna terug naar de fluit (maat 41-48)."""
+    return [(at(10, 15), 'prog', LEAD), (at(10, 15), 7, 112), (at(13, 0), 'prog', FLUTE), (at(13, 0), 7, 64)]
+
+
 def synth_psg():
     """PSG-blokgolf (kost geen DS-kanaal): maat 17-20 en 25-28 de bovenlaag van de synthbas (stem 'other': het
     basriff een octaaf hoger). v5: de 16en-puls van maat 9-12 is weg (de synth daar pulseert niet)."""
@@ -528,17 +559,17 @@ def build(render_dir=None, frag_dir=None):
     rel = releases(VG)
     kitrel = kit_releases()
     parts = {'chant': chant(), 'chlo': chant_lo(), 'syn': synth(), 'horn': horn(), 'hi': hi(), 'pips': pips(),
-             'bass': bass(), 'pad': pad(), 'pulse': pulses()}
+             'bass': bass(), 'pad': pad(), 'pulse': pulses(), 'clim': climax()}
     parts.update(drums())
     melodic = {'chant': CHOIR, 'chlo': CHLO, 'syn': SYN, 'horn': HORN, 'hi': SHAKU, 'pips': FLUTE, 'bass': BASS,
-               'pad': STR, 'pulse': STR2, 'timp': TIMP}
+               'pad': STR, 'pulse': STR2, 'timp': TIMP, 'clim': LEAD}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in melodic.items()}
     for k in ('taiko', 'toms', 'perc', 'cym', 'imp_t', 'imp_m'):      # per partij de langste release van zijn kitnoten
         tail[k] = max(release_ticks(kitrel[n[2]], TPB, BPM) for n in parts[k]) + 2
     for k in ('chlo', 'horn', 'hi', 'pips', 'bass', 'pulse', 'timp', 'pad'):   # v4: syn niet (legato, doorgetrokken)
         parts[k] = detach(parts[k], tail[k])
     parts['chant'] = legato(parts['chant'])                           # gezongen: noten lopen in elkaar over
-    order = ['imp_t', 'imp_m', 'taiko', 'syn', 'bass', 'cym', 'chant', 'chlo', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
+    order = ['imp_t', 'imp_m', 'taiko', 'syn', 'clim', 'bass', 'cym', 'chant', 'chlo', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
              'pad']
     kept = allocate({k: parts[k] for k in order}, order, tail, max_voices=MAX_V)
     print('uitklinktijd (ticks):', tail)
@@ -548,6 +579,7 @@ def build(render_dir=None, frag_dir=None):
         print('  %-6s %4d noten, %3d vallen weg (%.1f%%)%s' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / max(n, 1),
                                                              ' (maten origineel %s)' % gone[:12] if gone else ''))
         parts[k] = kept[k]
+    parts['pips'] = sorted(parts['pips'] + parts.pop('clim'))         # v6: climax-lead op het (stille) fluitspoor
     parts['taiko'] = sorted(parts['taiko'] + parts.pop('imp_t'))
     parts['toms'] = sorted(parts['toms'] + parts.pop('imp_m'))
     parts['synp'] = detach(synth_psg(), 2)                            # PSG: buiten de stemverdeler (geen DS-kanaal)
@@ -557,7 +589,7 @@ def build(render_dir=None, frag_dir=None):
     song.loop = (0, END * BAR)                                        # terug naar maat 1 (chant), zoals het origineel
     for ch, (k, prog, vol, pan) in enumerate(TRACKS):
         notes = parts[k]
-        song.add(notes, prog, vol, ch, pan, ccs=synth_ccs() if k == 'syn' else ())
+        song.add(notes, prog, vol, ch, pan, ccs=synth_ccs() if k == 'syn' else climax_ccs() if k == 'pips' else ())
     song.save(OUT, END * BAR)
     print(OUT, 'HIT op %.3f s (GBA %.3f s = TAPU_HIT_FRAME %d), loop %.1f s' % (
         HIT_SECONDS, HIT_SECONDS_GBA, round(HIT_SECONDS_GBA * 60), NBARS * 4 * 60 / BPM))
@@ -597,6 +629,8 @@ def write_voicegroup():
         '@ 80': '\tvoice_square_1 60, 0, 0, 2, 0, 2, 9, 1  @ 80',
         '@ 81': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_brass, 255, 0, 255, 200  @ 81',
         '@ 82': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_brass_hi, 255, 0, 255, 200  @ 82',
+        '@ 83': '\tvoice_directsound 81, 0, DirectSoundWaveData_tapu_lead, 255, 0, 255, 170  @ 83',   # v6: climax-lead
+        '@ 83': '\tvoice_directsound 81, 0, DirectSoundWaveData_tapu_lead, 255, 0, 255, 170  @ 83',
         '@ 54': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_vox_hu, 255, 0, 255, 150  @ 54',
         '@ 77': '\tvoice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 160  @ 77',
         '@ 127': '\tvoice_keysplit_all voicegroup_tapu_drumset  @ 127',

@@ -7321,3 +7321,7 @@ DirectSoundWaveData_tapu_brass::
 	.align 2
 DirectSoundWaveData_tapu_brass_hi::
 	.incbin "sound/direct_sound_samples/grounded/tapu_brass_hi.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_lead::
+	.incbin "sound/direct_sound_samples/grounded/tapu_lead.bin"

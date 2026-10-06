@@ -1636,7 +1636,7 @@
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
 #define FLAG_DAILY_WINGULL_THEFT                    (DAILY_FLAGS_START + 0x3F) // Project Grounded: Wingull op de drijvende markt jat 1 Poké Ball per dag
-#define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
+#define DAILY_FLAGS_END                             (FLAG_DAILY_WINGULL_THEFT + (7 - FLAG_DAILY_WINGULL_THEFT % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)

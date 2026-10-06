@@ -17139,3 +17139,7 @@ Volgens Jordi's GBA-instructies per leider:
 - `MUS_GROUNDED_VS_TAPU` (656, `tools/grounded/tapu_theme.py`): transcriptie van het Sun/Moon-Tapu-thema op stock-instrumenten, 174 bpm, loop van 60 maten. Taiko-drumkit (`drumsets/tapu.inc`), koor (choir aahs) voor de chants, mannenstem voor de kreten, strijkers/hoorn/shakuhachi, fingered bass, pauk.
 - 3 maten voorspel (pauk-roffel, handtrommen, aanzwellend koor, taiko-opbouw), dan de eerste grote slag + koor op 4,156 s: daar begint het gevecht. De Tapu-intro's eindigen nu precies daar (`TAPU_HIT_FRAME` 249, beats op 174 bpm).
 - Nog niet aan de gevechten gekoppeld (eerst Jordi's oordeel over de noten; dan `#if 0` → `1` in `battle_setup.c`). Fragmenten per partij naast het origineel ter vergelijking.
+
+### [v0.9.126] - Tapu Isle: heiligdom met trap en Tapu-beelden
+- Het plein in het midden van Tapu Isle is nu een verhoogd terras (x 22–35, y 14–25) met een stenen trap in de zuidwand, een geplaveid voorplein en zuilen op de hoeken. De kahuna staat op een altaar achterin; de tafel met de volgorde naast de trap.
+- Vier grijze stenen beelden van Koko, Lele, Bulu en Fini (elk in de hoek van zijn eigen ruïne), met een placeholdertekst bij aanspreken. Generiek beeldenscript `tools/grounded/statue_sprites.py` (soort toevoegen aan `STATUES`), `OBJ_EVENT_GFX_STATUE_TAPU_*`.

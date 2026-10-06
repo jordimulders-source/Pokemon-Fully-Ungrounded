@@ -864,12 +864,22 @@ def build():
     # weg waar de akkoordpartij die toon op die tel al speelt
     have = {(e[0], e[2]) for e in brass}
     lifted = []
+    dup = set()
     for s_, e_, n, v in brass_lo:
         while n < 48:
             n += 12
         if (s_, n) not in have:
             lifted.append([s_, e_, n, v])
+        elif s_ >= LOOP0:
+            dup.add((s_, n))
     brass_lo = lifted
+    # v12k (Jordi + neuriën: 'de laatste noot valt weg'): waar de melodie in de bron in octaven speelt en het lage octaaf
+    # wegviel omdat het opgetild samenviel met de melodienoot (o.a. het slotloopje A#-F#-D#-C, 'TUDUDU'), klinkt die
+    # noot nog maar enkel: daar het octaaf erboven erbij, zodat het loopje even vol blijft als de rest
+    extra = [[e[0], e[1], e[2] + 12, e[3]] for e in brass if (e[0], e[2]) in dup and e[2] + 12 <= TOP
+             and (e[0], e[2] + 12) not in have]
+    brass = sorted(brass + extra)
+    print('  v12k: %d octaafpartners toegevoegd (enkel geworden melodienoten)' % len(extra))
     # bas: onderstem, staccato (klinkt een octaaf lager door de sample); sub = zelfde ritme op de PSG-golf, op de
     # klinkende toonhoogte van de bas
     bass = staccato(mono([g[0] for g in groups(T[3])]), BASS_LEN, 64, 300)
@@ -925,6 +935,10 @@ def build():
             n_ = nxt.get(e[0])
             if n_ is not None and n_ - e[0] <= 2 * BEAT:
                 e[1] = max(e[1], n_ - 6)
+            # v12k (Jordi + zijn neuriën: 'de laatste noot valt weg'): de slotnoot van een frase (daarna eerst een rust)
+            # klinkt in het origineel ±0,5 s door; hier tot 1,5 tel (of tot vlak voor de volgende aanslag)
+            elif e[0] >= LOOP0:
+                e[1] = max(e[1], min(e[0] + BEAT + BEAT // 2, (n_ - 6) if n_ is not None else END))
     res = allocate(parts, order, tail)
     assert len(res['lead']) == len(parts['lead']), 'lead verliest noten'
     real = V11_REL

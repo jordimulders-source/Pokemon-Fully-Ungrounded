@@ -17030,3 +17030,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.108] - Neo Plasma v12j: de gitaarmelodie zakt niet meer in
 - Gemeten met een solo-opname van de melodie uit de game: op 0:17–0:19 en 0:22–0:24 zakte de melodie zelf ±40% in, precies op de herhaalde C3/C4-16en (tikjes van 60 ticks met stilte ertussen; in het origineel een gedragen toon). Elke melodienoot klinkt nu door tot vlak voor de volgende aanslag; zelfde trompet en volume. Solo nu op die plekken even luid als de rest van de melodie.
 - v12i (lead dunner, PSG-octaaf weg) blijft. Iets meer arpeggio-noten vallen weg (farp 4 → 9%); de steeldrums spelen ook op de PSG.
+
+### [v0.9.109] - Neo Plasma v12k: het slotloopje van de melodie weer in octaven
+- Jordi (met zijn neuriën): de laatste noot valt nog twee keer weg. Dat is het slotloopje "TUDUDU" (A#–F#–D#–C) aan het eind van de frase: in de bron in octaven, maar het lage octaaf viel weg omdat het (opgetild tot C3) samenviel met de melodienoot. Waar dat gebeurt speelt nu het octaaf erboven mee (177 noten), zodat het loopje even vol blijft als de rest. Solo-opname: op 0:17,7–0:18,1 en 0:23,2–0:24 van ±33 naar ±48 (even luid als de rest van de melodie).

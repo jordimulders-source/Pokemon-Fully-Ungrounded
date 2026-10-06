@@ -124,6 +124,10 @@ enum BattleTransition
     B_TRANSITION_GYM_BRAWLY, // Project Grounded: Brawly, UFC-walkout, octagon, omroeperbalk, vuist tegen het kooigaas
     B_TRANSITION_GYM_WATTSON, // Project Grounded: Wattson, serverfarm, pop-ups, WATTCOIN crasht, SCAM-stempel, Wahahahah!
     B_TRANSITION_GYM_FLANNERY, // Project Grounded: Flannery, camping, Mt. Chimney ontploft, een lavasteen raakt de camera
+    B_TRANSITION_GYM_NORMAN, // Project Grounded: Norman, NORMFLIX: Are you still watching?, het beeld krimpt in de tv, Slaking op de bank
+    B_TRANSITION_GYM_WINONA, // Project Grounded: Winona, WINAIR: vertrekbord DELAYED -> BOARDING, Altaria vliegt over, het koffertje springt open
+    B_TRANSITION_GYM_TATE_LIZA, // Project Grounded: Tate & Liza, ouijabord spelt RIP, drie tarotkaarten, psychic overload in lowercase
+    B_TRANSITION_GYM_WALLACE, // Project Grounded: Wallace, Crater Pub: een wijnglas schenkt vol, de wijn wordt Hoenn-blauw, een golf over de pub, Santé!
     B_TRANSITION_COUNT
 };
 

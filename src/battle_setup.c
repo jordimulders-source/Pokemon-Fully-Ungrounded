@@ -1037,6 +1037,14 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_GYM_WATTSON;
     if (trainerId == TRAINER_FLANNERY_1 || (trainerId >= TRAINER_FLANNERY_2 && trainerId <= TRAINER_FLANNERY_5))
         return B_TRANSITION_GYM_FLANNERY;
+    if (trainerId == TRAINER_NORMAN_1 || (trainerId >= TRAINER_NORMAN_2 && trainerId <= TRAINER_NORMAN_5))
+        return B_TRANSITION_GYM_NORMAN;
+    if (trainerId == TRAINER_WINONA_1 || (trainerId >= TRAINER_WINONA_2 && trainerId <= TRAINER_WINONA_5))
+        return B_TRANSITION_GYM_WINONA;
+    if (trainerId == TRAINER_TATE_AND_LIZA_1 || (trainerId >= TRAINER_TATE_AND_LIZA_2 && trainerId <= TRAINER_TATE_AND_LIZA_5))
+        return B_TRANSITION_GYM_TATE_LIZA;
+    if (trainerId == TRAINER_WALLACE_1 || (trainerId >= TRAINER_WALLACE_2 && trainerId <= TRAINER_WALLACE_5))
+        return B_TRANSITION_GYM_WALLACE;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;

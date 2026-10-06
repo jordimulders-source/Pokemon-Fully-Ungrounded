@@ -94,6 +94,33 @@ def outline(img, box, inner_cols, col):
     return Image.fromarray(a)
 
 
+
+def outlined_text(im, cx, y, s, fg, shadow, edge, scale=2, font='normal'):
+    """Tekst gecentreerd op cx met een rand van 1 px in kleur edge (bijv. ondertitels op een zwarte balk); y mag
+    negatief zijn (de bovenkant valt dan weg). Geeft een nieuw beeld."""
+    sp = 1 if scale > 1 else 0
+    H = 16 * scale + 2
+    tmp = Image.new('RGB', (im.width, H), KEY)
+    text(tmp, cx - text_width(s, font, scale, sp) // 2, 1, s, fg, shadow, font, scale, sp)
+    ta = np.array(tmp)
+    m = (ta != KEY).any(2)
+    m2 = m.copy()
+    m2[1:] |= m[:-1]
+    m2[:-1] |= m[1:]
+    m2[:, 1:] |= m[:, :-1]
+    m2[:, :-1] |= m[:, 1:]
+    y -= 1
+    if y < 0:
+        ta, m, m2 = ta[-y:], m[-y:], m2[-y:]
+        y = 0
+    ia = np.array(im)
+    reg = ia[y:y + m.shape[0]]
+    n = reg.shape[0]
+    ta, m, m2 = ta[:n], m[:n], m2[:n]
+    reg[m2 & ~m] = edge
+    reg[m] = ta[m]
+    return Image.fromarray(ia)
+
 # ------------------------------------------------------------------ metatiles van een tileset (echte game-art)
 def _tileset(d):
     im = Image.open(os.path.join(ROOT, d, 'tiles.png'))

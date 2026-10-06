@@ -173,6 +173,10 @@ static void Task_GymRoxanne(u8); // Project Grounded (src/data/gym_intros_a.h)
 static void Task_GymBrawly(u8); // Project Grounded
 static void Task_GymWattson(u8); // Project Grounded
 static void Task_GymFlannery(u8); // Project Grounded
+static void Task_GymNorman(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymWinona(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymTateLiza(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymWallace(u8); // Project Grounded (src/data/gym_intros_b.h)
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -662,6 +666,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GYM_BRAWLY] = Task_GymBrawly, // Project Grounded
     [B_TRANSITION_GYM_WATTSON] = Task_GymWattson, // Project Grounded
     [B_TRANSITION_GYM_FLANNERY] = Task_GymFlannery, // Project Grounded
+    [B_TRANSITION_GYM_NORMAN] = Task_GymNorman, // Project Grounded
+    [B_TRANSITION_GYM_WINONA] = Task_GymWinona, // Project Grounded
+    [B_TRANSITION_GYM_TATE_LIZA] = Task_GymTateLiza, // Project Grounded
+    [B_TRANSITION_GYM_WALLACE] = Task_GymWallace, // Project Grounded
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -9910,3 +9918,6 @@ static void Task_WeatherService(u8 taskId)
 
 // Project Grounded: gymleider-intro's (Roxanne, Brawly, Wattson, Flannery)
 #include "data/gym_intros_a.h"
+
+// Project Grounded: gymleider-intro's deel B (Norman, Winona, Tate & Liza, Wallace)
+#include "data/gym_intros_b.h"

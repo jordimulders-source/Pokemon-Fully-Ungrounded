@@ -113,7 +113,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v1 wacht op Jordi (één motief, drie arrangementen) | "Forces" |
-| Lugia | `lugia_theme.py` | v1 wacht op Jordi (beschermersthema <-> storm, één melodie; alleen stock) | "Lugia" |
+| Lugia | `lugia_theme.py` | v2 wacht op Jordi (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -557,3 +557,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
   op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
   op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.
+- Lugia v2 (Jordi: 'bijna helemaal goed, maar tussen 30 en 40 s mag het tempo omhoog, opbouwen met goed drumgebruik'):
+  de stilte na de climax (maat 19) werd een **drumopbouw die versnelt** (achtsten taiko/toms -> 16en toms -> 32ste
+  snareroffel, aanzwellende paukenroffel, strijkersloop omhoog) met een **accelerando per tel** 144 -> 164 (maat 18-19),
+  C en D op 164. **Tempo terugzetten op het loopbegin**: een TEMPO-event op dezelfde tick als de '['-marker komt in de
+  .s ná het loop-label (controleer `grep TEMPO` + `_B1:`), anders blijft de loop op 164. -V078: 0 overlopen, piek 86.

@@ -28,6 +28,7 @@ from musiclib import dedupe, detach, allocate, releases, release_ticks, Song
 OUT = 'sound/songs/midi/mus_grounded_vs_lugia.mid'
 VG = 'grounded_lugia'
 TPB, BPM = 96, 144
+FAST = 164                                  # v2: C en D (vanaf ±33 s)
 E8, S16 = TPB // 2, TPB // 4
 BAR = TPB * 4
 MAXV = 11                                   # legendary: 11 DirectSound-noten (lint: MAX_PER_SONG)
@@ -232,15 +233,35 @@ def build():
                       for i in range(4)]
         P['rain'] += [[t0 + i * S16, t0 + i * S16 + 14, 74, 60 if i % 4 else 80] for i in range(16)]
     gust((B0 + 4) * BAR, 3 * BAR, 88)
+    t0 = (B0 + 6) * BAR + 3 * TPB                    # v2: tomfill aan het eind van de climax (start opbouw)
+    for i, n in enumerate((TOMH, TOML, TOMH, TOML)):
+        hit(t0 + i * S16, (n,), 100 + i * 5, S16)
     # maat 7 van B: tutti-slag op A, dan valt alles weg: wind + uitstervende paukenroffel (het oog van de storm)
     t0 = (B0 + 7) * BAR
     P['tpt'].append([t0, t0 + TPB, p('A5'), 120])
     P['horn'] += [[t0, t0 + TPB, p('A4'), 120], [t0, t0 + TPB, p('E4'), 110]]
     P['spicc'].append([t0, t0 + E8, p('A2'), 120])
     hit(t0, (CRASH, TAIKO, KICK), 124, 2 * TPB)
-    P['troll'] += [[t0 + TPB + i * S16, t0 + TPB + (i + 1) * S16, p('A2'), max(40, 104 - i * 6)] for i in range(12)]
-    gust(t0, BAR, 70)
-    P['str'].append([t0 + TPB, t0 + BAR - 6, p('A3'), 70])
+    # v2 (Jordi: 'tempo omhoog tussen 30 en 40 s, opbouwen met goed drumgebruik'): geen stilte meer maar een
+    # drumopbouw die versnelt (achtsten taiko/toms -> 16en toms -> 32ste snareroffel) terwijl het tempo stijgt;
+    # de pauk rolt aanzwellend i.p.v. uitstervend, de strijkers jagen omhoog naar de D van C.
+    t1 = t0 + TPB
+    hit(t1, (TAIKO, KICK), 96, TPB)
+    hit(t1 + E8, (TOML,), 92, E8)
+    t2 = t0 + 2 * TPB
+    for i, n in enumerate((TOMH, TOMH, TOML, TOML)):
+        hit(t2 + i * S16, (n,), 96 + i * 4, S16)
+    hit(t2, (TAIKO, KICK), 104, TPB)
+    hit(t2 + E8, (TAIKO,), 100, TPB)
+    t3 = t0 + 3 * TPB
+    P['drums'] += [[t3 + i * (S16 // 2), t3 + (i + 1) * (S16 // 2), SNARE, 84 + i * 5] for i in range(8)]
+    hit(t3, (TAIKO, KICK), 112, E8)
+    hit(t3 + E8, (TAIKO, KICK), 118, E8)
+    P['troll'] += [[t1 + i * S16, t1 + (i + 1) * S16, p('A2'), min(124, 60 + i * 6)] for i in range(12)]
+    P['spicc'] += [[t2 + i * S16, t2 + (i + 1) * S16 - 4, n, 84 + i * 4] for i, n in enumerate(
+        (p('A2'), p('B2'), p('C#3'), p('D3'), p('E3'), p('F#3'), p('G3'), p('A3')))]
+    gust(t0, BAR, 88)
+    P['str'].append([t0 + TPB, t0 + BAR - 6, p('A3'), 80])
 
     # ======================= C: de Beschermer (thema in groot, breed: 2 tellen = eenheid) =================
     P['horn'] += melody(THEME[:4], C0 * BAR, 2 * TPB, 112, shift=-12)       # hoorns breed
@@ -258,6 +279,12 @@ def build():
         P['pizz'] += [[t0 + i * TPB, t0 + i * TPB + E8, r + (7 if i % 2 else 0), 104] for i in range(4)]
         P['sub'] += [[t0, t0 + 2 * TPB - 8, r + 12, 80], [t0 + 2 * TPB, t0 + BAR - 8, r + 12, 80]]
         hit(t0, (TAIKO,), 92 if not full else 108, TPB)
+        if not full:                                 # v2: zachte puls, zodat het hogere tempo doorloopt
+            hit(t0 + 2 * TPB, (KICK,), 84, TPB)
+            hit(t0 + 3 * TPB, (SNARE,), 70, E8)
+            if k == 3:
+                for i, n in enumerate((TOMH, TOMH, TOML, TOML)):
+                    hit(t0 + 3 * TPB + i * S16, (n,), 80 + i * 6, S16)
         P['timp'].append([t0, t0 + E8, r + (12 if r < p('F2') else 0), 90 if not full else 110])
         if full:
             hit(t0 + 2 * TPB, (TAIKO, KICK), 100, TPB)
@@ -332,7 +359,7 @@ def build():
     rel = releases(VG)
     progs = {'horn': HORN, 'tpt': TPT, 'spicc': SPICC, 'str': STR, 'timp': TIMP, 'choir': CHOIR, 'flute': FLUTE,
              'bell': BELL, 'wind': WIND, 'bubble': BUBBLE, 'pizz': PIZZ, 'troll': TROLL}
-    tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}
+    tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}   # C/D op 164 bpm: met FAST gerekend valt in C/D niets extra weg (v2)
     tail['drums'] = 0
     for k in ('horn', 'tpt', 'str', 'choir', 'flute'):
         P[k] = detach(P[k], tail[k])
@@ -350,6 +377,11 @@ def build():
 
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
+    # v2: accelerando 144 -> 164 bpm over de climax en de drumopbouw (maat 18-19 = 30-33 s); C en D op 164.
+    for i, b in enumerate((146, 148, 150, 153, 156, 159, 162)):
+        song.tempo((B0 + 6) * BAR + (i + 1) * TPB, b / 120)
+    song.tempo(C0 * BAR, FAST / 120)
+    song.tempo(A0 * BAR, BPM / 120)                 # terugsprong naar A: weer 144
     song.loop = (A0 * BAR, END * BAR)
     extra_wind = [(0, mido.Message('control_change', control=20, value=12))] + \
                  [(t, mido.Message('pitchwheel', pitch=v)) for t, v in bend]

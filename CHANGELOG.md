@@ -17065,3 +17065,8 @@ Volgens Jordi's GBA-instructies per leider:
 - **Strandbar:** **Lorelei**, de barman en een dronken zeeman.
 - **Post-game gevechten** (elk één keer, na de Hall of Fame) met hun Stadium-teams: Misty, Erika, Lorelei (lv 75–78), Cynthia (lv 78, Garchomp 80) en Birch (strontteam + Pyukumuku, Hoenn-Muk als ace, met zijn eigen transitie en de Macarena).
 - Teksten: Engelse placeholders. ROM +17 KB. Flags 0x277–0x278. Lobby en wijnzaal hergebruiken de contest-layouts (er hangt nog wat contestdecor).
+
+### [v0.9.115] - Zeetempel (Manaphy/Phione) en Whirl Island (Lugia)
+- **Zeetempel** (vanaf badge 7/Dive): een zwemgat in de noordwand van Underwater Route 128 leidt naar een diepe trog met zeewier (Lumineon, Alomomola, Clawitzer, Mantine, zeldzaam Milotic) en een gezonken tempel. In de hal 12 wilde soorten (o.a. Golurk, Sableye, Cofagrigus, Carbink, zeldzaam Runerigus en Spiritomb, lv 38–44) en een eerlijke puzzel: tien gebeeldhouwde stenen, het raadsel noemt de volgorde maan → eb → vloed. In het heiligdom **Manaphy** (lv 50, nieuwe rimpeltransitie), de "Prince of the Sea" die sinds 2006 wacht tot een Pokémon Ranger hem ophaalt ("Has anyone checked the other cartridge?"). Daarna rolt er een **Phione-ei** ("SPARE") op het altaar, plus de **Silver Wing**.
+- **Whirl Island:** een zwemgat in Underwater Route 124 leidt via een onderzeese grot naar een lagune op een eiland binnen een ring van draaikolken. In de grot slaapt **Lugia** (lv 60) aan een meer, maar alleen als je de Silver Wing bij je hebt ("Smells of storms. / Points north of / Sootopolis. Down."). Jirachi blijft in Fallarbor.
+- Nieuw key item `ITEM_SILVER_WING`. Teksten: Engelse placeholders. ROM +18,5 KB. Flags 0x29C–0x29E, 0x4C7–0x4C8.

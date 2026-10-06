@@ -12,7 +12,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
 **Planning:** pas als alle muziek af is.
 - ~~**Eb en vloed: ja.**~~ (gedaan, v0.9.110: Route 132.) Het moet de helft van de dag zijn, zodat je allebei op één avond ziet (de meeste spelers spelen 's avonds).
   Voorstel: om het uur wisselen (even uur eb, oneven uur vloed). Je wacht dan hooguit een uur, nooit tot het weekend.
-- **Scheepswrakkenkerkhof** (gedaan, v0.9.112: Shipwreck Shoals onder Route 131)**, drijvende markt, stoomeiland** (gedaan, v0.9.113)**, zeetempel (Manaphy), Lugia: ja.**
+- **Scheepswrakkenkerkhof** (gedaan, v0.9.112: Shipwreck Shoals onder Route 131)**, drijvende markt, stoomeiland** (gedaan, v0.9.113)**, zeetempel (Manaphy), Lugia** (gedaan, v0.9.115)**: ja.**
 - **Vuurtoren: ja, maar** er zijn geen assets voor (Emerald/FRLG hebben geen vuurtoren). Zelf tekenen of uit een bronsheet halen; eerst een
   ingezoomde schets aan Jordi.
   (Jordi: "probeer maar een vuurtoren te tekenen".)

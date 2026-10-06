@@ -1,4 +1,4 @@
-@ Project Grounded: PARADISO RESORT, zandeiland ten zuiden van Route 109 (ZEE_PLAN.md). Kaart:
+@ Project Grounded: PARADISO RESORT, zandeiland ten zuiden van Route 129 (ZEE_PLAN.md). Kaart:
 @ tools/grounded/maptools/paradiso_resort.py. Gasten vechten pas na de Hall of Fame. Teksten zijn placeholders.
 ParadisoResort_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ParadisoResort_OnTransition
@@ -25,8 +25,19 @@ ParadisoResort_EventScript_RivalMay::
 @ ---------------------------------------------------------------- gasten met een gevecht (post-game)
 ParadisoResort_EventScript_Misty::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_EventScript_MistyNotYet
+	goto_if_defeated TRAINER_RESORT_MISTY, ParadisoResort_EventScript_MistyPost
+	lock
+	faceplayer
+	msgbox ParadisoResort_Text_MistyAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_EventScript_MistyDecline
 	trainerbattle_single TRAINER_RESORT_MISTY, ParadisoResort_Text_MistyIntro, ParadisoResort_Text_MistyDefeat
+ParadisoResort_EventScript_MistyPost::
 	msgbox ParadisoResort_Text_MistyPost, MSGBOX_AUTOCLOSE
+	end
+
+ParadisoResort_EventScript_MistyDecline::
+	msgbox ParadisoResort_Text_MistyDecline, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_EventScript_MistyNotYet::
@@ -35,8 +46,19 @@ ParadisoResort_EventScript_MistyNotYet::
 
 ParadisoResort_EventScript_Erika::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_EventScript_ErikaNotYet
+	goto_if_defeated TRAINER_RESORT_ERIKA, ParadisoResort_EventScript_ErikaPost
+	lock
+	faceplayer
+	msgbox ParadisoResort_Text_ErikaAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_EventScript_ErikaDecline
 	trainerbattle_single TRAINER_RESORT_ERIKA, ParadisoResort_Text_ErikaIntro, ParadisoResort_Text_ErikaDefeat
+ParadisoResort_EventScript_ErikaPost::
 	msgbox ParadisoResort_Text_ErikaPost, MSGBOX_AUTOCLOSE
+	end
+
+ParadisoResort_EventScript_ErikaDecline::
+	msgbox ParadisoResort_Text_ErikaDecline, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_EventScript_ErikaNotYet::
@@ -45,8 +67,19 @@ ParadisoResort_EventScript_ErikaNotYet::
 
 ParadisoResort_EventScript_Birch::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_EventScript_BirchNotYet
+	goto_if_defeated TRAINER_BIRCH_RESORT, ParadisoResort_EventScript_BirchPost
+	lock
+	faceplayer
+	msgbox ParadisoResort_Text_BirchAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_EventScript_BirchDecline
 	trainerbattle_single TRAINER_BIRCH_RESORT, ParadisoResort_Text_BirchIntro, ParadisoResort_Text_BirchDefeat
+ParadisoResort_EventScript_BirchPost::
 	msgbox ParadisoResort_Text_BirchPost, MSGBOX_AUTOCLOSE
+	end
+
+ParadisoResort_EventScript_BirchDecline::
+	msgbox ParadisoResort_Text_BirchDecline, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_EventScript_BirchNotYet::
@@ -263,3 +296,31 @@ ParadisoResort_Text_Collector:
 	.string "That one's not a seashell, dear.\n"
 	.string "Ask the professor. He won't stop\l"
 	.string "talking about it.$"
+
+ParadisoResort_Text_MistyAsk:
+	.string "MISTY: Hey. You. Yes, you, blocking my\n"
+	.string "sun.\p"
+	.string "You look like you want a battle. Do you\n"
+	.string "want a battle?$"
+
+ParadisoResort_Text_MistyDecline:
+	.string "MISTY: Smart. Go stand in someone else's\n"
+	.string "light.$"
+
+ParadisoResort_Text_ErikaAsk:
+	.string "ERIKA: Mm…? Are you here to wake me up\n"
+	.string "with a battle?\p"
+	.string "You may say no. Please say no.$"
+
+ParadisoResort_Text_ErikaDecline:
+	.string "ERIKA: Thank you. Zzz…$"
+
+ParadisoResort_Text_BirchAsk:
+	.string "PROF. BIRCH: {PLAYER}! Don't step in it!\n"
+	.string "I'm documenting it.\p"
+	.string "Do you want to battle? For science?\n"
+	.string "It's always for science.$"
+
+ParadisoResort_Text_BirchDecline:
+	.string "PROF. BIRCH: Fine. More time for me and\n"
+	.string "the specimen.$"

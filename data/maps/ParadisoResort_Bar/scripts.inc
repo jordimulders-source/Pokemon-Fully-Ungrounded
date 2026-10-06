@@ -8,8 +8,19 @@ ParadisoResort_Bar_EventScript_Bartender::
 
 ParadisoResort_Bar_EventScript_Lorelei::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_Bar_EventScript_LoreleiNotYet
+	goto_if_defeated TRAINER_RESORT_LORELEI, ParadisoResort_Bar_EventScript_LoreleiPost
+	lock
+	faceplayer
+	msgbox ParadisoResort_Bar_Text_LoreleiAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_Bar_EventScript_LoreleiDecline
 	trainerbattle_single TRAINER_RESORT_LORELEI, ParadisoResort_Bar_Text_LoreleiIntro, ParadisoResort_Bar_Text_LoreleiDefeat
+ParadisoResort_Bar_EventScript_LoreleiPost::
 	msgbox ParadisoResort_Bar_Text_LoreleiPost, MSGBOX_AUTOCLOSE
+	end
+
+ParadisoResort_Bar_EventScript_LoreleiDecline::
+	msgbox ParadisoResort_Bar_Text_LoreleiDecline, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_Bar_EventScript_LoreleiNotYet::
@@ -65,3 +76,13 @@ ParadisoResort_Bar_Text_Tuber:
 	.string "It's all-inclusive!\p"
 	.string "I've had thirty. I can hear\n"
 	.string "colours.$"
+
+ParadisoResort_Bar_Text_LoreleiAsk:
+	.string "LORELEI: I'm on my third drink and my\n"
+	.string "first day off in four generations.\p"
+	.string "Are you here to battle me? Think before\n"
+	.string "you answer.$"
+
+ParadisoResort_Bar_Text_LoreleiDecline:
+	.string "LORELEI: Wise. The ice in this glass is\n"
+	.string "the only ice I want to deal with today.$"

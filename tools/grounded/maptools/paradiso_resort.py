@@ -1,7 +1,9 @@
 """Project Grounded: het strandresort PARADISO RESORT (ZEE_PLAN.md, Jordi's besluiten). Deterministisch en idempotent.
 
-  ParadisoResort           Zandeiland ten zuiden van Route 109 (verbinding, zelfde breedte; General + Slateport, dus
-                           naadloos). Groot all-in hotel (het havengebouw van Slateport, verbreed tot 15 en een
+  ParadisoResort           Zandeiland ten zuiden van Route 129 (verbinding, offset 20; was eerst onder Route 109, maar
+                           Jordi wilde het verder oostwaarts, uit het zicht van Mr. Briney's boot). General + Slateport;
+                           Route 129 is General + Mossdeep, maar de rijen langs de rand zijn aan beide kanten alleen
+                           primary (open zee), dus naadloos. Groot all-in hotel (het havengebouw van Slateport, verbreed tot 15 en een
                            verdieping hoger), strandbar (het Seashore House van Route 109), parasols, ligstoelen,
                            een "infinity pool" (een lagune: het is gewoon de zee), Birch met een drol, Misty, Erika,
                            de rivaal (post-game) en dronken fans.
@@ -238,15 +240,15 @@ def exterior():
         assert (d[0], d[1] + 1) in r, ('deur onbereikbaar', d)
     assert (SIGN[0], SIGN[1] + 1) in r and (30, 26) in r
     assert sms.primary_only(g, range(0, 6)), 'bovenste rijen moeten primary zijn'
-    assert all(mt(g[0][x]) == WATER for x in range(23, 40)), 'aanloop vanaf Route 109 dicht'
+    assert all(mt(g[0][x]) == WATER for x in range(W)), 'aanloop vanaf Route 129 dicht'
     sms.save(g, name)
     sms.border(name, t(WATER, False, 1))
     oq.register_layout(name, const, W, H, 'gTileset_Slateport')
     sms.write_map(name, const, objs, warps, [], bgs, music='MUS_LILYCOVE', map_type='MAP_TYPE_TOWN',
                   region_map_section='MAPSEC_PARADISO_RESORT', allow_escaping=False,
-                  connections=[{'map': 'MAP_ROUTE109', 'offset': 0, 'direction': 'up'}])
+                  connections=[{'map': 'MAP_ROUTE129', 'offset': -20, 'direction': 'up'}])
     oq.register_map(name)
-    sms.set_connection('Route109', 'MAP_PARADISO_RESORT', 'down', 0)
+    sms.set_connection('Route129', 'MAP_PARADISO_RESORT', 'down', 20)
     return name, g
 
 

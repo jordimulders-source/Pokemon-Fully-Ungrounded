@@ -17207,3 +17207,7 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.138] - Battle! Tapu v5 (de synth)
 - De lead in maat 9–12 is geen melodielijn maar een akkoord dat zich opbouwt en blijft liggen: E3 → B3 → E4 → F4 (elke stap een halve maat, op de taikoslagen), daarna F4 boven B3 tot maat 13; op 11:0 en 12:0 een nieuwe aanzet met een helderder klank. v4 kapte elke toon af en las de zweving uit de neurie als trillers (vandaar "gehaast"); de PSG-puls eronder is weg.
 - Nieuw instrument: synth-brass (`tapu_brass` + `tapu_brass_hi`, vijf ontstemde stemmen, 24 KB), klankcorrelatie met het origineel 0,93 (zaagtand was 0,79). Overeenkomst per 16e met het origineel: 0,60 → 0,88.
+
+### [v0.9.139] - Battle! Tapu v6 (climax van de intro)
+- In maat 11 en 12 staat nu de snelle climax-figuur (Jordi's neurie) bovenop het liggende akkoord: D#5 (val-in) – E5 – A#5 – B5 – E6 – F6 aangehouden, het motief E-B-E-F in achtsten, twee octaven hoger. v5 miste hem: hij ligt op 620–1430 Hz (boven het akkoord) en zat in de 'vocals'-stem.
+- Eigen zachte synth-lead (`tapu_lead`, 11 KB) op het spoor dat tot maat 41 stil was. De rest is ongewijzigd.

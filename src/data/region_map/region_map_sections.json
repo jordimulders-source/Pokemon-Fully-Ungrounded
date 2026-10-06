@@ -1346,6 +1346,22 @@
       "y": 12,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_FLOATING_MARKET",
+      "name": "FLOATING MARKET",
+      "x": 13,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_STEAM_ISLAND",
+      "name": "STEAM ISLAND",
+      "x": 20,
+      "y": 9,
+      "width": 1,
+      "height": 1
     }
   ]
 }

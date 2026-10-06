@@ -1236,8 +1236,8 @@
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_CAUGHT_VOLCANION                                       0x4A1 // Project Grounded: Volcanion (Stoomeiland) gevangen
+#define FLAG_DEFEATED_VOLCANION                                     0x4A2 // Project Grounded: Volcanion verslagen/gevangen of nog geen post-game (objectvlag)
 #define FLAG_ITEM_METEOR_FALLS_STAR_CORE_COMET_SHARD 0x4A3 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_ECHO_CHAMBER_MAX_ETHER 0x4A4 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_COMET_SHARD 0x4A5 // Project Grounded: Meteor Falls (diepte)
@@ -1635,7 +1635,7 @@
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
-#define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
+#define FLAG_DAILY_WINGULL_THEFT                    (DAILY_FLAGS_START + 0x3F) // Project Grounded: Wingull op de drijvende markt jat 1 Poké Ball per dag
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 

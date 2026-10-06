@@ -209,6 +209,8 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_NOTHING_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: Neo Plasma (Genesect)
     [MAPSEC_SHIPWRECK_SHOALS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: scheepswrakkenkerkhof
     [MAPSEC_SS_AGAVE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: spookschip
+    [MAPSEC_FLOATING_MARKET - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_WOOD, // Project Grounded: drijvende markt
+    [MAPSEC_STEAM_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_STONE, // Project Grounded: stoomeiland
 };
 
 #if OW_POPUP_GENERATION == GEN_5
@@ -347,6 +349,8 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_NOTHING_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: Neo Plasma (Genesect)
     [MAPSEC_SHIPWRECK_SHOALS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: scheepswrakkenkerkhof
     [MAPSEC_SS_AGAVE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: spookschip
+    [MAPSEC_FLOATING_MARKET - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: drijvende markt
+    [MAPSEC_STEAM_ISLAND - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT, // Project Grounded: stoomeiland
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");

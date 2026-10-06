@@ -19,6 +19,11 @@
       "direction": "down"
     },
     {
+      "map": "MAP_STEAM_ISLAND",
+      "offset": 20,
+      "direction": "up"
+    },
+    {
       "map": "MAP_PACIFIDLOG_TOWN",
       "offset": 0,
       "direction": "left"

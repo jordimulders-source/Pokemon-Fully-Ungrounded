@@ -704,6 +704,9 @@
     "GhostShip_Deck",
     "GhostShip_Corridors",
     "GhostShip_Cabins",
-    "GhostShip_CaptainsOffice"
+    "GhostShip_CaptainsOffice",
+    "FloatingMarket",
+    "SteamIsland",
+    "SteamIsland_Cave"
   ]
 }

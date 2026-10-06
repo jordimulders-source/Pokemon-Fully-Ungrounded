@@ -141,6 +141,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Knop-iconen** (`{L_BUTTON}`, `{DPAD_*}`) gebruiken kleurindex 1/2; op een eigen tekstpalet met index 1 als achtergrond vallen ze half weg: gebruik `{LEFT_ARROW}{RIGHT_ARROW}`.
 - **Platinum-trainerfoto's:** frame 0 van de DS-animatie is niet altijd van voren (Aaron, Fantina); kies per trainer het frame in `stadium_trainer_pics.py`.
 - **Lichte intro's (gym_intro_lib.py, v0.9.120):** gevechtsanimatie-art staat al in de ROM (direct `LoadCompressedSpriteSheet`); `.smol` maakt spaarzame BG-tiles klein (±450 tiles ≈ 4,8 KB). Na `BlendPalettes` elke frame unfaded → faded terugzetten (`GI_ResetPals`); sprites onzichtbaar in het frame waarin update TRUE geeft (anders silhouetten bij de fade); donkere gyms: kaartvensters pas uitzetten als het beeld zwart is (`GI_KillFieldWindows`). Spotlight = WIN0H per beeldlijn + `BLDCNT_EFFECT_LIGHTEN`. `*` staat niet in de charmap.
+- **Transitie op de muziek syncen** (Tapu, v0.9.124): tel `gMain.vblankCounter1` vanaf de transitiestart, niet taakframes. Een sub-transitie mag zijn taakfunctie niet wisselen (`Transition_WaitForMain` zoekt op `sTasks_Main[id]`): per variant een wrapper. Flitsen via `gPlttBufferFaded[0]` met BG1–3/OBJ uit is goedkoper dan `BlendPalettes`.
 
 ## Werkwijzen (herhaalde taken)
 

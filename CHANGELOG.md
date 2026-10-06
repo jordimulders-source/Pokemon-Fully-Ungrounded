@@ -17129,3 +17129,8 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.123] - Organisch gras op de eilandjes, Stadium-pool opgeschoond
 - Zeevulling 2: het hoge gras op de eilandjes is geen rechthoek meer (hoeken eraf, bulten erbij).
 - Battle Stadium: Sirena, Mortimer, Captain Abe, Derek en Brayden uit de pool gehaald (gewone NPC's zonder eigen sprite/verhaal). Regel aangescherpt: alleen echt iconische personages in de pool.
+
+### [v0.9.124] - Tapu-gevechtsintro's
+- Elke Tapu een eigen lichte intro (±12 KB samen): de wereld zakt weg in de kleur van de Tapu, het gesloten schild (uit Jordi's png's) verschijnt (Koko scanlijnen, Lele weefgolf, Bulu valt met een dreun, Fini stijgt golvend op), achtergrondmotief uit het schildpatroon pulseert op de beat, bouwt op, en het schild splijt open → wit → gevecht.
+- Duur 240 frames (4 s), instelbaar met `TAPU_HIT_FRAME` (= eerste grote drumslag van het Tapu-thema) en `TAPU_BEAT`; getimed op echte VBlanks. Generator `tools/grounded/tapu_transition.py`.
+- Op soort gekoppeld (wild en legendary). Muziek nog `MUS_RG_VS_LEGEND` tot het Tapu-thema er is.

@@ -5090,6 +5090,36 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/PlasmaFrigate_Hold/border.bin",
       "blockdata_filepath": "data/layouts/PlasmaFrigate_Hold/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOATING_MARKET",
+      "name": "FloatingMarket_Layout",
+      "width": 36,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/FloatingMarket/border.bin",
+      "blockdata_filepath": "data/layouts/FloatingMarket/map.bin"
+    },
+    {
+      "id": "LAYOUT_STEAM_ISLAND",
+      "name": "SteamIsland_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/SteamIsland/border.bin",
+      "blockdata_filepath": "data/layouts/SteamIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_STEAM_ISLAND_CAVE",
+      "name": "SteamIsland_Cave_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/SteamIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/SteamIsland_Cave/map.bin"
     }
   ]
 }

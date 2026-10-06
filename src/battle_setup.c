@@ -570,6 +570,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
+    case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; de wazige overgang is stoom
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
         CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;

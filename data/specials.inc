@@ -602,6 +602,7 @@ gSpecials::
 	def_special IsNightTime
 	def_special Grounded_CaughtRayquaza
 	def_special Grounded_PartyHasShinyRayquaza
+	def_special FloatingMarket_OpenShop
 	def_special Burglar_SetupVars
 	def_special Burglar_SpawnThief
 	def_special Burglar_SpawnResident

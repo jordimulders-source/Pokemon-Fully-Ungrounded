@@ -2581,6 +2581,37 @@
           }
         },
         {
+          "map": "MAP_STEAM_ISLAND",
+          "base_label": "gSteamIsland",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 36, "max_level": 38, "species": "SPECIES_SALANDIT" },
+              { "min_level": 36, "max_level": 38, "species": "SPECIES_MAGCARGO" },
+              { "min_level": 36, "max_level": 38, "species": "SPECIES_TORKOAL" },
+              { "min_level": 36, "max_level": 38, "species": "SPECIES_CAMERUPT" },
+              { "min_level": 37, "max_level": 39, "species": "SPECIES_CENTISKORCH" },
+              { "min_level": 37, "max_level": 39, "species": "SPECIES_COALOSSAL" },
+              { "min_level": 38, "max_level": 40, "species": "SPECIES_MAGMAR" },
+              { "min_level": 38, "max_level": 40, "species": "SPECIES_HEATMOR" },
+              { "min_level": 39, "max_level": 41, "species": "SPECIES_SALAZZLE" },
+              { "min_level": 39, "max_level": 41, "species": "SPECIES_TALONFLAME" },
+              { "min_level": 36, "max_level": 38, "species": "SPECIES_LARVESTA" },
+              { "min_level": 40, "max_level": 42, "species": "SPECIES_TURTONATOR" }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 35, "max_level": 38, "species": "SPECIES_TENTACRUEL" },
+              { "min_level": 37, "max_level": 39, "species": "SPECIES_CLAWITZER" },
+              { "min_level": 37, "max_level": 40, "species": "SPECIES_CRAMORANT" },
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_BRUXISH" },
+              { "min_level": 40, "max_level": 42, "species": "SPECIES_LAPRAS" }
+            ]
+          }
+        },
+        {
           "map": "MAP_MANGROVE_MIRE",
           "base_label": "gMangroveMire",
           "land_mons": {

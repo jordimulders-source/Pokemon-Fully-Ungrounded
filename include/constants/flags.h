@@ -1236,8 +1236,8 @@
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_CAUGHT_VOLCANION                                       0x4A1 // Project Grounded: Volcanion (Stoomeiland) gevangen
+#define FLAG_DEFEATED_VOLCANION                                     0x4A2 // Project Grounded: Volcanion verslagen/gevangen of nog geen post-game (objectvlag)
 #define FLAG_ITEM_METEOR_FALLS_STAR_CORE_COMET_SHARD 0x4A3 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_ECHO_CHAMBER_MAX_ETHER 0x4A4 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_COMET_SHARD 0x4A5 // Project Grounded: Meteor Falls (diepte)

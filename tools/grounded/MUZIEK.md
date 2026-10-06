@@ -110,7 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
-| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v4 wacht op Jordi (alleen 0-25 s + fluit 49-60 aangepast: geen bas vóór maat 12, drums voorop, HIT met impact-sample 2x, synth legato naar de neurie; HIT 5,54 s) | "Tapu" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v5 wacht op Jordi (v4 goedgekeurd behalve de synth: maat 9-12 nu een opbouwend akkoord E3+E4 / +B3 / E4->F4, B3+F4 liggend tot 13:0, op een eigen synth-brass; HIT 5,54 s) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 GEPAUZEERD (Jordi: dof, percussie stotterig; volgende sessie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
@@ -599,3 +599,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   A-gewogen t.o.v. de mix (solo-opnames, `bal4.py`): maat 1-4 drums -1,8 / chant -4,5 dB (origineel -4,1 / -7,0).
   De klap zat al op de top van de 8-bit-mixer (piek 106/127): meer impact via stapelen + 4 zestienden stilte ervoor.
   -V076: 0 overlopen, piek 106/127, RMS 2800-3500.
+- Tapu v5 (Jordi over v4: 'alles behalve de synth klopt; klinkt gehaast; kloppen de noten; is synth het juiste
+  instrument?'): **eerst vaststellen of een 'lead' een lijn of een akkoord is** (piek-tracking + pyin per band + basic-pitch,
+  per 16e): het was een opbouwend, liggend akkoord (E3+E4, +B3, E4->F4, dan 2,5 maat B3+F4). Het gewiebel en de 'woepsen'
+  in een neurie zijn de zweving van een ontstemd ensemble en een nieuwe aanzet + filter dat opengaat, geen trillers/noten:
+  v4 maakte er 16 losse 16en van in een eenstemmige lijn (= 'gehaast'). Klank op het harmonischenprofiel gekozen (zwakke
+  grondtoon, top op 2e-3e harmonische = synth-brass; eigen sample: 5 ontstemde stemmen, exacte loop, heldere variant
+  via programmawissel). Chroma per 16e (FluidR3 vs stem) 0,60 -> 0,88; A-gewogen spectrum game vs stem r = 0,98.

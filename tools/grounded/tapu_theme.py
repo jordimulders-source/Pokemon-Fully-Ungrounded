@@ -24,8 +24,10 @@ In de game begint het nummer bij maat 1 (geen eigen voorspel meer); de Tapu-tran
 v3 (Jordi over v2: 'HOO wimpy, weg', 'de TUDUDU is een synth en compleet onhoorbaar', 'baslijn klopt niet', 'niet
 energiek, drums niet hard genoeg'): geen HOO meer (de slag op de HIT blijft), synth-lead in maat 9-12 (synth()), synthbas
 op tapu_synth (hergemeten per 16e), harder slagwerk + kick, PSG-hats en PSG-puls (geen DS-kanalen).
-Voicegroup grounded_tapu (gegenereerd) = grounded_gm met: 52 chant 'aa' (tapu_vox_a), 38 synthbas + 81 synth-lead
-(tapu_synth), 80 PSG-blokgolf, 120 PSG-ruis (hats),
+v5 (Jordi over v4: alleen de synth klopt niet, 'gehaast'): maat 9-12 is een opbouwend, liggend akkoord (E3+E4, +B3,
+E4 -> F4, B3+F4 tot 13:0) op een synth-brass (tapu_brass/_hi), geen eenstemmige lijn met trillers; zie synth().
+Voicegroup grounded_tapu (gegenereerd) = grounded_gm met: 52 chant 'aa' (tapu_vox_a), 38 synthbas (tapu_synth),
+81/82 synth-brass-lead donker/helder (tapu_brass, tapu_brass_hi), 80 PSG-blokgolf, 120 PSG-ruis (hats),
 54 lage 'hu' (tapu_vox_hu) (eigen formant-samples, tools/grounded/tapu_samples.py), 48-50 strijkers (keysplit),
 60 hoorn (keysplit), 73 fluit (de E6-tikjes), 77 shakuhachi, 33 fingered bass, 47 pauk, 127 = drumkit
 drumsets/tapu.inc (odaiko/taiko/ka/bekken eigen samples; Indiase trom, tom, conga's, kotsuzumi, hyoushigi, kick stock).

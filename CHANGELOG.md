@@ -17143,3 +17143,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.126] - Tapu Isle: heiligdom met trap en Tapu-beelden
 - Het plein in het midden van Tapu Isle is nu een verhoogd terras (x 22–35, y 14–25) met een stenen trap in de zuidwand, een geplaveid voorplein en zuilen op de hoeken. De kahuna staat op een altaar achterin; de tafel met de volgorde naast de trap.
 - Vier grijze stenen beelden van Koko, Lele, Bulu en Fini (elk in de hoek van zijn eigen ruïne), met een placeholdertekst bij aanspreken. Generiek beeldenscript `tools/grounded/statue_sprites.py` (soort toevoegen aan `STATUES`), `OBJ_EVENT_GFX_STATUE_TAPU_*`.
+
+### [v0.9.127] - Tapu Isle: kahuna vóór het altaar
+- De kahuna stond op het altaar en leek te zweven; hij staat nu ervoor op de vloer.

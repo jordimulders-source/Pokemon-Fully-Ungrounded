@@ -274,7 +274,7 @@ SHRINE = (22, 14, 35, 25)           # verhoogd heiligdom (x0, y0, x1, y1 incl. w
 STAIRS_X = 28                       # stenen trap (2 breed) midden in de zuidwand
 # stenen Tapu-beelden (objecten, tools/grounded/statue_sprites.py), elk in de hoek van zijn eigen ruine
 STATUES = {'BULU': (25, 17), 'KOKO': (32, 17), 'FINI': (25, 21), 'LELE': (32, 21)}
-ALTAR = (27, 16)                    # stenen altaar (3x2) achter op het terras; de kahuna staat op het voorvak
+ALTAR = (27, 16)                    # stenen altaar (3x2) achter op het terras; de kahuna staat ervoor op de vloer
 # altaren (linksboven van 3x2); de Tapu staat op het middelste voorvak, de speler eronder
 DAIS_AT = {'KOKO': (40, 8), 'LELE': (40, 28), 'BULU': (14, 8), 'FINI': (14, 28)}
 CLEARING = {'KOKO': (41, 12, 4.8), 'LELE': (41, 32, 5.0), 'BULU': (15, 12, 4.4)}
@@ -417,7 +417,7 @@ def tapu_isle():
         print('\n'.join('%2d ' % y + ''.join(r) for y, r in enumerate(C.c)))
     # ---- events
     P = name + '_EventScript_'
-    KAHUNA = (ALTAR[0] + 1, ALTAR[1] + 1)
+    KAHUNA = (ALTAR[0] + 1, ALTAR[1] + 2)  # vóór het altaar op de vloer (op het altaar leek hij te zweven)
     HIDDEN_PEARL = (52, 22)
     TABLET = (STAIRS_X - 1, SHRINE[3] - 3)            # de stenen tafel met de volgorde, links boven aan de trap
     objs = [
@@ -494,7 +494,7 @@ def tapu_isle():
         for i in range(3):
             assert C.c[ay + j][ax + i] in 'gp', 'altaar van de kahuna niet op het terras'
             g[ay + j][ax + i] = val(DAIS[j][i], 1, 3)
-    assert C.c[ay + 2][ax + 1] in 'gp', 'voor de kahuna moet je kunnen staan'
+    assert C.c[ay + 2][ax + 1] in 'gp' and C.c[ay + 3][ax + 1] in 'gp', 'voor de kahuna moet je kunnen staan'
 
     # ---- vaste decor per ruine (overgeslagen als het niet op open grond past; de controle hieronder vangt de rest)
     EVENT = {(o['x'], o['y']) for o in objs} | {(b_['x'], b_['y']) for b_ in bgs}

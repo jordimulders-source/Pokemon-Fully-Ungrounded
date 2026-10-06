@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_PARADISO_RESORT",
+      "offset": 20,
+      "direction": "down"
+    },
+    {
       "map": "MAP_ROUTE128",
       "offset": 0,
       "direction": "up"

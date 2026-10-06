@@ -778,7 +778,6 @@ DewfordTown_EventScript_FishJudgeFull::
 	msgbox DewfordTown_Text_FishJudgeIntro, MSGBOX_DEFAULT
 	special FishTourney_Weigh
 	goto_if_eq VAR_RESULT, 0, DewfordTown_EventScript_FishJudgeNoFish
-	call_if_eq VAR_0x8007, TRUE, DewfordTown_EventScript_FishJudgeNotAFish
 	playse SE_BALL_TRAY_BALL
 	msgbox DewfordTown_Text_FishJudgeWeigh, MSGBOX_DEFAULT
 	switch VAR_RESULT
@@ -791,9 +790,6 @@ DewfordTown_EventScript_FishJudgeSecond::
 	msgbox DewfordTown_Text_FishJudgeSecond, MSGBOX_DEFAULT
 	goto DewfordTown_EventScript_FishJudgeConsolation
 
-DewfordTown_EventScript_FishJudgeNotAFish::
-	msgbox DewfordTown_Text_FishJudgeNotAFish, MSGBOX_DEFAULT
-	return
 
 DewfordTown_EventScript_FishJudgeRepeat::
 	msgbox DewfordTown_Text_FishJudgeRepeat, MSGBOX_DEFAULT
@@ -801,7 +797,14 @@ DewfordTown_EventScript_FishJudgeRepeat::
 	end
 
 DewfordTown_EventScript_FishJudgeNoFish::
+	goto_if_eq VAR_0x8007, TRUE, DewfordTown_EventScript_FishJudgeNotAFish
 	msgbox DewfordTown_Text_FishJudgeNoFish, MSGBOX_DEFAULT
+	goto DewfordTown_EventScript_FishJudgeRules
+
+DewfordTown_EventScript_FishJudgeNotAFish::
+	msgbox DewfordTown_Text_FishJudgeNotAFish, MSGBOX_DEFAULT
+DewfordTown_EventScript_FishJudgeRules::
+	msgbox DewfordTown_Text_FishJudgeRules, MSGBOX_DEFAULT
 	release
 	end
 
@@ -873,15 +876,44 @@ DewfordTown_Text_FishJudgeRepeat:
 	.string "New contest next week.$"
 
 DewfordTown_Text_FishJudgeNoFish:
-	.string "I'd weigh your fish, but you\n"
-	.string "don't have one.\p"
-	.string "Bring a WATER POKéMON. Anything\n"
-	.string "wet. Standards are low here.$"
+	.string "I'd weigh your fish, but you don't have\n"
+	.string "one.\p"
+	.string "Bring a FISH. An actual fish. We had an\n"
+	.string "incident.$"
 
 DewfordTown_Text_FishJudgeNotAFish:
-	.string "…That is not a fish.\p"
-	.string "The rulebook says “anything wet”.\n"
-	.string "I wrote the rulebook. I was drunk.$"
+	.string "{STR_VAR_3}? …That is not a fish.\p"
+	.string "The old rulebook said “anything wet”. I\n"
+	.string "wrote it. I was drunk.\p"
+	.string "Then someone brought a KYOGRE. The\n"
+	.string "pier is still in Slateport.\p"
+	.string "New rulebook. Sober edition.$"
+
+DewfordTown_Text_FishJudgeRules:
+	.string "OFFICIAL LIST OF FISH, page 1 of 1:\p"
+	.string "MAGIKARP. GYARADOS (legally still a\n"
+	.string "MAGIKARP). GOLDEEN, SEAKING, HORSEA,\l"
+	.string "SEADRA, KINGDRA.\p"
+	.string "Yes, seahorses are fish. I checked.\n"
+	.string "Twice.\p"
+	.string "CHINCHOU, LANTURN, QWILFISH, OVERQWIL,\n"
+	.string "REMORAID, MANTYKE, MANTINE, CARVANHA,\l"
+	.string "SHARPEDO.\p"
+	.string "BARBOACH, WHISCASH, FEEBAS, MILOTIC (a\n"
+	.string "fish with a skincare routine), HUNTAIL,\l"
+	.string "GOREBYSS.\p"
+	.string "RELICANTH, LUVDISC, FINNEON, LUMINEON,\n"
+	.string "BASCULIN, BASCULEGION, ALOMOMOLA,\l"
+	.string "WISHIWASHI, BRUXISH.\p"
+	.string "ARROKUDA, BARRASKEWDA, VELUZA,\n"
+	.string "DONDOZO, ARCTOVISH, DRACOVISH. And\l"
+	.string "STUNFISK. It's a flatfish. Look it up.\p"
+	.string "NOT fish: whales, clams, crabs, turtles,\n"
+	.string "ducks, dolphins, octopi and sea gods.\l"
+	.string "Jellyfish are not fish. It's in the name.\l"
+	.string "The name lies.\p"
+	.string "OCTILLERY evolves from REMORAID. I\n"
+	.string "don't want to talk about it.$"
 
 DewfordTown_Text_FishJudgeWeigh:
 	.string "Let's put {STR_VAR_1} on the scale…\p"

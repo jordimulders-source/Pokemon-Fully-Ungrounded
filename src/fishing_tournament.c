@@ -1,10 +1,11 @@
 // Project Grounded: het wekelijkse visserstoernooi op de steiger van Dewford (ZEE_PLAN.md).
-// Geen minigame: de jury weegt automatisch de zwaarste "vis" (Water-type) uit je team. Gewicht = gewicht van de
-// soort (gSpeciesInfo, hg) x groottefactor^3; de groottefactor komt uit dezelfde hash/tabel als de Lotad/Seedot-
-// meter (GetMonSizePermille). Elke week (RTC-dag / 7) een nieuwe recordhouder: altijd iemands absurd grote Magikarp
-// (800-2000 kg). Alleen een uitzonderlijk grote Wailord of Kyogre kan die soms verslaan.
-// Prijzen (1x per week): 1e plaats = één Poké Ball (+ de eerste keer een trofee); anders een troostprijs die
-// stiekem beter is: de eerste keer een Lucky Egg, daarna per week een kleiner nuttig item.
+// Geen minigame: de jury weegt automatisch de zwaarste vis uit je team. Alleen echte vissen tellen (sFish; geen
+// Wailord, Kyogre, Tentacool of schelpen). Gewicht = gewicht van de soort (gSpeciesInfo, hg) x groottefactor^3;
+// de groottefactor komt uit dezelfde hash/tabel als de Lotad/Seedot-meter (GetMonSizePermille, max. 1800).
+// Elke week (RTC-dag / 7) een nieuwe recordhouder: altijd iemands absurd grote Magikarp, en die is altijd
+// zwaarder dan het theoretische maximum van elke vis in sFish (onverslaanbaar, Jordi).
+// Prijzen (1x per week): verliezen = troostprijs: de eerste keer een Lucky Egg, daarna per week een klein nuttig
+// item. (De winnaarstak met één Poké Ball + trofee bestaat nog in het script, maar is onbereikbaar.)
 // Flags: FLAG_FISH_TOURNEY_WEEK_BIT0-4 (week % 31 + 1), FLAG_FISH_TOURNEY_TROPHY, FLAG_FISH_TOURNEY_LUCKY_EGG.
 #include "global.h"
 #include "event_data.h"
@@ -18,7 +19,7 @@
 
 static const u8 sRecordOwner_0[] = _("OLD GUS");
 static const u8 sRecordOwner_1[] = _("a TUBER named KEVIN");
-static const u8 sRecordOwner_2[] = _("GRANDMA TRUUS");
+static const u8 sRecordOwner_2[] = _("GRANDMA DOROTHY");
 static const u8 sRecordOwner_3[] = _("MR. BRINEY's ex");
 static const u8 sRecordOwner_4[] = _("a man who won't say his name");
 static const u8 sRecordOwner_5[] = _("SLATEPORT's harbor master");
@@ -44,12 +45,20 @@ static const u16 sConsolationPrizes[] =
     ITEM_RARE_CANDY, ITEM_PP_UP, ITEM_EXP_CANDY_M, ITEM_BIG_PEARL, ITEM_DIVE_BALL, ITEM_HEART_SCALE,
 };
 
-// zware Water-Pokémon die overduidelijk geen vis zijn (de jury slikt het toch)
-static const u16 sNotAFish[] =
+// wat de jury als vis erkent (zie ook het reglement in DewfordTown_Text_FishJudgeRules)
+static const u16 sFish[] =
 {
-    SPECIES_WAILMER, SPECIES_WAILORD, SPECIES_KYOGRE, SPECIES_KYOGRE_PRIMAL, SPECIES_PALKIA, SPECIES_LAPRAS,
-    SPECIES_WALREIN, SPECIES_BLASTOISE, SPECIES_SWAMPERT, SPECIES_SAMUROTT, SPECIES_SLOWBRO,
+    SPECIES_MAGIKARP, SPECIES_GYARADOS, SPECIES_GOLDEEN, SPECIES_SEAKING, SPECIES_HORSEA, SPECIES_SEADRA,
+    SPECIES_KINGDRA, SPECIES_CHINCHOU, SPECIES_LANTURN, SPECIES_QWILFISH, SPECIES_QWILFISH_HISUI, SPECIES_OVERQWIL,
+    SPECIES_REMORAID, SPECIES_MANTYKE, SPECIES_MANTINE, SPECIES_CARVANHA, SPECIES_SHARPEDO, SPECIES_BARBOACH,
+    SPECIES_WHISCASH, SPECIES_FEEBAS, SPECIES_MILOTIC, SPECIES_HUNTAIL, SPECIES_GOREBYSS, SPECIES_RELICANTH,
+    SPECIES_LUVDISC, SPECIES_FINNEON, SPECIES_LUMINEON, SPECIES_BASCULIN_RED_STRIPED, SPECIES_BASCULIN_BLUE_STRIPED,
+    SPECIES_BASCULIN_WHITE_STRIPED, SPECIES_BASCULEGION_M, SPECIES_BASCULEGION_F, SPECIES_ALOMOMOLA,
+    SPECIES_STUNFISK, SPECIES_STUNFISK_GALAR, SPECIES_WISHIWASHI_SOLO, SPECIES_WISHIWASHI_SCHOOL, SPECIES_BRUXISH,
+    SPECIES_ARROKUDA, SPECIES_BARRASKEWDA, SPECIES_ARCTOVISH, SPECIES_DRACOVISH, SPECIES_VELUZA, SPECIES_DONDOZO,
 };
+
+#define MAX_SIZE_PERMILLE 1800
 
 static const u16 sWeekFlags[] =
 {
@@ -81,9 +90,29 @@ static u32 WeekHash(u32 week)
     return Mix(week * 2654435761u ^ (tid * 40503u) ^ 0xF15Bu);
 }
 
+static u32 ScaledWeight(u16 species, u32 permille);
+static bool32 IsFish(u16 species);
+
+// zwaarste vis die theoretisch kan bestaan (grootste soort x maximale groottefactor)
+static u32 MaxFishWeight(void)
+{
+    u32 i, w, max = 0;
+    for (i = 0; i < ARRAY_COUNT(sFish); i++)
+    {
+        w = ScaledWeight(sFish[i], MAX_SIZE_PERMILLE);
+        if (w > max)
+            max = w;
+    }
+    return max;
+}
+
+// de record-Magikarp: altijd minstens 800 kg en altijd zwaarder dan elke mogelijke vis (hg)
 static u32 RecordWeight(u32 week)
 {
-    return 8000 + WeekHash(week) % 12001; // hg: 800,0-2000,0 kg
+    u32 floor = MaxFishWeight() + 1;
+    if (floor < 8000)
+        floor = 8000;
+    return floor + WeekHash(week) % 8001;
 }
 
 static u16 BoasterSpecies(u32 week)
@@ -137,6 +166,17 @@ static void StoreWeek(u32 v)
     }
 }
 
+static bool32 IsFish(u16 species)
+{
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sFish); i++)
+    {
+        if (sFish[i] == species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static bool32 IsWaterType(u16 species)
 {
     return gSpeciesInfo[species].types[0] == TYPE_WATER || gSpeciesInfo[species].types[1] == TYPE_WATER;
@@ -156,13 +196,14 @@ void FishTourney_GetBoardInfo(void)
     FormatWeight(s, BoasterWeight(week));
 }
 
-// Weegt de zwaarste Water-Pokémon uit het team.
+// Weegt de zwaarste vis (sFish) uit het team.
 // VAR_RESULT: 0 = geen vis, anders de plaats (1-3). STR_VAR_1 = bijnaam, STR_VAR_2 = gewicht.
 // VAR_0x8004 = 1 als de prijs van deze week al is opgehaald; VAR_0x8005 = prijs (blijft heel na giveitem, dat
-// 0x8006/0x8007 overschrijft); VAR_0x8007 = 1 als de vis overduidelijk geen vis is (Wailord, Kyogre, ...).
+// 0x8006/0x8007 overschrijft); VAR_0x8007 = 1 als er geen vis is maar wel een Water-Pokémon (STR_VAR_3 = de
+// zwaarste daarvan, voor "dat is geen vis").
 void FishTourney_Weigh(void)
 {
-    u32 i, week, best = 0, bestIdx = PARTY_SIZE, place;
+    u32 i, week, best = 0, bestIdx = PARTY_SIZE, place, wetBest = 0, wetIdx = PARTY_SIZE;
 
     for (i = 0; i < gPlayerPartyCount; i++)
     {
@@ -170,11 +211,20 @@ void FishTourney_Weigh(void)
         u16 species = GetMonData(mon, MON_DATA_SPECIES);
         u32 w;
 
-        if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG) || !IsWaterType(species))
+        if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
             continue;
         w = ScaledWeight(species, GetMonSizePermille(mon));
         if (w == 0)
             w = 1;
+        if (!IsFish(species))
+        {
+            if (IsWaterType(species) && w > wetBest)
+            {
+                wetBest = w;
+                wetIdx = i;
+            }
+            continue;
+        }
         if (w > best)
         {
             best = w;
@@ -186,6 +236,12 @@ void FishTourney_Weigh(void)
     if (bestIdx == PARTY_SIZE)
     {
         gSpecialVar_Result = 0;
+        if (wetIdx != PARTY_SIZE)
+        {
+            gSpecialVar_0x8007 = TRUE;
+            GetMonData(&gPlayerParty[wetIdx], MON_DATA_NICKNAME, gStringVar3);
+            StringGet_Nickname(gStringVar3);
+        }
         return;
     }
 
@@ -200,15 +256,6 @@ void FishTourney_Weigh(void)
     if (BoasterWeight(week) >= best)
         place++;
     gSpecialVar_Result = place;
-
-    {
-        u16 species = GetMonData(&gPlayerParty[bestIdx], MON_DATA_SPECIES);
-        for (i = 0; i < ARRAY_COUNT(sNotAFish); i++)
-        {
-            if (sNotAFish[i] == species)
-                gSpecialVar_0x8007 = TRUE;
-        }
-    }
 
     gSpecialVar_0x8004 = (StoredWeek() == (week % 31) + 1);
     if (place == 1)

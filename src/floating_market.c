@@ -10,6 +10,7 @@
 #include "constants/items.h"
 
 static EWRAM_DATA u16 sStock[6] = {0};
+static EWRAM_DATA u16 sPrices[6] = {0};
 
 static const u16 sMints[] =
 {
@@ -35,10 +36,12 @@ static const u16 sTreasures[] =
     ITEM_PP_UP, ITEM_PP_UP, ITEM_PP_MAX,
 };
 
-static const u16 sBerries[] =
+// zeldzame bessen met een eigen marktprijs (de algemene besprijs is 80; die blijft voor andere winkels gelden)
+static const u16 sBerries[][2] =
 {
-    ITEM_LIECHI_BERRY, ITEM_GANLON_BERRY, ITEM_SALAC_BERRY, ITEM_PETAYA_BERRY, ITEM_APICOT_BERRY, ITEM_LANSAT_BERRY,
-    ITEM_STARF_BERRY, ITEM_MICLE_BERRY, ITEM_CUSTAP_BERRY, ITEM_JABOCA_BERRY, ITEM_ROWAP_BERRY,
+    {ITEM_LIECHI_BERRY, 3000}, {ITEM_GANLON_BERRY, 3000}, {ITEM_SALAC_BERRY, 3500}, {ITEM_PETAYA_BERRY, 3000},
+    {ITEM_APICOT_BERRY, 3000}, {ITEM_LANSAT_BERRY, 4500}, {ITEM_STARF_BERRY, 5000}, {ITEM_MICLE_BERRY, 4000},
+    {ITEM_CUSTAP_BERRY, 4500}, {ITEM_JABOCA_BERRY, 2500}, {ITEM_ROWAP_BERRY, 2500},
 };
 
 static u32 Mix(u32 h)
@@ -68,7 +71,10 @@ void FloatingMarket_OpenShop(void)
     h = Mix(h);
     sStock[3] = sTreasures[h % ARRAY_COUNT(sTreasures)];
     h = Mix(h);
-    sStock[4] = sBerries[h % ARRAY_COUNT(sBerries)];
+    a = h % ARRAY_COUNT(sBerries);
+    sStock[4] = sBerries[a][0];
     sStock[5] = ITEM_NONE;
-    CreatePokemartMenu(sStock);
+    sPrices[0] = sPrices[1] = sPrices[2] = sPrices[3] = sPrices[5] = 0; // 0 = gewone itemprijs
+    sPrices[4] = sBerries[a][1];
+    CreatePokemartMenuWithPrices(sStock, sPrices);
 }

@@ -20,8 +20,19 @@ ParadisoResort_Lobby_EventScript_Concierge::
 
 ParadisoResort_Lobby_EventScript_Cynthia::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_Lobby_EventScript_CynthiaNotYet
+	goto_if_defeated TRAINER_RESORT_CYNTHIA, ParadisoResort_Lobby_EventScript_CynthiaPost
+	lock
+	faceplayer
+	msgbox ParadisoResort_Lobby_Text_CynthiaAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_Lobby_EventScript_CynthiaDecline
 	trainerbattle_single TRAINER_RESORT_CYNTHIA, ParadisoResort_Lobby_Text_CynthiaIntro, ParadisoResort_Lobby_Text_CynthiaDefeat
+ParadisoResort_Lobby_EventScript_CynthiaPost::
 	msgbox ParadisoResort_Lobby_Text_CynthiaPost, MSGBOX_AUTOCLOSE
+	end
+
+ParadisoResort_Lobby_EventScript_CynthiaDecline::
+	msgbox ParadisoResort_Lobby_Text_CynthiaDecline, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_Lobby_EventScript_CynthiaNotYet::
@@ -132,3 +143,14 @@ ParadisoResort_Lobby_Text_Kid:
 	.string "wine tasting.\p"
 	.string "Then he went in. Now he's too\n"
 	.string "old for walking.$"
+
+ParadisoResort_Lobby_Text_CynthiaAsk:
+	.string "CYNTHIA: Hm? I'm reading. It's a book\n"
+	.string "about ruins.\p"
+	.string "Or would you rather battle? GARCHOMP is\n"
+	.string "listening. GARCHOMP is always listening.$"
+
+ParadisoResort_Lobby_Text_CynthiaDecline:
+	.string "CYNTHIA: Understandable. GARCHOMP is\n"
+	.string "disappointed, but GARCHOMP is always\l"
+	.string "disappointed.$"

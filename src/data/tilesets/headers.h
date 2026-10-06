@@ -1069,3 +1069,14 @@ const struct Tileset gTileset_MangroveMire = // Project Grounded: Mangrove Mire,
     .metatileAttributes = gMetatileAttributes_MangroveMire,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_ShipwreckShoals = // Project Grounded: scheepswrakkenkerkhof + spookschip (shipwreck_art.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ShipwreckShoals,
+    .palettes = gTilesetPalettes_ShipwreckShoals,
+    .metatiles = gMetatiles_ShipwreckShoals,
+    .metatileAttributes = gMetatileAttributes_ShipwreckShoals,
+    .callback = NULL,
+};

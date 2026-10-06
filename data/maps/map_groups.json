@@ -695,6 +695,11 @@
     "MangroveMire",
     "GraniteCave_CornerstoneRoom",
     "FieryPath_EmberHollow",
-    "Route127_WellspringGrotto"
+    "Route127_WellspringGrotto",
+    "ShipwreckShoals",
+    "GhostShip_Deck",
+    "GhostShip_Corridors",
+    "GhostShip_Cabins",
+    "GhostShip_CaptainsOffice"
   ]
 }

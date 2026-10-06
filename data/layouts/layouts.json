@@ -5050,6 +5050,56 @@
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route132/border.bin",
       "blockdata_filepath": "data/layouts/Route132_LowTide/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHIPWRECK_SHOALS",
+      "name": "ShipwreckShoals_Layout",
+      "width": 42,
+      "height": 58,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ShipwreckShoals",
+      "border_filepath": "data/layouts/ShipwreckShoals/border.bin",
+      "blockdata_filepath": "data/layouts/ShipwreckShoals/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_DECK",
+      "name": "GhostShip_Deck_Layout",
+      "width": 23,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/GhostShip_Deck/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Deck/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CORRIDORS",
+      "name": "GhostShip_Corridors_Layout",
+      "width": 18,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/GhostShip_Corridors/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Corridors/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CABINS",
+      "name": "GhostShip_Cabins_Layout",
+      "width": 18,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/GhostShip_Cabins/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Cabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CAPTAINS_OFFICE",
+      "name": "GhostShip_CaptainsOffice_Layout",
+      "width": 9,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/GhostShip_CaptainsOffice/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_CaptainsOffice/map.bin"
     }
   ]
 }

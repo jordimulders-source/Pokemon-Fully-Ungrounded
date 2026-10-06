@@ -107,6 +107,7 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `STADIUM_JOHNSON` | JOHNSON! Tik tok, tik tok. Nobody knows what happens next. Not even him. |
 | `STADIUM_LYLE` | LYLE! His brother's bugs, finally trained! IVs: still zero. Heart: maxed. |
 | `VICTORY_V` | V! Only POKéMON with a V! VOLCARONA! VIKAVOLT! VICTORY? We'll see. |
+| `GRIMSBY` | CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules. |
 | `BRENDAN_ROUTE_136_TREECKO` | BRENDAN! Your rival. Still salty about which starter you picked. |
 | `MAY_ROUTE_136_TORCHIC` | MAY! Your rival. She swears she's better at this than you. Prove it. |
 

@@ -64,6 +64,8 @@ POOL = [
     'STADIUM_DONALD', 'STADIUM_IVAN', 'STADIUM_JOHNSON', 'STADIUM_LYLE',
     # post-game: de leider van de Victory-gauntlet (alleen V-Pokémon)
     'VICTORY_V',
+    # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
+    'GRIMSBY',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -201,6 +203,7 @@ GFX = {
     'PETREL': 'PETREL',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
+    'GRIMSBY': 'SAILOR',
 }
 
 

@@ -779,6 +779,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_PillarHatch"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 27,
+      "elevation": 1,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R110_PEARL"
     }
   ]
 }

@@ -944,6 +944,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route119_EventScript_TrainerTipsDecoration"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 35,
+      "elevation": 1,
+      "item": "ITEM_MYSTIC_WATER",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R119_MYSTIC_WATER"
     }
   ]
 }

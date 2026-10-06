@@ -116,6 +116,10 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_VICTORY_V, COMPOUND_STRING("V! Only POKéMON with a V! VOLCARONA!\nVIKAVOLT! VICTORY? We'll see.")},
     {TRAINER_GRIMSBY, COMPOUND_STRING("CAPTAIN GRIMSBY! Dead since 1802, still\nclocks in. Union rules.")},
     {TRAINER_SIRENA, COMPOUND_STRING("SIRENA! A mermaid! Legally a swimmer!\nThe tail is a rental!")},
+    {TRAINER_MORTIMER, COMPOUND_STRING("MORTIMER, the undertaker! Business is\ndead. He's measuring you.")},
+    {TRAINER_CAPTAIN_ABE, COMPOUND_STRING("CAPTAIN ABE! Hunts a WAILORD the size\nof a town. Lost two boats.")},
+    {TRAINER_EXPERT_DEREK, COMPOUND_STRING("DEREK! 47 losses to SIDNEY! Tonight he\ngoes for a new record!")},
+    {TRAINER_BRAYDEN, COMPOUND_STRING("BRAYDEN! Influencer! Three viewers!\nTwo of them are his dad!")},
     {TRAINER_BRENDAN_ROUTE_136_TREECKO, COMPOUND_STRING("BRENDAN! Your rival. Still salty about\nwhich starter you picked.")},
     {TRAINER_MAY_ROUTE_136_TORCHIC, COMPOUND_STRING("MAY! Your rival. She swears she's better\nat this than you. Prove it.")},
 };

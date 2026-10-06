@@ -105,3 +105,72 @@ Route124_Text_HuntersHouse:
 	.string "HUNTER'S HOUSE\p"
 	.string "Shards only. Relax.$"
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route124_EventScript_ZV2Weatherman::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_ROUTE_124_SMOOTH_ROCK, Route124_EventScript_ZV2Weatherman_After
+	msgbox Route124_Text_ZV2Weatherman, MSGBOX_DEFAULT
+	giveitem ITEM_SMOOTH_ROCK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_ROUTE_124_SMOOTH_ROCK
+	release
+	end
+Route124_EventScript_ZV2Weatherman_After:
+	msgbox Route124_Text_ZV2WeathermanAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route124_Text_ZV2Weatherman:
+	.string "Welcome to HOENN WEATHER STATION\nnumber 2. Number 1 blew away.\pMy equipment: one CASTFORM.\nIf it's round, nice weather.\lIf it's on fire, also nice weather.\pIf it's gone, run.\pHere, a souvenir. It's a rock.\nVery smooth. Science!$"
+
+Route124_Text_ZV2WeathermanAfter:
+	.string "Today's forecast: weather.\nI'm right 100% of the time.$"
+
+Route124_EventScript_ZV2Castform::
+	lock
+	faceplayer
+	playmoncry SPECIES_CASTFORM, CRY_MODE_NORMAL
+	msgbox Route124_Text_ZV2Castform, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route124_Text_ZV2Castform:
+	.string "The CASTFORM is round.\nThe forecast is good.\pIt looks very proud of this.$"
+
+Route124_EventScript_ZV2Elliot::
+	trainerbattle_single TRAINER_BUG_MANIAC_ELLIOT, Route124_Text_ZV2Elliot_Intro, Route124_Text_ZV2Elliot_Defeat
+	msgbox Route124_Text_ZV2Elliot_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route124_Text_ZV2Elliot_Intro:
+	.string "Shh! The VOLBEAT and ILLUMISE\ndance here at night.\pI've been watching them for a\nweek. I think they're watching\lme back. Battle!$"
+
+Route124_Text_ZV2Elliot_Defeat:
+	.string "My bugs are fine. They're just\nlying down. Dramatically.$"
+
+Route124_Text_ZV2Elliot_Post:
+	.string "The weatherman says there's a\nstorm coming. He says that every\lday. One day he'll be right.$"
+
+Route124_EventScript_ZV2Abe::
+	trainerbattle_single TRAINER_CAPTAIN_ABE, Route124_Text_ZV2Abe_Intro, Route124_Text_ZV2Abe_Defeat
+	msgbox Route124_Text_ZV2Abe_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route124_Text_ZV2Abe_Intro:
+	.string "Call me ABE. Somewhere in these\nwaters swims a WAILORD the size\lof a town. White as a cloud.\pIt took my boat. My hat. My\nsandwich. Today I take it back!$"
+
+Route124_Text_ZV2Abe_Defeat:
+	.string "Argh! You fight like that WAILORD.\nHeavy. Wet. Unbothered.$"
+
+Route124_Text_ZV2Abe_Post:
+	.string "Some days the giant WAILORD is\nhere, some days it isn't.\pWhen it is, it's asleep. I've\nnever had the heart to wake it.$"
+
+Route124_EventScript_ZV2AbeBoat::
+	msgbox Route124_Text_ZV2AbeBoat, MSGBOX_SIGN
+	end
+
+Route124_Text_ZV2AbeBoat:
+	.string "ABE's boat. Named the 'SEQUEL'.\pThe first boat is inside a WAILORD.$"
+@ --- einde zee_vulling_2 ---

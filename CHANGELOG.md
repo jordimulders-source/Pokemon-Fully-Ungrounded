@@ -17102,3 +17102,20 @@ Volgens Jordi's GBA-instructies per leider:
   - **Wattson** (3,4 s): serverfarm + rigged door, spervuur Win95-pop-ups (FREE BADGE, WATTCOIN, 3 HOT MAGNEMITE…), koersgrafiek TO THE MOON → RUGPULLED, SCAM-stempel, "Wahahahah!".
   - **Flannery** (2,9 s): camping met kampvuur ("NO WIFI. JUST ANALOG HEAT."), Mt. Chimney barst uit, "Totally planned!", gloeiende steen barst de lens.
 - Code: `src/data/gym_intros_a.h`, keuze in `GetTrainerBattleTransition`; art-scripts `tools/grounded/{roxanne,brawly,wattson,flannery}_transition.py` + `gym_intro_lib.py`. Teksten zitten in de art (aanpassen via de scripts).
+
+### [v0.9.121] - Zeevulling 2 + vergeten lijnen in het wild
+- Bouwscript `tools/grounded/maptools/zee_vulling_2.py`. Nieuwe eilandjes/events (Engelse placeholders), trainers 1110–1123, geen lage grap-levels op zee:
+  - Route 105: schipbreukeling die niet gered wil worden (Focus Sash), Voltorb "WILSON", Black Belt Kenta, gras met Normal-soorten.
+  - Route 108: bergingsvlot bij de Abandoned Ship (verzekeringsexpert: "Claim 4471: KYOGRE. Act of god."), Sis & Bro Jo & Leo (dubbel).
+  - Route 122: veerman zonder veer, undertaker Mortimer, Swimmer Cora.
+  - Route 124: weerstation met Castform (Smooth Rock), Bug Maniac Elliot, gras; kapitein Abe jaagt op de reuzen-Wailord.
+  - Route 128: dojo van Derek (47× van Sidney verloren), Battle Girl Juno, Black Belt; gras vol "verwilderde trainingspartners" (Fighting).
+  - Route 129: Wailord-tours zonder Wailord, honeymoonkoppel Tom & Tina (dubbel).
+  - Route 130: Wynaut-kinderopvang, Breeder Honey, Everstone.
+  - Route 131: de "nurse's cousin" heelt gratis; Hiker Bernard.
+  - Route 133: influencer Brayden + vader-cameraman, Choice Specs.
+  - Route 134: architect die een vuurtoren wil bouwen, Ninja Boy Kage, Light Clay.
+  - Whirl Island: zwijgende wachter met pratende Slowpoke (King's Rock), Bird Keeper Skye, Sharp Beak.
+  - Verborgen items op al die kaarten + in het water van Route 110/115/118/119/120.
+- Battle Stadium: Mortimer, Captain Abe, Derek en Brayden in de pool.
+- Wild (één slot vervangen, volgorde behouden): Rattata (101, 104), Meowth (103), Caterpie (104, Petalburg Woods), Skwovet (Petalburg Woods), Glameow (110, 121), Buneary (116), Raticate (118), Komala (119, Fortree Jungle), Greedent (120).

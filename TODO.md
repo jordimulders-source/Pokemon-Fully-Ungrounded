@@ -3,6 +3,7 @@
 Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeronde taken gaan naar `CHANGELOG.md`.
 
 ## Openstaande taken (in volgorde)
+- **Legendary-thema's + intro's (Jordi, 6 okt):** muziek loopt (Lugia 657, Ho-Oh 658, Tornadus/Thundurus/Landorus 659–661, eigen composities). Daarna: intro's Lugia, Ho-Oh, Volcanion, Hoopa, Forces-trio (voorstellen in de chat, wacht op Jordi's ok); thema's Volcanion en Hoopa. Hoopa en de Forces-trio zitten nog niet in de wereld (legendaries gepauzeerd).
 Van makkelijk naar moeilijk uit de backlog en QoL (Jordi, okt 2026). Onderaan:
 - **Muziek: Neo Plasma**: v4 (v0.9.70) naar Jordi's mp3; wacht op zijn oordeel (open: 'gitaar' = synth brass of strings? bas octaaf lager?).
 - **Cinematische gevechtsintro's (Jordi, 5 okt; brief in de scratchpad `TRANSITIE_BRIEF.md`, voorbeeld Mewtwo):** klaar: SickBlik, Steven, Wally, Rayquaza, Kyogre/Groudon, Ogerpon, werkstraf, Dave-tribune, Mimi, Keccles, Burglar (v0.9.92–0.9.102; filmspeler `film.py` voor nieuwe intro's). Nog te doen: Maxie & Archie (werkstraf-prikbord; Jordi geen grote fan, sterker maken), Kyogre/Groudon (muurschildering barst, water/lava), Ogerpon (nachtfestival, maskerstal), Dave (tribune met wave, spandoek "DP PENNINGS", penalty in de winkelhaak, GOAL!; vriendengroep-meme), Mimi (poppenkast, Pikachu-pop draait zijn kop), Keccles (hoogintelligent + camouflage), Burglar (bewakingscamera, Gen 1-Burglarsprite als comic relief), en per gymleider één intro op basis van hun eigen dialogen en hun gym.

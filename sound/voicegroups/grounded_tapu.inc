@@ -1,5 +1,5 @@
-@ Project Grounded: grounded_gm voor Battle! Tapu (fase 1). Gegenereerd door tools/grounded/tapu_theme.py.
-@ alleen stock-samples: 52 koor, 53 mannenstem (kreten), 77 shakuhachi, 127 = drumkit tapu (taiko/trommen/conga/tsuzumi/bekken/tamboerijn/kick).
+@ Project Grounded: grounded_gm voor Battle! Tapu (v2). Gegenereerd door tools/grounded/tapu_theme.py.
+@ 52 chant-ha / 53 HOO-kreet / 54 lage hu (eigen formant-samples, tapu_samples.py), 77 shakuhachi, 127 = drumkit tapu (odaiko/taiko/ka/bekken eigen samples).
 voice_group grounded_tapu
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -53,9 +53,9 @@ voice_group grounded_tapu
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 52
-	voice_directsound 60, 0, DirectSoundWaveData_unused_unknown_male_voice, 255, 0, 255, 150  @ 53
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_vox_a, 255, 0, 255, 90  @ 52
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_shout, 255, 0, 255, 210  @ 53
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_vox_hu, 255, 0, 255, 150  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57

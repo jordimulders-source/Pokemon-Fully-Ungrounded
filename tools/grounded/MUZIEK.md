@@ -110,6 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v2 wacht op Jordi (chant -> HOO + HIT op 5,54 s -> drums -> TUDUDU-taikomotief) | "Tapu" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -522,3 +523,16 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   eerste slag) en daarna alles per 16e meten: drums per band (laag/mid/hoog, envelop-sprong), bas via basic-pitch op de
   stem, chant via CQT van de vocal-stem per 16e (pyin faalt op koren: 'onstemhebbend'). Transcriptie controleren met
   chroma-correlatie per maat (eigen solo-render vs. stem) en onset-correlatie per 4 maten (drums).
+- Tapu v2 (Jordi: 'game_e_alles lijkt totaal niet, terwijl de fluid-drums kloppen'): **solo-opname in de game** (volX = 0
+  op de andere sporen, mixbuffer) liet zien dat de drums er wel waren maar als tikjes: drumnoten van 2-3 zestienden
+  + release 140 op stock-trommen van 0,3-0,4 s (drumsolo maat 1-8: 3-25 dB vs. drumstem 26-32 dB, onset-correlatie
+  0,04-0,76). FluidR3 negeert note-offs op drums, de GBA niet. Fix: eigen samples (FluidR3 Taiko + gesynthetiseerd vel
+  met dalende toonhoogte + velslag + ruimtegalm, ±1 s, `tapu_samples.py`) en `ring_gates()`: een slag klinkt door tot
+  RING of de volgende slag in dezelfde partij -> per maat 25-34 dB, correlatie 0,6-0,9. **Kanaalbezetting nalopen met
+  een kanaallog** (gSoundInfo.chans per frame: spoor, noot, envelop) i.p.v. gokken op kanaalroof.
+  **Eerst de vorm uit Jordi's beschrijving op de opname leggen**: v1 dacht dat de mp3 met de HIT begon; de chant loopt
+  0,9-5,8 s (maat 1-4), de 'HOO' + slag valt op maat 5 (6,26 s) en het 'TUDUDU'-'deuntje' is het taikomotief van
+  maat 9 (16e 0,2,3,4 | 8,9,12,14), geen melodie (de tonale stems hebben daar alleen een tremolo). Stemmen zonder
+  opname-audio: additieve formantsynthese (harmonischen x formanten van een klinker, groep van 4-6 ontstemde stemmen,
+  ademruis), 16en-chant legato (geen detach: dat maakte stipjes). Het 'fluitje' (maat 41-48) waren korte E6-tikjes,
+  geen kwarten: 1 zestiende op een staccato-fluit. -V082: 0 overlopen, piek 96/127, RMS 3134 (drums bewust luid).

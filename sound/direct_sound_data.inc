@@ -7214,3 +7214,30 @@ DirectSoundWaveData_bg_tom_hi::
 DirectSoundWaveData_bg_snap::
 	.incbin "sound/direct_sound_samples/grounded/bg_snap.bin"
 
+	.align 2
+DirectSoundWaveData_tapu_odaiko::
+	.incbin "sound/direct_sound_samples/grounded/tapu_odaiko.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_taiko::
+	.incbin "sound/direct_sound_samples/grounded/tapu_taiko.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_ka::
+	.incbin "sound/direct_sound_samples/grounded/tapu_ka.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_crash::
+	.incbin "sound/direct_sound_samples/grounded/tapu_crash.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_vox_a::
+	.incbin "sound/direct_sound_samples/grounded/tapu_vox_a.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_vox_hu::
+	.incbin "sound/direct_sound_samples/grounded/tapu_vox_hu.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_shout::
+	.incbin "sound/direct_sound_samples/grounded/tapu_shout.bin"

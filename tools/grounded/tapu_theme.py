@@ -1,34 +1,31 @@
 #!/usr/bin/env python3
-"""Project Grounded: "Battle! Tapu" (Pokémon Sun/Moon), transcriptie + arrangement, FASE 1 (noten en ritme).
+"""Project Grounded: "Battle! Tapu" (Pokémon Sun/Moon), transcriptie + arrangement, v2.
 
-Bron: alleen de mp3 (geen MIDI). Werkwijze fase 1: Spleeter (4 stems) + basic-pitch per stem + CQT/onset-analyse per
-16e op een vast raster (174 bpm, maat 1 = 0,740 s in de mp3). Jordi: "het belangrijkste zijn de chants en de luide
-tribal-drums; bijna ritualistisch". Dit is nog GEEN definitieve mix: alleen noten/ritme om per partij te beoordelen.
+Bron: alleen de mp3 (geen MIDI). Spleeter (4 stems) + basic-pitch per stem + CQT/onset-analyse per 16e op een vast
+raster (174 bpm, maat 1 = 0,740 s in de mp3). Jordi: "het belangrijkste zijn de chants en de luide tribal-drums;
+bijna ritualistisch"; v2-feedback: "1-5 s een herhalend chant-thema (slimme vervanging mag), op 6 s een HOO met een
+harde drumslag, dan beginnen de drums, 11-17 s die TUDUDU" en "het gaat om jouw interpretatie".
 
 Gemeten aan het origineel (180 s, twee keer de loop + fade):
-  tempo 174 bpm (autocorrelatie van de onsets, 128 tellen), 4/4, loop = 60 maten = 82,8 s (zelfgelijkenis, lag 82,80 s);
-  het origineel begint meteen met de eerste grote slag (0,72-0,74 s = maat 1, tel 1) en springt na maat 60 terug naar
-  maat 1. Toonsoort: E met b2/b5 (E-F-G-A-Bb-C-D#: 'E-locrisch/frygisch met tritonus'), bas-ostinato op E met
-  Bb-A-G; het slot (maat 53-60) zakt naar G#m en een Bb-pedaal (tritonus van E).
-  Vorm (maten van het origineel, ob = 1..60):
-    1-4    HIT + koor-/strijkersakkoord F#4-C5-E5-C6 (tritonus F#-C), bas-loopje C# D# F G (heeltoons)
-    5-8    vooral drums; maat 5 een uitgeroepen A#4 ('HAA'), maat 7-8 aanzwellende clusters
-    9-12   tremolo B3+F4 (tritonus) in 16en, drums bouwen op; maat 12 bas F2 (b2) + de chant valt in op tel 4 (B3-kreet)
-    13-28  groove: bas-ostinato E E E E . Bb A G, taiko-patroon (tellen 1,2,3,'3-en',4), chant op Bb4/Eb5/D5 (13-16),
-           daarna losse chant-lettergrepen en kreten (17-24); elke 4e maat een variant (Bb-A-G-loopje of C-pedaal)
-    29-36  overmatige akkoorden (F+ / E+ / F+ / Ab-C-Eb), hoorn-melodie A4-C#5 / C5-G#4, staccato C4-pulsen op 6 en 14
-    37-48  E5-kwartnoten (37-40), E6-kwartnoten met G6 (41-46), overmatige melodie terug (46-48)
-    49-52  tweede chant (E4..E5, G#4/C#5), hoge wisselfiguur A5/F#5 -> G#5/B5, bas F#2/A2
-    53-60  slot: G#2/B2 (53-56) -> Bb1-pedaal (57-60), wisselfiguur A#5/C#6 -> A#5/E5 -> G5/E5, vier-op-de-vloer-kick
-In de game: 3 maten 'licht' voorspel (4,14 s), dan de HIT = maat 1 van het origineel = loopbegin. De Tapu-transitie
-eindigt precies op HIT_SECONDS (hieronder). Loop [ = HIT, ] = einde maat 60 (terug naar de HIT, zoals het origineel).
+  tempo 174 bpm, 4/4, loop = 60 maten = 82,8 s, maat 61 = maat 1. Toonsoort: E met b2/b5; bas-ostinato E/Bb-A-G.
+  Vorm (maten van het origineel, ob = 1..60; tijd in de mp3 = 0,74 + (ob - 1) * 1,379 s):
+    1-4    openingsslag + akkoord F#4-C5-E5-C6, het herhalende chant-thema (elke halve maat dezelfde figuur:
+           B4/E5 op de slag, E4-F4 heen en weer, lage mannenstem F#3 op 16e 4 en 7; vocal-stem, CQT per 16e)
+    5      de HIT (6,26 s): 'HOO' (koor zwelt van F#3 naar A#3) + harde slag = einde van de gevechtsintro
+    5-8    de drums beginnen (gemeten per 16e per band)
+    9-12   het motief 'TU-DU-DU-DUUUU - TU-DU-DU-DU' (11,8-17,3 s): taiko's op 16e 0, 2, 3, 4 (lang) | 8, 9, 12, 14,
+           onder een tremolo B3+F4 (tritonus) in 16en
+    13-28  groove: bas-ostinato, taiko-patroon (tellen 1,2,3,'3-en',4), chant op Bb4/Eb5/D5, kreten
+    29-36  overmatige akkoorden, hoorn-melodie; 37-48 E5-/E6-figuren, korte E6-tikjes op de tellen (41-48, het 'fluitje')
+    49-52  tweede chant, hoge wisselfiguur; 53-60 slot: G#2/B2 -> Bb1-pedaal, vier-op-de-vloer
+In de game begint het nummer bij maat 1 (geen eigen voorspel meer); de Tapu-transitie eindigt op de HIT
+(HIT_SECONDS_GBA = 5,542 s = TAPU_HIT_FRAME 333 in src/battle_transition.c). Loop = maat 1-60 (terug naar de chant).
 
-Voicegroup grounded_tapu (gegenereerd) = grounded_gm met alleen stock-Emerald-samples: 52 koor 'aah'
-(classical_choir_voice_ahhs), 53 mannenstem (unused_unknown_male_voice, kreten), 48-50 strijkers (keysplit),
-60 hoorn (keysplit), 77 shakuhachi (sd90_classical_shakuhachi, hoge wisselfiguur), 33 fingered bass, 47 pauk,
-127 = drumkit drumsets/tapu.inc (taiko, ambient tom, Indiase trom, SC-55-tom, conga's, ohtsuzumi/kotsuzumi,
-orkestbekken, tamboerijn, hyoushigi, kick; geen PSG).
-Gebruik: python3 tools/grounded/tapu_theme.py [--render <map>] [--frag <map>]"""
+Voicegroup grounded_tapu (gegenereerd) = grounded_gm met: 52 chant 'aa' (tapu_vox_a), 53 'HOO'-kreet (tapu_shout),
+54 lage 'hu' (tapu_vox_hu) (eigen formant-samples, tools/grounded/tapu_samples.py), 48-50 strijkers (keysplit),
+60 hoorn (keysplit), 73 fluit (de E6-tikjes), 77 shakuhachi, 33 fingered bass, 47 pauk, 127 = drumkit
+drumsets/tapu.inc (odaiko/taiko/ka/bekken eigen samples; Indiase trom, tom, conga's, kotsuzumi, hyoushigi, kick stock).
+Gebruik: python3 tools/grounded/tapu_samples.py (eenmalig) en python3 tools/grounded/tapu_theme.py [--render <map>]"""
 import os, subprocess, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -40,17 +37,21 @@ TPB = 48
 S16 = TPB // 4
 BAR = TPB * 4
 BPM = 174
-PRE = 3                                    # maten voorspel vóór de HIT
-HIT_TICK = PRE * BAR                       # = loopbegin
-HIT_SECONDS = PRE * 4 * 60 / BPM           # 4,138 s nominaal ...
-HIT_SECONDS_GBA = HIT_SECONDS * 1.0045     # ... 4,156 s op de GBA (die speelt 0,45% te traag, MUZIEK.md)
-ORIG_HIT_SECONDS = 0.74                    # de eerste grote slag + koor in de mp3 (maat 1, tel 1)
-NBARS = 60                                 # loop = maat 1-60 van het origineel
+PRE = 0                                    # v2: geen eigen voorspel meer; de game begint bij maat 1 van het origineel
+HIT_OB = 5                                 # de HIT ('HOO!' + eerste grote slag) = maat 5 van het origineel (6,26 s)
+HIT_TICK = (HIT_OB - 1) * BAR
+HIT_SECONDS = (HIT_OB - 1) * 4 * 60 / BPM  # 5,517 s nominaal ...
+HIT_SECONDS_GBA = HIT_SECONDS * 1.0045     # ... 5,542 s op de GBA (die speelt 0,45% te traag) -> TAPU_HIT_FRAME 333
+ORIG_BAR1 = 0.74                           # maat 1, tel 1 in de mp3 (openingsslag + akkoord; chant 0,9-5,8 s)
+NBARS = 60                                 # loop = maat 1-60 van het origineel (terug naar de chant, zoals het origineel)
 END = PRE + NBARS
 
-CHOIR, SHOUT, STR, STR2, STR3, HORN, SHAKU, BASS, TIMP, DRUMS = 52, 53, 48, 49, 50, 60, 77, 33, 47, 127
-# drumkit (drumsets/tapu.inc, vanaf 36)
-TAIKO, TAIKO_LO, BIGTOM, INDIAN, TOM, CONGA_LO, CONGA_HI, OHTSU, KOTSU, CRASH, TAMB, HYOU, KICK = range(36, 49)
+CHOIR, SHOUT, CHLO, STR, STR2, STR3, HORN, SHAKU, FLUTE, BASS, TIMP, DRUMS = 52, 53, 54, 48, 49, 50, 60, 77, 73, 33, 47, 127
+# drumkit (drumsets/tapu.inc, vanaf 36): TAIKO/TAIKO_LO/BIGTOM/KA = eigen samples (tapu_samples.py)
+TAIKO, TAIKO_LO, BIGTOM, INDIAN, TOM, CONGA_LO, CONGA_HI, KA, KOTSU, CRASH, TAMB, HYOU, KICK = range(36, 49)
+OHTSU = KA
+RING = {BIGTOM: 8, TAIKO: 4, TAIKO_LO: 5, CRASH: 14, KA: 1, INDIAN: 2, TOM: 2, CONGA_LO: 1, CONGA_HI: 1, KOTSU: 2,
+        TAMB: 2, HYOU: 1, KICK: 2}           # hoe lang een slag maximaal doorklinkt (16en); korter als dezelfde partij opnieuw slaat
 
 N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'D#': 3, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'Gb': 6, 'G': 7, 'G#': 8, 'Ab': 8,
      'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
@@ -61,7 +62,7 @@ def p(name):
 
 
 def at(ob, q=0):
-    """tick van 16e q in maat ob van het origineel (ob 1 = de HIT); ob <= 0 = voorspel."""
+    """tick van 16e q in maat ob van het origineel (ob 1 = begin van het nummer, ob 5 = de HIT)."""
     return (PRE + ob - 1) * BAR + q * S16
 
 
@@ -115,16 +116,12 @@ def bass():
     put(out, 12, [(0, 16, 'F2')])                                     # b2 onder de chant-inzet
     for ob, pat in GROOVE.items():
         put(out, ob, pat, 104)
-    # voorspel: lage E-drone die aanzwelt naar de HIT (licht: één noot per maat)
-    for i, v in enumerate((60, 78, 96)):
-        put(out, i + 1 - PRE, [(0, 16, 'E1', v)])
     return dedupe(out)
 
 
 # ---------------------------------------------------------------- chant (stem 'vocals', CQT per 16e) -------------------
 CHANT = [
-    # maat 1-4: koorakkoord (E5 + F#4, C6 bovenin) meteen na de HIT; maat 5 de uitgeroepen A#4 staat bij SHOUTS
-    '1:1:47:E5:96 1:1:47:F#4:92',
+    # maat 1-4: het herhalende chant-thema staat in chant_theme() (v2)
     # maat 13-16: chant Bb4/Eb5 (D5 als doorgang) in achtsten
     '13:0:2:A#4 13:2:2:D#5 13:4:2:A#4 13:6:2:D#5 13:8:1:D5 13:9:2:D#5 13:12:2:A#4 13:14:2:D#5',
     '14:0:2:A#4 14:2:2:D#5 14:5:1:D#5 14:6:2:A#4 14:14:2:A#4',
@@ -151,20 +148,58 @@ CHANT = [
     # maat 60: opmaat terug naar de HIT
     '60:12:1:E4:90 60:13:1:D#4:96 60:14:1:E4:90 60:15:1:B3:96',
 ]
-SHOUTS = [   # korte kreten (mannenstem): de luidste, breedbandige vocal-onsets
-    '5:0:4:A#4:120 12:12:4:B3:124 14:9:3:B3:118 17:13:3:B3:118 24:8:1:A#4:110 24:9:3:A#4:124 48:11:1:A#4:116 '
-    '52:0:1:A#4:112 56:13:1:A#4:112',
+SHOUTS = [   # kreten (tapu_shout, 'HOO!', grondtoon A#3): maat 5 = de HIT; daarna de luidste vocal-onsets
+    '5:0:8:A#3:127 12:12:4:B3:116 14:9:3:B3:108 17:13:3:B3:108 24:8:4:A#3:116 48:11:4:A#3:110 '
+    '52:0:3:A#3:106 56:13:3:A#3:106',
 ]
+
+
+def chant_theme():
+    """Maat 1-4 (0,74-6,26 s in het origineel): het herhalende chant-thema, gemeten met CQT per 16e op de vocal-stem.
+    Het koor herhaalt elke halve maat dezelfde figuur: bovenstem B4/E5 op de slag, dan E4-F4-heen-en-weer, en een lage
+    mannenstem (F#3) ertussen op 16e 4 en 7. Op de GBA als losse lettergrepen: bovenstem 'ha' (tapu_vox_a), lage 'hu'
+    (tapu_vox_hu). Maat 1 begint met een lange roep op E5 (met het openingsakkoord); maat 4 eindigt een halve maat
+    eerder (adem) zodat de HOO op maat 5 vrij staat."""
+    hi, lo = [], []
+    fig_hi = [(0, 1, 'B4', 112), (1, 1, 'E5', 100), (2, 1, 'E4', 94), (3, 1, 'F4', 100), (5, 1, 'F4', 96),
+              (6, 2, 'E4', 100)]
+    fig_lo = [(4, 1, 'F#3', 118), (7, 1, 'F#3', 108)]
+    for ob in range(1, 5):
+        for h in (0, 8):
+            if ob == 1 and h == 0:
+                put(hi, 1, [(0, 7, 'E5', 108)])
+                put(lo, 1, [(4, 1, 'F#3', 104), (7, 1, 'F#3', 104)])
+                continue
+            if ob == 4 and h == 8:
+                put(hi, 4, [(8, 1, 'B4', 116), (9, 1, 'E5', 108), (10, 2, 'E4', 104)])
+                continue
+            put(hi, ob, [(h + q, ln, n, v) for q, ln, n, v in fig_hi])
+            put(lo, ob, [(h + q, ln, n, v) for q, ln, n, v in fig_lo])
+    return hi, lo
 
 
 def chant():
     out = []
     for s in CHANT:
         notes_str(out, s, 100)
-    # voorspel: koor zwelt aan (lange noot E4 + B4, steeds luider) naar de HIT
-    put(out, 2 - PRE, [(8, 8, ['E4', 'B4'], 56)])
-    put(out, 3 - PRE, [(0, 16, ['E4', 'B4'], 80)])
+    out += chant_theme()[0]
     return dedupe(out)
+
+
+def legato(notes):
+    """elke noot tot de volgende aanslag (geen detach: dat maakte van 16en losse stipjes); dezelfde toonhoogte nooit
+    overlappend."""
+    notes = sorted(notes)
+    out = []
+    for i, n in enumerate(notes):
+        nxt = notes[i + 1][0] if i + 1 < len(notes) else None
+        e = n[1] if nxt is None or nxt - n[1] > 2 * S16 else nxt
+        out.append([n[0], max(n[0] + 2, e), n[2], n[3]])
+    return out
+
+
+def chant_lo():
+    return dedupe(chant_theme()[1])
 
 
 def shouts():
@@ -177,7 +212,7 @@ def shouts():
 # ---------------------------------------------------------------- strijkers / pad (stem 'other') ----------------------
 def pad():
     out = []
-    put(out, 1, [(1, 41, ['C5', 'C6'], 90)])                         # maat 1-3 (+ half 4): tritonusakkoord met het koor
+    put(out, 1, [(0, 40, ['C5', 'C6'], 72)])                         # maat 1-3 (+ half 4): tritonusakkoord onder de chant
     put(out, 7, [(0, 16, ['F4', 'F#4'], 64)])                        # aanzwellende clusters
     put(out, 8, [(0, 8, ['G#4', 'A4'], 76), (8, 8, ['G#4', 'A4'], 92)])
     groove_pad = {16: ['G4', 'A#4'], 20: ['A#4', 'D5'], 24: ['G4', 'C5'], 28: ['C5', 'D#5']}
@@ -255,6 +290,25 @@ def horn():
     return dedupe(out)
 
 
+PIPS = HI_MEL[:3]     # maat 41-48: hoge E6-'fluitjes'
+HI_MEL = HI_MEL[3:]
+
+
+def pips():
+    """Maat 41-48 (het 'fluitje' vanaf 20 s in e2): basic-pitch op de stem 'other' vindt E6 (soms G6) als korte tikjes
+    van ±1 zestiende op de tellen (lengte 0,8-1,9 zestiende, velocity ±50), geen aangehouden kwartnoten zoals in v1
+    (shakuhachi, 4 zestienden: 'gaat helemaal fout'). v2: zelfde tijdstippen, 1 zestiende, staccato fluit (stock
+    sc88pro_flute, release 127), zachter."""
+    out = []
+    for s in PIPS:
+        for tok in s.split():
+            f = tok.split(':')
+            ob, q, nt = int(f[0]), int(f[1]), f[3]
+            if p(nt) >= p('E6'):
+                out.append([at(ob, q), at(ob, q) + S16, p(nt), 92 if nt == 'G6' else 100])
+    return dedupe(out)
+
+
 def hi():
     out = []
     for s in HI_MEL:
@@ -265,57 +319,82 @@ def hi():
 
 
 # ---------------------------------------------------------------- drums (stem 'drums', onsets per band per 16e) -------
+def ring_gates(notes):
+    """Drumnoten zo lang laten klinken als de slag echt doorklinkt (RING), maar niet langer dan tot de volgende slag
+    in dezelfde partij: v1 kapte elke slag na 2-3 zestienden af (release 140) = tikjes i.p.v. trommen."""
+    notes = sorted(notes)
+    starts = sorted({n[0] for n in notes})
+    out = []
+    for n in notes:
+        nxt = next((x for x in starts if x > n[0]), None)
+        ln = RING.get(n[2], 2) * S16
+        if nxt is not None and n[2] not in (CRASH,):
+            ln = min(ln, max(S16, nxt - n[0]))
+        out.append([n[0], n[0] + ln, n[2], n[3]])
+    return out
+
+
 def drums():
     t, m, pc, cr, tp = [], [], [], [], []    # taiko/grote trommen, middentrommen/toms, kleine percussie, bekkens, pauk
 
     def hit(lst, ob, q, note, vel, ln=2):
         lst.append([at(ob, q), at(ob, q) + ln * S16, note, vel])
 
-    # voorspel (licht): maat -2 pauk-roffel pp, maat -1 handtrommen in achtsten, maat 0 taiko-opbouw + flam naar de HIT
-    for q in range(0, 16, 2):
-        hit(tp, 1 - PRE, q, p('E2'), 40 + q * 2, 2)
-    for q in range(0, 16):
-        hit(tp, 2 - PRE, q, p('E2'), 56 + q * 2, 1)
-    for q in range(0, 16, 2):
-        hit(m, 2 - PRE, q, CONGA_LO if q % 4 == 0 else CONGA_HI, 56 + q * 2)
-    for q in (0, 4, 8, 10, 12, 13, 14, 15):
-        hit(t, 3 - PRE, q, TAIKO if q < 12 else TAIKO_LO, 80 + q * 3)
-    for q in range(0, 16):
-        hit(m, 3 - PRE, q, TOM if q % 2 else INDIAN, 70 + q * 3)
-    hit(pc, 3 - PRE, 14, OHTSU, 110)
-
-    # maat 1-12 (intro): per 16e uit de drumstem (onsets per band): LAAG = taiko/grote trom, KRAK = scherpe tik
-    # (mid+hoog: ohtsuzumi), MID = middentrom (alleen mid: maat 9-12 op 1 en 3). Getallen = gemeten sterkte.
+    # per 16e uit de drumstem (onsets per band): LAAG = taiko/grote trom, KRAK = scherpe tik (mid+hoog: 'ka'),
+    # MID = middentrom (alleen mid). Getallen = gemeten sterkte.
     LOW = {1: {0: 281, 6: 48, 8: 42, 10: 46, 12: 88, 14: 44}, 2: {0: 175, 1: 69, 7: 67, 9: 55, 14: 154, 15: 93},
            3: {4: 104, 7: 135, 8: 125, 13: 102, 14: 72}, 4: {1: 67, 5: 78, 7: 87, 8: 133, 15: 81},
            5: {2: 92, 3: 63, 6: 76, 11: 69, 13: 100, 14: 68}, 6: {0: 224, 3: 84, 5: 90, 12: 61, 13: 76, 14: 87, 15: 95},
-           7: {0: 75, 1: 98, 2: 62, 8: 88, 12: 67, 13: 79}, 8: {0: 105, 1: 83, 9: 82},
-           9: {0: 236, 2: 106, 3: 159, 4: 175, 8: 184, 9: 138, 12: 114, 14: 81},
-           10: {0: 97, 1: 127, 6: 102, 8: 88, 9: 98, 12: 119, 15: 75},
-           11: {0: 188, 3: 66, 4: 112, 8: 145, 12: 128, 14: 96}, 12: {0: 123, 4: 155, 5: 95, 8: 84, 12: 75}}
+           7: {0: 75, 1: 98, 2: 62, 8: 88, 12: 67, 13: 79}, 8: {0: 105, 1: 83, 9: 82}}
     CRACK = {1: {0: 65}, 2: {0: 81, 14: 87, 15: 22}, 3: {0: 61, 14: 56}, 4: {0: 50, 7: 62, 9: 29, 10: 61, 14: 49},
              5: {0: 68}, 6: {0: 97, 14: 88, 15: 24}, 7: {0: 66, 9: 61, 10: 50, 14: 23}, 8: {1: 61, 3: 45, 13: 36, 14: 35, 15: 26}}
-    MID = {9: {0: 28, 8: 139}, 10: {0: 73, 8: 100}, 11: {0: 59, 8: 96}, 12: {0: 84, 4: 60, 8: 133}}
-    vel = lambda x, top: int(min(127, 58 + 69 * min(x, top) / top))
-    for ob, d in LOW.items():
-        for q, x in d.items():
-            hit(t, ob, q, BIGTOM if x >= 170 else (TAIKO if x >= 95 else TAIKO_LO), vel(x, 250), 3)
-    for ob, d in CRACK.items():
-        for q, x in d.items():
-            hit(pc, ob, q, OHTSU, vel(x, 90))
-    for ob, d in MID.items():
-        for q, x in d.items():
-            hit(m, ob, q, INDIAN, vel(x, 140))
-    hit(t, 1, 0, TAIKO, 127, 4)                                        # HIT: twee lagen (grote trom + taiko)
-    hit(cr, 1, 0, CRASH, 120, 8)
+    vel = lambda x, top, lo=58, span=69: int(min(127, lo + span * min(x, top) / top))
+    # maat 1-4 (chant, Jordi: 'eerst de roep, dan de eerste grote slag'): de gemeten slagen, maar zacht (hand-trom-
+    # ostinato onder de chant); de openingsslag op maat 1 is een doffe boem, niet de HIT
+    for ob in range(1, 5):
+        for q, x in LOW[ob].items():
+            hit(t, ob, q, TAIKO_LO if x < 120 else TAIKO, vel(x, 250, 44, 40))
+        for q, x in CRACK[ob].items():
+            hit(pc, ob, q, KA, vel(x, 90, 40, 36))
+    t = [n for n in t if n[0] != at(1, 0)]
+    hit(t, 1, 0, BIGTOM, 92)
+    for i, q in enumerate((12, 13, 14, 15)):                         # korte roffel onder de adem vóór de HOO
+        hit(m, 4, q, TAIKO_LO, 64 + 10 * i)
+    # maat 5 = de HIT: 'HOO!' (spoor shout) + de eerste grote slag: odaiko + taiko + ka + bekken
+    hit(t, 5, 0, BIGTOM, 127)
+    hit(m, 5, 0, TAIKO, 120)
+    hit(pc, 5, 0, KA, 124)
+    hit(cr, 5, 0, CRASH, 124)
+    # maat 5-8: 'dan beginnen de drums' (gemeten, volle sterkte)
+    for ob in range(5, 9):
+        for q, x in LOW[ob].items():
+            if ob == 5 and q == 0:
+                continue
+            hit(t, ob, q, BIGTOM if x >= 170 else (TAIKO if x >= 95 else TAIKO_LO), vel(x, 230))
+        for q, x in CRACK[ob].items():
+            if not (ob == 5 and q == 0):
+                hit(pc, ob, q, KA, vel(x, 90, 70, 57))
     for q in range(8, 16):                                            # maat 8: pauk-roffel crescendo naar maat 9
         hit(tp, 8, q, p('E2'), 70 + (q - 8) * 7, 1)
-    for q in (12, 13, 14, 15):
-        hit(m, 12, q, TOM, 100 + (q - 12) * 6)
+    # maat 9-12: het motief 'TU-DU-DU-DUUUU - TU-DU-DU-DU' (Jordi, 11-17 s): gemeten in de drumstem maat 9
+    # (laag op 16e 0, 2, 3, 4 | 8, 9, 12, 14; 4 klinkt lang door). In de game elke maat hetzelfde, maat 12 met een fill.
+    MOTIF = [(0, BIGTOM, 127), (2, TAIKO, 110), (3, TAIKO, 114), (4, BIGTOM, 124),
+             (8, BIGTOM, 120), (9, TAIKO, 106), (12, TAIKO, 112), (14, BIGTOM, 116)]
+    for ob in range(9, 13):
+        for q, n, v in MOTIF:
+            if ob == 12 and q >= 12:
+                continue
+            hit(t, ob, q, n, v)
+        hit(pc, ob, 0, KA, 112)
+        hit(pc, ob, 8, KA, 100)
+        hit(m, ob, 8, INDIAN, 96)
+    for i, q in enumerate((12, 13, 14, 15)):                         # fill naar de groove
+        hit(m, 12, q, TOM, 104 + 6 * i)
+        hit(t, 12, q, TAIKO, 100 + 7 * i)
     # groove maat 13-60 (gemiddeld per 16e gemeten): slagen op 1, 2, 3, '3-en', 4 (laag+mid); in maat 13-52 klinkt
     # na elke tel een zachtere tweede slag (16e 1, 5, 9, 13: 'DUM-dum'); hoog alleen zwak op 2 en 4 (hyoushigi pp)
     for ob in range(13, NBARS + 1):
-        for q, n, v in ((0, TAIKO, 118), (4, BIGTOM, 108), (8, TAIKO, 120), (10, TAIKO_LO, 108), (12, BIGTOM, 112)):
+        for q, n, v in ((0, TAIKO, 118), (4, BIGTOM, 112), (8, TAIKO, 120), (10, TAIKO_LO, 108), (12, BIGTOM, 116)):
             hit(t, ob, q, n, v)
         hit(m, ob, 10, INDIAN, 84)
         if ob < 53:
@@ -331,14 +410,16 @@ def drums():
                 hit(m, ob, q, TOM, v)
     for ob in (13, 29, 37, 49, 53, 57):
         hit(cr, ob, 0, CRASH, 116, 8)
-    return {'taiko': dedupe(t), 'toms': dedupe(m), 'perc': dedupe(pc), 'cym': dedupe(cr), 'timp': dedupe(tp)}
+    return {'taiko': ring_gates(dedupe(t)), 'toms': ring_gates(dedupe(m)), 'perc': ring_gates(dedupe(pc)),
+            'cym': ring_gates(dedupe(cr)), 'timp': dedupe(tp)}
 
 
 # ---------------------------------------------------------------- sporen ----------------------------------------------
 TRACKS = [   # (naam, programma, volume, pan)
-    ('chant', CHOIR, 110, 64), ('shout', SHOUT, 104, 64), ('horn', HORN, 92, 56), ('hi', SHAKU, 84, 72),
-    ('bass', BASS, 110, 64), ('pad', STR, 64, 64), ('pulse', STR2, 78, 60), ('trem', STR3, 70, 68),
-    ('taiko', DRUMS, 120, 64), ('toms', DRUMS, 100, 58), ('perc', DRUMS, 84, 74), ('cym', DRUMS, 80, 64),
+    ('chant', CHOIR, 74, 60), ('chlo', CHLO, 88, 68), ('shout', SHOUT, 124, 64), ('horn', HORN, 92, 56),
+    ('hi', SHAKU, 84, 72), ('pips', FLUTE, 64, 76), ('bass', BASS, 108, 64), ('pad', STR, 52, 64),
+    ('pulse', STR2, 74, 60), ('trem', STR3, 66, 68),
+    ('taiko', DRUMS, 127, 64), ('toms', DRUMS, 108, 58), ('perc', DRUMS, 96, 70), ('cym', DRUMS, 84, 64),
     ('timp', TIMP, 90, 64),
 ]
 MAX_V = 11                    # legendary: 11 DirectSound-noten (1 kanaal vrij voor effecten)
@@ -352,18 +433,19 @@ def build(render_dir=None, frag_dir=None):
     write_voicegroup()
     rel = releases(VG)
     kitrel = kit_releases()
-    parts = {'chant': chant(), 'shout': shouts(), 'horn': horn(), 'hi': hi(), 'bass': bass(), 'pad': pad(),
-             'pulse': pulses(), 'trem': tremolo()}
+    parts = {'chant': chant(), 'chlo': chant_lo(), 'shout': shouts(), 'horn': horn(), 'hi': hi(), 'pips': pips(),
+             'bass': bass(), 'pad': pad(), 'pulse': pulses(), 'trem': tremolo()}
     parts.update(drums())
-    melodic = {'chant': CHOIR, 'shout': SHOUT, 'horn': HORN, 'hi': SHAKU, 'bass': BASS, 'pad': STR, 'pulse': STR2,
-               'trem': STR3, 'timp': TIMP}
+    melodic = {'chant': CHOIR, 'chlo': CHLO, 'shout': SHOUT, 'horn': HORN, 'hi': SHAKU, 'pips': FLUTE, 'bass': BASS,
+               'pad': STR, 'pulse': STR2, 'trem': STR3, 'timp': TIMP}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in melodic.items()}
-    dl = max(release_ticks(r, TPB, BPM) for r in kitrel.values())
-    for k in ('taiko', 'toms', 'perc', 'cym'):
-        tail[k] = dl // 2
-    for k in ('chant', 'horn', 'hi', 'bass', 'pulse', 'timp', 'pad', 'trem'):
+    for k in ('taiko', 'toms', 'perc', 'cym'):                        # per partij de langste release van zijn kitnoten
+        tail[k] = max(release_ticks(kitrel[n[2]], TPB, BPM) for n in parts[k]) + 2
+    for k in ('chlo', 'horn', 'hi', 'pips', 'bass', 'pulse', 'timp', 'pad', 'trem'):
         parts[k] = detach(parts[k], tail[k])
-    order = ['taiko', 'cym', 'chant', 'shout', 'bass', 'toms', 'horn', 'hi', 'timp', 'pulse', 'perc', 'pad', 'trem']
+    parts['chant'] = legato(parts['chant'])                           # gezongen: noten lopen in elkaar over
+    order = ['taiko', 'shout', 'cym', 'chant', 'chlo', 'bass', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
+             'pad', 'trem']
     kept = allocate({k: parts[k] for k in order}, order, tail, max_voices=MAX_V)
     print('uitklinktijd (ticks):', tail)
     for k in order:
@@ -374,45 +456,46 @@ def build(render_dir=None, frag_dir=None):
         parts[k] = kept[k]
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
-    song.tempo(HIT_TICK, BPM / 120)                                   # tempo op de looptick zelf
-    song.loop = (HIT_TICK, END * BAR)
+    song.loop = (0, END * BAR)                                        # terug naar maat 1 (chant), zoals het origineel
     for ch, (k, prog, vol, pan) in enumerate(TRACKS):
         notes = parts[k]
         song.add(notes, prog, vol, ch, pan)
     song.save(OUT, END * BAR)
-    print(OUT, 'voorspel %.3f s (HIT_SECONDS; GBA %.3f s), loop %.1f s' % (HIT_SECONDS, HIT_SECONDS_GBA,
-                                                                          NBARS * 4 * 60 / BPM))
+    print(OUT, 'HIT op %.3f s (GBA %.3f s = TAPU_HIT_FRAME %d), loop %.1f s' % (
+        HIT_SECONDS, HIT_SECONDS_GBA, round(HIT_SECONDS_GBA * 60), NBARS * 4 * 60 / BPM))
     if render_dir:
         render_gm(render_dir)
     if frag_dir:
         fragments(frag_dir)
 
 
-KIT = [   # vanaf noot 36; alles DirectSound (stock Emerald)
-    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 140',                 # 36 taiko
-    'voice_directsound 53, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 140',                 # 37 taiko laag
-    'voice_directsound 60, 0, DirectSoundWaveData_sd90_ambient_tom, 255, 0, 255, 150',              # 38 grote trom
-    'voice_directsound 60, 0, DirectSoundWaveData_unused_heart_of_asia_indian_drum, 255, 0, 255, 120',  # 39 Indiase trom
-    'voice_directsound 60, 0, DirectSoundWaveData_unused_sc55_tom, 255, 0, 255, 130',               # 40 tom
-    'voice_directsound 60, 44, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 80',        # 41 conga laag
-    'voice_directsound_no_resample 64, 84, DirectSoundWaveData_sc88pro_mute_high_conga, 255, 0, 255, 60',  # 42 conga hoog
-    'voice_directsound 60, 80, DirectSoundWaveData_ethnic_flavours_ohtsuzumi, 255, 0, 255, 110',    # 43 ohtsuzumi
-    'voice_directsound 60, 48, DirectSoundWaveData_ethnic_flavours_kotsuzumi, 255, 0, 255, 110',    # 44 kotsuzumi
-    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216',  # 45 orkestbekken
-    'voice_directsound 60, 80, DirectSoundWaveData_sc88pro_tambourine, 255, 0, 255, 90',            # 46 tamboerijn
-    'voice_directsound 60, 40, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 90',     # 47 hyoushigi
+KIT = [   # vanaf noot 36; eigen samples (tapu_samples.py) + stock Emerald; een slag klinkt door tot RING/de volgende
+    'voice_directsound 60, 0, DirectSoundWaveData_tapu_taiko, 255, 0, 255, 190',                    # 36 taiko
+    'voice_directsound 56, 0, DirectSoundWaveData_tapu_taiko, 255, 0, 255, 190',                    # 37 taiko laag
+    'voice_directsound 60, 0, DirectSoundWaveData_tapu_odaiko, 255, 0, 255, 205',                   # 38 odaiko (grote trom)
+    'voice_directsound 60, 0, DirectSoundWaveData_unused_heart_of_asia_indian_drum, 255, 0, 255, 140',  # 39 Indiase trom
+    'voice_directsound 60, 0, DirectSoundWaveData_unused_sc55_tom, 255, 0, 255, 150',               # 40 tom
+    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_open_low_conga, 255, 0, 255, 80',         # 41 conga laag
+    'voice_directsound_no_resample 64, 0, DirectSoundWaveData_sc88pro_mute_high_conga, 255, 0, 255, 60',  # 42 conga hoog
+    'voice_directsound 60, 0, DirectSoundWaveData_tapu_ka, 255, 0, 255, 150',                       # 43 ka (rand)
+    'voice_directsound 60, 0, DirectSoundWaveData_ethnic_flavours_kotsuzumi, 255, 0, 255, 110',     # 44 kotsuzumi
+    'voice_directsound 60, 0, DirectSoundWaveData_tapu_crash, 255, 0, 255, 225',                    # 45 bekken
+    'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tambourine, 255, 0, 255, 90',             # 46 tamboerijn
+    'voice_directsound 60, 0, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 90',      # 47 hyoushigi
     'voice_directsound 60, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 120',      # 48 kick
 ]
 
 
 def write_voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
-    lines[0] = '@ Project Grounded: grounded_gm voor Battle! Tapu (fase 1). Gegenereerd door tools/grounded/tapu_theme.py.'
-    lines[1] = ('@ alleen stock-samples: 52 koor, 53 mannenstem (kreten), 77 shakuhachi, 127 = drumkit tapu '
-                '(taiko/trommen/conga/tsuzumi/bekken/tamboerijn/kick).')
+    lines[0] = '@ Project Grounded: grounded_gm voor Battle! Tapu (v2). Gegenereerd door tools/grounded/tapu_theme.py.'
+    lines[1] = ('@ 52 chant-ha / 53 HOO-kreet / 54 lage hu (eigen formant-samples, tapu_samples.py), 77 shakuhachi, '
+                '127 = drumkit tapu (odaiko/taiko/ka/bekken eigen samples).')
     lines[2] = 'voice_group %s' % VG
     repl = {
-        '@ 53': '\tvoice_directsound 60, 0, DirectSoundWaveData_unused_unknown_male_voice, 255, 0, 255, 150  @ 53',
+        '@ 52': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_vox_a, 255, 0, 255, 90  @ 52',
+        '@ 53': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_shout, 255, 0, 255, 210  @ 53',
+        '@ 54': '\tvoice_directsound 60, 0, DirectSoundWaveData_tapu_vox_hu, 255, 0, 255, 150  @ 54',
         '@ 77': '\tvoice_directsound 60, 0, DirectSoundWaveData_sd90_classical_shakuhachi, 255, 0, 255, 160  @ 77',
         '@ 127': '\tvoice_keysplit_all voicegroup_tapu_drumset  @ 127',
     }
@@ -422,15 +505,15 @@ def write_voicegroup():
         out.append(repl.get(tag.strip() if tag else None, l))
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(out))
     open('sound/voicegroups/drumsets/tapu.inc', 'w').write(
-        '@ Project Grounded: drumkit voor Battle! Tapu (tapu_theme.py), alleen stock-samples: 36/37 taiko (hoog/laag),\n'
-        '@ 38 grote trom (ambient tom), 39 Indiase trom, 40 tom, 41/42 conga, 43 ohtsuzumi, 44 kotsuzumi, 45 orkestbekken,\n'
-        '@ 46 tamboerijn, 47 hyoushigi, 48 kick.\n'
+        '@ Project Grounded: drumkit voor Battle! Tapu v2 (tapu_theme.py): 36/37 taiko (hoog/laag), 38 odaiko, 43 ka,\n'
+        '@ 45 bekken (eigen samples, tapu_samples.py); 39 Indiase trom, 40 tom, 41/42 conga, 44 kotsuzumi, 46 tamboerijn,\n'
+        '@ 47 hyoushigi, 48 kick (stock).\n'
         'voice_group tapu_drumset, 36\n' + ''.join('\t%s\n' % k for k in KIT) + '\n')
 
 
 # ---- offline-render (FluidR3 GM; andere klanken dan de GBA, wel noten/vorm/tempo) ------------------------------------
-GM_PROG = {'chant': 52, 'shout': 53, 'horn': 60, 'hi': 77, 'bass': 33, 'pad': 48, 'pulse': 45, 'trem': 44,
-           'timp': 47}
+GM_PROG = {'chant': 52, 'chlo': 53, 'shout': 53, 'horn': 60, 'hi': 77, 'pips': 72, 'bass': 33, 'pad': 48, 'pulse': 45,
+           'trem': 44, 'timp': 47}
 GM_DRUM = {TAIKO: 41, TAIKO_LO: 43, BIGTOM: 35, INDIAN: 45, TOM: 47, CONGA_LO: 64, CONGA_HI: 62, OHTSU: 60,
            KOTSU: 61, CRASH: 49, TAMB: 54, HYOU: 76, KICK: 36}
 
@@ -477,8 +560,8 @@ def render_gm(outdir):
 
 FRAGS = {   # naam: (sporen, beginmaat origineel, lengte s)
     'a_melodie': ({'horn', 'hi', 'pad'}, 29, 24),
-    'b_chants': ({'chant', 'shout'}, 1, 24),
-    'b2_chants': ({'chant', 'shout'}, 48, 18),
+    'b_chants': ({'chant', 'chlo', 'shout'}, 1, 24),
+    'b2_chants': ({'chant', 'chlo', 'shout'}, 48, 18),
     'c_bas': ({'bass'}, 13, 22),
     'd_drums': ({'taiko', 'toms', 'perc', 'cym', 'timp'}, 1, 24),
     'e_alles': (None, 1, 24),
@@ -494,14 +577,14 @@ def fragments(outdir, src_mp3=None):
         gm_midi(mid, only)
         wav = mid[:-4] + '.wav'
         fluid(mid, wav)
-        st = HIT_SECONDS + (ob - 1) * sec_bar
+        st = (ob - 1) * sec_bar
         mp3 = os.path.join(outdir, 'fluid_%s.mp3' % name)
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % st, '-t', str(ln), '-i', wav, '-af',
                         'loudnorm=I=-16:TP=-1.5,afade=t=out:st=%.1f:d=1' % (ln - 1), '-ar', '44100', '-b:a', '160k', mp3], check=True)
         os.remove(wav)
         os.remove(mid)
         if src_mp3:
-            ost = ORIG_HIT_SECONDS + (ob - 1) * sec_bar
+            ost = ORIG_BAR1 + (ob - 1) * sec_bar
             om = os.path.join(outdir, 'orig_%s.mp3' % name)
             subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % max(0, ost - 0.05), '-t', str(ln),
                             '-i', src_mp3, '-af', 'loudnorm=I=-16:TP=-1.5,afade=t=out:st=%.1f:d=1' % (ln - 1), '-ar', '44100', '-b:a', '160k', om], check=True)

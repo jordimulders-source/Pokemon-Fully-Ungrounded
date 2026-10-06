@@ -169,6 +169,10 @@ static void Task_RayquazaPillar(u8); // Project Grounded
 static void Task_Mimi(u8); // Project Grounded
 static void Task_Keccles(u8); // Project Grounded
 static void Task_Burglar(u8); // Project Grounded
+static void Task_GymRoxanne(u8); // Project Grounded (src/data/gym_intros_a.h)
+static void Task_GymBrawly(u8); // Project Grounded
+static void Task_GymWattson(u8); // Project Grounded
+static void Task_GymFlannery(u8); // Project Grounded
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -654,6 +658,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_MIMI] = Task_Mimi, // Project Grounded
     [B_TRANSITION_KECCLES] = Task_Keccles, // Project Grounded
     [B_TRANSITION_BURGLAR] = Task_Burglar, // Project Grounded
+    [B_TRANSITION_GYM_ROXANNE] = Task_GymRoxanne, // Project Grounded
+    [B_TRANSITION_GYM_BRAWLY] = Task_GymBrawly, // Project Grounded
+    [B_TRANSITION_GYM_WATTSON] = Task_GymWattson, // Project Grounded
+    [B_TRANSITION_GYM_FLANNERY] = Task_GymFlannery, // Project Grounded
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -9899,3 +9907,6 @@ static void Task_WeatherService(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_WeatherService);
 }
+
+// Project Grounded: gymleider-intro's (Roxanne, Brawly, Wattson, Flannery)
+#include "data/gym_intros_a.h"

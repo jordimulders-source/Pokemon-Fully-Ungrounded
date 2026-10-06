@@ -110,6 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
+| Ho-Oh (658) | `hooh_theme.py` | v1 wacht op Jordi (vurige rock 180 bpm + Japanse instrumenten, in-/yo-toonladder) | "Ho-Oh" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -522,3 +523,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   eerste slag) en daarna alles per 16e meten: drums per band (laag/mid/hoog, envelop-sprong), bas via basic-pitch op de
   stem, chant via CQT van de vocal-stem per 16e (pyin faalt op koren: 'onstemhebbend'). Transcriptie controleren met
   chroma-correlatie per maat (eigen solo-render vs. stem) en onset-correlatie per 4 maten (drums).
+- Ho-Oh v1 (song 658, eigen compositie, 180 bpm): **grondtoon van stock-samples meten** (harmonischenreeks, niet
+  alleen autocorrelatie: die vindt een suboctaaf): shakuhachi en koto_high klinken C5 op toets 60, whistle C6,
+  koto_low C4, distortion_low C3 -> per instrument een OCT-verschuiving in het script, noten op klinkende hoogte.
+  **Drums in de stemverdeler per sample**: bezet = min(lengte sample, noot + release) (rnd_kick 12 ticks, taiko 60,
+  laag gestemde taiko 90; geloopte toms/bekkens = noot + release); met één staart voor de hele kit viel 65% van de
+  strijkers weg. Koto/shamisen in 16en: release 90 + noot tot 'volgende aanslag - staart' = 1 kanaal. -V090: 0
+  overlopen, piek 99/127, RMS ±3000; audiocheck '54-85 Hz' = bas (E/A/F in achtsten) + taiko + framerate, geen brom.

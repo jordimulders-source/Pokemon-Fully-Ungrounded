@@ -6306,6 +6306,8 @@ u16 GetBattleBGM(void)
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
     case SPECIES_GIRATINA_ORIGIN:
         return MUS_GROUNDED_VS_GIRATINA;
+    case SPECIES_HO_OH: // Project Grounded: eigen thema (tools/grounded/hooh_theme.py)
+        return MUS_GROUNDED_VS_HO_OH;
     case SPECIES_ZARUDE: // Project Grounded: eigen compositie (tools/grounded/zarude_theme.py)
     case SPECIES_ZARUDE_DADA:
         return MUS_GROUNDED_VS_ZARUDE;

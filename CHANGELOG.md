@@ -17094,3 +17094,11 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.119] - Sirena krijgt een echt team
 - Grap-trainer Sirena (Route 126, "mermaid, legally a swimmer") had Primarina lv 6, Milotic lv 5 en Gorebyss lv 7: zo laat in de game is dat tijdverspilling (Jordi). Nu lv 42–43 met een slimmere AI; ook in het Battle Stadium. Regel in CLAUDE.md: grap-trainers met extreem lage levels alleen vroeg in de game.
+
+### [v0.9.120] - Gymleider-intro's deel 1: Roxanne, Brawly, Wattson, Flannery
+- Eigen gevechtsintro's (vervangen de mugshot; ook bij rematches en in het Battle Stadium), samen ±38 KB:
+  - **Roxanne** (3,1 s): rockconcert in de gym: "PUT YOUR LIGHTERS UP!", aanstekers in golven, spotlight op Roxanne, rotsblok-versterkers zakken aan kettingen, stroboscoop. "Lighters kindly provided by TEAM MAGMA."
+  - **Brawly** (2,9 s): walkout door de tunnel (LIVE), octagon met cameraflitsen en omroeperbalk "BRAWLY | DOUBLE CHAMP", vuist door het kooigaas recht op de camera.
+  - **Wattson** (3,4 s): serverfarm + rigged door, spervuur Win95-pop-ups (FREE BADGE, WATTCOIN, 3 HOT MAGNEMITE…), koersgrafiek TO THE MOON → RUGPULLED, SCAM-stempel, "Wahahahah!".
+  - **Flannery** (2,9 s): camping met kampvuur ("NO WIFI. JUST ANALOG HEAT."), Mt. Chimney barst uit, "Totally planned!", gloeiende steen barst de lens.
+- Code: `src/data/gym_intros_a.h`, keuze in `GetTrainerBattleTransition`; art-scripts `tools/grounded/{roxanne,brawly,wattson,flannery}_transition.py` + `gym_intro_lib.py`. Teksten zitten in de art (aanpassen via de scripts).

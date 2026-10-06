@@ -618,3 +618,6 @@ gSpecials::
 	def_special Grounded_GiantWailordSpot
 	def_special Grounded_UpdateTide
 	def_special Grounded_TideMinutesLeft
+	def_special FishTourney_GetBoardInfo
+	def_special FishTourney_Weigh
+	def_special FishTourney_ClaimPrize

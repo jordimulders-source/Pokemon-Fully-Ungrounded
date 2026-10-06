@@ -307,12 +307,12 @@ def compose():
             P['frm'] += [[t0 + st * S, t0 + (st + 4) * S, TAIKO if st == 0 else BENDIR, 120 if st == 0 else 108] for st in (0, 6, 12)]
             P['wave'].append([t0, t0 + BAR - 12, base, 80])
             # darbuka: 8en, dum op de 3-3-2, tek ertussen
-            hits = ((0, DUM_LO, 112), (2, TEK, 96), (4, KA, 84), (6, DUM_LO, 106), (8, TEK, 100), (10, KA, 86),
-                    (12, DUM_LO, 108), (14, TEK, 98))
+            hits = ((0, DUM_LO, 127), (2, TEK, 112), (4, KA, 100), (6, DUM_LO, 122), (8, TEK, 116), (10, KA, 102),
+                    (12, DUM_LO, 124), (14, TEK, 114))       # v1-meting: darbuka in C maar 6% -> harder
             P['drk'] += [[t0 + st * S, t0 + st * S + S, n, v] for st, n, v in hits]
             # strijkers: laag slangachtig ostinato in 16en (D Eb D C | D Eb F# Eb), vanaf C' een octaaf hoger
             cell = (0, 1, 0, -2, 0, 1, 4, 1)
-            sb = near(r, p('C3')) + (12 if sec == 'C2' else 0)
+            sb = near(r, p('C4'))       # C3 was onhoorbaar (A-gewogen 38 dB tegen koper 63)
             if not (sec == 'C2' and i >= 6):
                 P['str'] += [[t0 + k * S, t0 + (k + 1) * S, sb + cell[k % 8], 92 if k % 4 == 0 else 78] for k in range(16)]
             else:      # maat 39-40: alles in 16en omhoog (39) en een dalende hijaz-run terug naar Confined (40)
@@ -399,9 +399,10 @@ def write_voicegroup():
 
 # ---- bouwen ---------------------------------------------------------------------------------------------------------
 TRACKS = [   # (naam, programma, volume, pan)
-    ('oud', OUD, 120, 56), ('miz', MIZ, 112, 70), ('str', STR, 92, 76), ('pizz', PIZZ, 100, 52),
-    ('bass', BASS, 96, 64), ('horn', HORN, 110, 58), ('tuba', TUBA, 96, 64), ('tpt', TPT, 82, 72),
-    ('choir', CHOIR, 76, 64), ('timp', TIMP, 100, 64), ('drk', DRUMS, 112, 60), ('frm', DRUMS, 108, 64),
+    # mix na twee solo-metingen (A-gewogen): leads 46-61%, darbuka eerst 5-9% (in C 3%), koor even luid als het koper
+    ('oud', OUD, 100, 56), ('miz', MIZ, 92, 70), ('str', STR, 106, 76), ('pizz', PIZZ, 96, 52),
+    ('bass', BASS, 92, 64), ('horn', HORN, 70, 58), ('tuba', TUBA, 60, 64), ('tpt', TPT, 54, 72),
+    ('choir', CHOIR, 34, 64), ('timp', TIMP, 94, 64), ('drk', DRUMS, 127, 60), ('frm', DRUMS, 127, 64),
     ('perc', DRUMS, 76, 74), ('wave', WAVE, 44, 64), ('noise', NOISE, 60, 64),
 ]
 PSG = {'wave', 'noise'}

@@ -36122,3 +36122,363 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Phantom Force
 - Power Whip
 - Earthquake
+
+=== TRAINER_RESORT_MISTY ===
+Name: MISTY
+Class: Leader
+Pic: Misty
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Politoed @ Damp Rock
+Level: 75
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Scald
+- Ice Beam
+- Hypnosis
+- Encore
+
+Golduck @ Life Orb
+Level: 75
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Psychic
+- Ice Beam
+- Calm Mind
+
+Kingdra @ Choice Specs
+Level: 75
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Muddy Water
+
+Lapras @ Sitrus Berry
+Level: 75
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Freeze-Dry
+- Hydro Pump
+- Thunder
+- Ice Shard
+
+Gyarados @ Lum Berry
+Level: 75
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Bounce
+
+Starmie @ Life Orb
+Level: 77
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Thunder
+- Psychic
+- Rapid Spin
+
+=== TRAINER_RESORT_ERIKA ===
+Name: ERIKA
+Class: Leader
+Pic: Erika
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales @ Heat Rock
+Level: 75
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Nasty Plot
+
+Victreebel @ Life Orb
+Level: 75
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Power Whip
+- Sludge Bomb
+- Sucker Punch
+- Swords Dance
+
+Lilligant @ Focus Sash
+Level: 75
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Quiver Dance
+- Petal Dance
+- Sleep Powder
+- Hidden Power
+
+Tangrowth @ Leftovers
+Level: 75
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Giga Drain
+- Knock Off
+- Sleep Powder
+- Ancient Power
+
+Bellossom @ Sitrus Berry
+Level: 75
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Quiver Dance
+- Giga Drain
+- Moonblast
+- Sleep Powder
+
+Vileplume @ Life Orb
+Level: 77
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Solar Beam
+- Sludge Bomb
+- Weather Ball
+- Sleep Powder
+
+=== TRAINER_RESORT_LORELEI ===
+Name: LORELEI
+Class: Elite Four
+Pic: Lorelei
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales_Alola @ Icy Rock
+Level: 76
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+Dewgong @ Leftovers
+Level: 76
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Ice Beam
+- Surf
+- Encore
+- Perish Song
+
+Cloyster @ White Herb
+Level: 76
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+
+Jynx @ Life Orb
+Level: 76
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Psychic
+- Lovely Kiss
+- Nasty Plot
+
+Slowbro @ Sitrus Berry
+Level: 76
+Ability: Oblivious
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Scald
+- Psychic
+- Slack Off
+- Trick Room
+
+Lapras @ Leftovers
+Level: 78
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Hydro Pump
+- Thunder
+- Freeze-Dry
+
+=== TRAINER_RESORT_CYNTHIA ===
+Name: CYNTHIA
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Spiritomb @ Leftovers
+Level: 78
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+
+Roserade @ Focus Sash
+Level: 78
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+Togekiss @ Sitrus Berry
+Level: 78
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Timid
+- Air Slash
+- Dazzling Gleam
+- Follow Me
+- Nasty Plot
+
+Lucario @ Life Orb
+Level: 78
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Hasty
+- Aura Sphere
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+
+Milotic @ Leftovers
+Level: 78
+Ability: Marvel Scale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Scald
+- Ice Beam
+- Recover
+- Haze
+
+Garchomp @ Life Orb
+Level: 80
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Dragon Claw
+- Rock Slide
+- Swords Dance
+
+=== TRAINER_BIRCH_RESORT ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Rabsca
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
+
+Clodsire
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Earthquake
+- Poison Jab
+- Recover
+- Toxic Spikes
+
+Palossand
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Sand Tomb
+
+Mudsdale
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Iron Defense
+
+Pyukumuku @ Rocky Helmet
+Level: 76
+Ability: Innards Out
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Toxic
+- Recover
+- Counter
+- Soak
+
+Muk_Hoenn
+Level: 78
+Ability: Stench
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover

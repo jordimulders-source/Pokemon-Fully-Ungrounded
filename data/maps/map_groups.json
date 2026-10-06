@@ -707,6 +707,10 @@
     "GhostShip_CaptainsOffice",
     "FloatingMarket",
     "SteamIsland",
-    "SteamIsland_Cave"
+    "SteamIsland_Cave",
+    "ParadisoResort",
+    "ParadisoResort_Lobby",
+    "ParadisoResort_WineHall",
+    "ParadisoResort_Bar"
   ]
 }

@@ -355,6 +355,12 @@ $(OBJEVENTGFXDIR)/people/petrel.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/misty.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/cynthia.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/turd.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
 $(OBJEVENTGFXDIR)/people/lt_surge.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

@@ -576,6 +576,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Petrel,                OBJ_EVENT_PAL_TAG_PETREL}, // Project Grounded
     {gObjectEventPal_GiantWailord,          OBJ_EVENT_PAL_TAG_GIANT_WAILORD}, // Project Grounded
     {gObjectEventPal_PlasmaFrigate,         OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE}, // Project Grounded
+    {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA}, // Project Grounded (strandresort)
+    {gObjectEventPal_Turd,                  OBJ_EVENT_PAL_TAG_TURD}, // Project Grounded (strandresort)
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoC,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_C}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoD,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_D}, // Project Grounded (FRLG)

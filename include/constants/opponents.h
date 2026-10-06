@@ -1067,6 +1067,11 @@
 #define TRAINER_PLASMA_ROOD                 1042 // ruim (dubbel met Zinzolin)
 
 // 1034-1049: vrij gehouden voor andere agents (zee)
+#define TRAINER_RESORT_MISTY                1043 // Project Grounded: strandresort (post-game, team uit het Stadium)
+#define TRAINER_RESORT_ERIKA                1044 // Project Grounded: strandresort
+#define TRAINER_RESORT_LORELEI              1045 // Project Grounded: strandresort (strandbar)
+#define TRAINER_RESORT_CYNTHIA              1046 // Project Grounded: strandresort (lobby)
+#define TRAINER_BIRCH_RESORT                1047 // Project Grounded: Birch en de drol op het strand van het resort
 #define TRAINER_GHOST_SAILOR_SILAS          1050 // Project Grounded: spookschip S.S. AGAVE, dek (uitkijk)
 #define TRAINER_GHOST_SAILOR_MORGAN         1051 // Project Grounded: spookschip, dek (heeft een kaartstuk)
 #define TRAINER_GHOST_SAILOR_NED            1052 // Project Grounded: spookschip, gang (kok)

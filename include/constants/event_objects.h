@@ -285,7 +285,10 @@
 
 #define OBJ_EVENT_GFX_PLASMA_FRIGATE                  274 // Project Grounded: Plasma Frigate (S.S. Tidal-sprite, eigen palet; Nothing Island)
 
-#define NUM_OBJ_EVENT_GFX                        275
+#define OBJ_EVENT_GFX_CYNTHIA                         275 // Project Grounded: strandresort (sheet cynthia.png, 2x -> 1x)
+#define OBJ_EVENT_GFX_TURD                            276 // Project Grounded: drol op het strand van het resort (Birch)
+
+#define NUM_OBJ_EVENT_GFX                        277
 
 
 // These are dynamic object gfx ids.
@@ -438,6 +441,8 @@
 #define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
 #define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x113A // Project Grounded: Plasma Frigate
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x113B // Project Grounded: strandresort
+#define OBJ_EVENT_PAL_TAG_TURD                     0x113C // Project Grounded: strandresort (drol)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -79,6 +79,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGrunt
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailord;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PlasmaFrigate;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Turd;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -365,6 +367,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PETREL] =                   &gObjectEventGraphicsInfo_Petrel,
     [OBJ_EVENT_GFX_GIANT_WAILORD] =            &gObjectEventGraphicsInfo_GiantWailord,
     [OBJ_EVENT_GFX_PLASMA_FRIGATE] =           &gObjectEventGraphicsInfo_PlasmaFrigate, // Project Grounded
+    [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia, // Project Grounded (strandresort)
+    [OBJ_EVENT_GFX_TURD] =                     &gObjectEventGraphicsInfo_Turd, // Project Grounded (strandresort)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)

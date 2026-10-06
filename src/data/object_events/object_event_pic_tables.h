@@ -443,6 +443,14 @@ static const struct SpriteFrameImage sPicTable_Teala[] = {
     overworld_ascending_frames(gObjectEventPic_Teala, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Cynthia[] = { // Project Grounded (strandresort)
+    overworld_ascending_frames(gObjectEventPic_Cynthia, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Turd[] = { // Project Grounded (strandresort)
+    overworld_ascending_frames(gObjectEventPic_Turd, 2, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_BreakableRock[] = {
     overworld_ascending_frames(gObjectEventPic_BreakableRock, 2, 2),
 };

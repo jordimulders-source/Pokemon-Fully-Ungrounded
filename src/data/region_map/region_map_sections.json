@@ -1362,6 +1362,14 @@
       "y": 9,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_PARADISO_RESORT",
+      "name": "PARADISO RESORT",
+      "x": 9,
+      "y": 14,
+      "width": 1,
+      "height": 1
     }
   ]
 }

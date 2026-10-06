@@ -675,8 +675,8 @@
 #define FLAG_ITEM_UNKNOWN_CAVE_1F_MAX_REVIVE  0x274 // Project Grounded: item in de verborgen grot achter Meteor Falls (1F)
 #define FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR  0x275 // Project Grounded: item in de verborgen grot achter Meteor Falls (B1F)
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
+#define FLAG_RECEIVED_RESORT_WINE  0x277 // Project Grounded: Wallace' wijn (Berry Juice) in het PARADISO RESORT ontvangen
+#define FLAG_HIDE_RESORT_RIVAL     0x278 // Project Grounded: rivaal in het PARADISO RESORT; in OnTransition gezet/gewist (post-game)
 #define FLAG_HIDE_SKY_PILLAR_GIRATINA  0x279 // Project Grounded: Giratina (static) onderin de omgekeerde Sky Pillar
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag

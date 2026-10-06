@@ -5170,6 +5170,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/SteamIsland_Cave/border.bin",
       "blockdata_filepath": "data/layouts/SteamIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_PARADISO_RESORT",
+      "name": "ParadisoResort_Layout",
+      "width": 40,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ParadisoResort/border.bin",
+      "blockdata_filepath": "data/layouts/ParadisoResort/map.bin"
     }
   ]
 }

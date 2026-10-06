@@ -15,4 +15,5 @@ voice_group tapu_drumset, 36
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tambourine, 255, 0, 255, 90
 	voice_directsound 60, 0, DirectSoundWaveData_ethnic_flavours_hyoushigi, 255, 0, 255, 90
 	voice_directsound 60, 0, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 120
+	voice_directsound 60, 0, DirectSoundWaveData_tapu_impact, 255, 0, 255, 230
 

@@ -110,7 +110,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
 | Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
-| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v3 wacht op Jordi (geen HOO; synth-lead maat 9-12 naar zijn neurie, synthbas, hardere drums + PSG-hats; HIT 5,54 s) | "Tapu" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v4 wacht op Jordi (alleen 0-25 s + fluit 49-60 aangepast: geen bas vóór maat 12, drums voorop, HIT met impact-sample 2x, synth legato naar de neurie; HIT 5,54 s) | "Tapu" |
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 GEPAUZEERD (Jordi: dof, percussie stotterig; volgende sessie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
@@ -590,3 +590,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   zaagtanden, loop = kgv(80, 81) samples = exact). Bas per 16e vergelijken (toonklasse MIDI vs. stem): 75% -> 83%.
   PSG-blokgolf (16en-puls) en PSG-ruis (hats) voor energie zonder DS-kanalen. Opname-offset zelf meten (maat 1 =
   0,07 s in recsolo/recaudio, niet 0,55). -V076: 0 overlopen, piek 102/127, RMS 3180 (groove 3300-3500, bewust).
+- Tapu v4 (Jordi over v3: 'baslijn die niet bestaat', 'drums te zacht', 'klap op 6 harder', 'synth valt weg vanaf 13 s'):
+  **eerst per stem meten of een partij er echt is**: de 'bas' van maat 1-11 was de lage romp van de taiko's in de
+  basstem (pyin-stemhebbendheid 1-40%, C#2/D2 per slag); de eerste echte bastoon (F2, 40-67%) komt in maat 12.
+  **detach() op een 16en-lead met een uitklinktijd > een 16e maakt halve stipjes**: de synth nu legato (noot tot de
+  volgende aanslag) en gaten gedicht. **Een lange release (impact 230) in een drumpartij verhoogt de staart van de hele
+  partij in allocate()**: zulke slagen als eigen partij verdelen en daarna op het spoor zetten. Balans per sectie
+  A-gewogen t.o.v. de mix (solo-opnames, `bal4.py`): maat 1-4 drums -1,8 / chant -4,5 dB (origineel -4,1 / -7,0).
+  De klap zat al op de top van de 8-bit-mixer (piek 106/127): meer impact via stapelen + 4 zestienden stilte ervoor.
+  -V076: 0 overlopen, piek 106/127, RMS 2800-3500.

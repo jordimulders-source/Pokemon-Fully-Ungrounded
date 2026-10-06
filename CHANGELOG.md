@@ -17033,3 +17033,8 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.109] - Neo Plasma v12k: het slotloopje van de melodie weer in octaven
 - Jordi (met zijn neuriën): de laatste noot valt nog twee keer weg. Dat is het slotloopje "TUDUDU" (A#–F#–D#–C) aan het eind van de frase: in de bron in octaven, maar het lage octaaf viel weg omdat het (opgetild tot C3) samenviel met de melodienoot. Waar dat gebeurt speelt nu het octaaf erboven mee (177 noten), zodat het loopje even vol blijft als de rest. Solo-opname: op 0:17,7–0:18,1 en 0:23,2–0:24 van ±33 naar ±48 (even luid als de rest van de melodie).
+
+### [v0.9.110] - Eb en vloed op Route 132, Juans eiland
+- **Eb en vloed** (Route 132, het wad ten noorden van het zandeiland): elk even uur eb, elk oneven uur vloed (wisselt bij het binnenkomen van de kaart, dus je staat nooit opeens in het water). Bij eb: ondiep wad met rotsen en getijdenpoelen, slik waarin je wegzakt met wilde Pokémon (Wugtrio, Crabrawler, Pyukumuku, Gastrodon, Barbaracle, Clawitzer, Corsola, Crustle, Palossand, Toxapex; zeldzaam Tatsugiri en Crabominable, lv 36–42), een strandjutter die je elke dag een vondst geeft en vertelt hoe lang het nog duurt tot het getij keert, en twee verborgen items. Bij vloed staat er een getijdentabel in een rots op het zandeiland gekrast. Bouwscript `tools/grounded/maptools/tides_juan.py`.
+- **Juans eiland** (Route 129): Juan staat niet meer in het open water maar op een eilandje met strand, palmen en een lagune als waterpodium, met een leerling die "een levende fontein" moet zijn, een fan, een criticus, een zonnebadende Walrein en "JUAN'S OPEN-AIR WATER ACADEMY" in het zand. Zijn gevecht is ongewijzigd.
+- Teksten: Engelse placeholders. ROM: +9,5 KB. Flags 0x2B9–0x2BB, dagflag 0x94F.

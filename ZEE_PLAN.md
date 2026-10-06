@@ -10,7 +10,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
 
 ## Besluiten 5 okt (tweede ronde)
 **Planning:** pas als alle muziek af is.
-- **Eb en vloed: ja.** Het moet de helft van de dag zijn, zodat je allebei op één avond ziet (de meeste spelers spelen 's avonds).
+- ~~**Eb en vloed: ja.**~~ (gedaan, v0.9.110: Route 132.) Het moet de helft van de dag zijn, zodat je allebei op één avond ziet (de meeste spelers spelen 's avonds).
   Voorstel: om het uur wisselen (even uur eb, oneven uur vloed). Je wacht dan hooguit een uur, nooit tot het weekend.
 - **Scheepswrakkenkerkhof, zeetempel (Manaphy), drijvende markt, stoomeiland, Lugia: ja.**
 - **Vuurtoren: ja, maar** er zijn geen assets voor (Emerald/FRLG hebben geen vuurtoren). Zelf tekenen of uit een bronsheet halen; eerst een
@@ -20,7 +20,7 @@ Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en
   de grootste vis uit je team wegen (zoals de Lotad/Seedot-meter); de recordhouder is altijd iemands Magikarp.
   Je krijgt altijd een troostprijs die stiekem nuttiger is dan de hoofdprijs (bijv. Lucky Egg); 1e plaats = iets nutteloos
   (een trofee, één Poké Ball).
-- **Juan:** staat gewoon op een eiland klaar om met je te vechten (eiland mooier maken, idee 5).
+- ~~**Juan:**~~ (gedaan, v0.9.110) staat gewoon op een eiland klaar om met je te vechten (eiland mooier maken, idee 5).
 - **Strandresort:** gasten Misty, Erika, Cynthia, Lorelei en Wallace, plus een hele zooi dronken fans.
   - Wallace geeft in een grote kamer een demonstratie van zijn nieuwe wijn, met snobistische connoisseurbeschrijvingen,
     fans en wijndrinkers, en een paar oude mannen die na het proeven in emmers spugen.

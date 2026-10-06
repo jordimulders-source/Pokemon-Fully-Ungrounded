@@ -57,7 +57,7 @@ def subtitle(im, sub):
     elif sub == 3:
         im = outlined(im, 120, 3, 'Notes of brine, regret and KYOGRE.', WHITE15, GRAY15, DARK15, scale=1, font='narrow')
     elif sub == 4:
-        im = outlined(im, 120, -3, 'SANTÉ!', YELLOW15, BLUE15, DARK15, scale=2)
+        im = outlined(im, 120, 6, 'SANTÉ!', YELLOW15, BLUE15, DARK15, scale=2)
     return im
 
 

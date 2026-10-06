@@ -192,11 +192,14 @@ def chant_theme():
     return hi, lo
 
 
+INTRO_CHANT = 0.62   # v4: chant maat 1-4 -4 dB (gemeten: chant -2,3 / drums -6,7 dB t.o.v. de mix; origineel -7,0 / -4,1)
+
+
 def chant():
     out = []
     for s in CHANT:
         notes_str(out, s, 100)
-    out += chant_theme()[0]
+    out += [[a, b, n, int(v * INTRO_CHANT)] for a, b, n, v in chant_theme()[0]]
     return dedupe(out)
 
 
@@ -213,15 +216,15 @@ def legato(notes):
 
 
 def chant_lo():
-    return dedupe(chant_theme()[1])
+    return dedupe([[a, b, n, int(v * INTRO_CHANT)] for a, b, n, v in chant_theme()[1]])
 
 
 # ---------------------------------------------------------------- strijkers / pad (stem 'other') ----------------------
 def pad():
     out = []
     put(out, 1, [(0, 40, ['C5', 'C6'], 72)])                         # maat 1-3 (+ half 4): tritonusakkoord onder de chant
-    put(out, 7, [(0, 16, ['F4', 'F#4'], 50)])                        # aanzwellende clusters (v4 zachter: drums voorop)
-    put(out, 8, [(0, 8, ['G#4', 'A4'], 58), (8, 8, ['G#4', 'A4'], 70)])
+    put(out, 7, [(0, 16, ['F4', 'F#4'], 40)])                        # aanzwellende clusters (v4 zachter: drums voorop)
+    put(out, 8, [(0, 8, ['G#4', 'A4'], 46), (8, 8, ['G#4', 'A4'], 56)])
     groove_pad = {16: ['G4', 'A#4'], 20: ['A#4', 'D5'], 24: ['G4', 'C5'], 28: ['C5', 'D#5']}
     for ob in range(13, 29):
         put(out, ob, [(0, 16, groove_pad.get(ob, ['E4', 'B4']), 62)])
@@ -432,15 +435,18 @@ def drums():
         hit(m, 4, q, TAIKO, 96 + 10 * i)
     # maat 5 = de HIT (v3 zonder 'HOO'): de eerste grote slag: odaiko + taiko + ka + bekken + kick
     # v4 (Jordi: 'de klap op 6 mag ook harder ... meer impact, of meerdere instrumenten tegelijkertijd'): odaiko + eigen
-    # impact-sample (lage odaiko + sub-val + orkesthit) + taiko + kick + bekken, met pauk en hoornstoot
+    # impact-sample (lage odaiko + sub-val + orkesthit, 2x) + taiko + bekken, met pauk en hoornstoot
     # (de ka en de laatste slag van maat 4 vallen weg: kanalen vrij voor de klap)
     t = [n for n in t if n[0] != at(4, 15)]
     pc = [n for n in pc if n[0] != at(5, 0)]
+    # het impact-sample op twee sporen tegelijk (taiko 127 + toms 108, zelfde fase = +5 dB): in v4-test 1 was de klap
+    # met één impact op het bekkenspoor even luid als een groove-slag (44 dB per 16e)
     hit(t, 5, 0, BIGTOM, 127)
-    hit(cr, 5, 0, IMPACT, 127)
+    imp = []                                                          # eigen partij in de stemverdeler (lange release),
+    hit(imp, 5, 0, IMPACT, 127)                                       # daarna op de sporen taiko en toms
+
     hit(m, 5, 0, TAIKO, 127)
     hit(cr, 5, 0, CRASH, 127)
-    hit(m, 5, 0, KICK, 127)
     hit(tp, 5, 0, p('E2'), 127, 4)
     # maat 5-8: 'dan beginnen de drums' (gemeten, volle sterkte)
     for ob in range(5, 9):
@@ -495,7 +501,7 @@ def drums():
     for ob in (13, 29, 37, 49, 53, 57):
         hit(cr, ob, 0, CRASH, 116, 8)
     return {'taiko': ring_gates(dedupe(t)), 'toms': ring_gates(dedupe(m)), 'perc': ring_gates(dedupe(pc)),
-            'cym': ring_gates(dedupe(cr)), 'timp': dedupe(tp)}
+            'cym': ring_gates(dedupe(cr)), 'timp': dedupe(tp), 'imp_t': ring_gates(imp), 'imp_m': ring_gates(list(imp))}
 
 
 # ---------------------------------------------------------------- sporen ----------------------------------------------
@@ -523,12 +529,12 @@ def build(render_dir=None, frag_dir=None):
     melodic = {'chant': CHOIR, 'chlo': CHLO, 'syn': SYN, 'horn': HORN, 'hi': SHAKU, 'pips': FLUTE, 'bass': BASS,
                'pad': STR, 'pulse': STR2, 'timp': TIMP}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in melodic.items()}
-    for k in ('taiko', 'toms', 'perc', 'cym'):                        # per partij de langste release van zijn kitnoten
+    for k in ('taiko', 'toms', 'perc', 'cym', 'imp_t', 'imp_m'):      # per partij de langste release van zijn kitnoten
         tail[k] = max(release_ticks(kitrel[n[2]], TPB, BPM) for n in parts[k]) + 2
     for k in ('chlo', 'horn', 'hi', 'pips', 'bass', 'pulse', 'timp', 'pad'):   # v4: syn niet (legato, doorgetrokken)
         parts[k] = detach(parts[k], tail[k])
     parts['chant'] = legato(parts['chant'])                           # gezongen: noten lopen in elkaar over
-    order = ['taiko', 'syn', 'bass', 'cym', 'chant', 'chlo', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
+    order = ['imp_t', 'imp_m', 'taiko', 'syn', 'bass', 'cym', 'chant', 'chlo', 'toms', 'perc', 'horn', 'hi', 'pips', 'timp', 'pulse',
              'pad']
     kept = allocate({k: parts[k] for k in order}, order, tail, max_voices=MAX_V)
     print('uitklinktijd (ticks):', tail)
@@ -538,6 +544,8 @@ def build(render_dir=None, frag_dir=None):
         print('  %-6s %4d noten, %3d vallen weg (%.1f%%)%s' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / max(n, 1),
                                                              ' (maten origineel %s)' % gone[:12] if gone else ''))
         parts[k] = kept[k]
+    parts['taiko'] = sorted(parts['taiko'] + parts.pop('imp_t'))
+    parts['toms'] = sorted(parts['toms'] + parts.pop('imp_m'))
     parts['synp'] = detach(synth_psg(), 2)                            # PSG: buiten de stemverdeler (geen DS-kanaal)
     parts['hat'] = hats()
     song = Song(TPB, 500000)

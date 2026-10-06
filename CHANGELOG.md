@@ -17158,3 +17158,10 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.129] - Wallace-intro bijgesteld, battle tester compleet
 - Wallace-intro: "SANTÉ!" valt niet meer half buiten beeld (accent bovenaan).
 - Debugmenu Utilities > "Battle test…" bevat nu alle gevechten met een eigen intro of thema: de acht gymleiders, Steven, Mitch, SickBlik, Mimi, de Burglar, Shy Guy (Sunset Wilds), Archie + Maxie (werkstraf), Lugia, Ho-Oh, Manaphy, Volcanion, Munkidori, Fezandipiti, Ogerpon en Regigigas (naast de bestaande).
+
+### [v0.9.130] - Battle! Tapu v2
+- Diagnose v1: de drums waren tikjes (de MIDI kapte elke slag na 2–3 zestienden af; FluidR3 negeert dat, de GBA niet) en de vorm klopte niet (het nummer begint met het chant-thema, niet met de grote slag).
+- Nu in de volgorde van het origineel: chant-thema (maat 1–4), op maat 5 de "HOO!" met de eerste grote slag (5,54 s; daar begint het gevecht, `TAPU_HIT_FRAME` 333), dan de drums en vanaf maat 9 het TUDUDU-taikomotief. De loop springt terug naar de chant.
+- Eigen samples (77,8 KB, `tapu_*`): odaiko, taiko, ka, bekken, en formant-gesynthetiseerde stemmen (chant-'aa', lage 'hu', zesstemmige 'HOO!'-kreet). Slagen klinken uit tot de volgende slag.
+- Het "fluitje" (maat 41–48) zijn korte E6-tikjes op de tellen met de staccato-fluit.
+- Nog niet aan de gevechten gekoppeld (wacht op Jordi).

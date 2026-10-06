@@ -4250,6 +4250,39 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Power Whip
 - Earthquake
 
+=== PARTNER_STADIUM_SIRENA ===
+Name: SIRENA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Back Pic: Brendan
+AI: Check Bad Move
+
+Primarina
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sparkling Aria
+- Moonblast
+- Sing
+- Aqua Jet
+
+Milotic
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Attract
+- Recover
+- Ice Beam
+
+Gorebyss
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Smash
+- Psychic
+- Hydro Pump
+- Attract
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

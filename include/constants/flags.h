@@ -1243,17 +1243,17 @@
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_COMET_SHARD 0x4A5 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_STAR_PIECE 0x4A6 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_RECEIVED_METEOR_FALLS_ELDER_GIFT 0x4A7 // Project Grounded: Meteor Falls (diepte)
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_ITEM_ROUTE_107_DIVE_BALL                               0x4A8 // Project Grounded (zeevulling 1): Route 107, rots-eilandje
+#define FLAG_RECEIVED_ROUTE_107_LEFTOVERS                           0x4A9 // Project Grounded (zeevulling 1): Route 107, sushikok (Leftovers)
+#define FLAG_ITEM_ROUTE_126_METAL_COAT                              0x4AA // Project Grounded (zeevulling 1): Route 126, Garbage Patch
 #define FLAG_RECEIVED_UMBRELLA_REGINALD 0x4AB // Project Grounded: Victory Road-zijkamers
 #define FLAG_HIDE_VICTORY_ROAD_GARCHOMP 0x4AC // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_LIFE_ORB 0x4AD // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_EVIOLITE 0x4AE // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_DRAGON_FANG 0x4AF // Project Grounded: Victory Road-zijkamers
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_ROUTE_126_CRATE_SOLVED                                 0x4B0 // Project Grounded (zeevulling 1): Route 126, raadselkist (PP Max)
+#define FLAG_ROUTE_127_WAILMER_RESCUED                              0x4B1 // Project Grounded (zeevulling 1): Route 127, gestrande Wailmer teruggeduwd (object weg, Shell Bell)
+#define FLAG_ITEM_UNDERWATER_105_BIG_NUGGET                         0x4B2 // Project Grounded (zeevulling 1): Underwater 105, zeemansgraf
 #define FLAG_JAGGED_PASS_LAVA_TUBE_ROCK                             0x4B3 // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_ITEM_LAVA_TUBE_CHARCOAL                                0x4B4 // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_ITEM_LAVA_TUBE_FIRE_STONE                              0x4B5 // Project Grounded: Lavabuis / top van Mt. Chimney
@@ -1547,24 +1547,24 @@
 #define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
 #define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
 #define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
-#define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
-#define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
-#define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
-#define FLAG_UNUSED_0x91E                           (SYSTEM_FLAGS + 0xBE) // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_107_BIG_PEARL        (SYSTEM_FLAGS + 0xAD) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_107_HARD_STONE       (SYSTEM_FLAGS + 0xAE) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_BERRY_JUICE      (SYSTEM_FLAGS + 0xAF) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_BLACK_SLUDGE     (SYSTEM_FLAGS + 0xB0) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_PRETTY_FEATHER   (SYSTEM_FLAGS + 0xB1) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_BIG_PEARL        (SYSTEM_FLAGS + 0xB2) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_MYSTIC_WATER     (SYSTEM_FLAGS + 0xB3) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_DAMP_ROCK        (SYSTEM_FLAGS + 0xB4) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_DEEP_SEA_TOOTH (SYSTEM_FLAGS + 0xB5) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_HEART_SCALE (SYSTEM_FLAGS + 0xB6) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_BIG_PEARL   (SYSTEM_FLAGS + 0xB7) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_125_NEVER_MELT_ICE (SYSTEM_FLAGS + 0xB8) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_125_HEART_SCALE (SYSTEM_FLAGS + 0xB9) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_DEEP_SEA_SCALE (SYSTEM_FLAGS + 0xBA) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_STAR_PIECE  (SYSTEM_FLAGS + 0xBB) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_DRAGON_SCALE (SYSTEM_FLAGS + 0xBC) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_PEARL       (SYSTEM_FLAGS + 0xBD) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_HEART_SCALE (SYSTEM_FLAGS + 0xBE) // Project Grounded (zeevulling 1): verborgen item
 #define FLAG_UNUSED_0x91F                           (SYSTEM_FLAGS + 0xBF) // Unused Flag
 
 // Daily Flags

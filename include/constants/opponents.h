@@ -1078,7 +1078,15 @@
 #define TRAINER_GHOST_SAILOR_PERCY          1053 // Project Grounded: spookschip, hutten
 #define TRAINER_GRIMSBY                     1054 // Project Grounded: kapitein Grimsby (spookschip); Battle Stadium
 
-#define TRAINERS_COUNT                      1055
+#define TRAINER_SAILOR_DUNCAN               1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
+#define TRAINER_RUIN_MANIAC_SIMON           1101 // Project Grounded (zeevulling 1): Route 107, rots-"ruine"
+#define TRAINER_OLD_COUPLE_HAL_AND_MAE      1102 // Project Grounded (zeevulling 1): Route 126, picknickbank (dubbel)
+#define TRAINER_BIRD_KEEPER_OSWALD          1103 // Project Grounded (zeevulling 1): Route 126, vogeleilandje
+#define TRAINER_SIRENA                      1104 // Project Grounded (zeevulling 1): Route 126, zeemeermin-fan (grap-trainer); Battle Stadium
+#define TRAINER_TWINS_PIP_AND_PEP           1105 // Project Grounded (zeevulling 1): Route 127, tweeling (dubbel)
+#define TRAINER_RANGER_MARISOL              1106 // Project Grounded (zeevulling 1): Route 127, bij de gestrande Wailmer
+
+#define TRAINERS_COUNT                      1107
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

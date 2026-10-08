@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Project Grounded: B_TRANSITION_KECCLES (Keccles de Kecleon, het hoogintelligente meesterbrein; ook in het Stadium).
+"""Project Grounded: B_TRANSITION_KECCLES (Keccles de Kecleon, een droge, echt wijze denker; ook in het Stadium).
 
-Een verlaten lab bij nacht: schoolborden vol krijtformules. De camera zoekt (drie shots, handheld): het lege lab, een
-bord met formules ("KECLEON = WALL", "WALL = KECLEON?", "FREE WILL" doorgestreept, "P(YOU WIN) < 0.01"), dan het bord
-met THE PLAN, en jouw gezicht omcirkeld. Op dat bord hangt een rode zigzag in de lucht (de enige streep die een Kecleon
-niet kan camoufleren), dan gaat er een oog open in het krijt. De camouflage golft van boven naar beneden weg en Keccles
-staat ervoor (echte Kecleon-sprite). Hij grijnst; naast hem schrijft het krijt Q.E.D. Wit, gevecht.
+De humor zit in wie het zegt (een Kecleon met een academische carrière), niet in gekke zinnen: wat op de borden staat
+klopt echt (waarneming, camouflage, geduld). Een verlaten lab bij nacht: schoolborden vol krijt. De camera zoekt (drie
+shots, handheld): het lege lab ("EYES SEE EDGES, NOT THINGS."), een bord met aantekeningen ("COLOR = CONTEXT",
+"SELF = CONTEXT ?", "FREE WILL ?", "HASTE < PATIENCE"), dan het bord met THE PLAN (OBSERVE, WAIT, ADAPT, ACT ONCE) en
+jouw gezicht omcirkeld. Op dat bord hangt een rode zigzag in de lucht (de enige streep die een Kecleon niet kan
+camoufleren), dan gaat er een oog open in het krijt. De camouflage golft van boven naar beneden weg en Keccles staat
+ervoor (echte Kecleon-sprite). Hij grijnst; naast hem schrijft het krijt "WE SEE WHAT WE EXPECT." (lang genoeg om te
+lezen). Wit, gevecht.
 
 Film (zie film.py): tiles/tilemaps/paletten naar graphics/battle_transitions/film_keccles*.
 Gebruik: python3 tools/grounded/keccles_transition.py [voorbeeldmap]
@@ -28,9 +31,11 @@ T_EYE = 126       # het oog gaat open
 T_RIPPLE = 148    # de camouflage golft weg
 T_RIPPLE_END = 176
 T_GRIN = 188      # bek open
-T_QED = 194
-T_WHITE = 206
-T_END = 218
+T_QUOTE = 194     # het krijt schrijft de les (QUOTE_SPEED frames per letter), daarna leestijd
+QUOTE = ('WE SEE WHAT', 'WE EXPECT.')
+QUOTE_SPEED = 1
+T_WHITE = T_QUOTE + sum(len(q) for q in QUOTE) * QUOTE_SPEED + 100     # ±1,7 s leestijd voor 5 woorden
+T_END = T_WHITE + 12
 
 BLACK = (0, 0, 0)
 WHITE = (248, 248, 248)
@@ -98,11 +103,11 @@ def shot1():
     a = wall()
     board(a, 14, 22, 112, 92, 1)
     board(a, 130, 22, 228, 92, 2)
-    for i, s in enumerate(('E=MC2 (ROUGHLY)', 'A+B=PLAN', 'PLAN-B=?', 'KECLEON=WALL')):
+    for i, s in enumerate(('UNSEEN IS NOT', 'ABSENT.', 'SEEN IS NOT', 'UNDERSTOOD.')):
         chalk_text(a, 20, 28 + i * 9, s)
     chalk_circle(a, 92, 74, 12, 10)
     chalk_line(a, 22, 84, 76, 62)
-    for i, s in enumerate(('STEP 1: BE WALL', 'STEP 2: WAIT', 'STEP 3: ???', 'STEP 4: LEAGUE')):
+    for i, s in enumerate(('ON PERCEPTION:', 'EYES SEE EDGES,', 'NOT THINGS.', 'BLUR THE EDGE.')):
         chalk_text(a, 136, 28 + i * 9, s)
     chalk_circle(a, 208, 76, 10, 9, RED)
     # bureau
@@ -137,21 +142,21 @@ def shot2():
         cx, cy = rng.uniform(0, W), rng.uniform(0, H)
         m = (((xs - cx) / 40.0) ** 2 + ((ys - cy) / 14.0) ** 2 < 1)
         fa.dither(a, m, BOARD[2], 0.3)
-    chalk_text(a, 12, 14, 'KECLEON = WALL', 2)
-    chalk_text(a, 12, 34, 'WALL = KECLEON ?', 2)
-    chalk_text(a, 12, 62, 'FREE WILL', 2)
-    chalk_line(a, 8, 68, 112, 64, RED, 2)
-    chalk_text(a, 12, 92, 'P(YOU WIN) < 0.01', 2)
+    chalk_text(a, 12, 14, 'COLOR = CONTEXT', 2)
+    chalk_text(a, 12, 34, 'SELF = CONTEXT ?', 2)
+    chalk_text(a, 12, 62, 'FREE WILL ?', 2)
+    chalk_text(a, 12, 92, 'HASTE < PATIENCE', 2)
     chalk_line(a, 10, 106, 208, 106, CHALK, 1)
-    # grafiek rechtsboven: "slimheid" tegen de tijd
+    # grafiek rechtsboven: hoeveel je ziet tegen hoe lang je kijkt
     chalk_line(a, 168, 18, 168, 72)
     chalk_line(a, 168, 72, 228, 72)
     for i in range(12):
         x = 170 + i * 5
         chalk_line(a, x, 70 - i * i * 0.35, x + 5, 70 - (i + 1) ** 2 * 0.35)
-    chalk_text(a, 172, 76, 'IQ', 1)
-    chalk_text(a, 120, 124, 'HUMANS: CAMO', 1)
-    chalk_text(a, 120, 132, 'HUMANS: ALSO CAMO?', 1)
+    chalk_text(a, 172, 76, 'TIME LOOKING', 1)
+    chalk_text(a, 150, 18, 'SEEN', 1)
+    chalk_text(a, 120, 124, 'EVERYONE WEARS', 1)
+    chalk_text(a, 120, 132, 'A COLOR FOR OTHERS.', 1)
     chalk_text(a, 12, 124, 'SEE ALSO: ME', 1)
     return a
 
@@ -168,9 +173,9 @@ def plan_bg():
     board(a, 6, 8, 234, 130, 5)
     chalk_text(a, 14, 14, 'THE PLAN', 2)
     chalk_line(a, 14, 26, 74, 26)
-    for i, s in enumerate(('1. BE THE WALL', '2. WAIT', '3. ???', '4. LEAGUE')):
+    for i, s in enumerate(('1. OBSERVE', '2. WAIT', '3. ADAPT', '4. ACT ONCE')):
         chalk_text(a, 14, 34 + i * 9, s)
-    chalk_line(a, 52, 52, 66, 52, RED)        # bij ??? een pijl van het gezicht
+    chalk_line(a, 52, 52, 66, 52, RED)        # bij ADAPT een pijl van het gezicht (hij past zich aan jou aan)
     # het gezicht van de speler (krijtpoppetje met pet), rood omcirkeld
     cx, cy = 44, 100
     chalk_circle(a, cx, cy, 10, 10)
@@ -182,7 +187,7 @@ def plan_bg():
     chalk_circle(a, cx, cy - 1, 19, 17, RED, 2, wobble=0.04)
     chalk_text(a, cx + 24, cy - 2, 'YOU', 2, RED)
     chalk_line(a, cx + 10, cy - 18, 60, 54, RED)
-    chalk_text(a, 96, 14, 'TODO: FIND MEANING OF LIFE', 1, CHALK2)
+    chalk_text(a, 14, 124, 'PATIENCE IS ALSO A COLOR.', 1, CHALK2)
     return a
 
 
@@ -259,9 +264,14 @@ def ripple(front):
     return a
 
 
-def qed(a):
-    chalk_text(a, 196, 40, 'Q.E.D.', 1)
-    chalk_line(a, 194, 47, 220, 47)
+QX, QY = 128, 12      # de les rechtsboven op het bord, boven Keccles
+
+
+def quote(a, n=99):
+    """De les, de eerste n letters (het krijt schrijft)."""
+    for i, q in enumerate(QUOTE):
+        chalk_text(a, QX, QY + i * 14, q[:max(0, n)], 2)
+        n -= len(q)
     return a
 
 
@@ -269,7 +279,7 @@ def qed(a):
 def build(preview=None):
     f = film.Film('keccles')
     s1, s2, s3 = shot1(), shot2(), plan_bg()
-    k0, k1 = kec_full(0), qed(kec_full(1))
+    k0, k1 = kec_full(0), quote(kec_full(1))
     p = film.auto_palettes([s1, s2, s3, k0, k1], [BLACK, CHALK, RED], n_free=12)
     pal = [x[:15] for x in p]
 
@@ -295,8 +305,15 @@ def build(preview=None):
         u = (t - T_RIPPLE) / (T_RIPPLE_END - T_RIPPLE - 2)
         f.add(ripple(int(top - 10 + (bot - top + 22) * u)), f.ref, 2)
     f.add(k0, f.ref, T_GRIN - T_RIPPLE_END)
-    f.add(kec_full(1), f.ref, T_QED - T_GRIN)
-    for t in range(T_QED, T_END):
+    f.add(kec_full(1), f.ref, T_QUOTE - T_GRIN)
+    nq = sum(len(q) for q in QUOTE)
+    for n in range(1, nq):
+        if QUOTE[0][:n].endswith(' ') or (n > len(QUOTE[0]) and QUOTE[1][:n - len(QUOTE[0])].endswith(' ')):
+            continue        # spaties: geen eigen beeld
+        f.add(quote(kec_full(1), n), f.ref, QUOTE_SPEED)
+    while len(f.frames) < T_QUOTE + nq * QUOTE_SPEED:
+        f.add(k1, f.ref)
+    for t in range(T_QUOTE + nq * QUOTE_SPEED, T_END):
         w = max(0.0, (t - T_WHITE + 1) / (T_END - T_WHITE))
         f.add(k1, ps(1.0, min(1.0, w)))
     f.encode(preview)
@@ -307,5 +324,6 @@ if __name__ == '__main__':
     d = sys.argv[1] if len(sys.argv) > 1 else None
     f = build(d)
     if d:
-        film.sheet(f.preview_frames, [30, 70, 110, 128, 140, 152, 160, 168, 180, 190, 200, 212],
+        print('KECCLES: T_QUOTE %d, T_WHITE %d, T_END %d' % (T_QUOTE, T_WHITE, T_END))
+        film.sheet(f.preview_frames, [30, 70, 110, 128, 140, 152, 168, 190, 200, 210, 260, T_WHITE - 2],
                    os.path.join(d, 'keccles_keys.png'))

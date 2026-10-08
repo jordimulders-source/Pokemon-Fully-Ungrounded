@@ -26,6 +26,13 @@ ROOT = film.ROOT
 FX_SHAKE = 0x40     # PAUSE: verticaal trillen
 FX_WOBBLE = 0x80    # doorspoelen: het hele beeld golft
 STEP = 3            # gameframes per beeld van de band
+# leestijd (Jordi: "te snel om de tekst te kunnen lezen"): ±1 s per 3-4 woorden, minimaal ±1,5 s
+LABEL_N = 80        # het etiket (was 18)
+GOTCHA_N = 60       # "Gotcha! RALTS was caught!" (was 20)
+S2_N = 50           # "WALLY sent out KIRLIA!" (was 26)
+S3_SPLIT, S3_N = 26, 76     # "Fall of Meteor." / "Wow! Very beaut! Train much team." (was 13 / 26)
+S4_EVO = 24         # "What? KIRLIA is evolving!"
+S4_N = S4_EVO + 46  # "KIRLIA evolved into GALLADE!" (was 24 + 16)
 
 WHITE, BLACK, GREY = (248, 248, 248), (8, 8, 8), (120, 120, 128)
 FIXED = [BLACK, WHITE, GREY]
@@ -291,7 +298,7 @@ def build(preview=None):
         f.add(None, blank_ps)
         fx.append((255, 0))
 
-    # 8-23: blauw scherm, PLAY, het etiket
+    # 8-87: blauw scherm, PLAY, het etiket (lang genoeg om het etiket te lezen)
     blue = np.zeros((H, W, 3), np.uint8)
     blue[:] = BLUE
     b1 = blue.copy()
@@ -302,7 +309,7 @@ def build(preview=None):
     lbl2 = '(DAD: DO NOT TAPE OVER)'
     osd(b1, lbl2, (W - text35_width(lbl2, 1)) // 2, 86, 1)
     ps_blue = f.palset([BLUE, WHITE, BLACK, GREY], [BLUE, WHITE, BLACK, GREY], [BLUE, WHITE, BLACK, GREY])
-    add(b1, ps_blue, 18)
+    add(b1, ps_blue, LABEL_N)
 
     # 26-31: sneeuw, dan de band begint
     sn = [snow(rng) for _ in range(3)]
@@ -311,11 +318,12 @@ def build(preview=None):
         add(sn[k % 3], ps_snow)
 
     # ---------------- Route 102: Wally vangt Ralts met de geleende Zigzagoon
-    S1 = 92
+    T = {'PLAY': 8, 'S1': len(fx)}
+    S1 = 72 + GOTCHA_N
     def s1(t):
         spr = []
         lines = []
-        zig = (ZIGZAG_BACK, 40, 52)
+        zig = (ZIGZAG_BACK, 40, 59)      # zoals in een echt gevecht: midden (72, 80) + backPicYOffset 11
         ralts = (RALTS, 144, 22)
         if t < 16:
             # Wally gooit (achterkant, werpanimatie)
@@ -387,12 +395,13 @@ def build(preview=None):
             add(cur, ps1, band=255, strength=0)
 
     # ---------------- doorspoelen (>> FF)
+    T['FF'] = len(fx)
     def ff_overlay(a, t):
-        a = noise_band(a, (len(fx) * 23) % 140, 10, rng, 0.8)
-        a = noise_band(a, (len(fx) * 23 + 70) % 140, 4, rng, 0.6)
+        a = noise_band(a, (len(fx) * 23) % 100, 10, rng, 0.8)
+        a = noise_band(a, (len(fx) * 23 + 50) % 100, 4, rng, 0.6)
         osd(a, 'FF', 16, 14)
         play_tri(a, 34, 14, 2)
-        return timecode(a, 60 + max(0, t - 120) * 47)
+        return timecode(a, 60 + max(0, t - 220) * 40)      # loopt op tot vlak voor 2:07:41 (Victory Road)
 
     def s2(t):   # Mauville: Wally stuurt Kirlia de bal uit
         lines = ['WALLY sent out', 'KIRLIA!']
@@ -403,7 +412,7 @@ def build(preview=None):
         return battle('building', spr, lines)
 
     def s3(t):   # Meteor Falls: Wally draait zijn rondje
-        lines = ['WALLY: Fall of Meteor.'] if t < 13 else ['WALLY: Wow! Very beaut!', 'Train much team.']
+        lines = ['WALLY: Fall of Meteor.'] if t < S3_SPLIT else ['WALLY: Wow! Very beaut!', 'Train much team.']
         flip = (t // 2) % 2 == 1
         return battle('cave', [(WALLY.transpose(Image.FLIP_LEFT_RIGHT) if flip else WALLY, 144 + (t % 4 - 2), 8)], lines)
 
@@ -412,14 +421,14 @@ def build(preview=None):
         a[:] = (24, 24, 40)
         img = Image.fromarray(a)
         rate = max(1, 4 - t // 6)
-        if t < 24:
+        if t < S4_EVO:
             s = white_silhouette(KIRLIA if (t // rate) % 2 == 0 else GALLADE)
         else:
             s = GALLADE
         img.paste(s, (88, 30), s)
         a = np.array(img)
         a[112:160] = TEXTBOX
-        if t < 24:
+        if t < S4_EVO:
             gr.text(a, 16, 118, 'What? KIRLIA is evolving!', WHITE, (104, 104, 120))
         else:
             gr.text(a, 16, 118, 'KIRLIA evolved into', WHITE, (104, 104, 120))
@@ -431,20 +440,35 @@ def build(preview=None):
             a[y, x] = WHITE
         return a
 
-    for fn, n in ((s2, 26), (s3, 26), (s4, 40)):
-        raws = {t: vhs(fn(t)) for t in range(0, n, STEP)}
+    # tijdens het lang vasthouden van een tekst herhalen 4 beelden van de band zich (de ruis blijft bewegen, de ROM
+    # groeit niet met elk extra frame)
+    def hold_key(t0, hold):
+        if t0 >= hold + 4 * STEP:
+            return hold + ((t0 - hold) // STEP % 4) * STEP
+        return t0
+
+    for fn, n, hold in ((s2, S2_N, 12), (s3, S3_N, S3_SPLIT + 1), (s4, S4_N, S4_EVO)):
+        keys = sorted(set(hold_key(t, hold) for t in range(0, n, STEP)))
+        raws = {t: vhs(fn(t)) for t in keys}
         ps = pal_for(list(raws.values()))
+        done = {}
+        base0 = len(fx)
         for t in range(n):
             t0 = t - (t % STEP)
             if t == t0:
-                cur = ff_overlay(raws[t0].copy(), t + len(fx))
-                by = (len(fx) * 23) % 140
+                k = hold_key(t0, hold)
+                if k not in done:
+                    # de tijdcode blijft staan zolang de tekst vastgehouden wordt (anders sprong hij terug)
+                    tc = base0 + 2 * min(t0, hold)
+                    done[k] = (ff_overlay(raws[k].copy(), tc), (len(fx) * 23) % 100)
+                cur, by = done[k]       # band niet over het tekstvak: de tekst moet leesbaar blijven
             add(cur, ps, band=by, strength=6, flags=FX_WOBBLE)
         # korte sneeuwflits tussen de stukken
         for k in range(2):
             add(sn[k], ps_snow)
 
     # ---------------- Victory Road: PLAY, inzoomen op zijn gezicht, PAUSE
+    T['ZOOM'] = len(fx)
     zooms = {}
     ZN = 14
     for t in range(0, ZN, 2):
@@ -469,8 +493,10 @@ def build(preview=None):
         pause_bars(a, 64, 14)
         a = timecode(a, 2 * 3600 + 7 * 60 + 41)
         pa.append(a)
+    T['PAUSE'] = len(fx)
     for t in range(34):
         add(pa[(t // 3) % 2], ps5, flags=FX_SHAKE)
+    T['SNOW'] = len(fx)
     # sneeuw, eind
     for k in range(10):
         add(sn[k % 3], ps_snow, band=rng.randint(0, 150), strength=7)
@@ -481,6 +507,11 @@ def build(preview=None):
             fp.write(struct.pack('<BB', b if 0 <= b < 160 else 255, s))
     assert len(fx) == len(f.frames), (len(fx), len(f.frames))
     print('wally: %d frames (%.1f s)' % (len(fx), len(fx) / 60.0))
+    # de tijden voor battle_transition.c (WALLY_*)
+    s1 = T['S1']
+    for k, v in (('PLAY', 8), ('THROW', s1 + 10), ('CATCH', s1 + 30), ('WOBBLE', s1 + 52), ('CLICK', s1 + 72),
+                 ('FF', T['FF']), ('ZOOM', T['ZOOM']), ('PAUSE', T['PAUSE']), ('SNOW', T['SNOW'])):
+        print('#define WALLY_%-8s %d' % (k, v))
     return f
 
 
@@ -490,4 +521,4 @@ if __name__ == '__main__':
     if d:
         fr = f.preview_frames
         n = len(fr)
-        film.sheet(fr, [12, 34, 48, 64, 84, 110, 130, 150, 176, 200, 236, n - 30], os.path.join(d, 'wally_keys.png'))
+        film.sheet(fr, [50, 106, 130, 160, 200, 250, 290, 340, 390, 420, 440, n - 30], os.path.join(d, "wally_keys.png"))

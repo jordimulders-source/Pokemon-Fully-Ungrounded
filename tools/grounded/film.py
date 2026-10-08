@@ -159,7 +159,7 @@ class Film:
                         runs.append([sl, 1])
                 loads.append(([k for sl, k in new], runs))
                 load = len(loads) - 1
-            tm = [slot_of[k] | (f << 10) | ((13 + p) << 12) for (k, f), p in zip(cells, pals)]
+            tm = [int(slot_of[k]) | (int(f) << 10) | ((13 + int(p)) << 12) for (k, f), p in zip(cells, pals)]
             key = (fm, tuple(tm))
             if key not in map_cache:
                 rows = []

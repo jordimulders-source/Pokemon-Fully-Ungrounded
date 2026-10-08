@@ -57,7 +57,9 @@ def subtitle(im, sub):
     elif sub == 3:
         im = outlined(im, 120, 3, 'Notes of brine, regret and KYOGRE.', WHITE15, GRAY15, DARK15, scale=1, font='narrow')
     elif sub == 4:
-        im = outlined(im, 120, 6, 'SANTÉ!', YELLOW15, BLUE15, DARK15, scale=2)
+        # 28 px hoog (accent t/m schaduw): y 1-28; de C-code toont voor SANTÉ rij 0-3 (was y 6 in een balk van 24 px:
+        # de onderkant viel weg)
+        im = outlined(im, 120, 2, 'SANTÉ!', YELLOW15, BLUE15, DARK15, scale=2)
     return im
 
 

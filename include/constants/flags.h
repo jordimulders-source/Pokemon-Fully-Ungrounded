@@ -1647,7 +1647,8 @@
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
-// (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-429 zeevulling 4, 430+ vrij.
+// (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
+// regionale vormen), 400-429 gereserveerd, 430+ vrij.
 // Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
 #define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet
 #define FLAG_USED_IMPLOSION                     FLAG_GROUNDED(151) // de speler heeft ooit IMPLOSION gebruikt
@@ -1769,6 +1770,12 @@
 #define FLAG_HIDDEN_ITEM_ZV4_R133_RARE_CANDY             FLAG_GROUNDED(357) // Project Grounded (zeevulling 4): verborgen item (Route133)
 #define FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_COPPER           FLAG_GROUNDED(358) // Project Grounded (zeevulling 4): verborgen item (Route134)
 // } zee_vulling_4
+// Gifts (360-399): Type: Null (Devon Corp 2F), Magearna (Colress, Mauville), regionale vormen (Paradiso Resort-lobby)
+#define FLAG_RECEIVED_TYPE_NULL                 FLAG_GROUNDED(360)
+#define FLAG_RECEIVED_MAGEARNA                  FLAG_GROUNDED(361)
+#define FLAG_RECEIVED_ALOLA_RATTATA             FLAG_GROUNDED(362)
+#define FLAG_RECEIVED_ALOLA_MEOWTH              FLAG_GROUNDED(363)
+#define FLAG_RECEIVED_GALAR_FARFETCHD           FLAG_GROUNDED(364)
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

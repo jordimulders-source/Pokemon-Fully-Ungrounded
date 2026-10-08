@@ -369,3 +369,62 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "built a toaster that makes bread\l"
 	.string "colder.$"
 
+@ Project Grounded: Type: Null (post-game gift, LEGENDARY_PLAN groep 11)
+RustboroCity_DevonCorp_2F_EventScript_TypeNullScientist::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TYPE_NULL, RustboroCity_DevonCorp_2F_EventScript_TypeNullAfter
+	goto_if_unset FLAG_SYS_GAME_CLEAR, RustboroCity_DevonCorp_2F_EventScript_TypeNullLocked
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullOffer, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_TYPE_NULL
+	setvar VAR_0x8005, 50
+	setvar VAR_0x8006, ITEM_NONE
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_DevonCorp_2F_EventScript_TypeNullEnd
+	setflag FLAG_RECEIVED_TYPE_NULL
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullGiven, MSGBOX_DEFAULT
+RustboroCity_DevonCorp_2F_EventScript_TypeNullEnd::
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_TypeNullLocked::
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullLocked, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_TypeNullAfter::
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullAfter, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_Text_TypeNullLocked:
+	.string "The basement? There is no basement.\p"
+	.string "And if there were, only the CHAMPION\n"
+	.string "could sign the waiver. Legal says\l"
+	.string "they're the only ones who can't sue us.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullOffer:
+	.string "Ah, the CHAMPION. Perfect timing.\p"
+	.string "We built a POKéMON to fight a\n"
+	.string "hypothetical monster from another\l"
+	.string "dimension. The monster never came.\p"
+	.string "The POKéMON stayed. It eats forty kilos\n"
+	.string "a day and has bitten three interns. One\l"
+	.string "of them twice.\p"
+	.string "We call it TYPE: NULL. HR calls it “an\n"
+	.string "ongoing workplace incident”.\p"
+	.string "Please take it. It's not a gift. It's a\n"
+	.string "relocation.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullGiven:
+	.string "The helmet limits its power. Don't take\n"
+	.string "it off.\p"
+	.string "We did that once. Once.\p"
+	.string "If it ever learns to trust you, the\n"
+	.string "helmet comes off on its own. We'll be in\l"
+	.string "the bunker.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullAfter:
+	.string "Mr. STONE asked where the project went.\n"
+	.string "I said “a better place”. He sent\l"
+	.string "flowers.$"

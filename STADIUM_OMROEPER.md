@@ -89,6 +89,9 @@ Eigen zin hieronder; anders zijn omroepzin als tegenstander (zie Tegenstanders);
 | `ULTRAS` | With {PLAYER}: the ULTRA BEASTS! From another dimension. / Their visas are pending. |
 | `RUIN` | With {PLAYER}: the TREASURES OF RUIN! Four were sealed. / Three showed up. Nobody asks about the fourth. |
 | `WEATHER` | With {PLAYER}: the WEATHER TRIO! / Rain, sun, and a sky dragon that hates both. Bring a coat. |
+| `SELENE` | With {PLAYER}: SELENE! She calls you “the chosen one”. / She also calls her kettle that. |
+| `REGINALD` | With {PLAYER}: REGINALD! He left his cave for this. / He wants it on record that he hates it. |
+| `HELIA` | With {PLAYER}: HELIA! She brought sunscreen. For her BRONZONG. / Not for you. Never for you. |
 | `CREATORS` | With {PLAYER}: the CREATORS! Time, space and antimatter. The janitor gave up. |
 
 Algemeen (terugval):
@@ -209,6 +212,9 @@ Algemeen (terugval):
 | `GERALD_WARDEN` | GERALD, Warden of the Dragon's Den! Did you fill in form D-7? Too late now. |
 | `WICK` | WICK! Forty years a lighthouse keeper. His lamp is a fish. It works. |
 | `SALIM` | SALIM of the MIRAGE BAZAAR! Everything for sale, nothing his! |
+| `DRACONID_ELDER` | SELENE, DRACONID ELDER! Waited 300 years for a sky dragon. You'll do. |
+| `VR_REGINALD` | REGINALD, the VICTORY ROAD HERMIT! Last saw daylight in 1987. Didn't like it. |
+| `SLAB_HELIA` | HELIA of the SCORCHED SLAB! Worships the sun. The sun has not replied. |
 | `BRENDAN_ROUTE_136_TREECKO` | BRENDAN! Your rival. Still salty about which starter you picked. |
 | `MAY_ROUTE_136_TORCHIC` | MAY! Your rival. She swears she's better at this than you. Prove it. |
 

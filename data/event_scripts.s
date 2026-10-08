@@ -700,6 +700,7 @@ gStdScripts_End::
 	.include "data/scripts/battle_stadium.inc"
 	.include "data/scripts/regi_dots.inc"
 	.include "data/scripts/burglar.inc"
+	.include "data/scripts/grounded_gifts.inc"
 	.include "data/scripts/forces.inc"
 
 EventScript_WhiteOut::
@@ -1271,6 +1272,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/text/burglar.inc"
+	.include "data/text/grounded_gifts.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"

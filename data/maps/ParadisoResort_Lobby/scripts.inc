@@ -154,3 +154,102 @@ ParadisoResort_Lobby_Text_CynthiaDecline:
 	.string "CYNTHIA: Understandable. GARCHOMP is\n"
 	.string "disappointed, but GARCHOMP is always\l"
 	.string "disappointed.$"
+
+@ Project Grounded: regionale vormen als gift (LEGENDARY_PLAN groep 18)
+ParadisoResort_Lobby_EventScript_AlolaTourist::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_ALOLA_MEOWTH, ParadisoResort_Lobby_EventScript_AlolaTouristAfter
+	goto_if_set FLAG_RECEIVED_ALOLA_RATTATA, ParadisoResort_Lobby_EventScript_AlolaMeowth
+	msgbox ParadisoResort_Lobby_Text_AlolaTourist, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_RATTATA_ALOLA
+	setvar VAR_0x8005, 18
+	setvar VAR_0x8006, ITEM_NONE
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, ParadisoResort_Lobby_EventScript_GiftEnd
+	setflag FLAG_RECEIVED_ALOLA_RATTATA
+	msgbox ParadisoResort_Lobby_Text_AlolaRattataGiven, MSGBOX_DEFAULT
+ParadisoResort_Lobby_EventScript_AlolaMeowth::
+	setvar VAR_0x8004, SPECIES_MEOWTH_ALOLA
+	setvar VAR_0x8005, 18
+	setvar VAR_0x8006, ITEM_NONE
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, ParadisoResort_Lobby_EventScript_GiftEnd
+	setflag FLAG_RECEIVED_ALOLA_MEOWTH
+	msgbox ParadisoResort_Lobby_Text_AlolaMeowthGiven, MSGBOX_DEFAULT
+ParadisoResort_Lobby_EventScript_GiftEnd::
+	release
+	end
+
+ParadisoResort_Lobby_EventScript_AlolaTouristAfter::
+	msgbox ParadisoResort_Lobby_Text_AlolaTouristAfter, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_Lobby_EventScript_GalarGentleman::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_GALAR_FARFETCHD, ParadisoResort_Lobby_EventScript_GalarGentlemanAfter
+	msgbox ParadisoResort_Lobby_Text_GalarGentleman, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_FARFETCHD_GALAR
+	setvar VAR_0x8005, 30
+	setvar VAR_0x8006, ITEM_LEEK
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, ParadisoResort_Lobby_EventScript_GiftEnd
+	setflag FLAG_RECEIVED_GALAR_FARFETCHD
+	msgbox ParadisoResort_Lobby_Text_GalarFarfetchdGiven, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_Lobby_EventScript_GalarGentlemanAfter::
+	msgbox ParadisoResort_Lobby_Text_GalarGentlemanAfter, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_Lobby_Text_AlolaTourist:
+	.string "Aloha! I'm here from ALOLA on vacation.\n"
+	.string "My POKéMON came with me. In my\l"
+	.string "suitcase. Customs did not ask.\p"
+	.string "The thing is, it's way too warm here. And\n"
+	.string "that's coming from ALOLA. They're\l"
+	.string "miserable.\p"
+	.string "You look like someone who has a lot of\n"
+	.string "boxes. Take them. Please. They've\l"
+	.string "started eating the minibar.$"
+
+ParadisoResort_Lobby_Text_AlolaRattataGiven:
+	.string "That RATTATA is dark-type. Like its\n"
+	.string "sense of humor. It bites the hand that\l"
+	.string "feeds it, then asks for seconds.$"
+
+ParadisoResort_Lobby_Text_AlolaMeowthGiven:
+	.string "And that MEOWTH thinks it's royalty. It\n"
+	.string "isn't. Don't tell it. Last person who told\l"
+	.string "it is still in therapy.$"
+
+ParadisoResort_Lobby_Text_AlolaTouristAfter:
+	.string "Finally, a vacation without anyone\n"
+	.string "chewing my flip-flops! ...Wait, who's\l"
+	.string "chewing my flip-flops?$"
+
+ParadisoResort_Lobby_Text_GalarGentleman:
+	.string "Good afternoon. I hail from GALAR,\n"
+	.string "where it rains three hundred days a\l"
+	.string "year. The sun here is frankly an insult.\p"
+	.string "My FARFETCH'D refuses to leave the\n"
+	.string "room. It says the light is “vulgar”.\p"
+	.string "Would you take it? It comes with its\n"
+	.string "LEEK. Do not ask where the LEEK has\l"
+	.string "been.$"
+
+ParadisoResort_Lobby_Text_GalarFarfetchdGiven:
+	.string "A word of advice: land three critical\n"
+	.string "hits in a single battle and it may\l"
+	.string "become something rather grand.\p"
+	.string "It has been saying so for six years.\n"
+	.string "Nothing has happened. I blame the\l"
+	.string "weather.$"
+
+ParadisoResort_Lobby_Text_GalarGentlemanAfter:
+	.string "Splendid. Now I can finally get sunburnt\n"
+	.string "in peace. Very British of me.$"

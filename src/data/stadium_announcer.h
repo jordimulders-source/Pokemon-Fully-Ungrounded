@@ -204,6 +204,9 @@ static const struct StadiumAnnouncerCompanion sStadiumAnnouncerCompanion[] =
     {PARTNER_STADIUM_ULTRAS, COMPOUND_STRING("With {PLAYER}: the ULTRA BEASTS! From\nanother dimension.\pTheir visas are pending.")},
     {PARTNER_STADIUM_RUIN, COMPOUND_STRING("With {PLAYER}: the TREASURES OF RUIN!\nFour were sealed.\pThree showed up. Nobody asks about the\nfourth.")},
     {PARTNER_STADIUM_WEATHER, COMPOUND_STRING("With {PLAYER}: the WEATHER TRIO!\pRain, sun, and a sky dragon that hates\nboth. Bring a coat.")},
+    {PARTNER_STADIUM_SELENE, COMPOUND_STRING("With {PLAYER}: SELENE! She calls you\n“the chosen one”.\pShe also calls her kettle that.")},
+    {PARTNER_STADIUM_REGINALD, COMPOUND_STRING("With {PLAYER}: REGINALD! He left his\ncave for this.\pHe wants it on record that he hates it.")},
+    {PARTNER_STADIUM_HELIA, COMPOUND_STRING("With {PLAYER}: HELIA! She brought\nsunscreen. For her BRONZONG.\pNot for you. Never for you.")},
     {PARTNER_STADIUM_CREATORS, COMPOUND_STRING("With {PLAYER}: the CREATORS! Time, space\nand antimatter. The janitor gave up.")},
 };
 
@@ -316,6 +319,9 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_GERALD_WARDEN, COMPOUND_STRING("GERALD, Warden of the Dragon's Den! Did\nyou fill in form D-7? Too late now.")},
     {TRAINER_WICK, COMPOUND_STRING("WICK! Forty years a lighthouse keeper.\nHis lamp is a fish. It works.")},
     {TRAINER_SALIM, COMPOUND_STRING("SALIM of the MIRAGE BAZAAR! Everything\nfor sale, nothing his!")},
+    {TRAINER_DRACONID_ELDER, COMPOUND_STRING("SELENE, DRACONID ELDER! Waited 300\nyears for a sky dragon. You'll do.")},
+    {TRAINER_VR_REGINALD, COMPOUND_STRING("REGINALD, the VICTORY ROAD HERMIT!\nLast saw daylight in 1987. Didn't like it.")},
+    {TRAINER_SLAB_HELIA, COMPOUND_STRING("HELIA of the SCORCHED SLAB! Worships\nthe sun. The sun has not replied.")},
     {TRAINER_BRENDAN_ROUTE_136_TREECKO, COMPOUND_STRING("BRENDAN! Your rival. Still salty about\nwhich starter you picked.")},
     {TRAINER_MAY_ROUTE_136_TORCHIC, COMPOUND_STRING("MAY! Your rival. She swears she's better\nat this than you. Prove it.")},
 };

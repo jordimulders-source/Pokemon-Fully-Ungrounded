@@ -558,6 +558,8 @@ MossdeepCity_EventScript_BirchPostBattle::
 	end
 
 MossdeepCity_EventScript_Meteorite::
+	special Grounded_FindPartyDeoxys
+	goto_if_ne VAR_RESULT, PARTY_SIZE, Grounded_EventScript_DeoxysMeteorite
 	msgbox MossdeepCity_Text_Meteorite, MSGBOX_SIGN
 	end
 

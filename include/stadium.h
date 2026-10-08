@@ -17,7 +17,7 @@
 #define STADIUM_MAX_ENTRANTS    32
 #define STADIUM_PLAYER          0       // deelnemer 0 = de speler (en compagnon)
 #define STADIUM_MAX_POOL        128
-#define STADIUM_MAX_COMPANIONS  128
+#define STADIUM_MAX_COMPANIONS  160     // was 128 (v0.9: Selene/Reginald/Helia); oude saves: lastCompanion/tournaments terug op 0
 
 enum StadiumUnlock
 {

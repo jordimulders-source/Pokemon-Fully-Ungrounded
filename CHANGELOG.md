@@ -17415,3 +17415,8 @@ Volgens Jordi's GBA-instructies per leider:
 - **Daarna** heeft de bazaar een Mart (Soft Sand, Smooth Rock, Safety Goggles, Lava Cookie) en NPC's, onder wie een visser die in de luchtspiegeling vist.
 - **Bouwscript:** `tools/grounded/maptools/mirage_bazaar.py`. Flags `FLAG_GROUNDED(0–15)`, trainer 1186.
 - **Muziek:** voorlopig het Kanto-legendary-thema. Het eigen Hoopa-thema staat op `claude/hoopa-theme-wip` en wordt gekoppeld in de muziekfase.
+
+### [v0.9.155] - Battle! Hoopa gekoppeld
+- Het eigen Hoopa-thema (`MUS_GROUNDED_VS_HOOPA`, song 662, `tools/grounded/hoopa_theme.py`; branch `claude/hoopa-theme-wip`) is samengevoegd en klinkt bij Hoopa Confined en Unbound (Mirage Bazaar-quest).
+  - Stijl: hijaz-toonladder, darbuka, oud en mizmar; de Confined-delen speels, de Unbound-delen dreigend.
+  - Gemeten: 0 overlopen, piek 101/127. Preview naar Jordi (vanaf 0 s, 90 s).

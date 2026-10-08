@@ -1648,6 +1648,24 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150+ vrij.
 
+// Hoopa-quest (Mirage Bazaar, Route 111; data/maps/MirageBazaar/scripts.inc)
+#define FLAG_HOOPA_WISH_RICHES                  FLAG_GROUNDED(0)  // wens: rijkdom (Big Nugget)
+#define FLAG_HOOPA_WISH_POWER                   FLAG_GROUNDED(1)  // wens: kracht (Choice Band)
+#define FLAG_HOOPA_WISH_FAME                    FLAG_GROUNDED(2)  // wens: roem (niets, behalve roem)
+#define FLAG_HOOPA_WISH_SNACK                   FLAG_GROUNDED(3)  // wens: een snack (Lava Cookies)
+#define FLAG_HOOPA_UNBOUND                      FLAG_GROUNDED(4)  // derde wens gedaan: Hoopa Unbound zit in de schatkamer
+#define FLAG_HOOPA_QUEST_DONE                   FLAG_GROUNDED(5)  // Hoopa gevangen of gekregen, Prison Bottle ontvangen
+#define FLAG_HIDE_ROUTE111_HOOPA_RING           FLAG_GROUNDED(6)  // ring in de woestijn (alleen post-game)
+#define FLAG_HIDE_MIRAGE_BAZAAR_HOOPA           FLAG_GROUNDED(7)  // Hoopa Confined bij Salims kraam
+#define FLAG_HIDE_MIRAGE_BAZAAR_SALIM           FLAG_GROUNDED(8)  // Salim (weg zolang hij in de schatkamer zit)
+#define FLAG_HIDE_MIRAGE_BAZAAR_VAULT_RING      FLAG_GROUNDED(9)  // ring naar de schatkamer (na de derde wens)
+#define FLAG_HIDE_HOOPA_VAULT_HOOPA             FLAG_GROUNDED(10) // Hoopa Unbound in de schatkamer
+#define FLAG_HIDE_HOOPA_VAULT_SALIM             FLAG_GROUNDED(11) // Salim in de schatkamer
+#define FLAG_ITEM_HOOPA_VAULT_1                 FLAG_GROUNDED(12) // items in de schatkamer
+#define FLAG_ITEM_HOOPA_VAULT_2                 FLAG_GROUNDED(13)
+#define FLAG_ITEM_HOOPA_VAULT_3                 FLAG_GROUNDED(14)
+#define FLAG_HOOPA_BAZAAR_VISITED               FLAG_GROUNDED(15) // eerste keer door de ring: lange tekst
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

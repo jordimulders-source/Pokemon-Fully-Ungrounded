@@ -1145,7 +1145,9 @@
 #define TRAINER_SAILOR_RUSTY                1173 // Project Grounded (zeevulling 3): Route 131, schipper van de bergingsduiker
 // }
 
-#define TRAINERS_COUNT                      1174
+#define TRAINER_SALIM                       1186 // Project Grounded (Hoopa-quest): handelaar in de Mirage Bazaar, Route 111
+
+#define TRAINERS_COUNT                      1187
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

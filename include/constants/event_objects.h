@@ -298,7 +298,9 @@
 #define OBJ_EVENT_GFX_SHY_GUY_PINK                        283 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
 #define OBJ_EVENT_GFX_SHY_GUY_BLACK                       284 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
 
-#define NUM_OBJ_EVENT_GFX                        285
+#define OBJ_EVENT_GFX_HOOPA_RING                      285 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+
+#define NUM_OBJ_EVENT_GFX                        286
 
 
 // These are dynamic object gfx ids.
@@ -458,6 +460,7 @@
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN            0x113F // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

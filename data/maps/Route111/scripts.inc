@@ -44,6 +44,7 @@ Route111_OnTransition:
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
 	call Route111_EventScript_CheckSetSandstorm
+	call Route111_EventScript_UpdateHoopaRing
 	call GabbyAndTy_EventScript_UpdateLocation
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
 	end
@@ -865,3 +866,32 @@ Route111_Text_EF_ShyGuyDesertPostBattle:
 	.string "It is not going well.)$"
 
 @ }
+
+@ Project Grounded: Hoopa-quest. Na de Hall of Fame hangt een ring van Hoopa in de zandstorm; erdoor kom je in de
+@ Mirage Bazaar (data/maps/MirageBazaar/scripts.inc). De ring blijft ook na de quest hangen.
+Route111_EventScript_UpdateHoopaRing::
+	setflag FLAG_HIDE_ROUTE111_HOOPA_RING
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_HoopaRingEnd
+	clearflag FLAG_HIDE_ROUTE111_HOOPA_RING
+Route111_EventScript_HoopaRingEnd::
+	return
+
+Route111_EventScript_HoopaRing::
+	lockall
+	goto_if_set FLAG_HOOPA_BAZAAR_VISITED, Route111_EventScript_HoopaRingAgain
+	msgbox Route111_Text_HoopaRing, MSGBOX_DEFAULT
+	closemessage
+Route111_EventScript_HoopaRingAgain::
+	playse SE_WARP_IN
+	warp MAP_MIRAGE_BAZAAR, 14, 20
+	waitstate
+	releaseall
+	end
+
+Route111_Text_HoopaRing:
+	.string "A golden ring hangs in the\n"
+	.string "sandstorm. It's not attached to\l"
+	.string "anything.\p"
+	.string "Through it: market stalls, lanterns,\n"
+	.string "and someone yelling “NO REFUNDS.”\p"
+	.string "You step through. Of course you do.$"

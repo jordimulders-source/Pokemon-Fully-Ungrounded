@@ -583,6 +583,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_ShyGuyGreen,           OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN}, // Project Grounded: Shy Guy
     {gObjectEventPal_ShyGuyPink,            OBJ_EVENT_PAL_TAG_SHY_GUY_PINK}, // Project Grounded: Shy Guy
     {gObjectEventPal_ShyGuyBlack,           OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK}, // Project Grounded: Shy Guy
+    {gObjectEventPal_HoopaRing,             OBJ_EVENT_PAL_TAG_HOOPA_RING}, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoC,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_C}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoD,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_D}, // Project Grounded (FRLG)

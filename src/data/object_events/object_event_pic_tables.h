@@ -471,6 +471,10 @@ static const struct SpriteFrameImage sPicTable_ShyGuy[] = { // Project Grounded:
     overworld_ascending_frames(gObjectEventPic_ShyGuy, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_HoopaRing[] = { // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+    obj_frame_tiles(gObjectEventPic_HoopaRing),
+};
+
 static const struct SpriteFrameImage sPicTable_BreakableRock[] = {
     overworld_ascending_frames(gObjectEventPic_BreakableRock, 2, 2),
 };

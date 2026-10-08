@@ -67,7 +67,8 @@ POOL = [
     # Neo Team Plasma, Plasma Frigate (Nothing Island): hoofd logistiek
     'PLASMA_NIGEL',
     # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
-    'GRIMSBY',
+    'GRIMSBY',    # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
+    'SALIM',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -226,6 +227,7 @@ GFX = {
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
     'GRIMSBY': 'SAILOR',
+    'SALIM': 'EXPERT_M',
 }
 
 

@@ -5290,6 +5290,26 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/AshfrostLodge_Rooms/border.bin",
       "blockdata_filepath": "data/layouts/AshfrostLodge_Rooms/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_BAZAAR",
+      "name": "MirageBazaar_Layout",
+      "width": 30,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/MirageBazaar/border.bin",
+      "blockdata_filepath": "data/layouts/MirageBazaar/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_BAZAAR_VAULT",
+      "name": "MirageBazaar_Vault_Layout",
+      "width": 23,
+      "height": 23,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattlePyramid",
+      "border_filepath": "data/layouts/MirageBazaar_Vault/border.bin",
+      "blockdata_filepath": "data/layouts/MirageBazaar_Vault/map.bin"
     }
   ]
 }

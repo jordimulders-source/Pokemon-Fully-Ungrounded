@@ -169,6 +169,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_GRIMSBY, COMPOUND_STRING("CAPTAIN GRIMSBY! Dead since 1802, still\nclocks in. Union rules.")},
     {TRAINER_GERALD_WARDEN, COMPOUND_STRING("GERALD, Warden of the Dragon's Den! Did\nyou fill in form D-7? Too late now.")},
     {TRAINER_WICK, COMPOUND_STRING("WICK! Forty years a lighthouse keeper.\nHis lamp is a fish. It works.")},
+    {TRAINER_SALIM, COMPOUND_STRING("SALIM of the MIRAGE BAZAAR! Everything\nfor sale, nothing his!")},
     {TRAINER_BRENDAN_ROUTE_136_TREECKO, COMPOUND_STRING("BRENDAN! Your rival. Still salty about\nwhich starter you picked.")},
     {TRAINER_MAY_ROUTE_136_TORCHIC, COMPOUND_STRING("MAY! Your rival. She swears she's better\nat this than you. Prove it.")},
 };

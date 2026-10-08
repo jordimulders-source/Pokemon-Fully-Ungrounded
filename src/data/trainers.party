@@ -38974,3 +38974,75 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Fire Punch
 
 /* --- einde beacon_dragon --- */
+
+/* --- Hoopa-quest (Mirage Bazaar): Salim, handelaar en eigenaar van de Prison Bottle --- */
+=== TRAINER_SALIM ===
+Name: SALIM
+Class: Collector
+Pic: Collector
+Gender: Male
+Music: Rich
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Yellow
+
+Hippowdon @ Smooth Rock
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+Nature: Impish
+- Earthquake
+- Slack Off
+- Stealth Rock
+- Whirlwind
+
+Sigilyph @ Life Orb
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Magic Guard
+Nature: Timid
+- Psychic
+- Air Slash
+- Heat Wave
+- Calm Mind
+
+Cofagrigus @ Leftovers
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Mummy
+Nature: Bold
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Nasty Plot
+
+Sableye @ Sitrus Berry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Prankster
+Nature: Careful
+- Knock Off
+- Recover
+- Will-O-Wisp
+- Thief
+
+Krookodile @ Choice Scarf
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Moxie
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Close Combat
+
+Gholdengo @ Air Balloon
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Good as Gold
+Nature: Modest
+- Make It Rain
+- Shadow Ball
+- Focus Blast
+- Nasty Plot

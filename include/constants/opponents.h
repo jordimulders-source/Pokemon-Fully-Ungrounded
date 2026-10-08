@@ -1160,7 +1160,9 @@
 #define TRAINER_GERALD_WARDEN               1185 // Project Grounded: Dragon's Den, drakenwachter met klembord (Battle Stadium)
 // }
 
-#define TRAINERS_COUNT                      1186
+#define TRAINER_SALIM                       1186 // Project Grounded (Hoopa-quest): handelaar in de Mirage Bazaar, Route 111
+
+#define TRAINERS_COUNT                      1187
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

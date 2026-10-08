@@ -17392,3 +17392,26 @@ Volgens Jordi's GBA-instructies per leider:
 - **Na het gevecht:** gevangen of verslagen = weg ("A lot of hats will never come back."); gevlucht = blijft staan.
 - **Hint-NPC's:** in Fortree (de was waaide naar Route 121), het Weather Institute ("a thunderstorm with a face") en Verdanturf (een verdacht grote oogst).
 - **Code:** `src/forces.c` (hook naast `Burglar_OnMapEnter`), `tools/grounded/maptools/forces_routes.py`, `data/scripts/forces.inc`. Flags `FLAG_GROUNDED(50–55)`. Debug: special `Forces_DebugForceNext`.
+
+### [v0.9.154] - Hoopa-sidequest: de Mirage Bazaar (post-game)
+- **Ingang:** na de Hall of Fame hangt er een gouden Hoopa-ring in de zandstorm van Route 111 (33,57). Aanspreken = je stapt erdoor.
+- **Mirage Bazaar:** een luchtspiegeling met tenten, de luifel van handelaar **SALIM** en water dat er niet is. Een wens kost een gevecht met Salim (lv 70–72, ace Gholdengo; ook in het Battle Stadium).
+- **Hoopa Confined** vervult twee wensen naar keuze, met een monkey's-paw-twist: hij ringt het gewenste bij iemand anders weg.
+  - Rijkdom: een Big Nugget uit het spaarvarken van een Rich Boy.
+  - Kracht: Brawly's hoofdband (Choice Band).
+  - Roem: die van Gabby, zonder item.
+  - Snack: Lava Cookies van een oma in Lavaridge.
+- **De derde wens** (vrijheid of oneindig veel wensen) loopt altijd hetzelfde af: Hoopa ringt de Prison Bottle uit Salims sjerp, wordt Unbound en ringt jullie allebei naar zijn schatkamer.
+- **Schatkamer:** vol gestolen Hoenn-spullen:
+  - Birch' tas;
+  - de verhuiswagen ("daarom geen truck-scène") en MOM's TV ("daarom geen tv-scène");
+  - Mr. Briney's boot en Peeko;
+  - een kabelbaancabine;
+  - de Poochyena van Route 101 en het fossiel dat je niet koos;
+  - de opgevouwen Mirage Tower;
+  - Salim, "filed under MISC".
+  - Plus een Relic Crown, een Comet Shard en Relic Gold.
+- **Eindgevecht:** Hoopa Unbound lv 70. Vangen = Unbound; verslaan = hij krimpt en je krijgt Hoopa Confined. Daarna geeft Salim de Prison Bottle, die nu beide kanten op wisselt.
+- **Daarna** heeft de bazaar een Mart (Soft Sand, Smooth Rock, Safety Goggles, Lava Cookie) en NPC's, onder wie een visser die in de luchtspiegeling vist.
+- **Bouwscript:** `tools/grounded/maptools/mirage_bazaar.py`. Flags `FLAG_GROUNDED(0–15)`, trainer 1186.
+- **Muziek:** voorlopig het Kanto-legendary-thema. Het eigen Hoopa-thema staat op `claude/hoopa-theme-wip` en wordt gekoppeld in de muziekfase.

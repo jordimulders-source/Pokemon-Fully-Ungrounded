@@ -465,6 +465,8 @@ gStdScripts_End::
 	.include "data/maps/BeaconIsle_Lighthouse_2F/scripts.inc"
 	.include "data/maps/BeaconIsle_Lighthouse_1F/scripts.inc"
 	.include "data/maps/BeaconIsle/scripts.inc"
+	.include "data/maps/MirageBazaar_Vault/scripts.inc"
+	.include "data/maps/MirageBazaar/scripts.inc"
 	.include "data/maps/FullmoonIsland/scripts.inc"
 	.include "data/maps/TapuIsle/scripts.inc"
 	.include "data/maps/ParadisoResort_Bar/scripts.inc"

@@ -4380,6 +4380,45 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Earthquake
 - Fire Punch
 
+=== PARTNER_STADIUM_SALIM ===
+Name: SALIM
+Class: Collector
+Pic: Collector
+Gender: Male
+Music: Rich
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Hippowdon @ Smooth Rock
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+Nature: Impish
+- Earthquake
+- Slack Off
+- Stealth Rock
+- Whirlwind
+
+Sableye @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Prankster
+Nature: Careful
+- Knock Off
+- Recover
+- Will-O-Wisp
+- Thief
+
+Gholdengo @ Air Balloon
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Good as Gold
+Nature: Modest
+- Make It Rain
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

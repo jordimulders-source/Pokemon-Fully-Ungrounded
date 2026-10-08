@@ -71,6 +71,8 @@ POOL = [
     # eilanden: vuurtorenwachter (Beacon Isle), drakenwachter (Dragonspine Isle)
     'WICK',
     'GERALD_WARDEN',
+    # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
+    'SALIM',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -231,6 +233,7 @@ GFX = {
     'GRIMSBY': 'SAILOR',
     'GERALD': 'MAN_5',
     'WICK': 'EXPERT_M',
+    'SALIM': 'EXPERT_M',
 }
 
 

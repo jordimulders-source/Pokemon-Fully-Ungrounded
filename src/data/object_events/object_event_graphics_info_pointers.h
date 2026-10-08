@@ -89,6 +89,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyGreen;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyPink;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyBlack;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -385,6 +386,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SHY_GUY_GREEN] = &gObjectEventGraphicsInfo_ShyGuyGreen, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_SHY_GUY_PINK] = &gObjectEventGraphicsInfo_ShyGuyPink, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_SHY_GUY_BLACK] = &gObjectEventGraphicsInfo_ShyGuyBlack, // Project Grounded: Shy Guy
+    [OBJ_EVENT_GFX_HOOPA_RING] = &gObjectEventGraphicsInfo_HoopaRing, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_ERIKA] =                     &gObjectEventGraphicsInfo_Erika, // Project Grounded (FRLG)

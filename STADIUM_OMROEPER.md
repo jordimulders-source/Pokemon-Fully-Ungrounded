@@ -146,6 +146,7 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `GRIMSBY` | CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules. |
 | `GERALD_WARDEN` | GERALD, Warden of the Dragon's Den! Did you fill in form D-7? Too late now. |
 | `WICK` | WICK! Forty years a lighthouse keeper. His lamp is a fish. It works. |
+| `SALIM` | SALIM of the MIRAGE BAZAAR! Everything for sale, nothing his! |
 | `BRENDAN_ROUTE_136_TREECKO` | BRENDAN! Your rival. Still salty about which starter you picked. |
 | `MAY_ROUTE_136_TORCHIC` | MAY! Your rival. She swears she's better at this than you. Prove it. |
 

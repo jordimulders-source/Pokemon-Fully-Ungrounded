@@ -1,4 +1,5 @@
 #include "global.h"
+#include "spire.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -37,6 +38,9 @@ void AssignUsableGimmicks(void)
 // Returns whether a battler is able to use a gimmick. Checks consumption and gimmick specific functions.
 bool32 CanActivateGimmick(u32 battler, enum Gimmick gimmick)
 {
+    // Project Grounded: Mega, Z-moves, Dynamax, Tera e.d. alleen in The Spire (Jordi), voor iedereen
+    if (!TESTING && !gSpireBattle)
+        return FALSE;
     return gGimmicksInfo[gimmick].CanActivate != NULL && gGimmicksInfo[gimmick].CanActivate(battler);
 }
 

@@ -17420,3 +17420,15 @@ Volgens Jordi's GBA-instructies per leider:
 - Het eigen Hoopa-thema (`MUS_GROUNDED_VS_HOOPA`, song 662, `tools/grounded/hoopa_theme.py`; branch `claude/hoopa-theme-wip`) is samengevoegd en klinkt bij Hoopa Confined en Unbound (Mirage Bazaar-quest).
   - Stijl: hijaz-toonladder, darbuka, oud en mizmar; de Confined-delen speels, de Unbound-delen dreigend.
   - Gemeten: 0 overlopen, piek 101/127. Preview naar Jordi (vanaf 0 s, 90 s).
+
+### [v0.9.156] - Dave pittig, Burglar de dief, gimmicks alleen in de Spire
+- **Dave** (alle vijf gevechten, ook het Stadium) heeft echte sets, items en de slimste AI. De echte Dave vond zijn gevecht te makkelijk.
+  - Route 111 (lv 22–23): Gastly, Gligar, Charcadet, Gible en Pawniard; Gligar is nieuw.
+  - Petalburg (lv 31–32): IV 31, volle EV's, en Iron Valiant erbij.
+  - Sootopolis en Victory Road: Gengar (Hex/Will-O-Wisp), Gliscor (Poison Heal), Ceruledge (Bitter Blade), Iron Valiant (Booster Energy), Garchomp (Loaded Dice/Scale Shot) en ace Kingambit (Supreme Overlord, Kowtow Cleave).
+- **Burglar (SIMON):** geen Mega meer. Elk team is geniepig en sinister, met Thievul als vaste ace, en **elke Pokémon kent Thief**.
+  - Veel leden hebben bewust geen item, zodat ze het jouwe stelen. Pickpocket, Prankster en Unburden horen bij het thema.
+  - Zoroark staat vlak vóór Thievul en vermomt zich als hem.
+  - Het team loopt op van Purrloin/Sableye/Thievul (1 badge) tot Weavile/Krookodile/Grimmsnarl/Honchkrow/Zoroark/Thievul na de Elite Four.
+- **Mega-stenen weg** bij Zinnia (Delta), de werkstraf-rematches van Archie en Maxie, en Burglar 9.
+- **Gimmicks alleen in The Spire** (`CanActivateGimmick`): Mega Evolution, Z-moves, Dynamax en Tera kunnen daarbuiten door niemand meer gebruikt worden. Ook niet door een tegenstander met een steen, en ook niet door een Rayquaza met Dragon Ascent in het Stadium.

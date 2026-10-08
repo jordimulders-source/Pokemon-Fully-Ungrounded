@@ -17268,3 +17268,20 @@ Volgens Jordi's GBA-instructies per leider:
   - Eigen overworldsprite (rood, groen, roze, zwart; uit DarkSB24's Yoshi's Island-sheet, `tools/grounded/shyguy_overworld.py`), ook in het Battle Stadium.
   - Een rode Shy Guy zit ingegraven in de woestijn van Route 111 (achter het rotsblok aan de oostrand): lv 28, Mr. Mime 29.
   - Een eigen intro bedenkt Jordi nog.
+
+### [v0.9.146] - Ashfrost na Jordi's test
+- **Achter het Pokémon Center** kun je nu lopen: het PC staat een rij lager (deur op 23,10).
+- **Bord links van het PC:** "ASHFROST VILLAGE / Where even the snow is grey. Please do not eat the snow. We know what's in it. Now you do too."
+- **Ashfrost Lodge:**
+  - De lobby heeft nu een trap naar een gang (`AshfrostTown_Lodge_2F`) met een kamermeisje en vier kamers (`AshfrostTown_Lodge_Rooms`), elk met een deurbordje.
+  - Kamer 1: "de situatie", een gast die sinds 1998 aan het uitchecken is. Kamer 2: een bevroren bed en een Never-Melt Ice. Kamer 3: het spook dat niet wil betalen. Kamer 4: een slapende Beartic, "Paid in full for the winter. In salmon."
+  - Bouwscript: `tools/grounded/maptools/ashfrost_lodge.py`.
+- **Placeholders vervangen** in House1–3 en bij de bezoeker in het PC; de Lodge-eigenaar krijgt er twee vakken bij.
+- **Regi-standbeelden:** de bloemen ervoor zijn begaanbaar. Elk beeld is aan te spreken, met zijn stippatroon en een cryptische hint naar zijn grot.
+- **Iglo:**
+  - Altijd open. In de tempel blokkeert een ijsmuur de zaal tot alle vijf Regi's gevangen zijn (`LAYOUT_REGIGIGAS_TEMPLE_SEALED` via `setmaplayoutindex`).
+  - De muur heeft vijf kuiltjes en geeft raadsels voor alle vijf Regi's, ook Regieleki en Regidrago.
+- **Route 136 (noordeinde, onder Ashfrost):**
+  - Halve keien onder de randbomen weg en een boom op de kale klifrand.
+  - De terrassen lopen door tot onder de bosrand (de foute hoektegel rechtsonder).
+- **Zwarte gaten in de klifvoeten:** in de route-sneeuwset heeft `cliff_front_b` een grotopening. `snowlib` gebruikt daar nu `cliff_b`. Opgelost op Route 136 (opnieuw gebouwd) en Route 135 (50 tegels direct in `map.bin`). De echte grotingangen blijven.

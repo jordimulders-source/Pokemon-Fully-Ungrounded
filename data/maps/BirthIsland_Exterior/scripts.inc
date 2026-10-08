@@ -114,3 +114,12 @@ BirthIsland_Exterior_Movement_DeoxysApproach:
 	walk_slow_down
 	walk_slow_down
 	step_end
+
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+BirthIsland_Exterior_EventScript_LVLetters::
+	msgbox BirthIsland_Exterior_Text_LVLetters, MSGBOX_SIGN
+	end
+
+BirthIsland_Exterior_Text_LVLetters:
+	.string "A crate with a telescope lens\nand a stack of letters.\p'Night 1. The triangle moved.\nI didn't touch it. I swear.'\p'Night 40. It hums at night.\nI've started humming back.'\p'Night 90. The triangle and I are\nengaged. My mother doesn't\lunderstand. Nobody understands.'\p'Night 91. It left me for a kid\nwith a ticket. Keep the lens.'$"
+@ --- einde land_vulling ---

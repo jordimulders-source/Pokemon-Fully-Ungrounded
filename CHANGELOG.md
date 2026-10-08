@@ -17214,3 +17214,43 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.140] - Battle! Tapu goedgekeurd en gekoppeld
 - Jordi: "dit is hem". `MUS_GROUNDED_VS_TAPU` speelt nu bij alle vier de Tapu-gevechten; de Tapu-intro's eindigen op de eerste grote slag (5,54 s).
+
+### [v0.9.141] - Testronde: gevechtsfixes
+- **Implosion:** het zwarte gat zuigt nu álles op: hazards, schermen (ook Aurora Veil), Tailwind/Safeguard/Mist en andere kant-effecten (beide kanten), Trick Room/Gravity/Magic Room/Wonder Room e.d., alle stat-wijzigingen, en ook het weer en het terrein (abilities en vormen veranderen mee). Getest: Snow Warning-sneeuw verdwijnt ("The snow storm stopped.").
+- **Ally Switch in singles:** faalt altijd buiten doubles, en de wisselanimatie doet in singles niets meer. Eerder raakte daardoor de healthbox kapot (rechtsboven) en werd de sprite onzichtbaar (Kadabra, screenshot van een tester).
+- **Exp. Points:** "X gained N Exp. Points!" (en de Exp. Share-regel) loopt na een korte pauze vanzelf door, zonder op A te drukken. "Grew to Lv." en het level-up-vak blijven wachten.
+- **Gehoorzaamheidsmelding:** komt een Pokémon door een level-up boven de badge-grens, of vang je een Pokémon boven die grens, dan meldt het spel: "Your badges only command POKéMON up to Lv. X. ... may (stop/not) obey you". De grens zit nu in één functie (`GetPlayerObedienceLevel`). Let op: eigen Pokémon kijken naar het level waarop ze gevangen zijn (Gen 8+-regel), dus de level-up-melding geldt vooral voor geruilde Pokémon.
+- **Neo Plasma** (grunts, sages, Shadow Triad) gooit gewone Poké Balls.
+
+### [v0.9.142] - Battle Stadium na Jordi's testrun
+- **Omroeper:**
+  - Bij het eerste gevecht: welkom en de rondenaam ("round of 16" enz.).
+  - Daarna een zin over jou, op basis van je speelgeschiedenis: eerdere titel, Hall of Fame, 8 badges, een gevangen legendary, veel gevangen, veel uren. Anders een vanilla-zin.
+  - In doubles volgt je compagnon, en daarna beide tegenstanders om beurten.
+  - Latere rondes: rondenaam en tegenstander(s).
+  - Nieuw: `SAVE.tournaments` (oude saves blijven werken).
+- **Teamvoorvertoning** een kwart korter (256 → 176 frames).
+- **Wedstrijdkaart in doubles:** jij en je compagnon, en beide tegenstanders in beeld.
+- **Slides:** in doubles praat ook tegenstander B voor de eerste beurt.
+- **AI:** de compagnon krijgt minstens dezelfde slimheid als de tegenstanders (Smart Switching e.d.). De startcompagnons hadden alleen Basic Trainer. Er werd niet gecounterpickt: drie keer Bullet Punch was pech (3 van de 106 leads).
+- **Balans:** tegenstanders bouwen hun EV's per wedstrijd op (0%, 33%, 67%, 100%); 75 van de 106 leads hadden volledige Showdown-EV's. Donalds Choice Scarf-Ditto's (de Marill met alleen Knock Off) zijn een bewuste grap en blijven.
+- **Verliesteksten** met de hand afgebroken, zodat ze in het gevechtsvak passen.
+- **Archie en Maxie** krijgen in het Stadium hun eigen mugshot, zoals in het verhaal (de Aqua/Magma-duotransitie blijft alleen als ze samen een duo vormen).
+
+### [v0.9.143] - Cinematische intro's: leestijd en details
+- **Wally:** Zigzagoon staat op het platform (y 52 → 59). Alle teksten staan langer in beeld (totaal 4,7 → 8,1 s). Ruisbanden lopen niet meer over de tekst.
+- **Wallace:** SANTÉ hoger (accent en onderkant zichtbaar). De hele intro is ±25% trager.
+- **Norman** (178 → 352 frames), **Winona** (174 → 324; de BAGGAGE FEE-grap 42 → 120) en **Tate & Liza** (192 → 428; "...and they hate you." 10 → 96, de stroboscoop alleen nog in het begin van de schreeuw): de teksten en de eindgrap zijn te lezen. Wattson is ongewijzigd.
+- **Steven:** de 8 badges verschijnen in het blauw. Daarna licht elke badge op: wit facet, sprong naar 1,5×, het beeld schokt, en dan zijn echte kleur, op een oplopende noot. Daarna barst de steen.
+  - De kleuren zijn zelf gekozen, omdat de Emerald-badges in de graphics grijs zijn: Stone grijs, Knuckle oranje, Dynamo goud, Heat rood, Balance koper, Feather paars, Mind roze, Rain blauw.
+- **Keccles:** geen "Be wall" meer; hij is een droge, echt wijze Kecleon.
+  - Borden: "UNSEEN IS NOT ABSENT. SEEN IS NOT UNDERSTOOD.", "EYES SEE EDGES, NOT THINGS. BLUR THE EDGE.", "COLOR = CONTEXT / SELF = CONTEXT ? / HASTE < PATIENCE", "EVERYONE WEARS A COLOR FOR OTHERS."
+  - Plan: OBSERVE / WAIT / ADAPT / ACT ONCE, met "PATIENCE IS ALSO A COLOR."
+  - Einde: het krijt schrijft "WE SEE WHAT WE EXPECT."
+- `film.py` werkt weer onder numpy 2.
+
+### [v0.9.144] - Frontier-bordjes en Exp. Share vóór gym 1
+- **Battle Stadium en The Spire** hebben een naambord bij de deur ("BATTLE STADIUM / Sixteen enter. One gets a trophy.", "THE SPIRE / Climb. Lose everything. Climb again.").
+- Bij elk gebouw staan twee praters over het gebouw.
+- De Spire-veteraan stond op een fakkelpilaar en staat nu een tegel naar links.
+- **Exp. Share:** Prof. Birch geeft hem samen met de Pokédex (vóór de eerste gym). Mr. Stone geeft na de brief een tweede ("Another one? Must be a franchise."). Het is een vastgehouden item (Gen 5): de houder krijgt een deel van de EXP zonder mee te vechten.

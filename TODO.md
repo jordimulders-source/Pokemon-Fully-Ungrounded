@@ -3,6 +3,13 @@
 Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeronde taken gaan naar `CHANGELOG.md`.
 
 ## Openstaande taken (in volgorde)
+- **Beslissingen Jordi 9 okt (volgorde: eerst de basiskaart vullen, dan de uitbreidingen):**
+  1. **Basiskaart:** alle dungeons/grotten zonder wilde Pokémon krijgen ze nu meteen (behalve legendary-holen zoals Crystal Cavity en Faraway Island). Granite Cave extra content; Mt. Chimney extra plekken met wild; Shoal Cave veel interessanter; Seafloor Cavern en Cave of Origin meer content; onderwater fixen (encounters + iets te ontdekken); zeevulling verder.
+  2. **Birth Island helemaal weg** (kaart, event, ticket; Deoxys heeft al een eigen event): ruimte besparen.
+  3. **Dragonspine Isle → Tao-eiland:** Gerald schrappen; Reshiram, Zekrom en uiteindelijk Kyurem te vangen (zie LEGENDARY_PLAN groep 9, ruïnetoren).
+  4. **Beacon Isle:** willekeurige vorm (niet de huidige); vanaf de top zie je 's nachts een eilandje dat alleen vanuit het licht zichtbaar is (spookschip bestaat al).
+  5. **Ruimte-tijdgrot (Spacetime Cave) bij Mossdeep**, waar nog ruimte is op de Town Map. Warps naar andere Pokémon-games: **Lavender Town** (+ Pokémon Tower), **National Park** (eventueel met **Ilex Forest** voor Celebi), **Cerulean Cave** (Mewtwo echt; de huidige Mewtwo-grot is een placeholder), de Gen 4-meren, een **?????-locatie naar Yoshi's Island** (Shy Guy-quest), later eventueel Area Zero (paradoxen gepauzeerd). **Mt. Coronet = de laatste post-game quest:** nadat je de rest hebt, Dialga, Palkia en tot slot Arceus.
+  6. **Yoshi's Island:** top-down Pokémon-stijl, maar grafisch compleet anders (dat is de grap), uit Jordi's Yoshi's Island-sheets (`graphics/*Yoshi*`, `bg*.png`, `misc*.png`, `world-map.png`). De Shy Guys zijn een parodie op een Pokémon-evil team en praten niet (sarcastische humor tussen haakjes). Yoshi vecht met je samen (multi), dan Commander Boo, Wario blijkt erachter te zitten.
 - **Shy Guy-quest (Jordi, 8 okt; wacht op zijn assets):** in de Spacetime Cave komt een ?????-locatie die je naar Yoshi's Island teleporteert. Daar double-battle je samen met Yoshi tegen een reeks Shy Guys, dan Commander Boo, en Wario blijkt erachter te zitten.
 - **Paradox-Pokémon: gepauzeerd** (Jordi, 8 okt). Idee: een warp naar Area Zero vanuit de Spacetime Cave.
 - **Testronde 8 okt (Jordi + testers), open:** Shy Guy-intro (zie Shy Guy-quest). Daarna: alle kaartwijzigingen/uitbreidingen voor de beta, pas dan gevechtsintro's en muziek.

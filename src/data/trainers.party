@@ -38947,6 +38947,8 @@ Nature: Timid
 - Nasty Plot
 - Burning Jealousy
 
+/* --- beacon_dragon (tools/grounded/maptools/beacon_dragon.py) --- */
+
 === TRAINER_BEACON_ROALD ===
 Name: ROALD
 Class: Sailor
@@ -39189,246 +39191,6 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Scald
 - Ice Beam
 - Confuse Ray
-
-=== TRAINER_DRAGONSPINE_VERNON ===
-Name: VERNON
-Class: Dragon Tamer
-Pic: Dragon Tamer
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Altaria
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Pulse
-- Air Slash
-- Cotton Guard
-- Roost
-
-Flygon
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Earthquake
-- Dragon Claw
-- U-turn
-- Fire Punch
-
-Drampa
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Pulse
-- Hyper Voice
-- Flamethrower
-- Glare
-
-=== TRAINER_DRAGONSPINE_SAELA ===
-Name: SAELA
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Noivern
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Air Slash
-- Dragon Pulse
-- Super Fang
-- Roost
-
-Cyclizar
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Double-Edge
-- Dragon Claw
-- U-turn
-- Shed Tail
-
-Tyrantrum
-Level: 46
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Rock Slide
-- Dragon Claw
-- Crunch
-- Dragon Dance
-
-=== TRAINER_DRAGONSPINE_OSRIC ===
-Name: OSRIC
-Class: Dragon Tamer
-Pic: Dragon Tamer
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Kommo-o
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Clanging Scales
-- Drain Punch
-- Iron Defense
-- Dragon Claw
-
-Druddigon
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Claw
-- Rock Slide
-- Superpower
-- Glare
-
-Dracozolt
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Bolt Beak
-- Dragon Claw
-- Stomping Tantrum
-- Rock Slide
-
-=== TRAINER_DRAGONSPINE_MIRA ===
-Name: MIRA
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Goodra
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Pulse
-- Sludge Bomb
-- Thunderbolt
-- Fire Blast
-
-Duraludon
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Flash Cannon
-- Dragon Pulse
-- Thunderbolt
-- Stealth Rock
-
-Tatsugiri
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Pulse
-- Muddy Water
-- Rapid Spin
-- Icy Wind
-
-Appletun
-Level: 49
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Apple Acid
-- Dragon Pulse
-- Recover
-- Leech Seed
-
-=== TRAINER_DRAGONSPINE_TALON ===
-Name: TALON
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
-
-Garchomp
-Level: 52
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Earthquake
-- Dragon Claw
-- Swords Dance
-- Stone Edge
-
-Dragapult
-Level: 52
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Darts
-- Phantom Force
-- U-turn
-- Will-O-Wisp
-
-Haxorus
-Level: 52
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Dance
-- Dragon Claw
-- Earthquake
-- Poison Jab
-
-Hydreigon
-Level: 53
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dark Pulse
-- Dragon Pulse
-- Flamethrower
-- Nasty Plot
-
-=== TRAINER_GERALD_WARDEN ===
-Name: GERALD
-Class: Dragon Tamer
-Pic: Dragon Tamer
-Gender: Male
-Music: Intense
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
-
-Exeggutor_Alola
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Hammer
-- Wood Hammer
-- Flamethrower
-- Trick Room
-
-Kingdra
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Rain Dance
-- Surf
-- Dragon Pulse
-- Ice Beam
-
-Goodra_Hisui
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Heavy Slam
-- Dragon Pulse
-- Sludge Bomb
-- Thunderbolt
-
-Baxcalibur
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Glaive Rush
-- Icicle Crash
-- Earthquake
-- Dragon Dance
-
-Archaludon
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Electro Shot
-- Flash Cannon
-- Dragon Pulse
-- Body Press
-
-Dragonite @ Lum Berry
-Level: 57
-Ability: Multiscale
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Dance
-- Extreme Speed
-- Earthquake
-- Fire Punch
 
 /* --- einde beacon_dragon --- */
 
@@ -39978,3 +39740,348 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Trick Room
 
 /* --- einde beacon_isle --- */
+
+/* --- tao_island (tools/grounded/maptools/tao_island.py) --- */
+
+=== TRAINER_TAO_VERNON ===
+Name: VERNON
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Altaria
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Air Slash
+- Cotton Guard
+- Roost
+
+Flygon
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Drampa
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Hyper Voice
+- Flamethrower
+- Glare
+
+=== TRAINER_TAO_SAELA ===
+Name: SAELA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Noivern
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Air Slash
+- Dragon Pulse
+- Super Fang
+- Roost
+
+Cyclizar
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Double-Edge
+- Dragon Claw
+- U-turn
+- Shed Tail
+
+Tyrantrum
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rock Slide
+- Dragon Claw
+- Crunch
+- Dragon Dance
+
+=== TRAINER_TAO_OSRIC ===
+Name: OSRIC
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kommo-o
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Clanging Scales
+- Drain Punch
+- Iron Defense
+- Dragon Claw
+
+Druddigon
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Claw
+- Rock Slide
+- Superpower
+- Glare
+
+Dracozolt
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bolt Beak
+- Dragon Claw
+- Stomping Tantrum
+- Rock Slide
+
+=== TRAINER_TAO_MIRA ===
+Name: MIRA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Goodra
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Sludge Bomb
+- Thunderbolt
+- Fire Blast
+
+Duraludon
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Dragon Pulse
+- Thunderbolt
+- Stealth Rock
+
+Tatsugiri
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Muddy Water
+- Rapid Spin
+- Icy Wind
+
+Appletun
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Apple Acid
+- Dragon Pulse
+- Recover
+- Leech Seed
+
+=== TRAINER_TAO_TALON ===
+Name: TALON
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Garchomp
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- Swords Dance
+- Stone Edge
+
+Dragapult
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+Haxorus
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Poison Jab
+
+Hydreigon
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Dragon Pulse
+- Flamethrower
+- Nasty Plot
+
+=== TRAINER_TAO_GHETSIS ===
+Name: GHETSIS
+Class: Plasma Boss
+Pic: Ghetsis
+Gender: Male
+Music: Suspicious
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Cofagrigus @ Leftovers
+Level: 82
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Will-O-Wisp
+- Hex
+- Toxic Spikes
+- Pain Split
+
+Bouffalant @ Choice Band
+Level: 82
+Ability: Sap Sipper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Head Charge
+- Close Combat
+- Earthquake
+- Megahorn
+
+Seismitoad @ Life Orb
+Level: 82
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Scald
+- Earth Power
+- Sludge Wave
+- Stealth Rock
+
+Eelektross @ Assault Vest
+Level: 82
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+Kingambit @ Black Glasses
+Level: 83
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Swords Dance
+- Sucker Punch
+- Iron Head
+- Kowtow Cleave
+
+Hydreigon @ Choice Specs
+Level: 84
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power
+
+=== TRAINER_TAO_JUN ===
+Name: JUN
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Eelektross
+Level: 50
+Ability: Levitate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wild Charge
+- Crunch
+- Drain Punch
+- Coil
+
+Zweilous
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Crunch
+- Dragon Rush
+- Body Slam
+- Work Up
+
+Ampharos
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Dragon Pulse
+- Signal Beam
+- Thunder Wave
+
+Dracozolt
+Level: 51
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bolt Beak
+- Dragon Claw
+- Earthquake
+- Rock Slide
+
+=== TRAINER_TAO_YING ===
+Name: YING
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Volcarona
+Level: 51
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fiery Dance
+- Bug Buzz
+- Quiver Dance
+- Giga Drain
+
+Turtonator
+Level: 51
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flamethrower
+- Dragon Pulse
+- Shell Trap
+- Shell Smash
+
+Togekiss
+Level: 51
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Air Slash
+- Dazzling Gleam
+- Flamethrower
+- Roost
+
+Charizard
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Solar Beam
+
+/* --- einde tao_island --- */

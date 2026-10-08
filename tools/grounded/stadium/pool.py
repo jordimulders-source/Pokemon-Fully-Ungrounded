@@ -68,9 +68,8 @@ POOL = [
     'PLASMA_NIGEL',
     # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
     'GRIMSBY',
-    # eilanden: vuurtorenwachter (Beacon Isle), drakenwachter (Dragonspine Isle)
+    # eilanden: vuurtorenwachter (Beacon Isle)
     'WICK',
-    'GERALD_WARDEN',
     # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
     'SALIM',
     # post-game kluizenaars: Selene (Draconid-oudere, Meteor Falls), Reginald (Victory Road), Helia (Scorched Slab)
@@ -216,7 +215,6 @@ GFX = {
     'VICTORY_V': 'EXPERT_M',
     'GRIMSBY': 'SAILOR',
     'TALLOW': 'PSYCHIC_M',
-    'GERALD': 'MAN_5',
     'WICK': 'EXPERT_M',
     'SALIM': 'EXPERT_M',
     'DRACONID_ELDER': 'OLD_WOMAN', 'VR_REGINALD': 'EXPERT_M', 'SLAB_HELIA': 'HEX_MANIAC',

@@ -1152,12 +1152,6 @@
 #define TRAINER_BEACON_KEIKO                1177 // Project Grounded: Beacon Isle, vuurtoren 2F: traplopen
 #define TRAINER_BEACON_PEMBERTON            1178 // Project Grounded: Beacon Isle, vuurtoren 2F: wil de vuurtoren kopen
 #define TRAINER_WICK                        1179 // Project Grounded: Beacon Isle, vuurtorenwachter (Battle Stadium)
-#define TRAINER_DRAGONSPINE_VERNON          1180 // Project Grounded: Dragonspine Isle, 412 keer gebeten
-#define TRAINER_DRAGONSPINE_SAELA           1181 // Project Grounded: Dragonspine Isle, traint vooral rennen
-#define TRAINER_DRAGONSPINE_OSRIC           1182 // Project Grounded: Dragon's Den onderhal, vergunningencontrole
-#define TRAINER_DRAGONSPINE_MIRA            1183 // Project Grounded: Dragon's Den onderhal, heel zacht vechten
-#define TRAINER_DRAGONSPINE_TALON           1184 // Project Grounded: Dragon's Den bovenhal, nam de trap
-#define TRAINER_GERALD_WARDEN               1185 // Project Grounded: Dragon's Den, drakenwachter met klembord (Battle Stadium)
 // }
 
 #define TRAINER_SALIM                       1186 // Project Grounded (Hoopa-quest): handelaar in de Mirage Bazaar, Route 111
@@ -1187,6 +1181,15 @@
 
 // beacon_isle { (tools/grounded/maptools/beacon_isle.py; vaste id's)
 #define TRAINER_TALLOW                      1048 // Project Grounded: Beacon Isle, Lichteiland: geest van de eerste vuurtorenwachter (Battle Stadium)
+// tao_island { (tools/grounded/maptools/tao_island.py; id 1060-1069)
+#define TRAINER_TAO_VERNON                  1060 // Project Grounded: Tao-eiland, strand: 412 keer gebeten
+#define TRAINER_TAO_SAELA                   1061 // Project Grounded: Tao-eiland, plateau: traint vooral rennen
+#define TRAINER_TAO_OSRIC                   1062 // Project Grounded: Tao-eiland, Dragon's Den onderhal: vergunningencontrole
+#define TRAINER_TAO_MIRA                    1063 // Project Grounded: Tao-eiland, Dragon's Den onderhal: heel zacht vechten
+#define TRAINER_TAO_TALON                   1064 // Project Grounded: Tao-eiland, Dragon's Den bovenhal: nam de trap
+#define TRAINER_TAO_GHETSIS                 1065 // Project Grounded: Tao-eiland, Frost Hollow: post-league superboss, geeft de DNA Splicers
+#define TRAINER_TAO_JUN                     1066 // Project Grounded: Tao-toren 2F: Team Zekrom
+#define TRAINER_TAO_YING                    1067 // Project Grounded: Tao-toren 3F: Team Reshiram
 // }
 
 #define TRAINERS_COUNT                      1195

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_DRAGONSPINE_ISLE",
-  "name": "DragonspineIsle",
-  "layout": "LAYOUT_DRAGONSPINE_ISLE",
+  "id": "MAP_TAO_ISLAND",
+  "name": "TaoIsland",
+  "layout": "LAYOUT_TAO_ISLAND",
   "music": "MUS_ROUTE120",
-  "region_map_section": "MAPSEC_DRAGONSPINE_ISLE",
+  "region_map_section": "MAPSEC_TAO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
@@ -22,47 +22,47 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 17,
-      "y": 26,
+      "x": 21,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "DragonspineIsle_EventScript_Vernon",
+      "script": "TaoIsland_EventScript_Vernon",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
-      "x": 24,
-      "y": 17,
+      "x": 22,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "DragonspineIsle_EventScript_Saela",
+      "script": "TaoIsland_EventScript_Saela",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 17,
-      "y": 34,
+      "x": 32,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DragonspineIsle_EventScript_Adjuster",
+      "script": "TaoIsland_EventScript_Adjuster",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 19,
-      "y": 20,
+      "x": 20,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -70,35 +70,57 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_DRAGONSPINE_MAX_REVIVE"
+      "flag": "FLAG_ITEM_TAO_ISLAND_MAX_REVIVE"
     }
   ],
   "warp_events": [
     {
-      "x": 21,
-      "y": 22,
+      "x": 26,
+      "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_DRAGONSPINE_ISLE_DEN",
+      "dest_map": "MAP_TAO_ISLAND_TOWER_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_TAO_ISLAND_DEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_TAO_ISLAND_DEN",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 31,
+      "x": 34,
       "y": 33,
       "elevation": 3,
       "item": "ITEM_DRAGON_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE"
+      "flag": "FLAG_HIDDEN_ITEM_TAO_ISLAND_DRAGON_SCALE"
     },
     {
       "type": "hidden_item",
-      "x": 32,
-      "y": 10,
+      "x": 23,
+      "y": 19,
       "elevation": 3,
       "item": "ITEM_STAR_PIECE",
-      "flag": "FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE"
+      "flag": "FLAG_HIDDEN_ITEM_TAO_ISLAND_STAR_PIECE"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "TaoIsland_EventScript_Sign"
     }
   ]
 }

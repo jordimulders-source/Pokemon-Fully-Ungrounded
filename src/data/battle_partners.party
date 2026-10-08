@@ -4367,40 +4367,6 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Ice Beam
 - Confuse Ray
 
-=== PARTNER_STADIUM_GERALD ===
-Name: GERALD
-Class: Dragon Tamer
-Pic: Dragon Tamer
-Gender: Male
-Music: Intense
-Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
-
-Kingdra
-Level: 50
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Rain Dance
-- Surf
-- Dragon Pulse
-- Ice Beam
-
-Archaludon
-Level: 50
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Electro Shot
-- Flash Cannon
-- Dragon Pulse
-- Body Press
-
-Dragonite @ Lum Berry
-Level: 50
-Ability: Multiscale
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Dragon Dance
-- Extreme Speed
-- Earthquake
-- Fire Punch
-
 === PARTNER_STADIUM_SALIM ===
 Name: SALIM
 Class: Collector

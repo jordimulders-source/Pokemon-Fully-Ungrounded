@@ -1,4 +1,4 @@
-"""Project Grounded: het vuurtoreneiland (Beacon Isle) en het drakeneiland (Dragonspine Isle). Deterministisch en
+"""Project Grounded: het vuurtoreneiland (Beacon Isle). Deterministisch en
 idempotent (vaste seeds; draai opnieuw na een wijziging).
 
   BeaconIsle             (nu in beacon_isle.py) Eilandje onder Route 133 (verbinding, x 48-79 van Route 133; Town Map x 14, y 11), General +
@@ -10,15 +10,10 @@ idempotent (vaste seeds; draai opnieuw na een wijziging).
                          Binnenkant: kopieen van de Space Center (1F zeekaarten, 2F machines, met een extra trap omhoog)
                          en het dak van het Lilycove-warenhuis (de galerij, automaten weg). Bovenin vuurtorenwachter
                          WICK en zijn LANTURN: de lamp is al 40 jaar kapot, zij is het licht.
-  DragonspineIsle        Rotsig drakeneiland rechts van Route 129 (verbinding; Town Map x 26-27, y 10), General +
-                         Lavaridge (terras-autotiler van chimney_ext.py), zandstrand met de General-zand-autotiler.
-                         De linker kolommen zijn alleen water/zand (andere secondary dan Route 129; het script
-                         controleert het). Grot in de bergwand naar de Dragon's Den.
-  DragonspineIsle_Den    Meteor Falls-stijl (Map-klasse van meteor_falls_ext.py): onderhal met meer, een hoge klif met
-                         waterval (Waterfall = badge 8) naar de bovenhal met de drakenwachter GERALD.
+  (Dragonspine Isle en de Dragon's Den zijn het Tao-eiland geworden: tools/grounded/maptools/tao_island.py.)
 
 Ook: trainers (opponents.h- en trainers.party-blok 'beacon_dragon'), wilde Pokemon, mapsecs + popups, flags, de
-Battle Stadium-pool (WICK, GERALD; pool.py en announcer.py) en de verbindingen in Route 133 en Route 129.
+Battle Stadium-pool (WICK; pool.py en announcer.py) en de verbinding in Route 133.
 Teksten zijn placeholders in de huisstijl (Jordi herschrijft ze); ze worden automatisch afgebroken
 (tools/dialogen/import.py).
 
@@ -180,12 +175,6 @@ FLAGS = [
     (102, 'FLAG_ITEM_BEACON_ISLE_CELL_BATTERY', 'Beacon Isle: Cell Battery'),
     (103, 'FLAG_ITEM_BEACON_LIGHTHOUSE_THUNDER_STONE', 'vuurtoren 1F: Thunder Stone'),
     (104, 'FLAG_ITEM_BEACON_LIGHTHOUSE_ELECTIRIZER', 'vuurtoren 2F: Electirizer'),
-    (105, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE', 'Dragonspine Isle: verborgen Dragon Scale'),
-    (106, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE', 'Dragonspine Isle: verborgen Star Piece'),
-    (107, 'FLAG_ITEM_DRAGONSPINE_MAX_REVIVE', 'Dragonspine Isle: Max Revive'),
-    (108, 'FLAG_ITEM_DRAGONSPINE_DEN_PP_UP', "Dragon's Den: PP Up"),
-    (109, 'FLAG_ITEM_DRAGONSPINE_DEN_MAX_ELIXIR', "Dragon's Den: Max Elixir"),
-    (110, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DEN_BIG_NUGGET', "Dragon's Den: verborgen Big Nugget"),
 ]
 
 
@@ -379,226 +368,10 @@ BeaconIsle_Lighthouse_2F_MapScripts::
     return name
 
 
-# ====================================================================== Dragonspine Isle
-DW, DH = 42, 42
-PLATEAU = (15, 9, 34, 31)
-MOUNT = (18, 11, 31, 22)
-SPINE = (20, 12, 29, 15)
-STAIRS1 = [(23, 31), (24, 31)]
-STAIRS2 = [(28, 22), (29, 22)]
-CAVE = (21, 22)
-SAFE_LEFT = 9                       # linker kolommen alleen primary (grens met Route 129)
-
-
-def dragon_hmap():
-    m = [['0'] * DW for _ in range(DH)]
-
-    def fill(x0, y0, x1, y1, c):
-        for y in range(y0, y1 + 1):
-            for x in range(x0, x1 + 1):
-                m[y][x] = c
-    fill(*PLATEAU, '1')
-    fill(*MOUNT, '2')
-    # (geen losse bergkam: de RIDGE-tegels lazen als losse wandstukjes)
-    return [''.join(r) for r in m]
-
-
-def dragonspine_isle():
-    name, const = 'DragonspineIsle', 'DRAGONSPINE_ISLE'
-    random.seed(149)                                 # nationaal dexnummer van Dragonite
-    rng = random.Random(148)
-    hm = dragon_hmap()
-    land = [[False] * DW for _ in range(DH)]
-    ph = [rng.random() * 6.28 for _ in range(3)]
-    for y in range(DH):
-        for x in range(DW):
-            a = math.atan2(y - 21, x - 25)
-            r = 1 + 0.07 * math.sin(3 * a + ph[0]) + 0.05 * math.sin(5 * a + ph[1]) + 0.03 * math.sin(7 * a + ph[2])
-            blob = abs((x - 25) / 15.5) ** 2.3 + abs((y - 21) / 17.0) ** 2.3 <= r ** 2.3
-            near = PLATEAU[0] - 2 <= x <= PLATEAU[2] + 2 and PLATEAU[1] - 2 <= y <= PLATEAU[3] + 2
-            land[y][x] = blob or near
-    tc.smooth(land, 6)
-    for y in range(PLATEAU[1] - 2, PLATEAU[3] + 3):
-        for x in range(PLATEAU[0] - 2, PLATEAU[2] + 3):
-            assert land[y][x], ('plateau te dicht bij het water', x, y)
-    g = cx.terrace_tiles(hm)
-    for y in range(DH):
-        for x in range(DW):
-            if hm[y][x] != '0':
-                continue
-            g[y][x] = tc.sand_tile(land, x, y) if land[y][x] else t(WATER, False, 1)
-    cx.stairs(g, STAIRS1)
-    cx.stairs(g, STAIRS2)
-    cx.cave_door(g, *CAVE)
-    tc.place_rocks(g, 10, 150, lambda x, y: x >= SAFE_LEFT + 1 or y < 6 or y > 34)
-
-    S = Scr(name, '''@ Project Grounded: Dragonspine Isle, het drakeneiland rechts van Route 129 (ZEE_PLAN.md idee 6).
-@ Kaart en scripts: tools/grounded/maptools/beacon_dragon.py. In de bergwand de Dragon's Den (drakenwachter GERALD,
-@ achter een waterval). Teksten zijn placeholders.
-DragonspineIsle_MapScripts::
-	.byte 0
-''')
-    P = S.P
-    S.trainer('Vernon', 'DRAGONSPINE_VERNON',
-              "Welcome to DRAGONSPINE ISLE! The dragons here are wild, free and incredibly bitey.",
-              "Bitten. Again.",
-              "I've been bitten 412 times. I keep count. It keeps me humble.")
-    S.trainer('Saela', 'DRAGONSPINE_SAELA',
-              "I came here to train with dragons. Mostly I've been training my running.",
-              "Running away it is.",
-              "The cave? The warden lives in there. GERALD.\n\n"
-              "He has a clipboard. Even the dragons are afraid of the clipboard.")
-    S.npc('Adjuster',
-          "I'm the island's insurance adjuster.\n\n"
-          "Claims this week: fourteen scorched tents, three eaten canoes and one man who “just wanted to pet it.”\n\n"
-          "All denied. Dragons count as an act of God.")
-    objs = [tr('OBJ_EVENT_GFX_MAN_5', 17, 26, P + 'Vernon', 'RIGHT', 4),
-            tr('OBJ_EVENT_GFX_WOMAN_5', 24, 17, P + 'Saela', 'DOWN', 3),
-            obj('OBJ_EVENT_GFX_MAN_1', 17, 34, P + 'Adjuster', move='MOVEMENT_TYPE_LOOK_AROUND'),
-            ball(19, 20, 'ITEM_MAX_REVIVE', 'FLAG_ITEM_DRAGONSPINE_MAX_REVIVE')]
-    bgs = [hidden(31, 33, 'ITEM_DRAGON_SCALE', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE'),
-           hidden(32, 10, 'ITEM_STAR_PIECE', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE')]
-    warps = [warp(CAVE[0], CAVE[1], 'DRAGONSPINE_ISLE_DEN', 0)]
-    starts = [(CAVE[0], CAVE[1] + 1)]
-    keep = cx.keep_cells(objs, bgs, cx.area(STAIRS1 + STAIRS2 + [CAVE]) | cx.area([(x, y + 1) for x, y in STAIRS1 + STAIRS2])
-                         | cx.area([(x, y - 1) for x, y in STAIRS1 + STAIRS2]) | cx.area([(CAVE[0], CAVE[1] + 1)]))
-    high = {(x, y) for y in range(DH) for x in range(DW) if hm[y][x] in 'X'}
-    used = set()
-    grass = cx.ash_grass(g, keep | high, rng, 6)
-    cx.decorate(g, 0x271, 'ground', keep | grass, starts, [
-        ('boulder', 3, 'open'), ('rock', 6, 'muur'), ('basalt', 3, 'vrij'), ('crack_a', 3, 'vrij'),
-        ('crack_b', 3, 'vrij'), ('deadtree', 3, 'muur')], rng, used)
-    if DEBUG:
-        for y in range(DH):
-            print('%2d ' % y + ''.join('~' if mt(v) == WATER else ('s' if mt(v) < 0x200 and cx.walkable(v) else
-                                       ('"' if mt(v) == 0x207 else ('.' if cx.walkable(v) else '#'))) for v in g[y]))
-    # ---- controles
-    blocked = {(o['x'], o['y']) for o in objs}
-    walk = reach(g, starts, blocked=blocked)
-    surf = reach(g, [(0, y) for y in range(DH)])
-    assert any(cx.next_to(c, surf) for c in walk), 'eiland niet bereikbaar vanaf zee'
-    for o in objs:
-        assert cx.next_to((o['x'], o['y']), walk), ('object onbereikbaar', o['script'])
-        for c in sight_cells(o):
-            assert c in walk or not cx.walkable(g[c[1]][c[0]]), ('zichtlijn over water', o['script'])
-    for b in bgs:
-        assert (b['x'], b['y']) in walk, ('verborgen item onbereikbaar', b)
-    assert grass and all(c in walk for c in grass), 'as-gras onbereikbaar'
-    lvl2 = {(x, y) for x in range(MOUNT[0] + 1, MOUNT[2]) for y in range(MOUNT[1] + 1, MOUNT[3]) if cx.walkable(g[y][x])}
-    assert lvl2 and lvl2 - blocked <= walk, 'bergterras onbereikbaar'
-    assert all(mt(g[y][x]) < 0x200 for y in range(DH) for x in range(SAFE_LEFT)), 'linker kolommen niet primary'
-    r129 = sms.read('Route129', 80, 40)
-    assert all(mt(r129[y][x]) < 0x200 for y in range(40) for x in range(80 - SAFE_LEFT, 80)), 'Route 129 rechts niet primary'
-    sms.save(g, name)
-    sms.border(name, t(WATER, False, 1))
-    register_layout(name, const, DW, DH, 'gTileset_General', 'gTileset_Lavaridge')
-    sms.write_map(name, const, objs, warps, [], bgs, music='MUS_ROUTE120', weather='WEATHER_SHADE',
-                  region_map_section='MAPSEC_DRAGONSPINE_ISLE',
-                  connections=[{'map': 'MAP_ROUTE129', 'offset': 0, 'direction': 'left'}])
-    oq.register_map(name)
-    sms.set_connection('Route129', 'MAP_DRAGONSPINE_ISLE', 'right', 0)
-    S.write()
-    return name
-
-
-# ====================================================================== Dragon's Den
-NW, NH = 36, 40
-DEN_EXIT = (17, 34)
-GERALD = (26, 9)
-
-
-def dragon_den():
-    name, const = 'DragonspineIsle_Den', 'DRAGONSPINE_ISLE_DEN'
-    m = mf.Map(NW, NH)
-    m.room(4, 5, 31, 16)                 # bovenhal
-    m.room(4, 22, 31, 34)                # onderhal
-    m.water(12, 10, 23, 16)              # bovenmeer
-    m.water(9, 22, 26, 27)               # ondermeer (onder de waterval)
-    m.build()
-    m.cliff(4, 31, 17, pillars=(6, 27))
-    m.waterfall(14, 17)
-    m.stal_wall(4, 31, 5, pillars=(7, 26))
-    m.exit_south(*DEN_EXIT)
-    m.crater(27, 6)                      # het nest achter GERALD
-    m.crater(5, 31)
-    rnd = random.Random(1491)
-    keep = {DEN_EXIT, (17, 33), (17, 32), GERALD, (26, 10), (8, 8), (9, 8), (8, 30), (9, 30), (10, 30), (11, 30),
-            (28, 29), (27, 29), (26, 29), (29, 29), (5, 23), (30, 33), (5, 15), (6, 15), (29, 9), (30, 9), (24, 8), (10, 6), (10, 7),
-            (11, 8), (12, 8)}
-    for x in range(4, 32):
-        keep |= {(x, 21), (x, 16)}
-    m.rubble(rnd, 6, (4, 23, 31, 33), keep)
-    m.rubble(rnd, 4, (4, 6, 31, 15), keep)
-    g = m.build()
-
-    S = Scr(name, '''@ Project Grounded: de Dragon's Den in Dragonspine Isle. Kaart en scripts: tools/grounded/maptools/beacon_dragon.py.
-@ Onderhal met meer; de waterval (Waterfall, badge 8) leidt naar de bovenhal met drakenwachter GERALD.
-@ Teksten zijn placeholders.
-DragonspineIsle_Den_MapScripts::
-	.byte 0
-''')
-    P = S.P
-    S.trainer('Osric', 'DRAGONSPINE_OSRIC',
-              "Halt! This den is for DRAGON TAMERS only!\n\nDo you have a permit? ...Nobody has a permit.",
-              "Fine. You may stay. Unofficially.",
-              "The waterfall leads to the warden. Climbing it is the easy part.\n\nFilling in his forms is the hard part.")
-    S.trainer('Mira', 'DRAGONSPINE_MIRA',
-              "Shh. The dragons are sleeping. Let's fight very, very quietly.",
-              "...That was not quiet.",
-              "Something big is snoring up there. I hope it's a DRAGONITE.\n\nI really hope it's not GERALD.")
-    S.trainer('Talon', 'DRAGONSPINE_TALON',
-              "You climbed the waterfall? Impressive. I took the stairs.\n\n...There are no stairs. That's how good I am.",
-              "There really are no stairs.",
-              "GERALD has guarded this den for thirty years. Nobody knows what he's guarding it from.\n\nPossibly from us.")
-    S.trainer('Gerald', 'GERALD_WARDEN',
-              "Ah. A visitor. I am GERALD, Warden of the Dragon's Den.\n\n"
-              "Have you filled in form D-7, “Intent to Battle a Dragon Warden”?\n\n"
-              "...No? Then I shall have to process you manually.",
-              "Request... approved.",
-              "Dragons used to rule these islands. These days they're mostly retired.\n\n"
-              "I make sure nobody disturbs their pension.",
-              gift='ITEM_EXPERT_BELT',
-              gift_text="Your paperwork is in order. Take this EXPERT BELT.\n\n"
-                        "Standard issue for people who keep winning. Sign here. And here. And here.")
-    S.npc('Dragonite', "DRAGONITE is asleep on a stack of paperwork.\n\nIt is snoring in triplicate.", 'MSGBOX_DEFAULT')
-    objs = [tr('OBJ_EVENT_GFX_MAN_5', 8, 30, P + 'Osric', 'RIGHT', 4),
-            tr('OBJ_EVENT_GFX_WOMAN_5', 29, 29, P + 'Mira', 'LEFT', 3),
-            tr('OBJ_EVENT_GFX_MAN_3', 9, 7, P + 'Talon', 'DOWN', 3),
-            tr('OBJ_EVENT_GFX_MAN_5', GERALD[0], GERALD[1], P + 'Gerald', 'DOWN', 1),
-            obj('OBJ_EVENT_GFX_SPECIES(DRAGONITE)', 29, 9, P + 'Dragonite', move='MOVEMENT_TYPE_FACE_LEFT'),
-            ball(5, 23, 'ITEM_PP_UP', 'FLAG_ITEM_DRAGONSPINE_DEN_PP_UP'),
-            ball(5, 15, 'ITEM_MAX_ELIXIR', 'FLAG_ITEM_DRAGONSPINE_DEN_MAX_ELIXIR')]
-    bgs = [hidden(30, 33, 'ITEM_BIG_NUGGET', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DEN_BIG_NUGGET')]
-    warps = [warp(DEN_EXIT[0], DEN_EXIT[1], 'DRAGONSPINE_ISLE', 0)]
-    # ---- controles: onderhal te voet, bovenhal alleen via het meer + de waterval
-    blocked = {(o['x'], o['y']) for o in objs}
-    start = (DEN_EXIT[0], DEN_EXIT[1] - 1)
-    walk = mf.reachable(g, start, blocked=blocked)
-    surf = mf.reachable(g, start, blocked=blocked, allow_water=True)
-    upper = {(x, y) for x in range(4, 32) for y in range(5, 17) if (x, y) in surf and g[y][x] >> 12 != 1}
-    assert upper and not (upper & walk), 'bovenhal hoort alleen via de waterval bereikbaar te zijn'
-    for o in objs:
-        c = (o['x'], o['y'])
-        if c[1] >= 22:
-            assert mf.next_to(walk, *c), ('onderhal: object onbereikbaar', o['script'])
-        else:
-            assert mf.next_to(upper, *c), ('bovenhal: object onbereikbaar', o['script'])
-        for s in sight_cells(o):
-            assert s in walk | upper or (g[s[1]][s[0]] >> 10) & 3, ('zichtlijn over water', o['script'])
-    assert (30, 33) in walk
-    mf.save_layout(name, g)
-    register_layout(name, const, NW, NH, 'gTileset_General', 'gTileset_MeteorFalls')
-    sms.write_map(name, const, objs, warps, [], bgs, music='MUS_SEALED_CHAMBER', weather='WEATHER_NONE',
-                  map_type='MAP_TYPE_UNDERGROUND', region_map_section='MAPSEC_DRAGONSPINE_ISLE', show_map_name=False,
-                  allow_cycling=False, allow_escaping=True, battle_scene='MAP_BATTLE_SCENE_NORMAL')
-    oq.register_map(name)
-    S.write()
-    return name
 
 
 # ====================================================================== mapsecs, popups
-MAPSECS = [('MAPSEC_BEACON_ISLE', 'BEACON ISLE', 14, 11, 1, 1, 'MAPPOPUP_THEME_MARBLE', 'vuurtoreneiland'),
-           ('MAPSEC_DRAGONSPINE_ISLE', 'DRAGONSPINE ISLE', 26, 10, 2, 1, 'MAPPOPUP_THEME_STONE', 'drakeneiland')]
+MAPSECS = [('MAPSEC_BEACON_ISLE', 'BEACON ISLE', 14, 11, 1, 1, 'MAPPOPUP_THEME_MARBLE', 'vuurtoreneiland')]
 
 
 def mapsecs():
@@ -640,21 +413,6 @@ WILD = {
         fishing=(30, [('FINNEON', 28, 30), ('WISHIWASHI', 28, 30), ('LANTURN', 32, 36), ('LUMINEON', 32, 36),
                       ('EELEKTRIK', 32, 36), ('CLAWITZER', 38, 42), ('BRUXISH', 38, 42), ('MANTINE', 40, 44),
                       ('KINGLER', 40, 44), ('EELEKTROSS', 42, 45)])),
-    'DRAGONSPINE_ISLE': dict(
-        land=(20, [('ALTARIA', 44, 47), ('CYCLIZAR', 44, 47), ('FLYGON', 44, 47), ('HAXORUS', 44, 47),
-                   ('TYRANTRUM', 45, 48), ('DRUDDIGON', 44, 47), ('KOMMO_O', 45, 48), ('DRAMPA', 45, 48),
-                   ('NOIVERN', 45, 48), ('SLIGGOO', 44, 47), ('DURALUDON', 47, 48), ('GARCHOMP', 48, 48)]),
-        water=(4, [('SEADRA', 44, 47), ('DRAGALGE', 48, 48), ('DRAGONAIR', 45, 48), ('TATSUGIRI', 45, 48),
-                   ('KINGDRA', 48, 48)]),
-        fishing=(30, [('HORSEA', 28, 31), ('SKRELP', 28, 31), ('SEADRA', 33, 37), ('DRAGONAIR', 33, 37),
-                      ('TATSUGIRI', 33, 37), ('KINGDRA', 42, 46), ('DRACOVISH', 42, 46), ('ARCTOVISH', 42, 46),
-                      ('DRAGALGE', 48, 50), ('DRAGONITE', 51, 52)])),
-    'DRAGONSPINE_ISLE_DEN': dict(
-        land=(10, [('GABITE', 46, 47), ('ZWEILOUS', 46, 50), ('SHELGON', 46, 49), ('ARCTIBAX', 46, 50),
-                   ('DRACOZOLT', 46, 50), ('ARCTOZOLT', 46, 50), ('DRAKLOAK', 46, 49), ('TURTONATOR', 46, 50),
-                   ('DURALUDON', 47, 50), ('SLIGGOO', 46, 49), ('SALAMENCE', 50, 50), ('DRAGAPULT', 50, 50)]),
-        water=(4, [('DRAGONAIR', 46, 50), ('SEADRA', 46, 50), ('DRACOVISH', 48, 50), ('ARCTOVISH', 48, 50),
-                   ('KINGDRA', 50, 50)])),
 }
 
 
@@ -739,36 +497,6 @@ TRAINERS = [
         mon('Eelektross', 45, ['Wild Charge', 'Crunch', 'Drain Punch', 'Coil'], 'Levitate'),
         mon('Lumineon', 45, ['Scald', 'U-turn', 'Ice Beam', 'Rain Dance']),
         mon('Lanturn @ Leftovers', 47, ['Discharge', 'Scald', 'Ice Beam', 'Confuse Ray'], 'Volt Absorb')]),
-    ('DRAGONSPINE_VERNON', 'Dragonspine Isle, 412 keer gebeten', 'VERNON', 'Dragon Tamer', 'Dragon Tamer', 'Male', 'Intense', AI, None, [
-        mon('Altaria', 46, ['Dragon Pulse', 'Air Slash', 'Cotton Guard', 'Roost']),
-        mon('Flygon', 46, ['Earthquake', 'Dragon Claw', 'U-turn', 'Fire Punch']),
-        mon('Drampa', 46, ['Dragon Pulse', 'Hyper Voice', 'Flamethrower', 'Glare'])]),
-    ('DRAGONSPINE_SAELA', 'Dragonspine Isle, traint vooral rennen', 'SAELA', 'Cooltrainer', 'Cooltrainer F', 'Female', 'Cool', AI, None, [
-        mon('Noivern', 46, ['Air Slash', 'Dragon Pulse', 'Super Fang', 'Roost']),
-        mon('Cyclizar', 46, ['Double-Edge', 'Dragon Claw', 'U-turn', 'Shed Tail']),
-        mon('Tyrantrum', 46, ['Rock Slide', 'Dragon Claw', 'Crunch', 'Dragon Dance'])]),
-    ('DRAGONSPINE_OSRIC', "Dragon's Den onderhal, vergunningencontrole", 'OSRIC', 'Dragon Tamer', 'Dragon Tamer', 'Male', 'Intense', AI, None, [
-        mon('Kommo-o', 49, ['Clanging Scales', 'Drain Punch', 'Iron Defense', 'Dragon Claw']),
-        mon('Druddigon', 49, ['Dragon Claw', 'Rock Slide', 'Superpower', 'Glare']),
-        mon('Dracozolt', 49, ['Bolt Beak', 'Dragon Claw', 'Stomping Tantrum', 'Rock Slide'])]),
-    ('DRAGONSPINE_MIRA', "Dragon's Den onderhal, heel zacht vechten", 'MIRA', 'Cooltrainer', 'Cooltrainer F', 'Female', 'Cool', AI, None, [
-        mon('Goodra', 49, ['Dragon Pulse', 'Sludge Bomb', 'Thunderbolt', 'Fire Blast']),
-        mon('Duraludon', 49, ['Flash Cannon', 'Dragon Pulse', 'Thunderbolt', 'Stealth Rock']),
-        mon('Tatsugiri', 49, ['Dragon Pulse', 'Muddy Water', 'Rapid Spin', 'Icy Wind']),
-        mon('Appletun', 49, ['Apple Acid', 'Dragon Pulse', 'Recover', 'Leech Seed'])]),
-    ('DRAGONSPINE_TALON', "Dragon's Den bovenhal, nam de trap", 'TALON', 'Cooltrainer', 'Cooltrainer M', 'Male', 'Cool', AI_BOSS, None, [
-        mon('Garchomp', 52, ['Earthquake', 'Dragon Claw', 'Swords Dance', 'Stone Edge']),
-        mon('Dragapult', 52, ['Dragon Darts', 'Phantom Force', 'U-turn', 'Will-O-Wisp']),
-        mon('Haxorus', 52, ['Dragon Dance', 'Dragon Claw', 'Earthquake', 'Poison Jab']),
-        mon('Hydreigon', 53, ['Dark Pulse', 'Dragon Pulse', 'Flamethrower', 'Nasty Plot'])]),
-    ('GERALD_WARDEN', "Dragon's Den, drakenwachter met klembord (Battle Stadium)", 'GERALD', 'Dragon Tamer', 'Dragon Tamer', 'Male', 'Intense',
-     AI_BOSS, 'Hyper Potion / Hyper Potion', [
-        mon('Exeggutor_Alola', 55, ['Dragon Hammer', 'Wood Hammer', 'Flamethrower', 'Trick Room']),
-        mon('Kingdra', 55, ['Rain Dance', 'Surf', 'Dragon Pulse', 'Ice Beam']),
-        mon('Goodra_Hisui', 55, ['Heavy Slam', 'Dragon Pulse', 'Sludge Bomb', 'Thunderbolt']),
-        mon('Baxcalibur', 55, ['Glaive Rush', 'Icicle Crash', 'Earthquake', 'Dragon Dance']),
-        mon('Archaludon', 55, ['Electro Shot', 'Flash Cannon', 'Dragon Pulse', 'Body Press']),
-        mon('Dragonite @ Lum Berry', 57, ['Dragon Dance', 'Extreme Speed', 'Earthquake', 'Fire Punch'], 'Multiscale')]),
 ]
 
 
@@ -817,9 +545,7 @@ def trainers():
 
 # ====================================================================== Battle Stadium-pool
 # (trainer zonder TRAINER_, sleutel in GFX (pool.py zoekt op voorvoegsel), overworld, omroepzin).
-# TRAINER_GERALD bestaat al in vanilla (een Cooltrainer): de drakenwachter heet GERALD_WARDEN.
-STADIUM = [('WICK', 'WICK', 'EXPERT_M', "WICK! Forty years a lighthouse keeper. His lamp is a fish. It works."),
-           ('GERALD_WARDEN', 'GERALD', 'MAN_5', "GERALD, Warden of the Dragon's Den! Did you fill in form D-7? Too late now.")]
+STADIUM = [('WICK', 'WICK', 'EXPERT_M', "WICK! Forty years a lighthouse keeper. His lamp is a fish. It works.")]
 
 
 def stadium():
@@ -853,7 +579,7 @@ if __name__ == '__main__':
     flags()
     beam_graphics()
     lighthouse_tileset()
-    names = [lighthouse_1f(), lighthouse_2f(), dragonspine_isle(), dragon_den()]  # Beacon Isle: beacon_isle.py
+    names = [lighthouse_1f(), lighthouse_2f()]  # Beacon Isle: beacon_isle.py; Tao-eiland: tao_island.py
     mapsecs()
     wild()
     trainers()

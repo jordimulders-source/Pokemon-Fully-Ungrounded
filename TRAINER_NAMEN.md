@@ -130,6 +130,12 @@ Verslagen-flag = 0x500 + nummer (Wally's objecten gebruiken die ook als verberg-
 Wally's thema's (`GetTrainerBattleBGM`): 1 Mauville, 2 Meteor Falls, 3 Mt. Pyre, 4 Mossdeep, 5 Victory Road (+ rematches).
 Burglar: `TRAINER_BURGLAR_1` … `_8` = 1–8 badges (979–983, 1146–1148), `_9` = na de Hall of Fame (1149).
 
+**Ghetsis:** `TRAINER_TAO_GHETSIS` (1065) is de verhaalversie (post-league superboss in Frost Hollow op het Tao-eiland,
+lv 82–84, geeft de DNA Splicers); `TRAINER_STADIUM_GHETSIS` (978) is de Stadium-versie (lv 50, met Kyurem-Black).
+**Tao-eiland** (was Dragonspine Isle, `tools/grounded/maptools/tao_island.py`): `TRAINER_TAO_VERNON`, `_SAELA`, `_OSRIC`,
+`_MIRA`, `_TALON` (1060–1064, waren `TRAINER_DRAGONSPINE_*` 1180–1184), `_JUN` (1066), `_YING` (1067). Drakenwachter
+Gerald (`TRAINER_GERALD_WARDEN`, 1185) is geschrapt, ook uit het Stadium; 1180–1185 zijn vrij.
+
 ## Nieuwe trainer of hernoeming
 
 Hernoem met een script over alle bestanden (behalve `CHANGELOG.md`), draai daarna

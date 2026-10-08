@@ -17536,3 +17536,19 @@ Volgens Jordi's GBA-instructies per leider:
   - Daarachter ligt een eilandje met een grot (`BeaconIsle_Grotto`). Encounters op lv 42–46: Shiinotic, Lampent, Alola-Persian, Hisui-Voltorb, Klefki, Chimecho, Espathra, Accelgor, Palossand, Unown, Indeedee en Hisui-Electrode (1%). Er ligt een Mind Plate.
   - **TALLOW**, de geest van de eerste vuurtorenwachter (hij brak de lamp in 1953): spookteam, lv 52–54, ace Chandelure. Geeft een Dusk Stone. Ook in het Battle Stadium.
 - Flag `FLAG_GROUNDED(400)`, trainer 1048.
+
+### [v0.9.163] - Tao-eiland: Reshiram, Zekrom, Kyurem en Ghetsis
+- **Dragonspine Isle heet nu TAO ISLAND** (`tools/grounded/maptools/tao_island.py`):
+  - een grillige rotspiek met een ruïnetoren, gebouwd op een kopie van de Sky Pillar-buitenkant;
+  - een zandstrand eronder;
+  - de Dragon's Den als doorgang naar het plateau.
+- **De toren** (Sky Pillar-layouts hergebruikt): een gids op 1F, Team Zekrom-Jun op 2F, Team Reshiram-Ying op 3F.
+- **Het dak:** Reshiram en Zekrom slapen er aan weerszijden. Een oude man legt uit dat ze al 300 jaar ruziën over het dak.
+  - Na de Hall of Fame worden ze wakker; allebei te vangen, lv 70.
+- **Frost Hollow** (ijsglijkamer achter de waterval in de Den, badge 8): na beide broers wacht **Ghetsis**, de post-league superboss.
+  - Team: Cofagrigus, Bouffalant, Seismitoad, Eelektross, Kingambit (lv 82) en Hydreigon (lv 84). IV's 31, items, boss-AI, eigen muziek.
+  - Hij geeft de **DNA Splicers**. Fusievormen staan aan (`P_FUSION_FORMS`), dus ze werken.
+  - Daarna is **Kyurem** (neutraal, lv 70) te vangen.
+- **Gerald is weg** (trainer, Stadium-pool, omroepzin). De Dragon Tamers, de verzekeringsexpert en de drakentabellen blijven.
+- **Placeholders:** Reshiram, Zekrom en Kyurem vechten op de Kanto Legendary-muziek met bestaande transities; Jordi bedenkt eigen intro's en thema's.
+- Flags `FLAG_GROUNDED(430–444)`; trainers 1060–1067 (1180–1185 zijn weer vrij).

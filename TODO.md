@@ -52,6 +52,13 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)
 - Na de beta: Ho-Oh helderder, minder stotterende percussie. (6 okt)
 
+## Antwoorden Jordi 9 okt (verwerkt)
+- **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). **Ghetsis** moet nog ergens in de wereld komen: hij geeft de **DNA Splicers**.
+- **Beacon Isle:** het lichteiland krijgt een kleine grot met zeldzame wilde soorten en één sterk gevecht.
+- **Spacetime Cave-warps:** Cerulean Cave, Lavender Town + Pokémon Tower, National Park + Forest-tunnel naar Ilex Forest (Celebi), een representatie van de Gen 4-meren, Mt. Coronet + Spear Pillar (+ de trap naar Arceus, aan het einde), Chargestone Cave (of een versie daarvan), Glimwood Tangle, Area Zero, en ????? naar Yoshi's Island. De Mewtwo-grot in Meteor Falls verdwijnt uiteindelijk. **Per locatie eerst input van Jordi** (volledig nabouwen of eigen richting, welke assets).
+- **Delta Episode:** Deoxys is beloning genoeg. Idee: een plek waar je Deoxys met de meteorieten van vorm laat wisselen.
+- **Contests:** helemaal herbouwen, maar achteraan de lijst.
+
 ## 4. Open vragen voor Jordi
 1. **Tao-eiland:** blijven de Dragon Tamers, de verzekeringsexpert en de drakentabellen van Dragonspine staan (alleen Gerald weg)? Kyurem-fusievormen (Black/White) aanzetten?
 2. **Beacon Isle:** wat staat er op het eilandje dat je alleen in de lichtbundel ziet?

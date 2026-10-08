@@ -17285,3 +17285,37 @@ Volgens Jordi's GBA-instructies per leider:
   - Halve keien onder de randbomen weg en een boom op de kale klifrand.
   - De terrassen lopen door tot onder de bosrand (de foute hoektegel rechtsonder).
 - **Zwarte gaten in de klifvoeten:** in de route-sneeuwset heeft `cliff_front_b` een grotopening. `snowlib` gebruikt daar nu `cliff_b`. Opgelost op Route 136 (opnieuw gebouwd) en Route 135 (50 tegels direct in `map.bin`). De echte grotingangen blijven.
+
+### [v0.9.147] - Tweede testronde: Stadium eerlijker, popups, N, Rare Candy
+- **Stadium-compagnons:**
+  - Brendan, May, Keccles en Wally waren kopieën van hun verhaalteams: lage IV's, geen EV's of items, verhaalmoves zoals Scary Face. Ze krijgen echte Stadium-sets met dezelfde Pokémon, en de slimme AI van de pool.
+  - De sets staan in `COMPANION_SETS` in `pool.py`.
+- **Stadium-tegenstanders:** naast de EV-opbouw lopen ook de IV's op per ronde (max 20, 24, 28, daarna 31).
+- **Ability-popups:** bij weer-abilities (Snow Warning, Drought, Drizzle, Sand Stream, Air Pollution, Pollen Season, primal-weer) schuift de popup weg zodra de tekst er staat, niet pas na de weeranimatie.
+  - Bij stat-boosts bij het inwisselen (Intrepid Sword, Dauntless Shield e.d.) verdwijnt hij na de melding.
+  - Het "nooit weggaan en van kleur veranderen" kon ik in mGBA niet nabootsen; dit ruimt de popup in elk geval altijd op.
+- **N's thema weg** (de bron-MIDI was kapot): N gebruikt de gekozen trainermuziek, en "N" staat niet meer in het optiemenu. De muziekkeuzes daarna schuiven in oude saves één plek op.
+- **Rare Candy:** komt een Pokémon daardoor boven de badge-grens, dan meldt het partymenu dat hij misschien niet meer gehoorzaamt.
+
+### [v0.9.148] - Lege landplekken gevuld
+- **Ever Grande City:**
+  - Boven: een hotdogkraam (1 Big Malasada per dag, "we ran out of sausages in 2003"), een fotograaf en fans, waarvan de teksten veranderen na de Hall of Fame.
+  - Trainers: Expert Bramwell (47e poging bij de Elite Four, Fighting) en Pokéfan Gloria (Normal).
+  - Beneden: gitarist Rocky (Electric), een oud vrouwtje en een visser.
+  - Verborgen Full Restore.
+- **Mt. Pyre Exterior:** rouwenden met absurde rouw:
+  - iemand die haar eigen begrafenis repeteert;
+  - een man in rouw om zijn Tamagotchi;
+  - een herdenkingsstream;
+  - een Voltorb die zichzelf opblies;
+  - een "premium plot met zeezicht" in de mist;
+  - een Duskull die je opmeet.
+  - 4 verborgen items.
+- **Desert Underpass:** fossielenopgraving met een gapend Armaldo-"fossiel", een archeoloog (Max Revive) en Ruin Maniac Hollis (fossielenteam, lv 62–63). Ook Rock Smash-rotsen, een Stone Plate en een verborgen Rare Bone.
+- **Navel Rock Fork:** een wandelaar die al 11 jaar twijfelt tussen links en rechts, een Sky Plate en een verborgen PP Max.
+- **Southern / Birth / Faraway Island:** elk een verlaten kamp met een kist vol brieven en 2–3 items:
+  - een Latias-fan met een rood geverfde Swablu-pop;
+  - een sterrenkijker die verloofd raakte met de driehoek;
+  - Dr. P. Lumb: "It turned into my sister. I am an only child."
+- **Safari-zones, Starfall Grotto, Heatran-hol:** per plek een bijzondere NPC en verborgen items. Het sterrenstof in Starfall Grotto komt elke dag terug.
+- Alles komt uit `tools/grounded/maptools/land_vulling.py` (met `landlib.py`, dat ook de bereikbaarheid controleert). Nieuwe trainers 1070–1073.

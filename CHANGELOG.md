@@ -17432,3 +17432,31 @@ Volgens Jordi's GBA-instructies per leider:
   - Het team loopt op van Purrloin/Sableye/Thievul (1 badge) tot Weavile/Krookodile/Grimmsnarl/Honchkrow/Zoroark/Thievul na de Elite Four.
 - **Mega-stenen weg** bij Zinnia (Delta), de werkstraf-rematches van Archie en Maxie, en Burglar 9.
 - **Gimmicks alleen in The Spire** (`CanActivateGimmick`): Mega Evolution, Z-moves, Dynamax en Tera kunnen daarbuiten door niemand meer gebruikt worden. Ook niet door een tegenstander met een steen, en ook niet door een Rayquaza met Dragon Ascent in het Stadium.
+
+### [v0.9.157] - Kaartvulling 4: dungeons en lege plekken
+- **Wilde Pokémon** in dungeons die ze misten:
+  - Seafloor Cavern Room 9, Cave of Origin B1F en Sky Pillar Entrance.
+  - De zijkamers van Victory Road: grondhaaien, Rattata-lijnen, Gimmighoul/Gholdengo en geesten.
+  - Aqua Hideout (surfen/vissen), het Abandoned Ship (scheepskat Meowth 1%) en de spookschipgangen.
+  - Meteor Falls Draconid Shrine (Bagon 20%), het voorhof van Scorched Slab en Navel Rock Fork/Entrance.
+  - Mt. Chimney: 31 nieuwe asgrastegels in drie plekken, en de Summit heeft nu een tabel.
+- **Bewust leeg:** legendary-holen (Crystal Cavity e.d.), de Loyal Three-holen, Sky Pillar 2F/4F (barstvloer), Birth Island.
+- **Granite Cave:**
+  - Een spelonkgids die al 12 jaar een kaart tekent (het is een tekening van Steven).
+  - Hiker Doug, een graffitibord, een Fist Plate en een Hard Stone.
+- **Shoal Cave:**
+  - Een getijdenwachter, met een andere tekst bij eb en bij vloed.
+  - Een zandbank met een Splash Plate, alleen bij eb.
+  - Swimmer Maren, alleen bij vloed.
+  - Expert Olga in de ijsgrot, alleen bij eb bereikbaar.
+  - Een Pearl String en een Icicle Plate.
+- **Seafloor Cavern / Cave of Origin:**
+  - Een Aqua-grunt die nog op wacht staat (hij noemde de rots "Gary") en een duiklogboek van Team Aqua.
+  - Een ex-Magma-grunt, een reserve-verslaggeefster, plates en items.
+- **Meer items:** Magma Hideout, Meteor Falls B1F en Steven's Cave, en Crystal Cavity.
+- **Shipwreck Shoals:** een bergingsduiker, Sailor Barnaby (deserteur van het spookschip) en Swimmer Cod.
+- **Safari-zones:** een steenliefhebber, een vogelaarster en een starteronderzoeker, met items.
+- **Nothing Island:** een toerist die een eenstersreview geeft.
+- **Route 124:** een strandjutter, Triathlete Nadia en Swimmer Wade.
+- Script `tools/grounded/maptools/kaart_vulling_4.py`. Flags `FLAG_GROUNDED(200–245)`, trainers 1150–1158.
+- **Ook:** Dave in Petalburg zonder Iron Valiant (die komt pas in Sootopolis). Burglar met Hisui-Zorua/Zoroark (Illusion als Thievul, en geen Fighting-zwakte meer) en Sableye in plaats van Weavile.

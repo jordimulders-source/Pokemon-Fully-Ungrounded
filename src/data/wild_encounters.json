@@ -2758,8 +2758,8 @@
           }
         },
         {
-          "map": "MAP_DRAGONSPINE_ISLE_DEN",
-          "base_label": "gDragonspineIsleDen",
+          "map": "MAP_TAO_ISLAND_DEN",
+          "base_label": "gTaoIslandDen",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -2857,8 +2857,8 @@
           }
         },
         {
-          "map": "MAP_DRAGONSPINE_ISLE",
-          "base_label": "gDragonspineIsle",
+          "map": "MAP_TAO_ISLAND",
+          "base_label": "gTaoIsland",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -3006,6 +3006,282 @@
                 "min_level": 51,
                 "max_level": 52,
                 "species": "SPECIES_DRAGONITE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TAO_ISLAND_TOWER_3F",
+          "base_label": "gTaoIslandTower3F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_MIENSHAO"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_CLAYDOL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_LAMPENT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ZWEILOUS"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_FRAXURE"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ALTARIA"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_HAXORUS"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_KOMMO_O"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TAO_ISLAND_TOWER_2F",
+          "base_label": "gTaoIslandTower2F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_MIENSHAO"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_CLAYDOL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_LAMPENT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ZWEILOUS"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_FRAXURE"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ALTARIA"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_HAXORUS"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_KOMMO_O"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TAO_ISLAND_TOWER_1F",
+          "base_label": "gTaoIslandTower1F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_MIENSHAO"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_CLAYDOL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_LAMPENT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ZWEILOUS"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_FRAXURE"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_ALTARIA"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_HAXORUS"
+              },
+              {
+                "min_level": 48,
+                "max_level": 48,
+                "species": "SPECIES_KOMMO_O"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TAO_ISLAND_FROST_HOLLOW",
+          "base_label": "gTaoIslandFrostHollow",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_BEARTIC"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_CRYOGONAL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_AVALUGG"
+              },
+              {
+                "min_level": 44,
+                "max_level": 46,
+                "species": "SPECIES_VANILLISH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_GLALIE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_FROSLASS"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_ARCTIBAX"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_WEAVILE"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_MAMOSWINE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_DEWGONG"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_VANILLUXE"
+              },
+              {
+                "min_level": 54,
+                "max_level": 54,
+                "species": "SPECIES_BAXCALIBUR"
               }
             ]
           }

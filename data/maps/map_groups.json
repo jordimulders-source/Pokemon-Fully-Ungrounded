@@ -726,10 +726,15 @@
     "BeaconIsle_Lighthouse_1F",
     "BeaconIsle_Lighthouse_2F",
     "BeaconIsle_Lighthouse_Top",
-    "DragonspineIsle",
-    "DragonspineIsle_Den",
+    "TaoIsland",
+    "TaoIsland_Den",
     "MirageBazaar",
     "MirageBazaar_Vault",
-    "Underwater_Route127_Trench"
+    "Underwater_Route127_Trench",
+    "TaoIsland_Tower1F",
+    "TaoIsland_Tower2F",
+    "TaoIsland_Tower3F",
+    "TaoIsland_TowerTop",
+    "TaoIsland_FrostHollow"
   ]
 }

@@ -1647,7 +1647,24 @@
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
-// (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-429 zeevulling 4, 430+ vrij.
+// (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-429 zeevulling 4, 430-469 Tao-eiland (tao_island.py), 470+ vrij.
+// tao_island { (tools/grounded/maptools/tao_island.py; FLAG_GROUNDED 430-469)
+#define FLAG_HIDDEN_ITEM_TAO_ISLAND_DRAGON_SCALE         FLAG_GROUNDED(430) // Project Grounded: Tao-eiland: verborgen Dragon Scale
+#define FLAG_HIDDEN_ITEM_TAO_ISLAND_STAR_PIECE           FLAG_GROUNDED(431) // Project Grounded: Tao-eiland: verborgen Star Piece
+#define FLAG_ITEM_TAO_ISLAND_MAX_REVIVE                  FLAG_GROUNDED(432) // Project Grounded: Tao-eiland: Max Revive
+#define FLAG_ITEM_TAO_DEN_PP_UP                          FLAG_GROUNDED(433) // Project Grounded: Dragon's Den: PP Up
+#define FLAG_ITEM_TAO_DEN_MAX_ELIXIR                     FLAG_GROUNDED(434) // Project Grounded: Dragon's Den: Max Elixir
+#define FLAG_HIDDEN_ITEM_TAO_DEN_BIG_NUGGET              FLAG_GROUNDED(435) // Project Grounded: Dragon's Den: verborgen Big Nugget
+#define FLAG_HIDE_TAO_RESHIRAM                           FLAG_GROUNDED(436) // Project Grounded: Tao-toren: Reshiram gevangen/verslagen
+#define FLAG_HIDE_TAO_ZEKROM                             FLAG_GROUNDED(437) // Project Grounded: Tao-toren: Zekrom gevangen/verslagen
+#define FLAG_HIDE_TAO_DEN_DRAGONITE                      FLAG_GROUNDED(438) // Project Grounded: Dragon's Den: Dragonite van het gat (na beide broers)
+#define FLAG_HIDE_TAO_KYUREM                             FLAG_GROUNDED(439) // Project Grounded: Frost Hollow: Kyurem gevangen/verslagen
+#define FLAG_HIDE_TAO_GHETSIS                            FLAG_GROUNDED(440) // Project Grounded: Frost Hollow: Ghetsis vertrokken (DNA Splicers gekregen)
+#define FLAG_ITEM_TAO_TOWER_2F_DRAGON_FANG               FLAG_GROUNDED(441) // Project Grounded: Tao-toren 2F: Dragon Fang
+#define FLAG_ITEM_TAO_TOWER_3F_FULL_RESTORE              FLAG_GROUNDED(442) // Project Grounded: Tao-toren 3F: Full Restore
+#define FLAG_ITEM_TAO_FROST_NEVER_MELT_ICE               FLAG_GROUNDED(443) // Project Grounded: Frost Hollow: Never-Melt Ice
+#define FLAG_ITEM_TAO_FROST_ICE_STONE                    FLAG_GROUNDED(444) // Project Grounded: Frost Hollow: Ice Stone
+// }
 // Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
 #define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet
 #define FLAG_USED_IMPLOSION                     FLAG_GROUNDED(151) // de speler heeft ooit IMPLOSION gebruikt
@@ -1657,12 +1674,6 @@
 #define FLAG_ITEM_BEACON_ISLE_CELL_BATTERY               FLAG_GROUNDED(102) // Project Grounded: Beacon Isle: Cell Battery
 #define FLAG_ITEM_BEACON_LIGHTHOUSE_THUNDER_STONE        FLAG_GROUNDED(103) // Project Grounded: vuurtoren 1F: Thunder Stone
 #define FLAG_ITEM_BEACON_LIGHTHOUSE_ELECTIRIZER          FLAG_GROUNDED(104) // Project Grounded: vuurtoren 2F: Electirizer
-#define FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE        FLAG_GROUNDED(105) // Project Grounded: Dragonspine Isle: verborgen Dragon Scale
-#define FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE          FLAG_GROUNDED(106) // Project Grounded: Dragonspine Isle: verborgen Star Piece
-#define FLAG_ITEM_DRAGONSPINE_MAX_REVIVE                 FLAG_GROUNDED(107) // Project Grounded: Dragonspine Isle: Max Revive
-#define FLAG_ITEM_DRAGONSPINE_DEN_PP_UP                  FLAG_GROUNDED(108) // Project Grounded: Dragon's Den: PP Up
-#define FLAG_ITEM_DRAGONSPINE_DEN_MAX_ELIXIR             FLAG_GROUNDED(109) // Project Grounded: Dragon's Den: Max Elixir
-#define FLAG_HIDDEN_ITEM_DRAGONSPINE_DEN_BIG_NUGGET      FLAG_GROUNDED(110) // Project Grounded: Dragon's Den: verborgen Big Nugget
 // }
 // Forces-trio op routes (src/forces.c): DONE = gevangen/verslagen (permanent), HIDE = objectflag, per kaartlading gezet.
 #define FLAG_FORCES_TORNADUS_DONE               FLAG_GROUNDED(50)

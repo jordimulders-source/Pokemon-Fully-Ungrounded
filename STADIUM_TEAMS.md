@@ -110,7 +110,6 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | PLASMA_NIGEL | 512 | Conkeldurr, Excadrill, Escavalier, Haxorus | Conkeldurr, Excadrill, Haxorus | - |
 | GRIMSBY | 534 | Wailord, Cursola, Basculegion, Dhelmise | Wailord, Basculegion, Dhelmise | - |
 | WICK | 502 | Magnezone, Eelektross, Lumineon, Lanturn | Magnezone, Lumineon, Lanturn | regen |
-| GERALD_WARDEN | 585 | Kingdra, Baxcalibur, Archaludon, Dragonite | Kingdra, Archaludon, Dragonite | regen |
 | SALIM | 510 | Hippowdon, Cofagrigus, Sableye, Gholdengo | Hippowdon, Sableye, Gholdengo | Trick Room, zand |
 | BRENDAN_ROUTE_136_TREECKO | 514 | Ludicolo, Exploud, Absol, Blaziken | Ludicolo, Exploud, Blaziken | - |
 | MAY_ROUTE_136_TORCHIC | 510 | Roserade, Scovillain, Froslass, Swampert | Roserade, Froslass, Swampert | sneeuw, zon |
@@ -204,40 +203,39 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 8200 | WALLACE |
 | 8300 | LORELEI |
 | 8400 | DAVE |
-| 8500 | GERALD |
-| 8600 | THORTON |
-| 8700 | LUCY |
-| 8800 | AGATHA |
-| 8900 | CYRUS |
-| 9000 | DAHLIA |
-| 9100 | N |
-| 9200 | LAKE |
-| 9300 | LOYAL |
-| 9400 | REGIS |
-| 9500 | BIRDS |
-| 9600 | NORMAN |
-| 9700 | BEASTS |
-| 9800 | NOLAND |
-| 9900 | STEVEN |
-| 10000 | GIOVANNI |
-| 10100 | GHETSIS |
-| 10200 | ZINNIA |
-| 10300 | SWORDS |
-| 10400 | TAPUS |
-| 10500 | ARGENTA |
-| 10600 | ULTRAS |
-| 10700 | DRAKE |
-| 10800 | PSEUDOS |
-| 10900 | BRANDON |
-| 11000 | RUIN |
-| 11100 | GENIES |
-| 11200 | ANABEL |
-| 11300 | PALMER |
-| 11400 | LANCE |
-| 11500 | SPENSER |
-| 11600 | TUCKER |
-| 11700 | BLUE |
-| 11800 | CYNTHIA |
-| 11900 | RED |
-| 12000 | WEATHER |
-| 12100 | CREATORS |
+| 8500 | THORTON |
+| 8600 | LUCY |
+| 8700 | AGATHA |
+| 8800 | CYRUS |
+| 8900 | DAHLIA |
+| 9000 | N |
+| 9100 | LAKE |
+| 9200 | LOYAL |
+| 9300 | REGIS |
+| 9400 | BIRDS |
+| 9500 | NORMAN |
+| 9600 | BEASTS |
+| 9700 | NOLAND |
+| 9800 | STEVEN |
+| 9900 | GIOVANNI |
+| 10000 | GHETSIS |
+| 10100 | ZINNIA |
+| 10200 | SWORDS |
+| 10300 | TAPUS |
+| 10400 | ARGENTA |
+| 10500 | ULTRAS |
+| 10600 | DRAKE |
+| 10700 | PSEUDOS |
+| 10800 | BRANDON |
+| 10900 | RUIN |
+| 11000 | GENIES |
+| 11100 | ANABEL |
+| 11200 | PALMER |
+| 11300 | LANCE |
+| 11400 | SPENSER |
+| 11500 | TUCKER |
+| 11600 | BLUE |
+| 11700 | CYNTHIA |
+| 11800 | RED |
+| 11900 | WEATHER |
+| 12000 | CREATORS |

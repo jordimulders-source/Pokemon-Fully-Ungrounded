@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_DRAGONSPINE_ISLE",
+      "map": "MAP_TAO_ISLAND",
       "offset": 0,
       "direction": "right"
     },

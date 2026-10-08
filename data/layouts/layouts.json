@@ -5332,24 +5332,24 @@
       "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_Top/map.bin"
     },
     {
-      "id": "LAYOUT_DRAGONSPINE_ISLE",
-      "name": "DragonspineIsle_Layout",
-      "width": 42,
-      "height": 42,
+      "id": "LAYOUT_TAO_ISLAND",
+      "name": "TaoIsland_Layout",
+      "width": 44,
+      "height": 38,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lavaridge",
-      "border_filepath": "data/layouts/DragonspineIsle/border.bin",
-      "blockdata_filepath": "data/layouts/DragonspineIsle/map.bin"
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/TaoIsland/border.bin",
+      "blockdata_filepath": "data/layouts/TaoIsland/map.bin"
     },
     {
-      "id": "LAYOUT_DRAGONSPINE_ISLE_DEN",
-      "name": "DragonspineIsle_Den_Layout",
+      "id": "LAYOUT_TAO_ISLAND_DEN",
+      "name": "TaoIsland_Den_Layout",
       "width": 36,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
-      "border_filepath": "data/layouts/DragonspineIsle_Den/border.bin",
-      "blockdata_filepath": "data/layouts/DragonspineIsle_Den/map.bin"
+      "border_filepath": "data/layouts/TaoIsland_Den/border.bin",
+      "blockdata_filepath": "data/layouts/TaoIsland_Den/map.bin"
     },
     {
       "id": "LAYOUT_MIRAGE_BAZAAR",

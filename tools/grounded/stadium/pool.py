@@ -68,9 +68,8 @@ POOL = [
     'PLASMA_NIGEL',
     # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
     'GRIMSBY',
-    # eilanden: vuurtorenwachter (Beacon Isle), drakenwachter (Dragonspine Isle)
+    # eilanden: vuurtorenwachter (Beacon Isle)
     'WICK',
-    'GERALD_WARDEN',
     # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
     'SALIM',
 ]
@@ -211,7 +210,6 @@ GFX = {
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
     'GRIMSBY': 'SAILOR',
-    'GERALD': 'MAN_5',
     'WICK': 'EXPERT_M',
     'SALIM': 'EXPERT_M',
 }

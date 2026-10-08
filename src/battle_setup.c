@@ -649,6 +649,19 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_LANDORUS_THERIAN:
         CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
+    // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities + Kanto-legendary-muziek;
+    // Jordi bedenkt de eigen intro's nog.
+    case SPECIES_RESHIRAM: // witte vlam: de steekvlam van Entei
+        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ZEKROM: // zwarte bliksem: de bliksems van Raikou
+        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_KYUREM: // ijs: het noorderlicht van Suicune
+    case SPECIES_KYUREM_WHITE:
+    case SPECIES_KYUREM_BLACK:
+        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_RG_VS_LEGEND);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

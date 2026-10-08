@@ -1130,7 +1130,14 @@
 #define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
 // }
 
-#define TRAINERS_COUNT                      1145
+// zee_vulling_3 {
+#define TRAINER_HEX_MANIAC_VESPER           1170 // Project Grounded (zeevulling 3): Route 122, bruidsmeisje van een spokenbruiloft
+#define TRAINER_SAILOR_MARTY                1171 // Project Grounded (zeevulling 3): Route 126, zijn schip is nu deel van de Garbage Patch
+#define TRAINER_RANGER_CORAL                1172 // Project Grounded (zeevulling 3): Route 129, telt Wailord die er niet zijn
+#define TRAINER_SAILOR_RUSTY                1173 // Project Grounded (zeevulling 3): Route 131, schipper van de bergingsduiker
+// }
+
+#define TRAINERS_COUNT                      1174
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

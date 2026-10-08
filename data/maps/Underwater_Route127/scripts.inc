@@ -19,3 +19,12 @@ Underwater_Route127_OnLoad:
 	setmetatile 73, 45, 0x26F, TRUE
 Underwater_Route127_EventScript_NoGrotto:
 	end
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Underwater_Route127_EventScript_ZV3Anchor::
+	msgbox Underwater_Route127_Text_ZV3Anchor, MSGBOX_SIGN
+	end
+
+Underwater_Route127_Text_ZV3Anchor:
+	.string "A huge anchor is stuck in the rock.\nEngraved on it: 'S.S. TIDAL II'.\pThe S.S. TIDAL I is still sailing.\nNobody ever talks about the II.$"
+@ --- einde zee_vulling_3 ---

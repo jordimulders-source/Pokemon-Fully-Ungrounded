@@ -61,6 +61,22 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_129_HEART_SCALE"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 19,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Underwater_Route129_EventScript_ZV3Chest"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_COMET_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ZV3_UW129_COMET_SHARD"
     }
   ]
 }

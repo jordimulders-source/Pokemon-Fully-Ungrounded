@@ -674,7 +674,7 @@
 #define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
 #define FLAG_ITEM_UNKNOWN_CAVE_1F_MAX_REVIVE  0x274 // Project Grounded: item in de verborgen grot achter Meteor Falls (1F)
 #define FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR  0x275 // Project Grounded: item in de verborgen grot achter Meteor Falls (B1F)
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_SEA_INCENSE                      0x276 // Project Grounded (zeevulling 3)
 #define FLAG_RECEIVED_RESORT_WINE  0x277 // Project Grounded: Wallace' wijn (Berry Juice) in het PARADISO RESORT ontvangen
 #define FLAG_HIDE_RESORT_RIVAL     0x278 // Project Grounded: rivaal in het PARADISO RESORT; in OnTransition gezet/gewist (post-game)
 #define FLAG_HIDE_SKY_PILLAR_GIRATINA  0x279 // Project Grounded: Giratina (static) onderin de omgekeerde Sky Pillar
@@ -776,7 +776,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
 
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_MAX_ELIXIR                       0x2D9 // Project Grounded (zeevulling 3)
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
@@ -1178,7 +1178,7 @@
 #define FLAG_ITEM_SOUTHERN_ISLAND_CAMP_DRAGON_FANG                  0x465 // Project Grounded (landvulling): Southern Island, verlaten kamp (was Ruby-restant)
 #define FLAG_ITEM_BIRTH_ISLAND_CAMP_MIND_PLATE                      0x466 // Project Grounded (landvulling): Birth Island, verlaten kamp (was Ruby-restant)
 #define FLAG_ITEM_FARAWAY_ISLAND_CAMP_PP_MAX                        0x467 // Project Grounded (landvulling): Faraway Island, verlaten kamp (was Ruby-restant)
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_UW125_WAVE_INCENSE                     0x468 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
@@ -1186,16 +1186,16 @@
 #define FLAG_HIDDEN_ITEM_EVER_GRANDE_FULL_RESTORE                   0x46D // Project Grounded (landvulling): Ever Grande, promenade (was R/S-restant HM08)
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_UW129_COMET_SHARD                      0x470 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R122_CLEANSE_TAG                       0x472 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R125_BIG_PEARL                         0x479 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1231,11 +1231,11 @@
 #define FLAG_ITEM_ROCKET_HIDEOUT_MAX_POTION                         0x499 // Project Grounded: Rocket-hideout B1F
 #define FLAG_ITEM_ROCKET_HIDEOUT_PP_UP                              0x49A // Project Grounded: Rocket-hideout B1F
 #define FLAG_ITEM_ROCKET_HIDEOUT_NUGGET                             0x49B // Project Grounded: Rocket-hideout B1F
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R126_ELIXIR                            0x49C // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R129_BIG_ROOT                          0x49D // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R131_PP_UP                             0x49E // Project Grounded (zeevulling 3)
+#define FLAG_RECEIVED_ROUTE_133_ICY_ROCK                            0x49F // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R133_UTILITY_UMBRELLA                  0x4A0 // Project Grounded (zeevulling 3)
 #define FLAG_CAUGHT_VOLCANION                                       0x4A1 // Project Grounded: Volcanion (Stoomeiland) gevangen
 #define FLAG_DEFEATED_VOLCANION                                     0x4A2 // Project Grounded: Volcanion verslagen/gevangen of nog geen post-game (objectvlag)
 #define FLAG_ITEM_METEOR_FALLS_STAR_CORE_COMET_SHARD 0x4A3 // Project Grounded: Meteor Falls (diepte)
@@ -1604,9 +1604,9 @@
 #define FLAG_DAILY_EVER_GRANDE_HOTDOG               (DAILY_FLAGS_START + 0x1D) // Project Grounded (landvulling): hotdogkraam (1 per dag)
 #define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_1       (DAILY_FLAGS_START + 0x1E) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
 #define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_2       (DAILY_FLAGS_START + 0x1F) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
-#define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
-#define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R107_SOFT_SAND                                   (DAILY_FLAGS_START + 0x20) // Project Grounded (zeevulling 3): komt elke dag terug
+#define FLAG_HIDDEN_ITEM_ZV3_R125_SNOWBALL                                    (DAILY_FLAGS_START + 0x21) // Project Grounded (zeevulling 3): komt elke dag terug
+#define FLAG_HIDDEN_ITEM_ZV3_R125_ULTRA_BALL                                  (DAILY_FLAGS_START + 0x22) // Project Grounded (zeevulling 3): komt elke dag terug
 #define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag

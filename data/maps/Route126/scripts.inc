@@ -3,6 +3,7 @@ Route126_MapScripts::
 	.byte 0
 
 Route126_OnTransition:
+	call Route126_EventScript_ZV3Night
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
@@ -154,3 +155,63 @@ Route126_Text_ZVSirena_Defeat:
 Route126_Text_ZVSirena_Post:
 	.string "Under the sea it's better, down\nwhere it's wetter. I sing that\lto the WAILMER. They leave.$"
 @ --- einde zee_vulling_1 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route126_EventScript_ZV3Night::
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, TRUE, Route126_EventScript_ZV3Night_End
+	setflag FLAG_TEMP_11
+Route126_EventScript_ZV3Night_End:
+	return
+
+Route126_EventScript_ZV3Marty::
+	trainerbattle_single TRAINER_SAILOR_MARTY, Route126_Text_ZV3Marty_Intro, Route126_Text_ZV3Marty_Defeat
+	msgbox Route126_Text_ZV3Marty_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route126_Text_ZV3Marty_Intro:
+	.string "See that pile of junk? That was my\nship. Well, a third of it.\pThe other two thirds are a sock\nand that TV. The ocean doesn't\ldo refunds.$"
+
+Route126_Text_ZV3Marty_Defeat:
+	.string "Sunk twice in one week.\nThat has to be a record.$"
+
+Route126_Text_ZV3Marty_Post:
+	.string "Every morning I salute my ship.\nEvery morning a WINGULL sits on it.\lWe have an understanding.$"
+
+Route126_EventScript_ZV3TV::
+	lock
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, TRUE, Route126_EventScript_ZV3TV_Night
+	msgbox Route126_Text_ZV3TV, MSGBOX_DEFAULT
+	release
+	end
+Route126_EventScript_ZV3TV_Night:
+	msgbox Route126_Text_ZV3TVNight, MSGBOX_DEFAULT
+	release
+	end
+
+Route126_Text_ZV3TV:
+	.string "A TV washed up in a crate. It has\nno cable and no power.\pIt's showing the weather anyway.\nForecast for this sandbank:\l'GARBAGE, WITH SPELLS OF GARBAGE.'$"
+
+Route126_Text_ZV3TVNight:
+	.string "At night the TV picks up\nPOKeNAV RADIO.\p'...and that was the shipping\nforecast. Route 126: moderate,\loccasionally a sock.'$"
+
+Route126_EventScript_ZV3Seel::
+	lock
+	faceplayer
+	playmoncry SPECIES_SEEL, CRY_MODE_NORMAL
+	msgbox Route126_Text_ZV3Seel, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route126_Text_ZV3Seel:
+	.string "SEEL: Arf.\pA SEEL is listening to the radio\nwith its eyes closed.\pIt shushes you. This is the\nshipping forecast. It's important.$"
+
+Route126_EventScript_ZV3Ticket::
+	msgbox Route126_Text_ZV3Ticket, MSGBOX_SIGN
+	end
+
+Route126_Text_ZV3Ticket:
+	.string "A soggy ticket in the sand:\p'GREAT PACIFIDLOG GARBAGE PATCH.\nADMIT ONE. NO RE-ENTRY.\lNO EXIT EITHER, REALLY.'$"
+@ --- einde zee_vulling_3 ---

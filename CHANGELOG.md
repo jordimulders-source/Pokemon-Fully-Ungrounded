@@ -17381,3 +17381,14 @@ Volgens Jordi's GBA-instructies per leider:
 - WICK en GERALD staan in de Battle Stadium-pool.
 - Trainers 1174–1185 (vrij: 1150–1169 en 1186–1199; `MAX_TRAINERS_COUNT` niet ophogen, dat verschuift de systeemflags). Flags `FLAG_GROUNDED(100–110)`.
 - Getest: Beacon Isle binnenlopen (deur naar 1F) en het gevecht met GERALD (start in de bovenhal van de Den). De lichtbundel zelf is nog niet in beeld gecontroleerd.
+
+### [v0.9.153] - Forces-trio op routes (post-game)
+- Na de Hall of Fame verschijnen **Tornadus, Thundurus en Landorus** (lv 70) af en toe als object op een route. Ze brengen hun eigen weer mee en vluchten niet.
+  - Tornadus: mist op Route 113, 118 of 121.
+  - Thundurus: onweer op Route 119, 120 of 123.
+  - Landorus: zandstorm op Route 112, 114 of 117.
+- **Kans:** 1 op 4 bij elke binnenkomst van een kandidaatroute. Even een huis of grot in en uit verandert niets; verlaat je de route, dan wordt opnieuw geloot. Weer-coördinaten op de route doen niets zolang de Force er staat.
+- **In het gevecht:** Thundurus regen + Electric Terrain, Landorus zandstorm, Tornadus Misty Terrain + 4 beurten Tailwind. Met de Forces-transitie en hun eigen thema.
+- **Na het gevecht:** gevangen of verslagen = weg ("A lot of hats will never come back."); gevlucht = blijft staan.
+- **Hint-NPC's:** in Fortree (de was waaide naar Route 121), het Weather Institute ("a thunderstorm with a face") en Verdanturf (een verdacht grote oogst).
+- **Code:** `src/forces.c` (hook naast `Burglar_OnMapEnter`), `tools/grounded/maptools/forces_routes.py`, `data/scripts/forces.inc`. Flags `FLAG_GROUNDED(50–55)`. Debug: special `Forces_DebugForceNext`.

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "forces.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
@@ -3789,6 +3790,12 @@ static void DoBattleIntro(void)
             {
                 gBattleStruct->startingStatus = gSpireStartingStatus;
                 gBattleStruct->startingStatusTimer = 0;
+            }
+            else if (gForcesStartingStatus) // Project Grounded: Forces op routes (Tornadus: Tailwind)
+            {
+                gBattleStruct->startingStatus = gForcesStartingStatus;
+                gBattleStruct->startingStatusTimer = 4;
+                gForcesStartingStatus = 0;
             }
             else if (B_VAR_STARTING_STATUS != 0)
             {

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "burglar.h"
+#include "forces.h"
 #include "field_move.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
@@ -877,6 +878,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
+    Forces_OnMapEnter(); // Project Grounded
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
@@ -947,6 +949,7 @@ static void LoadMapFromWarp(bool32 a1)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
+    Forces_OnMapEnter(); // Project Grounded
     UpdateLocationHistoryForRoamer();
     MoveAllRoamersToOtherLocationSets();
     gChainFishingDexNavStreak = 0;

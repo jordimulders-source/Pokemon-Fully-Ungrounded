@@ -697,6 +697,7 @@ gStdScripts_End::
 	.include "data/scripts/battle_stadium.inc"
 	.include "data/scripts/regi_dots.inc"
 	.include "data/scripts/burglar.inc"
+	.include "data/scripts/forces.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

@@ -1647,6 +1647,9 @@
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
+// beacon_isle { (tools/grounded/maptools/beacon_isle.py; FLAG_GROUNDED 400-429)
+#define FLAG_BEACON_LIGHT_ISLE_FOUND                     FLAG_GROUNDED(400) // Project Grounded: Beacon Isle: 's nachts de lamp aangesproken, rif naar het Lichteiland open
+// }
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-429 zeevulling 4, 430+ vrij.
 // Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
 #define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet

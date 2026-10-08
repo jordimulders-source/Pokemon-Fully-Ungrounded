@@ -459,6 +459,7 @@ gStdScripts_End::
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
 	.include "data/maps/MangroveMire/scripts.inc"
+	.include "data/maps/BeaconIsle_Grotto/scripts.inc"
 	.include "data/maps/DragonspineIsle_Den/scripts.inc"
 	.include "data/maps/DragonspineIsle/scripts.inc"
 	.include "data/maps/BeaconIsle_Lighthouse_Top/scripts.inc"

@@ -1,7 +1,7 @@
 """Project Grounded: het vuurtoreneiland (Beacon Isle) en het drakeneiland (Dragonspine Isle). Deterministisch en
 idempotent (vaste seeds; draai opnieuw na een wijziging).
 
-  BeaconIsle             Eilandje onder Route 133 (verbinding, x 48-79 van Route 133; Town Map x 14, y 11), General +
+  BeaconIsle             (nu in beacon_isle.py) Eilandje onder Route 133 (verbinding, x 48-79 van Route 133; Town Map x 14, y 11), General +
                          Dewford. De vuurtoren uit tools/grounded/lighthouse_art.py staat als 3x8 metatiles achteraan
                          de Dewford-tileset (tiles na de laatste gebruikte, palet 6 = lighthouse.pal met .pla: glas en
                          lens gloeien 's nachts). 's Nachts: lichtbol + draaiende lichtbundel (LIGHT_TYPE_LIGHTHOUSE_BEAM,
@@ -297,192 +297,8 @@ def beam_graphics():
 
 
 # ====================================================================== Beacon Isle
-BW, BH = 32, 36
-BEACON_OFFSET = 48                  # x van het eiland op Route 133
-LX, LY = 15, 11                     # linkerbovenhoek van de vuurtoren
-DOOR = (LX + LH_DOOR[0], LY + LH_DOOR[1])
-SAFE_TOP = 9                        # bovenste rijen alleen primary (grens met Route 133, andere secondary)
-LH_GRID = []
-
-
-REEF_GAP133 = (60, 61)              # Route 133 heeft onderaan een rif; één zeerots (60-61, 36-37) gaat weg
-
-
-def open_reef133():
-    g = sms.read('Route133', 80, 40)
-    x0, y0 = REEF_GAP133[0], 36
-    rock = [mt(g[y0 + dy][x0 + dx]) for dy in (0, 1) for dx in (0, 1)]
-    if rock == [WATER] * 4:
-        return
-    assert rock == [0x150, 0x151, 0x158, 0x159], [hex(m) for m in rock]
-    water = g[35][x0]
-    assert mt(water) == WATER and cx.walkable(water)
-    for dy in (0, 1):
-        for dx in (0, 1):
-            g[y0 + dy][x0 + dx] = water
-    sms.save(g, 'Route133')
-
-
-def beacon_isle():
-    name, const = 'BeaconIsle', 'BEACON_ISLE'
-    rng = random.Random(171)                        # nationaal dexnummer van Lanturn
-    land = [[False] * BW for _ in range(BH)]
-    ph = [rng.random() * 6.28 for _ in range(3)]
-    for y in range(BH):
-        for x in range(BW):
-            a = math.atan2(y - 25, x - 16)
-            r = 1 + 0.05 * math.sin(3 * a + ph[0]) + 0.04 * math.sin(5 * a + ph[1])
-            body = ((x - 16) / 12.5) ** 2 + ((y - 25) / 8.3) ** 2 <= r * r
-            cape = (x - 16) ** 2 + ((y - 15.5) * 1.05) ** 2 <= 6.6 ** 2
-            land[y][x] = body or cape
-    tc.smooth(land, 6)
-    d = tc.dist_to_water(land)
-    C = tc.Chars(BW, BH, '~')
-    for y in range(BH):
-        for x in range(BW):
-            if land[y][x]:
-                C.c[y][x] = 'S' if d[y][x] <= 2 else 'g'
-    # grasveld rond de vuurtoren (de onderlaag van de vuurtoren-metatiles is gras)
-    for y in range(LY - 1, DOOR[1] + 2):
-        for x in range(LX - 1, LX + LW + 1):
-            assert land[y][x], ('vuurtoren niet op het eiland', x, y)
-            C.c[y][x] = 'g'
-    for my in range(LH):
-        for mx in range(LW):
-            C.c[LY + my][LX + mx] = 'H'
-    # hoog gras (twee plukken), bomen, bloemen
-    for cx_, cy_, r in ((8.5, 25, 2.6), (23.5, 25.5, 2.4)):
-        C.disc(cx_, cy_, r, 'L', only='g')
-    trees = [(5, 21), (25, 21), (12, 28), (20, 29)]
-    for x, y in trees:
-        if all(C.c[y + dy][x + dx] == 'g' for dx in (0, 1) for dy in (0, 1)) and C.c[y - 1][x] == 'g' and C.c[y - 1][x + 1] == 'g':
-            for dx in (0, 1):
-                for dy in (0, 1):
-                    C.c[y + dy][x + dx] = 'T'
-    for y in range(BH):
-        for x in range(BW):
-            if C.c[y][x] == 'g' and 2.5 <= math.hypot(x - DOOR[0], (y - DOOR[1]) * 1.2) <= 4.2 and rng.random() < 0.3 \
-                    and y > DOOR[1]:
-                C.c[y][x] = 'f'
-    if DEBUG:
-        print('\n'.join('%2d ' % y + ''.join(r) for y, r in enumerate(C.c)))
-
-    g = [[0] * BW for _ in range(BH)]
-    for y in range(BH):
-        for x in range(BW):
-            k = C.c[y][x]
-            below = C.get(x, y + 1, '~')
-            if k == '~':
-                g[y][x] = t(WATER, False, 1)
-            elif k == 'S':
-                g[y][x] = tc.sand_tile(land, x, y)
-            elif k == 'H':
-                m_ = LH_GRID[y - LY][x - LX]
-                g[y][x] = val(m_, 0 if (x, y) == DOOR else 1, 3 if (x, y) == DOOR else 0)
-            elif k == 'T':
-                g[y][x] = val(rng.choice(tc.TRUNK if below != 'T' else tc.FOREST), 1, 0)
-            elif k == 'L':
-                g[y][x] = val(0x00D, 0, 3)
-            elif below == 'T':
-                g[y][x] = val(rng.choice(tc.CANOPY), 0, 3)
-            elif k == 'f':
-                g[y][x] = val(tc.FLOWER, 0, 3)
-            else:
-                g[y][x] = val(tc.GRASS, 0, 3)
-    tc.place_rocks(g, 8, 172, lambda x, y: y >= SAFE_TOP + 2 or (x < 8 or x > 23))
-
-    S = Scr(name, '''@ Project Grounded: Beacon Isle, het vuurtoreneiland onder Route 133 (ZEE_PLAN.md).
-@ Kaart: tools/grounded/maptools/beacon_dragon.py (ook deze scripts). 's Nachts: CHINCHOU in het water (FLAG_TEMP_11
-@ verbergt ze overdag) en het licht van de vuurtoren (lichtobjecten). Teksten zijn placeholders.
-BeaconIsle_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, BeaconIsle_OnTransition
-	.byte 0
-
-BeaconIsle_OnTransition:
-	specialvar VAR_RESULT, IsNightTime
-	goto_if_eq VAR_RESULT, TRUE, BeaconIsle_EventScript_Night
-	setflag FLAG_TEMP_11
-BeaconIsle_EventScript_Night:
-	end
-''')
-    P = S.P
-    S.trainer('Roald', 'BEACON_ROALD',
-              "Ahoy! I sailed three days to see the famous BEACON ISLE LIGHTHOUSE.\n\n"
-              "Turns out it's a fish in a tower. I want a refund. I'll take it out on you.",
-              "Fine. The fish wins too.",
-              "Ships used to crash here every week. Now they crash every other week.\n\n"
-              "That's a 50% improvement. Thank you, LANTURN.")
-    S.trainer('Lux', 'BEACON_LUX',
-              "Shh! VOLBEAT and ILLUMISE are on a date. Nature's own lighthouse!\n\n...You're ruining the mood.",
-              "The mood is ruined.",
-              "Moths fly into the lighthouse every night. Not my bugs, though. My bugs have standards.")
-    S.npc('Fisherman',
-          "At night the CHINCHOU come up to stare at the light.\n\nThey think it's their mother.\n\n"
-          "I haven't told them. You don't tell a fish something like that.")
-    S.npc('Chinchou', "CHINCHOU is gazing at the lighthouse with its whole face.\n\n"
-          "It's the only light it has ever loved.", 'MSGBOX_DEFAULT')
-    S.npc('Plaque', "BEACON ISLE LIGHTHOUSE\nEst. 1952. Lamp broken since 1953.\n\n"
-          "Ships are kindly requested to follow the fish.", 'MSGBOX_SIGN')
-
-    objs = [
-        tr('OBJ_EVENT_GFX_SAILOR', 24, 27, P + 'Roald', 'LEFT', 4),
-        tr('OBJ_EVENT_GFX_MANIAC', 7, 22, P + 'Lux', 'DOWN', 3),
-        obj('OBJ_EVENT_GFX_FISHERMAN', 16, 32, P + 'Fisherman', move='MOVEMENT_TYPE_FACE_DOWN'),
-        ball(26, 22, 'ITEM_CELL_BATTERY', 'FLAG_ITEM_BEACON_ISLE_CELL_BATTERY'),
-        light(DOOR[0], LY + 1, 'LIGHT_TYPE_BALL'),
-        light(DOOR[0], LY + 2, 'LIGHT_TYPE_LIGHTHOUSE_BEAM'),
-    ]
-    CHIN = [(5, 13), (27, 15), (9, 7), (24, 6)]
-    for i, (x, y) in enumerate(CHIN):
-        objs.append(obj('OBJ_EVENT_GFX_SPECIES(CHINCHOU)', x, y, P + 'Chinchou', 'FLAG_TEMP_11',
-                        move='MOVEMENT_TYPE_WANDER_AROUND', elev=1, rx=1, ry=1))
-    bgs = [sign(DOOR[0] - 1, DOOR[1], P + 'Plaque', 'BG_EVENT_PLAYER_FACING_NORTH'),
-           hidden(5, 26, 'ITEM_BIG_PEARL', 'FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL'),
-           hidden(27, 29, 'ITEM_PEARL_STRING', 'FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING')]
-    warps = [warp(DOOR[0], DOOR[1], 'BEACON_ISLE_LIGHTHOUSE_1F', 0)]
-
-    # ---- controles
-    starts = [(x, 0) for x in range(BW) if mt(g[0][x]) == WATER]
-    surf = reach(g, starts)
-    landc = {(x, y) for y in range(BH) for x in range(BW) if C.c[y][x] in 'SgLf' and cx.walkable(g[y][x])}
-    blocked = {(o['x'], o['y']) for o in objs if o['graphics_id'] != 'OBJ_EVENT_GFX_LIGHT_SPRITE' and o['elevation'] != 1}
-    walk = reach(g, [(DOOR[0], DOOR[1] + 1)], blocked=blocked)
-    assert walk >= landc - blocked, ('afgesloten stukjes', sorted(landc - blocked - walk)[:10])
-    assert walk & surf, 'eiland niet bereikbaar vanaf zee'
-    for o in objs:
-        if o['graphics_id'] == 'OBJ_EVENT_GFX_LIGHT_SPRITE':
-            assert C.c[o['y']][o['x']] == 'H'
-        elif o['elevation'] == 1:
-            assert mt(g[o['y']][o['x']]) == WATER, ('CHINCHOU niet in het water', o['x'], o['y'])
-        else:
-            assert cx.next_to((o['x'], o['y']), walk), ('object onbereikbaar', o['script'])
-            for c in sight_cells(o):
-                assert c in walk or not cx.walkable(g[c[1]][c[0]]), ('zichtlijn over water', o['script'])
-    for b in bgs:
-        c = (b['x'], b['y'])
-        assert (c in walk) if b['type'] == 'hidden_item' else cx.next_to(c, walk), ('bg onbereikbaar', b)
-    assert (DOOR[0], DOOR[1] + 1) in walk and mt(g[DOOR[1]][DOOR[0]]) == LH_GRID[LH_DOOR[1]][LH_DOOR[0]]
-    assert sms.primary_only(g, range(0, SAFE_TOP)), 'bovenste rijen moeten primary zijn (grens met Route 133)'
-    r133 = sms.read('Route133', 80, 40)
-    assert sms.primary_only([row[BEACON_OFFSET:BEACON_OFFSET + BW] for row in r133], range(32, 40)), \
-        'Route 133 onderaan niet primary'
-    open_reef133()
-    r133 = sms.read('Route133', 80, 40)
-    for y in range(32, 40):
-        for x in REEF_GAP133:
-            assert mt(r133[y][x]) == WATER and cx.walkable(r133[y][x]), ('geul Route 133 dicht', x, y)
-    assert all(mt(g[y][x - BEACON_OFFSET]) == WATER for y in range(0, 4) for x in REEF_GAP133)
-
-    sms.save(g, name)
-    sms.border(name, t(WATER, False, 1))
-    register_layout(name, const, BW, BH, 'gTileset_General', 'gTileset_Dewford')
-    sms.write_map(name, const, objs, warps, [], bgs, music='MUS_DEWFORD', weather='WEATHER_SUNNY',
-                  region_map_section='MAPSEC_BEACON_ISLE',
-                  connections=[{'map': 'MAP_ROUTE133', 'offset': -BEACON_OFFSET, 'direction': 'up'}])
-    oq.register_map(name)
-    sms.set_connection('Route133', 'MAP_BEACON_ISLE', 'down', BEACON_OFFSET)
-    S.write()
-    return name
+# Het eiland zelf (en de galerij bovenin de vuurtoren) staan sinds v0.9.16x in beacon_isle.py (nieuwe vorm,
+# Lichteiland); dit script levert nog de vuurtoren-tileset, 1F/2F, de trainers, de wilde tabel en de mapsec.
 
 
 # ====================================================================== vuurtoren binnen
@@ -556,51 +372,6 @@ BeaconIsle_Lighthouse_2F_MapScripts::
     for o in objs:
         assert cx.next_to((o['x'], o['y']), walk), o['script']
     assert cx.next_to((5, 1), walk) and (5, 2) in walk
-    sms.write_map(name, const, objs, warps, [], bgs, music='MUS_OCEANIC_MUSEUM', region_map_section='MAPSEC_BEACON_ISLE',
-                  **indoor())
-    oq.register_map(name)
-    S.write()
-    return name
-
-
-def lighthouse_top():
-    name, const = 'BeaconIsle_Lighthouse_Top', 'BEACON_ISLE_LIGHTHOUSE_TOP'
-    g, W, H, prim, sec = copy_layout('LilycoveCity_DepartmentStoreRooftop', name)
-    for x in (9, 10):                                   # automaten weg: reling en vloer
-        assert mt(g[0][x]) == 0x26f and mt(g[1][x]) == 0x277
-        g[0][x] = g[0][8]
-        g[1][x] = g[1][8]
-    sms.save(g, name)
-    register_layout(name, const, W, H, prim, sec)
-    S = Scr(name, '''@ Project Grounded: de galerij bovenin de vuurtoren van Beacon Isle (kopie van het dak van het Lilycove-warenhuis).
-@ Vuurtorenwachter WICK en zijn LANTURN, die al 40 jaar de lamp is. Kaart en scripts: beacon_dragon.py.
-BeaconIsle_Lighthouse_Top_MapScripts::
-	.byte 0
-''')
-    P = S.P
-    S.trainer('Wick', 'WICK',
-              "Up all those stairs just to look at a fish? Well. She is quite a fish.\n\n"
-              "Forty years I've kept this light. The lamp broke in the first week. Since then: LANTURN.\n\n"
-              "She works nights. I pay her in pilchards. Want to see what she can do?",
-              "...She's still shining. That's what counts.",
-              "Some ships still crash. But they crash in a lovely, steady glow.\n\n"
-              "A man on ROUTE 134 wants to build his own lighthouse. He asked me what one looks like.\n\n"
-              "I said “a fish.” He wrote it down.",
-              gift='ITEM_ZOOM_LENS',
-              gift_text="Here. The old lens of the lighthouse.\n\n"
-                        "Turns out it was a camera lens all along. No wonder the light never reached the ships.")
-    S.npc('Lanturn', "LANTURN is glowing at roughly forty thousand lumens.\n\nIt looks extremely proud of itself.",
-          'MSGBOX_DEFAULT')
-    S.npc('View', "The whole sea, all the way to PACIFIDLOG.\n\nSomewhere out there, a ship is about to make a mistake.",
-          'MSGBOX_SIGN')
-    objs = [tr('OBJ_EVENT_GFX_EXPERT_M', 6, 4, P + 'Wick', 'RIGHT', 1),
-            obj('OBJ_EVENT_GFX_SPECIES(LANTURN)', 8, 3, P + 'Lanturn', move='MOVEMENT_TYPE_FACE_DOWN')]
-    bgs = [sign(5, 0, P + 'View', 'BG_EVENT_PLAYER_FACING_NORTH')]
-    warps = [warp(13, 3, 'BEACON_ISLE_LIGHTHOUSE_2F', 1)]
-    walk = reach(g, [(13, 4)], blocked={(o['x'], o['y']) for o in objs})
-    for o in objs:
-        assert cx.next_to((o['x'], o['y']), walk), o['script']
-    assert (5, 1) in walk
     sms.write_map(name, const, objs, warps, [], bgs, music='MUS_OCEANIC_MUSEUM', region_map_section='MAPSEC_BEACON_ISLE',
                   **indoor())
     oq.register_map(name)
@@ -1081,8 +852,8 @@ def stadium():
 if __name__ == '__main__':
     flags()
     beam_graphics()
-    LH_GRID.extend(lighthouse_tileset())
-    names = [beacon_isle(), lighthouse_1f(), lighthouse_2f(), lighthouse_top(), dragonspine_isle(), dragon_den()]
+    lighthouse_tileset()
+    names = [lighthouse_1f(), lighthouse_2f(), dragonspine_isle(), dragon_den()]  # Beacon Isle: beacon_isle.py
     mapsecs()
     wild()
     trainers()

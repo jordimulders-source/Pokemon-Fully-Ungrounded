@@ -147,6 +147,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 
 - **Sneeuwkliffen:** `cliff_front_b` in de route-set `snow` heeft een grotopening (zwarte gaten); `snowlib` gebruikt `cliff_b`. Decor pas vanaf rij 2 (randbomen overschrijven rij 0–1); terrassen tot onder de bosrand laten doorlopen. `route135.py` maakt de huidige Route 135 niet meer na: niet opnieuw draaien zonder vergelijken.
 - **Kaart met twee toestanden** (verzegelde tempel): twee layouts uit één script, kiezen met `setmaplayoutindex` in `ON_TRANSITION`. Vrije flags altijd met `grep FLAG_UNUSED_0x include/constants/flags.h` controleren (de lijsten hieronder kunnen verouderd zijn).
+- **Flags zijn bijna op** (8 okt): parallelle agents pakten dezelfde R/S-restanten (0x409, 0x465–0x467, 0x46D). Geef elke agent vooraf een eigen flagbereik, of laat ze alleen nieuwe dagelijkse flags gebruiken voor herhaalbare items. Dubbele flagwaarden opsporen: alle `#define FLAG_*` in flags.h op waarde groeperen.
+- **Kaarten met `setmaplayoutindex`** (Route 130 Mirage, 131 Sky Pillar, 132 eb/vloed, 111): wijzigingen ook in de andere layout zetten; Route 131 laadt altijd `Route131_SkyPillar`.
+- **Verschijnende objecten zonder vaste flag:** `FLAG_TEMP_x` als objectflag, in `ON_TRANSITION` zetten/wissen (Dave in Petalburg/Sootopolis, de zeemijnen).
 - **Emulator in een verse container:** `pip install mgba` faalt op Python 3.13; `python3.11 -m pip install mgba pillow numpy` werkt. Draai emulatortests en testrom.py met `python3.11`.
 - **Werkbranch kiezen:** kijk bij een nieuwe sessie met `git ls-remote origin` naar de nieuwste `claude/*`-branch; `master` kan tientallen versies achterlopen (8 okt: v0.9.89 vs v0.9.140).
 - **Gehoorzaamheid (GEN_LATEST):** eigen Pokémon kijken naar hun vanglevel, geruilde naar hun level; de grens staat in `GetPlayerObedienceLevel` (battle_util.c).

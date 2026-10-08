@@ -4,6 +4,7 @@ Overzicht van wat nog moet gebeuren. Werkafspraken staan in `CLAUDE.md`; afgeron
 
 ## Openstaande taken (in volgorde)
 - **Shy Guy-quest (Jordi, 8 okt; wacht op zijn assets):** in de Spacetime Cave komt een ?????-locatie die je naar Yoshi's Island teleporteert. Daar double-battle je samen met Yoshi tegen een reeks Shy Guys, dan Commander Boo, en Wario blijkt erachter te zitten.
+- **Route 130:** het Wynaut-eiland staat niet in `Route130_MirageIsland_Layout` (op Mirage-dagen weg); toevoegen.
 - **Paradox-Pokémon: gepauzeerd** (Jordi, 8 okt). Idee: een warp naar Area Zero vanuit de Spacetime Cave.
 - **Testronde 8 okt (Jordi + testers), open:** Shy Guy-intro (zie Shy Guy-quest). Daarna: alle kaartwijzigingen/uitbreidingen voor de beta, pas dan gevechtsintro's en muziek.
 - **Kaartfase (8 okt, bezig):** Ashfrost-feedback (agent), zee-vulling (onderwater-encounters, verborgen items, eilandje-NPC's, Route 122, Whirl-lagune, afvaleiland, vergeten soorten wild; agent), lege landplekken (Ever Grande, Mt. Pyre Exterior, Desert Underpass, ticket-eilanden, Route 130, Safari/Starfall/Heatran; agent). Daarna: vuurtoreneiland, Dragon Island, Sootopolis-eilanden, paradox-eiland (concept), Hoopa-quest, Forces op routes.

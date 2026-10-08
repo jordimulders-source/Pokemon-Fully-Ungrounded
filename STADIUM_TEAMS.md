@@ -100,7 +100,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_SHY_GUY_GREEN | 541 | Decidueye, Masquerain, Zarude, Ogerpon | Masquerain, Zarude, Ogerpon | regen |
 | STADIUM_SHY_GUY_PINK | 517 | Hatterene, Sylveon, Clefable, Ogerpon | Hatterene, Sylveon, Ogerpon | - |
 | STADIUM_SHY_GUY_BLACK | 512 | Honchkrow, Runerigus, Grimmsnarl, Ogerpon | Honchkrow, Grimmsnarl, Ogerpon | - |
-| STADIUM_BURGLAR | 506 | Thievul, Honchkrow, Arcanine, Weavile | Honchkrow, Arcanine, Weavile | - |
+| STADIUM_BURGLAR | 495 | Weavile, Grimmsnarl, Honchkrow, Thievul | Weavile, Grimmsnarl, Thievul | - |
 | STADIUM_DITTO | 485 | Tangrowth, Tinkaton, Pikachu, Snorlax | Tangrowth, Pikachu, Snorlax | - |
 | STADIUM_DONALD | 520 | Ditto, Ditto, Ditto, Ditto | Ditto, Ditto, Ditto | - |
 | STADIUM_IVAN | 415 | Magikarp, Relicanth, Barraskewda, Bruxish | Magikarp, Relicanth, Bruxish | - |
@@ -128,26 +128,26 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 600 | MEW |
 | 700 | MIMI |
 | 800 | DITTO |
-| 900 | ROOD |
-| 1000 | WICK |
-| 1100 | PLASMA_GRUNT_M |
-| 1200 | SHELLY |
-| 1300 | WARIO |
-| 1400 | TABITHA |
-| 1500 | LYLE |
-| 1600 | MAXIE |
-| 1700 | SHADOW_TRIAD |
-| 1800 | PLASMA_GRUNT_F |
-| 1900 | SHY_GUY_RED |
-| 2000 | WINSTON |
-| 2100 | NIGEL |
-| 2200 | SALIM |
-| 2300 | GABBY_AND_TY |
-| 2400 | ZINZOLIN |
-| 2500 | MARS |
-| 2600 | SHY_GUY_BLACK |
-| 2700 | TATE_AND_LIZA |
-| 2800 | BURGLAR |
+| 900 | BURGLAR |
+| 1000 | ROOD |
+| 1100 | WICK |
+| 1200 | PLASMA_GRUNT_M |
+| 1300 | SHELLY |
+| 1400 | WARIO |
+| 1500 | TABITHA |
+| 1600 | LYLE |
+| 1700 | MAXIE |
+| 1800 | SHADOW_TRIAD |
+| 1900 | PLASMA_GRUNT_F |
+| 2000 | SHY_GUY_RED |
+| 2100 | WINSTON |
+| 2200 | NIGEL |
+| 2300 | SALIM |
+| 2400 | GABBY_AND_TY |
+| 2500 | ZINZOLIN |
+| 2600 | MARS |
+| 2700 | SHY_GUY_BLACK |
+| 2800 | TATE_AND_LIZA |
 | 2900 | FOSSILS |
 | 3000 | JOHNSON |
 | 3100 | FLANNERY |

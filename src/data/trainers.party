@@ -2571,34 +2571,76 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Full Restore
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 Mugshot: Blue
 
-Gengar
+Gengar @ Focus Sash
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Cursed Body
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
+- Hex
+- Sludge Bomb
+- Focus Blast
 
-Ceruledge
+Gliscor @ Toxic Orb
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
+- Earthquake
+- Facade
+- Protect
+- Swords Dance
 
-Iron Valiant
+Ceruledge @ Life Orb
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Poltergeist
+- Shadow Sneak
+- Swords Dance
 
-Gliscor
+Iron Valiant @ Booster Energy
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Close Combat
+- Knock Off
+- Swords Dance
 
-Garchomp
+Garchomp @ Loaded Dice
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Scale Shot
+- Earthquake
+- Stone Edge
+- Swords Dance
 
-Kingambit
+Kingambit @ Black Glasses
 Level: 51
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Kowtow Cleave
+- Sucker Punch
+- Iron Head
+- Swords Dance
 
 === TRAINER_MITCH ===
 Name: Mitch
@@ -31395,7 +31437,62 @@ Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
+
+Weavile @ Razor Claw
+Level: 50
+Ability: Pickpocket
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Thief
+- Icicle Crash
+- Ice Shard
+- Low Kick
+
+Spiritomb
+Level: 50
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Calm
+- Thief
+- Hex
+- Will-O-Wisp
+- Pain Split
+
+Grimmsnarl @ Light Clay
+Level: 50
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Careful
+- Thief
+- Spirit Break
+- Reflect
+- Light Screen
+
+Honchkrow @ Scope Lens
+Level: 50
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Brave Bird
+- Sucker Punch
+
+Zoroark @ Life Orb
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Night Daze
+- Flamethrower
+- Nasty Plot
 
 Thievul @ Sitrus Berry
 Level: 50
@@ -31404,64 +31501,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Thief
-- Nasty Plot
-- Dark Pulse
-- Parting Shot
-
-Liepard @ Focus Sash
-Level: 50
-Ability: Prankster
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Covet
-- Encore
-- Thunder Wave
-- Foul Play
-
-Persian_Alola @ Life Orb
-Level: 50
-Ability: Technician
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 SpA / 252 Spe
-Nature: Timid
-- Pay Day
 - Dark Pulse
 - Nasty Plot
-- Power Gem
-
-Honchkrow @ Life Orb
-Level: 50
-Ability: Moxie
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Adamant
-- Brave Bird
-- Sucker Punch
-- Pursuit
-- Heat Wave
-
-Arcanine @ Heavy-Duty Boots
-Level: 50
-Ability: Intimidate
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Flare Blitz
-- Extreme Speed
-- Thief
-- Will-O-Wisp
-
-Weavile @ Life Orb
-Level: 50
-Ability: Pickpocket
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Knock Off
-- Ice Shard
-- Triple Axel
-- Swords Dance
+- Burning Jealousy
 
 === TRAINER_STADIUM_DITTO ===
 Name: DITTO
@@ -32759,7 +32801,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hurricane
 - Flamethrower
 
-Salamence @ Salamencite
+Salamence @ Life Orb
 Level: 77
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -32961,7 +33003,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Flash Cannon
 - Body Press
 
-Sharpedo @ Sharpedonite
+Sharpedo @ Life Orb
 Level: 83
 Ability: Speed Boost
 Nature: Adamant
@@ -33003,7 +33045,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Earthquake
 - Protect
 
-Camerupt @ Cameruptite
+Camerupt @ Passho Berry
 Level: 83
 Ability: Solid Rock
 Nature: Modest
@@ -33045,7 +33087,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Flash Cannon
 - Body Press
 
-Sharpedo @ Sharpedonite
+Sharpedo @ Life Orb
 Level: 91
 Ability: Speed Boost
 Nature: Adamant
@@ -33087,7 +33129,7 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Flash Cannon
 - Protect
 
-Camerupt @ Cameruptite
+Camerupt @ Passho Berry
 Level: 91
 Ability: Solid Rock
 Nature: Modest
@@ -33259,32 +33301,32 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Koffing
+Purrloin
 Level: 17
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-Ability: Air Pollution
-- Smokescreen
-- Clear Smog
+Ability: Prankster
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thief
-- Assurance
+- Fake Out
+- Sand Attack
+- Fury Swipes
 
-Vulpix
+Sableye
 Level: 17
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-Ability: Flash Fire
-- Ember
-- Quick Attack
+Ability: Prankster
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thief
+- Shadow Sneak
+- Fury Swipes
 - Confuse Ray
-- Hex
 
-Growlithe @ Oran Berry
+Thievul @ Oran Berry
 Level: 18
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-Ability: Intimidate
-- Bite
-- Flame Wheel
-- Howl
+Ability: Unburden
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thief
+- Snarl
+- Quick Attack
+- Hone Claws
 
 === TRAINER_BURGLAR_2 ===
 Name: SIMON
@@ -33295,41 +33337,41 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Koffing
+Liepard
 Level: 21
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-Ability: Air Pollution
-- Sludge
-- Smokescreen
+Ability: Prankster
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
-- Assurance
+- Fake Out
+- Sucker Punch
+- Sand Attack
 
-Vulpix
+Zorua
 Level: 21
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-Ability: Flash Fire
-- Incinerate
-- Quick Attack
+Ability: Illusion
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Thief
+- Snarl
+- Fake Tears
+- Taunt
+
+Sableye
+Level: 21
+Ability: Prankster
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Thief
+- Shadow Claw
+- Fury Swipes
 - Confuse Ray
-- Hex
 
-Charmeleon
-Level: 21
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-Ability: Blaze
-- Fire Fang
-- Dragon Breath
-- Smokescreen
-- Thief
-
-Growlithe @ Oran Berry
+Thievul @ Oran Berry
 Level: 23
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-Ability: Intimidate
-- Fire Fang
-- Bite
-- Howl
+Ability: Unburden
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
+- Snarl
+- Quick Attack
+- Nasty Plot
 
 === TRAINER_BURGLAR_3 ===
 Name: SIMON
@@ -33338,52 +33380,57 @@ Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Koffing
+Liepard
 Level: 25
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Air Pollution
-- Sludge
+Ability: Prankster
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Nature: Jolly
+- Thief
+- Fake Out
+- Sucker Punch
+- Encore
+
+Zorua
+Level: 25
+Ability: Illusion
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Nature: Timid
+- Thief
+- Snarl
+- Fake Tears
+- Nasty Plot
+
+Sableye
+Level: 25
+Ability: Prankster
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Nature: Impish
+- Thief
+- Shadow Claw
 - Will-O-Wisp
-- Thief
-- Destiny Bond
-
-Vulpix
-Level: 25
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Flash Fire
-- Incinerate
-- Hex
 - Confuse Ray
-- Quick Attack
 
-Charmeleon
+Murkrow
 Level: 25
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Blaze
-- Fire Fang
-- Dragon Breath
-- Slash
-- Smokescreen
-
-Grimer_Alola
-Level: 25
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Poison Touch
-- Poison Fang
-- Bite
-- Knock Off
-- Disable
-
-Growlithe @ Sitrus Berry
-Level: 27
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Intimidate
-- Fire Fang
-- Crunch
-- Take Down
+Ability: Super Luck
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Nature: Adamant
 - Thief
+- Wing Attack
+- Night Shade
+- Tailwind
+
+Thievul @ Sitrus Berry
+Level: 27
+Ability: Unburden
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Nature: Timid
+- Thief
+- Snarl
+- Nasty Plot
+- Foul Play
 
 === TRAINER_BURGLAR_4 ===
 Name: SIMON
@@ -33393,61 +33440,67 @@ Gender: Male
 Music: Suspicious
 Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Weezing
+Zoroark
 Level: 30
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-Ability: Air Pollution
-- Will-O-Wisp
-- Sludge Bomb
+Ability: Illusion
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Timid
 - Thief
-- Destiny Bond
-
-Ninetales
-Level: 30
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-Ability: Flash Fire
+- Night Daze
 - Flamethrower
-- Hex
-- Confuse Ray
-- Extrasensory
+- Nasty Plot
 
-Charmeleon @ Charcoal
+Sableye
 Level: 30
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-Ability: Blaze
-- Fire Fang
-- Dragon Claw
-- Slash
-- Smokescreen
-
-Muk_Alola
-Level: 30
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-Ability: Poison Touch
-- Knock Off
-- Poison Jab
-- Shadow Sneak
-- Protect
-
-Magmar
-Level: 30
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-Ability: Flame Body
-- Fire Punch
-- Thunder Punch
-- Confuse Ray
+Ability: Prankster
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Impish
 - Thief
+- Shadow Claw
+- Will-O-Wisp
+- Recover
 
-Arcanine @ Sitrus Berry
-Level: 32
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+Honchkrow @ Black Glasses
+Level: 30
+Ability: Super Luck
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Wing Attack
+- Sucker Punch
+
+Krokorok
+Level: 30
 Ability: Intimidate
-- Fire Fang
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Adamant
+- Thief
+- Dig
 - Crunch
-- Extreme Speed
-- Wild Charge
+- Rock Slide
+
+Banette @ Spell Tag
+Level: 30
+Ability: Prankster
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Adamant
+- Thief
+- Shadow Claw
+- Sucker Punch
+- Thunder Wave
+
+Thievul @ Sitrus Berry
+Level: 32
+Ability: Unburden
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Foul Play
 
 === TRAINER_BURGLAR_5 ===
 Name: SIMON
@@ -33457,61 +33510,73 @@ Gender: Male
 Music: Suspicious
 Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Weezing
+Weavile
 Level: 37
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-Ability: Air Pollution
+Ability: Pickpocket
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 Atk / 84 Spe
+Nature: Jolly
+- Thief
+- Ice Punch
+- Ice Shard
+- Low Kick
+
+Sableye
+Level: 37
+Ability: Prankster
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 HP / 84 SpD
+Nature: Impish
+- Thief
+- Shadow Claw
 - Will-O-Wisp
-- Sludge Bomb
-- Pain Split
+- Recover
+
+Zoroark
+Level: 37
+Ability: Illusion
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 SpA / 84 Spe
+Nature: Timid
 - Thief
-
-Ninetales
-Level: 37
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-Ability: Flash Fire
+- Night Daze
 - Flamethrower
-- Extrasensory
-- Confuse Ray
-- Will-O-Wisp
+- Nasty Plot
 
-Charizard @ Charcoal
+Honchkrow @ Black Glasses
 Level: 37
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-Ability: Blaze
-- Flamethrower
-- Air Slash
-- Dragon Claw
+Ability: Super Luck
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 Atk / 84 Spe
+Nature: Adamant
 - Thief
+- Night Slash
+- Wing Attack
+- Sucker Punch
 
-Muk_Alola @ Black Sludge
+Krookodile
 Level: 37
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-Ability: Poison Touch
-- Knock Off
-- Poison Jab
-- Shadow Sneak
-- Curse
-
-Magmar
-Level: 37
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunder Punch
-- Confuse Ray
-- Thief
-
-Arcanine @ Sitrus Berry
-Level: 39
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
-- Crunch
-- Wild Charge
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 Atk / 84 Spe
+Nature: Jolly
+- Thief
+- Earthquake
+- Stone Edge
+- Bulk Up
+
+Thievul @ Sitrus Berry
+Level: 39
+Ability: Unburden
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 84 SpA / 84 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === TRAINER_JUNGLE_BRAM ===
 Name: BRAM
@@ -37546,41 +37611,65 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
+Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Assume Stab / Weigh Ability Prediction / Predict Switch
 Mugshot: Blue
 
-Gastly
+Gastly @ Focus Sash
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Levitate
+IVs: 20 HP / 0 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Timid
+- Will-O-Wisp
 - Hex
-- Night Shade
-- Confuse Ray
+- Clear Smog
 - Hypnosis
 
-Charcadet
+Gligar @ Eviolite
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-- Flame Charge
-- Astonish
-- Clear Smog
-- Will-O-Wisp
+Ability: Hyper Cutter
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Def
+Nature: Impish
+- Knock Off
+- Dig
+- U-turn
+- Poison Tail
 
-Gible
+Charcadet @ Charcoal
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Flash Fire
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- Flame Charge
+- Incinerate
+- Night Shade
+- Confuse Ray
+
+Gible @ Rocky Helmet
+Level: 22
+Ability: Rough Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
 - Dragon Breath
 - Bulldoze
-- Take Down
-- Sand Tomb
+- Bite
+- Rock Tomb
 
-Pawniard @ Oran Berry
+Pawniard @ Sitrus Berry
 Level: 23
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Defiant
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
 - Metal Claw
+- Sucker Punch
 - Assurance
-- Fury Cutter
-- Scary Face
+- Swords Dance
 
 === TRAINER_DAVE_PETALBURG ===
 Name: Dave
@@ -37588,50 +37677,76 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Super Potion
+Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 Mugshot: Blue
 
-Haunter
+Haunter @ Focus Sash
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Sludge Bomb
-- Hypnosis
+Ability: Levitate
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
 - Hex
+- Sludge Bomb
+- Destiny Bond
 
-Ceruledge
+Gliscor @ Toxic Orb
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bitter Blade
-- Shadow Claw
-- Night Slash
-- Swords Dance
-
-Gliscor
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Acrobatics
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
+- Earthquake
 - Knock Off
-- Toxic
+- U-turn
+- Protect
 
-Gabite
+Ceruledge @ Shell Bell
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dragon Claw
-- Bulldoze
-- Slash
-- Sandstorm
-
-Pawniard @ Sitrus Berry
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Iron Head
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Shadow Sneak
 - Night Slash
 - Swords Dance
+
+Gabite @ Eviolite
+Level: 31
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Dragon Claw
+- Dig
+- Rock Slide
+- Swords Dance
+
+Iron Valiant @ Booster Energy
+Level: 31
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Low Kick
+- Shadow Sneak
+- Swords Dance
+
+Pawniard @ Eviolite
+Level: 32
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Iron Head
 - Sucker Punch
+- Brick Break
+- Swords Dance
 
 === TRAINER_MITCH_ROUTE_110 ===
 Name: Mitch
@@ -37869,51 +37984,75 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Hyper Potion
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 Mugshot: Blue
 
-Gengar
+Gengar @ Focus Sash
 Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
+Ability: Cursed Body
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
+- Hex
 - Sludge Bomb
 - Focus Blast
-- Hypnosis
-
-Ceruledge @ Life Orb
-Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bitter Blade
-- Poltergeist
-- Psycho Cut
-- Swords Dance
 
 Gliscor @ Toxic Orb
 Level: 48
 Ability: Poison Heal
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
 - Earthquake
-- Acrobatics
+- Facade
+- Protect
+- Swords Dance
+
+Ceruledge @ Life Orb
+Level: 48
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Poltergeist
+- Shadow Sneak
+- Swords Dance
+
+Iron Valiant @ Booster Energy
+Level: 48
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Close Combat
 - Knock Off
 - Swords Dance
 
-Garchomp
+Garchomp @ Loaded Dice
 Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Scale Shot
 - Earthquake
-- Dragon Claw
 - Stone Edge
 - Swords Dance
 
-Kingambit @ Sitrus Berry
+Kingambit @ Black Glasses
 Level: 49
 Ability: Supreme Overlord
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
 - Kowtow Cleave
-- Iron Head
 - Sucker Punch
+- Iron Head
 - Swords Dance
 
 /* --- einde extra_fights --- */
@@ -38237,63 +38376,75 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
-Items: Hyper Potion
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Weezing @ Rocky Helmet
+Weavile @ Razor Claw
 Level: 43
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Air Pollution
-- Will-O-Wisp
-- Sludge Bomb
-- Pain Split
-- Toxic Spikes
-
-Ninetales @ Heat Rock
-Level: 43
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Drought
-- Flamethrower
-- Solar Beam
-- Extrasensory
-- Will-O-Wisp
-
-Charizard @ Charcoal
-Level: 43
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Blaze
-- Flamethrower
-- Air Slash
-- Dragon Pulse
-- Roost
-
-Muk_Alola @ Black Sludge
-Level: 43
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Poison Touch
-- Knock Off
-- Poison Jab
-- Shadow Sneak
-- Drain Punch
-
-Magmar
-Level: 43
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunderbolt
-- Confuse Ray
+Ability: Pickpocket
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Jolly
 - Thief
+- Icicle Crash
+- Ice Shard
+- Low Kick
 
-Arcanine @ Sitrus Berry
-Level: 45
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Spiritomb
+Level: 43
+Ability: Infiltrator
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 HP / 128 SpD
+Nature: Calm
+- Thief
+- Hex
+- Will-O-Wisp
+- Pain Split
+
+Zoroark
+Level: 43
+Ability: Illusion
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Timid
+- Thief
+- Night Daze
+- Flamethrower
+- Nasty Plot
+
+Honchkrow @ Black Glasses
+Level: 43
+Ability: Moxie
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Brave Bird
+- Sucker Punch
+
+Krookodile
+Level: 43
 Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
-- Crunch
-- Play Rough
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Jolly
+- Thief
+- Earthquake
+- Stone Edge
+- Bulk Up
+
+Thievul @ Sitrus Berry
+Level: 45
+Ability: Unburden
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === TRAINER_BURGLAR_7 ===
 Name: SIMON
@@ -38301,63 +38452,75 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
-Items: Hyper Potion
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weezing @ Rocky Helmet
+Weavile @ Razor Claw
 Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Air Pollution
-- Will-O-Wisp
-- Sludge Bomb
-- Pain Split
-- Toxic Spikes
-
-Ninetales @ Heat Rock
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Drought
-- Flamethrower
-- Solar Beam
-- Nasty Plot
-- Extrasensory
-
-Charizard @ Charcoal
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Blaze
-- Flamethrower
-- Air Slash
-- Dragon Pulse
-- Roost
-
-Muk_Alola @ Black Sludge
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Poison Touch
-- Knock Off
-- Gunk Shot
-- Shadow Sneak
-- Drain Punch
-
-Magmortar @ Expert Belt
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunderbolt
-- Focus Blast
+Ability: Pickpocket
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Thief
+- Icicle Crash
+- Ice Shard
+- Low Kick
 
-Arcanine @ Sitrus Berry
+Spiritomb
+Level: 49
+Ability: Infiltrator
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Calm
+- Thief
+- Hex
+- Will-O-Wisp
+- Pain Split
+
+Zoroark
+Level: 49
+Ability: Illusion
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Night Daze
+- Flamethrower
+- Nasty Plot
+
+Honchkrow @ Scope Lens
+Level: 49
+Ability: Super Luck
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Brave Bird
+- Sucker Punch
+
+Grimmsnarl @ Light Clay
+Level: 49
+Ability: Prankster
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Careful
+- Thief
+- Spirit Break
+- Reflect
+- Light Screen
+
+Thievul @ Sitrus Berry
 Level: 51
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
-- Crunch
-- Close Combat
+Ability: Unburden
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === TRAINER_BURGLAR_8 ===
 Name: SIMON
@@ -38365,63 +38528,75 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
-Items: Full Restore
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weezing @ Rocky Helmet
+Weavile @ Razor Claw
 Level: 54
+Ability: Pickpocket
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Air Pollution
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Thief
+- Icicle Crash
+- Ice Shard
+- Low Kick
+
+Spiritomb
+Level: 54
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Calm
+- Thief
+- Hex
 - Will-O-Wisp
-- Sludge Bomb
 - Pain Split
-- Toxic Spikes
 
-Ninetales @ Heat Rock
+Zoroark @ Life Orb
 Level: 54
+Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Drought
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Night Daze
 - Flamethrower
-- Solar Beam
 - Nasty Plot
-- Extrasensory
 
-Charizard @ Charcoal
+Honchkrow @ Scope Lens
 Level: 54
+Ability: Super Luck
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Solar Power
-- Flamethrower
-- Solar Beam
-- Focus Blast
-- Roost
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Brave Bird
+- Sucker Punch
 
-Muk_Alola @ Figy Berry
+Grimmsnarl @ Light Clay
 Level: 54
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Gluttony
-- Knock Off
-- Gunk Shot
-- Shadow Sneak
-- Drain Punch
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Careful
+- Thief
+- Spirit Break
+- Reflect
+- Light Screen
 
-Magmortar @ Expert Belt
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunderbolt
-- Focus Blast
-- Psychic
-
-Arcanine @ Sitrus Berry
+Thievul @ Sitrus Berry
 Level: 56
+Ability: Unburden
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
-- Crunch
-- Close Combat
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === TRAINER_BURGLAR_9 ===
 Name: SIMON
@@ -38429,66 +38604,75 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
-Items: Full Restore
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weezing @ Rocky Helmet
+Weavile @ Razor Claw
 Level: 66
+Ability: Pickpocket
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Air Pollution
-- Will-O-Wisp
-- Sludge Bomb
-- Pain Split
-- Toxic Spikes
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Thief
+- Icicle Crash
+- Ice Shard
+- Low Kick
 
-Muk_Alola @ Leftovers
+Krookodile
 Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Gluttony
-- Knock Off
-- Poison Jab
-- Shadow Sneak
-- Drain Punch
-
-Magmortar @ Expert Belt
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunderbolt
-- Focus Blast
-- Psychic
-
-Ninetales @ Heat Rock
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Drought
-- Flamethrower
-- Solar Beam
-- Nasty Plot
-- Extrasensory
-
-Arcanine @ Sitrus Berry
-Level: 67
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
-- Crunch
-- Close Combat
-
-Charizard @ Charizardite Y
-Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Blaze
-- Flamethrower
-- Solar Beam
-- Focus Blast
-- Roost
-/* --- einde burglar 6-9 --- */
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Thief
+- Earthquake
+- Stone Edge
+- Bulk Up
 
-/* --- beacon_dragon (tools/grounded/maptools/beacon_dragon.py) --- */
+Grimmsnarl @ Light Clay
+Level: 66
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Careful
+- Thief
+- Spirit Break
+- Reflect
+- Light Screen
+
+Honchkrow @ Scope Lens
+Level: 66
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Thief
+- Night Slash
+- Brave Bird
+- Sucker Punch
+
+Zoroark @ Life Orb
+Level: 67
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Night Daze
+- Flamethrower
+- Nasty Plot
+
+Thievul @ Sitrus Berry
+Level: 68
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === TRAINER_BEACON_ROALD ===
 Name: ROALD

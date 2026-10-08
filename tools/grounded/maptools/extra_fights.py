@@ -302,41 +302,65 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
+Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Assume Stab / Weigh Ability Prediction / Predict Switch
 Mugshot: Blue
 
-Gastly
+Gastly @ Focus Sash
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Levitate
+IVs: 20 HP / 0 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Timid
+- Will-O-Wisp
 - Hex
-- Night Shade
-- Confuse Ray
+- Clear Smog
 - Hypnosis
 
-Charcadet
+Gligar @ Eviolite
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
-- Flame Charge
-- Astonish
-- Clear Smog
-- Will-O-Wisp
+Ability: Hyper Cutter
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 HP / 128 Def
+Nature: Impish
+- Knock Off
+- Dig
+- U-turn
+- Poison Tail
 
-Gible
+Charcadet @ Charcoal
 Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Flash Fire
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- Flame Charge
+- Incinerate
+- Night Shade
+- Confuse Ray
+
+Gible @ Rocky Helmet
+Level: 22
+Ability: Rough Skin
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
 - Dragon Breath
 - Bulldoze
-- Take Down
-- Sand Tomb
+- Bite
+- Rock Tomb
 
-Pawniard @ Oran Berry
+Pawniard @ Sitrus Berry
 Level: 23
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Defiant
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
 - Metal Claw
+- Sucker Punch
 - Assurance
-- Fury Cutter
-- Scary Face
+- Swords Dance
 """),
     dict(const='DAVE_PETALBURG', map='PetalburgCity', x=15, y=9, gfx='OBJ_EVENT_GFX_MAN_3', face='DOWN', sight=1,
          label='Dave', flag='FLAG_TEMP_9',  # PetalburgCity_OnTransition: alleen na badge 4 en zolang niet verslagen
@@ -374,50 +398,76 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Super Potion
+Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 Mugshot: Blue
 
-Haunter
+Haunter @ Focus Sash
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Sludge Bomb
-- Hypnosis
+Ability: Levitate
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
 - Hex
+- Sludge Bomb
+- Destiny Bond
 
-Ceruledge
+Gliscor @ Toxic Orb
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bitter Blade
-- Shadow Claw
-- Night Slash
-- Swords Dance
-
-Gliscor
-Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Acrobatics
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
+- Earthquake
 - Knock Off
-- Toxic
+- U-turn
+- Protect
 
-Gabite
+Ceruledge @ Shell Bell
 Level: 31
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dragon Claw
-- Bulldoze
-- Slash
-- Sandstorm
-
-Pawniard @ Sitrus Berry
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Iron Head
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Shadow Sneak
 - Night Slash
 - Swords Dance
+
+Gabite @ Eviolite
+Level: 31
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Dragon Claw
+- Dig
+- Rock Slide
+- Swords Dance
+
+Iron Valiant @ Booster Energy
+Level: 31
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Low Kick
+- Shadow Sneak
+- Swords Dance
+
+Pawniard @ Eviolite
+Level: 32
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Iron Head
 - Sucker Punch
+- Brick Break
+- Swords Dance
 """),
     dict(const='MITCH_ROUTE_110', map='Route110', x=20, y=54, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=5,
          label='Mitch',
@@ -715,51 +765,75 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Hyper Potion
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 Mugshot: Blue
 
-Gengar
+Gengar @ Focus Sash
 Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
+Ability: Cursed Body
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
+- Hex
 - Sludge Bomb
 - Focus Blast
-- Hypnosis
-
-Ceruledge @ Life Orb
-Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bitter Blade
-- Poltergeist
-- Psycho Cut
-- Swords Dance
 
 Gliscor @ Toxic Orb
 Level: 48
 Ability: Poison Heal
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
 - Earthquake
-- Acrobatics
+- Facade
+- Protect
+- Swords Dance
+
+Ceruledge @ Life Orb
+Level: 48
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Poltergeist
+- Shadow Sneak
+- Swords Dance
+
+Iron Valiant @ Booster Energy
+Level: 48
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Close Combat
 - Knock Off
 - Swords Dance
 
-Garchomp
+Garchomp @ Loaded Dice
 Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Scale Shot
 - Earthquake
-- Dragon Claw
 - Stone Edge
 - Swords Dance
 
-Kingambit @ Sitrus Berry
+Kingambit @ Black Glasses
 Level: 49
 Ability: Supreme Overlord
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
 - Kowtow Cleave
-- Iron Head
 - Sucker Punch
+- Iron Head
 - Swords Dance
 """),
 ]

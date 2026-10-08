@@ -635,7 +635,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_HOOPA_CONFINED: // Project Grounded: ringportaal, er valt van alles uit, de hand grijpt de camera
     case SPECIES_HOOPA_UNBOUND:
-        CreateBattleStartTask(B_TRANSITION_HOOPA, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_HOOPA, MUS_GROUNDED_VS_HOOPA);
         break;
     case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, een weerbericht dat ontspoort; elk een eigen thema
     case SPECIES_TORNADUS_THERIAN:

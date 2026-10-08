@@ -7325,3 +7325,47 @@ DirectSoundWaveData_tapu_brass_hi::
 	.align 2
 DirectSoundWaveData_tapu_lead::
 	.incbin "sound/direct_sound_samples/grounded/tapu_lead.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_50::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_50.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_57::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_57.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_64::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_64.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_71::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_71.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_57::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_57.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_64::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_64.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_71::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_71.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_dum::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_dum.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_tek::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_tek.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_bendir::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_bendir.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_zill::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_zill.bin"

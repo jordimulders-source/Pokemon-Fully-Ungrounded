@@ -9,6 +9,7 @@
 .include "sound/voicegroups/drumsets/burglar.inc"
 .include "sound/voicegroups/drumsets/tapu.inc"
 .include "sound/voicegroups/drumsets/hooh.inc"
+.include "sound/voicegroups/drumsets/hoopa.inc"
 .include "sound/voicegroups/drumsets/lugia.inc"
 .include "sound/voicegroups/drumsets/shaymin.inc"
 .include "sound/voicegroups/drumsets/magikarp.inc"
@@ -50,6 +51,9 @@
 .include "sound/voicegroups/keysplits/hooh_shami.inc"
 .include "sound/voicegroups/keysplits/hooh_koto.inc"
 .include "sound/voicegroups/keysplits/hooh_shaku.inc"
+.include "sound/voicegroups/keysplits/hoopa_oud.inc"
+.include "sound/voicegroups/keysplits/hoopa_mizmar.inc"
+.include "sound/voicegroups/keysplits/hoopa_str.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -273,3 +277,4 @@
 .include "sound/voicegroups/grounded_hooh.inc"
 .include "sound/voicegroups/grounded_forces.inc"
 .include "sound/voicegroups/grounded_lugia.inc"
+.include "sound/voicegroups/grounded_hoopa.inc"

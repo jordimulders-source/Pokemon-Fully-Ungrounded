@@ -994,11 +994,11 @@
 #define TRAINER_STADIUM_N                   977
 #define TRAINER_STADIUM_GHETSIS             978
 
-#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden (1-2 badges)
-#define TRAINER_BURGLAR_2                   980 // 3-4 badges
-#define TRAINER_BURGLAR_3                   981 // 5-6 badges
-#define TRAINER_BURGLAR_4                   982 // 7-8 badges
-#define TRAINER_BURGLAR_5                   983 // na de Elite Four
+#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden, 1 badge (_2-_8: 2-8 badges, _9: na de HoF)
+#define TRAINER_BURGLAR_2                   980 // 2 badges
+#define TRAINER_BURGLAR_3                   981 // 3 badges
+#define TRAINER_BURGLAR_4                   982 // 4 badges
+#define TRAINER_BURGLAR_5                   983 // 5 badges
 
 #define TRAINER_JUNGLE_BRAM                 984 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_MAYA                 985 // Project Grounded: Fortree Jungle
@@ -1078,6 +1078,13 @@
 #define TRAINER_GHOST_SAILOR_PERCY          1053 // Project Grounded: spookschip, hutten
 #define TRAINER_GRIMSBY                     1054 // Project Grounded: kapitein Grimsby (spookschip); Battle Stadium
 
+// land_vulling { (tools/grounded/maptools/land_vulling.py; id's 1070+ om botsing met andere agents te vermijden)
+#define TRAINER_EVER_GRANDE_BRAMWELL        1070 // Project Grounded (landvulling): Ever Grande, promenade (Expert, Fighting)
+#define TRAINER_EVER_GRANDE_GLORIA          1071 // Project Grounded (landvulling): Ever Grande, promenade (Pokefan, Normal)
+#define TRAINER_EVER_GRANDE_ROCKY           1072 // Project Grounded (landvulling): Ever Grande, bij het Pokemon Center (Guitarist, Electric)
+#define TRAINER_ARCHAEOLOGIST_HOLLIS        1073 // Project Grounded (landvulling): Desert Underpass, opgraving (fossielen)
+// }
+
 #define TRAINER_SAILOR_DUNCAN               1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
 #define TRAINER_RUIN_MANIAC_SIMON           1101 // Project Grounded (zeevulling 1): Route 107, rots-"ruine"
 #define TRAINER_OLD_COUPLE_HAL_AND_MAE      1102 // Project Grounded (zeevulling 1): Route 126, picknickbank (dubbel)
@@ -1114,31 +1121,46 @@
 #define TRAINER_WALLY_MOSSDEEP              1135 // Project Grounded: extra gevecht (MossdeepCity)
 #define TRAINER_ZINNIA_ROUTE_114            1136 // Project Grounded: extra gevecht (Route114)
 #define TRAINER_ZINNIA_ROUTE_119            1137 // Project Grounded: extra gevecht (Route119)
-#define TRAINER_DAVE_ROUTE_109              1138 // Project Grounded: extra gevecht (Route109)
-#define TRAINER_DAVE_ROUTE_118              1139 // Project Grounded: extra gevecht (Route118)
+#define TRAINER_DAVE_ROUTE_111              1138 // Project Grounded: extra gevecht (Route111)
+#define TRAINER_DAVE_PETALBURG              1139 // Project Grounded: extra gevecht (PetalburgCity)
 #define TRAINER_MITCH_ROUTE_110             1140 // Project Grounded: extra gevecht (Route110)
 #define TRAINER_MITCH_ROUTE_121             1141 // Project Grounded: extra gevecht (Route121)
 #define TRAINER_SICKBLIK_ROUTE_104          1142 // Project Grounded: extra gevecht (Route104)
 #define TRAINER_SICKBLIK_ROUTE_113          1143 // Project Grounded: extra gevecht (Route113)
 #define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
+#define TRAINER_DAVE_SOOTOPOLIS             1145 // Project Grounded: extra gevecht (SootopolisCity)
+// }
+
+// burglar 6-9 (Project Grounded: Burglar per badge, zie src/burglar.c GetTier)
+#define TRAINER_BURGLAR_6                   1146 // 6 badges
+#define TRAINER_BURGLAR_7                   1147 // 7 badges
+#define TRAINER_BURGLAR_8                   1148 // 8 badges
+#define TRAINER_BURGLAR_9                   1149 // na de Elite Four
+// }
+
+// zee_vulling_3 {
+#define TRAINER_HEX_MANIAC_VESPER           1170 // Project Grounded (zeevulling 3): Route 122, bruidsmeisje van een spokenbruiloft
+#define TRAINER_SAILOR_MARTY                1171 // Project Grounded (zeevulling 3): Route 126, zijn schip is nu deel van de Garbage Patch
+#define TRAINER_RANGER_CORAL                1172 // Project Grounded (zeevulling 3): Route 129, telt Wailord die er niet zijn
+#define TRAINER_SAILOR_RUSTY                1173 // Project Grounded (zeevulling 3): Route 131, schipper van de bergingsduiker
 // }
 
 // beacon_dragon { (tools/grounded/maptools/beacon_dragon.py)
-#define TRAINER_BEACON_ROALD                1145 // Project Grounded: Beacon Isle, toerist die zijn geld terug wil
-#define TRAINER_BEACON_LUX                  1146 // Project Grounded: Beacon Isle, vuurvliegjesman
-#define TRAINER_BEACON_DYLAN                1147 // Project Grounded: Beacon Isle, vuurtoren 1F: zelfbenoemde misthoorn
-#define TRAINER_BEACON_KEIKO                1148 // Project Grounded: Beacon Isle, vuurtoren 2F: traplopen
-#define TRAINER_BEACON_PEMBERTON            1149 // Project Grounded: Beacon Isle, vuurtoren 2F: wil de vuurtoren kopen
-#define TRAINER_WICK                        1150 // Project Grounded: Beacon Isle, vuurtorenwachter (Battle Stadium)
-#define TRAINER_DRAGONSPINE_VERNON          1151 // Project Grounded: Dragonspine Isle, 412 keer gebeten
-#define TRAINER_DRAGONSPINE_SAELA           1152 // Project Grounded: Dragonspine Isle, traint vooral rennen
-#define TRAINER_DRAGONSPINE_OSRIC           1153 // Project Grounded: Dragon's Den onderhal, vergunningencontrole
-#define TRAINER_DRAGONSPINE_MIRA            1154 // Project Grounded: Dragon's Den onderhal, heel zacht vechten
-#define TRAINER_DRAGONSPINE_TALON           1155 // Project Grounded: Dragon's Den bovenhal, nam de trap
-#define TRAINER_GERALD_WARDEN               1156 // Project Grounded: Dragon's Den, drakenwachter met klembord (Battle Stadium)
+#define TRAINER_BEACON_ROALD                1174 // Project Grounded: Beacon Isle, toerist die zijn geld terug wil
+#define TRAINER_BEACON_LUX                  1175 // Project Grounded: Beacon Isle, vuurvliegjesman
+#define TRAINER_BEACON_DYLAN                1176 // Project Grounded: Beacon Isle, vuurtoren 1F: zelfbenoemde misthoorn
+#define TRAINER_BEACON_KEIKO                1177 // Project Grounded: Beacon Isle, vuurtoren 2F: traplopen
+#define TRAINER_BEACON_PEMBERTON            1178 // Project Grounded: Beacon Isle, vuurtoren 2F: wil de vuurtoren kopen
+#define TRAINER_WICK                        1179 // Project Grounded: Beacon Isle, vuurtorenwachter (Battle Stadium)
+#define TRAINER_DRAGONSPINE_VERNON          1180 // Project Grounded: Dragonspine Isle, 412 keer gebeten
+#define TRAINER_DRAGONSPINE_SAELA           1181 // Project Grounded: Dragonspine Isle, traint vooral rennen
+#define TRAINER_DRAGONSPINE_OSRIC           1182 // Project Grounded: Dragon's Den onderhal, vergunningencontrole
+#define TRAINER_DRAGONSPINE_MIRA            1183 // Project Grounded: Dragon's Den onderhal, heel zacht vechten
+#define TRAINER_DRAGONSPINE_TALON           1184 // Project Grounded: Dragon's Den bovenhal, nam de trap
+#define TRAINER_GERALD_WARDEN               1185 // Project Grounded: Dragon's Den, drakenwachter met klembord (Battle Stadium)
 // }
 
-#define TRAINERS_COUNT                      1157
+#define TRAINERS_COUNT                      1186
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

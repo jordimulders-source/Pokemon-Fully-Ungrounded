@@ -15,3 +15,12 @@ SafariZone_ThunderPlains_Text_Sign:
 	.string "Think about that.\p"
 	.string "The management is not responsible\n"
 	.string "for new hairstyles.$"
+
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+SafariZone_ThunderPlains_EventScript_LVLightning::
+	msgbox SafariZone_ThunderPlains_Text_LVLightning, MSGBOX_NPC
+	end
+
+SafariZone_ThunderPlains_Text_LVLightning:
+	.string "I study lightning. Up close.\nWith this metal rod.\pI've been struck fourteen times.\nMy theory: it likes me.\pMy hair has a theory too.\nIt points straight up.$"
+@ --- einde land_vulling ---

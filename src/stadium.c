@@ -526,6 +526,8 @@ void Stadium_EndTournament(void)
 // Balans (Jordi verloor zonder EV-training bijna alles): de tegenstanders bouwen hun EV's per wedstrijd op.
 // Eerste wedstrijd zonder EV's, dan 1/3, 2/3, vanaf de vierde alles (singles: halve finale; doubles: finale).
 static const u8 sStadiumEvPercent[] = {0, 33, 67, 100};
+// Jordi (8 okt): nog eerlijker; ook de IV's lopen op (max per stat), zodat de eerste rondes geen Showdown-teams zijn
+static const u8 sStadiumIvCap[] = {20, 24, 28, 31};
 
 // Team van een tegenstander: de keuze uit pool.py (singles 4 / doubles 3, synergie, ace altijd), level 50.
 u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
@@ -546,6 +548,12 @@ u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstT
             continue;
         mons[n] = trainer->party[i];
         mons[n].lvl = STADIUM_LEVEL;
+        {
+            u32 cap = sStadiumIvCap[min(sT.round, ARRAY_COUNT(sStadiumIvCap) - 1)], iv = 0;
+            for (s = 0; s < NUM_STATS; s++)
+                iv |= min((mons[n].iv >> (5 * s)) & MAX_IV_MASK, cap) << (5 * s);
+            mons[n].iv = iv;
+        }
         if (mons[n].ev != NULL && evPercent < 100)
         {
             for (s = 0; s < NUM_STATS; s++)

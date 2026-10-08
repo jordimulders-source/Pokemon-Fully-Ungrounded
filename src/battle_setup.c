@@ -1071,7 +1071,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_COLRESS;
 
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
-    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_109 || trainerId == TRAINER_DAVE_ROUTE_118)
+    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
+     || trainerId == TRAINER_DAVE_SOOTOPOLIS)
         return B_TRANSITION_DAVE;
     // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
     if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
@@ -1082,7 +1083,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_MIMI;
     if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
         return B_TRANSITION_KECCLES;
-    if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5) || trainerId == TRAINER_STADIUM_BURGLAR)
+    if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
+     || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9) || trainerId == TRAINER_STADIUM_BURGLAR)
         return B_TRANSITION_BURGLAR;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)

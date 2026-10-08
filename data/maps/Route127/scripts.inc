@@ -136,3 +136,90 @@ Route127_Text_ZVTwins_NotEnough:
 Route127_Text_ZVTwins_Post:
 	.string "PIP: If you see Mom, say we're\nat a sleepover.\pPEP: With a sandbank!$"
 @ --- einde zee_vulling_1 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route127_EventScript_ZV3Mine0::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB, 40
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine1::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 42
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine2::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB, 40
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine3::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 42
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine4::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB_HISUI, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3MineAntique, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB_HISUI, 40
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine5::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 42
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_Text_ZV3Mine:
+	.string "Something round is bobbing in the\nwater. It's ticking.\pIt's a SEA MINE!\n...No. It's a POKeMON pretending.\lIt's very committed to the bit.$"
+
+Route127_Text_ZV3MineAntique:
+	.string "This mine is made of wood and has\na fuse. An antique.\pIt looks at you like you are\nthe newfangled one.$"
+
+Route127_EventScript_ZV3Warning::
+	msgbox Route127_Text_ZV3Warning, MSGBOX_SIGN
+	end
+
+Route127_Text_ZV3Warning:
+	.string "DANGER: MINEFIELD.\nDO NOT TOUCH, PET OR CATCH.\pSomeone has scratched underneath:\n'they respawn btw'$"
+@ --- einde zee_vulling_3 ---

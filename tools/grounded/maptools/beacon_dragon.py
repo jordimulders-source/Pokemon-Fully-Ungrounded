@@ -172,32 +172,37 @@ def sight_cells(o):
     return cx.sight(o)
 
 
-# ====================================================================== flags (vrije flags hernoemen)
+# ====================================================================== flags (FLAG_GROUNDED 100-149 = dit script)
 FLAGS = [
-    # (vrije flag, nieuwe naam, commentaar)
-    ('FLAG_UNUSED_0x8E3', 'FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL', 'Beacon Isle: verborgen Big Pearl'),
-    ('FLAG_UNUSED_0x8E5', 'FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING', 'Beacon Isle: verborgen Pearl String'),
-    ('FLAG_UNUSED_0x8E6', 'FLAG_ITEM_BEACON_ISLE_CELL_BATTERY', 'Beacon Isle: Cell Battery'),
-    ('FLAG_UNUSED_0x8E7', 'FLAG_ITEM_BEACON_LIGHTHOUSE_THUNDER_STONE', 'vuurtoren 1F: Thunder Stone'),
-    ('FLAG_UNUSED_0x8E8', 'FLAG_ITEM_BEACON_LIGHTHOUSE_ELECTIRIZER', 'vuurtoren 2F: Electirizer'),
-    ('FLAG_UNUSED_0x8E9', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE', 'Dragonspine Isle: verborgen Dragon Scale'),
-    ('FLAG_UNUSED_0x8EA', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE', 'Dragonspine Isle: verborgen Star Piece'),
-    ('FLAG_UNUSED_0x8EB', 'FLAG_ITEM_DRAGONSPINE_MAX_REVIVE', 'Dragonspine Isle: Max Revive'),
-    ('FLAG_UNUSED_0x8EC', 'FLAG_ITEM_DRAGONSPINE_DEN_PP_UP', "Dragon's Den: PP Up"),
-    ('FLAG_UNUSED_0x8ED', 'FLAG_ITEM_DRAGONSPINE_DEN_MAX_ELIXIR', "Dragon's Den: Max Elixir"),
-    ('FLAG_UNUSED_0x49C', 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DEN_BIG_NUGGET', "Dragon's Den: verborgen Big Nugget"),
+    # (n in FLAG_GROUNDED(n), naam, commentaar)
+    (100, 'FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL', 'Beacon Isle: verborgen Big Pearl'),
+    (101, 'FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING', 'Beacon Isle: verborgen Pearl String'),
+    (102, 'FLAG_ITEM_BEACON_ISLE_CELL_BATTERY', 'Beacon Isle: Cell Battery'),
+    (103, 'FLAG_ITEM_BEACON_LIGHTHOUSE_THUNDER_STONE', 'vuurtoren 1F: Thunder Stone'),
+    (104, 'FLAG_ITEM_BEACON_LIGHTHOUSE_ELECTIRIZER', 'vuurtoren 2F: Electirizer'),
+    (105, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DRAGON_SCALE', 'Dragonspine Isle: verborgen Dragon Scale'),
+    (106, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_STAR_PIECE', 'Dragonspine Isle: verborgen Star Piece'),
+    (107, 'FLAG_ITEM_DRAGONSPINE_MAX_REVIVE', 'Dragonspine Isle: Max Revive'),
+    (108, 'FLAG_ITEM_DRAGONSPINE_DEN_PP_UP', "Dragon's Den: PP Up"),
+    (109, 'FLAG_ITEM_DRAGONSPINE_DEN_MAX_ELIXIR', "Dragon's Den: Max Elixir"),
+    (110, 'FLAG_HIDDEN_ITEM_DRAGONSPINE_DEN_BIG_NUGGET', "Dragon's Den: verborgen Big Nugget"),
 ]
 
 
 def flags():
     p = 'include/constants/flags.h'
     s = open(p).read()
-    for old, new, why in FLAGS:
-        if new in s:
-            continue
-        m = re.search(r'^#define %s(\s+)(\(.*?\)|\S+)(\s*)// Unused Flag$' % old, s, re.M)
-        assert m, ('vrije flag niet gevonden', old)
-        s = s[:m.start()] + '#define %s%s%s // Project Grounded: %s' % (new, ' ' * max(1, 60 - 8 - len(new)), m.group(2), why) + s[m.end():]
+    blk = '// beacon_dragon { (tools/grounded/maptools/beacon_dragon.py; FLAG_GROUNDED 100-149)\n'
+    for n, name, why in FLAGS:
+        assert 100 <= n <= 149
+        blk += '#define %-48s FLAG_GROUNDED(%d) // Project Grounded: %s\n' % (name, n, why)
+    blk += '// }'
+    if '// beacon_dragon {' in s:
+        i = s.index('// beacon_dragon {'); j = s.index('// }', i) + 4
+        s = s[:i] + blk + s[j:]
+    else:
+        anchor = s.index('\n', s.index('// Verdeling (houd bij!)')) + 1
+        s = s[:anchor] + blk + '\n' + s[anchor:]
     open(p, 'w').write(s)
 
 

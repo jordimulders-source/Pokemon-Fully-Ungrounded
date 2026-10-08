@@ -6110,7 +6110,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
-    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_109 || trainerId == TRAINER_DAVE_ROUTE_118)
+    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
+     || trainerId == TRAINER_DAVE_SOOTOPOLIS)
         return MUS_GROUNDED_VS_DAVE;
 
     // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
@@ -6180,14 +6181,12 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     switch (trainerClass)
     {
-    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-5, ook TRAINER_STADIUM_BURGLAR)
+    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-9, ook TRAINER_STADIUM_BURGLAR)
         return MUS_GROUNDED_VS_BURGLAR;
     case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
         return MUS_GROUNDED_VS_COLRESS;
     case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
         return MUS_GROUNDED_VS_ZINNIA;
-    case TRAINER_CLASS_KING: // Project Grounded: N (Battle Stadium)
-        return MUS_GROUNDED_VS_N;
     case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
         return MUS_GROUNDED_VS_GHETSIS;
     case TRAINER_CLASS_SAGE: // Project Grounded: Neo Plasma (Battle Stadium)
@@ -6215,15 +6214,15 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_CLASS_RIVAL:
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             return MUS_VS_RIVAL;
-        // Project Grounded: Wally's eigen thema groeit met hem mee (5 = eindversie). 1 (fluitje, traag) = Mt. Pyre,
-        // 2 (fluit) = Mossdeep (extra gevechten, tools/grounded/maptools/extra_fights.py)
-        if (trainerId == TRAINER_WALLY_MT_PYRE)
-            return MUS_GROUNDED_VS_WALLY_4;
-        if (trainerId == TRAINER_WALLY_MOSSDEEP)
-            return MUS_GROUNDED_VS_WALLY_4;
+        // Project Grounded: Wally's eigen thema groeit met hem mee, één per gevecht in de volgorde van het verhaal:
+        // 1 Mauville, 2 Meteor Falls, 3 Mt. Pyre, 4 Mossdeep, 5 Victory Road (ook de rematches en het Stadium)
         if (trainerId == TRAINER_WALLY_MAUVILLE)
-            return MUS_GROUNDED_VS_WALLY_3;
+            return MUS_GROUNDED_VS_WALLY_1;
         if (trainerId == TRAINER_WALLY_METEOR_FALLS)
+            return MUS_GROUNDED_VS_WALLY_2;
+        if (trainerId == TRAINER_WALLY_MT_PYRE)
+            return MUS_GROUNDED_VS_WALLY_3;
+        if (trainerId == TRAINER_WALLY_MOSSDEEP)
             return MUS_GROUNDED_VS_WALLY_4;
         if (!StringCompare(GetTrainerNameFromId(trainerId), gText_BattleWallyName))
             return MUS_GROUNDED_VS_WALLY_5;

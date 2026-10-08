@@ -101,6 +101,11 @@ ParadisoResort_EventScript_RivalMayTalk::
 	end
 
 @ ---------------------------------------------------------------- overige gasten
+@ Dave (Freed From Desire) na de Hall of Fame: met pensioen, geen gevecht meer. Tekst letterlijk van Jordi.
+ParadisoResort_EventScript_Dave::
+	msgbox ParadisoResort_Text_Dave, MSGBOX_NPC
+	end
+
 ParadisoResort_EventScript_PoolSwimmer::
 	msgbox ParadisoResort_Text_PoolSwimmer, MSGBOX_NPC
 	end
@@ -324,3 +329,16 @@ ParadisoResort_Text_BirchAsk:
 ParadisoResort_Text_BirchDecline:
 	.string "PROF. BIRCH: Fine. More time for me and\n"
 	.string "the specimen.$"
+
+ParadisoResort_Text_Dave:
+	.string "DAVE: They asked me to retire.\n"
+	.string "Too many goals, wasn't fair for\l"
+	.string "the rest of the league.\p"
+	.string "After a legendary career, there's\n"
+	.string "only two things left.\p"
+	.string "Raising children and chilling\n"
+	.string "on the beach.\p"
+	.string "And a bacardi, with a bit of coke,\n"
+	.string "but you shouldn't taste the coke.\p"
+	.string "Otherwise it's not a rum coke.\n"
+	.string "Like a Long Island Ice Tea.$"

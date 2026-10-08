@@ -3394,6 +3394,7 @@ BattleScript_AirPollutionActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEACIDRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_ACID_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -3431,6 +3432,7 @@ BattleScript_PollenSeasonActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEPOLLENHAZE
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_POLLEN_HAZE_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -6698,6 +6700,7 @@ BattleScript_DrizzleActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEITRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -6916,6 +6919,7 @@ BattleScript_SandstreamActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -6925,6 +6929,7 @@ BattleScript_SandSpitActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ASANDSTORMKICKEDUP
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	return
@@ -7058,6 +7063,7 @@ BattleScript_DroughtActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7067,6 +7073,7 @@ BattleScript_DesolateLandActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_EXTREMELYHARSHSUNLIGHT
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7082,6 +7089,7 @@ BattleScript_PrimordialSeaActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_HEAVYRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7205,6 +7213,7 @@ BattleScript_SnowWarningActivatesHail::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_SNOWWARNINGHAIL
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7214,6 +7223,7 @@ BattleScript_SnowWarningActivatesSnow::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_SNOWWARNINGSNOW
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SNOW_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7551,6 +7561,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchIn::
 	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInRet:
+	destroyabilitypopup @ Project Grounded: popup niet laten hangen (Intrepid Sword e.d.)
 	end3
 
 BattleScript_ScriptingAbilityStatRaise::

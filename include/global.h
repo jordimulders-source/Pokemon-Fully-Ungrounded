@@ -1179,6 +1179,7 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
+    u8 groundedFlags[NUM_GROUNDED_FLAGS / 8]; // Project Grounded: extra flags (GROUNDED_FLAGS_START), altijd achteraan houden
     // sizeof: 0x3???
 };
 

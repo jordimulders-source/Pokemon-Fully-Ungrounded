@@ -2,6 +2,7 @@
 #include "constants/weather.h"
 #include "coord_event_weather.h"
 #include "field_weather.h"
+#include "forces.h"
 
 struct CoordEventWeather
 {
@@ -108,6 +109,8 @@ static void CoordEventWeather_Route123Cycle(void)
 void DoCoordEventWeather(u8 coordEventWeather)
 {
     u8 i;
+    if (Forces_ActiveHere()) // Project Grounded: een Force houdt zijn eigen weer vast
+        return;
     for (i = 0; i < ARRAY_COUNT(sCoordEventWeatherFuncs); i++)
     {
         if (sCoordEventWeatherFuncs[i].coordEventWeather == coordEventWeather)

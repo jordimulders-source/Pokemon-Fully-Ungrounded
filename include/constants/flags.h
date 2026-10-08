@@ -1647,6 +1647,13 @@
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150+ vrij.
+// Forces-trio op routes (src/forces.c): DONE = gevangen/verslagen (permanent), HIDE = objectflag, per kaartlading gezet.
+#define FLAG_FORCES_TORNADUS_DONE               FLAG_GROUNDED(50)
+#define FLAG_FORCES_THUNDURUS_DONE              FLAG_GROUNDED(51)
+#define FLAG_FORCES_LANDORUS_DONE               FLAG_GROUNDED(52)
+#define FLAG_FORCES_HIDE_TORNADUS               FLAG_GROUNDED(53)
+#define FLAG_FORCES_HIDE_THUNDURUS              FLAG_GROUNDED(54)
+#define FLAG_FORCES_HIDE_LANDORUS               FLAG_GROUNDED(55)
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

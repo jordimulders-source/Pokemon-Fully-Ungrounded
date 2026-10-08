@@ -621,3 +621,6 @@ gSpecials::
 	def_special FishTourney_GetBoardInfo
 	def_special FishTourney_Weigh
 	def_special FishTourney_ClaimPrize
+	def_special Forces_Finish
+	def_special Forces_PrepareBattle
+	def_special Forces_DebugForceNext

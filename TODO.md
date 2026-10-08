@@ -7,14 +7,13 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 1. **Granite Cave B3F-kristalgrot met Carbink** en **Cave of Origin dieper met Primal-lore**, **ijzige onderlaag Shoal Cave** (Cetoddle/Cetitan, Bergmite). (VRAGEN_VOLGENDE 2)
 2. **Koraalkathedraal (126), luchtbel-grot (128), Sea Shard-verzamelquest** bij de Diving Treasure Hunter. (VRAGEN_VOLGENDE O1/O3/O4)
 3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset; Jordi 9 okt: mag autonoom). (ZEE_PLAN 1)
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
-1. **Dragonspine Isle → Tao-eiland:** Gerald (en zijn Stadium-plek) eruit; Reshiram en Zekrom allebei te vangen, later Kyurem. Ruïnetoren-idee: LEGENDARY_PLAN groep 9. (9 okt)
 3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)
    - a. **Lavender Town + Pokémon Tower**
    - b. **National Park**, eventueel met **Ilex Forest** (Celebi)

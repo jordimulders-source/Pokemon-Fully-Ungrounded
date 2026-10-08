@@ -69,28 +69,53 @@ AshfrostTown_EventScript_Woman_Text:
 	.string "things. I've stopped hoping.$"
 
 
-@ Project Grounded: de iglo. Zijn alle vijf Regi's gevangen, dan is de vloer ingestort tot een trap naar de Regigigas-tempel.
-AshfrostTown_EventScript_Igloo::
-	lockall
-	goto_if_set FLAG_REGIGIGAS_TEMPLE_OPEN, AshfrostTown_EventScript_IglooOpen
-	msgbox AshfrostTown_Text_IglooClosed, MSGBOX_DEFAULT
-	releaseall
+@ Project Grounded: bord naast het Pokémon Center
+AshfrostTown_EventScript_VillageSign::
+	msgbox AshfrostTown_Text_VillageSign, MSGBOX_SIGN
 	end
 
-AshfrostTown_EventScript_IglooOpen::
-	msgbox AshfrostTown_Text_IglooOpen, MSGBOX_DEFAULT
-	closemessage
-	playse SE_EXIT
-	warp MAP_REGIGIGAS_TEMPLE, 0
-	waitstate
-	releaseall
+@ de drie stenen Regi-beelden bij het heiligdom: elk een cryptische hint naar zijn grot
+AshfrostTown_EventScript_StatueRegirock::
+	msgbox AshfrostTown_Text_StatueRegirock, MSGBOX_SIGN
 	end
 
-AshfrostTown_Text_IglooClosed:
-	.string "An igloo. It's very cold inside.\p"
-	.string "Suspiciously cold. Colder than an igloo\n"
-	.string "has any right to be.$"
+AshfrostTown_EventScript_StatueRegice::
+	msgbox AshfrostTown_Text_StatueRegice, MSGBOX_SIGN
+	end
 
-AshfrostTown_Text_IglooOpen:
-	.string "The floor of the igloo has caved in.\n"
-	.string "Stone steps lead down into the dark...$"
+AshfrostTown_EventScript_StatueRegisteel::
+	msgbox AshfrostTown_Text_StatueRegisteel, MSGBOX_SIGN
+	end
+
+AshfrostTown_Text_VillageSign:
+	.string "ASHFROST VILLAGE\n"
+	.string "“Where even the snow is grey.”\p"
+	.string "Please do not eat the snow. We know\n"
+	.string "what's in it. Now you do too.$"
+
+AshfrostTown_Text_StatueRegirock:
+	.string "A giant made of rock, carved out of\n"
+	.string "stone. Dots run across its face in the\l"
+	.string "shape of an H.\p"
+	.string "The pedestal reads:\n"
+	.string "“I sleep in a ruin the desert keeps\l"
+	.string "swallowing. Walk into the storm, and\l"
+	.string "keep walking.”$"
+
+AshfrostTown_Text_StatueRegice:
+	.string "A giant made of ice, carved out of\n"
+	.string "stone. Its dots form a ring around a\l"
+	.string "single dot.\p"
+	.string "The pedestal reads:\n"
+	.string "“I sleep in a cave in the sea, between\l"
+	.string "the father's city and the island of the\l"
+	.string "fist. The cold you feel there is mine.”$"
+
+AshfrostTown_Text_StatueRegisteel:
+	.string "A giant made of steel, carved out of\n"
+	.string "stone. Its dots form a cross.\p"
+	.string "The pedestal reads:\n"
+	.string "“I sleep in a tomb on the road where the\l"
+	.string "rain never stops, south of the city in\l"
+	.string "the trees. I do not rust. I have\l"
+	.string "checked.”$"

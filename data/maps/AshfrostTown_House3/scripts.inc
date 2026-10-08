@@ -6,5 +6,11 @@ AshfrostTown_House3_EventScript_Resident::
 	end
 
 AshfrostTown_House3_EventScript_Resident_Text:
-	.string "(Placeholder: resident of ASHFROST.)$"
+	.string "I tried to sell ASHFROST as a holiday\n"
+	.string "destination.\p"
+	.string "“Ski in the morning, evacuate in the\n"
+	.string "afternoon!”\p"
+	.string "The brochures are still at the printer.\n"
+	.string "The printer refuses to come up the\l"
+	.string "mountain.$"
 

@@ -6,5 +6,14 @@ AshfrostTown_House4_EventScript_Resident::
 	end
 
 AshfrostTown_House4_EventScript_Resident_Text:
-	.string "Welcome to the ASHFROST LODGE!\nTwelve rooms, one guest. Me.\pI'm also the owner. Business is\nbooming, if you count the ice cracking.$"
+	.string "Welcome to the ASHFROST LODGE!\n"
+	.string "Twelve rooms, one guest. Me.\p"
+	.string "I'm also the owner. Business is\n"
+	.string "booming, if you count the ice cracking.\p"
+	.string "The rooms are upstairs. Rooms one to\n"
+	.string "four, anyway. Rooms five to twelve are\l"
+	.string "something I tell the tax office.\p"
+	.string "The others up there aren't guests. One\n"
+	.string "is a situation, one is a ghost and one is\l"
+	.string "a BEARTIC.$"
 

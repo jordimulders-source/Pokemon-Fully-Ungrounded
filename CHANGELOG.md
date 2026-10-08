@@ -17319,3 +17319,44 @@ Volgens Jordi's GBA-instructies per leider:
   - Dr. P. Lumb: "It turned into my sister. I am an only child."
 - **Safari-zones, Starfall Grotto, Heatran-hol:** per plek een bijzondere NPC en verborgen items. Het sterrenstof in Starfall Grotto komt elke dag terug.
 - Alles komt uit `tools/grounded/maptools/land_vulling.py` (met `landlib.py`, dat ook de bereikbaarheid controleert). Nieuwe trainers 1070–1073.
+
+### [v0.9.149] - Zeevulling 3 (gaten gevuld)
+- **Het meeste bestond al** (zeevulling 1 en 2, v0.9.118/0.9.121). Gevuld met `tools/grounded/maptools/zee_vulling_3.py`:
+- **Onderwater:**
+  - Route 127 heeft zeewier met Qwilfish, Tatsugiri, Huntail, Cursola en Dhelmise (1%), en het anker van de "S.S. TIDAL II".
+  - Route 128: een gezonken postzak ("the captain says KYOGRE is a myth").
+  - Route 129: een piratenkist met een Comet Shard, drie stappen verderop.
+- **Verborgen items** op Route 107, 122, 125, 126, 129, 131, 133 en Whirl Island (geen TM's). De Soft Sand, de Snowball en de Ultra Ball komen elke dag terug.
+- **Trainers:**
+  - Hex Maniac Vesper (Route 122, bruidsmeisje van een spokenbruiloft).
+  - Sailor Marty (Route 126, "dat was mijn schip, een derde ervan").
+  - Ranger Coral (Route 129, nieuw eilandje, telt al jaren nul Wailord).
+  - Sailor Rusty (Route 131).
+- **Eilandje-NPC's:**
+  - SUSHI 107: een winkel die alles verkoopt behalve rijst.
+  - Route 131: een bergingsduiker op een nieuw eilandje. Hij ruilt steeds 2 Heart Scales tegen een Star Piece, Big Pearl, Nugget of Comet Shard.
+  - Route 133: een meteoroloog met Castform en een waarnemingspost. Hij geeft een Icy Rock, daarna nepvoorspellingen.
+- **Garbage Patch (Route 126):** een tv met POKéNAV RADIO 's nachts, een toegangsbewijs, en een Seel die er alleen 's nachts ligt.
+- **Zeemijnenveld (Route 127):** zes Voltorb/Electrode-"mijnen" in de lagune, waaronder een antieke houten Hisui-Voltorb. Ze komen terug als je de kaart opnieuw binnenkomt ("they respawn btw").
+- **Tweede plek** voor Skwovet (Route 102), Meowth (Route 113) en Buneary (Route 117).
+- **Bug:** Route 131 laadt altijd zijn Sky Pillar-layout, dus het eilandje uit zeevulling 2 stond in het spel op open water. Nu staat het er wel.
+
+### [v0.9.150] - Dave, Wally en Burglar (Jordi's tweede testronde)
+- **Dave** (Route 109/118 weg), met Freed From Desire, GOAL! en de verliesquote "{PLAYER}, more....":
+  1. Route 111 zuid (26,117), vóór Wattson. Hij loopt op je af met de Dublin Rules. Lv 22–23.
+  2. Na Flannery blokkeert hij de gymdeur in Petalburg (Netflix, twee kinderen, de BLC-foto). Na het gevecht laat hij de foto zien ("Eleven men, one trophy, zero necks.") en loopt hij de gym in. Lv 31–32.
+  3. Direct na de Rayquaza-scène in Sootopolis tikt hij je aan ("Just scored a hattrick... Winkelhaak BV"), vóór Maxie en Archie. Lv 48–49, ace Kingambit.
+  4. Victory Road (bestond al): zijn sterkste team, ook in het Stadium.
+  5. Na de Hall of Fame ligt hij op een strandbedje in het Paradiso Resort met zijn rum-cola-tekst.
+- **Wally:** één team dat groeit naar zijn eindteam (Baxcalibur-lijn, Darmanitan, Annihilape, Dondozo, Flutter Mane, Gallade). Losse leden die niet bij het eindteam horen zijn weg. Elk lid heeft een bruikbare moveset.
+
+  | # | Gevecht | Thema | Ace |
+  |---|---|---|---|
+  | 1 | Mauville | 1 | Kirlia 24 |
+  | 2 | Meteor Falls | 2 | Kirlia 28 |
+  | 3 | Mt. Pyre | 3 | Gallade 44 (spookaccent: Flutter Mane, Rage Fist) |
+  | 4 | Mossdeep | 4 | Gallade 49 (psychic-accent: Zen Mode-Darmanitan) |
+  | 5 | Victory Road (+ rematches) | 5 | Gallade 56 |
+
+  - Het Mt. Chimney-partnerteam is gelijkgetrokken (geen Oranguru meer).
+- **Burglar (SIMON):** een team per badge (1 t/m 8) en een post-E4-team (9 teams; nieuw `TRAINER_BURGLAR_6`–`_9`). De kern is de Kanto-inbreker (vuur + gifgas), die meegroeit van Koffing/Vulpix/Growlithe (lv 17) tot Mega Charizard Y (lv 66–68). De Big Nugget hoort bij het post-E4-team.

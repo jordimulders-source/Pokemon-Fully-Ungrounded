@@ -222,6 +222,8 @@ def exterior():
         O('OBJ_EVENT_GFX_POKEFAN_M', 29, 37, P + 'DrunkFan', move='MOVEMENT_TYPE_WANDER_AROUND', rx=2, ry=1),
         O('OBJ_EVENT_GFX_MAN_3', 7, 13, P + 'Sunburn', move='MOVEMENT_TYPE_FACE_RIGHT'),
         O('OBJ_EVENT_GFX_OLD_WOMAN', 23, 38, P + 'Collector', move='MOVEMENT_TYPE_FACE_UP'),
+        # Dave (post-game, met pensioen) op de ligstoel naast de oranje parasol; zelfde flag als de rivaal
+        O('OBJ_EVENT_GFX_MAN_3', 18, 34, P + 'Dave', 'FLAG_HIDE_RESORT_RIVAL', move='MOVEMENT_TYPE_FACE_DOWN'),
     ]
     assert len(objs) <= 15
     bgs = [sms.sign(SIGN[0], SIGN[1], P + 'Sign', 'BG_EVENT_PLAYER_FACING_ANY'),

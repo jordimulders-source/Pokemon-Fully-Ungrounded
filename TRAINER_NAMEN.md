@@ -93,7 +93,7 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | Armstrong | `TRAINER_ARMSTRONG` | `TRAINER_ANTHONY` | 352 | 0x660 | Triathlete, Route 110 |
 | Violet | `TRAINER_VIOLET_COOLTRAINER` | `TRAINER_JAZMYN` | 503 | 0x6F7 | Cooltrainer, Route 123 (`TRAINER_VIOLET` = Aroma Lady op dezelfde route) |
 | Scarlet | `TRAINER_SCARLET` | `TRAINER_WENDY` | 92 | 0x55C | Cooltrainer, Route 123 |
-| Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F + Stadium (`PARTNER_STADIUM_DAVE`) |
+| Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F (zijn 4e gevecht) + Stadium (`PARTNER_STADIUM_DAVE`); post-game praat hij op een ligstoel in het Paradiso Resort |
 | Mitch | `TRAINER_MITCH` | `TRAINER_SAMUEL` | 81 | 0x551 | Cooltrainer, Victory Road B1F + Stadium (`PARTNER_STADIUM_MITCH`) |
 | SickBlik | `TRAINER_SICKBLIK` | `TRAINER_OWEN` | 83 | 0x553 | Cooltrainer, Victory Road B2F + Stadium (`PARTNER_STADIUM_SICKBLIK`) |
 | Kapitein Grimsby | `TRAINER_GRIMSBY` | (nieuw) | 1054 | 0x91E | Sailor, spookschip S.S. AGAVE (`GhostShip_CaptainsOffice`, 's nachts via Shipwreck Shoals) + Stadium (`PARTNER_STADIUM_GRIMSBY`) |
@@ -114,17 +114,21 @@ Verslagen-flag = 0x500 + nummer (Wally's objecten gebruiken die ook als verberg-
 
 | Personage | Constante | Nummer | Waar (x, y) | Levels |
 |---|---|---|---|---|
-| Wally | `TRAINER_WALLY_MT_PYRE` | 1134 | Mt. Pyre 1F (9, 4); verdwijnt na zijn nederlaag; thema Wally 1 | 42, Gallade 44 |
-| Wally | `TRAINER_WALLY_MOSSDEEP` | 1135 | Mossdeep, voor het Space Center (68, 17); verdwijnt na zijn nederlaag; thema Wally 2 | 47, Gallade 49 |
+| Wally | `TRAINER_WALLY_MT_PYRE` | 1134 | Mt. Pyre 1F (9, 4); verdwijnt na zijn nederlaag; thema Wally 3 | 42, Gallade 44 |
+| Wally | `TRAINER_WALLY_MOSSDEEP` | 1135 | Mossdeep, voor het Space Center (68, 17); verdwijnt na zijn nederlaag; thema Wally 4 | 47, Gallade 49 |
 | Zinnia | `TRAINER_ZINNIA_ROUTE_114` | 1136 | Route 114, bij de ingang van Meteor Falls (22, 34) | 25, Bagon 27 |
 | Zinnia | `TRAINER_ZINNIA_ROUTE_119` | 1137 | Route 119, noordkant richting Fortree (33, 10) | 36, Shelgon 38 |
-| Dave | `TRAINER_DAVE_ROUTE_109` | 1138 | Route 109, strand (27, 15) | 19, Pawniard 20 |
-| Dave | `TRAINER_DAVE_ROUTE_118` | 1139 | Route 118, oostkant (76, 11) | 33, Bisharp 34 |
+| Dave | `TRAINER_DAVE_ROUTE_111` | 1138 | Route 111 zuid, naast het pad vanaf Mauville (26, 117); vóór Wattson; verdwijnt na zijn nederlaag | 22, Pawniard 23 |
+| Dave | `TRAINER_DAVE_PETALBURG` | 1139 | Petalburg, voor de gymdeur (15, 9); na badge 4 tot je wint (objectflag `FLAG_TEMP_9`, gezet in `PetalburgCity_OnTransition`) | 31, Pawniard 32 |
 | Mitch | `TRAINER_MITCH_ROUTE_110` | 1140 | Route 110, plein boven Slateport (20, 54) | 23, Marshtomp 24 |
 | Mitch | `TRAINER_MITCH_ROUTE_121` | 1141 | Route 121 (50, 13) | 39, Swampert 40 |
 | SickBlik | `TRAINER_SICKBLIK_ROUTE_104` | 1142 | Route 104 noord, bij de uitgang van Petalburg Woods (14, 26) | 12, Remoraid 13 |
 | SickBlik | `TRAINER_SICKBLIK_ROUTE_113` | 1143 | Route 113, oostkant (70, 13) | 26, Octillery 27 |
 | Shy Guy (rood) | `TRAINER_SHY_GUY_DESERT` | 1144 | Route 111, woestijn: ingegraven achter het rotsblok aan de oostrand (37, 69) | 28, Mr. Mime 29 |
+| Dave | `TRAINER_DAVE_SOOTOPOLIS` | 1145 | Sootopolis (32, 35), rechts van de speler aan het begin van de Keccles-scène na Rayquaza (`FLAG_TEMP_9`) | 48, Kingambit 49 |
+
+Wally's thema's (`GetTrainerBattleBGM`): 1 Mauville, 2 Meteor Falls, 3 Mt. Pyre, 4 Mossdeep, 5 Victory Road (+ rematches).
+Burglar: `TRAINER_BURGLAR_1` … `_8` = 1–8 badges (979–983, 1146–1148), `_9` = na de Hall of Fame (1149).
 
 ## Nieuwe trainer of hernoeming
 

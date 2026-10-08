@@ -807,6 +807,43 @@ Route111_Text_HeatranGone:
 	.string "are gone. Melted, probably.$"
 
 @ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route111_EventScript_EF_DaveRoute111::
+	trainerbattle_single TRAINER_DAVE_ROUTE_111, Route111_Text_EF_DaveRoute111Intro, Route111_Text_EF_DaveRoute111Defeat, Route111_EventScript_EF_DaveRoute111Defeated
+	msgbox Route111_Text_EF_DaveRoute111PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_EventScript_EF_DaveRoute111Defeated::
+	msgbox Route111_Text_EF_DaveRoute111PostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_EF_DAVE_ROUTE_111
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route111_Text_EF_DaveRoute111Intro:
+	.string "DAVE: Hey, kleine speler.\p"
+	.string "Have you heard about the\n"
+	.string "Dublin Rules?\p"
+	.string "Cheating is a subjective thing.\p"
+	.string "If this girl is related to you,\n"
+	.string "like it's your mom or sister,\l"
+	.string "it's cheating,\p"
+	.string "otherwise it could've been\n"
+	.string "non-consensual or accidental.\p"
+	.string "Nobody knows!\p"
+	.string "Well, let's fight!\n"
+	.string "Too much info!$"
+
+Route111_Text_EF_DaveRoute111Defeat:
+	.string "{PLAYER}, more....$"
+
+Route111_Text_EF_DaveRoute111PostBattle:
+	.string "DAVE: Dublin Rule number two:\n"
+	.string "never explain the Dublin Rules.\p"
+	.string "I've now broken both.\n"
+	.string "Great session. Bye!$"
+
 Route111_EventScript_EF_ShyGuyDesert::
 	trainerbattle_single TRAINER_SHY_GUY_DESERT, Route111_Text_EF_ShyGuyDesertIntro, Route111_Text_EF_ShyGuyDesertDefeat
 	msgbox Route111_Text_EF_ShyGuyDesertPostBattle, MSGBOX_AUTOCLOSE

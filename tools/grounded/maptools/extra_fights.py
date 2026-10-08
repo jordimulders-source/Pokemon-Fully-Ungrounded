@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Project Grounded: extra gevechten in de wereld (Wally in Mt. Pyre en Mossdeep; Zinnia, Dave, Mitch en SickBlik
-eerder in de game; een verstopte Shy Guy in de woestijn van Route 111).
+"""Project Grounded: extra gevechten in de wereld (Wally in Mt. Pyre en Mossdeep; Zinnia, Mitch en SickBlik
+eerder in de game; Dave op Route 111, in Petalburg en in Sootopolis; een verstopte Shy Guy in de woestijn van Route 111).
+
+Optionele sleutels per gevecht: hide (verdwijnt na zijn nederlaag), flag (eigen objectflag), trainer_type,
+script (eigen eventscript met @ES@/@TX@/@LOCAL@/@TRAINER@). Kaarten zonder gevecht worden opgeruimd.
 
 Idempotent; beheert zijn eigen stukken in:
   - include/constants/opponents.h (blok tussen '// extra_fights {' en '// }'; TRAINERS_COUNT),
@@ -18,6 +21,11 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '.
 
 FIRST_ID = 1134
 
+# Dave: verliesquote in al zijn gevechten (Jordi)
+DAVE_DEFEAT = r"{PLAYER}, more....$"
+# Dave 1: Route 111 zuid (x, y, kijkrichting, zicht), vóór de woestijn
+DAVE1_SPOT = (26, 117, 'LEFT', 5)  # naast het pad omhoog vanaf Mauville
+
 # Teksten: Wally praat gebroken Engels (zijn twee openingszinnen zijn letterlijk van Jordi).
 FIGHTS = [
     dict(const='WALLY_MT_PYRE', map='MtPyre_1F', x=9, y=4, gfx='OBJ_EVENT_GFX_WALLY', face='RIGHT', sight=3,
@@ -28,6 +36,8 @@ FIGHTS = [
          defeat=r"Aaah! Now real scare…$",
          post=r"WALLY: Horror rule number one:\nnever split up.\p"
               r"…I split up from you now.\nNot scare. Is cardio.$",
+         # Wally's vaste team (eindteam Victory Road, terug geredeneerd); spook-accent: Flutter Mane komt erbij,
+         # Annihilape (Rage Fist), Gallade met Night Slash
          party="""Name: WALLY
 Class: Rival
 Pic: Wally
@@ -38,55 +48,58 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Purple
 
-Shedinja @ Focus Sash
+Darmanitan @ Charcoal
 Level: 42
+Ability: Sheer Force
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shadow Sneak
-- X-Scissor
-- Will-O-Wisp
-- Protect
+- Flare Blitz
+- Rock Slide
+- Earthquake
+- U-Turn
 
-Banette
+Dondozo @ Leftovers
 Level: 42
-Ability: Prankster
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shadow Claw
-- Knock Off
-- Thunder Wave
-- Destiny Bond
-
-Gourgeist
-Level: 42
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Phantom Force
-- Seed Bomb
-- Leech Seed
-- Trick-or-Treat
-
-Gyarados
-Level: 42
+Ability: Unaware
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Waterfall
-- Crunch
-- Dragon Dance
-- Scary Face
+- Curse
+- Rest
+- Sleep Talk
 
-Annihilape
+Arctibax
 Level: 42
+Ability: Thermal Exchange
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Icicle Crash
+- Dragon Claw
+- Ice Shard
+- Dragon Dance
+
+Annihilape @ Chesto Berry
+Level: 42
+Ability: Defiant
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rage Fist
 - Drain Punch
 - Bulk Up
-- Rock Slide
+- Rest
+
+Flutter Mane
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Mystical Fire
+- Confuse Ray
 
 Gallade @ Sitrus Berry
 Level: 44
 Ability: Sharpness
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psycho Cut
-- Night Slash
-- Shadow Sneak
+- Sacred Sword
 - Leaf Blade
+- Night Slash
 """),
     dict(const='WALLY_MOSSDEEP', map='MossdeepCity', x=68, y=17, gfx='OBJ_EVENT_GFX_WALLY', face='LEFT', sight=4,
          label='WallySpace', hide=True,
@@ -96,6 +109,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
          defeat=r"Brain… small again…$",
          post=r"WALLY: In space no air.\nGallader no need air.\p"
               r"Gallader need hug. I go hug.\nBye-bye, {PLAYER}!$",
+         # zelfde team, psychic-accent: Darmanitan met Zen Mode, Zen Headbutt, Psyshock
          party="""Name: WALLY
 Class: Rival
 Pic: Wally
@@ -106,47 +120,49 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Purple
 
-Solrock
-Level: 47
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Zen Headbutt
-- Rock Slide
-- Morning Sun
-- Sunny Day
-
-Lunatone
-Level: 47
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psychic
-- Moonblast
-- Power Gem
-- Calm Mind
-
-Bronzong
-Level: 47
-Ability: Heatproof
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Gyro Ball
-- Psychic
-- Trick Room
-- Stealth Rock
-
 Darmanitan @ Charcoal
 Level: 47
 Ability: Zen Mode
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Flare Blitz
-- Psychic
+- Zen Headbutt
 - Rock Slide
 - U-Turn
 
+Dondozo @ Leftovers
+Level: 47
+Ability: Unaware
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Curse
+- Rest
+- Sleep Talk
+
 Arctibax
 Level: 47
+Ability: Thermal Exchange
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Icicle Crash
 - Dragon Claw
-- Ice Shard
+- Zen Headbutt
 - Dragon Dance
+
+Annihilape @ Chesto Berry
+Level: 47
+Ability: Defiant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Rest
+
+Flutter Mane
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Moonblast
+- Psyshock
+- Mystical Fire
 
 Gallade @ Sitrus Berry
 Level: 49
@@ -266,12 +282,21 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Protect
 - Iron Defense
 """),
-    dict(const='DAVE_ROUTE_109', map='Route109', x=27, y=15, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=4,
-         label='Dave',
-         intro=r"DAVE: Beach football! Sand in the\nshoes, salt in the wounds!\p"
-               r"Na na na na na-na-na…\pThat's not a chant.\nThat's a warning.$",
-         defeat=r"Offside! Clearly offside!\nThe referee is a Wingull!$",
-         post=r"DAVE: My knees are made of sand now.\nSee you on the big pitch.$",
+    # Dave (Freed From Desire, GOAL!-transitie): 1 Route 111 (voor Wattson), 2 Petalburg (na Flannery, voor de gymdeur),
+    # 3 Sootopolis (direct na Rayquaza), 4 = het oorspronkelijke gevecht in Victory Road (TRAINER_DAVE, lv 51),
+    # daarna praat hij alleen nog op een ligstoel in het Paradiso Resort. Teksten letterlijk van Jordi.
+    dict(const='DAVE_ROUTE_111', map='Route111', x=DAVE1_SPOT[0], y=DAVE1_SPOT[1], gfx='OBJ_EVENT_GFX_MAN_3',
+         face=DAVE1_SPOT[2], sight=DAVE1_SPOT[3], label='Dave', hide=True,
+         intro=r"DAVE: Hey, kleine speler.\p"
+               r"Have you heard about the\nDublin Rules?\p"
+               r"Cheating is a subjective thing.\p"
+               r"If this girl is related to you,\nlike it's your mom or sister,\lit's cheating,\p"
+               r"otherwise it could've been\nnon-consensual or accidental.\p"
+               r"Nobody knows!\p"
+               r"Well, let's fight!\nToo much info!$",
+         defeat=DAVE_DEFEAT,
+         post=r"DAVE: Dublin Rule number two:\nnever explain the Dublin Rules.\p"
+              r"I've now broken both.\nGreat session. Bye!$",
          party="""Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -282,43 +307,68 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: Blue
 
 Gastly
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Hex
+- Night Shade
 - Confuse Ray
-- Lick
-- Mean Look
+- Hypnosis
 
 Charcadet
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Flame Charge
-- Clear Smog
 - Astonish
-- Leer
+- Clear Smog
+- Will-O-Wisp
 
 Gible
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Dragon Breath
-- Sand Tomb
 - Bulldoze
-- Sand Attack
+- Take Down
+- Sand Tomb
 
 Pawniard @ Oran Berry
-Level: 20
+Level: 23
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Metal Claw
-- Fury Cutter
 - Assurance
+- Fury Cutter
 - Scary Face
 """),
-    dict(const='DAVE_ROUTE_118', map='Route118', x=76, y=11, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=4,
-         label='Dave',
-         intro=r"DAVE: Away game! Nobody chants my\nname here. So I'll do it myself.\p"
-               r"DAVE IS ON FIRE!\p…Ow. Literally.\nCeruledge, stop that.$",
-         defeat=r"Red card. For me. And for my\nwhole personality.$",
-         post=r"DAVE: Next stop: VICTORY ROAD.\nThe big league. My mum is coming.$",
+    dict(const='DAVE_PETALBURG', map='PetalburgCity', x=15, y=9, gfx='OBJ_EVENT_GFX_MAN_3', face='DOWN', sight=1,
+         label='Dave', flag='FLAG_TEMP_9',  # PetalburgCity_OnTransition: alleen na badge 4 en zolang niet verslagen
+         intro=r"DAVE: I don't have time to watch\nNetflix all the time,\lI have two children.\p"
+               r"Anyways, have you seen my picture,\nwhen I was a part of the first\lteam at BLC?\p"
+               r"I'll show you after you beat me!$",
+         defeat=DAVE_DEFEAT,
+         post=r"DAVE: Fine. A deal is a deal.\p"
+              r"(A faded team photo. Eleven men,\none trophy, zero necks.)\p"
+              r"(Dave is circled in red marker.\nBy Dave. Several times.)\p"
+              r"DAVE: Third from the left.\nThe blur. That's pace, {PLAYER}.\p"
+              r"Right. Gotta get the kids.\nYour dad's GYM counts as daycare.$",
+         # na de winst loopt hij de gym in en is hij weg (de deur is weer vrij)
+         script="""@ES@::
+	trainerbattle_single TRAINER_@TRAINER@, @TX@Intro, @TX@Defeat, @ES@Defeated
+	msgbox @TX@PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+@ES@Defeated::
+	msgbox @TX@PostBattle, MSGBOX_DEFAULT
+	closemessage
+	opendoor 15, 8
+	waitdooranim
+	applymovement @LOCAL@, Common_Movement_WalkUp
+	waitmovement 0
+	removeobject @LOCAL@
+	closedoor 15, 8
+	waitdooranim
+	release
+	end
+
+""",
          party="""Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -330,15 +380,15 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Blue
 
 Haunter
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Ball
 - Sludge Bomb
 - Hypnosis
-- Dream Eater
+- Hex
 
 Ceruledge
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bitter Blade
 - Shadow Claw
@@ -346,23 +396,23 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Swords Dance
 
 Gliscor
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Earthquake
+- Dig
 - Acrobatics
 - Knock Off
 - Toxic
 
 Gabite
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dragon Claw
-- Dig
+- Bulldoze
 - Slash
 - Sandstorm
 
-Bisharp @ Sitrus Berry
-Level: 34
+Pawniard @ Sitrus Berry
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Iron Head
 - Night Slash
@@ -625,6 +675,93 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psybeam
 - Encore
 """),
+    dict(const='DAVE_SOOTOPOLIS', map='SootopolisCity', x=32, y=35, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=0,
+         label='Dave', flag='FLAG_TEMP_9', trainer_type='TRAINER_TYPE_NONE',
+         # gestart vanuit SootopolisCity_EventScript_KecclesScene (direct na de Rayquaza-scène), niet door aanspreken
+         intro=r"DAVE: Just scored a hattrick,\nleftie, rightie and a header.\p"
+               r"Doesn't get more pure than that!\nAll top bins as well.\p"
+               r"Winkelhaak BV$",
+         defeat=DAVE_DEFEAT,
+         post=r"DAVE: A sky dragon? Mate, I've been\ncalled worse after a derby.\p"
+              r"Carry on. I'm off to the\nVICTORY ROAD. Big match.$",
+         script="""@ ingevoegd aan het begin van de scène met Archie, Maxie en Keccles; Dave staat rechts van de speler
+@ES@Scene::
+	goto_if_defeated TRAINER_@TRAINER@, @ES@SceneEnd
+	clearflag FLAG_TEMP_9
+	addobject @LOCAL@
+	turnobject @LOCAL@, DIR_WEST
+	turnobject LOCALID_PLAYER, DIR_EAST
+	playse SE_PIN
+	applymovement @LOCAL@, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox @TX@Intro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_@TRAINER@, @TX@Defeat
+	msgbox @TX@PostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject @LOCAL@
+	fadescreenswapbuffers FADE_FROM_BLACK
+@ES@SceneEnd::
+	return
+
+@ES@::
+	msgbox @TX@PostBattle, MSGBOX_NPC
+	end
+
+""",
+         party="""Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Blue
+
+Gengar
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Hypnosis
+
+Ceruledge @ Life Orb
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bitter Blade
+- Poltergeist
+- Psycho Cut
+- Swords Dance
+
+Gliscor @ Toxic Orb
+Level: 48
+Ability: Poison Heal
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earthquake
+- Acrobatics
+- Knock Off
+- Swords Dance
+
+Garchomp
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earthquake
+- Dragon Claw
+- Stone Edge
+- Swords Dance
+
+Kingambit @ Sitrus Berry
+Level: 49
+Ability: Supreme Overlord
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+"""),
 ]
 
 # Shy Guy-plek: woestijn van Route 111 (buried = springt uit het zand)
@@ -710,11 +847,11 @@ def main():
                 'elevation': tile_elevation(m, f['x'], f['y']),
                 'movement_type': 'MOVEMENT_TYPE_BURIED' if buried else 'MOVEMENT_TYPE_FACE_' + f['face'],
                 'movement_range_x': 0, 'movement_range_y': 0,
-                'trainer_type': 'TRAINER_TYPE_BURIED' if buried else 'TRAINER_TYPE_NORMAL',
+                'trainer_type': 'TRAINER_TYPE_BURIED' if buried else f.get('trainer_type', 'TRAINER_TYPE_NORMAL'),
                 'trainer_sight_or_berry_tree_id': str(f['sight']),
                 'script': '%s_EventScript_EF_%s' % (f['pfx'], f['const'].title().replace('_', '')),
                 # Wally verdwijnt na zijn nederlaag: de verslagen-flag van de trainer verbergt het object
-                'flag': ('TRAINER_FLAGS_START+TRAINER_%s' % f['const']) if f.get('hide') else '0',
+                'flag': f.get('flag') or (('TRAINER_FLAGS_START+TRAINER_%s' % f['const']) if f.get('hide') else '0'),
             })
         mj['object_events'] = objs
         open(p, 'w').write(json.dumps(mj, indent=2, ensure_ascii=False) + '\n')
@@ -726,7 +863,10 @@ def main():
             name = f['const'].title().replace('_', '')
             es = '%s_EventScript_EF_%s' % (f['pfx'], name)
             tx = '%s_Text_EF_%s' % (f['pfx'], name)
-            if f.get('hide'):
+            if f.get('script'):
+                blk += (f['script'].replace('@ES@', es).replace('@TX@', tx).replace('@LOCAL@', f['local'])
+                        .replace('@TRAINER@', f['const']))
+            elif f.get('hide'):
                 blk += f'''{es}::
 	trainerbattle_single TRAINER_{f['const']}, {tx}Intro, {tx}Defeat, {es}Defeated
 	msgbox {tx}PostBattle, MSGBOX_AUTOCLOSE
@@ -760,6 +900,23 @@ def main():
         s = replace_block(s, '@ extra_fights {', '@ }', blk)
         open(p, 'w').write(s)
         check_widths(blk)
+    # kaarten waar geen extra gevecht meer staat (bijv. Dave op Route 109/118): objecten en scriptblok weghalen
+    for m in sorted(os.listdir('data/maps')):
+        p = 'data/maps/%s/map.json' % m
+        if m in bymap or not os.path.exists(p) or 'LOCALID_EF_' not in open(p).read():
+            continue
+        mj = json.load(open(p))
+        mj['object_events'] = [o for o in mj['object_events']
+                               if not str(o.get('local_id', '')).startswith('LOCALID_EF_')]
+        open(p, 'w').write(json.dumps(mj, indent=2, ensure_ascii=False) + '\n')
+        p = 'data/maps/%s/scripts.inc' % m
+        s = open(p).read()
+        if '@ extra_fights {' in s:
+            i = s.index('@ extra_fights {')
+            j = s.index('@ }', i) + 3
+            s = (s[:i].rstrip('\n') + '\n' + s[j:].lstrip('\n')).rstrip('\n') + '\n'
+            open(p, 'w').write(s)
+        print('  opgeruimd:', m)
     print('extra_fights: %d gevechten, id %d-%d' % (len(FIGHTS), FIGHTS[0]['id'], FIGHTS[-1]['id']))
 
 

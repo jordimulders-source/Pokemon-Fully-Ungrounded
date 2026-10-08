@@ -361,6 +361,7 @@ const u32 gFieldEffectObjectPic_ShadowExtraLarge[] = INCBIN_U32("graphics/field_
 const u32 gFieldEffectObjectPic_BallLight[] = INCBIN_U32("graphics/object_events/pics/misc/light.4bpp");
 const u32 gFieldEffectObjectPic_PokeCenterLight[] = INCBIN_U32("graphics/object_events/pics/misc/poke_center_light.4bpp");
 const u32 gFieldEffectObjectPic_MartLight[] = INCBIN_U32("graphics/object_events/pics/misc/mart_light.4bpp");
+const u32 gFieldEffectObjectPic_LighthouseBeam[] = INCBIN_U32("graphics/object_events/pics/misc/lighthouse_beam.4bpp"); // Project Grounded: Beacon Isle
 const u8 gFieldEffectPic_CutGrass[] = INCBIN_U8("graphics/field_effects/pics/cut_grass.4bpp");
 const u32 gFieldEffectPic_CutGrass_Copy[] = INCBIN_U32("graphics/field_effects/pics/cut_grass.4bpp");
 const u16 gFieldEffectPal_CutGrass[] = INCBIN_U16("graphics/field_effects/palettes/cut_grass.gbapal");

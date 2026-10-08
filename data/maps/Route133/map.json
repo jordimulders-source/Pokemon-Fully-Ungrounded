@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_BEACON_ISLE",
+      "offset": 48,
+      "direction": "down"
+    },
+    {
       "map": "MAP_FLOATING_MARKET",
       "offset": 16,
       "direction": "up"

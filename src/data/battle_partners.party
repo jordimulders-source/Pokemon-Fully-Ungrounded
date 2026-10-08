@@ -4250,6 +4250,74 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Power Whip
 - Earthquake
 
+=== PARTNER_STADIUM_WICK ===
+Name: WICK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Magnezone
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Thunderbolt
+- Mirror Coat
+- Light Screen
+
+Lumineon
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- U-turn
+- Ice Beam
+- Rain Dance
+
+Lanturn @ Leftovers
+Level: 50
+Ability: Volt Absorb
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Scald
+- Ice Beam
+- Confuse Ray
+
+=== PARTNER_STADIUM_GERALD ===
+Name: GERALD
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Kingdra
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rain Dance
+- Surf
+- Dragon Pulse
+- Ice Beam
+
+Archaludon
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Electro Shot
+- Flash Cannon
+- Dragon Pulse
+- Body Press
+
+Dragonite @ Lum Berry
+Level: 50
+Ability: Multiscale
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Extreme Speed
+- Earthquake
+- Fire Punch
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

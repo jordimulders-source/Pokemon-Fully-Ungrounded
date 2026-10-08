@@ -144,6 +144,8 @@ Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
 | `PLASMA_NIGEL` | NIGEL, NEO PLASMA's Head of Logistics! He signed for a GENESECT. |
 | `VICTORY_V` | V! Only POKéMON with a V! VOLCARONA! VIKAVOLT! VICTORY? We'll see. |
 | `GRIMSBY` | CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules. |
+| `GERALD_WARDEN` | GERALD, Warden of the Dragon's Den! Did you fill in form D-7? Too late now. |
+| `WICK` | WICK! Forty years a lighthouse keeper. His lamp is a fish. It works. |
 | `BRENDAN_ROUTE_136_TREECKO` | BRENDAN! Your rival. Still salty about which starter you picked. |
 | `MAY_ROUTE_136_TORCHIC` | MAY! Your rival. She swears she's better at this than you. Prove it. |
 

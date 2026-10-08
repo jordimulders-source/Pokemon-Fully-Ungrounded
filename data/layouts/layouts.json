@@ -5290,6 +5290,66 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/AshfrostLodge_Rooms/border.bin",
       "blockdata_filepath": "data/layouts/AshfrostLodge_Rooms/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE",
+      "name": "BeaconIsle_Layout",
+      "width": 32,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/BeaconIsle/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_1F",
+      "name": "BeaconIsle_Lighthouse_1F_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_2F",
+      "name": "BeaconIsle_Lighthouse_2F_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_TOP",
+      "name": "BeaconIsle_Lighthouse_Top_Layout",
+      "width": 18,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_Top/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_Top/map.bin"
+    },
+    {
+      "id": "LAYOUT_DRAGONSPINE_ISLE",
+      "name": "DragonspineIsle_Layout",
+      "width": 42,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/DragonspineIsle/border.bin",
+      "blockdata_filepath": "data/layouts/DragonspineIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_DRAGONSPINE_ISLE_DEN",
+      "name": "DragonspineIsle_Den_Layout",
+      "width": 36,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/DragonspineIsle_Den/border.bin",
+      "blockdata_filepath": "data/layouts/DragonspineIsle_Den/map.bin"
     }
   ]
 }

@@ -1123,7 +1123,22 @@
 #define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
 // }
 
-#define TRAINERS_COUNT                      1145
+// beacon_dragon { (tools/grounded/maptools/beacon_dragon.py)
+#define TRAINER_BEACON_ROALD                1145 // Project Grounded: Beacon Isle, toerist die zijn geld terug wil
+#define TRAINER_BEACON_LUX                  1146 // Project Grounded: Beacon Isle, vuurvliegjesman
+#define TRAINER_BEACON_DYLAN                1147 // Project Grounded: Beacon Isle, vuurtoren 1F: zelfbenoemde misthoorn
+#define TRAINER_BEACON_KEIKO                1148 // Project Grounded: Beacon Isle, vuurtoren 2F: traplopen
+#define TRAINER_BEACON_PEMBERTON            1149 // Project Grounded: Beacon Isle, vuurtoren 2F: wil de vuurtoren kopen
+#define TRAINER_WICK                        1150 // Project Grounded: Beacon Isle, vuurtorenwachter (Battle Stadium)
+#define TRAINER_DRAGONSPINE_VERNON          1151 // Project Grounded: Dragonspine Isle, 412 keer gebeten
+#define TRAINER_DRAGONSPINE_SAELA           1152 // Project Grounded: Dragonspine Isle, traint vooral rennen
+#define TRAINER_DRAGONSPINE_OSRIC           1153 // Project Grounded: Dragon's Den onderhal, vergunningencontrole
+#define TRAINER_DRAGONSPINE_MIRA            1154 // Project Grounded: Dragon's Den onderhal, heel zacht vechten
+#define TRAINER_DRAGONSPINE_TALON           1155 // Project Grounded: Dragon's Den bovenhal, nam de trap
+#define TRAINER_GERALD_WARDEN               1156 // Project Grounded: Dragon's Den, drakenwachter met klembord (Battle Stadium)
+// }
+
+#define TRAINERS_COUNT                      1157
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

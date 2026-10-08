@@ -37871,3 +37871,490 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Encore
 
 /* --- einde extra_fights --- */
+
+/* --- beacon_dragon (tools/grounded/maptools/beacon_dragon.py) --- */
+
+=== TRAINER_BEACON_ROALD ===
+Name: ROALD
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bewear
+Level: 41
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hammer Arm
+- Double-Edge
+- Payback
+- Bulk Up
+
+Passimian
+Level: 41
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brick Break
+- Rock Slide
+- Knock Off
+- U-turn
+
+Kilowattrel
+Level: 41
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Air Slash
+- Volt Switch
+- Roost
+
+=== TRAINER_BEACON_LUX ===
+Name: LUX
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Volbeat
+Level: 41
+Ability: Prankster
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Tail Glow
+- Bug Buzz
+- Thunderbolt
+- Encore
+
+Illumise
+Level: 41
+Ability: Prankster
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Wish
+- Encore
+- Thunder Wave
+
+Galvantula
+Level: 41
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Electroweb
+- Bug Buzz
+- Sticky Web
+- Thunder
+
+Vikavolt
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Thunderbolt
+- Energy Ball
+- Air Slash
+
+=== TRAINER_BEACON_DYLAN ===
+Name: DYLAN
+Class: Guitarist
+Pic: Guitarist
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Boltund
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wild Charge
+- Crunch
+- Play Rough
+- Roar
+
+Heliolisk
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Parabolic Charge
+- Grass Knot
+- Surf
+- Volt Switch
+
+Bellibolt
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Muddy Water
+- Slack Off
+- Toxic
+
+=== TRAINER_BEACON_KEIKO ===
+Name: KEIKO
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Annihilape
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rage Fist
+- Close Combat
+- Bulk Up
+- Rock Slide
+
+Breloom
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Spore
+- Mach Punch
+- Seed Bomb
+- Rock Tomb
+
+Toxicroak
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Poison Jab
+- Sucker Punch
+- Drain Punch
+- Swords Dance
+
+Scrafty
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Drain Punch
+- Crunch
+- Bulk Up
+- Fake Out
+
+=== TRAINER_BEACON_PEMBERTON ===
+Name: PEMBERTON
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kangaskhan
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fake Out
+- Body Slam
+- Sucker Punch
+- Earthquake
+
+Oinkologne
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Body Slam
+- Stomping Tantrum
+- Yawn
+- Belch
+
+Ursaring
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Crunch
+- Hammer Arm
+- Swords Dance
+- Facade
+
+Miltank
+Level: 42
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Milk Drink
+- Rollout
+- Thunder Wave
+- Double-Edge
+
+=== TRAINER_WICK ===
+Name: WICK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ampharos @ Sitrus Berry
+Level: 45
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Dragon Pulse
+- Power Gem
+- Thunder Wave
+
+Magnezone
+Level: 45
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Thunderbolt
+- Mirror Coat
+- Light Screen
+
+Eelektross
+Level: 45
+Ability: Levitate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wild Charge
+- Crunch
+- Drain Punch
+- Coil
+
+Lumineon
+Level: 45
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- U-turn
+- Ice Beam
+- Rain Dance
+
+Lanturn @ Leftovers
+Level: 47
+Ability: Volt Absorb
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Scald
+- Ice Beam
+- Confuse Ray
+
+=== TRAINER_DRAGONSPINE_VERNON ===
+Name: VERNON
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Altaria
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Air Slash
+- Cotton Guard
+- Roost
+
+Flygon
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Drampa
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Hyper Voice
+- Flamethrower
+- Glare
+
+=== TRAINER_DRAGONSPINE_SAELA ===
+Name: SAELA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Noivern
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Air Slash
+- Dragon Pulse
+- Super Fang
+- Roost
+
+Cyclizar
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Double-Edge
+- Dragon Claw
+- U-turn
+- Shed Tail
+
+Tyrantrum
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rock Slide
+- Dragon Claw
+- Crunch
+- Dragon Dance
+
+=== TRAINER_DRAGONSPINE_OSRIC ===
+Name: OSRIC
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kommo-o
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Clanging Scales
+- Drain Punch
+- Iron Defense
+- Dragon Claw
+
+Druddigon
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Claw
+- Rock Slide
+- Superpower
+- Glare
+
+Dracozolt
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bolt Beak
+- Dragon Claw
+- Stomping Tantrum
+- Rock Slide
+
+=== TRAINER_DRAGONSPINE_MIRA ===
+Name: MIRA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Goodra
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Sludge Bomb
+- Thunderbolt
+- Fire Blast
+
+Duraludon
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Dragon Pulse
+- Thunderbolt
+- Stealth Rock
+
+Tatsugiri
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Pulse
+- Muddy Water
+- Rapid Spin
+- Icy Wind
+
+Appletun
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Apple Acid
+- Dragon Pulse
+- Recover
+- Leech Seed
+
+=== TRAINER_DRAGONSPINE_TALON ===
+Name: TALON
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Garchomp
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- Swords Dance
+- Stone Edge
+
+Dragapult
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+Haxorus
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Poison Jab
+
+Hydreigon
+Level: 53
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Dragon Pulse
+- Flamethrower
+- Nasty Plot
+
+=== TRAINER_GERALD_WARDEN ===
+Name: GERALD
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Exeggutor_Alola
+Level: 55
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Hammer
+- Wood Hammer
+- Flamethrower
+- Trick Room
+
+Kingdra
+Level: 55
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rain Dance
+- Surf
+- Dragon Pulse
+- Ice Beam
+
+Goodra_Hisui
+Level: 55
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Heavy Slam
+- Dragon Pulse
+- Sludge Bomb
+- Thunderbolt
+
+Baxcalibur
+Level: 55
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Glaive Rush
+- Icicle Crash
+- Earthquake
+- Dragon Dance
+
+Archaludon
+Level: 55
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Electro Shot
+- Flash Cannon
+- Dragon Pulse
+- Body Press
+
+Dragonite @ Lum Berry
+Level: 57
+Ability: Multiscale
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Dance
+- Extreme Speed
+- Earthquake
+- Fire Punch
+
+/* --- einde beacon_dragon --- */

@@ -1402,6 +1402,22 @@
       "y": 11,
       "width": 2,
       "height": 2
+    },
+    {
+      "id": "MAPSEC_BEACON_ISLE",
+      "name": "BEACON ISLE",
+      "x": 14,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_DRAGONSPINE_ISLE",
+      "name": "DRAGONSPINE ISLE",
+      "x": 26,
+      "y": 10,
+      "width": 2,
+      "height": 1
     }
   ]
 }

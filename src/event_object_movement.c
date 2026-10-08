@@ -2677,7 +2677,20 @@ void UpdateLightSprite(struct Sprite *sprite)
             if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT_2)
                 LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT)], sprite->oam.paletteNum);
         }
-    } else {
+    }
+    else if (sprite->sLightType == LIGHT_TYPE_LIGHTHOUSE_BEAM)
+    {
+        // Project Grounded: draaiende bundel (128 frames per rondje): rechts, achter de toren, links, voorlangs.
+        // De eerste en laatste frames van elke kant knipperen om en om (half zichtbaar = zachter in/uit).
+        u32 phase = (gMain.vblankCounter1 >> 1) & 127;
+        bool32 right = phase < 48, left = phase >= 64 && phase < 112;
+        u32 edge = right ? phase : phase - 64;
+        sprite->invisible = !(right || left) || ((edge < 5 || edge > 42) && (gMain.vblankCounter1 & 1));
+        sprite->x2 = right ? 32 : -32;
+        sprite->oam.matrixNum = right ? 0 : ST_OAM_HFLIP;
+    }
+    else
+    {
         sprite->invisible = FALSE;
     }
     // Note: Don't set window registers during hardware fade!
@@ -2722,6 +2735,18 @@ static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 lightType)
         sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
         sprite->x += 8;
         sprite->y += 22 + sprite->centerToCornerVecY;
+        break;
+    case LIGHT_TYPE_LIGHTHOUSE_BEAM:
+        // Project Grounded: het object staat een tegel onder de lamp (een lichtbol mag op de lamp zelf staan:
+        // twee lichten op dezelfde tegel kan niet). Midden van de lens = +8, +6 - 16. De bundel draait (zie
+        // UpdateLightSprite) en schuift daarvoor met x2 links/rechts van de lamp.
+        sprite->centerToCornerVecX = -(64 >> 1);
+        sprite->centerToCornerVecY = -(32 >> 1);
+        sprite->oam.priority = 1;
+        sprite->oam.objMode = ST_OAM_OBJ_BLEND;
+        sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
+        sprite->x += 8;
+        sprite->y += 6 - 16;
         break;
     case LIGHT_TYPE_PKMN_CENTER_SIGN:
     case LIGHT_TYPE_POKE_MART_SIGN:

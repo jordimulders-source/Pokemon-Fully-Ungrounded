@@ -1648,7 +1648,23 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500+ vrij.
+// dungeon_extra { (tools/grounded/maptools/dungeon_extra.py; FLAG_GROUNDED 470-499)
+#define FLAG_ITEM_GRANITE_CRYSTAL_STAR_PIECE             FLAG_GROUNDED(470) // Project Grounded: Granite Cave kristalgrot: Star Piece
+#define FLAG_ITEM_GRANITE_CRYSTAL_HARD_STONE             FLAG_GROUNDED(471) // Project Grounded: Granite Cave kristalgrot: Hard Stone
+#define FLAG_HIDDEN_ITEM_GRANITE_CRYSTAL_SHINY_STONE     FLAG_GROUNDED(472) // Project Grounded: Granite Cave kristalgrot: verborgen Shiny Stone
+#define FLAG_ITEM_ORIGIN_DEEP1_DAMP_ROCK                 FLAG_GROUNDED(473) // Project Grounded: Cave of Origin diep 1: Damp Rock
+#define FLAG_ITEM_ORIGIN_DEEP2_HEAT_ROCK                 FLAG_GROUNDED(474) // Project Grounded: Cave of Origin diep 2: Heat Rock
+#define FLAG_ITEM_ORIGIN_DEEP3_PP_MAX                    FLAG_GROUNDED(475) // Project Grounded: Cave of Origin diep 3: PP Max
+#define FLAG_HIDDEN_ITEM_ORIGIN_DEEP3_BIG_NUGGET         FLAG_GROUNDED(476) // Project Grounded: Cave of Origin diep 3: verborgen Big Nugget
+#define FLAG_ITEM_SHOAL_FROZEN_ICE_STONE                 FLAG_GROUNDED(477) // Project Grounded: Shoal Cave ijzige onderlaag: Ice Stone
+#define FLAG_ITEM_SHOAL_FROZEN_ICY_ROCK                  FLAG_GROUNDED(478) // Project Grounded: Shoal Cave ijzige onderlaag: Icy Rock
+#define FLAG_ITEM_SHOAL_FROZEN_ABILITY_CAPSULE           FLAG_GROUNDED(479) // Project Grounded: Shoal Cave ijzige onderlaag: Ability Capsule
+#define FLAG_HIDDEN_ITEM_SHOAL_FROZEN_PEARL_STRING       FLAG_GROUNDED(480) // Project Grounded: Shoal Cave ijzige onderlaag: verborgen Pearl String
+#define FLAG_ITEM_BUBBLE_GROTTO_DEEP_SEA_TOOTH           FLAG_GROUNDED(481) // Project Grounded: luchtbel-grot Route 128: Deep Sea Tooth
+#define FLAG_ITEM_BUBBLE_GROTTO_RARE_BONE                FLAG_GROUNDED(482) // Project Grounded: luchtbel-grot Route 128: Rare Bone
+#define FLAG_HIDDEN_ITEM_BUBBLE_GROTTO_STAR_PIECE        FLAG_GROUNDED(483) // Project Grounded: luchtbel-grot Route 128: verborgen Star Piece
+// }
 // beacon_isle { (tools/grounded/maptools/beacon_isle.py; FLAG_GROUNDED 400-429)
 #define FLAG_BEACON_LIGHT_ISLE_FOUND                     FLAG_GROUNDED(400) // Project Grounded: Beacon Isle: 's nachts de lamp aangesproken, rif naar het Lichteiland open
 // tao_island { (tools/grounded/maptools/tao_island.py; FLAG_GROUNDED 430-469)

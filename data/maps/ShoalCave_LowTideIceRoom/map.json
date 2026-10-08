@@ -61,6 +61,13 @@
       "elevation": 3,
       "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_FROZEN_DEPTHS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

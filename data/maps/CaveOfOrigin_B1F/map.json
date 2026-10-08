@@ -36,6 +36,13 @@
       "elevation": 3,
       "dest_map": "MAP_CAVE_OF_ORIGIN_1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

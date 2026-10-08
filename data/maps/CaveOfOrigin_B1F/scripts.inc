@@ -1,4 +1,5 @@
 CaveOfOrigin_B1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, CaveOfOrigin_B1F_OnLoad
 	.byte 0
 
 CaveOfOrigin_B1F_EventScript_Wallace::
@@ -127,3 +128,11 @@ CaveOfOrigin_B1F_Text_WellHeadToSkyPillar:
 	.string "You'll head to the SKY PILLAR right\l"
 	.string "away! Only you!$"
 
+@ --- dungeon_extra (gegenereerd door tools/grounded/maptools/dungeon_extra.py) ---
+@ Na de Hall of Fame: ladder (13,4) omlaag naar de oude R/S-kamers (Cave of Origin dieper).
+CaveOfOrigin_B1F_OnLoad:
+	goto_if_unset FLAG_SYS_GAME_CLEAR, CaveOfOrigin_B1F_EventScript_NoDeepLadder
+	setmetatile 13, 4, 0x33D, FALSE
+CaveOfOrigin_B1F_EventScript_NoDeepLadder:
+	end
+@ --- einde dungeon_extra ---

@@ -5371,6 +5371,36 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Underwater_Route127_Trench/border.bin",
       "blockdata_filepath": "data/layouts/Underwater_Route127_Trench/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_CRYSTAL_GROTTO",
+      "name": "GraniteCave_CrystalGrotto_Layout",
+      "width": 16,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_CrystalGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_CrystalGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHOAL_CAVE_LOW_TIDE_FROZEN_DEPTHS",
+      "name": "ShoalCave_LowTideFrozenDepths_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ShoalCave_LowTideFrozenDepths/border.bin",
+      "blockdata_filepath": "data/layouts/ShoalCave_LowTideFrozenDepths/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE128_BUBBLE_GROTTO",
+      "name": "Route128_BubbleGrotto_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route128_BubbleGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/Route128_BubbleGrotto/map.bin"
     }
   ]
 }

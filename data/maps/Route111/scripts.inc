@@ -805,3 +805,26 @@ Route111_Text_HeatranGone:
 	.string "It lumbered off to the north…\p"
 	.string "The rocks that blocked the route\n"
 	.string "are gone. Melted, probably.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route111_EventScript_EF_ShyGuyDesert::
+	trainerbattle_single TRAINER_SHY_GUY_DESERT, Route111_Text_EF_ShyGuyDesertIntro, Route111_Text_EF_ShyGuyDesertDefeat
+	msgbox Route111_Text_EF_ShyGuyDesertPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_Text_EF_ShyGuyDesertIntro:
+	.string "…………\p"
+	.string "(A SHY GUY was hiding in the sand.\n"
+	.string "He is mortified that you found him.)$"
+
+Route111_Text_EF_ShyGuyDesertDefeat:
+	.string "…!\p"
+	.string "(He wants to be buried again.\n"
+	.string "Preferably forever.)$"
+
+Route111_Text_EF_ShyGuyDesertPostBattle:
+	.string "…\p"
+	.string "(He is pretending to be a cactus.\n"
+	.string "It is not going well.)$"
+
+@ }

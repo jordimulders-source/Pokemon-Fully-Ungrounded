@@ -106,6 +106,26 @@ Niet hernoemd, omdat de naam een rol beschrijft en niet misleidt: `TRAINER_LOCAL
 `TRAINER_DRACONID_ELDER` (Selene), `TRAINER_DOJO_*`, `TRAINER_BURGLAR_*` / `TRAINER_STADIUM_BURGLAR` (Simon),
 `TRAINER_STADIUM_SHY_GUY_*`, de duo's (`TRAINER_X_AND_Y`) en de generieke grunts/admins.
 
+## Extra gevechten in de wereld (`tools/grounded/maptools/extra_fights.py`)
+
+Zelfde personage, eerder in de game, met dezelfde muziek, mugshot en transitie als hun bestaande gevecht. Objecten heten
+`LOCALID_EF_<CONSTANTE>`, scripts `<Kaart>_EventScript_EF_<Naam>`, teksten `<Kaart>_Text_EF_<Naam>Intro/Defeat/PostBattle`.
+Verslagen-flag = 0x500 + nummer (Wally's objecten gebruiken die ook als verberg-flag).
+
+| Personage | Constante | Nummer | Waar (x, y) | Levels |
+|---|---|---|---|---|
+| Wally | `TRAINER_WALLY_MT_PYRE` | 1134 | Mt. Pyre 1F (9, 4); verdwijnt na zijn nederlaag; thema Wally 1 | 42, Gallade 44 |
+| Wally | `TRAINER_WALLY_MOSSDEEP` | 1135 | Mossdeep, voor het Space Center (68, 17); verdwijnt na zijn nederlaag; thema Wally 2 | 47, Gallade 49 |
+| Zinnia | `TRAINER_ZINNIA_ROUTE_114` | 1136 | Route 114, bij de ingang van Meteor Falls (22, 34) | 25, Bagon 27 |
+| Zinnia | `TRAINER_ZINNIA_ROUTE_119` | 1137 | Route 119, noordkant richting Fortree (33, 10) | 36, Shelgon 38 |
+| Dave | `TRAINER_DAVE_ROUTE_109` | 1138 | Route 109, strand (27, 15) | 19, Pawniard 20 |
+| Dave | `TRAINER_DAVE_ROUTE_118` | 1139 | Route 118, oostkant (76, 11) | 33, Bisharp 34 |
+| Mitch | `TRAINER_MITCH_ROUTE_110` | 1140 | Route 110, plein boven Slateport (20, 54) | 23, Marshtomp 24 |
+| Mitch | `TRAINER_MITCH_ROUTE_121` | 1141 | Route 121 (50, 13) | 39, Swampert 40 |
+| SickBlik | `TRAINER_SICKBLIK_ROUTE_104` | 1142 | Route 104 noord, bij de uitgang van Petalburg Woods (14, 26) | 12, Remoraid 13 |
+| SickBlik | `TRAINER_SICKBLIK_ROUTE_113` | 1143 | Route 113, oostkant (70, 13) | 26, Octillery 27 |
+| Shy Guy (rood) | `TRAINER_SHY_GUY_DESERT` | 1144 | Route 111, woestijn: ingegraven achter het rotsblok aan de oostrand (37, 69) | 28, Mr. Mime 29 |
+
 ## Nieuwe trainer of hernoeming
 
 Hernoem met een script over alle bestanden (behalve `CHANGELOG.md`), draai daarna

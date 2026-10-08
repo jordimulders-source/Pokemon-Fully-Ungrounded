@@ -467,6 +467,10 @@ static const struct SpriteFrameImage sPicTable_StatueTapuFini[] = { // Project G
     obj_frame_tiles(gObjectEventPic_StatueTapuFini),
 };
 
+static const struct SpriteFrameImage sPicTable_ShyGuy[] = { // Project Grounded: Shy Guy (32x32)
+    overworld_ascending_frames(gObjectEventPic_ShyGuy, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_BreakableRock[] = {
     overworld_ascending_frames(gObjectEventPic_BreakableRock, 2, 2),
 };

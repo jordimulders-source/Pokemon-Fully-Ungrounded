@@ -1109,7 +1109,21 @@
 #define TRAINER_BIRD_KEEPER_SKYE            1123 // Project Grounded (zeevulling 2): Whirl Island, wacht op een grote vogel
 // }
 
-#define TRAINERS_COUNT                      1134
+// extra_fights { (tools/grounded/maptools/extra_fights.py)
+#define TRAINER_WALLY_MT_PYRE               1134 // Project Grounded: extra gevecht (MtPyre_1F)
+#define TRAINER_WALLY_MOSSDEEP              1135 // Project Grounded: extra gevecht (MossdeepCity)
+#define TRAINER_ZINNIA_ROUTE_114            1136 // Project Grounded: extra gevecht (Route114)
+#define TRAINER_ZINNIA_ROUTE_119            1137 // Project Grounded: extra gevecht (Route119)
+#define TRAINER_DAVE_ROUTE_109              1138 // Project Grounded: extra gevecht (Route109)
+#define TRAINER_DAVE_ROUTE_118              1139 // Project Grounded: extra gevecht (Route118)
+#define TRAINER_MITCH_ROUTE_110             1140 // Project Grounded: extra gevecht (Route110)
+#define TRAINER_MITCH_ROUTE_121             1141 // Project Grounded: extra gevecht (Route121)
+#define TRAINER_SICKBLIK_ROUTE_104          1142 // Project Grounded: extra gevecht (Route104)
+#define TRAINER_SICKBLIK_ROUTE_113          1143 // Project Grounded: extra gevecht (Route113)
+#define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
+// }
+
+#define TRAINERS_COUNT                      1145
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

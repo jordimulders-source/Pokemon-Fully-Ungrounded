@@ -49,3 +49,35 @@ MtPyre_1F_Text_RestingPlaceOfZigzagoon:
 	.string "… … … … … …\p"
 	.string "Smell ya later, buddy.$"
 
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+MtPyre_1F_EventScript_EF_WallyMtPyre::
+	trainerbattle_single TRAINER_WALLY_MT_PYRE, MtPyre_1F_Text_EF_WallyMtPyreIntro, MtPyre_1F_Text_EF_WallyMtPyreDefeat, MtPyre_1F_EventScript_EF_WallyMtPyreDefeated
+	msgbox MtPyre_1F_Text_EF_WallyMtPyrePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtPyre_1F_EventScript_EF_WallyMtPyreDefeated::
+	msgbox MtPyre_1F_Text_EF_WallyMtPyrePostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_EF_WALLY_MT_PYRE
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+MtPyre_1F_Text_EF_WallyMtPyreIntro:
+	.string "WALLY: {PLAYER}! Mountain of grave!\p"
+	.string "Scare no much, horror watching\n"
+	.string "when young many.\p"
+	.string "Ghost now is friend team.\n"
+	.string "Boo! You scare? I no scare.$"
+
+MtPyre_1F_Text_EF_WallyMtPyreDefeat:
+	.string "Aaah! Now real scare…$"
+
+MtPyre_1F_Text_EF_WallyMtPyrePostBattle:
+	.string "WALLY: Horror rule number one:\n"
+	.string "never split up.\p"
+	.string "…I split up from you now.\n"
+	.string "Not scare. Is cardio.$"
+
+@ }

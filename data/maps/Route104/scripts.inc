@@ -1221,3 +1221,25 @@ Route104_Text_BrendanPostBattle:
 	.string "so I'm gonna stand here and look\l"
 	.string "at the distance.\p"
 	.string "Don't disturb me.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route104_EventScript_EF_SickblikRoute104::
+	trainerbattle_single TRAINER_SICKBLIK_ROUTE_104, Route104_Text_EF_SickblikRoute104Intro, Route104_Text_EF_SickblikRoute104Defeat
+	msgbox Route104_Text_EF_SickblikRoute104PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route104_Text_EF_SickblikRoute104Intro:
+	.string "Oh! A player! In my romhack!\p"
+	.string "Hi, I'm SICKBLIK. I made this.\p"
+	.string "Hold still. I need to check if\n"
+	.string "the battles actually work.$"
+
+Route104_Text_EF_SickblikRoute104Defeat:
+	.string "Battles work! Losing also works!\n"
+	.string "Great news for everyone but me.$"
+
+Route104_Text_EF_SickblikRoute104PostBattle:
+	.string "SICKBLIK: A bug? That's a feature.\n"
+	.string "A feature? Probably also a bug.$"
+
+@ }

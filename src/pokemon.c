@@ -6105,18 +6105,19 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: de Shy Guys (Stadium) vechten op Sunset Wilds (Mario Kart: Super Circuit)
     if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
-     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK)
+     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
+     || trainerId == TRAINER_SHY_GUY_DESERT)
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
-    if (trainerId == TRAINER_DAVE)
+    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_109 || trainerId == TRAINER_DAVE_ROUTE_118)
         return MUS_GROUNDED_VS_DAVE;
 
     // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
-    if (trainerId == TRAINER_MITCH)
+    if (trainerId == TRAINER_MITCH || trainerId == TRAINER_MITCH_ROUTE_110 || trainerId == TRAINER_MITCH_ROUTE_121)
         return MUS_GROUNDED_VS_MITCH;
     // Project Grounded: SickBlik (= Jordi; Cooltrainer, Victory Road B2F; ook in het Stadium) vecht op smerige slap-funk
-    if (trainerId == TRAINER_SICKBLIK)
+    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
         return MUS_GROUNDED_VS_SICKBLIK;
 
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
@@ -6214,7 +6215,12 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_CLASS_RIVAL:
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             return MUS_VS_RIVAL;
-        // Project Grounded: Wally's eigen thema groeit met hem mee (1-2 = vrij voor nieuwe vroege gevechten, 5 = eindversie)
+        // Project Grounded: Wally's eigen thema groeit met hem mee (5 = eindversie). 1 (fluitje, traag) = Mt. Pyre,
+        // 2 (fluit) = Mossdeep (extra gevechten, tools/grounded/maptools/extra_fights.py)
+        if (trainerId == TRAINER_WALLY_MT_PYRE)
+            return MUS_GROUNDED_VS_WALLY_1;
+        if (trainerId == TRAINER_WALLY_MOSSDEEP)
+            return MUS_GROUNDED_VS_WALLY_2;
         if (trainerId == TRAINER_WALLY_MAUVILLE)
             return MUS_GROUNDED_VS_WALLY_3;
         if (trainerId == TRAINER_WALLY_METEOR_FALLS)

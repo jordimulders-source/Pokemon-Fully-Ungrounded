@@ -618,3 +618,35 @@ MossdeepCity_Text_BirchPostBattle:
 MossdeepCity_Text_Meteorite:
 	.string "A strange glowing stone.\n"
 	.string "It's still warm. Suspiciously warm.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+MossdeepCity_EventScript_EF_WallyMossdeep::
+	trainerbattle_single TRAINER_WALLY_MOSSDEEP, MossdeepCity_Text_EF_WallyMossdeepIntro, MossdeepCity_Text_EF_WallyMossdeepDefeat, MossdeepCity_EventScript_EF_WallyMossdeepDefeated
+	msgbox MossdeepCity_Text_EF_WallyMossdeepPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MossdeepCity_EventScript_EF_WallyMossdeepDefeated::
+	msgbox MossdeepCity_Text_EF_WallyMossdeepPostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_EF_WALLY_MOSSDEEP
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+MossdeepCity_Text_EF_WallyMossdeepIntro:
+	.string "WALLY: {PLAYER}! Look, rocket house!\p"
+	.string "Gallader psychic feel good in\n"
+	.string "spacing placing.\p"
+	.string "Brain big now. Battle with brain!$"
+
+MossdeepCity_Text_EF_WallyMossdeepDefeat:
+	.string "Brain… small again…$"
+
+MossdeepCity_Text_EF_WallyMossdeepPostBattle:
+	.string "WALLY: In space no air.\n"
+	.string "Gallader no need air.\p"
+	.string "Gallader need hug. I go hug.\n"
+	.string "Bye-bye, {PLAYER}!$"
+
+@ }

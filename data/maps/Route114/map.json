@@ -375,6 +375,20 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route114_EventScript_Kai",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_EF_ZINNIA_ROUTE_114",
+      "graphics_id": "OBJ_EVENT_GFX_ZINNIA",
+      "x": 22,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route114_EventScript_EF_ZinniaRoute114",
+      "flag": "0"
     }
   ],
   "warp_events": [

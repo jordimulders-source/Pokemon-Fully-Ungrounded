@@ -1071,10 +1071,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_COLRESS;
 
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
-    if (trainerId == TRAINER_DAVE)
+    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_109 || trainerId == TRAINER_DAVE_ROUTE_118)
         return B_TRANSITION_DAVE;
     // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
-    if (trainerId == TRAINER_SICKBLIK)
+    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
         return B_TRANSITION_SICKBLIK;
     // Project Grounded: Mimi (poppenkast), Keccles (camouflage in het lab) en de Burglar (bewakingscamera), ook in het
     // Battle Stadium. Vervangen de mugshot, zoals bij Steven.

@@ -29,7 +29,7 @@
   - **Wario**: Wario Land 4 (Nintendo), sprite-sheet aangeleverd door Jordi.
   - **Yoshi**: de ongebruikte "bijna in tranen"-Yoshi uit Yoshi's Island (Nintendo), via **tcrf.net** (gebruiker Zetaman, File:YI_PLAYER-boyon.png).
   - **Boo**: Super Mario-geesten, sheet **geript door A.J. Nitro** ("Ghost Enemies ripped by A.J. Nitro").
-  - **Shy Guys**: custom Shy Guy-sprites **door DarkSB24** (rode Shy Guy oorspronkelijk Yoshi's Island, Nintendo; sheet met dank aan Cheeseman).
+  - **Shy Guys**: custom Shy Guy-sprites **door DarkSB24** (trainerfoto's en de overworld, `tools/grounded/shyguy_overworld.py`) (rode Shy Guy oorspronkelijk Yoshi's Island, Nintendo; sheet met dank aan Cheeseman).
   - **Golbat, Grimer, Mew**: Pokémon Red / Blue / Yellow (Game Freak).
   - **Ditto**: de Youngster-trainerfoto uit Emerald met een Ditto-gezicht (idee: Jordi).
 - **Trio-compagnons**: voorplaatjes van de Pokémon zelf (pokeemerald-expansion).

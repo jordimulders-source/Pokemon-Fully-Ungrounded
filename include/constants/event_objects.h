@@ -293,7 +293,12 @@
 #define OBJ_EVENT_GFX_STATUE_TAPU_BULU               279 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
 #define OBJ_EVENT_GFX_STATUE_TAPU_FINI               280 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        281
+#define OBJ_EVENT_GFX_SHY_GUY_RED                         281 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_GREEN                       282 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_PINK                        283 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_BLACK                       284 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+
+#define NUM_OBJ_EVENT_GFX                        285
 
 
 // These are dynamic object gfx ids.
@@ -449,6 +454,10 @@
 #define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x113B // Project Grounded: strandresort
 #define OBJ_EVENT_PAL_TAG_TURD                     0x113C // Project Grounded: strandresort (drol)
 #define OBJ_EVENT_PAL_TAG_STONE_STATUE             0x113D // Project Grounded: stenen beelden (Tapu-heiligdom)
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_RED              0x113E // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN            0x113F // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

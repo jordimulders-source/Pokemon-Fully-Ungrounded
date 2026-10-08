@@ -52,6 +52,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtPyre_1F_EventScript_Man",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_EF_WALLY_MT_PYRE",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "MtPyre_1F_EventScript_EF_WallyMtPyre",
+      "flag": "TRAINER_FLAGS_START+TRAINER_WALLY_MT_PYRE"
     }
   ],
   "warp_events": [

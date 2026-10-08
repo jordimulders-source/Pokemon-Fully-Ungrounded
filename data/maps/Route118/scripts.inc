@@ -292,3 +292,25 @@ Route118_Text_RouteSign119:
 	.string "It rains there. Always. This sign is wet\n"
 	.string "just thinking about it.$"
 
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route118_EventScript_EF_DaveRoute118::
+	trainerbattle_single TRAINER_DAVE_ROUTE_118, Route118_Text_EF_DaveRoute118Intro, Route118_Text_EF_DaveRoute118Defeat
+	msgbox Route118_Text_EF_DaveRoute118PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route118_Text_EF_DaveRoute118Intro:
+	.string "DAVE: Away game! Nobody chants my\n"
+	.string "name here. So I'll do it myself.\p"
+	.string "DAVE IS ON FIRE!\p"
+	.string "…Ow. Literally.\n"
+	.string "Ceruledge, stop that.$"
+
+Route118_Text_EF_DaveRoute118Defeat:
+	.string "Red card. For me. And for my\n"
+	.string "whole personality.$"
+
+Route118_Text_EF_DaveRoute118PostBattle:
+	.string "DAVE: Next stop: VICTORY ROAD.\n"
+	.string "The big league. My mum is coming.$"
+
+@ }

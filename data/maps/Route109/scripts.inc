@@ -598,3 +598,26 @@ Route109_Text_BirchPostBattle:
 Route109_Text_SandygastPit:
 	.string "A small pit in the sand.\p"
 	.string "It's not a pit.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route109_EventScript_EF_DaveRoute109::
+	trainerbattle_single TRAINER_DAVE_ROUTE_109, Route109_Text_EF_DaveRoute109Intro, Route109_Text_EF_DaveRoute109Defeat
+	msgbox Route109_Text_EF_DaveRoute109PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route109_Text_EF_DaveRoute109Intro:
+	.string "DAVE: Beach football! Sand in the\n"
+	.string "shoes, salt in the wounds!\p"
+	.string "Na na na na na-na-na…\p"
+	.string "That's not a chant.\n"
+	.string "That's a warning.$"
+
+Route109_Text_EF_DaveRoute109Defeat:
+	.string "Offside! Clearly offside!\n"
+	.string "The referee is a Wingull!$"
+
+Route109_Text_EF_DaveRoute109PostBattle:
+	.string "DAVE: My knees are made of sand now.\n"
+	.string "See you on the big pitch.$"
+
+@ }

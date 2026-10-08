@@ -97,6 +97,14 @@ static u32 GetTier(void)
     return 0;
 }
 
+#define BURGLAR_GUARANTEE_EVERY 2  // na badge 2, 4 en 6 een gegarandeerd bezoek (max. 3)
+
+static u32 GetGuaranteedVisits(void)
+{
+    u32 n = CountBadges() / BURGLAR_GUARANTEE_EVERY;
+    return n > 3 ? 3 : n;
+}
+
 // Aangeroepen bij elke kaartovergang (warp én lopend via een verbinding), na het ON_TRANSITION-script.
 void Burglar_OnMapEnter(void)
 {
@@ -114,6 +122,14 @@ void Burglar_OnMapEnter(void)
     }
     if (!FlagGet(FLAG_SYS_POKEMON_GET) || !FlagGet(FLAG_BADGE01_GET))
         return;
+    // Gegarandeerd: na badge 2, 4 en 6 komt hij bij het eerstvolgende bezoek aan een inbrekersstad, tot hij zo vaak
+    // verslagen is (dus minstens 3 keer per playthrough, telkens met het team van dat moment). Ook als hij vandaag al
+    // langskwam; verlies je van hem, dan komt hij terug.
+    if (VarGet(VAR_BURGLAR_DEFEATS) < GetGuaranteedVisits())
+    {
+        sArmedHouse = house + 1;
+        return;
+    }
     RtcCalcLocalTime();
     today = (u16)(gLocalTime.days + 1); // 0 = nog nooit
     if (VarGet(VAR_BURGLAR_LAST_DAY) == today)

@@ -624,6 +624,8 @@ struct BattleTest
 static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
 {
     // Trainers: eigen thema's en transities
+    { COMPOUND_STRING("Wally 1 - Mt. Pyre"),     DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_MT_PYRE, TRAINER_NONE) },
+    { COMPOUND_STRING("Wally 2 - Mossdeep"),     DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_MOSSDEEP, TRAINER_NONE) },
     { COMPOUND_STRING("Wally 3 - Mauville"),     DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_MAUVILLE, TRAINER_NONE) },
     { COMPOUND_STRING("Wally 4 - Meteor Falls"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_METEOR_FALLS, TRAINER_NONE) },
     { COMPOUND_STRING("Wally 5 - Victory Rd"),   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_WALLY_VR_1, TRAINER_NONE) },

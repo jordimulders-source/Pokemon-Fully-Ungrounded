@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Pokémon-balans: wie is te sterk, wie verdient een buff?
 
 Analyse van de hoofdgame (Hoenn, badge 1 t/m Champion) met de encountertabellen, evolutielevels, learnsets en

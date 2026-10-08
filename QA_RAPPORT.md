@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # QA-rapport Project Grounded (nachtelijke testronde, 4 okt 2026)
 
 Basis: branch `claude/amazing-wozniak-2iz078` op `acbcec65`. Getest in mGBA (headless) met een eigen test-ROM (tijdelijke hook: geforceerde transitie, flags/vars zetten, warp naar elke plek; nooit gecommit) plus statische controles op de data. Alle bewijsbeelden staan in de scratchpad (`.../scratchpad/qa/bewijs/`, zie onderaan).

@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is nog actueel.
+
 # Contests reworken: voorstel
 
 Status: alleen een voorstel, niets gebouwd. Gebaseerd op `src/contest.c` (6205 r.), `contest_ai.c`, `data/scripts/contest_hall.inc`, `berry_blender.c` (3895 r.) en `pokeblock.c`. In de changelog zit niets over contests behalve v0.6.34 (alleen Lilycove-teksten). Mechanica is dus nog 100% vanilla.

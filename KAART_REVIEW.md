@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Kaartreview: zee en regio (6 okt 2026)
 
 Methode: script over alle 613 `map.json` (grootte uit layouts.json, trainers = `trainer_type`, items = item-ballen + `hidden_item`, NPC = overige objecten, warps, encounters uit wild_encounters.json) + Town Map-raster (28x15). Let op: items zijn alleen zichtbare ballen en verborgen items; geschenken/beloningen via NPC's tellen niet mee. Tel-dichtheid = (trainers + NPC/2 + items) per 100 tiles.

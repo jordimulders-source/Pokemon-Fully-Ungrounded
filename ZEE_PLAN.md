@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Zee en eilanden (oostkant + zuiden), plan 5 okt
 
 Doel: de zeeroutes Lilycove–Mossdeep–Sootopolis–Evergrande–Pacifidlog en het lege zuiden onder Pacifidlog boeiend maken

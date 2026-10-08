@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Ondervertegenwoordigde Pokémon (6 okt)
 
 Families (zonder legendaries) naar aantal wilde vangplekken; gemeten uit `tools/grounded/dex_beschikbaar.json`. Gebruik: vul de zee en lege plekken eerst met de families met 0–1 plek en met de types met het laagste gemiddelde.

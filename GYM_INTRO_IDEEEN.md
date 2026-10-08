@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Gymleider-intro's: ideeën (6 okt, voor Jordi)
 Per gymleider één filmintro (±3–4 s), gebaseerd op hun eigen teksten en gym in deze romhack. Zuinig: ±40–80 KB per stuk (veel stilstaande achtergrond, echte game-art). **Jordi (6 okt): alle acht ja, met deze wijzigingen:**
 - **Wattson:** veel meer een meme: alles wat hij doet is een scam. Chaotischer, met meer elementen uit zijn gym (serverfarm, crypto, influencers, rigged doors, rugpulls).

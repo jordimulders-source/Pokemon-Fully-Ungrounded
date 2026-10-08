@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # DEX_ANALYSE: wat zit er (niet) in de game zonder ruilen
 
 Stand van de code (branch `claude/wonderful-brahmagupta-xz8pik`, gegenereerd door een script; machineleesbaar in `tools/grounded/dex_beschikbaar.json`). Entries = 1082 (1025 soorten + regionale vormen); verkrijgbaar zonder ruilen: 977; niet verkrijgbaar: 99 (+ 6 bewust weggelaten elemental monkeys). Mega/Gmax/Tera/Primal/Ultra Burst/kleur- en cosmetische vormen zijn weggelaten of onder de basissoort geschaard.

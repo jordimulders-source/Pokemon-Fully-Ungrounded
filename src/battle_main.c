@@ -27,6 +27,7 @@
 #include "dexnav.h"
 #include "dma3.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "evolution_scene.h"
 #include "field_weather.h"
 #include "follower_npc.h"
@@ -5590,6 +5591,8 @@ static void HandleEndTurn_BattleLost(void)
 static void HandleEndTurn_RanFromBattle(void)
 {
     gCurrentActionFuncId = 0;
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
+        IncrementGameStat(GAME_STAT_FLED_BATTLES);   // Project Grounded: omroeper van het Battle Stadium
 
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {

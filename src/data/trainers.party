@@ -15483,7 +15483,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Beheeyem
 Level: 42
@@ -19529,29 +19529,37 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
 Level: 68
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- U-Turn
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Flare Blitz
+- U-turn
 - Rock Slide
-- Earthquake
+- Superpower
 
 Dondozo @ Leftovers
 Level: 68
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Unaware
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
 - Curse
-- Waterfall
+- Wave Crash
 - Rest
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
 Level: 68
 Ability: Thermal Exchange
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Icicle Spear
 - Glaive Rush
 - Earthquake
@@ -19560,7 +19568,9 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Annihilape @ Chesto Berry
 Level: 68
 Ability: Defiant
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
 - Rest
 - Rage Fist
 - Bulk Up
@@ -19568,20 +19578,25 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Flutter Mane @ Choice Specs
 Level: 68
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Protosynthesis
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
 - Shadow Ball
-- Mystical Fire
 - Moonblast
+- Mystical Fire
 - Power Gem
 
-Gallade @ Choice Scarf
+Gallade @ Life Orb
 Level: 69
 Ability: Sharpness
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Psycho Cut
-- Leaf Blade
 - Sacred Sword
-- Aqua Cutter
+- Leaf Blade
+- Protect
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
 Name: BRENDAN
@@ -26129,32 +26144,74 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Blue
 
-Ludicolo
+Ludicolo @ Sitrus Berry
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Surf
+- Giga Drain
+- Ice Beam
+- Fake Out
 
-Huntail
+Huntail @ White Herb
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
 
-Zangoose
+Zangoose @ Toxic Orb
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
 
-Exploud
+Exploud @ Throat Spray
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
 
-Absol
+Absol @ Black Glasses
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
 
-Blaziken
+Blaziken @ Life Orb
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
 
 === TRAINER_BRENDAN_ROUTE_136_TORCHIC ===
 Name: BRENDAN
@@ -26163,32 +26220,74 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Blue
 
-Tropius
+Tropius @ Sitrus Berry
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Giga Drain
+- Air Slash
+- Leech Seed
+- Protect
 
-Torkoal
+Torkoal @ Charcoal
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
 
-Zangoose
+Zangoose @ Toxic Orb
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
 
-Exploud
+Exploud @ Throat Spray
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
 
-Absol
+Absol @ Black Glasses
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
 
-Swampert
+Swampert @ Leftovers
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
 
 === TRAINER_BRENDAN_ROUTE_136_MUDKIP ===
 Name: BRENDAN
@@ -26197,32 +26296,74 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Blue
 
-Houndoom
+Houndoom @ Charcoal
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
 
-Huntail
+Huntail @ White Herb
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
 
-Pinsir
+Pinsir @ Choice Scarf
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- X-Scissor
+- High Horsepower
+- Stone Edge
+- Close Combat
 
-Exploud
+Exploud @ Throat Spray
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
 
-Banette
+Banette @ Sitrus Berry
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Shadow Claw
+- Knock Off
+- Will-O-Wisp
+- Destiny Bond
 
-Sceptile
+Sceptile @ Life Orb
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Rock Slide
+- Swords Dance
 
 === TRAINER_MAY_ROUTE_136_TREECKO ===
 Name: MAY
@@ -26231,32 +26372,74 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Pink
 
-Octillery
+Octillery @ Expert Belt
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
 
-Mimikyu
+Mimikyu @ Spell Tag
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Disguise
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+- Swords Dance
 
-Lopunny
+Lopunny @ Silk Scarf
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
 
-Vespiquen
+Vespiquen @ Leftovers
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
 
-Magnezone
+Magnezone @ Assault Vest
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
 
-Blaziken
+Blaziken @ Life Orb
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
 
 === TRAINER_MAY_ROUTE_136_TORCHIC ===
 Name: MAY
@@ -26265,32 +26448,74 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Pink
 
-Roserade
+Roserade @ Focus Sash
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Protect
 
-Scovillain
+Scovillain @ Life Orb
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Flamethrower
+- Energy Ball
+- Sunny Day
+- Protect
 
-Lopunny
+Lopunny @ Silk Scarf
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
 
-Froslass
+Froslass @ Light Clay
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Protect
 
-Mienshao
+Mienshao @ Expert Belt
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Close Combat
+- Knock Off
+- U-turn
 
-Swampert
+Swampert @ Leftovers
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
 
 === TRAINER_MAY_ROUTE_136_MUDKIP ===
 Name: MAY
@@ -26299,32 +26524,74 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Pink
 
-Octillery
+Octillery @ Expert Belt
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
 
-Ninetales
+Ninetales @ Heat Rock
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Solar Beam
+- Nasty Plot
+- Protect
 
-Lopunny
+Lopunny @ Silk Scarf
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
 
-Vespiquen
+Vespiquen @ Leftovers
 Level: 37
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
 
-Eelektross
+Eelektross @ Assault Vest
 Level: 38
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
 
-Sceptile
+Sceptile @ Life Orb
 Level: 39
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Rock Slide
+- Swords Dance
 
 === TRAINER_KECCLES_3 ===
 Name: KECCLES
@@ -26333,57 +26600,74 @@ Pic: Kecleon
 Gender: Male
 Music: Male
 Double Battle: No
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
 Mugshot: Green
 
-Heliolisk
+Heliolisk @ Choice Specs
 Level: 43
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Volt Switch
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
 - Thunderbolt
-- Thunder Wave
-- Bulldoze
+- Hyper Voice
+- Grass Knot
+- Volt Switch
 
-Charizard
+Charizard @ Charcoal
 Level: 43
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
 - Air Slash
-- Flamethrower
-- Dragon Claw
-- Scary Face
+- Focus Blast
+- Roost
 
-Serperior
+Serperior @ Leftovers
 Level: 43
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Leaf Blade
-- Coil
-- Leech Seed
-- Slam
+Ability: Contrary
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Protect
 
-Clodsire
+Clodsire @ Black Sludge
 Level: 43
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Toxic Spikes
-- Yawn
+Ability: Unaware
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
 - Poison Jab
-- Mud Shot
+- High Horsepower
+- Yawn
+- Recover
 
-Steelix
+Steelix @ Sitrus Berry
 Level: 43
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Stealth Rock
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Body Press
 - Iron Head
-- Bulldoze
-- Rock Tomb
+- Stealth Rock
+- Rock Slide
 
-Salazzle
+Salazzle @ Focus Sash
 Level: 45
 Ability: Corrosion
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Fake Out
+- Sludge Bomb
+- Flamethrower
 - Nasty Plot
-- Venoshock
-- Incinerate
-- Poison Gas
 
 === TRAINER_OTTO ===
 Name: OTTO
@@ -27073,7 +27357,7 @@ Pic: Birch
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Green
 
 Rabsca
@@ -27187,7 +27471,7 @@ Pic: Colress
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Blue
 
 Beheeyem
@@ -27251,7 +27535,7 @@ Pic: Zinnia
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 Mugshot: Green
 
 Altaria

@@ -133,26 +133,26 @@ Music: Male
 Back Pic: Brendan
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Huntail @ White Herb
+Ludicolo @ Sitrus Berry
 Level: 50
-Ability: Strong Jaw
+Ability: Dancer
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Adamant
-- Shell Smash
-- Waterfall
-- Crunch
-- Ice Fang
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Surf
+- Giga Drain
+- Ice Beam
+- Fake Out
 
 Exploud @ Throat Spray
 Level: 50
 Ability: Galvanize
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 SpA / 252 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
 Nature: Modest
 - Hyper Voice
+- Flash Cannon
 - Flamethrower
-- Ice Beam
 - Protect
 
 Blaziken @ Life Orb
@@ -186,7 +186,7 @@ Nature: Timid
 - Sleep Powder
 - Protect
 
-Froslass @ Icy Rock
+Froslass @ Light Clay
 Level: 50
 Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -194,7 +194,7 @@ EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Blizzard
 - Shadow Ball
-- Will-O-Wisp
+- Aurora Veil
 - Protect
 
 Swampert @ Leftovers
@@ -215,18 +215,18 @@ Pic: Kecleon
 Gender: Male
 Music: Male
 Back Pic: Kecleon
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
 
-Charizard @ Charcoal
+Heliolisk @ Choice Specs
 Level: 50
-Ability: Blaze
+Ability: Dry Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
-- Heat Wave
-- Air Slash
-- Dragon Pulse
-- Protect
+- Thunderbolt
+- Hyper Voice
+- Grass Knot
+- Volt Switch
 
 Serperior @ Leftovers
 Level: 50
@@ -259,29 +259,29 @@ Music: Male
 Back Pic: Wally
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Baxcalibur @ Loaded Dice
+Darmanitan @ Choice Scarf
 Level: 50
-Ability: Thermal Exchange
+Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
-- Icicle Spear
-- Glaive Rush
-- Ice Shard
-- Dragon Dance
+- Flare Blitz
+- U-turn
+- Rock Slide
+- Superpower
 
-Annihilape @ Leftovers
+Flutter Mane @ Choice Specs
 Level: 50
-Ability: Defiant
+Ability: Protosynthesis
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 4 SpD
-Nature: Adamant
-- Rage Fist
-- Drain Punch
-- Bulk Up
-- Protect
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Moonblast
+- Mystical Fire
+- Power Gem
 
-Gallade @ Choice Scarf
+Gallade @ Life Orb
 Level: 50
 Ability: Sharpness
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -290,7 +290,7 @@ Nature: Jolly
 - Psycho Cut
 - Sacred Sword
 - Leaf Blade
-- Night Slash
+- Protect
 
 === PARTNER_STADIUM_ROXANNE ===
 Name: ROXANNE
@@ -864,7 +864,7 @@ Pic: Birch
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Rabsca
 Level: 50
@@ -898,7 +898,7 @@ Pic: Colress
 Gender: Male
 Music: Intense
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Magnezone
 Level: 50
@@ -934,7 +934,7 @@ Pic: Zinnia
 Gender: Female
 Music: Cool
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Salamence
 Level: 50
@@ -1209,7 +1209,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Back Pic: Brendan
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Beheeyem
 Level: 50

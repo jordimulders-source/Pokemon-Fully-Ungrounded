@@ -166,26 +166,6 @@ TRIOS = [
         ('Dialga @ Life Orb', 'Pressure', 'Modest', '4 HP / 252 SpA / 252 Spe', ['Draco Meteor', 'Flash Cannon', 'Fire Blast', 'Thunderbolt']),
         ('Palkia @ Choice Specs', 'Pressure', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Spacial Rend', 'Hydro Pump', 'Fire Blast', 'Thunder'])]),
 ]
-# Startcompagnons (Jordi, 8 okt): hun verhaalteams (lage IV's, geen EV's/items, verhaalmoves zoals Scary Face) waren
-# kansloos tegen de Showdown-sets in de pool. Ze krijgen echte Stadium-sets met dezelfde Pokémon (IV's 31, level 50).
-COMPANION_SETS = {
-    'BRENDAN': [
-        ('Huntail @ White Herb', 'Strong Jaw', 'Adamant', '4 HP / 252 Atk / 252 Spe', ['Shell Smash', 'Waterfall', 'Crunch', 'Ice Fang']),
-        ('Exploud @ Throat Spray', 'Galvanize', 'Modest', '4 HP / 252 SpA / 252 Spe', ['Hyper Voice', 'Flamethrower', 'Ice Beam', 'Protect']),
-        ('Blaziken @ Life Orb', 'Speed Boost', 'Adamant', '4 HP / 252 Atk / 252 Spe', ['Flare Blitz', 'Close Combat', 'Knock Off', 'Protect'])],
-    'MAY': [
-        ('Roserade @ Focus Sash', 'Natural Cure', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Sludge Bomb', 'Giga Drain', 'Sleep Powder', 'Protect']),
-        ('Froslass @ Icy Rock', 'Snow Warning', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Blizzard', 'Shadow Ball', 'Will-O-Wisp', 'Protect']),
-        ('Swampert @ Leftovers', 'Regenerator', 'Adamant', '252 HP / 252 Atk / 4 SpD', ['Liquidation', 'High Horsepower', 'Ice Punch', 'Protect'])],
-    'KECCLES': [
-        ('Charizard @ Charcoal', 'Blaze', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Heat Wave', 'Air Slash', 'Dragon Pulse', 'Protect']),
-        ('Serperior @ Leftovers', 'Contrary', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Leaf Storm', 'Dragon Pulse', 'Glare', 'Protect']),
-        ('Salazzle @ Focus Sash', 'Corrosion', 'Timid', '4 HP / 252 SpA / 252 Spe', ['Fake Out', 'Sludge Bomb', 'Flamethrower', 'Nasty Plot'])],
-    'WALLY': [
-        ('Baxcalibur @ Loaded Dice', 'Thermal Exchange', 'Jolly', '4 HP / 252 Atk / 252 Spe', ['Icicle Spear', 'Glaive Rush', 'Ice Shard', 'Dragon Dance']),
-        ('Annihilape @ Leftovers', 'Defiant', 'Adamant', '252 HP / 252 Atk / 4 SpD', ['Rage Fist', 'Drain Punch', 'Bulk Up', 'Protect']),
-        ('Gallade @ Choice Scarf', 'Sharpness', 'Jolly', '4 HP / 252 Atk / 252 Spe', ['Psycho Cut', 'Sacred Sword', 'Leaf Blade', 'Night Slash'])],
-}
 TRIO_HEADER = 'Class: Collection\nGender: Male\nMusic: Male\nAI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices'
 
 
@@ -351,6 +331,10 @@ KEEP = {
     'STADIUM_JOEY': [1, 2, 0],  # Mightyena en Obstagoon (Jordi), Rattata (top percentage)
     'STADIUM_GOLBAT': [0],    # Zubat: de grot in Red/Blue
     'STADIUM_PETREL': [1],    # Ditto met Imposter: vermommingsteam (Zoroark is de ace)
+    # Startcompagnons (Jordi, 8 okt): compagnon = tegenstanderversie, dus de keuze zit hier en in hun verhaalteam
+    'KECCLES_3': [0, 2],      # Heliolisk en Serperior (ace Salazzle)
+    'WALLY_VR_5': [0, 4],     # Darmanitan en Flutter Mane (ace Gallade): minder Fairy-zwak dan Baxcalibur/Annihilape
+    'MAY_ROUTE_136_TORCHIC': [0, 3],  # Roserade en Froslass (ace Swampert)
 }
 # Sterkte met de hand: zes keer Ditto met Imposter is zo sterk als de tegenstander (gemiddelde van de pool)
 RATING = {'STADIUM_DONALD': 520, 'STADIUM_JOEY': 480}  # Joey: Poochyena is top percentage
@@ -443,19 +427,10 @@ for i, (pname, src, unlock) in enumerate(COMPANIONS):
     lines.append(f'Pic: {pic}')
     g = header_field(tr['header'], 'Gender') or 'Male'
     lines += [f'Gender: {g}', f'Music: {header_field(tr["header"], "Music") or g}', f'Back Pic: {back or "Brendan"}']
-    ai = header_field(tr['header'], 'AI')
-    if pname in COMPANION_SETS:
-        ai = 'Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices'
+    ai = header_field(tr['header'], 'AI')   # zelfde AI als de tegenstanderversie (de C-code neemt die van de bron over)
     if ai:
         lines.append(f'AI: {ai}')
     lines.append('')
-    if pname in COMPANION_SETS:
-        for mon in trio_mons(COMPANION_SETS[pname]):
-            lines += [mon, '']
-        blocks.append('\n'.join(lines))
-        consts.append((f'PARTNER_STADIUM_{pname}', back is None))
-        scores[pname] = 0
-        continue
     for j in idx:
         mon = re.sub(r'^Level:\s*\d+', f'Level: {LEVEL}', tr['mons'][j], flags=re.M)
         lines.append(mon.strip('\n'))

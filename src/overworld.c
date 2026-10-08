@@ -380,6 +380,7 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
+    IncrementGameStat(GAME_STAT_WHITE_OUTS);   // Project Grounded: voor de omroeper van het Battle Stadium
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
@@ -499,16 +500,32 @@ void IncrementGameStat(u8 index)
     }
 }
 
+// Project Grounded: de nieuwe game stats (53+) waren in oude saves nooit gewist; bij het eerste gebruik op 0
+static void InitGroundedGameStats(void)
+{
+    u32 i;
+
+    if (FlagGet(FLAG_GROUNDED_STATS_V1))
+        return;
+    FlagSet(FLAG_GROUNDED_STATS_V1);
+    for (i = GROUNDED_GAME_STATS_START; i < NUM_USED_GAME_STATS; i++)
+        gSaveBlock1Ptr->gameStats[i] = gSaveBlock2Ptr->encryptionKey;   // = 0 na het ontsleutelen
+}
+
 u32 GetGameStat(u8 index)
 {
     if (index >= NUM_USED_GAME_STATS)
         return 0;
+    if (index >= GROUNDED_GAME_STATS_START)
+        InitGroundedGameStats();
 
     return gSaveBlock1Ptr->gameStats[index] ^ gSaveBlock2Ptr->encryptionKey;
 }
 
 void SetGameStat(u8 index, u32 value)
 {
+    if (index >= GROUNDED_GAME_STATS_START && index < NUM_USED_GAME_STATS)
+        InitGroundedGameStats();
     if (index < NUM_USED_GAME_STATS)
         gSaveBlock1Ptr->gameStats[index] = value ^ gSaveBlock2Ptr->encryptionKey;
 }

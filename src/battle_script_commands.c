@@ -4406,6 +4406,9 @@ static void Cmd_tryfaintmon(void)
                 gHitMarker |= HITMARKER_PLAYER_FAINTED;
                 if (gBattleResults.playerFaintCounter < 255)
                     gBattleResults.playerFaintCounter++;
+                if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+                 && (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || !(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)))
+                    IncrementGameStat(GAME_STAT_OWN_MONS_FAINTED);   // Project Grounded: omroeper
                 AdjustFriendshipOnBattleFaint(battler);
                 gSideTimers[B_SIDE_PLAYER].retaliateTimer = 2;
             }

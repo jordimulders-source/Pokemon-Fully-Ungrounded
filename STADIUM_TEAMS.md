@@ -19,11 +19,11 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | DRAKE | 564 | Flygon, Archaludon, Dracovish, Salamence | Flygon, Archaludon, Salamence | - |
 | JUAN | 520 | Politoed, Kingdra, Walrein, Relicanth | Kingdra, Walrein, Relicanth | regen |
 | STEVEN | 542 | Claydol, Cradily, Armaldo, Metagross | Claydol, Armaldo, Metagross | - |
-| WALLY_VR_5 | 548 | Dondozo, Baxcalibur, Annihilape, Gallade | Baxcalibur, Annihilape, Gallade | - |
+| WALLY_VR_5 | 544 | Darmanitan, Baxcalibur, Flutter Mane, Gallade | Darmanitan, Flutter Mane, Gallade | - |
 | ARCHIE_SOOTOPOLIS | 530 | Overqwil, Sharpedo, Archaludon | Overqwil, Sharpedo, Archaludon | - |
 | MAXIE_SOOTOPOLIS | 512 | Scovillain, Claydol, Camerupt | Scovillain, Claydol, Camerupt | - |
 | BIRCH_UNDERWATER | 522 | Rabsca, Mudsdale, Wailord, Muk | Rabsca, Wailord, Muk | Trick Room |
-| KECCLES_3 | 513 | Charizard, Serperior, Steelix, Salazzle | Charizard, Serperior, Salazzle | - |
+| KECCLES_3 | 506 | Heliolisk, Charizard, Serperior, Salazzle | Heliolisk, Serperior, Salazzle | - |
 | COLRESS_MAGMA | 542 | Klinklang, Magnezone, Porygon2, Magearna | Magnezone, Porygon2, Magearna | - |
 | ZINNIA | 582 | Altaria, Salamence, Goodra, Roaring Moon | Salamence, Goodra, Roaring Moon | - |
 | MIMI | 418 | Pikachu, Pachirisu, Dedenne, Mimikyu | Pachirisu, Dedenne, Mimikyu | - |
@@ -112,8 +112,8 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | WICK | 502 | Magnezone, Eelektross, Lumineon, Lanturn | Magnezone, Lumineon, Lanturn | regen |
 | GERALD_WARDEN | 585 | Kingdra, Baxcalibur, Archaludon, Dragonite | Kingdra, Archaludon, Dragonite | regen |
 | SALIM | 510 | Hippowdon, Cofagrigus, Sableye, Gholdengo | Hippowdon, Sableye, Gholdengo | Trick Room, zand |
-| BRENDAN_ROUTE_136_TREECKO | 515 | Huntail, Exploud, Absol, Blaziken | Huntail, Exploud, Blaziken | - |
-| MAY_ROUTE_136_TORCHIC | 516 | Roserade, Froslass, Mienshao, Swampert | Roserade, Froslass, Swampert | - |
+| BRENDAN_ROUTE_136_TREECKO | 514 | Ludicolo, Exploud, Absol, Blaziken | Ludicolo, Exploud, Blaziken | - |
+| MAY_ROUTE_136_TORCHIC | 510 | Roserade, Scovillain, Froslass, Swampert | Roserade, Froslass, Swampert | sneeuw, zon |
 
 ## Volgorde van vrijspelen (Stadium-punten: 70 per toernooi, +10 per gewonnen wedstrijd, +20 voor een titel)
 

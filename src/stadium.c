@@ -12,6 +12,10 @@
 #include "field_screen_effect.h"
 #include "load_save.h"
 #include "main.h"
+#include "battle_main.h"
+#include "pokemon_storage_system.h"
+#include "money.h"
+#include "malloc.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -450,7 +454,7 @@ static const u8 *GetDefeatText(u32 trainerId)
 
 void Stadium_StartMatch(void)
 {
-    u32 pos = PlayerPos(sT.round);
+    u32 i, pos = PlayerPos(sT.round);
     u8 opp = sT.bracket[sT.round][pos ^ 1];
 
     BuildPlayerParty();
@@ -465,6 +469,13 @@ void Stadium_StartMatch(void)
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
         gPartnerTrainerId = TRAINER_PARTNER(sStadiumCompanions[sT.companion].partnerId);
         FillPartnerParty(gPartnerTrainerId);
+        for (i = MULTI_PARTY_SIZE; i < PARTY_SIZE; i++)    // compagnon = tegenstanderversie (IV's/EV's per ronde)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+                continue;
+            Stadium_ScaleCompanionMon(&gPlayerParty[i]);
+            CalculateMonStats(&gPlayerParty[i]);
+        }
     }
     gStadiumBattle = TRUE;
     CreateTask(Task_StartStadiumBattle, 1);
@@ -529,6 +540,37 @@ static const u8 sStadiumEvPercent[] = {0, 33, 67, 100};
 // Jordi (8 okt): nog eerlijker; ook de IV's lopen op (max per stat), zodat de eerste rondes geen Showdown-teams zijn
 static const u8 sStadiumIvCap[] = {20, 24, 28, 31};
 
+// IV's (gepakt, 5 bits per stat) begrensd op het plafond van deze ronde
+u32 Stadium_CapIvs(u32 ivs)
+{
+    u32 s, cap = sStadiumIvCap[min(sT.round, ARRAY_COUNT(sStadiumIvCap) - 1)], iv = 0;
+
+    for (s = 0; s < NUM_STATS; s++)
+        iv |= min((ivs >> (5 * s)) & MAX_IV_MASK, cap) << (5 * s);
+    return iv;
+}
+
+// Jordi (8 okt): compagnon = zijn tegenstanderversie, ook in IV's/EV's. Dezelfde opbouw per ronde als de
+// tegenstanders (Stadium_StartMatch na FillPartnerParty; daarna CalculateMonStats).
+void Stadium_ScaleCompanionMon(struct Pokemon *mon)
+{
+    u32 s, evPercent = sStadiumEvPercent[min(sT.round, ARRAY_COUNT(sStadiumEvPercent) - 1)];
+
+    for (s = 0; s < NUM_STATS; s++)
+    {
+        u32 iv = min(GetMonData(mon, MON_DATA_HP_IV + s), sStadiumIvCap[min(sT.round, ARRAY_COUNT(sStadiumIvCap) - 1)]);
+        u32 ev = GetMonData(mon, MON_DATA_HP_EV + s) * evPercent / 100;
+        SetMonData(mon, MON_DATA_HP_IV + s, &iv);
+        SetMonData(mon, MON_DATA_HP_EV + s, &ev);
+    }
+}
+
+// Bron-trainer van de gekozen compagnon (TRAINER_NONE bij trio's): de compagnon krijgt diens AI
+u16 Stadium_CompanionSourceTrainer(void)
+{
+    return sStadiumCompanions[sT.companion].trainerId;
+}
+
 // Team van een tegenstander: de keuze uit pool.py (singles 4 / doubles 3, synergie, ace altijd), level 50.
 u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
@@ -548,12 +590,7 @@ u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstT
             continue;
         mons[n] = trainer->party[i];
         mons[n].lvl = STADIUM_LEVEL;
-        {
-            u32 cap = sStadiumIvCap[min(sT.round, ARRAY_COUNT(sStadiumIvCap) - 1)], iv = 0;
-            for (s = 0; s < NUM_STATS; s++)
-                iv |= min((mons[n].iv >> (5 * s)) & MAX_IV_MASK, cap) << (5 * s);
-            mons[n].iv = iv;
-        }
+        mons[n].iv = Stadium_CapIvs(mons[n].iv);
         if (mons[n].ev != NULL && evPercent < 100)
         {
             for (s = 0; s < NUM_STATS; s++)
@@ -683,41 +720,239 @@ static bool32 Caught(u16 species)
     return GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT);
 }
 
-// Zin over de speler op basis van hoe hij gespeeld heeft (willekeurig uit wat klopt), anders de vanilla-zin.
-// Zet gStringVar1 voor zinnen met {STR_VAR_1}.
+static const u16 sAnnouncerBirchFights[] =
+{
+    TRAINER_BIRCH, TRAINER_BIRCH_2, TRAINER_BIRCH_VERDANTURF, TRAINER_BIRCH_MOSSDEEP, TRAINER_BIRCH_UNDERWATER, TRAINER_BIRCH_RESORT,
+};
+static const u16 sAnnouncerDaveFights[] =
+{
+    TRAINER_DAVE_ROUTE_111, TRAINER_DAVE_PETALBURG, TRAINER_DAVE_SOOTOPOLIS, TRAINER_DAVE,
+};
+static const u16 sAnnouncerServiceFights[] =
+{
+    TRAINER_ARCHIE_SERVICE_1, TRAINER_ARCHIE_SERVICE_2, TRAINER_ARCHIE_SERVICE_3, TRAINER_ARCHIE_SERVICE_4,
+    TRAINER_MAXIE_SERVICE_1, TRAINER_MAXIE_SERVICE_2, TRAINER_MAXIE_SERVICE_3, TRAINER_MAXIE_SERVICE_4,
+};
+
+static u32 CountFought(const u16 *trainers, u32 count)
+{
+    u32 i, n = 0;
+
+    for (i = 0; i < count; i++)
+        n += HasTrainerBeenFought(trainers[i]) ? 1 : 0;
+    return n;
+}
+
+// Team + pc: de soort die de speler het vaakst heeft (fan van X) en het aantal shiny's
+static void CountOwnedMons(u16 *fanSpecies, u32 *fanCount, u32 *shinies)
+{
+    u8 *counts = AllocZeroed(NUM_SPECIES);
+    u32 box, pos, i, species;
+
+    *fanSpecies = SPECIES_NONE;
+    *fanCount = 0;
+    *shinies = 0;
+    if (counts == NULL)
+        return;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = GetSavedPlayerPartyMon(i);
+        species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        if (species == SPECIES_NONE || species >= NUM_SPECIES)
+            continue;
+        if (counts[species] < 255)
+            counts[species]++;
+        *shinies += GetMonData(mon, MON_DATA_IS_SHINY) ? 1 : 0;
+    }
+    for (box = 0; box < TOTAL_BOXES_COUNT; box++)
+    {
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+        {
+            struct BoxPokemon *mon = GetBoxedMonPtr(box, pos);
+            species = GetBoxMonData(mon, MON_DATA_SPECIES_OR_EGG);
+            if (species == SPECIES_NONE || species >= NUM_SPECIES)
+                continue;
+            if (counts[species] < 255)
+                counts[species]++;
+            *shinies += GetBoxMonData(mon, MON_DATA_IS_SHINY) ? 1 : 0;
+        }
+    }
+    for (i = 1; i < NUM_SPECIES; i++)
+    {
+        if (counts[i] > *fanCount)
+        {
+            *fanCount = counts[i];
+            *fanSpecies = i;
+        }
+    }
+    Free(counts);
+}
+
+// Het gekozen Stadium-team: een MAGIKARP erin? Deelt iedereen een type (TYPE_NONE = nee)?
+static void CheckStadiumTeam(bool32 *magikarp, u32 *monoType)
+{
+    u32 i, j, t, n = 0, size = (sT.mode == STADIUM_DOUBLES) ? STADIUM_DOUBLES_MONS : STADIUM_SINGLES_MONS;
+    u16 species[STADIUM_SINGLES_MONS];
+
+    *magikarp = FALSE;
+    *monoType = TYPE_NONE;
+    for (i = 0; i < size; i++)
+    {
+        if (sT.order[i] == 0)
+            continue;
+        species[n] = GetMonData(GetSavedPlayerPartyMon(sT.order[i] - 1), MON_DATA_SPECIES);
+        if (species[n] == SPECIES_MAGIKARP)
+            *magikarp = TRUE;
+        n++;
+    }
+    if (n < 3)
+        return;
+    for (t = 0; t < 2; t++)
+    {
+        u32 type = gSpeciesInfo[species[0]].types[t];
+        for (j = 1; j < n; j++)
+            if (gSpeciesInfo[species[j]].types[0] != type && gSpeciesInfo[species[j]].types[1] != type)
+                break;
+        if (j == n)
+        {
+            *monoType = type;
+            return;
+        }
+    }
+}
+
+// Zin over de speler op basis van wat het spel van hem weet (Jordi: "Grey Fox in MGS"). Alle zinnen waarvan de
+// voorwaarde klopt doen mee, gewogen (sStadiumAnnouncerPlayerWeight: specifiek 6, opvallend 3, algemeen 1); geen = de
+// vanilla-zin. Zet gStringVar1 (soort/type) en gStringVar2 (getal) voor de gekozen zin.
 static const u8 *AnnouncePlayer(void)
 {
     u8 options[ANNOUNCE_PLAYER_COUNT];
+    u32 num[ANNOUNCE_PLAYER_COUNT];
+    const u8 *name[ANNOUNCE_PLAYER_COUNT];
     u16 legends[ARRAY_COUNT(sAnnouncerLegends)];
-    u32 n = 0, nLegends = 0, i;
+    u32 n = 0, nLegends = 0, i, total = 0, r, fanCount, shinies, monoType, money;
+    u16 fanSpecies;
+    bool32 magikarp;
 
-    if (SAVE.titles[STADIUM_SINGLES] + SAVE.titles[STADIUM_DOUBLES] > 0)
-        options[n++] = ANNOUNCE_PLAYER_TITLES;
-    else if (SAVE.tournaments >= 2)
-        options[n++] = ANNOUNCE_PLAYER_RETURNING;
-    if (SAVE.matchesWon >= 20)
-        options[n++] = ANNOUNCE_PLAYER_VETERAN;
-    if (SAVE.matchesWon == 0 && SAVE.tournaments <= 1)
-        options[n++] = ANNOUNCE_PLAYER_NEWCOMER;
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
-        options[n++] = ANNOUNCE_PLAYER_HALL_OF_FAME;
-    else if (FlagGet(FLAG_BADGE08_GET))
-        options[n++] = ANNOUNCE_PLAYER_EIGHT_BADGES;
+#define ADD(id, value, str) do { options[n++] = (id); num[id] = (value); name[id] = (str); total += sStadiumAnnouncerPlayerWeight[id]; } while (0)
+#define STAT_AT_LEAST(id, stat, min) do { u32 v_ = GetGameStat(stat); if (v_ >= (min)) ADD(id, v_, NULL); } while (0)
+
+    // Jordi's voorbeelden. White-outs: een gewone run van deze pittige game heeft er ±5-10; 15+ is bovengemiddeld.
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_WHITE_OUTS, GAME_STAT_WHITE_OUTS, 15);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_LEAGUE_BULLY, GAME_STAT_ENTERED_HOF, 10);
+    CountOwnedMons(&fanSpecies, &fanCount, &shinies);
+    if (fanCount >= 5)
+        ADD(ANNOUNCE_PLAYER_FAN, fanCount, GetSpeciesName(fanSpecies));
+    // het Stadium-team
+    CheckStadiumTeam(&magikarp, &monoType);
+    if (magikarp)
+        ADD(ANNOUNCE_PLAYER_MAGIKARP, 0, NULL);
+    if (monoType != TYPE_NONE)
+        ADD(ANNOUNCE_PLAYER_MONOTYPE, 0, gTypesInfo[monoType].name);
+    // 'we weten wat je deed'
+    if (FlagGet(FLAG_USED_IMPLOSION))
+        ADD(ANNOUNCE_PLAYER_IMPLOSION, 0, NULL);
+    if (FlagGet(FLAG_CAUGHT_SHIP_SPIRITOMB))
+        ADD(ANNOUNCE_PLAYER_TRASH_SPIRITOMB, 0, NULL);
+    if (FlagGet(FLAG_HOOPA_WISH_SNACK))
+        ADD(ANNOUNCE_PLAYER_HOOPA_SNACK, 0, NULL);
+    if (FlagGet(FLAG_HOOPA_WISH_FAME))
+        ADD(ANNOUNCE_PLAYER_HOOPA_FAME, 0, NULL);
+    if (FlagGet(FLAG_HOOPA_WISH_RICHES))
+        ADD(ANNOUNCE_PLAYER_HOOPA_RICHES, 0, NULL);
+    if (FlagGet(FLAG_HOOPA_WISH_POWER))
+        ADD(ANNOUNCE_PLAYER_HOOPA_POWER, 0, NULL);
+    if (VarGet(VAR_BURGLAR_DEFEATS) >= 5)
+        ADD(ANNOUNCE_PLAYER_BURGLAR, VarGet(VAR_BURGLAR_DEFEATS), NULL);
+    if (CountFought(sAnnouncerBirchFights, ARRAY_COUNT(sAnnouncerBirchFights)) >= 5)
+        ADD(ANNOUNCE_PLAYER_BIRCH, 0, NULL);
+    if (CountFought(sAnnouncerDaveFights, ARRAY_COUNT(sAnnouncerDaveFights)) == ARRAY_COUNT(sAnnouncerDaveFights))
+        ADD(ANNOUNCE_PLAYER_DAVE, 0, NULL);
+    if (CountFought(sAnnouncerServiceFights, ARRAY_COUNT(sAnnouncerServiceFights)) > 0)
+        ADD(ANNOUNCE_PLAYER_COMMUNITY_SERVICE, 0, NULL);
+    if (FlagGet(FLAG_CAUGHT_SHINY_RAYQUAZA))
+        ADD(ANNOUNCE_PLAYER_SHINY_RAYQUAZA, 0, NULL);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_RELEASED, GAME_STAT_RELEASED_MONS, 30);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_FAINTED, GAME_STAT_OWN_MONS_FAINTED, 200);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_FLED, GAME_STAT_FLED_BATTLES, 50);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_SPLASH, GAME_STAT_USED_SPLASH, 10);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_STRUGGLE, GAME_STAT_USED_STRUGGLE, 10);
+    // opvallende statistieken
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_STEPS, GAME_STAT_STEPS, 100000);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_EGGS, GAME_STAT_HATCHED_EGGS, 50);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_FISHING, GAME_STAT_FISHING_ENCOUNTERS, 200);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_SAVES, GAME_STAT_SAVED_GAME, 500);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_POKECENTER, GAME_STAT_USED_POKECENTER, 300);
+    if (shinies >= 3)
+        ADD(ANNOUNCE_PLAYER_SHINIES, shinies, NULL);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_LEDGES, GAME_STAT_JUMPED_DOWN_LEDGES, 300);
+    STAT_AT_LEAST(ANNOUNCE_PLAYER_JACKPOT, GAME_STAT_SLOT_JACKPOTS, 1);
+    money = GetMoney(&gSaveBlock1Ptr->money);
+    if (money >= 500000)
+        ADD(ANNOUNCE_PLAYER_RICH, 0, NULL);
+    else if (money < 1000 && FlagGet(FLAG_BADGE01_GET))
+        ADD(ANNOUNCE_PLAYER_BROKE, 0, NULL);
     for (i = 0; i < ARRAY_COUNT(sAnnouncerLegends); i++)
         if (Caught(sAnnouncerLegends[i]))
             legends[nLegends++] = sAnnouncerLegends[i];
     if (nLegends > 0)
-    {
-        options[n++] = ANNOUNCE_PLAYER_LEGENDARY;
-        StringCopy(gStringVar1, GetSpeciesName(legends[Random() % nLegends]));
-    }
+        ADD(ANNOUNCE_PLAYER_LEGENDARY, 0, GetSpeciesName(legends[Random() % nLegends]));
     if (GetNationalPokedexCount(FLAG_GET_CAUGHT) >= 200)
-        options[n++] = ANNOUNCE_PLAYER_BIG_DEX;
+        ADD(ANNOUNCE_PLAYER_BIG_DEX, 0, NULL);
     if (gSaveBlock2Ptr->playTimeHours >= 100)
-        options[n++] = ANNOUNCE_PLAYER_PLAYTIME;
+        ADD(ANNOUNCE_PLAYER_PLAYTIME, 0, NULL);
+    // algemeen
+    if (SAVE.titles[STADIUM_SINGLES] + SAVE.titles[STADIUM_DOUBLES] > 0)
+        ADD(ANNOUNCE_PLAYER_TITLES, 0, NULL);
+    else if (SAVE.tournaments >= 2)
+        ADD(ANNOUNCE_PLAYER_RETURNING, 0, NULL);
+    if (SAVE.matchesWon >= 20)
+        ADD(ANNOUNCE_PLAYER_VETERAN, 0, NULL);
+    if (SAVE.matchesWon == 0 && SAVE.tournaments <= 1)
+        ADD(ANNOUNCE_PLAYER_NEWCOMER, 0, NULL);
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        ADD(ANNOUNCE_PLAYER_HALL_OF_FAME, 0, NULL);
+    else if (FlagGet(FLAG_BADGE08_GET))
+        ADD(ANNOUNCE_PLAYER_EIGHT_BADGES, 0, NULL);
+    if (FlagGet(FLAG_SYS_POKEMON_GET) && VarGet(VAR_STARTER_MON) <= 2)
+        ADD(ANNOUNCE_PLAYER_TREECKO + VarGet(VAR_STARTER_MON), 0, NULL);
+#undef ADD
+#undef STAT_AT_LEAST
+
     if (n == 0)
         return sStadiumAnnouncerVanilla;
-    return sStadiumAnnouncerPlayer[options[Random() % n]];
+    r = Random() % total;
+    for (i = 0; i < n - 1; i++)
+    {
+        if (r < sStadiumAnnouncerPlayerWeight[options[i]])
+            break;
+        r -= sStadiumAnnouncerPlayerWeight[options[i]];
+    }
+    if (name[options[i]] != NULL)
+        StringCopy(gStringVar1, name[options[i]]);
+    ConvertIntToDecimalStringN(gStringVar2, num[options[i]], STR_CONV_MODE_LEFT_ALIGN, 8);
+    return sStadiumAnnouncerPlayer[options[i]];
+}
+
+// De compagnon (Jordi: "de compagnon moet hun typische tekst krijgen"): eigen compagnonzin, anders zijn omroepzin als
+// tegenstander, pas daarna een algemene zin. Zet gStringVar1 = naam van de compagnon.
+static const u8 *AnnounceCompanion(void)
+{
+    const struct StadiumCompanion *c = &sStadiumCompanions[sT.companion];
+    const u8 *line;
+    u32 i;
+
+    StringCopy(gStringVar1, GetTrainerNameFromId(TRAINER_PARTNER(c->partnerId)));
+    for (i = 0; i < ARRAY_COUNT(sStadiumAnnouncerCompanion); i++)
+        if (sStadiumAnnouncerCompanion[i].partnerId == c->partnerId)
+            return sStadiumAnnouncerCompanion[i].text;
+    if (c->trainerId != TRAINER_NONE)
+    {
+        line = AnnouncerLineFor(c->trainerId);
+        if (line != sStadiumAnnouncerFallback)
+            return line;
+    }
+    return sStadiumAnnouncerPartner[Random() % ARRAY_COUNT(sStadiumAnnouncerPartner)];
 }
 
 // Voegt een tekstvak toe aan gStringVar4 ({PLAYER}/{STR_VAR_1} ingevuld), met \p ervoor als er al tekst staat
@@ -747,10 +982,7 @@ void Stadium_GetAnnouncerLine(void)
     {
         p = AddAnnouncement(p, AnnouncePlayer());
         if (sT.mode == STADIUM_DOUBLES)
-        {
-            StringCopy(gStringVar1, GetTrainerNameFromId(TRAINER_PARTNER(sStadiumCompanions[sT.companion].partnerId)));
-            p = AddAnnouncement(p, sStadiumAnnouncerPartner[Random() % ARRAY_COUNT(sStadiumAnnouncerPartner)]);
-        }
+            p = AddAnnouncement(p, AnnounceCompanion());
     }
     p = AddAnnouncement(p, AnnouncerLineFor(Stadium_EntrantTrainer(opp, 0)));
     if (sT.mode == STADIUM_DOUBLES && Stadium_EntrantTrainer(opp, 1) != TRAINER_NONE)

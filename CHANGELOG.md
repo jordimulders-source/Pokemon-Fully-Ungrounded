@@ -17460,3 +17460,19 @@ Volgens Jordi's GBA-instructies per leider:
 - **Route 124:** een strandjutter, Triathlete Nadia en Swimmer Wade.
 - Script `tools/grounded/maptools/kaart_vulling_4.py`. Flags `FLAG_GROUNDED(200–245)`, trainers 1150–1158.
 - **Ook:** Dave in Petalburg zonder Iron Valiant (die komt pas in Sootopolis). Burglar met Hisui-Zorua/Zoroark (Illusion als Thievul, en geen Fighting-zwakte meer) en Sableye in plaats van Weavile.
+
+### [v0.9.158] - Stadium: compagnons = tegenstanders, en een omroeper die alles weet
+- **Compagnons:** precies hun tegenstanderversie, zonder aparte sets. Zelfde doubles-drie, zelfde sets, zelfde AI (`GetAiFlags` van de bron-trainer), en ook dezelfde IV/EV-opbouw per ronde.
+- **Betere verhaalteams** (levels gelijk, nu met IV's 31, EV's, items, natures; geen Scary Face meer):
+  - Keccles 3: Heliolisk, Serperior en Salazzle in doubles.
+  - Wally VR 5: Darmanitan, Flutter Mane en Gallade in doubles (minder Fairy-zwak).
+  - May en Brendan op Route 136: alle zes de varianten gelijkgetrokken.
+  - Slimme AI voor Colress (Magma), Zinnia, Tabitha (Mossdeep) en Birch (onder water).
+  - Let op: daardoor worden Route 136, Keccles 3 en Wally in Victory Road in het verhaal ook pittiger.
+- **Omroeper:** ±35 spelerszinnen op basis van wat je deed, gewogen; de meest specifieke "we weten wat je deed"-zinnen vaker.
+  - Voorbeelden: "This trainer loses more than they win. So let's all pretend this time is gonna be different." (15+ white-outs), "...over and over again. Bully!" (10+ League-zeges), een fanclub (5+ van dezelfde soort).
+  - Ook: Implosion ooit gebruikt, de Hoopa-wens die je koos, Burglar en Dave verslagen, Birch' "samples", Splash/Struggle-tellers, eieren, vissen, opslaan, geld, je starter.
+  - De volledige lijst staat in `STADIUM_OMROEPER.md`.
+- **Compagnon-omroep:** elke compagnon krijgt zijn eigen karakterzin, bijv. Keccles: "A KECLEON with a PhD and an existential crisis. Same thing, really."
+- **Nieuwe tellers:** game stats 53–56 (white-outs, gevlucht, vrijgelaten, eigen Pokémon flauwgevallen). Splash en Struggle worden nu ook geteld.
+  - De tellers gebruiken ongebruikte save-plekken. Bij het eerste gebruik worden ze op 0 gezet (`FLAG_GROUNDED(150)`); `FLAG_USED_IMPLOSION` = `(151)`.

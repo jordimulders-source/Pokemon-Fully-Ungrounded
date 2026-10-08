@@ -17365,3 +17365,19 @@ Volgens Jordi's GBA-instructies per leider:
 - De gewone flags waren op (alleen dagelijkse nog vrij). Er is nu een eigen blok van 512 flags: `FLAG_GROUNDED(0)` t/m `FLAG_GROUNDED(511)` (id 0x1000+).
 - Het blok staat achteraan SaveBlock1, zodat bestaande saves blijven werken. `GetFlagPointer` kent het bereik.
 - De verdeling per onderdeel staat in `include/constants/flags.h`. Getest: `setflag FLAG_GROUNDED(5)` en `(511)` komen in de save.
+
+### [v0.9.152] - Beacon Isle (vuurtoren) en Dragonspine Isle
+- **Beacon Isle** onder Route 133 (Town Map 14,11), met de goedgekeurde vuurtoren (`tools/grounded/maptools/beacon_dragon.py`):
+  - 's Nachts gloeit de lamp, draait er een lichtbundel (nieuw `LIGHT_TYPE_LIGHTHOUSE_BEAM`) en drijven er vier Chinchou.
+  - Binnen drie verdiepingen met trainers (Electric, Bug, Fighting, Normal; lv 41–47).
+  - Bovenin wachter **WICK** en zijn Lanturn: de lamp is al 40 jaar kapot, de Lanturn is het licht. Na zijn gevecht geeft hij de Zoom Lens ("de oude vuurtorenlens was een cameralens").
+  - Eigen wilde tabellen (Electric/Water-licht).
+  - De architect op Route 134 merkt het op: "And the lamp is a LANTURN? Cheater."
+  - Op Route 133 is één zeerots weg, zodat je het eiland bereikt.
+- **Dragonspine Isle** rechts van Route 129 (Town Map 26–27,10), bereikbaar vanaf badge 7:
+  - Dragon Tamers en Cooltrainers (lv 46–53) en een verzekeringsexpert die alle drakenclaims afkeurt ("act of God").
+  - In de Dragon's Den leidt een waterval (badge 8) naar drakenwachter **GERALD** en een slapende Dragonite. Gerald heeft een team tot lv 57 met ace Dragonite en geeft een Expert Belt.
+  - Wilde tabellen vol zeldzame draken: Duraludon, Garchomp, Salamence en Dragapult als 1%.
+- WICK en GERALD staan in de Battle Stadium-pool.
+- Trainers 1174–1185 (vrij: 1150–1169 en 1186–1199; `MAX_TRAINERS_COUNT` niet ophogen, dat verschuift de systeemflags). Flags `FLAG_GROUNDED(100–110)`.
+- Getest: Beacon Isle binnenlopen (deur naar 1F) en het gevecht met GERALD (start in de bovenhal van de Den). De lichtbundel zelf is nog niet in beeld gecontroleerd.

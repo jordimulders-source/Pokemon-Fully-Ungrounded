@@ -17552,3 +17552,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **Gerald is weg** (trainer, Stadium-pool, omroepzin). De Dragon Tamers, de verzekeringsexpert en de drakentabellen blijven.
 - **Placeholders:** Reshiram, Zekrom en Kyurem vechten op de Kanto Legendary-muziek met bestaande transities; Jordi bedenkt eigen intro's en thema's.
 - Flags `FLAG_GROUNDED(430–444)`; trainers 1060–1067 (1180–1185 zijn weer vrij).
+
+### [v0.9.164] - Extra dungeons: Granite-kristalgrot, Cave of Origin dieper, Shoal Cave Frozen Depths, luchtbel-grot Route 128
+- **Granite Cave – Crystal Grotto:** ladder in B2F (25,16) naar een kristalgrot; Carbink 20%, lv 14–19.
+- **Cave of Origin dieper:** na de Hall of Fame verschijnt een ladder in B1F (13,4) naar drie diepere lagen (hergebruik van de ongebruikte Ruby/Sapphire-kaarten), met Primal-lore op bordjes; lv 52–58.
+- **Shoal Cave – Frozen Depths:** ladder in de Ice Room (17,28) naar een ijzige onderlaag (Cetoddle, Bergmite e.d.), lv 34–43.
+- **Route 128 – Bubble Grotto:** duikgat in Underwater Route 128 (27,19) naar een luchtbel-grot met alleen water- en visencounters en een Relicanth-kluizenaar.
+- Flags `FLAG_GROUNDED(470–483)`, geen trainers; bouwscript `tools/grounded/maptools/dungeon_extra.py`.

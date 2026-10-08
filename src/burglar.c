@@ -83,18 +83,16 @@ static u32 CountBadges(void)
     return n;
 }
 
+// Eén team per badge (TRAINER_BURGLAR_1 = 1 badge … _8 = 8 badges) en een eigen team na de Hall of Fame (_9).
+// Zonder badge komt hij niet (Burglar_OnMapEnter).
 static u32 GetTier(void)
 {
     u32 badges = CountBadges();
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
-        return 4;
-    if (badges >= 7)
-        return 3;
-    if (badges >= 5)
-        return 2;
-    if (badges >= 3)
-        return 1;
-    return 0;
+        return 8;
+    if (badges == 0)
+        return 0;
+    return badges > 8 ? 7 : badges - 1;
 }
 
 #define BURGLAR_GUARANTEE_EVERY 2  // na badge 2, 4 en 6 een gegarandeerd bezoek (max. 3)
@@ -244,7 +242,7 @@ static void StartMovement(u8 localId, const u8 *script)
     ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, script);
 }
 
-// VAR_0x8004 = stad, 0x8005/0x8006 = deur, 0x8007 = sterkte (0-4), 0x8008 = aantal keer verslagen.
+// VAR_0x8004 = stad, 0x8005/0x8006 = deur, 0x8007 = sterkte (0-7 = badge 1-8, 8 = na de HoF), 0x8008 = aantal keer verslagen.
 void Burglar_SetupVars(void)
 {
     s32 house = sSceneHouse;

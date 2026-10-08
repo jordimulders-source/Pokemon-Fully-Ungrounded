@@ -54,25 +54,31 @@ Music: Male
 Back Pic: Wally
 AI: AI_FLAG_ACE_POKEMON
 
-Oranguru
+Primeape
 Level: 28
+Ability: Defiant
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Instruct
+- Rage Fist
+- Low Sweep
+- Rock Tomb
+- Seismic Toss
 
 Dondozo
 Level: 28
+Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Water Pulse
+- Body Slam
 - Tickle
-- Soak
-- Noble Roar
+- Curse
 
 Kirlia
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Calm Mind
 - Confusion
-- Screech
-- Skill Swap
+- Magical Leaf
+- Draining Kiss
 
 === PARTNER_KECCLES ===
 Name: KECCLES

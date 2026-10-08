@@ -994,11 +994,11 @@
 #define TRAINER_STADIUM_N                   977
 #define TRAINER_STADIUM_GHETSIS             978
 
-#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden (1-2 badges)
-#define TRAINER_BURGLAR_2                   980 // 3-4 badges
-#define TRAINER_BURGLAR_3                   981 // 5-6 badges
-#define TRAINER_BURGLAR_4                   982 // 7-8 badges
-#define TRAINER_BURGLAR_5                   983 // na de Elite Four
+#define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden, 1 badge (_2-_8: 2-8 badges, _9: na de HoF)
+#define TRAINER_BURGLAR_2                   980 // 2 badges
+#define TRAINER_BURGLAR_3                   981 // 3 badges
+#define TRAINER_BURGLAR_4                   982 // 4 badges
+#define TRAINER_BURGLAR_5                   983 // 5 badges
 
 #define TRAINER_JUNGLE_BRAM                 984 // Project Grounded: Fortree Jungle
 #define TRAINER_JUNGLE_MAYA                 985 // Project Grounded: Fortree Jungle
@@ -1114,16 +1114,24 @@
 #define TRAINER_WALLY_MOSSDEEP              1135 // Project Grounded: extra gevecht (MossdeepCity)
 #define TRAINER_ZINNIA_ROUTE_114            1136 // Project Grounded: extra gevecht (Route114)
 #define TRAINER_ZINNIA_ROUTE_119            1137 // Project Grounded: extra gevecht (Route119)
-#define TRAINER_DAVE_ROUTE_109              1138 // Project Grounded: extra gevecht (Route109)
-#define TRAINER_DAVE_ROUTE_118              1139 // Project Grounded: extra gevecht (Route118)
+#define TRAINER_DAVE_ROUTE_111              1138 // Project Grounded: extra gevecht (Route111)
+#define TRAINER_DAVE_PETALBURG              1139 // Project Grounded: extra gevecht (PetalburgCity)
 #define TRAINER_MITCH_ROUTE_110             1140 // Project Grounded: extra gevecht (Route110)
 #define TRAINER_MITCH_ROUTE_121             1141 // Project Grounded: extra gevecht (Route121)
 #define TRAINER_SICKBLIK_ROUTE_104          1142 // Project Grounded: extra gevecht (Route104)
 #define TRAINER_SICKBLIK_ROUTE_113          1143 // Project Grounded: extra gevecht (Route113)
 #define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
+#define TRAINER_DAVE_SOOTOPOLIS             1145 // Project Grounded: extra gevecht (SootopolisCity)
 // }
 
-#define TRAINERS_COUNT                      1145
+// burglar 6-9 (Project Grounded: Burglar per badge, zie src/burglar.c GetTier)
+#define TRAINER_BURGLAR_6                   1146 // 6 badges
+#define TRAINER_BURGLAR_7                   1147 // 7 badges
+#define TRAINER_BURGLAR_8                   1148 // 8 badges
+#define TRAINER_BURGLAR_9                   1149 // na de Elite Four
+// }
+
+#define TRAINERS_COUNT                      1150
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

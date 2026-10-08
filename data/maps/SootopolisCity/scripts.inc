@@ -35,6 +35,7 @@ SootopolisCity_OnTransition:
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	setflag FLAG_HIDE_SOOTOPOLIS_KECCLES
 	setflag FLAG_HIDE_SOOTOPOLIS_TROPIUS
+	setflag FLAG_TEMP_9  @ Project Grounded: Dave verschijnt pas in de scène na Rayquaza
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
@@ -1689,6 +1690,7 @@ SootopolisCity_EventScript_KecclesScene::
 	special StorePlayerCoordsInVars
 	goto_if_ne VAR_0x8004, 31, SootopolisCity_EventScript_KecclesSceneReposition
 	goto_if_ne VAR_0x8005, 35, SootopolisCity_EventScript_KecclesSceneReposition
+	call SootopolisCity_EventScript_EF_DaveSootopolisScene  @ Dave tikt je eerst aan (extra_fights.py)
 	turnobject LOCALID_PLAYER, DIR_EAST
 	turnobject LOCALID_SOOTOPOLIS_MAXIE, DIR_WEST
 	turnobject LOCALID_SOOTOPOLIS_ARCHIE, DIR_WEST
@@ -1985,3 +1987,47 @@ SootopolisCity_Text_KecclesThanks:
 	.string "Perhaps we will meet again,\n"
 	.string "{PLAYER}. You may not see me.\l"
 	.string "But I will be there.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+@ ingevoegd aan het begin van de scène met Archie, Maxie en Keccles; Dave staat rechts van de speler
+SootopolisCity_EventScript_EF_DaveSootopolisScene::
+	goto_if_defeated TRAINER_DAVE_SOOTOPOLIS, SootopolisCity_EventScript_EF_DaveSootopolisSceneEnd
+	clearflag FLAG_TEMP_9
+	addobject LOCALID_EF_DAVE_SOOTOPOLIS
+	turnobject LOCALID_EF_DAVE_SOOTOPOLIS, DIR_WEST
+	turnobject LOCALID_PLAYER, DIR_EAST
+	playse SE_PIN
+	applymovement LOCALID_EF_DAVE_SOOTOPOLIS, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SootopolisCity_Text_EF_DaveSootopolisIntro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_DAVE_SOOTOPOLIS, SootopolisCity_Text_EF_DaveSootopolisDefeat
+	msgbox SootopolisCity_Text_EF_DaveSootopolisPostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_EF_DAVE_SOOTOPOLIS
+	fadescreenswapbuffers FADE_FROM_BLACK
+SootopolisCity_EventScript_EF_DaveSootopolisSceneEnd::
+	return
+
+SootopolisCity_EventScript_EF_DaveSootopolis::
+	msgbox SootopolisCity_Text_EF_DaveSootopolisPostBattle, MSGBOX_NPC
+	end
+
+SootopolisCity_Text_EF_DaveSootopolisIntro:
+	.string "DAVE: Just scored a hattrick,\n"
+	.string "leftie, rightie and a header.\p"
+	.string "Doesn't get more pure than that!\n"
+	.string "All top bins as well.\p"
+	.string "Winkelhaak BV$"
+
+SootopolisCity_Text_EF_DaveSootopolisDefeat:
+	.string "{PLAYER}, more....$"
+
+SootopolisCity_Text_EF_DaveSootopolisPostBattle:
+	.string "DAVE: A sky dragon? Mate, I've been\n"
+	.string "called worse after a derby.\p"
+	.string "Carry on. I'm off to the\n"
+	.string "VICTORY ROAD. Big match.$"
+
+@ }

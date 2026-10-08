@@ -1,7 +1,7 @@
 @ Project Grounded: de Burglar (SIMON) die af en toe uit een huis in de steden komt. Gestart door
 @ Burglar_TryTriggerOnStep (src/burglar.c) als de speler vlak voor het huis loopt. Teksten: data/text/burglar.inc.
 @ VAR_0x8004 = stad (0 Mauville, 1 Slateport, 2 Lilycove, 3 Rustboro, 4 Verdanturf, 5 Fallarbor, 6 Petalburg),
-@ VAR_0x8005/0x8006 = deur, VAR_0x8007 = sterkte (0-4), VAR_0x8008 = aantal keer al verslagen.
+@ VAR_0x8005/0x8006 = deur, VAR_0x8007 = sterkte (0-7 = badge 1-8, 8 = na de Hall of Fame), VAR_0x8008 = aantal keer al verslagen.
 
 Burglar_EventScript_Scene::
 	lockall
@@ -32,7 +32,11 @@ Burglar_EventScript_Scene::
 	case 1, Burglar_EventScript_Battle2
 	case 2, Burglar_EventScript_Battle3
 	case 3, Burglar_EventScript_Battle4
-	goto Burglar_EventScript_Battle5
+	case 4, Burglar_EventScript_Battle5
+	case 5, Burglar_EventScript_Battle6
+	case 6, Burglar_EventScript_Battle7
+	case 7, Burglar_EventScript_Battle8
+	goto Burglar_EventScript_Battle9
 	end
 
 Burglar_EventScript_Battle1::
@@ -62,6 +66,30 @@ Burglar_EventScript_Battle4::
 Burglar_EventScript_Battle5::
 	cleartrainerflag TRAINER_BURGLAR_5
 	trainerbattle_no_intro TRAINER_BURGLAR_5, Burglar_Text_Defeat
+	goto Burglar_EventScript_AfterBattle
+	end
+
+Burglar_EventScript_Battle6::
+	cleartrainerflag TRAINER_BURGLAR_6
+	trainerbattle_no_intro TRAINER_BURGLAR_6, Burglar_Text_Defeat
+	goto Burglar_EventScript_AfterBattle
+	end
+
+Burglar_EventScript_Battle7::
+	cleartrainerflag TRAINER_BURGLAR_7
+	trainerbattle_no_intro TRAINER_BURGLAR_7, Burglar_Text_Defeat
+	goto Burglar_EventScript_AfterBattle
+	end
+
+Burglar_EventScript_Battle8::
+	cleartrainerflag TRAINER_BURGLAR_8
+	trainerbattle_no_intro TRAINER_BURGLAR_8, Burglar_Text_Defeat
+	goto Burglar_EventScript_AfterBattle
+	end
+
+Burglar_EventScript_Battle9::
+	cleartrainerflag TRAINER_BURGLAR_9
+	trainerbattle_no_intro TRAINER_BURGLAR_9, Burglar_Text_Defeat
 	goto Burglar_EventScript_AfterBattle
 	end
 
@@ -98,7 +126,7 @@ Burglar_EventScript_AfterBattle::
 	special Burglar_SetupVars
 	fadedefaultbgm
 	msgbox Burglar_Text_Dropped, MSGBOX_DEFAULT
-	goto_if_eq VAR_0x8007, 4, Burglar_EventScript_BigNugget
+	goto_if_eq VAR_0x8007, 8, Burglar_EventScript_BigNugget
 	giveitem ITEM_NUGGET
 	goto Burglar_EventScript_Thanks
 	end

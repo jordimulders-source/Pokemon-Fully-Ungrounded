@@ -19258,53 +19258,40 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Purple
 
-Ralts
+Darumaka
 Level: 22
+Ability: Hustle
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Teleport
+- Fire Fang
+- Headbutt
+- Bite
+- Work Up
+
+Frigibax
+Level: 22
+Ability: Thermal Exchange
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Dragon Breath
+- Icy Wind
+- Bite
+- Leer
+
+Mankey
+Level: 22
+Ability: Vital Spirit
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Karate Chop
+- Low Kick
+- Fury Swipes
+- Focus Energy
+
+Kirlia @ Oran Berry
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Confusion
-- Growl
-- Thief
-
-Smeargle
-Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Nasty Plot
-- Heal Pulse
-- Sheer Cold
-- Explosion
-
-Gyarados
-Level: 25
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Splash
-- Hyper Beam
-- Whirlpool
-- Dragon cheer
-
-Shedinja @ Sitrus Berry
-Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Shadow Ball
-- Bug Buzz
-- Giga Drain
-- Trick
-
-Cryogonal
-Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Ice Shard
-- Avalanche
-- Giga Impact
-- Icicle Spear
-
-Darmanitan
-Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Flamethrower
-- Hyper Beam
-- Solar Beam
-- Focus Blast
+- Magical Leaf
+- Disarming Voice
+- Double Team
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -25718,50 +25705,49 @@ Double Battle: No
 AI: AI_FLAG_ACE_POKEMON
 Mugshot: Purple
 
-Lunatone
+Darumaka
 Level: 26
+Ability: Hustle
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Confusion
-- Rock Throw
-- Rock Smash
-- Rain Dance
+- Fire Fang
+- Headbutt
+- Rock Tomb
+- Incinerate
 
-Solrock
+Dondozo
 Level: 26
+Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Ember
-- Rock Throw
-- Sunny Day
-- Confusion
+- Water Pulse
+- Body Slam
+- Tickle
+- Curse
 
-Gyarados
+Frigibax
 Level: 26
+Ability: Thermal Exchange
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Surf
-- Hyper Beam
-- Strength
-- Leer
+- Dragon Breath
+- Ice Fang
+- Icy Wind
+- Bite
 
-Primeape
+Mankey
 Level: 26
+Ability: Defiant
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Rage Fist
+- Low Sweep
 - Vacuum Wave
-- Rage
-- Thrash
-- Leer
+- Seismic Toss
 
-Milotic
-Level: 26
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Splash
-
-Kirlia
+Kirlia @ Oran Berry
 Level: 28
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Calm Mind
 - Confusion
-- Screech
-- Skill Swap
+- Magical Leaf
+- Draining Kiss
 
 === TRAINER_TABITHA_MT_CHIMNEY_TAG ===
 Name: TABITHA
@@ -33274,8 +33260,8 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Koffing
-Level: 19
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Level: 17
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Ability: Air Pollution
 - Smokescreen
 - Clear Smog
@@ -33283,8 +33269,8 @@ Ability: Air Pollution
 - Assurance
 
 Vulpix
-Level: 19
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Level: 17
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Ability: Flash Fire
 - Ember
 - Quick Attack
@@ -33292,8 +33278,8 @@ Ability: Flash Fire
 - Hex
 
 Growlithe @ Oran Berry
-Level: 20
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Ability: Intimidate
 - Bite
 - Flame Wheel
@@ -33307,42 +33293,42 @@ Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Koffing
-Level: 28
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Level: 21
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Ability: Air Pollution
-- Will-O-Wisp
 - Sludge
+- Smokescreen
 - Thief
-- Destiny Bond
+- Assurance
 
-Ponyta
-Level: 28
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Vulpix
+Level: 21
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Ability: Flash Fire
-- Flame Charge
-- Stomp
-- Low Kick
-- Agility
+- Incinerate
+- Quick Attack
+- Confuse Ray
+- Hex
 
-Charmeleon @ Charcoal
-Level: 28
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Charmeleon
+Level: 21
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Ability: Blaze
 - Fire Fang
 - Dragon Breath
-- Slash
 - Smokescreen
+- Thief
 
-Growlithe @ Sitrus Berry
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Growlithe @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Ability: Intimidate
 - Fire Fang
-- Crunch
-- Wild Charge
+- Bite
+- Howl
 - Thief
 
 === TRAINER_BURGLAR_3 ===
@@ -33354,50 +33340,50 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Weezing
-Level: 40
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Koffing
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Air Pollution
+- Sludge
 - Will-O-Wisp
-- Sludge Bomb
-- Pain Split
 - Thief
+- Destiny Bond
 
-Muk @ Black Sludge
-Level: 40
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Sticky Hold
-- Knock Off
-- Poison Jab
-- Shadow Sneak
-- Curse
-
-Rapidash
-Level: 40
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Vulpix
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Flash Fire
-- Flare Blitz
-- High Horsepower
-- Wild Charge
-- Morning Sun
-
-Magmar
-Level: 40
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-Ability: Flame Body
-- Flamethrower
-- Thunder Punch
+- Incinerate
+- Hex
 - Confuse Ray
-- Thief
+- Quick Attack
 
-Arcanine @ Sitrus Berry
-Level: 41
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Charmeleon
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Blaze
+- Fire Fang
+- Dragon Breath
+- Slash
+- Smokescreen
+
+Grimer_Alola
+Level: 25
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Poison Touch
+- Poison Fang
+- Bite
+- Knock Off
+- Disable
+
+Growlithe @ Sitrus Berry
+Level: 27
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
+- Fire Fang
 - Crunch
-- Play Rough
+- Take Down
+- Thief
 
 === TRAINER_BURGLAR_4 ===
 Name: SIMON
@@ -33405,62 +33391,63 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
+Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Weezing @ Rocky Helmet
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Weezing
+Level: 30
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 Ability: Air Pollution
 - Will-O-Wisp
 - Sludge Bomb
-- Pain Split
-- Toxic Spikes
-
-Muk @ Black Sludge
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Sticky Hold
-- Knock Off
-- Gunk Shot
-- Shadow Sneak
-- Drain Punch
-
-Rapidash
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Flash Fire
-- Flare Blitz
-- High Horsepower
-- Wild Charge
 - Thief
+- Destiny Bond
 
-Ninetales @ Heat Rock
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Drought
+Ninetales
+Level: 30
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+Ability: Flash Fire
 - Flamethrower
-- Solar Beam
-- Nasty Plot
+- Hex
+- Confuse Ray
 - Extrasensory
 
-Charizard @ Charcoal
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Charmeleon @ Charcoal
+Level: 30
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 Ability: Blaze
-- Flamethrower
-- Air Slash
-- Dragon Pulse
-- Roost
+- Fire Fang
+- Dragon Claw
+- Slash
+- Smokescreen
+
+Muk_Alola
+Level: 30
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+Ability: Poison Touch
+- Knock Off
+- Poison Jab
+- Shadow Sneak
+- Protect
+
+Magmar
+Level: 30
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+Ability: Flame Body
+- Fire Punch
+- Thunder Punch
+- Confuse Ray
+- Thief
 
 Arcanine @ Sitrus Berry
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 32
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 Ability: Intimidate
-- Flare Blitz
-- Extreme Speed
+- Fire Fang
 - Crunch
-- Close Combat
+- Extreme Speed
+- Wild Charge
 
 === TRAINER_BURGLAR_5 ===
 Name: SIMON
@@ -33468,62 +33455,63 @@ Class: Burglar
 Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
+Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Weezing @ Rocky Helmet
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Weezing
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Air Pollution
 - Will-O-Wisp
 - Sludge Bomb
 - Pain Split
-- Toxic Spikes
+- Thief
 
-Muk_Alola @ Leftovers
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Gluttony
+Ninetales
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Flash Fire
+- Flamethrower
+- Extrasensory
+- Confuse Ray
+- Will-O-Wisp
+
+Charizard @ Charcoal
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Blaze
+- Flamethrower
+- Air Slash
+- Dragon Claw
+- Thief
+
+Muk_Alola @ Black Sludge
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Poison Touch
 - Knock Off
 - Poison Jab
 - Shadow Sneak
-- Drain Punch
+- Curse
 
-Magmortar @ Expert Belt
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Magmar
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Flame Body
 - Flamethrower
-- Thunderbolt
-- Focus Blast
-- Psychic
-
-Ninetales @ Heat Rock
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Drought
-- Flamethrower
-- Solar Beam
-- Nasty Plot
-- Extrasensory
+- Thunder Punch
+- Confuse Ray
+- Thief
 
 Arcanine @ Sitrus Berry
-Level: 67
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 39
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Intimidate
 - Flare Blitz
 - Extreme Speed
 - Crunch
-- Close Combat
-
-Charizard @ Charizardite Y
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Blaze
-- Flamethrower
-- Solar Beam
-- Focus Blast
-- Roost
+- Wild Charge
 
 === TRAINER_JUNGLE_BRAM ===
 Name: BRAM
@@ -37340,55 +37328,58 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Purple
 
-Shedinja @ Focus Sash
+Darmanitan @ Charcoal
 Level: 42
+Ability: Sheer Force
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shadow Sneak
-- X-Scissor
-- Will-O-Wisp
-- Protect
+- Flare Blitz
+- Rock Slide
+- Earthquake
+- U-Turn
 
-Banette
+Dondozo @ Leftovers
 Level: 42
-Ability: Prankster
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shadow Claw
-- Knock Off
-- Thunder Wave
-- Destiny Bond
-
-Gourgeist
-Level: 42
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Phantom Force
-- Seed Bomb
-- Leech Seed
-- Trick-or-Treat
-
-Gyarados
-Level: 42
+Ability: Unaware
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Waterfall
-- Crunch
-- Dragon Dance
-- Scary Face
+- Curse
+- Rest
+- Sleep Talk
 
-Annihilape
+Arctibax
 Level: 42
+Ability: Thermal Exchange
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Icicle Crash
+- Dragon Claw
+- Ice Shard
+- Dragon Dance
+
+Annihilape @ Chesto Berry
+Level: 42
+Ability: Defiant
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rage Fist
 - Drain Punch
 - Bulk Up
-- Rock Slide
+- Rest
+
+Flutter Mane
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Mystical Fire
+- Confuse Ray
 
 Gallade @ Sitrus Berry
 Level: 44
 Ability: Sharpness
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psycho Cut
-- Night Slash
-- Shadow Sneak
+- Sacred Sword
 - Leaf Blade
+- Night Slash
 
 === TRAINER_WALLY_MOSSDEEP ===
 Name: WALLY
@@ -37401,47 +37392,49 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Purple
 
-Solrock
-Level: 47
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Zen Headbutt
-- Rock Slide
-- Morning Sun
-- Sunny Day
-
-Lunatone
-Level: 47
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psychic
-- Moonblast
-- Power Gem
-- Calm Mind
-
-Bronzong
-Level: 47
-Ability: Heatproof
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Gyro Ball
-- Psychic
-- Trick Room
-- Stealth Rock
-
 Darmanitan @ Charcoal
 Level: 47
 Ability: Zen Mode
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Flare Blitz
-- Psychic
+- Zen Headbutt
 - Rock Slide
 - U-Turn
 
+Dondozo @ Leftovers
+Level: 47
+Ability: Unaware
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Curse
+- Rest
+- Sleep Talk
+
 Arctibax
 Level: 47
+Ability: Thermal Exchange
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Icicle Crash
 - Dragon Claw
-- Ice Shard
+- Zen Headbutt
 - Dragon Dance
+
+Annihilape @ Chesto Berry
+Level: 47
+Ability: Defiant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Rest
+
+Flutter Mane
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Moonblast
+- Psyshock
+- Mystical Fire
 
 Gallade @ Sitrus Berry
 Level: 49
@@ -37547,7 +37540,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Protect
 - Iron Defense
 
-=== TRAINER_DAVE_ROUTE_109 ===
+=== TRAINER_DAVE_ROUTE_111 ===
 Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -37558,38 +37551,38 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: Blue
 
 Gastly
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Hex
+- Night Shade
 - Confuse Ray
-- Lick
-- Mean Look
+- Hypnosis
 
 Charcadet
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Flame Charge
-- Clear Smog
 - Astonish
-- Leer
+- Clear Smog
+- Will-O-Wisp
 
 Gible
-Level: 19
+Level: 22
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Dragon Breath
-- Sand Tomb
 - Bulldoze
-- Sand Attack
+- Take Down
+- Sand Tomb
 
 Pawniard @ Oran Berry
-Level: 20
+Level: 23
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Metal Claw
-- Fury Cutter
 - Assurance
+- Fury Cutter
 - Scary Face
 
-=== TRAINER_DAVE_ROUTE_118 ===
+=== TRAINER_DAVE_PETALBURG ===
 Name: Dave
 Class: Cooltrainer
 Pic: Cooltrainer M
@@ -37601,15 +37594,15 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Blue
 
 Haunter
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Ball
 - Sludge Bomb
 - Hypnosis
-- Dream Eater
+- Hex
 
 Ceruledge
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bitter Blade
 - Shadow Claw
@@ -37617,23 +37610,23 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Swords Dance
 
 Gliscor
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Earthquake
+- Dig
 - Acrobatics
 - Knock Off
 - Toxic
 
 Gabite
-Level: 33
+Level: 31
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dragon Claw
-- Dig
+- Bulldoze
 - Slash
 - Sandstorm
 
-Bisharp @ Sitrus Berry
-Level: 34
+Pawniard @ Sitrus Berry
+Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Iron Head
 - Night Slash
@@ -37870,4 +37863,316 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psybeam
 - Encore
 
+=== TRAINER_DAVE_SOOTOPOLIS ===
+Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Blue
+
+Gengar
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Hypnosis
+
+Ceruledge @ Life Orb
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bitter Blade
+- Poltergeist
+- Psycho Cut
+- Swords Dance
+
+Gliscor @ Toxic Orb
+Level: 48
+Ability: Poison Heal
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earthquake
+- Acrobatics
+- Knock Off
+- Swords Dance
+
+Garchomp
+Level: 48
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earthquake
+- Dragon Claw
+- Stone Edge
+- Swords Dance
+
+Kingambit @ Sitrus Berry
+Level: 49
+Ability: Supreme Overlord
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
 /* --- einde extra_fights --- */
+
+/* --- burglar 6-9 --- */
+
+=== TRAINER_BURGLAR_6 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Weezing @ Rocky Helmet
+Level: 43
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Ninetales @ Heat Rock
+Level: 43
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Extrasensory
+- Will-O-Wisp
+
+Charizard @ Charcoal
+Level: 43
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Blaze
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Roost
+
+Muk_Alola @ Black Sludge
+Level: 43
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Poison Touch
+- Knock Off
+- Poison Jab
+- Shadow Sneak
+- Drain Punch
+
+Magmar
+Level: 43
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Confuse Ray
+- Thief
+
+Arcanine @ Sitrus Berry
+Level: 45
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Play Rough
+
+=== TRAINER_BURGLAR_7 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Items: Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Rocky Helmet
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Ninetales @ Heat Rock
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Nasty Plot
+- Extrasensory
+
+Charizard @ Charcoal
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Blaze
+- Flamethrower
+- Air Slash
+- Dragon Pulse
+- Roost
+
+Muk_Alola @ Black Sludge
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Poison Touch
+- Knock Off
+- Gunk Shot
+- Shadow Sneak
+- Drain Punch
+
+Magmortar @ Expert Belt
+Level: 49
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Thief
+
+Arcanine @ Sitrus Berry
+Level: 51
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Close Combat
+
+=== TRAINER_BURGLAR_8 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Rocky Helmet
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Ninetales @ Heat Rock
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Nasty Plot
+- Extrasensory
+
+Charizard @ Charcoal
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Solar Power
+- Flamethrower
+- Solar Beam
+- Focus Blast
+- Roost
+
+Muk_Alola @ Figy Berry
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Gluttony
+- Knock Off
+- Gunk Shot
+- Shadow Sneak
+- Drain Punch
+
+Magmortar @ Expert Belt
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Psychic
+
+Arcanine @ Sitrus Berry
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Close Combat
+
+=== TRAINER_BURGLAR_9 ===
+Name: SIMON
+Class: Burglar
+Pic: Guest Burglar
+Gender: Male
+Music: Suspicious
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Weezing @ Rocky Helmet
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Air Pollution
+- Will-O-Wisp
+- Sludge Bomb
+- Pain Split
+- Toxic Spikes
+
+Muk_Alola @ Leftovers
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Gluttony
+- Knock Off
+- Poison Jab
+- Shadow Sneak
+- Drain Punch
+
+Magmortar @ Expert Belt
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flame Body
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Psychic
+
+Ninetales @ Heat Rock
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Drought
+- Flamethrower
+- Solar Beam
+- Nasty Plot
+- Extrasensory
+
+Arcanine @ Sitrus Berry
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Intimidate
+- Flare Blitz
+- Extreme Speed
+- Crunch
+- Close Combat
+
+Charizard @ Charizardite Y
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Blaze
+- Flamethrower
+- Solar Beam
+- Focus Blast
+- Roost
+/* --- einde burglar 6-9 --- */

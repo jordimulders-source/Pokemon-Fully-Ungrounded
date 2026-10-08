@@ -166,3 +166,25 @@ Route113_Text_GlassWorkshopSign:
 	.string "“Turning volcanic ash into glass items.\l"
 	.string "And lungs into ash.”$"
 
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route113_EventScript_EF_SickblikRoute113::
+	trainerbattle_single TRAINER_SICKBLIK_ROUTE_113, Route113_Text_EF_SickblikRoute113Intro, Route113_Text_EF_SickblikRoute113Defeat
+	msgbox Route113_Text_EF_SickblikRoute113PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route113_Text_EF_SickblikRoute113Intro:
+	.string "SICKBLIK: Still playing? Respect.\p"
+	.string "I put ash on this route so the\n"
+	.string "sprites look moody. Cinematic.\p"
+	.string "I also balanced my own team.\n"
+	.string "Totally fair. Trust me.$"
+
+Route113_Text_EF_SickblikRoute113Defeat:
+	.string "Noted. Nerfing you next patch.$"
+
+Route113_Text_EF_SickblikRoute113PostBattle:
+	.string "SICKBLIK: See you near the end.\p"
+	.string "I'll be the guy with a hotpot\n"
+	.string "and a problem.$"
+
+@ }

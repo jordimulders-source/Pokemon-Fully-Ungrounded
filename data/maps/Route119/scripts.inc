@@ -641,3 +641,29 @@ Route119_Text_MimiPostBattle:
 	.string "…\p"
 	.string "(the costume slowly turns\n"
 	.string "to look at you)$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route119_EventScript_EF_ZinniaRoute119::
+	trainerbattle_single TRAINER_ZINNIA_ROUTE_119, Route119_Text_EF_ZinniaRoute119Intro, Route119_Text_EF_ZinniaRoute119Defeat
+	msgbox Route119_Text_EF_ZinniaRoute119PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route119_Text_EF_ZinniaRoute119Intro:
+	.string "ZINNIA: You again. Good.\p"
+	.string "The clouds here feel wrong.\n"
+	.string "Something up there is ancient,\l"
+	.string "green and extremely bored.\p"
+	.string "Let's make some noise so it\n"
+	.string "notices us. Aster, sing!$"
+
+Route119_Text_EF_ZinniaRoute119Defeat:
+	.string "Aster sang flat. Aster always\n"
+	.string "sings flat. I love her anyway.$"
+
+Route119_Text_EF_ZinniaRoute119PostBattle:
+	.string "ZINNIA: Keep climbing. The sky\n"
+	.string "keeps its own score.\p"
+	.string "So do I. You're one up.\n"
+	.string "I'll take it back at the top.$"
+
+@ }

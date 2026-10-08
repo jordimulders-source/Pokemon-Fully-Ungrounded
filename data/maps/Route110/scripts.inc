@@ -988,3 +988,26 @@ Route110_Text_PillarHatch:
 	.string "support pillar of the CYCLING ROAD.\p"
 	.string "Somebody wrote “DO NOT” on it, and then\n"
 	.string "forgot the rest.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route110_EventScript_EF_MitchRoute110::
+	trainerbattle_single TRAINER_MITCH_ROUTE_110, Route110_Text_EF_MitchRoute110Intro, Route110_Text_EF_MitchRoute110Defeat
+	msgbox Route110_Text_EF_MitchRoute110PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route110_Text_EF_MitchRoute110Intro:
+	.string "MITCH: Oh no. A person.\p"
+	.string "I'm practising for a DJ set under\n"
+	.string "the CYCLING ROAD. People will come.\p"
+	.string "Please don't look at me while we\n"
+	.string "battle. Look at my drops.$"
+
+Route110_Text_EF_MitchRoute110Defeat:
+	.string "The bass dropped. So did I.$"
+
+Route110_Text_EF_MitchRoute110PostBattle:
+	.string "MITCH: 174 beats per minute.\n"
+	.string "That's my heart rate right now.\l"
+	.string "Coincidence.$"
+
+@ }

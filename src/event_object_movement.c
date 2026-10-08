@@ -579,6 +579,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA}, // Project Grounded (strandresort)
     {gObjectEventPal_Turd,                  OBJ_EVENT_PAL_TAG_TURD}, // Project Grounded (strandresort)
     {gObjectEventPal_StoneStatue,           OBJ_EVENT_PAL_TAG_STONE_STATUE}, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    {gObjectEventPal_ShyGuyRed,             OBJ_EVENT_PAL_TAG_SHY_GUY_RED}, // Project Grounded: Shy Guy
+    {gObjectEventPal_ShyGuyGreen,           OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN}, // Project Grounded: Shy Guy
+    {gObjectEventPal_ShyGuyPink,            OBJ_EVENT_PAL_TAG_SHY_GUY_PINK}, // Project Grounded: Shy Guy
+    {gObjectEventPal_ShyGuyBlack,           OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK}, // Project Grounded: Shy Guy
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoC,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_C}, // Project Grounded (FRLG)
     {gObjectEventPal_KantoD,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_D}, // Project Grounded (FRLG)

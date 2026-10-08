@@ -5468,3 +5468,83 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini = {
     .images = sPicTable_StatueTapuFini,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// Project Grounded: Shy Guy (red), 32x32 (figuur 18-19 px breed); zelfde frames, eigen palet
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyRed = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHY_GUY_RED,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShyGuy,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Shy Guy (green), 32x32 (figuur 18-19 px breed); zelfde frames, eigen palet
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyGreen = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShyGuy,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Shy Guy (pink), 32x32 (figuur 18-19 px breed); zelfde frames, eigen palet
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyPink = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHY_GUY_PINK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShyGuy,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Shy Guy (black), 32x32 (figuur 18-19 px breed); zelfde frames, eigen palet
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyBlack = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ShyGuy,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

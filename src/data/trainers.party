@@ -37324,3 +37324,548 @@ Level: 46
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 /* --- einde zee_vulling_2 --- */
+
+/* --- extra_fights (tools/grounded/maptools/extra_fights.py) --- */
+
+=== TRAINER_WALLY_MT_PYRE ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Purple
+
+Shedinja @ Focus Sash
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Sneak
+- X-Scissor
+- Will-O-Wisp
+- Protect
+
+Banette
+Level: 42
+Ability: Prankster
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Claw
+- Knock Off
+- Thunder Wave
+- Destiny Bond
+
+Gourgeist
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Phantom Force
+- Seed Bomb
+- Leech Seed
+- Trick-or-Treat
+
+Gyarados
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Waterfall
+- Crunch
+- Dragon Dance
+- Scary Face
+
+Annihilape
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Rock Slide
+
+Gallade @ Sitrus Berry
+Level: 44
+Ability: Sharpness
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psycho Cut
+- Night Slash
+- Shadow Sneak
+- Leaf Blade
+
+=== TRAINER_WALLY_MOSSDEEP ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Purple
+
+Solrock
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Zen Headbutt
+- Rock Slide
+- Morning Sun
+- Sunny Day
+
+Lunatone
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic
+- Moonblast
+- Power Gem
+- Calm Mind
+
+Bronzong
+Level: 47
+Ability: Heatproof
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Gyro Ball
+- Psychic
+- Trick Room
+- Stealth Rock
+
+Darmanitan @ Charcoal
+Level: 47
+Ability: Zen Mode
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flare Blitz
+- Psychic
+- Rock Slide
+- U-Turn
+
+Arctibax
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Icicle Crash
+- Dragon Claw
+- Ice Shard
+- Dragon Dance
+
+Gallade @ Sitrus Berry
+Level: 49
+Ability: Sharpness
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psycho Cut
+- Sacred Sword
+- Leaf Blade
+- Swords Dance
+
+=== TRAINER_ZINNIA_ROUTE_114 ===
+Name: ZINNIA
+Class: Lorekeeper
+Pic: Zinnia
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Green
+
+Aster (Whismur) @ Eviolite
+Level: 25
+Ability: Soundproof
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Uproar
+- Echoed Voice
+- Ember
+- Astonish
+
+Swablu
+Level: 25
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Dragon Breath
+- Fairy Wind
+- Sing
+- Round
+
+Noibat
+Level: 25
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Air Cutter
+- Bite
+- Supersonic
+- Screech
+
+Bagon @ Dragon Fang
+Level: 27
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Dragon Breath
+- Headbutt
+- Leer
+- Focus Energy
+
+=== TRAINER_ZINNIA_ROUTE_119 ===
+Name: ZINNIA
+Class: Lorekeeper
+Pic: Zinnia
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Green
+
+Aster (Whismur) @ Eviolite
+Level: 36
+Ability: Soundproof
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hyper Voice
+- Fire Punch
+- Ice Punch
+- Shadow Ball
+
+Altaria
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Roost
+
+Noibat
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Air Slash
+- Dragon Pulse
+- Super Fang
+- Tailwind
+
+Tyrunt
+Level: 36
+Ability: Strong Jaw
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Crunch
+- Dragon Tail
+- Rock Slide
+- Stomp
+
+Shelgon @ Leftovers
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Claw
+- Zen Headbutt
+- Protect
+- Iron Defense
+
+=== TRAINER_DAVE_ROUTE_109 ===
+Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Blue
+
+Gastly
+Level: 19
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Hex
+- Confuse Ray
+- Lick
+- Mean Look
+
+Charcadet
+Level: 19
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Flame Charge
+- Clear Smog
+- Astonish
+- Leer
+
+Gible
+Level: 19
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Dragon Breath
+- Sand Tomb
+- Bulldoze
+- Sand Attack
+
+Pawniard @ Oran Berry
+Level: 20
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Metal Claw
+- Fury Cutter
+- Assurance
+- Scary Face
+
+=== TRAINER_DAVE_ROUTE_118 ===
+Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Blue
+
+Haunter
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Ball
+- Sludge Bomb
+- Hypnosis
+- Dream Eater
+
+Ceruledge
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bitter Blade
+- Shadow Claw
+- Night Slash
+- Swords Dance
+
+Gliscor
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Earthquake
+- Acrobatics
+- Knock Off
+- Toxic
+
+Gabite
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Dragon Claw
+- Dig
+- Slash
+- Sandstorm
+
+Bisharp @ Sitrus Berry
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Night Slash
+- Swords Dance
+- Sucker Punch
+
+=== TRAINER_MITCH_ROUTE_110 ===
+Name: Mitch
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Yellow
+
+Trapinch
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Bulldoze
+- Bite
+- Rock Slide
+- Sand Tomb
+
+Metang
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Metal Claw
+- Confusion
+- Pursuit
+- Magnet Rise
+
+Makuhita
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Fake Out
+- Force Palm
+- Knock Off
+- Bulk Up
+
+Marshtomp @ Mystic Water
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mud Shot
+- Water Pulse
+- Rock Smash
+- Protect
+
+=== TRAINER_MITCH_ROUTE_121 ===
+Name: Mitch
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Yellow
+
+Flygon
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Tinted Lens
+- Earthquake
+- Dragon Claw
+- U-Turn
+- First Impression
+
+Metang
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Agility
+
+Hariyama
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- Close Combat
+- Knock Off
+- Heavy Slam
+
+Dusclops @ Eviolite
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Sneak
+- Will-O-Wisp
+- Confuse Ray
+- Pain Split
+
+Swampert @ Sitrus Berry
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Waterfall
+- Earthquake
+- Rock Slide
+- Flip Turn
+
+=== TRAINER_SICKBLIK_ROUTE_104 ===
+Name: SickBlik
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Yellow
+
+Dreepy
+Level: 12
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Astonish
+- Quick Attack
+- Infestation
+- Bite
+
+Ferroseed
+Level: 12
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Metal Claw
+- Pin Missile
+- Harden
+- Tackle
+
+Voltorb
+Level: 12
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Charge Beam
+- Spark
+- Eerie Impulse
+- Self-Destruct
+
+Remoraid @ Oran Berry
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Water Gun
+- Water Pulse
+- Lock-On
+- Psybeam
+
+=== TRAINER_SICKBLIK_ROUTE_113 ===
+Name: SickBlik
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Super Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Yellow
+
+Dreepy
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- U-Turn
+- Hex
+- Will-O-Wisp
+- Quick Attack
+
+Ferroseed
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Leech Seed
+- Metal Claw
+- Seed Bomb
+- Curse
+
+Voltorb
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Volt Switch
+- Charge Beam
+- Light Screen
+- Explosion
+
+Larvesta
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Flame Charge
+- Bug Bite
+- Struggle Bug
+- Will-O-Wisp
+
+Octillery @ Expert Belt
+Level: 27
+Ability: Protean
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Octazooka
+- Psybeam
+- Aurora Beam
+- Signal Beam
+
+=== TRAINER_SHY_GUY_DESERT ===
+Name: SHY GUY
+Class: Guest Star
+Pic: Guest Shy Guy Red
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sandygast
+Level: 28
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shore Up
+- Shadow Ball
+- Bulldoze
+- Sand Tomb
+
+Yamask
+Level: 28
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hex
+- Will-O-Wisp
+- Disable
+- Protect
+
+Hawlucha
+Level: 28
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Flying Press
+- Aerial Ace
+- Detect
+- Hone Claws
+
+Mr. Mime @ Light Clay
+Level: 29
+Ability: Filter
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Reflect
+- Light Screen
+- Psybeam
+- Encore
+
+/* --- einde extra_fights --- */

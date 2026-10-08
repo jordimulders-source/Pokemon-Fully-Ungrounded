@@ -11,6 +11,7 @@
 #include "constants/weather.h"
 #include "constants/trainer_hill.h"
 #include "constants/trainer_types.h"
+#include "constants/opponents.h" // Project Grounded: object-flags op de verslagen-flag van een trainer (extra_fights.py)
 #include "constants/berry.h"
 #include "constants/species.h"
 #include "constants/apricorn_tree.h"

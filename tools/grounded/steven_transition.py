@@ -25,11 +25,13 @@ T_HOLD = 24
 T_GLOW = 56       # de middelste steen gaat gloeien
 T_ZOOM = 96
 T_CLOSE = 140     # close-up van de facetten
-T_BADGE = 146     # eerste badge, daarna elke BADGE_GAP frames
-BADGE_GAP = 6
-T_CRACK = 200     # barsten op T_CRACK, +6, +12
-T_SHATTER = 218
-T_END = 244
+T_BADGE = 146     # eerste badge (nog in de blauwe kleur van de steen), daarna elke BADGE_GAP frames
+BADGE_GAP = 4
+T_LIGHT = 182     # de badges lichten een voor een op in hun echte kleur, elk met een klap (LIGHT_GAP frames per badge)
+LIGHT_GAP = 8
+T_CRACK = T_LIGHT + 8 * LIGHT_GAP + 10    # barsten op T_CRACK, +6, +12 (eerst even alle acht verlicht)
+T_SHATTER = T_CRACK + 18
+T_END = T_SHATTER + 26
 
 # ------------------------------------------------------------------ kleuren
 V = [(18, 8, 34), (30, 14, 54), (44, 22, 74), (60, 32, 96)]        # fluweel, donker -> licht
@@ -48,7 +50,7 @@ def mix(a, b, k):
     return tuple(a[i] + (b[i] - a[i]) * k for i in range(3))
 
 
-def palset(f, fade=1.0, dim=0.0, glow=0.0, shimmer=None, white=0.0):
+def palset(f, fade=1.0, dim=0.0, glow=0.0, shimmer=None, white=0.0, badges=False):
     """fade: 0 = zwart, 1 = normaal; dim: de kast (fluweel, messing, kleine stenen) donkerder; glow: de middelste
     steen en zijn gloed; shimmer: fase van het glinsteren (per tint een eigen golf); white: naar wit."""
     def tr(c, case):
@@ -67,6 +69,11 @@ def palset(f, fade=1.0, dim=0.0, glow=0.0, shimmer=None, white=0.0):
           [tr(c, True) for c in B[1:]]
     p14 = [tr(c, True) for c in V] + [tr(c, True) for c in RUBY + EMER + AMET] + [tr(WH, True)]
     p15 = [tr(K, True)] + [tr(c, True) for c in V] + [tr(c, True) for c in B] + [tr(WH, True), tr(TXT, True)]
+    if badges:
+        # close-up met verlichte badges: BG 14/15 = de steen (zelfde tinten als BG 13) + de echte badgekleuren (de
+        # kast is dan niet in beeld)
+        p14 = [tr(c, False) for c in hero] + [tr(WH, False)] + [tr(c, False) for k in (0, 2, 4, 6) for c in BADGE_REAL[k]]
+        p15 = [tr(c, False) for c in hero] + [tr(WH, False)] + [tr(c, False) for k in (1, 3, 5, 7) for c in BADGE_REAL[k]]
     return f.palset(p13, p14, p15)
 
 
@@ -321,15 +328,38 @@ def scene(cam, glow_level=0, twinkle=0):
 # ------------------------------------------------------------------ badges in de facetten
 BADGES = Image.open(os.path.join(ROOT, 'graphics/trainer_card/badges.png'))
 BADGE_TONE = {15: 0, 4: 2, 3: 3, 2: 4, 1: 4}
+# de echte kleuren (donker, licht) van Stone, Knuckle, Dynamo, Heat, Balance, Feather, Mind, Rain; de grijze
+# trainerkaart-badges (index 1 wit, 2 licht, 3/4 donker, 15 rand) worden daarmee gekleurd
+BADGE_REAL = [
+    [(120, 104, 96), (192, 176, 160)],     # Stone: steengrijs
+    [(208, 88, 32), (248, 168, 80)],       # Knuckle: oranje
+    [(208, 152, 16), (248, 224, 80)],      # Dynamo: goud/geel
+    [(200, 32, 24), (248, 112, 64)],       # Heat: vuurrood
+    [(168, 96, 48), (232, 168, 112)],      # Balance: koper
+    [(120, 64, 176), (200, 152, 240)],     # Feather: paars
+    [(208, 56, 136), (248, 152, 200)],     # Mind: roze
+    [(16, 120, 200), (120, 208, 248)],     # Rain: blauw
+]
 
 
-def badge_rgba(k, scale=2):
+def badge_rgba(k, scale=2, real=False, hot=False):
+    """Badge k (16x16, vergroot). real: in zijn echte kleuren (anders in de tinten van de steen); hot: lichter (de
+    klap bij het oplichten)."""
     a = np.array(BADGES)[:, k * 16:(k + 1) * 16]
     im = np.zeros((16, 16, 4), np.uint8)
     for v, t in BADGE_TONE.items():
-        im[a == v, :3] = HERO[t]
+        if real:
+            col = {15: HERO[0], 4: BADGE_REAL[k][0], 3: BADGE_REAL[k][0], 2: BADGE_REAL[k][1], 1: WH}[v]
+            if hot and v in (3, 4):
+                col = BADGE_REAL[k][1]
+            if hot and v == 2:
+                col = WH
+        else:
+            col = HERO[t]
+        im[a == v, :3] = col
         im[a == v, 3] = 255
-    return Image.fromarray(im, 'RGBA').resize((16 * scale, 16 * scale), Image.NEAREST)
+    out = Image.fromarray(im, 'RGBA')
+    return out.resize((int(16 * scale), int(16 * scale)), Image.NEAREST)
 
 
 CLOSE = Cam(S_CLOSE, GEM[0], GEM[1])
@@ -340,7 +370,9 @@ def kite_polys(cam):
     return [[cam.p(*q) for q in poly] for poly, kind, a in facets if kind == 'kite']
 
 
-def closeup(nbadges, flash=-1, crack=0):
+def closeup(nbadges, flash=-1, crack=0, lit=0, pop=-1):
+    """nbadges: zoveel badges staan in de facetten; lit: de eerste lit daarvan in hun echte kleur; pop: deze badge
+    springt even groot en licht uit zijn facet (de klap bij het oplichten)."""
     img = scene(CLOSE, glow_level=4)
     kites = kite_polys(CLOSE)
     for k in range(8):
@@ -351,7 +383,7 @@ def closeup(nbadges, flash=-1, crack=0):
         if k < nbadges:
             cx = sum(p[0] for p in poly) / 4
             cy = sum(p[1] for p in poly) / 4
-            b = badge_rgba(k)
+            b = badge_rgba(k, real=k < lit)
             mask = Image.new('L', img.size, 0)
             ImageDraw.Draw(mask).polygon(poly, fill=255)
             layer = Image.new('RGBA', img.size, (0, 0, 0, 0))
@@ -364,6 +396,13 @@ def closeup(nbadges, flash=-1, crack=0):
     dr = ImageDraw.Draw(img)
     for poly in kites:
         dr.line(poly + [poly[0]], fill=HERO[0], width=1)
+    if pop >= 0:
+        # de klap: de badge 1,5x zo groot en licht, over de facetrand heen
+        poly = kites[pop]
+        cx = sum(p[0] for p in poly) / 4
+        cy = sum(p[1] for p in poly) / 4
+        b = badge_rgba(pop, scale=3, real=True, hot=True)
+        img.paste(b, (int(round(cx - 24)), int(round(cy - 24))), b)
     if crack:
         draw_cracks(dr, crack)
     return img
@@ -491,7 +530,7 @@ def build(preview=None):
             zimg = arr(scene(zoom_cam(u), glow_level=4))
         f.add(zimg, palset(f, dim=1, glow=1, shimmer=t * 0.25))
     cache = {}
-    for t in range(T_CLOSE, T_CRACK):
+    for t in range(T_CLOSE, T_LIGHT):
         nb = 0 if t < T_BADGE else min(8, (t - T_BADGE) // BADGE_GAP + 1)
         flash = -1
         if T_BADGE <= t < T_BADGE + 8 * BADGE_GAP and (t - T_BADGE) % BADGE_GAP < 2:
@@ -501,14 +540,30 @@ def build(preview=None):
         if key not in cache:
             cache[key] = arr(closeup(nb, flash))
         f.add(cache[key], palset(f, dim=1, glow=1, shimmer=t * 0.3))
-    last = None
+    # oplichten: per badge 2 frames wit facet, 2 frames groot en licht (de klap), dan in zijn echte kleur
+    qb = palset(f, badges=True)
+    for t in range(T_LIGHT, T_CRACK):
+        u = t - T_LIGHT
+        k, ph = u // LIGHT_GAP, u % LIGHT_GAP
+        if k >= 8:
+            key = ('lit', 8, -1, -1)
+        elif ph < 2:
+            key = ('lit', k, k, -1)
+        elif ph < 4:
+            key = ('lit', k + 1, -1, k)
+        else:
+            key = ('lit', k + 1, -1, -1)
+        if key not in cache:
+            _, lit, fl, pop = key
+            cache[key] = arr(closeup(8, flash=fl, lit=lit, pop=pop))
+        f.add(cache[key], palset(f, dim=1, glow=1, shimmer=t * 0.3, badges=True), q=qb)
     for t in range(T_CRACK, T_SHATTER):
         st = 1 + min(2, (t - T_CRACK) // 6)
         key = ('c', st)
         if key not in cache:
-            cache[key] = arr(closeup(8, crack=st))
-        f.add(cache[key], palset(f, dim=1, glow=1 + 0.0, shimmer=t * 0.6))
-    whole = closeup(8)
+            cache[key] = arr(closeup(8, crack=st, lit=8))
+        f.add(cache[key], palset(f, dim=1, glow=1 + 0.0, shimmer=t * 0.6, badges=True), q=qb)
+    whole = closeup(8, lit=8)
     shards = shards_from(whole)
     bg = Image.fromarray(velvet(CLOSE))
     simg = None
@@ -517,7 +572,7 @@ def build(preview=None):
         if tau % 2 == 0:
             simg = arr(shatter(bg, shards, tau + 1))
         w = max(0.0, (tau - 14) / (T_END - T_SHATTER - 15))
-        f.add(simg, palset(f, dim=1, glow=1, white=min(1.0, w)))
+        f.add(simg, palset(f, dim=1, glow=1, white=min(1.0, w), badges=True), q=qb)
     f.encode(preview)
     return f
 
@@ -527,4 +582,7 @@ if __name__ == '__main__':
     f = build(d)
     if d:
         fr = f.preview_frames
-        film.sheet(fr, [30, 70, 92, 104, 116, 128, 150, 170, 196, 214, 224, 236], os.path.join(d, 'steven_keys.png'))
+        film.sheet(fr, [70, 150, 178, 183, 185, 188, 209, 213, 230, 246, T_CRACK + 14, T_SHATTER + 8],
+                   os.path.join(d, 'steven_keys.png'))
+        print('#define STEVEN_BADGE %d / BADGE_GAP %d / LIGHT %d / LIGHT_GAP %d / CRACK %d / SHATTER %d / END %d' %
+              (T_BADGE, BADGE_GAP, T_LIGHT, LIGHT_GAP, T_CRACK, T_SHATTER, T_END))

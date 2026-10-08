@@ -9272,7 +9272,9 @@ static bool8 Film_Update(struct Task *task, const struct Film *film)
 
 // ---------------- Steven: zijn verzamelkast met edelstenen op donker fluweel ("ROCK", "ALSO ROCK", "THE ROCK"). De
 // middelste steen gaat gloeien, de camera zoomt in op de facetten en in de acht kite-facetten verschijnen een voor een
-// de badges (elk een noot hoger). Dan barst de steen en spat hij uiteen. Vervangt de mugshot (zie battle_setup.c).
+// de badges, eerst in de blauwe tint van de steen; dan lichten ze een voor een op in hun echte kleur, elk met een klap
+// (wit facet, de badge springt groot op, het beeld schokt) en een noot hoger. Dan barst de steen en spat hij uiteen.
+// Vervangt de mugshot (zie battle_setup.c).
 static const u32 sFilmSteven_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_steven_tiles.bin");
 static const u32 sFilmSteven_Loads[] = INCBIN_U32("graphics/battle_transitions/film_steven_loads.bin");
 static const u32 sFilmSteven_Runs[] = INCBIN_U32("graphics/battle_transitions/film_steven_runs.bin");
@@ -9286,9 +9288,11 @@ static const struct Film sFilm_Steven = FILM(FilmSteven);
 #define STEVEN_GLOW     56
 #define STEVEN_ZOOM     96
 #define STEVEN_BADGE    146
-#define STEVEN_BADGE_GAP 6
-#define STEVEN_CRACK    200
-#define STEVEN_SHATTER  218
+#define STEVEN_BADGE_GAP 4
+#define STEVEN_LIGHT    182
+#define STEVEN_LIGHT_GAP 8
+#define STEVEN_CRACK    256
+#define STEVEN_SHATTER  274
 
 static const u16 sStevenBadgeNotes[8] =
 {
@@ -9304,7 +9308,9 @@ static bool8 RTSteven_Update(struct Task *task)
     if (t == STEVEN_ZOOM)
         PlaySE(SE_M_HARDEN);
     if (t >= STEVEN_BADGE && t < STEVEN_BADGE + 8 * STEVEN_BADGE_GAP && (t - STEVEN_BADGE) % STEVEN_BADGE_GAP == 0)
-        PlaySE(sStevenBadgeNotes[(t - STEVEN_BADGE) / STEVEN_BADGE_GAP]);
+        PlaySE(SE_BALL_TRAY_BALL);
+    if (t >= STEVEN_LIGHT && t < STEVEN_LIGHT + 8 * STEVEN_LIGHT_GAP && (t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP == 0)
+        PlaySE(sStevenBadgeNotes[(t - STEVEN_LIGHT) / STEVEN_LIGHT_GAP]);
     if (t == STEVEN_CRACK || t == STEVEN_CRACK + 6 || t == STEVEN_CRACK + 12)
         PlaySE(SE_ICE_CRACK);
     if (t == STEVEN_SHATTER)
@@ -9313,6 +9319,14 @@ static bool8 RTSteven_Update(struct Task *task)
     {
         SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
         SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+    else if (t >= STEVEN_LIGHT && t < STEVEN_LIGHT + 8 * STEVEN_LIGHT_GAP && (t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP < 4)
+    {
+        // de klap van een badge: het beeld schokt 4 frames
+        static const s8 sKick[4][2] = {{0, -1}, {2, 1}, {-2, 0}, {1, 0}};
+        const s8 *kick = sKick[(t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP];
+        SetGpuReg(REG_OFFSET_BG0HOFS, kick[0] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, kick[1] & 0x1FF);
     }
     else
     {
@@ -9351,14 +9365,14 @@ static const struct Film sFilm_Wally = FILM(FilmWally);
 #define WALLY_BAND_H    10
 // tijden: zie wally_transition.py
 #define WALLY_PLAY      8
-#define WALLY_THROW     42
-#define WALLY_CATCH     62
-#define WALLY_WOBBLE    84      // drie keer wiebelen: +0, +8, +16
-#define WALLY_CLICK     104
-#define WALLY_FF        124
-#define WALLY_ZOOM      222
-#define WALLY_PAUSE     236
-#define WALLY_SNOW      270
+#define WALLY_THROW     104
+#define WALLY_CATCH     124
+#define WALLY_WOBBLE    146     // drie keer wiebelen: +0, +8, +16
+#define WALLY_CLICK     166
+#define WALLY_FF        226
+#define WALLY_ZOOM      428
+#define WALLY_PAUSE     442
+#define WALLY_SNOW      476
 
 // de HOFS per beeldlijn gaat met HBlank-DMA (geen interrupt per lijn: dat kostte ±30 beeldlijnen rekentijd per frame)
 static void VBlankCB_WallyVhs(void)
@@ -9662,10 +9676,10 @@ static void Task_Mimi(u8 taskId)
     RouteTransition_Run(taskId, &sRT_Mimi);
 }
 
-// ---------------- Keccles (Kecleon, het meesterbrein; ook in het Battle Stadium): een verlaten lab vol schoolborden.
-// De camera zoekt (handheld): het lege lab, de formules, THE PLAN met jouw gezicht omcirkeld. Een rode zigzag hangt in
-// de lucht, een oog gaat open in het krijt, de camouflage golft weg en Keccles staat er. Q.E.D. Film:
-// keccles_transition.py.
+// ---------------- Keccles (Kecleon, een droge, echt wijze denker; ook in het Battle Stadium): een verlaten lab vol
+// schoolborden. De camera zoekt (handheld): het lege lab, de aantekeningen (waarneming, camouflage, geduld), THE PLAN
+// met jouw gezicht omcirkeld. Een rode zigzag hangt in de lucht, een oog gaat open in het krijt, de camouflage golft weg
+// en Keccles staat er. Het krijt schrijft "WE SEE WHAT WE EXPECT." Film: keccles_transition.py.
 static const u32 sFilmKeccles_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_keccles_tiles.bin");
 static const u32 sFilmKeccles_Loads[] = INCBIN_U32("graphics/battle_transitions/film_keccles_loads.bin");
 static const u32 sFilmKeccles_Runs[] = INCBIN_U32("graphics/battle_transitions/film_keccles_runs.bin");
@@ -9684,7 +9698,8 @@ static const struct FilmSfx sKecclesSfx[] =
     {KECCLES_SHOT3, SE_M_LOCK_ON},
     {126, SE_M_LEER},
     {148, SE_M_TELEPORT},
-    {194, SE_M_SKETCH},
+    {194, SE_M_SKETCH},     // T_QUOTE: het krijt schrijft (twee regels)
+    {205, SE_M_SKETCH},
 };
 
 // handheld: een langzaam zwalkende camera (in pixels, per 4 frames een stap)

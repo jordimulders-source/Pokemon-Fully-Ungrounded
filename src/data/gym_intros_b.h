@@ -76,18 +76,19 @@ static const u16 sGymNorman_Pal[] = INCBIN_U16("graphics/battle_transitions/gym_
 
 enum { NOR_MAP_HOME, NOR_MAP_STILL, NOR_MAP_PAUSE, NOR_MAP_ROOM, NOR_MAP_ROOM1, NOR_MAP_ROOM2 };
 #define NOR_TAG_Z       0x5A40
+// leestijd (Jordi: te snel om de tekst te lezen): ±1 s per 3-4 woorden, minimaal ±1,5 s per tekst
 #define NOR_HOME        8
-#define NOR_STILL       50
-#define NOR_HOVER       66
-#define NOR_BACK        76
-#define NOR_PRESS       90
-#define NOR_PAUSE       96
-#define NOR_SHRINK      102
+#define NOR_STILL       (NOR_HOME + 54)     // startscherm (was 42)
+#define NOR_HOVER       (NOR_STILL + 66)    // "Are you still watching BLACK MIRROR?" (was 16)
+#define NOR_BACK        (NOR_HOVER + 30)    // cursor op "Go outside (not recommended)" (was 10)
+#define NOR_PRESS       (NOR_BACK + 18)     // (was 14)
+#define NOR_PAUSE       (NOR_PRESS + 6)
+#define NOR_SHRINK      (NOR_PAUSE + 6)
 #define NOR_SHRINK_LEN  14
 #define NOR_ROOM        (NOR_SHRINK + NOR_SHRINK_LEN)
-#define NOR_SUB1        (NOR_ROOM + 12)
-#define NOR_SUB2        (NOR_ROOM + 30)
-#define NOR_END         (NOR_SUB2 + 32)
+#define NOR_SUB1        (NOR_ROOM + 20)     // (was 12)
+#define NOR_SUB2        (NOR_SUB1 + 72)     // "OK, I'M SICK OF YOU." (was 18)
+#define NOR_END         (NOR_SUB2 + 72)     // "FACE MY SLAKING!" (was 32)
 #define NOR_HL          6     // BG 13: rand van de geselecteerde titel
 #define NOR_BTN_A       5     // BG 15: Continue watching
 #define NOR_BTN_B       6     // BG 15: Go outside
@@ -273,15 +274,16 @@ static const u16 sGymWinona_CasePal[] = INCBIN_U16("graphics/battle_transitions/
 enum { WIN_MAP_DELAYED, WIN_MAP_FLAP1, WIN_MAP_FLAP2, WIN_MAP_BOARDING, WIN_MAP_GATE, WIN_MAP_GATE1, WIN_MAP_GATE2 };
 #define WIN_TAG_CASE     0x5A41
 #define WIN_TAG_FEATHER  0x5A42
+// leestijd: vooral het einde (de grap) langer in beeld
 #define WIN_BOARD        8
-#define WIN_FLIP         40
+#define WIN_FLIP         (WIN_BOARD + 48)   // het bord met DELAYED (was 32)
 #define WIN_CHIME        (WIN_FLIP + 16)
-#define WIN_GATE         78
+#define WIN_GATE         (WIN_FLIP + 44)    // (was 38)
 #define WIN_SUB1         (WIN_GATE + 8)
 #define WIN_FLY          (WIN_GATE + 4)
 #define WIN_FLY_LEN      84
-#define WIN_POP          132
-#define WIN_END          (WIN_POP + 42)
+#define WIN_POP          (WIN_SUB1 + 84)    // "Elegant. Soaring. Delayed." (was 46)
+#define WIN_END          (WIN_POP + 120)    // "BAGGAGE FEE!" / "No miles earned." (was 42)
 #define WIN_STATUS       7      // BG 13: de statusflap van WN001
 #define WIN_FEATHERS     4
 #define WIN_CASE_X       130
@@ -469,13 +471,15 @@ enum { TL_SPR_PLANCHETTE, TL_SPR_FLAME0, TL_SPR_FLAME1, TL_SPR_EYE0, TL_SPR_SPOO
 #define TL_TAG_FLAME      0x5A44
 #define TL_TAG_EYE        0x5A45
 #define TL_TAG_SPOON      0x5A46
+// leestijd: vooral het einde (de grap) langer in beeld
 #define TL_OUIJA          8
 #define TL_TAROT          84
-#define TL_FLIP           92
-#define TL_FLIP_GAP       12
-#define TL_OVER           136
-#define TL_SCREAM         166
-#define TL_END            (TL_SCREAM + 26)
+#define TL_FLIP           (TL_TAROT + 20)   // "TATE: The cards have spoken..." eerst even alleen (was 8)
+#define TL_FLIP_GAP       16                // tijd per kaart (was 12)
+#define TL_SUB2           (TL_FLIP + 2 * TL_FLIP_GAP + 12)
+#define TL_OVER           (TL_SUB2 + 96)    // "LIZA: ...and they hate you." (was 10)
+#define TL_SCREAM         (TL_OVER + 84)    // "TWIN FLAME ENERGY: PEAK PERFORMANCE" (was 30)
+#define TL_END            (TL_SCREAM + 66)  // "aaaaaaaaaaaaah" (was 26)
 #define TL_CX             120
 #define TL_CY             88
 
@@ -623,7 +627,7 @@ static bool8 RTTateLiza_Update(struct Task *task)
             if (k == 0)
                 PlaySE(SE_RG_CARD_FLIP);
         }
-        if (t == TL_FLIP + 2 * TL_FLIP_GAP + 10)
+        if (t == TL_SUB2)
         {
             GI_PutRect(TL_MAP_SUB2, 0, 0, 30, 3, 0, 0);
             PlaySE(SE_M_NIGHTMARE);
@@ -665,7 +669,7 @@ static bool8 RTTateLiza_Update(struct Task *task)
             PlaySE(SE_M_PSYBEAM2);
         if (t == TL_SCREAM)
             PlaySE(SE_M_SCREECH);
-        k = (t >= TL_SCREAM) ? 3 : ((t >= TL_OVER + 20) ? 1 : 0);
+        k = (t >= TL_SCREAM + 24) ? 1 : (t >= TL_SCREAM) ? 3 : ((t >= TL_OVER + 20) ? 1 : 0);
         GI_Shake(k);
         twins->x2 = k ? (s16)(Random() % (k * 2 + 1)) - k : 0;
         twins->y2 = k ? (s16)(Random() % (k * 2 + 1)) - k : 0;
@@ -677,7 +681,8 @@ static bool8 RTTateLiza_Update(struct Task *task)
     GI_Flash(t, TL_TAROT, 4, 10, keep, RGB_WHITE);
     GI_Flash(t, TL_OVER, 6, 12, keep, RGB(31, 20, 31));
     // stroboscoop bij de schreeuw
-    if (t >= TL_SCREAM && t < TL_END - 4 && ((t >> 1) & 1))
+    // (alleen het begin: daarna blijft het beeld rustig genoeg om de schreeuw te lezen)
+    if (t >= TL_SCREAM && t < TL_SCREAM + 24 && ((t >> 1) & 1))
         BlendPalettes(GI_BG_PALS | keep, 9, (t & 4) ? RGB_WHITE : RGB(31, 8, 28));
     if (GI_WhiteOut(t, TL_END, keep))
     {
@@ -727,17 +732,19 @@ static const u16 sGymWallace_StreamPal[] = INCBIN_U16("graphics/battle_transitio
 enum { WAL_MAP_PUB, WAL_MAP_PUB1, WAL_MAP_PUB2, WAL_MAP_PUB3, WAL_MAP_BROKEN, WAL_MAP_WAVE, WAL_MAP_SANTE };
 #define WAL_TAG_STREAM   0x5A47
 #define WAL_TAG_SPLASH   0x5A48
+// ±25% langzamer dan de eerste versie (Jordi: "echt net iets te snel")
 #define WAL_PUB          8
-#define WAL_POUR         16
-#define WAL_SUB1         28
-#define WAL_SUB2         58
-#define WAL_SWIRL        66
-#define WAL_BLUE         90
-#define WAL_BLUE_LEN     16
-#define WAL_BREAK        114
-#define WAL_WAVE         122
-#define WAL_SANTE        (WAL_WAVE + 22)
-#define WAL_END          (WAL_SANTE + 32)
+#define WAL_POUR         18
+#define WAL_SUB1         33
+#define WAL_SUB2         75
+#define WAL_SWIRL        85
+#define WAL_BLUE         115
+#define WAL_BLUE_LEN     20
+#define WAL_BREAK        145
+#define WAL_WAVE         155
+#define WAL_WAVE_LEN     19    // het golffront loopt in zoveel frames over het scherm
+#define WAL_SANTE        (WAL_WAVE + 28)
+#define WAL_END          (WAL_SANTE + 44)
 #define WAL_BANDS        8
 #define WAL_WATER        7     // BG 15 index 7-10: water
 
@@ -790,7 +797,7 @@ static bool8 RTWallace_Update(struct Task *task)
     LoadPalette(sGymWallace_Pal, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
 
     // de wijn: laag voor laag vol, de bovenste laag glinstert bij het walsen, dan kleurt alles Hoenn-blauw
-    filled = (t < WAL_POUR + 4) ? 0 : min((t - WAL_POUR - 4) / 6 + 1, WAL_BANDS);
+    filled = (t < WAL_POUR + 4) ? 0 : min((t - WAL_POUR - 4) * 2 / 15 + 1, WAL_BANDS);
     k = (t < WAL_BLUE) ? 0 : min(t - WAL_BLUE, WAL_BLUE_LEN);
     wine = GI_MixColor(RGB(15, 2, 5), RGB(4, 11, 25), k, WAL_BLUE_LEN);
     for (i = 0; i < WAL_BANDS; i++)
@@ -847,13 +854,14 @@ static bool8 RTWallace_Update(struct Task *task)
     // de golf slaat van rechts over de pub: kolommen van het waterbeeld, Splash op het front
     if (t >= WAL_WAVE)
     {
-        front = 30 - min((t - WAL_WAVE) * 2, 30);
+        front = 30 - min((t - WAL_WAVE) * 30 / WAL_WAVE_LEN, 30);
+        // na SANTÉ uit het SANTÉ-beeld (de tekst loopt door tot in rij 3)
         if (front < 30)
-            GI_PutRect(WAL_MAP_WAVE, front, 3, 30 - front, 15, front, 3);
+            GI_PutRect(t >= WAL_SANTE ? WAL_MAP_SANTE : WAL_MAP_WAVE, front, 3, 30 - front, 15, front, 3);
         for (i = 0; i < 3; i++)
         {
             s = &gSprites[task->data[12 + i]];
-            s->invisible = (front <= 0 && t > WAL_WAVE + 18) || t >= WAL_SANTE;
+            s->invisible = (front <= 0 && t > WAL_WAVE + WAL_WAVE_LEN + 3) || t >= WAL_SANTE;
             s->x = front * 8 + 8 + ((i & 1) ? 6 : 0);
             s->y = 44 + i * 40 + ((t >> 1) & 1);
         }
@@ -862,12 +870,12 @@ static bool8 RTWallace_Update(struct Task *task)
     }
     if (t == WAL_SANTE)
     {
-        GI_ShowRows(WAL_MAP_SANTE, 0, 3);
+        GI_ShowRows(WAL_MAP_SANTE, 0, 4);
         PlaySE(SE_GLASS_FLUTE);
     }
     if (t >= WAL_BREAK && t < WAL_BREAK + 6)
         GI_Shake(3);
-    else if (t >= WAL_WAVE && t < WAL_WAVE + 18)
+    else if (t >= WAL_WAVE && t < WAL_WAVE + WAL_WAVE_LEN + 3)
         GI_Shake(2);
     else
         GI_Shake(0);

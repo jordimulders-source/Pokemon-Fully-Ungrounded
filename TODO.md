@@ -7,15 +7,14 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
+Gedaan sinds: Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 1. **Granite Cave B3F-kristalgrot met Carbink** en **Cave of Origin dieper met Primal-lore**, **ijzige onderlaag Shoal Cave** (Cetoddle/Cetitan, Bergmite). (VRAGEN_VOLGENDE 2)
 2. **Koraalkathedraal (126), luchtbel-grot (128), Sea Shard-verzamelquest** bij de Diving Treasure Hunter. (VRAGEN_VOLGENDE O1/O3/O4)
 3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset; Jordi 9 okt: mag autonoom). (ZEE_PLAN 1)
-4. **Birth Island helemaal weg** (kaart, event, ticket; ook het kamp van v0.9.148). (9 okt)
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 1. **Dragonspine Isle → Tao-eiland:** Gerald (en zijn Stadium-plek) eruit; Reshiram en Zekrom allebei te vangen, later Kyurem. Ruïnetoren-idee: LEGENDARY_PLAN groep 9. (9 okt)
-2. **Beacon Isle:** organische vorm in plaats van de huidige. Vanaf de top zie je 's nachts een eilandje dat alleen in de lichtbundel zichtbaar is (geen spookschip, dat bestaat al). (9 okt)
 3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)
    - a. **Lavender Town + Pokémon Tower**
    - b. **National Park**, eventueel met **Ilex Forest** (Celebi)
@@ -25,12 +24,10 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
    - f. later eventueel **Area Zero** (paradoxen zijn gepauzeerd)
    - g. **Mt. Coronet als laatste post-game-quest:** als je de rest hebt, Dialga, Palkia en tot slot Arceus.
 4. **Yoshi's Island / Shy Guy-quest:** top-down in Pokémon-stijl, maar grafisch compleet anders (dat is de grap), uit Jordi's sheets (`graphics/*Yoshi*`, `bg*.png`, `misc*.png`, `world-map.png`). Shy Guys = parodie op een evil team, praten niet (sarcasme tussen haakjes). Multi battles samen met Yoshi tegen een reeks Shy Guys → Commander Boo → Wario zit erachter. Wacht deels op Jordi's assets. (8–9 okt)
-5. **Gifts Type: Null en Magearna** (Devon-kelder; Colress na de Plasma Frigate). Goedgekeurd als uitzondering op de legendary-pauze, nog niet gebouwd. (6 okt; LEGENDARY_PLAN groep 11)
-6. **Regionale vormen als gift of in speciale gebieden:** nog niet verkrijgbaar zijn Alola-Rattata/-Meowth, Galar-Farfetch'd/Sirfetch'd, Galar-vogels. (6 okt; LEGENDARY_PLAN groep 18)
+6. **Regionale vormen:** Alola-Rattata/-Meowth en Galar-Farfetch'd zijn gifts (v0.9.161); de Galar-vogels horen bij de gepauzeerde Crown Tundra. (6 okt; LEGENDARY_PLAN groep 18)
 7. **Contests reworken:** Jordi bedenkt zelf de ideeën; voorstel ligt klaar (QoL-pakket eerst: Berry Blender als menu, kortere wachttijden). (5–6 okt; CONTESTS_VOORSTEL)
 8. **Trick House vervangen?** Wacht op Jordi's idee. (okt)
 9. **The Spire (na Jordi's test, `SPIRE_TESTCHECKLIST.txt`):** gewone gevechten per deel van de act, één elite-pool per act, gevechten meer als puzzel. Nog open: codex, golven (derde vijand), dramatischer baas-intro, ja/nee bij de receptioniste, echte teksten. (okt; SPIRE_DESIGN "Nog open")
-10. **Battle Stadium-pool aanvullen:** Selene (Meteor Falls), Reginald (Victory Road), Helia (Scorched Slab), Ogerpon-quest. Gerald eruit. (4–5 okt; v0.9.13/14/17/22)
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
 12. **Eigen Grounded-Pokédex** zonder weggelaten soorten: Jordi kiest de groepen. (6 okt; DEX_ANALYSE 6)
 

@@ -311,8 +311,28 @@ static void DrawMatchCard(void)
     PrintCentered(FONT_SMALL_NARROW, 56, 116, sColor_Blue, name);
     Stadium_GetEntrantName(opp, name);
     PrintCentered(FONT_SMALL_NARROW, 168, 116, sColor_Dark, name);
-    AddPic(Stadium_EntrantPic(0), 64, 80, FALSE);
-    AddPic(Stadium_EntrantPic(opp), 176, 80, FALSE);
+    if (Stadium_GetMode() == STADIUM_DOUBLES)
+    {
+        // doubles: beide duo's in beeld, de tweede schuin erachter
+        u8 back1 = AddPic(Stadium_EntrantMemberPic(0, 1), 72, 70, FALSE);
+        u8 front1 = AddPic(Stadium_EntrantMemberPic(0, 0), 40, 80, FALSE);
+        u8 back2 = AddPic(Stadium_EntrantMemberPic(opp, 1), 168, 70, FALSE);
+        u8 front2 = AddPic(Stadium_EntrantMemberPic(opp, 0), 200, 80, FALSE);
+
+        if (back1 != MAX_SPRITES)
+            gSprites[back1].subpriority = 2;
+        if (back2 != MAX_SPRITES)
+            gSprites[back2].subpriority = 2;
+        if (front1 != MAX_SPRITES)
+            gSprites[front1].subpriority = 1;
+        if (front2 != MAX_SPRITES)
+            gSprites[front2].subpriority = 1;
+    }
+    else
+    {
+        AddPic(Stadium_EntrantPic(0), 64, 80, FALSE);
+        AddPic(Stadium_EntrantPic(opp), 176, 80, FALSE);
+    }
     PrintCentered(FONT_SMALL, 112, 128, sColor_Gray, COMPOUND_STRING("Everyone fights at level 50."));
 }
 

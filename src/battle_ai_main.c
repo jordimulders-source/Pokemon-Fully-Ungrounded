@@ -27,6 +27,7 @@
 #include "constants/moves.h"
 #include "constants/items.h"
 #include "constants/trainers.h"
+#include "stadium.h"
 
 #define AI_ACTION_DONE          (1 << 0)
 #define AI_ACTION_FLEE          (1 << 1)
@@ -273,6 +274,19 @@ void BattleAI_SetupFlags(void)
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
     {
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] = GetAiFlags(gPartnerTrainerId, B_POSITION_PLAYER_RIGHT);
+        // Project Grounded: Battle Stadium. De compagnon denkt minstens zo goed na als de tegenstanders: de basis
+        // (Basic Trainer + Smart Switching) plus de 'slimheid'-flags die de tegenstanders hebben (geen persoonlijkheid
+        // zoals Risky of Ace Pokémon). Startcompagnons (Brendan/May/Wally/Keccles) hadden alleen Basic Trainer.
+        if (gStadiumBattle)
+        {
+            u64 smart = AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_HP_AWARE
+                      | AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION | AI_FLAG_PP_STALL_PREVENTION | AI_FLAG_ASSUMPTIONS
+                      | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_SMART_TERA;
+
+            gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] |= AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING
+                | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_DOUBLE_BATTLE
+                | ((gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_LEFT] | gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_RIGHT]) & smart);
+        }
     }
     else if (IsDoubleBattle() && IsAiVsAiBattle())
     {

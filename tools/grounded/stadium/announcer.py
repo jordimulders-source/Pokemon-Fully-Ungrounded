@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Battle Stadium (Project Grounded): de omroeper kondigt elke tegenstander aan met één zin.
+"""Battle Stadium (Project Grounded): de omroeper in de arena.
+
+Volgorde (één tekstvak per zin): bij het eerste gevecht een welkom, dan elke ronde de rondenaam;
+bij het eerste gevecht ook de speler (zin op basis van hoe je gespeeld hebt, anders de vanilla-zin) en in
+doubles de compagnon; daarna de tegenstander(s) om beurten (doubles: allebei).
 
 Bewerk de teksten hier (platte tekst; het script breekt af op de breedte van het tekstvak met dezelfde
 regels als tools/dialogen/import.py) en draai opnieuw. Max. 2 regels = één tekstvak.
@@ -8,7 +12,7 @@ Genereert:
 - src/data/stadium_announcer.h (tabel trainer -> tekst, plus een algemene tekst als terugval)
 - STADIUM_OMROEPER.md (overzicht voor Jordi)
 
-In doubles kiest de omroeper willekeurig één van de twee tegenstanders.
+{PLAYER} = spelernaam, {STR_VAR_1} = naam van de compagnon of de legendary (gemeten als lange naam).
 Nieuwe personages in de pool (pool.py POOL): hier ook een regel toevoegen; het script waarschuwt.
 Gebruik: python3 tools/grounded/stadium/announcer.py
 """
@@ -22,6 +26,41 @@ spec.loader.exec_module(dimp)
 
 OUT_H = os.path.join(ROOT, 'src/data/stadium_announcer.h')
 OUT_MD = os.path.join(ROOT, 'STADIUM_OMROEPER.md')
+
+# Welkom (alleen het eerste gevecht van een toernooi)
+WELCOME = {
+    'SINGLES': "Welcome to the BATTLE STADIUM! 32 trainers, one trophy, zero refunds.",
+    'DOUBLES': "Welcome to STADIUM DOUBLES! Sixteen teams, twice the property damage.",
+}
+# Rondenaam (elke ronde): ronde van 32, 16, kwartfinale, halve finale, finale
+ROUNDS = [
+    "ROUND OF 32! Half of you go home today. The parking lot is already cheering.",
+    "ROUND OF 16! The hot dog stand has outlasted half the field already.",
+    "QUARTERFINALS! Eight left. The crowd has learned two of their names.",
+    "The SEMIFINALS! Four left. Somebody's grandma just woke up for this.",
+    "The FINAL! One match, one trophy, and one very nervous janitor.",
+]
+# De speler (eerste gevecht). De C-code kiest willekeurig uit de zinnen waarvan de voorwaarde klopt
+# (src/stadium.c, AnnouncePlayer); klopt er geen, dan VANILLA.
+PLAYER = {
+    'TITLES': "Defending the trophy: {PLAYER}! The trophy remembers you. It's scared.",
+    'VETERAN': "{PLAYER}! Twenty-plus wins here. The floor knows your footprints by heart.",
+    'RETURNING': "{PLAYER} is back! Last time didn't go great. Don't worry, we kept the footage.",
+    'NEWCOMER': "A fresh face: {PLAYER}! First time here. The medics are on standby. Just in case.",
+    'HALL_OF_FAME': "The CHAMPION of HOENN: {PLAYER}! Yes, the real one. STEVEN is still in therapy.",
+    'EIGHT_BADGES': "{PLAYER}! Eight BADGES, no ELITE FOUR win. Ambition: high. Results: pending.",
+    'LEGENDARY': "{PLAYER} owns a {STR_VAR_1}! A legend. In a ball. In a pocket. Sure.",
+    'BIG_DEX': "{PLAYER} caught over 200 POKéMON. The PC storage union is on strike.",
+    'PLAYTIME': "{PLAYER}! Over a hundred hours on the clock. Go outside. After this match.",
+}
+VANILLA = "In the blue corner: {PLAYER}! A trainer. With POKéMON. That's all it says here."
+# De compagnon (doubles, eerste gevecht); willekeurig
+PARTNER = [
+    "At {PLAYER}'s side: {STR_VAR_1}! Friends? Their lawyers say partners.",
+    "With {PLAYER}: {STR_VAR_1}! They met five minutes ago. Chemistry!",
+    "{PLAYER}'s partner: {STR_VAR_1}! Paid in exposure and one free hot dog.",
+    "Covering {PLAYER}: {STR_VAR_1}! Or standing nearby. Close enough.",
+]
 
 FALLBACK = "And the next challenger! We were told to say something funny here. We forgot."
 
@@ -150,11 +189,18 @@ LINES = {
 }
 
 
+LONG_NAME = '\u2603' * 12    # {STR_VAR_1}: meten als een lange naam (TATE & LIZA, REGIGIGAS; ±72 px)
+
+
 def wrap(text):
-    lines = dimp.to_strings(text)
+    lines = [x.replace(LONG_NAME, '{STR_VAR_1}') for x in dimp.to_strings(text.replace('{STR_VAR_1}', LONG_NAME))]
     if len(lines) > 2:
         sys.exit(f'Te lang ({len(lines)} regels): {text}')
     return ''.join(lines).rstrip('$')
+
+
+def c_list(name, texts):
+    return [f'static const u8 *const {name}[] =', '{'] + [f'    COMPOUND_STRING("{wrap(t)}"),' for t in texts] + ['};', '']
 
 
 def main():
@@ -166,13 +212,25 @@ def main():
             print(f'Waarschuwing: geen omroeptekst voor {t} (algemene tekst)')
 
     out = ['// Gegenereerd door tools/grounded/stadium/announcer.py; niet met de hand bewerken.',
-           '// De omroeper kondigt de tegenstander aan (één tekstvak) vóór elke wedstrijd in de arena.',
+           '// De omroeper in de arena (één tekstvak per zin): welkom, ronde, speler en compagnon, tegenstanders.',
            '', 'struct StadiumAnnouncerLine', '{', '    u16 trainerId;', '    const u8 *text;', '};', '',
            f'static const u8 sStadiumAnnouncerFallback[] = _("{wrap(FALLBACK)}");', '',
+           f'static const u8 sStadiumAnnouncerVanilla[] = _("{wrap(VANILLA)}");', '']
+    out += c_list('sStadiumAnnouncerWelcome', [WELCOME['SINGLES'], WELCOME['DOUBLES']])
+    out += c_list('sStadiumAnnouncerRounds', ROUNDS)
+    out += ['enum StadiumAnnouncePlayer', '{'] + [f'    ANNOUNCE_PLAYER_{k},' for k in PLAYER] + ['    ANNOUNCE_PLAYER_COUNT', '};', '']
+    out += c_list('sStadiumAnnouncerPlayer', list(PLAYER.values()))
+    out += c_list('sStadiumAnnouncerPartner', PARTNER)
+    out += [
            'static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =', '{']
     md = ['# Battle Stadium: de omroeper', '',
-          'Eén zin per tegenstander, vóór elke wedstrijd in de arena (in doubles: één van de twee, willekeurig).',
+          'Vóór elke wedstrijd in de arena: bij het eerste gevecht een welkom, elke ronde de rondenaam, bij het eerste',
+          'gevecht de speler (en in doubles de compagnon), dan de tegenstander(s) om beurten.',
           'Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.', '',
+          '## Welkom en rondes', ''] + [f'- {t}' for t in list(WELCOME.values()) + ROUNDS] + [
+          '', '## De speler (willekeurig uit wat klopt)', '', '| Voorwaarde | Zin |', '|---|---|'] + [
+          f'| `{k}` | {v} |' for k, v in PLAYER.items()] + [f'| (geen) | {VANILLA} |', '', '## De compagnon', ''] + [
+          f'- {t}' for t in PARTNER] + ['', '## Tegenstanders', '',
           '| Trainer | Aankondiging |', '|---|---|']
     for t, text in LINES.items():
         s = wrap(text)

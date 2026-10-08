@@ -1,5 +1,5 @@
 // Gegenereerd door tools/grounded/stadium/announcer.py; niet met de hand bewerken.
-// De omroeper kondigt de tegenstander aan (één tekstvak) vóór elke wedstrijd in de arena.
+// De omroeper in de arena (één tekstvak per zin): welkom, ronde, speler en compagnon, tegenstanders.
 
 struct StadiumAnnouncerLine
 {
@@ -8,6 +8,58 @@ struct StadiumAnnouncerLine
 };
 
 static const u8 sStadiumAnnouncerFallback[] = _("And the next challenger! We were told\nto say something funny here. We forgot.");
+
+static const u8 sStadiumAnnouncerVanilla[] = _("In the blue corner: {PLAYER}! A trainer.\nWith POKéMON. That's all it says here.");
+
+static const u8 *const sStadiumAnnouncerWelcome[] =
+{
+    COMPOUND_STRING("Welcome to the BATTLE STADIUM! 32\ntrainers, one trophy, zero refunds."),
+    COMPOUND_STRING("Welcome to STADIUM DOUBLES! Sixteen\nteams, twice the property damage."),
+};
+
+static const u8 *const sStadiumAnnouncerRounds[] =
+{
+    COMPOUND_STRING("ROUND OF 32! Half of you go home today.\nThe parking lot is already cheering."),
+    COMPOUND_STRING("ROUND OF 16! The hot dog stand has\noutlasted half the field already."),
+    COMPOUND_STRING("QUARTERFINALS! Eight left. The crowd\nhas learned two of their names."),
+    COMPOUND_STRING("The SEMIFINALS! Four left. Somebody's\ngrandma just woke up for this."),
+    COMPOUND_STRING("The FINAL! One match, one trophy, and\none very nervous janitor."),
+};
+
+enum StadiumAnnouncePlayer
+{
+    ANNOUNCE_PLAYER_TITLES,
+    ANNOUNCE_PLAYER_VETERAN,
+    ANNOUNCE_PLAYER_RETURNING,
+    ANNOUNCE_PLAYER_NEWCOMER,
+    ANNOUNCE_PLAYER_HALL_OF_FAME,
+    ANNOUNCE_PLAYER_EIGHT_BADGES,
+    ANNOUNCE_PLAYER_LEGENDARY,
+    ANNOUNCE_PLAYER_BIG_DEX,
+    ANNOUNCE_PLAYER_PLAYTIME,
+    ANNOUNCE_PLAYER_COUNT
+};
+
+static const u8 *const sStadiumAnnouncerPlayer[] =
+{
+    COMPOUND_STRING("Defending the trophy: {PLAYER}! The\ntrophy remembers you. It's scared."),
+    COMPOUND_STRING("{PLAYER}! Twenty-plus wins here. The\nfloor knows your footprints by heart."),
+    COMPOUND_STRING("{PLAYER} is back! Last time didn't go\ngreat. Don't worry, we kept the footage."),
+    COMPOUND_STRING("A fresh face: {PLAYER}! First time here.\nThe medics are on standby. Just in case."),
+    COMPOUND_STRING("The CHAMPION of HOENN: {PLAYER}! Yes,\nthe real one. STEVEN is still in therapy."),
+    COMPOUND_STRING("{PLAYER}! Eight BADGES, no ELITE FOUR\nwin. Ambition: high. Results: pending."),
+    COMPOUND_STRING("{PLAYER} owns a {STR_VAR_1}! A legend.\nIn a ball. In a pocket. Sure."),
+    COMPOUND_STRING("{PLAYER} caught over 200 POKéMON. The\nPC storage union is on strike."),
+    COMPOUND_STRING("{PLAYER}! Over a hundred hours on the\nclock. Go outside. After this match."),
+};
+
+static const u8 *const sStadiumAnnouncerPartner[] =
+{
+    COMPOUND_STRING("At {PLAYER}'s side: {STR_VAR_1}!\nFriends? Their lawyers say partners."),
+    COMPOUND_STRING("With {PLAYER}: {STR_VAR_1}! They met\nfive minutes ago. Chemistry!"),
+    COMPOUND_STRING("{PLAYER}'s partner: {STR_VAR_1}! Paid\nin exposure and one free hot dog."),
+    COMPOUND_STRING("Covering {PLAYER}: {STR_VAR_1}! Or\nstanding nearby. Close enough."),
+};
 
 static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
 {

@@ -35,6 +35,7 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "trainer_slide.h"
+#include "stadium.h"
 #include "battle_message.h"
 
 static u32 BattlerHPPercentage(u32 battler, u32 operation, u32 threshold);
@@ -300,6 +301,23 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(u32 battler, enum TrainerSlideType
     MarkTrainerSlideAsPlayed(slideId);
     SetTrainerSlideMessage(difficulty,trainerId,slideId);
     return retValue;
+}
+
+// Project Grounded: Battle Stadium (doubles). Vóór de eerste beurt praat ook tegenstander B (de engine doet alleen A).
+// Zet het bericht en de battler voor BattleScript_TrainerBSlideMsgRet; FALSE als B niets te zeggen heeft.
+bool32 Stadium_SetTrainerBFirstTurnSlide(void)
+{
+    u32 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (!gStadiumBattle || !(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+        return FALSE;
+    trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentB);
+    if (!DoesTrainerHaveSlideMessage(difficulty, trainerId, TRAINER_SLIDE_BEFORE_FIRST_TURN))
+        return FALSE;
+    gBattleScripting.battler = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    SetTrainerSlideMessage(difficulty, trainerId, TRAINER_SLIDE_BEFORE_FIRST_TURN);
+    return TRUE;
 }
 
 static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId)

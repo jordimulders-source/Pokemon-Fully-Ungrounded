@@ -14,6 +14,7 @@
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "random.h"
+#include "stadium.h"
 #include "starter_choose.h"
 #include "script_pokemon_util.h"
 #include "palette.h"
@@ -1054,8 +1055,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_JOEY)
         return B_TRANSITION_POOCHYENA;
 
-    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar
-    if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
+    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar. In het Battle Stadium alleen
+    // als ze samen een duo vormen; los krijgen ze hun eigen mugshot (blauw/geel), zoals in het verhaal.
+    if ((trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
+     && (!gStadiumBattle || TRAINER_BATTLE_PARAM.opponentB == TRAINER_ARCHIE_SOOTOPOLIS || TRAINER_BATTLE_PARAM.opponentB == TRAINER_MAXIE_SOOTOPOLIS))
         return B_TRANSITION_AQUA_MAGMA;
 
     // Project Grounded: Archie en Maxie met werkstraf (Weather Institute): het prikbord van de pauzeruimte

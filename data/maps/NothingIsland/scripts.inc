@@ -147,3 +147,12 @@ NothingIsland_Text_NigelPostBattle:
 	.string "a return label.\p"
 	.string "We were going to send it back if\n"
 	.string "it didn't fit. It didn't fit.$"
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+NothingIsland_EventScript_KV4Tourist::
+	msgbox NothingIsland_Text_KV4Tourist, MSGBOX_NPC
+	end
+
+NothingIsland_Text_KV4Tourist:
+	.string "I booked a trip to NOTHING ISLAND.\nBrochure promised nothing.\pThen a giant pirate ship showed up\nwith men in robes. That's not\lnothing. That's SOMETHING.\pI'm leaving a one-star review.$"
+@ --- einde kaart_vulling_4 ---

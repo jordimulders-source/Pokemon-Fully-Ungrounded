@@ -63,6 +63,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_Northwest_EventScript_SpookGuard",
       "flag": "FLAG_SAFARI_ZONES_OPEN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 14,
+      "y": 24,
+      "elevation": 5,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SafariZone_Northwest_EventScript_KV4Birdwatcher",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -75,5 +88,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_ZINC",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_ZINC"
+    },
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 31,
+      "elevation": 7,
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_BIG_MUSHROOM"
+    }
+  ]
 }

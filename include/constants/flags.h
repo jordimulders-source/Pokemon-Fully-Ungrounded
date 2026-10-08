@@ -1646,7 +1646,7 @@
 #define GROUNDED_FLAGS_START                    0x1000
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
-// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150+ vrij.
+// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 200-329 kaartvulling 4 (kaart_vulling_4.py), 150-199 en 330+ vrij.
 // beacon_dragon { (tools/grounded/maptools/beacon_dragon.py; FLAG_GROUNDED 100-149)
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL           FLAG_GROUNDED(100) // Project Grounded: Beacon Isle: verborgen Big Pearl
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING        FLAG_GROUNDED(101) // Project Grounded: Beacon Isle: verborgen Pearl String
@@ -1685,6 +1685,55 @@
 #define FLAG_ITEM_HOOPA_VAULT_2                 FLAG_GROUNDED(13)
 #define FLAG_ITEM_HOOPA_VAULT_3                 FLAG_GROUNDED(14)
 #define FLAG_HOOPA_BAZAAR_VISITED               FLAG_GROUNDED(15) // eerste keer door de ring: lange tekst
+
+// kaart_vulling_4 { (tools/grounded/maptools/kaart_vulling_4.py; FLAG_GROUNDED 200-329)
+#define FLAG_KV4_GRANITECAVE_B1F_GIFT_SPELUNKER          FLAG_GROUNDED(200) // Project Grounded (kaartvulling 4): GraniteCave_B1F: cadeau van Spelunker (HARD_STONE)
+#define FLAG_ITEM_KV4_GRANITECAVE_B1F_FIST_PLATE         FLAG_GROUNDED(201) // Project Grounded (kaartvulling 4): GraniteCave_B1F: FIST_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_GRANITECAVE_B1F_REVIVE      FLAG_GROUNDED(202) // Project Grounded (kaartvulling 4): GraniteCave_B1F: verborgen REVIVE 
+#define FLAG_HIDDEN_ITEM_KV4_GRANITECAVE_1F_ESCAPE_ROPE  FLAG_GROUNDED(203) // Project Grounded (kaartvulling 4): GraniteCave_1F: verborgen ESCAPE_ROPE (doodlopend gangetje)
+#define FLAG_KV4_HIDE_SHOAL_SWIMMER                      FLAG_GROUNDED(204) // Project Grounded (kaartvulling 4): Shoal Cave: zwemmer alleen bij vloed
+#define FLAG_KV4_HIDE_SHOAL_SANDBAR                      FLAG_GROUNDED(205) // Project Grounded (kaartvulling 4): Shoal Cave: Splash Plate op de zandbank alleen bij eb
+#define FLAG_KV4_SHOAL_SANDBAR_TAKEN                     FLAG_GROUNDED(206) // Project Grounded (kaartvulling 4): Shoal Cave: Splash Plate van de zandbank gepakt
+#define FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEINNERROOM_PEARL_STRING FLAG_GROUNDED(207) // Project Grounded (kaartvulling 4): ShoalCave_LowTideInnerRoom: verborgen PEARL_STRING 
+#define FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEICEROOM_ICICLE_PLATE FLAG_GROUNDED(208) // Project Grounded (kaartvulling 4): ShoalCave_LowTideIceRoom: verborgen ICICLE_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM5_DEEP_SEA_SCALE FLAG_GROUNDED(209) // Project Grounded (kaartvulling 4): SeafloorCavern_Room5: verborgen DEEP_SEA_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM6_DIVE_BALL FLAG_GROUNDED(210) // Project Grounded (kaartvulling 4): SeafloorCavern_Room6: verborgen DIVE_BALL 
+#define FLAG_ITEM_KV4_SEAFLOORCAVERN_ROOM7_DREAD_PLATE   FLAG_GROUNDED(211) // Project Grounded (kaartvulling 4): SeafloorCavern_Room7: DREAD_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM7_BIG_PEARL FLAG_GROUNDED(212) // Project Grounded (kaartvulling 4): SeafloorCavern_Room7: verborgen BIG_PEARL 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM9_MAX_ELIXIR FLAG_GROUNDED(213) // Project Grounded (kaartvulling 4): SeafloorCavern_Room9: verborgen MAX_ELIXIR 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM9_DAMP_ROCK FLAG_GROUNDED(214) // Project Grounded (kaartvulling 4): SeafloorCavern_Room9: verborgen DAMP_ROCK 
+#define FLAG_ITEM_KV4_CAVEOFORIGIN_1F_PP_UP              FLAG_GROUNDED(215) // Project Grounded (kaartvulling 4): CaveOfOrigin_1F: PP_UP 
+#define FLAG_HIDDEN_ITEM_KV4_CAVEOFORIGIN_B1F_COMET_SHARD FLAG_GROUNDED(216) // Project Grounded (kaartvulling 4): CaveOfOrigin_B1F: verborgen COMET_SHARD 
+#define FLAG_HIDDEN_ITEM_KV4_CAVEOFORIGIN_B1F_BOTTLE_CAP FLAG_GROUNDED(217) // Project Grounded (kaartvulling 4): CaveOfOrigin_B1F: verborgen BOTTLE_CAP 
+#define FLAG_ITEM_KV4_ABANDONEDSHIP_DECK_LUXURY_BALL     FLAG_GROUNDED(218) // Project Grounded (kaartvulling 4): AbandonedShip_Deck: LUXURY_BALL 
+#define FLAG_HIDDEN_ITEM_KV4_ABANDONEDSHIP_DECK_HEART_SCALE FLAG_GROUNDED(219) // Project Grounded (kaartvulling 4): AbandonedShip_Deck: verborgen HEART_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_HEAT_ROCK FLAG_GROUNDED(220) // Project Grounded (kaartvulling 4): MagmaHideout_2F_3R: verborgen HEAT_ROCK 
+#define FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_FULL_RESTORE FLAG_GROUNDED(221) // Project Grounded (kaartvulling 4): MagmaHideout_2F_3R: verborgen FULL_RESTORE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_B1F_1R_MOON_STONE FLAG_GROUNDED(222) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: verborgen MOON_STONE 
+#define FLAG_ITEM_KV4_METEORFALLS_B1F_1R_DRAGON_SCALE    FLAG_GROUNDED(223) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: DRAGON_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_B1F_1R_STAR_PIECE FLAG_GROUNDED(224) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: verborgen STAR_PIECE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_IRON_PLATE FLAG_GROUNDED(225) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: verborgen IRON_PLATE 
+#define FLAG_ITEM_KV4_METEORFALLS_STEVENSCAVE_MAX_REVIVE FLAG_GROUNDED(226) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: MAX_REVIVE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_METAL_COAT FLAG_GROUNDED(227) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: verborgen METAL_COAT 
+#define FLAG_HIDDEN_ITEM_KV4_ROUTE136_GROTTO_NEVER_MELT_ICE FLAG_GROUNDED(228) // Project Grounded (kaartvulling 4): Route136_Grotto: verborgen NEVER_MELT_ICE 
+#define FLAG_ITEM_KV4_ROUTE136_GROTTO_ICE_STONE          FLAG_GROUNDED(229) // Project Grounded (kaartvulling 4): Route136_Grotto: ICE_STONE 
+#define FLAG_HIDDEN_ITEM_KV4_NAVELROCK_ENTRANCE_PP_MAX   FLAG_GROUNDED(230) // Project Grounded (kaartvulling 4): NavelRock_Entrance: verborgen PP_MAX 
+#define FLAG_ITEM_KV4_NAVELROCK_ENTRANCE_ULTRA_BALL      FLAG_GROUNDED(231) // Project Grounded (kaartvulling 4): NavelRock_Entrance: ULTRA_BALL 
+#define FLAG_HIDDEN_ITEM_KV4_SHIPWRECKSHOALS_RELIC_GOLD  FLAG_GROUNDED(232) // Project Grounded (kaartvulling 4): ShipwreckShoals: verborgen RELIC_GOLD 
+#define FLAG_ITEM_KV4_SHIPWRECKSHOALS_SPELL_TAG          FLAG_GROUNDED(233) // Project Grounded (kaartvulling 4): ShipwreckShoals: SPELL_TAG 
+#define FLAG_HIDDEN_ITEM_KV4_SHIPWRECKSHOALS_PEARL_STRING FLAG_GROUNDED(234) // Project Grounded (kaartvulling 4): ShipwreckShoals: verborgen PEARL_STRING 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTH_SOFT_SAND  FLAG_GROUNDED(235) // Project Grounded (kaartvulling 4): SafariZone_North: verborgen SOFT_SAND 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTH_HP_UP      FLAG_GROUNDED(236) // Project Grounded (kaartvulling 4): SafariZone_North: verborgen HP_UP 
+#define FLAG_ITEM_KV4_SAFARIZONE_NORTH_SMOOTH_ROCK       FLAG_GROUNDED(237) // Project Grounded (kaartvulling 4): SafariZone_North: SMOOTH_ROCK 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_ZINC   FLAG_GROUNDED(238) // Project Grounded (kaartvulling 4): SafariZone_Northwest: verborgen ZINC 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_BIG_MUSHROOM FLAG_GROUNDED(239) // Project Grounded (kaartvulling 4): SafariZone_Northwest: verborgen BIG_MUSHROOM 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_SOUTHWEST_CARBOS FLAG_GROUNDED(240) // Project Grounded (kaartvulling 4): SafariZone_Southwest: verborgen CARBOS 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_SOUTHWEST_MIRACLE_SEED FLAG_GROUNDED(241) // Project Grounded (kaartvulling 4): SafariZone_Southwest: verborgen MIRACLE_SEED 
+#define FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_NUGGET        FLAG_GROUNDED(242) // Project Grounded (kaartvulling 4): NothingIsland: verborgen NUGGET 
+#define FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_RELIC_SILVER  FLAG_GROUNDED(243) // Project Grounded (kaartvulling 4): NothingIsland: verborgen RELIC_SILVER 
+#define FLAG_HIDDEN_ITEM_KV4_ROUTE124_SHINY_STONE        FLAG_GROUNDED(244) // Project Grounded (kaartvulling 4): Route124: verborgen SHINY_STONE 
+#define FLAG_ITEM_KV4_ROUTE124_NET_BALL                  FLAG_GROUNDED(245) // Project Grounded (kaartvulling 4): Route124: NET_BALL 
+// }
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

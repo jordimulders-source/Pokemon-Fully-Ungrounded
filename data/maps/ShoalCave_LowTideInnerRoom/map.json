@@ -26,6 +26,32 @@
       "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 11,
+      "y": 15,
+      "elevation": 5,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ShoalCave_LowTideInnerRoom_EventScript_KV4Sandbar",
+      "flag": "FLAG_KV4_HIDE_SHOAL_SANDBAR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+      "x": 20,
+      "y": 8,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ShoalCave_LowTideInnerRoom_EventScript_KV4Maren",
+      "flag": "FLAG_KV4_HIDE_SHOAL_SWIMMER"
     }
   ],
   "warp_events": [
@@ -135,6 +161,14 @@
       "elevation": 5,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ShoalCave_LowTideInnerRoom_EventScript_ShoalShell4"
+    },
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 30,
+      "elevation": 5,
+      "item": "ITEM_PEARL_STRING",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEINNERROOM_PEARL_STRING"
     }
   ]
 }

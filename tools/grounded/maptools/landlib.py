@@ -22,7 +22,7 @@ _LAYOUTS = {l['id']: l for l in json.load(open('data/layouts/layouts.json'))['la
 
 
 def _attrs(sym):
-    body = re.search(r'const struct Tileset ' + sym + r' =\s*\{(.*?)\};', _HDR, re.S).group(1)
+    body = re.search(r'const struct Tileset ' + sym + r' =(?:\s*//[^\n]*)?\s*\{(.*?)\};', _HDR, re.S).group(1)
     a = re.search(r'\.metatileAttributes = (\w+)', body).group(1)
     p = re.search(a + r'\[\] = INCBIN_U16\("([^"]+)"', _MT).group(1)
     b = open(p, 'rb').read()

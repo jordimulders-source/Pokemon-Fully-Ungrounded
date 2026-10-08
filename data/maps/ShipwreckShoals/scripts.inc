@@ -144,3 +144,40 @@ ShipwreckShoals_Text_JustSand:
 ShipwreckShoals_Text_TreasureGone:
 	.string "A hole in the sand, an empty chest\n"
 	.string "and one very lonely sock.$"
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+ShipwreckShoals_EventScript_KV4Salvager::
+	msgbox ShipwreckShoals_Text_KV4Salvager, MSGBOX_NPC
+	end
+
+ShipwreckShoals_Text_KV4Salvager:
+	.string "I salvage wrecks. Mostly I salvage\nthe same wreck. Over and over.\pEvery night it sinks again. Every\nmorning it's back. The ghosts call\lit a “routine”.\pI call it job security.$"
+
+ShipwreckShoals_EventScript_KV4Barnaby::
+	trainerbattle_single TRAINER_KV4_SAILOR_BARNABY, ShipwreckShoals_Text_KV4Barnaby_Intro, ShipwreckShoals_Text_KV4Barnaby_Defeat
+	msgbox ShipwreckShoals_Text_KV4Barnaby_Post, MSGBOX_AUTOCLOSE
+	end
+
+ShipwreckShoals_Text_KV4Barnaby_Intro:
+	.string "I deserted the ghost ship! Don't\ntell the captain. Or the union.$"
+
+ShipwreckShoals_Text_KV4Barnaby_Defeat:
+	.string "Defeated. Still technically alive.\nThat's more than the crew can say.$"
+
+ShipwreckShoals_Text_KV4Barnaby_Post:
+	.string "I'm three hundred years behind on\nunion dues. With interest, I owe\lthem roughly one soul.$"
+
+ShipwreckShoals_EventScript_KV4Cod::
+	trainerbattle_single TRAINER_KV4_SWIMMER_COD, ShipwreckShoals_Text_KV4Cod_Intro, ShipwreckShoals_Text_KV4Cod_Defeat
+	msgbox ShipwreckShoals_Text_KV4Cod_Post, MSGBOX_AUTOCLOSE
+	end
+
+ShipwreckShoals_Text_KV4Cod_Intro:
+	.string "I swim laps around the wrecks.\nThey can't chase me. Probably.$"
+
+ShipwreckShoals_Text_KV4Cod_Defeat:
+	.string "Okay. You can chase me.$"
+
+ShipwreckShoals_Text_KV4Cod_Post:
+	.string "One of the wrecks winked at me\nyesterday. I'm not saying it\lwas a portal. I'm thinking it.$"
+@ --- einde kaart_vulling_4 ---

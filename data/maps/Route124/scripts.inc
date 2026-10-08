@@ -174,3 +174,40 @@ Route124_EventScript_ZV2AbeBoat::
 Route124_Text_ZV2AbeBoat:
 	.string "ABE's boat. Named the 'SEQUEL'.\pThe first boat is inside a WAILORD.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+Route124_EventScript_KV4Beachcomber::
+	msgbox Route124_Text_KV4Beachcomber, MSGBOX_NPC
+	end
+
+Route124_Text_KV4Beachcomber:
+	.string "Everything washes up here sooner\nor later. Bottles. Shoes. A whole\lWAILORD once. Took a week to roll\lit back.\pStand still long enough and you'll\nwash up here too. Most people do.$"
+
+Route124_EventScript_KV4Nadia::
+	trainerbattle_single TRAINER_KV4_TRIATHLETE_NADIA, Route124_Text_KV4Nadia_Intro, Route124_Text_KV4Nadia_Defeat
+	msgbox Route124_Text_KV4Nadia_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route124_Text_KV4Nadia_Intro:
+	.string "A triathlon is swim, bike, run.\nMy bike sank. So now it's swim,\lswim, run. Mostly swim.$"
+
+Route124_Text_KV4Nadia_Defeat:
+	.string "A podium finish! For you.$"
+
+Route124_Text_KV4Nadia_Post:
+	.string "I'm thinking of making it a\nbiathlon. Then a regular athlon.\lThen just a nap.$"
+
+Route124_EventScript_KV4Wade::
+	trainerbattle_single TRAINER_KV4_SWIMMER_WADE, Route124_Text_KV4Wade_Intro, Route124_Text_KV4Wade_Defeat
+	msgbox Route124_Text_KV4Wade_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route124_Text_KV4Wade_Intro:
+	.string "I'm swimming to MOSSDEEP. It's\nbeen four days. Is it this way?$"
+
+Route124_Text_KV4Wade_Defeat:
+	.string "You beat me AND I'm lost.\nBusy day.$"
+
+Route124_Text_KV4Wade_Post:
+	.string "If you see MOSSDEEP, tell it I'm\non my way. Slowly. In circles.$"
+@ --- einde kaart_vulling_4 ---

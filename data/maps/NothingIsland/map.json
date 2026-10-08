@@ -73,6 +73,19 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "NothingIsland_EventScript_Nigel",
       "flag": "FLAG_HIDE_PLASMA_ISLAND_CREW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 16,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NothingIsland_EventScript_KV4Tourist",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -95,5 +108,22 @@
       "script": "NothingIsland_EventScript_Gangway"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 27,
+      "elevation": 3,
+      "item": "ITEM_NUGGET",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_NUGGET"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 25,
+      "elevation": 1,
+      "item": "ITEM_RELIC_SILVER",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_RELIC_SILVER"
+    }
+  ]
 }

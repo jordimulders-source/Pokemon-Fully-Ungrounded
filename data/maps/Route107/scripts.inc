@@ -116,3 +116,31 @@ Route107_Text_ZVSimon_Defeat:
 Route107_Text_ZVSimon_Post:
 	.string "Carbon dating says this rock is\n'a rock'. The lab is clearly biased.$"
 @ --- einde zee_vulling_1 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route107_EventScript_ZV3Takeaway::
+	lock
+	msgbox Route107_Text_ZV3Takeaway, MSGBOX_DEFAULT
+	pokemart Route107_Pokemart_ZV3Takeaway
+	msgbox Route107_Text_ZV3TakeawayBye, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+Route107_Pokemart_ZV3Takeaway:
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_SITRUS_BERRY
+	.2byte ITEM_BERRY_JUICE
+	.2byte ITEM_RAGE_CANDY_BAR
+	.2byte ITEM_LAVA_COOKIE
+	.2byte ITEM_OLD_GATEAU
+	.2byte ITEM_CASTELIACONE
+	.2byte ITEM_BIG_MALASADA
+	pokemartlistend
+
+Route107_Text_ZV3Takeaway:
+	.string "A crate with a hand-painted sign:\n'SUSHI 107 - TAKEAWAY'.\pThe menu says 'RICE'.\nThe small print sells everything\lexcept rice.$"
+
+Route107_Text_ZV3TakeawayBye:
+	.string "A note on the crate: 'NO REFUNDS.\nNO FISH. NO QUESTIONS. -CHEF'$"
+@ --- einde zee_vulling_3 ---

@@ -164,6 +164,32 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route131_EventScript_ZV2Bernard",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": 45,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route131_EventScript_ZV3Diver",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 48,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route131_EventScript_ZV3Rusty",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -192,6 +218,14 @@
       "elevation": 1,
       "item": "ITEM_BIG_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_ZV2_R131_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 49,
+      "y": 25,
+      "elevation": 3,
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_HIDDEN_ITEM_ZV3_R131_PP_UP"
     }
   ]
 }

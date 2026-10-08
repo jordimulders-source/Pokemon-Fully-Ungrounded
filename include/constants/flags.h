@@ -1083,7 +1083,7 @@
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_TM_SCALD                                0x407 // Project Grounded: was Full Heal
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_SEA_INCENSE      0x409 // Project Grounded (zeevulling 3): verborgen item (WhirlIsland)
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
 #define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
@@ -1175,9 +1175,9 @@
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_MAX_ELIXIR       0x465 // Project Grounded (zeevulling 3): verborgen item (WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV3_UW125_WAVE_INCENSE     0x466 // Project Grounded (zeevulling 3): verborgen item (Underwater_Route125)
+#define FLAG_HIDDEN_ITEM_ZV3_UW129_COMET_SHARD      0x467 // Project Grounded (zeevulling 3): verborgen item (Underwater_Route129)
 #define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
@@ -1503,19 +1503,19 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R107_SOFT_SAND         (SYSTEM_FLAGS + 0x83) // Project Grounded (zeevulling 3): verborgen item (Route107)
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R122_CLEANSE_TAG       (SYSTEM_FLAGS + 0x85) // Project Grounded (zeevulling 3): verborgen item (Route122)
+#define FLAG_HIDDEN_ITEM_ZV3_R125_SNOWBALL          (SYSTEM_FLAGS + 0x86) // Project Grounded (zeevulling 3): verborgen item (Route125)
+#define FLAG_HIDDEN_ITEM_ZV3_R125_BIG_PEARL         (SYSTEM_FLAGS + 0x87) // Project Grounded (zeevulling 3): verborgen item (Route125)
+#define FLAG_HIDDEN_ITEM_ZV3_R125_ULTRA_BALL        (SYSTEM_FLAGS + 0x88) // Project Grounded (zeevulling 3): verborgen item (Route125)
+#define FLAG_HIDDEN_ITEM_ZV3_R126_ELIXIR            (SYSTEM_FLAGS + 0x89) // Project Grounded (zeevulling 3): verborgen item (Route126)
+#define FLAG_HIDDEN_ITEM_ZV3_R129_BIG_ROOT          (SYSTEM_FLAGS + 0x8A) // Project Grounded (zeevulling 3): verborgen item (Route129)
+#define FLAG_HIDDEN_ITEM_ZV3_R131_PP_UP             (SYSTEM_FLAGS + 0x8B) // Project Grounded (zeevulling 3): verborgen item (Route131)
+#define FLAG_RECEIVED_ROUTE_133_ICY_ROCK            (SYSTEM_FLAGS + 0x8C) // Project Grounded (zeevulling 3): Route 133, meteoroloog (Icy Rock)
+#define FLAG_HIDDEN_ITEM_ZV3_R133_UTILITY_UMBRELLA  (SYSTEM_FLAGS + 0x8D) // Project Grounded (zeevulling 3): verborgen item (Route133)
 #define FLAG_HIDDEN_ITEM_ZV2_R120_PEARL_STRING      (SYSTEM_FLAGS + 0x8E) // Project Grounded (zeevulling 2): verborgen item (Route120)
 #define FLAG_HIDDEN_ITEM_ZV2_R119_MYSTIC_WATER      (SYSTEM_FLAGS + 0x8F) // Project Grounded (zeevulling 2): verborgen item (Route119)
 #define FLAG_HIDDEN_ITEM_ZV2_R118_HEART_SCALE       (SYSTEM_FLAGS + 0x90) // Project Grounded (zeevulling 2): verborgen item (Route118)

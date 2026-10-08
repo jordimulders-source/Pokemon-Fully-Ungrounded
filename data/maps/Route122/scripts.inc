@@ -44,3 +44,19 @@ Route122_Text_ZV2Cora_Defeat:
 Route122_Text_ZV2Cora_Post:
 	.string "Lap 4,012. Still haven't seen\nwhat waved back. Maybe tomorrow.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route122_EventScript_ZV3Vesper::
+	trainerbattle_single TRAINER_HEX_MANIAC_VESPER, Route122_Text_ZV3Vesper_Intro, Route122_Text_ZV3Vesper_Defeat
+	msgbox Route122_Text_ZV3Vesper_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route122_Text_ZV3Vesper_Intro:
+	.string "I'm the maid of honor at a wedding\ntonight. Both of them are dead.\pThe groom has been dead for 200\nyears. The bride is 'only' 80.\lPeople are talking.$"
+
+Route122_Text_ZV3Vesper_Defeat:
+	.string "I'll still catch the bouquet.\nIt goes straight through my hands.$"
+
+Route122_Text_ZV3Vesper_Post:
+	.string "The ceremony is on the shore at\nmidnight. Dress code: transparent.\pThe ferryman refuses to do the\ncatering. Again.$"
+@ --- einde zee_vulling_3 ---

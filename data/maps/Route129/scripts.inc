@@ -141,3 +141,19 @@ Route129_Text_ZV2Couple_NotEnough:
 Route129_Text_ZV2Couple_Post:
 	.string "TINA: Someone said a giant WAILORD\nnaps on these routes sometimes.\pTOM: We'll stay until we see it.\nTINA: We've been here since June.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route129_EventScript_ZV3Coral::
+	trainerbattle_single TRAINER_RANGER_CORAL, Route129_Text_ZV3Coral_Intro, Route129_Text_ZV3Coral_Defeat
+	msgbox Route129_Text_ZV3Coral_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route129_Text_ZV3Coral_Intro:
+	.string "Shh. I'm doing the yearly WAILORD\ncensus.\pSo far: zero. Same as last year.\nThe tour boats say 'hundreds'.\lSomebody is lying to tourists.$"
+
+Route129_Text_ZV3Coral_Defeat:
+	.string "Census update: one trainer,\nvery rude, zero WAILORD.$"
+
+Route129_Text_ZV3Coral_Post:
+	.string "If you see a WAILORD, don't tell\nthe tour guys. They'd only\lsell tickets to it.$"
+@ --- einde zee_vulling_3 ---

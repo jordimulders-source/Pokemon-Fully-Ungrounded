@@ -447,17 +447,6 @@ Nature: Adamant
 - Rock Slide
 - Swords Dance
 
-Iron Valiant @ Booster Energy
-Level: 31
-Ability: Quark Drive
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Spirit Break
-- Low Kick
-- Shadow Sneak
-- Swords Dance
-
 Pawniard @ Eviolite
 Level: 32
 Ability: Defiant

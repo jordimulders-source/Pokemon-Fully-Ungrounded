@@ -100,7 +100,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_SHY_GUY_GREEN | 541 | Decidueye, Masquerain, Zarude, Ogerpon | Masquerain, Zarude, Ogerpon | regen |
 | STADIUM_SHY_GUY_PINK | 517 | Hatterene, Sylveon, Clefable, Ogerpon | Hatterene, Sylveon, Ogerpon | - |
 | STADIUM_SHY_GUY_BLACK | 512 | Honchkrow, Runerigus, Grimmsnarl, Ogerpon | Honchkrow, Grimmsnarl, Ogerpon | - |
-| STADIUM_BURGLAR | 495 | Weavile, Grimmsnarl, Honchkrow, Thievul | Weavile, Grimmsnarl, Thievul | - |
+| STADIUM_BURGLAR | 495 | Grimmsnarl, Honchkrow, Zoroark, Thievul | Grimmsnarl, Zoroark, Thievul | - |
 | STADIUM_DITTO | 485 | Tangrowth, Tinkaton, Pikachu, Snorlax | Tangrowth, Pikachu, Snorlax | - |
 | STADIUM_DONALD | 520 | Ditto, Ditto, Ditto, Ditto | Ditto, Ditto, Ditto | - |
 | STADIUM_IVAN | 415 | Magikarp, Relicanth, Barraskewda, Bruxish | Magikarp, Relicanth, Bruxish | - |

@@ -3990,17 +3990,6 @@ Music: Suspicious
 Back Pic: Brendan
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weavile @ Razor Claw
-Level: 50
-Ability: Pickpocket
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
-
 Grimmsnarl @ Light Clay
 Level: 50
 Ability: Prankster
@@ -4011,6 +4000,17 @@ Nature: Careful
 - Spirit Break
 - Reflect
 - Light Screen
+
+Zoroark_Hisui @ Life Orb
+Level: 50
+Ability: Illusion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Bitter Malice
+- Flamethrower
+- Nasty Plot
 
 Thievul @ Sitrus Berry
 Level: 50

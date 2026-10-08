@@ -31439,16 +31439,16 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weavile @ Razor Claw
+Sableye
 Level: 50
-Ability: Pickpocket
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
+EVs: 128 HP / 128 SpD
+Nature: Careful
 - Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
+- Foul Play
+- Will-O-Wisp
+- Recover
 
 Spiritomb
 Level: 50
@@ -31483,14 +31483,14 @@ Nature: Adamant
 - Brave Bird
 - Sucker Punch
 
-Zoroark @ Life Orb
+Zoroark_Hisui @ Life Orb
 Level: 50
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -33346,12 +33346,12 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Sucker Punch
 - Sand Attack
 
-Zorua
+Zorua_Hisui
 Level: 21
 Ability: Illusion
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
-- Snarl
+- Bitter Malice
 - Fake Tears
 - Taunt
 
@@ -33392,13 +33392,13 @@ Nature: Jolly
 - Sucker Punch
 - Encore
 
-Zorua
+Zorua_Hisui
 Level: 25
 Ability: Illusion
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Timid
 - Thief
-- Snarl
+- Bitter Malice
 - Fake Tears
 - Nasty Plot
 
@@ -33442,13 +33442,13 @@ Items: Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Zoroark
+Zoroark_Hisui
 Level: 30
 Ability: Illusion
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -33512,16 +33512,16 @@ Items: Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Weavile
+Liepard
 Level: 37
-Ability: Pickpocket
+Ability: Prankster
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-EVs: 84 Atk / 84 Spe
+EVs: 128 Atk / 128 Spe
 Nature: Jolly
 - Thief
-- Ice Punch
-- Ice Shard
-- Low Kick
+- Knock Off
+- Fake Out
+- U-turn
 
 Sableye
 Level: 37
@@ -33534,14 +33534,14 @@ Nature: Impish
 - Will-O-Wisp
 - Recover
 
-Zoroark
+Zoroark_Hisui
 Level: 37
 Ability: Illusion
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 SpA / 84 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -37726,17 +37726,6 @@ Nature: Adamant
 - Rock Slide
 - Swords Dance
 
-Iron Valiant @ Booster Energy
-Level: 31
-Ability: Quark Drive
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Spirit Break
-- Low Kick
-- Shadow Sneak
-- Swords Dance
-
 Pawniard @ Eviolite
 Level: 32
 Ability: Defiant
@@ -38380,16 +38369,16 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Weavile @ Razor Claw
+Sableye
 Level: 43
-Ability: Pickpocket
+Ability: Prankster
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-EVs: 128 Atk / 128 Spe
-Nature: Jolly
+EVs: 128 HP / 128 SpD
+Nature: Careful
 - Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
+- Foul Play
+- Will-O-Wisp
+- Recover
 
 Spiritomb
 Level: 43
@@ -38402,14 +38391,14 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark
+Zoroark_Hisui
 Level: 43
 Ability: Illusion
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 SpA / 128 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -38456,16 +38445,16 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weavile @ Razor Claw
+Sableye
 Level: 49
-Ability: Pickpocket
+Ability: Prankster
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
+EVs: 128 HP / 128 SpD
+Nature: Careful
 - Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
+- Foul Play
+- Will-O-Wisp
+- Recover
 
 Spiritomb
 Level: 49
@@ -38478,14 +38467,14 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark
+Zoroark_Hisui
 Level: 49
 Ability: Illusion
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -38532,16 +38521,16 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weavile @ Razor Claw
+Sableye
 Level: 54
-Ability: Pickpocket
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
+EVs: 128 HP / 128 SpD
+Nature: Careful
 - Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
+- Foul Play
+- Will-O-Wisp
+- Recover
 
 Spiritomb
 Level: 54
@@ -38554,14 +38543,14 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark @ Life Orb
+Zoroark_Hisui @ Life Orb
 Level: 54
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 
@@ -38608,16 +38597,16 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Weavile @ Razor Claw
+Sableye
 Level: 66
-Ability: Pickpocket
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
+EVs: 128 HP / 128 SpD
+Nature: Careful
 - Thief
-- Icicle Crash
-- Ice Shard
-- Low Kick
+- Foul Play
+- Will-O-Wisp
+- Recover
 
 Krookodile
 Level: 66
@@ -38652,14 +38641,14 @@ Nature: Adamant
 - Brave Bird
 - Sucker Punch
 
-Zoroark @ Life Orb
+Zoroark_Hisui @ Life Orb
 Level: 67
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Thief
-- Night Daze
+- Bitter Malice
 - Flamethrower
 - Nasty Plot
 

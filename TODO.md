@@ -54,19 +54,14 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
-1. **Tao-eiland:** blijven de Dragon Tamers, de verzekeringsexpert en de drakentabellen van Dragonspine staan (alleen Gerald weg)? Kyurem-fusievormen (Black/White) aanzetten?
-2. **Beacon Isle:** wat staat er op het eilandje dat je alleen in de lichtbundel ziet?
-3. **Spacetime Cave:** ontwerp jij de grot zelf (zoals op 6 okt gezegd), of mag ik een voorstel maken? En verdwijnt de Mewtwo-grot in Meteor Falls zodra Cerulean Cave er is?
-4. **Yoshi's Island:** zijn alle assets binnen, en heb je al een idee voor de Shy Guy-intro?
-5. **Granite Cave / Shoal Cave / Cave of Origin:** zijn de oude voorstellen (Carbink-kristalgrot, ijzige onderlaag, Primal-lore) goed, of heb je andere ideeën?
-6. **Altering Cave** elke dag andere soorten, en **Abandoned Ship** met een nachtelijk benedendek: nog gewenst? (VRAGEN_VOLGENDE 2; Mirage Tower terug vervalt, Hoopa heeft hem "opgevouwen")
-7. **Sootopolis-eilanden** en de **diepzeetrog**: nog gewenst, of genoeg zee na zeevulling 1–3?
-8. **Delta Episode-beloning:** nu 3 Comet Shards. De Mega Ring kan niet, want Mega Evolution is uitgeschakeld. Iets anders?
-9. **Extra signatures** die nog niet gekozen zijn: Feud Claw/Grudge Fang (Zangoose/Seviper), Firefly Signal (Volbeat/Illumise). Wel of niet? (VRAGEN_VOLGENDE 6)
-10. **Gen 4+-trainersprites** (Greenphx; HGSS/BW-sheets in `graphics/`): welke personages eerst? En krijgt V een eigen sprite?
-11. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: nog gewenst? (backlog okt)
-12. **Contests:** volwaardig tweede spoor of alleen QoL? En vóór of na de beta? (CONTESTS_VOORSTEL 1 en 9)
-13. **Grounded-Pokédex:** welke groepen weglaten (Ultra Beasts, paradoxen, ...)? (DEX_ANALYSE 6)
+(Vragen 1–3, 5 en 7 van 9 okt zijn beantwoord en verwerkt; zie hierboven.)
+1. **Yoshi's Island:** zijn alle assets binnen, en heb je al een idee voor de Shy Guy-intro?
+2. **Spacetime Cave:** per locatie input (volledig nabouwen of eigen richting, welke assets). Cerulean Cave, Lavender Town en Pokémon Tower worden kopieën van FRLG.
+3. **Altering Cave** elke dag andere soorten, en **Abandoned Ship** met een nachtelijk benedendek: nog gewenst? (VRAGEN_VOLGENDE 2; Mirage Tower terug vervalt, Hoopa heeft hem "opgevouwen")
+4. **Extra signatures** die nog niet gekozen zijn: Feud Claw/Grudge Fang (Zangoose/Seviper), Firefly Signal (Volbeat/Illumise). Wel of niet? (VRAGEN_VOLGENDE 6)
+5. **Gen 4+-trainersprites** (Greenphx; HGSS/BW-sheets in `graphics/`): welke personages eerst? En krijgt V een eigen sprite?
+6. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: nog gewenst? (backlog okt)
+7. **Grounded-Pokédex:** welke groepen weglaten (Ultra Beasts, paradoxen, ...)? (DEX_ANALYSE 6)
 
 ## 5. Besloten / bewust niet
 - **Volgorde:** basiskaart → uitbreidingen → intro's en muziek. (8–9 okt)

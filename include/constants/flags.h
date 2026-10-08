@@ -1641,6 +1641,13 @@
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
+// Project Grounded: extra flags (de gewone flags waren op, 8 okt). Ze staan achteraan SaveBlock1
+// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..511.
+#define GROUNDED_FLAGS_START                    0x1000
+#define NUM_GROUNDED_FLAGS                      512
+#define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
+// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150+ vrij.
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

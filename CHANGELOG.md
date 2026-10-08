@@ -17360,3 +17360,8 @@ Volgens Jordi's GBA-instructies per leider:
 
   - Het Mt. Chimney-partnerteam is gelijkgetrokken (geen Oranguru meer).
 - **Burglar (SIMON):** een team per badge (1 t/m 8) en een post-E4-team (9 teams; nieuw `TRAINER_BURGLAR_6`–`_9`). De kern is de Kanto-inbreker (vuur + gifgas), die meegroeit van Koffing/Vulpix/Growlithe (lv 17) tot Mega Charizard Y (lv 66–68). De Big Nugget hoort bij het post-E4-team.
+
+### [v0.9.151] - 512 extra flags
+- De gewone flags waren op (alleen dagelijkse nog vrij). Er is nu een eigen blok van 512 flags: `FLAG_GROUNDED(0)` t/m `FLAG_GROUNDED(511)` (id 0x1000+).
+- Het blok staat achteraan SaveBlock1, zodat bestaande saves blijven werken. `GetFlagPointer` kent het bereik.
+- De verdeling per onderdeel staat in `include/constants/flags.h`. Getest: `setflag FLAG_GROUNDED(5)` en `(511)` komen in de save.

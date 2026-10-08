@@ -224,10 +224,14 @@ u16 VarGetObjectEventGraphicsId(u8 id)
     return VarGet(VAR_OBJ_GFX_ID_0 + id);
 }
 
+STATIC_ASSERT(FLAGS_COUNT <= GROUNDED_FLAGS_START, GroundedFlagsOverlap); // Project Grounded
+
 u8 *GetFlagPointer(u16 id)
 {
     if (id == 0)
         return NULL;
+    else if (id >= GROUNDED_FLAGS_START && id < GROUNDED_FLAGS_START + NUM_GROUNDED_FLAGS) // Project Grounded
+        return &gSaveBlock1Ptr->groundedFlags[(id - GROUNDED_FLAGS_START) / 8];
     else if (id < SPECIAL_FLAGS_START)
         return &gSaveBlock1Ptr->flags[id / 8];
 #if TESTING

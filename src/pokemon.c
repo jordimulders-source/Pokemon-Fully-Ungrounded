@@ -6218,9 +6218,9 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         // Project Grounded: Wally's eigen thema groeit met hem mee (5 = eindversie). 1 (fluitje, traag) = Mt. Pyre,
         // 2 (fluit) = Mossdeep (extra gevechten, tools/grounded/maptools/extra_fights.py)
         if (trainerId == TRAINER_WALLY_MT_PYRE)
-            return MUS_GROUNDED_VS_WALLY_1;
+            return MUS_GROUNDED_VS_WALLY_4;
         if (trainerId == TRAINER_WALLY_MOSSDEEP)
-            return MUS_GROUNDED_VS_WALLY_2;
+            return MUS_GROUNDED_VS_WALLY_4;
         if (trainerId == TRAINER_WALLY_MAUVILLE)
             return MUS_GROUNDED_VS_WALLY_3;
         if (trainerId == TRAINER_WALLY_METEOR_FALLS)

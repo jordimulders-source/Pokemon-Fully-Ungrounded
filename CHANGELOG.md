@@ -17254,3 +17254,17 @@ Volgens Jordi's GBA-instructies per leider:
 - Bij elk gebouw staan twee praters over het gebouw.
 - De Spire-veteraan stond op een fakkelpilaar en staat nu een tegel naar links.
 - **Exp. Share:** Prof. Birch geeft hem samen met de Pokédex (vóór de eerste gym). Mr. Stone geeft na de brief een tweede ("Another one? Must be a franchise."). Het is een vastgehouden item (Gen 5): de houder krijgt een deel van de EXP zonder mee te vechten.
+
+### [v0.9.145] - Extra gevechten, Burglar 3×, Shy Guy in de overwereld
+- **Wally** vecht nu ook op Mt. Pyre 1F en in Mossdeep vóór het Space Center (met Jordi's zinnen: "Scare no much, horror watching when young many" en "Gallader psychic feel good in spacing placing"). Na het gevecht verdwijnt hij.
+  - Mt. Pyre: lv 42, Gallade 44 (spookteam).
+  - Mossdeep: lv 47, Gallade 49 (psychic).
+  - Beide op Wally's vierde thema (na Meteor Falls).
+- **Zinnia** vecht op Route 114 (Meteor Falls) en Route 119. **Dave** op Route 109 (strand) en Route 118. **Mitch** op Route 110 en Route 121. **SickBlik** op Route 104 en Route 113.
+  - Elk gevecht heeft eigen muziek en transitie, en de teams groeien mee naar hun bestaande Victory Road- of Sky Pillar-team.
+  - Alles komt uit `tools/grounded/maptools/extra_fights.py` (trainers 1134–1144); de tabel staat in `TRAINER_NAMEN.md`.
+- **Burglar:** schaalde al op badges. Nu komt hij na badge 2, 4 en 6 gegarandeerd bij je eerstvolgende bezoek aan een inbrekersstad, tot je hem voor die mijlpaal verslagen hebt. De gewone kans blijft daarnaast. Zo zie je hem minstens 3× per playthrough, steeds met een sterker team.
+- **Shy Guy:**
+  - Eigen overworldsprite (rood, groen, roze, zwart; uit DarkSB24's Yoshi's Island-sheet, `tools/grounded/shyguy_overworld.py`), ook in het Battle Stadium.
+  - Een rode Shy Guy zit ingegraven in de woestijn van Route 111 (achter het rotsblok aan de oostrand): lv 28, Mr. Mime 29.
+  - Een eigen intro bedenkt Jordi nog.

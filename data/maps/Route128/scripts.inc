@@ -312,3 +312,19 @@ Route128_Text_ZV2Juno_Defeat:
 Route128_Text_ZV2Juno_Post:
 	.string "Membership fee is zero. Monthly.\nDEREK says it's 'exclusive'.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route128_EventScript_ZV4Solenne::
+	trainerbattle_single TRAINER_PARASOL_LADY_SOLENNE, Route128_Text_ZV4Solenne_Intro, Route128_Text_ZV4Solenne_Defeat
+	msgbox Route128_Text_ZV4Solenne_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route128_Text_ZV4Solenne_Intro:
+	.string "I came for the sun. My parasol\ncame for the shade.\pWe're in a very complicated\nrelationship.$"
+
+Route128_Text_ZV4Solenne_Defeat:
+	.string "Fine, I'll get a tan. On one side.\nThe parasol side stays pale.$"
+
+Route128_Text_ZV4Solenne_Post:
+	.string "This sandbank wasn't here\nyesterday. Tomorrow it won't be\leither. I have to keep moving my\ltowel.$"
+@ --- einde zee_vulling_4 ---

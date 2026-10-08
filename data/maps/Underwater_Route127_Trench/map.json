@@ -1,0 +1,93 @@
+{
+  "id": "MAP_UNDERWATER_ROUTE127_TRENCH",
+  "name": "Underwater_Route127_Trench",
+  "layout": "LAYOUT_UNDERWATER_ROUTE127_TRENCH",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_ROUTE_127",
+  "requires_flash": false,
+  "weather": "WEATHER_UNDERWATER_BUBBLES",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+      "x": 7,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Underwater_Route127_Trench_EventScript_ZV4Abyssa",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 60,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DEEP_SEA_SCALE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_SCALE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 18,
+      "y": 55,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DEEP_SEA_TOOTH",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_TOOTH"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE127",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 57,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Underwater_Route127_Trench_EventScript_ZV4Bottom"
+    },
+    {
+      "type": "hidden_item",
+      "x": 16,
+      "y": 60,
+      "elevation": 3,
+      "item": "ITEM_RELIC_CROWN",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_TRENCH_RELIC_CROWN"
+    },
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_DIVE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_TRENCH_DIVE_BALL"
+    }
+  ]
+}

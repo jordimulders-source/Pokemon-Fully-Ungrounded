@@ -31,5 +31,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_SHOAL_SHELL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_WHIRL_SHOAL_SHELL"
+    }
+  ]
 }

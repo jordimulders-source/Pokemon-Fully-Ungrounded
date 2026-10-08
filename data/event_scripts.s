@@ -479,6 +479,7 @@ gStdScripts_End::
 	.include "data/maps/SeaTemple_Sanctum/scripts.inc"
 	.include "data/maps/SeaTemple_Hall/scripts.inc"
 	.include "data/maps/Underwater_SeaTemple/scripts.inc"
+	.include "data/maps/Underwater_Route127_Trench/scripts.inc"
 	.include "data/maps/GhostShip_CaptainsOffice/scripts.inc"
 	.include "data/maps/GhostShip_Cabins/scripts.inc"
 	.include "data/maps/GhostShip_Corridors/scripts.inc"

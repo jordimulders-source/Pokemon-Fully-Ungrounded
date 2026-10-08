@@ -7,14 +7,11 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-1. **Wilde Pokémon in elke dungeon/grot die ze nog niet heeft**, behalve legendary-holen (Crystal Cavity, Faraway Island e.d.). (9 okt)
-2. **Granite Cave:** extra content. Eerder voorstel: B3F-kristalgrot met Carbink. (9 okt; VRAGEN_VOLGENDE 2)
-3. **Mt. Chimney:** extra plekken met wild. (9 okt)
-4. **Shoal Cave:** veel interessanter. Eerder voorstel: ijzige onderlaag bij eb met Cetoddle/Cetitan, Bergmite. (9 okt; VRAGEN_VOLGENDE 2)
-5. **Seafloor Cavern en Cave of Origin:** meer content. Eerder voorstel: Cave of Origin dieper, met Primal-lore. (9 okt; VRAGEN_VOLGENDE 2)
-6. **Onderwater fixen:** encounters + iets te ontdekken. Nog zonder onderwaterkaart: Route 130–133. Eerdere voorstellen die nog niet gebouwd zijn: Koraalkathedraal (126), luchtbel-grot (128), Sea Shard-verzamelquest bij de Diving Treasure Hunter. (9 okt; VRAGEN_VOLGENDE O1/O3/O4)
-7. **Zeevulling verder.** Nog niet gedaan uit de zee-ideeën: Sootopolis-eilanden, een echte diepzeetrog. (9 okt; ZEE_PLAN idee 1 en 4; KAART_REVIEW e)
-8. **Birth Island helemaal weg** (kaart, event, ticket; Deoxys zit in de ruimte). Ook het verlaten kamp van v0.9.148 daar. (9 okt)
+Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
+1. **Granite Cave B3F-kristalgrot met Carbink** en **Cave of Origin dieper met Primal-lore**, **ijzige onderlaag Shoal Cave** (Cetoddle/Cetitan, Bergmite). (VRAGEN_VOLGENDE 2)
+2. **Koraalkathedraal (126), luchtbel-grot (128), Sea Shard-verzamelquest** bij de Diving Treasure Hunter. (VRAGEN_VOLGENDE O1/O3/O4)
+3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset). (ZEE_PLAN 1)
+4. **Birth Island helemaal weg** (kaart, event, ticket; ook het kamp van v0.9.148). (9 okt)
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 1. **Dragonspine Isle → Tao-eiland:** Gerald (en zijn Stadium-plek) eruit; Reshiram en Zekrom allebei te vangen, later Kyurem. Ruïnetoren-idee: LEGENDARY_PLAN groep 9. (9 okt)
@@ -46,7 +43,6 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Muziek** (status uit `tools/grounded/MUZIEK.md` en de changelog):
 - Wacht op Jordi's oordeel: **Neo Plasma** v12k (v0.9.109), **Brawly** v6 Rocky-stijl (v0.9.98), **Regigigas** v5, **Burglar** v1 (v0.9.93). Batch 5 (v0.9.88) was verder "zeer tot gematigd tevreden".
-- Klaar maar niet gekoppeld: **Hoopa-thema** (branch `claude/hoopa-theme-wip`, song 662). (v0.9.154)
 - Nog te maken: **Volcanion**, **Cresselia**, **Battle Stadium** (arena + finale, MUZIEK_KANDIDATEN A5), muziek voor de nieuwe uitbreidingen (Tao-eiland, Spacetime Cave, Yoshi's Island/Boo-thema: Jordi uploadt de Boo-bron).
 - Route-remixes, allemaal nog niet gemaakt (MUZIEK_KANDIDATEN C): Route 135/136 winter, Fortree Jungle, Mangrove Mire, Toadstool Hollow, Safari (Fairy Forest / Thunder Plains / Haunted Camp), The Spire (per act + elite/baas), Meteor Falls (kosmisch), Flower Paradise / Liberty Garden.
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)

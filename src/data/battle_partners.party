@@ -4172,6 +4172,84 @@ Nature: Timid
 - Bug Buzz
 - Giga Drain
 
+=== PARTNER_STADIUM_NIGEL ===
+Name: NIGEL
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+Excadrill @ Choice Scarf
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Iron Head
+- Rock Slide
+- X-Scissor
+
+Haxorus @ Life Orb
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Dragon Dance
+- Outrage
+- Earthquake
+- Poison Jab
+
+=== PARTNER_STADIUM_GRIMSBY ===
+Name: GRIMSBY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Wailord @ Sitrus Berry
+Level: 50
+Ability: Multiscale
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Spout
+- Ice Beam
+- Heavy Slam
+- Rest
+
+Basculegion @ Mystic Water
+Level: 50
+Ability: Adaptability
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wave Crash
+- Phantom Force
+- Aqua Jet
+- Crunch
+
+Dhelmise @ Life Orb
+Level: 50
+Ability: Steelworker
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Phantom Force
+- Power Whip
+- Earthquake
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

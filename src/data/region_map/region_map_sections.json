@@ -1322,6 +1322,86 @@
       "y": 3,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_NOTHING_ISLAND",
+      "name": "NOTHING ISLAND",
+      "x": 0,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SHIPWRECK_SHOALS",
+      "name": "SHIPWRECK SHOALS",
+      "x": 18,
+      "y": 12,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SS_AGAVE",
+      "name": "S.S. AGAVE",
+      "x": 18,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FLOATING_MARKET",
+      "name": "FLOATING MARKET",
+      "x": 13,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SEA_TEMPLE",
+      "name": "SEA TEMPLE",
+      "x": 24,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_STEAM_ISLAND",
+      "name": "STEAM ISLAND",
+      "x": 20,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_PARADISO_RESORT",
+      "name": "PARADISO RESORT",
+      "x": 24,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WHIRL_ISLAND",
+      "name": "WHIRL ISLAND",
+      "x": 21,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TAPU_ISLE",
+      "name": "TAPU ISLE",
+      "x": 15,
+      "y": 8,
+      "width": 2,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_FULLMOON_ISLAND",
+      "name": "FULLMOON ISLAND",
+      "x": 1,
+      "y": 11,
+      "width": 2,
+      "height": 2
     }
   ]
 }

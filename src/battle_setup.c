@@ -500,6 +500,28 @@ void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCa
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
 }
 
+// Project Grounded: de Tapu's (eigen intro per Tapu, eindigt op de grote drumslag van hun thema)
+#if 1 // Project Grounded: Tapu-thema goedgekeurd door Jordi (v6)
+#define TAPU_BATTLE_MUSIC MUS_GROUNDED_VS_TAPU
+#else
+#define TAPU_BATTLE_MUSIC MUS_RG_VS_LEGEND
+#endif
+
+static enum BattleTransition GetTapuBattleTransition(void)
+{
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
+    {
+    case SPECIES_TAPU_LELE:
+        return B_TRANSITION_TAPU_LELE;
+    case SPECIES_TAPU_BULU:
+        return B_TRANSITION_TAPU_BULU;
+    case SPECIES_TAPU_FINI:
+        return B_TRANSITION_TAPU_FINI;
+    default:
+        return B_TRANSITION_TAPU_KOKO;
+    }
+}
+
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();
@@ -511,15 +533,18 @@ void BattleSetup_StartLegendaryBattle(void)
     default:
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
-        CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
+        // Project Grounded: muurschildering die barst, lava door de barsten (Terra Cave); de oude blijft bestaan
+        CreateBattleStartTask(B_TRANSITION_GROUDON_MURAL, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_KYOGRE:
     case SPECIES_KYOGRE_PRIMAL:
-        CreateBattleStartTask(B_TRANSITION_KYOGRE, MUS_VS_KYOGRE_GROUDON);
+        // Project Grounded: dezelfde schildering, water door de barsten (Marine Cave)
+        CreateBattleStartTask(B_TRANSITION_KYOGRE_MURAL, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
-        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_GROUNDED_VS_RAYQUAZA); // Project Grounded: gamelan-remix
+        // Project Grounded: eigen film (groene ring rond de Sky Pillar); de oude B_TRANSITION_RAYQUAZA blijft bestaan
+        CreateBattleStartTask(B_TRANSITION_RAYQUAZA_PILLAR, MUS_GROUNDED_VS_RAYQUAZA); // gamelan-remix
         break;
     case SPECIES_DEOXYS_NORMAL:
     case SPECIES_DEOXYS_ATTACK:
@@ -527,9 +552,15 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_SPEED:
         CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
         break;
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+    case SPECIES_LUGIA: // Project Grounded: zinken, zilveren veer, het oog gaat open, draaikolk en storm; eigen thema
+        CreateBattleStartTask(B_TRANSITION_LUGIA, MUS_GROUNDED_VS_LUGIA);
+        break;
+    case SPECIES_HO_OH: // Project Grounded: Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels; eigen thema
+        CreateBattleStartTask(B_TRANSITION_HO_OH, MUS_GROUNDED_VS_HO_OH);
+        break;
+    case SPECIES_MANAPHY: // Project Grounded: zeetempel (Route 128), rimpelingen + legendary-thema
+    case SPECIES_PHIONE:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
@@ -567,6 +598,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
+    case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
+        CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; golvend als een droom
+        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
         CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
         break;
@@ -582,11 +619,34 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_FEZANDIPITI:
         CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_TAPU_KOKO: // Project Grounded: de Tapu's, gesloten schild dat op de drumslag opengaat
+    case SPECIES_TAPU_LELE:
+    case SPECIES_TAPU_BULU:
+    case SPECIES_TAPU_FINI:
+        CreateBattleStartTask(GetTapuBattleTransition(), TAPU_BATTLE_MUSIC);
+        break;
     case SPECIES_OGERPON_TEAL: // Project Grounded: Ogerpon in Fortree Jungle, door het regenwoud
     case SPECIES_OGERPON_WELLSPRING:
     case SPECIES_OGERPON_HEARTHFLAME:
     case SPECIES_OGERPON_CORNERSTONE:
-        CreateBattleStartTask(B_TRANSITION_ROUTE_RAINFOREST, MUS_RG_VS_LEGEND);
+        // Project Grounded: maskerkraam op een nachtfestival, het Teal-masker kijkt terug (was het regenwoud)
+        CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_HOOPA_CONFINED: // Project Grounded: ringportaal, er valt van alles uit, de hand grijpt de camera
+    case SPECIES_HOOPA_UNBOUND:
+        CreateBattleStartTask(B_TRANSITION_HOOPA, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, een weerbericht dat ontspoort; elk een eigen thema
+    case SPECIES_TORNADUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_TORNADUS);
+        break;
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_THUNDURUS);
+        break;
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
     }
 
@@ -920,6 +980,11 @@ enum BattleTransition GetWildBattleTransition(void)
     // Project Grounded: sommige wilde Pokemon hebben hun eigen transitie
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
     {
+    case SPECIES_TAPU_KOKO:
+    case SPECIES_TAPU_LELE:
+    case SPECIES_TAPU_BULU:
+    case SPECIES_TAPU_FINI:
+        return GetTapuBattleTransition();
     case SPECIES_PIKACHU:
         return B_TRANSITION_PIKACHU;
     case SPECIES_MAGIKARP:
@@ -934,6 +999,22 @@ enum BattleTransition GetWildBattleTransition(void)
         return B_TRANSITION_ZANGOOSE;
     case SPECIES_SEVIPER:
         return B_TRANSITION_SEVIPER;
+    case SPECIES_LUGIA: // Project Grounded: legendary-intro's, ook als ze via een gewoon wild gevecht starten
+        return B_TRANSITION_LUGIA;
+    case SPECIES_HO_OH:
+        return B_TRANSITION_HO_OH;
+    case SPECIES_VOLCANION:
+        return B_TRANSITION_VOLCANION;
+    case SPECIES_HOOPA_CONFINED:
+    case SPECIES_HOOPA_UNBOUND:
+        return B_TRANSITION_HOOPA;
+    case SPECIES_TORNADUS_INCARNATE:
+    case SPECIES_TORNADUS_THERIAN:
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        return B_TRANSITION_FORCES;
     }
     if (routeTransition >= 0)
         return routeTransition;
@@ -964,7 +1045,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
-    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER)
+    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT)
         return B_TRANSITION_BIRCH;
 
     // Project Grounded: Gabby & Ty filmen je; Joey's Poochyena valt je aan
@@ -977,6 +1058,11 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
         return B_TRANSITION_AQUA_MAGMA;
 
+    // Project Grounded: Archie en Maxie met werkstraf (Weather Institute): het prikbord van de pauzeruimte
+    if ((trainerId >= TRAINER_ARCHIE_SERVICE_1 && trainerId <= TRAINER_ARCHIE_SERVICE_4)
+     || (trainerId >= TRAINER_MAXIE_SERVICE_1 && trainerId <= TRAINER_MAXIE_SERVICE_4))
+        return B_TRANSITION_WEATHER_SERVICE;
+
     // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
@@ -984,6 +1070,17 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
     if (trainerId == TRAINER_DAVE)
         return B_TRANSITION_DAVE;
+    // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
+    if (trainerId == TRAINER_SICKBLIK)
+        return B_TRANSITION_SICKBLIK;
+    // Project Grounded: Mimi (poppenkast), Keccles (camouflage in het lab) en de Burglar (bewakingscamera), ook in het
+    // Battle Stadium. Vervangen de mugshot, zoals bij Steven.
+    if (trainerId == TRAINER_MIMI)
+        return B_TRANSITION_MIMI;
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+        return B_TRANSITION_KECCLES;
+    if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5) || trainerId == TRAINER_STADIUM_BURGLAR)
+        return B_TRANSITION_BURGLAR;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)
@@ -991,6 +1088,33 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
     if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
         return B_TRANSITION_ROCKET;
+
+    // Project Grounded: Steven (kampioen, post-game en Battle Stadium): zijn verzamelkast, de badges in de facetten van
+    // een gloeiende steen. Vervangt de mugshot: de film stelt Steven zelf al voor, en mugshot + film samen duurt te lang.
+    if (trainerId == TRAINER_CHAMPION_STEVEN || trainerId == TRAINER_STEVEN)
+        return B_TRANSITION_STEVEN;
+    // Project Grounded: het laatste Wally-gevecht (Victory Road): een VHS-band van zijn groei
+    if (trainerId == TRAINER_WALLY_VR_1)
+        return B_TRANSITION_WALLY_VHS;
+
+    // Project Grounded: gymleider-intro's (ook de rematches en het Battle Stadium). Vervangen de mugshot: de intro stelt
+    // de leider zelf voor, en mugshot + intro samen duurt te lang.
+    if (trainerId == TRAINER_ROXANNE_1 || (trainerId >= TRAINER_ROXANNE_2 && trainerId <= TRAINER_ROXANNE_5))
+        return B_TRANSITION_GYM_ROXANNE;
+    if (trainerId == TRAINER_BRAWLY_1 || (trainerId >= TRAINER_BRAWLY_2 && trainerId <= TRAINER_BRAWLY_5))
+        return B_TRANSITION_GYM_BRAWLY;
+    if (trainerId == TRAINER_WATTSON_1 || (trainerId >= TRAINER_WATTSON_2 && trainerId <= TRAINER_WATTSON_5))
+        return B_TRANSITION_GYM_WATTSON;
+    if (trainerId == TRAINER_FLANNERY_1 || (trainerId >= TRAINER_FLANNERY_2 && trainerId <= TRAINER_FLANNERY_5))
+        return B_TRANSITION_GYM_FLANNERY;
+    if (trainerId == TRAINER_NORMAN_1 || (trainerId >= TRAINER_NORMAN_2 && trainerId <= TRAINER_NORMAN_5))
+        return B_TRANSITION_GYM_NORMAN;
+    if (trainerId == TRAINER_WINONA_1 || (trainerId >= TRAINER_WINONA_2 && trainerId <= TRAINER_WINONA_5))
+        return B_TRANSITION_GYM_WINONA;
+    if (trainerId == TRAINER_TATE_AND_LIZA_1 || (trainerId >= TRAINER_TATE_AND_LIZA_2 && trainerId <= TRAINER_TATE_AND_LIZA_5))
+        return B_TRANSITION_GYM_TATE_LIZA;
+    if (trainerId == TRAINER_WALLACE_1 || (trainerId >= TRAINER_WALLACE_2 && trainerId <= TRAINER_WALLACE_5))
+        return B_TRANSITION_GYM_WALLACE;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;

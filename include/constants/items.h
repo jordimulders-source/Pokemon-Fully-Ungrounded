@@ -1033,7 +1033,9 @@
 #define ITEM_ELECTRIC_FAN 860
 #define ITEM_LAWN_MOWER 861
 
-#define ITEMS_COUNT 862
+#define ITEM_SILVER_WING 862 // Project Grounded: Key Item uit de zeetempel; Lugia (Whirl Island) verschijnt alleen als je hem hebt
+
+#define ITEMS_COUNT 863
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

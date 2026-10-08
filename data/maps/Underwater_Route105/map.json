@@ -19,7 +19,21 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 14,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BIG_NUGGET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_105_BIG_NUGGET"
+    }
+  ],
   "warp_events": [
     {
       "x": 13,
@@ -37,5 +51,38 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 25,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Underwater_Route105_EventScript_ZVGrave"
+    },
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_DEEP_SEA_TOOTH",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_105_DEEP_SEA_TOOTH"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 33,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_105_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 67,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_105_BIG_PEARL"
+    }
+  ]
 }

@@ -47,3 +47,28 @@ Route108_EventScript_CoryRematch::
 	msgbox Route108_Text_CoryRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route108_EventScript_ZV2Adjuster::
+	msgbox Route108_Text_ZV2Adjuster, MSGBOX_NPC
+	end
+
+Route108_Text_ZV2Adjuster:
+	.string "I'm from the insurance company.\nClaim number 4471: that ship.\pCause of loss, it says here:\n'KYOGRE.'\pThat's an act of god. Not covered.\nNeither is 'GHOSTS'. Neither is\l'we forgot where we parked it'.$"
+
+Route108_EventScript_ZV2JoLeo::
+	trainerbattle_double TRAINER_SIS_AND_BRO_JO_AND_LEO, Route108_Text_ZV2JoLeo_Intro, Route108_Text_ZV2JoLeo_Defeat, Route108_Text_ZV2JoLeo_NotEnough
+	msgbox Route108_Text_ZV2JoLeo_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route108_Text_ZV2JoLeo_Intro:
+	.string "JO: Dad left us the salvage\nbusiness!\pLEO: The business is one rope.\nAnd this sandbank.$"
+
+Route108_Text_ZV2JoLeo_Defeat:
+	.string "JO: We lost the rope.\nLEO: We ARE the rope now.$"
+
+Route108_Text_ZV2JoLeo_NotEnough:
+	.string "JO: Two of us, two of yours.\nLEO: Family rules. Bring a friend.$"
+
+Route108_Text_ZV2JoLeo_Post:
+	.string "LEO: Everything on that ship is\nours by salvage law.\pJO: The ghosts disagree.\nThey have a lawyer. He's also dead.$"
+@ --- einde zee_vulling_2 ---

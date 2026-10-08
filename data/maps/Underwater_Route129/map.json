@@ -37,5 +37,30 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_DRAGON_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_129_DRAGON_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_129_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_129_HEART_SCALE"
+    }
+  ]
 }

@@ -764,3 +764,227 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "“{STR_VAR_1}” is the definition of\n"
 	.string "trending. You surprise me in a positive\l"
 	.string "way.$"
+
+@ ===== Project Grounded: wekelijks visserstoernooi op de steiger (fishing_tournament.c) =====
+
+DewfordTown_EventScript_FishJudge::
+	lock
+	faceplayer
+	special FishTourney_Weigh
+	goto_if_eq VAR_RESULT, 0, DewfordTown_EventScript_FishJudgeFull
+	goto_if_eq VAR_0x8004, TRUE, DewfordTown_EventScript_FishJudgeRepeat
+DewfordTown_EventScript_FishJudgeFull::
+	special FishTourney_GetBoardInfo
+	msgbox DewfordTown_Text_FishJudgeIntro, MSGBOX_DEFAULT
+	special FishTourney_Weigh
+	goto_if_eq VAR_RESULT, 0, DewfordTown_EventScript_FishJudgeNoFish
+	playse SE_BALL_TRAY_BALL
+	msgbox DewfordTown_Text_FishJudgeWeigh, MSGBOX_DEFAULT
+	switch VAR_RESULT
+	case 1, DewfordTown_EventScript_FishJudgeFirst
+	case 2, DewfordTown_EventScript_FishJudgeSecond
+	msgbox DewfordTown_Text_FishJudgeThird, MSGBOX_DEFAULT
+	goto DewfordTown_EventScript_FishJudgeConsolation
+
+DewfordTown_EventScript_FishJudgeSecond::
+	msgbox DewfordTown_Text_FishJudgeSecond, MSGBOX_DEFAULT
+	goto DewfordTown_EventScript_FishJudgeConsolation
+
+
+DewfordTown_EventScript_FishJudgeRepeat::
+	msgbox DewfordTown_Text_FishJudgeRepeat, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishJudgeNoFish::
+	goto_if_eq VAR_0x8007, TRUE, DewfordTown_EventScript_FishJudgeNotAFish
+	msgbox DewfordTown_Text_FishJudgeNoFish, MSGBOX_DEFAULT
+	goto DewfordTown_EventScript_FishJudgeRules
+
+DewfordTown_EventScript_FishJudgeNotAFish::
+	msgbox DewfordTown_Text_FishJudgeNotAFish, MSGBOX_DEFAULT
+DewfordTown_EventScript_FishJudgeRules::
+	msgbox DewfordTown_Text_FishJudgeRules, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishJudgeAlreadyClaimed::
+	msgbox DewfordTown_Text_FishJudgeAlreadyClaimed, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishJudgeConsolation::
+	goto_if_eq VAR_0x8004, TRUE, DewfordTown_EventScript_FishJudgeAlreadyClaimed
+	msgbox DewfordTown_Text_FishJudgeConsolation, MSGBOX_DEFAULT
+	giveitem VAR_0x8005
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	special FishTourney_ClaimPrize
+	goto_if_eq VAR_0x8005, ITEM_LUCKY_EGG, DewfordTown_EventScript_FishJudgeLuckyEgg
+	msgbox DewfordTown_Text_FishJudgeSeeYouNextWeek, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishJudgeLuckyEgg::
+	msgbox DewfordTown_Text_FishJudgeLuckyEgg, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishJudgeFirst::
+	msgbox DewfordTown_Text_FishJudgeFirst, MSGBOX_DEFAULT
+	goto_if_eq VAR_0x8004, TRUE, DewfordTown_EventScript_FishJudgeAlreadyClaimed
+	msgbox DewfordTown_Text_FishJudgeWinnerPrize, MSGBOX_DEFAULT
+	giveitem VAR_0x8005
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	special FishTourney_ClaimPrize
+	goto_if_set FLAG_FISH_TOURNEY_TROPHY, DewfordTown_EventScript_FishJudgeNoConsolation
+	msgbox DewfordTown_Text_FishJudgeTrophy, MSGBOX_DEFAULT
+	givedecoration DECOR_SILVER_SHIELD
+	goto_if_eq VAR_RESULT, FALSE, DewfordTown_EventScript_FishJudgeNoConsolation
+	setflag FLAG_FISH_TOURNEY_TROPHY
+DewfordTown_EventScript_FishJudgeNoConsolation::
+	msgbox DewfordTown_Text_FishJudgeNoConsolation, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FishBoaster::
+	lock
+	faceplayer
+	special FishTourney_GetBoardInfo
+	msgbox DewfordTown_Text_FishBoaster, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_FeebasMan::
+	msgbox DewfordTown_Text_FeebasMan, MSGBOX_NPC
+	end
+
+DewfordTown_Text_FishJudgeIntro:
+	.string "Welcome to the DEWFORD WEEKLY\n"
+	.string "BIG CATCH. No rods, no reels, no\l"
+	.string "skill. Only weight.\p"
+	.string "This week's leader is a MAGIKARP\n"
+	.string "weighing {STR_VAR_2}.\p"
+	.string "Its owner:\n"
+	.string "{STR_VAR_1}.\p"
+	.string "Nobody knows how.\n"
+	.string "We stopped asking.$"
+
+DewfordTown_Text_FishJudgeRepeat:
+	.string "Back again? {STR_VAR_1} still weighs\n"
+	.string "{STR_VAR_2}. Still not a MAGIKARP.\p"
+	.string "You got your prize this week.\n"
+	.string "New contest next week.$"
+
+DewfordTown_Text_FishJudgeNoFish:
+	.string "I'd weigh your fish, but you don't have\n"
+	.string "one.\p"
+	.string "Bring a FISH. An actual fish. We had an\n"
+	.string "incident.$"
+
+DewfordTown_Text_FishJudgeNotAFish:
+	.string "{STR_VAR_3}? …That is not a fish.\p"
+	.string "The old rulebook said “anything wet”. I\n"
+	.string "wrote it. I was drunk.\p"
+	.string "Then someone brought a KYOGRE. The\n"
+	.string "pier is still in Slateport.\p"
+	.string "New rulebook. Sober edition.$"
+
+DewfordTown_Text_FishJudgeRules:
+	.string "OFFICIAL LIST OF FISH, page 1 of 1:\p"
+	.string "MAGIKARP. GYARADOS (legally still a\n"
+	.string "MAGIKARP). GOLDEEN, SEAKING, HORSEA,\l"
+	.string "SEADRA, KINGDRA.\p"
+	.string "Yes, seahorses are fish. I checked.\n"
+	.string "Twice.\p"
+	.string "CHINCHOU, LANTURN, QWILFISH, OVERQWIL,\n"
+	.string "REMORAID, MANTYKE, MANTINE, CARVANHA,\l"
+	.string "SHARPEDO.\p"
+	.string "BARBOACH, WHISCASH, FEEBAS, MILOTIC (a\n"
+	.string "fish with a skincare routine), HUNTAIL,\l"
+	.string "GOREBYSS.\p"
+	.string "RELICANTH, LUVDISC, FINNEON, LUMINEON,\n"
+	.string "BASCULIN, BASCULEGION, ALOMOMOLA,\l"
+	.string "WISHIWASHI, BRUXISH.\p"
+	.string "ARROKUDA, BARRASKEWDA, VELUZA,\n"
+	.string "DONDOZO, ARCTOVISH, DRACOVISH. And\l"
+	.string "STUNFISK. It's a flatfish. Look it up.\p"
+	.string "NOT fish: whales, clams, crabs, turtles,\n"
+	.string "ducks, dolphins, octopi and sea gods.\l"
+	.string "Jellyfish are not fish. It's in the name.\l"
+	.string "The name lies.\p"
+	.string "OCTILLERY evolves from REMORAID. I\n"
+	.string "don't want to talk about it.$"
+
+DewfordTown_Text_FishJudgeWeigh:
+	.string "Let's put {STR_VAR_1} on the scale…\p"
+	.string "{STR_VAR_1}: {STR_VAR_2}!$"
+
+DewfordTown_Text_FishJudgeSecond:
+	.string "Second place! Beaten by a\n"
+	.string "MAGIKARP. Like everyone. Always.$"
+
+DewfordTown_Text_FishJudgeThird:
+	.string "Third place. Behind a MAGIKARP\n"
+	.string "and behind THAT guy.\p"
+	.string "He's going to talk about this\n"
+	.string "for weeks.$"
+
+DewfordTown_Text_FishJudgeFirst:
+	.string "…It's heavier than the MAGIKARP.\p"
+	.string "That's not possible. The scale\n"
+	.string "must be broken. Or reality.\p"
+	.string "Fine. First place.\n"
+	.string "The MAGIKARP stays on the board,\l"
+	.string "though. Out of respect.$"
+
+DewfordTown_Text_FishJudgeWinnerPrize:
+	.string "The grand prize: one (1) POKé BALL.\n"
+	.string "Try not to spend it all at once.$"
+
+DewfordTown_Text_FishJudgeTrophy:
+	.string "And a trophy. It's not real silver.\n"
+	.string "Nothing here is real.$"
+
+DewfordTown_Text_FishJudgeNoConsolation:
+	.string "Winners don't get a consolation\n"
+	.string "prize. Rules are rules.\p"
+	.string "The losers got better stuff.\n"
+	.string "Don't think about it.$"
+
+DewfordTown_Text_FishJudgeConsolation:
+	.string "Everyone who loses to a MAGIKARP\n"
+	.string "gets a consolation prize.\p"
+	.string "Don't tell the winners.$"
+
+DewfordTown_Text_FishJudgeLuckyEgg:
+	.string "That egg is worth more than first\n"
+	.string "place ever was.\p"
+	.string "Next week the consolation prizes\n"
+	.string "get smaller. Budget cuts.$"
+
+DewfordTown_Text_FishJudgeSeeYouNextWeek:
+	.string "New contest next week.\n"
+	.string "Same MAGIKARP energy.$"
+
+DewfordTown_Text_FishJudgeAlreadyClaimed:
+	.string "You already got your prize this\n"
+	.string "week. Come back next week.\p"
+	.string "There will be a new MAGIKARP.\n"
+	.string "There's always a new MAGIKARP.$"
+
+DewfordTown_Text_FishBoaster:
+	.string "My {STR_VAR_3}.\n"
+	.string "Second place, baby!\p"
+	.string "First place? A MAGIKARP.\n"
+	.string "Doesn't count. MAGIKARP is\l"
+	.string "basically water with eyes.\p"
+	.string "I've been second place 312 weeks\n"
+	.string "in a row. That's a record too.$"
+
+DewfordTown_Text_FeebasMan:
+	.string "Forty years I've been fishing under\n"
+	.string "this pier for a FEEBAS.\p"
+	.string "My wife left. My kids left.\n"
+	.string "My rod left, somehow.\p"
+	.string "But I can feel it. Today's the day.\n"
+	.string "It's been the day for forty years.$"

@@ -50,3 +50,22 @@ keysplit heatran, 36
 keysplit heatran_lead, 48
 	split 0, 64
 	split 1, 108
+
+@ Project Grounded: Battle! Ho-Oh v2 (hooh_theme.py / hooh_samples.py): een eigen sample per ±7 halve tonen, zodat
+@ niets ver getransponeerd wordt. shamisen E3 B3 F#4 C#5, koto A3 E4 B4 F#5, shakuhachi D4 A4 E5.
+keysplit hooh_shami, 36
+	split 0, 55
+	split 1, 62
+	split 2, 69
+	split 3, 108
+
+keysplit hooh_koto, 36
+	split 0, 60
+	split 1, 67
+	split 2, 74
+	split 3, 108
+
+keysplit hooh_shaku, 48
+	split 0, 65
+	split 1, 72
+	split 2, 108

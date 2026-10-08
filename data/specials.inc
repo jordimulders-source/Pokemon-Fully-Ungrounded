@@ -116,12 +116,9 @@ gSpecials::
 	def_special ShowEasyChatScreen
 	def_special ShowEasyChatProfile
 	def_special Script_GetCurrentMauvilleMan
-	def_special HasBardSongBeenChanged
-	def_special SaveBardSongLyrics
 	def_special HasHipsterTaughtWord
 	def_special SetHipsterTaughtWord
 	def_special HipsterTryTeachWord
-	def_special PlayBardSong
 	def_special SetMauvilleOldManObjEventGfx
 	def_special GenerateGiddyLine
 	def_special GiddyShouldTellAnotherTale
@@ -605,6 +602,7 @@ gSpecials::
 	def_special IsNightTime
 	def_special Grounded_CaughtRayquaza
 	def_special Grounded_PartyHasShinyRayquaza
+	def_special FloatingMarket_OpenShop
 	def_special Burglar_SetupVars
 	def_special Burglar_SpawnThief
 	def_special Burglar_SpawnResident
@@ -618,3 +616,8 @@ gSpecials::
 	def_special Burglar_DebugForce
 	def_special ScorchedSlab_CountLitStones
 	def_special Grounded_GiantWailordSpot
+	def_special Grounded_UpdateTide
+	def_special Grounded_TideMinutesLeft
+	def_special FishTourney_GetBoardInfo
+	def_special FishTourney_Weigh
+	def_special FishTourney_ClaimPrize

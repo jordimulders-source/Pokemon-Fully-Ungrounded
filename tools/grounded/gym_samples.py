@@ -362,38 +362,11 @@ def build():
         for k in keys:
             S['%s_%d' % (name, k)] = (crunch(note(prog, k, dur, 118), drive, top=top), rate, k, loop)
 
-    # Roxanne: hard rock power ballad
-    S['gym_rox_power'] = (crunch(chord(30, (45, 52, 57), 1.6, 118), 3.0), 18000, 45, True)
-    guitar('gym_rox_lead', 29, (60, 72, 84), 1.1, 18000, 3.0, top=6000)       # overdrive, zingend
+    # Roxanne: hard rock power ballad (v0.9.103: ongebruikte samples van ronde 1 verwijderd, ROM-ruimte)
     for k in (60, 72):
         S['gym_rox_clean_%d' % k] = (lp(note(27, k, 1.3, 100), 6000), 18000, k, False)
-    S['gym_rox_kick'] = (drum(POWER, 36, 0.35), 16000, 60, False)
-    sn = drum(POWER, 38, 0.30)
-    tail = bp(np.random.default_rng(11).standard_normal(int(0.30 * FS)), 900, 7000) * 0.35
-    tail *= np.where(np.arange(len(tail)) < 0.20 * FS, 1.0, 0.0) * env_exp(len(tail), 0.25)   # 'gated reverb' (jaren 80)
-    S['gym_rox_snare'] = (fade_out(norm(sn[:len(tail)] + tail[:len(sn)])), 16000, 60, False)
-    S['gym_rox_hat'] = (drum(STANDARD, 42, 0.12, 100), 16000, 60, False)
-    S['gym_rox_crash'] = (drum(POWER, 49, 1.6), 16000, 60, False)
-    for k in (41, 45, 48):
-        S['gym_rox_tom_%d' % k] = (drum(POWER, k, 0.45), 16000, 60, False)
 
-    # Brawly: nu-metal (drop-gestemd, C2-powerchords)
-    pm = chord(30, (36, 43, 48), 0.30, 120)
-    pm = pm * env_exp(len(pm), 0.06)
-    S['gym_bra_chug'] = (fade_out(crunch(pm, 5.0, presence=900, top=4500) * env_exp(len(pm), 0.10)), 16000, 36, False)
-    S['gym_bra_power'] = (crunch(chord(30, (36, 43, 48), 1.4, 120), 5.0, presence=900, top=4500), 16000, 36, True)
-    guitar('gym_bra_lead', 30, (60, 72, 84), 1.0, 18000, 4.0)
-    guitar('gym_bra_lead2', 29, (60, 72, 84), 1.0, 18000, 3.0, top=5000)
-    S['gym_bra_bass'] = (np.tanh(norm(note(34, 36, 0.9, 120)) * 2.5), 16000, 36, True)
-    kick = drum(STANDARD, 36, 0.25)
-    S['gym_bra_kick'] = (norm(kick + 0.25 * hp(drum(STANDARD, 37, 0.25)[:len(kick)], 2000)), 16000, 60, False)
-    S['gym_bra_snare'] = (norm(np.tanh(norm(drum(STANDARD, 40, 0.25)) * 2.0)), 16000, 60, False)
-    S['gym_bra_hat'] = (drum(STANDARD, 42, 0.10, 100), 16000, 60, False)
-    S['gym_bra_china'] = (drum(STANDARD, 52, 1.2), 16000, 60, False)
-    S['gym_bra_crash'] = (drum(STANDARD, 57, 1.4), 16000, 60, False)
-    for k in (41, 45, 48):
-        S['gym_bra_tom_%d' % k] = (drum(STANDARD, k, 0.4), 16000, 60, False)
-    S['gym_bra_scratch'] = (scratch(), 16000, 60, False)
+    # Brawly (nu-metal, rondes 1-3): geen nummer gebruikt deze samples meer (v0.9.103 verwijderd)
 
     # Wattson: gabber / happy hardcore
     S['gym_wat_kick'] = (gabber_kick(), 18000, 60, False)
@@ -411,38 +384,14 @@ def build():
     S['gym_wat_bass'] = (fade_out(norm(np.tanh(norm(bass) * 2))), 16000, 36, False)
 
     # Flannery: flamenco
-    for k in (60, 72, 84):
-        S['gym_fla_nylon_%d' % k] = (lp(note(24, k, 1.2, 110), 7000), 18000, k, False)
-    for k in (60, 72):
-        S['gym_fla_violin_%d' % k] = (lp(note(40, k, 1.1, 110), 7000), 18000, k, True)
-    voicing = (45, 52, 57, 64)                     # A2 E3 A3 E4: open kwinten, geen terts
-    strokes = [(s + i * 0.007, k, 118 - 6 * j, 0.9 - s) for j, s in enumerate((0, 0.032, 0.064, 0.096))
-               for i, k in enumerate(voicing)]   # rasgueado: vier vingers na elkaar (e-a-m-i)
-    S['gym_fla_rasg'] = (fade_out(lp(render(24, strokes, 1.0), 7000)), 18000, 45, False)
-    S['gym_fla_strum'] = (fade_out(lp(chord(24, voicing, 0.8, 112, 0.009), 7000)), 18000, 45, False)
-    g = chord(24, voicing, 0.20, 120, 0.004)
-    knock = lp(np.random.default_rng(9).standard_normal(len(g)), 2500) * env_exp(len(g), 0.006)
-    S['gym_fla_golpe'] = (fade_out(norm(g * env_exp(len(g), 0.035) + 0.5 * knock)), 18000, 45, False)
-    c = drum(STANDARD, 39, 0.25, 120)
-    claps = np.zeros(len(c) + 900)
-    for off, sp, gain in ((0, 1.0, 1.0), (380, 0.93, 0.8), (760, 1.07, 0.7)):   # drie mensen klappen
-        x = resample(c, FS, FS / sp, antialias=False)[:len(c)]
-        claps[off:off + len(x)] += gain * x
-    S['gym_fla_palmas'] = (fade_out(norm(claps)), 16000, 60, False)
-    S['gym_fla_sorda'] = (fade_out(norm(lp(claps, 1300)) * 0.8), 16000, 60, False)     # palmas sordas (gedempt)
+    # (v0.9.103: nylon/viool/rasgueado/strum/golpe/palmas/sorda/castagnetten van ronde 1 verwijderd)
     S['gym_fla_cajon_bass'] = (cajon_bass(), 16000, 60, False)
     S['gym_fla_cajon_slap'] = (cajon_slap(), 16000, 60, False)
-    S['gym_fla_castanets'] = (drum(STANDARD, 85, 0.15), 16000, 60, False)
-
-    # ronde 2: Brawly drop-gestemd met de Emerald-distortiongitaar (C2 = toets 36)
-    S['gym_bra_epower'] = (emerald_power(), 13379, 36, True)
-
-    # ronde 3 (anti-kermis): Roxanne 80s hard rock, Brawly-scratch 2, Flannery rumba flamenca
+    # ronde 3 (anti-kermis): Roxanne 80s hard rock, Flannery rumba flamenca
     S['gym_rox_rsnare'] = (rock_snare(), 16000, 60, False)
     S['gym_rox_ride'] = (fade_out(hp(drum(STANDARD, 51, 1.1, 100), 300), 0.1), 16000, 60, False)
     S['gym_rox_open'] = (emerald_power_open(), GR, 48, True)
     S['gym_rox_pbass'] = (lp(np.tanh(norm(note(34, 36, 0.9, 120)) * 2.2), 2200), GR, 36, True)
-    S['gym_bra_scratch2'] = (scratch2(), 16000, 60, False)
     for q in VOICING:
         for kind in ('down', 'up', 'golpe', 'rasg'):
             S['gym_fla_%s_%s' % (kind, q)] = (nylon_strum(kind, q), GR, 45, False)

@@ -35414,3 +35414,1913 @@ Nature: Timid
 - Flamethrower
 - Sludge Bomb
 - Focus Blast
+
+=== TRAINER_PLASMA_ISLE_LOOKOUT ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Unfezant @ Scope Lens
+Level: 66
+Ability: Super Luck
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brave Bird
+- Night Slash
+- U-turn
+- Roost
+
+Gigalith @ Smooth Rock
+Level: 66
+Ability: Sand Stream
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stone Edge
+- Earthquake
+- Heavy Slam
+- Stealth Rock
+
+Sawk @ Focus Sash
+Level: 66
+Ability: Sturdy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Knock Off
+- Poison Jab
+- Bulk Up
+
+Druddigon @ Rocky Helmet
+Level: 67
+Ability: Rough Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Outrage
+- Gunk Shot
+- Sucker Punch
+- Glare
+
+=== TRAINER_PLASMA_ISLE_GUARD ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Zebstrika @ Life Orb
+Level: 66
+Ability: Lightning Rod
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wild Charge
+- Flare Blitz
+- High Horsepower
+- Volt Switch
+
+Cofagrigus @ Leftovers
+Level: 66
+Ability: Mummy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Nasty Plot
+- Energy Ball
+
+Leavanny @ Focus Sash
+Level: 66
+Ability: Swarm
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- X-Scissor
+- Swords Dance
+- Knock Off
+
+Eelektross @ Assault Vest
+Level: 67
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+=== TRAINER_PLASMA_NIGEL ===
+Name: NIGEL
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 68
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+Excadrill @ Choice Scarf
+Level: 68
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Iron Head
+- Rock Slide
+- X-Scissor
+
+Escavalier @ Assault Vest
+Level: 68
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Megahorn
+- Iron Head
+- Drill Run
+- Knock Off
+
+Ferrothorn @ Leftovers
+Level: 68
+Ability: Iron Barbs
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Spikes
+
+Haxorus @ Life Orb
+Level: 69
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Dragon Dance
+- Outrage
+- Earthquake
+- Poison Jab
+
+=== TRAINER_PLASMA_GUARD_RED ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Darmanitan @ Choice Band
+Level: 67
+Ability: Sheer Force
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flare Blitz
+- U-turn
+- Rock Slide
+- Earthquake
+
+Heatmor @ Life Orb
+Level: 67
+Ability: Flash Fire
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flamethrower
+- Sucker Punch
+- Giga Drain
+- Focus Blast
+
+Emboar @ Leftovers
+Level: 67
+Ability: Blaze
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flare Blitz
+- Close Combat
+- Wild Charge
+- Sucker Punch
+
+Volcarona @ Heavy-Duty Boots
+Level: 68
+Ability: Flame Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+
+=== TRAINER_PLASMA_GUARD_BLUE ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Seismitoad @ Leftovers
+Level: 67
+Ability: Poison Touch
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Scald
+- Earth Power
+- Sludge Wave
+- Stealth Rock
+
+Jellicent @ Leftovers
+Level: 67
+Ability: Cursed Body
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Scald
+- Shadow Ball
+- Will-O-Wisp
+- Recover
+
+Carracosta @ White Herb
+Level: 67
+Ability: Solid Rock
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shell Smash
+- Liquidation
+- Stone Edge
+- Aqua Jet
+
+Samurott @ Life Orb
+Level: 68
+Ability: Torrent
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Swords Dance
+- Razor Shell
+- Megahorn
+- Aqua Jet
+
+=== TRAINER_PLASMA_GUARD_WHITE ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Glalie @ Never-Melt Ice
+Level: 67
+Ability: Refrigerate
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Body Slam
+- Earthquake
+- Crunch
+- Spikes
+
+Walrein @ Leftovers
+Level: 67
+Ability: Thick Fat
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Ice Beam
+- Surf
+- Super Fang
+- Protect
+
+Avalugg @ Rocky Helmet
+Level: 67
+Ability: Sturdy
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Avalanche
+- Body Press
+- Rapid Spin
+- Recover
+
+Beartic @ Choice Band
+Level: 68
+Ability: Slush Rush
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Icicle Crash
+- Superpower
+- Aqua Jet
+- Stone Edge
+
+=== TRAINER_PLASMA_SHADOW_TRIAD ===
+Name: TRIAD
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Banette @ Focus Sash
+Level: 69
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Will-O-Wisp
+- Poltergeist
+- Knock Off
+- Destiny Bond
+
+Absol @ Life Orb
+Level: 69
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Greninja @ Expert Belt
+Level: 69
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Dark Pulse
+- Hydro Pump
+- Ice Beam
+- Grass Knot
+
+Krookodile @ Choice Scarf
+Level: 69
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Knock Off
+- Stone Edge
+- Gunk Shot
+
+Honchkrow @ Choice Band
+Level: 69
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Superpower
+
+Bisharp @ Eviolite
+Level: 69
+Ability: Defiant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_PLASMA_ZINZOLIN ===
+Name: ZINZOLIN
+Class: Sage
+Pic: Zinzolin
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Froslass @ Focus Sash
+Level: 70
+Ability: Cursed Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Spikes
+- Ice Beam
+- Shadow Ball
+- Destiny Bond
+
+Cryogonal @ Light Clay
+Level: 70
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Aurora Veil
+- Freeze-Dry
+- Recover
+- Rapid Spin
+
+Abomasnow @ Leftovers
+Level: 70
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Giga Drain
+- Earth Power
+- Ice Shard
+
+Vanilluxe @ Choice Specs
+Level: 70
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Blizzard
+- Freeze-Dry
+- Flash Cannon
+- Ice Beam
+
+Mamoswine @ Life Orb
+Level: 70
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stealth Rock
+
+Weavile @ Razor Claw
+Level: 70
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Swords Dance
+
+=== TRAINER_PLASMA_ROOD ===
+Name: ROOD
+Class: Sage
+Pic: Rood
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Audino @ Leftovers
+Level: 70
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Wish
+- Protect
+- Heal Bell
+- Knock Off
+
+Alomomola @ Rocky Helmet
+Level: 70
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Scald
+- Wish
+- Protect
+- Toxic
+
+Mandibuzz @ Leftovers
+Level: 70
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Roost
+- Toxic
+- Defog
+
+Musharna @ Leftovers
+Level: 70
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+Nature: Bold
+- Calm Mind
+- Moonblast
+- Psyshock
+- Moonlight
+
+Gothitelle @ Choice Scarf
+Level: 70
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Psychic
+- Thunderbolt
+- Trick
+- Shadow Ball
+
+Reuniclus @ Life Orb
+Level: 70
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Calm Mind
+- Psyshock
+- Focus Blast
+- Recover
+
+=== TRAINER_GHOST_SAILOR_SILAS ===
+Name: SILAS
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Drifblim
+Level: 48
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hex
+- Air Slash
+- Will-O-Wisp
+- Strength Sap
+
+Pelipper
+Level: 48
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hurricane
+- Scald
+- Roost
+- Tailwind
+
+Sharpedo
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Liquidation
+- Crunch
+- Ice Fang
+- Aqua Jet
+
+=== TRAINER_GHOST_SAILOR_MORGAN ===
+Name: MORGAN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Cofagrigus
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Nasty Plot
+
+Barraskewda
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Liquidation
+- Psychic Fangs
+- Close Combat
+- Aqua Jet
+
+Jellicent
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Hex
+- Scald
+- Recover
+- Will-O-Wisp
+
+=== TRAINER_GHOST_SAILOR_NED ===
+Name: NED
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Clawitzer
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Water Pulse
+- Dark Pulse
+- Aura Sphere
+- Dragon Pulse
+
+Banette
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Claw
+- Knock Off
+- Gunk Shot
+- Sucker Punch
+
+Golurk
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Earthquake
+- Shadow Punch
+- Ice Punch
+- Rock Slide
+
+Polteageist
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Stored Power
+
+=== TRAINER_GHOST_SAILOR_PERCY ===
+Name: PERCY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Toxapex
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Scald
+- Toxic
+- Recover
+- Baneful Bunker
+
+Palossand
+Level: 49
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Stealth Rock
+
+Sableye
+Level: 50
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Knock Off
+- Will-O-Wisp
+- Recover
+- Shadow Claw
+
+=== TRAINER_GRIMSBY ===
+Name: GRIMSBY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Wailord @ Sitrus Berry
+Level: 51
+Ability: Multiscale
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Spout
+- Ice Beam
+- Heavy Slam
+- Rest
+
+Cursola @ Focus Sash
+Level: 51
+Ability: Weak Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hex
+- Will-O-Wisp
+- Power Gem
+- Earth Power
+
+Basculegion @ Mystic Water
+Level: 52
+Ability: Adaptability
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wave Crash
+- Phantom Force
+- Aqua Jet
+- Crunch
+
+Gengar @ Black Sludge
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Destiny Bond
+
+Dhelmise @ Life Orb
+Level: 53
+Ability: Steelworker
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Phantom Force
+- Power Whip
+- Earthquake
+
+=== TRAINER_RESORT_MISTY ===
+Name: MISTY
+Class: Leader
+Pic: Misty
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Politoed @ Damp Rock
+Level: 75
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Scald
+- Ice Beam
+- Hypnosis
+- Encore
+
+Golduck @ Life Orb
+Level: 75
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Psychic
+- Ice Beam
+- Calm Mind
+
+Kingdra @ Choice Specs
+Level: 75
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Muddy Water
+
+Lapras @ Sitrus Berry
+Level: 75
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Freeze-Dry
+- Hydro Pump
+- Thunder
+- Ice Shard
+
+Gyarados @ Lum Berry
+Level: 75
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Waterfall
+- Dragon Dance
+- Earthquake
+- Bounce
+
+Starmie @ Life Orb
+Level: 77
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Hydro Pump
+- Thunder
+- Psychic
+- Rapid Spin
+
+=== TRAINER_RESORT_ERIKA ===
+Name: ERIKA
+Class: Leader
+Pic: Erika
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales @ Heat Rock
+Level: 75
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Nasty Plot
+
+Victreebel @ Life Orb
+Level: 75
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Power Whip
+- Sludge Bomb
+- Sucker Punch
+- Swords Dance
+
+Lilligant @ Focus Sash
+Level: 75
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Quiver Dance
+- Petal Dance
+- Sleep Powder
+- Hidden Power
+
+Tangrowth @ Leftovers
+Level: 75
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Relaxed
+- Giga Drain
+- Knock Off
+- Sleep Powder
+- Ancient Power
+
+Bellossom @ Sitrus Berry
+Level: 75
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Quiver Dance
+- Giga Drain
+- Moonblast
+- Sleep Powder
+
+Vileplume @ Life Orb
+Level: 77
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Solar Beam
+- Sludge Bomb
+- Weather Ball
+- Sleep Powder
+
+=== TRAINER_RESORT_LORELEI ===
+Name: LORELEI
+Class: Elite Four
+Pic: Lorelei
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Ninetales_Alola @ Icy Rock
+Level: 76
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
+
+Dewgong @ Leftovers
+Level: 76
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Ice Beam
+- Surf
+- Encore
+- Perish Song
+
+Cloyster @ White Herb
+Level: 76
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Ice Shard
+
+Jynx @ Life Orb
+Level: 76
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Psychic
+- Lovely Kiss
+- Nasty Plot
+
+Slowbro @ Sitrus Berry
+Level: 76
+Ability: Oblivious
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Scald
+- Psychic
+- Slack Off
+- Trick Room
+
+Lapras @ Leftovers
+Level: 78
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Blizzard
+- Hydro Pump
+- Thunder
+- Freeze-Dry
+
+=== TRAINER_RESORT_CYNTHIA ===
+Name: CYNTHIA
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Spiritomb @ Leftovers
+Level: 78
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Foul Play
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+
+Roserade @ Focus Sash
+Level: 78
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Sleep Powder
+
+Togekiss @ Sitrus Berry
+Level: 78
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Timid
+- Air Slash
+- Dazzling Gleam
+- Follow Me
+- Nasty Plot
+
+Lucario @ Life Orb
+Level: 78
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
+Nature: Hasty
+- Aura Sphere
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+
+Milotic @ Leftovers
+Level: 78
+Ability: Marvel Scale
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Bold
+- Scald
+- Ice Beam
+- Recover
+- Haze
+
+Garchomp @ Life Orb
+Level: 80
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Dragon Claw
+- Rock Slide
+- Swords Dance
+
+=== TRAINER_BIRCH_RESORT ===
+Name: BIRCH
+Class: Professor
+Pic: Birch
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Rabsca
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Trick Room
+- Bug Buzz
+- Psychic
+- Earth Power
+
+Clodsire
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Earthquake
+- Poison Jab
+- Recover
+- Toxic Spikes
+
+Palossand
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Sand Tomb
+
+Mudsdale
+Level: 76
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Iron Defense
+
+Pyukumuku @ Rocky Helmet
+Level: 76
+Ability: Innards Out
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Toxic
+- Recover
+- Counter
+- Soak
+
+Muk_Hoenn
+Level: 78
+Ability: Stench
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Gunk Shot
+- Earth Power
+- Mud Bomb
+- Recover
+
+=== TRAINER_SAILOR_DUNCAN ===
+Name: DUNCAN
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Grapploct
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Octolock
+- Brutal Swing
+- Bulk Up
+- Brick Break
+
+Bellibolt
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Parabolic Charge
+- Water Gun
+- Slack Off
+- Charge
+
+Kingler
+Level: 31
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Crabhammer
+- Metal Claw
+- Swords Dance
+- Protect
+
+=== TRAINER_RUIN_MANIAC_SIMON ===
+Name: SIMON
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Golett
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Punch
+- Bulldoze
+- Defense Curl
+- Mega Punch
+
+Nosepass
+Level: 30
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Slide
+- Thunder Wave
+- Spark
+- Sandstorm
+
+Klawf
+Level: 31
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Smash
+- Ancient Power
+- Vise Grip
+- Harden
+
+=== TRAINER_OLD_COUPLE_HAL_AND_MAE ===
+Name: HAL & MAE
+Class: Old Couple
+Pic: Old Couple
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Oranguru
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Instruct
+- Psychic
+- Trick Room
+- Nasty Plot
+
+Drampa
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Dragon Pulse
+- Hyper Voice
+- Fly
+- Glare
+
+Slowking_Galar
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Sludge Bomb
+- Psyshock
+- Slack Off
+- Toxic
+
+Cofagrigus
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Protect
+
+=== TRAINER_BIRD_KEEPER_OSWALD ===
+Name: OSWALD
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Squawkabilly
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Double-Edge
+- Parting Shot
+- Brave Bird
+- Torment
+
+Bombirdier
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Knock Off
+- Rock Slide
+- Pluck
+- Torment
+
+Oricorio
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Revelation Dance
+- Air Slash
+- Teeter Dance
+- Roost
+
+Toucannon
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Screech
+
+=== TRAINER_SIRENA ===
+Name: SIRENA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Primarina
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sparkling Aria
+- Moonblast
+- Sing
+- Aqua Jet
+
+Milotic
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Attract
+- Recover
+- Ice Beam
+
+Gorebyss
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Smash
+- Psychic
+- Hydro Pump
+- Attract
+
+=== TRAINER_TWINS_PIP_AND_PEP ===
+Name: PIP & PEP
+Class: Twins
+Pic: Twins
+Gender: Female
+Music: Twins
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint
+
+Slurpuff
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Play Rough
+- Cotton Guard
+- Draining Kiss
+- Fling
+
+Aromatisse
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Moonblast
+- Heal Pulse
+- Calm Mind
+- Psychic
+
+=== TRAINER_RANGER_MARISOL ===
+Name: MARISOL
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Comfey
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Draining Kiss
+- Floral Healing
+- Taunt
+- Grass Knot
+
+Brambleghast
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Phantom Force
+- Giga Drain
+- Rapid Spin
+- Infestation
+
+Golisopod
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- First Impression
+- Liquidation
+- Razor Shell
+- Sucker Punch
+
+=== TRAINER_BLACK_BELT_KAIMANA ===
+Name: KAIMANA
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Hawlucha
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- High Jump Kick
+- Acrobatics
+- Swords Dance
+- Roost
+
+Crabominable
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ice Hammer
+- Close Combat
+- Earthquake
+- Bulk Up
+
+Passimian
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Gunk Shot
+- Knock Off
+- U-turn
+
+Togedemaru
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Zing Zap
+- Iron Head
+- Nuzzle
+- Spiky Shield
+
+=== TRAINER_AROMA_LADY_LEILANI ===
+Name: LEILANI
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Shiinotic
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Spore
+- Moonblast
+- Giga Drain
+- Strength Sap
+
+Lilligant
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Quiver Dance
+- Petal Dance
+- Sleep Powder
+- Dazzling Gleam
+
+Ribombee
+Level: 67
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Pollen Puff
+- Moonblast
+- Sticky Web
+- Psychic
+
+Tsareena
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Trop Kick
+- High Jump Kick
+- Triple Axel
+- Rapid Spin
+
+=== TRAINER_RANGER_MAKOA ===
+Name: MAKOA
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Toucannon
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Roost
+
+Exeggutor
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Storm
+- Psychic
+- Sleep Powder
+- Trick Room
+
+Bewear
+Level: 68
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hammer Arm
+- Double-Edge
+- Darkest Lariat
+- Swords Dance
+
+Kommo-o
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Clanging Scales
+- Close Combat
+- Poison Jab
+- Dragon Dance
+
+=== TRAINER_EXPERT_NALU ===
+Name: NALU
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Araquanid
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Liquidation
+- Leech Life
+- Sticky Web
+- Mirror Coat
+
+Toxapex
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Baneful Bunker
+- Toxic
+- Recover
+- Scald
+
+Bruxish
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic Fangs
+- Aqua Jet
+- Crunch
+- Ice Fang
+
+Dhelmise
+Level: 69
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Power Whip
+- Poltergeist
+- Earthquake
+
+Wishiwashi
+Level: 70
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Liquidation
+- Earthquake
+- Endeavor
+- Soak
+
+/* --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) --- */
+
+=== TRAINER_BLACK_BELT_KENTA ===
+Name: KENTA
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Pangoro
+Level: 32
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Hawlucha
+Level: 32
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Passimian
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_SIS_AND_BRO_JO_AND_LEO ===
+Name: JO & LEO
+Class: Sis And Bro
+Pic: Sis And Bro
+Gender: Female
+Music: Twins
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint
+
+Bellibolt
+Level: 32
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Kilowattrel
+Level: 32
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Maushold
+Level: 32
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Gumshoos
+Level: 32
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_MORTIMER ===
+Name: MORTIMER
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Houndstone
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Last Respects
+- Play Rough
+- Dig
+- Crunch
+
+Cofagrigus
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Protect
+- Hex
+
+Dudunsparce
+Level: 36
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hyper Drill
+- Coil
+- Roost
+- Glare
+
+Annihilape
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Close Combat
+
+=== TRAINER_SWIMMER_CORA ===
+Name: CORA
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Floatzel
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Bibarel
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Bruxish
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_BUG_MANIAC_ELLIOT ===
+Name: ELLIOT
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Volbeat
+Level: 39
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Illumise
+Level: 39
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Galvantula
+Level: 39
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Vikavolt
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_CAPTAIN_ABE ===
+Name: ABE
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Grapploct
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Octolock
+- Drain Punch
+- Liquidation
+- Bulk Up
+
+Dhelmise
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Anchor Shot
+- Power Whip
+- Shadow Claw
+- Rapid Spin
+
+Eelektross
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wild Charge
+- Crunch
+- Thunder Punch
+- Acid Spray
+
+Barraskewda
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Liquidation
+- Psychic Fangs
+- Aqua Jet
+- Drill Run
+
+Sharpedo
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Crunch
+- Waterfall
+- Ice Fang
+- Aqua Jet
+
+=== TRAINER_EXPERT_DEREK ===
+Name: DEREK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bewear
+Level: 42
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Hammer Arm
+- Double-Edge
+- Bulk Up
+- Shadow Claw
+
+Falinks
+Level: 42
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- No Retreat
+- Megahorn
+- Close Combat
+- First Impression
+
+Lucario
+Level: 42
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Aura Sphere
+- Flash Cannon
+- Dark Pulse
+- Vacuum Wave
+
+Mienshao
+Level: 42
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- High Jump Kick
+- U-turn
+- Fake Out
+- Poison Jab
+
+Conkeldurr
+Level: 43
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- Mach Punch
+- Drain Punch
+- Knock Off
+- Rock Slide
+
+=== TRAINER_BATTLE_GIRL_JUNO ===
+Name: JUNO
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Hawlucha
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Lopunny
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Breloom
+Level: 42
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_YOUNG_COUPLE_TOM_AND_TINA ===
+Name: TOM & TINA
+Class: Young Couple
+Pic: Young Couple
+Gender: Male
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint
+
+Delcatty
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Furfrou
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Ampharos
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Leavanny
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_BREEDER_HONEY ===
+Name: HONEY
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Audino
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Wobbuffet
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Indeedee
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Blissey
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_HIKER_BERNARD ===
+Name: BERNARD
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Throh
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Sawk
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Lycanroc
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Coalossal
+Level: 42
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_BRAYDEN ===
+Name: BRAYDEN
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Furfrou
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Double-Edge
+- Thunder Wave
+- U-turn
+- Bite
+
+Toxtricity
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Overdrive
+- Sludge Bomb
+- Boomburst
+- Volt Switch
+
+Oricorio
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Revelation Dance
+- Hurricane
+- Quiver Dance
+- Teeter Dance
+
+Hawlucha
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Flying Press
+- Swords Dance
+- Acrobatics
+- Brick Break
+
+Lopunny
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- High Jump Kick
+- Bounce
+- Ice Punch
+
+=== TRAINER_NINJA_BOY_KAGE ===
+Name: KAGE
+Class: Ninja Boy
+Pic: Ninja Boy
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Ninjask
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Accelgor
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Lokix
+Level: 41
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_BIRD_KEEPER_SKYE ===
+Name: SKYE
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Pidgeot
+Level: 45
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Staraptor
+Level: 45
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Squawkabilly
+Level: 45
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Braviary
+Level: 46
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+/* --- einde zee_vulling_2 --- */

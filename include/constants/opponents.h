@@ -1055,7 +1055,61 @@
 #define TRAINER_MIRE_FERN                   1032 // Project Grounded: Mangrove Mire (Pokemon Ranger)
 #define TRAINER_MIRE_KAPPA                  1033 // Project Grounded: Mangrove Mire (Ninja Boy, vermomd als boom)
 
-#define TRAINERS_COUNT                      1034
+// Project Grounded: Nothing Island en de Plasma Frigate (Genesect-sidequest, tools/grounded/maptools/plasma_frigate.py)
+#define TRAINER_PLASMA_ISLE_LOOKOUT         1034 // Nothing Island, uitkijkpost
+#define TRAINER_PLASMA_ISLE_GUARD           1035 // Nothing Island, zuidkant
+#define TRAINER_PLASMA_NIGEL                1036 // Nothing Island, steiger (hoofd logistiek)
+#define TRAINER_PLASMA_GUARD_RED            1037 // Plasma Frigate, deur 2 (rode code)
+#define TRAINER_PLASMA_GUARD_BLUE           1038 // deur 3 (blauwe code)
+#define TRAINER_PLASMA_GUARD_WHITE          1039 // deur 4 (witte code)
+#define TRAINER_PLASMA_SHADOW_TRIAD         1040 // luik naar het ruim
+#define TRAINER_PLASMA_ZINZOLIN             1041 // ruim (dubbel met Rood)
+#define TRAINER_PLASMA_ROOD                 1042 // ruim (dubbel met Zinzolin)
+
+// 1034-1049: vrij gehouden voor andere agents (zee)
+#define TRAINER_RESORT_MISTY                1043 // Project Grounded: strandresort (post-game, team uit het Stadium)
+#define TRAINER_RESORT_ERIKA                1044 // Project Grounded: strandresort
+#define TRAINER_RESORT_LORELEI              1045 // Project Grounded: strandresort (strandbar)
+#define TRAINER_RESORT_CYNTHIA              1046 // Project Grounded: strandresort (lobby)
+#define TRAINER_BIRCH_RESORT                1047 // Project Grounded: Birch en de drol op het strand van het resort
+#define TRAINER_GHOST_SAILOR_SILAS          1050 // Project Grounded: spookschip S.S. AGAVE, dek (uitkijk)
+#define TRAINER_GHOST_SAILOR_MORGAN         1051 // Project Grounded: spookschip, dek (heeft een kaartstuk)
+#define TRAINER_GHOST_SAILOR_NED            1052 // Project Grounded: spookschip, gang (kok)
+#define TRAINER_GHOST_SAILOR_PERCY          1053 // Project Grounded: spookschip, hutten
+#define TRAINER_GRIMSBY                     1054 // Project Grounded: kapitein Grimsby (spookschip); Battle Stadium
+
+#define TRAINER_SAILOR_DUNCAN               1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
+#define TRAINER_RUIN_MANIAC_SIMON           1101 // Project Grounded (zeevulling 1): Route 107, rots-"ruine"
+#define TRAINER_OLD_COUPLE_HAL_AND_MAE      1102 // Project Grounded (zeevulling 1): Route 126, picknickbank (dubbel)
+#define TRAINER_BIRD_KEEPER_OSWALD          1103 // Project Grounded (zeevulling 1): Route 126, vogeleilandje
+#define TRAINER_SIRENA                      1104 // Project Grounded (zeevulling 1): Route 126, zeemeermin-fan (grap-trainer); Battle Stadium
+#define TRAINER_TWINS_PIP_AND_PEP           1105 // Project Grounded (zeevulling 1): Route 127, tweeling (dubbel)
+#define TRAINER_RANGER_MARISOL              1106 // Project Grounded (zeevulling 1): Route 127, bij de gestrande Wailmer
+
+
+#define TRAINER_BLACK_BELT_KAIMANA          1130 // Project Grounded: Tapu-eiland, pad naar de bliksemruine (Koko)
+#define TRAINER_AROMA_LADY_LEILANI          1131 // Project Grounded: Tapu-eiland, pad naar de bloemenruine (Lele)
+#define TRAINER_RANGER_MAKOA                1132 // Project Grounded: Tapu-eiland, pad naar de woudruine (Bulu)
+#define TRAINER_EXPERT_NALU                 1133 // Project Grounded: Tapu-eiland, oever van de lagune (Fini)
+
+// zee_vulling_2 {
+#define TRAINER_BLACK_BELT_KENTA            1110 // Project Grounded (zeevulling 2): Route 105, eilandje van de schipbreukeling
+#define TRAINER_SIS_AND_BRO_JO_AND_LEO      1111 // Project Grounded (zeevulling 2): Route 108, bergingsvlot (dubbel)
+#define TRAINER_MORTIMER                    1112 // Project Grounded (zeevulling 2): Route 122, begrafenisondernemer (Battle Stadium)
+#define TRAINER_SWIMMER_CORA                1113 // Project Grounded (zeevulling 2): Route 122, zwemt baantjes rond Mt. Pyre
+#define TRAINER_BUG_MANIAC_ELLIOT           1114 // Project Grounded (zeevulling 2): Route 124, weerstation (insecten)
+#define TRAINER_CAPTAIN_ABE                 1115 // Project Grounded (zeevulling 2): Route 124, kapitein op walvisjacht (Battle Stadium)
+#define TRAINER_EXPERT_DEREK                1116 // Project Grounded (zeevulling 2): Route 128, eigen dojo-eilandje (Battle Stadium)
+#define TRAINER_BATTLE_GIRL_JUNO            1117 // Project Grounded (zeevulling 2): Route 128, Dereks enige leerling
+#define TRAINER_YOUNG_COUPLE_TOM_AND_TINA   1118 // Project Grounded (zeevulling 2): Route 129, op huwelijksreis (dubbel)
+#define TRAINER_BREEDER_HONEY               1119 // Project Grounded (zeevulling 2): Route 130, Wynaut-kinderopvang
+#define TRAINER_HIKER_BERNARD               1120 // Project Grounded (zeevulling 2): Route 131, verdwaalde bergbeklimmer
+#define TRAINER_BRAYDEN                     1121 // Project Grounded (zeevulling 2): Route 133, influencer op een zandbank (Battle Stadium)
+#define TRAINER_NINJA_BOY_KAGE              1122 // Project Grounded (zeevulling 2): Route 134, ninja op een zandbank
+#define TRAINER_BIRD_KEEPER_SKYE            1123 // Project Grounded (zeevulling 2): Whirl Island, wacht op een grote vogel
+// }
+
+#define TRAINERS_COUNT                      1134
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

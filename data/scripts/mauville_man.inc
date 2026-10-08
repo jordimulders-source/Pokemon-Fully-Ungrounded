@@ -8,56 +8,9 @@ MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan::
 	case MAUVILLE_MAN_GIDDY, MauvilleCity_PokemonCenter_1F_EventScript_Giddy
 	end
 
-@ Bard
+@ Bard (v0.9.104: zangfunctie verwijderd, de BARD is zijn stem kwijt)
 MauvilleCity_PokemonCenter_1F_EventScript_Bard::
-	lock
-	faceplayer
-	msgbox MauvilleCity_PokemonCenter_1F_Text_WouldYouLikeToHearMySong, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, MauvilleCity_PokemonCenter_1F_EventScript_PlaySong
-	goto_if_eq VAR_RESULT, NO, MauvilleCity_PokemonCenter_1F_EventScript_DeclineSong
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_PlaySong::
-	setvar VAR_0x8004, FALSE  @ Play his current song
-	special PlayBardSong
-	delay 60
-	special HasBardSongBeenChanged
-	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_AskToWriteLyrics
-	msgbox MauvilleCity_PokemonCenter_1F_Text_WishICouldPlaySongForOthers, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_DeclineSong::
-	msgbox MauvilleCity_PokemonCenter_1F_Text_BardFeelingTheBlues1, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_AskToWriteLyrics::
-	msgbox MauvilleCity_PokemonCenter_1F_Text_WouldYouLikeToWriteSomeLyrics, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, MauvilleCity_PokemonCenter_1F_EventScript_WriteLyrics
-	goto_if_eq VAR_RESULT, NO, MauvilleCity_PokemonCenter_1F_EventScript_DeclineWritingLyrics
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_WriteLyrics::
-	setvar VAR_0x8004, EASY_CHAT_TYPE_BARD_SONG
-	call Common_ShowEasyChatScreen
-	lock
-	faceplayer
-	goto_if_eq VAR_RESULT, 0, MauvilleCity_PokemonCenter_1F_EventScript_DeclineWritingLyrics
-	msgbox MauvilleCity_PokemonCenter_1F_Text_LetMeSingItForYou, MSGBOX_DEFAULT
-	setvar VAR_0x8004, TRUE  @ Play the new song
-	special PlayBardSong
-	delay 60
-	msgbox MauvilleCity_PokemonCenter_1F_Text_ThatHowYouWantedSongToGo, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MauvilleCity_PokemonCenter_1F_EventScript_WriteLyrics
-	special SaveBardSongLyrics
-	msgbox MauvilleCity_PokemonCenter_1F_Text_IllSingThisSongForAWhile, MSGBOX_DEFAULT
-	release
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_DeclineWritingLyrics::
-	msgbox MauvilleCity_PokemonCenter_1F_Text_BardFeelingTheBlues2, MSGBOX_DEFAULT
-	release
+	msgbox MauvilleCity_PokemonCenter_1F_Text_BardLostHisVoice, MSGBOX_NPC
 	end
 
 @ Hipster
@@ -918,41 +871,14 @@ MauvilleCity_PokemonCenter_1F_EventScript_ToldEnoughTales::
 	release
 	end
 
-MauvilleCity_PokemonCenter_1F_Text_WouldYouLikeToHearMySong:
-	.string "Hi, I'm the BARD.\n"
-	.string "Would you like to hear my song?$"
-
-MauvilleCity_PokemonCenter_1F_Text_BardFeelingTheBlues1:
-	.string "Oh…\n"
-	.string "You've left me feeling the blues…$"
-
-MauvilleCity_PokemonCenter_1F_Text_WishICouldPlaySongForOthers:
-	.string "Oh, what a moving song…\n"
-	.string "I wish I could play it for others…$"
-
-MauvilleCity_PokemonCenter_1F_Text_WouldYouLikeToWriteSomeLyrics:
-	.string "So?\n"
-	.string "How do you like my song?\p"
-	.string "But I'm none too happy about\n"
-	.string "the lyrics.\p"
-	.string "How would you like to write some\n"
-	.string "new lyrics for me?$"
-
-MauvilleCity_PokemonCenter_1F_Text_BardFeelingTheBlues2:
-	.string "Oh…\n"
-	.string "You've left me feeling the blues…$"
-
-MauvilleCity_PokemonCenter_1F_Text_LetMeSingItForYou:
-	.string "Thank you kindly!\n"
-	.string "Let me sing it for you.$"
-
-MauvilleCity_PokemonCenter_1F_Text_ThatHowYouWantedSongToGo:
-	.string "Was that how you wanted your song\n"
-	.string "to go?$"
-
-MauvilleCity_PokemonCenter_1F_Text_IllSingThisSongForAWhile:
-	.string "Okay! That's it, then.\n"
-	.string "I'll sing this song for a while.$"
+MauvilleCity_PokemonCenter_1F_Text_BardLostHisVoice:
+	.string "I'm the BARD. Well, I was.\p"
+	.string "Someone decided my singing took up\n"
+	.string "too many kilobytes.\p"
+	.string "So they deleted my voice to make\n"
+	.string "room for real music.\p"
+	.string "I still hum sometimes.\n"
+	.string "Nobody can hear it. Not even me.$"
 
 MauvilleCity_PokemonCenter_1F_Text_TeachWhatsHipAndHappening:
 	.string "Hey, yo! They call me the HIPSTER.\n"

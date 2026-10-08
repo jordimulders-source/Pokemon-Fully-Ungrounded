@@ -41,6 +41,34 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	call_if_unset FLAG_CAUGHT_MUNKIDORI, EverGrandeCity_HallOfFame_EventScript_ResetMunkidori
 	call_if_unset FLAG_CAUGHT_FEZANDIPITI, EverGrandeCity_HallOfFame_EventScript_ResetFezandipiti
 	call_if_unset FLAG_CAUGHT_OGERPON, EverGrandeCity_HallOfFame_EventScript_ResetOgerpon
+	@ Project Grounded: Volcanion (Stoomeiland) verschijnt na de League; verslagen (niet gevangen) komt hij terug
+	call_if_unset FLAG_CAUGHT_VOLCANION, EverGrandeCity_HallOfFame_EventScript_ResetVolcanion
+	@ Project Grounded: Tapu-eiland en Fullmoon Island; verslagen (niet gevangen) komen ze terug
+	call_if_unset FLAG_CAUGHT_TAPU_KOKO, EverGrandeCity_HallOfFame_EventScript_ResetTapuKoko
+	call_if_unset FLAG_CAUGHT_TAPU_LELE, EverGrandeCity_HallOfFame_EventScript_ResetTapuLele
+	call_if_unset FLAG_CAUGHT_TAPU_BULU, EverGrandeCity_HallOfFame_EventScript_ResetTapuBulu
+	call_if_unset FLAG_CAUGHT_TAPU_FINI, EverGrandeCity_HallOfFame_EventScript_ResetTapuFini
+	call_if_unset FLAG_CAUGHT_CRESSELIA, EverGrandeCity_HallOfFame_EventScript_ResetCresselia
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetTapuKoko::
+	clearflag FLAG_DEFEATED_TAPU_KOKO
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetTapuLele::
+	clearflag FLAG_DEFEATED_TAPU_LELE
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetTapuBulu::
+	clearflag FLAG_DEFEATED_TAPU_BULU
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetTapuFini::
+	clearflag FLAG_DEFEATED_TAPU_FINI
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetCresselia::
+	clearflag FLAG_DEFEATED_CRESSELIA
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ResetZarude::
@@ -57,6 +85,10 @@ EverGrandeCity_HallOfFame_EventScript_ResetMunkidori::
 
 EverGrandeCity_HallOfFame_EventScript_ResetFezandipiti::
 	clearflag FLAG_DEFEATED_FEZANDIPITI
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ResetVolcanion::
+	clearflag FLAG_DEFEATED_VOLCANION
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ResetOgerpon::

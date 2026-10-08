@@ -583,13 +583,20 @@
 #define MUS_GROUNDED_VS_DARKRAI     645 // Project Grounded: Battle! Darkrai, eigen compositie: ontsporend speeldoos-wiegelied in 7/8 (tools/grounded/darkrai_theme.py)
 #define MUS_GROUNDED_VS_GENESECT    646 // Project Grounded: Battle! Genesect, eigen compositie: industrial/big beat à la The Prodigy + hard techno (tools/grounded/genesect_theme.py)
 #define MUS_GROUNDED_VS_ROXANNE     647 // Project Grounded: gymleider-remix (hard rock power ballad) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
-#define MUS_GROUNDED_VS_BRAWLY      648 // Project Grounded: gymleider-remix (nu-metal) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
+#define MUS_GROUNDED_VS_BRAWLY      648 // Project Grounded: gymleider-remix (80s arena-rock) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
 #define MUS_GROUNDED_VS_WATTSON     649 // Project Grounded: gymleider-remix (gabber/happy hardcore) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
 #define MUS_GROUNDED_VS_FLANNERY    650 // Project Grounded: gymleider-remix (flamenco) van het Emerald-gymleiderthema (tools/grounded/gym_remixes.py)
 #define MUS_GROUNDED_VS_NORMAN      651 // Project Grounded: gymleider-remix (Norman): blockbuster-tv-orkest (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_WINONA      652 // Project Grounded: gymleider-remix (Winona): bubblegum-dancepop (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_TATE_LIZA   653 // Project Grounded: gymleider-remix (Tate & Liza): psytrance (tools/grounded/gym_remixes2.py)
 #define MUS_GROUNDED_VS_WALLACE     654 // Project Grounded: gymleider-remix (Wallace, gym 8): Franse lounge/bossa (tools/grounded/gym_remixes2.py)
+#define MUS_GROUNDED_VS_BURGLAR     655 // Project Grounded: Battle! Burglar (SIMON), eigen compositie: noir-jazz-heist -> achtervolging (tools/grounded/burglar_theme.py)
+#define MUS_GROUNDED_VS_TAPU        656 // Project Grounded: Battle! Tapu (Sun/Moon), transcriptie fase 1: chants + tribal-drums (tools/grounded/tapu_theme.py)
+#define MUS_GROUNDED_VS_LUGIA       657 // Project Grounded: Battle! Lugia, eigen compositie: beschermersthema <-> storm, dezelfde melodie (tools/grounded/lugia_theme.py)
+#define MUS_GROUNDED_VS_HO_OH       658 // Project Grounded: Battle! Ho-Oh, eigen compositie: vurige rock + Japanse instrumenten, 180 bpm (tools/grounded/hooh_theme.py)
+#define MUS_GROUNDED_VS_TORNADUS    659 // Project Grounded: Battle! Tornadus (Forces of Nature, wind), eigen compositie (tools/grounded/forces_theme.py)
+#define MUS_GROUNDED_VS_THUNDURUS   660 // Project Grounded: Battle! Thundurus (Forces of Nature, bliksem), eigen compositie (tools/grounded/forces_theme.py)
+#define MUS_GROUNDED_VS_LANDORUS    661 // Project Grounded: Battle! Landorus (Forces of Nature, aarde), eigen compositie (tools/grounded/forces_theme.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

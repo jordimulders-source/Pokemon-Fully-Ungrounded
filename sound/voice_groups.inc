@@ -6,6 +6,10 @@
 .include "sound/voicegroups/drumsets/emerald_1.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 .include "sound/voicegroups/drumsets/keccles.inc"
+.include "sound/voicegroups/drumsets/burglar.inc"
+.include "sound/voicegroups/drumsets/tapu.inc"
+.include "sound/voicegroups/drumsets/hooh.inc"
+.include "sound/voicegroups/drumsets/lugia.inc"
 .include "sound/voicegroups/drumsets/shaymin.inc"
 .include "sound/voicegroups/drumsets/magikarp.inc"
 .include "sound/voicegroups/drumsets/jirachi.inc"
@@ -38,7 +42,14 @@
 .include "sound/voicegroups/keysplits/heatran_power.inc"
 .include "sound/voicegroups/keysplits/heatran_pm.inc"
 .include "sound/voicegroups/keysplits/np_trumpet.inc"
+.include "sound/voicegroups/keysplits/np_lead.inc"
 .include "sound/voicegroups/keysplits/heatran_lead.inc"
+.include "sound/voicegroups/keysplits/forces_spicc.inc"
+.include "sound/voicegroups/keysplits/lugia_spicc.inc"
+.include "sound/voicegroups/keysplits/lugia_strings.inc"
+.include "sound/voicegroups/keysplits/hooh_shami.inc"
+.include "sound/voicegroups/keysplits/hooh_koto.inc"
+.include "sound/voicegroups/keysplits/hooh_shaku.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -162,7 +173,6 @@
 .include "sound/voicegroups/rs_sfx_2.inc"
 .include "sound/cry_tables.inc"
 .include "sound/voicegroups/frlg_sfx.inc"
-.include "sound/voicegroups/bard.inc"
 .include "sound/voicegroups/unused_2.inc" @ used by unused GSC radio tower takeover test track in RS
 
 @ FRLG
@@ -258,3 +268,8 @@
 .include "sound/voicegroups/grounded_gym_brawly.inc"
 .include "sound/voicegroups/grounded_gym_wattson.inc"
 .include "sound/voicegroups/grounded_gym_flannery.inc"
+.include "sound/voicegroups/grounded_burglar.inc"
+.include "sound/voicegroups/grounded_tapu.inc"
+.include "sound/voicegroups/grounded_hooh.inc"
+.include "sound/voicegroups/grounded_forces.inc"
+.include "sound/voicegroups/grounded_lugia.inc"

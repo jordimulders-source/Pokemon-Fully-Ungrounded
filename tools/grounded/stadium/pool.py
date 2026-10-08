@@ -64,6 +64,10 @@ POOL = [
     'STADIUM_DONALD', 'STADIUM_IVAN', 'STADIUM_JOHNSON', 'STADIUM_LYLE',
     # post-game: de leider van de Victory-gauntlet (alleen V-Pokémon)
     'VICTORY_V',
+    # Neo Team Plasma, Plasma Frigate (Nothing Island): hoofd logistiek
+    'PLASMA_NIGEL',
+    # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
+    'GRIMSBY',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -76,7 +80,7 @@ def companion_name(t):
                'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
                'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
-               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F'}
+               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F', 'PLASMA_NIGEL': 'NIGEL'}
     t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
     return special.get(t, special.get(t2, t2.split('_')[0]))
 
@@ -189,7 +193,7 @@ GFX = {
     'GIOVANNI': 'GIOVANNI', 'CYRUS': 'GENTLEMAN', 'AGATHA': 'AGATHA', 'BERTHA': 'OLD_WOMAN',
     'LORELEI': 'LORELEI', 'LANCE': 'LANCE', 'BLUE': 'BLUE', 'BARRY': 'BOY_3', 'ROARK': 'HIKER', 'BYRON': 'HIKER',
     'GARDENIA': 'PICNICKER', 'ERIKA': 'ERIKA', 'FANTINA': 'BEAUTY', 'CANDICE': 'GIRL_3', 'VOLKNER': 'MAN_5',
-    'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'WOMAN_5', 'MARS': 'WOMAN_2',
+    'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'CYNTHIA', 'MARS': 'WOMAN_2',
     'JUPITER': 'WOMAN_2', 'SATURN': 'MAN_2', 'PALMER': 'MAN_4', 'THORTON': 'SCIENTIST_2', 'ARGENTA': 'WOMAN_3',
     'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'DAVE': 'MAN_3', 'MITCH': 'MAN_3', 'SICKBLIK': 'MAN_3', 'WINSTON': 'RICH_BOY',
     # gasten en meme-trainers
@@ -198,9 +202,10 @@ GFX = {
     'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
     'ZINZOLIN': 'ZINZOLIN', 'ROOD': 'ROOD', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
     'PLASMA_GRUNT_M': 'NEO_PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'NEO_PLASMA_GRUNT_F',
-    'PETREL': 'PETREL',
+    'PETREL': 'PETREL', 'PLASMA_NIGEL': 'NEO_PLASMA_GRUNT_M',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
+    'GRIMSBY': 'SAILOR',
 }
 
 

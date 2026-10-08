@@ -109,6 +109,34 @@ enum BattleTransition
     B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
     B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
     B_TRANSITION_DAVE, // Project Grounded: Dave (Freed From Desire), een penalty strak in de winkelhaak, dan GOAL!
+    B_TRANSITION_SICKBLIK, // Project Grounded: SickBlik (Jordi), mugshot, aan tafel bij een hotpot, die van bovenaf een Poké Ball wordt
+    B_TRANSITION_STEVEN, // Project Grounded: Steven, verzamelkast, gloeiende steen met de badges in de facetten, spat uiteen
+    B_TRANSITION_WALLY_VHS, // Project Grounded: Wally (Victory Road), VHS-band van zijn groei, bevriest op zijn gezicht
+    B_TRANSITION_RAYQUAZA_PILLAR, // Project Grounded: Rayquaza, groene ring rond de Sky Pillar, Rayquaza breekt eruit
+    B_TRANSITION_KYOGRE_MURAL, // Project Grounded: Kyogre, oude muurschildering barst, water stroomt erdoor, Primal-markeringen
+    B_TRANSITION_GROUDON_MURAL, // Project Grounded: Groudon, dezelfde schildering, lava stroomt door de barsten
+    B_TRANSITION_OGERPON, // Project Grounded: Ogerpon, maskerkraam op een nachtfestival, het Teal-masker kijkt terug
+    B_TRANSITION_WEATHER_SERVICE, // Project Grounded: Archie + Maxie (werkstraf), koffievlek Groudon/Kyogre, rooster scheurt
+    B_TRANSITION_MIMI, // Project Grounded: Mimi, poppenkast in een donkere kinderkamer, het nekje van de Pikachu-pop knakt
+    B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
+    B_TRANSITION_BURGLAR, // Project Grounded: Burglar, bewakingscamera, de Gen 1-Burglar kijkt in de lens, alarm
+    B_TRANSITION_GYM_ROXANNE, // Project Grounded: Roxanne, concert: aanstekers, spotlight, rotsblok-versterkers, powerchord
+    B_TRANSITION_GYM_BRAWLY, // Project Grounded: Brawly, UFC-walkout, octagon, omroeperbalk, vuist tegen het kooigaas
+    B_TRANSITION_GYM_WATTSON, // Project Grounded: Wattson, serverfarm, pop-ups, WATTCOIN crasht, SCAM-stempel, Wahahahah!
+    B_TRANSITION_GYM_FLANNERY, // Project Grounded: Flannery, camping, Mt. Chimney ontploft, een lavasteen raakt de camera
+    B_TRANSITION_TAPU_KOKO, // Project Grounded: Tapu's, gesloten schild op het motief van het schild, opent op de drumslag
+    B_TRANSITION_TAPU_LELE,
+    B_TRANSITION_TAPU_BULU,
+    B_TRANSITION_TAPU_FINI,
+    B_TRANSITION_GYM_NORMAN, // Project Grounded: Norman, NORMFLIX: Are you still watching?, het beeld krimpt in de tv, Slaking op de bank
+    B_TRANSITION_GYM_WINONA, // Project Grounded: Winona, WINAIR: vertrekbord DELAYED -> BOARDING, Altaria vliegt over, het koffertje springt open
+    B_TRANSITION_GYM_TATE_LIZA, // Project Grounded: Tate & Liza, ouijabord spelt RIP, drie tarotkaarten, psychic overload in lowercase
+    B_TRANSITION_GYM_WALLACE, // Project Grounded: Wallace, Crater Pub: een wijnglas schenkt vol, de wijn wordt Hoenn-blauw, een golf over de pub, Santé!
+    B_TRANSITION_LUGIA, // Project Grounded: Lugia, zinken met een zilveren veer, een oog gaat open, draaikolk, storm
+    B_TRANSITION_HO_OH, // Project Grounded: Ho-Oh, Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels
+    B_TRANSITION_VOLCANION, // Project Grounded: Volcanion, manometer in het rood, klinknagels schieten eruit, stoom
+    B_TRANSITION_HOOPA, // Project Grounded: Hoopa, ringportaal, er valt van alles uit, de hand grijpt de camera
+    B_TRANSITION_FORCES, // Project Grounded: Tornadus/Thundurus/Landorus, een weerbericht dat ontspoort
     B_TRANSITION_COUNT
 };
 

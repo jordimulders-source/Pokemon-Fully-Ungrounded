@@ -687,6 +687,12 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
     },
 };
 
+// Grounded: met OW_ONLY_USED_SPECIES zijn de overworld-graphics static, zodat ongebruikte niet gelinkt worden.
+#if OW_POKEMON_OBJECT_EVENTS && OW_ONLY_USED_SPECIES
+#define OW_PIC_STORAGE static
+#else
+#define OW_PIC_STORAGE
+#endif
 #include "data/graphics/pokemon.h"
 
 #include "data/pokemon/trainer_class_lookups.h"
@@ -6168,11 +6174,13 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-     && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))
+     && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT))
         return MUS_GROUNDED_VS_BIRCH;
 
     switch (trainerClass)
     {
+    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-5, ook TRAINER_STADIUM_BURGLAR)
+        return MUS_GROUNDED_VS_BURGLAR;
     case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
         return MUS_GROUNDED_VS_COLRESS;
     case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
@@ -6286,6 +6294,8 @@ u16 GetBattleBGM(void)
         return MUS_VS_REGI;
     case SPECIES_REGIGIGAS: // Project Grounded: eigen thema met Slow Start
         return MUS_GROUNDED_VS_REGIGIGAS;
+    case SPECIES_LUGIA: // Project Grounded: eigen thema (tools/grounded/lugia_theme.py)
+        return MUS_GROUNDED_VS_LUGIA;
     case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema, per beest een eigen laag (HGSS-stijl)
         return MUS_GROUNDED_VS_RAIKOU;
     case SPECIES_ENTEI:
@@ -6298,9 +6308,20 @@ u16 GetBattleBGM(void)
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
     case SPECIES_GIRATINA_ORIGIN:
         return MUS_GROUNDED_VS_GIRATINA;
+    case SPECIES_HO_OH: // Project Grounded: eigen thema (tools/grounded/hooh_theme.py)
+        return MUS_GROUNDED_VS_HO_OH;
     case SPECIES_ZARUDE: // Project Grounded: eigen compositie (tools/grounded/zarude_theme.py)
     case SPECIES_ZARUDE_DADA:
         return MUS_GROUNDED_VS_ZARUDE;
+    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, één motief in drie arrangementen (tools/grounded/forces_theme.py)
+    case SPECIES_TORNADUS_THERIAN:
+        return MUS_GROUNDED_VS_TORNADUS;
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+        return MUS_GROUNDED_VS_THUNDURUS;
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        return MUS_GROUNDED_VS_LANDORUS;
     default:
         return MUS_RG_VS_LEGEND;
     }

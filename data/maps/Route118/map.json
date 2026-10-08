@@ -423,6 +423,14 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 10,
+      "elevation": 1,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R118_HEART_SCALE"
     }
   ]
 }

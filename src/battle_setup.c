@@ -1070,6 +1070,11 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
 
+    // Project Grounded: Youngster Calvin (Route 102, "Short shorts, cigarette."): het Viagra Boys-logo
+    if (trainerId == TRAINER_CALVIN_1 || trainerId == TRAINER_CALVIN_2 || trainerId == TRAINER_CALVIN_3
+     || trainerId == TRAINER_CALVIN_4 || trainerId == TRAINER_CALVIN_5)
+        return B_TRANSITION_VIAGRA_BOYS;
+
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
     if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
      || trainerId == TRAINER_DAVE_SOOTOPOLIS)

@@ -17500,3 +17500,13 @@ Volgens Jordi's GBA-instructies per leider:
 - **Route 130:** op Mirage-dagen zijn de Wynaut-crèche en de fotograaf weg, want die layout heeft hun eilandje niet.
 - Script `tools/grounded/maptools/zee_vulling_4.py`. Flags `FLAG_GROUNDED(330–358)`, trainers 1187–1194.
 - Overgeslagen: Sootopolis-eilandjes; Route 126 heeft een andere tileset, dus dat vraagt eigen kaarten.
+
+### [v0.9.160] - Viagra Boys-intro voor Calvin, Muay Thai-Black Belt
+- **Youngster Calvin** (Route 102, "Short shorts, cigarette.", ook rematches 2–5) krijgt een eigen transitie `B_TRANSITION_VIAGRA_BOYS`:
+  - het Viagra Boys-logo (yin-yang met V en B, uit Jordi's afbeelding) draait groeiend op zwart;
+  - na een flits draait het andersom verder in omgekeerde kleuren, zwart op wit.
+  - ±3 KB; bouwscript `tools/grounded/viagra_boys_transition.py`.
+- **Black Belt Kiyo** (Route 132), teksten van Jordi:
+  - intro: "I've been practicing Muay Thai a lot for the past 6 months... My trainer says I'm Bangkok ready!"
+  - verlies: "Wait, women there aren't always female?"
+  - daarna: "That sounds like a nightmare, I guess I am not Bangkok ready at all, time to memorize how I can distinguish females from males"

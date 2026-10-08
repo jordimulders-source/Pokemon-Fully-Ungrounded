@@ -137,6 +137,7 @@ enum BattleTransition
     B_TRANSITION_VOLCANION, // Project Grounded: Volcanion, manometer in het rood, klinknagels schieten eruit, stoom
     B_TRANSITION_HOOPA, // Project Grounded: Hoopa, ringportaal, er valt van alles uit, de hand grijpt de camera
     B_TRANSITION_FORCES, // Project Grounded: Tornadus/Thundurus/Landorus, een weerbericht dat ontspoort
+    B_TRANSITION_VIAGRA_BOYS, // Project Grounded: Youngster Calvin (Route 102, Sports), het Viagra Boys-logo draait en keert van kleur om
     B_TRANSITION_COUNT
 };
 

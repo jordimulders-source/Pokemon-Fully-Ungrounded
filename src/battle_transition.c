@@ -145,6 +145,7 @@ static void Task_RouteJagged(u8); // Project Grounded
 static void Task_RouteRainforest(u8); // Project Grounded
 static void Task_Pikachu(u8); // Project Grounded
 static void Task_Magikarp(u8); // Project Grounded
+static void Task_ViagraBoys(u8); // Project Grounded
 static void Task_Psyduck(u8); // Project Grounded
 static void Task_Koffing(u8); // Project Grounded
 static void Task_GabbyTy(u8); // Project Grounded
@@ -643,6 +644,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ROUTE_RAINFOREST] = Task_RouteRainforest, // Project Grounded
     [B_TRANSITION_PIKACHU] = Task_Pikachu, // Project Grounded
     [B_TRANSITION_MAGIKARP] = Task_Magikarp, // Project Grounded
+    [B_TRANSITION_VIAGRA_BOYS] = Task_ViagraBoys, // Project Grounded
     [B_TRANSITION_PSYDUCK] = Task_Psyduck, // Project Grounded
     [B_TRANSITION_KOFFING] = Task_Koffing, // Project Grounded
     [B_TRANSITION_GABBY_TY] = Task_GabbyTy, // Project Grounded
@@ -7107,6 +7109,116 @@ static const struct RouteTransition sRT_Magikarp =
 static void Task_Magikarp(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Magikarp);
+}
+
+// ---------------- Viagra Boys (Youngster Calvin, "Short shorts, cigarette."): het yin-yang-logo met V en B draait en
+// zoomt in op zwart, flits, en draait daarna andersom verder in omgekeerde kleuren (zwart logo op wit). Bron:
+// tools/grounded/viagra_boys_transition.py. BG-tile 1 = vlak in kleur 1 (zwart, in de tweede helft wit).
+#define VB_TAG    0x5A40
+#define VB_FLIP   44
+#define VB_END    86
+
+static const u16 sViagraBoys_BgTiles[] = INCBIN_U16("graphics/battle_transitions/viagra_boys_bg.4bpp");
+static const u16 sViagraBoys_BgPal[] = INCBIN_U16("graphics/battle_transitions/viagra_boys_bg.gbapal");
+static const u32 sViagraBoys_Gfx[] = INCBIN_U32("graphics/battle_transitions/viagra_boys.4bpp");
+static const u16 sViagraBoys_Pal[] = INCBIN_U16("graphics/battle_transitions/viagra_boys.gbapal");
+
+static const struct OamData sRTViagraBoys_Oam =
+{
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 0,
+};
+
+static const struct SpriteTemplate sRTViagraBoys_Template =
+{
+    .tileTag = VB_TAG,
+    .paletteTag = VB_TAG,
+    .oam = &sRTViagraBoys_Oam,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static void RTViagraBoys_Init(struct Task *task)
+{
+    struct SpriteSheet sheet = {sViagraBoys_Gfx, sizeof(sViagraBoys_Gfx), VB_TAG};
+    struct SpritePalette spal = {sViagraBoys_Pal, VB_TAG};
+    u8 id;
+
+    LoadSpriteSheet(&sheet);
+    LoadSpritePalette(&spal);
+    id = CreateSprite(&sRTViagraBoys_Template, 120, 80, 0);
+    task->tRtA = id;
+    task->tRtB = AllocOamMatrix();
+    if (id != MAX_SPRITES)
+    {
+        gSprites[id].oam.matrixNum = task->tRtB;
+        CalcCenterToCornerVec(&gSprites[id], SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
+    }
+    PlaySE(SE_M_SWAGGER);
+}
+
+static bool8 RTViagraBoys_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, scale, rot;
+    u32 i, pal = 16 + IndexOfSpritePaletteTag(VB_TAG);
+    u16 black = RGB(2, 2, 2), white = RGB(30, 30, 30);
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = RT_TILE(1);
+    if (t < VB_FLIP)
+    {
+        // eerst: wit logo op zwart, een hele draai rechtsom terwijl het groeit
+        scale = 128 + t * 160 / VB_FLIP;
+        rot = -(t * 0x10000 / VB_FLIP);
+        LoadPalette(&black, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+        BlendPalettes(RT_SCENE_PALETTES & ~(1 << pal), 16, RGB_BLACK);
+    }
+    else
+    {
+        // flits, dan omgekeerd: zwart logo op wit, andersom draaiend en verder groeiend
+        u32 k = t - VB_FLIP;
+        if (k == 0)
+        {
+            u16 inv[2] = {black, white};
+            LoadPalette(inv, OBJ_PLTT_ID(IndexOfSpritePaletteTag(VB_TAG)) + 1, PLTT_SIZEOF(2));
+            PlaySE(SE_M_HEADBUTT);
+        }
+        scale = 288 + min(k, 30u) * 224 / 30;
+        rot = k * 0x10000 / 30;
+        LoadPalette(&white, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+        BlendPalettes(RT_SCENE_PALETTES & ~(1 << pal), 16, RGB_WHITE);
+        if (k < 2)
+            gSprites[task->tRtA].invisible = TRUE;
+        else
+            gSprites[task->tRtA].invisible = FALSE;
+    }
+    if (task->tRtA != MAX_SPRITES)
+        SetOamMatrixRotationScaling(task->tRtB, scale, scale, rot & 0xFFFF); // 256 = 1x, groter = groter
+    return t >= VB_END;
+}
+
+static void RTViagraBoys_Finish(struct Task *task)
+{
+    if (task->tRtA != MAX_SPRITES)
+        DestroySprite(&gSprites[task->tRtA]);
+    FreeOamMatrix(task->tRtB);
+    FreeSpriteTilesByTag(VB_TAG);
+    FreeSpritePaletteByTag(VB_TAG);
+}
+
+static const struct RouteTransition sRT_ViagraBoys =
+{
+    sViagraBoys_BgTiles, sizeof(sViagraBoys_BgTiles), sViagraBoys_BgPal, 1, 1, 0, RTViagraBoys_Init, RTViagraBoys_Update, RTViagraBoys_Finish
+};
+
+static void Task_ViagraBoys(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_ViagraBoys);
 }
 
 // ---------------- Gabby & Ty: een camera wordt op je gericht: zoekerhoeken zoomen in, REC en een knipperende rode stip

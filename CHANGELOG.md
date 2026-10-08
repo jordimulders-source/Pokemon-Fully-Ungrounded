@@ -17510,3 +17510,15 @@ Volgens Jordi's GBA-instructies per leider:
   - intro: "I've been practicing Muay Thai a lot for the past 6 months... My trainer says I'm Bangkok ready!"
   - verlies: "Wait, women there aren't always female?"
   - daarna: "That sounds like a nightmare, I guess I am not Bangkok ready at all, time to memorize how I can distinguish females from males"
+
+### [v0.9.161] - Gifts, Deoxys-vormen, Selene/Reginald/Helia in het Stadium
+- **Battle Stadium:** Selene (Draconid-oudere), Reginald (Victory Road-kluizenaar, "Last saw daylight in 1987. Didn't like it.") en Helia (zonnetempel, "The sun has not replied.") staan in de pool, met omroep- en compagnonzinnen.
+  - `STADIUM_MAX_COMPANIONS` 128 → 160 (het maximum was bereikt). In oude saves worden de laatste compagnon en de toernooiteller daardoor één keer 0.
+- **Type: Null** (lv 50): gift van een Devon-wetenschapper (Devon Corp 2F) na de Hall of Fame. "It's not a gift. It's a relocation." / "Don't take the helmet off. We did that once. Once."
+- **Magearna** (lv 60): gift van Colress in Mauville, nadat je hem verslagen hebt en de Plasma Frigate (Genesect) klaar is. "Unlike mine, it works."
+- **Regionale vormen** in de lobby van het Paradiso Resort:
+  - Alola-Rattata en Alola-Meowth (lv 18), van een toerist die ze in haar koffer smokkelde. Ze eten de minibar leeg.
+  - Galar-Farfetch'd met een Leek (lv 30), van een gentleman die hint op drie critical hits: Sirfetch'd evolueert via `EVO_BATTLE_END`.
+- **Deoxys van vorm wisselen** bij de meteoriet in Mossdeep: NORMAL, ATTACK, DEFENSE of SPEED ("Took two seconds. Your last haircut took longer, and looked worse."). Specials `Grounded_FindPartyDeoxys` en `Grounded_SetDeoxysForm`.
+- **Gift-afhandeling** op één plek (`data/scripts/grounded_gifts.inc`): vol team → pc. De pc-melding toont nu de juiste soort (eerder "??????????" bij Kubfu en Oaks starter).
+- Flags `FLAG_GROUNDED(360–364)`. Getest: Deoxys-wissel en Magearna (vol team → pc).

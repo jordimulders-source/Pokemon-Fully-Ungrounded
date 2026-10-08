@@ -1201,8 +1201,8 @@ static const struct SpriteFrameImage sPicTable_RayquazaCutscene[] = {
     overworld_frame(gObjectEventPic_RayquazaCutscene, 8, 8, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_BirthIslandStone[] = {
-    obj_frame_tiles(gObjectEventPic_BirthIslandStone),
+static const struct SpriteFrameImage sPicTable_DeoxysTriangle[] = {
+    obj_frame_tiles(gObjectEventPic_DeoxysTriangle),
 };
 
 static const struct SpriteFrameImage sPicTable_Anabel[] = {

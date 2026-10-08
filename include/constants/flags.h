@@ -337,7 +337,7 @@
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
 #define FLAG_RECEIVED_HM_WATERFALL           0x138
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
-#define FLAG_RECEIVED_AURORA_TICKET          0x13A
+#define FLAG_WONDER_CARD_UNUSED_0            0x13A // Project Grounded: was Aurora Ticket
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
 #define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
@@ -357,7 +357,7 @@
 #define FLAG_WONDER_CARD_UNUSED_15           0x14B
 #define FLAG_WONDER_CARD_UNUSED_16           0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_0)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -466,7 +466,7 @@
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
 #define FLAG_SHOWN_EON_TICKET                0x1AE
-#define FLAG_SHOWN_AURORA_TICKET             0x1AF
+#define FLAG_UNUSED_0x1AF                    0x1AF // Project Grounded: was FLAG_SHOWN_AURORA_TICKET
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
@@ -812,7 +812,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0x2F9
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0x2FA
 #define FLAG_HIDE_DEOXYS                                            0x2FB
-#define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0x2FC
+#define FLAG_HIDE_METEOR_SPACE_DEOXYS_TRIANGLE                      0x2FC
 #define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0x2FD
 #define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0x2FE
 #define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT                  0x2FF
@@ -1176,7 +1176,7 @@
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
 #define FLAG_ITEM_SOUTHERN_ISLAND_CAMP_DRAGON_FANG                  0x465 // Project Grounded (landvulling): Southern Island, verlaten kamp (was Ruby-restant)
-#define FLAG_ITEM_BIRTH_ISLAND_CAMP_MIND_PLATE                      0x466 // Project Grounded (landvulling): Birth Island, verlaten kamp (was Ruby-restant)
+#define FLAG_ITEM_LIGHT_ISLE_MIND_PLATE                             0x466 // Project Grounded: Lichteiland (Beacon Isle; was Birth Island-kamp)
 #define FLAG_ITEM_FARAWAY_ISLAND_CAMP_PP_MAX                        0x467 // Project Grounded (landvulling): Faraway Island, verlaten kamp (was Ruby-restant)
 #define FLAG_HIDDEN_ITEM_ZV3_UW125_WAVE_INCENSE                     0x468 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
@@ -1484,7 +1484,7 @@
 
 #define FLAG_MAP_SCRIPT_CHECKED_DEOXYS              (SYSTEM_FLAGS + 0x73)
 #define FLAG_DEOXYS_ROCK_COMPLETE                   (SYSTEM_FLAGS + 0x74)
-#define FLAG_ENABLE_SHIP_BIRTH_ISLAND               (SYSTEM_FLAGS + 0x75)
+#define FLAG_UNUSED_SYS_0x75                        (SYSTEM_FLAGS + 0x75) // Project Grounded: was FLAG_ENABLE_SHIP_BIRTH_ISLAND
 #define FLAG_ENABLE_SHIP_FARAWAY_ISLAND             (SYSTEM_FLAGS + 0x76)
 
 #define FLAG_SHOWN_BOX_WAS_FULL_MESSAGE             (SYSTEM_FLAGS + 0x77)
@@ -1513,7 +1513,7 @@
 #define FLAG_HIDDEN_ITEM_DESERT_UNDERPASS_RARE_BONE (SYSTEM_FLAGS + 0x88) // Project Grounded (landvulling): verborgen item
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_FORK_PP_MAX     (SYSTEM_FLAGS + 0x89) // Project Grounded (landvulling): verborgen item
 #define FLAG_HIDDEN_ITEM_SOUTHERN_ISLAND_CAMP_BIG_NUGGET (SYSTEM_FLAGS + 0x8A) // Project Grounded (landvulling): verborgen item
-#define FLAG_HIDDEN_ITEM_BIRTH_ISLAND_CAMP_STAR_PIECE (SYSTEM_FLAGS + 0x8B) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_LIGHT_ISLE_STAR_PIECE (SYSTEM_FLAGS + 0x8B) // Project Grounded: verborgen item op het Lichteiland (was Birth Island-kamp)
 #define FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_CAMP_BIG_MUSHROOM (SYSTEM_FLAGS + 0x8C) // Project Grounded (landvulling): verborgen item
 #define FLAG_HIDDEN_ITEM_HEATRAN_LAIR_FLAME_PLATE   (SYSTEM_FLAGS + 0x8D) // Project Grounded (landvulling): verborgen item
 #define FLAG_HIDDEN_ITEM_ZV2_R120_PEARL_STRING      (SYSTEM_FLAGS + 0x8E) // Project Grounded (zeevulling 2): verborgen item (Route120)

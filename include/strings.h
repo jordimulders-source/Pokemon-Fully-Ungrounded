@@ -489,7 +489,6 @@ extern const u8 gText_SlateportCity[];
 extern const u8 gText_BattleFrontier[];
 extern const u8 gText_SouthernIsland[];
 extern const u8 gText_NavelRock[];
-extern const u8 gText_BirthIsland[];
 extern const u8 gText_FarawayIsland[];
 extern const u8 gText_FlowerParadise[];
 

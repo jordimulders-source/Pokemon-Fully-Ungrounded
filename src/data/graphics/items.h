@@ -1771,8 +1771,6 @@ const u16 gItemIconPalette_EonTicket[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_MysticTicket[] = INCBIN_U32("graphics/items/icons/mystic_ticket.4bpp.smol");
 const u16 gItemIconPalette_MysticTicket[] = INCBIN_U16("graphics/items/icon_palettes/mystic_ticket.gbapal");
 
-const u32 gItemIcon_AuroraTicket[] = INCBIN_U32("graphics/items/icons/aurora_ticket.4bpp.smol");
-const u16 gItemIconPalette_AuroraTicket[] = INCBIN_U16("graphics/items/icon_palettes/aurora_ticket.gbapal");
 
 const u32 gItemIcon_OldSeaMap[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.smol");
 const u16 gItemIconPalette_OldSeaMap[] = INCBIN_U16("graphics/items/icon_palettes/old_sea_map.gbapal");

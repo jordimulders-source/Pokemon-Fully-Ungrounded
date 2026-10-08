@@ -420,32 +420,6 @@ scr += sign_obj(P + 'Plush', Q + 'Plush',
 place(k, objs, bgs, scr, (13, 22), [(14, 6), (15, 6), (16, 8), (24, 9)])
 
 # =====================================================================================================
-# Birth Island (30x30): kamp van een sterrenkijker, weg van de plekken van de Deoxys-driehoek
-k = Kaart('BirthIsland_Exterior')
-P = 'BirthIsland_Exterior_EventScript_LV'
-Q = 'BirthIsland_Exterior_Text_LV'
-TRIANGLE = [(15, 12), (11, 14), (15, 8), (19, 14), (12, 11), (18, 11), (15, 14), (15, 15), (15, 10)]
-objs = [obj('OBJ_EVENT_GFX_MOVING_BOX', 6, 15, P + 'Letters'),
-        ball(5, 16, 'ITEM_MIND_PLATE', 'FLAG_ITEM_BIRTH_ISLAND_CAMP_MIND_PLATE')]
-bgs = [hidden(25, 16, 'ITEM_STAR_PIECE', 'FLAG_HIDDEN_ITEM_BIRTH_ISLAND_CAMP_STAR_PIECE')]
-for o in objs + bgs:
-    near = [t for t in TRIANGLE if abs(t[0] - o['x']) + abs(t[1] - o['y']) <= 1]
-    assert not near, 'Birth Island: te dicht bij de driehoek %s' % near
-scr = sign_obj(P + 'Letters', Q + 'Letters',
-               "A crate with a telescope lens\\n"
-               "and a stack of letters.\\p"
-               "'Night 1. The triangle moved.\\n"
-               "I didn't touch it. I swear.'\\p"
-               "'Night 40. It hums at night.\\n"
-               "I've started humming back.'\\p"
-               "'Night 90. The triangle and I are\\n"
-               "engaged. My mother doesn't\\l"
-               "understand. Nobody understands.'\\p"
-               "'Night 91. It left me for a kid\\n"
-               "with a ticket. Keep the lens.'")
-place(k, objs, bgs, scr, (15, 23), [t for t in TRIANGLE if t != (15, 12)] + [(15, 16), (15, 13)])
-
-# =====================================================================================================
 # Faraway Island (34x46): kamp van een Mew-onderzoeker (zuidwesthoek, bij het bord)
 k = Kaart('FarawayIsland_Entrance')
 P = 'FarawayIsland_Entrance_EventScript_LV'

@@ -628,7 +628,7 @@ def dragon_hmap():
                 m[y][x] = c
     fill(*PLATEAU, '1')
     fill(*MOUNT, '2')
-    fill(*SPINE, 'X')
+    # (geen losse bergkam: de RIDGE-tegels lazen als losse wandstukjes)
     return [''.join(r) for r in m]
 
 
@@ -713,7 +713,7 @@ DragonspineIsle_MapScripts::
     for b in bgs:
         assert (b['x'], b['y']) in walk, ('verborgen item onbereikbaar', b)
     assert grass and all(c in walk for c in grass), 'as-gras onbereikbaar'
-    lvl2 = {(x, y) for x in range(MOUNT[0] + 1, MOUNT[2]) for y in range(SPINE[3] + 1, MOUNT[3]) if cx.walkable(g[y][x])}
+    lvl2 = {(x, y) for x in range(MOUNT[0] + 1, MOUNT[2]) for y in range(MOUNT[1] + 1, MOUNT[3]) if cx.walkable(g[y][x])}
     assert lvl2 and lvl2 - blocked <= walk, 'bergterras onbereikbaar'
     assert all(mt(g[y][x]) < 0x200 for y in range(DH) for x in range(SAFE_LEFT)), 'linker kolommen niet primary'
     r129 = sms.read('Route129', 80, 40)

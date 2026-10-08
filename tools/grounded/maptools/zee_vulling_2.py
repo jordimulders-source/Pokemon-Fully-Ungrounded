@@ -974,7 +974,10 @@ scr = npc(P, 'Architect',
           "Problem: nobody in HOENN knows what\\n"
           "a lighthouse looks like.\\p"
           "I asked around. Someone drew me a\\n"
-          "very tall PEEKO. I'm considering it.")
+          "very tall PEEKO. I'm considering it.\\p"
+          "...Wait. There's one south of ROUTE 133\\n"
+          "already? And the lamp is a LANTURN?\\p"
+          "Cheater.")
 scr += single(P, 'Kage', KAGE,
               "...!\\p"
               "You saw me?! I was hiding! In the\\n"

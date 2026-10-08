@@ -57,7 +57,7 @@ Route134_EventScript_ZV2Architect::
 	end
 
 Route134_Text_ZV2Architect:
-	.string "This is where the lighthouse goes.\nBig. White. Stripes. A light.\pProblem: nobody in HOENN knows what\na lighthouse looks like.\pI asked around. Someone drew me a\nvery tall PEEKO. I'm considering it.$"
+	.string "This is where the lighthouse goes.\nBig. White. Stripes. A light.\pProblem: nobody in HOENN knows what\na lighthouse looks like.\pI asked around. Someone drew me a\nvery tall PEEKO. I'm considering it.\p...Wait. There's one south of ROUTE 133\nalready? And the lamp is a LANTURN?\pCheater.$"
 
 Route134_EventScript_ZV2Kage::
 	trainerbattle_single TRAINER_NINJA_BOY_KAGE, Route134_Text_ZV2Kage_Intro, Route134_Text_ZV2Kage_Defeat

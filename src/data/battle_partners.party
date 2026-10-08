@@ -4440,6 +4440,111 @@ Nature: Modest
 - Focus Blast
 - Nasty Plot
 
+=== PARTNER_STADIUM_SELENE ===
+Name: SELENE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kingdra
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Hydro Pump
+- Ice Beam
+- Rain Dance
+
+Dragonite
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Hydreigon
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Nasty Plot
+
+=== PARTNER_STADIUM_REGINALD ===
+Name: REGINALD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Tyranitar @ Chople Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Metagross @ Air Balloon
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Slaking @ Choice Band
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Truant
+- Giga Impact
+- Earthquake
+- Knock Off
+- Slack Off
+
+=== PARTNER_STADIUM_HELIA ===
+Name: HELIA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Bronzong
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Heatproof
+- Sunny Day
+- Gyro Ball
+- Extrasensory
+- Stealth Rock
+
+Espeon
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Magic Bounce
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Morning Sun
+
+Armarouge @ Charcoal
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flash Fire
+- Armor Cannon
+- Psyshock
+- Calm Mind
+- Will-O-Wisp
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

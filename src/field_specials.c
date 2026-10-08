@@ -4431,6 +4431,47 @@ void Grounded_EvolveKubfu(void)
     BeginEvolutionScene(&gPlayerParty[slot], target, FALSE, slot);
 }
 
+// Project Grounded: Deoxys van vorm wisselen bij de meteoriet in Mossdeep.
+// Grounded_FindPartyDeoxys: gSpecialVar_Result = plek van de eerste Deoxys (elke vorm, geen ei), anders PARTY_SIZE;
+// gSpecialVar_0x8005 = huidige vorm (0 Normal, 1 Attack, 2 Defense, 3 Speed).
+static const u16 sDeoxysForms[] = {SPECIES_DEOXYS_NORMAL, SPECIES_DEOXYS_ATTACK, SPECIES_DEOXYS_DEFENSE, SPECIES_DEOXYS_SPEED};
+
+void Grounded_FindPartyDeoxys(void)
+{
+    u32 i, j;
+
+    gSpecialVar_Result = PARTY_SIZE;
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            continue;
+        for (j = 0; j < ARRAY_COUNT(sDeoxysForms); j++)
+        {
+            if (species == sDeoxysForms[j])
+            {
+                gSpecialVar_Result = i;
+                gSpecialVar_0x8005 = j;
+                return;
+            }
+        }
+    }
+}
+
+// Zet de Deoxys op plek gSpecialVar_0x8004 in vorm gSpecialVar_0x8005 (0-3) en rekent de stats opnieuw uit.
+void Grounded_SetDeoxysForm(void)
+{
+    struct Pokemon *mon;
+    u16 species;
+
+    if (gSpecialVar_0x8004 >= PARTY_SIZE || gSpecialVar_0x8005 >= ARRAY_COUNT(sDeoxysForms))
+        return;
+    mon = &gPlayerParty[gSpecialVar_0x8004];
+    species = sDeoxysForms[gSpecialVar_0x8005];
+    SetMonData(mon, MON_DATA_SPECIES, &species);
+    CalculateMonStats(mon);
+}
+
 // Project Grounded: 1 als het nu nacht is (echte klok, dag/nacht-systeem). Voor nachtelijke legendary-events
 // (Jirachi in Fallarbor, Darkrai op Mt. Pyre). Scripts kunnen TIME_NIGHT (een enum) niet zelf vergelijken.
 bool8 IsNightTime(void)

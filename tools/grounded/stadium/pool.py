@@ -73,6 +73,8 @@ POOL = [
     'GERALD_WARDEN',
     # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
     'SALIM',
+    # post-game kluizenaars: Selene (Draconid-oudere, Meteor Falls), Reginald (Victory Road), Helia (Scorched Slab)
+    'DRACONID_ELDER', 'VR_REGINALD', 'SLAB_HELIA',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -85,7 +87,8 @@ def companion_name(t):
                'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
                'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
-               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F', 'PLASMA_NIGEL': 'NIGEL'}
+               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F', 'PLASMA_NIGEL': 'NIGEL',
+               'DRACONID_ELDER': 'SELENE', 'VR_REGINALD': 'REGINALD', 'SLAB_HELIA': 'HELIA'}
     t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
     return special.get(t, special.get(t2, t2.split('_')[0]))
 
@@ -214,6 +217,7 @@ GFX = {
     'GERALD': 'MAN_5',
     'WICK': 'EXPERT_M',
     'SALIM': 'EXPERT_M',
+    'DRACONID_ELDER': 'OLD_WOMAN', 'VR_REGINALD': 'EXPERT_M', 'SLAB_HELIA': 'HEX_MANIAC',
 }
 
 

@@ -2952,6 +2952,16 @@
       "blockdata_filepath": "data/layouts/RegigigasTemple/map.bin"
     },
     {
+      "id": "LAYOUT_REGIGIGAS_TEMPLE_SEALED",
+      "name": "RegigigasTemple_Sealed_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_SnowTemple",
+      "border_filepath": "data/layouts/RegigigasTemple_Sealed/border.bin",
+      "blockdata_filepath": "data/layouts/RegigigasTemple_Sealed/map.bin"
+    },
+    {
       "id": "LAYOUT_REGIELEKI_CAVE",
       "name": "RegielekiCave_Layout",
       "width": 17,
@@ -5260,6 +5270,26 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/FullmoonIsland/border.bin",
       "blockdata_filepath": "data/layouts/FullmoonIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHFROST_LODGE_2F",
+      "name": "AshfrostLodge_2F_Layout",
+      "width": 24,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AshfrostLodge_2F/border.bin",
+      "blockdata_filepath": "data/layouts/AshfrostLodge_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHFROST_LODGE_ROOMS",
+      "name": "AshfrostLodge_Rooms_Layout",
+      "width": 36,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AshfrostLodge_Rooms/border.bin",
+      "blockdata_filepath": "data/layouts/AshfrostLodge_Rooms/map.bin"
     }
   ]
 }

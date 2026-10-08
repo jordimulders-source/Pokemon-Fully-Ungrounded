@@ -3,6 +3,8 @@
   (graphics/grounded/tilesets/ekat99_sneeuwtempel.png, 16x16-raster), via emit() uit snow_tileset.py.
 - Layout data/layouts/RegigigasTemple (15x14): gevel met pilaren en de donkere trap in de achterwand,
   ijsvloer, een paar ijsbrokken, uitgang onderin.
+- Layout data/layouts/RegigigasTemple_Sealed: dezelfde zaal met een ijsmuur (rijen 8-10) voor Regigigas;
+  de kaart kiest die zolang FLAG_REGIGIGAS_TEMPLE_OPEN niet gezet is (de iglo is altijd open).
 Gebruik: python3 tools/grounded/regigigas_temple.py"""
 import os, struct
 import numpy as np
@@ -46,6 +48,13 @@ for r in range(25, 32):
         add('facade_%d_%d' % (c, r), over(cell(4, r if r < 29 else 27), cell(c, r)))
 for (c, r) in [(1, 35), (2, 35), (3, 35), (1, 36), (2, 36)]:
     add('ice_%d_%d' % (c, r), over(cell(4, 32), cell(c, r)))
+# ijsmuur (alleen in de verzegelde versie): grote ijsblokken (3x3) en een ijskristal (1x2)
+for r in range(21, 24):
+    for c in range(5, 8):
+        add('iceblock_%d_%d' % (c, r), over(cell(4, 32), cell(c, r)))
+for r in (21, 22):
+    for c in (3, 4):
+        add('icecrys_%d_%d' % (c, r), over(cell(4, 32), cell(c, r)))
 
 res = emit(metatiles, OUT, 512, 6, 7)
 
@@ -75,3 +84,24 @@ data = b''.join(struct.pack('<H', names[grid[y][x]] | ((1 if block[y][x] else 0)
 open(LAY + '/map.bin', 'wb').write(data)
 open(LAY + '/border.bin', 'wb').write(struct.pack('<4H', *([names['wall_26'] | (1 << 10)] * 4)))
 print('klaar:', LAY)
+
+# verzegelde versie (LAYOUT_REGIGIGAS_TEMPLE_SEALED, via setmaplayoutindex zolang niet alle vijf Regi's gevangen zijn):
+# een ijsmuur over de hele breedte van de zaal (rijen 8-10), Regigigas zit erachter
+SEALED = 'data/layouts/RegigigasTemple_Sealed'
+# 13 breed: ijskristal (2) + drie ijsblokken (3x3) + ijskristal (2); de onderste blokrij is schaduw (begaanbaar)
+for y in range(8, 11):
+    for k in range(3):
+        for dx in range(3):
+            grid[y][3 + 3 * k + dx] = 'iceblock_%d_%d' % (5 + dx, 21 + y - 8)
+            block[y][3 + 3 * k + dx] = y < 10
+for y in (8, 9):
+    for x0 in (1, 12):
+        for dx in (0, 1):
+            grid[y][x0 + dx] = 'icecrys_%d_%d' % (3 + dx, 21 + y - 8)
+            block[y][x0 + dx] = True
+os.makedirs(SEALED, exist_ok=True)
+data = b''.join(struct.pack('<H', names[grid[y][x]] | ((1 if block[y][x] else 0) << 10) | (3 << 12))
+                for y in range(H) for x in range(W))
+open(SEALED + '/map.bin', 'wb').write(data)
+open(SEALED + '/border.bin', 'wb').write(struct.pack('<4H', *([names['wall_26'] | (1 << 10)] * 4)))
+print('klaar:', SEALED)

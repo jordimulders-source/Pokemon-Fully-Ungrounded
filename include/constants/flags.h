@@ -1265,7 +1265,7 @@
 #define FLAG_ITEM_MT_CHIMNEY_SUMMIT_MAGMARIZER                      0x4BB // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_RECEIVED_FLAME_ORB_VOLCANOLOGIST                       0x4BC // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE               0x4BD // Project Grounded: Lavabuis / top van Mt. Chimney
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
+#define FLAG_ITEM_ASHFROST_LODGE_NEVER_MELT_ICE                     0x4BE // Project Grounded: Ashfrost Lodge, Never-Melt Ice op het kussen van kamer 2
 #define FLAG_ITEM_WHIRL_ISLAND_SHARP_BEAK           0x4BF // Project Grounded (zeevulling 2): Whirl Island, strand van de lagune
 #define FLAG_SCORCHED_SLAB_SUN_DOOR_OPEN                            0x4C0 // Project Grounded: Scorched Slab
 #define FLAG_HIDE_SCORCHED_SLAB_VOLCARONA                           0x4C1 // Project Grounded: Scorched Slab

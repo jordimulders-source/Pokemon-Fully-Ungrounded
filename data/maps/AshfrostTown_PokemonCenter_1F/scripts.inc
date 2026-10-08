@@ -20,7 +20,12 @@ AshfrostTown_PokemonCenter_1F_EventScript_ExpertM::
 	end
 
 AshfrostTown_PokemonCenter_1F_EventScript_ExpertM_Text:
-	.string "(Placeholder: visitor in the\nPOKéMON CENTER.)$"
+	.string "I've had my POKéMON healed six times\n"
+	.string "today. They aren't hurt.\p"
+	.string "This is just the only warm room in the\n"
+	.string "village.\p"
+	.string "The NURSE knows. She's stopped asking.\n"
+	.string "Now she just hums.$"
 
 AshfrostTown_PokemonCenter_1F_EventScript_Protipmaster::
 	lock

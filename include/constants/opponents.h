@@ -1162,6 +1162,18 @@
 
 #define TRAINER_SALIM                       1186 // Project Grounded (Hoopa-quest): handelaar in de Mirage Bazaar, Route 111
 
+// kaart_vulling_4 {
+#define TRAINER_KV4_HIKER_DOUG              1150 // Project Grounded (kaartvulling 4): Granite Cave B1F, tekent al 12 jaar een kaart van de grot
+#define TRAINER_KV4_EXPERT_OLGA             1151 // Project Grounded (kaartvulling 4): Shoal Cave, ijsgrot (alleen bij eb bereikbaar)
+#define TRAINER_KV4_SWIMMER_MAREN           1152 // Project Grounded (kaartvulling 4): Shoal Cave, binnengrot (alleen bij vloed)
+#define TRAINER_KV4_AQUA_GRUNT_SEAFLOOR     1153 // Project Grounded (kaartvulling 4): Seafloor Cavern Room 2, achtergelaten grunt
+#define TRAINER_KV4_MAGMA_GRUNT_ORIGIN      1154 // Project Grounded (kaartvulling 4): Cave of Origin 1F, kwam kijken naar het einde van de wereld
+#define TRAINER_KV4_SAILOR_BARNABY          1155 // Project Grounded (kaartvulling 4): Shipwreck Shoals, deserteur van het spookschip
+#define TRAINER_KV4_SWIMMER_COD             1156 // Project Grounded (kaartvulling 4): Shipwreck Shoals, zwemt rondjes om de wrakken
+#define TRAINER_KV4_TRIATHLETE_NADIA        1157 // Project Grounded (kaartvulling 4): Route 124, eilandje: traint voor een triatlon zonder fiets
+#define TRAINER_KV4_SWIMMER_WADE            1158 // Project Grounded (kaartvulling 4): Route 124, oostelijke open zee
+// }
+
 #define TRAINERS_COUNT                      1187
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

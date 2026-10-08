@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_NEVER_MELT_ICE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 6,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ShoalCave_LowTideIceRoom_EventScript_KV4Olga",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -51,5 +64,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_ICICLE_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEICEROOM_ICICLE_PLATE"
+    }
+  ]
 }

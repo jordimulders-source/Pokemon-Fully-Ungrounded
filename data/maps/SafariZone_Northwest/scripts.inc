@@ -19,3 +19,12 @@ SafariZone_Northwest_Text_SpookGuard:
 	.string "Out of all the gates in this park,\n"
 	.string "he took the key to the haunted one.\p"
 	.string "Honestly? Let him keep it.$"
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+SafariZone_Northwest_EventScript_KV4Birdwatcher::
+	msgbox SafariZone_Northwest_Text_KV4Birdwatcher, MSGBOX_NPC
+	end
+
+SafariZone_Northwest_Text_KV4Birdwatcher:
+	.string "I've been watching birds for six\nhours. None of them were birds.\pOne was a TAUROS. One was a man\nnamed Keith. Keith was very still.\pI'm counting him anyway.$"
+@ --- einde kaart_vulling_4 ---

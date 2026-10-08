@@ -72,5 +72,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 12,
+      "elevation": 3,
+      "item": "ITEM_ESCAPE_ROPE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_GRANITECAVE_1F_ESCAPE_ROPE"
+    }
+  ]
 }

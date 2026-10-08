@@ -89,3 +89,23 @@ ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems::
 	clearflag FLAG_RECEIVED_SHOAL_SHELL_4
 	clearflag FLAG_SYS_SHOAL_ITEM
 	return
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+ShoalCave_LowTideEntranceRoom_EventScript_KV4TideWatcher::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_SHOAL_TIDE, ShoalCave_LowTideEntranceRoom_EventScript_KV4TideWatcher_High
+	msgbox ShoalCave_LowTideEntranceRoom_Text_KV4TideWatcher_Low, MSGBOX_DEFAULT
+	release
+	end
+ShoalCave_LowTideEntranceRoom_EventScript_KV4TideWatcher_High:
+	msgbox ShoalCave_LowTideEntranceRoom_Text_KV4TideWatcher_High, MSGBOX_DEFAULT
+	release
+	end
+
+ShoalCave_LowTideEntranceRoom_Text_KV4TideWatcher_Low:
+	.string "Low tide. The sea has gone out for\ncigarettes. It always comes back.\pNow's your chance. There is a\nsandbar in the inner cave that only\lshows when the water's away.\pSomething shiny on it. I'd get it,\nbut my knees have a tide too.$"
+
+ShoalCave_LowTideEntranceRoom_Text_KV4TideWatcher_High:
+	.string "High tide. The cave is soup again.\pSome girl swims laps in the inner\ncave when the water's up. Says she\ltrains for the moon.\pThe moon pulls the tide, she says.\nShe wants to pull back. Harder.$"
+@ --- einde kaart_vulling_4 ---

@@ -4,6 +4,7 @@ ShoalCave_LowTideInnerRoom_MapScripts::
 	.byte 0
 
 ShoalCave_LowTideInnerRoom_OnTransition:
+	call ShoalCave_LowTideInnerRoom_EventScript_KV4Tide
 	goto_if_set FLAG_SYS_SHOAL_TIDE, ShoalCave_LowTideInnerRoom_EventScript_SetHighTide
 	goto ShoalCave_LowTideInnerRoom_EventScript_SetLowTide
 
@@ -134,3 +135,41 @@ ShoalCave_LowTideInnerRoom_EventScript_ShoalSalt2::
 	setflag FLAG_RECEIVED_SHOAL_SALT_2
 	releaseall
 	end
+
+@ --- kaart_vulling_4 (gegenereerd door tools/grounded/maptools/kaart_vulling_4.py) ---
+ShoalCave_LowTideInnerRoom_EventScript_KV4Sandbar::
+	lock
+	giveitem ITEM_SPLASH_PLATE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_KV4_SHOAL_SANDBAR_TAKEN
+	setflag FLAG_KV4_HIDE_SHOAL_SANDBAR
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+ShoalCave_LowTideInnerRoom_EventScript_KV4Maren::
+	trainerbattle_single TRAINER_KV4_SWIMMER_MAREN, ShoalCave_LowTideInnerRoom_Text_KV4Maren_Intro, ShoalCave_LowTideInnerRoom_Text_KV4Maren_Defeat
+	msgbox ShoalCave_LowTideInnerRoom_Text_KV4Maren_Post, MSGBOX_AUTOCLOSE
+	end
+
+ShoalCave_LowTideInnerRoom_Text_KV4Maren_Intro:
+	.string "The moon pulls the sea. I pull it\nback. Every lap is a protest!$"
+
+ShoalCave_LowTideInnerRoom_Text_KV4Maren_Defeat:
+	.string "The moon wins again.\nIt always has better PR.$"
+
+ShoalCave_LowTideInnerRoom_Text_KV4Maren_Post:
+	.string "At low tide I just lie on the sand\nand wait. Like a beached grudge.$"
+
+ShoalCave_LowTideInnerRoom_EventScript_KV4Tide::
+	setflag FLAG_KV4_HIDE_SHOAL_SWIMMER
+	setflag FLAG_KV4_HIDE_SHOAL_SANDBAR
+	goto_if_set FLAG_SYS_SHOAL_TIDE, ShoalCave_LowTideInnerRoom_EventScript_KV4Tide_High
+	goto_if_set FLAG_KV4_SHOAL_SANDBAR_TAKEN, ShoalCave_LowTideInnerRoom_EventScript_KV4Tide_End
+	clearflag FLAG_KV4_HIDE_SHOAL_SANDBAR
+	return
+ShoalCave_LowTideInnerRoom_EventScript_KV4Tide_High:
+	clearflag FLAG_KV4_HIDE_SHOAL_SWIMMER
+ShoalCave_LowTideInnerRoom_EventScript_KV4Tide_End:
+	return
+@ --- einde kaart_vulling_4 ---

@@ -13,7 +13,21 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUXURY_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_KV4_ABANDONEDSHIP_DECK_LUXURY_BALL"
+    }
+  ],
   "warp_events": [
     {
       "x": 13,
@@ -52,5 +66,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_ABANDONEDSHIP_DECK_HEART_SCALE"
+    }
+  ]
 }

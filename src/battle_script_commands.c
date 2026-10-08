@@ -14760,6 +14760,17 @@ void BS_RestoreAttacker(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+// Project Grounded: Battle Stadium (doubles): bericht van tegenstander B klaarzetten, anders naar noSlideInstr
+void BS_StadiumTrainerBSlide(void)
+{
+    NATIVE_ARGS(const u8 *noSlideInstr);
+
+    if (Stadium_SetTrainerBFirstTurnSlide())
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->noSlideInstr;
+}
+
 void BS_CalcMetalBurstDmg(void)
 {
     NATIVE_ARGS(const u8 *failInstr);

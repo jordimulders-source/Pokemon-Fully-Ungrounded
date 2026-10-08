@@ -3995,7 +3995,18 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
 
         if ((i = ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), TRAINER_SLIDE_BEFORE_FIRST_TURN)))
-            BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
+        {
+            // Project Grounded: Battle Stadium (doubles): daarna praat tegenstander B ook (zie BS_StadiumTrainerBSlide)
+            if (i == 1 && gStadiumBattle && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+                BattleScriptExecute(BattleScript_StadiumTrainerABSlideMsgEnd2);
+            else
+                BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
+        }
+        else if (Stadium_SetTrainerBFirstTurnSlide())
+        {
+            MarkTrainerSlideAsPlayed(TRAINER_SLIDE_BEFORE_FIRST_TURN);
+            BattleScriptExecute(BattleScript_TrainerBSlideMsgEnd2);
+        }
         gBattleStruct->eventState.beforeFirstTurn = 0;
         break;
     }

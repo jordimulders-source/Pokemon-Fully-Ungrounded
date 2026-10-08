@@ -1,7 +1,42 @@
 # Battle Stadium: de omroeper
 
-Eén zin per tegenstander, vóór elke wedstrijd in de arena (in doubles: één van de twee, willekeurig).
+Vóór elke wedstrijd in de arena: bij het eerste gevecht een welkom, elke ronde de rondenaam, bij het eerste
+gevecht de speler (en in doubles de compagnon), dan de tegenstander(s) om beurten.
 Bewerken: `tools/grounded/stadium/announcer.py`, daarna het script draaien.
+
+## Welkom en rondes
+
+- Welcome to the BATTLE STADIUM! 32 trainers, one trophy, zero refunds.
+- Welcome to STADIUM DOUBLES! Sixteen teams, twice the property damage.
+- ROUND OF 32! Half of you go home today. The parking lot is already cheering.
+- ROUND OF 16! The hot dog stand has outlasted half the field already.
+- QUARTERFINALS! Eight left. The crowd has learned two of their names.
+- The SEMIFINALS! Four left. Somebody's grandma just woke up for this.
+- The FINAL! One match, one trophy, and one very nervous janitor.
+
+## De speler (willekeurig uit wat klopt)
+
+| Voorwaarde | Zin |
+|---|---|
+| `TITLES` | Defending the trophy: {PLAYER}! The trophy remembers you. It's scared. |
+| `VETERAN` | {PLAYER}! Twenty-plus wins here. The floor knows your footprints by heart. |
+| `RETURNING` | {PLAYER} is back! Last time didn't go great. Don't worry, we kept the footage. |
+| `NEWCOMER` | A fresh face: {PLAYER}! First time here. The medics are on standby. Just in case. |
+| `HALL_OF_FAME` | The CHAMPION of HOENN: {PLAYER}! Yes, the real one. STEVEN is still in therapy. |
+| `EIGHT_BADGES` | {PLAYER}! Eight BADGES, no ELITE FOUR win. Ambition: high. Results: pending. |
+| `LEGENDARY` | {PLAYER} owns a {STR_VAR_1}! A legend. In a ball. In a pocket. Sure. |
+| `BIG_DEX` | {PLAYER} caught over 200 POKéMON. The PC storage union is on strike. |
+| `PLAYTIME` | {PLAYER}! Over a hundred hours on the clock. Go outside. After this match. |
+| (geen) | In the blue corner: {PLAYER}! A trainer. With POKéMON. That's all it says here. |
+
+## De compagnon
+
+- At {PLAYER}'s side: {STR_VAR_1}! Friends? Their lawyers say partners.
+- With {PLAYER}: {STR_VAR_1}! They met five minutes ago. Chemistry!
+- {PLAYER}'s partner: {STR_VAR_1}! Paid in exposure and one free hot dog.
+- Covering {PLAYER}: {STR_VAR_1}! Or standing nearby. Close enough.
+
+## Tegenstanders
 
 | Trainer | Aankondiging |
 |---|---|

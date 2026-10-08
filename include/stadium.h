@@ -55,7 +55,8 @@ struct StadiumSave
     u32 beaten[STADIUM_MAX_POOL / 32];          // deelnemers ooit verslagen (bit per poolplek)
     u32 seen[STADIUM_MAX_COMPANIONS / 32];      // compagnons waarvan de melding al getoond is
     u8 lastCompanion;
-    u8 unused[3];
+    u8 tournaments;     // toernooien begonnen (max. 255; de omroeper: nieuwkomer of terugkeerder)
+    u8 unused[2];
 };
 #define STADIUM_SAVE (*(struct StadiumSave *)gSaveBlock2Ptr->stadiumData)
 
@@ -93,6 +94,7 @@ bool32 Stadium_IsCompanionVisible(u32 i);
 u16 Stadium_EntrantTrainer(u8 slot, u32 member);    // trainer van bracketplek (lid 0/1 bij doubles)
 void Stadium_GetEntrantName(u8 slot, u8 *dst);
 u16 Stadium_EntrantPic(u8 slot);
+u16 Stadium_EntrantMemberPic(u8 slot, u32 member);
 u8 Stadium_GetMode(void);
 u8 Stadium_GetRound(void);
 u8 Stadium_GetRoundCount(void);

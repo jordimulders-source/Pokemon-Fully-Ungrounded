@@ -125,19 +125,40 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Huntail
+Huntail @ White Herb
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
 
-Exploud
+Exploud @ Throat Spray
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Hyper Voice
+- Flamethrower
+- Ice Beam
+- Protect
 
-Blaziken
+Blaziken @ Life Orb
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
 
 === PARTNER_STADIUM_MAY ===
 Name: MAY
@@ -146,19 +167,40 @@ Pic: May
 Gender: Female
 Music: Female
 Back Pic: May
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Roserade
+Roserade @ Focus Sash
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Protect
 
-Froslass
+Froslass @ Icy Rock
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Will-O-Wisp
+- Protect
 
-Swampert
+Swampert @ Leftovers
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
 
 === PARTNER_STADIUM_KECCLES ===
 Name: KECCLES
@@ -167,32 +209,40 @@ Pic: Kecleon
 Gender: Male
 Music: Male
 Back Pic: Kecleon
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Charizard
+Charizard @ Charcoal
 Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
 - Air Slash
-- Flamethrower
-- Dragon Claw
-- Scary Face
+- Dragon Pulse
+- Protect
 
-Serperior
+Serperior @ Leftovers
 Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Leaf Blade
-- Coil
-- Leech Seed
-- Slam
+Ability: Contrary
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Protect
 
-Salazzle
+Salazzle @ Focus Sash
 Level: 50
 Ability: Corrosion
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Fake Out
+- Sludge Bomb
+- Flamethrower
 - Nasty Plot
-- Venoshock
-- Incinerate
-- Poison Gas
 
 === PARTNER_STADIUM_WALLY ===
 Name: WALLY
@@ -201,34 +251,40 @@ Pic: Wally
 Gender: Male
 Music: Male
 Back Pic: Wally
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Baxcalibur @ Loaded Dice
 Level: 50
 Ability: Thermal Exchange
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Icicle Spear
 - Glaive Rush
-- Earthquake
+- Ice Shard
 - Dragon Dance
 
-Annihilape @ Chesto Berry
+Annihilape @ Leftovers
 Level: 50
 Ability: Defiant
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Rest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
 - Rage Fist
-- Bulk Up
 - Drain Punch
+- Bulk Up
+- Protect
 
 Gallade @ Choice Scarf
 Level: 50
 Ability: Sharpness
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Psycho Cut
-- Leaf Blade
 - Sacred Sword
-- Aqua Cutter
+- Leaf Blade
+- Night Slash
 
 === PARTNER_STADIUM_ROXANNE ===
 Name: ROXANNE

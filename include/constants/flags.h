@@ -169,7 +169,7 @@
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_RECEIVED_DESERT_UNDERPASS_MAX_REVIVE 0x96 // Project Grounded (landvulling): Desert Underpass, archeoloog (was R/S-restant RECEIVED_CONTEST_PASS)
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
@@ -873,7 +873,7 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
+#define FLAG_ITEM_DESERT_UNDERPASS_STONE_PLATE                      0x339 // Project Grounded (landvulling): Desert Underpass, opgraving (was R/S-restant)
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -1083,7 +1083,7 @@
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_TM_SCALD                                0x407 // Project Grounded: was Full Heal
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_ITEM_NAVEL_ROCK_FORK_SKY_PLATE                         0x409 // Project Grounded (landvulling): Navel Rock Fork (was R/S-restant)
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
 #define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
@@ -1175,15 +1175,15 @@
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_SOUTHERN_ISLAND_CAMP_DRAGON_FANG                  0x465 // Project Grounded (landvulling): Southern Island, verlaten kamp (was Ruby-restant)
+#define FLAG_ITEM_BIRTH_ISLAND_CAMP_MIND_PLATE                      0x466 // Project Grounded (landvulling): Birth Island, verlaten kamp (was Ruby-restant)
+#define FLAG_ITEM_FARAWAY_ISLAND_CAMP_PP_MAX                        0x467 // Project Grounded (landvulling): Faraway Island, verlaten kamp (was Ruby-restant)
 #define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_HIDDEN_ITEM_EVER_GRANDE_FULL_RESTORE                   0x46D // Project Grounded (landvulling): Ever Grande, promenade (was R/S-restant HM08)
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
@@ -1413,9 +1413,9 @@
 #define FLAG_SYS_MIX_RECORD                         (SYSTEM_FLAGS + 0x34)
 #define FLAG_SYS_CLOCK_SET                          (SYSTEM_FLAGS + 0x35)
 #define FLAG_SYS_NATIONAL_DEX                       (SYSTEM_FLAGS + 0x36)
-#define FLAG_SYS_CAVE_SHIP                          (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
-#define FLAG_SYS_CAVE_WONDER                        (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
-#define FLAG_SYS_CAVE_BATTLE                        (SYSTEM_FLAGS + 0x39) // Unused Flag, same as above
+#define FLAG_HIDDEN_ITEM_SAFARI_FAIRY_MEADOW_PLATE  (SYSTEM_FLAGS + 0x37) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_SHIP, ongebruikt)
+#define FLAG_HIDDEN_ITEM_SAFARI_THUNDER_ELECTIRIZER (SYSTEM_FLAGS + 0x38) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_WONDER, ongebruikt)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_CLEANSE_TAG   (SYSTEM_FLAGS + 0x39) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_BATTLE, ongebruikt)
 #define FLAG_SYS_SHOAL_TIDE                         (SYSTEM_FLAGS + 0x3A)
 #define FLAG_SYS_RIBBON_GET                         (SYSTEM_FLAGS + 0x3B)
 
@@ -1503,19 +1503,19 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_PURE_INCENSE   (SYSTEM_FLAGS + 0x83) // Project Grounded (landvulling): verborgen item
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_RARE_BONE      (SYSTEM_FLAGS + 0x85) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_REVIVAL_HERB   (SYSTEM_FLAGS + 0x86) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_DUSK_BALL      (SYSTEM_FLAGS + 0x87) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_DESERT_UNDERPASS_RARE_BONE (SYSTEM_FLAGS + 0x88) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_FORK_PP_MAX     (SYSTEM_FLAGS + 0x89) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_SOUTHERN_ISLAND_CAMP_BIG_NUGGET (SYSTEM_FLAGS + 0x8A) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_BIRTH_ISLAND_CAMP_STAR_PIECE (SYSTEM_FLAGS + 0x8B) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_CAMP_BIG_MUSHROOM (SYSTEM_FLAGS + 0x8C) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_HEATRAN_LAIR_FLAME_PLATE   (SYSTEM_FLAGS + 0x8D) // Project Grounded (landvulling): verborgen item
 #define FLAG_HIDDEN_ITEM_ZV2_R120_PEARL_STRING      (SYSTEM_FLAGS + 0x8E) // Project Grounded (zeevulling 2): verborgen item (Route120)
 #define FLAG_HIDDEN_ITEM_ZV2_R119_MYSTIC_WATER      (SYSTEM_FLAGS + 0x8F) // Project Grounded (zeevulling 2): verborgen item (Route119)
 #define FLAG_HIDDEN_ITEM_ZV2_R118_HEART_SCALE       (SYSTEM_FLAGS + 0x90) // Project Grounded (zeevulling 2): verborgen item (Route118)
@@ -1601,9 +1601,9 @@
 #define FLAG_DAILY_REMATCH_WINONA                   (DAILY_FLAGS_START + 0x1A) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_DAILY_REMATCH_TATE_AND_LIZA            (DAILY_FLAGS_START + 0x1B) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_DAILY_REMATCH_WALLACE                  (DAILY_FLAGS_START + 0x1C) // Project Grounded: gymleider-rematch vandaag al gewonnen
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
+#define FLAG_DAILY_EVER_GRANDE_HOTDOG               (DAILY_FLAGS_START + 0x1D) // Project Grounded (landvulling): hotdogkraam (1 per dag)
+#define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_1       (DAILY_FLAGS_START + 0x1E) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
+#define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_2       (DAILY_FLAGS_START + 0x1F) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag

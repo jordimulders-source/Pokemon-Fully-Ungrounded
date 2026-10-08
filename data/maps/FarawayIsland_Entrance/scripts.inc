@@ -43,3 +43,11 @@ FarawayIsland_Entrance_EventScript_Sign::
 	msgbox FarawayIsland_Entrance_Text_Sign, MSGBOX_SIGN
 	end
 
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+FarawayIsland_Entrance_EventScript_LVLetters::
+	msgbox FarawayIsland_Entrance_Text_LVLetters, MSGBOX_SIGN
+	end
+
+FarawayIsland_Entrance_Text_LVLetters:
+	.string "A damp crate. Research notes,\nsigned 'DR. P. LUMB'.\p'Week 1. Saw a small pink cat.\nPossibly the ancestor of all\lPOKeMON. Possibly a cat.'\p'Week 12. It knows my name.\nI never told it my name.'\p'Week 30. It turned into my sister.\nI am an only child.'\p'Week 31. Going home. If my sister\ncalls, don't pick up.'$"
+@ --- einde land_vulling ---

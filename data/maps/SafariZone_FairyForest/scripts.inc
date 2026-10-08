@@ -15,3 +15,12 @@ SafariZone_FairyForest_Text_Sign:
 	.string "feed you.\p"
 	.string "The glowing flowers are not\n"
 	.string "edible. We checked. Twice.$"
+
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+SafariZone_FairyForest_EventScript_LVGodmother::
+	msgbox SafariZone_FairyForest_Text_LVGodmother, MSGBOX_NPC
+	end
+
+SafariZone_FairyForest_Text_LVGodmother:
+	.string "I came here to find my fairy\ngodmother.\pI found a HATTERENE. It read my\nmind and hit me with a hammer.\pI think that's a yes?\nI'm waiting for the dress.$"
+@ --- einde land_vulling ---

@@ -37871,3 +37871,198 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Encore
 
 /* --- einde extra_fights --- */
+
+/* --- land_vulling (tools/grounded/maptools/land_vulling.py) --- */
+
+=== TRAINER_EVER_GRANDE_BRAMWELL ===
+Name: BRAMWELL
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Hitmontop
+Level: 51
+Ability: Intimidate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- Close Combat
+- Triple Axel
+- Sucker Punch
+
+Sirfetch'd
+Level: 51
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Leaf Blade
+- Brick Break
+- Brave Bird
+- Swords Dance
+
+Falinks
+Level: 51
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- No Retreat
+- Close Combat
+- Iron Head
+- Megahorn
+
+Pangoro
+Level: 51
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Drain Punch
+- Knock Off
+- Bullet Punch
+- Parting Shot
+
+Kommo-o @ Throat Spray
+Level: 52
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Clanging Scales
+- Aura Sphere
+- Flamethrower
+- Clangorous Soul
+
+=== TRAINER_EVER_GRANDE_GLORIA ===
+Name: GLORIA
+Class: Pokefan
+Pic: Pokefan F
+Gender: Female
+Music: Twins
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Lopunny
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fake Out
+- High Jump Kick
+- Ice Punch
+- Quick Attack
+
+Indeedee
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psychic
+- Hyper Voice
+- Calm Mind
+- Play Rough
+
+Dudunsparce
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hyper Drill
+- Glare
+- Coil
+- Roost
+
+Bewear
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hammer Arm
+- Double-Edge
+- Swords Dance
+- Payback
+
+Ursaluna @ Flame Orb
+Level: 51
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Facade
+- Headlong Rush
+- Crunch
+- Swords Dance
+
+=== TRAINER_EVER_GRANDE_ROCKY ===
+Name: ROCKY
+Class: Guitarist
+Pic: Guitarist
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Toxtricity
+Level: 48
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Overdrive
+- Sludge Bomb
+- Boomburst
+- Volt Switch
+
+Pawmot
+Level: 48
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Double Shock
+- Close Combat
+- Ice Punch
+- Revival Blessing
+
+Kilowattrel
+Level: 48
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hurricane
+- Thunderbolt
+- Roost
+- Volt Switch
+
+Electivire
+Level: 49
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Wild Charge
+- Cross Chop
+- Ice Punch
+- Earthquake
+
+=== TRAINER_ARCHAEOLOGIST_HOLLIS ===
+Name: HOLLIS
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Armaldo
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- X-Scissor
+- Stone Edge
+- Knock Off
+- Rapid Spin
+
+Cradily
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Power Gem
+- Recover
+- Stealth Rock
+
+Dracozolt
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bolt Beak
+- Dragon Claw
+- Earthquake
+- Stone Edge
+
+Archeops
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Acrobatics
+- Stone Edge
+- U-turn
+- Dragon Claw
+
+Bastiodon
+Level: 63
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Body Press
+- Iron Defense
+- Heavy Slam
+- Rock Slide
+
+/* --- einde land_vulling --- */

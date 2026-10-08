@@ -34,6 +34,7 @@
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "link.h"
 #include "malloc.h"
 #include "berry.h"
@@ -531,6 +532,17 @@ void HandleAction_UseMove(void)
             gBattleResults.lastUsedMovePlayer = gCurrentMove;
         else
             gBattleResults.lastUsedMoveOpponent = gCurrentMove;
+        // Project Grounded: omroeper van het Battle Stadium (alleen de eigen Pokémon van de speler)
+        if (IsOnPlayerSide(gBattlerAttacker) && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+         && (GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_LEFT || !(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)))
+        {
+            if (gCurrentMove == MOVE_SPLASH)
+                IncrementGameStat(GAME_STAT_USED_SPLASH);
+            else if (gCurrentMove == MOVE_STRUGGLE)
+                IncrementGameStat(GAME_STAT_USED_STRUGGLE);
+            else if (gCurrentMove == MOVE_IMPLOSION)
+                FlagSet(FLAG_USED_IMPLOSION);
+        }
     }
 
     // Set dynamic move type.

@@ -1646,7 +1646,11 @@
 #define GROUNDED_FLAGS_START                    0x1000
 #define NUM_GROUNDED_FLAGS                      512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
-// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150+ vrij.
+// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
+// (omroeper), 200+ vrij.
+// Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
+#define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet
+#define FLAG_USED_IMPLOSION                     FLAG_GROUNDED(151) // de speler heeft ooit IMPLOSION gebruikt
 // beacon_dragon { (tools/grounded/maptools/beacon_dragon.py; FLAG_GROUNDED 100-149)
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL           FLAG_GROUNDED(100) // Project Grounded: Beacon Isle: verborgen Big Pearl
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING        FLAG_GROUNDED(101) // Project Grounded: Beacon Isle: verborgen Pearl String

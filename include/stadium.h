@@ -65,6 +65,9 @@ extern bool8 gStadiumBattle;
 // battle_main.c: team van een tegenstander (keuze uit de pool, level 50)
 u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
 bool32 Stadium_PartnerUsesFrontPic(void);
+u32 Stadium_CapIvs(u32 ivs);
+void Stadium_ScaleCompanionMon(struct Pokemon *mon);
+u16 Stadium_CompanionSourceTrainer(void);
 const u8 *Stadium_GetWinText(u32 opponent);
 
 // specials (data/maps/BattleFrontier_StadiumLobby/scripts.inc)

@@ -29,5 +29,5 @@ Underwater_Route127_Trench_EventScript_ZV4Bottom::
 	end
 
 Underwater_Route127_Trench_Text_ZV4Bottom:
-	.string "A plaque, bolted to the rock:\p'DEEPEST POINT IN HOENN.\nDEPTH: YES.'\pUnderneath, smaller:\n'The research team turned back\lhere. The LANTURN did not.'$"
+	.string "A plaque, bolted to the rock:\p'DEEPEST POINT IN HOENN.\pDEPTH: MORE THAN OUR TECHNOLOGY\nCOULD RELIABLY MEASURE.'\pUnderneath, smaller:\n'The research team turned back\lhere. The LANTURN did not.'$"
 @ --- einde zee_vulling_4 ---

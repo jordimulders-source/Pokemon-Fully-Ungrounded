@@ -10,7 +10,7 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 1. **Granite Cave B3F-kristalgrot met Carbink** en **Cave of Origin dieper met Primal-lore**, **ijzige onderlaag Shoal Cave** (Cetoddle/Cetitan, Bergmite). (VRAGEN_VOLGENDE 2)
 2. **Koraalkathedraal (126), luchtbel-grot (128), Sea Shard-verzamelquest** bij de Diving Treasure Hunter. (VRAGEN_VOLGENDE O1/O3/O4)
-3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset). (ZEE_PLAN 1)
+3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset; Jordi 9 okt: mag autonoom). (ZEE_PLAN 1)
 4. **Birth Island helemaal weg** (kaart, event, ticket; ook het kamp van v0.9.148). (9 okt)
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
@@ -35,6 +35,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 12. **Eigen Grounded-Pokédex** zonder weggelaten soorten: Jordi kiest de groepen. (6 okt; DEX_ANALYSE 6)
 
 ## 3. Daarna: gevechtsintro's en muziek
+**Jordi 9 okt:** intro's van (nieuwe) legendaries bedenkt hij zelf; thema's nog niet maken: nieuwe legendaries gebruiken `MUS_RG_VS_LEGEND` (Kanto Legendary) tot hij ermee komt.
 **Intro's** (filmspeler `film.py`; alle gymleiders en de lijst van 5 okt zijn af, v0.9.92–0.9.143):
 - Shy Guy (idee van Jordi), Commander Boo en Wario (Yoshi's Island). (8 okt)
 - Cresselia (nu vanilla). (v0.9.122)

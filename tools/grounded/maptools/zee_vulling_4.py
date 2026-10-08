@@ -739,8 +739,9 @@ scr = single(P, 'Abyssa', ABYSSA,
              "I've had worse family reunions.")
 scr += signpost(P, 'Bottom',
                 "A plaque, bolted to the rock:\\p"
-                "'DEEPEST POINT IN HOENN.\\n"
-                "DEPTH: YES.'\\p"
+                "'DEEPEST POINT IN HOENN.\\p"
+                "DEPTH: MORE THAN OUR TECHNOLOGY\\n"
+                "COULD RELIABLY MEASURE.'\\p"
                 "Underneath, smaller:\\n"
                 "'The research team turned back\\l"
                 "here. The LANTURN did not.'")

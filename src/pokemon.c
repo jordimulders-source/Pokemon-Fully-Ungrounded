@@ -6186,8 +6186,6 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_GROUNDED_VS_COLRESS;
     case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
         return MUS_GROUNDED_VS_ZINNIA;
-    case TRAINER_CLASS_KING: // Project Grounded: N (Battle Stadium)
-        return MUS_GROUNDED_VS_N;
     case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
         return MUS_GROUNDED_VS_GHETSIS;
     case TRAINER_CLASS_SAGE: // Project Grounded: Neo Plasma (Battle Stadium)

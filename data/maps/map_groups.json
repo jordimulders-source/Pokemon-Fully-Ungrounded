@@ -590,8 +590,8 @@
     "BattleFrontier_Mart",
     "FarawayIsland_Entrance",
     "FarawayIsland_Interior",
-    "BirthIsland_Exterior",
-    "BirthIsland_Harbor",
+    "SpecialArea_Stub1",
+    "SpecialArea_Stub2",
     "TrainerHill_Entrance",
     "TrainerHill_1F",
     "TrainerHill_2F",
@@ -730,6 +730,7 @@
     "DragonspineIsle_Den",
     "MirageBazaar",
     "MirageBazaar_Vault",
-    "Underwater_Route127_Trench"
+    "Underwater_Route127_Trench",
+    "BeaconIsle_Grotto"
   ]
 }

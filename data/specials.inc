@@ -500,8 +500,6 @@ gSpecials::
 	def_special ScrollableMultichoice_RedrawPersistentMenu
 	def_special ChooseMonForMoveTutor
 	def_special ScrollableMultichoice_ClosePersistentMenu
-	def_special DoDeoxysRockInteraction
-	def_special SetDeoxysRockPalette
 	def_special DoMeteorSpaceFallWarp
 	def_special CreateEnemyEventMon
 	def_special StartMirageTowerDisintegration

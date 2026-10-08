@@ -39924,3 +39924,57 @@ Level: 42
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 /* --- einde zee_vulling_4 --- */
+
+/* --- beacon_isle (tools/grounded/maptools/beacon_isle.py) --- */
+
+=== TRAINER_TALLOW ===
+Name: TALLOW
+Class: Sage
+Pic: Psychic M
+Gender: Male
+Music: Suspicious
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Drifblim
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Air Slash
+- Will-O-Wisp
+- Calm Mind
+
+Dusknoir
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Punch
+- Earthquake
+- Ice Punch
+- Will-O-Wisp
+
+Mismagius
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+- Nasty Plot
+
+Jellicent
+Level: 52
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Chandelure @ Life Orb
+Level: 54
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Trick Room
+
+/* --- einde beacon_isle --- */

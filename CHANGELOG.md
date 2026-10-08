@@ -17522,3 +17522,17 @@ Volgens Jordi's GBA-instructies per leider:
 - **Deoxys van vorm wisselen** bij de meteoriet in Mossdeep: NORMAL, ATTACK, DEFENSE of SPEED ("Took two seconds. Your last haircut took longer, and looked worse."). Specials `Grounded_FindPartyDeoxys` en `Grounded_SetDeoxysForm`.
 - **Gift-afhandeling** op één plek (`data/scripts/grounded_gifts.inc`): vol team → pc. De pc-melding toont nu de juiste soort (eerder "??????????" bij Kubfu en Oaks starter).
 - Flags `FLAG_GROUNDED(360–364)`. Getest: Deoxys-wissel en Magearna (vol team → pc).
+
+### [v0.9.162] - Birth Island weg, Beacon Isle in een nieuwe vorm met het Lichteiland
+- **Birth Island is geschrapt:** het Deoxys-driehoekevent, het Aurora Ticket (item, Mystery Gift), de veerboot-bestemming en het kamp. Deoxys heeft zijn eigen ruimte-event.
+  - Save-veilig: op de kaartplekken staan lege stubs. Een oude save die daar stond, komt in Lilycove uit.
+  - De layout-plek is leeg, item 730 heet "????", mapsecs en flagnummers zijn ongewijzigd.
+  - De driehoek-sprite heet nu `DeoxysTriangle` (MeteorSpace gebruikt hem).
+- **Beacon Isle** (`tools/grounded/maptools/beacon_isle.py`):
+  - Nieuwe, organische vorm (32×48): een westlob met hoog gras, een baai met een houten steiger en een visser, de vuurtoren op een rotspunt aan de oostkant, en een lobbige zuidkust.
+  - Alle trainers, items, de Chinchou en de lichtjes zijn gebleven.
+- **Het Lichteiland:**
+  - Spreek je 's nachts de Lanturn bovenin de vuurtoren aan, dan opent zich een gat in het rif ten zuiden van het eiland, met twee lichtjes erbij. Het gat blijft daarna open.
+  - Daarachter ligt een eilandje met een grot (`BeaconIsle_Grotto`). Encounters op lv 42–46: Shiinotic, Lampent, Alola-Persian, Hisui-Voltorb, Klefki, Chimecho, Espathra, Accelgor, Palossand, Unown, Indeedee en Hisui-Electrode (1%). Er ligt een Mind Plate.
+  - **TALLOW**, de geest van de eerste vuurtorenwachter (hij brak de lamp in 1953): spookteam, lv 52–54, ace Chandelure. Geeft een Dusk Stone. Ook in het Battle Stadium.
+- Flag `FLAG_GROUNDED(400)`, trainer 1048.

@@ -4946,9 +4946,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Deoxys = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangle = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -4961,7 +4961,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirthIslandStone =
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Inanimate,
-    .images = sPicTable_BirthIslandStone,
+    .images = sPicTable_DeoxysTriangle,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4981,7 +4981,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysTriangleRed 
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Inanimate,
-    .images = sPicTable_BirthIslandStone,
+    .images = sPicTable_DeoxysTriangle,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

@@ -293,6 +293,7 @@ LINES = {
     'PLASMA_NIGEL': "NIGEL, NEO PLASMA's Head of Logistics! He signed for a GENESECT.",
     'VICTORY_V': "V! Only POKéMON with a V! VOLCARONA! VIKAVOLT! VICTORY? We'll see.",
     'GRIMSBY': "CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules.",
+    'TALLOW': "TALLOW! Lighthouse keeper, 1952 to 1953. Mostly 1953. Mostly dead.",
     'GERALD_WARDEN': "GERALD, Warden of the Dragon's Den! Did you fill in form D-7? Too late now.",
     'WICK': "WICK! Forty years a lighthouse keeper. His lamp is a fish. It works.",
     'SALIM': "SALIM of the MIRAGE BAZAAR! Everything for sale, nothing his!",

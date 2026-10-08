@@ -1,5 +1,6 @@
 @ Project Grounded: de galerij bovenin de vuurtoren van Beacon Isle (kopie van het dak van het Lilycove-warenhuis).
-@ Vuurtorenwachter WICK en zijn LANTURN, die al 40 jaar de lamp is. Kaart en scripts: beacon_dragon.py.
+@ Vuurtorenwachter WICK en zijn LANTURN, die al 40 jaar de lamp is. 's Nachts LANTURN aanspreken: haar licht vindt het
+@ Lichteiland achter het rif (FLAG_BEACON_LIGHT_ISLE_FOUND). Kaart en scripts: beacon_isle.py.
 BeaconIsle_Lighthouse_Top_MapScripts::
 	.byte 0
 
@@ -16,7 +17,27 @@ BeaconIsle_Lighthouse_Top_EventScript_WickDefeated::
 	end
 
 BeaconIsle_Lighthouse_Top_EventScript_Lanturn::
-	msgbox BeaconIsle_Lighthouse_Top_Text_Lanturn, MSGBOX_DEFAULT
+	lock
+	faceplayer
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, FALSE, BeaconIsle_Lighthouse_Top_EventScript_LanturnDay
+	goto_if_set FLAG_BEACON_LIGHT_ISLE_FOUND, BeaconIsle_Lighthouse_Top_EventScript_LanturnKnown
+	msgbox BeaconIsle_Lighthouse_Top_Text_LanturnNight, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_REFLECT
+	setflag FLAG_BEACON_LIGHT_ISLE_FOUND
+	msgbox BeaconIsle_Lighthouse_Top_Text_LanturnReveal, MSGBOX_DEFAULT
+	release
+	end
+
+BeaconIsle_Lighthouse_Top_EventScript_LanturnDay::
+	msgbox BeaconIsle_Lighthouse_Top_Text_LanturnDay, MSGBOX_DEFAULT
+	release
+	end
+
+BeaconIsle_Lighthouse_Top_EventScript_LanturnKnown::
+	msgbox BeaconIsle_Lighthouse_Top_Text_LanturnKnown, MSGBOX_DEFAULT
+	release
 	end
 
 BeaconIsle_Lighthouse_Top_EventScript_View::
@@ -46,15 +67,39 @@ BeaconIsle_Lighthouse_Top_Text_WickDefeat:
 BeaconIsle_Lighthouse_Top_Text_WickPost:
 	.string "Some ships still crash. But they crash\n"
 	.string "in a lovely, steady glow.\p"
-	.string "A man on ROUTE 134 wants to build his\n"
-	.string "own lighthouse. He asked me what one\l"
-	.string "looks like.\p"
-	.string "I said “a fish.” He wrote it down.$"
+	.string "The keeper before me, old TALLOW, broke\n"
+	.string "the lamp. Then he rowed off to the\l"
+	.string "little island behind the reef. Never\l"
+	.string "came back.\p"
+	.string "He still sends a postcard every\n"
+	.string "Christmas. Blank. Smells of candles.$"
 
-BeaconIsle_Lighthouse_Top_Text_Lanturn:
+BeaconIsle_Lighthouse_Top_Text_LanturnDay:
 	.string "LANTURN is glowing at roughly forty\n"
 	.string "thousand lumens.\p"
-	.string "It looks extremely proud of itself.$"
+	.string "It looks extremely proud of itself.\p"
+	.string "By day, nobody notices. LANTURN is\n"
+	.string "saving her best work for the night\l"
+	.string "shift.$"
+
+BeaconIsle_Lighthouse_Top_Text_LanturnNight:
+	.string "LANTURN swings her light out over the\n"
+	.string "sea, slowly, like she's looking for her\l"
+	.string "keys.$"
+
+BeaconIsle_Lighthouse_Top_Text_LanturnReveal:
+	.string "...There! Behind the reef, a tiny island\n"
+	.string "lights up. A gap in the rocks glows\l"
+	.string "white.\p"
+	.string "It was there all along. It just never\n"
+	.string "got the light.\p"
+	.string "The gap in the reef is marked now. Ships\n"
+	.string "may follow it. Ships may also not.$"
+
+BeaconIsle_Lighthouse_Top_Text_LanturnKnown:
+	.string "LANTURN keeps her beam on the gap in\n"
+	.string "the reef.\p"
+	.string "She has never been more professional.$"
 
 BeaconIsle_Lighthouse_Top_Text_View:
 	.string "The whole sea, all the way to\n"

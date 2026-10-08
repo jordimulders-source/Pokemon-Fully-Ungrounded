@@ -4545,6 +4545,39 @@ Ability: Flash Fire
 - Calm Mind
 - Will-O-Wisp
 
+=== PARTNER_STADIUM_TALLOW ===
+Name: TALLOW
+Class: Sage
+Pic: Psychic M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Drifblim
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Air Slash
+- Will-O-Wisp
+- Calm Mind
+
+Dusknoir
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Punch
+- Earthquake
+- Ice Punch
+- Will-O-Wisp
+
+Chandelure @ Life Orb
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Trick Room
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

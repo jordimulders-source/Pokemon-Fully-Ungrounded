@@ -2758,6 +2758,75 @@
           }
         },
         {
+          "map": "MAP_BEACON_ISLE_GROTTO",
+          "base_label": "gBeaconIsleGrotto",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_LAMPENT"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_PERSIAN_ALOLA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_VOLTORB_HISUI"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_KLEFKI"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_ESPATHRA"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_ACCELGOR"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_PALOSSAND"
+              },
+              {
+                "min_level": 42,
+                "max_level": 44,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 45,
+                "max_level": 46,
+                "species": "SPECIES_INDEEDEE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 46,
+                "species": "SPECIES_ELECTRODE_HISUI"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_DRAGONSPINE_ISLE_DEN",
           "base_label": "gDragonspineIsleDen",
           "land_mons": {

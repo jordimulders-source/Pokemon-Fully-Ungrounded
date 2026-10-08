@@ -1535,8 +1535,6 @@ extern const u32 gItemIcon_EonTicket[];
 extern const u16 gItemIconPalette_EonTicket[];
 extern const u32 gItemIcon_MysticTicket[];
 extern const u16 gItemIconPalette_MysticTicket[];
-extern const u32 gItemIcon_AuroraTicket[];
-extern const u16 gItemIconPalette_AuroraTicket[];
 extern const u32 gItemIcon_OldSeaMap[];
 extern const u16 gItemIconPalette_OldSeaMap[];
 extern const u32 gItemIcon_Letter[];

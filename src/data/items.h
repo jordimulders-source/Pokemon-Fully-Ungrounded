@@ -14038,20 +14038,17 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MysticTicket,
     },
 
-    [ITEM_AURORA_TICKET] =
+    // Project Grounded: slot van het Aurora Ticket (Birth Island geschrapt); leeg, zodat de item-id's gelijk blijven
+    [ITEM_UNUSED_730] =
     {
-        .name = ITEM_NAME("Aurora Ticket"),
+        .name = gQuestionMarksItemName,
         .price = 0,
-        .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Birth Island."),
-        .importance = 1,
+        .description = sQuestionMarksDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_AuroraTicket,
-        .iconPalette = gItemIconPalette_AuroraTicket,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
     },
 
     [ITEM_OLD_SEA_MAP] =

@@ -1185,6 +1185,10 @@
 #define TRAINER_RUIN_MANIAC_DORIAN          1194 // Project Grounded (zeevulling 4): Route 134, wil de Sealed Chamber openen met een schep
 // }
 
+// beacon_isle { (tools/grounded/maptools/beacon_isle.py; vaste id's)
+#define TRAINER_TALLOW                      1048 // Project Grounded: Beacon Isle, Lichteiland: geest van de eerste vuurtorenwachter (Battle Stadium)
+// }
+
 #define TRAINERS_COUNT                      1195
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

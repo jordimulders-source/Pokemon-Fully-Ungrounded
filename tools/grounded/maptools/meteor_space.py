@@ -666,7 +666,7 @@ open('graphics/battle_environment/cave/space.pal', 'w').write('\n'.join(out) + '
 # ---------------------------------------------------------------- registratie
 lj = open('data/layouts/layouts.json').read()
 if '"LAYOUT_%s"' % CONST not in lj:
-    i = lj.index('"id": "LAYOUT_BIRTH_ISLAND_EXTERIOR"'); j = lj.index('},', i) + 2
+    i = lj.index('"id": "LAYOUT_ISLAND_HARBOR"'); j = lj.index('},', i) + 2
     lj = lj[:j] + '''
     {
       "id": "LAYOUT_%s",
@@ -692,7 +692,7 @@ def obj(local, gfx, x, y, mv, script, flag='0', elev=3):
 
 objs = [
     obj('LOCALID_METEOR_SPACE_TRIANGLE', 'OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED', TRIANGLE[0], TRIANGLE[1], 'MOVEMENT_TYPE_FACE_DOWN',
-        NAME + '_EventScript_Triangle', 'FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE'),
+        NAME + '_EventScript_Triangle', 'FLAG_HIDE_METEOR_SPACE_DEOXYS_TRIANGLE'),
     obj('LOCALID_METEOR_SPACE_DEOXYS', 'OBJ_EVENT_GFX_DEOXYS', DEOXYS_START[0], DEOXYS_START[1], 'MOVEMENT_TYPE_FACE_DOWN',
         '0x0', 'FLAG_HIDE_DEOXYS', elev=0),
     obj('LOCALID_METEOR_SPACE_BOX', 'OBJ_EVENT_GFX_MOVING_BOX', BOX[0], BOX[1], 'MOVEMENT_TYPE_FACE_DOWN',

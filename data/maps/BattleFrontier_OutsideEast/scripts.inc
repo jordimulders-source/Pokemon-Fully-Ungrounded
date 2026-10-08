@@ -435,3 +435,31 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
+
+@ Project Grounded: bord en praters bij het Battle Stadium
+BattleFrontier_OutsideEast_EventScript_StadiumSign::
+	msgbox BattleFrontier_OutsideEast_Text_StadiumSign, MSGBOX_SIGN
+	end
+
+BattleFrontier_OutsideEast_EventScript_StadiumTalker1::
+	msgbox BattleFrontier_OutsideEast_Text_StadiumTalker1, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideEast_EventScript_StadiumTalker2::
+	msgbox BattleFrontier_OutsideEast_Text_StadiumTalker2, MSGBOX_NPC
+	end
+
+BattleFrontier_OutsideEast_Text_StadiumSign:
+	.string "BATTLE STADIUM\n"
+	.string "Sixteen enter. One gets a trophy.$"
+
+BattleFrontier_OutsideEast_Text_StadiumTalker1:
+	.string "I lost to a man with six DITTO.\p"
+	.string "He wasn't even looking at the field.\n"
+	.string "He was looking at me.$"
+
+BattleFrontier_OutsideEast_Text_StadiumTalker2:
+	.string "My husband entered the tournament\n"
+	.string "in 2004.\p"
+	.string "The announcer still hasn't finished\n"
+	.string "introducing him.$"

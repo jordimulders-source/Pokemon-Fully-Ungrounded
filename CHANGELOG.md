@@ -17476,3 +17476,27 @@ Volgens Jordi's GBA-instructies per leider:
 - **Compagnon-omroep:** elke compagnon krijgt zijn eigen karakterzin, bijv. Keccles: "A KECLEON with a PhD and an existential crisis. Same thing, really."
 - **Nieuwe tellers:** game stats 53–56 (white-outs, gevlucht, vrijgelaten, eigen Pokémon flauwgevallen). Splash en Struggle worden nu ook geteld.
   - De tellers gebruiken ongebruikte save-plekken. Bij het eerste gebruik worden ze op 0 gezet (`FLAG_GROUNDED(150)`); `FLAG_USED_IMPLOSION` = `(151)`.
+
+### [v0.9.159] - Zeevulling 4: onderwater en de diepzeetrog
+- **Alle onderwaterkaarten hebben wilde Pokémon:**
+  - Sootopolis-krater: Tynamo-lijn, Feebas.
+  - Whirl Island, Marine Cave (buiten): fossielen, Wailord.
+  - Route 134 en de Sealed Chamber (buiten): Relicanth, Unown 1%.
+  - Scorched Slab, de ingang van Seafloor Cavern (Hisui-Qwilfish, Galar-Corsola) en Route 136 (Eiscue, Empoleon).
+  - Elk heeft een verborgen item.
+- **De grote onderwaterroutes** (105, 124–129) hebben verborgen items, duikers als trainer (Nerissa, Gill, Odessa, Brine), duiker-NPC's en een verhaalbord bij de gezonken eerste Sootopolis-onderzeeër.
+- **Diepzeetrog** (`Underwater_Route127_Trench`):
+  - Ingang via een zwemgat in onderwater 127.
+  - Encounters: Lanturn, Pyukumuku, Malamar, Relicanth, Dhelmise.
+  - Trainer: diepzeeduikster Abyssa.
+  - Items: Deep Sea Scale en Tooth, plus een verborgen Relic Crown achter het plateau.
+  - Bordje: "DEEPEST POINT IN HOENN. DEPTH: YES."
+- **Bovenwater:**
+  - Route 126/127/132/133: verborgen items.
+  - Route 127: een oceanograaf.
+  - Route 128: een eilandje met Parasol Lady Solenne.
+  - Route 130: Tuber Bobby en een fotograaf ("ging één keer een broodje halen").
+  - Route 134: Ruin Maniac Dorian, die de Sealed Chamber met een schep wil openen.
+- **Route 130:** op Mirage-dagen zijn de Wynaut-crèche en de fotograaf weg, want die layout heeft hun eilandje niet.
+- Script `tools/grounded/maptools/zee_vulling_4.py`. Flags `FLAG_GROUNDED(330–358)`, trainers 1187–1194.
+- Overgeslagen: Sootopolis-eilandjes; Route 126 heeft een andere tileset, dus dat vraagt eigen kaarten.

@@ -333,6 +333,22 @@
       "elevation": 3,
       "item": "ITEM_ELIXIR",
       "flag": "FLAG_HIDDEN_ITEM_ZV3_R126_ELIXIR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R126_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_DIVE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R126_DIVE_BALL"
     }
   ]
 }

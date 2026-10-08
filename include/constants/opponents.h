@@ -1174,7 +1174,18 @@
 #define TRAINER_KV4_SWIMMER_WADE            1158 // Project Grounded (kaartvulling 4): Route 124, oostelijke open zee
 // }
 
-#define TRAINERS_COUNT                      1187
+// zee_vulling_4 {
+#define TRAINER_DIVER_ABYSSA                1187 // Project Grounded (zeevulling 4): diepzeetrog onder Route 127, wil de bodem aanraken
+#define TRAINER_DIVER_NERISSA               1188 // Project Grounded (zeevulling 4): onderwater Route 105, vrijduikster op een record
+#define TRAINER_DIVER_GILL                  1189 // Project Grounded (zeevulling 4): onderwater Route 125, zoekt zijn zoon (een Clauncher van 34)
+#define TRAINER_DIVER_ODESSA                1190 // Project Grounded (zeevulling 4): onderwater Route 126, gidst duiktoeristen rond Sootopolis
+#define TRAINER_DIVER_BRINE                 1191 // Project Grounded (zeevulling 4): onderwater Route 128, bewaakt de ingang naar de zeebodemgrot
+#define TRAINER_PARASOL_LADY_SOLENNE        1192 // Project Grounded (zeevulling 4): Route 128, zonnebaadt op een zandbank die er gisteren niet was
+#define TRAINER_TUBER_BOBBY                 1193 // Project Grounded (zeevulling 4): Route 130, dreef op zijn band weg uit Slateport
+#define TRAINER_RUIN_MANIAC_DORIAN          1194 // Project Grounded (zeevulling 4): Route 134, wil de Sealed Chamber openen met een schep
+// }
+
+#define TRAINERS_COUNT                      1195
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

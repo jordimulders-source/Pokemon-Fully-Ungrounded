@@ -4616,6 +4616,132 @@
           }
         },
         {
+          "map": "MAP_UNDERWATER_SOOTOPOLIS_CITY",
+          "base_label": "gUnderwater_SootopolisCity",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_TYNAMO" },
+              { "min_level": 39, "max_level": 42, "species": "SPECIES_GASTRODON_WEST" },
+              { "min_level": 40, "max_level": 43, "species": "SPECIES_EELEKTRIK" },
+              { "min_level": 30, "max_level": 35, "species": "SPECIES_FEEBAS" },
+              { "min_level": 43, "max_level": 45, "species": "SPECIES_EELEKTROSS" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_WHIRL_ISLAND",
+          "base_label": "gUnderwater_WhirlIsland",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_KINGLER" },
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_DEWGONG" },
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_CRAMORANT" },
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_OCTILLERY" },
+              { "min_level": 44, "max_level": 46, "species": "SPECIES_TATSUGIRI_DROOPY" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_MARINE_CAVE",
+          "base_label": "gUnderwater_MarineCave",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 45, "max_level": 48, "species": "SPECIES_JELLICENT" },
+              { "min_level": 45, "max_level": 48, "species": "SPECIES_SHARPEDO" },
+              { "min_level": 46, "max_level": 49, "species": "SPECIES_KABUTOPS" },
+              { "min_level": 46, "max_level": 49, "species": "SPECIES_OMASTAR" },
+              { "min_level": 48, "max_level": 50, "species": "SPECIES_WAILORD" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_ROUTE134",
+          "base_label": "gUnderwater_Route134",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_CORSOLA" },
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_BARBARACLE" },
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_CARRACOSTA" },
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_STARMIE" },
+              { "min_level": 45, "max_level": 47, "species": "SPECIES_VAPOREON" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_SEALED_CHAMBER",
+          "base_label": "gUnderwater_SealedChamber",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 36, "max_level": 39, "species": "SPECIES_WAILMER" },
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_TENTACRUEL" },
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_RELICANTH" },
+              { "min_level": 40, "max_level": 44, "species": "SPECIES_MANTYKE" },
+              { "min_level": 40, "max_level": 45, "species": "SPECIES_UNOWN" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_SCORCHED_SLAB",
+          "base_label": "gUnderwater_ScorchedSlab",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_ARAQUANID" },
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_BASCULIN_RED_STRIPED" },
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_POLIWHIRL" },
+              { "min_level": 40, "max_level": 43, "species": "SPECIES_GOLDUCK" },
+              { "min_level": 42, "max_level": 44, "species": "SPECIES_LUDICOLO" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_SEAFLOOR_CAVERN",
+          "base_label": "gUnderwater_SeafloorCavern",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 40, "max_level": 43, "species": "SPECIES_WUGTRIO" },
+              { "min_level": 40, "max_level": 43, "species": "SPECIES_QWILFISH_HISUI" },
+              { "min_level": 41, "max_level": 44, "species": "SPECIES_TOXAPEX" },
+              { "min_level": 41, "max_level": 44, "species": "SPECIES_CORSOLA_GALAR" },
+              { "min_level": 43, "max_level": 45, "species": "SPECIES_OVERQWIL" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_ROUTE136",
+          "base_label": "gUnderwater_Route136",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_SEALEO" },
+              { "min_level": 38, "max_level": 41, "species": "SPECIES_EISCUE" },
+              { "min_level": 40, "max_level": 43, "species": "SPECIES_BASCULEGION_M" },
+              { "min_level": 42, "max_level": 44, "species": "SPECIES_WALREIN" },
+              { "min_level": 40, "max_level": 42, "species": "SPECIES_EMPOLEON" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_ROUTE127_TRENCH",
+          "base_label": "gUnderwater_Route127_Trench",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              { "min_level": 43, "max_level": 46, "species": "SPECIES_LANTURN" },
+              { "min_level": 42, "max_level": 45, "species": "SPECIES_PYUKUMUKU" },
+              { "min_level": 44, "max_level": 47, "species": "SPECIES_MALAMAR" },
+              { "min_level": 44, "max_level": 47, "species": "SPECIES_RELICANTH" },
+              { "min_level": 45, "max_level": 48, "species": "SPECIES_DHELMISE" }
+            ]
+          }
+        },
+        {
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
           "base_label": "gShoalCave_LowTideIceRoom",
           "land_mons": {

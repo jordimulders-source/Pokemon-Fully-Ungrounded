@@ -1738,6 +1738,37 @@
 #define FLAG_HIDDEN_ITEM_KV4_ROUTE124_SHINY_STONE        FLAG_GROUNDED(244) // Project Grounded (kaartvulling 4): Route124: verborgen SHINY_STONE 
 #define FLAG_ITEM_KV4_ROUTE124_NET_BALL                  FLAG_GROUNDED(245) // Project Grounded (kaartvulling 4): Route124: NET_BALL 
 // }
+// zee_vulling_4 { (tools/grounded/maptools/zee_vulling_4.py; FLAG_GROUNDED 330-429)
+#define FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_SCALE              FLAG_GROUNDED(330) // Project Grounded (zeevulling 4): item (Underwater_Route127_Trench)
+#define FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_TOOTH              FLAG_GROUNDED(331) // Project Grounded (zeevulling 4): item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_TRENCH_RELIC_CROWN          FLAG_GROUNDED(332) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_TRENCH_DIVE_BALL            FLAG_GROUNDED(333) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_SOOTO_PRISM_SCALE           FLAG_GROUNDED(334) // Project Grounded (zeevulling 4): verborgen item (Underwater_SootopolisCity)
+#define FLAG_HIDDEN_ITEM_ZV4_WHIRL_SHOAL_SHELL           FLAG_GROUNDED(335) // Project Grounded (zeevulling 4): verborgen item (Underwater_WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV4_MARINE_SPLASH_PLATE         FLAG_GROUNDED(336) // Project Grounded (zeevulling 4): verborgen item (Underwater_MarineCave)
+#define FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_SILVER           FLAG_GROUNDED(337) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route134)
+#define FLAG_HIDDEN_ITEM_ZV4_SEAFLOOR_NET_BALL           FLAG_GROUNDED(338) // Project Grounded (zeevulling 4): verborgen item (Underwater_SeafloorCavern)
+#define FLAG_HIDDEN_ITEM_ZV4_SEALED_RELIC_STATUE         FLAG_GROUNDED(339) // Project Grounded (zeevulling 4): verborgen item (Underwater_SealedChamber)
+#define FLAG_HIDDEN_ITEM_ZV4_UW136_NEVER_MELT_ICE        FLAG_GROUNDED(340) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route136)
+#define FLAG_HIDDEN_ITEM_ZV4_UW105_PEARL_STRING          FLAG_GROUNDED(341) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route105)
+#define FLAG_HIDDEN_ITEM_ZV4_UW124_STAR_PIECE            FLAG_GROUNDED(342) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route124)
+#define FLAG_HIDDEN_ITEM_ZV4_UW125_BIG_PEARL             FLAG_GROUNDED(343) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route125)
+#define FLAG_HIDDEN_ITEM_ZV4_UW126_BIG_NUGGET            FLAG_GROUNDED(344) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_UW126_HEART_SCALE           FLAG_GROUNDED(345) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_UW127_PP_MAX                FLAG_GROUNDED(346) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127)
+#define FLAG_HIDDEN_ITEM_ZV4_UW128_MAX_REVIVE            FLAG_GROUNDED(347) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route128)
+#define FLAG_HIDDEN_ITEM_ZV4_UW129_BOTTLE_CAP            FLAG_GROUNDED(348) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route129)
+#define FLAG_HIDDEN_ITEM_ZV4_R126_STARDUST               FLAG_GROUNDED(349) // Project Grounded (zeevulling 4): verborgen item (Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_R126_DIVE_BALL              FLAG_GROUNDED(350) // Project Grounded (zeevulling 4): verborgen item (Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_R127_DEEP_SEA_TOOTH         FLAG_GROUNDED(351) // Project Grounded (zeevulling 4): verborgen item (Route127)
+#define FLAG_HIDDEN_ITEM_ZV4_R128_HEAT_ROCK              FLAG_GROUNDED(352) // Project Grounded (zeevulling 4): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV4_R130_STAR_PIECE             FLAG_GROUNDED(353) // Project Grounded (zeevulling 4): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV4_R132_SHOAL_SALT             FLAG_GROUNDED(354) // Project Grounded (zeevulling 4): verborgen item (Route132)
+#define FLAG_HIDDEN_ITEM_ZV4_R132_HEART_SCALE            FLAG_GROUNDED(355) // Project Grounded (zeevulling 4): verborgen item (Route132)
+#define FLAG_HIDDEN_ITEM_ZV4_R133_PEARL                  FLAG_GROUNDED(356) // Project Grounded (zeevulling 4): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV4_R133_RARE_CANDY             FLAG_GROUNDED(357) // Project Grounded (zeevulling 4): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_COPPER           FLAG_GROUNDED(358) // Project Grounded (zeevulling 4): verborgen item (Route134)
+// } zee_vulling_4
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

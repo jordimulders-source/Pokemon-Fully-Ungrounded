@@ -73,3 +73,19 @@ Route134_Text_ZV2Kage_Defeat:
 Route134_Text_ZV2Kage_Post:
 	.string "The architect thinks I'm a\nlighthouse. I'm not correcting him.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route134_EventScript_ZV4Dorian::
+	trainerbattle_single TRAINER_RUIN_MANIAC_DORIAN, Route134_Text_ZV4Dorian_Intro, Route134_Text_ZV4Dorian_Defeat
+	msgbox Route134_Text_ZV4Dorian_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route134_Text_ZV4Dorian_Intro:
+	.string "Somewhere under this sea is a\nSEALED CHAMBER. With BRAILLE.\pI can't read braille.\nI brought a shovel. Same thing.$"
+
+Route134_Text_ZV4Dorian_Defeat:
+	.string "My shovel isn't waterproof.\nNeither am I.$"
+
+Route134_Text_ZV4Dorian_Post:
+	.string "The chamber is south of here,\ndeep down. They say you need a\lWAILORD and a RELICANTH to open it.\pI have a RELICANTH. My WAILORD\nis in a different chamber.\lIt's called 'the PC'.$"
+@ --- einde zee_vulling_4 ---

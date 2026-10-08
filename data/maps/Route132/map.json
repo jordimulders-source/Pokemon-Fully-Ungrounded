@@ -200,6 +200,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route132_EventScript_TideCarving"
+    },
+    {
+      "type": "hidden_item",
+      "x": 46,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_SHOAL_SALT",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R132_SHOAL_SALT"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R132_HEART_SCALE"
     }
   ]
 }

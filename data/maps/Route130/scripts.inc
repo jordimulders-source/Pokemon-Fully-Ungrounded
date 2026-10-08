@@ -26,6 +26,8 @@ Route130_OnTransition:
 	end
 
 Route130_EventScript_SetMirageIslandLayout::
+	setflag FLAG_TEMP_5 @ zee_vulling_4: fotograaf mist het eiland
+	setflag FLAG_TEMP_6 @ Wynaut-crèche staat niet op Mirage Island (andere layout)
 	setmaplayoutindex LAYOUT_ROUTE130_MIRAGE_ISLAND
 	end
 
@@ -106,3 +108,26 @@ Route130_Text_ZV2Honey_Defeat:
 Route130_Text_ZV2Honey_Post:
 	.string "Parents pick them up from MIRAGE\nISLAND. When it's there.\pWhen it isn't... more WYNAUT.$"
 @ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route130_EventScript_ZV4Bobby::
+	trainerbattle_single TRAINER_TUBER_BOBBY, Route130_Text_ZV4Bobby_Intro, Route130_Text_ZV4Bobby_Defeat
+	msgbox Route130_Text_ZV4Bobby_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route130_Text_ZV4Bobby_Intro:
+	.string "Mom said stay where she can see me.\nThat was in SLATEPORT.\pShe has very good eyes.\nProbably.$"
+
+Route130_Text_ZV4Bobby_Defeat:
+	.string "Can you tell my mom I'm fine?\nAnd that the tube is fine too?$"
+
+Route130_Text_ZV4Bobby_Post:
+	.string "I've been floating for two weeks.\nWAILMER bring me snacks.\lI'm never going home.$"
+
+Route130_EventScript_ZV4Photographer::
+	msgbox Route130_Text_ZV4Photographer, MSGBOX_NPC
+	end
+
+Route130_Text_ZV4Photographer:
+	.string "I'm waiting for MIRAGE ISLAND to\nappear. Then I take the photo.\pI've been here four years.\nI have 30,000 photos of water.\pOnce I went to get a sandwich.\nI hear it was beautiful.$"
+@ --- einde zee_vulling_4 ---

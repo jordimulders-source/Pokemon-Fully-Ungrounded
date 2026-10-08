@@ -223,3 +223,12 @@ Route127_EventScript_ZV3Warning::
 Route127_Text_ZV3Warning:
 	.string "DANGER: MINEFIELD.\nDO NOT TOUCH, PET OR CATCH.\pSomeone has scratched underneath:\n'they respawn btw'$"
 @ --- einde zee_vulling_3 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route127_EventScript_ZV4Oceanographer::
+	msgbox Route127_Text_ZV4Oceanographer, MSGBOX_NPC
+	end
+
+Route127_Text_ZV4Oceanographer:
+	.string "I measure the depth of the trench\nwest of here. With a rope.\pThe rope ran out. I tied on a\nsecond rope. That ran out too.\pOfficial result: two ropes deep.\nIf you DIVE at the head of the\ltrench, look for a hole. Bring\lrope.$"
+@ --- einde zee_vulling_4 ---

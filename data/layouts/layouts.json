@@ -5370,6 +5370,16 @@
       "secondary_tileset": "gTileset_BattlePyramid",
       "border_filepath": "data/layouts/MirageBazaar_Vault/border.bin",
       "blockdata_filepath": "data/layouts/MirageBazaar_Vault/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_ROUTE127_TRENCH",
+      "name": "Underwater_Route127_Trench_Layout",
+      "width": 22,
+      "height": 62,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_Route127_Trench/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_Route127_Trench/map.bin"
     }
   ]
 }

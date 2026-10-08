@@ -59,3 +59,4 @@ tools/aif2pcm/aif2pcm
 *.smolTM
 __pycache__
 src/data/pokemon/ow_species_keep.h
+.claude/worktrees/

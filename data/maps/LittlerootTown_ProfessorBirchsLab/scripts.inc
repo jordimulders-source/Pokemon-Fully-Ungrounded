@@ -507,6 +507,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex, MSGBOX_DEFAULT
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT
+	@ Project Grounded: Exp. Share al vóór de eerste gym (Mr. Stone geeft er later een tweede)
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_TakeExpShare, MSGBOX_DEFAULT
+	giveitem ITEM_EXP_SHARE
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainExpShare, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BIRCHS_LAB_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer
 	waitmovement 0
@@ -971,3 +975,13 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "LILYCOVE. I'll be waiting. I'm always\l"
 	.string "waiting.\p"
 	.string "… … … … … … … … … … … Click!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_TakeExpShare:
+	.string "PROF. BIRCH: Oh, and take this too.\n"
+	.string "Found it in the lab. Nobody claimed it.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ExplainExpShare:
+	.string "PROF. BIRCH: A POKéMON holding the\n"
+	.string "EXP. SHARE learns just by watching.\p"
+	.string "Like a student at a lecture.\n"
+	.string "Most of my students sleep, though.$"

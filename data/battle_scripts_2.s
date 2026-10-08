@@ -207,8 +207,14 @@ BattleScript_TryNicknameCaughtMon::
 BattleScript_GiveCaughtMonEnd::
 	givecaughtmon BattleScript_SuccessBallThrowEnd
 BattleScript_SuccessBallThrowEnd::
+	callnative BS_GroundedObedienceWarnCaught @ Project Grounded: melding als hij boven de badge-grens zit
 	setbyte gBattleOutcome, B_OUTCOME_CAUGHT
 	finishturn
+
+BattleScript_GroundedObedienceWarnCaught::
+	printstring STRINGID_OBEYWARN_CAUGHT
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_WallyBallThrow::
 	printstring STRINGID_GOTCHAPKMNCAUGHTWALLY

@@ -2619,6 +2619,30 @@ BattleScript_FaintAttackerForImplosion::
 	callnative BS_FormBlackHole
 	printstring STRINGID_BLACKHOLEFORMED
 	waitmessage B_WAIT_TIME_LONG
+	@ het zwarte gat zuigt ook het weer en het terrein op
+	jumpifhalfword CMP_NO_COMMON_BITS, gBattleWeather, B_WEATHER_ANY, BattleScript_ImplosionTerrain
+	removeweather
+	printfromtable gWeatherEndsStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ImplosionTerrain:
+	jumpifhalfword CMP_NO_COMMON_BITS, gFieldStatuses, STATUS_FIELD_TERRAIN_ANY, BattleScript_ImplosionAbilities
+	removeterrain
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
+	printfromtable gTerrainStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ImplosionAbilities:
+	saveattacker
+	savetarget
+	resetterrainabilityflags
+	setbyte gBattlerAttacker, 0
+BattleScript_ImplosionLoop:
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
+	activateterrainchangeabilities BS_TARGET
+	activateweatherchangeabilities BS_TARGET
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_ImplosionLoop
+	restoreattacker
+	restoretarget
 	tryfaintmon BS_ATTACKER
 	return
 
@@ -4996,8 +5020,14 @@ BattleScript_LevelUp::
 	printstring STRINGID_PKMNGREWTOLV
 	setbyte sLVLBOX_STATE, 0
 	drawlvlupbox
+	callnative BS_GroundedObedienceWarnLevelUp @ Project Grounded: melding als hij boven de badge-grens komt
 	handlelearnnewmove BattleScript_LearnedNewMove, BattleScript_LearnMoveReturn, TRUE
 	goto BattleScript_AskToLearnMove
+BattleScript_GroundedObedienceWarnLevelUp::
+	printstring STRINGID_OBEYWARN_LEVELUP
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_TryLearnMoveLoop::
 	handlelearnnewmove BattleScript_LearnedNewMove, BattleScript_LearnMoveReturn, FALSE
 BattleScript_AskToLearnMove::

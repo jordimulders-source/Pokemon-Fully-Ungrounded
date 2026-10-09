@@ -107,9 +107,17 @@ ITEMS = [
     (1581, 'Route119_WeatherInstitute_2F', 'ITEM_REVEAL_GLASS', 1, False, 'Weather Institute 2F: Reveal Glass (Therian-vormen van de Forces en Enamorus)'),
     (1582, 'Route104_PrettyPetalFlowerShop', 'ITEM_PINK_NECTAR', 1, False, "Pretty Petal-bloemenwinkel: Pink Nectar (Oricorio Pa'u)"),
     (1583, 'Route104_PrettyPetalFlowerShop', 'ITEM_PURPLE_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Purple Nectar (Oricorio Sensu)'),
+    # Ultra Space (ultra_space.py; flags uit het eigen blok FLAG_GROUNDED 1440-1519)
+    (1460, 'UltraSpace_Necrozma', 'ITEM_N_SOLARIZER', 1, False, 'Ultra Space, prismagrot: N-Solarizer (Necrozma + Solgaleo)'),
+    (1461, 'UltraSpace_Necrozma', 'ITEM_N_LUNARIZER', 1, False, 'Ultra Space, prismagrot: N-Lunarizer (Necrozma + Lunala)'),
+    (1462, 'UltraSpace_Poipole', 'ITEM_POISON_MEMORY', 1, False, 'Ultra Space, gifkristallen: Poison Memory'),
+    (1463, 'UltraSpace_Xurkitree', 'ITEM_ELECTRIC_MEMORY', 1, False, 'Ultra Space, kabelwoud: Electric Memory'),
+    (1464, 'UltraSpace_Buzzwole', 'ITEM_FIGHTING_MEMORY', 1, False, 'Ultra Space, sportschool: Fighting Memory'),
+    (1465, 'UltraSpace_Stakataka', 'ITEM_STEEL_MEMORY', 1, True, 'Ultra Space, muur: verborgen Steel Memory'),
+    (1466, 'UltraSpace_Guzzlord', 'ITEM_DARK_GEM', 2, False, 'Ultra Space, afvalvlakte: Dark Gems'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1580, 1619)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest en het benedendek van het Abandoned Ship: eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1460, 1479), (1580, 1619)]   # eigen blokken per gebied (zie flags.h)
 
 
 def flag_name(n, mp, it, hid):

@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 84 soorten.
+// 98 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -171,4 +171,32 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_DIALGA, FLAG_CORONET_DIALGA_DONE, COMPOUND_STRING("SPEAR PILLAR, the diamond altar. Time is\nwaiting, impatiently.")},
     // PALKIA: SpearPillar
     {SPECIES_PALKIA, FLAG_CORONET_PALKIA_DONE, COMPOUND_STRING("SPEAR PILLAR, the pearl altar. Space is\nwaiting, in all directions.")},
+    // COSMOG: FallarborTown_CozmosHouse
+    {SPECIES_COSMOG, 0, COMPOUND_STRING("PROF. COZMO in FALLARBOR found a\nnebula in his bird bath. He would like it\lto be your problem now.")},
+    // SOLGALEO: evolutie COSMOG
+    {SPECIES_SOLGALEO, 0, COMPOUND_STRING("A COSMOG that dreams of the sun\nbecomes the sun. Ask a SOLROCK. Or ask\lPROF. COZMO, he never shuts up about it.")},
+    // LUNALA: evolutie COSMOG
+    {SPECIES_LUNALA, 0, COMPOUND_STRING("A COSMOG that dreams of the moon\nbecomes the moon. LUNATONE knows. Show\lCOZMO what you raised.")},
+    // NIHILEGO: UltraSpace_Nihilego
+    {SPECIES_NIHILEGO, FLAG_ULTRA_NIHILEGO, COMPOUND_STRING("Behind ALTERING CAVE, through the\nwormhole: a world of glass, and a\ljellyfish made of bad decisions.")},
+    // BUZZWOLE: UltraSpace_Buzzwole
+    {SPECIES_BUZZWOLE, FLAG_ULTRA_BUZZWOLE, COMPOUND_STRING("Through the wormhole in ALTERING CAVE\nthere's a gym that never closes.\lSomething in there never skips leg day.")},
+    // PHEROMOSA: UltraSpace_Pheromosa
+    {SPECIES_PHEROMOSA, FLAG_ULTRA_PHEROMOSA, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na catwalk. The model refuses to look at\lyou. Make it.")},
+    // XURKITREE: UltraSpace_Xurkitree
+    {SPECIES_XURKITREE, FLAG_ULTRA_XURKITREE, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na forest of cables. One of the trees is\lplugged into nothing.")},
+    // CELESTEELA: UltraSpace_Celesteela
+    {SPECIES_CELESTEELA, FLAG_ULTRA_CELESTEELA, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na launch site in the void. 3, 2, 1... any\lcentury now.")},
+    // KARTANA: UltraSpace_Kartana
+    {SPECIES_KARTANA, FLAG_ULTRA_KARTANA, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na world of paper. Mind the papercuts.\lOne of them is alive.")},
+    // GUZZLORD: UltraSpace_Guzzlord
+    {SPECIES_GUZZLORD, FLAG_ULTRA_GUZZLORD, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\nan endless dump, and the thing that ate\lthe rest.")},
+    // POIPOLE: UltraSpace_Poipole
+    {SPECIES_POIPOLE, FLAG_ULTRA_POIPOLE, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\npoison crystals and three aliens with a\lsmall purple problem.")},
+    // STAKATAKA: UltraSpace_Stakataka
+    {SPECIES_STAKATAKA, FLAG_ULTRA_STAKATAKA, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na wall. It looks at you. It is waiting for\lyou to look back.")},
+    // BLACEPHALON: UltraSpace_Blacephalon
+    {SPECIES_BLACEPHALON, FLAG_ULTRA_BLACEPHALON, COMPOUND_STRING("Through the wormhole in ALTERING CAVE:\na circus. The clown's head explodes.\lThat's the act.")},
+    // NECROZMA: UltraSpace_Necrozma
+    {SPECIES_NECROZMA, FLAG_ULTRA_NECROZMA, COMPOUND_STRING("Once every ULTRA BEAST has been dealt\nwith, the wormhole in ALTERING CAVE\lopens on a prism that eats light.")},
 };

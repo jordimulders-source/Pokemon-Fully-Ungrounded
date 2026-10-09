@@ -6035,8 +6035,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sCosmoemLevelUpLearnset,
         .teachableLearnset = sCosmoemTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 53, SPECIES_SOLGALEO, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})},
-                                {EVO_LEVEL, 53, SPECIES_LUNALA, CONDITIONS({IF_TIME, TIME_NIGHT})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 53, SPECIES_SOLGALEO, CONDITIONS({IF_GROUNDED_SUN_MOON, 0})}, // Project Grounded: Solrock/Lunatone eerst gevangen (src/ultra_space.c)
+                                {EVO_LEVEL, 53, SPECIES_LUNALA, CONDITIONS({IF_GROUNDED_SUN_MOON, 1})}),
     },
 
     [SPECIES_SOLGALEO] =

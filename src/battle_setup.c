@@ -636,6 +636,39 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_TERAPAGOS_STELLAR:
         CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space (placeholder: Regi-thema; eigen intro's en thema's volgen)
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_VS_REGI);
+        break;
+    case SPECIES_BUZZWOLE:
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_REGI);
+        break;
+    case SPECIES_PHEROMOSA:
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_VS_REGI);
+        break;
+    case SPECIES_XURKITREE:
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_VS_REGI);
+        break;
+    case SPECIES_CELESTEELA:
+        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_VS_REGI);
+        break;
+    case SPECIES_KARTANA:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_REGI);
+        break;
+    case SPECIES_GUZZLORD:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_VS_REGI);
+        break;
+    case SPECIES_STAKATAKA:
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_VS_REGI);
+        break;
+    case SPECIES_BLACEPHALON:
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_VS_REGI);
+        break;
+    case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (placeholder: Deoxys-thema)
+    case SPECIES_NECROZMA_DUSK_MANE:
+    case SPECIES_NECROZMA_DAWN_WINGS:
+    case SPECIES_NECROZMA_ULTRA:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
+        break;
     case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle (placeholder: Kanto-legendary-thema, bestaande transitie)
     case SPECIES_XERNEAS_ACTIVE:
         CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);

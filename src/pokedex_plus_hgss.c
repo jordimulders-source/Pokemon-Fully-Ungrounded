@@ -6844,6 +6844,9 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
                     StringAppend(gStringVar4, gStringVar2);
                     StringAppend(gStringVar4, COMPOUND_STRING(" steps"));
                     break;
+                case IF_GROUNDED_SUN_MOON: // Project Grounded
+                    StringAppend(gStringVar4, evolutions[i].params[j].arg1 == 0 ? COMPOUND_STRING("SOLROCK first") : COMPOUND_STRING("LUNATONE first"));
+                    break;
                 case IF_BAG_ITEM_COUNT:
                     ConvertIntToDecimalStringN(gStringVar2, evolutions[i].params[j].arg2, STR_CONV_MODE_LEFT_ALIGN, 3);
                     StringAppend(gStringVar4, gStringVar2);

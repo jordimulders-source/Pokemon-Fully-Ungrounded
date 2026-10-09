@@ -9,6 +9,9 @@ Overworlds (32x32, 9 frames: voor, achter, opzij (kijkt naar links), 2x stap voo
             gezicht (hij schaamt zich); lopen = 1 px zweven.
   wario_ow  Wario: voor uit wario_bron.png, opzij uit wario_side_bron.png (gespiegeld), achter = voor met pet/haar
             over het gezicht.
+  poochy_ow Poochy (64x32) uit de SMA3-sheet van A.J. Nitro (poochy_sma3.png, uit origin/master graphics/).
+  qcloud_ow gevleugelde ?-wolk (64x32) uit sma3_objects.png; de vleugelslag zit in de stapframes.
+  nep_enut_ow Nep-Enut: de Yoshi-frames blauw gekleurd, met boze wenkbrauwen.
 Back pic (64x64, 4 frames, zoals Calyrex): Yoshi van achteren uit de 'Pokemon RS-stijl'-sheet van Freakyplanet
   (origin/master: graphics/images (4).png, rij 2 kolom 1).
 De bronnen staan in graphics/grounded/yoshis_island/ (gekopieerd uit origin/master).
@@ -196,12 +199,109 @@ def yoshi_back():
     return out
 
 
+
+# ---------------------------------------------------------------------------------------------- Poochy, ?-wolk, Nep-Enut
+POOCHY_SRC = os.path.join(SRC, 'poochy_sma3.png')
+OBJ_SRC = os.path.join(SRC, 'sma3_objects.png')
+
+
+def key_white(im, bg=(255, 255, 255)):
+    a = np.array(im.convert('RGBA')).astype(int)
+    m = (np.abs(a[..., :3] - np.array(bg)).sum(2) == 0)
+    a[m, 3] = 0
+    return Image.fromarray(a.astype(np.uint8), 'RGBA')
+
+
+def wide(im, dy=0, up=0):
+    f = Image.new('RGBA', (64, 32), (0, 0, 0, 0))
+    f.alpha_composite(im, ((64 - im.width) // 2, 32 - im.height - dy - up))
+    return f
+
+
+def poochy():
+    """Poochy (SMA3-sheet van A.J. Nitro, origin/master graphics/): de sheet kijkt naar rechts -> gespiegeld (Gen 3
+    opzij = links). Rij 2 = lopen, het losse vak rechtsboven = voor; achter = voor met het gezicht weggepoetst."""
+    sh = Image.open(POOCHY_SRC).convert('RGB')
+
+    def cut(box):
+        return bbox(key_white(sh.crop(box)))
+    walk = [cut(b).transpose(Image.FLIP_LEFT_RIGHT) for b in
+            ((5, 40, 42, 64), (47, 39, 81, 64), (86, 40, 123, 64), (128, 40, 167, 64))]
+    front = cut((177, 5, 205, 33))
+    a = np.array(front).astype(int)
+    h, w = a.shape[:2]
+    back = a.copy()
+    rgb = a[..., :3]
+    body, dark, spot, light = (np.array(c) for c in ((248, 152, 32), (200, 96, 16), (216, 40, 24), (255, 216, 120)))
+    for y in range(h):
+        for x in range(w):
+            if a[y, x, 3] == 0:
+                continue
+            edge = any(not (0 <= y + dy < h and 0 <= x + dx < w) or a[y + dy, x + dx, 3] == 0
+                       for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)))
+            if edge or y < 3 or y >= h - 6:          # omlijning, antenne en pootjes blijven
+                continue
+            back[y, x, :3] = light if y < 8 else (dark if y > h - 10 else body)
+            if (x - w // 2) ** 2 + (y - 12) ** 2 <= 6 or (x - 6) ** 2 + (y - 16) ** 2 <= 3 \
+                    or (x - w + 7) ** 2 + (y - 15) ** 2 <= 3:
+                back[y, x, :3] = spot                # rode vlekken op de rug
+    back = Image.fromarray(back.astype(np.uint8), 'RGBA')
+    return [wide(front), wide(back), wide(walk[0]), wide(front, 1), wide(front, 1), wide(back, 1), wide(back, 1),
+            wide(walk[1]), wide(walk[3])]
+
+
+def qcloud():
+    """Gevleugelde ?-wolk uit de SMA3-objectensheet; de vleugelstanden zijn de stapframes (WALK_IN_PLACE = fladderen)."""
+    sh = Image.open(OBJ_SRC).convert('RGB')
+    bg = sh.getpixel((65, 104))
+
+    def cut(box):
+        return bbox(key_white(sh.crop(box), bg))
+    f = [cut(b) for b in ((71, 108, 101, 129), (106, 112, 142, 129), (147, 113, 189, 129), (194, 113, 228, 132),
+                          (233, 113, 275, 129), (280, 112, 310, 129))]
+    return [wide(f[0], 0, 6), wide(f[0], 0, 6), wide(f[0], 0, 6), wide(f[2], 1, 6), wide(f[3], 2, 6),
+            wide(f[2], 1, 6), wide(f[3], 2, 6), wide(f[2], 1, 6), wide(f[3], 2, 6)]
+
+
+def nep_enut(frames):
+    """Nep-Enut: Yoshi, maar blauw (groen -> blauw, rood -> paars) met boze wenkbrauwen. Overduidelijk nep."""
+    out = []
+    for fr in frames:
+        a = np.array(fr).astype(int)
+        r, g, b = a[..., 0].copy(), a[..., 1].copy(), a[..., 2].copy()
+        op = a[..., 3] > 0
+        green = op & (g > r + 20) & (g > b + 10)
+        red = op & (r > g + 60) & (r > b + 40)
+        a[green, 0] = (r[green] * 0.35).astype(int)
+        a[green, 1] = (g[green] * 0.55).astype(int)
+        a[green, 2] = np.minimum(255, g[green] + 40)
+        a[red, 0] = (r[red] * 0.55).astype(int)
+        a[red, 1] = (g[red] * 0.4).astype(int)
+        a[red, 2] = np.minimum(255, r[red])
+        out.append(Image.fromarray(np.clip(a, 0, 255).astype(np.uint8), 'RGBA'))
+    for k in (0, 3, 4):                      # boze wenkbrauwen boven het oogwit (vooraanzicht)
+        a = np.array(out[k]).astype(int)
+        ys, xs = np.where((a[..., 3] > 0) & (a[..., :3].sum(2) > 690) & (np.arange(32)[:, None] < 16))
+        if len(ys):
+            y0, xa, xb = ys.min(), xs.min(), xs.max()
+            for x in range(xa, xb + 1):
+                yy = y0 - 1 - int(abs(x - (xa + xb) / 2) > (xb - xa) / 4)
+                if yy >= 0:
+                    a[yy, x] = (24, 16, 48, 255)
+        out[k] = Image.fromarray(a.astype(np.uint8), 'RGBA')
+    return out
+
+
 # ---------------------------------------------------------------------------------------------- registratie (idempotent)
 OWS = [  # (constante, symboolnaam, bestand, paletlabel-tag, omschrijving)
     ('YOSHI', 'YoshiOw', 'yoshi_ow', 0x1170, "Yoshi (Yoshi's Island)"),
     ('COMMANDER_BOO', 'BooOw', 'boo_ow', 0x1171, "Commander Boo (Yoshi's Island)"),
     ('WARIO', 'WarioOw', 'wario_ow', 0x1172, "Wario (Yoshi's Island)"),
+    ('POOCHY', 'PoochyOw', 'poochy_ow', 0x1173, "Poochy (Yoshi's Island)"),
+    ('QCLOUD', 'QCloudOw', 'qcloud_ow', 0x1174, "gevleugelde ?-wolk (Yoshi's Island)"),
+    ('NEP_ENUT', 'NepEnutOw', 'nep_enut_ow', 0x1175, "Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island)"),
 ]
+WIDE = {'POOCHY', 'QCLOUD'}          # 64x32 (Poochy en de vleugels zijn breder dan 32 px)
 NOTE = 'Project Grounded: %s (tools/grounded/yoshi_sprites.py)'
 
 
@@ -221,7 +321,7 @@ def register():
                 line = '#define OBJ_EVENT_GFX_%-34s%d // %s\n' % (c, n, NOTE % why)
                 s = re.sub(r'(\n)(\n#define NUM_OBJ_EVENT_GFX\s+)(\d+)', lambda m: '\n' + line + m.group(2) + str(n + 1), s, count=1)
             pt = 'OBJ_EVENT_PAL_TAG_%s' % c
-            if pt not in s:
+            if pt + " " not in s:          # met spatie: POOCHY zit ook in POOCHYENA
                 a = s.index('#define OBJ_EVENT_PAL_TAG_GEN1_GHOST')
                 s = s[:a] + '#define %-42s0x%04X // %s\n' % (pt, tag, NOTE % why) + s[a:]
         return s
@@ -242,7 +342,8 @@ def register():
             if 'sPicTable_%s[]' % sym not in s:
                 a = s.index('static const struct SpriteFrameImage sPicTable_Gen1Ghost[]')
                 s = s[:a] + ('static const struct SpriteFrameImage sPicTable_%s[] = { // %s\n'
-                             '    overworld_ascending_frames(gObjectEventPic_%s, 4, 4),\n};\n\n' % (sym, NOTE % why, sym)) + s[a:]
+                             '    overworld_ascending_frames(gObjectEventPic_%s, %d, 4),\n};\n\n'
+                             % (sym, NOTE % why, sym, 8 if c in WIDE else 4)) + s[a:]
         return s
     _edit('src/data/object_events/object_event_pic_tables.h', pics)
 
@@ -250,15 +351,17 @@ def register():
         for c, sym, f, tag, why in OWS:
             if 'gObjectEventGraphicsInfo_%s =' % sym not in s:
                 a = s.index('const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost')
-                s = s[:a] + ('// %s, 32x32\nconst struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_%s = {\n'
+                wd = 64 if c in WIDE else 32
+                s = s[:a] + ('// %s, %dx32\nconst struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_%s = {\n'
                              '    .tileTag = TAG_NONE,\n    .paletteTag = OBJ_EVENT_PAL_TAG_%s,\n'
-                             '    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,\n    .size = 512,\n    .width = 32,\n'
-                             '    .height = 32,\n    .paletteSlot = PALSLOT_NPC_SPECIAL,\n    .shadowSize = SHADOW_SIZE_M,\n'
+                             '    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,\n    .size = %d,\n    .width = %d,\n'
+                             '    .height = 32,\n    .paletteSlot = PALSLOT_NPC_SPECIAL,\n    .shadowSize = SHADOW_SIZE_%s,\n'
                              '    .inanimate = FALSE,\n    .compressed = FALSE,\n    .tracks = TRACKS_%s,\n'
-                             '    .oam = &gObjectEventBaseOam_32x32,\n    .subspriteTables = sOamTables_32x32,\n'
+                             '    .oam = &gObjectEventBaseOam_%dx32,\n    .subspriteTables = sOamTables_%dx32,\n'
                              '    .anims = sAnimTable_Standard,\n    .images = sPicTable_%s,\n'
                              '    .affineAnims = gDummySpriteAffineAnimTable,\n};\n\n'
-                             % (NOTE % why, sym, c, 'NONE' if c == 'COMMANDER_BOO' else 'FOOT', sym)) + s[a:]
+                             % (NOTE % why, wd, sym, c, wd * 16, wd, 'L' if c == 'POOCHY' else 'M',
+                                'NONE' if c in ('COMMANDER_BOO', 'QCLOUD') else 'FOOT', wd, wd, sym)) + s[a:]
         return s
     _edit('src/data/object_events/object_event_graphics_info.h', info)
 
@@ -286,7 +389,9 @@ def register():
         for c, sym, f, tag, why in OWS:
             r = '$(OBJEVENTGFXDIR)/people/%s.4bpp: %%.4bpp: %%.png' % f
             if r not in s:
-                s = s.rstrip('\n') + '\n\n# %s (32x32)\n%s\n\t$(GFX) $< $@ -mwidth 4 -mheight 4\n' % (NOTE % why, r)
+                wd = 8 if c in WIDE else 4
+                s = s.rstrip('\n') + '\n\n# %s (%dx32)\n%s\n\t$(GFX) $< $@ -mwidth %d -mheight 4\n' % (
+                    NOTE % why, wd * 8, r, wd)
         return s
     _edit('spritesheet_rules.mk', rules)
 
@@ -319,7 +424,9 @@ def register():
 
 def main():
     prev = []
-    for name, frames in (('yoshi_ow', yoshi()), ('boo_ow', boo()), ('wario_ow', wario())):
+    yf = yoshi()
+    for name, frames in (('yoshi_ow', yf), ('boo_ow', boo()), ('wario_ow', wario()), ('poochy_ow', poochy()),
+                         ('qcloud_ow', qcloud()), ('nep_enut_ow', nep_enut(yf))):
         im, pal = quantize(frames)
         im.save(os.path.join(OW, name + '.png'))
         write_pal(os.path.join(PAL, name + '.pal'), pal)
@@ -328,7 +435,7 @@ def main():
     register()
     if len(sys.argv) > 1:
         out = Image.new('RGB', (288 + 70, 32 * 3 + 0 if False else 100), (60, 60, 90))
-        out = Image.new('RGB', (288 + 72, 100), (60, 60, 90))
+        out = Image.new('RGB', (576 + 72, 32 * len(prev) + 4), (60, 60, 90))
         for i, p in enumerate(prev):
             out.paste(p, (0, 32 * i + 2))
         out.paste(bp.convert('RGB').crop((0, 0, 64, 64)), (292, 2))

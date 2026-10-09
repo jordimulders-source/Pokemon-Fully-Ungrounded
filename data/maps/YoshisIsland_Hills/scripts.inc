@@ -142,6 +142,23 @@ YoshisIsland_Hills_EventScript_Sign::
 	msgbox YoshisIsland_Hills_Text_Sign, MSGBOX_SIGN
 	end
 
+YoshisIsland_Hills_EventScript_Movement_CloudPop:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+YoshisIsland_Hills_EventScript_StarCloud::
+	lock
+	playse SE_BALLOON_RED
+	applymovement LOCALID_YI_STAR_CLOUD, YoshisIsland_Hills_EventScript_Movement_CloudPop
+	waitmovement 0
+	removeobject LOCALID_YI_STAR_CLOUD
+	setflag FLAG_YI_STAR_CLOUD
+	playse SE_BALLOON_BLUE
+	msgbox YoshisIsland_Hills_Text_StarCloud, MSGBOX_DEFAULT
+	release
+	end
+
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 YoshisIsland_Hills_Text_YoshiCamp:
 	.string "YOSHI: Yoshi yoshi!\p"
@@ -258,3 +275,10 @@ YoshisIsland_Hills_Text_Sign:
 	.string "Unmasking is strictly forbidden.\l"
 	.string "(Mostly because we lost the\l"
 	.string "instructions.)$"
+
+YoshisIsland_Hills_Text_StarCloud:
+	.string "POP! The ? CLOUD bursts into a shower\n"
+	.string "of little stars.\p"
+	.string "You now have 1 STAR. Stars do nothing in\n"
+	.string "this game. You will carry it with you\l"
+	.string "anyway. Like most collectibles.$"

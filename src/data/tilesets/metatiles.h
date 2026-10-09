@@ -315,3 +315,12 @@ const u16 gMetatileAttributes_CoronetCave[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatiles.bin"); // Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren
 const u16 gMetatileAttributes_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiJungle[] = INCBIN_U16("data/tilesets/secondary/yoshi_jungle/metatiles.bin"); // Project Grounded: Yoshi's Island: Jungle
+const u16 gMetatileAttributes_YoshiJungle[] = INCBIN_U16("data/tilesets/secondary/yoshi_jungle/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiCave[] = INCBIN_U16("data/tilesets/secondary/yoshi_cave/metatiles.bin"); // Project Grounded: Yoshi's Island: Cave
+const u16 gMetatileAttributes_YoshiCave[] = INCBIN_U16("data/tilesets/secondary/yoshi_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatiles.bin"); // Project Grounded: Yoshi's Island: Flowers
+const u16 gMetatileAttributes_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatile_attributes.bin");

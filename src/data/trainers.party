@@ -42229,6 +42229,113 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Knock Off
 - Bullet Punch
 
+=== TRAINER_YI_SHY_GUY_JUNGLE ===
+Name: JUNGLE GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Green
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ambipom
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Fake Out
+- Double Hit
+- U-turn
+- Knock Off
+
+Lurantis
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Leaf Blade
+- X-Scissor
+- Superpower
+- Swords Dance
+
+Toucannon
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Beak Blast
+- Bullet Seed
+- Rock Blast
+- Roost
+
+=== TRAINER_YI_SHY_GUY_CAVE ===
+Name: MINER GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Black
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Excadrill
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+Gigalith
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Stone Edge
+- Heavy Slam
+- Earthquake
+- Stealth Rock
+
+Crobat
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+=== TRAINER_YI_SHY_GUY_FLOWERS ===
+Name: GROOVY GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Pink
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Florges
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Moonblast
+- Petal Blizzard
+- Calm Mind
+- Synthesis
+
+Altaria
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Pulse
+- Moonblast
+- Hurricane
+- Roost
+
+Whimsicott
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Moonblast
+- Energy Ball
+- Tailwind
+- Encore
+
+Lilligant
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Petal Dance
+- Quiver Dance
+- Sleep Powder
+- Hurricane
+
 /* --- einde yoshis_island --- */
 
 /* --- coronet (tools/grounded/maptools/coronet.py) --- */

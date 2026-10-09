@@ -98,6 +98,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BooOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoochyOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QCloudOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
@@ -401,6 +404,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+    [OBJ_EVENT_GFX_NEP_ENUT] = &gObjectEventGraphicsInfo_NepEnutOw, // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_QCLOUD] = &gObjectEventGraphicsInfo_QCloudOw, // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_POOCHY] = &gObjectEventGraphicsInfo_PoochyOw, // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_WARIO] = &gObjectEventGraphicsInfo_WarioOw, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_COMMANDER_BOO] = &gObjectEventGraphicsInfo_BooOw, // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_YOSHI] = &gObjectEventGraphicsInfo_YoshiOw, // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)

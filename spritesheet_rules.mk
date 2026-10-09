@@ -5089,3 +5089,15 @@ $(OBJEVENTGFXDIR)/people/boo_ow.4bpp: %.4bpp: %.png
 # Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
 $(OBJEVENTGFXDIR)/people/wario_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (64x32)
+$(OBJEVENTGFXDIR)/people/poochy_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+# Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (64x32)
+$(OBJEVENTGFXDIR)/people/qcloud_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+# Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/nep_enut_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

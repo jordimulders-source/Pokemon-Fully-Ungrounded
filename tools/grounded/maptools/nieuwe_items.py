@@ -78,9 +78,19 @@ ITEMS = [
     (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
     (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
     (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
+    # Yoshi's Island (yoshis_island.py; flags uit het eigen blok FLAG_GROUNDED 1060-1069). ?-wolken en Poochy geven
+    # hun item via een script (niet verborgen, geen item ball): zie CLOUD_ITEMS / POOCHY_ITEM in yoshis_island.py
+    (1060, 'YoshisIsland_Beach', 'ITEM_SHALOUR_SABLE', 2, False, "Yoshi's Island strand: Shalour Sable (?-wolk)"),
+    (1061, 'YoshisIsland_Jungle', 'ITEM_STRANGE_SOUVENIR', 1, False, "Yoshi's Island jungle: Strange Souvenir (Poochy graaft)"),
+    (1062, 'YoshisIsland_Jungle', 'ITEM_MOOMOO_MILK', 3, False, "Yoshi's Island jungle: Moomoo Milk (?-wolk)"),
+    (1063, 'YoshisIsland_Jungle', 'ITEM_GALARICA_TWIG', 1, False, "Yoshi's Island jungle: Galarica Twig"),
+    (1064, 'YoshisIsland_Cave', 'ITEM_RELIC_BAND', 1, False, "Yoshi's Island kristalgrot: Relic Band"),
+    (1065, 'YoshisIsland_Cave', 'ITEM_PEWTER_CRUNCHIES', 2, True, "Yoshi's Island kristalgrot: verborgen Pewter Crunchies"),
+    (1066, 'YoshisIsland_Flowers', 'ITEM_LUMIOSE_GALETTE', 2, False, "Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)"),
+    (1067, 'YoshisIsland_Flowers', 'ITEM_CHERISH_BALL', 1, False, "Yoshi's Island bloemenveld: Cherish Ball (achter de brug)"),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219)]   # Area Zero, de meren en Mt. Coronet gebruiken flags uit hun eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219)]   # Area Zero, Yoshi's Island, de meren en Mt. Coronet: eigen blokken
 
 
 def flag_name(n, mp, it, hid):

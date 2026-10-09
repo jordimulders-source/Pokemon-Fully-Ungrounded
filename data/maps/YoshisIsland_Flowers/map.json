@@ -1,0 +1,147 @@
+{
+  "id": "MAP_YOSHIS_ISLAND_FLOWERS",
+  "name": "YoshisIsland_Flowers",
+  "layout": "LAYOUT_YOSHIS_ISLAND_FLOWERS",
+  "music": "MUS_RG_BERRY_PICK",
+  "region_map_section": "MAPSEC_YOSHIS_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_QCLOUD",
+      "x": 20,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Flowers_EventScript_BridgeCloud",
+      "flag": "FLAG_YI_BRIDGE_CLOUD",
+      "local_id": "LOCALID_YI_BRIDGE_CLOUD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_QCLOUD",
+      "x": 27,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Flowers_EventScript_Cloud",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_LUMIOSE_GALETTE",
+      "local_id": "LOCALID_YI_FLOWERS_CLOUD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHY_GUY_PINK",
+      "x": 9,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "YoshisIsland_Flowers_EventScript_ShyGuy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_CHERISH_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_CHERISH_BALL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 26,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_JUNGLE",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 18,
+      "y": 26,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_JUNGLE",
+      "dest_warp_id": "5"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_MsgEntrance"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_MsgGoal"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_MsgBridge"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_Switch"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_Switch"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_EggBlock"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Flowers_EventScript_EggBlock"
+    }
+  ]
+}

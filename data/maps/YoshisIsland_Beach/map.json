@@ -81,6 +81,20 @@
       "trainer_sight_or_berry_tree_id": "ITEM_HEAL_BALL",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_YOSHIS_ISLAND_BEACH_HEAL_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_QCLOUD",
+      "x": 12,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Beach_EventScript_Cloud",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_BEACH_SHALOUR_SABLE",
+      "local_id": "LOCALID_YI_BEACH_CLOUD"
     }
   ],
   "warp_events": [
@@ -118,6 +132,20 @@
       "elevation": 3,
       "dest_map": "MAP_YOSHIS_ISLAND_HILLS",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_JUNGLE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_JUNGLE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
@@ -129,6 +157,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "YoshisIsland_Beach_EventScript_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Beach_EventScript_MsgBlock"
     },
     {
       "type": "hidden_item",

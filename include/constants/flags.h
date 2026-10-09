@@ -1674,7 +1674,7 @@
 // }
 // Post-game Dave/SickBlik (met de hand; FLAG_GROUNDED 1173-1179, 1174-1179 nog vrij)
 #define FLAG_HIDE_SICKBLIK_DEV                           FLAG_GROUNDED(1173) // Project Grounded: SickBlik (developer) niet op deze kaart vandaag; gezet/gewist in ON_TRANSITION van Mauville/Fortree/Lilycove/Pacifidlog
-// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119, 1050-1119 nog vrij)
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119; 1060-1069 = nieuwe items (blok nieuwe_items), 1055-1059 en 1070-1119 nog vrij)
 #define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
 #define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
 #define FLAG_YI_CAMP_A                                       FLAG_GROUNDED(1026) // Project Grounded: Yoshi's Island: bende A in het Shy Guy-kamp verslagen (multi battle 2)
@@ -1695,6 +1695,11 @@
 #define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL        FLAG_GROUNDED(1047) // Project Grounded: Yoshi's Island spookhuis: Poke Doll
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW         FLAG_GROUNDED(1048) // Project Grounded: Yoshi's Island fort: Grip Claw
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR   FLAG_GROUNDED(1049) // Project Grounded: Yoshi's Island fort: Malicious Armor
+#define FLAG_YI_NEP_ENUT_DONE                                FLAG_GROUNDED(1050) // Project Grounded: Yoshi's Island jungle: Nep-Enut (de nep-blauwe Yoshi, een Dondozo) verslagen of gevangen
+#define FLAG_YI_POOCHY_DUG                                   FLAG_GROUNDED(1051) // Project Grounded: Yoshi's Island jungle: Poochy heeft in het bosje iets opgegraven
+#define FLAG_YI_BRIDGE_CLOUD                                 FLAG_GROUNDED(1052) // Project Grounded: Yoshi's Island bloemenveld: ?-wolk geknapt, de brug over de kloof ligt er
+#define FLAG_YI_STAR_CLOUD                                   FLAG_GROUNDED(1053) // Project Grounded: Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt
+#define FLAG_YI_POOCHY_MET                                   FLAG_GROUNDED(1054) // Project Grounded: Yoshi's Island jungle: Poochy leren kennen (korte uitleg alleen de eerste keer)
 // }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
@@ -1823,6 +1828,14 @@
 #define FLAG_ITEM_MT_CORONET_5F_IRON_BALL                FLAG_GROUNDED(1183) // Project Grounded: Mt. Coronet 5F: Iron Ball
 #define FLAG_ITEM_SPEAR_PILLAR_ADAMANT_ORB               FLAG_GROUNDED(1184) // Project Grounded: Spear Pillar: Adamant Orb (bij het altaar van Dialga)
 #define FLAG_ITEM_SPEAR_PILLAR_LUSTROUS_ORB              FLAG_GROUNDED(1185) // Project Grounded: Spear Pillar: Lustrous Orb (bij het altaar van Palkia)
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_SHALOUR_SABLE      FLAG_GROUNDED(1060) // Project Grounded: Yoshi's Island strand: Shalour Sable (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_STRANGE_SOUVENIR  FLAG_GROUNDED(1061) // Project Grounded: Yoshi's Island jungle: Strange Souvenir (Poochy graaft)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_MOOMOO_MILK       FLAG_GROUNDED(1062) // Project Grounded: Yoshi's Island jungle: Moomoo Milk (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_GALARICA_TWIG     FLAG_GROUNDED(1063) // Project Grounded: Yoshi's Island jungle: Galarica Twig
+#define FLAG_ITEM_YOSHIS_ISLAND_CAVE_RELIC_BAND          FLAG_GROUNDED(1064) // Project Grounded: Yoshi's Island kristalgrot: Relic Band
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_CAVE_PEWTER_CRUNCHIES FLAG_GROUNDED(1065) // Project Grounded: Yoshi's Island kristalgrot: verborgen Pewter Crunchies
+#define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_LUMIOSE_GALETTE  FLAG_GROUNDED(1066) // Project Grounded: Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_CHERISH_BALL     FLAG_GROUNDED(1067) // Project Grounded: Yoshi's Island bloemenveld: Cherish Ball (achter de brug)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

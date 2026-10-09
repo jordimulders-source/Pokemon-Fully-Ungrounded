@@ -1576,3 +1576,36 @@ const struct Tileset gTileset_CoronetSnow = // Project Grounded: Mt. Coronet: sn
     .metatileAttributes = gMetatileAttributes_CoronetSnow,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_YoshiJungle = // Project Grounded: Yoshi's Island: Jungle
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiJungle,
+    .palettes = gTilesetPalettes_YoshiJungle,
+    .metatiles = gMetatiles_YoshiJungle,
+    .metatileAttributes = gMetatileAttributes_YoshiJungle,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiCave = // Project Grounded: Yoshi's Island: Cave
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiCave,
+    .palettes = gTilesetPalettes_YoshiCave,
+    .metatiles = gMetatiles_YoshiCave,
+    .metatileAttributes = gMetatileAttributes_YoshiCave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiFlowers = // Project Grounded: Yoshi's Island: Flowers
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiFlowers,
+    .palettes = gTilesetPalettes_YoshiFlowers,
+    .metatiles = gMetatiles_YoshiFlowers,
+    .metatileAttributes = gMetatileAttributes_YoshiFlowers,
+    .callback = NULL,
+};

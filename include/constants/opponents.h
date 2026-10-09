@@ -1259,7 +1259,7 @@
 #define TRAINER_AREA_ZERO_SECURITY_PAST     1181 // Project Grounded: Area Zero, verleden: beveiligingssysteem na KORAIDON
 #define TRAINER_AREA_ZERO_ALARM             1182 // Project Grounded: Area Zero, Tera-grot: alarmsysteem (terastaliseert, elk teamlid)
 // }
-// yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056)
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056, 1109, 1129, 1183)
 #define TRAINER_YI_SHY_GUY_BEACH_A          1017 // Project Grounded: Yoshi's Island, strand, pijpwachter 1
 #define TRAINER_YI_SHY_GUY_BEACH_B          1018 // Project Grounded: Yoshi's Island, strand, pijpwachter 2
 #define TRAINER_YI_SHY_GUY_CAMP_A1          1019 // Project Grounded: Yoshi's Island, kamp, bende A
@@ -1270,6 +1270,9 @@
 #define TRAINER_YI_SHY_GUY_FORT_A           1049 // Project Grounded: Yoshi's Island, fort, wachter
 #define TRAINER_YI_SHY_GUY_FORT_B           1055 // Project Grounded: Yoshi's Island, fort, wachter
 #define TRAINER_YI_WARIO                    1056 // Project Grounded: Yoshi's Island, fort, eindbaas
+#define TRAINER_YI_SHY_GUY_JUNGLE           1109 // Project Grounded: Yoshi's Island, jungle, naast het pad
+#define TRAINER_YI_SHY_GUY_CAVE             1129 // Project Grounded: Yoshi's Island, kristalgrot, mijnwerker
+#define TRAINER_YI_SHY_GUY_FLOWERS          1183 // Project Grounded: Yoshi's Island, bloemenveld, flowerpower
 // }
 
 // coronet { (tools/grounded/maptools/coronet.py; id 1057-1059, 1068, 1069, 1082-1088)

@@ -5961,6 +5961,36 @@
       "secondary_tileset": "gTileset_CoronetSnow",
       "border_filepath": "data/layouts/SpearPillar/border.bin",
       "blockdata_filepath": "data/layouts/SpearPillar/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_JUNGLE",
+      "name": "YoshisIsland_Jungle_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiJungle",
+      "border_filepath": "data/layouts/YoshisIsland_Jungle/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Jungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_CAVE",
+      "name": "YoshisIsland_Cave_Layout",
+      "width": 24,
+      "height": 17,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiCave",
+      "border_filepath": "data/layouts/YoshisIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_FLOWERS",
+      "name": "YoshisIsland_Flowers_Layout",
+      "width": 36,
+      "height": 30,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiFlowers",
+      "border_filepath": "data/layouts/YoshisIsland_Flowers/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Flowers/map.bin"
     }
   ]
 }

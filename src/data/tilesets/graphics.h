@@ -3055,3 +3055,69 @@ const u16 gTilesetPalettes_CoronetSnow[][16] =
     INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/15.gbapal"),
 };
+
+// Project Grounded: Yoshi's Island: Jungle (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiJungle[] = INCBIN_U32("data/tilesets/secondary/yoshi_jungle/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiJungle[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_jungle/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: Cave (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiCave[] = INCBIN_U32("data/tilesets/secondary/yoshi_cave/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiCave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_cave/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: Flowers (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiFlowers[] = INCBIN_U32("data/tilesets/secondary/yoshi_flowers/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiFlowers[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/15.gbapal"),
+};

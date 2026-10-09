@@ -115,6 +115,28 @@ YoshisIsland_Beach_EventScript_Sign::
 	msgbox YoshisIsland_Beach_Text_Sign, MSGBOX_SIGN
 	end
 
+YoshisIsland_Beach_EventScript_Movement_CloudPop:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+YoshisIsland_Beach_EventScript_Cloud::
+	lock
+	playse SE_BALLOON_RED
+	applymovement LOCALID_YI_BEACH_CLOUD, YoshisIsland_Beach_EventScript_Movement_CloudPop
+	waitmovement 0
+	removeobject LOCALID_YI_BEACH_CLOUD
+	setflag FLAG_ITEM_YOSHIS_ISLAND_BEACH_SHALOUR_SABLE
+	playse SE_BALLOON_BLUE
+	msgbox YoshisIsland_Beach_Text_Cloud, MSGBOX_DEFAULT
+	giveitem ITEM_SHALOUR_SABLE, 2
+	release
+	end
+
+YoshisIsland_Beach_EventScript_MsgBlock::
+	msgbox YoshisIsland_Beach_Text_MsgBlock, MSGBOX_SIGN
+	end
+
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 YoshisIsland_Beach_Text_Arrival1:
 	.string "Something went wrong.\p"
@@ -194,3 +216,19 @@ YoshisIsland_Beach_Text_Sign:
 	.string "temporarily.\l"
 	.string "Please do not eat the scenery. (Yoshis\l"
 	.string "excepted.)$"
+
+YoshisIsland_Beach_Text_Cloud:
+	.string "POP! The ? CLOUD bursts. It was full of\n"
+	.string "biscuits.\p"
+	.string "Nobody knows how biscuits get into\n"
+	.string "clouds. Nobody on this island has ever\l"
+	.string "asked.$"
+
+YoshisIsland_Beach_Text_MsgBlock:
+	.string "MESSAGE BLOCK: Hi! I'm a MESSAGE BLOCK!\n"
+	.string "Hit me from below for a helpful hint!\p"
+	.string "MESSAGE BLOCK: ...you can't. This game is\n"
+	.string "top-down. Fine. The hint is free: the\l"
+	.string "pipe on the right goes to the jungle.\l"
+	.string "The jungle has a lake. The lake has a\l"
+	.string "YOSHI in it that is not a YOSHI.$"

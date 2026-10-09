@@ -137,6 +137,20 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TOXIC_PLATE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_YOSHIS_ISLAND_HILLS_TOXIC_PLATE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_QCLOUD",
+      "x": 16,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Hills_EventScript_StarCloud",
+      "flag": "FLAG_YI_STAR_CLOUD",
+      "local_id": "LOCALID_YI_STAR_CLOUD"
     }
   ],
   "warp_events": [

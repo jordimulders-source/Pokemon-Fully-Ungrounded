@@ -498,6 +498,18 @@ static const struct SpriteFrameImage sPicTable_WarioOw[] = { // Project Grounded
     overworld_ascending_frames(gObjectEventPic_WarioOw, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_PoochyOw[] = { // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_PoochyOw, 8, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_QCloudOw[] = { // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_QCloudOw, 8, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_NepEnutOw[] = { // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_NepEnutOw, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Gen1Ghost[] = { // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
     obj_frame_tiles(gObjectEventPic_Gen1Ghost),
 };

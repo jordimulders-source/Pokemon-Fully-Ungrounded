@@ -311,8 +311,11 @@
 #define OBJ_EVENT_GFX_YOSHI                             292 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_COMMANDER_BOO                     293 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_WARIO                             294 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_POOCHY                            295 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_QCLOUD                            296 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_NEP_ENUT                          297 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        295
+#define NUM_OBJ_EVENT_GFX                        298
 
 
 // These are dynamic object gfx ids.
@@ -477,6 +480,9 @@
 #define OBJ_EVENT_PAL_TAG_YOSHI                   0x1170 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_COMMANDER_BOO           0x1171 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_WARIO                   0x1172 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_QCLOUD                  0x1174 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_NEP_ENUT                0x1175 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_POOCHY                  0x1173 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)

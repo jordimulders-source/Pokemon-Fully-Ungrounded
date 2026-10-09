@@ -22,6 +22,8 @@ Klaar: FLAG_SPACETIME_YOSHI_DONE (FLAG_GROUNDED(580)). Flags FLAG_GROUNDED 1024-
 trainers 1017-1019, 1026-1029, 1049, 1055, 1056 (blok 'yoshis_island'), partner PARTNER_YOSHI.
 Idempotent; controleert de bereikbaarheid. Gebruik: python3 tools/grounded/maptools/yoshis_island.py [renderdir]"""
 # Levels: de levelcurve is leidend; check_levels zet bestaande levels terug (zie glimwood.py).
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
 import check_levels  # noqa: E402
 check_levels.protect()
 import json, math, os, re, struct, sys, zlib
@@ -54,7 +56,7 @@ exec(_src[_src.index('def to5('):_src.rindex('\nif TOWN:')], _ns)
 emit = _ns['emit']
 
 MB = dict(normal=0x00, tall_grass=0x02, pond=0x10, sand=0x21, b1f_warp=0x29, aqua_warp=0x67, door=0x60,
-          south_arrow=0x65, north_arrow=0x64, indoor=0x0B)
+          south_arrow=0x65, north_arrow=0x64, indoor=0x0B, cave=0x08)
 
 
 # ====================================================================== pixel-hulpjes
@@ -585,6 +587,7 @@ def objects():
     add('tulip_pink', tulip_art((232, 128, 168)), 1, 1, solid=[], shadow=False)
     add_facades(O)
     inside_objects(O)
+    sma3_objects(O)
     return O
 
 
@@ -650,7 +653,14 @@ class YMap:
             tc = tall_cell()
             for y, x in zip(*np.where(tall)):
                 stamp(cv, tc, x * 16, y * 16)
+        self._sky(cv, seed)
         self._plateaus(cv, seed)
+        if (T == 'J').any():
+            self._plateaus(cv, seed, ch='J', top=tex_canopy(), face=tex_trunks(), fr=FRJ, foot=TRK[2])
+        thorn = T == 'n'
+        if thorn.any():
+            for y, x in zip(*np.where(thorn)):
+                stamp(cv, thorn_cell((x + y) % 2), x * 16, y * 16)
         # objecten: eerst schaduwen, dan van boven naar onder (onderste staat ervoor)
         for name, x, y in sorted(self.objs, key=lambda o: o[2] + O[o[0]]['h']):
             o = O[name]
@@ -668,7 +678,7 @@ class YMap:
         # gedrag en botsing van het terrein
         self.beh[(T == 't') & (self.beh == 0)] = MB['tall_grass']
         self.beh[(T == 'w') & (self.beh == 0)] = MB['pond']
-        self.solid |= np.isin(T, list('HFv'))
+        self.solid |= np.isin(T, list('HFvJkn'))
         return cv
 
     def _shadow(self, cv, o, x, y):
@@ -689,11 +699,12 @@ class YMap:
         e = e[:sub.shape[0], :sub.shape[1]]
         sub[e, :3] = sub[e, :3] * 0.72
 
-    def _plateaus(self, cv, seed, face_rows=2):
+    def _plateaus(self, cv, seed, face_rows=2, ch='H', top=None, face=None, fr=FR, foot=PL[3]):
         """Plateaus ('H'): bovenkant met gele SMA3-franje langs de rand, onderaan een wand van `face_rows` cellen
         (lichtgroen met noppen) en een slagschaduw op de grond eronder."""
         T = self.T
-        Hr = T == 'H'
+        top_tex, face_tex = top, face
+        Hr = T == ch
         if not Hr.any():
             return
         H, W = cv.shape[:2]
@@ -706,25 +717,25 @@ class YMap:
                             face[y - k, x] = True
         self.face = face
         top = Hr & ~face
-        mH = sdist(Hr) + edge_noise(('plat', seed), H, W, 1.5) > 0.5
+        mH = sdist(Hr) + edge_noise(('plat', seed) if ch == 'H' else ('plat', seed, ch), H, W, 1.5) > 0.5
         sdt = sdist(top)
         bump = (tiled(np.dstack([vnoise(('franje', seed), P, 8)] * 4), H, W)[..., 0]) * 2.5
         topm = mH & (sdt > -0.5 + edge_noise(('pt', seed), H, W, 1.0) * 0)
         facem = mH & ~topm
-        cv[topm] = tiled(tex_plateau_top(), H, W)[topm]
-        cv[facem] = tiled(tex_face(), H, W)[facem]
+        cv[topm] = tiled(top_tex if top_tex is not None else tex_plateau_top(), H, W)[topm]
+        cv[facem] = tiled(face_tex if face_tex is not None else tex_face(), H, W)[facem]
         # franje: band langs de rand van de bovenkant
         band = topm & (sdt < 6.0 + bump)
         hi = tiled(np.dstack([vnoise(('fhi', seed), P, 8)] * 4), H, W)[..., 0]
-        cv[band] = rgba(FR[0])
-        cv[band & (hi > 0.6)] = rgba(FR[1])
-        cv[band & (hi > 0.8)] = rgba(FR[2])
-        cv[band & (hi < 0.3)] = rgba(FR[3])
-        cv[outline_of(band) & topm & ~outline_of(topm)] = rgba(FR[4])
+        cv[band] = rgba(fr[0])
+        cv[band & (hi > 0.6)] = rgba(fr[1])
+        cv[band & (hi > 0.8)] = rgba(fr[2])
+        cv[band & (hi < 0.3)] = rgba(fr[3])
+        cv[outline_of(band) & topm & ~outline_of(topm)] = rgba(fr[4])
         lower = np.zeros_like(mH)
         lower[:-3] = mH[3:]
-        cv[facem & ~lower] = rgba(PL[3])                      # donkere voet van de wand
-        cv[outline_of(mH)] = rgba(FR[5])
+        cv[facem & ~lower] = rgba(foot)                       # donkere voet van de wand
+        cv[outline_of(mH)] = rgba(fr[5])
         # schaduw op de grond onder de wand
         Y, X = np.mgrid[0:H, 0:W]
         shade = (dilate(mH, 3) & ~mH) & ((X + Y) % 2 == 0)
@@ -764,6 +775,9 @@ B_PIPE = (14, 5)                     # pijp naar de heuvels (2x2, onderste rij =
 B_GUARDS = [(14, 7), (15, 7)]        # twee Shy Guys versperren de pijp
 B_YOSHI = (13, 12)                   # Yoshi (na de aankomstscene staat hij hier tot hij vooruit rent)
 B_SIGN = (18, 12)
+B_JPIPE = (25, 10)                   # pijp naar de jungle (onderste rij = warp)
+B_MSG = (20, 14)                     # Message Block op het strand
+B_CLOUD = (12, 14)                   # ?-wolk (Shalour Sable)
 
 
 def beach_map():
@@ -796,7 +810,10 @@ def beach_map():
     m.put('qblock', 17, 9)
     m.put('sign', *B_SIGN)
     m.put('bush_tree', 11, 9); m.put('bush_tree', 24, 5); m.put('bush_tree', 5, 11)
-    m.put('mush_house', 25, 9)
+    m.put('mush_house', 23, 12)
+    m.put('pipe', *B_JPIPE)
+    m.put('msgblock', *B_MSG)
+    m.put('chomp_grey', 8, 15)
     for x, y in ((12, 11), (17, 7), (19, 10), (7, 12), (25, 12), (11, 7)):
         m.put('smiley', x, y)
     for x, y in ((13, 10), (16, 9), (22, 12), (4, 10), (10, 12)):
@@ -831,6 +848,15 @@ def build_tilesets(outdoor, indoor):
                 freq[k] = freq.get(k, 0) + 1
                 arr[k] = (a, b)
     keys = sorted(freq, key=lambda k: -freq[k])
+    # de heuvel-secondary zit tegen de 512 tiles aan: wat in de primary nog past, gaat daarheen (objectcellen van
+    # de heuvels, in kaartvolgorde)
+    spill = []
+    for m, cv, _, _ in outdoor:
+        if m.name == 'YoshisIsland_Hills':
+            for x, y, k, a, b in cell_list(m, cv):
+                if m.objmask[y, x] and k not in freq and k not in arr:
+                    arr[k] = (a, b); spill.append(k)
+    keys += spill
     n = min(len(keys), 480)
     while True:
         prim = [('p%d' % i, arr[k][0], None, arr[k][1]) for i, k in enumerate(keys[:n])]
@@ -839,7 +865,7 @@ def build_tilesets(outdoor, indoor):
             break
         except AssertionError as e:
             print('primary te vol (%s), minder cellen' % e)
-            n -= 24
+            n -= 8
     pid = {k: i for i, k in enumerate(keys[:n])}
     grids = {}
     for m, cv, sec_dir, sym in outdoor + indoor:
@@ -849,6 +875,14 @@ def build_tilesets(outdoor, indoor):
             if k not in pid and k not in oid:
                 oid[k] = len(own)
                 own.append(('s%d' % len(own), a, None, b))
+        m.extra_ids = {}
+        for (x, y), c in sorted(getattr(m, 'extra', {}).items()):     # losse varianten (de brug van de ?-wolk)
+            a = np.clip(c, 0, 255).astype(np.uint8).copy(); a[..., 3] = 255
+            k = (a.tobytes(), 0)
+            if k not in pid and k not in oid:
+                oid[k] = len(own)
+                own.append(('s%d' % len(own), a, None, 0))
+            m.extra_ids[(x, y)] = pid[k] if k in pid else 512 + oid[k]
         assert len(own) <= 512, (m.name, len(own))
         emit(own, sec_dir, 512, 6, 7, shared=res)
         g = np.zeros((m.H, m.W), int)
@@ -1040,6 +1074,7 @@ H_CAMP_B = [(12, 14), (12, 15)]      # bende B versperren het pad naar het spook
 H_YOSHI = (21, 18)
 H_PECHA = (34, 20)                   # Pecharunt achter zijn kraampje (kraam op 32-33, 19-20)
 H_SIGN = (22, 24)
+H_CLOUD = (16, 25)                   # ?-wolk: een sterrenregen (doet niets, zoals de meeste verzamelobjecten)
 
 
 def hills_map():
@@ -1344,6 +1379,381 @@ def wario_fort_map():
     return m
 
 
+# ====================================================================== uitbreiding: meer SMA3 (jungle, grot, bloemenveld)
+# Bronnen: sma3_objects.png (A.J. Nitro: Message Block, ?-wolken, Chomp Rocks, eierblokken, POW, kisten, GOAL!),
+# sma3_level1.png (p.k: krijttulpen, witte bloemetjes), sma3_backgrounds_a/b.png (jungle, kristalgrot).
+OBJ_BG = (165, 235, 255)          # lichtblauwe achtergrond van de objectensheet
+_SHEETS = {}
+
+
+def sma(box, name='sma3_objects.png', bg=OBJ_BG, largest=False):
+    if name not in _SHEETS:
+        _SHEETS[name] = sheet(name)
+    a = crop_obj(_SHEETS[name], box, bg)
+    if largest:
+        a = keep_largest(a)
+    return trim(a)
+
+
+# jungle: bladerdak (bovenkant van 'J'), lianenfranje en stammenwand
+JT = hexs('2c5428', '3c7030', '64a040', '9cd060', '142810', 'f088a8', 'fff0f8')
+FRJ = hexs('78b840', 'a8d860', 'd8f498', '4c8c30', '284c18', '0c1c08')
+TRK = hexs('a86c34', 'd8a050', '603818', '2c1c10', 'f0c878', '1c3020')
+
+
+def tex_canopy():
+    """Bovenkant van een junglewand: dichte bladerclusters (zoals de SMA3-junglebomen) met roze bloemetjes."""
+    t = np.zeros((P, P, 4)); t[...] = rgba(JT[0])
+    r = rng('bladerdak')
+    ys, xs = np.mgrid[0:P, 0:P]
+    pts = [(r.uniform(0, P), r.uniform(0, P), r.uniform(3.6, 5.6)) for _ in range(16)]
+    for cx, cy, rad in sorted(pts, key=lambda p: p[1]):
+        for ox in (-P, 0, P):
+            for oy in (-P, 0, P):
+                d2 = ((xs - cx - ox) * 0.8) ** 2 + ((ys - cy - oy) * 1.2) ** 2
+                m = d2 <= rad * rad
+                if not m.any():
+                    continue
+                t[m] = rgba(JT[1])
+                t[m & (d2 <= (rad * 0.6) ** 2) & (ys - cy - oy < 0)] = rgba(JT[2])
+                t[m & (d2 <= (rad * 0.3) ** 2) & (ys - cy - oy < -1)] = rgba(JT[3])
+                t[m & (d2 > (rad - 1.0) ** 2) & (ys - cy - oy > 0)] = rgba(JT[4])
+    for (x, y) in ((7, 9), (23, 26)):
+        for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
+            t[(y + dy) % P, (x + dx) % P] = rgba(JT[5])
+        t[y, x] = rgba(JT[6])
+    return t
+
+
+def tex_trunks():
+    """Zijwand van een junglewand: dicht opeen staande stammen met schors (uit de SMA3-junglebomen, bg-b)."""
+    t = np.zeros((P, P, 4)); t[...] = rgba(TRK[5])
+    for x0, w in ((1, 11), (17, 12)):
+        t[:, x0:x0 + w] = rgba(TRK[0])
+        t[:, x0 + 1:x0 + 4] = rgba(TRK[1])
+        t[:, x0 + 2:x0 + 3] = rgba(TRK[4])
+        t[:, x0 + w - 3:x0 + w] = rgba(TRK[2])
+        t[:, x0] = rgba(TRK[3]); t[:, x0 + w - 1] = rgba(TRK[3])
+        r = rng('schors', x0)
+        for _ in range(5):
+            y = r.integers(0, P); xx = x0 + r.integers(3, w - 3)
+            t[y % P, xx] = rgba(TRK[2]); t[(y + 1) % P, xx] = rgba(TRK[2]); t[(y + 2) % P, xx + 1] = rgba(TRK[2])
+        for y in (5, 21):                       # knoesten zoals op de bron
+            t[y:y + 3, x0 + w // 2 - 1:x0 + w // 2 + 2] = rgba(TRK[2])
+            t[y + 1, x0 + w // 2] = rgba(TRK[4])
+    return t
+
+
+# lucht onder het bloemenveld (de 'k'-kloof): blauw met wolkenrand
+SKY = hexs('b0dcf8', 'c4e6fc', 'e0f2fe', '88bce8', 'ffffff', 'e8f4fc', '4878b8')
+
+
+def tex_sky():
+    t = crayon(SKY[0], [SKY[1], SKY[1], SKY[2]], 'lucht', n=14, lmin=3, lmax=6)
+    r = rng('wolkjes')
+    ys, xs = np.mgrid[0:P, 0:P]
+    for _ in range(3):                          # kleine wolkjes diep beneden
+        cx, cy = r.uniform(4, 28), r.uniform(4, 28)
+        for k, (dx, rr) in enumerate(((-3, 2.6), (0, 3.4), (3.5, 2.6))):
+            m = ((xs - cx - dx) ** 2 + ((ys - cy) * 1.3) ** 2) <= rr * rr
+            t[m] = rgba(SKY[5])
+            t[m & (ys < cy - 1)] = rgba(SKY[4])
+    return t
+
+
+def thorn_cell(var=0):
+    """Doornstruik (SMA3-doorns): donkergroene ranken met witte stekels; vast, alleen Poochy loopt erdoor."""
+    a = np.zeros((16, 16, 4))
+    G = hexs('183818', '2c5c28', '4c8c3c', '0c180c', 'f8f8f0', 'c03048')
+    ys, xs = np.mgrid[0:16, 0:16]
+    for k, (cx, cy, rr) in enumerate(((4, 9, 4.6), (11, 6, 4.4), (9, 12, 4.0), (1, 3, 3.0), (15, 14, 3.0))):
+        if var and k == 3:
+            cx, cy = 13, 1
+        m = ((xs - cx) ** 2 + (ys - cy) ** 2) <= rr * rr
+        a[m] = rgba(G[1])
+        a[m & (ys < cy - 1) & (xs < cx + 1)] = rgba(G[2])
+        a[m & (ys > cy + rr * 0.4)] = rgba(G[0])
+    m = a[..., 3] > 0
+    a[outline_of(m)] = rgba(G[3])
+    r = rng('stekels', var)
+    for _ in range(9):                           # stekels: wit puntje met donkere voet
+        y, x = r.integers(1, 15, 2)
+        if m[y, x]:
+            a[y, x] = rgba(G[4])
+            a[min(15, y + 1), x] = rgba(G[3])
+    for (x, y) in ((6, 4), (12, 11)):            # rode besjes
+        if m[y, x]:
+            a[y, x] = rgba(G[5])
+    return a
+
+
+def bridge_art(h_cells):
+    """Verticale brug van gestippelde SMA3-vlotjes (de groene 'flatbed ferry', gedraaid), 2 cellen breed."""
+    f = sma((173, 524, 225, 536))                # 52x12 groen vlot
+    f = np.rot90(f, 1).copy()                    # 12x52, verticaal
+    a = np.zeros((h_cells * 16, 32, 4))
+    y = 0
+    while y < h_cells * 16:
+        seg = f[:min(48, h_cells * 16 - y)]
+        for dx in (3, 17):
+            stamp(a, seg, dx, y)
+        y += 48 - 4
+    a[:, 15:17] = rgba((120, 72, 32))           # touw tussen de twee rijen vlotjes
+    return a
+
+
+def cave_mouth_art():
+    """Grotingang (2x2) in SMA3-stijl: ronde keienboog uit de kasteelstenen, zwart gat, deur in de onderste rij."""
+    a = np.zeros((32, 32, 4))
+    ys, xs = np.mgrid[0:32, 0:32]
+    cob = tiled(tex_cobble(seed='grotboog', w=64, h=32, cols=hexs('3c3c48', '5c5c6c', '7c7c90', '9c9cb0', '18181c', 'b0b0c8')), 32, 32)
+    arch = (((xs - 15.5) / 15.5) ** 2 + ((ys - 20) / 19.0) ** 2 <= 1) | ((ys >= 20) & (np.abs(xs - 15.5) <= 15.5))
+    a[arch] = cob[arch]
+    hole = (((xs - 15.5) / 9.5) ** 2 + ((ys - 20) / 13.0) ** 2 <= 1) | ((ys >= 20) & (np.abs(xs - 15.5) <= 9.5))
+    a[hole] = rgba((8, 8, 16))
+    a[hole & (ys < 14)] = rgba((24, 24, 40))
+    m = a[..., 3] > 0
+    a[outline_of(m) & ~hole] = rgba((8, 8, 12))
+    return a
+
+
+def mushroom_art():
+    """SMA3-paddenstoelplatform (2x2): rode hoed met witte stippen op een beige steel."""
+    a = np.zeros((32, 32, 4))
+    ys, xs = np.mgrid[0:32, 0:32]
+    stem = (ys >= 14) & (np.abs(xs - 15.5) <= 5.5)
+    a[stem] = rgba((240, 216, 168)); a[stem & (xs > 17)] = rgba((208, 176, 120))
+    cap = (((xs - 15.5) / 15.0) ** 2 + ((ys - 12) / 10.0) ** 2 <= 1) & (ys <= 16)
+    a[cap] = rgba((216, 48, 40)); a[cap & (ys < 6)] = rgba((240, 104, 88))
+    for (cx, cy, rr) in ((9, 8, 2.6), (20, 6, 2.2), (16, 12, 2.4), (25, 12, 1.8), (6, 13, 1.6)):
+        a[cap & (((xs - cx) ** 2 + (ys - cy) ** 2) <= rr * rr)] = rgba((248, 248, 240))
+    a[(ys >= 15) & (ys <= 16) & cap] = rgba((150, 24, 24))
+    m = a[..., 3] > 0
+    a[outline_of(m)] = rgba((40, 12, 8))
+    return a
+
+
+def goal_art():
+    """GOAL! uit de objectensheet (de letters van het eind van elk SMA3-level), 12x3 cellen."""
+    boxes = ((5, 1585, 41, 1633), (46, 1585, 84, 1633), (89, 1585, 126, 1633), (131, 1585, 166, 1633), (171, 1586, 184, 1633))
+    parts = [sma(b) for b in boxes]
+    W_ = sum(p.shape[1] for p in parts) + 3 * (len(parts) - 1)
+    a = np.zeros((48, W_, 4))
+    x = 0
+    for p_ in parts:
+        stamp(a, p_, x, 48 - p_.shape[0]); x += p_.shape[1] + 3
+    return a
+
+
+def message_block_art():
+    return sma((47, 454, 63, 470))
+
+
+def sma3_objects(O):
+    def add(name, spr, w, h, solid=None, beh=None, ay='b', shadow=True, dy=0):
+        a = pad_cells(spr, w, h, 'c', ay, 0, dy)
+        if solid is None:
+            solid = [(i, j) for i in range(w) for j in range(h)]
+        O[name] = dict(art=a, w=w, h=h, solid=set(solid), beh=beh or {}, shadow=shadow)
+    L1 = 'sma3_level1.png'
+    add('msgblock', message_block_art(), 1, 1)                       # het blije blok = bordje
+    add('eggblock', sma((5, 389, 21, 405)), 1, 1)                    # eierblok (groen)
+    add('eggblock_red', sma((5, 410, 21, 426)), 1, 1)
+    add('switch_red', sma((173, 498, 193, 519)), 2, 2, solid=[(0, 1), (1, 1)])
+    add('crate', sma((93, 438, 124, 466)), 2, 2)
+    add('stake', sma((94, 385, 124, 433)), 2, 3, solid=[(0, 2), (1, 2), (0, 1), (1, 1)])
+    add('chomp_grey', sma((5, 1066, 37, 1098)), 2, 2)                 # Chomp Rocks (rotsen met gezichtjes)
+    add('chomp_brown', sma((42, 1066, 74, 1098)), 2, 2)
+    add('pow', sma((126, 975, 158, 1003)), 2, 2)
+    add('qpot', sma((192, 1067, 220, 1098)), 2, 2)
+    add('bluerock', sma((5, 1190, 37, 1222)), 2, 2)
+    add('pinkrock', sma((5, 1227, 37, 1259)), 2, 2)
+    add('flowerpot', sma((5, 725, 36, 775)), 2, 4, solid=[(0, 3), (1, 3), (0, 2), (1, 2)])
+    bs = sma((194, 653, 226, 685))
+    add('bigsmiley', trim(key_out(bs, tuple(bs[0, 0, :3]), 40)), 2, 2)          # zonnebloem zonder haar vierkantje
+    add('smiley_big2', sma((5, 780, 37, 812)), 2, 2)
+    add('piranha_tulip', sma((47, 698, 63, 721)), 1, 2, solid=[(0, 1)])
+    add('tulip_big', sma((19, 523, 51, 555), L1, (255, 255, 255)), 2, 2)
+    add('tulip_big2', sma((64, 522, 96, 552), L1, (255, 255, 255)), 2, 2)
+    add('whiteflowers', sma((108, 532, 123, 546), L1, (255, 255, 255)), 1, 1, solid=[], shadow=False)
+    add('whiteflowers2', sma((136, 530, 152, 546), L1, (255, 255, 255)), 1, 1, solid=[], shadow=False)
+    add('lizard', sma((239, 529, 255, 543), L1, (255, 255, 255)), 1, 1, solid=[], shadow=False)
+    add('goal', goal_art(), 12, 3)
+    add('cave_mouth', cave_mouth_art(), 2, 2, solid=[(0, 0), (1, 0)], beh={(0, 1): MB['door'], (1, 1): MB['door']},
+        shadow=False)
+    add('mushroom', mushroom_art(), 2, 2)
+    # het oude houten bordje wordt overal een Message Block
+    O['sign'] = O['msgblock']
+
+
+def _sky(self, cv, seed):
+    """'k': de lucht onder het bloemenveld (je staat op de wolken). Rand = witte wolkenfranje, daarbinnen diep blauw."""
+    T = self.T
+    sky = T == 'k'
+    if not sky.any():
+        return
+    H, W = cv.shape[:2]
+    sd = sdist(sky) + edge_noise(('lucht', seed), H, W, 2.5)
+    m = sd > 0.5
+    cv[m] = tiled(tex_sky(), H, W)[m]
+    hi = tiled(np.dstack([vnoise(('wolkrand', seed), P, 8)] * 4), H, W)[..., 0]
+    band = m & (sd < 5.0 + hi * 3)
+    cv[band] = rgba(SKY[4])
+    cv[band & (hi < 0.35)] = rgba(SKY[5])
+    cv[outline_of(band) & m & ~outline_of(m)] = rgba(SKY[2])
+    cv[outline_of(m)] = rgba(SKY[6])
+
+
+YMap._sky = _sky
+
+
+# ====================================================================== kaart 5: de jungle (via de pijp oost op het strand)
+JW, JH = 40, 30
+J_PIPE = (19, 25)                    # pijp terug naar het strand (onderste rij = warp)
+J_PIPE2 = (35, 15)                   # pijp naar het bloemenveld
+J_CAVE = (19, 2)                     # grotingang 2x2, deuren in de onderste rij (19-20, 3)
+J_POOCHY = (10, 8)                   # Poochy staat op de oostelijkste doorn (T1); de rit gaat over rij 8
+J_THORN = (8, 10, 8)                 # doorns x 8-10 op rij 8 (T0, T1, rij)
+J_NEP = (32, 11)                     # Nep-Enut op de oever van het meertje
+J_SHY = (21, 15)                     # Shy Guy-trainer naast het pad
+J_CLOUD = (4, 10)                    # ?-wolk in het verborgen bosje
+J_MSG = [(17, 23), (13, 9), (26, 13)]
+
+
+def jungle_map():
+    m = YMap('YoshisIsland_Jungle', JW, JH)
+    m.rect(0, 0, JW - 1, 4, 'J'); m.rect(0, 0, 1, JH - 1, 'J'); m.rect(JW - 2, 0, JW - 1, JH - 1, 'J')
+    m.rect(0, JH - 2, JW - 1, JH - 1, 'J')
+    # verborgen bosje (west), alleen via de doorns met Poochy
+    m.rect(7, 5, 12, 7, 'J'); m.rect(7, 9, 12, 14, 'J'); m.rect(2, 13, 12, 14, 'J')
+    t0, t1, ty = J_THORN
+    m.rect(t0, ty, t1, ty, 'n')
+    # meertje (noordoost) met zandoever; de jungle sluit het af
+    m.rect(22, 5, 26, 9, 'J')
+    m.rect(27, 11, 37, 13, 's')
+    m.rect(27, 5, 37, 10, 'w')
+    # middenblokken voor wat reliëf
+    m.rect(8, 15, 11, 16, 'J'); m.rect(26, 15, 29, 16, 'J')
+    # grotingang in de noordwand
+    m.rect(J_CAVE[0], J_CAVE[1] + 1, J_CAVE[0] + 1, 4, 'p')
+    # paden
+    m.rect(19, 5, 20, 24, 'p'); m.rect(12, 8, 18, 8, 'p'); m.rect(21, 18, 34, 18, 'p'); m.rect(33, 14, 34, 17, 'p')
+    # hoog gras
+    m.rect(3, 17, 15, 24, 't'); m.rect(22, 20, 31, 25, 't'); m.rect(13, 10, 17, 13, 't'); m.rect(30, 21, 36, 24, 't')
+    m.rect(3, 6, 5, 7, 't')
+    # objecten
+    m.put('pipe', *J_PIPE); m.put('pipe', *J_PIPE2)
+    m.put('cave_mouth', *J_CAVE)
+    for x, y in ((3, 15), (17, 15), (23, 15), (35, 19), (17, 25), (33, 25)):    # zelfde pariteit: ontdubbelt
+        m.put('palm', x, y)
+    m.put('chomp_brown', 12, 18)
+    m.put('tulip_big', 6, 25); m.put('tulip_big', 27, 26)
+    m.put('piranha_tulip', 18, 10); m.put('piranha_tulip', 21, 6); m.put('piranha_tulip', 2, 9)
+    m.put('crate', 22, 10); m.put('stake', 15, 5)
+    m.put('eggblock', 18, 6)
+    for x, y in J_MSG:
+        m.put('msgblock', x, y)
+    for x, y in ((18, 13), (21, 23), (16, 17), (34, 13), (5, 11), (28, 13), (21, 4)):
+        m.put('smiley', x, y)
+    for x, y in ((18, 21), (21, 20), (3, 12), (30, 12), (17, 19)):
+        m.put('whiteflowers' if (x + y) % 2 else 'whiteflowers2', x, y)
+    m.put('lizard', 25, 17)
+    return m
+
+
+# ====================================================================== kaart 6: Shy Guy-kristalgrot (achter de grotingang in de jungle)
+CW, CH = 24, 17
+C_EXIT = (11, 16)
+C_SHY = (16, 12)
+C_MSG = (10, 5)
+
+
+def crystal_wall(cv, wl):
+    bg = sheet('sma3_backgrounds_a.png')
+    tex = bg[462:462 + 48, 6:262].copy(); tex[..., 3] = 255       # kristalgrot (bg-a, rij 2), periode 256 px
+    ys, xs = np.where(wl)
+    y0 = ys.min()
+    cv[wl] = tex[(ys - y0) % 48, xs % 256]
+
+
+CAVE_FLOOR = hexs('34303c', '4c4658', '686078', '201c28', '8c84a0', 'a8a0c0')
+
+
+def cave_map():
+    m = Inside('YoshisIsland_Cave', CW, CH, tex_cobble(seed='grotvloer', cols=CAVE_FLOOR), crystal_wall, CAVE_FLOOR)
+    m.rect(1, 1, CW - 2, 3, 'W')
+    m.rect(1, 4, CW - 2, 15, 'f')
+    m.T[C_EXIT[1], C_EXIT[0]] = 'x'
+    # kristalblokken en Chomp Rocks als pilaren
+    m.put('bluerock', 5, 8); m.put('pinkrock', 15, 7); m.put('bluerock', 8, 12); m.put('chomp_grey', 17, 7)
+    m.put('chomp_grey', 2, 5); m.put('chomp_brown', 19, 9)
+    m.put('bluerock', 20, 4); m.put('pinkrock', 2, 13); m.put('bluerock', 12, 9)
+    m.put('eggblock', 13, 4); m.put('eggblock_red', 14, 4)
+    m.put('qpot', 4, 4)
+    m.put('msgblock', *C_MSG)
+    m.put('pow', 20, 13)
+    m.put('torch', 6, 3); m.put('torch', 17, 3)
+    return m
+
+
+# ====================================================================== kaart 7: het bloemenveld boven de wolken (via de jungle)
+FW, FH = 36, 30
+F_PIPE = (17, 25)
+F_BRIDGE = (17, 11, 4)               # x (2 breed), bovenste rij, hoogte in rijen
+F_BRIDGE_CLOUD = (20, 15)
+F_CLOUD = (27, 18)
+F_SHY = (9, 20)
+F_MSG = [(15, 24), (15, 8), (21, 16)]
+F_SWITCH = (28, 23)
+
+
+def flowers_map():
+    m = YMap('YoshisIsland_Flowers', FW, FH)
+    m.rect(0, 0, FW - 1, 1, 'k'); m.rect(0, 0, 1, FH - 1, 'k'); m.rect(FW - 2, 0, FW - 1, FH - 1, 'k')
+    m.rect(0, FH - 2, FW - 1, FH - 1, 'k')
+    bx, by, bh = F_BRIDGE
+    m.rect(0, by, FW - 1, by + bh - 1, 'k')                   # de kloof (de brug verschijnt via de ?-wolk)
+    # golvende wolkenranden
+    for x, y in ((2, 2), (3, 2), (33, 3), (2, 27), (32, 27), (10, 10), (11, 10), (26, 15), (27, 15)):
+        m.T[y, x] = 'k'
+    # paden
+    m.rect(17, 15, 18, 24, 'p'); m.rect(17, 6, 18, 10, 'p'); m.rect(10, 8, 25, 9, 'p')
+    m.rect(8, 22, 16, 22, 'p'); m.rect(19, 19, 28, 19, 'p')
+    # hoog gras (bloemenweide)
+    m.rect(3, 16, 12, 20, 't'); m.rect(22, 21, 31, 25, 't'); m.rect(4, 23, 13, 26, 't'); m.rect(26, 3, 31, 6, 't')
+    m.put('pipe', *F_PIPE)
+    m.put('goal', 12, 2)
+    m.put('flowerpot', 5, 3)
+    m.put('bigsmiley', 3, 7); m.put('smiley_big2', 29, 8)
+    m.put('tulip_big', 8, 6); m.put('tulip_big2', 24, 5)
+    m.put('mushroom', 23, 15)
+    m.put('tulip_big', 13, 16)
+    m.put('eggblock', 13, 19); m.put('eggblock_red', 24, 17)
+    m.put('switch_red', *F_SWITCH)
+    for x, y in F_MSG:
+        m.put('msgblock', x, y)
+    for x, y in ((16, 17), (19, 21), (11, 23), (25, 20), (20, 7), (9, 9), (27, 9), (14, 6), (6, 18), (31, 20)):
+        m.put('smiley', x, y)
+    for x, y in ((16, 20), (19, 24), (12, 7), (23, 8)):
+        m.put('whiteflowers' if (x + y) % 2 else 'whiteflowers2', x, y)
+    for x, y in ((16, 21), (20, 22), (19, 7)):
+        m.put('tulip' if (x + y) % 2 else 'tulip_pink', x, y)
+    return m
+
+
+def bridge_cells(m, cv):
+    """De brugcellen (los getekend over de kloof) -> {(x, y): 16x16 RGBA}; die gaan als extra metatiles in de
+    secondary van het bloemenveld, setmetatile zet ze neer als de ?-wolk knapt."""
+    bx, by, bh = F_BRIDGE
+    cv2 = cv.copy()
+    stamp(cv2, bridge_art(bh + 2), bx * 16, (by - 1) * 16)    # loopt een halve cel door op de oevers
+    out = {}
+    for y in range(by, by + bh):
+        for x in (bx, bx + 1):
+            out[(x, y)] = cv2[y * 16:y * 16 + 16, x * 16:x * 16 + 16]
+    return out
+
+
 # ====================================================================== flags (FLAG_GROUNDED 1024-1119)
 FLAGS = [
     (1024, 'FLAG_YI_ARRIVED', "Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)"),
@@ -1366,15 +1776,23 @@ FLAGS = [
     (1047, 'FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL', "Yoshi's Island spookhuis: Poke Doll"),
     (1048, 'FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW', "Yoshi's Island fort: Grip Claw"),
     (1049, 'FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR', "Yoshi's Island fort: Malicious Armor"),
+    (1050, 'FLAG_YI_NEP_ENUT_DONE', "Yoshi's Island jungle: Nep-Enut (de nep-blauwe Yoshi, een Dondozo) verslagen of gevangen"),
+    (1051, 'FLAG_YI_POOCHY_DUG', "Yoshi's Island jungle: Poochy heeft in het bosje iets opgegraven"),
+    (1052, 'FLAG_YI_BRIDGE_CLOUD', "Yoshi's Island bloemenveld: ?-wolk geknapt, de brug over de kloof ligt er"),
+    (1053, 'FLAG_YI_STAR_CLOUD', "Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt"),
+    (1054, 'FLAG_YI_POOCHY_MET', "Yoshi's Island jungle: Poochy leren kennen (korte uitleg alleen de eerste keer)"),
 ]
+NI_RANGE = (1060, 1069)   # items die nergens anders liggen: via nieuwe_items.py (eigen blok in flags.h)
 F_FIRST, F_LAST = 1024, 1119
 
 
 def flags():
     p = 'include/constants/flags.h'
     s = open(p).read()
-    blk = "// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED %d-%d, %d-%d nog vrij)\n" % (
-        F_FIRST, F_LAST, max(n for n, *_ in FLAGS) + 1, F_LAST)
+    blk = ("// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED %d-%d; %d-%d = nieuwe items "
+           "(blok nieuwe_items), %d-%d en %d-%d nog vrij)\n" % (F_FIRST, F_LAST, NI_RANGE[0], NI_RANGE[1],
+                                                               max(n for n, *_ in FLAGS) + 1, NI_RANGE[0] - 1,
+                                                               NI_RANGE[1] + 1, F_LAST))
     for n, name, why in FLAGS:
         assert F_FIRST <= n <= F_LAST
         blk += '#define %-52s FLAG_GROUNDED(%d) // Project Grounded: %s\n' % (name, n, why)
@@ -1412,17 +1830,34 @@ def mapsecs():
 
 
 # ====================================================================== wilde Pokemon (post-game, lv 91-93)
-WILD = {
+WILD = {  # levels per evolutiefase (v0.9.202): eindvormen 80-90, sterke soorten (BST >= 580) 90-94
     'YOSHIS_ISLAND_BEACH': dict(
-        land=(18, [('TROPIUS', 91, 93), ('EXEGGUTOR_ALOLA', 91, 93), ('BELLOSSOM', 91, 93), ('JUMPLUFF', 91, 93),
-                   ('TOUCANNON', 91, 93), ('CRAMORANT', 91, 93), ('ORICORIO_POM_POM', 91, 93), ('PALOSSAND', 91, 93),
-                   ('LUDICOLO', 92, 93), ('COMFEY', 92, 93), ('BRELOOM', 92, 93), ('SLAKING', 93, 93)]),
-        water=(4, [('SEAKING', 91, 93), ('PELIPPER', 91, 93), ('OCTILLERY', 91, 93), ('MANTINE', 92, 93),
-                   ('LAPRAS', 93, 93)])),
+        land=(18, [('TROPIUS', 86, 88), ('EXEGGUTOR_ALOLA', 88, 90), ('BELLOSSOM', 87, 89), ('JUMPLUFF', 84, 86),
+                   ('TOUCANNON', 86, 88), ('CRAMORANT', 85, 87), ('ORICORIO_POM_POM', 85, 87), ('PALOSSAND', 86, 88),
+                   ('LUDICOLO', 87, 88), ('COMFEY', 86, 87), ('BRELOOM', 85, 86), ('SLAKING', 93, 93)]),
+        water=(4, [('SEAKING', 87, 89), ('PELIPPER', 83, 85), ('OCTILLERY', 87, 89), ('MANTINE', 86, 87),
+                   ('LAPRAS', 89, 89)])),
     'YOSHIS_ISLAND_HILLS': dict(
-        land=(18, [('CARNIVINE', 91, 93), ('DUGTRIO', 91, 93), ('ELECTRODE', 91, 93), ('AMOONGUSS', 91, 93),
-                   ('DRIFBLIM', 91, 93), ('VILEPLUME', 91, 93), ('MR_MIME', 91, 93), ('LICKILICKY', 91, 93),
-                   ('MIMIKYU', 92, 93), ('MISMAGIUS', 92, 93), ('TOGEKISS', 92, 93), ('SNORLAX', 93, 93)])),
+        land=(18, [('CARNIVINE', 84, 86), ('DUGTRIO', 82, 84), ('ELECTRODE', 88, 90), ('AMOONGUSS', 85, 87),
+                   ('DRIFBLIM', 87, 89), ('VILEPLUME', 87, 89), ('MR_MIME', 84, 86), ('LICKILICKY', 88, 90),
+                   ('MIMIKYU', 85, 86), ('MISMAGIUS', 86, 87), ('TOGEKISS', 89, 90), ('SNORLAX', 89, 89)])),
+    # jungle: Ukiki-apen, Piranha-planten en junglekevers; het meertje heeft de vissen die Nep-Enut niet opat
+    'YOSHIS_ISLAND_JUNGLE': dict(
+        land=(18, [('AMBIPOM', 84, 86), ('PASSIMIAN', 84, 86), ('VICTREEBEL', 86, 88), ('LEAVANNY', 85, 87),
+                   ('LURANTIS', 84, 86), ('TANGROWTH', 87, 89), ('HERACROSS', 85, 87), ('ORANGURU', 84, 86),
+                   ('TSAREENA', 86, 88), ('SCOLIPEDE', 87, 89), ('RILLABOOM', 89, 90), ('DECIDUEYE', 89, 90)]),
+        water=(4, [('POLITOED', 85, 87), ('QUAGSIRE', 84, 86), ('ARAQUANID', 85, 87), ('BARRASKEWDA', 86, 88),
+                   ('SWAMPERT', 89, 90)])),
+    # kristalgrot: Fang-vleermuizen, Chomp Rocks en de mijnwerkers van de Shy Guys
+    'YOSHIS_ISLAND_CAVE': dict(
+        land=(10, [('CROBAT', 86, 88), ('SWOOBAT', 84, 86), ('GOLEM', 87, 89), ('GIGALITH', 86, 88),
+                   ('CRUSTLE', 84, 86), ('PROBOPASS', 86, 88), ('SABLEYE', 84, 86), ('MAWILE', 84, 86),
+                   ('EXCADRILL', 87, 89), ('BRONZONG', 86, 88), ('NOIVERN', 89, 90), ('GARGANACL', 89, 90)])),
+    # bloemenveld boven de wolken
+    'YOSHIS_ISLAND_FLOWERS': dict(
+        land=(18, [('FLORGES', 86, 88), ('LILLIGANT', 85, 87), ('WHIMSICOTT', 84, 86), ('BEAUTIFLY', 82, 84),
+                   ('VESPIQUEN', 84, 86), ('RIBOMBEE', 84, 86), ('SAWSBUCK', 85, 87), ('GOGOAT', 85, 87),
+                   ('ALTARIA', 86, 88), ('CASTFORM', 82, 84), ('MEGANIUM', 89, 90), ('ARBOLIVA', 89, 90)])),
 }
 
 
@@ -1487,6 +1922,21 @@ def trainer_data():
             m('Muk_Alola @ Assault Vest', 96, ['Knock Off', 'Poison Jab', 'Drain Punch', 'Ice Punch'], 'Poison Touch'),
             m('Hariyama @ Choice Band', 97, ['Close Combat', 'Headlong Rush', 'Knock Off', 'Bullet Punch'])],
          None, 'fort, eindbaas'),
+        # gewone Shy Guy-trainers (Jordi: Shy Guys worden trainers); ze praten nog steeds niet
+        ('YI_SHY_GUY_JUNGLE', 1109, 'JUNGLE GUY', 'Shy Squad', SHY_PICS['green'], 'Suspicious', AI, None, [
+            m('Ambipom', 93, ['Fake Out', 'Double Hit', 'U-turn', 'Knock Off']),
+            m('Lurantis', 93, ['Leaf Blade', 'X-Scissor', 'Superpower', 'Swords Dance']),
+            m('Toucannon', 93, ['Beak Blast', 'Bullet Seed', 'Rock Blast', 'Roost'])], 'green', 'jungle, naast het pad'),
+        ('YI_SHY_GUY_CAVE', 1129, 'MINER GUY', 'Shy Squad', SHY_PICS['black'], 'Suspicious', AI, None, [
+            m('Excadrill', 93, ['Earthquake', 'Iron Head', 'Rock Slide', 'Swords Dance']),
+            m('Gigalith', 93, ['Stone Edge', 'Heavy Slam', 'Earthquake', 'Stealth Rock']),
+            m('Crobat', 93, ['Brave Bird', 'Cross Poison', 'U-turn', 'Roost'])], 'black', 'kristalgrot, mijnwerker'),
+        ('YI_SHY_GUY_FLOWERS', 1183, 'GROOVY GUY', 'Shy Squad', SHY_PICS['pink'], 'Suspicious', AI, None, [
+            m('Florges', 93, ['Moonblast', 'Petal Blizzard', 'Calm Mind', 'Synthesis']),
+            m('Altaria', 93, ['Dragon Pulse', 'Moonblast', 'Hurricane', 'Roost']),
+            m('Whimsicott', 93, ['Moonblast', 'Energy Ball', 'Tailwind', 'Encore']),
+            m('Lilligant', 94, ['Petal Dance', 'Quiver Dance', 'Sleep Powder', 'Hurricane'])], 'pink',
+         'bloemenveld, flowerpower'),
     ]
     TRAINERS[:] = T
     return T
@@ -1536,37 +1986,38 @@ Music: Twins
 Back Pic: Yoshi
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Lickilicky @ Leftovers
+Dracovish @ Choice Band
 Level: 93
-Ability: Own Tempo
+Ability: Strong Jaw
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
-- Body Slam
-- Power Whip
-- Knock Off
-- Helping Hand
+- Fishious Rend
+- Psychic Fangs
+- Crunch
+- Dragon Rush
 
-Tropius @ Sitrus Berry
+Tyrantrum @ Life Orb
 Level: 93
-Ability: Harvest
+Ability: Strong Jaw
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
-- Leaf Blade
-- Dragon Hammer
-- Earthquake
-- Synthesis
+- Rock Slide
+- Dragon Claw
+- Crunch
+- Dragon Dance
 
-Exeggutor_Alola @ Life Orb
+Gouging Fire @ Booster Energy
 Level: 94
-Nature: Brave
+Ability: Protosynthesis
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
-- Dragon Hammer
-- Wood Hammer
-- Egg Bomb
-- Flamethrower
+- Flare Blitz
+- Breaking Swipe
+- Stomping Tantrum
+- Morning Sun
 
 '''
 
@@ -1574,11 +2025,15 @@ EVs: 252 HP / 252 Atk / 4 SpD
 def partner():
     p = 'src/data/battle_partners.party'
     s = open(p).read()
-    if '=== PARTNER_YOSHI ===' not in s:
-        anchor = '/* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */'
+    anchor = '/* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */'
+    if '=== PARTNER_YOSHI ===' in s:                  # vervangen (team van Jordi, 9 okt)
+        i = s.index('=== PARTNER_YOSHI ===')
+        j = min(k for k in (s.find('\n=== ', i + 5), s.find(anchor, i)) if k > 0)
+        s = s[:i] + PARTNER.rstrip('\n') + '\n\n' + s[j:].lstrip('\n')
+    else:
         assert anchor in s
         s = s.replace(anchor, PARTNER + anchor, 1)
-        open(p, 'w').write(s)
+    open(p, 'w').write(s)
     p = 'include/constants/battle_partner.h'
     s = open(p).read()
     if 'PARTNER_YOSHI ' not in s:
@@ -1792,6 +2247,7 @@ YoshisIsland_Beach_OnFrame:
           "(The SHYER GUY hides behind the SHY GUY. Nobody was ready for this level of shyness.)")
     S.npc('Sign', "WELCOME TO YOSHI'S ISLAND\nPopulation: Yoshis. Also SHY GUYS, temporarily.\n"
                   "Please do not eat the scenery. (Yoshis excepted.)", 'MSGBOX_SIGN')
+    beach_extra(S)
     S.write()
 
 
@@ -1931,6 +2387,7 @@ def hills_scripts():
           "(The SNIFIT exhales. That was the whole plan.)")
     S.npc('Sign', "SHY GUY CAMP\nTrespassers will be stared at.\nUnmasking is strictly forbidden. "
                   "(Mostly because we lost the instructions.)", 'MSGBOX_SIGN')
+    hills_extra(S)
     S.write()
 
 
@@ -2050,6 +2507,268 @@ def fort_scripts():
     S.write()
 
 
+# ---------------------------------------------------------------- uitbreiding: ?-wolken, Message Blocks, Poochy, Nep-Enut
+def ni_items(mp):
+    """Items uit de centrale lijst (nieuwe_items.py) voor kaart mp: {item: (flag, aantal, verborgen)}."""
+    import nieuwe_items as ni
+    return {it: (fl, q, h) for fl, it, q, h in ni.items(mp)}
+
+
+CLOUD_MOVE = '''{P}Movement_CloudPop:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+'''
+
+
+def cloud(S, key, lid, flag, item=None, qty=1, text=''):
+    """?-wolk: aanspreken laat hem knappen (geluid, hupje, weg) en geeft een item of alleen een gebeurtenis."""
+    P, X = S.P, S.T
+    give = '\tgiveitem %s, %d\n' % (item, qty) if item else ''
+    S.raw(f'''{P}{key}::
+	lock
+	playse SE_BALLOON_RED
+	applymovement {lid}, {P}Movement_CloudPop
+	waitmovement 0
+	removeobject {lid}
+	setflag {flag}
+	playse SE_BALLOON_BLUE
+	msgbox {X}{key}, MSGBOX_DEFAULT
+{give}	release
+	end
+''', [(key, text)])
+
+
+def beach_extra(S):
+    P = S.P
+    sable = ni_items('YoshisIsland_Beach')['ITEM_SHALOUR_SABLE']
+    S.raw(CLOUD_MOVE.format(P=P))
+    cloud(S, 'Cloud', 'LOCALID_YI_BEACH_CLOUD', sable[0], 'ITEM_SHALOUR_SABLE', sable[1],
+          "POP! The ? CLOUD bursts. It was full of biscuits.\n\nNobody knows how biscuits get into clouds. "
+          "Nobody on this island has ever asked.")
+    S.npc('MsgBlock', "MESSAGE BLOCK: Hi! I'm a MESSAGE BLOCK! Hit me from below for a helpful hint!\n\n"
+                      "MESSAGE BLOCK: ...you can't. This game is top-down. Fine. The hint is free: the pipe on the "
+                      "right goes to the jungle. The jungle has a lake. The lake has a YOSHI in it that is not a "
+                      "YOSHI.", 'MSGBOX_SIGN')
+
+
+def hills_extra(S):
+    P = S.P
+    S.raw(CLOUD_MOVE.format(P=P))
+    cloud(S, 'StarCloud', 'LOCALID_YI_STAR_CLOUD', 'FLAG_YI_STAR_CLOUD', None, 0,
+          "POP! The ? CLOUD bursts into a shower of little stars.\n\nYou now have 1 STAR. Stars do nothing in this "
+          "game. You will carry it with you anyway. Like most collectibles.")
+
+
+def jungle_scripts():
+    S = bd.Scr('YoshisIsland_Jungle', "@ Project Grounded: Yoshi's Island, de jungle (tools/grounded/maptools/yoshis_island.py)\n"
+               'YoshisIsland_Jungle_MapScripts::\n\t.byte 0\n')
+    P, X = S.P, S.T
+    t0, t1, ty = J_THORN
+    k = t1 - t0 + 2
+    it = ni_items('YoshisIsland_Jungle')
+    dig, milk = it['ITEM_STRANGE_SOUVENIR'], it['ITEM_MOOMOO_MILK']
+    S.raw(f'''{P}Poochy::
+	lock
+	faceplayer
+	goto_if_set FLAG_YI_POOCHY_MET, {P}PoochyRide
+	setflag FLAG_YI_POOCHY_MET
+	msgbox {X}PoochyMeet, MSGBOX_DEFAULT
+{P}PoochyRide::
+	msgbox {X}PoochyRide, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	goto_if_gt VAR_TEMP_0, {t1}, {P}PoochyWest
+	applymovement LOCALID_YI_POOCHY, {P}Movement_PoochyEast
+	applymovement OBJ_EVENT_ID_PLAYER, {P}Movement_PlayerEast
+	waitmovement 0
+	fadescreenswapbuffers FADE_TO_BLACK
+	setobjectxyperm LOCALID_YI_POOCHY, {t1}, {ty}
+	setobjectxy LOCALID_YI_POOCHY, {t1}, {ty}
+	turnobject LOCALID_YI_POOCHY, DIR_EAST
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+{P}PoochyWest::
+	applymovement LOCALID_YI_POOCHY, {P}Movement_PoochyWest
+	applymovement OBJ_EVENT_ID_PLAYER, {P}Movement_PlayerWest
+	waitmovement 0
+	call_if_unset FLAG_YI_POOCHY_DUG, {P}PoochyDig
+	fadescreenswapbuffers FADE_TO_BLACK
+	setobjectxyperm LOCALID_YI_POOCHY, {t0}, {ty}
+	setobjectxy LOCALID_YI_POOCHY, {t0}, {ty}
+	turnobject LOCALID_YI_POOCHY, DIR_WEST
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+{P}PoochyDig::
+	applymovement LOCALID_YI_POOCHY, {P}Movement_PoochySniff
+	waitmovement 0
+	playse SE_M_DIG
+	msgbox {X}PoochyDig, MSGBOX_DEFAULT
+	giveitem {'ITEM_STRANGE_SOUVENIR'}, {dig[1]}
+	setflag FLAG_YI_POOCHY_DUG
+	setflag {dig[0]}
+	closemessage
+	return
+
+{P}Movement_PoochyEast:
+''' + '\twalk_fast_right\n' * k + f'''	step_end
+
+{P}Movement_PlayerEast:
+''' + '\twalk_fast_right\n' * k + f'''	step_end
+
+{P}Movement_PoochyWest:
+''' + '\twalk_fast_left\n' * k + f'''	step_end
+
+{P}Movement_PlayerWest:
+''' + '\twalk_fast_left\n' * k + f'''	step_end
+
+{P}Movement_PoochySniff:
+	face_down
+	jump_in_place_down
+	face_left
+	jump_in_place_left
+	step_end
+
+{P}NepEnut::
+	lock
+	faceplayer
+	msgbox {X}Nep1, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_YI_NEP_ENUT, {P}Movement_NepJump
+	waitmovement 0
+	playmoncry SPECIES_DONDOZO, CRY_MODE_ENCOUNTER
+	msgbox {X}Nep2, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_DONDOZO, 90
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, {P}NepGone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, {P}NepGone
+	msgbox {X}NepStill, MSGBOX_DEFAULT
+	release
+	end
+
+{P}NepGone::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_YI_NEP_ENUT
+	setflag FLAG_YI_NEP_ENUT_DONE
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox {X}NepGone, MSGBOX_DEFAULT
+	release
+	end
+
+{P}Movement_NepJump:
+	jump_in_place_down
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+''', [('PoochyMeet', "POOCHY: Ruff!\n\n(This dog's name is POOCHY. He's pretty cute, huh? He does not care about "
+                     "thorns. He has never cared about anything except running in the direction you are facing.)"),
+      ('PoochyRide', "POOCHY: RUFF RUFF! (Hitch a ride!)"),
+      ('PoochyDig', "(POOCHY sniffs the ground, digs like his life depends on it, and proudly drops something at "
+                    "your feet. It is a souvenir. Of what, nobody knows. POOCHY knows. POOCHY isn't telling.)"),
+      ('Nep1', "???: Yoshi!\n\n(A blue YOSHI waves at you from the shore. He has very big teeth. He has more teeth "
+               "than YOSHI. He has more teeth than most sharks.)"),
+      ('Nep2', "NEP-ENUT: YOSHIIIIIIII!!\n\n(That is not a YOSHI. That was never a YOSHI. It's NEP-ENUT, a DONDOZO in "
+               "a blue YOSHI costume that has been waiting at this lake for someone gullible to walk past.)"),
+      ('NepStill', "(NEP-ENUT climbs back into his costume and waves again, slightly less convincingly.)"),
+      ('NepGone', "(The blue YOSHI costume is lying empty on the shore. It is soaking wet. It smells like a whole "
+                  "lake.)")])
+    S.raw(CLOUD_MOVE.format(P=P))
+    cloud(S, 'Cloud', 'LOCALID_YI_JUNGLE_CLOUD', milk[0], 'ITEM_MOOMOO_MILK', milk[1],
+          "POP! The ? CLOUD bursts and it rains milk. Only on you.\n\nYou caught some of it in bottles. You had "
+          "bottles. You have always had bottles.")
+    S.trainer('ShyGuy', 'YI_SHY_GUY_JUNGLE',
+              "(The JUNGLE GUY has painted his mask green for camouflage. He is standing on a yellow path.)",
+              "(The JUNGLE GUY quietly unpaints his mask.)",
+              "(The JUNGLE GUY is pretending to be a bush. You are being polite about it.)")
+    S.npc('MsgEntrance', "MESSAGE BLOCK: Welcome to the jungle! We've got fun and games! Mostly games. Mostly "
+                         "SHY GUYS.\n\nMESSAGE BLOCK: Tip: the tall grass is level 91. It does not care about your "
+                         "feelings.", 'MSGBOX_SIGN')
+    S.npc('MsgThorns', "MESSAGE BLOCK: THORNS! YOSHIS can't walk on thorns. Trainers can't walk on thorns.\n\n"
+                       "MESSAGE BLOCK: POOCHY can walk on thorns. POOCHY can walk on anything. Science stopped "
+                       "asking.", 'MSGBOX_SIGN')
+    S.npc('MsgLake', "MESSAGE BLOCK: Please do not feed the blue YOSHI.\n\nMESSAGE BLOCK: There is no blue YOSHI. "
+                     "If you see a blue YOSHI, please re-read this sign.", 'MSGBOX_SIGN')
+    S.npc('EggBlock', "(An EGG BLOCK. You bonk it. An egg pops out, rolls into the jungle and is never seen again. "
+                      "EGG BLOCKS are like that.)", 'MSGBOX_SIGN')
+    S.write()
+
+
+def cave_scripts():
+    S = bd.Scr('YoshisIsland_Cave', "@ Project Grounded: Yoshi's Island, kristalgrot (tools/grounded/maptools/yoshis_island.py)\n"
+               'YoshisIsland_Cave_MapScripts::\n\t.byte 0\n')
+    S.trainer('ShyGuy', 'YI_SHY_GUY_CAVE',
+              "(The MINER GUY has a tiny lamp on his mask. He shines it in your eyes. On purpose.)",
+              "(The MINER GUY's lamp flickers out. He keeps it on his mask out of principle.)",
+              "(The MINER GUY is mining the same crystal he mined yesterday. It's a union thing.)")
+    S.npc('MsgBlock', "MESSAGE BLOCK: This crystal cave belongs to the SHY GUY MINING UNION.\n\nMESSAGE BLOCK: Hard "
+                      "hats required. Masks required. Faces strictly optional, and frankly discouraged.", 'MSGBOX_SIGN')
+    S.npc('EggBlock', "(Two EGG BLOCKS, a green one and a red one. They are not on speaking terms.)", 'MSGBOX_SIGN')
+    S.npc('Bucket', "(A ? BUCKET. You look inside. It's empty. The ? was a lie.)", 'MSGBOX_SIGN')
+    S.npc('Pow', "(A POW BLOCK. You think about it. You decide not to. The cave thanks you.)", 'MSGBOX_SIGN')
+    S.write()
+
+
+def flowers_scripts(m):
+    S = bd.Scr('YoshisIsland_Flowers', "@ Project Grounded: Yoshi's Island, het bloemenveld (tools/grounded/maptools/yoshis_island.py)\n"
+               'YoshisIsland_Flowers_MapScripts::\n'
+               '\tmap_script MAP_SCRIPT_ON_LOAD, YoshisIsland_Flowers_OnLoad\n\t.byte 0\n')
+    P, X = S.P, S.T
+    gal = ni_items('YoshisIsland_Flowers')['ITEM_LUMIOSE_GALETTE']
+    tiles = ''.join('\tsetmetatile %d, %d, 0x%03X, FALSE\n' % (x, y, mt) for (x, y), mt in sorted(m.extra_ids.items()))
+    S.raw(f'''YoshisIsland_Flowers_OnLoad:
+	call_if_set FLAG_YI_BRIDGE_CLOUD, {P}SetBridge
+	end
+
+{P}SetBridge::
+{tiles}	return
+
+{P}BridgeCloud::
+	lock
+	playse SE_BALLOON_RED
+	applymovement LOCALID_YI_BRIDGE_CLOUD, {P}Movement_CloudPop
+	waitmovement 0
+	removeobject LOCALID_YI_BRIDGE_CLOUD
+	setflag FLAG_YI_BRIDGE_CLOUD
+	playse SE_DING_DONG
+	call {P}SetBridge
+	special DrawWholeMapView
+	msgbox {X}BridgeCloud, MSGBOX_DEFAULT
+	release
+	end
+''', [('BridgeCloud', "POP! The ? CLOUD bursts and a row of little rafts unrolls across the gap, like a carpet "
+                      "that has been waiting its whole life for this.\n\nIt's a bridge now. Don't look down. "
+                      "Down is also clouds.")])
+    S.raw(CLOUD_MOVE.format(P=P))
+    cloud(S, 'Cloud', 'LOCALID_YI_FLOWERS_CLOUD', gal[0], 'ITEM_LUMIOSE_GALETTE', gal[1],
+          "POP! The ? CLOUD bursts and two galettes float down, still warm.\n\nThe sky bakes. Nobody told you the "
+          "sky bakes.")
+    S.trainer('ShyGuy', 'YI_SHY_GUY_FLOWERS',
+              "(The GROOVY GUY has a flower stuck in his mask. It's the 70s up here. It's always the 70s up here.)",
+              "(The GROOVY GUY gives you the flower. It wilts immediately. Bad vibes.)",
+              "(The GROOVY GUY is lying in the grass, watching the clouds. The clouds are below him. He has not "
+              "noticed.)")
+    S.npc('MsgEntrance', "MESSAGE BLOCK: FLOWER FIELD, ABOVE THE CLOUDS.\n\nMESSAGE BLOCK: Safety notice: the edges "
+                         "are clouds. Clouds are not floors. We have had complaints. Well. We had complaints.",
+          'MSGBOX_SIGN')
+    S.npc('MsgGoal', "MESSAGE BLOCK: Congratulations, you reached the GOAL!\n\nMESSAGE BLOCK: There is no bonus "
+                     "roulette. There is no score screen. There is a CHERISH BALL and a deep sense of closure.",
+          'MSGBOX_SIGN')
+    S.npc('MsgBridge', "MESSAGE BLOCK: No bridge? Pop the ? CLOUD!\n\nMESSAGE BLOCK: ? CLOUDS contain items, "
+                       "bridges or disappointment. The odds are not published.", 'MSGBOX_SIGN')
+    S.npc('Switch', "(A red ! SWITCH. In another game it would make things solid. You press it anyway.\n\nSomewhere, "
+                    "something becomes slightly more solid. You will never find out what.)", 'MSGBOX_SIGN')
+    S.npc('EggBlock', "(An EGG BLOCK. It's out of eggs. There's a little sign: BACK IN 5 MINUTES. The sign is "
+                      "dated three games ago.)", 'MSGBOX_SIGN')
+    S.write()
+
+
 # ====================================================================== map.json
 ITEMS = {  # kaart -> [(x, y, item, flag, verborgen)]
     'YoshisIsland_Beach': [(23, 15, 'ITEM_HONEY', 'FLAG_ITEM_YOSHIS_ISLAND_BEACH_HONEY', False),
@@ -2099,9 +2818,20 @@ def write_map(name, layout, objs, warps, bgs, coords=(), **kw):
     register_map(name)
 
 
+NI_SPOTS = {  # kaart -> {item: (x, y)} voor item balls/verborgen items uit nieuwe_items.py
+    'YoshisIsland_Jungle': {'ITEM_GALARICA_TWIG': (2, 11)},
+    'YoshisIsland_Cave': {'ITEM_RELIC_BAND': (21, 14), 'ITEM_PEWTER_CRUNCHIES': (2, 10)},
+    'YoshisIsland_Flowers': {'ITEM_CHERISH_BALL': (25, 7)},
+}
+
+
 def items_of(name):
     objs, bgs = [], []
-    for x, y, it, fl, hid in ITEMS.get(name, []):
+    spots = list(ITEMS.get(name, []))
+    for it, (fl, q, hid) in ni_items(name).items():
+        if it in NI_SPOTS.get(name, {}):
+            spots.append(NI_SPOTS[name][it] + (it, fl, hid))
+    for x, y, it, fl, hid in spots:
         if hid:
             bgs.append(bd.hidden(x, y, it, fl))
         else:
@@ -2118,14 +2848,21 @@ def map_jsons(lay):
                 'LOCALID_YI_BEACH_GUARD_A'),
             lid(bd.obj(SHY_GFX['green'], B_GUARDS[1][0], B_GUARDS[1][1], P + 'Guards', 'FLAG_YI_BEACH_GUARDS'),
                 'LOCALID_YI_BEACH_GUARD_B')]
+    Q = 'OBJ_EVENT_GFX_QCLOUD'
+    WIP = 'MOVEMENT_TYPE_WALK_IN_PLACE_DOWN'
+    late = [lid(bd.obj(Q, B_CLOUD[0], B_CLOUD[1], P + 'Cloud', ni_items('YoshisIsland_Beach')['ITEM_SHALOUR_SABLE'][0],
+                       WIP), 'LOCALID_YI_BEACH_CLOUD')]          # nieuwe objecten achteraan (na de item balls)
     io, ib = items_of('YoshisIsland_Beach')
     warps = [bd.warp(B_LAND[0], B_LAND[1], HUB_DEST[0], HUB_DEST[1], elev=3),
              bd.warp(B_RIFT[0], B_RIFT[1], HUB_DEST[0], HUB_DEST[1], elev=3),
              bd.warp(B_RIFT[0] + 1, B_RIFT[1], HUB_DEST[0], HUB_DEST[1], elev=3),
              bd.warp(B_PIPE[0], B_PIPE[1] + 1, 'YOSHIS_ISLAND_HILLS', 0, elev=3),
-             bd.warp(B_PIPE[0] + 1, B_PIPE[1] + 1, 'YOSHIS_ISLAND_HILLS', 1, elev=3)]
-    write_map('YoshisIsland_Beach', lay['YoshisIsland_Beach'], objs + io, warps,
-              [bd.sign(B_SIGN[0], B_SIGN[1], P + 'Sign')] + ib, music='MUS_RG_BERRY_PICK')
+             bd.warp(B_PIPE[0] + 1, B_PIPE[1] + 1, 'YOSHIS_ISLAND_HILLS', 1, elev=3),
+             bd.warp(B_JPIPE[0], B_JPIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 0, elev=3),
+             bd.warp(B_JPIPE[0] + 1, B_JPIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 1, elev=3)]
+    write_map('YoshisIsland_Beach', lay['YoshisIsland_Beach'], objs + io + late, warps,
+              [bd.sign(B_SIGN[0], B_SIGN[1], P + 'Sign'), bd.sign(B_MSG[0], B_MSG[1], P + 'MsgBlock')] + ib,
+              music='MUS_RG_BERRY_PICK')
     # heuvels
     P = 'YoshisIsland_Hills_EventScript_'
     objs = [lid(bd.obj(Y, H_YOSHI[0], H_YOSHI[1], P + 'Yoshi', 'FLAG_YI_YOSHI_HOME'), 'LOCALID_YI_HILLS_YOSHI'),
@@ -2139,12 +2876,13 @@ def map_jsons(lay):
                 'LOCALID_YI_GATE_GUARD'),
             lid(bd.obj('OBJ_EVENT_GFX_SPECIES(PECHARUNT)', H_PECHA[0], H_PECHA[1], P + 'Pecharunt',
                        'FLAG_YI_PECHARUNT_DONE', 'MOVEMENT_TYPE_FACE_LEFT'), 'LOCALID_YI_PECHARUNT')]
+    late = [lid(bd.obj(Q, H_CLOUD[0], H_CLOUD[1], P + 'StarCloud', 'FLAG_YI_STAR_CLOUD', WIP), 'LOCALID_YI_STAR_CLOUD')]
     io, ib = items_of('YoshisIsland_Hills')
     warps = [bd.warp(H_PIPE[0], H_PIPE[1] + 1, 'YOSHIS_ISLAND_BEACH', 3, elev=3),
              bd.warp(H_PIPE[0] + 1, H_PIPE[1] + 1, 'YOSHIS_ISLAND_BEACH', 4, elev=3),
              bd.warp(H_BOO_DOOR[0], H_BOO_DOOR[1], 'YOSHIS_ISLAND_BOO_MANSION', 0, elev=3),
              bd.warp(H_FORT_DOOR[0], H_FORT_DOOR[1], 'YOSHIS_ISLAND_WARIO_FORT', 0, elev=3)]
-    write_map('YoshisIsland_Hills', lay['YoshisIsland_Hills'], objs + io, warps,
+    write_map('YoshisIsland_Hills', lay['YoshisIsland_Hills'], objs + io + late, warps,
               [bd.sign(H_SIGN[0], H_SIGN[1], P + 'Sign')] + ib, music='MUS_RG_FOLLOW_ME')
     # spookhuis
     P = 'YoshisIsland_BooMansion_EventScript_'
@@ -2168,6 +2906,51 @@ def map_jsons(lay):
     write_map('YoshisIsland_WarioFort', lay['YoshisIsland_WarioFort'], objs + io,
               [bd.warp(WF_EXIT[0], WF_EXIT[1], 'YOSHIS_ISLAND_HILLS', 3, elev=3)], bgs + ib,
               music='MUS_RG_ROCKET_HIDEOUT', map_type='MAP_TYPE_INDOOR', show_map_name=False)
+    # jungle
+    P = 'YoshisIsland_Jungle_EventScript_'
+    ji = ni_items('YoshisIsland_Jungle')
+    objs = [lid(bd.obj('OBJ_EVENT_GFX_POOCHY', J_POOCHY[0], J_POOCHY[1], P + 'Poochy', '0', 'MOVEMENT_TYPE_FACE_RIGHT'),
+                'LOCALID_YI_POOCHY'),
+            lid(bd.obj('OBJ_EVENT_GFX_NEP_ENUT', J_NEP[0], J_NEP[1], P + 'NepEnut', 'FLAG_YI_NEP_ENUT_DONE'),
+                'LOCALID_YI_NEP_ENUT'),
+            lid(bd.obj(Q, J_CLOUD[0], J_CLOUD[1], P + 'Cloud', ji['ITEM_MOOMOO_MILK'][0], WIP), 'LOCALID_YI_JUNGLE_CLOUD'),
+            bd.tr(SHY_GFX['green'], J_SHY[0], J_SHY[1], P + 'ShyGuy', 'LEFT', 3)]
+    io, ib = items_of('YoshisIsland_Jungle')
+    warps = [bd.warp(J_PIPE[0], J_PIPE[1] + 1, 'YOSHIS_ISLAND_BEACH', 5, elev=3),
+             bd.warp(J_PIPE[0] + 1, J_PIPE[1] + 1, 'YOSHIS_ISLAND_BEACH', 6, elev=3),
+             bd.warp(J_CAVE[0], J_CAVE[1] + 1, 'YOSHIS_ISLAND_CAVE', 0, elev=3),
+             bd.warp(J_CAVE[0] + 1, J_CAVE[1] + 1, 'YOSHIS_ISLAND_CAVE', 0, elev=3),
+             bd.warp(J_PIPE2[0], J_PIPE2[1] + 1, 'YOSHIS_ISLAND_FLOWERS', 0, elev=3),
+             bd.warp(J_PIPE2[0] + 1, J_PIPE2[1] + 1, 'YOSHIS_ISLAND_FLOWERS', 1, elev=3)]
+    bgs = [bd.sign(x, y, P + k) for (x, y), k in zip(J_MSG, ('MsgEntrance', 'MsgThorns', 'MsgLake'))]
+    bgs += [bd.sign(18, 6, P + 'EggBlock')]
+    write_map('YoshisIsland_Jungle', lay['YoshisIsland_Jungle'], objs + io, warps, bgs + ib,
+              music='MUS_RG_VIRIDIAN_FOREST')
+    # kristalgrot
+    P = 'YoshisIsland_Cave_EventScript_'
+    objs = [bd.tr(SHY_GFX['black'], C_SHY[0], C_SHY[1], P + 'ShyGuy', 'LEFT', 3)]
+    io, ib = items_of('YoshisIsland_Cave')
+    bgs = [bd.sign(C_MSG[0], C_MSG[1], P + 'MsgBlock'), bd.sign(13, 4, P + 'EggBlock'), bd.sign(14, 4, P + 'EggBlock'),
+           bd.sign(4, 5, P + 'Bucket'), bd.sign(5, 5, P + 'Bucket'), bd.sign(20, 14, P + 'Pow'), bd.sign(21, 14, P + 'Pow')]
+    write_map('YoshisIsland_Cave', lay['YoshisIsland_Cave'], objs + io,
+              [bd.warp(C_EXIT[0], C_EXIT[1], 'YOSHIS_ISLAND_JUNGLE', 2, elev=3)], bgs + ib,
+              music='MUS_RG_MT_MOON', map_type='MAP_TYPE_UNDERGROUND')
+    # bloemenveld
+    P = 'YoshisIsland_Flowers_EventScript_'
+    fi = ni_items('YoshisIsland_Flowers')
+    objs = [lid(bd.obj(Q, F_BRIDGE_CLOUD[0], F_BRIDGE_CLOUD[1], P + 'BridgeCloud', 'FLAG_YI_BRIDGE_CLOUD', WIP),
+                'LOCALID_YI_BRIDGE_CLOUD'),
+            lid(bd.obj(Q, F_CLOUD[0], F_CLOUD[1], P + 'Cloud', fi['ITEM_LUMIOSE_GALETTE'][0], WIP),
+                'LOCALID_YI_FLOWERS_CLOUD'),
+            bd.tr(SHY_GFX['pink'], F_SHY[0], F_SHY[1], P + 'ShyGuy', 'RIGHT', 4)]
+    io, ib = items_of('YoshisIsland_Flowers')
+    warps = [bd.warp(F_PIPE[0], F_PIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 4, elev=3),
+             bd.warp(F_PIPE[0] + 1, F_PIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 5, elev=3)]
+    bgs = [bd.sign(x, y, P + k) for (x, y), k in zip(F_MSG, ('MsgEntrance', 'MsgGoal', 'MsgBridge'))]
+    bgs += [bd.sign(F_SWITCH[0] + dx, F_SWITCH[1] + 1, P + 'Switch') for dx in (0, 1)]
+    bgs += [bd.sign(13, 19, P + 'EggBlock'), bd.sign(24, 17, P + 'EggBlock')]
+    write_map('YoshisIsland_Flowers', lay['YoshisIsland_Flowers'], objs + io, warps, bgs + ib,
+              music='MUS_RG_BERRY_PICK')
 
 
 # ====================================================================== controle
@@ -2240,6 +3023,71 @@ def check(maps):
     for x, y, *_ in ITEMS['YoshisIsland_WarioFort']:
         if not adj(r2, (x, y)):
             probs.append(('fort: item onbereikbaar', (x, y)))
+    # strand: nieuwe pijp, Message Block, ?-wolk
+    r = B.reach(B_LAND, {B_YOSHI, B_CLOUD} | set(B_GUARDS))
+    for p in (B_MSG, B_CLOUD):
+        if not adj(r, p):
+            probs.append(('strand: onbereikbaar', p))
+    if not {(B_JPIPE[0], B_JPIPE[1] + 1), (B_JPIPE[0] + 1, B_JPIPE[1] + 1)} <= r:
+        probs.append(('strand: junglepijp onbereikbaar', None))
+    if not adj(Hm.reach((H_PIPE[0], H_PIPE[1] + 1), npcs | {H_CLOUD}), H_CLOUD):
+        probs.append(('heuvels: ?-wolk onbereikbaar', None))
+    # jungle
+    Jm = maps['jungle']
+    t0, t1, ty = J_THORN
+    npc = {J_POOCHY, J_NEP, J_SHY, J_CLOUD}
+    r = Jm.reach((J_PIPE[0], J_PIPE[1] + 1), npc)
+    for p in (J_NEP, J_SHY, *J_MSG):
+        if not adj(r, p):
+            probs.append(('jungle: onbereikbaar', p))
+    if (t1 + 1, ty) not in r:
+        probs.append(('jungle: oostoever bij Poochy onbereikbaar', None))
+    if (t0 - 1, ty) in r or J_CLOUD in r:
+        probs.append(('jungle: bosje bereikbaar zonder Poochy', None))
+    for c in ((J_CAVE[0], J_CAVE[1] + 1), (J_CAVE[0] + 1, J_CAVE[1] + 1), (J_PIPE2[0], J_PIPE2[1] + 1),
+              (J_PIPE2[0] + 1, J_PIPE2[1] + 1)):
+        if c not in r:
+            probs.append(('jungle: warp onbereikbaar', c))
+    for x in range(t0, t1 + 1):
+        if not Jm.solid[ty, x]:
+            probs.append(('jungle: doorn niet vast', x))
+    for x in range(t0 - 1, t1 + 3):             # de rit: Poochy loopt tot t1+2 (oost) en t0-2 (west)
+        if x < t0 or x > t1:
+            if Jm.solid[ty, x]:
+                probs.append(('jungle: Poochy-rit geblokkeerd', x))
+    if Jm.solid[ty, t0 - 2]:
+        probs.append(('jungle: Poochy-rit geblokkeerd', t0 - 2))
+    grove = Jm.reach((t0 - 1, ty), npc)
+    for p in [J_CLOUD] + [NI_SPOTS['YoshisIsland_Jungle'][k] for k in NI_SPOTS['YoshisIsland_Jungle']]:
+        if not (adj(grove, p) or p in grove):
+            probs.append(('jungle: bosje-item onbereikbaar', p))
+    # grot
+    Cm = maps['cave']
+    r = Cm.reach(C_EXIT, {C_SHY})
+    for p in [C_SHY, C_MSG] + list(NI_SPOTS['YoshisIsland_Cave'].values()):
+        if not (adj(r, p) or p in r):
+            probs.append(('grot: onbereikbaar', p))
+    # bloemenveld: noordkant alleen over de brug
+    Fm = maps['flowers']
+    npc = {F_BRIDGE_CLOUD, F_CLOUD, F_SHY}
+    start = (F_PIPE[0], F_PIPE[1] + 1)
+    r = Fm.reach(start, npc)
+    for p in (F_BRIDGE_CLOUD, F_CLOUD, F_SHY, F_MSG[0], F_MSG[2], (F_SWITCH[0], F_SWITCH[1] + 1)):
+        if not adj(r, p):
+            probs.append(('bloemenveld: onbereikbaar', p))
+    goal = NI_SPOTS['YoshisIsland_Flowers']['ITEM_CHERISH_BALL']
+    if adj(r, goal) or adj(r, F_MSG[1]):
+        probs.append(('bloemenveld: noordkant bereikbaar zonder brug', None))
+    bx, by, bh = F_BRIDGE
+    sol = Fm.solid.copy()
+    for (x, y) in Fm.extra:
+        Fm.solid[y, x] = False
+    Fm.T[by:by + bh, bx:bx + 2] = 'g'
+    r = Fm.reach(start, npc)
+    Fm.solid[...] = sol; Fm.T[by:by + bh, bx:bx + 2] = 'k'
+    for p in (goal, F_MSG[1]):
+        if not adj(r, p):
+            probs.append(('bloemenveld: noordkant onbereikbaar met brug', p))
     for p in probs:
         print('PROBLEEM', p)
     assert not probs
@@ -2266,6 +3114,13 @@ def render(grids, maps, outdir):
     ov.paste(wf, (h.width + 32, 0))
     ov.paste(bm, (h.width + 32, wf.height + 16))
     ov.save(os.path.join(outdir, 'overzicht.png'))
+    # tweede overzicht: jungle (met de grot erboven) en het bloemenveld
+    j, f, c = out['jungle'], out['flowers'], out['cave']
+    ov = Image.new('RGB', (j.width + 32 + f.width, c.height + 16 + max(j.height, f.height)), (24, 24, 32))
+    ov.paste(c, ((J_CAVE[0] - C_EXIT[0]) * 16, 0))
+    ov.paste(j, (0, c.height + 16))
+    ov.paste(f, (j.width + 32, c.height + 16))
+    ov.save(os.path.join(outdir, 'overzicht_2.png'))
 
 
 SECS = {  # kaart -> (symbool, map)
@@ -2273,19 +3128,27 @@ SECS = {  # kaart -> (symbool, map)
     'YoshisIsland_Hills': ('YoshiHills', 'data/tilesets/secondary/yoshi_hills'),
     'YoshisIsland_BooMansion': ('YoshiBoo', 'data/tilesets/secondary/yoshi_boo'),
     'YoshisIsland_WarioFort': ('YoshiFort', 'data/tilesets/secondary/yoshi_fort'),
+    'YoshisIsland_Jungle': ('YoshiJungle', 'data/tilesets/secondary/yoshi_jungle'),
+    'YoshisIsland_Cave': ('YoshiCave', 'data/tilesets/secondary/yoshi_cave'),
+    'YoshisIsland_Flowers': ('YoshiFlowers', 'data/tilesets/secondary/yoshi_flowers'),
 }
 
 
 def main():
     load_bd()
     O = objects()
-    maps = {'beach': beach_map(), 'hills': hills_map(), 'boo': boo_mansion_map(), 'fort': wario_fort_map()}
+    maps = {'beach': beach_map(), 'hills': hills_map(), 'boo': boo_mansion_map(), 'fort': wario_fort_map(),
+            'jungle': jungle_map(), 'cave': cave_map(), 'flowers': flowers_map()}
     cvs = {k: m.render(O, SEED + i) for i, (k, m) in enumerate(maps.items())}
     for m in maps.values():
-        if m.name in ('YoshisIsland_Beach',):
+        if m.name in ('YoshisIsland_Beach', 'YoshisIsland_Jungle'):
             m.beh[(m.T == 's') & (m.beh == 0)] = MB['sand']
+    maps['cave'].beh[(maps['cave'].T == 'f') & (maps['cave'].beh == 0)] = MB['cave']   # wilde Pokemon op de grotvloer
+    maps['flowers'].extra = bridge_cells(maps['flowers'], cvs['flowers'])
+    # de primary komt alleen uit strand + heuvels (zo blijft de volle heuvel-secondary gelijk); de nieuwe kaarten
+    # hergebruiken wat ze daaruit kunnen en krijgen verder elk een eigen secondary
     out = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('beach', 'hills')]
-    ins = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('boo', 'fort')]
+    ins = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('boo', 'fort', 'jungle', 'cave', 'flowers')]
     grids = build_tilesets(out, ins)
     write_tilesets([(SECS[n][0], SECS[n][1], True, "Yoshi's Island: " + n.split('_')[1]) for n in SECS])
     lay = {}
@@ -2295,12 +3158,15 @@ def main():
         if isinstance(m, Inside):
             bmt = int(g[0, 0])
         else:
-            ys, xs = np.where((m.T == 'H') & ~m.objmask)
-            cand = [(y, x) for y, x in zip(ys, xs) if 0 < y < m.H - 1 and 0 < x < m.W - 1 and (m.T[y - 1:y + 2, x - 1:x + 2] == 'H').all()]
+            ch = 'J' if (m.T == 'J').any() else ('H' if (m.T == 'H').any() else 'k')
+            ys, xs = np.where((m.T == ch) & ~m.objmask)
+            cand = [(y, x) for y, x in zip(ys, xs) if 0 < y < m.H - 1 and 0 < x < m.W - 1 and (m.T[y - 1:y + 2, x - 1:x + 2] == ch).all()]
             y, x = cand[0]
             bmt = int(g[y, x])
         lay[m.name] = save_layout(m, g, SECS[m.name][0], bmt)
     flags()
+    import nieuwe_items
+    nieuwe_items.flags()
     mapsecs()
     bd.WILD = WILD
     bd.wild()
@@ -2314,6 +3180,9 @@ def main():
     hills_scripts()
     boo_scripts()
     fort_scripts()
+    jungle_scripts()
+    cave_scripts()
+    flowers_scripts(maps['flowers'])
     check(maps)
     if len(sys.argv) > 1:
         return grids, maps

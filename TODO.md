@@ -68,7 +68,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
-0. **Trainer-id's raken op:** nog 50 vrij (1017–1019, 1026–1029, 1049, 1055–1059, 1068–1069, 1080–1099, 1107–1109, 1124–1129, 1180–1185). Genoeg voor National Park/Coronet, krap voor Yoshi's Island. Oplossing: ongebruikte vanilla-trainers hergebruiken (eerst tellen) of `MAX_TRAINERS_COUNT` ophogen met een save-migratie.
+0. **Trainer-id's raken op:** nog 50 vrij (1017–1019, 1026–1029, 1049, 1055–1059, 1068–1069, 1080–1099, 1107–1109, 1124–1129, 1180–1185). Jordi 9 okt: niet erg; Shy Guys worden wel trainers. Wordt het krap, dan halen we elders iets weg.
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
 3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, ~~Swords of Justice~~ (zie 18), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** post-game tijdens het gevecht tegen **Keccles in de Battle Frontier** springt hij uit je schaduw, wil samen met een sterke trainer strijden en hoort daarna bij je; Keccles: "wow, daar kan ik nog wat van leren. Dát is pas camouflage."
 

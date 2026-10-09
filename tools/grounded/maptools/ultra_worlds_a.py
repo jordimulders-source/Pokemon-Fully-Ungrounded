@@ -1114,8 +1114,8 @@ def w_nihilego():
                ('NIHILEGO', 6, 13, 'MOVEMENT_TYPE_FACE_DOWN', 'Echo', 1, 0),
                ('NIHILEGO', 36, 11, 'MOVEMENT_TYPE_FACE_DOWN', 'Echo', 1, 0)]
     w.land, w.land_rate = None, 0
-    w.surf, w.surf_rate = [('JELLICENT', 84, 86), ('TOXAPEX', 84, 86), ('TENTACRUEL', 83, 85), ('DRAGALGE', 85, 87),
-                           ('MILOTIC', 86, 88)], 4
+    w.surf, w.surf_rate = [('JELLICENT', 84, 86), ('PALAFIN', 84, 86), ('VELUZA', 83, 85), ('TENTACRUEL', 85, 87),
+                           ('VAPOREON', 86, 88)], 4
     w.drop_kinds = []
     return w
 
@@ -1434,7 +1434,7 @@ def w_buzzwole():
                ('COMBEE', 10, 17, 'MOVEMENT_TYPE_WANDER_AROUND', 'Bug', 3, 2),
                ('PINSIR', 28, 19, 'MOVEMENT_TYPE_FACE_LEFT', 'Bug', 3, 0)]
     w.land, w.land_rate = [('HERACROSS', 84, 86), ('PINSIR', 84, 86), ('LURANTIS', 84, 86), ('GOLISOPOD', 85, 87),
-                           ('VIKAVOLT', 85, 87), ('RIBOMBEE', 84, 86), ('ARAQUANID', 85, 87), ('ESCAVALIER', 85, 87),
+                           ('VIKAVOLT', 85, 87), ('RIBOMBEE', 84, 86), ('SCOLIPEDE', 85, 87), ('ESCAVALIER', 85, 87),
                            ('BRELOOM', 85, 87), ('TROPIUS', 85, 87), ('HAWLUCHA', 86, 88), ('KLEAVOR', 87, 89)], 15
     w.texts = [('UltraSpace_Buzzwole_Text_Bug', 'It is the size of a normal bug.\nHere, that makes it a speck.\\p'
                 'It looks at the giant mushrooms and\nfeels nothing. Respect.')]
@@ -1794,8 +1794,8 @@ def w_pheromosa():
                ('ROTOM', 30, 20, 'MOVEMENT_TYPE_WANDER_AROUND', 'Weather', 3, 2)]
     w.drop_kinds = ['Judge', 'Crowd']
     w.land, w.land_rate = [('CASTFORM', 84, 86), ('ROTOM', 84, 86), ('MAGMORTAR', 85, 87), ('ELECTIVIRE', 85, 87),
-                           ('VAPOREON', 85, 87), ('FLAREON', 85, 87), ('JOLTEON', 85, 87), ('GLACEON', 85, 87),
-                           ('LEAFEON', 85, 87), ('FROSLASS', 85, 87), ('VOLCARONA', 87, 89), ('LAPRAS', 87, 89)], 6
+                           ('ABOMASNOW', 85, 87), ('FLAREON', 85, 87), ('JOLTEON', 85, 87), ('GLACEON', 85, 87),
+                           ('LEAFEON', 85, 87), ('SALAZZLE', 85, 87), ('VOLCARONA', 87, 89), ('ARCANINE', 87, 89)], 6
     w.bgs = [{'type': 'sign', 'x': 30, 'y': 25, 'elevation': 0, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
               'script': 'UltraSpace_Pheromosa_EventScript_Treaty'}]
     w.solid[25, 30] = True
@@ -2068,7 +2068,7 @@ def w_xurkitree():
     w.decor = [('JOLTIK', 10, 12, 'MOVEMENT_TYPE_WANDER_AROUND', 'Spark', 3, 2),
                ('TYNAMO', 24, 26, 'MOVEMENT_TYPE_WANDER_AROUND', 'Spark', 3, 2),
                ('XURKITREE', 33, 6, 'MOVEMENT_TYPE_FACE_DOWN', 'Cable', 3, 0)]
-    w.land, w.land_rate = [('GALVANTULA', 84, 86), ('MAGNEZONE', 84, 86), ('EELEKTROSS', 85, 87), ('ELECTRODE', 84, 86),
+    w.land, w.land_rate = [('GALVANTULA', 84, 86), ('MAGNEZONE', 84, 86), ('EELEKTROSS', 85, 87), ('BELLIBOLT', 84, 86),
                            ('KLINKLANG', 85, 87), ('HELIOLISK', 85, 87), ('TOGEDEMARU', 84, 86), ('EMOLGA', 84, 86),
                            ('PORYGON_Z', 86, 88), ('TOXTRICITY', 86, 88), ('ZEBSTRIKA', 87, 89), ('AMPHAROS', 87, 89)], 6
     w.bgs = [{'type': 'sign', 'x': 4, 'y': 11, 'elevation': 0, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
@@ -2509,9 +2509,9 @@ def w_kartana():
     w.border = (0, H - 2)
     w.decor = [('KARTANA', 7, 7, 'MOVEMENT_TYPE_FACE_RIGHT', 'Fold', 3, 0), ('KARTANA', 28, 18, 'MOVEMENT_TYPE_FACE_LEFT', 'Fold', 3, 0),
                ('UNOWN', 11, 13, 'MOVEMENT_TYPE_WANDER_AROUND', 'Reader', 3, 2)]
-    w.land, w.land_rate = [('CHANDELURE', 84, 86), ('AEGISLASH', 85, 87), ('BRONZONG', 84, 86), ('SIGILYPH', 84, 86),
-                           ('SMEARGLE', 84, 86), ('UNOWN', 84, 86), ('COFAGRIGUS', 85, 87), ('HATTERENE', 85, 87),
-                           ('KINGAMBIT', 86, 88), ('MIMIKYU', 85, 87), ('SPIRITOMB', 87, 89), ('ALAKAZAM', 87, 89)], 5
+    w.land, w.land_rate = [('CHANDELURE', 84, 86), ('AEGISLASH', 85, 87), ('KLEFKI', 84, 86), ('REUNICLUS', 84, 86),
+                           ('SMEARGLE', 84, 86), ('UNOWN', 84, 86), ('GOTHITELLE', 85, 87), ('HATTERENE', 85, 87),
+                           ('KINGAMBIT', 86, 88), ('MIMIKYU', 85, 87), ('SINISTCHA', 87, 89), ('ALAKAZAM', 87, 89)], 5
     w.bgs = [{'type': 'sign', 'x': 8, 'y': 11, 'elevation': 0, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
               'script': 'UltraSpace_Kartana_EventScript_Books'}]
     w.texts = [('UltraSpace_Kartana_Text_Books', 'The books are upside down.\\pYou tilt your head. The words are\nstill upside down. So is your head.\\p'

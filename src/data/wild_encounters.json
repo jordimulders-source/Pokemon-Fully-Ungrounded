@@ -10890,22 +10890,22 @@
               {
                 "min_level": 84,
                 "max_level": 86,
-                "species": "SPECIES_TOXAPEX"
+                "species": "SPECIES_PALAFIN"
               },
               {
                 "min_level": 83,
                 "max_level": 85,
-                "species": "SPECIES_TENTACRUEL"
+                "species": "SPECIES_VELUZA"
               },
               {
                 "min_level": 85,
                 "max_level": 87,
-                "species": "SPECIES_DRAGALGE"
+                "species": "SPECIES_TENTACRUEL"
               },
               {
                 "min_level": 86,
                 "max_level": 88,
-                "species": "SPECIES_MILOTIC"
+                "species": "SPECIES_VAPOREON"
               }
             ]
           }
@@ -10949,7 +10949,7 @@
               {
                 "min_level": 85,
                 "max_level": 87,
-                "species": "SPECIES_ARAQUANID"
+                "species": "SPECIES_SCOLIPEDE"
               },
               {
                 "min_level": 85,
@@ -11008,7 +11008,7 @@
               {
                 "min_level": 85,
                 "max_level": 87,
-                "species": "SPECIES_VAPOREON"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 85,
@@ -11033,7 +11033,7 @@
               {
                 "min_level": 85,
                 "max_level": 87,
-                "species": "SPECIES_FROSLASS"
+                "species": "SPECIES_SALAZZLE"
               },
               {
                 "min_level": 87,
@@ -11043,7 +11043,7 @@
               {
                 "min_level": 87,
                 "max_level": 89,
-                "species": "SPECIES_LAPRAS"
+                "species": "SPECIES_ARCANINE"
               }
             ]
           }
@@ -11072,7 +11072,7 @@
               {
                 "min_level": 84,
                 "max_level": 86,
-                "species": "SPECIES_ELECTRODE"
+                "species": "SPECIES_BELLIBOLT"
               },
               {
                 "min_level": 85,
@@ -11136,12 +11136,12 @@
               {
                 "min_level": 84,
                 "max_level": 86,
-                "species": "SPECIES_BRONZONG"
+                "species": "SPECIES_KLEFKI"
               },
               {
                 "min_level": 84,
                 "max_level": 86,
-                "species": "SPECIES_SIGILYPH"
+                "species": "SPECIES_REUNICLUS"
               },
               {
                 "min_level": 84,
@@ -11156,7 +11156,7 @@
               {
                 "min_level": 85,
                 "max_level": 87,
-                "species": "SPECIES_COFAGRIGUS"
+                "species": "SPECIES_GOTHITELLE"
               },
               {
                 "min_level": 85,
@@ -11176,7 +11176,7 @@
               {
                 "min_level": 87,
                 "max_level": 89,
-                "species": "SPECIES_SPIRITOMB"
+                "species": "SPECIES_SINISTCHA"
               },
               {
                 "min_level": 87,

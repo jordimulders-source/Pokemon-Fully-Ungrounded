@@ -754,7 +754,9 @@
     "VictoryRoad_SwordChamber",
     "UnchartedIsle",
     "MangroveMire_VirizionGlade",
-    "CrownTundra"
+    "CrownTundra",
+    "AbandonedShip_NightDeck",
+    "AbandonedShip_NightCabins"
   ],
   "gMapGroup_Spacetime": [
     "LavenderTown",

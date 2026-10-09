@@ -98,9 +98,13 @@ ITEMS = [
     (1242, 'HallOfOrigin_Atrium', 'ITEM_PUNCHING_GLOVE', 1, True, 'Hall of Origin, atrium: verborgen Punching Glove'),
     (1243, 'HallOfOrigin_Summit', 'ITEM_GRISEOUS_ORB', 1, False, 'Hall of Origin, top: Griseous Orb (Giratina Origin)'),
     (1068, 'YoshisIsland_YoshiHouse', 'ITEM_SWEET_HEART', 1, False, "Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)"),
+    # Abandoned Ship, nachtelijk benedendek (abandoned_ship_night.py; flags uit het eigen blok FLAG_GROUNDED 1400-1439)
+    (1400, 'AbandonedShip_NightCabins', 'ITEM_GHOST_MEMORY', 1, False, 'Abandoned Ship benedendek: Ghost Memory'),
+    (1401, 'AbandonedShip_NightCabins', 'ITEM_WATER_GEM', 2, False, 'Abandoned Ship benedendek: Water Gems'),
+    (1402, 'AbandonedShip_NightCabins', 'ITEM_WATER_MEMORY', 1, True, 'Abandoned Ship benedendek: verborgen Water Memory'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin en de Calyrex-quest: eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest en het benedendek van het Abandoned Ship: eigen blok
 
 
 def flag_name(n, mp, it, hid):

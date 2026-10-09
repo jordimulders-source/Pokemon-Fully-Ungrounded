@@ -6041,6 +6041,26 @@
       "secondary_tileset": "gTileset_YoshiHouse",
       "border_filepath": "data/layouts/YoshisIsland_YoshiHouse/border.bin",
       "blockdata_filepath": "data/layouts/YoshisIsland_YoshiHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABANDONED_SHIP_NIGHT_DECK",
+      "name": "AbandonedShip_NightDeck_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AbandonedShip_NightDeck/border.bin",
+      "blockdata_filepath": "data/layouts/AbandonedShip_NightDeck/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABANDONED_SHIP_NIGHT_CABINS",
+      "name": "AbandonedShip_NightCabins_Layout",
+      "width": 44,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AbandonedShip_NightCabins/border.bin",
+      "blockdata_filepath": "data/layouts/AbandonedShip_NightCabins/map.bin"
     }
   ]
 }

@@ -17657,3 +17657,7 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.183] - Ability-popup bij binnenkomst verdwijnt netjes
 - Jordi zag in het multi battle met Calyrex een halve ability-melding links naast Arceus bij het actiemenu. Dat was de Unnerve-popup die nog aan het wegschuiven was. Na de melding van een switch-in-ability (o.a. Unnerve, As One) wordt de popup nu meteen weggehaald (zoals eerder bij de weer-abilities). Getest in de emulator.
+
+### [v0.9.184] - Ability-popups: nooit meer half zichtbaar bij het actiemenu
+- Jordi: ability-meldingen gaven af en toe glitches. Oorzaak: een popup schuift na een vaste tijd vanzelf weg, maar kon dan nog (half) in beeld staan als het actiemenu al open ging; met `fixedPopup` bleef hij zelfs staan. Nieuw: aan het begin van elke beurt (`STATE_TURN_START_RECORD`) worden alle nog actieve popups meteen verborgen en opgeruimd (`ForceHideAbilityPopUps` in `battle_interface.c`), en `fixedPopup` wordt gereset. Dit vangt álle abilities in één keer af, ook toekomstige.
+- Getest in de emulator met Intimidate + Drizzle (single) en Unnerve: het actiemenu is telkens schoon.

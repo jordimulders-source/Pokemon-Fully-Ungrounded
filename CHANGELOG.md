@@ -17870,3 +17870,8 @@ Volgens Jordi's GBA-instructies per leider:
 - **Spreiding** (`tools/grounded/wild_spread.py`, `WILD_SPREAD.md`): te vaak voorkomende soorten (Dhelmise, Bronzong, Relicanth, Bruxish, Probopass, Lapras, Garchomp) in een paar tabellen vervangen; **Magikarp** aan de Old Rod in 12 routes en steden (lv 12–19; bestaande Magikarp-levels ongewijzigd), Crobat in drie late grotten, Graveler en Swellow vaker.
 - **Vivillon/Scatterbug/Spewpa** krijgen een willekeurig patroon (wild en bij fokken); **Deerling/Sawsbuck** volgen het seizoen van de echte datum (ook in je team), zoals in Gen 5.
 - `dex_check.py`: alle soorten en regionale vormen te krijgen (1081), op Marshadow na (komt).
+
+### [v0.9.223] - Marshadow en Keccles in de Frontier
+- Post-game staat **Keccles** onzichtbaar op het pad naar de Sudowoodo op het Frontier-eiland (Devon Scope nodig). Hij wordt zichtbaar, en dan beweegt je schaduw zonder jou: **Marshadow** springt eruit en komt in je team (lv 88; pc als je team vol is). Daarna het gevecht tegen Keccles' sterkste "Lizardmon"-team (Heliolisk, Tropius, Clodsire, Charizard, Serperior, Salazzle als ace; lv 92–95; Keccles-transitie en salsa-thema). Na afloop: "Wow, I can still learn something from that. … THAT is camouflage."
+- Trainer-id 853 (was de ongebruikte `TRAINER_BRENDAN_PLACEHOLDER`), flags `FLAG_GROUNDED(1541–1542)`.
+- **Alle 1025 soorten en alle regionale vormen zijn nu zonder ruilen te krijgen** (`tools/grounded/dex_check.py`: 1082/1082). Azure Flute: 89 hints (Ultra Beasts tellen niet mee, Necrozma wel).

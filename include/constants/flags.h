@@ -1642,13 +1642,30 @@
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
 // Project Grounded: extra flags (de gewone flags waren op, 8 okt). Ze staan achteraan SaveBlock1
-// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..511.
+// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..1023.
 #define GROUNDED_FLAGS_START                    0x1000
-#define NUM_GROUNDED_FLAGS                      512
+#define NUM_GROUNDED_FLAGS                      1024 // was 512: flags 512+ kwamen in gSaveBlock1Ptr->flags[] terecht (buiten de array, in vars[])
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
 // regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840+ vrij.
+// glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
+#define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld
+#define FLAG_GLIMWOOD_GANG_1                             FLAG_GROUNDED(881) // Project Grounded: Glimwood: Impidimp-bende 1 (west) verslagen
+#define FLAG_GLIMWOOD_GANG_2                             FLAG_GROUNDED(882) // Project Grounded: Glimwood: Impidimp-bende 2 (oost) verslagen
+#define FLAG_GLIMWOOD_GANG_3                             FLAG_GROUNDED(883) // Project Grounded: Glimwood: Impidimp-bende 3 (blokkeert de weg naar Ballonlea) verslagen
+#define FLAG_GLIMWOOD_GANG_BOSS                          FLAG_GROUNDED(884) // Project Grounded: Ballonlea: Grimmsnarl (baas van de bende, blokkeert de trap) verslagen
+#define FLAG_GLIMWOOD_XERNEAS_DONE                       FLAG_GROUNDED(885) // Project Grounded: Ballonlea: Xerneas gevangen, het bos licht weer op
+#define FLAG_SPACETIME_GLIMWOOD_DONE                     FLAG_GROUNDED(886) // Project Grounded: Spacetime-sidequest klaar: Yveltal gevangen
+#define FLAG_GLIMWOOD_SCENE_PENDING                      FLAG_GROUNDED(887) // Project Grounded: Ballonlea: tekst na het oplichten nog tonen (eenmalig)
+#define FLAG_GLIMWOOD_YVELTAL_SEEN                       FLAG_GROUNDED(888) // Project Grounded: Glimwood: Yveltal-scene gezien (eenmalig)
+#define FLAG_ITEM_GLIMWOOD_EXP_CANDY_XL                  FLAG_GROUNDED(889) // Project Grounded: Glimwood: Exp. Candy XL (westterras)
+#define FLAG_ITEM_GLIMWOOD_EJECT_PACK                    FLAG_GROUNDED(890) // Project Grounded: Glimwood: Eject Pack (doodlopend pad oost)
+#define FLAG_ITEM_GLIMWOOD_DREAM_BALL                    FLAG_GROUNDED(891) // Project Grounded: Glimwood: Dream Ball (oostterras)
+#define FLAG_HIDDEN_ITEM_GLIMWOOD_GALARICA_CUFF          FLAG_GROUNDED(892) // Project Grounded: Glimwood: verborgen Galarica Cuff (heksenkring)
+#define FLAG_ITEM_BALLONLEA_GALARICA_WREATH              FLAG_GROUNDED(893) // Project Grounded: Ballonlea: Galarica Wreath
+#define FLAG_HIDDEN_ITEM_BALLONLEA_EXP_CANDY_L           FLAG_GROUNDED(894) // Project Grounded: Ballonlea: verborgen Exp. Candy L
+// }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen

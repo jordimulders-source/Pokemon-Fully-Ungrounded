@@ -5681,6 +5681,46 @@
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/UnchartedIsle/border.bin",
       "blockdata_filepath": "data/layouts/UnchartedIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE",
+      "name": "GlimwoodTangle_Layout",
+      "width": 48,
+      "height": 60,
+      "primary_tileset": "gTileset_GlimwoodGeneral",
+      "secondary_tileset": "gTileset_Glimwood",
+      "border_filepath": "data/layouts/GlimwoodTangle/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_DYING",
+      "name": "GlimwoodTangle_Dying_Layout",
+      "width": 48,
+      "height": 60,
+      "primary_tileset": "gTileset_GlimwoodGeneralDying",
+      "secondary_tileset": "gTileset_GlimwoodDying",
+      "border_filepath": "data/layouts/GlimwoodTangle/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_BALLONLEA",
+      "name": "GlimwoodTangle_Ballonlea_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_GlimwoodGeneral",
+      "secondary_tileset": "gTileset_Glimwood",
+      "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_BALLONLEA_DYING",
+      "name": "GlimwoodTangle_Ballonlea_Dying_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_GlimwoodGeneralDying",
+      "secondary_tileset": "gTileset_GlimwoodDying",
+      "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
     }
   ]
 }

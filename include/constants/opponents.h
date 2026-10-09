@@ -1245,6 +1245,13 @@
 #define TRAINER_CHARGESTONE_COLRESS         1128 // Project Grounded: Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)
 // }
 
+// glimwood { (tools/grounded/maptools/glimwood.py; id 1098, 1099, 1107, 1108)
+#define TRAINER_GLIMWOOD_HEX_MANIAC_MORWEN  1098 // Project Grounded: Glimwood, verzamelt vervloekte theekopjes
+#define TRAINER_GLIMWOOD_PSYCHIC_SILAS      1099 // Project Grounded: Glimwood, pelgrim die al eeuwen rondjes loopt
+#define TRAINER_GLIMWOOD_BEAUTY_ODETTE      1107 // Project Grounded: Glimwood, feeën-cosplay
+#define TRAINER_BALLONLEA_GENTLEMAN_ARTHUR  1108 // Project Grounded: Ballonlea, theatercriticus
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

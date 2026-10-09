@@ -274,3 +274,7 @@ const u16 gMetatileAttributes_LavenderTown[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatiles.bin"); // Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen
 const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatile_attributes.bin");
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
+const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");

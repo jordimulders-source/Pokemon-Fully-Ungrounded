@@ -464,6 +464,8 @@ gStdScripts_End::
 	.include "data/maps/GraniteCave_SwordChamber/scripts.inc"
 	.include "data/maps/Route126_CoralCathedral/scripts.inc"
 	.include "data/maps/SpacetimeCave/scripts.inc"
+	.include "data/maps/GlimwoodTangle_Ballonlea/scripts.inc"
+	.include "data/maps/GlimwoodTangle/scripts.inc"
 	.include "data/maps/ChargestoneCave_B2F/scripts.inc"
 	.include "data/maps/ChargestoneCave_B1F/scripts.inc"
 	.include "data/maps/ChargestoneCave_1F/scripts.inc"

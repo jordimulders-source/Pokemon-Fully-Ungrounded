@@ -611,6 +611,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_XERNEAS_ACTIVE:
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (placeholder: Kanto-legendary-thema)
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
         break;
@@ -838,6 +845,11 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_SPACE;
 
     if (MetatileBehavior_IsTallGrass(tileBehavior))
+        return BATTLE_ENVIRONMENT_GRASS;
+    // Project Grounded: Glimwood Tangle (ondergronds vanwege de eigen verlichting, maar het is een bos)
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GLIMWOOD_TANGLE)
+     && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_GLIMWOOD_TANGLE)
+      || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_GLIMWOOD_TANGLE_BALLONLEA)))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_LONG_GRASS;

@@ -2758,6 +2758,75 @@
           }
         },
         {
+          "map": "MAP_GLIMWOOD_TANGLE",
+          "base_label": "gGlimwoodTangle",
+          "land_mons": {
+            "encounter_rate": 15,
+            "mons": [
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_POLTEAGEIST"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_RAPIDASH_GALAR"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_ORBEETLE"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_ALCREMIE"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_DUBWOOL"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_GRIMMSNARL"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_HATTERENE"
+              },
+              {
+                "min_level": 63,
+                "max_level": 67,
+                "species": "SPECIES_ELDEGOSS"
+              },
+              {
+                "min_level": 63,
+                "max_level": 67,
+                "species": "SPECIES_OBSTAGOON"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_MIMIKYU"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_SLOWKING_GALAR"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE126_CORAL_CATHEDRAL",
           "base_label": "gRoute126CoralCathedral",
           "land_mons": {

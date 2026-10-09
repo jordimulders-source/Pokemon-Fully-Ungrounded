@@ -1703,9 +1703,9 @@
 // }
 // calyrex { (tools/grounded/maptools/calyrex_quest.py; FLAG_GROUNDED 1280-1319: 1280-1285 quest, 1300-1309 nieuwe items (nieuwe_items.py), 1286-1299 en 1310-1319 nog vrij)
 #define FLAG_CROWN_QUEST_STARTED                         FLAG_GROUNDED(1280) // Project Grounded: Crown Tundra: Calyrex heeft gevraagd zijn paard terug te halen (paarden verschijnen)
-#define FLAG_CROWN_CHOSE_GLASTRIER                       FLAG_GROUNDED(1281) // Project Grounded: Crown Tundra: gekozen voor GLASTRIER (Spectrier is voorgoed weg)
-#define FLAG_CROWN_CHOSE_SPECTRIER                       FLAG_GROUNDED(1282) // Project Grounded: Crown Tundra: gekozen voor SPECTRIER (Glastrier is voorgoed weg)
-#define FLAG_CROWN_STEED_DONE                            FLAG_GROUNDED(1283) // Project Grounded: Crown Tundra: het gekozen paard is gevangen
+#define FLAG_CROWN_CHOSE_GLASTRIER                       FLAG_GROUNDED(1281) // Project Grounded: Crown Tundra: GLASTRIER gevangen (naam historisch; beide paarden zijn te vangen)
+#define FLAG_CROWN_CHOSE_SPECTRIER                       FLAG_GROUNDED(1282) // Project Grounded: Crown Tundra: SPECTRIER gevangen (naam historisch; beide paarden zijn te vangen)
+#define FLAG_CROWN_STEED_DONE                            FLAG_GROUNDED(1283) // Project Grounded: Crown Tundra: minstens één paard gevangen (Calyrex geeft de Reins)
 #define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
 #define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
 // }

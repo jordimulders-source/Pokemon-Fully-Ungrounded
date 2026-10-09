@@ -8,14 +8,16 @@ CrownTundra_EventScript_OnTransition:
 	setflag FLAG_TEMP_2
 	setflag FLAG_TEMP_3
 	goto_if_unset FLAG_NATIONAL_PARK_DONE, CrownTundra_EventScript_OnTransitionEnd
-	goto_if_set FLAG_CROWN_CALYREX_DONE, CrownTundra_EventScript_OnTransitionEnd
-	clearflag FLAG_TEMP_1
+	call_if_unset FLAG_CROWN_CALYREX_DONE, CrownTundra_EventScript_ShowCalyrex
 	goto_if_unset FLAG_CROWN_QUEST_STARTED, CrownTundra_EventScript_OnTransitionEnd
-	goto_if_set FLAG_CROWN_STEED_DONE, CrownTundra_EventScript_OnTransitionEnd
-	call_if_unset FLAG_CROWN_CHOSE_SPECTRIER, CrownTundra_EventScript_ShowGlastrier
-	call_if_unset FLAG_CROWN_CHOSE_GLASTRIER, CrownTundra_EventScript_ShowSpectrier
+	call_if_unset FLAG_CROWN_CHOSE_GLASTRIER, CrownTundra_EventScript_ShowGlastrier
+	call_if_unset FLAG_CROWN_CHOSE_SPECTRIER, CrownTundra_EventScript_ShowSpectrier
 CrownTundra_EventScript_OnTransitionEnd:
 	end
+
+CrownTundra_EventScript_ShowCalyrex:
+	clearflag FLAG_TEMP_1
+	return
 
 CrownTundra_EventScript_ShowGlastrier:
 	clearflag FLAG_TEMP_2
@@ -31,8 +33,6 @@ CrownTundra_EventScript_Calyrex::
 	playmoncry SPECIES_CALYREX, CRY_MODE_NORMAL
 	waitmoncry
 	goto_if_set FLAG_CROWN_STEED_DONE, CrownTundra_EventScript_CalyrexReins
-	goto_if_set FLAG_CROWN_CHOSE_GLASTRIER, CrownTundra_EventScript_CalyrexChosen
-	goto_if_set FLAG_CROWN_CHOSE_SPECTRIER, CrownTundra_EventScript_CalyrexChosen
 	goto_if_set FLAG_CROWN_QUEST_STARTED, CrownTundra_EventScript_CalyrexWaiting
 	msgbox CrownTundra_Text_CalyrexIntro, MSGBOX_DEFAULT
 	closemessage
@@ -51,11 +51,6 @@ CrownTundra_EventScript_Calyrex::
 
 CrownTundra_EventScript_CalyrexWaiting:
 	msgbox CrownTundra_Text_CalyrexWaiting, MSGBOX_DEFAULT
-	release
-	end
-
-CrownTundra_EventScript_CalyrexChosen:
-	msgbox CrownTundra_Text_CalyrexChosen, MSGBOX_DEFAULT
 	release
 	end
 
@@ -101,19 +96,7 @@ CrownTundra_EventScript_Glastrier::
 	faceplayer
 	playmoncry SPECIES_GLASTRIER, CRY_MODE_ENCOUNTER
 	waitmoncry
-	goto_if_set FLAG_CROWN_CHOSE_GLASTRIER, CrownTundra_EventScript_GlastrierBattle
 	msgbox CrownTundra_Text_GlastrierLook, MSGBOX_DEFAULT
-	msgbox CrownTundra_Text_GlastrierChoose, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, CrownTundra_EventScript_GlastrierLater
-	setflag FLAG_CROWN_CHOSE_GLASTRIER
-	playmoncry SPECIES_SPECTRIER, CRY_MODE_FAINT
-	waitmoncry
-	fadescreenspeed FADE_TO_WHITE, 4
-	removeobject LOCALID_CROWN_TUNDRA_SPECTRIER
-	setflag FLAG_TEMP_3
-	fadescreenspeed FADE_FROM_WHITE, 4
-	msgbox CrownTundra_Text_SpectrierLeaves, MSGBOX_DEFAULT
-CrownTundra_EventScript_GlastrierBattle:
 	msgbox CrownTundra_Text_GlastrierBattle, MSGBOX_DEFAULT
 	closemessage
 	setwildbattle SPECIES_GLASTRIER, 86
@@ -131,6 +114,7 @@ CrownTundra_EventScript_GlastrierBattle:
 	end
 
 CrownTundra_EventScript_GlastrierCaught:
+	setflag FLAG_CROWN_CHOSE_GLASTRIER
 	setflag FLAG_CROWN_STEED_DONE
 	msgbox CrownTundra_Text_GlastrierCaught, MSGBOX_DEFAULT
 	release
@@ -145,19 +129,7 @@ CrownTundra_EventScript_Spectrier::
 	faceplayer
 	playmoncry SPECIES_SPECTRIER, CRY_MODE_ENCOUNTER
 	waitmoncry
-	goto_if_set FLAG_CROWN_CHOSE_SPECTRIER, CrownTundra_EventScript_SpectrierBattle
 	msgbox CrownTundra_Text_SpectrierLook, MSGBOX_DEFAULT
-	msgbox CrownTundra_Text_SpectrierChoose, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, CrownTundra_EventScript_SpectrierLater
-	setflag FLAG_CROWN_CHOSE_SPECTRIER
-	playmoncry SPECIES_GLASTRIER, CRY_MODE_FAINT
-	waitmoncry
-	fadescreenspeed FADE_TO_WHITE, 4
-	removeobject LOCALID_CROWN_TUNDRA_GLASTRIER
-	setflag FLAG_TEMP_2
-	fadescreenspeed FADE_FROM_WHITE, 4
-	msgbox CrownTundra_Text_GlastrierLeaves, MSGBOX_DEFAULT
-CrownTundra_EventScript_SpectrierBattle:
 	msgbox CrownTundra_Text_SpectrierBattle, MSGBOX_DEFAULT
 	closemessage
 	setwildbattle SPECIES_SPECTRIER, 86
@@ -175,6 +147,7 @@ CrownTundra_EventScript_SpectrierBattle:
 	end
 
 CrownTundra_EventScript_SpectrierCaught:
+	setflag FLAG_CROWN_CHOSE_SPECTRIER
 	setflag FLAG_CROWN_STEED_DONE
 	msgbox CrownTundra_Text_SpectrierCaught, MSGBOX_DEFAULT
 	release
@@ -209,12 +182,11 @@ CrownTundra_Text_CalyrexIntro:
 
 CrownTundra_Text_CalyrexTask:
 	.string "CALYREX: A king rides one horse at a\n"
-	.string "time. That is a rule. I made it just now.\p"
-	.string "Go into the field and bring me ONE of\n"
-	.string "them. The other one will take it\l"
-	.string "personally and leave this dimension.\l"
-	.string "They are like that. I raised them like\l"
-	.string "that.$"
+	.string "time. That is a rule. Owning two is not\l"
+	.string "against the rule. I checked. I wrote it.\p"
+	.string "Go into the field and bring me my\n"
+	.string "steeds. One will do for the REINS. Both\l"
+	.string "would be greedy. You look greedy.$"
 
 CrownTundra_Text_CalyrexWaiting:
 	.string "CALYREX: The big one sulks on the ice to\n"
@@ -222,14 +194,6 @@ CrownTundra_Text_CalyrexWaiting:
 	.string "between the dark trees. I would fetch\l"
 	.string "them myself, but I am very small and\l"
 	.string "very royal.$"
-
-CrownTundra_Text_CalyrexChosen:
-	.string "CALYREX: You have chosen. The other\n"
-	.string "one has left in a huff, as foretold by\l"
-	.string "me, a minute ago.\p"
-	.string "Now bring the chosen one here. In a ball,\n"
-	.string "I suppose. Everything with you is in a\l"
-	.string "ball.$"
 
 CrownTundra_Text_CalyrexReunited:
 	.string "CALYREX: You caught my steed. In a ball.\n"
@@ -272,17 +236,6 @@ CrownTundra_Text_GlastrierLook:
 	.string "GLASTRIER. Strong. Stubborn. Has never\l"
 	.string "once listened to me.$"
 
-CrownTundra_Text_GlastrierChoose:
-	.string "CALYREX: You choose GLASTRIER? Then\n"
-	.string "SPECTRIER will leave forever. It will\l"
-	.string "not say goodbye. It never does.$"
-
-CrownTundra_Text_SpectrierLeaves:
-	.string "Between the dark trees, SPECTRIER lets\n"
-	.string "out a wounded whinny and fades into\l"
-	.string "nothing.\p"
-	.string "CALYREX: Dramatic. As always.$"
-
 CrownTundra_Text_GlastrierBattle:
 	.string "GLASTRIER lowers its head. That is not\n"
 	.string "a bow.$"
@@ -306,18 +259,6 @@ CrownTundra_Text_SpectrierLook:
 	.string "SPECTRIER. Fast. Shy. Once fled from its\l"
 	.string "own shadow, and then from the shadow\l"
 	.string "of its shadow.$"
-
-CrownTundra_Text_SpectrierChoose:
-	.string "CALYREX: You choose SPECTRIER? Then\n"
-	.string "GLASTRIER will be furious and leave\l"
-	.string "forever. It will kick a tree on the way\l"
-	.string "out. Several trees.$"
-
-CrownTundra_Text_GlastrierLeaves:
-	.string "Out on the ice, GLASTRIER snorts, kicks\n"
-	.string "a frozen tree in half and walks out of\l"
-	.string "this dimension.\p"
-	.string "CALYREX: Rude. As always.$"
 
 CrownTundra_Text_SpectrierBattle:
 	.string "SPECTRIER panics. Panicking is how it\n"

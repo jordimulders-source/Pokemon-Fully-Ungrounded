@@ -44,9 +44,9 @@ R136_GROTTO_MOUTH = (50, 24)         # bestaande grotmond (Route136_Grotto): bro
 # ====================================================================== flags (FLAG_GROUNDED 1280-1319)
 FLAGS = [
     (1280, 'FLAG_CROWN_QUEST_STARTED', 'Crown Tundra: Calyrex heeft gevraagd zijn paard terug te halen (paarden verschijnen)'),
-    (1281, 'FLAG_CROWN_CHOSE_GLASTRIER', 'Crown Tundra: gekozen voor GLASTRIER (Spectrier is voorgoed weg)'),
-    (1282, 'FLAG_CROWN_CHOSE_SPECTRIER', 'Crown Tundra: gekozen voor SPECTRIER (Glastrier is voorgoed weg)'),
-    (1283, 'FLAG_CROWN_STEED_DONE', 'Crown Tundra: het gekozen paard is gevangen'),
+    (1281, 'FLAG_CROWN_CHOSE_GLASTRIER', 'Crown Tundra: GLASTRIER gevangen (naam historisch; beide paarden zijn te vangen)'),
+    (1282, 'FLAG_CROWN_CHOSE_SPECTRIER', 'Crown Tundra: SPECTRIER gevangen (naam historisch; beide paarden zijn te vangen)'),
+    (1283, 'FLAG_CROWN_STEED_DONE', 'Crown Tundra: minstens één paard gevangen (Calyrex geeft de Reins)'),
     (1284, 'FLAG_RECEIVED_REINS_OF_UNITY', 'Crown Tundra: REINS OF UNITY gekregen van Calyrex'),
     (1285, 'FLAG_CROWN_CALYREX_DONE', 'Crown Tundra: CALYREX gevangen (quest klaar)'),
 ]
@@ -411,26 +411,15 @@ T = NAME + '_Text_'
 LID = {k: 'LOCALID_CROWN_TUNDRA_' + k for k in ('CALYREX', 'GLASTRIER', 'SPECTRIER')}
 
 
-def steed_script(sp, other, flag_me, flag_other, tmp_other):
-    s, o = sp.title(), other.title()
+def steed_script(sp, flag_me):
+    """Jordi: alle Pokémon zijn beschikbaar, dus beide paarden zijn te vangen (geen keuze zoals in Crown Tundra)."""
+    s = sp.title()
     return f'''{P}{s}::
 	lock
 	faceplayer
 	playmoncry SPECIES_{sp}, CRY_MODE_ENCOUNTER
 	waitmoncry
-	goto_if_set {flag_me}, {P}{s}Battle
 	msgbox {T}{s}Look, MSGBOX_DEFAULT
-	msgbox {T}{s}Choose, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, {P}{s}Later
-	setflag {flag_me}
-	playmoncry SPECIES_{other}, CRY_MODE_FAINT
-	waitmoncry
-	fadescreenspeed FADE_TO_WHITE, 4
-	removeobject {LID[other]}
-	setflag {tmp_other}
-	fadescreenspeed FADE_FROM_WHITE, 4
-	msgbox {T}{o}Leaves, MSGBOX_DEFAULT
-{P}{s}Battle:
 	msgbox {T}{s}Battle, MSGBOX_DEFAULT
 	closemessage
 	setwildbattle SPECIES_{sp}, {STEED_LEVEL}
@@ -448,6 +437,7 @@ def steed_script(sp, other, flag_me, flag_other, tmp_other):
 	end
 
 {P}{s}Caught:
+	setflag {flag_me}
 	setflag FLAG_CROWN_STEED_DONE
 	msgbox {T}{s}Caught, MSGBOX_DEFAULT
 	release
@@ -464,14 +454,16 @@ CODE = f'''{P}OnTransition:
 	setflag FLAG_TEMP_2
 	setflag FLAG_TEMP_3
 	goto_if_unset FLAG_NATIONAL_PARK_DONE, {P}OnTransitionEnd
-	goto_if_set FLAG_CROWN_CALYREX_DONE, {P}OnTransitionEnd
-	clearflag FLAG_TEMP_1
+	call_if_unset FLAG_CROWN_CALYREX_DONE, {P}ShowCalyrex
 	goto_if_unset FLAG_CROWN_QUEST_STARTED, {P}OnTransitionEnd
-	goto_if_set FLAG_CROWN_STEED_DONE, {P}OnTransitionEnd
-	call_if_unset FLAG_CROWN_CHOSE_SPECTRIER, {P}ShowGlastrier
-	call_if_unset FLAG_CROWN_CHOSE_GLASTRIER, {P}ShowSpectrier
+	call_if_unset FLAG_CROWN_CHOSE_GLASTRIER, {P}ShowGlastrier
+	call_if_unset FLAG_CROWN_CHOSE_SPECTRIER, {P}ShowSpectrier
 {P}OnTransitionEnd:
 	end
+
+{P}ShowCalyrex:
+	clearflag FLAG_TEMP_1
+	return
 
 {P}ShowGlastrier:
 	clearflag FLAG_TEMP_2
@@ -487,8 +479,6 @@ CODE = f'''{P}OnTransition:
 	playmoncry SPECIES_CALYREX, CRY_MODE_NORMAL
 	waitmoncry
 	goto_if_set FLAG_CROWN_STEED_DONE, {P}CalyrexReins
-	goto_if_set FLAG_CROWN_CHOSE_GLASTRIER, {P}CalyrexChosen
-	goto_if_set FLAG_CROWN_CHOSE_SPECTRIER, {P}CalyrexChosen
 	goto_if_set FLAG_CROWN_QUEST_STARTED, {P}CalyrexWaiting
 	msgbox {T}CalyrexIntro, MSGBOX_DEFAULT
 	closemessage
@@ -507,11 +497,6 @@ CODE = f'''{P}OnTransition:
 
 {P}CalyrexWaiting:
 	msgbox {T}CalyrexWaiting, MSGBOX_DEFAULT
-	release
-	end
-
-{P}CalyrexChosen:
-	msgbox {T}CalyrexChosen, MSGBOX_DEFAULT
 	release
 	end
 
@@ -552,8 +537,7 @@ CODE = f'''{P}OnTransition:
 	msgbox {T}Altar, MSGBOX_SIGN
 	end
 
-''' + steed_script('GLASTRIER', 'SPECTRIER', 'FLAG_CROWN_CHOSE_GLASTRIER', 'FLAG_CROWN_CHOSE_SPECTRIER', 'FLAG_TEMP_3') + '\n' + \
-    steed_script('SPECTRIER', 'GLASTRIER', 'FLAG_CROWN_CHOSE_SPECTRIER', 'FLAG_CROWN_CHOSE_GLASTRIER', 'FLAG_TEMP_2')
+''' + steed_script('GLASTRIER', 'FLAG_CROWN_CHOSE_GLASTRIER') + '\n' + steed_script('SPECTRIER', 'FLAG_CROWN_CHOSE_SPECTRIER')
 
 TEXTS = [
     ('Altar', "A crumbling shrine, half buried in snow. Carved into the stone: a crowned head and two horses, one of "
@@ -563,13 +547,11 @@ TEXTS = [
                      "have a roof.\n\nI have a task for you, which you will accept, because I am a king and you are "
                      "a person holding a bicycle.\n\nMy steeds have wandered off. GLASTRIER, who is strong and "
                      "stubborn, and SPECTRIER, who is fast and afraid of everything. Including me. Especially me."),
-    ('CalyrexTask', "CALYREX: A king rides one horse at a time. That is a rule. I made it just now.\n\nGo into the "
-                    "field and bring me ONE of them. The other one will take it personally and leave this "
-                    "dimension. They are like that. I raised them like that."),
+    ('CalyrexTask', "CALYREX: A king rides one horse at a time. That is a rule. Owning two is not against the "
+                    "rule. I checked. I wrote it.\n\nGo into the field and bring me my steeds. One will do for "
+                    "the REINS. Both would be greedy. You look greedy."),
     ('CalyrexWaiting', "CALYREX: The big one sulks on the ice to the west. The nervous one hides between the dark "
                        "trees. I would fetch them myself, but I am very small and very royal."),
-    ('CalyrexChosen', "CALYREX: You have chosen. The other one has left in a huff, as foretold by me, a minute ago.\n\n"
-                      "Now bring the chosen one here. In a ball, I suppose. Everything with you is in a ball."),
     ('CalyrexReunited', "CALYREX: You caught my steed. In a ball. With my steed inside it. I see.\n\nNo matter. Take "
                         "these REINS OF UNITY. With them, my steed and I become one. It is very majestic and only "
                         "slightly uncomfortable for the horse."),
@@ -584,10 +566,6 @@ TEXTS = [
     ('GlastrierLook', "A massive white horse made mostly of muscle and ice stares you down. It snorts. Somewhere, a "
                       "small avalanche happens.\n\nCALYREX (in your head): That is GLASTRIER. Strong. Stubborn. Has "
                       "never once listened to me."),
-    ('GlastrierChoose', "CALYREX: You choose GLASTRIER? Then SPECTRIER will leave forever. It will not say goodbye. "
-                        "It never does."),
-    ('SpectrierLeaves', "Between the dark trees, SPECTRIER lets out a wounded whinny and fades into nothing.\n\n"
-                        "CALYREX: Dramatic. As always."),
     ('GlastrierBattle', "GLASTRIER lowers its head. That is not a bow."),
     ('GlastrierCaught', "You caught GLASTRIER!\n\nCALYREX: Bring it to the shrine. Gently. It bites."),
     ('GlastrierFled', "GLASTRIER stomps off into the snow, humiliated. It will be back: it left its dignity here and "
@@ -595,10 +573,6 @@ TEXTS = [
     ('SpectrierLook', "A thin black horse flickers between the trees, half here and half somewhere worse. It looks "
                       "at you as if YOU are the ghost.\n\nCALYREX (in your head): That is SPECTRIER. Fast. Shy. Once "
                       "fled from its own shadow, and then from the shadow of its shadow."),
-    ('SpectrierChoose', "CALYREX: You choose SPECTRIER? Then GLASTRIER will be furious and leave forever. It will "
-                        "kick a tree on the way out. Several trees."),
-    ('GlastrierLeaves', "Out on the ice, GLASTRIER snorts, kicks a frozen tree in half and walks out of this "
-                        "dimension.\n\nCALYREX: Rude. As always."),
     ('SpectrierBattle', "SPECTRIER panics. Panicking is how it fights."),
     ('SpectrierCaught', "You caught SPECTRIER!\n\nCALYREX: Bring it to the shrine. Quietly. Loud noises make it phase "
                         "through the floor."),

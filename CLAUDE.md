@@ -21,7 +21,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Intro kort houden:** geen truck-intro, geen tv-scène. Mom houdt haar humoristische standaardtekst; healen, PokéNav-registratie en post-game-dialoog werken wel.
 - **Battle Stadium-pool (Jordi):** alleen echt iconische personages komen in de toernooipool (met hun sterkste team): iets bijzonders zoals een eigen sprite, een eigen verhaal/quest of een gevecht dat je onthoudt (bijv. Colress, Zinnia, Mimi, Keccles, Grimsby). Geen gewone NPC's of routetrainers met alleen een naam en een standaardsprite (Jordi, 6 okt: "geen nono's en NPC's").
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) zijn bewust weggelaten.
-- **National Dex** is vanaf het begin beschikbaar.
+- **National Dex** is vanaf het begin beschikbaar. **Alle Pokémon zijn te krijgen** (Jordi, 9 okt): geen versie-exclusieve keuzes waarbij een soort voorgoed verdwijnt (Glastrier én Spectrier).
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
 ## Speelervaring

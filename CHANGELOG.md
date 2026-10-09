@@ -17777,3 +17777,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Calyrex** vraagt je één van zijn paarden terug te halen: **Glastrier** (ijsveld) of **Spectrier** (bos), lv 86. Je kiest er één; het andere verdwijnt voorgoed. Daarna geeft Calyrex de **Reins of Unity** en vecht hij zelf (lv 88). Fusie werkt (ridervormen staan aan). Verslaan i.p.v. vangen: bij het volgende bezoek terug.
 - Wilde Pokémon per evolutiefase (Cubchoo, Snover, Snom, Phantump, Deerling, Piloswine, Wyrdeer, Cetitan, Trevenant, Frosmoth, Smoochum, Spiritomb); items Ice Gem, Ghost Gem, verborgen Ice Memory.
 - Script `tools/grounded/maptools/calyrex_quest.py`; flags `FLAG_GROUNDED(1280–1285, 1300–1302)`. Muziek: placeholder.
+
+### [v0.9.206] - Glastrier én Spectrier
+- Jordi: alle Pokémon zijn beschikbaar in deze game. Geen keuze meer tussen de paarden: **beide** zijn te vangen. Na het eerste paard geeft Calyrex de Reins of Unity; het andere paard blijft staan tot je het vangt (ook nadat je Calyrex gevangen hebt).

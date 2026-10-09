@@ -19,7 +19,7 @@ Uitvoer (graphics/battle_transitions/):
 - film_<naam>_seq.bin: per gameframe 8 bytes: u16 tilemap (0xFFFF = leeg), u16 laadactie (0xFFFF = geen),
   u8 paletset, 3 x 0
 """
-import os, struct
+import os, struct, sys
 import numpy as np
 from PIL import Image
 
@@ -331,6 +331,12 @@ class Film:
             os.remove(pth)
         self.rom_size = len(tile_blob) + len(map_blob) + len(load_rows) * 8 + len(run_rows) * 4 + \
             len(map_ofs) * 4 + len(seq) * 8 + len(self.palsets) * 96
+        # tilemaps als verschil met de vorige (v0.9.229)
+        sys.path.insert(0, os.path.join(ROOT, 'tools/grounded'))
+        import film_delta
+        r = film_delta.encode(n)
+        if r:
+            self.rom_size -= r[0] - r[1]
 
     @staticmethod
     def _tile4bpp(t):

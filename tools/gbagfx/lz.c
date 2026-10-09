@@ -69,6 +69,9 @@ fail:
 	FATAL_ERROR("Fatal error while decompressing LZ file.\n");
 }
 
+// Project Grounded (v0.9.229): optimale parse i.p.v. greedy. Zelfde formaat (de GBA pakt het identiek uit);
+// per positie de langste match (elke kortere lengte kan met dezelfde afstand), dan van achter naar voren het minste
+// aantal bits (literal 9, match 17).
 unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize, const int minDistance)
 {
 	if (srcSize <= 0)
@@ -80,9 +83,46 @@ unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize, 
 	worstCaseDestSize = (worstCaseDestSize + 3) & ~3;
 
 	unsigned char *dest = malloc(worstCaseDestSize);
+	int *matchLen = malloc(sizeof(int) * srcSize);
+	int *matchDist = malloc(sizeof(int) * srcSize);
+	int *cost = malloc(sizeof(int) * (srcSize + 1));
+	int *choice = malloc(sizeof(int) * srcSize);
 
-	if (dest == NULL)
+	if (dest == NULL || matchLen == NULL || matchDist == NULL || cost == NULL || choice == NULL)
 		goto fail;
+
+	for (int pos = 0; pos < srcSize; pos++) {
+		int bestBlockDistance = 0;
+		int bestBlockSize = 0;
+		for (int blockDistance = minDistance; blockDistance <= pos && blockDistance <= 0x1000; blockDistance++) {
+			int blockStart = pos - blockDistance;
+			int blockSize = 0;
+			while (blockSize < 18
+			    && pos + blockSize < srcSize
+			    && src[blockStart + blockSize] == src[pos + blockSize])
+				blockSize++;
+			if (blockSize > bestBlockSize) {
+				bestBlockDistance = blockDistance;
+				bestBlockSize = blockSize;
+				if (blockSize == 18)
+					break;
+			}
+		}
+		matchLen[pos] = bestBlockSize;
+		matchDist[pos] = bestBlockDistance;
+	}
+
+	cost[srcSize] = 0;
+	for (int pos = srcSize - 1; pos >= 0; pos--) {
+		cost[pos] = 9 + cost[pos + 1];
+		choice[pos] = 1;
+		for (int len = 3; len <= matchLen[pos]; len++) {
+			if (17 + cost[pos + len] < cost[pos]) {
+				cost[pos] = 17 + cost[pos + len];
+				choice[pos] = len;
+			}
+		}
+	}
 
 	// header
 	dest[0] = 0x10; // LZ compression type
@@ -98,37 +138,13 @@ unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize, 
 		*flags = 0;
 
 		for (int i = 0; i < 8; i++) {
-			int bestBlockDistance = 0;
-			int bestBlockSize = 0;
-			int blockDistance = minDistance;
-
-			while (blockDistance <= srcPos && blockDistance <= 0x1000) {
-				int blockStart = srcPos - blockDistance;
-				int blockSize = 0;
-
-				while (blockSize < 18
-				    && srcPos + blockSize < srcSize
-				    && src[blockStart + blockSize] == src[srcPos + blockSize])
-					blockSize++;
-
-				if (blockSize > bestBlockSize) {
-					bestBlockDistance = blockDistance;
-					bestBlockSize = blockSize;
-
-					if (blockSize == 18)
-						break;
-				}
-
-				blockDistance++;
-			}
-
-			if (bestBlockSize >= 3) {
+			int len = choice[srcPos];
+			if (len >= 3) {
+				int dist = matchDist[srcPos] - 1;
 				*flags |= (0x80 >> i);
-				srcPos += bestBlockSize;
-				bestBlockSize -= 3;
-				bestBlockDistance--;
-				dest[destPos++] = (bestBlockSize << 4) | ((unsigned int)bestBlockDistance >> 8);
-				dest[destPos++] = (unsigned char)bestBlockDistance;
+				dest[destPos++] = ((len - 3) << 4) | ((unsigned int)dist >> 8);
+				dest[destPos++] = (unsigned char)dist;
+				srcPos += len;
 			} else {
 				dest[destPos++] = src[srcPos++];
 			}
@@ -142,6 +158,10 @@ unsigned char *LZCompress(unsigned char *src, int srcSize, int *compressedSize, 
 						dest[destPos++] = 0;
 				}
 
+				free(matchLen);
+				free(matchDist);
+				free(cost);
+				free(choice);
 				*compressedSize = destPos;
 				return dest;
 			}

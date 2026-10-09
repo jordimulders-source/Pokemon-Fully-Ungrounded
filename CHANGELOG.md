@@ -17916,3 +17916,10 @@ Jordi (9 okt): "Schrap alle mappen die je al had ... Je kan veel beter, kom op."
   - `NUM_OBJ_EVENT_GFX` is 351;
   - audit.py kent `ULTRA_EYE` als muurobject.
 - Na de merge: build, audit 0 FOUT, dex 1082/1082 en een emulatorcheck van alle vijf de tilesets. ROM-ruimte: nog ±0,86 MB vrij.
+
+### [v0.9.229] - ROM-ruimte: ±590 KB terug
+Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's en muziek was er nog ±0,86 MB vrij; nu ±1,43 MB.
+- **Trainer-slides** (`src/trainer_slide.c`): de tabel `[moeilijkheid][1200 trainers][14 momenten]` aan pointers was 196 KB plus 49 KB voor de Frontier, bijna alles leeg. Nu is het een lijstje van de 28 Stadium-zinnen (`sTrainerSlideEntries`). Dat scheelt 252 KB; er verandert niets in het spel.
+- **Filmintro's** (`film_delta.py`): elke tilemap staat nu als verschil met de vorige opgeslagen, behalve op keyframes waar de film terugspringt. De filmspeler XOR't die met de vorige tilemap in zijn buffer. Dat scheelt 321 KB, en het beeld is pixel voor pixel gelijk (controle in Python en in de emulator met Rayquaza). `film.py` doet dit voortaan zelf.
+- **gbagfx-LZ77** comprimeert optimaal i.p.v. greedy (zelfde formaat). Dat scheelt nog 18 KB op de films.
+- Al goed en daarom niet aangeraakt: kreten (al gecomprimeerd, en Jordi wil ze niet lager), alle sprites/tilesets (al `smol`) en de opstartintro (±90 KB in totaal).

@@ -9270,6 +9270,7 @@ static bool8 RTDave_Penalty(struct Task *task, s32 t)
 #define FILM_SCREEN_B   27          // tweede schermblok (tiles 704-767 van charblock 2; de film gebruikt 1-702)
 #define FILM_TILE_BUF   (351 * TILE_SIZE_4BPP)
 #define FILM_MAP_BUF    (32 * 20 * 2)
+#define FILM_MAP_DELTA  0x80000000  // mapofs: XOR met de vorige tilemap
 #define FILM_SCENE_PALETTES (PALETTES_ALL & ~(7 << 13))
 #define tFilmMap    data[11]
 #define tFilmScreen data[12]
@@ -9366,7 +9367,18 @@ static bool8 Film_Update(struct Task *task, const struct Film *film)
     }
     else
     {
-        FastLZ77UnCompWram(&film->maps[film->mapOfs[map] / 4], sFilmBuffer + FILM_TILE_BUF);
+        if (film->mapOfs[map] & FILM_MAP_DELTA)
+        {
+            // verschil met de vorige tilemap, die nog in de buffer staat (tools/grounded/film_delta.py)
+            u32 *dst = (u32 *)(sFilmBuffer + FILM_TILE_BUF);
+            FastLZ77UnCompWram(&film->maps[(film->mapOfs[map] & ~FILM_MAP_DELTA) / 4], sFilmBuffer);
+            for (i = 0; i < FILM_MAP_BUF / 4; i++)
+                dst[i] ^= ((u32 *)sFilmBuffer)[i];
+        }
+        else
+        {
+            FastLZ77UnCompWram(&film->maps[film->mapOfs[map] / 4], sFilmBuffer + FILM_TILE_BUF);
+        }
         CpuFastCopy(sFilmBuffer + FILM_TILE_BUF, screen, FILM_MAP_BUF);
         // rij 20 = rij 19 en rij 31 = rij 0, voor verticaal trillen
         CpuFastCopy(&screen[19 * 32], &screen[20 * 32], 64);

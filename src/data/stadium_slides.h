@@ -1,7 +1,7 @@
 // Project Grounded: Battle Stadium, wat een trainer zegt voor de eerste beurt (trainer slide).
 // Placeholders; Jordi herschrijft. Regels breken automatisch af (alleen \p voor een nieuwe pagina).
-// Wordt in sTrainerSlides (src/trainer_slide.c) ingevoegd; nederlaag- en winstteksten staan in src/stadium.c.
-#define STADIUM_INTRO(trainer, text) [trainer] = { [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING(text) }
+// Wordt in sTrainerSlideEntries (src/trainer_slide.c) ingevoegd; nederlaag- en winstteksten staan in src/stadium.c.
+#define STADIUM_INTRO(trainer, text) { trainer, TRAINER_SLIDE_BEFORE_FIRST_TURN, COMPOUND_STRING(text) }
 
 STADIUM_INTRO(TRAINER_STADIUM_WARIO, "Wahahaha! I'm only here for the prize money. And the free buffet."),
 STADIUM_INTRO(TRAINER_STADIUM_YOSHI, "Yoshi!\p(He looks like he's about to cry. Please be gentle.)"),

@@ -17648,3 +17648,27 @@ Volgens Jordi's GBA-instructies per leider:
 - **Quest:** na de trainers verschijnt **Calyrex** bij de fontein; een witte flits toont het echte, **brandende park** (eigen layout, as-regen). Twee **multi battles met Calyrex als partner** tegen schimmen. In **Ilex Forest** (donker, mistig, schrijn met een stenen Celebi-beeld) verschijnt **Celebi** (lv 70; versla je hem, dan zet Calyrex de tijd terug). Terug in het park herstelt Celebi de natuur en verschijnt **Eternatus** (lv 75): elke Pokémon die je inzet krijgt +1 op alle stats (omniboost). Daarna vertrekt Calyrex.
 - Park- en Ilex-scheur gekoppeld; het park telt mee voor de gang naar ?????. 12 unieke wilde soorten per gebied (lv 60–68). Script `tools/grounded/maptools/national_park.py`; flags `FLAG_GROUNDED(700–711)`, trainers 1090–1097, partner `PARTNER_CALYREX`.
 - Chargestone: Colress' Genesect heeft nu een **Douse Drive** (Jordi: andere dimensie).
+
+### [v0.9.182] - Swords of Justice, Keldeo en Meltan
+- **Cobalion** (Granite Cave B2F: nieuwe grotopening in een nis, Rock Smash-rots ervoor → zwaardkamer), **Terrakion** (Victory Road B2F, zelfde soort kamer), **Virizion** (Mangrove Mire, doodlopende open plek aan het oostelijke zijpad, boomstam met een strakke zwaardsnede). Post-game, lv 70, zonder quest (zoals Gen 5).
+- **Keldeo:** na het derde zwaard belt **Mr. Briney** via de PokéNav (hij ziet iets geks in het water). Praat met hem (huis, Dewford of Route 109): fade, surfgeluid, en je staat op het **Uncharted Isle** ("???", niet op de kaart): een zandplaat in een ring van draaikolken met Keldeo (lv 70). Briney brengt je terug.
+- **Meltan:** Rivet de lasser in Sterns scheepswerf (Slateport) geeft Meltan lv 12; Meltan evolueert in **Melmetal** door te levelen met een **Metal Coat** (te koop in Lilycove 2F; wordt verbruikt).
+- Script `tools/grounded/maptools/swords_keldeo.py`; flags `FLAG_GROUNDED(800–809)`.
+
+### [v0.9.183] - Ability-popup bij binnenkomst verdwijnt netjes
+- Jordi zag in het multi battle met Calyrex een halve ability-melding links naast Arceus bij het actiemenu. Dat was de Unnerve-popup die nog aan het wegschuiven was. Na de melding van een switch-in-ability (o.a. Unnerve, As One) wordt de popup nu meteen weggehaald (zoals eerder bij de weer-abilities). Getest in de emulator.
+
+### [v0.9.184] - Ability-popups: nooit meer half zichtbaar bij het actiemenu
+- Jordi: ability-meldingen gaven af en toe glitches. Oorzaak: een popup schuift na een vaste tijd vanzelf weg, maar kon dan nog (half) in beeld staan als het actiemenu al open ging; met `fixedPopup` bleef hij zelfs staan. Nieuw: aan het begin van elke beurt (`STATE_TURN_START_RECORD`) worden alle nog actieve popups meteen verborgen en opgeruimd (`ForceHideAbilityPopUps` in `battle_interface.c`), en `fixedPopup` wordt gereset. Dit vangt álle abilities in één keer af, ook toekomstige.
+- Getest in de emulator met Intimidate + Drizzle (single) en Unnerve: het actiemenu is telkens schoon.
+
+### [v0.9.185] - Weergeluiden lopen niet meer door
+- Jordi: geluidseffecten (vooral van weer) bleven soms te lang doorlopen. Oorzaak: de weeranimaties zijn ingekort (`sFastBattleAnim` halveert de wachttijden), maar lange geluiden als `SE_M_RAIN_DANCE` en `SE_M_SANDSTORM` speelden hun volle lengte uit. Nu stopt het geluid zodra de animatie klaar is (`waitforvisualfinish` + `stopsound`) in de weeranimaties aan het eind van de beurt/bij abilities (Rain, Sandstorm, Hail, Snow, Sun, Pollen Haze, Acid Rain) en in de weermoves (Rain Dance, Sandstorm, Hail, Sunny Day, Snowscape, Chilly Reception).
+
+### [v0.9.186] - Virizion-kamer en een wilder Uncharted Isle
+- **Virizion** heeft een eigen kamer: aan het einde van het oostelijke zijpad in Mangrove Mire een groene tunnel in de boomrand (boog van mangrovewortels met lianen) naar **MangroveMire_VirizionGlade**: een open plek tussen junglebomen met een grote mangrove met een strakke zwaardsnede, wortelbogen, een omgevallen stam en een zonnevlek waar Virizion staat. De oude plek is weer gewone bosrand.
+- **Uncharted Isle:** een ring van **51 geanimeerde draaikolken** (eigen tileset `uncharted_isle`, 8 frames, afwisselend links- en rechtsom draaiend), rotsen in drie maten met schuimkragen, golfkammetjes en schuimkoppen; het eiland zelf met een grilligere kustlijn, wrakhout en steentjes.
+- Scripts `tools/grounded/maptools/swords_glade.py` en `swords_isle.py` (aangeroepen vanuit `swords_keldeo.py`; na `mangrove_swamp.py` altijd `swords_keldeo.py` opnieuw draaien).
+
+### [v0.9.187] - Bugfix: extra flagblok vergroot (512 → 1024)
+- Het blok `FLAG_GROUNDED(n)` had maar 512 plekken, terwijl Spacetime Cave, Mega Forest, Koraalkathedraal, National Park, Chargestone en de Swords of Justice al flags 560–809 gebruikten. Die vielen buiten het blok en kwamen in `GetFlagPointer` in de gewone flag-tak terecht: schrijven buiten de flag-array, midden in andere save-data (stille savecorruptie, quests die niet onthouden werden). Het blok is nu 1024 groot (64 bytes extra achteraan SaveBlock1, oude saves blijven werken).

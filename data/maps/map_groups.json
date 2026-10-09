@@ -749,7 +749,11 @@
     "PetalburgWoods_RuinShrine",
     "Route135_RuinShrine",
     "MegaForest",
-    "Route126_CoralCathedral"
+    "Route126_CoralCathedral",
+    "GraniteCave_SwordChamber",
+    "VictoryRoad_SwordChamber",
+    "UnchartedIsle",
+    "MangroveMire_VirizionGlade"
   ],
   "gMapGroup_Spacetime": [
     "LavenderTown",

@@ -1642,9 +1642,9 @@
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
 // Project Grounded: extra flags (de gewone flags waren op, 8 okt). Ze staan achteraan SaveBlock1
-// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..511.
+// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..1023.
 #define GROUNDED_FLAGS_START                    0x1000
-#define NUM_GROUNDED_FLAGS                      512
+#define NUM_GROUNDED_FLAGS                      1024 // v0.9.187: was 512, terwijl er al flags tot ±920 in gebruik waren
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
@@ -1692,6 +1692,18 @@
 #define FLAG_ITEM_CHARGESTONE_B2F_PP_MAX                 FLAG_GROUNDED(768) // Project Grounded: Chargestone Cave B2F: PP Max
 #define FLAG_HIDDEN_ITEM_CHARGESTONE_1F_CELL_BATTERY     FLAG_GROUNDED(769) // Project Grounded: Chargestone Cave 1F: verborgen Cell Battery
 #define FLAG_HIDDEN_ITEM_CHARGESTONE_B1F_BIG_NUGGET      FLAG_GROUNDED(770) // Project Grounded: Chargestone Cave B1F: verborgen Big Nugget
+// }
+// swords_keldeo { (tools/grounded/maptools/swords_keldeo.py; FLAG_GROUNDED 800-839, 810-839 nog vrij)
+#define FLAG_DEFEATED_COBALION                           FLAG_GROUNDED(800) // Project Grounded: Cobalion gevangen/verslagen (Granite Cave)
+#define FLAG_DEFEATED_TERRAKION                          FLAG_GROUNDED(801) // Project Grounded: Terrakion gevangen/verslagen (Victory Road)
+#define FLAG_DEFEATED_VIRIZION                           FLAG_GROUNDED(802) // Project Grounded: Virizion gevangen/verslagen (Mangrove Mire)
+#define FLAG_BRINEY_KELDEO_CALL                          FLAG_GROUNDED(803) // Project Grounded: Mr. Briney heeft gebeld over het eiland (na de drie zwaarden)
+#define FLAG_DEFEATED_KELDEO                             FLAG_GROUNDED(804) // Project Grounded: Keldeo gevangen/verslagen (UnchartedIsle)
+#define FLAG_GRANITE_SWORD_CHAMBER_ROCK                  FLAG_GROUNDED(805) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Granite Cave B2F
+#define FLAG_VICTORY_ROAD_SWORD_CHAMBER_ROCK             FLAG_GROUNDED(806) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Victory Road B2F
+#define FLAG_KELDEO_TRIP_FROM_DEWFORD                    FLAG_GROUNDED(807) // Project Grounded: Keldeo-bootreis vertrokken uit Dewford (terugweg)
+#define FLAG_KELDEO_TRIP_FROM_ROUTE109                   FLAG_GROUNDED(808) // Project Grounded: Keldeo-bootreis vertrokken van Route 109 (terugweg)
+#define FLAG_RECEIVED_MELTAN                             FLAG_GROUNDED(809) // Project Grounded: Meltan gekregen (Sterns scheepswerf, Slateport)
 // }
 // mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
 #define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)

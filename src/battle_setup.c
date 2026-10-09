@@ -671,6 +671,17 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_LANDORUS_THERIAN:
         CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
+    // Project Grounded: Swords of Justice + Keldeo (swords_keldeo.py). Placeholders: bestaande transities +
+    // Kanto-legendary-muziek; Jordi bedenkt de eigen intro's nog.
+    case SPECIES_COBALION:
+    case SPECIES_TERRAKION:
+    case SPECIES_VIRIZION:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_KELDEO_ORDINARY:
+    case SPECIES_KELDEO_RESOLUTE:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        break;
     // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities + Kanto-legendary-muziek;
     // Jordi bedenkt de eigen intro's nog.
     case SPECIES_RESHIRAM: // witte vlam: de steekvlam van Entei

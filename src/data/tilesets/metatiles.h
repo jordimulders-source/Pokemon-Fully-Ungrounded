@@ -274,3 +274,6 @@ const u16 gMetatileAttributes_LavenderTown[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatiles.bin"); // Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen
 const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatile_attributes.bin");
+
+const u16 gMetatiles_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatiles.bin");
+const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatile_attributes.bin");

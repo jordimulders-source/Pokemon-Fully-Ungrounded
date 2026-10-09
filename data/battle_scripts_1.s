@@ -7663,12 +7663,14 @@ BattleScript_SwitchInAbilityMsg::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: popup bleef half zichtbaar naast het actiemenu (Unnerve, multi battle)
 	end3
 
 BattleScript_SwitchInAbilityMsgRet::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: zie BattleScript_SwitchInAbilityMsg
 	return
 
 BattleScript_ActivateAsOne::
@@ -7681,6 +7683,7 @@ BattleScript_ActivateAsOne::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: zie BattleScript_SwitchInAbilityMsg
 	end3
 
 BattleScript_FriskMsgWithPopup::

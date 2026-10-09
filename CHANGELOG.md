@@ -17900,3 +17900,6 @@ Volgens Jordi's GBA-instructies per leider:
   - **Celesteela:** een eindeloze steppe met alleen Celesteela: monolieten, stenen beelden, schroeikringen en silhouetten aan de horizon.
   - **Kartana:** omgekeerde bibliotheek: kasten, trappen en kroonluchters op hun kop, inkt die omhoog druppelt, vallende bladzijden, Kartana op een open boek.
 - Wilde Pokémon lv 83–89 met soorten die nog weinig voorkwamen (Celesteela: bewust geen). ±223 KB.
+
+### [v0.9.227] - Geen reuzen-Ledyba
+- De reuzen-Ledyba in de Buzzwole-wereld is weg (out of place, Jordi).

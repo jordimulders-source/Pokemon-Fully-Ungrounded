@@ -1373,17 +1373,7 @@ def w_buzzwole():
     for (cx, cy) in ((14, 18), (24, 18), (6, 18), (30, 26), (14, 28), (36, 22), (18, 26), (28, 16)):
         if not w.solid[cy, cx]:
             w.over(TT, cx * 16, cy * 16)
-    # ---- een reuzenlieveheersbeestje (echte sprite, 2x vergroot: bij deze verhoudingen hoort het zo)
-    im = load_mon('ledyba')
-    a = im[..., 3] > 127
-    ys, xs = np.nonzero(a)
-    im = im[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
-    im = np.kron(im, np.ones((2, 2, 1)))
-    im = outline(im, (16, 16, 16))
-    hh, ww_ = im.shape[:2]
-    pad = img_new(((ww_ + 15) // 16) * 16, ((hh + 15) // 16) * 16)
-    pad[pad.shape[0] - hh:, :ww_] = im
-    w.stamp(pad, 32, 1, solid_rows=2, over_rows=pad.shape[0] // 16 - 2)
+    # (reuzen-Ledyba weggehaald: Jordi vond hem out of place)
     # ---- reuzenbloem (rafflesia) met een poel nectar
     def flower():
         img = img_new(64, 64)

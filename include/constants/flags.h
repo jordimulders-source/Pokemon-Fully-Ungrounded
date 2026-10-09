@@ -1649,6 +1649,21 @@
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
 // regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.
+// coronet { (tools/grounded/maptools/coronet.py; FLAG_GROUNDED 1160-1219: 1180-1186 nieuwe items (blok nieuwe_items), 1173-1179 en 1187-1219 nog vrij)
+#define FLAG_SPACETIME_CORONET_DONE                      FLAG_GROUNDED(1160) // Project Grounded: Mt. Coronet: Dialga en Palkia allebei gevangen of verslagen (klaar-flag; Arceus-scene in de hub)
+#define FLAG_CORONET_DIALGA_DONE                         FLAG_GROUNDED(1161) // Project Grounded: Spear Pillar: DIALGA gevangen of verslagen
+#define FLAG_CORONET_PALKIA_DONE                         FLAG_GROUNDED(1162) // Project Grounded: Spear Pillar: PALKIA gevangen of verslagen
+#define FLAG_HIDE_CORONET_DIALGA                         FLAG_GROUNDED(1163) // Project Grounded: Spear Pillar: DIALGA verborgen (verschijnt alleen via het altaar)
+#define FLAG_HIDE_CORONET_PALKIA                         FLAG_GROUNDED(1164) // Project Grounded: Spear Pillar: PALKIA verborgen (verschijnt alleen via het altaar)
+#define FLAG_ITEM_CORONET_4F_ROOM1_MAX_REVIVE            FLAG_GROUNDED(1165) // Project Grounded: Mt. Coronet 4F kamer 1: Max Revive
+#define FLAG_HIDDEN_ITEM_CORONET_4F_ROOM1_ULTRA_BALL     FLAG_GROUNDED(1166) // Project Grounded: Mt. Coronet 4F kamer 1: verborgen Ultra Balls
+#define FLAG_ITEM_CORONET_4F_OUTSIDE_MAX_ELIXIR          FLAG_GROUNDED(1167) // Project Grounded: Mt. Coronet 4F buiten: Max Elixir (op het massief)
+#define FLAG_ITEM_CORONET_4F_OUTSIDE_PP_MAX              FLAG_GROUNDED(1168) // Project Grounded: Mt. Coronet 4F buiten: PP Max
+#define FLAG_ITEM_CORONET_4F_ROOM3_RARE_CANDY            FLAG_GROUNDED(1169) // Project Grounded: Mt. Coronet 4F kamer 3: Rare Candy
+#define FLAG_ITEM_CORONET_5F_MAX_POTION                  FLAG_GROUNDED(1170) // Project Grounded: Mt. Coronet 5F: Max Potion
+#define FLAG_HIDDEN_ITEM_CORONET_5F_STAR_PIECE           FLAG_GROUNDED(1171) // Project Grounded: Mt. Coronet 5F: verborgen Star Piece
+#define FLAG_ITEM_CORONET_6F_PP_UP                       FLAG_GROUNDED(1172) // Project Grounded: Mt. Coronet 6F: PP Up
+// }
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119, 1050-1119 nog vrij)
 #define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
 #define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
@@ -1783,6 +1798,12 @@
 #define FLAG_ITEM_AREA_ZERO_PAST_POWER_HERB              FLAG_GROUNDED(959) // Project Grounded: Area Zero, verleden: Power Herb
 #define FLAG_ITEM_AREA_ZERO_PAST_GRIP_CLAW               FLAG_GROUNDED(960) // Project Grounded: Area Zero, verleden: Grip Claw
 #define FLAG_HIDDEN_ITEM_AREA_ZERO_PAST_STICKY_BARB      FLAG_GROUNDED(961) // Project Grounded: Area Zero, verleden: verborgen Sticky Barb
+#define FLAG_ITEM_MT_CORONET_4_F_ROOM2_LINKING_CORD      FLAG_GROUNDED(1180) // Project Grounded: Mt. Coronet 4F kamer 2: Linking Cord
+#define FLAG_ITEM_MT_CORONET_4_F_ROOM2_ODD_KEYSTONE      FLAG_GROUNDED(1181) // Project Grounded: Mt. Coronet 4F kamer 2: Odd Keystone
+#define FLAG_HIDDEN_ITEM_MT_CORONET_4_F_OUTSIDE_PEAT_BLOCK FLAG_GROUNDED(1182) // Project Grounded: Mt. Coronet 4F buiten: verborgen Peat Block
+#define FLAG_ITEM_MT_CORONET_5F_IRON_BALL                FLAG_GROUNDED(1183) // Project Grounded: Mt. Coronet 5F: Iron Ball
+#define FLAG_ITEM_SPEAR_PILLAR_ADAMANT_ORB               FLAG_GROUNDED(1184) // Project Grounded: Spear Pillar: Adamant Orb (bij het altaar van Dialga)
+#define FLAG_ITEM_SPEAR_PILLAR_LUSTROUS_ORB              FLAG_GROUNDED(1185) // Project Grounded: Spear Pillar: Lustrous Orb (bij het altaar van Palkia)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

@@ -42230,3 +42230,584 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Bullet Punch
 
 /* --- einde yoshis_island --- */
+
+/* --- coronet (tools/grounded/maptools/coronet.py) --- */
+
+=== TRAINER_CORONET_TICK ===
+Name: TICK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bronzong
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gyro Ball
+- Earthquake
+- Psychic
+- Trick Room
+
+Corviknight
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brave Bird
+- Iron Head
+- Bulk Up
+- Roost
+
+Kingambit
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Excadrill
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
+
+=== TRAINER_CORONET_PARALLAX ===
+Name: PARALLAX
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Starmie
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hydro Pump
+- Psychic
+- Thunderbolt
+- Ice Beam
+
+Kingdra
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Hydro Pump
+- Ice Beam
+- Rain Dance
+
+Beheeyem
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Shadow Ball
+- Thunderbolt
+- Trick Room
+
+Primarina
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Sparkling Aria
+- Psychic
+- Ice Beam
+
+=== TRAINER_CORONET_AEON ===
+Name: AEON
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Magnezone
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Slowking
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Scald
+- Slack Off
+- Trick Room
+
+Hydreigon
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power
+
+Duraludon
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Draco Meteor
+- Thunderbolt
+- Body Press
+
+Dragapult
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+=== TRAINER_CORONET_VOIDA ===
+Name: VOIDA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Chandelure
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Will-O-Wisp
+
+Gengar
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Hypnosis
+
+Sigilyph
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Air Slash
+- Heat Wave
+- Cosmic Power
+
+Reuniclus
+Level: 95
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Focus Blast
+- Shadow Ball
+- Calm Mind
+
+Mimikyu
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Play Rough
+- Shadow Claw
+- Swords Dance
+- Shadow Sneak
+
+=== TRAINER_CORONET_MOMENTUM ===
+Name: MOMENTUM
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Lucario
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Aura Sphere
+- Flash Cannon
+- Close Combat
+- Extreme Speed
+
+Conkeldurr
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+Hawlucha
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Close Combat
+- Brave Bird
+- Swords Dance
+- Roost
+
+Machamp
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dynamic Punch
+- Stone Edge
+- Knock Off
+- Bullet Punch
+
+=== TRAINER_CORONET_ORBIT ===
+Name: ORBIT
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Lunatone
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Moonblast
+- Earth Power
+- Rock Polish
+
+Solrock
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Flare Blitz
+- Stone Edge
+- Morning Sun
+
+Clefable
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Moonlight
+- Thunderbolt
+- Cosmic Power
+
+Gardevoir
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Psychic
+- Focus Blast
+- Calm Mind
+
+Orbeetle
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Psychic
+- Sticky Web
+- Light Screen
+
+=== TRAINER_CORONET_EPOCH ===
+Name: EPOCH
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Aerodactyl
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Stone Edge
+- Earthquake
+- Crunch
+- Dual Wingbeat
+
+Tyrantrum
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Head Smash
+- Dragon Claw
+- Earthquake
+- Crunch
+
+Armaldo
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- X-Scissor
+- Stone Edge
+- Earthquake
+- Swords Dance
+
+Bastiodon
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Iron Head
+- Body Press
+- Stealth Rock
+- Metal Burst
+
+Aurorus
+Level: 96
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Freeze-Dry
+- Earth Power
+- Thunderbolt
+- Ancient Power
+
+=== TRAINER_CORONET_VERTEX ===
+Name: VERTEX
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dragonite
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Goodra
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Fire Blast
+- Thunderbolt
+- Sludge Bomb
+
+Salamence
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Fire Blast
+- Hydro Pump
+- Roost
+
+Haxorus
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Outrage
+- Earthquake
+- Poison Jab
+- Dragon Dance
+
+Garchomp
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Dragon Claw
+- Stone Edge
+- Swords Dance
+
+=== TRAINER_CORONET_DEJAVU ===
+Name: DEJA VU
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ditto
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Transform
+
+Slowbro
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Scald
+- Slack Off
+- Trick Room
+
+Alakazam
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Recover
+
+Metagross
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Scizor
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bullet Punch
+- U-turn
+- Swords Dance
+- Close Combat
+
+=== TRAINER_CORONET_NEBULA ===
+Name: NEBULA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Milotic
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Ice Beam
+- Recover
+- Dragon Pulse
+
+Lapras
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Freeze-Dry
+- Surf
+- Thunderbolt
+- Psychic
+
+Gyarados
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Waterfall
+- Earthquake
+- Dragon Dance
+- Crunch
+
+Jellicent
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Walrein
+Level: 97
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Surf
+- Ice Beam
+- Earth Power
+- Yawn
+
+=== TRAINER_CORONET_CHRONOS ===
+Name: CHRONOS
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Archaludon
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Electro Shot
+- Draco Meteor
+- Flash Cannon
+- Body Press
+
+Tyranitar
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Gholdengo
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Make It Rain
+- Shadow Ball
+- Nasty Plot
+- Recover
+
+Hatterene
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Dazzling Gleam
+- Mystical Fire
+- Trick Room
+
+Espathra
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Lumina Crash
+- Dazzling Gleam
+- Calm Mind
+- Stored Power
+
+Skarmory
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brave Bird
+- Iron Head
+- Spikes
+- Roost
+
+=== TRAINER_CORONET_SPATIA ===
+Name: SPATIA
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Baxcalibur
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Glaive Rush
+- Icicle Crash
+- Earthquake
+- Dragon Dance
+
+Greninja
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
+
+Kingdra
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Surf
+- Ice Beam
+- Focus Energy
+
+Toxapex
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Toxic
+- Recover
+- Haze
+
+Sylveon
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hyper Voice
+- Psyshock
+- Calm Mind
+- Wish
+
+Swampert
+Level: 98
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Waterfall
+- Ice Punch
+- Stealth Rock
+
+/* --- einde coronet --- */

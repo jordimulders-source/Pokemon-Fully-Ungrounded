@@ -1554,3 +1554,25 @@ const struct Tileset gTileset_YoshiFort = // Project Grounded: Yoshi's Island: W
     .metatileAttributes = gMetatileAttributes_YoshiFort,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_CoronetCave = // Project Grounded: Mt. Coronet: Meteor Falls-tiles, grijsbruin + lichte opening (coronet_tiles.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MeteorFalls,
+    .palettes = gTilesetPalettes_CoronetCave,
+    .metatiles = gMetatiles_CoronetCave,
+    .metatileAttributes = gMetatileAttributes_CoronetCave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CoronetSnow = // Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren (coronet_tiles.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CoronetSnow,
+    .palettes = gTilesetPalettes_CoronetSnow,
+    .metatiles = gMetatiles_CoronetSnow,
+    .metatileAttributes = gMetatileAttributes_CoronetSnow,
+    .callback = NULL,
+};

@@ -61,9 +61,16 @@ ITEMS = [
     (959, 'AreaZero_Past', 'ITEM_POWER_HERB', 1, False, 'Area Zero, verleden: Power Herb'),
     (960, 'AreaZero_Past', 'ITEM_GRIP_CLAW', 1, False, 'Area Zero, verleden: Grip Claw'),
     (961, 'AreaZero_Past', 'ITEM_STICKY_BARB', 1, True, 'Area Zero, verleden: verborgen Sticky Barb'),
+    # Mt. Coronet + Spear Pillar (coronet.py; flags uit het eigen blok FLAG_GROUNDED 1160-1219)
+    (1180, 'MtCoronet_4F_Room2', 'ITEM_LINKING_CORD', 1, False, 'Mt. Coronet 4F kamer 2: Linking Cord'),
+    (1181, 'MtCoronet_4F_Room2', 'ITEM_ODD_KEYSTONE', 1, False, 'Mt. Coronet 4F kamer 2: Odd Keystone'),
+    (1182, 'MtCoronet_4F_Outside', 'ITEM_PEAT_BLOCK', 1, True, 'Mt. Coronet 4F buiten: verborgen Peat Block'),
+    (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
+    (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
+    (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999)]          # Area Zero gebruikt flags uit zijn eigen blok
+EXTRA_RANGES = [(920, 999), (1160, 1219)]          # Area Zero gebruikt flags uit zijn eigen blok
 
 
 def flag_name(n, mp, it, hid):

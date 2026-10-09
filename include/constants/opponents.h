@@ -1270,6 +1270,21 @@
 #define TRAINER_YI_WARIO                    1056 // Project Grounded: Yoshi's Island, fort, eindbaas
 // }
 
+// coronet { (tools/grounded/maptools/coronet.py; id 1057-1059, 1068, 1069, 1082-1088)
+#define TRAINER_CORONET_TICK                1057 // Project Grounded: Mt. Coronet 4F kamer 1, projectie van Dialga
+#define TRAINER_CORONET_PARALLAX            1058 // Project Grounded: Mt. Coronet 4F kamer 1, projectie van Palkia
+#define TRAINER_CORONET_AEON                1059 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga
+#define TRAINER_CORONET_VOIDA               1068 // Project Grounded: Mt. Coronet 4F buiten, projectie van Palkia
+#define TRAINER_CORONET_MOMENTUM            1069 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga
+#define TRAINER_CORONET_ORBIT               1082 // Project Grounded: Mt. Coronet 4F buiten, projectie van Palkia
+#define TRAINER_CORONET_EPOCH               1083 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga (fossielen: tijd)
+#define TRAINER_CORONET_VERTEX              1084 // Project Grounded: Mt. Coronet 4F kamer 3, projectie van Palkia
+#define TRAINER_CORONET_DEJAVU              1085 // Project Grounded: Mt. Coronet 5F, projectie van Dialga
+#define TRAINER_CORONET_NEBULA              1086 // Project Grounded: Mt. Coronet 5F, projectie van Palkia
+#define TRAINER_CORONET_CHRONOS             1087 // Project Grounded: Mt. Coronet 6F, de laatste projectie van Dialga
+#define TRAINER_CORONET_SPATIA              1088 // Project Grounded: Mt. Coronet 6F, de laatste projectie van Palkia
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

@@ -17875,3 +17875,15 @@ Volgens Jordi's GBA-instructies per leider:
 - Post-game staat **Keccles** onzichtbaar op het pad naar de Sudowoodo op het Frontier-eiland (Devon Scope nodig). Hij wordt zichtbaar, en dan beweegt je schaduw zonder jou: **Marshadow** springt eruit en komt in je team (lv 88; pc als je team vol is). Daarna het gevecht tegen Keccles' sterkste "Lizardmon"-team (Heliolisk, Tropius, Clodsire, Charizard, Serperior, Salazzle als ace; lv 92–95; Keccles-transitie en salsa-thema). Na afloop: "Wow, I can still learn something from that. … THAT is camouflage."
 - Trainer-id 853 (was de ongebruikte `TRAINER_BRENDAN_PLACEHOLDER`), flags `FLAG_GROUNDED(1541–1542)`.
 - **Alle 1025 soorten en alle regionale vormen zijn nu zonder ruilen te krijgen** (`tools/grounded/dex_check.py`: 1082/1082). Azure Flute: 89 hints (Ultra Beasts tellen niet mee, Necrozma wel).
+
+### [v0.9.224] - Alle nuttige items te krijgen, competitive in minuten
+- Nieuw: `tools/grounded/item_check.py` (welke items waar te krijgen zijn; `--waar ITEM_X`). Vóór dit werk ontbraken 108 nuttige items, nu **0 van de 440**.
+- **Devon** stuurt na Type: Null zes prototypes naar de pc: Loaded Dice, Throat Spray, Blunder Policy, Protective Pads, Wise Glasses, Berserk Gene. De Memories zijn "door Accounting voor BP aan de Frontier verkocht".
+- **BP-winkels in de Exchange Corner van de Battle Frontier** (eigen BP-winkeltype met aantal kiezen):
+  - Training (oude dame): EXP Candy XS–XL, Rare Candy, vitamines, feathers, mochi + Fresh-Start Mochi (EV's op nul), EV-verlagende bessen, Power-items, Macho Brace, PP Up/Max (1–4 BP).
+  - Natuur & potentieel (Hex Maniac): alle 21 mints, Bottle Cap, Gold Bottle Cap, Ability Capsule, Destiny Knot, Everstone.
+  - Held items (winkelbediende): ±65 competitive items (Choice-items, Life Orb, Leftovers, Focus Sash, Assault Vest, Rocky Helmet, Boots, Eviolite, Booster Energy, weerstenen, terrain seeds, herbs, orbs …).
+  - DEVON Outlet: alle 17 Memories, 18 gems, alle weerstandsbessen.
+  - **Hyper Trainer** (Black Belt): Bottle Cap = één stat op 31, Gold Bottle Cap = alle zes.
+- Lilycove-warenhuis: Lures, Poké Toy, Luck Incense, X Sp. Def; Lavaridge-kruidenwinkel: Remedies, Jubilife Muffin; Red Nectar bij Pretty Petal.
+- Getest: een Mint en een Bottle Cap gekocht, Hyper Training op Speed, een Mint gebruikt.

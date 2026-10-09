@@ -1079,7 +1079,7 @@ def world_necrozma():
     sparkle = []
     keep_free = {arrive, ret, ub, (21, 29), (20, 28), (22, 28)}
     keep_free |= {(x, y) for x in range(17, 26) for y in range(2, 10)}
-    keep_free |= {(x, y) for x in range(18, 25) for y in range(22, 30)}
+    keep_free |= {(x, y) for x in range(20, 23) for y in range(22, 30)}
     keep_free |= {(x, y) for x in range(PR[0] - 1, PR[0] + 4) for y in range(PR[1] - 1, PR[1] + 5)}
 
     def place(img, x, y, cw, ch, on_wall_rows, block_cells):
@@ -1137,6 +1137,15 @@ def world_necrozma():
         w.bot[y * 16:y * 16 + 32, x * 16:x * 16 + 32] = cav[..., :3]
         if len(geodes) >= 14:
             break
+    # poort van twee hoge kristallen bij de aankomst (de eerste indruk)
+    for gx_, hue in ((18, 0.55), (23, 0.62)):
+        for gy_ in range(29, 22, -1):
+            if not wall[gy_, gx_] and not wall[gy_, gx_ + 1] and (gx_, gy_) not in keep_free and (gx_ + 1, gy_) not in keep_free:
+                img = crystal_cluster(2, 4, hue, 2 + (gx_ % 3))
+                draw_prism(img, 16, 61, 52, 9, 1 if gx_ < 21 else -1, crystal_cols(hue))
+                place(img, gx_, gy_, 2, 4, 0, [(gx_, gy_), (gx_ + 1, gy_)])
+                taken |= {(gx_ + dx, gy_ + dy) for dx in (-1, 0, 1, 2) for dy in (-1, 0, 1)}
+                break
     # grote formaties tegen de wanden van de galerijen en de hal
     cand = [(x, y) for y in range(3, H - 2) for x in range(1, W - 3) if all(not wall[y, x + c] and wall[y - 1, x + c] for c in range(2))]
     rsd.shuffle(cand)
@@ -1570,6 +1579,10 @@ def world_guzzlord():
     w.bot[inner] = ctex_all[inner]
     w.top[inner] = 0
 
+    deep = dd < R * 0.58
+    w.bot[deep] = mix(w.bot[deep], C(8, 4, 6), 0.42)
+    ledge = (dd >= R * 0.58) & (dd < R * 0.58 + 2) & inner
+    w.bot[ledge] = C(78, 62, 54)
     core = np.hypot(w.xx - cx, (w.yy - cy - 4) * 1.4) < 14
     w.bot[core] = mix(w.bot[core], GZ_EMBER[1], 0.45)
     # rand: een ring van puin (de resten van de Contest Hall), met drie bressen
@@ -2380,7 +2393,7 @@ def world_blacephalon():
                 npc_scripts=[(lbl, 'MSGBOX_NPC') for _, lbl, _, _ in clowns] + [('ShyGuy', 'MSGBOX_NPC'),
                                                                                ('Tickets', 'MSGBOX_SIGN'), ('Popcorn', 'MSGBOX_SIGN'),
                                                                                ('Cannon', 'MSGBOX_SIGN')],
-                border_cell=(0, 0),
+                border_cell=(5, 31),
                 encounters=[('MR_MIME', 86, 88), ('HYPNO', 86, 88), ('GRUMPIG', 86, 88), ('MAGMORTAR', 87, 89),
                             ('GRIMMSNARL', 87, 89), ('CHANDELURE', 87, 89), ('HATTERENE', 87, 89), ('WOBBUFFET', 86, 88),
                             ('SPINDA', 84, 86), ('DELPHOX', 87, 89), ('MIMIKYU', 88, 90), ('ZOROARK', 89, 90)],
@@ -2400,8 +2413,43 @@ PP = {
 }
 
 
-def pp_rock(x, y):
-    """buitenaardse rotsgrond (herhalend per 32 px): putjes, kraters, turquoise aders"""
+PP_ZONES = {
+    'rock': None,
+    'flesh': [C(40, 16, 34), C(62, 28, 50), C(84, 40, 64), C(108, 58, 82), C(140, 84, 104)],
+    'glass': [C(10, 14, 20), C(18, 26, 34), C(26, 38, 46), C(40, 58, 66), C(90, 130, 140)],
+}
+
+
+def pp_rock(x, y, zone='rock'):
+    """buitenaardse grond (herhalend per 32 px): putjes, kraters, aders; zone flesh = vlezig, glass = zwart glas"""
+    if zone == 'flesh':
+        R_ = PP_ZONES['flesh']
+        img = rgba(16, 16, R_[2])
+        rs = random.Random((x % 2) * 31 + (y % 2) * 7 + 1)
+        for _ in range(4):                                   # aders
+            yy = rs.randrange(16)
+            for xx in range(16):
+                yy = (yy + rs.choice((-1, 0, 0, 1))) % 16
+                img[yy, xx, :3] = C(112, 30, 52)
+        for _ in range(6):                                   # bulten
+            cx, cy = rs.randrange(2, 14), rs.randrange(2, 14)
+            img[cy, cx, :3] = R_[4]
+            img[cy + 1, cx, :3] = R_[1]
+        return img
+    if zone == 'glass':
+        R_ = PP_ZONES['glass']
+        img = rgba(16, 16, R_[1])
+        for yy in range(16):
+            for xx in range(16):
+                d = ((x % 2) * 16 + xx - (y % 2) * 16 - yy) % 32
+                if d < 2:
+                    img[yy, xx, :3] = R_[3]
+                elif d < 5:
+                    img[yy, xx, :3] = R_[2]
+        rs = random.Random((x % 2) * 5 + (y % 2) * 3 + 9)
+        for _ in range(3):
+            img[rs.randrange(16), rs.randrange(16), :3] = R_[4]
+        return img
     img = rgba(16, 16, PP['rock'][2])
     rs = random.Random((x % 2) * 31 + (y % 2) * 7)
     for _ in range(5):                                     # putjes
@@ -2459,7 +2507,9 @@ def world_poipole():
     for y in range(H):
         for x in range(W):
             if ground[y, x]:
-                w.put(pp_rock(x, y), x, y)
+                isl = min(range(6), key=lambda i: (x - shapes[i][0]) ** 2 + (y - shapes[i][1]) ** 2)
+                z = {2: 'flesh', 5: 'glass'}.get(isl, 'rock')
+                w.put(pp_rock(x, y, z), x, y)
                 w.beh[y, x] = 0x08
             else:
                 w.put(pp_void(x, y), x, y)

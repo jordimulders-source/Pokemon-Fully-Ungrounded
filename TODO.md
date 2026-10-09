@@ -14,6 +14,12 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ~~Beasts of Ruin bijwerken~~ (v0.9.174).
 
+**Feedback Jordi 9 okt (in uitvoering):**
+- **Trog Route 127:** het rotsblok onderin voelt als een tease zonder resultaat: weghalen, er een zigzaggebied van maken met meer items die nog niet te krijgen waren, en de trog aan twee kanten enterbaar maken (onderwatersnelweg).
+- **Chargestone Cave:** te steriel, leeg en rechthoekig: meer hoogteverschillen, andere vormen, meer decor.
+- **Alle Spacetime-gebieden:** items die nog niet in de game zaten; alle portalen blijven bezoekbaar na de quest.
+- **Levelcurve:** een reguliere playthrough simuleren (EXP van alle trainers + wilde gevechten) en trainerlevels bijstellen waar de speler te ver vooruitloopt; de gehoorzaamheidsgrens erbij bekijken en voor-/tegenargumenten geven.
+
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
    - ~~S1~~ (v0.9.178). Open: de meren-scheur staat nu al open ("overkant laadt nog"), terwijl de meren-kamer volgens het plan pas na ????? komt: dichtzetten? `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls.

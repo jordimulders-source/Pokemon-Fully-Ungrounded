@@ -2,6 +2,10 @@
 
 Status: ontwerp van Jordi; uitvoering per stap in `TODO.md`. De Spacetime-locaties liggen in **andere dimensies (en tijden)**: niet vliegbaar, geen Hoenn-NPC's/running gags zoals de Protip Oracle (humor mag wel, maar in "Kanto in een andere dimensie/tijd").
 
+## 0. Regels voor alle Spacetime-gebieden (Jordi 9 okt)
+- Alle portalen blijven bezoekbaar na afloop van een quest (wilde Pokémon, items e.d.).
+- In elk Spacetime-gebied liggen items die nog nergens in de game te krijgen zijn.
+
 ## 1. Eerste bezoek
 Bij de eerste keer binnen begroeten **Dialga en Palkia** je: cry, ze laten hun krachten los op de lege grot en alle openingen verschijnen (behalve **?????** en **Mt. Coronet**). Elke opening = een sidequest; pas als alle sidequests klaar zijn opent de volgende gang.
 

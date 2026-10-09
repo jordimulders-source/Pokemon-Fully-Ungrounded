@@ -17792,3 +17792,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Nep-Enut** is nu de echte SMA3-sprite (sheet van Lunar994), **op ware grootte** (128x128-object) in het meertje in de jungle: eerst alleen ogen en wenkbrauwen boven water, bij aanspreken rijst hij op (de camera kijkt mee omhoog) en volgt het Dondozo-gevecht. De blauwe nep-Yoshi is weg.
 - **Yoshi-huis** op het strand (kaart 7 kolommen breder): dak als groot gevlekt Yoshi-ei, SMA3-deur en een brievenbus-Message Block. Binnen tien Yoshi's in alle kleuren (groen, rood, geel, lichtblauw, roze, paars, bruin, zwart, wit, blauw), elk met een eigen tekst; de roze geeft een Sweet Heart.
 - **Engine-fix** (`src/sprite.c`): het aantal tiles bij het reserveren van sprite-geheugen werd afgekapt tot een byte. Sprites van 256+ tiles kregen 0 tiles en overschreven de speler-sprite; de reuzen-Wailord kreeg 32 i.p.v. 288 tiles.
+
+### [v0.9.209] - Nep-Enut blijft
+- Nep-Enut verdwijnt niet meer na het Dondozo-gevecht: hij zakt terug tot alleen zijn wenkbrauwen boven water zijn en blijft chillen. Daarna heeft hij een eigen tekst ("He is off the clock.") en doet hij verder niets.

@@ -85,6 +85,7 @@ YoshisIsland_Jungle_EventScript_Movement_PoochySniff:
 
 YoshisIsland_Jungle_EventScript_NepEnut::
 	lock
+	goto_if_set FLAG_YI_NEP_ENUT_DONE, YoshisIsland_Jungle_EventScript_NepChill
 	msgbox YoshisIsland_Jungle_Text_Nep1, MSGBOX_DEFAULT
 	closemessage
 	@ hij is 8 tegels hoog: de camera kijkt even omhoog, anders valt zijn kop buiten beeld
@@ -111,11 +112,13 @@ YoshisIsland_Jungle_EventScript_NepEnut::
 	end
 
 YoshisIsland_Jungle_EventScript_NepGone::
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_YI_NEP_ENUT
 	setflag FLAG_YI_NEP_ENUT_DONE
-	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox YoshisIsland_Jungle_Text_NepGone, MSGBOX_DEFAULT
+	release
+	end
+
+YoshisIsland_Jungle_EventScript_NepChill::
+	msgbox YoshisIsland_Jungle_Text_NepChill, MSGBOX_DEFAULT
 	release
 	end
 
@@ -281,9 +284,17 @@ YoshisIsland_Jungle_Text_NepStill:
 	.string "keep watching. Judging, mostly.)$"
 
 YoshisIsland_Jungle_Text_NepGone:
-	.string "(The lake is quiet. Suspiciously quiet. A\n"
-	.string "single bubble pops. It sounds\l"
-	.string "offended.)$"
+	.string "(NEP-ENUT sinks back down until only\n"
+	.string "the eyebrows are left. He seems...\l"
+	.string "relieved? Being a final boss for one\l"
+	.string "lake is a lot of pressure.)$"
+
+YoshisIsland_Jungle_Text_NepChill:
+	.string "(NEP-ENUT is floating. Just floating.\n"
+	.string "The eyebrows are relaxed for the first\l"
+	.string "time in 30 years.)\p"
+	.string "NEP-ENUT: ...blorp.\p"
+	.string "(He is off the clock.)$"
 
 YoshisIsland_Jungle_Text_Cloud:
 	.string "POP! The ? CLOUD bursts and it rains\n"

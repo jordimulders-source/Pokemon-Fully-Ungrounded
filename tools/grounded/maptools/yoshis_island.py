@@ -2755,6 +2755,7 @@ def jungle_scripts():
 
 {P}NepEnut::
 	lock
+	goto_if_set FLAG_YI_NEP_ENUT_DONE, {P}NepChill
 	msgbox {X}Nep1, MSGBOX_DEFAULT
 	closemessage
 	@ hij is 8 tegels hoog: de camera kijkt even omhoog, anders valt zijn kop buiten beeld
@@ -2781,11 +2782,13 @@ def jungle_scripts():
 	end
 
 {P}NepGone::
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_YI_NEP_ENUT
 	setflag FLAG_YI_NEP_ENUT_DONE
-	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox {X}NepGone, MSGBOX_DEFAULT
+	release
+	end
+
+{P}NepChill::
+	msgbox {X}NepChill, MSGBOX_DEFAULT
 	release
 	end
 
@@ -2882,7 +2885,10 @@ def jungle_scripts():
                "enough.)"),
       ('NepStill', "(NEP-ENUT sinks back down until only the eyebrows are left. The eyebrows keep watching. "
                    "Judging, mostly.)"),
-      ('NepGone', "(The lake is quiet. Suspiciously quiet. A single bubble pops. It sounds offended.)")])
+      ('NepGone', "(NEP-ENUT sinks back down until only the eyebrows are left. He seems... relieved? Being a final "
+                  "boss for one lake is a lot of pressure.)"),
+      ('NepChill', "(NEP-ENUT is floating. Just floating. The eyebrows are relaxed for the first time in 30 years.)\n\n"
+                   "NEP-ENUT: ...blorp.\n\n(He is off the clock.)")])
     S.raw(CLOUD_MOVE.format(P=P))
     cloud(S, 'Cloud', 'LOCALID_YI_JUNGLE_CLOUD', milk[0], 'ITEM_MOOMOO_MILK', milk[1],
           "POP! The ? CLOUD bursts and it rains milk. Only on you.\n\nYou caught some of it in bottles. You had "
@@ -3174,7 +3180,7 @@ def map_jsons(lay):
     ji = ni_items('YoshisIsland_Jungle')
     objs = [lid(bd.obj('OBJ_EVENT_GFX_POOCHY', J_POOCHY[0], J_POOCHY[1], P + 'Poochy', '0', 'MOVEMENT_TYPE_FACE_RIGHT'),
                 'LOCALID_YI_POOCHY'),
-            lid(bd.obj('OBJ_EVENT_GFX_NEP_ENUT', J_NEP[0], J_NEP[1], P + 'NepEnut', 'FLAG_YI_NEP_ENUT_DONE', elev=0),
+            lid(bd.obj('OBJ_EVENT_GFX_NEP_ENUT', J_NEP[0], J_NEP[1], P + 'NepEnut', '0', elev=0),
                 'LOCALID_YI_NEP_ENUT'),
             lid(bd.obj(Q, J_CLOUD[0], J_CLOUD[1], P + 'Cloud', ji['ITEM_MOOMOO_MILK'][0], WIP), 'LOCALID_YI_JUNGLE_CLOUD'),
             bd.tr(SHY_GFX['green'], J_SHY[0], J_SHY[1], P + 'ShyGuy', 'LEFT', 3)]

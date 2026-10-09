@@ -17661,3 +17661,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.184] - Ability-popups: nooit meer half zichtbaar bij het actiemenu
 - Jordi: ability-meldingen gaven af en toe glitches. Oorzaak: een popup schuift na een vaste tijd vanzelf weg, maar kon dan nog (half) in beeld staan als het actiemenu al open ging; met `fixedPopup` bleef hij zelfs staan. Nieuw: aan het begin van elke beurt (`STATE_TURN_START_RECORD`) worden alle nog actieve popups meteen verborgen en opgeruimd (`ForceHideAbilityPopUps` in `battle_interface.c`), en `fixedPopup` wordt gereset. Dit vangt álle abilities in één keer af, ook toekomstige.
 - Getest in de emulator met Intimidate + Drizzle (single) en Unnerve: het actiemenu is telkens schoon.
+
+### [v0.9.185] - Weergeluiden lopen niet meer door
+- Jordi: geluidseffecten (vooral van weer) bleven soms te lang doorlopen. Oorzaak: de weeranimaties zijn ingekort (`sFastBattleAnim` halveert de wachttijden), maar lange geluiden als `SE_M_RAIN_DANCE` en `SE_M_SANDSTORM` speelden hun volle lengte uit. Nu stopt het geluid zodra de animatie klaar is (`waitforvisualfinish` + `stopsound`) in de weeranimaties aan het eind van de beurt/bij abilities (Rain, Sandstorm, Hail, Snow, Sun, Pollen Haze, Acid Rain) en in de weermoves (Rain Dance, Sandstorm, Hail, Sunny Day, Snowscape, Chilly Reception).

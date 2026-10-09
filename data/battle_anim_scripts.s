@@ -15294,6 +15294,8 @@ gBattleAnimMove_Snowscape::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB(11, 18, 22)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 
 gBattleAnimMove_WickedBlow::
@@ -16891,6 +16893,8 @@ gBattleAnimMove_ChillyReception::
 	waitforvisualfinish
 	waitsound
 	simple_palette_blend selector=F_PAL_BG | F_PAL_BATTLERS, delay=1, initial_blend_y=3, target_blend_y=0, color=RGB_WHITE
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 ChillyReceptionSnowballs:
 	createsprite gPowderSnowSnowballSpriteTemplate, ANIM_ATTACKER, 40, 200, -150, 24, 0, 56, 4, 4, 0
@@ -18528,6 +18532,8 @@ gBattleAnimGeneral_PollenHaze::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 5, 0, RGB(31, 26, 8)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 PollenHazeDrift:
@@ -18571,6 +18577,8 @@ gBattleAnimGeneral_AcidRain::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 6, 0, RGB(12, 2, 16)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 @ Project Grounded: Fungal Control - contact, sporen, en dan groeit er langzaam een paddenstoel uit het doelwit
@@ -24485,6 +24493,8 @@ gBattleAnimMove_Hail::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 7, 0, RGB(8, 12, 16)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 
 gBattleAnimMove_Torment::
@@ -26273,6 +26283,8 @@ gBattleAnimMove_RainDance::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB_BLACK
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 
 gBattleAnimMove_Bite::
@@ -27337,6 +27349,8 @@ gBattleAnimMove_Sandstorm::
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0, 2816, 96, 0
 	delay 10
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 60, 2560, 96, 0
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 
 gBattleAnimMove_Whirlpool::
@@ -27716,6 +27730,8 @@ gBattleAnimMove_SunnyDay::
 	waitforvisualfinish
 	clearmonbg ANIM_ATK_PARTNER
 	blendoff
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen
 	end
 
 SunnyDayLightRay:
@@ -31628,6 +31644,8 @@ gBattleAnimGeneral_Rain::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB_BLACK
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 RainDrops:
@@ -31657,6 +31675,8 @@ gBattleAnimGeneral_Sun::
 	waitforvisualfinish
 	clearmonbg ANIM_ATK_PARTNER
 	blendoff
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 gBattleAnimGeneral_Sandstorm::
@@ -31667,6 +31687,8 @@ gBattleAnimGeneral_Sandstorm::
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
 	delay 4
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 @ Project Grounded: Snow Storm (de vroegere Hail) = een zwaardere Snowscape: donkerder en meer sneeuw
@@ -31685,6 +31707,8 @@ gBattleAnimGeneral_Hail::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 7, 0, RGB(8, 12, 16)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 gBattleAnimGeneral_Snow::
@@ -31698,6 +31722,8 @@ gBattleAnimGeneral_Snow::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 4, 0, RGB(11, 18, 22)
 	waitforvisualfinish
+	waitforvisualfinish
+	stopsound @ Project Grounded: weergeluid niet laten doorlopen na de (ingekorte) animatie
 	end
 
 gBattleAnimGeneral_Fog::

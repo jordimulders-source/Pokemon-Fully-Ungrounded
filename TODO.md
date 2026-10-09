@@ -69,7 +69,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 ## 4. Open vragen voor Jordi
 1. **Mega Forest:** waar komt het roadblock naar Zacian/Zamazenta (hint: roestig zwaard + schild met een boomstam in het midden in het Mini Forest)?
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
-3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, Swords of Justice + Keldeo, Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Marshadow, Pecharunt, Zygarde.
+3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, Swords of Justice + Keldeo (oud plan: LEGENDARY_PLAN 6, wacht op Jordi), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** ergens in de game staat hij opeens voor je, wil samen met een sterke trainer strijden en hoort daarna bij je (gift via een event).
 
 ## 5. Besloten / bewust niet
 - **Geen Grounded-Pokédex:** gewoon de National Dex met alles, vanaf het begin. **Signatures gepauzeerd**; Gen 4+-trainersprites voorlopig niet nodig. (9 okt)

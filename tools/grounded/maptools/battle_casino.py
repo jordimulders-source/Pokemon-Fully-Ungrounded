@@ -76,6 +76,10 @@ def make_map(warp_idx):
         obj('OBJ_EVENT_GFX_OLD_MAN', 20, 8, 'MOVEMENT_TYPE_FACE_LEFT', pre + 'OldMan'),
         obj('OBJ_EVENT_GFX_COOK', 6, 8, 'MOVEMENT_TYPE_FACE_RIGHT', pre + 'Buffet'),
         obj('OBJ_EVENT_GFX_WOMAN_5', 4, 6, 'MOVEMENT_TYPE_FACE_LEFT', pre + 'Wurmple'),
+        # bookies (Jordi, v0.9.214): de tipgever kijkt naar de huidige kaart (Casino_GetTip)
+        obj('OBJ_EVENT_GFX_MAN_5', 17, 3, 'MOVEMENT_TYPE_FACE_LEFT', pre + 'BookieTip'),
+        obj('OBJ_EVENT_GFX_EXPERT_M', 5, 4, 'MOVEMENT_TYPE_FACE_DOWN', pre + 'BookieOdds'),
+        obj('OBJ_EVENT_GFX_HEX_MANIAC', 20, 4, 'MOVEMENT_TYPE_FACE_DOWN', pre + 'BookieSpirits'),
     ]
     signs = []
     for (x, y, face) in [(2, 6, 'EAST'), (2, 8, 'EAST'), (2, 9, 'EAST'), (3, 7, 'WEST'), (3, 8, 'WEST'), (3, 9, 'WEST'),

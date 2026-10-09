@@ -112,6 +112,27 @@ BattleCasino_EventScript_Wurmple::
 	msgbox BattleCasino_Text_Wurmple, MSGBOX_NPC
 	end
 
+BattleCasino_EventScript_BookieTip::
+	lock
+	faceplayer
+	special Casino_GetTip
+	goto_if_eq VAR_RESULT, FALSE, BattleCasino_EventScript_BookieNoTip
+	msgbox BattleCasino_Text_BookieTip, MSGBOX_DEFAULT
+	release
+	end
+BattleCasino_EventScript_BookieNoTip::
+	msgbox BattleCasino_Text_BookieNoTip, MSGBOX_DEFAULT
+	release
+	end
+
+BattleCasino_EventScript_BookieOdds::
+	msgbox BattleCasino_Text_BookieOdds, MSGBOX_NPC
+	end
+
+BattleCasino_EventScript_BookieSpirits::
+	msgbox BattleCasino_Text_BookieSpirits, MSGBOX_NPC
+	end
+
 BattleCasino_EventScript_Slots::
 	msgbox BattleCasino_Text_Slots, MSGBOX_SIGN
 	end
@@ -126,6 +147,8 @@ BattleCasino_Text_Intro:
 	.string "Like a sport, but with your savings.\p"
 	.string "Watch the fight on our TV, or just ask\n"
 	.string "for the result. The odds don't care.\p"
+	.string "Bored halfway? Press START and we\n"
+	.string "skip to the part where you lose.\p"
 	.string "The more you bet, the more tables open:\n"
 	.string "DOUBLES after 3 bets, the STADIUM\l"
 	.string "after 6, STADIUM DOUBLES after 10,\l"
@@ -198,3 +221,26 @@ BattleCasino_Text_Slots:
 BattleCasino_Text_Roulette:
 	.string "The roulette wheel was replaced by a\n"
 	.string "TV. Progress.$"
+
+BattleCasino_Text_BookieTip:
+	.string "Psst. Match {STR_VAR_1}. Put it all on\n"
+	.string "{STR_VAR_2}.\p"
+	.string "The other bookies priced it wrong.\n"
+	.string "Or I did. One of us is very wrong.$"
+
+BattleCasino_Text_BookieNoTip:
+	.string "No tips today. My source got\n"
+	.string "banned. My source was a POOCHYENA.$"
+
+BattleCasino_Text_BookieOdds:
+	.string "I set the odds. Levels, types, the\n"
+	.string "weather on ROUTE 119, my horoscope.\p"
+	.string "When the odds are right, the house\n"
+	.string "wins. When they're wrong, I'm fired.\p"
+	.string "I've been fired eleven times.\n"
+	.string "They keep rehiring me. It's cheaper.$"
+
+BattleCasino_Text_BookieSpirits:
+	.string "The spirits whisper the winners to me.\p"
+	.string "Spirits are terrible gamblers.\n"
+	.string "That's how they became spirits.$"

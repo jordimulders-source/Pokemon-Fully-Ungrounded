@@ -637,3 +637,4 @@ gSpecials::
 	def_special Casino_Resolve
 	def_special Casino_CheckUnlock
 	def_special Casino_DebugUnlockAll
+	def_special Casino_GetTip

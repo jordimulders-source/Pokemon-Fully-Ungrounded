@@ -69,6 +69,21 @@ u32 Stadium_CapIvs(u32 ivs);
 void Stadium_ScaleCompanionMon(struct Pokemon *mon);
 u16 Stadium_CompanionSourceTrainer(void);
 const u8 *Stadium_GetWinText(u32 opponent);
+const u8 *Stadium_GetDefeatText(u32 trainerId);
+
+// Project Grounded: Battle Casino (src/battle_casino.c)
+extern bool8 gCasinoBattle;
+u8 Casino_BuildEnemyParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
+const u8 *Casino_GetWinText(u16 trainerId);
+const u8 *Casino_GetPlayerSideName(void);
+bool32 Casino_HidePlayerTrainerPic(void);
+void Casino_HasBp(void);
+void Casino_OpenCard(void);
+void Casino_StartArenaBattle(void);
+void Casino_SetArenaGfx(void);
+void Casino_Resolve(void);
+void Casino_CheckUnlock(void);
+void Casino_DebugUnlockAll(void);
 
 // specials (data/maps/BattleFrontier_StadiumLobby/scripts.inc)
 void Stadium_PrepareChooseParty(void);

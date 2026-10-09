@@ -687,6 +687,7 @@ gStdScripts_End::
 	.include "data/maps/BattleFrontier_SpireLobby/scripts.inc"
 	.include "data/maps/BattleFrontier_StadiumLobby/scripts.inc"
 	.include "data/maps/BattleFrontier_StadiumArena/scripts.inc"
+	.include "data/maps/BattleFrontier_BattleCasino/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeCorridor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.inc"

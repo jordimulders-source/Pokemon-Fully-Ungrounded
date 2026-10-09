@@ -357,4 +357,7 @@ enum SpireCardMode
 void Spire_OpenCards(u32 mode, void (*onDone)(void));
 void Spire_OpenMessage(const u8 *title, const u8 *text, void (*onDone)(void));
 
+u32 Spire_BossCount(void);                              // Battle Casino
+const struct SpireEncounter *Spire_GetBoss(u32 i);
+
 #endif // GUARD_SPIRE_H

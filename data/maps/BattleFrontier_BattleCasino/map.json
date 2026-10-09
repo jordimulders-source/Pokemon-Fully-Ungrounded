@@ -1,0 +1,321 @@
+{
+  "id": "MAP_BATTLE_FRONTIER_BATTLE_CASINO",
+  "name": "BattleFrontier_BattleCasino",
+  "layout": "LAYOUT_MAUVILLE_CITY_GAME_CORNER",
+  "music": "MUS_GAME_CORNER",
+  "region_map_section": "MAPSEC_BATTLE_FRONTIER",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_CASINO_CROUPIER",
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 12,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Croupier",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 1,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Broke",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 9,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Conspiracy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 16,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Underdog",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 20,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_OldMan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
+      "x": 6,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Buffet",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 4,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleCasino_EventScript_Wurmple",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 12,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+      "dest_warp_id": "15"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "BattleCasino_EventScript_Slots"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BattleCasino_EventScript_Roulette"
+    }
+  ]
+}

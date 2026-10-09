@@ -491,6 +491,13 @@
       "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_STADIUM_LOBBY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_CASINO",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -452,6 +452,12 @@ static const u8 *GetDefeatText(u32 trainerId)
     return q ? q->defeat : sText_StadiumDefeat;
 }
 
+// Battle Casino (Stadium-modi): dezelfde nederlaagteksten
+const u8 *Stadium_GetDefeatText(u32 trainerId)
+{
+    return GetDefeatText(trainerId);
+}
+
 void Stadium_StartMatch(void)
 {
     u32 i, pos = PlayerPos(sT.round);

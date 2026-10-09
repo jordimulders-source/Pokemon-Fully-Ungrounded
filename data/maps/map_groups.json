@@ -755,7 +755,9 @@
     "UnchartedIsle",
     "MangroveMire_VirizionGlade",
     "CrownTundra",
-    "BattleFrontier_BattleCasino"
+    "BattleFrontier_BattleCasino",
+    "AbandonedShip_NightDeck",
+    "AbandonedShip_NightCabins"
   ],
   "gMapGroup_Spacetime": [
     "LavenderTown",

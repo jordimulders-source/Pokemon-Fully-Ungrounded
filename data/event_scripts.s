@@ -448,6 +448,8 @@ gStdScripts_End::
 	.include "data/maps/AbandonedShip_Underwater2/scripts.inc"
 	.include "data/maps/AbandonedShip_HiddenFloorCorridors/scripts.inc"
 	.include "data/maps/AbandonedShip_HiddenFloorRooms/scripts.inc"
+	.include "data/maps/AbandonedShip_NightDeck/scripts.inc"
+	.include "data/maps/AbandonedShip_NightCabins/scripts.inc"
 	.include "data/maps/IslandCave/scripts.inc"
 	.include "data/maps/AncientTomb/scripts.inc"
 	.include "data/maps/RegidragoCave/scripts.inc"

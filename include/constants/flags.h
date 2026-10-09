@@ -1863,6 +1863,9 @@
 #define FLAG_HIDDEN_ITEM_HALL_OF_ORIGIN_ATRIUM_PUNCHING_GLOVE FLAG_GROUNDED(1242) // Project Grounded: Hall of Origin, atrium: verborgen Punching Glove
 #define FLAG_ITEM_HALL_OF_ORIGIN_SUMMIT_GRISEOUS_ORB     FLAG_GROUNDED(1243) // Project Grounded: Hall of Origin, top: Griseous Orb (Giratina Origin)
 #define FLAG_ITEM_YOSHIS_ISLAND_YOSHI_HOUSE_SWEET_HEART  FLAG_GROUNDED(1068) // Project Grounded: Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)
+#define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_GHOST_MEMORY FLAG_GROUNDED(1400) // Project Grounded: Abandoned Ship benedendek: Ghost Memory
+#define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_GEM  FLAG_GROUNDED(1401) // Project Grounded: Abandoned Ship benedendek: Water Gems
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_MEMORY FLAG_GROUNDED(1402) // Project Grounded: Abandoned Ship benedendek: verborgen Water Memory
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)
@@ -2107,6 +2110,9 @@
 #define FLAG_RECEIVED_ALOLA_MEOWTH              FLAG_GROUNDED(363)
 #define FLAG_RECEIVED_GALAR_FARFETCHD           FLAG_GROUNDED(364)
 
+// abandoned_ship_night { (tools/grounded/maptools/abandoned_ship_night.py; FLAG_GROUNDED 1400-1439: 1400-1402 nieuwe items (blok nieuwe_items), 1410 spookmatroos, 1403-1409 en 1411-1439 nog vrij)
+#define FLAG_HIDE_NIGHT_CABINS_SAILOR                    FLAG_GROUNDED(1410) // Project Grounded: Abandoned Ship benedendek: de spookmatroos is na zijn praatje opgelost (verbergt hem)
+// }
 // enamorus { (src/enamorus.c, tools/grounded/maptools/enamorus_towns.py; FLAG_GROUNDED 1360-1399: 1360-1362 in gebruik, 1363-1399 nog vrij)
 #define FLAG_ENAMORUS_DONE                      FLAG_GROUNDED(1360) // Project Grounded: Enamorus gevangen (liefdesdagen blijven, zonder Enamorus)
 #define FLAG_ENAMORUS_HIDE                      FLAG_GROUNDED(1361) // Project Grounded: verbergt Enamorus (gezet/gewist door src/enamorus.c)

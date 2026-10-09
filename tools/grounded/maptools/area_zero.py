@@ -1,6 +1,8 @@
 """Project Grounded: Area Zero (Spacetime Cave-sidequest, post-game; Paldea in een andere tijd).
 
-Een krater waar je steeds verder afdaalt; hoe dieper, hoe vreemder de kleuren (zelfde tiles, andere paletten:
+Een krater waar je steeds verder afdaalt (9 okt: elke laag is een kom met ringvormige terrassen, trappen om en om in de
+noordwanden, binnenkomst bovenaan op de rand en de uitgang naar de volgende diepte op de bodem in het midden; zie bowl()).
+Hoe dieper, hoe vreemder de kleuren (zelfde tiles, andere paletten:
 area_zero_tiles.py). Kaarten (gMapGroup_Spacetime, achteraan):
   AreaZero_Rim       laag 1, de kraterwand: groene plateaus, grijze rotswanden, bomen, hoog gras, onderzoeksstation 1.
                      Warp 0 = ladder omhoog = terug naar de Spacetime Cave (hier komt de hub-scheur uit).
@@ -69,6 +71,19 @@ class AZ(cs.Cave):
         super().__init__(w, h, seed)
         self.grass = set()
         LAST.append(self)
+
+    def build(self):
+        """Kraterwanden van 2 blokken (rand, rots, wand, wand): de donkere rotsrij wordt een klifrand (lipD), zodat
+        de wand als één klif naar het lagere terras leest en niet als een kuil."""
+        g = super().build()
+        rimSD, rockD, lipD = ID['rimSD'][0], ID['rockD'][0], ID['lipD'][0]
+        for y in range(1, self.H - 1):
+            for x in range(self.W):
+                if (x, y) not in self.over and g[y][x] & 0x3FF == rockD and g[y - 1][x] & 0x3FF == rimSD and \
+                        g[y + 1][x] & 0x3FF in (0x231, 0x230, 0x232):
+                    g[y][x] = cell(lipD, 1, 0)
+        self.g = g
+        return g
 
     def put(self, kind, x, y):
         name = self.rnd.choice(self.VARS[kind]) if kind in self.VARS else kind
@@ -182,67 +197,302 @@ def new_items(name, targets):
     return [(targets[it], it, fl, q, hid) for fl, it, q, hid in lst]
 
 
+# --------------------------------------------------------------------- de kom (9 okt, Jordi: "het lijkt niet op een krater")
+# Elke laag is een trechter: ringvormige terrassen (vloer) gescheiden door ringvormige rotswanden die naar het midden
+# afdalen. De noordwanden zijn hoog (zichtbare klifwand), de zuidwanden laag (perspectief van een kom); per wand één
+# trap in een recht stuk van de noordwand, om en om links en rechts van het midden (spiraal naar beneden). Binnenkomst
+# bovenaan op de buitenste ring, de uitgang naar de volgende diepte op de bodem in het midden.
+# Profiel: lijst (soort, noord, zuid, zijkant) van binnen naar buiten, in tegels; soort 'F' = vloer, 'R' = wand.
+BOWL3 = [('F', 6, 5, 8), ('R', 4, 3, 3), ('F', 4.5, 4, 5), ('R', 4, 3, 3), ('F', 4.5, 4, 5)]
+BOWL2 = [('F', 7, 5, 8), ('R', 4, 3, 3), ('F', 4.5, 4, 5)]
+
+
+BOWL_P = 2.5          # superellips: vlakke noord- en zuidwanden (rechte stukken voor de trappen), ronde hoeken
+
+
+def pnorm(x, y):
+    return (abs(x) ** BOWL_P + abs(y) ** BOWL_P) ** (1 / BOWL_P)
+
+
+def bowl_bounds(prof, seed):
+    """Straal van elke grens (van binnen naar buiten) als functie van de hoek, met ruis (ronde, grillige vorm)."""
+    rnd = random.Random(seed)
+    nb = len(prof)
+    shared = [(rnd.uniform(0.6, 1.0), k, rnd.uniform(0, 6.28)) for k in (2, 3)]
+    own = [[(rnd.uniform(0.2, 0.5), k, rnd.uniform(0, 6.28)) for k in (2, 3)] for _ in range(nb)]
+
+    def bounds(t):
+        s2, c2 = math.sin(t) ** 2, math.cos(t) ** 2
+        out, r = [], 0.0
+        for i, (kind, n, s, side) in enumerate(prof):
+            w = side * c2 + (n if math.sin(t) < 0 else s) * s2
+            amp = (0.25 if kind == 'R' else 0.6) * (0.4 + 0.6 * i / max(1, nb - 1))
+            w += amp * sum(a * math.sin(k * t + p) for a, k, p in shared) / 1.5
+            w += sum(a * math.sin(k * t + p) for a, k, p in own[i]) / (8 if kind == 'R' else 3)
+            r += max(w, 3.5 if kind == 'F' else 2.5)
+            out.append(r)
+        return out
+    return bounds
+
+
+def bowl(m, prof, stairs, seed):
+    """Vult m.k met een kom rond (m.cx, m.cy). stairs[i] = x-afstand tot het midden van de trap in wand i (van buiten
+    naar binnen). Zet m.lvl (niveau per 2x2-blok; 0 = buitenste ring) en m.terraces."""
+    bounds = bowl_bounds(prof, seed)
+    cx, cy = m.cx, m.cy
+    nfl = sum(1 for p in prof if p[0] == 'F')
+    Wc, Hc = m.W // 2, m.H // 2
+    L = [[-1] * Wc for _ in range(Hc)]                    # -1 rots, anders niveau (0 = buiten)
+    for by in range(Hc):
+        for bx in range(Wc):
+            px, py = 2 * bx + 1 - cx, 2 * by + 1 - cy
+            d, t = pnorm(px, py), math.atan2(py, px)
+            fl = nfl
+            for (kind, *_), b in zip(prof, bounds(t)):
+                if kind == 'F':
+                    fl -= 1
+                if d < b:
+                    L[by][bx] = fl if kind == 'F' else -1
+                    break
+    nb8 = [(a, b) for a in (-1, 0, 1) for b in (-1, 0, 1) if (a, b) != (0, 0)]
+    for _ in range(30):                                    # verschillende niveaus raken elkaar nergens (ook diagonaal)
+        ch = 0
+        for by in range(1, Hc - 1):
+            for bx in range(1, Wc - 1):
+                if L[by][bx] >= 0 and any(L[by + b][bx + a] >= 0 and L[by + b][bx + a] < L[by][bx] for a, b in nb8):
+                    L[by][bx] = -1; ch += 1
+        for by in range(Hc - 1):                            # diagonale aanraking binnen één niveau: open
+            for bx in range(Wc - 1):
+                q = (L[by][bx], L[by][bx + 1], L[by + 1][bx], L[by + 1][bx + 1])
+                if q[0] >= 0 and q[0] == q[3] and q[1] < 0 and q[2] < 0:
+                    L[by][bx + 1] = q[0]; ch += 1
+                elif q[1] >= 0 and q[1] == q[2] and q[0] < 0 and q[3] < 0:
+                    L[by][bx] = q[1]; ch += 1
+        for by in range(1, Hc - 1):                        # losse rotsplekjes binnen één niveau: dicht
+            for bx in range(1, Wc - 1):
+                if L[by][bx] >= 0:
+                    continue
+                near = {L[by + b][bx + a] for a, b in nb8} - {-1}
+                if len(near) == 1 and ((L[by][bx - 1] >= 0 and L[by][bx + 1] >= 0) or
+                                       (L[by - 1][bx] >= 0 and L[by + 1][bx] >= 0)):
+                    L[by][bx] = near.pop(); ch += 1
+        if not ch:
+            break
+    def below(bx, by):
+        while by < Hc and L[by][bx] < 0:
+            by += 1
+        return L[by][bx] if by < Hc else -1
+
+    for _ in range(4):           # noordwanden max. 2 blokken (dikker geeft een rotsvlakte die als kuil/plateau leest)
+        for bx in range(Wc):
+            for by in range(1, Hc - 3):
+                up = L[by - 1][bx]
+                if up >= 0 and L[by][bx] < 0 and L[by + 1][bx] < 0 and L[by + 2][bx] < 0 and below(bx, by) > up and \
+                        {L[by + b][bx + a] for a, b in nb8 if 0 <= bx + a < Wc} <= {up, -1}:
+                    L[by][bx] = up
+    for by in range(Hc):
+        for bx in range(Wc):
+            if bx < 2 or by < 1 or bx >= Wc - 2 or by >= Hc - 2:
+                assert L[by][bx] < 0, ('kom te groot voor de kaart', bx, by)
+    # trappen: per wand een uitsnede van 3 blokken breed door de noordwand, met een terras (rand + trap) onderaan
+    m.stair_cells = set()
+
+    def runs_at(i, bxs):
+        """Per kolom (bovenkant wand, eerste blok van het volgende niveau) langs de noordwand; None als het niet past."""
+        runs = {}
+        if bxs < 3 or bxs > Wc - 4:
+            return None
+        for bx in (bxs - 1, bxs, bxs + 1):
+            by = 0
+            while by < Hc and L[by][bx] != i:
+                by += 1
+            while by < Hc and L[by][bx] == i:
+                by += 1
+            top = by
+            while by < Hc and L[by][bx] < 0:
+                by += 1
+            if by >= Hc or L[by][bx] != i + 1 or by > cy // 2:
+                return None
+            runs[bx] = (top, by)
+        bmin = min(b for _, b in runs.values())
+        if bmin - max(t for t, _ in runs.values()) < 1 or max(b for _, b in runs.values()) - bmin > 2:
+            return None
+        if any(L[by][bx] >= 0 for bx in (bxs - 2, bxs + 2) for by in (bmin - 1,)):
+            return None
+        return runs, bmin
+
+    for i, dx in enumerate(stairs):
+        sgn = 1 if dx >= 0 else -1
+        for k in range(0, 40):                              # dichtst bij de gewenste plek, eerst naar het midden toe
+            bxs = int(cx + dx - sgn * 2 * ((k + 1) // 2) * (1 if k % 2 else -1)) // 2
+            got = runs_at(i, bxs)
+            if got:
+                break
+        if not got:
+            print('\n'.join(''.join('#' if v < 0 else str(v) for v in row) for row in L))
+        assert got, ('trap: geen recht stuk noordwand', i)
+        runs, bmin = got
+        for bx, (top, bin_) in runs.items():
+            for by in range(top, bin_):
+                L[by][bx] = i if by < bmin else i + 1
+        x0, x1, ys = 2 * (bxs - 1), 2 * (bxs + 1) + 1, 2 * bmin - 2
+        m.terraces.append((x0, x1, ys, (2 * bxs, 2 * bxs + 1)))
+        m.stair_cells |= {(2 * bxs, ys + 1), (2 * bxs + 1, ys + 1)}
+    for y in range(m.H):
+        for x in range(m.W):
+            bx, by = x // 2, y // 2
+            m.k[y][x] = 'F' if bx < Wc and by < Hc and L[by][bx] >= 0 else 'R'
+    m.lvl = L
+    m.nlev = nfl
+
+
+def lvl(m, x, y):
+    if not (0 <= x < m.W and 0 <= y < m.H) or x // 2 >= len(m.lvl[0]) or y // 2 >= len(m.lvl):
+        return -1
+    return m.lvl[y // 2][x // 2]
+
+
+def spot(m, level, deg, frac=0.5):
+    """Vloertegel van een niveau op de straal vanuit het midden onder hoek deg (0 = oost, -90 = noord), op frac van
+    de breedte van de ring."""
+    t = math.radians(deg)
+    run, r = [], 0.0
+    while r < max(m.W, m.H):
+        x, y = int(m.cx + r * math.cos(t)), int(m.cy + r * math.sin(t))
+        if lvl(m, x, y) == level and m.k[y][x] == 'F' and (x, y) not in run:
+            run.append((x, y))
+        r += 0.25
+    assert run, ('geen vloer', level, deg)
+    return run[min(len(run) - 1, int(frac * len(run)))]
+
+
+def fit(m, target, w, h, level=None, front=1):
+    """Linksboven van een w x h object (plus front rijen vloer ervoor en 1 kolom vrij opzij), dichtst bij target."""
+    tr = m.terrace_rows()
+    best = None
+    for y in range(2, m.H - 3):
+        for x in range(3, m.W - 3):
+            cells = [(x + a, y + b) for a in range(-1, w + 1) for b in range(0, h + front)]
+            if all(m.k[cy_][cx_] == 'F' and (cx_, cy_) not in m.over and (cx_, cy_) not in tr and
+                   (level is None or lvl(m, cx_, cy_) == level) for cx_, cy_ in cells):
+                d = (x + w / 2 - target[0]) ** 2 + (y + h / 2 - target[1]) ** 2
+                if best is None or d < best[0]:
+                    best = (d, (x, y))
+    assert best, ('geen plek', target, w, h)
+    return best[1]
+
+
+def top_of(m, level, dx):
+    """Bovenste vloertegel van een niveau in kolom cx+dx (tegen de noordwand: plek voor de ladder)."""
+    x = int(m.cx + dx)
+    for y in range(m.H):
+        if lvl(m, x, y) == level and m.k[y][x] == 'F':
+            return (x, y)
+    raise AssertionError(('geen vloer in kolom', level, dx))
+
+
+def bottom_of(m, level, dx):
+    x = int(m.cx + dx)
+    for y in range(m.H - 1, -1, -1):
+        if lvl(m, x, y) == level and m.k[y][x] == 'F':
+            return (x, y)
+    raise AssertionError(('geen vloer in kolom', level, dx))
+
+
+def new_bowl(seed, prof, stairs):
+    """Kaart precies groot genoeg voor de kom: rondom 4-5 tegels rots (de bovenwand van de krater)."""
+    bounds = bowl_bounds(prof, seed)
+    ts = [2 * math.pi * i / 720 for i in range(720)]
+    ext = [(bounds(t)[-1] * math.cos(t) / pnorm(math.cos(t), math.sin(t)),
+            bounds(t)[-1] * math.sin(t) / pnorm(math.cos(t), math.sin(t))) for t in ts]
+    north = -min(y for _, y in ext)
+    south = max(y for _, y in ext)
+    side = max(abs(x) for x, _ in ext)
+    cy = 2 * math.ceil((north + 5) / 2)
+    cx = 2 * math.ceil((side + 4) / 2)
+    w, h = 2 * cx, 2 * math.ceil((cy + south + 4) / 2)
+    m = AZ(w, h, seed)
+    m.cx, m.cy = cx, cy
+    bowl(m, prof, stairs, seed)
+    return m
+
+
+def center(m):
+    """Midden van de bodem (even coördinaten: midden van een blok)."""
+    return (m.cx, m.cy)
+
+
+def polar_items(m, targets):
+    return {it: spot(m, *t) for it, t in targets.items()}
+
+
+def spiral_check(name, m, g, start, goal):
+    """Zonder de trappen is de bodem niet te bereiken: de route loopt echt via de terrassen omlaag."""
+    r = mf.reachable(g, start, set(m.stair_cells))
+    assert goal not in r and not mf.next_to(r, *goal), (name, 'bodem bereikbaar zonder trap')
+
+
+def crystal_ring(m, c, keep, n=8, rad=3.2):
+    """Kristallen in een kring rond de uitgang op de bodem."""
+    for i in range(n):
+        t = 2 * math.pi * (i + 0.5) / n
+        x, y = int(round(c[0] + rad * 1.25 * math.cos(t))), int(round(c[1] + rad * math.sin(t)))
+        if m.k[y][x] == 'F' and (x, y) not in keep and (x, y) not in m.over and (x, y) not in m.terrace_rows():
+            m.put('crysS', x, y)
+
+
 # --------------------------------------------------------------------- laag 1: de kraterwand
-RIM_LADDER = (12, 6)          # warp 0: terug naar de hub
-RIM_EXIT = (28, 43)           # zuiduitgang naar laag 2 (warp 1)
-RIM_STATION = (37, 5)         # onderzoeksstation 1 (3x2), bord eronder
-RIM_LOG = (18, 21)
-RIM_ITEMS = {'ITEM_QUICK_BALL': (46, 30), 'ITEM_MUSCLE_BAND': (6, 30)}
-RIM_OLD = [((44, 10), 'ITEM_FULL_RESTORE', 'FLAG_ITEM_AREA_ZERO_RIM_FULL_RESTORE', 1, False),
-           ((20, 38), 'ITEM_MAX_ELIXIR', 'FLAG_HIDDEN_ITEM_AREA_ZERO_RIM_MAX_ELIXIR', 1, True)]
+RIM_LADDER = RIM_EXIT = RIM_STATION = None    # door build_rim gezet (warp 0 = ladder omhoog = hub, warp 1 = midden)
+RIM_ITEMS = {'ITEM_QUICK_BALL': (1, 10, 0.5), 'ITEM_MUSCLE_BAND': (1, 170, 0.5)}   # (niveau, hoek, plek in de ring)
+RIM_OLD_T = [((0, 30, 0.5), 'ITEM_FULL_RESTORE', 'FLAG_ITEM_AREA_ZERO_RIM_FULL_RESTORE', 1, False),
+             ((0, 135, 0.5), 'ITEM_MAX_ELIXIR', 'FLAG_HIDDEN_ITEM_AREA_ZERO_RIM_MAX_ELIXIR', 1, True)]
 
 
 def build_rim():
-    m = AZ(54, 48, 9101)
-    m.lobes(4, 3, 29, 14, 'a', 8)                 # bovenste plateau (aankomst)
-    m.path([(28, 8), (33, 8.5)], 1.6)
-    m.lobes(31, 3, 49, 14, 'b', 7)                # station
-    m.path([(13, 13), (12.5, 17), (13, 21)], 1.7)
-    m.lobes(4, 18, 25, 33, 'c', 9)                # west, terras
-    m.path([(41, 13), (42, 16.5), (41, 20)], 1.7)
-    m.lobes(29, 18, 49, 33, 'd', 9)               # oost, vijver
-    m.path([(24, 26), (30, 27)], 1.5)
-    m.path([(15, 32), (16, 36.5)], 1.7)
-    m.path([(39, 32), (37, 36.5)], 1.7)
-    m.lobes(8, 35, 45, 42, 'e', 10)               # onderste plateau, uitgang
-    m.freeze(RIM_EXIT[0] - 1, 41, RIM_EXIT[0] + 1, 43, 'F'); m.freeze(RIM_EXIT[0] - 3, 44, RIM_EXIT[0] + 3, 47, 'R')
-    m.shape()
-    m.terrace(5, 24, 24, 9)
-    m.terrace(30, 48, 23, 32)
-    m.terrace(9, 44, 38, 21)
-    m.shape()
+    global RIM_LADDER, RIM_EXIT, RIM_STATION
+    m = new_bowl(9101, BOWL3, [8, -5])
     m.build()
     m.steps()
+    RIM_LADDER = top_of(m, 0, -12)
+    RIM_EXIT = center(m)
     m.ladder(*RIM_LADDER)
-    m.exit_south(*RIM_EXIT)
+    m.ladder(*RIM_EXIT)
+    RIM_STATION = fit(m, spot(m, 0, -10, 0.5), 3, 2, level=0)
     for i, mt in enumerate(ID['station']):
         m.set(RIM_STATION[0] + i % 3, RIM_STATION[1] + i // 3, mt, 1)
         m.blocked_decor.add((RIM_STATION[0] + i % 3, RIM_STATION[1] + i // 3))
     g = m.build()
     taken = {RIM_LADDER, RIM_EXIT, (RIM_STATION[0] + 1, RIM_STATION[1] + 2)}
-    ip = place_items(RIM, m, g, RIM_OLD + new_items(RIM, RIM_ITEMS), taken)
-    logw = cs.wall_spot(m, RIM_LOG)
+    old = [(spot(m, *t), it, fl, q, hid) for t, it, fl, q, hid in RIM_OLD_T]
+    ip = place_items(RIM, m, g, old + new_items(RIM, polar_items(m, RIM_ITEMS)), taken)
+    logw = cs.wall_spot(m, spot(m, 1, -120, 0.3))
     EV[RIM]['log'] = logw
-    pts = [(RIM_LADDER[0], RIM_LADDER[1] + 1), (RIM_EXIT[0], RIM_EXIT[1] - 1), (RIM_STATION[0] + 1, RIM_STATION[1] + 2),
+    pts = [(RIM_LADDER[0], RIM_LADDER[1] + 1), (RIM_EXIT[0], RIM_EXIT[1] + 1), (RIM_STATION[0] + 1, RIM_STATION[1] + 2),
            (logw[0], logw[1] + 1)] + sorted(ip)
-    keep = cs.keep_paths(g, pts, ip | {(x, y) for x in range(35, 42) for y in range(27, 32)})
-    for (cx, cy, rx, ry) in ((20, 9, 4.5, 2.5), (8, 28, 3.5, 2.6), (19, 30, 3.5, 2.0), (45, 25, 3.0, 2.4),
-                             (33, 40, 5, 1.6), (12, 40, 3, 1.5)):
-        m.tall_grass(cx, cy, rx, ry, keep)
-    m.decorate(keep, [('treeL', 9), ('treeS', 30), ('crysM', 2), ('crysS', 10), ('fern', 14), ('flower', 22),
+    keep = cs.keep_paths(g, pts, ip | {(RIM_EXIT[0] + a, RIM_EXIT[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1, 2)})
+    for lv, deg, rx, ry in ((0, -150, 4, 2), (0, 160, 3, 3), (0, 60, 5, 2), (1, -20, 3, 2.5), (1, 120, 4, 2),
+                            (2, 200, 2.5, 1.5)):
+        x, y = spot(m, lv, deg)
+        m.tall_grass(x, y, rx, ry, keep)
+    m.decorate(keep, [('treeL', 7), ('treeS', 30), ('crysM', 2), ('crysS', 10), ('fern', 14), ('flower', 22),
                       ('spark', 6)])
-    rubble(m, keep, 14)
-    return m, m.build()
+    crystal_ring(m, RIM_EXIT, keep, 6)
+    rubble(m, keep, 12)
+    g = m.build()
+    spiral_check(RIM, m, g, (RIM_LADDER[0], RIM_LADDER[1] + 1), RIM_EXIT)
+    return m, g
 
 
-def hole_spot(m, target):
+def hole_spot(m, target, level=None):
     """Plek voor een grotgat in een noordwand: 3 rotscellen breed, 2 hoog, met vloer eronder; dichtst bij target."""
     best = None
+    tr = m.terrace_rows()
     for y in range(2, m.H - 2):
         for x in range(2, m.W - 2):
             if all(m.k[y + b][x + a] == 'R' for a in (-1, 0, 1) for b in (-1, 0)) and \
-                    all(m.k[y + 1][x + a] == 'F' for a in (-2, -1, 0, 1, 2)) and \
-                    not any((x + a, y + b) in m.over for a in (-1, 0, 1) for b in (-1, 0, 1)):
+                    all(m.k[y + 1][x + a] == 'F' and (level is None or lvl(m, x + a, y + 1) == level)
+                        for a in (-2, -1, 0, 1, 2)) and \
+                    not any((x + a, y + b) in m.over or (x + a, y + b) in tr for a in (-2, -1, 0, 1, 2) for b in (-1, 0, 1)):
                 d = (x - target[0]) ** 2 + (y - target[1]) ** 2
                 if best is None or d < best[0]:
                     best = (d, (x, y))
@@ -264,94 +514,79 @@ def rubble(m, keep, n):
 
 
 # --------------------------------------------------------------------- laag 2: de diepte
-DEP_LADDER = (9, 5)           # warp 0: omhoog naar de kraterwand
-DEP_EXIT = (38, 41)           # warp 1: zuiduitgang naar de kristalgrot
-DEP_SCREAM = (6, 22)          # SCREAM TAIL (alkoof west)
-DEP_HANDS = (45, 12)          # IRON HANDS (alkoof oost)
-DEP_LOG = (24, 4)
-DEP_ITEMS = {'ITEM_ADRENALINE_ORB': (44, 33), 'ITEM_SHED_SHELL': (6, 38)}
-DEP_OLD = [((25, 22), 'ITEM_PP_UP', 'FLAG_ITEM_AREA_ZERO_DEPTHS_PP_UP', 1, False)]
+DEP_LADDER = DEP_EXIT = DEP_SCREAM = DEP_HANDS = None
+DEP_ITEMS = {'ITEM_ADRENALINE_ORB': (0, 45, 0.5), 'ITEM_SHED_SHELL': (1, 150, 0.5)}
+DEP_OLD_T = [((2, 0, 0.6), 'ITEM_PP_UP', 'FLAG_ITEM_AREA_ZERO_DEPTHS_PP_UP', 1, False)]
 
 
 def build_depths():
-    m = AZ(52, 46, 9202)
-    m.lobes(4, 3, 30, 12, 'a', 8)                  # aankomst
-    m.path([(29, 8), (33, 8.5), (37, 9)], 1.6)
-    m.lobes(35, 5, 48, 17, 'b', 7)                 # IRON HANDS
-    m.path([(26, 11), (27, 16), (26, 21)], 2.6)    # trap omlaag (hals)
-    m.lobes(4, 19, 32, 30, 'c', 10)                # SCREAM TAIL
-    m.path([(42, 16), (41.5, 20), (42, 24)], 2.6)
-    m.lobes(34, 22, 48, 32, 'd', 7)
-    m.path([(18, 29), (19, 33), (18, 36)], 2.6)
-    m.path([(40, 31), (39.5, 35)], 2.2)
-    m.lobes(4, 33, 47, 41, 'e', 11)
-    m.freeze(DEP_EXIT[0] - 1, 40, DEP_EXIT[0] + 1, 41, 'F'); m.freeze(DEP_EXIT[0] - 3, 42, DEP_EXIT[0] + 3, 45, 'R')
-    m.shape()
-    m.terrace(24, 29, 15, 26)
-    m.terrace(39, 44, 19, 41)
-    m.terrace(16, 21, 32, 18)
-    m.shape()
+    global DEP_LADDER, DEP_EXIT, DEP_SCREAM, DEP_HANDS
+    m = new_bowl(9202, BOWL3, [-8, 5])
     m.build()
     m.steps()
+    DEP_LADDER = top_of(m, 0, 12)
+    DEP_EXIT = center(m)
     m.ladder(*DEP_LADDER)
-    m.exit_south(*DEP_EXIT)
+    m.ladder(*DEP_EXIT)
+    DEP_SCREAM = spot(m, 0, 180, 0.5)                 # SCREAM TAIL: westkant van de buitenste ring
+    DEP_HANDS = spot(m, 1, 30, 0.5)                   # IRON HANDS: tweede ring, oostkant
     g = m.build()
     for p in (DEP_SCREAM, DEP_HANDS):
-        assert m.k[p[1]][p[0]] == 'F', ('boss niet op vloer', p)
+        assert m.k[p[1]][p[0]] == 'F' and p not in m.over, ('boss niet op vloer', p)
     taken = {DEP_LADDER, DEP_EXIT, DEP_SCREAM, DEP_HANDS}
-    ip = place_items(DEP, m, g, DEP_OLD + new_items(DEP, DEP_ITEMS), taken)
-    logw = cs.wall_spot(m, DEP_LOG)
+    old = [(spot(m, *t), it, fl, q, hid) for t, it, fl, q, hid in DEP_OLD_T]
+    ip = place_items(DEP, m, g, old + new_items(DEP, polar_items(m, DEP_ITEMS)), taken)
+    logw = cs.wall_spot(m, spot(m, 0, -60, 0.2))
     EV.setdefault(DEP, {})['log'] = logw
-    pts = [(DEP_LADDER[0], DEP_LADDER[1] + 1), (DEP_EXIT[0], DEP_EXIT[1] - 1), (DEP_SCREAM[0], DEP_SCREAM[1] + 1),
+    pts = [(DEP_LADDER[0], DEP_LADDER[1] + 1), (DEP_EXIT[0], DEP_EXIT[1] + 1), (DEP_SCREAM[0], DEP_SCREAM[1] + 1),
            (DEP_HANDS[0], DEP_HANDS[1] + 1), (logw[0], logw[1] + 1)] + sorted(ip)
     extra = ip | {(x, y) for x in range(DEP_SCREAM[0] - 1, DEP_SCREAM[0] + 2) for y in range(DEP_SCREAM[1] - 1, DEP_SCREAM[1] + 3)} | \
-        {(x, y) for x in range(DEP_HANDS[0] - 1, DEP_HANDS[0] + 2) for y in range(DEP_HANDS[1] - 1, DEP_HANDS[1] + 3)}
+        {(x, y) for x in range(DEP_HANDS[0] - 1, DEP_HANDS[0] + 2) for y in range(DEP_HANDS[1] - 1, DEP_HANDS[1] + 3)} | \
+        {(DEP_EXIT[0] + a, DEP_EXIT[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1, 2)}
     keep = cs.keep_paths(g, pts, extra)
-    for (cx, cy, rx, ry) in ((18, 5, 4, 2), (40, 14, 2.5, 2), (14, 26, 4, 1.8), (32, 39, 4, 1.6), (8, 36, 2.5, 1.8)):
-        m.tall_grass(cx, cy, rx, ry, keep)
+    for lv, deg, rx, ry in ((0, -130, 4, 2), (0, 100, 4, 2), (1, -60, 3, 2), (1, 170, 2.5, 2.5), (2, 150, 2.5, 1.5)):
+        x, y = spot(m, lv, deg)
+        m.tall_grass(x, y, rx, ry, keep)
     m.decorate(keep, [('crysL', 4), ('crysP', 10), ('crysM', 10), ('crysS', 22), ('treeL', 4), ('treeS', 14),
                       ('fern', 12), ('vein', 26), ('spark', 14)])
-    rubble(m, keep, 14)
-    return m, m.build()
+    crystal_ring(m, DEP_EXIT, keep, 8)
+    rubble(m, keep, 12)
+    g = m.build()
+    spiral_check(DEP, m, g, (DEP_LADDER[0], DEP_LADDER[1] + 1), DEP_EXIT)
+    return m, g
 
 
 # --------------------------------------------------------------------- laag 3: de kristalgrot
-CRY_LADDER = (22, 5)          # warp 0: omhoog naar de diepte
-CRY_GATE_PAST = (13, 34)      # warp 1: draaikolk naar het verleden
-CRY_GATE_FUT = (33, 34)       # warp 2: draaikolk naar de toekomst
-CRY_TERA_TARGET = (23, 28)    # warp 3: het verzegelde grotgat (plek automatisch in de noordwand)
-CRY_LOG = (30, 4)
-CRY_ITEMS = {'ITEM_BEAST_BALL': (41, 10), 'ITEM_RING_TARGET': (5, 20)}
-CRY_OLD = [((6, 9), 'ITEM_MAX_REVIVE', 'FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX_REVIVE', 1, False)]
+CRY_LADDER = CRY_GATE_PAST = CRY_GATE_FUT = None   # warp 0 ladder omhoog, 1/2 draaikolken (verleden/toekomst), 3 gat
+CRY_ITEMS = {'ITEM_BEAST_BALL': (0, 20, 0.5), 'ITEM_RING_TARGET': (1, 200, 0.5)}
+CRY_OLD_T = [((0, 150, 0.5), 'ITEM_MAX_REVIVE', 'FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX_REVIVE', 1, False)]
 
 
 def build_crystal():
-    m = AZ(48, 42, 9303)
-    m.lobes(12, 3, 34, 12, 'a', 8)
-    m.path([(13, 9), (8, 12), (7, 17)], 1.8)
-    m.path([(33, 9), (39, 12), (40, 17)], 1.8)
-    m.lobes(3, 6, 12, 24, 'w', 7)
-    m.lobes(35, 6, 44, 24, 'o', 7)
-    m.path([(10, 22), (16, 25)], 1.8)
-    m.path([(37, 22), (31, 25)], 1.8)
-    m.lobes(8, 24, 39, 37, 'z', 11)
-    m.shape()
-    m.terrace(9, 38, 30, 23)
-    m.shape()
+    global CRY_LADDER, CRY_GATE_PAST, CRY_GATE_FUT
+    m = new_bowl(9303, [('F', 6, 5, 9)] + BOWL3[1:], [8, -5])
     m.build()
     m.steps()
+    CRY_LADDER = top_of(m, 0, -2)
     m.ladder(*CRY_LADDER)
+    cx, cy = center(m)
+    CRY_GATE_PAST = (cx - 4, cy + 1)                   # de Zero Gate op de bodem: verleden links, toekomst rechts
+    CRY_GATE_FUT = (cx + 4, cy + 1)
+    for gx, gy in (CRY_GATE_PAST, CRY_GATE_FUT):
+        assert all(m.k[gy + b][gx + a] == 'F' and lvl(m, gx + a, gy + b) == m.nlev - 1
+                   for a in (-2, -1, 0, 1, 2) for b in (-1, 0, 1)), ('poort niet op de bodem', gx, gy)
     m.gate(*CRY_GATE_PAST)
     m.gate(*CRY_GATE_FUT)
     g = m.build()
-    hx, hy = hole_spot(m, CRY_TERA_TARGET)
+    hx, hy = hole_spot(m, (cx, cy - 6), level=m.nlev - 1)   # het verzegelde grotgat in de noordwand van de bodem
     m.cave_hole(hx, hy)
     m.set(hx, hy, ID['plug'][0], 1)          # dicht; opent via setmetatile (ON_LOAD) als beide systemen offline zijn
     EV.setdefault(CRY, {})['hole'] = (hx, hy)
     g = m.build()
     taken = {CRY_LADDER, CRY_GATE_PAST, CRY_GATE_FUT, (hx, hy + 1)}
-    ip = place_items(CRY, m, g, CRY_OLD + new_items(CRY, CRY_ITEMS), taken)
-    logw = cs.wall_spot(m, CRY_LOG)
+    old = [(spot(m, *t), it, fl, q, hid) for t, it, fl, q, hid in CRY_OLD_T]
+    ip = place_items(CRY, m, g, old + new_items(CRY, polar_items(m, CRY_ITEMS)), taken)
+    logw = cs.wall_spot(m, spot(m, 1, -110, 0.2))
     EV[CRY]['log'] = logw
     signs = [(CRY_GATE_PAST[0] - 1, CRY_GATE_PAST[1] + 1), (CRY_GATE_FUT[0] + 1, CRY_GATE_FUT[1] + 1)]   # bord = pijler
     EV[CRY]['signs'] = signs
@@ -360,56 +595,48 @@ def build_crystal():
     extra = ip | set(signs) | {(x, y) for gx, gy in (CRY_GATE_PAST, CRY_GATE_FUT) for x in range(gx - 2, gx + 3)
                                for y in range(gy - 2, gy + 3)} | {(x, y) for x in range(hx - 2, hx + 3) for y in range(hy, hy + 3)}
     keep = cs.keep_paths(g, pts, extra)
-    m.decorate(keep, [('crysL', 12), ('crysP', 22), ('crysM', 22), ('crysS', 40), ('vein', 40), ('spark', 34)])
+    m.decorate(keep, [('crysL', 10), ('crysP', 20), ('crysM', 20), ('crysS', 40), ('vein', 40), ('spark', 34)])
     rubble(m, keep, 6)
-    return m, m.build()
+    g = m.build()
+    spiral_check(CRY, m, g, (CRY_LADDER[0], CRY_LADDER[1] + 1), (CRY_GATE_PAST[0], CRY_GATE_PAST[1] + 1))
+    return m, g
 
 
 # --------------------------------------------------------------------- laag 4: toekomst en verleden (zelfde vorm)
-ERA_GATE = (24, 38)           # warp 0: aankomst/draaikolk naar de andere tijd
-ERA_LADDER = (20, 38)         # warp 1: omhoog naar de kristalgrot
-ERA_LEGEND = (24, 7)          # MIRAIDON / KORAIDON
-ERA_TERMINAL = (28, 5)        # beveiligingsterminal 2x2 (linksboven); aanspreken op de onderste rij
-ERA_BOSSES = [(6, 14), (43, 15), (8, 30)]
-ERA_LOG = (14, 22)
-ERA_ITEMS = {FUT: {'ITEM_BOOSTER_ENERGY': (41, 33), 'ITEM_METAL_ALLOY': (5, 6), 'ITEM_AIR_BALLOON': (38, 22)},
-             PAS: {'ITEM_POWER_HERB': (41, 33), 'ITEM_GRIP_CLAW': (5, 6), 'ITEM_STICKY_BARB': (38, 22)}}
-ERA_OLD = {FUT: [((30, 26), 'ITEM_PP_MAX', 'FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX', 1, False)],
-           PAS: [((30, 26), 'ITEM_RARE_CANDY', 'FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY', 1, False)]}
+ERA_GATE = ERA_LADDER = ERA_LEGEND = ERA_TERMINAL = ERA_BOSSES = None
+# warp 0 = aankomst/draaikolk naar de andere tijd, warp 1 = ladder omhoog (beide bovenaan op de rand);
+# MIRAIDON/KORAIDON en de beveiligingsterminal op de bodem in het midden; drie paradoxen op de ringen
+ERA_ITEMS = {FUT: {'ITEM_BOOSTER_ENERGY': (0, 40, 0.5), 'ITEM_METAL_ALLOY': (1, 190, 0.5), 'ITEM_AIR_BALLOON': (1, -20, 0.5)},
+             PAS: {'ITEM_POWER_HERB': (0, 40, 0.5), 'ITEM_GRIP_CLAW': (1, 190, 0.5), 'ITEM_STICKY_BARB': (1, -20, 0.5)}}
+ERA_OLD_T = {FUT: [((2, 150, 0.6), 'ITEM_PP_MAX', 'FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX', 1, False)],
+             PAS: [((2, 150, 0.6), 'ITEM_RARE_CANDY', 'FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY', 1, False)]}
 
 
 def build_era(name):
-    m = AZ(50, 44, 9404)                      # zelfde seed: zelfde vorm in beide tijden
-    m.lobes(15, 3, 34, 11, 'top', 7)
-    m.freeze(21, 4, 31, 9, 'F')
-    m.path([(22, 11), (20, 15), (17, 18)], 1.8)
-    m.path([(30, 11), (34, 14), (38, 17)], 1.8)
-    m.lobes(3, 9, 17, 19, 'w', 7)
-    m.lobes(34, 10, 47, 21, 'o', 7)
-    m.lobes(10, 16, 40, 28, 'mid', 10)
-    m.path([(16, 27), (12, 30)], 1.8)
-    m.lobes(3, 26, 15, 35, 'sw', 6)
-    m.path([(30, 27), (33, 31)], 1.8)
-    m.lobes(14, 31, 46, 40, 'bot', 10)
-    m.shape()
-    m.terrace(16, 33, 10, 26)
-    m.terrace(15, 45, 34, 30)
-    m.shape()
+    global ERA_GATE, ERA_LADDER, ERA_LEGEND, ERA_TERMINAL, ERA_BOSSES
+    m = new_bowl(9404, [('F', 6, 5, 9)] + BOWL3[1:], [-8, 5])   # zelfde seed: zelfde vorm in beide tijden
     m.build()
     m.steps()
-    m.ladder(*ERA_LADDER)
+    gx, gy = top_of(m, 0, 4)
+    ERA_GATE = (gx, gy + 1)
     m.gate(*ERA_GATE)
+    ERA_LADDER = top_of(m, 0, -2)
+    m.ladder(*ERA_LADDER)
+    cx, cy = center(m)
+    ERA_LEGEND = (cx - 2, cy)
+    ERA_TERMINAL = (cx + 2, cy - 2)                  # 2x2 (linksboven); aanspreken op de onderste rij
+    ERA_BOSSES = [spot(m, 0, 175), spot(m, 1, 20), spot(m, 0, 75)]
     for i, mt in enumerate(ID['terminal']):
         m.set(ERA_TERMINAL[0] + i % 2, ERA_TERMINAL[1] + i // 2, mt, 1)
         m.blocked_decor.add((ERA_TERMINAL[0] + i % 2, ERA_TERMINAL[1] + i // 2))
     g = m.build()
     for p in ERA_BOSSES + [ERA_LEGEND]:
         assert m.k[p[1]][p[0]] == 'F' and p not in m.over, (name, 'boss niet op vloer', p)
-    rnd_state = m.rnd.getstate()
     m.rnd = random.Random(9404 + (1 if name == PAS else 2))
     taken = {ERA_GATE, ERA_LADDER, ERA_LEGEND} | set(ERA_BOSSES)
-    ip = place_items(name, m, g, ERA_OLD[name] + new_items(name, ERA_ITEMS[name]), taken)
-    logw = cs.wall_spot(m, ERA_LOG)
+    old = [(spot(m, *t), it, fl, q, hid) for t, it, fl, q, hid in ERA_OLD_T[name]]
+    ip = place_items(name, m, g, old + new_items(name, polar_items(m, ERA_ITEMS[name])), taken)
+    logw = cs.wall_spot(m, spot(m, 1, -120, 0.2))
     EV[name]['log'] = logw
     term = (ERA_TERMINAL[0], ERA_TERMINAL[1] + 2)
     pts = [(ERA_GATE[0], ERA_GATE[1] + 1), (ERA_LADDER[0], ERA_LADDER[1] + 1), (ERA_LEGEND[0], ERA_LEGEND[1] + 1),
@@ -419,46 +646,49 @@ def build_era(name):
         extra |= {(x, y) for x in range(x0 - 2, x0 + 3) for y in range(y0 - 2, y0 + 3)}
     keep = cs.keep_paths(g, pts, extra)
     if name == FUT:
-        for (cx, cy, rx, ry) in ((24, 7, 5, 2.2), (10, 14, 3.5, 2.5), (40, 16, 3.5, 2.5), (25, 21, 7, 3),
-                                 (9, 31, 3, 2.5), (31, 37, 6, 1.8)):
-            m.panels(cx, cy, rx, ry, keep)
+        for lv, deg, rx, ry in ((2, 90, 5, 2.2), (0, -150, 4, 2), (0, 120, 4, 2.2), (1, 100, 5, 2), (1, -150, 3, 2),
+                                (0, -20, 3, 2.5)):
+            x, y = spot(m, lv, deg)
+            m.panels(x, y, rx, ry, keep)
         m.decorate(keep, [('cubeL', 10), ('crysP', 10), ('crysM', 8), ('cube', 26), ('crysS', 16), ('spark', 20)])
         rubble(m, keep, 6)
     else:
-        for (cx, cy, rx, ry) in ((10, 13, 3, 2.2), (40, 18, 3, 2), (25, 22, 4.5, 2), (9, 32, 3, 2), (34, 37, 4, 1.6)):
-            m.tall_grass(cx, cy, rx, ry, keep)
-        m.decorate(keep, [('treeL', 9), ('bones', 7), ('crysM', 8), ('crysP', 6), ('treeS', 24), ('fern', 36),
+        for lv, deg, rx, ry in ((0, -150, 3.5, 2), (0, 120, 4, 2), (1, 100, 4, 2), (1, -150, 3, 2), (2, 200, 2.5, 1.5)):
+            x, y = spot(m, lv, deg)
+            m.tall_grass(x, y, rx, ry, keep)
+        m.decorate(keep, [('treeL', 7), ('bones', 7), ('crysM', 8), ('crysP', 6), ('treeS', 24), ('fern', 36),
                           ('crysS', 16), ('vein', 24)])
         rubble(m, keep, 12)
-    return m, m.build()
+    g = m.build()
+    spiral_check(name, m, g, (ERA_GATE[0], ERA_GATE[1] + 1), (ERA_LEGEND[0], ERA_LEGEND[1] + 1))
+    return m, g
 
 
 # --------------------------------------------------------------------- de Tera-grot
-TERA_EXIT = (17, 26)          # warp 0: terug naar de kristalgrot (zuiduitgang)
-TERA_CORE = (16, 4)           # Tera-kern 3x3 (linksboven)
-TERA_PAGOS = (17, 9)          # TERAPAGOS (verschijnt na het alarmsysteem)
-TERA_ALARM = (22, 7)          # alarmterminal 2x2 (linksboven); aanspreken op de onderste rij
+TERA_EXIT = TERA_CORE = TERA_PAGOS = TERA_ALARM = None
+# warp 0 = zuiduitgang terug naar de kristalgrot (op de rand); de Tera-kern, TERAPAGOS en het alarm op de bodem
 
 
 def build_tera():
-    m = AZ(36, 31, 9505)
-    m.lobes(6, 3, 29, 15, 'k', 9)
-    m.freeze(13, 4, 23, 12, 'F')
-    m.path([(17, 15), (16, 20), (17, 26)], 2.0)
-    m.lobes(8, 17, 26, 25, 'g', 7)
-    m.freeze(TERA_EXIT[0] - 1, 25, TERA_EXIT[0] + 1, 26, 'F'); m.freeze(TERA_EXIT[0] - 3, 27, TERA_EXIT[0] + 3, 30, 'R')
-    m.shape()
-    m.terrace(9, 25, 17, 16)
-    m.shape()
+    global TERA_EXIT, TERA_CORE, TERA_PAGOS, TERA_ALARM
+    m = new_bowl(9505, BOWL2, [-5])
+    TERA_EXIT = bottom_of(m, 0, 0)
     m.build()
     m.steps()
     m.exit_south(*TERA_EXIT)
+    cx, cy = center(m)
+    TERA_CORE = (cx - 1, cy - 5)
+    TERA_PAGOS = (cx, cy)
+    TERA_ALARM = (cx + 4, cy - 2)
     for i, mt in enumerate(ID['tera']):
         m.set(TERA_CORE[0] + i % 3, TERA_CORE[1] + i // 3, mt, 1)
         m.blocked_decor.add((TERA_CORE[0] + i % 3, TERA_CORE[1] + i // 3))
     for i, mt in enumerate(ID['terminal']):
         m.set(TERA_ALARM[0] + i % 2, TERA_ALARM[1] + i // 2, mt, 1)
         m.blocked_decor.add((TERA_ALARM[0] + i % 2, TERA_ALARM[1] + i // 2))
+    for p in [(TERA_CORE[0] + a, TERA_CORE[1] + b) for a in range(3) for b in range(3)] + \
+            [(TERA_ALARM[0] + a, TERA_ALARM[1] + b) for a in range(2) for b in range(3)] + [TERA_PAGOS]:
+        assert m.k[p[1]][p[0]] == 'F' and lvl(m, *p) == m.nlev - 1, ('Tera-grot: niet op de bodem', p)
     g = m.build()
     term = (TERA_ALARM[0], TERA_ALARM[1] + 2)
     pts = [(TERA_EXIT[0], TERA_EXIT[1] - 1), (TERA_PAGOS[0], TERA_PAGOS[1] + 1), term]
@@ -466,7 +696,9 @@ def build_tera():
     extra |= {term, (term[0] + 1, term[1])}
     keep = cs.keep_paths(g, pts, extra)
     m.decorate(keep, [('crysL', 5), ('crysP', 12), ('crysM', 10), ('crysS', 22), ('vein', 22), ('spark', 22)])
-    return m, m.build()
+    g = m.build()
+    spiral_check(TERA, m, g, (TERA_EXIT[0], TERA_EXIT[1] - 1), (TERA_PAGOS[0], TERA_PAGOS[1] + 1))
+    return m, g
 
 
 # --------------------------------------------------------------------- render (zonder events, voor de vormcontrole)
@@ -1020,12 +1252,12 @@ def events():
                            "A crowned metal warrior regards you.\n\nIt has no idea what a crown is for, but it knows it "
                            "looks great in one.",
                            "IRON CROWN straightens its crown and reboots. Royalty doesn't stay down. It delegates.")],
-                  meet="MIRAIDON lies curled on the terrace, idling like an engine somebody forgot to switch off.\n\n"
+                  meet="MIRAIDON lies curled up at the bottom of the crater, idling like an engine somebody forgot to switch off.\n\n"
                        "It opens one eye. Then the other. Then a third one, on a screen, somewhere.",
                   ko="MIRAIDON reboots in a shower of sparks.\n\nTurning it off and on again: still the oldest trick "
                      "in the future.",
                   log="RESEARCH LOG 7F\nThe robots here are polite. They call me 'organic legacy unit'. I've decided "
-                      "to take it as a compliment.\n\nMIRAIDON sleeps on the upper terrace. The security system "
+                      "to take it as a compliment.\n\nMIRAIDON sleeps at the bottom of the crater. The security system "
                       "sleeps next to it. Lightly.",
                   standby="ZERO LAB SECURITY TERMINAL\nSTATUS: STANDBY.\n\nCONTAINED: 1x MIRAIDON.\nDo not pet. Do not "
                           "feed after midnight. Do not explain midnight to it."),
@@ -1043,11 +1275,11 @@ def events():
                            "weather event.",
                            "RAGING BOLT crackles back to life. Lightning never strikes the same place twice. This one "
                            "does, out of spite.")],
-                  meet="KORAIDON lies on the terrace, sunning itself under a sun that went out millions of years "
+                  meet="KORAIDON lies at the bottom of the crater, sunning itself under a sun that went out millions of years "
                        "ago.\n\nIt wags. That's either friendly or a warning. Possibly both.",
                   ko="KORAIDON rolls over, yawns, and gets up again. Apex predators don't do naps on command.",
                   log="RESEARCH LOG 7P\nEverything here wants to eat me, including two of the plants.\n\nKORAIDON "
-                      "naps on the upper terrace like a very large, very smug dog. The security system watches it. "
+                      "naps at the bottom of the crater like a very large, very smug dog. The security system watches it. "
                       "It watches me back.",
                   standby="ZERO LAB SECURITY TERMINAL\nSTATUS: STANDBY.\n\nCONTAINED: 1x KORAIDON.\nDo not throw "
                           "sticks. It will bring back the tree."),

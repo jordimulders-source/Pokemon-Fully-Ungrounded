@@ -177,9 +177,9 @@ AreaZero_Past_Text_RagingBoltBack:
 	.string "twice. This one does, out of spite.$"
 
 AreaZero_Past_Text_Legend:
-	.string "KORAIDON lies on the terrace, sunning\n"
-	.string "itself under a sun that went out\l"
-	.string "millions of years ago.\p"
+	.string "KORAIDON lies at the bottom of the\n"
+	.string "crater, sunning itself under a sun that\l"
+	.string "went out millions of years ago.\p"
 	.string "It wags. That's either friendly or a\n"
 	.string "warning. Possibly both.$"
 
@@ -229,7 +229,7 @@ AreaZero_Past_Text_Log:
 	.string "RESEARCH LOG 7P\n"
 	.string "Everything here wants to eat me,\l"
 	.string "including two of the plants.\p"
-	.string "KORAIDON naps on the upper terrace\n"
-	.string "like a very large, very smug dog. The\l"
-	.string "security system watches it. It watches\l"
-	.string "me back.$"
+	.string "KORAIDON naps at the bottom of the\n"
+	.string "crater like a very large, very smug dog.\l"
+	.string "The security system watches it. It\l"
+	.string "watches me back.$"

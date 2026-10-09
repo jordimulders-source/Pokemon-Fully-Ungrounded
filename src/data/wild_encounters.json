@@ -11151,6 +11151,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_POIPOLE",
+          "base_label": "gUltraSpacePoipole",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BEHEEYEM"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_MINIOR"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_REUNICLUS"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_ORBEETLE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GENGAR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_SOLOSIS"
+              },
+              {
+                "min_level": 89,
+                "max_level": 90,
+                "species": "SPECIES_PORYGON_Z"
+              }
+            ]
+          }
         }
       ]
     },

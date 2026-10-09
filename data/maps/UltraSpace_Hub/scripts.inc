@@ -80,7 +80,7 @@ UltraSpace_Hub_EventScript_ToGuzzlord::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToPoipole::
-	warp MAP_ULTRA_SPACE_POIPOLE, 8, 12
+	warp MAP_ULTRA_SPACE_POIPOLE, 6, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToStakataka::

@@ -348,4 +348,8 @@ const u16 gMetatiles_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary
 const u16 gMetatileAttributes_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_blacephalon_base/metatile_attributes.bin");
 const u16 gMetatiles_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatiles.bin");
 const u16 gMetatileAttributes_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatile_attributes.bin");
 // } ultra_worlds_b

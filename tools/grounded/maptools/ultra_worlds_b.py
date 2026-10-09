@@ -2387,6 +2387,613 @@ def world_blacephalon():
                 rate=5)
 
 
+# ====================================================================== POIPOLE: buitenaardse wereld (space horror)
+PP = {
+    'void': [C(4, 2, 10), C(10, 6, 22)],
+    'rock': [C(26, 18, 36), C(40, 30, 54), C(58, 46, 74), C(78, 64, 98), C(104, 90, 128)],
+    'vein': [C(30, 110, 110), C(70, 200, 180), C(170, 255, 230)],
+    'cliff': [C(14, 8, 20), C(30, 20, 40), C(48, 34, 60), C(66, 50, 82)],
+    'ooze': [C(20, 60, 24), C(48, 140, 48), C(110, 220, 80), C(200, 255, 160)],
+    'plasma': [C(80, 10, 50), C(180, 30, 110), C(250, 100, 160), C(255, 210, 230)],
+    'bone': [C(70, 66, 60), C(130, 124, 112), C(190, 184, 168), C(236, 232, 216)],
+    'metal': [C(40, 44, 56), C(84, 92, 110), C(140, 150, 170), C(210, 220, 236)],
+}
+
+
+def pp_rock(x, y):
+    """buitenaardse rotsgrond (herhalend per 32 px): putjes, kraters, turquoise aders"""
+    img = rgba(16, 16, PP['rock'][2])
+    rs = random.Random((x % 2) * 31 + (y % 2) * 7)
+    for _ in range(5):                                     # putjes
+        cx, cy, r = rs.randrange(16), rs.randrange(16), rs.choice((1, 1, 2))
+        for yy in range(16):
+            for xx in range(16):
+                d = math.hypot(xx - cx, yy - cy)
+                if d <= r:
+                    img[yy, xx, :3] = PP['rock'][1]
+                elif d <= r + 1 and yy > cy:
+                    img[yy, xx, :3] = PP['rock'][3]
+    for _ in range(10):
+        img[rs.randrange(16), rs.randrange(16), :3] = rs.choice((PP['rock'][1], PP['rock'][3]))
+    if (x + y) % 3 == 0:                                   # ader
+        yy = rs.randrange(3, 13)
+        for xx in range(16):
+            yy = max(1, min(14, yy + rs.choice((-1, 0, 0, 1))))
+            img[yy, xx, :3] = PP['vein'][0]
+            if xx % 5 == 2:
+                img[yy, xx, :3] = PP['vein'][1]
+    return img
+
+
+def pp_void(x, y):
+    img = rgba(16, 16, PP['void'][0])
+    rs = random.Random((x % 4) * 17 + (y % 4) * 5 + 3)
+    for _ in range(3):
+        c = rs.choice((C(60, 50, 90), C(120, 110, 160), C(200, 200, 240), C(90, 60, 70)))
+        img[rs.randrange(16), rs.randrange(16), :3] = c
+    if rs.random() < 0.15:
+        sx, sy = rs.randrange(2, 14), rs.randrange(2, 14)
+        for (dx, dy) in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
+            img[sy + dy, sx + dx, :3] = C(220, 220, 255) if (dx, dy) == (0, 0) else C(110, 100, 160)
+    return img
+
+
+@world
+def world_poipole():
+    W, H = 42, 34
+    w = A.World('Poipole', W, H, seed=447)
+    shapes = [(7, 27, 5.5, 4.2),                 # aankomsteiland (linksonder)
+              (19, 22, 6, 4.5),                  # geisers en gifpoelen
+              (11, 13, 5, 4),                    # ribbenkast
+              (24, 11, 5.5, 4),                  # bliksemspitsen
+              (34, 8, 6.5, 5),                   # neergestorte schotel (aliens)
+              (34, 24, 5, 4.5),                  # plasmakraters
+              ('c', 10, 25, 15, 23, 2.2), ('c', 15, 19, 12, 16, 2.2), ('c', 15, 13, 20, 12, 2.2),
+              ('c', 28, 10, 30, 9, 2.4), ('c', 24, 23, 30, 24, 2.2), ('c', 34, 20, 34, 13, 2.2)]
+    ground = blob_mask(W, H, shapes, 447, wobble=1.0, smooth=2)
+    ground[:3, :] = False
+    arrive, ret = (6, 28), (6, 27)
+    for c in (arrive, ret, (6, 29), (7, 28), (5, 28)):
+        ground[c[1], c[0]] = True
+    # ---------------------------------------------------------------- tekenen: ruimte, rots, klifranden
+    for y in range(H):
+        for x in range(W):
+            if ground[y, x]:
+                w.put(pp_rock(x, y), x, y)
+                w.beh[y, x] = 0x08
+            else:
+                w.put(pp_void(x, y), x, y)
+                w.coll[y, x] = True
+    # nevel en het grote oog in de leegte (linksboven)
+    neb = A.value_noise(H * 16, W * 16, 22, 5)
+    voidm = np.zeros(w.bot.shape[:2], bool)
+    for y in range(H):
+        for x in range(W):
+            if not ground[y, x]:
+                voidm[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = True
+    # nevel: herhalend patroon van 64 px (geen losse tiles), boven dichter dan onder
+    P_ = 128
+    yy_, xx_ = np.mgrid[0:P_, 0:P_]
+    rsn = random.Random(11)
+    pn = np.zeros((P_, P_))
+    for (a_, b_, amp) in ((1, 0, 1.0), (0, 1, 0.9), (1, 1, 0.7), (2, -1, 0.55), (1, 2, 0.45), (3, 1, 0.35), (-2, 3, 0.3), (4, -3, 0.2), (5, 2, 0.15)):
+        pn += amp * np.sin(2 * math.pi * (xx_ * a_ + yy_ * b_) / P_ + rsn.uniform(0, 6.28))
+    pn = pn / 2.6
+    for y in range(H):
+        lvl = 2 if y < 6 else (1 if y < 11 else 0)
+        if not lvl:
+            continue
+        for x in range(W):
+            if ground[y, x]:
+                continue
+            sub = pn[(y * 16) % P_:(y * 16) % P_ + 16, (x * 16) % P_:(x * 16) % P_ + 16]
+            sl = (slice(y * 16, y * 16 + 16), slice(x * 16, x * 16 + 16))
+            thr = 0.15 if lvl == 2 else 0.5
+            m = sub > thr
+            m2 = sub > thr + 0.3
+            edge_ = (sub > thr - 0.08) & ~m & ((A.B4[np.arange(16)[:, None] % 4, np.arange(16)[None] % 4]) < 0.5)
+            w.bot[sl][edge_] = mix(w.bot[sl][edge_], C(30, 10, 40), 0.6)
+            w.bot[sl][m] = mix(w.bot[sl][m], C(40, 14, 54), 0.65)
+            w.bot[sl][m2] = mix(w.bot[sl][m2], C(84, 30, 90), 0.45)
+    # klifranden: grond met leegte eronder krijgt een rotswand in het lege vak eronder
+    for y in range(H - 1):
+        for x in range(W):
+            if ground[y, x] and not ground[y + 1, x]:
+                img = rgba(16, 16, PP['cliff'][1])
+                for yy in range(16):
+                    for xx in range(16):
+                        band = (yy + ((x % 2) * 16 + xx) // 4 % 2) // 3
+                        img[yy, xx, :3] = PP['cliff'][[2, 1, 2, 3, 1, 0][min(band, 5)]]
+                        if (xx * 7 + yy * 3 + (x % 2)) % 23 == 0:
+                            img[yy, xx, :3] = PP['vein'][0]
+                # onderkant brokkelt af in de leegte
+                for xx in range(16):
+                    cut = 9 + (zlib.crc32(b'cl%d' % (((x % 2) * 16 + xx) // 2)) % 6)
+                    img[cut:, xx, :3] = w.cellpix(x, y + 1)[cut:, xx]
+                img[0, :, :3] = PP['rock'][4]
+                w.put(img, x, y + 1)
+    # randen van de grond: donkere rand waar leegte opzij of boven ligt
+    for y in range(H):
+        for x in range(W):
+            if not ground[y, x]:
+                continue
+            c = w.cellpix(x, y)
+            if y > 0 and not ground[y - 1, x]:
+                c[0:2, :] = PP['rock'][4]
+                c[0, :] = PP['rock'][1]
+            if x > 0 and not ground[y, x - 1]:
+                c[:, 0] = PP['cliff'][0]
+                c[:, 1] = PP['rock'][3]
+            if x + 1 < W and not ground[y, x + 1]:
+                c[:, 15] = PP['cliff'][0]
+                c[:, 14] = PP['rock'][1]
+    # het oog in de ruimte (6x3 vakken), knippert af en toe (animatie)
+    EYE_POS = (2, 3, 7, 3)          # x, y, w, h in vakken
+    ex0, ey0, ew, eh = EYE_POS
+    eye_cells = [(x, y) for y in range(ey0, ey0 + eh) for x in range(ex0, ex0 + ew)]
+    for (x, y) in eye_cells:
+        assert not ground[y, x], 'oog op de grond'
+    eye_base = {c: np.concatenate([w.cellpix(*c).copy(), np.full((16, 16, 1), 255.0)], 2) for c in eye_cells}
+
+    def big_eye(state, look):
+        img = np.zeros((eh * 16, ew * 16, 4))
+        cx, cy = ew * 8, eh * 8
+        for yy in range(eh * 16):
+            for xx in range(ew * 16):
+                dx, dy = (xx - cx) / (ew * 8 - 3), (yy - cy) / (eh * 8 - 6)
+                e = dx * dx + dy * dy * (1.0 if state == 0 else (2.6 if state == 1 else 30))
+                if e < 1:
+                    vein = (math.sin(xx * 0.9 + yy * 0.4) > 0.93) or (math.sin(xx * 0.5 - yy * 1.1) > 0.95)
+                    img[yy, xx] = list(C(150, 30, 40) if vein else (C(210, 196, 170) if e < 0.7 else C(150, 120, 110))) + [255]
+                    d = math.hypot(xx - cx - look * 9, (yy - cy) * 1.0)
+                    if d < 15:
+                        img[yy, xx] = list(C(120, 20, 160) if d > 11 else C(200, 60, 120) if d > 5 else C(10, 0, 14)) + [255]
+                        if abs(xx - cx - look * 9) < 1.6 and d < 13:
+                            img[yy, xx] = [10, 0, 14, 255]
+                elif e < 1.25:
+                    img[yy, xx] = list(C(40, 10, 40) if state < 2 else C(60, 20, 50)) + [255]
+        if state == 0:
+            img[cy - 6:cy - 4, cx - 6 + look * 9:cx - 3 + look * 9] = [255, 255, 255, 255]
+        return img
+    eye_imgs = [big_eye(0, 0), big_eye(0, -1), big_eye(0, 1), big_eye(1, 0), big_eye(2, 0)]
+
+    def eye_fn(f, x, y):
+        img = eye_base[(x, y)].copy()
+        A.paste(img, eye_imgs[f][(y - ey0) * 16:(y - ey0 + 1) * 16, (x - ex0) * 16:(x - ex0 + 1) * 16], 0, 0)
+        return img
+    for c in eye_cells:
+        w.put(eye_fn(0, *c), *c)
+    w.anim('eye', eye_fn, eye_cells, [0] * 12 + [3, 4, 3] + [0] * 6 + [1, 1, 1, 0, 2, 2, 2] + [0] * 8, 10)
+    # ---------------------------------------------------------------- meteorieten (animatie in de leegte)
+    met_paths = []
+    for (sx, sy, n) in ((14, 3, 3), (27, 2, 3), (40, 17, 3), (3, 18, 3)):
+        cells = [(sx - k, sy + k) for k in range(n)]
+        if all(0 <= c[0] < W and 0 <= c[1] < H and not ground[c[1], c[0]] and c not in eye_cells for c in cells):
+            met_paths.append(cells)
+    for pi_, cells in enumerate(met_paths):
+        mbase = {c: np.concatenate([w.cellpix(*c).copy(), np.full((16, 16, 1), 255.0)], 2) for c in cells}
+        n = len(cells)
+
+        def met_fn(f, x, y, cells=cells, mbase=mbase, n=n):
+            img = mbase[(x, y)].copy()
+            k = cells.index((x, y))
+            # frame f: kop van de meteoor in vak f-1 (f=0: geen meteoor)
+            head = f - 1
+            if f == 0:
+                return img
+            for t in range(40):                       # staart: 40 px schuin naar rechtsboven
+                gx = (head * 16 + 4 - k * 16) + t * 0.7
+                gy = 12 - t * 0.7 + (head - k) * 16
+                ix, iy = int(gx), int(gy)
+                if 0 <= ix < 16 and 0 <= iy < 16:
+                    c = A.ramp(np.array([1 - t / 40.0]), [C(60, 20, 30), C(220, 80, 40), C(255, 200, 120), C(255, 255, 230)])[0]
+                    img[iy, ix, :3] = c
+                    if t < 4 and iy + 1 < 16:
+                        img[iy + 1, ix, :3] = C(255, 240, 200)
+            return img
+        seq = [0] * (14 + pi_ * 5) + list(range(1, n + 2)) + [0] * (6 + pi_ * 3)
+        w.anim('meteor%d' % pi_, met_fn, cells, [min(v, n) for v in seq], 3)
+        for c in cells:
+            w.put(met_fn(0, *c), *c)
+    # ---------------------------------------------------------------- gifpoelen (borrelen) en gasgeisers
+    def pool(cx, cy, rx, ry):
+        nzp = A.value_noise(H * 16, W * 16, 7, int(cx + cy))
+        d = np.hypot((w.xx - cx) / rx, (w.yy - cy) / ry) - nzp * 0.3
+        inner = (d < 1) & ~voidm
+        w.bot[inner] = PP['ooze'][1]
+        hl = inner & (((w.xx + w.yy * 3) % 11) == 0)
+        w.bot[hl] = PP['ooze'][2]
+        w.bot[inner & (d > 0.82)] = PP['ooze'][0]
+        rim = (d >= 1) & (d < 1.14) & ~voidm
+        w.bot[rim] = C(30, 40, 26)
+        cells = []
+        for y in range(int((cy - ry) // 16) - 1, int((cy + ry) // 16) + 2):
+            for x in range(int((cx - rx) // 16) - 1, int((cx + rx) // 16) + 2):
+                if 0 <= y < H and 0 <= x < W and inner[y * 16 + 8, x * 16 + 8]:
+                    w.coll[y, x] = True
+                    w.beh[y, x] = 0
+                    cells.append((x, y))
+        return cells
+    pool_cells = pool(17.5 * 16, 24.0 * 16, 30, 18) + pool(23.0 * 16, 20.6 * 16, 18, 12) + pool(8.0 * 16, 30.0 * 16, 18, 10) + pool(36.5 * 16, 26.5 * 16, 14, 10)
+    bub_cells = pool_cells[:2] + pool_cells[-2:]
+    bbase = {c: np.concatenate([w.cellpix(*c).copy(), np.full((16, 16, 1), 255.0)], 2) for c in bub_cells}
+
+    def bub_fn(f, x, y):
+        img = bbase[(x, y)].copy()
+        bx, by = 4 + (x * 5 + y * 3) % 8, 5 + (x + y * 7) % 6
+        r = [0, 1, 2, 3, 0][f]
+        if r:
+            for yy in range(-r, r + 1):
+                for xx in range(-r, r + 1):
+                    if abs(math.hypot(xx, yy) - r) < 0.7 and 0 <= by + yy < 16 and 0 <= bx + xx < 16:
+                        img[by + yy, bx + xx, :3] = PP['ooze'][3]
+        if f == 4:
+            for (dx, dy) in ((-3, 0), (3, 0), (0, -3), (-2, -2), (2, -2)):
+                if 0 <= by + dy < 16 and 0 <= bx + dx < 16:
+                    img[by + dy, bx + dx, :3] = PP['ooze'][2]
+        return img
+    w.anim('bubbles', bub_fn, bub_cells, [0, 1, 2, 3, 4, 0, 0, 0], 8)
+    for c in bub_cells:
+        w.put(bub_fn(0, *c), *c)
+    # geisers: kegel met een gat, af en toe een groene gaspluim (pluim = bovenlaag, vak erboven)
+    gey = [(15, 20), (21, 25), (18, 18)]
+    gey = [g for g in gey if ground[g[1], g[0]] and ground[g[1] - 1, g[0]] and not w.coll[g[1], g[0]]]
+    for (x, y) in gey:
+        img = w.cellpix(x, y)
+        for yy in range(16):
+            for xx in range(16):
+                d = math.hypot((xx - 7.5) / 7.5, (yy - 10) / 5.5)
+                if d < 1:
+                    img[yy, xx] = PP['rock'][3] if yy < 10 else PP['rock'][1]
+                    if d < 0.38:
+                        img[yy, xx] = PP['ooze'][0]
+        w.coll[y, x] = True
+        w.beh[y, x] = 0
+
+    def plume_fn(f, x, y):
+        img = np.zeros((16, 16, 4))
+        h_ = [0, 5, 10, 16, 16, 12, 6][f]
+        rs = random.Random(f * 7 + x)
+        for t in range(h_):
+            yy = 15 - t
+            wd = 1 + t // 4 + (1 if f >= 4 else 0)
+            for xx in range(8 - wd, 8 + wd):
+                if rs.random() < 0.85:
+                    img[yy, xx] = list(PP['ooze'][2] if (xx + yy + f) % 3 else PP['ooze'][3]) + [255]
+        return img
+    plume_cells = [(x, y - 1) for (x, y) in gey]
+    if plume_cells:
+        for i, c in enumerate(plume_cells):
+            pass
+        w.anim('geyser', plume_fn, plume_cells, [0] * 16 + [1, 2, 3, 4, 4, 5, 6] + [0] * 6, 6, layer='top')
+        for c in plume_cells:
+            w.layer[c[1], c[0]] = A.SPLIT
+            w.top[c[1] * 16:c[1] * 16 + 16, c[0] * 16:c[0] * 16 + 16] = plume_fn(0, *c)
+    # ---------------------------------------------------------------- plasmakraters (uitbarstingen)
+    pls = [(33, 24), (36, 22), (35, 27)]
+    pls = [p_ for p_ in pls if ground[p_[1], p_[0]]]
+    pbase = {}
+    for (x, y) in pls:
+        img = w.cellpix(x, y)
+        for yy in range(16):
+            for xx in range(16):
+                d = math.hypot((xx - 7.5) / 7.5, (yy - 8) / 6.5)
+                if d < 1:
+                    img[yy, xx] = PP['cliff'][1] if d > 0.7 else PP['plasma'][1]
+                if 1 <= d < 1.25 and yy > 8:
+                    img[yy, xx] = PP['rock'][4]
+        w.coll[y, x] = True
+        w.beh[y, x] = 0
+        pbase[(x, y)] = np.concatenate([img.copy(), np.full((16, 16, 1), 255.0)], 2)
+        # gloeiende scheuren eromheen
+        rs = random.Random(x * 9 + y)
+        for k in range(3):
+            pts = w.crack(rs, x * 16 + 8, y * 16 + 8, rs.uniform(0, 6.28), rs.uniform(18, 34), seg=(3, 5), branch=0.2)
+            w.paint_crack(pts, core=PP['plasma'][1], rim=lambda c: mix(c, C(0, 0, 0), 0.4), hot=PP['plasma'][2], hot_at=0.6,
+                          mask=~voidm)
+
+    def plasma_fn(f, x, y):
+        img = pbase[(x, y)].copy()
+        glow = [1, 2, 2, 3, 2, 1][f]
+        for yy in range(16):
+            for xx in range(16):
+                d = math.hypot((xx - 7.5) / 7.5, (yy - 8) / 6.5)
+                if d < 0.7:
+                    img[yy, xx, :3] = PP['plasma'][glow if d < 0.4 else max(0, glow - 1)]
+        if f in (3, 4):                                    # spatten
+            for (dx, dy) in ((-3, -6), (2, -7), (5, -5), (-6, -4)):
+                img[8 + dy, 8 + dx, :3] = PP['plasma'][3]
+        return img
+    if pls:
+        w.anim('plasma', plasma_fn, pls, [0, 1, 2, 3, 4, 5, 1, 0, 0, 0], 7)
+        for c in pls:
+            w.put(plasma_fn(0, *c), *c)
+    # ---------------------------------------------------------------- ribbenkast van een reuzenbeest
+    rib = np.zeros((48, 80, 4))
+    for k in range(6):
+        bx = 10 + k * 12
+        for t in np.linspace(0, math.pi, 60):
+            px = bx + math.cos(t) * 5
+            py = 44 - math.sin(t) * (34 - abs(k - 2.5) * 4)
+            for o in (0, 1):
+                ix, iy = int(px) + o, int(py)
+                if 0 <= iy < 48 and 0 <= ix < 80:
+                    rib[iy, ix] = list(PP['bone'][2] if o == 0 else PP['bone'][1]) + [255]
+    for xx in range(4, 76):                                  # ruggengraat
+        rib[42:46, xx] = list(PP['bone'][1]) + [255]
+        rib[42, xx] = list(PP['bone'][3]) + [255]
+        if xx % 6 == 0:
+            rib[40:47, xx] = list(PP['bone'][0]) + [255]
+    rx0, ry0 = 8, 11
+    for r in range(3):
+        for c in range(5):
+            cell = rib[r * 16:(r + 1) * 16, c * 16:(c + 1) * 16]
+            if not (cell[..., 3] > 0).any():
+                continue
+            if r < 2:
+                w.put(cell, rx0 + c, ry0 + r, 'top')
+            else:
+                w.put(cell, rx0 + c, ry0 + r)
+                if ground[ry0 + r, rx0 + c]:
+                    w.coll[ry0 + r, rx0 + c] = True
+    # ---------------------------------------------------------------- bliksemspitsen (animatie: boog ertussen)
+    spires = [(22, 10), (26, 10)]
+    spires = [s_ for s_ in spires if ground[s_[1], s_[0]]]
+    for (x, y) in spires:
+        img = np.zeros((32, 16, 4))
+        for yy in range(32):
+            half = max(1, int((yy - 2) * 0.22))
+            for xx in range(8 - half, 8 + half + 1):
+                col = PP['metal'][2] if xx < 8 else PP['metal'][1]
+                if yy % 6 == 0:
+                    col = PP['vein'][1]
+                img[yy, xx] = list(col) + [255]
+        img[0:3, 7:9] = list(PP['vein'][2]) + [255]
+        w.put(img[:16], x, y - 1, 'top')
+        w.put(img[16:], x, y)
+        w.coll[y, x] = True
+    if len(spires) == 2:
+        arc_cells = [(x, spires[0][1] - 1) for x in range(spires[0][0], spires[1][0] + 1)]
+        abase = {c: w.cellpix(*c, layer='top').copy() for c in arc_cells}
+
+        def arc_fn(f, x, y):
+            img = abase[(x, y)].copy()
+            if f == 0:
+                return img
+            rs = random.Random(f * 13)
+            x0, x1 = spires[0][0] * 16 + 8, spires[1][0] * 16 + 8
+            yy = 2.0
+            for gx in range(x0, x1 + 1):
+                yy = max(0, min(10, yy + rs.choice((-2, -1, 0, 1, 2))))
+                lx = gx - x * 16
+                if 0 <= lx < 16:
+                    img[int(yy), lx] = list(C(240, 250, 255)) + [255]
+                    if int(yy) + 1 < 16:
+                        img[int(yy) + 1, lx] = list(PP['vein'][1]) + [255]
+            return img
+        w.anim('arc', arc_fn, arc_cells, [0] * 10 + [1, 2, 1, 3, 0, 2, 3] + [0] * 8, 4, layer='top')
+        for c in arc_cells:
+            w.layer[c[1], c[0]] = A.SPLIT
+    # ---------------------------------------------------------------- zwaartekrachtscheur met zwevende brokken
+    gr = (28, 22)
+    if ground[gr[1], gr[0]] and ground[gr[1], gr[0] + 1]:
+        d = np.hypot((w.xx - (gr[0] + 1) * 16), (w.yy - gr[1] * 16 - 8) * 2.2)
+        rift = d < 14
+        w.bot[rift] = C(10, 0, 20)
+        w.bot[(d >= 14) & (d < 16)] = PP['plasma'][1]
+        w.bot[(d >= 16) & (d < 18) & (((w.xx + w.yy) % 2) == 0)] = C(120, 60, 180)
+        w.coll[gr[1], gr[0]] = w.coll[gr[1], gr[0] + 1] = True
+        fl_cells = [(gr[0], gr[1] - 1), (gr[0] + 1, gr[1] - 1)]
+
+        def float_fn(f, x, y):
+            img = np.zeros((16, 16, 4))
+            off = [0, 1, 2, 1][f]
+            k = x - gr[0]
+            for (bx, by, r) in (((6, 9, 3), (12, 5, 2)) if k == 0 else ((4, 7, 2), (10, 10, 3))):
+                for yy in range(-r, r + 1):
+                    for xx in range(-r, r + 1):
+                        if xx * xx + yy * yy <= r * r:
+                            img[by + yy - off, bx + xx] = list(PP['rock'][3] if yy < 0 else PP['rock'][1]) + [255]
+            return img
+        w.anim('float', float_fn, fl_cells, [0, 1, 2, 3], 12, layer='top')
+        for c in fl_cells:
+            w.top[c[1] * 16:c[1] * 16 + 16, c[0] * 16:c[0] * 16 + 16] = float_fn(0, *c)
+            w.layer[c[1], c[0]] = A.SPLIT
+    # ---------------------------------------------------------------- neergestorte schotel van de aliens
+    SX, SY = 33, 5
+    ufo = np.zeros((48, 64, 4))
+    for yy in range(48):
+        for xx in range(64):
+            dx, dy = (xx - 32) / 30.0, (yy - 30) / 10.0
+            if dx * dx + dy * dy < 1:
+                col = PP['metal'][2] if dy < 0 else PP['metal'][1]
+                if abs(dy) < 0.15:
+                    col = PP['metal'][0]
+                ufo[yy, xx] = list(col) + [255]
+            ddx, ddy = (xx - 32) / 13.0, (yy - 22) / 12.0
+            if ddx * ddx + ddy * ddy < 1 and yy < 27:
+                ufo[yy, xx] = list(C(120, 220, 200) if (xx - 26) ** 2 + (yy - 16) ** 2 > 9 else C(220, 255, 250)) + [255]
+    ufo[38:44, 6:58] = 0
+    for xx in range(10, 54):                                   # deels in de grond geboord: schaduw/aarde eronder
+        ufo[38:41, xx] = list(PP['cliff'][1]) + [255]
+    for r in range(3):
+        for c in range(4):
+            cell = ufo[r * 16:(r + 1) * 16, c * 16:(c + 1) * 16]
+            if not (cell[..., 3] > 0).any():
+                continue
+            if r == 0:
+                w.put(cell, SX + c, SY + r, 'top')
+            else:
+                w.put(cell, SX + c, SY + r)
+                w.coll[SY + r, SX + c] = True
+                w.beh[SY + r, SX + c] = 0
+    # lichtjes rond de schotel (animatie)
+    light_cells = [(SX + c, SY + 1) for c in range(4)]
+    lbase = {c: np.concatenate([w.cellpix(*c).copy(), np.full((16, 16, 1), 255.0)], 2) for c in light_cells}
+
+    def ufo_fn(f, x, y):
+        img = lbase[(x, y)].copy()
+        k = x - SX
+        for j, lx in enumerate((4, 12)):
+            on = (k * 2 + j + f) % 4 == 0
+            img[13:15, lx:lx + 2, :3] = C(255, 230, 80) if on else C(90, 70, 40)
+        return img
+    w.anim('ufo', ufo_fn, light_cells, [0, 1, 2, 3], 8)
+    for c in light_cells:
+        w.put(ufo_fn(0, *c), *c)
+    # ---------------------------------------------------------------- inslagkraters (statisch, rokend)
+    for (kx, ky) in ((20, 21), (11, 28), (37, 10), (26, 12)):
+        if not ground[ky, kx] or w.coll[ky, kx]:
+            continue
+        d = np.hypot(w.xx - kx * 16 - 8, (w.yy - ky * 16 - 8) * 1.3)
+        cm = (d < 10) & ~voidm
+        w.bot[cm] = PP['cliff'][0]
+        w.bot[(d >= 10) & (d < 12) & ~voidm] = PP['rock'][4]
+        w.bot[(d < 4) & ~voidm] = PP['plasma'][0]
+    # ---------------------------------------------------------------- gezwellen met ogen (horror) en eierclusters
+    rs = random.Random(66)
+    free = [(x, y) for y in range(4, H - 1) for x in range(1, W - 1) if ground[y, x] and ground[y - 1, x]
+            and not w.coll[y, x] and not w.coll[y - 1, x] and abs(x - arrive[0]) + abs(y - arrive[1]) > 3
+            and not (32 <= x <= 40 and 4 <= y <= 12)]
+    rs.shuffle(free)
+    stalk_cells, placed = [], []
+    rcount = len(reachable(w.coll, arrive, {ret}))
+    for (x, y) in free:
+        if len(stalk_cells) >= 9:
+            break
+        if any(abs(x - px) + abs(y - py) < 4 for px, py in placed):
+            continue
+        w.coll[y, x] = True
+        r_ = reachable(w.coll, arrive, {ret})
+        if len(r_) != rcount - 1 or (36, 9) not in r_:
+            w.coll[y, x] = False
+            continue
+        rcount -= 1
+        placed.append((x, y))
+        img = np.zeros((32, 16, 4))
+        lean = rs.uniform(-2.5, 2.5)
+        for yy in range(8, 31):                                 # steel
+            t = (30 - yy) / 22.0
+            cx = 8 + lean * t * t
+            wd = 2.6 - t * 1.2
+            for xx in range(16):
+                if abs(xx - cx) < wd:
+                    img[yy, xx] = list(C(120, 50, 90) if xx < cx else C(80, 28, 64)) + [255]
+                    if (yy + int(cx)) % 5 == 0:
+                        img[yy, xx] = list(C(150, 80, 110)) + [255]
+        for yy in range(0, 12):                                 # kop
+            for xx in range(16):
+                d = math.hypot(xx - 8 - lean, yy - 6)
+                if d < 5.5:
+                    img[yy, xx] = list(C(140, 60, 100) if d > 4 else C(230, 220, 200)) + [255]
+                    if d < 2.4:
+                        img[yy, xx] = list(C(200, 30, 40) if d > 1.2 else C(10, 0, 10)) + [255]
+        for xx in range(4, 13):                                 # voet
+            img[29:32, xx] = list(C(60, 20, 50)) + [255]
+        w.put(img[:16], x, y - 1, 'top')
+        w.put(img[16:], x, y)
+        stalk_cells.append((x, y - 1))
+    # eitjes (begaanbaar, gloeien zacht)
+    for k in range(14):
+        x, y = rs.randrange(1, W - 1), rs.randrange(3, H - 1)
+        if not ground[y, x] or w.coll[y, x]:
+            continue
+        img = np.zeros((16, 16, 4))
+        for (ox, oy) in ((5, 9), (10, 10), (8, 5), (12, 6))[:rs.randint(2, 4)]:
+            for yy in range(-3, 4):
+                for xx in range(-2, 3):
+                    if (xx / 2.4) ** 2 + (yy / 3.3) ** 2 <= 1 and 0 <= oy + yy < 16 and 0 <= ox + xx < 16:
+                        img[oy + yy, ox + xx] = list(PP['vein'][1] if (xx < 0 and yy < 0) else PP['vein'][0]) + [255]
+            img[oy - 1, ox - 1] = list(PP['vein'][2]) + [255]
+        A.paste(w.bot, img, x * 16, y * 16)
+    # kleine inslagkraters overal
+    for k in range(16):
+        x, y = rs.randrange(1, W - 1), rs.randrange(3, H - 1)
+        if not ground[y, x] or w.coll[y, x]:
+            continue
+        ox, oy = x * 16 + rs.randrange(4, 12), y * 16 + rs.randrange(4, 12)
+        d = np.hypot(w.xx - ox, (w.yy - oy) * 1.3)
+        w.bot[(d < 5) & ~voidm] = PP['cliff'][0]
+        w.bot[(d >= 5) & (d < 6.5) & ~voidm & (w.yy > oy)] = PP['rock'][4]
+        w.bot[(d >= 5) & (d < 6.5) & ~voidm & (w.yy <= oy)] = PP['rock'][1]
+    # gloeiende scheuren door de eilanden (de grond breekt continu open)
+    for (x, y) in ((12, 27), (18, 13), (31, 10), (24, 23), (35, 17)):
+        if ground[y, x]:
+            pts = w.crack(rs, x * 16 + 8, y * 16 + 8, rs.uniform(0, 6.28), rs.uniform(40, 70), seg=(3, 6), branch=0.3)
+            w.paint_crack(pts, core=PP['plasma'][1], rim=lambda c: mix(c, C(0, 0, 0), 0.45), hot=PP['plasma'][2], hot_at=0.7,
+                          mask=~voidm)
+    # ---------------------------------------------------------------- objecten
+    for (x, y) in (arrive, ret):
+        w.coll[y, x] = False
+    ub = (36, 9)                    # Poipole zweeft bij de schotel
+    objs = [obj('LOCALID_ULTRA_POIPOLE_RETURN', WORM, ret[0], ret[1], 'UltraSpace_EventScript_ReturnToHub'),
+            obj('LOCALID_ULTRA_POIPOLE_MON', mon('POIPOLE'), ub[0], ub[1], 'UltraSpace_Poipole_EventScript_Poipole',
+                'FLAG_ULTRA_POIPOLE', 'MOVEMENT_TYPE_JOG_IN_PLACE_DOWN')]
+    r = reachable(w.coll, arrive, {ret})
+    assert ub in r, ('Poipole-plek niet bereikbaar', ub)
+    alien_pos = []
+    for (tx, ty) in ((35, 10), (37, 10), (39, 9)):
+        taken = {(o['x'], o['y']) for o in objs} | set(alien_pos)
+        c = min((c for c in r if c not in taken), key=lambda c: abs(c[0] - tx) + abs(c[1] - ty))
+        alien_pos.append(c)
+    for j, ((x, y), sp) in enumerate(zip(alien_pos, ('BEHEEYEM', 'ELGYEM', 'ELGYEM'))):
+        objs.append(obj(None, mon(sp), x, y, 'UltraSpace_Poipole_EventScript_Alien%d' % j, '0', 'MOVEMENT_TYPE_FACE_DOWN'))
+    taken = {(o['x'], o['y']) for o in objs} | {arrive}
+    far = max((c for c in r if c not in taken and abs(c[0] - 24) < 6 and c[1] < 14), key=lambda c: -c[1] + c[0] * 0.1)
+    for fl_, it, q, h in ni.items('UltraSpace_Poipole'):
+        objs.append(obj(None, 'OBJ_EVENT_GFX_ITEM_BALL', far[0], far[1], 'Common_EventScript_FindItem', fl_,
+                        'MOVEMENT_TYPE_LOOK_AROUND', it, rx=q))
+    # Pokémon die hier gewoon wonen (Clefairy van de maan, een Minior)
+    for sp, lbl, (tx, ty), mv in (('CLEFAIRY', 'Clefairy', (11, 16), 'MOVEMENT_TYPE_WANDER_AROUND'),
+                                  ('MALAMAR', 'Malamar', (20, 25), 'MOVEMENT_TYPE_FACE_LEFT')):
+        taken = {(o['x'], o['y']) for o in objs} | {arrive}
+        c = min((c for c in r if c not in taken), key=lambda c: abs(c[0] - tx) + abs(c[1] - ty))
+        objs.append(obj(None, mon(sp), c[0], c[1], 'UltraSpace_Poipole_EventScript_' + lbl, '0', mv,
+                        rx=1 if 'WANDER' in mv else 0, ry=1 if 'WANDER' in mv else 0))
+    for y in range(H):
+        for x in range(W):
+            if abs(x - arrive[0]) <= 2 and abs(y - arrive[1]) <= 2 or (abs(x - 36) <= 4 and 8 <= y <= 12):
+                w.beh[y, x] = 0
+    name = 'UltraSpace_Poipole'
+    extra = ['%s_EventScript_Poipole::' % name, '\tlock', '\tfaceplayer', '\tplaymoncry SPECIES_POIPOLE, CRY_MODE_NORMAL',
+             '\tmsgbox %s_Text_PoipoleMon, MSGBOX_DEFAULT' % name, '\twaitmoncry', '\trelease', '\tend', '',
+             '%s_EventScript_Alien0::' % name, '\tlock', '\tfaceplayer',
+             '\tgoto_if_set FLAG_ULTRA_POIPOLE, %s_EventScript_AlienAfter' % name,
+             '\tmsgbox %s_Text_AlienGift, MSGBOX_DEFAULT' % name,
+             '\tsetvar VAR_0x8004, SPECIES_POIPOLE', '\tsetvar VAR_0x8005, 85', '\tsetvar VAR_0x8006, ITEM_NONE',
+             '\tcall Grounded_EventScript_GiveGiftMon',
+             '\tgoto_if_eq VAR_RESULT, FALSE, %s_EventScript_AlienNoRoom' % name,
+             '\tsetflag FLAG_ULTRA_POIPOLE', '\tremoveobject LOCALID_ULTRA_POIPOLE_MON',
+             '\tmsgbox %s_Text_AlienBye, MSGBOX_DEFAULT' % name, '\trelease', '\tend', '',
+             '%s_EventScript_AlienNoRoom::' % name, '\tmsgbox %s_Text_AlienNoRoom, MSGBOX_DEFAULT' % name,
+             '\trelease', '\tend', '',
+             '%s_EventScript_AlienAfter::' % name, '\tmsgbox %s_Text_AlienAfter, MSGBOX_DEFAULT' % name,
+             '\trelease', '\tend', '',
+             '%s_EventScript_Alien1::' % name, '\tmsgbox %s_Text_Alien1, MSGBOX_NPC' % name, '\tend', '',
+             '%s_EventScript_Alien2::' % name, '\tmsgbox %s_Text_Alien2, MSGBOX_NPC' % name, '\tend', '']
+    texts = [('PoipoleMon', 'POIPOLE: Beepu?\\pIt is wearing a tiny backpack. Someone\nloves this thing very much.'),
+             ('AlienGift', 'GREETINGS, FLESH-NOODLE.\\pWE HAVE OBSERVED YOUR PLANET FOR\nSEVENTEEN (17) TELEVISION SEASONS.\\p'
+                           'WE ARE DISAPPOINTED BY THE FINALE.\\pTAKE THIS SMALL PURPLE ONE. IT EATS\nNOTHING AND SAYS “BEEPU”.\\p'
+                           'WE CANNOT TAKE IT HOME. IT IS\nALLERGIC TO HOME.'),
+             ('AlienBye', 'GOODBYE, FLESH-NOODLE. PLEASE RATE\nYOUR ABDUCTION FIVE STARS.'),
+             ('AlienNoRoom', 'YOUR POCKET-DIMENSIONS ARE FULL.\nWE WILL WAIT. WE ARE GOOD AT WAITING.\\p'
+                             'WE HAVE BEEN WAITING SINCE THE\nDINOSAURS. THEY ALSO HAD NO ROOM.'),
+             ('AlienAfter', 'DOES THE PURPLE ONE STILL SAY “BEEPU”?\nGOOD. THAT MEANS IT IS WORKING.'),
+             ('Alien1', 'BLEEP. WE COME IN PEACE.\nWE LEAVE IN PIECES. LONG STORY.\\pTHE SAUCER IS FINE. THE GROUND IS\nWHAT CRASHED INTO US.'),
+             ('Alien2', 'DO NOT LOOK AT THE EYE IN THE SKY.\\pIT IS NOT A PLANET. WE ASKED.\nIT SAID “NO”.'),
+             ('Clefairy', 'CLEFAIRY is dancing under the meteor\nshower. It does not seem worried.\\pIt has seen worse. It will not say what.'),
+             ('Malamar', 'MALAMAR is staring at you. Its eyes say\n“turn back”. Its tentacles say “stay”.')]
+    return dict(world=w, objects=objs, bgs=[], arrive=arrive, ret=ret, ub=ub, species='POIPOLE', level=85,
+                ub_script=False, extra_scripts=extra,
+                music='MUS_RG_SEVII_DUNGEON', weather='WEATHER_NONE', texts=texts,
+                npc_scripts=[('Clefairy', 'MSGBOX_NPC'), ('Malamar', 'MSGBOX_NPC')],
+                border_cell=(0, 31),
+                encounters=[('BEHEEYEM', 86, 88), ('MALAMAR', 86, 88), ('CLEFABLE', 86, 88), ('MINIOR', 84, 86),
+                            ('REUNICLUS', 87, 89), ('DUSKNOIR', 87, 89), ('METAGROSS', 88, 90), ('ORBEETLE', 86, 88),
+                            ('GENGAR', 87, 89), ('GOLURK', 86, 88), ('SOLOSIS', 60, 62), ('PORYGON_Z', 89, 90)],
+                rate=8)
+
+
 # ====================================================================== bouwen
 def build(key):
     spec = WORLDS[key]()

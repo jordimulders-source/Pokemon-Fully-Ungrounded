@@ -6135,10 +6135,10 @@
     {
       "id": "LAYOUT_ULTRA_SPACE_POIPOLE",
       "name": "UltraSpace_Poipole_Layout",
-      "width": 32,
-      "height": 15,
-      "primary_tileset": "gTileset_UltraPoipoleBase",
-      "secondary_tileset": "gTileset_UltraPoipole",
+      "width": 42,
+      "height": 34,
+      "primary_tileset": "gTileset_UltraBPoipoleBase",
+      "secondary_tileset": "gTileset_UltraBPoipole",
       "border_filepath": "data/layouts/UltraSpace_Poipole/border.bin",
       "blockdata_filepath": "data/layouts/UltraSpace_Poipole/map.bin"
     },

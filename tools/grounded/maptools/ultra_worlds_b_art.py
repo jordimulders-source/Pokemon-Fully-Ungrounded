@@ -396,6 +396,25 @@ def emit_pair(world, out_prim, out_sec, num_pals=13, tile_limit=1023, mt_limit=1
     top = world.top.copy()
     top[..., :3] = to5(top[..., :3])
     top[..., 3] = np.where(top[..., 3] > 127, 255, 0)
+    # ---- animaties: vakken die in alle frames gelijk zijn, hoeven niet te bewegen (gewone tiles)
+    for a in list(world.anims):
+        keep = []
+        for i, (cx, cy) in enumerate(a.cells):
+            fr = [np.array(a.fn(f, cx, cy), float) for f in range(a.nframes)]
+            if all(np.array_equal(np.round(fr[0]), np.round(g)) for g in fr[1:]):
+                continue
+            keep.append(i)
+        if len(keep) < len(a.cells):
+            remap_i = {old: new for new, old in enumerate(keep)}
+            for c, (aa, i) in list(world.anim_cell.items()):
+                if aa is a:
+                    if i in remap_i:
+                        world.anim_cell[c] = (a, remap_i[i])
+                    else:
+                        del world.anim_cell[c]
+            a.cells = [a.cells[i] for i in keep]
+        if not a.cells:
+            world.anims.remove(a)
     # ---- animaties: vaste tileplekken (frame 0 bepaalt de metatile, de frames gaan naar anim/)
     anim_tiles = []    # lijst van (anim, celindex, kwadrant) in volgorde van de plekken
     for a in world.anims:
@@ -411,11 +430,13 @@ def emit_pair(world, out_prim, out_sec, num_pals=13, tile_limit=1023, mt_limit=1
             b = bot[y * 16:y * 16 + 16, x * 16:x * 16 + 16]
             t = top[y * 16:y * 16 + 16, x * 16:x * 16 + 16]
             lay = world.layer[y, x]
-            if not (t[..., 3] > 0).any():
+            ac = world.anim_cell.get((x, y))
+            if ac and ac[0].layer == 'top':
+                lay = SPLIT if lay == COVERED else lay          # geanimeerde bovenlaag bestaat altijd
+            elif not (t[..., 3] > 0).any():
                 t = None
                 lay = COVERED
             attr = (int(world.beh[y, x]) & 0xff) | (lay << 12)
-            ac = world.anim_cell.get((x, y))
             akey = (ac[0].name, ac[1]) if ac else None
             k = (b.astype(np.uint8).tobytes(), None if t is None else t.astype(np.uint8).tobytes(), attr, akey)
             if k not in cells:

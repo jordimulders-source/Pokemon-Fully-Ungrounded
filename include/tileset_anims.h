@@ -39,6 +39,7 @@ void InitTilesetAnim_UltraBStakataka(void);
 void InitTilesetAnim_UltraBNecrozma(void);
 void InitTilesetAnim_UltraBGuzzlord(void);
 void InitTilesetAnim_UltraBBlacephalon(void);
+void InitTilesetAnim_UltraBPoipole(void);
 // } ultra_worlds_b
 
 #endif // GUARD_TILESET_ANIMS_H

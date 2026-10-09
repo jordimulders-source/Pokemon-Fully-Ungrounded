@@ -1944,4 +1944,26 @@ const struct Tileset gTileset_UltraBBlacephalon =
     .callback = InitTilesetAnim_UltraBBlacephalon,
 };
 
+const struct Tileset gTileset_UltraBPoipoleBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBPoipoleBase,
+    .palettes = gTilesetPalettes_UltraBPoipoleBase,
+    .metatiles = gMetatiles_UltraBPoipoleBase,
+    .metatileAttributes = gMetatileAttributes_UltraBPoipoleBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBPoipole =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBPoipole,
+    .palettes = gTilesetPalettes_UltraBPoipole,
+    .metatiles = gMetatiles_UltraBPoipole,
+    .metatileAttributes = gMetatileAttributes_UltraBPoipole,
+    .callback = InitTilesetAnim_UltraBPoipole,
+};
+
 // } ultra_worlds_b

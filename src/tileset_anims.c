@@ -1533,4 +1533,169 @@ void InitTilesetAnim_UltraBBlacephalon(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_UltraBBlacephalon;
 }
 
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Eye[] = {
+    sTilesetAnims_UltraBPoipole_Eye_Frame0,
+    sTilesetAnims_UltraBPoipole_Eye_Frame1,
+    sTilesetAnims_UltraBPoipole_Eye_Frame2,
+    sTilesetAnims_UltraBPoipole_Eye_Frame3,
+    sTilesetAnims_UltraBPoipole_Eye_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Eye[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor0[] = {
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor0[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor1[] = {
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor2[] = {
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor2[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor3[] = {
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor3[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Bubbles[] = {
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame0,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame1,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame2,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame3,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Bubbles[] = {0, 1, 2, 3, 4, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/4.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/5.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/6.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Geyser[] = {
+    sTilesetAnims_UltraBPoipole_Geyser_Frame0,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame1,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame2,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame3,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame4,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame5,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame6,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Geyser[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 4, 5, 6, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/4.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/5.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Plasma[] = {
+    sTilesetAnims_UltraBPoipole_Plasma_Frame0,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame1,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame2,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame3,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame4,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame5,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Plasma[] = {0, 1, 2, 3, 4, 5, 1, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Arc[] = {
+    sTilesetAnims_UltraBPoipole_Arc_Frame0,
+    sTilesetAnims_UltraBPoipole_Arc_Frame1,
+    sTilesetAnims_UltraBPoipole_Arc_Frame2,
+    sTilesetAnims_UltraBPoipole_Arc_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Arc[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 3, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Ufo[] = {
+    sTilesetAnims_UltraBPoipole_Ufo_Frame0,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame1,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame2,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Ufo[] = {0, 1, 2, 3};
+static void TilesetAnim_UltraBPoipole(u16 timer)
+{
+    if (timer % 10 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Eye[sTilesetAnimSeq_UltraBPoipole_Eye[(timer / 10) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Eye)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 84 * TILE_SIZE_4BPP);
+    if (timer % 3 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor0[sTilesetAnimSeq_UltraBPoipole_Meteor0[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 84)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor1[sTilesetAnimSeq_UltraBPoipole_Meteor1[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 96)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor2[sTilesetAnimSeq_UltraBPoipole_Meteor2[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 108)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor3[sTilesetAnimSeq_UltraBPoipole_Meteor3[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor3)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 120)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 5)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Bubbles[sTilesetAnimSeq_UltraBPoipole_Bubbles[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Bubbles)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 132)), 16 * TILE_SIZE_4BPP);
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Geyser[sTilesetAnimSeq_UltraBPoipole_Geyser[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Geyser)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 148)), 8 * TILE_SIZE_4BPP);
+    if (timer % 7 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Plasma[sTilesetAnimSeq_UltraBPoipole_Plasma[(timer / 7) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Plasma)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 156)), 12 * TILE_SIZE_4BPP);
+    if (timer % 4 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Arc[sTilesetAnimSeq_UltraBPoipole_Arc[(timer / 4) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Arc)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 168)), 20 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Ufo[sTilesetAnimSeq_UltraBPoipole_Ufo[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Ufo)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 188)), 16 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBPoipole(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBPoipole;
+}
+
 // } ultra_worlds_b

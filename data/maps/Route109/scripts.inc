@@ -275,6 +275,8 @@ Route109_Movement_BrineyExitBoat:
 Route109_EventScript_MrBriney::
 	lock
 	faceplayer
+	setvar VAR_0x8004, 2 @ Project Grounded: Keldeo-eiland (UnchartedIsle/scripts.inc)
+	call EventScript_BrineyKeldeoTrip
 	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route109_EventScript_HaveNotDeliveredDevonGood
 	goto Route109_EventScript_DeliveredDevonGoods
 	end

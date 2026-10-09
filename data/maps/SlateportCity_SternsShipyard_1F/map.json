@@ -66,6 +66,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_SternsShipyard_1F_EventScript_Briney",
       "flag": "FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY"
+    },
+    {
+      "local_id": "LOCALID_SHIPYARD_RIVET",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 17,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SlateportCity_SternsShipyard_1F_EventScript_Rivet",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SHIPYARD_MELTAN",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MELTAN)",
+      "x": 16,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SlateportCity_SternsShipyard_1F_EventScript_Meltan",
+      "flag": "FLAG_RECEIVED_MELTAN"
     }
   ],
   "warp_events": [

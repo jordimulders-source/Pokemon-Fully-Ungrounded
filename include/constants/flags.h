@@ -1668,6 +1668,18 @@
 #define FLAG_SEA_SHARD_REWARD_8                          FLAG_GROUNDED(683) // Project Grounded: Sea Shards: beloning 8 (Master Ball)
 #define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
 // }
+// swords_keldeo { (tools/grounded/maptools/swords_keldeo.py; FLAG_GROUNDED 800-839, 810-839 nog vrij)
+#define FLAG_DEFEATED_COBALION                           FLAG_GROUNDED(800) // Project Grounded: Cobalion gevangen/verslagen (Granite Cave)
+#define FLAG_DEFEATED_TERRAKION                          FLAG_GROUNDED(801) // Project Grounded: Terrakion gevangen/verslagen (Victory Road)
+#define FLAG_DEFEATED_VIRIZION                           FLAG_GROUNDED(802) // Project Grounded: Virizion gevangen/verslagen (Mangrove Mire)
+#define FLAG_BRINEY_KELDEO_CALL                          FLAG_GROUNDED(803) // Project Grounded: Mr. Briney heeft gebeld over het eiland (na de drie zwaarden)
+#define FLAG_DEFEATED_KELDEO                             FLAG_GROUNDED(804) // Project Grounded: Keldeo gevangen/verslagen (UnchartedIsle)
+#define FLAG_GRANITE_SWORD_CHAMBER_ROCK                  FLAG_GROUNDED(805) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Granite Cave B2F
+#define FLAG_VICTORY_ROAD_SWORD_CHAMBER_ROCK             FLAG_GROUNDED(806) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Victory Road B2F
+#define FLAG_KELDEO_TRIP_FROM_DEWFORD                    FLAG_GROUNDED(807) // Project Grounded: Keldeo-bootreis vertrokken uit Dewford (terugweg)
+#define FLAG_KELDEO_TRIP_FROM_ROUTE109                   FLAG_GROUNDED(808) // Project Grounded: Keldeo-bootreis vertrokken van Route 109 (terugweg)
+#define FLAG_RECEIVED_MELTAN                             FLAG_GROUNDED(809) // Project Grounded: Meltan gekregen (Sterns scheepswerf, Slateport)
+// }
 // mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
 #define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)
 #define FLAG_RECEIVED_RUSTED_SWORD                       FLAG_GROUNDED(621) // Project Grounded: Mini Forest: roestig zwaard opgepakt (na de HoF; verbergt het zwaard)

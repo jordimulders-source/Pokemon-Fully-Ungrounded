@@ -2103,6 +2103,12 @@
 #define FLAG_RECEIVED_ALOLA_MEOWTH              FLAG_GROUNDED(363)
 #define FLAG_RECEIVED_GALAR_FARFETCHD           FLAG_GROUNDED(364)
 
+// enamorus { (src/enamorus.c, tools/grounded/maptools/enamorus_towns.py; FLAG_GROUNDED 1360-1399: 1360-1362 in gebruik, 1363-1399 nog vrij)
+#define FLAG_ENAMORUS_DONE                      FLAG_GROUNDED(1360) // Project Grounded: Enamorus gevangen (liefdesdagen blijven, zonder Enamorus)
+#define FLAG_ENAMORUS_HIDE                      FLAG_GROUNDED(1361) // Project Grounded: verbergt Enamorus (gezet/gewist door src/enamorus.c)
+#define FLAG_LOVEDAY_HIDE                       FLAG_GROUNDED(1362) // Project Grounded: verbergt koppels, Birch en zijn drol (liefdesdag)
+// }
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

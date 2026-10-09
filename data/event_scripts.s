@@ -778,6 +778,7 @@ gStdScripts_End::
 	.include "data/scripts/burglar.inc"
 	.include "data/scripts/grounded_gifts.inc"
 	.include "data/scripts/forces.inc"
+	.include "data/scripts/enamorus.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

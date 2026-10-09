@@ -98,6 +98,9 @@ HINTS = [
      "A thunderstorm on ROUTE 119, 120 or 123, and something in it laughing."),
     ('LANDORUS', 'FLAG_FORCES_LANDORUS_DONE',
      "A sandstorm on ROUTE 112, 114 or 117, with a cloud that has a face."),
+    ('ENAMORUS', 'FLAG_ENAMORUS_DONE',
+     "Once the wind, the storm and the sand are tamed, love strikes OLDALE, DEWFORD, FALLARBOR or LAVARIDGE. "
+     "Look for hearts. And for BIRCH, sadly."),
     ('COBALION', 'FLAG_DEFEATED_COBALION',
      "Deep in GRANITE CAVE there's a sword chamber. A knight of steel wants a duel. Not a fight. A duel. "
      "Apparently there's a difference."),

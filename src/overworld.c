@@ -1,6 +1,7 @@
 #include "global.h"
 #include "burglar.h"
 #include "forces.h"
+#include "enamorus.h"
 #include "field_move.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
@@ -896,6 +897,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
     Forces_OnMapEnter(); // Project Grounded
+    Enamorus_OnMapEnter(); // Project Grounded
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
@@ -908,6 +910,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
+    Enamorus_StartHearts(); // Project Grounded: hartjes op een liefdesdag
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
@@ -967,6 +970,7 @@ static void LoadMapFromWarp(bool32 a1)
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
     Forces_OnMapEnter(); // Project Grounded
+    Enamorus_OnMapEnter(); // Project Grounded
     UpdateLocationHistoryForRoamer();
     MoveAllRoamersToOtherLocationSets();
     gChainFishingDexNavStreak = 0;
@@ -2460,6 +2464,7 @@ static void ResumeMap(bool32 a1)
     if (!a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
+    Enamorus_StartHearts(); // Project Grounded: hartjes op een liefdesdag
     TryStartMirageTowerPulseBlendEffect();
 }
 

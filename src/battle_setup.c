@@ -652,6 +652,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (placeholder: Kanto-legendary-thema, rimpelingen)
+    case SPECIES_MESPRIT:
+    case SPECIES_AZELF:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);

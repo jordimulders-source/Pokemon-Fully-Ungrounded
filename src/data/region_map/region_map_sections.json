@@ -1462,6 +1462,18 @@
     {
       "id": "MAPSEC_YOSHIS_ISLAND",
       "name": "YOSHI'S ISLAND"
+    },
+    {
+      "id": "MAPSEC_LAKE_ACUITY",
+      "name": "LAKE ACUITY"
+    },
+    {
+      "id": "MAPSEC_LAKE_VALOR",
+      "name": "LAKE VALOR"
+    },
+    {
+      "id": "MAPSEC_LAKE_VERITY",
+      "name": "LAKE VERITY"
     }
   ]
 }

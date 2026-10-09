@@ -1649,6 +1649,14 @@
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
 // regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.
+// lakes { (tools/grounded/maptools/lakes.py; FLAG_GROUNDED 1120-1159: 1120-1125 meren, 1140-1148 nieuwe items (nieuwe_items.py), 1126-1139 en 1149-1159 nog vrij)
+#define FLAG_HIDE_LAKE_ACUITY_UXIE                       FLAG_GROUNDED(1120) // Project Grounded: Lake Acuity: Uxie gevangen of verslagen (verbergt het object)
+#define FLAG_HIDE_LAKE_VALOR_AZELF                       FLAG_GROUNDED(1121) // Project Grounded: Lake Valor: Azelf gevangen of verslagen (verbergt het object)
+#define FLAG_HIDE_LAKE_VERITY_MESPRIT                    FLAG_GROUNDED(1122) // Project Grounded: Lake Verity: Mesprit gevangen of verslagen (verbergt het object)
+#define FLAG_LAKE_ACUITY_DONE                            FLAG_GROUNDED(1123) // Project Grounded: Lake Acuity: meerwezen afgehandeld (voor de meren-quest in de hub)
+#define FLAG_LAKE_VALOR_DONE                             FLAG_GROUNDED(1124) // Project Grounded: Lake Valor: meerwezen afgehandeld (voor de meren-quest in de hub)
+#define FLAG_LAKE_VERITY_DONE                            FLAG_GROUNDED(1125) // Project Grounded: Lake Verity: meerwezen afgehandeld (voor de meren-quest in de hub)
+// }
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119, 1050-1119 nog vrij)
 #define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
 #define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
@@ -1783,6 +1791,15 @@
 #define FLAG_ITEM_AREA_ZERO_PAST_POWER_HERB              FLAG_GROUNDED(959) // Project Grounded: Area Zero, verleden: Power Herb
 #define FLAG_ITEM_AREA_ZERO_PAST_GRIP_CLAW               FLAG_GROUNDED(960) // Project Grounded: Area Zero, verleden: Grip Claw
 #define FLAG_HIDDEN_ITEM_AREA_ZERO_PAST_STICKY_BARB      FLAG_GROUNDED(961) // Project Grounded: Area Zero, verleden: verborgen Sticky Barb
+#define FLAG_ITEM_LAKE_ACUITY_PEAT_BLOCK                 FLAG_GROUNDED(1140) // Project Grounded: Lake Acuity: Peat Block (Ursaring -> Ursaluna)
+#define FLAG_HIDDEN_ITEM_LAKE_ACUITY_FULL_INCENSE        FLAG_GROUNDED(1141) // Project Grounded: Lake Acuity: verborgen Full Incense
+#define FLAG_ITEM_LAKE_ACUITY_CAVERN_METAL_POWDER        FLAG_GROUNDED(1142) // Project Grounded: Lake Acuity, grot: Metal Powder
+#define FLAG_ITEM_LAKE_VALOR_AUSPICIOUS_ARMOR            FLAG_GROUNDED(1143) // Project Grounded: Lake Valor: Auspicious Armor (Charcadet -> Armarouge)
+#define FLAG_HIDDEN_ITEM_LAKE_VALOR_ROCK_INCENSE         FLAG_GROUNDED(1144) // Project Grounded: Lake Valor: verborgen Rock Incense
+#define FLAG_ITEM_LAKE_VALOR_CAVERN_LEADERS_CREST        FLAG_GROUNDED(1145) // Project Grounded: Lake Valor, grot: Leader's Crest (Bisharp -> Kingambit)
+#define FLAG_ITEM_LAKE_VERITY_ODD_INCENSE                FLAG_GROUNDED(1146) // Project Grounded: Lake Verity: Odd Incense
+#define FLAG_HIDDEN_ITEM_LAKE_VERITY_LINKING_CORD        FLAG_GROUNDED(1147) // Project Grounded: Lake Verity: verborgen Linking Cord
+#define FLAG_ITEM_LAKE_VERITY_CAVERN_QUICK_POWDER        FLAG_GROUNDED(1148) // Project Grounded: Lake Verity, grot: Quick Powder
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

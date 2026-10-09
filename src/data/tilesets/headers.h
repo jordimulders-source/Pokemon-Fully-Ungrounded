@@ -1080,3 +1080,47 @@ const struct Tileset gTileset_ShipwreckShoals = // Project Grounded: scheepswrak
     .metatileAttributes = gMetatileAttributes_ShipwreckShoals,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RuinFire = // Project Grounded: Beasts of Ruin (fire)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RuinFire,
+    .palettes = gTilesetPalettes_RuinFire,
+    .metatiles = gMetatiles_RuinFire,
+    .metatileAttributes = gMetatileAttributes_RuinFire,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RuinEarth = // Project Grounded: Beasts of Ruin (earth)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RuinEarth,
+    .palettes = gTilesetPalettes_RuinEarth,
+    .metatiles = gMetatiles_RuinEarth,
+    .metatileAttributes = gMetatileAttributes_RuinEarth,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RuinMoss = // Project Grounded: Beasts of Ruin (moss)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RuinMoss,
+    .palettes = gTilesetPalettes_RuinMoss,
+    .metatiles = gMetatiles_RuinMoss,
+    .metatileAttributes = gMetatileAttributes_RuinMoss,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RuinIce = // Project Grounded: Beasts of Ruin (ice)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RuinIce,
+    .palettes = gTilesetPalettes_RuinIce,
+    .metatiles = gMetatiles_RuinIce,
+    .metatileAttributes = gMetatileAttributes_RuinIce,
+    .callback = NULL,
+};

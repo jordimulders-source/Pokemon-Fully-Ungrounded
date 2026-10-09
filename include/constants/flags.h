@@ -1648,7 +1648,17 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560+ vrij.
+// ruin_beasts { (tools/grounded/maptools/ruin_beasts.py; FLAG_GROUNDED 530-559)
+#define FLAG_RUIN_SEAL_CHI_YU                            FLAG_GROUNDED(530) // Project Grounded: Chi-Yu-schrijn (Jagged Pass) bezocht
+#define FLAG_RUIN_SEAL_TING_LU                           FLAG_GROUNDED(531) // Project Grounded: Ting-Lu-schrijn (Desert Underpass) bezocht
+#define FLAG_RUIN_SEAL_WO_CHIEN                          FLAG_GROUNDED(532) // Project Grounded: Wo-Chien-schrijn (Petalburg Woods) bezocht
+#define FLAG_RUIN_SEAL_CHIEN_PAO                         FLAG_GROUNDED(533) // Project Grounded: Chien-Pao-schrijn (Route 135) bezocht
+#define FLAG_HIDE_RUIN_CHI_YU                            FLAG_GROUNDED(534) // Project Grounded: Chi-Yu gevangen/verslagen
+#define FLAG_HIDE_RUIN_TING_LU                           FLAG_GROUNDED(535) // Project Grounded: Ting-Lu gevangen/verslagen
+#define FLAG_HIDE_RUIN_WO_CHIEN                          FLAG_GROUNDED(536) // Project Grounded: Wo-Chien gevangen/verslagen
+#define FLAG_HIDE_RUIN_CHIEN_PAO                         FLAG_GROUNDED(537) // Project Grounded: Chien-Pao gevangen/verslagen
+// }
 // sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; FLAG_GROUNDED 500-529)
 #define FLAG_ITEM_HERMIT_CRATER_WIDE_LENS                FLAG_GROUNDED(500) // Project Grounded: kluizenaarskrater: Wide Lens
 #define FLAG_HIDDEN_ITEM_HERMIT_CRATER_PEARL_STRING      FLAG_GROUNDED(501) // Project Grounded: kluizenaarskrater: verborgen Pearl String

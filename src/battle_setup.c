@@ -575,6 +575,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_GROUNDED_VS_SUICUNE);
         break;
+    case SPECIES_WO_CHIEN: // Project Grounded: Beasts of Ruin (placeholder: Kanto-legendary-thema, eigen thema's volgen)
+    case SPECIES_CHIEN_PAO:
+    case SPECIES_TING_LU:
+    case SPECIES_CHI_YU:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
         break;

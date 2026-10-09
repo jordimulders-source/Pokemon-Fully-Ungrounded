@@ -1,0 +1,44 @@
+{
+  "id": "MAP_JAGGED_PASS_RUIN_CHAMBER",
+  "name": "JaggedPass_RuinChamber",
+  "layout": "LAYOUT_JAGGED_PASS_RUIN_CHAMBER",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_JAGGED_PASS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_JAGGED_PASS",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_JAGGED_PASS_RUIN_CALDERA",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JaggedPass_RuinChamber_EventScript_Stake"
+    }
+  ]
+}

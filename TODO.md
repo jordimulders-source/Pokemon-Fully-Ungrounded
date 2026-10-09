@@ -18,7 +18,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (in uitvoering):**
 - ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). Mitch kiest zelf tussen thema A en B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
 
-**In uitvoering (Jordi 9 okt):** Abandoned Ship nachtdek (agent), Frontier-rentals (agent). Gedaan: Battle Casino (v0.9.213), Spear Pillar/Hall/constructen (v0.9.211), Enamorus (v0.9.212), Nep-Enut + Yoshi-huis (v0.9.208–210).
+**In uitvoering (Jordi 9 okt):** Abandoned Ship nachtdek (agent), casino-odds/bookies/skip (agent). Gedaan: Battle Casino (v0.9.213), Spear Pillar/Hall/constructen (v0.9.211), Enamorus (v0.9.212), Nep-Enut + Yoshi-huis (v0.9.208–210).
 Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, controleren). Testers van Jordi als trainers: id's vrijmaken (bijv. scripted gevechten die een id delen).
 
 ~~Technische schuld bouwscripts~~ (v0.9.195–198: `check_levels.protect()` bewaakt levels en events; alle bouwscripts draaien zonder wijzigingen).
@@ -45,7 +45,7 @@ Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, c
 9. **The Spire (na Jordi's test, `SPIRE_TESTCHECKLIST.txt`):** gewone gevechten per deel van de act, één elite-pool per act, gevechten meer als puzzel. Nog open: codex, golven (derde vijand), dramatischer baas-intro, ja/nee bij de receptioniste, echte teksten. (okt; SPIRE_DESIGN "Nog open")
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
 13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
-14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
+14. ~~**Frontier-rentals**~~ (v0.9.215) afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
 15. ~~**Meltan**~~ (v0.9.182) als gift, evolueert in **Melmetal** door te levelen met een Metal Coat (Jordi 9 okt; plek nog kiezen).
 16. ~~**Enamorus**~~ (v0.9.212) (Jordi 9 okt): zwerft rond zoals de andere Forces. Zodra die allemaal gevangen zijn, hebben bepaalde stadjes kans op Enamorus: overal hartjes en NPC's die avances naar elkaar maken; één van de koppels is **Birch met een hoop stront**.
 18. ~~**Swords of Justice + Keldeo**~~ (v0.9.182) (Jordi 9 okt): Cobalion (diepste kamer Granite Cave), Terrakion (extra kamer Victory Road), Virizion (Mangrove Mire), zonder quest (zoals Gen 5). Heb je alle drie, dan belt **Mr. Briney** via de PokéNav: hij ziet iets heel geks in het water. Bij hem in de boot, fade-out, hij vaart je naar een plek die niet op de kaart staat: een pas ontstaan eiland met draaikolken; hij zet je af en daar staat **Keldeo**.

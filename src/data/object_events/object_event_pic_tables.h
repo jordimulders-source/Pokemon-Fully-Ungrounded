@@ -480,6 +480,9 @@ static const struct SpriteFrameImage sPicTable_HoopaRing[] = { // Project Ground
 static const struct SpriteFrameImage sPicTable_RuinSeal[] = { // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
     obj_frame_tiles(gObjectEventPic_RuinSeal),
 };
+static const struct SpriteFrameImage sPicTable_UltraWormhole[] = { // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
+    obj_frame_tiles(gObjectEventPic_UltraWormhole),
+};
 static const struct SpriteFrameImage sPicTable_RustedSwordOW[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_RustedSwordOW),
 };

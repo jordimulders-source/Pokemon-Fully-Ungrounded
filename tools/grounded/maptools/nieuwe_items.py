@@ -102,9 +102,17 @@ ITEMS = [
     (1400, 'AbandonedShip_NightCabins', 'ITEM_GHOST_MEMORY', 1, False, 'Abandoned Ship benedendek: Ghost Memory'),
     (1401, 'AbandonedShip_NightCabins', 'ITEM_WATER_GEM', 2, False, 'Abandoned Ship benedendek: Water Gems'),
     (1402, 'AbandonedShip_NightCabins', 'ITEM_WATER_MEMORY', 1, True, 'Abandoned Ship benedendek: verborgen Water Memory'),
+    # Ultra Space (ultra_space.py; flags uit het eigen blok FLAG_GROUNDED 1440-1519)
+    (1460, 'UltraSpace_Necrozma', 'ITEM_N_SOLARIZER', 1, False, 'Ultra Space, prismagrot: N-Solarizer (Necrozma + Solgaleo)'),
+    (1461, 'UltraSpace_Necrozma', 'ITEM_N_LUNARIZER', 1, False, 'Ultra Space, prismagrot: N-Lunarizer (Necrozma + Lunala)'),
+    (1462, 'UltraSpace_Poipole', 'ITEM_POISON_MEMORY', 1, False, 'Ultra Space, gifkristallen: Poison Memory'),
+    (1463, 'UltraSpace_Xurkitree', 'ITEM_ELECTRIC_MEMORY', 1, False, 'Ultra Space, kabelwoud: Electric Memory'),
+    (1464, 'UltraSpace_Buzzwole', 'ITEM_FIGHTING_MEMORY', 1, False, 'Ultra Space, sportschool: Fighting Memory'),
+    (1465, 'UltraSpace_Stakataka', 'ITEM_STEEL_MEMORY', 1, True, 'Ultra Space, muur: verborgen Steel Memory'),
+    (1466, 'UltraSpace_Guzzlord', 'ITEM_DARK_GEM', 2, False, 'Ultra Space, afvalvlakte: Dark Gems'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest en het benedendek van het Abandoned Ship: eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1460, 1479)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest het benedendek van het Abandoned Ship en Ultra Space: eigen blok
 
 
 def flag_name(n, mp, it, hid):

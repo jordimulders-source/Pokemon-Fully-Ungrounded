@@ -1866,6 +1866,13 @@
 #define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_GHOST_MEMORY FLAG_GROUNDED(1400) // Project Grounded: Abandoned Ship benedendek: Ghost Memory
 #define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_GEM  FLAG_GROUNDED(1401) // Project Grounded: Abandoned Ship benedendek: Water Gems
 #define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_MEMORY FLAG_GROUNDED(1402) // Project Grounded: Abandoned Ship benedendek: verborgen Water Memory
+#define FLAG_ITEM_ULTRA_SPACE_NECROZMA_N_SOLARIZER       FLAG_GROUNDED(1460) // Project Grounded: Ultra Space, prismagrot: N-Solarizer (Necrozma + Solgaleo)
+#define FLAG_ITEM_ULTRA_SPACE_NECROZMA_N_LUNARIZER       FLAG_GROUNDED(1461) // Project Grounded: Ultra Space, prismagrot: N-Lunarizer (Necrozma + Lunala)
+#define FLAG_ITEM_ULTRA_SPACE_POIPOLE_POISON_MEMORY      FLAG_GROUNDED(1462) // Project Grounded: Ultra Space, gifkristallen: Poison Memory
+#define FLAG_ITEM_ULTRA_SPACE_XURKITREE_ELECTRIC_MEMORY  FLAG_GROUNDED(1463) // Project Grounded: Ultra Space, kabelwoud: Electric Memory
+#define FLAG_ITEM_ULTRA_SPACE_BUZZWOLE_FIGHTING_MEMORY   FLAG_GROUNDED(1464) // Project Grounded: Ultra Space, sportschool: Fighting Memory
+#define FLAG_HIDDEN_ITEM_ULTRA_SPACE_STAKATAKA_STEEL_MEMORY FLAG_GROUNDED(1465) // Project Grounded: Ultra Space, muur: verborgen Steel Memory
+#define FLAG_ITEM_ULTRA_SPACE_GUZZLORD_DARK_GEM          FLAG_GROUNDED(1466) // Project Grounded: Ultra Space, afvalvlakte: Dark Gems
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

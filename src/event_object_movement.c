@@ -585,6 +585,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_ShyGuyBlack,           OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK}, // Project Grounded: Shy Guy
     {gObjectEventPal_HoopaRing,             OBJ_EVENT_PAL_TAG_HOOPA_RING}, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     {gObjectEventPal_RuinSeal,              OBJ_EVENT_PAL_TAG_RUIN_SEAL}, // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+    {gObjectEventPal_UltraWormhole,         OBJ_EVENT_PAL_TAG_ULTRA_WORMHOLE}, // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
     {gObjectEventPal_YoshiOw,               OBJ_EVENT_PAL_TAG_YOSHI}, // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     {gObjectEventPal_BooOw,                 OBJ_EVENT_PAL_TAG_COMMANDER_BOO}, // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     {gObjectEventPal_WarioOw,               OBJ_EVENT_PAL_TAG_WARIO}, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)

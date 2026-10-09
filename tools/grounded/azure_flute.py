@@ -203,8 +203,39 @@ HINTS = [
      "SPEAR PILLAR, the diamond altar. Time is waiting, impatiently."),
     ('PALKIA', 'FLAG_CORONET_PALKIA_DONE',
      "SPEAR PILLAR, the pearl altar. Space is waiting, in all directions."),
+    # --- Ultra Space (achterin ALTERING CAVE, ultra_space.py); Ultra Beasts tellen mee (isUltraBeast)
+    ('COSMOG', None,
+     "PROF. COZMO in FALLARBOR found a nebula in his bird bath. He would like it to be your problem now."),
+    ('SOLGALEO', None,
+     "A COSMOG that dreams of the sun becomes the sun. Ask a SOLROCK. Or ask PROF. COZMO, he never shuts up about it."),
+    ('LUNALA', None,
+     "A COSMOG that dreams of the moon becomes the moon. LUNATONE knows. Show COZMO what you raised."),
+    ('NIHILEGO', 'FLAG_ULTRA_NIHILEGO',
+     "Behind ALTERING CAVE, through the wormhole: a world of glass, and a jellyfish made of bad decisions."),
+    ('BUZZWOLE', 'FLAG_ULTRA_BUZZWOLE',
+     "Through the wormhole in ALTERING CAVE there's a gym that never closes. Something in there never skips leg day."),
+    ('PHEROMOSA', 'FLAG_ULTRA_PHEROMOSA',
+     "Through the wormhole in ALTERING CAVE: a catwalk. The model refuses to look at you. Make it."),
+    ('XURKITREE', 'FLAG_ULTRA_XURKITREE',
+     "Through the wormhole in ALTERING CAVE: a forest of cables. One of the trees is plugged into nothing."),
+    ('CELESTEELA', 'FLAG_ULTRA_CELESTEELA',
+     "Through the wormhole in ALTERING CAVE: a launch site in the void. 3, 2, 1... any century now."),
+    ('KARTANA', 'FLAG_ULTRA_KARTANA',
+     "Through the wormhole in ALTERING CAVE: a world of paper. Mind the papercuts. One of them is alive."),
+    ('GUZZLORD', 'FLAG_ULTRA_GUZZLORD',
+     "Through the wormhole in ALTERING CAVE: an endless dump, and the thing that ate the rest."),
+    ('POIPOLE', 'FLAG_ULTRA_POIPOLE',
+     "Through the wormhole in ALTERING CAVE: poison crystals and three aliens with a small purple problem."),
+    ('STAKATAKA', 'FLAG_ULTRA_STAKATAKA',
+     "Through the wormhole in ALTERING CAVE: a wall. It looks at you. It is waiting for you to look back."),
+    ('BLACEPHALON', 'FLAG_ULTRA_BLACEPHALON',
+     "Through the wormhole in ALTERING CAVE: a circus. The clown's head explodes. That's the act."),
+    ('NECROZMA', 'FLAG_ULTRA_NECROZMA',
+     "Once every ULTRA BEAST has been dealt with, the wormhole in ALTERING CAVE opens on a prism that eats light."),
 ]
 EXCLUDE = {'ARCEUS'}   # de eindbaas zelf
+# basissoort (gift) -> soorten die alleen door evolutie te krijgen zijn (src/ultra_space.c: Cosmoem -> beide)
+EVOLVED = {'COSMOG': ['SOLGALEO', 'LUNALA']}
 
 
 def species_info():
@@ -227,7 +258,7 @@ def species_info():
             if not nd:
                 continue
             flag = lambda k: bool(re.search(k + r'\s*=\s*TRUE', full))  # noqa: E731
-            info[sp] = (nd.group(1), flag('isLegendary'), flag('isMythical'), flag('isParadox'))
+            info[sp] = (nd.group(1), flag('isLegendary') or flag('isUltraBeast'), flag('isMythical'), flag('isParadox'))
     alias = {}
     for m in re.finditer(r'#define (SPECIES_\w+)\s+(SPECIES_\w+)', open('include/constants/species.h').read()):
         alias[m.group(1)] = m.group(2)
@@ -278,6 +309,10 @@ def scan():
                         add(mon['species'], 'wild:%s' % e.get('map', '?'))
     for m in re.finditer(r'TryAddRoamer\((SPECIES_\w+)', open('src/roamer.c').read()):
         add(m.group(1), 'roamer')
+    for base, evos in EVOLVED.items():           # alleen via evolutie te krijgen (de basisvorm is een gift)
+        if base in found:
+            for e in evos:
+                add('SPECIES_' + e, 'evolutie ' + base)
     return found, info, alias
 
 

@@ -92,6 +92,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyPink;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyBlack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraWormhole;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog;
@@ -420,6 +421,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SHY_GUY_BLACK] = &gObjectEventGraphicsInfo_ShyGuyBlack, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_HOOPA_RING] = &gObjectEventGraphicsInfo_HoopaRing, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     [OBJ_EVENT_GFX_RUIN_SEAL] = &gObjectEventGraphicsInfo_RuinSeal, // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+    [OBJ_EVENT_GFX_ULTRA_WORMHOLE] = &gObjectEventGraphicsInfo_UltraWormhole, // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)

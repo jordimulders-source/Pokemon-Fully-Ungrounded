@@ -17736,3 +17736,15 @@ Volgens Jordi's GBA-instructies per leider:
 - Wilde tabellen lv 88–94 (land 12 unieke soorten, surf, vissen); nieuwe items: Peat Block, Full Incense, Metal Powder, Auspicious Armor, Rock Incense, Leader's Crest, Odd Incense, Linking Cord, Quick Powder.
 - Script `tools/grounded/maptools/lakes.py`; flags `FLAG_GROUNDED(1120–1148)` (`FLAG_LAKE_*_DONE` = poort naar Mt. Coronet). Muziek: Kanto/Sevii-placeholders.
 - Bouwscripts: `legend_maps`, `scorched_slab_ext`, `spire_tower` (originelen nu in `tools/grounded/maptools/orig/`) en `zee_vulling_4` (draait meteen `trog127.py` erachteraan) draaien weer en veranderen niets meer.
+
+### [v0.9.198] - Mt. Coronet en Spear Pillar
+- **Mt. Coronet** (vanaf 4F, als in Platinum): kamer 1 met waterval, **buiten** in de sneeuw (56x46, terrassen om de top, beek met bruggetjes, je loopt west- of oostom de berg), kamer 2 (items, Rock Smash), kamer 3 (ladder), **5F** (puinhek met 2 Strength-stenen), **6F** (zuilen, lichte uitgang). Twaalf **projectie-trainers** van Dialga en Palkia (lv 95–98).
+- **Spear Pillar:** speerpilaren en twee altaren. Diamant-altaar = **Dialga**, parel-altaar = **Palkia** (lv 100, volgorde naar keuze, opnieuw proberen na vluchten); na beide terug naar de Spacetime Cave (`FLAG_SPACETIME_CORONET_DONE`). Eigen transities (Dialga clockwise wipe, Palkia ripple) met `MUS_RG_VS_LEGEND`.
+- Het Coronet-portaal in de Spacetime Cave (achter de Giratina-wand) is nu een echte warp; heen en terug getest.
+- Nieuwe items: Adamant Crystal, Lustrous Globe, Odd Keystone, Iron Ball, Adamant Orb, Lustrous Orb. Wilde Pokémon lv 91–94. Tilesets `coronet_cave` (Meteor Falls-tiles, warm grijsbruin) en `coronet_snow` (bruggen, speerpilaren, altaren).
+- Scripts `coronet.py`, `coronet_tiles.py`; flags `FLAG_GROUNDED(1160–1185)`, trainers 1057–1059, 1068, 1069, 1082–1088. Muziek: placeholders.
+- Bouwscripts (vervolg): `shipwreck_shoals` (vaste rotsen), `sea_temple_lugia`, `mangrove_swamp` en `mushroom_forest` draaien hun vervolgscript (zee_vulling_2, swords_glade, national_park), `reverse_pillar` en `stadium` houden latere wijzigingen; `coral_cathedral` zet zijn credit op zijn plek. Alle bouwscripts draaien nu zonder iets te veranderen.
+
+### [v0.9.199] - Area Zero als krater
+- Elke laag van Area Zero is een kom: ringvormige terrassen rond een bodem in het midden, ronde vormen, hoge noordwanden en lage zuidwanden. Je daalt in een spiraal af (per ring één trap, om en om links en rechts) en **de ladder naar de volgende diepte zit telkens in het midden**. In de Crystal-laag zitten de draaikolken van de Zero Gate en het verzegelde Tera-gat op de bodem; de Tera-grot is één ring met Terapagos in het midden.
+- Tiles, verhaal en events ongewijzigd (alleen herplaatst); Miraidon/Koraidon-tekst zegt nu "bottom of the crater".

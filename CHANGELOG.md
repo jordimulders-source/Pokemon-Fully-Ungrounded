@@ -17836,3 +17836,8 @@ Volgens Jordi's GBA-instructies per leider:
 - Nieuw: `tools/grounded/audit.py` (±10 s) controleert de hele game statisch: warps (doel, index, elevation, warpgedrag, vastzitten), kaarten (128 per groep, objecten in beeld, bereikbaarheid lopen/surfen incl. looproutes van NPC's, ongeldige tegels), scripts (labels, lock zonder release, verschoven LOCALID's, tekstbreedte), flags/vars, trainers (partijen, abilities, levels, evoluties, mugshots, vrije id's), wild en items (dubbele flags, TM's dubbel). Vanilla-bevindingen worden weggefilterd; open lijst in `AUDIT.md`.
 - Gerepareerd: de torendeur op het **Tao-eiland** was een dichte Sky Pillar-deur (toren onbereikbaar); in **Safari Zone Northeast** sneed de grot naar Thunder Plains de enige richel af (5 rotsen, Nugget en Zinc onbereikbaar); op **Route 117** wees het Day Care-script naar trainer Melina i.p.v. de Day Care-Pokémon; portretten en troon op **Yoshi's Island** stonden een rij te hoog; een te brede debugtekst.
 - Emulator: 91 warps in de nieuwe gebieden geladen zonder crash of zwart beeld; wilde gevechten starten in Crown Tundra, Yoshi's Island en Area Zero.
+
+### [v0.9.218] - Audit-punten van Jordi
+- Dubbele TM's weg (TM's zijn herbruikbaar): de Fire Blast in de Lava Tube is een **Fire Memory**, de U-turn in Fortree Jungle een **Bug Memory** (allebei te koop in Lilycove), en de TM-prijzen van de Trainer Hill (Dark Pulse, Nasty Plot, Stored Power) zijn **Dark/Poison/Psychic Memory**.
+- De Litten (lv 36) van de Magma Grunt op Mt. Chimney is een Incineroar. Rick's Kricketune blijft (bewust).
+- **Hermit Crater**: wilde Pokémon lv 57–59 (was 71–73), gelijk met de trainers daar.

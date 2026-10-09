@@ -290,7 +290,7 @@ def lava_tube():
         trainer('OBJ_EVENT_GFX_PICNICKER', 4, 25, 'JaggedPass_LavaTube_EventScript_Daisy', 3, 'MOVEMENT_TYPE_FACE_RIGHT'),
         item(5, 19, 'ITEM_CHARCOAL', 'FLAG_ITEM_LAVA_TUBE_CHARCOAL'),
         item(23, 25, 'ITEM_FIRE_STONE', 'FLAG_ITEM_LAVA_TUBE_FIRE_STONE'),
-        item(34, 16, 'ITEM_TM_FIRE_BLAST', 'FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST'),
+        item(34, 16, 'ITEM_FIRE_MEMORY', 'FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST'),
         item(34, 19, 'ITEM_HEAT_ROCK', 'FLAG_ITEM_LAVA_TUBE_HEAT_ROCK'),
         obj('OBJ_EVENT_GFX_PUSHABLE_BOULDER', BOULDER[0], BOULDER[1], 'EventScript_StrengthBoulder', 'FLAG_TEMP_11', move='MOVEMENT_TYPE_LOOK_AROUND'),
     ]

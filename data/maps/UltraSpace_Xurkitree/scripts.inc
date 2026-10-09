@@ -62,5 +62,5 @@ UltraSpace_Xurkitree_EventScript_Socket::
 
 UltraSpace_Xurkitree_Text_Socket:
 	.string "A wall socket the size of a door.\p"
-	.string "You could plug in a whole town.\n"
-	.string "Someone already did. It was MAUVILLE.$"
+	.string "You could plug in a whole town. Someone\n"
+	.string "already did. It was MAUVILLE.$"

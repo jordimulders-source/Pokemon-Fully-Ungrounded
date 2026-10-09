@@ -54,5 +54,5 @@ UltraSpace_Celesteela_EventScript_Statue::
 
 UltraSpace_Celesteela_Text_Statue:
 	.string "A stone CELESTEELA.\p"
-	.string "The plaque says: “FIRST TO LAUNCH.”\n"
-	.string "It has not launched.$"
+	.string "The plaque says: “FIRST TO LAUNCH.” It\n"
+	.string "has not launched.$"

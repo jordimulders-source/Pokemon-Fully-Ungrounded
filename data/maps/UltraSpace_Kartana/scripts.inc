@@ -57,11 +57,11 @@ UltraSpace_Kartana_EventScript_Books::
 
 UltraSpace_Kartana_Text_Books:
 	.string "The books are upside down.\p"
-	.string "You tilt your head. The words are\n"
-	.string "still upside down. So is your head.\p"
-	.string "One title reads: “HOW TO FOLD A\n"
-	.string "BLADE IN 900 EASY STEPS.”$"
+	.string "You tilt your head. The words are still\n"
+	.string "upside down. So is your head.\p"
+	.string "One title reads: “HOW TO FOLD A BLADE IN\n"
+	.string "900 EASY STEPS.”$"
 
 UltraSpace_Kartana_Text_Reader:
-	.string "It is reading the shelf backwards.\n"
-	.string "It says the ending is better first.$"
+	.string "It is reading the shelf backwards. It\n"
+	.string "says the ending is better first.$"

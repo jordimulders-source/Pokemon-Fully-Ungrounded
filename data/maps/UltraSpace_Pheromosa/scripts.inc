@@ -56,7 +56,7 @@ UltraSpace_Pheromosa_Text_Treaty:
 	.string "wants to. Water is fine with it.$"
 
 UltraSpace_Pheromosa_Text_Weather:
-	.string "It tried to change the weather.\n"
-	.string "The weather did not care.\p"
-	.string "Nothing here cares. It is very\n"
-	.string "relaxing, in a horrifying way.$"
+	.string "It tried to change the weather. The\n"
+	.string "weather did not care.\p"
+	.string "Nothing here cares. It is very relaxing,\n"
+	.string "in a horrifying way.$"

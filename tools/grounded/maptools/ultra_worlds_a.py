@@ -674,18 +674,14 @@ def write_wild(w):
 
 
 def text_lines(txt):
-    """'regel\\nregel\\pnieuw vak' -> .string-regels (\\n = tweede regel, \\l = verder scrollen)"""
-    out = []
-    parts = txt.split('\\p')
-    for pi, part in enumerate(parts):
-        ls = part.split('\n')
-        for li, l in enumerate(ls):
-            if li == len(ls) - 1:
-                end = '$' if pi == len(parts) - 1 else '\\p'
-            else:
-                end = '\\n' if li == 0 else '\\l'
-            out.append('\t.string "%s%s"' % (l, end))
-    return out
+    """tekst met \\p (nieuw vak) -> .string-regels; afbreken met dezelfde regels als de Dialoogstudio-importer"""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('dialogen_import', 'tools/dialogen/import.py')
+    dimp = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(dimp)
+    plain = txt.replace('\\p', '\n\n').replace('\\l', ' ')
+    plain = '\n\n'.join(re.sub(r'\s*\n\s*', ' ', b).strip() for b in plain.split('\n\n'))
+    return ['\t.string "%s"' % l for l in dimp.to_strings(plain)]
 
 
 def write_scripts(w):
@@ -2091,11 +2087,13 @@ def w_celesteela():
     DRY = hexs('6c5c28', '8c7834', 'b09c48', 'd0bc68', 'ecdc98')
     # ---- gras (periode 32): effen met losse halmen (geen vlekken: dat werd behang)
     def grass_tex(R, seed):
-        t = speckle_tex(R[2], [(['3', '2', '2'], [None, R[3], R[4]], 9), (['2', '1'], [R[1], R[3]], 10),
-                               (['1.1'], [R[1]], 8), (['2'], [None, R[3]], 12), (['1'], [R[0]], 6)], seed)
+        # graspollen: lichte toppen, donkere voet (geen losse ruispixels)
+        t = speckle_tex(R[2], [(['3..3.', '3.32.', '23212', '1211.'], [R[1], R[3], R[4]], 6),
+                               (['.3', '32', '21'], [R[1], R[3], R[4]], 9),
+                               (['3', '2'], [None, R[3], R[4]], 8),
+                               (['11', '.1'], [R[1]], 7)], seed)
         return t
     g = grass_tex(GR, 72)
-    g[np.array([[(x * 5 + y * 3) % 61 == 0 for x in range(32)] for y in range(32)])] = (232, 216, 160)
     w.tex(np.ones((H * 16, W * 16), bool), g)
     # droge, goudgele plekken (vervaagd celmasker: randen hangen alleen van de buren af)
     rr = random.Random(73)
@@ -2105,9 +2103,9 @@ def w_celesteela():
         dry |= ellipse(W, H, cx, cy, rr.uniform(2, 4.5), rr.uniform(1.4, 2.6))
     ds = w.soft(dry, 12) + w.wob(16, 4, 74, 0.1)
     DRYM = [lerp(a, b, 0.45) for a, b in zip(DRY, GR)]
-    w.tex(ds > 0.55, grass_tex(DRY, 75))
-    rim = (ds > 0.3) & (ds <= 0.55) & ((ds - 0.3) / 0.25 > dith)
-    w.tex(rim, grass_tex(DRYM, 75))
+    w.tex(ds > 0.55, grass_tex(DRY, 72))
+    rim = (ds > 0.42) & (ds <= 0.55)
+    w.tex(rim, grass_tex(DRYM, 72))
     # ---- rand: het gras loopt uit in mist; bovenaan de horizon met de lucht
     ex = np.minimum(np.minimum(xx, W * 16 - 1 - xx), H * 16 - 1 - yy).astype(float)
     fog = np.clip((56 - ex) / 48.0, 0, 1)
@@ -2165,7 +2163,8 @@ def w_celesteela():
     d = np.hypot(xx - lx, (yy - ly) * 1.25)
     pad = d < 36
     w.bot[pad] = (176, 172, 160)
-    w.bot[pad & ((xx // 8 + yy // 8) % 2 == 0)] = (160, 156, 144)
+    w.bot[pad & (((xx - lx) % 12 == 0) | ((yy - ly) % 12 == 0))] = (136, 132, 124)
+    w.bot[pad & (((xx - lx) % 12 == 1) | ((yy - ly) % 12 == 1))] = (200, 196, 184)
     w.bot[pad & (np.abs(d - 30) < 1.2)] = (232, 192, 64)
     w.bot[pad & (d < 14)] = (64, 56, 48)
     w.bot[(d >= 36) & (d < 38.5)] = (96, 92, 84)

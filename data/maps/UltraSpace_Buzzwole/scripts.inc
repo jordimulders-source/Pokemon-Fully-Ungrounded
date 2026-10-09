@@ -56,12 +56,12 @@ UltraSpace_Buzzwole_EventScript_Barbell::
 @ } ultra_worlds_a
 
 UltraSpace_Buzzwole_Text_Bug:
-	.string "It is the size of a normal bug.\n"
-	.string "Here, that makes it a speck.\p"
+	.string "It is the size of a normal bug. Here,\n"
+	.string "that makes it a speck.\p"
 	.string "It looks at the giant mushrooms and\n"
 	.string "feels nothing. Respect.$"
 
 UltraSpace_Buzzwole_Text_Barbell:
 	.string "Two giant BERRIES on a stick.\p"
-	.string "The sticker says: “ORGANIC. 900 KG.\n"
-	.string "DO NOT EAT BETWEEN SETS.”$"
+	.string "The sticker says: “ORGANIC. 900 KG. DO\n"
+	.string "NOT EAT BETWEEN SETS.”$"

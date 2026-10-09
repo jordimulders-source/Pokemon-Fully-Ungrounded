@@ -1,0 +1,191 @@
+{
+  "id": "MAP_GLIMWOOD_TANGLE_BALLONLEA",
+  "name": "GlimwoodTangle_Ballonlea",
+  "layout": "LAYOUT_GLIMWOOD_TANGLE_BALLONLEA",
+  "music": "MUS_RG_CELADON",
+  "region_map_section": "MAPSEC_BALLONLEA",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 9,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_Witch",
+      "flag": "0",
+      "local_id": "LOCALID_BALLONLEA_WITCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 22,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_Arthur",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRIMMSNARL)",
+      "x": 17,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_Boss",
+      "flag": "FLAG_GLIMWOOD_GANG_BOSS",
+      "local_id": "LOCALID_BALLONLEA_BOSS_A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MORGREM)",
+      "x": 18,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_Boss",
+      "flag": "FLAG_GLIMWOOD_GANG_BOSS",
+      "local_id": "LOCALID_BALLONLEA_BOSS_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(XERNEAS)",
+      "x": 17,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_Xerneas",
+      "flag": "FLAG_GLIMWOOD_XERNEAS_DONE",
+      "local_id": "LOCALID_BALLONLEA_XERNEAS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 31,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GALARICA_WREATH",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BALLONLEA_GALARICA_WREATH"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_GLIMWOOD_TANGLE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 18,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_GLIMWOOD_TANGLE",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_L",
+      "flag": "FLAG_HIDDEN_ITEM_BALLONLEA_EXP_CANDY_L"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_WitchDoor"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_WitchDoor"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "GlimwoodTangle_Ballonlea_EventScript_HouseDoor"
+    }
+  ]
+}

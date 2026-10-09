@@ -1226,6 +1226,7 @@
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
 #define TRAINER_SWIMMER_CORINNE             1080 // Project Grounded: Koraalkathedraal: zwemt al jaren rondjes om hetzelfde koraal
 #define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
+// }
 // national_park { (tools/grounded/maptools/national_park.py; id 1090-1097)
 #define TRAINER_NP_BUG_CATCHER_DOUGLAS      1090 // Project Grounded: National Park, insectenwedstrijd
 #define TRAINER_NP_PICNICKER_SIENNA         1091 // Project Grounded: National Park, picknick
@@ -1243,6 +1244,13 @@
 #define TRAINER_CHARGESTONE_GRUNT_B1F_2     1126 // Project Grounded: Chargestone Cave B1F, Colress-assistent in de grote grot
 #define TRAINER_CHARGESTONE_GRUNT_B2F       1127 // Project Grounded: Chargestone Cave B2F, Colress-assistent voor het lab
 #define TRAINER_CHARGESTONE_COLRESS         1128 // Project Grounded: Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)
+// }
+
+// glimwood { (tools/grounded/maptools/glimwood.py; id 1098, 1099, 1107, 1108)
+#define TRAINER_GLIMWOOD_HEX_MANIAC_MORWEN  1098 // Project Grounded: Glimwood, verzamelt vervloekte theekopjes
+#define TRAINER_GLIMWOOD_PSYCHIC_SILAS      1099 // Project Grounded: Glimwood, pelgrim die al eeuwen rondjes loopt
+#define TRAINER_GLIMWOOD_BEAUTY_ODETTE      1107 // Project Grounded: Glimwood, feeën-cosplay
+#define TRAINER_BALLONLEA_GENTLEMAN_ARTHUR  1108 // Project Grounded: Ballonlea, theatercriticus
 // }
 
 #define TRAINERS_COUNT                      1200

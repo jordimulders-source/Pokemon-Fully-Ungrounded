@@ -80,6 +80,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_MIRACLE_SEED",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 17,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_FRIEND_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ILEX_FOREST_FRIEND_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LOVE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ILEX_FOREST_LOVE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DESTINY_KNOT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ILEX_FOREST_DESTINY_KNOT"
     }
   ],
   "warp_events": [
@@ -115,6 +154,14 @@
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 44,
+      "elevation": 3,
+      "item": "ITEM_ROSE_INCENSE",
+      "flag": "FLAG_HIDDEN_ITEM_ILEX_FOREST_ROSE_INCENSE"
     }
   ]
 }

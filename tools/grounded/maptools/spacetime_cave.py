@@ -153,6 +153,36 @@ def scr(name):
                % (name, name))
 
 
+# ====================================================================== items die nergens anders liggen (nieuwe_items.py)
+NEW_ITEM_POS = {  # item -> plek (Jordi 9 okt: in elk Spacetime-gebied items die nog niet in de game zaten)
+    'ITEM_EXP_CANDY_S': (1, 13), 'ITEM_POWER_BRACER': (7, 16), 'ITEM_MOON_BALL': (16, 16), 'ITEM_RED_CARD': (19, 6),
+    'ITEM_LEVEL_BALL': (36, 14), 'ITEM_POWER_WEIGHT': (32, 4), 'ITEM_ROOM_SERVICE': (13, 18),
+    'ITEM_MIRROR_HERB': (36, 3), 'ITEM_POWER_BAND': (34, 12)}
+
+
+def new_items(name, cells, W):
+    """Item balls en verborgen items uit nieuwe_items.py voor kaart `name` (hoogte uit de layout)."""
+    import nieuwe_items as ni
+    objs, bgs = [], []
+    for fl, it, q, hid in ni.items(name):
+        x, y = NEW_ITEM_POS[it]
+        c = cells[y * W + x]
+        assert not c & 0xC00, ('item op een muur', name, it)
+        e = c >> 12
+        if hid:
+            h = hidden(x, y, it, fl)
+            h['elevation'] = e
+            if q > 1:
+                h['quantity'] = q
+            bgs.append(h)
+        else:
+            o = obj('OBJ_EVENT_GFX_ITEM_BALL', x, y, 'Common_EventScript_FindItem', fl, 'MOVEMENT_TYPE_LOOK_AROUND',
+                    elev=e, sight=it)
+            o['movement_range_x'] = q if q > 1 else 0
+            objs.append(o)
+    return objs, bgs
+
+
 # ====================================================================== 1. de hub
 # S2 (Jordi, 9 okt): in de hoofdzaal alleen de zes sidequest-scheuren. Onderin loopt een gang naar het zuiden
 # (een lange kaart met poorten): instabiele wand (open na Spacetime_AllSidequestsDone) -> ?????-kamer ->
@@ -165,12 +195,12 @@ RIFTS = [  # (sleutel, linksboven, bestemming of None, naam op het bord)
     ('Cerulean', (4, 10), 'CERULEAN', None),
     ('Park', (4, 14), 'PARK', None),
     ('Chargestone', (21, 5), 'CHARGESTONE', None),
-    ('Glimwood', (21, 10), None, 'glowing mushrooms and a forest that is far too pleased with itself'),
+    ('Glimwood', (21, 10), 'GLIMWOOD', None),
     ('AreaZero', (21, 14), None, 'a crater that keeps going down long after it should have stopped'),
 ]
 # S1: eerste bezoek (Dialga + Palkia openen de scheuren) en quest-poorten.
 # Toestand per scheur na de scene: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet).
-RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'warp', 'Chargestone': 'warp', 'Glimwood': 'open',
+RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'warp', 'Chargestone': 'warp', 'Glimwood': 'warp',
               'AreaZero': 'open'}
 # Sidequests die meetellen voor de gang naar ?????. Een nieuwe locatie: haar klaar-flag hier toevoegen (en opnieuw
 # draaien). Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen pas
@@ -178,7 +208,8 @@ RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'warp', 'Chargesto
 SIDEQUESTS = [('FLAG_SPACETIME_LAVENDER_DONE', 'Lavender Town: de kwade geesten verdreven'),
               ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen'),
               ('FLAG_SPACETIME_CHARGESTONE_DONE', 'Chargestone Cave: Zeraora gevangen of verslagen'),
-              ('FLAG_NATIONAL_PARK_DONE', 'National Park: Eternatus gevangen of verslagen')]
+              ('FLAG_NATIONAL_PARK_DONE', 'National Park: Eternatus gevangen of verslagen'),
+              ('FLAG_SPACETIME_GLIMWOOD_DONE', 'Glimwood Tangle: Yveltal gevangen')]
 HUB_DIALGA, HUB_PALKIA, HUB_RESEARCHER = (10, 7), (16, 7), (18, 4)
 # de diepte (zelfde kaart, onder de hoofdzaal); de gang is 2 breed (x 13-14)
 CX = 13
@@ -295,10 +326,10 @@ def hub(lav_rift_warp, cc_rift_warp):
                 m, col = ids[(0, q)], q >= 2
                 if q < 2:
                     # Chargestone (chargestone.py) heeft één aankomstwarp (index 0) voor beide vakken
-                    wid = {'LAVENDER': lav_rift_warp + q, 'CERULEAN': cc_rift_warp + q, 'CHARGESTONE': 0, 'PARK': 2 + q}[dest]
+                    wid = {'LAVENDER': lav_rift_warp + q, 'CERULEAN': cc_rift_warp + q, 'CHARGESTONE': 0, 'PARK': 2 + q, 'GLIMWOOD': q}[dest]
                     warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F',
                                              'CHARGESTONE': 'CHARGESTONE_CAVE_1F',
-                                             'PARK': 'NATIONAL_PARK_GATE'}[dest], wid, elev=3))
+                                             'PARK': 'NATIONAL_PARK_GATE', 'GLIMWOOD': 'GLIMWOOD_TANGLE'}[dest], wid, elev=3))
             else:                           # open (actief beeld), nog geen overkant: massief + bordje
                 m, col = ids[(0, q)], True
                 bgs.append(sign(x, y, P + 'Rift' + key))
@@ -830,6 +861,9 @@ def lavender(names):
     S.npc('Notice', "NOTICE\n\nSILPH SCOPES are sold out. Until further notice, assume every shadow is a "
           "GHOST, and every GHOST is in a mood.", 'MSGBOX_SIGN')
     S.write()
+    for grid in (gC, gH):                   # het item moet in beide layouts (spookstad en na de bevrijding) kloppen
+        no, nb = new_items(LAV, [c for row in grid for c in row], W)
+    objs += no; bgs += nb
     write_map(LAV, lay, objs, warps, bgs, music='MUS_RG_LAVENDER', region_map_section='MAPSEC_LAVENDER_TOWN',
               map_type='MAP_TYPE_TOWN', weather=LAV_WEATHER, allow_cycling=True, allow_escaping=False)
     return first_rift, kind
@@ -1220,6 +1254,8 @@ def tower(tower_grids, lav_tower_warp):
       ('CaretakerDone', "Every soul up here had a trainer once.\n\nTake good care of yours. "
                         "The paperwork for ghosts is unbelievable.")])
         S.write()
+        no, nb = new_items(name, cells, W)
+        objs += no; bgs += nb
         write_map(name, lay, objs, warps, bgs, music='MUS_RG_POKE_TOWER', region_map_section='MAPSEC_POKEMON_TOWER',
                   map_type='MAP_TYPE_INDOOR', allow_escaping=True, show_map_name=(name == 'PokemonTower_1F'))
         out.append(name)
@@ -1363,6 +1399,8 @@ def cerulean(cave_grids):
                  "an exhausted opponent. Where is the honor in that? Where is the CHALLENGE?\""),
       ('MewtwoHealed', "MEWTWO restored your POKéMON to full health!\n\n\"Now. Show me what you are worth.\"")])
         S.write()
+        no, nb = new_items(name, cells, W)
+        objs += no; bgs += nb
         write_map(name, lay, objs, warps, bgs, music='MUS_RG_ROCKET_HIDEOUT', region_map_section='MAPSEC_CERULEAN_CAVE',
                   map_type='MAP_TYPE_UNDERGROUND', show_map_name=(name == 'CeruleanCave_1F'))
         out.append(name)
@@ -1584,6 +1622,9 @@ def check():
         if not (adj(r, x, y) or (x, y) in r): problems.append('Lavender: deur %s onbereikbaar' % dest)
     for o in k.d['object_events']:
         if not adj(r, o['x'], o['y']): problems.append('Lavender: NPC %s' % o['script'])
+    for b in k.d['bg_events']:
+        if b['type'] == 'hidden_item' and (b['x'], b['y']) not in r:
+            problems.append('Lavender: verborgen item %s' % b['item'])
     # toren: elke verdieping vanaf de trap omlaag naar de trap omhoog
     for name, _ in TOWER:
         k = ll.Kaart(name)
@@ -1613,6 +1654,9 @@ def check():
         for o in k.d['object_events']:
             if 'BREAKABLE' in o['graphics_id']: continue
             if not adj(seen.get(name, set()), o['x'], o['y']): problems.append('%s: object %s %s' % (name, o['x'], o['y']))
+        for b in k.d['bg_events']:
+            if b['type'] == 'hidden_item' and (b['x'], b['y']) not in seen.get(name, set()):
+                problems.append('%s: verborgen item %s' % (name, b['item']))
     print('controles:', 'ok' if not problems else '\n  ' + '\n  '.join(problems))
     return problems
 

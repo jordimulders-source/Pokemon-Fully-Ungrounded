@@ -1305,3 +1305,52 @@ const struct Tileset gTileset_UnchartedIsle = // Project Grounded: Keldeo-eiland
     .metatileAttributes = gMetatileAttributes_UnchartedIsle,
     .callback = InitTilesetAnim_UnchartedIsle,
 };
+
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const struct Tileset gTileset_Glimwood =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Glimwood,
+    .palettes = gTilesetPalettes_Glimwood,
+    .metatiles = gMetatiles_Glimwood,
+    .metatileAttributes = gMetatileAttributes_Glimwood,
+    .callback = NULL,
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const struct Tileset gTileset_GlimwoodDying =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Glimwood,
+    .palettes = gTilesetPalettes_GlimwoodDying,
+    .metatiles = gMetatiles_Glimwood,
+    .metatileAttributes = gMetatileAttributes_Glimwood,
+    .callback = NULL,
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const struct Tileset gTileset_GlimwoodGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_GlimwoodGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const struct Tileset gTileset_GlimwoodGeneralDying =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_GlimwoodGeneralDying,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};

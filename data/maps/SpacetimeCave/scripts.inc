@@ -5,10 +5,6 @@ SpacetimeCave_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SpacetimeCave_OnFrame
 	.byte 0
 
-SpacetimeCave_EventScript_RiftGlimwood::
-	msgbox SpacetimeCave_Text_RiftGlimwood, MSGBOX_SIGN
-	end
-
 SpacetimeCave_EventScript_RiftAreaZero::
 	msgbox SpacetimeCave_Text_RiftAreaZero, MSGBOX_SIGN
 	end
@@ -23,6 +19,7 @@ Spacetime_AllSidequestsDone::
 	call_if_unset FLAG_SPACETIME_CERULEAN_DONE, Spacetime_EventScript_CountOpen @ Cerulean Cave: Mewtwo gevangen of verslagen
 	call_if_unset FLAG_SPACETIME_CHARGESTONE_DONE, Spacetime_EventScript_CountOpen @ Chargestone Cave: Zeraora gevangen of verslagen
 	call_if_unset FLAG_NATIONAL_PARK_DONE, Spacetime_EventScript_CountOpen @ National Park: Eternatus gevangen of verslagen
+	call_if_unset FLAG_SPACETIME_GLIMWOOD_DONE, Spacetime_EventScript_CountOpen @ Glimwood Tangle: Yveltal gevangen
 	setvar VAR_RESULT, FALSE
 	call_if_eq VAR_0x8005, 0, Spacetime_EventScript_AllDone
 	return
@@ -106,8 +103,8 @@ SpacetimeCave_EventScript_OpenRifts:
 	setmetatile 22, 5, 0x3CF, FALSE
 	setmetatile 21, 6, 0x3D0, TRUE
 	setmetatile 22, 6, 0x3D1, TRUE
-	setmetatile 21, 10, 0x3CE, TRUE
-	setmetatile 22, 10, 0x3CF, TRUE
+	setmetatile 21, 10, 0x3CE, FALSE
+	setmetatile 22, 10, 0x3CF, FALSE
 	setmetatile 21, 11, 0x3D0, TRUE
 	setmetatile 22, 11, 0x3D1, TRUE
 	setmetatile 21, 14, 0x3CE, TRUE
@@ -349,14 +346,6 @@ SpacetimeCave_EventScript_ResearcherDone::
 	end
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
-SpacetimeCave_Text_RiftGlimwood:
-	.string "The rift is wide open. Through it you\n"
-	.string "can just make out glowing mushrooms\l"
-	.string "and a forest that is far too pleased\l"
-	.string "with itself.\p"
-	.string "The other side hasn't finished existing\n"
-	.string "yet, though. Spacetime is still loading.$"
-
 SpacetimeCave_Text_RiftAreaZero:
 	.string "The rift is wide open. Through it you\n"
 	.string "can just make out a crater that keeps\l"

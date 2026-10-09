@@ -14,7 +14,7 @@ Extra: mapsec MAPSEC_CHARGESTONE_CAVE is een magnetisch veld: Magneton -> Magnez
 Flags FLAG_GROUNDED 760-799, trainers 1124-1128.
 Teksten zijn placeholders (Jordi herschrijft ze).
 Gebruik: python3 tools/grounded/maptools/chargestone.py [render-uitmap]"""
-import json, os, random, re, struct, subprocess, sys
+import json, math, os, random, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -80,32 +80,206 @@ CONST = {F1: 'CHARGESTONE_CAVE_1F', B1: 'CHARGESTONE_CAVE_B1F', B2: 'CHARGESTONE
 
 
 class Cave(mf.Map):
-    """Meteor Falls-autotiler + zwevende stenen (2x2, 'S'), scherven en vonkjes (na build als overrides)."""
+    """Meteor Falls-autotiler met organische vormen (9 okt, Jordi: te steriel/rechthoekig):
+    kamers = overlappende ruisellipsen + kronkelgangen, op een 2x2-raster (geen trapjes van 1 tegel), dunne
+    rotsribbels weg; terrassen (lage klif met trap) over de volle breedte van een kamer; decor (zwevende stenen in
+    drie maten, kristallen, gloeiende scheuren, schroot, Colress' machines en kabels) buiten de looproutes."""
 
     def __init__(self, w, h, seed):
         super().__init__(w, h)
         self.rnd = random.Random(seed)
         self.stones = []
+        self.frozen = {}          # (x,y) -> 'F'/'R' na het vormen
+        self.terraces = []        # (xa, xb, ys, stairs)
+        self.blocked_decor = set()
 
+    # ---------------------------------------------------------------- vormen
+    def blob(self, cx, cy, rx, ry, seed, noise=0.12):
+        rnd = random.Random('%s-%s' % (seed, self.W))
+        nz = [rnd.uniform(-noise, noise) for _ in range(10)]
+        for y in range(max(0, int(cy - ry) - 2), min(self.H, int(cy + ry) + 3)):
+            for x in range(max(0, int(cx - rx) - 2), min(self.W, int(cx + rx) + 3)):
+                a = math.atan2((y - cy) / ry, (x - cx) / rx)
+                k = (a + math.pi) / (2 * math.pi) * 10
+                i, f = int(k) % 10, k - int(k)
+                n = nz[i] * (1 - f) + nz[(i + 1) % 10] * f
+                if ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 <= (1 + n) ** 2:
+                    self.k[y][x] = 'F'
+
+    def lobes(self, x0, y0, x1, y1, seed, n=6):
+        """Organische kamer binnen het vak (x0,y0)-(x1,y1): een ellips met n bulten langs de rand, nooit buiten het vak."""
+        rnd = random.Random('%s-%d-%d' % (seed, x0, y0))
+        cx, cy, rx, ry = (x0 + x1) / 2, (y0 + y1) / 2, (x1 - x0) / 2 + 0.5, (y1 - y0) / 2 + 0.5
+        parts = [(cx, cy, rx * 0.66, ry * 0.62)]
+        for i in range(n):
+            a = 2 * math.pi * (i + rnd.uniform(0.15, 0.85)) / n
+            k = rnd.uniform(0.22, 0.42)
+            d = rnd.uniform(0.55, 0.8)
+            parts.append((cx + math.cos(a) * rx * d, cy + math.sin(a) * ry * d, max(1.8, rx * k), max(1.6, ry * k * 1.2)))
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                if any(((x - px) / prx) ** 2 + ((y - py) / pry) ** 2 <= 1 for px, py, prx, pry in parts):
+                    self.k[y][x] = 'F'
+
+    def path(self, pts, r=1.9):
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            n = int(max(abs(x1 - x0), abs(y1 - y0)) * 2) + 1
+            for i in range(n + 1):
+                px, py = x0 + (x1 - x0) * i / n, y0 + (y1 - y0) * i / n
+                for y in range(int(py - r) - 1, int(py + r) + 2):
+                    for x in range(int(px - r) - 1, int(px + r) + 2):
+                        if (x - px) ** 2 + (y - py) ** 2 <= r * r and 0 <= x < self.W and 0 <= y < self.H:
+                            self.k[y][x] = 'F'
+
+    def freeze(self, x0, y0, x1, y1, c):
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                self.frozen[(x, y)] = c
+
+    def terrace(self, x0, x1, ys, stairs):
+        """Terras over de volle breedte (x0-x1) op rij ys (lip) / ys+1 (klifwand met een trap van 2 op stairs)."""
+        self.freeze(x0, ys - 1, x1, ys + 2, 'F')
+        self.freeze(x0 - 3, ys - 1, x0 - 1, ys + 2, 'R')
+        self.freeze(x1 + 1, ys - 1, x1 + 3, ys + 2, 'R')
+        self.terraces.append((x0, x1, ys, (stairs, stairs + 1)))
+
+    def shape(self):
+        """Op een raster van 2x2-blokken: meerderheid per blok, rotsbanden van 1 blok (2 tegels) open, diagonale
+        aanrakingen open, rand van 2 blokken rots; daarna de bevroren cellen (terrassen, gangen)."""
+        Wc, Hc = self.W // 2, self.H // 2
+        B = [[sum(self.k[2 * by + b][2 * bx + a] == 'F' for a in (0, 1) for b in (0, 1)) >= 2 for bx in range(Wc)]
+             for by in range(Hc)]
+        fb = {}
+        for (x, y), c in self.frozen.items():
+            if x // 2 < Wc and y // 2 < Hc:
+                fb.setdefault((x // 2, y // 2), set()).add(c)
+        for _ in range(20):
+            ch = 0
+            for by in range(Hc):
+                for bx in range(Wc):
+                    if bx < 2 or by < 2 or bx >= Wc - 2 or by >= Hc - 2:
+                        B[by][bx] = False
+            for (bx, by), cs in fb.items():
+                if cs == {'F'}:
+                    B[by][bx] = True
+                elif cs == {'R'}:
+                    B[by][bx] = False
+            for by in range(1, Hc - 1):
+                for bx in range(1, Wc - 1):
+                    if B[by][bx] or fb.get((bx, by)) == {'R'}:
+                        continue
+                    if (B[by][bx - 1] and B[by][bx + 1]) or (B[by - 1][bx] and B[by + 1][bx]):
+                        B[by][bx] = True; ch += 1
+            for by in range(Hc - 1):
+                for bx in range(Wc - 1):
+                    q = (B[by][bx], B[by][bx + 1], B[by + 1][bx], B[by + 1][bx + 1])
+                    if q == (True, False, False, True):
+                        B[by][bx + 1] = True; ch += 1
+                    elif q == (False, True, True, False):
+                        B[by][bx] = True; ch += 1
+            if not ch:
+                break
+        for y in range(self.H):
+            for x in range(self.W):
+                bx, by = x // 2, y // 2
+                self.k[y][x] = 'F' if bx < Wc and by < Hc and B[by][bx] else 'R'
+        for (x, y), c in self.frozen.items():
+            self.k[y][x] = c
+        for y in range(self.H):
+            for x in range(self.W):
+                if x < 3 or y < 2 or x >= self.W - 3 or y >= self.H - 3:
+                    assert self.k[y][x] == 'R', ('vloer te dicht bij de rand', x, y)
+
+    # ---------------------------------------------------------------- decor
     def stone(self, x, y, kind=None):
         kind = kind or self.rnd.choice(('stoneA', 'stoneA_f', 'stoneB', 'stoneB_f'))
+        n = int(round(len(ID[kind]) ** 0.5))
         for i, m in enumerate(ID[kind]):
-            self.set(x + i % 2, y + i // 2, m, 1)
-        self.stones.append((x, y))
+            self.set(x + i % n, y + i // n, m, 1)
+            self.blocked_decor.add((x + i % n, y + i // n))
+        self.stones.append((x, y, n))
 
     def shard(self, x, y):
         self.set(x, y, ID['shard'][0], 1)
+        self.blocked_decor.add((x, y))
 
-    def sparks(self, n, area, keep):
-        x0, y0, x1, y1 = area
-        tries = 0
-        while n and tries < 400:
-            tries += 1
-            x, y = self.rnd.randint(x0, x1), self.rnd.randint(y0, y1)
-            if self.k[y][x] != 'F' or (x, y) in self.over or (x, y) in keep:
-                continue
-            self.set(x, y, ID[self.rnd.choice(('spark1', 'spark2'))][0], 0); n -= 1
+    def one(self, x, y, kind, blocked=True):
+        self.set(x, y, ID[kind][0], 1 if blocked else 0)
+        if blocked:
+            self.blocked_decor.add((x, y))
 
+    def cable(self, cells):
+        """Kabel over de vloer langs een rij aaneengesloten cellen (eerste/laatste cel sluit aan op een machine)."""
+        cells = list(cells)
+        for i, (x, y) in enumerate(cells):
+            dirs = set()
+            for j in (i - 1, i + 1):
+                if 0 <= j < len(cells):
+                    nx, ny = cells[j]
+                    dirs.add('N' if ny < y else 'S' if ny > y else 'W' if nx < x else 'E')
+            if len(dirs) == 1:                     # uiteinde: recht doortrekken naar de machine ernaast
+                d = dirs.pop()
+                dirs = {d, {'N': 'S', 'S': 'N', 'W': 'E', 'E': 'W'}[d]}
+            key = ''.join(c for c in 'NSWE' if c in dirs)
+            name = {'NS': 'cableNS', 'WE': 'cableWE', 'NE': 'cableNE', 'NW': 'cableNW', 'SE': 'cableSE',
+                    'SW': 'cableSW'}[key]
+            self.set(x, y, ID[name][0], 0)
+
+    def terrace_rows(self):
+        return {(x, y) for x0, x1, ys, _ in self.terraces for x in range(x0 - 1, x1 + 2) for y in range(ys - 1, ys + 3)}
+
+    def free(self, x, y, w, h, keep, margin=1):
+        tr = self.terrace_rows()
+        for b in range(-margin, h + margin):
+            for a in range(-margin, w + margin):
+                p = (x + a, y + b)
+                inside = 0 <= a < w and 0 <= b < h
+                if inside and (not self.isF(*p) or self.k[p[1]][p[0]] != 'F' or p in keep or p in self.over or p in tr):
+                    return False
+                if not inside and (p in self.blocked_decor):
+                    return False
+        return True
+
+    def decorate(self, keep, counts, area=None):
+        x0, y0, x1, y1 = area or (0, 0, self.W - 1, self.H - 1)
+        size = {'stoneL': (3, 3), 'stone': (2, 2), 'crysL': (2, 2), 'pebble': (1, 1), 'shard': (1, 1), 'crys': (1, 1),
+                'scrap': (1, 1), 'crack': (1, 1), 'spark': (1, 1)}
+        for kind, n in counts:
+            w, h = size[kind]
+            tries = 0
+            while n and tries < 3000:
+                tries += 1
+                x, y = self.rnd.randint(x0, x1 - w + 1), self.rnd.randint(y0, y1 - h + 1)
+                walk = kind in ('crack', 'spark')
+                if walk:
+                    if not self.isF(x, y) or (x, y) in self.over or (x, y) in self.terrace_rows() or (x, y) in keep:
+                        continue
+                elif not self.free(x, y, w, h, keep, 1 if kind != 'stoneL' else 2):
+                    continue
+                if kind in ('crys', 'crysL') and not any(not self.isF(x + a, y - b) for a in range(w) for b in (1, 2)):
+                    continue                        # kristallen groeien tegen een wand
+                if kind == 'stoneL':
+                    self.stone(x, y, self.rnd.choice(('stoneL', 'stoneL_f')))
+                elif kind == 'stone':
+                    self.stone(x, y)
+                elif kind == 'crysL':
+                    for i, m in enumerate(ID['crysL']):
+                        self.set(x + i % 2, y + i // 2, m, 1); self.blocked_decor.add((x + i % 2, y + i // 2))
+                elif kind == 'pebble':
+                    self.one(x, y, self.rnd.choice(('pebble1', 'pebble2')))
+                elif kind == 'crys':
+                    self.one(x, y, self.rnd.choice(('crys1', 'crys2')))
+                elif kind == 'shard':
+                    self.shard(x, y)
+                elif kind == 'scrap':
+                    self.one(x, y, 'scrap')
+                elif kind == 'crack':
+                    self.one(x, y, self.rnd.choice(('crack1', 'crack2', 'crack3')), False)
+                else:
+                    self.one(x, y, self.rnd.choice(('spark1', 'spark2')), False)
+                n -= 1
+
+    # ---------------------------------------------------------------- opbouw
     def build(self):
         g = super().build()
         dark = {mf.LIP_N: 'lipD', mf.EDGE_E: 'edgeED', mf.EDGE_W: 'edgeWD'}
@@ -121,7 +295,6 @@ class Cave(mf.Map):
                 elif v == mf.LIP_S1:
                     up = y > 0 and self.k[y - 1][x] in 'FW'
                     g[y][x] = cell(ID['rimSD' if up else 'rockD'][0], 1, 0)
-        # rots die verder dan 3 van elke vloer ligt = donkere leegte (zoals de echte Chargestone Cave)
         for y in range(self.H):
             for x in range(self.W):
                 if self.k[y][x] == 'R' and (x, y) not in self.over and not any(
@@ -129,16 +302,100 @@ class Cave(mf.Map):
                     g[y][x] = cell(ID['rockD'][0], 1, 0)
         return g
 
+    def steps(self):
+        for x0, x1, ys, stairs in self.terraces:
+            assert all(x0 <= s <= x1 for s in stairs)
+            self.step(x0, x1, ys, stairs=stairs)
+
     def ladder(self, x, y):
         self.set(x, y, mf.LADDER, 0)
 
 
-def stones_ok(m, keep):
-    for (x, y) in m.stones:
-        for dx in (0, 1):
-            for dy in (0, 1):
+def keep_paths(g, pts, extra=()):
+    """Looproutes tussen alle sleutelplekken (op de echte botsing, dus via de trappen), 1 tegel verbreed."""
+    keep = set(extra)
+    start = pts[0]
+    for p in pts[1:]:
+        prev = {start: None}
+        q = [start]
+        while q:
+            nq = []
+            for c in q:
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    n = (c[0] + dx, c[1] + dy)
+                    if n in prev or not (0 <= n[0] < len(g[0]) and 0 <= n[1] < len(g)):
+                        continue
+                    if g[n[1]][n[0]] & 0xC00 and n != p:
+                        continue
+                    prev[n] = c; nq.append(n)
+            q = nq
+            if p in prev:
+                break
+        assert p in prev, ('geen route', start, p)
+        c = p
+        while c is not None:
+            keep |= {(c[0] + a, c[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1)}
+            c = prev[c]
+    return keep
+
+
+def sight(xy, face, n):
+    dx, dy = {'DOWN': (0, 1), 'UP': (0, -1), 'LEFT': (-1, 0), 'RIGHT': (1, 0)}[face]
+    return {(xy[0] + dx * k, xy[1] + dy * k) for k in range(0, n + 1)}
+
+
+def stones_ok(m, keep, first=0):
+    for (x, y, n) in m.stones[first:]:
+        for dx in range(n):
+            for dy in range(n):
                 assert m.k[y + dy][x + dx] == 'F', ('steen op rots', x, y)
                 assert (x + dx, y + dy) not in keep, ('steen op een event', x, y)
+
+
+def item_spot(m, g, target, taken):
+    """Dichtstbijzijnde vrije vloertegel (niet op decor/terras/trap) bij target."""
+    best = None
+    tr = m.terrace_rows()
+    for y in range(m.H):
+        for x in range(m.W):
+            p = (x, y)
+            if g[y][x] & 0xC00 or p in m.over or p in taken or p in tr or m.k[y][x] != 'F':
+                continue
+            d = (x - target[0]) ** 2 + (y - target[1]) ** 2
+            if best is None or d < best[0]:
+                best = (d, p)
+    return best[1]
+
+
+def wall_spot(m, target):
+    """Wandtegel (rots) direct boven een vloertegel, dichtst bij target (voor een bord)."""
+    best = None
+    for y in range(1, m.H - 1):
+        for x in range(m.W):
+            if m.k[y][x] == 'R' and m.k[y + 1][x] == 'F' and (x, y + 1) not in m.over and (x, y) not in m.over:
+                d = (x - target[0]) ** 2 + (y - target[1]) ** 2
+                if best is None or d < best[0]:
+                    best = (d, (x, y))
+    return best[1]
+
+
+EV = {F1: {}, B1: {}, B2: {}}     # opgeloste plekken (items, borden) per kaart
+
+
+def place_items(name, m, g, wanted, taken):
+    """wanted: [(doel, item, flag, aantal, verborgen)] -> EV[name]['items']"""
+    out = []
+    for tgt, it, fl, q, hid in wanted:
+        p = item_spot(m, g, tgt, taken)
+        taken |= {p}
+        out.append((p, it, fl, q, hid))
+    EV[name]['items'] = out
+    return {p for p, *_ in out}
+
+
+def new_items(name, targets):
+    import nieuwe_items as ni
+    return [(targets[it], it, fl, q, hid) for fl, it, q, hid in ni.items(name)]
 
 
 # --------------------------------------------------------------------- 1F
@@ -146,44 +403,49 @@ F1_EXIT = (11, 34)           # zuiduitgang = terug naar de Spacetime Cave (warp 
 F1_LADDER = (42, 30)         # ladder naar B1F (warp 1)
 F1_BOULDER = (21, 30)
 F1_TRAINER = (16, 12)
-F1_TRAINER2 = (39, 9)
-F1_ITEMS = [((6, 7), 'THUNDER_STONE', 'FLAG_ITEM_CHARGESTONE_1F_THUNDER_STONE'),
-            ((28, 32), 'MAX_REVIVE', 'FLAG_ITEM_CHARGESTONE_1F_MAX_REVIVE')]
-F1_HIDDEN = ((44, 6), 'CELL_BATTERY', 'FLAG_HIDDEN_ITEM_CHARGESTONE_1F_CELL_BATTERY')
+F1_ITEMS = [((7, 7), 'ITEM_THUNDER_STONE', 'FLAG_ITEM_CHARGESTONE_1F_THUNDER_STONE', 1, False),
+            ((28, 32), 'ITEM_MAX_REVIVE', 'FLAG_ITEM_CHARGESTONE_1F_MAX_REVIVE', 1, False),
+            ((44, 6), 'ITEM_CELL_BATTERY', 'FLAG_HIDDEN_ITEM_CHARGESTONE_1F_CELL_BATTERY', 1, True)]
+F1_NEW = {'ITEM_FAST_BALL': (45, 26), 'ITEM_POWER_LENS': (24, 6)}
 F1_SIGN = (12, 26)
 
 
 def build_1f():
     m = Cave(50, 40, 7101)
-    m.room(5, 27, 18, 34)          # ingangshal
-    m.room(8, 19, 10, 26)          # gang omhoog
-    m.room(5, 6, 27, 18)           # grote hal
-    m.room(12, 4, 21, 5)           # inham noord
-    m.room(28, 11, 34, 13)         # gang oost
-    m.room(35, 5, 45, 17)          # oostkamer boven
-    m.room(39, 18, 41, 22)         # gang omlaag
-    m.room(35, 23, 45, 31)         # oostkamer onder (ladder)
-    m.room(19, 29, 24, 31)         # gang naar de zijgrot (scherven + duwsteen)
-    m.room(25, 26, 29, 33)         # zijgrot
+    # ingangshal (zuid) + gang omhoog
+    m.lobes(5, 26, 18, 33, 'h')
+    m.path([(9.5, 15), (8.5, 20), (10, 26)])
+    # grote hal met een terras (bovenste deel: Thunder Stone, Power Lens)
+    m.lobes(4, 4, 26, 17, 'g', 9)
+    # gang oost, oostkamer boven (terras), gang omlaag, oostkamer onder (ladder)
+    m.path([(25, 6), (30, 6.5), (36, 6)], 1.5)
+    m.lobes(35, 4, 46, 17, 'o')
+    m.path([(41, 17), (40.5, 20.5), (41.5, 24)])
+    m.lobes(35, 24, 46, 32, 'u')
+    # zijgrot achter de duwsteen: rechte gang van 3 met rots erboven en eronder
+    m.lobes(25, 27, 30, 33, 'z', 4)
+    m.freeze(19, 29, 24, 31, 'F'); m.freeze(19, 26, 24, 28, 'R'); m.freeze(19, 32, 24, 35, 'R')
+    m.freeze(10, 32, 12, 34, 'F'); m.freeze(8, 35, 14, 39, 'R')
+    m.shape()
+    m.terrace(4, 25, 10, 19)
+    m.terrace(35, 45, 10, 41)
+    m.shape()
     m.build()
+    m.steps()
     m.exit_south(*F1_EXIT)
     m.ladder(*F1_LADDER)
-    keep = {F1_EXIT, (11, 33), (11, 32), F1_LADDER, (42, 29), (41, 30), F1_BOULDER, (20, 30), (22, 30), (23, 30),
-            F1_TRAINER, F1_TRAINER2, F1_SIGN, (12, 27), F1_HIDDEN[0]} | {p for p, *_ in F1_ITEMS}
-    for x in range(8, 11):
-        keep |= {(x, 18), (x, 17), (x, 27)}
-    for y in range(11, 14):
-        keep |= {(27, y), (35, y)}
-    for x in range(39, 42):
-        keep |= {(x, 17), (x, 23)}
-    # sight lines
-    keep |= {(16, y) for y in range(13, 17)} | {(x, 9) for x in range(36, 39)}
-    for (x, y) in [(7, 9), (20, 8), (24, 14), (13, 15), (6, 15), (22, 10), (37, 14), (43, 12), (36, 25), (44, 24),
-                   (15, 29), (6, 30), (26, 27)]:
-        m.stone(x, y)
-    for (x, y) in [(12, 8), (18, 16), (26, 7), (44, 16), (38, 28), (17, 33), (35, 6), (21, 29), (21, 31)]:
-        m.shard(x, y)
-    m.sparks(28, (5, 5, 45, 34), keep)
+    m.shard(21, 29); m.shard(21, 31)                 # de duwsteen houdt de zijgrot dicht
+    g = m.build()
+    taken = {F1_EXIT, F1_LADDER, F1_BOULDER, F1_TRAINER}
+    sign_xy = wall_spot(m, F1_SIGN)
+    EV[F1]['sign'] = sign_xy
+    ip = place_items(F1, m, g, F1_ITEMS + new_items(F1, F1_NEW), taken)
+    pts = [(F1_EXIT[0], F1_EXIT[1] - 1), (F1_LADDER[0], F1_LADDER[1] - 1), (20, 30), F1_TRAINER,
+           (sign_xy[0], sign_xy[1] + 1)] + sorted(ip - {EV[F1]['items'][1][0]})
+    keep = keep_paths(g, pts, sight(F1_TRAINER, 'DOWN', 3) | {(x, 30) for x in range(17, 30)} | ip |
+                      {(x, y) for x in range(24, 31) for y in range(28, 33)})
+    m.decorate(keep, [('stoneL', 3), ('crysL', 3), ('stone', 11), ('crys', 10), ('pebble', 9), ('shard', 6),
+                      ('scrap', 2), ('crack', 18), ('spark', 14)])
     stones_ok(m, keep)
     return m, m.build()
 
@@ -194,24 +456,29 @@ B1_LADDER = (12, 8)          # ladder naar B2F (warp 1), achter het stenenhek
 B1_FENCE_Y = 13              # hek: stenen op rij 12-13, gaten met duwstenen
 B1_BOULDERS = [(9, 13), (17, 13)]
 B1_TRAINERS = [(19, 18), (44, 30)]   # westhal (kijkt naar links), grote grot
-B1_TRAINER_N = (40, 9)               # noordkamer: geen trainer, wel de Magnet
-B1_ITEMS = [((46, 6), 'MAGNET', 'FLAG_ITEM_CHARGESTONE_B1F_MAGNET'),
-            ((6, 6), 'METAL_COAT', 'FLAG_ITEM_CHARGESTONE_B1F_METAL_COAT')]
-B1_HIDDEN = ((38, 40), 'BIG_NUGGET', 'FLAG_HIDDEN_ITEM_CHARGESTONE_B1F_BIG_NUGGET')
+B1_ITEMS = [((46, 6), 'ITEM_MAGNET', 'FLAG_ITEM_CHARGESTONE_B1F_MAGNET', 1, False),
+            ((7, 7), 'ITEM_METAL_COAT', 'FLAG_ITEM_CHARGESTONE_B1F_METAL_COAT', 1, False),
+            ((38, 40), 'ITEM_BIG_NUGGET', 'FLAG_HIDDEN_ITEM_CHARGESTONE_B1F_BIG_NUGGET', 1, True)]
+B1_NEW = {'ITEM_EJECT_PACK': (32, 7), 'ITEM_TERRAIN_EXTENDER': (47, 38)}
 
 
 def build_b1f():
     m = Cave(54, 46, 7202)
-    m.room(5, 30, 20, 40)          # aankomsthal
-    m.room(14, 23, 16, 29)         # gang omhoog naar de westhal
-    m.room(21, 33, 29, 35)         # gang oost
-    m.room(30, 24, 48, 41)         # grote grot
-    m.room(32, 22, 37, 23)         # inham noord
-    m.room(42, 15, 44, 23)         # gang omhoog
-    m.room(28, 5, 48, 14)          # noordkamer
-    m.room(5, 5, 22, 22)           # westhal met het hek
-    m.room(9, 3, 17, 4)            # inham achter het hek
+    m.lobes(5, 31, 20, 41, 'a', 7)
+    m.path([(14.5, 32.5), (15.5, 27), (14, 21)])
+    m.lobes(5, 16, 22, 22, 'w1')
+    m.lobes(5, 3, 22, 10, 'w3')
+    m.freeze(5, 10, 22, 15, 'F'); m.freeze(2, 3, 4, 16, 'R'); m.freeze(23, 3, 26, 23, 'R')
+    m.path([(19.5, 35), (25, 34), (31, 32)])
+    m.lobes(30, 25, 49, 41, 'c', 9)
+    m.path([(43, 26), (43.5, 20), (42, 15)])
+    m.lobes(28, 4, 49, 14, 'n', 8)
+    m.shape()
+    m.terrace(31, 48, 35, 36)
+    m.terrace(29, 48, 10, 40)
+    m.shape()
     m.build()
+    m.steps()
     m.ladder(*B1_ARRIVE)
     m.ladder(*B1_LADDER)
     # hek van zwevende stenen (rij 12-13) over de hele westhal, met twee gaten (duwstenen)
@@ -225,62 +492,73 @@ def build_b1f():
             m.stone(x, B1_FENCE_Y - 1); x += 2
         else:
             m.shard(x, B1_FENCE_Y); m.shard(x, B1_FENCE_Y - 1); x += 1
-    keep = {B1_ARRIVE, (12, 35), (12, 37), B1_LADDER, (12, 9), (12, 7)} | set(B1_TRAINERS) | {p for p, *_ in B1_ITEMS}
-    keep |= {B1_HIDDEN[0]}
+    fence = len(m.stones)
+    g = m.build()
+    taken = {B1_ARRIVE, B1_LADDER} | set(B1_TRAINERS) | set(B1_BOULDERS)
+    ip = place_items(B1, m, g, B1_ITEMS + new_items(B1, B1_NEW), taken)
+    extra = sight(B1_TRAINERS[0], 'LEFT', 4) | sight(B1_TRAINERS[1], 'DOWN', 4) | ip
     for (bx, by) in B1_BOULDERS:
-        keep |= {(bx, by + 1), (bx, by - 1), (bx, by - 2), (bx, by - 3), (bx, by + 2)}
-    keep |= {(x, 9) for x in range(28, 40)} | {(44, y) for y in range(31, 35)} | {(x, 18) for x in range(15, 19)}
-    for y in range(33, 36):
-        keep |= {(20, y), (21, y), (29, y), (30, y)}
-    for x in range(42, 45):
-        keep |= {(x, 14), (x, 15), (x, 23), (x, 24)}
-    for x in range(14, 17):
-        keep |= {(x, 22), (x, 23), (x, 29), (x, 30)}
-    for (x, y) in [(7, 31), (17, 38), (6, 37), (33, 26), (46, 27), (32, 38), (45, 37), (31, 7), (36, 11), (47, 11),
-                   (7, 17), (20, 20), (10, 20), (19, 6), (8, 7), (37, 31), (40, 35)]:
-        m.stone(x, y)
-    for (x, y) in [(17, 32), (35, 28), (47, 39), (34, 12), (6, 21), (21, 15), (15, 6)]:
-        m.shard(x, y)
-    m.sparks(32, (5, 5, 48, 40), keep | {(x, y) for x in range(5, 23) for y in range(11, 15)})
-    stones_ok(m, keep)
+        extra |= {(bx, by + 1), (bx, by - 1), (bx, by - 2), (bx, by - 3), (bx, by + 2), (bx, by + 3)}
+    extra |= {(x, y) for x in range(5, 23) for y in range(10, 16)}
+    pts = [(B1_ARRIVE[0], B1_ARRIVE[1] - 1), (9, 15), (17, 15), (B1_TRAINERS[0][0] - 1, B1_TRAINERS[0][1]),
+           (B1_TRAINERS[1][0], B1_TRAINERS[1][1] + 1)] + sorted(p for p in ip if p[1] > 15)
+    keep = keep_paths(g, pts, extra)
+    # boven het hek (alleen na het duwen bereikbaar): eigen routes
+    keep |= keep_paths(g, [(9, 10)] + [p for p in ip if p[1] < 12] + [(B1_LADDER[0], B1_LADDER[1] + 1)], set())
+    m.decorate(keep, [('stoneL', 4), ('crysL', 4), ('stone', 14), ('crys', 12), ('pebble', 10), ('shard', 6),
+                      ('scrap', 3), ('crack', 22), ('spark', 16)])
+    stones_ok(m, keep, fence)
     return m, m.build()
 
 
 # --------------------------------------------------------------------- B2F
 B2_ARRIVE = (10, 33)         # ladder omhoog (warp 0)
 B2_COLRESS = (25, 10)
-B2_MACHINE = (24, 7)         # 2x2 'machine' = een zwevende steen met een bord (sign)
+B2_MACHINE = (24, 7)         # Colress' machine (2x2) met een bord op de onderste rij
 B2_ZERAORA = (25, 5)         # verschijnt achter de machine, achterin de hal
-B2_TRAINERS = [(30, 27), (33, 17)]
-B2_ITEMS = [((38, 33), 'ELECTIRIZER', 'FLAG_ITEM_CHARGESTONE_B2F_ELECTIRIZER'),
-            ((11, 6), 'PP_MAX', 'FLAG_ITEM_CHARGESTONE_B2F_PP_MAX')]
+B2_TRAINERS = [(30, 27)]
+B2_ITEMS = [((38, 33), 'ITEM_ELECTIRIZER', 'FLAG_ITEM_CHARGESTONE_B2F_ELECTIRIZER', 1, False),
+            ((11, 6), 'ITEM_PP_MAX', 'FLAG_ITEM_CHARGESTONE_B2F_PP_MAX', 1, False)]
+B2_NEW = {'ITEM_ABILITY_SHIELD': (38, 6), 'ITEM_EXP_CANDY_XL': (36, 21)}
 
 
 def build_b2f():
     m = Cave(46, 40, 7303)
-    m.room(6, 28, 18, 35)          # aankomst
-    m.room(19, 30, 26, 32)         # gang
-    m.room(27, 20, 40, 35)         # middenkamer
-    m.room(32, 14, 34, 19)         # gang omhoog
-    m.room(9, 4, 40, 13)           # Colress' hal
-    m.room(18, 3, 32, 3)           # achterwand iets dieper (ZERAORA)
+    m.lobes(5, 27, 19, 36, 'a')
+    m.path([(17, 31.5), (22, 33), (27.5, 31.5)])
+    m.lobes(26, 20, 42, 36, 'm', 8)
+    m.path([(33.5, 22), (34, 17.5), (32.5, 13.5)])
+    m.lobes(8, 3, 41, 13, 'l', 10)
+    m.freeze(21, 4, 29, 12, 'F')
+    m.shape()
+    m.terrace(27, 41, 25, 35)
+    m.shape()
     m.build()
+    m.steps()
     m.ladder(*B2_ARRIVE)
-    keep = {B2_ARRIVE, (10, 32), (10, 34), B2_COLRESS, (25, 11), (25, 12), (25, 9), (24, 9), (26, 9)} | set(B2_TRAINERS)
-    keep |= {p for p, *_ in B2_ITEMS} | {(25, 5), (25, 4), (26, 5), (24, 5)}
-    keep |= {(30, y) for y in range(22, 27)} | {(33, y) for y in range(18, 20)} | {(x, 17) for x in range(32, 35)}
-    for y in range(30, 33):
-        keep |= {(18, y), (19, y), (26, y), (27, y)}
-    for x in range(32, 35):
-        keep |= {(x, 13), (x, 14), (x, 19), (x, 20)}
-    # de machine: drie stenen in een boog rond Colress' werkplek
-    m.stone(21, 7, 'stoneA'); m.stone(28, 7, 'stoneA_f'); m.stone(24, 7, 'stoneB')
-    for (x, y) in [(7, 29), (15, 33), (29, 33), (38, 22), (36, 30), (12, 9), (36, 5), (17, 5), (31, 10)]:
-        m.stone(x, y)
-    for (x, y) in [(20, 9), (30, 9), (14, 12), (39, 12), (28, 21), (17, 29)]:
-        m.shard(x, y)
-    m.sparks(26, (6, 4, 40, 35), keep)
-    stones_ok(m, keep)
+    # het lab: Colress' machine tapt de stroom af van twee spoelen en twee grote stenen (kabels over de vloer)
+    for i, mt in enumerate(ID['machine']):
+        m.set(B2_MACHINE[0] + i % 2, B2_MACHINE[1] + i // 2, mt, 1)
+        m.blocked_decor.add((B2_MACHINE[0] + i % 2, B2_MACHINE[1] + i // 2))
+    m.one(20, 8, 'coil'); m.one(29, 8, 'coil')
+    m.cable([(23, 8), (22, 8), (21, 8)])
+    m.cable([(26, 8), (27, 8), (28, 8)])
+    m.stone(14, 7, 'stoneL'); m.stone(33, 7, 'stoneL_f')
+    m.cable([(19, 8), (18, 8), (17, 8)])
+    m.cable([(30, 8), (31, 8), (32, 8)])
+    m.one(22, 5, 'console'); m.one(28, 5, 'console')
+    m.one(19, 11, 'scrap'); m.one(31, 11, 'scrap')
+    fixed = len(m.stones)
+    g = m.build()
+    taken = {B2_ARRIVE, B2_COLRESS, B2_ZERAORA} | set(B2_TRAINERS)
+    ip = place_items(B2, m, g, B2_ITEMS + new_items(B2, B2_NEW), taken)
+    extra = sight(B2_TRAINERS[0], 'DOWN', 4) | ip | {(x, y) for x in range(21, 30) for y in range(4, 13)}
+    pts = [(B2_ARRIVE[0], B2_ARRIVE[1] - 1), (B2_COLRESS[0], B2_COLRESS[1] + 1), (B2_ZERAORA[0] - 1, B2_ZERAORA[1]),
+           (B2_TRAINERS[0][0], B2_TRAINERS[0][1] + 1)] + sorted(ip)
+    keep = keep_paths(g, pts, extra)
+    m.decorate(keep, [('stoneL', 2), ('crysL', 3), ('stone', 9), ('crys', 10), ('pebble', 8), ('shard', 5),
+                      ('scrap', 4), ('crack', 18), ('spark', 12)])
+    stones_ok(m, keep, fixed)
     return m, m.build()
 
 
@@ -327,8 +605,24 @@ def write_map(name, objs, warps, bgs, coords=(), head=None):
 warp, obj, tr, ball, sign = bd.warp, bd.obj, bd.tr, bd.ball, bd.sign
 
 
-def hidden(xy, it, flag):
-    return {'type': 'hidden_item', 'x': xy[0], 'y': xy[1], 'elevation': 3, 'item': 'ITEM_' + it, 'flag': flag}
+def hidden(xy, it, flag, q=1):
+    h = {'type': 'hidden_item', 'x': xy[0], 'y': xy[1], 'elevation': 3, 'item': it, 'flag': flag}
+    if q > 1:
+        h['quantity'] = q
+    return h
+
+
+def items_ev(name):
+    objs, bgs = [], []
+    for p, it, fl, q, hid in EV[name]['items']:
+        if hid:
+            bgs.append(hidden(p, it, fl, q))
+        else:
+            o = ball(p[0], p[1], it, fl)
+            if q > 1:
+                o['movement_range_x'] = q
+            objs.append(o)
+    return objs, bgs
 
 
 def boulder(x, y):
@@ -501,12 +795,12 @@ def events():
     S.npc('Plaque', "CHARGESTONE CAVE\n\nThe stones float because of magnetism. Do not lick the stones.\n\n"
           "Someone has added in marker: 'the stones float because of ZERAORA. Lick at own risk.'", 'MSGBOX_SIGN')
     S.write()
-    objs = [tr_obj('OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M', F1_TRAINER, 'DOWN', 4, g1)]
-    objs += [ball(xy[0], xy[1], 'ITEM_' + it, fl) for xy, it, fl in F1_ITEMS]
-    objs += [boulder(*F1_BOULDER)]
+    objs = [tr_obj('OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M', F1_TRAINER, 'DOWN', 3, g1)]
+    io, ib = items_ev(F1)
+    objs += io + [boulder(*F1_BOULDER)]
     warps = [warp(F1_EXIT[0], F1_EXIT[1], HUB_DEST[0], HUB_DEST[1], elev=3),
              warp(F1_LADDER[0], F1_LADDER[1], CONST[B1], 0, elev=3)]
-    bgs = [sign(F1_SIGN[0], F1_SIGN[1], S.P + 'Plaque', 'BG_EVENT_PLAYER_FACING_NORTH'), hidden(*F1_HIDDEN)]
+    bgs = [sign(EV[F1]['sign'][0], EV[F1]['sign'][1], S.P + 'Plaque', 'BG_EVENT_PLAYER_FACING_NORTH')] + ib
     write_map(F1, objs, warps, bgs)
     # ---------------------------------------------------------------- B1F
     S = Scr(B1, head(B1))
@@ -523,11 +817,11 @@ def events():
     S.write()
     objs = [tr_obj('OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F', B1_TRAINERS[0], 'LEFT', 4, a),
             tr_obj('OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M', B1_TRAINERS[1], 'DOWN', 4, b)]
-    objs += [ball(xy[0], xy[1], 'ITEM_' + it, fl) for xy, it, fl in B1_ITEMS]
-    objs += [boulder(*xy) for xy in B1_BOULDERS]
+    io, ib = items_ev(B1)
+    objs += io + [boulder(*xy) for xy in B1_BOULDERS]
     warps = [warp(B1_ARRIVE[0], B1_ARRIVE[1], CONST[F1], 1, elev=3),
              warp(B1_LADDER[0], B1_LADDER[1], CONST[B2], 0, elev=3)]
-    write_map(B1, objs, warps, [hidden(*B1_HIDDEN)])
+    write_map(B1, objs, warps, ib)
     # ---------------------------------------------------------------- B2F
     S = Scr(B2, head(B2, [('MAP_SCRIPT_ON_TRANSITION', B2 + '_OnTransition')]))
     P, T = S.P, S.T
@@ -648,9 +942,10 @@ def events():
                 move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_CHARGESTONE_COLRESS'),
             obj('OBJ_EVENT_GFX_SPECIES(ZERAORA)', B2_ZERAORA[0], B2_ZERAORA[1], P + 'Zeraora',
                 'FLAG_HIDE_CHARGESTONE_ZERAORA', move='MOVEMENT_TYPE_FACE_DOWN', local_id='LOCALID_CHARGESTONE_ZERAORA')]
-    objs += [ball(xy[0], xy[1], 'ITEM_' + it, fl) for xy, it, fl in B2_ITEMS]
+    io, ib = items_ev(B2)
+    objs += io
     warps = [warp(B2_ARRIVE[0], B2_ARRIVE[1], CONST[B1], 1, elev=3)]
-    bgs = [sign(B2_MACHINE[0] + dx, B2_MACHINE[1] + 1, P + 'Machine', 'BG_EVENT_PLAYER_FACING_NORTH') for dx in (0, 1)]
+    bgs = [sign(B2_MACHINE[0] + dx, B2_MACHINE[1] + 1, P + 'Machine', 'BG_EVENT_PLAYER_FACING_NORTH') for dx in (0, 1)] + ib
     write_map(B2, objs, warps, bgs)
 
 
@@ -678,7 +973,7 @@ def checks():
             assert (w['x'], w['y']) in r_all or (w['x'], w['y']) == start, (name, 'warp onbereikbaar', w)
         for b in d['bg_events']:
             p = (b['x'], b['y'])
-            assert p in r_all or mf.next_to(r_all, *p), (name, 'bg onbereikbaar', p)
+            assert p in r_all if b['type'] == 'hidden_item' else mf.next_to(r_all, *p), (name, 'bg onbereikbaar', p)
         print(name, 'bereikbaar:', len(r_all), 'tegels')
     # B1F: het hek houdt de ladder dicht; één duw omhoog in een gat opent hem (licht puzzelpad)
     g = MAPS[B1][1]
@@ -692,7 +987,7 @@ def checks():
     g = MAPS[F1][1]
     d = json.load(open('data/maps/%s/map.json' % F1))
     solid = {(o['x'], o['y']) for o in d['object_events']} - {F1_EXIT}
-    assert not mf.next_to(mf.reachable(g, F1_EXIT, solid), *F1_ITEMS[1][0]), '1F: zijgrot lekt'
+    assert not mf.next_to(mf.reachable(g, F1_EXIT, solid), *EV[F1]['items'][1][0]), '1F: zijgrot lekt'
 
 
 def overview(dirn):
@@ -707,6 +1002,8 @@ def overview(dirn):
 
 def main():
     flags()
+    import nieuwe_items as ni
+    ni.flags()
     build_maps()
     mapsecs()
     events()

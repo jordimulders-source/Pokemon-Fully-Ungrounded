@@ -5,6 +5,10 @@
                        met donkerblauwe paletten + achteraan eigen metatiles op palet 9:
                        zwevende magneetstenen (2x2, twee vormen, elk ook gespiegeld), een zwevende scherf (1x1)
                        en twee vonkjes op de vloer (beloopbaar). De stenen zijn procedureel getekend (geen bronsheet).
+                       9 okt (Jordi: te steriel): grote zwevende steen (3x3), kleine steentjes, kristallen (1x1, 2x2),
+                       gloeiende scheuren (beloopbaar) op palet 9; kabels (beloopbaar), Colress' machineresten,
+                       een terminal, een spoel en schroot op palet 11 (staal/koper/amber). Ongebruikte Meteor Falls-
+                       tiles vallen weg (de tileset zat vol), de metatile-nummers blijven gelijk.
 Gebruik: python3 tools/grounded/maptools/chargestone_tiles.py   (daarna make voor de tiles.4bpp)
 Geeft de metatile-nummers terug via ids() (ook zonder opnieuw te genereren)."""
 import os, struct, math, random
@@ -20,6 +24,7 @@ PRIM_SRC = 'data/tilesets/primary/general'
 PRIM = 'data/tilesets/primary/chargestone_general'
 PAL = 9
 DARK = 10        # verdonkerd palet 6: rotsbovenkant buiten de wanden
+MPAL = 11        # machines en kabels
 FLOOR_MT = 0x201
 BACKDROP = (10, 14, 32)
 VOID_MT = 0x211          # Meteor Falls: alleen tile 0 -> achtergrondkleur
@@ -28,6 +33,10 @@ VOID_MT = 0x211          # Meteor Falls: alleen tile 0 -> achtergrondkleur
 CS = [(255, 0, 255), (12, 18, 48), (28, 40, 88), (40, 60, 120), (60, 88, 160), (88, 124, 196), (128, 164, 224),
       (32, 104, 216), (56, 152, 248), (120, 200, 248), (200, 236, 248), (248, 248, 248), (72, 136, 216),
       (144, 192, 240), (0, 0, 0), (0, 0, 0)]
+# palet 11: staal, koper, amber, rood, kabels
+MS = [(255, 0, 255), (14, 16, 26), (40, 46, 60), (72, 82, 100), (118, 128, 146), (184, 192, 204), (92, 54, 34),
+      (156, 94, 50), (214, 150, 86), (248, 188, 56), (216, 52, 44), (248, 248, 248), (96, 204, 248), (24, 30, 44),
+      (52, 62, 82), (0, 0, 0)]
 
 
 def jasc(path):
@@ -170,6 +179,197 @@ def _sparkle(seed):
     return img
 
 
+def _outline(img, body, col=1):
+    out = img.copy()
+    h, w = img.shape
+    for y in range(h):
+        for x in range(w):
+            if body[y, x]:
+                continue
+            if any(0 <= y + dy < h and 0 <= x + dx < w and body[y + dy, x + dx] for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                out[y, x] = col
+    return out
+
+
+def _crystal(seed, w=16, h=16, n=3, base=None, glow=True):
+    """Kristalcluster dat uit de vloer groeit (palet 9): schuine spiesen, licht links, wit puntje, gloed aan de voet."""
+    rnd = random.Random(seed)
+    img = np.zeros((h, w), np.uint8)
+    body = np.zeros((h, w), bool)
+    base = base if base is not None else h - 3
+    k = w / 16.0
+    spikes = sorted(((rnd.uniform(w * 0.28, w * 0.72), rnd.randint(int(h * 0.45), int(h * 0.8)), rnd.uniform(1.6, 2.6) * k,
+                      rnd.uniform(-0.3, 0.3) / k) for _ in range(n)), key=lambda t: -t[1])
+    for bx, hgt, wid, lean in spikes:
+        for t in range(hgt):
+            yy = base - t
+            half = wid * (1 - t / hgt) + 0.35
+            xc = bx + lean * t
+            for xx in range(int(math.floor(xc - half)), int(math.ceil(xc + half)) + 1):
+                if 0 <= yy < h and 0 <= xx < w and abs(xx - xc) <= half:
+                    img[yy, xx] = 11 if t >= hgt - 2 else (10 if xx < xc - 0.3 else 9 if xx < xc + 0.4 else 7)
+                    body[yy, xx] = True
+    out = _outline(img, body)
+    if glow:
+        for y in range(base + 1, h):
+            for x in range(w):
+                if not out[y, x] and abs(x - w / 2) < w * 0.35 and (x + y) % 2 == 0:
+                    out[y, x] = 13 if y == base + 1 else 12
+    return out
+
+
+def _crack(seed):
+    """Gloeiende scheur in de vloer (beloopbaar): grillige lijn met een geditherde blauwe gloed."""
+    rnd = random.Random(seed)
+    img = np.zeros((16, 16), np.uint8)
+    pts = []
+    x, y = rnd.uniform(1, 4), rnd.uniform(3, 12)
+    while x < 15:
+        pts.append((int(x), int(y)))
+        x += rnd.uniform(0.8, 1.6); y = min(14, max(1, y + rnd.uniform(-1.3, 1.3)))
+    core = set()
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        for i in range(5):
+            core.add((round(x0 + (x1 - x0) * i / 4), round(y0 + (y1 - y0) * i / 4)))
+    if rnd.random() < 0.7:                           # zijtak
+        bx, by = pts[len(pts) // 2]
+        d = rnd.choice((-1, 1))
+        for i in range(1, rnd.randint(3, 5)):
+            core.add((bx + i // 2, by + d * i))
+    for (cx_, cy_) in core:
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                xx, yy = cx_ + dx, cy_ + dy
+                if 0 <= xx < 16 and 0 <= yy < 16 and (xx, yy) not in core and not img[yy, xx] and (xx + yy) % 2 == 0:
+                    img[yy, xx] = 12
+    for (cx_, cy_) in core:
+        if 0 <= cx_ < 16 and 0 <= cy_ < 15:
+            img[cy_ + 1, cx_] = 7 if (cx_, cy_ + 1) not in core else img[cy_ + 1, cx_]
+    for (cx_, cy_) in core:
+        if 0 <= cx_ < 16 and 0 <= cy_ < 16:
+            img[cy_, cx_] = 10 if rnd.random() < 0.5 else 9
+    return img
+
+
+def _seg_dist(px, py, a, b):
+    (x0, y0), (x1, y1) = a, b
+    vx, vy = x1 - x0, y1 - y0
+    t = max(0.0, min(1.0, ((px - x0) * vx + (py - y0) * vy) / float(vx * vx + vy * vy or 1)))
+    return math.hypot(px - (x0 + t * vx), py - (y0 + t * vy))
+
+
+def _cable(kind):
+    """Kabel over de vloer (palet 11, beloopbaar): H, V of een bocht (NE = van boven naar rechts, enz.)."""
+    c = 7.5
+    ends = {'N': (c, -2), 'S': (c, 17), 'W': (-2, c), 'E': (17, c)}
+    segs = [(ends[kind[0]], (c, c)), ((c, c), ends[kind[1]])]
+    img = np.zeros((16, 16), np.uint8)
+    for y in range(16):
+        for x in range(16):
+            d = min(_seg_dist(x, y, a, b) for a, b in segs)
+            if d <= 0.75:
+                img[y, x] = 14
+            elif d <= 1.7:
+                img[y, x] = 13
+            elif d <= 2.5:
+                img[y, x] = 1
+    return img
+
+
+def _machine(seed):
+    """Kapotte generator van Colress (2x2, palet 11): stalen kast, panelen, amber lampjes, een verbogen koperspoel."""
+    rnd = random.Random(seed)
+    img = np.zeros((32, 32), np.uint8)
+    body = np.zeros((32, 32), bool)
+    for y in range(9, 29):
+        for x in range(3, 29):
+            body[y, x] = True
+            img[y, x] = 4 if y < 13 else 3
+    for y in range(14, 28):                          # panelen
+        img[y, 10] = img[y, 21] = 2
+    for x in range(4, 28):
+        img[13, x] = 2; img[28, x] = 2
+    for y in range(16, 26, 2):                       # ventilatierooster
+        for x in range(12, 20):
+            img[y, x] = 2
+    for x, y, c in ((6, 16, 9), (6, 19, 9), (6, 22, 10), (24, 16, 12), (25, 18, 9)):
+        img[y, x] = c; img[y, x + 1] = c
+    for y in range(10, 12):                          # bovenkant licht
+        for x in range(5, 27):
+            if (x + y) % 3:
+                img[y, x] = 5
+    for t in range(10):                              # verbogen spoel
+        x, y = 20 + int(1.5 * math.sin(t / 2.0)), 9 - t
+        for dx in (-2, -1, 0, 1, 2):
+            if 0 <= y < 32:
+                img[y, x + dx] = (8 if (t % 2) else 7) if abs(dx) < 2 else 6
+                body[y, x + dx] = True
+    for _ in range(5):                               # vonken
+        x, y = rnd.randint(14, 28), rnd.randint(0, 6)
+        if not body[y, x]:
+            img[y, x] = 12
+    for x in range(14, 22):                          # deuk/scheur
+        y = 20 + (x - 14) // 3
+        img[y, x] = 1
+    out = _outline(img, body)
+    for x in range(4, 28):                           # schaduw
+        if (x % 2) == 0:
+            out[30, x] = 13
+    return out
+
+
+def _console(seed):
+    img = np.zeros((16, 16), np.uint8)
+    body = np.zeros((16, 16), bool)
+    for y in range(4, 15):
+        for x in range(2, 14):
+            body[y, x] = True; img[y, x] = 3 if y > 10 else 4
+    for y in range(6, 10):
+        for x in range(4, 12):
+            img[y, x] = 12 if (y + x) % 3 else 11
+    img[12, 4] = 9; img[12, 6] = 10; img[12, 9] = 9
+    return _outline(img, body)
+
+
+def _coil(seed):
+    img = np.zeros((16, 16), np.uint8)
+    body = np.zeros((16, 16), bool)
+    for y in range(12, 15):
+        for x in range(3, 13):
+            body[y, x] = True; img[y, x] = 3 if y > 12 else 4
+    for y in range(4, 12):
+        for x in range(6, 10):
+            body[y, x] = True; img[y, x] = 8 if y % 2 else 7
+    for y in range(1, 5):
+        for x in range(5, 11):
+            if (x - 7.5) ** 2 + (y - 2.5) ** 2 <= 5:
+                body[y, x] = True; img[y, x] = 11 if (x < 7 and y < 3) else 5
+    out = _outline(img, body)
+    for x, y in ((3, 2), (12, 3), (2, 6), (13, 7)):
+        out[y, x] = 12
+    return out
+
+
+def _scrap(seed):
+    rnd = random.Random(seed)
+    img = np.zeros((16, 16), np.uint8)
+    body = np.zeros((16, 16), bool)
+    for _ in range(3):
+        cx_, cy_ = rnd.uniform(4, 12), rnd.uniform(7, 12)
+        rx, ry, a = rnd.uniform(2, 4), rnd.uniform(1, 2.2), rnd.uniform(0, math.pi)
+        for y in range(16):
+            for x in range(16):
+                u = (x - cx_) * math.cos(a) + (y - cy_) * math.sin(a)
+                v = -(x - cx_) * math.sin(a) + (y - cy_) * math.cos(a)
+                if abs(u) <= rx and abs(v) <= ry:
+                    body[y, x] = True
+                    img[y, x] = 5 if v < -ry * 0.4 else 4 if v < ry * 0.3 else 3
+    for t in range(9):                               # koperdraadje
+        x, y = 3 + t, int(13 - 2 * math.sin(t / 2.5))
+        img[y, x] = 7; body[y, x] = True
+    return _outline(img, body)
+
+
 # ---------------------------------------------------------------------------------------------- opbouw
 def _tiles_of(png):
     idx = np.array(Image.open(png))
@@ -192,6 +392,8 @@ def build():
         cols = jasc(SRC + '/palettes/%02d.pal' % i)
         if i == PAL:
             cols = CS
+        elif i == MPAL:
+            cols = MS
         elif i == DARK:
             p6 = jasc(SRC + '/palettes/06.pal')
             cols = [p6[0]] + [tuple(int(v * 0.42) for v in tint(c)) for c in p6[1:]]
@@ -201,6 +403,15 @@ def build():
     tiles = _tiles_of(SRC + '/tiles.png')[:NT_SRC]
     mt = bytearray(open(SRC + '/metatiles.bin', 'rb').read())
     at = bytearray(open(SRC + '/metatile_attributes.bin', 'rb').read())
+    # ongebruikte Meteor Falls-tiles weglaten (de tileset zat vol); metatiles naar de nieuwe nummers
+    used = sorted({(e & 0x3FF) - 512 for e in struct.unpack('<%dH' % (len(mt) // 2), mt) if (e & 0x3FF) >= 512} | {0})
+    remap = {o: n for n, o in enumerate(used)}
+    tiles = [tiles[o] for o in used]
+    ents = list(struct.unpack('<%dH' % (len(mt) // 2), mt))
+    for i, e in enumerate(ents):
+        if (e & 0x3FF) >= 512:
+            ents[i] = (e & 0xFC00) | (512 + remap[(e & 0x3FF) - 512])
+    mt = bytearray(struct.pack('<%dH' % len(ents), *ents))
     floor = struct.unpack_from('<4H', mt, (FLOOR_MT - 512) * 16)
     floor_attr = struct.unpack_from('<H', at, (FLOOR_MT - 512) * 2)[0]
     cache = {}
@@ -217,25 +428,27 @@ def build():
         cache[t.tobytes()] = len(tiles) - 1
         return len(tiles) - 1, 0
 
-    def ent(t):
+    def ent(t, pal=PAL):
         n, fl = tile(t)
         if n == 0 and not t.any():
             return 0
-        return (512 + n) | (fl << 10) | (PAL << 12)
+        return (512 + n) | (fl << 10) | (pal << 12)
 
     out = {}
 
-    def add(key, art, cols, rows, blocked, flip=False):
+    def add(key, art, cols, rows, blocked, flip=False, pal=PAL, walk_covered=False):
         ids = []
         for r in range(rows):
             for c in range(cols):
                 q = art[r * 16:r * 16 + 16, c * 16:c * 16 + 16]
                 if flip:
                     q = art[r * 16:r * 16 + 16, (cols - 1 - c) * 16:(cols - c) * 16][:, ::-1]
-                top = [ent(q[sy:sy + 8, sx:sx + 8]) for sy in (0, 8) for sx in (0, 8)]
+                top = [ent(q[sy:sy + 8, sx:sx + 8], pal) for sy in (0, 8) for sx in (0, 8)]
                 mt.extend(struct.pack('<8H', *floor, *top))
-                # COVERED: de speler loopt altijd vóór de steen langs (geen afgekapte hoofden)
-                at.extend(struct.pack('<H', 0x1000 if blocked else floor_attr))
+                # COVERED: de speler loopt altijd vóór de steen langs (geen afgekapte hoofden); beloopbaar decor
+                # houdt het vloergedrag (wilde Pokemon) maar ligt ook onder de speler
+                at.extend(struct.pack('<H', 0x1000 if blocked else (0x1000 | (floor_attr & 0xFF)) if walk_covered
+                                      else floor_attr))
                 ids.append(len(mt) // 16 - 1 + 512)
         out[key] = ids
 
@@ -259,6 +472,23 @@ def build():
         mt.extend(struct.pack('<8H', *e))
         at.extend(struct.pack('<H', 0))
         out[key] = [len(mt) // 16 - 1 + 512]
+    # 9 okt: meer decor
+    sL = _stone(53, w=48, h=48, ry=15.5, cy=17.0, crystals=5)
+    add('stoneL', sL, 3, 3, True)
+    add('stoneL_f', sL, 3, 3, True, flip=True)
+    add('pebble1', _stone(71, w=16, h=16, ry=4.2, cy=6.0, crystals=1), 1, 1, True)
+    add('pebble2', _stone(89, w=16, h=16, ry=4.6, cy=6.5, crystals=1), 1, 1, True)
+    add('crys1', _crystal(5, n=3), 1, 1, True)
+    add('crys2', _crystal(17, n=4), 1, 1, True)
+    add('crysL', _crystal(29, w=32, h=32, n=6), 2, 2, True)
+    for i, sd in enumerate((3, 14, 27)):
+        add('crack%d' % (i + 1), _crack(sd), 1, 1, False, walk_covered=True)
+    for k in ('WE', 'NS', 'NE', 'NW', 'SE', 'SW'):
+        add('cable' + k, _cable(k), 1, 1, False, pal=MPAL, walk_covered=True)
+    add('machine', _machine(7), 2, 2, True, pal=MPAL)
+    add('console', _console(1), 1, 1, True, pal=MPAL)
+    add('coil', _coil(1), 1, 1, True, pal=MPAL)
+    add('scrap', _scrap(9), 1, 1, True, pal=MPAL)
     assert len(tiles) <= 512, len(tiles)
     n = (len(tiles) + 15) // 16 * 16
     img = np.zeros((n // 16 * 8, 128), np.uint8)
@@ -275,7 +505,12 @@ def build():
     prev = Image.new('RGB', (16 * 8, 40), (40, 60, 120))
     pal = CS
     x = 0
-    for art in (sA, sB, _shard(3), _sparkle(5), _sparkle(11)):
+    prev = Image.new('RGB', (520, 52), (40, 60, 120))
+    arts = [(a, CS) for a in (sA, sB, sL, _shard(3), _sparkle(5), _stone(71, w=16, h=16, ry=4.2, cy=6.0, crystals=1),
+                              _crystal(5, n=3), _crystal(17, n=4), _crystal(29, w=32, h=32, n=6), _crack(3), _crack(14),
+                              _crack(27))]
+    arts += [(a, MS) for a in (_cable('WE'), _cable('NE'), _cable('SW'), _machine(7), _console(1), _coil(1), _scrap(9))]
+    for art, pal in arts:
         a = Image.fromarray(np.array([[pal[v] if v else (40, 60, 120) for v in row] for row in art], np.uint8))
         prev.paste(a, (x, 0)); x += art.shape[1] + 4
     return out, prev
@@ -285,7 +520,10 @@ def ids():
     """Metatile-nummers van de eigen tegels (vaste volgorde, zie build())."""
     first = 512 + 159
     names = [('stoneA', 4), ('stoneA_f', 4), ('stoneB', 4), ('stoneB_f', 4), ('shard', 1), ('spark1', 1), ('spark2', 1),
-             ('rockD', 1), ('lipD', 1), ('edgeED', 1), ('edgeWD', 1), ('rimSD', 1)]
+             ('rockD', 1), ('lipD', 1), ('edgeED', 1), ('edgeWD', 1), ('rimSD', 1),
+             ('stoneL', 9), ('stoneL_f', 9), ('pebble1', 1), ('pebble2', 1), ('crys1', 1), ('crys2', 1), ('crysL', 4),
+             ('crack1', 1), ('crack2', 1), ('crack3', 1), ('cableWE', 1), ('cableNS', 1), ('cableNE', 1), ('cableNW', 1),
+             ('cableSE', 1), ('cableSW', 1), ('machine', 4), ('console', 1), ('coil', 1), ('scrap', 1)]
     out, n = {}, first
     for k, c in names:
         out[k] = list(range(n, n + c)); n += c

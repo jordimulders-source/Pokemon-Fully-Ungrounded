@@ -2554,3 +2554,91 @@ const u16 gTilesetPalettes_UnchartedIsle[][16] =
     INCBIN_U16("data/tilesets/secondary/uncharted_isle/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/uncharted_isle/palettes/15.gbapal"),
 };
+
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u32 gTilesetTiles_Glimwood[] = INCBIN_U32("data/tilesets/secondary/glimwood/tiles.4bpp.fastSmol");
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gTilesetPalettes_Glimwood[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood/palettes/15.gbapal"),
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gTilesetPalettes_GlimwoodDying[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/glimwood_dying/palettes/15.gbapal"),
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gTilesetPalettes_GlimwoodGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gTilesetPalettes_GlimwoodGeneralDying[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/15.gbapal"),
+};

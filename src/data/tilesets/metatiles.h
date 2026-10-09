@@ -277,3 +277,8 @@ const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatiles.bin");
 const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatile_attributes.bin");
+
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
+const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");

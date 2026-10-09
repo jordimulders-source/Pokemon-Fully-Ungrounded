@@ -216,7 +216,7 @@ HINTS = [
      "SPEAR PILLAR, the diamond altar. Time is waiting, impatiently."),
     ('PALKIA', 'FLAG_CORONET_PALKIA_DONE',
      "SPEAR PILLAR, the pearl altar. Space is waiting, in all directions."),
-    # --- Ultra Space (achterin ALTERING CAVE, ultra_space.py); Ultra Beasts tellen mee (isUltraBeast)
+    # --- Ultra Space (achterin ALTERING CAVE, ultra_space.py); Ultra Beasts tellen NIET mee (Jordi 9 okt; Necrozma wel, die is legendary)
     ('COSMOG', None,
      "PROF. COZMO in FALLARBOR found a nebula in his bird bath. He would like it to be your problem now."),
     ('SOLGALEO', None,
@@ -271,7 +271,7 @@ def species_info():
             if not nd:
                 continue
             flag = lambda k: bool(re.search(k + r'\s*=\s*TRUE', full))  # noqa: E731
-            info[sp] = (nd.group(1), flag('isLegendary') or flag('isUltraBeast'), flag('isMythical'), flag('isParadox'))
+            info[sp] = (nd.group(1), flag('isLegendary'), flag('isMythical'), flag('isParadox'))
     alias = {}
     for m in re.finditer(r'#define (SPECIES_\w+)\s+(SPECIES_\w+)', open('include/constants/species.h').read()):
         alias[m.group(1)] = m.group(2)

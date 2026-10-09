@@ -72,7 +72,7 @@ def flags():
     p = 'include/constants/flags.h'
     s = open(p).read()
     blk = ('// coronet { (tools/grounded/maptools/coronet.py; FLAG_GROUNDED 1160-1219: 1180-1186 nieuwe items '
-           '(blok nieuwe_items), 1173-1179 en 1187-1219 nog vrij)\n')
+           '(blok nieuwe_items), 1173 SickBlik (sickblik-blok), 1174-1179 en 1187-1219 nog vrij)\n')
     for n, name, why in FLAGS:
         assert 1160 <= n <= 1219
         blk += '#define %-48s FLAG_GROUNDED(%d) // Project Grounded: %s\n' % (name, n, why)

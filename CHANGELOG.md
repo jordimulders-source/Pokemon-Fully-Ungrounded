@@ -17752,3 +17752,8 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.200] - Mitch-thema v6: schonere horn
 - Feedback van Mitch: de horn klonk 'low quality'. Oorzaak: één sample die tot x1,7 omhoog werd gespeeld (terugvouwende hoge tonen), vervorming zonder oversampling en een korrelige uitsterftijd. Nu één sample per noot op de mixfrequentie, 8x oversampled vervorming en een schone loop (ruis −27..−31 dB i.p.v. −10..−15 dB).
 - Twee varianten: **A** dezelfde klank als v5 maar schoon, **B** (standaard) hoger en feller, richting de trompetten van het Elite Four-thema. Noten, ritme, wobbles en mix ongewijzigd. Wisselen: `python3 tools/grounded/mitch_theme.py a|b`.
+
+### [v0.9.201] - Dave en SickBlik post-game op lv 100
+- **Dave** (`TRAINER_DAVE_PARADISO`): na de Hall of Fame op zijn ligstoel in het Paradiso Resort. Eerst zijn pensioentekst, dan een comeback en meteen het gevecht: zijn Victory Road-team op lv 100 (Gengar, Gliscor, Ceruledge, Iron Valiant, Garchomp, Kingambit), eenmalig.
+- **SickBlik** (`TRAINER_SICKBLIK_DEV`): reist na de Hall of Fame als developer rond om te kijken of alles klopt; elke dag in Mauville, Fortree, Lilycove of Pacifidlog (special `Grounded_SickBlikSpot`). Eenmalig gevecht met zijn Victory Road-team op lv 100 (sterke AI, 2 Full Restores); daarna willekeurige developer-grappen.
+- Trainers 1089 en 1185, flag `FLAG_GROUNDED(1173)`. Gevechtsstart van beide getest in de emulator.

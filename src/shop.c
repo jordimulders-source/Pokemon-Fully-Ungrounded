@@ -92,6 +92,7 @@ struct MartInfo
     u16 itemCount;
     u8 windowId;
     u8 martType;
+    bool8 bpShop; // Grounded: prijzen in Battle Points (Battle Frontier), alleen kopen
 };
 
 struct ShopData
@@ -348,7 +349,7 @@ static u8 CreateShopMenu(u8 martType)
     LockPlayerFieldControls();
     sMartInfo.martType = martType;
 
-    if (martType == MART_TYPE_NORMAL)
+    if (martType == MART_TYPE_NORMAL && !sMartInfo.bpShop)
     {
         struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
         winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
@@ -388,6 +389,60 @@ static u32 ShopBuyPrice(u16 itemId)
         }
     }
     return GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT);
+}
+
+// Grounded: BP-winkels (Battle Frontier) betalen met Battle Points i.p.v. geld
+static u32 ShopFunds(void)
+{
+    if (sMartInfo.bpShop)
+        return gSaveBlock2Ptr->frontier.battlePoints;
+    return GetMoney(&gSaveBlock1Ptr->money);
+}
+
+static void ShopRemoveFunds(u32 cost)
+{
+    if (sMartInfo.bpShop)
+    {
+        if (gSaveBlock2Ptr->frontier.battlePoints < cost)
+            gSaveBlock2Ptr->frontier.battlePoints = 0;
+        else
+            gSaveBlock2Ptr->frontier.battlePoints -= cost;
+    }
+    else
+    {
+        RemoveMoney(&gSaveBlock1Ptr->money, cost);
+    }
+}
+
+static const u8 sText_BpVar1[] = _("{STR_VAR_1} BP");
+static const u8 sText_BpLabel[] = _("BP");
+static const u8 sText_NotEnoughBp[] = _("You don't have enough BP.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Var1AndYouWantedVar2Bp[] = _("{STR_VAR_1}? And you wanted {STR_VAR_2}?\nThat will be {STR_VAR_3} BP.");
+
+// Bedrag rechts uitgelijnd in een venster van 10 tegels breed (geldvak / aantal-en-prijsvak)
+static void ShopPrintFunds(u8 windowId, u32 amount, u8 speed)
+{
+    if (!sMartInfo.bpShop)
+    {
+        PrintMoneyAmount(windowId, CalculateMoneyTextHorizontalPosition(amount), 1, amount, speed);
+        return;
+    }
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 5);
+    StringExpandPlaceholders(gStringVar4, sText_BpVar1);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 78), 1, speed, NULL);
+}
+
+static void ShopPrintFundsBox(void)
+{
+    if (!sMartInfo.bpShop)
+    {
+        PrintMoneyAmountInMoneyBox(WIN_MONEY, GetMoney(&gSaveBlock1Ptr->money), 0);
+        return;
+    }
+    FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(1));
+    AddTextPrinterParameterized(WIN_MONEY, FONT_NORMAL, sText_BpLabel, 2, 1, 0, NULL);
+    ConvertIntToDecimalStringN(gStringVar4, ShopFunds(), STR_CONV_MODE_LEFT_ALIGN, 5);
+    AddTextPrinterParameterized(WIN_MONEY, FONT_NORMAL, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 78), 1, 0, NULL);
 }
 
 static void SetShopMenuCallback(void (*callback)(void))
@@ -664,7 +719,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         if (GetItemImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
             StringCopy(gStringVar4, gText_SoldOut);
         else
-            StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+            StringExpandPlaceholders(gStringVar4, sMartInfo.bpShop ? sText_BpVar1 : gText_PokedollarVar1);
         x = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 120);
         AddTextPrinterParameterized4(windowId, FONT_NARROW, x, y, 0, 0, sShopBuyMenuTextColors[COLORID_ITEM_LIST], TEXT_SKIP_DRAW, gStringVar4);
     }
@@ -794,8 +849,16 @@ static void BuyMenuDrawGraphics(void)
 {
     BuyMenuDrawMapGraphics();
     BuyMenuCopyMenuBgToBg1TilemapBuffer();
-    AddMoneyLabelObject(19, 11);
-    PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 1, 13, GetMoney(&gSaveBlock1Ptr->money));
+    if (sMartInfo.bpShop)
+    {
+        DrawStdFrameWithCustomTileAndPalette(WIN_MONEY, FALSE, 1, 13);
+        ShopPrintFundsBox();
+    }
+    else
+    {
+        AddMoneyLabelObject(19, 11);
+        PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 1, 13, GetMoney(&gSaveBlock1Ptr->money));
+    }
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -1025,9 +1088,9 @@ static void Task_BuyMenu(u8 taskId)
 
             if (GetItemImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
                 BuyMenuDisplayMessage(taskId, gText_ThatItemIsSoldOut, BuyMenuReturnToItemList);
-            else if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
+            else if (ShopFunds() < sShopData->totalCost)
             {
-                BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
+                BuyMenuDisplayMessage(taskId, sMartInfo.bpShop ? sText_NotEnoughBp : gText_YouDontHaveMoney, BuyMenuReturnToItemList);
             }
             else
             {
@@ -1090,7 +1153,7 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
     if (sShopData->totalCost == 0)
         maxQuantity = MAX_BAG_ITEM_CAPACITY;
     else
-        maxQuantity = GetMoney(&gSaveBlock1Ptr->money) / sShopData->totalCost;
+        maxQuantity = ShopFunds() / sShopData->totalCost;
 
     if (maxQuantity > MAX_BAG_ITEM_CAPACITY)
         sShopData->maxQuantity = MAX_BAG_ITEM_CAPACITY;
@@ -1122,7 +1185,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             CopyItemName(tItemId, gStringVar1);
             ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
             ConvertIntToDecimalStringN(gStringVar3, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
-            BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+            BuyMenuDisplayMessage(taskId, sMartInfo.bpShop ? sText_Var1AndYouWantedVar2Bp : gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
         }
         else if (JOY_NEW(B_BUTTON))
         {
@@ -1179,9 +1242,9 @@ static void BuyMenuTryMakePurchase(u8 taskId)
 static void BuyMenuSubtractMoney(u8 taskId)
 {
     IncrementGameStat(GAME_STAT_SHOPPED);
-    RemoveMoney(&gSaveBlock1Ptr->money, sShopData->totalCost);
+    ShopRemoveFunds(sShopData->totalCost);
     PlaySE(SE_SHOP);
-    PrintMoneyAmountInMoneyBox(WIN_MONEY, GetMoney(&gSaveBlock1Ptr->money), 0);
+    ShopPrintFundsBox();
 
     if (sMartInfo.martType == MART_TYPE_NORMAL)
         gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
@@ -1251,7 +1314,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
-    PrintMoneyAmount(WIN_QUANTITY_PRICE, CalculateMoneyTextHorizontalPosition(sShopData->totalCost), 1, sShopData->totalCost, TEXT_SKIP_DRAW);
+    ShopPrintFunds(WIN_QUANTITY_PRICE, sShopData->totalCost, TEXT_SKIP_DRAW);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, 0, 1, 0, COLORID_NORMAL);
@@ -1268,7 +1331,8 @@ static void Task_ExitBuyMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        RemoveMoneyLabelObject();
+        if (!sMartInfo.bpShop)
+            RemoveMoneyLabelObject();
         BuyMenuFreeMemory();
         SetMainCallback2(CB2_ReturnToField);
         DestroyTask(taskId);
@@ -1315,6 +1379,7 @@ static void RecordItemPurchase(u8 taskId)
 
 void CreatePokemartMenu(const u16 *itemsForSale)
 {
+    sMartInfo.bpShop = FALSE;
     CreateShopMenu(MART_TYPE_NORMAL);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
@@ -1327,8 +1392,20 @@ void CreatePokemartMenuWithPrices(const u16 *itemsForSale, const u16 *prices)
     sMartInfo.priceList = prices;
 }
 
+// Grounded: winkel met prijzen in Battle Points (src/bp_shop.c); alleen kopen
+void CreateBpMartMenu(const u16 *itemsForSale, const u16 *prices)
+{
+    sMartInfo.bpShop = TRUE;
+    CreateShopMenu(MART_TYPE_NORMAL);
+    SetShopItemsForSale(itemsForSale);
+    sMartInfo.priceList = prices;
+    ClearItemPurchases();
+    SetShopMenuCallback(ScriptContext_Enable);
+}
+
 void CreateDecorationShop1Menu(const u16 *itemsForSale)
 {
+    sMartInfo.bpShop = FALSE;
     CreateShopMenu(MART_TYPE_DECOR);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
@@ -1336,6 +1413,7 @@ void CreateDecorationShop1Menu(const u16 *itemsForSale)
 
 void CreateDecorationShop2Menu(const u16 *itemsForSale)
 {
+    sMartInfo.bpShop = FALSE;
     CreateShopMenu(MART_TYPE_DECOR2);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);

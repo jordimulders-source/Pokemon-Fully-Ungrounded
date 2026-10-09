@@ -115,9 +115,11 @@ ITEMS = [
     (1464, 'UltraSpace_Buzzwole', 'ITEM_FIGHTING_MEMORY', 1, False, 'Ultra Space, sportschool: Fighting Memory'),
     (1465, 'UltraSpace_Stakataka', 'ITEM_STEEL_MEMORY', 1, True, 'Ultra Space, muur: verborgen Steel Memory'),
     (1466, 'UltraSpace_Guzzlord', 'ITEM_DARK_GEM', 2, False, 'Ultra Space, afvalvlakte: Dark Gems'),
+    # items die nog nergens te krijgen waren (item_check.py, 9 okt; met de hand in map.json gezet; flags FLAG_GROUNDED 1620-1699)
+    (1620, 'Route104_PrettyPetalFlowerShop', 'ITEM_RED_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1460, 1479), (1580, 1619)]   # eigen blokken per gebied (zie flags.h)
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1460, 1479), (1580, 1619), (1620, 1699)]   # eigen blokken per gebied (zie flags.h)
 
 
 def flag_name(n, mp, it, hid):

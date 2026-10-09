@@ -37,7 +37,7 @@ IN_DE_MAAK = {
 }
 ITEM_C_SOURCES = ['src/floating_market.c', 'src/fishing_tournament.c', 'src/apricorn_tree.c', 'src/new_game.c',
                   'src/data/battle_frontier/battle_frontier_exchange_corner.h', 'src/data/battle_frontier/trainer_hill.h',
-                  'src/battle_casino.c', 'src/gen1_ghost.c']
+                  'src/battle_casino.c', 'src/gen1_ghost.c', 'src/bp_shop.c']
 INCENSE = {'SPECIES_MUNCHLAX': 'ITEM_FULL_INCENSE', 'SPECIES_HAPPINY': 'ITEM_LUCK_INCENSE', 'SPECIES_MIME_JR': 'ITEM_ODD_INCENSE',
            'SPECIES_BONSLY': 'ITEM_ROCK_INCENSE', 'SPECIES_MANTYKE': 'ITEM_WAVE_INCENSE', 'SPECIES_CHINGLING': 'ITEM_PURE_INCENSE',
            'SPECIES_BUDEW': 'ITEM_ROSE_INCENSE', 'SPECIES_AZURILL': 'ITEM_SEA_INCENSE', 'SPECIES_WYNAUT': 'ITEM_LAX_INCENSE'}

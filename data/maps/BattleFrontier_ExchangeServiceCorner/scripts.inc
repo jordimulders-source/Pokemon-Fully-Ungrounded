@@ -796,3 +796,230 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MasterBall::
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmMasterBall:
 	.string "You've chosen the MASTER BALL.\n"
 	.string "Is that correct?$"
+
+@ Project Grounded: BP-winkels en Hyper Training (src/bp_shop.c). Doel: binnen minuten elke Pokémon competitive.
+@ VAR_0x8004 = winkel: 0 training (candies/vitamines/EV's), 1 natuur & potentieel (mints/caps), 2 held items, 3 type-items
+BattleFrontier_ExchangeServiceCorner_EventScript_BpTrainingClerk::
+	lock
+	faceplayer
+	message BattleFrontier_ExchangeServiceCorner_Text_BpTrainingWelcome
+	waitmessage
+	setvar VAR_0x8004, 0
+	special BpShop_Open
+	waitstate
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_BpTrainingBye, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_BpTuningClerk::
+	lock
+	faceplayer
+	message BattleFrontier_ExchangeServiceCorner_Text_BpTuningWelcome
+	waitmessage
+	setvar VAR_0x8004, 1
+	special BpShop_Open
+	waitstate
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_BpTuningBye, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_BpHeldClerk::
+	lock
+	faceplayer
+	message BattleFrontier_ExchangeServiceCorner_Text_BpHeldWelcome
+	waitmessage
+	setvar VAR_0x8004, 2
+	special BpShop_Open
+	waitstate
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_BpHeldBye, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_BpTypeClerk::
+	lock
+	faceplayer
+	message BattleFrontier_ExchangeServiceCorner_Text_BpTypeWelcome
+	waitmessage
+	setvar VAR_0x8004, 3
+	special BpShop_Open
+	waitstate
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_BpTypeBye, MSGBOX_DEFAULT
+	release
+	end
+
+@ Hyper Training: één Bottle Cap = één stat op 31, een Gold Bottle Cap = alle zes (BpShop_HyperTrain)
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrainer::
+	lock
+	faceplayer
+	checkitem ITEM_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrainerAsk
+	checkitem ITEM_GOLD_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrainerAsk
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperNoCaps, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrainerAsk::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperIntro, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	lock
+	faceplayer
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_ExchangeServiceCorner_EventScript_HyperCancel
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_EGG, BattleFrontier_ExchangeServiceCorner_EventScript_HyperEgg
+	bufferpartymonnick STR_VAR_1, VAR_0x8004
+	message BattleFrontier_ExchangeServiceCorner_Text_HyperWhichStat
+	waitmessage
+	dynmultichoice 18, 0, FALSE, 7, 0, DYN_MULTICHOICE_CB_NONE, BattleFrontier_ExchangeServiceCorner_Text_HyperHP, BattleFrontier_ExchangeServiceCorner_Text_HyperAtk, BattleFrontier_ExchangeServiceCorner_Text_HyperDef, BattleFrontier_ExchangeServiceCorner_Text_HyperSpe, BattleFrontier_ExchangeServiceCorner_Text_HyperSpA, BattleFrontier_ExchangeServiceCorner_Text_HyperSpD, BattleFrontier_ExchangeServiceCorner_Text_HyperAll
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_HyperCancel
+	copyvar VAR_0x8005, VAR_RESULT
+	setvar VAR_0x8006, 0
+	special BpShop_HyperTrain
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ExchangeServiceCorner_EventScript_HyperAlreadyMax
+	goto_if_eq VAR_0x8005, 6, BattleFrontier_ExchangeServiceCorner_EventScript_HyperGold
+	checkitem ITEM_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ExchangeServiceCorner_EventScript_HyperNoCap
+	removeitem ITEM_BOTTLE_CAP
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrain
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperGold::
+	checkitem ITEM_GOLD_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ExchangeServiceCorner_EventScript_HyperNoGoldCap
+	removeitem ITEM_GOLD_BOTTLE_CAP
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperTrain::
+	setvar VAR_0x8006, 1
+	special BpShop_HyperTrain
+	playse SE_M_MEGA_KICK
+	waitse
+	playfanfare MUS_LEVEL_UP
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperDone, MSGBOX_DEFAULT
+	waitfanfare
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperAlreadyMax::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperAlreadyMax, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperNoCap::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperNoCap, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperNoGoldCap::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperNoGoldCap, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperEgg::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperEgg, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HyperCancel::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_HyperCancel, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTrainingWelcome:
+	.string "Candy, dear? Vitamins? Feathers?\n"
+	.string "Everything a POKéMON needs to skip\l"
+	.string "its childhood entirely. For BP.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTrainingBye:
+	.string "Come back soon. Growing up the slow\n"
+	.string "way is for people with free time.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTuningWelcome:
+	.string "Mints change a nature. Caps change\n"
+	.string "its genes. Capsules change its mind.\p"
+	.string "Personality transplants, paid in BP.\n"
+	.string "The ethics board also takes BP.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTuningBye:
+	.string "Remember: it's not who you are.\n"
+	.string "It's what you can afford.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpHeldWelcome:
+	.string "Competitive gear! Every item was\n"
+	.string "field-tested on a MAGIKARP.\p"
+	.string "Results: inconclusive. The MAGIKARP\n"
+	.string "is doing great, though.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpHeldBye:
+	.string "Thank you! Hold responsibly.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTypeWelcome:
+	.string "DEVON Outlet, FRONTIER branch. MEMORY\n"
+	.string "discs, gems, and berries that take a\l"
+	.string "hit so you don't have to.\p"
+	.string "The discs came from a project we\n"
+	.string "don't talk about. Neither does HR.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_BpTypeBye:
+	.string "DEVON thanks you. Legally, that is not\n"
+	.string "an admission of anything.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperNoCaps:
+	.string "I am a HYPER TRAINER! I train a stat\n"
+	.string "until its potential is maxed out!\p"
+	.string "A BOTTLE CAP trains one stat. A GOLD\n"
+	.string "BOTTLE CAP trains all six!\p"
+	.string "You have no caps. Your POKéMON's\n"
+	.string "flaws are safe. For now.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperIntro:
+	.string "HYPER TRAINING! One BOTTLE CAP, one\n"
+	.string "stat to the max! A GOLD BOTTLE CAP\l"
+	.string "does them all! Who's training?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperWhichStat:
+	.string "Which of {STR_VAR_1}'s stats\n"
+	.string "do we push past its limits?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperHP:
+	.string "HP$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperAtk:
+	.string "ATTACK$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperDef:
+	.string "DEFENSE$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperSpe:
+	.string "SPEED$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperSpA:
+	.string "SP. ATK$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperSpD:
+	.string "SP. DEF$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperAll:
+	.string "ALL (GOLD)$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperDone:
+	.string "HYAAAAH!\p"
+	.string "{STR_VAR_1} feels stronger! Its genes\n"
+	.string "filed a complaint. Too late.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperAlreadyMax:
+	.string "{STR_VAR_1} is already maxed out\n"
+	.string "there! Respect. Keep your cap.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperNoCap:
+	.string "No BOTTLE CAP, no HYPER TRAINING!\n"
+	.string "Those are the rules. I wrote them.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperNoGoldCap:
+	.string "That takes a GOLD BOTTLE CAP!\n"
+	.string "Shiny outside, shiny inside!$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperEgg:
+	.string "That's an EGG. It has potential, but\n"
+	.string "not the kind I can yell at.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HyperCancel:
+	.string "Come back when you're ready to yell!$"

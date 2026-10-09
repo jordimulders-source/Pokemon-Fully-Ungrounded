@@ -1791,7 +1791,7 @@
 #define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
 // }
 // dex_check { (met de hand, tools/grounded/dex_check.py; FLAG_GROUNDED 1580-1619: 1580-1583 nieuwe items (blok nieuwe_items), 1584 Memories, 1585-1619 nog vrij)
-#define FLAG_RECEIVED_SILVALLY_MEMORIES                  FLAG_GROUNDED(1584) // Project Grounded: Devon Corp 2F: de ontbrekende Silvally-Memories gekregen (na Type: Null)
+#define FLAG_RECEIVED_SILVALLY_MEMORIES                  FLAG_GROUNDED(1584) // Project Grounded: Devon Corp 2F: zes prototype-battle items gekregen (na Type: Null; was de Silvally-Memories, die zijn nu te koop voor BP)
 // }
 // nieuwe_items { (tools/grounded/maptools/nieuwe_items.py; FLAG_GROUNDED 840-879, items die nergens anders liggen)
 #define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_LURE_BALL   FLAG_GROUNDED(840) // Project Grounded: diepzeetrog: Lure Balls
@@ -1880,6 +1880,7 @@
 #define FLAG_ITEM_ULTRA_SPACE_BUZZWOLE_FIGHTING_MEMORY   FLAG_GROUNDED(1464) // Project Grounded: Ultra Space, sportschool: Fighting Memory
 #define FLAG_HIDDEN_ITEM_ULTRA_SPACE_STAKATAKA_STEEL_MEMORY FLAG_GROUNDED(1465) // Project Grounded: Ultra Space, muur: verborgen Steel Memory
 #define FLAG_ITEM_ULTRA_SPACE_GUZZLORD_DARK_GEM          FLAG_GROUNDED(1466) // Project Grounded: Ultra Space, afvalvlakte: Dark Gems
+#define FLAG_ITEM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP_RED_NECTAR FLAG_GROUNDED(1620) // Project Grounded: Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

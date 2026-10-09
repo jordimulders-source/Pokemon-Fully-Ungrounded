@@ -604,6 +604,8 @@ gSpecials::
 	def_special Grounded_CaughtXerneasAndYveltal
 	def_special Grounded_PartyHasShinyRayquaza
 	def_special FloatingMarket_OpenShop
+	def_special BpShop_Open
+	def_special BpShop_HyperTrain
 	def_special Burglar_SetupVars
 	def_special Burglar_SpawnThief
 	def_special Burglar_SpawnResident

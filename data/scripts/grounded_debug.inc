@@ -296,9 +296,9 @@ Debug_Text_BurglarForce_Here:
 	.string "Loop vlak voor zijn huis langs.$"
 
 Debug_Text_BurglarForce_Next:
-	.string "Burglar komt in de volgende stad: Mauville,\n"
-	.string "Slateport, Lilycove, Rustboro, Verdanturf,\l"
-	.string "Fallarbor of Petalburg.$"
+	.string "Burglar komt in de volgende stad:\n"
+	.string "Mauville, Slateport, Lilycove, Rustboro,\l"
+	.string "Verdanturf, Fallarbor of Petalburg.$"
 
 @ Project Grounded: debugmenu Utilities > Battle test - een uniek gevecht (thema + transitie) met een tijdelijk testteam;
 @ party, geld, Pokédex en statistieken worden na afloop teruggezet (Debug_BattleTest_Start in src/debug.c)

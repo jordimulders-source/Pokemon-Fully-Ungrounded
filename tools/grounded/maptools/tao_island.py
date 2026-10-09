@@ -212,6 +212,10 @@ def tao_island():
         src = crag[(OY - y) % 2]
         for x in cols:
             g[y][OX + x] = src[x]
+    # torendeur open: de Sky Pillar-layout heeft een dichte deur (MB_SKY_PILLAR_CLOSED_DOOR, geen warp) die daar
+    # pas via setmetatile opengaat; hier is hij altijd open (audit.py, v0.9.216)
+    g[DOOR[1] - 1][DOOR[0]] = t(0x2AA, True, 0)    # METATILE_Pacifidlog_SkyPillar_DoorOpen_Top
+    g[DOOR[1]][DOOR[0]] = t(0x2B2, False, 0)       # METATILE_Pacifidlog_SkyPillar_DoorOpen_Bottom
     # zandstrand onder de spiek (de zandgang van de Sky Pillar loopt erin door)
     land = [[mt(g[y][x]) != WATER for x in range(IW)] for y in range(IH)]
     for y, (a, b) in BEACH_ROWS.items():

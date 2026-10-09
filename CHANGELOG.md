@@ -17599,3 +17599,10 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.172] - Sealbreaker van Steven op Mt. Pyre
 - Jordi: liever Steven dan het echtpaar. Na de Hall of Fame staat **Steven** op de top van Mt. Pyre (tot hij je de Sealbreaker gaf). Hij vertelt wat het echtpaar hem toevertrouwde: hun **voorouders** verzegelden de vier rampen ooit "tijdelijk", vierhonderd jaar geleden. Jij bent er nu klaar voor; hij geeft de Sealbreaker en zegt waar de schrijnen liggen.
 - Het echtpaar heeft weer zijn gewone teksten. (Archie en de Aqua-grunts op de testbeelden komen door de test-save; in een echte playthrough zijn ze na het verhaal weg.)
+
+### [v0.9.173] - Spacetime Cave deel 1: hub, Lavender Town + Pokémon Tower, Cerulean Cave met de echte Mewtwo
+- **Spacetime Cave** (post-game): ingang in het rotsje op het lege eilandje van Route 125 (gaat open na de Hall of Fame). Violette hubgrot met 9 scheuren: Lavender en Cerulean werken; National Park/Ilex, Gen 4-meren, Chargestone, Glimwood, Area Zero, ????? en (onderaan in het midden) Mt. Coronet zijn nog grijze, instabiele scheuren. Mapsec `MAPSEC_SPACETIME_CAVE` op de Town Map naast Mossdeep. Nieuwe kaartgroep `gMapGroup_Spacetime`.
+- **Lavender Town:** indeling 1-op-1 uit FRLG, aangekleed met Emerald-materiaal (General-grond/bomen, Petalburg-huizen met paars dak); PC (heal location), Mart, Volunteer House en twee huizen.
+- **Pokémon Tower** (5 verdiepingen: FRLG 1F–4F + de top): interieur met Ekat's Pokémon Tower Interior (Revamp), graven in allerlei soorten; 10 Channelers (Hex Maniac, lv 65–69), wilde ghosts lv 60–68 (Alolan Marowak 1% bovenin), bovenin een conciërge met een Life Orb.
+- **Cerulean Cave** (1F, 2F, B1F): FRLG 1-op-1 met Emerald-grotmateriaal, land/water/vissen lv 60–70, 9 items, **Mewtwo lv 70** in B1F. De placeholder-Mewtwo in Meteor Falls is weg (zelfde flag, dus maar één Mewtwo, ook in oude saves); daar staat nu een kras in de rots die naar de Spacetime Cave wijst.
+- Scripts `tools/grounded/maptools/spacetime_tiles.py` + `spacetime_cave.py`; flags `FLAG_GROUNDED(560–573)`, trainers 1159–1168.

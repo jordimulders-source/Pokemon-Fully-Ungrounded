@@ -163,6 +163,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Randen in een vanilla-tileset:** een autotiler die per cel de tegel uit dezelfde 3x3-omgeving in een bestaande kaart kiest (`sootopolis_craters.py`) geeft nette randen zonder handwerk; klifbanden even dik als in het voorbeeld. Stadium-omroepregels max. 3 regels per vak. `testrom.py` draait `make_intro_state.py` met `python3`: los herhalen met `python3.11`.
 - **Grotopening in een buitenkaart:** Cave-tegel 0x23c (zuidpijl-warp) op de vloer met 258/259/25a in de wand eronder, niet op zand. Verborgen gat in bomen: de Toadstool-tegels 0x35e–0x361 (Rustboro-set). Emulatortest na een warp: wacht op het mapnummer (`gSaveBlock1Ptr`+5).
 - **Kusthoeken in Sootopolis-stijl:** geen eigen hoeken verzinnen; neem exact de tegelcombinaties uit SootopolisCity over (Jordi keurde losse klifblokjes, waterrandjes in de klif en plantjes-tegels 2de/2df af).
+- **FRLG-kaart 1-op-1 overnemen** (`spacetime_cave.py`): metatile-raster + botsings-/hoogtebits van FRLG houden, per FRLG-metatile een eigen secondary-tegel ("reskin" naar Emerald-texturen), gedrag op naam vertalen (FRLG-enum → Emerald), daarna laagtype/gedrag patchen. `render_map.py` leidt de tilesetmap af van het symbool (`gTileset_FooBar` → `foo_bar`). Scheuren/teleporttegels 2x2: alleen de bovenste rij als warp.
+- **Kaartgroepen:** Spacetime-locaties in `gMapGroup_Spacetime` (sinds v0.9.173); een nieuwe groep = achteraan `group_order` en als laatste sleutel in `map_groups.json`.
 
 ## Werkwijzen (herhaalde taken)
 

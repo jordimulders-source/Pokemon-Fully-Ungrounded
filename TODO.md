@@ -4,12 +4,12 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
+**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime Cave deel 1~~ (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
 
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
 
@@ -17,11 +17,11 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)
-   - a. **Lavender Town + Pokémon Tower**
+   - ~~a. Lavender Town + Pokémon Tower~~ (v0.9.173)
    - b. **National Park**, eventueel met **Ilex Forest** (Celebi)
      - Ontwerp (Jordi, 9 okt, 3 screenshots HGSS/DPPt-stijl als inspiratie): park in de vorm van een **Poké Ball**, relaxed en comfortabel. Bovenste helft hoog gras, onderste helft ander (donkerder) gras, het midden een fontein als knop van de bal, stenen paden in trapvorm eromheen, hekjes, lantaarns en bloemen langs de rand, bomen rondom. Onderaan een gang naar een pleintje met bankjes, een bloembak en een bord, en daar een warp naar **Ilex Forest**. Ingang rechts vanuit de Spacetime Cave: een poortgebouwtje aan de oostkant (zoals HGSS), binnen een FRLG-achtig poorthuis met een zijuitgang (pijl-warp `MB_EAST_ARROW_WARP`, werkt in de engine). Ekat-sets: Park Tileset, Park Gazebo, Pond and Bridge. Geen bug-catching-minigame.
      - **Ilex Forest** (Jordi, 9 okt, 4 screenshots GSC/HGSS als inspiratie; meer creatieve vrijheid): mysterieus. Basis zoals GSC/HGSS: dicht bos met kronkelpaden, poorthuis linksboven en linksonder, vijver linksboven, het **schrijn in het midden** (Celebi-quest), houten hekjes, bloemenpaadjes, Cut-boompjes. Eigen draai: mist/donkere tint, dwaalpaden. Hier komt de **Celebi-quest**.
-   - c. **Cerulean Cave** met de echte Mewtwo (de grot achter Meteor Falls is een placeholder)
+   - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173). Nog: Lavender-NPC's met Ashfrost-teksten (Protip Oracle) herschrijven; Kanto-mapsecs staan niet op de Town Map (geen Fly); `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls; deurtje in het rotsje op Route 125 is hoekig.
    - d. **Gen 4-meren** (Uxie, Mesprit, Azelf)
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
    - f. later eventueel **Area Zero** (paradoxen zijn gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.

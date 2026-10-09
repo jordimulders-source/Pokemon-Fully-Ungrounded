@@ -1652,7 +1652,7 @@
 // sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; FLAG_GROUNDED 500-529)
 #define FLAG_ITEM_HERMIT_CRATER_WIDE_LENS                FLAG_GROUNDED(500) // Project Grounded: kluizenaarskrater: Wide Lens
 #define FLAG_HIDDEN_ITEM_HERMIT_CRATER_PEARL_STRING      FLAG_GROUNDED(501) // Project Grounded: kluizenaarskrater: verborgen Pearl String
-#define FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP          FLAG_GROUNDED(502) // Project Grounded: stille krater: Gold Bottle Cap (eilandje)
+#define FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP          FLAG_GROUNDED(502) // Project Grounded: stille krater: Gold Bottle Cap (grasrichel)
 #define FLAG_HIDDEN_ITEM_SILENT_CRATER_EARTH_PLATE       FLAG_GROUNDED(503) // Project Grounded: stille krater: verborgen Earth Plate (voorplein)
 #define FLAG_HIDDEN_ITEM_SILENT_CRATER_SPLASH_PLATE      FLAG_GROUNDED(504) // Project Grounded: stille krater: verborgen Splash Plate (grasrand)
 // }

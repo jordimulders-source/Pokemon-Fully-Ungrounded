@@ -508,7 +508,7 @@ static const struct SpriteFrameImage sPicTable_QCloudOw[] = { // Project Grounde
 
 static const struct SpriteFrameImage sPicTable_NepEnutOw[] = { // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 0),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 0),
+    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
     overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 0),
     overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
     overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 2),

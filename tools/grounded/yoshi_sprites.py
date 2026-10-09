@@ -389,7 +389,8 @@ def palinfo(row):
     return sym, f, c, tag, why
 WIDE = {'POOCHY', 'QCLOUD'}          # 64x32 (Poochy en de vleugels zijn breder dan 32 px)
 BIG = {'NEP_ENUT'}                   # 128x128 op ware grootte: subsprites van 64x32 (sOamTables_128x128), 3 tegelframes
-NEP_FRAMES = [0, 0, 0, 1, 2, 1, 2, 1, 2]   # Gen 3-frame -> tegelframe (stilstaan = loeren, stappen = opgerezen)
+NEP_FRAMES = [0, 1, 0, 1, 2, 1, 2, 1, 2]   # Gen 3-frame -> tegelframe (stilstaan = loeren, stappen = opgerezen;
+                                          # naar boven kijken = opgerezen blijven staan, voor het praatje na het gevecht)
 
 
 def dims(c):

@@ -118,7 +118,20 @@ YoshisIsland_Jungle_EventScript_NepGone::
 	end
 
 YoshisIsland_Jungle_EventScript_NepChill::
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, YoshisIsland_Jungle_EventScript_Movement_CamUp
+	waitmovement 0
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, Common_Movement_FaceUp
+	waitmovement 0
 	msgbox YoshisIsland_Jungle_Text_NepChill, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, YoshisIsland_Jungle_EventScript_Movement_CamDown
+	waitmovement 0
+	special RemoveCameraObject
 	release
 	end
 
@@ -290,11 +303,16 @@ YoshisIsland_Jungle_Text_NepGone:
 	.string "lake is a lot of pressure.)$"
 
 YoshisIsland_Jungle_Text_NepChill:
-	.string "(NEP-ENUT is floating. Just floating.\n"
-	.string "The eyebrows are relaxed for the first\l"
-	.string "time in 30 years.)\p"
-	.string "NEP-ENUT: ...blorp.\p"
-	.string "(He is off the clock.)$"
+	.string "(NEP-ENUT rises out of the lake again.\n"
+	.string "Slowly. Like a man getting off a couch.)\p"
+	.string "NEP-ENUT: Oh. It's you. Listen. In my own\n"
+	.string "game I was one gag in one level. Then\l"
+	.string "the credits rolled and nobody called.\p"
+	.string "NEP-ENUT: Here I got a lake, a DONDOZO,\n"
+	.string "and 128 by 128 pixels. Some guy making a\l"
+	.string "romhack in his spare time gave me more\l"
+	.string "screen time than Nintendo ever did.\p"
+	.string "NEP-ENUT: ...Don't tell Nintendo. GLORP.$"
 
 YoshisIsland_Jungle_Text_Cloud:
 	.string "POP! The ? CLOUD bursts and it rains\n"

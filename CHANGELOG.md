@@ -17795,3 +17795,6 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.209] - Nep-Enut blijft
 - Nep-Enut verdwijnt niet meer na het Dondozo-gevecht: hij zakt terug tot alleen zijn wenkbrauwen boven water zijn en blijft chillen. Daarna heeft hij een eigen tekst ("He is off the clock.") en doet hij verder niets.
+
+### [v0.9.210] - Nep-Enut praat na
+- Na het Dondozo-gevecht rijst Nep-Enut bij aanspreken weer op (camera mee omhoog), houdt een praatje dat door de vierde wand gaat (meer schermtijd van een hobby-romhacker dan van Nintendo) en zakt dan terug tot alleen zijn wenkbrauwen. Getest in de emulator.

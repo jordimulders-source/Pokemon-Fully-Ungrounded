@@ -2788,7 +2788,20 @@ def jungle_scripts():
 	end
 
 {P}NepChill::
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, {P}Movement_CamUp
+	waitmovement 0
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, Common_Movement_FaceUp
+	waitmovement 0
 	msgbox {X}NepChill, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, {P}Movement_CamDown
+	waitmovement 0
+	special RemoveCameraObject
 	release
 	end
 
@@ -2887,8 +2900,11 @@ def jungle_scripts():
                    "Judging, mostly.)"),
       ('NepGone', "(NEP-ENUT sinks back down until only the eyebrows are left. He seems... relieved? Being a final "
                   "boss for one lake is a lot of pressure.)"),
-      ('NepChill', "(NEP-ENUT is floating. Just floating. The eyebrows are relaxed for the first time in 30 years.)\n\n"
-                   "NEP-ENUT: ...blorp.\n\n(He is off the clock.)")])
+      ('NepChill', "(NEP-ENUT rises out of the lake again. Slowly. Like a man getting off a couch.)\n\n"
+                   "NEP-ENUT: Oh. It's you. Listen. In my own game I was one gag in one level. Then the credits rolled "
+                   "and nobody called.\n\nNEP-ENUT: Here I got a lake, a DONDOZO, and 128 by 128 pixels. Some guy "
+                   "making a romhack in his spare time gave me more screen time than Nintendo ever did.\n\n"
+                   "NEP-ENUT: ...Don't tell Nintendo. GLORP.")])
     S.raw(CLOUD_MOVE.format(P=P))
     cloud(S, 'Cloud', 'LOCALID_YI_JUNGLE_CLOUD', milk[0], 'ITEM_MOOMOO_MILK', milk[1],
           "POP! The ? CLOUD bursts and it rains milk. Only on you.\n\nYou caught some of it in bottles. You had "

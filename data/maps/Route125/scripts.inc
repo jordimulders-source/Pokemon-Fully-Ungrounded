@@ -12,6 +12,7 @@ Route125_OnTransition:
 	end
 
 Route125_OnLoad:
+	call_if_set FLAG_SYS_GAME_CLEAR, Route125_EventScript_OpenSpacetimeCave
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_PlaceTilesRoute125West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_PlaceTilesRoute125East
 	end
@@ -81,3 +82,9 @@ Route125_EventScript_Auron::
 	msgbox Route125_Text_AuronPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- spacetime_cave (tools/grounded/maptools/spacetime_cave.py) ---
+@ Project Grounded: na de Hall of Fame een grotopening in het rotsje op het eilandje (Spacetime Cave)
+Route125_EventScript_OpenSpacetimeCave::
+	setmetatile 46, 28, 0x0A7, FALSE
+	return
+@ --- einde spacetime_cave ---

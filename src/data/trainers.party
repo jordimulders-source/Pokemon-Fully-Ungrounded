@@ -40197,3 +40197,353 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Pollen Puff
 
 /* --- einde sootopolis_craters --- */
+
+/* --- spacetime_cave (tools/grounded/maptools/spacetime_cave.py) --- */
+
+=== TRAINER_TOWER_MAYA ===
+Name: MAYA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mismagius
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Mystical Fire
+- Dazzling Gleam
+- Nasty Plot
+
+Hypno
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Hypnosis
+- Dream Eater
+- Focus Blast
+
+Drifblim
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Air Slash
+- Thunderbolt
+- Will-O-Wisp
+
+=== TRAINER_TOWER_PATRICIA ===
+Name: PATRICIA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Banette
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Claw
+- Gunk Shot
+- Knock Off
+- Shadow Sneak
+
+Golurk
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earthquake
+- Shadow Punch
+- Ice Punch
+- Dynamic Punch
+
+Xatu
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Air Slash
+- Roost
+- Confuse Ray
+
+=== TRAINER_TOWER_CARLY ===
+Name: CARLY
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dusclops
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Night Shade
+- Will-O-Wisp
+- Pain Split
+- Shadow Sneak
+
+Mr. Mime
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Dazzling Gleam
+- Reflect
+- Light Screen
+
+Lampent
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Will-O-Wisp
+
+=== TRAINER_TOWER_HOPE ===
+Name: HOPE
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Chandelure
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Will-O-Wisp
+
+Sableye
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Knock Off
+- Shadow Claw
+- Will-O-Wisp
+- Recover
+
+Exeggutor
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Giga Drain
+- Sleep Powder
+- Leaf Storm
+
+=== TRAINER_TOWER_LAUREL ===
+Name: LAUREL
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Cofagrigus
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Will-O-Wisp
+- Trick Room
+- Nasty Plot
+
+Slowking
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Scald
+- Slack Off
+- Ice Beam
+
+Froslass
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Ice Beam
+- Spikes
+- Thunderbolt
+
+=== TRAINER_TOWER_JODY ===
+Name: JODY
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Trevenant
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Wood Hammer
+- Shadow Claw
+- Horn Leech
+- Will-O-Wisp
+
+Bronzong
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gyro Ball
+- Psychic
+- Trick Room
+- Stealth Rock
+
+Houndstone
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Claw
+- Play Rough
+- Body Press
+- Crunch
+
+=== TRAINER_TOWER_PAULA ===
+Name: PAULA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Gourgeist
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Sneak
+- Seed Bomb
+- Will-O-Wisp
+- Leech Seed
+
+Palossand
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Earth Power
+- Shore Up
+- Giga Drain
+
+Musharna
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Moonblast
+- Yawn
+- Calm Mind
+
+=== TRAINER_TOWER_RUTH ===
+Name: RUTH
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Polteageist
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Giga Drain
+- Shell Smash
+- Stored Power
+
+Dhelmise
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Power Whip
+- Anchor Shot
+- Shadow Claw
+- Earthquake
+
+Gardevoir
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Moonblast
+- Calm Mind
+- Mystical Fire
+
+=== TRAINER_TOWER_TAMMY ===
+Name: TAMMY
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dusknoir
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Punch
+- Earthquake
+- Ice Punch
+- Will-O-Wisp
+
+Jellicent
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Scald
+- Shadow Ball
+- Recover
+- Will-O-Wisp
+
+Alakazam
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Calm Mind
+
+Spiritomb
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Sucker Punch
+- Shadow Sneak
+- Foul Play
+- Will-O-Wisp
+
+=== TRAINER_TOWER_KARINA ===
+Name: KARINA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Gengar
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Hypnosis
+
+Aegislash
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- King's Shield
+- Shadow Ball
+- Flash Cannon
+- Sacred Sword
+
+Mimikyu
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Play Rough
+- Shadow Claw
+- Swords Dance
+- Shadow Sneak
+
+Marowak-Alola
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Bone
+- Flare Blitz
+- Bonemerang
+- Will-O-Wisp
+
+/* --- einde spacetime_cave --- */

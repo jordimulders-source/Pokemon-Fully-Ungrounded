@@ -259,3 +259,15 @@ const u16 gMetatileAttributes_RuinMoss[] = INCBIN_U16("data/tilesets/secondary/r
 
 const u16 gMetatiles_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatiles.bin"); // Project Grounded: Beasts of Ruin
 const u16 gMetatileAttributes_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatile_attributes.bin");
+
+const u16 gMetatiles_SpacetimeCave[] = INCBIN_U16("data/tilesets/secondary/spacetime_cave/metatiles.bin"); // Project Grounded: Spacetime Cave: Cave + scheuren
+const u16 gMetatileAttributes_SpacetimeCave[] = INCBIN_U16("data/tilesets/secondary/spacetime_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_PokemonTower[] = INCBIN_U16("data/tilesets/secondary/pokemon_tower/metatiles.bin"); // Project Grounded: Pokemon Tower (FRLG + Ekat Revamp)
+const u16 gMetatileAttributes_PokemonTower[] = INCBIN_U16("data/tilesets/secondary/pokemon_tower/metatile_attributes.bin");
+
+const u16 gMetatiles_CeruleanCave[] = INCBIN_U16("data/tilesets/secondary/cerulean_cave/metatiles.bin"); // Project Grounded: Cerulean Cave (FRLG + Emerald Cave)
+const u16 gMetatileAttributes_CeruleanCave[] = INCBIN_U16("data/tilesets/secondary/cerulean_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatiles.bin"); // Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren)
+const u16 gMetatileAttributes_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatile_attributes.bin");

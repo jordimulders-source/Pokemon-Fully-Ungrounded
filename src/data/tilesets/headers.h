@@ -1124,3 +1124,58 @@ const struct Tileset gTileset_RuinIce = // Project Grounded: Beasts of Ruin (ice
     .metatileAttributes = gMetatileAttributes_RuinIce,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SpacetimeGeneral = // Project Grounded: Spacetime Cave: General getint
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SpacetimeGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_SpacetimeCave = // Project Grounded: Spacetime Cave: Cave + scheuren
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SpacetimeCave,
+    .palettes = gTilesetPalettes_SpacetimeCave,
+    .metatiles = gMetatiles_SpacetimeCave,
+    .metatileAttributes = gMetatileAttributes_SpacetimeCave,
+    .callback = InitTilesetAnim_Cave,
+};
+
+const struct Tileset gTileset_PokemonTower = // Project Grounded: Pokemon Tower (FRLG + Ekat Revamp)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokemonTower,
+    .palettes = gTilesetPalettes_PokemonTower,
+    .metatiles = gMetatiles_PokemonTower,
+    .metatileAttributes = gMetatileAttributes_PokemonTower,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CeruleanCave = // Project Grounded: Cerulean Cave (FRLG + Emerald Cave)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CeruleanCave,
+    .palettes = gTilesetPalettes_CeruleanCave,
+    .metatiles = gMetatiles_CeruleanCave,
+    .metatileAttributes = gMetatileAttributes_CeruleanCave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_LavenderTown = // Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LavenderTown,
+    .palettes = gTilesetPalettes_LavenderTown,
+    .metatiles = gMetatiles_LavenderTown,
+    .metatileAttributes = gMetatileAttributes_LavenderTown,
+    .callback = NULL,
+};

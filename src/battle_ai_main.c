@@ -290,6 +290,18 @@ void BattleAI_SetupFlags(void)
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] = aiFlags;
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_LEFT] = aiFlags;
     }
+
+    // Project Grounded: Battle Casino. Elke kant denkt minstens fatsoenlijk na (ook trainers zonder AI-flags)
+    if (gCasinoBattle)
+    {
+        u32 i;
+        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+        {
+            gAiThinkingStruct->aiFlags[i] |= AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
+            if (IsDoubleBattle())
+                gAiThinkingStruct->aiFlags[i] |= AI_FLAG_DOUBLE_BATTLE;
+        }
+    }
 }
 
 void BattleAI_SetupAIData(u8 defaultScoreMoves, u32 battler)

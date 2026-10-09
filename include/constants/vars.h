@@ -204,7 +204,7 @@
 #define VAR_STADIUM_STATE                                0x40B8 // Project Grounded: Battle Stadium (2 = kampioen, 3 = verloren; de lobby rondt af)
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
+#define VAR_CASINO_BETS                                  0x40BB // Project Grounded: Battle Casino, aantal afgeronde inzetten (speelt modi vrij)
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
 #define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
 #define VAR_GLASS_WORKSHOP_STATE                         0x40BE

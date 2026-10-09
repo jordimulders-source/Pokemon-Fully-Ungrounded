@@ -2615,7 +2615,9 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
     switch (GetBattlerPosition(battler))
     {
     case B_POSITION_PLAYER_LEFT:
-        if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
+        if (gCasinoBattle) // Project Grounded: Battle Casino, de kant die de AI voor "de speler" speelt
+            toCpy = Casino_GetPlayerSideName();
+        else if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
             toCpy = gLinkPlayers[0].name;
         else
             toCpy = gSaveBlock2Ptr->playerName;
@@ -2954,7 +2956,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER1_WIN_TEXT: // trainerA win text
-                if (gStadiumBattle)
+                if (gCasinoBattle)
+                    toCpy = Casino_GetWinText(TRAINER_BATTLE_PARAM.opponentA);
+                else if (gStadiumBattle)
                     toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentA);
                 else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {
@@ -3075,7 +3079,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER2_WIN_TEXT:
-                if (gStadiumBattle)
+                if (gCasinoBattle)
+                    toCpy = Casino_GetWinText(TRAINER_BATTLE_PARAM.opponentB);
+                else if (gStadiumBattle)
                     toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentB);
                 else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {

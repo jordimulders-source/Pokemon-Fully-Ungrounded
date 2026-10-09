@@ -558,7 +558,7 @@ static void CB2_InitBattleInternal(void)
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL
                                                                         | BATTLE_TYPE_RECORDED))
-        && !gStadiumBattle) // Project Grounded: het Stadium bepaalt zelf singles of doubles
+        && !gStadiumBattle && !gCasinoBattle) // Project Grounded: het Stadium en het Casino bepalen zelf singles of doubles
     {
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
@@ -2059,6 +2059,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+    if (gCasinoBattle) // Project Grounded: Battle Casino, teams van de kaart
+        return Casino_BuildEnemyParty(party, trainerNum, firstTrainer);
     if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50
         return Stadium_BuildTrainerParty(party, trainerNum, firstTrainer);
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)

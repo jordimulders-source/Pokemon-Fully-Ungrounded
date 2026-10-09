@@ -4632,7 +4632,7 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (gSpireBattle) // Project Grounded: rentals in The Spire krijgen geen exp
         return FALSE;
-    if (gStadiumBattle) // Project Grounded: Battle Stadium, level-50-kopieën
+    if (gStadiumBattle || gCasinoBattle) // Project Grounded: Battle Stadium (level-50-kopieën), Battle Casino
         return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;

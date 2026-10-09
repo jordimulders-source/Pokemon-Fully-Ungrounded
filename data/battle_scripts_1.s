@@ -4813,6 +4813,7 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
+	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_CasinoBattleWonEnd
 	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_PayDayMoneyAndPickUpItems
 	getmoneyreward
 	printstring STRINGID_PLAYERGOTMONEY
@@ -4822,10 +4823,15 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	pickup
 	end2
 
+@ Project Grounded: Battle Casino, geen geld, Pay Day of Pickup voor het geleende team
+BattleScript_CasinoBattleWonEnd::
+	end2
+
 BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_DOME, BattleScript_CheckDomeDrew
 	jumpifbattletype BATTLE_TYPE_FRONTIER, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
+	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_TRAINER_HILL, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_EREADER_TRAINER, BattleScript_LocalBattleLostEnd
 	jumpifhalfword CMP_EQUAL, gTrainerBattleParameter + 2, TRAINER_SECRET_BASE, BattleScript_LocalBattleLostEnd

@@ -1716,6 +1716,10 @@
 #define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
 #define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
 // }
+// battle_casino { (met de hand, src/battle_casino.c; FLAG_GROUNDED 1320-1359: 1320-1321 in gebruik, 1322-1359 nog vrij)
+#define FLAG_CASINO_AI_VS_AI                             FLAG_GROUNDED(1320) // Project Grounded: Battle Casino: alleen tijdens een casinogevecht gezet (B_FLAG_AI_VS_AI_BATTLE, AI speelt beide kanten)
+#define FLAG_CASINO_INTRO_SEEN                           FLAG_GROUNDED(1321) // Project Grounded: Battle Casino: uitleg van de croupier gezien
+// }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen

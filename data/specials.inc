@@ -629,3 +629,10 @@ gSpecials::
 	def_special Grounded_SickBlikSpot
 	def_special AzureFlute_GetHint
 	def_special AzureFlute_DebugCatchAll
+	def_special Casino_HasBp
+	def_special Casino_OpenCard
+	def_special Casino_StartArenaBattle
+	def_special Casino_SetArenaGfx
+	def_special Casino_Resolve
+	def_special Casino_CheckUnlock
+	def_special Casino_DebugUnlockAll

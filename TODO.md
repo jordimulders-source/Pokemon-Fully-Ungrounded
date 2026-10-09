@@ -4,7 +4,7 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime Cave deel 1~~ (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
+**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → **Spacetime S1** (zie hieronder) → **Zacian/Zamazenta + Mega Forest** → Koraalkathedraal/Sea Shards → National Park/Ilex/Eternatus → meren-kamer → Yoshi's Island → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
 
 ---
 
@@ -16,13 +16,14 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 ~~Beasts of Ruin bijwerken~~ (v0.9.174).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
-3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)
+3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
+   - **S1 (volgende):** ingang op Route 125: eiland en rots groter, ingang moet passen; eerste bezoek: Dialga + Palkia openen de scheuren (behalve ????? en Coronet), quest-poorten (gang naar ????? pas na alle sidequests); Lavender **haunted** maken (nu te vrolijk) + quest "kwade geesten verdrijven", geen Protip Oracle/Hoenn-gags (andere dimensie en tijd); Channelers gevarieerd (Ghost/Dark/Psychic/mysterieus); Cerulean Cave: Rockets die Mewtwo zoeken + **Giovanni** vlak vóór Mewtwo, daarna healt Mewtwo je en vecht. Geen Fly (andere dimensie).
    - ~~a. Lavender Town + Pokémon Tower~~ (v0.9.173)
-   - b. **National Park**, eventueel met **Ilex Forest** (Celebi)
+   - b. **National Park + Ilex Forest**: Calyrex/Eternatus/Celebi-quest (SPACETIME_PLAN); daarna Calyrex-quest met Glastrier/Spectrier (sneeuwgebied of nieuw eiland).
      - Ontwerp (Jordi, 9 okt, 3 screenshots HGSS/DPPt-stijl als inspiratie): park in de vorm van een **Poké Ball**, relaxed en comfortabel. Bovenste helft hoog gras, onderste helft ander (donkerder) gras, het midden een fontein als knop van de bal, stenen paden in trapvorm eromheen, hekjes, lantaarns en bloemen langs de rand, bomen rondom. Onderaan een gang naar een pleintje met bankjes, een bloembak en een bord, en daar een warp naar **Ilex Forest**. Ingang rechts vanuit de Spacetime Cave: een poortgebouwtje aan de oostkant (zoals HGSS), binnen een FRLG-achtig poorthuis met een zijuitgang (pijl-warp `MB_EAST_ARROW_WARP`, werkt in de engine). Ekat-sets: Park Tileset, Park Gazebo, Pond and Bridge. Geen bug-catching-minigame.
      - **Ilex Forest** (Jordi, 9 okt, 4 screenshots GSC/HGSS als inspiratie; meer creatieve vrijheid): mysterieus. Basis zoals GSC/HGSS: dicht bos met kronkelpaden, poorthuis linksboven en linksonder, vijver linksboven, het **schrijn in het midden** (Celebi-quest), houten hekjes, bloemenpaadjes, Cut-boompjes. Eigen draai: mist/donkere tint, dwaalpaden. Hier komt de **Celebi-quest**.
-   - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173). Nog: Lavender-NPC's met Ashfrost-teksten (Protip Oracle) herschrijven; Kanto-mapsecs staan niet op de Town Map (geen Fly); `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls; deurtje in het rotsje op Route 125 is hoekig.
-   - d. **Gen 4-meren** (Uxie, Mesprit, Azelf)
+   - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173). Nog: Lavender-NPC's met Ashfrost-teksten (Protip Oracle) herschrijven; `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls; deurtje in het rotsje op Route 125 is hoekig.
+   - d. **Gen 4-meren** (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
    - f. later eventueel **Area Zero** (paradoxen zijn gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
    - **Chargestone Cave** (Jordi 9 okt): niet helemaal nabouwen, wel dat sfeertje (zwevende elektrische stenen, blauw licht) en de schaal; een elektrische grot. Referenties: `referenties/chargestone/` (1F, B1F, B2F uit B2W2).
@@ -35,7 +36,9 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 8. **Trick House vervangen?** Wacht op Jordi's idee. (okt)
 9. **The Spire (na Jordi's test, `SPIRE_TESTCHECKLIST.txt`):** gewone gevechten per deel van de act, één elite-pool per act, gevechten meer als puzzel. Nog open: codex, golven (derde vijand), dramatischer baas-intro, ja/nee bij de receptioniste, echte teksten. (okt; SPIRE_DESIGN "Nog open")
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
-12. **Eigen Grounded-Pokédex** zonder weggelaten soorten: Jordi kiest de groepen. (6 okt; DEX_ANALYSE 6)
+13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
+14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves (Jordi 9 okt: akkoord, geen prio als het veel werk is).
+15. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
 
 ## 3. Daarna: gevechtsintro's en muziek
 **Jordi 9 okt:** intro's van (nieuwe) legendaries bedenkt hij zelf; thema's nog niet maken: nieuwe legendaries gebruiken `MUS_RG_VS_LEGEND` (Kanto Legendary) tot hij ermee komt.
@@ -62,16 +65,13 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
-(Vragen 1–3, 5 en 7 van 9 okt zijn beantwoord en verwerkt; zie hierboven.)
-1. **Yoshi's Island:** zijn alle assets binnen, en heb je al een idee voor de Shy Guy-intro?
-2. **Spacetime Cave:** per locatie input (volledig nabouwen of eigen richting, welke assets). Cerulean Cave, Lavender Town en Pokémon Tower worden kopieën van FRLG.
-3. **Altering Cave** elke dag andere soorten, en **Abandoned Ship** met een nachtelijk benedendek: nog gewenst? (VRAGEN_VOLGENDE 2; Mirage Tower terug vervalt, Hoopa heeft hem "opgevouwen")
-4. **Extra signatures** die nog niet gekozen zijn: Feud Claw/Grudge Fang (Zangoose/Seviper), Firefly Signal (Volbeat/Illumise). Wel of niet? (VRAGEN_VOLGENDE 6)
-5. **Gen 4+-trainersprites** (Greenphx; HGSS/BW-sheets in `graphics/`): welke personages eerst? En krijgt V een eigen sprite?
-6. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: nog gewenst? (backlog okt)
-7. **Grounded-Pokédex:** welke groepen weglaten (Ultra Beasts, paradoxen, ...)? (DEX_ANALYSE 6)
+1. **Mega Forest:** waar komt het roadblock naar Zacian/Zamazenta (hint: roestig zwaard + schild met een boomstam in het midden in het Mini Forest)?
+2. **Calyrex-quest** (Glastrier/Spectrier): sneeuwgebied of een nieuw eiland?
+3. **Quests voor Chargestone, Glimwood en Area Zero** nog te bedenken.
 
 ## 5. Besloten / bewust niet
+- **Geen Grounded-Pokédex:** gewoon de National Dex met alles, vanaf het begin. **Signatures gepauzeerd**; Gen 4+-trainersprites voorlopig niet nodig. (9 okt)
+- **Spacetime-locaties** zijn andere dimensies: niet vliegbaar. (9 okt)
 - **Volgorde:** basiskaart → uitbreidingen → intro's en muziek. (8–9 okt)
 - **Birth Island weg** (kaart, event, ticket). Deoxys alleen in de ruimte. (5 en 9 okt)
 - **Gerald weg** (Dragonspine wordt het Tao-eiland). (9 okt)

@@ -17863,3 +17863,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **Prof. Cozmo** (Fallarbor) geeft post-game **Cosmog**. Cosmoem wordt **Solgaleo** als je Solrock eerder ving dan Lunatone, **Lunala** andersom, willekeurig als je geen van beide hebt. Laat je Cozmo de geëvolueerde vorm zien, dan krijg je een tweede Cosmog die de andere wordt.
 - Items: N-Solarizer, N-Lunarizer, Poison/Electric/Fighting/Steel Memory, Dark Gems. De Azure Flute telt nu ook de UB's, Cosmog, Solgaleo en Lunala mee (98 soorten) — dus ook die zijn nodig voor de Hall of Origin. Placeholder-muziek en -transities.
 - `tools/grounded/dex_check.py`: alle soorten en regionale vormen te krijgen, op Marshadow na (komt bij het Keccles-gevecht).
+
+### [v0.9.222] - Wilde tabellen: apen terug, legendaries eruit, betere spreiding
+- **Elemental monkeys** in de wereld: Pansage in Fortree Jungle, Panpour op Route 119, Pansear in de Fiery Path (elk 10%, bij de bijbehorende steen), Simisage/Simisear/Simipour post-game (Yoshi's Island, Steam Island). De NPC in het Petalburg Pokémon Center die ze miste, is er nu verbaasd over.
+- **Legendaries uit gewone tabellen:** Jirachi (Mt. Pyre, → Gardevoir), Victini (Route 130, → Florges), Manaphy (Route 131, → Gyarados), Kubfu (Route 115, → Munchlax); allemaal nog te krijgen via hun eigen event.
+- **Spreiding** (`tools/grounded/wild_spread.py`, `WILD_SPREAD.md`): te vaak voorkomende soorten (Dhelmise, Bronzong, Relicanth, Bruxish, Probopass, Lapras, Garchomp) in een paar tabellen vervangen; **Magikarp** aan de Old Rod in 12 routes en steden (lv 12–19; bestaande Magikarp-levels ongewijzigd), Crobat in drie late grotten, Graveler en Swellow vaker.
+- **Vivillon/Scatterbug/Spewpa** krijgen een willekeurig patroon (wild en bij fokken); **Deerling/Sawsbuck** volgen het seizoen van de echte datum (ook in je team), zoals in Gen 5.
+- `dex_check.py`: alle soorten en regionale vormen te krijgen (1081), op Marshadow na (komt).

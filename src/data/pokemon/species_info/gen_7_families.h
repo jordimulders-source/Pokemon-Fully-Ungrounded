@@ -7548,6 +7548,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeltanLevelUpLearnset,
         .teachableLearnset = sMeltanTeachableLearnset,
+        // Project Grounded: geen 400 Meltan Candy; levelen met een Metal Coat (Jordi, 9 okt)
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MELMETAL, CONDITIONS({IF_HOLD_ITEM, ITEM_METAL_COAT})}),
     },
 
     [SPECIES_MELMETAL] =

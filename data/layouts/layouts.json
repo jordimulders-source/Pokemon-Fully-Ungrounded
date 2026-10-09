@@ -5661,6 +5661,26 @@
       "secondary_tileset": "gTileset_IlexPetalburg",
       "border_filepath": "data/layouts/IlexForest/border.bin",
       "blockdata_filepath": "data/layouts/IlexForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_SWORD_CHAMBER",
+      "name": "SwordChamber_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SwordChamber/border.bin",
+      "blockdata_filepath": "data/layouts/SwordChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNCHARTED_ISLE",
+      "name": "UnchartedIsle_Layout",
+      "width": 28,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/UnchartedIsle/border.bin",
+      "blockdata_filepath": "data/layouts/UnchartedIsle/map.bin"
     }
   ]
 }

@@ -9,6 +9,8 @@ DewfordTown_OnTransition:
 DewfordTown_EventScript_Briney::
 	lock
 	faceplayer
+	setvar VAR_0x8004, 1 @ Project Grounded: Keldeo-eiland (UnchartedIsle/scripts.inc)
+	call EventScript_BrineyKeldeoTrip
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, DewfordTown_EventScript_ReturnToPetalburgPrompt
 	message DewfordTown_Text_WhereAreWeBound
 	waitmessage

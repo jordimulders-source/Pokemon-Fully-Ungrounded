@@ -125,3 +125,78 @@ SlateportCity_SternsShipyard_1F_Text_GetSeasickEasily:
 	.string "So I build ships. On land. Far from the\n"
 	.string "sea.$"
 
+
+@ Project Grounded: Meltan als gift (swords_keldeo.py zet de objecten). Rivet de lasser is zijn moeren kwijt aan
+@ een Meltan en wil ervan af. Meltan evolueert in Melmetal door te levelen met een Metal Coat (Lilycove Dept. Store 2F).
+SlateportCity_SternsShipyard_1F_EventScript_Rivet::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_MELTAN, SlateportCity_SternsShipyard_1F_EventScript_RivetAfter
+	msgbox SlateportCity_SternsShipyard_1F_Text_RivetOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_SternsShipyard_1F_EventScript_RivetDecline
+	givemon SPECIES_MELTAN, 12
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Common_EventScript_NoMoreRoomForPokemon
+	removeobject LOCALID_SHIPYARD_MELTAN
+	setflag FLAG_RECEIVED_MELTAN
+	playfanfare MUS_OBTAIN_ITEM
+	message SlateportCity_SternsShipyard_1F_Text_ReceivedMeltan
+	waitmessage
+	waitfanfare
+	msgbox SlateportCity_SternsShipyard_1F_Text_RivetThanks, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_SternsShipyard_1F_EventScript_RivetDecline::
+	msgbox SlateportCity_SternsShipyard_1F_Text_RivetDecline, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_SternsShipyard_1F_EventScript_RivetAfter::
+	msgbox SlateportCity_SternsShipyard_1F_Text_RivetAfter, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_SternsShipyard_1F_EventScript_Meltan::
+	lock
+	playmoncry SPECIES_MELTAN, CRY_MODE_NORMAL
+	msgbox SlateportCity_SternsShipyard_1F_Text_Meltan, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SlateportCity_SternsShipyard_1F_Text_RivetOffer:
+	.string "RIVET: This little nut showed up\n"
+	.string "last week. It eats nuts. Bolts too.\p"
+	.string "Yesterday it ate half a forklift.\n"
+	.string "The half that was important.\p"
+	.string "CAPT. STERN says it's “a rare\n"
+	.string "mythical POKéMON.” I say it's a\l"
+	.string "rare mythical invoice.\p"
+	.string "You want it? Please want it.$"
+
+SlateportCity_SternsShipyard_1F_Text_ReceivedMeltan:
+	.string "{PLAYER} received MELTAN!\n"
+	.string "It is already chewing on your bag.$"
+
+SlateportCity_SternsShipyard_1F_Text_RivetThanks:
+	.string "RIVET: Free at last!\p"
+	.string "Word of advice: let it hold a METAL\n"
+	.string "COAT when it levels up. Then it\l"
+	.string "turns into something enormous.\p"
+	.string "The DEPARTMENT STORE in LILYCOVE\n"
+	.string "sells them. Not my shipyard anymore.\l"
+	.string "Not my problem anymore.$"
+
+SlateportCity_SternsShipyard_1F_Text_RivetDecline:
+	.string "RIVET: Sure. Take your time.\n"
+	.string "It's not like it's eating the ship.\p"
+	.string "… … …It's eating the ship.$"
+
+SlateportCity_SternsShipyard_1F_Text_RivetAfter:
+	.string "RIVET: My toolbox is quiet again.\n"
+	.string "I miss the screaming hinges.\p"
+	.string "No I don't.$"
+
+SlateportCity_SternsShipyard_1F_Text_Meltan:
+	.string "MELTAN is gnawing on RIVET's wrench\n"
+	.string "with total commitment.$"

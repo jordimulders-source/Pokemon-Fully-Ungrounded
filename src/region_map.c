@@ -157,6 +157,7 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
     {MAPSEC_COLDSTEP_CAVE,               MAPSEC_ROUTE_115}, // Project Grounded
     {MAPSEC_CRYSTAL_CAVITY,              MAPSEC_ROUTE_136}, // Project Grounded
+    {MAPSEC_UNCHARTED_ISLE,              MAPSEC_ROUTE_105}, // Project Grounded: Keldeo-eiland, "ergens op zee"
     {MAPSEC_OUTER_SPACE,                 MAPSEC_MOSSDEEP_CITY}, // Project Grounded: boven Mossdeep, ongeveer
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},

@@ -770,6 +770,9 @@
     "SpacetimeCave",
     "ChargestoneCave_1F",
     "ChargestoneCave_B1F",
-    "ChargestoneCave_B2F"
+    "ChargestoneCave_B2F",
+    "NationalPark",
+    "NationalPark_Gate",
+    "IlexForest"
   ]
 }

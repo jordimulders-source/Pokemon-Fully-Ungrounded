@@ -1245,3 +1245,52 @@ const struct Tileset gTileset_Chargestone = // Project Grounded: Chargestone Cav
     .metatileAttributes = gMetatileAttributes_Chargestone,
     .callback = NULL,
 };
+
+
+// Project Grounded: National Park / Ilex Forest, tiles en metatiles van General met eigen paletten (tools/grounded/maptools/national_park.py)
+const struct Tileset gTileset_ParkBurntGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_ParkBurntGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: National Park / Ilex Forest, tiles en metatiles van Rustboro met eigen paletten (tools/grounded/maptools/national_park.py)
+const struct Tileset gTileset_ParkBurntRustboro =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Rustboro,
+    .palettes = gTilesetPalettes_ParkBurntRustboro,
+    .metatiles = gMetatiles_Rustboro,
+    .metatileAttributes = gMetatileAttributes_Rustboro,
+    .callback = InitTilesetAnim_Rustboro,
+};
+
+// Project Grounded: National Park / Ilex Forest, tiles en metatiles van General met eigen paletten (tools/grounded/maptools/national_park.py)
+const struct Tileset gTileset_IlexGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_IlexGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: National Park / Ilex Forest, tiles en metatiles van Petalburg met eigen paletten (tools/grounded/maptools/national_park.py)
+const struct Tileset gTileset_IlexPetalburg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Petalburg,
+    .palettes = gTilesetPalettes_IlexPetalburg,
+    .metatiles = gMetatiles_Petalburg,
+    .metatileAttributes = gMetatileAttributes_Petalburg,
+    .callback = InitTilesetAnim_Petalburg,
+};

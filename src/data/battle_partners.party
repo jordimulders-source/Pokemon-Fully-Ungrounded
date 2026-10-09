@@ -122,6 +122,26 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Glare
 - Protect
 
+=== PARTNER_CALYREX ===
+Name: CALYREX
+Class: Rival
+Pic: Ruin Maniac
+Gender: Male
+Music: Male
+Back Pic: Calyrex
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Calyrex @ Leftovers
+Level: 72
+Ability: Unnerve
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Psychic
+- Giga Drain
+- Life Dew
+- Helping Hand
+
 /* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */
 
 === PARTNER_STADIUM_BRENDAN ===

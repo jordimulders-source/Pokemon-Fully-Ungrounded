@@ -486,7 +486,7 @@ def head(name, scripts=()):
     return h + '\t.byte 0\n'
 
 
-HUB_DEST = ('SPACETIME_CAVE', 5)   # warp-index van de Chargestone-scheur in de hub (spacetime_cave.py)
+HUB_DEST = ('SPACETIME_CAVE', 7)   # warp-index van de Chargestone-scheur in de hub (spacetime_cave.py)
 
 
 def events():

@@ -1226,6 +1226,17 @@
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
 #define TRAINER_SWIMMER_CORINNE             1080 // Project Grounded: Koraalkathedraal: zwemt al jaren rondjes om hetzelfde koraal
 #define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
+// national_park { (tools/grounded/maptools/national_park.py; id 1090-1097)
+#define TRAINER_NP_BUG_CATCHER_DOUGLAS      1090 // Project Grounded: National Park, insectenwedstrijd
+#define TRAINER_NP_PICNICKER_SIENNA         1091 // Project Grounded: National Park, picknick
+#define TRAINER_NP_GENTLEMAN_WALDORF        1092 // Project Grounded: National Park, wandelt met zijn wandelstok
+#define TRAINER_NP_AROMA_LADY_PETUNIA       1093 // Project Grounded: National Park, ruikt aan alles
+#define TRAINER_NP_SHADOW_ASH               1094 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_CINDER            1095 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_EMBER             1096 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_SOOT              1097 // Project Grounded: brandend park, schim
+// }
+
 // chargestone { (tools/grounded/maptools/chargestone.py; id 1124-1128)
 #define TRAINER_CHARGESTONE_GRUNT_1F        1124 // Project Grounded: Chargestone Cave 1F, Colress-assistent
 #define TRAINER_CHARGESTONE_GRUNT_B1F_1     1125 // Project Grounded: Chargestone Cave B1F, Colress-assistent bij het stenenhek

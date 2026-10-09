@@ -614,6 +614,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ETERNATUS_ETERNAMAX:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
         CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
         break;

@@ -202,6 +202,7 @@
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
 #define TRAINER_BACK_PIC_KECLEON                8 // Project Grounded: Keccles als partner
+#define TRAINER_BACK_PIC_CALYREX                9 // Project Grounded: Calyrex als partner (National Park)
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

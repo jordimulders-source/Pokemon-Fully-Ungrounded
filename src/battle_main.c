@@ -3168,6 +3168,20 @@ static void BattleStartClearSetData(void)
 
 #define UNPACK_VOLATILE_BATON_PASSABLES(_enum, _fieldName, _typeMaxValue, ...) __VA_OPT__(if ((FIRST(__VA_ARGS__)) & V_BATON_PASSABLE) gBattleMons[battler].volatiles._fieldName = volatilesCopy->_fieldName;)
 
+// Project Grounded: National Park, gevecht tegen Eternatus (na het herstel van het park, tot de quest klaar is):
+// Celebi's kracht geeft elke Pokémon van de speler bij binnenkomst +1 op Atk, Def, Spe, SpA en SpD (omniboost).
+static void TryNationalParkOmniboost(u32 battler)
+{
+    u32 i;
+
+    if (!IsOnPlayerSide(battler) || (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+     || !FlagGet(FLAG_NATIONAL_PARK_RESTORED) || FlagGet(FLAG_NATIONAL_PARK_DONE)
+     || GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) != SPECIES_ETERNATUS)
+        return;
+    for (i = STAT_ATK; i <= STAT_SPDEF; i++)
+        gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE + 1;
+}
+
 void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
 {
     s32 i;
@@ -3179,6 +3193,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     {
         for (i = 0; i < NUM_BATTLE_STATS; i++)
             gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
+        TryNationalParkOmniboost(battler); // Project Grounded
         for (i = 0; i < gBattlersCount; i++)
         {
             if (gBattleMons[i].volatiles.escapePrevention && gDisableStructs[i].battlerPreventingEscape == battler)
@@ -3526,6 +3541,7 @@ static void DoBattleIntro(void)
                 memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
                     gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
+                TryNationalParkOmniboost(battler); // Project Grounded
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {

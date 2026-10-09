@@ -1649,6 +1649,19 @@
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
 // regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840+ vrij.
+// national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
+#define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
+#define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
+#define FLAG_NATIONAL_PARK_RESTORED                      FLAG_GROUNDED(702) // Project Grounded: National Park: Celebi heeft het park hersteld (Eternatus verschijnt)
+#define FLAG_NATIONAL_PARK_DONE                          FLAG_GROUNDED(703) // Project Grounded: Spacetime-sidequest klaar: Eternatus gevangen/verslagen, Calyrex vertrokken
+#define FLAG_NATIONAL_PARK_SCENE_PENDING                 FLAG_GROUNDED(704) // Project Grounded: National Park: tekst na de schermwissel nog tonen (eenmalig)
+#define FLAG_ITEM_NATIONAL_PARK_SILVER_POWDER            FLAG_GROUNDED(705) // Project Grounded: National Park: Silver Powder
+#define FLAG_ITEM_NATIONAL_PARK_SUN_STONE                FLAG_GROUNDED(706) // Project Grounded: National Park: Sun Stone
+#define FLAG_HIDDEN_ITEM_NATIONAL_PARK_BIG_NUGGET        FLAG_GROUNDED(707) // Project Grounded: National Park: verborgen Big Nugget
+#define FLAG_ITEM_ILEX_FOREST_REVIVAL_HERB               FLAG_GROUNDED(708) // Project Grounded: Ilex Forest: Revival Herb
+#define FLAG_ITEM_ILEX_FOREST_BOTTLE_CAP                 FLAG_GROUNDED(709) // Project Grounded: Ilex Forest: Bottle Cap
+#define FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY          FLAG_GROUNDED(710) // Project Grounded: Ilex Forest: verborgen Rare Candy
+#define FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED               FLAG_GROUNDED(711) // Project Grounded: Ilex Forest: Miracle Seed (dwaalpad)
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; FLAG_GROUNDED 660-699, 685-699 nog vrij)
 #define FLAG_ITEM_SEA_SHARD_ROUTE126_CORAL_CATHEDRAL     FLAG_GROUNDED(660) // Project Grounded: Koraalkathedraal: Sea Shard
 #define FLAG_ITEM_CORAL_CATHEDRAL_LUMINOUS_MOSS          FLAG_GROUNDED(661) // Project Grounded: Koraalkathedraal: Luminous Moss

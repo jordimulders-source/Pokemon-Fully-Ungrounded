@@ -5631,6 +5631,36 @@
       "secondary_tileset": "gTileset_Chargestone",
       "border_filepath": "data/layouts/ChargestoneCave_B2F/border.bin",
       "blockdata_filepath": "data/layouts/ChargestoneCave_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK",
+      "name": "NationalPark_Layout",
+      "width": 50,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NationalPark/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK_RUINED",
+      "name": "NationalPark_Ruined_Layout",
+      "width": 50,
+      "height": 60,
+      "primary_tileset": "gTileset_ParkBurntGeneral",
+      "secondary_tileset": "gTileset_ParkBurntRustboro",
+      "border_filepath": "data/layouts/NationalPark_Ruined/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark_Ruined/map.bin"
+    },
+    {
+      "id": "LAYOUT_ILEX_FOREST",
+      "name": "IlexForest_Layout",
+      "width": 40,
+      "height": 48,
+      "primary_tileset": "gTileset_IlexGeneral",
+      "secondary_tileset": "gTileset_IlexPetalburg",
+      "border_filepath": "data/layouts/IlexForest/border.bin",
+      "blockdata_filepath": "data/layouts/IlexForest/map.bin"
     }
   ]
 }

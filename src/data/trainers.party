@@ -41238,3 +41238,271 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Shift Gear
 
 /* --- einde chargestone --- */
+
+/* --- national_park (tools/grounded/maptools/national_park.py) --- */
+
+=== TRAINER_NP_BUG_CATCHER_DOUGLAS ===
+Name: DOUGLAS
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Vespiquen
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Attack Order
+- Defend Order
+- Heal Order
+- Air Slash
+
+Lokix
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- First Impression
+- Sucker Punch
+- Leech Life
+- Axe Kick
+
+Escavalier
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Megahorn
+- Iron Head
+- Drill Run
+- Swords Dance
+
+Frosmoth
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Quiver Dance
+- Bug Buzz
+- Ice Beam
+- Giga Drain
+
+=== TRAINER_NP_PICNICKER_SIENNA ===
+Name: SIENNA
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Girl
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Arboliva
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hyper Voice
+- Energy Ball
+- Earth Power
+- Leech Seed
+
+Dachsbun
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Body Press
+- Play Rough
+- Wish
+- Protect
+
+Sawsbuck
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Horn Leech
+- Double-Edge
+- Jump Kick
+- Swords Dance
+
+Lurantis
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Solar Blade
+- Leaf Blade
+- X-Scissor
+- Sunny Day
+
+=== TRAINER_NP_GENTLEMAN_WALDORF ===
+Name: WALDORF
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Furfrou
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Return
+- Sucker Punch
+- U-turn
+- Cotton Guard
+
+Mr. Rime
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Freeze-Dry
+- Psychic
+- Rapid Spin
+- Focus Blast
+
+Stoutland
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Return
+- Crunch
+- Play Rough
+- Wild Charge
+
+Kleavor
+Level: 69
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Stone Axe
+- X-Scissor
+- Close Combat
+- Swords Dance
+
+=== TRAINER_NP_AROMA_LADY_PETUNIA ===
+Name: PETUNIA
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Florges
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Moonblast
+- Psychic
+- Synthesis
+- Calm Mind
+
+Comfey
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draining Kiss
+- Giga Drain
+- Floral Healing
+- Calm Mind
+
+Roserade
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Sludge Bomb
+- Leaf Storm
+- Shadow Ball
+- Toxic Spikes
+
+Meganium
+Level: 69
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Petal Blizzard
+- Earthquake
+- Body Slam
+- Synthesis
+
+=== TRAINER_NP_SHADOW_ASH ===
+Name: ASH
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Houndoom
+Level: 70
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Fire Blast
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
+
+Golurk
+Level: 70
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Poltergeist
+- High Horsepower
+- Ice Punch
+- Rock Slide
+
+=== TRAINER_NP_SHADOW_CINDER ===
+Name: CINDER
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ceruledge
+Level: 70
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bitter Blade
+- Shadow Sneak
+- Poltergeist
+- Swords Dance
+
+Weezing-Galar
+Level: 70
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Strange Steam
+- Sludge Bomb
+- Will-O-Wisp
+- Fire Blast
+
+=== TRAINER_NP_SHADOW_EMBER ===
+Name: EMBER
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Chandelure
+Level: 71
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Will-O-Wisp
+
+Drapion
+Level: 71
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Knock Off
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+=== TRAINER_NP_SHADOW_SOOT ===
+Name: SOOT
+Class: Shadow Triad
+Pic: Shadow Triad
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dusknoir
+Level: 71
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Punch
+- Earthquake
+- Ice Punch
+- Trick Room
+
+Salazzle
+Level: 71
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Sludge Wave
+- Flamethrower
+- Dragon Pulse
+- Nasty Plot
+
+/* --- einde national_park --- */

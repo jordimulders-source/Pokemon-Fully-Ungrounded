@@ -166,6 +166,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **FRLG-kaart 1-op-1 overnemen** (`spacetime_cave.py`): metatile-raster + botsings-/hoogtebits van FRLG houden, per FRLG-metatile een eigen secondary-tegel ("reskin" naar Emerald-texturen), gedrag op naam vertalen (FRLG-enum → Emerald), daarna laagtype/gedrag patchen. `render_map.py` leidt de tilesetmap af van het symbool (`gTileset_FooBar` → `foo_bar`). Scheuren/teleporttegels 2x2: alleen de bovenste rij als warp.
 - **Kaartgroepen:** Spacetime-locaties in `gMapGroup_Spacetime` (sinds v0.9.173); een nieuwe groep = achteraan `group_order` en als laatste sleutel in `map_groups.json`.
 - **Sfeereffecten per pixel** (ruïnes, `ruin_beasts.py`): teken een canvas van de hele kaart en knip het in metatiles (`emit()` ontdubbelt); geditherde maskers met laagfrequente ruis geven grillige randen zonder halve tegels. Floats clippen vóór `uint8`, seeds met `zlib.crc32` (niet `hash()`), geen scipy in de container.
+- **Bos in General/Petalburg:** grote bomen (0x1D4–0x1E7, kruin 0x1CE/0x1CF) op een raster van 2×2-cellen plannen; een open cel boven een boom krijgt de kruin in zijn onderste rij (geen events daar). Hoenn-boompjes 0x0E/0x0F/0x16/0x17 zijn 1 breed. Emulatortests: teksten met B sluiten (extra A opent ze opnieuw en blokkeert het volgende debugscript).
 
 ## Werkwijzen (herhaalde taken)
 

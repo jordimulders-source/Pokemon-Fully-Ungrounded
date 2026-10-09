@@ -4,12 +4,12 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → **Spacetime S1** (zie hieronder) → **Zacian/Zamazenta + Mega Forest** → Koraalkathedraal/Sea Shards → National Park/Ilex/Eternatus → meren-kamer → Yoshi's Island → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
+**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → **Spacetime S1** (zie hieronder) → ~~Zacian/Zamazenta + Mega Forest~~ (v0.9.176) → Koraalkathedraal/Sea Shards → National Park/Ilex/Eternatus → meren-kamer → Yoshi's Island → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
 
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
 
@@ -67,7 +67,6 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
-1. **Mega Forest:** waar komt het roadblock naar Zacian/Zamazenta (hint: roestig zwaard + schild met een boomstam in het midden in het Mini Forest)?
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
 3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, Swords of Justice + Keldeo (oud plan: LEGENDARY_PLAN 6, wacht op Jordi), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** ergens in de game staat hij opeens voor je, wil samen met een sterke trainer strijden en hoort daarna bij je (gift via een event).
 

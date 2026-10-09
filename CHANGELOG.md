@@ -17613,3 +17613,9 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.175] - Glastrier en Cosmog niet meer wild
 - Jordi: Glastrier komt in de Calyrex-quest en Cosmog later bij Ultra Space. Wilde slots vervangen met behoud van zeldzaamheid: Meteor Falls 1F (1%) **Elgyem** lv 18–20, vissen **Staryu** lv 38–40; Shoal Cave Ice Room (1%) **Arctibax** lv 38–40.
+
+### [v0.9.176] - Mega Forest met Zacian en Zamazenta
+- **Hint in het Mini Forest (Route 102):** in de noordrand (kamer linksboven) ligt een omgevallen reuzenboom (kopse kant met jaarringen en mos), links een roestig zwaard in de grond en rechts een roestig schild. Vóór de Hall of Fame een tekst ("Two snores, actually. In harmony."); daarna is de boom weg en kun je het **Rusted Sword** en **Rusted Shield** oppakken (Crowned-vorm in gevechten).
+- **Mega Forest** (48×56, naadloos boven het Mini Forest): kronkelpaden, hoog gras, vijver; 12 unieke Galar-soorten lv 60–68 (Falinks en Dragapult 1%); trainers Percival, Morgana en Gwen (lv 66–67); Sweet/Tart Apple, Max Revive, PP Max, verborgen Star Piece en Big Nugget.
+- Achterin een open plek met **Zacian** en **Zamazenta** (lv 70, Kanto Legendary-muziek als placeholder).
+- Sprites `tools/grounded/mega_forest_sprites.py`, kaart `tools/grounded/maptools/mega_forest.py`; flags `FLAG_GROUNDED(620–630)`, trainers 1077–1079.

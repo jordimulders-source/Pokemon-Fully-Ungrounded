@@ -1223,6 +1223,11 @@
 #define TRAINER_CC_GIOVANNI                 1199 // Project Grounded: Cerulean Cave B1F: Giovanni, vlak voor Mewtwo
 // }
 
+// coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
+#define TRAINER_SWIMMER_CORINNE             1080 // Project Grounded: Koraalkathedraal: zwemt al jaren rondjes om hetzelfde koraal
+#define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

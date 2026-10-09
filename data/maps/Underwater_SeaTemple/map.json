@@ -32,6 +32,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Underwater_SeaTemple_EventScript_Carving"
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 8,
+      "elevation": 3,
+      "item": "ITEM_SEA_SHARD",
+      "flag": "FLAG_ITEM_SEA_SHARD_UNDERWATER_SEA_TEMPLE"
     }
   ]
 }

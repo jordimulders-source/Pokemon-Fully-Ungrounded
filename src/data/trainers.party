@@ -40966,3 +40966,73 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Dragon Rush
 
 /* --- einde mega_forest --- */
+
+/* --- coral_cathedral (tools/grounded/maptools/coral_cathedral.py) --- */
+
+=== TRAINER_SWIMMER_CORINNE ===
+Name: CORINNE
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Alomomola
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Wish
+- Protect
+- Knock Off
+
+Lumineon
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Waterfall
+- U-turn
+- Ice Beam
+- Aqua Ring
+
+Cursola
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Power Gem
+- Strength Sap
+- Hex
+
+=== TRAINER_FISHERMAN_DORIAN ===
+Name: DORIAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Corsola
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Power Gem
+- Recover
+- Scald
+- Stealth Rock
+
+Bruxish
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic Fangs
+- Aqua Jet
+- Crunch
+- Ice Fang
+
+Lanturn
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Scald
+- Ice Beam
+- Thunder Wave
+
+/* --- einde coral_cathedral --- */

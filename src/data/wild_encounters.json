@@ -2758,6 +2758,160 @@
           }
         },
         {
+          "map": "MAP_ROUTE126_CORAL_CATHEDRAL",
+          "base_label": "gRoute126CoralCathedral",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_PYUKUMUKU"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_TOXAPEX"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_PALOSSAND"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_KINGLER"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SLOWBRO"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_GOLISOPOD"
+              },
+              {
+                "min_level": 50,
+                "max_level": 52,
+                "species": "SPECIES_CURSOLA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_LUVDISC"
+              },
+              {
+                "min_level": 46,
+                "max_level": 49,
+                "species": "SPECIES_ALOMOMOLA"
+              },
+              {
+                "min_level": 46,
+                "max_level": 49,
+                "species": "SPECIES_LUMINEON"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_MANTINE"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_LANTURN"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 25,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_LUVDISC"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_FINNEON"
+              },
+              {
+                "min_level": 26,
+                "max_level": 30,
+                "species": "SPECIES_CHINCHOU"
+              },
+              {
+                "min_level": 26,
+                "max_level": 30,
+                "species": "SPECIES_QWILFISH"
+              },
+              {
+                "min_level": 26,
+                "max_level": 30,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_ALOMOMOLA"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_LUMINEON"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_LANTURN"
+              },
+              {
+                "min_level": 43,
+                "max_level": 47,
+                "species": "SPECIES_BRUXISH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_CLAWITZER"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_CERULEAN_CAVE_B1F",
           "base_label": "gCeruleanCaveB1F",
           "land_mons": {

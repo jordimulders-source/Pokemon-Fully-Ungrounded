@@ -1648,7 +1648,26 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700+ vrij.
+// coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; FLAG_GROUNDED 660-699, 685-699 nog vrij)
+#define FLAG_ITEM_SEA_SHARD_ROUTE126_CORAL_CATHEDRAL     FLAG_GROUNDED(660) // Project Grounded: Koraalkathedraal: Sea Shard
+#define FLAG_ITEM_CORAL_CATHEDRAL_LUMINOUS_MOSS          FLAG_GROUNDED(661) // Project Grounded: Koraalkathedraal: Luminous Moss
+#define FLAG_ITEM_CORAL_CATHEDRAL_SHELL_BELL             FLAG_GROUNDED(662) // Project Grounded: Koraalkathedraal: Shell Bell
+#define FLAG_ITEM_CORAL_CATHEDRAL_PEARL_STRING           FLAG_GROUNDED(663) // Project Grounded: Koraalkathedraal: Pearl String
+#define FLAG_HIDDEN_ITEM_CORAL_CATHEDRAL_BIG_PEARL       FLAG_GROUNDED(664) // Project Grounded: Koraalkathedraal: verborgen Big Pearl
+#define FLAG_ITEM_SEA_SHARD_ROUTE128_BUBBLE_GROTTO       FLAG_GROUNDED(665) // Project Grounded: Sea Shard in Route128_BubbleGrotto
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE127_TRENCH   FLAG_GROUNDED(666) // Project Grounded: Sea Shard in Underwater_Route127_Trench
+#define FLAG_ITEM_SEA_SHARD_SHIPWRECK_SHOALS             FLAG_GROUNDED(667) // Project Grounded: Sea Shard in ShipwreckShoals
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_SEA_TEMPLE        FLAG_GROUNDED(668) // Project Grounded: Sea Shard in Underwater_SeaTemple
+#define FLAG_ITEM_SEA_SHARD_ROUTE126_SILENT_CRATER       FLAG_GROUNDED(669) // Project Grounded: Sea Shard in Route126_SilentCrater
+#define FLAG_ITEM_SEA_SHARD_ROUTE127_WELLSPRING_GROTTO   FLAG_GROUNDED(670) // Project Grounded: Sea Shard in Route127_WellspringGrotto
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE136          FLAG_GROUNDED(671) // Project Grounded: Sea Shard in Underwater_Route136
+#define FLAG_SEA_SHARD_REWARD_2                          FLAG_GROUNDED(680) // Project Grounded: Sea Shards: beloning 2 (Dive Balls)
+#define FLAG_SEA_SHARD_REWARD_4                          FLAG_GROUNDED(681) // Project Grounded: Sea Shards: beloning 4 (Heavy-Duty Boots)
+#define FLAG_SEA_SHARD_REWARD_6                          FLAG_GROUNDED(682) // Project Grounded: Sea Shards: beloning 6 (Gold Bottle Cap)
+#define FLAG_SEA_SHARD_REWARD_8                          FLAG_GROUNDED(683) // Project Grounded: Sea Shards: beloning 8 (Master Ball)
+#define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
+// }
 // mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
 #define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)
 #define FLAG_RECEIVED_RUSTED_SWORD                       FLAG_GROUNDED(621) // Project Grounded: Mini Forest: roestig zwaard opgepakt (na de HoF; verbergt het zwaard)

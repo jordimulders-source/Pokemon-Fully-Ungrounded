@@ -13955,20 +13955,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_PokeFlute,
     },
 
-    [ITEM_FAME_CHECKER] =
+    // Project Grounded: slot van de Fame Checker (FRLG, ongebruikt); Sea Shard-verzamelquest
+    [ITEM_SEA_SHARD] =
     {
-        .name = ITEM_NAME("Fame Checker"),
+        .name = ITEM_NAME("Sea Shard"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Stores information\n"
-            "on famous people\n"
-            "for instant recall."),
+            "A glowing shard\n"
+            "from the seabed.\n"
+            "Divers want these."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_FameChecker,
-        .iconPalette = gItemIconPalette_FameChecker,
+        .iconPic = gItemIcon_Shard,
+        .iconPalette = gItemIconPalette_BlueShard,
     },
 
     [ITEM_TEACHY_TV] =

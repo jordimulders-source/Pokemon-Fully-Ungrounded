@@ -32,6 +32,14 @@
       "elevation": 3,
       "item": "ITEM_NEVER_MELT_ICE",
       "flag": "FLAG_HIDDEN_ITEM_ZV4_UW136_NEVER_MELT_ICE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 20,
+      "elevation": 3,
+      "item": "ITEM_SEA_SHARD",
+      "flag": "FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE136"
     }
   ]
 }

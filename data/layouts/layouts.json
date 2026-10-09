@@ -5591,6 +5591,16 @@
       "secondary_tileset": "gTileset_LavenderCalm",
       "border_filepath": "data/layouts/LavenderTown_Calm/border.bin",
       "blockdata_filepath": "data/layouts/LavenderTown_Calm/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_CORAL_CATHEDRAL",
+      "name": "Route126_CoralCathedral_Layout",
+      "width": 35,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route126_CoralCathedral/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_CoralCathedral/map.bin"
     }
   ]
 }

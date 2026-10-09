@@ -11,6 +11,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_main.h"
+#include "battle_message.h"
 #include "battle_setup.h"
 #include "battle_tower.h"
 #include "battle_transition.h"
@@ -97,8 +98,10 @@ struct CasinoSide
 struct CasinoMatch
 {
     struct CasinoSide side[2];  // kant 0 speelt als "speler" (AI), kant 1 als tegenstander
-    u16 chanceA;                // winkans kant 0 in promille
-    u8 mult[2];                 // uitbetaling in tienden
+    u16 chanceA;                // echte winkans kant 0 in promille (uitslag, "alleen uitslag", overslaan)
+    u16 shownA;                 // winkans volgens de bookies (ruis, soms bewust ernaast): bepaalt de odds
+    u16 mult[2];                // uitbetaling in tienden
+    bool8 mispriced;            // de bookies zitten er bewust naast (tip van de bookie)
 };
 
 struct Casino
@@ -113,6 +116,7 @@ struct Casino
     u8 newUnlock;
     u16 bet;
     u16 savedPartner;
+    bool8 skipped;  // gevecht overgeslagen met START
 };
 
 static EWRAM_DATA struct Casino sC = {0};
@@ -161,14 +165,15 @@ static bool32 IsUsed(const u16 *used, u32 n, u16 id)
     return FALSE;
 }
 
-static u16 RandomWorldTrainer(const u16 *used, u32 nUsed)
+// minMons: singles altijd 4 tegen 4, doubles 3 per trainer
+static u16 RandomWorldTrainer(const u16 *used, u32 nUsed, u32 minMons)
 {
     u32 tries;
 
-    for (tries = 0; tries < 200; tries++)
+    for (tries = 0; tries < 300; tries++)
     {
         u16 id = 1 + Random() % (TRAINERS_COUNT - 1);
-        if (IsValidWorldTrainer(id) && !IsUsed(used, nUsed, id))
+        if (IsValidWorldTrainer(id) && GetTrainerStructFromId(id)->partySize >= minMons && !IsUsed(used, nUsed, id))
             return id;
     }
     return NO_TRAINER;
@@ -354,11 +359,12 @@ static u32 TypeEdge(const struct CasinoSide *a, const struct CasinoSide *b)
     return n ? sum / n : 4096;
 }
 
+// Echte winkans: TA^2 / (TA^2 + TB^2), T = som (BST x level / 100)^2 x typevoordeel
 static void ComputeOdds(struct CasinoMatch *m)
 {
     u64 ta = SidePower(&m->side[0]), tb = SidePower(&m->side[1]), a2, b2;
     u32 ea = TypeEdge(&m->side[0], &m->side[1]), eb = TypeEdge(&m->side[1], &m->side[0]);
-    u32 c, s;
+    u32 c;
 
     ta = ta * (8192 + ea) / 3;
     tb = tb * (8192 + eb) / 3;
@@ -370,13 +376,33 @@ static void ComputeOdds(struct CasinoMatch *m)
     a2 = ta * ta;
     b2 = tb * tb;
     c = (a2 + b2) ? (u32)(a2 * 1000 / (a2 + b2)) : 500;
-    c = max(20, min(980, c));
-    m->chanceA = c;
+    m->chanceA = max(10, min(990, c));
+}
+
+// Bookies (Jordi): de getoonde kans = echte kans + ruis (tot ±12 procentpunt bij 50/50, kleiner naar de randen); 1 op 6 wedstrijden zitten ze er
+// bewust 25-35 procentpunt naast, richting de underdog (uit te buiten met kennis van types en teams).
+// Uitbetaling = 0,92 / getoonde kans, x1,1 tot x30.
+static void PriceMatch(struct CasinoMatch *m)
+{
+    s32 shown = m->chanceA, s, spread = m->chanceA * (1000 - m->chanceA) / 2083;  // 120 bij 50/50, ±23 bij 95/5
+
+    shown += (s32)(Random() % (2 * spread + 1)) - spread;
+    m->mispriced = (Random() % 6 == 0);
+    if (m->mispriced)
+        shown += (m->chanceA > 500 ? -1 : 1) * (250 + (s32)(Random() % 101));
+    shown = max(25, min(975, shown));
+    m->shownA = shown;
     for (s = 0; s < 2; s++)
     {
-        u32 p = s ? 1000 - c : c;
-        m->mult[s] = max(11, min(50, 9000 / p));
+        u32 p = s ? 1000 - shown : shown;
+        m->mult[s] = max(11, min(300, (9200 + p / 2) / p));
     }
+}
+
+// Uitbetaling in hele BP (afgerond, altijd minstens 1 BP winst)
+static u32 Payout(u32 bet, u32 mult)
+{
+    return max(bet + 1, (bet * mult + 5) / 10);
 }
 
 // --- de kaart ------------------------------------------------------------------------------------
@@ -401,17 +427,17 @@ static bool32 GenerateMatch(u32 mode, struct CasinoMatch *m, const u16 *used, u3
             m->side[s].trainers = per;
             for (k = 0; k < per; k++)
             {
-                u16 id = RandomWorldTrainer(local, nl);
+                u16 id = RandomWorldTrainer(local, nl, mode == MODE_FACTORY ? 1 : (per == 2 ? 3 : 4));
                 if (id == NO_TRAINER)
                     return FALSE;
                 local[nl++] = id;
                 if (mode == MODE_FACTORY)
                     m->side[s].trainer[0] = id;
                 else
-                    AddTrainerMons(&m->side[s], k, id, per == 2 ? 3 : PARTY_SIZE, 0, 0);
+                    AddTrainerMons(&m->side[s], k, id, per == 2 ? 3 : 4, 0, 0);
             }
             if (mode == MODE_FACTORY)
-                AddRentals(m, &m->side[s], 3);
+                AddRentals(m, &m->side[s], 4);
         }
         break;
     }
@@ -437,11 +463,11 @@ static bool32 GenerateMatch(u32 mode, struct CasinoMatch *m, const u16 *used, u3
     }
     case MODE_SPIRE_BOSS:
     {
-        u16 id = RandomWorldTrainer(local, nl);
+        u16 id = RandomWorldTrainer(local, nl, 4);
         if (id == NO_TRAINER)
             return FALSE;
         m->side[1].trainers = 1;
-        AddTrainerMons(&m->side[1], 0, id, PARTY_SIZE, 0, 0);
+        AddTrainerMons(&m->side[1], 0, id, 4, 0, 0);
         // de baas is even sterk als de aas van de trainer (plus wat speling); zijn HP-vermenigvuldiger doet de rest
         if (!RandomSpireBoss(&m->side[0], min(100, SideMaxLevel(&m->side[1]) + Random() % 6)))
             return FALSE;
@@ -471,27 +497,23 @@ static void CommitUsed(const struct CasinoMatch *m, u16 *used, u32 *nUsed)
             used[(*nUsed)++] = m->side[s].trainer[k];
 }
 
-// Vier wedstrijden: één gelijkwaardige, één lichte favoriet, één duidelijke en één scheve (in willekeurige volgorde)
+// Vier wedstrijden (Jordi): de meeste spannend (50/50 tot ±65/35); ongeveer 1 op 3 kaarten heeft één eenzijdige.
 static void GenerateCard(u32 mode)
 {
-    static const u16 sTargets[CASINO_MATCHES] = {500, 620, 760, 900};
     u16 targets[CASINO_MATCHES], used[16];
-    u32 i, j, nUsed = 0, tmp;
+    u32 i, nUsed = 0;
     struct CasinoMatch cand;
 
     for (i = 0; i < CASINO_MATCHES; i++)
-        targets[i] = sTargets[i];
-    for (i = CASINO_MATCHES - 1; i > 0; i--)
-    {
-        j = Random() % (i + 1);
-        SWAP(targets[i], targets[j], tmp);
-    }
+        targets[i] = 500 + Random() % 151;
+    if (Random() % 3 == 0)
+        targets[Random() % CASINO_MATCHES] = 900 + Random() % 80;
     for (i = 0; i < CASINO_MATCHES; i++)
     {
         u32 bestDist = 0xFFFF, attempts;
 
         memset(&sC.card[i], 0, sizeof(sC.card[i]));
-        for (attempts = 0; attempts < 12; attempts++)
+        for (attempts = 0; attempts < 24; attempts++)
         {
             u32 fav, dist;
             if (!GenerateMatch(mode, &cand, used, nUsed))
@@ -503,9 +525,10 @@ static void GenerateCard(u32 mode)
                 bestDist = dist;
                 sC.card[i] = cand;
             }
-            if (dist < 30)
+            if (dist < 25)
                 break;
         }
+        PriceMatch(&sC.card[i]);
         CommitUsed(&sC.card[i], used, &nUsed);
     }
     sC.cardValid = TRUE;
@@ -916,9 +939,12 @@ static void FreePics(void)
 static void FormatMult(u8 *dst, u32 mult)
 {
     *dst++ = CHAR_x;
-    dst = ConvertIntToDecimalStringN(dst, mult / 10, STR_CONV_MODE_LEFT_ALIGN, 1);
-    *dst++ = CHAR_PERIOD;
-    ConvertIntToDecimalStringN(dst, mult % 10, STR_CONV_MODE_LEFT_ALIGN, 1);
+    dst = ConvertIntToDecimalStringN(dst, mult / 10, STR_CONV_MODE_LEFT_ALIGN, 2);
+    if (mult < 100)     // vanaf x10 zonder decimaal
+    {
+        *dst++ = CHAR_PERIOD;
+        ConvertIntToDecimalStringN(dst, mult % 10, STR_CONV_MODE_LEFT_ALIGN, 1);
+    }
 }
 
 // Eén kant van de wedstrijd. Singles: portret, klasse, naam, odds, team in twee rijen van drie.
@@ -1028,7 +1054,7 @@ static void DrawCard(void)
         u8 *p = StringCopy(buf, COMPOUND_STRING("Bet {LEFT_ARROW} "));
         p = ConvertIntToDecimalStringN(p, BetAmount(), STR_CONV_MODE_LEFT_ALIGN, 3);
         p = StringCopy(p, COMPOUND_STRING(" BP {RIGHT_ARROW}   Pays "));
-        p = ConvertIntToDecimalStringN(p, BetAmount() * sC.card[sC.match].mult[sC.side] / 10, STR_CONV_MODE_LEFT_ALIGN, 4);
+        p = ConvertIntToDecimalStringN(p, Payout(BetAmount(), sC.card[sC.match].mult[sC.side]), STR_CONV_MODE_LEFT_ALIGN, 4);
         StringCopy(p, COMPOUND_STRING(" BP"));
         PrintText(FONT_SMALL, 12, 129, sColor_Red, buf);
         PrintText(FONT_SMALL, 12, 139, sColor_Gray, COMPOUND_STRING("A: watch   SELECT: result only   B: back"));
@@ -1054,6 +1080,7 @@ static void DrawTv(void)
     StringAppend(buf, COMPOUND_STRING(" vs "));
     GetSideName(&sC.card[sC.match].side[1], buf + StringLength(buf));
     PrintText(FONT_SMALL_NARROW, TV_X0, 138, sColor_Tv, buf);
+    PrintText(FONT_SMALL, TV_X1 - 50, 138, sColor_Tv, COMPOUND_STRING("START: skip"));
 }
 
 static void UpdateNoise(void)
@@ -1203,6 +1230,7 @@ static void StartTv(void)
 {
     sScr->state = SCR_TV;
     sScr->timer = 0;
+    sC.skipped = FALSE;
     SetupBattle();
     PlayMapChosenOrBattleBGM(0);
     LoadNoiseTiles();
@@ -1331,7 +1359,8 @@ static void Task_CasinoScreen(u8 taskId)
             // alleen de uitslag: getrokken uit de odds
             PlaySE(SE_SHOP);
             PlaceBet();
-            sC.result = ((Random() % 1000) < sC.card[sC.match].chanceA) ? 0 : 1;
+            sC.skipped = FALSE;
+            sC.result = ((Random() % 1000) < sC.card[sC.match].chanceA) ? 0 : 1;   // echte kans, niet de getoonde
             Exit(CASINO_EXIT_RESULT);
         }
         else if (JOY_NEW(A_BUTTON))
@@ -1373,6 +1402,7 @@ void Casino_OpenCard(void)
 // In de arena (Stadium-modi): het gevecht, met een korte transitie
 void Casino_StartArenaBattle(void)
 {
+    sC.skipped = FALSE;
     SetupBattle();
     CreateTask(Task_StartArenaBattle, 1);
     PlayMapChosenOrBattleBGM(0);
@@ -1414,7 +1444,7 @@ void Casino_Resolve(void)
         GetSideName(&sC.card[sC.match].side[sC.result], gStringVar1);
         if (sC.result == sC.side)
         {
-            amount = sC.bet * sC.card[sC.match].mult[sC.side] / 10;
+            amount = Payout(sC.bet, sC.card[sC.match].mult[sC.side]);
             bp += amount;
             gSpecialVar_Result = 1;
         }
@@ -1455,4 +1485,53 @@ void Casino_DebugUnlockAll(void)
     VarSet(VAR_CASINO_BETS, sUnlockBets[MODE_COUNT - 1]);
     if (gSaveBlock2Ptr->frontier.battlePoints < 500)
         gSaveBlock2Ptr->frontier.battlePoints = 500;
+}
+
+// battle_main.c (BattleMainCB2): START tijdens het meekijken = direct naar de uitslag, getrokken uit de echte kans
+bool32 Casino_TrySkipBattle(void)
+{
+    static const u8 sText_Skip[] = _("Skipping to the result…");
+
+    if (!gCasinoBattle || !JOY_NEW(START_BUTTON) || gBattleOutcome != 0 || sC.skipped)
+        return FALSE;
+    sC.skipped = TRUE;
+    gBattleOutcome = ((Random() % 1000) < sC.card[sC.match].chanceA) ? B_OUTCOME_WON : B_OUTCOME_LOST;
+    BattlePutTextOnWindow(sText_Skip, B_WIN_MSG);
+    return TRUE;
+}
+
+// Bookie met een tip over de huidige kaart. Zit er een verkeerd geprijsde wedstrijd op de kaart, dan wijst hij die
+// meestal aan (de kant die echt favoriet is); anders gokt hij zelf maar wat. VAR_RESULT = 1 (tip), 0 (geen kaart).
+// gStringVar1 = wedstrijdnummer, gStringVar2 = naam van de kant.
+void Casino_GetTip(void)
+{
+    u32 i, pick = 0xFF, side;
+
+    if (!IsModeUnlocked(sC.mode))
+        sC.mode = MODE_WORLD_SINGLES;
+    if (!sC.cardValid || sC.cardMode != sC.mode)
+    {
+        GenerateCard(sC.mode);
+        sC.match = 0;
+    }
+    for (i = 0; i < CASINO_MATCHES; i++)
+        if (sC.card[i].mispriced && sC.card[i].side[0].count)
+            pick = i;
+    if (pick != 0xFF && Random() % 4 != 0)
+    {
+        side = sC.card[pick].chanceA >= 500 ? 0 : 1;
+    }
+    else
+    {
+        pick = Random() % CASINO_MATCHES;
+        side = Random() & 1;
+    }
+    if (sC.card[pick].side[side].count == 0)
+    {
+        gSpecialVar_Result = 0;
+        return;
+    }
+    ConvertIntToDecimalStringN(gStringVar1, pick + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    GetSideName(&sC.card[pick].side[side], gStringVar2);
+    gSpecialVar_Result = 1;
 }

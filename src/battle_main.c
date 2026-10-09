@@ -1780,6 +1780,13 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
+// Project Grounded: Battle Casino, de melding "Skipping to the result..." blijft printen tijdens het uitfaden
+static void CB2_CasinoSkipBattle(void)
+{
+    RunTextPrinters();
+    CB2_QuitRecordedBattle();
+}
+
 void BattleMainCB2(void)
 {
     AnimateSprites();
@@ -1788,7 +1795,14 @@ void BattleMainCB2(void)
     UpdatePaletteFade();
     RunTasks();
 
-    if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
+    // Project Grounded: Battle Casino, START = meteen naar de uitslag (zelfde afsluiting als een opgenomen gevecht)
+    if (Casino_TrySkipBattle())
+    {
+        ResetPaletteFadeControl();
+        BeginNormalPaletteFade(PALETTES_ALL, 3, 0, 16, RGB_BLACK);
+        SetMainCallback2(CB2_CasinoSkipBattle);
+    }
+    else if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
         // Player pressed B during recorded battle playback, end battle
         gSpecialVar_Result = gBattleOutcome = B_OUTCOME_PLAYER_TELEPORTED;

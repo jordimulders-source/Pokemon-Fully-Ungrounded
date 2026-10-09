@@ -84,6 +84,8 @@ void Casino_SetArenaGfx(void);
 void Casino_Resolve(void);
 void Casino_CheckUnlock(void);
 void Casino_DebugUnlockAll(void);
+bool32 Casino_TrySkipBattle(void);
+void Casino_GetTip(void);
 
 // specials (data/maps/BattleFrontier_StadiumLobby/scripts.inc)
 void Stadium_PrepareChooseParty(void);

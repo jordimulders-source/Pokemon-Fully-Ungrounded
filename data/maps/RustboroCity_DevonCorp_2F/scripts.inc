@@ -393,6 +393,32 @@ RustboroCity_DevonCorp_2F_EventScript_TypeNullLocked::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_TypeNullAfter::
+	goto_if_set FLAG_RECEIVED_SILVALLY_MEMORIES, RustboroCity_DevonCorp_2F_EventScript_TypeNullAfterMemories
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullMemories, MSGBOX_DEFAULT
+	addpcitem ITEM_FIGHTING_MEMORY
+	addpcitem ITEM_FLYING_MEMORY
+	addpcitem ITEM_POISON_MEMORY
+	addpcitem ITEM_GROUND_MEMORY
+	addpcitem ITEM_ROCK_MEMORY
+	addpcitem ITEM_BUG_MEMORY
+	addpcitem ITEM_STEEL_MEMORY
+	addpcitem ITEM_FIRE_MEMORY
+	addpcitem ITEM_GRASS_MEMORY
+	addpcitem ITEM_ELECTRIC_MEMORY
+	addpcitem ITEM_PSYCHIC_MEMORY
+	addpcitem ITEM_DRAGON_MEMORY
+	addpcitem ITEM_DARK_MEMORY
+	addpcitem ITEM_FAIRY_MEMORY
+	playfanfare MUS_OBTAIN_ITEM
+	message RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesSent
+	waitmessage
+	waitfanfare
+	setflag FLAG_RECEIVED_SILVALLY_MEMORIES
+	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesAfter, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_TypeNullAfterMemories::
 	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullAfter, MSGBOX_DEFAULT
 	release
 	end
@@ -428,3 +454,20 @@ RustboroCity_DevonCorp_2F_Text_TypeNullAfter:
 	.string "Mr. STONE asked where the project went.\n"
 	.string "I said “a better place”. He sent\l"
 	.string "flowers.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullMemories:
+	.string "Oh, one more thing. These MEMORY\n"
+	.string "discs came with it. Fourteen of them.\p"
+	.string "Some prototypes went missing. We\n"
+	.string "blame the intern. The intern blames\l"
+	.string "a 'ghost'. HR is looking into both.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesSent:
+	.string "{PLAYER} received 14 MEMORIES!\n"
+	.string "They were sent to the PC.$"
+
+RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesAfter:
+	.string "Let it hold a MEMORY once it trusts\n"
+	.string "you enough to become SILVALLY.\p"
+	.string "Or don't. It was built to adapt.\n"
+	.string "Unlike our IT department.$"

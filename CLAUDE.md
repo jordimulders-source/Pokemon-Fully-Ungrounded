@@ -4,6 +4,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 
 ## Zuinig met tokens
 - **Humor herhaalt niet:** de "X: YES."-grap is op (Jordi, 9 okt); varieer grappen en check met grep of een vorm al vaak voorkomt.
+- **Autonoom (Jordi, 9 okt):** ga zelf door met taken uit `TODO.md` die geen input van Jordi vereisen (volgorde: de prioriteitsregel bovenaan TODO); vraag alleen bij echte ontwerpkeuzes.
 - **Werkregel (Jordi, 9 okt): zo weinig mogelijk moeite, zo veel mogelijk bereiken.** Hergebruik kaarten/tilesets/scripts/teams, placeholders voor intro's en thema's tot de muziekfase, alleen het riskante testen, dure onderdelen uitstellen en melden.
 - **Geen ROM opleveren** (zippen/versturen) tenzij Jordi erom vraagt. `make -j4` om te controleren dat het bouwt mag altijd; filter de uitvoer met `make -j8 2>&1 | grep -i error` (`grep "rror:"` mist linkerfouten zoals een onbekend geluid of symbool).
 - Emulatortests en screenshots alleen voor wat echt nieuw of riskant is (warps, scripts, nieuwe mechanics); niet voor elke kleine kaartwijziging. Eén render van de hele kaart aan het eind is genoeg; stuur die zonder ze zelf eerst vaak te bekijken.

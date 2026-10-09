@@ -1223,6 +1223,14 @@
 #define TRAINER_CC_GIOVANNI                 1199 // Project Grounded: Cerulean Cave B1F: Giovanni, vlak voor Mewtwo
 // }
 
+// chargestone { (tools/grounded/maptools/chargestone.py; id 1124-1128)
+#define TRAINER_CHARGESTONE_GRUNT_1F        1124 // Project Grounded: Chargestone Cave 1F, Colress-assistent
+#define TRAINER_CHARGESTONE_GRUNT_B1F_1     1125 // Project Grounded: Chargestone Cave B1F, Colress-assistent bij het stenenhek
+#define TRAINER_CHARGESTONE_GRUNT_B1F_2     1126 // Project Grounded: Chargestone Cave B1F, Colress-assistent in de grote grot
+#define TRAINER_CHARGESTONE_GRUNT_B2F       1127 // Project Grounded: Chargestone Cave B2F, Colress-assistent voor het lab
+#define TRAINER_CHARGESTONE_COLRESS         1128 // Project Grounded: Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

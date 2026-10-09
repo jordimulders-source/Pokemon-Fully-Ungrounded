@@ -5591,6 +5591,36 @@
       "secondary_tileset": "gTileset_LavenderCalm",
       "border_filepath": "data/layouts/LavenderTown_Calm/border.bin",
       "blockdata_filepath": "data/layouts/LavenderTown_Calm/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_1F",
+      "name": "ChargestoneCave_1F_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_B1F",
+      "name": "ChargestoneCave_B1F_Layout",
+      "width": 54,
+      "height": 46,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_B2F",
+      "name": "ChargestoneCave_B2F_Layout",
+      "width": 46,
+      "height": 40,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_B2F/map.bin"
     }
   ]
 }

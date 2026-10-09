@@ -1648,7 +1648,20 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 760-799 Chargestone Cave (chargestone.py), 660+ vrij (behalve 760-799).
+// chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
+#define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)
+#define FLAG_HIDE_CHARGESTONE_ZERAORA                    FLAG_GROUNDED(761) // Project Grounded: Chargestone Cave B2F: ZERAORA verborgen (voor Colress verslagen is of na het gevecht)
+#define FLAG_HIDE_CHARGESTONE_COLRESS                    FLAG_GROUNDED(762) // Project Grounded: Chargestone Cave B2F: Colress weg (na ZERAORA)
+#define FLAG_ITEM_CHARGESTONE_1F_THUNDER_STONE           FLAG_GROUNDED(763) // Project Grounded: Chargestone Cave 1F: Thunder Stone
+#define FLAG_ITEM_CHARGESTONE_1F_MAX_REVIVE              FLAG_GROUNDED(764) // Project Grounded: Chargestone Cave 1F: Max Revive (zijgrot achter de duwsteen)
+#define FLAG_ITEM_CHARGESTONE_B1F_MAGNET                 FLAG_GROUNDED(765) // Project Grounded: Chargestone Cave B1F: Magnet
+#define FLAG_ITEM_CHARGESTONE_B1F_METAL_COAT             FLAG_GROUNDED(766) // Project Grounded: Chargestone Cave B1F: Metal Coat
+#define FLAG_ITEM_CHARGESTONE_B2F_ELECTIRIZER            FLAG_GROUNDED(767) // Project Grounded: Chargestone Cave B2F: Electirizer
+#define FLAG_ITEM_CHARGESTONE_B2F_PP_MAX                 FLAG_GROUNDED(768) // Project Grounded: Chargestone Cave B2F: PP Max
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_1F_CELL_BATTERY     FLAG_GROUNDED(769) // Project Grounded: Chargestone Cave 1F: verborgen Cell Battery
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_B1F_BIG_NUGGET      FLAG_GROUNDED(770) // Project Grounded: Chargestone Cave B1F: verborgen Big Nugget
+// }
 // mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
 #define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)
 #define FLAG_RECEIVED_RUSTED_SWORD                       FLAG_GROUNDED(621) // Project Grounded: Mini Forest: roestig zwaard opgepakt (na de HoF; verbergt het zwaard)

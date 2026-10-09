@@ -766,6 +766,9 @@
     "CeruleanCave_1F",
     "CeruleanCave_2F",
     "CeruleanCave_B1F",
-    "SpacetimeCave"
+    "SpacetimeCave",
+    "ChargestoneCave_1F",
+    "ChargestoneCave_B1F",
+    "ChargestoneCave_B2F"
   ]
 }

@@ -1426,6 +1426,14 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_CHARGESTONE_CAVE",
+      "name": "CHARGESTONE CAVE",
+      "x": 26,
+      "y": 4,
+      "width": 1,
+      "height": 1
     }
   ]
 }

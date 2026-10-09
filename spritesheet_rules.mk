@@ -5061,3 +5061,6 @@ $(BATINTGFXDIR)/healthbox_singles_player.4bpp: %.4bpp: %.png
 # Project Grounded: Shy Guy (32x32, tools/grounded/shyguy_overworld.py)
 $(OBJEVENTGFXDIR)/people/shy_guy.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/ruin_seal.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

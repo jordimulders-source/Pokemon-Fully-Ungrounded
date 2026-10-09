@@ -195,6 +195,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route135_EventScript_Eiscue2",
       "flag": "FLAG_TEMP_15"
+    },
+    {
+      "local_id": "LOCALID_ROUTE135_RUIN_SEAL",
+      "graphics_id": "OBJ_EVENT_GFX_RUIN_SEAL",
+      "x": 51,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RuinBeasts_EventScript_SealChienPao",
+      "flag": "FLAG_RUIN_SEAL_OPEN_CHIEN_PAO"
     }
   ],
   "warp_events": [

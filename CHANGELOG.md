@@ -17589,3 +17589,9 @@ Volgens Jordi's GBA-instructies per leider:
 - Elk schrijn: zaal met vier stenen staken, inscriptie, het beest bovenin; muziek `MUS_SEALED_CHAMBER`. Elk beest aanspreken telt als bezoek; vóór de Hall of Fame een cryptische zegeltekst, daarna breken de zegels pas als alle vier schrijnen bezocht zijn (anders een hint per ontbrekend schrijn).
 - Gevecht lv 70, transitie Black Hole Pulsate en Kanto Legendary-muziek als placeholder (Jordi maakt eigen intro's en het thema later).
 - Tilesets `ruin_fire/earth/moss/ice`: Ekat's Volcano Set per thema getint. Bouwscript `tools/grounded/maptools/ruin_beasts.py`; flags `FLAG_GROUNDED(530–537)`.
+
+### [v0.9.171] - Beasts of Ruin: zichtbare zegels + Sealbreaker van het echtpaar op Mt. Pyre
+- Jordi: alle vier de ingangen moeten duidelijk verzegeld zijn. Op elke ingang staat nu een **zegelstaak** (paarse staak met een zegelpapiertje; `tools/grounded/ruin_seal_sprite.py`, `OBJ_EVENT_GFX_RUIN_SEAL`). Ook Wo-Chiens ingang in Petalburg Woods is zo meteen zichtbaar.
+- Het **oude echtpaar op de top van Mt. Pyre** vertelt na de Hall of Fame dat zij de vier rampen ooit "tijdelijk" verzegelden (vierhonderd jaar geleden) en geeft de **Sealbreaker** (Key Item, oud slot 730 = het geschrapte Aurora Ticket). Daarmee breek je de zegels; binnen begint het gevecht meteen (de eis "eerst alle vier bezoeken" is weg).
+- Zonder Sealbreaker: een tekst over de staak, na de Hall of Fame met een hint naar Mt. Pyre.
+- Flags `FLAG_GROUNDED(538–541)` (`FLAG_RUIN_SEAL_OPEN_*`). Getest in de emulator: zegel dicht → gift op Mt. Pyre → zegel breekt → kamer in.

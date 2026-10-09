@@ -14039,16 +14039,20 @@ const struct Item gItemsInfo[] =
     },
 
     // Project Grounded: slot van het Aurora Ticket (Birth Island geschrapt); leeg, zodat de item-id's gelijk blijven
-    [ITEM_UNUSED_730] =
+    [ITEM_SEALBREAKER] =
     {
-        .name = gQuestionMarksItemName,
+        .name = ITEM_NAME("Sealbreaker"),
         .price = 0,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "An old key from\n"
+            "Mt. Pyre. Breaks\n"
+            "the seals of ruin."),
+        .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_QuestionMark,
-        .iconPalette = gItemIconPalette_QuestionMark,
+        .iconPic = gItemIcon_SecretKey,
+        .iconPalette = gItemIconPalette_SecretKey,
     },
 
     [ITEM_OLD_SEA_MAP] =

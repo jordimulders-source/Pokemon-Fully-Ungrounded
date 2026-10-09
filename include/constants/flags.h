@@ -1658,6 +1658,10 @@
 #define FLAG_HIDE_RUIN_TING_LU                           FLAG_GROUNDED(535) // Project Grounded: Ting-Lu gevangen/verslagen
 #define FLAG_HIDE_RUIN_WO_CHIEN                          FLAG_GROUNDED(536) // Project Grounded: Wo-Chien gevangen/verslagen
 #define FLAG_HIDE_RUIN_CHIEN_PAO                         FLAG_GROUNDED(537) // Project Grounded: Chien-Pao gevangen/verslagen
+#define FLAG_RUIN_SEAL_OPEN_CHI_YU                       FLAG_GROUNDED(538) // Project Grounded: zegel bij de ingang naar Chi-Yu gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_TING_LU                      FLAG_GROUNDED(539) // Project Grounded: zegel bij de ingang naar Ting-Lu gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_WO_CHIEN                     FLAG_GROUNDED(540) // Project Grounded: zegel bij de ingang naar Wo-Chien gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_CHIEN_PAO                    FLAG_GROUNDED(541) // Project Grounded: zegel bij de ingang naar Chien-Pao gebroken (Sealbreaker)
 // }
 // sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; FLAG_GROUNDED 500-529)
 #define FLAG_ITEM_HERMIT_CRATER_WIDE_LENS                FLAG_GROUNDED(500) // Project Grounded: kluizenaarskrater: Wide Lens

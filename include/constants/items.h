@@ -880,7 +880,7 @@
 #define ITEM_SS_TICKET 727
 #define ITEM_EON_TICKET 728
 #define ITEM_MYSTIC_TICKET 729
-#define ITEM_UNUSED_730 730 // Project Grounded: was Aurora Ticket (Birth Island geschrapt)
+#define ITEM_SEALBREAKER 730 // Project Grounded: breekt de zegels van de Beasts of Ruin-schrijnen (was Aurora Ticket, Birth Island geschrapt)
 #define ITEM_OLD_SEA_MAP 731
 #define ITEM_LETTER 732
 #define ITEM_DEVON_PARTS 733

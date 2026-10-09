@@ -180,6 +180,7 @@ MtPyre_Summit_Movement_ArchieFacePlayer2:
 MtPyre_Summit_EventScript_OldMan::
 	lock
 	faceplayer
+	call MtPyre_Summit_EventScript_TrySealbreaker
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, MtPyre_Summit_EventScript_OldManAfterRayquaza
 	msgbox MtPyre_Summit_Text_WillYouHearOutMyTale, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, MtPyre_Summit_EventScript_OldManTale
@@ -209,6 +210,7 @@ MtPyre_Summit_EventScript_OldManNewTale::
 MtPyre_Summit_EventScript_OldLady::
 	lock
 	faceplayer
+	call MtPyre_Summit_EventScript_TrySealbreaker
 	goto_if_set FLAG_RETURNED_RED_OR_BLUE_ORB, MtPyre_Summit_EventScript_OldLadyAfterOrbsReturned
 	call_if_ge VAR_MT_PYRE_STATE, 3, MtPyre_Summit_EventScript_OldLadyOrbsReturned
 	goto_if_set FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, MtPyre_Summit_EventScript_OldLadyLegendariesAwake
@@ -640,3 +642,41 @@ MtPyre_Summit_Text_HoennTrioTale:
 	.string "Then, its duty done, the green POKéMON\n"
 	.string "flew off into the wild blue yonder…$"
 
+
+@ Project Grounded: na de Hall of Fame geeft het echtpaar de Sealbreaker (Beasts of Ruin, v0.9.171).
+MtPyre_Summit_EventScript_TrySealbreaker::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MtPyre_Summit_EventScript_TrySealbreakerEnd
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, TRUE, MtPyre_Summit_EventScript_TrySealbreakerEnd
+	msgbox MtPyre_Summit_Text_SealsIntro, MSGBOX_DEFAULT
+	giveitem ITEM_SEALBREAKER
+	msgbox MtPyre_Summit_Text_SealsWhere, MSGBOX_DEFAULT
+	release
+	end
+MtPyre_Summit_EventScript_TrySealbreakerEnd::
+	return
+
+MtPyre_Summit_Text_SealsIntro:
+	.string "Ah, the CHAMPION. Sit down. Not there,\n"
+	.string "that's a grave.\p"
+	.string "We guard more than two orbs, child.\n"
+	.string "Long ago, four calamities washed up\l"
+	.string "in HOENN from a faraway land.\p"
+	.string "We could not defeat them. So we did\n"
+	.string "what every family does with problems:\l"
+	.string "we sealed them away and never spoke\l"
+	.string "of them again.\p"
+	.string "It was meant to be temporary.\n"
+	.string "That was four hundred years ago.\p"
+	.string "But you beat the LEAGUE. You are\n"
+	.string "ready to face them. Probably.\l"
+	.string "Take this before we change our minds.$"
+
+MtPyre_Summit_Text_SealsWhere:
+	.string "The SEALBREAKER opens the four\n"
+	.string "stakes. One in the fire above\l"
+	.string "JAGGED PASS, one under the desert,\l"
+	.string "one in PETALBURG WOODS, and one\l"
+	.string "in the snow of ROUTE 135.\p"
+	.string "If they eat you, please don't haunt\n"
+	.string "this mountain. It's full.$"

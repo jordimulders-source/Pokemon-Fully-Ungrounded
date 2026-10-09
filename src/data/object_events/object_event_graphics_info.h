@@ -5568,3 +5568,23 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing = {
     .images = sPicTable_HoopaRing,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_RUIN_SEAL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RuinSeal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

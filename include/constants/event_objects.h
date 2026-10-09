@@ -300,7 +300,9 @@
 
 #define OBJ_EVENT_GFX_HOOPA_RING                      285 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 
-#define NUM_OBJ_EVENT_GFX                        286
+#define OBJ_EVENT_GFX_RUIN_SEAL                       286 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+
+#define NUM_OBJ_EVENT_GFX                        287
 
 
 // These are dynamic object gfx ids.
@@ -461,6 +463,7 @@
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN            0x113F // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1143 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 
 #if OW_FOLLOWERS_POKEBALLS

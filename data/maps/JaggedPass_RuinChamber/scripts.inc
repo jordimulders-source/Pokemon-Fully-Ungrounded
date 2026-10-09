@@ -8,7 +8,13 @@ JaggedPass_RuinChamber_EventScript_Stake::
 
 @ Gedeeld door de vier schrijnen. VAR_RESULT = TRUE als alle vier bezocht zijn (dan breekt de zegel),
 @ anders een hint per schrijn die nog niet bezocht is.
+@ Sinds v0.9.171 zijn de ingangen zelf verzegeld tot je de Sealbreaker hebt (oude echtpaar, Mt. Pyre); binnen vecht
+@ het beest dus meteen. RuinBeasts_EventScript_NotAll en de hints blijven voor de Dialoogstudio staan.
 RuinBeasts_EventScript_CheckSeals::
+	setvar VAR_RESULT, TRUE
+	return
+
+RuinBeasts_EventScript_CheckSealsOld::
 	goto_if_unset FLAG_RUIN_SEAL_CHI_YU, RuinBeasts_EventScript_NotAll
 	goto_if_unset FLAG_RUIN_SEAL_TING_LU, RuinBeasts_EventScript_NotAll
 	goto_if_unset FLAG_RUIN_SEAL_WO_CHIEN, RuinBeasts_EventScript_NotAll
@@ -81,3 +87,80 @@ RuinBeasts_Text_HintWoChien:
 RuinBeasts_Text_HintChienPao:
 	.string "...a cold behind a cliff of snow, far to\n"
 	.string "the north...$"
+
+RuinBeasts_EventScript_SealChiYu::
+	lock
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, FALSE, RuinBeasts_EventScript_SealLocked
+	msgbox RuinBeasts_Text_SealBreaks, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_REFLECT
+	waitse
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_RUIN_SEAL_OPEN_CHI_YU
+	release
+	end
+
+RuinBeasts_EventScript_SealTingLu::
+	lock
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, FALSE, RuinBeasts_EventScript_SealLocked
+	msgbox RuinBeasts_Text_SealBreaks, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_REFLECT
+	waitse
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_RUIN_SEAL_OPEN_TING_LU
+	release
+	end
+
+RuinBeasts_EventScript_SealWoChien::
+	lock
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, FALSE, RuinBeasts_EventScript_SealLocked
+	msgbox RuinBeasts_Text_SealBreaks, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_REFLECT
+	waitse
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_RUIN_SEAL_OPEN_WO_CHIEN
+	release
+	end
+
+RuinBeasts_EventScript_SealChienPao::
+	lock
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, FALSE, RuinBeasts_EventScript_SealLocked
+	msgbox RuinBeasts_Text_SealBreaks, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_REFLECT
+	waitse
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_RUIN_SEAL_OPEN_CHIEN_PAO
+	release
+	end
+
+RuinBeasts_EventScript_SealLocked::
+	msgbox RuinBeasts_Text_SealLocked, MSGBOX_DEFAULT
+	goto_if_unset FLAG_SYS_GAME_CLEAR, RuinBeasts_EventScript_SealLockedEnd
+	msgbox RuinBeasts_Text_SealLockedHint, MSGBOX_DEFAULT
+RuinBeasts_EventScript_SealLockedEnd::
+	release
+	end
+
+RuinBeasts_Text_SealLocked:
+	.string "A stake is driven into the entrance,\n"
+	.string "wrapped in a paper seal.\p"
+	.string "Something on the other side is\n"
+	.string "breathing very slowly. And patiently.$"
+
+RuinBeasts_Text_SealLockedHint:
+	.string "The seal smells faintly of incense.\n"
+	.string "The same incense as on MT. PYRE…$"
+
+RuinBeasts_Text_SealBreaks:
+	.string "The SEALBREAKER grows warm.\p"
+	.string "The paper seal curls up and turns\n"
+	.string "to ash. The stake splits in two.\p"
+	.string "Whatever was waiting in there\n"
+	.string "has stopped waiting.$"

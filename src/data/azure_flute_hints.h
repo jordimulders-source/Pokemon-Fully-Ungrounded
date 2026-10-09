@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 74 soorten.
+// 77 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -139,6 +139,12 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_MESPRIT, FLAG_HIDE_LAKE_VERITY_MESPRIT, COMPOUND_STRING("SPACETIME CAVE, the lakes. LAKE VERITY:\nsurf to the cave in the middle. Bring\lfeelings.")},
     // AZELF: LakeValor_Cavern
     {SPECIES_AZELF, FLAG_HIDE_LAKE_VALOR_AZELF, COMPOUND_STRING("SPACETIME CAVE, the lakes. LAKE VALOR:\nsurf to the cave in the middle. Bring\lcourage, or at least snacks.")},
+    // CALYREX: CrownTundra
+    {SPECIES_CALYREX, FLAG_CROWN_CALYREX_DONE, COMPOUND_STRING("ROUTE 136, a cave in the little hill.\nBeyond it, a small king on a cold throne\lwants his horses back.")},
+    // GLASTRIER: CrownTundra
+    {SPECIES_GLASTRIER, FLAG_CROWN_CHOSE_GLASTRIER, COMPOUND_STRING("CROWN TUNDRA, the ice field. A horse\nmade of muscle and grudges. Bring warm\lclothes and a better attitude.")},
+    // SPECTRIER: CrownTundra
+    {SPECIES_SPECTRIER, FLAG_CROWN_CHOSE_SPECTRIER, COMPOUND_STRING("CROWN TUNDRA, between the dark trees. A\nhorse that is scared of you. And of\ltrees. And of itself.")},
     // KORAIDON: AreaZero_Past
     {SPECIES_KORAIDON, 0, COMPOUND_STRING("AREA ZERO, the past. Something at the\nbottom is very proud of its tail.")},
     // MIRAIDON: AreaZero_Future

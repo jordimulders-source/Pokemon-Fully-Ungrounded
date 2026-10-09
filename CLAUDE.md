@@ -184,6 +184,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Generator opnieuw draaien na de levelcurve:** sinds v0.9.195 houdt `check_levels.protect()` (bovenin elk bouwscript, ook in nieuwe) levels en evoluties vast; daarna `python3 tools/grounded/check_levels.py`. Scripts als heatran_lair, safari_zones, zee_vulling_2/3 herschrijven hele `map.json`'s: `git diff` op map.json controleren.
 - **Nooit `git stash` in de hoofdcheckout met eigen onopgeslagen werk** om een testrun terug te zetten (stash + drop gooide scriptwijzigingen weg; terug via `git fsck --no-reflog`). Gebruik `git checkout -- data include src`.
 - **Meer met zwemgrot** (`lakes.py`): General-vijver met `pond_tile()` (vooraf 3x3-opening op de watervorm), Route 120-heuvel met `MB_WATER_DOOR` + een Scorched Slab-kopie op `gTileset_Cave`. Sneeuwset heeft geen bordtegel: sign op een sneeuwpop. Kristallen 0x3A5–0x3A7 alleen op 0x211-vloer.
+- **Nieuwe legendary in de game:** draai `python3 tools/grounded/azure_flute.py` en geef hem een hint in `HINTS` (anders een algemene hint). Startmenu in emulatortests na een tasbezoek: eerst START, 2× UP, B om de cursor terug op DEBUG te zetten.
 
 ## Werkwijzen (herhaalde taken)
 

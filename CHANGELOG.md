@@ -17780,3 +17780,10 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.206] - Glastrier én Spectrier
 - Jordi: alle Pokémon zijn beschikbaar in deze game. Geen keuze meer tussen de paarden: **beide** zijn te vangen. Na het eerste paard geeft Calyrex de Reins of Unity; het andere paard blijft staan tot je het vangt (ook nadat je Calyrex gevangen hebt).
+
+### [v0.9.207] - Arceus, de Azure Flute en de Hall of Origin
+- **Na Spear Pillar** (terug bij het Coronet-portaal): het scherm flitst wit, **Arceus** spreekt (geen sprite, alleen de stem) en geeft de **Azure Flute** (nieuw Key Item, eigen icoon).
+- **Azure Flute** vanuit de tas: speelt het fluitdeuntje, zegt hoeveel legendaries nog openstaan en geeft een hint over de volgende (elke keer de volgende). Een soort telt als gedaan als hij gevangen is óf als zijn ontmoeting voorgoed op is. Lijst van 77 soorten, gegenereerd door `tools/grounded/azure_flute.py` (opnieuw draaien als er legendaries bijkomen; paradoxen tellen niet mee).
+- Alles gedaan → "meet me at SKY PILLAR". Op de top van Sky Pillar verschijnt een **trap van licht** naar de **Hall of Origin** (drie kaarten: trap, atrium met zuilen, top in Spear Pillar-stijl; lichtfonteinen die healen). Onderweg negen **emissaries van Arceus** (lv 100, elk een team legendaries met een thema: lucht, zee, land, geest, dromen, rechtvaardigheid, smidse, de zes Regi's, tijd en ruimte). Daarna healt Arceus je team ("anders is het niet eerlijk") en volgt het gevecht tegen **Arceus lv 100**.
+- Nieuwe items: Covert Cloak, Clear Amulet, Punching Glove, Griseous Orb. Trainer-id's: negen ongebruikte vanilla-trainers hergebruikt (`TRAINER_HOO_*`); flags `FLAG_GROUNDED(1220–1243)`. Muziek: placeholders.
+- Getest: Arceus-scene, fluit-hint, alles gevangen → Sky Pillar → Hall → Arceus-gevecht start. Niet getest: de gevechten met de emissaries.

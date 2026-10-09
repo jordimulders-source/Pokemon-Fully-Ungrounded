@@ -1686,7 +1686,7 @@ def w_pheromosa():
                     put(img, bx + i, 31 - j, col)
         return outline(img, (40, 64, 104))
     CR = ice_crystal()
-    for (cx, cy) in ((6, 21), (12, 25), (10, 19)):
+    for (cx, cy) in ((6, 21), (12, 25), (10, 19), (4, 25), (14, 21), (8, 27)):
         base_bg = w.bot[cy * 16:cy * 16 + 32, cx * 16:cx * 16 + 32].copy()
         frames = []
         for f in range(8):
@@ -1699,7 +1699,7 @@ def w_pheromosa():
             frames.append(np.concatenate([b, np.full((32, 32, 1), 255.0)], 2))
         anim_block(w, cx, cy, frames)
         w.solid[cy + 1, cx] = w.solid[cy + 1, cx + 1] = True
-    for (cx, cy) in ((8, 5), (14, 9)):
+    for (cx, cy) in ((8, 5), (14, 9), (10, 3), (16, 11)):
         anim_block(w, cx, cy, FIRE)
         w.solid[cy + 1, cx] = w.solid[cy + 1, cx + 1] = True
     for (cx, cy, f) in ((4, 7, 2), (12, 4, 5), (16, 6, 1)):
@@ -1716,7 +1716,7 @@ def w_pheromosa():
     for f in FIRE:
         im = Image.fromarray(np.clip(f, 0, 255).astype(np.uint8), 'RGBA').resize((16, 16), Image.NEAREST)
         small.append(np.array(im).astype(float))
-    for (cx, cy) in ((32, 20), (34, 24), (26, 24), (32, 26), (24, 20)):
+    for (cx, cy) in ((32, 20), (34, 24), (26, 24), (32, 26), (24, 20), (36, 22), (30, 24), (34, 28), (36, 18), (22, 26)):
         anim_block(w, cx, cy, small, nx=1, ny=1)
     # aardschokken (noordoost): scheuren en zwevende brokken grond
     def chunk(seed):
@@ -1730,7 +1730,7 @@ def w_pheromosa():
                 put(img, x, y, col)
         return outline(img, (24, 16, 16))
     CH = [chunk(1), chunk(2)]
-    for (cx, cy, k) in ((26, 6, 0), (32, 8, 1), (30, 4, 1), (34, 11, 0), (0, 12, 0), (38, 6, 1), (8, 0, 1), (16, 30, 0), (36, 30, 1)):
+    for (cx, cy, k) in ((26, 6, 0), (32, 8, 1), (30, 4, 1), (34, 11, 0), (36, 8, 0), (28, 12, 1), (0, 12, 0), (38, 6, 1), (8, 0, 1), (16, 30, 0), (36, 30, 1)):
         reg = w.bot[(cy + 1) * 16:(cy + 3) * 16, cx * 16:(cx + 2) * 16]
         msk = CH[k][..., 3] > 127
         if reg.shape[:2] == (32, 32):

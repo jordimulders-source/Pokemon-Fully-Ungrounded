@@ -1287,6 +1287,10 @@
 #define TRAINER_CORONET_SPATIA              1088 // Project Grounded: Mt. Coronet 6F, de laatste projectie van Palkia
 // }
 
+// Post-game lv 100 (met de hand, geen generator)
+#define TRAINER_DAVE_PARADISO               1089 // Project Grounded: Dave, post-game comeback op zijn ligstoel in het Paradiso Resort
+#define TRAINER_SICKBLIK_DEV                1185 // Project Grounded: SickBlik als developer op bugjacht (dagrotatie Mauville/Fortree/Lilycove/Pacifidlog)
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

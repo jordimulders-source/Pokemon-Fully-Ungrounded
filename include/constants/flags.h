@@ -1672,6 +1672,8 @@
 #define FLAG_HIDDEN_ITEM_CORONET_5F_STAR_PIECE           FLAG_GROUNDED(1171) // Project Grounded: Mt. Coronet 5F: verborgen Star Piece
 #define FLAG_ITEM_CORONET_6F_PP_UP                       FLAG_GROUNDED(1172) // Project Grounded: Mt. Coronet 6F: PP Up
 // }
+// Post-game Dave/SickBlik (met de hand; FLAG_GROUNDED 1173-1179, 1174-1179 nog vrij)
+#define FLAG_HIDE_SICKBLIK_DEV                           FLAG_GROUNDED(1173) // Project Grounded: SickBlik (developer) niet op deze kaart vandaag; gezet/gewist in ON_TRANSITION van Mauville/Fortree/Lilycove/Pacifidlog
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119, 1050-1119 nog vrij)
 #define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
 #define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)

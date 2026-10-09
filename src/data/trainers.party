@@ -42811,3 +42811,147 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Stealth Rock
 
 /* --- einde coronet --- */
+
+/* --- post-game lv 100: Dave (Paradiso Resort) en SickBlik (developer) --- */
+
+=== TRAINER_DAVE_PARADISO ===
+Name: Dave
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
+Mugshot: Blue
+
+Gengar @ Focus Sash
+Level: 100
+Ability: Cursed Body
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Will-O-Wisp
+- Hex
+- Sludge Bomb
+- Focus Blast
+
+Gliscor @ Toxic Orb
+Level: 100
+Ability: Poison Heal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Nature: Impish
+- Earthquake
+- Facade
+- Protect
+- Swords Dance
+
+Ceruledge @ Life Orb
+Level: 100
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Bitter Blade
+- Poltergeist
+- Shadow Sneak
+- Swords Dance
+
+Iron Valiant @ Booster Energy
+Level: 100
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Close Combat
+- Knock Off
+- Swords Dance
+
+Garchomp @ Loaded Dice
+Level: 100
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Scale Shot
+- Earthquake
+- Stone Edge
+- Swords Dance
+
+Kingambit @ Black Glasses
+Level: 100
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Kowtow Cleave
+- Sucker Punch
+- Iron Head
+- Swords Dance
+
+=== TRAINER_SICKBLIK_DEV ===
+Name: SickBlik
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
+Mugshot: Yellow
+
+Dragapult @ Focus Sash
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Dragon Darts
+- U-Turn
+- Will-o-Wisp
+- Hex
+
+Ferrothorn @ Rocky Helmet
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Iron Barbs
+- Stealth Rock
+- Leech Seed
+- Power Whip
+- Knock Off
+
+Electrode @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Galvanize
+- Volt Switch
+- Explosion
+- Psychic
+- Searing Shot
+
+Volcarona @ Heavy-Duty Boots
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Flame Body
+- Quiver Dance
+- Giga Drain
+- Fiery Dance
+- Bug Buzz
+
+Sigilyph @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Magic Guard
+- Stored Power
+- Cosmic Power
+- Tailwind
+- Heat Wave
+
+Octillery @ Expert Belt
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Protean
+- Octazooka
+- Aeroblast
+- Moonblast
+- Aura Sphere

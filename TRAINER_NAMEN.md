@@ -96,6 +96,8 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F (zijn 4e gevecht) + Stadium (`PARTNER_STADIUM_DAVE`); post-game praat hij op een ligstoel in het Paradiso Resort |
 | Mitch | `TRAINER_MITCH` | `TRAINER_SAMUEL` | 81 | 0x551 | Cooltrainer, Victory Road B1F + Stadium (`PARTNER_STADIUM_MITCH`) |
 | SickBlik | `TRAINER_SICKBLIK` | `TRAINER_OWEN` | 83 | 0x553 | Cooltrainer, Victory Road B2F + Stadium (`PARTNER_STADIUM_SICKBLIK`) |
+| Dave | `TRAINER_DAVE_PARADISO` | (nieuw) | 1089 | 0x941 | post-game comeback op zijn ligstoel in het Paradiso Resort (18, 34), lv 100, eenmalig |
+| SickBlik | `TRAINER_SICKBLIK_DEV` | (nieuw) | 1185 | 0x9A1 | post-game 'developer', per dag in Mauville (3, 9) / Fortree (5, 9) / Lilycove (10, 26) / Pacifidlog (1, 14) (`Grounded_SickBlikSpot`, objectflag `FLAG_HIDE_SICKBLIK_DEV`), lv 100, eenmalig; script `data/scripts/sickblik_dev.inc` |
 | Kapitein Grimsby | `TRAINER_GRIMSBY` | (nieuw) | 1054 | 0x91E | Sailor, spookschip S.S. AGAVE (`GhostShip_CaptainsOffice`, 's nachts via Shipwreck Shoals) + Stadium (`PARTNER_STADIUM_GRIMSBY`) |
 | Spookzeelieden Silas, Morgan, Ned, Percy | `TRAINER_GHOST_SAILOR_SILAS` … `_PERCY` | (nieuw) | 1050–1053 | 0x91A–0x91D | spookschip (dek, gang, hutten) |
 

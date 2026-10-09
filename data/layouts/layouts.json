@@ -6125,10 +6125,10 @@
     {
       "id": "LAYOUT_ULTRA_SPACE_GUZZLORD",
       "name": "UltraSpace_Guzzlord_Layout",
-      "width": 36,
-      "height": 21,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_UltraGuzzlord",
+      "width": 44,
+      "height": 35,
+      "primary_tileset": "gTileset_UltraBGuzzlordBase",
+      "secondary_tileset": "gTileset_UltraBGuzzlord",
       "border_filepath": "data/layouts/UltraSpace_Guzzlord/border.bin",
       "blockdata_filepath": "data/layouts/UltraSpace_Guzzlord/map.bin"
     },

@@ -76,7 +76,7 @@ UltraSpace_Hub_EventScript_ToKartana::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToGuzzlord::
-	warp MAP_ULTRA_SPACE_GUZZLORD, 8, 16
+	warp MAP_ULTRA_SPACE_GUZZLORD, 38, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToPoipole::

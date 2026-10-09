@@ -1900,4 +1900,26 @@ const struct Tileset gTileset_UltraBNecrozma =
     .callback = InitTilesetAnim_UltraBNecrozma,
 };
 
+const struct Tileset gTileset_UltraBGuzzlordBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBGuzzlordBase,
+    .palettes = gTilesetPalettes_UltraBGuzzlordBase,
+    .metatiles = gMetatiles_UltraBGuzzlordBase,
+    .metatileAttributes = gMetatileAttributes_UltraBGuzzlordBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBGuzzlord =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBGuzzlord,
+    .palettes = gTilesetPalettes_UltraBGuzzlord,
+    .metatiles = gMetatiles_UltraBGuzzlord,
+    .metatileAttributes = gMetatileAttributes_UltraBGuzzlord,
+    .callback = InitTilesetAnim_UltraBGuzzlord,
+};
+
 // } ultra_worlds_b

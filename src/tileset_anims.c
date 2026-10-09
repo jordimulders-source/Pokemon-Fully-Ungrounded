@@ -1419,4 +1419,59 @@ void InitTilesetAnim_UltraBNecrozma(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_UltraBNecrozma;
 }
 
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/0.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/1.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/2.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/3.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/4.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/5.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/6.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBGuzzlord_Fire0[] = {
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame0,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame1,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame2,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame3,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame4,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame5,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame6,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBGuzzlord_Fire0[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/0.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/1.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/2.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/3.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/4.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/5.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/6.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBGuzzlord_Fire1[] = {
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame0,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame1,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame2,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame3,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame4,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame5,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame6,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBGuzzlord_Fire1[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static void TilesetAnim_UltraBGuzzlord(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBGuzzlord_Fire0[sTilesetAnimSeq_UltraBGuzzlord_Fire0[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBGuzzlord_Fire0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBGuzzlord_Fire1[sTilesetAnimSeq_UltraBGuzzlord_Fire1[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBGuzzlord_Fire1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 8 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBGuzzlord(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBGuzzlord;
+}
+
 // } ultra_worlds_b

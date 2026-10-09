@@ -11013,6 +11013,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_GUZZLORD",
+          "base_label": "gUltraSpaceGuzzlord",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GARBODOR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_HONCHKROW"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_SWALOT"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MUK"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MANDIBUZZ"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_HOUNDOOM"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_WEEZING"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BISHARP"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_SNORLAX"
+              },
+              {
+                "min_level": 91,
+                "max_level": 92,
+                "species": "SPECIES_HYDREIGON"
+              }
+            ]
+          }
         }
       ]
     },

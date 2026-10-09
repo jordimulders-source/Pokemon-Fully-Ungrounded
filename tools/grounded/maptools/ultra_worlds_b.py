@@ -1281,6 +1281,552 @@ def world_necrozma():
                 rate=5)
 
 
+# ====================================================================== GUZZLORD: Lilycove, kapotgegeten
+def gz_grade(rgb):
+    """kleurcorrectie voor heel Lilycove: gras wordt as, water wordt donker oliewater, daken verbleekt en vuil.
+    Eén vaste kleur -> kleur-functie, dus de tegelstructuur blijft gelijk (geen extra tiles)."""
+    import colorsys
+    flat = rgb.reshape(-1, 3)
+    uniq, inv = np.unique(np.clip(flat, 0, 255).astype(int), axis=0, return_inverse=True)
+    res = np.zeros((len(uniq), 3))
+    for i, (r, g, b) in enumerate(uniq):
+        h, s, v = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
+        if 0.17 < h < 0.47 and s > 0.18:            # gras, bladeren -> grijze as / verkoold
+            h, s, v = 0.08, s * 0.22, v * 0.58
+        elif 0.5 < h < 0.7 and s > 0.25 and v > 0.5 and b > 150 and g > 120:   # water (licht blauw)
+            h, s, v = 0.47, s * 0.45, v * 0.34
+        elif 0.5 < h < 0.75:                        # blauwe daken/muren
+            s, v = s * 0.55, v * 0.66
+        elif h < 0.1 or h > 0.9:                    # rode daken
+            s, v = s * 0.7, v * 0.66
+        else:                                       # zand, steen, hout
+            s, v = s * 0.55, v * 0.7
+        rr, gg, bb = colorsys.hsv_to_rgb(h, s, v)
+        res[i] = np.array([rr, gg, bb]) * 255 * 0.9 + np.array([48, 18, 26]) * 0.1
+    return res[inv.reshape(-1)].reshape(rgb.shape)
+
+
+GZ_SOOT = C(16, 12, 16)
+GZ_EMBER = [C(64, 10, 6), C(150, 40, 16), C(232, 112, 32), C(248, 208, 96)]
+GZ_MATS = {
+    'grey': [C(22, 20, 24), C(52, 50, 56), C(82, 80, 86), C(116, 112, 116), C(150, 146, 148)],
+    'blue': [C(22, 22, 32), C(46, 50, 70), C(70, 76, 102), C(98, 104, 132), C(132, 138, 160)],
+    'red': [C(30, 16, 16), C(72, 34, 30), C(110, 52, 42), C(146, 80, 62), C(176, 112, 90)],
+    'wood': [C(28, 20, 16), C(62, 44, 30), C(92, 66, 42), C(124, 92, 60), C(150, 120, 84)],
+}
+
+
+def rubble_texture(seed, mats):
+    """naadloos herhalend puin (32x32): brokken van de materialen in mats, met schaduw"""
+    rs = random.Random(seed)
+    img = np.zeros((32, 32, 3))
+    img[:] = GZ_MATS['grey'][0]
+    for _ in range(70):
+        m = GZ_MATS[rs.choice(mats)]
+        bw, bh = rs.choice(((4, 3), (5, 3), (6, 4), (3, 3), (7, 3), (4, 4), (5, 2)))
+        x0, y0 = rs.randrange(32), rs.randrange(32)
+        for yy in range(bh + 1):
+            for xx in range(bw + 1):
+                px, py = (x0 + xx) % 32, (y0 + yy) % 32
+                if yy == bh or xx == bw:
+                    img[py, px] = m[0]
+                elif yy == 0 or xx == 0:
+                    img[py, px] = m[4] if (xx + yy) % 3 else m[3]
+                else:
+                    img[py, px] = m[2] if (xx * 3 + yy) % 7 else m[1]
+    return img
+
+
+def jag(side, i):
+    """rafelige rand: hoeveel pixels de rand van een puinvak inspringt op positie i (vast patroon per kant)"""
+    return [2, 3, 4, 3, 2, 1, 2, 4, 5, 4, 3, 2, 1, 2, 3, 2][(i + side * 5) % 16]
+
+
+def place_rubble(w, cells, tex, block=True, emb=False):
+    """puinvlak over de vakken: textuur (32x32 herhalend), rafelige randen waar het geen puin meer is"""
+    cs = set(cells)
+    for (x, y) in cells:
+        cell = rgba(16, 16)
+        cell[..., :3] = tex[(y % 2) * 16:(y % 2) * 16 + 16, (x % 2) * 16:(x % 2) * 16 + 16]
+        cell[..., 3] = 255
+        for side, (dx, dy) in enumerate(((0, -1), (1, 0), (0, 1), (-1, 0))):
+            if (x + dx, y + dy) in cs:
+                continue
+            for i in range(16):
+                d = jag(side, i)
+                for k in range(d):
+                    if side == 0:
+                        cell[k, i, 3] = 0
+                    elif side == 1:
+                        cell[i, 15 - k, 3] = 0
+                    elif side == 2:
+                        cell[15 - k, i, 3] = 0
+                    else:
+                        cell[i, k, 3] = 0
+                # schaduw net buiten de rand (onder en rechts)
+                if side in (1, 2):
+                    if side == 2 and d < 16:
+                        cell[15 - d + 1 if d > 0 else 15, i, :3] = mix(cell[15 - d + 1 if d > 0 else 15, i, :3], GZ_SOOT, 0.3)
+        # ondergrond onder de rafels: verdonkerd (stof)
+        under = w.bot[y * 16:y * 16 + 16, x * 16:x * 16 + 16]
+        under[:] = mix(under, C(30, 24, 26), 0.45)
+        A.paste(w.bot, cell, x * 16, y * 16)
+        w.top[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = 0
+        w.layer[y, x] = A.COVERED
+        if block:
+            w.coll[y, x] = True
+
+
+def heap(w, cx, cy, rx, ry, tex, seed, block=True, nz=None):
+    """puinberg (pixels): grillige rand, herhalende puintextuur binnenin, lichte bovenrand, donkere voet en
+    slagschaduw rechtsonder. Vakken waarvan het midden in de berg ligt worden geblokkeerd."""
+    if nz is None:
+        nz = A.value_noise(w.bot.shape[0], w.bot.shape[1], 5, seed)
+    d = np.hypot((w.xx - cx) / rx, (w.yy - cy) / ry) - nz * 0.22
+    m = d < 1
+    shadow = (np.hypot((w.xx - cx - 4) / rx, (w.yy - cy - 4) / ry) - nz * 0.22 < 1.04) & ~m
+    w.bot[shadow] = mix(w.bot[shadow], C(10, 8, 10), 0.5)
+    texall = np.tile(tex, (w.H // 2 + 1, w.W // 2 + 1, 1))[:w.H * 16, :w.W * 16]
+    w.bot[m] = texall[m]
+    up = m & ~np.roll(m, 2, 0)                                 # bovenrand (2 px)
+    w.bot[up] = mix(w.bot[up], C(190, 178, 166), 0.45)
+    low = m & ~np.roll(m, -3, 0)                               # voet (3 px)
+    w.bot[low] = mix(w.bot[low], C(8, 6, 8), 0.5)
+    edge = m & ~(np.roll(m, 1, 0) & np.roll(m, -1, 0) & np.roll(m, 1, 1) & np.roll(m, -1, 1))
+    w.bot[edge] = C(14, 10, 12)
+    w.top[m] = 0
+    cells = []
+    for y in range(int((cy - ry) // 16), int((cy + ry) // 16) + 1):
+        for x in range(int((cx - rx) // 16), int((cx + rx) // 16) + 1):
+            if 0 <= x < w.W and 0 <= y < w.H and m[y * 16 + 8, x * 16 + 8]:
+                cells.append((x, y))
+                w.layer[y, x] = A.COVERED
+                if block:
+                    w.coll[y, x] = True
+    return m, cells
+
+
+CRACK_PATHS = {}
+
+
+def crack_piece(mask, variant, hot):
+    """scheurtegel: vanuit het midden naar de randen in mask (bits N=1, E=2, S=4, W=8); rafelig, 2 varianten"""
+    key = (mask, variant, hot)
+    if key in CRACK_PATHS:
+        return CRACK_PATHS[key]
+    img = np.zeros((16, 16, 4))
+    rs = random.Random(mask * 7 + variant * 101)
+    mid = (8 + rs.choice((-1, 0, 1)), 8 + rs.choice((-1, 0, 1)))
+    ends = {1: (8, 0), 2: (15, 8), 4: (8, 15), 8: (0, 8)}
+    for bit, (ex, ey) in ends.items():
+        if not mask & bit:
+            continue
+        x, y = mid
+        pts = []
+        steps = 9
+        for k in range(steps + 1):
+            t = k / steps
+            px = mid[0] + (ex - mid[0]) * t + (rs.choice((-1, 0, 1)) if 0 < k < steps else 0)
+            py = mid[1] + (ey - mid[1]) * t + (rs.choice((-1, 0, 1)) if 0 < k < steps else 0)
+            pts.append((int(round(px)), int(round(py))))
+        for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+            n = max(abs(bx - ax), abs(by - ay), 1)
+            for i in range(n + 1):
+                qx, qy = ax + (bx - ax) * i // n, ay + (by - ay) * i // n
+                if 0 <= qx < 16 and 0 <= qy < 16:
+                    img[qy, qx] = list(GZ_EMBER[2] if hot else C(8, 6, 8)) + [255]
+                    for (ox, oy) in ((1, 0), (0, 1)):
+                        if 0 <= qx + ox < 16 and 0 <= qy + oy < 16 and img[qy + oy, qx + ox, 3] == 0:
+                            img[qy + oy, qx + ox] = list(GZ_EMBER[0] if hot else C(26, 20, 22)) + [255]
+    if hot:
+        img[mid[1], mid[0]] = list(GZ_EMBER[3]) + [255]
+    CRACK_PATHS[key] = img
+    return img
+
+
+def fire_frames16():
+    """8 frames vuur (16x16) uit de Gen 3-vuuranimatie (graphics/battle_anims/sprites/fire.png), verkleind"""
+    im = Image.open('graphics/battle_anims/sprites/fire.png')
+    pal = im.getpalette()[:48]
+    px = np.array(im)
+    out = []
+    for f in range(8):
+        fr = px[f * 32:(f + 1) * 32]
+        o = np.zeros((16, 16, 4))
+        for y in range(16):
+            for x in range(16):
+                v = sorted(c for c in fr[y * 2:y * 2 + 2, x * 2:x * 2 + 2].reshape(-1) if c)
+                if len(v) >= 2:
+                    c = v[len(v) // 2]
+                    if c == 1:
+                        c = 2
+                    o[y, x] = [pal[c * 3], pal[c * 3 + 1], pal[c * 3 + 2], 255]
+        out.append(o)
+    return out
+
+
+@world
+def world_guzzlord():
+    X0, Y0, W, H = 7, 0, 44, 35
+    w = A.World('Guzzlord', W, H, seed=446)
+    bot, top, coll, beh, lay = A.render_vanilla('LilycoveCity', X0, Y0, W, H)
+    w.bot[:] = gz_grade(bot)
+    w.top[..., :3] = gz_grade(top[..., :3])
+    w.top[..., 3] = top[..., 3]
+    w.coll[:] = coll
+    w.layer[:] = lay
+    water = (beh == 0x15) | (beh == 0x10) | (beh == 0x11) | (beh == 0x12) | (beh == 0x17)
+    for y in range(H):
+        for x in range(W):
+            w.beh[y, x] = beh[y, x] if 0x38 <= beh[y, x] <= 0x3F else 0      # richels houden
+            if 0x60 <= beh[y, x] <= 0x6F:
+                w.coll[y, x] = True                     # deuren dicht (geen warps)
+            if water[y, x]:
+                w.coll[y, x] = True                     # het water is giftig: niet surfen
+    # bomen -> dode, verkoolde bomen (Ekat, Haunted Woods); grond eronder wordt as
+    comp = bot.copy()
+    A.over_rgb(comp, top)
+    green = (comp[..., 1] > comp[..., 0] + 8) & (comp[..., 1] > comp[..., 2] + 8)
+    gfrac = green.reshape(H, 16, W, 16).mean((1, 3))
+    treecell = (gfrac > 0.45) & (coll | (top[..., 3].reshape(H, 16, W, 16).mean((1, 3)) > 60))
+    grass = [(x, y) for y in range(H) for x in range(W) if gfrac[y, x] > 0.97 and not coll[y, x]]
+    gx_, gy_ = grass[len(grass) // 2]
+    ground = w.bot[gy_ * 16:gy_ * 16 + 16, gx_ * 16:gx_ * 16 + 16].copy()
+    dead = A.load_png(EKAT + 'haunted_woods_deadtrees.png')[:, 0:16].copy()
+    dmask = dead[..., 3] > 0
+    gm = (dead[..., 1] > dead[..., 0] + 10) & dmask                       # grasrand onder de boom -> as
+    dead[gm, :3] = mix(dead[gm, :3], C(70, 62, 58), 0.8)
+    dead[dmask & ~gm, :3] = mix(dead[dmask & ~gm, :3], C(30, 22, 24), 0.45)   # verkoold
+    used = set()
+    for y in range(H - 1):
+        for x in range(W - 1):
+            blk = [(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)]
+            if all(treecell[c[1], c[0]] for c in blk) and not any(c in used for c in blk):
+                used |= set(blk)
+                for (cx_, cy_) in blk:
+                    w.bot[cy_ * 16:cy_ * 16 + 16, cx_ * 16:cx_ * 16 + 16] = ground
+                    w.top[cy_ * 16:cy_ * 16 + 16, cx_ * 16:cx_ * 16 + 16] = 0
+                    w.layer[cy_, cx_] = A.COVERED
+                A.paste(w.bot, dead[16:], x * 16 + 8, (y + 1) * 16)
+                A.paste(w.top, dead[:16], x * 16 + 8, y * 16)
+                w.layer[y, x] = w.layer[y, x + 1] = A.SPLIT
+                w.coll[y, x] = w.coll[y, x + 1] = False
+                w.coll[y + 1, x] = w.coll[y + 1, x + 1] = True
+    rect = lambda x0, y0, x1, y1: [(x, y) for y in range(y0, y1 + 1) for x in range(x0, x1 + 1)]  # noqa: E731
+    TEX = {'grey': rubble_texture(1, ['grey', 'grey', 'red']), 'blue': rubble_texture(2, ['blue', 'grey', 'wood']),
+           'red': rubble_texture(3, ['red', 'grey', 'wood']), 'mixed': rubble_texture(4, ['grey', 'blue', 'red', 'wood'])}
+
+    def soot(cells, f=0.45):
+        """gebouw zwartgeblakerd: vaste verdonkering per gebouw (geen ruis: geen extra tiles)"""
+        for (x, y) in cells:
+            sl = (slice(y * 16, y * 16 + 16), slice(x * 16, x * 16 + 16))
+            w.bot[sl] = mix(w.bot[sl], GZ_SOOT, f)
+            t = w.top[sl]
+            m = t[..., 3] > 0
+            t[m, :3] = mix(t[m, :3], GZ_SOOT, f)
+
+    def hole(cx, cy, rx, ry, seed):
+        """ingestort dak: zwart gat met lichte breukrand en een paar balken"""
+        rs = random.Random(seed)
+        d = np.hypot((w.xx - cx) / rx, (w.yy - cy) / ry)
+        th = np.arctan2(w.yy - cy, w.xx - cx)
+        d = d - 0.12 * np.sin(th * 5 + seed)
+        inside = d < 1
+        rim = (d >= 1) & (d < 1.16)
+        for arr in (w.bot, w.top):
+            if arr is w.top:
+                m = inside & (arr[..., 3] > 0)
+                arr[m] = 0
+                m = rim & (arr[..., 3] > 0)
+                arr[m, :3] = C(150, 134, 116)
+            else:
+                arr[inside] = C(10, 8, 10)
+                arr[rim] = C(150, 134, 116)
+        for k in range(3):                                   # verkoolde balken over het gat
+            a = rs.uniform(-0.5, 0.5)
+            y0 = cy + rs.uniform(-ry * 0.5, ry * 0.5)
+            for t in np.linspace(-rx * 1.05, rx * 1.05, int(rx * 2.2)):
+                px, py = int(cx + t), int(y0 + t * a)
+                if 0 <= py < w.bot.shape[0] - 1 and inside[py, px]:
+                    w.bot[py, px] = C(60, 44, 34)
+                    w.bot[py + 1, px] = C(24, 18, 16)
+
+    # ---------------------------------------------------------------- de krater (hier stond de Contest Hall)
+    KC = (16.5, 21.5)                                       # midden in vakken
+    cx, cy = KC[0] * 16, KC[1] * 16
+    nzc = A.value_noise(H * 16, W * 16, 9, 77)
+    dd = np.hypot(w.xx - cx, (w.yy - cy) * 1.25) - nzc * 7
+    R = 84
+    ctex = np.zeros((32, 32, 3))                              # kraterbodem: gebarsten aarde (herhalend)
+    ctex[:] = C(40, 30, 28)
+    rs = random.Random(12)
+    for _ in range(30):
+        x0, y0 = rs.randrange(32), rs.randrange(32)
+        for k in range(rs.randint(3, 7)):
+            ctex[(y0 + (k // 3)) % 32, (x0 + k) % 32] = C(22, 16, 16)
+        ctex[y0 % 32, x0 % 32] = C(62, 48, 42)
+    ctex_all = np.tile(ctex, (H // 2 + 1, W // 2 + 1, 1))[:H * 16, :W * 16]
+    inner = dd < R
+    w.bot[inner] = ctex_all[inner]
+    w.top[inner] = 0
+
+    core = np.hypot(w.xx - cx, (w.yy - cy - 4) * 1.4) < 14
+    w.bot[core] = mix(w.bot[core], GZ_EMBER[1], 0.45)
+    # rand: een ring van puin (de resten van de Contest Hall), met drie bressen
+    ringm = (dd >= R) & (dd < R + 15)
+    texall = np.tile(TEX['mixed'], (H // 2 + 1, W // 2 + 1, 1))[:H * 16, :W * 16]
+    gaps = []
+    for gx, gy in ((16.5, 14.2), (9.2, 23.0), (23.6, 24.2)):
+        gaps.append(np.hypot(w.xx - gx * 16, w.yy - gy * 16) < 15)
+    gapm = gaps[0] | gaps[1] | gaps[2]
+    rm = ringm & ~gapm
+    w.bot[rm] = texall[rm]
+    up = rm & ~np.roll(rm, 2, 0)
+    w.bot[up] = mix(w.bot[up], C(190, 178, 166), 0.4)
+    low = rm & ~np.roll(rm, -3, 0)
+    w.bot[low] = mix(w.bot[low], C(8, 6, 8), 0.5)
+    w.top[ringm] = 0
+    w.bot[ringm & gapm] = mix(w.bot[ringm & gapm], C(54, 44, 42), 0.6)
+    crater_cells, rim_cells = [], []
+    for y in range(H):
+        for x in range(W):
+            v = dd[y * 16 + 8, x * 16 + 8]
+            if v < R + 15:
+                w.layer[y, x] = A.COVERED
+                w.coll[y, x] = False
+                if v < R:
+                    crater_cells.append((x, y))
+                elif not gapm[y * 16 + 8, x * 16 + 8]:
+                    rim_cells.append((x, y))
+                    w.coll[y, x] = True
+    # ---------------------------------------------------------------- warenhuis: een hap eruit
+    bx, by, br = 24.6 * 16, 1.6 * 16, 60
+    th = np.arctan2(w.yy - by, w.xx - bx)
+    bd = np.hypot(w.xx - bx, (w.yy - by) * 1.05) - 6 * np.abs(np.sin(th * 6))      # tandvormige rand
+    store = np.zeros(w.bot.shape[:2], bool)
+    store[0:7 * 16, 16 * 16:25 * 16] = True
+    star = np.zeros((32, 32, 3))
+    star[:] = C(6, 4, 10)
+    rsv = random.Random(3)
+    for _ in range(8):
+        sx, sy = rsv.randrange(32), rsv.randrange(32)
+        star[sy, sx] = rsv.choice([C(120, 100, 150), C(200, 190, 220), C(90, 60, 110)])
+    voidimg = np.tile(star, (H // 2 + 1, W // 2 + 1, 1))[:H * 16, :W * 16]
+    region = (bd < br) & (w.yy < 8 * 16) & (w.xx > 15 * 16) & (w.xx < 30 * 16)
+    w.bot[region] = voidimg[region]
+    w.top[region] = 0
+    cut = (bd >= br) & (bd < br + 4) & store
+    w.bot[cut] = C(176, 160, 146)                                          # doorgebeten beton
+    w.bot[(bd >= br + 1) & (bd < br + 2) & store] = C(120, 108, 100)
+    w.bot[(bd >= br + 4) & (bd < br + 5) & store] = C(30, 26, 28)
+    rebar = cut & (((w.xx + w.yy) % 7) == 0)
+    w.bot[rebar] = C(90, 50, 40)
+    for fy in (1, 3, 5):                                    # afgebeten verdiepingsvloeren steken uit
+        m = region & (np.abs(w.yy - fy * 16 - 3) < 1.5) & (bd > br - 18) & (w.xx < 25 * 16)
+        w.bot[m] = C(120, 110, 104)
+        w.bot[np.roll(m, 2, 0) & region] = C(30, 26, 28)
+    for (x, y) in rect(14, 0, 30, 8):
+        if region[y * 16 + 8, x * 16 + 8]:
+            w.coll[y, x] = True
+            w.layer[y, x] = A.COVERED
+    soot(rect(16, 0, 24, 6), 0.5)
+    # ---------------------------------------------------------------- museum, huizen, PC, motel, haven
+    hole(4.3 * 16, 2.0 * 16, 30, 15, 31)
+    soot(rect(0, 0, 9, 7), 0.5)
+    heap(w, 36.0 * 16, 5.0 * 16, 42, 34, TEX['blue'], 41)                                       # huis helemaal plat
+    soot(rect(28, 2, 31, 6), 0.5)
+    heap(w, 5.0 * 16, 21.0 * 16, 40, 34, TEX['blue'], 43)                                       # huis weg
+    heap(w, 6.0 * 16, 11.6 * 16, 36, 22, TEX['blue'], 44)                                       # dak eraf
+    soot(rect(4, 13, 7, 14), 0.5)
+    soot(rect(30, 10, 34, 14), 0.5)
+    hole(17.9 * 16, 12.1 * 16, 19, 13, 46)                                                     # Pokémon Center
+    soot(rect(16, 11, 19, 14), 0.5)
+    soot(rect(29, 20, 34, 24), 0.5)                                                           # motel: verkoold
+    hole(30.6 * 16, 21.2 * 16, 24, 11, 47)
+    heap(w, 34.4 * 16, 21.0 * 16, 22, 20, TEX['red'], 49)
+    hole(5.8 * 16, 28.4 * 16, 24, 16, 48)                                                      # haven
+    soot(rect(2, 27, 8, 32), 0.5)
+    # puinbergen op straat (los, blokkerend)
+    for (hx, hy, rx_, ry_, t, sd) in ((37.0, 24.0, 20, 16, 'red', 53), (21.4, 7.6, 28, 16, 'blue', 56)):
+        heap(w, hx * 16, hy * 16, rx_, ry_, TEX[t], sd)
+    # ---------------------------------------------------------------- gebroken pier in de haven
+    for x in range(9, 17):
+        if x in (12, 13):
+            continue
+        img = rgba(16, 16, C(88, 64, 44))
+        for py in (2, 13):
+            img[py, :, :3] = C(48, 34, 26)
+        img[0, :, :3] = img[15, :, :3] = C(30, 22, 18)
+        for px in range(0, 16, 4):
+            img[3:13, px, :3] = C(64, 46, 32)
+        if x == 11:
+            for py in range(16):
+                img[py, 9 + (py * 7) % 4:, 3] = 0               # afgebroken planken
+        if x == 14:
+            for py in range(16):
+                img[py, :5 - (py * 5) % 3, 3] = 0
+        img[..., :3] = gz_grade(img[..., :3])
+        A.paste(w.bot, img, x * 16, 31 * 16)
+        w.coll[31, x] = x >= 12
+    for (px, py) in ((12 * 16 + 3, 31 * 16 + 5), (13 * 16 + 6, 31 * 16 + 10), (12 * 16 + 9, 32 * 16 + 2)):
+        w.bot[py:py + 2, px:px + 7] = C(70, 52, 38)
+        w.bot[py + 2, px:px + 7] = C(16, 20, 22)
+    # ---------------------------------------------------------------- scheuren: gloeiend vanuit de krater, donker elders
+    walkable = lambda c: 0 <= c[0] < W and 0 <= c[1] < H and not w.coll[c[1], c[0]] and not water[c[1], c[0]]  # noqa: E731
+    groundm = np.zeros(w.bot.shape[:2], bool)
+    for y in range(H):
+        for x in range(W):
+            if walkable((x, y)) and (x, y) not in crater_cells:
+                groundm[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = True
+    rs = random.Random(21)
+    for k, a_ in enumerate((-1.75, -0.4, 1.0, 2.2, 2.9)):
+        L = rs.uniform(50, 95)
+        pts = w.crack(rs, cx + math.cos(a_) * (R + 18), cy + math.sin(a_) * (R + 18) / 1.25, a_, L, seg=(4, 8), wob=0.5, branch=0.18)
+        w.paint_crack(pts, core=C(60, 12, 8), rim=lambda c: mix(c, C(0, 0, 0), 0.45), hot=GZ_EMBER[2], hot_at=0.55,
+                      thick=0.45, mask=groundm)
+    for (x, y) in ((33, 9), (8, 15), (30, 28)):
+        pts = w.crack(rs, x * 16 + 8, y * 16 + 8, rs.uniform(0, 6.28), rs.uniform(30, 60), seg=(3, 6), branch=0.25)
+        w.paint_crack(pts, core=C(10, 8, 10), rim=lambda c: mix(c, C(0, 0, 0), 0.35), mask=groundm)
+    # ---------------------------------------------------------------- brandvlekken + losse rommel (begaanbaar)
+    scorch = []
+    for v in range(2):
+        img = np.zeros((32, 32, 4))
+        rsx = random.Random(v + 5)
+        yy, xx = np.mgrid[0:32, 0:32]
+        r = np.hypot(xx - 15.5, (yy - 15.5) * 1.3)
+        th = np.arctan2(yy - 15.5, xx - 15.5)
+        rr = 13 + 2.5 * np.sin(th * 5 + v) + 1.5 * np.sin(th * 11)
+        core = r < rr - 4
+        ring = (r < rr) & ~core & (((xx + yy) % 2) == 0)
+        img[core] = list(C(14, 10, 12)) + [255]
+        img[ring] = list(C(30, 22, 22)) + [255]
+        for _ in range(7):                                  # stralen
+            a = rsx.uniform(0, 6.28)
+            for t in range(9, 16):
+                px, py = int(15.5 + math.cos(a) * t), int(15.5 + math.sin(a) * t / 1.3)
+                if 0 <= px < 32 and 0 <= py < 32:
+                    img[py, px] = list(C(22, 16, 18)) + [255]
+        scorch.append(img)
+    debris_sheet = A.load_png(EKAT + 'dreamyard_debris.png')   # Ekat, Dreamyard (zie CREDITS.md)
+    debris_sheet[..., :3] = gz_grade(debris_sheet[..., :3])
+    debris = [debris_sheet[0:16, 0:16], debris_sheet[0:16, 16:32], debris_sheet[0:16, 32:48], debris_sheet[0:16, 48:64],
+              debris_sheet[16:32, 48:64]]
+    occupied = set(crater_cells) | set(rim_cells)
+    for (x, y) in [(36, 9), (26, 16), (8, 26), (31, 31), (39, 20), (27, 12)]:
+        if walkable((x, y)) and walkable((x + 1, y + 1)):
+            A.paste(w.bot, scorch[(x + y) % 2], x * 16, y * 16)
+            occupied |= {(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)}
+    rs = random.Random(33)
+    for k in range(60):
+        x, y = rs.randrange(1, W - 1), rs.randrange(1, H - 1)
+        if not walkable((x, y)) or (x, y) in occupied:
+            continue
+        A.paste(w.bot, debris[rs.randrange(len(debris))], x * 16, y * 16)
+        occupied.add((x, y))
+    # ---------------------------------------------------------------- de leegte vreet de linkerrand op
+    void_cells = set()
+    for y in range(H):
+        depth = 1.3 + 1.3 * math.sin(y * 0.55) + 0.8 * math.sin(y * 1.7 + 1)
+        if y < 8:
+            depth += (8 - y) * 0.2
+        for x in range(W):
+            if x < depth:
+                void_cells.add((x, y))
+    for (x, y) in void_cells:
+        sl = (slice(y * 16, y * 16 + 16), slice(x * 16, x * 16 + 16))
+        w.bot[sl] = voidimg[sl]
+        w.top[sl] = 0
+        w.layer[y, x] = A.COVERED
+        w.coll[y, x] = True
+    for (x, y) in void_cells:
+        if (x + 1, y) not in void_cells and x + 1 < W:          # afgebrokkelde rand: aardlagen
+            for py in range(16):
+                d = 2 + (py * 5 + y * 3) % 3
+                for px in range(d):
+                    w.bot[y * 16 + py, x * 16 + 15 - px] = [C(70, 52, 42), C(46, 34, 30), C(30, 22, 22)][(py // 3) % 3]
+        if (x, y - 1) not in void_cells and y > 0:
+            for px in range(16):
+                for py in range(2 + (px * 3 + x) % 4):
+                    w.bot[y * 16 + py, x * 16 + px] = [C(70, 52, 42), C(46, 34, 30), C(30, 22, 22)][py % 3]
+    for (fx, fy) in ((0, 13), (1, 21), (0, 28), (0, 5)):        # zwevende brokken
+        if (fx, fy) in void_cells:
+            chunk = np.zeros((16, 16, 4))
+            chunk[4:10, 3:13] = list(C(70, 64, 60)) + [255]
+            chunk[4, 4:12] = list(C(110, 100, 92)) + [255]
+            chunk[10:13, 5:11] = list(C(46, 34, 30)) + [255]
+            chunk[13, 7:9] = list(C(30, 22, 22)) + [255]
+            A.paste(w.bot, chunk, fx * 16, fy * 16)
+    # ---------------------------------------------------------------- vuur (animatie) op puin en in daken
+    fires = fire_frames16()
+    fire_cells = [(35, 3), (5, 19), (31, 21), (6, 11), (26, 7), (22, 2), (13, 8)]
+    fire_cells = [c for c in fire_cells if w.coll[c[1], c[0]]]
+    base = {c: np.concatenate([w.cellpix(*c).copy(), np.full((16, 16, 1), 255.0)], 2) for c in fire_cells}
+
+    def fire_fn(f, x, y):
+        img = base[(x, y)].copy()
+        A.paste(img, fires[(f + (x * 3 + y)) % 8], 0, -1)
+        return img
+    groups = [fire_cells[i::2] for i in range(2)]
+    for gi, g in enumerate(groups):
+        if g:
+            w.anim('fire%d' % gi, fire_fn, g, list(range(8)), 8)
+            for c in g:
+                w.put(fire_fn(0, *c), *c)
+    # ---------------------------------------------------------------- plekken, objecten
+    arrive, ret = (38, 28), (38, 27)
+    ub = (16, 21)
+    for c in (arrive, ret):
+        w.coll[c[1], c[0]] = False
+    for y in range(H):
+        for x in range(W):
+            if w.coll[y, x] or water[y, x]:
+                continue
+            g = bot[y * 16 + 8, x * 16 + 8]
+            if (g[1] > g[0] + 10 and g[1] > g[2]) or (x, y) in crater_cells:    # oude grasvelden en de krater
+                w.beh[y, x] = 0x08
+            if abs(x - ub[0]) <= 1 and abs(y - ub[1]) <= 1:
+                w.beh[y, x] = 0
+    objs = [obj('LOCALID_ULTRA_GUZZLORD_RETURN', WORM, ret[0], ret[1], 'UltraSpace_EventScript_ReturnToHub'),
+            obj('LOCALID_ULTRA_GUZZLORD_UB', mon('GUZZLORD'), ub[0], ub[1], 'UltraSpace_Guzzlord_EventScript_UB',
+                'FLAG_ULTRA_GUZZLORD')]
+    r = reachable(w.coll, arrive, {ret, ub})
+    assert next_to(r, *ub), 'Guzzlord onbereikbaar'
+
+    def near(tx, ty):
+        taken_ = {(o['x'], o['y']) for o in objs} | {arrive}
+        return min((c for c in r if c not in taken_), key=lambda c: abs(c[0] - tx) + abs(c[1] - ty))
+    for sp, lbl, (tx, ty), mv in (('TRUBBISH', 'Trubbish', (21, 8), 'MOVEMENT_TYPE_WANDER_AROUND'),
+                                  ('GARBODOR', 'Garbodor', (35, 8), 'MOVEMENT_TYPE_FACE_DOWN'),
+                                  ('MURKROW', 'Murkrow', (9, 16), 'MOVEMENT_TYPE_LOOK_AROUND'),
+                                  ('MUNCHLAX', 'Munchlax', (20, 25), 'MOVEMENT_TYPE_FACE_LEFT')):
+        c = near(tx, ty)
+        objs.append(obj(None, mon(sp), c[0], c[1], 'UltraSpace_Guzzlord_EventScript_' + lbl, '0', mv,
+                        rx=1 if 'WANDER' in mv else 0, ry=1 if 'WANDER' in mv else 0))
+    c = near(27, 3)                                            # in de hap uit het warenhuis... ernaast
+    for fl_, it, q, h in ni.items('UltraSpace_Guzzlord'):
+        objs.append(obj(None, 'OBJ_EVENT_GFX_ITEM_BALL', c[0], c[1], 'Common_EventScript_FindItem', fl_,
+                        'MOVEMENT_TYPE_LOOK_AROUND', it, rx=q))
+    c = near(26, 9)
+    signs = [{'type': 'sign', 'x': c[0], 'y': c[1], 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
+              'script': 'UltraSpace_Guzzlord_EventScript_Sign'}]
+    texts = [('UB', 'GUZZLORD is eating the horizon.\\pIt has been eating it for a while. The\nhorizon is getting nervous.'),
+             ('UBBack', 'GUZZLORD burps and keeps eating.\nYou were a snack. Barely.'),
+             ('Trubbish', 'TRUBBISH is going through the ruins of\nthe DEPARTMENT STORE.\\pIt found a coupon. It expired the day the\nworld ended.'),
+             ('Garbodor', 'GARBODOR is sitting where a house used to\nbe. It has never felt more at home.'),
+             ('Murkrow', 'MURKROW is perched on what is left of a\nstreetlight, waiting for the sequel.'),
+             ('Munchlax', 'MUNCHLAX is staring at GUZZLORD with\nprofessional admiration.'),
+             ('Sign', 'LILYCOVE CITY\nWhere the land ends and the sea begins.\\pSomeone has crossed it out and written:\n“WHERE THE LAND ENDS.”')]
+    return dict(world=w, objects=objs, bgs=signs, arrive=arrive, ret=ret, ub=ub, species='GUZZLORD', level=90,
+                music='MUS_ABANDONED_SHIP', weather='WEATHER_VOLCANIC_ASH', texts=texts,
+                npc_scripts=[('Trubbish', 'MSGBOX_NPC'), ('Garbodor', 'MSGBOX_NPC'), ('Murkrow', 'MSGBOX_NPC'),
+                             ('Munchlax', 'MSGBOX_NPC'), ('Sign', 'MSGBOX_SIGN')],
+                border_cell=(0, 12),
+                encounters=[('GARBODOR', 86, 88), ('HONCHKROW', 86, 88), ('SWALOT', 86, 88), ('MUK', 86, 88),
+                            ('MANDIBUZZ', 87, 89), ('KROOKODILE', 87, 89), ('HOUNDOOM', 87, 89), ('WEEZING', 86, 88),
+                            ('DUSKNOIR', 88, 90), ('BISHARP', 86, 88), ('SNORLAX', 90, 91), ('HYDREIGON', 91, 92)],
+                rate=8)
+
+
 # ====================================================================== bouwen
 def build(key):
     spec = WORLDS[key]()

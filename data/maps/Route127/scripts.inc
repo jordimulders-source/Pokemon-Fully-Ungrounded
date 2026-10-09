@@ -144,7 +144,7 @@ Route127_EventScript_ZV3Mine0::
 	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_VOLTORB, 40
+	setwildbattle SPECIES_VOLTORB, 69
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release
@@ -156,7 +156,7 @@ Route127_EventScript_ZV3Mine1::
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_ELECTRODE, 42
+	setwildbattle SPECIES_ELECTRODE, 70
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release
@@ -168,7 +168,7 @@ Route127_EventScript_ZV3Mine2::
 	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_VOLTORB, 40
+	setwildbattle SPECIES_VOLTORB, 69
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release
@@ -180,7 +180,7 @@ Route127_EventScript_ZV3Mine3::
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_ELECTRODE, 42
+	setwildbattle SPECIES_ELECTRODE, 70
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release
@@ -192,7 +192,7 @@ Route127_EventScript_ZV3Mine4::
 	playmoncry SPECIES_VOLTORB_HISUI, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3MineAntique, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_VOLTORB_HISUI, 40
+	setwildbattle SPECIES_VOLTORB_HISUI, 69
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release
@@ -204,7 +204,7 @@ Route127_EventScript_ZV3Mine5::
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_ELECTRODE, 42
+	setwildbattle SPECIES_ELECTRODE, 70
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	release

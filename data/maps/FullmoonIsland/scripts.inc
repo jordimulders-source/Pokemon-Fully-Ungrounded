@@ -24,7 +24,7 @@ FullmoonIsland_EventScript_Cresselia::
 	closemessage
 	playmoncry SPECIES_CRESSELIA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CRESSELIA, 60
+	setwildbattle SPECIES_CRESSELIA, 90
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

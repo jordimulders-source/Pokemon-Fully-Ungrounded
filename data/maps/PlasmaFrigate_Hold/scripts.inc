@@ -39,7 +39,7 @@ PlasmaFrigate_Hold_EventScript_Genesect::
 	closemessage
 	playmoncry SPECIES_GENESECT, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_GENESECT, 70
+	setwildbattle SPECIES_GENESECT, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

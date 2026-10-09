@@ -9,7 +9,7 @@ SkyPillar_ReverseB3F_EventScript_Giratina::
 	playmoncry SPECIES_GIRATINA_ORIGIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	msgbox SkyPillar_ReverseB3F_Text_Giratina, MSGBOX_DEFAULT
-	setwildbattle SPECIES_GIRATINA_ORIGIN, 70, ITEM_GRISEOUS_CORE
+	setwildbattle SPECIES_GIRATINA_ORIGIN, 93, ITEM_GRISEOUS_CORE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

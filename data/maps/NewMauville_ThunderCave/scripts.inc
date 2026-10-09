@@ -22,7 +22,7 @@ NewMauville_ThunderCave_EventScript_Raikou::
 	faceplayer
 	playmoncry SPECIES_RAIKOU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_RAIKOU, 50
+	setwildbattle SPECIES_RAIKOU, 62
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

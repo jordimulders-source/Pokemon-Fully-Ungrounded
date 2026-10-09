@@ -81,7 +81,7 @@ ChargestoneCave_B2F_EventScript_Zeraora::
 	msgbox ChargestoneCave_B2F_Text_Zeraora, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_ZERAORA, 70
+	setwildbattle SPECIES_ZERAORA, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

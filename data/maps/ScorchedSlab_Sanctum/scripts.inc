@@ -9,7 +9,7 @@ ScorchedSlab_Sanctum_EventScript_Volcarona::
 	msgbox ScorchedSlab_Sanctum_Text_Volcarona, MSGBOX_DEFAULT
 	playmoncry SPECIES_VOLCARONA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_VOLCARONA, 42
+	setwildbattle SPECIES_VOLCARONA, 54
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

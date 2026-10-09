@@ -11,7 +11,7 @@ Forces_EventScript_Tornadus::
 	closemessage
 	setvar VAR_0x8004, 0
 	special Forces_PrepareBattle
-	setwildbattle SPECIES_TORNADUS_INCARNATE, 70
+	setwildbattle SPECIES_TORNADUS_INCARNATE, 93
 	call Forces_EventScript_Battle
 	goto_if_eq VAR_RESULT, FALSE, Forces_EventScript_Stays
 	setflag FLAG_FORCES_TORNADUS_DONE
@@ -30,7 +30,7 @@ Forces_EventScript_Thundurus::
 	closemessage
 	setvar VAR_0x8004, 1
 	special Forces_PrepareBattle
-	setwildbattle SPECIES_THUNDURUS_INCARNATE, 70
+	setwildbattle SPECIES_THUNDURUS_INCARNATE, 93
 	call Forces_EventScript_Battle
 	goto_if_eq VAR_RESULT, FALSE, Forces_EventScript_Stays
 	setflag FLAG_FORCES_THUNDURUS_DONE
@@ -49,7 +49,7 @@ Forces_EventScript_Landorus::
 	closemessage
 	setvar VAR_0x8004, 2
 	special Forces_PrepareBattle
-	setwildbattle SPECIES_LANDORUS_INCARNATE, 70
+	setwildbattle SPECIES_LANDORUS_INCARNATE, 93
 	call Forces_EventScript_Battle
 	goto_if_eq VAR_RESULT, FALSE, Forces_EventScript_Stays
 	setflag FLAG_FORCES_LANDORUS_DONE

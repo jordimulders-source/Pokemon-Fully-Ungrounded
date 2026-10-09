@@ -28,7 +28,7 @@ IlexForest_EventScript_CelebiBattle::
 	msgbox IlexForest_Text_Celebi, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_CELEBI, 70
+	setwildbattle SPECIES_CELEBI, 93
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

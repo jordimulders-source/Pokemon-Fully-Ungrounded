@@ -13,7 +13,7 @@ GraniteCave_CornerstoneRoom_EventScript_Okidogi::
 GraniteCave_CornerstoneRoom_EventScript_OkidogiBattle::
 	playmoncry SPECIES_OKIDOGI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_OKIDOGI, 65
+	setwildbattle SPECIES_OKIDOGI, 91
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

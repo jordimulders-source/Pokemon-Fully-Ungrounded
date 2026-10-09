@@ -22,7 +22,7 @@ MauvilleCity_House2_B1F_EventScript_TV::
 	msgbox MauvilleCity_House2_B1F_Text_RotomBurstsOut, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_ROTOM, 28
+	setwildbattle SPECIES_ROTOM, 40
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MauvilleCity_House2_B1F_EventScript_Caught

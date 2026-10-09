@@ -7,7 +7,7 @@ FieryPath_HeatranLair_EventScript_Heatran::
 	faceplayer
 	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_HEATRAN, 70
+	setwildbattle SPECIES_HEATRAN, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

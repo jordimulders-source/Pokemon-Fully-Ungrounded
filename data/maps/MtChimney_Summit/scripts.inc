@@ -30,7 +30,7 @@ MtChimney_Summit_EventScript_Volcarona::
 	msgbox MtChimney_Summit_Text_Volcarona, MSGBOX_DEFAULT
 	playmoncry SPECIES_VOLCARONA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_VOLCARONA, 40
+	setwildbattle SPECIES_VOLCARONA, 56
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

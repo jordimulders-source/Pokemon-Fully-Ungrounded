@@ -6,6 +6,7 @@
 #include "battle_environment.h"
 #include "battle_pyramid.h"
 #include "battle_util.h"
+#include "caps.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_setup.h"
@@ -6589,25 +6590,11 @@ u32 GetBattleMoveTarget(u16 move, u8 setTarget)
 // Project Grounded: tot welk level gehoorzamen Pokémon op basis van de badges (MAX_LEVEL = altijd)
 u32 GetPlayerObedienceLevel(void)
 {
-    u32 obedienceLevel = 10;
-
+    // Project Grounded: de grens is het ace-level van de volgende gymleider (zelfde doel als de inhaal-EXP,
+    // GetGroundedCatchUpTarget in src/caps.c), zodat hij meeschuift met de levelcurve (LEVELCURVE.md).
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return MAX_LEVEL;
-    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-        obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-        obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-        obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-        obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-        obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-        obedienceLevel = 80;
-    return obedienceLevel;
+    return GetGroundedCatchUpTarget();
 }
 
 // Project Grounded: het level waar de gehoorzaamheid naar kijkt (eigen Pokémon: het level bij het vangen)

@@ -15,7 +15,7 @@ VictoryRoad_SwordChamber_EventScript_Terrakion::
 	closemessage
 	playmoncry SPECIES_TERRAKION, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TERRAKION, 70
+	setwildbattle SPECIES_TERRAKION, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

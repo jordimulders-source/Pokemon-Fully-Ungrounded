@@ -39,7 +39,7 @@ CeruleanCave_B1F_EventScript_MewtwoHeal::
 	closemessage
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MEWTWO, 75
+	setwildbattle SPECIES_MEWTWO, 95
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

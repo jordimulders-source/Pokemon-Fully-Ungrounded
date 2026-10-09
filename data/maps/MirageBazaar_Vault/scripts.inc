@@ -34,7 +34,7 @@ MirageBazaar_Vault_EventScript_Hoopa::
 	msgbox MirageBazaar_Vault_Text_Hoopa, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_HOOPA_UNBOUND, 70
+	setwildbattle SPECIES_HOOPA_UNBOUND, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

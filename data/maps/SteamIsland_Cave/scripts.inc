@@ -10,7 +10,7 @@ SteamIsland_Cave_EventScript_Volcanion::
 	closemessage
 	playmoncry SPECIES_VOLCANION, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_VOLCANION, 70
+	setwildbattle SPECIES_VOLCANION, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

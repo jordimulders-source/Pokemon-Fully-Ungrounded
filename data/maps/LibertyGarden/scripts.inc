@@ -177,7 +177,7 @@ LibertyGarden_EventScript_Victini::
 	msgbox LibertyGarden_Text_Victini, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_VICTINI, 70
+	setwildbattle SPECIES_VICTINI, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

@@ -15,7 +15,7 @@ GraniteCave_SwordChamber_EventScript_Cobalion::
 	closemessage
 	playmoncry SPECIES_COBALION, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_COBALION, 70
+	setwildbattle SPECIES_COBALION, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

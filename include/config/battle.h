@@ -12,6 +12,10 @@
 
 // Experience settings
 #define B_EXP_CATCH                 GEN_6 // In Gen6+, Pokémon get experience from catching.
+#define B_TRAINER_EXP_PERCENT       50    // Project Grounded: EXP van trainergevechten in procenten (vanilla Gen 3-7: 150). Zie LEVELCURVE.md.
+#define B_GROUNDED_CATCHUP_EXP      TRUE  // Project Grounded: inhaal-EXP onder het ace-level van de volgende mijlpaal (src/caps.c, LEVELCURVE.md)
+#define B_CATCHUP_EXP_STEP          100   // procent extra EXP per level achterstand
+#define B_CATCHUP_EXP_MAX           900   // maximaal extra (procent): x10 voor een verse vangst ver onder het doel
 #define B_TRAINER_EXP_MULTIPLIER    GEN_7 // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
 #define B_SPLIT_EXP                 GEN_5 // In Gen6+, all participating mon get full experience.
 #define B_SCALED_EXP                GEN_5 // In Gen5 and Gen7+, experience is weighted by level difference.

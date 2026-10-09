@@ -12,7 +12,7 @@ RuinBeasts_EventScript_CHI_YU::
 	goto_if_eq VAR_RESULT, FALSE, JaggedPass_RuinCaldera_EventScript_Stays
 	playmoncry SPECIES_CHI_YU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CHI_YU, 70
+	setwildbattle SPECIES_CHI_YU, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

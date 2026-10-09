@@ -11,7 +11,7 @@ RuinBeasts_EventScript_TING_LU::
 	goto_if_eq VAR_RESULT, FALSE, DesertUnderpass_RuinShrine_EventScript_Stays
 	playmoncry SPECIES_TING_LU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TING_LU, 70
+	setwildbattle SPECIES_TING_LU, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

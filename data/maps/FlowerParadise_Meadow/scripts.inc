@@ -9,7 +9,7 @@ FlowerParadise_Meadow_EventScript_Shaymin::
 	msgbox FlowerParadise_Meadow_Text_Shaymin, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_SHAYMIN, 70
+	setwildbattle SPECIES_SHAYMIN, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

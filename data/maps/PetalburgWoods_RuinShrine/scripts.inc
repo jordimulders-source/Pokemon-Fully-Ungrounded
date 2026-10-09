@@ -11,7 +11,7 @@ RuinBeasts_EventScript_WO_CHIEN::
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_RuinShrine_EventScript_Stays
 	playmoncry SPECIES_WO_CHIEN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_WO_CHIEN, 70
+	setwildbattle SPECIES_WO_CHIEN, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

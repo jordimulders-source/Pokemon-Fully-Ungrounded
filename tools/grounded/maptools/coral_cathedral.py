@@ -202,9 +202,11 @@ def credits():
     s = open(p).read()
     line = ("- **Koraalbomen in de Koraalkathedraal**: **Ekat99**, *Coral Tiles* uit Ekat's Public Tiles (met "
             "**Heartlessdragoon** en **Vurtax**; uitsnede in `graphics/grounded/tilesets/ekat/coral_trees.png`).\n")
-    s = ''.join(l for l in s.splitlines(True) if 'coral_trees.png' not in l)
-    anchor = s.index('\n', s.index('- **Dode bomen in Lavender Town**')) + 1
-    s = s[:anchor] + line + s[anchor:]
+    if 'coral_trees.png' in s:  # op zijn plek vervangen
+        s = ''.join(line if 'coral_trees.png' in l else l for l in s.splitlines(True))
+    else:
+        anchor = s.index('\n', s.index('- **Dode bomen in Lavender Town**')) + 1
+        s = s[:anchor] + line + s[anchor:]
     open(p, 'w').write(s)
 
 

@@ -182,18 +182,14 @@ for piece, base, x0, y0, w, h in WRECKS:
 
 # rotsen: 2x2 in zee (General 175/176/17d/17e), kleine rotsjes op de ondiepte (194)
 ROCK2 = (0x175, 0x176, 0x17d, 0x17e)
-placed = 0
-tries = 0
-while placed < 13 and tries < 5000:
-    tries += 1
-    x, y = rng.randrange(1, W - 2), rng.randrange(6, H - 2)
+# vaste posities (eerst willekeurig met SEED; maar KEEP hangt af van objecten die latere scripts toevoegen,
+# dus de uitkomst verschoof bij opnieuw draaien). Dit zijn de rotsen uit de eerste bouw.
+ROCKS = [(15, 6), (35, 6), (24, 17), (19, 18), (24, 25), (8, 28), (13, 32), (5, 35), (29, 40), (5, 49), (13, 54), (21, 54), (7, 55)]
+for x, y in ROCKS:
     cells = [(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)]
-    ring = [(x + dx, y + dy) for dx in range(-1, 3) for dy in range(-1, 3)]
-    if all(is_sea(*c) for c in ring if 0 <= c[0] < W and 0 <= c[1] < H) and not any(c in KEEP for c in ring):
-        for (cx, cy), m in zip(cells, ROCK2):
-            M[cy][cx] = m
-            COLL[cy][cx] = 1
-        placed += 1
+    for (cx, cy), m in zip(cells, ROCK2):
+        M[cy][cx] = m
+        COLL[cy][cx] = 1
 # een paar rotsen in de bovenste rijen zoals de zuidrand van Route 131 (alleen General-tiles)
 for (x, y) in [(3, 2), (30, 1), (14, 4)]:
     for (cx, cy), m in zip([(x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)], ROCK2):

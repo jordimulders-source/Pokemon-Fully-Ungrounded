@@ -320,3 +320,8 @@ if __name__ == '__main__':
         for mp in ('Underwater_SeaTemple', 'SeaTemple_Hall', 'SeaTemple_Sanctum', 'Underwater_WhirlIsland',
                    'WhirlIsland', 'WhirlIsland_Cave', 'Underwater_Route128', 'Underwater_Route124'):
             os.system('python3 tools/grounded/maptools/render_map.py %s %s/%s.png 0 120' % (mp, out, mp))
+
+
+# zee_vulling_2.py zet later eilandjes op Whirl Island; meteen erna draaien, anders verdwijnen ze.
+import subprocess as _sp  # noqa: E402
+_sp.check_call([sys.executable, 'tools/grounded/maptools/zee_vulling_2.py'])

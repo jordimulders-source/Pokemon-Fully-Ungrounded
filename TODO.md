@@ -16,7 +16,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 **Feedback Jordi 9 okt (volgende agents):**
 **Feedback Jordi 9 okt (in uitvoering):**
-- ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). **Open voor Jordi:** Muk/Cradily/Armaldo 30 en Glalie 32 (eigen revisie) alsnog naar 38/40/42? Mitch-thema A of B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
+- ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). Mitch kiest zelf tussen thema A en B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
 
 **Technische schuld:** de bouwscripts (`spacetime_cave.py`, `area_zero.py`, `national_park.py`, `chargestone.py`, `glimwood.py`, `swords_keldeo.py`, `mega_forest.py` e.a.) bevatten nog de levels van vóór de levelcurve (v0.9.192): opnieuw draaien zet trainer-, wilde en `setwildbattle`-levels terug. Levels in de scripts gelijktrekken (of de levelcurve als laatste stap laten toepassen) voordat ze weer gedraaid worden.
 

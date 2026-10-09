@@ -13,6 +13,13 @@
 Werkt als zee_vulling_2.py (gekopieerde hulpjes; eigen markeringen ZV3, eigen _orig.json, trainers vanaf 1170).
 Gebruik (vanuit de repo-root): python3 tools/grounded/maptools/zee_vulling_3.py
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, random, re, struct, sys
 from collections import deque
 

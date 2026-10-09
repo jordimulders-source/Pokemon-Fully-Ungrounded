@@ -23,6 +23,13 @@ de laatste blokkeert de weg naar Ballonlea, de baas de trap naar Xerneas) -> Xer
 licht weer op -> Yveltal (lv 70) in de heksenkring van het bos -> FLAG_SPACETIME_GLIMWOOD_DONE.
 Flags FLAG_GROUNDED 880-919 (blok 'glimwood' in flags.h), trainers 1098, 1099, 1107, 1108.
 Idempotent; controleert de bereikbaarheid. Gebruik: python3 tools/grounded/maptools/glimwood.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, re, struct, subprocess, sys, zlib
 from collections import deque
 

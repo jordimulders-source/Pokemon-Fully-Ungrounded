@@ -9,6 +9,13 @@
   Ingang: na de Hall of Fame een grotopening in Meteor Falls 1F (12,25-26).
 Idempotent. Controleert de bereikbaarheid van warps, items en de legendaries.
 Gebruik: python3 tools/grounded/maptools/legend_maps.py"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct, random
 from collections import deque
 

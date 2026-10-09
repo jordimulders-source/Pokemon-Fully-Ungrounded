@@ -13,6 +13,13 @@ Grap-trainers met lage levels horen alleen vroeg in de game (Jordi): de benoemde
 Gebruik (vanuit de repo-root): python3 tools/grounded/maptools/zee_vulling_2.py
 Daarna: python3 tools/grounded/stadium/pool.py en python3 tools/grounded/stadium/announcer.py (Stadium-pool).
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, random, re, struct, sys
 from collections import deque
 

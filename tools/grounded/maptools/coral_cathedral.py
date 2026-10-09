@@ -13,6 +13,13 @@ Let op: de shards in kaarten van andere generatoren (dungeon_extra.py, sootopoli
 map.json gezet; draai dit script opnieuw nadat je zo'n generator opnieuw draait.
 Flags: FLAG_GROUNDED 660-699. Trainers: 1080-1081.
 Gebruik: python3 tools/grounded/maptools/coral_cathedral.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))

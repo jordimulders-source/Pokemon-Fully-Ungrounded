@@ -31,6 +31,13 @@ Uitgang oost (39, 39-40) naar Mangrove Mire (warp via coord-trigger; andere tile
 Vrijgehouden voor later: het heiligdom van Ogerpon (zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
 
 Gebruik: python3 tools/grounded/maptools/fortree_jungle.py [voorbeeld.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, struct, sys
 from collections import deque
 

@@ -180,6 +180,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Generatorblokken** in `flags.h`/`opponents.h` hebben elk een eigen `// }` nodig, anders overschrijft het ene script de blokken van het andere. Nieuwe items die nog nergens liggen: centrale lijst `tools/grounded/maptools/nieuwe_items.py` (controleert dubbelen/TM's). Emulatortests in grotten: `givemon` lv 100 + `setvar VAR_REPEL_STEP_COUNT, 900`.
 - **Geanimeerd vuur op de kaart:** `graphics/battle_anims/sprites/fire.png` (8 frames 32×32) werkt als tileset-vuur; vlammen op een boomkruin met een grillige onderrand (recht = "vlammenhoed"). Na wijzigingen in tileset-/animatieplaatjes `touch src/tilesets.c src/tileset_anims.c`.
 - **Levelcurve (v0.9.192):** trainer-EXP 50% + inhaal-EXP naar de volgende mijlpaal (`src/caps.c`); gehoorzaamheidsgrens = ace van de volgende gym. Na nieuwe trainers/gymteams: `python3 tools/grounded/levelcurve.py --postgame --profile` en de gymgids-teksten (`*_Text_GymGuide*`) bijwerken. Nieuwe post-game-content: lv 83–100 (Spacetime ±91–93, superbosses 100).
+- **Generator opnieuw draaien na de levelcurve:** veel bouwscripts schrijven hun eigen (oude) levels terug in `trainers.party`, `wild_encounters.json` en `setwildbattle`. Na het draaien `git diff` op die drie controleren en alleen de bedoelde wijzigingen houden (v0.9.193: Mewtwo ging terug van 95 naar 75).
 
 ## Werkwijzen (herhaalde taken)
 

@@ -5,10 +5,6 @@ SpacetimeCave_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SpacetimeCave_OnFrame
 	.byte 0
 
-SpacetimeCave_EventScript_RiftAreaZero::
-	msgbox SpacetimeCave_Text_RiftAreaZero, MSGBOX_SIGN
-	end
-
 @ Spacetime_AllSidequestsDone: VAR_RESULT = TRUE als alle Spacetime-sidequests klaar zijn, VAR_0x8005 = het
 @ aantal dat nog openstaat. Uitbreiden: de klaar-flag van een nieuwe locatie in SIDEQUESTS (spacetime_cave.py)
 @ zetten. Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen
@@ -20,6 +16,7 @@ Spacetime_AllSidequestsDone::
 	call_if_unset FLAG_SPACETIME_CHARGESTONE_DONE, Spacetime_EventScript_CountOpen @ Chargestone Cave: Zeraora gevangen of verslagen
 	call_if_unset FLAG_NATIONAL_PARK_DONE, Spacetime_EventScript_CountOpen @ National Park: Eternatus gevangen of verslagen
 	call_if_unset FLAG_SPACETIME_GLIMWOOD_DONE, Spacetime_EventScript_CountOpen @ Glimwood Tangle: Yveltal gevangen
+	call_if_unset FLAG_SPACETIME_AREAZERO_DONE, Spacetime_EventScript_CountOpen @ Area Zero: Terapagos gevangen
 	setvar VAR_RESULT, FALSE
 	call_if_eq VAR_0x8005, 0, Spacetime_EventScript_AllDone
 	return
@@ -107,8 +104,8 @@ SpacetimeCave_EventScript_OpenRifts:
 	setmetatile 22, 10, 0x3CF, FALSE
 	setmetatile 21, 11, 0x3D0, TRUE
 	setmetatile 22, 11, 0x3D1, TRUE
-	setmetatile 21, 14, 0x3CE, TRUE
-	setmetatile 22, 14, 0x3CF, TRUE
+	setmetatile 21, 14, 0x3CE, FALSE
+	setmetatile 22, 14, 0x3CF, FALSE
 	setmetatile 21, 15, 0x3D0, TRUE
 	setmetatile 22, 15, 0x3D1, TRUE
 	return
@@ -346,14 +343,6 @@ SpacetimeCave_EventScript_ResearcherDone::
 	end
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
-SpacetimeCave_Text_RiftAreaZero:
-	.string "The rift is wide open. Through it you\n"
-	.string "can just make out a crater that keeps\l"
-	.string "going down long after it should have\l"
-	.string "stopped.\p"
-	.string "The other side hasn't finished existing\n"
-	.string "yet, though. Spacetime is still loading.$"
-
 SpacetimeCave_Text_Dialga1:
 	.string "DIALGA: ...Finally.\p"
 	.string "Do you know how long we have been\n"

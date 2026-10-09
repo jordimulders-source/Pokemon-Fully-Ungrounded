@@ -9,7 +9,7 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: park-vuur + Ilex-schrijn (v0.9.191), Glimwood (v0.9.189), trog 127 + Chargestone + Spacetime-items (v0.9.188), Virizion-kamer + wild Uncharted Isle (v0.9.186), Swords of Justice/Keldeo/Meltan (v0.9.182), National Park + Ilex (v0.9.181), Spacetime S2 + Chargestone Cave (v0.9.180), Koraalkathedraal + Sea Shards (v0.9.179), Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Area Zero (v0.9.193), park-vuur + Ilex-schrijn (v0.9.191), Glimwood (v0.9.189), trog 127 + Chargestone + Spacetime-items (v0.9.188), Virizion-kamer + wild Uncharted Isle (v0.9.186), Swords of Justice/Keldeo/Meltan (v0.9.182), National Park + Ilex (v0.9.181), Spacetime S2 + Chargestone Cave (v0.9.180), Koraalkathedraal + Sea Shards (v0.9.179), Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 
 ~~Beasts of Ruin bijwerken~~ (v0.9.174).
@@ -17,6 +17,8 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (volgende agents):**
 **Feedback Jordi 9 okt (in uitvoering):**
 - ~~Levelcurve~~ (v0.9.192). **Open voor Jordi:** evolutie-advies in `LEVELCURVE.md` (Hydreigon 53→64, Dragapult 50→60, Volcarona 40→59, Mienshao, Mandibuzz, Klinklang, Vanilluxe terug naar ±officieel?) en ±650 wilde slots ver boven hun evolutielevel (laat in de game evoluties zetten?). Dave/SickBlik/Mitch hebben nog geen post-game-gevecht (komt dat er, dan lv 100).
+
+**Technische schuld:** de bouwscripts (`spacetime_cave.py`, `area_zero.py`, `national_park.py`, `chargestone.py`, `glimwood.py`, `swords_keldeo.py`, `mega_forest.py` e.a.) bevatten nog de levels van vóór de levelcurve (v0.9.192): opnieuw draaien zet trainer-, wilde en `setwildbattle`-levels terug. Levels in de scripts gelijktrekken (of de levelcurve als laatste stap laten toepassen) voordat ze weer gedraaid worden.
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
@@ -28,7 +30,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
    - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173).
    - d. **Gen 4-meren** (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
-   - f. **Area Zero**: flinke paradox-quest met Miraidon/Koraidon, beveiligingssystemen en Tera Cave/Terapagos (SPACETIME_PLAN; paradoxen niet meer gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
+   - ~~f. Area Zero~~ (v0.9.193): flinke paradox-quest met Miraidon/Koraidon, beveiligingssystemen en Tera Cave/Terapagos (SPACETIME_PLAN; paradoxen niet meer gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
    - ~~Chargestone Cave~~ (v0.9.180) (Jordi 9 okt): niet helemaal nabouwen, wel dat sfeertje (zwevende elektrische stenen, blauw licht) en de schaal; een elektrische grot. Referenties: `referenties/chargestone/` (1F, B1F, B2F uit B2W2).
    - ~~Glimwood Tangle~~ (v0.9.189) (Jordi 9 okt): sfeer van Glimwood + Ballonlea (lichtgevende paddenstoelen, donker sprookjesbos). Referenties: `referenties/glimwood_ballonlea/` en ongesorteerde sfeerbeelden in `referenties/sfeer_ongesorteerd/`.
    - g. **Mt. Coronet als laatste post-game-quest:** als je de rest hebt, Dialga, Palkia en tot slot Arceus.

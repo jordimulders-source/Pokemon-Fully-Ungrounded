@@ -17702,3 +17702,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **Story- en post-game-legendaries** mee (o.a. beasts 62, Regi-trio 69, Regidrago/Regieleki/Manaphy 73, post-game 90–95).
 - **Gehoorzaamheid** blijft op het vanglevel; de grens is nu het ace-level van de volgende gymleider (23/26/34/45/47/55/66/76, na badge 8 geen grens). (De ongehoorzame Abra van Route 116 kan niet meer.)
 - Profielen (team min ace): hoofdpad +2,5 tot +4,8 bij gyms, Steven +1,1; alle content met 12 in rotatie +2 tot +3, Steven +0,1; superbosses 0. Rapport en advies over evolutielevels in `LEVELCURVE.md`; simulatie `tools/grounded/levelcurve.py`.
+
+### [v0.9.193] - Area Zero (paradoxen, Koraidon/Miraidon, Tera-alarm, Terapagos)
+- **Area Zero** via de Spacetime-scheur: zes kaarten (Rim → Depths → Crystal → Future/Past → Tera Cave), organische grotkamers met terrassen; per laag een eigen kleurversie (groen, lila, indigo kristal, toekomst-staal met neon, verleden-rode aarde, prisma-wit): hoe dieper, hoe vreemder. Eigen kristallen, glinsteringen, onderzoeksstation, Zero Gate, terminals, metalen kubussen en fossielbotten.
+- **Paradoxen:** Scream Tail en Iron Hands (lv 94); toekomst: Iron Leaves, Iron Boulder, Iron Crown (lv 96) + **Miraidon** (lv 98); verleden: Walking Wake, Gouging Fire, Raging Bolt (lv 96) + **Koraidon** (lv 98); de rest wild (lv 88–94). De Zero Gate wisselt tussen toekomst en verleden.
+- Na Miraidon/Koraidon: **beveiligingssysteem** (6 paradoxen lv 100). Beide offline → **Tera Cave**: het **alarmsysteem**, het enige gevecht in de game (naast de Spire) waarin Tera wordt gebruikt (elk teamlid één keer; de speler krijgt geen Tera), daarna **Terapagos** (lv 100).
+- Nieuwe items: Quick Ball, Muscle Band, Adrenaline Orb, Shed Shell, Beast Ball, Ring Target, Booster Energy, Metal Alloy, Air Balloon, Power Herb, Grip Claw, Sticky Barb.
+- Area Zero-scheur gekoppeld; telt mee voor de gang naar ?????. Scripts `area_zero.py` + `area_zero_tiles.py`; flags `FLAG_GROUNDED(920–937, 950–961)`, trainers 1180–1182 (klasse ZERO LAB).

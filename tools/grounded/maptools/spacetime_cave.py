@@ -196,12 +196,12 @@ RIFTS = [  # (sleutel, linksboven, bestemming of None, naam op het bord)
     ('Park', (4, 14), 'PARK', None),
     ('Chargestone', (21, 5), 'CHARGESTONE', None),
     ('Glimwood', (21, 10), 'GLIMWOOD', None),
-    ('AreaZero', (21, 14), None, 'a crater that keeps going down long after it should have stopped'),
+    ('AreaZero', (21, 14), 'AREAZERO', None),
 ]
 # S1: eerste bezoek (Dialga + Palkia openen de scheuren) en quest-poorten.
 # Toestand per scheur na de scene: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet).
 RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'warp', 'Chargestone': 'warp', 'Glimwood': 'warp',
-              'AreaZero': 'open'}
+              'AreaZero': 'warp'}
 # Sidequests die meetellen voor de gang naar ?????. Een nieuwe locatie: haar klaar-flag hier toevoegen (en opnieuw
 # draaien). Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen pas
 # mee zodra hun flag hier staat; tot dan telt alleen wat bestaat. De meren-kamer ligt na ????? en telt niet mee.
@@ -209,7 +209,8 @@ SIDEQUESTS = [('FLAG_SPACETIME_LAVENDER_DONE', 'Lavender Town: de kwade geesten 
               ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen'),
               ('FLAG_SPACETIME_CHARGESTONE_DONE', 'Chargestone Cave: Zeraora gevangen of verslagen'),
               ('FLAG_NATIONAL_PARK_DONE', 'National Park: Eternatus gevangen of verslagen'),
-              ('FLAG_SPACETIME_GLIMWOOD_DONE', 'Glimwood Tangle: Yveltal gevangen')]
+              ('FLAG_SPACETIME_GLIMWOOD_DONE', 'Glimwood Tangle: Yveltal gevangen'),
+              ('FLAG_SPACETIME_AREAZERO_DONE', 'Area Zero: Terapagos gevangen')]
 HUB_DIALGA, HUB_PALKIA, HUB_RESEARCHER = (10, 7), (16, 7), (18, 4)
 # de diepte (zelfde kaart, onder de hoofdzaal); de gang is 2 breed (x 13-14)
 CX = 13
@@ -326,10 +327,10 @@ def hub(lav_rift_warp, cc_rift_warp):
                 m, col = ids[(0, q)], q >= 2
                 if q < 2:
                     # Chargestone (chargestone.py) heeft één aankomstwarp (index 0) voor beide vakken
-                    wid = {'LAVENDER': lav_rift_warp + q, 'CERULEAN': cc_rift_warp + q, 'CHARGESTONE': 0, 'PARK': 2 + q, 'GLIMWOOD': q}[dest]
+                    wid = {'LAVENDER': lav_rift_warp + q, 'CERULEAN': cc_rift_warp + q, 'CHARGESTONE': 0, 'PARK': 2 + q, 'GLIMWOOD': q, 'AREAZERO': 0}[dest]
                     warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F',
                                              'CHARGESTONE': 'CHARGESTONE_CAVE_1F',
-                                             'PARK': 'NATIONAL_PARK_GATE', 'GLIMWOOD': 'GLIMWOOD_TANGLE'}[dest], wid, elev=3))
+                                             'PARK': 'NATIONAL_PARK_GATE', 'GLIMWOOD': 'GLIMWOOD_TANGLE', 'AREAZERO': 'AREA_ZERO_RIM'}[dest], wid, elev=3))
             else:                           # open (actief beeld), nog geen overkant: massief + bordje
                 m, col = ids[(0, q)], True
                 bgs.append(sign(x, y, P + 'Rift' + key))

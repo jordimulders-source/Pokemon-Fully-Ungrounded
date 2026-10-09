@@ -27,7 +27,7 @@ import meteor_falls_ext as mf
 import beacon_dragon as bd
 import area_zero_tiles as azt
 
-HUB_DEST = ('SPACETIME_CAVE', 0)   # terugweg naar de hub (koppeling: spacetime_cave.py)
+HUB_DEST = ('SPACETIME_CAVE', 11)  # terugweg: de Area Zero-scheur in de hub (warps 11-12, spacetime_cave.py)
 GROUP = 'gMapGroup_Spacetime'
 RIM, DEP, CRY, FUT, PAS, TERA = ('AreaZero_Rim', 'AreaZero_Depths', 'AreaZero_Crystal', 'AreaZero_Future',
                                  'AreaZero_Past', 'AreaZero_TeraCave')

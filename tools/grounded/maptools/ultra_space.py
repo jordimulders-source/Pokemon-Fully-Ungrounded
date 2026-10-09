@@ -307,6 +307,9 @@ def mon(sp):
 
 
 SPOTS = []   # volgorde = index in src/ultra_space.c (sUltraFlags)
+# Opnieuw gebouwd in een eigen script met een eigen tileset (Jordi, 9 okt: "schrap alles"): deze plekken worden hier
+# overgeslagen (alleen de hub-warp blijft); kaart, tileset en scripts maakt tools/grounded/maptools/ultra_worlds_a.py.
+REBUILT = {'Nihilego', 'Buzzwole', 'Pheromosa', 'Xurkitree', 'Celesteela', 'Kartana'}
 
 
 def spot(**k):
@@ -519,6 +522,13 @@ SUMMARY = {}
 def build_spot(i, s):
     key = s['key']
     name = 'UltraSpace_' + key
+    if key in REBUILT:      # kaart, tileset en scripts komen uit ultra_worlds_a.py; hier alleen de aankomstplek (hub-warp)
+        hs = open('data/maps/UltraSpace_Hub/scripts.inc').read()
+        m = re.search(r'warp %s, (\d+), (\d+)' % map_const(name), hs)
+        SUMMARY[key] = dict(name=name, arrive=(int(m.group(1)), int(m.group(2))), ub=None, ret=None, kinds=[], items=[])
+        add_to_group(name)
+        add_include(name)
+        return name
     if 'mask' in s:
         mask = s['mask']
         g = autotile(mask, s['seed'])
@@ -774,7 +784,7 @@ def write_scripts(hub_arrive):
         info = SUMMARY[key]
         name = info['name']
         path = 'data/maps/%s/scripts.inc' % name
-        if os.path.exists(path) and not FORCE_SCRIPTS:
+        if key in REBUILT or (os.path.exists(path) and not FORCE_SCRIPTS):
             continue
         t = TEXTS[key]
         out = ['%s_MapScripts::' % name, '\t.byte 0', '']

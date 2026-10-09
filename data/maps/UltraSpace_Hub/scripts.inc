@@ -52,27 +52,27 @@ UltraSpace_Hub_EventScript_PortalWarp::
 	case 10, UltraSpace_Hub_EventScript_ToNecrozma
 	end
 UltraSpace_Hub_EventScript_ToNihilego::
-	warp MAP_ULTRA_SPACE_NIHILEGO, 10, 23
+	warp MAP_ULTRA_SPACE_NIHILEGO, 20, 27
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToBuzzwole::
-	warp MAP_ULTRA_SPACE_BUZZWOLE, 6, 26
+	warp MAP_ULTRA_SPACE_BUZZWOLE, 20, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToPheromosa::
-	warp MAP_ULTRA_SPACE_PHEROMOSA, 21, 26
+	warp MAP_ULTRA_SPACE_PHEROMOSA, 28, 26
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToXurkitree::
-	warp MAP_ULTRA_SPACE_XURKITREE, 2, 8
+	warp MAP_ULTRA_SPACE_XURKITREE, 20, 27
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToCelesteela::
-	warp MAP_ULTRA_SPACE_CELESTEELA, 16, 18
+	warp MAP_ULTRA_SPACE_CELESTEELA, 24, 30
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToKartana::
-	warp MAP_ULTRA_SPACE_KARTANA, 1, 20
+	warp MAP_ULTRA_SPACE_KARTANA, 18, 24
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToGuzzlord::

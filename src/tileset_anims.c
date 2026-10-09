@@ -1263,3 +1263,156 @@ void InitTilesetAnim_ParkBurnt(void)
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_ParkBurnt;
 }
+
+// ultra_worlds_a { (tools/grounded/maptools/ultra_worlds_a.py: eigen tilesets van zes Ultra Beast-werelden)
+#include "constants/rgb.h"
+
+// paletcyclus: kleuren first..first+n-1 van BG-palet pal schuiven elke stap een plek op (lava, water, leds)
+static void UltraWorld_CyclePal(u8 pal, u8 first, u8 n, const u16 *cols, u16 step)
+{
+    u32 i;
+    for (i = 0; i < n; i++)
+        gPlttBufferUnfaded[BG_PLTT_ID(pal) + first + i] = cols[(i + step) % n];
+    if ((u8)FindTaskIdByFunc(Task_BattleTransition_Intro) == TASK_NONE)
+        BlendPalette(BG_PLTT_ID(pal) + first, n, gPaletteFade.y, gPaletteFade.blendColor & 0x7FFF);
+}
+const u16 gTilesetAnims_UltraWorldNihilego_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldNihilego[] = {
+    gTilesetAnims_UltraWorldNihilego_Frame0,
+    gTilesetAnims_UltraWorldNihilego_Frame1,
+    gTilesetAnims_UltraWorldNihilego_Frame2,
+    gTilesetAnims_UltraWorldNihilego_Frame3,
+    gTilesetAnims_UltraWorldNihilego_Frame4,
+    gTilesetAnims_UltraWorldNihilego_Frame5,
+    gTilesetAnims_UltraWorldNihilego_Frame6,
+    gTilesetAnims_UltraWorldNihilego_Frame7,
+};
+
+static void TilesetAnim_UltraWorldNihilego(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldNihilego[(timer / 8) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 52 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraWorldNihilego(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldNihilego;
+}
+
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldPheromosa[] = {
+    gTilesetAnims_UltraWorldPheromosa_Frame0,
+    gTilesetAnims_UltraWorldPheromosa_Frame1,
+    gTilesetAnims_UltraWorldPheromosa_Frame2,
+    gTilesetAnims_UltraWorldPheromosa_Frame3,
+    gTilesetAnims_UltraWorldPheromosa_Frame4,
+    gTilesetAnims_UltraWorldPheromosa_Frame5,
+    gTilesetAnims_UltraWorldPheromosa_Frame6,
+    gTilesetAnims_UltraWorldPheromosa_Frame7,
+};
+
+static const u16 sUltraWorldPheromosa_Cycle0[] = {RGB(24, 5, 0), RGB(30, 12, 1), RGB(31, 20, 3), RGB(31, 28, 12)};
+static const u16 sUltraWorldPheromosa_Cycle1[] = {RGB(4, 11, 21), RGB(6, 16, 26), RGB(11, 21, 29), RGB(19, 26, 31)};
+static void TilesetAnim_UltraWorldPheromosa(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldPheromosa[(timer / 6) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 112 * TILE_SIZE_4BPP);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(11, 12, 4, sUltraWorldPheromosa_Cycle0, timer / 8);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(12, 12, 4, sUltraWorldPheromosa_Cycle1, timer / 8);
+}
+
+void InitTilesetAnim_UltraWorldPheromosa(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldPheromosa;
+}
+
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldXurkitree[] = {
+    gTilesetAnims_UltraWorldXurkitree_Frame0,
+    gTilesetAnims_UltraWorldXurkitree_Frame1,
+    gTilesetAnims_UltraWorldXurkitree_Frame2,
+    gTilesetAnims_UltraWorldXurkitree_Frame3,
+    gTilesetAnims_UltraWorldXurkitree_Frame4,
+    gTilesetAnims_UltraWorldXurkitree_Frame5,
+    gTilesetAnims_UltraWorldXurkitree_Frame6,
+    gTilesetAnims_UltraWorldXurkitree_Frame7,
+};
+
+static const u16 sUltraWorldXurkitree_Cycle0[] = {RGB(31, 30, 15), RGB(13, 12, 6), RGB(12, 11, 7), RGB(11, 12, 6)};
+static const u16 sUltraWorldXurkitree_Cycle1[] = {RGB(3, 9, 14), RGB(6, 18, 26), RGB(17, 28, 31), RGB(5, 13, 21)};
+static void TilesetAnim_UltraWorldXurkitree(u16 timer)
+{
+    if (timer % 4 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldXurkitree[(timer / 4) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 48 * TILE_SIZE_4BPP);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(11, 12, 4, sUltraWorldXurkitree_Cycle0, timer / 8);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(12, 12, 4, sUltraWorldXurkitree_Cycle1, timer / 8);
+}
+
+void InitTilesetAnim_UltraWorldXurkitree(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldXurkitree;
+}
+
+const u16 gTilesetAnims_UltraWorldKartana_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldKartana[] = {
+    gTilesetAnims_UltraWorldKartana_Frame0,
+    gTilesetAnims_UltraWorldKartana_Frame1,
+    gTilesetAnims_UltraWorldKartana_Frame2,
+    gTilesetAnims_UltraWorldKartana_Frame3,
+    gTilesetAnims_UltraWorldKartana_Frame4,
+    gTilesetAnims_UltraWorldKartana_Frame5,
+    gTilesetAnims_UltraWorldKartana_Frame6,
+    gTilesetAnims_UltraWorldKartana_Frame7,
+};
+
+static void TilesetAnim_UltraWorldKartana(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldKartana[(timer / 6) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 77 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraWorldKartana(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldKartana;
+}
+// } ultra_worlds_a

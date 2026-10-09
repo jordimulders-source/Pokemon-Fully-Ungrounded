@@ -330,3 +330,30 @@ const u16 gMetatileAttributes_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatiles.bin"); // Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken
 const u16 gMetatileAttributes_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatile_attributes.bin");
+
+// ultra_worlds_a { (tools/grounded/maptools/ultra_worlds_a.py: eigen tilesets van zes Ultra Beast-werelden)
+const u16 gMetatiles_UltraWorldNihilegoGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_nihilego_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldNihilegoGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_nihilego_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldNihilego[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldNihilego[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldBuzzwoleGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_buzzwole_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldBuzzwoleGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_buzzwole_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldBuzzwole[] = INCBIN_U16("data/tilesets/secondary/ultra_world_buzzwole/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldBuzzwole[] = INCBIN_U16("data/tilesets/secondary/ultra_world_buzzwole/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldPheromosaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_pheromosa_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldPheromosaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_pheromosa_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldPheromosa[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldPheromosa[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldXurkitreeGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_xurkitree_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldXurkitreeGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_xurkitree_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldXurkitree[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldXurkitree[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldCelesteelaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_celesteela_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldCelesteelaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_celesteela_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldCelesteela[] = INCBIN_U16("data/tilesets/secondary/ultra_world_celesteela/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldCelesteela[] = INCBIN_U16("data/tilesets/secondary/ultra_world_celesteela/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldKartanaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_kartana_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldKartanaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_kartana_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatile_attributes.bin");
+// } ultra_worlds_a

@@ -54,3 +54,13 @@ UltraSpace_Xurkitree_Text_Cable:
 	.string "XURKITREE. Or a XURKITREE shaped like\l"
 	.string "cables.$"
 
+@ ultra_worlds_a { gegenereerd door tools/grounded/maptools/ultra_worlds_a.py; niet met de hand bewerken
+UltraSpace_Xurkitree_EventScript_Socket::
+	msgbox UltraSpace_Xurkitree_Text_Socket, MSGBOX_SIGN
+	end
+@ } ultra_worlds_a
+
+UltraSpace_Xurkitree_Text_Socket:
+	.string "A wall socket the size of a door.\p"
+	.string "You could plug in a whole town.\n"
+	.string "Someone already did. It was MAUVILLE.$"

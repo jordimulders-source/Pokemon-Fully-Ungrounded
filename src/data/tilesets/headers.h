@@ -1633,127 +1633,6 @@ const struct Tileset gTileset_SpearPillar = // Project Grounded: Spear Pillar + 
 };
 
 // ultra_space { (tools/grounded/maptools/ultra_space.py: Ultra Space, tiles/metatiles van de basistileset met eigen paletten)
-const struct Tileset gTileset_UltraNihilegoBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_InsideBuilding,
-    .palettes = gTilesetPalettes_UltraNihilegoBase,
-    .metatiles = gMetatiles_InsideBuilding,
-    .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
-};
-
-const struct Tileset gTileset_UltraNihilego =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SootopolisGym,
-    .palettes = gTilesetPalettes_UltraNihilego,
-    .metatiles = gMetatiles_SootopolisGym,
-    .metatileAttributes = gMetatileAttributes_SootopolisGym,
-    .callback = InitTilesetAnim_SootopolisGym,
-};
-
-const struct Tileset gTileset_UltraBuzzwoleBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_InsideBuilding,
-    .palettes = gTilesetPalettes_UltraBuzzwoleBase,
-    .metatiles = gMetatiles_InsideBuilding,
-    .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
-};
-
-const struct Tileset gTileset_UltraBuzzwole =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_DewfordGym,
-    .palettes = gTilesetPalettes_UltraBuzzwole,
-    .metatiles = gMetatiles_DewfordGym,
-    .metatileAttributes = gMetatileAttributes_DewfordGym,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_UltraPheromosaBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_InsideBuilding,
-    .palettes = gTilesetPalettes_UltraPheromosaBase,
-    .metatiles = gMetatiles_InsideBuilding,
-    .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
-};
-
-const struct Tileset gTileset_UltraPheromosa =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Contest,
-    .palettes = gTilesetPalettes_UltraPheromosa,
-    .metatiles = gMetatiles_Contest,
-    .metatileAttributes = gMetatileAttributes_Contest,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_UltraXurkitreeBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_General,
-    .palettes = gTilesetPalettes_UltraXurkitreeBase,
-    .metatiles = gMetatiles_General,
-    .metatileAttributes = gMetatileAttributes_General,
-    .callback = InitTilesetAnim_General,
-};
-
-const struct Tileset gTileset_UltraXurkitree =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_BikeShop,
-    .palettes = gTilesetPalettes_UltraXurkitree,
-    .metatiles = gMetatiles_BikeShop,
-    .metatileAttributes = gMetatileAttributes_BikeShop,
-    .callback = InitTilesetAnim_BikeShop,
-};
-
-const struct Tileset gTileset_UltraCelesteela =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_MeteorSpace,
-    .palettes = gTilesetPalettes_UltraCelesteela,
-    .metatiles = gMetatiles_MeteorSpace,
-    .metatileAttributes = gMetatileAttributes_MeteorSpace,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_UltraKartanaBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_InsideBuilding,
-    .palettes = gTilesetPalettes_UltraKartanaBase,
-    .metatiles = gMetatiles_InsideBuilding,
-    .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
-};
-
-const struct Tileset gTileset_UltraKartana =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_TrickHousePuzzle,
-    .palettes = gTilesetPalettes_UltraKartana,
-    .metatiles = gMetatiles_TrickHousePuzzle,
-    .metatileAttributes = gMetatileAttributes_TrickHousePuzzle,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_UltraGuzzlord =
 {
     .isCompressed = TRUE,
@@ -1854,3 +1733,137 @@ const struct Tileset gTileset_UltraHub =
 };
 
 // }
+
+// ultra_worlds_a { (tools/grounded/maptools/ultra_worlds_a.py: eigen tilesets van zes Ultra Beast-werelden)
+const struct Tileset gTileset_UltraWorldNihilegoGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldNihilegoGround,
+    .palettes = gTilesetPalettes_UltraWorldNihilegoGround,
+    .metatiles = gMetatiles_UltraWorldNihilegoGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldNihilegoGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldNihilego =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldNihilego,
+    .palettes = gTilesetPalettes_UltraWorldNihilego,
+    .metatiles = gMetatiles_UltraWorldNihilego,
+    .metatileAttributes = gMetatileAttributes_UltraWorldNihilego,
+    .callback = InitTilesetAnim_UltraWorldNihilego,
+};
+
+const struct Tileset gTileset_UltraWorldBuzzwoleGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldBuzzwoleGround,
+    .palettes = gTilesetPalettes_UltraWorldBuzzwoleGround,
+    .metatiles = gMetatiles_UltraWorldBuzzwoleGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldBuzzwoleGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldBuzzwole =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldBuzzwole,
+    .palettes = gTilesetPalettes_UltraWorldBuzzwole,
+    .metatiles = gMetatiles_UltraWorldBuzzwole,
+    .metatileAttributes = gMetatileAttributes_UltraWorldBuzzwole,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldPheromosaGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldPheromosaGround,
+    .palettes = gTilesetPalettes_UltraWorldPheromosaGround,
+    .metatiles = gMetatiles_UltraWorldPheromosaGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldPheromosaGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldPheromosa =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldPheromosa,
+    .palettes = gTilesetPalettes_UltraWorldPheromosa,
+    .metatiles = gMetatiles_UltraWorldPheromosa,
+    .metatileAttributes = gMetatileAttributes_UltraWorldPheromosa,
+    .callback = InitTilesetAnim_UltraWorldPheromosa,
+};
+
+const struct Tileset gTileset_UltraWorldXurkitreeGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldXurkitreeGround,
+    .palettes = gTilesetPalettes_UltraWorldXurkitreeGround,
+    .metatiles = gMetatiles_UltraWorldXurkitreeGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldXurkitreeGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldXurkitree =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldXurkitree,
+    .palettes = gTilesetPalettes_UltraWorldXurkitree,
+    .metatiles = gMetatiles_UltraWorldXurkitree,
+    .metatileAttributes = gMetatileAttributes_UltraWorldXurkitree,
+    .callback = InitTilesetAnim_UltraWorldXurkitree,
+};
+
+const struct Tileset gTileset_UltraWorldCelesteelaGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldCelesteelaGround,
+    .palettes = gTilesetPalettes_UltraWorldCelesteelaGround,
+    .metatiles = gMetatiles_UltraWorldCelesteelaGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldCelesteelaGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldCelesteela =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldCelesteela,
+    .palettes = gTilesetPalettes_UltraWorldCelesteela,
+    .metatiles = gMetatiles_UltraWorldCelesteela,
+    .metatileAttributes = gMetatileAttributes_UltraWorldCelesteela,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldKartanaGround =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraWorldKartanaGround,
+    .palettes = gTilesetPalettes_UltraWorldKartanaGround,
+    .metatiles = gMetatiles_UltraWorldKartanaGround,
+    .metatileAttributes = gMetatileAttributes_UltraWorldKartanaGround,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraWorldKartana =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraWorldKartana,
+    .palettes = gTilesetPalettes_UltraWorldKartana,
+    .metatiles = gMetatiles_UltraWorldKartana,
+    .metatileAttributes = gMetatileAttributes_UltraWorldKartana,
+    .callback = InitTilesetAnim_UltraWorldKartana,
+};
+// } ultra_worlds_a

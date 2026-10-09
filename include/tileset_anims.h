@@ -34,4 +34,11 @@ void InitTilesetAnim_EliteFour(void);
 void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 
+// ultra_worlds_a {
+void InitTilesetAnim_UltraWorldNihilego(void);
+void InitTilesetAnim_UltraWorldPheromosa(void);
+void InitTilesetAnim_UltraWorldXurkitree(void);
+void InitTilesetAnim_UltraWorldKartana(void);
+// } ultra_worlds_a
+
 #endif // GUARD_TILESET_ANIMS_H

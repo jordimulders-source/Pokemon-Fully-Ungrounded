@@ -2,7 +2,7 @@
   "id": "MAP_ULTRA_SPACE_XURKITREE",
   "name": "UltraSpace_Xurkitree",
   "layout": "LAYOUT_ULTRA_SPACE_XURKITREE",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_SILPH",
   "region_map_section": "MAPSEC_ALTERING_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_ULTRA_XURKITREE_RETURN",
       "graphics_id": "OBJ_EVENT_GFX_ULTRA_WORMHOLE",
-      "x": 2,
-      "y": 7,
+      "x": 20,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_ULTRA_XURKITREE_UB",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(XURKITREE)",
-      "x": 33,
-      "y": 5,
+      "x": 20,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -44,12 +44,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(JOLTIK)",
-      "x": 6,
-      "y": 11,
+      "x": 10,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 0,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "UltraSpace_Xurkitree_EventScript_Spark",
@@ -57,12 +57,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TYNAMO)",
-      "x": 16,
-      "y": 17,
+      "x": 24,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 0,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "UltraSpace_Xurkitree_EventScript_Spark",
@@ -70,8 +70,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(XURKITREE)",
-      "x": 18,
-      "y": 15,
+      "x": 33,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -84,7 +84,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 37,
-      "y": 2,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -97,5 +97,14 @@
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UltraSpace_Xurkitree_EventScript_Socket"
+    }
+  ]
 }

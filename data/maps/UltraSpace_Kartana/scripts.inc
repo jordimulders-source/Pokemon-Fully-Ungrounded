@@ -45,3 +45,23 @@ UltraSpace_Kartana_Text_Fold:
 	.string "A folded paper KARTANA. It is not alive.\n"
 	.string "Probably. Do not unfold it.$"
 
+@ ultra_worlds_a { gegenereerd door tools/grounded/maptools/ultra_worlds_a.py; niet met de hand bewerken
+UltraSpace_Kartana_EventScript_Reader::
+	msgbox UltraSpace_Kartana_Text_Reader, MSGBOX_NPC
+	end
+
+UltraSpace_Kartana_EventScript_Books::
+	msgbox UltraSpace_Kartana_Text_Books, MSGBOX_SIGN
+	end
+@ } ultra_worlds_a
+
+UltraSpace_Kartana_Text_Books:
+	.string "The books are upside down.\p"
+	.string "You tilt your head. The words are\n"
+	.string "still upside down. So is your head.\p"
+	.string "One title reads: “HOW TO FOLD A\n"
+	.string "BLADE IN 900 EASY STEPS.”$"
+
+UltraSpace_Kartana_Text_Reader:
+	.string "It is reading the shelf backwards.\n"
+	.string "It says the ending is better first.$"

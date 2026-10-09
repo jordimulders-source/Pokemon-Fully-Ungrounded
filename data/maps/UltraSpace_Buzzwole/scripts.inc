@@ -45,3 +45,23 @@ UltraSpace_Buzzwole_Text_Lifter:
 	.string "Counting reps. It lost count at 4,000\n"
 	.string "and started over out of spite.$"
 
+@ ultra_worlds_a { gegenereerd door tools/grounded/maptools/ultra_worlds_a.py; niet met de hand bewerken
+UltraSpace_Buzzwole_EventScript_Bug::
+	msgbox UltraSpace_Buzzwole_Text_Bug, MSGBOX_NPC
+	end
+
+UltraSpace_Buzzwole_EventScript_Barbell::
+	msgbox UltraSpace_Buzzwole_Text_Barbell, MSGBOX_SIGN
+	end
+@ } ultra_worlds_a
+
+UltraSpace_Buzzwole_Text_Bug:
+	.string "It is the size of a normal bug.\n"
+	.string "Here, that makes it a speck.\p"
+	.string "It looks at the giant mushrooms and\n"
+	.string "feels nothing. Respect.$"
+
+UltraSpace_Buzzwole_Text_Barbell:
+	.string "Two giant BERRIES on a stick.\p"
+	.string "The sticker says: “ORGANIC. 900 KG.\n"
+	.string "DO NOT EAT BETWEEN SETS.”$"

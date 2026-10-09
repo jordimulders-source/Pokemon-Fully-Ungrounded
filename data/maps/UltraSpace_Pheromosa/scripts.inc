@@ -26,14 +26,6 @@ UltraSpace_Pheromosa_EventScript_UBCaught::
 	setflag FLAG_ULTRA_PHEROMOSA
 	goto UltraSpace_EventScript_CaughtFade
 
-UltraSpace_Pheromosa_EventScript_Judge::
-	msgbox UltraSpace_Pheromosa_Text_Judge, MSGBOX_NPC
-	end
-
-UltraSpace_Pheromosa_EventScript_Crowd::
-	msgbox UltraSpace_Pheromosa_Text_Crowd, MSGBOX_NPC
-	end
-
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 UltraSpace_Pheromosa_Text_UB:
 	.string "PHEROMOSA strikes a pose at the end of\n"
@@ -46,11 +38,25 @@ UltraSpace_Pheromosa_Text_UBBack:
 	.string "the catwalk. Again. Forever. Fashion is\l"
 	.string "pain.$"
 
-UltraSpace_Pheromosa_Text_Judge:
-	.string "The judge holds up a scorecard. It says\n"
-	.string "“ew”.$"
+@ ultra_worlds_a { gegenereerd door tools/grounded/maptools/ultra_worlds_a.py; niet met de hand bewerken
+UltraSpace_Pheromosa_EventScript_Weather::
+	msgbox UltraSpace_Pheromosa_Text_Weather, MSGBOX_NPC
+	end
 
-UltraSpace_Pheromosa_Text_Crowd:
-	.string "The audience claps politely, then stops\n"
-	.string "when it realizes it has no idea why.$"
+UltraSpace_Pheromosa_EventScript_Treaty::
+	msgbox UltraSpace_Pheromosa_Text_Treaty, MSGBOX_SIGN
+	end
+@ } ultra_worlds_a
 
+UltraSpace_Pheromosa_Text_Treaty:
+	.string "THE ELEMENTAL TREATY\p"
+	.string "Article 1: Nothing affects anything.\n"
+	.string "Article 2: See article 1.\p"
+	.string "Article 3: Fire may sit in water if it\n"
+	.string "wants to. Water is fine with it.$"
+
+UltraSpace_Pheromosa_Text_Weather:
+	.string "It tried to change the weather.\n"
+	.string "The weather did not care.\p"
+	.string "Nothing here cares. It is very\n"
+	.string "relaxing, in a horrifying way.$"

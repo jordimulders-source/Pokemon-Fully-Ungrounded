@@ -30,10 +30,6 @@ UltraSpace_Celesteela_EventScript_Rocket::
 	msgbox UltraSpace_Celesteela_Text_Rocket, MSGBOX_NPC
 	end
 
-UltraSpace_Celesteela_EventScript_Smoke::
-	msgbox UltraSpace_Celesteela_Text_Smoke, MSGBOX_NPC
-	end
-
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 UltraSpace_Celesteela_Text_UB:
 	.string "CELESTEELA is counting down.\p"
@@ -50,7 +46,13 @@ UltraSpace_Celesteela_Text_Rocket:
 	.string "“about to launch” since the last ice\l"
 	.string "age.$"
 
-UltraSpace_Celesteela_Text_Smoke:
-	.string "It insists it is exhaust. It is clearly\n"
-	.string "just a KOFFING.$"
+@ ultra_worlds_a { gegenereerd door tools/grounded/maptools/ultra_worlds_a.py; niet met de hand bewerken
+UltraSpace_Celesteela_EventScript_Statue::
+	msgbox UltraSpace_Celesteela_Text_Statue, MSGBOX_SIGN
+	end
+@ } ultra_worlds_a
 
+UltraSpace_Celesteela_Text_Statue:
+	.string "A stone CELESTEELA.\p"
+	.string "The plaque says: “FIRST TO LAUNCH.”\n"
+	.string "It has not launched.$"

@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 77 soorten.
+// 78 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -61,6 +61,8 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_THUNDURUS, FLAG_FORCES_THUNDURUS_DONE, COMPOUND_STRING("A thunderstorm on ROUTE 119, 120 or\n123, and something in it laughing.")},
     // LANDORUS: forces.inc
     {SPECIES_LANDORUS, FLAG_FORCES_LANDORUS_DONE, COMPOUND_STRING("A sandstorm on ROUTE 112, 114 or 117,\nwith a cloud that has a face.")},
+    // ENAMORUS: enamorus.inc
+    {SPECIES_ENAMORUS, FLAG_ENAMORUS_DONE, COMPOUND_STRING("Once the wind, the storm and the sand\nare tamed, love strikes OLDALE,\lDEWFORD, FALLARBOR or LAVARIDGE. Look\lfor hearts. And for BIRCH, sadly.")},
     // COBALION: GraniteCave_SwordChamber
     {SPECIES_COBALION, FLAG_DEFEATED_COBALION, COMPOUND_STRING("Deep in GRANITE CAVE there's a sword\nchamber. A knight of steel wants a duel.\lNot a fight. A duel. Apparently there's a\ldifference.")},
     // TERRAKION: VictoryRoad_SwordChamber

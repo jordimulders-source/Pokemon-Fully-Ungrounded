@@ -733,6 +733,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_LANDORUS_THERIAN:
         CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
+    case SPECIES_ENAMORUS_INCARNATE: // Project Grounded: liefdesdag in een stadje (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ENAMORUS_THERIAN:
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, MUS_RG_VS_LEGEND);
+        break;
     // Project Grounded: Swords of Justice + Keldeo (swords_keldeo.py). Placeholders: bestaande transities +
     // Kanto-legendary-muziek; Jordi bedenkt de eigen intro's nog.
     case SPECIES_COBALION:

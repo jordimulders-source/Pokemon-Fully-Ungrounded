@@ -1294,3 +1294,14 @@ const struct Tileset gTileset_IlexPetalburg =
     .metatileAttributes = gMetatileAttributes_Petalburg,
     .callback = InitTilesetAnim_Petalburg,
 };
+
+const struct Tileset gTileset_UnchartedIsle = // Project Grounded: Keldeo-eiland, draaikolken (swords_isle.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UnchartedIsle,
+    .palettes = gTilesetPalettes_UnchartedIsle,
+    .metatiles = gMetatiles_UnchartedIsle,
+    .metatileAttributes = gMetatileAttributes_UnchartedIsle,
+    .callback = InitTilesetAnim_UnchartedIsle,
+};

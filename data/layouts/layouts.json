@@ -5678,9 +5678,19 @@
       "width": 28,
       "height": 22,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_UnchartedIsle",
       "border_filepath": "data/layouts/UnchartedIsle/border.bin",
       "blockdata_filepath": "data/layouts/UnchartedIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANGROVE_MIRE_VIRIZION_GLADE",
+      "name": "MangroveMire_VirizionGlade_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MangroveMire",
+      "border_filepath": "data/layouts/MangroveMire_VirizionGlade/border.bin",
+      "blockdata_filepath": "data/layouts/MangroveMire_VirizionGlade/map.bin"
     }
   ]
 }

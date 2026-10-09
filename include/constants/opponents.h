@@ -1292,6 +1292,7 @@
 
 // Post-game lv 100 (met de hand, geen generator)
 #define TRAINER_DAVE_PARADISO               1089 // Project Grounded: Dave, post-game comeback op zijn ligstoel in het Paradiso Resort
+#define TRAINER_SICKBLIK_MOTEL              1184 // Project Grounded: SickBlik chillt in het Cove Lily Motel (Lilycove), ja/nee-gevecht
 #define TRAINER_SICKBLIK_DEV                1185 // Project Grounded: SickBlik als developer op bugjacht (dagrotatie Mauville/Fortree/Lilycove/Pacifidlog)
 
 #define TRAINERS_COUNT                      1200

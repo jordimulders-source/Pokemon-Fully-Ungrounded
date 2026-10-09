@@ -126,6 +126,7 @@ Verslagen-flag = 0x500 + nummer (Wally's objecten gebruiken die ook als verberg-
 | Mitch | `TRAINER_MITCH_ROUTE_121` | 1141 | Route 121 (50, 13) | 39, Swampert 40 |
 | SickBlik | `TRAINER_SICKBLIK_ROUTE_104` | 1142 | Route 104 noord, bij de uitgang van Petalburg Woods (14, 26) | 12, Remoraid 13 |
 | SickBlik | `TRAINER_SICKBLIK_ROUTE_113` | 1143 | Route 113, oostkant (70, 13) | 26, Octillery 27 |
+| SickBlik | `TRAINER_SICKBLIK_MOTEL` | 1184 | Cove Lily Motel 1F (Lilycove), aan tafel (1, 4); ja/nee-gevecht | 56, Galar-Slowbro 57 |
 | Shy Guy (rood) | `TRAINER_SHY_GUY_DESERT` | 1144 | Route 111, woestijn: ingegraven achter het rotsblok aan de oostrand (37, 69) | 28, Mr. Mime 29 |
 | Dave | `TRAINER_DAVE_SOOTOPOLIS` | 1145 | Sootopolis (32, 35), rechts van de speler aan het begin van de Keccles-scène na Rayquaza (`FLAG_TEMP_9`) | 48, Kingambit 49 |
 

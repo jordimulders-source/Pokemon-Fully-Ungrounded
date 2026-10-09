@@ -618,10 +618,60 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Lock-On
 - Psybeam
 """),
-    dict(const='SICKBLIK_ROUTE_113', map='Route113', x=70, y=13, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=5,
-         label='SickBlik',
-         intro=r"SICKBLIK: Still playing? Respect.\pI put ash on this route so the\nsprites look moody. Cinematic.\p"
-               r"I also balanced my own team.\nTotally fair. Trust me.$",
+    dict(const='SICKBLIK_ROUTE_113', map='Route113', x=70, y=13, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=0,
+         label='SickBlik', trainer_type='TRAINER_TYPE_NONE',
+         # Jordi 9 okt: eigen tekst + team (SickBlik heeft veel favorieten; zijn eindteam is anders). Telt je
+         # white-outs (GAME_STAT_WHITE_OUTS) en praat daarover vóór het gevecht.
+         script=r"""@ES@::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_@TRAINER@, @ES@After
+	msgbox @TX@Ash, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, Grounded_BufferWhiteOuts
+	call_if_eq VAR_RESULT, 0, @ES@NoWhiteOuts
+	call_if_ne VAR_RESULT, 0, @ES@WhiteOuts
+	msgbox @TX@LetsGo, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_@TRAINER@, @TX@Defeat
+	msgbox @TX@PostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+@ES@After:
+	msgbox @TX@PostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+@ES@NoWhiteOuts:
+	msgbox @TX@Zero, MSGBOX_DEFAULT
+	return
+
+@ES@WhiteOuts:
+	msgbox @TX@Many, MSGBOX_DEFAULT
+	return
+
+@TX@Ash:
+	.string "SICKBLIK: I never liked ASH.\n"
+	.string "I mean anime ASH.\p"
+	.string "How do you mean, contrarian?\n"
+	.string "I like FRIEZA. Not gonna add him\l"
+	.string "into the game though.\p"
+	.string "How are you rolling so far?$"
+
+@TX@Many:
+	.string "{STR_VAR_1} whiteout(s)?\n"
+	.string "Goooood.\p"
+	.string "The difficulty is good then!$"
+
+@TX@Zero:
+	.string "Zero whiteouts? None?\p"
+	.string "...Note to self: up the difficulty.\n"
+	.string "Way up.$"
+
+@TX@LetsGo:
+	.string "Anyways, let's go for a battle!$"
+
+""",
+         intro=r"$",
          defeat=r"Noted. Nerfing you next patch.$",
          post=r"SICKBLIK: See you near the end.\pI'll be the guy with a hotpot\nand a problem.$",
          party="""Name: SickBlik
@@ -629,51 +679,58 @@ Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
-Items: Super Potion
+Items: Super Potion / Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: Yellow
 
-Dreepy
-Level: 26
+Wartortle
+Level: 38
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- U-Turn
-- Hex
+- Water Pulse
+- Ice Beam
+- Bite
+- Rapid Spin
+
+Banette
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Shadow Claw
+- Knock Off
 - Will-O-Wisp
+- Sucker Punch
+
+Amoonguss
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Giga Drain
+- Sludge Bomb
+- Stun Spore
+- Clear Smog
+
+Scyther
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- X-Scissor
+- Aerial Ace
+- Swords Dance
 - Quick Attack
 
-Ferroseed
-Level: 26
+Marowak_Alola @ Thick Club
+Level: 38
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Leech Seed
-- Metal Claw
-- Seed Bomb
-- Curse
-
-Voltorb
-Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Volt Switch
-- Charge Beam
-- Light Screen
-- Explosion
-
-Larvesta
-Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Flame Charge
-- Bug Bite
-- Struggle Bug
+- Shadow Bone
+- Flare Blitz
+- Bonemerang
 - Will-O-Wisp
 
-Octillery @ Expert Belt
-Level: 27
-Ability: Protean
+Slowbro_Galar @ Quick Claw
+Level: 39
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Octazooka
-- Psybeam
-- Aurora Beam
-- Signal Beam
+- Shell Side Arm
+- Psychic
+- Flamethrower
+- Slack Off
 """),
     dict(const='SHY_GUY_DESERT', map='Route111', x=None, y=None, gfx='OBJ_EVENT_GFX_SHY_GUY_RED', face='BURIED', sight=1,
          label='ShyGuy',

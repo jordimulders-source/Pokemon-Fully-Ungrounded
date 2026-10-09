@@ -168,16 +168,55 @@ Route113_Text_GlassWorkshopSign:
 
 @ extra_fights { (tools/grounded/maptools/extra_fights.py)
 Route113_EventScript_EF_SickblikRoute113::
-	trainerbattle_single TRAINER_SICKBLIK_ROUTE_113, Route113_Text_EF_SickblikRoute113Intro, Route113_Text_EF_SickblikRoute113Defeat
-	msgbox Route113_Text_EF_SickblikRoute113PostBattle, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_SICKBLIK_ROUTE_113, Route113_EventScript_EF_SickblikRoute113After
+	msgbox Route113_Text_EF_SickblikRoute113Ash, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, Grounded_BufferWhiteOuts
+	call_if_eq VAR_RESULT, 0, Route113_EventScript_EF_SickblikRoute113NoWhiteOuts
+	call_if_ne VAR_RESULT, 0, Route113_EventScript_EF_SickblikRoute113WhiteOuts
+	msgbox Route113_Text_EF_SickblikRoute113LetsGo, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SICKBLIK_ROUTE_113, Route113_Text_EF_SickblikRoute113Defeat
+	msgbox Route113_Text_EF_SickblikRoute113PostBattle, MSGBOX_DEFAULT
+	release
 	end
 
+Route113_EventScript_EF_SickblikRoute113After:
+	msgbox Route113_Text_EF_SickblikRoute113PostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route113_EventScript_EF_SickblikRoute113NoWhiteOuts:
+	msgbox Route113_Text_EF_SickblikRoute113Zero, MSGBOX_DEFAULT
+	return
+
+Route113_EventScript_EF_SickblikRoute113WhiteOuts:
+	msgbox Route113_Text_EF_SickblikRoute113Many, MSGBOX_DEFAULT
+	return
+
+Route113_Text_EF_SickblikRoute113Ash:
+	.string "SICKBLIK: I never liked ASH.\n"
+	.string "I mean anime ASH.\p"
+	.string "How do you mean, contrarian?\n"
+	.string "I like FRIEZA. Not gonna add him\l"
+	.string "into the game though.\p"
+	.string "How are you rolling so far?$"
+
+Route113_Text_EF_SickblikRoute113Many:
+	.string "{STR_VAR_1} whiteout(s)?\n"
+	.string "Goooood.\p"
+	.string "The difficulty is good then!$"
+
+Route113_Text_EF_SickblikRoute113Zero:
+	.string "Zero whiteouts? None?\p"
+	.string "...Note to self: up the difficulty.\n"
+	.string "Way up.$"
+
+Route113_Text_EF_SickblikRoute113LetsGo:
+	.string "Anyways, let's go for a battle!$"
+
 Route113_Text_EF_SickblikRoute113Intro:
-	.string "SICKBLIK: Still playing? Respect.\p"
-	.string "I put ash on this route so the\n"
-	.string "sprites look moody. Cinematic.\p"
-	.string "I also balanced my own team.\n"
-	.string "Totally fair. Trust me.$"
+	.string "$"
 
 Route113_Text_EF_SickblikRoute113Defeat:
 	.string "Noted. Nerfing you next patch.$"

@@ -114,3 +114,55 @@ LilycoveCity_CoveLilyMotel_1F_Text_BetterGetWorkingOnGuestsDinner:
 	.string "They make games. They asked for 30\n"
 	.string "years of the same formula. For dinner.$"
 
+
+@ Project Grounded: SickBlik chillt in het motel (Jordi, 9 okt)
+LilycoveCity_CoveLilyMotel_1F_EventScript_SickBlik::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_SICKBLIK_MOTEL, LilycoveCity_CoveLilyMotel_1F_EventScript_SickBlikAfter
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SickBlikIntro, MSGBOX_DEFAULT
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SickBlikAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_CoveLilyMotel_1F_EventScript_SickBlikNo
+	trainerbattle_no_intro TRAINER_SICKBLIK_MOTEL, LilycoveCity_CoveLilyMotel_1F_Text_SickBlikDefeat
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SickBlikAfter, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_SickBlikNo:
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SickBlikNo, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_SickBlikAfter:
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SickBlikAfter, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_Text_SickBlikIntro:
+	.string "SICKBLIK: I am travelling the globe!\p"
+	.string "Well, the globe is kinda relative,\n"
+	.string "since it's just a map. Either way.\p"
+	.string "This hotel is way worse than its\n"
+	.string "rating described. The shower\l"
+	.string "doesn't even work well.\p"
+	.string "At least the guests are funny.\n"
+	.string "There was this guy talking to his\l"
+	.string "EVOLUTION STONE. He doesn't even\l"
+	.string "have a POKéMON!$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_SickBlikAsk:
+	.string "Well, do you want to battle the\n"
+	.string "literal enhancer of this world?\p"
+	.string "I mean, creator is too much honor.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_SickBlikNo:
+	.string "Fair. I'll be here. The shower\n"
+	.string "isn't going anywhere either.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_SickBlikDefeat:
+	.string "Okay, okay. Writing that down\n"
+	.string "as a balancing issue.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_SickBlikAfter:
+	.string "SICKBLIK: Now if you'll excuse me,\n"
+	.string "I have a one-star review to write.$"

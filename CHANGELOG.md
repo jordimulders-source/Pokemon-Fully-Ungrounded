@@ -17818,3 +17818,7 @@ Volgens Jordi's GBA-instructies per leider:
 - Geen introducties: bij wereld/Factory/Spire een korte tv-overgang (tv-kast, ruis, scanlines, "CASINO TV / LIVE"); bij het Stadium loop je zelf de arena in en zie je het veld vanuit je POV.
 - Odds: kracht per team uit BST × level en typevoordeel, winkans T_A² / (T_A² + T_B²). Bugfix in expansion: bij AI-tegen-AI kreeg de trainerfoto bij de balworp het verkeerde palet.
 - Flags `FLAG_GROUNDED(1320–1321)`, `VAR_CASINO_BETS` (0x40BB). Debug: `special Casino_DebugUnlockAll`.
+
+### [v0.9.214] - Meer SickBlik
+- **Route 113** (de route met de as): SickBlik heeft een nieuwe tekst van Jordi ("I never liked ASH. I mean anime ASH." … FRIEZA) en vraagt hoe het gaat: hij telt je **white-outs** (`GAME_STAT_WHITE_OUTS`, nieuwe special `Grounded_BufferWhiteOuts`). Meer dan 0: "Goooood, the difficulty is good then!"; 0: hij moet de difficulty gaan uppen. Daarna het gevecht. Nieuw team (lv 38–39): Wartortle, Banette, Amoonguss, Scyther, Alola-Marowak, Galar-Slowbro. Je spreekt hem nu zelf aan (geen zichtlijn meer).
+- **Cove Lily Motel (Lilycove):** SickBlik chillt aan tafel ("I am travelling the globe! … the literal enhancer of this world"), ja/nee, dan het gevecht (lv 56–57): Zangoose, Xatu, Mimikyu, Porygon2, Cofagrigus, Galar-Slowbro. `TRAINER_SICKBLIK_MOTEL` (1184, de laatste vrije trainer-id).

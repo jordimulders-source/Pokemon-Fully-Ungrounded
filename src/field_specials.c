@@ -4407,3 +4407,14 @@ u16 Grounded_SickBlikSpot(void)
     RtcCalcLocalTime();
     return ((u32)gLocalTime.days + gSaveBlock2Ptr->playerTrainerId[0]) & 3;
 }
+
+// Project Grounded: SickBlik op Route 113 vraagt hoe vaak je al white-out bent gegaan. VAR_RESULT = aantal
+// (max. 9999), en het getal staat in STR_VAR_1.
+u16 Grounded_BufferWhiteOuts(void)
+{
+    u32 n = GetGameStat(GAME_STAT_WHITE_OUTS);
+    if (n > 9999)
+        n = 9999;
+    ConvertIntToDecimalStringN(gStringVar1, n, STR_CONV_MODE_LEFT_ALIGN, 4);
+    return n;
+}

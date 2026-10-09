@@ -61,9 +61,19 @@ ITEMS = [
     (959, 'AreaZero_Past', 'ITEM_POWER_HERB', 1, False, 'Area Zero, verleden: Power Herb'),
     (960, 'AreaZero_Past', 'ITEM_GRIP_CLAW', 1, False, 'Area Zero, verleden: Grip Claw'),
     (961, 'AreaZero_Past', 'ITEM_STICKY_BARB', 1, True, 'Area Zero, verleden: verborgen Sticky Barb'),
+    # Gen 4-meren (lakes.py; flags uit het eigen blok FLAG_GROUNDED 1120-1159)
+    (1140, 'LakeAcuity', 'ITEM_PEAT_BLOCK', 1, False, 'Lake Acuity: Peat Block (Ursaring -> Ursaluna)'),
+    (1141, 'LakeAcuity', 'ITEM_FULL_INCENSE', 1, True, 'Lake Acuity: verborgen Full Incense'),
+    (1142, 'LakeAcuity_Cavern', 'ITEM_METAL_POWDER', 1, False, 'Lake Acuity, grot: Metal Powder'),
+    (1143, 'LakeValor', 'ITEM_AUSPICIOUS_ARMOR', 1, False, 'Lake Valor: Auspicious Armor (Charcadet -> Armarouge)'),
+    (1144, 'LakeValor', 'ITEM_ROCK_INCENSE', 1, True, 'Lake Valor: verborgen Rock Incense'),
+    (1145, 'LakeValor_Cavern', 'ITEM_LEADERS_CREST', 1, False, "Lake Valor, grot: Leader's Crest (Bisharp -> Kingambit)"),
+    (1146, 'LakeVerity', 'ITEM_ODD_INCENSE', 1, False, 'Lake Verity: Odd Incense'),
+    (1147, 'LakeVerity', 'ITEM_LINKING_CORD', 1, True, 'Lake Verity: verborgen Linking Cord'),
+    (1148, 'LakeVerity_Cavern', 'ITEM_QUICK_POWDER', 1, False, 'Lake Verity, grot: Quick Powder'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999)]          # Area Zero gebruikt flags uit zijn eigen blok
+EXTRA_RANGES = [(920, 999), (1140, 1159)]   # Area Zero en de meren (lakes.py) gebruiken flags uit hun eigen blok
 
 
 def flag_name(n, mp, it, hid):

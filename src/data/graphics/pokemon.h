@@ -109,11 +109,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/front.4bpp.smol");
-    const u16 gMonPalette_VenusaurMega[] = INCBIN_U16("graphics/pokemon/venusaur/mega/normal.gbapal");
-    const u32 gMonBackPic_VenusaurMega[] = INCBIN_U32("graphics/pokemon/venusaur/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_VenusaurMega[] = INCBIN_U16("graphics/pokemon/venusaur/mega/shiny.gbapal");
-    const u8 gMonIcon_VenusaurMega[] = INCBIN_U8("graphics/pokemon/venusaur/mega/icon.4bpp");
+    #define gMonFrontPic_VenusaurMega gMonFrontPic_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_VenusaurMega gMonPalette_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_VenusaurMega gMonBackPic_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_VenusaurMega gMonShinyPalette_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_VenusaurMega gMonIcon_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_VenusaurMega[] = INCBIN_COMP("graphics/pokemon/venusaur/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -124,11 +124,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_VenusaurGmax[] = INCBIN_U32("graphics/pokemon/venusaur/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_VenusaurGmax[] = INCBIN_U32("graphics/pokemon/venusaur/gmax/back.4bpp.smol");
-    const u16 gMonPalette_VenusaurGmax[] = INCBIN_U16("graphics/pokemon/venusaur/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_VenusaurGmax[] = INCBIN_U16("graphics/pokemon/venusaur/gmax/shiny.gbapal");
-    const u8 gMonIcon_VenusaurGmax[] = INCBIN_U8("graphics/pokemon/venusaur/gmax/icon.4bpp");
+    #define gMonFrontPic_VenusaurGmax gMonFrontPic_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_VenusaurGmax gMonBackPic_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_VenusaurGmax gMonPalette_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_VenusaurGmax gMonShinyPalette_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_VenusaurGmax gMonIcon_Venusaur // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_VenusaurGmax[] = INCBIN_COMP("graphics/pokemon/venusaur/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -222,11 +222,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/front.4bpp.smol");
-    const u16 gMonPalette_CharizardMegaX[] = INCBIN_U16("graphics/pokemon/charizard/mega_x/normal.gbapal");
-    const u32 gMonBackPic_CharizardMegaX[] = INCBIN_U32("graphics/pokemon/charizard/mega_x/back.4bpp.smol");
-    const u16 gMonShinyPalette_CharizardMegaX[] = INCBIN_U16("graphics/pokemon/charizard/mega_x/shiny.gbapal");
-    const u8 gMonIcon_CharizardMegaX[] = INCBIN_U8("graphics/pokemon/charizard/mega_x/icon.4bpp");
+    #define gMonFrontPic_CharizardMegaX gMonFrontPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CharizardMegaX gMonPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CharizardMegaX gMonBackPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CharizardMegaX gMonShinyPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CharizardMegaX gMonIcon_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_CharizardMegaX[] = INCBIN_COMP("graphics/pokemon/charizard/mega_x/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -235,11 +235,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 
-    const u32 gMonFrontPic_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/front.4bpp.smol");
-    const u16 gMonPalette_CharizardMegaY[] = INCBIN_U16("graphics/pokemon/charizard/mega_y/normal.gbapal");
-    const u32 gMonBackPic_CharizardMegaY[] = INCBIN_U32("graphics/pokemon/charizard/mega_y/back.4bpp.smol");
-    const u16 gMonShinyPalette_CharizardMegaY[] = INCBIN_U16("graphics/pokemon/charizard/mega_y/shiny.gbapal");
-    const u8 gMonIcon_CharizardMegaY[] = INCBIN_U8("graphics/pokemon/charizard/mega_y/icon.4bpp");
+    #define gMonFrontPic_CharizardMegaY gMonFrontPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CharizardMegaY gMonPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CharizardMegaY gMonBackPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CharizardMegaY gMonShinyPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CharizardMegaY gMonIcon_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_CharizardMegaY[] = INCBIN_COMP("graphics/pokemon/charizard/mega_y/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -250,11 +250,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CharizardGmax[] = INCBIN_U16("graphics/pokemon/charizard/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CharizardGmax[] = INCBIN_U16("graphics/pokemon/charizard/gmax/shiny.gbapal");
-    const u8 gMonIcon_CharizardGmax[] = INCBIN_U8("graphics/pokemon/charizard/gmax/icon.4bpp");
+    #define gMonFrontPic_CharizardGmax gMonFrontPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CharizardGmax gMonBackPic_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CharizardGmax gMonPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CharizardGmax gMonShinyPalette_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CharizardGmax gMonIcon_Charizard // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CharizardGmax[] = INCBIN_COMP("graphics/pokemon/charizard/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -348,11 +348,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_BlastoiseMega[] = INCBIN_U32("graphics/pokemon/blastoise/mega/front.4bpp.smol");
-    const u16 gMonPalette_BlastoiseMega[] = INCBIN_U16("graphics/pokemon/blastoise/mega/normal.gbapal");
-    const u32 gMonBackPic_BlastoiseMega[] = INCBIN_U32("graphics/pokemon/blastoise/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_BlastoiseMega[] = INCBIN_U16("graphics/pokemon/blastoise/mega/shiny.gbapal");
-    const u8 gMonIcon_BlastoiseMega[] = INCBIN_U8("graphics/pokemon/blastoise/mega/icon.4bpp");
+    #define gMonFrontPic_BlastoiseMega gMonFrontPic_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_BlastoiseMega gMonPalette_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_BlastoiseMega gMonBackPic_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_BlastoiseMega gMonShinyPalette_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_BlastoiseMega gMonIcon_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_BlastoiseMega[] = INCBIN_COMP("graphics/pokemon/blastoise/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -363,11 +363,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_BlastoiseGmax[] = INCBIN_U32("graphics/pokemon/blastoise/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_BlastoiseGmax[] = INCBIN_U32("graphics/pokemon/blastoise/gmax/back.4bpp.smol");
-    const u16 gMonPalette_BlastoiseGmax[] = INCBIN_U16("graphics/pokemon/blastoise/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_BlastoiseGmax[] = INCBIN_U16("graphics/pokemon/blastoise/gmax/shiny.gbapal");
-    const u8 gMonIcon_BlastoiseGmax[] = INCBIN_U8("graphics/pokemon/blastoise/gmax/icon.4bpp");
+    #define gMonFrontPic_BlastoiseGmax gMonFrontPic_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_BlastoiseGmax gMonBackPic_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_BlastoiseGmax gMonPalette_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_BlastoiseGmax gMonShinyPalette_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_BlastoiseGmax gMonIcon_Blastoise // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_BlastoiseGmax[] = INCBIN_COMP("graphics/pokemon/blastoise/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -465,11 +465,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_ButterfreeGmax[] = INCBIN_U32("graphics/pokemon/butterfree/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_ButterfreeGmax[] = INCBIN_U32("graphics/pokemon/butterfree/gmax/back.4bpp.smol");
-    const u16 gMonPalette_ButterfreeGmax[] = INCBIN_U16("graphics/pokemon/butterfree/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_ButterfreeGmax[] = INCBIN_U16("graphics/pokemon/butterfree/gmax/shiny.gbapal");
-    const u8 gMonIcon_ButterfreeGmax[] = INCBIN_U8("graphics/pokemon/butterfree/gmax/icon.4bpp");
+    #define gMonFrontPic_ButterfreeGmax gMonFrontPic_Butterfree // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_ButterfreeGmax gMonBackPic_Butterfree // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_ButterfreeGmax gMonPalette_Butterfree // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_ButterfreeGmax gMonShinyPalette_Butterfree // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_ButterfreeGmax gMonIcon_Butterfree // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_ButterfreeGmax[] = INCBIN_COMP("graphics/pokemon/butterfree/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -563,11 +563,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_BeedrillMega[] = INCBIN_U32("graphics/pokemon/beedrill/mega/front.4bpp.smol");
-    const u16 gMonPalette_BeedrillMega[] = INCBIN_U16("graphics/pokemon/beedrill/mega/normal.gbapal");
-    const u32 gMonBackPic_BeedrillMega[] = INCBIN_U32("graphics/pokemon/beedrill/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_BeedrillMega[] = INCBIN_U16("graphics/pokemon/beedrill/mega/shiny.gbapal");
-    const u8 gMonIcon_BeedrillMega[] = INCBIN_U8("graphics/pokemon/beedrill/mega/icon.4bpp");
+    #define gMonFrontPic_BeedrillMega gMonFrontPic_Beedrill // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_BeedrillMega gMonPalette_Beedrill // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_BeedrillMega gMonBackPic_Beedrill // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_BeedrillMega gMonShinyPalette_Beedrill // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_BeedrillMega gMonIcon_Beedrill // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_BeedrillMega[] = INCBIN_COMP("graphics/pokemon/beedrill/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -661,11 +661,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_PidgeotMega[] = INCBIN_U32("graphics/pokemon/pidgeot/mega/front.4bpp.smol");
-    const u16 gMonPalette_PidgeotMega[] = INCBIN_U16("graphics/pokemon/pidgeot/mega/normal.gbapal");
-    const u32 gMonBackPic_PidgeotMega[] = INCBIN_U32("graphics/pokemon/pidgeot/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_PidgeotMega[] = INCBIN_U16("graphics/pokemon/pidgeot/mega/shiny.gbapal");
-    const u8 gMonIcon_PidgeotMega[] = INCBIN_U8("graphics/pokemon/pidgeot/mega/icon.4bpp");
+    #define gMonFrontPic_PidgeotMega gMonFrontPic_Pidgeot // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_PidgeotMega gMonPalette_Pidgeot // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_PidgeotMega gMonBackPic_Pidgeot // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_PidgeotMega gMonShinyPalette_Pidgeot // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_PidgeotMega gMonIcon_Pidgeot // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_PidgeotMega[] = INCBIN_COMP("graphics/pokemon/pidgeot/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -2189,11 +2189,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GALARIAN_FORMS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_MeowthGmax[] = INCBIN_U32("graphics/pokemon/meowth/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_MeowthGmax[] = INCBIN_U32("graphics/pokemon/meowth/gmax/back.4bpp.smol");
-    const u16 gMonPalette_MeowthGmax[] = INCBIN_U16("graphics/pokemon/meowth/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_MeowthGmax[] = INCBIN_U16("graphics/pokemon/meowth/gmax/shiny.gbapal");
-    const u8 gMonIcon_MeowthGmax[] = INCBIN_U8("graphics/pokemon/meowth/gmax/icon.4bpp");
+    #define gMonFrontPic_MeowthGmax gMonFrontPic_Meowth // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MeowthGmax gMonBackPic_Meowth // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MeowthGmax gMonPalette_Meowth // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MeowthGmax gMonShinyPalette_Meowth // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MeowthGmax gMonIcon_Meowth // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_MeowthGmax[] = INCBIN_COMP("graphics/pokemon/meowth/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -2637,11 +2637,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AlakazamMega[] = INCBIN_U32("graphics/pokemon/alakazam/mega/front.4bpp.smol");
-    const u16 gMonPalette_AlakazamMega[] = INCBIN_U16("graphics/pokemon/alakazam/mega/normal.gbapal");
-    const u32 gMonBackPic_AlakazamMega[] = INCBIN_U32("graphics/pokemon/alakazam/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AlakazamMega[] = INCBIN_U16("graphics/pokemon/alakazam/mega/shiny.gbapal");
-    const u8 gMonIcon_AlakazamMega[] = INCBIN_U8("graphics/pokemon/alakazam/mega/icon.4bpp");
+    #define gMonFrontPic_AlakazamMega gMonFrontPic_Alakazam // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AlakazamMega gMonPalette_Alakazam // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AlakazamMega gMonBackPic_Alakazam // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AlakazamMega gMonShinyPalette_Alakazam // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AlakazamMega gMonIcon_Alakazam // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AlakazamMega[] = INCBIN_COMP("graphics/pokemon/alakazam/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -2735,11 +2735,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_MachampGmax[] = INCBIN_U32("graphics/pokemon/machamp/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_MachampGmax[] = INCBIN_U32("graphics/pokemon/machamp/gmax/back.4bpp.smol");
-    const u16 gMonPalette_MachampGmax[] = INCBIN_U16("graphics/pokemon/machamp/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_MachampGmax[] = INCBIN_U16("graphics/pokemon/machamp/gmax/shiny.gbapal");
-    const u8 gMonIcon_MachampGmax[] = INCBIN_U8("graphics/pokemon/machamp/gmax/icon.4bpp");
+    #define gMonFrontPic_MachampGmax gMonFrontPic_Machamp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MachampGmax gMonBackPic_Machamp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MachampGmax gMonPalette_Machamp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MachampGmax gMonShinyPalette_Machamp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MachampGmax gMonIcon_Machamp // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_MachampGmax[] = INCBIN_COMP("graphics/pokemon/machamp/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -3186,11 +3186,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GEN_2_CROSS_EVOS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SlowbroMega[] = INCBIN_U32("graphics/pokemon/slowbro/mega/front.4bpp.smol");
-    const u16 gMonPalette_SlowbroMega[] = INCBIN_U16("graphics/pokemon/slowbro/mega/normal.gbapal");
-    const u32 gMonBackPic_SlowbroMega[] = INCBIN_U32("graphics/pokemon/slowbro/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SlowbroMega[] = INCBIN_U16("graphics/pokemon/slowbro/mega/shiny.gbapal");
-    const u8 gMonIcon_SlowbroMega[] = INCBIN_U8("graphics/pokemon/slowbro/mega/icon.4bpp");
+    #define gMonFrontPic_SlowbroMega gMonFrontPic_Slowbro // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SlowbroMega gMonPalette_Slowbro // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SlowbroMega gMonBackPic_Slowbro // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SlowbroMega gMonShinyPalette_Slowbro // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SlowbroMega gMonIcon_Slowbro // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SlowbroMega[] = INCBIN_COMP("graphics/pokemon/slowbro/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -3770,11 +3770,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_GengarGmax[] = INCBIN_U32("graphics/pokemon/gengar/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_GengarGmax[] = INCBIN_U32("graphics/pokemon/gengar/gmax/back.4bpp.smol");
-    const u16 gMonPalette_GengarGmax[] = INCBIN_U16("graphics/pokemon/gengar/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_GengarGmax[] = INCBIN_U16("graphics/pokemon/gengar/gmax/shiny.gbapal");
-    const u8 gMonIcon_GengarGmax[] = INCBIN_U8("graphics/pokemon/gengar/gmax/icon.4bpp");
+    #define gMonFrontPic_GengarGmax gMonFrontPic_Gengar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GengarGmax gMonBackPic_Gengar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GengarGmax gMonPalette_Gengar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GengarGmax gMonShinyPalette_Gengar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GengarGmax gMonIcon_Gengar // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_GengarGmax[] = INCBIN_COMP("graphics/pokemon/gengar/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -3850,11 +3850,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SteelixMega[] = INCBIN_U32("graphics/pokemon/steelix/mega/front.4bpp.smol");
-    const u16 gMonPalette_SteelixMega[] = INCBIN_U16("graphics/pokemon/steelix/mega/normal.gbapal");
-    const u32 gMonBackPic_SteelixMega[] = INCBIN_U32("graphics/pokemon/steelix/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SteelixMega[] = INCBIN_U16("graphics/pokemon/steelix/mega/shiny.gbapal");
-    const u8 gMonIcon_SteelixMega[] = INCBIN_U8("graphics/pokemon/steelix/mega/icon.4bpp");
+    #define gMonFrontPic_SteelixMega gMonFrontPic_Steelix // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SteelixMega gMonPalette_Steelix // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SteelixMega gMonBackPic_Steelix // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SteelixMega gMonShinyPalette_Steelix // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SteelixMega gMonIcon_Steelix // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SteelixMega[] = INCBIN_COMP("graphics/pokemon/steelix/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -3986,11 +3986,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_KinglerGmax[] = INCBIN_U32("graphics/pokemon/kingler/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_KinglerGmax[] = INCBIN_U32("graphics/pokemon/kingler/gmax/back.4bpp.smol");
-    const u16 gMonPalette_KinglerGmax[] = INCBIN_U16("graphics/pokemon/kingler/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_KinglerGmax[] = INCBIN_U16("graphics/pokemon/kingler/gmax/shiny.gbapal");
-    const u8 gMonIcon_KinglerGmax[] = INCBIN_U8("graphics/pokemon/kingler/gmax/icon.4bpp");
+    #define gMonFrontPic_KinglerGmax gMonFrontPic_Kingler // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_KinglerGmax gMonBackPic_Kingler // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_KinglerGmax gMonPalette_Kingler // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_KinglerGmax gMonShinyPalette_Kingler // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_KinglerGmax gMonIcon_Kingler // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_KinglerGmax[] = INCBIN_COMP("graphics/pokemon/kingler/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -4716,11 +4716,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_KangaskhanMega[] = INCBIN_U32("graphics/pokemon/kangaskhan/mega/front.4bpp.smol");
-    const u16 gMonPalette_KangaskhanMega[] = INCBIN_U16("graphics/pokemon/kangaskhan/mega/normal.gbapal");
-    const u32 gMonBackPic_KangaskhanMega[] = INCBIN_U32("graphics/pokemon/kangaskhan/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_KangaskhanMega[] = INCBIN_U16("graphics/pokemon/kangaskhan/mega/shiny.gbapal");
-    const u8 gMonIcon_KangaskhanMega[] = INCBIN_U8("graphics/pokemon/kangaskhan/mega/icon.4bpp");
+    #define gMonFrontPic_KangaskhanMega gMonFrontPic_Kangaskhan // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_KangaskhanMega gMonPalette_Kangaskhan // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_KangaskhanMega gMonBackPic_Kangaskhan // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_KangaskhanMega gMonShinyPalette_Kangaskhan // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_KangaskhanMega gMonIcon_Kangaskhan // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_KangaskhanMega[] = INCBIN_COMP("graphics/pokemon/kangaskhan/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -5093,11 +5093,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_ScizorMega[] = INCBIN_U32("graphics/pokemon/scizor/mega/front.4bpp.smol");
-    const u16 gMonPalette_ScizorMega[] = INCBIN_U16("graphics/pokemon/scizor/mega/normal.gbapal");
-    const u32 gMonBackPic_ScizorMega[] = INCBIN_U32("graphics/pokemon/scizor/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_ScizorMega[] = INCBIN_U16("graphics/pokemon/scizor/mega/shiny.gbapal");
-    const u8 gMonIcon_ScizorMega[] = INCBIN_U8("graphics/pokemon/scizor/mega/icon.4bpp");
+    #define gMonFrontPic_ScizorMega gMonFrontPic_Scizor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_ScizorMega gMonPalette_Scizor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_ScizorMega gMonBackPic_Scizor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_ScizorMega gMonShinyPalette_Scizor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_ScizorMega gMonIcon_Scizor // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_ScizorMega[] = INCBIN_COMP("graphics/pokemon/scizor/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -5366,11 +5366,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_PinsirMega[] = INCBIN_U32("graphics/pokemon/pinsir/mega/front.4bpp.smol");
-    const u16 gMonPalette_PinsirMega[] = INCBIN_U16("graphics/pokemon/pinsir/mega/normal.gbapal");
-    const u32 gMonBackPic_PinsirMega[] = INCBIN_U32("graphics/pokemon/pinsir/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_PinsirMega[] = INCBIN_U16("graphics/pokemon/pinsir/mega/shiny.gbapal");
-    const u8 gMonIcon_PinsirMega[] = INCBIN_U8("graphics/pokemon/pinsir/mega/icon.4bpp");
+    #define gMonFrontPic_PinsirMega gMonFrontPic_Pinsir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_PinsirMega gMonPalette_Pinsir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_PinsirMega gMonBackPic_Pinsir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_PinsirMega gMonShinyPalette_Pinsir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_PinsirMega gMonIcon_Pinsir // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_PinsirMega[] = INCBIN_COMP("graphics/pokemon/pinsir/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -5516,11 +5516,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_GyaradosMega[] = INCBIN_U32("graphics/pokemon/gyarados/mega/front.4bpp.smol");
-    const u16 gMonPalette_GyaradosMega[] = INCBIN_U16("graphics/pokemon/gyarados/mega/normal.gbapal");
-    const u32 gMonBackPic_GyaradosMega[] = INCBIN_U32("graphics/pokemon/gyarados/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_GyaradosMega[] = INCBIN_U16("graphics/pokemon/gyarados/mega/shiny.gbapal");
-    const u8 gMonIcon_GyaradosMega[] = INCBIN_U8("graphics/pokemon/gyarados/mega/icon.4bpp");
+    #define gMonFrontPic_GyaradosMega gMonFrontPic_Gyarados // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GyaradosMega gMonPalette_Gyarados // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GyaradosMega gMonBackPic_Gyarados // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GyaradosMega gMonShinyPalette_Gyarados // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GyaradosMega gMonIcon_Gyarados // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_GyaradosMega[] = INCBIN_COMP("graphics/pokemon/gyarados/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -5560,11 +5560,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_LaprasGmax[] = INCBIN_U32("graphics/pokemon/lapras/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_LaprasGmax[] = INCBIN_U32("graphics/pokemon/lapras/gmax/back.4bpp.smol");
-    const u16 gMonPalette_LaprasGmax[] = INCBIN_U16("graphics/pokemon/lapras/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_LaprasGmax[] = INCBIN_U16("graphics/pokemon/lapras/gmax/shiny.gbapal");
-    const u8 gMonIcon_LaprasGmax[] = INCBIN_U8("graphics/pokemon/lapras/gmax/icon.4bpp");
+    #define gMonFrontPic_LaprasGmax gMonFrontPic_Lapras // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_LaprasGmax gMonBackPic_Lapras // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_LaprasGmax gMonPalette_Lapras // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_LaprasGmax gMonShinyPalette_Lapras // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_LaprasGmax gMonIcon_Lapras // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_LaprasGmax[] = INCBIN_COMP("graphics/pokemon/lapras/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -5641,11 +5641,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_EeveeGmax[] = INCBIN_U32("graphics/pokemon/eevee/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_EeveeGmax[] = INCBIN_U32("graphics/pokemon/eevee/gmax/back.4bpp.smol");
-    const u16 gMonPalette_EeveeGmax[] = INCBIN_U16("graphics/pokemon/eevee/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_EeveeGmax[] = INCBIN_U16("graphics/pokemon/eevee/gmax/shiny.gbapal");
-    const u8 gMonIcon_EeveeGmax[] = INCBIN_U8("graphics/pokemon/eevee/gmax/icon.4bpp");
+    #define gMonFrontPic_EeveeGmax gMonFrontPic_Eevee // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_EeveeGmax gMonBackPic_Eevee // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_EeveeGmax gMonPalette_Eevee // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_EeveeGmax gMonShinyPalette_Eevee // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_EeveeGmax gMonIcon_Eevee // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_EeveeGmax[] = INCBIN_COMP("graphics/pokemon/eevee/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -6067,11 +6067,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AerodactylMega[] = INCBIN_U32("graphics/pokemon/aerodactyl/mega/front.4bpp.smol");
-    const u16 gMonPalette_AerodactylMega[] = INCBIN_U16("graphics/pokemon/aerodactyl/mega/normal.gbapal");
-    const u32 gMonBackPic_AerodactylMega[] = INCBIN_U32("graphics/pokemon/aerodactyl/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AerodactylMega[] = INCBIN_U16("graphics/pokemon/aerodactyl/mega/shiny.gbapal");
-    const u8 gMonIcon_AerodactylMega[] = INCBIN_U8("graphics/pokemon/aerodactyl/mega/icon.4bpp");
+    #define gMonFrontPic_AerodactylMega gMonFrontPic_Aerodactyl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AerodactylMega gMonPalette_Aerodactyl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AerodactylMega gMonBackPic_Aerodactyl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AerodactylMega gMonShinyPalette_Aerodactyl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AerodactylMega gMonIcon_Aerodactyl // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AerodactylMega[] = INCBIN_COMP("graphics/pokemon/aerodactyl/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -6129,11 +6129,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_SnorlaxGmax[] = INCBIN_U32("graphics/pokemon/snorlax/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_SnorlaxGmax[] = INCBIN_U32("graphics/pokemon/snorlax/gmax/back.4bpp.smol");
-    const u16 gMonPalette_SnorlaxGmax[] = INCBIN_U16("graphics/pokemon/snorlax/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_SnorlaxGmax[] = INCBIN_U16("graphics/pokemon/snorlax/gmax/shiny.gbapal");
-    const u8 gMonIcon_SnorlaxGmax[] = INCBIN_U8("graphics/pokemon/snorlax/gmax/icon.4bpp");
+    #define gMonFrontPic_SnorlaxGmax gMonFrontPic_Snorlax // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SnorlaxGmax gMonBackPic_Snorlax // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SnorlaxGmax gMonPalette_Snorlax // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SnorlaxGmax gMonShinyPalette_Snorlax // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SnorlaxGmax gMonIcon_Snorlax // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_SnorlaxGmax[] = INCBIN_COMP("graphics/pokemon/snorlax/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -6388,11 +6388,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_MewtwoMegaX[] = INCBIN_U32("graphics/pokemon/mewtwo/mega_x/front.4bpp.smol");
-    const u16 gMonPalette_MewtwoMegaX[] = INCBIN_U16("graphics/pokemon/mewtwo/mega_x/normal.gbapal");
-    const u32 gMonBackPic_MewtwoMegaX[] = INCBIN_U32("graphics/pokemon/mewtwo/mega_x/back.4bpp.smol");
-    const u16 gMonShinyPalette_MewtwoMegaX[] = INCBIN_U16("graphics/pokemon/mewtwo/mega_x/shiny.gbapal");
-    const u8 gMonIcon_MewtwoMegaX[] = INCBIN_U8("graphics/pokemon/mewtwo/mega_x/icon.4bpp");
+    #define gMonFrontPic_MewtwoMegaX gMonFrontPic_Mewtwo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MewtwoMegaX gMonPalette_Mewtwo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MewtwoMegaX gMonBackPic_Mewtwo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MewtwoMegaX gMonShinyPalette_Mewtwo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MewtwoMegaX gMonIcon_Mewtwo // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_MewtwoMegaX[] = INCBIN_COMP("graphics/pokemon/mewtwo/mega_x/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -7233,11 +7233,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AmpharosMega[] = INCBIN_U32("graphics/pokemon/ampharos/mega/front.4bpp.smol");
-    const u16 gMonPalette_AmpharosMega[] = INCBIN_U16("graphics/pokemon/ampharos/mega/normal.gbapal");
-    const u32 gMonBackPic_AmpharosMega[] = INCBIN_U32("graphics/pokemon/ampharos/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AmpharosMega[] = INCBIN_U16("graphics/pokemon/ampharos/mega/shiny.gbapal");
-    const u8 gMonIcon_AmpharosMega[] = INCBIN_U8("graphics/pokemon/ampharos/mega/icon.4bpp");
+    #define gMonFrontPic_AmpharosMega gMonFrontPic_Ampharos // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AmpharosMega gMonPalette_Ampharos // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AmpharosMega gMonBackPic_Ampharos // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AmpharosMega gMonShinyPalette_Ampharos // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AmpharosMega gMonIcon_Ampharos // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AmpharosMega[] = INCBIN_COMP("graphics/pokemon/ampharos/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -8468,11 +8468,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_HeracrossMega[] = INCBIN_U32("graphics/pokemon/heracross/mega/front.4bpp.smol");
-    const u16 gMonPalette_HeracrossMega[] = INCBIN_U16("graphics/pokemon/heracross/mega/normal.gbapal");
-    const u32 gMonBackPic_HeracrossMega[] = INCBIN_U32("graphics/pokemon/heracross/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_HeracrossMega[] = INCBIN_U16("graphics/pokemon/heracross/mega/shiny.gbapal");
-    const u8 gMonIcon_HeracrossMega[] = INCBIN_U8("graphics/pokemon/heracross/mega/icon.4bpp");
+    #define gMonFrontPic_HeracrossMega gMonFrontPic_Heracross // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_HeracrossMega gMonPalette_Heracross // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_HeracrossMega gMonBackPic_Heracross // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_HeracrossMega gMonShinyPalette_Heracross // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_HeracrossMega gMonIcon_Heracross // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_HeracrossMega[] = INCBIN_COMP("graphics/pokemon/heracross/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -9118,11 +9118,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_HoundoomMega[] = INCBIN_U32("graphics/pokemon/houndoom/mega/front.4bpp.smol");
-    const u16 gMonPalette_HoundoomMega[] = INCBIN_U16("graphics/pokemon/houndoom/mega/normal.gbapal");
-    const u32 gMonBackPic_HoundoomMega[] = INCBIN_U32("graphics/pokemon/houndoom/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_HoundoomMega[] = INCBIN_U16("graphics/pokemon/houndoom/mega/shiny.gbapal");
-    const u8 gMonIcon_HoundoomMega[] = INCBIN_U8("graphics/pokemon/houndoom/mega/icon.4bpp");
+    #define gMonFrontPic_HoundoomMega gMonFrontPic_Houndoom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_HoundoomMega gMonPalette_Houndoom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_HoundoomMega gMonBackPic_Houndoom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_HoundoomMega gMonShinyPalette_Houndoom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_HoundoomMega gMonIcon_Houndoom // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_HoundoomMega[] = INCBIN_COMP("graphics/pokemon/houndoom/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -9472,11 +9472,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_TyranitarMega[] = INCBIN_U32("graphics/pokemon/tyranitar/mega/front.4bpp.smol");
-    const u16 gMonPalette_TyranitarMega[] = INCBIN_U16("graphics/pokemon/tyranitar/mega/normal.gbapal");
-    const u32 gMonBackPic_TyranitarMega[] = INCBIN_U32("graphics/pokemon/tyranitar/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_TyranitarMega[] = INCBIN_U16("graphics/pokemon/tyranitar/mega/shiny.gbapal");
-    const u8 gMonIcon_TyranitarMega[] = INCBIN_U8("graphics/pokemon/tyranitar/mega/icon.4bpp");
+    #define gMonFrontPic_TyranitarMega gMonFrontPic_Tyranitar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_TyranitarMega gMonPalette_Tyranitar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_TyranitarMega gMonBackPic_Tyranitar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_TyranitarMega gMonShinyPalette_Tyranitar // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_TyranitarMega gMonIcon_Tyranitar // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_TyranitarMega[] = INCBIN_COMP("graphics/pokemon/tyranitar/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -9657,11 +9657,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SceptileMega[] = INCBIN_U32("graphics/pokemon/sceptile/mega/front.4bpp.smol");
-    const u16 gMonPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/normal.gbapal");
-    const u32 gMonBackPic_SceptileMega[] = INCBIN_U32("graphics/pokemon/sceptile/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/shiny.gbapal");
-    const u8 gMonIcon_SceptileMega[] = INCBIN_U8("graphics/pokemon/sceptile/mega/icon.4bpp");
+    #define gMonFrontPic_SceptileMega gMonFrontPic_Sceptile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SceptileMega gMonPalette_Sceptile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SceptileMega gMonBackPic_Sceptile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SceptileMega gMonShinyPalette_Sceptile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SceptileMega gMonIcon_Sceptile // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SceptileMega[] = INCBIN_COMP("graphics/pokemon/sceptile/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -9778,11 +9778,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_BlazikenMega[] = INCBIN_U32("graphics/pokemon/blaziken/mega/front.4bpp.smol");
-    const u16 gMonPalette_BlazikenMega[] = INCBIN_U16("graphics/pokemon/blaziken/mega/normal.gbapal");
-    const u32 gMonBackPic_BlazikenMega[] = INCBIN_U32("graphics/pokemon/blaziken/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_BlazikenMega[] = INCBIN_U16("graphics/pokemon/blaziken/mega/shiny.gbapal");
-    const u8 gMonIcon_BlazikenMega[] = INCBIN_U8("graphics/pokemon/blaziken/mega/icon.4bpp");
+    #define gMonFrontPic_BlazikenMega gMonFrontPic_Blaziken // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_BlazikenMega gMonPalette_Blaziken // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_BlazikenMega gMonBackPic_Blaziken // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_BlazikenMega gMonShinyPalette_Blaziken // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_BlazikenMega gMonIcon_Blaziken // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_BlazikenMega[] = INCBIN_COMP("graphics/pokemon/blaziken/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -9876,11 +9876,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SwampertMega[] = INCBIN_U32("graphics/pokemon/swampert/mega/front.4bpp.smol");
-    const u16 gMonPalette_SwampertMega[] = INCBIN_U16("graphics/pokemon/swampert/mega/normal.gbapal");
-    const u32 gMonBackPic_SwampertMega[] = INCBIN_U32("graphics/pokemon/swampert/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SwampertMega[] = INCBIN_U16("graphics/pokemon/swampert/mega/shiny.gbapal");
-    const u8 gMonIcon_SwampertMega[] = INCBIN_U8("graphics/pokemon/swampert/mega/icon.4bpp");
+    #define gMonFrontPic_SwampertMega gMonFrontPic_Swampert // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SwampertMega gMonPalette_Swampert // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SwampertMega gMonBackPic_Swampert // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SwampertMega gMonShinyPalette_Swampert // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SwampertMega gMonIcon_Swampert // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SwampertMega[] = INCBIN_COMP("graphics/pokemon/swampert/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -10589,11 +10589,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_GardevoirMega[] = INCBIN_U32("graphics/pokemon/gardevoir/mega/front.4bpp.smol");
-    const u16 gMonPalette_GardevoirMega[] = INCBIN_U16("graphics/pokemon/gardevoir/mega/normal.gbapal");
-    const u32 gMonBackPic_GardevoirMega[] = INCBIN_U32("graphics/pokemon/gardevoir/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_GardevoirMega[] = INCBIN_U16("graphics/pokemon/gardevoir/mega/shiny.gbapal");
-    const u8 gMonIcon_GardevoirMega[] = INCBIN_U8("graphics/pokemon/gardevoir/mega/icon.4bpp");
+    #define gMonFrontPic_GardevoirMega gMonFrontPic_Gardevoir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GardevoirMega gMonPalette_Gardevoir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GardevoirMega gMonBackPic_Gardevoir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GardevoirMega gMonShinyPalette_Gardevoir // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GardevoirMega gMonIcon_Gardevoir // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_GardevoirMega[] = INCBIN_COMP("graphics/pokemon/gardevoir/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -10621,11 +10621,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_GalladeMega[] = INCBIN_U32("graphics/pokemon/gallade/mega/front.4bpp.smol");
-    const u16 gMonPalette_GalladeMega[] = INCBIN_U16("graphics/pokemon/gallade/mega/normal.gbapal");
-    const u32 gMonBackPic_GalladeMega[] = INCBIN_U32("graphics/pokemon/gallade/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_GalladeMega[] = INCBIN_U16("graphics/pokemon/gallade/mega/shiny.gbapal");
-    const u8 gMonIcon_GalladeMega[] = INCBIN_U8("graphics/pokemon/gallade/mega/icon.4bpp");
+    #define gMonFrontPic_GalladeMega gMonFrontPic_Gallade // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GalladeMega gMonPalette_Gallade // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GalladeMega gMonBackPic_Gallade // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GalladeMega gMonShinyPalette_Gallade // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GalladeMega gMonIcon_Gallade // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_GalladeMega[] = INCBIN_COMP("graphics/pokemon/gallade/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11190,11 +11190,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SableyeMega[] = INCBIN_U32("graphics/pokemon/sableye/mega/front.4bpp.smol");
-    const u16 gMonPalette_SableyeMega[] = INCBIN_U16("graphics/pokemon/sableye/mega/normal.gbapal");
-    const u32 gMonBackPic_SableyeMega[] = INCBIN_U32("graphics/pokemon/sableye/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SableyeMega[] = INCBIN_U16("graphics/pokemon/sableye/mega/shiny.gbapal");
-    const u8 gMonIcon_SableyeMega[] = INCBIN_U8("graphics/pokemon/sableye/mega/icon.4bpp");
+    #define gMonFrontPic_SableyeMega gMonFrontPic_Sableye // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SableyeMega gMonPalette_Sableye // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SableyeMega gMonBackPic_Sableye // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SableyeMega gMonShinyPalette_Sableye // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SableyeMega gMonIcon_Sableye // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SableyeMega[] = INCBIN_COMP("graphics/pokemon/sableye/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11238,11 +11238,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_MawileMega[] = INCBIN_U32("graphics/pokemon/mawile/mega/front.4bpp.smol");
-    const u16 gMonPalette_MawileMega[] = INCBIN_U16("graphics/pokemon/mawile/mega/normal.gbapal");
-    const u32 gMonBackPic_MawileMega[] = INCBIN_U32("graphics/pokemon/mawile/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_MawileMega[] = INCBIN_U16("graphics/pokemon/mawile/mega/shiny.gbapal");
-    const u8 gMonIcon_MawileMega[] = INCBIN_U8("graphics/pokemon/mawile/mega/icon.4bpp");
+    #define gMonFrontPic_MawileMega gMonFrontPic_Mawile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MawileMega gMonPalette_Mawile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MawileMega gMonBackPic_Mawile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MawileMega gMonShinyPalette_Mawile // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MawileMega gMonIcon_Mawile // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_MawileMega[] = INCBIN_COMP("graphics/pokemon/mawile/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11336,11 +11336,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AggronMega[] = INCBIN_U32("graphics/pokemon/aggron/mega/front.4bpp.smol");
-    const u16 gMonPalette_AggronMega[] = INCBIN_U16("graphics/pokemon/aggron/mega/normal.gbapal");
-    const u32 gMonBackPic_AggronMega[] = INCBIN_U32("graphics/pokemon/aggron/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AggronMega[] = INCBIN_U16("graphics/pokemon/aggron/mega/shiny.gbapal");
-    const u8 gMonIcon_AggronMega[] = INCBIN_U8("graphics/pokemon/aggron/mega/icon.4bpp");
+    #define gMonFrontPic_AggronMega gMonFrontPic_Aggron // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AggronMega gMonPalette_Aggron // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AggronMega gMonBackPic_Aggron // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AggronMega gMonShinyPalette_Aggron // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AggronMega gMonIcon_Aggron // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AggronMega[] = INCBIN_COMP("graphics/pokemon/aggron/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11423,11 +11423,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_MedichamMega[] = INCBIN_U32("graphics/pokemon/medicham/mega/front.4bpp.smol");
-    const u16 gMonPalette_MedichamMega[] = INCBIN_U16("graphics/pokemon/medicham/mega/normal.gbapal");
-    const u32 gMonBackPic_MedichamMega[] = INCBIN_U32("graphics/pokemon/medicham/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_MedichamMega[] = INCBIN_U16("graphics/pokemon/medicham/mega/shiny.gbapal");
-    const u8 gMonIcon_MedichamMega[] = INCBIN_U8("graphics/pokemon/medicham/mega/icon.4bpp");
+    #define gMonFrontPic_MedichamMega gMonFrontPic_Medicham // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MedichamMega gMonPalette_Medicham // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MedichamMega gMonBackPic_Medicham // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MedichamMega gMonShinyPalette_Medicham // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MedichamMega gMonIcon_Medicham // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_MedichamMega[] = INCBIN_COMP("graphics/pokemon/medicham/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11494,11 +11494,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_ManectricMega[] = INCBIN_U32("graphics/pokemon/manectric/mega/front.4bpp.smol");
-    const u16 gMonPalette_ManectricMega[] = INCBIN_U16("graphics/pokemon/manectric/mega/normal.gbapal");
-    const u32 gMonBackPic_ManectricMega[] = INCBIN_U32("graphics/pokemon/manectric/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_ManectricMega[] = INCBIN_U16("graphics/pokemon/manectric/mega/shiny.gbapal");
-    const u8 gMonIcon_ManectricMega[] = INCBIN_U8("graphics/pokemon/manectric/mega/icon.4bpp");
+    #define gMonFrontPic_ManectricMega gMonFrontPic_Manectric // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_ManectricMega gMonPalette_Manectric // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_ManectricMega gMonBackPic_Manectric // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_ManectricMega gMonShinyPalette_Manectric // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_ManectricMega gMonIcon_Manectric // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_ManectricMega[] = INCBIN_COMP("graphics/pokemon/manectric/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11832,11 +11832,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SharpedoMega[] = INCBIN_U32("graphics/pokemon/sharpedo/mega/front.4bpp.smol");
-    const u16 gMonPalette_SharpedoMega[] = INCBIN_U16("graphics/pokemon/sharpedo/mega/normal.gbapal");
-    const u32 gMonBackPic_SharpedoMega[] = INCBIN_U32("graphics/pokemon/sharpedo/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SharpedoMega[] = INCBIN_U16("graphics/pokemon/sharpedo/mega/shiny.gbapal");
-    const u8 gMonIcon_SharpedoMega[] = INCBIN_U8("graphics/pokemon/sharpedo/mega/icon.4bpp");
+    #define gMonFrontPic_SharpedoMega gMonFrontPic_Sharpedo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SharpedoMega gMonPalette_Sharpedo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SharpedoMega gMonBackPic_Sharpedo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SharpedoMega gMonShinyPalette_Sharpedo // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SharpedoMega gMonIcon_Sharpedo // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SharpedoMega[] = INCBIN_COMP("graphics/pokemon/sharpedo/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -11975,11 +11975,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_CameruptMega[] = INCBIN_U32("graphics/pokemon/camerupt/mega/front.4bpp.smol");
-    const u16 gMonPalette_CameruptMega[] = INCBIN_U16("graphics/pokemon/camerupt/mega/normal.gbapal");
-    const u32 gMonBackPic_CameruptMega[] = INCBIN_U32("graphics/pokemon/camerupt/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_CameruptMega[] = INCBIN_U16("graphics/pokemon/camerupt/mega/shiny.gbapal");
-    const u8 gMonIcon_CameruptMega[] = INCBIN_U8("graphics/pokemon/camerupt/mega/icon.4bpp");
+    #define gMonFrontPic_CameruptMega gMonFrontPic_Camerupt // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CameruptMega gMonPalette_Camerupt // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CameruptMega gMonBackPic_Camerupt // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CameruptMega gMonShinyPalette_Camerupt // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CameruptMega gMonIcon_Camerupt // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_CameruptMega[] = INCBIN_COMP("graphics/pokemon/camerupt/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -12306,11 +12306,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AltariaMega[] = INCBIN_U32("graphics/pokemon/altaria/mega/front.4bpp.smol");
-    const u16 gMonPalette_AltariaMega[] = INCBIN_U16("graphics/pokemon/altaria/mega/normal.gbapal");
-    const u32 gMonBackPic_AltariaMega[] = INCBIN_U32("graphics/pokemon/altaria/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AltariaMega[] = INCBIN_U16("graphics/pokemon/altaria/mega/shiny.gbapal");
-    const u8 gMonIcon_AltariaMega[] = INCBIN_U8("graphics/pokemon/altaria/mega/icon.4bpp");
+    #define gMonFrontPic_AltariaMega gMonFrontPic_Altaria // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AltariaMega gMonPalette_Altaria // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AltariaMega gMonBackPic_Altaria // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AltariaMega gMonShinyPalette_Altaria // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AltariaMega gMonIcon_Altaria // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AltariaMega[] = INCBIN_COMP("graphics/pokemon/altaria/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -12939,11 +12939,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_BanetteMega[] = INCBIN_U32("graphics/pokemon/banette/mega/front.4bpp.smol");
-    const u16 gMonPalette_BanetteMega[] = INCBIN_U16("graphics/pokemon/banette/mega/normal.gbapal");
-    const u32 gMonBackPic_BanetteMega[] = INCBIN_U32("graphics/pokemon/banette/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_BanetteMega[] = INCBIN_U16("graphics/pokemon/banette/mega/shiny.gbapal");
-    const u8 gMonIcon_BanetteMega[] = INCBIN_U8("graphics/pokemon/banette/mega/icon.4bpp");
+    #define gMonFrontPic_BanetteMega gMonFrontPic_Banette // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_BanetteMega gMonPalette_Banette // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_BanetteMega gMonBackPic_Banette // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_BanetteMega gMonShinyPalette_Banette // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_BanetteMega gMonIcon_Banette // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_BanetteMega[] = INCBIN_COMP("graphics/pokemon/banette/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -13133,11 +13133,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AbsolMega[] = INCBIN_U32("graphics/pokemon/absol/mega/front.4bpp.smol");
-    const u16 gMonPalette_AbsolMega[] = INCBIN_U16("graphics/pokemon/absol/mega/normal.gbapal");
-    const u32 gMonBackPic_AbsolMega[] = INCBIN_U32("graphics/pokemon/absol/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AbsolMega[] = INCBIN_U16("graphics/pokemon/absol/mega/shiny.gbapal");
-    const u8 gMonIcon_AbsolMega[] = INCBIN_U8("graphics/pokemon/absol/mega/icon.4bpp");
+    #define gMonFrontPic_AbsolMega gMonFrontPic_Absol // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AbsolMega gMonPalette_Absol // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AbsolMega gMonBackPic_Absol // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AbsolMega gMonShinyPalette_Absol // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AbsolMega gMonIcon_Absol // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AbsolMega[] = INCBIN_COMP("graphics/pokemon/absol/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -13204,11 +13204,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_GlalieMega[] = INCBIN_U32("graphics/pokemon/glalie/mega/front.4bpp.smol");
-    const u16 gMonPalette_GlalieMega[] = INCBIN_U16("graphics/pokemon/glalie/mega/normal.gbapal");
-    const u32 gMonBackPic_GlalieMega[] = INCBIN_U32("graphics/pokemon/glalie/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_GlalieMega[] = INCBIN_U16("graphics/pokemon/glalie/mega/shiny.gbapal");
-    const u8 gMonIcon_GlalieMega[] = INCBIN_U8("graphics/pokemon/glalie/mega/icon.4bpp");
+    #define gMonFrontPic_GlalieMega gMonFrontPic_Glalie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GlalieMega gMonPalette_Glalie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GlalieMega gMonBackPic_Glalie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GlalieMega gMonShinyPalette_Glalie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GlalieMega gMonIcon_Glalie // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_GlalieMega[] = INCBIN_COMP("graphics/pokemon/glalie/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -13552,11 +13552,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_SalamenceMega[] = INCBIN_U32("graphics/pokemon/salamence/mega/front.4bpp.smol");
-    const u16 gMonPalette_SalamenceMega[] = INCBIN_U16("graphics/pokemon/salamence/mega/normal.gbapal");
-    const u32 gMonBackPic_SalamenceMega[] = INCBIN_U32("graphics/pokemon/salamence/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_SalamenceMega[] = INCBIN_U16("graphics/pokemon/salamence/mega/shiny.gbapal");
-    const u8 gMonIcon_SalamenceMega[] = INCBIN_U8("graphics/pokemon/salamence/mega/icon.4bpp");
+    #define gMonFrontPic_SalamenceMega gMonFrontPic_Salamence // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SalamenceMega gMonPalette_Salamence // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SalamenceMega gMonBackPic_Salamence // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SalamenceMega gMonShinyPalette_Salamence // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SalamenceMega gMonIcon_Salamence // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_SalamenceMega[] = INCBIN_COMP("graphics/pokemon/salamence/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -13781,11 +13781,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_LatiasMega[] = INCBIN_U32("graphics/pokemon/latias/mega/front.4bpp.smol");
-    const u16 gMonPalette_LatiasMega[] = INCBIN_U16("graphics/pokemon/latias/mega/normal.gbapal");
-    const u32 gMonBackPic_LatiasMega[] = INCBIN_U32("graphics/pokemon/latias/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_LatiasMega[] = INCBIN_U16("graphics/pokemon/latias/mega/shiny.gbapal");
-    const u8 gMonIcon_LatiasMega[] = INCBIN_U8("graphics/pokemon/latias/mega/icon.4bpp");
+    #define gMonFrontPic_LatiasMega gMonFrontPic_Latias // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_LatiasMega gMonPalette_Latias // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_LatiasMega gMonBackPic_Latias // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_LatiasMega gMonShinyPalette_Latias // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_LatiasMega gMonIcon_Latias // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_LatiasMega[] = INCBIN_COMP("graphics/pokemon/latias/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -13825,11 +13825,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_LatiosMega[] = INCBIN_U32("graphics/pokemon/latios/mega/front.4bpp.smol");
-    const u16 gMonPalette_LatiosMega[] = INCBIN_U16("graphics/pokemon/latios/mega/normal.gbapal");
-    const u32 gMonBackPic_LatiosMega[] = INCBIN_U32("graphics/pokemon/latios/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_LatiosMega[] = INCBIN_U16("graphics/pokemon/latios/mega/shiny.gbapal");
-    const u8 gMonIcon_LatiosMega[] = INCBIN_U8("graphics/pokemon/latios/mega/icon.4bpp");
+    #define gMonFrontPic_LatiosMega gMonFrontPic_Latios // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_LatiosMega gMonPalette_Latios // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_LatiosMega gMonBackPic_Latios // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_LatiosMega gMonShinyPalette_Latios // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_LatiosMega gMonIcon_Latios // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_LatiosMega[] = INCBIN_COMP("graphics/pokemon/latios/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -14906,11 +14906,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/front.4bpp.smol");
-    const u16 gMonPalette_LopunnyMega[] = INCBIN_U16("graphics/pokemon/lopunny/mega/normal.gbapal");
-    const u32 gMonBackPic_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_LopunnyMega[] = INCBIN_U16("graphics/pokemon/lopunny/mega/shiny.gbapal");
-    const u8 gMonIcon_LopunnyMega[] = INCBIN_U8("graphics/pokemon/lopunny/mega/icon.4bpp");
+    #define gMonFrontPic_LopunnyMega gMonFrontPic_Lopunny // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_LopunnyMega gMonPalette_Lopunny // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_LopunnyMega gMonBackPic_Lopunny // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_LopunnyMega gMonShinyPalette_Lopunny // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_LopunnyMega gMonIcon_Lopunny // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_LopunnyMega[] = INCBIN_COMP("graphics/pokemon/lopunny/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -15132,11 +15132,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_GarchompMega[] = INCBIN_U32("graphics/pokemon/garchomp/mega/front.4bpp.smol");
-    const u16 gMonPalette_GarchompMega[] = INCBIN_U16("graphics/pokemon/garchomp/mega/normal.gbapal");
-    const u32 gMonBackPic_GarchompMega[] = INCBIN_U32("graphics/pokemon/garchomp/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_GarchompMega[] = INCBIN_U16("graphics/pokemon/garchomp/mega/shiny.gbapal");
-    const u8 gMonIcon_GarchompMega[] = INCBIN_U8("graphics/pokemon/garchomp/mega/icon.4bpp");
+    #define gMonFrontPic_GarchompMega gMonFrontPic_Garchomp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GarchompMega gMonPalette_Garchomp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GarchompMega gMonBackPic_Garchomp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GarchompMega gMonShinyPalette_Garchomp // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GarchompMega gMonIcon_Garchomp // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_GarchompMega[] = INCBIN_COMP("graphics/pokemon/garchomp/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -15181,11 +15181,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_LucarioMega[] = INCBIN_U32("graphics/pokemon/lucario/mega/front.4bpp.smol");
-    const u16 gMonPalette_LucarioMega[] = INCBIN_U16("graphics/pokemon/lucario/mega/normal.gbapal");
-    const u32 gMonBackPic_LucarioMega[] = INCBIN_U32("graphics/pokemon/lucario/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_LucarioMega[] = INCBIN_U16("graphics/pokemon/lucario/mega/shiny.gbapal");
-    const u8 gMonIcon_LucarioMega[] = INCBIN_U8("graphics/pokemon/lucario/mega/icon.4bpp");
+    #define gMonFrontPic_LucarioMega gMonFrontPic_Lucario // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_LucarioMega gMonPalette_Lucario // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_LucarioMega gMonBackPic_Lucario // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_LucarioMega gMonShinyPalette_Lucario // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_LucarioMega gMonIcon_Lucario // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_LucarioMega[] = INCBIN_COMP("graphics/pokemon/lucario/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -15456,11 +15456,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AbomasnowMega[] = INCBIN_U32("graphics/pokemon/abomasnow/mega/front.4bpp.smol");
-    const u16 gMonPalette_AbomasnowMega[] = INCBIN_U16("graphics/pokemon/abomasnow/mega/normal.gbapal");
-    const u32 gMonBackPic_AbomasnowMega[] = INCBIN_U32("graphics/pokemon/abomasnow/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AbomasnowMega[] = INCBIN_U16("graphics/pokemon/abomasnow/mega/shiny.gbapal");
-    const u8 gMonIcon_AbomasnowMega[] = INCBIN_U8("graphics/pokemon/abomasnow/mega/icon.4bpp");
+    #define gMonFrontPic_AbomasnowMega gMonFrontPic_Abomasnow // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AbomasnowMega gMonPalette_Abomasnow // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AbomasnowMega gMonBackPic_Abomasnow // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AbomasnowMega gMonShinyPalette_Abomasnow // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AbomasnowMega gMonIcon_Abomasnow // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_AbomasnowMega[] = INCBIN_COMP("graphics/pokemon/abomasnow/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -16635,11 +16635,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_AudinoMega[] = INCBIN_U32("graphics/pokemon/audino/mega/front.4bpp.smol");
-    const u16 gMonPalette_AudinoMega[] = INCBIN_U16("graphics/pokemon/audino/mega/normal.gbapal");
-    const u32 gMonBackPic_AudinoMega[] = INCBIN_U32("graphics/pokemon/audino/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_AudinoMega[] = INCBIN_U16("graphics/pokemon/audino/mega/shiny.gbapal");
-    const u8 gMonIcon_AudinoMega[] = INCBIN_U8("graphics/pokemon/audino/mega/icon.4bpp");
+    #define gMonFrontPic_AudinoMega gMonFrontPic_Audino // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AudinoMega gMonPalette_Audino // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AudinoMega gMonBackPic_Audino // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AudinoMega gMonShinyPalette_Audino // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AudinoMega gMonIcon_Audino // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     OW_PIC_STORAGE const u32 gObjectEventPic_AudinoMega[] = INCBIN_COMP("graphics/pokemon/audino/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -17448,11 +17448,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_GarbodorGmax[] = INCBIN_U32("graphics/pokemon/garbodor/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_GarbodorGmax[] = INCBIN_U32("graphics/pokemon/garbodor/gmax/back.4bpp.smol");
-    const u16 gMonPalette_GarbodorGmax[] = INCBIN_U16("graphics/pokemon/garbodor/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_GarbodorGmax[] = INCBIN_U16("graphics/pokemon/garbodor/gmax/shiny.gbapal");
-    const u8 gMonIcon_GarbodorGmax[] = INCBIN_U8("graphics/pokemon/garbodor/gmax/icon.4bpp");
+    #define gMonFrontPic_GarbodorGmax gMonFrontPic_Garbodor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GarbodorGmax gMonBackPic_Garbodor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GarbodorGmax gMonPalette_Garbodor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GarbodorGmax gMonShinyPalette_Garbodor // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GarbodorGmax gMonIcon_Garbodor // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_GarbodorGmax[] = INCBIN_COMP("graphics/pokemon/garbodor/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -20818,11 +20818,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_DiancieMega[] = INCBIN_U32("graphics/pokemon/diancie/mega/front.4bpp.smol");
-    const u16 gMonPalette_DiancieMega[] = INCBIN_U16("graphics/pokemon/diancie/mega/normal.gbapal");
-    const u32 gMonBackPic_DiancieMega[] = INCBIN_U32("graphics/pokemon/diancie/mega/back.4bpp.smol");
-    const u16 gMonShinyPalette_DiancieMega[] = INCBIN_U16("graphics/pokemon/diancie/mega/shiny.gbapal");
-    const u8 gMonIcon_DiancieMega[] = INCBIN_U8("graphics/pokemon/diancie/mega/icon.4bpp");
+    #define gMonFrontPic_DiancieMega gMonFrontPic_Diancie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_DiancieMega gMonPalette_Diancie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_DiancieMega gMonBackPic_Diancie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_DiancieMega gMonShinyPalette_Diancie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_DiancieMega gMonIcon_Diancie // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
     OW_PIC_STORAGE const u32 gObjectEventPic_DiancieMega[] = INCBIN_COMP("graphics/pokemon/diancie/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22640,11 +22640,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_MelmetalGmax[] = INCBIN_U32("graphics/pokemon/melmetal/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_MelmetalGmax[] = INCBIN_U32("graphics/pokemon/melmetal/gmax/back.4bpp.smol");
-    const u16 gMonPalette_MelmetalGmax[] = INCBIN_U16("graphics/pokemon/melmetal/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_MelmetalGmax[] = INCBIN_U16("graphics/pokemon/melmetal/gmax/shiny.gbapal");
-    const u8 gMonIcon_MelmetalGmax[] = INCBIN_U8("graphics/pokemon/melmetal/gmax/icon.4bpp");
+    #define gMonFrontPic_MelmetalGmax gMonFrontPic_Melmetal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_MelmetalGmax gMonBackPic_Melmetal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_MelmetalGmax gMonPalette_Melmetal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_MelmetalGmax gMonShinyPalette_Melmetal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_MelmetalGmax gMonIcon_Melmetal // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_MelmetalGmax[] = INCBIN_COMP("graphics/pokemon/melmetal/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22705,11 +22705,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_RillaboomGmax[] = INCBIN_U32("graphics/pokemon/rillaboom/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_RillaboomGmax[] = INCBIN_U32("graphics/pokemon/rillaboom/gmax/back.4bpp.smol");
-    const u16 gMonPalette_RillaboomGmax[] = INCBIN_U16("graphics/pokemon/rillaboom/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_RillaboomGmax[] = INCBIN_U16("graphics/pokemon/rillaboom/gmax/shiny.gbapal");
-    const u8 gMonIcon_RillaboomGmax[] = INCBIN_U8("graphics/pokemon/rillaboom/gmax/icon.4bpp");
+    #define gMonFrontPic_RillaboomGmax gMonFrontPic_Rillaboom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_RillaboomGmax gMonBackPic_Rillaboom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_RillaboomGmax gMonPalette_Rillaboom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_RillaboomGmax gMonShinyPalette_Rillaboom // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_RillaboomGmax gMonIcon_Rillaboom // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_RillaboomGmax[] = INCBIN_COMP("graphics/pokemon/rillaboom/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22770,11 +22770,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CinderaceGmax[] = INCBIN_U32("graphics/pokemon/cinderace/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CinderaceGmax[] = INCBIN_U32("graphics/pokemon/cinderace/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CinderaceGmax[] = INCBIN_U16("graphics/pokemon/cinderace/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CinderaceGmax[] = INCBIN_U16("graphics/pokemon/cinderace/gmax/shiny.gbapal");
-    const u8 gMonIcon_CinderaceGmax[] = INCBIN_U8("graphics/pokemon/cinderace/gmax/icon.4bpp");
+    #define gMonFrontPic_CinderaceGmax gMonFrontPic_Cinderace // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CinderaceGmax gMonBackPic_Cinderace // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CinderaceGmax gMonPalette_Cinderace // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CinderaceGmax gMonShinyPalette_Cinderace // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CinderaceGmax gMonIcon_Cinderace // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CinderaceGmax[] = INCBIN_COMP("graphics/pokemon/cinderace/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22835,11 +22835,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_InteleonGmax[] = INCBIN_U32("graphics/pokemon/inteleon/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_InteleonGmax[] = INCBIN_U32("graphics/pokemon/inteleon/gmax/back.4bpp.smol");
-    const u16 gMonPalette_InteleonGmax[] = INCBIN_U16("graphics/pokemon/inteleon/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_InteleonGmax[] = INCBIN_U16("graphics/pokemon/inteleon/gmax/shiny.gbapal");
-    const u8 gMonIcon_InteleonGmax[] = INCBIN_U8("graphics/pokemon/inteleon/gmax/icon.4bpp");
+    #define gMonFrontPic_InteleonGmax gMonFrontPic_Inteleon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_InteleonGmax gMonBackPic_Inteleon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_InteleonGmax gMonPalette_Inteleon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_InteleonGmax gMonShinyPalette_Inteleon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_InteleonGmax gMonIcon_Inteleon // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_InteleonGmax[] = INCBIN_COMP("graphics/pokemon/inteleon/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22934,11 +22934,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CorviknightGmax[] = INCBIN_U32("graphics/pokemon/corviknight/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CorviknightGmax[] = INCBIN_U32("graphics/pokemon/corviknight/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CorviknightGmax[] = INCBIN_U16("graphics/pokemon/corviknight/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CorviknightGmax[] = INCBIN_U16("graphics/pokemon/corviknight/gmax/shiny.gbapal");
-    const u8 gMonIcon_CorviknightGmax[] = INCBIN_U8("graphics/pokemon/corviknight/gmax/icon.4bpp");
+    #define gMonFrontPic_CorviknightGmax gMonFrontPic_Corviknight // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CorviknightGmax gMonBackPic_Corviknight // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CorviknightGmax gMonPalette_Corviknight // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CorviknightGmax gMonShinyPalette_Corviknight // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CorviknightGmax gMonIcon_Corviknight // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CorviknightGmax[] = INCBIN_COMP("graphics/pokemon/corviknight/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22999,11 +22999,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_OrbeetleGmax[] = INCBIN_U32("graphics/pokemon/orbeetle/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_OrbeetleGmax[] = INCBIN_U32("graphics/pokemon/orbeetle/gmax/back.4bpp.smol");
-    const u16 gMonPalette_OrbeetleGmax[] = INCBIN_U16("graphics/pokemon/orbeetle/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_OrbeetleGmax[] = INCBIN_U16("graphics/pokemon/orbeetle/gmax/shiny.gbapal");
-    const u8 gMonIcon_OrbeetleGmax[] = INCBIN_U8("graphics/pokemon/orbeetle/gmax/icon.4bpp");
+    #define gMonFrontPic_OrbeetleGmax gMonFrontPic_Orbeetle // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_OrbeetleGmax gMonBackPic_Orbeetle // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_OrbeetleGmax gMonPalette_Orbeetle // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_OrbeetleGmax gMonShinyPalette_Orbeetle // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_OrbeetleGmax gMonIcon_Orbeetle // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_OrbeetleGmax[] = INCBIN_COMP("graphics/pokemon/orbeetle/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23150,11 +23150,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_DrednawGmax[] = INCBIN_U32("graphics/pokemon/drednaw/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_DrednawGmax[] = INCBIN_U32("graphics/pokemon/drednaw/gmax/back.4bpp.smol");
-    const u16 gMonPalette_DrednawGmax[] = INCBIN_U16("graphics/pokemon/drednaw/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_DrednawGmax[] = INCBIN_U16("graphics/pokemon/drednaw/gmax/shiny.gbapal");
-    const u8 gMonIcon_DrednawGmax[] = INCBIN_U8("graphics/pokemon/drednaw/gmax/icon.4bpp");
+    #define gMonFrontPic_DrednawGmax gMonFrontPic_Drednaw // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_DrednawGmax gMonBackPic_Drednaw // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_DrednawGmax gMonPalette_Drednaw // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_DrednawGmax gMonShinyPalette_Drednaw // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_DrednawGmax gMonIcon_Drednaw // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_DrednawGmax[] = INCBIN_COMP("graphics/pokemon/drednaw/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23249,11 +23249,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CoalossalGmax[] = INCBIN_U32("graphics/pokemon/coalossal/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CoalossalGmax[] = INCBIN_U32("graphics/pokemon/coalossal/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CoalossalGmax[] = INCBIN_U16("graphics/pokemon/coalossal/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CoalossalGmax[] = INCBIN_U16("graphics/pokemon/coalossal/gmax/shiny.gbapal");
-    const u8 gMonIcon_CoalossalGmax[] = INCBIN_U8("graphics/pokemon/coalossal/gmax/icon.4bpp");
+    #define gMonFrontPic_CoalossalGmax gMonFrontPic_Coalossal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CoalossalGmax gMonBackPic_Coalossal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CoalossalGmax gMonPalette_Coalossal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CoalossalGmax gMonShinyPalette_Coalossal // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CoalossalGmax gMonIcon_Coalossal // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CoalossalGmax[] = INCBIN_COMP("graphics/pokemon/coalossal/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23298,11 +23298,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_FlappleGmax[] = INCBIN_U32("graphics/pokemon/flapple/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_FlappleGmax[] = INCBIN_U32("graphics/pokemon/flapple/gmax/back.4bpp.smol");
-    const u16 gMonPalette_FlappleGmax[] = INCBIN_U16("graphics/pokemon/flapple/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_FlappleGmax[] = INCBIN_U16("graphics/pokemon/flapple/gmax/shiny.gbapal");
-    const u8 gMonIcon_FlappleGmax[] = INCBIN_U8("graphics/pokemon/flapple/gmax/icon.4bpp");
+    #define gMonFrontPic_FlappleGmax gMonFrontPic_Flapple // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_FlappleGmax gMonBackPic_Flapple // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_FlappleGmax gMonPalette_Flapple // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_FlappleGmax gMonShinyPalette_Flapple // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_FlappleGmax gMonIcon_Flapple // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_FlappleGmax[] = INCBIN_COMP("graphics/pokemon/flapple/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23329,11 +23329,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_AppletunGmax[] = INCBIN_U32("graphics/pokemon/appletun/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_AppletunGmax[] = INCBIN_U32("graphics/pokemon/appletun/gmax/back.4bpp.smol");
-    const u16 gMonPalette_AppletunGmax[] = INCBIN_U16("graphics/pokemon/appletun/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_AppletunGmax[] = INCBIN_U16("graphics/pokemon/appletun/gmax/shiny.gbapal");
-    const u8 gMonIcon_AppletunGmax[] = INCBIN_U8("graphics/pokemon/appletun/gmax/icon.4bpp");
+    #define gMonFrontPic_AppletunGmax gMonFrontPic_Appletun // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AppletunGmax gMonBackPic_Appletun // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AppletunGmax gMonPalette_Appletun // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AppletunGmax gMonShinyPalette_Appletun // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_AppletunGmax gMonIcon_Appletun // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_AppletunGmax[] = INCBIN_COMP("graphics/pokemon/appletun/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23412,11 +23412,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_SandacondaGmax[] = INCBIN_U32("graphics/pokemon/sandaconda/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_SandacondaGmax[] = INCBIN_U32("graphics/pokemon/sandaconda/gmax/back.4bpp.smol");
-    const u16 gMonPalette_SandacondaGmax[] = INCBIN_U16("graphics/pokemon/sandaconda/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_SandacondaGmax[] = INCBIN_U16("graphics/pokemon/sandaconda/gmax/shiny.gbapal");
-    const u8 gMonIcon_SandacondaGmax[] = INCBIN_U8("graphics/pokemon/sandaconda/gmax/icon.4bpp");
+    #define gMonFrontPic_SandacondaGmax gMonFrontPic_Sandaconda // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_SandacondaGmax gMonBackPic_Sandaconda // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_SandacondaGmax gMonPalette_Sandaconda // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_SandacondaGmax gMonShinyPalette_Sandaconda // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_SandacondaGmax gMonIcon_Sandaconda // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_SandacondaGmax[] = INCBIN_COMP("graphics/pokemon/sandaconda/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23601,11 +23601,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CentiskorchGmax[] = INCBIN_U32("graphics/pokemon/centiskorch/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CentiskorchGmax[] = INCBIN_U32("graphics/pokemon/centiskorch/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CentiskorchGmax[] = INCBIN_U16("graphics/pokemon/centiskorch/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CentiskorchGmax[] = INCBIN_U16("graphics/pokemon/centiskorch/gmax/shiny.gbapal");
-    const u8 gMonIcon_CentiskorchGmax[] = INCBIN_U8("graphics/pokemon/centiskorch/gmax/icon.4bpp");
+    #define gMonFrontPic_CentiskorchGmax gMonFrontPic_Centiskorch // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CentiskorchGmax gMonBackPic_Centiskorch // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CentiskorchGmax gMonPalette_Centiskorch // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CentiskorchGmax gMonShinyPalette_Centiskorch // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CentiskorchGmax gMonIcon_Centiskorch // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CentiskorchGmax[] = INCBIN_COMP("graphics/pokemon/centiskorch/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23734,11 +23734,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_HattereneGmax[] = INCBIN_U32("graphics/pokemon/hatterene/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_HattereneGmax[] = INCBIN_U32("graphics/pokemon/hatterene/gmax/back.4bpp.smol");
-    const u16 gMonPalette_HattereneGmax[] = INCBIN_U16("graphics/pokemon/hatterene/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_HattereneGmax[] = INCBIN_U16("graphics/pokemon/hatterene/gmax/shiny.gbapal");
-    const u8 gMonIcon_HattereneGmax[] = INCBIN_U8("graphics/pokemon/hatterene/gmax/icon.4bpp");
+    #define gMonFrontPic_HattereneGmax gMonFrontPic_Hatterene // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_HattereneGmax gMonBackPic_Hatterene // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_HattereneGmax gMonPalette_Hatterene // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_HattereneGmax gMonShinyPalette_Hatterene // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_HattereneGmax gMonIcon_Hatterene // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_HattereneGmax[] = INCBIN_COMP("graphics/pokemon/hatterene/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23799,11 +23799,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_GrimmsnarlGmax[] = INCBIN_U32("graphics/pokemon/grimmsnarl/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_GrimmsnarlGmax[] = INCBIN_U32("graphics/pokemon/grimmsnarl/gmax/back.4bpp.smol");
-    const u16 gMonPalette_GrimmsnarlGmax[] = INCBIN_U16("graphics/pokemon/grimmsnarl/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_GrimmsnarlGmax[] = INCBIN_U16("graphics/pokemon/grimmsnarl/gmax/shiny.gbapal");
-    const u8 gMonIcon_GrimmsnarlGmax[] = INCBIN_U8("graphics/pokemon/grimmsnarl/gmax/icon.4bpp");
+    #define gMonFrontPic_GrimmsnarlGmax gMonFrontPic_Grimmsnarl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_GrimmsnarlGmax gMonBackPic_Grimmsnarl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_GrimmsnarlGmax gMonPalette_Grimmsnarl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_GrimmsnarlGmax gMonShinyPalette_Grimmsnarl // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_GrimmsnarlGmax gMonIcon_Grimmsnarl // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_GrimmsnarlGmax[] = INCBIN_COMP("graphics/pokemon/grimmsnarl/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -23948,10 +23948,10 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_AlcremieGmax[] = INCBIN_U32("graphics/pokemon/alcremie/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_AlcremieGmax[] = INCBIN_U32("graphics/pokemon/alcremie/gmax/back.4bpp.smol");
-    const u16 gMonPalette_AlcremieGmax[] = INCBIN_U16("graphics/pokemon/alcremie/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_AlcremieGmax[] = INCBIN_U16("graphics/pokemon/alcremie/gmax/shiny.gbapal");
+    #define gMonFrontPic_AlcremieGmax gMonFrontPic_Alcremie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_AlcremieGmax gMonBackPic_Alcremie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_AlcremieGmax gMonPalette_Alcremie // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_AlcremieGmax gMonShinyPalette_Alcremie // Project Grounded: vorm niet in de game (v0.9.234)
     const u8 gMonIcon_AlcremieGmax[] = INCBIN_U8("graphics/pokemon/alcremie/gmax/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_AlcremieGmax[] = INCBIN_COMP("graphics/pokemon/alcremie/gmax/overworld.4bpp");
@@ -24178,11 +24178,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_CopperajahGmax[] = INCBIN_U32("graphics/pokemon/copperajah/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_CopperajahGmax[] = INCBIN_U32("graphics/pokemon/copperajah/gmax/back.4bpp.smol");
-    const u16 gMonPalette_CopperajahGmax[] = INCBIN_U16("graphics/pokemon/copperajah/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_CopperajahGmax[] = INCBIN_U16("graphics/pokemon/copperajah/gmax/shiny.gbapal");
-    const u8 gMonIcon_CopperajahGmax[] = INCBIN_U8("graphics/pokemon/copperajah/gmax/icon.4bpp");
+    #define gMonFrontPic_CopperajahGmax gMonFrontPic_Copperajah // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_CopperajahGmax gMonBackPic_Copperajah // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_CopperajahGmax gMonPalette_Copperajah // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_CopperajahGmax gMonShinyPalette_Copperajah // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_CopperajahGmax gMonIcon_Copperajah // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_CopperajahGmax[] = INCBIN_COMP("graphics/pokemon/copperajah/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -24283,11 +24283,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_DuraludonGmax[] = INCBIN_U32("graphics/pokemon/duraludon/gmax/front.4bpp.smol");
-    const u32 gMonBackPic_DuraludonGmax[] = INCBIN_U32("graphics/pokemon/duraludon/gmax/back.4bpp.smol");
-    const u16 gMonPalette_DuraludonGmax[] = INCBIN_U16("graphics/pokemon/duraludon/gmax/normal.gbapal");
-    const u16 gMonShinyPalette_DuraludonGmax[] = INCBIN_U16("graphics/pokemon/duraludon/gmax/shiny.gbapal");
-    const u8 gMonIcon_DuraludonGmax[] = INCBIN_U8("graphics/pokemon/duraludon/gmax/icon.4bpp");
+    #define gMonFrontPic_DuraludonGmax gMonFrontPic_Duraludon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_DuraludonGmax gMonBackPic_Duraludon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_DuraludonGmax gMonPalette_Duraludon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_DuraludonGmax gMonShinyPalette_Duraludon // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonIcon_DuraludonGmax gMonIcon_Duraludon // Project Grounded: vorm niet in de game (v0.9.234)
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_DuraludonGmax[] = INCBIN_COMP("graphics/pokemon/duraludon/gmax/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -24498,16 +24498,16 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_UrshifuRapidStrike[] = INCBIN_U16("graphics/pokemon/urshifu/rapid_strike/shiny.gbapal");
 
 #if P_GIGANTAMAX_FORMS
-    const u32 gMonFrontPic_UrshifuSingleStrikeGmax[] = INCBIN_U32("graphics/pokemon/urshifu/single_strike_gmax/front.4bpp.smol");
-    const u32 gMonBackPic_UrshifuSingleStrikeGmax[] = INCBIN_U32("graphics/pokemon/urshifu/single_strike_gmax/back.4bpp.smol");
-    const u16 gMonPalette_UrshifuSingleStrikeGmax[] = INCBIN_U16("graphics/pokemon/urshifu/single_strike_gmax/normal.gbapal");
-    const u16 gMonShinyPalette_UrshifuSingleStrikeGmax[] = INCBIN_U16("graphics/pokemon/urshifu/single_strike_gmax/shiny.gbapal");
+    #define gMonFrontPic_UrshifuSingleStrikeGmax gMonFrontPic_UrshifuSingleStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_UrshifuSingleStrikeGmax gMonBackPic_UrshifuSingleStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_UrshifuSingleStrikeGmax gMonPalette_UrshifuSingleStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_UrshifuSingleStrikeGmax gMonShinyPalette_UrshifuSingleStrike // Project Grounded: vorm niet in de game (v0.9.234)
     const u8 gMonIcon_UrshifuSingleStrikeGmax[] = INCBIN_U8("graphics/pokemon/urshifu/single_strike_gmax/icon.4bpp");
 
-    const u32 gMonFrontPic_UrshifuRapidStrikeGmax[] = INCBIN_U32("graphics/pokemon/urshifu/rapid_strike_gmax/front.4bpp.smol");
-    const u32 gMonBackPic_UrshifuRapidStrikeGmax[] = INCBIN_U32("graphics/pokemon/urshifu/rapid_strike_gmax/back.4bpp.smol");
-    const u16 gMonPalette_UrshifuRapidStrikeGmax[] = INCBIN_U16("graphics/pokemon/urshifu/rapid_strike_gmax/normal.gbapal");
-    const u16 gMonShinyPalette_UrshifuRapidStrikeGmax[] = INCBIN_U16("graphics/pokemon/urshifu/rapid_strike_gmax/shiny.gbapal");
+    #define gMonFrontPic_UrshifuRapidStrikeGmax gMonFrontPic_UrshifuRapidStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonBackPic_UrshifuRapidStrikeGmax gMonBackPic_UrshifuRapidStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonPalette_UrshifuRapidStrikeGmax gMonPalette_UrshifuRapidStrike // Project Grounded: vorm niet in de game (v0.9.234)
+    #define gMonShinyPalette_UrshifuRapidStrikeGmax gMonShinyPalette_UrshifuRapidStrike // Project Grounded: vorm niet in de game (v0.9.234)
     const u8 gMonIcon_UrshifuRapidStrikeGmax[] = INCBIN_U8("graphics/pokemon/urshifu/rapid_strike_gmax/icon.4bpp");
 
 #if OW_POKEMON_OBJECT_EVENTS

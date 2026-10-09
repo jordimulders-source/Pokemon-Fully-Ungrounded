@@ -17959,3 +17959,11 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
   - De build slaagt, dus niets verwees ernaar.
 - Niet weg, want via macro's toch in gebruik: wallpapers, de balsprites in de overworld en de Vivillon-patronen.
 - Eindstand ROM: 29,3 MB gebruikt, **±2,74 MB vrij** (was ±0,86 MB vóór v0.9.229).
+
+### [v0.9.234] - ROM-ruimte: ongebruikte Mega- en Gigantamax-vormen eruit (728 KB)
+- Jordi (10 okt): "Ja wat een besparing". De speler kan niet Mega-evolueren of Dynamaxen; alleen de Spire-bazen gebruiken Mega Metagross, Mega Mewtwo Y, Mega Rayquaza en Gigantamax Pikachu. Mega Gengar staat er ook nog in, omdat de code hem noemt.
+- **Kreten:** de 44 andere Mega's krijgen in `sound/cry_tables.inc` de kreet van hun basisvorm, en hun eigen opname is uit `direct_sound_data.inc`. Dat scheelt 521 KB.
+- **Sprites:** voor de andere Mega- en Gmax-vormen wijzen de front-, back-, palet- en icoon-namen in `src/data/graphics/pokemon.h` via een `#define` naar de basisvorm. Hun eigen plaatjes gaan dus niet meer mee. Dat scheelt 207 KB.
+- Toxtricity-, Urshifu- en Alcremie-Gmax hebben geen enkelvoudige basisnaam en blijven zoals ze waren.
+- Terugzetten: de regel met `Project Grounded: ... weg` / `vorm niet in de game` terugdraaien. Nodig als een nieuwe Spire-baas een andere Mega krijgt.
+- Audit 0 FOUT, dex 1082/1082. Vrij: **±3,46 MB**.

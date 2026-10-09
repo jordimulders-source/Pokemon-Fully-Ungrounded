@@ -462,12 +462,12 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 LavaridgeTown_Gym_1F_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 29.\p"
+	.string "is level 35.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 LavaridgeTown_Gym_1F_Text_GymGuideNextAce:
 	.string "Next stop: NORMAN in PETALBURG.\n"
-	.string "Your dad. His ace is level 35.\p"
+	.string "Your dad. His ace is level 37.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

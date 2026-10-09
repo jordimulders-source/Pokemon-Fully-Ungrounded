@@ -6589,7 +6589,7 @@ u32 GetBattleMoveTarget(u16 move, u8 setTarget)
 // Project Grounded: tot welk level gehoorzamen Pokémon op basis van de badges (MAX_LEVEL = altijd)
 u32 GetPlayerObedienceLevel(void)
 {
-    u32 obedienceLevel = 10;
+    u32 obedienceLevel = 15; // Project Grounded: was 10; Route 116 (vóór gym 1) heeft wilde Pokémon tot lv 13 (LEVELCURVE.md)
 
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return MAX_LEVEL;

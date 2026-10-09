@@ -517,6 +517,6 @@ DewfordTown_Gym_Text_GymGuideAceLevel:
 
 DewfordTown_Gym_Text_GymGuideNextAce:
 	.string "Next stop: WATTSON in MAUVILLE.\n"
-	.string "Their ace is level 25.\p"
+	.string "Their ace is level 28.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

@@ -4736,8 +4736,8 @@ static void Cmd_getexp(void)
             else
                 calculatedExp /= 7;
 
-            if (B_TRAINER_EXP_MULTIPLIER <= GEN_7 && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-                calculatedExp = (calculatedExp * 150) / 100;
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER) // Project Grounded: B_TRAINER_EXP_PERCENT i.p.v. vast 1,5x
+                calculatedExp = (calculatedExp * B_TRAINER_EXP_PERCENT) / 100;
 
             if (B_SPLIT_EXP < GEN_6)
             {

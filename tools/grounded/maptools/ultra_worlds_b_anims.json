@@ -331,5 +331,52 @@
    "period": 8,
    "rows": 1
   }
+ ],
+ "Blacephalon": [
+  {
+   "name": "bulbs",
+   "slot": 0,
+   "ntiles": 12,
+   "nframes": 3,
+   "seq": [
+    0,
+    1,
+    2
+   ],
+   "period": 10,
+   "rows": 1
+  },
+  {
+   "name": "hoop",
+   "slot": 12,
+   "ntiles": 8,
+   "nframes": 8,
+   "seq": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "period": 8,
+   "rows": 1
+  },
+  {
+   "name": "balloons",
+   "slot": 20,
+   "ntiles": 16,
+   "nframes": 4,
+   "seq": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "period": 16,
+   "rows": 1
+  }
  ]
 }

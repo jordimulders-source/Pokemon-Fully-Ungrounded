@@ -1474,4 +1474,63 @@ void InitTilesetAnim_UltraBGuzzlord(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_UltraBGuzzlord;
 }
 
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/2.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Bulbs[] = {
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame2,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Bulbs[] = {0, 1, 2};
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/2.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/3.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/4.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/5.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/6.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Hoop[] = {
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame2,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame3,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame4,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame5,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame6,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Hoop[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/2.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Balloons[] = {
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame2,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Balloons[] = {0, 1, 2, 3};
+static void TilesetAnim_UltraBBlacephalon(u16 timer)
+{
+    if (timer % 10 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Bulbs[sTilesetAnimSeq_UltraBBlacephalon_Bulbs[(timer / 10) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Bulbs)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Hoop[sTilesetAnimSeq_UltraBBlacephalon_Hoop[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Hoop)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 8 * TILE_SIZE_4BPP);
+    if (timer % 16 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Balloons[sTilesetAnimSeq_UltraBBlacephalon_Balloons[(timer / 16) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Balloons)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 20)), 16 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBBlacephalon(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBBlacephalon;
+}
+
 // } ultra_worlds_b

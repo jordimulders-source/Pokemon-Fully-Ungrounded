@@ -11082,6 +11082,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_BLACEPHALON",
+          "base_label": "gUltraSpaceBlacephalon",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MR_MIME"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_HYPNO"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GRUMPIG"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MAGMORTAR"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GRIMMSNARL"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_CHANDELURE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_HATTERENE"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_WOBBUFFET"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_SPINDA"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_DELPHOX"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_MIMIKYU"
+              },
+              {
+                "min_level": 89,
+                "max_level": 90,
+                "species": "SPECIES_ZOROARK"
+              }
+            ]
+          }
         }
       ]
     },

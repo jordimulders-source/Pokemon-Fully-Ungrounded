@@ -1922,4 +1922,26 @@ const struct Tileset gTileset_UltraBGuzzlord =
     .callback = InitTilesetAnim_UltraBGuzzlord,
 };
 
+const struct Tileset gTileset_UltraBBlacephalonBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBBlacephalonBase,
+    .palettes = gTilesetPalettes_UltraBBlacephalonBase,
+    .metatiles = gMetatiles_UltraBBlacephalonBase,
+    .metatileAttributes = gMetatileAttributes_UltraBBlacephalonBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBBlacephalon =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBBlacephalon,
+    .palettes = gTilesetPalettes_UltraBBlacephalon,
+    .metatiles = gMetatiles_UltraBBlacephalon,
+    .metatileAttributes = gMetatileAttributes_UltraBBlacephalon,
+    .callback = InitTilesetAnim_UltraBBlacephalon,
+};
+
 // } ultra_worlds_b

@@ -1827,6 +1827,566 @@ def world_guzzlord():
                 rate=8)
 
 
+# ====================================================================== BLACEPHALON: circus
+BL = {
+    'red': [C(70, 10, 24), C(128, 20, 36), C(184, 36, 48), C(224, 72, 72)],
+    'cream': [C(132, 112, 96), C(184, 168, 140), C(224, 212, 184), C(248, 240, 216)],
+    'gold': [C(96, 64, 16), C(168, 120, 32), C(232, 184, 56), C(252, 236, 140)],
+    'saw': [C(120, 88, 52), C(168, 128, 80), C(200, 160, 100), C(224, 192, 132)],
+    'board': [C(46, 28, 22), C(72, 44, 30), C(96, 62, 40), C(122, 82, 54)],
+    'bench': [C(60, 36, 24), C(98, 64, 38), C(140, 96, 56), C(176, 130, 80)],
+    'night': [C(8, 6, 18), C(16, 12, 30)],
+    'blue': [C(20, 30, 80), C(40, 64, 150), C(80, 120, 210), C(150, 190, 248)],
+    'purple': [C(40, 16, 60), C(84, 36, 120), C(132, 72, 180), C(196, 140, 232)],
+}
+
+
+def bl_stripes(img, x_px0, dark_top=0):
+    """rood-witte tentbanen (8 px breed) met plooischaduw"""
+    Hh, Ww = img.shape[:2]
+    for xx in range(Ww):
+        gx = x_px0 + xx
+        band = (gx // 8) % 2
+        pos = gx % 8
+        ramp_ = BL['red'] if band == 0 else BL['cream']
+        shade_ = 2 if pos in (2, 3, 4) else (3 if pos == 5 else (1 if pos in (0, 7) else 2))
+        img[:, xx, :3] = ramp_[shade_]
+    if dark_top:
+        img[:dark_top, :, :3] = mix(img[:dark_top, :, :3], C(10, 4, 10), 0.55)
+    return img
+
+
+def bl_floorboards(x, y):
+    img = rgba(16, 16, BL['board'][2])
+    for yy in range(16):
+        gy = y * 16 + yy
+        if gy % 5 == 0:
+            img[yy, :, :3] = BL['board'][0]
+        elif gy % 5 == 1:
+            img[yy, :, :3] = BL['board'][3]
+    # naden van de planken (versprongen per rij, herhalend per 2 vakken)
+    for yy in range(16):
+        row = (y * 16 + yy) // 5
+        sx = (row * 11) % 32
+        gx0 = x * 16
+        for k in (sx, sx + 32):
+            if gx0 <= k < gx0 + 16 and (y * 16 + yy) % 5:
+                img[yy, k - gx0, :3] = BL['board'][1]
+    return img
+
+
+def bl_sawdust(x, y):
+    img = rgba(16, 16, BL['saw'][2])
+    rs = random.Random((x % 2) * 7 + (y % 2) * 13)
+    for _ in range(26):
+        img[rs.randrange(16), rs.randrange(16), :3] = rs.choice((BL['saw'][1], BL['saw'][3], BL['saw'][1]))
+    return img
+
+
+def bl_crowd(img, y0, x_px0, seed, facing='s'):
+    """rij publiek: hoofden + schouders, kleurige haren/pruiken, herhalend per 32 px"""
+    HEADS = [(C(240, 196, 160), C(250, 120, 40)), (C(220, 170, 130), C(60, 40, 30)), (C(250, 220, 200), C(240, 60, 140)),
+             (C(200, 150, 110), C(250, 220, 90)), (C(236, 200, 170), C(80, 180, 240)), (C(250, 250, 250), C(220, 40, 40))]
+    SHIRTS = [C(70, 90, 170), C(170, 60, 70), C(80, 140, 80), C(200, 160, 60), C(120, 70, 150), C(60, 60, 70)]
+    Ww = img.shape[1]
+    for xx0 in range(-8, Ww + 8, 8):
+        gx = x_px0 + xx0
+        k = ((gx // 8) * 5 + seed) % 6
+        skin, hair = HEADS[k]
+        shirt = SHIRTS[(k * 2 + seed) % 6]
+        cx = xx0 + 4
+        for yy in range(y0, min(y0 + 11, img.shape[0])):
+            for xx in range(cx - 3, cx + 4):
+                if not (0 <= xx < Ww):
+                    continue
+                dy = yy - y0
+                if dy < 6:                                         # hoofd
+                    if (xx - cx) ** 2 + (dy - 3) ** 2 <= 9:
+                        c = hair if dy < 3 or abs(xx - cx) == 3 else skin
+                        if dy == 3 and xx in (cx - 1, cx + 1) and facing == 's':
+                            c = C(20, 16, 20)                       # oogjes
+                        img[yy, xx, :3] = c
+                        img[yy, xx, 3] = 255
+                elif abs(xx - cx) <= 3:                            # schouders
+                    img[yy, xx, :3] = shirt if dy < 10 else mix(shirt, C(0, 0, 0), 0.4)
+                    img[yy, xx, 3] = 255
+
+
+def bl_bench_row(x, y, crowd=True, seed=0):
+    """tribunerij (kijkt naar het zuiden): zitplank boven, donkere optrede, publiek"""
+    img = rgba(16, 16, BL['bench'][0])
+    img[8:12, :, :3] = BL['bench'][2]
+    img[8, :, :3] = BL['bench'][3]
+    img[11, :, :3] = BL['bench'][1]
+    img[12:16, :, :3] = BL['bench'][0]
+    img[0:8, :, :3] = mix(BL['bench'][0], C(0, 0, 0), 0.3)
+    for xx in range(0, 16, 8):
+        img[12:16, xx, :3] = C(20, 12, 10)
+    if crowd:
+        bl_crowd(img, 1, x * 16, seed + y)
+    return img
+
+
+def bl_bench_side(x, y, face, crowd=True, seed=0):
+    """zijtribune (kijkt naar oost of west): verticale zitplank, publiek van opzij (alleen hoofden)"""
+    img = rgba(16, 16, BL['bench'][0])
+    px = 3 if face == 'e' else 9
+    img[:, px:px + 4, :3] = BL['bench'][2]
+    img[:, px + (0 if face == 'e' else 3), :3] = BL['bench'][3]
+    if crowd:
+        sub = rgba(16, 16)
+        sub[...] = 0
+        for k, yy in enumerate((1, 9)):
+            g = ((y * 2 + k) * 5 + x + seed) % 6
+            hair = [C(250, 120, 40), C(60, 40, 30), C(240, 60, 140), C(250, 220, 90), C(80, 180, 240), C(220, 40, 40)][g]
+            hx = 8 if face == 'e' else 7
+            for dy in range(6):
+                for dx in range(-3, 4):
+                    if dx * dx + (dy - 3) ** 2 <= 9:
+                        c = hair if (dx < 0 if face == 'e' else dx > 0) or dy < 2 else C(236, 200, 170)
+                        img[yy + dy, hx + dx, :3] = c
+    return img
+
+
+def bl_balloon_frames(cols, n=4):
+    """trosje ballonnen (16x32) dat zachtjes op en neer deint (n frames)"""
+    out = []
+    for f in range(n):
+        img = np.zeros((32, 16, 4))
+        off = [0, 1, 1, 0][f % 4]
+        for k, (bx, by, col) in enumerate(((4, 5, cols[0]), (11, 4, cols[1]), (7, 9, cols[2]))):
+            by += off if k != 1 else (1 - off)
+            for yy in range(-4, 5):
+                for xx in range(-3, 4):
+                    if (xx / 3.3) ** 2 + (yy / 4.3) ** 2 <= 1 and 0 <= by + yy < 32 and 0 <= bx + xx < 16:
+                        c = col[2]
+                        if xx > 0 and yy > 0:
+                            c = col[1]
+                        if (xx, yy) in ((-1, -2), (-2, -2), (-1, -3)):
+                            c = C(255, 255, 255)
+                        img[by + yy, bx + xx] = list(c) + [255]
+            # touwtje naar beneden
+            for yy in range(by + 5, 29):
+                xx = int(round(bx + (8 - bx) * (yy - by - 5) / max(29 - by - 5, 1)))
+                img[yy, xx] = [60, 50, 50, 255]
+        img[28:31, 6:10] = list(C(90, 60, 40)) + [255]                    # gewichtje
+        out.append(img)
+    return out
+
+
+@world
+def world_blacephalon():
+    W, H = 40, 32
+    w = A.World('Blacephalon', W, H, seed=449)
+    RC = (20.0, 17.0)               # midden van de piste (vakken)
+    RX, RY = 7.2 * 16, 6.0 * 16
+    rcx, rcy = (RC[0]) * 16, (RC[1]) * 16 + 8
+    # ---------------------------------------------------------------- vloer, piste
+    for y in range(H):
+        for x in range(W):
+            w.put(bl_floorboards(x, y), x, y)
+    dr = np.hypot((w.xx - rcx) / RX, (w.yy - rcy) / RY)
+    inside = dr < 1
+    saw = np.zeros((32, 32, 4))
+    for (sx, sy) in ((0, 0), (1, 0), (0, 1), (1, 1)):
+        saw[sy * 16:sy * 16 + 16, sx * 16:sx * 16 + 16] = bl_sawdust(sx, sy)
+    sawall = np.tile(saw[..., :3], (H // 2 + 1, W // 2 + 1, 1))[:H * 16, :W * 16]
+    w.bot[inside] = sawall[inside]
+    # pisterand: rood-witte vakken met gouden bies, schaduw naar buiten
+    ang = np.arctan2((w.yy - rcy) / RY, (w.xx - rcx) / RX)
+    curb = (dr >= 1) & (dr < 1.0 + 7.0 / RY)
+    seg = ((ang + math.pi) / (2 * math.pi) * 28).astype(int) % 2
+    w.bot[curb & (seg == 0)] = BL['red'][2]
+    w.bot[curb & (seg == 1)] = BL['cream'][2]
+    w.bot[curb & (dr < 1.0 + 1.6 / RY)] = BL['gold'][2]
+    w.bot[curb & (dr >= 1.0 + 5.6 / RY)] = mix(w.bot[curb & (dr >= 1.0 + 5.6 / RY)], C(0, 0, 0), 0.45)
+    outer_sh = (dr >= 1.0 + 7.0 / RY) & (dr < 1.0 + 9.0 / RY)
+    w.bot[outer_sh] = mix(w.bot[outer_sh], C(0, 0, 0), 0.35)
+    # spotlichten op het zaagsel
+    for (lx, ly, lr) in ((rcx, rcy - 4, 30), (rcx - 64, rcy + 30, 18), (rcx + 66, rcy - 34, 18)):
+        sp = np.hypot((w.xx - lx), (w.yy - ly) * 1.3) < lr
+        w.bot[sp & inside] = mix(w.bot[sp & inside], C(255, 250, 220), 0.32)
+        ring = (np.abs(np.hypot((w.xx - lx), (w.yy - ly) * 1.3) - lr) < 0.8) & inside
+        w.bot[ring] = mix(w.bot[ring], C(255, 250, 220), 0.2)
+    # podium in het midden: trommel met een ster
+    pd = np.hypot((w.xx - rcx) / 30.0, (w.yy - rcy) / 20.0)
+    pod = pd < 1
+    w.bot[pod] = BL['purple'][2]
+    w.bot[(pd >= 0.84) & pod] = BL['gold'][2]
+    w.bot[(pd >= 0.92) & pod] = BL['gold'][1]
+    side = (pd >= 1) & (pd < 1.0 + 6.0 / 20) & (w.yy > rcy)
+    w.bot[side] = BL['red'][1]
+    w.bot[side & (((w.xx // 4) % 2) == 0)] = BL['red'][2]
+    w.bot[side & (w.yy > rcy + 24)] = C(20, 8, 16)
+    # ster (gevuld, vijf punten)
+    sx_, sy_ = w.xx - rcx, (w.yy - rcy) * 1.45
+    sang = np.arctan2(sy_, sx_) + math.pi / 2
+    sr = np.hypot(sx_, sy_)
+    k5 = (sang % (2 * math.pi / 5)) / (2 * math.pi / 5)
+    lim = 9 + 11 * np.abs(1 - 2 * k5) ** 1.6
+    starm = (sr < lim) & pod
+    w.bot[starm] = BL['gold'][2]
+    w.bot[starm & (sx_ < 0)] = BL['gold'][3]
+    w.bot[(sr < lim + 1) & ~starm & pod] = BL['gold'][0]
+    # ---------------------------------------------------------------- tribunes
+    TOP = (4, 8)                    # rijen 4-8 (kijken naar het zuiden), x 8-31
+    for y in range(TOP[0], TOP[1] + 1):
+        for x in range(8, 32):
+            crowd = not (19 <= x <= 20)
+            img = bl_bench_row(x, y, crowd, seed=3)
+            if 19 <= x <= 20:                            # middenpad met trapjes
+                img[:, :, :3] = BL['board'][1]
+                img[::4, :, :3] = BL['board'][3]
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    for y in range(9, 27):
+        for x in range(2, 8):
+            if 16 <= y <= 17:
+                continue
+            w.put(bl_bench_side(x, y, 'e', seed=1), x, y)
+            w.coll[y, x] = True
+        for x in range(32, 38):
+            if 16 <= y <= 17:
+                continue
+            w.put(bl_bench_side(x, y, 'w', seed=4), x, y)
+            w.coll[y, x] = True
+    for y in (8,):
+        for x in list(range(2, 8)) + list(range(32, 38)):
+            img = bl_bench_row(x, y, True, seed=7)
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    # ---------------------------------------------------------------- tentwanden
+    for y in range(0, 4):
+        for x in range(W):
+            img = bl_stripes(rgba(16, 16, C(0, 0, 0)), x * 16)
+            if y == 0:
+                img[..., :3] = mix(img[..., :3], C(8, 4, 12), 0.55)
+            elif y == 1:
+                img[..., :3] = mix(img[..., :3], C(8, 4, 12), 0.3)
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    # valance met lampjes op rij 3 (animatie: looplicht)
+    val_cells = [(x, 3) for x in range(W)]
+    val_base = {}
+    for (x, y) in val_cells:
+        img = w.cellpix(x, y).copy()
+        img = np.concatenate([img, np.full((16, 16, 1), 255.0)], 2)
+        for xx in range(16):
+            gx = x * 16 + xx
+            sc = 9 + int(round(3 * math.sin(math.pi * ((gx % 16) / 16.0))))
+            img[sc:16, xx, :3] = mix(img[sc:16, xx, :3], BL['red'][0], 0.0)
+            img[sc - 2:sc, xx, :3] = BL['gold'][2]
+            img[sc:, xx, :3] = C(30, 8, 20)
+            img[sc, xx, :3] = BL['gold'][1]
+        val_base[(x, y)] = img
+
+    def bulbs_fn(f, x, y):
+        img = val_base[(x, y)].copy()
+        for k, bx in enumerate((3, 11)):
+            on = ((x * 2 + k) % 3) == f
+            c0 = BL['gold'][3] if on else BL['gold'][0]
+            img[5:8, bx:bx + 3, :3] = c0
+            img[6, bx + 1, :3] = C(255, 255, 255) if on else BL['gold'][1]
+        return img
+    for c in val_cells:
+        w.put(bulbs_fn(0, *c), *c)
+    w.anim('bulbs', bulbs_fn, [(0, 3), (1, 3), (2, 3)], [0, 1, 2], 10)
+    for (x, y) in val_cells:
+        w.anim_cell[(x, y)] = (w.anims[-1], x % 3)
+    for y in range(4, H):
+        for x in (0, 1, 38, 39):
+            img = bl_stripes(rgba(16, 16, C(0, 0, 0)), x * 16)
+            img[..., :3] = mix(img[..., :3], C(8, 4, 12), 0.5 if x in (0, 39) else 0.25)
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    for y in (30, 31):
+        for x in range(W):
+            if 18 <= x <= 21 and y == 30:
+                continue
+            img = rgba(16, 16, C(20, 8, 16))
+            img[0:4 if y == 30 else 0, :, :3] = BL['red'][1]
+            img[0, :, :3] = BL['gold'][2]
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    # ingang: gordijnen links en rechts van de opening
+    for (x, flip) in ((17, False), (22, True)):
+        img = rgba(32, 16, BL['red'][1])
+        for xx in range(16):
+            v = (xx * 3) % 8
+            img[:, xx, :3] = BL['red'][3] if v < 2 else (BL['red'][2] if v < 5 else BL['red'][1])
+        img[14:18, :, :3] = BL['gold'][2]                       # koord
+        img[15, :, :3] = BL['gold'][3]
+        if flip:
+            img = img[:, ::-1]
+        w.put(img[:16], x, 29, 'top')
+        w.put(img[16:], x, 30)
+        w.coll[30, x] = True
+    for x in range(18, 22):
+        img = rgba(16, 16, C(10, 6, 14))
+        img[0:2, :, :3] = BL['board'][1]
+        w.put(img, x, 30)
+        w.put(img, x, 31)
+        w.coll[31, x] = True
+    w.coll[30, 18] = w.coll[30, 21] = True
+    # ---------------------------------------------------------------- rekwisieten
+    def prop(img, x, y, block_rows=1, top_rows=None):
+        """plaatje (veelvoud van 16) met de onderste block_rows geblokkeerd; de rijen erboven boven de speler"""
+        ch, cw = img.shape[0] // 16, img.shape[1] // 16
+        tr = ch - block_rows if top_rows is None else top_rows
+        for r in range(ch):
+            part = img[r * 16:(r + 1) * 16]
+            if r < tr:
+                w.put(part, x, y + r, 'top')
+            else:
+                w.put(part, x, y + r)
+                for c in range(cw):
+                    if (part[:, c * 16:(c + 1) * 16, 3] > 0).any():
+                        w.coll[y + r, x + c] = True
+
+    # kanon (Blacephalon-thema: knallen) linksonder, gericht op de piste
+    can = np.zeros((32, 48, 4))
+    for t in range(36):                                            # loop: schuin omhoog naar de piste
+        rad = 6 - t * 0.06
+        for k in range(-7, 8):
+            if abs(k) > rad:
+                continue
+            px, py = 10 + t, 22 - t * 0.5 + k
+            r_ = (k + rad) / (2 * rad)
+            col = A.ramp(np.array([0.15 + 0.8 * (1 - abs(r_ - 0.35) * 1.6)]), [C(30, 30, 50), C(70, 70, 110), C(150, 150, 200), C(230, 230, 250)])[0]
+            if t % 9 in (0, 1):
+                col = BL['gold'][2] if abs(k) < rad - 1 else BL['gold'][1]
+            if 0 <= int(py) < 32 and 0 <= int(px) < 48:
+                can[int(py), int(px)] = list(col) + [255]
+    for yy in range(14, 32):                                       # wiel met spaken
+        for xx in range(2, 24):
+            d = math.hypot(xx - 12, yy - 24)
+            if d <= 7.5:
+                ring = d > 5.5
+                spoke = abs((xx - 12) - (yy - 24)) < 1 or abs((xx - 12) + (yy - 24)) < 1 or xx == 12 or yy == 24
+                col = BL['red'][1] if ring else (BL['gold'][2] if spoke or d < 2 else None)
+                if col is not None:
+                    can[yy, xx] = list(col) + [255]
+    can[0:4, 42:47] = list(C(40, 36, 50)) + [255]                   # mond van de loop
+    prop(can, 9, 24, 1)
+    # kaartjeshuisje rechtsonder
+    tb = np.zeros((48, 48, 4))
+    tb[16:48, 2:46] = list(BL['red'][2]) + [255]
+    for xx in range(2, 46):
+        tb[16:48, xx, :3] = BL['red'][2] if (xx // 6) % 2 else BL['cream'][2]
+    tb[22:34, 10:38] = list(C(30, 20, 30)) + [255]                    # loket
+    tb[22, 10:38] = list(BL['gold'][2]) + [255]
+    for yy in range(0, 16):                                         # puntdak
+        half = int(22 * yy / 15)
+        tb[yy, 24 - half:24 + half] = list(BL['red'][1] if (yy % 4) < 2 else BL['red'][3]) + [255]
+    tb[0:2, 23:25] = list(BL['gold'][3]) + [255]
+    tb[44:48, 2:46] = list(C(20, 10, 14)) + [255]
+    prop(tb, 32, 26, 2)
+    # popcornkar linksonder
+    pc = np.zeros((32, 32, 4))
+    pc[12:28, 4:28] = list(BL['red'][2]) + [255]
+    pc[12:28, 4:28:4] = list(BL['cream'][3]) + [255]
+    pc[2:12, 6:26] = list(C(200, 220, 255)) + [255]                   # glazen kast
+    rsp = random.Random(4)
+    for _ in range(50):
+        pc[rsp.randrange(5, 12), rsp.randrange(7, 25)] = list(C(255, 248, 200)) + [255]
+    pc[0:2, 5:27] = list(BL['red'][1]) + [255]
+    for yy in range(27, 32):
+        for xx in (8, 23):
+            if (yy - 29) ** 2 <= 4:
+                pc[yy, xx - 2:xx + 3] = list(C(30, 30, 30)) + [255]
+    prop(pc, 4, 27, 1)
+    # trapezepalen met touw en trapeze over de piste (boven de speler)
+    for (px_, py_) in ((11, 16), (29, 16)):
+        img = rgba(16, 16)
+        img[...] = 0
+        for yy in range(16):
+            for xx in range(16):
+                d = math.hypot(xx - 7.5, yy - 9)
+                if d < 4:
+                    img[yy, xx] = list(BL['cream'][2] if d < 2.5 else BL['cream'][0]) + [255]
+                elif d < 6 and yy > 9:
+                    img[yy, xx] = [20, 12, 12, 255]
+        w.put(img, px_, py_)
+        w.coll[py_, px_] = True
+    for t in np.linspace(0, 1, 300):                          # touw (doorhangend)
+        px = 11 * 16 + 8 + (18 * 16) * t
+        py = 16 * 16 + 6 + math.sin(t * math.pi) * 22
+        w.top[int(py), int(px)] = list(C(220, 200, 160)) + [255]
+    for (lx, ly) in ((rcx - 40, 16 * 16 + 24), (rcx + 40, 16 * 16 + 24)):
+        for t in np.linspace(0, 1, 40):                        # trapeze-stang
+            w.top[int(ly + t * 10), int(lx - 10 + 20 * t)] = list(BL['gold'][2]) + [255]
+    for y in range(15, 19):
+        for x in range(11, 30):
+            if (w.top[y * 16:y * 16 + 16, x * 16:x * 16 + 16, 3] > 0).any():
+                w.layer[y, x] = A.SPLIT
+    # hoepels op de grond en een brandende hoepel in de piste
+    for (hx, hy, col) in ((10.5, 11.5, 'blue'), (29.5, 23.5, 'gold'), (13.4, 26.5, 'purple')):
+        d = np.hypot(w.xx - hx * 16, (w.yy - hy * 16) * 1.6)
+        ring = (np.abs(d - 9) < 1.6)
+        w.bot[ring] = BL[col][2]
+        w.bot[ring & (w.yy < hy * 16)] = BL[col][3]
+    fires = fire_frames16()
+    hoop_cells = [(14, 13), (15, 13)]
+    base = {}
+    for (x, y) in hoop_cells:
+        base[(x, y)] = np.concatenate([w.cellpix(x, y).copy(), np.full((16, 16, 1), 255.0)], 2)
+    hoop = np.zeros((16, 32, 4))
+    for yy in range(16):
+        for xx in range(32):
+            d = math.hypot((xx - 15.5) / 1.0, (yy - 8) * 2.0)
+            if abs(d - 12) < 1.6:
+                hoop[yy, xx] = list(C(60, 50, 50)) + [255]
+
+    def hoop_fn(f, x, y):
+        img = base[(x, y)].copy()
+        k = 0 if x == hoop_cells[0][0] else 1
+        A.paste(img, hoop[:, k * 16:(k + 1) * 16], 0, 0)
+        A.paste(img, fires[(f + k * 3) % 8], 0, -3)
+        return img
+    for c in hoop_cells:
+        w.put(hoop_fn(0, *c), *c)
+        w.coll[c[1], c[0]] = True
+    w.anim('hoop', hoop_fn, hoop_cells, list(range(8)), 8)
+    # ballonnen (animatie, boven de speler)
+    BCOLS = [(BL['red'], BL['gold'], BL['blue']), (BL['purple'], BL['red'], BL['gold']), (BL['blue'], BL['purple'], BL['red'])]
+    bal_cells = [(24, 27), (15, 27), (8, 10), (31, 10)]
+    bal_frames = [bl_balloon_frames(BCOLS[i % 3]) for i in range(len(bal_cells))]
+    for i, (x, y) in enumerate(bal_cells):
+        w.put(bal_frames[i][0][16:], x, y)
+        w.coll[y, x] = True
+    top_base = {}
+
+    def bal_fn(f, x, y):
+        i = [c for c in bal_cells].index((x, y + 1))
+        return bal_frames[i][f][:16].copy()
+    tops = [(x, y - 1) for (x, y) in bal_cells]
+    for i, (x, y) in enumerate(tops):
+        w.put(bal_frames[i][0][:16], x, y, 'top')
+    w.anim('balloons', bal_fn, tops, [0, 1, 2, 3], 16, layer='top')
+    # spandoek boven de ingang van de piste (op de tribune)
+    ban = np.zeros((16, 96, 4))
+    ban[2:14, 4:92] = list(BL['purple'][1]) + [255]
+    ban[2, 4:92] = list(BL['gold'][2]) + [255]
+    ban[13, 4:92] = list(BL['gold'][1]) + [255]
+    for k in range(9):                                   # sterretjes op het doek
+        sx = 10 + k * 10
+        for (dx, dy) in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
+            ban[8 + dy, sx + dx] = list(BL['gold'][3]) + [255]
+    A.paste(w.bot, ban, 17 * 16, 9 * 16)
+    # confetti op de vloer (herhalend patroon, niet in de piste)
+    conf = np.zeros((32, 32, 4))
+    rsc = random.Random(8)
+    for _ in range(14):
+        cc = rsc.choice([BL['red'][3], BL['gold'][3], BL['blue'][3], BL['purple'][3], C(120, 220, 120)])
+        x0, y0 = rsc.randrange(32), rsc.randrange(32)
+        conf[y0, x0] = list(cc) + [255]
+        conf[y0, (x0 + 1) % 32] = list(cc) + [255]
+    confall = np.tile(conf, (H // 2 + 1, W // 2 + 1, 1))[:H * 16, :W * 16]
+    fl = np.zeros(w.bot.shape[:2], bool)
+    for y in range(9, 30):
+        for x in range(8, 32):
+            if not w.coll[y, x]:
+                fl[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = True
+    m = fl & (confall[..., 3] > 0) & (dr >= 1.0 + 9.0 / RY)
+    w.bot[m] = confall[m][:, :3]
+    # spotlichtbundels vanuit de bovenhoeken naar de piste (licht op vloer en tribunes)
+    for (sx0, sy0) in ((3 * 16, 4 * 16), (37 * 16, 4 * 16)):
+        vx, vy = rcx - sx0, rcy - sy0
+        L = math.hypot(vx, vy)
+        ux, uy = vx / L, vy / L
+        al = (w.xx - sx0) * ux + (w.yy - sy0) * uy
+        pp = np.abs((w.xx - sx0) * (-uy) + (w.yy - sy0) * ux)
+        cone = (al > 0) & (al < L) & (pp < 4 + al * 0.16)
+        w.apply(cone.astype(float) * 0.9, lambda c: mix(c, C(255, 250, 210), 0.18))
+        lamp = np.hypot(w.xx - sx0, w.yy - sy0 - 4) < 6
+        w.bot[lamp] = C(60, 60, 70)
+        w.bot[np.hypot(w.xx - sx0 - ux * 3, w.yy - sy0 - 4 - uy * 3) < 3] = C(255, 250, 220)
+    # vlaggetjeslijnen boven de speler
+    PCOL = [BL['red'][2], BL['gold'][2], BL['blue'][2], BL['purple'][2], BL['cream'][3]]
+    for (xa, ya, xb, yb, sag) in ((2 * 16, 10 * 16, 38 * 16, 10 * 16, 30), (2 * 16, 27 * 16, 38 * 16, 27 * 16, 26)):
+        n = int(abs(xb - xa))
+        prev = None
+        for i in range(n):
+            t = i / n
+            px = xa + (xb - xa) * t
+            py = ya + (yb - ya) * t + math.sin(t * math.pi) * sag
+            w.top[int(py), int(px)] = list(C(40, 30, 30)) + [255]
+            if i % 12 == 0:                                         # driehoekje
+                col = PCOL[(i // 12) % 5]
+                for dy in range(7):
+                    for dx in range(-3 + dy // 2, 4 - (dy + 1) // 2):
+                        yy, xx = int(py) + 1 + dy, int(px) + dx
+                        if 0 <= yy < w.top.shape[0] and 0 <= xx < w.top.shape[1]:
+                            w.top[yy, xx] = list(col if dx < 1 else mix(col, C(0, 0, 0), 0.25)) + [255]
+    for y in range(H):
+        for x in range(W):
+            if (w.top[y * 16:y * 16 + 16, x * 16:x * 16 + 16, 3] > 0).any():
+                w.layer[y, x] = A.SPLIT
+    # ---------------------------------------------------------------- buiten de tent: nacht
+    for y in range(H):
+        for x in range(W):
+            if w.coll[y, x] and (y == 0 or x in (0, 39) or y == 31):
+                pass
+    # ---------------------------------------------------------------- objecten
+    arrive, ret = (20, 28), (20, 29)
+    ub = (20, 17)
+    for c in (arrive, ret):
+        w.coll[c[1], c[0]] = False
+    objs = [obj('LOCALID_ULTRA_BLACEPHALON_RETURN', WORM, ret[0], ret[1], 'UltraSpace_EventScript_ReturnToHub'),
+            obj('LOCALID_ULTRA_BLACEPHALON_UB', mon('BLACEPHALON'), ub[0], ub[1], 'UltraSpace_Blacephalon_EventScript_UB',
+                'FLAG_ULTRA_BLACEPHALON', 'MOVEMENT_TYPE_FACE_DOWN')]
+    clowns = [('MR_MIME', 'MrMime', (16, 21), 'MOVEMENT_TYPE_WANDER_AROUND'),
+              ('HYPNO', 'Hypno', (20, 10), 'MOVEMENT_TYPE_FACE_DOWN'),
+              ('SPOINK', 'Spoink', (24, 21), 'MOVEMENT_TYPE_JOG_IN_PLACE_DOWN'),
+              ('MIME_JR', 'MimeJr', (25, 14), 'MOVEMENT_TYPE_WANDER_AROUND'),
+              ('GRIMMSNARL', 'Grimmsnarl', (9, 20), 'MOVEMENT_TYPE_FACE_RIGHT'),
+              ('SPINDA', 'Spinda', (30, 18), 'MOVEMENT_TYPE_WANDER_AROUND')]
+    r = reachable(w.coll, arrive, {ret, ub})
+    for sp, lbl, (tx, ty), mv in clowns:
+        taken = {(o['x'], o['y']) for o in objs} | {arrive}
+        c = min((c for c in r if c not in taken), key=lambda c: abs(c[0] - tx) + abs(c[1] - ty))
+        wander = 'WANDER' in mv
+        objs.append(obj(None, mon(sp), c[0], c[1], 'UltraSpace_Blacephalon_EventScript_' + lbl, '0', mv,
+                        rx=1 if wander else 0, ry=1 if wander else 0))
+    taken = {(o['x'], o['y']) for o in objs} | {arrive}
+    c = min((c for c in r if c not in taken), key=lambda c: abs(c[0] - 13) + abs(c[1] - 24))
+    objs.append(obj(None, 'OBJ_EVENT_GFX_SHY_GUY_RED', c[0], c[1], 'UltraSpace_Blacephalon_EventScript_ShyGuy', '0',
+                    'MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN' if False else 'MOVEMENT_TYPE_FACE_UP'))
+    bgs = [{'type': 'sign', 'x': 33, 'y': 28, 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
+            'script': 'UltraSpace_Blacephalon_EventScript_Tickets'},
+           {'type': 'sign', 'x': 5, 'y': 28, 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
+            'script': 'UltraSpace_Blacephalon_EventScript_Popcorn'},
+           {'type': 'sign', 'x': 10, 'y': 25, 'elevation': 3, 'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY',
+            'script': 'UltraSpace_Blacephalon_EventScript_Cannon'}]
+    # wilde Pokémon achter de schermen: op de planken langs de tribunes, niet in de piste of bij de ingang
+    for y in range(9, 30):
+        for x in range(8, 32):
+            if not w.coll[y, x] and dr[y * 16 + 8, x * 16 + 8] > 1.12 and y < 26:
+                w.beh[y, x] = 0x08
+    texts = [('UB', 'BLACEPHALON juggles its own head.\\pIt drops it, on purpose, and it explodes.\nThe crowd goes wild. Your eyebrows go home.'),
+             ('UBBack', 'BLACEPHALON grows a new head and takes\na bow. The crowd demands an encore.'),
+             ('MrMime', 'MR. MIME is trapped in an invisible box.\\pHe built the box himself. He is very proud\nof the box.'),
+             ('Hypno', 'HYPNO: LADIES AND GENTLEMEN, POKéMON OF\nALL AGES… look into the pendulum…\\pYou WILL buy popcorn. You WILL laugh at\nthe clowns. You WILL NOT ask for a refund.'),
+             ('Spoink', 'SPOINK has been bouncing since the show\nstarted. The show started in 1998.'),
+             ('MimeJr', 'MIME JR. is miming that it is having fun.\nConvincingly. Mostly.'),
+             ('Grimmsnarl', 'GRIMMSNARL is the strongman. It is lifting\na barbell made of two smaller GRIMMSNARL.'),
+             ('Spinda', 'SPINDA is doing the tightrope act.\nThere is no rope. That is the act.'),
+             ('ShyGuy', 'The clown refuses to take off his mask.\\pNobody has ever seen him without it.\nIncluding him.'),
+             ('Tickets', 'ADMISSION: ONE (1) HEAD.\\pBLACEPHALON BRINGS ITS OWN.'),
+             ('Popcorn', 'The popcorn is free. The popcorn is\nalso slightly on fire. Those are related.'),
+             ('Cannon', 'THE HUMAN CANNONBALL\n(position available)\\pPrevious applicant: BLACEPHALON\'s head.')]
+    return dict(world=w, objects=objs, bgs=bgs, arrive=arrive, ret=ret, ub=ub, species='BLACEPHALON', level=90,
+                music='MUS_GAME_CORNER', weather='WEATHER_NONE', texts=texts,
+                npc_scripts=[(lbl, 'MSGBOX_NPC') for _, lbl, _, _ in clowns] + [('ShyGuy', 'MSGBOX_NPC'),
+                                                                               ('Tickets', 'MSGBOX_SIGN'), ('Popcorn', 'MSGBOX_SIGN'),
+                                                                               ('Cannon', 'MSGBOX_SIGN')],
+                border_cell=(0, 0),
+                encounters=[('MR_MIME', 86, 88), ('HYPNO', 86, 88), ('GRUMPIG', 86, 88), ('MAGMORTAR', 87, 89),
+                            ('GRIMMSNARL', 87, 89), ('CHANDELURE', 87, 89), ('HATTERENE', 87, 89), ('WOBBUFFET', 86, 88),
+                            ('SPINDA', 84, 86), ('DELPHOX', 87, 89), ('MIMIKYU', 88, 90), ('ZOROARK', 89, 90)],
+                rate=5)
+
+
 # ====================================================================== bouwen
 def build(key):
     spec = WORLDS[key]()

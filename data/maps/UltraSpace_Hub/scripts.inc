@@ -88,7 +88,7 @@ UltraSpace_Hub_EventScript_ToStakataka::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToBlacephalon::
-	warp MAP_ULTRA_SPACE_BLACEPHALON, 2, 8
+	warp MAP_ULTRA_SPACE_BLACEPHALON, 20, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToNecrozma::

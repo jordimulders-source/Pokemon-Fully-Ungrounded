@@ -6155,10 +6155,10 @@
     {
       "id": "LAYOUT_ULTRA_SPACE_BLACEPHALON",
       "name": "UltraSpace_Blacephalon_Layout",
-      "width": 20,
-      "height": 10,
-      "primary_tileset": "gTileset_UltraBlacephalonBase",
-      "secondary_tileset": "gTileset_UltraBlacephalon",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraBBlacephalonBase",
+      "secondary_tileset": "gTileset_UltraBBlacephalon",
       "border_filepath": "data/layouts/UltraSpace_Blacephalon/border.bin",
       "blockdata_filepath": "data/layouts/UltraSpace_Blacephalon/map.bin"
     },

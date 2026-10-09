@@ -1,12 +1,19 @@
 @ Project Grounded: de diepzeetrog onder Route 127 (zwemgat in de kop van de centrale trog van onderwater 127,
-@ 24,13). Kopie van Underwater_SealedChamber, 14 rijen dieper. Bovenkomen = terug naar het diepe water van Route 127.
-@ Kaart: tools/grounded/maptools/zee_vulling_4.py
+@ 24,13), een onderwatersnelweg: onderin een zigzaggebied met een tweede zwemgat naar de Sea Temple-kom van
+@ onderwater Route 128. Bovenkomen: noordhelft = Route 127, zuidhelft (rij 60+) = Route 128.
+@ Schacht: tools/grounded/maptools/zee_vulling_4.py; zigzaggebied, items en warps: tools/grounded/maptools/trog127.py
 Underwater_Route127_Trench_MapScripts::
 	map_script MAP_SCRIPT_ON_DIVE_WARP, Underwater_Route127_Trench_OnDive
 	.byte 0
 
 Underwater_Route127_Trench_OnDive:
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, 60, Underwater_Route127_Trench_OnDiveSouth
 	setdivewarp MAP_ROUTE127, 24, 14
+	end
+
+Underwater_Route127_Trench_OnDiveSouth:
+	setdivewarp MAP_ROUTE128, 69, 18
 	end
 
 @ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---

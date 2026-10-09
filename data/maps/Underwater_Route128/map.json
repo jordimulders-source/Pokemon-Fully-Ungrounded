@@ -60,6 +60,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE128_BUBBLE_GROTTO",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 69,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE127_TRENCH",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

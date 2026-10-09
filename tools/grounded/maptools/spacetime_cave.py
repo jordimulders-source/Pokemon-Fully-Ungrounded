@@ -153,6 +153,36 @@ def scr(name):
                % (name, name))
 
 
+# ====================================================================== items die nergens anders liggen (nieuwe_items.py)
+NEW_ITEM_POS = {  # item -> plek (Jordi 9 okt: in elk Spacetime-gebied items die nog niet in de game zaten)
+    'ITEM_EXP_CANDY_S': (1, 13), 'ITEM_POWER_BRACER': (7, 16), 'ITEM_MOON_BALL': (16, 16), 'ITEM_RED_CARD': (19, 6),
+    'ITEM_LEVEL_BALL': (36, 14), 'ITEM_POWER_WEIGHT': (32, 4), 'ITEM_ROOM_SERVICE': (13, 18),
+    'ITEM_MIRROR_HERB': (36, 3), 'ITEM_POWER_BAND': (34, 12)}
+
+
+def new_items(name, cells, W):
+    """Item balls en verborgen items uit nieuwe_items.py voor kaart `name` (hoogte uit de layout)."""
+    import nieuwe_items as ni
+    objs, bgs = [], []
+    for fl, it, q, hid in ni.items(name):
+        x, y = NEW_ITEM_POS[it]
+        c = cells[y * W + x]
+        assert not c & 0xC00, ('item op een muur', name, it)
+        e = c >> 12
+        if hid:
+            h = hidden(x, y, it, fl)
+            h['elevation'] = e
+            if q > 1:
+                h['quantity'] = q
+            bgs.append(h)
+        else:
+            o = obj('OBJ_EVENT_GFX_ITEM_BALL', x, y, 'Common_EventScript_FindItem', fl, 'MOVEMENT_TYPE_LOOK_AROUND',
+                    elev=e, sight=it)
+            o['movement_range_x'] = q if q > 1 else 0
+            objs.append(o)
+    return objs, bgs
+
+
 # ====================================================================== 1. de hub
 # S2 (Jordi, 9 okt): in de hoofdzaal alleen de zes sidequest-scheuren. Onderin loopt een gang naar het zuiden
 # (een lange kaart met poorten): instabiele wand (open na Spacetime_AllSidequestsDone) -> ?????-kamer ->
@@ -830,6 +860,9 @@ def lavender(names):
     S.npc('Notice', "NOTICE\n\nSILPH SCOPES are sold out. Until further notice, assume every shadow is a "
           "GHOST, and every GHOST is in a mood.", 'MSGBOX_SIGN')
     S.write()
+    for grid in (gC, gH):                   # het item moet in beide layouts (spookstad en na de bevrijding) kloppen
+        no, nb = new_items(LAV, [c for row in grid for c in row], W)
+    objs += no; bgs += nb
     write_map(LAV, lay, objs, warps, bgs, music='MUS_RG_LAVENDER', region_map_section='MAPSEC_LAVENDER_TOWN',
               map_type='MAP_TYPE_TOWN', weather=LAV_WEATHER, allow_cycling=True, allow_escaping=False)
     return first_rift, kind
@@ -1220,6 +1253,8 @@ def tower(tower_grids, lav_tower_warp):
       ('CaretakerDone', "Every soul up here had a trainer once.\n\nTake good care of yours. "
                         "The paperwork for ghosts is unbelievable.")])
         S.write()
+        no, nb = new_items(name, cells, W)
+        objs += no; bgs += nb
         write_map(name, lay, objs, warps, bgs, music='MUS_RG_POKE_TOWER', region_map_section='MAPSEC_POKEMON_TOWER',
                   map_type='MAP_TYPE_INDOOR', allow_escaping=True, show_map_name=(name == 'PokemonTower_1F'))
         out.append(name)
@@ -1363,6 +1398,8 @@ def cerulean(cave_grids):
                  "an exhausted opponent. Where is the honor in that? Where is the CHALLENGE?\""),
       ('MewtwoHealed', "MEWTWO restored your POKéMON to full health!\n\n\"Now. Show me what you are worth.\"")])
         S.write()
+        no, nb = new_items(name, cells, W)
+        objs += no; bgs += nb
         write_map(name, lay, objs, warps, bgs, music='MUS_RG_ROCKET_HIDEOUT', region_map_section='MAPSEC_CERULEAN_CAVE',
                   map_type='MAP_TYPE_UNDERGROUND', show_map_name=(name == 'CeruleanCave_1F'))
         out.append(name)
@@ -1584,6 +1621,9 @@ def check():
         if not (adj(r, x, y) or (x, y) in r): problems.append('Lavender: deur %s onbereikbaar' % dest)
     for o in k.d['object_events']:
         if not adj(r, o['x'], o['y']): problems.append('Lavender: NPC %s' % o['script'])
+    for b in k.d['bg_events']:
+        if b['type'] == 'hidden_item' and (b['x'], b['y']) not in r:
+            problems.append('Lavender: verborgen item %s' % b['item'])
     # toren: elke verdieping vanaf de trap omlaag naar de trap omhoog
     for name, _ in TOWER:
         k = ll.Kaart(name)
@@ -1613,6 +1653,9 @@ def check():
         for o in k.d['object_events']:
             if 'BREAKABLE' in o['graphics_id']: continue
             if not adj(seen.get(name, set()), o['x'], o['y']): problems.append('%s: object %s %s' % (name, o['x'], o['y']))
+        for b in k.d['bg_events']:
+            if b['type'] == 'hidden_item' and (b['x'], b['y']) not in seen.get(name, set()):
+                problems.append('%s: verborgen item %s' % (name, b['item']))
     print('controles:', 'ok' if not problems else '\n  ' + '\n  '.join(problems))
     return problems
 

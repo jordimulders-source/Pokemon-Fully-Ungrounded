@@ -11,6 +11,8 @@ Onderwater:
 Diepzeetrog:
 - Underwater_Route127_Trench: nieuwe kaart (kopie van de Sealed Chamber-trog, 14 rijen dieper), via een zwemgat in de
   kop van de centrale trog van onderwater 127 (24,12). Eigen diepzee-tabel, items, een diepzeeduiker en een geheim.
+  Sinds 9 okt bouwt trog127.py het onderste deel (zigzaggebied, tweede zwemgat naar onderwater 128) en verplaatst hij de
+  trogitems: draai trog127.py (en daarna coral_cathedral.py) na dit script.
 Bovenwater:
 - Verborgen items op Route 126/127/128/130/132/133/134; oceanograaf (127), Parasol Lady op een eilandje (128),
   zwemmende Tuber + fotograaf (130), Ruin Maniac (134).

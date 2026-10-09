@@ -1226,6 +1226,7 @@
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
 #define TRAINER_SWIMMER_CORINNE             1080 // Project Grounded: Koraalkathedraal: zwemt al jaren rondjes om hetzelfde koraal
 #define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
+// }
 // national_park { (tools/grounded/maptools/national_park.py; id 1090-1097)
 #define TRAINER_NP_BUG_CATCHER_DOUGLAS      1090 // Project Grounded: National Park, insectenwedstrijd
 #define TRAINER_NP_PICNICKER_SIENNA         1091 // Project Grounded: National Park, picknick

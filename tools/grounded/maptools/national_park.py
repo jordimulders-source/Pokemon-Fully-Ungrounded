@@ -1047,6 +1047,17 @@ ILEX_ITEMS = [(5, 41, 'ITEM_REVIVAL_HERB', 'FLAG_ITEM_ILEX_FOREST_REVIVAL_HERB')
               (33, 5, 'ITEM_BOTTLE_CAP', 'FLAG_ITEM_ILEX_FOREST_BOTTLE_CAP'),
               (35, 35, 'ITEM_MIRACLE_SEED', 'FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED')]
 ILEX_HIDDEN = [(7, 18, 'ITEM_RARE_CANDY', 'FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY')]
+# items die nergens anders liggen (nieuwe_items.py; Jordi 9 okt)
+import nieuwe_items as _ni
+NEW_ITEM_POS = {'ITEM_SPORT_BALL': (11, 8), 'ITEM_INSECT_PLATE': (13, 49), 'ITEM_POWER_BELT': (47, 23),
+                'ITEM_FRIEND_BALL': (17, 38), 'ITEM_LOVE_BALL': (4, 31), 'ITEM_DESTINY_KNOT': (28, 4),
+                'ITEM_ROSE_INCENSE': (4, 44)}
+NEW_QTY = {}
+for _mp, _balls, _hid in (('NationalPark', 'PARK_ITEMS', 'PARK_HIDDEN'), ('IlexForest', 'ILEX_ITEMS', 'ILEX_HIDDEN')):
+    for _fl, _it, _q, _h in _ni.items(_mp):
+        _x, _y = NEW_ITEM_POS[_it]
+        globals()[_hid if _h else _balls] = globals().get(_hid if _h else _balls, []) + [(_x, _y, _it, _fl)]
+        NEW_QTY[_it] = _q
 ILEX_SIGN = (18, 2)
 
 
@@ -1071,6 +1082,7 @@ def maps():
                         'LOCALID_NATIONAL_PARK_SHADOW_' + nm))
     for x, y, it, fl in PARK_ITEMS:
         objs.append(ball(x, y, it, fl))
+        objs[-1]['movement_range_x'] = NEW_QTY.get(it, 1) if NEW_QTY.get(it, 1) > 1 else 0
     warps = [warp(GATE_DOOR[0], GATE_DOOR[1], 'NATIONAL_PARK_GATE', 0),
              warp(TUNNEL[0], PH - 1, 'ILEX_FOREST', 0), warp(TUNNEL[1], PH - 1, 'ILEX_FOREST', 1)]
     bgs = [sign(SIGN_PLAZA[0], SIGN_PLAZA[1], P + 'SignPlaza'), sign(SIGN_GATE[0], SIGN_GATE[1], P + 'SignGate')] + \
@@ -1108,6 +1120,7 @@ def maps():
                      'MOVEMENT_TYPE_FACE_DOWN'), 'LOCALID_ILEX_FOREST_CELEBI')]
     for x, y, it, fl in ILEX_ITEMS:
         iobjs.append(ball(x, y, it, fl))
+        iobjs[-1]['movement_range_x'] = NEW_QTY.get(it, 1) if NEW_QTY.get(it, 1) > 1 else 0
     write_map('IlexForest', ilay, iobjs, [warp(ILEX_ENTRY[0], 0, 'NATIONAL_PARK', 1), warp(ILEX_ENTRY[1], 0, 'NATIONAL_PARK', 2)],
               [sign(ILEX_SIGN[0], ILEX_SIGN[1], P + 'Sign')] + [hidden(x, y, it, fl) for x, y, it, fl in ILEX_HIDDEN],
               music='MUS_RG_VIRIDIAN_FOREST', region_map_section='MAPSEC_ILEX_FOREST', weather='WEATHER_SHADE',

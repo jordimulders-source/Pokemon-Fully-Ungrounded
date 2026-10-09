@@ -1648,7 +1648,7 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
@@ -1662,6 +1662,7 @@
 #define FLAG_ITEM_ILEX_FOREST_BOTTLE_CAP                 FLAG_GROUNDED(709) // Project Grounded: Ilex Forest: Bottle Cap
 #define FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY          FLAG_GROUNDED(710) // Project Grounded: Ilex Forest: verborgen Rare Candy
 #define FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED               FLAG_GROUNDED(711) // Project Grounded: Ilex Forest: Miracle Seed (dwaalpad)
+// }
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; FLAG_GROUNDED 660-699, 685-699 nog vrij)
 #define FLAG_ITEM_SEA_SHARD_ROUTE126_CORAL_CATHEDRAL     FLAG_GROUNDED(660) // Project Grounded: Koraalkathedraal: Sea Shard
 #define FLAG_ITEM_CORAL_CATHEDRAL_LUMINOUS_MOSS          FLAG_GROUNDED(661) // Project Grounded: Koraalkathedraal: Luminous Moss
@@ -1680,6 +1681,38 @@
 #define FLAG_SEA_SHARD_REWARD_6                          FLAG_GROUNDED(682) // Project Grounded: Sea Shards: beloning 6 (Gold Bottle Cap)
 #define FLAG_SEA_SHARD_REWARD_8                          FLAG_GROUNDED(683) // Project Grounded: Sea Shards: beloning 8 (Master Ball)
 #define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
+// }
+// nieuwe_items { (tools/grounded/maptools/nieuwe_items.py; FLAG_GROUNDED 840-879, items die nergens anders liggen)
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_LURE_BALL   FLAG_GROUNDED(840) // Project Grounded: diepzeetrog: Lure Balls
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_HEAVY_BALL  FLAG_GROUNDED(841) // Project Grounded: diepzeetrog: Heavy Balls
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_BINDING_BAND FLAG_GROUNDED(842) // Project Grounded: diepzeetrog: Binding Band
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EJECT_BUTTON FLAG_GROUNDED(843) // Project Grounded: diepzeetrog: Eject Button
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_POWER_ANKLET FLAG_GROUNDED(844) // Project Grounded: diepzeetrog: Power Anklet
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EXP_CANDY_L FLAG_GROUNDED(845) // Project Grounded: diepzeetrog: Exp. Candy L
+#define FLAG_HIDDEN_ITEM_UNDERWATER_ROUTE127_TRENCH_RELIC_VASE FLAG_GROUNDED(846) // Project Grounded: diepzeetrog: verborgen Relic Vase
+#define FLAG_ITEM_CHARGESTONE_CAVE_1F_FAST_BALL          FLAG_GROUNDED(850) // Project Grounded: Chargestone Cave 1F: Fast Balls
+#define FLAG_ITEM_CHARGESTONE_CAVE_1F_POWER_LENS         FLAG_GROUNDED(851) // Project Grounded: Chargestone Cave 1F: Power Lens
+#define FLAG_ITEM_CHARGESTONE_CAVE_B1F_EJECT_PACK        FLAG_GROUNDED(852) // Project Grounded: Chargestone Cave B1F: Eject Pack
+#define FLAG_ITEM_CHARGESTONE_CAVE_B1F_TERRAIN_EXTENDER  FLAG_GROUNDED(853) // Project Grounded: Chargestone Cave B1F: Terrain Extender
+#define FLAG_ITEM_CHARGESTONE_CAVE_B2F_ABILITY_SHIELD    FLAG_GROUNDED(854) // Project Grounded: Chargestone Cave B2F: Ability Shield
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_CAVE_B2F_EXP_CANDY_XL FLAG_GROUNDED(855) // Project Grounded: Chargestone Cave B2F: verborgen Exp. Candy XL
+#define FLAG_HIDDEN_ITEM_LAVENDER_TOWN_EXP_CANDY_S       FLAG_GROUNDED(860) // Project Grounded: Lavender Town: verborgen Exp. Candy S
+#define FLAG_ITEM_POKEMON_TOWER_3F_MOON_BALL             FLAG_GROUNDED(861) // Project Grounded: Pokemon Tower 3F: Moon Balls
+#define FLAG_ITEM_POKEMON_TOWER_4F_RED_CARD              FLAG_GROUNDED(862) // Project Grounded: Pokemon Tower 4F: Red Card
+#define FLAG_ITEM_POKEMON_TOWER_2F_POWER_BRACER          FLAG_GROUNDED(863) // Project Grounded: Pokemon Tower 2F: Power Bracer
+#define FLAG_ITEM_CERULEAN_CAVE_1F_LEVEL_BALL            FLAG_GROUNDED(864) // Project Grounded: Cerulean Cave 1F: Level Balls
+#define FLAG_ITEM_CERULEAN_CAVE_2F_POWER_WEIGHT          FLAG_GROUNDED(865) // Project Grounded: Cerulean Cave 2F: Power Weight
+#define FLAG_ITEM_CERULEAN_CAVE_2F_ROOM_SERVICE          FLAG_GROUNDED(866) // Project Grounded: Cerulean Cave 2F: Room Service
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_MIRROR_HERB          FLAG_GROUNDED(867) // Project Grounded: Cerulean Cave B1F: Mirror Herb
+#define FLAG_HIDDEN_ITEM_CERULEAN_CAVE_B1F_POWER_BAND    FLAG_GROUNDED(868) // Project Grounded: Cerulean Cave B1F: verborgen Power Band
+#define FLAG_ITEM_NATIONAL_PARK_SPORT_BALL               FLAG_GROUNDED(870) // Project Grounded: National Park: Sport Balls
+#define FLAG_ITEM_NATIONAL_PARK_INSECT_PLATE             FLAG_GROUNDED(871) // Project Grounded: National Park: Insect Plate
+#define FLAG_HIDDEN_ITEM_NATIONAL_PARK_POWER_BELT        FLAG_GROUNDED(872) // Project Grounded: National Park: verborgen Power Belt
+#define FLAG_ITEM_ILEX_FOREST_FRIEND_BALL                FLAG_GROUNDED(873) // Project Grounded: Ilex Forest: Friend Balls
+#define FLAG_ITEM_ILEX_FOREST_LOVE_BALL                  FLAG_GROUNDED(874) // Project Grounded: Ilex Forest: Love Balls
+#define FLAG_ITEM_ILEX_FOREST_DESTINY_KNOT               FLAG_GROUNDED(875) // Project Grounded: Ilex Forest: Destiny Knot
+#define FLAG_HIDDEN_ITEM_ILEX_FOREST_ROSE_INCENSE        FLAG_GROUNDED(876) // Project Grounded: Ilex Forest: verborgen Rose Incense
+// }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)
 #define FLAG_HIDE_CHARGESTONE_ZERAORA                    FLAG_GROUNDED(761) // Project Grounded: Chargestone Cave B2F: ZERAORA verborgen (voor Colress verslagen is of na het gevecht)

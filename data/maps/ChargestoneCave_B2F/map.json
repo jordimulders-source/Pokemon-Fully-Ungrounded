@@ -80,6 +80,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_PP_MAX",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_CHARGESTONE_B2F_PP_MAX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 38,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ABILITY_SHIELD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_CHARGESTONE_CAVE_B2F_ABILITY_SHIELD"
     }
   ],
   "warp_events": [
@@ -108,6 +121,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "ChargestoneCave_B2F_EventScript_Machine"
+    },
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 21,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_XL",
+      "flag": "FLAG_HIDDEN_ITEM_CHARGESTONE_CAVE_B2F_EXP_CANDY_XL"
     }
   ]
 }

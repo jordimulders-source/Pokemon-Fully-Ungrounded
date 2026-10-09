@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 78 soorten.
+// 84 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -153,6 +153,18 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_MIRAIDON, 0, COMPOUND_STRING("AREA ZERO, the future. Something at the\nbottom has wheels where its manners\lshould be.")},
     // TERAPAGOS: AreaZero_TeraCave
     {SPECIES_TERAPAGOS, 0, COMPOUND_STRING("AREA ZERO: shut down both security\nsystems and the TERA CAVE opens.\lSomething shiny is locked in.")},
+    // ARTICUNO: MossdeepCity, ShoalCave_LowTideFrozenDepths
+    {SPECIES_ARTICUNO, 0, COMPOUND_STRING("SHOAL CAVE at low tide, all the way down\nin the ice. Something blue is pretending\lto be furniture.")},
+    // ZAPDOS: Route111, Route119
+    {SPECIES_ZAPDOS, 0, COMPOUND_STRING("ROUTE 119 never stops thundering. The\nWEATHER INSTITUTE blames the climate.\lThe climate blames a bird.")},
+    // MOLTRES: MtChimney_Summit, Route120
+    {SPECIES_MOLTRES, 0, COMPOUND_STRING("The crater rim of MT. CHIMNEY. Somebody\nup there is warming their feet in the\llava.")},
+    // DIANCIE: GraniteCave_CrystalGrotto
+    {SPECIES_DIANCIE, FLAG_RECEIVED_DIANCIE, COMPOUND_STRING("The crystal grotto under GRANITE CAVE.\nThe CARBINK are guarding a princess.\lBadly.")},
+    // MELOETTA: Route123
+    {SPECIES_MELOETTA, 0, COMPOUND_STRING("ROUTE 123. A SNORLAX is asleep on the\nBERRY MASTER's fields. Bring something\lto wake it up. Bring an encore.")},
+    // ZYGARDE: DesertUnderpass
+    {SPECIES_ZYGARDE, 0, COMPOUND_STRING("Life and death are settled? Then order\ncomes to check. The DESERT UNDERPASS,\lmiddle of the tunnels.")},
     // PECHARUNT: YoshisIsland_Hills
     {SPECIES_PECHARUNT, 0, COMPOUND_STRING("YOSHI'S ISLAND, the hills. A tiny stall\nsells mochi. Don't eat the mochi.")},
     // DIALGA: SpearPillar

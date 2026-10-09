@@ -505,3 +505,4 @@ if __name__ == '__main__':
             subprocess.run([sys.executable, os.path.join(HERE, 'render_map.py'), n,
                             os.path.join(sys.argv[1], n + '.png'), '0', str(L['height'])], check=True)
     print('klaar:', ', '.join(names))
+    print('let op: draai daarna tools/grounded/maptools/legends2.py opnieuw (legendaries op deze kaarten)')

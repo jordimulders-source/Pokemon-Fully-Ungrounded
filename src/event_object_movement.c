@@ -3848,11 +3848,20 @@ bool8 MovementType_WanderAround_Step1(struct ObjectEvent *objectEvent, struct Sp
     return TRUE;
 }
 
+// Project Grounded: Galar-Zapdos (Route 111) rent rond: snelle stappen en korte pauzes
+static bool32 IsRunningWanderer(struct ObjectEvent *objectEvent)
+{
+    return IS_OW_MON_OBJ(objectEvent) && OW_SPECIES(objectEvent) == SPECIES_ZAPDOS_GALAR;
+}
+
 bool8 MovementType_WanderAround_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (!ObjectEventExecSingleMovementAction(objectEvent, sprite))
         return FALSE;
-    SetMovementDelay(sprite, sMovementDelaysMedium[Random() % ARRAY_COUNT(sMovementDelaysMedium)]);
+    if (IsRunningWanderer(objectEvent))
+        SetMovementDelay(sprite, 2 + (Random() % 8));
+    else
+        SetMovementDelay(sprite, sMovementDelaysMedium[Random() % ARRAY_COUNT(sMovementDelaysMedium)]);
     sprite->sTypeFuncId = 3;
     return TRUE;
 }
@@ -3891,7 +3900,10 @@ bool8 MovementType_WanderAround_Step4(struct ObjectEvent *objectEvent, struct Sp
 
 bool8 MovementType_WanderAround_Step5(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkNormalMovementAction(objectEvent->movementDirection));
+    if (IsRunningWanderer(objectEvent))
+        ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkFasterMovementAction(objectEvent->movementDirection));
+    else
+        ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkNormalMovementAction(objectEvent->movementDirection));
     objectEvent->singleMovementActive = TRUE;
     sprite->sTypeFuncId = 6;
     return TRUE;

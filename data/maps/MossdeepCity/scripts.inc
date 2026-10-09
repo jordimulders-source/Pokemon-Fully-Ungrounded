@@ -3,6 +3,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call MossdeepCity_EventScript_Legends2_GalarTransition
 	call MossdeepCity_EventScript_SetScottDisguise
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
@@ -652,3 +653,113 @@ MossdeepCity_Text_EF_WallyMossdeepPostBattle:
 	.string "Bye-bye, {PLAYER}!$"
 
 @ }
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+MossdeepCity_EventScript_Legends2_GalarTransition:
+	setflag FLAG_HIDE_LEGENDS_GALAR_ARTICUNO
+	goto_if_set FLAG_CAUGHT_GALAR_ARTICUNO, MossdeepCity_EventScript_Legends2_GalarTransitionEnd
+	call Legends2_EventScript_GalarReady
+	goto_if_eq VAR_RESULT, FALSE, MossdeepCity_EventScript_Legends2_GalarTransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_GALAR_ARTICUNO
+	random 3
+	copyvar VAR_TEMP_9, VAR_RESULT
+	call MossdeepCity_EventScript_Legends2_GAPlace
+MossdeepCity_EventScript_Legends2_GalarTransitionEnd:
+	return
+
+MossdeepCity_EventScript_Legends2_GAPlace:
+	goto_if_eq VAR_TEMP_9, 0, MossdeepCity_EventScript_Legends2_GASpot0
+	goto_if_eq VAR_TEMP_9, 1, MossdeepCity_EventScript_Legends2_GASpot1
+	goto_if_eq VAR_TEMP_9, 2, MossdeepCity_EventScript_Legends2_GASpot2
+	return
+
+MossdeepCity_EventScript_Legends2_GASpot0:
+	setobjectxyperm LOCALID_LEGENDS_GALAR_ARTICUNO, 70, 10
+	return
+
+MossdeepCity_EventScript_Legends2_GASpot1:
+	setobjectxyperm LOCALID_LEGENDS_GALAR_ARTICUNO, 59, 15
+	return
+
+MossdeepCity_EventScript_Legends2_GASpot2:
+	setobjectxyperm LOCALID_LEGENDS_GALAR_ARTICUNO, 69, 20
+	return
+
+@ Eerste keer aanspreken: flitst weg naar een andere uitkijkplek (VAR_TEMP_A = 1). Daarna: gevecht.
+MossdeepCity_EventScript_GalarArticuno::
+	lock
+	goto_if_eq VAR_TEMP_A, 1, MossdeepCity_EventScript_GalarArticunoFight
+	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
+	msgbox MossdeepCity_Text_GalarArticunoBlink, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreen FADE_TO_WHITE
+	removeobject LOCALID_LEGENDS_GALAR_ARTICUNO
+	addvar VAR_TEMP_9, 1
+	goto_if_lt VAR_TEMP_9, 3, MossdeepCity_EventScript_GalarArticunoMove
+	setvar VAR_TEMP_9, 0
+MossdeepCity_EventScript_GalarArticunoMove:
+	call MossdeepCity_EventScript_Legends2_GAPlace
+	addobject LOCALID_LEGENDS_GALAR_ARTICUNO
+	fadescreen FADE_FROM_WHITE
+	setvar VAR_TEMP_A, 1
+	msgbox MossdeepCity_Text_GalarArticunoGone, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_GalarArticunoFight::
+	faceplayer
+	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
+	msgbox MossdeepCity_Text_GalarArticunoAgain, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	goto MossdeepCity_EventScript_GalarArticuno2_Battle
+
+MossdeepCity_Text_GalarArticunoBlink:
+	.string "A purple ARTICUNO is staring at the\n"
+	.string "stars. Then at you.\p"
+	.string "Its eyes glow. It has decided you are a\n"
+	.string "spoiler.$"
+
+MossdeepCity_Text_GalarArticunoGone:
+	.string "It blinked somewhere else on the island.\p"
+	.string "Rude. Also, honestly, a good trick.$"
+
+MossdeepCity_Text_GalarArticunoAgain:
+	.string "It sighs telepathically. It sounds like\n"
+	.string "a dial-up modem.\p"
+	.string "Fine. It'll fight. But it's judging your\n"
+	.string "star chart.$"
+
+MossdeepCity_EventScript_GalarArticuno2_Battle::
+	setwildbattle SPECIES_ARTICUNO_GALAR, 88
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MossdeepCity_EventScript_GalarArticuno2_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MossdeepCity_EventScript_GalarArticuno2_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MossdeepCity_EventScript_GalarArticuno2_Stays
+	removeobject LOCALID_LEGENDS_GALAR_ARTICUNO
+	setflag FLAG_HIDE_LEGENDS_GALAR_ARTICUNO
+	msgbox MossdeepCity_Text_GalarArticuno2Fled, MSGBOX_DEFAULT
+MossdeepCity_EventScript_GalarArticuno2_Stays::
+	release
+	end
+
+MossdeepCity_EventScript_GalarArticuno2_Caught::
+	removeobject LOCALID_LEGENDS_GALAR_ARTICUNO
+	setflag FLAG_HIDE_LEGENDS_GALAR_ARTICUNO
+	setflag FLAG_CAUGHT_GALAR_ARTICUNO
+	release
+	end
+
+MossdeepCity_Text_GalarArticuno2Fled:
+	.string "ARTICUNO folded space around itself\n"
+	.string "and left.\p"
+	.string "Somewhere, an astronomer just found a\n"
+	.string "new star. It's ARTICUNO. It's mocking\l"
+	.string "him.$"
+@ --- einde legends2 ---

@@ -54,6 +54,7 @@ Route120_EventScript_SetBridgeKecleonMovement::
 	return
 
 Route120_OnTransition:
+	call Route120_EventScript_Legends2_GalarTransition
 	call GabbyAndTy_EventScript_UpdateLocation
 	call Route120_EventScript_SetWeather
 	end
@@ -431,3 +432,59 @@ Route120_Text_MangroveMireSign:
 	.string "{LEFT_ARROW} MANGROVE MIRE\p"
 	.string "Damp. Dark. Smells like a wet dog\n"
 	.string "that ate a cheese.$"
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+Route120_EventScript_Legends2_GalarTransition:
+	setflag FLAG_HIDE_LEGENDS_GALAR_MOLTRES
+	goto_if_set FLAG_CAUGHT_GALAR_MOLTRES, Route120_EventScript_Legends2_GalarTransitionEnd
+	call Legends2_EventScript_GalarReady
+	goto_if_eq VAR_RESULT, FALSE, Route120_EventScript_Legends2_GalarTransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_GALAR_MOLTRES
+Route120_EventScript_Legends2_GalarTransitionEnd:
+	return
+
+Route120_EventScript_GalarMoltres::
+	lock
+	faceplayer
+	playmoncry SPECIES_MOLTRES_GALAR, CRY_MODE_ENCOUNTER
+	msgbox Route120_Text_GalarMoltres, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+Route120_EventScript_GalarMoltres_Battle::
+	setwildbattle SPECIES_MOLTRES_GALAR, 88
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route120_EventScript_GalarMoltres_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route120_EventScript_GalarMoltres_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route120_EventScript_GalarMoltres_Stays
+	removeobject LOCALID_LEGENDS_GALAR_MOLTRES
+	setflag FLAG_HIDE_LEGENDS_GALAR_MOLTRES
+	msgbox Route120_Text_GalarMoltresFled, MSGBOX_DEFAULT
+Route120_EventScript_GalarMoltres_Stays::
+	release
+	end
+
+Route120_EventScript_GalarMoltres_Caught::
+	removeobject LOCALID_LEGENDS_GALAR_MOLTRES
+	setflag FLAG_HIDE_LEGENDS_GALAR_MOLTRES
+	setflag FLAG_CAUGHT_GALAR_MOLTRES
+	release
+	end
+
+Route120_Text_GalarMoltres:
+	.string "Kyaaah...\p"
+	.string "(A MOLTRES made of bad vibes. Its\n"
+	.string "flames are the colour of a bruise. It\l"
+	.string "came for the tomb. It stayed for the\l"
+	.string "fog.)$"
+
+Route120_Text_GalarMoltresFled:
+	.string "MOLTRES dissolved into the mist.\p"
+	.string "The fog got a little thicker. The fog\n"
+	.string "got a little meaner. It'll be back when\l"
+	.string "the mood is right. The mood is always\l"
+	.string "right here.$"
+@ --- einde legends2 ---

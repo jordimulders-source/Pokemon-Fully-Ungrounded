@@ -3,6 +3,7 @@ Route123_MapScripts::
 	.byte 0
 
 Route123_OnTransition:
+	call Route123_EventScript_Legends2_Transition
 	special SetRoute123Weather
 	end
 
@@ -201,3 +202,142 @@ Route123_Text_BerryMastersHouse:
 	.string "For all your experimentation and\n"
 	.string "cross-breeding on BERRIES.$"
 
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+Route123_EventScript_Legends2_Transition:
+	setflag FLAG_HIDE_LEGENDS_POKE_FLUTE
+	setflag FLAG_HIDE_LEGENDS_MELOETTA
+	goto_if_set FLAG_ROUTE123_SNORLAX_GONE, Route123_EventScript_Legends2_TransitionMeloetta
+	setflag FLAG_TEMP_14
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route123_EventScript_Legends2_TransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_POKE_FLUTE
+	return
+Route123_EventScript_Legends2_TransitionMeloetta:
+	goto_if_set FLAG_CAUGHT_MELOETTA, Route123_EventScript_Legends2_TransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_MELOETTA
+Route123_EventScript_Legends2_TransitionEnd:
+	return
+
+Route123_EventScript_Snorlax::
+	lock
+	msgbox Route123_Text_Snorlax, MSGBOX_DEFAULT
+	release
+	end
+
+@ Post-game: de Poke Flute naast Snorlax. Oppakken = meteen spelen (geen ja/nee), Snorlax loopt weg, Meloetta komt.
+Route123_EventScript_PokeFlute::
+	lock
+	removeobject LOCALID_LEGENDS_POKE_FLUTE
+	setflag FLAG_HIDE_LEGENDS_POKE_FLUTE
+	giveitem ITEM_POKE_FLUTE
+	msgbox Route123_Text_FluteBlow, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_RG_POKE_FLUTE
+	waitfanfare
+	playmoncry SPECIES_SNORLAX, CRY_MODE_ENCOUNTER
+	applymovement LOCALID_LEGENDS_SNORLAX, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitmoncry
+	msgbox Route123_Text_SnorlaxWakes, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LEGENDS_SNORLAX, Route123_EventScript_Movement_SnorlaxLeaves
+	waitmovement 0
+	removeobject LOCALID_LEGENDS_SNORLAX
+	setflag FLAG_ROUTE123_SNORLAX_GONE
+	delay 30
+	msgbox Route123_Text_SomeoneHums, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_HIDE_LEGENDS_MELOETTA
+	addobject LOCALID_LEGENDS_MELOETTA
+	playse SE_M_HEAL_BELL
+	waitse
+	playmoncry SPECIES_MELOETTA_ARIA, CRY_MODE_ENCOUNTER
+	msgbox Route123_Text_MeloettaAppears, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	goto Route123_EventScript_Meloetta_Battle
+
+Route123_EventScript_Movement_SnorlaxLeaves:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+Route123_Text_Snorlax:
+	.string "A SNORLAX is asleep in the only gap in\n"
+	.string "the fence.\p"
+	.string "Behind it: the BERRY MASTER's prize\n"
+	.string "fields, eaten down to the dirt. In front\l"
+	.string "of it: you. It has chosen a side.\p"
+	.string "Snoring intensifies.$"
+
+Route123_Text_FluteBlow:
+	.string "A POKé FLUTE was lying next to SNORLAX,\n"
+	.string "like a snooze button someone left out.\p"
+	.string "You play it. Obviously.$"
+
+Route123_Text_SnorlaxWakes:
+	.string "SNORLAX woke up!\p"
+	.string "It looks at the berries. It looks at you.\n"
+	.string "It decides neither is worth getting up\l"
+	.string "for, gets up anyway, and wanders off to\l"
+	.string "sleep somewhere quieter.$"
+
+Route123_Text_SomeoneHums:
+	.string "...Someone is humming your song back at\n"
+	.string "you. Slightly better.$"
+
+Route123_Text_MeloettaAppears:
+	.string "MELOETTA drifted down out of nowhere!\p"
+	.string "It was sleeping on SNORLAX's belly the\n"
+	.string "whole time. Your solo has been reviewed.\l"
+	.string "The review is a fight.$"
+
+Route123_EventScript_Meloetta::
+	lock
+	faceplayer
+	playmoncry SPECIES_MELOETTA_ARIA, CRY_MODE_ENCOUNTER
+	msgbox Route123_Text_Meloetta, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+Route123_EventScript_Meloetta_Battle::
+	setwildbattle SPECIES_MELOETTA_ARIA, 62
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route123_EventScript_Meloetta_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route123_EventScript_Meloetta_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route123_EventScript_Meloetta_Stays
+	removeobject LOCALID_LEGENDS_MELOETTA
+	setflag FLAG_HIDE_LEGENDS_MELOETTA
+	msgbox Route123_Text_MeloettaFled, MSGBOX_DEFAULT
+Route123_EventScript_Meloetta_Stays::
+	release
+	end
+
+Route123_EventScript_Meloetta_Caught::
+	removeobject LOCALID_LEGENDS_MELOETTA
+	setflag FLAG_HIDE_LEGENDS_MELOETTA
+	setflag FLAG_CAUGHT_MELOETTA
+	release
+	end
+
+Route123_Text_Meloetta:
+	.string "La la laaa!\p"
+	.string "(MELOETTA is still humming your POKé\n"
+	.string "FLUTE tune. It has added a key change.\l"
+	.string "It wants a rematch.)$"
+
+Route123_Text_MeloettaFled:
+	.string "MELOETTA spun away mid-note.\p"
+	.string "It'll be back for the encore. It always\n"
+	.string "comes back for the encore.$"
+@ --- einde legends2 ---

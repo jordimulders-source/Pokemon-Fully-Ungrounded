@@ -2,6 +2,7 @@
 @ Bereikbaar via de trap in de noordoostelijke bergkam van Mt. Chimney (vanaf badge 5).
 @ Drie terrassen met sterke trainers, bovenin een kratermeer met een vaste Volcarona (lv 40) en de vulkanoloog.
 MtChimney_Summit_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MtChimney_Summit_Legends2_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, MtChimney_Summit_OnResume
 	.byte 0
 
@@ -130,3 +131,60 @@ MtChimney_Summit_Text_SummitSign:
 	.string "highest-ranking person in Hoenn.\p"
 	.string "This title is not recognized by\n"
 	.string "any government.$"
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+MtChimney_Summit_EventScript_Legends2_Transition:
+	setflag FLAG_HIDE_LEGENDS_MOLTRES
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MtChimney_Summit_EventScript_Legends2_TransitionEnd
+	goto_if_set FLAG_CAUGHT_KANTO_MOLTRES, MtChimney_Summit_EventScript_Legends2_TransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_MOLTRES
+MtChimney_Summit_EventScript_Legends2_TransitionEnd:
+	return
+
+MtChimney_Summit_EventScript_Moltres::
+	lock
+	faceplayer
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
+	msgbox MtChimney_Summit_Text_Moltres, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+MtChimney_Summit_EventScript_Moltres_Battle::
+	setwildbattle SPECIES_MOLTRES, 85
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MtChimney_Summit_EventScript_Moltres_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtChimney_Summit_EventScript_Moltres_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtChimney_Summit_EventScript_Moltres_Stays
+	removeobject LOCALID_LEGENDS_MOLTRES
+	setflag FLAG_HIDE_LEGENDS_MOLTRES
+	msgbox MtChimney_Summit_Text_MoltresFled, MSGBOX_DEFAULT
+MtChimney_Summit_EventScript_Moltres_Stays::
+	release
+	end
+
+MtChimney_Summit_EventScript_Moltres_Caught::
+	removeobject LOCALID_LEGENDS_MOLTRES
+	setflag FLAG_HIDE_LEGENDS_MOLTRES
+	setflag FLAG_CAUGHT_KANTO_MOLTRES
+	call Legends2_EventScript_CheckGalarArrive
+	release
+	end
+
+MtChimney_Summit_Text_Moltres:
+	.string "Kyaaoo!\p"
+	.string "(It's warming its feet in the crater. The\n"
+	.string "lava is warming its feet on MOLTRES.)$"
+
+MtChimney_Summit_Text_MoltresFled:
+	.string "MOLTRES dove straight into the lava.\p"
+	.string "It does that. It's fine. It's always\n"
+	.string "fine. It'll be back on the rim tomorrow,\l"
+	.string "smug and slightly crispy.$"
+@ --- einde legends2 ---
+
+MtChimney_Summit_Legends2_OnTransition:
+	call MtChimney_Summit_EventScript_Legends2_Transition
+	end

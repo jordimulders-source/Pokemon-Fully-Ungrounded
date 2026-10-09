@@ -36,7 +36,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_POMEG_3",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -49,7 +49,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_POMEG_4",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -62,7 +62,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_GREPA_1",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -75,7 +75,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_GREPA_2",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -153,7 +153,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_GREPA_3",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -166,7 +166,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_GREPA_4",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -179,7 +179,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_QUALOT_2",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -192,7 +192,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_QUALOT_3",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -205,7 +205,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_QUALOT_4",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -218,7 +218,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_QUALOT_1",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -231,7 +231,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_POMEG_1",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -244,7 +244,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_123_POMEG_2",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "FLAG_TEMP_14"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -596,6 +596,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Forces_EventScript_Thundurus",
       "flag": "FLAG_FORCES_HIDE_THUNDURUS"
+    },
+    {
+      "local_id": "LOCALID_LEGENDS_SNORLAX",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNORLAX)",
+      "x": 14,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_Snorlax",
+      "flag": "FLAG_ROUTE123_SNORLAX_GONE"
+    },
+    {
+      "local_id": "LOCALID_LEGENDS_POKE_FLUTE",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_PokeFlute",
+      "flag": "FLAG_HIDE_LEGENDS_POKE_FLUTE"
+    },
+    {
+      "local_id": "LOCALID_LEGENDS_MELOETTA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MELOETTA_ARIA)",
+      "x": 15,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_Meloetta",
+      "flag": "FLAG_HIDE_LEGENDS_MELOETTA"
     }
   ],
   "warp_events": [

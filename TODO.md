@@ -4,12 +4,12 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → **Spacetime S1** (zie hieronder) → ~~Zacian/Zamazenta + Mega Forest~~ (v0.9.176) → Koraalkathedraal/Sea Shards → National Park/Ilex/Eternatus → meren-kamer → Yoshi's Island → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
+**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → ~~Spacetime S1~~ (v0.9.178) → ~~Zacian/Zamazenta + Mega Forest~~ (v0.9.176) → Koraalkathedraal/Sea Shards → National Park/Ilex/Eternatus → meren-kamer → Yoshi's Island → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
 
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
 
@@ -17,12 +17,12 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
-   - **S1 (volgende):** ingang op Route 125: eiland en rots groter, ingang moet passen; eerste bezoek: Dialga + Palkia openen de scheuren (behalve ????? en Coronet), quest-poorten (gang naar ????? pas na alle sidequests); Lavender **haunted** maken (nu te vrolijk) + quest "kwade geesten verdrijven", geen Protip Oracle/Hoenn-gags (andere dimensie en tijd); Channelers gevarieerd (Ghost/Dark/Psychic/mysterieus); Cerulean Cave: Rockets die Mewtwo zoeken + **Giovanni** vlak vóór Mewtwo, daarna healt Mewtwo je en vecht. Geen Fly (andere dimensie).
+   - ~~S1~~ (v0.9.178). Open: de meren-scheur staat nu al open ("overkant laadt nog"), terwijl de meren-kamer volgens het plan pas na ????? komt: dichtzetten? `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls.
    - ~~a. Lavender Town + Pokémon Tower~~ (v0.9.173)
    - b. **National Park + Ilex Forest**: Calyrex/Eternatus/Celebi-quest (SPACETIME_PLAN); daarna Calyrex-quest met Glastrier/Spectrier (sneeuwgebied of nieuw eiland).
      - Ontwerp (Jordi, 9 okt, 3 screenshots HGSS/DPPt-stijl als inspiratie): park in de vorm van een **Poké Ball**, relaxed en comfortabel. Bovenste helft hoog gras, onderste helft ander (donkerder) gras, het midden een fontein als knop van de bal, stenen paden in trapvorm eromheen, hekjes, lantaarns en bloemen langs de rand, bomen rondom. Onderaan een gang naar een pleintje met bankjes, een bloembak en een bord, en daar een warp naar **Ilex Forest**. Ingang rechts vanuit de Spacetime Cave: een poortgebouwtje aan de oostkant (zoals HGSS), binnen een FRLG-achtig poorthuis met een zijuitgang (pijl-warp `MB_EAST_ARROW_WARP`, werkt in de engine). Ekat-sets: Park Tileset, Park Gazebo, Pond and Bridge. Geen bug-catching-minigame.
      - **Ilex Forest** (Jordi, 9 okt, 4 screenshots GSC/HGSS als inspiratie; meer creatieve vrijheid): mysterieus. Basis zoals GSC/HGSS: dicht bos met kronkelpaden, poorthuis linksboven en linksonder, vijver linksboven, het **schrijn in het midden** (Celebi-quest), houten hekjes, bloemenpaadjes, Cut-boompjes. Eigen draai: mist/donkere tint, dwaalpaden. Hier komt de **Celebi-quest**.
-   - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173). Nog: Lavender-NPC's met Ashfrost-teksten (Protip Oracle) herschrijven; `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls; deurtje in het rotsje op Route 125 is hoekig.
+   - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173).
    - d. **Gen 4-meren** (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
    - f. **Area Zero**: flinke paradox-quest met Miraidon/Koraidon, beveiligingssystemen en Tera Cave/Terapagos (SPACETIME_PLAN; paradoxen niet meer gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
@@ -68,6 +68,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
+0. **Trainer-id's raken op:** nog 50 vrij (1017–1019, 1026–1029, 1049, 1055–1059, 1068–1069, 1080–1099, 1107–1109, 1124–1129, 1180–1185). Genoeg voor National Park/Coronet, krap voor Yoshi's Island. Oplossing: ongebruikte vanilla-trainers hergebruiken (eerst tellen) of `MAX_TRAINERS_COUNT` ophogen met een save-migratie.
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
 3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, ~~Swords of Justice~~ (zie 18), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** post-game tijdens het gevecht tegen **Keccles in de Battle Frontier** springt hij uit je schaduw, wil samen met een sterke trainer strijden en hoort daarna bij je; Keccles: "wow, daar kan ik nog wat van leren. Dát is pas camouflage."
 

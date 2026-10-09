@@ -17622,3 +17622,11 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.177] - Mini Forest: boomstam in Hoenn-perspectief
 - Jordi: de omgevallen boom keek te veel van bovenaf. Nu een liggende stam uit Ekat's Haunted Woods (16×32, noord-zuid, past precies in de opening van 1 tegel), op helderheid omgezet naar de houtkleuren van het gedeelde palet. Zwaard en schild ongewijzigd.
+
+### [v0.9.178] - Spacetime S1: Dialga en Palkia, quest-poorten, spookstad Lavender, Giovanni en Mewtwo
+- **Ingang Route 125:** groter eiland (ondiepe rand, strand, zand) met een rotsheuvel met twee toppen; de grotopening zit in de onderrand, zoals bij Shoal Cave (verschijnt na de Hall of Fame).
+- **Eerste bezoek:** de grot is leeg tot Dialga en Palkia je begroeten (cry, schermschud, witte flits); daarna zijn 7 scheuren open. ????? en Mt. Coronet blijven dicht. ????? gaat open als alle sidequests klaar zijn (`Spacetime_AllSidequestsDone`; nu tellen Lavender en Cerulean, later uitbreidbaar). De onderzoeker en het ?????-bord zeggen hoeveel er nog openstaan.
+- **Lavender Town als spookstad:** eigen donkere paletten, graven, dode bomen (Ekat Haunted Woods), `WEATHER_SHADE`. Drie kwade geesten in de stad (Gengar, Dusknoir, Banette). Quest: de bezeten **Agatha** bovenin de Pokémon Tower verslaan (lv 70–71); daarna wordt de stad rustiger (eigen layout/paletten) en geeft de conciërge de Life Orb. De Protip Oracle is weg (een Silph Scope-verkoper); teksten voor en na de bevrijding.
+- **Channelers:** alle 10 teams herzien (Ghost, Dark, Psychic en mysterieus; geen dubbelen), bezeten teksten.
+- **Cerulean Cave:** vier Rocket-grunts (lv 66–70) en **Giovanni** (ace Nidoking lv 75, mugshot) vlak vóór Mewtwo. Daarna vertrekt hij, **healt Mewtwo je team** en vecht (nu lv 75).
+- Flags `FLAG_GROUNDED(574–579)`; trainers 1169, 1195–1199.

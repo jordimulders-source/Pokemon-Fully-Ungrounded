@@ -17748,3 +17748,7 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.199] - Area Zero als krater
 - Elke laag van Area Zero is een kom: ringvormige terrassen rond een bodem in het midden, ronde vormen, hoge noordwanden en lage zuidwanden. Je daalt in een spiraal af (per ring één trap, om en om links en rechts) en **de ladder naar de volgende diepte zit telkens in het midden**. In de Crystal-laag zitten de draaikolken van de Zero Gate en het verzegelde Tera-gat op de bodem; de Tera-grot is één ring met Terapagos in het midden.
 - Tiles, verhaal en events ongewijzigd (alleen herplaatst); Miraidon/Koraidon-tekst zegt nu "bottom of the crater".
+
+### [v0.9.200] - Mitch-thema v6: schonere horn
+- Feedback van Mitch: de horn klonk 'low quality'. Oorzaak: één sample die tot x1,7 omhoog werd gespeeld (terugvouwende hoge tonen), vervorming zonder oversampling en een korrelige uitsterftijd. Nu één sample per noot op de mixfrequentie, 8x oversampled vervorming en een schone loop (ruis −27..−31 dB i.p.v. −10..−15 dB).
+- Twee varianten: **A** dezelfde klank als v5 maar schoon, **B** (standaard) hoger en feller, richting de trompetten van het Elite Four-thema. Noten, ritme, wobbles en mix ongewijzigd. Wisselen: `python3 tools/grounded/mitch_theme.py a|b`.

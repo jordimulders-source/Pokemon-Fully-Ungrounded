@@ -17856,3 +17856,10 @@ Volgens Jordi's GBA-instructies per leider:
 - **Master Balls** te koop voor 200 BP bij de ruilbalie in de Battle Frontier.
 - **Catch rates:** legendaries/mythicals/UB's/paradoxen met catch rate 3 gaan naar 30; Arceus en de grote legendaries (Mewtwo, Lugia, Ho-Oh, Kyogre, Groudon, Rayquaza, Dialga, Palkia, Giratina, Reshiram, Zekrom, Kyurem, Zygarde, Cosmog-lijn, Necrozma, Calyrex, Koraidon, Miraidon) blijven 3; Eternatus en Terapagos van 255 naar 3.
 - Azure Flute-hints voor alle nieuwe; script `tools/grounded/maptools/legends2.py`, flags `FLAG_GROUNDED(1520–1540)`.
+
+### [v0.9.221] - Ultra Space
+- Post-game staat achterin **Altering Cave** een Ultra Wormhole naar een **Ultra Space-hub** (zwevend eiland). Het portaal daar stuurt je **willekeurig** naar de plek van een Ultra Beast die je nog niet hebt; **Necrozma** komt pas als de andere tien gevangen zijn.
+- Elf bizarre plekken (gang + arena), elk met de UB als zichtbaar object (lv 88–90, Necrozma 95; verslaan = blijft staan): **Nihilego** in een glazen droomwereld, **Buzzwole** in een sportschool, **Pheromosa** op een catwalk met jury, **Xurkitree** in een kabelwoud, **Celesteela** op een lanceerveld in het niets met negen aftellende Celesteela, **Kartana** in een papierwereld, **Guzzlord** op een afvalvlakte, **Stakataka** als muur die je aankijkt, **Blacephalon** in een circus met clowns, **Necrozma** in een donkere prismagrot, en een gifkristalgrot waar **aliens je Poipole geven**.
+- **Prof. Cozmo** (Fallarbor) geeft post-game **Cosmog**. Cosmoem wordt **Solgaleo** als je Solrock eerder ving dan Lunatone, **Lunala** andersom, willekeurig als je geen van beide hebt. Laat je Cozmo de geëvolueerde vorm zien, dan krijg je een tweede Cosmog die de andere wordt.
+- Items: N-Solarizer, N-Lunarizer, Poison/Electric/Fighting/Steel Memory, Dark Gems. De Azure Flute telt nu ook de UB's, Cosmog, Solgaleo en Lunala mee (98 soorten) — dus ook die zijn nodig voor de Hall of Origin. Placeholder-muziek en -transities.
+- `tools/grounded/dex_check.py`: alle soorten en regionale vormen te krijgen, op Marshadow na (komt bij het Keccles-gevecht).

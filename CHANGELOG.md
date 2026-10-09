@@ -17846,3 +17846,13 @@ Volgens Jordi's GBA-instructies per leider:
 - Nieuw: `tools/grounded/dex_check.py` meet per soort/vorm of hij zonder ruilen te krijgen is (wild, statics, gifts, evoluties met verkrijgbare items, fokken, vormwissels); `--waarom SPECIES_X` toont de bronnen. Uitkomst (9 okt): **alle 1025 soorten + 57 regionale vormen** te krijgen (1050), behalve de 6 monkeys en de 26 die nu gebouwd worden (Kanto-/Galar-vogels, Meloetta, Zygarde, Diancie, Ultra Beasts, Cosmog-lijn, Necrozma, Marshadow). Geen ruil-only soorten meer. `DEX_ANALYSE.md` bijgewerkt.
 - Gaten gedicht: Indeedee ♀ (Route 123), Rockruff met Own Tempo voor Lycanroc Dusk (Route 112), Rotom Catalog (Rotom-kelder Mauville), Reveal Glass (Weather Institute 2F), Pink en Purple Nectar (Pretty Petal, Route 104), en de 14 ontbrekende Silvally-Memories (Devon stuurt ze na Type: Null naar je pc).
 - Caterpie en Kanto-Rattata zaten al vroeg in de game (Route 101/104, Petalburg Woods).
+
+### [v0.9.220] - De overige legendaries
+- **Kanto-vogels** (post-game, lv 85): **Articuno** in de Frozen Depths van Shoal Cave, **Zapdos** op een afgelegen richel boven het Weather Institute (Route 119), **Moltres** op de kraterrand van Mt. Chimney.
+- **Galar-vogels** (lv 88), zodra alle drie de Kanto-vogels gevangen zijn: **Galar-Articuno** bij het Space Center van Mossdeep (teleporteert met een flits naar een ander terras als je hem aanspreekt), **Galar-Zapdos** rent rond in de woestijn van Route 111, **Galar-Moltres** in de nis naast de Ancient Tomb op Route 120.
+- **Diancie** (gift, lv 80) tussen de Carbink in de kristalgrot van Granite Cave, naast Stevens kamer.
+- **Meloetta**: op Route 123 ligt de hele game een **Snorlax** voor de bessenvelden van de Berry Master. Post-game ligt er een Poké Flute naast: oppakken = spelen, Snorlax loopt weg (velden vrij) en **Meloetta** (lv 62) valt aan.
+- **Zygarde** (50%, lv 90) in een nis midden in de Desert Underpass, zodra Xerneas én Yveltal gevangen zijn.
+- **Master Balls** te koop voor 200 BP bij de ruilbalie in de Battle Frontier.
+- **Catch rates:** legendaries/mythicals/UB's/paradoxen met catch rate 3 gaan naar 30; Arceus en de grote legendaries (Mewtwo, Lugia, Ho-Oh, Kyogre, Groudon, Rayquaza, Dialga, Palkia, Giratina, Reshiram, Zekrom, Kyurem, Zygarde, Cosmog-lijn, Necrozma, Calyrex, Koraidon, Miraidon) blijven 3; Eternatus en Terapagos van 255 naar 3.
+- Azure Flute-hints voor alle nieuwe; script `tools/grounded/maptools/legends2.py`, flags `FLAG_GROUNDED(1520–1540)`.

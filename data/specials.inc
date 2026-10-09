@@ -624,3 +624,4 @@ gSpecials::
 	def_special Forces_Finish
 	def_special Forces_PrepareBattle
 	def_special Forces_DebugForceNext
+	def_special Grounded_SickBlikSpot

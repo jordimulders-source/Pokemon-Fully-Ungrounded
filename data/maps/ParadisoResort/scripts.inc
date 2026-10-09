@@ -101,9 +101,23 @@ ParadisoResort_EventScript_RivalMayTalk::
 	end
 
 @ ---------------------------------------------------------------- overige gasten
-@ Dave (Freed From Desire) na de Hall of Fame: met pensioen, geen gevecht meer. Tekst letterlijk van Jordi.
+@ Dave (Freed From Desire) na de Hall of Fame: met pensioen (tekst letterlijk van Jordi), maar één comeback-gevecht
+@ op lv 100 (TRAINER_DAVE_PARADISO, eenmalig via de trainerflag).
 ParadisoResort_EventScript_Dave::
-	msgbox ParadisoResort_Text_Dave, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_DAVE_PARADISO, ParadisoResort_EventScript_DaveRetired
+	msgbox ParadisoResort_Text_Dave, MSGBOX_DEFAULT
+	msgbox ParadisoResort_Text_DaveComeback, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_DAVE_PARADISO, ParadisoResort_Text_DaveDefeat
+	msgbox ParadisoResort_Text_DavePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_EventScript_DaveRetired::
+	msgbox ParadisoResort_Text_DaveRetired, MSGBOX_DEFAULT
+	release
 	end
 
 ParadisoResort_EventScript_PoolSwimmer::
@@ -342,3 +356,29 @@ ParadisoResort_Text_Dave:
 	.string "but you shouldn't taste the coke.\p"
 	.string "Otherwise it's not a rum coke.\n"
 	.string "Like a Long Island Ice Tea.$"
+
+ParadisoResort_Text_DaveComeback:
+	.string "…But you know what they say.\n"
+	.string "Legends never retire. They just\l"
+	.string "do a farewell tour. Forever.\p"
+	.string "One last match. Kickoff after\n"
+	.string "this sip.\p"
+	.string "…It's empty. That's a red card\n"
+	.string "for you. Let's go!$"
+
+ParadisoResort_Text_DaveDefeat:
+	.string "VAR is checking it…\n"
+	.string "VAR says I lost. VAR is a liar.$"
+
+ParadisoResort_Text_DavePostBattle:
+	.string "DAVE: That wasn't a comeback.\n"
+	.string "That was a testimonial match.\p"
+	.string "Nobody tries in a testimonial.\n"
+	.string "Write that down. In pen.$"
+
+ParadisoResort_Text_DaveRetired:
+	.string "DAVE: Shh. I'm working.\p"
+	.string "Professional tanning is a\n"
+	.string "full-time job. Both sides.\p"
+	.string "Thirty minutes front, thirty\n"
+	.string "back, and one bacardi per side.$"

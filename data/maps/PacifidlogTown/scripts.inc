@@ -4,6 +4,8 @@ PacifidlogTown_MapScripts::
 	.byte 0
 
 PacifidlogTown_OnTransition:
+	setvar VAR_0x8004, 3
+	call Common_EventScript_SickBlikDevSpawn  @ SickBlik als developer (post-game, dagrotatie)
 	setflag FLAG_VISITED_PACIFIDLOG_TOWN
 	end
 

@@ -4,6 +4,8 @@ LilycoveCity_MapScripts::
 	.byte 0
 
 LilycoveCity_OnTransition:
+	setvar VAR_0x8004, 2
+	call Common_EventScript_SickBlikDevSpawn  @ SickBlik als developer (post-game, dagrotatie)
 	setflag FLAG_VISITED_LILYCOVE_CITY
 	setvar VAR_CONTEST_HALL_STATE, 0
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER

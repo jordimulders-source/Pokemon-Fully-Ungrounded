@@ -4397,3 +4397,13 @@ u16 Grounded_GiantWailordSpot(void)
         return 0;
     return 1 + (h >> 8) % 3;
 }
+
+// Project Grounded: SickBlik loopt na de Hall of Fame als 'developer' door Hoenn. Per dag staat hij op één van vier
+// plekken: 0 = Mauville, 1 = Fortree, 2 = Lilycove, 3 = Pacifidlog (hele dag dezelfde). Vóór de Hall of Fame: 0xFF (nergens).
+u16 Grounded_SickBlikSpot(void)
+{
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR))
+        return 0xFF;
+    RtcCalcLocalTime();
+    return ((u32)gLocalTime.days + gSaveBlock2Ptr->playerTrainerId[0]) & 3;
+}

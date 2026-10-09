@@ -17569,3 +17569,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.166] - Kratereilanden: kusthoekjes
 - Jordi: hoekjes land zonder kustrand. Waar gras, klif en water samenkomen loopt de klif nu een vakje door (Sootopolis heeft voor die hoeken geen tegel).
 - Silent Crater: het losse eilandje had aan de bovenkant geen kust (gras heeft geen noordkust-tegel); het is nu een grasrichel tegen de oostwand met de klif erboven. De Gold Bottle Cap ligt daar.
+
+### [v0.9.167] - Silent Crater: kust rechtsonder de grasrichel
+- Jordi: rechtsonder de grasrichel ontbraken nog 2 stukjes kust. De klif loopt nu één vakje door langs de wand en heeft de kliflip onder het gras (dezelfde tegel als in Sootopolis).

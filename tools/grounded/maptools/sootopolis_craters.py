@@ -209,6 +209,7 @@ def silent_classes():
     rect(cv, 8, 8, 19, 9, 'F')            # voorplein (begaanbaar roze gesteente)
     rect(cv, 20, 16, 23, 18, 'G')         # grasrichel tegen de oostwand (los eilandje kan niet: gras heeft
     rect(cv, 20, 13, 23, 15, 'W')         # in Sootopolis geen noordkust-tegel), klif erboven
+    rect(cv, 23, 19, 23, 19, 'W')         # en eronder tegen de wand (geen tegel voor gras+water+wandhoek)
     sx, sy, sw, sh = GATE_SRC
     gx, gy = GATE_AT
     for dy in range(sh):
@@ -227,6 +228,7 @@ def silent_tiles(cv):
     for dy in range(sh):
         for dx in range(sw):
             g[gy + dy][gx + dx] = SOOT.c(sx + dx, sy + dy)
+    g[19][23] = (g[19][23] & ~0x3ff) | 0x069   # kliflip onder de grasrichel (zoals Sootopolis 6,46)
     x, y = STAIRS
     g[y][x] = 0x244 | (3 << 12)
     g[y][x + 1] = 0x245 | (3 << 12)

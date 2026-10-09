@@ -22,7 +22,7 @@ SeaTemple_Sanctum_EventScript_Manaphy::
 	msgbox SeaTemple_Sanctum_Text_Manaphy, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_MANAPHY, 50
+	setwildbattle SPECIES_MANAPHY, 73
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

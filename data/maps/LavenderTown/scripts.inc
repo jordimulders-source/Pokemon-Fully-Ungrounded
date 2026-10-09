@@ -69,7 +69,7 @@ LavenderTown_EventScript_GhostGengarNoScope::
 LavenderTown_EventScript_GhostGengarFight::
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_GENGAR, 67
+	setwildbattle SPECIES_GENGAR, 92
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LavenderTown_EventScript_GhostGengarGone
@@ -97,7 +97,7 @@ LavenderTown_EventScript_GhostDusknoirNoScope::
 LavenderTown_EventScript_GhostDusknoirFight::
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_DUSKNOIR, 66
+	setwildbattle SPECIES_DUSKNOIR, 92
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LavenderTown_EventScript_GhostDusknoirGone
@@ -125,7 +125,7 @@ LavenderTown_EventScript_GhostBanetteNoScope::
 LavenderTown_EventScript_GhostBanetteFight::
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_BANETTE, 66
+	setwildbattle SPECIES_BANETTE, 92
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LavenderTown_EventScript_GhostBanetteGone

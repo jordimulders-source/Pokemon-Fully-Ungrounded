@@ -72,7 +72,7 @@ UnchartedIsle_EventScript_Keldeo::
 	closemessage
 	playmoncry SPECIES_KELDEO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_KELDEO, 70
+	setwildbattle SPECIES_KELDEO, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

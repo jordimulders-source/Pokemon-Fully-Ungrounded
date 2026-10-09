@@ -21,7 +21,7 @@ WhirlIsland_Cave_EventScript_Lugia::
 	msgbox WhirlIsland_Cave_Text_Lugia, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_LUGIA, 60
+	setwildbattle SPECIES_LUGIA, 90
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

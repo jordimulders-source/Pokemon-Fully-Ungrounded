@@ -15,7 +15,7 @@ MangroveMire_VirizionGlade_EventScript_Virizion::
 	closemessage
 	playmoncry SPECIES_VIRIZION, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_VIRIZION, 70
+	setwildbattle SPECIES_VIRIZION, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

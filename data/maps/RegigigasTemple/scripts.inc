@@ -46,7 +46,7 @@ RegigigasTemple_EventScript_Regigigas::
 	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGIGIGAS, 70
+	setwildbattle SPECIES_REGIGIGAS, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate

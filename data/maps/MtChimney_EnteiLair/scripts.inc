@@ -7,7 +7,7 @@ MtChimney_EnteiLair_EventScript_Entei::
 	faceplayer
 	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ENTEI, 50
+	setwildbattle SPECIES_ENTEI, 62
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

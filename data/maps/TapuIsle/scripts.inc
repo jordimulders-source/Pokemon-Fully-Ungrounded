@@ -149,7 +149,7 @@ TapuIsle_EventScript_TapuKoko::
 	closemessage
 	playmoncry SPECIES_TAPU_KOKO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TAPU_KOKO, 70
+	setwildbattle SPECIES_TAPU_KOKO, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -184,7 +184,7 @@ TapuIsle_EventScript_TapuLele::
 	closemessage
 	playmoncry SPECIES_TAPU_LELE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TAPU_LELE, 70
+	setwildbattle SPECIES_TAPU_LELE, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -219,7 +219,7 @@ TapuIsle_EventScript_TapuBulu::
 	closemessage
 	playmoncry SPECIES_TAPU_BULU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TAPU_BULU, 70
+	setwildbattle SPECIES_TAPU_BULU, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -254,7 +254,7 @@ TapuIsle_EventScript_TapuFini::
 	closemessage
 	playmoncry SPECIES_TAPU_FINI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_TAPU_FINI, 70
+	setwildbattle SPECIES_TAPU_FINI, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

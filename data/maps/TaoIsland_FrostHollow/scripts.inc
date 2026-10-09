@@ -27,7 +27,7 @@ TaoIsland_FrostHollow_EventScript_Kyurem::
 	closemessage
 	playmoncry SPECIES_KYUREM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_KYUREM, 70
+	setwildbattle SPECIES_KYUREM, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

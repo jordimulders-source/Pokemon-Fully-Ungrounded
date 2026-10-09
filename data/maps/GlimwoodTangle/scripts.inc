@@ -112,7 +112,7 @@ GlimwoodTangle_EventScript_Gang1::
 	msgbox GlimwoodTangle_Text_Gang1, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_IMPIDIMP, 64, ITEM_NONE, SPECIES_MORGREM, 64, ITEM_NONE
+	setwildbattle SPECIES_IMPIDIMP, 91, ITEM_NONE, SPECIES_MORGREM, 64, ITEM_NONE
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GlimwoodTangle_EventScript_Gang1Gone
@@ -136,7 +136,7 @@ GlimwoodTangle_EventScript_Gang2::
 	msgbox GlimwoodTangle_Text_Gang2, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_MORGREM, 65, ITEM_NONE, SPECIES_IMPIDIMP, 64, ITEM_NONE
+	setwildbattle SPECIES_MORGREM, 91, ITEM_NONE, SPECIES_IMPIDIMP, 64, ITEM_NONE
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GlimwoodTangle_EventScript_Gang2Gone
@@ -160,7 +160,7 @@ GlimwoodTangle_EventScript_Gang3::
 	msgbox GlimwoodTangle_Text_Gang3, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_MORGREM, 65, ITEM_NONE, SPECIES_MORGREM, 65, ITEM_NONE
+	setwildbattle SPECIES_MORGREM, 91, ITEM_NONE, SPECIES_MORGREM, 65, ITEM_NONE
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GlimwoodTangle_EventScript_Gang3Gone
@@ -186,7 +186,7 @@ GlimwoodTangle_EventScript_Yveltal::
 	msgbox GlimwoodTangle_Text_Yveltal, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_YVELTAL, 70
+	setwildbattle SPECIES_YVELTAL, 93
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

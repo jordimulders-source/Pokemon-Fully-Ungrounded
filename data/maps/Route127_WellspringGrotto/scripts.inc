@@ -20,7 +20,7 @@ Route127_WellspringGrotto_EventScript_Fezandipiti::
 Route127_WellspringGrotto_EventScript_FezandipitiBattle::
 	playmoncry SPECIES_FEZANDIPITI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_FEZANDIPITI, 65
+	setwildbattle SPECIES_FEZANDIPITI, 91
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

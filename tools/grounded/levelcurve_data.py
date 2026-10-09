@@ -19,10 +19,11 @@ def species_name(const):
     return '_'.join(w.capitalize() for w in const[len('SPECIES_'):].split('_'))
 
 
-def parse_species():
-    """SPECIES_X -> {'yield', 'growth', 'evos': [(level, target)]}."""
+def parse_species(base=None):
+    """SPECIES_X -> {'yield', 'growth', 'evos': [(level, target)], 'bst', 'abilities'}."""
     out = {}
-    for path in sorted(glob.glob(os.path.join(ROOT, 'src/data/pokemon/species_info/gen_*_families.h'))):
+    base = base or os.path.join(ROOT, 'src/data/pokemon/species_info')
+    for path in sorted(glob.glob(os.path.join(base, 'gen_*_families.h'))):
         text = open(path, encoding='utf-8').read()
         macros = {}
         for m in re.finditer(r'#define\s+(\w+_EXP_YIELD)\s+(\d+)', text):
@@ -40,6 +41,17 @@ def parse_species():
                     d['yield'] = macros[e]
                 elif e.isdigit():
                     d['yield'] = int(e)
+            bst = 0
+            for stat in ('HP', 'Attack', 'Defense', 'Speed', 'SpAttack', 'SpDefense'):
+                m = re.search(r'\.base' + stat + r'\s*=\s*([^,\n]+),', body)
+                if m:
+                    e = m.group(1)
+                    if '?' in e:
+                        e = e.split('?')[1].split(':')[0]
+                    nums = re.findall(r'\d+', e)
+                    if nums:
+                        bst += int(nums[0])
+            d['bst'] = bst
             m = re.search(r'\.growthRate\s*=\s*(GROWTH_\w+)', body)
             if m:
                 d['growth'] = m.group(1)
@@ -57,9 +69,9 @@ def parse_species():
     return out
 
 
-def parse_party():
+def parse_party(path=None):
     """TRAINER_X -> {'mons': [{'species','level','lineno','raw'}], 'double', 'class', 'start', 'end'}."""
-    path = os.path.join(ROOT, 'src/data/trainers.party')
+    path = path or os.path.join(ROOT, "src/data/trainers.party")
     lines = open(path, encoding='utf-8').read().split('\n')
     trainers = {}
     cur = None

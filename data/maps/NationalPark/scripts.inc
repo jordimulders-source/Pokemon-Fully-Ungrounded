@@ -198,7 +198,7 @@ NationalPark_EventScript_Eternatus::
 	msgbox NationalPark_Text_EternatusBattle, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_ETERNATUS, 75
+	setwildbattle SPECIES_ETERNATUS, 95
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

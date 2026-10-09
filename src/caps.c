@@ -41,7 +41,7 @@ u32 GetCurrentLevelCap(void)
 }
 
 // Project Grounded: ace-level van de volgende mijlpaal (gym, na badge 8 de kampioen, daarna 100); zie LEVELCURVE.md
-static u32 GetGroundedCatchUpTarget(void)
+u32 GetGroundedCatchUpTarget(void)
 {
     static const u16 sMilestones[][2] =
     {

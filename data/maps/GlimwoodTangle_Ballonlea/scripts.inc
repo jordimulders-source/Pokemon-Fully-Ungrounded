@@ -63,7 +63,7 @@ GlimwoodTangle_Ballonlea_EventScript_Boss::
 	msgbox GlimwoodTangle_Ballonlea_Text_Boss, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_GRIMMSNARL, 67, ITEM_NONE, SPECIES_MORGREM, 66, ITEM_NONE
+	setwildbattle SPECIES_GRIMMSNARL, 92, ITEM_NONE, SPECIES_MORGREM, 66, ITEM_NONE
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GlimwoodTangle_Ballonlea_EventScript_BossGone
@@ -87,7 +87,7 @@ GlimwoodTangle_Ballonlea_EventScript_Xerneas::
 	msgbox GlimwoodTangle_Ballonlea_Text_Xerneas, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setwildbattle SPECIES_XERNEAS, 70
+	setwildbattle SPECIES_XERNEAS, 93
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

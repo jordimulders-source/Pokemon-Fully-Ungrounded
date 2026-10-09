@@ -11,7 +11,7 @@ TaoIsland_TowerTop_EventScript_Reshiram::
 	closemessage
 	playmoncry SPECIES_RESHIRAM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_RESHIRAM, 70
+	setwildbattle SPECIES_RESHIRAM, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -38,7 +38,7 @@ TaoIsland_TowerTop_EventScript_Zekrom::
 	closemessage
 	playmoncry SPECIES_ZEKROM, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZEKROM, 70
+	setwildbattle SPECIES_ZEKROM, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

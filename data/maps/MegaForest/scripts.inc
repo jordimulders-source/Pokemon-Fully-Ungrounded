@@ -9,7 +9,7 @@ MegaForest_EventScript_Zacian::
 	msgbox MegaForest_Text_Zacian, MSGBOX_DEFAULT
 	playmoncry SPECIES_ZACIAN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZACIAN, 70
+	setwildbattle SPECIES_ZACIAN, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -27,7 +27,7 @@ MegaForest_EventScript_Zamazenta::
 	msgbox MegaForest_Text_Zamazenta, MSGBOX_DEFAULT
 	playmoncry SPECIES_ZAMAZENTA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_ZAMAZENTA, 70
+	setwildbattle SPECIES_ZAMAZENTA, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

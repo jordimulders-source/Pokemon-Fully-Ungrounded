@@ -11,7 +11,7 @@ RuinBeasts_EventScript_CHIEN_PAO::
 	goto_if_eq VAR_RESULT, FALSE, Route135_RuinShrine_EventScript_Stays
 	playmoncry SPECIES_CHIEN_PAO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CHIEN_PAO, 70
+	setwildbattle SPECIES_CHIEN_PAO, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

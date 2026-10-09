@@ -1,7 +1,7 @@
 """Project Grounded: Uncharted Isle (Keldeo), wilde zee met echte draaikolken (aangeroepen door swords_keldeo.py).
 
 Eigen secondary tileset uncharted_isle (primary General) met een tilesetanimatie:
-- draaikolk 2x2 (32x32, 8 frames, drie spiraalarmen die 15 graden per frame draaien; General-waterpalet 4). Alle
+- draaikolk 2x2 (32x32, 8 frames, zes spiraalgolven (eerst drie: leek op een werpster); General-waterpalet 4). Alle
   draaikolken delen tiles 16-31; de animatie (src/tileset_anims.c, InitTilesetAnim_UnchartedIsle) kopieert elke
   8 frames het volgende frame. Gespiegeld (h-flip) draait dezelfde kolk de andere kant op. Onder elke kolk ligt het
   geanimeerde General-zeewater (onderlaag), de kolk zelf is de bovenlaag en loopt aan de rand geditherd uit.
@@ -110,6 +110,9 @@ class IsleTiles:
 
 
 # ====================================================================== tekenen
+WHIRL_ARMS = 6
+
+
 def whirl_frame(f):
     """32x32 draaikolk (palet 4), frame f van WHIRL_FRAMES; 0 = doorzichtig (zeewater eronder)."""
     cv = J.Canvas(32, 32)
@@ -122,14 +125,15 @@ def whirl_frame(f):
             if r > R:
                 continue
             th = math.atan2(dy, dx)
-            s = math.cos(3 * th + 0.55 * r - phase)
-            s2 = math.cos(3 * th + 0.55 * r - phase + 0.9)
+            # Jordi: 3 armen leek op een werpster; nu 6 dunnere, strakker gedraaide golven
+            s = math.cos(WHIRL_ARMS * th + 0.85 * r - phase)
+            s2 = math.cos(WHIRL_ARMS * th + 0.85 * r - phase + 0.9)
             depth = 1 - r / R
             if r < 2.2:
                 c = 10
             elif r < 3.6:
                 c = 9 if s < 0.3 else 8
-            elif s > 0.62:                      # schuimkam op de arm
+            elif s > 0.78:                      # schuimkam op de arm
                 c = 1 if r > 10.5 else (2 if r > 7 else 11)
             elif s > 0.35 and s2 > 0:
                 c = 11 if r > 8 else 12

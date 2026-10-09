@@ -17688,3 +17688,8 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.190] - Extra flagblok naar 2048
 - `NUM_GROUNDED_FLAGS` 1024 → 2048 (128 bytes extra achteraan SaveBlock1; oude saves blijven werken), zodat Area Zero, Yoshi's Island, Mt. Coronet en de Arceus-quest genoeg eigen flags hebben.
+
+### [v0.9.191] - Echt vuur in het verbrande National Park, schrijn en decor in Ilex Forest
+- **Verbrand park:** de "bloemen" zijn weg; nu **geanimeerd vuur** (de Gen 3-vuuranimatie uit Emerald zelf, 8 frames): 16 grote vuren op verschroeid gras met losse vlammen eromheen, brandende bloembakken en brandende boomkronen. In twee fasen, zodat niet alles tegelijk beweegt; vuur heeft botsing.
+- **Ilex Forest:** een handgetekend **houten schrijn** (GSC/HGSS-stijl: pannendak, touw met papieren stroken, deurtjes, stenen voet met mos, een appel en een sandwich als offer) met twee stenen lantaarns, i.p.v. het Celebi-beeld. Veel meer decor (Ekat Fairy Woods / Haunted Woods): treurwilg bij de vijver, grote ronde boom, boomstammen, paddenstoelen, stronken, dennetjes, varens, bloemenplekjes, waterlelies en zachte lichtvlekken.
+- Eigen secondary tilesets voor beide kaarten (`national_park_tiles.py`).

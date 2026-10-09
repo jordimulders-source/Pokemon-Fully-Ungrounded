@@ -9,13 +9,12 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: Glimwood (v0.9.189), trog 127 + Chargestone + Spacetime-items (v0.9.188), Virizion-kamer + wild Uncharted Isle (v0.9.186), Swords of Justice/Keldeo/Meltan (v0.9.182), National Park + Ilex (v0.9.181), Spacetime S2 + Chargestone Cave (v0.9.180), Koraalkathedraal + Sea Shards (v0.9.179), Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: park-vuur + Ilex-schrijn (v0.9.191), Glimwood (v0.9.189), trog 127 + Chargestone + Spacetime-items (v0.9.188), Virizion-kamer + wild Uncharted Isle (v0.9.186), Swords of Justice/Keldeo/Meltan (v0.9.182), National Park + Ilex (v0.9.181), Spacetime S2 + Chargestone Cave (v0.9.180), Koraalkathedraal + Sea Shards (v0.9.179), Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 
 ~~Beasts of Ruin bijwerken~~ (v0.9.174).
 
 **Feedback Jordi 9 okt (volgende agents):**
-- **National Park verbrand:** echt vuur in plaats van wat nu op bloemen lijkt (geanimeerd als het kan: Ekat Volcano/Fireplace-autotile, Fiery Path/lava). **Ilex Forest:** een echt schrijn (zoals in GSC/HGSS) i.p.v. het Celebi-beeld, en het hele bos mooier met meer assets.
 **Feedback Jordi 9 okt (in uitvoering):**
 - **Levelcurve** (agent bezig; Jordi akkoord met inhaal-EXP + trainer-EXP 50%; post-game Dave, SickBlik en later Mitch op lv 100): E4 rond lv 80, Steven's ace lv 84, superbosses richting lv 100; trainer-EXP zo dat het hoofdpad comfortabel haalbaar is zonder grinden; completionists met een rotatie van ±10–12 Pokémon komen ook rond de doelen uit (variatie in teams aanmoedigen, Jordi speelt zelf met meerdere parties); gehoorzaamheid blijft (vanglevel).
 

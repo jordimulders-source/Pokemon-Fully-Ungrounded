@@ -18,7 +18,9 @@ de UB als object (FLAG_ULTRA_*, zelfde scripts als in ultra_space.py), terug via
 
 Gebruik: python3 tools/grounded/maptools/ultra_worlds_b.py [--scripts] [--only Key,Key] [--preview DIR]
   --scripts  schrijft de scripts.inc's opnieuw (anders alleen als ze nog niet bestaan; Jordi bewerkt teksten in de
-             Dialoogstudio)."""
+             Dialoogstudio).
+De eerste keer (oude kaarten van ultra_space.py vervangen) liep het met GROUNDED_SCRIPT_EVENTS=1, omdat check_levels
+anders de weggehaalde oude objecten terugzet. Na het draaien: make, python3 tools/grounded/audit.py."""
 import os as _os, sys as _sys  # noqa: E401
 _sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
 _sys.path.append(_os.path.dirname(_os.path.abspath(__file__)))
@@ -1311,7 +1313,7 @@ def gz_grade(rgb):
         else:                                       # zand, steen, hout
             s, v = s * 0.55, v * 0.7
         rr, gg, bb = colorsys.hsv_to_rgb(h, s, v)
-        res[i] = np.array([rr, gg, bb]) * 255 * 0.9 + np.array([48, 18, 26]) * 0.1
+        res[i] = np.array([rr, gg, bb]) * 255 * 0.8 + np.array([40, 12, 22]) * 0.12   # donkere, rode lucht
     return res[inv.reshape(-1)].reshape(rgb.shape)
 
 
@@ -1505,7 +1507,8 @@ def world_guzzlord():
     dmask = dead[..., 3] > 0
     gm = (dead[..., 1] > dead[..., 0] + 10) & dmask                       # grasrand onder de boom -> as
     dead[gm, :3] = mix(dead[gm, :3], C(70, 62, 58), 0.8)
-    dead[dmask & ~gm, :3] = mix(dead[dmask & ~gm, :3], C(30, 22, 24), 0.45)   # verkoold
+    dead[dmask & ~gm, :3] = mix(dead[dmask & ~gm, :3], C(26, 18, 20), 0.55)   # verkoold
+    dead[..., :3] = gz_grade(dead[..., :3])
     used = set()
     for y in range(H - 1):
         for x in range(W - 1):
@@ -2341,7 +2344,7 @@ def world_blacephalon():
             if w.coll[y, x] and (y == 0 or x in (0, 39) or y == 31):
                 pass
     # ---------------------------------------------------------------- objecten
-    arrive, ret = (20, 28), (20, 29)
+    arrive, ret = (20, 28), (20, 27)
     ub = (20, 17)
     for c in (arrive, ret):
         w.coll[c[1], c[0]] = False

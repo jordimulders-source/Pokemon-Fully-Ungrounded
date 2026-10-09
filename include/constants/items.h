@@ -873,7 +873,7 @@
 #define ITEM_POKEBLOCK_CASE 722
 #define ITEM_SOOT_SACK 723
 #define ITEM_POKE_FLUTE 724
-#define ITEM_FAME_CHECKER 725
+#define ITEM_SEA_SHARD 725 // Project Grounded: Sea Shard-verzamelquest (duikplekken -> Diving Treasure Hunter, Route 124); was Fame Checker (FRLG)
 #define ITEM_TEACHY_TV 726
 
 // Story Key Items

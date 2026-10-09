@@ -88,6 +88,14 @@
       "elevation": 3,
       "item": "ITEM_DIVE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ZV4_TRENCH_DIVE_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 40,
+      "elevation": 3,
+      "item": "ITEM_SEA_SHARD",
+      "flag": "FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE127_TRENCH"
     }
   ]
 }

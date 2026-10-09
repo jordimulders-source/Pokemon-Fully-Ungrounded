@@ -65,6 +65,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE126_SILENT_CRATER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 64,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE126_CORAL_CATHEDRAL",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

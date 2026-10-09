@@ -459,6 +459,7 @@ gStdScripts_End::
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
 	.include "data/maps/MangroveMire/scripts.inc"
+	.include "data/maps/Route126_CoralCathedral/scripts.inc"
 	.include "data/maps/SpacetimeCave/scripts.inc"
 	.include "data/maps/CeruleanCave_B1F/scripts.inc"
 	.include "data/maps/CeruleanCave_2F/scripts.inc"

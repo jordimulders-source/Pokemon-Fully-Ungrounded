@@ -74,7 +74,7 @@ $(TILESETGFXDIR)/secondary/pokemon_center/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 478 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/cave/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 449 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 511 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/pokemon_school/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 278 -Wnum_tiles

@@ -3010,3 +3010,48 @@ const u16 gTilesetPalettes_YoshiFort[][16] =
     INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/15.gbapal"),
 };
+
+// Project Grounded: Mt. Coronet: Meteor Falls-tiles, grijsbruin + lichte opening (paletten, coronet_tiles.py)
+const u16 gTilesetPalettes_CoronetCave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_cave/palettes/15.gbapal"),
+};
+
+// Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren (coronet_tiles.py)
+const u32 gTilesetTiles_CoronetSnow[] = INCBIN_U32("data/tilesets/secondary/coronet_snow/tiles.4bpp.fastSmol");
+
+// Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren (paletten, coronet_tiles.py)
+const u16 gTilesetPalettes_CoronetSnow[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coronet_snow/palettes/15.gbapal"),
+};

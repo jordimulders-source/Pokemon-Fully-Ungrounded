@@ -5891,6 +5891,76 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/LakeVerity_Cavern/border.bin",
       "blockdata_filepath": "data/layouts/LakeVerity_Cavern/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM1",
+      "name": "MtCoronet_4F_Room1_Layout",
+      "width": 40,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room1/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_OUTSIDE",
+      "name": "MtCoronet_4F_Outside_Layout",
+      "width": 56,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/MtCoronet_4F_Outside/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Outside/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM2",
+      "name": "MtCoronet_4F_Room2_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room2/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM3",
+      "name": "MtCoronet_4F_Room3_Layout",
+      "width": 42,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room3/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_5F",
+      "name": "MtCoronet_5F_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_5F/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_6F",
+      "name": "MtCoronet_6F_Layout",
+      "width": 24,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_6F/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_6F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPEAR_PILLAR",
+      "name": "SpearPillar_Layout",
+      "width": 30,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/SpearPillar/border.bin",
+      "blockdata_filepath": "data/layouts/SpearPillar/map.bin"
     }
   ]
 }

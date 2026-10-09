@@ -646,6 +646,14 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_DIALGA: // Project Grounded: Spear Pillar (placeholder: Kanto-legendary-thema, de klok draait rond)
+    case SPECIES_DIALGA_ORIGIN:
+        CreateBattleStartTask(B_TRANSITION_CLOCKWISE_WIPE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_PALKIA: // Project Grounded: Spear Pillar (placeholder: Kanto-legendary-thema, de ruimte rimpelt)
+    case SPECIES_PALKIA_ORIGIN:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
         break;

@@ -309,3 +309,9 @@ const u16 gMetatileAttributes_YoshiBoo[] = INCBIN_U16("data/tilesets/secondary/y
 
 const u16 gMetatiles_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatiles.bin"); // Project Grounded: Yoshi's Island: WarioFort
 const u16 gMetatileAttributes_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatile_attributes.bin");
+
+const u16 gMetatiles_CoronetCave[] = INCBIN_U16("data/tilesets/secondary/coronet_cave/metatiles.bin"); // Project Grounded: Mt. Coronet: Meteor Falls-tiles, grijsbruin + lichte opening
+const u16 gMetatileAttributes_CoronetCave[] = INCBIN_U16("data/tilesets/secondary/coronet_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatiles.bin"); // Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren
+const u16 gMetatileAttributes_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatile_attributes.bin");

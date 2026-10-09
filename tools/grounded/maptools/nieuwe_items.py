@@ -71,9 +71,16 @@ ITEMS = [
     (1146, 'LakeVerity', 'ITEM_ODD_INCENSE', 1, False, 'Lake Verity: Odd Incense'),
     (1147, 'LakeVerity', 'ITEM_LINKING_CORD', 1, True, 'Lake Verity: verborgen Linking Cord'),
     (1148, 'LakeVerity_Cavern', 'ITEM_QUICK_POWDER', 1, False, 'Lake Verity, grot: Quick Powder'),
+    # Mt. Coronet + Spear Pillar (coronet.py; flags uit het eigen blok FLAG_GROUNDED 1160-1219)
+    (1180, 'MtCoronet_4F_Room2', 'ITEM_ADAMANT_CRYSTAL', 1, False, 'Mt. Coronet 4F kamer 2: Adamant Crystal (Dialga Origin)'),
+    (1181, 'MtCoronet_4F_Room2', 'ITEM_ODD_KEYSTONE', 1, False, 'Mt. Coronet 4F kamer 2: Odd Keystone'),
+    (1182, 'MtCoronet_4F_Outside', 'ITEM_LUSTROUS_GLOBE', 1, True, 'Mt. Coronet 4F buiten: verborgen Lustrous Globe (Palkia Origin)'),
+    (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
+    (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
+    (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1140, 1159)]   # Area Zero en de meren (lakes.py) gebruiken flags uit hun eigen blok
+EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219)]   # Area Zero, de meren en Mt. Coronet gebruiken flags uit hun eigen blok
 
 
 def flag_name(n, mp, it, hid):

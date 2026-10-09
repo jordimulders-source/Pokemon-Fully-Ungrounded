@@ -1,0 +1,123 @@
+{
+  "id": "MAP_SPEAR_PILLAR",
+  "name": "SpearPillar",
+  "layout": "LAYOUT_SPEAR_PILLAR",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_SPEAR_PILLAR",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ADAMANT_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SPEAR_PILLAR_ADAMANT_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 22,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUSTROUS_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SPEAR_PILLAR_LUSTROUS_ORB"
+    },
+    {
+      "local_id": "LOCALID_CORONET_DIALGA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DIALGA)",
+      "x": 10,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_CORONET_DIALGA"
+    },
+    {
+      "local_id": "LOCALID_CORONET_PALKIA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PALKIA)",
+      "x": 20,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_CORONET_PALKIA"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 31,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CORONET_6F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 31,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CORONET_6F",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SpearPillar_EventScript_DialgaAltar"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SpearPillar_EventScript_DialgaAltar"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SpearPillar_EventScript_PalkiaAltar"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SpearPillar_EventScript_PalkiaAltar"
+    }
+  ]
+}

@@ -9872,6 +9872,535 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_MT_CORONET_4F_ROOM1",
+          "base_label": "gMtCoronet4FRoom1",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_GOLEM"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MACHAMP"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_LUNATONE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_SOLROCK"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_LUCARIO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GARCHOMP"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_MILOTIC"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MT_CORONET_4F_ROOM2",
+          "base_label": "gMtCoronet4FRoom2",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_GOLEM"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MACHAMP"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_LUNATONE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_SOLROCK"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_LUCARIO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GARCHOMP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MT_CORONET_4F_ROOM3",
+          "base_label": "gMtCoronet4FRoom3",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_GOLEM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_MACHAMP"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ABSOL"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GABITE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_SPIRITOMB"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MT_CORONET_5F",
+          "base_label": "gMtCoronet5F",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_GOLEM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_MACHAMP"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ABSOL"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GABITE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_SPIRITOMB"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MT_CORONET_6F",
+          "base_label": "gMtCoronet6F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GOLEM"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_CHIMECHO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_LUCARIO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_LUNATONE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_SOLROCK"
+              },
+              {
+                "min_level": 94,
+                "max_level": 94,
+                "species": "SPECIES_GARCHOMP"
+              },
+              {
+                "min_level": 94,
+                "max_level": 94,
+                "species": "SPECIES_ABSOL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MT_CORONET_4F_OUTSIDE",
+          "base_label": "gMtCoronet4FOutside",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_ABOMASNOW"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_WEAVILE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MAMOSWINE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_FROSLASS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_GLALIE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_ALTARIA"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ABSOL"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_LUCARIO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_GARCHOMP"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_MILOTIC"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_FEEBAS"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 60,
+                "max_level": 70,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 60,
+                "max_level": 70,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 70,
+                "max_level": 80,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 88,
+                "max_level": 92,
+                "species": "SPECIES_LUMINEON"
+              },
+              {
+                "min_level": 88,
+                "max_level": 92,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 90,
+                "max_level": 93,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 94,
+                "species": "SPECIES_LAPRAS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_MILOTIC"
+              }
+            ]
+          }
         }
       ]
     },

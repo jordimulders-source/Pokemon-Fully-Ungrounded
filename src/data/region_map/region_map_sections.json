@@ -1474,6 +1474,14 @@
     {
       "id": "MAPSEC_LAKE_VERITY",
       "name": "LAKE VERITY"
+    },
+    {
+      "id": "MAPSEC_MT_CORONET",
+      "name": "MT. CORONET"
+    },
+    {
+      "id": "MAPSEC_SPEAR_PILLAR",
+      "name": "SPEAR PILLAR"
     }
   ]
 }

@@ -211,6 +211,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE135_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE135_RUIN_SHRINE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

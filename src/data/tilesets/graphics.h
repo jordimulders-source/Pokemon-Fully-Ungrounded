@@ -2109,3 +2109,95 @@ const u16 gTilesetPalettes_ShipwreckShoals[][16] =
     INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/palettes/15.gbapal"),
 };
+
+// Project Grounded: Beasts of Ruin (fire; Volcano Set van Ekat99, ruin_beasts.py)
+const u32 gTilesetTiles_RuinFire[] = INCBIN_U32("data/tilesets/secondary/ruin_fire/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_RuinFire[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_fire/palettes/15.gbapal"),
+};
+
+// Project Grounded: Beasts of Ruin (earth; Volcano Set van Ekat99, ruin_beasts.py)
+const u32 gTilesetTiles_RuinEarth[] = INCBIN_U32("data/tilesets/secondary/ruin_earth/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_RuinEarth[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_earth/palettes/15.gbapal"),
+};
+
+// Project Grounded: Beasts of Ruin (moss; Volcano Set van Ekat99, ruin_beasts.py)
+const u32 gTilesetTiles_RuinMoss[] = INCBIN_U32("data/tilesets/secondary/ruin_moss/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_RuinMoss[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_moss/palettes/15.gbapal"),
+};
+
+// Project Grounded: Beasts of Ruin (ice; Volcano Set van Ekat99, ruin_beasts.py)
+const u32 gTilesetTiles_RuinIce[] = INCBIN_U32("data/tilesets/secondary/ruin_ice/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_RuinIce[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/15.gbapal"),
+};

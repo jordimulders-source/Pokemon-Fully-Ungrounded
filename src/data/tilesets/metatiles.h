@@ -247,3 +247,15 @@ const u16 gMetatileAttributes_MangroveMire[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatiles.bin");
 const u16 gMetatileAttributes_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinFire[] = INCBIN_U16("data/tilesets/secondary/ruin_fire/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinFire[] = INCBIN_U16("data/tilesets/secondary/ruin_fire/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinEarth[] = INCBIN_U16("data/tilesets/secondary/ruin_earth/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinEarth[] = INCBIN_U16("data/tilesets/secondary/ruin_earth/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinMoss[] = INCBIN_U16("data/tilesets/secondary/ruin_moss/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinMoss[] = INCBIN_U16("data/tilesets/secondary/ruin_moss/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatile_attributes.bin");

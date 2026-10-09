@@ -169,6 +169,13 @@
       "elevation": 0,
       "dest_map": "MAP_JAGGED_PASS_LAVA_TUBE",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_JAGGED_PASS_RUIN_CHAMBER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

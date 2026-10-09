@@ -2962,6 +2962,56 @@
       "blockdata_filepath": "data/layouts/RegigigasTemple_Sealed/map.bin"
     },
     {
+      "id": "LAYOUT_JAGGED_PASS_RUIN_CHAMBER",
+      "name": "JaggedPass_RuinChamber_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinFire",
+      "border_filepath": "data/layouts/JaggedPass_RuinChamber/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_RuinChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAGGED_PASS_RUIN_CALDERA",
+      "name": "JaggedPass_RuinCaldera_Layout",
+      "width": 20,
+      "height": 18,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinFire",
+      "border_filepath": "data/layouts/JaggedPass_RuinCaldera/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_RuinCaldera/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_UNDERPASS_RUIN_SHRINE",
+      "name": "DesertUnderpass_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinEarth",
+      "border_filepath": "data/layouts/DesertUnderpass_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/DesertUnderpass_RuinShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_WOODS_RUIN_SHRINE",
+      "name": "PetalburgWoods_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinMoss",
+      "border_filepath": "data/layouts/PetalburgWoods_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgWoods_RuinShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE135_RUIN_SHRINE",
+      "name": "Route135_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinIce",
+      "border_filepath": "data/layouts/Route135_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/Route135_RuinShrine/map.bin"
+    },
+    {
       "id": "LAYOUT_REGIELEKI_CAVE",
       "name": "RegielekiCave_Layout",
       "width": 17,

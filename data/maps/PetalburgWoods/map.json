@@ -235,6 +235,13 @@
       "elevation": 0,
       "dest_map": "MAP_TOADSTOOL_HOLLOW",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS_RUIN_SHRINE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

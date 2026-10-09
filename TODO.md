@@ -18,6 +18,9 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (in uitvoering):**
 - ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). Mitch kiest zelf tussen thema A en B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
 
+**In uitvoering (Jordi 9 okt):** Battle Casino in de Frontier (BP inzetten op NPC-gevechten, odds, partijoverzicht, meekijken; agent); Spear Pillar en Hall of Origin voller in Gen 3-stijl + Arceus' trap op Spear Pillar + emissaries als constructen met paletwissels (agent); Nep-Enut op ware grootte + Yoshi-huis (agent).
+Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, controleren). Testers van Jordi als trainers: id's vrijmaken (bijv. scripted gevechten die een id delen).
+
 ~~Technische schuld bouwscripts~~ (v0.9.195–198: `check_levels.protect()` bewaakt levels en events; alle bouwscripts draaien zonder wijzigingen).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)

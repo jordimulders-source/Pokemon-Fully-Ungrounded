@@ -24,6 +24,8 @@ BASE = 'd79b0c5f31^'   # pokeemerald-expansion vlak vóór de eerste Grounded-co
 
 # Bewuste uitzonderingen (sleutel -> reden). Sleutels staan achteraan elke regel in -v / AUDIT.md.
 IGNORE = {
+    'reachobj:YoshisIsland_Jungle:2': 'bereikbaar via de Poochy-rit (script verplaatst de speler)',
+    'reachobj:YoshisIsland_Jungle:4': 'bereikbaar via de Poochy-rit (script verplaatst de speler)',
 }
 
 CATS = ('warps', 'kaarten', 'scripts', 'flags', 'trainers', 'wild', 'items')
@@ -611,7 +613,193 @@ WALL_OK_GFX = re.compile(r'ITEM_BALL|BERRY_TREE|CUTTABLE_TREE|BREAKABLE_ROCK|BOU
                          r'MYSTERY_EVENT|CABLE_CAR|CHALLENGE|ANTENNA|FOSSIL|REGI|SPECIES|MEGA_STONE|SIGN|VAR_')
 
 
+WATER_B = {'MB_OCEAN_WATER', 'MB_DEEP_WATER', 'MB_POND_WATER', 'MB_SEAWEED', 'MB_NO_SURFACING', 'MB_SEAWEED_NO_SURFACING',
+           'MB_WESTWARD_CURRENT', 'MB_EASTWARD_CURRENT', 'MB_NORTHWARD_CURRENT', 'MB_SOUTHWARD_CURRENT', 'MB_WATERFALL',
+           'MB_INTERIOR_DEEP_WATER', 'MB_SOOTOPOLIS_DEEP_WATER', 'MB_WATER_DOOR', 'MB_WATER_SOUTH_ARROW_WARP'}
+JUMP = {'MB_JUMP_EAST': (1, 0), 'MB_JUMP_WEST': (-1, 0), 'MB_JUMP_NORTH': (0, -1), 'MB_JUMP_SOUTH': (0, 1)}
+# objecten die geen blijvende muur zijn: items (oppakken), veldobstakels (HM's), onzichtbare/dynamische
+NONWALL_GFX = re.compile(r'ITEM_BALL|CUTTABLE_TREE|BREAKABLE_ROCK|BOULDER|INVISIBLE|BERRY_TREE|VAR_\d|MOVING_BOX')
+
+
+class Reach:
+    """Bereikbaarheid op één kaart: lopen + surfen, richels in één richting, objecten zonder flag als muur.
+    Optimistisch: tegels die een kaartscript met setmetatile vrijmaakt tellen als vrij."""
+
+    def __init__(self, name):
+        self.n = name
+        self.d = MAPS[name]
+        self.g = g = grid(name)
+        self.free_by_script = set()
+        for m in re.finditer(r'setmetatile\s+(\d+)\s*,\s*(\d+)\s*,\s*\w+\s*,\s*(FALSE|0)\b', map_script_text(name)):
+            self.free_by_script.add((int(m.group(1)), int(m.group(2))))
+        self.walls = set()
+        st = map_script_text(name)
+        moved = set(re.findall(r'(?:setobjectxyperm|setobjectxy|removeobject|applymovement)\s+(LOCALID_\w+)', st))
+        for o in self.d.get('object_events') or []:
+            if o.get('local_id') in moved:
+                continue        # gaat via een script opzij (bewakers, verdwijnende NPC's)
+            if str(o.get('flag', '0')) in ('0', '') and not NONWALL_GFX.search(o['graphics_id']) \
+                    and o['graphics_id'] not in GIANT and 'WANDER' not in o['movement_type'] \
+                    and 'WALK_' not in o['movement_type']:
+                self.walls.add((o['x'], o['y']))
+
+    def passable(self, x, y):
+        g = self.g
+        return g.inside(x, y) and (not g.blocked(x, y) or (x, y) in self.free_by_script)
+
+    def water(self, x, y):
+        return self.g.beh(x, y) in WATER_B
+
+    def run(self, starts):
+        g = self.g
+        seen = set()
+        q = collections.deque()
+        for s in starts:
+            if g.inside(*s) and s not in seen:
+                seen.add(s)
+                q.append(s)
+        while q:
+            x, y = q.popleft()
+            e0 = g.elev(x, y)
+            w0 = self.water(x, y)
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                p = (x + dx, y + dy)
+                if not self.g.inside(*p) or p in seen:
+                    continue
+                b = g.beh(*p)
+                if b in JUMP:
+                    if JUMP[b] == (dx, dy):
+                        p2 = (p[0] + dx, p[1] + dy)
+                        if self.passable(*p2) and p2 not in self.walls and p2 not in seen:
+                            seen.add(p2)
+                            q.append(p2)
+                    continue
+                if not self.passable(*p) or p in self.walls:
+                    continue
+                e = g.elev(*p)
+                w = self.water(*p)
+                if w != w0:
+                    pass            # op/af het water (surfen): hoogte maakt niet uit
+                elif not (e in (0, 15) or e0 in (0, 15) or e == e0):
+                    continue
+                seen.add(p)
+                q.append(p)
+        return seen
+
+    def entries(self):
+        g = self.g
+        st = []
+        for w in self.d.get('warp_events') or []:
+            st.append((w['x'], w['y']))
+        for c in self.d.get('connections') or []:
+            dr = c.get('direction')
+            if dr == 'up':
+                st += [(x, 0) for x in range(g.w)]
+            elif dr == 'down':
+                st += [(x, g.h - 1) for x in range(g.w)]
+            elif dr == 'left':
+                st += [(0, y) for y in range(g.h)]
+            elif dr == 'right':
+                st += [(g.w - 1, y) for y in range(g.h)]
+        if any(c.get('direction') in ('dive', 'emerge') for c in self.d.get('connections') or []):
+            # bovenkomen na duiken kan op elk diep water
+            st += [(x, y) for y in range(g.h) for x in range(g.w) if g.beh(x, y) == 'MB_DEEP_WATER']
+        return [s for s in st if g.inside(*s) and (self.passable(*s) or s in [(w['x'], w['y']) for w in self.d.get('warp_events') or []])]
+
+
+def near(seen, x, y, also_self=True):
+    if also_self and (x, y) in seen:
+        return True
+    return any((x + dx, y + dy) in seen for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))
+
+
+def counter_near(g, seen, x, y):
+    """Aanspreken over een toonbank: twee tegels verderop bereikbaar."""
+    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+        if g.inside(x + dx, y + dy) and g.beh(x + dx, y + dy) == 'MB_COUNTER' and (x + 2 * dx, y + 2 * dy) in seen:
+            return True
+    return False
+
+
+def check_reach():
+    nmaps = 0
+    for n, d in sorted(MAPS.items()):
+        g = grid(n)
+        if not g or not g.sizeok or 'setmaplayoutindex' in map_script_text(n) or d.get('map_type') == 'MAP_TYPE_UNDERWATER':
+            continue
+        if n.startswith(('BattleFrontier', 'BattlePyramid', 'TrainerHill', 'Route110_TrickHouse', 'SecretBase', 'Unused', 'InsideOfTruck')) \
+                or 'Unused' in n or 'Prototype' in n:
+            continue
+        R = Reach(n)
+        st = R.entries()
+        if not st:
+            continue
+        nmaps += 1
+        seen = R.run(st)
+        L = LAYOUTS.get(d['layout'], {})
+        van_obj = same_positions(n) and part_vanilla(n, 'bg_events') and part_vanilla(n, 'warp_events') \
+            and not changed_since_base(L.get('blockdata_filepath', ''))
+        sev = 'VANILLA' if van_obj else 'MELD'
+        # warps
+        for i, w in enumerate(d.get('warp_events') or []):
+            x, y = w['x'], w['y']
+            if not g.inside(x, y):
+                continue
+            if not near(seen - {(x, y)}, x, y, also_self=False):
+                add('kaarten', sev, 'reachwarp:%s:%d' % (n, i),
+                    '%s: warp %d (%d,%d) heeft geen bereikbare buurtegel (aankomst vast, of warp onbereikbaar)' % (n, i, x, y))
+        for i, o in enumerate(d.get('object_events') or []):
+            x, y = o['x'], o['y']
+            if not g.inside(x, y) or o['script'] in ('0x0', 'NULL', '0'):
+                continue
+            if 'BERRY_TREE' in o['graphics_id'] or o['graphics_id'] in GIANT:
+                continue
+            if o.get('local_id') and re.search(r'(setobjectxy(perm)?|addobject)\s+%s\b' % o['local_id'], map_script_text(n)):
+                continue    # wordt door een script ergens anders neergezet
+            if not near(seen, x, y, also_self=False) and not counter_near(g, seen, x, y):
+                what = 'item' if 'ITEM_BALL' in o['graphics_id'] else ('trainer' if o.get('trainer_type') != 'TRAINER_TYPE_NONE' else 'object')
+                add('kaarten', sev, 'reachobj:%s:%d' % (n, i), '%s: %s %d (%s, %s) op (%d,%d) is niet bereikbaar'
+                    % (n, what, i, o['graphics_id'].replace('OBJ_EVENT_GFX_', ''), o['script'] if what != 'item' else o['trainer_sight_or_berry_tree_id'], x, y))
+        for i, b in enumerate(d.get('bg_events') or []):
+            x, y = b['x'], b['y']
+            if not g.inside(x, y) or b['type'] == 'secret_base':
+                continue
+            ok = (x, y) in seen if b['type'] == 'hidden_item' and R.passable(x, y) else near(seen, x, y)
+            if not ok and b['type'] == 'sign':
+                # meerdelig bord (bed, terminal): goed als een ander deel met hetzelfde script leesbaar is
+                ok = any(b2 is not b and b2.get('script') == b.get('script') and abs(b2['x'] - x) + abs(b2['y'] - y) == 1
+                         and near(seen, b2['x'], b2['y']) for b2 in d.get('bg_events') or [])
+            if not ok and not counter_near(g, seen, x, y):
+                add('kaarten', sev, 'reachbg:%s:%d' % (n, i), '%s: %s %d op (%d,%d) is niet bereikbaar (%s)'
+                    % (n, b['type'], i, x, y, b.get('item') or b.get('script')))
+        # wandelende NPC's: looproute geblokkeerd door een ander object
+        objpos = {(o['x'], o['y']): k for k, o in enumerate(d.get('object_events') or [])}
+        for i, o in enumerate(d.get('object_events') or []):
+            rx, ry = int(o.get('movement_range_x', 0) or 0), int(o.get('movement_range_y', 0) or 0)
+            mt = o['movement_type']
+            if not (rx or ry) or not re.search(r'WANDER|WALK_(UP_AND_DOWN|LEFT_AND_RIGHT|SEQUENCE)|COPY', mt):
+                continue
+            others = [(k, o2) for k, o2 in enumerate(d.get('object_events') or [])
+                      if k != i and str(o2.get('flag', '0')) in ('0', '')]
+            for k, o2 in others:
+                if abs(o2['x'] - o['x']) <= rx and abs(o2['y'] - o['y']) <= ry and \
+                        (('UP_AND_DOWN' in mt and o2['x'] == o['x']) or ('LEFT_AND_RIGHT' in mt and o2['y'] == o['y'])
+                         or 'WANDER' in mt and (o2['x'] == o['x'] or o2['y'] == o['y'])):
+                    # alleen het dichtstbijzijnde object aan die kant telt (verder weg kwam hij toch al niet)
+                    dx, dy = o2['x'] - o['x'], o2['y'] - o['y']
+                    if any(o3 is not o2 and (o3['x'] - o['x']) * dx >= 0 and (o3['y'] - o['y']) * dy >= 0
+                           and (o3['x'] == o['x'] if dx == 0 else o3['y'] == o['y'])
+                           and 0 < abs(o3['x'] - o['x']) + abs(o3['y'] - o['y']) < abs(dx) + abs(dy) for _, o3 in others):
+                        continue
+                    s2 = 'VANILLA' if event_vanilla(n, 'object_events', o) and event_vanilla(n, 'object_events', o2) else 'MELD'
+                    add('kaarten', s2, 'walkroute:%s:%d:%d' % (n, i, k), '%s: looproute van object %d (%s, %s, bereik %d/%d) loopt over object %d (%s) op (%d,%d)'
+                        % (n, i, o['graphics_id'].replace('OBJ_EVENT_GFX_', ''), mt.replace('MOVEMENT_TYPE_', ''), rx, ry, k,
+                           o2['graphics_id'].replace('OBJ_EVENT_GFX_', ''), o2['x'], o2['y']))
+    stats['kaarten']['bereikbaarheid'] = nmaps
+
+
 def check_maps():
+    check_reach()
     for g in MAPGROUPS['group_order']:
         n = len(MAPGROUPS[g])
         if n > 128:

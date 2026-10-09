@@ -510,8 +510,9 @@ wid['spook'] = edit_safari('SafariZone_Northwest', {(0, 28): val(LILY_WEST, 0, 7
                            (0, 28, 7, 'MAP_SAFARI_ZONE_HAUNTED_CAMP'),
                            (0, 28, 7, 'RIGHT', 'SafariZone_Northwest_EventScript_SpookGuard'))
 # Northeast (24,7): grot in de bergwand boven het plateau -> Thunder Plains
-wid['thunder'] = edit_safari('SafariZone_Northeast', {(23, 6): val(0x07B, 1, 3), (24, 6): val(0x064, 1, 3),
-                                                      (25, 6): val(0x07D, 1, 3), (24, 7): val(0x0A7, 0, 3),
+# De richel erboven (rij 6) blijft begaanbaar: het is de enige weg naar het rotsplateau links (audit.py, v0.9.216).
+wid['thunder'] = edit_safari('SafariZone_Northeast', {(23, 6): val(0x071, 0, 3), (24, 6): val(0x071, 0, 3),
+                                                      (25, 6): val(0x071, 0, 3), (24, 7): val(0x0A7, 0, 3),
                                                       (25, 7): val(0x091, 1, 3), (24, 8): val(GRASS, 0, 3)},
                              (24, 7, 3, 'MAP_SAFARI_ZONE_THUNDER_PLAINS'),
                              (24, 8, 3, 'DOWN', 'SafariZone_Northeast_EventScript_ThunderGuard'))

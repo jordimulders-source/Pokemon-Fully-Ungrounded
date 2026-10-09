@@ -5,8 +5,8 @@ Gegenereerd met `python3 tools/grounded/audit.py --md AUDIT.md` (statisch, zonde
 | Categorie | FOUT | MELD | INFO | tellingen |
 |---|---|---|---|---|
 | Warps | 0 | 11 | 4 | dynamisch 47, alleen aankomstpunt 67, warps 1800 |
-| Kaarten en objecten | 0 | 11 | 0 | kaarten 704 |
-| Scripts en teksten | 0 | 0 | 0 | map-scripts 4508, labelverwijzingen 29713, coord-scripts 218, teksten 5279 |
+| Kaarten en objecten | 0 | 11 | 0 | genegeerd 2, bereikbaarheid 518, kaarten 704 |
+| Scripts en teksten | 0 | 0 | 0 | map-scripts 4508, labelverwijzingen 29713, coord-scripts 218, lock-paden 3005, teksten 5279 |
 | Flags en vars | 0 | 1 | 0 | FLAG_GROUNDED 406, flags 1953, vars 285 |
 | Trainers | 0 | 0 | 4 | partijen 1200, pokemon 5404, trainer-id's 1190, vrije id's 9, ongebruikte constanten 4, alleen op ongebruikte kaarten 0 |
 | Wilde encounters | 0 | 3 | 8 | tabellen 387 |

@@ -17,9 +17,15 @@ Bij de eerste keer binnen begroeten **Dialga en Palkia** je: cry, ze laten hun k
   6. **Celebi vangen** (versla je hem per ongeluk: Calyrex reset de tijd, je kunt opnieuw).
   7. Terug: cutscene, Celebi herstelt de natuur, het park is weer normaal.
   8. Gevecht tegen **Eternatus**: elke Pokémon die je inzet krijgt een **omniboost** (+1 op alle stats).
-  9. Calyrex vertrekt; later een eigen quest met **Glastrier/Spectrier** (sneeuwgebied of een nieuw eiland).
+  9. Calyrex vertrekt; later een eigen quest met **Glastrier/Spectrier** in het sneeuwgebied (Route 135/136/Ashfrost; nieuwe kaart met warp).
   - Ontwerp van de kaarten: zie TODO (Poké Ball-vormig park, Ilex mysterieus).
-- **Chargestone Cave, Glimwood Tangle, Area Zero:** sfeer zie TODO/referenties; quests nog te bedenken.
+- **Area Zero** (Jordi 9 okt; een flinke quest): alle **paradox-Pokémon** te vangen (tellen niet als legendaries), inclusief Walking Wake, Iron Leaves e.d.; een aardig groot gebied met ingangen/uitgangen (meerdere kaarten, ruimte om met tilesets te spelen).
+  1. Bovenin reguliere Pokémon zoals in de games (Raichu, Espeon, Farigiraf e.a.). Dan eerst Scream Tail en Iron Hands; hoe dieper, hoe meer fucked up.
+  2. Een portaal om te wisselen tussen **toekomst-Area Zero** en **verleden-Area Zero**: in de ene de Violet-exclusives (Iron-soorten) + **Miraidon**, in de andere de Scarlet-exclusives (oude paradoxen) + **Koraidon**.
+  3. Meerdere bossfights tegen paradox-Pokémon. Na het vangen van Miraidon resp. Koraidon een bossfight tegen het **beveiligingssysteem** (geen trainer) met ontzettend sterke paradoxen.
+  4. Beide systemen verslagen → nieuwe opening naar de **Tera Cave**: laatste bossfight tegen het **alarmsysteem**, het enige gevecht in de game (naast eventueel de Spire) waarin **Tera** wordt gebruikt. Gewonnen → Terapagos zat opgesloten en is te vangen.
+- **Chargestone Cave** (voorstel, Jordi beslist): Unova in een andere tijd. Zwevende magnetische stenen (blauw licht), een paar duw-stenen als licht puzzelpad (geen frustrerende minigame). **Colress** doet onderzoek naar het magnetisme; de grot is overladen door **Zeraora**, die stroom vreet. Quest: Colress' machine en zijn assistenten verslaan, dan Zeraora. Extra: magnetisch veld als evolutieplek (Magneton, Nosepass, Charjabug).
+- **Glimwood Tangle** (voorstel, Jordi beslist): Galar-sprookjesbos met lichtgevende paddenstoelen en Ballonlea-sfeer. **Opal** als gids (met haar "quizjes" als grap, zonder echte minigame). Het licht van het bos sterft af (Impidimp-bende en een doodse aura). Quest: Xerneas vinden om het licht te herstellen; daarna toont **Yveltal** zich (leven/dood, twee toestanden van het bos zoals het brandende National Park).
 - **Gen 4-meren:** een **aparte kamer tussen ????? en Mt. Coronet**. Dialga en Palkia channelen weer: deze drie zijn nodig om toekomstig kwaad in welke dimensie dan ook te verslaan. Drie portalen: **Lake Acuity** (meer in een sneeuwgebied), **Lake Valor** en **Lake Verity** (gewone meren). Elk meer heeft een grot in het midden: surf erheen, daar zit Uxie/Mesprit/Azelf.
 
 ## 3. Daarna, in volgorde

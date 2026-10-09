@@ -25,7 +25,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
    - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173). Nog: Lavender-NPC's met Ashfrost-teksten (Protip Oracle) herschrijven; `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls; deurtje in het rotsje op Route 125 is hoekig.
    - d. **Gen 4-meren** (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
-   - f. later eventueel **Area Zero** (paradoxen zijn gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
+   - f. **Area Zero**: flinke paradox-quest met Miraidon/Koraidon, beveiligingssystemen en Tera Cave/Terapagos (SPACETIME_PLAN; paradoxen niet meer gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
    - **Chargestone Cave** (Jordi 9 okt): niet helemaal nabouwen, wel dat sfeertje (zwevende elektrische stenen, blauw licht) en de schaal; een elektrische grot. Referenties: `referenties/chargestone/` (1F, B1F, B2F uit B2W2).
    - **Glimwood Tangle** (Jordi 9 okt): sfeer van Glimwood + Ballonlea (lichtgevende paddenstoelen, donker sprookjesbos). Referenties: `referenties/glimwood_ballonlea/` en ongesorteerde sfeerbeelden in `referenties/sfeer_ongesorteerd/`.
    - g. **Mt. Coronet als laatste post-game-quest:** als je de rest hebt, Dialga, Palkia en tot slot Arceus.
@@ -37,7 +37,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 9. **The Spire (na Jordi's test, `SPIRE_TESTCHECKLIST.txt`):** gewone gevechten per deel van de act, één elite-pool per act, gevechten meer als puzzel. Nog open: codex, golven (derde vijand), dramatischer baas-intro, ja/nee bij de receptioniste, echte teksten. (okt; SPIRE_DESIGN "Nog open")
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
 13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
-14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves (Jordi 9 okt: akkoord, geen prio als het veel werk is).
+14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
 15. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
 
 ## 3. Daarna: gevechtsintro's en muziek
@@ -66,8 +66,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ## 4. Open vragen voor Jordi
 1. **Mega Forest:** waar komt het roadblock naar Zacian/Zamazenta (hint: roestig zwaard + schild met een boomstam in het midden in het Mini Forest)?
-2. **Calyrex-quest** (Glastrier/Spectrier): sneeuwgebied of een nieuw eiland?
-3. **Quests voor Chargestone, Glimwood en Area Zero** nog te bedenken.
+2. **Chargestone (Colress + Zeraora) en Glimwood (Opal, Xerneas/Yveltal):** voorstellen in SPACETIME_PLAN; akkoord?
 
 ## 5. Besloten / bewust niet
 - **Geen Grounded-Pokédex:** gewoon de National Dex met alles, vanaf het begin. **Signatures gepauzeerd**; Gen 4+-trainersprites voorlopig niet nodig. (9 okt)
@@ -76,7 +75,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Birth Island weg** (kaart, event, ticket). Deoxys alleen in de ruimte. (5 en 9 okt)
 - **Gerald weg** (Dragonspine wordt het Tao-eiland). (9 okt)
 - **Legendaries gepauzeerd** (6 okt), behalve: Type: Null + Magearna (gifts), Tapu Isle en Cresselia (gedaan), Hoopa en de Forces (gedaan), en sinds 9 okt het Tao-trio en de Spacetime Cave (Mewtwo, Celebi, meertrio, Dialga, Palkia, Arceus).
-- **Paradox-Pokémon gepauzeerd**; Area Zero hooguit later via de Spacetime Cave. (8 okt)
+- **Paradox-Pokémon:** alleen in Area Zero (Spacetime Cave); ze tellen niet als legendaries. (9 okt)
 - **Ultra Space** wordt een los gebied, niet via de Spacetime Cave (gepauzeerd). In de Spacetime Cave geen vogellocaties en geen Fullmoon Island. Ilex Forest mag nu wel, voor Celebi. (6 en 9 okt)
 - **Geen Mega Evolution, Z-moves, Dynamax of Tera voor de speler.** De vormen staan alleen aan voor Spire-bazen en trainers. (begin changelog; v0.8.104)
 - **Verborgen abilities zijn niet verkrijgbaar** (geen Ability Patch, DexNav uit); een sterke ability hoort in slot 1/2. (5 okt)

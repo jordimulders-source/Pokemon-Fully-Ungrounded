@@ -161,6 +161,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Stadium-teksten:** verliesteksten breken niet vanzelf goed af; met de hand afbreken (200 px). In doubles praat vóór de eerste beurt alleen tegenstander A, tenzij `BattleScript_StadiumTrainerABSlideMsgEnd2`.
 
 - **Randen in een vanilla-tileset:** een autotiler die per cel de tegel uit dezelfde 3x3-omgeving in een bestaande kaart kiest (`sootopolis_craters.py`) geeft nette randen zonder handwerk; klifbanden even dik als in het voorbeeld. Stadium-omroepregels max. 3 regels per vak. `testrom.py` draait `make_intro_state.py` met `python3`: los herhalen met `python3.11`.
+- **Grotopening in een buitenkaart:** Cave-tegel 0x23c (zuidpijl-warp) op de vloer met 258/259/25a in de wand eronder, niet op zand. Verborgen gat in bomen: de Toadstool-tegels 0x35e–0x361 (Rustboro-set). Emulatortest na een warp: wacht op het mapnummer (`gSaveBlock1Ptr`+5).
+- **Kusthoeken in Sootopolis-stijl:** geen eigen hoeken verzinnen; neem exact de tegelcombinaties uit SootopolisCity over (Jordi keurde losse klifblokjes, waterrandjes in de klif en plantjes-tegels 2de/2df af).
 
 ## Werkwijzen (herhaalde taken)
 

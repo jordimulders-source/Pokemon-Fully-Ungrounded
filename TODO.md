@@ -4,12 +4,12 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → Beasts of Ruin → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
+**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
 
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
 
@@ -56,7 +56,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 - **Spacetime Cave-warps:** Cerulean Cave, Lavender Town + Pokémon Tower, National Park + Forest-tunnel naar Ilex Forest (Celebi), een representatie van de Gen 4-meren, Mt. Coronet + Spear Pillar (+ de trap naar Arceus, aan het einde), Chargestone Cave (of een versie daarvan), Glimwood Tangle, Area Zero, en ????? naar Yoshi's Island. De Mewtwo-grot in Meteor Falls verdwijnt uiteindelijk. **Per locatie eerst input van Jordi** (volledig nabouwen of eigen richting, welke assets).
 - **Delta Episode:** Deoxys is beloning genoeg. Idee: een plek waar je Deoxys met de meteorieten van vorm laat wisselen.
 - **Contests:** helemaal herbouwen, maar achteraan de lijst.
-- **Beasts of Ruin (Jordi 9 okt):** Wo-Chien, Chien-Pao, Ting-Lu en Chi-Yu, elk "gesealed" op een lege plek in de wereld, bijv. Chi-Yu in een kamer bovenin Jagged Pass die naar een vurig gebied leidt. Hun thema nabouwen (Jordi is er weg van).
+- ~~**Beasts of Ruin**~~ (gedaan v0.9.170; thema nabouwen staat nog bij muziek) **(Jordi 9 okt):** Wo-Chien, Chien-Pao, Ting-Lu en Chi-Yu, elk "gesealed" op een lege plek in de wereld, bijv. Chi-Yu in een kamer bovenin Jagged Pass die naar een vurig gebied leidt. Hun thema nabouwen (Jordi is er weg van).
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi

@@ -17580,3 +17580,12 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.169] - Kratereilanden: bovenhoeken zoals Sootopolis, geen plantjes in de klif
 - Jordi: de bovenhoeken van de grasrichels (Hermit Crater) waren lelijk. Het meer reikt nu een rij hoger dan de richels en de hoeken gebruiken exact de tegelcombinaties van Sootopolis (westrichel als Sootopolis 21–24,34–36; oostrichel als 38–40,35–37).
 - De onafgemaakte plantjes in de klif boven gras (tegels 2de/2df) zijn weg in beide kraters: gewone klifvoet 079.
+
+### [v0.9.170] - Beasts of Ruin: vier verzegelde schrijnen
+- **Chi-Yu** (kralen): grotopening bovenin Jagged Pass (11,6), links van de trap naar Mt. Chimney → kamer met inscriptie → lavaveld met brug en lavapoelen.
+- **Ting-Lu** (vaten): opening in de zuidwand halverwege de Desert Underpass (61,13).
+- **Wo-Chien** (tabletten): verborgen gat in de bomen zuidoost in Petalburg Woods (43,36), net als de ingang naar Toadstool Hollow.
+- **Chien-Pao** (zwaard): grot in de sneeuwklif van Route 135 (51,21).
+- Elk schrijn: zaal met vier stenen staken, inscriptie, het beest bovenin; muziek `MUS_SEALED_CHAMBER`. Elk beest aanspreken telt als bezoek; vóór de Hall of Fame een cryptische zegeltekst, daarna breken de zegels pas als alle vier schrijnen bezocht zijn (anders een hint per ontbrekend schrijn).
+- Gevecht lv 70, transitie Black Hole Pulsate en Kanto Legendary-muziek als placeholder (Jordi maakt eigen intro's en het thema later).
+- Tilesets `ruin_fire/earth/moss/ice`: Ekat's Volcano Set per thema getint. Bouwscript `tools/grounded/maptools/ruin_beasts.py`; flags `FLAG_GROUNDED(530–537)`.

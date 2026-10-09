@@ -288,10 +288,11 @@ def flag(name, desc, hidden=False):
 def write_flags():
     s = open(FLAGS_H).read()
     saved = ORIG.setdefault('__flags__', {})
-    for name, line in saved.items():  # eerst alles van een vorige run terugzetten
-        s = re.sub(r'#define %s\b.*' % re.escape(name), lambda m: line, s)
-    saved.clear()
+    # Bestaande flags blijven staan (ze zijn na de merge van 8 okt met de hand verplaatst; opnieuw
+    # toewijzen liet ze botsen). Alleen nog niet bestaande flags krijgen een plek uit de pool.
     for name, (unused, desc) in FLAGS.items():
+        if re.search(r'#define %s\b' % re.escape(name), s):
+            continue
         assert not re.search(r'#define %s\b' % re.escape(name), s), 'vlag %s bestaat al' % name
         m = re.search(r'#define %s(\s+)(\S+(?: \+ 0x\w+\))?)\s*// Unused Flag.*' % unused, s)
         assert m, 'vlag %s niet meer vrij' % unused
@@ -315,18 +316,23 @@ def trainer(const, desc, header, mons):
 
 def write_trainers():
     op = open('include/constants/opponents.h').read()
-    op = re.sub(r'\n// zee_vulling_3 \{\n.*?// \}\n', '\n', op, flags=re.S)
+    pat = r'// zee_vulling_3 \{\n.*?// \}\n'
     block = '// zee_vulling_3 {\n' + ''.join('#define %-35s %d // Project Grounded (zeevulling 3): %s\n' % (c, i, d)
                                              for c, i, d, _ in TRAINERS) + '// }\n'
-    last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', op)]) + 1  # ook trainers van andere scripts
-    op = re.sub(r'\n(#define TRAINERS_COUNT\s+)(\d+)', lambda m: '\n' + block + '\n' + m.group(1) + str(max(last, FIRST_ID + len(TRAINERS))), op)
-    op = re.sub(r'\n{3,}(// zee_vulling_3 \{)', r'\n\n\1', op)
-    op = re.sub(r'// \}\n{2,}#define TRAINERS_COUNT', '// }\n\n#define TRAINERS_COUNT', op)
+    rest = re.sub(pat, '', op, flags=re.S)
+    last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', rest)]) + 1  # ook trainers van andere scripts
+    if re.search(pat, op, re.S):  # op zijn plek vervangen
+        op = re.sub(pat, lambda m: block, op, count=1, flags=re.S)
+    else:
+        op = re.sub(r'\n(#define TRAINERS_COUNT)', lambda m: '\n' + block + '\n' + m.group(1), op)
+    op = re.sub(r'(#define TRAINERS_COUNT\s+)(\d+)', lambda m: m.group(1) + str(max(last, FIRST_ID + len(TRAINERS), int(m.group(2)))), op)
     open('include/constants/opponents.h', 'w').write(op)
     p = open('src/data/trainers.party').read()
-    if TBEGIN in p:
-        p = p[:p.index(TBEGIN)].rstrip('\n') + p[p.index(TEND) + len(TEND):]
-    p = p.rstrip('\n') + '\n\n' + TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND + '\n'
+    new = TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND
+    if TBEGIN in p:  # op zijn plek vervangen (geen blokken naar achteren schuiven)
+        p = p[:p.index(TBEGIN)] + new + p[p.index(TEND) + len(TEND):]
+    else:
+        p = p.rstrip('\n') + '\n\n' + new + '\n'
     open('src/data/trainers.party', 'w').write(p)
 
 
@@ -463,10 +469,13 @@ def apply_events(M, objs, bgs, script_text):
     open(path, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
     inc_path = 'data/maps/%s/scripts.inc' % M.name
     inc = open(inc_path).read()
-    if MARK in inc:
+    new = (MARK + '\n' + script_text.strip('\n') + '\n' + MARK_END) if script_text.strip() else ''
+    if MARK in inc and new:  # op zijn plek vervangen
+        inc = inc[:inc.index(MARK)] + new + inc[inc.index(MARK_END) + len(MARK_END):]
+    elif MARK in inc:
         inc = inc[:inc.index(MARK)].rstrip('\n') + '\n' + inc[inc.index(MARK_END) + len(MARK_END):].lstrip('\n')
-    if script_text.strip():
-        inc = inc.rstrip('\n') + '\n\n' + MARK + '\n' + script_text.strip('\n') + '\n' + MARK_END + '\n'
+    elif new:
+        inc = inc.rstrip('\n') + '\n\n' + new + '\n'
     open(inc_path, 'w').write(inc)
 
 

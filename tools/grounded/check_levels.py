@@ -295,12 +295,135 @@ def restore(verbose=True):
     return allc
 
 
+def check_blocks():
+    """Elk generatorblok '// naam {' in flags.h/opponents.h moet een eigen '// }' hebben; anders
+    overschrijft het ene script het blok van het volgende (beacon_isle at tao_island op)."""
+    import re
+    bad = []
+    for name in ('include/constants/flags.h', 'include/constants/opponents.h'):
+        t = read(name) or ''
+        cur = None
+        for i, l in enumerate(t.split('\n'), 1):
+            if re.match(r'// \w+ \{', l):
+                if cur:
+                    bad.append('%s:%d: blok %s niet gesloten' % (name, i, cur))
+                cur = l.split()[1]
+            elif l.startswith('// }'):
+                cur = None
+    if bad:
+        sys.exit('check_levels: ' + '; '.join(bad) + ' (zet eerst een "// }" na het blok)')
+
+
 def protect():
-    global _snap
+    global _snap, _evsnap
+    check_blocks()
+    if _evsnap is None and os.environ.get('GROUNDED_SCRIPT_EVENTS') != '1':
+        _evsnap = event_snapshot()
+        atexit.register(restore_events)
     if _snap is not None or os.environ.get('GROUNDED_SCRIPT_LEVELS') == '1':
         return
     _snap = snapshot()
     atexit.register(restore)
+
+
+# ---------------------------------------------------------------- objecten-bewaker
+# Sommige bouwscripts herschrijven een hele map.json en gooien zo objecten/items weg die
+# een later script toevoegde. De bewaker onthoudt alle events per kaart en zet weggevallen
+# events terug op hun oude plek (volgorde blijft, dus ook de nummers zonder local_id),
+# zolang hun script-label nog bestaat. Bewust een event weghalen: GROUNDED_SCRIPT_EVENTS=1.
+EVENT_LISTS = ('object_events', 'bg_events', 'coord_events')
+_evsnap = None
+
+
+def _evkey(ev, shared=()):
+    """Sleutel om een event terug te vinden. Op script (+ local_id); bij scripts die meerdere
+    events delen (Common_EventScript_FindItem) ook flag/item; zonder script alles behalve
+    de positie."""
+    sc = ev.get('script')
+    if sc and sc not in shared:
+        return (ev.get('type'), sc, ev.get('local_id'))
+    return (ev.get('type'), sc, ev.get('local_id'), ev.get('flag'), ev.get('item'),
+            ev.get('trainer_sight_or_berry_tree_id'), ev.get('var'), ev.get('var_value'))
+
+
+def _labels():
+    import glob, re
+    lab = set()
+    for f in glob.glob(os.path.join(ROOT, 'data', '**', '*.inc'), recursive=True) + \
+            glob.glob(os.path.join(ROOT, 'data', '**', '*.s'), recursive=True):
+        try:
+            t = open(f, encoding='utf-8', errors='ignore').read()
+        except OSError:
+            continue
+        lab.update(re.findall(r'^(\w+)::?', t, re.M))
+    return lab
+
+
+def event_snapshot():
+    import glob, json
+    snap = {}
+    for p in glob.glob(os.path.join(ROOT, 'data', 'maps', '*', 'map.json')):
+        try:
+            d = json.load(open(p, encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        snap[p] = {k: list(d.get(k) or []) for k in EVENT_LISTS}
+    return snap
+
+
+
+
+def restore_events(verbose=True):
+    import json
+    if not _evsnap:
+        return
+    labels = None
+    total = []
+    for p, ref in _evsnap.items():
+        try:
+            raw = open(p, encoding='utf-8').read()
+            d = json.loads(raw)
+        except (OSError, ValueError):
+            continue
+        changed = False
+        for k in EVENT_LISTS:
+            old, new = ref[k], list(d.get(k) or [])
+            if old == new:
+                continue
+            from collections import Counter
+            cnt = Counter(e.get('script') for e in old + new if e.get('script'))
+            shared = {sc for sc, n in cnt.items() if n > 2 or sc.startswith('Common_')}
+            bykey = {}
+            for i, ev in enumerate(new):
+                bykey.setdefault(_evkey(ev, shared), []).append(i)
+            used = set()
+            out = []
+            for ev in old:
+                idx = bykey.get(_evkey(ev, shared))
+                if idx:
+                    i = idx.pop(0)
+                    used.add(i)
+                    out.append(new[i])
+                    continue
+                if labels is None:
+                    labels = _labels()
+                sc = ev.get('script')
+                if sc and sc != '0x0' and sc not in labels:
+                    continue  # script bestaat niet meer: bewust weggehaald
+                out.append(ev)
+                total.append((os.path.basename(os.path.dirname(p)), k, sc or ev.get('item')))
+            out += [ev for i, ev in enumerate(new) if i not in used]
+            if out != new:
+                d[k] = out
+                changed = True
+        if changed:
+            with open(p, 'w', encoding='utf-8') as f:
+                f.write(json.dumps(d, indent=2, ensure_ascii=False) + '\n')
+    if verbose and total:
+        print('check_levels: %d weggevallen event(s) teruggezet, bijv.:' % len(total))
+        for m, k, sc in total[:8]:
+            print('   %s %s: %s' % (m, k, sc))
+        print('   (bewust events weghalen: GROUNDED_SCRIPT_EVENTS=1)')
 
 
 # ---------------------------------------------------------------- CLI

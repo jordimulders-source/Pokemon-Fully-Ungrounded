@@ -20352,7 +20352,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpAttack  = 154,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 90 : 154,
         .types = MON_TYPES(TYPE_PSYCHIC),
-        .catchRate = 30,
+        .catchRate = 3,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 340,
     #elif P_UPDATED_EXP_YIELDS >= GEN_5
@@ -20430,7 +20430,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpAttack  = 154,
         .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
-        .catchRate = 30,
+        .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 390 : 351,
         .evYield_SpAttack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -20501,7 +20501,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpAttack  = 194,
         .baseSpDefense = 120,
         .types = MON_TYPES(TYPE_PSYCHIC),
-        .catchRate = 30,
+        .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 390 : 351,
         .evYield_SpAttack = 3,
         .genderRatio = MON_GENDERLESS,

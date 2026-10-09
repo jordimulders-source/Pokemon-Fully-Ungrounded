@@ -1458,6 +1458,10 @@
     {
       "id": "MAPSEC_AREA_ZERO",
       "name": "AREA ZERO"
+    },
+    {
+      "id": "MAPSEC_YOSHIS_ISLAND",
+      "name": "YOSHI'S ISLAND"
     }
   ]
 }

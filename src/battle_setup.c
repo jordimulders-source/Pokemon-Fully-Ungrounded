@@ -643,6 +643,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (placeholder: Kanto-legendary-thema)
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (placeholder: Kanto-legendary-thema, bestaande transitie)
+        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
         break;

@@ -486,6 +486,18 @@ static const struct SpriteFrameImage sPicTable_RustedSwordOW[] = { // Project Gr
 static const struct SpriteFrameImage sPicTable_RustedShieldOW[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_RustedShieldOW),
 };
+static const struct SpriteFrameImage sPicTable_YoshiOw[] = { // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_YoshiOw, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BooOw[] = { // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_BooOw, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_WarioOw[] = { // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_WarioOw, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Gen1Ghost[] = { // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
     obj_frame_tiles(gObjectEventPic_Gen1Ghost),
 };

@@ -1257,6 +1257,17 @@
 #define TRAINER_AREA_ZERO_SECURITY_FUTURE   1180 // Project Grounded: Area Zero, toekomst: beveiligingssysteem na MIRAIDON
 #define TRAINER_AREA_ZERO_SECURITY_PAST     1181 // Project Grounded: Area Zero, verleden: beveiligingssysteem na KORAIDON
 #define TRAINER_AREA_ZERO_ALARM             1182 // Project Grounded: Area Zero, Tera-grot: alarmsysteem (terastaliseert, elk teamlid)
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056)
+#define TRAINER_YI_SHY_GUY_BEACH_A          1017 // Project Grounded: Yoshi's Island, strand, pijpwachter 1
+#define TRAINER_YI_SHY_GUY_BEACH_B          1018 // Project Grounded: Yoshi's Island, strand, pijpwachter 2
+#define TRAINER_YI_SHY_GUY_CAMP_A1          1019 // Project Grounded: Yoshi's Island, kamp, bende A
+#define TRAINER_YI_SHY_GUY_CAMP_A2          1026 // Project Grounded: Yoshi's Island, kamp, bende A
+#define TRAINER_YI_SHY_GUY_CAMP_B1          1027 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
+#define TRAINER_YI_SHY_GUY_CAMP_B2          1028 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
+#define TRAINER_YI_COMMANDER_BOO            1029 // Project Grounded: Yoshi's Island, spookhuis, baas
+#define TRAINER_YI_SHY_GUY_FORT_A           1049 // Project Grounded: Yoshi's Island, fort, wachter
+#define TRAINER_YI_SHY_GUY_FORT_B           1055 // Project Grounded: Yoshi's Island, fort, wachter
+#define TRAINER_YI_WARIO                    1056 // Project Grounded: Yoshi's Island, fort, eindbaas
 // }
 
 #define TRAINERS_COUNT                      1200

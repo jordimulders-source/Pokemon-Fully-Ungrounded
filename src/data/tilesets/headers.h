@@ -1498,3 +1498,44 @@ const struct Tileset gTileset_AreaZeroGeneralTera =
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
 };
+
+
+const struct Tileset gTileset_YoshiIslandBase = // Project Grounded: Yoshi's Island: grond (primary)
+{
+    .tiles = gTilesetTiles_YoshiIslandBase,
+    .palettes = gTilesetPalettes_YoshiIslandBase,
+    .metatiles = gMetatiles_YoshiIslandBase,
+    .metatileAttributes = gMetatileAttributes_YoshiIslandBase,
+};
+
+const struct Tileset gTileset_YoshiBeach = // Project Grounded: Yoshi's Island: Beach
+{
+    .tiles = gTilesetTiles_YoshiBeach,
+    .palettes = gTilesetPalettes_YoshiBeach,
+    .metatiles = gMetatiles_YoshiBeach,
+    .metatileAttributes = gMetatileAttributes_YoshiBeach,
+};
+
+const struct Tileset gTileset_YoshiHills = // Project Grounded: Yoshi's Island: Hills
+{
+    .tiles = gTilesetTiles_YoshiHills,
+    .palettes = gTilesetPalettes_YoshiHills,
+    .metatiles = gMetatiles_YoshiHills,
+    .metatileAttributes = gMetatileAttributes_YoshiHills,
+};
+
+const struct Tileset gTileset_YoshiBoo = // Project Grounded: Yoshi's Island: BooMansion
+{
+    .tiles = gTilesetTiles_YoshiBoo,
+    .palettes = gTilesetPalettes_YoshiBoo,
+    .metatiles = gMetatiles_YoshiBoo,
+    .metatileAttributes = gMetatileAttributes_YoshiBoo,
+};
+
+const struct Tileset gTileset_YoshiFort = // Project Grounded: Yoshi's Island: WarioFort
+{
+    .tiles = gTilesetTiles_YoshiFort,
+    .palettes = gTilesetPalettes_YoshiFort,
+    .metatiles = gMetatiles_YoshiFort,
+    .metatileAttributes = gMetatileAttributes_YoshiFort,
+};

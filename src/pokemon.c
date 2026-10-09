@@ -6106,7 +6106,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     // Project Grounded: de Shy Guys (Stadium) vechten op Sunset Wilds (Mario Kart: Super Circuit)
     if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
      || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
-     || trainerId == TRAINER_SHY_GUY_DESERT)
+     || trainerId == TRAINER_SHY_GUY_DESERT
+     || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)

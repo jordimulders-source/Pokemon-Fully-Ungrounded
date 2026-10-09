@@ -301,7 +301,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_YOSHI, COMPOUND_STRING("YOSHI! Please be gentle, he cries. We\nhave tissues on standby.")},
     {TRAINER_STADIUM_GOLBAT, COMPOUND_STRING("GOLBAT! From every cave of your\nchildhood. REPEL does not work in here.")},
     {TRAINER_STADIUM_GRIMER, COMPOUND_STRING("GRIMER! Here since 1996. So is the smell.\nFront rows, we apologize.")},
-    {TRAINER_STADIUM_BOO, COMPOUND_STRING("BOO! Don't look at him. Seriously, look\naway. It's in the rules.")},
+    {TRAINER_STADIUM_BOO, COMPOUND_STRING("COMMANDER BOO! Don't look at him.\nSeriously. He hates that.")},
     {TRAINER_STADIUM_MEW, COMPOUND_STRING("MEW! Found under a truck in LILYCOVE.\nThe rumors were true all along!")},
     {TRAINER_STADIUM_SHY_GUY_RED, COMPOUND_STRING("SHY GUY! He asked us not to announce\nhim. Sorry, buddy.")},
     {TRAINER_STADIUM_SHY_GUY_GREEN, COMPOUND_STRING("SHYER GUY! Even shyer than SHY GUY.\nHe's under the bleachers. Somewhere.")},

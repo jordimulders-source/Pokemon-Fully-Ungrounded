@@ -308,8 +308,11 @@
 
 #define OBJ_EVENT_GFX_GEN1_GHOST                        290 // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_GFX_STATUE_CELEBI                     291 // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI                             292 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_COMMANDER_BOO                     293 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_WARIO                             294 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        292
+#define NUM_OBJ_EVENT_GFX                        295
 
 
 // These are dynamic object gfx ids.
@@ -471,6 +474,9 @@
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1143 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI                   0x1170 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_COMMANDER_BOO           0x1171 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_WARIO                   0x1172 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)

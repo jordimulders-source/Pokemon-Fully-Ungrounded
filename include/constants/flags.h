@@ -1649,6 +1649,28 @@
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
 // regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119, 1050-1119 nog vrij)
+#define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
+#define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
+#define FLAG_YI_CAMP_A                                       FLAG_GROUNDED(1026) // Project Grounded: Yoshi's Island: bende A in het Shy Guy-kamp verslagen (multi battle 2)
+#define FLAG_YI_CAMP_B                                       FLAG_GROUNDED(1027) // Project Grounded: Yoshi's Island: bende B voor het spookhuis verslagen (multi battle 3)
+#define FLAG_YI_BOO_DONE                                     FLAG_GROUNDED(1028) // Project Grounded: Yoshi's Island: Commander Boo verslagen (de fortwachter vlucht)
+#define FLAG_YI_FORT_GUARDS                                  FLAG_GROUNDED(1029) // Project Grounded: Yoshi's Island: de twee fortwachters verslagen (multi battle 4)
+#define FLAG_YI_WARIO_DONE                                   FLAG_GROUNDED(1030) // Project Grounded: Yoshi's Island: Wario verslagen (zet ook FLAG_SPACETIME_YOSHI_DONE)
+#define FLAG_YI_PECHARUNT_DONE                               FLAG_GROUNDED(1031) // Project Grounded: Yoshi's Island: Pecharunt gevangen (of verslagen; komt dan terug)
+#define FLAG_YI_YOSHI_AHEAD                                  FLAG_GROUNDED(1032) // Project Grounded: Yoshi's Island: Yoshi is vooruit de pijp in (verbergt Yoshi op het strand)
+#define FLAG_YI_YOSHI_HOME                                   FLAG_GROUNDED(1033) // Project Grounded: Yoshi's Island: quest klaar, Yoshi wacht op het strand (verbergt hem elders)
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_HONEY                  FLAG_GROUNDED(1040) // Project Grounded: Yoshi's Island strand: Honey
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_HEAL_BALL              FLAG_GROUNDED(1041) // Project Grounded: Yoshi's Island strand: Heal Ball
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_BEACH_EXP_CANDY_XS    FLAG_GROUNDED(1042) // Project Grounded: Yoshi's Island strand: verborgen Exp. Candy XS
+#define FLAG_ITEM_YOSHIS_ISLAND_HILLS_LAGGING_TAIL           FLAG_GROUNDED(1043) // Project Grounded: Yoshi's Island heuvels: Lagging Tail
+#define FLAG_ITEM_YOSHIS_ISLAND_HILLS_TOXIC_PLATE            FLAG_GROUNDED(1044) // Project Grounded: Yoshi's Island heuvels: Toxic Plate (bij Pecharunts kraampje)
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_HILLS_STICKY_BARB     FLAG_GROUNDED(1045) // Project Grounded: Yoshi's Island heuvels: verborgen Sticky Barb
+#define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_FLOAT_STONE      FLAG_GROUNDED(1046) // Project Grounded: Yoshi's Island spookhuis: Float Stone
+#define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL        FLAG_GROUNDED(1047) // Project Grounded: Yoshi's Island spookhuis: Poke Doll
+#define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW         FLAG_GROUNDED(1048) // Project Grounded: Yoshi's Island fort: Grip Claw
+#define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR   FLAG_GROUNDED(1049) // Project Grounded: Yoshi's Island fort: Malicious Armor
+// }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen

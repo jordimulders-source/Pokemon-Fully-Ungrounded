@@ -18,8 +18,8 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (in uitvoering):**
 - ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). Mitch kiest zelf tussen thema A en B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
 
-**In uitvoering (Jordi 9 okt):** Abandoned Ship nachtdek (agent), casino-odds/bookies/skip (agent). Gedaan: Battle Casino (v0.9.213), Spear Pillar/Hall/constructen (v0.9.211), Enamorus (v0.9.212), Nep-Enut + Yoshi-huis (v0.9.208–210).
-Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, controleren). Testers van Jordi als trainers: id's vrijmaken (bijv. scripted gevechten die een id delen).
+**In uitvoering (Jordi 9 okt):** grondige bugjacht richting 1.0 (agent: warps, crashes, grafische bugs, onafgemaakte kaarten, gevechten die niet passen; `AUDIT.md`). Gedaan: casino-odds/bookies/skip + Abandoned Ship (v0.9.216). Gedaan: Battle Casino (v0.9.213), Spear Pillar/Hall/constructen (v0.9.211), Enamorus (v0.9.212), Nep-Enut + Yoshi-huis (v0.9.208–210).
+Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Leaf/Brendan-placeholder nog vrij te maken. Testers van Jordi als trainers: id's vrijmaken (bijv. scripted gevechten die een id delen).
 
 ~~Technische schuld bouwscripts~~ (v0.9.195–198: `check_levels.protect()` bewaakt levels en events; alle bouwscripts draaien zonder wijzigingen).
 
@@ -27,7 +27,7 @@ Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, c
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
    - ~~S1~~ (v0.9.178). Open: `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls.
    - ~~a. Lavender Town + Pokémon Tower~~ (v0.9.173)
-   - b. **National Park + Ilex Forest**: Calyrex/Eternatus/Celebi-quest (SPACETIME_PLAN); daarna Calyrex-quest met Glastrier/Spectrier (sneeuwgebied of nieuw eiland).
+   - ~~b. National Park + Ilex Forest~~ (v0.9.181; Calyrex-quest v0.9.205): Calyrex/Eternatus/Celebi-quest (SPACETIME_PLAN); daarna Calyrex-quest met Glastrier/Spectrier (sneeuwgebied of nieuw eiland).
      - Ontwerp (Jordi, 9 okt, 3 screenshots HGSS/DPPt-stijl als inspiratie): park in de vorm van een **Poké Ball**, relaxed en comfortabel. Bovenste helft hoog gras, onderste helft ander (donkerder) gras, het midden een fontein als knop van de bal, stenen paden in trapvorm eromheen, hekjes, lantaarns en bloemen langs de rand, bomen rondom. Onderaan een gang naar een pleintje met bankjes, een bloembak en een bord, en daar een warp naar **Ilex Forest**. Ingang rechts vanuit de Spacetime Cave: een poortgebouwtje aan de oostkant (zoals HGSS), binnen een FRLG-achtig poorthuis met een zijuitgang (pijl-warp `MB_EAST_ARROW_WARP`, werkt in de engine). Ekat-sets: Park Tileset, Park Gazebo, Pond and Bridge. Geen bug-catching-minigame.
      - **Ilex Forest** (Jordi, 9 okt, 4 screenshots GSC/HGSS als inspiratie; meer creatieve vrijheid): mysterieus. Basis zoals GSC/HGSS: dicht bos met kronkelpaden, poorthuis linksboven en linksonder, vijver linksboven, het **schrijn in het midden** (Celebi-quest), houten hekjes, bloemenpaadjes, Cut-boompjes. Eigen draai: mist/donkere tint, dwaalpaden. Hier komt de **Celebi-quest**.
    - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173).
@@ -44,7 +44,7 @@ Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, c
 8. **Trick House vervangen?** Wacht op Jordi's idee. (okt)
 9. **The Spire (na Jordi's test, `SPIRE_TESTCHECKLIST.txt`):** gewone gevechten per deel van de act, één elite-pool per act, gevechten meer als puzzel. Nog open: codex, golven (derde vijand), dramatischer baas-intro, ja/nee bij de receptioniste, echte teksten. (okt; SPIRE_DESIGN "Nog open")
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
-13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
+13. ~~**Abandoned Ship**~~ (v0.9.216) met een nachtelijk benedendek (Jordi 9 okt: prima).
 14. ~~**Frontier-rentals**~~ (v0.9.215) afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
 15. ~~**Meltan**~~ (v0.9.182) als gift, evolueert in **Melmetal** door te levelen met een Metal Coat (Jordi 9 okt; plek nog kiezen).
 16. ~~**Enamorus**~~ (v0.9.212) (Jordi 9 okt): zwerft rond zoals de andere Forces. Zodra die allemaal gevangen zijn, hebben bepaalde stadjes kans op Enamorus: overal hartjes en NPC's die avances naar elkaar maken; één van de koppels is **Birch met een hoop stront**.
@@ -76,7 +76,7 @@ Trainer-id's: alleen 1184 nog vrij (+ 851–854 vanilla Red/Leaf/placeholders, c
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.
 
 ## 4. Open vragen voor Jordi
-0. **Trainer-id's raken op:** nog 50 vrij (1017–1019, 1026–1029, 1049, 1055–1059, 1068–1069, 1080–1099, 1107–1109, 1124–1129, 1180–1185). Jordi 9 okt: niet erg; Shy Guys worden wel trainers. Wordt het krap, dan halen we elders iets weg.
+0. **Trainer-id's zijn op** (9 okt; zie Lessen in CLAUDE.md). Jordi 9 okt: niet erg; Shy Guys worden wel trainers. Wordt het krap, dan halen we elders iets weg.
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
 3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, ~~Swords of Justice~~ (zie 18), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** post-game tijdens het gevecht tegen **Keccles in de Battle Frontier** springt hij uit je schaduw, wil samen met een sterke trainer strijden en hoort daarna bij je; Keccles: "wow, daar kan ik nog wat van leren. Dát is pas camouflage."
 

@@ -256,7 +256,8 @@ def moltres():
 
 
 # ====================================================================== 2. Galar-vogels
-GA_SPOTS = [(64, 6), (59, 15), (69, 20)]      # Mossdeep: hoge terrassen rond het Space Center (allemaal elevation 9)
+GA_SPOTS = [(70, 10), (59, 15), (69, 20)]     # Mossdeep: hoge terrassen rond het Space Center (allemaal elevation 9;
+#                                              niet achter de raket: daar valt hij weg achter de toren)
 
 
 def galar_articuno():
@@ -452,6 +453,7 @@ def meloetta():
 	setflag FLAG_HIDE_LEGENDS_POKE_FLUTE
 	setflag FLAG_HIDE_LEGENDS_MELOETTA
 	goto_if_set FLAG_ROUTE123_SNORLAX_GONE, {P}Legends2_TransitionMeloetta
+	setflag FLAG_TEMP_14
 	goto_if_unset FLAG_SYS_GAME_CLEAR, {P}Legends2_TransitionEnd
 	clearflag FLAG_HIDE_LEGENDS_POKE_FLUTE
 	return
@@ -501,21 +503,22 @@ def meloetta():
 	goto {P}Meloetta_Battle
 
 {P}Movement_SnorlaxLeaves:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
 	step_end
 
 ''' + T(P.replace('_EventScript_', '_Text_') + 'Snorlax',
         "A SNORLAX is asleep in the only gap in the fence.\n\n"
-        "Behind it: the BERRY MASTER's prize fields. In front of it: you. It has chosen a side.\n\n"
+        "Behind it: the BERRY MASTER's prize fields, eaten down to the dirt. In front of it: you. "
+        "It has chosen a side.\n\n"
         "Snoring intensifies.") \
         + T(P.replace('_EventScript_', '_Text_') + 'FluteBlow',
             "A POKé FLUTE was lying next to SNORLAX, like a snooze button someone left out.\n\n"
@@ -543,6 +546,17 @@ def meloetta():
             'FLAG_HIDE_LEGENDS_POKE_FLUTE', 'MOVEMENT_TYPE_LOOK_AROUND'),
         obj(name, 'LOCALID_LEGENDS_MELOETTA', 'OBJ_EVENT_GFX_SPECIES(MELOETTA_ARIA)', MELOETTA[0], MELOETTA[1],
             P + 'Meloetta', 'FLAG_HIDE_LEGENDS_MELOETTA', 'MOVEMENT_TYPE_FACE_DOWN')])
+    # Zolang Snorlax er ligt, heeft hij de bessenvelden kaalgegeten: de 12 bessenbomen achter het hek zijn dan
+    # verborgen (FLAG_TEMP_14, gezet in ON_TRANSITION). Anders zitten er met de trainers erbij al 16 objecten in beeld
+    # en verschijnen Snorlax/de fluit niet (max. 16 objecten).
+    p = 'data/maps/%s/map.json' % name
+    m = json.load(open(p))
+    n = 0
+    for o in m['object_events']:
+        if o['graphics_id'] == 'OBJ_EVENT_GFX_BERRY_TREE' and 11 <= o['x'] <= 18 and 3 <= o['y'] <= 5:
+            o['flag'] = 'FLAG_TEMP_14'; n += 1
+    assert n == 12, n
+    open(p, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
     check_route123()
 
 

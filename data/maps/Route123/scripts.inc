@@ -207,6 +207,7 @@ Route123_EventScript_Legends2_Transition:
 	setflag FLAG_HIDE_LEGENDS_POKE_FLUTE
 	setflag FLAG_HIDE_LEGENDS_MELOETTA
 	goto_if_set FLAG_ROUTE123_SNORLAX_GONE, Route123_EventScript_Legends2_TransitionMeloetta
+	setflag FLAG_TEMP_14
 	goto_if_unset FLAG_SYS_GAME_CLEAR, Route123_EventScript_Legends2_TransitionEnd
 	clearflag FLAG_HIDE_LEGENDS_POKE_FLUTE
 	return
@@ -256,24 +257,24 @@ Route123_EventScript_PokeFlute::
 	goto Route123_EventScript_Meloetta_Battle
 
 Route123_EventScript_Movement_SnorlaxLeaves:
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_right
-	walk_slow_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
 	step_end
 
 Route123_Text_Snorlax:
 	.string "A SNORLAX is asleep in the only gap in\n"
 	.string "the fence.\p"
 	.string "Behind it: the BERRY MASTER's prize\n"
-	.string "fields. In front of it: you. It has\l"
-	.string "chosen a side.\p"
+	.string "fields, eaten down to the dirt. In front\l"
+	.string "of it: you. It has chosen a side.\p"
 	.string "Snoring intensifies.$"
 
 Route123_Text_FluteBlow:

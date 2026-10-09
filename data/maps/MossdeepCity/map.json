@@ -330,8 +330,8 @@
     {
       "local_id": "LOCALID_LEGENDS_GALAR_ARTICUNO",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARTICUNO_GALAR)",
-      "x": 64,
-      "y": 6,
+      "x": 70,
+      "y": 10,
       "elevation": 9,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,

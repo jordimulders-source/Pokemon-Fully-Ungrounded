@@ -674,7 +674,7 @@ MossdeepCity_EventScript_Legends2_GAPlace:
 	return
 
 MossdeepCity_EventScript_Legends2_GASpot0:
-	setobjectxyperm LOCALID_LEGENDS_GALAR_ARTICUNO, 64, 6
+	setobjectxyperm LOCALID_LEGENDS_GALAR_ARTICUNO, 70, 10
 	return
 
 MossdeepCity_EventScript_Legends2_GASpot1:

@@ -176,6 +176,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Multi battle uit een debugscript:** eerst `gSelectedOrderFromParty` op 1,2,3 zetten. Muziek per kaarttoestand: `savebgm` in `ON_TRANSITION`.
 - **Grote legendary-sprites** vallen over de speler als je ze van de noordkant aanspreekt: zet ze zo dat je ze van opzij of onderen aanspreekt. Bootreis zonder animatie: `fadescreen FADE_TO_BLACK`, `playse SE_M_SURF`, `delay 40`, `warpsilent`.
 - **Eigen tilesetanimatie** (draaikolken, `swords_isle.py`): frame 0 op vaste tegelplekken in `tiles.png` (uitsluiten van ontdubbelen), elk frame als 128×8-png, `AppendTilesetAnimToBuffer` naar `NUM_TILES_IN_PRIMARY + plek` in `tileset_anims.c`; gespiegelde tegels draaien de andere kant op. Schuim langs een kust: losse kammetjes, niet per vak (wordt een hek). Metatiles toevoegen aan een gegenereerde secondary: eerst terug naar het basisaantal, dan ontdubbelen.
+- **Generatorblokken** in `flags.h`/`opponents.h` hebben elk een eigen `// }` nodig, anders overschrijft het ene script de blokken van het andere. Nieuwe items die nog nergens liggen: centrale lijst `tools/grounded/maptools/nieuwe_items.py` (controleert dubbelen/TM's). Emulatortests in grotten: `givemon` lv 100 + `setvar VAR_REPEL_STEP_COUNT, 900`.
 
 ## Werkwijzen (herhaalde taken)
 

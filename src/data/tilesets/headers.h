@@ -1878,4 +1878,26 @@ const struct Tileset gTileset_UltraBStakataka =
     .callback = InitTilesetAnim_UltraBStakataka,
 };
 
+const struct Tileset gTileset_UltraBNecrozmaBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBNecrozmaBase,
+    .palettes = gTilesetPalettes_UltraBNecrozmaBase,
+    .metatiles = gMetatiles_UltraBNecrozmaBase,
+    .metatileAttributes = gMetatileAttributes_UltraBNecrozmaBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBNecrozma =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBNecrozma,
+    .palettes = gTilesetPalettes_UltraBNecrozma,
+    .metatiles = gMetatiles_UltraBNecrozma,
+    .metatileAttributes = gMetatileAttributes_UltraBNecrozma,
+    .callback = InitTilesetAnim_UltraBNecrozma,
+};
+
 // } ultra_worlds_b

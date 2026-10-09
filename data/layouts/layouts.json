@@ -6165,10 +6165,10 @@
     {
       "id": "LAYOUT_ULTRA_SPACE_NECROZMA",
       "name": "UltraSpace_Necrozma_Layout",
-      "width": 28,
-      "height": 22,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_UltraNecrozma",
+      "width": 42,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraBNecrozmaBase",
+      "secondary_tileset": "gTileset_UltraBNecrozma",
       "border_filepath": "data/layouts/UltraSpace_Necrozma/border.bin",
       "blockdata_filepath": "data/layouts/UltraSpace_Necrozma/map.bin"
     },

@@ -1324,4 +1324,99 @@ void InitTilesetAnim_UltraBStakataka(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_UltraBStakataka;
 }
 
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark0[] = {
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark0[] = {0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark1[] = {
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark2[] = {
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark2[] = {0, 0, 0, 0, 1, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark3[] = {
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark3[] = {0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark4[] = {
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark4[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark5[] = {
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark5[] = {0, 0, 0, 0, 1, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static void TilesetAnim_UltraBNecrozma(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark0[sTilesetAnimSeq_UltraBNecrozma_Spark0[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark1[sTilesetAnimSeq_UltraBNecrozma_Spark1[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 28)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark2[sTilesetAnimSeq_UltraBNecrozma_Spark2[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 56)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 3)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark3[sTilesetAnimSeq_UltraBNecrozma_Spark3[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark3)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 84)), 16 * TILE_SIZE_4BPP);
+    if (timer % 6 == 4)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark4[sTilesetAnimSeq_UltraBNecrozma_Spark4[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark4)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 100)), 12 * TILE_SIZE_4BPP);
+    if (timer % 6 == 5)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark5[sTilesetAnimSeq_UltraBNecrozma_Spark5[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark5)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 112)), 12 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBNecrozma(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBNecrozma;
+}
+
 // } ultra_worlds_b

@@ -336,4 +336,8 @@ const u16 gMetatiles_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/u
 const u16 gMetatileAttributes_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatile_attributes.bin");
 const u16 gMetatiles_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatiles.bin");
 const u16 gMetatileAttributes_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatile_attributes.bin");
 // } ultra_worlds_b

@@ -356,7 +356,7 @@ def _wkmeans(X, w, k, seed=0, iters=20):
     X = np.asarray(X, float)
     w = np.asarray(w, float)
     if len(X) <= k:
-        C = np.zeros((k, 3))
+        C = np.zeros((k, X.shape[1]))
         C[:len(X)] = X
         if len(X):
             C[len(X):] = X[0]
@@ -429,7 +429,8 @@ def emit_pair(world, out_prim, out_sec, num_pals=13, tile_limit=1023, mt_limit=1
     if len(keys) > mt_limit:
         keys, remap = _merge_cells(cells, keys, mt_limit, log)
     # ---- 8x8-blokken
-    blocks = []      # (sleutel, laag, kwadrant, pixels RGBA)
+    blocks = []      # pixels RGBA
+    bweight = []     # hoe vaak het blok op de kaart staat
     for k in keys:
         c = cells[k]
         if c['anim']:
@@ -445,6 +446,7 @@ def emit_pair(world, out_prim, out_sec, num_pals=13, tile_limit=1023, mt_limit=1
                     blk = arr[qy:qy + 8, qx:qx + 8]
                 if (blk[..., 3] > 127).any():
                     blocks.append(blk)
+                    bweight.append(c['n'])
     # animatieblokken (alle frames) tellen mee voor de paletten
     anim_blocks = []
     for a in world.anims:
@@ -467,28 +469,41 @@ def emit_pair(world, out_prim, out_sec, num_pals=13, tile_limit=1023, mt_limit=1
                     anim_blocks.append(img[qy:qy + 8, qx:qx + 8])
     # ---- paletten: blokken clusteren op kleurgebruik
     MERGE_FLIP.clear()
-    seenb = set()
+    wsum = {}
     ub = []
-    for b in blocks:
+    for b, n in zip(blocks, bweight):
         kb = b.astype(np.uint8).tobytes()
-        if kb not in seenb:
-            seenb.add(kb)
+        if kb not in wsum:
+            wsum[kb] = 0
             ub.append(b)
-    allb = ub + anim_blocks
+        wsum[kb] += n
+    allb = [b for b in ub if (b[..., 3] > 127).any()]
+    allw = [wsum[b.astype(np.uint8).tobytes()] for b in allb]
+    for b in anim_blocks:
+        if (b[..., 3] > 127).any():
+            allb.append(b)
+            allw.append(4)
+    allw = np.sqrt(np.array(allw, float))           # veelgebruikte blokken tellen zwaarder (wortel: niet alles)
     feats = []
     for b in allb:
         c = b[..., :3][b[..., 3] > 127]
         feats.append(np.concatenate([c.mean(0), c.std(0) * 0.7]))
     feats = np.array(feats)
-    # unieke blokken wegen (anders bepalen herhaalde vloeren alles)
-    _, ui = np.unique(np.round(feats), axis=0, return_index=True)
-    assign = ((feats[:, None, :] - _kmeans(feats[ui], num_pals, seed=1)[None]) ** 2).sum(2).argmin(1)
-    for it in range(5):
+    assign = ((feats[:, None, :] - _wkmeans(feats, allw, num_pals, seed=1)[None]) ** 2).sum(2).argmin(1)
+    for it in range(6):
         pals = []
         for j in range(num_pals):
-            sel = [b for b, a_ in zip(allb, assign) if a_ == j]
-            u, n = _uniq_colors(sel)
-            pals.append(np.clip(np.round(_wkmeans(u, np.sqrt(n), 15, seed=it) / 8) * 8, 0, 248))
+            idx = np.where(assign == j)[0]
+            if len(idx):
+                cols = np.concatenate([allb[i][..., :3][allb[i][..., 3] > 127] for i in idx]).astype(int)
+                wts = np.concatenate([np.full(int((allb[i][..., 3] > 127).sum()), allw[i]) for i in idx])
+                key_ = cols[:, 0] * 65536 + cols[:, 1] * 256 + cols[:, 2]
+                uk, inv = np.unique(key_, return_inverse=True)
+                ww = np.bincount(inv, weights=wts)
+                u = np.stack([uk // 65536, (uk // 256) % 256, uk % 256], 1).astype(float)
+            else:
+                u, ww = np.zeros((1, 3)), np.ones(1)
+            pals.append(np.clip(np.round(_wkmeans(u, ww, 15, seed=it) / 8) * 8, 0, 248))
         errs = np.zeros((len(allb), num_pals))
         for i, b in enumerate(allb):
             c = b[..., :3][b[..., 3] > 127]
@@ -697,7 +712,7 @@ def _merge_tiles(uniq, upal, ucount, pals, budget, log):
         for f, (hf, vf) in enumerate(((0, 0), (1, 0), (0, 1), (1, 1))):
             v = idx[:, ::-1] if hf else idx
             v = v[::-1, :] if vf else v
-            c = p[v].reshape(-1, 3).copy()
+            c = np.sqrt(np.maximum(p[v].reshape(-1, 3), 0)) * 16.0     # wortel: verschillen in het donker tellen mee
             c[v.reshape(-1) == 0] = -400          # doorzichtig telt zwaar mee
             rgb[i, f] = c.reshape(-1)
         alpha[i] = (idx.reshape(-1) > 0)
@@ -800,3 +815,25 @@ def _merge_cells(cells, keys, limit, log):
         remap[k] = r
     log('  vakken samengevoegd tot %d' % len(alive))
     return alive, remap
+
+
+def render_layout(name, out=None, scale=1):
+    """render van een gebouwde layout uit de eigen tileset-bestanden (tiles.png + paletten), zoals in de game"""
+    g, L = load_layout(name)
+    ts = VTileset(tsdir(L['primary_tileset']), tsdir(L['secondary_tileset']))
+    H, W = len(g), len(g[0])
+    im = np.zeros((H * 16, W * 16, 3))
+    for y in range(H):
+        for x in range(W):
+            b, t, attr = ts.metatile(g[y][x] & 0x3ff)
+            cell = np.zeros((16, 16, 3))
+            cell[:] = ts.pal[0][0]
+            over_rgb(cell, b)
+            over_rgb(cell, t)
+            im[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = cell
+    img = Image.fromarray(np.clip(im, 0, 255).astype(np.uint8))
+    if scale != 1:
+        img = img.resize((img.size[0] * scale, img.size[1] * scale), Image.NEAREST)
+    if out:
+        img.save(out)
+    return img

@@ -92,7 +92,7 @@ UltraSpace_Hub_EventScript_ToBlacephalon::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToNecrozma::
-	warp MAP_ULTRA_SPACE_NECROZMA, 13, 17
+	warp MAP_ULTRA_SPACE_NECROZMA, 21, 28
 	waitstate
 	end
 

@@ -788,6 +788,499 @@ def st_wall_of_stakataka(w, SW):
     w.put(img, x0, y0)
 
 
+# ====================================================================== gedeeld: grotvormen
+def blob_mask(W, H, shapes, seed, wobble=1.2, smooth=2):
+    """vloermasker uit ellipsen (cx, cy, rx, ry) en gangen ('c', x0, y0, x1, y1, breedte), met ruis op de rand"""
+    rs = np.random.RandomState(seed)
+    nz = A.value_noise(H, W, 3, seed) * wobble
+    yy, xx = np.mgrid[0:H, 0:W]
+    m = np.zeros((H, W), bool)
+    for s in shapes:
+        if s[0] == 'c':
+            _, xa, ya, xb, yb, wd = s
+            n = int(max(abs(xb - xa), abs(yb - ya)) * 2) + 1
+            for i in range(n + 1):
+                t = i / n
+                px, py = xa + (xb - xa) * t, ya + (yb - ya) * t
+                m |= np.hypot(xx - px, yy - py) <= wd / 2.0 + nz * 0.3
+        else:
+            cx, cy, rx, ry = s
+            m |= ((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2 <= 1.0 + nz * 0.35
+    for _ in range(smooth):
+        n = sum(np.roll(np.roll(m, dy, 0), dx, 1) for dy in (-1, 0, 1) for dx in (-1, 0, 1))
+        m = np.where(n >= 6, True, np.where(n <= 3, False, m))
+    m[0, :] = m[-1, :] = False
+    m[:, 0] = m[:, -1] = False
+    m[1, :] = False
+    rs.rand()
+    return m
+
+
+def periodic_voronoi(size, n, seed):
+    """facetten (tegelbaar): geeft (index per pixel, randmasker)"""
+    rs = np.random.RandomState(seed)
+    pts = rs.uniform(0, size, (n, 2))
+    yy, xx = np.mgrid[0:size, 0:size]
+    best = np.full((size, size), 1e9)
+    second = np.full((size, size), 1e9)
+    idx = np.zeros((size, size), int)
+    for i, (px, py) in enumerate(pts):
+        for ox in (-size, 0, size):
+            for oy in (-size, 0, size):
+                d = np.hypot(xx - px - ox, yy - py - oy)
+                closer = d < best
+                second = np.where(closer, best, np.minimum(second, d))
+                idx = np.where(closer, i, idx)
+                best = np.where(closer, d, best)
+    return idx, (second - best) < 1.2
+
+
+# ====================================================================== NECROZMA: prismagrot
+NZ_ROCK = [C(10, 6, 20), C(20, 14, 38), C(34, 24, 60), C(52, 40, 88), C(84, 70, 130), C(140, 128, 190)]
+NZ_FLOOR = [C(12, 10, 24), C(18, 15, 34), C(26, 22, 48), C(40, 36, 70)]
+HUES = [0.0, 0.08, 0.15, 0.33, 0.5, 0.6, 0.75, 0.88]       # rood, oranje, geel, groen, cyaan, blauw, violet, roze
+
+
+def crystal_cols(h, sat=1.0):
+    if h == 'black':   # leeggezogen kristal (bij Necrozma): zwart glas met een prismarand
+        return [C(4, 2, 8), C(22, 16, 36), C(40, 32, 64), C(84, 72, 128), C(200, 180, 255)]
+    if h is None:      # wit/helder
+        return [C(56, 60, 88), C(120, 128, 168), C(184, 192, 224), C(232, 236, 252), C(255, 255, 255)]
+    return [hsv(h, 0.85 * sat, 0.30), hsv(h, 0.75 * sat, 0.55), hsv(h, 0.60 * sat, 0.82), hsv(h, 0.32 * sat, 1.0), hsv(h, 0.08, 1.0)]
+
+
+def draw_prism(img, bx, by, hgt, wid, lean, cols):
+    """één kristal (zeshoekige zuil met punt) vanaf de voet (bx, by) omhoog; cols: donker..licht"""
+    Hh, Ww = img.shape[:2]
+    tip = max(3, wid // 1)
+    for t in range(hgt + 1):
+        y = by - t
+        cx = bx + lean * t / max(hgt, 1)
+        if t > hgt - tip:
+            half = wid / 2.0 * (hgt - t) / tip
+        else:
+            half = wid / 2.0
+        xl, xr = cx - half, cx + half
+        for x in range(int(math.floor(xl)), int(math.ceil(xr)) + 1):
+            if not (0 <= x < Ww and 0 <= y < Hh):
+                continue
+            if x < xl - 0.5 or x > xr + 0.5:
+                continue
+            u = (x - xl) / max(xr - xl, 0.01)
+            if x <= xl + 0.5 or x >= xr - 0.5:
+                c = cols[0]
+            elif u < 0.38:
+                c = cols[3]
+            elif u < 0.5:
+                c = cols[4] if t > 1 else cols[3]
+            elif u < 0.78:
+                c = cols[2]
+            else:
+                c = cols[1]
+            img[y, x, :3] = c
+            img[y, x, 3] = 255
+    # voet: donkere rand
+    for x in range(int(bx - wid / 2), int(bx + wid / 2) + 1):
+        if 0 <= x < Ww and 0 <= by < Hh and img[by, x, 3] > 0:
+            img[by, x, :3] = cols[0]
+
+
+def crystal_cluster(cw, ch, hue, seed, white=False):
+    """cluster van 3-6 kristallen in een vak van cw x ch cellen; voet in de onderste cel"""
+    rs = random.Random(seed)
+    img = np.zeros((ch * 16, cw * 16, 4))
+    cols = crystal_cols(None if white else hue)
+    n = rs.randint(3, 3 + cw * 2)
+    base_y = ch * 16 - 3
+    items = []
+    for i in range(n):
+        bx = rs.uniform(4, cw * 16 - 4)
+        hgt = rs.uniform(ch * 16 * 0.35, ch * 16 * 0.92)
+        wid = rs.choice((5, 6, 7, 8)) if cw > 1 else rs.choice((4, 5, 6))
+        lean = rs.uniform(-0.6, 0.6) * hgt * 0.45
+        if abs(bx - cw * 8) > cw * 5:
+            lean += (bx - cw * 8) * 0.3
+        items.append((hgt, bx, wid, lean))
+    items.sort(key=lambda t: -t[0])          # hoge achteraan, lage vooraan
+    for hgt, bx, wid, lean in items:
+        hgt = min(hgt, base_y - 2)
+        draw_prism(img, bx, base_y - rs.randint(0, 2), int(hgt), wid, lean, cols)
+    return img
+
+
+def reflect(w, img, x, y, strength=0.35):
+    """spiegeling van een kristal in de glazen vloer, onder de voet (img: RGBA, linksboven = vak (x, y))"""
+    h = img.shape[0]
+    flip = img[::-1].copy()
+    y0 = (y * 16) + h - 2
+    for dy in range(min(h // 2, 14)):
+        yy = y0 + dy
+        if yy >= w.bot.shape[0]:
+            break
+        row = flip[dy]
+        a = (row[:, 3] > 0) & (A.B4[yy % 4, (np.arange(row.shape[0]) + x * 16) % 4] < strength * (1 - dy / 14.0) * 2)
+        xs = np.arange(row.shape[0]) + x * 16
+        ok = a & (xs < w.bot.shape[1])
+        w.bot[yy, xs[ok]] = mix(w.bot[yy, xs[ok]], row[ok, :3], 0.55)
+
+
+@world
+def world_necrozma():
+    W, H = 42, 32
+    w = A.World('Necrozma', W, H, seed=411)
+    shapes = [(21, 6.5, 12, 5),             # altaarzaal (noord)
+              (7.5, 15, 6, 6.8), (34.5, 15, 6, 6.8),     # galerijen west (koel) / oost (warm)
+              (21, 20.5, 13, 4.6),          # prismahal
+              (21, 27, 7, 3),               # ingang
+              ('c', 7, 12, 13, 6, 3), ('c', 35, 12, 29, 6, 3),
+              ('c', 10, 19, 13, 20, 3), ('c', 32, 19, 29, 20, 3),
+              ('c', 21, 24, 21, 27, 4)]
+    floor = blob_mask(W, H, shapes, 411, wobble=1.1)
+    for x in range(12, 31):                 # kristalwand: geen rechte weg van de hal naar het altaar
+        for y in range(11, 16):
+            floor[y, x] = False
+    arrive, ret, ub = (21, 28), (21, 27), (21, 6)
+    for (x, y) in (arrive, ret, ub, (21, 29), (20, 28), (22, 28)):
+        floor[y, x] = True
+    wall = ~floor
+    zone = lambda x, y: 'altar' if y <= 10 else ('west' if x <= 13 else ('east' if x >= 29 else 'hall'))  # noqa: E731
+    ZONE_HUES = {'west': [0.5, 0.55, 0.6, 0.66, 0.75], 'east': [0.0, 0.04, 0.08, 0.12, 0.15],
+                 'hall': HUES, 'altar': ['black', 'black', None]}
+    # ---------------------------------------------------------------- wanden: obsidiaan met facetten
+    vid, vedge = periodic_voronoi(64, 20, 7)
+    fl = np.random.RandomState(3).uniform(0, 1, 20)
+    stripes = np.array([0.55 + 0.45 * math.sin(i * 1.7) * math.cos(i * 0.6) for i in range(32)])
+    for y in range(H):
+        for x in range(W):
+            if not wall[y, x]:
+                continue
+            img = rgba(16, 16, NZ_ROCK[1])
+            sub = vid[(y * 16) % 64:(y * 16) % 64 + 16, (x * 16) % 64:(x * 16) % 64 + 16]
+            ed = vedge[(y * 16) % 64:(y * 16) % 64 + 16, (x * 16) % 64:(x * 16) % 64 + 16]
+            img[..., :3] = A.ramp(fl[sub] * 0.38 + 0.05, NZ_ROCK[:5])
+            img[ed, :3] = NZ_ROCK[2]
+            s = y + 1 < H and not wall[y + 1, x]
+            n = y > 0 and not wall[y - 1, x]
+            wv = x > 0 and not wall[y, x - 1]
+            e = x + 1 < W and not wall[y, x + 1]
+            if s:
+                for xx in range(16):
+                    v = stripes[(x * 16 + xx) % 32]
+                    img[3:15, xx, :3] = A.ramp(np.full(12, v * 0.62) * np.linspace(1.0, 0.5, 12), NZ_ROCK[1:6])
+                hz = ZONE_HUES[zone(x, y)]
+                hue = hz[(x // 2) % len(hz)]
+                gl = hsv(hue if isinstance(hue, float) else 0.75, 0.5 if isinstance(hue, float) else 0.15, 0.95)
+                gx = [3, 9, 6, 12][x % 4]
+                img[5:10, gx, :3] = gl
+                img[6:9, gx + 1, :3] = mix(gl, NZ_ROCK[2], 0.5)
+                img[2, :, :3] = NZ_ROCK[5]
+                img[3, :, :3] = NZ_ROCK[4]
+                img[15, :, :3] = C(4, 2, 10)
+                img[14, :, :3] = NZ_ROCK[0]
+            if n:
+                img[0, :, :3] = NZ_ROCK[4]
+                img[1, :, :3] = NZ_ROCK[0]
+            if wv:
+                img[:, 0, :3] = NZ_ROCK[0]
+                img[:, 1, :3] = NZ_ROCK[3]
+            if e:
+                img[:, 15, :3] = NZ_ROCK[0]
+                img[:, 14, :3] = NZ_ROCK[2]
+            w.put(img, x, y)
+            w.coll[y, x] = True
+    # ---------------------------------------------------------------- vloer: spiegelglas
+    for y in range(H):
+        for x in range(W):
+            if wall[y, x]:
+                continue
+            base = NZ_FLOOR[1] if zone(x, y) != 'altar' else C(10, 8, 18)
+            img = rgba(16, 16, base)
+            for yy in range(16):
+                for xx in range(16):
+                    d = (x * 16 + xx + (y * 16 + yy) * 2) % 64
+                    if d < 2:
+                        img[yy, xx, :3] = mix(base, NZ_FLOOR[3], 0.5)
+                    elif d == 2:
+                        img[yy, xx, :3] = NZ_FLOOR[3]
+            if y > 0 and wall[y - 1, x]:
+                img[0:3, :, :3] = mix(img[0:3, :, :3], C(0, 0, 0), 0.6)
+            w.put(img, x, y)
+            w.beh[y, x] = 0x08
+    floorpix = np.zeros(w.bot.shape[:2], bool)
+    for y in range(H):
+        for x in range(W):
+            if not wall[y, x]:
+                floorpix[y * 16:y * 16 + 16, x * 16:x * 16 + 16] = True
+    # ---------------------------------------------------------------- licht: banden evenwijdig aan de glansstrepen
+    # (s = X + 2Y is constant langs een streep; banden in s herhalen per (2, -1) vakken, dus weinig nieuwe tiles)
+    S = w.xx + 2 * w.yy
+    T = 2 * w.xx - w.yy
+
+    def band(cx, cy, s_half, length, col, strength, amount=0.35, spot=True):
+        """lichtband van (cx, cy) (pixels, onderste eind) schuin omhoog naar rechts, over de vloer"""
+        s0, t0 = cx + 2 * cy, 2 * cx - cy
+        f = np.clip((s_half - np.abs(S - s0)) / 3.0, 0, 1)
+        f = f * np.clip((T - t0) / 24.0 + 1, 0, 1) * np.clip((t0 + length - T) / 60.0, 0, 1)
+        if spot:
+            f = np.maximum(f, np.clip(1 - np.hypot(w.xx - cx, (w.yy - cy) * 1.9) / (s_half * 0.75), 0, 1) * 1.0)
+        w.apply(f * strength, lambda c: mix(c, col, amount), where=floorpix)
+    band(4 * 16, 16 * 16, 22, 300, C(190, 225, 255), 0.95)
+    band(33 * 16, 16 * 16, 20, 300, C(255, 226, 180), 0.9)
+    band(15 * 16, 6 * 16, 16, 260, C(255, 255, 255), 0.6, amount=0.22)
+    PR = (25, 17)                          # het grote prisma (3x4 vakken, linksboven)
+    ox, oy = PR[0] * 16 + 10, (PR[1] + 3) * 16 + 4          # uittreepunt linksonder
+    band(ox + 30, oy - 14, 12, 220, C(255, 255, 255), 1.0, amount=0.4, spot=False)  # witte straal van rechtsboven
+    # ---------------------------------------------------------------- het grote prisma + regenboog
+    pimg = crystal_cluster(3, 4, None, 21, white=True)
+    draw_prism(pimg, 24, 61, 58, 14, 2, crystal_cols(None))
+    s0 = ox + 2 * oy
+    t0 = 2 * ox - oy
+    for k in range(7):
+        col = hsv(k / 7.0 * 0.8, 0.85, 1.0)
+        lo, hi = s0 - 21 + k * 6, s0 - 21 + k * 6 + 6
+        f = ((S >= lo) & (S < hi)).astype(float)
+        f = f * (T <= t0) * np.clip((T - (t0 - 520)) / 220.0, 0, 1)
+        w.apply(f, lambda c, col=col: mix(c, col, 0.42), where=floorpix)
+    reflect(w, pimg, PR[0], PR[1], 0.6)
+    w.put(pimg[:32], PR[0], PR[1], 'top')
+    w.put(pimg[32:], PR[0], PR[1] + 2)
+    for y in range(PR[1] + 2, PR[1] + 4):
+        for x in range(PR[0], PR[0] + 3):
+            w.coll[y, x] = True
+    # ---------------------------------------------------------------- altaar: zwart glas dat het licht opslokt
+    acx, acy = ub[0] * 16 + 8, ub[1] * 16 + 10
+    da = np.hypot(w.xx - acx, (w.yy - acy) * 1.45)
+    ang2 = np.arctan2((w.yy - acy) * 1.45, w.xx - acx)
+    altar = (da < 52) & floorpix
+    w.bot[altar] = C(8, 6, 14)
+    spiral = altar & ((((ang2 * 3 + da / 6.0) % (2 * math.pi)) < 0.8))
+    w.bot[spiral] = C(30, 16, 52)
+    for r, col in ((52, NZ_ROCK[4]), (51, NZ_ROCK[1]), (36, C(70, 40, 120)), (20, C(120, 70, 200))):
+        w.bot[floorpix & (np.abs(da - r) < 0.7)] = col
+    w.bot[(da < 8) & floorpix] = C(0, 0, 0)
+    pylons = []
+    for k in range(6):
+        a = math.pi * 2 * k / 6.0 + math.pi / 6
+        px_, py_ = acx + math.cos(a) * 84, acy + math.sin(a) * 84 / 1.45
+        cx_, cy_ = int(px_ // 16), int(py_ // 16)
+        if not (1 <= cx_ < W - 1 and 1 <= cy_ < H) or wall[cy_, cx_]:
+            continue
+        hue = [0.0, 0.15, 0.33, 0.5, 0.66, 0.8][k]
+        pylons.append((cx_, cy_, hue))
+        for t in np.linspace(0.12, 0.92, 160):
+            bx_, by_ = px_ + (acx - px_) * t, py_ + (acy - py_) * t
+            if floorpix[int(by_), int(bx_)]:
+                col = mix(hsv(hue, 0.55, 1.0), C(0, 0, 0), min(1.0, t * 1.1))
+                for o in (0, 1):
+                    w.bot[int(by_) + o, int(bx_)] = col if o == 0 else mix(col, C(0, 0, 0), 0.5)
+    # ---------------------------------------------------------------- kristallen
+    rsd = random.Random(99)
+    taken = set()
+    sparkle = []
+    keep_free = {arrive, ret, ub, (21, 29), (20, 28), (22, 28)}
+    keep_free |= {(x, y) for x in range(17, 26) for y in range(2, 10)}
+    keep_free |= {(x, y) for x in range(18, 25) for y in range(22, 30)}
+    keep_free |= {(x, y) for x in range(PR[0] - 1, PR[0] + 4) for y in range(PR[1] - 1, PR[1] + 5)}
+
+    def place(img, x, y, cw, ch, on_wall_rows, block_cells):
+        """img (cw x ch vakken); de onderste rij staat op vloervak-rij y; bovenste rijen op de muur = onderlaag"""
+        for r in range(ch):
+            yy = y - (ch - 1) + r
+            for c in range(cw):
+                cell = img[r * 16:(r + 1) * 16, c * 16:(c + 1) * 16]
+                if r == ch - 1 or wall[yy, x + c] or r < on_wall_rows:
+                    A.paste(w.bot, cell, (x + c) * 16, yy * 16)
+                else:
+                    w.put(cell, x + c, yy, 'top')
+        reflect(w, img, x, y - (ch - 1), 0.55)
+        for c in block_cells:
+            w.coll[c[1], c[0]] = True
+        sparkle.append((x + (cw - 1) // 2, y - 1))
+
+    for (cx_, cy_, hue) in pylons:
+        place(crystal_cluster(1, 2, hue, 7), cx_, cy_, 1, 2, 0, [(cx_, cy_)])
+        taken |= {(cx_ + dx, cy_ + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+    # kristalwand tussen hal en altaar: hoge clusters op de muur, voeten op de eerste vloerrij van de hal
+    for x in range(12, 30, 2):
+        ys = [y for y in range(14, 22) if not wall[y, x] and not wall[y, x + 1] and wall[y - 1, x] and wall[y - 1, x + 1]]
+        if not ys or any((x + c, ys[0]) in keep_free for c in (0, 1)):
+            continue
+        y = ys[0]
+        img = crystal_cluster(2, 4, HUES[(x // 2) % 8], (x // 2) % 3, white=(x in (20, 22)))
+        place(img, x, y, 2, 4, 3, [(x, y), (x + 1, y)])
+        taken |= {(x + dx, y + dy) for dx in (0, 1) for dy in (-1, 0, 1)}
+    # geodes: kristallen die uit de rotsmassa steken (alleen tekening, in de onderlaag)
+    rg = random.Random(5)
+    interior = [(x, y) for y in range(2, H - 3) for x in range(1, W - 2)
+                if all(wall[y + dy, x + dx] for dx in (-1, 0, 1, 2) for dy in (-1, 0, 1, 2))]
+    rg.shuffle(interior)
+    geodes = []
+    for (x, y) in interior:
+        if any(abs(x - gx) + abs(y - gy) < 5 for gx, gy in geodes):
+            continue
+        geodes.append((x, y))
+        z = zone(x, min(y, H - 1))
+        hz = ZONE_HUES[z] if z != 'altar' else ['black', 0.8]
+        hue = hz[len(geodes) % len(hz)]
+        img = crystal_cluster(2, 2, hue, len(geodes) % 3)          # drie vormen, per zone een paar kleuren
+        cav = np.zeros((32, 32, 4))
+        yy, xx = np.mgrid[0:32, 0:32]
+        hole = ((xx - 16) / 14.0) ** 2 + ((yy - 21) / 10.0) ** 2 < 1
+        rim = (((xx - 16) / 15.5) ** 2 + ((yy - 21) / 11.5) ** 2 < 1) & ~hole
+        outer = ~hole & ~rim
+        cav[..., :3] = NZ_ROCK[1]
+        cav[..., 3] = 255
+        cav[outer, :3] = A.ramp(np.full(outer.sum(), 0.25), NZ_ROCK[:5])
+        cav[hole, :3] = C(6, 4, 12)
+        cav[rim, :3] = NZ_ROCK[3]
+        A.paste(cav, img, 0, -2)
+        w.bot[y * 16:y * 16 + 32, x * 16:x * 16 + 32] = cav[..., :3]
+        if len(geodes) >= 14:
+            break
+    # grote formaties tegen de wanden van de galerijen en de hal
+    cand = [(x, y) for y in range(3, H - 2) for x in range(1, W - 3) if all(not wall[y, x + c] and wall[y - 1, x + c] for c in range(2))]
+    rsd.shuffle(cand)
+    rcount = len(reachable(w.coll, arrive, {ret}))
+    for (x, y) in cand:
+        cells = [(x, y), (x + 1, y)]
+        if any(c in taken or c in keep_free for c in cells):
+            continue
+        z = zone(x, y)
+        for c in cells:
+            w.coll[c[1], c[0]] = True
+        r = reachable(w.coll, arrive, {ret})
+        if len(r) != rcount - 2 or not next_to(r, *ub):
+            for c in cells:
+                w.coll[c[1], c[0]] = False
+            continue
+        rcount -= 2
+        ch = rsd.choice((3, 3, 4))
+        hz = ZONE_HUES[z]
+        hue = rsd.choice(hz)
+        img = crystal_cluster(2, ch, hue, (x * 31 + y) % 4, white=False)
+        place(img, x, y, 2, ch, ch - 1, [])
+        taken |= {(x + dx, y + dy) for dx in (-1, 0, 1, 2) for dy in (-1, 0, 1)}
+    # middelgrote, vrijstaande kristallen in groepjes van 2-3
+    cand = [(x, y) for y in range(3, H - 2) for x in range(1, W - 1) if not wall[y, x] and not wall[y - 1, x]]
+    rsd.shuffle(cand)
+    groups = 0
+    for (x, y) in cand:
+        if groups >= 14:
+            break
+        grp = [(x, y)] + [(x + dx, y + dy) for dx, dy in rsd.sample([(2, 0), (-2, 0), (1, 1), (-1, 1), (2, 1)], 2)]
+        ok_cells = []
+        for c in grp:
+            if c in taken or c in keep_free or (c[0], c[1] - 1) in keep_free:
+                continue
+            if not (1 <= c[0] < W - 1 and 2 <= c[1] < H - 1) or wall[c[1], c[0]] or wall[c[1] - 1, c[0]] or w.coll[c[1], c[0]]:
+                continue
+            w.coll[c[1], c[0]] = True
+            r = reachable(w.coll, arrive, {ret})
+            if len(r) != rcount - 1 or not next_to(r, *ub):
+                w.coll[c[1], c[0]] = False
+                continue
+            rcount -= 1
+            ok_cells.append(c)
+        if not ok_cells:
+            continue
+        groups += 1
+        hz = ZONE_HUES[zone(x, y)]
+        hue = rsd.choice(hz)
+        for c in ok_cells:
+            place(crystal_cluster(1, 2, hue, (c[0] * 13 + c[1] * 7) % 4, white=False), c[0], c[1], 1, 2, 0, [])
+            taken |= {(c[0] + dx, c[1] + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+    # scherven op de vloer (begaanbaar): kleine kristalletjes, dichter bij de wanden
+    for y in range(2, H - 1):
+        for x in range(1, W - 1):
+            if wall[y, x] or w.coll[y, x] or (x, y) in keep_free or (x, y) in taken:
+                continue
+            nearwall = any(wall[y + dy, x + dx] for dx in (-1, 0, 1) for dy in (-1, 0, 1))
+            hsh = zlib.crc32(b'shard%d,%d' % (x, y))
+            if hsh % (4 if nearwall else 11):
+                continue
+            hz = ZONE_HUES[zone(x, y)]
+            hue = hz[hsh // 7 % len(hz)]
+            cols = crystal_cols(hue)
+            img = np.zeros((16, 16, 4))
+            rs2 = random.Random(hsh % 6)
+            for _ in range(rs2.randint(1, 3)):
+                draw_prism(img, rs2.randint(3, 12), rs2.randint(11, 14), rs2.randint(4, 8), rs2.choice((2, 3, 3)), rs2.uniform(-2, 2), cols)
+            A.paste(w.bot, img, x * 16, y * 16)
+    # ---------------------------------------------------------------- glinsteringen (animatie)
+    spark_pts = {}
+    for c in sparkle:
+        if not (0 <= c[1] < H):
+            continue
+        for lay in ('top', 'bot'):
+            src = w.cellpix(*c, layer='top') if lay == 'top' else np.concatenate([w.cellpix(*c), np.full((16, 16, 1), 255.0)], 2)
+            if lay == 'top' and not (src[..., 3] > 127).any():
+                continue
+            bright = np.argwhere((src[..., 3] > 127) & (src[..., :3].sum(2) > 560))
+            if len(bright):
+                yx = bright[len(bright) // 3]
+                spark_pts[c] = (lay, int(yx[1]), int(yx[0]))
+                break
+
+    def spark_fn(f, x, y):
+        lay, sx, sy = spark_pts[(x, y)]
+        img = w.cellpix(x, y, 'top').copy() if lay == 'top' else np.concatenate([w.cellpix(x, y).copy(), np.full((16, 16, 1), 255.0)], 2)
+        size = [0, 1, 2, 3, 2, 1][f]
+        if size:
+            img[sy, sx] = [255, 255, 255, 255]
+            for d in range(1, size + 1):
+                for (dx, dy) in ((d, 0), (-d, 0), (0, d), (0, -d)):
+                    if 0 <= sx + dx < 16 and 0 <= sy + dy < 16:
+                        img[sy + dy, sx + dx] = [255, 255, 255, 255] if d < size else [190, 210, 255, 255]
+            if size == 3:
+                for (dx, dy) in ((1, 1), (-1, -1), (1, -1), (-1, 1)):
+                    if 0 <= sx + dx < 16 and 0 <= sy + dy < 16:
+                        img[sy + dy, sx + dx] = [220, 230, 255, 255]
+        return img
+    seqs = [[0, 1, 2, 3, 2, 1] + [0] * 14, [0] * 9 + [1, 2, 3, 2, 1] + [0] * 6, [0] * 4 + [1, 2, 3, 3, 2, 1] + [0] * 10]
+    gi = 0
+    for lay in ('top', 'bot'):
+        cells = [c for c, v in spark_pts.items() if v[0] == lay][:21]
+        for k in range(3):
+            sub = cells[k::3]
+            if sub:
+                w.anim('spark%d' % gi, spark_fn, sub, seqs[k], 6, layer=lay)
+                gi += 1
+    # ---------------------------------------------------------------- objecten, items
+    objs = [obj('LOCALID_ULTRA_NECROZMA_RETURN', WORM, ret[0], ret[1], 'UltraSpace_EventScript_ReturnToHub'),
+            obj('LOCALID_ULTRA_NECROZMA_UB', mon('NECROZMA'), ub[0], ub[1], 'UltraSpace_Necrozma_EventScript_UB',
+                'FLAG_ULTRA_NECROZMA')]
+    r = reachable(w.coll, arrive, {ret, ub})
+    spots = []
+    for tx in (3, 39):
+        c = min((c for c in r if abs(c[0] - tx) <= 5 and 10 <= c[1] <= 21), key=lambda c: abs(c[0] - tx) * 2 + abs(c[1] - 16))
+        spots.append(c)
+    for (fl_, it, q, h), (x, y) in zip(ni.items('UltraSpace_Necrozma'), spots):
+        objs.append(obj(None, 'OBJ_EVENT_GFX_ITEM_BALL', x, y, 'Common_EventScript_FindItem', fl_, 'MOVEMENT_TYPE_LOOK_AROUND', it, rx=q))
+    npcs = [('MINIOR', 'Minior', 'MOVEMENT_TYPE_FACE_UP'), ('CARBINK', 'Carbink', 'MOVEMENT_TYPE_WANDER_AROUND'),
+            ('CRYOGONAL', 'Cryogonal', 'MOVEMENT_TYPE_WANDER_AROUND')]
+    targets = [(17, 21), (33, 18), (8, 17)]
+    for (sp, lbl, mv), (tx, ty) in zip(npcs, targets):
+        c = min((c for c in r if c not in [(o['x'], o['y']) for o in objs]), key=lambda c: abs(c[0] - tx) + abs(c[1] - ty))
+        objs.append(obj(None, mon(sp), c[0], c[1], 'UltraSpace_Necrozma_EventScript_' + lbl, '0', mv,
+                        rx=1 if 'WANDER' in mv else 0, ry=1 if 'WANDER' in mv else 0))
+    for y in range(H):
+        for x in range(W):
+            if (abs(x - ub[0]) <= 5 and y <= 10) or (17 <= x <= 25 and y >= 23):
+                w.beh[y, x] = 0
+    texts = [('UB', 'A POKéMON made of hungry darkness,\nsucking the light out of the prisms.\\pIt wants your light. You only have a\nflashlight app and a bad attitude.'),
+             ('UBBack', 'NECROZMA folds back into the dark.\nThe prisms dim. They\'re waiting for you.'),
+             ('Minior', 'A MINIOR is staring into the rainbow like\na moth. A very rocky, very doomed moth.'),
+             ('Carbink', 'CARBINK is admiring its reflection in the\nfloor. The floor is admiring it back.'),
+             ('Cryogonal', 'CRYOGONAL spins slowly, refracting your\nface into seven slightly worse faces.')]
+    return dict(world=w, objects=objs, bgs=[], arrive=arrive, ret=ret, ub=ub, species='NECROZMA', level=95,
+                music='MUS_RG_SEVII_DUNGEON', weather='WEATHER_NONE', texts=texts,
+                npc_scripts=[('Minior', 'MSGBOX_NPC'), ('Carbink', 'MSGBOX_NPC'), ('Cryogonal', 'MSGBOX_NPC')],
+                encounters=[('CRYOGONAL', 86, 88), ('ESPEON', 86, 88), ('GLIMMORA', 87, 89), ('PORYGON_Z', 86, 88),
+                            ('METAGROSS', 88, 90), ('AURORUS', 86, 88), ('GARDEVOIR', 86, 88), ('UMBREON', 86, 88),
+                            ('ORBEETLE', 85, 87), ('MAGNEZONE', 87, 89), ('BAXCALIBUR', 90, 91), ('MINIOR', 84, 86)],
+                rate=5)
+
+
 # ====================================================================== bouwen
 def build(key):
     spec = WORLDS[key]()

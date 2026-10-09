@@ -10944,6 +10944,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_NECROZMA",
+          "base_label": "gUltraSpaceNecrozma",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CRYOGONAL"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_ESPEON"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GLIMMORA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_PORYGON_Z"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_AURORUS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GARDEVOIR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_UMBREON"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_ORBEETLE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MAGNEZONE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_BAXCALIBUR"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_MINIOR"
+              }
+            ]
+          }
         }
       ]
     },

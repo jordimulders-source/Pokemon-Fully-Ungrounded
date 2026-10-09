@@ -2402,3 +2402,87 @@ const u16 gTilesetPalettes_LavenderCalm[][16] =
     INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/15.gbapal"),
 };
+
+// Project Grounded: National Park / Ilex Forest (tools/grounded/maptools/national_park.py)
+const u16 gTilesetPalettes_ParkBurntGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/park_burnt_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: National Park / Ilex Forest (tools/grounded/maptools/national_park.py)
+const u16 gTilesetPalettes_ParkBurntRustboro[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/palettes/15.gbapal"),
+};
+
+// Project Grounded: National Park / Ilex Forest (tools/grounded/maptools/national_park.py)
+const u16 gTilesetPalettes_IlexGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ilex_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: National Park / Ilex Forest (tools/grounded/maptools/national_park.py)
+const u16 gTilesetPalettes_IlexPetalburg[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ilex_petalburg/palettes/15.gbapal"),
+};

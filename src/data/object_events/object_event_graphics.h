@@ -294,6 +294,7 @@ const u32 gObjectEventPic_StatueTapuKoko[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_StatueTapuLele[] = INCBIN_U32("graphics/object_events/pics/misc/statue_tapu_lele.4bpp"); // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
 const u32 gObjectEventPic_StatueTapuBulu[] = INCBIN_U32("graphics/object_events/pics/misc/statue_tapu_bulu.4bpp"); // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
 const u32 gObjectEventPic_StatueTapuFini[] = INCBIN_U32("graphics/object_events/pics/misc/statue_tapu_fini.4bpp"); // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const u32 gObjectEventPic_StatueCelebi[] = INCBIN_U32("graphics/object_events/pics/misc/statue_celebi.4bpp"); // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
 const u16 gObjectEventPal_StoneStatue[] = INCBIN_U16("graphics/object_events/palettes/stone_statue.gbapal"); // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
 const u32 gObjectEventPic_ShyGuy[] = INCBIN_U32("graphics/object_events/pics/people/shy_guy.4bpp"); // Project Grounded: Shy Guy (tools/grounded/shyguy_overworld.py)
 const u16 gObjectEventPal_ShyGuyRed[] = INCBIN_U16("graphics/object_events/palettes/shy_guy_red.gbapal"); // Project Grounded: Shy Guy

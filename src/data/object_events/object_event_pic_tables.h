@@ -466,6 +466,9 @@ static const struct SpriteFrameImage sPicTable_StatueTapuBulu[] = { // Project G
 static const struct SpriteFrameImage sPicTable_StatueTapuFini[] = { // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     obj_frame_tiles(gObjectEventPic_StatueTapuFini),
 };
+static const struct SpriteFrameImage sPicTable_StatueCelebi[] = { // Project Grounded: stenen Celebi-beeld (tools/grounded/statue_sprites.py)
+    obj_frame_tiles(gObjectEventPic_StatueCelebi),
+};
 
 static const struct SpriteFrameImage sPicTable_ShyGuy[] = { // Project Grounded: Shy Guy (32x32)
     overworld_ascending_frames(gObjectEventPic_ShyGuy, 4, 4),

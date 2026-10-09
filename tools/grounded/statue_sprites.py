@@ -18,7 +18,7 @@ os.chdir(ROOT)
 from regi_statue import statue, STONE
 
 BG = (115, 197, 164)
-STATUES = ['tapu_koko', 'tapu_lele', 'tapu_bulu', 'tapu_fini']
+STATUES = ['tapu_koko', 'tapu_lele', 'tapu_bulu', 'tapu_fini', 'celebi']
 PICS = 'graphics/object_events/pics/misc'
 PAL = 'graphics/object_events/palettes/stone_statue.pal'
 

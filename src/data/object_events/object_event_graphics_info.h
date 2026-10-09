@@ -5469,6 +5469,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueCelebi = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueCelebi,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 // Project Grounded: Shy Guy (red), 32x32 (figuur 18-19 px breed); zelfde frames, eigen palet
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyRed = {
     .tileTag = TAG_NONE,

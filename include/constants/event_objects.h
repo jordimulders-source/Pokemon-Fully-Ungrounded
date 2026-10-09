@@ -306,7 +306,9 @@
 #define OBJ_EVENT_GFX_RUSTED_SHIELD_OW                  288 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_GFX_GIANT_LOG                         289 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        290
+#define OBJ_EVENT_GFX_STATUE_CELEBI                     290 // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
+
+#define NUM_OBJ_EVENT_GFX                        291
 
 
 // These are dynamic object gfx ids.

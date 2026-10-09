@@ -1223,6 +1223,17 @@
 #define TRAINER_CC_GIOVANNI                 1199 // Project Grounded: Cerulean Cave B1F: Giovanni, vlak voor Mewtwo
 // }
 
+// national_park { (tools/grounded/maptools/national_park.py; id 1090-1097)
+#define TRAINER_NP_BUG_CATCHER_DOUGLAS      1090 // Project Grounded: National Park, insectenwedstrijd
+#define TRAINER_NP_PICNICKER_SIENNA         1091 // Project Grounded: National Park, picknick
+#define TRAINER_NP_GENTLEMAN_WALDORF        1092 // Project Grounded: National Park, wandelt met zijn wandelstok
+#define TRAINER_NP_AROMA_LADY_PETUNIA       1093 // Project Grounded: National Park, ruikt aan alles
+#define TRAINER_NP_SHADOW_ASH               1094 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_CINDER            1095 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_EMBER             1096 // Project Grounded: brandend park, schim
+#define TRAINER_NP_SHADOW_SOOT              1097 // Project Grounded: brandend park, schim
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

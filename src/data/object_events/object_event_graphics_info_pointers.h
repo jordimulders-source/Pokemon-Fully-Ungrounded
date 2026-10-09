@@ -85,6 +85,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuK
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueCelebi;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyGreen;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyPink;
@@ -386,6 +387,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_STATUE_TAPU_LELE] = &gObjectEventGraphicsInfo_StatueTapuLele, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_STATUE_TAPU_BULU] = &gObjectEventGraphicsInfo_StatueTapuBulu, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_STATUE_TAPU_FINI] = &gObjectEventGraphicsInfo_StatueTapuFini, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    [OBJ_EVENT_GFX_STATUE_CELEBI] = &gObjectEventGraphicsInfo_StatueCelebi, // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_SHY_GUY_RED] = &gObjectEventGraphicsInfo_ShyGuyRed, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_SHY_GUY_GREEN] = &gObjectEventGraphicsInfo_ShyGuyGreen, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_SHY_GUY_PINK] = &gObjectEventGraphicsInfo_ShyGuyPink, // Project Grounded: Shy Guy

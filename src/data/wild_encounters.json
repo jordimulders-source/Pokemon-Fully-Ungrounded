@@ -2758,6 +2758,144 @@
           }
         },
         {
+          "map": "MAP_ILEX_FOREST",
+          "base_label": "gIlexForest",
+          "land_mons": {
+            "encounter_rate": 15,
+            "mons": [
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_ARIADOS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_VILEPLUME"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_FORRETRESS"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_TREVENANT"
+              },
+              {
+                "min_level": 63,
+                "max_level": 67,
+                "species": "SPECIES_MISMAGIUS"
+              },
+              {
+                "min_level": 63,
+                "max_level": 67,
+                "species": "SPECIES_ZOROARK"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_SUDOWOODO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_NATIONAL_PARK",
+          "base_label": "gNationalPark",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_BUTTERFREE"
+              },
+              {
+                "min_level": 60,
+                "max_level": 64,
+                "species": "SPECIES_BEEDRILL"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_KRICKETUNE"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_LEDIAN"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_VENOMOTH"
+              },
+              {
+                "min_level": 61,
+                "max_level": 65,
+                "species": "SPECIES_SUNFLORA"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 62,
+                "max_level": 66,
+                "species": "SPECIES_VIVILLON"
+              },
+              {
+                "min_level": 63,
+                "max_level": 66,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 63,
+                "max_level": 67,
+                "species": "SPECIES_PINSIR"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 64,
+                "max_level": 68,
+                "species": "SPECIES_HERACROSS"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_CERULEAN_CAVE_B1F",
           "base_label": "gCeruleanCaveB1F",
           "land_mons": {

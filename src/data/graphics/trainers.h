@@ -457,6 +457,8 @@ const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steve
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u8 gTrainerBackPic_Kecleon[] = INCBIN_U8("graphics/trainers/back_pics/kecleon.4bpp");
 const u16 gTrainerBackPicPalette_Kecleon[] = INCBIN_U16("graphics/trainers/back_pics/kecleon.gbapal");
+const u8 gTrainerBackPic_Calyrex[] = INCBIN_U8("graphics/trainers/back_pics/calyrex.4bpp");
+const u16 gTrainerBackPicPalette_Calyrex[] = INCBIN_U16("graphics/trainers/back_pics/calyrex.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
 
 // The first two parameters invoke a front pic and palette by
@@ -726,4 +728,5 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_KECLEON, 4, gTrainerBackPic_Kecleon, gTrainerBackPicPalette_Kecleon, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_CALYREX, 4, gTrainerBackPic_Calyrex, gTrainerBackPicPalette_Calyrex, sBackAnims_Hoenn),
 };

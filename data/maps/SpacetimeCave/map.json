@@ -147,6 +147,20 @@
       "elevation": 3,
       "dest_map": "MAP_CHARGESTONE_CAVE_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_GLIMWOOD_TANGLE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_GLIMWOOD_TANGLE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -170,38 +184,6 @@
     }
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 21,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftGlimwood"
-    },
-    {
-      "type": "sign",
-      "x": 22,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftGlimwood"
-    },
-    {
-      "type": "sign",
-      "x": 21,
-      "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftGlimwood"
-    },
-    {
-      "type": "sign",
-      "x": 22,
-      "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftGlimwood"
-    },
     {
       "type": "sign",
       "x": 21,

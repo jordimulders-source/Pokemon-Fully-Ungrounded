@@ -1,0 +1,221 @@
+{
+  "id": "MAP_GLIMWOOD_TANGLE",
+  "name": "GlimwoodTangle",
+  "layout": "LAYOUT_GLIMWOOD_TANGLE",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "region_map_section": "MAPSEC_GLIMWOOD_TANGLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 19,
+      "y": 53,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Witch",
+      "flag": "0",
+      "local_id": "LOCALID_GLIMWOOD_WITCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "x": 26,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "GlimwoodTangle_EventScript_Morwen",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 12,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "GlimwoodTangle_EventScript_Silas",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 37,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "GlimwoodTangle_EventScript_Odette",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(IMPIDIMP)",
+      "x": 8,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Gang1",
+      "flag": "FLAG_GLIMWOOD_GANG_1",
+      "local_id": "LOCALID_GLIMWOOD_GANG_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MORGREM)",
+      "x": 41,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Gang2",
+      "flag": "FLAG_GLIMWOOD_GANG_2",
+      "local_id": "LOCALID_GLIMWOOD_GANG_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MORGREM)",
+      "x": 30,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Gang3",
+      "flag": "FLAG_GLIMWOOD_GANG_3",
+      "local_id": "LOCALID_GLIMWOOD_GANG_3A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MORGREM)",
+      "x": 31,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Gang3",
+      "flag": "FLAG_GLIMWOOD_GANG_3",
+      "local_id": "LOCALID_GLIMWOOD_GANG_3B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(YVELTAL)",
+      "x": 22,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GlimwoodTangle_EventScript_Yveltal",
+      "flag": "FLAG_TEMP_1",
+      "local_id": "LOCALID_GLIMWOOD_YVELTAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_EXP_CANDY_XL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GLIMWOOD_EXP_CANDY_XL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 49,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_EJECT_PACK",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GLIMWOOD_EJECT_PACK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 44,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DREAM_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GLIMWOOD_DREAM_BALL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 22,
+      "y": 59,
+      "elevation": 0,
+      "dest_map": "MAP_SPACETIME_CAVE",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 23,
+      "y": 59,
+      "elevation": 0,
+      "dest_map": "MAP_SPACETIME_CAVE",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 30,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_GLIMWOOD_TANGLE_BALLONLEA",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_GLIMWOOD_TANGLE_BALLONLEA",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 26,
+      "elevation": 3,
+      "item": "ITEM_GALARICA_CUFF",
+      "flag": "FLAG_HIDDEN_ITEM_GLIMWOOD_GALARICA_CUFF"
+    }
+  ]
+}

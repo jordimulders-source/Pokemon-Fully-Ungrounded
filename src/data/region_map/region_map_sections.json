@@ -1446,6 +1446,14 @@
     {
       "id": "MAPSEC_UNCHARTED_ISLE",
       "name": "???"
+    },
+    {
+      "id": "MAPSEC_GLIMWOOD_TANGLE",
+      "name": "GLIMWOOD TANGLE"
+    },
+    {
+      "id": "MAPSEC_BALLONLEA",
+      "name": "BALLONLEA"
     }
   ]
 }

@@ -41506,3 +41506,171 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Nasty Plot
 
 /* --- einde national_park --- */
+
+/* --- glimwood (tools/grounded/maptools/glimwood.py) --- */
+
+=== TRAINER_GLIMWOOD_HEX_MANIAC_MORWEN ===
+Name: MORWEN
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Hatterene
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dazzling Gleam
+- Psychic
+- Mystical Fire
+- Trick Room
+
+Polteageist
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Strength Sap
+
+Mismagius
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Nasty Plot
+- Mystical Fire
+
+Gothitelle
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Thunderbolt
+- Calm Mind
+- Shadow Ball
+
+=== TRAINER_GLIMWOOD_PSYCHIC_SILAS ===
+Name: SILAS
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Orbeetle
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Psychic
+- Sticky Web
+- Calm Mind
+
+Mr. Rime
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Freeze-Dry
+- Psychic
+- Rapid Spin
+- Focus Blast
+
+Slowking-Galar
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Sludge Bomb
+- Psychic
+- Flamethrower
+- Trick Room
+
+Indeedee
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Psychic
+- Hyper Voice
+- Calm Mind
+- Mystical Fire
+
+=== TRAINER_GLIMWOOD_BEAUTY_ODETTE ===
+Name: ODETTE
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Alcremie
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dazzling Gleam
+- Recover
+- Calm Mind
+- Mystical Fire
+
+Sylveon
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hyper Voice
+- Shadow Ball
+- Wish
+- Calm Mind
+
+Togekiss
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Roost
+
+Rapidash-Galar
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Play Rough
+- Psycho Cut
+- High Horsepower
+- Swords Dance
+
+=== TRAINER_BALLONLEA_GENTLEMAN_ARTHUR ===
+Name: ARTHUR
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dubwool
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Cotton Guard
+- Body Press
+- Double-Edge
+- Wild Charge
+
+Corviknight
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brave Bird
+- Iron Head
+- Bulk Up
+- Roost
+
+Obstagoon
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Obstruct
+- Knock Off
+- Close Combat
+- Gunk Shot
+
+Sirfetch'd
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Leaf Blade
+- Close Combat
+- Brave Bird
+- Knock Off
+
+/* --- einde glimwood --- */

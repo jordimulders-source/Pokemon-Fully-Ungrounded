@@ -1663,6 +1663,23 @@
 #define FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY          FLAG_GROUNDED(710) // Project Grounded: Ilex Forest: verborgen Rare Candy
 #define FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED               FLAG_GROUNDED(711) // Project Grounded: Ilex Forest: Miracle Seed (dwaalpad)
 // }
+// glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
+#define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld
+#define FLAG_GLIMWOOD_GANG_1                             FLAG_GROUNDED(881) // Project Grounded: Glimwood: Impidimp-bende 1 (west) verslagen
+#define FLAG_GLIMWOOD_GANG_2                             FLAG_GROUNDED(882) // Project Grounded: Glimwood: Impidimp-bende 2 (oost) verslagen
+#define FLAG_GLIMWOOD_GANG_3                             FLAG_GROUNDED(883) // Project Grounded: Glimwood: Impidimp-bende 3 (blokkeert de weg naar Ballonlea) verslagen
+#define FLAG_GLIMWOOD_GANG_BOSS                          FLAG_GROUNDED(884) // Project Grounded: Ballonlea: Grimmsnarl (baas van de bende, blokkeert de trap) verslagen
+#define FLAG_GLIMWOOD_XERNEAS_DONE                       FLAG_GROUNDED(885) // Project Grounded: Ballonlea: Xerneas gevangen, het bos licht weer op
+#define FLAG_SPACETIME_GLIMWOOD_DONE                     FLAG_GROUNDED(886) // Project Grounded: Spacetime-sidequest klaar: Yveltal gevangen
+#define FLAG_GLIMWOOD_SCENE_PENDING                      FLAG_GROUNDED(887) // Project Grounded: Ballonlea: tekst na het oplichten nog tonen (eenmalig)
+#define FLAG_GLIMWOOD_YVELTAL_SEEN                       FLAG_GROUNDED(888) // Project Grounded: Glimwood: Yveltal-scene gezien (eenmalig)
+#define FLAG_ITEM_GLIMWOOD_EXP_CANDY_XL                  FLAG_GROUNDED(889) // Project Grounded: Glimwood: Exp. Candy XL (westterras)
+#define FLAG_ITEM_GLIMWOOD_EJECT_PACK                    FLAG_GROUNDED(890) // Project Grounded: Glimwood: Eject Pack (doodlopend pad oost)
+#define FLAG_ITEM_GLIMWOOD_DREAM_BALL                    FLAG_GROUNDED(891) // Project Grounded: Glimwood: Dream Ball (oostterras)
+#define FLAG_HIDDEN_ITEM_GLIMWOOD_GALARICA_CUFF          FLAG_GROUNDED(892) // Project Grounded: Glimwood: verborgen Galarica Cuff (heksenkring)
+#define FLAG_ITEM_BALLONLEA_GALARICA_WREATH              FLAG_GROUNDED(893) // Project Grounded: Ballonlea: Galarica Wreath
+#define FLAG_HIDDEN_ITEM_BALLONLEA_EXP_CANDY_L           FLAG_GROUNDED(894) // Project Grounded: Ballonlea: verborgen Exp. Candy L
+// }
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; FLAG_GROUNDED 660-699, 685-699 nog vrij)
 #define FLAG_ITEM_SEA_SHARD_ROUTE126_CORAL_CATHEDRAL     FLAG_GROUNDED(660) // Project Grounded: Koraalkathedraal: Sea Shard
 #define FLAG_ITEM_CORAL_CATHEDRAL_LUMINOUS_MOSS          FLAG_GROUNDED(661) // Project Grounded: Koraalkathedraal: Luminous Moss

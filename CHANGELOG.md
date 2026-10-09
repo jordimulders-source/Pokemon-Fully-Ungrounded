@@ -17576,3 +17576,7 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.168] - Kratereilanden: kusthoeken netjes afgemaakt
 - Jordi: het klifblok rechtsonder de grasrichel stak uit. Weg; de hoek onder het gras is nu de waterhoektegel tegen de wand (zoals in Sootopolis) en het water eronder loopt door. Zelfde aanpak voor de onderhoeken van beide grasrichels in Hermit Crater.
 - Oostwanden naast water gebruiken nu tegel 073 i.p.v. 0a0 (die had een randje water in de klif; `wall_fix` in `sootopolis_craters.py`).
+
+### [v0.9.169] - Kratereilanden: bovenhoeken zoals Sootopolis, geen plantjes in de klif
+- Jordi: de bovenhoeken van de grasrichels (Hermit Crater) waren lelijk. Het meer reikt nu een rij hoger dan de richels en de hoeken gebruiken exact de tegelcombinaties van Sootopolis (westrichel als Sootopolis 21–24,34–36; oostrichel als 38–40,35–37).
+- De onafgemaakte plantjes in de klif boven gras (tegels 2de/2df) zijn weg in beide kraters: gewone klifvoet 079.

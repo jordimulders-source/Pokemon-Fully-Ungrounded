@@ -171,8 +171,8 @@ def hermit_classes():
     stamp_classes(cv, 7, 18, DOME)       # duikwater tegen de zuidwand
     # Hoeken waar gras, klif en water samenkomen hebben in Sootopolis geen kusttegel (Jordi: hoekjes zonder
     # kustrand): daar loopt de klif een vakje door.
-    for x, y in ((9, 4), (19, 4)):
-        cv[y][x] = 'W'
+    for x in range(9, 20):                # het meer reikt een rij hoger dan de grasrichels (zoals Sootopolis)
+        cv[3][x] = 'A'
     return cv
 
 
@@ -221,8 +221,12 @@ def silent_classes():
 
 
 def wall_fix(g):
-    """Oostwand naast water: in Sootopolis staat 073 naast 0ba/0c4 (0a0 heeft een randje water)."""
+    """Oostwand naast water: in Sootopolis staat 073 naast 0ba/0c4 (0a0 heeft een randje water).
+    Klif boven gras zonder plantjes (Jordi: 2de/2df zien er onaf uit): 079."""
     for y in range(len(g)):
+        for x in range(len(g[0])):
+            if g[y][x] & 0x3ff in (0x2de, 0x2df):
+                g[y][x] = (g[y][x] & ~0x3ff) | 0x079
         for x in range(1, len(g[0])):
             if g[y][x] & 0x3ff == 0x0a0 and g[y][x - 1] & 0x3ff in (0x0ba, 0x0c4):
                 g[y][x] = (g[y][x] & ~0x3ff) | 0x073
@@ -429,6 +433,13 @@ def hermit():
     # onderhoeken van de grasrichels tegen de wand: waterhoektegels zoals in Sootopolis (36,24 en 16,46)
     for x, y, m in ((24, 15, 0x0c4), (5, 18, 0x0b0)):
         g[y][x] = (g[y][x] & ~0x3ff) | m
+    # bovenhoeken van de grasrichels: exact de tegels van Sootopolis (21-24,34-36 en 38-40,35-37)
+    water = lambda x, y, m: g[y].__setitem__(x, m | (3 << 12))
+    cliff = lambda x, y, m: g[y].__setitem__(x, m | COL)
+    for x in range(10, 18):
+        water(x, 3, 0x0b1); cliff(x, 2, 0x07c)
+    cliff(8, 3, 0x07a); water(9, 3, 0x0c3); cliff(9, 2, 0x07d)
+    water(18, 3, 0x0c4); water(18, 4, 0x0c2); water(19, 4, 0x0b2); cliff(19, 3, 0x07b); cliff(19, 2, 0x07c)
     g = wall_fix(g)
     for x, y in HERMIT_TREES:
         assert all(cv[y + dy][x + dx] == 'G' for dx in (0, 1) for dy in (0, 1)), ('boom niet op gras', x, y)

@@ -339,7 +339,8 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_OldSeaMap
 	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_MysticTicket
 	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_BloomTicket
-	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_MasterBall
+	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -781,4 +782,17 @@ BattleFrontier_ExchangeServiceCorner_EventScript_BloomTicket::
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmBloomTicket:
 	.string "You've chosen the BLOOM TICKET.\n"
+	.string "Is that correct?$"
+
+@ Project Grounded: Master Balls, onbeperkt te koop voor BP (post-game: BP verdien je pas in de Battle Frontier)
+BattleFrontier_ExchangeServiceCorner_EventScript_MasterBall::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMasterBall, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 200
+	setvar VAR_0x8009, ITEM_MASTER_BALL
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmMasterBall:
+	.string "You've chosen the MASTER BALL.\n"
 	.string "Is that correct?$"

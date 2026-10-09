@@ -48,6 +48,7 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_OLD_SEA_MAP,   // Project Grounded: tickets voor de legendary-eilanden
     ITEM_MYSTIC_TICKET,
     ITEM_BLOOM_TICKET,  // Project Grounded: Shaymin
+    ITEM_MASTER_BALL,   // Project Grounded: onbeperkt, 200 BP
     ITEM_LIST_END
 };
 
@@ -91,6 +92,7 @@ static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
 static const u8 sText_OldSeaMapDesc[] = _("A faded sea chart to a faraway\nisland. The S.S. TIDAL can go.");
 static const u8 sText_MysticTicketDesc[] = _("A ticket for the S.S. TIDAL to\nNAVEL ROCK.");
 static const u8 sText_BloomTicketDesc[] = _("A ticket for the S.S. TIDAL to\nFLOWER PARADISE. Achoo.");
+static const u8 sText_MasterBallDesc[] = _("Never misses. Unlike your last\nfifty ULTRA BALLS.");
 
 static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
 {
@@ -106,5 +108,6 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     sText_OldSeaMapDesc, // Project Grounded
     sText_MysticTicketDesc,
     sText_BloomTicketDesc,
+    sText_MasterBallDesc,
     gText_Exit
 };

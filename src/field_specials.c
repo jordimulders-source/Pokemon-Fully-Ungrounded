@@ -2358,7 +2358,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 13; // Project Grounded: + drie tickets (Old Sea Map, Mystic, Bloom; Aurora Ticket weg: Deoxys alleen in de ruimte)
+        task->tNumItems = 14; // Project Grounded: + drie tickets (Old Sea Map, Mystic, Bloom; Aurora Ticket weg: Deoxys alleen in de ruimte) + Master Ball
         task->tLeft = 14;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2503,6 +2503,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("OLD SEA MAP{CLEAR_TO 0x58}200BP"), // Project Grounded
         COMPOUND_STRING("MYSTICTICKET{CLEAR_TO 0x58}200BP"),
         COMPOUND_STRING("BLOOM TICKET{CLEAR_TO 0x58}200BP"),
+        COMPOUND_STRING("MASTER BALL{CLEAR_TO 0x58}200BP"), // Project Grounded: onbeperkt te koop (post-game)
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =

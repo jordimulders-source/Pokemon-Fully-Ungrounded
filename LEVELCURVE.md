@@ -170,7 +170,7 @@ De grens schuift zo vanzelf mee met de curve en de wilde levels.
   - Drie Super Rod-vangsten op Route 122–124 (67 tegen 66).
 - Gifts (Lileep/Anorith 20, Grimer 22, Kubfu 22, Castform 25) vallen binnen de grens.
 
-## Evolutielevels (advies, niet aangepast)
+## Evolutielevels (advies; ingevoerd, zie onder de tabel)
 De nieuwe curve ligt hoger dan in vanilla Emerald (team ±37 bij Wattson, ±49 bij Flannery, ±58 bij Winona, ±71 bij Tate & Liza). Daardoor komen evoluties in verhaaltermen al eerder dan in vanilla, ook op officiële levels. Jordi's verlagingen komen daar bovenop.
 
 Hieronder sterke eindvormen (BST ≥ 500) die in dit project eerder evolueren dan officieel (bron: `species_info` van pokeemerald-expansion master). "Nu" = wanneer een speler op het hoofdpad dat level haalt.
@@ -202,6 +202,55 @@ Hieronder sterke eindvormen (BST ≥ 500) die in dit project eerder evolueren da
 - De pseudo-legendaries (Hydreigon, Dragapult) en Volcarona terug naar officieel. Die zijn nu al vóór Winona fully evolved, terwijl ze in vanilla post-game zijn.
 - Mienshao, Mandibuzz, Klinklang en Vanilluxe (−13 tot −20 levels) terug naar ±officieel.
 - Voor de rest is officieel genoeg. De hogere curve maakt fully evolved teams halverwege de game toch al normaal, en de trainers zijn daarop gebouwd.
+
+### Ingevoerd (Jordi: "Eens wat betreft evolutielevels")
+| Evolutie | Was | Nu |
+|---|---|---|
+| Zweilous → Hydreigon | 53 | 64 |
+| Drakloak → Dragapult | 50 | 60 |
+| Dragonair → Dragonite, Pupitar → Tyranitar | 51 | 55 |
+| Duraludon → Archaludon | 50 | 60 |
+| Bisharp → Kingambit | 49 | 55 |
+| Gimmighoul (beide vormen) → Gholdengo | 45 | 55 |
+| Larvesta → Volcarona | 40 | 59 |
+| Fraxure → Haxorus | 43 | 48 |
+| Vibrava → Flygon | 38 | 40 (Jordi's eigen revisie, zie onder) |
+| Noibat → Noivern | 38 | 48 |
+| Mienfoo → Mienshao | 30 | 48 |
+| Vullaby → Mandibuzz | 34 | 52 |
+| Klang → Klinklang | 36 | 47 |
+| Vanillish → Vanilluxe | 34 | 46 |
+| Wailmer → Wailord, Skorupi → Drapion, Ponyta (ook Galar) → Rapidash | 30–32 | 40 |
+| Archen → Archeops | 30 | 37 |
+| Skiddo → Gogoat / Hippopotas → Hippowdon / Cubchoo → Beartic | 26 / 28 / 28 | 32 / 34 / 37 (officieel) |
+
+**Bewust blijven staan** (Jordi koos het level zelf in zijn "Pokémon Revisie" in de changelog):
+- Grimer → Muk op 30 (v0.2.2 "Evolueert nu op level 30 naar Muk"; Alola- en Hoenn-Muk volgen dat).
+- Lileep → Cradily en Anorith → Armaldo op 30 (v0.2.2 "evolved op lvl 30").
+- Snorunt → Glalie op 32 (v0.2.2 Snorunt-lijn).
+- Tentacool → Tentacruel op 27 (v0.2.1 Tentacool-revisie).
+- Flygon: Jordi schreef 40 (v0.2.2 Trapinch-lijn), de code stond op 38; nu 40 in plaats van het advies 45.
+- Ruil-evo's (Machoke, Graveler, Gurdurr, Boldore) en vriendschap/steen ongewijzigd.
+
+**Gevolgen:**
+- Trainers: 34 Pokémon onder hun nieuwe evolutielevel terug naar de voorvorm (o.a. Jeffrey/Kent/Cole: Larvesta, Nicolas: Drakloak, Abigail/Benjamin/Amy & Liv: Klang, Diana: Noibat/Vullaby, Shelby/Cora/Dojo: Mienfoo, Yasu/Keigo/Connor: Bisharp, Magma Hideout-grunt: Zweilous, Charles: Wailmer, Abigail: Skiddo, Sophie: Cubchoo). De Battle Stadium-teams (vast lv 50, `TRAINER_STADIUM_*` en `PARTNER_STADIUM_*`) zijn niet aangepast: dat is een lv 50-format waarin eindvormen normaal zijn.
+- Wild: Wailord in de Route 103-hengeltabel (lv 32–37) is Wailmer; de Mienshao in de Rock Smash-tabel van Granite Cave B2F (lv 26–29, 1%) is Throh geworden (Mienfoo stond er al).
+
+## Post-game wilde levels per evolutiefase
+Jordi: "Post game wilde pokemon hoeven niet zo extreem hoog, misschien op hele sterke pokemon na cappen. Bijv dat een Budew of Togepi op lagere levels zitten dan evolved forms."
+
+Toegepast op elk wild slot met `min_level` ≥ 80 (Spacetime, meren, Coronet, Yoshi's Island, Area Zero, Tao-eiland, Cerulean Cave e.d.; niet Victory Road/Ever Grande, niet de Magikarp van Route 103). Soorten, slots en kansen zijn gelijk gebleven; `setwildbattle` is niet aangeraakt.
+
+| Fase | Levels | Binnen de band |
+|---|---|---|
+| Baby (Cleffa, Togepi, Budew, ...) | 55–60 | naar BST |
+| Basisvorm die nog evolueert (Goldeen, fossielen, Larvesta, Duraludon) | 60–70 | naar BST; onder het eigen evolutielevel als dat ≥ 55 is (Larvesta 58, Duraludon 58–59) |
+| Middenfase (Haunter, Gabite, Dragonair, Zweilous) | 70–80 | naar BST; onder het eigen evolutielevel als dat ≥ 60 is (Zweilous 62–63) |
+| Eindvorm of losse soort | 80–90 | naar BST (400 → ±81, 560 → 90); stond hij al lager, dan blijft het oude level |
+| Sterk (BST ≥ 580, legendary, paradox, pseudo-eindvormen, Slaking, Wailord) | ongewijzigd (85–94) | |
+
+- 564 slots aangepast (463 eindvormen, 66 middenfases, 34 basisvormen, 1 baby; 72 sterke slots ongewijzigd). Babies volgen de baby-band, ook als de basisvorm een baby als voorvorm heeft (Clefairy, Chansey, Magmar tellen als basisvorm).
+- EXP per wild gevecht (team lv 90): gemiddeld ±87% van vroeger; het minst in de Desert Underpass (59%, alleen fossielen), Meteor Space en Steam Island (60%), het meest in Area Zero/Steven's Cave (95–98%). `levelcurve.py --postgame` rekent in de post-game alleen trainers en verandert dus niet door deze wilde levels.
 
 ## Opnieuw draaien
 Na nieuwe trainers of routes: `python3 tools/grounded/levelcurve.py --postgame` (tabel per mijlpaal; met `--profile completionist` de rotatie). `solve()` geeft de nieuwe verschuivingen.

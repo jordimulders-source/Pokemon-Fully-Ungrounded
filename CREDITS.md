@@ -1,7 +1,7 @@
 ## Project Grounded
 
 - **Snow tileset** (sneeuwgrond, paden, dennen, kliffen, ijs, sneeuwpop en meer; voor Route 135/136 en Ashfrost Town): **CinnaYva** (BannedFootage op Reddit). Bron in `graphics/grounded/snow_src/`, omgezet naar GBA met `tools/grounded/snow_tileset.py`.
-- **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin**: **Ekat99** (DeviantArt). Bron in `graphics/grounded/tilesets/`. De mangroves en wortelbogen in Fortree Jungle komen uit de moerassheet; de overige jungle-tiles (lianen, bromelia's, bananenplant, heliconia, hibiscus, monstera, varens, waterlelies) zijn voor Project Grounded getekend.
+- **Tilesets rotsen/lava, moeras, sneeuwtempel en tuin**: **Ekat99** (Ekat op DeviantArt en Eevee Expo; ook de tilesets die Jordi op 9 okt toevoegde). Bron in `graphics/grounded/tilesets/`. De mangroves en wortelbogen in Fortree Jungle komen uit de moerassheet; de overige jungle-tiles (lianen, bromelia's, bananenplant, heliconia, hibiscus, monstera, varens, waterlelies) zijn voor Project Grounded getekend.
 - **N** (trainerfoto en overworld): sprite sheet van **Delgatron** (DeviantArt, "N sprite sheet"). Bron: `graphics/grounded/trainers/n/n_sheet_delgatron_bron.jpg`, omgezet met `tools/grounded/plasma_sprites.py`.
 - **Ghetsis** (overworld): **PurpleZaffre** (DeviantArt, "Team Plasma Boss Ghetsis BW"); trainerfoto uit een pixel-art van Ghetsis (Redbubble-print, maker nog onbekend). Bronnen in `graphics/grounded/trainers/ghetsis/`.
 - **izzyvicious** (DeviantArt): sprites aangeleverd door Jordi (N/Ghetsis-reeks).

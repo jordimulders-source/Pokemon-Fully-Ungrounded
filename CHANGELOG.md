@@ -17890,3 +17890,13 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.225] - Keccles lager
 - Keccles in de Frontier is een van de eerste post-game-gevechten: team lv 85, Salazzle lv 87 (was 92–95); Marshadow komt op lv 85. Charms (Shiny/Oval/Catching/Exp.) komen bewust niet in de game (Jordi).
+
+### [v0.9.226] - Ultra Space opnieuw: zes UB-werelden (deel 1)
+- De eerste versie (hergebruikte gym- en grotkaarten) is weg. Zes werelden zijn per pixel opnieuw getekend, elk met een eigen tileset (`tools/grounded/maptools/ultra_worlds_a.py`) en paletcycli voor beweging (lava, water, leds, stroom):
+  - **Nihilego:** waterplaneet met illusies: glazen schijven naar Nihilego dat boven het water zweeft, twee zonnen die alleen in het water bestaan, een gespiegelde stad die er niet is, en nep-eilanden die oplossen als je ernaartoe surft.
+  - **Buzzwole:** oversized jungle: reuzengrassprieten als muren, druppels zo groot als een huis, reuzenpaddenstoelen, een boomstronk-arena met bessenhalters.
+  - **Pheromosa:** elementen zonder effect op elkaar: vuur op water en ijs, bliksem in lava, vlammen bevroren in ijs, een water- en een lavarivier die elkaar kruisen onder een marmeren podium.
+  - **Xurkitree:** alleen kabels: kabelbanen boven een diepte vol kabels, kabelbomen met stekkers en knipperende leds, een hoofdkabel met stroompuls naar een transformator.
+  - **Celesteela:** een eindeloze steppe met alleen Celesteela: monolieten, stenen beelden, schroeikringen en silhouetten aan de horizon.
+  - **Kartana:** omgekeerde bibliotheek: kasten, trappen en kroonluchters op hun kop, inkt die omhoog druppelt, vallende bladzijden, Kartana op een open boek.
+- Wilde Pokémon lv 83–89 met soorten die nog weinig voorkwamen (Celesteela: bewust geen). ±223 KB.

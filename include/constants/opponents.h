@@ -1198,7 +1198,7 @@
 #define TRAINER_AROMA_LADY_FENNA            1076 // Project Grounded: kluizenaarskrater: kwam voor de stilte, nam een speaker mee
 // }
 
-// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1168)
+// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1169, 1195-1199)
 #define TRAINER_TOWER_MAYA                  1159 // Project Grounded: Pokemon Tower (Spacetime Cave), MAYA
 #define TRAINER_TOWER_PATRICIA              1160 // Project Grounded: Pokemon Tower (Spacetime Cave), PATRICIA
 #define TRAINER_TOWER_CARLY                 1161 // Project Grounded: Pokemon Tower (Spacetime Cave), CARLY
@@ -1209,9 +1209,15 @@
 #define TRAINER_TOWER_RUTH                  1166 // Project Grounded: Pokemon Tower (Spacetime Cave), RUTH
 #define TRAINER_TOWER_TAMMY                 1167 // Project Grounded: Pokemon Tower (Spacetime Cave), TAMMY
 #define TRAINER_TOWER_KARINA                1168 // Project Grounded: Pokemon Tower (Spacetime Cave), KARINA
+#define TRAINER_TOWER_AGATHA                1169 // Project Grounded: Pokemon Tower 5F: bezeten Agatha (Lavender-quest)
+#define TRAINER_CC_GRUNT_ARLO               1195 // Project Grounded: Cerulean Cave 1F: Rocket die Mewtwo zoekt
+#define TRAINER_CC_GRUNT_VERA               1196 // Project Grounded: Cerulean Cave 2F: Rocket die Mewtwo zoekt
+#define TRAINER_CC_GRUNT_DUNCAN             1197 // Project Grounded: Cerulean Cave 2F: Rocket die Mewtwo zoekt
+#define TRAINER_CC_GRUNT_MAXINE             1198 // Project Grounded: Cerulean Cave B1F: Rocket die Mewtwo zoekt
+#define TRAINER_CC_GIOVANNI                 1199 // Project Grounded: Cerulean Cave B1F: Giovanni, vlak voor Mewtwo
 // }
 
-#define TRAINERS_COUNT                      1195
+#define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

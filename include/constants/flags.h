@@ -1664,6 +1664,12 @@
 #define FLAG_ITEM_CERULEAN_CAVE_2F_FULL_RESTORE          FLAG_GROUNDED(571) // Project Grounded: Cerulean Cave 2F: Full Restore
 #define FLAG_ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL           FLAG_GROUNDED(572) // Project Grounded: Cerulean Cave B1F: Ultra Ball
 #define FLAG_ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE           FLAG_GROUNDED(573) // Project Grounded: Cerulean Cave B1F: Max Revive
+#define FLAG_SPACETIME_RIFTS_OPENED                      FLAG_GROUNDED(574) // Project Grounded: Spacetime Cave: Dialga en Palkia hebben de scheuren geopend
+#define FLAG_SPACETIME_LAVENDER_DONE                     FLAG_GROUNDED(575) // Project Grounded: Spacetime-sidequest klaar: Lavender bevrijd (Agatha verslagen)
+#define FLAG_SPACETIME_CERULEAN_DONE                     FLAG_GROUNDED(576) // Project Grounded: Spacetime-sidequest klaar: Mewtwo gevangen/verslagen
+#define FLAG_HIDE_LAVENDER_GHOST_GENGAR                  FLAG_GROUNDED(577) // Project Grounded: Lavender Town: kwade geest voor de toren verdreven
+#define FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR                FLAG_GROUNDED(578) // Project Grounded: Lavender Town: kwade geest bij de noorduitgang verdreven
+#define FLAG_HIDE_LAVENDER_GHOST_BANETTE                 FLAG_GROUNDED(579) // Project Grounded: Lavender Town: kwade geest bij de westuitgang verdreven
 // }
 // ruin_beasts { (tools/grounded/maptools/ruin_beasts.py; FLAG_GROUNDED 530-559)
 #define FLAG_RUIN_SEAL_CHI_YU                            FLAG_GROUNDED(530) // Project Grounded: Chi-Yu-schrijn (Jagged Pass) bezocht

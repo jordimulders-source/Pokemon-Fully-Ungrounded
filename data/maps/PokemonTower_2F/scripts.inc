@@ -14,14 +14,18 @@ PokemonTower_2F_EventScript_Channeler::
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 PokemonTower_2F_Text_MayaIntro:
 	.string "Hey! You're not dead! How refreshing.\p"
-	.string "I'll fix that. Spiritually.$"
+	.string "The voice in my head says I should fix\n"
+	.string "that. It's very persuasive. It has a\l"
+	.string "podcast.$"
 
 PokemonTower_2F_Text_MayaDefeat:
-	.string "Okay, okay, you're very alive. I get it.$"
+	.string "The voice... stopped? Oh, thank\n"
+	.string "goodness. It never let me pick the\l"
+	.string "music.$"
 
 PokemonTower_2F_Text_MayaPost:
-	.string "I used to channel the dead. Now I\n"
-	.string "mostly channel my frustration.$"
+	.string "Something up there is wearing people\n"
+	.string "like coats. I was a coat. Zero stars.$"
 
 PokemonTower_2F_Text_Channeler:
 	.string "The upper floors are full of ghosts.\n"

@@ -34,12 +34,9 @@ LavenderTown_PokemonCenter_1F_EventScript_Protipmaster::
 	end
 
 LavenderTown_PokemonCenter_1F_Text_ProtipMaster:
-	.string "Hello, I am the PROTIP ORACLE!\p"
-	.string "I spread my knowledge around POKéMON\n"
-	.string "CENTERS teaching the younger\l"
-	.string "generation how to play.\p"
-	.string "Did you know: ICE-type POKéMON don't\n"
-	.string "take damage in a SNOW STORM.\p"
-	.string "Neither do you, if you never go\n"
-	.string "outside. That's why I live in\l"
-	.string "POKéMON CENTERS now. All of them.$"
+	.string "I used to sell SILPH SCOPES. Lovely\n"
+	.string "things. You look through one and the\l"
+	.string "ghosts stop pretending.\p"
+	.string "Then the fog came and the ghosts\n"
+	.string "stopped pretending all on their own.\l"
+	.string "Terrible for business.$"

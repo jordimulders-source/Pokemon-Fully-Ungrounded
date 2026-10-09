@@ -19,34 +19,37 @@ PokemonTower_4F_EventScript_Paula::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 PokemonTower_4F_Text_LaurelIntro:
-	.string "GHOST! Oh. No. That's my reflection.\n"
-	.string "Long night.$"
+	.string "GHOST! Oh. No. That's my reflection. It's\n"
+	.string "been doing things without me.$"
 
 PokemonTower_4F_Text_LaurelDefeat:
-	.string "I need a nap. In a coffin, ideally.$"
+	.string "My reflection is back to copying me. As\n"
+	.string "it should.$"
 
 PokemonTower_4F_Text_LaurelPost:
-	.string "The tower used to be quiet. Then that\n"
-	.string "hole in spacetime opened and now we get\l"
-	.string "tourists.$"
+	.string "The tower used to be quiet. Then the\n"
+	.string "fog came, and something moved into the\l"
+	.string "top floor.$"
 
 PokemonTower_4F_Text_JodyIntro:
 	.string "I can see five spirits behind you. One\n"
-	.string "of them is rolling its eyes.$"
+	.string "of them is rolling its eyes. One of them\l"
+	.string "is me.$"
 
 PokemonTower_4F_Text_JodyDefeat:
-	.string "The eye-roller says 'told you so'.$"
+	.string "The eye-roller says 'told you so'. The me\n"
+	.string "says 'sorry'.$"
 
 PokemonTower_4F_Text_JodyPost:
 	.string "My HOUNDSTONE is a good boy. Was a good\n"
 	.string "boy. Remains, technically, a good boy.$"
 
 PokemonTower_4F_Text_PaulaIntro:
-	.string "Shhh. You'll wake them. And they are SO\n"
-	.string "cranky in the morning.$"
+	.string "Shhh. You'll wake them. You'll wake ME.\n"
+	.string "I'm not the one talking right now.$"
 
 PokemonTower_4F_Text_PaulaDefeat:
-	.string "...They're awake. Thanks.$"
+	.string "...I'm awake. Thanks. I think.$"
 
 PokemonTower_4F_Text_PaulaPost:
 	.string "Please walk softly. Some of them are\n"

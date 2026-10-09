@@ -59,7 +59,18 @@ MtPyre_Summit_Text_WokeUp:
 
 MtPyre_Summit_OnTransition:
 	call_if_eq VAR_MT_PYRE_STATE, 2, MtPyre_Summit_EventScript_SetArchieMaxiePositions
+	call MtPyre_Summit_EventScript_SetStevenVisibility
 	end
+
+@ Project Grounded: Steven staat na de Hall of Fame op de top tot hij je de Sealbreaker gaf (FLAG_TEMP_1 = verborgen).
+MtPyre_Summit_EventScript_SetStevenVisibility::
+	setflag FLAG_TEMP_1
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MtPyre_Summit_EventScript_SetStevenVisibilityEnd
+	checkitem ITEM_SEALBREAKER
+	goto_if_eq VAR_RESULT, TRUE, MtPyre_Summit_EventScript_SetStevenVisibilityEnd
+	clearflag FLAG_TEMP_1
+MtPyre_Summit_EventScript_SetStevenVisibilityEnd::
+	return
 
 MtPyre_Summit_EventScript_SetArchieMaxiePositions::
 	setobjectxyperm LOCALID_MT_PYRE_SUMMIT_MAXIE, 23, 6
@@ -180,7 +191,6 @@ MtPyre_Summit_Movement_ArchieFacePlayer2:
 MtPyre_Summit_EventScript_OldMan::
 	lock
 	faceplayer
-	call MtPyre_Summit_EventScript_TrySealbreaker
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, MtPyre_Summit_EventScript_OldManAfterRayquaza
 	msgbox MtPyre_Summit_Text_WillYouHearOutMyTale, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, MtPyre_Summit_EventScript_OldManTale
@@ -210,7 +220,6 @@ MtPyre_Summit_EventScript_OldManNewTale::
 MtPyre_Summit_EventScript_OldLady::
 	lock
 	faceplayer
-	call MtPyre_Summit_EventScript_TrySealbreaker
 	goto_if_set FLAG_RETURNED_RED_OR_BLUE_ORB, MtPyre_Summit_EventScript_OldLadyAfterOrbsReturned
 	call_if_ge VAR_MT_PYRE_STATE, 3, MtPyre_Summit_EventScript_OldLadyOrbsReturned
 	goto_if_set FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, MtPyre_Summit_EventScript_OldLadyLegendariesAwake
@@ -643,40 +652,45 @@ MtPyre_Summit_Text_HoennTrioTale:
 	.string "flew off into the wild blue yonder…$"
 
 
-@ Project Grounded: na de Hall of Fame geeft het echtpaar de Sealbreaker (Beasts of Ruin, v0.9.171).
-MtPyre_Summit_EventScript_TrySealbreaker::
-	goto_if_unset FLAG_SYS_GAME_CLEAR, MtPyre_Summit_EventScript_TrySealbreakerEnd
-	checkitem ITEM_SEALBREAKER
-	goto_if_eq VAR_RESULT, TRUE, MtPyre_Summit_EventScript_TrySealbreakerEnd
+@ Project Grounded: na de Hall of Fame geeft Steven namens het echtpaar de Sealbreaker (Beasts of Ruin, v0.9.172).
+MtPyre_Summit_EventScript_Steven::
+	lock
+	faceplayer
 	msgbox MtPyre_Summit_Text_SealsIntro, MSGBOX_DEFAULT
 	giveitem ITEM_SEALBREAKER
 	msgbox MtPyre_Summit_Text_SealsWhere, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MT_PYRE_SUMMIT_STEVEN
+	setflag FLAG_TEMP_1
+	fadescreen FADE_FROM_BLACK
 	release
 	end
-MtPyre_Summit_EventScript_TrySealbreakerEnd::
-	return
 
 MtPyre_Summit_Text_SealsIntro:
-	.string "Ah, the CHAMPION. Sit down. Not there,\n"
-	.string "that's a grave.\p"
-	.string "We guard more than two orbs, child.\n"
-	.string "Long ago, four calamities washed up\l"
-	.string "in HOENN from a faraway land.\p"
-	.string "We could not defeat them. So we did\n"
-	.string "what every family does with problems:\l"
-	.string "we sealed them away and never spoke\l"
-	.string "of them again.\p"
-	.string "It was meant to be temporary.\n"
-	.string "That was four hundred years ago.\p"
-	.string "But you beat the LEAGUE. You are\n"
-	.string "ready to face them. Probably.\l"
-	.string "Take this before we change our minds.$"
+	.string "STEVEN: {PLAYER}! I hoped you'd come.\p"
+	.string "These two told me something they\n"
+	.string "never told anyone. Not even ARCHIE.\l"
+	.string "Especially not ARCHIE.\p"
+	.string "Long ago, four calamities washed up\n"
+	.string "in HOENN from a faraway land. Their\l"
+	.string "ancestors couldn't defeat them, so\l"
+	.string "they sealed them away. Temporarily.\p"
+	.string "That was four hundred years ago.\n"
+	.string "Nobody ever came back for them.\p"
+	.string "The seals are weakening, and the\n"
+	.string "LEAGUE's insurance doesn't cover\l"
+	.string "ancient calamities. I checked.\p"
+	.string "You're the CHAMPION now. You're ready\n"
+	.string "to face them. They asked me to give\l"
+	.string "you this.$"
 
 MtPyre_Summit_Text_SealsWhere:
-	.string "The SEALBREAKER opens the four\n"
+	.string "STEVEN: The SEALBREAKER opens the four\n"
 	.string "stakes. One in the fire above\l"
 	.string "JAGGED PASS, one under the desert,\l"
-	.string "one in PETALBURG WOODS, and one\l"
-	.string "in the snow of ROUTE 135.\p"
-	.string "If they eat you, please don't haunt\n"
-	.string "this mountain. It's full.$"
+	.string "one in PETALBURG WOODS, and one in\l"
+	.string "the snow of ROUTE 135.\p"
+	.string "If they eat you, I'll say something\n"
+	.string "nice at the funeral. It's on this\l"
+	.string "mountain anyway. Very convenient.$"

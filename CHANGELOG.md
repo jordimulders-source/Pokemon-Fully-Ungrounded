@@ -17595,3 +17595,7 @@ Volgens Jordi's GBA-instructies per leider:
 - Het **oude echtpaar op de top van Mt. Pyre** vertelt na de Hall of Fame dat zij de vier rampen ooit "tijdelijk" verzegelden (vierhonderd jaar geleden) en geeft de **Sealbreaker** (Key Item, oud slot 730 = het geschrapte Aurora Ticket). Daarmee breek je de zegels; binnen begint het gevecht meteen (de eis "eerst alle vier bezoeken" is weg).
 - Zonder Sealbreaker: een tekst over de staak, na de Hall of Fame met een hint naar Mt. Pyre.
 - Flags `FLAG_GROUNDED(538–541)` (`FLAG_RUIN_SEAL_OPEN_*`). Getest in de emulator: zegel dicht → gift op Mt. Pyre → zegel breekt → kamer in.
+
+### [v0.9.172] - Sealbreaker van Steven op Mt. Pyre
+- Jordi: liever Steven dan het echtpaar. Na de Hall of Fame staat **Steven** op de top van Mt. Pyre (tot hij je de Sealbreaker gaf). Hij vertelt wat het echtpaar hem toevertrouwde: hun **voorouders** verzegelden de vier rampen ooit "tijdelijk", vierhonderd jaar geleden. Jij bent er nu klaar voor; hij geeft de Sealbreaker en zegt waar de schrijnen liggen.
+- Het echtpaar heeft weer zijn gewone teksten. (Archie en de Aqua-grunts op de testbeelden komen door de test-save; in een echte playthrough zijn ze na het verhaal weg.)

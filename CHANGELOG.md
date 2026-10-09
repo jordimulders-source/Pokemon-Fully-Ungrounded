@@ -17765,3 +17765,9 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.203] - Muk, Cradily, Armaldo en Glalie later
 - Op verzoek van Jordi ook deze evolutielevels omhoog: Grimer → Muk (alle vormen) 38, Lileep → Cradily en Anorith → Armaldo 40, Snorunt → Glalie 42 (waren 30/30/30/32). Beau's Alola-Muk (37) en Dillon's Muk (36) zijn weer Grimer; geen wilde slots geraakt.
+
+### [v0.9.204] - Yoshi's Island groter en meer SMA3
+- Drie nieuwe kaarten: **Jungle** (bladerdak, meertje, doorns, Piranha-tulpen, Chomp Rock), **kristalgrot** en een **bloemenveld boven de wolken** (GOAL!-letters, zonnebloem, ! switch); bereikbaar via pijpen vanaf het strand.
+- **Message Blocks** als infobordjes (overal i.p.v. houten bordjes), **vraagteken-wolkjes** (knappen open: items, een sterrenregen, en een brugwolk die een vlotjesbrug over de kloof legt), **Poochy** (rijdt je over de doorns naar een verborgen bosje en graaft een Strange Souvenir op), **Nep-Enut** (blauwe nep-Yoshi; verrassingsgevecht tegen Dondozo lv 90).
+- Shy Guys als trainers (lv 93–94, zwijgend, sarcasme tussen haakjes). **Yoshi's partnerteam** (Jordi): Dracovish, Tyrantrum en Gouging Fire.
+- Wilde Pokémon per evolutiefase; acht nieuwe items (Shalour Sable, Strange Souvenir, Moomoo Milk, Galarica Twig, Relic Band, Pewter Crunchies, Lumiose Galette, Cherish Ball). Flags `FLAG_GROUNDED(1050–1067)`, trainers 1109/1129/1183, ±70 KB.

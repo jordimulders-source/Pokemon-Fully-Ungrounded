@@ -1,8 +1,12 @@
 """Project Grounded: een 8-bit sample-wav (met smpl-chunk) naar een lagere samplerate (v0.9.231, ROM-ruimte).
 
 FFT-resample (band boven de nieuwe Nyquist valt weg = anti-aliasing), fmt-, smpl-periode en loop-punten mee.
-Gebruik: python3 tools/grounded/resample_wav.py <doel-Hz> <wav ...>   (overschrijft de bestanden)"""
-import struct, sys
+Gebruik: python3 tools/grounded/resample_wav.py <doel-Hz> <wav ...>   (overschrijft de bestanden)
+         python3 tools/grounded/resample_wav.py --all
+--all (Jordi 10 okt, A/B SickBlik: "de b-versie is prima"): alle eigen samples in sound/direct_sound_samples/grounded/
+naar max. 11025 Hz (grondtoon vanaf C6: 16000 Hz), behalve drums (alles uit sound/voicegroups/drumsets/). Idempotent.
+Draai dit na elke samplegenerator (*_samples.py, gm_samples.py) en na elke muziekmerge."""
+import glob, os, re, struct, sys
 import numpy as np
 
 
@@ -46,7 +50,35 @@ def resample(path, rate):
     return old, rate
 
 
+def base_note(path):
+    for c in chunks(open(path, 'rb').read()):
+        if c[0] == b'smpl':
+            return struct.unpack_from('<I', c[1], 12)[0]
+    return 60
+
+
+def resample_all(root='.'):
+    drum = set()
+    for f in glob.glob(os.path.join(root, 'sound/voicegroups/drumsets/*.inc')):
+        drum |= set(re.findall(r'DirectSoundWaveData_(\w+)', open(f).read()))
+    inc = open(os.path.join(root, 'sound/direct_sound_data.inc')).read()
+    n = 0
+    for name, p in re.findall(r'^DirectSoundWaveData_(\w+)::?\s*\n\s*\.incbin "([^"]+)"', inc, re.M):
+        w = os.path.join(root, p[:-4] + '.wav')
+        if '/grounded/' not in p or name in drum or not os.path.exists(w):
+            continue
+        fmt = next(c for c in chunks(open(w, 'rb').read()) if c[0] == b'fmt ')[1]
+        if struct.unpack_from('<H', fmt, 14)[0] != 8:
+            continue
+        old, new = resample(w, 16000 if base_note(w) >= 84 else 11025)
+        n += old != new
+    return n
+
+
 if __name__ == '__main__':
+    if sys.argv[1] == '--all':
+        print(resample_all(), 'samples omgezet')
+        sys.exit()
     r = int(sys.argv[1])
     for p in sys.argv[2:]:
         print(p, '%d -> %d Hz' % resample(p, r))

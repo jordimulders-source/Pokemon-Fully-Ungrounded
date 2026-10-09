@@ -17939,3 +17939,11 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 - Jordi (10 okt): "we gaan geen kanto plekken meer toevoegen, dus die kunnen eruit". De 38 nummers die nergens werden afgespeeld zijn weg; hun plek in `song_table.inc` wijst nu naar `mus_dummy`, de constanten blijven bestaan. Het gaat om 36 FRLG-nummers (Pewter, Fuchsia, Oak, Teachy TV …), `MUS_LITTLEROOT_TEST`, `MUS_C_COMM_CENTER`, `MUS_WEATHER_GROUDON` en het lege N-slot. Geen samples vrijgekomen; FRLG gebruikte de standaardinstrumenten.
 - Nieuw hulpmiddel `tools/grounded/resample_wav.py` zet een 8-bit sample-wav naar een lagere samplerate (smpl-chunk en loops gaan mee). Nog niet toegepast; eerst de A/B-test van SickBlik (versie B: 34 tonale samples naar 11 kHz, drums ongemoeid, scheelt 315 KB).
 - Vrij: ±1,65 MB.
+
+### [v0.9.232] - ROM-ruimte: eigen muzieksamples op 11 kHz (1,02 MB)
+- Jordi (10 okt) na de A/B van SickBlik: "De b-versie is prima, pas dat maar toe op andere nummers". Alle 220 eigen samples (`sound/direct_sound_samples/grounded/`) staan nu op max. 11025 Hz. Uitzonderingen: drums (alles uit `sound/voicegroups/drumsets/`) blijven zoals ze waren, en een sample met een grondtoon vanaf C6 krijgt 16 kHz.
+- Waarom het niet hoorbaar is: de mixer draait op 21 kHz in 8 bit. In de SickBlik-meting verloor B maar −0,5 dB tussen 2 en 5,5 kHz en nog minder daarboven.
+- Steekproef Wallace en Mitch in de emulator: geen klikken of pieken (`audiocheck.py`).
+- `resample_wav.py --all` doet dit idempotent. Draai het na elke samplegenerator en muziekmerge.
+- **Waarom SickBlik zo zwaar was:** elk jazzakkoord is een eigen opname (8 blazersakkoorden van 2,4 s, 8 rhodesakkoorden, 2 rhodes = ±570 KB), plus vier slap-bas-articulaties en hoge rates. Jordi: zo laten, het is een banger. Het nummer is nu 315 KB lichter.
+- Vrij: ±2,67 MB (was ±0,86 MB vóór v0.9.229).

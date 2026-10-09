@@ -6128,7 +6128,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_GROUNDED_VS_SICKBLIK;
 
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
-    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3
+     || trainerId == TRAINER_KECCLES_FRONTIER)
         return MUS_GROUNDED_VS_KECCLES;
 
     // Project Grounded: gymleider-remixes 5-8 van het gymleiderthema (tools/grounded/gym_remixes2.py), incl. rematches

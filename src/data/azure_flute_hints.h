@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 88 soorten.
+// 89 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -31,7 +31,7 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_LATIAS, 0, COMPOUND_STRING("Your rival's EON TICKET sails to\nSOUTHERN ISLAND. If the red one isn't\lthere, it's flying around HOENN,\lavoiding you personally.")},
     // LATIOS: SouthernIsland_Interior, roamer
     {SPECIES_LATIOS, 0, COMPOUND_STRING("Your rival's EON TICKET sails to\nSOUTHERN ISLAND. If the blue one isn't\lthere, it's flying around HOENN,\lpretending to be a plane.")},
-    // JIRACHI: FallarborTown, wild:MAP_MT_PYRE_SUMMIT
+    // JIRACHI: FallarborTown
     {SPECIES_JIRACHI, 0, COMPOUND_STRING("At night, the old crater in FALLARBOR\nTOWN takes wishes. Stand in it. Wish\lresponsibly. MT. PYRE's summit has been\lknown to grant one too.")},
     // DEOXYS: MeteorSpace
     {SPECIES_DEOXYS, 0, COMPOUND_STRING("The SPACE CENTER in MOSSDEEP launches\nmore than satellites these days. Ask\labout the meteorite.")},
@@ -47,11 +47,11 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_CRESSELIA, 0, COMPOUND_STRING("East of ROUTE 105 lies a half-moon\nisland. Visit at night. Bring a lullaby, or\la ball.")},
     // HEATRAN: FieryPath_HeatranLair
     {SPECIES_HEATRAN, FLAG_HIDE_FIERY_PATH_HEATRAN, COMPOUND_STRING("FIERY PATH has a back room, top left.\nVery hot. Very heavy. Very awake.")},
-    // MANAPHY: LavaridgeTown, SeaTemple_Sanctum, wild:MAP_ROUTE131
+    // MANAPHY: LavaridgeTown, SeaTemple_Sanctum
     {SPECIES_MANAPHY, 0, COMPOUND_STRING("Dive under ROUTE 128 and find the SEA\nTEMPLE. A prince has waited there since\l2006 for a ranger who never came.\lLAVARIDGE hands out eggs, too.")},
     // PHIONE: SeaTemple_Sanctum
     {SPECIES_PHIONE, 0, COMPOUND_STRING("After MANAPHY, the SEA TEMPLE's altar\nleaves you an egg. Hatch it. Or let\lMANAPHY have a family, if you're that\lkind of person.")},
-    // KUBFU: Route112_Dojo, wild:MAP_ROUTE115
+    // KUBFU: Route112_Dojo
     {SPECIES_KUBFU, 0, COMPOUND_STRING("The dojo on ROUTE 112 hands a bear cub\nto the worthy. If you were worthy and\llost it: the grass on ROUTE 115 is\lgenerous. Rarely.")},
     // HOOPA: MirageBazaar_Vault
     {SPECIES_HOOPA, 0, COMPOUND_STRING("Out in the desert of ROUTE 111, a\nbazaar appears out of thin air. Someone\lthere steals through rings. Follow the\lrings.")},
@@ -81,7 +81,7 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_GENESECT, FLAG_HIDE_NEW_MAUVILLE_GENESECT, COMPOUND_STRING("NOTHING ISLAND, in the fog west of\nROUTE 105. There's a ship there that\linsists it isn't one.")},
     // SHAYMIN: FlowerParadise_Meadow
     {SPECIES_SHAYMIN, 0, COMPOUND_STRING("The BLOOM TICKET (BATTLE FRONTIER)\nsails from LILYCOVE to FLOWER\lPARADISE. The hedgehog in the meadow\lis also a flower. Or the other way\laround.")},
-    // VICTINI: LibertyGarden, wild:MAP_ROUTE130
+    // VICTINI: LibertyGarden
     {SPECIES_VICTINI, 0, COMPOUND_STRING("The VICTORY commissioner at LILYCOVE's\nharbor hands out a LIBERTY PASS. Win\lfive in a row. Rumour says it also hangs\laround ROUTE 130 when the island shows.")},
     // VOLCANION: SteamIsland_Cave
     {SPECIES_VOLCANION, 0, COMPOUND_STRING("The volcano on STEAM ISLAND, off ROUTE\n131, has a pressure problem. The\lpressure problem has legs.")},
@@ -165,6 +165,8 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_MELOETTA, 0, COMPOUND_STRING("ROUTE 123. A SNORLAX is asleep on the\nBERRY MASTER's fields. Bring something\lto wake it up. Bring an encore.")},
     // ZYGARDE: DesertUnderpass
     {SPECIES_ZYGARDE, 0, COMPOUND_STRING("Life and death are settled? Then order\ncomes to check. The DESERT UNDERPASS,\lmiddle of the tunnels.")},
+    // MARSHADOW: BattleFrontier_OutsideEast
+    {SPECIES_MARSHADOW, FLAG_RECEIVED_MARSHADOW, COMPOUND_STRING("Someone in the BATTLE FRONTIER has\nbeen studying a SUDOWOODO, invisibly.\lBring a DEVON SCOPE. Bring your shadow\ltoo; it has opinions.")},
     // PECHARUNT: YoshisIsland_Hills
     {SPECIES_PECHARUNT, 0, COMPOUND_STRING("YOSHI'S ISLAND, the hills. A tiny stall\nsells mochi. Don't eat the mochi.")},
     // DIALGA: SpearPillar

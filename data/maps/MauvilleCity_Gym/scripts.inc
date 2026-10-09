@@ -483,12 +483,12 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 MauvilleCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 28.\p"
+	.string "is level 34.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 MauvilleCity_Gym_Text_GymGuideNextAce:
 	.string "Next stop: FLANNERY in LAVARIDGE.\n"
-	.string "Their ace is level 35.\p"
+	.string "Their ace is level 45.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

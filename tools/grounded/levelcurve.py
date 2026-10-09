@@ -34,6 +34,9 @@ GATE = 3
 WILD_PER_MAP = 6
 TRAINER_MULT = 0.5   # B_TRAINER_EXP_PERCENT (was 1.5: B_TRAINER_EXP_MULTIPLIER GEN_7)
 WILD_MULT = 1.0
+CATCHUP = True        # B_GROUNDED_CATCHUP_EXP
+CATCHUP_STEP = 100    # B_CATCHUP_EXP_STEP: procent extra EXP per level onder de ace van de volgende mijlpaal
+CATCHUP_MAX = 900     # B_CATCHUP_EXP_MAX
 LAND_RATES = [20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1]
 
 # (naam, [kaarten], mijlpaal-trainer)
@@ -77,7 +80,7 @@ STORY = ['TRAINER_MAY_ROUTE_103_TREECKO', 'TRAINER_MAY_RUSTBORO_TREECKO', 'TRAIN
          'TRAINER_MAXIE_MT_CHIMNEY', 'TRAINER_DAVE_PETALBURG', 'TRAINER_MAY_ROUTE_119_TREECKO',
          'TRAINER_WALLY_MT_PYRE', 'TRAINER_MAY_LILYCOVE_TREECKO', 'TRAINER_MAXIE_MAGMA_HIDEOUT',
          'TRAINER_MATT', 'TRAINER_MAXIE_MOSSDEEP', 'TRAINER_ARCHIE', 'TRAINER_MAXIE_SOOTOPOLIS',
-         'TRAINER_WALLY_VR_1', 'TRAINER_SIDNEY', 'TRAINER_PHOEBE', 'TRAINER_GLACIA']
+         'TRAINER_ZINNIA', 'TRAINER_WALLY_VR_1', 'TRAINER_SIDNEY', 'TRAINER_PHOEBE', 'TRAINER_GLACIA']
 
 # post-game of rematch-achtig, ook al staat het op een kaart van het hoofdpad
 POSTGAME = {'TRAINER_WALLY_VR_2', 'TRAINER_ZINNIA_DELTA', 'TRAINER_NONE'} | {
@@ -153,6 +156,13 @@ class Sim:
         self.team = []
         self.chapter = 0
         self.nshares = 0
+        self.target = 0   # ace van de volgende mijlpaal (inhaal-EXP)
+
+    def catchup(self, amount, my_lv):
+        """B_GROUNDED_CATCHUP_EXP: onder het doel +CATCHUP_STEP% per level achterstand, max. +CATCHUP_MAX%."""
+        if CATCHUP and my_lv < self.target:
+            return amount * (100 + min(CATCHUP_MAX, CATCHUP_STEP * (self.target - my_lv))) // 100
+        return amount
 
     def yield_of(self, const):
         if const in self.sp:
@@ -184,13 +194,14 @@ class Sim:
             sexp = max(1, base // 2 // len(holders))
         else:
             fexp, sexp = max(1, base), 0
-        self.team[fighter].gain(scale(fexp, level, self.team[fighter].level))
+        self.team[fighter].gain(self.catchup(scale(fexp, level, self.team[fighter].level), self.team[fighter].level))
         for h in holders:
-            self.team[h].gain(scale(sexp, level, self.team[h].level))
+            self.team[h].gain(self.catchup(scale(sexp, level, self.team[h].level), self.team[h].level))
 
     def snapshot(self):
         lv = [m.flevel for m in self.team]
-        return {'avg': sum(lv) / len(lv), 'max': max(lv), 'min': min(lv), 'n': len(lv)}
+        top6 = sorted(lv)[-6:]
+        return {'avg': sum(lv) / len(lv), 'max': max(lv), 'min': min(lv), 'n': len(lv), 'top6': sum(top6) / len(top6)}
 
 
 def wild_mons(wild, mapname):
@@ -205,9 +216,13 @@ def wild_mons(wild, mapname):
     return [(r, (a + b) / 2, s) for r, (a, b, s) in zip(rates, mons)]
 
 
-def build_schedule(trainers=None):
-    """Volgorde van alle gevechten: per hoofdstuk een lijst ('wild'|'trainer'|'join'|'share', ...)."""
+def build_schedule(trainers=None, extra=None, team=None, postgame=False):
+    """Volgorde van alle gevechten: per hoofdstuk een lijst ('wild'|'trainer'|'join'|'share', ...).
+    extra: {hoofdstuk: [kaarten]} (zijgebieden, profiel completionist); team: TEAM of TEAM_ROTATIE;
+    postgame: na de kampioen ook de post-game (POST_MAPS, oplopend) en de superbosses."""
     trainers = trainers or D.parse_party()[0]
+    team = team or TEAM
+    extra = extra or {}
     wild = D.parse_wild()
     champ_ace = max(m['level'] for m in trainers['TRAINER_CHAMPION_STEVEN']['mons'])
 
@@ -218,8 +233,9 @@ def build_schedule(trainers=None):
     for ci, (name, maps, boss) in enumerate(CHAPTERS):
         gate = max(m['level'] for m in trainers[boss]['mons']) + GATE
         ev = []
+        maps = maps[:-1] + extra.get(ci, []) + maps[-1:]
         for mp in maps:
-            for g, c, where in TEAM[1:]:
+            for g, c, where in team[1:]:
                 if c == ci and where == mp:
                     wm = wild_mons(wild, mp)
                     lv = int(sum(r * l for r, l, _ in wm) / sum(r for r, _, _ in wm)) if wm else 5
@@ -241,10 +257,10 @@ def build_schedule(trainers=None):
             for t in D.dedup_rival(D.map_trainers(mp)):
                 if t in POSTGAME or t not in trainers or not trainers[t]['mons'] or t in beaten or t == boss:
                     continue
-                if median(t) > champ_ace:
+                if median(t) > champ_ace and t not in STORY:
                     beaten.add(t)
                     continue
-                if median(t) <= gate:
+                if median(t) <= gate or t in STORY:
                     ev.append(('trainer', t, mp))
                     beaten.add(t)
                 elif t not in [x for x, _ in pending]:
@@ -256,6 +272,25 @@ def build_schedule(trainers=None):
                 pending.remove((t, mp))
         ev.append(('boss', boss, maps[-1]))
         beaten.add(boss)
+        sched.append(ev)
+    if postgame:
+        post = []
+        for mp in POST_MAPS:
+            for t in D.dedup_rival(D.map_trainers(mp)):
+                if t in trainers and trainers[t]['mons'] and t not in beaten and t not in post:
+                    post.append(t)
+        for name in GYM_REMATCH_NAMES:
+            for i in range(2, 6):
+                if f'TRAINER_{name}_{i}' in trainers:
+                    post.append(f'TRAINER_{name}_{i}')
+        post += [t for t in POST_TRAINERS if t in trainers and t not in post]
+        def top(t):
+            return max(m['level'] for m in trainers[t]['mons'])
+        post.sort(key=top)
+        ev = [('trainer', t, 'post') for t in post if top(t) < 100]
+        supers = [t for t in post if top(t) >= 100]
+        ev.append(('boss', supers[0], 'post'))
+        ev += [('trainer', t, 'post') for t in supers[1:]]
         sched.append(ev)
     return sched
 
@@ -275,6 +310,10 @@ def simulate(sched, trainers, delta=None, strategy='evenwichtig', shares=True):
     rows = []
     for ci, ev in enumerate(sched):
         foes = []
+        b = next(e[1] for e in ev if e[0] == 'boss')
+        if b == 'TRAINER_DRAKE':   # na badge 8 is het doel de kampioen (de E4 is één reeks)
+            b = 'TRAINER_CHAMPION_STEVEN'
+        sim.target = max(min(100, max(2, m['level'] + delta.get(b, 0))) for m in trainers[b]['mons'])
         for e in ev:
             if e[0] == 'join':
                 sim.team.append(Mon(e[1], e[2]))
@@ -285,11 +324,11 @@ def simulate(sched, trainers, delta=None, strategy='evenwichtig', shares=True):
                 sim.defeat(e[1], e[2], False)
             else:
                 t = e[1]
-                lv = [m["level"] + delta.get(t, 0) for m in trainers[t]["mons"]]
+                lv = [min(100, max(2, m["level"] + delta.get(t, 0))) for m in trainers[t]["mons"]]
                 if e[0] == 'boss' or t in STORY:
                     row = dict(chapter=ci, name=t, ace=max(lv), **sim.snapshot())
                     if e[0] == 'boss':
-                        row['milestone'] = CHAPTERS[ci][0]
+                        row['milestone'] = CHAPTERS[ci][0] if ci < len(CHAPTERS) else "Superbosses"
                         row['foes'] = statistics.median(foes) if foes else 0
                         row['nfoes'] = len(foes)
                     rows.append(row)
@@ -300,16 +339,53 @@ def simulate(sched, trainers, delta=None, strategy='evenwichtig', shares=True):
     return rows
 
 
-def run(strategy='evenwichtig', shares=True, delta=None):
+def run(strategy='evenwichtig', shares=True, delta=None, profile='hoofdpad', postgame=False):
     trainers = D.parse_party()[0]
-    sched = build_schedule(trainers)
+    if profile == 'completionist':
+        sched = build_schedule(trainers, extra=SIDE_BY_CHAPTER, team=TEAM_ROTATIE, postgame=postgame)
+    elif profile == 'compleet6':
+        sched = build_schedule(trainers, extra=SIDE_BY_CHAPTER, postgame=postgame)
+    else:
+        sched = build_schedule(trainers, postgame=postgame)
     return simulate(sched, trainers, delta, strategy, shares)
 
 
+# profiel completionist: ook alle zijgebieden vóór de E4, met een rotatie van 12 Pokémon
+SIDE_BY_CHAPTER = {
+    1: ['ToadstoolHollow'],
+    3: ['Route112_Dojo', 'Route112_TowerOfDarkness', 'Route112_TowerOfWaters'],
+    5: ['FortreeJungle', 'MangroveMire', 'RocketHideout_1F', 'RocketHideout_B1F', 'RocketHideout_B2F',
+        'ScorchedSlab_SunHall', 'ScorchedSlab_Spring', 'ScorchedSlab_Sanctum', 'Route135', 'Route136'],
+    7: ['BeaconIsle', 'BeaconIsle_Lighthouse_1F', 'BeaconIsle_Lighthouse_2F', 'BeaconIsle_Lighthouse_Top',
+        'BeaconIsle_Grotto', 'GhostShip_Deck', 'GhostShip_Corridors', 'GhostShip_Cabins', 'GhostShip_CaptainsOffice',
+        'ShipwreckShoals', 'Route126_CoralCathedral', 'Route126_HermitCrater', 'WhirlIsland', 'Underwater_Route105',
+        'Underwater_Route124', 'Underwater_Route125', 'Underwater_Route127_Trench'],
+    8: ['MeteorFalls_1F_2R', 'MeteorFalls_B1F_2R', 'MeteorFalls_Tunnels', 'MeteorFalls_DraconidShrine',
+        'VictoryRoad_Hermit'],
+}
+TEAM_ROTATIE = TEAM + [('GROWTH_MEDIUM_FAST', 2, 'Route117'), ('GROWTH_MEDIUM_SLOW', 3, 'Route113'),
+                       ('GROWTH_MEDIUM_FAST', 5, 'Route119'), ('GROWTH_SLOW', 5, 'Route120'),
+                       ('GROWTH_MEDIUM_FAST', 6, 'Route123'), ('GROWTH_MEDIUM_SLOW', 7, 'Route128')]
+# post-game (na de kampioen): kaarten, losse trainers en gymleider-rematches
+POST_MAPS = ['Route119_WeatherInstitute_1F', 'SSTidalRooms', 'SSTidalLowerDeck', 'TaoIsland', 'TaoIsland_Den',
+             'TaoIsland_Tower2F', 'TaoIsland_Tower3F', 'DesertUnderpass', 'PokemonTower_2F', 'PokemonTower_3F',
+             'PokemonTower_4F', 'PokemonTower_5F', 'MegaForest', 'NothingIsland', 'CeruleanCave_1F',
+             'CeruleanCave_2F', 'CeruleanCave_B1F', 'ChargestoneCave_1F', 'ChargestoneCave_B1F',
+             'ChargestoneCave_B2F', 'NationalPark', 'PlasmaFrigate_Corridor', 'PlasmaFrigate_Hold', 'TapuIsle',
+             'LibertyGarden', 'MirageBazaar', 'ParadisoResort', 'ParadisoResort_Bar', 'ParadisoResort_Lobby',
+             'MeteorFalls_StevensCave', 'TaoIsland_FrostHollow']
+POST_TRAINERS = ['TRAINER_ZINNIA_DELTA'] + [f'TRAINER_WALLY_VR_{i}' for i in range(2, 6)]
+GYM_REMATCH_NAMES = ('ROXANNE', 'BRAWLY', 'WATTSON', 'FLANNERY', 'NORMAN', 'WINONA', 'TATE_AND_LIZA', 'WALLACE')
+
+
 E4 = ('TRAINER_SIDNEY', 'TRAINER_PHOEBE', 'TRAINER_GLACIA', 'TRAINER_DRAKE', 'TRAINER_CHAMPION_STEVEN')
+# ankerpunten van Jordi (9 okt): E4 rond 80, Steven ace 84
+FIXED_ACE = {'TRAINER_SIDNEY': 78, 'TRAINER_PHOEBE': 79, 'TRAINER_GLACIA': 80, 'TRAINER_DRAKE': 81,
+             'TRAINER_CHAMPION_STEVEN': 84}
 BOSS_TARGET = 1.5    # teamgemiddelde hooguit zoveel boven de ace van een gymleider/E4/kampioen
 STORY_TARGET = 2.5   # idem voor rivalen, Wally, Maxie/Archie, Birch, Dave
 ROUTE_TARGET = 3.0   # mediaan (teamgemiddelde − ace) van de gewone trainers in een hoofdstuk
+ROUTE_TARGET_E4 = 0.0  # Victory Road: trainers op spelerniveau, zodat de speler naar de E4 toe groeit
 
 
 JOKES = {'TRAINER_IVAN', 'TRAINER_LYLE'}   # bewust lage grap-teams (CLAUDE.md)
@@ -360,12 +436,15 @@ def solve(sched, trainers):
                 for t in route:
                     delta[t] = r
                 ms = [x for x in rows() if x.get('milestone')][ci]
-                if ms['foes'] <= ROUTE_TARGET:
+                if ms['foes'] <= (ROUTE_TARGET_E4 if CHAPTERS[ci][2] == 'TRAINER_DRAKE' else ROUTE_TARGET):
                     break
         for k, grp in keys:
             target = BOSS_TARGET if (k in E4 or k == CHAPTERS[ci][2]) else STORY_TARGET
             ace0 = max(m['level'] for m in trainers[k]['mons'])
-            for d in range(0, 31):
+            if k in FIXED_ACE:   # ankerpunten (Jordi): E4 rond 80, Steven 84
+                delta[k] = FIXED_ACE[k] - ace0
+                continue
+            for d in range(-20 if k in STORY else 0, 31):
                 delta[k] = d
                 for t in grp[1:]:
                     # gymtrainers: minstens +d, liefst +r (zoals de routes), maar max. ace − 2
@@ -422,7 +501,7 @@ def apply(delta, trainers, lines, protect=()):
             old = mon['level']
             if mon['species'] == 'SPECIES_MAGIKARP':   # Magikarp-levels niet aanpassen (CLAUDE.md)
                 continue
-            new = min(100, old + d)
+            new = min(100, max(2, old + d))
             lines[mon['lineno']] = re.sub(r'Level:\s*\d+', f'Level: {new}', lines[mon['lineno']])
             spline = lines[mon['spline']]
             if 'Eviolite' in spline or t in protect or re.sub(r'_\d+$', '', t) in protect or re.match(r'^\s*[^@(]+\([A-Z][a-z]', spline):   # sleutelgevecht of bijnaam
@@ -449,11 +528,11 @@ def apply(delta, trainers, lines, protect=()):
 
 
 def table(rows):
-    out = ['| Gevecht | Ace | Team gem. | Team max | Verschil (gem − ace) |', '|---|---|---|---|---|']
+    out = ['| Gevecht | Ace | Team gem. (sterkste 6) | Team max | Verschil (gem − ace) |', '|---|---|---|---|---|']
     for r in rows:
         nm = r.get('milestone') or r['name'].replace('TRAINER_', '').title()
-        out.append(f"| {'**' + nm + '**' if r.get('milestone') else nm} | {r['ace']} | {r['avg']:.1f} | "
-                   f"{r['max']:.1f} | {r['avg'] - r['ace']:+.1f} |")
+        out.append(f"| {'**' + nm + '**' if r.get('milestone') else nm} | {r['ace']} | {r['top6']:.1f} | "
+                   f"{r['max']:.1f} | {r['top6'] - r['ace']:+.1f} |")
     return '\n'.join(out)
 
 
@@ -486,9 +565,10 @@ def main():
     ap.add_argument('--strategy', default='evenwichtig', choices=['evenwichtig', 'ace'])
     ap.add_argument('--no-share', action='store_true')
     ap.add_argument('--json')
-    ap.add_argument('--fought', action='store_true')
+    ap.add_argument('--profile', default='hoofdpad', choices=['hoofdpad', 'completionist', 'compleet6'])
+    ap.add_argument('--postgame', action='store_true', help='ook de post-game en de superbosses')
     args = ap.parse_args()
-    rows = run(args.strategy, not args.no_share)
+    rows = run(args.strategy, not args.no_share, profile=args.profile, postgame=args.postgame)
     print(table(rows))
     if args.json:
         json.dump(rows, open(args.json, 'w'), indent=1)

@@ -311,7 +311,7 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 SootopolisCity_Gym_1F_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 61.\p"
+	.string "is level 76.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 

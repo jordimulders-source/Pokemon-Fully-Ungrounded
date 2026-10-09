@@ -1243,3 +1243,39 @@ Route104_Text_EF_SickblikRoute104PostBattle:
 	.string "A feature? Probably also a bug.$"
 
 @ }
+
+@ Project Grounded: SickBlik voetbalt op het strand (Jordi, 9 okt)
+Route104_EventScript_SickBlikBeach::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_SICKBLIK_BEACH, Route104_EventScript_SickBlikBeachAfter
+	msgbox Route104_Text_SickBlikBeachIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SICKBLIK_BEACH, Route104_Text_SickBlikBeachDefeat
+	msgbox Route104_Text_SickBlikBeachAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_SickBlikBeachAfter:
+	msgbox Route104_Text_SickBlikBeachAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_Text_SickBlikBeachIntro:
+	.string "SICKBLIK: Why does nobody wanna play\n"
+	.string "football with me on the beach?\l"
+	.string "Join in!\p"
+	.string "Oh, you wanna battle? You sure?\n"
+	.string "I'm the romhacker of this game!\p"
+	.string "Well, kind of the slaveworker of\n"
+	.string "several AI programs.\p"
+	.string "But trust me, all the humor and\n"
+	.string "ideas in the game are mine!\p"
+	.string "This team too. Vamos!$"
+
+Route104_Text_SickBlikBeachDefeat:
+	.string "The AI programs did NOT\n"
+	.string "see this coming.$"
+
+Route104_Text_SickBlikBeachAfter:
+	.string "SICKBLIK: Fine, no football then.\n"
+	.string "I'll go yell at a WINGULL instead.$"

@@ -857,7 +857,7 @@
 #define TRAINER_RED                         851
 #define TRAINER_LEAF                        852
 #define TRAINER_BRENDAN_PLACEHOLDER         853
-#define TRAINER_MAY_PLACEHOLDER             854
+#define TRAINER_SICKBLIK_BEACH              854 // Project Grounded: SickBlik op het strand van Route 104 (was TRAINER_MAY_PLACEHOLDER, ongebruikt)
 #define TRAINER_CHAMPION_STEVEN              855
 #define TRAINER_WALLY_METEOR_FALLS          856 // Project Grounded: Wally bij de ingang van Meteor Falls
 #define TRAINER_TABITHA_MT_CHIMNEY_TAG      857 // Project Grounded: Tabitha in de tag battle met Maxie (Wally is je partner)

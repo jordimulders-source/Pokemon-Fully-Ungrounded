@@ -2402,3 +2402,48 @@ const u16 gTilesetPalettes_LavenderCalm[][16] =
     INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/15.gbapal"),
 };
+
+// Project Grounded: Chargestone Cave: General donkerblauw (paletten)
+const u16 gTilesetPalettes_ChargestoneGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/chargestone_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen (chargestone_tiles.py)
+const u32 gTilesetTiles_Chargestone[] = INCBIN_U32("data/tilesets/secondary/chargestone/tiles.4bpp.fastSmol");
+
+// Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen (paletten)
+const u16 gTilesetPalettes_Chargestone[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/chargestone/palettes/15.gbapal"),
+};

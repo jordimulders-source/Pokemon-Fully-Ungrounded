@@ -2912,6 +2912,213 @@
           }
         },
         {
+          "map": "MAP_CHARGESTONE_CAVE_B2F",
+          "base_label": "gChargestoneCaveB2F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_GALVANTULA"
+              },
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_GIGALITH"
+              },
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_EELEKTRIK"
+              },
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 64,
+                "max_level": 66,
+                "species": "SPECIES_EXCADRILL"
+              },
+              {
+                "min_level": 65,
+                "max_level": 67,
+                "species": "SPECIES_BISHARP"
+              },
+              {
+                "min_level": 65,
+                "max_level": 67,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 65,
+                "max_level": 67,
+                "species": "SPECIES_VIKAVOLT"
+              },
+              {
+                "min_level": 65,
+                "max_level": 67,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 66,
+                "max_level": 67,
+                "species": "SPECIES_EELEKTROSS"
+              },
+              {
+                "min_level": 66,
+                "max_level": 67,
+                "species": "SPECIES_ROTOM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_CHARGESTONE_CAVE_B1F",
+          "base_label": "gChargestoneCaveB1F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_GALVANTULA"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_GIGALITH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_EELEKTRIK"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_KLINKLANG"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_HELIOLISK"
+              },
+              {
+                "min_level": 63,
+                "max_level": 65,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 63,
+                "max_level": 65,
+                "species": "SPECIES_EXCADRILL"
+              },
+              {
+                "min_level": 63,
+                "max_level": 65,
+                "species": "SPECIES_ESCAVALIER"
+              },
+              {
+                "min_level": 63,
+                "max_level": 65,
+                "species": "SPECIES_FERROTHORN"
+              },
+              {
+                "min_level": 64,
+                "max_level": 65,
+                "species": "SPECIES_EELEKTROSS"
+              },
+              {
+                "min_level": 64,
+                "max_level": 65,
+                "species": "SPECIES_TOGEDEMARU"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_CHARGESTONE_CAVE_1F",
+          "base_label": "gChargestoneCave1F",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_GALVANTULA"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_KLINKLANG"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_EELEKTRIK"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_FERROTHORN"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DURANT"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_ZEBSTRIKA"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_EMOLGA"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 62,
+                "max_level": 63,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 62,
+                "max_level": 63,
+                "species": "SPECIES_ROTOM"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_CERULEAN_CAVE_B1F",
           "base_label": "gCeruleanCaveB1F",
           "land_mons": {

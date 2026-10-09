@@ -119,6 +119,20 @@
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "8"
+    },
+    {
+      "x": 21,
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_CHARGESTONE_CAVE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_CHARGESTONE_CAVE_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -173,38 +187,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SpacetimeCave_EventScript_RiftPark"
-    },
-    {
-      "type": "sign",
-      "x": 21,
-      "y": 5,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftChargestone"
-    },
-    {
-      "type": "sign",
-      "x": 22,
-      "y": 5,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftChargestone"
-    },
-    {
-      "type": "sign",
-      "x": 21,
-      "y": 6,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftChargestone"
-    },
-    {
-      "type": "sign",
-      "x": 22,
-      "y": 6,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SpacetimeCave_EventScript_RiftChargestone"
     },
     {
       "type": "sign",

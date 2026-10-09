@@ -271,3 +271,6 @@ const u16 gMetatileAttributes_CeruleanCave[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatiles.bin"); // Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren)
 const u16 gMetatileAttributes_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatile_attributes.bin");
+
+const u16 gMetatiles_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatiles.bin"); // Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen
+const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatile_attributes.bin");

@@ -1226,6 +1226,12 @@
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
 #define TRAINER_SWIMMER_CORINNE             1080 // Project Grounded: Koraalkathedraal: zwemt al jaren rondjes om hetzelfde koraal
 #define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
+// chargestone { (tools/grounded/maptools/chargestone.py; id 1124-1128)
+#define TRAINER_CHARGESTONE_GRUNT_1F        1124 // Project Grounded: Chargestone Cave 1F, Colress-assistent
+#define TRAINER_CHARGESTONE_GRUNT_B1F_1     1125 // Project Grounded: Chargestone Cave B1F, Colress-assistent bij het stenenhek
+#define TRAINER_CHARGESTONE_GRUNT_B1F_2     1126 // Project Grounded: Chargestone Cave B1F, Colress-assistent in de grote grot
+#define TRAINER_CHARGESTONE_GRUNT_B2F       1127 // Project Grounded: Chargestone Cave B2F, Colress-assistent voor het lab
+#define TRAINER_CHARGESTONE_COLRESS         1128 // Project Grounded: Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)
 // }
 
 #define TRAINERS_COUNT                      1200

@@ -1223,3 +1223,25 @@ const struct Tileset gTileset_LavenderCalm = // Project Grounded: Lavender Town 
     .metatileAttributes = gMetatileAttributes_LavenderTown,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_ChargestoneGeneral = // Project Grounded: Chargestone Cave: General donkerblauw
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_ChargestoneGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_Chargestone = // Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Chargestone,
+    .palettes = gTilesetPalettes_Chargestone,
+    .metatiles = gMetatiles_Chargestone,
+    .metatileAttributes = gMetatileAttributes_Chargestone,
+    .callback = NULL,
+};

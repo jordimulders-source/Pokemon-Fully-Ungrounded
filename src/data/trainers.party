@@ -41036,3 +41036,205 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Thunder Wave
 
 /* --- einde coral_cathedral --- */
+
+/* --- chargestone (tools/grounded/maptools/chargestone.py) --- */
+
+=== TRAINER_CHARGESTONE_GRUNT_1F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Klinklang
+Level: 66
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gear Grind
+- Wild Charge
+- Shift Gear
+- Screech
+
+Eelektross
+Level: 66
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wild Charge
+- Crunch
+- Drain Punch
+- Flamethrower
+
+Galvantula
+Level: 66
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunder
+- Bug Buzz
+- Sticky Web
+- Energy Ball
+
+=== TRAINER_CHARGESTONE_GRUNT_B1F_1 ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Rotom_Wash
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
+
+Heliolisk
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Parabolic Charge
+- Grass Knot
+- Surf
+- Volt Switch
+
+Ferrothorn
+Level: 67
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Spikes
+
+=== TRAINER_CHARGESTONE_GRUNT_B1F_2 ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kingambit
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Magnezone
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Mirror Coat
+
+Golurk
+Level: 68
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earthquake
+- Shadow Punch
+- Dynamic Punch
+- Ice Punch
+
+=== TRAINER_CHARGESTONE_GRUNT_B2F ===
+Name: GRUNT
+Class: Neo Plasma
+Pic: Neo Plasma Grunt F
+Gender: Female
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Electivire
+Level: 69
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+Probopass
+Level: 69
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Power Gem
+- Flash Cannon
+- Earth Power
+- Thunder Wave
+
+Bronzong
+Level: 69
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gyro Ball
+- Earthquake
+- Trick Room
+- Psychic
+
+Vikavolt
+Level: 70
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Bug Buzz
+- Thunderbolt
+- Energy Ball
+- Sticky Web
+
+=== TRAINER_CHARGESTONE_COLRESS ===
+Name: COLRESS
+Class: Scientist
+Pic: Colress
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Rotom_Heat
+Level: 72
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Overheat
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
+
+Porygon_Z
+Level: 73
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Tri Attack
+- Thunderbolt
+- Ice Beam
+- Nasty Plot
+
+Metagross
+Level: 73
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Copperajah
+Level: 73
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Iron Head
+- Heavy Slam
+- Earthquake
+- Play Rough
+
+Archaludon
+Level: 74
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Electro Shot
+- Flash Cannon
+- Draco Meteor
+- Body Press
+
+Genesect @ Shock Drive
+Level: 75
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Techno Blast
+- U-turn
+- Iron Head
+- Shift Gear
+
+/* --- einde chargestone --- */

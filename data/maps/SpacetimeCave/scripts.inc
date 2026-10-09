@@ -9,10 +9,6 @@ SpacetimeCave_EventScript_RiftPark::
 	msgbox SpacetimeCave_Text_RiftPark, MSGBOX_SIGN
 	end
 
-SpacetimeCave_EventScript_RiftChargestone::
-	msgbox SpacetimeCave_Text_RiftChargestone, MSGBOX_SIGN
-	end
-
 SpacetimeCave_EventScript_RiftGlimwood::
 	msgbox SpacetimeCave_Text_RiftGlimwood, MSGBOX_SIGN
 	end
@@ -29,6 +25,7 @@ Spacetime_AllSidequestsDone::
 	setvar VAR_0x8005, 0
 	call_if_unset FLAG_SPACETIME_LAVENDER_DONE, Spacetime_EventScript_CountOpen @ Lavender Town: de kwade geesten verdreven
 	call_if_unset FLAG_SPACETIME_CERULEAN_DONE, Spacetime_EventScript_CountOpen @ Cerulean Cave: Mewtwo gevangen of verslagen
+	call_if_unset FLAG_SPACETIME_CHARGESTONE_DONE, Spacetime_EventScript_CountOpen @ Chargestone Cave: Zeraora gevangen of verslagen
 	setvar VAR_RESULT, FALSE
 	call_if_eq VAR_0x8005, 0, Spacetime_EventScript_AllDone
 	return
@@ -96,30 +93,30 @@ SpacetimeCave_EventScript_HideRifts:
 	return
 
 SpacetimeCave_EventScript_OpenRifts:
-	setmetatile 4, 5, 0x3AA, FALSE
-	setmetatile 5, 5, 0x3AB, FALSE
-	setmetatile 4, 6, 0x3AC, TRUE
-	setmetatile 5, 6, 0x3AD, TRUE
-	setmetatile 4, 10, 0x3AA, FALSE
-	setmetatile 5, 10, 0x3AB, FALSE
-	setmetatile 4, 11, 0x3AC, TRUE
-	setmetatile 5, 11, 0x3AD, TRUE
-	setmetatile 4, 14, 0x3AA, TRUE
-	setmetatile 5, 14, 0x3AB, TRUE
-	setmetatile 4, 15, 0x3AC, TRUE
-	setmetatile 5, 15, 0x3AD, TRUE
-	setmetatile 21, 5, 0x3AA, TRUE
-	setmetatile 22, 5, 0x3AB, TRUE
-	setmetatile 21, 6, 0x3AC, TRUE
-	setmetatile 22, 6, 0x3AD, TRUE
-	setmetatile 21, 10, 0x3AA, TRUE
-	setmetatile 22, 10, 0x3AB, TRUE
-	setmetatile 21, 11, 0x3AC, TRUE
-	setmetatile 22, 11, 0x3AD, TRUE
-	setmetatile 21, 14, 0x3AA, TRUE
-	setmetatile 22, 14, 0x3AB, TRUE
-	setmetatile 21, 15, 0x3AC, TRUE
-	setmetatile 22, 15, 0x3AD, TRUE
+	setmetatile 4, 5, 0x3CE, FALSE
+	setmetatile 5, 5, 0x3CF, FALSE
+	setmetatile 4, 6, 0x3D0, TRUE
+	setmetatile 5, 6, 0x3D1, TRUE
+	setmetatile 4, 10, 0x3CE, FALSE
+	setmetatile 5, 10, 0x3CF, FALSE
+	setmetatile 4, 11, 0x3D0, TRUE
+	setmetatile 5, 11, 0x3D1, TRUE
+	setmetatile 4, 14, 0x3CE, TRUE
+	setmetatile 5, 14, 0x3CF, TRUE
+	setmetatile 4, 15, 0x3D0, TRUE
+	setmetatile 5, 15, 0x3D1, TRUE
+	setmetatile 21, 5, 0x3CE, FALSE
+	setmetatile 22, 5, 0x3CF, FALSE
+	setmetatile 21, 6, 0x3D0, TRUE
+	setmetatile 22, 6, 0x3D1, TRUE
+	setmetatile 21, 10, 0x3CE, TRUE
+	setmetatile 22, 10, 0x3CF, TRUE
+	setmetatile 21, 11, 0x3D0, TRUE
+	setmetatile 22, 11, 0x3D1, TRUE
+	setmetatile 21, 14, 0x3CE, TRUE
+	setmetatile 22, 14, 0x3CF, TRUE
+	setmetatile 21, 15, 0x3D0, TRUE
+	setmetatile 22, 15, 0x3D1, TRUE
 	return
 
 SpacetimeCave_EventScript_HideLakes:
@@ -138,18 +135,18 @@ SpacetimeCave_EventScript_HideLakes:
 	return
 
 SpacetimeCave_EventScript_OpenLakes:
-	setmetatile 13, 42, 0x3AA, TRUE
-	setmetatile 14, 42, 0x3AB, TRUE
-	setmetatile 13, 43, 0x3AC, TRUE
-	setmetatile 14, 43, 0x3AD, TRUE
-	setmetatile 7, 45, 0x3AA, TRUE
-	setmetatile 8, 45, 0x3AB, TRUE
-	setmetatile 7, 46, 0x3AC, TRUE
-	setmetatile 8, 46, 0x3AD, TRUE
-	setmetatile 18, 45, 0x3AA, TRUE
-	setmetatile 19, 45, 0x3AB, TRUE
-	setmetatile 18, 46, 0x3AC, TRUE
-	setmetatile 19, 46, 0x3AD, TRUE
+	setmetatile 13, 42, 0x3CE, TRUE
+	setmetatile 14, 42, 0x3CF, TRUE
+	setmetatile 13, 43, 0x3D0, TRUE
+	setmetatile 14, 43, 0x3D1, TRUE
+	setmetatile 7, 45, 0x3CE, TRUE
+	setmetatile 8, 45, 0x3CF, TRUE
+	setmetatile 7, 46, 0x3D0, TRUE
+	setmetatile 8, 46, 0x3D1, TRUE
+	setmetatile 18, 45, 0x3CE, TRUE
+	setmetatile 19, 45, 0x3CF, TRUE
+	setmetatile 18, 46, 0x3D0, TRUE
+	setmetatile 19, 46, 0x3D1, TRUE
 	return
 
 SpacetimeCave_EventScript_OpenGateUnknown:
@@ -360,13 +357,6 @@ SpacetimeCave_Text_RiftPark:
 	.string "can just make out a park shaped like a\l"
 	.string "POKé BALL, and a forest behind it that\l"
 	.string "hums.\p"
-	.string "The other side hasn't finished existing\n"
-	.string "yet, though. Spacetime is still loading.$"
-
-SpacetimeCave_Text_RiftChargestone:
-	.string "The rift is wide open. Through it you\n"
-	.string "can just make out floating rocks and\l"
-	.string "enough static to restyle your hair.\p"
 	.string "The other side hasn't finished existing\n"
 	.string "yet, though. Spacetime is still loading.$"
 

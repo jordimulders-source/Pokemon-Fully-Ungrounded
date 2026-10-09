@@ -164,19 +164,20 @@ RIFTS = [  # (sleutel, linksboven, bestemming of None, naam op het bord)
     ('Lavender', (4, 5), 'LAVENDER', None),
     ('Cerulean', (4, 10), 'CERULEAN', None),
     ('Park', (4, 14), None, 'a park shaped like a POKé BALL, and a forest behind it that hums'),
-    ('Chargestone', (21, 5), None, 'floating rocks and enough static to restyle your hair'),
+    ('Chargestone', (21, 5), 'CHARGESTONE', None),
     ('Glimwood', (21, 10), None, 'glowing mushrooms and a forest that is far too pleased with itself'),
     ('AreaZero', (21, 14), None, 'a crater that keeps going down long after it should have stopped'),
 ]
 # S1: eerste bezoek (Dialga + Palkia openen de scheuren) en quest-poorten.
 # Toestand per scheur na de scene: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet).
-RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'open', 'Chargestone': 'open', 'Glimwood': 'open',
+RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'open', 'Chargestone': 'warp', 'Glimwood': 'open',
               'AreaZero': 'open'}
 # Sidequests die meetellen voor de gang naar ?????. Een nieuwe locatie: haar klaar-flag hier toevoegen (en opnieuw
 # draaien). Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen pas
 # mee zodra hun flag hier staat; tot dan telt alleen wat bestaat. De meren-kamer ligt na ????? en telt niet mee.
 SIDEQUESTS = [('FLAG_SPACETIME_LAVENDER_DONE', 'Lavender Town: de kwade geesten verdreven'),
-              ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen')]
+              ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen'),
+              ('FLAG_SPACETIME_CHARGESTONE_DONE', 'Chargestone Cave: Zeraora gevangen of verslagen')]
 HUB_DIALGA, HUB_PALKIA, HUB_RESEARCHER = (10, 7), (16, 7), (18, 4)
 # de diepte (zelfde kaart, onder de hoofdzaal); de gang is 2 breed (x 13-14)
 CX = 13
@@ -292,9 +293,10 @@ def hub(lav_rift_warp, cc_rift_warp):
             if state == 'warp':             # bovenste rij = warp (beloopbaar), onderste rij = lijf (dicht)
                 m, col = ids[(0, q)], q >= 2
                 if q < 2:
-                    wid = {'LAVENDER': lav_rift_warp, 'CERULEAN': cc_rift_warp}[dest] + q
-                    warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F'}[dest], wid,
-                                      elev=3))
+                    # Chargestone (chargestone.py) heeft één aankomstwarp (index 0) voor beide vakken
+                    wid = {'LAVENDER': lav_rift_warp + q, 'CERULEAN': cc_rift_warp + q, 'CHARGESTONE': 0}[dest]
+                    warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F',
+                                             'CHARGESTONE': 'CHARGESTONE_CAVE_1F'}[dest], wid, elev=3))
             else:                           # open (actief beeld), nog geen overkant: massief + bordje
                 m, col = ids[(0, q)], True
                 bgs.append(sign(x, y, P + 'Rift' + key))

@@ -1,6 +1,8 @@
 """Project Grounded: Area Zero (Spacetime Cave-sidequest, post-game; Paldea in een andere tijd).
 
-Een krater waar je steeds verder afdaalt; hoe dieper, hoe vreemder de kleuren (zelfde tiles, andere paletten:
+Een krater waar je steeds verder afdaalt (9 okt: elke laag is een kom met ringvormige terrassen, trappen om en om in de
+noordwanden, binnenkomst bovenaan op de rand en de uitgang naar de volgende diepte op de bodem in het midden; zie bowl()).
+Hoe dieper, hoe vreemder de kleuren (zelfde tiles, andere paletten:
 area_zero_tiles.py). Kaarten (gMapGroup_Spacetime, achteraan):
   AreaZero_Rim       laag 1, de kraterwand: groene plateaus, grijze rotswanden, bomen, hoog gras, onderzoeksstation 1.
                      Warp 0 = ladder omhoog = terug naar de Spacetime Cave (hier komt de hub-scheur uit).
@@ -69,6 +71,19 @@ class AZ(cs.Cave):
         super().__init__(w, h, seed)
         self.grass = set()
         LAST.append(self)
+
+    def build(self):
+        """Kraterwanden van 2 blokken (rand, rots, wand, wand): de donkere rotsrij wordt een klifrand (lipD), zodat
+        de wand als één klif naar het lagere terras leest en niet als een kuil."""
+        g = super().build()
+        rimSD, rockD, lipD = ID['rimSD'][0], ID['rockD'][0], ID['lipD'][0]
+        for y in range(1, self.H - 1):
+            for x in range(self.W):
+                if (x, y) not in self.over and g[y][x] & 0x3FF == rockD and g[y - 1][x] & 0x3FF == rimSD and \
+                        g[y + 1][x] & 0x3FF in (0x231, 0x230, 0x232):
+                    g[y][x] = cell(lipD, 1, 0)
+        self.g = g
+        return g
 
     def put(self, kind, x, y):
         name = self.rnd.choice(self.VARS[kind]) if kind in self.VARS else kind
@@ -188,26 +203,33 @@ def new_items(name, targets):
 # trap in een recht stuk van de noordwand, om en om links en rechts van het midden (spiraal naar beneden). Binnenkomst
 # bovenaan op de buitenste ring, de uitgang naar de volgende diepte op de bodem in het midden.
 # Profiel: lijst (soort, noord, zuid, zijkant) van binnen naar buiten, in tegels; soort 'F' = vloer, 'R' = wand.
-BOWL3 = [('F', 5, 4, 7), ('R', 6, 3, 4), ('F', 5, 4, 6), ('R', 6, 3, 4), ('F', 5, 4, 6)]
-BOWL2 = [('F', 7, 5, 8), ('R', 6, 3, 4), ('F', 5, 4, 6)]
+BOWL3 = [('F', 6, 5, 8), ('R', 4, 3, 3), ('F', 4.5, 4, 5), ('R', 4, 3, 3), ('F', 4.5, 4, 5)]
+BOWL2 = [('F', 7, 5, 8), ('R', 4, 3, 3), ('F', 4.5, 4, 5)]
+
+
+BOWL_P = 2.5          # superellips: vlakke noord- en zuidwanden (rechte stukken voor de trappen), ronde hoeken
+
+
+def pnorm(x, y):
+    return (abs(x) ** BOWL_P + abs(y) ** BOWL_P) ** (1 / BOWL_P)
 
 
 def bowl_bounds(prof, seed):
     """Straal van elke grens (van binnen naar buiten) als functie van de hoek, met ruis (ronde, grillige vorm)."""
     rnd = random.Random(seed)
     nb = len(prof)
-    shared = [(rnd.uniform(0.5, 1.0), k, rnd.uniform(0, 6.28)) for k in (2, 3, 5)]
-    own = [[(rnd.uniform(0.2, 0.5), k, rnd.uniform(0, 6.28)) for k in (3, 4, 6)] for _ in range(nb)]
+    shared = [(rnd.uniform(0.6, 1.0), k, rnd.uniform(0, 6.28)) for k in (2, 3)]
+    own = [[(rnd.uniform(0.2, 0.5), k, rnd.uniform(0, 6.28)) for k in (2, 3)] for _ in range(nb)]
 
     def bounds(t):
         s2, c2 = math.sin(t) ** 2, math.cos(t) ** 2
         out, r = [], 0.0
         for i, (kind, n, s, side) in enumerate(prof):
             w = side * c2 + (n if math.sin(t) < 0 else s) * s2
-            amp = (0.5 if kind == 'R' else 0.9) * (0.4 + 0.6 * i / max(1, nb - 1))
-            w += amp * sum(a * math.sin(k * t + p) for a, k, p in shared) / 2.2
-            w += sum(a * math.sin(k * t + p) for a, k, p in own[i]) / 2
-            r += max(w, 3.0 if kind == 'F' else 2.2)
+            amp = (0.25 if kind == 'R' else 0.6) * (0.4 + 0.6 * i / max(1, nb - 1))
+            w += amp * sum(a * math.sin(k * t + p) for a, k, p in shared) / 1.5
+            w += sum(a * math.sin(k * t + p) for a, k, p in own[i]) / (8 if kind == 'R' else 3)
+            r += max(w, 3.5 if kind == 'F' else 2.5)
             out.append(r)
         return out
     return bounds
@@ -224,7 +246,7 @@ def bowl(m, prof, stairs, seed):
     for by in range(Hc):
         for bx in range(Wc):
             px, py = 2 * bx + 1 - cx, 2 * by + 1 - cy
-            d, t = math.hypot(px, py), math.atan2(py, px)
+            d, t = pnorm(px, py), math.atan2(py, px)
             fl = nfl
             for (kind, *_), b in zip(prof, bounds(t)):
                 if kind == 'F':
@@ -233,7 +255,7 @@ def bowl(m, prof, stairs, seed):
                     L[by][bx] = fl if kind == 'F' else -1
                     break
     nb8 = [(a, b) for a in (-1, 0, 1) for b in (-1, 0, 1) if (a, b) != (0, 0)]
-    for _ in range(10):                                    # verschillende niveaus raken elkaar nergens (ook diagonaal)
+    for _ in range(30):                                    # verschillende niveaus raken elkaar nergens (ook diagonaal)
         ch = 0
         for by in range(1, Hc - 1):
             for bx in range(1, Wc - 1):
@@ -246,32 +268,70 @@ def bowl(m, prof, stairs, seed):
                     L[by][bx + 1] = q[0]; ch += 1
                 elif q[1] >= 0 and q[1] == q[2] and q[0] < 0 and q[3] < 0:
                     L[by][bx] = q[1]; ch += 1
+        for by in range(1, Hc - 1):                        # losse rotsplekjes binnen één niveau: dicht
+            for bx in range(1, Wc - 1):
+                if L[by][bx] >= 0:
+                    continue
+                near = {L[by + b][bx + a] for a, b in nb8} - {-1}
+                if len(near) == 1 and ((L[by][bx - 1] >= 0 and L[by][bx + 1] >= 0) or
+                                       (L[by - 1][bx] >= 0 and L[by + 1][bx] >= 0)):
+                    L[by][bx] = near.pop(); ch += 1
         if not ch:
             break
+    def below(bx, by):
+        while by < Hc and L[by][bx] < 0:
+            by += 1
+        return L[by][bx] if by < Hc else -1
+
+    for _ in range(4):           # noordwanden max. 2 blokken (dikker geeft een rotsvlakte die als kuil/plateau leest)
+        for bx in range(Wc):
+            for by in range(1, Hc - 3):
+                up = L[by - 1][bx]
+                if up >= 0 and L[by][bx] < 0 and L[by + 1][bx] < 0 and L[by + 2][bx] < 0 and below(bx, by) > up and \
+                        {L[by + b][bx + a] for a, b in nb8 if 0 <= bx + a < Wc} <= {up, -1}:
+                    L[by][bx] = up
     for by in range(Hc):
         for bx in range(Wc):
             if bx < 2 or by < 1 or bx >= Wc - 2 or by >= Hc - 2:
                 assert L[by][bx] < 0, ('kom te groot voor de kaart', bx, by)
     # trappen: per wand een uitsnede van 3 blokken breed door de noordwand, met een terras (rand + trap) onderaan
     m.stair_cells = set()
-    for i, dx in enumerate(stairs):
-        bxs = int(cx + dx) // 2
-        cols = (bxs - 1, bxs, bxs + 1)
+
+    def runs_at(i, bxs):
+        """Per kolom (bovenkant wand, eerste blok van het volgende niveau) langs de noordwand; None als het niet past."""
         runs = {}
-        for bx in cols:
+        if bxs < 3 or bxs > Wc - 4:
+            return None
+        for bx in (bxs - 1, bxs, bxs + 1):
             by = 0
-            while L[by][bx] != i:
+            while by < Hc and L[by][bx] != i:
                 by += 1
-                assert by < Hc, ('trap: geen niveau', i, bx)
-            while L[by][bx] == i:
+            while by < Hc and L[by][bx] == i:
                 by += 1
             top = by
-            while L[by][bx] < 0:
+            while by < Hc and L[by][bx] < 0:
                 by += 1
-            assert L[by][bx] == i + 1, ('trap: wand loopt niet naar het volgende niveau', i, bx, L[by][bx])
+            if by >= Hc or L[by][bx] != i + 1 or by > cy // 2:
+                return None
             runs[bx] = (top, by)
         bmin = min(b for _, b in runs.values())
-        assert bmin - max(t for t, _ in runs.values()) >= 1, ('trap: wand te dun', i)
+        if bmin - max(t for t, _ in runs.values()) < 1 or max(b for _, b in runs.values()) - bmin > 2:
+            return None
+        if any(L[by][bx] >= 0 for bx in (bxs - 2, bxs + 2) for by in (bmin - 1,)):
+            return None
+        return runs, bmin
+
+    for i, dx in enumerate(stairs):
+        sgn = 1 if dx >= 0 else -1
+        for k in range(0, 40):                              # dichtst bij de gewenste plek, eerst naar het midden toe
+            bxs = int(cx + dx - sgn * 2 * ((k + 1) // 2) * (1 if k % 2 else -1)) // 2
+            got = runs_at(i, bxs)
+            if got:
+                break
+        if not got:
+            print('\n'.join(''.join('#' if v < 0 else str(v) for v in row) for row in L))
+        assert got, ('trap: geen recht stuk noordwand', i)
+        runs, bmin = got
         for bx, (top, bin_) in runs.items():
             for by in range(top, bin_):
                 L[by][bx] = i if by < bmin else i + 1
@@ -343,13 +403,14 @@ def new_bowl(seed, prof, stairs):
     """Kaart precies groot genoeg voor de kom: rondom 4-5 tegels rots (de bovenwand van de krater)."""
     bounds = bowl_bounds(prof, seed)
     ts = [2 * math.pi * i / 720 for i in range(720)]
-    ext = [(bounds(t)[-1] * math.cos(t), bounds(t)[-1] * math.sin(t)) for t in ts]
+    ext = [(bounds(t)[-1] * math.cos(t) / pnorm(math.cos(t), math.sin(t)),
+            bounds(t)[-1] * math.sin(t) / pnorm(math.cos(t), math.sin(t))) for t in ts]
     north = -min(y for _, y in ext)
     south = max(y for _, y in ext)
     side = max(abs(x) for x, _ in ext)
-    cy = 2 * math.ceil((north + 6) / 2)
-    cx = 2 * math.ceil((side + 5) / 2)
-    w, h = 2 * cx, 2 * math.ceil((cy + south + 5) / 2)
+    cy = 2 * math.ceil((north + 5) / 2)
+    cx = 2 * math.ceil((side + 4) / 2)
+    w, h = 2 * cx, 2 * math.ceil((cy + south + 4) / 2)
     m = AZ(w, h, seed)
     m.cx, m.cy = cx, cy
     bowl(m, prof, stairs, seed)
@@ -389,7 +450,7 @@ RIM_OLD_T = [((0, 30, 0.5), 'ITEM_FULL_RESTORE', 'FLAG_ITEM_AREA_ZERO_RIM_FULL_R
 
 def build_rim():
     global RIM_LADDER, RIM_EXIT, RIM_STATION
-    m = new_bowl(9101, BOWL3, [7, -6])
+    m = new_bowl(9101, BOWL3, [8, -5])
     m.build()
     m.steps()
     RIM_LADDER = top_of(m, 0, -12)
@@ -460,7 +521,7 @@ DEP_OLD_T = [((2, 0, 0.6), 'ITEM_PP_UP', 'FLAG_ITEM_AREA_ZERO_DEPTHS_PP_UP', 1, 
 
 def build_depths():
     global DEP_LADDER, DEP_EXIT, DEP_SCREAM, DEP_HANDS
-    m = new_bowl(9202, BOWL3, [-7, 6])
+    m = new_bowl(9202, BOWL3, [-8, 5])
     m.build()
     m.steps()
     DEP_LADDER = top_of(m, 0, 12)
@@ -503,7 +564,7 @@ CRY_OLD_T = [((0, 150, 0.5), 'ITEM_MAX_REVIVE', 'FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX
 
 def build_crystal():
     global CRY_LADDER, CRY_GATE_PAST, CRY_GATE_FUT
-    m = new_bowl(9303, [('F', 6, 5, 9)] + BOWL3[1:], [6, -7])
+    m = new_bowl(9303, [('F', 6, 5, 9)] + BOWL3[1:], [8, -5])
     m.build()
     m.steps()
     CRY_LADDER = top_of(m, 0, -2)
@@ -553,7 +614,7 @@ ERA_OLD_T = {FUT: [((2, 150, 0.6), 'ITEM_PP_MAX', 'FLAG_ITEM_AREA_ZERO_FUTURE_PP
 
 def build_era(name):
     global ERA_GATE, ERA_LADDER, ERA_LEGEND, ERA_TERMINAL, ERA_BOSSES
-    m = new_bowl(9404, [('F', 6, 5, 9)] + BOWL3[1:], [-7, 6])   # zelfde seed: zelfde vorm in beide tijden
+    m = new_bowl(9404, [('F', 6, 5, 9)] + BOWL3[1:], [-8, 5])   # zelfde seed: zelfde vorm in beide tijden
     m.build()
     m.steps()
     gx, gy = top_of(m, 0, 4)
@@ -610,7 +671,7 @@ TERA_EXIT = TERA_CORE = TERA_PAGOS = TERA_ALARM = None
 
 def build_tera():
     global TERA_EXIT, TERA_CORE, TERA_PAGOS, TERA_ALARM
-    m = new_bowl(9505, BOWL2, [5])
+    m = new_bowl(9505, BOWL2, [-5])
     TERA_EXIT = bottom_of(m, 0, 0)
     m.build()
     m.steps()
@@ -1191,12 +1252,12 @@ def events():
                            "A crowned metal warrior regards you.\n\nIt has no idea what a crown is for, but it knows it "
                            "looks great in one.",
                            "IRON CROWN straightens its crown and reboots. Royalty doesn't stay down. It delegates.")],
-                  meet="MIRAIDON lies curled on the terrace, idling like an engine somebody forgot to switch off.\n\n"
+                  meet="MIRAIDON lies curled up at the bottom of the crater, idling like an engine somebody forgot to switch off.\n\n"
                        "It opens one eye. Then the other. Then a third one, on a screen, somewhere.",
                   ko="MIRAIDON reboots in a shower of sparks.\n\nTurning it off and on again: still the oldest trick "
                      "in the future.",
                   log="RESEARCH LOG 7F\nThe robots here are polite. They call me 'organic legacy unit'. I've decided "
-                      "to take it as a compliment.\n\nMIRAIDON sleeps on the upper terrace. The security system "
+                      "to take it as a compliment.\n\nMIRAIDON sleeps at the bottom of the crater. The security system "
                       "sleeps next to it. Lightly.",
                   standby="ZERO LAB SECURITY TERMINAL\nSTATUS: STANDBY.\n\nCONTAINED: 1x MIRAIDON.\nDo not pet. Do not "
                           "feed after midnight. Do not explain midnight to it."),
@@ -1214,11 +1275,11 @@ def events():
                            "weather event.",
                            "RAGING BOLT crackles back to life. Lightning never strikes the same place twice. This one "
                            "does, out of spite.")],
-                  meet="KORAIDON lies on the terrace, sunning itself under a sun that went out millions of years "
+                  meet="KORAIDON lies at the bottom of the crater, sunning itself under a sun that went out millions of years "
                        "ago.\n\nIt wags. That's either friendly or a warning. Possibly both.",
                   ko="KORAIDON rolls over, yawns, and gets up again. Apex predators don't do naps on command.",
                   log="RESEARCH LOG 7P\nEverything here wants to eat me, including two of the plants.\n\nKORAIDON "
-                      "naps on the upper terrace like a very large, very smug dog. The security system watches it. "
+                      "naps at the bottom of the crater like a very large, very smug dog. The security system watches it. "
                       "It watches me back.",
                   standby="ZERO LAB SECURITY TERMINAL\nSTATUS: STANDBY.\n\nCONTAINED: 1x KORAIDON.\nDo not throw "
                           "sticks. It will bring back the tree."),

@@ -180,9 +180,9 @@ AreaZero_Future_Text_IronCrownBack:
 	.string "delegates.$"
 
 AreaZero_Future_Text_Legend:
-	.string "MIRAIDON lies curled on the terrace,\n"
-	.string "idling like an engine somebody forgot\l"
-	.string "to switch off.\p"
+	.string "MIRAIDON lies curled up at the bottom\n"
+	.string "of the crater, idling like an engine\l"
+	.string "somebody forgot to switch off.\p"
 	.string "It opens one eye. Then the other. Then\n"
 	.string "a third one, on a screen, somewhere.$"
 
@@ -233,6 +233,6 @@ AreaZero_Future_Text_Log:
 	.string "The robots here are polite. They call me\l"
 	.string "'organic legacy unit'. I've decided to\l"
 	.string "take it as a compliment.\p"
-	.string "MIRAIDON sleeps on the upper terrace.\n"
-	.string "The security system sleeps next to it.\l"
-	.string "Lightly.$"
+	.string "MIRAIDON sleeps at the bottom of the\n"
+	.string "crater. The security system sleeps\l"
+	.string "next to it. Lightly.$"

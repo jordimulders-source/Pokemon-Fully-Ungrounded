@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 6,
-      "y": 9,
+      "x": 10,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 41,
-      "y": 10,
+      "x": 52,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 3,
@@ -43,28 +43,28 @@
   ],
   "warp_events": [
     {
-      "x": 22,
-      "y": 5,
+      "x": 28,
+      "y": 6,
       "elevation": 3,
       "dest_map": "MAP_AREA_ZERO_DEPTHS",
       "dest_warp_id": "1"
     },
     {
-      "x": 13,
-      "y": 34,
+      "x": 26,
+      "y": 31,
       "elevation": 3,
       "dest_map": "MAP_AREA_ZERO_PAST",
       "dest_warp_id": "0"
     },
     {
-      "x": 33,
-      "y": 34,
+      "x": 34,
+      "y": 31,
       "elevation": 3,
       "dest_map": "MAP_AREA_ZERO_FUTURE",
       "dest_warp_id": "0"
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_AREA_ZERO_TERA_CAVE",
@@ -76,30 +76,30 @@
     {
       "type": "sign",
       "x": 30,
-      "y": 5,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "AreaZero_Crystal_EventScript_Log"
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 34,
+      "x": 25,
+      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "AreaZero_Crystal_EventScript_SignPast"
     },
     {
       "type": "sign",
-      "x": 34,
-      "y": 34,
+      "x": 35,
+      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "AreaZero_Crystal_EventScript_SignFuture"
     },
     {
       "type": "sign",
-      "x": 23,
+      "x": 33,
       "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -107,8 +107,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 5,
-      "y": 20,
+      "x": 16,
+      "y": 24,
       "elevation": 3,
       "item": "ITEM_RING_TARGET",
       "flag": "FLAG_HIDDEN_ITEM_AREA_ZERO_CRYSTAL_RING_TARGET"

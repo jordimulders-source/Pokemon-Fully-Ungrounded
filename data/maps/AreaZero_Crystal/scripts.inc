@@ -8,7 +8,7 @@ AreaZero_Crystal_OnLoad:
 	goto_if FALSE, AreaZero_Crystal_EventScript_Sealed
 	checktrainerflag TRAINER_AREA_ZERO_SECURITY_PAST
 	goto_if FALSE, AreaZero_Crystal_EventScript_Sealed
-	setmetatile 23, 23, 0x24E, FALSE
+	setmetatile 33, 23, 0x24E, FALSE
 AreaZero_Crystal_EventScript_Sealed:
 	end
 

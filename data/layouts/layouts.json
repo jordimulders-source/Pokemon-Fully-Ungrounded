@@ -5731,6 +5731,46 @@
       "secondary_tileset": "gTileset_GlimwoodDying",
       "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
       "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_BEACH",
+      "name": "YoshisIsland_Beach_Layout",
+      "width": 30,
+      "height": 24,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiBeach",
+      "border_filepath": "data/layouts/YoshisIsland_Beach/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Beach/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_HILLS",
+      "name": "YoshisIsland_Hills_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiHills",
+      "border_filepath": "data/layouts/YoshisIsland_Hills/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Hills/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_BOO_MANSION",
+      "name": "YoshisIsland_BooMansion_Layout",
+      "width": 18,
+      "height": 14,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiBoo",
+      "border_filepath": "data/layouts/YoshisIsland_BooMansion/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_BooMansion/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_WARIO_FORT",
+      "name": "YoshisIsland_WarioFort_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiFort",
+      "border_filepath": "data/layouts/YoshisIsland_WarioFort/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_WarioFort/map.bin"
     }
   ]
 }

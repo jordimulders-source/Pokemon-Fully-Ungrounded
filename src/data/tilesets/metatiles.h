@@ -282,3 +282,18 @@ const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/second
 // Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
 const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
 const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiIslandBase[] = INCBIN_U16("data/tilesets/primary/yoshi_island_base/metatiles.bin"); // Project Grounded: Yoshi's Island: grond (primary)
+const u16 gMetatileAttributes_YoshiIslandBase[] = INCBIN_U16("data/tilesets/primary/yoshi_island_base/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiBeach[] = INCBIN_U16("data/tilesets/secondary/yoshi_beach/metatiles.bin"); // Project Grounded: Yoshi's Island: Beach
+const u16 gMetatileAttributes_YoshiBeach[] = INCBIN_U16("data/tilesets/secondary/yoshi_beach/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiHills[] = INCBIN_U16("data/tilesets/secondary/yoshi_hills/metatiles.bin"); // Project Grounded: Yoshi's Island: Hills
+const u16 gMetatileAttributes_YoshiHills[] = INCBIN_U16("data/tilesets/secondary/yoshi_hills/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiBoo[] = INCBIN_U16("data/tilesets/secondary/yoshi_boo/metatiles.bin"); // Project Grounded: Yoshi's Island: BooMansion
+const u16 gMetatileAttributes_YoshiBoo[] = INCBIN_U16("data/tilesets/secondary/yoshi_boo/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatiles.bin"); // Project Grounded: Yoshi's Island: WarioFort
+const u16 gMetatileAttributes_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatile_attributes.bin");

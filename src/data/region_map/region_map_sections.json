@@ -1454,6 +1454,10 @@
     {
       "id": "MAPSEC_BALLONLEA",
       "name": "BALLONLEA"
+    },
+    {
+      "id": "MAPSEC_YOSHIS_ISLAND",
+      "name": "YOSHI'S ISLAND"
     }
   ]
 }

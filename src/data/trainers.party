@@ -31269,7 +31269,7 @@ Nature: Adamant
 
 === TRAINER_STADIUM_BOO ===
 Name: BOO
-Class: Guest Star
+Class: Commander
 Pic: Guest Boo
 Gender: Male
 Music: Suspicious
@@ -41674,3 +41674,378 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Knock Off
 
 /* --- einde glimwood --- */
+
+/* --- yoshis_island (tools/grounded/maptools/yoshis_island.py) --- */
+
+=== TRAINER_YI_SHY_GUY_BEACH_A ===
+Name: SHY GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Red
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mr. Mime
+Level: 92
+Ability: Filter
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Dazzling Gleam
+- Reflect
+- Light Screen
+
+Mimikyu
+Level: 92
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+- Swords Dance
+
+=== TRAINER_YI_SHY_GUY_BEACH_B ===
+Name: SHYER GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Green
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Breloom
+Level: 92
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Spore
+- Seed Bomb
+- Mach Punch
+- Rock Tomb
+
+Amoonguss
+Level: 92
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Spore
+- Giga Drain
+- Sludge Bomb
+- Clear Smog
+
+=== TRAINER_YI_SHY_GUY_CAMP_A1 ===
+Name: FLY GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Pink
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Jumpluff
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Sleep Powder
+- Acrobatics
+- Leech Seed
+- U-turn
+
+Altaria
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Pulse
+- Moonblast
+- Cotton Guard
+- Roost
+
+Togekiss
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Roost
+
+=== TRAINER_YI_SHY_GUY_CAMP_A2 ===
+Name: SHADY GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Black
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Zoroark
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Night Daze
+- Flamethrower
+- Focus Blast
+- Nasty Plot
+
+Liepard
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Knock Off
+- U-turn
+- Play Rough
+- Fake Out
+
+Honchkrow
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Brave Bird
+- Sucker Punch
+- Heat Wave
+- Roost
+
+=== TRAINER_YI_SHY_GUY_CAMP_B1 ===
+Name: SPEAR GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Red
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sirfetch'd
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Leaf Blade
+- Close Combat
+- Brave Bird
+- Knock Off
+
+Escavalier
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Megahorn
+- Iron Head
+- Drill Run
+- Swords Dance
+
+Gallade
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+=== TRAINER_YI_SHY_GUY_CAMP_B2 ===
+Name: SNIFIT
+Class: Shy Squad
+Pic: Guest Shy Guy Green
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Octillery
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Octazooka
+- Fire Blast
+- Ice Beam
+- Gunk Shot
+
+Inteleon
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Snipe Shot
+- Ice Beam
+- U-turn
+- Dark Pulse
+
+Clawitzer
+Level: 93
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Water Pulse
+- Dark Pulse
+- Aura Sphere
+- Dragon Pulse
+
+=== TRAINER_YI_COMMANDER_BOO ===
+Name: BOO
+Class: Commander
+Pic: Guest Boo
+Gender: Male
+Music: Suspicious
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Drifblim
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Air Slash
+- Will-O-Wisp
+- Destiny Bond
+
+Froslass
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Ice Beam
+- Spikes
+- Destiny Bond
+
+Spiritomb
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Foul Play
+- Shadow Sneak
+- Will-O-Wisp
+- Pain Split
+
+Polteageist
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Stored Power
+
+Dusknoir
+Level: 95
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Poltergeist
+- Shadow Sneak
+- Ice Punch
+- Earthquake
+
+Dragapult @ Choice Band
+Level: 96
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Sucker Punch
+
+=== TRAINER_YI_SHY_GUY_FORT_A ===
+Name: NINJA GUY
+Class: Shy Squad
+Pic: Guest Shy Guy Black
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Greninja
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- Gunk Shot
+
+Kingambit
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Scizor
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Bullet Punch
+- U-turn
+- Knock Off
+- Swords Dance
+
+=== TRAINER_YI_SHY_GUY_FORT_B ===
+Name: BOUNCER
+Class: Shy Squad
+Pic: Guest Shy Guy Pink
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bewear
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Hammer Arm
+- Double-Edge
+- Payback
+- Bulk Up
+
+Gholdengo
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Make It Rain
+- Shadow Ball
+- Nasty Plot
+- Recover
+
+Hatterene
+Level: 94
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dazzling Gleam
+- Psychic
+- Mystical Fire
+- Trick Room
+
+=== TRAINER_YI_WARIO ===
+Name: WARIO
+Class: Boss
+Pic: Guest Wario
+Gender: Male
+Music: Rich
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Yellow
+
+Grafaiai @ Focus Sash
+Level: 95
+Ability: Prankster
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Encore
+- Knock Off
+- Super Fang
+- U-turn
+
+Sableye @ Leftovers
+Level: 95
+Ability: Prankster
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Will-O-Wisp
+- Knock Off
+- Recover
+- Foul Play
+
+Perrserker @ Life Orb
+Level: 95
+Ability: Tough Claws
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Iron Head
+- Close Combat
+- Fake Out
+- Pay Day
+
+Garbodor @ Rocky Helmet
+Level: 95
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gunk Shot
+- Toxic Spikes
+- Drain Punch
+- Spikes
+
+Muk_Alola @ Assault Vest
+Level: 96
+Ability: Poison Touch
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Knock Off
+- Poison Jab
+- Drain Punch
+- Ice Punch
+
+Hariyama @ Choice Band
+Level: 97
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Close Combat
+- Headlong Rush
+- Knock Off
+- Bullet Punch
+
+/* --- einde yoshis_island --- */

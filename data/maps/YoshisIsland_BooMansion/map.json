@@ -1,0 +1,108 @@
+{
+  "id": "MAP_YOSHIS_ISLAND_BOO_MANSION",
+  "name": "YoshisIsland_BooMansion",
+  "layout": "LAYOUT_YOSHIS_ISLAND_BOO_MANSION",
+  "music": "MUS_RG_POKE_MANSION",
+  "region_map_section": "MAPSEC_YOSHIS_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COMMANDER_BOO",
+      "x": 8,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_BooMansion_EventScript_Boo",
+      "flag": "FLAG_YI_BOO_DONE",
+      "local_id": "LOCALID_YI_BOO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOSHI",
+      "x": 11,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_BooMansion_EventScript_Yoshi",
+      "flag": "FLAG_YI_YOSHI_HOME",
+      "local_id": "LOCALID_YI_BOO_YOSHI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_FLOAT_STONE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_FLOAT_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_DOLL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 13,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_HILLS",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "YoshisIsland_BooMansion_EventScript_Portrait"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "YoshisIsland_BooMansion_EventScript_Portrait"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "YoshisIsland_BooMansion_EventScript_Portrait"
+    }
+  ]
+}

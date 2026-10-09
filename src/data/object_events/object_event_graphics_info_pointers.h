@@ -95,6 +95,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BooOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
@@ -398,6 +401,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+    [OBJ_EVENT_GFX_WARIO] = &gObjectEventGraphicsInfo_WarioOw, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_COMMANDER_BOO] = &gObjectEventGraphicsInfo_BooOw, // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI] = &gObjectEventGraphicsInfo_YoshiOw, // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_GIANT_LOG] = &gObjectEventGraphicsInfo_GiantLog, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)

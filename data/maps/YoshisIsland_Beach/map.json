@@ -1,0 +1,142 @@
+{
+  "id": "MAP_YOSHIS_ISLAND_BEACH",
+  "name": "YoshisIsland_Beach",
+  "layout": "LAYOUT_YOSHIS_ISLAND_BEACH",
+  "music": "MUS_RG_BERRY_PICK",
+  "region_map_section": "MAPSEC_YOSHIS_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOSHI",
+      "x": 13,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Beach_EventScript_Yoshi",
+      "flag": "FLAG_YI_YOSHI_AHEAD",
+      "local_id": "LOCALID_YI_BEACH_YOSHI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHY_GUY_RED",
+      "x": 14,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Beach_EventScript_Guards",
+      "flag": "FLAG_YI_BEACH_GUARDS",
+      "local_id": "LOCALID_YI_BEACH_GUARD_A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHY_GUY_GREEN",
+      "x": 15,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_Beach_EventScript_Guards",
+      "flag": "FLAG_YI_BEACH_GUARDS",
+      "local_id": "LOCALID_YI_BEACH_GUARD_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 23,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HONEY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_BEACH_HONEY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HEAL_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_BEACH_HEAL_BALL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_SPACETIME_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_SPACETIME_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_SPACETIME_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_HILLS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_HILLS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "YoshisIsland_Beach_EventScript_Sign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_XS",
+      "flag": "FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_BEACH_EXP_CANDY_XS"
+    }
+  ]
+}

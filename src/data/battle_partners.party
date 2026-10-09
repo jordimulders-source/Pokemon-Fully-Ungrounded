@@ -142,6 +142,47 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Life Dew
 - Helping Hand
 
+=== PARTNER_YOSHI ===
+Name: YOSHI
+Class: Guest Star
+Pic: Guest Yoshi
+Gender: Male
+Music: Twins
+Back Pic: Yoshi
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Lickilicky @ Leftovers
+Level: 93
+Ability: Own Tempo
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Body Slam
+- Power Whip
+- Knock Off
+- Helping Hand
+
+Tropius @ Sitrus Berry
+Level: 93
+Ability: Harvest
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Leaf Blade
+- Dragon Hammer
+- Earthquake
+- Synthesis
+
+Exeggutor_Alola @ Life Orb
+Level: 94
+Nature: Brave
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Dragon Hammer
+- Wood Hammer
+- Egg Bomb
+- Flamethrower
+
 /* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */
 
 === PARTNER_STADIUM_BRENDAN ===
@@ -3751,7 +3792,7 @@ Nature: Adamant
 
 === PARTNER_STADIUM_BOO ===
 Name: BOO
-Class: Guest Star
+Class: Commander
 Pic: Guest Boo
 Gender: Male
 Music: Suspicious

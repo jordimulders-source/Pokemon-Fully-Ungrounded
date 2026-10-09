@@ -1354,3 +1354,58 @@ const struct Tileset gTileset_GlimwoodGeneralDying =
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
 };
+
+const struct Tileset gTileset_YoshiIslandBase = // Project Grounded: Yoshi's Island: grond (primary)
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_YoshiIslandBase,
+    .palettes = gTilesetPalettes_YoshiIslandBase,
+    .metatiles = gMetatiles_YoshiIslandBase,
+    .metatileAttributes = gMetatileAttributes_YoshiIslandBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiBeach = // Project Grounded: Yoshi's Island: Beach
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiBeach,
+    .palettes = gTilesetPalettes_YoshiBeach,
+    .metatiles = gMetatiles_YoshiBeach,
+    .metatileAttributes = gMetatileAttributes_YoshiBeach,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiHills = // Project Grounded: Yoshi's Island: Hills
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiHills,
+    .palettes = gTilesetPalettes_YoshiHills,
+    .metatiles = gMetatiles_YoshiHills,
+    .metatileAttributes = gMetatileAttributes_YoshiHills,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiBoo = // Project Grounded: Yoshi's Island: BooMansion
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiBoo,
+    .palettes = gTilesetPalettes_YoshiBoo,
+    .metatiles = gMetatiles_YoshiBoo,
+    .metatileAttributes = gMetatileAttributes_YoshiBoo,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_YoshiFort = // Project Grounded: Yoshi's Island: WarioFort
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiFort,
+    .palettes = gTilesetPalettes_YoshiFort,
+    .metatiles = gMetatiles_YoshiFort,
+    .metatileAttributes = gMetatileAttributes_YoshiFort,
+    .callback = NULL,
+};

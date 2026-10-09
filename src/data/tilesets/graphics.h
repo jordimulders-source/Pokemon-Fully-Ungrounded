@@ -2642,3 +2642,113 @@ const u16 gTilesetPalettes_GlimwoodGeneralDying[][16] =
     INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/15.gbapal"),
 };
+
+// Project Grounded: Yoshi's Island: grond (primary) (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiIslandBase[] = INCBIN_U32("data/tilesets/primary/yoshi_island_base/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiIslandBase[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/yoshi_island_base/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: Beach (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiBeach[] = INCBIN_U32("data/tilesets/secondary/yoshi_beach/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiBeach[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_beach/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: Hills (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiHills[] = INCBIN_U32("data/tilesets/secondary/yoshi_hills/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiHills[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_hills/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: BooMansion (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiBoo[] = INCBIN_U32("data/tilesets/secondary/yoshi_boo/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiBoo[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_boo/palettes/15.gbapal"),
+};
+
+// Project Grounded: Yoshi's Island: WarioFort (tools/grounded/maptools/yoshis_island.py)
+const u32 gTilesetTiles_YoshiFort[] = INCBIN_U32("data/tilesets/secondary/yoshi_fort/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_YoshiFort[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/yoshi_fort/palettes/15.gbapal"),
+};

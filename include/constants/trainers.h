@@ -203,6 +203,7 @@
 #define TRAINER_BACK_PIC_STEVEN                 7
 #define TRAINER_BACK_PIC_KECLEON                8 // Project Grounded: Keccles als partner
 #define TRAINER_BACK_PIC_CALYREX                9 // Project Grounded: Calyrex als partner (National Park)
+#define TRAINER_BACK_PIC_YOSHI                  10 // Project Grounded: Yoshi als partner (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -455,6 +456,7 @@ enum TrainerClassID
     TRAINER_CLASS_NEO_PLASMA, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     TRAINER_CLASS_TEAM_ROCKET, // Project Grounded: Rocket-sidequest (grunts)
     TRAINER_CLASS_ROCKET_EXEC, // Project Grounded: Rocket-sidequest (Petrel)
+    TRAINER_CLASS_SHY_SQUAD, // Project Grounded: Yoshi's Island (Shy Guys, parodie op een evil team)
     TRAINER_CLASS_COUNT,
 };
 

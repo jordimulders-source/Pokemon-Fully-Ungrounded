@@ -5077,3 +5077,15 @@ $(OBJEVENTGFXDIR)/misc/gen1_ghost.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/misc/giant_log.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/boo_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/wario_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

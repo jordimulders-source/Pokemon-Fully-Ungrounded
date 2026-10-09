@@ -194,7 +194,7 @@ Algemeen (terugval):
 | `STADIUM_YOSHI` | YOSHI! Please be gentle, he cries. We have tissues on standby. |
 | `STADIUM_GOLBAT` | GOLBAT! From every cave of your childhood. REPEL does not work in here. |
 | `STADIUM_GRIMER` | GRIMER! Here since 1996. So is the smell. Front rows, we apologize. |
-| `STADIUM_BOO` | BOO! Don't look at him. Seriously, look away. It's in the rules. |
+| `STADIUM_BOO` | COMMANDER BOO! Don't look at him. Seriously. He hates that. |
 | `STADIUM_MEW` | MEW! Found under a truck in LILYCOVE. The rumors were true all along! |
 | `STADIUM_SHY_GUY_RED` | SHY GUY! He asked us not to announce him. Sorry, buddy. |
 | `STADIUM_SHY_GUY_GREEN` | SHYER GUY! Even shyer than SHY GUY. He's under the bleachers. Somewhere. |

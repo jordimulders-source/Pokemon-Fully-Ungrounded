@@ -1253,6 +1253,19 @@
 #define TRAINER_BALLONLEA_GENTLEMAN_ARTHUR  1108 // Project Grounded: Ballonlea, theatercriticus
 // }
 
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056)
+#define TRAINER_YI_SHY_GUY_BEACH_A          1017 // Project Grounded: Yoshi's Island, strand, pijpwachter 1
+#define TRAINER_YI_SHY_GUY_BEACH_B          1018 // Project Grounded: Yoshi's Island, strand, pijpwachter 2
+#define TRAINER_YI_SHY_GUY_CAMP_A1          1019 // Project Grounded: Yoshi's Island, kamp, bende A
+#define TRAINER_YI_SHY_GUY_CAMP_A2          1026 // Project Grounded: Yoshi's Island, kamp, bende A
+#define TRAINER_YI_SHY_GUY_CAMP_B1          1027 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
+#define TRAINER_YI_SHY_GUY_CAMP_B2          1028 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
+#define TRAINER_YI_COMMANDER_BOO            1029 // Project Grounded: Yoshi's Island, spookhuis, baas
+#define TRAINER_YI_SHY_GUY_FORT_A           1049 // Project Grounded: Yoshi's Island, fort, wachter
+#define TRAINER_YI_SHY_GUY_FORT_B           1055 // Project Grounded: Yoshi's Island, fort, wachter
+#define TRAINER_YI_WARIO                    1056 // Project Grounded: Yoshi's Island, fort, eindbaas
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

@@ -2758,6 +2758,174 @@
           }
         },
         {
+          "map": "MAP_YOSHIS_ISLAND_HILLS",
+          "base_label": "gYoshisIslandHills",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_CARNIVINE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_DUGTRIO"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_ELECTRODE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_DRIFBLIM"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_VILEPLUME"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_MR_MIME"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_LICKILICKY"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_MIMIKYU"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_MISMAGIUS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_TOGEKISS"
+              },
+              {
+                "min_level": 93,
+                "max_level": 93,
+                "species": "SPECIES_SNORLAX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_YOSHIS_ISLAND_BEACH",
+          "base_label": "gYoshisIslandBeach",
+          "land_mons": {
+            "encounter_rate": 18,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_TROPIUS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_EXEGGUTOR_ALOLA"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_BELLOSSOM"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_JUMPLUFF"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_TOUCANNON"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_CRAMORANT"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_ORICORIO_POM_POM"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_PALOSSAND"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_LUDICOLO"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_COMFEY"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 93,
+                "max_level": 93,
+                "species": "SPECIES_SLAKING"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_OCTILLERY"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_MANTINE"
+              },
+              {
+                "min_level": 93,
+                "max_level": 93,
+                "species": "SPECIES_LAPRAS"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_GLIMWOOD_TANGLE",
           "base_label": "gGlimwoodTangle",
           "land_mons": {

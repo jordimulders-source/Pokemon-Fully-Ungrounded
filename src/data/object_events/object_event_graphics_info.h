@@ -5650,6 +5650,66 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW = {
 };
 
 // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+// Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BooOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_COMMANDER_BOO,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_BooOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_WARIO,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_WarioOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_GEN1_GHOST,

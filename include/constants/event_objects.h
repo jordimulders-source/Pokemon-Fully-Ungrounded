@@ -324,8 +324,17 @@
 #define OBJ_EVENT_GFX_YOSHI_BLACK                       305 // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_YOSHI_WHITE                       306 // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_YOSHI_BLUE                        307 // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SKY                     308 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SEA                     309 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_LAND                    310 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_MIND                    311 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_DREAM                   312 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_JUSTICE                 313 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_FORGE                   314 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_ORDER                   315 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SPACETIME               316 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        308
+#define NUM_OBJ_EVENT_GFX                        317
 
 
 // These are dynamic object gfx ids.
@@ -498,6 +507,15 @@
 #define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2          0x1178 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3          0x1179 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4          0x117A // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SKY           0x1180 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SEA           0x1181 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_LAND          0x1182 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_MIND          0x1183 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_DREAM         0x1184 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_JUSTICE       0x1185 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_FORGE         0x1186 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_ORDER         0x1187 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SPACETIME     0x1188 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)

@@ -107,6 +107,9 @@ def new_items():
     blk = '    # Mt. Coronet + Spear Pillar (coronet.py; flags uit het eigen blok FLAG_GROUNDED 1160-1219)\n' + rows
     if '# Mt. Coronet + Spear Pillar' in s:
         i = s.index('    # Mt. Coronet + Spear Pillar'); j = s.index('\n]\n', i) + 1
+        k = s.find('\n    # ', i + 10)                  # alleen ons blok vervangen (andere blokken volgen erna)
+        if 0 <= k < j:
+            j = k + 1
         s = s[:i] + blk + s[j:]
     else:
         i = s.index('\n]\nFIRST, LAST')
@@ -488,9 +491,9 @@ def snow_decor(m, rnd, keep, avoid_tiles, p_block=0.06, p_soft=0.12, area=None):
             continue
         r = rnd.random()
         if r < p_block and clear(x, y, 1):
-            m.put(x, y, rnd.choice(BLOCK), 1)
+            m.put(x, y, rnd.choice([k for k in BLOCK if k in N]), 1)
         elif r < p_block + p_soft and clear(x, y, 0):
-            m.put(x, y, rnd.choice(SOFT), 0)
+            m.put(x, y, rnd.choice([k for k in SOFT if k in N]), 0)
 
 
 # --------------------------------------------------------------------- 4F buiten
@@ -576,57 +579,160 @@ def build_out(ni):
 
 
 # --------------------------------------------------------------------- Spear Pillar
-SW, SH = 30, 34
-SP_ENTRY = [(14, 31), (15, 31)]       # trap omlaag naar 6F (warps 0 en 1)
-SP_ALTARS = {'DIALGA': (9, 9), 'PALKIA': (19, 9)}
-SP_MON = {'DIALGA': (10, 10), 'PALKIA': (20, 10)}
+# Gen 3-vertaling van het Platinum-origineel (Jordi 9 okt): verhoogd zandstenen plein met een afgeschuinde rand,
+# rijen hele en gebroken speerpilaren, het embleem met de groef en de twee altaren, ingestorte blokken met verzonken
+# vloer, puin, trap + bordes in het zuiden en getrapte rotsmassieven eromheen. De trap van licht (Arceus) loopt van het
+# embleem naar het noorden; hij verschijnt pas met FLAG_HALL_OF_ORIGIN_OPEN (setmetatile in ON_LOAD).
+SEC_SPEAR = 'gTileset_SpearPillar'
+SW, SH = 34, 46
+SP_PLAT = (5, 7, 28, 37)              # platform incl. rand (x0, y0, x1, y1); voorkant op y1+1, bordes op y1+2
+SP_GAP = (16, 17)                     # trap in de zuidrand
+SP_ENTRY = [(16, SH - 3), (17, SH - 3)]   # trap omlaag naar 6F (warps 0 en 1)
+SP_EMBLEM = (16, 16)
+SP_ALTARS = {'DIALGA': (11, 15), 'PALKIA': (21, 15)}
+SP_MON = {'DIALGA': (12, 16), 'PALKIA': (22, 16)}
+SP_LIGHT = (5, 15)                    # rijen van de trap van licht (boven = warp naar de Hall, warps 2 en 3)
+SP_LIGHT_CLOSED = {}                  # (x, y) -> metatile in de dichte toestand (map.bin)
+SP_LIGHT_OPEN = {}                    # (x, y) -> metatile in de open toestand (ON_LOAD)
+# objecten links (rechts gespiegeld, met een ander soort pilaar): (soort, x, y)
+SP_LEFT = [('rbroken', 6, 8), ('rpillar_tall', 9, 8), ('rbroken_s', 6, 13), ('rpillar', 8, 19),
+           ('rpillar_tall', 13, 21), ('rbroken_s', 6, 23), ('block', 7, 27), ('rpillar', 6, 33),
+           ('rbroken_s', 10, 34), ('fallen', 12, 31), ('rbroken_s', 12, 9)]
+SP_SWAP = {'rbroken': 'rpillar', 'rpillar': 'rbroken', 'rpillar_tall': 'rpillar_tall', 'rbroken_s': 'rstump',
+           'block': 'block', 'fallen': 'fallen'}
+SP_PITS = [(7, 29, 4, 3)]             # verzonken vloer (x, y, b, h), rechts gespiegeld
+
+
+def ruin_platform(m, rnd, x0, y0, x1, y1, gap, pre='rim_', floor=None, landing=True):
+    """Platform met afgeschuinde rand (tegels uit coronet_tiles.platform_canvas)."""
+    for y in range(y0, y1 + 2):
+        for x in range(x0, x1 + 1):
+            if y == y1 + 1:
+                k = ('fl' if x == x0 else 'fr' if x == x1 else 'stl1' if x == gap[0] else 'str1' if x == gap[1]
+                     else 'fgl' if x == gap[0] - 1 else 'fgr' if x == gap[1] + 1 else 'f')
+            elif y == y0:
+                k = 'tl' if x == x0 else 'tr' if x == x1 else 't'
+            elif y == y1:
+                k = ('bl' if x == x0 else 'br' if x == x1 else 'stl0' if x == gap[0] else 'str0' if x == gap[1]
+                     else 'bgl' if x == gap[0] - 1 else 'bgr' if x == gap[1] + 1 else 'b')
+            elif x == x0:
+                k = 'l'
+            elif x == x1:
+                k = 'r'
+            else:
+                m.put(x, y, floor(x, y), 0)
+                continue
+            m.put(x, y, pre + k, 0 if k.startswith('st') else 1)
+    if landing:
+        m.put(gap[0], y1 + 2, pre + 'land_l', 0)
+        m.put(gap[1], y1 + 2, pre + 'land_r', 0)
+
+
+def put_obj(m, key, x, y):
+    br, size = ctt.spear_blocked()
+    cols, rows = size[key]
+    for dx in range(cols):
+        for dy in range(rows):
+            n = '%s_%d%d' % (key, dx, dy) if cols * rows > 1 else key
+            m.put(x + dx, y + dy, n, 1 if dy in br[key] else 0)
+    return {(x + dx, y + dy) for dx in range(cols) for dy in range(rows)}
+
+
+def pit(m, x0, y0, w, h):
+    for y in range(y0, y0 + h):
+        for x in range(x0, x0 + w):
+            v = 't' if y == y0 else 'b' if y == y0 + h - 1 else ''
+            u = 'l' if x == x0 else 'r' if x == x0 + w - 1 else ''
+            k = (v + u) or 'c'
+            if k in ('t', 'b', 'l', 'r', 'c', 'tl', 'tr', 'bl', 'br'):
+                m.put(x, y, 'pit_' + k, 0)
 
 
 def build_sp(ni):
+    sl.use_tileset('spear_pillar')
     m = sl.M(SW, SH)
-    sl.use_tileset('coronet_snow')
     rnd = random.Random(4777)
     for y in range(SH):
         for x in range(SW):
             if rnd.random() < 0.05:
                 m.put(x, y, rnd.choice(['snow_dots', 'snow_light', 'tuft0', 'tuft3']))
     raised_field(m, SW, SH)
-    plat = rect(6, 8, 23, 26)
-    sl.terrace(m, plat, face=2)
-    sl.autopath(m, rect(7, 9, 22, 24), 'path_stone')
-    stairs(m, 14, 25)                                     # trap op het platform
-    stairs(m, 14, SH - 4)                                 # trap door de zuidrand (omlaag naar 6F)
-    for x, k in ((14, 'stairs_s_l'), (15, 'stairs_s_r')):
-        m.put(x, SH - 3, k, 0, 3)
-    for kind, (x, y) in SP_ALTARS.items():
-        for dx in (0, 1):
-            for dy in (0, 1):
-                m.put(x + dx, y + dy, 'altar_%s_%d%d' % (kind.lower(), dx, dy), 1)
-    br = ctt.blocked_rows()
+    x0, y0, x1, y1 = SP_PLAT
+    # getrapte rotsmassieven rond de ruine (zoals de ringen in Platinum): zijkanten en twee blokken onderaan
+    for R in (rect(-6, 4, 3, y1 + 3), rect(x1 + 2, 4, SW + 6, y1 + 3), rect(-6, y1 + 2, 13, SH - 5),
+              rect(20, y1 + 2, SW + 6, SH - 5)):
+        sl.terrace(m, R, face=2)
+    for R in (rect(-6, 4, 1, y1 - 1), rect(x1 + 4, 4, SW + 6, y1 - 1), rect(-6, y1 + 6, 9, SH - 7),
+              rect(24, y1 + 6, SW + 6, SH - 7)):
+        sl.terrace(m, R, face=2)
+    for y in range(4, y0):                                      # vlakke sneeuw boven de noordrand (trap van licht)
+        for x in range(x0, x1 + 1):
+            m.put(x, y, 'snow', 1, 3)
 
-    def put_art(key, x, y, cols, rows):
-        for dx in range(cols):
-            for dy in range(rows):
-                m.put(x + dx, y + dy, '%s_%d%d' % (key, dx, dy), 1 if dy in br[key] else 0)
-    for (x, y) in ((7, 13), (21, 13), (7, 19)):
-        put_art('pillar', x, y, 2, 4)
-    for (x, y) in ((21, 20), (11, 18), (17, 14)):
-        put_art('pillar_broken', x, y, 2, 3)
-    EV[SP] = {'items': [((7, 10), 'ITEM_ADAMANT_ORB', item_list(ni, SP)[0][0], 1, False),
-                        ((22, 10), 'ITEM_LUSTROUS_ORB', item_list(ni, SP)[1][0], 1, False)]}
-    keyp = [(14, 29), (14, 24), (9, 11), (10, 11), (19, 11), (20, 11), (7, 11), (22, 11)]
-    keep = snow_keep(m, keyp, rect(7, 9, 22, 24))
-    for (x, y) in ((3, 5), (25, 5), (3, 27), (25, 28)):   # rotspieken in de hoeken van de top
-        for dx in (0, 1):
-            for dy in (0, 1):
-                m.put(x + dx, y + dy, 'peak_%d%d' % (dx, dy), 1)
-    snow_decor(m, rnd, keep, set(), p_block=0.08, p_soft=0.12)
-    return m, snow_g(m)
+    def floor(x, y):
+        r = rnd.random()
+        edge = x in (x0 + 1, x1 - 1) or y in (y0 + 1, y1 - 1)
+        if edge and r < 0.30:
+            return 'rfloor5'
+        return 'rfloor0' if r < 0.68 else 'rfloor%d' % rnd.choice((1, 1, 2, 3, 3, 4, 6))
+    ruin_platform(m, rnd, x0, y0, x1, y1, SP_GAP, floor=floor)
+    stairs(m, SP_GAP[0], SH - 4)                                # trap door de zuidrand (omlaag naar 6F)
+    for x in range(SP_GAP[0] - 1, SP_GAP[1] + 2):               # pad van het bordes naar de trap
+        for y in range(y1 + 3, SH - 4):
+            m.put(x, y, 'snow', 0, 3)
+    for x, k in ((SP_GAP[0], 'stairs_s_l'), (SP_GAP[1], 'stairs_s_r')):
+        m.put(x, SH - 3, k, 0, 3)
+    # groef + embleem
+    for x in range(x0 + 1, x1):
+        m.put(x, SP_EMBLEM[1], 'rgroove', 0)
+    taken = put_obj(m, 'emblem', *SP_EMBLEM)
+    m.col[SP_EMBLEM[1]][SP_EMBLEM[0]] = m.col[SP_EMBLEM[1]][SP_EMBLEM[0] + 1] = 0
+    for kind, (x, y) in SP_ALTARS.items():
+        taken |= put_obj(m, 'altar_r_' + kind.lower(), x, y)
+    for key, x, y in SP_LEFT:
+        taken |= put_obj(m, key, x, y)
+        k2 = SP_SWAP[key]
+        w = ctt.spear_blocked()[1][key][0]
+        taken |= put_obj(m, k2, x1 + x0 - x - w + 1, y)
+    for (px, py, w, h) in SP_PITS:
+        pit(m, px, py, w, h)
+        pit(m, x1 + x0 - px - w + 1, py, w, h)
+    EV[SP] = {'items': [((7, 18), 'ITEM_ADAMANT_ORB', item_list(ni, SP)[0][0], 1, False),
+                        ((26, 18), 'ITEM_LUSTROUS_ORB', item_list(ni, SP)[1][0], 1, False)]}
+    # puin op de vloer (niet op het middenpad, de groefrij of naast events)
+    keyp = [(16, y1 + 2), (16, 18), (12, 17), (13, 17), (21, 17), (22, 17), (7, 18), (26, 18)]
+    keep = snow_keep(m, keyp, rect(14, 17, 19, y1) | rect(8, 17, 25, 18))
+    for (x, y) in rect(x0 + 1, y0 + 1, x1 - 1, y1 - 1):
+        if (x, y) in keep or (x, y) in taken or m.col[y][x] or not m.g[y][x] in (N['rfloor0'], N['rfloor3']):
+            continue
+        if any((x + dx, y + dy) in taken | keep for dx in (-1, 0, 1) for dy in (-1, 0, 1)):
+            continue
+        if rnd.random() < 0.05:
+            m.put(x, y, rnd.choice(['rubble0', 'rubble1']), 1)
+            taken.add((x, y))
+    # trap van licht: dichte toestand = wat er nu ligt; open = de trap
+    for y in range(SP_LIGHT[0], SP_LIGHT[1] + 1):
+        for i, x in enumerate(SP_GAP):
+            part = 'top' if y == SP_LIGHT[0] else 'mid'
+            SP_LIGHT_CLOSED[(x, y)] = (m.g[y][x], m.col[y][x])
+            SP_LIGHT_OPEN[(x, y)] = N['lstair_%s_%s' % (part, 'lr'[i])]
+    snow_decor(m, rnd, keep, set(), p_block=0.05, p_soft=0.10,
+               area={(x, y) for x in range(SW) for y in range(SH) if not (x0 <= x <= x1 and y0 <= y <= y1 + 2)})
+    g = snow_g(m)
+    sl.use_tileset('coronet_snow')
+    return m, g
+
+
+def sp_open_grid():
+    g = [row[:] for row in MAPS[SP]]
+    for (x, y), v in SP_LIGHT_OPEN.items():
+        g[y][x] = v | (3 << 12)
+    return g
 
 
 # ====================================================================== bouwen
 BUILD = {R1: (build_r1, 'cave'), R2: (build_r2, 'cave'), R3: (build_r3, 'cave'), F5: (build_5f, 'cave'),
-         F6: (build_6f, 'cave'), OUT: (build_out, 'snow'), SP: (build_sp, 'snow')}
+         F6: (build_6f, 'cave'), OUT: (build_out, 'snow'), SP: (build_sp, 'spear')}
 
 
 def build_maps(ni):
@@ -637,7 +743,7 @@ def build_maps(ni):
         if kind == 'cave':
             save(name, g, SEC_CAVE, [cell(CID['rockD'][0], 1, 0)] * 4)
         else:
-            save(name, g, SEC_SNOW, [N['snow'] | (3 << 12)] * 4)
+            save(name, g, SEC_SPEAR if kind == 'spear' else SEC_SNOW, [N['snow'] | (3 << 12)] * 4)
 
 
 # ====================================================================== trainers
@@ -980,11 +1086,49 @@ def events():
     write_map(F6, objs + io, [warp(F6_ARRIVE[0], F6_ARRIVE[1], CONST[F5], 1, elev=3),
                               warp(F6_HOLE[0], F6_HOLE[1], CONST[SP], 0, elev=3)], ib)
     # ---------------------------------------------------------------- Spear Pillar
-    S = Scr(SP, head(SP, [('MAP_SCRIPT_ON_TRANSITION', SP + '_OnTransition')]))
+    S = Scr(SP, head(SP, [('MAP_SCRIPT_ON_LOAD', SP + '_OnLoad'), ('MAP_SCRIPT_ON_TRANSITION', SP + '_OnTransition'),
+                          ('MAP_SCRIPT_ON_FRAME_TABLE', SP + '_OnFrame')]))
     P, T = S.P, S.T
-    code = f"""{SP}_OnTransition:
+    show = ''.join('\tsetmetatile %d, %d, 0x%X, FALSE\n' % (x, y, v) for (x, y), v in sorted(SP_LIGHT_OPEN.items()))
+    code = f"""{SP}_OnLoad:
+	call_if_set FLAG_HALL_OF_ORIGIN_OPEN, {P}ShowLightStair
+	end
+
+{SP}_OnTransition:
 	setflag FLAG_HIDE_CORONET_DIALGA
 	setflag FLAG_HIDE_CORONET_PALKIA
+	call {P}ArmLightStair
+	end
+
+{SP}_OnFrame:
+	map_script_2 VAR_TEMP_4, 1, {P}LightStairScene
+	.2byte 0
+
+@ de trap van licht naar de Hall of Origin (Arceus, data/scripts/azure_flute.inc): verschijnt op Spear Pillar en op
+@ Sky Pillar zodra de Azure Flute zwijgt (FLAG_ARCEUS_SKY_PILLAR); FLAG_HALL_OF_ORIGIN_OPEN houdt hem open
+{P}ArmLightStair:
+	goto_if_unset FLAG_ARCEUS_SKY_PILLAR, Common_EventScript_NopReturn
+	goto_if_set FLAG_HALL_OF_ORIGIN_OPEN, Common_EventScript_NopReturn
+	setvar VAR_TEMP_4, 1
+	return
+
+{P}ShowLightStair:
+{show}	return
+
+{P}LightStairScene:
+	lockall
+	setvar VAR_TEMP_4, 0
+	delay 20
+	msgbox {T}ArceusCalls, MSGBOX_DEFAULT
+	closemessage
+	call AzureFlute_EventScript_Flash
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_HALL_OF_ORIGIN_OPEN
+	call {P}ShowLightStair
+	special DrawWholeMapView
+	msgbox {T}StairDescends, MSGBOX_DEFAULT
+	releaseall
 	end
 """
     texts = []
@@ -1070,6 +1214,10 @@ def events():
         ('PalkiaFled', "PALKIA steps sideways into a dimension you weren't invited to.\n\nThe pearl is still "
                        "glowing. Second date?"),
         ('PalkiaEmpty', "The pearl is still. Space here is perfectly normal. It's unsettling."),
+        ('ArceusCalls', "The AZURE FLUTE starts playing on its own, from inside your bag.\n\n"
+                        "ARCEUS: Up here. Above the spear. You've been standing on my doorstep this whole time."),
+        ('StairDescends', "A stair of light unfolds from the emblem up into the sky.\n\n"
+                          "DIALGA and PALKIA would like it noted that they were never given a staircase."),
         ('BothDone', "Time and space both stop to look at you.\n\nThat's never a good sign.\n\n"
                      "SPEAR PILLAR folds up like a pop-up book, and you are the part that doesn't fit."),
     ]
@@ -1085,8 +1233,11 @@ def events():
     for kind, (x, y) in SP_ALTARS.items():
         for dx in (0, 1):
             bgs.append(bd.sign(x + dx, y + 1, P + kind.title() + 'Altar', 'BG_EVENT_PLAYER_FACING_NORTH'))
+    top = SP_LIGHT[0]
     write_map(SP, objs, [warp(SP_ENTRY[0][0], SP_ENTRY[0][1], CONST[F6], 1, elev=3),
-                         warp(SP_ENTRY[1][0], SP_ENTRY[1][1], CONST[F6], 1, elev=3)], bgs,
+                         warp(SP_ENTRY[1][0], SP_ENTRY[1][1], CONST[F6], 1, elev=3),
+                         warp(SP_GAP[0], top, 'HALL_OF_ORIGIN_STAIRWAY', 0, elev=3),
+                         warp(SP_GAP[1], top, 'HALL_OF_ORIGIN_STAIRWAY', 0, elev=3)], bgs,
               map_type='MAP_TYPE_ROUTE')
 
 
@@ -1111,11 +1262,18 @@ def checks():
                 dx, dy = FACE[o['movement_type'].split('_')[-1]]
                 for k in range(1, int(o['trainer_sight_or_berry_tree_id']) + 1):
                     assert (o['x'] + dx * k, o['y'] + dy * k) in r_all, (name, 'zichtlijn', o['script'], k)
+        r_open = mf.reachable(sp_open_grid(), start, solid - movable) if name == SP else r_all
         for w in d['warp_events']:
-            assert (w['x'], w['y']) in r_all or (w['x'], w['y']) == start, (name, 'warp onbereikbaar', w)
+            p = (w['x'], w['y'])
+            if name == SP and w['dest_map'] == 'MAP_HALL_OF_ORIGIN_STAIRWAY':
+                assert p not in r_all and p in r_open, (name, 'trap van licht', p)
+                continue
+            assert p in r_all or p == start, (name, 'warp onbereikbaar', w)
         for b in d['bg_events']:
             p = (b['x'], b['y'])
             assert p in r_all if b['type'] == 'hidden_item' else mf.next_to(r_all, *p), (name, 'bg onbereikbaar', p)
+        if name == SP:
+            assert len(r_open - r_all) <= 2 * (SP_LIGHT[1] - SP_LIGHT[0] + 1), 'trap van licht opent meer dan de trap'
         print('%-22s bereikbaar: %d tegels' % (name, len(r_all)))
     # 5F: het puinhek houdt de bovenste laag dicht; een duwsteen twee keer omhoog opent hem
     g = MAPS[F5]

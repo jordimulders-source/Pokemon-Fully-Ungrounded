@@ -1620,3 +1620,14 @@ const struct Tileset gTileset_YoshiHouse = // Project Grounded: Yoshi's Island: 
     .metatileAttributes = gMetatileAttributes_YoshiHouse,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SpearPillar = // Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken (coronet_tiles.py)
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SpearPillar,
+    .palettes = gTilesetPalettes_SpearPillar,
+    .metatiles = gMetatiles_SpearPillar,
+    .metatileAttributes = gMetatileAttributes_SpearPillar,
+    .callback = NULL,
+};

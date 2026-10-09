@@ -1,11 +1,71 @@
 @ Project Grounded: SpearPillar (tools/grounded/maptools/coronet.py)
 SpearPillar_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, SpearPillar_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, SpearPillar_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SpearPillar_OnFrame
 	.byte 0
+
+SpearPillar_OnLoad:
+	call_if_set FLAG_HALL_OF_ORIGIN_OPEN, SpearPillar_EventScript_ShowLightStair
+	end
 
 SpearPillar_OnTransition:
 	setflag FLAG_HIDE_CORONET_DIALGA
 	setflag FLAG_HIDE_CORONET_PALKIA
+	call SpearPillar_EventScript_ArmLightStair
+	end
+
+SpearPillar_OnFrame:
+	map_script_2 VAR_TEMP_4, 1, SpearPillar_EventScript_LightStairScene
+	.2byte 0
+
+@ de trap van licht naar de Hall of Origin (Arceus, data/scripts/azure_flute.inc): verschijnt op Spear Pillar en op
+@ Sky Pillar zodra de Azure Flute zwijgt (FLAG_ARCEUS_SKY_PILLAR); FLAG_HALL_OF_ORIGIN_OPEN houdt hem open
+SpearPillar_EventScript_ArmLightStair:
+	goto_if_unset FLAG_ARCEUS_SKY_PILLAR, Common_EventScript_NopReturn
+	goto_if_set FLAG_HALL_OF_ORIGIN_OPEN, Common_EventScript_NopReturn
+	setvar VAR_TEMP_4, 1
+	return
+
+SpearPillar_EventScript_ShowLightStair:
+	setmetatile 16, 5, 0x300, FALSE
+	setmetatile 16, 6, 0x2FE, FALSE
+	setmetatile 16, 7, 0x2FE, FALSE
+	setmetatile 16, 8, 0x2FE, FALSE
+	setmetatile 16, 9, 0x2FE, FALSE
+	setmetatile 16, 10, 0x2FE, FALSE
+	setmetatile 16, 11, 0x2FE, FALSE
+	setmetatile 16, 12, 0x2FE, FALSE
+	setmetatile 16, 13, 0x2FE, FALSE
+	setmetatile 16, 14, 0x2FE, FALSE
+	setmetatile 16, 15, 0x2FE, FALSE
+	setmetatile 17, 5, 0x301, FALSE
+	setmetatile 17, 6, 0x2FF, FALSE
+	setmetatile 17, 7, 0x2FF, FALSE
+	setmetatile 17, 8, 0x2FF, FALSE
+	setmetatile 17, 9, 0x2FF, FALSE
+	setmetatile 17, 10, 0x2FF, FALSE
+	setmetatile 17, 11, 0x2FF, FALSE
+	setmetatile 17, 12, 0x2FF, FALSE
+	setmetatile 17, 13, 0x2FF, FALSE
+	setmetatile 17, 14, 0x2FF, FALSE
+	setmetatile 17, 15, 0x2FF, FALSE
+	return
+
+SpearPillar_EventScript_LightStairScene:
+	lockall
+	setvar VAR_TEMP_4, 0
+	delay 20
+	msgbox SpearPillar_Text_ArceusCalls, MSGBOX_DEFAULT
+	closemessage
+	call AzureFlute_EventScript_Flash
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_HALL_OF_ORIGIN_OPEN
+	call SpearPillar_EventScript_ShowLightStair
+	special DrawWholeMapView
+	msgbox SpearPillar_Text_StairDescends, MSGBOX_DEFAULT
+	releaseall
 	end
 
 SpearPillar_EventScript_DialgaAltar::
@@ -165,6 +225,19 @@ SpearPillar_Text_PalkiaFled:
 SpearPillar_Text_PalkiaEmpty:
 	.string "The pearl is still. Space here is\n"
 	.string "perfectly normal. It's unsettling.$"
+
+SpearPillar_Text_ArceusCalls:
+	.string "The AZURE FLUTE starts playing on its\n"
+	.string "own, from inside your bag.\p"
+	.string "ARCEUS: Up here. Above the spear. You've\n"
+	.string "been standing on my doorstep this\l"
+	.string "whole time.$"
+
+SpearPillar_Text_StairDescends:
+	.string "A stair of light unfolds from the emblem\n"
+	.string "up into the sky.\p"
+	.string "DIALGA and PALKIA would like it noted\n"
+	.string "that they were never given a staircase.$"
 
 SpearPillar_Text_BothDone:
 	.string "Time and space both stop to look at\n"

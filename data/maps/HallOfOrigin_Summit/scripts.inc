@@ -112,31 +112,31 @@ HallOfOrigin_Summit_EventScript_Altar::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 HallOfOrigin_Summit_Text_OrdoIntro:
-	.string "Emissary of order. My POKéMON built this\n"
-	.string "hall. Stone by stone. Then they built\l"
-	.string "themselves.\p"
-	.string "Then they argued about it for three\n"
-	.string "thousand years.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: ORDER.\p"
+	.string "Six golems, one ancient blueprint, and\n"
+	.string "me: the prototype. ARCEUS kept the\l"
+	.string "receipt.$"
 
 HallOfOrigin_Summit_Text_OrdoDefeat:
-	.string "Order... restored? No. Disrupted. By you.\n"
-	.string "Great.$"
+	.string "Order... disrupted. Filing it under 'you'.$"
 
 HallOfOrigin_Summit_Text_OrdoPost:
 	.string "REGIGIGAS is slow to start. So was\n"
 	.string "creation. Look how that turned out.$"
 
 HallOfOrigin_Summit_Text_KairosIntro:
-	.string "Emissary of time and space. I am the\n"
-	.string "right moment, in the right place.\p"
-	.string "You are neither. Let's fix that.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: TIME\n"
+	.string "AND SPACE.\p"
+	.string "I am the last door. ARCEUS is behind me.\n"
+	.string "Literally. Don't look, it makes him\l"
+	.string "self-conscious.$"
 
 HallOfOrigin_Summit_Text_KairosDefeat:
 	.string "That... was the right moment. Just not\n"
 	.string "for me.$"
 
 HallOfOrigin_Summit_Text_KairosPost:
-	.string "ARCEUS is waiting at the altar. It has\n"
+	.string "ARCEUS is waiting on the wheel. It has\n"
 	.string "been waiting since before waiting was\l"
 	.string "invented.$"
 
@@ -185,8 +185,9 @@ HallOfOrigin_Summit_Text_ArceusWaits:
 	.string "the time there is. Literally.$"
 
 HallOfOrigin_Summit_Text_ArceusNotYet:
-	.string "ARCEUS watches you from the altar.\p"
-	.string "ARCEUS: My emissaries have opinions\n"
+	.string "ARCEUS watches you from the golden\n"
+	.string "wheel.\p"
+	.string "ARCEUS: My constructs have opinions\n"
 	.string "about you. {STR_VAR_1} of nine have shared\l"
 	.string "theirs.\p"
 	.string "Hear the rest. Then we talk.$"

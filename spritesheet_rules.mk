@@ -5141,3 +5141,7 @@ $(OBJEVENTGFXDIR)/people/yoshi_white_ow.4bpp: %.4bpp: %.png
 # Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
 $(OBJEVENTGFXDIR)/people/yoshi_blue_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py) (16x32)
+$(OBJEVENTGFXDIR)/people/construct.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

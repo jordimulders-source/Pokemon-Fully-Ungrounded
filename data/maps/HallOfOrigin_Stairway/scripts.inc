@@ -28,45 +28,45 @@ HallOfOrigin_Stairway_EventScript_Fountain::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 HallOfOrigin_Stairway_Text_StratosIntro:
-	.string "I am the emissary of the sky. ARCEUS\n"
-	.string "made the sky on the second day.\p"
-	.string "I was made on the third. I'm still bitter\n"
-	.string "about it.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: SKY.\p"
+	.string "ARCEUS carved me out of a cloud. It\n"
+	.string "took six tries. The other five drifted\l"
+	.string "off.$"
 
 HallOfOrigin_Stairway_Text_StratosDefeat:
-	.string "Grounded. By you. The irony is not lost\n"
-	.string "on me.$"
+	.string "Altitude... lost. Filing a complaint with\n"
+	.string "gravity.$"
 
 HallOfOrigin_Stairway_Text_StratosPost:
-	.string "Above us there's only more of ARCEUS.\n"
-	.string "Mind your head.$"
+	.string "My maker watches through my eyes. Wave.\n"
+	.string "No, the other eye.$"
 
 HallOfOrigin_Stairway_Text_ThalassaIntro:
-	.string "Emissary of the sea. Yes, I'm in a\n"
-	.string "swimsuit at the top of the sky.\p"
-	.string "ARCEUS said 'dress for the job you\n"
-	.string "want'.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: SEA.\p"
+	.string "I am made of stone and I guard the\n"
+	.string "ocean. Nobody at the planning meeting\l"
+	.string "saw the problem.$"
 
 HallOfOrigin_Stairway_Text_ThalassaDefeat:
-	.string "Washed up. On a mountain. Somehow.$"
+	.string "Sinking. As predicted. By everyone.$"
 
 HallOfOrigin_Stairway_Text_ThalassaPost:
 	.string "Every ocean in every dimension says hi.\n"
 	.string "They're mostly salty about it.$"
 
 HallOfOrigin_Stairway_Text_BedrockIntro:
-	.string "Emissary of the land. Before there was\n"
-	.string "ground, there was me, waiting to be\l"
-	.string "stood on.\p"
-	.string "Go on. Everyone does.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: LAND.\p"
+	.string "I was the first thing ARCEUS made after\n"
+	.string "the floor. Technically, I am also the\l"
+	.string "floor.$"
 
 HallOfOrigin_Stairway_Text_BedrockDefeat:
 	.string "Eroded. It happens to the best of us.\n"
 	.string "Slowly, usually.$"
 
 HallOfOrigin_Stairway_Text_BedrockPost:
-	.string "The atrium is up the stairs. The stairs\n"
-	.string "are me, technically. You're welcome.$"
+	.string "Mind the steps. They're my cousins. They\n"
+	.string "bite.$"
 
 HallOfOrigin_Stairway_Text_Fountain:
 	.string "A pool of light, humming to itself. Your\n"

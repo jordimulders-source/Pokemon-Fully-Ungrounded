@@ -3907,8 +3907,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, trap: emissary van de lucht (hall_of_origin.py) */
 === TRAINER_HOO_STRATOS ===
 Name: STRATOS
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Construct
+Pic: Construct Sky
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -5398,9 +5398,9 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, trap: emissary van de zee (hall_of_origin.py) */
 === TRAINER_HOO_THALASSA ===
 Name: THALASSA
-Class: Beauty
-Pic: Beauty
-Gender: Female
+Class: Construct
+Pic: Construct Sea
+Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -14216,8 +14216,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, trap: emissary van het land (hall_of_origin.py) */
 === TRAINER_HOO_BEDROCK ===
 Name: BEDROCK
-Class: Hiker
-Pic: Hiker
+Class: Construct
+Pic: Construct Land
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -14851,8 +14851,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, atrium: emissary van de geest (hall_of_origin.py) */
 === TRAINER_HOO_NOUS ===
 Name: NOUS
-Class: Psychic
-Pic: Psychic M
+Class: Construct
+Pic: Construct Mind
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -14902,9 +14902,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 /* Project Grounded: Hall of Origin, atrium: emissary van de dromen (hall_of_origin.py) */
 === TRAINER_HOO_SOMNIA ===
 Name: SOMNIA
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
+Class: Construct
+Pic: Construct Dream
+Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -17175,8 +17175,8 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 /* Project Grounded: Hall of Origin, atrium: emissary van de rechtvaardigheid (hall_of_origin.py) */
 === TRAINER_HOO_GLADIUS ===
 Name: GLADIUS
-Class: Black Belt
-Pic: Black Belt
+Class: Construct
+Pic: Construct Justice
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -17526,8 +17526,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, atrium: emissary van het vuur (de smidse) (hall_of_origin.py) */
 === TRAINER_HOO_HEPHAEST ===
 Name: HEPHAEST
-Class: Kindler
-Pic: Kindler
+Class: Construct
+Pic: Construct Forge
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -18914,8 +18914,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 /* Project Grounded: Hall of Origin, top: emissary van de orde (de bouwers) (hall_of_origin.py) */
 === TRAINER_HOO_ORDO ===
 Name: ORDO
-Class: Expert
-Pic: Expert M
+Class: Construct
+Pic: Construct Order
 Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
@@ -18973,9 +18973,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 /* Project Grounded: Hall of Origin, top: emissary van tijd en ruimte (de laatste) (hall_of_origin.py) */
 === TRAINER_HOO_KAIROS ===
 Name: KAIROS
-Class: Expert
-Pic: Expert F
-Gender: Female
+Class: Construct
+Pic: Construct Spacetime
+Gender: Male
 Music: Intense
 Items: Full Restore / Full Restore
 Double Battle: No

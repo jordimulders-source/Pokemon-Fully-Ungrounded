@@ -115,53 +115,54 @@ def mon(head, moves, lvl=100):
 
 
 TRAINERS = [  # (sleutel, id, oude constante, naam, klasse, pic, gender, gfx, team, waarom)
-    ('STRATOS', 117, 'CINDY_2', 'STRATOS', 'Bird Keeper', 'Bird Keeper', 'Male', 'OBJ_EVENT_GFX_MAN_4', [
+    # de emissaries zijn constructen van ARCEUS: eigen klasse en sprite, paletwissel per thema (tools/grounded/construct_sprites.py)
+    ('STRATOS', 117, 'CINDY_2', 'STRATOS', 'Construct', 'Construct Sky', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_SKY', [
         mon('Ho-Oh @ Leftovers', ['Sacred Fire', 'Brave Bird', 'Earthquake', 'Recover']),
         mon('Tornadus', ['Hurricane', 'Heat Wave', 'Focus Blast', 'Tailwind']),
         mon('Thundurus', ['Thunderbolt', 'Focus Blast', 'Grass Knot', 'Nasty Plot']),
         mon('Rayquaza @ Life Orb', ['Dragon Ascent', 'Extreme Speed', 'Earthquake', 'Dragon Dance'])],
      'Hall of Origin, trap: emissary van de lucht'),
-    ('THALASSA', 173, 'DUDLEY', 'THALASSA', 'Beauty', 'Beauty', 'Female', 'OBJ_EVENT_GFX_BEAUTY', [
+    ('THALASSA', 173, 'DUDLEY', 'THALASSA', 'Construct', 'Construct Sea', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_SEA', [
         mon('Tapu Fini', ['Moonblast', 'Surf', "Nature's Madness", 'Calm Mind']),
         mon('Suicune', ['Scald', 'Ice Beam', 'Extrasensory', 'Calm Mind']),
         mon('Lugia @ Leftovers', ['Aeroblast', 'Psychic', 'Roost', 'Calm Mind']),
         mon('Kyogre @ Mystic Water', ['Origin Pulse', 'Ice Beam', 'Thunder', 'Calm Mind'])],
      'Hall of Origin, trap: emissary van de zee'),
-    ('BEDROCK', 462, 'KAYLEE', 'BEDROCK', 'Hiker', 'Hiker', 'Male', 'OBJ_EVENT_GFX_HIKER', [
+    ('BEDROCK', 462, 'KAYLEE', 'BEDROCK', 'Construct', 'Construct Land', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_LAND', [
         mon('Terrakion', ['Close Combat', 'Stone Edge', 'Earthquake', 'Swords Dance']),
         mon('Ting-Lu @ Leftovers', ['Ruination', 'Earthquake', 'Heavy Slam', 'Stealth Rock']),
         mon('Landorus', ['Earth Power', 'Sludge Bomb', 'Stone Edge', 'Rock Polish']),
         mon('Groudon @ Soft Sand', ['Precipice Blades', 'Stone Edge', 'Fire Punch', 'Swords Dance'])],
      'Hall of Origin, trap: emissary van het land'),
-    ('NOUS', 485, 'AMY_AND_LIV_3', 'NOUS', 'Psychic', 'Psychic M', 'Male', 'OBJ_EVENT_GFX_PSYCHIC_M', [
+    ('NOUS', 485, 'AMY_AND_LIV_3', 'NOUS', 'Construct', 'Construct Mind', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_MIND', [
         mon('Uxie', ['Psychic', 'U-turn', 'Yawn', 'Stealth Rock']),
         mon('Mesprit', ['Psychic', 'Ice Beam', 'Thunderbolt', 'Calm Mind']),
         mon('Azelf', ['Psychic', 'Flamethrower', 'Dazzling Gleam', 'Nasty Plot']),
         mon('Deoxys @ Focus Sash', ['Psycho Boost', 'Superpower', 'Extreme Speed', 'Ice Beam']),
         mon('Mewtwo @ Life Orb', ['Psystrike', 'Aura Sphere', 'Ice Beam', 'Recover'])],
      'Hall of Origin, atrium: emissary van de geest'),
-    ('SOMNIA', 486, 'GINA_AND_MIA_2', 'SOMNIA', 'Hex Maniac', 'Hex Maniac', 'Female', 'OBJ_EVENT_GFX_HEX_MANIAC', [
+    ('SOMNIA', 486, 'GINA_AND_MIA_2', 'SOMNIA', 'Construct', 'Construct Dream', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_DREAM', [
         mon('Cresselia @ Leftovers', ['Psychic', 'Moonblast', 'Moonlight', 'Calm Mind']),
         mon('Jirachi', ['Doom Desire', 'Psychic', 'Thunderbolt', 'Calm Mind']),
         mon('Tapu Lele', ['Psychic', 'Moonblast', 'Focus Blast', 'Calm Mind']),
         mon('Mew', ['Psychic', 'Aura Sphere', 'Will-O-Wisp', 'Nasty Plot']),
         mon('Darkrai @ Life Orb', ['Dark Pulse', 'Sludge Bomb', 'Focus Blast', 'Nasty Plot'])],
      'Hall of Origin, atrium: emissary van de dromen'),
-    ('GLADIUS', 568, 'GRUNT_UNUSED', 'GLADIUS', 'Black Belt', 'Black Belt', 'Male', 'OBJ_EVENT_GFX_BLACK_BELT', [
+    ('GLADIUS', 568, 'GRUNT_UNUSED', 'GLADIUS', 'Construct', 'Construct Justice', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_JUSTICE', [
         mon('Virizion', ['Leaf Blade', 'Close Combat', 'Stone Edge', 'Swords Dance']),
         mon('Cobalion', ['Close Combat', 'Iron Head', 'Stone Edge', 'Swords Dance']),
         mon('Keldeo', ['Secret Sword', 'Hydro Pump', 'Air Slash', 'Calm Mind']),
         mon('Urshifu_Rapid_Strike @ Choice Band', ['Surging Strikes', 'Close Combat', 'Aqua Jet', 'U-turn']),
         mon('Zacian @ Rusted Sword', ['Behemoth Blade', 'Play Rough', 'Close Combat', 'Swords Dance'])],
      'Hall of Origin, atrium: emissary van de rechtvaardigheid'),
-    ('HEPHAEST', 581, 'TERRY', 'HEPHAEST', 'Kindler', 'Kindler', 'Male', 'OBJ_EVENT_GFX_MAN_5', [
+    ('HEPHAEST', 581, 'TERRY', 'HEPHAEST', 'Construct', 'Construct Forge', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_FORGE', [
         mon('Victini', ['V-create', 'Zen Headbutt', 'U-turn', 'Bolt Strike']),
         mon('Volcanion', ['Steam Eruption', 'Flamethrower', 'Earth Power', 'Sludge Bomb']),
         mon('Chi-Yu', ['Heat Wave', 'Dark Pulse', 'Psychic', 'Nasty Plot']),
         mon('Heatran @ Leftovers', ['Magma Storm', 'Earth Power', 'Flash Cannon', 'Stealth Rock']),
         mon('Reshiram @ Charcoal', ['Blue Flare', 'Draco Meteor', 'Earth Power', 'Roost'])],
      'Hall of Origin, atrium: emissary van het vuur (de smidse)'),
-    ('ORDO', 633, 'LUCAS_2', 'ORDO', 'Expert', 'Expert M', 'Male', 'OBJ_EVENT_GFX_EXPERT_M', [
+    ('ORDO', 633, 'LUCAS_2', 'ORDO', 'Construct', 'Construct Order', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_ORDER', [
         mon('Regirock', ['Stone Edge', 'Hammer Arm', 'Curse', 'Stealth Rock']),
         mon('Regice', ['Ice Beam', 'Thunderbolt', 'Focus Blast', 'Amnesia']),
         mon('Registeel', ['Iron Head', 'Body Press', 'Iron Defense', 'Curse']),
@@ -169,7 +170,7 @@ TRAINERS = [  # (sleutel, id, oude constante, naam, klasse, pic, gender, gfx, te
         mon('Regidrago', ['Dragon Energy', 'Draco Meteor', 'Fire Fang', 'Earthquake']),
         mon('Regigigas @ Leftovers', ['Body Slam', 'Knock Off', 'Earthquake', 'Drain Punch'])],
      'Hall of Origin, top: emissary van de orde (de bouwers)'),
-    ('KAIROS', 634, 'MIKE_1', 'KAIROS', 'Expert', 'Expert F', 'Female', 'OBJ_EVENT_GFX_EXPERT_F', [
+    ('KAIROS', 634, 'MIKE_1', 'KAIROS', 'Construct', 'Construct Spacetime', 'Male', 'OBJ_EVENT_GFX_CONSTRUCT_SPACETIME', [
         mon('Celebi', ['Leaf Storm', 'Psychic', 'Earth Power', 'Recover']),
         mon('Hoopa-Unbound', ['Hyperspace Fury', 'Psychic', 'Gunk Shot', 'Drain Punch']),
         mon('Eternatus', ['Dynamax Cannon', 'Sludge Bomb', 'Flamethrower', 'Recover']),
@@ -224,12 +225,18 @@ def trainers():
         for name in (new, 'TRAINER_' + old):
             tag = '=== %s ===\n' % name
             if tag in s:
-                i = s.index(tag)
+                t0 = i = s.index(tag)
                 k = s.rfind('\n', 0, i - 1) + 1
                 if s[k:i].startswith('/* Project Grounded: '):
                     i = k
-                j = s.find('\n=== ', i + len(tag))
-                j = len(s) if j < 0 else j + 1
+                j = s.find('\n=== ', t0 + len(tag))       # vanaf de eigen kop zoeken, niet vanaf het commentaar
+                if j < 0:
+                    j = len(s)
+                else:
+                    j += 1
+                    k = s.rfind('\n', 0, j - 1) + 1         # commentaar van het volgende blok laten staan
+                    if s[k:j].startswith('/* '):
+                        j = k
                 s = s[:i] + blk + s[j:]
                 break
         else:
@@ -242,145 +249,160 @@ def rect(x0, y0, x1, y1):
     return co.rect(x0, y0, x1, y1)
 
 
-def north_wall(m):
-    north = {(x, y) for x in range(-6, m.W + 6) for y in range(-6, 4)}
-    sl.terrace(m, north, face=3)
-
-
-def base(W, H, seed):
+def sky(W, H, seed):
+    """Leegte van licht en wolken (tileset spear_pillar, palet LITE): onbegaanbaar."""
+    sl.use_tileset('spear_pillar')
     m = sl.M(W, H)
-    sl.use_tileset('coronet_snow')
-    rnd = random.Random(seed)
     for y in range(H):
         for x in range(W):
-            if rnd.random() < 0.05:
-                m.put(x, y, rnd.choice(['snow_dots', 'snow_light', 'tuft0', 'tuft3']))
-    field = {(x, y) for x in range(1, W - 1) for y in range(-6, H - 2)}
-    before = [row[:] for row in m.g]
-    sl.terrace(m, field, face=2)
-    for y in range(H):
-        for x in range(W):
-            if m.g[y][x] == N['cliff_c']:
-                m.g[y][x] = before[y][x]
-    return m, rnd
+            m.put(x, y, 'cloud_%d%d' % (x % 2, y % 2), 1, 3)
+    return m, random.Random(seed)
 
 
-def step(m, x0, x1, y1, sx):
-    """Een trede van de piramide: terras x0..x1, van ver boven de kaart tot y1 (zuidwand 2 rijen), met een trap op
-    sx (2 breed) door de zuidwand."""
-    sl.terrace(m, rect(x0, -6, x1, y1), face=2)
-    co.stairs(m, sx, y1 - 1)
+def lfloor(rnd):
+    def f(x, y):
+        r = rnd.random()
+        return 'lfloor0' if r < 0.82 else 'lfloor1' if r < 0.93 else 'lfloor2'
+    return f
 
 
-def entry(m, sx):
-    H = m.H
-    co.stairs(m, sx, H - 4)
-    for x, k in ((sx, 'stairs_s_l'), (sx + 1, 'stairs_s_r')):
-        m.put(x, H - 3, k, 0, 3)
-    return [(sx, H - 3), (sx + 1, H - 3)]
+def platform(m, rnd, x0, y0, x1, y1, gap):
+    """Zwevend platform van licht (wit glas, gouden rand, gloeiende onderkant) met een trapgat in het zuiden."""
+    co.ruin_platform(m, rnd, x0, y0, x1, y1, gap, pre='lrim_', floor=lfloor(rnd), landing=False)
 
 
-def put_art(m, key, x, y, cols, rows):
-    br = co.ctt.blocked_rows()
-    for dx in range(cols):
-        for dy in range(rows):
-            m.put(x + dx, y + dy, '%s_%d%d' % (key, dx, dy), 1 if dy in br[key] else 0)
+def light_stair(m, gap, ya, yb, top=False, bot=False):
+    """Trap van licht van rij ya t/m yb (ya = boven); top/bot = pijl-warp (noord/zuid) op de uiterste rij."""
+    for y in range(ya, yb + 1):
+        part = 'top' if (top and y == ya) else 'bot' if (bot and y == yb) else 'mid'
+        for i, x in enumerate(gap):
+            m.put(x, y, 'lstair_%s_%s' % (part, 'lr'[i]), 0, 3)
 
 
-def path(m, cells, key='path_stone'):
-    sl.autopath(m, cells, key)
+def runner(m, gap, ya, yb):
+    """Loper van licht over het middenpad (rij ya t/m yb)."""
+    for y in range(ya, yb + 1):
+        m.put(gap[0], y, 'lrun_l', 0)
+        m.put(gap[1], y, 'lrun_r', 0)
+
+
+def put_art(m, key, x, y):
+    return co.put_obj(m, key, x, y)
+
+
+def decor_pillars(m, rows, keep):
+    taken = set()
+    for key, x, y in rows:
+        cells = put_art(m, key, x, y)
+        assert not cells & keep, ('pilaar op een pad/event', key, x, y)
+        taken |= cells
+    return taken
+
+
+def mirror(items, x0, x1, swap=None):
+    out = []
+    for key, x, y in items:
+        w = co.ctt.spear_blocked()[1][key][0]
+        out.append((key, x, y))
+        out.append(((swap or {}).get(key, key), x0 + x1 - x - w + 1, y))
+    return out
 
 
 MAPS, EV = {}, {}
 
 
-# --------------------------------------------------------------------- de trap (lucht, zee, land)
-ST_W, ST_H = 26, 48
-ST_TRAINERS = {'STRATOS': ((12, 30), 'DOWN', 4), 'THALASSA': ((13, 19), 'DOWN', 4), 'BEDROCK': ((12, 8), 'DOWN', 4)}
-ST_FOUNTAIN = (9, 42)
+# --------------------------------------------------------------------- de trap (lucht, zee, land): drie zwevende platforms
+ST_W, ST_H = 26, 52
+ST_GAP = (12, 13)
+ST_TRAINERS = {'STRATOS': ((8, 40), 'RIGHT', 5), 'THALASSA': ((17, 27), 'LEFT', 5), 'BEDROCK': ((9, 13), 'RIGHT', 4)}
+ST_FOUNTAIN = (8, 44)
 
 
 def build_stairway(ni):
-    m, rnd = base(ST_W, ST_H, 6101)
-    step(m, 3, 22, 36, 12)
-    step(m, 5, 20, 25, 12)
-    step(m, 7, 18, 14, 12)
-    north_wall(m)
-    EV[ST] = {'entry': entry(m, 12), 'door': co.door(m, 11, 2)}
-    path(m, rect(12, 4, 13, 4) | rect(8, 5, 17, 12) | rect(6, 15, 19, 23) | rect(4, 26, 21, 34) | rect(12, 37, 13, 43))
-    for (x, y) in ((8, 6), (16, 6), (6, 18), (18, 18), (4, 30), (20, 30)):
-        put_art(m, 'pillar', x, y, 2, 4)
-    for (x, y) in ((8, 10), (17, 21)):
-        put_art(m, 'pillar_broken', x, y, 2, 3)
-    m.put(*ST_FOUNTAIN, 'ice_crystal', 1)
+    m, rnd = sky(ST_W, ST_H, 6101)
+    g = ST_GAP
+    platform(m, rnd, 4, 36, 21, 45, g)
+    platform(m, rnd, 6, 22, 19, 31, g)
+    platform(m, rnd, 8, 8, 17, 17, g)
+    for ya, yb in ((37, 44), (23, 30), (9, 16)):
+        runner(m, g, ya, yb)
+    light_stair(m, g, 47, 49, bot=True)
+    light_stair(m, g, 33, 36)
+    light_stair(m, g, 19, 22)
+    light_stair(m, g, 4, 8, top=True)
+    EV[ST] = {'entry': [(g[0], 49), (g[1], 49)], 'top': [(g[0], 4), (g[1], 4)]}
     it = co.item_list(ni, ST)
-    EV[ST]['items'] = [((7, 22), it[0][1], it[0][0], it[0][2], it[0][3])]
-    keep = co.snow_keep(m, [EV[ST]['entry'][0], (12, 4), (7, 22), (9, 43)] +
-                        [p for p, *_ in ST_TRAINERS.values()], rect(11, 3, 14, 45))
-    co.snow_decor(m, rnd, keep, set(), p_block=0.05, p_soft=0.10)
+    EV[ST]['items'] = [((16, 30), it[0][1], it[0][0], it[0][2], it[0][3])]
+    keep = {p for p, *_ in ST_TRAINERS.values()} | {ST_FOUNTAIN, (16, 30)} | set(co.rect(11, 9, 14, 44))
+    for _, (xy, face, n) in ST_TRAINERS.items():
+        dx, dy = co.FACE[face]
+        keep |= {(xy[0] + dx * k, xy[1] + dy * k) for k in range(0, n + 1)}
+    pil = mirror([('mpillar', 5, 37), ('mbroken', 5, 42), ('mpillar', 7, 23), ('mbroken', 9, 9)], 4, 21) + \
+        mirror([('mbroken', 7, 28)], 6, 19)
+    decor_pillars(m, pil, keep)
+    m.put(*ST_FOUNTAIN, 'fountain', 1)
     return m
 
 
 # --------------------------------------------------------------------- het atrium (geest, dromen, recht, vuur)
-AT_W, AT_H = 34, 36
-AT_TRAINERS = {'NOUS': ((10, 25), 'RIGHT', 5), 'SOMNIA': ((23, 25), 'LEFT', 5),
-               'GLADIUS': ((13, 9), 'RIGHT', 2), 'HEPHAEST': ((20, 9), 'LEFT', 2)}
-AT_FOUNTAIN = (13, 29)
+AT_W, AT_H = 34, 40
+AT_GAP = (16, 17)
+AT_TRAINERS = {'NOUS': ((12, 29), 'RIGHT', 4), 'SOMNIA': ((21, 26), 'LEFT', 4),
+               'GLADIUS': ((12, 18), 'RIGHT', 4), 'HEPHAEST': ((21, 15), 'LEFT', 4)}
+AT_FOUNTAIN = (8, 31)
 
 
 def build_atrium(ni):
-    m, rnd = base(AT_W, AT_H, 6102)
-    step(m, 3, 30, 31, 16)
-    step(m, 8, 25, 20, 16)
-    north_wall(m)
-    EV[AT] = {'entry': entry(m, 16), 'door': co.door(m, 15, 2)}
-    plaza = rect(6, 21, 27, 27) | rect(16, 28, 17, 29) | rect(16, 4, 17, 4) | rect(9, 5, 24, 18)
-    path(m, plaza)
-    for (x, y) in ((7, 22), (25, 22), (9, 5), (23, 5), (9, 13), (23, 13)):
-        put_art(m, 'pillar', x, y, 2, 4)
-    for (x, y) in ((16, 14),):
-        put_art(m, 'pillar_broken', x - 4, y, 2, 3)
-    m.put(*AT_FOUNTAIN, 'ice_crystal', 1)
+    m, rnd = sky(AT_W, AT_H, 6102)
+    g = AT_GAP
+    platform(m, rnd, 3, 9, 30, 33, g)
+    runner(m, g, 10, 32)
+    light_stair(m, g, 35, 37, bot=True)
+    light_stair(m, g, 4, 9, top=True)
+    EV[AT] = {'entry': [(g[0], 37), (g[1], 37)], 'top': [(g[0], 4), (g[1], 4)]}
     it = co.item_list(ni, AT)
-    EV[AT]['items'] = [((27, 24), it[0][1], it[0][0], it[0][2], it[0][3]),
-                       ((11, 17), it[1][1], it[1][0], it[1][2], it[1][3])]
-    keep = co.snow_keep(m, [EV[AT]['entry'][0], (16, 4), (27, 24), (11, 17), (13, 28)] +
-                        [p for p, *_ in AT_TRAINERS.values()], plaza)
-    co.snow_decor(m, rnd, keep, set(), p_block=0.05, p_soft=0.10)
+    EV[AT]['items'] = [((27, 30), it[0][1], it[0][0], it[0][2], it[0][3]),
+                       ((9, 22), it[1][1], it[1][0], it[1][2], it[1][3])]
+    keep = {p for p, *_ in AT_TRAINERS.values()} | {AT_FOUNTAIN, (27, 30), (9, 22)} | set(co.rect(15, 10, 18, 32))
+    for _, (xy, face, n) in AT_TRAINERS.items():
+        dx, dy = co.FACE[face]
+        keep |= {(xy[0] + dx * k, xy[1] + dy * k) for k in range(0, n + 1)}
+    pil = mirror([('mpillar', 4, 10), ('mpillar', 4, 16), ('mbroken', 4, 22), ('mpillar', 4, 27),
+                  ('mpillar', 10, 10), ('mbroken', 10, 24), ('mpillar', 9, 17)], 3, 30, {'mbroken': 'mpillar', 'mpillar': 'mpillar'})
+    decor_pillars(m, pil, keep)
+    m.put(*AT_FOUNTAIN, 'fountain', 1)
     return m
 
 
 # --------------------------------------------------------------------- de top (orde, tijd/ruimte, Arceus)
-SU_W, SU_H = 30, 34
-SU_TRAINERS = {'ORDO': ((11, 18), 'RIGHT', 3), 'KAIROS': ((14, 14), 'DOWN', 3)}
-SU_ARCEUS = (14, 10)
-SU_ALTARS = [(10, 9), (17, 9)]
+SU_W, SU_H = 30, 36
+SU_GAP = (14, 15)
+SU_TRAINERS = {'ORDO': ((11, 18), 'RIGHT', 4), 'KAIROS': ((15, 14), 'DOWN', 3)}
+SU_DAIS = (13, 7)
+SU_ARCEUS = (14, 9)
+SU_ALTARS = [(8, 8), (20, 8)]
 
 
 def build_summit(ni):
-    m, rnd = base(SU_W, SU_H, 6103)
-    north_wall(m)
-    plat = rect(6, 8, 23, 26)
-    sl.terrace(m, plat, face=2)
-    path(m, rect(7, 9, 22, 24))
-    co.stairs(m, 14, 25)
-    EV[SU] = {'entry': entry(m, 14)}
+    m, rnd = sky(SU_W, SU_H, 6103)
+    g = SU_GAP
+    platform(m, rnd, 3, 5, 26, 29, g)
+    runner(m, g, 11, 28)
+    light_stair(m, g, 31, 33, bot=True)
+    EV[SU] = {'entry': [(g[0], 33), (g[1], 33)]}
+    put_art(m, 'dais', *SU_DAIS)
     for i, (x, y) in enumerate(SU_ALTARS):
-        kind = ('dialga', 'palkia')[i]
-        for dx in (0, 1):
-            for dy in (0, 1):
-                m.put(x + dx, y + dy, 'altar_%s_%d%d' % (kind, dx, dy), 1)
-    for (x, y) in ((7, 12), (21, 12), (7, 19), (21, 19)):
-        put_art(m, 'pillar', x, y, 2, 4)
-    for (x, y) in ((3, 5), (25, 5), (3, 27), (25, 28)):
-        for dx in (0, 1):
-            for dy in (0, 1):
-                m.put(x + dx, y + dy, 'peak_%d%d' % (dx, dy), 1)
+        put_art(m, 'altar_l_' + ('dialga', 'palkia')[i], x, y)
     it = co.item_list(ni, SU)
-    EV[SU]['items'] = [((22, 10), it[0][1], it[0][0], it[0][2], it[0][3])]
-    keep = co.snow_keep(m, [EV[SU]['entry'][0], (14, 11), (22, 10)] + [p for p, *_ in SU_TRAINERS.values()],
-                        rect(7, 9, 22, 24))
-    co.snow_decor(m, rnd, keep, set(), p_block=0.06, p_soft=0.12)
+    EV[SU]['items'] = [((23, 9), it[0][1], it[0][0], it[0][2], it[0][3])]
+    keep = {p for p, *_ in SU_TRAINERS.values()} | {(23, 9), (14, 10), (15, 10)} | set(co.rect(13, 7, 16, 28))
+    keep |= {(x + dx, 10) for x, _ in SU_ALTARS for dx in (0, 1)}
+    for _, (xy, face, n) in SU_TRAINERS.items():
+        dx, dy = co.FACE[face]
+        keep |= {(xy[0] + dx * k, xy[1] + dy * k) for k in range(0, n + 1)}
+    pil = mirror([('mpillar', 4, 6), ('mpillar', 4, 12), ('mbroken', 4, 18), ('mpillar', 4, 23),
+                  ('mbroken', 8, 14), ('mpillar', 9, 22), ('mpillar', 11, 7)], 3, 26, {'mbroken': 'mpillar', 'mpillar': 'mbroken'})
+    decor_pillars(m, pil, keep)
     return m
 
 
@@ -392,7 +414,8 @@ def build_maps(ni):
         m = BUILD[name](ni)
         g = co.snow_g(m)
         MAPS[name] = g
-        co.save(name, g, co.SEC_SNOW, [N['snow'] | (3 << 12)] * 4)
+        co.save(name, g, co.SEC_SPEAR, [N['cloud_00'], N['cloud_10'], N['cloud_01'], N['cloud_11']])
+    sl.use_tileset('coronet_snow')
 
 
 def mapsecs():
@@ -426,43 +449,43 @@ def head(name, scripts=()):
     return h + '\t.byte 0\n'
 
 
-TEXTS = {  # sleutel -> (intro, verloren, daarna)
-    'STRATOS': ("I am the emissary of the sky. ARCEUS made the sky on the second day.\n\n"
-                "I was made on the third. I'm still bitter about it.",
-                "Grounded. By you. The irony is not lost on me.",
-                "Above us there's only more of ARCEUS. Mind your head."),
-    'THALASSA': ("Emissary of the sea. Yes, I'm in a swimsuit at the top of the sky.\n\n"
-                 "ARCEUS said 'dress for the job you want'.",
-                 "Washed up. On a mountain. Somehow.",
+TEXTS = {  # sleutel -> (intro, verloren, daarna); constructen van ARCEUS (placeholders in de huisstijl)
+    'STRATOS': ("CONSTRUCT ONLINE. DESIGNATION: SKY.\n\nARCEUS carved me out of a cloud. "
+                "It took six tries. The other five drifted off.",
+                "Altitude... lost. Filing a complaint with gravity.",
+                "My maker watches through my eyes. Wave. No, the other eye."),
+    'THALASSA': ("CONSTRUCT ONLINE. DESIGNATION: SEA.\n\nI am made of stone and I guard the ocean. "
+                 "Nobody at the planning meeting saw the problem.",
+                 "Sinking. As predicted. By everyone.",
                  "Every ocean in every dimension says hi. They're mostly salty about it."),
-    'BEDROCK': ("Emissary of the land. Before there was ground, there was me, waiting to be stood on.\n\n"
-                "Go on. Everyone does.",
+    'BEDROCK': ("CONSTRUCT ONLINE. DESIGNATION: LAND.\n\nI was the first thing ARCEUS made after the floor. "
+                "Technically, I am also the floor.",
                 "Eroded. It happens to the best of us. Slowly, usually.",
-                "The atrium is up the stairs. The stairs are me, technically. You're welcome."),
-    'NOUS': ("I am the emissary of the mind. I already know how this battle goes.\n\n"
-             "I'm just here for the paperwork.",
-             "...I knew that. I definitely knew that.",
-             "ARCEUS gave three POKéMON knowledge, emotion and willpower. Me it gave a clipboard."),
-    'SOMNIA': ("Emissary of dreams. You're asleep, by the way. Have been since SKY PILLAR.\n\n"
-               "Kidding. Probably.",
-               "Wake up. You won. Or that's what you're dreaming.",
+                "Mind the steps. They're my cousins. They bite."),
+    'NOUS': ("CONSTRUCT ONLINE. DESIGNATION: MIND.\n\nI already calculated how this ends. "
+             "I'm only here because ARCEUS likes to watch the numbers happen.",
+             "Recalculating. Recalculating. ...Oh no.",
+             "I have no thoughts of my own. ARCEUS lends me his. They're very loud."),
+    'SOMNIA': ("CONSTRUCT ONLINE. DESIGNATION: DREAMS.\n\nStatues don't sleep. I've been awake for "
+               "four thousand years. Ask me how I'm doing.",
+               "Finally. Darkness. Five more minutes.",
                "If you see yourself falling, don't worry. That's just the next floor."),
-    'GLADIUS': ("Emissary of justice. Every sword in this team has sworn an oath.\n\n"
-                "Mine was 'no refunds'.",
-                "Justice is served. Cold. With a side of humiliation.",
+    'GLADIUS': ("CONSTRUCT ONLINE. DESIGNATION: JUSTICE.\n\nARCEUS gave me a sword arm and no sword. "
+                "I've been very fair about it.",
+                "Justice served. Cold. With a side of gravel.",
                 "The forge is next door. Don't touch anything glowing. Everything is glowing."),
-    'HEPHAEST': ("Emissary of the forge. ARCEUS made the world. I made the oven it was baked in.\n\n"
-                 "Let's see if you're done.",
-                 "Undercooked. Me, I mean.",
+    'HEPHAEST': ("CONSTRUCT ONLINE. DESIGNATION: FORGE.\n\nI built the other eight. Then they asked "
+                 "who built me. Awkward silence. Fourteen centuries of it.",
+                 "Cracked. Hairline. Don't tell the others.",
                  "Upstairs are the last two. One of them alphabetises time."),
-    'ORDO': ("Emissary of order. My POKéMON built this hall. Stone by stone. Then they built themselves.\n\n"
-             "Then they argued about it for three thousand years.",
-             "Order... restored? No. Disrupted. By you. Great.",
+    'ORDO': ("CONSTRUCT ONLINE. DESIGNATION: ORDER.\n\nSix golems, one ancient blueprint, "
+             "and me: the prototype. ARCEUS kept the receipt.",
+             "Order... disrupted. Filing it under 'you'.",
              "REGIGIGAS is slow to start. So was creation. Look how that turned out."),
-    'KAIROS': ("Emissary of time and space. I am the right moment, in the right place.\n\n"
-               "You are neither. Let's fix that.",
+    'KAIROS': ("CONSTRUCT ONLINE. DESIGNATION: TIME AND SPACE.\n\nI am the last door. ARCEUS is behind me. "
+               "Literally. Don't look, it makes him self-conscious.",
                "That... was the right moment. Just not for me.",
-               "ARCEUS is waiting at the altar. It has been waiting since before waiting was invented."),
+               "ARCEUS is waiting on the wheel. It has been waiting since before waiting was invented."),
 }
 
 
@@ -517,9 +540,12 @@ def events():
     fs = fountain(S, 'Fountain')
     S.write()
     io, ib = items_ev(ST)
-    e, d = EV[ST]['entry'], EV[ST]['door']
-    warps = [bd.warp(e[0][0], e[0][1], 'SKY_PILLAR_TOP', 1, elev=3), bd.warp(e[1][0], e[1][1], 'SKY_PILLAR_TOP', 1, elev=3),
-             bd.warp(d[0], d[1], CONST[AT], 0)]
+    e, d = EV[ST]['entry'], EV[ST]['top']
+    # terug naar waar je vandaan kwam (Spear Pillar of Sky Pillar): MAP_DYNAMIC; een warp-tegel naar deze kaart zet de
+    # dynamische warp vanzelf (field_control_avatar.c), de scripts op Sky Pillar met setdynamicwarp
+    dyn = lambda x, y: {'x': x, 'y': y, 'elevation': 3, 'dest_map': 'MAP_DYNAMIC', 'dest_warp_id': 'WARP_ID_DYNAMIC'}  # noqa: E731
+    warps = [dyn(*e[0]), dyn(*e[1]), bd.warp(d[0][0], d[0][1], CONST[AT], 0, elev=3),
+             bd.warp(d[1][0], d[1][1], CONST[AT], 0, elev=3)]
     bgs = [bd.sign(ST_FOUNTAIN[0], ST_FOUNTAIN[1], fs)] + ib
     write_map(ST, objs + io, warps, bgs)
     # ---------------------------------------------------------------- atrium
@@ -528,9 +554,9 @@ def events():
     fs = fountain(S, 'Fountain')
     S.write()
     io, ib = items_ev(AT)
-    e, d = EV[AT]['entry'], EV[AT]['door']
-    warps = [bd.warp(e[0][0], e[0][1], CONST[ST], 2, elev=3), bd.warp(e[1][0], e[1][1], CONST[ST], 2, elev=3),
-             bd.warp(d[0], d[1], CONST[SU], 0)]
+    e, d = EV[AT]['entry'], EV[AT]['top']
+    warps = [bd.warp(e[0][0], e[0][1], CONST[ST], 2, elev=3), bd.warp(e[1][0], e[1][1], CONST[ST], 3, elev=3),
+             bd.warp(d[0][0], d[0][1], CONST[SU], 0, elev=3), bd.warp(d[1][0], d[1][1], CONST[SU], 1, elev=3)]
     bgs = [bd.sign(AT_FOUNTAIN[0], AT_FOUNTAIN[1], fs)] + ib
     write_map(AT, objs + io, warps, bgs)
     # ---------------------------------------------------------------- top
@@ -640,7 +666,7 @@ def events():
                      "Then a voice, from everywhere at once:\n\nARCEUS: Thank you for playing.\n\n...It means "
                      "the game. The world. Both. Go home. Have a sandwich. You've earned it."),
         ('ArceusWaits', "ARCEUS: You ran. That's fine. I have all the time there is. Literally."),
-        ('ArceusNotYet', "ARCEUS watches you from the altar.\n\nARCEUS: My emissaries have opinions about you. "
+        ('ArceusNotYet', "ARCEUS watches you from the golden wheel.\n\nARCEUS: My constructs have opinions about you. "
                          "{STR_VAR_1} of nine have shared theirs.\n\nHear the rest. Then we talk."),
         ('Altar', "An altar of white stone. It hums at a frequency only very old things can hear."),
     ])
@@ -655,7 +681,7 @@ def events():
             bgs.append(bd.sign(x + dx, y + 1, P + 'Altar', 'BG_EVENT_PLAYER_FACING_NORTH'))
     e = EV[SU]['entry']
     write_map(SU, objs, [bd.warp(e[0][0], e[0][1], CONST[AT], 2, elev=3),
-                         bd.warp(e[1][0], e[1][1], CONST[AT], 2, elev=3)], bgs)
+                         bd.warp(e[1][0], e[1][1], CONST[AT], 3, elev=3)], bgs)
 
 
 # ---------------------------------------------------------------- de fluit, de hub-scène en Sky Pillar
@@ -758,6 +784,7 @@ SkyPillar_Top_EventScript_HallOfOriginScene::
 	closemessage
 	playse SE_M_TELEPORT
 	fadescreen FADE_TO_WHITE
+	setdynamicwarp MAP_SKY_PILLAR_TOP, 1
 	warpsilent MAP_HALL_OF_ORIGIN_STAIRWAY, 0
 	waitstate
 	releaseall
@@ -771,6 +798,7 @@ SkyPillar_Top_EventScript_StairOfLight::
 	closemessage
 	playse SE_M_TELEPORT
 	fadescreen FADE_TO_WHITE
+	setdynamicwarp MAP_SKY_PILLAR_TOP, 1
 	warpsilent MAP_HALL_OF_ORIGIN_STAIRWAY, 0
 	waitstate
 SkyPillar_Top_EventScript_StairRelease:
@@ -784,11 +812,12 @@ SkyPillar_Top_EventScript_NoStair:
     texts = [
         ('AzureFlute_Text_AllDone', "The AZURE FLUTE plays a note that goes on far longer than your breath.\n\n"
                                     "ARCEUS: Every legend answers to you now. Even the ones who hate answering.\n\n"
-                                    "Meet me at SKY PILLAR. Top floor. Don't bring snacks; I'll know."),
-        ('AzureFlute_Text_SkyPillar', "The AZURE FLUTE hums: SKY PILLAR. Top floor.\n\nIt says it in the tone of a "
-                                      "parent who has already said it twice."),
-        ('AzureFlute_Text_StairOpen', "The AZURE FLUTE points up. Way up. Above SKY PILLAR a stair of light is still "
-                                      "waiting for you."),
+                                    "Meet me at the top. SKY PILLAR or SPEAR PILLAR, I built both and I'm not "
+                                    "precious about it. Don't bring snacks; I'll know."),
+        ('AzureFlute_Text_SkyPillar', "The AZURE FLUTE hums: SKY PILLAR or SPEAR PILLAR. The top of either.\n\n"
+                                      "It says it in the tone of a parent who has already said it twice."),
+        ('AzureFlute_Text_StairOpen', "The AZURE FLUTE points up. Way up. Above SKY PILLAR and SPEAR PILLAR a stair "
+                                      "of light is still waiting for you."),
         ('AzureFlute_Text_AfterArceus', "The AZURE FLUTE plays a little tune. Somewhere, ARCEUS hums along. "
                                         "Off-key. On purpose."),
         ('Spacetime_Text_ArceusVoice1', "A voice. Not from the cave. Not from anywhere. From the gaps between.\n\n"

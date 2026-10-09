@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_CONSTRUCT_ORDER",
       "x": 11,
       "y": 18,
       "elevation": 3,
@@ -23,13 +23,13 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "HallOfOrigin_Summit_EventScript_Ordo",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 14,
+      "graphics_id": "OBJ_EVENT_GFX_CONSTRUCT_SPACETIME",
+      "x": 15,
       "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -42,11 +42,11 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 22,
-      "y": 10,
+      "x": 23,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
+      "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_GRISEOUS_ORB",
@@ -57,7 +57,7 @@
       "local_id": "LOCALID_HALL_ARCEUS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARCEUS)",
       "x": 14,
-      "y": 10,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -71,49 +71,49 @@
   "warp_events": [
     {
       "x": 14,
-      "y": 31,
+      "y": 33,
       "elevation": 3,
       "dest_map": "MAP_HALL_OF_ORIGIN_ATRIUM",
       "dest_warp_id": "2"
     },
     {
       "x": 15,
-      "y": 31,
+      "y": 33,
       "elevation": 3,
       "dest_map": "MAP_HALL_OF_ORIGIN_ATRIUM",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
-      "x": 10,
-      "y": 10,
+      "x": 8,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "HallOfOrigin_Summit_EventScript_Altar"
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 10,
+      "x": 9,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "HallOfOrigin_Summit_EventScript_Altar"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 10,
+      "x": 20,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "HallOfOrigin_Summit_EventScript_Altar"
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 10,
+      "x": 21,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "HallOfOrigin_Summit_EventScript_Altar"

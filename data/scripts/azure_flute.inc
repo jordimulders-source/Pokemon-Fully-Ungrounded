@@ -89,6 +89,7 @@ SkyPillar_Top_EventScript_HallOfOriginScene::
 	closemessage
 	playse SE_M_TELEPORT
 	fadescreen FADE_TO_WHITE
+	setdynamicwarp MAP_SKY_PILLAR_TOP, 1
 	warpsilent MAP_HALL_OF_ORIGIN_STAIRWAY, 0
 	waitstate
 	releaseall
@@ -102,6 +103,7 @@ SkyPillar_Top_EventScript_StairOfLight::
 	closemessage
 	playse SE_M_TELEPORT
 	fadescreen FADE_TO_WHITE
+	setdynamicwarp MAP_SKY_PILLAR_TOP, 1
 	warpsilent MAP_HALL_OF_ORIGIN_STAIRWAY, 0
 	waitstate
 SkyPillar_Top_EventScript_StairRelease:
@@ -117,19 +119,21 @@ AzureFlute_Text_AllDone:
 	.string "on far longer than your breath.\p"
 	.string "ARCEUS: Every legend answers to you\n"
 	.string "now. Even the ones who hate answering.\p"
-	.string "Meet me at SKY PILLAR. Top floor. Don't\n"
-	.string "bring snacks; I'll know.$"
+	.string "Meet me at the top. SKY PILLAR or SPEAR\n"
+	.string "PILLAR, I built both and I'm not\l"
+	.string "precious about it. Don't bring snacks;\l"
+	.string "I'll know.$"
 
 AzureFlute_Text_SkyPillar:
-	.string "The AZURE FLUTE hums: SKY PILLAR. Top\n"
-	.string "floor.\p"
+	.string "The AZURE FLUTE hums: SKY PILLAR or\n"
+	.string "SPEAR PILLAR. The top of either.\p"
 	.string "It says it in the tone of a parent who\n"
 	.string "has already said it twice.$"
 
 AzureFlute_Text_StairOpen:
 	.string "The AZURE FLUTE points up. Way up.\n"
-	.string "Above SKY PILLAR a stair of light is\l"
-	.string "still waiting for you.$"
+	.string "Above SKY PILLAR and SPEAR PILLAR a\l"
+	.string "stair of light is still waiting for you.$"
 
 AzureFlute_Text_AfterArceus:
 	.string "The AZURE FLUTE plays a little tune.\n"

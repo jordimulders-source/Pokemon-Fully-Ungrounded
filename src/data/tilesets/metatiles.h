@@ -327,3 +327,6 @@ const u16 gMetatileAttributes_YoshiFlowers[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatiles.bin"); // Project Grounded: Yoshi's Island: YoshiHouse
 const u16 gMetatileAttributes_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatile_attributes.bin");
+
+const u16 gMetatiles_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatiles.bin"); // Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken
+const u16 gMetatileAttributes_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatile_attributes.bin");

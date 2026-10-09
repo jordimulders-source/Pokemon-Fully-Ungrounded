@@ -3,6 +3,7 @@ DesertUnderpass_MapScripts::
 	.byte 0
 
 DesertUnderpass_OnTransition:
+	call DesertUnderpass_EventScript_Legends2_Transition
 	setflag FLAG_LANDMARK_DESERT_UNDERPASS
 	end
 
@@ -89,3 +90,58 @@ DesertUnderpass_Text_LVHollis_Defeat:
 DesertUnderpass_Text_LVHollis_Post:
 	.string "My intern thinks that ARMALDO is\nalive. Absurd. It's just resting.\pFor ten thousand years.\nLike I want to.$"
 @ --- einde land_vulling ---
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+DesertUnderpass_EventScript_Legends2_Transition:
+	setflag FLAG_HIDE_LEGENDS_ZYGARDE
+	goto_if_set FLAG_CAUGHT_ZYGARDE, DesertUnderpass_EventScript_Legends2_TransitionEnd
+	specialvar VAR_RESULT, Grounded_CaughtXerneasAndYveltal
+	goto_if_eq VAR_RESULT, FALSE, DesertUnderpass_EventScript_Legends2_TransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_ZYGARDE
+DesertUnderpass_EventScript_Legends2_TransitionEnd:
+	return
+
+DesertUnderpass_EventScript_Zygarde::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZYGARDE_50, CRY_MODE_ENCOUNTER
+	msgbox DesertUnderpass_Text_Zygarde, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+DesertUnderpass_EventScript_Zygarde_Battle::
+	setwildbattle SPECIES_ZYGARDE_50, 90
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DesertUnderpass_EventScript_Zygarde_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertUnderpass_EventScript_Zygarde_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DesertUnderpass_EventScript_Zygarde_Stays
+	removeobject LOCALID_LEGENDS_ZYGARDE
+	setflag FLAG_HIDE_LEGENDS_ZYGARDE
+	msgbox DesertUnderpass_Text_ZygardeFled, MSGBOX_DEFAULT
+DesertUnderpass_EventScript_Zygarde_Stays::
+	release
+	end
+
+DesertUnderpass_EventScript_Zygarde_Caught::
+	removeobject LOCALID_LEGENDS_ZYGARDE
+	setflag FLAG_HIDE_LEGENDS_ZYGARDE
+	setflag FLAG_CAUGHT_ZYGARDE
+	release
+	end
+
+DesertUnderpass_Text_Zygarde:
+	.string "Grrrooo...\p"
+	.string "(Life and death are both in your PC now.\n"
+	.string "Somebody had to come and check the\l"
+	.string "paperwork. ZYGARDE is that somebody.\l"
+	.string "It is unimpressed with your filing.)$"
+
+DesertUnderpass_Text_ZygardeFled:
+	.string "ZYGARDE fell apart into a hundred little\n"
+	.string "cells and crawled into the cracks.\p"
+	.string "That's not a retreat. That's a\n"
+	.string "reorganisation. It'll be back.$"
+@ --- einde legends2 ---

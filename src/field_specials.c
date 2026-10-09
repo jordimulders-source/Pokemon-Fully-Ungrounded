@@ -4346,6 +4346,13 @@ bool8 Grounded_CaughtRayquaza(void)
     return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_RAYQUAZA), FLAG_GET_CAUGHT) != 0;
 }
 
+// Project Grounded (legends2): Zygarde verschijnt in de Desert Underpass als Xerneas en Yveltal allebei gevangen zijn.
+bool8 Grounded_CaughtXerneasAndYveltal(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_XERNEAS), FLAG_GET_CAUGHT) != 0
+        && GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_YVELTAL), FLAG_GET_CAUGHT) != 0;
+}
+
 // Project Grounded: 1 als er een shiny Rayquaza in het team zit. Alleen met hem kun je in de ruimte ademen.
 bool8 Grounded_PartyHasShinyRayquaza(void)
 {

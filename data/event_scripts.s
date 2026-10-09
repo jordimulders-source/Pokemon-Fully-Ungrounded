@@ -780,6 +780,7 @@ gStdScripts_End::
 	.include "data/scripts/regi_dots.inc"
 	.include "data/scripts/burglar.inc"
 	.include "data/scripts/grounded_gifts.inc"
+	.include "data/scripts/legends2.inc"
 	.include "data/scripts/forces.inc"
 	.include "data/scripts/enamorus.inc"
 

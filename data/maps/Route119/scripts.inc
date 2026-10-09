@@ -14,6 +14,7 @@ Route119_EventScript_TryRemoveKecleon::
 	return
 
 Route119_OnTransition:
+	call Route119_EventScript_Legends2_Transition
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 1, Route119_EventScript_MoveInstituteWorkersDownstairs
@@ -667,3 +668,57 @@ Route119_Text_EF_ZinniaRoute119PostBattle:
 	.string "I'll take it back at the top.$"
 
 @ }
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+Route119_EventScript_Legends2_Transition:
+	setflag FLAG_HIDE_LEGENDS_ZAPDOS
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_Legends2_TransitionEnd
+	goto_if_set FLAG_CAUGHT_KANTO_ZAPDOS, Route119_EventScript_Legends2_TransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_ZAPDOS
+Route119_EventScript_Legends2_TransitionEnd:
+	return
+
+Route119_EventScript_Zapdos::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
+	msgbox Route119_Text_Zapdos, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+Route119_EventScript_Zapdos_Battle::
+	setwildbattle SPECIES_ZAPDOS, 85
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route119_EventScript_Zapdos_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route119_EventScript_Zapdos_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route119_EventScript_Zapdos_Stays
+	removeobject LOCALID_LEGENDS_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_ZAPDOS
+	msgbox Route119_Text_ZapdosFled, MSGBOX_DEFAULT
+Route119_EventScript_Zapdos_Stays::
+	release
+	end
+
+Route119_EventScript_Zapdos_Caught::
+	removeobject LOCALID_LEGENDS_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_ZAPDOS
+	setflag FLAG_CAUGHT_KANTO_ZAPDOS
+	call Legends2_EventScript_CheckGalarArrive
+	release
+	end
+
+Route119_Text_Zapdos:
+	.string "Gyaoo!\p"
+	.string "(So that's why the WEATHER INSTITUTE's\n"
+	.string "forecast always says 'thunder'. It's\l"
+	.string "not a forecast. It's a tenant.)$"
+
+Route119_Text_ZapdosFled:
+	.string "ZAPDOS flew off into the clouds. The\n"
+	.string "clouds did not look happy about it.\p"
+	.string "The storm will bring it back. The storm\n"
+	.string "brings everything back.$"
+@ --- einde legends2 ---

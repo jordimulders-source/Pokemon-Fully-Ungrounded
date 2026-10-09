@@ -564,6 +564,7 @@ def main():
         for i in ims: out.paste(i, (x, 0)); x += i.width + 16
         out.save(sys.argv[1])
     print('klaar; Jagged Pass-warps %d/%d, Mt. Chimney-warps %s' % (wa, wb, mw))
+    print('let op: draai daarna tools/grounded/maptools/legends2.py opnieuw (legendaries op deze kaarten)')
 
 if __name__ == '__main__':
     main()

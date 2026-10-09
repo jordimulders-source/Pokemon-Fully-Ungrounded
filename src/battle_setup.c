@@ -643,6 +643,33 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (placeholder: Kanto-legendary-thema)
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths (placeholder: Kanto-legendary-thema)
+        CreateBattleStartTask(B_TRANSITION_REGICE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ZAPDOS: // Project Grounded (legends2): Route 119, in het onweer (placeholder)
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_MOLTRES: // Project Grounded (legends2): kraterrand van Mt. Chimney (placeholder)
+        CreateBattleStartTask(B_TRANSITION_SHUFFLE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ARTICUNO_GALAR: // Project Grounded (legends2): Mossdeep, sterrenkijken (placeholder, Psychic: wazig)
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ZAPDOS_GALAR: // Project Grounded (legends2): Route 111, rent rondjes (placeholder, Fighting: klap)
+        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_MOLTRES_GALAR: // Project Grounded (legends2): Route 120, mist bij de tombe (placeholder, Dark)
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_MELOETTA_ARIA: // Project Grounded (legends2): Route 123, na de Poke Flute (placeholder, golvend als muziek)
+    case SPECIES_MELOETTA_PIROUETTE:
+        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ZYGARDE_50: // Project Grounded (legends2): Desert Underpass, de cellen (placeholder, rasters)
+    case SPECIES_ZYGARDE_10_AURA_BREAK:
+    case SPECIES_ZYGARDE_COMPLETE:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND);
         break;

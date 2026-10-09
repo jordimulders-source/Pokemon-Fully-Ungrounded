@@ -38,6 +38,7 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_OnTransition:
+	call Route111_EventScript_Legends2_GalarTransition
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
 	special SetMirageTowerVisibility
 	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
@@ -895,3 +896,59 @@ Route111_Text_HoopaRing:
 	.string "Through it: market stalls, lanterns,\n"
 	.string "and someone yelling “NO REFUNDS.”\p"
 	.string "You step through. Of course you do.$"
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+Route111_EventScript_Legends2_GalarTransition:
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	goto_if_set FLAG_CAUGHT_GALAR_ZAPDOS, Route111_EventScript_Legends2_GalarTransitionEnd
+	call Legends2_EventScript_GalarReady
+	goto_if_eq VAR_RESULT, FALSE, Route111_EventScript_Legends2_GalarTransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+Route111_EventScript_Legends2_GalarTransitionEnd:
+	return
+
+Route111_EventScript_GalarZapdos::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
+	msgbox Route111_Text_GalarZapdos, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+Route111_EventScript_GalarZapdos_Battle::
+	setwildbattle SPECIES_ZAPDOS_GALAR, 88
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route111_EventScript_GalarZapdos_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route111_EventScript_GalarZapdos_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route111_EventScript_GalarZapdos_Stays
+	removeobject LOCALID_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	msgbox Route111_Text_GalarZapdosFled, MSGBOX_DEFAULT
+Route111_EventScript_GalarZapdos_Stays::
+	release
+	end
+
+Route111_EventScript_GalarZapdos_Caught::
+	removeobject LOCALID_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_CAUGHT_GALAR_ZAPDOS
+	release
+	end
+
+Route111_Text_GalarZapdos:
+	.string "Gya-gya!\p"
+	.string "(An orange ZAPDOS that cannot fly, will\n"
+	.string "not fly, and is doing laps. It's been\l"
+	.string "doing laps since the LEAGUE. It is on\l"
+	.string "lap four thousand.)$"
+
+Route111_Text_GalarZapdosFled:
+	.string "ZAPDOS sprinted off into the\n"
+	.string "sandstorm.\p"
+	.string "You can hear it doing laps out there.\n"
+	.string "It'll be back. It never actually leaves\l"
+	.string "the track.$"
+@ --- einde legends2 ---

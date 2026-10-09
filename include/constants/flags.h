@@ -2119,6 +2119,30 @@
 #define FLAG_LOVEDAY_HIDE                       FLAG_GROUNDED(1362) // Project Grounded: verbergt koppels, Birch en zijn drol (liefdesdag)
 // }
 
+// legends2 { (tools/grounded/maptools/legends2.py; FLAG_GROUNDED 1520-1579: 1520-1540 in gebruik, 1541-1579 nog vrij)
+#define FLAG_CAUGHT_KANTO_ARTICUNO                       FLAG_GROUNDED(1520) // Project Grounded: Articuno (Shoal Cave) gevangen
+#define FLAG_CAUGHT_KANTO_ZAPDOS                         FLAG_GROUNDED(1521) // Project Grounded: Zapdos (Route 119) gevangen
+#define FLAG_CAUGHT_KANTO_MOLTRES                        FLAG_GROUNDED(1522) // Project Grounded: Moltres (Mt. Chimney) gevangen
+#define FLAG_CAUGHT_GALAR_ARTICUNO                       FLAG_GROUNDED(1523) // Project Grounded: Galar-Articuno (Mossdeep) gevangen
+#define FLAG_CAUGHT_GALAR_ZAPDOS                         FLAG_GROUNDED(1524) // Project Grounded: Galar-Zapdos (Route 111) gevangen
+#define FLAG_CAUGHT_GALAR_MOLTRES                        FLAG_GROUNDED(1525) // Project Grounded: Galar-Moltres (Route 120) gevangen
+#define FLAG_RECEIVED_DIANCIE                            FLAG_GROUNDED(1526) // Project Grounded: Diancie (Granite Cave-kristalgrot) gekregen
+#define FLAG_ROUTE123_SNORLAX_GONE                       FLAG_GROUNDED(1527) // Project Grounded: Route 123: Snorlax is weggelopen (verbergt hem; bessenvelden vrij)
+#define FLAG_CAUGHT_MELOETTA                             FLAG_GROUNDED(1528) // Project Grounded: Meloetta (Route 123) gevangen
+#define FLAG_CAUGHT_ZYGARDE                              FLAG_GROUNDED(1529) // Project Grounded: Zygarde (Desert Underpass) gevangen
+#define FLAG_HIDE_LEGENDS_ARTICUNO                       FLAG_GROUNDED(1530) // Project Grounded: verbergt Articuno (gezet/gewist in ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_ZAPDOS                         FLAG_GROUNDED(1531) // Project Grounded: verbergt Zapdos (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_MOLTRES                        FLAG_GROUNDED(1532) // Project Grounded: verbergt Moltres (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_ARTICUNO                 FLAG_GROUNDED(1533) // Project Grounded: verbergt Galar-Articuno (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_ZAPDOS                   FLAG_GROUNDED(1534) // Project Grounded: verbergt Galar-Zapdos (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_MOLTRES                  FLAG_GROUNDED(1535) // Project Grounded: verbergt Galar-Moltres (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_MELOETTA                       FLAG_GROUNDED(1536) // Project Grounded: verbergt Meloetta (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_ZYGARDE                        FLAG_GROUNDED(1537) // Project Grounded: verbergt Zygarde (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_DIANCIE                        FLAG_GROUNDED(1538) // Project Grounded: verbergt Diancie (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_CARBINK                        FLAG_GROUNDED(1539) // Project Grounded: verbergt de twee Carbink naast Diancie (ON_TRANSITION, alleen post-game zichtbaar)
+#define FLAG_HIDE_LEGENDS_POKE_FLUTE                     FLAG_GROUNDED(1540) // Project Grounded: verbergt de Poke Flute naast Snorlax (ON_TRANSITION, alleen post-game)
+// }
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

@@ -119,6 +119,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RuinBeasts_EventScript_SealTingLu",
       "flag": "FLAG_RUIN_SEAL_OPEN_TING_LU"
+    },
+    {
+      "local_id": "LOCALID_LEGENDS_ZYGARDE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZYGARDE_50)",
+      "x": 79,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DesertUnderpass_EventScript_Zygarde",
+      "flag": "FLAG_HIDE_LEGENDS_ZYGARDE"
     }
   ],
   "warp_events": [

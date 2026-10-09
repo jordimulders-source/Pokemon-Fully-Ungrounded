@@ -377,6 +377,7 @@ static struct RectangularSpiralLine sRectangularSpiralLines[4];
 
 EWRAM_DATA static struct TransitionData *sTransitionData = NULL;
 
+#define RT_SMOL 0   // Project Grounded: grootte 0 = tiles zijn smol-gecomprimeerd (v0.9.230)
 static const u32 sBigPokeball_Tileset[] = INCBIN_U32("graphics/battle_transitions/big_pokeball.4bpp");
 static const u32 sPokeballTrail_Tileset[] = INCBIN_U32("graphics/battle_transitions/pokeball_trail.4bpp");
 static const u8 sPokeball_Gfx[] = INCBIN_U8("graphics/battle_transitions/pokeball.4bpp");
@@ -404,16 +405,16 @@ static const u32 sGroudon_Tilemap[] = INCBIN_U32("graphics/battle_transitions/gr
 static const u16 sKyogre1_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt1.gbapal");
 static const u16 sKyogre2_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt2.gbapal");
 // Project Grounded: noorderlicht-transitie (Suicune), gegenereerd met tools/grounded/aurora_transition.py
-static const u16 sAurora_Tileset[] = INCBIN_U16("graphics/battle_transitions/aurora.4bpp");
+static const u32 sAurora_Tileset[] = INCBIN_U32("graphics/battle_transitions/aurora.4bpp.smol");
 static const u16 sAurora_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aurora.bin");
 static const u16 sAurora_Palette[] = INCBIN_U16("graphics/battle_transitions/aurora.gbapal");
-static const u16 sRegidrago_Tileset[] = INCBIN_U16("graphics/battle_transitions/regidrago.4bpp");
+static const u32 sRegidrago_Tileset[] = INCBIN_U32("graphics/battle_transitions/regidrago.4bpp.smol");
 static const u16 sRegidrago_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regidrago.bin");
 static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/regidrago.gbapal");
-static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
+static const u32 sRegieleki_Tileset[] = INCBIN_U32("graphics/battle_transitions/regieleki.4bpp.smol");
 static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
 static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
-static const u16 sRegigigas_Tileset[] = INCBIN_U16("graphics/battle_transitions/regigigas.4bpp");
+static const u32 sRegigigas_Tileset[] = INCBIN_U32("graphics/battle_transitions/regigigas.4bpp.smol");
 static const u16 sRegigigas_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regigigas.bin");
 static const u16 sRegigigas_Palette[] = INCBIN_U16("graphics/battle_transitions/regigigas.gbapal");
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
@@ -421,58 +422,58 @@ static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deo
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
 static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
 static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
-static const u16 sRaikou_Tileset[] = INCBIN_U16("graphics/battle_transitions/raikou.4bpp");
+static const u32 sRaikou_Tileset[] = INCBIN_U32("graphics/battle_transitions/raikou.4bpp.smol");
 static const u16 sRaikou_Tilemap[] = INCBIN_U16("graphics/battle_transitions/raikou.bin");
 static const u16 sRaikou_Palette[] = INCBIN_U16("graphics/battle_transitions/raikou.gbapal");
 static const u16 sEntei_Tileset[] = INCBIN_U16("graphics/battle_transitions/entei.4bpp");
 static const u16 sEntei_Palette[] = INCBIN_U16("graphics/battle_transitions/entei.gbapal");
-static const u16 sRouteWave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_wave.4bpp");
+static const u32 sRouteWave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_wave.4bpp.smol");
 static const u16 sRouteWave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_wave.gbapal");
-static const u16 sRouteBeach_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_beach.4bpp");
+static const u32 sRouteBeach_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beach.4bpp.smol");
 static const u16 sRouteBeach_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beach.gbapal");
-static const u16 sRouteBubbles_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.4bpp");
+static const u32 sRouteBubbles_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_bubbles.4bpp.smol");
 static const u16 sRouteBubbles_Palette[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.gbapal");
-static const u16 sRouteSnow_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_snow.4bpp");
+static const u32 sRouteSnow_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_snow.4bpp.smol");
 static const u16 sRouteSnow_Palette[] = INCBIN_U16("graphics/battle_transitions/route_snow.gbapal");
-static const u16 sRouteAsh_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_ash.4bpp");
+static const u32 sRouteAsh_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_ash.4bpp.smol");
 static const u16 sRouteAsh_Palette[] = INCBIN_U16("graphics/battle_transitions/route_ash.gbapal");
-static const u16 sRouteSand_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_sand.4bpp");
+static const u32 sRouteSand_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sand.4bpp.smol");
 static const u16 sRouteSand_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sand.gbapal");
-static const u16 sRouteCycling_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_cycling.4bpp");
+static const u32 sRouteCycling_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_cycling.4bpp.smol");
 static const u16 sRouteCycling_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_cycling.bin");
 static const u16 sRouteCycling_Palette[] = INCBIN_U16("graphics/battle_transitions/route_cycling.gbapal");
-static const u16 sRoutePyre_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_pyre.4bpp");
+static const u32 sRoutePyre_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_pyre.4bpp.smol");
 static const u16 sRoutePyre_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pyre.gbapal");
-static const u16 sRouteSky_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_sky.4bpp");
+static const u32 sRouteSky_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sky.4bpp.smol");
 static const u16 sRouteSky_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sky.gbapal");
 static const u16 sRouteShort_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_short.4bpp");
 static const u16 sRouteShort_Palette[] = INCBIN_U16("graphics/battle_transitions/route_short.gbapal");
-static const u16 sRoutePaint_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_paint.4bpp");
+static const u32 sRoutePaint_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_paint.4bpp.smol");
 static const u16 sRoutePaint_Palette[] = INCBIN_U16("graphics/battle_transitions/route_paint.gbapal");
-static const u16 sRouteSafari_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_safari.4bpp");
+static const u32 sRouteSafari_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_safari.4bpp.smol");
 static const u16 sRouteSafari_Palette[] = INCBIN_U16("graphics/battle_transitions/route_safari.gbapal");
-static const u16 sRouteMeteor_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_meteor.4bpp");
+static const u32 sRouteMeteor_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_meteor.4bpp.smol");
 static const u16 sRouteMeteor_Palette[] = INCBIN_U16("graphics/battle_transitions/route_meteor.gbapal");
-static const u16 sRouteJagged_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jagged.4bpp");
+static const u32 sRouteJagged_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jagged.4bpp.smol");
 static const u16 sRouteJagged_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_jagged.bin");
 static const u16 sRouteJagged_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jagged.gbapal");
-static const u16 sRouteRainforest_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rainforest.4bpp");
+static const u32 sRouteRainforest_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rainforest.4bpp.smol");
 static const u16 sRouteRainforest_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rainforest.gbapal");
 static const u16 sPikachu_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.4bpp");
 static const u16 sPikachu_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.gbapal");
-static const u16 sMagikarp_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.4bpp");
+static const u32 sMagikarp_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_magikarp.4bpp.smol");
 static const u16 sMagikarp_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.gbapal");
-static const u16 sMagikarpPile_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.4bpp");
+static const u32 sMagikarpPile_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_magikarp_pile.4bpp.smol");
 static const u16 sMagikarpPile_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.bin");
 static const u16 sMagikarpPile_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.gbapal");
 static const u32 sMagikarpSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_magikarp.4bpp");
 static const u16 sMagikarpSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_magikarp.gbapal");
-static const u16 sGabbyTy_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_camera.4bpp");
+static const u32 sGabbyTy_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_camera.4bpp.smol");
 static const u16 sGabbyTy_Palette[] = INCBIN_U16("graphics/battle_transitions/route_camera.gbapal");
-static const u16 sKoffing_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_koffing.4bpp");
+static const u32 sKoffing_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_koffing.4bpp.smol");
 static const u16 sKoffing_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_koffing.bin");
 static const u16 sKoffing_Palette[] = INCBIN_U16("graphics/battle_transitions/route_koffing.gbapal");
-static const u16 sBeachball_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_beachball.4bpp");
+static const u32 sBeachball_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beachball.4bpp.smol");
 static const u16 sBeachball_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_beachball.bin");
 static const u16 sBeachball_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beachball.gbapal");
 static const u32 sQuestionSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_question.4bpp");
@@ -481,39 +482,39 @@ static const u32 sPoochyenaSprite_Gfx[] = INCBIN_U32("graphics/battle_transition
 static const u16 sPoochyenaSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_poochyena.gbapal");
 static const u32 sGearSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_gear.4bpp");
 static const u16 sGearSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_gear.gbapal");
-static const u16 sZangoose_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.4bpp");
+static const u32 sZangoose_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zangoose.4bpp.smol");
 static const u16 sZangoose_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.gbapal");
 static const u32 sZangooseClaw_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zangoose_claw.4bpp");
 static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zangoose_claw.gbapal");
-static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
-static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
+static const u32 sSeviper_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_seviper.4bpp.smol");
+static const u32 sHeatran_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_heatran.4bpp.smol");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
-static const u16 sShaymin_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.4bpp");
+static const u32 sShaymin_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_shaymin.4bpp.smol");
 static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
 static const u8 sShaymin_Petals[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_petals.bin");
 static const u8 sShaymin_Carpet[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_carpet.bin");
-static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_genesect.4bpp");
+static const u32 sGenesect_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_genesect.4bpp.smol");
 static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
-static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
+static const u32 sMewtwo_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_mewtwo.4bpp.smol");
 static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
 static const u16 sMewtwo_Lab[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_lab.bin");
 static const u16 sMewtwo_Crack[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_crack.bin");
 static const u16 sMewtwo_Page[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_page.bin");
 static const u16 sMewtwo_Burst[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_burst.bin");
-static const u16 sGiratina_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_giratina.4bpp");
+static const u32 sGiratina_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_giratina.4bpp.smol");
 static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
 static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
 static const u8 sGiratina_CrackTime[] = INCBIN_U8("graphics/battle_transitions/route_giratina_crack_t.bin");
 static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/route_giratina_wing.bin");
-static const u16 sVictini_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_victini.4bpp");
+static const u32 sVictini_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_victini.4bpp.smol");
 static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
 static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
-static const u16 sJirachi_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.4bpp");
+static const u32 sJirachi_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jirachi.4bpp.smol");
 static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.gbapal");
 static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
 static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
-static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
-static const u16 sNeoPlasma_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.4bpp"); // Project Grounded
+static const u32 sDarkrai_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_darkrai.4bpp.smol");
+static const u32 sNeoPlasma_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_neo_plasma.4bpp.smol"); // Project Grounded
 static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
 static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
 // Project Grounded: SickBlik (tools/grounded/sickblik_transition.py)
@@ -528,21 +529,21 @@ static const u16 sSickBlik_TopPals[] = INCBIN_U16("graphics/battle_transitions/s
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
-static const u16 sRocket_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rocket.4bpp");
+static const u32 sRocket_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rocket.4bpp.smol");
 static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
 static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
 static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
-static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zarude.4bpp"); // Project Grounded
+static const u32 sZarude_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zarude.4bpp.smol"); // Project Grounded
 static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
 static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
 static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
-static const u16 sDave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_dave.4bpp"); // Project Grounded
+static const u32 sDave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_dave.4bpp.smol"); // Project Grounded
 static const u16 sDave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_dave.gbapal");
 static const u16 sDave_Maps[] = INCBIN_U16("graphics/battle_transitions/route_dave.bin");
 static const s16 sDave_Ball[] = INCBIN_S16("graphics/battle_transitions/route_dave_ball.bin");
 static const u32 sDaveBall_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_dave_ball.4bpp");
 static const u16 sDaveBall_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_dave_ball.gbapal");
-static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
+static const u32 sPoisonChain_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_poisonchain.4bpp.smol"); // Project Grounded
 static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
 static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
 static const u16 sPoisonChain_Anim[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_anim.bin");
@@ -553,7 +554,7 @@ static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/rout
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
 static const u32 sBeachballSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_beachball.4bpp");
 static const u16 sBeachballSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_beachball.gbapal");
-static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
+static const u32 sAquaMagma_Tileset[] = INCBIN_U32("graphics/battle_transitions/aqua_magma.4bpp.smol");
 static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
@@ -1798,7 +1799,7 @@ static bool8 Regi_Init(struct Task *task)
     return FALSE;
 }
 
-static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
+static void NewRegi_SetGfx(struct Task *task, const void *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
 {
     u16 *tilemap, *tileset;
 
@@ -1806,7 +1807,10 @@ static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSi
     InitPatternWeaveTransition(task);
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(tileset_, tileset, tilesetSize);
+    if (tilesetSize == RT_SMOL)
+        DecompressDataWithHeaderVram(tileset_, tileset);
+    else
+        CpuCopy16(tileset_, tileset, tilesetSize);
     LoadPalette(palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     CpuCopy16(tilemap_, tilemap, 0x500);
     SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
@@ -1815,25 +1819,25 @@ static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSi
 
 static bool8 AquaMagma_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sAquaMagma_Tileset, sizeof(sAquaMagma_Tileset), sAquaMagma_Tilemap, sEvilTeam_Palette);
+    NewRegi_SetGfx(task, sAquaMagma_Tileset, RT_SMOL, sAquaMagma_Tilemap, sEvilTeam_Palette);
     return FALSE;
 }
 
 static bool8 Regidrago_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegidrago_Tileset, sizeof(sRegidrago_Tileset), sRegidrago_Tilemap, sRegidrago_Palette);
+    NewRegi_SetGfx(task, sRegidrago_Tileset, RT_SMOL, sRegidrago_Tilemap, sRegidrago_Palette);
     return FALSE;
 }
 
 static bool8 Regieleki_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
+    NewRegi_SetGfx(task, sRegieleki_Tileset, RT_SMOL, sRegieleki_Tilemap, sRegieleki_Palette);
     return FALSE;
 }
 
 static bool8 Regigigas_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegigigas_Tileset, sizeof(sRegigigas_Tileset), sRegigigas_Tilemap, sRegigigas_Palette);
+    NewRegi_SetGfx(task, sRegigigas_Tileset, RT_SMOL, sRegigigas_Tilemap, sRegigigas_Palette);
     return FALSE;
 }
 
@@ -5267,7 +5271,7 @@ static bool8 Aurora_Init(struct Task *task)
 
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(sAurora_Tileset, tileset, sizeof(sAurora_Tileset));
+    DecompressDataWithHeaderVram(sAurora_Tileset, tileset);
     CpuCopy16(sAurora_Tilemap, tilemap, sizeof(sAurora_Tilemap));
     LoadPalette(sAurora_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     task->tAuroraTimer = 0;
@@ -5586,7 +5590,7 @@ static bool8 Raikou_Init(struct Task *task)
 
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(sRaikou_Tileset, tileset, sizeof(sRaikou_Tileset));
+    DecompressDataWithHeaderVram(sRaikou_Tileset, tileset);
     LoadPalette(sRaikou_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     SetGpuReg(REG_OFFSET_BG0VOFS, 0);
     task->tRaikouTimer = 0;
@@ -5821,7 +5825,7 @@ static void Task_Entei(u8 taskId)
 
 struct RouteTransition
 {
-    const u16 *tiles;
+    const void *tiles;
     u32 tilesSize;
     const u16 *palettes;
     u8 numPalettes;
@@ -5871,7 +5875,10 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
     case 0:
         GetBg0TilesDst(&tilemap, &tileset);
         CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-        CpuCopy16(rt->tiles, tileset, rt->tilesSize);
+        if (rt->tilesSize == RT_SMOL)
+            DecompressDataWithHeaderVram(rt->tiles, tileset);
+        else
+            CpuCopy16(rt->tiles, tileset, rt->tilesSize);
         SetGpuReg(REG_OFFSET_BG0HOFS, 0);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
         task->tRtTimer = task->tRtA = task->tRtB = task->tRtC = 0;
@@ -5959,7 +5966,7 @@ static bool8 RTWave_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Wave =
 {
-    sRouteWave_Tileset, sizeof(sRouteWave_Tileset), sRouteWave_Palette, 4, 4, SE_M_SURF, RTWave_Init, RTWave_Update
+    sRouteWave_Tileset, RT_SMOL, sRouteWave_Palette, 4, 4, SE_M_SURF, RTWave_Init, RTWave_Update
 };
 
 static void Task_RouteWave(u8 taskId)
@@ -6024,7 +6031,7 @@ static bool8 RTBeach_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Beach =
 {
-    sRouteBeach_Tileset, sizeof(sRouteBeach_Tileset), sRouteBeach_Palette, 4, 4, SE_M_SURF, RTBeach_Init, RTBeach_Update
+    sRouteBeach_Tileset, RT_SMOL, sRouteBeach_Palette, 4, 4, SE_M_SURF, RTBeach_Init, RTBeach_Update
 };
 
 static void Task_RouteBeach(u8 taskId)
@@ -6096,7 +6103,7 @@ static bool8 RTBubbles_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Bubbles =
 {
-    sRouteBubbles_Tileset, sizeof(sRouteBubbles_Tileset), sRouteBubbles_Palette, 1, 1, 0, RTBubbles_Init, RTBubbles_Update
+    sRouteBubbles_Tileset, RT_SMOL, sRouteBubbles_Palette, 1, 1, 0, RTBubbles_Init, RTBubbles_Update
 };
 
 static void Task_RouteBubbles(u8 taskId)
@@ -6137,7 +6144,7 @@ static bool8 RTSnow_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Snow =
 {
-    sRouteSnow_Tileset, sizeof(sRouteSnow_Tileset), sRouteSnow_Palette, 1, 1, SE_M_GUST, NULL, RTSnow_Update
+    sRouteSnow_Tileset, RT_SMOL, sRouteSnow_Palette, 1, 1, SE_M_GUST, NULL, RTSnow_Update
 };
 
 static void Task_RouteSnow(u8 taskId)
@@ -6180,7 +6187,7 @@ static bool8 RTAsh_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Ash =
 {
-    sRouteAsh_Tileset, sizeof(sRouteAsh_Tileset), sRouteAsh_Palette, 1, 1, SE_M_GUST, NULL, RTAsh_Update
+    sRouteAsh_Tileset, RT_SMOL, sRouteAsh_Palette, 1, 1, SE_M_GUST, NULL, RTAsh_Update
 };
 
 static void Task_RouteAsh(u8 taskId)
@@ -6233,7 +6240,7 @@ static bool8 RTSand_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Sand =
 {
-    sRouteSand_Tileset, sizeof(sRouteSand_Tileset), sRouteSand_Palette, 1, 1, SE_M_SANDSTORM, RTSand_Init, RTSand_Update
+    sRouteSand_Tileset, RT_SMOL, sRouteSand_Palette, 1, 1, SE_M_SANDSTORM, RTSand_Init, RTSand_Update
 };
 
 static void Task_RouteSand(u8 taskId)
@@ -6286,7 +6293,7 @@ static bool8 RTCycling_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Cycling =
 {
-    sRouteCycling_Tileset, sizeof(sRouteCycling_Tileset), sRouteCycling_Palette, 1, 1, 0, RTCycling_Init, RTCycling_Update
+    sRouteCycling_Tileset, RT_SMOL, sRouteCycling_Palette, 1, 1, 0, RTCycling_Init, RTCycling_Update
 };
 
 static void Task_RouteCycling(u8 taskId)
@@ -6382,7 +6389,7 @@ static bool8 RTPyre_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Pyre =
 {
-    sRoutePyre_Tileset, sizeof(sRoutePyre_Tileset), sRoutePyre_Palette, 1, 1, SE_M_NIGHTMARE, RTPyre_Init, RTPyre_Update
+    sRoutePyre_Tileset, RT_SMOL, sRoutePyre_Palette, 1, 1, SE_M_NIGHTMARE, RTPyre_Init, RTPyre_Update
 };
 
 static void Task_RoutePyre(u8 taskId)
@@ -6438,7 +6445,7 @@ static bool8 RTSky_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Sky =
 {
-    sRouteSky_Tileset, sizeof(sRouteSky_Tileset), sRouteSky_Palette, 1, 1, SE_M_FLY, RTSky_Init, RTSky_Update
+    sRouteSky_Tileset, RT_SMOL, sRouteSky_Palette, 1, 1, SE_M_FLY, RTSky_Init, RTSky_Update
 };
 
 static void Task_RouteSky(u8 taskId)
@@ -6482,7 +6489,7 @@ static bool8 RTPaint_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Paint =
 {
-    sRoutePaint_Tileset, sizeof(sRoutePaint_Tileset), sRoutePaint_Palette, 1, 1, 0, NULL, RTPaint_Update
+    sRoutePaint_Tileset, RT_SMOL, sRoutePaint_Palette, 1, 1, 0, NULL, RTPaint_Update
 };
 
 static void Task_RoutePaint(u8 taskId)
@@ -6690,7 +6697,7 @@ static bool8 RTSafari_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Safari =
 {
-    sRouteSafari_Tileset, sizeof(sRouteSafari_Tileset), sRouteSafari_Palette, 1, 1, 0, RTSafari_Init, RTSafari_Update
+    sRouteSafari_Tileset, RT_SMOL, sRouteSafari_Palette, 1, 1, 0, RTSafari_Init, RTSafari_Update
 };
 
 static void Task_RouteSafari(u8 taskId)
@@ -6743,7 +6750,7 @@ static bool8 RTMeteor_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Meteor =
 {
-    sRouteMeteor_Tileset, sizeof(sRouteMeteor_Tileset), sRouteMeteor_Palette, 1, 1, SE_M_RAZOR_WIND, RTMeteor_Init, RTMeteor_Update
+    sRouteMeteor_Tileset, RT_SMOL, sRouteMeteor_Palette, 1, 1, SE_M_RAZOR_WIND, RTMeteor_Init, RTMeteor_Update
 };
 
 static void Task_RouteMeteor(u8 taskId)
@@ -6796,7 +6803,7 @@ static bool8 RTJagged_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Jagged =
 {
-    sRouteJagged_Tileset, sizeof(sRouteJagged_Tileset), sRouteJagged_Palette, 1, 1, 0, RTJagged_Init, RTJagged_Update
+    sRouteJagged_Tileset, RT_SMOL, sRouteJagged_Palette, 1, 1, 0, RTJagged_Init, RTJagged_Update
 };
 
 static void Task_RouteJagged(u8 taskId)
@@ -6848,7 +6855,7 @@ static bool8 RTRainforest_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Rainforest =
 {
-    sRouteRainforest_Tileset, sizeof(sRouteRainforest_Tileset), sRouteRainforest_Palette, 1, 1, SE_M_RAIN_DANCE, RTRainforest_Init, RTRainforest_Update
+    sRouteRainforest_Tileset, RT_SMOL, sRouteRainforest_Palette, 1, 1, SE_M_RAIN_DANCE, RTRainforest_Init, RTRainforest_Update
 };
 
 static void Task_RouteRainforest(u8 taskId)
@@ -7022,7 +7029,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
         if (t == MAGIKARP_PILE_START)
         {
             CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-            CpuCopy16(sMagikarpPile_Tileset, tileset, sizeof(sMagikarpPile_Tileset));
+            DecompressDataWithHeaderVram(sMagikarpPile_Tileset, tileset);
             PlaySE(SE_M_SURF);
         }
         LoadPalette(sMagikarpPile_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
@@ -7103,7 +7110,7 @@ static void RTMagikarp_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_Magikarp =
 {
-    sMagikarp_Tileset, sizeof(sMagikarp_Tileset), sMagikarp_Palette, 1, 1, 0, RTMagikarp_Init, RTMagikarp_Update, RTMagikarp_Finish
+    sMagikarp_Tileset, RT_SMOL, sMagikarp_Palette, 1, 1, 0, RTMagikarp_Init, RTMagikarp_Update, RTMagikarp_Finish
 };
 
 static void Task_Magikarp(u8 taskId)
@@ -7255,7 +7262,7 @@ static bool8 RTGabbyTy_Update(struct Task *task)
 
 static const struct RouteTransition sRT_GabbyTy =
 {
-    sGabbyTy_Tileset, sizeof(sGabbyTy_Tileset), sGabbyTy_Palette, 1, 1, 0, NULL, RTGabbyTy_Update, NULL
+    sGabbyTy_Tileset, RT_SMOL, sGabbyTy_Palette, 1, 1, 0, NULL, RTGabbyTy_Update, NULL
 };
 
 static void Task_GabbyTy(u8 taskId)
@@ -7266,7 +7273,7 @@ static void Task_GabbyTy(u8 taskId)
 // ---------------- Koffing/Weezing: het schedel-en-botten-teken op paars, met het weef-effect van de Aqua/Magma-logo's
 static bool8 Koffing_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sKoffing_Tileset, sizeof(sKoffing_Tileset), sKoffing_Tilemap, sKoffing_Palette);
+    NewRegi_SetGfx(task, sKoffing_Tileset, RT_SMOL, sKoffing_Tilemap, sKoffing_Palette);
     PlaySE(SE_M_TOXIC);
     return FALSE;
 }
@@ -7421,7 +7428,7 @@ static bool8 RTBeachball_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Beachball =
 {
-    sBeachball_Tileset, sizeof(sBeachball_Tileset), sBeachball_Palette, 1, 1, 0, RTBeachball_Init, RTBeachball_Update, RT_FinishSprite
+    sBeachball_Tileset, RT_SMOL, sBeachball_Palette, 1, 1, 0, RTBeachball_Init, RTBeachball_Update, RT_FinishSprite
 };
 
 static void Task_Beachball(u8 taskId)
@@ -7578,7 +7585,7 @@ static bool8 RTZangoose_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Zangoose =
 {
-    sZangoose_Tileset, sizeof(sZangoose_Tileset), sZangoose_Palette, 1, 1, 0, RTZangoose_Init, RTZangoose_Update, RT_FinishSprite
+    sZangoose_Tileset, RT_SMOL, sZangoose_Palette, 1, 1, 0, RTZangoose_Init, RTZangoose_Update, RT_FinishSprite
 };
 
 static void Task_Zangoose(u8 taskId)
@@ -7645,7 +7652,7 @@ static bool8 RTSeviper_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Seviper =
 {
-    sSeviper_Tileset, sizeof(sSeviper_Tileset), sSeviper_Palette, 1, 1, 0, NULL, RTSeviper_Update, NULL
+    sSeviper_Tileset, RT_SMOL, sSeviper_Palette, 1, 1, 0, NULL, RTSeviper_Update, NULL
 };
 
 static void Task_Seviper(u8 taskId)
@@ -7722,7 +7729,7 @@ static bool8 RTHeatran_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Heatran =
 {
-    sHeatran_Tileset, sizeof(sHeatran_Tileset), sHeatran_Palette, 4, 3, 0, NULL, RTHeatran_Update, NULL
+    sHeatran_Tileset, RT_SMOL, sHeatran_Palette, 4, 3, 0, NULL, RTHeatran_Update, NULL
 };
 
 static void Task_Heatran(u8 taskId)
@@ -7830,7 +7837,7 @@ static bool8 RTShaymin_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Shaymin =
 {
-    sShaymin_Tileset, sizeof(sShaymin_Tileset), sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
+    sShaymin_Tileset, RT_SMOL, sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
 };
 
 static void Task_Shaymin(u8 taskId)
@@ -7913,7 +7920,7 @@ static bool8 RTGenesect_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Genesect =
 {
-    sGenesect_Tileset, sizeof(sGenesect_Tileset), sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
+    sGenesect_Tileset, RT_SMOL, sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
 };
 
 static void Task_Genesect(u8 taskId)
@@ -8043,7 +8050,7 @@ static bool8 RTMewtwo_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Mewtwo =
 {
-    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
+    sMewtwo_Tileset, RT_SMOL, sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
 };
 
 static void Task_Mewtwo(u8 taskId)
@@ -8200,7 +8207,7 @@ static void RTGiratina_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_Giratina =
 {
-    sGiratina_Tileset, sizeof(sGiratina_Tileset), sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
+    sGiratina_Tileset, RT_SMOL, sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
 };
 
 static void Task_Giratina(u8 taskId)
@@ -8327,7 +8334,7 @@ static bool8 RTVictini_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Victini =
 {
-    sVictini_Tileset, sizeof(sVictini_Tileset), sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
+    sVictini_Tileset, RT_SMOL, sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
 };
 
 static void Task_Victini(u8 taskId)
@@ -8421,7 +8428,7 @@ static bool8 RTJirachi_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Jirachi =
 {
-    sJirachi_Tileset, sizeof(sJirachi_Tileset), sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
+    sJirachi_Tileset, RT_SMOL, sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
 };
 
 static void Task_Jirachi(u8 taskId)
@@ -8508,7 +8515,7 @@ static bool8 RTDarkrai_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Darkrai =
 {
-    sDarkrai_Tileset, sizeof(sDarkrai_Tileset), sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
+    sDarkrai_Tileset, RT_SMOL, sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
 };
 
 static void Task_Darkrai(u8 taskId)
@@ -8584,7 +8591,7 @@ static bool8 RTNeoPlasma_Update(struct Task *task)
 
 static const struct RouteTransition sRT_NeoPlasma =
 {
-    sNeoPlasma_Tileset, sizeof(sNeoPlasma_Tileset), sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
+    sNeoPlasma_Tileset, RT_SMOL, sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
 };
 
 static void Task_NeoPlasma(u8 taskId)
@@ -8871,7 +8878,7 @@ static bool8 RTRocket_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Rocket =
 {
-    sRocket_Tileset, sizeof(sRocket_Tileset), sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
+    sRocket_Tileset, RT_SMOL, sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
 };
 
 static void Task_Rocket(u8 taskId)
@@ -9006,7 +9013,7 @@ static bool8 RTZarude_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Zarude =
 {
-    sZarude_Tileset, sizeof(sZarude_Tileset), sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
+    sZarude_Tileset, RT_SMOL, sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
 };
 
 static void Task_Zarude(u8 taskId)
@@ -9122,7 +9129,7 @@ static void RTPoisonChain_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_PoisonChain =
 {
-    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
+    sPoisonChain_Tileset, RT_SMOL, sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
 };
 
 static void Task_PoisonChain(u8 taskId)
@@ -9728,7 +9735,7 @@ static bool8 RTDaveFull_Update(struct Task *task)
         CpuFill16(0, Film_Screen(task, 1), BG_SCREEN_SIZE);
         SetGpuReg(REG_OFFSET_BG0CNT, (u16)task->tFilmCnt);
         GetBg0TilesDst(&tilemap, &tileset);
-        CpuCopy16(sDave_Tileset, tileset, sizeof(sDave_Tileset));
+        DecompressDataWithHeaderVram(sDave_Tileset, tileset);
         LoadPalette(sDaveBall_Palette, OBJ_PLTT_ID(IndexOfSpritePaletteTag(RT_SPRITE_TAG)), PLTT_SIZE_4BPP);
         TRY_FREE_AND_SET_NULL(sFilmBuffer);
         return FALSE;

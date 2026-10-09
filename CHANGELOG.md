@@ -17923,3 +17923,14 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 - **Filmintro's** (`film_delta.py`): elke tilemap staat nu als verschil met de vorige opgeslagen, behalve op keyframes waar de film terugspringt. De filmspeler XOR't die met de vorige tilemap in zijn buffer. Dat scheelt 321 KB, en het beeld is pixel voor pixel gelijk (controle in Python en in de emulator met Rayquaza). `film.py` doet dit voortaan zelf.
 - **gbagfx-LZ77** comprimeert optimaal i.p.v. greedy (zelfde formaat). Dat scheelt nog 18 KB op de films.
 - Al goed en daarom niet aangeraakt: kreten (al gecomprimeerd, en Jordi wil ze niet lager), alle sprites/tilesets (al `smol`) en de opstartintro (±90 KB in totaal).
+
+### [v0.9.230] - ROM-ruimte: route-transities gecomprimeerd (136 KB)
+- De tiles van 36 route-transities (`struct RouteTransition`, o.a. Mewtwo, Neo Plasma, Zarude, Darkrai) en de weef-transities (Aqua/Magma, Regidrago/-eleki/-gigas, Koffing) staan nu als `smol` in de ROM. Ze worden bij de start uitgepakt (`RT_SMOL` = grootte 0). Dat scheelt 112 KB.
+- Hetzelfde voor Aurora (Suicune), Raikou, de Magikarp-stapel en de Dave-penalty: nog 24 KB.
+- In de emulator getest: Mewtwo, Raikou, Suicune, Zarude, Darkrai, Koffing, Magikarp en Dave. Alles ziet er hetzelfde uit.
+- Bekeken en gezond bevonden:
+  - nummers: alleen 38 ongebruikte vanilla-RG-nummers (93 KB), bewaard voor Kanto-plekken;
+  - muzieksamples: alles in gebruik, op 32 KB na;
+  - tilesets: geen ongebruikte;
+  - opstartintro: ±90 KB.
+- Vrij: ±1,56 MB.

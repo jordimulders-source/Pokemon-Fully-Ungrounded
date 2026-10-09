@@ -5401,6 +5401,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route128_BubbleGrotto/border.bin",
       "blockdata_filepath": "data/layouts/Route128_BubbleGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_HERMIT_CRATER",
+      "name": "Route126_HermitCrater_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/Route126_HermitCrater/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_HermitCrater/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_SILENT_CRATER",
+      "name": "Route126_SilentCrater_Layout",
+      "width": 28,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/Route126_SilentCrater/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_SilentCrater/map.bin"
     }
   ]
 }

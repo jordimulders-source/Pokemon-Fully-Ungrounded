@@ -1648,7 +1648,14 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530+ vrij.
+// sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; FLAG_GROUNDED 500-529)
+#define FLAG_ITEM_HERMIT_CRATER_WIDE_LENS                FLAG_GROUNDED(500) // Project Grounded: kluizenaarskrater: Wide Lens
+#define FLAG_HIDDEN_ITEM_HERMIT_CRATER_PEARL_STRING      FLAG_GROUNDED(501) // Project Grounded: kluizenaarskrater: verborgen Pearl String
+#define FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP          FLAG_GROUNDED(502) // Project Grounded: stille krater: Gold Bottle Cap (eilandje)
+#define FLAG_HIDDEN_ITEM_SILENT_CRATER_EARTH_PLATE       FLAG_GROUNDED(503) // Project Grounded: stille krater: verborgen Earth Plate (voorplein)
+#define FLAG_HIDDEN_ITEM_SILENT_CRATER_SPLASH_PLATE      FLAG_GROUNDED(504) // Project Grounded: stille krater: verborgen Splash Plate (grasrand)
+// }
 // dungeon_extra { (tools/grounded/maptools/dungeon_extra.py; FLAG_GROUNDED 470-499)
 #define FLAG_ITEM_GRANITE_CRYSTAL_STAR_PIECE             FLAG_GROUNDED(470) // Project Grounded: Granite Cave kristalgrot: Star Piece
 #define FLAG_ITEM_GRANITE_CRYSTAL_HARD_STONE             FLAG_GROUNDED(471) // Project Grounded: Granite Cave kristalgrot: Hard Stone

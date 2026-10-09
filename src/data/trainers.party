@@ -40085,3 +40085,115 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Solar Beam
 
 /* --- einde tao_island --- */
+
+/* --- sootopolis_craters (tools/grounded/maptools/sootopolis_craters.py) --- */
+
+=== TRAINER_LAVIS ===
+Name: LAVIS
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Grafaiai
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gunk Shot
+- Knock Off
+- U-turn
+- Super Fang
+
+Kingdra
+Level: 48
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Hydro Pump
+- Draco Meteor
+- Flash Cannon
+- Agility
+
+Milotic @ Leftovers
+Level: 49
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Recover
+- Ice Beam
+- Toxic
+
+Smeargle @ Focus Sash
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Spore
+- Shell Smash
+- Stored Power
+- Hydro Pump
+
+=== TRAINER_SWIMMER_MARGOT ===
+Name: MARGOT
+Class: Swimmer F
+Pic: Swimmer F
+Gender: Female
+Music: Swimmer
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Barraskewda
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Aqua Jet
+
+Palafin
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Wave Crash
+- Jet Punch
+- Zen Headbutt
+- Bulk Up
+
+Tatsugiri
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Muddy Water
+- Dragon Pulse
+- Icy Wind
+- Nasty Plot
+
+=== TRAINER_AROMA_LADY_FENNA ===
+Name: FENNA
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Comfey
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draining Kiss
+- Giga Drain
+- Synthesis
+- Calm Mind
+
+Tsareena
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Trop Kick
+- High Jump Kick
+- Triple Axel
+- Rapid Spin
+
+Lilligant
+Level: 46
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Petal Dance
+- Quiver Dance
+- Sleep Powder
+- Pollen Puff
+
+/* --- einde sootopolis_craters --- */

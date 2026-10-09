@@ -459,6 +459,8 @@ gStdScripts_End::
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
 	.include "data/maps/MangroveMire/scripts.inc"
+	.include "data/maps/Route126_SilentCrater/scripts.inc"
+	.include "data/maps/Route126_HermitCrater/scripts.inc"
 	.include "data/maps/Route128_BubbleGrotto/scripts.inc"
 	.include "data/maps/ShoalCave_LowTideFrozenDepths/scripts.inc"
 	.include "data/maps/GraniteCave_CrystalGrotto/scripts.inc"

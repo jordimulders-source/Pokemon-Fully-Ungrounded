@@ -316,6 +316,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_PLASMA_NIGEL, COMPOUND_STRING("NIGEL, NEO PLASMA's Head of Logistics!\nHe signed for a GENESECT.")},
     {TRAINER_VICTORY_V, COMPOUND_STRING("V! Only POKéMON with a V! VOLCARONA!\nVIKAVOLT! VICTORY? We'll see.")},
     {TRAINER_GRIMSBY, COMPOUND_STRING("CAPTAIN GRIMSBY! Dead since 1802, still\nclocks in. Union rules.")},
+    {TRAINER_LAVIS, COMPOUND_STRING("LAVIS! Thirty-one years painting one\nlake. Today: you, small, in the corner.")},
     {TRAINER_TALLOW, COMPOUND_STRING("TALLOW! Lighthouse keeper, 1952 to\n1953. Mostly 1953. Mostly dead.")},
     {TRAINER_WICK, COMPOUND_STRING("WICK! Forty years a lighthouse keeper.\nHis lamp is a fish. It works.")},
     {TRAINER_SALIM, COMPOUND_STRING("SALIM of the MIRAGE BAZAAR! Everything\nfor sale, nothing his!")},

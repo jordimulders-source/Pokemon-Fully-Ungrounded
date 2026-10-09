@@ -2758,6 +2758,249 @@
           }
         },
         {
+          "map": "MAP_ROUTE126_SILENT_CRATER",
+          "base_label": "gRoute126SilentCrater",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_GASTRODON"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_RELICANTH"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_SHELLOS"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_CORSOLA_GALAR"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_CURSOLA"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_CLOYSTER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_DRAGALGE"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_OVERQWIL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_RELICANTH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE126_HERMIT_CRATER",
+          "base_label": "gRoute126HermitCrater",
+          "land_mons": {
+            "encounter_rate": 15,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_VIVILLON"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_CHATOT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_ORICORIO"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_BELLOSSOM"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_TROPIUS"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_COMFEY"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_CASTFORM"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_FLORGES"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_XATU"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_ALTARIA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_AZUMARILL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_SWANNA"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_MILOTIC"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_FEEBAS"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_FINNEON"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_LUVDISC"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_CHINCHOU"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_SEAKING"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_LUMINEON"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_LANTURN"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_MILOTIC"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE128_BUBBLE_GROTTO",
           "base_label": "gRoute128BubbleGrotto",
           "water_mons": {

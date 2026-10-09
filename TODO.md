@@ -4,7 +4,7 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → ~~Spacetime S1~~ (v0.9.178) → ~~Zacian/Zamazenta + Mega Forest~~ (v0.9.176) → ~~Koraalkathedraal/Sea Shards~~ (v0.9.179) → ~~National Park/Ilex/Eternatus~~ (v0.9.181) → ~~Yoshi's Island~~ (v0.9.194) → meren (portalen) → Giratina-gang → Mt. Coronet/Spear Pillar → Arceus/Azure Flute/Hall of Origin → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
+**Prioriteit (Jordi, 9 okt, bijgewerkt):** ~~kratereilanden~~ → ~~Beasts of Ruin~~ → ~~Spacetime deel 1~~ → ~~Spacetime S1~~ (v0.9.178) → ~~Zacian/Zamazenta + Mega Forest~~ (v0.9.176) → ~~Koraalkathedraal/Sea Shards~~ (v0.9.179) → ~~National Park/Ilex/Eternatus~~ (v0.9.181) → ~~Yoshi's Island~~ (v0.9.194) → ~~meren~~ (v0.9.197) → ~~Mt. Coronet/Spear Pillar~~ (v0.9.198) → Arceus/Azure Flute/Hall of Origin (agent) + Calyrex-quest Glastrier/Spectrier (agent) → Spire → intro's/muziek → contests/Trick House. Eén à twee agents tegelijk, zuinig. **Verhaallijn Spacetime: `SPACETIME_PLAN.md`.**
 
 ---
 
@@ -18,22 +18,22 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (in uitvoering):**
 - ~~Levelcurve~~ (v0.9.192), ~~evolutielevels + post-game wild per fase~~ (v0.9.202), ~~Dave/SickBlik lv 100~~ (v0.9.201). Mitch kiest zelf tussen thema A en B (v0.9.200). Mitch post-game-gevecht nog te bedenken.
 
-**Technische schuld:** de bouwscripts (`spacetime_cave.py`, `area_zero.py`, `national_park.py`, `chargestone.py`, `glimwood.py`, `swords_keldeo.py`, `mega_forest.py` e.a.) bevatten nog de levels van vóór de levelcurve (v0.9.192): opnieuw draaien zet trainer-, wilde en `setwildbattle`-levels terug. Levels in de scripts gelijktrekken (of de levelcurve als laatste stap laten toepassen) voordat ze weer gedraaid worden.
+~~Technische schuld bouwscripts~~ (v0.9.195–198: `check_levels.protect()` bewaakt levels en events; alle bouwscripts draaien zonder wijzigingen).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:
-   - ~~S1~~ (v0.9.178). Open: de meren-scheur staat nu al open ("overkant laadt nog"), terwijl de meren-kamer volgens het plan pas na ????? komt: dichtzetten? `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls.
+   - ~~S1~~ (v0.9.178). Open: `dex_beschikbaar.json`/`TEKSTEN_EVENTS.md` noemen Mewtwo nog bij Meteor Falls.
    - ~~a. Lavender Town + Pokémon Tower~~ (v0.9.173)
    - b. **National Park + Ilex Forest**: Calyrex/Eternatus/Celebi-quest (SPACETIME_PLAN); daarna Calyrex-quest met Glastrier/Spectrier (sneeuwgebied of nieuw eiland).
      - Ontwerp (Jordi, 9 okt, 3 screenshots HGSS/DPPt-stijl als inspiratie): park in de vorm van een **Poké Ball**, relaxed en comfortabel. Bovenste helft hoog gras, onderste helft ander (donkerder) gras, het midden een fontein als knop van de bal, stenen paden in trapvorm eromheen, hekjes, lantaarns en bloemen langs de rand, bomen rondom. Onderaan een gang naar een pleintje met bankjes, een bloembak en een bord, en daar een warp naar **Ilex Forest**. Ingang rechts vanuit de Spacetime Cave: een poortgebouwtje aan de oostkant (zoals HGSS), binnen een FRLG-achtig poorthuis met een zijuitgang (pijl-warp `MB_EAST_ARROW_WARP`, werkt in de engine). Ekat-sets: Park Tileset, Park Gazebo, Pond and Bridge. Geen bug-catching-minigame.
      - **Ilex Forest** (Jordi, 9 okt, 4 screenshots GSC/HGSS als inspiratie; meer creatieve vrijheid): mysterieus. Basis zoals GSC/HGSS: dicht bos met kronkelpaden, poorthuis linksboven en linksonder, vijver linksboven, het **schrijn in het midden** (Celebi-quest), houten hekjes, bloemenpaadjes, Cut-boompjes. Eigen draai: mist/donkere tint, dwaalpaden. Hier komt de **Celebi-quest**.
    - ~~c. Cerulean Cave met de echte Mewtwo~~ (v0.9.173).
-   - d. **Gen 4-meren** (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
+   - ~~d. Gen 4-meren~~ (v0.9.197) (Uxie, Mesprit, Azelf): aparte kamer tussen ????? en Mt. Coronet, drie portalen (Acuity in sneeuw, Valor, Verity), grot in elk meer (SPACETIME_PLAN).
    - e. **?????-locatie → Yoshi's Island** (Shy Guy-quest, zie 4)
    - ~~f. Area Zero~~ (v0.9.193): flinke paradox-quest met Miraidon/Koraidon, beveiligingssystemen en Tera Cave/Terapagos (SPACETIME_PLAN; paradoxen niet meer gepauzeerd). Jordi 9 okt: een krater waar je steeds verder afdaalt, tot je in een surrealistische kristalgrot komt; hier de meeste creatieve vrijheid. Referenties: `graphics/grounded/referenties/area_zero/`.
    - ~~Chargestone Cave~~ (v0.9.180) (Jordi 9 okt): niet helemaal nabouwen, wel dat sfeertje (zwevende elektrische stenen, blauw licht) en de schaal; een elektrische grot. Referenties: `referenties/chargestone/` (1F, B1F, B2F uit B2W2).
    - ~~Glimwood Tangle~~ (v0.9.189) (Jordi 9 okt): sfeer van Glimwood + Ballonlea (lichtgevende paddenstoelen, donker sprookjesbos). Referenties: `referenties/glimwood_ballonlea/` en ongesorteerde sfeerbeelden in `referenties/sfeer_ongesorteerd/`.
-   - g. **Mt. Coronet als laatste post-game-quest:** als je de rest hebt, Dialga, Palkia en tot slot Arceus.
+   - ~~g. Mt. Coronet + Spear Pillar~~ (v0.9.198); Arceus/Azure Flute/Hall of Origin in uitvoering. als je de rest hebt, Dialga, Palkia en tot slot Arceus.
      - Ontwerp (Jordi, 9 okt; ook 7F, sneeuwgebied, Spear Pillar en Hall of Origin in de referenties; DPPt-kaarten als **inspiratie, niet perfect nabouwen**; beelden in `graphics/grounded/referenties/mt_coronet/`): je begint al hoog in de berg. **4F:** een sneeuwgebied buiten (grote terrasvormige sneeuwhelling rond de top, hoog gras, rotsen, bruggetjes) en drie verbonden grotkamers (1: grote kamer met waterval in het midden en trappen; 2: kleine kamer met twee items en een rots; 3: L-vormige gang). Je gaat naar buiten, loopt om de berg heen en komt via de 3e kamer van 4F naar **5F** (trapsgewijze grotkamer, Strength-rotsen). **6F:** smalle kamer met twee trappen omhoog en twee pilaren, bovenaan de lichte uitgang naar **Spear Pillar**.
 4. ~~**Yoshi's Island / Shy Guy-quest**~~ (v0.9.194): top-down in Pokémon-stijl, maar grafisch compleet anders (dat is de grap), uit Jordi's sheets (`graphics/*Yoshi*`, `bg*.png`, `misc*.png`, `world-map.png`). Shy Guys = parodie op een evil team, praten niet (sarcasme tussen haakjes). Multi battles samen met Yoshi tegen een reeks Shy Guys → Commander Boo → Wario zit erachter. Wacht deels op Jordi's assets. (8–9 okt)
 6. **Regionale vormen:** Alola-Rattata/-Meowth en Galar-Farfetch'd zijn gifts (v0.9.161); de Galar-vogels horen bij de gepauzeerde Crown Tundra. (6 okt; LEGENDARY_PLAN groep 18)

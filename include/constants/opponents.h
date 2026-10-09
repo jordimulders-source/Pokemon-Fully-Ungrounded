@@ -1198,6 +1198,12 @@
 #define TRAINER_AROMA_LADY_FENNA            1076 // Project Grounded: kluizenaarskrater: kwam voor de stilte, nam een speaker mee
 // }
 
+// mega_forest { (tools/grounded/maptools/mega_forest.py; id's 1077-1085)
+#define TRAINER_MEGA_FOREST_PERCIVAL        1077 // Project Grounded: Mega Forest: ranger, zoekt al jaren het legendarische zwaard
+#define TRAINER_MEGA_FOREST_MORGANA         1078 // Project Grounded: Mega Forest: hex maniac, hoort het bos fluisteren
+#define TRAINER_MEGA_FOREST_GWEN            1079 // Project Grounded: Mega Forest: picknickster, sinds maart verdwaald
+// }
+
 // spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1168)
 #define TRAINER_TOWER_MAYA                  1159 // Project Grounded: Pokemon Tower (Spacetime Cave), MAYA
 #define TRAINER_TOWER_PATRICIA              1160 // Project Grounded: Pokemon Tower (Spacetime Cave), PATRICIA

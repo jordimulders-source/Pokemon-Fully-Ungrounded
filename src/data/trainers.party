@@ -40547,3 +40547,141 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Will-O-Wisp
 
 /* --- einde spacetime_cave --- */
+
+/* --- mega_forest (tools/grounded/maptools/mega_forest.py) --- */
+
+=== TRAINER_MEGA_FOREST_PERCIVAL ===
+Name: PERCIVAL
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sirfetch'd
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Meteor Assault
+- Close Combat
+- Brave Bird
+- Leaf Blade
+
+Corviknight
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Brave Bird
+- Iron Head
+- Bulk Up
+- Roost
+
+Kingambit
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Duraludon
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Flash Cannon
+- Draco Meteor
+- Thunderbolt
+- Body Press
+
+=== TRAINER_MEGA_FOREST_MORGANA ===
+Name: MORGANA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Grimmsnarl
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Spirit Break
+- False Surrender
+- Thunder Wave
+- Sucker Punch
+
+Polteageist
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Giga Drain
+- Shell Smash
+- Strength Sap
+
+Cursola
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Power Gem
+- Strength Sap
+- Will-O-Wisp
+
+Hatterene
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Psychic
+- Dazzling Gleam
+- Mystical Fire
+- Calm Mind
+
+=== TRAINER_MEGA_FOREST_GWEN ===
+Name: GWEN
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Girl
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Greedent
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Body Slam
+- Bullet Seed
+- Crunch
+- Swords Dance
+
+Dubwool
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Double-Edge
+- Cotton Guard
+- Zen Headbutt
+- Wild Charge
+
+Alcremie
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dazzling Gleam
+- Recover
+- Calm Mind
+- Mystical Fire
+
+Appletun
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Apple Acid
+- Dragon Pulse
+- Recover
+- Body Press
+
+Flapple
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Grav Apple
+- Dragon Dance
+- Acrobatics
+- Dragon Rush
+
+/* --- einde mega_forest --- */

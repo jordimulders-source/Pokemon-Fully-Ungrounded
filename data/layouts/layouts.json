@@ -192,6 +192,16 @@
       "blockdata_filepath": "data/layouts/Route102_MiniForest/map.bin"
     },
     {
+      "id": "LAYOUT_MEGA_FOREST",
+      "name": "MegaForest_Layout",
+      "width": 48,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MegaForest/border.bin",
+      "blockdata_filepath": "data/layouts/MegaForest/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
       "width": 80,

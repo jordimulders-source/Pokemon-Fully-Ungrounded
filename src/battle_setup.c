@@ -581,6 +581,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CHI_YU:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ZACIAN_CROWNED:
+    case SPECIES_ZAMAZENTA_HERO:
+    case SPECIES_ZAMAZENTA_CROWNED:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
         break;

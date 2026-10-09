@@ -1310,6 +1310,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/giant_wailord.inc"
 	.include "data/maps/Route102_MiniForest/scripts.inc"
+	.include "data/maps/MegaForest/scripts.inc"
 	.include "data/maps/MeteorFalls_CraterRoom/scripts.inc"
 	.include "data/maps/ColdstepCave_Entrance/scripts.inc"
 	.include "data/maps/ColdstepCave_IceRoom1/scripts.inc"

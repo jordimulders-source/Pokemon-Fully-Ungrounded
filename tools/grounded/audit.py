@@ -28,6 +28,21 @@ IGNORE = {
     'reachobj:YoshisIsland_Jungle:4': 'bereikbaar via de Poochy-rit (script verplaatst de speler)',
 }
 
+# Handmatige controles (renders/emulator) die niet automatisch te herhalen zijn; komen onderaan AUDIT.md.
+MANUAL = [
+    'Renders van de 91 kaarten die sinds 6 okt zijn toegevoegd bekeken (contactvellen): geen afgekapte objecten, '
+    'zwarte leegtes of open randen gevonden. De witte hoek rechtsboven in de Battle Casino komt uit de vanilla '
+    'Game Corner-layout.',
+    'Emulator (python3.11, debugscript-warp + sWarpDestination): alle warp-bestemmingen van Spacetime Cave (hub + '
+    'portalen), Yoshi\'s Island (9 kaarten), Area Zero (6), Hall of Origin (3), Crown Tundra, Battle Casino en '
+    'Abandoned Ship geladen: 91 warps zonder crash of zwart beeld, de speler staat op de juiste kaart en plek '
+    '(afwijkingen alleen door aankomstscènes die de speler laten lopen). Wilde gevechten gestart op Crown Tundra, '
+    'Yoshi\'s Island (Hills, Jungle, Flowers, Cave) en Area Zero (Depths, Crystal, Past, Future): alle goed. '
+    'Abandoned Ship \'s nachts niet getest (de emulator volgt de klok van de host).',
+    'Coord-triggers zonder releaseall: in deze engine geeft `end` de besturing gewoon terug (ScriptContext_RunScript '
+    'ontgrendelt bij het einde); alleen lock/lockall zonder release laat je vastzitten. De check meldt daarom alleen dat.',
+]
+
 CATS = ('warps', 'kaarten', 'scripts', 'flags', 'trainers', 'wild', 'items')
 findings = []          # (cat, ernst, sleutel, tekst)
 stats = collections.defaultdict(collections.Counter)
@@ -798,8 +813,89 @@ def check_reach():
     stats['kaarten']['bereikbaarheid'] = nmaps
 
 
+_TSINFO = {}
+_GFXH = read('src/data/tilesets/graphics.h') + read('src/data/tilesets/metatiles.h') + read('src/graphics.c')
+
+
+def tileset_info(sym):
+    """(aantal metatiles, aantal tiles, metatile-data) van een tileset, of None."""
+    if sym in _TSINFO:
+        return _TSINFO[sym]
+    try:
+        body = re.search(r'const struct Tileset ' + sym + r' =(?:\s*//[^\n]*)?\s*\{(.*?)\};', _HDR, re.S).group(1)
+        tiles = re.search(r'\.tiles = (\w+)', body).group(1)
+        mts = re.search(r'\.metatiles = (\w+)', body).group(1)
+        tp = re.search(tiles + r'\[\] = INC\w+\("([^"]+)"', _GFXH).group(1)
+        tp = re.sub(r'\.(smol|fastSmol|lz)$', '', tp)
+        if not tp.endswith('.4bpp'):
+            tp = os.path.splitext(tp)[0] + '.4bpp'
+        mp = re.search(mts + r'\[\] = INCBIN_U16\("([^"]+)"', _GFXH).group(1)
+        mb = open(mp, 'rb').read()
+        nt = os.path.getsize(tp) // 32 if os.path.exists(tp) else None
+        _TSINFO[sym] = (len(mb) // 16, nt, struct.unpack('<%dH' % (len(mb) // 2), mb))
+    except Exception:
+        _TSINFO[sym] = None
+    return _TSINFO[sym]
+
+
+def check_graphics():
+    """Grafische fouten die je zonder kijken vindt: metatile-nummers buiten de tileset, tegels die naar niet-bestaande
+    tiles wijzen of paletten 13-15 gebruiken (die zijn in de overworld niet van de tileset), en lege metatiles."""
+    done = set()
+    nmaps = 0
+    for n, d in sorted(MAPS.items()):
+        L = LAYOUTS.get(d['layout'])
+        if not L or L['id'] in done:
+            continue
+        done.add(L['id'])
+        g = grid(n)
+        if not g:
+            continue
+        P, S = tileset_info(L['primary_tileset']), tileset_info(L['secondary_tileset'])
+        if not P or not S:
+            continue
+        nmaps += 1
+        van = not changed_since_base(L.get('blockdata_filepath', ''))
+        used = collections.Counter(v & 0x3FF for v in g.v)
+        bad_mt, bad_tile, bad_pal, empty = [], [], [], []
+        for mt, cnt in sorted(used.items()):
+            if mt < 0x200:
+                info, idx = P, mt
+            else:
+                info, idx = S, mt - 0x200
+            if idx >= info[0]:
+                bad_mt.append(mt)
+                continue
+            words = info[2][idx * 8: idx * 8 + 8]
+            for wv in words:
+                t, pal = wv & 0x3FF, wv >> 12
+                ntot = 512 + (S[1] or 512)
+                if t >= ntot or (t < 512 and P[1] and t >= P[1]):
+                    bad_tile.append(mt)
+                    break
+                if pal >= 13:
+                    bad_pal.append(mt)
+                    break
+            if mt != 0 and all((wv & 0x3FF) == 0 for wv in words):
+                empty.append(mt)
+        sev = 'VANILLA' if van else 'FOUT'
+        if bad_mt:
+            add('kaarten', sev, 'gfxmt:%s' % L['id'], '%s (%s): metatiles buiten de tileset: %s' % (n, L['id'], ', '.join('0x%X' % m for m in bad_mt[:8])))
+        if bad_tile:
+            add('kaarten', sev, 'gfxtile:%s' % L['id'], '%s (%s): metatiles die naar niet-bestaande tiles wijzen (vuilnis): %s'
+                % (n, L['id'], ', '.join('0x%X' % m for m in bad_tile[:8])))
+        if bad_pal:
+            add('kaarten', 'VANILLA' if van else 'MELD', 'gfxpal:%s' % L['id'], '%s (%s): metatiles met palet 13-15 (niet van de tileset): %s'
+                % (n, L['id'], ', '.join('0x%X' % m for m in bad_pal[:8])))
+        if empty:
+            add('kaarten', 'VANILLA' if van else 'MELD', 'gfxempty:%s' % L['id'], '%s (%s): lege metatiles (alleen tile 0, %d tegels): %s'
+                % (n, L['id'], sum(used[m] for m in empty), ', '.join('0x%X' % m for m in empty[:8])))
+    stats['kaarten']['tegelcontrole'] = nmaps
+
+
 def check_maps():
     check_reach()
+    check_graphics()
     for g in MAPGROUPS['group_order']:
         n = len(MAPGROUPS[g])
         if n > 128:
@@ -1186,6 +1282,15 @@ def used_names(prefix):
     return use
 
 
+def _CHANGED_LINES_FILES(name):
+    """Bestanden waarin `name` nieuw voorkomt t.o.v. vanilla (of die nieuw zijn)."""
+    out = set()
+    for f in SCRIPT_FILES + glob.glob('data/maps/*/map.json') + glob.glob('src/**/*.c', recursive=True):
+        if name in read(f) and changed_since_base(f) and name not in base_file(f):
+            out.add(f)
+    return out
+
+
 def check_flags():
     blocks = []
     for name in ('include/constants/flags.h', 'include/constants/opponents.h', 'include/constants/vars.h'):
@@ -1220,7 +1325,7 @@ def check_flags():
         for nm, files in sorted(use.items()):
             sys_ = {re.sub(r'^data/maps/([A-Za-z]+?)(_|City|Town|\d|/).*', r'\1', f) for f in files}
             if len(files) > 0:
-                sev = 'MELD' if len(sys_) > 1 else 'MELD'
+                sev = 'MELD' if any(f in _CHANGED_LINES_FILES(nm) for f in files) else 'VANILLA'
                 add('flags', sev, 'unusedused:%s' % nm, '%s heet "unused" maar wordt gebruikt in %s' % (nm, ', '.join(sorted(files)[:4])))
     # vars die door meerdere onafhankelijke systemen gebruikt worden (alleen nieuwe/hergebruikte vars)
     stats['flags']['flags'] = len([n for n in FLAG_DEFS if n.startswith('FLAG_')])
@@ -1547,6 +1652,28 @@ def check_wild():
                         add('wild', 'MELD' if post else 'INFO', key + ':dup',
                             '%s land (lv tot %d%s): dubbele soorten %s' % (lbl, hi, ', post-game' if post else '', ', '.join(s.replace('SPECIES_', '') for s in d)))
     stats['wild']['tabellen'] = ntab
+    # wilde levels die niet bij de trainers op dezelfde kaart passen
+    trainers = parse_party()
+    tm = trainer_maps()
+    permap = collections.defaultdict(list)
+    for tr, ms in trainers.items():
+        lv = [int(m['lvl']) for m in ms if re.fullmatch(r'\d+', m.get('lvl') or '')]
+        if lv and not re.search(r'_\d$', tr):
+            for n in tm.get(tr, ()):
+                permap[n].append(max(lv))
+    for g in cur['wild_encounter_groups']:
+        for e in g['encounters']:
+            n = ID2NAME.get(e.get('map'))
+            if not n or len(permap.get(n, [])) < 3:
+                continue
+            lm = e.get('land_mons')
+            if not lm or btabs.get(e.get('base_label'), {}).get('land_mons') == lm:
+                continue
+            wl = statistics.median(m.get('max_level', 0) for m in lm['mons'])
+            tl = statistics.median(permap[n])
+            if wl > tl + 12 or wl < tl - 20:
+                add('wild', 'MELD', 'wildlvl:%s' % e['base_label'], '%s: wilde Pokémon rond lv %d, trainers op die kaart rond lv %d'
+                    % (e['base_label'], wl, tl))
 
 
 # ------------------------------------------------------------------ 7. items
@@ -1694,6 +1821,8 @@ def main():
                     out.append('- **%s** %s `[%s]`' % (sev, f[3], f[2]))
             if c == 'trainers' and FREE_IDS:
                 out += ['', 'Vrije trainer-id\'s (%d): %s' % (len(FREE_IDS), compress(FREE_IDS))]
+        if not a.only:
+            out += ['', '## Handmatige controle', ''] + ['- ' + m for m in MANUAL]
         open(a.md, 'w').write('\n'.join(out) + '\n')
         print('-> %s' % a.md)
     return 1 if any(f[1] == 'FOUT' for f in findings) else 0

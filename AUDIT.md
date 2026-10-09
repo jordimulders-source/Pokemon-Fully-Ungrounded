@@ -5,11 +5,11 @@ Gegenereerd met `python3 tools/grounded/audit.py --md AUDIT.md` (statisch, zonde
 | Categorie | FOUT | MELD | INFO | tellingen |
 |---|---|---|---|---|
 | Warps | 0 | 11 | 4 | dynamisch 47, alleen aankomstpunt 67, warps 1800 |
-| Kaarten en objecten | 0 | 11 | 0 | genegeerd 2, bereikbaarheid 518, kaarten 704 |
+| Kaarten en objecten | 0 | 11 | 0 | genegeerd 2, bereikbaarheid 518, tegelcontrole 567, kaarten 704 |
 | Scripts en teksten | 0 | 0 | 0 | map-scripts 4508, labelverwijzingen 29713, coord-scripts 218, lock-paden 3005, teksten 5279 |
-| Flags en vars | 0 | 1 | 0 | FLAG_GROUNDED 406, flags 1953, vars 285 |
+| Flags en vars | 0 | 0 | 0 | FLAG_GROUNDED 406, flags 1953, vars 285 |
 | Trainers | 0 | 24 | 81 | level-vergelijking 537, belangrijke gevechten 78, evolutie-meldingen 77, partijen 1200, pokemon 5404, trainer-id's 1190, vrije id's 9, ongebruikte constanten 4, alleen op ongebruikte kaarten 0 |
-| Wilde encounters | 0 | 3 | 8 | tabellen 387 |
+| Wilde encounters | 0 | 4 | 8 | tabellen 387 |
 | Items en TM's | 0 | 5 | 0 | item-balls 395, verborgen items 318, TM's 60 |
 
 ## Warps
@@ -50,7 +50,7 @@ Niets open.
 
 ## Flags en vars
 
-- **MELD** FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE heet "unused" maar wordt gebruikt in data/maps/CaveOfOrigin_1F/scripts.inc, data/maps/CaveOfOrigin_UnusedRubySapphireMap1/scripts.inc, data/maps/CaveOfOrigin_UnusedRubySapphireMap2/scripts.inc, data/maps/CaveOfOrigin_UnusedRubySapphireMap3/scripts.inc `[unusedused:FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE]`
+Niets open.
 
 ## Trainers
 
@@ -147,6 +147,7 @@ Vrije trainer-id's (9): 601-602, 734, 883, 970, 972, 974, 976, 1198
 - **MELD** gArtisanCave_B1F land (lv tot 80, post-game): dubbele soorten SMEARGLE `[wild:gArtisanCave_B1F:land_mons:dup]`
 - **MELD** gArtisanCave_1F land (lv tot 80, post-game): dubbele soorten SMEARGLE `[wild:gArtisanCave_1F:land_mons:dup]`
 - **MELD** gAlteringCave1 land (lv tot 91, post-game): dubbele soorten ROARING_MOON `[wild:gAlteringCave1:land_mons:dup]`
+- **MELD** gRoute126HermitCrater: wilde Pokémon rond lv 72, trainers op die kaart rond lv 58 `[wildlvl:gRoute126HermitCrater]`
 - **INFO** gAlteringCave2 land (lv tot 18): dubbele soorten MAREEP `[wild:gAlteringCave2:land_mons:dup]`
 - **INFO** gAlteringCave3 land (lv tot 44): dubbele soorten PINECO `[wild:gAlteringCave3:land_mons:dup]`
 - **INFO** gAlteringCave4 land (lv tot 32): dubbele soorten HOUNDOUR `[wild:gAlteringCave4:land_mons:dup]`
@@ -163,3 +164,9 @@ Vrije trainer-id's (9): 601-602, 734, 883, 970, 972, 974, 976, 1198
 - **MELD** ITEM_TM_NASTY_PLOT komt op meer plekken voor: C: src/trainer_hill.c (nieuw); script: SlateportCity_BattleTentLobby (nieuw) `[tm:ITEM_TM_NASTY_PLOT]`
 - **MELD** ITEM_TM_STORED_POWER komt op meer plekken voor: C: src/trainer_hill.c (nieuw); script: Route114 (nieuw) `[tm:ITEM_TM_STORED_POWER]`
 - **MELD** ITEM_TM_U_TURN komt op meer plekken voor: ligt: FortreeJungle (nieuw); winkel: LilycoveCity_DepartmentStore_4F (nieuw) `[tm:ITEM_TM_U_TURN]`
+
+## Handmatige controle
+
+- Renders van de 91 kaarten die sinds 6 okt zijn toegevoegd bekeken (contactvellen): geen afgekapte objecten, zwarte leegtes of open randen gevonden. De witte hoek rechtsboven in de Battle Casino komt uit de vanilla Game Corner-layout.
+- Emulator (python3.11, debugscript-warp + sWarpDestination): alle warp-bestemmingen van Spacetime Cave (hub + portalen), Yoshi's Island (9 kaarten), Area Zero (6), Hall of Origin (3), Crown Tundra, Battle Casino en Abandoned Ship geladen: 91 warps zonder crash of zwart beeld, de speler staat op de juiste kaart en plek (afwijkingen alleen door aankomstscènes die de speler laten lopen). Wilde gevechten gestart op Crown Tundra, Yoshi's Island (Hills, Jungle, Flowers, Cave) en Area Zero (Depths, Crystal, Past, Future): alle goed. Abandoned Ship 's nachts niet getest (de emulator volgt de klok van de host).
+- Coord-triggers zonder releaseall: in deze engine geeft `end` de besturing gewoon terug (ScriptContext_RunScript ontgrendelt bij het einde); alleen lock/lockall zonder release laat je vastzitten. De check meldt daarom alleen dat.

@@ -84,7 +84,7 @@ UltraSpace_Hub_EventScript_ToPoipole::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToStakataka::
-	warp MAP_ULTRA_SPACE_STAKATAKA, 8, 9
+	warp MAP_ULTRA_SPACE_STAKATAKA, 20, 30
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToBlacephalon::

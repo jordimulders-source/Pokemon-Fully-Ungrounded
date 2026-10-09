@@ -330,3 +330,10 @@ const u16 gMetatileAttributes_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatiles.bin"); // Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken
 const u16 gMetatileAttributes_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatile_attributes.bin");
+
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py)
+const u16 gMetatiles_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatile_attributes.bin");
+// } ultra_worlds_b

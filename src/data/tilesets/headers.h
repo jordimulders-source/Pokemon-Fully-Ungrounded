@@ -1854,3 +1854,28 @@ const struct Tileset gTileset_UltraHub =
 };
 
 // }
+
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py)
+const struct Tileset gTileset_UltraBStakatakaBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBStakatakaBase,
+    .palettes = gTilesetPalettes_UltraBStakatakaBase,
+    .metatiles = gMetatiles_UltraBStakatakaBase,
+    .metatileAttributes = gMetatileAttributes_UltraBStakatakaBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBStakataka =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBStakataka,
+    .palettes = gTilesetPalettes_UltraBStakataka,
+    .metatiles = gMetatiles_UltraBStakataka,
+    .metatileAttributes = gMetatileAttributes_UltraBStakataka,
+    .callback = InitTilesetAnim_UltraBStakataka,
+};
+
+// } ultra_worlds_b

@@ -336,7 +336,9 @@
 
 #define OBJ_EVENT_GFX_ULTRA_WORMHOLE                    317 // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
 
-#define NUM_OBJ_EVENT_GFX                        318
+#define OBJ_EVENT_GFX_ULTRA_EYE                         350 // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
+
+#define NUM_OBJ_EVENT_GFX                        351
 
 
 // These are dynamic object gfx ids.
@@ -520,6 +522,7 @@
 #define OBJ_EVENT_PAL_TAG_CONSTRUCT_SPACETIME     0x1188 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+#define OBJ_EVENT_PAL_TAG_ULTRA_EYE               0x11B5 // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
 #define OBJ_EVENT_PAL_TAG_ULTRA_WORMHOLE          0x11A0 // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 

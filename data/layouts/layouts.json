@@ -6145,10 +6145,10 @@
     {
       "id": "LAYOUT_ULTRA_SPACE_STAKATAKA",
       "name": "UltraSpace_Stakataka_Layout",
-      "width": 17,
-      "height": 11,
-      "primary_tileset": "gTileset_UltraStakatakaBase",
-      "secondary_tileset": "gTileset_UltraStakataka",
+      "width": 41,
+      "height": 33,
+      "primary_tileset": "gTileset_UltraBStakatakaBase",
+      "secondary_tileset": "gTileset_UltraBStakataka",
       "border_filepath": "data/layouts/UltraSpace_Stakataka/border.bin",
       "blockdata_filepath": "data/layouts/UltraSpace_Stakataka/map.bin"
     },

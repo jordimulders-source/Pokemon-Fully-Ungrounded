@@ -3570,3 +3570,48 @@ const u16 gTilesetPalettes_UltraHub[][16] =
 };
 
 // }
+
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py: Ultra Space-werelden, eigen tilesets)
+const u32 gTilesetTiles_UltraBStakatakaBase[] = INCBIN_U32("data/tilesets/primary/ultra_b_stakataka_base/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_UltraBStakatakaBase[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_UltraBStakataka[] = INCBIN_U32("data/tilesets/secondary/ultra_b_stakataka/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_UltraBStakataka[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/palettes/15.gbapal"),
+};
+
+// } ultra_worlds_b

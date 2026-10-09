@@ -10875,6 +10875,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_STAKATAKA",
+          "base_label": "gUltraSpaceStakataka",
+          "land_mons": {
+            "encounter_rate": 6,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CLAYDOL"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GIGALITH"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_KLINKLANG"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_AEGISLASH"
+              },
+              {
+                "min_level": 66,
+                "max_level": 68,
+                "species": "SPECIES_NOSEPASS"
+              }
+            ]
+          }
         }
       ]
     },

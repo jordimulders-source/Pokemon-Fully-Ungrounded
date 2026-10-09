@@ -1263,3 +1263,65 @@ void InitTilesetAnim_ParkBurnt(void)
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_ParkBurnt;
 }
+
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py: animaties van de Ultra Space-werelden)
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes0[] = {
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes0[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3};
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes1[] = {
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes1[] = {0, 0, 0, 0, 3, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 1, 1, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes2[] = {
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes2[] = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 3, 0, 2, 2};
+static void TilesetAnim_UltraBStakataka(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes0[sTilesetAnimSeq_UltraBStakataka_Eyes0[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 36 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes1[sTilesetAnimSeq_UltraBStakataka_Eyes1[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 36)), 36 * TILE_SIZE_4BPP);
+    if (timer % 8 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes2[sTilesetAnimSeq_UltraBStakataka_Eyes2[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 72)), 36 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBStakataka(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBStakataka;
+}
+
+// } ultra_worlds_b

@@ -6208,3 +6208,23 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraWormhole = {
     .images = sPicTable_UltraWormhole,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraEye = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ULTRA_EYE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 128,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = sOamTables_16x16,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_UltraEye,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

@@ -31,7 +31,7 @@ _sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..
 # entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
 import check_levels  # noqa: E402
 check_levels.protect()
-import io, json, re, struct, subprocess, sys
+import io, json, os, re, struct, subprocess, sys
 from PIL import Image
 
 ORIG = '6744d697'           # commit vóór The Spire-toren
@@ -76,7 +76,8 @@ assert (W + 15) * (H + 14) <= 10240
 
 
 def git(path):
-    return subprocess.check_output(['git', 'show', '%s:%s' % (ORIG, path)])
+    # kopie van de bestanden uit commit ORIG (een verse container heeft een ondiepe git-geschiedenis)
+    return open(os.path.join('tools/grounded/maptools/orig/spire_tower', path), 'rb').read()
 
 
 def read_pal(data):
@@ -86,7 +87,7 @@ def read_pal(data):
 # ---------------------------------------------------------------- Battle Tower-pixels uit East
 class East:
     def __init__(self):
-        self.map = struct.unpack('<%dH' % (72 * 72), open(EAST_MAP, 'rb').read())
+        self.map = struct.unpack('<%dH' % (72 * 72), open(EAST_MAP, 'rb').read()[:72 * 72 * 2])  # stadium.py zet onderaan rijen bij
         self.mts = open(EAST + 'metatiles.bin', 'rb').read()
         self.attrs = open(EAST + 'metatile_attributes.bin', 'rb').read()
         self.tiles = Image.open(EAST + 'tiles.png').load()
@@ -344,6 +345,7 @@ def build():
     print('spire: %d metatiles, %d tiles (vrij over: %d metatiles, %d tiles)'
           % (new_mt + 1, len(out_tiles), len(free_mt), len(free_tiles)))
 
+    grid[60][31] = 0x403   # naambordje van de Spire (commit 0a8b6b35, eerst met de hand gezet)
     open(LAY + 'map.bin', 'wb').write(b''.join(struct.pack('<H', grid[y][x]) for y in range(H) for x in range(W)))
     open(TS + 'metatiles.bin', 'wb').write(bytes(mts))
     open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs))
@@ -424,7 +426,7 @@ def lobby(warp_id):
     m['object_events'] = [
         obj('OBJ_EVENT_GFX_LINK_RECEPTIONIST', 5, 5, 'MOVEMENT_TYPE_FACE_DOWN', NAME + '_EventScript_Attendant',
             'LOCALID_SPIRE_LOBBY_ATTENDANT'),
-        obj('OBJ_EVENT_GFX_EXPERT_M', 9, 9, 'MOVEMENT_TYPE_FACE_UP', NAME + '_EventScript_Veteran'),
+        obj('OBJ_EVENT_GFX_EXPERT_M', 8, 9, 'MOVEMENT_TYPE_FACE_UP', NAME + '_EventScript_Veteran')  # niet achter een pilaar,
     ]
     m['warp_events'] = [{'x': x, 'y': 12, 'elevation': 0, 'dest_map': 'MAP_BATTLE_FRONTIER_OUTSIDE_WEST',
                          'dest_warp_id': str(warp_id)} for x in (5, 4, 6)]

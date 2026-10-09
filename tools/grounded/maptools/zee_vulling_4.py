@@ -277,14 +277,18 @@ def flag(name, desc):
 
 def write_flags():
     s = open(FLAGS_H).read()
+    at = s.index(FBEGIN) if FBEGIN in s else None
     if FBEGIN in s:
         s = s[:s.index(FBEGIN)] + s[s.index(FEND) + len(FEND) + 1:]
     for name in FLAGS:
         assert not re.search(r'#define %s\b' % re.escape(name), s), 'vlag %s bestaat al' % name
-    for n in range(FLAG_FIRST, FLAG_LAST + 1):
+    for n, _ in FLAGS.values():  # alleen de gebruikte nummers (360+ is later door anderen genomen)
         assert 'FLAG_GROUNDED(%d)' % n not in s, 'FLAG_GROUNDED(%d) al in gebruik' % n
     block = FBEGIN + '\n' + ''.join('#define %-48s FLAG_GROUNDED(%d) // Project Grounded (zeevulling 4): %s\n'
                                     % (name, n, desc) for name, (n, desc) in FLAGS.items()) + FEND + '\n'
+    if at is not None:  # op zijn plek vervangen
+        open(FLAGS_H, 'w').write(s[:at] + block + s[at:])
+        return
     anchor = '// Special Flags (Stored in EWRAM'
     assert anchor in s
     s = s.replace(anchor, block + '\n' + anchor, 1) if not s[:s.index(anchor)].endswith('\n\n') else \
@@ -312,6 +316,9 @@ def trainer(const, desc, header, mons):
 
 def write_trainers():
     op = open('include/constants/opponents.h').read()
+    pat = r'// zee_vulling_4 \{\n.*?// \}\n'
+    had = re.search(pat, op, re.S) is not None
+    full = op
     op = re.sub(r'\n// zee_vulling_4 \{\n.*?// \}\n', '\n', op, flags=re.S)
     for c, i, d, _ in TRAINERS:
         assert not re.search(r'#define %s\b' % c, op), c
@@ -319,14 +326,20 @@ def write_trainers():
     block = '// zee_vulling_4 {\n' + ''.join('#define %-35s %d // Project Grounded (zeevulling 4): %s\n' % (c, i, d)
                                              for c, i, d, _ in TRAINERS) + '// }\n'
     last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', op)]) + 1
-    op = re.sub(r'\n(#define TRAINERS_COUNT\s+)(\d+)', lambda m: '\n' + block + '\n' + m.group(1) + str(last), op)
-    op = re.sub(r'\n{3,}(// zee_vulling_4 \{)', r'\n\n\1', op)
-    op = re.sub(r'// \}\n{2,}#define TRAINERS_COUNT', '// }\n\n#define TRAINERS_COUNT', op)
+    if had:  # op zijn plek vervangen
+        op = re.sub(pat, lambda m: block, full, count=1, flags=re.S)
+        op = re.sub(r'(#define TRAINERS_COUNT\s+)(\d+)', lambda m: m.group(1) + str(max(last, int(m.group(2)))), op)
+    else:
+        op = re.sub(r'\n(#define TRAINERS_COUNT\s+)(\d+)', lambda m: '\n' + block + '\n' + m.group(1) + str(last), op)
+        op = re.sub(r'\n{3,}(// zee_vulling_4 \{)', r'\n\n\1', op)
+        op = re.sub(r'// \}\n{2,}#define TRAINERS_COUNT', '// }\n\n#define TRAINERS_COUNT', op)
     open('include/constants/opponents.h', 'w').write(op)
     p = open('src/data/trainers.party').read()
-    if TBEGIN in p:
-        p = p[:p.index(TBEGIN)].rstrip('\n') + p[p.index(TEND) + len(TEND):]
-    p = p.rstrip('\n') + '\n\n' + TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND + '\n'
+    new = TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND
+    if TBEGIN in p:  # op zijn plek vervangen
+        p = p[:p.index(TBEGIN)] + new + p[p.index(TEND) + len(TEND):]
+    else:
+        p = p.rstrip('\n') + '\n\n' + new + '\n'
     open('src/data/trainers.party', 'w').write(p)
 
 
@@ -1032,3 +1045,8 @@ json.dump(ORIG, open(ORIG_PATH, 'w'), indent=0, sort_keys=True)
 print('ok: %d trainers (%d-%d), %d flags (FLAG_GROUNDED %d-%d), %d nieuwe watertabellen' % (
     len(TRAINERS), FIRST_ID, FIRST_ID + len(TRAINERS) - 1, len(FLAGS), FLAG_FIRST, FLAG_FIRST + len(FLAGS) - 1,
     len(WATER_TABLES)))
+
+# trog127.py bouwt verder op de trog van dit script (v0.9.188); altijd meteen erna draaien,
+# anders staat de oude, kortere trog terug.
+import subprocess as _sp  # noqa: E402
+_sp.check_call([sys.executable, 'tools/grounded/maptools/trog127.py'])

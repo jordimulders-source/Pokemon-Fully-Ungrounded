@@ -187,8 +187,8 @@ g1 = load('AlteringCave')
 HOLE = (27, 10)
 g1[HOLE[1]][HOLE[0]] = (g1[HOLE[1]][HOLE[0]] & 0xF000) | 0x33d   # ladder naar beneden (gat), hoogte van het plateau
 g2 = load('CaveOfOrigin_UnusedRubySapphireMap3')
-assert g2[6][12] & 0x3ff == 0x33d
-g2[6][12] = g2[6][11]                     # gat naar beneden dicht: hier staat Mewtwo
+if g2[6][12] & 0x3ff == 0x33d:            # (al dicht als de bronlayout eerder is aangepast)
+    g2[6][12] = g2[6][11]                 # gat naar beneden dicht: hier staat Mewtwo
 save_layout(C1, g1, 'AlteringCave')
 save_layout(C2, g2, 'CaveOfOrigin_UnusedRubySapphireMap3')
 add_layout(C1, C1_C, len(g1[0]), len(g1), 'gTileset_Cave', VAULT + '_Layout')
@@ -220,8 +220,7 @@ write_json('data/maps/%s/map.json' % C1, map_json(
      {'x': HOLE[0], 'y': HOLE[1], 'elevation': g1[HOLE[1]][HOLE[0]] >> 12, 'dest_map': 'MAP_' + C2_C, 'dest_warp_id': '0'}], []))
 write_json('data/maps/%s/map.json' % C2, map_json(
     C2_C, C2, C2_C, 'MUS_RG_SEVII_DUNGEON', 'MAPSEC_METEOR_FALLS',
-    [obj('LOCALID_UNKNOWN_CAVE_MEWTWO', 'OBJ_EVENT_GFX_SPECIES(MEWTWO)', MEWTWO[0], MEWTWO[1],
-         C2 + '_EventScript_Mewtwo', 'FLAG_HIDE_METEOR_FALLS_MEWTWO', 'MOVEMENT_TYPE_FACE_DOWN'),
+    [  # Mewtwo staat sinds v0.9.171 in de Cerulean Cave (Spacetime Cave), niet meer hier
      obj('LOCALID_UNKNOWN_CAVE_B1F_ITEM', 'OBJ_EVENT_GFX_ITEM_BALL', ITEM2[0], ITEM2[1], 'Common_EventScript_FindItem',
          'FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR', 'MOVEMENT_TYPE_LOOK_AROUND', 'ITEM_MAX_ELIXIR')],
     [{'x': 7, 'y': 14, 'elevation': 3, 'dest_map': 'MAP_' + C1_C, 'dest_warp_id': '1'}], []))

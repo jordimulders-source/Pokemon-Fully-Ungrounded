@@ -66,7 +66,10 @@ def build_tileset():
     os.makedirs(TS + '/palettes', exist_ok=True)
     mts = open(CAVE + '/metatiles.bin', 'rb').read()
     att = open(CAVE + '/metatile_attributes.bin', 'rb').read()
-    assert len(mts) == N_CAVE * 16 and len(att) == N_CAVE * 2, 'Cave-tileset is veranderd: N_CAVE bijwerken'
+    # Cave groeide na dit script (v0.9.179+); de Scorched Slab houdt de eerste N_CAVE metatiles,
+    # zodat de zonne-metatiles (en METATILE_ScorchedSlab_SunLight) op hun plek blijven.
+    assert len(mts) >= N_CAVE * 16 and len(att) >= N_CAVE * 2, 'Cave-tileset is kleiner geworden'
+    mts, att = mts[:N_CAVE * 16], att[:N_CAVE * 2]
     floor_attr = att[(0x201 - 0x200) * 2:(0x201 - 0x200) * 2 + 2]
     sun_attr = att[(0x3a9 - 0x200) * 2:(0x3a9 - 0x200) * 2 + 2]
     new = struct.pack('<8H', *[s | (PAL_SUN << 12) for s in SUN_SUB], 0, 0, 0, 0)

@@ -12,6 +12,13 @@ Controleert de bereikbaarheid van alle events vanaf de landingsplek.
 
 Gebruik: python3 tools/grounded/maptools/meteor_space.py [voorbeeld.png]
 Nodig: gebouwde tiles.4bpp van general, meteor_falls en cave (het script roept make daarvoor aan)."""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, struct, subprocess, sys
 from collections import deque
 import numpy as np

@@ -3,6 +3,13 @@ Layout = Magma Hideout 4F zonder de machines van Team Magma (metatiles 0x35C-0x3
 dichtstbijzijnde horizontale buur), Heatran aan de onderrand van de lavapoel (16,20).
 Ingang: na de Hall of Fame een grotopening in de bovenwand van Fiery Path linksboven (8,0-1).
 Idempotent. Gebruik: python3 tools/grounded/maptools/heatran_lair.py"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct
 
 NAME, CONST = 'FieryPath_HeatranLair', 'FIERY_PATH_HEATRAN_LAIR'

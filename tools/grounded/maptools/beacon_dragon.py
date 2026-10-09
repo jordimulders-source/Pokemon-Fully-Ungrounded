@@ -18,6 +18,13 @@ Teksten zijn placeholders in de huisstijl (Jordi herschrijft ze); ze worden auto
 (tools/dialogen/import.py).
 
 Gebruik: python3 tools/grounded/maptools/beacon_dragon.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import importlib.util, json, math, os, random, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -570,6 +577,7 @@ def stadium():
             a = s.index('\n', a) + 1
             s = s[:a] + '    %r: %s,\n' % (key, json.dumps(line, ensure_ascii=False)) + s[a:]
     open(p, 'w').write(s)
+    check_levels.restore()  # levels eerst terug, pool.py leest trainers.party
     subprocess.run([sys.executable, 'tools/grounded/stadium/pool.py'], check=True)
     subprocess.run([sys.executable, 'tools/grounded/stadium/announcer.py'], check=True)
 

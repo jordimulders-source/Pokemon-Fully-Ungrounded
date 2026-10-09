@@ -27,6 +27,13 @@ gebruiken MAPSEC_LAVENDER_TOWN / MAPSEC_POKEMON_TOWER / MAPSEC_CERULEAN_CAVE.
 Flags FLAG_GROUNDED 560-619 (blok 'spacetime_cave' in flags.h; 560-582 in gebruik), trainers 1159-1169 en 1195-1199.
 Teksten zijn placeholders (Jordi herschrijft ze).
 Gebruik: python3 tools/grounded/maptools/spacetime_cave.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import importlib, json, os, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))

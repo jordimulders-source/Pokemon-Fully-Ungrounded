@@ -15,6 +15,13 @@ gemeld (val terug op de 4-buren).
 
 Flags: FLAG_GROUNDED 500-529. Trainers: 1074-1085.
 Gebruik: python3 tools/grounded/maptools/sootopolis_craters.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, random, re, struct, subprocess, sys
 from collections import Counter, defaultdict
 

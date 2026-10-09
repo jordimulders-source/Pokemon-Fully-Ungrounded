@@ -15,6 +15,13 @@ worden eerst weggehaald. Controleert per kaart dat alles bereikbaar blijft (lope
 dat objecten niet op warps/coord-events/water staan en dat tekstregels in het tekstvak passen.
 Gebruik (vanuit de repo-root): python3 tools/grounded/maptools/land_vulling.py
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from landlib import Kaart, obj, hidden, ball, text, talk, trainer_single, check_text, apply_events, NOPLACE

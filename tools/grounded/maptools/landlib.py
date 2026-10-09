@@ -7,6 +7,13 @@
 - apply_events(): zet eigen objecten/bg-events achteraan map.json (idempotent via script-/flagnamen) en
   een gemarkeerd blok in scripts.inc.
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, re, struct, sys
 from collections import deque
 

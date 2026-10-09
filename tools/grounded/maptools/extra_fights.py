@@ -15,6 +15,13 @@ nieuwe trainers met de hand (IsDaveTrainer() e.d.).
 
 Gebruik (vanuit de repo-root): python3 tools/grounded/maptools/extra_fights.py
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, re, struct
 
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
@@ -900,10 +907,10 @@ def main():
     for m, fs in bymap.items():
         p = 'data/maps/%s/map.json' % m
         mj = json.load(open(p))
-        objs = [o for o in mj['object_events'] if not str(o.get('local_id', '')).startswith('LOCALID_EF_')]
+        new = []
         for f in fs:
             buried = f['face'] == 'BURIED'
-            objs.append({
+            new.append({
                 'local_id': f['local'],
                 'graphics_id': f['gfx'],
                 'x': f['x'], 'y': f['y'],
@@ -916,6 +923,18 @@ def main():
                 # Wally verdwijnt na zijn nederlaag: de verslagen-flag van de trainer verbergt het object
                 'flag': f.get('flag') or (('TRAINER_FLAGS_START+TRAINER_%s' % f['const']) if f.get('hide') else '0'),
             })
+        # bestaande EF-objecten op hun plek vervangen (andere scripts voegen objecten achteraan toe;
+        # verschuiven zou de nummers van objecten zonder local_id veranderen)
+        byid = {o['local_id']: o for o in new}
+        objs = []
+        for o in mj['object_events']:
+            lid = str(o.get('local_id', ''))
+            if lid.startswith('LOCALID_EF_'):
+                if lid in byid:
+                    objs.append(byid.pop(lid))
+            else:
+                objs.append(o)
+        objs += [o for o in new if o['local_id'] in byid]
         mj['object_events'] = objs
         open(p, 'w').write(json.dumps(mj, indent=2, ensure_ascii=False) + '\n')
 

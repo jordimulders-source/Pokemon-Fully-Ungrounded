@@ -18,6 +18,13 @@ Flags: FLAG_GROUNDED(200)-(329). Trainer-id's: 1150-1169.
 Gebruik (vanuit de repo-root): python3 tools/grounded/maptools/kaart_vulling_4.py
 Verkennen: python3 tools/grounded/maptools/kaart_vulling_4.py --probe <Kaart> [--nosurf]
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, re, struct, sys
 from collections import deque
 

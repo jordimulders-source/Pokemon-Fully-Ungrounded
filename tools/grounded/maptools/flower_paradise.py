@@ -10,6 +10,13 @@ Bouwt (idempotent, vaste seed):
 De map.json's en scripts.inc staan met de hand in data/maps/FlowerParadise_*.
 
 Gebruik: python3 tools/grounded/maptools/flower_paradise.py [voorbeeld.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import math, os, random, shutil, struct, sys
 from PIL import Image
 

@@ -11,6 +11,13 @@ Items: de bestaande trogvondsten (Deep Sea Scale/Tooth, verborgen Relic Crown; f
 naar de nieuwe kommen, plus items die nergens anders liggen (nieuwe_items.py). De Sea Shard (coral_cathedral.py)
 ligt in de schacht: draai coral_cathedral.py daarna opnieuw.
 Deterministisch en idempotent. Gebruik: python3 tools/grounded/maptools/trog127.py [render.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, struct, subprocess, sys
 from collections import Counter, defaultdict, deque
 

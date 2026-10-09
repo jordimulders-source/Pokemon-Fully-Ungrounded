@@ -18,6 +18,13 @@ Paradoxen tellen niet als legendaries: de gewone in de wilde tabellen, de rest a
 zolang ze niet gevangen zijn. Flags FLAG_GROUNDED 920-999 (blok 'area_zero'), trainers 1180-1182.
 Teksten zijn placeholders (Jordi herschrijft ze). Idempotent, vaste seeds; controleert de bereikbaarheid.
 Gebruik: python3 tools/grounded/maptools/area_zero.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))

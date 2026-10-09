@@ -14,6 +14,13 @@ Extra: mapsec MAPSEC_CHARGESTONE_CAVE is een magnetisch veld: Magneton -> Magnez
 Flags FLAG_GROUNDED 760-799, trainers 1124-1128.
 Teksten zijn placeholders (Jordi herschrijft ze).
 Gebruik: python3 tools/grounded/maptools/chargestone.py [render-uitmap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))

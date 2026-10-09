@@ -174,6 +174,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Nieuwe Spacetime-locatie koppelen:** in `spacetime_cave.py` de scheur op `'warp'` in `RIFT_STATE`, bestemming in `RIFTS` + de dict in de warp-lus, klaar-flag in `SIDEQUESTS`; in het locatiescript de terugwarp naar de warp-index van die scheur (zie hub-map.json). Daarna beide scripts draaien.
 - **Merge met veel conflicten:** na het oplossen altijd controleren dat elke toegevoegde regel van de agent (diff merge-base → agent) in het resultaat staat (difflib-script); regex-oplossingen verloren bij National Park stilletjes flags en trainerconstanten. Twee agents die allebei het volgende `OBJ_EVENT_GFX`-nummer pakken: hernummeren en `NUM_OBJ_EVENT_GFX` ophogen; partnernummers verschuiven → `pool.py` + `announcer.py` opnieuw.
 - **Multi battle uit een debugscript:** eerst `gSelectedOrderFromParty` op 1,2,3 zetten. Muziek per kaarttoestand: `savebgm` in `ON_TRANSITION`.
+- **Grote legendary-sprites** vallen over de speler als je ze van de noordkant aanspreekt: zet ze zo dat je ze van opzij of onderen aanspreekt. Bootreis zonder animatie: `fadescreen FADE_TO_BLACK`, `playse SE_M_SURF`, `delay 40`, `warpsilent`.
 
 ## Werkwijzen (herhaalde taken)
 

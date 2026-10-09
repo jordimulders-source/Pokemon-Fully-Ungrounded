@@ -17648,3 +17648,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Quest:** na de trainers verschijnt **Calyrex** bij de fontein; een witte flits toont het echte, **brandende park** (eigen layout, as-regen). Twee **multi battles met Calyrex als partner** tegen schimmen. In **Ilex Forest** (donker, mistig, schrijn met een stenen Celebi-beeld) verschijnt **Celebi** (lv 70; versla je hem, dan zet Calyrex de tijd terug). Terug in het park herstelt Celebi de natuur en verschijnt **Eternatus** (lv 75): elke Pokémon die je inzet krijgt +1 op alle stats (omniboost). Daarna vertrekt Calyrex.
 - Park- en Ilex-scheur gekoppeld; het park telt mee voor de gang naar ?????. 12 unieke wilde soorten per gebied (lv 60–68). Script `tools/grounded/maptools/national_park.py`; flags `FLAG_GROUNDED(700–711)`, trainers 1090–1097, partner `PARTNER_CALYREX`.
 - Chargestone: Colress' Genesect heeft nu een **Douse Drive** (Jordi: andere dimensie).
+
+### [v0.9.182] - Swords of Justice, Keldeo en Meltan
+- **Cobalion** (Granite Cave B2F: nieuwe grotopening in een nis, Rock Smash-rots ervoor → zwaardkamer), **Terrakion** (Victory Road B2F, zelfde soort kamer), **Virizion** (Mangrove Mire, doodlopende open plek aan het oostelijke zijpad, boomstam met een strakke zwaardsnede). Post-game, lv 70, zonder quest (zoals Gen 5).
+- **Keldeo:** na het derde zwaard belt **Mr. Briney** via de PokéNav (hij ziet iets geks in het water). Praat met hem (huis, Dewford of Route 109): fade, surfgeluid, en je staat op het **Uncharted Isle** ("???", niet op de kaart): een zandplaat in een ring van draaikolken met Keldeo (lv 70). Briney brengt je terug.
+- **Meltan:** Rivet de lasser in Sterns scheepswerf (Slateport) geeft Meltan lv 12; Meltan evolueert in **Melmetal** door te levelen met een **Metal Coat** (te koop in Lilycove 2F; wordt verbruikt).
+- Script `tools/grounded/maptools/swords_keldeo.py`; flags `FLAG_GROUNDED(800–809)`.

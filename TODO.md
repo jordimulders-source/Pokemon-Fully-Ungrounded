@@ -102,5 +102,5 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **Geen minigames** (vissen, visserstoernooi, Pokéblocks: menu i.p.v. Blender). (QoL)
 - **Geen Jessie en James.** (v0.9.15)
 - **Kecleon** is van Keccles: niet als winkelier of losse NPC.
-- **Elemental monkeys** blijven weg.
+- ~~**Elemental monkeys** blijven weg.~~ Sinds 9 okt toegestaan op passende routes.
 - **Dialogen van Trick House, Battle Frontier en Battle Tents** blijven vanilla tot na de beta.

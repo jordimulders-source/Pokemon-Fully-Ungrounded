@@ -17,7 +17,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 **Feedback Jordi 9 okt (volgende agents):**
 - **National Park verbrand:** echt vuur in plaats van wat nu op bloemen lijkt (geanimeerd als het kan: Ekat Volcano/Fireplace-autotile, Fiery Path/lava). **Ilex Forest:** een echt schrijn (zoals in GSC/HGSS) i.p.v. het Celebi-beeld, en het hele bos mooier met meer assets.
 **Feedback Jordi 9 okt (in uitvoering):**
-- **Levelcurve** (agent bezig): E4 rond lv 80, Steven's ace lv 84, superbosses richting lv 100; trainer-EXP bijstellen; gehoorzaamheid blijft (vanglevel).
+- **Levelcurve** (agent bezig): E4 rond lv 80, Steven's ace lv 84, superbosses richting lv 100; trainer-EXP zo dat het hoofdpad comfortabel haalbaar is zonder grinden; completionists met een rotatie van ±10–12 Pokémon komen ook rond de doelen uit (variatie in teams aanmoedigen, Jordi speelt zelf met meerdere parties); gehoorzaamheid blijft (vanglevel).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:

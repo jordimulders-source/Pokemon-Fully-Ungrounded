@@ -3174,7 +3174,7 @@ def map_jsons(lay):
     objs = [lid(bd.obj('OBJ_EVENT_GFX_COMMANDER_BOO', BM_BOO[0], BM_BOO[1], P + 'Boo', 'FLAG_YI_BOO_DONE'), 'LOCALID_YI_BOO'),
             lid(bd.obj(Y, 11, 11, P + 'Yoshi', 'FLAG_YI_YOSHI_HOME', 'MOVEMENT_TYPE_FACE_UP'), 'LOCALID_YI_BOO_YOSHI')]
     io, ib = items_of('YoshisIsland_BooMansion')
-    bgs = [bd.sign(x, 2, P + 'Portrait', 'BG_EVENT_PLAYER_FACING_NORTH') for x in (4, 8, 12)]
+    bgs = [bd.sign(x, 3, P + 'Portrait', 'BG_EVENT_PLAYER_FACING_NORTH') for x in (4, 8, 12)]
     write_map('YoshisIsland_BooMansion', lay['YoshisIsland_BooMansion'], objs + io,
               [bd.warp(BM_EXIT[0], BM_EXIT[1], 'YOSHIS_ISLAND_HILLS', 2, elev=3)], bgs + ib,
               music='MUS_RG_POKE_MANSION', map_type='MAP_TYPE_INDOOR', show_map_name=False)
@@ -3187,7 +3187,7 @@ def map_jsons(lay):
                 'LOCALID_YI_FORT_GUARD_B'),
             lid(bd.obj(Y, 10, 6, P + 'Yoshi', 'FLAG_YI_YOSHI_HOME', 'MOVEMENT_TYPE_FACE_LEFT'), 'LOCALID_YI_FORT_YOSHI')]
     io, ib = items_of('YoshisIsland_WarioFort')
-    bgs = [bd.sign(8, 3, P + 'Throne', 'BG_EVENT_PLAYER_FACING_NORTH'), bd.sign(9, 3, P + 'Throne', 'BG_EVENT_PLAYER_FACING_NORTH')]
+    bgs = [bd.sign(8, 4, P + 'Throne', 'BG_EVENT_PLAYER_FACING_NORTH'), bd.sign(9, 4, P + 'Throne', 'BG_EVENT_PLAYER_FACING_NORTH')]
     write_map('YoshisIsland_WarioFort', lay['YoshisIsland_WarioFort'], objs + io,
               [bd.warp(WF_EXIT[0], WF_EXIT[1], 'YOSHIS_ISLAND_HILLS', 3, elev=3)], bgs + ib,
               music='MUS_RG_ROCKET_HIDEOUT', map_type='MAP_TYPE_INDOOR', show_map_name=False)

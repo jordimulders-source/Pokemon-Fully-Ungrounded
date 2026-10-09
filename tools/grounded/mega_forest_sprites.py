@@ -3,7 +3,7 @@
 
 - rusted_sword_ow.png (16x32): het roestige zwaard, punt in de grond (kleuren uit graphics/items/icons/rusted_sword.png).
 - rusted_shield_ow.png (16x32): het roestige schild, rechtop tegen de grond (kleuren uit rusted_shield.png).
-- giant_log.png (32x32): een omgevallen reuzenboom, van voren gezien (kopse kant met jaarringen en mos);
+- giant_log.png (16x32): een omgevallen boomstam (Ekat, Haunted Woods), noord-zuid in de opening;
   het roadblock tussen het Mini Forest en het Mega Forest.
 Alle drie delen één palet (graphics/object_events/palettes/mega_forest.pal).
 Gebruik: python3 tools/grounded/mega_forest_sprites.py [voorbeeld.png]"""
@@ -94,44 +94,23 @@ def shield():
     return g
 
 
+WOOD = [1, 9, 10, 11, 12, 13]
+
+
 def log():
-    g = [[0] * 32 for _ in range(32)]
-    cx, cy, r = 15.5, 17.0, 14.2
-    for y in range(32):
-        for x in range(32):
-            d = math.hypot(x - cx, (y - cy) * 1.05)
-            if d > r:
+    """Liggende stam (noord-zuid) uit Ekat's Haunted Woods (graphics/grounded/tilesets/ekat/haunted_woods_log.png,
+    16x48), ingekort tot 16x32 (bovenste en onderste 16 px) en naar het gedeelde palet omgezet. Past precies in de
+    opening van 1 tegel breed (Jordi: de eerste, zelfgetekende versie was te veel van bovenaf gezien)."""
+    src = Image.open('graphics/grounded/tilesets/ekat/haunted_woods_log.png').convert('RGBA')
+    rows = list(range(0, 16)) + list(range(32, 48))
+    g = [[0] * 16 for _ in range(32)]
+    for yy, y in enumerate(rows):
+        for x in range(16):
+            r, gg, b, a = src.getpixel((x, y))
+            if a < 128:
                 continue
-            if d > r - 1:
-                c = 1
-            elif d > r - 3.2:
-                c = 11 if (x - cx) + (y - cy) < -6 else 10 if y < cy + 6 else 9   # schors
-                if (x * 3 + y) % 7 == 0:
-                    c = 9
-            else:
-                ring = int(d * 0.9 + 0.6 * math.sin(math.atan2(y - cy, x - cx) * 3))
-                c = 13 if ring % 3 == 0 else 12
-                if ring % 3 == 2:
-                    c = 11
-                if d < 1.6:
-                    c = 10                                             # hart
-                if (x - cx) > 3 and abs((y - cy) - (x - cx) * 0.4) < 0.5 and d < r - 4:
-                    c = 9                                              # barst
-            g[y][x] = c
-    for x in range(32):                                                # mos over de bovenkant
-        for y in range(32):
-            if g[y][x] and y < cy:
-                d = math.hypot(x - cx, (y - cy) * 1.05)
-                if d > r - 3.5 - 1.5 * math.sin(x * 0.9) and y < cy - 6:
-                    g[y][x] = 15 if (x + y) % 3 else 14
-                break
-    for y in range(int(cy) - 13, int(cy) - 4):
-        for x in range(32):
-            if g[y][x] in (10, 11) and y < cy - 7 and math.sin(x * 1.3 + y) > 0.2:
-                g[y][x] = 14
-    for x in range(4, 28):                                             # slagschaduw / grond
-        if g[31][x] == 0:
-            g[31][x] = 9
+            lum = 0.3 * r + 0.59 * gg + 0.11 * b               # op helderheid naar de hout-ramp (geen roestkleuren)
+            g[yy][x] = min(WOOD, key=lambda i: abs(0.3 * PAL[i][0] + 0.59 * PAL[i][1] + 0.11 * PAL[i][2] - lum))
     return g
 
 

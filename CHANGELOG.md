@@ -17619,3 +17619,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Mega Forest** (48×56, naadloos boven het Mini Forest): kronkelpaden, hoog gras, vijver; 12 unieke Galar-soorten lv 60–68 (Falinks en Dragapult 1%); trainers Percival, Morgana en Gwen (lv 66–67); Sweet/Tart Apple, Max Revive, PP Max, verborgen Star Piece en Big Nugget.
 - Achterin een open plek met **Zacian** en **Zamazenta** (lv 70, Kanto Legendary-muziek als placeholder).
 - Sprites `tools/grounded/mega_forest_sprites.py`, kaart `tools/grounded/maptools/mega_forest.py`; flags `FLAG_GROUNDED(620–630)`, trainers 1077–1079.
+
+### [v0.9.177] - Mini Forest: boomstam in Hoenn-perspectief
+- Jordi: de omgevallen boom keek te veel van bovenaf. Nu een liggende stam uit Ekat's Haunted Woods (16×32, noord-zuid, past precies in de opening van 1 tegel), op helderheid omgezet naar de houtkleuren van het gedeelde palet. Zwaard en schild ongewijzigd.

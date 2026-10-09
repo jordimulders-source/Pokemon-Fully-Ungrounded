@@ -17934,3 +17934,8 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
   - tilesets: geen ongebruikte;
   - opstartintro: ±90 KB.
 - Vrij: ±1,56 MB.
+
+### [v0.9.231] - ROM-ruimte: ongebruikte Kanto-nummers weg (94 KB)
+- Jordi (10 okt): "we gaan geen kanto plekken meer toevoegen, dus die kunnen eruit". De 38 nummers die nergens werden afgespeeld zijn weg; hun plek in `song_table.inc` wijst nu naar `mus_dummy`, de constanten blijven bestaan. Het gaat om 36 FRLG-nummers (Pewter, Fuchsia, Oak, Teachy TV …), `MUS_LITTLEROOT_TEST`, `MUS_C_COMM_CENTER`, `MUS_WEATHER_GROUDON` en het lege N-slot. Geen samples vrijgekomen; FRLG gebruikte de standaardinstrumenten.
+- Nieuw hulpmiddel `tools/grounded/resample_wav.py` zet een 8-bit sample-wav naar een lagere samplerate (smpl-chunk en loops gaan mee). Nog niet toegepast; eerst de A/B-test van SickBlik (versie B: 34 tonale samples naar 11 kHz, drums ongemoeid, scheelt 315 KB).
+- Vrij: ±1,65 MB.

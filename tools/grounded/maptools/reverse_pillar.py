@@ -27,7 +27,8 @@ os.makedirs(TS + '/palettes', exist_ok=True)
 shutil.copy(SRC + '/tiles.png', TS + '/tiles.png')
 mts = open(SRC + '/metatiles.bin', 'rb').read()
 attrs = open(SRC + '/metatile_attributes.bin', 'rb').read()
-n = len(mts) // 16
+n = 203  # Pacifidlog groeide later (+14 metatiles); de omgekeerde pilaar houdt de oorspronkelijke 203
+assert len(mts) // 16 >= n
 out_m, out_a = b'', b''
 for i in range(n):
     e = list(struct.unpack_from('<8H', mts, i * 16))

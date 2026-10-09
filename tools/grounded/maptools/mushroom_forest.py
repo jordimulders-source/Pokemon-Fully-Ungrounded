@@ -839,3 +839,8 @@ if inc not in es:
     es = es.replace(anchor, anchor + inc, 1)
     open('data/event_scripts.s', 'w').write(es)
 print('klaar', W, 'x', H)
+
+
+# national_park.py bouwt hier later op verder; meteen erna draaien, anders verdwijnen die wijzigingen.
+import subprocess as _sp  # noqa: E402
+_sp.check_call([sys.executable, "tools/grounded/maptools/national_park.py"])

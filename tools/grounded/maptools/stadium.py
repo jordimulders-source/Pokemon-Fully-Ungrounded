@@ -532,6 +532,7 @@ def build():
     print('stadion: %d metatiles (+1 deur, +1 verhuisd), %d tiles (vrij over: %d metatiles, %d tiles)'
           % (len(mt_index), len(out_tiles), len(free_mt), len(free_tiles)))
 
+    grid[73][17] = 0x403   # naambordje van het stadion (commit 0a8b6b35, eerst met de hand gezet)
     open(LAY + 'map.bin', 'wb').write(b''.join(struct.pack('<H', grid[y][x]) for y in range(H) for x in range(W)))
     open(TS + 'metatiles.bin', 'wb').write(bytes(mts))
     open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs))
@@ -709,6 +710,11 @@ def interiors(warp_id):
         if 'local_id' in o:
             o['local_id'] = rename[o['local_id']]
         objs.append(o)
+    # de opstelling in de arena is daarna met de hand symmetrisch gemaakt (compagnon, tweede tegenstander,
+    # v0.8.127 e.v.): een bestaande arena houdt zijn objecten
+    ap = 'data/maps/%s/map.json' % A
+    if os.path.exists(ap):
+        objs = json.load(open(ap))['object_events']
     interior(A, 'BATTLE_FRONTIER_STADIUM_ARENA', 'BattleFrontier_BattleDomeBattleRoom',
              'LAYOUT_BATTLE_FRONTIER_STADIUM_LOBBY', 'MUS_B_DOME', objs, [], [], ARENA_SCRIPT)
 

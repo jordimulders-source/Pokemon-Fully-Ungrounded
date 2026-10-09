@@ -690,3 +690,8 @@ if len(sys.argv) > 1:
     from gridrender import render
     render(M, 'general', 'mangrove_mire').save(sys.argv[1])
 print('klaar')
+
+
+# swords_glade.py bouwt hier later op verder; meteen erna draaien, anders verdwijnen die wijzigingen.
+import subprocess as _sp  # noqa: E402
+_sp.check_call([sys.executable, "tools/grounded/maptools/swords_glade.py"])

@@ -17664,3 +17664,8 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.185] - Weergeluiden lopen niet meer door
 - Jordi: geluidseffecten (vooral van weer) bleven soms te lang doorlopen. Oorzaak: de weeranimaties zijn ingekort (`sFastBattleAnim` halveert de wachttijden), maar lange geluiden als `SE_M_RAIN_DANCE` en `SE_M_SANDSTORM` speelden hun volle lengte uit. Nu stopt het geluid zodra de animatie klaar is (`waitforvisualfinish` + `stopsound`) in de weeranimaties aan het eind van de beurt/bij abilities (Rain, Sandstorm, Hail, Snow, Sun, Pollen Haze, Acid Rain) en in de weermoves (Rain Dance, Sandstorm, Hail, Sunny Day, Snowscape, Chilly Reception).
+
+### [v0.9.186] - Virizion-kamer en een wilder Uncharted Isle
+- **Virizion** heeft een eigen kamer: aan het einde van het oostelijke zijpad in Mangrove Mire een groene tunnel in de boomrand (boog van mangrovewortels met lianen) naar **MangroveMire_VirizionGlade**: een open plek tussen junglebomen met een grote mangrove met een strakke zwaardsnede, wortelbogen, een omgevallen stam en een zonnevlek waar Virizion staat. De oude plek is weer gewone bosrand.
+- **Uncharted Isle:** een ring van **51 geanimeerde draaikolken** (eigen tileset `uncharted_isle`, 8 frames, afwisselend links- en rechtsom draaiend), rotsen in drie maten met schuimkragen, golfkammetjes en schuimkoppen; het eiland zelf met een grilligere kustlijn, wrakhout en steentjes.
+- Scripts `tools/grounded/maptools/swords_glade.py` en `swords_isle.py` (aangeroepen vanuit `swords_keldeo.py`; na `mangrove_swamp.py` altijd `swords_keldeo.py` opnieuw draaien).

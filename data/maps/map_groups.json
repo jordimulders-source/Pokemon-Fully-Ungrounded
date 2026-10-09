@@ -802,6 +802,9 @@
     "MtCoronet_4F_Room3",
     "MtCoronet_5F",
     "MtCoronet_6F",
-    "SpearPillar"
+    "SpearPillar",
+    "HallOfOrigin_Stairway",
+    "HallOfOrigin_Atrium",
+    "HallOfOrigin_Summit"
   ]
 }

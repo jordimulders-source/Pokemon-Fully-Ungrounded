@@ -1708,4 +1708,28 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     }
 }
 
+// Project Grounded: Azure Flute (Arceus). Speelt in het veld een script af dat een hint geeft
+// (data/scripts/azure_flute.inc, src/azure_flute.c).
+static void ItemUseOnFieldCB_AzureFlute(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_AzureFlute);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_AzureFlute(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_AzureFlute;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gTasks[taskId].func = ItemUseOnFieldCB_AzureFlute;
+    }
+}
+
 #undef tUsingRegisteredKeyItem

@@ -42,6 +42,7 @@ SpacetimeCave_OnLoad:
 SpacetimeCave_OnTransition:
 	call_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_ArmScene
 	call_if_set FLAG_SPACETIME_LAKES_SCENE, SpacetimeCave_EventScript_DisarmLakes
+	call Spacetime_EventScript_ArmArceus
 	end
 
 SpacetimeCave_EventScript_ArmScene:
@@ -54,6 +55,7 @@ SpacetimeCave_EventScript_DisarmLakes:
 
 SpacetimeCave_OnFrame:
 	map_script_2 VAR_TEMP_1, 1, SpacetimeCave_EventScript_FirstVisit
+	map_script_2 VAR_TEMP_3, 1, Spacetime_EventScript_ArceusScene
 	.2byte 0
 
 SpacetimeCave_EventScript_HideRifts:

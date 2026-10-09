@@ -654,6 +654,9 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_PALKIA_ORIGIN:
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (placeholder: Kanto-legendary-thema, het licht valt in banen)
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
         break;

@@ -78,9 +78,14 @@ ITEMS = [
     (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
     (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
     (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
+    # Hall of Origin (hall_of_origin.py; flags uit het eigen blok FLAG_GROUNDED 1220-1279)
+    (1240, 'HallOfOrigin_Stairway', 'ITEM_COVERT_CLOAK', 1, False, 'Hall of Origin, trap: Covert Cloak'),
+    (1241, 'HallOfOrigin_Atrium', 'ITEM_CLEAR_AMULET', 1, False, 'Hall of Origin, atrium: Clear Amulet'),
+    (1242, 'HallOfOrigin_Atrium', 'ITEM_PUNCHING_GLOVE', 1, True, 'Hall of Origin, atrium: verborgen Punching Glove'),
+    (1243, 'HallOfOrigin_Summit', 'ITEM_CHERISH_BALL', 3, False, 'Hall of Origin, top: Cherish Balls'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219)]   # Area Zero, de meren en Mt. Coronet gebruiken flags uit hun eigen blok
+EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219), (1240, 1259)]   # Area Zero, de meren en Mt. Coronet gebruiken flags uit hun eigen blok
 
 
 def flag_name(n, mp, it, hid):

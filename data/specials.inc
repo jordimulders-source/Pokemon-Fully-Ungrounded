@@ -625,3 +625,5 @@ gSpecials::
 	def_special Forces_PrepareBattle
 	def_special Forces_DebugForceNext
 	def_special Grounded_SickBlikSpot
+	def_special AzureFlute_GetHint
+	def_special AzureFlute_DebugCatchAll

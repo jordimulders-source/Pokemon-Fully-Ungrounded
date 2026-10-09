@@ -3904,21 +3904,48 @@ Turtonator
 Level: 63
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CINDY_2 ===
-Name: CINDY
-Class: Lady
-Pic: Lady
-Gender: Female
-Music: Female
-Items: Full Restore
+/* Project Grounded: Hall of Origin, trap: emissary van de lucht (hall_of_origin.py) */
+=== TRAINER_HOO_STRATOS ===
+Name: STRATOS
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Zigzagoon @ Nugget
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Tail Whip
+Ho-Oh @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Brave Bird
+- Earthquake
+- Recover
+
+Tornadus
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- Heat Wave
+- Focus Blast
+- Tailwind
+
+Thundurus
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Focus Blast
+- Grass Knot
+- Nasty Plot
+
+Rayquaza @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Ascent
+- Extreme Speed
+- Earthquake
+- Dragon Dance
 
 === TRAINER_BRIANNA ===
 Name: BRIANNA
@@ -5368,26 +5395,48 @@ Furret
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DUDLEY ===
-Name: DUDLEY
-Class: Swimmer M
-Pic: Swimmer M
-Gender: Male
-Music: Swimmer
+/* Project Grounded: Hall of Origin, trap: emissary van de zee (hall_of_origin.py) */
+=== TRAINER_HOO_THALASSA ===
+Name: THALASSA
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Tentacruel
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tapu Fini
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Surf
+- Nature's Madness
+- Calm Mind
 
-Palafin
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Suicune
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Ice Beam
+- Extrasensory
+- Calm Mind
 
-Gumshoos
-Level: 39
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lugia @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aeroblast
+- Psychic
+- Roost
+- Calm Mind
+
+Kyogre @ Mystic Water
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Calm Mind
 
 === TRAINER_CHAD ===
 Name: CHAD
@@ -14164,22 +14213,48 @@ Clawitzer
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_KAYLEE ===
-Name: KAYLEE
-Class: Swimmer F
-Pic: Swimmer F
-Gender: Female
-Music: Swimmer
+/* Project Grounded: Hall of Origin, trap: emissary van het land (hall_of_origin.py) */
+=== TRAINER_HOO_BEDROCK ===
+Name: BEDROCK
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Lanturn
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Terrakion
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Stone Edge
+- Earthquake
+- Swords Dance
 
-Pelipper
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ting-Lu @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ruination
+- Earthquake
+- Heavy Slam
+- Stealth Rock
+
+Landorus
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Bomb
+- Stone Edge
+- Rock Polish
+
+Groudon @ Soft Sand
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Precipice Blades
+- Stone Edge
+- Fire Punch
+- Swords Dance
 
 === TRAINER_LAUREL ===
 Name: LAUREL
@@ -14773,43 +14848,107 @@ Vespiquen
 Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_AMY_AND_LIV_3 ===
-Name: AMY & LIV
-Class: Twins
-Pic: Twins
+/* Project Grounded: Hall of Origin, atrium: emissary van de geest (hall_of_origin.py) */
+=== TRAINER_HOO_NOUS ===
+Name: NOUS
+Class: Psychic
+Pic: Psychic M
 Gender: Male
-Music: Twins
-Double Battle: Yes
-AI: Check Bad Move
+Music: Intense
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Plusle
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Uxie
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- U-turn
+- Yawn
+- Stealth Rock
 
-Minun
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mesprit
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Ice Beam
+- Thunderbolt
+- Calm Mind
 
-=== TRAINER_GINA_AND_MIA_2 ===
-Name: GINA & MIA
-Class: Twins
-Pic: Twins
-Gender: Male
-Music: Twins
-Double Battle: Yes
-AI: Check Bad Move
+Azelf
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Flamethrower
+- Dazzling Gleam
+- Nasty Plot
 
-Duskull
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Disable
+Deoxys @ Focus Sash
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psycho Boost
+- Superpower
+- Extreme Speed
+- Ice Beam
 
-Shroomish
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Leech Seed
+Mewtwo @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psystrike
+- Aura Sphere
+- Ice Beam
+- Recover
+
+/* Project Grounded: Hall of Origin, atrium: emissary van de dromen (hall_of_origin.py) */
+=== TRAINER_HOO_SOMNIA ===
+Name: SOMNIA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Intense
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Cresselia @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Moonblast
+- Moonlight
+- Calm Mind
+
+Jirachi
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Doom Desire
+- Psychic
+- Thunderbolt
+- Calm Mind
+
+Tapu Lele
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Moonblast
+- Focus Blast
+- Calm Mind
+
+Mew
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Aura Sphere
+- Will-O-Wisp
+- Nasty Plot
+
+Darkrai @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Sludge Bomb
+- Focus Blast
+- Nasty Plot
 
 === TRAINER_AMY_AND_LIV_4 ===
 Name: AMY & LIV
@@ -17033,22 +17172,56 @@ Obstagoon
 Level: 69
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_GRUNT_UNUSED ===
-Name: GRUNT
-Class: Team Magma
-Pic: Aqua Grunt F
-Gender: Female
-Music: Aqua
+/* Project Grounded: Hall of Origin, atrium: emissary van de rechtvaardigheid (hall_of_origin.py) */
+=== TRAINER_HOO_GLADIUS ===
+Name: GLADIUS
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Wailmer
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Virizion
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Blade
+- Close Combat
+- Stone Edge
+- Swords Dance
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cobalion
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Iron Head
+- Stone Edge
+- Swords Dance
+
+Keldeo
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Secret Sword
+- Hydro Pump
+- Air Slash
+- Calm Mind
+
+Urshifu_Rapid_Strike @ Choice Band
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surging Strikes
+- Close Combat
+- Aqua Jet
+- U-turn
+
+Zacian @ Rusted Sword
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Behemoth Blade
+- Play Rough
+- Close Combat
+- Swords Dance
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
@@ -17350,18 +17523,56 @@ Samurott
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_TERRY ===
-Name: TERRY
-Class: Psychic
-Pic: Psychic F
-Gender: Female
+/* Project Grounded: Hall of Origin, atrium: emissary van het vuur (de smidse) (hall_of_origin.py) */
+=== TRAINER_HOO_HEPHAEST ===
+Name: HEPHAEST
+Class: Kindler
+Pic: Kindler
+Gender: Male
 Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Girafarig
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Victini
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- V-create
+- Zen Headbutt
+- U-turn
+- Bolt Strike
+
+Volcanion
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Steam Eruption
+- Flamethrower
+- Earth Power
+- Sludge Bomb
+
+Chi-Yu
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave
+- Dark Pulse
+- Psychic
+- Nasty Plot
+
+Heatran @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Magma Storm
+- Earth Power
+- Flash Cannon
+- Stealth Rock
+
+Reshiram @ Charcoal
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blue Flare
+- Draco Meteor
+- Earth Power
+- Roost
 
 === TRAINER_NATE ===
 Name: NATE
@@ -18700,41 +18911,123 @@ Donphan
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_LUCAS_2 ===
-Name: LUCAS
-Class: Hiker
-Pic: Hiker
+/* Project Grounded: Hall of Origin, top: emissary van de orde (de bouwers) (hall_of_origin.py) */
+=== TRAINER_HOO_ORDO ===
+Name: ORDO
+Class: Expert
+Pic: Expert M
 Gender: Male
-Music: Hiker
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Wailmer
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Splash
-- Water Gun
+Regirock
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stone Edge
+- Hammer Arm
+- Curse
+- Stealth Rock
 
-=== TRAINER_MIKE_1 ===
-Name: MIKE
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
+Regice
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunderbolt
+- Focus Blast
+- Amnesia
+
+Registeel
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Body Press
+- Iron Defense
+- Curse
+
+Regieleki
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Cage
+- Volt Switch
+- Extreme Speed
+- Thunder Wave
+
+Regidrago
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Energy
+- Draco Meteor
+- Fire Fang
+- Earthquake
+
+Regigigas @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Knock Off
+- Earthquake
+- Drain Punch
+
+/* Project Grounded: Hall of Origin, top: emissary van tijd en ruimte (de laatste) (hall_of_origin.py) */
+=== TRAINER_HOO_KAIROS ===
+Name: KAIROS
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Pelipper
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
-- Growl
+Celebi
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Storm
+- Psychic
+- Earth Power
+- Recover
 
-Poochyena
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Scary Face
+Hoopa-Unbound
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hyperspace Fury
+- Psychic
+- Gunk Shot
+- Drain Punch
+
+Eternatus
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamax Cannon
+- Sludge Bomb
+- Flamethrower
+- Recover
+
+Giratina-Origin @ Griseous Core
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Force
+- Draco Meteor
+- Earthquake
+- Will-O-Wisp
+
+Palkia @ Lustrous Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spacial Rend
+- Hydro Pump
+- Thunderbolt
+- Fire Blast
+
+Dialga @ Adamant Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Roar of Time
+- Flash Cannon
+- Earth Power
+- Fire Blast
 
 === TRAINER_MIKE_2 ===
 Name: MIKE

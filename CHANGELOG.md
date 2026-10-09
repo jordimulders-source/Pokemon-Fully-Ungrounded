@@ -17841,3 +17841,8 @@ Volgens Jordi's GBA-instructies per leider:
 - Dubbele TM's weg (TM's zijn herbruikbaar): de Fire Blast in de Lava Tube is een **Fire Memory**, de U-turn in Fortree Jungle een **Bug Memory** (allebei te koop in Lilycove), en de TM-prijzen van de Trainer Hill (Dark Pulse, Nasty Plot, Stored Power) zijn **Dark/Poison/Psychic Memory**.
 - De Litten (lv 36) van de Magma Grunt op Mt. Chimney is een Incineroar. Rick's Kricketune blijft (bewust).
 - **Hermit Crater**: wilde Pokémon lv 57–59 (was 71–73), gelijk met de trainers daar.
+
+### [v0.9.219] - Alle Pokémon te krijgen (meting)
+- Nieuw: `tools/grounded/dex_check.py` meet per soort/vorm of hij zonder ruilen te krijgen is (wild, statics, gifts, evoluties met verkrijgbare items, fokken, vormwissels); `--waarom SPECIES_X` toont de bronnen. Uitkomst (9 okt): **alle 1025 soorten + 57 regionale vormen** te krijgen (1050), behalve de 6 monkeys en de 26 die nu gebouwd worden (Kanto-/Galar-vogels, Meloetta, Zygarde, Diancie, Ultra Beasts, Cosmog-lijn, Necrozma, Marshadow). Geen ruil-only soorten meer. `DEX_ANALYSE.md` bijgewerkt.
+- Gaten gedicht: Indeedee ♀ (Route 123), Rockruff met Own Tempo voor Lycanroc Dusk (Route 112), Rotom Catalog (Rotom-kelder Mauville), Reveal Glass (Weather Institute 2F), Pink en Purple Nectar (Pretty Petal, Route 104), en de 14 ontbrekende Silvally-Memories (Devon stuurt ze na Type: Null naar je pc).
+- Caterpie en Kanto-Rattata zaten al vroeg in de game (Route 101/104, Petalburg Woods).

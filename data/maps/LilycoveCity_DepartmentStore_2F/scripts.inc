@@ -86,6 +86,11 @@ LilycoveCity_DepartmentStore_2F_Pokemart2:
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_LURE
+	.2byte ITEM_SUPER_LURE
+	.2byte ITEM_MAX_LURE
+	.2byte ITEM_POKE_TOY
+	.2byte ITEM_LUCK_INCENSE
 	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_FIRE_STONE

@@ -369,7 +369,8 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "built a toaster that makes bread\l"
 	.string "colder.$"
 
-@ Project Grounded: Type: Null (post-game gift, LEGENDARY_PLAN groep 11)
+@ Project Grounded: Type: Null (post-game gift, LEGENDARY_PLAN groep 11). Na de gift stuurt Devon zes prototype-
+@ battle items naar de pc (v.a. 9 okt i.p.v. de Memories; die zijn nu te koop voor BP in de Frontier, src/bp_shop.c)
 RustboroCity_DevonCorp_2F_EventScript_TypeNullScientist::
 	lock
 	faceplayer
@@ -395,20 +396,12 @@ RustboroCity_DevonCorp_2F_EventScript_TypeNullLocked::
 RustboroCity_DevonCorp_2F_EventScript_TypeNullAfter::
 	goto_if_set FLAG_RECEIVED_SILVALLY_MEMORIES, RustboroCity_DevonCorp_2F_EventScript_TypeNullAfterMemories
 	msgbox RustboroCity_DevonCorp_2F_Text_TypeNullMemories, MSGBOX_DEFAULT
-	addpcitem ITEM_FIGHTING_MEMORY
-	addpcitem ITEM_FLYING_MEMORY
-	addpcitem ITEM_POISON_MEMORY
-	addpcitem ITEM_GROUND_MEMORY
-	addpcitem ITEM_ROCK_MEMORY
-	addpcitem ITEM_BUG_MEMORY
-	addpcitem ITEM_STEEL_MEMORY
-	addpcitem ITEM_FIRE_MEMORY
-	addpcitem ITEM_GRASS_MEMORY
-	addpcitem ITEM_ELECTRIC_MEMORY
-	addpcitem ITEM_PSYCHIC_MEMORY
-	addpcitem ITEM_DRAGON_MEMORY
-	addpcitem ITEM_DARK_MEMORY
-	addpcitem ITEM_FAIRY_MEMORY
+	addpcitem ITEM_LOADED_DICE
+	addpcitem ITEM_THROAT_SPRAY
+	addpcitem ITEM_BLUNDER_POLICY
+	addpcitem ITEM_PROTECTIVE_PADS
+	addpcitem ITEM_WISE_GLASSES
+	addpcitem ITEM_BERSERK_GENE
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesSent
 	waitmessage
@@ -456,18 +449,20 @@ RustboroCity_DevonCorp_2F_Text_TypeNullAfter:
 	.string "flowers.$"
 
 RustboroCity_DevonCorp_2F_Text_TypeNullMemories:
-	.string "Oh, one more thing. These MEMORY\n"
-	.string "discs came with it. Fourteen of them.\p"
-	.string "Some prototypes went missing. We\n"
-	.string "blame the intern. The intern blames\l"
-	.string "a 'ghost'. HR is looking into both.$"
+	.string "Oh, one more thing. Its cage was full\n"
+	.string "of our prototype battle gear.\p"
+	.string "Legally we can't sell it. Morally we\n"
+	.string "can give it away. Ish. Our lawyer\l"
+	.string "fainted halfway through that sentence.$"
 
 RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesSent:
-	.string "{PLAYER} received 14 MEMORIES!\n"
+	.string "{PLAYER} received 6 prototypes!\n"
 	.string "They were sent to the PC.$"
 
 RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesAfter:
-	.string "Let it hold a MEMORY once it trusts\n"
-	.string "you enough to become SILVALLY.\p"
-	.string "Or don't. It was built to adapt.\n"
-	.string "Unlike our IT department.$"
+	.string "The MEMORY discs? Accounting traded\n"
+	.string "them to the BATTLE FRONTIER for BP.\p"
+	.string "Nobody here knows what BP is worth.\n"
+	.string "Not even the FRONTIER. Buy them back\l"
+	.string "there once it trusts you enough to\l"
+	.string "become SILVALLY.$"

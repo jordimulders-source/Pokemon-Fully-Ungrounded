@@ -107,9 +107,11 @@ ITEMS = [
     (1581, 'Route119_WeatherInstitute_2F', 'ITEM_REVEAL_GLASS', 1, False, 'Weather Institute 2F: Reveal Glass (Therian-vormen van de Forces en Enamorus)'),
     (1582, 'Route104_PrettyPetalFlowerShop', 'ITEM_PINK_NECTAR', 1, False, "Pretty Petal-bloemenwinkel: Pink Nectar (Oricorio Pa'u)"),
     (1583, 'Route104_PrettyPetalFlowerShop', 'ITEM_PURPLE_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Purple Nectar (Oricorio Sensu)'),
+    # items die nog nergens te krijgen waren (item_check.py, 9 okt; met de hand in map.json gezet; flags FLAG_GROUNDED 1620-1699)
+    (1620, 'Route104_PrettyPetalFlowerShop', 'ITEM_RED_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1580, 1619)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest en het benedendek van het Abandoned Ship: eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1580, 1619), (1620, 1699)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin, de Calyrex-quest en het benedendek van het Abandoned Ship: eigen blok
 
 
 def flag_name(n, mp, it, hid):

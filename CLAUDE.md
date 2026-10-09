@@ -160,6 +160,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Agents in worktrees:** shellregels met `$VAR`, `for` of `cd` worden daar geweigerd; laat ze hulpscripts in hun scratchpad schrijven. Object verbergen na een trainergevecht: `"flag": "TRAINER_FLAGS_START+TRAINER_X"` (map_events.s include `constants/opponents.h`).
 - **Stadium-teksten:** verliesteksten breken niet vanzelf goed af; met de hand afbreken (200 px). In doubles praat vóór de eerste beurt alleen tegenstander A, tenzij `BattleScript_StadiumTrainerABSlideMsgEnd2`.
 
+- **Randen in een vanilla-tileset:** een autotiler die per cel de tegel uit dezelfde 3x3-omgeving in een bestaande kaart kiest (`sootopolis_craters.py`) geeft nette randen zonder handwerk; klifbanden even dik als in het voorbeeld. Stadium-omroepregels max. 3 regels per vak. `testrom.py` draait `make_intro_state.py` met `python3`: los herhalen met `python3.11`.
+
 ## Werkwijzen (herhaalde taken)
 
 ### Een route bouwen

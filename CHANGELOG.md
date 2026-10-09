@@ -17559,3 +17559,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Shoal Cave – Frozen Depths:** ladder in de Ice Room (17,28) naar een ijzige onderlaag (Cetoddle, Bergmite e.d.), lv 34–43.
 - **Route 128 – Bubble Grotto:** duikgat in Underwater Route 128 (27,19) naar een luchtbel-grot met alleen water- en visencounters en een Relicanth-kluizenaar.
 - Flags `FLAG_GROUNDED(470–483)`, geen trainers; bouwscript `tools/grounded/maptools/dungeon_extra.py`.
+
+### [v0.9.165] - Kratereilanden bij Sootopolis (Route 126)
+- Twee nieuwe kratereilanden in Sootopolis-stijl, net als Sootopolis alleen bereikbaar door te duiken: zwemgaten in Underwater Route 126 op (24,14) en (37,9). Terug: duiken in het kratermeer.
+- **Hermit Crater** (bewoond): kluizenaar-schilder **Lavis** (oud-lid van de Sootopolis-familie; Grafaiai, Kingdra, Milotic, Smeargle met Spore/Shell Smash; ook in de Stadium-pool), Swimmer Margot en Aroma Lady Fenna (lv 46), Wide Lens en een verborgen Pearl String, 12 unieke landslots lv 44–49 plus water/vissen.
+- **Silent Crater** (verlaten): verzegelde tweelingpoort met Rayquaza-lore, Kyogre/Groudon-beelden, Gold Bottle Cap, verborgen Earth Plate en Splash Plate, eigen water- en visencounters (o.a. Cursola, Dragalge, Overqwil, Relicanth).
+- Bouwscript `tools/grounded/maptools/sootopolis_craters.py` (leert randen uit de Sootopolis-kaart); flags `FLAG_GROUNDED(500–504)`, trainers 1074–1076.

@@ -4,15 +4,14 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
-**Prioriteit (Jordi, 9 okt):** kratereilanden → Beasts of Ruin → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
+**Prioriteit (Jordi, 9 okt):** ~~kratereilanden~~ → Beasts of Ruin → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
 
 ---
 
 ## 1. Nu (fase: basiskaart vullen)
-Gedaan sinds: extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
+Gedaan sinds: kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
-3. **Sootopolis-eilandjes** (eigen kaarten nodig, Route 126 heeft een andere tileset; Jordi 9 okt: mag autonoom). (ZEE_PLAN 1)
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)

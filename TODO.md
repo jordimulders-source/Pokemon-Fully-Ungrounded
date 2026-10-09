@@ -38,8 +38,10 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
 13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
 14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
-15. **Meltan → Melmetal** als gift (Jordi 9 okt; plek nog kiezen).
+15. **Meltan** als gift, evolueert in **Melmetal** door te levelen met een Metal Coat (Jordi 9 okt; plek nog kiezen).
 16. **Enamorus** (Jordi 9 okt): zwerft rond zoals de andere Forces. Zodra die allemaal gevangen zijn, hebben bepaalde stadjes kans op Enamorus: overal hartjes en NPC's die avances naar elkaar maken; één van de koppels is **Birch met een hoop stront**.
+18. **Swords of Justice + Keldeo** (Jordi 9 okt): Cobalion (diepste kamer Granite Cave), Terrakion (extra kamer Victory Road), Virizion (Mangrove Mire), zonder quest (zoals Gen 5). Heb je alle drie, dan belt **Mr. Briney** via de PokéNav: hij ziet iets heel geks in het water. Bij hem in de boot, fade-out, hij vaart je naar een plek die niet op de kaart staat: een pas ontstaan eiland met draaikolken; hij zet je af en daar staat **Keldeo**.
+19. **Mega Forest-boomstam** (Jordi 9 okt): de omgevallen boom in het Mini Forest past niet bij de andere bomen (te veel van bovenaf gezien); in Hoenn-perspectief tekenen. Zwaard en schild zijn goed.
 17. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
 
 ## 3. Daarna: gevechtsintro's en muziek
@@ -68,7 +70,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ## 4. Open vragen voor Jordi
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
-3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, Swords of Justice + Keldeo (oud plan: LEGENDARY_PLAN 6, wacht op Jordi), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** ergens in de game staat hij opeens voor je, wil samen met een sterke trainer strijden en hoort daarna bij je (gift via een event).
+3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, ~~Swords of Justice~~ (zie 18), Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Zygarde. **Pecharunt** misschien in Yoshi's Island. **Marshadow:** post-game tijdens het gevecht tegen **Keccles in de Battle Frontier** springt hij uit je schaduw, wil samen met een sterke trainer strijden en hoort daarna bij je; Keccles: "wow, daar kan ik nog wat van leren. Dát is pas camouflage."
 
 ## 5. Besloten / bewust niet
 - **Geen Grounded-Pokédex:** gewoon de National Dex met alles, vanaf het begin. **Signatures gepauzeerd**; Gen 4+-trainersprites voorlopig niet nodig. (9 okt)

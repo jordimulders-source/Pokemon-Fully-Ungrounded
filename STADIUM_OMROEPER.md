@@ -209,6 +209,7 @@ Algemeen (terugval):
 | `PLASMA_NIGEL` | NIGEL, NEO PLASMA's Head of Logistics! He signed for a GENESECT. |
 | `VICTORY_V` | V! Only POKéMON with a V! VOLCARONA! VIKAVOLT! VICTORY? We'll see. |
 | `GRIMSBY` | CAPTAIN GRIMSBY! Dead since 1802, still clocks in. Union rules. |
+| `LAVIS` | LAVIS! Thirty-one years painting one lake. Today: you, small, in the corner. |
 | `TALLOW` | TALLOW! Lighthouse keeper, 1952 to 1953. Mostly 1953. Mostly dead. |
 | `WICK` | WICK! Forty years a lighthouse keeper. His lamp is a fish. It works. |
 | `SALIM` | SALIM of the MIRAGE BAZAAR! Everything for sale, nothing his! |

@@ -4544,6 +4544,39 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Energy Ball
 - Trick Room
 
+=== PARTNER_STADIUM_LAVIS ===
+Name: LAVIS
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Grafaiai
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gunk Shot
+- Knock Off
+- U-turn
+- Super Fang
+
+Milotic @ Leftovers
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Recover
+- Ice Beam
+- Toxic
+
+Smeargle @ Focus Sash
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Spore
+- Shell Smash
+- Stored Power
+- Hydro Pump
+
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS
 Pic: Trio Mascots

@@ -51,6 +51,20 @@
       "elevation": 0,
       "dest_map": "MAP_UNDERWATER_SOOTOPOLIS_CITY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE126_HERMIT_CRATER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE126_SILENT_CRATER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

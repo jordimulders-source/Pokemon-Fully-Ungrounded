@@ -1192,6 +1192,12 @@
 #define TRAINER_TAO_YING                    1067 // Project Grounded: Tao-toren 3F: Team Reshiram
 // }
 
+// sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; id's 1074-1085)
+#define TRAINER_LAVIS                       1074 // Project Grounded: kluizenaarskrater: schilder, oud-lid van de Sootopolis-familie (Battle Stadium)
+#define TRAINER_SWIMMER_MARGOT              1075 // Project Grounded: kluizenaarskrater: zwemt baantjes in het kratermeer
+#define TRAINER_AROMA_LADY_FENNA            1076 // Project Grounded: kluizenaarskrater: kwam voor de stilte, nam een speaker mee
+// }
+
 #define TRAINERS_COUNT                      1195
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

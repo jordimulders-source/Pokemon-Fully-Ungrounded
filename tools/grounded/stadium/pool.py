@@ -75,6 +75,7 @@ POOL = [
     # post-game kluizenaars: Selene (Draconid-oudere, Meteor Falls), Reginald (Victory Road), Helia (Scorched Slab)
     'DRACONID_ELDER', 'VR_REGINALD', 'SLAB_HELIA',
     'TALLOW',
+    'LAVIS',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -214,6 +215,7 @@ GFX = {
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
     'GRIMSBY': 'SAILOR',
+    'LAVIS': 'ARTIST',
     'TALLOW': 'PSYCHIC_M',
     'WICK': 'EXPERT_M',
     'SALIM': 'EXPERT_M',

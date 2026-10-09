@@ -31,8 +31,8 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_NEP_ENUT",
       "x": 32,
-      "y": 11,
-      "elevation": 3,
+      "y": 10,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,

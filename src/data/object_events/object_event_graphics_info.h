@@ -5750,10 +5750,30 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QCloudOw = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+// Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 128x128
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NEP_ENUT,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 8192,
+    .width = 128,
+    .height = 128,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = sOamTables_128x128,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_NepEnutOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiGreenOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_0,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -5766,7 +5786,187 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_NepEnutOw,
+    .images = sPicTable_YoshiGreenOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiRedOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_0,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiRedOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiYellowOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiYellowOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiLightBlueOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiLightBlueOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPinkOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiPinkOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPurpleOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiPurpleOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBrownOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiBrownOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlackOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiBlackOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiWhiteOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiWhiteOw,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py), 32x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlueOw = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_YoshiBlueOw,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

@@ -1702,7 +1702,7 @@
 #define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL        FLAG_GROUNDED(1047) // Project Grounded: Yoshi's Island spookhuis: Poke Doll
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW         FLAG_GROUNDED(1048) // Project Grounded: Yoshi's Island fort: Grip Claw
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR   FLAG_GROUNDED(1049) // Project Grounded: Yoshi's Island fort: Malicious Armor
-#define FLAG_YI_NEP_ENUT_DONE                                FLAG_GROUNDED(1050) // Project Grounded: Yoshi's Island jungle: Nep-Enut (de nep-blauwe Yoshi, een Dondozo) verslagen of gevangen
+#define FLAG_YI_NEP_ENUT_DONE                                FLAG_GROUNDED(1050) // Project Grounded: Yoshi's Island jungle: Nep-Enut (het watermonster in het meertje, een Dondozo) verslagen of gevangen
 #define FLAG_YI_POOCHY_DUG                                   FLAG_GROUNDED(1051) // Project Grounded: Yoshi's Island jungle: Poochy heeft in het bosje iets opgegraven
 #define FLAG_YI_BRIDGE_CLOUD                                 FLAG_GROUNDED(1052) // Project Grounded: Yoshi's Island bloemenveld: ?-wolk geknapt, de brug over de kloof ligt er
 #define FLAG_YI_STAR_CLOUD                                   FLAG_GROUNDED(1053) // Project Grounded: Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt
@@ -1858,6 +1858,7 @@
 #define FLAG_ITEM_HALL_OF_ORIGIN_ATRIUM_CLEAR_AMULET     FLAG_GROUNDED(1241) // Project Grounded: Hall of Origin, atrium: Clear Amulet
 #define FLAG_HIDDEN_ITEM_HALL_OF_ORIGIN_ATRIUM_PUNCHING_GLOVE FLAG_GROUNDED(1242) // Project Grounded: Hall of Origin, atrium: verborgen Punching Glove
 #define FLAG_ITEM_HALL_OF_ORIGIN_SUMMIT_GRISEOUS_ORB     FLAG_GROUNDED(1243) // Project Grounded: Hall of Origin, top: Griseous Orb (Giratina Origin)
+#define FLAG_ITEM_YOSHIS_ISLAND_YOSHI_HOUSE_SWEET_HEART  FLAG_GROUNDED(1068) // Project Grounded: Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

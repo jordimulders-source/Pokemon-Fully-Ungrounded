@@ -5795,7 +5795,7 @@
     {
       "id": "LAYOUT_YOSHIS_ISLAND_BEACH",
       "name": "YoshisIsland_Beach_Layout",
-      "width": 30,
+      "width": 37,
       "height": 24,
       "primary_tileset": "gTileset_YoshiIslandBase",
       "secondary_tileset": "gTileset_YoshiBeach",
@@ -6031,6 +6031,16 @@
       "secondary_tileset": "gTileset_CoronetSnow",
       "border_filepath": "data/layouts/HallOfOrigin_Summit/border.bin",
       "blockdata_filepath": "data/layouts/HallOfOrigin_Summit/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_YOSHI_HOUSE",
+      "name": "YoshisIsland_YoshiHouse_Layout",
+      "width": 14,
+      "height": 12,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiHouse",
+      "border_filepath": "data/layouts/YoshisIsland_YoshiHouse/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_YoshiHouse/map.bin"
     }
   ]
 }

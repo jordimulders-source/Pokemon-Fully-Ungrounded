@@ -101,6 +101,16 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoochyOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QCloudOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiGreenOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiRedOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiYellowOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiLightBlueOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPinkOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPurpleOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBrownOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlackOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiWhiteOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlueOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
@@ -404,7 +414,17 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
-    [OBJ_EVENT_GFX_NEP_ENUT] = &gObjectEventGraphicsInfo_NepEnutOw, // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_BLUE] = &gObjectEventGraphicsInfo_YoshiBlueOw, // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_WHITE] = &gObjectEventGraphicsInfo_YoshiWhiteOw, // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_BLACK] = &gObjectEventGraphicsInfo_YoshiBlackOw, // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_BROWN] = &gObjectEventGraphicsInfo_YoshiBrownOw, // Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_PURPLE] = &gObjectEventGraphicsInfo_YoshiPurpleOw, // Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_PINK] = &gObjectEventGraphicsInfo_YoshiPinkOw, // Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_LIGHT_BLUE] = &gObjectEventGraphicsInfo_YoshiLightBlueOw, // Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_YELLOW] = &gObjectEventGraphicsInfo_YoshiYellowOw, // Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_RED] = &gObjectEventGraphicsInfo_YoshiRedOw, // Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_YOSHI_GREEN] = &gObjectEventGraphicsInfo_YoshiGreenOw, // Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    [OBJ_EVENT_GFX_NEP_ENUT] = &gObjectEventGraphicsInfo_NepEnutOw, // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_QCLOUD] = &gObjectEventGraphicsInfo_QCloudOw, // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_POOCHY] = &gObjectEventGraphicsInfo_PoochyOw, // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_WARIO] = &gObjectEventGraphicsInfo_WarioOw, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)

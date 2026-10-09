@@ -313,9 +313,19 @@
 #define OBJ_EVENT_GFX_WARIO                             294 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_POOCHY                            295 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_QCLOUD                            296 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-#define OBJ_EVENT_GFX_NEP_ENUT                          297 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_NEP_ENUT                          297 // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_GREEN                       298 // Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_RED                         299 // Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_YELLOW                      300 // Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_LIGHT_BLUE                  301 // Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_PINK                        302 // Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_PURPLE                      303 // Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BROWN                       304 // Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BLACK                       305 // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_WHITE                       306 // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BLUE                        307 // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        298
+#define NUM_OBJ_EVENT_GFX                        308
 
 
 // These are dynamic object gfx ids.
@@ -481,8 +491,13 @@
 #define OBJ_EVENT_PAL_TAG_COMMANDER_BOO           0x1171 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_WARIO                   0x1172 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_QCLOUD                  0x1174 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-#define OBJ_EVENT_PAL_TAG_NEP_ENUT                0x1175 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_NEP_ENUT                0x1175 // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_POOCHY                  0x1173 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_0          0x1176 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_1          0x1177 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2          0x1178 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3          0x1179 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4          0x117A // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)

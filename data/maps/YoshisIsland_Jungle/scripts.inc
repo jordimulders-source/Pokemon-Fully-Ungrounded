@@ -85,15 +85,22 @@ YoshisIsland_Jungle_EventScript_Movement_PoochySniff:
 
 YoshisIsland_Jungle_EventScript_NepEnut::
 	lock
-	faceplayer
 	msgbox YoshisIsland_Jungle_Text_Nep1, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_YI_NEP_ENUT, YoshisIsland_Jungle_EventScript_Movement_NepJump
+	@ hij is 8 tegels hoog: de camera kijkt even omhoog, anders valt zijn kop buiten beeld
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, YoshisIsland_Jungle_EventScript_Movement_CamUp
 	waitmovement 0
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, YoshisIsland_Jungle_EventScript_Movement_NepRise
+	delay 24
 	playmoncry SPECIES_DONDOZO, CRY_MODE_ENCOUNTER
 	msgbox YoshisIsland_Jungle_Text_Nep2, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, YoshisIsland_Jungle_EventScript_Movement_CamDown
+	waitmovement 0
+	special RemoveCameraObject
 	setwildbattle SPECIES_DONDOZO, 90
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -112,10 +119,85 @@ YoshisIsland_Jungle_EventScript_NepGone::
 	release
 	end
 
-YoshisIsland_Jungle_EventScript_Movement_NepJump:
-	jump_in_place_down
-	jump_in_place_down
-	jump_in_place_down
+YoshisIsland_Jungle_EventScript_Movement_NepRise:
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	step_end
+
+YoshisIsland_Jungle_EventScript_Movement_CamUp:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+YoshisIsland_Jungle_EventScript_Movement_CamDown:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 YoshisIsland_Jungle_EventScript_Movement_CloudPop:
@@ -177,29 +259,31 @@ YoshisIsland_Jungle_Text_PoochyDig:
 	.string "knows. POOCHY isn't telling.)$"
 
 YoshisIsland_Jungle_Text_Nep1:
-	.string "???: Yoshi!\p"
-	.string "(A blue YOSHI waves at you from the\n"
-	.string "shore. He has very big teeth. He has\l"
-	.string "more teeth than YOSHI. He has more\l"
-	.string "teeth than most sharks.)$"
+	.string "(Two very angry eyebrows are floating\n"
+	.string "on the lake. Under the eyebrows: eyes.\l"
+	.string "Under the eyes: a lot more lake than you\l"
+	.string "would like.)$"
 
 YoshisIsland_Jungle_Text_Nep2:
-	.string "NEP-ENUT: YOSHIIIIIIII!!\p"
-	.string "(That is not a YOSHI. That was never a\n"
-	.string "YOSHI. It's NEP-ENUT, a DONDOZO in a\l"
-	.string "blue YOSHI costume that has been\l"
-	.string "waiting at this lake for someone\l"
-	.string "gullible to walk past.)$"
+	.string "NEP-ENUT: GLOOOORP!!\p"
+	.string "(NEP-ENUT rises out of the lake. All of\n"
+	.string "him. He used to chase YOSHI through\l"
+	.string "entire levels. Then he found out you\l"
+	.string "can just wait in a lake for people to\l"
+	.string "come and look.)\p"
+	.string "(Up close he's a DONDOZO. Most lake\n"
+	.string "monsters are a fish if you get close\l"
+	.string "enough. Nobody gets close enough.)$"
 
 YoshisIsland_Jungle_Text_NepStill:
-	.string "(NEP-ENUT climbs back into his costume\n"
-	.string "and waves again, slightly less\l"
-	.string "convincingly.)$"
+	.string "(NEP-ENUT sinks back down until only\n"
+	.string "the eyebrows are left. The eyebrows\l"
+	.string "keep watching. Judging, mostly.)$"
 
 YoshisIsland_Jungle_Text_NepGone:
-	.string "(The blue YOSHI costume is lying empty\n"
-	.string "on the shore. It is soaking wet. It\l"
-	.string "smells like a whole lake.)$"
+	.string "(The lake is quiet. Suspiciously quiet. A\n"
+	.string "single bubble pops. It sounds\l"
+	.string "offended.)$"
 
 YoshisIsland_Jungle_Text_Cloud:
 	.string "POP! The ? CLOUD bursts and it rains\n"
@@ -239,10 +323,12 @@ YoshisIsland_Jungle_Text_MsgThorns:
 
 YoshisIsland_Jungle_Text_MsgLake:
 	.string "MESSAGE BLOCK: Please do not feed the\n"
-	.string "blue YOSHI.\p"
-	.string "MESSAGE BLOCK: There is no blue YOSHI.\n"
-	.string "If you see a blue YOSHI, please re-read\l"
-	.string "this sign.$"
+	.string "eyebrows.\p"
+	.string "MESSAGE BLOCK: The eyebrows are\n"
+	.string "attached to something. The something\l"
+	.string "is attached to the lake. Swimming is at\l"
+	.string "your own risk. The risk is large. Very\l"
+	.string "large. Larger than it looks.$"
 
 YoshisIsland_Jungle_Text_EggBlock:
 	.string "(An EGG BLOCK. You bonk it. An egg pops\n"

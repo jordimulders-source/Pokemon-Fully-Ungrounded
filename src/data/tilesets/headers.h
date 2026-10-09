@@ -1609,3 +1609,14 @@ const struct Tileset gTileset_YoshiFlowers = // Project Grounded: Yoshi's Island
     .metatileAttributes = gMetatileAttributes_YoshiFlowers,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_YoshiHouse = // Project Grounded: Yoshi's Island: YoshiHouse
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_YoshiHouse,
+    .palettes = gTilesetPalettes_YoshiHouse,
+    .metatiles = gMetatiles_YoshiHouse,
+    .metatileAttributes = gMetatileAttributes_YoshiHouse,
+    .callback = NULL,
+};

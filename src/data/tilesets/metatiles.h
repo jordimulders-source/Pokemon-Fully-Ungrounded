@@ -324,3 +324,6 @@ const u16 gMetatileAttributes_YoshiCave[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatiles.bin"); // Project Grounded: Yoshi's Island: Flowers
 const u16 gMetatileAttributes_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatiles.bin"); // Project Grounded: Yoshi's Island: YoshiHouse
+const u16 gMetatileAttributes_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatile_attributes.bin");

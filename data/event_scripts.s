@@ -466,6 +466,7 @@ gStdScripts_End::
 	.include "data/maps/GraniteCave_SwordChamber/scripts.inc"
 	.include "data/maps/Route126_CoralCathedral/scripts.inc"
 	.include "data/maps/SpacetimeCave/scripts.inc"
+	.include "data/maps/YoshisIsland_YoshiHouse/scripts.inc"
 	.include "data/maps/YoshisIsland_Flowers/scripts.inc"
 	.include "data/maps/YoshisIsland_Cave/scripts.inc"
 	.include "data/maps/YoshisIsland_Jungle/scripts.inc"

@@ -137,6 +137,10 @@ YoshisIsland_Beach_EventScript_MsgBlock::
 	msgbox YoshisIsland_Beach_Text_MsgBlock, MSGBOX_SIGN
 	end
 
+YoshisIsland_Beach_EventScript_Mailbox::
+	msgbox YoshisIsland_Beach_Text_Mailbox, MSGBOX_SIGN
+	end
+
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 YoshisIsland_Beach_Text_Arrival1:
 	.string "Something went wrong.\p"
@@ -230,5 +234,14 @@ YoshisIsland_Beach_Text_MsgBlock:
 	.string "MESSAGE BLOCK: ...you can't. This game is\n"
 	.string "top-down. Fine. The hint is free: the\l"
 	.string "pipe on the right goes to the jungle.\l"
-	.string "The jungle has a lake. The lake has a\l"
-	.string "YOSHI in it that is not a YOSHI.$"
+	.string "The jungle has a lake. The lake has\l"
+	.string "eyebrows. Lakes should not have\l"
+	.string "eyebrows.$"
+
+YoshisIsland_Beach_Text_Mailbox:
+	.string "(YOSHI's mailbox. There's a note inside:\n"
+	.string "“Gone to rescue my friends. Back soon.\l"
+	.string "-YOSHI”)\p"
+	.string "(The friends are all inside. They have\n"
+	.string "been back for decades. Nobody told the\l"
+	.string "mailbox.)$"

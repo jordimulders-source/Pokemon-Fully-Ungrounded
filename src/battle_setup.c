@@ -669,6 +669,17 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_ETERNATUS_ETERNAMAX:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_GLASTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (placeholder: Kanto-legendary-thema, ijs dat splijt)
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_SPECTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (placeholder: Kanto-legendary-thema, zwart gat)
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_CALYREX: // Project Grounded: Crown Tundra, de koning zelf (placeholder: Kanto-legendary-thema)
+    case SPECIES_CALYREX_ICE:
+    case SPECIES_CALYREX_SHADOW:
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_MEET, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
         CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
         break;

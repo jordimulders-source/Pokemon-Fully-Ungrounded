@@ -1701,6 +1701,14 @@
 #define FLAG_YI_STAR_CLOUD                                   FLAG_GROUNDED(1053) // Project Grounded: Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt
 #define FLAG_YI_POOCHY_MET                                   FLAG_GROUNDED(1054) // Project Grounded: Yoshi's Island jungle: Poochy leren kennen (korte uitleg alleen de eerste keer)
 // }
+// calyrex { (tools/grounded/maptools/calyrex_quest.py; FLAG_GROUNDED 1280-1319: 1280-1285 quest, 1300-1309 nieuwe items (nieuwe_items.py), 1286-1299 en 1310-1319 nog vrij)
+#define FLAG_CROWN_QUEST_STARTED                         FLAG_GROUNDED(1280) // Project Grounded: Crown Tundra: Calyrex heeft gevraagd zijn paard terug te halen (paarden verschijnen)
+#define FLAG_CROWN_CHOSE_GLASTRIER                       FLAG_GROUNDED(1281) // Project Grounded: Crown Tundra: gekozen voor GLASTRIER (Spectrier is voorgoed weg)
+#define FLAG_CROWN_CHOSE_SPECTRIER                       FLAG_GROUNDED(1282) // Project Grounded: Crown Tundra: gekozen voor SPECTRIER (Glastrier is voorgoed weg)
+#define FLAG_CROWN_STEED_DONE                            FLAG_GROUNDED(1283) // Project Grounded: Crown Tundra: het gekozen paard is gevangen
+#define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
+#define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
+// }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
@@ -1836,6 +1844,9 @@
 #define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_CAVE_PEWTER_CRUNCHIES FLAG_GROUNDED(1065) // Project Grounded: Yoshi's Island kristalgrot: verborgen Pewter Crunchies
 #define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_LUMIOSE_GALETTE  FLAG_GROUNDED(1066) // Project Grounded: Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)
 #define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_CHERISH_BALL     FLAG_GROUNDED(1067) // Project Grounded: Yoshi's Island bloemenveld: Cherish Ball (achter de brug)
+#define FLAG_ITEM_CROWN_TUNDRA_ICE_GEM                   FLAG_GROUNDED(1300) // Project Grounded: Crown Tundra: Ice Gem (ijsveld van Glastrier)
+#define FLAG_ITEM_CROWN_TUNDRA_GHOST_GEM                 FLAG_GROUNDED(1301) // Project Grounded: Crown Tundra: Ghost Gem (bos van Spectrier)
+#define FLAG_HIDDEN_ITEM_CROWN_TUNDRA_ICE_MEMORY         FLAG_GROUNDED(1302) // Project Grounded: Crown Tundra: verborgen Ice Memory
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

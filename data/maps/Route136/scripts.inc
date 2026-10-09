@@ -1,5 +1,6 @@
 Route136_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route136_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route136_OnLoad
 	.byte 0
 
 Route136_OnTransition:
@@ -305,3 +306,16 @@ Route136_EventScript_ToAshfrost::
 	warpsilent MAP_ASHFROST_TOWN, 7, 38
 	waitstate
 	end
+
+@ calyrex { (gegenereerd door tools/grounded/maptools/calyrex_quest.py)
+Route136_OnLoad:
+	goto_if_unset FLAG_NATIONAL_PARK_DONE, Route136_OnLoadEnd
+	setmetatile 44, 32, 0x24A, TRUE
+	setmetatile 45, 32, 0x24B, TRUE
+	setmetatile 46, 32, 0x24C, TRUE
+	setmetatile 44, 33, 0x24D, TRUE
+	setmetatile 45, 33, 0x25B, FALSE
+	setmetatile 46, 33, 0x24E, TRUE
+Route136_OnLoadEnd:
+	end
+@ }

@@ -459,6 +459,7 @@ gStdScripts_End::
 	.include "data/maps/FlowerParadise_Meadow/scripts.inc"
 	.include "data/maps/FortreeJungle/scripts.inc"
 	.include "data/maps/MangroveMire/scripts.inc"
+	.include "data/maps/CrownTundra/scripts.inc"
 	.include "data/maps/MangroveMire_VirizionGlade/scripts.inc"
 	.include "data/maps/UnchartedIsle/scripts.inc"
 	.include "data/maps/VictoryRoad_SwordChamber/scripts.inc"

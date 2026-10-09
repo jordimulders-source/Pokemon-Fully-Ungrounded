@@ -5991,6 +5991,16 @@
       "secondary_tileset": "gTileset_YoshiFlowers",
       "border_filepath": "data/layouts/YoshisIsland_Flowers/border.bin",
       "blockdata_filepath": "data/layouts/YoshisIsland_Flowers/map.bin"
+    },
+    {
+      "id": "LAYOUT_CROWN_TUNDRA",
+      "name": "CrownTundra_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snow",
+      "border_filepath": "data/layouts/CrownTundra/border.bin",
+      "blockdata_filepath": "data/layouts/CrownTundra/map.bin"
     }
   ]
 }

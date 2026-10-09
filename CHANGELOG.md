@@ -17771,3 +17771,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Message Blocks** als infobordjes (overal i.p.v. houten bordjes), **vraagteken-wolkjes** (knappen open: items, een sterrenregen, en een brugwolk die een vlotjesbrug over de kloof legt), **Poochy** (rijdt je over de doorns naar een verborgen bosje en graaft een Strange Souvenir op), **Nep-Enut** (blauwe nep-Yoshi; verrassingsgevecht tegen Dondozo lv 90).
 - Shy Guys als trainers (lv 93–94, zwijgend, sarcasme tussen haakjes). **Yoshi's partnerteam** (Jordi): Dracovish, Tyrantrum en Gouging Fire.
 - Wilde Pokémon per evolutiefase; acht nieuwe items (Shalour Sable, Strange Souvenir, Moomoo Milk, Galarica Twig, Relic Band, Pewter Crunchies, Lumiose Galette, Cherish Ball). Flags `FLAG_GROUNDED(1050–1067)`, trainers 1109/1129/1183, ±70 KB.
+
+### [v0.9.205] - Calyrex-quest: Crown Tundra
+- Na het National Park (Eternatus) gaat in de zuidwand van een heuveltje rechtsonder op **Route 136** een grot open naar de **Crown Tundra**: een besneeuwde vallei met een vervallen heiligdom, een ijsveld en een dennenbos.
+- **Calyrex** vraagt je één van zijn paarden terug te halen: **Glastrier** (ijsveld) of **Spectrier** (bos), lv 86. Je kiest er één; het andere verdwijnt voorgoed. Daarna geeft Calyrex de **Reins of Unity** en vecht hij zelf (lv 88). Fusie werkt (ridervormen staan aan). Verslaan i.p.v. vangen: bij het volgende bezoek terug.
+- Wilde Pokémon per evolutiefase (Cubchoo, Snover, Snom, Phantump, Deerling, Piloswine, Wyrdeer, Cetitan, Trevenant, Frosmoth, Smoochum, Spiritomb); items Ice Gem, Ghost Gem, verborgen Ice Memory.
+- Script `tools/grounded/maptools/calyrex_quest.py`; flags `FLAG_GROUNDED(1280–1285, 1300–1302)`. Muziek: placeholder.

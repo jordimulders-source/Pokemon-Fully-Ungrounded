@@ -88,9 +88,13 @@ ITEMS = [
     (1065, 'YoshisIsland_Cave', 'ITEM_PEWTER_CRUNCHIES', 2, True, "Yoshi's Island kristalgrot: verborgen Pewter Crunchies"),
     (1066, 'YoshisIsland_Flowers', 'ITEM_LUMIOSE_GALETTE', 2, False, "Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)"),
     (1067, 'YoshisIsland_Flowers', 'ITEM_CHERISH_BALL', 1, False, "Yoshi's Island bloemenveld: Cherish Ball (achter de brug)"),
+    # Crown Tundra, Calyrex-quest (calyrex_quest.py; flags uit het eigen blok FLAG_GROUNDED 1280-1319)
+    (1300, 'CrownTundra', 'ITEM_ICE_GEM', 1, False, 'Crown Tundra: Ice Gem (ijsveld van Glastrier)'),
+    (1301, 'CrownTundra', 'ITEM_GHOST_GEM', 1, False, 'Crown Tundra: Ghost Gem (bos van Spectrier)'),
+    (1302, 'CrownTundra', 'ITEM_ICE_MEMORY', 1, True, 'Crown Tundra: verborgen Ice Memory'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219)]   # Area Zero, Yoshi's Island, de meren en Mt. Coronet: eigen blokken
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1300, 1309)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet en de Calyrex-quest: eigen blok
 
 
 def flag_name(n, mp, it, hid):

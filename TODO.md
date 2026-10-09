@@ -13,7 +13,7 @@ Gedaan sinds: Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), krate
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:
 2. **Koraalkathedraal (126) en Sea Shard-verzamelquest** bij de Diving Treasure Hunter (overgeslagen in v0.9.164). (VRAGEN_VOLGENDE O1/O4)
 
-**Beasts of Ruin bijwerken (Jordi 9 okt, volgende agent):** Chi-Yu terug naar één kamer (lavaveld weg, save-veilig), zoals in Scarlet/Violet: een uitgeholde grot waar ze het beest in hebben geduwd. Elk schrijn het stukje grot waar het beest zit op zijn eigen manier geruïneerd maken (vuur: verschroeid/lavascheuren; aarde: gebarsten grond/scherven van vaten; mos: rottende wortels; ijs: bevroren/ijspegels). Script: `tools/grounded/maptools/ruin_beasts.py`.
+~~Beasts of Ruin bijwerken~~ (v0.9.174).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** (lege plek op de Town Map), met warps naar: (9 okt; eerder 5–6 okt)

@@ -17606,3 +17606,7 @@ Volgens Jordi's GBA-instructies per leider:
 - **Pokémon Tower** (5 verdiepingen: FRLG 1F–4F + de top): interieur met Ekat's Pokémon Tower Interior (Revamp), graven in allerlei soorten; 10 Channelers (Hex Maniac, lv 65–69), wilde ghosts lv 60–68 (Alolan Marowak 1% bovenin), bovenin een conciërge met een Life Orb.
 - **Cerulean Cave** (1F, 2F, B1F): FRLG 1-op-1 met Emerald-grotmateriaal, land/water/vissen lv 60–70, 9 items, **Mewtwo lv 70** in B1F. De placeholder-Mewtwo in Meteor Falls is weg (zelfde flag, dus maar één Mewtwo, ook in oude saves); daar staat nu een kras in de rots die naar de Spacetime Cave wijst.
 - Scripts `tools/grounded/maptools/spacetime_tiles.py` + `spacetime_cave.py`; flags `FLAG_GROUNDED(560–573)`, trainers 1159–1168.
+
+### [v0.9.174] - Beasts of Ruin: één uitgeholde grot per beest, elk op zijn eigen manier geruïneerd
+- Jordi: zoals in Scarlet/Violet, een uitgeholde grot waar ze het beest in hebben geduwd. **Chi-Yu** staat nu in de kamer bovenin Jagged Pass; het lavaveld is onbereikbaar (de kaart blijft bestaan voor oude saves, met één warp terug). De beads-inscriptie staat op een staak in de kamer.
+- Ruïne rond elk beest: **vuur** (verschroeide grond, vertakte gloeiende lavascheuren), **aarde** (gebarsten platen, ringscheur, gebroken terracotta vaten), **mos** (rottende wortels, zwammen, rotte stronken, lianen), **ijs** (bevroren vloer, ijspegels, kristallen, rijp). Per pixel getekend op een kaartcanvas en in metatiles geknipt (`ruin_beasts.py`); stronken/paddenstoelen uit Ekat's Haunted Woods, vazen uit Egypt.

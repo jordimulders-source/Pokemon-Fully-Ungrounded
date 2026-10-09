@@ -17679,3 +17679,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Items die nog nergens in de game lagen** (centrale lijst `nieuwe_items.py`, geen TM's/Mega Stones/Z-kristallen): Chargestone (Fast Ball ×3, Power Lens, Eject Pack, Terrain Extender, Ability Shield, Exp. Candy XL), Lavender + Tower (Exp. Candy S ×3, Power Bracer, Moon Ball ×3, Red Card), Cerulean Cave (Level Ball ×3, Power Weight, Room Service, Mirror Herb, Power Band), National Park (Sport Ball ×5, Insect Plate, Power Belt), Ilex Forest (Friend Ball ×3, Love Ball ×3, Destiny Knot, Rose Incense).
 - Alle Spacetime-gebieden nagelopen: na de quest blijft alles bezoekbaar. Ontbrekende `// }`-afsluiters in `flags.h`/`opponents.h` gerepareerd (anders wisten generatorscripts elkaars blokken).
 - **Uncharted Isle:** de draaikolken hebben nu zes golven (drie leek op een werpster, Jordi).
+
+### [v0.9.189] - Glimwood Tangle en Ballonlea (Xerneas, Yveltal)
+- **Glimwood Tangle** (48×60) en **Ballonlea** (36×34) via de Spacetime-scheur: kronkelende, zacht gloeiende paden, terrassen, wortelbogen, reuzenpaddenstoelen, gloeiende klokjes, een heksenkring; in Ballonlea vier paddenstoelhuisjes en een terras met een heksenkring. Twee toestanden: grauw en uitgedoofd tot Xerneas gevangen is, daarna een nachtbos met felle gloed.
+- **Quest:** een oude Ballonlea-heks (met quizjes als grap) is je gids; de **Impidimp-bende** (wilde dubbelgevechten lv 64–65, Grimmsnarl en Morgrem bij de trap) dooft het licht. **Xerneas** (lv 70) vangen herstelt het bos; daarna verschijnt **Yveltal** (lv 70) in de heksenkring. Trainers Morwen, Silas, Odette en Arthur (lv 67–68).
+- Wilde Galar-soorten lv 60–68 (Mimikyu en Galarian Slowking 1%); nieuwe items: Exp. Candy XL, Eject Pack, Dream Ball, Galarica Cuff, Galarica Wreath, Exp. Candy L.
+- Glimwood-scheur gekoppeld; telt mee voor de gang naar ?????. Script `tools/grounded/maptools/glimwood.py`; flags `FLAG_GROUNDED(880–894)`, trainers 1098, 1099, 1107, 1108.

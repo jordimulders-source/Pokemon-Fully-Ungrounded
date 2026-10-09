@@ -24,8 +24,8 @@ import json, os, re, subprocess, sys, collections
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 OUT_JSON = os.path.join(REPO, 'tools/grounded/dex_beschikbaar.json')
 
-# Bewust weggelaten (CLAUDE.md)
-WEGGELATEN = {'SPECIES_PANSAGE', 'SPECIES_SIMISAGE', 'SPECIES_PANSEAR', 'SPECIES_SIMISEAR', 'SPECIES_PANPOUR', 'SPECIES_SIMIPOUR'}
+# Bewust weggelaten (CLAUDE.md). De elemental monkeys mogen sinds 9 okt op routes (Jordi): leeg.
+WEGGELATEN = set()
 # Wordt nu door andere agents gebouwd (9 okt); apart rapporteren
 IN_DE_MAAK = {
     'SPECIES_ARTICUNO', 'SPECIES_ZAPDOS', 'SPECIES_MOLTRES', 'SPECIES_ARTICUNO_GALAR', 'SPECIES_ZAPDOS_GALAR',

@@ -16,6 +16,7 @@ BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo::
 BattleFrontier_OutsideEast_OnTransition:
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
+	setflag FLAG_TEMP_11 @ Project Grounded: Marshadow verschijnt pas in de Keccles-scene
 	call_if_unset FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
 	end
 
@@ -463,3 +464,199 @@ BattleFrontier_OutsideEast_Text_StadiumTalker2:
 	.string "in 2004.\p"
 	.string "The announcer still hasn't finished\n"
 	.string "introducing him.$"
+
+@ Project Grounded: Keccles (onzichtbaar, Devon Scope), post-game. Marshadow springt uit de schaduw van de speler,
+@ komt in je team en vecht mee. Eenmalig gevecht (FLAG_HIDE_FRONTIER_KECCLES), Marshadow eenmalig (FLAG_RECEIVED_MARSHADOW).
+BattleFrontier_OutsideEast_EventScript_Keccles::
+	lock
+	faceplayer
+	checkitem ITEM_DEVON_SCOPE
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_OutsideEast_EventScript_KecclesAskScope
+	msgbox BattleFrontier_OutsideEast_Text_KecclesUnseeable, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_KecclesAskScope::
+	msgbox BattleFrontier_OutsideEast_Text_KecclesUseScope, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_OutsideEast_EventScript_KecclesReveal
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_KecclesReveal::
+	msgbox BattleFrontier_OutsideEast_Text_KecclesUsedScope, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FRONTIER_KECCLES, Movement_KecleonAppears
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	goto_if_set FLAG_RECEIVED_MARSHADOW, BattleFrontier_OutsideEast_EventScript_KecclesRetry
+	msgbox BattleFrontier_OutsideEast_Text_KecclesIntro, MSGBOX_DEFAULT
+	closemessage
+	call BattleFrontier_OutsideEast_EventScript_MarshadowAppears
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_OutsideEast_EventScript_MarshadowNoRoom
+	msgbox BattleFrontier_OutsideEast_Text_KecclesTwoAgainstSix, MSGBOX_DEFAULT
+	goto BattleFrontier_OutsideEast_EventScript_KecclesBattle
+
+BattleFrontier_OutsideEast_EventScript_KecclesRetry::
+	msgbox BattleFrontier_OutsideEast_Text_KecclesRetry, MSGBOX_DEFAULT
+BattleFrontier_OutsideEast_EventScript_KecclesBattle::
+	trainerbattle_no_intro TRAINER_KECCLES_FRONTIER, BattleFrontier_OutsideEast_Text_KecclesDefeat
+	msgbox BattleFrontier_OutsideEast_Text_KecclesPostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FRONTIER_KECCLES, BattleFrontier_OutsideEast_Movement_KecclesLeave
+	waitmovement 0
+	removeobject LOCALID_FRONTIER_KECCLES
+	setflag FLAG_HIDE_FRONTIER_KECCLES
+	release
+	end
+
+@ Marshadow komt achter de speler uit zijn schaduw (vak tegenover de kijkrichting), krijgt een uitroepteken van
+@ Keccles en gaat via de gift-route je team in (vol: pc). VAR_RESULT = FALSE als er nergens plek is.
+BattleFrontier_OutsideEast_EventScript_MarshadowAppears::
+	msgbox BattleFrontier_OutsideEast_Text_ShadowMoves, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_0x8004, VAR_0x8005
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_NORTH, BattleFrontier_OutsideEast_EventScript_BehindNorth
+	call_if_eq VAR_RESULT, DIR_SOUTH, BattleFrontier_OutsideEast_EventScript_BehindSouth
+	call_if_eq VAR_RESULT, DIR_WEST, BattleFrontier_OutsideEast_EventScript_BehindWest
+	call_if_eq VAR_RESULT, DIR_EAST, BattleFrontier_OutsideEast_EventScript_BehindEast
+	setobjectxyperm LOCALID_FRONTIER_MARSHADOW, VAR_0x8004, VAR_0x8005
+	playse SE_M_FAINT_ATTACK
+	fadescreenspeed FADE_TO_BLACK, 1
+	clearflag FLAG_TEMP_11
+	addobject LOCALID_FRONTIER_MARSHADOW
+	fadescreenspeed FADE_FROM_BLACK, 1
+	waitse
+	playmoncry SPECIES_MARSHADOW, CRY_MODE_ENCOUNTER
+	applymovement LOCALID_FRONTIER_MARSHADOW, BattleFrontier_OutsideEast_Movement_MarshadowJump
+	applymovement LOCALID_FRONTIER_KECCLES, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitmoncry
+	msgbox BattleFrontier_OutsideEast_Text_MarshadowAppeared, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_0x8004, SPECIES_MARSHADOW
+	setvar VAR_0x8005, 88
+	setvar VAR_0x8006, ITEM_NONE
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
+	setflag FLAG_RECEIVED_MARSHADOW
+	applymovement LOCALID_FRONTIER_MARSHADOW, BattleFrontier_OutsideEast_Movement_Vanish
+	waitmovement 0
+	removeobject LOCALID_FRONTIER_MARSHADOW
+	setflag FLAG_TEMP_11
+	setvar VAR_RESULT, TRUE
+	return
+
+BattleFrontier_OutsideEast_EventScript_BehindNorth::
+	addvar VAR_0x8005, 1
+	return
+
+BattleFrontier_OutsideEast_EventScript_BehindSouth::
+	subvar VAR_0x8005, 1
+	return
+
+BattleFrontier_OutsideEast_EventScript_BehindWest::
+	addvar VAR_0x8004, 1
+	return
+
+BattleFrontier_OutsideEast_EventScript_BehindEast::
+	subvar VAR_0x8004, 1
+	return
+
+BattleFrontier_OutsideEast_EventScript_MarshadowNoRoom::
+	msgbox BattleFrontier_OutsideEast_Text_MarshadowNoRoom, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FRONTIER_MARSHADOW, BattleFrontier_OutsideEast_Movement_Vanish
+	waitmovement 0
+	removeobject LOCALID_FRONTIER_MARSHADOW
+	setflag FLAG_TEMP_11
+	release
+	end
+
+BattleFrontier_OutsideEast_Movement_MarshadowJump:
+	face_player
+	jump_in_place_down
+	step_end
+
+BattleFrontier_OutsideEast_Movement_KecclesLeave:
+BattleFrontier_OutsideEast_Movement_Vanish:
+	set_invisible
+	delay_4
+	set_visible
+	delay_4
+	set_invisible
+	delay_4
+	set_visible
+	delay_4
+	set_invisible
+	step_end
+
+BattleFrontier_OutsideEast_Text_KecclesUnseeable:
+	.string "Something invisible is standing here.\p"
+	.string "It smells faintly of library.$"
+
+BattleFrontier_OutsideEast_Text_KecclesUseScope:
+	.string "Something invisible is standing here.\p"
+	.string "Use the DEVON SCOPE?$"
+
+BattleFrontier_OutsideEast_Text_KecclesUsedScope:
+	.string "{PLAYER} used the DEVON SCOPE.\p"
+	.string "An invisible POKéMON became visible!\n"
+	.string "Again.$"
+
+BattleFrontier_OutsideEast_Text_KecclesIntro:
+	.string "KECCLES: Oh. Hello, CHAMPION.\p"
+	.string "I've been studying the SUDOWOODO here.\n"
+	.string "It pretends to be a tree, and everyone\l"
+	.string "simply believes it.\p"
+	.string "I pretend to be nothing, and everyone\n"
+	.string "walks straight into me. Where's the\l"
+	.string "justice?\p"
+	.string "Anyway. One last battle, rival.\n"
+	.string "No camouflage. Just lizards.$"
+
+BattleFrontier_OutsideEast_Text_ShadowMoves:
+	.string "…Huh?\p"
+	.string "{PLAYER}'s shadow is moving.\n"
+	.string "{PLAYER} is not.$"
+
+BattleFrontier_OutsideEast_Text_MarshadowAppeared:
+	.string "MARSHADOW leapt out of {PLAYER}'s\n"
+	.string "shadow!\p"
+	.string "KECCLES: …How long has that been\n"
+	.string "in there?\p"
+	.string "MARSHADOW is shadowboxing at KECCLES.\p"
+	.string "It seems to want to fight alongside\n"
+	.string "a strong trainer. It picked you.\l"
+	.string "Apparently a while ago.$"
+
+BattleFrontier_OutsideEast_Text_MarshadowNoRoom:
+	.string "MARSHADOW looked at your full boxes\n"
+	.string "and sank back into your shadow.\p"
+	.string "KECCLES: Make some room. I'll wait.\n"
+	.string "Invisibly, obviously.$"
+
+BattleFrontier_OutsideEast_Text_KecclesTwoAgainstSix:
+	.string "KECCLES: Fine. I'm a scientist.\n"
+	.string "I respect a larger sample size.$"
+
+BattleFrontier_OutsideEast_Text_KecclesRetry:
+	.string "KECCLES: Back for the rematch? Good.\p"
+	.string "Is your shadow coming too?\n"
+	.string "I'll assume yes. I always do now.$"
+
+BattleFrontier_OutsideEast_Text_KecclesDefeat:
+	.string "KECCLES: Hmmm…$"
+
+BattleFrontier_OutsideEast_Text_KecclesPostBattle:
+	.string "KECCLES: Wow, I can still learn\n"
+	.string "something from that.\p"
+	.string "It hid in your shadow through eight\n"
+	.string "GYMS and a LEAGUE, and nobody noticed.\l"
+	.string "Not even you.\p"
+	.string "THAT is camouflage.\p"
+	.string "I'm going home to stare at my own\n"
+	.string "shadow for a while. Suspiciously.$"

@@ -33,7 +33,7 @@ IN_DE_MAAK = {
     'SPECIES_NIHILEGO', 'SPECIES_BUZZWOLE', 'SPECIES_PHEROMOSA', 'SPECIES_XURKITREE', 'SPECIES_CELESTEELA',
     'SPECIES_KARTANA', 'SPECIES_GUZZLORD', 'SPECIES_POIPOLE', 'SPECIES_NAGANADEL', 'SPECIES_STAKATAKA',
     'SPECIES_BLACEPHALON', 'SPECIES_NECROZMA', 'SPECIES_COSMOG', 'SPECIES_COSMOEM', 'SPECIES_SOLGALEO',
-    'SPECIES_LUNALA', 'SPECIES_MARSHADOW',
+    'SPECIES_LUNALA',
 }
 ITEM_C_SOURCES = ['src/floating_market.c', 'src/fishing_tournament.c', 'src/apricorn_tree.c', 'src/new_game.c',
                   'src/data/battle_frontier/battle_frontier_exchange_corner.h', 'src/data/battle_frontier/trainer_hill.h',

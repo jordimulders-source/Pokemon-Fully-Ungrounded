@@ -1263,7 +1263,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Battle Stadium. Vervangen de mugshot, zoals bij Steven.
     if (trainerId == TRAINER_MIMI)
         return B_TRANSITION_MIMI;
-    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3
+     || trainerId == TRAINER_KECCLES_FRONTIER)
         return B_TRANSITION_KECCLES;
     if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
      || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9) || trainerId == TRAINER_STADIUM_BURGLAR)

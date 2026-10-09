@@ -2156,6 +2156,10 @@
 #define FLAG_HIDE_LEGENDS_CARBINK                        FLAG_GROUNDED(1539) // Project Grounded: verbergt de twee Carbink naast Diancie (ON_TRANSITION, alleen post-game zichtbaar)
 #define FLAG_HIDE_LEGENDS_POKE_FLUTE                     FLAG_GROUNDED(1540) // Project Grounded: verbergt de Poke Flute naast Snorlax (ON_TRANSITION, alleen post-game)
 // }
+// marshadow { (met de hand; Keccles op het Battle Frontier-eiland + Marshadow; FLAG_GROUNDED 1541-1549, 1543-1549 nog vrij)
+#define FLAG_HIDE_FRONTIER_KECCLES                       FLAG_GROUNDED(1541) // Project Grounded: Battle Frontier (oost): Keccles verslagen en vertrokken (verbergt hem)
+#define FLAG_RECEIVED_MARSHADOW                          FLAG_GROUNDED(1542) // Project Grounded: Marshadow sprong uit je schaduw en kwam in je team (Keccles-gevecht, Battle Frontier)
+// }
 // ultra_space { (tools/grounded/maptools/ultra_space.py, src/ultra_space.c; FLAG_GROUNDED 1440-1519: 1440-1450 Ultra Beasts/Necrozma, 1451-1459 Cosmog/Solrock-Lunatone, 1460-1479 nieuwe items (blok nieuwe_items), 1480-1519 nog vrij)
 #define FLAG_ULTRA_NIHILEGO                     FLAG_GROUNDED(1440) // Project Grounded: Ultra Space: Nihilego gevangen (verbergt het object, portaal slaat de plek over)
 #define FLAG_ULTRA_BUZZWOLE                     FLAG_GROUNDED(1441) // Project Grounded: Ultra Space: Buzzwole gevangen

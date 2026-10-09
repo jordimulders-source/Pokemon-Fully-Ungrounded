@@ -140,6 +140,13 @@ lv 82–84, geeft de DNA Splicers); `TRAINER_STADIUM_GHETSIS` (978) is de Stadiu
 `_MIRA`, `_TALON` (1060–1064, waren `TRAINER_DRAGONSPINE_*` 1180–1184), `_JUN` (1066), `_YING` (1067). Drakenwachter
 Gerald (`TRAINER_GERALD_WARDEN`, 1185) is geschrapt, ook uit het Stadium; 1180–1185 zijn vrij.
 
+**Keccles:** `TRAINER_KECCLES_1` (859, strand Route 115), `_2` (860, onzichtbaar voor de Fortree Gym), `_3` (871,
+Route 136; ook in het Stadium) en `TRAINER_KECCLES_FRONTIER` (853, was `TRAINER_BRENDAN_PLACEHOLDER`): post-game op het
+Battle Frontier-eiland (oost, (57, 58), onzichtbaar op het pad naar de Sudowoodo, Devon Scope), lv 92–95, ace Salazzle 95.
+Vlak voor dat gevecht springt Marshadow (lv 88) uit de schaduw van de speler en komt in je team
+(`FLAG_RECEIVED_MARSHADOW`); Keccles verdwijnt na het gevecht (`FLAG_HIDE_FRONTIER_KECCLES`). Alle vier: salsa-thema
+en de Keccles-transitie.
+
 ## Hall of Origin (`tools/grounded/maptools/hall_of_origin.py`)
 
 De emissaries van Arceus (lv 100, teams van legendaries) gebruiken ongebruikte vanilla-constanten; alleen de naam en

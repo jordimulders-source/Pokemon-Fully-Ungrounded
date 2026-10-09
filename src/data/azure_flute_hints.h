@@ -1,6 +1,6 @@
 // Project Grounded: gegenereerd door tools/grounded/azure_flute.py; niet met de hand bewerken.
 // Hints van de Azure Flute: {soort, gone-flag (0 = geen), tekst}. Volgorde = volgorde van de hints.
-// 98 soorten.
+// 99 soorten.
 static const struct AzureFluteHint sAzureFluteHints[] =
 {
     // RAIKOU: NewMauville_ThunderCave
@@ -165,6 +165,8 @@ static const struct AzureFluteHint sAzureFluteHints[] =
     {SPECIES_MELOETTA, 0, COMPOUND_STRING("ROUTE 123. A SNORLAX is asleep on the\nBERRY MASTER's fields. Bring something\lto wake it up. Bring an encore.")},
     // ZYGARDE: DesertUnderpass
     {SPECIES_ZYGARDE, 0, COMPOUND_STRING("Life and death are settled? Then order\ncomes to check. The DESERT UNDERPASS,\lmiddle of the tunnels.")},
+    // MARSHADOW: BattleFrontier_OutsideEast
+    {SPECIES_MARSHADOW, FLAG_RECEIVED_MARSHADOW, COMPOUND_STRING("Someone in the BATTLE FRONTIER has\nbeen studying a SUDOWOODO, invisibly.\lBring a DEVON SCOPE. Bring your shadow\ltoo; it has opinions.")},
     // PECHARUNT: YoshisIsland_Hills
     {SPECIES_PECHARUNT, 0, COMPOUND_STRING("YOSHI'S ISLAND, the hills. A tiny stall\nsells mochi. Don't eat the mochi.")},
     // DIALGA: SpearPillar

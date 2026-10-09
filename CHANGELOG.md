@@ -17810,3 +17810,11 @@ Volgens Jordi's GBA-instructies per leider:
 - Zodra Tornadus, Thundurus en Landorus alle drie gevangen of verslagen zijn, heeft elke dag 2 op 3 kans op een **liefdesdag** in Oldale, Dewford, Fallarbor of Lavaridge (vast per dag). Dan zweven er hartjes boven NPC's, staat er een verliefd koppel (oude man + oude vrouw, Sailor + Beauty, Hiker + Picnicker, Psychic + Hex Maniac) en staat **Prof. Birch verliefd bij een hoop stront**.
 - **Enamorus** (lv 93) staat dan in het stadje; aanspreken = gevecht (eigen transitie). Gevangen: weg, de liefdesdagen blijven als sfeer. Verslagen: komt op een volgende liefdesdag terug.
 - Azure Flute-hint voor Enamorus; flags `FLAG_GROUNDED(1360–1362)`. Debug: `special Enamorus_DebugForceTown` (VAR_0x8004 0–3).
+
+### [v0.9.213] - Battle Casino
+- Nieuw huisje op het plein van het Frontier-eiland (oostkant): het **Battle Casino** (Game Corner-interieur, croupier, gokkers, onder wie iemand die al zijn BP kwijt is).
+- **Wedstrijdkaart** met 4 wedstrijden: per kant trainer(s), portret, team als mon-iconen met levels en de **odds** (1,1x–5x; van 50/50 tot 90/10). Kies wedstrijd, kant en inzet (1–100 BP), dan **meekijken** (de AI speelt beide kanten) of **alleen de uitslag**. Geen daglimiet: na elke wedstrijd een nieuwe kaart. Je eigen team blijft veilig; geen EXP/geld/white-out.
+- **Modi die je vrijspeelt:** wereld singles (bestaande trainers met hun echte team) → wereld doubles (na 3 inzetten) → Battle Stadium singles (6) → Stadium doubles (10) → Factory (willekeurige huurteams, 15) → Spire-baas (een wereldtrainer tegen een Spire-baas, 20).
+- Geen introducties: bij wereld/Factory/Spire een korte tv-overgang (tv-kast, ruis, scanlines, "CASINO TV / LIVE"); bij het Stadium loop je zelf de arena in en zie je het veld vanuit je POV.
+- Odds: kracht per team uit BST × level en typevoordeel, winkans T_A² / (T_A² + T_B²). Bugfix in expansion: bij AI-tegen-AI kreeg de trainerfoto bij de balworp het verkeerde palet.
+- Flags `FLAG_GROUNDED(1320–1321)`, `VAR_CASINO_BETS` (0x40BB). Debug: `special Casino_DebugUnlockAll`.

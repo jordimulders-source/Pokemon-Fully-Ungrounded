@@ -17947,3 +17947,15 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 - `resample_wav.py --all` doet dit idempotent. Draai het na elke samplegenerator en muziekmerge.
 - **Waarom SickBlik zo zwaar was:** elk jazzakkoord is een eigen opname (8 blazersakkoorden van 2,4 s, 8 rhodesakkoorden, 2 rhodes = ±570 KB), plus vier slap-bas-articulaties en hoge rates. Jordi: zo laten, het is een banger. Het nummer is nu 315 KB lichter.
 - Vrij: ±2,67 MB (was ±0,86 MB vóór v0.9.229).
+
+### [v0.9.233] - Laatste opruimronde: ongebruikte vanilla-data (69 KB)
+- Jordi (10 okt): "Doe een algehele laatste check en kijk of er nutteloze kbs of ongebruikte zaken in zitten".
+- Gescand: alle ROM-symbolen waarvan de naam nergens buiten de eigen definitie voorkomt. Daarvan zijn 101 vanilla-restjes weg:
+  - de lege opvularrays `tileset_anims_space_*` (15 KB nullen, alleen om vanilla-adressen gelijk te houden);
+  - de oude Japanse contest-graphics;
+  - ongebruikte animatieframes (`Unused1`/`Unused2`, Lavaridge-lava 4–7);
+  - de oude charmap- en battle-interface-graphics;
+  - de ongebruikte Secret Base- en Cable Club-tiles.
+  - De build slaagt, dus niets verwees ernaar.
+- Niet weg, want via macro's toch in gebruik: wallpapers, de balsprites in de overworld en de Vivillon-patronen.
+- Eindstand ROM: 29,3 MB gebruikt, **±2,74 MB vrij** (was ±0,86 MB vóór v0.9.229).

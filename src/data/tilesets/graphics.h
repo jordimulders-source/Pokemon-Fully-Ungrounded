@@ -642,7 +642,6 @@ const u16 gTilesetPalettes_OceanicMuseum[][16] =
 };
 
 const u32 gTilesetTiles_CableClub[] = INCBIN_U32("data/tilesets/secondary/cable_club/tiles.4bpp");
-const u32 gTilesetTiles_UnknownCableClub[] = INCBIN_U32("data/tilesets/secondary/cable_club/unknown_tiles.4bpp");
 
 const u16 gTilesetPalettes_CableClub[][16] =
 {
@@ -796,7 +795,6 @@ const u16 gTilesetPalettes_RusturfTunnel[][16] =
     INCBIN_U16("data/tilesets/secondary/rusturf_tunnel/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseBrownCaveCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/brown_cave/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseBrownCave[][16] =
 {
@@ -818,7 +816,6 @@ const u16 gTilesetPalettes_SecretBaseBrownCave[][16] =
     INCBIN_U16("data/tilesets/secondary/secret_base/brown_cave/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseTreeCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/tree/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseTree[][16] =
 {
@@ -840,7 +837,6 @@ const u16 gTilesetPalettes_SecretBaseTree[][16] =
     INCBIN_U16("data/tilesets/secondary/secret_base/tree/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseShrubCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/shrub/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseShrub[][16] =
 {
@@ -862,7 +858,6 @@ const u16 gTilesetPalettes_SecretBaseShrub[][16] =
     INCBIN_U16("data/tilesets/secondary/secret_base/shrub/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseBlueCaveCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/blue_cave/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseBlueCave[][16] =
 {
@@ -884,7 +879,6 @@ const u16 gTilesetPalettes_SecretBaseBlueCave[][16] =
     INCBIN_U16("data/tilesets/secondary/secret_base/blue_cave/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseYellowCaveCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/yellow_cave/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseYellowCave[][16] =
 {
@@ -906,7 +900,6 @@ const u16 gTilesetPalettes_SecretBaseYellowCave[][16] =
     INCBIN_U16("data/tilesets/secondary/secret_base/yellow_cave/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_SecretBaseRedCaveCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/red_cave/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseRedCave[][16] =
 {
@@ -1354,7 +1347,6 @@ const u16 gTilesetPalettes_InsideShip[][16] =
 };
 
 const u32 gTilesetTiles_SecretBase[] = INCBIN_U32("data/tilesets/primary/secret_base/tiles.4bpp");
-const u32 gTilesetTiles_UnknownSecretBase[] = INCBIN_U32("data/tilesets/primary/secret_base/unknown_tiles.4bpp");
 
 const u16 gTilesetPalettes_SecretBase[][16] =
 {

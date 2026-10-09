@@ -1693,8 +1693,6 @@ const u16 gItemIconPalette_MegaRing[] = INCBIN_U16("graphics/items/icon_palettes
 const u32 gItemIcon_ZPowerRing[] = INCBIN_U32("graphics/items/icons/z_power_ring.4bpp.smol");
 const u16 gItemIconPalette_ZPowerRing[] = INCBIN_U16("graphics/items/icon_palettes/z_power_ring.gbapal");
 
-const u32 gItemIcon_ZRing[] = INCBIN_U32("graphics/items/icons/z_ring.4bpp.smol"); // Remove
-const u16 gItemIconPalette_ZRing[] = INCBIN_U16("graphics/items/icon_palettes/z_ring.gbapal"); // Remove
 
 const u32 gItemIcon_DynamaxBand[] = INCBIN_U32("graphics/items/icons/dynamax_band.4bpp.smol");
 const u16 gItemIconPalette_DynamaxBand[] = INCBIN_U16("graphics/items/icon_palettes/dynamax_band.gbapal");

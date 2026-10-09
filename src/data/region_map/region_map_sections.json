@@ -1486,6 +1486,10 @@
     {
       "id": "MAPSEC_CROWN_TUNDRA",
       "name": "CROWN TUNDRA"
+    },
+    {
+      "id": "MAPSEC_HALL_OF_ORIGIN",
+      "name": "HALL OF ORIGIN"
     }
   ]
 }

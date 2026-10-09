@@ -138,6 +138,25 @@ lv 82–84, geeft de DNA Splicers); `TRAINER_STADIUM_GHETSIS` (978) is de Stadiu
 `_MIRA`, `_TALON` (1060–1064, waren `TRAINER_DRAGONSPINE_*` 1180–1184), `_JUN` (1066), `_YING` (1067). Drakenwachter
 Gerald (`TRAINER_GERALD_WARDEN`, 1185) is geschrapt, ook uit het Stadium; 1180–1185 zijn vrij.
 
+## Hall of Origin (`tools/grounded/maptools/hall_of_origin.py`)
+
+De emissaries van Arceus (lv 100, teams van legendaries) gebruiken ongebruikte vanilla-constanten; alleen de naam en
+de partij zijn veranderd, het nummer niet (verslagen-flag = 0x500 + nummer).
+
+| Personage | Constante | Oude naam | Nummer | Waar | Thema |
+|---|---|---|---|---|---|
+| Stratos | `TRAINER_HOO_STRATOS` | `TRAINER_CINDY_2` | 117 | Hall of Origin, trap (onderste trede) | lucht |
+| Thalassa | `TRAINER_HOO_THALASSA` | `TRAINER_DUDLEY` | 173 | Hall of Origin, trap (middelste trede) | zee |
+| Bedrock | `TRAINER_HOO_BEDROCK` | `TRAINER_KAYLEE` | 462 | Hall of Origin, trap (bovenste trede) | land |
+| Nous | `TRAINER_HOO_NOUS` | `TRAINER_AMY_AND_LIV_3` | 485 | Hall of Origin, atrium | geest |
+| Somnia | `TRAINER_HOO_SOMNIA` | `TRAINER_GINA_AND_MIA_2` | 486 | Hall of Origin, atrium | dromen |
+| Gladius | `TRAINER_HOO_GLADIUS` | `TRAINER_GRUNT_UNUSED` | 568 | Hall of Origin, atrium | rechtvaardigheid |
+| Hephaest | `TRAINER_HOO_HEPHAEST` | `TRAINER_TERRY` | 581 | Hall of Origin, atrium | vuur/smidse |
+| Ordo | `TRAINER_HOO_ORDO` | `TRAINER_LUCAS_2` | 633 | Hall of Origin, top | orde (de Regi's) |
+| Kairos | `TRAINER_HOO_KAIROS` | `TRAINER_MIKE_1` | 634 | Hall of Origin, top | tijd en ruimte |
+
+Arceus (top) vecht pas als alle negen verslagen zijn.
+
 ## Nieuwe trainer of hernoeming
 
 Hernoem met een script over alle bestanden (behalve `CHANGELOG.md`), draai daarna

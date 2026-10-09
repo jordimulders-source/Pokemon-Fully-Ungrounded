@@ -7049,6 +7049,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_PrettyFeather,
     },
 
+    // Project Grounded: Arceus geeft hem na Spear Pillar; hint naar de volgende niet-gevangen legendary
+    [ITEM_AZURE_FLUTE] =
+    {
+        .name = ITEM_NAME("Azure Flute"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Plays a note no\n"
+            "one taught it.\n"
+            "Legends listen."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AzureFlute,
+        .iconPic = gItemIcon_AzureFlute,
+        .iconPalette = gItemIconPalette_AzureFlute,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000

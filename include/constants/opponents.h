@@ -120,7 +120,7 @@
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116
-#define TRAINER_CINDY_2                     117
+#define TRAINER_HOO_STRATOS                 117 // Project Grounded: Hall of Origin, trap: emissary van de lucht (was TRAINER_CINDY_2, ongebruikt)
 #define TRAINER_BRIANNA                     118
 #define TRAINER_NAOMI                       119
 #define TRAINER_CINDY_3                     120
@@ -176,7 +176,7 @@
 #define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172
-#define TRAINER_DUDLEY                      173
+#define TRAINER_HOO_THALASSA                173 // Project Grounded: Hall of Origin, trap: emissary van de zee (was TRAINER_DUDLEY, ongebruikt)
 #define TRAINER_CHAD                        174
 #define TRAINER_TONY_2                      175
 #define TRAINER_TONY_3                      176
@@ -465,7 +465,7 @@
 #define TRAINER_SIENNA                      459
 #define TRAINER_DEBRA                       460
 #define TRAINER_LINDA                       461
-#define TRAINER_KAYLEE                      462
+#define TRAINER_HOO_BEDROCK                 462 // Project Grounded: Hall of Origin, trap: emissary van het land (was TRAINER_KAYLEE, ongebruikt)
 #define TRAINER_LAUREL                      463
 #define TRAINER_CARLEE                      464
 #define TRAINER_JENNY_2                     465
@@ -488,8 +488,8 @@
 #define TRAINER_AMY_AND_LIV_2               482
 #define TRAINER_GINA_AND_MIA_1              483
 #define TRAINER_MIU_AND_YUKI                484
-#define TRAINER_AMY_AND_LIV_3               485
-#define TRAINER_GINA_AND_MIA_2              486
+#define TRAINER_HOO_NOUS                    485 // Project Grounded: Hall of Origin, atrium: emissary van de geest (was TRAINER_AMY_AND_LIV_3, ongebruikt)
+#define TRAINER_HOO_SOMNIA                  486 // Project Grounded: Hall of Origin, atrium: emissary van de dromen (was TRAINER_GINA_AND_MIA_2, ongebruikt)
 #define TRAINER_AMY_AND_LIV_4               487
 #define TRAINER_AMY_AND_LIV_5               488
 #define TRAINER_AMY_AND_LIV_6               489
@@ -571,7 +571,7 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_JULIO                       566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568
+#define TRAINER_HOO_GLADIUS                 568 // Project Grounded: Hall of Origin, atrium: emissary van de rechtvaardigheid (was TRAINER_GRUNT_UNUSED, ongebruikt)
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_DIO                         571
@@ -584,7 +584,7 @@
 #define TRAINER_HARRISON                    578
 #define TRAINER_GRUNT_MT_CHIMNEY_2          579
 #define TRAINER_CLARENCE                    580
-#define TRAINER_TERRY                       581
+#define TRAINER_HOO_HEPHAEST                581 // Project Grounded: Hall of Origin, atrium: emissary van het vuur (de smidse) (was TRAINER_TERRY, ongebruikt)
 #define TRAINER_NATE                        582
 #define TRAINER_KATHLEEN                    583
 #define TRAINER_CLIFFORD                    584
@@ -636,8 +636,8 @@
 #define TRAINER_ALAN                        630
 #define TRAINER_CLARK                       631
 #define TRAINER_ERIC                        632
-#define TRAINER_LUCAS_2                     633
-#define TRAINER_MIKE_1                      634
+#define TRAINER_HOO_ORDO                    633 // Project Grounded: Hall of Origin, top: emissary van de orde (de bouwers) (was TRAINER_LUCAS_2, ongebruikt)
+#define TRAINER_HOO_KAIROS                  634 // Project Grounded: Hall of Origin, top: emissary van tijd en ruimte (de laatste) (was TRAINER_MIKE_1, ongebruikt)
 #define TRAINER_MIKE_2                      635
 #define TRAINER_TRENT_2                     636
 #define TRAINER_TRENT_3                     637

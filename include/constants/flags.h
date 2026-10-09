@@ -1674,6 +1674,13 @@
 // }
 // Post-game Dave/SickBlik (met de hand; FLAG_GROUNDED 1173-1179, 1174-1179 nog vrij)
 #define FLAG_HIDE_SICKBLIK_DEV                           FLAG_GROUNDED(1173) // Project Grounded: SickBlik (developer) niet op deze kaart vandaag; gezet/gewist in ON_TRANSITION van Mauville/Fortree/Lilycove/Pacifidlog
+// hall_of_origin { (tools/grounded/maptools/hall_of_origin.py; FLAG_GROUNDED 1220-1279: 1240-1259 nieuwe items (blok nieuwe_items), 1225-1239 en 1260-1279 nog vrij)
+#define FLAG_ARCEUS_MET                                  FLAG_GROUNDED(1220) // Project Grounded: Arceus-scene in de Spacetime Cave gezien, Azure Flute ontvangen
+#define FLAG_ARCEUS_SKY_PILLAR                           FLAG_GROUNDED(1221) // Project Grounded: alle legendaries afgehandeld: Arceus wacht op Sky Pillar
+#define FLAG_HALL_OF_ORIGIN_OPEN                         FLAG_GROUNDED(1222) // Project Grounded: Sky Pillar: de trap van licht naar de Hall of Origin is neergedaald
+#define FLAG_HALL_ARCEUS_DONE                            FLAG_GROUNDED(1223) // Project Grounded: Hall of Origin: Arceus gevangen of verslagen (afsluitende tekst gezien)
+#define FLAG_HIDE_HALL_ARCEUS                            FLAG_GROUNDED(1224) // Project Grounded: Hall of Origin: Arceus-object verborgen (gezet in ON_TRANSITION als hij gevangen is)
+// }
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119; 1060-1069 = nieuwe items (blok nieuwe_items), 1055-1059 en 1070-1119 nog vrij)
 #define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
 #define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
@@ -1847,6 +1854,10 @@
 #define FLAG_ITEM_CROWN_TUNDRA_ICE_GEM                   FLAG_GROUNDED(1300) // Project Grounded: Crown Tundra: Ice Gem (ijsveld van Glastrier)
 #define FLAG_ITEM_CROWN_TUNDRA_GHOST_GEM                 FLAG_GROUNDED(1301) // Project Grounded: Crown Tundra: Ghost Gem (bos van Spectrier)
 #define FLAG_HIDDEN_ITEM_CROWN_TUNDRA_ICE_MEMORY         FLAG_GROUNDED(1302) // Project Grounded: Crown Tundra: verborgen Ice Memory
+#define FLAG_ITEM_HALL_OF_ORIGIN_STAIRWAY_COVERT_CLOAK   FLAG_GROUNDED(1240) // Project Grounded: Hall of Origin, trap: Covert Cloak
+#define FLAG_ITEM_HALL_OF_ORIGIN_ATRIUM_CLEAR_AMULET     FLAG_GROUNDED(1241) // Project Grounded: Hall of Origin, atrium: Clear Amulet
+#define FLAG_HIDDEN_ITEM_HALL_OF_ORIGIN_ATRIUM_PUNCHING_GLOVE FLAG_GROUNDED(1242) // Project Grounded: Hall of Origin, atrium: verborgen Punching Glove
+#define FLAG_ITEM_HALL_OF_ORIGIN_SUMMIT_GRISEOUS_ORB     FLAG_GROUNDED(1243) // Project Grounded: Hall of Origin, top: Griseous Orb (Giratina Origin)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

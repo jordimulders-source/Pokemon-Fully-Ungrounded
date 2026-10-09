@@ -6001,6 +6001,36 @@
       "secondary_tileset": "gTileset_Snow",
       "border_filepath": "data/layouts/CrownTundra/border.bin",
       "blockdata_filepath": "data/layouts/CrownTundra/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_STAIRWAY",
+      "name": "HallOfOrigin_Stairway_Layout",
+      "width": 26,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/HallOfOrigin_Stairway/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Stairway/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_ATRIUM",
+      "name": "HallOfOrigin_Atrium_Layout",
+      "width": 34,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/HallOfOrigin_Atrium/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Atrium/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_SUMMIT",
+      "name": "HallOfOrigin_Summit_Layout",
+      "width": 30,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/HallOfOrigin_Summit/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Summit/map.bin"
     }
   ]
 }

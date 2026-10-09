@@ -1035,7 +1035,9 @@
 
 #define ITEM_SILVER_WING 862 // Project Grounded: Key Item uit de zeetempel; Lugia (Whirl Island) verschijnt alleen als je hem hebt
 
-#define ITEMS_COUNT 863
+#define ITEM_AZURE_FLUTE 863 // Project Grounded: Key Item van Arceus (na Spear Pillar); geeft een hint naar de volgende niet-gevangen legendary (src/azure_flute.c)
+
+#define ITEMS_COUNT 864
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

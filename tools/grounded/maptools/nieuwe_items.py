@@ -92,9 +92,14 @@ ITEMS = [
     (1300, 'CrownTundra', 'ITEM_ICE_GEM', 1, False, 'Crown Tundra: Ice Gem (ijsveld van Glastrier)'),
     (1301, 'CrownTundra', 'ITEM_GHOST_GEM', 1, False, 'Crown Tundra: Ghost Gem (bos van Spectrier)'),
     (1302, 'CrownTundra', 'ITEM_ICE_MEMORY', 1, True, 'Crown Tundra: verborgen Ice Memory'),
+    # Hall of Origin (hall_of_origin.py; flags uit het eigen blok FLAG_GROUNDED 1220-1279)
+    (1240, 'HallOfOrigin_Stairway', 'ITEM_COVERT_CLOAK', 1, False, 'Hall of Origin, trap: Covert Cloak'),
+    (1241, 'HallOfOrigin_Atrium', 'ITEM_CLEAR_AMULET', 1, False, 'Hall of Origin, atrium: Clear Amulet'),
+    (1242, 'HallOfOrigin_Atrium', 'ITEM_PUNCHING_GLOVE', 1, True, 'Hall of Origin, atrium: verborgen Punching Glove'),
+    (1243, 'HallOfOrigin_Summit', 'ITEM_GRISEOUS_ORB', 1, False, 'Hall of Origin, top: Griseous Orb (Giratina Origin)'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1300, 1309)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet en de Calyrex-quest: eigen blok
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309)]   # Area Zero, Yoshi's Island, de meren, Mt. Coronet, Hall of Origin en de Calyrex-quest: eigen blok
 
 
 def flag_name(n, mp, it, hid):

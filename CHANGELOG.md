@@ -17798,3 +17798,15 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.210] - Nep-Enut praat na
 - Na het Dondozo-gevecht rijst Nep-Enut bij aanspreken weer op (camera mee omhoog), houdt een praatje dat door de vierde wand gaat (meer schermtijd van een hobby-romhacker dan van Nintendo) en zakt dan terug tot alleen zijn wenkbrauwen. Getest in de emulator.
+
+### [v0.9.211] - Spear Pillar en Hall of Origin voller, constructen van Arceus
+- **Spear Pillar** opnieuw, als Gen 3-versie van het Platinum-origineel (eigen tileset `spear_pillar` in zandsteen): verhoogd plein met rijen hele en gebroken pilaren, de groef met het speerpunt-embleem tussen de altaren van Dialga en Palkia, ingestorte blokken met verzonken vloer, puin, zuidtrap met bordes en rotsmassieven eromheen.
+- **Arceus' trap van licht** loopt nu ook vanaf het embleem op Spear Pillar omhoog naar de Hall of Origin (verschijnt na de fluit, met een korte scene). De trap op Sky Pillar blijft; de terugweg brengt je naar waar je vandaan kwam. Fluittekst: "SKY PILLAR or SPEAR PILLAR, I built both".
+- **Hall of Origin** voller: zwevende glasplatforms in een wolkenleegte, trappen van licht, loper, marmeren zuilen; op de top het gouden wiel van Arceus tussen twee altaren en een zuilenring.
+- **De negen emissaries zijn constructen van Arceus:** één stenen golem met vizier, lichtkern en het gouden kruiswiel, met per thema een eigen palet (lucht, zee, land, geest, dromen, rechtvaardigheid, smidse, Regi's, tijd en ruimte); nieuwe trainerklasse CONSTRUCT, eigen trainerfoto's en overworlds; teksten als constructen ("CONSTRUCT ONLINE.").
+- Generatorbugs: `coronet.py` wiste bij opnieuw draaien de itemblokken van andere gebieden, `hall_of_origin.py` dupliceerde de trainers.
+
+### [v0.9.212] - Enamorus en de liefdesdagen
+- Zodra Tornadus, Thundurus en Landorus alle drie gevangen of verslagen zijn, heeft elke dag 2 op 3 kans op een **liefdesdag** in Oldale, Dewford, Fallarbor of Lavaridge (vast per dag). Dan zweven er hartjes boven NPC's, staat er een verliefd koppel (oude man + oude vrouw, Sailor + Beauty, Hiker + Picnicker, Psychic + Hex Maniac) en staat **Prof. Birch verliefd bij een hoop stront**.
+- **Enamorus** (lv 93) staat dan in het stadje; aanspreken = gevecht (eigen transitie). Gevangen: weg, de liefdesdagen blijven als sfeer. Verslagen: komt op een volgende liefdesdag terug.
+- Azure Flute-hint voor Enamorus; flags `FLAG_GROUNDED(1360–1362)`. Debug: `special Enamorus_DebugForceTown` (VAR_0x8004 0–3).

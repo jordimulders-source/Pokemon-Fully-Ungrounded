@@ -4,6 +4,8 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 **Volgorde (Jordi, 8–9 okt):** eerst de basiskaart vullen → dan de uitbreidingen → pas daarna gevechtsintro's en muziek.
 
+**Prioriteit (Jordi, 9 okt):** kratereilanden → Beasts of Ruin → Spacetime Cave deel 1 (Lavender + Pokémon Tower, Cerulean Cave uit FRLG) → Zacian/Zamazenta + Mega Forest → Koraalkathedraal/Sea Shards → Yoshi's Island → overige Spacetime-locaties (met Jordi's input) → Spire → intro's/muziek → contests/Trick House/Dex. Eén agent tegelijk, zuinig.
+
 ---
 
 ## 1. Nu (fase: basiskaart vullen)

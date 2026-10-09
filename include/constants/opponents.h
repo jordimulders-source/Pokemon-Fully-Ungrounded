@@ -1181,6 +1181,7 @@
 
 // beacon_isle { (tools/grounded/maptools/beacon_isle.py; vaste id's)
 #define TRAINER_TALLOW                      1048 // Project Grounded: Beacon Isle, Lichteiland: geest van de eerste vuurtorenwachter (Battle Stadium)
+// }
 // tao_island { (tools/grounded/maptools/tao_island.py; id 1060-1069)
 #define TRAINER_TAO_VERNON                  1060 // Project Grounded: Tao-eiland, strand: 412 keer gebeten
 #define TRAINER_TAO_SAELA                   1061 // Project Grounded: Tao-eiland, plateau: traint vooral rennen
@@ -1257,6 +1258,7 @@
 #define TRAINER_AREA_ZERO_SECURITY_FUTURE   1180 // Project Grounded: Area Zero, toekomst: beveiligingssysteem na MIRAIDON
 #define TRAINER_AREA_ZERO_SECURITY_PAST     1181 // Project Grounded: Area Zero, verleden: beveiligingssysteem na KORAIDON
 #define TRAINER_AREA_ZERO_ALARM             1182 // Project Grounded: Area Zero, Tera-grot: alarmsysteem (terastaliseert, elk teamlid)
+// }
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056)
 #define TRAINER_YI_SHY_GUY_BEACH_A          1017 // Project Grounded: Yoshi's Island, strand, pijpwachter 1
 #define TRAINER_YI_SHY_GUY_BEACH_B          1018 // Project Grounded: Yoshi's Island, strand, pijpwachter 2

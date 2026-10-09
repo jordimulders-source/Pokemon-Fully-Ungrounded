@@ -1887,6 +1887,7 @@
 // }
 // beacon_isle { (tools/grounded/maptools/beacon_isle.py; FLAG_GROUNDED 400-429)
 #define FLAG_BEACON_LIGHT_ISLE_FOUND                     FLAG_GROUNDED(400) // Project Grounded: Beacon Isle: 's nachts de lamp aangesproken, rif naar het Lichteiland open
+// }
 // tao_island { (tools/grounded/maptools/tao_island.py; FLAG_GROUNDED 430-469)
 #define FLAG_HIDDEN_ITEM_TAO_ISLAND_DRAGON_SCALE         FLAG_GROUNDED(430) // Project Grounded: Tao-eiland: verborgen Dragon Scale
 #define FLAG_HIDDEN_ITEM_TAO_ISLAND_STAR_PIECE           FLAG_GROUNDED(431) // Project Grounded: Tao-eiland: verborgen Star Piece

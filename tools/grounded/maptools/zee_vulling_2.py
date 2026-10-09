@@ -309,18 +309,23 @@ def trainer(const, desc, header, mons):
 
 def write_trainers():
     op = open('include/constants/opponents.h').read()
-    op = re.sub(r'\n// zee_vulling_2 \{\n.*?// \}\n', '\n', op, flags=re.S)
+    pat = r'// zee_vulling_2 \{\n.*?// \}\n'
     block = '// zee_vulling_2 {\n' + ''.join('#define %-35s %d // Project Grounded (zeevulling 2): %s\n' % (c, i, d)
                                              for c, i, d, _ in TRAINERS) + '// }\n'
-    last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', op)]) + 1  # ook trainers van andere scripts
-    op = re.sub(r'\n(#define TRAINERS_COUNT\s+)(\d+)', lambda m: '\n' + block + '\n' + m.group(1) + str(max(last, 1107)), op)
-    op = re.sub(r'\n{3,}(// zee_vulling_2 \{)', r'\n\n\1', op)
-    op = re.sub(r'// \}\n{2,}#define TRAINERS_COUNT', '// }\n\n#define TRAINERS_COUNT', op)
+    rest = re.sub(pat, '', op, flags=re.S)
+    last = max([TRAINERS[-1][1]] + [int(n) for n in re.findall(r'#define TRAINER_\w+\s+(\d+)', rest)]) + 1  # ook trainers van andere scripts
+    if re.search(pat, op, re.S):  # op zijn plek vervangen
+        op = re.sub(pat, lambda m: block, op, count=1, flags=re.S)
+    else:
+        op = re.sub(r'\n(#define TRAINERS_COUNT)', lambda m: '\n' + block + '\n' + m.group(1), op)
+    op = re.sub(r'(#define TRAINERS_COUNT\s+)(\d+)', lambda m: m.group(1) + str(max(last, 1107, int(m.group(2)))), op)
     open('include/constants/opponents.h', 'w').write(op)
     p = open('src/data/trainers.party').read()
-    if TBEGIN in p:
-        p = p[:p.index(TBEGIN)].rstrip('\n') + p[p.index(TEND) + len(TEND):]
-    p = p.rstrip('\n') + '\n\n' + TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND + '\n'
+    new = TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND
+    if TBEGIN in p:  # op zijn plek vervangen (geen blokken naar achteren schuiven)
+        p = p[:p.index(TBEGIN)] + new + p[p.index(TEND) + len(TEND):]
+    else:
+        p = p.rstrip('\n') + '\n\n' + new + '\n'
     open('src/data/trainers.party', 'w').write(p)
 
 
@@ -457,10 +462,13 @@ def apply_events(M, objs, bgs, script_text):
     open(path, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
     inc_path = 'data/maps/%s/scripts.inc' % M.name
     inc = open(inc_path).read()
-    if MARK in inc:
+    new = (MARK + '\n' + script_text.strip('\n') + '\n' + MARK_END) if script_text.strip() else ''
+    if MARK in inc and new:  # op zijn plek vervangen
+        inc = inc[:inc.index(MARK)] + new + inc[inc.index(MARK_END) + len(MARK_END):]
+    elif MARK in inc:
         inc = inc[:inc.index(MARK)].rstrip('\n') + '\n' + inc[inc.index(MARK_END) + len(MARK_END):].lstrip('\n')
-    if script_text.strip():
-        inc = inc.rstrip('\n') + '\n\n' + MARK + '\n' + script_text.strip('\n') + '\n' + MARK_END + '\n'
+    elif new:
+        inc = inc.rstrip('\n') + '\n\n' + new + '\n'
     open(inc_path, 'w').write(inc)
 
 
@@ -843,11 +851,12 @@ P = 'Route130_EventScript_ZV2'
 HONEY = trainer('TRAINER_BREEDER_HONEY', 'Route 130, Wynaut-kinderopvang',
                 hdr('HONEY', 'Pkmn Breeder', 'Pokemon Breeder F', 'Female', 'Female'),
                 team(40, 12, 'Audino', 'Wobbuffet', 'Indeedee', ('Blissey', 1)))
-objs = [obj('OBJ_EVENT_GFX_WOMAN_4', 33, 3, P + 'Teacher', move='MOVEMENT_TYPE_LOOK_AROUND'),
-        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 35, 3, P + 'WynautA', move='MOVEMENT_TYPE_LOOK_AROUND'),
-        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 36, 2, P + 'WynautB', move='MOVEMENT_TYPE_FACE_DOWN'),
-        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 32, 4, P + 'WynautC', move='MOVEMENT_TYPE_FACE_UP'),
-        obj('OBJ_EVENT_GFX_POKEFAN_F', 38, 3, P + 'Honey', move='MOVEMENT_TYPE_FACE_LEFT', trainer=True, sight=3),
+# FLAG_TEMP_6: de crèche staat niet op de Mirage-layout (setflag in Route130 ON_TRANSITION)
+objs = [obj('OBJ_EVENT_GFX_WOMAN_4', 33, 3, P + 'Teacher', move='MOVEMENT_TYPE_LOOK_AROUND', flag='FLAG_TEMP_6'),
+        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 35, 3, P + 'WynautA', move='MOVEMENT_TYPE_LOOK_AROUND', flag='FLAG_TEMP_6'),
+        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 36, 2, P + 'WynautB', move='MOVEMENT_TYPE_FACE_DOWN', flag='FLAG_TEMP_6'),
+        obj('OBJ_EVENT_GFX_SPECIES(WYNAUT)', 32, 4, P + 'WynautC', move='MOVEMENT_TYPE_FACE_UP', flag='FLAG_TEMP_6'),
+        obj('OBJ_EVENT_GFX_POKEFAN_F', 38, 3, P + 'Honey', move='MOVEMENT_TYPE_FACE_LEFT', trainer=True, sight=3, flag='FLAG_TEMP_6'),
         ball(39, 4, 'ITEM_EVERSTONE', 'FLAG_ITEM_ROUTE_130_EVERSTONE', 'Route 130, Wynaut-kinderopvang')]
 bgs = [hidden(M, 31, 4, 'ITEM_LUCKY_PUNCH', 'R130'), hidden(M, 50, 3, 'ITEM_STARDUST', 'R130')]
 scr = npc(P, 'Teacher',

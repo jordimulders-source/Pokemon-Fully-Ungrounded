@@ -17722,3 +17722,10 @@ Volgens Jordi's GBA-instructies per leider:
 - Controle achteraf: `python3 tools/grounded/check_levels.py [--fix]` meldt lagere levels of terug-geëvolueerde soorten t.o.v. HEAD.
 - `extra_fights.py` vervangt zijn objecten nu op hun plek (verschoof eerst de nummers van NPC's zonder local_id).
 - Let op: een aantal scripts herschrijft nog steeds hele `map.json`'s (objecten van latere scripts vallen weg); alleen gericht draaien en `git diff` controleren.
+
+### [v0.9.196] - Bouwscripts gooien niets meer weg
+- `check_levels.protect()` bewaakt nu ook alle events in `map.json` (objecten, verborgen items, triggers): wat een script wegschrijft maar nog een bestaand script-label heeft, komt op zijn oude plek terug (volgorde blijft, dus ook de nummers van NPC's zonder local_id). Bewust weghalen: `GROUNDED_SCRIPT_EVENTS=1`.
+- `zee_vulling_2/3` en `kaart_vulling_4` vervangen hun blokken in `trainers.party`, `opponents.h`, `flags.h` en `scripts.inc` op hun plek in plaats van ze naar achteren te schuiven.
+- `zee_vulling_3` wees bij opnieuw draaien flags opnieuw toe (en liet ze botsen met landvulling, o.a. 0x465); bestaande flags blijven nu staan.
+- `zee_vulling_2`: de Wynaut-crèche op Route 130 houdt `FLAG_TEMP_6` (niet op de Mirage-layout).
+- Twee generatorblokken misten hun afsluitende `// }` (beacon_isle in flags.h en opponents.h, area_zero in opponents.h), waardoor beacon_isle het Tao-eilandblok overschreef. Hersteld; de bewaker weigert nu te draaien als een blok niet gesloten is.

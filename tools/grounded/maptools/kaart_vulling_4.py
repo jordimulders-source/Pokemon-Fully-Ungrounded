@@ -187,6 +187,8 @@ def flag(name, desc):
 
 def write_flags():
     s = open(FLAGS_H).read()
+    mm = re.search(r'// kaart_vulling_4 \{.*?\n// \}\n', s, flags=re.S)
+    at = mm.start() if mm else None  # bestaand blok op zijn plek vervangen
     s = re.sub(r'// kaart_vulling_4 \{.*?\n// \}\n', '', s, flags=re.S)
     for name, _ in FLAGS:
         assert not re.search(r'#define %s\b' % name, s), 'vlag %s bestaat al' % name
@@ -197,7 +199,10 @@ def write_flags():
         block += '#define %-48s FLAG_GROUNDED(%d) // Project Grounded (kaartvulling 4): %s\n' % (name, FLAG_FIRST + i, desc)
     block += '// }\n'
     anchor = '\n// Special Flags'
-    s = s.replace(anchor, '\n' + block + anchor, 1)
+    if at is not None:
+        s = s[:at] + block + s[at:]
+    else:
+        s = s.replace(anchor, '\n' + block + anchor, 1)
     s = s.replace('100-149 vuurtoren/Dragon Island, 150+ vrij.',
                   '100-149 vuurtoren/Dragon Island, 200-329 kaartvulling 4 (kaart_vulling_4.py), 150-199 en 330+ vrij.')
     s = re.sub(r'\n{3,}// kaart_vulling_4 \{', '\n\n// kaart_vulling_4 {', s)
@@ -237,6 +242,8 @@ def new_trainer(const, desc, name, cls, pic, gender, music, mons_text, double=Fa
 
 def write_trainers():
     op = open('include/constants/opponents.h').read()
+    mm = re.search(r'\n// kaart_vulling_4 \{\n.*?// \}\n', op, flags=re.S)
+    KV4_AT = mm.start() + 1 if mm else None
     op = re.sub(r'\n// kaart_vulling_4 \{\n.*?// \}\n', '\n', op, flags=re.S)
     for c, i, _, _ in TRAINERS:
         assert not re.search(r'#define %s\b' % c, op), c
@@ -245,14 +252,19 @@ def write_trainers():
                                               for c, i, d, _ in TRAINERS) + '// }\n'
     m = re.search(r'\n(#define TRAINERS_COUNT\s+)(\d+)', op)
     assert int(m.group(2)) > LAST_ID
-    op = op[:m.start()] + '\n' + block + op[m.start():]
-    op = re.sub(r'\n{3,}(// kaart_vulling_4 \{)', r'\n\n\1', op)
-    op = re.sub(r'(// kaart_vulling_4 \{.*?// \}\n)\n*(#define TRAINERS_COUNT)', r'\1\n\2', op, flags=re.S)
+    if KV4_AT is not None:  # op zijn plek vervangen
+        op = op[:KV4_AT] + block + op[KV4_AT:]
+    else:
+        op = op[:m.start()] + '\n' + block + op[m.start():]
+        op = re.sub(r'\n{3,}(// kaart_vulling_4 \{)', r'\n\n\1', op)
+        op = re.sub(r'(// kaart_vulling_4 \{.*?// \}\n)\n*(#define TRAINERS_COUNT)', r'\1\n\2', op, flags=re.S)
     open('include/constants/opponents.h', 'w').write(op)
     p = open('src/data/trainers.party').read()
-    if TBEGIN in p:
-        p = p[:p.index(TBEGIN)].rstrip('\n') + p[p.index(TEND) + len(TEND):]
-    p = p.rstrip('\n') + '\n\n' + TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND + '\n'
+    new = TBEGIN + '\n\n' + '\n\n'.join(t[3] for t in TRAINERS) + '\n\n' + TEND
+    if TBEGIN in p:  # op zijn plek vervangen (geen blokken naar achteren schuiven)
+        p = p[:p.index(TBEGIN)] + new + p[p.index(TEND) + len(TEND):]
+    else:
+        p = p.rstrip('\n') + '\n\n' + new + '\n'
     open('src/data/trainers.party', 'w').write(p)
 
 
@@ -484,10 +496,13 @@ class Ev:
         open(k.path, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
         inc_path = 'data/maps/%s/scripts.inc' % self.name
         inc = open(inc_path).read()
-        if MARK in inc:
+        new = (MARK + '\n' + self.scr.strip('\n') + '\n' + MARK_END) if self.scr.strip() else ''
+        if MARK in inc and new:  # op zijn plek vervangen
+            inc = inc[:inc.index(MARK)] + new + inc[inc.index(MARK_END) + len(MARK_END):]
+        elif MARK in inc:
             inc = inc[:inc.index(MARK)].rstrip('\n') + '\n' + inc[inc.index(MARK_END) + len(MARK_END):].lstrip('\n')
-        if self.scr.strip():
-            inc = inc.rstrip('\n') + '\n\n' + MARK + '\n' + self.scr.strip('\n') + '\n' + MARK_END + '\n'
+        elif new:
+            inc = inc.rstrip('\n') + '\n\n' + new + '\n'
         open(inc_path, 'w').write(inc)
 
 

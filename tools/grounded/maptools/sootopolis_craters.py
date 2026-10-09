@@ -169,6 +169,10 @@ def hermit_classes():
     rect(cv, 22, 13, 24, 14, 'G')
     chamfer(cv, 5, 4, 24, 21, 2, corners='NW NE')
     stamp_classes(cv, 7, 18, DOME)       # duikwater tegen de zuidwand
+    # Hoeken waar gras, klif en water samenkomen hebben in Sootopolis geen kusttegel (Jordi: hoekjes zonder
+    # kustrand): daar loopt de klif een vakje door.
+    for x, y in ((9, 4), (19, 4), (5, 18), (24, 15)):
+        cv[y][x] = 'W'
     return cv
 
 
@@ -203,7 +207,8 @@ def silent_classes():
     rect(cv, 20, 12, 23, 13, 'W')
     rect(cv, 9, 11, 18, 12, 'G')          # smalle grasrand onder het voorplein
     rect(cv, 8, 8, 19, 9, 'F')            # voorplein (begaanbaar roze gesteente)
-    rect(cv, 18, 16, 20, 17, 'G')         # eilandje in het meer
+    rect(cv, 20, 16, 23, 18, 'G')         # grasrichel tegen de oostwand (los eilandje kan niet: gras heeft
+    rect(cv, 20, 13, 23, 15, 'W')         # in Sootopolis geen noordkust-tegel), klif erboven
     sx, sy, sw, sh = GATE_SRC
     gx, gy = GATE_AT
     for dy in range(sh):
@@ -232,7 +237,7 @@ def silent_tiles(cv):
 FLAGS = [
     (500, 'FLAG_ITEM_HERMIT_CRATER_WIDE_LENS', 'kluizenaarskrater: Wide Lens'),
     (501, 'FLAG_HIDDEN_ITEM_HERMIT_CRATER_PEARL_STRING', 'kluizenaarskrater: verborgen Pearl String'),
-    (502, 'FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP', 'stille krater: Gold Bottle Cap (eilandje)'),
+    (502, 'FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP', 'stille krater: Gold Bottle Cap (grasrichel)'),
     (503, 'FLAG_HIDDEN_ITEM_SILENT_CRATER_EARTH_PLATE', 'stille krater: verborgen Earth Plate (voorplein)'),
     (504, 'FLAG_HIDDEN_ITEM_SILENT_CRATER_SPLASH_PLATE', 'stille krater: verborgen Splash Plate (grasrand)'),
 ]
@@ -469,7 +474,7 @@ def silent():
     S.npc('Land', "A statue with claws, half melted.\n\nThe plaque:\n'HE WANTED MORE LAND. HE GOT A VOLCANO. "
                   "HE SULKED FOR AN AGE.'\n\nScratched underneath, much newer:\n'REVERSION IS NOT A PHASE, MOM.'",
           'MSGBOX_SIGN')
-    objs = [ball(19, 16, 'ITEM_GOLD_BOTTLE_CAP', F['FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP'])]
+    objs = [ball(21, 17, 'ITEM_GOLD_BOTTLE_CAP', F['FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP'])]
     bgs = [sign(door[0], door[1], P + 'Gate', 'BG_EVENT_PLAYER_FACING_NORTH'),
            sign(statues[0][0], statues[0][1], P + 'Sea'), sign(statues[1][0], statues[1][1], P + 'Land'),
            hidden(9, 9, 'ITEM_EARTH_PLATE', F['FLAG_HIDDEN_ITEM_SILENT_CRATER_EARTH_PLATE']),

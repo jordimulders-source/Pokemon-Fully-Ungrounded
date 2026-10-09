@@ -17565,3 +17565,7 @@ Volgens Jordi's GBA-instructies per leider:
 - **Hermit Crater** (bewoond): kluizenaar-schilder **Lavis** (oud-lid van de Sootopolis-familie; Grafaiai, Kingdra, Milotic, Smeargle met Spore/Shell Smash; ook in de Stadium-pool), Swimmer Margot en Aroma Lady Fenna (lv 46), Wide Lens en een verborgen Pearl String, 12 unieke landslots lv 44–49 plus water/vissen.
 - **Silent Crater** (verlaten): verzegelde tweelingpoort met Rayquaza-lore, Kyogre/Groudon-beelden, Gold Bottle Cap, verborgen Earth Plate en Splash Plate, eigen water- en visencounters (o.a. Cursola, Dragalge, Overqwil, Relicanth).
 - Bouwscript `tools/grounded/maptools/sootopolis_craters.py` (leert randen uit de Sootopolis-kaart); flags `FLAG_GROUNDED(500–504)`, trainers 1074–1076.
+
+### [v0.9.166] - Kratereilanden: kusthoekjes
+- Jordi: hoekjes land zonder kustrand. Waar gras, klif en water samenkomen loopt de klif nu een vakje door (Sootopolis heeft voor die hoeken geen tegel).
+- Silent Crater: het losse eilandje had aan de bovenkant geen kust (gras heeft geen noordkust-tegel); het is nu een grasrichel tegen de oostwand met de klif erboven. De Gold Bottle Cap ligt daar.

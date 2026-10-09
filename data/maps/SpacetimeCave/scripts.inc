@@ -263,6 +263,11 @@ SpacetimeCave_EventScript_PortalUnknown::
 	special ShakeCamera
 	waitstate
 	msgbox SpacetimeCave_Text_PortalUnknown, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreen FADE_TO_WHITE
+	warp MAP_YOSHIS_ISLAND_BEACH, 15, 15
+	waitstate
 	releaseall
 	end
 
@@ -402,12 +407,11 @@ SpacetimeCave_Text_Inscription:
 SpacetimeCave_Text_PortalUnknown:
 	.string "You reach into the ????? rift...\p"
 	.string "Something grabs your sleeve. A small\n"
-	.string "hand. In a mask. It pulls, the rift\l"
-	.string "hiccups, and spits you straight back\l"
-	.string "out.\p"
-	.string "Something went wrong. Spacetime says:\n"
-	.string "island not found. Try again in a later\l"
-	.string "version of reality.$"
+	.string "hand. In a mask. It pulls. The rift\l"
+	.string "hiccups.\p"
+	.string "Something is going very wrong.\n"
+	.string "Spacetime says: dimension not found.\l"
+	.string "Spacetime is lying.$"
 
 SpacetimeCave_Text_PortalAcuity:
 	.string "Snow blows out of this portal, and the\n"

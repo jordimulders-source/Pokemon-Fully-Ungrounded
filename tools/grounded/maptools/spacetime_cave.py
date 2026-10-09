@@ -217,6 +217,7 @@ CX = 13
 DEEP_ROOMS = {'Unknown': (6, 26, 20, 31), 'Lakes': (4, 40, 22, 48), 'Coronet': (8, 60, 18, 65)}
 GATE_UNKNOWN, GATE_YOSHI = (CX, 19), (CX, 34)       # instabiele wand (2x2, linksboven)
 DEAD_END = 54                                        # rij van de doodlopende rand (dicht tot Giratina gevangen is)
+UNKNOWN_LANDING = (10, 30)   # vloer onder het ?????-portaal (9-10, 28-29)
 PORTALS = [  # (sleutel, linksboven, kamer)
     ('Unknown', (9, 28), 'Unknown'),
     ('Valor', (CX, 42), 'Lakes'), ('Acuity', (7, 45), 'Lakes'), ('Verity', (18, 45), 'Lakes'),
@@ -483,6 +484,10 @@ def hub(lav_rift_warp, cc_rift_warp):
                       "BRING IT ALONG, AND THE WALL WILL REMEMBER IT WAS NEVER A WALL.'")])
     for x in (CX, CX + 1):
         bgs.append(sign(x, DEAD_END, P + 'Inscription'))
+    # landingsplek in de ?????-kamer voor de terugweg uit Yoshi's Island (yoshis_island.py HUB_DEST); gewone vloer,
+    # dus geen warp-gedrag: alleen een aankomstpunt
+    YOSHI_RETURN_WARP = len(warps)
+    warps.append(warp(UNKNOWN_LANDING[0], UNKNOWN_LANDING[1], 'YOSHIS_ISLAND_BEACH', 1, elev=3))
     # de portalen in de diepte (nog geen warp)
     for key, (x0, y0), room in PORTALS:
         for q in range(4):
@@ -497,12 +502,17 @@ def hub(lav_rift_warp, cc_rift_warp):
 	special ShakeCamera
 	waitstate
 	msgbox {T_}PortalUnknown, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreen FADE_TO_WHITE
+	warp MAP_YOSHIS_ISLAND_BEACH, 15, 15
+	waitstate
 	releaseall
 	end
 ''', [('PortalUnknown', "You reach into the ????? rift...\n\nSomething grabs your sleeve. A small hand. "
-                        "In a mask. It pulls, the rift hiccups, and spits you straight back out.\n\n"
-                        "Something went wrong. Spacetime says: island not found. Try again in a later version "
-                        "of reality.")])
+                        "In a mask. It pulls. The rift hiccups.\n\n"
+                        "Something is going very wrong. Spacetime says: dimension not found. Spacetime is "
+                        "lying.")])
     S.npc('PortalAcuity', "Snow blows out of this portal, and the cold has a voice. It is thinking about you. "
           "It knows things.\n\nLAKE ACUITY. The ice on the other side is still being installed.", 'MSGBOX_SIGN')
     S.npc('PortalValor', "Behind this portal: a calm lake, and a cave in the middle of it, and something in "

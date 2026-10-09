@@ -41,7 +41,7 @@ def load_bd():
 
 SRC = 'graphics/grounded/yoshis_island'
 GROUP = 'gMapGroup_Spacetime'
-HUB_DEST = ('SPACETIME_CAVE', 0)    # terugscheur -> hub. Placeholder (hub-ingang); de hoofdsessie zet hier de warp-index
+HUB_DEST = ('SPACETIME_CAVE', 13)   # terugscheur -> de ?????-kamer in de hub (landingswarp 13, spacetime_cave.py)
                                     # van het ?????-portaal (spacetime_cave.py) en draait dit script opnieuw.
 SEED = 1025                         # nationaal dexnummer van Pecharunt
 

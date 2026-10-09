@@ -171,7 +171,7 @@ def hermit_classes():
     stamp_classes(cv, 7, 18, DOME)       # duikwater tegen de zuidwand
     # Hoeken waar gras, klif en water samenkomen hebben in Sootopolis geen kusttegel (Jordi: hoekjes zonder
     # kustrand): daar loopt de klif een vakje door.
-    for x, y in ((9, 4), (19, 4), (5, 18), (24, 15)):
+    for x, y in ((9, 4), (19, 4)):
         cv[y][x] = 'W'
     return cv
 
@@ -209,7 +209,6 @@ def silent_classes():
     rect(cv, 8, 8, 19, 9, 'F')            # voorplein (begaanbaar roze gesteente)
     rect(cv, 20, 16, 23, 18, 'G')         # grasrichel tegen de oostwand (los eilandje kan niet: gras heeft
     rect(cv, 20, 13, 23, 15, 'W')         # in Sootopolis geen noordkust-tegel), klif erboven
-    rect(cv, 23, 19, 23, 19, 'W')         # en eronder tegen de wand (geen tegel voor gras+water+wandhoek)
     sx, sy, sw, sh = GATE_SRC
     gx, gy = GATE_AT
     for dy in range(sh):
@@ -221,6 +220,15 @@ def silent_classes():
     return cv
 
 
+def wall_fix(g):
+    """Oostwand naast water: in Sootopolis staat 073 naast 0ba/0c4 (0a0 heeft een randje water)."""
+    for y in range(len(g)):
+        for x in range(1, len(g[0])):
+            if g[y][x] & 0x3ff == 0x0a0 and g[y][x - 1] & 0x3ff in (0x0ba, 0x0c4):
+                g[y][x] = (g[y][x] & ~0x3ff) | 0x073
+    return g
+
+
 def silent_tiles(cv):
     g = autotile(ring(cv, 2, 2, 2), 'SilentCrater')
     sx, sy, sw, sh = GATE_SRC
@@ -228,11 +236,13 @@ def silent_tiles(cv):
     for dy in range(sh):
         for dx in range(sw):
             g[gy + dy][gx + dx] = SOOT.c(sx + dx, sy + dy)
-    g[19][23] = (g[19][23] & ~0x3ff) | 0x069   # kliflip onder de grasrichel (zoals Sootopolis 6,46)
+    # rechtsonder de grasrichel: waterhoek tegen de wand (zoals Sootopolis 36,24), het water eronder loopt door
+    for x, y, m in ((23, 19, 0x0c4), (22, 20, 0x279), (23, 20, 0x0ba)):
+        g[y][x] = (g[y][x] & ~0x3ff) | m
     x, y = STAIRS
     g[y][x] = 0x244 | (3 << 12)
     g[y][x + 1] = 0x245 | (3 << 12)
-    return g
+    return wall_fix(g)
 
 
 # ====================================================================== flags
@@ -416,6 +426,10 @@ def hermit():
     name = 'Route126_HermitCrater'
     cv = hermit_classes()
     g = autotile(ring(cv, 2, 2, 2), name)
+    # onderhoeken van de grasrichels tegen de wand: waterhoektegels zoals in Sootopolis (36,24 en 16,46)
+    for x, y, m in ((24, 15, 0x0c4), (5, 18, 0x0b0)):
+        g[y][x] = (g[y][x] & ~0x3ff) | m
+    g = wall_fix(g)
     for x, y in HERMIT_TREES:
         assert all(cv[y + dy][x + dx] == 'G' for dx in (0, 1) for dy in (0, 1)), ('boom niet op gras', x, y)
         tree(g, x, y)

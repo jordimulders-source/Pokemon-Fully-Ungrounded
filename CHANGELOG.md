@@ -17572,3 +17572,7 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.167] - Silent Crater: kust rechtsonder de grasrichel
 - Jordi: rechtsonder de grasrichel ontbraken nog 2 stukjes kust. De klif loopt nu één vakje door langs de wand en heeft de kliflip onder het gras (dezelfde tegel als in Sootopolis).
+
+### [v0.9.168] - Kratereilanden: kusthoeken netjes afgemaakt
+- Jordi: het klifblok rechtsonder de grasrichel stak uit. Weg; de hoek onder het gras is nu de waterhoektegel tegen de wand (zoals in Sootopolis) en het water eronder loopt door. Zelfde aanpak voor de onderhoeken van beide grasrichels in Hermit Crater.
+- Oostwanden naast water gebruiken nu tegel 073 i.p.v. 0a0 (die had een randje water in de klif; `wall_fix` in `sootopolis_craters.py`).

@@ -638,3 +638,6 @@ gSpecials::
 	def_special Casino_CheckUnlock
 	def_special Casino_DebugUnlockAll
 	def_special Casino_GetTip
+	def_special Ultra_PickPortal
+	def_special Ultra_CountOpen
+	def_special Ultra_FindPartySunMoon

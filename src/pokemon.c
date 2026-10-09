@@ -35,6 +35,7 @@
 #include "pokedex.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "ultra_space.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
@@ -4720,6 +4721,10 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             break;
         case IF_NOT_REGION:
             if (GetCurrentRegion() != params[i].arg1)
+                currentCondition = TRUE;
+            break;
+        case IF_GROUNDED_SUN_MOON: // Project Grounded: Cosmoem -> Solgaleo/Lunala (src/ultra_space.c)
+            if (Ultra_CosmoemTarget(mon) == params[i].arg1)
                 currentCondition = TRUE;
             break;
         case CONDITIONS_END:

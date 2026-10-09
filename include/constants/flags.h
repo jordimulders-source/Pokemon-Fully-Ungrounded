@@ -2119,6 +2119,25 @@
 #define FLAG_LOVEDAY_HIDE                       FLAG_GROUNDED(1362) // Project Grounded: verbergt koppels, Birch en zijn drol (liefdesdag)
 // }
 
+// ultra_space { (tools/grounded/maptools/ultra_space.py, src/ultra_space.c; FLAG_GROUNDED 1440-1519: 1440-1450 Ultra Beasts/Necrozma, 1451-1459 Cosmog/Solrock-Lunatone, 1460-1479 nieuwe items (blok nieuwe_items), 1480-1519 nog vrij)
+#define FLAG_ULTRA_NIHILEGO                     FLAG_GROUNDED(1440) // Project Grounded: Ultra Space: Nihilego gevangen (verbergt het object, portaal slaat de plek over)
+#define FLAG_ULTRA_BUZZWOLE                     FLAG_GROUNDED(1441) // Project Grounded: Ultra Space: Buzzwole gevangen
+#define FLAG_ULTRA_PHEROMOSA                    FLAG_GROUNDED(1442) // Project Grounded: Ultra Space: Pheromosa gevangen
+#define FLAG_ULTRA_XURKITREE                    FLAG_GROUNDED(1443) // Project Grounded: Ultra Space: Xurkitree gevangen
+#define FLAG_ULTRA_CELESTEELA                   FLAG_GROUNDED(1444) // Project Grounded: Ultra Space: Celesteela gevangen
+#define FLAG_ULTRA_KARTANA                      FLAG_GROUNDED(1445) // Project Grounded: Ultra Space: Kartana gevangen
+#define FLAG_ULTRA_GUZZLORD                     FLAG_GROUNDED(1446) // Project Grounded: Ultra Space: Guzzlord gevangen
+#define FLAG_ULTRA_POIPOLE                      FLAG_GROUNDED(1447) // Project Grounded: Ultra Space: Poipole gekregen van de aliens (gift)
+#define FLAG_ULTRA_STAKATAKA                    FLAG_GROUNDED(1448) // Project Grounded: Ultra Space: Stakataka gevangen
+#define FLAG_ULTRA_BLACEPHALON                  FLAG_GROUNDED(1449) // Project Grounded: Ultra Space: Blacephalon gevangen
+#define FLAG_ULTRA_NECROZMA                     FLAG_GROUNDED(1450) // Project Grounded: Ultra Space: Necrozma gevangen
+#define FLAG_ULTRA_SOLROCK_FIRST                FLAG_GROUNDED(1451) // Project Grounded: Solrock eerder gevangen dan Lunatone (Cosmoem -> Solgaleo); gezet in GetSetPokedexFlag
+#define FLAG_ULTRA_LUNATONE_FIRST               FLAG_GROUNDED(1452) // Project Grounded: Lunatone eerder gevangen dan Solrock (Cosmoem -> Lunala)
+#define FLAG_RECEIVED_COSMOG                    FLAG_GROUNDED(1453) // Project Grounded: eerste Cosmog van Prof. Cozmo (Fallarbor, post-game)
+#define FLAG_RECEIVED_COSMOG_2                  FLAG_GROUNDED(1454) // Project Grounded: tweede Cosmog (na Solgaleo/Lunala laten zien)
+#define FLAG_ULTRA_HUB_VISITED                  FLAG_GROUNDED(1455) // Project Grounded: Ultra Space-hub al eens bezocht (lange tekst bij het portaal)
+// }
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

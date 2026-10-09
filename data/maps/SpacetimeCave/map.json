@@ -224,6 +224,20 @@
       "elevation": 3,
       "dest_map": "MAP_LAKE_VERITY",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 62,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 62,
+      "elevation": 3,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

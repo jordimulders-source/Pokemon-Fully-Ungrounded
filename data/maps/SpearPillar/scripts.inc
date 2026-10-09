@@ -106,7 +106,7 @@ SpearPillar_EventScript_BothDone::
 	waitstate
 	playse SE_M_TELEPORT
 	waitse
-	warp MAP_SPACETIME_CAVE, 0
+	warp MAP_SPACETIME_CAVE, 20
 	waitstate
 	release
 	end

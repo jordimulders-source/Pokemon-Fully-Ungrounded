@@ -45,7 +45,7 @@ R1, OUT, R2, R3, F5, F6, SP = ('MtCoronet_4F_Room1', 'MtCoronet_4F_Outside', 'Mt
 ORDER = [R1, OUT, R2, R3, F5, F6, SP]
 CONST = {R1: 'MT_CORONET_4F_ROOM1', OUT: 'MT_CORONET_4F_OUTSIDE', R2: 'MT_CORONET_4F_ROOM2',
          R3: 'MT_CORONET_4F_ROOM3', F5: 'MT_CORONET_5F', F6: 'MT_CORONET_6F', SP: 'SPEAR_PILLAR'}
-HUB_DEST = ('SPACETIME_CAVE', 0)   # terugwarp naar de hub (de hub koppelt zijn Coronet-portaal aan R1 warp 0)
+HUB_DEST = ('SPACETIME_CAVE', 20)  # terugwarp naar het Coronet-portaal in de hub (spacetime_cave.py print 'hub-warp Coronet')
 MUSIC = {R1: 'MUS_CAVE_OF_ORIGIN', OUT: 'MUS_ROUTE120', R2: 'MUS_CAVE_OF_ORIGIN', R3: 'MUS_CAVE_OF_ORIGIN',
          F5: 'MUS_CAVE_OF_ORIGIN', F6: 'MUS_CAVE_OF_ORIGIN', SP: 'MUS_SEALED_CHAMBER'}
 

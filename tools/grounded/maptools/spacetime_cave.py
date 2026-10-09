@@ -233,7 +233,8 @@ PORTALS = [  # (sleutel, linksboven, kamer)
 LAKES_DIALGA, LAKES_PALKIA = (10, 42), (17, 42)
 # portalen in de diepte die al een overkant hebben: (kaartconstante, warp-index per vak van de bovenrij).
 # De terugweg staat in lakes.py (HUB_DEST per meer) = de warp-index die hub() hiervoor print.
-PORTAL_DEST = {'Valor': ('LAKE_VALOR', (0, 1)), 'Acuity': ('LAKE_ACUITY', (0, 0)), 'Verity': ('LAKE_VERITY', (0, 1))}
+PORTAL_DEST = {'Valor': ('LAKE_VALOR', (0, 1)), 'Acuity': ('LAKE_ACUITY', (0, 0)), 'Verity': ('LAKE_VERITY', (0, 1)),
+               'Coronet': ('MT_CORONET_4F_ROOM1', (0, 0))}
 HUB_W, HUB_H = 27, 68
 
 

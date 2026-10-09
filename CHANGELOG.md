@@ -17887,3 +17887,6 @@ Volgens Jordi's GBA-instructies per leider:
   - **Hyper Trainer** (Black Belt): Bottle Cap = één stat op 31, Gold Bottle Cap = alle zes.
 - Lilycove-warenhuis: Lures, Poké Toy, Luck Incense, X Sp. Def; Lavaridge-kruidenwinkel: Remedies, Jubilife Muffin; Red Nectar bij Pretty Petal.
 - Getest: een Mint en een Bottle Cap gekocht, Hyper Training op Speed, een Mint gebruikt.
+
+### [v0.9.225] - Keccles lager
+- Keccles in de Frontier is een van de eerste post-game-gevechten: team lv 85, Salazzle lv 87 (was 92–95); Marshadow komt op lv 85. Charms (Shiny/Oval/Catching/Exp.) komen bewust niet in de game (Jordi).

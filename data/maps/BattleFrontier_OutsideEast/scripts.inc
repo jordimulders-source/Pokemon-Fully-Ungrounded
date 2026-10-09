@@ -538,7 +538,7 @@ BattleFrontier_OutsideEast_EventScript_MarshadowAppears::
 	msgbox BattleFrontier_OutsideEast_Text_MarshadowAppeared, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_0x8004, SPECIES_MARSHADOW
-	setvar VAR_0x8005, 88
+	setvar VAR_0x8005, 85
 	setvar VAR_0x8006, ITEM_NONE
 	call Grounded_EventScript_GiveGiftMon
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn

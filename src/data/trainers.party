@@ -25967,7 +25967,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mo
 Mugshot: Green
 
 Heliolisk @ Choice Specs
-Level: 92
+Level: 85
 Ability: Dry Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -25978,7 +25978,7 @@ Nature: Timid
 - Volt Switch
 
 Tropius @ Sitrus Berry
-Level: 92
+Level: 85
 Ability: Harvest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 128 Def / 128 SpD
@@ -25989,7 +25989,7 @@ Nature: Bold
 - Synthesis
 
 Clodsire @ Black Sludge
-Level: 92
+Level: 85
 Ability: Unaware
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
@@ -26000,7 +26000,7 @@ Nature: Careful
 - Recover
 
 Charizard @ Charcoal
-Level: 93
+Level: 85
 Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -26011,7 +26011,7 @@ Nature: Timid
 - Roost
 
 Serperior @ Leftovers
-Level: 93
+Level: 85
 Ability: Contrary
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -26022,7 +26022,7 @@ Nature: Timid
 - Protect
 
 Salazzle @ Focus Sash
-Level: 95
+Level: 87
 Ability: Corrosion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe

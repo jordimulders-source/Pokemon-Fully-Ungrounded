@@ -59,7 +59,14 @@ LavenderTown_EventScript_GhostGengar::
 	lock
 	faceplayer
 	playmoncry SPECIES_GENGAR, CRY_MODE_ENCOUNTER
+	checkitem ITEM_SILPH_SCOPE
+	goto_if_eq VAR_RESULT, FALSE, LavenderTown_EventScript_GhostGengarNoScope
 	msgbox LavenderTown_Text_GhostGengar, MSGBOX_DEFAULT
+	goto LavenderTown_EventScript_GhostGengarFight
+
+LavenderTown_EventScript_GhostGengarNoScope::
+	msgbox LavenderTown_Text_GhostNoScope, MSGBOX_DEFAULT
+LavenderTown_EventScript_GhostGengarFight::
 	waitmoncry
 	closemessage
 	setwildbattle SPECIES_GENGAR, 67
@@ -80,7 +87,14 @@ LavenderTown_EventScript_GhostDusknoir::
 	lock
 	faceplayer
 	playmoncry SPECIES_DUSKNOIR, CRY_MODE_ENCOUNTER
+	checkitem ITEM_SILPH_SCOPE
+	goto_if_eq VAR_RESULT, FALSE, LavenderTown_EventScript_GhostDusknoirNoScope
 	msgbox LavenderTown_Text_GhostDusknoir, MSGBOX_DEFAULT
+	goto LavenderTown_EventScript_GhostDusknoirFight
+
+LavenderTown_EventScript_GhostDusknoirNoScope::
+	msgbox LavenderTown_Text_GhostNoScope, MSGBOX_DEFAULT
+LavenderTown_EventScript_GhostDusknoirFight::
 	waitmoncry
 	closemessage
 	setwildbattle SPECIES_DUSKNOIR, 66
@@ -101,7 +115,14 @@ LavenderTown_EventScript_GhostBanette::
 	lock
 	faceplayer
 	playmoncry SPECIES_BANETTE, CRY_MODE_ENCOUNTER
+	checkitem ITEM_SILPH_SCOPE
+	goto_if_eq VAR_RESULT, FALSE, LavenderTown_EventScript_GhostBanetteNoScope
 	msgbox LavenderTown_Text_GhostBanette, MSGBOX_DEFAULT
+	goto LavenderTown_EventScript_GhostBanetteFight
+
+LavenderTown_EventScript_GhostBanetteNoScope::
+	msgbox LavenderTown_Text_GhostNoScope, MSGBOX_DEFAULT
+LavenderTown_EventScript_GhostBanetteFight::
 	waitmoncry
 	closemessage
 	setwildbattle SPECIES_BANETTE, 66
@@ -178,18 +199,22 @@ LavenderTown_Text_BoyAfter:
 	.string "telling him it was me.$"
 
 LavenderTown_Text_GhostGengar:
-	.string "A shadow is blocking the TOWER door.\p"
-	.string "It looks like a GENGAR, but its grin is\n"
-	.string "about three teeth too wide.$"
+	.string "A GHOST is blocking the TOWER door.\p"
+	.string "Through the SILPH SCOPE it's a GENGAR,\n"
+	.string "and its grin is about three teeth too\l"
+	.string "wide.$"
 
 LavenderTown_Text_GhostDusknoir:
 	.string "The road north is gone. There's only\n"
-	.string "fog, and something in the fog that is\l"
-	.string "very interested in you.$"
+	.string "fog, and a GHOST in the fog.\p"
+	.string "The SILPH SCOPE says DUSKNOIR. The\n"
+	.string "DUSKNOIR says nothing. It just keeps\l"
+	.string "looking.$"
 
 LavenderTown_Text_GhostBanette:
-	.string "A BANETTE is standing at the edge of\n"
-	.string "town, zipping and unzipping its mouth.\p"
+	.string "A GHOST at the edge of town. Through\n"
+	.string "the SILPH SCOPE: a BANETTE, zipping and\l"
+	.string "unzipping its mouth.\p"
 	.string "It seems to be waiting for its old\n"
 	.string "trainer. You'll do.$"
 
@@ -197,6 +222,12 @@ LavenderTown_Text_GhostGone:
 	.string "The shadow dissolved into the fog.\p"
 	.string "Somewhere, a door creaks shut. Probably\n"
 	.string "for the better.$"
+
+LavenderTown_Text_GhostNoScope:
+	.string "A GHOST! A grinning shadow with too\n"
+	.string "many opinions about you.\p"
+	.string "Darn! The GHOST can't be ID'd. Somebody\n"
+	.string "in this town used to sell SILPH SCOPES.$"
 
 LavenderTown_Text_TownSign:
 	.string "LAVENDER TOWN\n"

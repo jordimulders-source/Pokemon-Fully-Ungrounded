@@ -1,4 +1,5 @@
 #include "global.h"
+#include "gen1_ghost.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_arena.h"
@@ -480,6 +481,14 @@ void HandleAction_UseMove(void)
      || !IsBattlerAlive(gBattlerAttacker))
     {
         gCurrentActionFuncId = B_ACTION_FINISHED;
+        return;
+    }
+
+    // Project Grounded: Gen 1-GHOST zonder Silph Scope: niemand doet iets (src/gen1_ghost.c)
+    if (Gen1Ghost_IsActive())
+    {
+        gBattlescriptCurrInstr = Gen1Ghost_MoveScript(gBattlerAttacker);
+        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
         return;
     }
 

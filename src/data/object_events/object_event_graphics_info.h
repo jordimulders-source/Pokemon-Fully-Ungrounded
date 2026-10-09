@@ -5629,6 +5629,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_GEN1_GHOST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Gen1Ghost,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog = {
     .tileTag = TAG_NONE,

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "gen1_ghost.h"
 #include "region_map.h"
 #include "string_util.h"
 #include "item_use.h"
@@ -1204,7 +1205,7 @@ static u32 GetBallThrowableState(void)
         return BALL_THROW_UNABLE_NO_ROOM;
     else if (B_SEMI_INVULNERABLE_CATCH >= GEN_4 &&  IsSemiInvulnerable(GetCatchingBattler(), CHECK_ALL))
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
-    else if (FlagGet(B_FLAG_NO_CATCHING) || !IsAllowedToUseBag())
+    else if (FlagGet(B_FLAG_NO_CATCHING) || !IsAllowedToUseBag() || Gen1Ghost_IsActive()) // Project Grounded: GHOST
         return BALL_THROW_UNABLE_DISABLED_FLAG;
 
     return BALL_THROW_ABLE;

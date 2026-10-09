@@ -85,6 +85,7 @@ Route125_EventScript_Auron::
 @ --- spacetime_cave (tools/grounded/maptools/spacetime_cave.py) ---
 @ Project Grounded: na de Hall of Fame een grotopening in het rotsje op het eilandje (Spacetime Cave)
 Route125_EventScript_OpenSpacetimeCave::
-	setmetatile 46, 28, 0x0A7, FALSE
+	setmetatile 45, 27, 0x064, TRUE
+	setmetatile 45, 28, 0x0A7, FALSE
 	return
 @ --- einde spacetime_cave ---

@@ -5025,6 +5025,17 @@ BattleScript_LevelUp::
 	callnative BS_GroundedObedienceWarnLevelUp @ Project Grounded: melding als hij boven de badge-grens komt
 	handlelearnnewmove BattleScript_LearnedNewMove, BattleScript_LearnMoveReturn, TRUE
 	goto BattleScript_AskToLearnMove
+@ Project Grounded: Gen 1-GHOST zonder Silph Scope (src/gen1_ghost.c)
+BattleScript_Gen1GhostScared::
+	printstring STRINGID_GEN1GHOST_SCARED
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_Gen1GhostGetOut::
+	printstring STRINGID_GEN1GHOST_GETOUT
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_GroundedObedienceWarnLevelUp::
 	printstring STRINGID_OBEYWARN_LEVELUP
 	waitmessage B_WAIT_TIME_LONG

@@ -483,6 +483,10 @@ static const struct SpriteFrameImage sPicTable_RustedSwordOW[] = { // Project Gr
 static const struct SpriteFrameImage sPicTable_RustedShieldOW[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_RustedShieldOW),
 };
+static const struct SpriteFrameImage sPicTable_Gen1Ghost[] = { // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+    obj_frame_tiles(gObjectEventPic_Gen1Ghost),
+};
+
 static const struct SpriteFrameImage sPicTable_GiantLog[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_GiantLog),
 };

@@ -5071,5 +5071,9 @@ $(OBJEVENTGFXDIR)/misc/rusted_sword_ow.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/rusted_shield_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+# Project Grounded: Gen 1-GHOST (32x32, tools/grounded/gen1_ghost_sprites.py)
+$(OBJEVENTGFXDIR)/misc/gen1_ghost.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/misc/giant_log.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

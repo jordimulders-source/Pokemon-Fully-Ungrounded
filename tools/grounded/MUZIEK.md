@@ -96,7 +96,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v7 wacht op opname (v6 'saai': meerdere riffs, 74/130 bpm, palm-mutes/slides) | "Heatran" |
-| Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
+| Mitch (DnB) | `mitch_theme.py` | v6 wacht op Mitch/Jordi (v5 'lachen'; alleen de horn: schoon, A = v5-klank / B = E4-trompet een octaaf hoger, standaard B) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v12 wacht op Jordi (noten v11, alleen stock-Emerald-instrumenten: trompet-lead, fingered bass, organ2, PSG, rs-kit) | "Neo Plasma" |
@@ -612,4 +612,14 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (10:12-10:15): de grondtoon van de figuur stijgt +7..+15 dB, een boventoon van het akkoord niet. Zo ook het octaaf
   bepalen (E5 op x:0, E6 op x:4; A#4 stijgt niet, A#5 wel). Spleeter zette de hoge helft van de figuur in 'vocals'
   (stem 'vocals' +12 dB in maat 11). Een tritonus in een neurie is octaaf-dubbelzinnig (A2 onder E3 = A#5 boven E5).
-
+- Mitch v6 (Mitch zelf over v5: 'horn klinkt heel low quality; probeer hem screechy/high pitched zoals de E4-theme;
+  de wobbles zijn een mooie touch'): alleen het koper (MIDI-noten/CC's identiek, alleen programmanummers). **'Low
+  quality' = de sample, niet de partij**: één Eb4-sample op 22.050 Hz tot C5 omhoog (x1,7, boven ±6 kHz vouwt het
+  terug), tanh zonder oversampling, en een ingebakken staart die in 8 bit naar 0 korrelt. Nu één sample per lead-noot
+  op de mixfrequentie 21.024 Hz (stap 1 = geen transpositie, 12 x ±2 KB), vervorming op 8x, aanzet uit FluidR3 + een
+  **loop opnieuw opgebouwd uit de harmonischen** van het aangehouden deel (een loop van een paar echte perioden zoemt:
+  ensemble/aanzet = energie tussen de harmonischen, -10..-17 dB), envelope in de voicegroup (255/248/200/160).
+  Ruis/aliasing in de toon (GBA-simulatie: 8 bit + lineaire interpolatie, let op de loopsprong: i+1 = loopbegin):
+  v5 -10..-15 dB, v6 -27..-31 dB. **E4-hoorns** (vs_elite_four) = sc88pro-trompet = hetzelfde spectrum als FluidR3
+  56 (vlak tot h8, zwaartepunt ±1,4 kHz op C4), gespeeld rond D5-Bb5: B = trompet een octaaf boven de geschreven noot
+  + body op de noot. Kanalen/stemverdeler ongewijzigd. B: -V066, 0 overlopen, piek 72/127, RMS 2616.

@@ -441,7 +441,8 @@ static void ShopPrintFundsBox(void)
     }
     FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(1));
     AddTextPrinterParameterized(WIN_MONEY, FONT_NORMAL, sText_BpLabel, 2, 1, 0, NULL);
-    ShopPrintFunds(WIN_MONEY, ShopFunds(), 0);
+    ConvertIntToDecimalStringN(gStringVar4, ShopFunds(), STR_CONV_MODE_LEFT_ALIGN, 5);
+    AddTextPrinterParameterized(WIN_MONEY, FONT_NORMAL, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 78), 1, 0, NULL);
 }
 
 static void SetShopMenuCallback(void (*callback)(void))

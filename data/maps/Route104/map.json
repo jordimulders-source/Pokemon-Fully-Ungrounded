@@ -492,8 +492,8 @@
     {
       "local_id": "LOCALID_ROUTE104_SICKBLIK_BEACH",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 20,
-      "y": 73,
+      "x": 25,
+      "y": 76,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,

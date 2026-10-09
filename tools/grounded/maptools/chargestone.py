@@ -380,7 +380,7 @@ TRAINERS = [  # (sleutel, id, naam, klasse, pic, gender, music, ai, mugshot, tea
         mon('Metagross', 73, ['Meteor Mash', 'Zen Headbutt', 'Earthquake', 'Bullet Punch']),
         mon('Copperajah', 73, ['Iron Head', 'Heavy Slam', 'Earthquake', 'Play Rough']),
         mon('Archaludon', 74, ['Electro Shot', 'Flash Cannon', 'Draco Meteor', 'Body Press']),
-        mon('Genesect @ Shock Drive', 75, ['Techno Blast', 'U-turn', 'Iron Head', 'Shift Gear'])],
+        mon('Genesect @ Douse Drive', 75, ['Techno Blast', 'U-turn', 'Iron Head', 'Shift Gear'])],
      'Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)'),
 ]
 

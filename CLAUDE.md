@@ -172,6 +172,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Cave-tileset is vol** (511/512 tiles sinds v0.9.179): nieuwe grotdecor in een eigen (getinte) secondary. Vrij palet in een tileset: geen metatile gebruikt `pal<<12` (tel `metatiles.bin >> 12`). Decor op water: metatile met laag COVERED (ondergrond onder, object midden). Quest-teller zonder var: vondst-flags tellen met `call_if_set` + `addvar VAR_TEMP_x`.
 - **Legendary zonder eigen `case`** in `BattleSetup_StartLegendaryBattle` krijgt de Groudon-muurtransitie: altijd een case toevoegen. Onthulling buiten beeld: `special SpawnCameraObject` + `applymovement OBJ_EVENT_ID_CAMERA`. Poorten op één kaart: dichte toestand in map.bin (elevation 3), `setmetatile` in ON_LOAD. Gangen in Cave-kaarten: aansluitingen 20a/208 en 21a/218 (vanilla).
 - **Nieuwe Spacetime-locatie koppelen:** in `spacetime_cave.py` de scheur op `'warp'` in `RIFT_STATE`, bestemming in `RIFTS` + de dict in de warp-lus, klaar-flag in `SIDEQUESTS`; in het locatiescript de terugwarp naar de warp-index van die scheur (zie hub-map.json). Daarna beide scripts draaien.
+- **Merge met veel conflicten:** na het oplossen altijd controleren dat elke toegevoegde regel van de agent (diff merge-base → agent) in het resultaat staat (difflib-script); regex-oplossingen verloren bij National Park stilletjes flags en trainerconstanten. Twee agents die allebei het volgende `OBJ_EVENT_GFX`-nummer pakken: hernummeren en `NUM_OBJ_EVENT_GFX` ophogen; partnernummers verschuiven → `pool.py` + `announcer.py` opnieuw.
+- **Multi battle uit een debugscript:** eerst `gSelectedOrderFromParty` op 1,2,3 zetten. Muziek per kaarttoestand: `savebgm` in `ON_TRANSITION`.
 
 ## Werkwijzen (herhaalde taken)
 

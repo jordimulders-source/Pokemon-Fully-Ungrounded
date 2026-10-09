@@ -19,34 +19,37 @@ PokemonTower_3F_EventScript_Hope::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 PokemonTower_3F_Text_PatriciaIntro:
-	.string "Kekeke... ke... sorry, I've had this cough\n"
-	.string "since 1996.$"
+	.string "Kekeke... ke... sorry. That's not my\n"
+	.string "laugh. I don't know whose laugh that is.$"
 
 PokemonTower_3F_Text_PatriciaDefeat:
-	.string "Kek. That's the sound of me losing.$"
+	.string "Kek. ...That one was mine. I think I'm\n"
+	.string "back.$"
 
 PokemonTower_3F_Text_PatriciaPost:
-	.string "The spirits say you'll go far. They also\n"
-	.string "said that about the last guy. He's in\l"
-	.string "the third row.$"
+	.string "The spirits say you'll go far. They said\n"
+	.string "that about the last guy. He's in the\l"
+	.string "third row.$"
 
 PokemonTower_3F_Text_CarlyIntro:
-	.string "Be gone... evil... spirit... oh, it's a kid.\n"
-	.string "Same procedure.$"
+	.string "Be gone... living... thing... You're warm.\n"
+	.string "Stop being warm. It's rude.$"
 
 PokemonTower_3F_Text_CarlyDefeat:
-	.string "Fine! You may pass, evil kid.$"
+	.string "Ugh. I'm cold again. Normal cold. Human\n"
+	.string "cold.$"
 
 PokemonTower_3F_Text_CarlyPost:
 	.string "I wear this robe because it's warm. The\n"
-	.string "chanting is optional.$"
+	.string "chanting was the ghost's idea.$"
 
 PokemonTower_3F_Text_HopeIntro:
-	.string "My name is HOPE. In this tower that's\n"
-	.string "practically a joke.$"
+	.string "My name is HOPE. The thing inside me\n"
+	.string "finds that hilarious.$"
 
 PokemonTower_3F_Text_HopeDefeat:
-	.string "And there it goes.$"
+	.string "And there it goes. Out through the ears,\n"
+	.string "I think.$"
 
 PokemonTower_3F_Text_HopePost:
 	.string "Every grave here has a name on it.\n"

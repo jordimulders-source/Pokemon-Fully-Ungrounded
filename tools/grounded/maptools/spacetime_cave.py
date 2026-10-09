@@ -12,9 +12,13 @@
   CeruleanCave_1F/2F/B1F  FRLG 1-op-1 met Emerald-grotaankleding; wilde Pokemon lv 60-70; MEWTWO lv 70 in B1F
                        (vlag FLAG_HIDE_METEOR_FALLS_MEWTWO: er blijft maar een Mewtwo; de oude grot achter Meteor
                        Falls krijgt een kras in de rots i.p.v. Mewtwo). Terugscheur bij de oude uitgang van 1F.
+S1 (Jordi, 9 okt): groter eiland met rotsheuvel op Route 125; eerste bezoek: Dialga + Palkia openen de scheuren
+  (behalve ????? en Coronet), quest-poort Spacetime_AllSidequestsDone (lijst SIDEQUESTS); Lavender als spookstad
+  (eigen paletten, graven, dode bomen, kwade geesten, bezeten Channelers, baas Agatha op 5F) en na de bevrijding
+  layout LavenderTown_Calm; Cerulean Cave: Rocket-grunts, Giovanni voor Mewtwo, Mewtwo healt en vecht (lv 75).
 Kaartgroep gMapGroup_Spacetime (nieuw, achteraan). Mapsec MAPSEC_SPACETIME_CAVE (Town Map 26,4); de Kanto-kaarten
 gebruiken MAPSEC_LAVENDER_TOWN / MAPSEC_POKEMON_TOWER / MAPSEC_CERULEAN_CAVE.
-Flags FLAG_GROUNDED 560-619 (blok 'spacetime_cave' in flags.h), trainers 1159-1168.
+Flags FLAG_GROUNDED 560-619 (blok 'spacetime_cave' in flags.h), trainers 1159-1169 en 1195-1199.
 Teksten zijn placeholders (Jordi herschrijft ze).
 Gebruik: python3 tools/grounded/maptools/spacetime_cave.py [rendermap]"""
 import importlib, json, os, re, struct, subprocess, sys
@@ -48,6 +52,13 @@ FLAGS = [
     (571, 'FLAG_ITEM_CERULEAN_CAVE_2F_FULL_RESTORE', 'Cerulean Cave 2F: Full Restore'),
     (572, 'FLAG_ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL', 'Cerulean Cave B1F: Ultra Ball'),
     (573, 'FLAG_ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE', 'Cerulean Cave B1F: Max Revive'),
+    # S1: eerste bezoek, quest-poorten en de Lavender-quest
+    (574, 'FLAG_SPACETIME_RIFTS_OPENED', 'Spacetime Cave: Dialga en Palkia hebben de scheuren geopend'),
+    (575, 'FLAG_SPACETIME_LAVENDER_DONE', 'Spacetime-sidequest klaar: Lavender bevrijd (Agatha verslagen)'),
+    (576, 'FLAG_SPACETIME_CERULEAN_DONE', 'Spacetime-sidequest klaar: Mewtwo gevangen/verslagen'),
+    (577, 'FLAG_HIDE_LAVENDER_GHOST_GENGAR', 'Lavender Town: kwade geest voor de toren verdreven'),
+    (578, 'FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR', 'Lavender Town: kwade geest bij de noorduitgang verdreven'),
+    (579, 'FLAG_HIDE_LAVENDER_GHOST_BANETTE', 'Lavender Town: kwade geest bij de westuitgang verdreven'),
 ]
 
 
@@ -148,6 +159,18 @@ RIFTS = [  # (sleutel, linksboven, bestemming of None, naam op het bord)
 ]
 
 
+# S1: eerste bezoek (Dialga + Palkia openen de scheuren) en quest-poorten.
+# Toestand per scheur na de scène: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet), 'sealed' (dicht).
+RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'open', 'Lakes': 'open', 'Chargestone': 'open',
+              'Glimwood': 'open', 'AreaZero': 'open', 'Unknown': 'sealed', 'Coronet': 'sealed'}
+# Sidequests die meetellen voor de gang naar ?????. Een nieuwe locatie: haar klaar-flag hier toevoegen (en opnieuw
+# draaien). Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen pas
+# mee zodra hun flag hier staat; tot dan telt alleen wat bestaat. De meren-kamer ligt ná ????? en telt niet mee.
+SIDEQUESTS = [('FLAG_SPACETIME_LAVENDER_DONE', 'Lavender Town: de kwade geesten verdreven'),
+              ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen')]
+HUB_DIALGA, HUB_PALKIA, HUB_RESEARCHER = (10, 7), (16, 7), (18, 4)
+
+
 def hub(lav_rift_warp, cc_rift_warp):
     vre = importlib.import_module('victory_road_ext')
     os.chdir(st.REPO)
@@ -163,33 +186,169 @@ def hub(lav_rift_warp, cc_rift_warp):
     ids = HUB_IDS
     warps = [warp(HUB_DOOR[0], HUB_DOOR[1], 'ROUTE125', ROUTE125_WARP, elev=3)]
     bgs, P, T_ = [], HUB + '_EventScript_', HUB + '_Text_'
-    S = scr(HUB)
+    head = ('@ Project Grounded: SpacetimeCave (tools/grounded/maptools/spacetime_cave.py)\n'
+            'SpacetimeCave_MapScripts::\n'
+            '\tmap_script MAP_SCRIPT_ON_LOAD, SpacetimeCave_OnLoad\n'
+            '\tmap_script MAP_SCRIPT_ON_TRANSITION, SpacetimeCave_OnTransition\n'
+            '\tmap_script MAP_SCRIPT_ON_FRAME_TABLE, SpacetimeCave_OnFrame\n\t.byte 0\n')
+    S = Scr(HUB, head)
+    hide, opened, unseal = [], [], []          # setmetatile-regels per toestand
     for key, (x0, y0), dest, desc in RIFTS:
+        state = RIFT_STATE[key]
         for q in range(4):
             x, y = x0 + q % 2, y0 + q // 2
-            if dest:                        # bovenste rij = warp (beloopbaar), onderste rij = lijf (dicht)
-                g[y][x] = T(ids[(0, q)], q >= 2)
+            floor = g[y][x] & 0x3FF
+            if state == 'warp':             # bovenste rij = warp (beloopbaar), onderste rij = lijf (dicht)
+                m, col = ids[(0, q)], q >= 2
                 if q < 2:
                     wid = {'LAVENDER': lav_rift_warp, 'CERULEAN': cc_rift_warp}[dest] + q
                     warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F'}[dest], wid,
                                       elev=3))
-            else:
-                g[y][x] = T(ids[(1, q)], True)
+            else:                           # open (actief beeld) of dicht (instabiel beeld); altijd massief + bordje
+                m, col = ids[(0 if state == 'open' else 1, q)], True
                 bgs.append(sign(x, y, P + 'Rift' + key))
-        if not dest:
-            S.npc('Rift' + key, "The rift flickers. Through it you can just make out %s.\n\n"
-                  "It isn't stable yet. Spacetime is still loading." % desc if desc != '?????' else
-                  "The rift shows... nothing. A silhouette of a green dinosaur. Then static.\n\n"
-                  "It isn't stable yet. Something in there is very, very round.", 'MSGBOX_SIGN')
-    # bordjes en een onderzoeker
+            g[y][x] = T(m, col)
+            hide.append('\tsetmetatile %d, %d, 0x%03X, FALSE\n' % (x, y, floor))
+            opened.append('\tsetmetatile %d, %d, 0x%03X, %s\n' % (x, y, m, 'TRUE' if col else 'FALSE'))
+            if key == 'Unknown':
+                unseal.append('\tsetmetatile %d, %d, 0x%03X, TRUE\n' % (x, y, ids[(0, q)]))
+        if state == 'open':
+            S.npc('Rift' + key, "The rift is wide open. Through it you can just make out %s.\n\n"
+                  "The other side hasn't finished existing yet, though. Spacetime is still loading." % desc,
+                  'MSGBOX_SIGN')
+        elif key == 'Coronet':
+            S.npc('Rift' + key, "This rift is sealed shut. Through the cracks: %s.\n\n"
+                  "DIALGA and PALKIA sealed this one themselves. It's the kind of seal that means 'later'." % desc,
+                  'MSGBOX_SIGN')
+    # ????? : dicht tot alle sidequests klaar zijn
+    S.raw(f'''{P}RiftUnknown::
+	lockall
+	call Spacetime_AllSidequestsDone
+	goto_if_eq VAR_RESULT, TRUE, {P}RiftUnknownOpen
+	buffernumberstring STR_VAR_1, VAR_0x8005
+	msgbox {T_}RiftUnknownSealed, MSGBOX_DEFAULT
+	releaseall
+	end
+
+{P}RiftUnknownOpen::
+	msgbox {T_}RiftUnknownOpen, MSGBOX_DEFAULT
+	releaseall
+	end
+''', [('RiftUnknownSealed', "The rift shows... nothing. A silhouette of a green dinosaur. Then static.\n\n"
+                            "It's sealed. Something on the other side is waiting until you've cleaned up the "
+                            "other rifts. {STR_VAR_1} to go."),
+      ('RiftUnknownOpen', "The seal is gone. Something in there is very, very round, and it is humming a "
+                          "jaunty tune.\n\nThe path isn't solid yet. Come back when spacetime has finished "
+                          "loading.")])
+    # quest-poort (uitbreidbaar): VAR_RESULT = TRUE als alles klaar is, VAR_0x8005 = aantal open sidequests
+    code = ('@ Spacetime_AllSidequestsDone: VAR_RESULT = TRUE als alle Spacetime-sidequests klaar zijn, VAR_0x8005 = het\n'
+            '@ aantal dat nog openstaat. Uitbreiden: de klaar-flag van een nieuwe locatie in SIDEQUESTS (spacetime_cave.py)\n'
+            '@ zetten. Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen\n'
+            '@ pas mee als hun flag in de lijst staat; tot dan telt alleen wat bestaat.\n'
+            'Spacetime_AllSidequestsDone::\n\tsetvar VAR_0x8005, 0\n')
+    for fl, why in SIDEQUESTS:
+        code += '\tcall_if_unset %s, Spacetime_EventScript_CountOpen @ %s\n' % (fl, why)
+    code += ('\tsetvar VAR_RESULT, FALSE\n\tcall_if_eq VAR_0x8005, 0, Spacetime_EventScript_AllDone\n\treturn\n\n'
+             'Spacetime_EventScript_CountOpen:\n\taddvar VAR_0x8005, 1\n\treturn\n\n'
+             'Spacetime_EventScript_AllDone:\n\tsetvar VAR_RESULT, TRUE\n\treturn\n')
+    S.raw(code)
+    # kaartscripts: lege grot tot de scène, ????? open na alle sidequests
+    S.raw('SpacetimeCave_OnLoad:\n\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_HideRifts\n'
+          '\tgoto_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_OnLoadEnd\n'
+          '\tcall Spacetime_AllSidequestsDone\n'
+          '\tcall_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_UnsealUnknown\n'
+          'SpacetimeCave_EventScript_OnLoadEnd:\n\tend\n\n'
+          'SpacetimeCave_OnTransition:\n\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_ArmScene\n\tend\n\n'
+          'SpacetimeCave_EventScript_ArmScene:\n\tsetvar VAR_TEMP_1, 1\n\treturn\n\n'
+          'SpacetimeCave_OnFrame:\n\tmap_script_2 VAR_TEMP_1, 1, SpacetimeCave_EventScript_FirstVisit\n\t.2byte 0\n\n'
+          'SpacetimeCave_EventScript_HideRifts:\n' + ''.join(hide) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_OpenRifts:\n' + ''.join(opened) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_UnsealUnknown:\n' + ''.join(unseal) + '\treturn\n')
+    # de scène
+    S.raw(f'''{P}FirstVisit::
+	lockall
+	setvar VAR_TEMP_1, 0
+	applymovement OBJ_EVENT_ID_PLAYER, {P}Movement_PlayerIn
+	waitmovement 0
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox {T_}Dialga1, MSGBOX_DEFAULT
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox {T_}Palkia1, MSGBOX_DEFAULT
+	msgbox {T_}Dialga2, MSGBOX_DEFAULT
+	msgbox {T_}Palkia2, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 4
+	special ShakeCamera
+	waitstate
+	waitmoncry
+	playse SE_M_DETECT
+	fadescreenspeed FADE_TO_WHITE, 2
+	call SpacetimeCave_EventScript_OpenRifts
+	special DrawWholeMapView
+	removeobject LOCALID_SPACETIME_DIALGA
+	removeobject LOCALID_SPACETIME_PALKIA
+	setflag FLAG_SPACETIME_RIFTS_OPENED
+	delay 20
+	fadescreenspeed FADE_FROM_WHITE, 4
+	playse SE_M_TELEPORT
+	msgbox {T_}RiftsOpen, MSGBOX_DEFAULT
+	releaseall
+	end
+
+{P}Movement_PlayerIn:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+''', [('Dialga1', "DIALGA: ...Finally.\n\nDo you know how long we have been waiting for you? I do. Exactly. "
+                  "Down to the nanosecond. I am time. It's a whole thing."),
+      ('Palkia1', "PALKIA: Don't mind him. He counts.\n\nWelcome to the space between spaces. Mind the "
+                  "edges. They're sharp, and some of them are Tuesdays."),
+      ('Dialga2', "DIALGA: Every tear in this cave leads to a place that went wrong. Another dimension. "
+                  "Another time. Usually both.\n\nGo and fix them. We would do it ourselves, but we are "
+                  "very large and very busy."),
+      ('Palkia2', "PALKIA: Two of them stay shut.\n\nOne because you're not ready. The other because WE "
+                  "aren't. Don't ask which is which."),
+      ('RiftsOpen', "The cave tore open in seven places at once!\n\nDIALGA and PALKIA are gone. Two rifts "
+                    "remain sealed: ????? and MT. CORONET.")])
+    # bordje en de onderzoeker (telt mee met de quest-poort)
     bgs.append(sign(10, 3, P + 'Plaque'))
     S.npc('Plaque', "SPACETIME CAVE\n\nWhere places that no longer exist, never existed, or are in another "
           "cartridge go to wait.\n\nPlease do not feed the timelines.", 'MSGBOX_SIGN')
-    objs = [obj('OBJ_EVENT_GFX_SCIENTIST_1', 15, 5, P + 'Researcher', move='MOVEMENT_TYPE_FACE_DOWN')]
-    S.npc('Researcher', "Ah, a visitor! I study the rifts. Mostly I study why they won't hold still.\n\n"
-          "The one on the far left leads to a town that plays the same sad song on loop. "
-          "The one below it smells like a very angry clone.\n\n"
-          "The others? Unstable. Give them a few patches.")
+    objs = [obj('OBJ_EVENT_GFX_SCIENTIST_1', HUB_RESEARCHER[0], HUB_RESEARCHER[1], P + 'Researcher',
+                move='MOVEMENT_TYPE_FACE_DOWN'),
+            obj('OBJ_EVENT_GFX_SPECIES(DIALGA)', HUB_DIALGA[0], HUB_DIALGA[1], '0x0', 'FLAG_SPACETIME_RIFTS_OPENED',
+                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_DIALGA'),
+            obj('OBJ_EVENT_GFX_SPECIES(PALKIA)', HUB_PALKIA[0], HUB_PALKIA[1], '0x0', 'FLAG_SPACETIME_RIFTS_OPENED',
+                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_PALKIA')]
+    S.raw(f'''{P}Researcher::
+	lock
+	faceplayer
+	call Spacetime_AllSidequestsDone
+	goto_if_eq VAR_RESULT, TRUE, {P}ResearcherDone
+	buffernumberstring STR_VAR_1, VAR_0x8005
+	msgbox {T_}Researcher, MSGBOX_DEFAULT
+	release
+	end
+
+{P}ResearcherDone::
+	msgbox {T_}ResearcherDone, MSGBOX_DEFAULT
+	release
+	end
+''', [('Researcher', "Did you SEE that? Two gods, one cave, zero safety briefings.\n\nI study the rifts. "
+                     "The far left one leads to a haunted town. The one below it smells like a very angry "
+                     "clone.\n\nMy instruments say {STR_VAR_1} of the working rifts still need you before the "
+                     "sealed one in the corner calms down."),
+      ('ResearcherDone', "Every working rift is quiet. You did that.\n\nThe ????? rift has stopped "
+                         "screaming. Now it just hums. I liked the screaming better. You knew where you stood.")])
     S.write()
     cells = [c for row in g for c in row]
     lay = save_layout(HUB, W, H, cells, [T(0x211, True, 0)] * 4, 'gTileset_SpacetimeGeneral', 'gTileset_SpacetimeCave')
@@ -202,8 +361,39 @@ ROUTE125_DOOR = (46, 28)
 ROUTE125_WARP = None
 
 
+ISLE = dict(ring=(40, 22, 51, 31), sand=(41, 23, 50, 30), rock=(43, 24, 48, 28), peaks=((44, 25), (46, 26)))
+
+
+def route125_island():
+    """S1: groter eiland met een echte rotsheuvel (General-rots op zand, zoals Shoal Cave): ondiepe rand ->
+    strand -> zand -> rots met twee toppen; de grotopening (0x0A7) komt in de onderrand onder de rechtertop."""
+    p = 'data/layouts/Route125/map.bin'
+    W, H = 80, 40
+    v = list(struct.unpack('<%dH' % (W * H), open(p, 'rb').read()))
+
+    def put(x, y, m, col=False, elev=3):
+        v[y * W + x] = T(m, col, elev)
+
+    def rect(box, nine, col=False, elev=3):
+        x0, y0, x1, y1 = box
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                r = 0 if y == y0 else 2 if y == y1 else 1
+                c = 0 if x == x0 else 2 if x == x1 else 1
+                put(x, y, nine[r][c], col, elev)
+    rect(ISLE['ring'], [[0x1ad, 0x1ae, 0x1af], [0x1b5, 0x19e, 0x1b7], [0x1bd, 0x1be, 0x1bf]], elev=1)
+    rect(ISLE['sand'], [[0x195, 0x196, 0x197], [0x19d, 0x124, 0x19f], [0x1a5, 0x1a6, 0x1a7]])
+    rect(ISLE['rock'], [[0x080, 0x081, 0x082], [0x088, 0x071, 0x08a], [0x090, 0x091, 0x092]], col=True)
+    for (px, py) in ISLE['peaks']:
+        for dx, dy, m in ((0, 0, 0x093), (1, 0, 0x094), (0, 1, 0x09b), (1, 1, 0x09c)):
+            put(px + dx, py + dy, m, True)
+    assert ROUTE125_DOOR == (46, ISLE['rock'][3])
+    open(p, 'wb').write(struct.pack('<%dH' % len(v), *v))
+
+
 def route125():
     global ROUTE125_WARP
+    route125_island()
     p = 'data/maps/Route125/map.json'
     m = json.load(open(p))
     dm = 'MAP_' + const(HUB)
@@ -295,45 +485,120 @@ def lavender(names):
                     m, col = (PC if kind_ == 'PC' else MART)[r][c]
                     m = names[m] if isinstance(m, str) else m
                 g[y0 + r][x0 + c] = T(m, bool(col))
-    # gaten tussen de gebouwen (FRLG-huizen waren 5 breed): bloemen
-    for (x, y) in ((8, 8), (8, 9), (8, 10), (8, 11), (3, 13), (8, 13), (8, 14), (8, 15), (3, 14), (4, 1), (4, 2),
-                   (4, 3), (4, 4), (4, 5)):
-        if kind[(x, y)] == 'grass':
-            g[y][x] = T(0x004)
-    cells = [c for row in g for c in row]
+    # gaten tussen de gebouwen (FRLG-huizen waren 5 breed): bloemen (na de bevrijding) of graven (spookstad)
+    FLOWERS = [(x, y) for (x, y) in ((8, 8), (8, 9), (8, 10), (8, 11), (3, 13), (8, 13), (8, 14), (8, 15), (3, 14),
+                                     (4, 1), (4, 2), (4, 3), (4, 4), (4, 5)) if kind[(x, y)] == 'grass']
+    gH = [row[:] for row in g]                     # spookstad
+    gC = [row[:] for row in g]                     # na de bevrijding
+    grave = lambda i: T(names[('grave_orange', 'grave_gray')[i % 2]], True)
+    for i, (x, y) in enumerate(FLOWERS):
+        gC[y][x] = T(0x004)
+        gH[y][x] = grave(i) if i % 2 == 0 else T(0x001)
+    for i, (x, y) in enumerate(LAV_GRAVES):        # graven blijven: dit is nog steeds de stad van de doden
+        assert kind[(x, y)] == 'grass', (x, y)
+        gH[y][x] = gC[y][x] = grave(i + 1)
+    for (x, y, t, keep) in LAV_DEADTREES:          # dode bomen (1x2); 'keep' = ook na de bevrijding (uitgangen dicht)
+        assert kind[(x, y)] == kind[(x, y + 1)] == 'grass', (x, y)
+        for r in range(2):
+            gH[y + r][x] = T(names[('deadtree', t, r)], True)
+            gC[y + r][x] = gH[y + r][x] if keep else T((0x001, 0x004)[r])
     border = [T(0x1d4, True, 0), T(0x1d5, True, 0), T(0x1dc, True, 0), T(0x1dd, True, 0)]
-    lay = save_layout(LAV, W, H, cells, border, 'gTileset_General', 'gTileset_LavenderTown')
+    lay = save_layout(LAV, W, H, [c for row in gH for c in row], border, 'gTileset_LavenderHauntGeneral',
+                      'gTileset_LavenderHaunt')
+    save_layout(LAV_CALM, W, H, [c for row in gC for c in row], border, 'gTileset_LavenderCalmGeneral',
+                'gTileset_LavenderCalm')
     warps = [warp(x, y, const(dest), 0, elev=3) for x, y, dest in LAV_DOORS]
     warps[2]['dest_warp_id'] = '1'                 # torendeur -> de mat in 1F (FRLG: warp 1)
     first_rift = len(warps)
     for q in range(2):
         warps.append(warp(LAV_RIFT[0] + q, LAV_RIFT[1], const(HUB), 1 + q, elev=3))
-    S = scr(LAV)
+    head = ('@ Project Grounded: LavenderTown (tools/grounded/maptools/spacetime_cave.py)\n'
+            '@ Spookstad (eigen paletten, bewolkt) tot FLAG_SPACETIME_LAVENDER_DONE; daarna layout LavenderTown_Calm.\n'
+            'LavenderTown_MapScripts::\n\tmap_script MAP_SCRIPT_ON_TRANSITION, LavenderTown_OnTransition\n\t.byte 0\n\n'
+            'LavenderTown_OnTransition:\n\tcall_if_set FLAG_SPACETIME_LAVENDER_DONE, LavenderTown_EventScript_Calm\n\tend\n\n'
+            'LavenderTown_EventScript_Calm:\n\tsetmaplayoutindex LAYOUT_%s\n\tsetweather WEATHER_NONE\n' % const(LAV_CALM)
+            + ''.join('\tsetflag FLAG_HIDE_LAVENDER_GHOST_%s\n' % g[0] for g in LAV_GHOSTS) + '\treturn\n')
+    S = Scr(LAV, head)
     P = S.P
     objs = [
         obj('OBJ_EVENT_GFX_LITTLE_GIRL', 19, 10, P + 'LittleGirl', move='MOVEMENT_TYPE_WANDER_AROUND', rx=1, ry=1),
         obj('OBJ_EVENT_GFX_MAN_1', 12, 12, P + 'Worker', move='MOVEMENT_TYPE_FACE_LEFT'),
         obj('OBJ_EVENT_GFX_BOY_1', 10, 6, P + 'Boy', move='MOVEMENT_TYPE_WANDER_UP_AND_DOWN', ry=1),
     ]
-    S.npc('LittleGirl', "Do you believe in ghosts?\n\nMy mom says they're just POKéMON. My dad says they're "
-          "just POKéMON with unfinished business.\n\nMy dad has a lot of unfinished business.")
-    S.npc('Worker', "We were going to renovate the TOWER. Then the rift opened and Kanto just... stopped "
-          "updating.\n\nI've been on lunch break for twenty-five years.")
-    S.npc('Boy', "You came out of the purple hole! Cool!\n\nThe last person who came out of it was a "
-          "grumpy kid with spiky hair. He said 'smell ya later' and went back in.")
+
+    def two(key, before, after):
+        S.raw(f'{P}{key}::\n\tlock\n\tfaceplayer\n\tgoto_if_set FLAG_SPACETIME_LAVENDER_DONE, {P}{key}After\n'
+              f'\tmsgbox {S.T}{key}, MSGBOX_DEFAULT\n\trelease\n\tend\n\n'
+              f'{P}{key}After::\n\tmsgbox {S.T}{key}After, MSGBOX_DEFAULT\n\trelease\n\tend\n',
+              [(key, before), (key + 'After', after)])
+    two('LittleGirl', "Do you believe in ghosts?\n\nMy mom says they're just POKéMON. My dad says they're just "
+        "POKéMON with unfinished business.\n\nThe one in front of the TOWER has a LOT of unfinished business.",
+        "The bad ghosts are gone! Now it's just the regular ghosts.\n\nThe regular ghosts are fine. They do "
+        "the dishes. Badly. But they do them.")
+    two('Worker', "We were going to renovate the TOWER. Then the fog rolled in and Kanto just... stopped "
+        "updating.\n\nI've been on lunch break for twenty-five years. The CHANNELERS went up to pray and came "
+        "down wrong.",
+        "The fog's gone. I can see the TOWER again.\n\nI suppose this means my lunch break is over. "
+        "...I'll start tomorrow. Tomorrows work again here, apparently.")
+    two('Boy', "You came out of the purple hole! Cool!\n\nThe last person who came out of it was a grumpy kid "
+        "with spiky hair. He saw the fog, said 'smell ya never' and went straight back in.",
+        "You beat the evil ghost! Cool!\n\nWhen the grumpy kid comes back, I'm telling him it was me.")
+    # kwade geesten in de stad (wild gevecht; gewonnen of gevangen = weg)
+    for gk, species, lvl, (gx, gy), face, txt in LAV_GHOSTS:
+        flag = 'FLAG_HIDE_LAVENDER_GHOST_' + gk
+        lid = 'LOCALID_LAVENDER_GHOST_' + gk
+        objs.append(obj('OBJ_EVENT_GFX_SPECIES(%s)' % gk, gx, gy, P + 'Ghost' + gk.title(), flag,
+                        move='MOVEMENT_TYPE_FACE_' + face, local_id=lid))
+        S.raw(f'''{P}Ghost{gk.title()}::
+	lock
+	faceplayer
+	playmoncry SPECIES_{gk}, CRY_MODE_ENCOUNTER
+	msgbox {S.T}Ghost{gk.title()}, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_{species}, {lvl}
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, {P}Ghost{gk.title()}Gone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, {P}Ghost{gk.title()}Gone
+	release
+	end
+
+{P}Ghost{gk.title()}Gone::
+	removeobject {lid}
+	msgbox {S.T}GhostGone, MSGBOX_DEFAULT
+	release
+	end
+''', [('Ghost' + gk.title(), txt)])
+    S.raw('', [('GhostGone', "The shadow dissolved into the fog.\n\nSomewhere, a door creaks shut. "
+                             "Probably for the better.")])
     bgs = [sign(15, 11, P + 'TownSign'), sign(21, 7, P + 'TowerSign'), sign(7, 11, P + 'HouseSign'),
            sign(12, 4, P + 'Notice')]
     S.npc('TownSign', "LAVENDER TOWN\nThe Noble Purple Town\n\n(Population: fluctuating. Please count "
           "yourself twice to be sure.)", 'MSGBOX_SIGN')
     S.npc('TowerSign', "POKéMON TOWER\nBecalm the spirits of POKéMON\n\nNo running. No flash photography. "
-          "No asking the CHANNELERS if they're okay.", 'MSGBOX_SIGN')
+          "No asking the CHANNELERS if they're okay. They are not.", 'MSGBOX_SIGN')
     S.npc('HouseSign', "VOLUNTEER POKéMON HOUSE\n\nAll POKéMON welcome. Ghosts by appointment.", 'MSGBOX_SIGN')
-    S.npc('Notice', "NOTICE\n\nSilph Scopes are no longer required. The ghosts have unionized and now "
-          "identify themselves voluntarily.", 'MSGBOX_SIGN')
+    S.npc('Notice', "NOTICE\n\nSILPH SCOPES are sold out. Until further notice, assume every shadow is a "
+          "GHOST, and every GHOST is in a mood.", 'MSGBOX_SIGN')
     S.write()
     write_map(LAV, lay, objs, warps, bgs, music='MUS_RG_LAVENDER', region_map_section='MAPSEC_LAVENDER_TOWN',
-              map_type='MAP_TYPE_TOWN', weather='WEATHER_NONE', allow_cycling=True, allow_escaping=False)
+              map_type='MAP_TYPE_TOWN', weather=LAV_WEATHER, allow_cycling=True, allow_escaping=False)
     return first_rift, kind
+
+
+LAV_WEATHER = 'WEATHER_SHADE'   # mist (horizontaal of diagonaal) maakte de donkere paletten melkwit
+LAV_CALM = 'LavenderTown_Calm'
+LAV_GRAVES = [(14, 13), (16, 13), (14, 15), (2, 6), (2, 8), (8, 0), (10, 0), (12, 0), (0, 9), (0, 10), (0, 11)]
+LAV_DEADTREES = [(9, 0, 0, True), (11, 0, 1, True), (1, 5, 1, False), (21, 9, 0, False), (13, 13, 1, False),
+                 (1, 14, 0, False)]
+LAV_GHOSTS = [  # (soort-/sleutel, gevecht, level, plek, kijkrichting, tekst)
+    ('GENGAR', 'GENGAR', 67, (18, 7), 'DOWN', "A shadow is blocking the TOWER door.\n\nIt looks like a GENGAR, "
+     "but its grin is about three teeth too wide."),
+    ('DUSKNOIR', 'DUSKNOIR', 66, (10, 1), 'DOWN', "The road north is gone. There's only fog, and something "
+     "in the fog that is very interested in you."),
+    ('BANETTE', 'BANETTE', 66, (2, 10), 'RIGHT', "A BANETTE is standing at the edge of town, zipping and "
+     "unzipping its mouth.\n\nIt seems to be waiting for its old trainer. You'll do.")]
 
 
 # ---------------------------------------------------------------- interieurs (vanilla layouts, Ashfrost als sjabloon)
@@ -372,7 +637,11 @@ def lavender_interiors():
     interior_from('PokemonCenter_1F', 'LavenderTown_PokemonCenter_1F', 0, {
         'EventScript_ExpertM_Text': "I come here to talk to the NURSE. She's the only one in town who answers "
                                     "when you speak to her.\n\nWell. The only one who's alive.",
-    })
+        # S1: geen Protip Oracle (Hoenn-gag) in een andere dimensie: een Kanto-verkoper van Silph Scopes
+        'Text_ProtipMaster': "I used to sell SILPH SCOPES. Lovely things. You look through one and the ghosts "
+                             "stop pretending.\n\nThen the fog came and the ghosts stopped pretending all on "
+                             "their own. Terrible for business.",
+    }, lambda o: [dict(x, graphics_id='OBJ_EVENT_GFX_GENTLEMAN') if 'Protip' in x['script'] else x for x in o])
     interior_from('PokemonCenter_2F', 'LavenderTown_PokemonCenter_2F', 0, {})
     interior_from('Mart', 'LavenderTown_Mart', 1, {})
     houses = [('LavenderTown_VolunteerHouse', 3, 'OBJ_EVENT_GFX_OLD_MAN',
@@ -418,80 +687,126 @@ def mon(head, lvl, moves):
     return bd.mon(head, lvl, moves, iv=IV)
 
 
-TRAINERS = [
+TRAINERS = [  # S1: de Channelers zijn bezeten; teams: Ghost, Dark, Psychic en ander mysterieus spul (geen dubbele soort)
     ('TOWER_MAYA', 'PokemonTower_2F', 16, 5, 'LEFT', 3, 'MAYA', [
         mon('Mismagius', 65, ['Shadow Ball', 'Mystical Fire', 'Dazzling Gleam', 'Nasty Plot']),
-        mon('Hypno', 65, ['Psychic', 'Hypnosis', 'Dream Eater', 'Focus Blast']),
-        mon('Drifblim', 65, ['Shadow Ball', 'Air Slash', 'Thunderbolt', 'Will-O-Wisp'])],
-     "Hey! You're not dead! How refreshing.\n\nI'll fix that. Spiritually.",
-     "Okay, okay, you're very alive. I get it.",
-     "I used to channel the dead. Now I mostly channel my frustration."),
+        mon('Umbreon', 65, ['Foul Play', 'Moonlight', 'Toxic', 'Wish']),
+        mon('Hypno', 65, ['Psychic', 'Hypnosis', 'Dream Eater', 'Focus Blast'])],
+     "Hey! You're not dead! How refreshing.\n\nThe voice in my head says I should fix that. It's very "
+     "persuasive. It has a podcast.",
+     "The voice... stopped? Oh, thank goodness. It never let me pick the music.",
+     "Something up there is wearing people like coats. I was a coat. Zero stars."),
     ('TOWER_PATRICIA', 'PokemonTower_3F', None, None, None, None, 'PATRICIA', [
         mon('Banette', 65, ['Shadow Claw', 'Gunk Shot', 'Knock Off', 'Shadow Sneak']),
-        mon('Golurk', 65, ['Earthquake', 'Shadow Punch', 'Ice Punch', 'Dynamic Punch']),
+        mon('Absol', 65, ['Night Slash', 'Psycho Cut', 'Sucker Punch', 'Swords Dance']),
         mon('Xatu', 65, ['Psychic', 'Air Slash', 'Roost', 'Confuse Ray'])],
-     "Kekeke... ke... sorry, I've had this cough since 1996.",
-     "Kek. That's the sound of me losing.",
-     "The spirits say you'll go far. They also said that about the last guy. He's in the third row."),
+     "Kekeke... ke... sorry. That's not my laugh. I don't know whose laugh that is.",
+     "Kek. ...That one was mine. I think I'm back.",
+     "The spirits say you'll go far. They said that about the last guy. He's in the third row."),
     ('TOWER_CARLY', 'PokemonTower_3F', None, None, None, None, 'CARLY', [
         mon('Dusclops', 65, ['Night Shade', 'Will-O-Wisp', 'Pain Split', 'Shadow Sneak']),
         mon('Mr. Mime', 65, ['Psychic', 'Dazzling Gleam', 'Reflect', 'Light Screen']),
-        mon('Lampent', 65, ['Shadow Ball', 'Flamethrower', 'Energy Ball', 'Will-O-Wisp'])],
-     "Be gone... evil... spirit... oh, it's a kid. Same procedure.",
-     "Fine! You may pass, evil kid.",
-     "I wear this robe because it's warm. The chanting is optional."),
+        mon('Mandibuzz', 65, ['Foul Play', 'Roost', 'Brave Bird', 'Toxic'])],
+     "Be gone... living... thing... You're warm. Stop being warm. It's rude.",
+     "Ugh. I'm cold again. Normal cold. Human cold.",
+     "I wear this robe because it's warm. The chanting was the ghost's idea."),
     ('TOWER_HOPE', 'PokemonTower_3F', None, None, None, None, 'HOPE', [
         mon('Chandelure', 66, ['Shadow Ball', 'Flamethrower', 'Energy Ball', 'Will-O-Wisp']),
         mon('Sableye', 66, ['Knock Off', 'Shadow Claw', 'Will-O-Wisp', 'Recover']),
-        mon('Exeggutor', 66, ['Psychic', 'Giga Drain', 'Sleep Powder', 'Leaf Storm'])],
-     "My name is HOPE. In this tower that's practically a joke.",
-     "And there it goes.",
+        mon('Sigilyph', 66, ['Psychic', 'Air Slash', 'Cosmic Power', 'Roost'])],
+     "My name is HOPE. The thing inside me finds that hilarious.",
+     "And there it goes. Out through the ears, I think.",
      "Every grave here has a name on it. Except the ones that have two."),
     ('TOWER_LAUREL', 'PokemonTower_4F', None, None, None, None, 'LAUREL', [
         mon('Cofagrigus', 66, ['Shadow Ball', 'Will-O-Wisp', 'Trick Room', 'Nasty Plot']),
-        mon('Slowking', 66, ['Psychic', 'Scald', 'Slack Off', 'Ice Beam']),
+        mon('Malamar', 66, ['Psycho Cut', 'Knock Off', 'Superpower', 'Topsy-Turvy']),
         mon('Froslass', 66, ['Shadow Ball', 'Ice Beam', 'Spikes', 'Thunderbolt'])],
-     "GHOST! Oh. No. That's my reflection. Long night.",
-     "I need a nap. In a coffin, ideally.",
-     "The tower used to be quiet. Then that hole in spacetime opened and now we get tourists."),
+     "GHOST! Oh. No. That's my reflection. It's been doing things without me.",
+     "My reflection is back to copying me. As it should.",
+     "The tower used to be quiet. Then the fog came, and something moved into the top floor."),
     ('TOWER_JODY', 'PokemonTower_4F', None, None, None, None, 'JODY', [
         mon('Trevenant', 67, ['Wood Hammer', 'Shadow Claw', 'Horn Leech', 'Will-O-Wisp']),
         mon('Bronzong', 67, ['Gyro Ball', 'Psychic', 'Trick Room', 'Stealth Rock']),
+        mon('Honchkrow', 67, ['Night Slash', 'Brave Bird', 'Sucker Punch', 'Heat Wave']),
         mon('Houndstone', 67, ['Shadow Claw', 'Play Rough', 'Body Press', 'Crunch'])],
-     "I can see five spirits behind you. One of them is rolling its eyes.",
-     "The eye-roller says 'told you so'.",
+     "I can see five spirits behind you. One of them is rolling its eyes. One of them is me.",
+     "The eye-roller says 'told you so'. The me says 'sorry'.",
      "My HOUNDSTONE is a good boy. Was a good boy. Remains, technically, a good boy."),
     ('TOWER_PAULA', 'PokemonTower_4F', None, None, None, None, 'PAULA', [
         mon('Gourgeist', 66, ['Shadow Sneak', 'Seed Bomb', 'Will-O-Wisp', 'Leech Seed']),
-        mon('Palossand', 66, ['Shadow Ball', 'Earth Power', 'Shore Up', 'Giga Drain']),
-        mon('Musharna', 66, ['Psychic', 'Moonblast', 'Yawn', 'Calm Mind'])],
-     "Shhh. You'll wake them. And they are SO cranky in the morning.",
-     "...They're awake. Thanks.",
+        mon('Musharna', 66, ['Psychic', 'Moonblast', 'Yawn', 'Calm Mind']),
+        mon('Grimmsnarl', 66, ['Spirit Break', 'Darkest Lariat', 'Thunder Wave', 'Bulk Up'])],
+     "Shhh. You'll wake them. You'll wake ME. I'm not the one talking right now.",
+     "...I'm awake. Thanks. I think.",
      "Please walk softly. Some of them are light sleepers. All of them are heavy grudge-holders."),
     ('TOWER_RUTH', 'PokemonTower_5F', None, None, None, None, 'RUTH', [
         mon('Polteageist', 68, ['Shadow Ball', 'Giga Drain', 'Shell Smash', 'Stored Power']),
         mon('Dhelmise', 68, ['Power Whip', 'Anchor Shot', 'Shadow Claw', 'Earthquake']),
-        mon('Gardevoir', 68, ['Psychic', 'Moonblast', 'Calm Mind', 'Mystical Fire'])],
-     "We are the CHOIR of the top floor. We sing for the departed.\n\nYou may join. Briefly. Permanently.",
-     "That note was flat. Like my team.",
-     "We don't actually sing. The acoustics up here are terrible."),
+        mon('Beheeyem', 68, ['Psychic', 'Shadow Ball', 'Thunderbolt', 'Trick Room']),
+        mon('Zoroark-Hisui', 68, ['Shadow Ball', 'Hyper Voice', 'Nasty Plot', 'Flamethrower'])],
+     "We are the CHOIR of the top floor. We sing for HER now.\n\nYou may join. Briefly. Permanently.",
+     "That note was flat. And it was mine. I'm free!",
+     "We don't actually sing. The acoustics up here are terrible. SHE made us."),
     ('TOWER_TAMMY', 'PokemonTower_5F', None, None, None, None, 'TAMMY', [
         mon('Dusknoir', 68, ['Shadow Punch', 'Earthquake', 'Ice Punch', 'Will-O-Wisp']),
         mon('Jellicent', 68, ['Scald', 'Shadow Ball', 'Recover', 'Will-O-Wisp']),
         mon('Alakazam', 68, ['Psychic', 'Shadow Ball', 'Focus Blast', 'Calm Mind']),
         mon('Spiritomb', 68, ['Sucker Punch', 'Shadow Sneak', 'Foul Play', 'Will-O-Wisp'])],
-     "A hundred and eight spirits live in my SPIRITOMB. It gets crowded. They vote on everything.",
-     "The vote was unanimous. You win.",
-     "Upstairs is the caretaker. He's nice. Tips well. Mostly in items."),
+     "A hundred and eight spirits live in my SPIRITOMB. A hundred and nine live in me. It gets crowded. "
+     "They vote on everything.",
+     "The vote was unanimous. You win, and the hundred and ninth gets evicted.",
+     "Upstairs is AGATHA. Or something that used to be AGATHA. She brought the fog."),
     ('TOWER_KARINA', 'PokemonTower_5F', None, None, None, None, 'KARINA', [
         mon('Gengar', 69, ['Shadow Ball', 'Sludge Bomb', 'Focus Blast', 'Hypnosis']),
         mon('Aegislash', 69, ["King's Shield", 'Shadow Ball', 'Flash Cannon', 'Sacred Sword']),
         mon('Mimikyu', 69, ['Play Rough', 'Shadow Claw', 'Swords Dance', 'Shadow Sneak']),
         mon('Marowak-Alola', 69, ['Shadow Bone', 'Flare Blitz', 'Bonemerang', 'Will-O-Wisp'])],
-     "I lead the CHOIR. The MAROWAK in my party has been waiting a very long time for someone to "
-     "finally fight it fair.",
-     "...It's at peace. Or it's sulking. Hard to tell with skulls.",
-     "Go on. The caretaker is waiting. He has been waiting since before the rift."),
+     "I lead the CHOIR. Or the thing behind my eyes does. It has terrible taste in hymns.",
+     "...It's gone. My MAROWAK is staring at me like it knew all along.",
+     "AGATHA is just ahead. The real one is still in there somewhere. Hit the other one first."),
+]
+# S1: extra trainers (eigen klasse/foto) met de id's uit de opdracht (1169, 1195-1199)
+EXTRA = [  # (sleutel, id, kaart, naam, klasse, foto, geslacht, muziek, AI, mugshot, items, team, omschrijving)
+    ('TOWER_AGATHA', 1169, 'PokemonTower_5F', 'AGATHA', 'Elite Four', 'Agatha', 'Female', 'Suspicious', bd.AI_BOSS,
+     None, 'Full Restore / Full Restore', [
+        mon('Crobat', 70, ['Cross Poison', 'Brave Bird', 'U-turn', 'Roost']),
+        mon('Arbok', 70, ['Gunk Shot', 'Sucker Punch', 'Glare', 'Earthquake']),
+        mon('Annihilape', 70, ['Rage Fist', 'Drain Punch', 'Bulk Up', 'Ice Punch']),
+        mon('Typhlosion-Hisui', 70, ['Infernal Parade', 'Eruption', 'Focus Blast', 'Will-O-Wisp']),
+        mon('Dragapult', 70, ['Dragon Darts', 'Phantom Force', 'U-turn', 'Will-O-Wisp']),
+        mon('Gengar @ Life Orb', 71, ['Shadow Ball', 'Sludge Wave', 'Focus Blast', 'Nasty Plot'])],
+     'Pokemon Tower 5F: bezeten Agatha (Lavender-quest)'),
+    ('CC_GRUNT_ARLO', 1195, 'CeruleanCave_1F', 'ARLO', 'Team Rocket', 'Rocket Grunt M', 'Male', 'Rocket', bd.AI, None,
+     None, [mon('Crobat', 66, ['Cross Poison', 'Air Slash', 'U-turn', 'Taunt']),
+            mon('Weezing-Galar', 66, ['Strange Steam', 'Sludge Bomb', 'Will-O-Wisp', 'Defog']),
+            mon('Houndoom', 66, ['Dark Pulse', 'Flamethrower', 'Sludge Bomb', 'Nasty Plot'])],
+     'Cerulean Cave 1F: Rocket die Mewtwo zoekt'),
+    ('CC_GRUNT_VERA', 1196, 'CeruleanCave_2F', 'VERA', 'Team Rocket', 'Rocket Grunt F', 'Female', 'Rocket', bd.AI, None,
+     None, [mon('Arbok', 67, ['Gunk Shot', 'Crunch', 'Coil', 'Earthquake']),
+            mon('Persian-Alola', 67, ['Foul Play', 'Power Gem', 'Nasty Plot', 'Dark Pulse']),
+            mon('Toxicroak', 67, ['Poison Jab', 'Drain Punch', 'Sucker Punch', 'Swords Dance']),
+            mon('Skuntank', 67, ['Crunch', 'Poison Jab', 'Fire Blast', 'Sucker Punch'])],
+     'Cerulean Cave 2F: Rocket die Mewtwo zoekt'),
+    ('CC_GRUNT_DUNCAN', 1197, 'CeruleanCave_2F', 'DUNCAN', 'Team Rocket', 'Rocket Grunt M', 'Male', 'Rocket', bd.AI,
+     None, None, [mon('Scizor', 68, ['Bullet Punch', 'X-Scissor', 'Knock Off', 'Swords Dance']),
+                  mon('Magnezone', 68, ['Thunderbolt', 'Flash Cannon', 'Volt Switch', 'Thunder Wave']),
+                  mon('Drapion', 68, ['Knock Off', 'Poison Jab', 'Earthquake', 'Swords Dance'])],
+     'Cerulean Cave 2F: Rocket die Mewtwo zoekt'),
+    ('CC_GRUNT_MAXINE', 1198, 'CeruleanCave_B1F', 'MAXINE', 'Team Rocket', 'Rocket Grunt F', 'Female', 'Rocket', bd.AI,
+     None, None, [mon('Porygon-Z', 69, ['Tri Attack', 'Thunderbolt', 'Ice Beam', 'Nasty Plot']),
+                  mon('Muk', 69, ['Gunk Shot', 'Knock Off', 'Drain Punch', 'Curse']),
+                  mon('Electivire', 69, ['Wild Charge', 'Ice Punch', 'Cross Chop', 'Earthquake']),
+                  mon('Kingambit', 70, ['Kowtow Cleave', 'Iron Head', 'Sucker Punch', 'Swords Dance'])],
+     'Cerulean Cave B1F: Rocket die Mewtwo zoekt'),
+    ('CC_GIOVANNI', 1199, 'CeruleanCave_B1F', 'GIOVANNI', 'Boss', 'Giovanni', 'Male', 'Rocket', bd.AI_BOSS, 'Purple',
+     'Full Restore / Full Restore', [
+        mon('Honchkrow', 73, ['Night Slash', 'Brave Bird', 'Sucker Punch', 'Superpower']),
+        mon('Dugtrio', 73, ['Earthquake', 'Stone Edge', 'Sucker Punch', 'Swords Dance']),
+        mon('Kangaskhan', 73, ['Fake Out', 'Double-Edge', 'Sucker Punch', 'Earthquake']),
+        mon('Nidoqueen', 74, ['Earth Power', 'Sludge Wave', 'Ice Beam', 'Flamethrower']),
+        mon('Rhyperior @ Weakness Policy', 74, ['Rock Wrecker', 'High Horsepower', 'Megahorn', 'Rock Polish']),
+        mon('Nidoking @ Life Orb', 75, ['Earth Power', 'Sludge Wave', 'Ice Beam', 'Thunderbolt'])],
+     'Cerulean Cave B1F: Giovanni, vlak voor Mewtwo'),
 ]
 FIRST_ID = 1159
 TRAINER_POS = {   # FRLG-posities (Channelers in 3F/4F, grunts in 7F = onze 5F)
@@ -560,9 +875,52 @@ def tower(tower_grids, lav_tower_warp):
                      ball(11, 16, 'ITEM_DUSK_BALL', 'FLAG_ITEM_POKEMON_TOWER_4F_DUSK_BALL')]
         if name == 'PokemonTower_5F':
             objs.append(obj('OBJ_EVENT_GFX_OLD_MAN', 11, 4, P + 'Caretaker', move='MOVEMENT_TYPE_FACE_DOWN'))
+            objs.append(obj('OBJ_EVENT_GFX_AGATHA', 11, 5, P + 'Agatha', move='MOVEMENT_TYPE_FACE_DOWN'))
+            # S1: de baas van de Lavender-quest: de kwade geest in Agatha; daarna is Lavender bevrijd
+            S.raw(f'''{P}Agatha::
+	lock
+	faceplayer
+	goto_if_set FLAG_SPACETIME_LAVENDER_DONE, {P}AgathaFreed
+	playse SE_M_NIGHTMARE
+	msgbox {S.T}AgathaIntro, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_TOWER_AGATHA, {S.T}AgathaBattle, {S.T}AgathaDefeat, {P}AgathaDefeated
+{P}AgathaFreed::
+	msgbox {S.T}AgathaFreed, MSGBOX_DEFAULT
+	release
+	end
+
+{P}AgathaDefeated::
+	msgbox {S.T}AgathaLeaves, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreenspeed FADE_TO_WHITE, 4
+	setflag FLAG_SPACETIME_LAVENDER_DONE
+	setflag FLAG_HIDE_LAVENDER_GHOST_GENGAR
+	setflag FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR
+	setflag FLAG_HIDE_LAVENDER_GHOST_BANETTE
+	delay 30
+	fadescreenspeed FADE_FROM_WHITE, 4
+	msgbox {S.T}AgathaThanks, MSGBOX_DEFAULT
+	msgbox {S.T}LavenderFreed, MSGBOX_DEFAULT
+	release
+	end
+''', [('AgathaIntro', "AGATHA stands perfectly still. Her eyes are the wrong color.\n\n\"Oh, a visitor. How "
+                      "lovely. This old body has a lot of fight left in it. I'm borrowing it.\""),
+      ('AgathaBattle', "\"I made the fog. I made the CHANNELERS sing. I'll make you a GRAVE. A nice one. "
+                       "Near the window.\""),
+      ('AgathaDefeat', "\"Fine! FINE! There are other towns! Other dimensions!\""),
+      ('AgathaLeaves', "Something black and screaming pours out of AGATHA and through the floor.\n\n"
+                       "The whole TOWER sighs."),
+      ('AgathaThanks', "AGATHA: ...Hm. Fifty years of training GHOSTS and one finally trains me.\n\n"
+                       "Thank you, child. Now go away before I get sentimental. It's bad for my image."),
+      ('LavenderFreed', "Far below, the fog over LAVENDER TOWN starts to lift."),
+      ('AgathaFreed', "AGATHA: The town is quiet again. Quiet-quiet, not haunted-quiet.\n\n"
+                      "If you see an old woman in a dimension that isn't this one, don't tell her about the "
+                      "possession. She'd never let me hear the end of it.")])
             S.raw(f'''{P}Caretaker::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SPACETIME_LAVENDER_DONE, {P}CaretakerScared
 	goto_if_set FLAG_RECEIVED_POKEMON_TOWER_LIFE_ORB, {P}CaretakerDone
 	msgbox {S.T}CaretakerGift, MSGBOX_DEFAULT
 	giveitem ITEM_LIFE_ORB
@@ -572,9 +930,16 @@ def tower(tower_grids, lav_tower_warp):
 	msgbox {S.T}CaretakerDone, MSGBOX_DEFAULT
 	release
 	end
-''', [('CaretakerGift', "You climbed all the way up here? With the CHOIR and everything?\n\n"
-                        "I'm the caretaker. MR. FUJI left me in charge when he went to find himself. "
-                        "Twenty-five years ago.\n\nHere. Someone left this on a grave. It glows. "
+
+{P}CaretakerScared::
+	msgbox {S.T}CaretakerScared, MSGBOX_DEFAULT
+	release
+	end
+''', [('CaretakerScared', "Psst. Don't look at her. That's AGATHA. Was AGATHA.\n\nShe came up to deal "
+                          "with the ghosts and the ghosts dealt with her. Now she's the reason for the fog."),
+      ('CaretakerGift', "You climbed all the way up here? With the CHOIR and everything? And you got the thing "
+                        "out of AGATHA?\n\nI'm the caretaker. MR. FUJI left me in charge when he went to find "
+                        "himself. Twenty-five years ago.\n\nHere. Someone left this on a grave. It glows. "
                         "I think it's a LIFE ORB, or a very determined nightlight."),
       ('CaretakerDone', "Every soul up here had a trainer once.\n\nTake good care of yours. "
                         "The paperwork for ghosts is unbelievable.")])
@@ -599,6 +964,28 @@ CC_ITEMS = {
                          (32, 2, 3, 'ITEM_MAX_REVIVE', 'FLAG_ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE')],
 }
 MEWTWO = (7, 12)
+MEWTWO_LVL = 75
+GIOVANNI = (7, 14)      # S1: vlak voor Mewtwo, in de enige doorgang van het eilandje
+CC_GRUNT_MAP = {'CC_GRUNT_ARLO': 'CeruleanCave_1F', 'CC_GRUNT_VERA': 'CeruleanCave_2F',
+                'CC_GRUNT_DUNCAN': 'CeruleanCave_2F', 'CC_GRUNT_MAXINE': 'CeruleanCave_B1F'}
+CC_GRUNTS = [  # (sleutel, x, y, kijkrichting, zicht, gfx, intro, verlies, na afloop)
+    ('CC_GRUNT_ARLO', 33, 15, 'DOWN', 4, 'OBJ_EVENT_GFX_ROCKET_GRUNT_M',
+     "Halt! This cave is property of TEAM ROCKET. Well. It will be. We're filling in the forms.",
+     "The forms! You've ruined the forms!",
+     "The BOSS says there's a POKéMON down here worth more than all of Kanto. I'm just here for the dental plan."),
+    ('CC_GRUNT_VERA', 8, 6, 'LEFT', 4, 'OBJ_EVENT_GFX_ROCKET_GRUNT_F',
+     "Another tourist from the purple hole? We already have a tourist. We put him in the lake.",
+     "Okay, okay! You can stay out of the lake.",
+     "We've been searching this cave for weeks. Every tunnel looks the same. I think the cave does it on purpose."),
+    ('CC_GRUNT_DUNCAN', 6, 8, 'RIGHT', 5, 'OBJ_EVENT_GFX_ROCKET_GRUNT_M',
+     "Shh! I'm listening for MEWTWO. It's psychic, so I'm trying very hard not to think.",
+     "I thought about losing. And then I lost. It works!",
+     "The BOSS is down below. He doesn't need us. He just likes an audience."),
+    ('CC_GRUNT_MAXINE', 9, 5, 'RIGHT', 5, 'OBJ_EVENT_GFX_ROCKET_GRUNT_F',
+     "I'm TEAM ROCKET's head of research. Our research says: you shouldn't be here.",
+     "Peer review is brutal.",
+     "We cloned it once. We can't even find it twice. Science is humbling."),
+]
 
 
 def cerulean(cave_grids):
@@ -630,17 +1017,51 @@ def cerulean(cave_grids):
         bgs = []
         if name == 'CeruleanCave_1F':
             bgs.append(hidden(12, 2, 'ITEM_PP_MAX', 'FLAG_HIDDEN_ITEM_CERULEAN_CAVE_1F_PP_MAX'))
+        # S1: Team Rocket zoekt Mewtwo
+        for key, gx, gy, face, sight, gfx, intro, defeat, post in CC_GRUNTS:
+            if CC_GRUNT_MAP[key] == name:
+                objs.append(tr(gfx, gx, gy, S.trainer(key.split('_')[-1].title(), key, intro, defeat, post), face,
+                               sight))
         if name == 'CeruleanCave_B1F':
             objs.insert(0, obj('OBJ_EVENT_GFX_SPECIES(MEWTWO)', MEWTWO[0], MEWTWO[1], P + 'Mewtwo',
                                'FLAG_HIDE_METEOR_FALLS_MEWTWO', local_id='LOCALID_CERULEAN_CAVE_MEWTWO'))
-            S.raw(f'''{P}Mewtwo::
+            gio = tr('OBJ_EVENT_GFX_GIOVANNI', GIOVANNI[0], GIOVANNI[1], P + 'Giovanni', 'DOWN', 1)
+            gio['flag'] = 'TRAINER_FLAGS_START+TRAINER_CC_GIOVANNI'
+            gio['local_id'] = 'LOCALID_CERULEAN_CAVE_GIOVANNI'
+            objs.append(gio)
+            S.raw(f"""{P}Giovanni::
+	trainerbattle_single TRAINER_CC_GIOVANNI, {S.T}GiovanniIntro, {S.T}GiovanniDefeat, {P}GiovanniDefeated
+	end
+
+{P}GiovanniDefeated::
+	msgbox {S.T}GiovanniLeaves, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_CERULEAN_CAVE_GIOVANNI
+	fadescreen FADE_FROM_BLACK
+	goto {P}MewtwoHeal
+
+{P}Mewtwo::
 	lock
 	faceplayer
+	goto {P}MewtwoHeal
+
+{P}MewtwoHeal::
+	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	msgbox {S.T}Mewtwo, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	playse SE_M_PSYBEAM
+	fadescreenspeed FADE_TO_WHITE, 4
+	special HealPlayerParty
+	fadescreenspeed FADE_FROM_WHITE, 4
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox {S.T}MewtwoHealed, MSGBOX_DEFAULT
 	closemessage
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MEWTWO, 70
+	setwildbattle SPECIES_MEWTWO, {MEWTWO_LVL}
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -650,12 +1071,21 @@ def cerulean(cave_grids):
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, {P}MewtwoStays
 	removeobject LOCALID_CERULEAN_CAVE_MEWTWO
 	setflag FLAG_HIDE_METEOR_FALLS_MEWTWO
+	setflag FLAG_SPACETIME_CERULEAN_DONE
 {P}MewtwoStays::
 	release
 	end
-''', [('Mewtwo', "A voice echoes inside your head.\n\n\"So. You found the real cave. The one in Hoenn was a "
-                 "sublet.\"\n\n\"I was cloned in a lab, abandoned by my makers, and left in a cave for "
-                 "twenty-five years.\"\n\n\"You are the first visitor who didn't bring a camera crew. Let us begin.\"")])
+""", [('GiovanniIntro', "GIOVANNI: So. The child from the hole in the sky.\n\nIn this world, TEAM ROCKET "
+                        "never fell. We simply ran out of things to steal. Then the cave started whispering "
+                        "a name.\n\nMEWTWO was made by my people. I'm only collecting what's mine."),
+      ('GiovanniDefeat', "...Impressive. Annoyingly so."),
+      ('GiovanniLeaves', "GIOVANNI: Keep it, then. Every dimension has a GIOVANNI, and every GIOVANNI "
+                         "learns to lose with dignity.\n\nMost of them. I'm one of the good ones.\n\n"
+                         "TEAM ROCKET! We're leaving. Somebody fetch the van."),
+      ('Mewtwo', "A voice echoes inside your head.\n\n\"He was right about one thing. I was made. I was not "
+                 "made to be owned.\"\n\n\"You fought him for me, and your team is exhausted. I will not fight "
+                 "an exhausted opponent. Where is the honor in that? Where is the CHALLENGE?\""),
+      ('MewtwoHealed', "MEWTWO restored your POKéMON to full health!\n\n\"Now. Show me what you are worth.\"")])
         S.write()
         write_map(name, lay, objs, warps, bgs, music='MUS_RG_ROCKET_HIDEOUT', region_map_section='MAPSEC_CERULEAN_CAVE',
                   map_type='MAP_TYPE_UNDERGROUND', show_map_name=(name == 'CeruleanCave_1F'))
@@ -772,18 +1202,28 @@ def wild():
 def trainers():
     p = 'include/constants/opponents.h'
     s = open(p).read()
-    blk = '// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1168)\n'
+    blk = '// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1169, 1195-1199)\n'
+    ids = []
     for i, t in enumerate(TRAINERS):
         blk += '#define TRAINER_%-28s%d // Project Grounded: Pokemon Tower (Spacetime Cave), %s\n' % (t[0], FIRST_ID + i, t[6])
+        ids.append(FIRST_ID + i)
+    for key, n, mp, *_, why in EXTRA:
+        blk += '#define TRAINER_%-28s%d // Project Grounded: %s\n' % (key, n, why)
+        ids.append(n)
     blk += '// }'
     if '// spacetime_cave {' in s:
         i = s.index('// spacetime_cave {'); j = s.index('// }', i) + 4
         s = s[:i] + blk + s[j:]
     else:
         s = s.replace('\n#define TRAINERS_COUNT', '\n' + blk + '\n\n#define TRAINERS_COUNT', 1)
-    for n in range(FIRST_ID, FIRST_ID + len(TRAINERS)):
+    for n in ids:
         hits = re.findall(r'^#define TRAINER_\w+\s+%d\b' % n, s, re.M)
         assert len(hits) == 1, ('trainer-id dubbel', n, hits)
+        assert n < 1200
+    cnt = int(re.search(r'^#define TRAINERS_COUNT\s+(\d+)', s, re.M).group(1))
+    if max(ids) + 1 > cnt:
+        s = re.sub(r'^#define TRAINERS_COUNT\s+\d+', '#define TRAINERS_COUNT                      %d' % (max(ids) + 1),
+                   s, flags=re.M)
     open(p, 'w').write(s)
     p = 'src/data/trainers.party'
     s = open(p).read()
@@ -791,6 +1231,14 @@ def trainers():
     for key, mp, x, y, face, sight, nm, team, *_ in TRAINERS:
         hdr = ['Name: ' + nm, 'Class: Hex Maniac', 'Pic: Hex Maniac', 'Gender: Female', 'Music: Suspicious',
                'Double Battle: No', bd.AI]
+        blk += '=== TRAINER_%s ===\n%s\n\n%s\n\n' % (key, '\n'.join(hdr), '\n\n'.join(team))
+    for key, n, mp, nm, cls, pic, gender, music, ai, mug, items, team, why in EXTRA:
+        hdr = ['Name: ' + nm, 'Class: ' + cls, 'Pic: ' + pic, 'Gender: ' + gender, 'Music: ' + music]
+        if items:
+            hdr.append('Items: ' + items)
+        hdr += ['Double Battle: No', ai]
+        if mug:
+            hdr.append('Mugshot: ' + mug)
         blk += '=== TRAINER_%s ===\n%s\n\n%s\n\n' % (key, '\n'.join(hdr), '\n\n'.join(team))
     blk = blk.rstrip('\n') + '\n\n/* --- einde spacetime_cave --- */'
     s = bd.replace_block(s, '/* --- spacetime_cave', '/* --- einde spacetime_cave --- */', blk)
@@ -808,7 +1256,12 @@ def credits():
     if 'Pokémon Tower-interieur' not in s:
         anchor = '- **N** (trainerfoto en overworld)'
         s = s.replace(anchor, line + anchor, 1)
-        open(p, 'w').write(s)
+    line2 = ('- **Dode bomen in Lavender Town** (spookstad): **Ekat99**, *Haunted Woods (Normal Pallet)* uit Ekat\'s Public '
+             'Tiles (`graphics/grounded/tilesets/ekat/haunted_woods_deadtrees.png`); graven: Mt. Pyre (Emerald, Facility).\n')
+    if 'Dode bomen in Lavender Town' not in s:
+        anchor = '- **N** (trainerfoto en overworld)'
+        s = s.replace(anchor, line2 + anchor, 1)
+    open(p, 'w').write(s)
 
 
 # ====================================================================== controles
@@ -819,7 +1272,8 @@ def check():
 
     def reach_all(name, start, surf=False):
         k = ll.Kaart(name)
-        solid = {(o['x'], o['y']) for o in k.d['object_events'] if 'BREAKABLE_ROCK' not in o['graphics_id']} - {start}
+        solid = {(o['x'], o['y']) for o in k.d['object_events'] if 'BREAKABLE_ROCK' not in o['graphics_id']
+                 and 'Ghost' not in o['script'] and 'Giovanni' not in o['script']} - {start}
         seen = {start: k.elev(*start)}
         q = [start]
         while q:

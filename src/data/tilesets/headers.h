@@ -1179,3 +1179,47 @@ const struct Tileset gTileset_LavenderTown = // Project Grounded: Lavender Town 
     .metatileAttributes = gMetatileAttributes_LavenderTown,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_LavenderHauntGeneral = // Project Grounded: Lavender Town: General als spookstad
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_LavenderHauntGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_LavenderHaunt = // Project Grounded: Lavender Town als spookstad
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LavenderTown,
+    .palettes = gTilesetPalettes_LavenderHaunt,
+    .metatiles = gMetatiles_LavenderTown,
+    .metatileAttributes = gMetatileAttributes_LavenderTown,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_LavenderCalmGeneral = // Project Grounded: Lavender Town: General na de bevrijding
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_LavenderCalmGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_LavenderCalm = // Project Grounded: Lavender Town na de bevrijding
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LavenderTown,
+    .palettes = gTilesetPalettes_LavenderCalm,
+    .metatiles = gMetatiles_LavenderTown,
+    .metatileAttributes = gMetatileAttributes_LavenderTown,
+    .callback = NULL,
+};

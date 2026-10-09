@@ -500,10 +500,56 @@ def lavender_tileset():
             add(('tower', dx, dy), regrass(fp.layer_img(m, 0, True)), regrass(fp.layer_img(m, 1, False)), beh, layer)
     for i, q in enumerate(rift_quads(rift_art())):
         add(('rift', i), grass, q, EM[MB_RIFT], 1)
+    # S1 (haunted Lavender): graven (Mt. Pyre, Facility 0x324/0x325) en dode bomen (Ekat, Haunted Woods; 1x2)
+    for k, m in (('grave_orange', 0x324), ('grave_gray', 0x325)):
+        add(k, regrass(em_render('general', 'facility', m)), None, 0, 1)
+    dead = np.array(Image.open(DEADTREES).convert('RGBA')).astype(np.int32)
+    for y in range(32):
+        for x in range(32):
+            if tuple(dead[y, x, :3]) in ((56, 144, 48), (24, 160, 104)):   # lichtgroene voet weg (eigen gras eronder)
+                dead[y, x, 3] = 0
+    for t in range(2):
+        for r in range(2):
+            add(('deadtree', t, r), grass, dead[r * 16:r * 16 + 16, t * 16:t * 16 + 16], 0, 1)
     OUT = 'data/tilesets/secondary/lavender_town'
     res = emit(mts, OUT, 512, 6, 7)
     patch_attrs(OUT, attrs)
+    lavender_moods()
     return res['names']
+
+
+DEADTREES = 'graphics/grounded/tilesets/ekat/haunted_woods_deadtrees.png'   # Haunted Woods (Normal Pallet), 2 bomen
+
+
+def haunt(c):
+    """Spookstad: donker, ontkleurd violetgrijs."""
+    L = lum(c)
+    t = (L * 0.70 + 10, L * 0.62 + 6, L * 0.86 + 24)
+    return tuple(int(min(248, max(0, 0.22 * a * 0.8 + 0.78 * b))) for a, b in zip(c, t))
+
+
+def calm(c):
+    """Na de bevrijding: zachte schemer, nog wat paarsig, maar weer kleur."""
+    L = lum(c)
+    t = (L * 0.9 + 18, L * 0.82 + 8, L * 0.9 + 24)
+    return tuple(int(min(248, max(0, 0.8 * a * 0.94 + 0.2 * b))) for a, b in zip(c, t))
+
+
+LAV_MOODS = [('LavenderHauntGeneral', 'primary/lavender_haunt_general', 'primary/general', haunt),
+             ('LavenderHaunt', 'secondary/lavender_haunt', 'secondary/lavender_town', haunt),
+             ('LavenderCalmGeneral', 'primary/lavender_calm_general', 'primary/general', calm),
+             ('LavenderCalm', 'secondary/lavender_calm', 'secondary/lavender_town', calm)]
+
+
+def lavender_moods():
+    """Alleen paletten (tiles/metatiles gedeeld met General resp. lavender_town; BASE voor de renders)."""
+    for sym, d, base, tf in LAV_MOODS:
+        D = 'data/tilesets/' + d
+        os.makedirs(D + '/palettes', exist_ok=True)
+        open(D + '/BASE', 'w').write(os.path.basename(base) + '\n')
+        for i in range(16):
+            cols = jasc('data/tilesets/%s/palettes/%02d.pal' % (base, i))
+            write_pal(D + '/palettes/%02d.pal' % i, [cols[0]] + [tf(c) for c in cols[1:]])
 
 
 # ====================================================================== 4. Spacetime Cave (Cave-kopie + scheuren)
@@ -595,6 +641,11 @@ TILESETS = [  # (symbool, map, secondary?, tiles-symbool (None = eigen), callbac
     ('PokemonTower', 'secondary/pokemon_tower', True, None, 'NULL', 'Pokemon Tower (FRLG + Ekat Revamp)'),
     ('CeruleanCave', 'secondary/cerulean_cave', True, None, 'NULL', 'Cerulean Cave (FRLG + Emerald Cave)'),
     ('LavenderTown', 'secondary/lavender_town', True, None, 'NULL', 'Lavender Town (Emerald-huizen, FRLG-toren)'),
+    # S1: Lavender met een eigen sfeer (alleen paletten): spookstad en, na de bevrijding, een zachte schemer
+    ('LavenderHauntGeneral', 'primary/lavender_haunt_general', False, 'General', 'InitTilesetAnim_General', 'Lavender Town: General als spookstad'),
+    ('LavenderHaunt', 'secondary/lavender_haunt', True, 'LavenderTown', 'NULL', 'Lavender Town als spookstad'),
+    ('LavenderCalmGeneral', 'primary/lavender_calm_general', False, 'General', 'InitTilesetAnim_General', 'Lavender Town: General na de bevrijding'),
+    ('LavenderCalm', 'secondary/lavender_calm', True, 'LavenderTown', 'NULL', 'Lavender Town na de bevrijding'),
 ]
 
 
@@ -610,8 +661,8 @@ def register():
         if 'gTilesetPalettes_%s[]' % sym not in gh:
             gh += ('\n// Project Grounded: %s (paletten)\nconst u16 gTilesetPalettes_%s[][16] =\n{\n' % (why, sym)
                    + ''.join('    INCBIN_U16("%s/palettes/%02d.gbapal"),\n' % (D, i) for i in range(16)) + '};\n')
-        msym = 'General' if not sec else sym
-        if sec and 'gMetatiles_%s[]' % sym not in mh:
+        msym = 'General' if not sec else (tiles_sym or sym)     # een secondary met tiles_sym deelt ook de metatiles
+        if sec and tiles_sym is None and 'gMetatiles_%s[]' % sym not in mh:
             mh += ('\nconst u16 gMetatiles_%s[] = INCBIN_U16("%s/metatiles.bin"); // Project Grounded: %s\n'
                    'const u16 gMetatileAttributes_%s[] = INCBIN_U16("%s/metatile_attributes.bin");\n' % (sym, D, why, sym, D))
         if 'gTileset_%s =' % sym not in hh:

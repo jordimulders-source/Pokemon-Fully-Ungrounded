@@ -2318,3 +2318,87 @@ const u16 gTilesetPalettes_LavenderTown[][16] =
     INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/15.gbapal"),
 };
+
+// Project Grounded: Lavender Town: General als spookstad (paletten)
+const u16 gTilesetPalettes_LavenderHauntGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_haunt_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Lavender Town als spookstad (paletten)
+const u16 gTilesetPalettes_LavenderHaunt[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_haunt/palettes/15.gbapal"),
+};
+
+// Project Grounded: Lavender Town: General na de bevrijding (paletten)
+const u16 gTilesetPalettes_LavenderCalmGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/lavender_calm_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Lavender Town na de bevrijding (paletten)
+const u16 gTilesetPalettes_LavenderCalm[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_calm/palettes/15.gbapal"),
+};

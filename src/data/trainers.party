@@ -40217,6 +40217,14 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Dazzling Gleam
 - Nasty Plot
 
+Umbreon
+Level: 65
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Foul Play
+- Moonlight
+- Toxic
+- Wish
+
 Hypno
 Level: 65
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
@@ -40224,14 +40232,6 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Hypnosis
 - Dream Eater
 - Focus Blast
-
-Drifblim
-Level: 65
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Shadow Ball
-- Air Slash
-- Thunderbolt
-- Will-O-Wisp
 
 === TRAINER_TOWER_PATRICIA ===
 Name: PATRICIA
@@ -40250,13 +40250,13 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Knock Off
 - Shadow Sneak
 
-Golurk
+Absol
 Level: 65
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Earthquake
-- Shadow Punch
-- Ice Punch
-- Dynamic Punch
+- Night Slash
+- Psycho Cut
+- Sucker Punch
+- Swords Dance
 
 Xatu
 Level: 65
@@ -40291,13 +40291,13 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Reflect
 - Light Screen
 
-Lampent
+Mandibuzz
 Level: 65
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Shadow Ball
-- Flamethrower
-- Energy Ball
-- Will-O-Wisp
+- Foul Play
+- Roost
+- Brave Bird
+- Toxic
 
 === TRAINER_TOWER_HOPE ===
 Name: HOPE
@@ -40324,13 +40324,13 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Will-O-Wisp
 - Recover
 
-Exeggutor
+Sigilyph
 Level: 66
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Psychic
-- Giga Drain
-- Sleep Powder
-- Leaf Storm
+- Air Slash
+- Cosmic Power
+- Roost
 
 === TRAINER_TOWER_LAUREL ===
 Name: LAUREL
@@ -40349,13 +40349,13 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Trick Room
 - Nasty Plot
 
-Slowking
+Malamar
 Level: 66
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Psychic
-- Scald
-- Slack Off
-- Ice Beam
+- Psycho Cut
+- Knock Off
+- Superpower
+- Topsy-Turvy
 
 Froslass
 Level: 66
@@ -40390,6 +40390,14 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Trick Room
 - Stealth Rock
 
+Honchkrow
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Night Slash
+- Brave Bird
+- Sucker Punch
+- Heat Wave
+
 Houndstone
 Level: 67
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
@@ -40415,14 +40423,6 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Will-O-Wisp
 - Leech Seed
 
-Palossand
-Level: 66
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Shadow Ball
-- Earth Power
-- Shore Up
-- Giga Drain
-
 Musharna
 Level: 66
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
@@ -40430,6 +40430,14 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Moonblast
 - Yawn
 - Calm Mind
+
+Grimmsnarl
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Spirit Break
+- Darkest Lariat
+- Thunder Wave
+- Bulk Up
 
 === TRAINER_TOWER_RUTH ===
 Name: RUTH
@@ -40456,13 +40464,21 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Shadow Claw
 - Earthquake
 
-Gardevoir
+Beheeyem
 Level: 68
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Psychic
-- Moonblast
-- Calm Mind
-- Mystical Fire
+- Shadow Ball
+- Thunderbolt
+- Trick Room
+
+Zoroark-Hisui
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Hyper Voice
+- Nasty Plot
+- Flamethrower
 
 === TRAINER_TOWER_TAMMY ===
 Name: TAMMY
@@ -40545,6 +40561,271 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Flare Blitz
 - Bonemerang
 - Will-O-Wisp
+
+=== TRAINER_TOWER_AGATHA ===
+Name: AGATHA
+Class: Elite Four
+Pic: Agatha
+Gender: Female
+Music: Suspicious
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Crobat
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Cross Poison
+- Brave Bird
+- U-turn
+- Roost
+
+Arbok
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gunk Shot
+- Sucker Punch
+- Glare
+- Earthquake
+
+Annihilape
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Ice Punch
+
+Typhlosion-Hisui
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Infernal Parade
+- Eruption
+- Focus Blast
+- Will-O-Wisp
+
+Dragapult
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Darts
+- Phantom Force
+- U-turn
+- Will-O-Wisp
+
+Gengar @ Life Orb
+Level: 71
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Sludge Wave
+- Focus Blast
+- Nasty Plot
+
+=== TRAINER_CC_GRUNT_ARLO ===
+Name: ARLO
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Crobat
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Cross Poison
+- Air Slash
+- U-turn
+- Taunt
+
+Weezing-Galar
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Strange Steam
+- Sludge Bomb
+- Will-O-Wisp
+- Defog
+
+Houndoom
+Level: 66
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dark Pulse
+- Flamethrower
+- Sludge Bomb
+- Nasty Plot
+
+=== TRAINER_CC_GRUNT_VERA ===
+Name: VERA
+Class: Team Rocket
+Pic: Rocket Grunt F
+Gender: Female
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Arbok
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gunk Shot
+- Crunch
+- Coil
+- Earthquake
+
+Persian-Alola
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Foul Play
+- Power Gem
+- Nasty Plot
+- Dark Pulse
+
+Toxicroak
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Poison Jab
+- Drain Punch
+- Sucker Punch
+- Swords Dance
+
+Skuntank
+Level: 67
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Crunch
+- Poison Jab
+- Fire Blast
+- Sucker Punch
+
+=== TRAINER_CC_GRUNT_DUNCAN ===
+Name: DUNCAN
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Scizor
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Bullet Punch
+- X-Scissor
+- Knock Off
+- Swords Dance
+
+Magnezone
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
+
+Drapion
+Level: 68
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Knock Off
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+=== TRAINER_CC_GRUNT_MAXINE ===
+Name: MAXINE
+Class: Team Rocket
+Pic: Rocket Grunt F
+Gender: Female
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Porygon-Z
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Tri Attack
+- Thunderbolt
+- Ice Beam
+- Nasty Plot
+
+Muk
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Gunk Shot
+- Knock Off
+- Drain Punch
+- Curse
+
+Electivire
+Level: 69
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+Kingambit
+Level: 70
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_CC_GIOVANNI ===
+Name: GIOVANNI
+Class: Boss
+Pic: Giovanni
+Gender: Male
+Music: Rocket
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Purple
+
+Honchkrow
+Level: 73
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Night Slash
+- Brave Bird
+- Sucker Punch
+- Superpower
+
+Dugtrio
+Level: 73
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earthquake
+- Stone Edge
+- Sucker Punch
+- Swords Dance
+
+Kangaskhan
+Level: 73
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Fake Out
+- Double-Edge
+- Sucker Punch
+- Earthquake
+
+Nidoqueen
+Level: 74
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Flamethrower
+
+Rhyperior @ Weakness Policy
+Level: 74
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Rock Wrecker
+- High Horsepower
+- Megahorn
+- Rock Polish
+
+Nidoking @ Life Orb
+Level: 75
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Thunderbolt
 
 /* --- einde spacetime_cave --- */
 

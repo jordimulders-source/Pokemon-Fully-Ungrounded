@@ -5487,8 +5487,8 @@
       "name": "LavenderTown_Layout",
       "width": 24,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_LavenderTown",
+      "primary_tileset": "gTileset_LavenderHauntGeneral",
+      "secondary_tileset": "gTileset_LavenderHaunt",
       "border_filepath": "data/layouts/LavenderTown/border.bin",
       "blockdata_filepath": "data/layouts/LavenderTown/map.bin"
     },
@@ -5581,6 +5581,16 @@
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/CeruleanCave_B1F/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAVENDER_TOWN_CALM",
+      "name": "LavenderTown_Calm_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_LavenderCalmGeneral",
+      "secondary_tileset": "gTileset_LavenderCalm",
+      "border_filepath": "data/layouts/LavenderTown_Calm/border.bin",
+      "blockdata_filepath": "data/layouts/LavenderTown_Calm/map.bin"
     }
   ]
 }

@@ -3,39 +3,10 @@
 @ Placeholderteksten; Jordi herschrijft ze via de Dialoogstudio.
 
 MangroveMire_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, MangroveMire_OnTransition
 	.byte 0
 
-@ Project Grounded: Virizion (swords_keldeo.py) staat pas na de Hall of Fame op de open plek aan het oostelijke
-@ zijpad (49,14); weg na vangen/verslaan.
-MangroveMire_OnTransition:
-	call_if_unset FLAG_SYS_GAME_CLEAR, SwordsOfJustice_EventScript_HideSword
-	call_if_set FLAG_DEFEATED_VIRIZION, SwordsOfJustice_EventScript_HideSword
-	end
-
-MangroveMire_EventScript_Virizion::
-	lock
-	msgbox MangroveMire_Text_Virizion, MSGBOX_DEFAULT
-	closemessage
-	playmoncry SPECIES_VIRIZION, CRY_MODE_ENCOUNTER
-	waitmoncry
-	setwildbattle SPECIES_VIRIZION, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SwordsOfJustice_EventScript_SwordStays
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SwordsOfJustice_EventScript_SwordStays
-	removeobject LOCALID_MANGROVE_MIRE_VIRIZION
-	setflag FLAG_DEFEATED_VIRIZION
-	goto SwordsOfJustice_EventScript_AfterSword
-	end
-
-MangroveMire_EventScript_CutTree::
-	msgbox MangroveMire_Text_CutTree, MSGBOX_SIGN
-	end
-
+@ Project Grounded: Virizion staat sinds v0.9.184 in MangroveMire_VirizionGlade (swords_glade.py), achter de groene
+@ tunnel aan het einde van het oostelijke zijpad; de teksten blijven hier (Dialoogstudio-labels).
 MangroveMire_Text_Virizion:
 	.string "A slender green deer stands where\n"
 	.string "the path gives up.\p"

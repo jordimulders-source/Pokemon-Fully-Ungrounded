@@ -499,6 +499,26 @@ const u16 gTilesetAnims_Unused1_Frame1[] = INCBIN_U16("data/tilesets/secondary/u
 const u16 gTilesetAnims_Unused1_Frame2[] = INCBIN_U16("data/tilesets/secondary/unused_1/2.4bpp");
 const u16 gTilesetAnims_Unused1_Frame3[] = INCBIN_U16("data/tilesets/secondary/unused_1/3.4bpp");
 
+// Project Grounded: draaikolken van het Keldeo-eiland (tools/grounded/maptools/swords_isle.py)
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame0[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/0.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame1[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/1.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame2[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/2.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame3[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/3.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame4[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/4.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame5[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/5.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame6[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/6.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame7[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/7.4bpp");
+const u16 *const gTilesetAnims_UnchartedIsle_Whirlpool[] = {
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame0,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame1,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame2,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame3,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame4,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame5,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame6,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame7,
+};
+
 const u16 *const gTilesetAnims_Sootopolis_StormyWater[] = {
     gTilesetAnims_Sootopolis_StormyWater_Frame0,
     gTilesetAnims_Sootopolis_StormyWater_Frame1,
@@ -1185,4 +1205,24 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
         if (!--sSecondaryTilesetAnimCounterMax)
             sSecondaryTilesetAnimCallback = NULL;
     }
+}
+
+// Project Grounded: draaikolken van het Keldeo-eiland; tiles 16-31 van de secondary, elke 8 frames een stap
+static void QueueAnimTiles_UnchartedIsle_Whirlpool(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_UnchartedIsle_Whirlpool);
+    AppendTilesetAnimToBuffer(gTilesetAnims_UnchartedIsle_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 16 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_UnchartedIsle(u16 timer)
+{
+    if (timer % 8 == 0)
+        QueueAnimTiles_UnchartedIsle_Whirlpool(timer / 8);
+}
+
+void InitTilesetAnim_UnchartedIsle(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UnchartedIsle;
 }

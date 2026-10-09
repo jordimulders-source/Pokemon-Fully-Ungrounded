@@ -5,8 +5,9 @@ Zonder quest, zoals in Gen 5; alles post-game (FLAG_SYS_GAME_CLEAR), lv 70.
                              met een Rock Smash-rots OP de opening (vaste flag). Layout SWORD_CHAMBER = kopie van
                              Stevens kamer (15x14), gedeeld met de Victory Road-kamer; steen met zwaardkerf (10,8).
   VictoryRoad_SwordChamber   Terrakion. Zelfde opening in Victory Road B2F (8,23), gang linksonder bij de ladder.
-  Mangrove Mire              Virizion in de doodlopende open plek aan het einde van het oostelijke zijpad (49,14);
-                             een boomstam met een zwaardsnede (50,13). Geen eigen kaart: de plek is al verborgen.
+  MangroveMire_VirizionGlade Virizion. Groene tunnel (wortelboog) in de boomrand aan het einde van het oostelijke
+                             zijpad van Mangrove Mire (49-50,13); open plek met een mangrove met zwaardsnede
+                             (swords_glade.py).
   UnchartedIsle (MAPSEC "???") Keldeo. Na de drie zwaarden belt Mr. Briney (PokeNav); praat met hem (huis Route 104,
                              Dewford of Route 109), fade, en je staat op een pas ontstane zandbank binnen een ring van
                              draaikolken (General-tiles: ondiepte-autotile zoals Whirl Island). Briney brengt je terug.
@@ -116,24 +117,11 @@ def opening(mapname, x, y, dest, rockflag, start):
 
 
 # ====================================================================== Mangrove Mire
-VIRIZION = (49, 14)
-CUT_TREE = (50, 13)
-
-
+# Virizion staat sinds v0.9.184 in een eigen open plek achter een groene tunnel aan het einde van het oostelijke
+# zijpad (49-50,13): zie swords_glade.py.
 def mire():
-    def fn(m):
-        m['object_events'] = [o for o in m['object_events'] if o.get('local_id') != 'LOCALID_MANGROVE_MIRE_VIRIZION']
-        m['object_events'].append(oq.obj('OBJ_EVENT_GFX_SPECIES(VIRIZION)', VIRIZION[0], VIRIZION[1],
-                                         'MangroveMire_EventScript_Virizion', 'FLAG_TEMP_1', 'LOCALID_MANGROVE_MIRE_VIRIZION',
-                                         move='MOVEMENT_TYPE_FACE_DOWN'))
-        m['bg_events'] = [b for b in m['bg_events'] if b.get('script') != 'MangroveMire_EventScript_CutTree']
-        m['bg_events'].append({'type': 'sign', 'x': CUT_TREE[0], 'y': CUT_TREE[1], 'elevation': 0,
-                               'player_facing_dir': 'BG_EVENT_PLAYER_FACING_NORTH', 'script': 'MangroveMire_EventScript_CutTree'})
-    oq.edit_map('MangroveMire', fn)
-    g = oq.read_layout('data/layouts/MangroveMire/map.bin', 56, 44)
-    r = oq.reach(g, [(54, 29)])
-    assert (VIRIZION[0], VIRIZION[1] + 1) in r and (CUT_TREE[0], CUT_TREE[1] + 1) in r, 'Virizion-plek onbereikbaar'
-    assert g[CUT_TREE[1]][CUT_TREE[0]] & SOLID
+    import swords_glade
+    swords_glade.main()
 
 
 # ====================================================================== UnchartedIsle (Keldeo)
@@ -145,78 +133,9 @@ BOAT = (14, 16)
 
 
 def isle():
+    import swords_isle
     W, H = IW, IH
-    M = [[0x170] * W for _ in range(H)]
-    # zandbank: ondiepte (V) met een zandplaat (S) erin, beide op een hoekpuntenraster (ellips + wat ruis)
-    def blob(rx, ry, noise, inside=None):
-        G = [[0] * (W + 1) for _ in range(H + 1)]
-        for y in range(1, H):
-            for x in range(1, W):
-                d = ((x - 14.0) / rx) ** 2 + ((y - 10.5) / ry) ** 2
-                if d < 1.0 + rng.uniform(-noise, noise) and (inside is None or all(
-                        inside[y + b][x + a] for a in (-1, 0, 1) for b in (-1, 0, 1))):
-                    G[y][x] = 1
-        changed = True
-        while changed:
-            changed = False
-            for y in range(1, H):              # losse uitsteeksels weg
-                for x in range(1, W):
-                    if G[y][x] and G[y - 1][x] + G[y + 1][x] + G[y][x - 1] + G[y][x + 1] < 2:
-                        G[y][x] = 0; changed = True
-            for y in range(H):                 # geen diagonale paren
-                for x in range(W):
-                    q = (G[y][x], G[y][x + 1], G[y + 1][x], G[y + 1][x + 1])
-                    if q in ((1, 0, 0, 1), (0, 1, 1, 0)):
-                        if inside is None:
-                            G[y][x] = G[y][x + 1] = G[y + 1][x] = G[y + 1][x + 1] = 1
-                        else:
-                            G[y][x] = G[y][x + 1] = G[y + 1][x] = G[y + 1][x + 1] = 0
-                        changed = True
-        return G
-    V = blob(8.4, 5.6, 0.08)
-    S = blob(5.6, 3.4, 0.08, inside=V)
-    for y in range(H):
-        for x in range(W):
-            q = (V[y][x], V[y][x + 1], V[y + 1][x], V[y + 1][x + 1])
-            M[y][x] = stl.SHOAL_MS[q]
-            s4 = (S[y][x], S[y][x + 1], S[y + 1][x], S[y + 1][x + 1])
-            if any(s4):
-                assert q == (1, 1, 1, 1), ('zand tegen de rand', x, y)
-                M[y][x] = SAND_MS[s4]
-    shoal = {(x, y) for y in range(H) for x in range(W) if M[y][x] != 0x170}
-
-    def free2(x, y, gap=1):
-        for yy in range(y - gap, y + 2 + gap):
-            for xx in range(x - gap, x + 2 + gap):
-                if not (0 <= xx < W and 0 <= yy < H) or (xx, yy) in shoal:
-                    return False
-        return True
-
-    def stamp(x, y, piece):
-        for i, mt in enumerate(piece):
-            M[y + i // 2][x + i % 2] = mt | SOLID
-
-    keep = {(BOAT[0] + dx, BOAT[1] + dy) for dx in (-1, 0, 1, 2) for dy in (-1, 0, 1, 2)}
-    for y in range(0, H, 2):
-        for x in range(0, W, 2):
-            if x in (0, W - 2) or y in (0, H - 2):
-                stamp(x, y, stl.ROCK if rng.random() < 0.15 else stl.WHIRL)
-    for y in range(2, H - 2, 2):
-        for x in range(2, W - 2, 2):
-            if (x in (2, W - 4) or y in (2, H - 4)) and rng.random() < 0.5 and free2(x, y, 0) \
-                    and not any((x + a, y + b) in keep for a in (0, 1) for b in (0, 1)):
-                stamp(x, y, stl.ROCK if rng.random() < 0.3 else stl.WHIRL)
-    placed, tries = 0, 0
-    while placed < 3 and tries < 400:
-        tries += 1
-        x, y = rng.randrange(4, W - 6, 2), rng.randrange(4, H - 6, 2)
-        if free2(x, y) and not any((x + a, y + b) in keep for a in range(-1, 3) for b in range(-1, 3)):
-            stamp(x, y, stl.WHIRL if placed != 1 else stl.ROCK); placed += 1
-    # hoogtes: open water 1, ondiepte en zand 3 (zoals shipwreck_shoals)
-    for y in range(H):
-        for x in range(W):
-            if not M[y][x] & SOLID:
-                M[y][x] |= (1 << 12) if beh(M[y][x]) == 0x15 else (3 << 12)
+    ts, frames, M, whirl, beh, stats = swords_isle.build(W, H, KELDEO, ARRIVE, BRINEY, BOAT, rng)
     # controles: Keldeo op het zand, aankomst/Briney op de bank, boot op open water, alles te voet verbonden
     mt = lambda p: M[p[1]][p[0]] & 0x3ff
     if os.environ.get('ISLE_DEBUG'):
@@ -232,8 +151,11 @@ def isle():
     r = oq.reach(M, [ARRIVE], blocked=sea | {KELDEO, BRINEY})
     assert (KELDEO[0], KELDEO[1] + 1) in r and (BRINEY[0] - 1, BRINEY[1]) in r
     assert len(r) == len(foot) - 2, 'losse stukjes zandbank'
-    stl.save(M, 'UnchartedIsle', stl.WHIRL)
-    oq.register_layout('UnchartedIsle', 'UNCHARTED_ISLE', W, H, 'gTileset_Mossdeep')
+    used, nmt = ts.save(frames)
+    swords_isle.register()
+    print('eiland:', stats, '| %d tiles, %d metatiles' % (used, nmt))
+    stl.save(M, 'UnchartedIsle', [m | SOLID for m in whirl])
+    oq.register_layout('UnchartedIsle', 'UNCHARTED_ISLE', W, H, 'gTileset_UnchartedIsle')
     objs = [
         oq.obj('OBJ_EVENT_GFX_SPECIES(KELDEO)', KELDEO[0], KELDEO[1], 'UnchartedIsle_EventScript_Keldeo',
                'FLAG_DEFEATED_KELDEO', 'LOCALID_UNCHARTED_ISLE_KELDEO', elev=3),

@@ -1454,6 +1454,10 @@
     {
       "id": "MAPSEC_BALLONLEA",
       "name": "BALLONLEA"
+    },
+    {
+      "id": "MAPSEC_AREA_ZERO",
+      "name": "AREA ZERO"
     }
   ]
 }

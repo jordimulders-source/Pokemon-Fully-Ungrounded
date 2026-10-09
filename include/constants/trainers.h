@@ -190,7 +190,9 @@
 #define TRAINER_PIC_ROCKET_GRUNT_M        172 // Project Grounded: Rocket-sidequest (FRLG)
 #define TRAINER_PIC_ROCKET_GRUNT_F        173 // Project Grounded: Rocket-sidequest (FRLG)
 #define TRAINER_PIC_PETREL                174 // Project Grounded: Rocket-sidequest (HG/SS-sheet van Dann-The-Yoshi)
-#define TRAINER_PIC_COUNT                 175
+#define TRAINER_PIC_ZERO_SECURITY         175 // Project Grounded: Area Zero, beveiligingsdrone (area_zero_tiles.py)
+#define TRAINER_PIC_ZERO_ALARM            176 // Project Grounded: Area Zero, alarmdrone
+#define TRAINER_PIC_COUNT                 177
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -455,6 +457,7 @@ enum TrainerClassID
     TRAINER_CLASS_NEO_PLASMA, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     TRAINER_CLASS_TEAM_ROCKET, // Project Grounded: Rocket-sidequest (grunts)
     TRAINER_CLASS_ROCKET_EXEC, // Project Grounded: Rocket-sidequest (Petrel)
+    TRAINER_CLASS_ZERO_LAB, // Project Grounded: Area Zero (beveiligings- en alarmsysteem)
     TRAINER_CLASS_COUNT,
 };
 

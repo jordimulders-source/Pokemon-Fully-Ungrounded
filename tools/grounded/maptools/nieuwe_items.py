@@ -48,8 +48,22 @@ ITEMS = [
     (874, 'IlexForest', 'ITEM_LOVE_BALL', 3, False, 'Ilex Forest: Love Balls'),
     (875, 'IlexForest', 'ITEM_DESTINY_KNOT', 1, False, 'Ilex Forest: Destiny Knot'),
     (876, 'IlexForest', 'ITEM_ROSE_INCENSE', 1, True, 'Ilex Forest: verborgen Rose Incense'),
+    # Area Zero (area_zero.py; flags uit het eigen blok FLAG_GROUNDED 920-999)
+    (950, 'AreaZero_Rim', 'ITEM_QUICK_BALL', 5, False, 'Area Zero, kraterwand: Quick Balls'),
+    (951, 'AreaZero_Rim', 'ITEM_MUSCLE_BAND', 1, False, 'Area Zero, kraterwand: Muscle Band'),
+    (952, 'AreaZero_Depths', 'ITEM_ADRENALINE_ORB', 1, False, 'Area Zero, diepte: Adrenaline Orb'),
+    (953, 'AreaZero_Depths', 'ITEM_SHED_SHELL', 1, True, 'Area Zero, diepte: verborgen Shed Shell'),
+    (954, 'AreaZero_Crystal', 'ITEM_BEAST_BALL', 3, False, 'Area Zero, kristalgrot: Beast Balls'),
+    (955, 'AreaZero_Crystal', 'ITEM_RING_TARGET', 1, True, 'Area Zero, kristalgrot: verborgen Ring Target'),
+    (956, 'AreaZero_Future', 'ITEM_BOOSTER_ENERGY', 2, False, 'Area Zero, toekomst: Booster Energy'),
+    (957, 'AreaZero_Future', 'ITEM_METAL_ALLOY', 1, False, 'Area Zero, toekomst: Metal Alloy (Duraludon -> Archaludon)'),
+    (958, 'AreaZero_Future', 'ITEM_AIR_BALLOON', 1, True, 'Area Zero, toekomst: verborgen Air Balloon'),
+    (959, 'AreaZero_Past', 'ITEM_POWER_HERB', 1, False, 'Area Zero, verleden: Power Herb'),
+    (960, 'AreaZero_Past', 'ITEM_GRIP_CLAW', 1, False, 'Area Zero, verleden: Grip Claw'),
+    (961, 'AreaZero_Past', 'ITEM_STICKY_BARB', 1, True, 'Area Zero, verleden: verborgen Sticky Barb'),
 ]
 FIRST, LAST = 840, 879
+EXTRA_RANGES = [(920, 999)]          # Area Zero gebruikt flags uit zijn eigen blok
 
 
 def flag_name(n, mp, it, hid):
@@ -65,7 +79,8 @@ def items(mp):
 
 def flags():
     assert len({it for _, _, it, *_ in ITEMS}) == len(ITEMS), 'item dubbel'
-    assert len({n for n, *_ in ITEMS}) == len(ITEMS) and all(FIRST <= n <= LAST for n, *_ in ITEMS)
+    assert len({n for n, *_ in ITEMS}) == len(ITEMS) and all(
+        FIRST <= n <= LAST or any(a <= n <= b for a, b in EXTRA_RANGES) for n, *_ in ITEMS)
     assert not any(it.startswith(('ITEM_TM', 'ITEM_HM')) for _, _, it, *_ in ITEMS)
     p = os.path.join(REPO, 'include/constants/flags.h')
     s = open(p).read()

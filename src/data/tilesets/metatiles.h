@@ -282,3 +282,7 @@ const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/second
 // Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
 const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
 const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gMetatiles_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatiles.bin");
+const u16 gMetatileAttributes_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatile_attributes.bin");

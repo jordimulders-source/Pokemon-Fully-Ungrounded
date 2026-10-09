@@ -16,7 +16,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 **Feedback Jordi 9 okt (volgende agents):**
 **Feedback Jordi 9 okt (in uitvoering):**
-- **Levelcurve** (agent bezig; Jordi akkoord met inhaal-EXP + trainer-EXP 50%; post-game Dave, SickBlik en later Mitch op lv 100): E4 rond lv 80, Steven's ace lv 84, superbosses richting lv 100; trainer-EXP zo dat het hoofdpad comfortabel haalbaar is zonder grinden; completionists met een rotatie van ±10–12 Pokémon komen ook rond de doelen uit (variatie in teams aanmoedigen, Jordi speelt zelf met meerdere parties); gehoorzaamheid blijft (vanglevel).
+- ~~Levelcurve~~ (v0.9.192). **Open voor Jordi:** evolutie-advies in `LEVELCURVE.md` (Hydreigon 53→64, Dragapult 50→60, Volcarona 40→59, Mienshao, Mandibuzz, Klinklang, Vanilluxe terug naar ±officieel?) en ±650 wilde slots ver boven hun evolutielevel (laat in de game evoluties zetten?). Dave/SickBlik/Mitch hebben nog geen post-game-gevecht (komt dat er, dan lv 100).
 
 ## 2. Daarna (uitbreidingen, in deze volgorde)
 3. **Spacetime Cave bij Mossdeep** — verhaallijn in `SPACETIME_PLAN.md` (Jordi 9 okt). Locaties:

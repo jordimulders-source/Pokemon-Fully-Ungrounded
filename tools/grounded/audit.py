@@ -687,6 +687,174 @@ SKIP_TEXT = re.compile(r'TrickHouse|BattleFrontier|BattleTent|match_call|braille
                        r'TrainerHill|mauville_man|pokemon_news|apprentice|questionnaire|union_room|cable_club')
 
 
+UNLOCKING_MSGBOX = ('MSGBOX_NPC', 'MSGBOX_SIGN', 'MSGBOX_AUTOCLOSE')
+
+
+def _label_order():
+    """bestand -> lijst van (regelindex, label) om door te vallen naar het volgende label."""
+    out = collections.defaultdict(list)
+    for lb, (f, i) in LABELS.items():
+        out[f].append((i, lb))
+    for f in out:
+        out[f].sort()
+    return out
+
+
+_ORDER = None
+
+
+def next_label(lb):
+    global _ORDER
+    if _ORDER is None:
+        _ORDER = _label_order()
+    f, i = LABELS[lb]
+    lst = _ORDER[f]
+    for j, (k, l2) in enumerate(lst):
+        if l2 == lb:
+            return lst[j + 1][1] if j + 1 < len(lst) else None
+    return None
+
+
+def lock_paths(start, limit=4000):
+    """Loop alle paden van een script af; geeft de labels terug waar het script eindigt terwijl de speler
+    nog vastzit (lock/lockall zonder release)."""
+    bad = set()
+    seen = set()
+    stack = [(start, 0, False, ())]
+    steps = 0
+    while stack and steps < limit:
+        lb, idx, locked, calls = stack.pop()
+        if (lb, idx, locked, calls) in seen or lb not in LABELS:
+            continue
+        seen.add((lb, idx, locked, calls))
+        steps += 1
+        lines = body(lb)
+        j = idx
+        done = False
+        prev = None
+        while j < len(lines):
+            c, args = cmd_args(lines[j])
+            j += 1
+            if c:
+                prev, cur = (lines[j - 2] if j >= 2 else ''), c
+            if not c or c.startswith('.'):
+                if c in ('.byte', '.2byte', '.4byte', '.string'):
+                    done = True   # data, geen script
+                    break
+                continue
+            if c in ('lock', 'lockall'):
+                locked = True
+            elif c in ('release', 'releaseall') or c.startswith('warp') or (c == 'special' and args and 'Warp' in args[0]) or c.startswith('trainerbattle') \
+                    or (c == 'msgbox' and len(args) > 1 and args[1] in UNLOCKING_MSGBOX):
+                locked = False
+                if c.startswith('trainerbattle') and len(args) >= 4 and args[-1] in LABELS:
+                    stack.append((args[-1], 0, False, calls))
+                if c.startswith('warp'):
+                    done = True
+                    break
+            elif c == 'goto' and args:
+                stack.append((args[0], 0, locked, calls))
+                done = True
+                break
+            elif (c.startswith('goto_if') or c == 'case') and args and args[-1] in LABELS:
+                stack.append((args[-1], 0, locked, calls))
+            elif (c == 'call' or c.startswith('call_if')) and args and args[-1] in LABELS and len(calls) < 6:
+                # subroutine: eerst erin, daarna verder na de call (de lock-status na de call nemen we
+                # ruim: beide mogelijkheden)
+                stack.append((args[-1], 0, locked, calls + ((lb, j),)))
+                if c != 'call':
+                    continue
+                done = True
+                break
+            elif c == 'return':
+                if calls:
+                    rlb, rj = calls[-1]
+                    stack.append((rlb, rj, locked, calls[:-1]))
+                elif locked:
+                    bad.add(lb)
+                done = True
+                break
+            elif c in ('end', 'releaseall_end', 'goto_if_unset_end'):
+                # 'end' direct na een rij goto_if/case is meestal onbereikbaar (JA/NEE, switch)
+                pc = cmd_args(prev or '')[0] or ''
+                if locked and not (pc.startswith('goto_if') or pc == 'case'):
+                    bad.add(lb)
+                done = True
+                break
+        if not done:
+            nl = next_label(lb)
+            if nl:
+                stack.append((nl, 0, locked, calls))
+    return bad
+
+
+def check_softlocks():
+    seen = set()
+    n_checked = 0
+    for n, d in sorted(MAPS.items()):
+        for kind in ('object_events', 'bg_events', 'coord_events'):
+            for e in d.get(kind) or []:
+                s = e.get('script')
+                if not s or s in seen or s not in LABELS:
+                    continue
+                seen.add(s)
+                n_checked += 1
+                bad = lock_paths(s)
+                for b in sorted(bad):
+                    van = label_vanilla(s) and label_vanilla(b)
+                    add('scripts', 'VANILLA' if van else 'MELD', 'lock:%s:%s' % (s, b),
+                        '%s: script %s kan eindigen in %s terwijl de speler nog vastzit (lock zonder release op dat pad)' % (n, s, b))
+    stats['scripts']['lock-paden'] = n_checked
+
+
+OBJ_CMDS = ('applymovement', 'waitmovement', 'removeobject', 'addobject', 'showobjectat', 'hideobjectat', 'setobjectxy',
+            'setobjectxyperm', 'turnobject', 'setobjectmovementtype', 'copyobjectxytoperm', 'faceplayer_obj')
+
+
+def check_localids():
+    glob_ids = set(re.findall(r'#define\s+(LOCALID_\w+)', read('include/constants/event_objects.h')))
+    for f in glob.glob('include/constants/*.h'):
+        if 'map_event_ids' not in f:
+            glob_ids |= set(re.findall(r'#define\s+(LOCALID_\w+)', read(f)))
+    owner = collections.defaultdict(set)
+    for n, d in MAPS.items():
+        for o in d.get('object_events') or []:
+            if o.get('local_id'):
+                owner[o['local_id']].add(n)
+    for n, d in sorted(MAPS.items()):
+        p = 'data/maps/%s/scripts.inc' % n
+        if not os.path.exists(p):
+            continue
+        objs = d.get('object_events') or []
+        mine = {o.get('local_id') for o in objs}
+        # .set LOCALID_X, N: object N moet nog hetzelfde object zijn als in vanilla
+        bt = base_file('data/maps/%s/map.json' % n)
+        try:
+            bobjs = json.loads(bt).get('object_events') or [] if bt else None
+        except ValueError:
+            bobjs = None
+        for m in re.finditer(r'^\.set\s+(LOCALID_\w+)\s*,\s*(\d+)', read(p), re.M):
+            k = int(m.group(2))
+            if k > len(objs):
+                add('scripts', 'FOUT', 'setid:%s:%s' % (n, m.group(1)), '%s: .set %s, %d maar de kaart heeft %d objecten' % (p, m.group(1), k, len(objs)))
+            elif bobjs and k <= len(bobjs) and (bobjs[k - 1]['graphics_id'], bobjs[k - 1]['script']) != (objs[k - 1]['graphics_id'], objs[k - 1]['script']):
+                add('scripts', 'FOUT', 'setid:%s:%s' % (n, m.group(1)), '%s: .set %s, %d wijst nu naar %s (%s) i.p.v. %s; geef het object een local_id'
+                    % (p, m.group(1), k, objs[k - 1]['graphics_id'], objs[k - 1]['script'], bobjs[k - 1]['graphics_id']))
+        for j, l in enumerate(FILELINES.get(p, [])):
+            c, args = cmd_args(l.split('@')[0].strip())
+            if c not in OBJ_CMDS or not args:
+                continue
+            a = args[0]
+            if a.startswith('LOCALID_') and a not in mine and a not in glob_ids:
+                if not owner.get(a):
+                    add('scripts', 'FOUT', 'localid:%s:%s' % (n, a), '%s:%d: %s %s bestaat op geen enkele kaart' % (p, j + 1, c, a))
+                elif not re.search(r'\bwarp\w*\s+MAP_', read(p)) and not label_vanilla(next((lb for lb, (ff, ii) in LABELS.items() if ff == p and ii < j), '') or ''):
+                    add('scripts', 'MELD', 'localid:%s:%s' % (n, a), '%s:%d: %s %s hoort bij %s, niet bij deze kaart'
+                        % (p, j + 1, c, a, ', '.join(sorted(owner[a]))))
+            elif re.fullmatch(r'\d+', a) and 0 < int(a) < 200 and int(a) > len(objs):
+                add('scripts', 'FOUT', 'localid:%s:%s' % (n, a), '%s:%d: %s %s, maar de kaart heeft maar %d objecten' % (p, j + 1, c, a, len(objs)))
+
+
 def check_scripts():
     # scripts.inc in event_scripts.s
     ev = read('data/event_scripts.s')
@@ -751,6 +919,8 @@ def check_scripts():
                 add('scripts', 'VANILLA' if van else 'MELD', 'coordrel:%s' % s,
                     '%s: coord-event-script %s eindigt zonder releaseall (Lessen: coord-triggers vergrendelen de besturing)' % (n, s))
     stats['scripts']['coord-scripts'] = len(seen_scripts)
+    check_softlocks()
+    check_localids()
     # tekstbreedte
     tw = load_text_width()
     ntxt = 0

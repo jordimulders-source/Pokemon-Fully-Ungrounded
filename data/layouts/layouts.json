@@ -5658,7 +5658,7 @@
       "width": 40,
       "height": 48,
       "primary_tileset": "gTileset_IlexGeneral",
-      "secondary_tileset": "gTileset_IlexPetalburg",
+      "secondary_tileset": "gTileset_IlexForest",
       "border_filepath": "data/layouts/IlexForest/border.bin",
       "blockdata_filepath": "data/layouts/IlexForest/map.bin"
     },

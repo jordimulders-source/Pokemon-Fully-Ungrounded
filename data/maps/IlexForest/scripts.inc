@@ -68,8 +68,8 @@ IlexForest_EventScript_Sign::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 IlexForest_Text_ShrineCall:
-	.string "A small stone CELEBI on a mossy\n"
-	.string "pedestal. CALYREX said to call it. You\l"
+	.string "A tiny wooden shrine on a mossy stone\n"
+	.string "base. CALYREX said to call into it. You\l"
 	.string "feel silly. You call it anyway. The\l"
 	.string "forest goes quiet. Then: a chime.$"
 
@@ -90,10 +90,10 @@ IlexForest_Text_CelebiCaught:
 	.string "waiting.$"
 
 IlexForest_Text_ShrineQuiet:
-	.string "A small stone CELEBI on a mossy\n"
-	.string "pedestal. Someone left a sandwich as an\l"
-	.string "offering. It looks suspiciously\l"
-	.string "familiar.$"
+	.string "A tiny wooden shrine on a mossy stone\n"
+	.string "base. Someone left an apple and a\l"
+	.string "sandwich as an offering. The sandwich\l"
+	.string "looks suspiciously familiar.$"
 
 IlexForest_Text_ShrineDone:
 	.string "The shrine is empty now. The sandwich is\n"

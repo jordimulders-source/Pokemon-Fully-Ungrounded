@@ -1264,11 +1264,11 @@ const struct Tileset gTileset_ParkBurntRustboro =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Rustboro,
+    .tiles = gTilesetTiles_ParkBurntRustboro,
     .palettes = gTilesetPalettes_ParkBurntRustboro,
-    .metatiles = gMetatiles_Rustboro,
-    .metatileAttributes = gMetatileAttributes_Rustboro,
-    .callback = InitTilesetAnim_Rustboro,
+    .metatiles = gMetatiles_ParkBurntRustboro,
+    .metatileAttributes = gMetatileAttributes_ParkBurntRustboro,
+    .callback = InitTilesetAnim_ParkBurnt,
 };
 
 // Project Grounded: National Park / Ilex Forest, tiles en metatiles van General met eigen paletten (tools/grounded/maptools/national_park.py)
@@ -1284,15 +1284,15 @@ const struct Tileset gTileset_IlexGeneral =
 };
 
 // Project Grounded: National Park / Ilex Forest, tiles en metatiles van Petalburg met eigen paletten (tools/grounded/maptools/national_park.py)
-const struct Tileset gTileset_IlexPetalburg =
+const struct Tileset gTileset_IlexForest =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Petalburg,
-    .palettes = gTilesetPalettes_IlexPetalburg,
-    .metatiles = gMetatiles_Petalburg,
-    .metatileAttributes = gMetatileAttributes_Petalburg,
-    .callback = InitTilesetAnim_Petalburg,
+    .tiles = gTilesetTiles_IlexForest,
+    .palettes = gTilesetPalettes_IlexForest,
+    .metatiles = gMetatiles_IlexForest,
+    .metatileAttributes = gMetatileAttributes_IlexForest,
+    .callback = NULL,
 };
 
 const struct Tileset gTileset_UnchartedIsle = // Project Grounded: Keldeo-eiland, draaikolken (swords_isle.py)

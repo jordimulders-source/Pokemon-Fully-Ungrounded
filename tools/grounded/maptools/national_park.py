@@ -6,14 +6,16 @@
                         trapvorm komt van het raster), bloemen en lantaarns langs de rand, Hoenn-bomen rondom.
                         Oostkant: het poortgebouwtje (Rustboro-huisje), onderaan een gang met hekjes naar een
                         pleintje (bankjes, bloembak, bord) en het bospad naar Ilex Forest (zuidpijl-warp).
-  NationalPark_Ruined   Tweede layout van dezelfde kaart (zelfde indeling + smeulende plekken): park_burnt_general /
-                        park_burnt_rustboro (alleen eigen paletten: as, verkoold hout, gloeiende sintels), as-regen,
-                        andere muziek. Gekozen in ON_TRANSITION (FLAG_NATIONAL_PARK_REVEALED tot ..._RESTORED).
+  NationalPark_Ruined   Tweede layout van dezelfde kaart: park_burnt_general (eigen paletten: as, verkoold hout) +
+                        park_burnt_rustboro (eigen secondary met geanimeerd vuur, national_park_tiles.py): vuurhaarden
+                        en losse vlammen in het verkoolde gras (botsing), brandende bloemenranden en boomkruinen,
+                        as-regen, andere muziek. Gekozen in ON_TRANSITION (FLAG_NATIONAL_PARK_REVEALED tot ..._RESTORED).
   NationalPark_Gate     Poorthuis (layout van de Seaside Cycling Road-poort): links de uitgang naar het park,
                         rechts de zijuitgang terug naar de Spacetime Cave (warp 2/3; de scheur in de hub komt hier aan).
-  IlexForest            40x48, ilex_general / ilex_petalburg (General/Petalburg met donkere, mistige paletten) +
-                        WEATHER_SHADE: kronkelpaden, dwaalpaden, vijver linksboven, het schrijn (stenen Celebi-beeld)
-                        in het midden met bloemen en hekjes. Bovenaan de noordpijl-warp terug naar het park.
+  IlexForest            40x48, ilex_general (General met donkere, mistige paletten) + ilex_forest (eigen secondary,
+                        national_park_tiles.py) + WEATHER_SHADE: kronkelpaden, vijver met waterlelies en een treurwilg,
+                        het houten schrijn (GSC/HGSS) met stenen lantaarns in het midden, Ekat-decor (bomen, struiken,
+                        stronken, stammen, paddenstoelen, bloemen) en lichtvlekken. Bovenaan de noordpijl-warp terug.
 
 Quest (SPACETIME_PLAN): vier trainers -> Calyrex bij de fontein toont de echte, brandende dimensie -> twee
 multi battles met Calyrex (PARTNER_CALYREX) tegen schimmen -> Ilex: Celebi bij het schrijn vangen (verslagen:
@@ -27,6 +29,7 @@ from collections import deque
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import beacon_dragon as bd          # zet de werkmap op de repo-root
+import national_park_tiles as NT    # vuur (brandend park) en de Ilex-tileset
 from PIL import Image
 
 Scr, text = bd.Scr, bd.text
@@ -47,7 +50,7 @@ RUST = 'data/tilesets/secondary/rustboro'
 PET = 'data/tilesets/secondary/petalburg'
 RUST_VANILLA, PET_VANILLA = 0x363 - 0x200, 0x290 - 0x200      # aantal metatiles voor dit script
 DARK_LAWN, PAVE_SOUTH_WARP = 0x363, 0x364                     # achteraan Rustboro
-GRASS_NORTH_WARP = 0x290                                      # achteraan Petalburg
+GRASS_NORTH_WARP = 0x200                                      # eerste metatile van ilex_forest
 DARK_TILES = (503, 504)                                       # vrije tiles achteraan Rustboro
 MB_NORTH_ARROW, MB_SOUTH_ARROW = 0x64, 0x65
 
@@ -87,7 +90,11 @@ def tilesets():
     ])
     gm = open('data/tilesets/primary/general/metatiles.bin', 'rb').read()
     grass = struct.unpack_from('<8H', gm, 1 * 16)
-    append_metatiles(PET, PET_VANILLA, [(grass, MB_NORTH_ARROW)])                # 0x290 gras + noordpijl-warp
+    # vroeger 0x290 (gras + noordpijl) achteraan Petalburg; die staat nu in ilex_forest: Petalburg weer vanilla
+    for f, n in (('/metatiles.bin', 16), ('/metatile_attributes.bin', 2)):
+        d = open(PET + f, 'rb').read()
+        assert len(d) // n in (PET_VANILLA, PET_VANILLA + 1)
+        open(PET + f, 'wb').write(d[:PET_VANILLA * n])
 
 
 def lum(c):
@@ -124,7 +131,6 @@ PAL_SETS = [  # (map, BASE, transform, symbol, primary?)
     ('primary/park_burnt_general', 'general', burnt, 'ParkBurntGeneral', True),
     ('secondary/park_burnt_rustboro', 'rustboro', burnt, 'ParkBurntRustboro', False),
     ('primary/ilex_general', 'general', ilex, 'IlexGeneral', True),
-    ('secondary/ilex_petalburg', 'petalburg', ilex, 'IlexPetalburg', False),
 ]
 BASES = {'general': ('General', 'InitTilesetAnim_General'), 'rustboro': ('Rustboro', 'InitTilesetAnim_Rustboro'),
          'petalburg': ('Petalburg', 'InitTilesetAnim_Petalburg')}
@@ -373,7 +379,7 @@ def build_park():
 # ====================================================================== Ilex Forest
 IPLAN = [
     "TTTTTTTTTT.TTTTTTTTT",
-    "TTTTTTTT...TTTTTTTTT",
+    "TT.....T...TTTTTTTTT",
     "TT.....T.TTTTT...TTT",
     "TT.www...TTTT..L.TTT",
     "TT.www.TTTT...LL.TTT",
@@ -401,8 +407,14 @@ ICW, ICH = len(IPLAN[0]), len(IPLAN)
 assert all(len(r) == ICW for r in IPLAN)
 IW, IH = ICW * 2, ICH * 2
 ILEX_ENTRY = (20, 21)               # noordpijl-warps in rij 0
-SHRINE = (20, 24)                   # sokkel van het Celebi-beeld
-CELEBI = (21, 25)                    # verschijnt naast de speler, die voor het schrijn staat
+SHRINE = (19, 21)                   # linksboven van het houten schrijn (2x3 metatiles); de stenen voet is rij 23
+SHRINE_FRONT = [(19, 23), (20, 23)]  # voet: aanspreken van onderaf (bg-events)
+CELEBI = (21, 24)                    # verschijnt voor het schrijn, naast de speler
+LANTERNS = [(17, 22), (22, 22)]      # stenen lantaarns (1x2) naast het schrijn
+# vaste decorstukken (naam, x, y linksboven); de rest wordt gestrooid in decorate_ilex()
+ILEX_FEATURES = [('willow', 4, 2), ('big_tree', 26, 6), ('log_h', 10, 44), ('log_v', 35, 11),
+                 ('mush_big', 13, 44)]
+ILEX_LILIES = [(8, 7), (10, 8), (7, 9)]
 
 
 def ilex_cell(cx, cy):
@@ -411,7 +423,14 @@ def ilex_cell(cx, cy):
     return IPLAN[cy][cx]
 
 
-def build_ilex():
+def ilex_events():
+    ev = {CELEBI, ILEX_SIGN} | set(SHRINE_FRONT) | {(x, y + 1) for x, y in SHRINE_FRONT}
+    ev |= {(x, y) for x, y, *_ in ILEX_ITEMS} | {(x, y) for x, y, *_ in ILEX_HIDDEN}
+    ev |= {(x, 0) for x in ILEX_ENTRY} | {(x, 1) for x in ILEX_ENTRY}
+    return ev
+
+
+def build_ilex(T):
     W, H = IW, IH
     M = [[val(GRASS) for _ in range(W)] for _ in range(H)]
     kind = lambda x, y: ilex_cell(x // 2, y // 2)
@@ -431,15 +450,133 @@ def build_ilex():
                 M[y][x] = val(mt, 0, 1)
             elif kind(x, y - 1) == 'w':
                 M[y][x] = val(0x002)
-    # hekjes aan de bovenkant van het schrijnplein (bloemenrij 20), pad naar het schrijn open (x 20-21 boven)
+    # hekje achter het schrijnplein (bloemenrij 20), dicht: het schrijn staat er pal voor
     for x in range(16, 26):
-        if x in (20, 21):
-            continue
-        M[20][x] = val(FENCE_H[0] if x in (16, 22) else FENCE_H[2] if x in (19, 25) else FENCE_H[1], 1)
+        M[20][x] = val(FENCE_H[0] if x == 16 else FENCE_H[2] if x == 25 else FENCE_H[1], 1)
     for x in ILEX_ENTRY:
         M[0][x] = val(GRASS_NORTH_WARP)
     forest(M, ilex_cell, ICW, ICH)
+    decorate_ilex(M, T)
     return M
+
+
+def stamp(M, grid, x0, y0, solid=True, need=None):
+    """Zet een decor-raster neer; met need: alleen als alle gevulde vakken aan need(x, y) voldoen."""
+    cells = [(x0 + i, y0 + j, mt) for j, r in enumerate(grid) for i, mt in enumerate(r) if mt is not None]
+    if need and not all(0 <= x < IW and 0 <= y < IH and need(x, y) for x, y, _ in cells):
+        return None
+    old = [(x, y, M[y][x]) for x, y, _ in cells]
+    for x, y, mt in cells:
+        M[y][x] = val(mt, 1 if solid else 0)
+    return old
+
+
+def decorate_ilex(M, T):
+    import random
+    rng = random.Random(251)                    # nationaal dexnummer van Celebi
+    ev = ilex_events()
+    plain = lambda x, y: M[y][x] == val(GRASS) and (x, y) not in ev
+    tree = lambda x, y: not (0 <= x < IW and 0 <= y < IH) or 0x1D4 <= M[y][x] & 0x3FF <= 0x1E7
+    # schrijn, lantaarns, vaste stukken, waterlelies
+    stamp(M, T.decor('shrine'), *SHRINE)
+    for x, y in LANTERNS:
+        stamp(M, T.decor('lantern'), x, y)
+    for nm, x, y in ILEX_FEATURES:
+        assert stamp(M, T.decor(nm), x, y, need=lambda x, y: plain(x, y) or M[y][x] == val(TALL)), \
+            ('ilex: vast decor past niet', nm, x, y)
+    for x, y in ILEX_LILIES:
+        assert M[y][x] & 0x3FF == 0xA1, ('waterlelie niet op open water', x, y)
+        M[y][x] = val(T.decor('lily', water=True)[0][0], 0, 1)
+
+    objs = {CELEBI} | {(x, y) for x, y, *_ in ILEX_ITEMS}
+
+    def ok():
+        r = reach(M, IW, IH, (ILEX_ENTRY[0], 0), objs)
+        opened = {(x, y) for y in range(IH) for x in range(IW) if not M[y][x] & 0xC00 and M[y][x] >> 12 in (0, 3)}
+        return not (opened - r - objs) and all(adj(r, p) for p in objs)
+    assert ok(), ('ilex: vaste stukken sluiten een stuk af', sorted({(x, y) for y in range(IH) for x in range(IW)
+                  if not M[y][x] & 0xC00 and M[y][x] >> 12 in (0, 3)} - reach(M, IW, IH, (ILEX_ENTRY[0], 0)))[:9])
+    # gestrooide vaste stukken langs de bosrand: nooit een stuk bos afsluiten
+    pool = ['stump_a', 'stump_b', 'stump_c', 'small_pine', 'small_pine', 'bush', 'bush_pink', 'bush_blue',
+            'mush_big', 'small_pine', 'log_h', 'small_pine', 'stump_a', 'bush', 'fern_clump']
+    spots = [(x, y) for y in range(2, IH - 2) for x in range(2, IW - 2)]
+    rng.shuffle(spots)
+    placed, want = 0, 26
+    for x, y in spots:
+        if placed >= want:
+            break
+        nm = pool[placed % len(pool)]
+        g = T.decor(nm)
+        cells = [(x + i, y + j) for j, r in enumerate(g) for i, mt in enumerate(r) if mt is not None]
+        if not all(0 <= cx < IW and 0 <= cy < IH and plain(cx, cy) for cx, cy in cells):
+            continue
+        if not any(tree(cx + dx, cy + dy) for cx, cy in cells for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+            continue
+        # niet tegen ander decor aan (lucht houden)
+        if any(M[cy + dy][cx + dx] >> 10 & 3 and not tree(cx + dx, cy + dy) and M[cy + dy][cx + dx] & 0x3FF >= 0x200
+               for cx, cy in cells for dx in (-1, 0, 1) for dy in (-1, 0, 1)):
+            continue
+        old = stamp(M, g, x, y, solid=nm != 'fern_clump')
+        if not ok():
+            for ox, oy, v in old:
+                M[oy][ox] = v
+            continue
+        placed += 1
+    # loopbaar decor: bloemenpaadjes (groepjes), paddenstoelen en spruitjes langs de bosrand
+    free = lambda x, y: 0 <= x < IW and 0 <= y < IH and plain(x, y)
+    clusters = 0
+    for _ in range(600):
+        x, y = rng.randrange(IW), rng.randrange(IH)
+        if clusters >= 24 or not free(x, y):
+            continue
+        clusters += 1
+        kind = rng.choice(['flower_pink', 'flower_blue', 'flower_mix', 'petals_pink', 'petals_blue'])
+        for dx in range(-2, 3):
+            for dy in range(-1, 2):
+                if free(x + dx, y + dy) and rng.random() < 0.55 - 0.12 * abs(dx):
+                    M[y + dy][x + dx] = val(T.decor(kind if rng.random() < 0.8 else 'flower_mix')[0][0])
+    for y in range(IH):
+        for x in range(IW):
+            if not free(x, y):
+                continue
+            edge = any(tree(x + dx, y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))
+            r = rng.random()
+            if edge and r < 0.06:
+                M[y][x] = val(T.decor(rng.choice(['mush_one', 'mush_pair', 'mush_sprouts']))[0][0])
+            elif edge and r < 0.13:
+                M[y][x] = val(T.decor(rng.choice(['sprout_a', 'sprout_b', 'fern_clump']))[0][0])
+    # lichtvlekken (zonlicht door het bladerdak): geditherde ellipsen over het gras
+    B = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]]
+    lit = {(x, y) for y in range(IH) for x in range(IW) if free(x, y)}
+    masks = {}
+    spots = 0
+    for _ in range(800):
+        if spots >= 22:
+            break
+        cx, cy = rng.uniform(2, IW - 2) * 16, rng.uniform(2, IH - 2) * 16
+        rx, ry = rng.uniform(16, 34), rng.uniform(12, 24)
+        tiles = [(x, y) for y in range(int((cy - ry) // 16), int((cy + ry) // 16) + 1)
+                 for x in range(int((cx - rx) // 16), int((cx + rx) // 16) + 1)]
+        if (int(cx // 16), int(cy // 16)) not in lit or sum(t in lit for t in tiles) < len(tiles) * 0.45:
+            continue
+        spots += 1
+        for x, y in tiles:
+            if (x, y) not in lit:
+                continue
+            mask = masks.setdefault((x, y), [[False] * 16 for _ in range(16)])
+            for py in range(16):
+                for px in range(16):
+                    d = ((x * 16 + px + 0.5 - cx) / rx) ** 2 + ((y * 16 + py + 0.5 - cy) / ry) ** 2
+                    a = max(0.0, min(1.0, (1.0 - d) * 2.2))
+                    # zacht uitlopen tegen bomen/decor (geen rechte snede langs een tegelrand)
+                    for nx, ny, dist in ((x - 1, y, px), (x + 1, y, 15 - px), (x, y - 1, py), (x, y + 1, 15 - py)):
+                        if (nx, ny) not in lit:
+                            a *= min(1.0, dist / 7.0)
+                    if B[py & 3][px & 3] < a * 16:
+                        mask[py][px] = True
+    for (x, y), mask in masks.items():
+        if any(any(r) for r in mask):
+            M[y][x] = val(T.light(mask))
 
 
 # ====================================================================== bereikbaarheid
@@ -1012,15 +1149,15 @@ def ilex_scripts():
 	msgbox {X}ShrineDone, MSGBOX_DEFAULT
 	release
 	end
-''', [('ShrineCall', "A small stone CELEBI on a mossy pedestal. CALYREX said to call it. You feel silly. "
+''', [('ShrineCall', "A tiny wooden shrine on a mossy stone base. CALYREX said to call into it. You feel silly. "
                      "You call it anyway. The forest goes quiet. Then: a chime."),
           ('Celebi', "CELEBI looks at you as if it has seen this moment before. Several times. "
                      "It did not like how most of them ended."),
           ('CelebiReset', "The world folds back on itself. Somewhere far away, CALYREX sighs and rewinds "
                           "time by a few minutes. CELEBI is still here. Try again. Gently. With a ball."),
           ('CelebiCaught', "CELEBI is yours. The forest exhales. Go back to the NATIONAL PARK: CALYREX is waiting."),
-          ('ShrineQuiet', "A small stone CELEBI on a mossy pedestal. Someone left a sandwich as an offering. "
-                          "It looks suspiciously familiar."),
+          ('ShrineQuiet', "A tiny wooden shrine on a mossy stone base. Someone left an apple and a sandwich as "
+                          "an offering. The sandwich looks suspiciously familiar."),
           ('ShrineDone', "The shrine is empty now. The sandwich is gone too. Nobody saw who took it.")])
     S.npc('Sign', "ILEX FOREST\nThe forest is said to be protected by a time-travelling spirit.\n"
                   "Please do not walk in circles. It is rude.", 'MSGBOX_SIGN')
@@ -1061,6 +1198,86 @@ for _mp, _balls, _hid in (('NationalPark', 'PARK_ITEMS', 'PARK_HIDDEN'), ('IlexF
 ILEX_SIGN = (18, 2)
 
 
+def park_events():
+    ev = {(x, y) for _, _, x, y, *_ in PARK_TRAINERS} | {CALYREX, ETERNATUS} | {(x, y) for _, x, y, _ in SHADOWS} | \
+         {(x, y) for x, y, *_ in PARK_ITEMS} | {(x, y) for x, y, *_ in PARK_HIDDEN} | {SIGN_PLAZA, SIGN_GATE}
+    return ev | {(x + dx, y + dy) for x, y in ev for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))} | \
+        {(GATE_DOOR[0], GATE_DOOR[1] + 1)}
+
+
+def park_blocked(R):
+    """Wat de bereikbaarheid in het brandende park moet halen (zoals check(), maar op layout R)."""
+    objs = {(x, y) for _, x, y, _ in SHADOWS} | {CALYREX, ETERNATUS} | {(x, y) for x, y, *_ in PARK_ITEMS}
+    r = reach(R, PW, PH, (GATE_DOOR[0], GATE_DOOR[1] + 1), objs - {(x, y) for _, x, y, t in SHADOWS if t == 'B'})
+    need = [p for p in objs | {SIGN_PLAZA, SIGN_GATE} if not adj(r, p)] + \
+           [(x, y) for x, y, *_ in PARK_HIDDEN if (x, y) not in r] + [(x, PH - 1) for x in TUNNEL if (x, PH - 1) not in r]
+    opened = {(x, y) for y in range(PH) for x in range(PW) if not R[y][x] & 0xC00 and R[y][x] >> 12 in (0, 3)} - objs
+    return need, opened - r
+
+
+def burn_park(M):
+    """Brandend park (NationalPark_Ruined): vuurhaarden in het verkoolde gras, de bloemenranden in vlammen,
+    brandende boomkruinen. Vuur heeft botsing; elke haard die iets afsluit wordt teruggedraaid."""
+    import random
+    rng = random.Random(898)        # nationaal dexnummer van Calyrex
+    F = FIRE_IDS
+    R = [row[:] for row in M]
+    ev = park_events()
+    ground = {GRASS: 'grass', TALL: 'tall', DARK_LAWN: 'lawn'}
+    gr = lambda x, y: 0 <= x < PW and 0 <= y < PH and (x, y) not in ev and R[y][x] & 0x3FF in ground and \
+        not R[y][x] & 0xC00
+    # bloemen (lazen als bloemen, Jordi 9 okt): een deel brandt, de rest is verkoold gras
+    for y in range(PH):
+        for x in range(PW):
+            if R[y][x] & 0x3FF == FLOWER:
+                R[y][x] = val(GRASS)
+                if (x, y) not in ev and rng.random() < 0.45:
+                    R[y][x] = val(F[('small', 'grass', rng.choice('ab'))], 1)
+                    if any(park_blocked(R)):
+                        R[y][x] = val(GRASS)
+    centers = []
+    cand = [(x, y) for y in range(2, PH - 2) for x in range(2, PW - 2)]
+    rng.shuffle(cand)
+    for x, y in cand:
+        if len(centers) >= 16:
+            break
+        if not all(gr(x + i, y + j) for i in (0, 1) for j in (0, 1)):
+            continue
+        g = ground[R[y][x] & 0x3FF]
+        if not all(ground[R[y + j][x + i] & 0x3FF] == g for i in (0, 1) for j in (0, 1)):
+            continue
+        if any(math.hypot(x - cx, y - cy) < 6 for cx, cy in centers):
+            continue
+        old = [row[:] for row in R]
+        ph = rng.choice('ab')
+        for j in (0, 1):
+            for i in (0, 1):
+                R[y + j][x + i] = val(F[('big', g, ph, i, j)], 1)
+        for _ in range(rng.randint(2, 5)):          # losse vlammen eromheen
+            sx, sy = x + rng.randint(-2, 3), y + rng.randint(-2, 3)
+            if gr(sx, sy):
+                R[sy][sx] = val(F[('small', ground[R[sy][sx] & 0x3FF], rng.choice('ab'))], 1)
+        need, pockets = park_blocked(R)
+        if need or pockets:
+            R = old
+            continue
+        centers.append((x, y))
+    # losse vlammen die iets afsluiten weer doven
+    need, pockets = park_blocked(R)
+    assert not need and not pockets, (need, sorted(pockets)[:5])
+    # boomkruinen: bomen dicht bij een haard branden (bovenste rij van een Hoenn-boom)
+    for y in range(PH):
+        for x in range(PW - 1):
+            if R[y][x] & 0x3FF in (0x1D4, 0x1D6) and R[y][x + 1] & 0x3FF in (0x1D5, 0x1D7):
+                near = min([math.hypot(x - cx, y - cy) for cx, cy in centers] + [99])
+                if rng.random() < (0.55 if near < 7 else 0.12):
+                    ph = rng.choice('ab')
+                    for i in (0, 1):
+                        R[y][x + i] = R[y][x + i] & ~0x3FF | F[('tree', R[y][x + i] & 0x3FF, ph)]
+    print('brandend park: %d vuurhaarden' % len(centers))
+    return R
+
+
 def maps():
     M = build_park()
     lay = save_layout('NationalPark', PW, PH, M, 'gTileset_General', 'gTileset_Rustboro')
@@ -1090,15 +1307,7 @@ def maps():
     for x, y in (SIGN_PLAZA, SIGN_GATE):
         M[y][x] = val(SIGN_MT, 1)
     save_layout('NationalPark', PW, PH, M, 'gTileset_General', 'gTileset_Rustboro')
-    # brandend park: zelfde kaart, maar met smeulende plekken (bloemen in het sintelpalet, ze flakkeren mee met de
-    # bloemenanimatie van General) in het verbrande gras
-    import random
-    rng = random.Random(898)        # nationaal dexnummer van Calyrex
-    R = [row[:] for row in M]
-    for y in range(PH):
-        for x in range(PW):
-            if R[y][x] & 0x3FF in (TALL, DARK_LAWN, GRASS) and rng.random() < 0.07:
-                R[y][x] = val(FLOWER)
+    R = burn_park(M)
     save_layout('NationalPark_Ruined', PW, PH, R, 'gTileset_ParkBurntGeneral', 'gTileset_ParkBurntRustboro')
     write_map('NationalPark', lay, objs, warps, bgs)
 
@@ -1109,26 +1318,27 @@ def maps():
                warp(12, 5, 'SPACETIME_CAVE', 5), warp(13, 5, 'SPACETIME_CAVE', 6)], [],
               **bd.indoor(show_map_name=False, music='MUS_RG_CELADON', region_map_section='MAPSEC_NATIONAL_PARK'))
 
-    I = build_ilex()
+    T = NT.IlexTiles(ilex)
+    I = build_ilex(T)
     for x, y in (ILEX_SIGN,):
         I[y][x] = val(SIGN_MT, 1)
-    ilay = save_layout('IlexForest', IW, IH, I, 'gTileset_IlexGeneral', 'gTileset_IlexPetalburg')
+    print('ilex_forest: %d tiles, %d metatiles' % T.save())
+    ilay = save_layout('IlexForest', IW, IH, I, 'gTileset_IlexGeneral', 'gTileset_IlexForest')
     P = 'IlexForest_EventScript_'
-    iobjs = [lid(obj('OBJ_EVENT_GFX_STATUE_CELEBI', SHRINE[0], SHRINE[1], P + 'Shrine', move='MOVEMENT_TYPE_NONE'),
-                 'LOCALID_ILEX_FOREST_SHRINE'),
-             lid(obj('OBJ_EVENT_GFX_SPECIES(CELEBI)', CELEBI[0], CELEBI[1], P + 'Celebi', 'FLAG_TEMP_1',
+    iobjs = [lid(obj('OBJ_EVENT_GFX_SPECIES(CELEBI)', CELEBI[0], CELEBI[1], P + 'Celebi', 'FLAG_TEMP_1',
                      'MOVEMENT_TYPE_FACE_DOWN'), 'LOCALID_ILEX_FOREST_CELEBI')]
     for x, y, it, fl in ILEX_ITEMS:
         iobjs.append(ball(x, y, it, fl))
         iobjs[-1]['movement_range_x'] = NEW_QTY.get(it, 1) if NEW_QTY.get(it, 1) > 1 else 0
     write_map('IlexForest', ilay, iobjs, [warp(ILEX_ENTRY[0], 0, 'NATIONAL_PARK', 1), warp(ILEX_ENTRY[1], 0, 'NATIONAL_PARK', 2)],
-              [sign(ILEX_SIGN[0], ILEX_SIGN[1], P + 'Sign')] + [hidden(x, y, it, fl) for x, y, it, fl in ILEX_HIDDEN],
+              [sign(ILEX_SIGN[0], ILEX_SIGN[1], P + 'Sign')] + [hidden(x, y, it, fl) for x, y, it, fl in ILEX_HIDDEN] +
+              [sign(x, y, P + 'Shrine', 'BG_EVENT_PLAYER_FACING_NORTH') for x, y in SHRINE_FRONT],
               music='MUS_RG_VIRIDIAN_FOREST', region_map_section='MAPSEC_ILEX_FOREST', weather='WEATHER_SHADE',
               allow_cycling=False)
-    return M, I
+    return M, R, I
 
 
-def check(M, I):
+def check(M, R, I):
     # park: vanaf de deur van het poorthuisje alles bereikbaar
     shades_b = {(x, y) for _, x, y, t in SHADOWS if t == 'B'}
     objs = {(x, y) for _, _, x, y, *_ in PARK_TRAINERS} | {CALYREX, ETERNATUS} | {(x, y) for _, x, y, _ in SHADOWS} | \
@@ -1157,8 +1367,10 @@ def check(M, I):
     rb = reach(M, PW, PH, start, objs)
     if (TUNNEL[0], PH - 1) in rb:
         probs.append(('park: schimmen blokkeren de gang niet', None))
+    need, pockets = park_blocked(R)
+    probs += [('brandend park: onbereikbaar', p) for p in need] + [('brandend park: afgesloten', p) for p in pockets]
     # Ilex: vanaf de ingang
-    iobjs = {SHRINE, CELEBI} | {(x, y) for x, y, *_ in ILEX_ITEMS}
+    iobjs = {CELEBI} | {(x, y) for x, y, *_ in ILEX_ITEMS} | set(SHRINE_FRONT)
     ri = reach(I, IW, IH, (ILEX_ENTRY[0], 0), iobjs)
     for p in iobjs | {ILEX_SIGN}:
         if not adj(ri, p):
@@ -1173,8 +1385,12 @@ def check(M, I):
 
 
 def main():
+    global FIRE_IDS
     tilesets()
     palettes()
+    FIRE_IDS = NT.burnt_tiles(RUST_VANILLA + 2)
+    NT.register_burnt()
+    NT.register_ilex()
     flags()
     mapsecs()
     bd.WILD = WILD
@@ -1186,8 +1402,8 @@ def main():
     park_scripts(None)
     gate_scripts()
     ilex_scripts()
-    M, I = maps()
-    check(M, I)
+    M, R, I = maps()
+    check(M, R, I)
     if len(sys.argv) > 1:
         for mp, h in (('NationalPark', PH), ('IlexForest', IH)):
             subprocess.run([sys.executable, os.path.join(HERE, 'render_map.py'), mp,

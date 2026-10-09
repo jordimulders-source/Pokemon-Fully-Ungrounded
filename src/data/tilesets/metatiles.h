@@ -277,3 +277,11 @@ const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatiles.bin");
 const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatile_attributes.bin");
+
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatiles.bin");
+const u16 gMetatileAttributes_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatile_attributes.bin");
+
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatiles.bin");
+const u16 gMetatileAttributes_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatile_attributes.bin");

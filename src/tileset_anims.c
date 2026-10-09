@@ -519,6 +519,26 @@ const u16 *const gTilesetAnims_UnchartedIsle_Whirlpool[] = {
     gTilesetAnims_UnchartedIsle_Whirlpool_Frame7,
 };
 
+// Project Grounded: vuur in het brandende National Park (national_park_tiles.py)
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame0[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/0.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame1[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/1.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame2[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/2.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame3[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/3.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame4[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/4.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame5[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/5.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame6[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/6.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame7[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/7.4bpp");
+const u16 *const gTilesetAnims_ParkBurnt_Fire[] = {
+    gTilesetAnims_ParkBurnt_Fire_Frame0,
+    gTilesetAnims_ParkBurnt_Fire_Frame1,
+    gTilesetAnims_ParkBurnt_Fire_Frame2,
+    gTilesetAnims_ParkBurnt_Fire_Frame3,
+    gTilesetAnims_ParkBurnt_Fire_Frame4,
+    gTilesetAnims_ParkBurnt_Fire_Frame5,
+    gTilesetAnims_ParkBurnt_Fire_Frame6,
+    gTilesetAnims_ParkBurnt_Fire_Frame7,
+};
+
 const u16 *const gTilesetAnims_Sootopolis_StormyWater[] = {
     gTilesetAnims_Sootopolis_StormyWater_Frame0,
     gTilesetAnims_Sootopolis_StormyWater_Frame1,
@@ -1225,4 +1245,21 @@ void InitTilesetAnim_UnchartedIsle(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_UnchartedIsle;
+}
+
+// Project Grounded: brandend National Park (tools/grounded/maptools/national_park_tiles.py): Rustboro (fontein) +
+// vuur in tiles 320-375 van de secondary, elke 8 frames een stap
+static void TilesetAnim_ParkBurnt(u16 timer)
+{
+    TilesetAnim_Rustboro(timer);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(gTilesetAnims_ParkBurnt_Fire[(timer / 8) % ARRAY_COUNT(gTilesetAnims_ParkBurnt_Fire)],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 320)), 56 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_ParkBurnt(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_ParkBurnt;
 }

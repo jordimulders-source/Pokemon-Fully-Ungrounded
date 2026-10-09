@@ -499,6 +499,19 @@ spot(key='Necrozma', species='NECROZMA', level=95, trans='B_TRANSITION_BLACKHOLE
      tint=dict(sec=[(0, 0, 0), (40, 16, 72), (136, 80, 216), (255, 240, 144)], keep=0.25, gamma=0.9),
      music='MUS_RG_SEVII_DUNGEON',
      decor=[])
+# Werelden die een eigen script bouwt (kaart, layout, tileset, map.json, scripts.inc, wilde Pokémon): hier alleen
+# de plek in het portaal (SPOTS-volgorde) en de aankomstplek voor de hub (uit het warpblok in de hub-scripts.inc,
+# dat het andere script bijwerkt). Zie ultra_worlds_b.py.
+EXTERNAL_B = ('Guzzlord', 'Poipole', 'Stakataka', 'Blacephalon', 'Necrozma')   # tools/grounded/maptools/ultra_worlds_b.py
+EXTERNAL = set(EXTERNAL_B)
+
+
+def external_arrive(key):
+    s = open('data/maps/UltraSpace_Hub/scripts.inc').read()
+    m = re.search(r'UltraSpace_Hub_EventScript_To%s::\n\twarp MAP_ULTRA_SPACE_\w+, (\d+), (\d+)' % key, s)
+    return int(m.group(1)), int(m.group(2))
+
+
 HUB_TINT = dict(sec=[(16, 16, 56), (120, 104, 200), (232, 224, 248), (255, 255, 240)], keep=0.15, gamma=0.55)
 LOCAL = {'Poipole': 'aliens'}
 
@@ -665,7 +678,10 @@ def edit_Poipole(g):
 
 
 def main():
-    names = [build_spot(i, s) for i, s in enumerate(SPOTS)]
+    names = [build_spot(i, s) for i, s in enumerate(SPOTS) if s['key'] not in EXTERNAL]
+    for s in SPOTS:
+        if s['key'] in EXTERNAL:
+            SUMMARY[s['key']] = dict(name='UltraSpace_' + s['key'], arrive=external_arrive(s['key']), external=True)
     # hub
     hub = 'UltraSpace_Hub'
     g = autotile(HUB_MASK, 777)
@@ -781,6 +797,8 @@ TEXTS = {
 def write_scripts(hub_arrive):
     for s in SPOTS:
         key = s['key']
+        if key in EXTERNAL:
+            continue
         info = SUMMARY[key]
         name = info['name']
         path = 'data/maps/%s/scripts.inc' % name

@@ -5145,3 +5145,7 @@ $(OBJEVENTGFXDIR)/people/yoshi_blue_ow.4bpp: %.4bpp: %.png
 # Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py) (16x32)
 $(OBJEVENTGFXDIR)/people/construct.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Project Grounded: oog in het Stakataka-doolhof (16x16, tools/grounded/ultra_eye_sprite.py)
+$(OBJEVENTGFXDIR)/misc/ultra_eye.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2

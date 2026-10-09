@@ -17903,3 +17903,16 @@ Volgens Jordi's GBA-instructies per leider:
 
 ### [v0.9.227] - Geen reuzen-Ledyba
 - De reuzen-Ledyba in de Buzzwole-wereld is weg (out of place, Jordi).
+
+### [v0.9.228] - Ultra Space opnieuw: vijf UB-werelden (deel 2)
+Jordi (9 okt): "Schrap alle mappen die je al had ... Je kan veel beter, kom op." Deel 2: de laatste vijf werelden, elk met een eigen getekende tileset (primary + secondary) en eigen wilde Pokémon (12 unieke soorten). Bouwscript `tools/grounded/maptools/ultra_worlds_b.py` (+ `ultra_worlds_b_art.py`); `ultra_space.py` slaat ze over via `EXTERNAL_B`.
+- **Guzzlord:** Lilycove, maar opgegeten. Warenhuis met een hap eruit, de Contest Hall als krater met Guzzlord in het midden, een ingestort museum, een gebroken pier, as, puin en verkoolde bomen. Af en toe gerommel en vallend puin.
+- **Stakataka:** een echt doolhof van Stakataka-stenen. De ogen in de muren knipperen, losse ogen (`OBJ_EVENT_GFX_ULTRA_EYE`) kijken je na, en in het hart staat de muur zelf.
+- **Blacephalon:** circus met tent, piste, tribunes, ringen, ballonnen en clowns met teksten. Blacephalon is de ster van de show. Ballonnen knallen en er is vuurwerk.
+- **Necrozma:** prismagrot met kristallen in alle kleuren, lichtstralen, regenboogbreking, een spiegelvloer en glinsteringen. Necrozma staat op een zwart altaar dat het licht opslokt.
+- **Poipole:** space horror. Meteorieten, gasgeisers, bliksem, aardbevingen en zwaartekrachtgolven (`src/ultra_worlds.c`, stepcallback `STEP_CB_ULTRA_WORLDS`). De aliens wonen er met Poipole.
+- Techniek:
+  - de oude tilesets van deze vijf zijn uit het `ultra_space`-blok;
+  - `NUM_OBJ_EVENT_GFX` is 351;
+  - audit.py kent `ULTRA_EYE` als muurobject.
+- Na de merge: build, audit 0 FOUT, dex 1082/1082 en een emulatorcheck van alle vijf de tilesets. ROM-ruimte: nog ±0,86 MB vrij.

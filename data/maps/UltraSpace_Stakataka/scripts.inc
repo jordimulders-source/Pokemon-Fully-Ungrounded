@@ -1,5 +1,10 @@
 UltraSpace_Stakataka_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, UltraSpace_Stakataka_OnResume
 	.byte 0
+
+UltraSpace_Stakataka_OnResume:
+	setstepcallback STEP_CB_ULTRA_WORLDS
+	end
 
 UltraSpace_Stakataka_EventScript_UB::
 	lock
@@ -30,6 +35,10 @@ UltraSpace_Stakataka_EventScript_Wall::
 	msgbox UltraSpace_Stakataka_Text_Wall, MSGBOX_NPC
 	end
 
+UltraSpace_Stakataka_EventScript_Eye::
+	msgbox UltraSpace_Stakataka_Text_Eye, MSGBOX_SIGN
+	end
+
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 UltraSpace_Stakataka_Text_UB:
 	.string "The wall is looking at you.\p"
@@ -43,4 +52,9 @@ UltraSpace_Stakataka_Text_UBBack:
 UltraSpace_Stakataka_Text_Wall:
 	.string "The wall looks at you. You look at the\n"
 	.string "wall. Nobody blinks. Bricks can't blink.$"
+
+UltraSpace_Stakataka_Text_Eye:
+	.string "An eye in the wall. It follows you.\p"
+	.string "You move left. It moves left. You move\n"
+	.string "right. It sighs.$"
 

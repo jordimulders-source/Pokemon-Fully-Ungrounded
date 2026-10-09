@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_ULTRA_POIPOLE_RETURN",
       "graphics_id": "OBJ_EVENT_GFX_ULTRA_WORMHOLE",
-      "x": 8,
-      "y": 11,
+      "x": 6,
+      "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_ULTRA_POIPOLE_MON",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POIPOLE)",
-      "x": 25,
-      "y": 3,
+      "x": 36,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -44,8 +44,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BEHEEYEM)",
-      "x": 24,
-      "y": 4,
+      "x": 35,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -57,8 +57,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELGYEM)",
-      "x": 26,
-      "y": 4,
+      "x": 37,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -70,8 +70,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELGYEM)",
-      "x": 28,
-      "y": 3,
+      "x": 39,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -84,7 +84,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 29,
-      "y": 3,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -93,6 +93,32 @@
       "trainer_sight_or_berry_tree_id": "ITEM_POISON_MEMORY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ULTRA_SPACE_POIPOLE_POISON_MEMORY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CLEFAIRY)",
+      "x": 11,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Poipole_EventScript_Clefairy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MALAMAR)",
+      "x": 20,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Poipole_EventScript_Malamar",
+      "flag": "0"
     }
   ],
   "warp_events": [],

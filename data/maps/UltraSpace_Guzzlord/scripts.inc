@@ -1,5 +1,10 @@
 UltraSpace_Guzzlord_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, UltraSpace_Guzzlord_OnResume
 	.byte 0
+
+UltraSpace_Guzzlord_OnResume:
+	setstepcallback STEP_CB_ULTRA_WORLDS
+	end
 
 UltraSpace_Guzzlord_EventScript_UB::
 	lock
@@ -26,12 +31,24 @@ UltraSpace_Guzzlord_EventScript_UBCaught::
 	setflag FLAG_ULTRA_GUZZLORD
 	goto UltraSpace_EventScript_CaughtFade
 
-UltraSpace_Guzzlord_EventScript_Trash::
-	msgbox UltraSpace_Guzzlord_Text_Trash, MSGBOX_NPC
+UltraSpace_Guzzlord_EventScript_Trubbish::
+	msgbox UltraSpace_Guzzlord_Text_Trubbish, MSGBOX_NPC
 	end
 
-UltraSpace_Guzzlord_EventScript_Junk::
-	msgbox UltraSpace_Guzzlord_Text_Junk, MSGBOX_NPC
+UltraSpace_Guzzlord_EventScript_Garbodor::
+	msgbox UltraSpace_Guzzlord_Text_Garbodor, MSGBOX_NPC
+	end
+
+UltraSpace_Guzzlord_EventScript_Murkrow::
+	msgbox UltraSpace_Guzzlord_Text_Murkrow, MSGBOX_NPC
+	end
+
+UltraSpace_Guzzlord_EventScript_Munchlax::
+	msgbox UltraSpace_Guzzlord_Text_Munchlax, MSGBOX_NPC
+	end
+
+UltraSpace_Guzzlord_EventScript_Sign::
+	msgbox UltraSpace_Guzzlord_Text_Sign, MSGBOX_SIGN
 	end
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
@@ -44,11 +61,27 @@ UltraSpace_Guzzlord_Text_UBBack:
 	.string "GUZZLORD burps and keeps eating. You\n"
 	.string "were a snack. Barely.$"
 
-UltraSpace_Guzzlord_Text_Trash:
-	.string "It lives here. It likes it here. Please\n"
-	.string "stop looking at it like that.$"
+UltraSpace_Guzzlord_Text_Trubbish:
+	.string "TRUBBISH is going through the ruins of\n"
+	.string "the DEPARTMENT STORE.\p"
+	.string "It found a coupon. It expired the day\n"
+	.string "the world ended.$"
 
-UltraSpace_Guzzlord_Text_Junk:
-	.string "A pile of things GUZZLORD didn't finish.\n"
-	.string "There is a sock. There is always a sock.$"
+UltraSpace_Guzzlord_Text_Garbodor:
+	.string "GARBODOR is sitting where a house used\n"
+	.string "to be. It has never felt more at home.$"
+
+UltraSpace_Guzzlord_Text_Murkrow:
+	.string "MURKROW is perched on what is left of a\n"
+	.string "streetlight, waiting for the sequel.$"
+
+UltraSpace_Guzzlord_Text_Munchlax:
+	.string "MUNCHLAX is staring at GUZZLORD with\n"
+	.string "professional admiration.$"
+
+UltraSpace_Guzzlord_Text_Sign:
+	.string "LILYCOVE CITY Where the land ends and\n"
+	.string "the sea begins.\p"
+	.string "Someone has crossed it out and written:\n"
+	.string "“WHERE THE LAND ENDS.”$"
 

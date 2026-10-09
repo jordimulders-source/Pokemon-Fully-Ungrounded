@@ -357,3 +357,25 @@ const u16 gMetatileAttributes_UltraWorldKartanaGround[] = INCBIN_U16("data/tiles
 const u16 gMetatiles_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatiles.bin");
 const u16 gMetatileAttributes_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatile_attributes.bin");
 // } ultra_worlds_a
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py)
+const u16 gMetatiles_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatile_attributes.bin");
+const u16 gMetatiles_UltraBGuzzlordBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_guzzlord_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBGuzzlordBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_guzzlord_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBGuzzlord[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/metatiles.bin");
+const u16 gMetatileAttributes_UltraBGuzzlord[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/metatile_attributes.bin");
+const u16 gMetatiles_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_blacephalon_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_blacephalon_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatiles.bin");
+const u16 gMetatileAttributes_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatile_attributes.bin");
+// } ultra_worlds_b

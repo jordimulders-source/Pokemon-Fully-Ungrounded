@@ -1,5 +1,10 @@
 UltraSpace_Poipole_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, UltraSpace_Poipole_OnResume
 	.byte 0
+
+UltraSpace_Poipole_OnResume:
+	setstepcallback STEP_CB_ULTRA_WORLDS
+	end
 
 UltraSpace_Poipole_EventScript_Poipole::
 	lock
@@ -44,6 +49,14 @@ UltraSpace_Poipole_EventScript_Alien2::
 	msgbox UltraSpace_Poipole_Text_Alien2, MSGBOX_NPC
 	end
 
+UltraSpace_Poipole_EventScript_Clefairy::
+	msgbox UltraSpace_Poipole_Text_Clefairy, MSGBOX_NPC
+	end
+
+UltraSpace_Poipole_EventScript_Malamar::
+	msgbox UltraSpace_Poipole_Text_Malamar, MSGBOX_NPC
+	end
+
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 UltraSpace_Poipole_Text_PoipoleMon:
 	.string "POIPOLE: Beepu?\p"
@@ -77,10 +90,21 @@ UltraSpace_Poipole_Text_AlienAfter:
 
 UltraSpace_Poipole_Text_Alien1:
 	.string "BLEEP. WE COME IN PEACE. WE LEAVE IN\n"
-	.string "PIECES. LONG STORY.$"
+	.string "PIECES. LONG STORY.\p"
+	.string "THE SAUCER IS FINE. THE GROUND IS WHAT\n"
+	.string "CRASHED INTO US.$"
 
 UltraSpace_Poipole_Text_Alien2:
-	.string "YOUR CRYSTALS ARE DELICIOUS. DO NOT\n"
-	.string "LICK THE CRYSTALS.\p"
-	.string "WE ARE ALLOWED. WE HAVE THE PAPERWORK.$"
+	.string "DO NOT LOOK AT THE EYE IN THE SKY.\p"
+	.string "IT IS NOT A PLANET. WE ASKED. IT SAID\n"
+	.string "“NO”.$"
+
+UltraSpace_Poipole_Text_Clefairy:
+	.string "CLEFAIRY is dancing under the meteor\n"
+	.string "shower. It does not seem worried.\p"
+	.string "It has seen worse. It will not say what.$"
+
+UltraSpace_Poipole_Text_Malamar:
+	.string "MALAMAR is staring at you. Its eyes say\n"
+	.string "“turn back”. Its tentacles say “stay”.$"
 

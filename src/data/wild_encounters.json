@@ -11185,6 +11185,351 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_GUZZLORD",
+          "base_label": "gUltraSpaceGuzzlord",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GARBODOR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_HONCHKROW"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_SWALOT"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MUK"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MANDIBUZZ"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_HOUNDOOM"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_WEEZING"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BISHARP"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_SNORLAX"
+              },
+              {
+                "min_level": 91,
+                "max_level": 92,
+                "species": "SPECIES_HYDREIGON"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_STAKATAKA",
+          "base_label": "gUltraSpaceStakataka",
+          "land_mons": {
+            "encounter_rate": 6,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CLAYDOL"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GIGALITH"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_KLINKLANG"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_AEGISLASH"
+              },
+              {
+                "min_level": 66,
+                "max_level": 68,
+                "species": "SPECIES_NOSEPASS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_BLACEPHALON",
+          "base_label": "gUltraSpaceBlacephalon",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MR_MIME"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_HYPNO"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GRUMPIG"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MAGMORTAR"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GRIMMSNARL"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_CHANDELURE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_HATTERENE"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_WOBBUFFET"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_SPINDA"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_DELPHOX"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_MIMIKYU"
+              },
+              {
+                "min_level": 89,
+                "max_level": 90,
+                "species": "SPECIES_ZOROARK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_NECROZMA",
+          "base_label": "gUltraSpaceNecrozma",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CRYOGONAL"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_ESPEON"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GLIMMORA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_PORYGON_Z"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_AURORUS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GARDEVOIR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_UMBREON"
+              },
+              {
+                "min_level": 85,
+                "max_level": 87,
+                "species": "SPECIES_ORBEETLE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_MAGNEZONE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_BAXCALIBUR"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_MINIOR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ULTRA_SPACE_POIPOLE",
+          "base_label": "gUltraSpacePoipole",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_BEHEEYEM"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_CLEFABLE"
+              },
+              {
+                "min_level": 84,
+                "max_level": 86,
+                "species": "SPECIES_MINIOR"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_REUNICLUS"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_DUSKNOIR"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_ORBEETLE"
+              },
+              {
+                "min_level": 87,
+                "max_level": 89,
+                "species": "SPECIES_GENGAR"
+              },
+              {
+                "min_level": 86,
+                "max_level": 88,
+                "species": "SPECIES_GOLURK"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_SOLOSIS"
+              },
+              {
+                "min_level": 89,
+                "max_level": 90,
+                "species": "SPECIES_PORYGON_Z"
+              }
+            ]
+          }
         }
       ]
     },

@@ -76,23 +76,23 @@ UltraSpace_Hub_EventScript_ToKartana::
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToGuzzlord::
-	warp MAP_ULTRA_SPACE_GUZZLORD, 8, 16
+	warp MAP_ULTRA_SPACE_GUZZLORD, 38, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToPoipole::
-	warp MAP_ULTRA_SPACE_POIPOLE, 8, 12
+	warp MAP_ULTRA_SPACE_POIPOLE, 6, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToStakataka::
-	warp MAP_ULTRA_SPACE_STAKATAKA, 8, 9
+	warp MAP_ULTRA_SPACE_STAKATAKA, 20, 30
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToBlacephalon::
-	warp MAP_ULTRA_SPACE_BLACEPHALON, 2, 8
+	warp MAP_ULTRA_SPACE_BLACEPHALON, 20, 28
 	waitstate
 	end
 UltraSpace_Hub_EventScript_ToNecrozma::
-	warp MAP_ULTRA_SPACE_NECROZMA, 13, 17
+	warp MAP_ULTRA_SPACE_NECROZMA, 21, 28
 	waitstate
 	end
 

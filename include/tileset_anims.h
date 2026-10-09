@@ -40,5 +40,12 @@ void InitTilesetAnim_UltraWorldPheromosa(void);
 void InitTilesetAnim_UltraWorldXurkitree(void);
 void InitTilesetAnim_UltraWorldKartana(void);
 // } ultra_worlds_a
+// ultra_worlds_b {
+void InitTilesetAnim_UltraBStakataka(void);
+void InitTilesetAnim_UltraBNecrozma(void);
+void InitTilesetAnim_UltraBGuzzlord(void);
+void InitTilesetAnim_UltraBBlacephalon(void);
+void InitTilesetAnim_UltraBPoipole(void);
+// } ultra_worlds_b
 
 #endif // GUARD_TILESET_ANIMS_H

@@ -1633,94 +1633,6 @@ const struct Tileset gTileset_SpearPillar = // Project Grounded: Spear Pillar + 
 };
 
 // ultra_space { (tools/grounded/maptools/ultra_space.py: Ultra Space, tiles/metatiles van de basistileset met eigen paletten)
-const struct Tileset gTileset_UltraGuzzlord =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_MeteorSpace,
-    .palettes = gTilesetPalettes_UltraGuzzlord,
-    .metatiles = gMetatiles_MeteorSpace,
-    .metatileAttributes = gMetatileAttributes_MeteorSpace,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_UltraPoipoleBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_General,
-    .palettes = gTilesetPalettes_UltraPoipoleBase,
-    .metatiles = gMetatiles_General,
-    .metatileAttributes = gMetatileAttributes_General,
-    .callback = InitTilesetAnim_General,
-};
-
-const struct Tileset gTileset_UltraPoipole =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Cave,
-    .palettes = gTilesetPalettes_UltraPoipole,
-    .metatiles = gMetatiles_Cave,
-    .metatileAttributes = gMetatileAttributes_Cave,
-    .callback = InitTilesetAnim_Cave,
-};
-
-const struct Tileset gTileset_UltraStakatakaBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_General,
-    .palettes = gTilesetPalettes_UltraStakatakaBase,
-    .metatiles = gMetatiles_General,
-    .metatileAttributes = gMetatileAttributes_General,
-    .callback = InitTilesetAnim_General,
-};
-
-const struct Tileset gTileset_UltraStakataka =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Cave,
-    .palettes = gTilesetPalettes_UltraStakataka,
-    .metatiles = gMetatiles_Cave,
-    .metatileAttributes = gMetatileAttributes_Cave,
-    .callback = InitTilesetAnim_Cave,
-};
-
-const struct Tileset gTileset_UltraBlacephalonBase =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_InsideBuilding,
-    .palettes = gTilesetPalettes_UltraBlacephalonBase,
-    .metatiles = gMetatiles_InsideBuilding,
-    .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
-};
-
-const struct Tileset gTileset_UltraBlacephalon =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_BattleDome,
-    .palettes = gTilesetPalettes_UltraBlacephalon,
-    .metatiles = gMetatiles_BattleDome,
-    .metatileAttributes = gMetatileAttributes_BattleDome,
-    .callback = InitTilesetAnim_BattleDome,
-};
-
-const struct Tileset gTileset_UltraNecrozma =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_MeteorSpace,
-    .palettes = gTilesetPalettes_UltraNecrozma,
-    .metatiles = gMetatiles_MeteorSpace,
-    .metatileAttributes = gMetatileAttributes_MeteorSpace,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_UltraHub =
 {
     .isCompressed = TRUE,
@@ -1867,3 +1779,116 @@ const struct Tileset gTileset_UltraWorldKartana =
     .callback = InitTilesetAnim_UltraWorldKartana,
 };
 // } ultra_worlds_a
+
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py)
+const struct Tileset gTileset_UltraBStakatakaBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBStakatakaBase,
+    .palettes = gTilesetPalettes_UltraBStakatakaBase,
+    .metatiles = gMetatiles_UltraBStakatakaBase,
+    .metatileAttributes = gMetatileAttributes_UltraBStakatakaBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBStakataka =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBStakataka,
+    .palettes = gTilesetPalettes_UltraBStakataka,
+    .metatiles = gMetatiles_UltraBStakataka,
+    .metatileAttributes = gMetatileAttributes_UltraBStakataka,
+    .callback = InitTilesetAnim_UltraBStakataka,
+};
+
+const struct Tileset gTileset_UltraBNecrozmaBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBNecrozmaBase,
+    .palettes = gTilesetPalettes_UltraBNecrozmaBase,
+    .metatiles = gMetatiles_UltraBNecrozmaBase,
+    .metatileAttributes = gMetatileAttributes_UltraBNecrozmaBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBNecrozma =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBNecrozma,
+    .palettes = gTilesetPalettes_UltraBNecrozma,
+    .metatiles = gMetatiles_UltraBNecrozma,
+    .metatileAttributes = gMetatileAttributes_UltraBNecrozma,
+    .callback = InitTilesetAnim_UltraBNecrozma,
+};
+
+const struct Tileset gTileset_UltraBGuzzlordBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBGuzzlordBase,
+    .palettes = gTilesetPalettes_UltraBGuzzlordBase,
+    .metatiles = gMetatiles_UltraBGuzzlordBase,
+    .metatileAttributes = gMetatileAttributes_UltraBGuzzlordBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBGuzzlord =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBGuzzlord,
+    .palettes = gTilesetPalettes_UltraBGuzzlord,
+    .metatiles = gMetatiles_UltraBGuzzlord,
+    .metatileAttributes = gMetatileAttributes_UltraBGuzzlord,
+    .callback = InitTilesetAnim_UltraBGuzzlord,
+};
+
+const struct Tileset gTileset_UltraBBlacephalonBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBBlacephalonBase,
+    .palettes = gTilesetPalettes_UltraBBlacephalonBase,
+    .metatiles = gMetatiles_UltraBBlacephalonBase,
+    .metatileAttributes = gMetatileAttributes_UltraBBlacephalonBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBBlacephalon =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBBlacephalon,
+    .palettes = gTilesetPalettes_UltraBBlacephalon,
+    .metatiles = gMetatiles_UltraBBlacephalon,
+    .metatileAttributes = gMetatileAttributes_UltraBBlacephalon,
+    .callback = InitTilesetAnim_UltraBBlacephalon,
+};
+
+const struct Tileset gTileset_UltraBPoipoleBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_UltraBPoipoleBase,
+    .palettes = gTilesetPalettes_UltraBPoipoleBase,
+    .metatiles = gMetatiles_UltraBPoipoleBase,
+    .metatileAttributes = gMetatileAttributes_UltraBPoipoleBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_UltraBPoipole =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_UltraBPoipole,
+    .palettes = gTilesetPalettes_UltraBPoipole,
+    .metatiles = gMetatiles_UltraBPoipole,
+    .metatileAttributes = gMetatileAttributes_UltraBPoipole,
+    .callback = InitTilesetAnim_UltraBPoipole,
+};
+
+// } ultra_worlds_b

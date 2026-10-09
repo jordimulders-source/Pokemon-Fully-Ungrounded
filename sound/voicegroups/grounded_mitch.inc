@@ -39,23 +39,23 @@ voice_group grounded_mitch
 	voice_directsound 60, 0, DirectSoundWaveData_mitch5_wob_c2, 255, 0, 255, 170  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_mitch5_wob_db2, 255, 0, 255, 170  @ 36
 	voice_directsound 60, 0, DirectSoundWaveData_mitch5_wob_eb2, 255, 0, 255, 170  @ 37
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_lo, 255, 0, 255, 160  @ 38
-	voice_directsound 60, 0, DirectSoundWaveData_mitch3_brass_hi, 255, 0, 255, 160  @ 39
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 38
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115  @ 39
 	voice_directsound 60, 0, DirectSoundWaveData_mitch3_pluck, 255, 0, 255, 150  @ 40
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_min, 40, 0, 255, 200  @ 41
 	voice_directsound 60, 0, DirectSoundWaveData_mitch_pad_maj, 40, 0, 255, 200  @ 42
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 52
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 53
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
+	voice_directsound 53, 0, DirectSoundWaveData_mitch6b_brass_53, 255, 248, 200, 160  @ 43
+	voice_directsound 55, 0, DirectSoundWaveData_mitch6b_brass_55, 255, 248, 200, 160  @ 44
+	voice_directsound 56, 0, DirectSoundWaveData_mitch6b_brass_56, 255, 248, 200, 160  @ 45
+	voice_directsound 58, 0, DirectSoundWaveData_mitch6b_brass_58, 255, 248, 200, 160  @ 46
+	voice_directsound 60, 0, DirectSoundWaveData_mitch6b_brass_60, 255, 248, 200, 160  @ 47
+	voice_directsound 61, 0, DirectSoundWaveData_mitch6b_brass_61, 255, 248, 200, 160  @ 48
+	voice_directsound 63, 0, DirectSoundWaveData_mitch6b_brass_63, 255, 248, 200, 160  @ 49
+	voice_directsound 64, 0, DirectSoundWaveData_mitch6b_brass_64, 255, 248, 200, 160  @ 50
+	voice_directsound 65, 0, DirectSoundWaveData_mitch6b_brass_65, 255, 248, 200, 160  @ 51
+	voice_directsound 67, 0, DirectSoundWaveData_mitch6b_brass_67, 255, 248, 200, 160  @ 52
+	voice_directsound 68, 0, DirectSoundWaveData_mitch6b_brass_68, 255, 248, 200, 160  @ 53
+	voice_directsound 72, 0, DirectSoundWaveData_mitch6b_brass_72, 255, 248, 200, 160  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57

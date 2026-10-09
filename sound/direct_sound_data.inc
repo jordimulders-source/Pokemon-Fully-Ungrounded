@@ -6695,14 +6695,6 @@ DirectSoundWaveData_mitch3_ghost::
 	.incbin "sound/direct_sound_samples/grounded/mitch3_ghost.bin"
 
 	.align 2
-DirectSoundWaveData_mitch3_brass_lo::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_lo.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_brass_hi::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_hi.bin"
-
-	.align 2
 DirectSoundWaveData_mitch3_pluck::
 	.incbin "sound/direct_sound_samples/grounded/mitch3_pluck.bin"
 
@@ -7369,3 +7361,99 @@ DirectSoundWaveData_hoopa_bendir::
 	.align 2
 DirectSoundWaveData_hoopa_zill::
 	.incbin "sound/direct_sound_samples/grounded/hoopa_zill.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_53::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_53.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_55::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_55.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_56::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_56.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_58::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_58.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_60::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_60.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_61::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_61.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_63::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_63.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_64::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_64.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_65::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_65.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_67::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_67.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_68::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_68.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6a_brass_72::
+	.incbin "sound/direct_sound_samples/grounded/mitch6a_brass_72.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_53::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_53.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_55::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_55.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_56::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_56.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_58::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_58.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_60::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_60.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_61::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_61.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_63::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_63.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_64::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_64.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_65::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_65.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_67::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_67.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_68::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_68.bin"
+
+	.align 2
+DirectSoundWaveData_mitch6b_brass_72::
+	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_72.bin"

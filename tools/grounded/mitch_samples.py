@@ -53,6 +53,10 @@ v5 (Jordi over v4: '95%; bas moet baas zijn, lead zachter, kick/snare harder, dr
       twee rondes zachte begrenzing (lagere crest = luider bij dezelfde piek).
   mitch5_wob_<noot> : de v4-wobble met een vollere grondtoon (0,7 i.p.v. 0,5), minder highpass (80 i.p.v. 110 Hz),
       een iets kleinere 1,5 kHz-snijband en drie rondes begrenzing: zwaarder in het laag/laag-midden en luider.
+v6 (Mitch over v5: 'die horn klinkt heel low quality; probeer hem screechy/high pitched zoals de E4-theme'):
+  mitch6a_brass_<noot> / mitch6b_brass_<noot> : één koperstoot per lead-noot (F3-C5) op 21.024 Hz (= mixfrequentie,
+      dus niet getransponeerd), vervorming op 8x, FluidR3-aanzet + loop uit de harmonischen (zie brass6). a = de
+      v3-v5-klank (61 + 62 in octaven) schoon; b = E4-trompet (56) een octaaf hoger + body. Vervangen mitch3_brass_lo/hi.
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
 Gebruik: python3 tools/grounded/mitch_samples.py"""
 import os, subprocess, sys, tempfile, wave
@@ -421,6 +425,59 @@ def brass3(notes, key, rate=22050, dur=0.34):
     return fade_out(norm(a), rate, 0.05), rate
 
 
+MIX = 21024             # mixfrequentie van de game (src/m4a.c): een sample op deze rate op zijn eigen noot = stap 1
+BRASS6_NOTES = (53, 55, 56, 58, 60, 61, 63, 64, 65, 67, 68, 72)   # alle koperlead-noten van mitch_theme.py (F3-C5)
+BRASS6 = {   # variant -> lagen (GM-programma, octaaf t.o.v. de geschreven noot, gain), drive, highpass
+    # A: dezelfde klank als v3-v5 (brass section 61 + synth brass 62 in octaven, geschreven noot = bovenste), schoon
+    'a': (((61, -12, 1.0), (62, -12, 0.6), (61, 0, 1.0), (62, 0, 0.6)), 1.8, 110.0),
+    # B: à la Elite Four (sc88pro-trompet = hetzelfde spectrum als FluidR3-trompet 56): een octaaf hoger trompet
+    #    bovenop, de geschreven noot als body (trompet + brass section), feller vervormd
+    'b': (((56, 12, 1.0), (56, 0, 0.5), (61, 0, 0.4)), 2.6, 160.0),
+}
+
+
+def brass6(variant, note, rate=MIX):
+    """v6 (Mitch: 'die horn sound klinkt heel low quality'): één sample per lead-noot op de mixfrequentie, zodat de
+    game niets transponeert (v3: één Eb4-sample op 22.050 Hz tot C5 omhoog = x1,7: alles boven ±6 kHz vouwde terug).
+    Vervorming op 8x de samplerate (geen aliasing), daarna lowpass 8,5 kHz; geen ingebakken uitsterving (een 8-bit
+    staart die naar 0 zakt = korrelig) maar aanslag + korte loop op vol niveau, de envelope doet de voicegroup."""
+    from scipy.signal import resample_poly
+    layers, drive, hp = BRASS6[variant]
+    dur = 0.45
+    m = int(dur * 44100)
+    a = np.zeros(m)
+    for prog, octv, g in layers:
+        x = render(prog, [note + octv], dur, vel=124)[:m]
+        a[:len(x)] += g * x
+    up = resample_poly(a, 8, 1)                                   # 352,8 kHz
+    up = np.tanh(drive * norm(up))
+    up = sosfilt(butter(8, 8500, 'lowpass', fs=44100 * 8, output='sos'), up)
+    a = resample_poly(up, 584, 1225 * 8)                          # 44.100 x 584/1225 = 21.024 Hz
+    a = sosfilt(butter(2, hp, 'highpass', fs=rate, output='sos'), a)
+    # aanslag = de echte FluidR3-aanzet (60 ms); daarna een strikt periodieke loop, opnieuw opgebouwd uit de
+    # harmonischen van het aangehouden deel (amplitude en fase, 80-300 ms). Een loop van een paar 'echte' perioden
+    # zoemt: de perioden verschillen (aanzet, ensemble), en dat geeft energie tussen de harmonischen.
+    f0 = hz(note + min(o for _, o, _ in layers))
+    m = min(range(1, 9), key=lambda m: abs(m * rate / f0 - round(m * rate / f0)) / m)
+    P = int(round(m * rate / f0))
+    f0 = m * rate / P                                             # exact P samples per m perioden (< 2 cent)
+    t = np.arange(len(a)) / rate
+    w0, w1 = int(0.08 * rate), int(0.30 * rate)
+    seg, ts = a[w0:w1], t[w0:w1]
+    win = np.hanning(len(seg))
+    syn = np.zeros(len(a))
+    for j in range(1, int(9000 / f0) + 1):
+        c = 2 * np.sum(win * seg * np.exp(-2j * np.pi * j * f0 * ts)) / np.sum(win)
+        syn += np.real(c * np.exp(2j * np.pi * j * f0 * t))
+    x0, x1 = int(0.04 * rate), int(0.07 * rate)                  # overvloeien van de echte aanzet naar de loop
+    xf = np.clip((np.arange(len(a)) - x0) / (x1 - x0), 0, 1)
+    out = a * (1 - xf) + syn * xf
+    s = x1
+    e = s + P * max(1, int(np.ceil(0.02 * rate / P)))
+    a = out[:e]
+    return norm(a), rate, note, (s, e)
+
+
 def pluck3(rate=22050, dur=0.3):
     """Donkere pluk op C4: twee ontstemde zaagtanden, lowpass-envelope 2,4 kHz -> 350 Hz."""
     t = np.arange(int(rate * dur)) / rate
@@ -598,8 +655,7 @@ def main():
     jobs['mitch_ride'] = (fade_out(a, 22050, 0.3), 22050, 60, None)
     # ---- v3
     a, r = snare3(ghost=True); jobs['mitch3_ghost'] = (a, r, 60, None)
-    a, r = brass3([41, 53], 53); jobs['mitch3_brass_lo'] = (a, r, 53, None)
-    a, r = brass3([51, 63], 63); jobs['mitch3_brass_hi'] = (a, r, 63, None)
+    # mitch3_brass_lo/hi (v3-v5) zijn in v6 vervangen door brass6 (zie hieronder)
     a, r = pluck3(); jobs['mitch3_pluck'] = (a, r, 60, None)
     # ---- v5 (Jordi over v4: 'bas moet baas zijn'): luidere, vollere bas en wobble; hardere kick en snare
     a, r = kick5(); jobs['mitch5_kick'] = (a, r, 60, None)
@@ -612,6 +668,10 @@ def main():
     for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
         a, r = wob4(note, 256 if note < 36 else 192, fund=0.7, hp=80.0, cutband=1.3, rounds=3)
         jobs['mitch5_wob_' + nm] = (a, r, note, (0, len(a)))
+    # ---- v6 (Mitch over v5: 'horn klinkt low quality; probeer hem screechy/hoger zoals de E4-theme'): A en B
+    for v in BRASS6:
+        for note in BRASS6_NOTES:
+            jobs['mitch6%s_brass_%d' % (v, note)] = brass6(v, note)
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

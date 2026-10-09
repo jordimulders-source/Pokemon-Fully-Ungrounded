@@ -52,8 +52,18 @@ ruis-crack ±1,4x, tanh x11, gate na 40 ms; RMS +3 dB); hihats 88 -> 76, bekkens
 50 -> 44. (3) Ducking korter en dieper: snare 10 -> 50 -> 100% in 10 ticks, kick 15 -> 55 -> 100% (1-2 frames).
 Balans afgesteld met solo-opnames in de game (recpcm, volX = 0) en offline gemengd met gains (lineair, gecontroleerd:
 som van de solo's = de mix, r = 0,996); zie MUZIEK.md (Log, Mitch v5). midi.cfg -V066 (Jordi hoorde v4 op -V070).
+v6 (Mitch zelf: 'die horn sound klinkt heel low quality ... maak hem misschien meer screechy/high pitched zoals de
+E4 theme'): noten, ritme, vorm, wobbles en mix exact v5; alleen het koper is nieuw (mitch_samples.py, brass6). Eén
+sample per lead-noot (F3-C5, 12 stuks) op de mixfrequentie 21.024 Hz, zodat de game niets transponeert (v5: één
+Eb4-sample op 22.050 Hz tot C5 omhoog: alles boven ±6 kHz vouwde terug), vervorming op 8x de samplerate, aanzet uit
+FluidR3 + een strikt periodieke loop (geen 8-bit-staart die naar 0 korrelt); de envelope zit in de voicegroup.
+Ruis/aliasing in de toon (gesimuleerde GBA-weergave, 8 bit + lineaire interpolatie): v5 -10..-15 dB, v6 -27..-31 dB.
+Twee varianten (BRASS_VARIANT): 'a' = dezelfde klank als v5 maar schoon; 'b' (standaard) = à la Elite Four: de
+sc88pro-trompet uit vs_elite_four heeft hetzelfde spectrum als FluidR3-trompet 56 (vlak tot de 8e harmonische),
+die een octaaf hoger bovenop (E4 speelt zijn hoorns rond D5-Bb5), de geschreven noot als body, feller vervormd
+(zwaartepunt ±1,1-1,8 kHz i.p.v. 0,4-1,5 kHz).
 Zie tools/grounded/MUZIEK.md.
-Gebruik: python3 tools/grounded/mitch_theme.py"""
+Gebruik: python3 tools/grounded/mitch_theme.py [a|b]"""
 import os, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -70,7 +80,11 @@ MAX_VOICES = 10              # gewone trainer
 # programma's (voicegroup grounded_mitch)
 REESE = {'raw': 32, 'dark': 33}
 WOB = {29: 34, 36: 35, 37: 36, 39: 37}                    # grondtoon -> wobble-sample (172 bpm)
-BRASS_LO, BRASS_HI, PLUCK, PAD_MIN, PAD_MAJ = 38, 39, 40, 41, 42
+PLUCK, PAD_MIN, PAD_MAJ = 40, 41, 42
+# v6: koper = één sample per noot (mitch6<variant>_brass_<noot>, programma 43-54); 38/39 (v3-v5) zijn weg
+BRASS_VARIANT = sys.argv[1] if len(sys.argv) > 1 else 'b'
+BRASS_NOTES = (53, 55, 56, 58, 60, 61, 63, 64, 65, 67, 68, 72)          # = BRASS6_NOTES in mitch_samples.py
+BRASS_PROG = {nt: 43 + i for i, nt in enumerate(BRASS_NOTES)}
 SUB, RISER, DRUMS = 84, 121, 127
 # drumkit (drumsets/mitch.inc, vanaf 36): naam, sample, release, lengte (ticks; ±de samplelengte)
 KIT = [
@@ -101,7 +115,7 @@ DROP_CH = ['Fm', 'Fm', 'Db', 'Eb', 'Fm', 'Fm', 'Db', 'C']
 BASS_ROOT = {'Fm': 'F1', 'Db': 'Db2', 'Eb': 'Eb2', 'C': 'C2'}
 # v5: lead (koper) -25%, reese/wobble/sub luider, arpeggio/pad/hihats/bekkens iets terug (v4: reese 80, wob 118,
 # brass 92, arp 52, pad 50, sub 60, hats 88, cym 84)
-VOL = {'reese': 60, 'wob': 110, 'brass': 69, 'arp': 44, 'pad': 44, 'sub': 84, 'hats': 76, 'cym': 72}
+VOL = {'reese': 60, 'wob': 110, 'brass': 69 if BRASS_VARIANT == 'b' else 86, 'arp': 44, 'pad': 44, 'sub': 84, 'hats': 76, 'cym': 72}
 # v5: korter en dieper (1-2 frames; 1 frame = 4,6 ticks op 172 bpm). v4: snare 20->50->80->100% in 32 ticks,
 # kick 30->60->85->100% in 26 ticks
 DUCK = [(0, 0.10), (5, 0.50), (10, 1.0)]                                 # ducking na elke snare (ticks, factor)
@@ -204,7 +218,7 @@ def build():
             nt = n(nm) + oct
             st = t(b, p)
             P['brass'].append([st, st + (S + 8 if ln < 3 else 2 * S), nt, vel if p % 4 != 0 else min(127, vel + 3)])
-            prog['brass'].append((st, BRASS_LO if nt < n('Bb3') else BRASS_HI))
+            prog['brass'].append((st, BRASS_PROG[nt]))
 
     def arp(b, ch, vel=96):
         r = n(CHORDS[ch][0] + '3')
@@ -261,7 +275,7 @@ def build():
         for i, nm in enumerate(['Db4', 'Db4', 'C4', 'C4']):
             for p in ((0, 3, 6), (0, 3, 6), (0, 3, 6, 8, 11, 14), (0, 2, 4, 6, 8, 10))[i]:
                 P['brass'].append([t(b + i, p), t(b + i, p) + S + 8, n(nm), 108 + 5 * i])
-                prog['brass'].append((t(b + i, p), BRASS_HI))
+                prog['brass'].append((t(b + i, p), BRASS_PROG[n(nm)]))
         # reese: Db lang, dan C die over twee maten een octaaf opstijgt (de riser); sub mee tot de stilte
         reese(t(b), t(b + 2) - 8, n('Db2'), 'dark', 16, 110)
         sub(t(b), t(b + 2) - 8, n('Db2'), 104)
@@ -430,7 +444,7 @@ def main():
     layout = [  # naam, noten, programma, volume, kanaal, pan, ccs, extra
         ('reese', P['reese'], first(prog_['reese'], REESE['dark']), VOL['reese'], 0, 64,
          progs(prog_['reese']) + reese_ccs, reese_bends(P['reese'], bendev)),
-        ('brass', P['brass'], first(prog_['brass'], BRASS_LO), VOL['brass'], 1, 60,
+        ('brass', P['brass'], first(prog_['brass'], BRASS_PROG[53]), VOL['brass'], 1, 60,
          progs(prog_['brass']) + duck_ccs(VOL['brass'], snares, kicks), ()),
         ('arp', P['arp'], PLUCK, VOL['arp'], 2, 84, duck_ccs(VOL['arp'], snares, kicks), ()),
         ('pad', P['pad'], PAD_MIN, VOL['pad'], 3, 44, progs(prog_['pad']) + duck_ccs(VOL['pad'], snares, kicks), ()),
@@ -466,8 +480,10 @@ def write_voicegroup():
         32: ds('mitch5_reese_raw', 160), 33: ds('mitch5_reese_raw_dark', 160),
         34: ds('mitch5_wob_f1', 170), 35: ds('mitch5_wob_c2', 170), 36: ds('mitch5_wob_db2', 170),
         37: ds('mitch5_wob_eb2', 170),
-        38: ds('mitch3_brass_lo', 160), 39: ds('mitch3_brass_hi', 160), 40: ds('mitch3_pluck', 150),
+        40: ds('mitch3_pluck', 150),
         41: ds('mitch_pad_min', 200, att=40), 42: ds('mitch_pad_maj', 200, att=40),
+        **{pr: ds('mitch6%s_brass_%d' % (BRASS_VARIANT, nt), 160, key=nt, dec=248, sus=200)
+           for nt, pr in BRASS_PROG.items()},
         84: '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1',
         121: '\tvoice_noise_alt 60, 0, 0, 3, 0, 15, 2',
         127: '\tvoice_keysplit_all voicegroup_mitch_drumset',

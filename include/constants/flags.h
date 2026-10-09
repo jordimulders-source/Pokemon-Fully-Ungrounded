@@ -1791,7 +1791,7 @@
 #define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
 // }
 // dex_check { (met de hand, tools/grounded/dex_check.py; FLAG_GROUNDED 1580-1619: 1580-1583 nieuwe items (blok nieuwe_items), 1584 Memories, 1585-1619 nog vrij)
-#define FLAG_RECEIVED_SILVALLY_MEMORIES                  FLAG_GROUNDED(1584) // Project Grounded: Devon Corp 2F: de ontbrekende Silvally-Memories gekregen (na Type: Null)
+#define FLAG_RECEIVED_SILVALLY_MEMORIES                  FLAG_GROUNDED(1584) // Project Grounded: Devon Corp 2F: zes prototype-battle items gekregen (na Type: Null; was de Silvally-Memories, die zijn nu te koop voor BP)
 // }
 // nieuwe_items { (tools/grounded/maptools/nieuwe_items.py; FLAG_GROUNDED 840-879, items die nergens anders liggen)
 #define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_LURE_BALL   FLAG_GROUNDED(840) // Project Grounded: diepzeetrog: Lure Balls
@@ -1880,6 +1880,7 @@
 #define FLAG_ITEM_ULTRA_SPACE_BUZZWOLE_FIGHTING_MEMORY   FLAG_GROUNDED(1464) // Project Grounded: Ultra Space, sportschool: Fighting Memory
 #define FLAG_HIDDEN_ITEM_ULTRA_SPACE_STAKATAKA_STEEL_MEMORY FLAG_GROUNDED(1465) // Project Grounded: Ultra Space, muur: verborgen Steel Memory
 #define FLAG_ITEM_ULTRA_SPACE_GUZZLORD_DARK_GEM          FLAG_GROUNDED(1466) // Project Grounded: Ultra Space, afvalvlakte: Dark Gems
+#define FLAG_ITEM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP_RED_NECTAR FLAG_GROUNDED(1620) // Project Grounded: Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)
@@ -2155,6 +2156,10 @@
 #define FLAG_HIDE_LEGENDS_DIANCIE                        FLAG_GROUNDED(1538) // Project Grounded: verbergt Diancie (ON_TRANSITION)
 #define FLAG_HIDE_LEGENDS_CARBINK                        FLAG_GROUNDED(1539) // Project Grounded: verbergt de twee Carbink naast Diancie (ON_TRANSITION, alleen post-game zichtbaar)
 #define FLAG_HIDE_LEGENDS_POKE_FLUTE                     FLAG_GROUNDED(1540) // Project Grounded: verbergt de Poke Flute naast Snorlax (ON_TRANSITION, alleen post-game)
+// }
+// marshadow { (met de hand; Keccles op het Battle Frontier-eiland + Marshadow; FLAG_GROUNDED 1541-1549, 1543-1549 nog vrij)
+#define FLAG_HIDE_FRONTIER_KECCLES                       FLAG_GROUNDED(1541) // Project Grounded: Battle Frontier (oost): Keccles verslagen en vertrokken (verbergt hem)
+#define FLAG_RECEIVED_MARSHADOW                          FLAG_GROUNDED(1542) // Project Grounded: Marshadow sprong uit je schaduw en kwam in je team (Keccles-gevecht, Battle Frontier)
 // }
 // ultra_space { (tools/grounded/maptools/ultra_space.py, src/ultra_space.c; FLAG_GROUNDED 1440-1519: 1440-1450 Ultra Beasts/Necrozma, 1451-1459 Cosmog/Solrock-Lunatone, 1460-1479 nieuwe items (blok nieuwe_items), 1480-1519 nog vrij)
 #define FLAG_ULTRA_NIHILEGO                     FLAG_GROUNDED(1440) // Project Grounded: Ultra Space: Nihilego gevangen (verbergt het object, portaal slaat de plek over)

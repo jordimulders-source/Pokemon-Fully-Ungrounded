@@ -25956,17 +25956,81 @@ Bulbasaur
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+=== TRAINER_KECCLES_FRONTIER ===
+Name: KECCLES
+Class: Rival
+Pic: Kecleon
 Gender: Male
 Music: Male
 Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
+Mugshot: Green
 
-Groudon
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heliolisk @ Choice Specs
+Level: 85
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunderbolt
+- Hyper Voice
+- Grass Knot
+- Volt Switch
+
+Tropius @ Sitrus Berry
+Level: 85
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 128 Def / 128 SpD
+Nature: Bold
+- Air Slash
+- Leech Seed
+- Substitute
+- Synthesis
+
+Clodsire @ Black Sludge
+Level: 85
+Ability: Unaware
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Careful
+- Poison Jab
+- Earthquake
+- Toxic Spikes
+- Recover
+
+Charizard @ Charcoal
+Level: 85
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Air Slash
+- Focus Blast
+- Roost
+
+Serperior @ Leftovers
+Level: 85
+Ability: Contrary
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Protect
+
+Salazzle @ Focus Sash
+Level: 87
+Ability: Corrosion
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Fake Out
+- Sludge Bomb
+- Flamethrower
+- Nasty Plot
 
 === TRAINER_SICKBLIK_BEACH ===
 Name: SickBlik

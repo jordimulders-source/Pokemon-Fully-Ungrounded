@@ -210,6 +210,9 @@ HINTS = [
      "ROUTE 123. A SNORLAX is asleep on the BERRY MASTER's fields. Bring something to wake it up. Bring an encore."),
     ('ZYGARDE', None,
      "Life and death are settled? Then order comes to check. The DESERT UNDERPASS, middle of the tunnels."),
+    ('MARSHADOW', 'FLAG_RECEIVED_MARSHADOW',
+     "Someone in the BATTLE FRONTIER has been studying a SUDOWOODO, invisibly. Bring a DEVON SCOPE. Bring your "
+     "shadow too; it has opinions."),
     ('PECHARUNT', None,
      "YOSHI'S ISLAND, the hills. A tiny stall sells mochi. Don't eat the mochi."),
     ('DIALGA', 'FLAG_CORONET_DIALGA_DONE',

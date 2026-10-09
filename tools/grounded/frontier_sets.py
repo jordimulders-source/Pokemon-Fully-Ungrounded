@@ -46,7 +46,7 @@ FILES = [
     'src/data/battle_frontier/trainer_hill.h',
 ]
 
-REMOVED = {'PANSAGE', 'SIMISAGE', 'PANSEAR', 'SIMISEAR', 'PANPOUR', 'SIMIPOUR'}
+REMOVED = set()  # elemental monkeys zijn sinds 9 okt weer in de game
 
 # Moves die in dit project van type/categorie veranderden maar in sets geen onzin opleveren (handmatig beoordeeld).
 REVISION_OK = set()

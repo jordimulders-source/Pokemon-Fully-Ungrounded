@@ -24,8 +24,8 @@ import json, os, re, subprocess, sys, collections
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 OUT_JSON = os.path.join(REPO, 'tools/grounded/dex_beschikbaar.json')
 
-# Bewust weggelaten (CLAUDE.md)
-WEGGELATEN = {'SPECIES_PANSAGE', 'SPECIES_SIMISAGE', 'SPECIES_PANSEAR', 'SPECIES_SIMISEAR', 'SPECIES_PANPOUR', 'SPECIES_SIMIPOUR'}
+# Bewust weggelaten (CLAUDE.md). De elemental monkeys mogen sinds 9 okt op routes (Jordi): leeg.
+WEGGELATEN = set()
 # Wordt nu door andere agents gebouwd (9 okt); apart rapporteren
 IN_DE_MAAK = {
     'SPECIES_ARTICUNO', 'SPECIES_ZAPDOS', 'SPECIES_MOLTRES', 'SPECIES_ARTICUNO_GALAR', 'SPECIES_ZAPDOS_GALAR',
@@ -33,11 +33,11 @@ IN_DE_MAAK = {
     'SPECIES_NIHILEGO', 'SPECIES_BUZZWOLE', 'SPECIES_PHEROMOSA', 'SPECIES_XURKITREE', 'SPECIES_CELESTEELA',
     'SPECIES_KARTANA', 'SPECIES_GUZZLORD', 'SPECIES_POIPOLE', 'SPECIES_NAGANADEL', 'SPECIES_STAKATAKA',
     'SPECIES_BLACEPHALON', 'SPECIES_NECROZMA', 'SPECIES_COSMOG', 'SPECIES_COSMOEM', 'SPECIES_SOLGALEO',
-    'SPECIES_LUNALA', 'SPECIES_MARSHADOW',
+    'SPECIES_LUNALA',
 }
 ITEM_C_SOURCES = ['src/floating_market.c', 'src/fishing_tournament.c', 'src/apricorn_tree.c', 'src/new_game.c',
                   'src/data/battle_frontier/battle_frontier_exchange_corner.h', 'src/data/battle_frontier/trainer_hill.h',
-                  'src/battle_casino.c', 'src/gen1_ghost.c']
+                  'src/battle_casino.c', 'src/gen1_ghost.c', 'src/bp_shop.c']
 INCENSE = {'SPECIES_MUNCHLAX': 'ITEM_FULL_INCENSE', 'SPECIES_HAPPINY': 'ITEM_LUCK_INCENSE', 'SPECIES_MIME_JR': 'ITEM_ODD_INCENSE',
            'SPECIES_BONSLY': 'ITEM_ROCK_INCENSE', 'SPECIES_MANTYKE': 'ITEM_WAVE_INCENSE', 'SPECIES_CHINGLING': 'ITEM_PURE_INCENSE',
            'SPECIES_BUDEW': 'ITEM_ROSE_INCENSE', 'SPECIES_AZURILL': 'ITEM_SEA_INCENSE', 'SPECIES_WYNAUT': 'ITEM_LAX_INCENSE'}

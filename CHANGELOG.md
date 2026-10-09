@@ -17863,3 +17863,30 @@ Volgens Jordi's GBA-instructies per leider:
 - **Prof. Cozmo** (Fallarbor) geeft post-game **Cosmog**. Cosmoem wordt **Solgaleo** als je Solrock eerder ving dan Lunatone, **Lunala** andersom, willekeurig als je geen van beide hebt. Laat je Cozmo de geëvolueerde vorm zien, dan krijg je een tweede Cosmog die de andere wordt.
 - Items: N-Solarizer, N-Lunarizer, Poison/Electric/Fighting/Steel Memory, Dark Gems. De Azure Flute telt nu ook de UB's, Cosmog, Solgaleo en Lunala mee (98 soorten) — dus ook die zijn nodig voor de Hall of Origin. Placeholder-muziek en -transities.
 - `tools/grounded/dex_check.py`: alle soorten en regionale vormen te krijgen, op Marshadow na (komt bij het Keccles-gevecht).
+
+### [v0.9.222] - Wilde tabellen: apen terug, legendaries eruit, betere spreiding
+- **Elemental monkeys** in de wereld: Pansage in Fortree Jungle, Panpour op Route 119, Pansear in de Fiery Path (elk 10%, bij de bijbehorende steen), Simisage/Simisear/Simipour post-game (Yoshi's Island, Steam Island). De NPC in het Petalburg Pokémon Center die ze miste, is er nu verbaasd over.
+- **Legendaries uit gewone tabellen:** Jirachi (Mt. Pyre, → Gardevoir), Victini (Route 130, → Florges), Manaphy (Route 131, → Gyarados), Kubfu (Route 115, → Munchlax); allemaal nog te krijgen via hun eigen event.
+- **Spreiding** (`tools/grounded/wild_spread.py`, `WILD_SPREAD.md`): te vaak voorkomende soorten (Dhelmise, Bronzong, Relicanth, Bruxish, Probopass, Lapras, Garchomp) in een paar tabellen vervangen; **Magikarp** aan de Old Rod in 12 routes en steden (lv 12–19; bestaande Magikarp-levels ongewijzigd), Crobat in drie late grotten, Graveler en Swellow vaker.
+- **Vivillon/Scatterbug/Spewpa** krijgen een willekeurig patroon (wild en bij fokken); **Deerling/Sawsbuck** volgen het seizoen van de echte datum (ook in je team), zoals in Gen 5.
+- `dex_check.py`: alle soorten en regionale vormen te krijgen (1081), op Marshadow na (komt).
+
+### [v0.9.223] - Marshadow en Keccles in de Frontier
+- Post-game staat **Keccles** onzichtbaar op het pad naar de Sudowoodo op het Frontier-eiland (Devon Scope nodig). Hij wordt zichtbaar, en dan beweegt je schaduw zonder jou: **Marshadow** springt eruit en komt in je team (lv 88; pc als je team vol is). Daarna het gevecht tegen Keccles' sterkste "Lizardmon"-team (Heliolisk, Tropius, Clodsire, Charizard, Serperior, Salazzle als ace; lv 92–95; Keccles-transitie en salsa-thema). Na afloop: "Wow, I can still learn something from that. … THAT is camouflage."
+- Trainer-id 853 (was de ongebruikte `TRAINER_BRENDAN_PLACEHOLDER`), flags `FLAG_GROUNDED(1541–1542)`.
+- **Alle 1025 soorten en alle regionale vormen zijn nu zonder ruilen te krijgen** (`tools/grounded/dex_check.py`: 1082/1082). Azure Flute: 89 hints (Ultra Beasts tellen niet mee, Necrozma wel).
+
+### [v0.9.224] - Alle nuttige items te krijgen, competitive in minuten
+- Nieuw: `tools/grounded/item_check.py` (welke items waar te krijgen zijn; `--waar ITEM_X`). Vóór dit werk ontbraken 108 nuttige items, nu **0 van de 440**.
+- **Devon** stuurt na Type: Null zes prototypes naar de pc: Loaded Dice, Throat Spray, Blunder Policy, Protective Pads, Wise Glasses, Berserk Gene. De Memories zijn "door Accounting voor BP aan de Frontier verkocht".
+- **BP-winkels in de Exchange Corner van de Battle Frontier** (eigen BP-winkeltype met aantal kiezen):
+  - Training (oude dame): EXP Candy XS–XL, Rare Candy, vitamines, feathers, mochi + Fresh-Start Mochi (EV's op nul), EV-verlagende bessen, Power-items, Macho Brace, PP Up/Max (1–4 BP).
+  - Natuur & potentieel (Hex Maniac): alle 21 mints, Bottle Cap, Gold Bottle Cap, Ability Capsule, Destiny Knot, Everstone.
+  - Held items (winkelbediende): ±65 competitive items (Choice-items, Life Orb, Leftovers, Focus Sash, Assault Vest, Rocky Helmet, Boots, Eviolite, Booster Energy, weerstenen, terrain seeds, herbs, orbs …).
+  - DEVON Outlet: alle 17 Memories, 18 gems, alle weerstandsbessen.
+  - **Hyper Trainer** (Black Belt): Bottle Cap = één stat op 31, Gold Bottle Cap = alle zes.
+- Lilycove-warenhuis: Lures, Poké Toy, Luck Incense, X Sp. Def; Lavaridge-kruidenwinkel: Remedies, Jubilife Muffin; Red Nectar bij Pretty Petal.
+- Getest: een Mint en een Bottle Cap gekocht, Hyper Training op Speed, een Mint gebruikt.
+
+### [v0.9.225] - Keccles lager
+- Keccles in de Frontier is een van de eerste post-game-gevechten: team lv 85, Salazzle lv 87 (was 92–95); Marshadow komt op lv 85. Charms (Shiny/Oval/Catching/Exp.) komen bewust niet in de game (Jordi).

@@ -1642,9 +1642,9 @@
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
 // Project Grounded: extra flags (de gewone flags waren op, 8 okt). Ze staan achteraan SaveBlock1
-// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..1023.
+// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..2047.
 #define GROUNDED_FLAGS_START                    0x1000
-#define NUM_GROUNDED_FLAGS                      1024 // v0.9.187: was 512, terwijl er al flags tot ±920 in gebruik waren
+#define NUM_GROUNDED_FLAGS                      2048 // v0.9.190: 1024 -> 2048 (ruimte voor Yoshi's Island e.a.); was eerst 512
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,

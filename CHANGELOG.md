@@ -17685,3 +17685,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Quest:** een oude Ballonlea-heks (met quizjes als grap) is je gids; de **Impidimp-bende** (wilde dubbelgevechten lv 64–65, Grimmsnarl en Morgrem bij de trap) dooft het licht. **Xerneas** (lv 70) vangen herstelt het bos; daarna verschijnt **Yveltal** (lv 70) in de heksenkring. Trainers Morwen, Silas, Odette en Arthur (lv 67–68).
 - Wilde Galar-soorten lv 60–68 (Mimikyu en Galarian Slowking 1%); nieuwe items: Exp. Candy XL, Eject Pack, Dream Ball, Galarica Cuff, Galarica Wreath, Exp. Candy L.
 - Glimwood-scheur gekoppeld; telt mee voor de gang naar ?????. Script `tools/grounded/maptools/glimwood.py`; flags `FLAG_GROUNDED(880–894)`, trainers 1098, 1099, 1107, 1108.
+
+### [v0.9.190] - Extra flagblok naar 2048
+- `NUM_GROUNDED_FLAGS` 1024 → 2048 (128 bytes extra achteraan SaveBlock1; oude saves blijven werken), zodat Area Zero, Yoshi's Island, Mt. Coronet en de Arceus-quest genoeg eigen flags hebben.

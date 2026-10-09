@@ -3121,3 +3121,27 @@ const u16 gTilesetPalettes_YoshiFlowers[][16] =
     INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/yoshi_flowers/palettes/15.gbapal"),
 };
+
+// Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken (coronet_tiles.py)
+const u32 gTilesetTiles_SpearPillar[] = INCBIN_U32("data/tilesets/secondary/spear_pillar/tiles.4bpp.fastSmol");
+
+// Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken (paletten, coronet_tiles.py)
+const u16 gTilesetPalettes_SpearPillar[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spear_pillar/palettes/15.gbapal"),
+};

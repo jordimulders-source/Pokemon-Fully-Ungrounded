@@ -5770,6 +5770,186 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSky = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_SKY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSea = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_SEA,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructLand = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_LAND,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructMind = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_MIND,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructDream = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_DREAM,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructJustice = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_JUSTICE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructForge = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_FORGE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructOrder = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_ORDER,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py), 16x32
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSpaceTime = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CONSTRUCT_SPACETIME,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Construct,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_GEN1_GHOST,

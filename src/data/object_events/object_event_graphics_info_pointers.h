@@ -101,6 +101,15 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoochyOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QCloudOw;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSky;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSea;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructLand;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructMind;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructDream;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructJustice;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructForge;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructOrder;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSpaceTime;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
@@ -404,6 +413,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_SPACETIME] = &gObjectEventGraphicsInfo_ConstructSpaceTime, // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_ORDER] = &gObjectEventGraphicsInfo_ConstructOrder, // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_FORGE] = &gObjectEventGraphicsInfo_ConstructForge, // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_JUSTICE] = &gObjectEventGraphicsInfo_ConstructJustice, // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_DREAM] = &gObjectEventGraphicsInfo_ConstructDream, // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_MIND] = &gObjectEventGraphicsInfo_ConstructMind, // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_LAND] = &gObjectEventGraphicsInfo_ConstructLand, // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_SEA] = &gObjectEventGraphicsInfo_ConstructSea, // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+    [OBJ_EVENT_GFX_CONSTRUCT_SKY] = &gObjectEventGraphicsInfo_ConstructSky, // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
     [OBJ_EVENT_GFX_NEP_ENUT] = &gObjectEventGraphicsInfo_NepEnutOw, // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_QCLOUD] = &gObjectEventGraphicsInfo_QCloudOw, // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_POOCHY] = &gObjectEventGraphicsInfo_PoochyOw, // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)

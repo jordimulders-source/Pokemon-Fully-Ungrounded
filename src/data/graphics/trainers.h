@@ -410,6 +410,16 @@ const u32 gTrainerFrontPic_ZeroSecurity[] = INCBIN_U32("graphics/trainers/front_
 const u16 gTrainerPalette_ZeroSecurity[] = INCBIN_U16("graphics/trainers/front_pics/zero_security.gbapal");
 const u32 gTrainerFrontPic_ZeroAlarm[] = INCBIN_U32("graphics/trainers/front_pics/zero_alarm.4bpp.smol"); // Project Grounded: Area Zero
 const u16 gTrainerPalette_ZeroAlarm[] = INCBIN_U16("graphics/trainers/front_pics/zero_alarm.gbapal");
+const u32 gTrainerFrontPic_Construct[] = INCBIN_U32("graphics/trainers/front_pics/construct.4bpp.smol"); // Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py)
+const u16 gTrainerPalette_ConstructSky[] = INCBIN_U16("graphics/trainers/front_pics/construct_sky.gbapal");
+const u16 gTrainerPalette_ConstructSea[] = INCBIN_U16("graphics/trainers/front_pics/construct_sea.gbapal");
+const u16 gTrainerPalette_ConstructLand[] = INCBIN_U16("graphics/trainers/front_pics/construct_land.gbapal");
+const u16 gTrainerPalette_ConstructMind[] = INCBIN_U16("graphics/trainers/front_pics/construct_mind.gbapal");
+const u16 gTrainerPalette_ConstructDream[] = INCBIN_U16("graphics/trainers/front_pics/construct_dream.gbapal");
+const u16 gTrainerPalette_ConstructJustice[] = INCBIN_U16("graphics/trainers/front_pics/construct_justice.gbapal");
+const u16 gTrainerPalette_ConstructForge[] = INCBIN_U16("graphics/trainers/front_pics/construct_forge.gbapal");
+const u16 gTrainerPalette_ConstructOrder[] = INCBIN_U16("graphics/trainers/front_pics/construct_order.gbapal");
+const u16 gTrainerPalette_ConstructSpaceTime[] = INCBIN_U16("graphics/trainers/front_pics/construct_spacetime.gbapal");
 const u32 gTrainerFrontPic_GuestDitto[] = INCBIN_U32("graphics/trainers/front_pics/guest_ditto.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_GuestDitto[] = INCBIN_U16("graphics/trainers/front_pics/guest_ditto.gbapal");
 const u32 gTrainerFrontPic_GuestBurglar[] = INCBIN_U32("graphics/trainers/front_pics/guest_burglar.4bpp.smol"); // Project Grounded: Battle Stadium
@@ -642,6 +652,15 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),
     TRAINER_SPRITE(TRAINER_PIC_ZERO_SECURITY, gTrainerFrontPic_ZeroSecurity, gTrainerPalette_ZeroSecurity),
     TRAINER_SPRITE(TRAINER_PIC_ZERO_ALARM, gTrainerFrontPic_ZeroAlarm, gTrainerPalette_ZeroAlarm),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SKY, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSky),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SEA, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSea),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_LAND, gTrainerFrontPic_Construct, gTrainerPalette_ConstructLand),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_MIND, gTrainerFrontPic_Construct, gTrainerPalette_ConstructMind),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_DREAM, gTrainerFrontPic_Construct, gTrainerPalette_ConstructDream),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_JUSTICE, gTrainerFrontPic_Construct, gTrainerPalette_ConstructJustice),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_FORGE, gTrainerFrontPic_Construct, gTrainerPalette_ConstructForge),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_ORDER, gTrainerFrontPic_Construct, gTrainerPalette_ConstructOrder),
+    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SPACETIME, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSpaceTime),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_MASCOTS, gTrainerFrontPic_TrioMascots, gTrainerPalette_TrioMascots),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_STARTERS, gTrainerFrontPic_TrioStarters, gTrainerPalette_TrioStarters),

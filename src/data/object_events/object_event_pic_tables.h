@@ -510,6 +510,10 @@ static const struct SpriteFrameImage sPicTable_NepEnutOw[] = { // Project Ground
     overworld_ascending_frames(gObjectEventPic_NepEnutOw, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Construct[] = { // Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py)
+    overworld_ascending_frames(gObjectEventPic_Construct, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Gen1Ghost[] = { // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
     obj_frame_tiles(gObjectEventPic_Gen1Ghost),
 };

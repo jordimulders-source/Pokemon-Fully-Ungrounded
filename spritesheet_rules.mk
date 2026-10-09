@@ -5101,3 +5101,7 @@ $(OBJEVENTGFXDIR)/people/qcloud_ow.4bpp: %.4bpp: %.png
 # Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
 $(OBJEVENTGFXDIR)/people/nep_enut_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py) (16x32)
+$(OBJEVENTGFXDIR)/people/construct.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

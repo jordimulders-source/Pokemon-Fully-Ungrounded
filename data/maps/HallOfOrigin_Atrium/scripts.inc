@@ -33,51 +33,54 @@ HallOfOrigin_Atrium_EventScript_Fountain::
 
 @ ---------------------------------------------------------------- teksten (placeholders, Jordi herschrijft ze)
 HallOfOrigin_Atrium_Text_NousIntro:
-	.string "I am the emissary of the mind. I already\n"
-	.string "know how this battle goes.\p"
-	.string "I'm just here for the paperwork.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: MIND.\p"
+	.string "I already calculated how this ends. I'm\n"
+	.string "only here because ARCEUS likes to\l"
+	.string "watch the numbers happen.$"
 
 HallOfOrigin_Atrium_Text_NousDefeat:
-	.string "...I knew that. I definitely knew that.$"
+	.string "Recalculating. Recalculating. ...Oh no.$"
 
 HallOfOrigin_Atrium_Text_NousPost:
-	.string "ARCEUS gave three POKéMON knowledge,\n"
-	.string "emotion and willpower. Me it gave a\l"
-	.string "clipboard.$"
+	.string "I have no thoughts of my own. ARCEUS\n"
+	.string "lends me his. They're very loud.$"
 
 HallOfOrigin_Atrium_Text_SomniaIntro:
-	.string "Emissary of dreams. You're asleep, by\n"
-	.string "the way. Have been since SKY PILLAR.\p"
-	.string "Kidding. Probably.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION:\n"
+	.string "DREAMS.\p"
+	.string "Statues don't sleep. I've been awake\n"
+	.string "for four thousand years. Ask me how I'm\l"
+	.string "doing.$"
 
 HallOfOrigin_Atrium_Text_SomniaDefeat:
-	.string "Wake up. You won. Or that's what you're\n"
-	.string "dreaming.$"
+	.string "Finally. Darkness. Five more minutes.$"
 
 HallOfOrigin_Atrium_Text_SomniaPost:
 	.string "If you see yourself falling, don't worry.\n"
 	.string "That's just the next floor.$"
 
 HallOfOrigin_Atrium_Text_GladiusIntro:
-	.string "Emissary of justice. Every sword in this\n"
-	.string "team has sworn an oath.\p"
-	.string "Mine was 'no refunds'.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION:\n"
+	.string "JUSTICE.\p"
+	.string "ARCEUS gave me a sword arm and no\n"
+	.string "sword. I've been very fair about it.$"
 
 HallOfOrigin_Atrium_Text_GladiusDefeat:
-	.string "Justice is served. Cold. With a side of\n"
-	.string "humiliation.$"
+	.string "Justice served. Cold. With a side of\n"
+	.string "gravel.$"
 
 HallOfOrigin_Atrium_Text_GladiusPost:
 	.string "The forge is next door. Don't touch\n"
 	.string "anything glowing. Everything is glowing.$"
 
 HallOfOrigin_Atrium_Text_HephaestIntro:
-	.string "Emissary of the forge. ARCEUS made the\n"
-	.string "world. I made the oven it was baked in.\p"
-	.string "Let's see if you're done.$"
+	.string "CONSTRUCT ONLINE. DESIGNATION: FORGE.\p"
+	.string "I built the other eight. Then they\n"
+	.string "asked who built me. Awkward silence.\l"
+	.string "Fourteen centuries of it.$"
 
 HallOfOrigin_Atrium_Text_HephaestDefeat:
-	.string "Undercooked. Me, I mean.$"
+	.string "Cracked. Hairline. Don't tell the others.$"
 
 HallOfOrigin_Atrium_Text_HephaestPost:
 	.string "Upstairs are the last two. One of them\n"

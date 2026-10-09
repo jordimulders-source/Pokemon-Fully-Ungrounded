@@ -314,8 +314,17 @@
 #define OBJ_EVENT_GFX_POOCHY                            295 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_QCLOUD                            296 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_GFX_NEP_ENUT                          297 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SKY                     298 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SEA                     299 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_LAND                    300 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_MIND                    301 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_DREAM                   302 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_JUSTICE                 303 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_FORGE                   304 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_ORDER                   305 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SPACETIME               306 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        298
+#define NUM_OBJ_EVENT_GFX                        307
 
 
 // These are dynamic object gfx ids.
@@ -483,6 +492,15 @@
 #define OBJ_EVENT_PAL_TAG_QCLOUD                  0x1174 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_NEP_ENUT                0x1175 // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 #define OBJ_EVENT_PAL_TAG_POOCHY                  0x1173 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SKY           0x1180 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SEA           0x1181 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_LAND          0x1182 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_MIND          0x1183 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_DREAM         0x1184 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_JUSTICE       0x1185 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_FORGE         0x1186 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_ORDER         0x1187 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SPACETIME     0x1188 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
 #define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)

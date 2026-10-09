@@ -378,6 +378,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_TEAM_ROCKET] = { _("TEAM ROCKET"), 10 }, // Project Grounded: Rocket-sidequest
     [TRAINER_CLASS_ROCKET_EXEC] = { _("ROCKET EXEC"), 25, BALL_ULTRA }, // Project Grounded: Rocket-sidequest
     [TRAINER_CLASS_ZERO_LAB] = { _("ZERO LAB"), 0, BALL_MASTER }, // Project Grounded: Area Zero
+    [TRAINER_CLASS_CONSTRUCT] = { _("CONSTRUCT"), 40, BALL_CHERISH }, // Project Grounded: construct van Arceus, Hall of Origin (tools/grounded/construct_sprites.py)
     [TRAINER_CLASS_SHY_SQUAD] = { _("SHY SQUAD"), 30, BALL_POKE }, // Project Grounded: Yoshi's Island
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },

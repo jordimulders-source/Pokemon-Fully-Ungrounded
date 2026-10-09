@@ -17716,3 +17716,9 @@ Volgens Jordi's GBA-instructies per leider:
 - **Verhaal:** je valt uit de lucht en **Yoshi** vindt je. **Multi battles met Yoshi als partner** (Lickilicky, Tropius, Alolan Exeggutor) tegen Shy Guy-bendes (klasse SHY SQUAD; ze praten niet, sarcasme tussen haakjes) → **Commander Boo** in het spookhuis → **Wario** in het fort. **Pecharunt** verkocht Wario de gehoorzaamheidsmochi; na Wario te vangen bij zijn kraampje (lv 92). Daarna is Yoshi's Island klaar en gaat de volgende gang (meren-kamer) open.
 - Overworlds Yoshi, Commander Boo en Wario; Yoshi-rugplaatje. Wilde Pokémon lv 91–93; nieuwe items (Honey, Heal Ball, Lagging Tail, Toxic Plate, Float Stone, Poké Doll, Malicious Armor e.a.).
 - Script `tools/grounded/maptools/yoshis_island.py` (+ `yoshi_sprites.py`); flags `FLAG_GROUNDED(1024–1049)`, trainers 1017–1019, 1026–1029, 1049, 1055, 1056, partner `PARTNER_YOSHI`.
+
+### [v0.9.195] - Bouwscripts houden de levelcurve vast
+- Nieuw: `tools/grounded/check_levels.py`. Elk bouwscript (48 stuks) roept bij de start `check_levels.protect()` aan en zet bij het afsluiten de levels (en evoluties) van bestaande trainers, wilde slots en `setwildbattle`s terug; alleen nieuwe entries krijgen de levels uit het script. Bewust wijzigen: `GROUNDED_SCRIPT_LEVELS=1`.
+- Controle achteraf: `python3 tools/grounded/check_levels.py [--fix]` meldt lagere levels of terug-geëvolueerde soorten t.o.v. HEAD.
+- `extra_fights.py` vervangt zijn objecten nu op hun plek (verschoof eerst de nummers van NPC's zonder local_id).
+- Let op: een aantal scripts herschrijft nog steeds hele `map.json`'s (objecten van latere scripts vallen weg); alleen gericht draaien en `git diff` controleren.

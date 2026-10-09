@@ -21,6 +21,9 @@ Wario de mochi waarmee hij de Shy Guys gehoorzaam houdt; na Wario kun je hem van
 Klaar: FLAG_SPACETIME_YOSHI_DONE (FLAG_GROUNDED(580)). Flags FLAG_GROUNDED 1024-1119 (blok 'yoshis_island'),
 trainers 1017-1019, 1026-1029, 1049, 1055, 1056 (blok 'yoshis_island'), partner PARTNER_YOSHI.
 Idempotent; controleert de bereikbaarheid. Gebruik: python3 tools/grounded/maptools/yoshis_island.py [renderdir]"""
+# Levels: de levelcurve is leidend; check_levels zet bestaande levels terug (zie glimwood.py).
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, re, struct, sys, zlib
 from collections import deque
 import numpy as np

@@ -282,3 +282,10 @@ const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/second
 // Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
 const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
 const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");
+
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatiles.bin");
+const u16 gMetatileAttributes_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatile_attributes.bin");
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatiles.bin");
+const u16 gMetatileAttributes_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatile_attributes.bin");

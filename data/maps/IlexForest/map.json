@@ -15,23 +15,9 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_STATUE_CELEBI",
-      "x": 20,
-      "y": 24,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "IlexForest_EventScript_Shrine",
-      "flag": "0",
-      "local_id": "LOCALID_ILEX_FOREST_SHRINE"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CELEBI)",
       "x": 21,
-      "y": 25,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -162,6 +148,22 @@
       "elevation": 3,
       "item": "ITEM_ROSE_INCENSE",
       "flag": "FLAG_HIDDEN_ITEM_ILEX_FOREST_ROSE_INCENSE"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "IlexForest_EventScript_Shrine"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "IlexForest_EventScript_Shrine"
     }
   ]
 }

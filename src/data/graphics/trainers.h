@@ -406,6 +406,10 @@ const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_
 const u16 gTrainerPalette_RocketGruntF[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_f.gbapal");
 const u32 gTrainerFrontPic_Petrel[] = INCBIN_U32("graphics/trainers/front_pics/petrel.4bpp.smol"); // Project Grounded: Rocket-sidequest
 const u16 gTrainerPalette_Petrel[] = INCBIN_U16("graphics/trainers/front_pics/petrel.gbapal");
+const u32 gTrainerFrontPic_ZeroSecurity[] = INCBIN_U32("graphics/trainers/front_pics/zero_security.4bpp.smol"); // Project Grounded: Area Zero
+const u16 gTrainerPalette_ZeroSecurity[] = INCBIN_U16("graphics/trainers/front_pics/zero_security.gbapal");
+const u32 gTrainerFrontPic_ZeroAlarm[] = INCBIN_U32("graphics/trainers/front_pics/zero_alarm.4bpp.smol"); // Project Grounded: Area Zero
+const u16 gTrainerPalette_ZeroAlarm[] = INCBIN_U16("graphics/trainers/front_pics/zero_alarm.gbapal");
 const u32 gTrainerFrontPic_GuestDitto[] = INCBIN_U32("graphics/trainers/front_pics/guest_ditto.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_GuestDitto[] = INCBIN_U16("graphics/trainers/front_pics/guest_ditto.gbapal");
 const u32 gTrainerFrontPic_GuestBurglar[] = INCBIN_U32("graphics/trainers/front_pics/guest_burglar.4bpp.smol"); // Project Grounded: Battle Stadium
@@ -634,6 +638,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_M, gTrainerFrontPic_RocketGruntM, gTrainerPalette_RocketGruntM),
     TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_F, gTrainerFrontPic_RocketGruntF, gTrainerPalette_RocketGruntF),
     TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),
+    TRAINER_SPRITE(TRAINER_PIC_ZERO_SECURITY, gTrainerFrontPic_ZeroSecurity, gTrainerPalette_ZeroSecurity),
+    TRAINER_SPRITE(TRAINER_PIC_ZERO_ALARM, gTrainerFrontPic_ZeroAlarm, gTrainerPalette_ZeroAlarm),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_MASCOTS, gTrainerFrontPic_TrioMascots, gTrainerPalette_TrioMascots),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_STARTERS, gTrainerFrontPic_TrioStarters, gTrainerPalette_TrioStarters),

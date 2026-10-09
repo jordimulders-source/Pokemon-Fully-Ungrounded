@@ -779,6 +779,12 @@
     "NationalPark_Gate",
     "IlexForest",
     "GlimwoodTangle",
-    "GlimwoodTangle_Ballonlea"
+    "GlimwoodTangle_Ballonlea",
+    "AreaZero_Rim",
+    "AreaZero_Depths",
+    "AreaZero_Crystal",
+    "AreaZero_Future",
+    "AreaZero_Past",
+    "AreaZero_TeraCave"
   ]
 }

@@ -1354,3 +1354,147 @@ const struct Tileset gTileset_GlimwoodGeneralDying =
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
 };
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZero =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZero,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroDeep =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZeroDeep,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneralDeep =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneralDeep,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroCrystal =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZeroCrystal,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneralCrystal =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneralCrystal,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroFuture =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZeroFuture,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneralFuture =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneralFuture,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroPast =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZeroPast,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneralPast =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneralPast,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroTera =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZeroTera,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const struct Tileset gTileset_AreaZeroGeneralTera =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_AreaZeroGeneralTera,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};

@@ -1253,6 +1253,12 @@
 #define TRAINER_BALLONLEA_GENTLEMAN_ARTHUR  1108 // Project Grounded: Ballonlea, theatercriticus
 // }
 
+// area_zero { (tools/grounded/maptools/area_zero.py; id 1180-1182)
+#define TRAINER_AREA_ZERO_SECURITY_FUTURE   1180 // Project Grounded: Area Zero, toekomst: beveiligingssysteem na MIRAIDON
+#define TRAINER_AREA_ZERO_SECURITY_PAST     1181 // Project Grounded: Area Zero, verleden: beveiligingssysteem na KORAIDON
+#define TRAINER_AREA_ZERO_ALARM             1182 // Project Grounded: Area Zero, Tera-grot: alarmsysteem (terastaliseert, elk teamlid)
+// }
+
 #define TRAINERS_COUNT                      1200
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

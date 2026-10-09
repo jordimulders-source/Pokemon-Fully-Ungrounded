@@ -2644,3 +2644,258 @@ const u16 gTilesetPalettes_GlimwoodGeneralDying[][16] =
     INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/primary/glimwood_general_dying/palettes/15.gbapal"),
 };
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u32 gTilesetTiles_AreaZero[] = INCBIN_U32("data/tilesets/secondary/area_zero/tiles.4bpp.fastSmol");
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZero[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroDeep[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_deep/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneralDeep[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_deep/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroCrystal[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_crystal/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneralCrystal[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_crystal/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroFuture[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_future/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneralFuture[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_future/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroPast[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_past/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneralPast[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_past/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroTera[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/area_zero_tera/palettes/15.gbapal"),
+};
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gTilesetPalettes_AreaZeroGeneralTera[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/area_zero_general_tera/palettes/15.gbapal"),
+};

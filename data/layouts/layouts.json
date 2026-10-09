@@ -5731,6 +5731,66 @@
       "secondary_tileset": "gTileset_GlimwoodDying",
       "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
       "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_RIM",
+      "name": "AreaZero_Rim_Layout",
+      "width": 54,
+      "height": 48,
+      "primary_tileset": "gTileset_AreaZeroGeneral",
+      "secondary_tileset": "gTileset_AreaZero",
+      "border_filepath": "data/layouts/AreaZero_Rim/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Rim/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_DEPTHS",
+      "name": "AreaZero_Depths_Layout",
+      "width": 52,
+      "height": 46,
+      "primary_tileset": "gTileset_AreaZeroGeneralDeep",
+      "secondary_tileset": "gTileset_AreaZeroDeep",
+      "border_filepath": "data/layouts/AreaZero_Depths/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Depths/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_CRYSTAL",
+      "name": "AreaZero_Crystal_Layout",
+      "width": 48,
+      "height": 42,
+      "primary_tileset": "gTileset_AreaZeroGeneralCrystal",
+      "secondary_tileset": "gTileset_AreaZeroCrystal",
+      "border_filepath": "data/layouts/AreaZero_Crystal/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Crystal/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_FUTURE",
+      "name": "AreaZero_Future_Layout",
+      "width": 50,
+      "height": 44,
+      "primary_tileset": "gTileset_AreaZeroGeneralFuture",
+      "secondary_tileset": "gTileset_AreaZeroFuture",
+      "border_filepath": "data/layouts/AreaZero_Future/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Future/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_PAST",
+      "name": "AreaZero_Past_Layout",
+      "width": 50,
+      "height": 44,
+      "primary_tileset": "gTileset_AreaZeroGeneralPast",
+      "secondary_tileset": "gTileset_AreaZeroPast",
+      "border_filepath": "data/layouts/AreaZero_Past/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Past/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_TERA_CAVE",
+      "name": "AreaZero_TeraCave_Layout",
+      "width": 36,
+      "height": 31,
+      "primary_tileset": "gTileset_AreaZeroGeneralTera",
+      "secondary_tileset": "gTileset_AreaZeroTera",
+      "border_filepath": "data/layouts/AreaZero_TeraCave/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_TeraCave/map.bin"
     }
   ]
 }

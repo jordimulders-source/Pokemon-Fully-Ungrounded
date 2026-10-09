@@ -41674,3 +41674,184 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Knock Off
 
 /* --- einde glimwood --- */
+
+/* --- area_zero (tools/grounded/maptools/area_zero.py) --- */
+
+=== TRAINER_AREA_ZERO_SECURITY_FUTURE ===
+Name: SECURITY
+Class: Zero Lab
+Pic: Zero Security
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Iron Valiant @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spirit Break
+- Close Combat
+- Knock Off
+- Swords Dance
+
+Iron Moth @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fiery Dance
+- Sludge Wave
+- Energy Ball
+- Psychic
+
+Iron Hands @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Wild Charge
+- Ice Punch
+- Swords Dance
+
+Iron Jugulis @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hurricane
+- Dark Pulse
+- Earth Power
+- Flamethrower
+
+Iron Treads @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Iron Head
+- Rapid Spin
+- Knock Off
+
+Iron Bundle @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Freeze-Dry
+- Hydro Pump
+- Encore
+- Flip Turn
+
+=== TRAINER_AREA_ZERO_SECURITY_PAST ===
+Name: SECURITY
+Class: Zero Lab
+Pic: Zero Security
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Roaring Moon @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Acrobatics
+- Knock Off
+- Earthquake
+
+Flutter Mane @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Shadow Ball
+- Mystical Fire
+- Calm Mind
+
+Great Tusk @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headlong Rush
+- Close Combat
+- Ice Spinner
+- Rapid Spin
+
+Slither Wing @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- First Impression
+- Close Combat
+- Wild Charge
+- U-turn
+
+Sandy Shocks @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Earth Power
+- Spikes
+- Volt Switch
+
+Scream Tail @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Encore
+- Thunder Wave
+- Wish
+
+=== TRAINER_AREA_ZERO_ALARM ===
+Name: ALARM
+Class: Zero Lab
+Pic: Zero Alarm
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Iron Boulder @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Rock
+- Mighty Cleave
+- Close Combat
+- Zen Headbutt
+- Swords Dance
+
+Walking Wake @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Water
+- Hydro Steam
+- Draco Meteor
+- Flamethrower
+- Dragon Pulse
+
+Iron Leaves @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Grass
+- Psyblade
+- Leaf Blade
+- Close Combat
+- Swords Dance
+
+Gouging Fire @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Ground
+- Flare Blitz
+- Dragon Dance
+- Earthquake
+- Dragon Claw
+
+Raging Bolt @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Fairy
+- Thunderclap
+- Draco Meteor
+- Calm Mind
+- Dragon Pulse
+
+Iron Crown @ Booster Energy
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Fighting
+- Tachyon Cutter
+- Psyshock
+- Focus Blast
+- Calm Mind
+
+/* --- einde area_zero --- */

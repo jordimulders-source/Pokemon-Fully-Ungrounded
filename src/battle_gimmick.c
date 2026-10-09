@@ -1,4 +1,6 @@
 #include "global.h"
+#include "battle_setup.h"
+#include "constants/opponents.h" // Project Grounded: Area Zero
 #include "spire.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -35,11 +37,19 @@ void AssignUsableGimmicks(void)
     }
 }
 
+// Project Grounded: het Tera-gevecht van Area Zero (alarmsysteem, TRAINER_AREA_ZERO_ALARM)
+bool32 IsAreaZeroTeraBattle(void)
+{
+    return (gBattleTypeFlags & BATTLE_TYPE_TRAINER) && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+        && TRAINER_BATTLE_PARAM.opponentA == TRAINER_AREA_ZERO_ALARM;
+}
+
 // Returns whether a battler is able to use a gimmick. Checks consumption and gimmick specific functions.
 bool32 CanActivateGimmick(u32 battler, enum Gimmick gimmick)
 {
-    // Project Grounded: Mega, Z-moves, Dynamax, Tera e.d. alleen in The Spire (Jordi), voor iedereen
-    if (!TESTING && !gSpireBattle)
+    // Project Grounded: Mega, Z-moves, Dynamax, Tera e.d. alleen in The Spire (Jordi), voor iedereen.
+    // Uitzondering: het alarmsysteem van Area Zero (area_zero.py) terastaliseert; de speler niet.
+    if (!TESTING && !gSpireBattle && !(gimmick == GIMMICK_TERA && IsAreaZeroTeraBattle() && !IsOnPlayerSide(battler)))
         return FALSE;
     return gGimmicksInfo[gimmick].CanActivate != NULL && gGimmicksInfo[gimmick].CanActivate(battler);
 }
@@ -95,6 +105,10 @@ bool32 ShouldTrainerBattlerUseGimmick(u32 battler, enum Gimmick gimmick)
 // Returns whether a trainer has used a gimmick during a battle.
 bool32 HasTrainerUsedGimmick(u32 battler, enum Gimmick gimmick)
 {
+    // Project Grounded: Area Zero: elk teamlid van het alarmsysteem terastaliseert, één keer per Pokemon
+    if (gimmick == GIMMICK_TERA && IsAreaZeroTeraBattle() && !IsOnPlayerSide(battler))
+        return GetActiveGimmick(battler) == GIMMICK_TERA;
+
     if (IsDoubleBattle() && IsPartnerMonFromSameTrainer(battler))
     {
         u32 partner = BATTLE_PARTNER(battler);

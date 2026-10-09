@@ -1663,6 +1663,26 @@
 #define FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY          FLAG_GROUNDED(710) // Project Grounded: Ilex Forest: verborgen Rare Candy
 #define FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED               FLAG_GROUNDED(711) // Project Grounded: Ilex Forest: Miracle Seed (dwaalpad)
 // }
+// area_zero { (tools/grounded/maptools/area_zero.py; FLAG_GROUNDED 920-999: 938-949 en 962-999 nog vrij, 950-961 nieuwe items (nieuwe_items.py))
+#define FLAG_SPACETIME_AREAZERO_DONE                     FLAG_GROUNDED(920) // Project Grounded: Spacetime-sidequest klaar: TERAPAGOS gevangen
+#define FLAG_AREAZERO_SCREAM_TAIL                        FLAG_GROUNDED(921) // Project Grounded: Area Zero, diepte: SCREAM TAIL gevangen
+#define FLAG_AREAZERO_IRON_HANDS                         FLAG_GROUNDED(922) // Project Grounded: Area Zero, diepte: IRON HANDS gevangen
+#define FLAG_AREAZERO_IRON_LEAVES                        FLAG_GROUNDED(923) // Project Grounded: Area Zero, toekomst: IRON LEAVES gevangen
+#define FLAG_AREAZERO_IRON_BOULDER                       FLAG_GROUNDED(924) // Project Grounded: Area Zero, toekomst: IRON BOULDER gevangen
+#define FLAG_AREAZERO_IRON_CROWN                         FLAG_GROUNDED(925) // Project Grounded: Area Zero, toekomst: IRON CROWN gevangen
+#define FLAG_AREAZERO_MIRAIDON                           FLAG_GROUNDED(926) // Project Grounded: Area Zero, toekomst: MIRAIDON gevangen (beveiligingssysteem gaat aan)
+#define FLAG_AREAZERO_WALKING_WAKE                       FLAG_GROUNDED(927) // Project Grounded: Area Zero, verleden: WALKING WAKE gevangen
+#define FLAG_AREAZERO_GOUGING_FIRE                       FLAG_GROUNDED(928) // Project Grounded: Area Zero, verleden: GOUGING FIRE gevangen
+#define FLAG_AREAZERO_RAGING_BOLT                        FLAG_GROUNDED(929) // Project Grounded: Area Zero, verleden: RAGING BOLT gevangen
+#define FLAG_AREAZERO_KORAIDON                           FLAG_GROUNDED(930) // Project Grounded: Area Zero, verleden: KORAIDON gevangen (beveiligingssysteem gaat aan)
+#define FLAG_AREAZERO_INTRO                              FLAG_GROUNDED(931) // Project Grounded: Area Zero: introtekst bij de eerste afdaling gezien
+#define FLAG_ITEM_AREA_ZERO_RIM_FULL_RESTORE             FLAG_GROUNDED(932) // Project Grounded: Area Zero, kraterwand: Full Restore
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_RIM_MAX_ELIXIR        FLAG_GROUNDED(933) // Project Grounded: Area Zero, kraterwand: verborgen Max Elixir
+#define FLAG_ITEM_AREA_ZERO_DEPTHS_PP_UP                 FLAG_GROUNDED(934) // Project Grounded: Area Zero, diepte: PP Up
+#define FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX_REVIVE           FLAG_GROUNDED(935) // Project Grounded: Area Zero, kristalgrot: Max Revive
+#define FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX                FLAG_GROUNDED(936) // Project Grounded: Area Zero, toekomst: PP Max
+#define FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY              FLAG_GROUNDED(937) // Project Grounded: Area Zero, verleden: Rare Candy
+// }
 // glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
 #define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld
 #define FLAG_GLIMWOOD_GANG_1                             FLAG_GROUNDED(881) // Project Grounded: Glimwood: Impidimp-bende 1 (west) verslagen
@@ -1729,6 +1749,18 @@
 #define FLAG_ITEM_ILEX_FOREST_LOVE_BALL                  FLAG_GROUNDED(874) // Project Grounded: Ilex Forest: Love Balls
 #define FLAG_ITEM_ILEX_FOREST_DESTINY_KNOT               FLAG_GROUNDED(875) // Project Grounded: Ilex Forest: Destiny Knot
 #define FLAG_HIDDEN_ITEM_ILEX_FOREST_ROSE_INCENSE        FLAG_GROUNDED(876) // Project Grounded: Ilex Forest: verborgen Rose Incense
+#define FLAG_ITEM_AREA_ZERO_RIM_QUICK_BALL               FLAG_GROUNDED(950) // Project Grounded: Area Zero, kraterwand: Quick Balls
+#define FLAG_ITEM_AREA_ZERO_RIM_MUSCLE_BAND              FLAG_GROUNDED(951) // Project Grounded: Area Zero, kraterwand: Muscle Band
+#define FLAG_ITEM_AREA_ZERO_DEPTHS_ADRENALINE_ORB        FLAG_GROUNDED(952) // Project Grounded: Area Zero, diepte: Adrenaline Orb
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_DEPTHS_SHED_SHELL     FLAG_GROUNDED(953) // Project Grounded: Area Zero, diepte: verborgen Shed Shell
+#define FLAG_ITEM_AREA_ZERO_CRYSTAL_BEAST_BALL           FLAG_GROUNDED(954) // Project Grounded: Area Zero, kristalgrot: Beast Balls
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_CRYSTAL_RING_TARGET   FLAG_GROUNDED(955) // Project Grounded: Area Zero, kristalgrot: verborgen Ring Target
+#define FLAG_ITEM_AREA_ZERO_FUTURE_BOOSTER_ENERGY        FLAG_GROUNDED(956) // Project Grounded: Area Zero, toekomst: Booster Energy
+#define FLAG_ITEM_AREA_ZERO_FUTURE_METAL_ALLOY           FLAG_GROUNDED(957) // Project Grounded: Area Zero, toekomst: Metal Alloy (Duraludon -> Archaludon)
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_FUTURE_AIR_BALLOON    FLAG_GROUNDED(958) // Project Grounded: Area Zero, toekomst: verborgen Air Balloon
+#define FLAG_ITEM_AREA_ZERO_PAST_POWER_HERB              FLAG_GROUNDED(959) // Project Grounded: Area Zero, verleden: Power Herb
+#define FLAG_ITEM_AREA_ZERO_PAST_GRIP_CLAW               FLAG_GROUNDED(960) // Project Grounded: Area Zero, verleden: Grip Claw
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_PAST_STICKY_BARB      FLAG_GROUNDED(961) // Project Grounded: Area Zero, verleden: verborgen Sticky Barb
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

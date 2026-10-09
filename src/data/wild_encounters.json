@@ -8897,6 +8897,351 @@
               { "min_level": 92, "max_level": 92, "species": "SPECIES_AERODACTYL" }
             ]
           }
+        },
+        {
+          "map": "MAP_AREA_ZERO_RIM",
+          "base_label": "gAreaZeroRim",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_FARIGIRAF"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_RAICHU"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_ESPEON"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_ALTARIA"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 88,
+                "max_level": 90,
+                "species": "SPECIES_MEDICHAM"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_GARGANACL"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_GARCHOMP"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_DRAGONITE"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_GLIMMORA"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_SALAMENCE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 91,
+                "species": "SPECIES_BAXCALIBUR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_AREA_ZERO_DEPTHS",
+          "base_label": "gAreaZeroDepths",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_GLIMMORA"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_BRONZONG"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_UMBREON"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_GARCHOMP"
+              },
+              {
+                "min_level": 89,
+                "max_level": 91,
+                "species": "SPECIES_DRAGONITE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_BAXCALIBUR"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_SALAMENCE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_HYDREIGON"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 92,
+                "species": "SPECIES_SCREAM_TAIL"
+              },
+              {
+                "min_level": 91,
+                "max_level": 92,
+                "species": "SPECIES_IRON_HANDS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_AREA_ZERO_CRYSTAL",
+          "base_label": "gAreaZeroCrystal",
+          "land_mons": {
+            "encounter_rate": 8,
+            "mons": [
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_GLIMMORA"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_REUNICLUS"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_PROBOPASS"
+              },
+              {
+                "min_level": 90,
+                "max_level": 92,
+                "species": "SPECIES_GOTHITELLE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_TINKATON"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_ARMAROUGE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_CERULEDGE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_KINGAMBIT"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_GREAT_TUSK"
+              },
+              {
+                "min_level": 92,
+                "max_level": 93,
+                "species": "SPECIES_IRON_TREADS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_AREA_ZERO_FUTURE",
+          "base_label": "gAreaZeroFuture",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_IRON_TREADS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_IRON_BUNDLE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_IRON_JUGULIS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_IRON_MOTH"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_IRON_THORNS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_PORYGON_Z"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_MAGNEZONE"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_KLINKLANG"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_METAGROSS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ROTOM"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_IRON_VALIANT"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_ARCHALUDON"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_AREA_ZERO_PAST",
+          "base_label": "gAreaZeroPast",
+          "land_mons": {
+            "encounter_rate": 9,
+            "mons": [
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_GREAT_TUSK"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_BRUTE_BONNET"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_FLUTTER_MANE"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_SLITHER_WING"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_SANDY_SHOCKS"
+              },
+              {
+                "min_level": 91,
+                "max_level": 93,
+                "species": "SPECIES_TYRANTRUM"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_AERODACTYL"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ARCHEOPS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_AURORUS"
+              },
+              {
+                "min_level": 92,
+                "max_level": 94,
+                "species": "SPECIES_ARMALDO"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_ROARING_MOON"
+              },
+              {
+                "min_level": 93,
+                "max_level": 94,
+                "species": "SPECIES_KABUTOPS"
+              }
+            ]
+          }
         }
       ]
     },

@@ -289,3 +289,7 @@ const u16 gMetatileAttributes_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/se
 // Project Grounded: tools/grounded/maptools/national_park_tiles.py
 const u16 gMetatiles_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatiles.bin");
 const u16 gMetatileAttributes_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatile_attributes.bin");
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gMetatiles_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatiles.bin");
+const u16 gMetatileAttributes_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatile_attributes.bin");

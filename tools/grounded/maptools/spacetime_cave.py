@@ -231,6 +231,9 @@ PORTALS = [  # (sleutel, linksboven, kamer)
     ('Coronet', (CX, 62), 'Coronet'),
 ]
 LAKES_DIALGA, LAKES_PALKIA = (10, 42), (17, 42)
+# portalen in de diepte die al een overkant hebben: (kaartconstante, warp-index per vak van de bovenrij).
+# De terugweg staat in lakes.py (HUB_DEST per meer) = de warp-index die hub() hiervoor print.
+PORTAL_DEST = {'Valor': ('LAKE_VALOR', (0, 1)), 'Acuity': ('LAKE_ACUITY', (0, 0)), 'Verity': ('LAKE_VERITY', (0, 1))}
 HUB_W, HUB_H = 27, 68
 
 
@@ -270,8 +273,8 @@ def hub_grid(ids):
     for (x, y) in ((16, 27), (18, 29), (7, 30), (5, 41), (21, 41), (11, 47), (16, 47), (10, 61), (16, 61)):
         g[y][x] = T((0x3a6, 0x3a7)[(x + y) % 2], True)
     for key, (x0, y0), room in PORTALS:
-        for q in range(4):
-            g[y0 + q // 2][x0 + q % 2] = T(ids[(0, q)], True)
+        for q in range(4):  # met een overkant: bovenste rij = warp (beloopbaar), zoals de scheuren
+            g[y0 + q // 2][x0 + q % 2] = T(ids[(0, q)], not (key in PORTAL_DEST and q < 2))
     return g
 
 
@@ -358,8 +361,8 @@ def hub(lav_rift_warp, cc_rift_warp):
         return [(x, y, g[y][x] & 0x3FF, bool(g[y][x] & 0xC00)) for x, y, m, col in closed[key]]
     lake_floor = [(x0 + q % 2, y0 + q // 2, 0x201, False) for key, (x0, y0), room in PORTALS if room == 'Lakes'
                   for q in range(4)]
-    lake_open = [(x0 + q % 2, y0 + q // 2, ids[(0, q)], True) for key, (x0, y0), room in PORTALS if room == 'Lakes'
-                 for q in range(4)]
+    lake_open = [(x0 + q % 2, y0 + q // 2, ids[(0, q)], not (key in PORTAL_DEST and q < 2))
+                 for key, (x0, y0), room in PORTALS if room == 'Lakes' for q in range(4)]
     # quest-poort (uitbreidbaar): VAR_RESULT = TRUE als alles klaar is, VAR_0x8005 = aantal open sidequests
     code = ('@ Spacetime_AllSidequestsDone: VAR_RESULT = TRUE als alle Spacetime-sidequests klaar zijn, VAR_0x8005 = het\n'
             '@ aantal dat nog openstaat. Uitbreiden: de klaar-flag van een nieuwe locatie in SIDEQUESTS (spacetime_cave.py)\n'
@@ -495,8 +498,14 @@ def hub(lav_rift_warp, cc_rift_warp):
     # dus geen warp-gedrag: alleen een aankomstpunt
     YOSHI_RETURN_WARP = len(warps)
     warps.append(warp(UNKNOWN_LANDING[0], UNKNOWN_LANDING[1], 'YOSHIS_ISLAND_BEACH', 1, elev=3))
-    # de portalen in de diepte (nog geen warp)
+    # de portalen in de diepte: warp als de overkant bestaat (PORTAL_DEST), anders een bordje
     for key, (x0, y0), room in PORTALS:
+        if key in PORTAL_DEST:
+            dest, wids = PORTAL_DEST[key]
+            print('hub-warp %s: %d' % (key, len(warps)))
+            for q in range(2):
+                warps.append(warp(x0 + q, y0, dest, wids[q], elev=3))
+            continue
         for q in range(4):
             bgs.append(sign(x0 + q % 2, y0 + q // 2, P + 'Portal' + key))
     S.raw(f'''{P}PortalUnknown::

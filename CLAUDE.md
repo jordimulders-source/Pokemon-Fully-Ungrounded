@@ -182,6 +182,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Geanimeerd vuur op de kaart:** `graphics/battle_anims/sprites/fire.png` (8 frames 32×32) werkt als tileset-vuur; vlammen op een boomkruin met een grillige onderrand (recht = "vlammenhoed"). Na wijzigingen in tileset-/animatieplaatjes `touch src/tilesets.c src/tileset_anims.c`.
 - **Levelcurve (v0.9.192):** trainer-EXP 50% + inhaal-EXP naar de volgende mijlpaal (`src/caps.c`); gehoorzaamheidsgrens = ace van de volgende gym. Na nieuwe trainers/gymteams: `python3 tools/grounded/levelcurve.py --postgame --profile` en de gymgids-teksten (`*_Text_GymGuide*`) bijwerken. Nieuwe post-game-content: lv 83–100 (Spacetime ±91–93, superbosses 100).
 - **Generator opnieuw draaien na de levelcurve:** sinds v0.9.195 houdt `check_levels.protect()` (bovenin elk bouwscript, ook in nieuwe) levels en evoluties vast; daarna `python3 tools/grounded/check_levels.py`. Scripts als heatran_lair, safari_zones, zee_vulling_2/3 herschrijven hele `map.json`'s: `git diff` op map.json controleren.
+- **Nooit `git stash` in de hoofdcheckout met eigen onopgeslagen werk** om een testrun terug te zetten (stash + drop gooide scriptwijzigingen weg; terug via `git fsck --no-reflog`). Gebruik `git checkout -- data include src`.
+- **Meer met zwemgrot** (`lakes.py`): General-vijver met `pond_tile()` (vooraf 3x3-opening op de watervorm), Route 120-heuvel met `MB_WATER_DOOR` + een Scorched Slab-kopie op `gTileset_Cave`. Sneeuwset heeft geen bordtegel: sign op een sneeuwpop. Kristallen 0x3A5–0x3A7 alleen op 0x211-vloer.
 
 ## Werkwijzen (herhaalde taken)
 

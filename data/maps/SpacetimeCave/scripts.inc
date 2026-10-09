@@ -126,16 +126,16 @@ SpacetimeCave_EventScript_HideLakes:
 	return
 
 SpacetimeCave_EventScript_OpenLakes:
-	setmetatile 13, 42, 0x3CE, TRUE
-	setmetatile 14, 42, 0x3CF, TRUE
+	setmetatile 13, 42, 0x3CE, FALSE
+	setmetatile 14, 42, 0x3CF, FALSE
 	setmetatile 13, 43, 0x3D0, TRUE
 	setmetatile 14, 43, 0x3D1, TRUE
-	setmetatile 7, 45, 0x3CE, TRUE
-	setmetatile 8, 45, 0x3CF, TRUE
+	setmetatile 7, 45, 0x3CE, FALSE
+	setmetatile 8, 45, 0x3CF, FALSE
 	setmetatile 7, 46, 0x3D0, TRUE
 	setmetatile 8, 46, 0x3D1, TRUE
-	setmetatile 18, 45, 0x3CE, TRUE
-	setmetatile 19, 45, 0x3CF, TRUE
+	setmetatile 18, 45, 0x3CE, FALSE
+	setmetatile 19, 45, 0x3CF, FALSE
 	setmetatile 18, 46, 0x3D0, TRUE
 	setmetatile 19, 46, 0x3D1, TRUE
 	return

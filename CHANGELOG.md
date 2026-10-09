@@ -17729,3 +17729,10 @@ Volgens Jordi's GBA-instructies per leider:
 - `zee_vulling_3` wees bij opnieuw draaien flags opnieuw toe (en liet ze botsen met landvulling, o.a. 0x465); bestaande flags blijven nu staan.
 - `zee_vulling_2`: de Wynaut-crèche op Route 130 houdt `FLAG_TEMP_6` (niet op de Mirage-layout).
 - Twee generatorblokken misten hun afsluitende `// }` (beacon_isle in flags.h en opponents.h, area_zero in opponents.h), waardoor beacon_isle het Tao-eilandblok overschreef. Hersteld; de bewaker weigert nu te draaien als een blok niet gesloten is.
+
+### [v0.9.197] - De drie meren (Uxie, Mesprit, Azelf)
+- **Lake Acuity** (sneeuw, bergwand met grotmond als aankomst, eiland met grot), **Lake Valor** en **Lake Verity** (Hoenn-bos, meer met vanilla-oevers, riet, rotsheuvel met zwemgrot in het midden). Elke grot heeft bovenin zijn meerwezen: Uxie, Azelf en Mesprit lv 94 met de ripple-transitie en `MUS_RG_VS_LEGEND`. Verdwijnt na vangen of verslaan.
+- De portalen in de meren-kamer van de Spacetime Cave zijn nu echte warps (na de Dialga/Palkia-scene); terug via de grotmond (Acuity) of de zuidpijl (Valor/Verity). Emulatortest heen en terug geslaagd.
+- Wilde tabellen lv 88–94 (land 12 unieke soorten, surf, vissen); nieuwe items: Peat Block, Full Incense, Metal Powder, Auspicious Armor, Rock Incense, Leader's Crest, Odd Incense, Linking Cord, Quick Powder.
+- Script `tools/grounded/maptools/lakes.py`; flags `FLAG_GROUNDED(1120–1148)` (`FLAG_LAKE_*_DONE` = poort naar Mt. Coronet). Muziek: Kanto/Sevii-placeholders.
+- Bouwscripts: `legend_maps`, `scorched_slab_ext`, `spire_tower` (originelen nu in `tools/grounded/maptools/orig/`) en `zee_vulling_4` (draait meteen `trog127.py` erachteraan) draaien weer en veranderen niets meer.

@@ -27,7 +27,9 @@ import snowlib as sl                    # M, terrace, hforest, blob, smooth, rec
 import nieuwe_items as ni
 
 GROUP = 'gMapGroup_Spacetime'
-HUB_DEST = ('SPACETIME_CAVE', 0)        # terugweg naar de meren-kamer in de hub (index zet de hoofdsessie)
+HUB_DEST = ('SPACETIME_CAVE', 0)        # (oud; zie HUB_WARP)
+# terugweg naar het eigen portaal in de meren-kamer: warp-index in de hub (spacetime_cave.py print ze)
+HUB_WARP = {'LakeValor': 14, 'LakeAcuity': 16, 'LakeVerity': 18}
 LEVEL = 94                              # meerwezens (post-game legendaries ±93-95)
 W, H = 48, 42
 
@@ -786,7 +788,7 @@ def main():
                 struct.unpack('<4H', open('data/layouts/Route136/border.bin', 'rb').read()), 'gTileset_Snow')
     info['LakeAcuity'] = (m.g, A)
     lakes = {}
-    lakes['LakeAcuity'] = dict(arrival_warps=[warp(A['arrival'][0], A['arrival'][1], *HUB_DEST)],
+    lakes['LakeAcuity'] = dict(arrival_warps=[warp(A['arrival'][0], A['arrival'][1], 'SPACETIME_CAVE', HUB_WARP['LakeAcuity'])],
                                door=A['idoor'], door_elev=0, sign=A['sign'], ball=A['ball'], hidden=A['hidden'],
                                arrive_tile=(A['arrival'][0], A['arrival'][1] + 1))
     # ---------------- Valor / Verity
@@ -820,7 +822,7 @@ def main():
                    if (x + dx, y + dy) not in f.mound), (name, 'heuvel raakt land')
         save_layout(name, name.upper().replace('LAKE', 'LAKE_'), f.g, tuple(val(t, 1, 0) for t in TREE), 'gTileset_Fortree')
         info[name] = (f.g, f)
-        lakes[name] = dict(arrival_warps=[warp(AX, H - 1, *HUB_DEST), warp(AX + 1, H - 1, *HUB_DEST)],
+        lakes[name] = dict(arrival_warps=[warp(AX, H - 1, 'SPACETIME_CAVE', HUB_WARP[name]), warp(AX + 1, H - 1, 'SPACETIME_CAVE', HUB_WARP[name] + 1)],
                            door=f.door, door_elev=1, sign=sign, ball=sp['ball'], hidden=sp['hidden'],
                            arrive_tile=(AX, H - 2))
         print('%s: %d water, %d bomen, deur %s' % (name, len(f.water), len(f.trees), f.door))

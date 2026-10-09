@@ -1648,7 +1648,21 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660+ vrij.
+// mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
+#define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)
+#define FLAG_RECEIVED_RUSTED_SWORD                       FLAG_GROUNDED(621) // Project Grounded: Mini Forest: roestig zwaard opgepakt (na de HoF; verbergt het zwaard)
+#define FLAG_RECEIVED_RUSTED_SHIELD                      FLAG_GROUNDED(622) // Project Grounded: Mini Forest: roestig schild opgepakt (na de HoF; verbergt het schild)
+#define FLAG_HIDE_MEGA_FOREST_ZACIAN                     FLAG_GROUNDED(623) // Project Grounded: Mega Forest: Zacian gevangen/verslagen
+#define FLAG_HIDE_MEGA_FOREST_ZAMAZENTA                  FLAG_GROUNDED(624) // Project Grounded: Mega Forest: Zamazenta gevangen/verslagen
+#define FLAG_ITEM_MEGA_FOREST_SWEET_APPLE                FLAG_GROUNDED(625) // Project Grounded: Mega Forest: Sweet Apple
+#define FLAG_ITEM_MEGA_FOREST_TART_APPLE                 FLAG_GROUNDED(626) // Project Grounded: Mega Forest: Tart Apple
+#define FLAG_ITEM_MEGA_FOREST_MAX_REVIVE                 FLAG_GROUNDED(627) // Project Grounded: Mega Forest: Max Revive
+#define FLAG_ITEM_MEGA_FOREST_PP_MAX                     FLAG_GROUNDED(628) // Project Grounded: Mega Forest: PP Max
+#define FLAG_HIDDEN_ITEM_MEGA_FOREST_STAR_PIECE          FLAG_GROUNDED(629) // Project Grounded: Mega Forest: verborgen Star Piece
+#define FLAG_HIDDEN_ITEM_MEGA_FOREST_BIG_NUGGET          FLAG_GROUNDED(630) // Project Grounded: Mega Forest: verborgen Big Nugget
+// }
+
 // spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; FLAG_GROUNDED 560-619)
 #define FLAG_ITEM_POKEMON_TOWER_3F_MAX_REVIVE            FLAG_GROUNDED(560) // Project Grounded: Pokemon Tower 3F: Max Revive
 #define FLAG_ITEM_POKEMON_TOWER_4F_MAX_ELIXIR            FLAG_GROUNDED(561) // Project Grounded: Pokemon Tower 4F: Max Elixir

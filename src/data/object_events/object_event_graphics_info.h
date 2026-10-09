@@ -5588,3 +5588,63 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal = {
     .images = sPicTable_RuinSeal,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RustedSwordOW,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RustedShieldOW,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_GiantLog,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

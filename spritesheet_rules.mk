@@ -5064,3 +5064,12 @@ $(OBJEVENTGFXDIR)/people/shy_guy.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/misc/ruin_seal.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/rusted_sword_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/rusted_shield_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/giant_log.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

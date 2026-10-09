@@ -8184,6 +8184,27 @@
           }
         },
         {
+          "map": "MAP_MEGA_FOREST",
+          "base_label": "gMegaForest",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 60, "max_level": 64, "species": "SPECIES_GREEDENT" },
+              { "min_level": 60, "max_level": 64, "species": "SPECIES_THIEVUL" },
+              { "min_level": 62, "max_level": 65, "species": "SPECIES_CORVIKNIGHT" },
+              { "min_level": 61, "max_level": 64, "species": "SPECIES_ORBEETLE" },
+              { "min_level": 60, "max_level": 64, "species": "SPECIES_ELDEGOSS" },
+              { "min_level": 61, "max_level": 65, "species": "SPECIES_DUBWOOL" },
+              { "min_level": 63, "max_level": 66, "species": "SPECIES_RAPIDASH_GALAR" },
+              { "min_level": 63, "max_level": 66, "species": "SPECIES_GRIMMSNARL" },
+              { "min_level": 64, "max_level": 67, "species": "SPECIES_HATTERENE" },
+              { "min_level": 64, "max_level": 67, "species": "SPECIES_POLTEAGEIST" },
+              { "min_level": 66, "max_level": 68, "species": "SPECIES_FALINKS" },
+              { "min_level": 66, "max_level": 68, "species": "SPECIES_DRAGAPULT" }
+            ]
+          }
+        },
+        {
           "map": "MAP_METEOR_FALLS_CRATER_ROOM",
           "base_label": "gMeteorFalls_CraterRoom",
           "land_mons": {

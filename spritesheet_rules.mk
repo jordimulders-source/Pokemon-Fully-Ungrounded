@@ -5098,6 +5098,46 @@ $(OBJEVENTGFXDIR)/people/poochy_ow.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/qcloud_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 4
 
-# Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+# Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (128x128)
 $(OBJEVENTGFXDIR)/people/nep_enut_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+# Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_green_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_red_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_yellow_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_light_blue_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_pink_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_purple_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_brown_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_black_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_white_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py) (32x32)
+$(OBJEVENTGFXDIR)/people/yoshi_blue_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4

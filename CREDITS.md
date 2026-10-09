@@ -37,6 +37,7 @@
   - **Shy Guys**: custom Shy Guy-sprites **door DarkSB24** (trainerfoto's en de overworld, `tools/grounded/shyguy_overworld.py`) (rode Shy Guy oorspronkelijk Yoshi's Island, Nintendo; sheet met dank aan Cheeseman).
   - **Golbat, Grimer, Mew**: Pokémon Red / Blue / Yellow (Game Freak).
   - **Ditto**: de Youngster-trainerfoto uit Emerald met een Ditto-gezicht (idee: Jordi).
+- **Yoshi's Island** (Spacetime-sidequest; `tools/grounded/maptools/yoshis_island.py` en `tools/grounded/yoshi_sprites.py`, bronnen in `graphics/grounded/yoshis_island/`): Super Mario Advance 3 / Yoshi's Island (Nintendo). Mode 7-eilandobjecten **geript door Trasher**, achtergronden door **Tech Static/Bowserman** en **p.k**, objecten, Poochy en de Yoshi-overworld (SMW2-sheet) **geript door A.J. Nitro**, Yoshi-backsprite in RS-stijl door **Freakyplanet**. **Nep-Enut** (het watermonster in het meertje, `nep_enut_sma3.png`): **geript door Lunar994**. De Yoshi's in alle kleuren zijn paletwissels van de Yoshi-overworld.
 - **Trio-compagnons**: voorplaatjes van de Pokémon zelf (pokeemerald-expansion).
 
 ### Muziek (MIDI-bewerkingen voor de GBA, opties voor gevechtsmuziek)

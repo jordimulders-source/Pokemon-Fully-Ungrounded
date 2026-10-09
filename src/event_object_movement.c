@@ -590,7 +590,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_WarioOw,               OBJ_EVENT_PAL_TAG_WARIO}, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     {gObjectEventPal_PoochyOw,              OBJ_EVENT_PAL_TAG_POOCHY}, // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     {gObjectEventPal_QCloudOw,              OBJ_EVENT_PAL_TAG_QCLOUD}, // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    {gObjectEventPal_NepEnutOw,             OBJ_EVENT_PAL_TAG_NEP_ENUT}, // Project Grounded: Nep-Enut, de nep-blauwe Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_NepEnutOw,             OBJ_EVENT_PAL_TAG_NEP_ENUT}, // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_YoshiColors0,          OBJ_EVENT_PAL_TAG_YOSHI_COLORS_0}, // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_YoshiColors1,          OBJ_EVENT_PAL_TAG_YOSHI_COLORS_1}, // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_YoshiColors2,          OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2}, // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_YoshiColors3,          OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3}, // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+    {gObjectEventPal_YoshiColors4,          OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4}, // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     {gObjectEventPal_Gen1Ghost,             OBJ_EVENT_PAL_TAG_GEN1_GHOST}, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
     {gObjectEventPal_MegaForest,            OBJ_EVENT_PAL_TAG_MEGA_FOREST}, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     {gObjectEventPal_KantoB,                        OBJ_EVENT_PAL_TAG_KANTO_NPC_B}, // Project Grounded (FRLG)
@@ -2806,19 +2811,32 @@ void TrySpawnLightSprites(s16 camX, s16 camY)
 
 // Project Grounded: reuzen-Wailord (192x96): extra marge bij in/uit beeld en een voetafdruk van 11x2 tegels
 // (de waterlijn) voor botsing en aanspreken, i.p.v. alleen de ankertegel.
+// Nep-Enut (128x128, Yoshi's Island): torent 8 tegels boven zijn ankertegel uit; voetafdruk 5x1 (de waterlijn).
 #define GIANT_WAILORD_HALF_W  5
 #define GIANT_WAILORD_DEPTH   2
+#define NEP_ENUT_HALF_W       2
+#define NEP_ENUT_DEPTH        1
 static s16 GiantObjectViewMargin(u16 graphicsId)
 {
-    return graphicsId == OBJ_EVENT_GFX_GIANT_WAILORD ? 7 : 0;
+    if (graphicsId == OBJ_EVENT_GFX_GIANT_WAILORD)
+        return 7;
+    if (graphicsId == OBJ_EVENT_GFX_NEP_ENUT)
+        return 8;
+    return 0;
 }
 
 static bool32 IsInGiantObjectFootprint(const struct ObjectEvent *obj, s16 x, s16 y)
 {
-    if (obj->graphicsId != OBJ_EVENT_GFX_GIANT_WAILORD)
+    s16 halfW, depth;
+
+    if (obj->graphicsId == OBJ_EVENT_GFX_GIANT_WAILORD)
+        halfW = GIANT_WAILORD_HALF_W, depth = GIANT_WAILORD_DEPTH;
+    else if (obj->graphicsId == OBJ_EVENT_GFX_NEP_ENUT)
+        halfW = NEP_ENUT_HALF_W, depth = NEP_ENUT_DEPTH;
+    else
         return FALSE;
-    return x >= obj->currentCoords.x - GIANT_WAILORD_HALF_W && x <= obj->currentCoords.x + GIANT_WAILORD_HALF_W
-        && y > obj->currentCoords.y - GIANT_WAILORD_DEPTH && y <= obj->currentCoords.y;
+    return x >= obj->currentCoords.x - halfW && x <= obj->currentCoords.x + halfW
+        && y > obj->currentCoords.y - depth && y <= obj->currentCoords.y;
 }
 
 void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)

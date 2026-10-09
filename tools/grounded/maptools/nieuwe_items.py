@@ -88,6 +88,7 @@ ITEMS = [
     (1065, 'YoshisIsland_Cave', 'ITEM_PEWTER_CRUNCHIES', 2, True, "Yoshi's Island kristalgrot: verborgen Pewter Crunchies"),
     (1066, 'YoshisIsland_Flowers', 'ITEM_LUMIOSE_GALETTE', 2, False, "Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)"),
     (1067, 'YoshisIsland_Flowers', 'ITEM_CHERISH_BALL', 1, False, "Yoshi's Island bloemenveld: Cherish Ball (achter de brug)"),
+    (1068, 'YoshisIsland_YoshiHouse', 'ITEM_SWEET_HEART', 1, False, "Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)"),
 ]
 FIRST, LAST = 840, 879
 EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219)]   # Area Zero, Yoshi's Island, de meren en Mt. Coronet: eigen blokken

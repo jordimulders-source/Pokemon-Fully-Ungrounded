@@ -12,6 +12,9 @@ Kaarten (achteraan gMapGroup_Spacetime):
                           mochikraampje, Boo's spookhuis (west) en Wario's fort (noord, dicht tot Boo verslagen is).
   YoshisIsland_BooMansion binnen: Commander Boo (multi battle met Yoshi, 2 tegen 1).
   YoshisIsland_WarioFort  binnen: twee Shy Guy-wachters (multi battle 4) en Wario (eindbaas, 2 tegen 1).
+  YoshisIsland_YoshiHouse binnen: het Yoshi-huis (oosthoek van het strand), tien Yoshi's in alle kleuren
+                          (paletwissels uit yoshi_sprites.py, twee kleuren per palet); de roze geeft een Sweet Heart.
+  Jungle: Nep-Enut (SMA3-watermonster op ware grootte, 128x128) loert in het meertje; aanspreken vanaf de oever.
 Tilesets: primary yoshi_island_base (de grond: gras, pad, zand, water, hoog gras, plateaus; per 8x8 uit een
 afstandsveld, dus organische randen die toch ontdubbelen) + per kaart een eigen secondary (yoshi_beach, yoshi_hills,
 yoshi_boo, yoshi_fort). emit() uit snow_tileset.py zet een getekend canvas om naar tiles/paletten.
@@ -768,7 +771,7 @@ class YMap:
 
 
 # ====================================================================== kaart 1: het strand (aankomst)
-BW, BH = 30, 24
+BW, BH = 37, 24                      # (was 30 breed; de oosthoek x 27-33 is voor het Yoshi-huis)
 B_LAND = (15, 15)                    # warp 0: hier val je uit de lucht (bestemming van het ?????-portaal)
 B_RIFT = (5, 14)                     # terugscheur (2x2, bovenste rij = warp)
 B_PIPE = (14, 5)                     # pijp naar de heuvels (2x2, onderste rij = warp)
@@ -778,6 +781,9 @@ B_SIGN = (18, 12)
 B_JPIPE = (25, 10)                   # pijp naar de jungle (onderste rij = warp)
 B_MSG = (20, 14)                     # Message Block op het strand
 B_CLOUD = (12, 14)                   # ?-wolk (Shalour Sable)
+B_HOUSE = (28, 6)                    # Yoshi-huis 6x4, deur op (30, 9) en (31, 9)
+B_HOUSE_DOOR = (B_HOUSE[0] + 2, B_HOUSE[1] + 3)
+B_MAIL = (33, 10)                    # brievenbus (Message Block) naast het huis
 
 
 def beach_map():
@@ -785,7 +791,7 @@ def beach_map():
     T = m.T
     m.rect(0, 0, BW - 1, 4, 'H')                       # noordrand (wand op rij 3-4)
     m.rect(0, 0, 2, 13, 'H'); m.rect(BW - 3, 0, BW - 1, 13, 'H')
-    m.rect(3, 5, 4, 8, 'H'); m.rect(BW - 5, 5, BW - 4, 7, 'H')
+    m.rect(3, 5, 4, 8, 'H'); m.rect(25, 5, 26, 7, 'H')
     # strand en zee
     m.rect(0, 13, BW - 1, BH - 1, 's')
     m.rect(0, 14, 1, 15, 's')
@@ -814,6 +820,12 @@ def beach_map():
     m.put('pipe', *B_JPIPE)
     m.put('msgblock', *B_MSG)
     m.put('chomp_grey', 8, 15)
+    m.put('yoshi_house', *B_HOUSE)
+    m.put('msgblock', *B_MAIL)
+    m.rect(B_HOUSE_DOOR[0], B_HOUSE_DOOR[1] + 1, B_HOUSE_DOOR[0] + 1, 12, 'p')       # paadje naar de deur
+    for x, y in ((27, 10), (33, 12), (29, 12)):
+        m.put('tulip' if (x + y) % 2 else 'tulip_pink', x, y)
+    m.put('egg_red', 27, 8); m.put('egg_yellow', 34, 14)
     for x, y in ((12, 11), (17, 7), (19, 10), (7, 12), (25, 12), (11, 7)):
         m.put('smiley', x, y)
     for x, y in ((13, 10), (16, 9), (22, 12), (4, 10), (10, 12)):
@@ -844,7 +856,9 @@ def build_tilesets(outdoor, indoor):
     freq, arr = {}, {}
     for m, cv, _, _ in outdoor:
         for x, y, k, a, b in cell_list(m, cv):
-            if not m.objmask[y, x]:
+            # de oosthoek van het strand (x >= 27, sinds het Yoshi-huis) telt niet mee: zo blijft de primary
+            # gelijk aan die van het oude, smallere strand (de volle secondaries van jungle en bloemenveld rekenen erop)
+            if not m.objmask[y, x] and not (m.name == 'YoshisIsland_Beach' and x >= 27):
                 freq[k] = freq.get(k, 0) + 1
                 arr[k] = (a, b)
     keys = sorted(freq, key=lambda k: -freq[k])
@@ -931,6 +945,8 @@ def save_layout(m, grid, sec_sym, border_mt):
         for x in range(m.W):
             coll = 1 if m.solid[y, x] else 0
             elev = 1 if m.T[y, x] == 'w' else 3
+            if (x, y) in getattr(m, 'elev0', ()):       # Nep-Enut: elevation 0, aan te spreken vanaf het land
+                elev = 0
             data += struct.pack('<H', int(grid[y, x]) | (coll << 10) | (elev << 12))
     open(d + '/map.bin', 'wb').write(bytes(data))
     open(d + '/border.bin', 'wb').write(struct.pack('<4H', *([border_mt | (1 << 10) | (3 << 12)] * 4)))
@@ -1051,6 +1067,44 @@ def fort_art():
     return a
 
 
+YH_SPOTS = hexs('38b030', 'e83830', 'f8c818', '58b8f0', 'f088c0', '9850d0', 'a06830', '303038', '2858d8')
+
+
+def yoshi_house_art():
+    """Het Yoshi-huis (6x4 cellen): een reuzen-Yoshi-ei als dak (wit, met vlekken in alle Yoshi-kleuren), muur van
+    lichte keien, ronde raampjes en de rode houten deur uit de SMA3-objectensheet (32x32, onderste rij = deur)."""
+    W_, H_ = 96, 64
+    a = np.zeros((H_, W_, 4))
+    ys, xs = np.mgrid[0:H_, 0:W_]
+    wallc = hexs('a89070', 'c8b090', 'e0d0b0', 'f0e8d0', '584430', 'f8f0e0')
+    wall = (ys >= 28) & (xs >= 6) & (xs < 90)
+    cob = tiled(tex_cobble(seed='yoshihuis', cols=wallc), H_, W_)
+    a[wall] = cob[wall]
+    # dak: de bovenkant van een groot ei, iets breder dan de muur
+    egg = (((xs - 47.5) / 47.5) ** 2 + ((ys - 34) / 33.0) ** 2 <= 1) & (ys <= 33)
+    a[egg] = rgba((248, 248, 240))
+    a[egg & (xs > 60) & (ys > 14)] = rgba((216, 216, 208))
+    a[egg & (((xs - 30) / 9.0) ** 2 + ((ys - 9) / 4.0) ** 2 <= 1)] = rgba((255, 255, 255))
+    for k, (cx, cy, r) in enumerate(((22, 22, 4.5), (40, 12, 4.0), (58, 20, 4.5), (75, 26, 4.0), (12, 30, 3.2),
+                                     (31, 28, 3.4), (50, 29, 3.0), (68, 9, 3.4), (84, 30, 3.0))):
+        sp = egg & (((xs - cx) ** 2 + ((ys - cy) * 1.15) ** 2) <= r * r)
+        a[sp] = rgba(YH_SPOTS[k])
+    a[outline_of(egg)] = rgba((24, 24, 24))
+    a[(ys == 33) & (xs >= 2) & (xs < 94)] = rgba((96, 96, 96))           # dakrand
+    # ronde raampjes met warm licht
+    for wx in (18, 77):
+        win = ((xs - wx) ** 2 + (ys - 43) ** 2) <= 36
+        a[win] = rgba((248, 208, 96))
+        a[win & (ys < 42) & (xs < wx)] = rgba((255, 240, 176))
+        a[win & ((xs == wx) | (ys == 43))] = rgba((120, 80, 40))
+        a[outline_of(win)] = rgba((88, 56, 32))
+    m = a[..., 3] > 0
+    a[outline_of(m) & ~egg] = rgba((40, 28, 16))
+    door = sma((176, 13, 208, 45))
+    stamp(a, door, 32, 64 - door.shape[0])
+    return a
+
+
 def add_facades(O):
     def add(name, spr, w, h, solid, beh):
         O[name] = dict(art=pad_cells(spr, w, h), w=w, h=h, solid=set(solid), beh=beh, shadow=False)
@@ -1059,6 +1113,8 @@ def add_facades(O):
         {(5, 4): MB['door']})
     add('fort', fort_art(), 8, 6, [(i, j) for i in range(8) for j in range(6) if (i, j) != (4, 5)],
         {(4, 5): MB['door']})
+    add('yoshi_house', yoshi_house_art(), 6, 4, [(i, j) for i in range(6) for j in range(4) if (i, j) not in ((2, 3), (3, 3))],
+        {(2, 3): MB['door'], (3, 3): MB['door']})
 
 
 # ====================================================================== kaart 2: de heuvels (Shy Guy-kamp)
@@ -1172,6 +1228,15 @@ def candle_art():
     return a
 
 
+def yoshi_portrait_art():
+    """Ingelijst ei met groene vlekken (het familieportret van de Yoshi's: allemaal eieren)."""
+    a = np.zeros((16, 16, 4))
+    a[1:15, 2:14] = rgba((184, 144, 40)); a[2:14, 3:13] = rgba((168, 216, 248))
+    stamp(a, egg_art()[2:15, 2:14], 3, 2)
+    a[0, 2:14] = rgba((24, 16, 8)); a[15, 2:14] = rgba((24, 16, 8)); a[1:15, 1] = rgba((24, 16, 8)); a[1:15, 14] = rgba((24, 16, 8))
+    return a
+
+
 def portrait_art():
     """Schilderij van een Boo (de Boo uit de trainerfoto-bron, verkleind tot 12x12) in een gouden lijst."""
     a = np.zeros((16, 16, 4))
@@ -1274,6 +1339,8 @@ def inside_objects(O):
     add('boo_carpet', carpet_art(BOO_CARPET, 2, 1), 2, 1, solid=[])
     add('fort_carpet', carpet_art(FORT_CARPET, 2, 1), 2, 1, solid=[])
     add('egg_box', egg_art((136, 56, 168)), 1, 1)
+    add('hearth', hearth_art(), 2, 2)
+    add('portrait_yoshi', yoshi_portrait_art(), 1, 1)
 
 
 class Inside(YMap):
@@ -1376,6 +1443,55 @@ def wario_fort_map():
         m.put('coins' if (x + y) % 2 else 'coins2', x, y)
     for x in (4, 13):
         m.put('torch', x, 2)
+    return m
+
+
+YH_FLOOR = hexs('8c5c30', 'b07840', 'c89058', '5c3818')
+YH_W, YH_H = 14, 12
+YH_EXIT = (6, 11)
+YH_YOSHIS = [  # (kleur, x, y, bewegingstype)
+    ('GREEN', 2, 5, 'MOVEMENT_TYPE_FACE_DOWN'), ('RED', 4, 5, 'MOVEMENT_TYPE_LOOK_AROUND'),
+    ('YELLOW', 9, 5, 'MOVEMENT_TYPE_FACE_LEFT'), ('LIGHT_BLUE', 11, 5, 'MOVEMENT_TYPE_LOOK_AROUND'),
+    ('PINK', 2, 8, 'MOVEMENT_TYPE_FACE_RIGHT'), ('PURPLE', 4, 8, 'MOVEMENT_TYPE_FACE_LEFT'),
+    ('BROWN', 9, 8, 'MOVEMENT_TYPE_LOOK_AROUND'), ('BLACK', 11, 8, 'MOVEMENT_TYPE_FACE_LEFT'),
+    ('WHITE', 3, 10, 'MOVEMENT_TYPE_FACE_UP'), ('BLUE', 10, 10, 'MOVEMENT_TYPE_FACE_UP'),
+]
+
+
+def hearth_art():
+    """Open haard (2x2) in de muur, zoals in het huis van Yoshi in SMW: keien, zwarte opening, kampvuur erin."""
+    a = np.zeros((32, 32, 4))
+    st = tiled(tex_cobble(seed='haard', w=32, h=32, cols=hexs('707070', '909090', 'b0b0b0', 'd0d0d0', '303030', 'e0e0e0')), 32, 32)
+    a[2:32, 1:31] = st[2:32, 1:31]
+    ys, xs = np.mgrid[0:32, 0:32]
+    hole = (ys >= 12) & (np.abs(xs - 15.5) <= 9) & ~((ys < 18) & (((xs - 15.5) / 9) ** 2 + ((ys - 18) / 6) ** 2 > 1))
+    a[hole] = rgba((24, 16, 16))
+    stamp(a, campfire_art(), 8, 16)
+    a[0:3, 0:32] = rgba((96, 64, 40))
+    m = a[..., 3] > 0
+    a[outline_of(m)] = rgba((32, 24, 16))
+    return a
+
+
+def yh_wall(cv, wl):
+    H, W = cv.shape[:2]
+    t = tiled(tex_planks(hexs('a87848', 'c89060', 'e0b080', '704820'), 'yoshiwand'), H, W)
+    cv[wl] = t[wl]
+    ys, xs = np.where(wl)
+    top = ys.min()
+    cv[wl & (np.arange(H)[:, None] >= ys.max() - 3)] = rgba((96, 64, 40))      # plint
+    cv[wl & (np.arange(H)[:, None] < top + 3)] = rgba((72, 48, 28))
+
+
+def yoshi_house_map():
+    m = Inside('YoshisIsland_YoshiHouse', YH_W, YH_H, tex_planks(YH_FLOOR, 'yoshihuis'), yh_wall, YH_FLOOR)
+    m.rect(1, 1, YH_W - 2, 3, 'W')
+    m.rect(1, 4, YH_W - 2, YH_H - 2, 'f')
+    m.T[YH_EXIT[1], YH_EXIT[0]] = 'x'
+    m.put('hearth', 6, 2)
+    for x, (name) in zip((1, 4, 9, 12), ('egg_green', 'egg_red', 'egg_yellow', 'egg_box')):
+        m.put(name, x, 4)
+    m.put('portrait_yoshi', 3, 2); m.put('portrait_yoshi', 10, 2)
     return m
 
 
@@ -1614,7 +1730,7 @@ J_PIPE2 = (35, 15)                   # pijp naar het bloemenveld
 J_CAVE = (19, 2)                     # grotingang 2x2, deuren in de onderste rij (19-20, 3)
 J_POOCHY = (10, 8)                   # Poochy staat op de oostelijkste doorn (T1); de rit gaat over rij 8
 J_THORN = (8, 10, 8)                 # doorns x 8-10 op rij 8 (T0, T1, rij)
-J_NEP = (32, 11)                     # Nep-Enut op de oever van het meertje
+J_NEP = (32, 10)                     # Nep-Enut (128x128) IN het meertje; voetafdruk x 30-34 op deze rij, aanspreken vanaf de oever
 J_SHY = (21, 15)                     # Shy Guy-trainer naast het pad
 J_CLOUD = (4, 10)                    # ?-wolk in het verborgen bosje
 J_MSG = [(17, 23), (13, 9), (26, 13)]
@@ -1658,6 +1774,7 @@ def jungle_map():
     for x, y in ((18, 21), (21, 20), (3, 12), (30, 12), (17, 19)):
         m.put('whiteflowers' if (x + y) % 2 else 'whiteflowers2', x, y)
     m.put('lizard', 25, 17)
+    m.elev0 = {J_NEP}
     return m
 
 
@@ -1776,7 +1893,7 @@ FLAGS = [
     (1047, 'FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL', "Yoshi's Island spookhuis: Poke Doll"),
     (1048, 'FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW', "Yoshi's Island fort: Grip Claw"),
     (1049, 'FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR', "Yoshi's Island fort: Malicious Armor"),
-    (1050, 'FLAG_YI_NEP_ENUT_DONE', "Yoshi's Island jungle: Nep-Enut (de nep-blauwe Yoshi, een Dondozo) verslagen of gevangen"),
+    (1050, 'FLAG_YI_NEP_ENUT_DONE', "Yoshi's Island jungle: Nep-Enut (het watermonster in het meertje, een Dondozo) verslagen of gevangen"),
     (1051, 'FLAG_YI_POOCHY_DUG', "Yoshi's Island jungle: Poochy heeft in het bosje iets opgegraven"),
     (1052, 'FLAG_YI_BRIDGE_CLOUD', "Yoshi's Island bloemenveld: ?-wolk geknapt, de brug over de kloof ligt er"),
     (1053, 'FLAG_YI_STAR_CLOUD', "Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt"),
@@ -2548,8 +2665,11 @@ def beach_extra(S):
           "Nobody on this island has ever asked.")
     S.npc('MsgBlock', "MESSAGE BLOCK: Hi! I'm a MESSAGE BLOCK! Hit me from below for a helpful hint!\n\n"
                       "MESSAGE BLOCK: ...you can't. This game is top-down. Fine. The hint is free: the pipe on the "
-                      "right goes to the jungle. The jungle has a lake. The lake has a YOSHI in it that is not a "
-                      "YOSHI.", 'MSGBOX_SIGN')
+                      "right goes to the jungle. The jungle has a lake. The lake has eyebrows. Lakes should not have "
+                      "eyebrows.", 'MSGBOX_SIGN')
+    S.npc('Mailbox', "(YOSHI's mailbox. There's a note inside: \"Gone to rescue my friends. Back soon. -YOSHI\")\n\n"
+                     "(The friends are all inside. They have been back for decades. Nobody told the mailbox.)",
+          'MSGBOX_SIGN')
 
 
 def hills_extra(S):
@@ -2635,15 +2755,22 @@ def jungle_scripts():
 
 {P}NepEnut::
 	lock
-	faceplayer
 	msgbox {X}Nep1, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_YI_NEP_ENUT, {P}Movement_NepJump
+	@ hij is 8 tegels hoog: de camera kijkt even omhoog, anders valt zijn kop buiten beeld
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, {P}Movement_CamUp
 	waitmovement 0
+	playse SE_M_DIVE
+	applymovement LOCALID_YI_NEP_ENUT, {P}Movement_NepRise
+	delay 24
 	playmoncry SPECIES_DONDOZO, CRY_MODE_ENCOUNTER
 	msgbox {X}Nep2, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, {P}Movement_CamDown
+	waitmovement 0
+	special RemoveCameraObject
 	setwildbattle SPECIES_DONDOZO, 90
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -2662,23 +2789,100 @@ def jungle_scripts():
 	release
 	end
 
-{P}Movement_NepJump:
-	jump_in_place_down
-	jump_in_place_down
-	jump_in_place_down
+{P}Movement_NepRise:
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	walk_in_place_slow_down
+	step_end
+
+{P}Movement_CamUp:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+{P}Movement_CamDown:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	step_end
 ''', [('PoochyMeet', "POOCHY: Ruff!\n\n(This dog's name is POOCHY. He's pretty cute, huh? He does not care about "
                      "thorns. He has never cared about anything except running in the direction you are facing.)"),
       ('PoochyRide', "POOCHY: RUFF RUFF! (Hitch a ride!)"),
       ('PoochyDig', "(POOCHY sniffs the ground, digs like his life depends on it, and proudly drops something at "
                     "your feet. It is a souvenir. Of what, nobody knows. POOCHY knows. POOCHY isn't telling.)"),
-      ('Nep1', "???: Yoshi!\n\n(A blue YOSHI waves at you from the shore. He has very big teeth. He has more teeth "
-               "than YOSHI. He has more teeth than most sharks.)"),
-      ('Nep2', "NEP-ENUT: YOSHIIIIIIII!!\n\n(That is not a YOSHI. That was never a YOSHI. It's NEP-ENUT, a DONDOZO in "
-               "a blue YOSHI costume that has been waiting at this lake for someone gullible to walk past.)"),
-      ('NepStill', "(NEP-ENUT climbs back into his costume and waves again, slightly less convincingly.)"),
-      ('NepGone', "(The blue YOSHI costume is lying empty on the shore. It is soaking wet. It smells like a whole "
-                  "lake.)")])
+      ('Nep1', "(Two very angry eyebrows are floating on the lake. Under the eyebrows: eyes. Under the eyes: a lot "
+               "more lake than you would like.)"),
+      ('Nep2', "NEP-ENUT: GLOOOORP!!\n\n(NEP-ENUT rises out of the lake. All of him. He used to chase YOSHI through "
+               "entire levels. Then he found out you can just wait in a lake for people to come and look.)\n\n"
+               "(Up close he's a DONDOZO. Most lake monsters are a fish if you get close enough. Nobody gets close "
+               "enough.)"),
+      ('NepStill', "(NEP-ENUT sinks back down until only the eyebrows are left. The eyebrows keep watching. "
+                   "Judging, mostly.)"),
+      ('NepGone', "(The lake is quiet. Suspiciously quiet. A single bubble pops. It sounds offended.)")])
     S.raw(CLOUD_MOVE.format(P=P))
     cloud(S, 'Cloud', 'LOCALID_YI_JUNGLE_CLOUD', milk[0], 'ITEM_MOOMOO_MILK', milk[1],
           "POP! The ? CLOUD bursts and it rains milk. Only on you.\n\nYou caught some of it in bottles. You had "
@@ -2693,10 +2897,66 @@ def jungle_scripts():
     S.npc('MsgThorns', "MESSAGE BLOCK: THORNS! YOSHIS can't walk on thorns. Trainers can't walk on thorns.\n\n"
                        "MESSAGE BLOCK: POOCHY can walk on thorns. POOCHY can walk on anything. Science stopped "
                        "asking.", 'MSGBOX_SIGN')
-    S.npc('MsgLake', "MESSAGE BLOCK: Please do not feed the blue YOSHI.\n\nMESSAGE BLOCK: There is no blue YOSHI. "
-                     "If you see a blue YOSHI, please re-read this sign.", 'MSGBOX_SIGN')
+    S.npc('MsgLake', "MESSAGE BLOCK: Please do not feed the eyebrows.\n\nMESSAGE BLOCK: The eyebrows are attached to "
+                     "something. The something is attached to the lake. Swimming is at your own risk. The risk is "
+                     "large. Very large. Larger than it looks.", 'MSGBOX_SIGN')
     S.npc('EggBlock', "(An EGG BLOCK. You bonk it. An egg pops out, rolls into the jungle and is never seen again. "
                       "EGG BLOCKS are like that.)", 'MSGBOX_SIGN')
+    S.write()
+
+
+YH_TEXT = {
+    'GREEN': "(A green YOSHI. Not THE YOSHI. This one is called GREG. People keep asking GREG to save the island. GREG "
+             "is in his pajamas.)",
+    'RED': "(The red YOSHI breathes fire after he eats a red shell. There are no red shells on this island. He has "
+           "been waiting since 1990. He has a lot of fire saved up.)",
+    'YELLOW': "(The yellow YOSHI makes the ground shake when he lands. He is sitting very, very still. For everyone's "
+              "sake, including the furniture's.)",
+    'LIGHT_BLUE': "(The light-blue YOSHI can fly with a blue shell. He asks if any of your POKEMON is a shell. He looks "
+                  "at your party for a very long time.)",
+    'PURPLE': "(The purple YOSHI says purple is just a darker, better pink and that the pink one copied him. The pink "
+              "one is not listening. The pink one is baking.)",
+    'BROWN': "(The brown YOSHI would like you to know he is not dirty. It's his natural color. He says it like he's "
+             "had to say it a lot.)",
+    'BLACK': "(The black YOSHI is wearing sunglasses indoors. He is the edgy one. He is eating a cupcake with "
+             "sprinkles. Edgily.)",
+    'WHITE': "(The white YOSHI is very rare. He tells you this immediately. Then once more. He has a small framed "
+             "certificate and nowhere to hang it.)",
+    'BLUE': "(A real blue YOSHI. Not a fish in a costume, not a lake with eyebrows. He wants that on record. Please "
+            "put it on record.)",
+}
+
+
+def house_scripts():
+    S = bd.Scr('YoshisIsland_YoshiHouse', "@ Project Grounded: Yoshi's Island, het Yoshi-huis (tools/grounded/maptools/yoshis_island.py)\n"
+               'YoshisIsland_YoshiHouse_MapScripts::\n\t.byte 0\n')
+    P, X = S.P, S.T
+    heart = ni_items('YoshisIsland_YoshiHouse')['ITEM_SWEET_HEART']
+    for col, x, y, mv in YH_YOSHIS:
+        key = 'Yoshi' + ''.join(w.capitalize() for w in col.split('_'))
+        if col == 'PINK':
+            S.raw(f'''{P}{key}::
+	lock
+	faceplayer
+	goto_if_set {heart[0]}, {P}{key}After
+	msgbox {X}{key}, MSGBOX_DEFAULT
+	giveitem ITEM_SWEET_HEART, {heart[1]}
+	goto_if_eq VAR_RESULT, FALSE, {P}{key}End
+	setflag {heart[0]}
+{P}{key}After::
+	msgbox {X}{key}After, MSGBOX_DEFAULT
+{P}{key}End::
+	release
+	end
+''', [(key, "(The pink YOSHI baked you something. It's shaped like a heart. It has been in her mouth. It is still a "
+                  "gift. Gifts are about the thought.)"),
+                 (key + 'After', "(The pink YOSHI is baking another one. For herself, this time. She has earned it.)")])
+        else:
+            S.npc(key, YH_TEXT[col])
+    S.npc('Hearth', "(A crackling fireplace. Every YOSHI's house has one. Nobody knows who lights it. The fire doesn't "
+                    "know either.)", 'MSGBOX_SIGN')
+    S.npc('Portrait', "(A family portrait. It's an egg. All the YOSHI family portraits are eggs. It's a very "
+                      "efficient family.)", 'MSGBOX_SIGN')
     S.write()
 
 
@@ -2859,9 +3119,12 @@ def map_jsons(lay):
              bd.warp(B_PIPE[0], B_PIPE[1] + 1, 'YOSHIS_ISLAND_HILLS', 0, elev=3),
              bd.warp(B_PIPE[0] + 1, B_PIPE[1] + 1, 'YOSHIS_ISLAND_HILLS', 1, elev=3),
              bd.warp(B_JPIPE[0], B_JPIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 0, elev=3),
-             bd.warp(B_JPIPE[0] + 1, B_JPIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 1, elev=3)]
+             bd.warp(B_JPIPE[0] + 1, B_JPIPE[1] + 1, 'YOSHIS_ISLAND_JUNGLE', 1, elev=3),
+             bd.warp(B_HOUSE_DOOR[0], B_HOUSE_DOOR[1], 'YOSHIS_ISLAND_YOSHI_HOUSE', 0, elev=3),
+             bd.warp(B_HOUSE_DOOR[0] + 1, B_HOUSE_DOOR[1], 'YOSHIS_ISLAND_YOSHI_HOUSE', 0, elev=3)]
     write_map('YoshisIsland_Beach', lay['YoshisIsland_Beach'], objs + io + late, warps,
-              [bd.sign(B_SIGN[0], B_SIGN[1], P + 'Sign'), bd.sign(B_MSG[0], B_MSG[1], P + 'MsgBlock')] + ib,
+              [bd.sign(B_SIGN[0], B_SIGN[1], P + 'Sign'), bd.sign(B_MSG[0], B_MSG[1], P + 'MsgBlock'),
+               bd.sign(B_MAIL[0], B_MAIL[1], P + 'Mailbox')] + ib,
               music='MUS_RG_BERRY_PICK')
     # heuvels
     P = 'YoshisIsland_Hills_EventScript_'
@@ -2911,7 +3174,7 @@ def map_jsons(lay):
     ji = ni_items('YoshisIsland_Jungle')
     objs = [lid(bd.obj('OBJ_EVENT_GFX_POOCHY', J_POOCHY[0], J_POOCHY[1], P + 'Poochy', '0', 'MOVEMENT_TYPE_FACE_RIGHT'),
                 'LOCALID_YI_POOCHY'),
-            lid(bd.obj('OBJ_EVENT_GFX_NEP_ENUT', J_NEP[0], J_NEP[1], P + 'NepEnut', 'FLAG_YI_NEP_ENUT_DONE'),
+            lid(bd.obj('OBJ_EVENT_GFX_NEP_ENUT', J_NEP[0], J_NEP[1], P + 'NepEnut', 'FLAG_YI_NEP_ENUT_DONE', elev=0),
                 'LOCALID_YI_NEP_ENUT'),
             lid(bd.obj(Q, J_CLOUD[0], J_CLOUD[1], P + 'Cloud', ji['ITEM_MOOMOO_MILK'][0], WIP), 'LOCALID_YI_JUNGLE_CLOUD'),
             bd.tr(SHY_GFX['green'], J_SHY[0], J_SHY[1], P + 'ShyGuy', 'LEFT', 3)]
@@ -2926,6 +3189,15 @@ def map_jsons(lay):
     bgs += [bd.sign(18, 6, P + 'EggBlock')]
     write_map('YoshisIsland_Jungle', lay['YoshisIsland_Jungle'], objs + io, warps, bgs + ib,
               music='MUS_RG_VIRIDIAN_FOREST')
+    # Yoshi-huis
+    P = 'YoshisIsland_YoshiHouse_EventScript_'
+    objs = [bd.obj('OBJ_EVENT_GFX_YOSHI_' + col, x, y, P + 'Yoshi' + ''.join(w.capitalize() for w in col.split('_')),
+                   '0', mv) for col, x, y, mv in YH_YOSHIS]
+    bgs = [bd.sign(6, 3, P + 'Hearth', 'BG_EVENT_PLAYER_FACING_NORTH'), bd.sign(7, 3, P + 'Hearth', 'BG_EVENT_PLAYER_FACING_NORTH'),
+           bd.sign(3, 3, P + 'Portrait', 'BG_EVENT_PLAYER_FACING_NORTH'), bd.sign(10, 3, P + 'Portrait', 'BG_EVENT_PLAYER_FACING_NORTH')]
+    write_map('YoshisIsland_YoshiHouse', lay['YoshisIsland_YoshiHouse'], objs,
+              [bd.warp(YH_EXIT[0], YH_EXIT[1], 'YOSHIS_ISLAND_BEACH', 7, elev=3)], bgs,
+              music='MUS_RG_PALLET', map_type='MAP_TYPE_INDOOR', show_map_name=False)
     # kristalgrot
     P = 'YoshisIsland_Cave_EventScript_'
     objs = [bd.tr(SHY_GFX['black'], C_SHY[0], C_SHY[1], P + 'ShyGuy', 'LEFT', 3)]
@@ -3030,12 +3302,24 @@ def check(maps):
             probs.append(('strand: onbereikbaar', p))
     if not {(B_JPIPE[0], B_JPIPE[1] + 1), (B_JPIPE[0] + 1, B_JPIPE[1] + 1)} <= r:
         probs.append(('strand: junglepijp onbereikbaar', None))
+    if not {B_HOUSE_DOOR, (B_HOUSE_DOOR[0] + 1, B_HOUSE_DOOR[1])} <= r:
+        probs.append(('strand: deur Yoshi-huis onbereikbaar', None))
+    if not adj(r, B_MAIL):
+        probs.append(('strand: brievenbus onbereikbaar', None))
+    YHm = maps['house']
+    yp = {(x, y) for _, x, y, _ in YH_YOSHIS}
+    r_h = YHm.reach(YH_EXIT, yp)
+    for p_ in yp | {(6, 3), (3, 3), (10, 3)}:
+        if not adj(r_h, p_) and p_ not in r_h:
+            probs.append(('Yoshi-huis: onbereikbaar', p_))
     if not adj(Hm.reach((H_PIPE[0], H_PIPE[1] + 1), npcs | {H_CLOUD}), H_CLOUD):
         probs.append(('heuvels: ?-wolk onbereikbaar', None))
     # jungle
     Jm = maps['jungle']
     t0, t1, ty = J_THORN
     npc = {J_POOCHY, J_NEP, J_SHY, J_CLOUD}
+    if Jm.T[J_NEP[1], J_NEP[0]] != 'w' or Jm.T[J_NEP[1] + 1, J_NEP[0]] == 'w':
+        probs.append(('jungle: Nep-Enut niet in het water aan de oever', J_NEP))
     r = Jm.reach((J_PIPE[0], J_PIPE[1] + 1), npc)
     for p in (J_NEP, J_SHY, *J_MSG):
         if not adj(r, p):
@@ -3121,6 +3405,11 @@ def render(grids, maps, outdir):
     ov.paste(j, (0, c.height + 16))
     ov.paste(f, (j.width + 32, c.height + 16))
     ov.save(os.path.join(outdir, 'overzicht_2.png'))
+    # derde: strand met het Yoshi-huis en het interieur ernaast
+    yh = out['house']
+    ov = Image.new('RGB', (b.width + 32 + yh.width, max(b.height, yh.height)), (24, 24, 32))
+    ov.paste(b, (0, 0)); ov.paste(yh, (b.width + 32, 0))
+    ov.save(os.path.join(outdir, 'overzicht_yoshihuis.png'))
 
 
 SECS = {  # kaart -> (symbool, map)
@@ -3131,6 +3420,7 @@ SECS = {  # kaart -> (symbool, map)
     'YoshisIsland_Jungle': ('YoshiJungle', 'data/tilesets/secondary/yoshi_jungle'),
     'YoshisIsland_Cave': ('YoshiCave', 'data/tilesets/secondary/yoshi_cave'),
     'YoshisIsland_Flowers': ('YoshiFlowers', 'data/tilesets/secondary/yoshi_flowers'),
+    'YoshisIsland_YoshiHouse': ('YoshiHouse', 'data/tilesets/secondary/yoshi_house'),
 }
 
 
@@ -3138,7 +3428,7 @@ def main():
     load_bd()
     O = objects()
     maps = {'beach': beach_map(), 'hills': hills_map(), 'boo': boo_mansion_map(), 'fort': wario_fort_map(),
-            'jungle': jungle_map(), 'cave': cave_map(), 'flowers': flowers_map()}
+            'jungle': jungle_map(), 'cave': cave_map(), 'flowers': flowers_map(), 'house': yoshi_house_map()}
     cvs = {k: m.render(O, SEED + i) for i, (k, m) in enumerate(maps.items())}
     for m in maps.values():
         if m.name in ('YoshisIsland_Beach', 'YoshisIsland_Jungle'):
@@ -3148,7 +3438,7 @@ def main():
     # de primary komt alleen uit strand + heuvels (zo blijft de volle heuvel-secondary gelijk); de nieuwe kaarten
     # hergebruiken wat ze daaruit kunnen en krijgen verder elk een eigen secondary
     out = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('beach', 'hills')]
-    ins = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('boo', 'fort', 'jungle', 'cave', 'flowers')]
+    ins = [(maps[k], cvs[k], SECS[maps[k].name][1], SECS[maps[k].name][0]) for k in ('boo', 'fort', 'jungle', 'cave', 'flowers', 'house')]
     grids = build_tilesets(out, ins)
     write_tilesets([(SECS[n][0], SECS[n][1], True, "Yoshi's Island: " + n.split('_')[1]) for n in SECS])
     lay = {}
@@ -3183,6 +3473,7 @@ def main():
     jungle_scripts()
     cave_scripts()
     flowers_scripts(maps['flowers'])
+    house_scripts()
     check(maps)
     if len(sys.argv) > 1:
         return grids, maps

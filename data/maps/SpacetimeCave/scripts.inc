@@ -9,10 +9,6 @@ SpacetimeCave_EventScript_RiftPark::
 	msgbox SpacetimeCave_Text_RiftPark, MSGBOX_SIGN
 	end
 
-SpacetimeCave_EventScript_RiftLakes::
-	msgbox SpacetimeCave_Text_RiftLakes, MSGBOX_SIGN
-	end
-
 SpacetimeCave_EventScript_RiftChargestone::
 	msgbox SpacetimeCave_Text_RiftChargestone, MSGBOX_SIGN
 	end
@@ -23,24 +19,6 @@ SpacetimeCave_EventScript_RiftGlimwood::
 
 SpacetimeCave_EventScript_RiftAreaZero::
 	msgbox SpacetimeCave_Text_RiftAreaZero, MSGBOX_SIGN
-	end
-
-SpacetimeCave_EventScript_RiftCoronet::
-	msgbox SpacetimeCave_Text_RiftCoronet, MSGBOX_SIGN
-	end
-
-SpacetimeCave_EventScript_RiftUnknown::
-	lockall
-	call Spacetime_AllSidequestsDone
-	goto_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_RiftUnknownOpen
-	buffernumberstring STR_VAR_1, VAR_0x8005
-	msgbox SpacetimeCave_Text_RiftUnknownSealed, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SpacetimeCave_EventScript_RiftUnknownOpen::
-	msgbox SpacetimeCave_Text_RiftUnknownOpen, MSGBOX_DEFAULT
-	releaseall
 	end
 
 @ Spacetime_AllSidequestsDone: VAR_RESULT = TRUE als alle Spacetime-sidequests klaar zijn, VAR_0x8005 = het
@@ -65,18 +43,25 @@ Spacetime_EventScript_AllDone:
 
 SpacetimeCave_OnLoad:
 	call_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_HideRifts
-	goto_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_OnLoadEnd
+	call_if_unset FLAG_SPACETIME_LAKES_SCENE, SpacetimeCave_EventScript_HideLakes
 	call Spacetime_AllSidequestsDone
-	call_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_UnsealUnknown
-SpacetimeCave_EventScript_OnLoadEnd:
+	call_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_OpenGateUnknown
+	call_if_set FLAG_SPACETIME_YOSHI_DONE, SpacetimeCave_EventScript_OpenGateYoshi
+	getcaughtmon SPECIES_GIRATINA
+	call_if_ne VAR_RESULT, 0, SpacetimeCave_EventScript_OpenGateGiratina
 	end
 
 SpacetimeCave_OnTransition:
 	call_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_ArmScene
+	call_if_set FLAG_SPACETIME_LAKES_SCENE, SpacetimeCave_EventScript_DisarmLakes
 	end
 
 SpacetimeCave_EventScript_ArmScene:
 	setvar VAR_TEMP_1, 1
+	return
+
+SpacetimeCave_EventScript_DisarmLakes:
+	setvar VAR_TEMP_2, 1
 	return
 
 SpacetimeCave_OnFrame:
@@ -108,18 +93,6 @@ SpacetimeCave_EventScript_HideRifts:
 	setmetatile 22, 14, 0x201, FALSE
 	setmetatile 21, 15, 0x201, FALSE
 	setmetatile 22, 15, 0x201, FALSE
-	setmetatile 8, 15, 0x201, FALSE
-	setmetatile 9, 15, 0x201, FALSE
-	setmetatile 8, 16, 0x201, FALSE
-	setmetatile 9, 16, 0x201, FALSE
-	setmetatile 17, 15, 0x201, FALSE
-	setmetatile 18, 15, 0x201, FALSE
-	setmetatile 17, 16, 0x201, FALSE
-	setmetatile 18, 16, 0x201, FALSE
-	setmetatile 12, 15, 0x201, FALSE
-	setmetatile 13, 15, 0x201, FALSE
-	setmetatile 12, 16, 0x201, FALSE
-	setmetatile 13, 16, 0x201, FALSE
 	return
 
 SpacetimeCave_EventScript_OpenRifts:
@@ -147,25 +120,77 @@ SpacetimeCave_EventScript_OpenRifts:
 	setmetatile 22, 14, 0x3AB, TRUE
 	setmetatile 21, 15, 0x3AC, TRUE
 	setmetatile 22, 15, 0x3AD, TRUE
-	setmetatile 8, 15, 0x3AA, TRUE
-	setmetatile 9, 15, 0x3AB, TRUE
-	setmetatile 8, 16, 0x3AC, TRUE
-	setmetatile 9, 16, 0x3AD, TRUE
-	setmetatile 17, 15, 0x3AE, TRUE
-	setmetatile 18, 15, 0x3AF, TRUE
-	setmetatile 17, 16, 0x3B0, TRUE
-	setmetatile 18, 16, 0x3B1, TRUE
-	setmetatile 12, 15, 0x3AE, TRUE
-	setmetatile 13, 15, 0x3AF, TRUE
-	setmetatile 12, 16, 0x3B0, TRUE
-	setmetatile 13, 16, 0x3B1, TRUE
 	return
 
-SpacetimeCave_EventScript_UnsealUnknown:
-	setmetatile 17, 15, 0x3AA, TRUE
-	setmetatile 18, 15, 0x3AB, TRUE
-	setmetatile 17, 16, 0x3AC, TRUE
-	setmetatile 18, 16, 0x3AD, TRUE
+SpacetimeCave_EventScript_HideLakes:
+	setmetatile 13, 42, 0x201, FALSE
+	setmetatile 14, 42, 0x201, FALSE
+	setmetatile 13, 43, 0x201, FALSE
+	setmetatile 14, 43, 0x201, FALSE
+	setmetatile 7, 45, 0x201, FALSE
+	setmetatile 8, 45, 0x201, FALSE
+	setmetatile 7, 46, 0x201, FALSE
+	setmetatile 8, 46, 0x201, FALSE
+	setmetatile 18, 45, 0x201, FALSE
+	setmetatile 19, 45, 0x201, FALSE
+	setmetatile 18, 46, 0x201, FALSE
+	setmetatile 19, 46, 0x201, FALSE
+	return
+
+SpacetimeCave_EventScript_OpenLakes:
+	setmetatile 13, 42, 0x3AA, TRUE
+	setmetatile 14, 42, 0x3AB, TRUE
+	setmetatile 13, 43, 0x3AC, TRUE
+	setmetatile 14, 43, 0x3AD, TRUE
+	setmetatile 7, 45, 0x3AA, TRUE
+	setmetatile 8, 45, 0x3AB, TRUE
+	setmetatile 7, 46, 0x3AC, TRUE
+	setmetatile 8, 46, 0x3AD, TRUE
+	setmetatile 18, 45, 0x3AA, TRUE
+	setmetatile 19, 45, 0x3AB, TRUE
+	setmetatile 18, 46, 0x3AC, TRUE
+	setmetatile 19, 46, 0x3AD, TRUE
+	return
+
+SpacetimeCave_EventScript_OpenGateUnknown:
+	setmetatile 13, 19, 0x201, FALSE
+	setmetatile 14, 19, 0x201, FALSE
+	setmetatile 13, 20, 0x201, FALSE
+	setmetatile 14, 20, 0x201, FALSE
+	return
+
+SpacetimeCave_EventScript_OpenGateYoshi:
+	setmetatile 13, 34, 0x201, FALSE
+	setmetatile 14, 34, 0x201, FALSE
+	setmetatile 13, 35, 0x201, FALSE
+	setmetatile 14, 35, 0x201, FALSE
+	return
+
+SpacetimeCave_EventScript_OpenGateGiratina:
+	setmetatile 12, 54, 0x212, TRUE
+	setmetatile 13, 54, 0x201, FALSE
+	setmetatile 14, 54, 0x201, FALSE
+	setmetatile 15, 54, 0x210, TRUE
+	setmetatile 12, 55, 0x212, TRUE
+	setmetatile 13, 55, 0x201, FALSE
+	setmetatile 14, 55, 0x201, FALSE
+	setmetatile 15, 55, 0x210, TRUE
+	setmetatile 12, 56, 0x212, TRUE
+	setmetatile 13, 56, 0x201, FALSE
+	setmetatile 14, 56, 0x201, FALSE
+	setmetatile 15, 56, 0x210, TRUE
+	setmetatile 12, 57, 0x212, TRUE
+	setmetatile 13, 57, 0x201, FALSE
+	setmetatile 14, 57, 0x201, FALSE
+	setmetatile 15, 57, 0x210, TRUE
+	setmetatile 12, 58, 0x21A, TRUE
+	setmetatile 13, 58, 0x201, FALSE
+	setmetatile 14, 58, 0x201, FALSE
+	setmetatile 15, 58, 0x218, TRUE
+	setmetatile 12, 59, 0x219, TRUE
+	setmetatile 13, 59, 0x201, FALSE
+	setmetatile 14, 59, 0x201, FALSE
+	setmetatile 15, 59, 0x219, TRUE
 	return
 
 SpacetimeCave_EventScript_FirstVisit::
@@ -212,6 +237,104 @@ SpacetimeCave_EventScript_Movement_PlayerIn:
 	walk_down
 	step_end
 
+SpacetimeCave_EventScript_GateUnknown::
+	lockall
+	call Spacetime_AllSidequestsDone
+	goto_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_GateEnd
+	buffernumberstring STR_VAR_1, VAR_0x8005
+	msgbox SpacetimeCave_Text_GateUnknown, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SpacetimeCave_EventScript_GateYoshi::
+	lockall
+	goto_if_set FLAG_SPACETIME_YOSHI_DONE, SpacetimeCave_EventScript_GateEnd
+	msgbox SpacetimeCave_Text_GateYoshi, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SpacetimeCave_EventScript_GateEnd::
+	releaseall
+	end
+
+SpacetimeCave_EventScript_Inscription::
+	lockall
+	getcaughtmon SPECIES_GIRATINA
+	goto_if_ne VAR_RESULT, 0, SpacetimeCave_EventScript_GateEnd
+	msgbox SpacetimeCave_Text_Inscription, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SpacetimeCave_EventScript_PortalUnknown::
+	lockall
+	playse SE_M_TELEPORT
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special ShakeCamera
+	waitstate
+	msgbox SpacetimeCave_Text_PortalUnknown, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SpacetimeCave_EventScript_PortalAcuity::
+	msgbox SpacetimeCave_Text_PortalAcuity, MSGBOX_SIGN
+	end
+
+SpacetimeCave_EventScript_PortalValor::
+	msgbox SpacetimeCave_Text_PortalValor, MSGBOX_SIGN
+	end
+
+SpacetimeCave_EventScript_PortalVerity::
+	msgbox SpacetimeCave_Text_PortalVerity, MSGBOX_SIGN
+	end
+
+SpacetimeCave_EventScript_PortalCoronet::
+	msgbox SpacetimeCave_Text_PortalCoronet, MSGBOX_SIGN
+	end
+
+SpacetimeCave_EventScript_LakesScene::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, SpacetimeCave_EventScript_Movement_LakesIn
+	waitmovement 0
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox SpacetimeCave_Text_LakesPalkia1, MSGBOX_DEFAULT
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox SpacetimeCave_Text_LakesDialga1, MSGBOX_DEFAULT
+	msgbox SpacetimeCave_Text_LakesPalkia2, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 4
+	special ShakeCamera
+	waitstate
+	waitmoncry
+	playse SE_M_DETECT
+	fadescreenspeed FADE_TO_WHITE, 2
+	call SpacetimeCave_EventScript_OpenLakes
+	special DrawWholeMapView
+	removeobject LOCALID_SPACETIME_LAKES_DIALGA
+	removeobject LOCALID_SPACETIME_LAKES_PALKIA
+	setflag FLAG_SPACETIME_LAKES_SCENE
+	setvar VAR_TEMP_2, 1
+	delay 20
+	fadescreenspeed FADE_FROM_WHITE, 4
+	playse SE_M_TELEPORT
+	msgbox SpacetimeCave_Text_LakesOpen, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SpacetimeCave_EventScript_Movement_LakesIn:
+	walk_down
+	step_end
+
 SpacetimeCave_EventScript_Plaque::
 	msgbox SpacetimeCave_Text_Plaque, MSGBOX_SIGN
 	end
@@ -240,14 +363,6 @@ SpacetimeCave_Text_RiftPark:
 	.string "The other side hasn't finished existing\n"
 	.string "yet, though. Spacetime is still loading.$"
 
-SpacetimeCave_Text_RiftLakes:
-	.string "The rift is wide open. Through it you\n"
-	.string "can just make out three lakes, and\l"
-	.string "three pairs of eyes that are definitely\l"
-	.string "watching.\p"
-	.string "The other side hasn't finished existing\n"
-	.string "yet, though. Spacetime is still loading.$"
-
 SpacetimeCave_Text_RiftChargestone:
 	.string "The rift is wide open. Through it you\n"
 	.string "can just make out floating rocks and\l"
@@ -271,29 +386,6 @@ SpacetimeCave_Text_RiftAreaZero:
 	.string "The other side hasn't finished existing\n"
 	.string "yet, though. Spacetime is still loading.$"
 
-SpacetimeCave_Text_RiftCoronet:
-	.string "This rift is sealed shut. Through the\n"
-	.string "cracks: a mountain at the top of the\l"
-	.string "world, and something enormous\l"
-	.string "breathing behind it.\p"
-	.string "DIALGA and PALKIA sealed this one\n"
-	.string "themselves. It's the kind of seal that\l"
-	.string "means 'later'.$"
-
-SpacetimeCave_Text_RiftUnknownSealed:
-	.string "The rift shows... nothing. A silhouette\n"
-	.string "of a green dinosaur. Then static.\p"
-	.string "It's sealed. Something on the other\n"
-	.string "side is waiting until you've cleaned up\l"
-	.string "the other rifts. {STR_VAR_1} to go.$"
-
-SpacetimeCave_Text_RiftUnknownOpen:
-	.string "The seal is gone. Something in there is\n"
-	.string "very, very round, and it is humming a\l"
-	.string "jaunty tune.\p"
-	.string "The path isn't solid yet. Come back when\n"
-	.string "spacetime has finished loading.$"
-
 SpacetimeCave_Text_Dialga1:
 	.string "DIALGA: ...Finally.\p"
 	.string "Do you know how long we have been\n"
@@ -316,16 +408,106 @@ SpacetimeCave_Text_Dialga2:
 	.string "very busy.$"
 
 SpacetimeCave_Text_Palkia2:
-	.string "PALKIA: Two of them stay shut.\p"
-	.string "One because you're not ready. The other\n"
-	.string "because WE aren't. Don't ask which is\l"
-	.string "which.$"
+	.string "PALKIA: The passage to the south stays\n"
+	.string "shut until every one of these is fixed.\p"
+	.string "What's down there? Ask again later.\n"
+	.string "Ideally much later. Ideally never.$"
 
 SpacetimeCave_Text_RiftsOpen:
-	.string "The cave tore open in seven places at\n"
+	.string "The cave tore open in six places at\n"
 	.string "once!\p"
-	.string "DIALGA and PALKIA are gone. Two rifts\n"
-	.string "remain sealed: ????? and MT. CORONET.$"
+	.string "DIALGA and PALKIA are gone. The\n"
+	.string "passage to the south is still a wall of\l"
+	.string "folded spacetime.$"
+
+SpacetimeCave_Text_GateUnknown:
+	.string "The passage is blocked by a wall of\n"
+	.string "folded spacetime. It flickers between\l"
+	.string "'rock', 'not rock' and 'error'.\p"
+	.string "It won't settle until the rifts upstairs\n"
+	.string "are fixed. {STR_VAR_1} to go.$"
+
+SpacetimeCave_Text_GateYoshi:
+	.string "Another fold in spacetime. This one\n"
+	.string "smells faintly of fruit and is humming a\l"
+	.string "jaunty tune.\p"
+	.string "Whatever went wrong behind the ?????\n"
+	.string "rift has to be put right first.$"
+
+SpacetimeCave_Text_Inscription:
+	.string "Words are carved into the dead end,\n"
+	.string "upside down and back to front:\p"
+	.string "'WHERE THE SKY PILLAR STANDS ON ITS\n"
+	.string "HEAD, THE ONE WHO WAS BANISHED HOLDS\l"
+	.string "THE DOOR. BRING IT ALONG, AND THE WALL\l"
+	.string "WILL REMEMBER IT WAS NEVER A WALL.'$"
+
+SpacetimeCave_Text_PortalUnknown:
+	.string "You reach into the ????? rift...\p"
+	.string "Something grabs your sleeve. A small\n"
+	.string "hand. In a mask. It pulls, the rift\l"
+	.string "hiccups, and spits you straight back\l"
+	.string "out.\p"
+	.string "Something went wrong. Spacetime says:\n"
+	.string "island not found. Try again in a later\l"
+	.string "version of reality.$"
+
+SpacetimeCave_Text_PortalAcuity:
+	.string "Snow blows out of this portal, and the\n"
+	.string "cold has a voice. It is thinking about\l"
+	.string "you. It knows things.\p"
+	.string "LAKE ACUITY. The ice on the other side\n"
+	.string "is still being installed.$"
+
+SpacetimeCave_Text_PortalValor:
+	.string "Behind this portal: a calm lake, and a\n"
+	.string "cave in the middle of it, and something\l"
+	.string "in the cave that is very brave from a\l"
+	.string "safe distance.\p"
+	.string "LAKE VALOR. Not open yet.$"
+
+SpacetimeCave_Text_PortalVerity:
+	.string "A lake, warm and still. Someone over\n"
+	.string "there is feeling a lot of feelings, on\l"
+	.string "your behalf.\p"
+	.string "LAKE VERITY. Under construction. The\n"
+	.string "feelings are not.$"
+
+SpacetimeCave_Text_PortalCoronet:
+	.string "The last portal. Behind it, a mountain\n"
+	.string "climbs out of the top of the world.\p"
+	.string "MT. CORONET. You can hear it breathing.\n"
+	.string "It isn't ready for you. Possibly the\l"
+	.string "other way round.$"
+
+SpacetimeCave_Text_LakesPalkia1:
+	.string "PALKIA: You again. Good. We were\n"
+	.string "starting to think the island ate you.\p"
+	.string "It does that. It's very round and very\n"
+	.string "hungry.$"
+
+SpacetimeCave_Text_LakesDialga1:
+	.string "DIALGA: Listen. Something is coming. Not\n"
+	.string "today. Not in any time I'd call 'soon'.\l"
+	.string "But it is coming, in every dimension at\l"
+	.string "once.\p"
+	.string "We cannot stop it. We are space and\n"
+	.string "time. It is the kind of problem that\l"
+	.string "needs a brain, a heart and a spine.$"
+
+SpacetimeCave_Text_LakesPalkia2:
+	.string "PALKIA: Three of them. KNOWLEDGE,\n"
+	.string "EMOTION, WILLPOWER. They sleep in three\l"
+	.string "lakes.\p"
+	.string "Go wake them up. Be polite. The last\n"
+	.string "person who wasn't lost their memory,\l"
+	.string "their feelings, and their car keys.$"
+
+SpacetimeCave_Text_LakesOpen:
+	.string "Three portals tore open: LAKE ACUITY,\n"
+	.string "LAKE VALOR and LAKE VERITY!\p"
+	.string "DIALGA and PALKIA are gone again. They\n"
+	.string "really do love an exit.$"
 
 SpacetimeCave_Text_Plaque:
 	.string "SPACETIME CAVE\p"
@@ -342,11 +524,12 @@ SpacetimeCave_Text_Researcher:
 	.string "it smells like a very angry clone.\p"
 	.string "My instruments say {STR_VAR_1} of the\n"
 	.string "working rifts still need you before the\l"
-	.string "sealed one in the corner calms down.$"
+	.string "passage to the south unfolds.$"
 
 SpacetimeCave_Text_ResearcherDone:
 	.string "Every working rift is quiet. You did\n"
 	.string "that.\p"
-	.string "The ????? rift has stopped screaming.\n"
-	.string "Now it just hums. I liked the screaming\l"
-	.string "better. You knew where you stood.$"
+	.string "The passage to the south has unfolded.\n"
+	.string "Something down there is humming. I liked\l"
+	.string "the screaming better. You knew where\l"
+	.string "you stood.$"

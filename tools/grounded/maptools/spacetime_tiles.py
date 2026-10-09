@@ -234,6 +234,29 @@ def rift_art(unstable=False, seed=7):
     return a
 
 
+def fold_art(seed=11):
+    """S2: 32x32 RGBA: een wand van gevouwen ruimte-tijd die een gang van 2 breed helemaal dichtzet (links/rechts
+    dekkend, boven/onder gerafeld zodat de vloer erdoor schemert)."""
+    rnd = random.Random(seed)
+    a = np.zeros((32, 32, 4), np.int32)
+    top = [1 + int(2.5 * abs(np.sin(x * 0.71 + 0.4)) + rnd.random() * 1.2) for x in range(32)]
+    bot = [30 - int(2.5 * abs(np.sin(x * 0.63 + 1.9)) + rnd.random() * 1.2) for x in range(32)]
+    for y in range(32):
+        for x in range(32):
+            if y < top[x] or y > bot[x]:
+                continue
+            t = (np.sin(y * 0.62 + 2.4 * np.sin(x * 0.27 + 0.5)) + 1) / 2          # gevouwen banden
+            e = min(y - top[x], bot[x] - y)
+            k = 0.55 if e < 2 else 1.0                                              # donkere rand
+            g = (38 + 70 * t) * k
+            a[y, x, :3] = (int(g + 12), int(g), int(g + 46))
+            a[y, x, 3] = 255
+    for _ in range(18):
+        x, y = rnd.randrange(2, 30), rnd.randrange(5, 27)
+        a[y, x, :3] = (120, 248, 248) if rnd.random() < 0.4 else (176, 160, 224)
+    return a
+
+
 def rift_quads(art):
     return [art[qy * 16:qy * 16 + 16, qx * 16:qx * 16 + 16] for qy in (0, 1) for qx in (0, 1)]
 
@@ -583,8 +606,8 @@ def spacetime_tilesets():
     idx = np.array(src_png)
     NT = 441
     tiles = [idx[(n // 16) * 8:(n // 16) * 8 + 8, (n % 16) * 8:(n % 16) * 8 + 8] for n in range(NT)]
-    # scheurtegels: 2 varianten (actief / instabiel) x 4 kwarten x 4 tiles, eigen palet 12
-    arts = [rift_art(), rift_art(True, 3)]
+    # scheurtegels: 3 varianten (actief / instabiel / wand) x 4 kwarten x 4 tiles, eigen palet 12
+    arts = [rift_art(), rift_art(True, 3), fold_art()]   # actief / instabiel / gevouwen wand (S2)
     pts = np.concatenate([a.reshape(-1, 4)[a.reshape(-1, 4)[:, 3] > 0][:, :3] for a in arts]).astype(float)
     cent = np.round(_ns['kmeans'](pts, 15, seed=1) / 8) * 8
     for a in arts:

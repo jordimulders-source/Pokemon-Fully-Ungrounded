@@ -1703,6 +1703,9 @@
 #define FLAG_HIDE_LAVENDER_GHOST_GENGAR                  FLAG_GROUNDED(577) // Project Grounded: Lavender Town: kwade geest voor de toren verdreven
 #define FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR                FLAG_GROUNDED(578) // Project Grounded: Lavender Town: kwade geest bij de noorduitgang verdreven
 #define FLAG_HIDE_LAVENDER_GHOST_BANETTE                 FLAG_GROUNDED(579) // Project Grounded: Lavender Town: kwade geest bij de westuitgang verdreven
+#define FLAG_SPACETIME_YOSHI_DONE                        FLAG_GROUNDED(580) // Project Grounded: Spacetime: Yoshi's Island gefixt (opent de gang naar de meren; nog nooit gezet)
+#define FLAG_SPACETIME_LAKES_SCENE                       FLAG_GROUNDED(581) // Project Grounded: Spacetime: Dialga en Palkia hebben de meren-portalen geopend
+#define FLAG_RECEIVED_SILPH_SCOPE                        FLAG_GROUNDED(582) // Project Grounded: Lavender Town: Silph Scope van de oud-verkoper in het PC
 // }
 // ruin_beasts { (tools/grounded/maptools/ruin_beasts.py; FLAG_GROUNDED 530-559)
 #define FLAG_RUIN_SEAL_CHI_YU                            FLAG_GROUNDED(530) // Project Grounded: Chi-Yu-schrijn (Jagged Pass) bezocht

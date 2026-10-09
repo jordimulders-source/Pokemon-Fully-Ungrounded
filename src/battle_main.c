@@ -1,4 +1,5 @@
 #include "global.h"
+#include "gen1_ghost.h"
 #include "forces.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -455,6 +456,7 @@ void CB2_InitBattle(void)
     AllocateBattleSpritesData();
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
+    Gen1Ghost_OnBattleStart(); // Project Grounded
 
 #if T_SHOULD_RUN_MOVE_ANIM
     gLoadFail = FALSE;

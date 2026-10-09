@@ -1,4 +1,5 @@
 #include "global.h"
+#include "gen1_ghost.h"
 #include "battle.h"
 #include "battle_controllers.h"
 #include "battle_ai_main.h"
@@ -649,6 +650,10 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battler)
                              species, personalityValue);
 
     paletteOffset = OBJ_PLTT_ID(battler);
+
+    // Project Grounded: Gen 1-GHOST zonder Silph Scope (src/gen1_ghost.c)
+    if (Gen1Ghost_LoadPic(battler, gMonSpritesGfxPtr->spritesGfx[position], paletteOffset))
+        return;
 
     if (gBattleSpritesDataPtr->battlerData[battler].transformSpecies == SPECIES_NONE)
         paletteData = GetMonFrontSpritePal(mon);

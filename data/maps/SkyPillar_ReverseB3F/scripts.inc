@@ -17,6 +17,8 @@ SkyPillar_ReverseB3F_EventScript_Giratina::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_ReverseB3F_EventScript_GiratinaStays
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SkyPillar_ReverseB3F_EventScript_GiratinaStays
+	@ Spacetime S2: verslagen = hij blijft (de Spacetime-gang opent pas als Giratina gevangen is)
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_ReverseB3F_EventScript_GiratinaStays
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_SKY_PILLAR_REVERSE_GIRATINA
 	setflag FLAG_HIDE_SKY_PILLAR_GIRATINA

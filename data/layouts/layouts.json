@@ -5496,7 +5496,7 @@
       "id": "LAYOUT_SPACETIME_CAVE",
       "name": "SpacetimeCave_Layout",
       "width": 27,
-      "height": 20,
+      "height": 68,
       "primary_tileset": "gTileset_SpacetimeGeneral",
       "secondary_tileset": "gTileset_SpacetimeCave",
       "border_filepath": "data/layouts/SpacetimeCave/border.bin",

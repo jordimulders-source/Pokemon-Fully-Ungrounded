@@ -306,7 +306,9 @@
 #define OBJ_EVENT_GFX_RUSTED_SHIELD_OW                  288 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_GFX_GIANT_LOG                         289 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 
-#define NUM_OBJ_EVENT_GFX                        290
+#define OBJ_EVENT_GFX_GEN1_GHOST                        290 // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+
+#define NUM_OBJ_EVENT_GFX                        291
 
 
 // These are dynamic object gfx ids.
@@ -468,6 +470,7 @@
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
 #define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1143 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+#define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
 #define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
 #define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 

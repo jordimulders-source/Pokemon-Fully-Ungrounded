@@ -880,5 +880,7 @@ extern const u8 BattleScript_MetronomeAttackstring[];
 extern const u8 BattleScript_SleepTalkAttackstring[];
 extern const u8 BattleScript_NaturePowerAttackstring[];
 extern const u8 BattleScript_PokemonCantUseTheMove[];
+extern const u8 BattleScript_Gen1GhostScared[]; // Project Grounded
+extern const u8 BattleScript_Gen1GhostGetOut[]; // Project Grounded
 
 #endif // GUARD_BATTLE_SCRIPTS_H

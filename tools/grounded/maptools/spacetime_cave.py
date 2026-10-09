@@ -1,10 +1,10 @@
 """Project Grounded: de Spacetime Cave (post-game hub bij Mossdeep) + deel 1 van de warps.
 
-  SpacetimeCave        Hub (27x20, Cave-tileset violet getint, spacetime_tiles.py): rotsje op een eilandje in
-                       Route 125 (46,28); de grotopening verschijnt pas na de Hall of Fame (ON_LOAD). Binnen negen
-                       scheuren (2x2): LAVENDER TOWN en CERULEAN CAVE werken (teleporttegel), de rest is instabiel
-                       (bord-tekst, nog geen warp): National Park/Ilex, Gen 4-meren, Chargestone Cave, Glimwood
-                       Tangle, Area Zero, ?????, en onderaan midden Mt. Coronet (als laatste).
+  SpacetimeCave        Hub (Cave-tileset violet getint, spacetime_tiles.py): rotsheuvel op een eilandje in
+                       Route 125 (45,28); de grotopening verschijnt pas na de Hall of Fame (ON_LOAD). Binnen zes
+                       scheuren (2x2): LAVENDER TOWN en CERULEAN CAVE werken (teleporttegel), de rest is open maar
+                       nog zonder overkant (bord-tekst): National Park/Ilex, Chargestone Cave, Glimwood Tangle,
+                       Area Zero. Daaronder de gang naar ?????, de meren en Mt. Coronet (zie S2).
   LavenderTown         FRLG-indeling 1-op-1 (24x20), Emerald-grond/bomen/PC/Mart, Petalburg-huizen met paars dak,
                        de FRLG-toren; terugscheur bij de zuiduitgang. PC (+2F, heal location), Mart, drie huizen.
   PokemonTower_1F-5F   FRLG 1F-4F + de FRLG-7F als 5F (ingekort: 5F/6F weggelaten). Reskin met Ekat's Revamp.
@@ -16,9 +16,15 @@ S1 (Jordi, 9 okt): groter eiland met rotsheuvel op Route 125; eerste bezoek: Dia
   (behalve ????? en Coronet), quest-poort Spacetime_AllSidequestsDone (lijst SIDEQUESTS); Lavender als spookstad
   (eigen paletten, graven, dode bomen, kwade geesten, bezeten Channelers, baas Agatha op 5F) en na de bevrijding
   layout LavenderTown_Calm; Cerulean Cave: Rocket-grunts, Giovanni voor Mewtwo, Mewtwo healt en vecht (lv 75).
+S2 (Jordi, 9 okt): Route 125-ingang met vanilla rotsheuvel (Route 111 + SkyPillar_Outside); hoofdzaal alleen de
+  zes sidequest-scheuren; onder de hoofdzaal (zelfde kaart, 27x68) een gang met poorten: gevouwen wand (open na
+  Spacetime_AllSidequestsDone) -> ?????-kamer -> gevouwen wand (FLAG_SPACETIME_YOSHI_DONE) -> meren-kamer (Dialga +
+  Palkia, Acuity/Valor/Verity) -> doodlopend met Giratina-inscriptie (open als Giratina gevangen is) -> Mt. Coronet.
+  Portalen nog zonder warp. Lavender: Silph Scope van de oud-verkoper in het PC; zonder scope Gen 1-GHOST
+  (src/gen1_ghost.c, tools/grounded/gen1_ghost_sprites.py).
 Kaartgroep gMapGroup_Spacetime (nieuw, achteraan). Mapsec MAPSEC_SPACETIME_CAVE (Town Map 26,4); de Kanto-kaarten
 gebruiken MAPSEC_LAVENDER_TOWN / MAPSEC_POKEMON_TOWER / MAPSEC_CERULEAN_CAVE.
-Flags FLAG_GROUNDED 560-619 (blok 'spacetime_cave' in flags.h), trainers 1159-1169 en 1195-1199.
+Flags FLAG_GROUNDED 560-619 (blok 'spacetime_cave' in flags.h; 560-582 in gebruik), trainers 1159-1169 en 1195-1199.
 Teksten zijn placeholders (Jordi herschrijft ze).
 Gebruik: python3 tools/grounded/maptools/spacetime_cave.py [rendermap]"""
 import importlib, json, os, re, struct, subprocess, sys
@@ -59,6 +65,10 @@ FLAGS = [
     (577, 'FLAG_HIDE_LAVENDER_GHOST_GENGAR', 'Lavender Town: kwade geest voor de toren verdreven'),
     (578, 'FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR', 'Lavender Town: kwade geest bij de noorduitgang verdreven'),
     (579, 'FLAG_HIDE_LAVENDER_GHOST_BANETTE', 'Lavender Town: kwade geest bij de westuitgang verdreven'),
+    # S2: de gang onder de hoofdzaal en de Silph Scope
+    (580, 'FLAG_SPACETIME_YOSHI_DONE', "Spacetime: Yoshi's Island gefixt (opent de gang naar de meren; nog nooit gezet)"),
+    (581, 'FLAG_SPACETIME_LAKES_SCENE', 'Spacetime: Dialga en Palkia hebben de meren-portalen geopend'),
+    (582, 'FLAG_RECEIVED_SILPH_SCOPE', 'Lavender Town: Silph Scope van de oud-verkoper in het PC'),
 ]
 
 
@@ -144,38 +154,49 @@ def scr(name):
 
 
 # ====================================================================== 1. de hub
+# S2 (Jordi, 9 okt): in de hoofdzaal alleen de zes sidequest-scheuren. Onderin loopt een gang naar het zuiden
+# (een lange kaart met poorten): instabiele wand (open na Spacetime_AllSidequestsDone) -> ?????-kamer ->
+# instabiele wand (open na FLAG_SPACETIME_YOSHI_DONE) -> meren-kamer (Dialga + Palkia, drie portalen) ->
+# doodlopend stuk met een Giratina-inscriptie (open als Giratina gevangen is) -> Mt. Coronet-portaal.
 HUB = 'SpacetimeCave'
 HUB_DOOR = (13, 2)
 RIFTS = [  # (sleutel, linksboven, bestemming of None, naam op het bord)
     ('Lavender', (4, 5), 'LAVENDER', None),
     ('Cerulean', (4, 10), 'CERULEAN', None),
     ('Park', (4, 14), None, 'a park shaped like a POKé BALL, and a forest behind it that hums'),
-    ('Lakes', (21, 5), None, 'three lakes, and three pairs of eyes that are definitely watching'),
-    ('Chargestone', (21, 10), None, 'floating rocks and enough static to restyle your hair'),
-    ('Glimwood', (21, 14), None, 'glowing mushrooms and a forest that is far too pleased with itself'),
-    ('AreaZero', (8, 15), None, 'a crater that keeps going down long after it should have stopped'),
-    ('Unknown', (17, 15), None, '?????'),
-    ('Coronet', (12, 15), None, 'a mountain at the top of the world, and something enormous breathing behind it'),
+    ('Chargestone', (21, 5), None, 'floating rocks and enough static to restyle your hair'),
+    ('Glimwood', (21, 10), None, 'glowing mushrooms and a forest that is far too pleased with itself'),
+    ('AreaZero', (21, 14), None, 'a crater that keeps going down long after it should have stopped'),
 ]
-
-
 # S1: eerste bezoek (Dialga + Palkia openen de scheuren) en quest-poorten.
-# Toestand per scheur na de scène: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet), 'sealed' (dicht).
-RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'open', 'Lakes': 'open', 'Chargestone': 'open',
-              'Glimwood': 'open', 'AreaZero': 'open', 'Unknown': 'sealed', 'Coronet': 'sealed'}
+# Toestand per scheur na de scene: 'warp' (werkt), 'open' (open maar de overkant bestaat nog niet).
+RIFT_STATE = {'Lavender': 'warp', 'Cerulean': 'warp', 'Park': 'open', 'Chargestone': 'open', 'Glimwood': 'open',
+              'AreaZero': 'open'}
 # Sidequests die meetellen voor de gang naar ?????. Een nieuwe locatie: haar klaar-flag hier toevoegen (en opnieuw
 # draaien). Nog niet gebouwde locaties (National Park/Ilex, Chargestone Cave, Glimwood Tangle, Area Zero) tellen pas
-# mee zodra hun flag hier staat; tot dan telt alleen wat bestaat. De meren-kamer ligt ná ????? en telt niet mee.
+# mee zodra hun flag hier staat; tot dan telt alleen wat bestaat. De meren-kamer ligt na ????? en telt niet mee.
 SIDEQUESTS = [('FLAG_SPACETIME_LAVENDER_DONE', 'Lavender Town: de kwade geesten verdreven'),
               ('FLAG_SPACETIME_CERULEAN_DONE', 'Cerulean Cave: Mewtwo gevangen of verslagen')]
 HUB_DIALGA, HUB_PALKIA, HUB_RESEARCHER = (10, 7), (16, 7), (18, 4)
+# de diepte (zelfde kaart, onder de hoofdzaal); de gang is 2 breed (x 13-14)
+CX = 13
+DEEP_ROOMS = {'Unknown': (6, 26, 20, 31), 'Lakes': (4, 40, 22, 48), 'Coronet': (8, 60, 18, 65)}
+GATE_UNKNOWN, GATE_YOSHI = (CX, 19), (CX, 34)       # instabiele wand (2x2, linksboven)
+DEAD_END = 54                                        # rij van de doodlopende rand (dicht tot Giratina gevangen is)
+PORTALS = [  # (sleutel, linksboven, kamer)
+    ('Unknown', (9, 28), 'Unknown'),
+    ('Valor', (CX, 42), 'Lakes'), ('Acuity', (7, 45), 'Lakes'), ('Verity', (18, 45), 'Lakes'),
+    ('Coronet', (CX, 62), 'Coronet'),
+]
+LAKES_DIALGA, LAKES_PALKIA = (10, 42), (17, 42)
+HUB_W, HUB_H = 27, 68
 
 
-def hub(lav_rift_warp, cc_rift_warp):
+def hub_grid(ids):
+    """Raster van de hele kaart, alle poorten open (de dichte toestand zet het kaartscript / hub())."""
     vre = importlib.import_module('victory_road_ext')
-    os.chdir(st.REPO)
-    W, H = 27, 20
-    g = vre.blank(W, H)
+    g = vre.blank(HUB_W, HUB_H)
+    F3 = vre.F
     vre.room(g, 2, 3, 24, 17)
     vre.door(g, HUB_DOOR[0], HUB_DOOR[1])
     for (x, y) in ((2, 3), (24, 3), (2, 17), (24, 17), (10, 3), (16, 3), (2, 8), (24, 8)):
@@ -183,7 +204,77 @@ def hub(lav_rift_warp, cc_rift_warp):
     # kristallen (Cave 0x3a5-0x3a7) in een kring in het midden: de 'kern' van de scheuren
     for i, (x, y) in enumerate(((11, 8), (15, 8), (10, 10), (16, 10), (11, 12), (15, 12), (13, 10))):
         g[y][x] = T((0x3a6, 0x3a7)[i % 2] if i < 6 else 0x3a5, True)
+    for (x0, y0, x1, y1) in DEEP_ROOMS.values():
+        vre.room(g, x0, y0, x1, y1)
+    for (x0, y0, x1, y1) in DEEP_ROOMS.values():
+        for (x, y) in ((x0, y0), (x1, y0), (x0, y1), (x1, y1)):
+            if abs(x - CX) > 3:
+                vre.rock(g, x, y)
+
+    def corridor(ya, yb):
+        """gang x CX..CX+1 van rij ya (de onderrand van de kamer erboven) tot yb (de bovenwand van de kamer eronder)."""
+        for y in range(ya, yb + 1):
+            g[y][CX - 1], g[y][CX + 2] = T(0x212, True), T(0x210, True)
+            g[y][CX] = g[y][CX + 1] = F3
+        # aansluiting op de onderrand erboven (GraniteCave_B1F: 20a links, 208 rechts)
+        g[ya][CX - 1], g[ya][CX + 2] = T(0x20a, True), T(0x208, True)
+        # aansluiting op de bovenwand eronder (AlteringCave/Shoal Cave: 21a links, 218 rechts; tweede rij 219)
+        g[yb - 1][CX - 1], g[yb - 1][CX + 2] = T(0x21a, True), T(0x218, True)
+        g[yb][CX - 1], g[yb][CX + 2] = T(0x219, True), T(0x219, True)
+    corridor(18, 25)
+    corridor(32, 39)
+    corridor(49, 59)
+    # wat kristallen in de diepere kamers
+    for (x, y) in ((16, 27), (18, 29), (7, 30), (5, 41), (21, 41), (11, 47), (16, 47), (10, 61), (16, 61)):
+        g[y][x] = T((0x3a6, 0x3a7)[(x + y) % 2], True)
+    for key, (x0, y0), room in PORTALS:
+        for q in range(4):
+            g[y0 + q // 2][x0 + q % 2] = T(ids[(0, q)], True)
+    return g
+
+
+def hub_closed_cells(ids, g):
+    """De dichte toestand per poort: {poort: [(x, y, metatile, col)]}."""
+    out = {}
+    for key, (gx, gy) in (('Unknown', GATE_UNKNOWN), ('Yoshi', GATE_YOSHI)):
+        out[key] = [(gx + q % 2, gy + q // 2, ids[(2, q)], True) for q in range(4)]
+    # Giratina: de gang eindigt in een onderrand; daaronder rots, en de bovenwand van de Coronet-kamer dicht
+    y = DEAD_END
+    cells = [(CX - 1, y, 0x224, True), (CX, y, 0x221, True), (CX + 1, y, 0x221, True), (CX + 2, y, 0x224, True)]
+    top = DEEP_ROOMS['Coronet'][1] - 2
+    for yy in range(y + 1, top):
+        cells += [(x, yy, 0x211, True) for x in range(CX - 1, CX + 3)]
+    cells += [(x, yy, 0x219, True) for yy in (top, top + 1) for x in range(CX - 1, CX + 3)]
+    out['Giratina'] = cells
+    return out
+
+
+def hub_reach(g, start):
+    seen, q = {start}, [start]
+    while q:
+        x, y = q.pop()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            p = (x + dx, y + dy)
+            if 0 <= p[0] < HUB_W and 0 <= p[1] < HUB_H and p not in seen and not g[p[1]][p[0]] & 0xC00:
+                seen.add(p); q.append(p)
+    return seen
+
+
+def hub(lav_rift_warp, cc_rift_warp):
+    os.chdir(st.REPO)
     ids = HUB_IDS
+    g = hub_grid(ids)
+    closed = hub_closed_cells(ids, g)
+    # controle (alles open): elk portaal bereikbaar vanaf de deur
+    r = hub_reach(g, (HUB_DOOR[0], HUB_DOOR[1] + 1))
+    for key, (x0, y0), room in PORTALS:
+        assert any((x0 + dx + ex, y0 + dy + ey) in r for dx in (0, 1) for dy in (0, 1)
+                   for ex, ey in ((1, 0), (-1, 0), (0, 1), (0, -1))), ('portaal onbereikbaar', key)
+    # map.bin = alle poorten dicht (zo ziet de speler het eerst)
+    gc = [row[:] for row in g]
+    for cells in closed.values():
+        for x, y, m, col in cells:
+            gc[y][x] = T(m, col)
     warps = [warp(HUB_DOOR[0], HUB_DOOR[1], 'ROUTE125', ROUTE125_WARP, elev=3)]
     bgs, P, T_ = [], HUB + '_EventScript_', HUB + '_Text_'
     head = ('@ Project Grounded: SpacetimeCave (tools/grounded/maptools/spacetime_cave.py)\n'
@@ -192,7 +283,7 @@ def hub(lav_rift_warp, cc_rift_warp):
             '\tmap_script MAP_SCRIPT_ON_TRANSITION, SpacetimeCave_OnTransition\n'
             '\tmap_script MAP_SCRIPT_ON_FRAME_TABLE, SpacetimeCave_OnFrame\n\t.byte 0\n')
     S = Scr(HUB, head)
-    hide, opened, unseal = [], [], []          # setmetatile-regels per toestand
+    hide, opened = [], []          # setmetatile-regels: scheuren voor/na de eerste scene
     for key, (x0, y0), dest, desc in RIFTS:
         state = RIFT_STATE[key]
         for q in range(4):
@@ -204,42 +295,27 @@ def hub(lav_rift_warp, cc_rift_warp):
                     wid = {'LAVENDER': lav_rift_warp, 'CERULEAN': cc_rift_warp}[dest] + q
                     warps.append(warp(x, y, {'LAVENDER': 'LAVENDER_TOWN', 'CERULEAN': 'CERULEAN_CAVE_1F'}[dest], wid,
                                       elev=3))
-            else:                           # open (actief beeld) of dicht (instabiel beeld); altijd massief + bordje
-                m, col = ids[(0 if state == 'open' else 1, q)], True
+            else:                           # open (actief beeld), nog geen overkant: massief + bordje
+                m, col = ids[(0, q)], True
                 bgs.append(sign(x, y, P + 'Rift' + key))
-            g[y][x] = T(m, col)
+            g[y][x] = gc[y][x] = T(m, col)
             hide.append('\tsetmetatile %d, %d, 0x%03X, FALSE\n' % (x, y, floor))
             opened.append('\tsetmetatile %d, %d, 0x%03X, %s\n' % (x, y, m, 'TRUE' if col else 'FALSE'))
-            if key == 'Unknown':
-                unseal.append('\tsetmetatile %d, %d, 0x%03X, TRUE\n' % (x, y, ids[(0, q)]))
         if state == 'open':
             S.npc('Rift' + key, "The rift is wide open. Through it you can just make out %s.\n\n"
                   "The other side hasn't finished existing yet, though. Spacetime is still loading." % desc,
                   'MSGBOX_SIGN')
-        elif key == 'Coronet':
-            S.npc('Rift' + key, "This rift is sealed shut. Through the cracks: %s.\n\n"
-                  "DIALGA and PALKIA sealed this one themselves. It's the kind of seal that means 'later'." % desc,
-                  'MSGBOX_SIGN')
-    # ????? : dicht tot alle sidequests klaar zijn
-    S.raw(f'''{P}RiftUnknown::
-	lockall
-	call Spacetime_AllSidequestsDone
-	goto_if_eq VAR_RESULT, TRUE, {P}RiftUnknownOpen
-	buffernumberstring STR_VAR_1, VAR_0x8005
-	msgbox {T_}RiftUnknownSealed, MSGBOX_DEFAULT
-	releaseall
-	end
 
-{P}RiftUnknownOpen::
-	msgbox {T_}RiftUnknownOpen, MSGBOX_DEFAULT
-	releaseall
-	end
-''', [('RiftUnknownSealed', "The rift shows... nothing. A silhouette of a green dinosaur. Then static.\n\n"
-                            "It's sealed. Something on the other side is waiting until you've cleaned up the "
-                            "other rifts. {STR_VAR_1} to go."),
-      ('RiftUnknownOpen', "The seal is gone. Something in there is very, very round, and it is humming a "
-                          "jaunty tune.\n\nThe path isn't solid yet. Come back when spacetime has finished "
-                          "loading.")])
+    def setm(cells):
+        return ''.join('\tsetmetatile %d, %d, 0x%03X, %s\n' % (x, y, m & 0x3FF, 'TRUE' if col else 'FALSE')
+                       for x, y, m, col in cells)
+
+    def open_cells(key):
+        return [(x, y, g[y][x] & 0x3FF, bool(g[y][x] & 0xC00)) for x, y, m, col in closed[key]]
+    lake_floor = [(x0 + q % 2, y0 + q // 2, 0x201, False) for key, (x0, y0), room in PORTALS if room == 'Lakes'
+                  for q in range(4)]
+    lake_open = [(x0 + q % 2, y0 + q // 2, ids[(0, q)], True) for key, (x0, y0), room in PORTALS if room == 'Lakes'
+                 for q in range(4)]
     # quest-poort (uitbreidbaar): VAR_RESULT = TRUE als alles klaar is, VAR_0x8005 = aantal open sidequests
     code = ('@ Spacetime_AllSidequestsDone: VAR_RESULT = TRUE als alle Spacetime-sidequests klaar zijn, VAR_0x8005 = het\n'
             '@ aantal dat nog openstaat. Uitbreiden: de klaar-flag van een nieuwe locatie in SIDEQUESTS (spacetime_cave.py)\n'
@@ -252,19 +328,30 @@ def hub(lav_rift_warp, cc_rift_warp):
              'Spacetime_EventScript_CountOpen:\n\taddvar VAR_0x8005, 1\n\treturn\n\n'
              'Spacetime_EventScript_AllDone:\n\tsetvar VAR_RESULT, TRUE\n\treturn\n')
     S.raw(code)
-    # kaartscripts: lege grot tot de scène, ????? open na alle sidequests
-    S.raw('SpacetimeCave_OnLoad:\n\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_HideRifts\n'
-          '\tgoto_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_OnLoadEnd\n'
+    # kaartscripts: lege grot tot de scene; poorten open volgens hun flags
+    S.raw('SpacetimeCave_OnLoad:\n'
+          '\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_HideRifts\n'
+          '\tcall_if_unset FLAG_SPACETIME_LAKES_SCENE, SpacetimeCave_EventScript_HideLakes\n'
           '\tcall Spacetime_AllSidequestsDone\n'
-          '\tcall_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_UnsealUnknown\n'
-          'SpacetimeCave_EventScript_OnLoadEnd:\n\tend\n\n'
-          'SpacetimeCave_OnTransition:\n\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_ArmScene\n\tend\n\n'
+          '\tcall_if_eq VAR_RESULT, TRUE, SpacetimeCave_EventScript_OpenGateUnknown\n'
+          '\tcall_if_set FLAG_SPACETIME_YOSHI_DONE, SpacetimeCave_EventScript_OpenGateYoshi\n'
+          '\tgetcaughtmon SPECIES_GIRATINA\n'
+          '\tcall_if_ne VAR_RESULT, 0, SpacetimeCave_EventScript_OpenGateGiratina\n'
+          '\tend\n\n'
+          'SpacetimeCave_OnTransition:\n'
+          '\tcall_if_unset FLAG_SPACETIME_RIFTS_OPENED, SpacetimeCave_EventScript_ArmScene\n'
+          '\tcall_if_set FLAG_SPACETIME_LAKES_SCENE, SpacetimeCave_EventScript_DisarmLakes\n\tend\n\n'
           'SpacetimeCave_EventScript_ArmScene:\n\tsetvar VAR_TEMP_1, 1\n\treturn\n\n'
+          'SpacetimeCave_EventScript_DisarmLakes:\n\tsetvar VAR_TEMP_2, 1\n\treturn\n\n'
           'SpacetimeCave_OnFrame:\n\tmap_script_2 VAR_TEMP_1, 1, SpacetimeCave_EventScript_FirstVisit\n\t.2byte 0\n\n'
           'SpacetimeCave_EventScript_HideRifts:\n' + ''.join(hide) + '\treturn\n\n'
           'SpacetimeCave_EventScript_OpenRifts:\n' + ''.join(opened) + '\treturn\n\n'
-          'SpacetimeCave_EventScript_UnsealUnknown:\n' + ''.join(unseal) + '\treturn\n')
-    # de scène
+          'SpacetimeCave_EventScript_HideLakes:\n' + setm(lake_floor) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_OpenLakes:\n' + setm(lake_open) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_OpenGateUnknown:\n' + setm(open_cells('Unknown')) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_OpenGateYoshi:\n' + setm(open_cells('Yoshi')) + '\treturn\n\n'
+          'SpacetimeCave_EventScript_OpenGateGiratina:\n' + setm(open_cells('Giratina')) + '\treturn\n')
+    # de scene van het eerste bezoek
     S.raw(f'''{P}FirstVisit::
 	lockall
 	setvar VAR_TEMP_1, 0
@@ -315,10 +402,133 @@ def hub(lav_rift_warp, cc_rift_warp):
       ('Dialga2', "DIALGA: Every tear in this cave leads to a place that went wrong. Another dimension. "
                   "Another time. Usually both.\n\nGo and fix them. We would do it ourselves, but we are "
                   "very large and very busy."),
-      ('Palkia2', "PALKIA: Two of them stay shut.\n\nOne because you're not ready. The other because WE "
-                  "aren't. Don't ask which is which."),
-      ('RiftsOpen', "The cave tore open in seven places at once!\n\nDIALGA and PALKIA are gone. Two rifts "
-                    "remain sealed: ????? and MT. CORONET.")])
+      ('Palkia2', "PALKIA: The passage to the south stays shut until every one of these is fixed.\n\n"
+                  "What's down there? Ask again later. Ideally much later. Ideally never."),
+      ('RiftsOpen', "The cave tore open in six places at once!\n\nDIALGA and PALKIA are gone. The passage "
+                    "to the south is still a wall of folded spacetime.")])
+    # de poorten (bordjes op de instabiele wanden en de doodlopende rand)
+    for key, (gx, gy) in (('Unknown', GATE_UNKNOWN), ('Yoshi', GATE_YOSHI)):
+        for q in range(4):
+            bgs.append(sign(gx + q % 2, gy + q // 2, P + 'Gate' + key))
+    S.raw(f'''{P}GateUnknown::
+	lockall
+	call Spacetime_AllSidequestsDone
+	goto_if_eq VAR_RESULT, TRUE, {P}GateEnd
+	buffernumberstring STR_VAR_1, VAR_0x8005
+	msgbox {T_}GateUnknown, MSGBOX_DEFAULT
+	releaseall
+	end
+
+{P}GateYoshi::
+	lockall
+	goto_if_set FLAG_SPACETIME_YOSHI_DONE, {P}GateEnd
+	msgbox {T_}GateYoshi, MSGBOX_DEFAULT
+	releaseall
+	end
+
+{P}GateEnd::
+	releaseall
+	end
+
+{P}Inscription::
+	lockall
+	getcaughtmon SPECIES_GIRATINA
+	goto_if_ne VAR_RESULT, 0, {P}GateEnd
+	msgbox {T_}Inscription, MSGBOX_DEFAULT
+	releaseall
+	end
+''', [('GateUnknown', "The passage is blocked by a wall of folded spacetime. It flickers between 'rock', "
+                      "'not rock' and 'error'.\n\nIt won't settle until the rifts upstairs are fixed. "
+                      "{STR_VAR_1} to go."),
+      ('GateYoshi', "Another fold in spacetime. This one smells faintly of fruit and is humming a jaunty "
+                    "tune.\n\nWhatever went wrong behind the ????? rift has to be put right first."),
+      ('Inscription', "Words are carved into the dead end, upside down and back to front:\n\n"
+                      "'WHERE THE SKY PILLAR STANDS ON ITS HEAD, THE ONE WHO WAS BANISHED HOLDS THE DOOR. "
+                      "BRING IT ALONG, AND THE WALL WILL REMEMBER IT WAS NEVER A WALL.'")])
+    for x in (CX, CX + 1):
+        bgs.append(sign(x, DEAD_END, P + 'Inscription'))
+    # de portalen in de diepte (nog geen warp)
+    for key, (x0, y0), room in PORTALS:
+        for q in range(4):
+            bgs.append(sign(x0 + q % 2, y0 + q // 2, P + 'Portal' + key))
+    S.raw(f'''{P}PortalUnknown::
+	lockall
+	playse SE_M_TELEPORT
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special ShakeCamera
+	waitstate
+	msgbox {T_}PortalUnknown, MSGBOX_DEFAULT
+	releaseall
+	end
+''', [('PortalUnknown', "You reach into the ????? rift...\n\nSomething grabs your sleeve. A small hand. "
+                        "In a mask. It pulls, the rift hiccups, and spits you straight back out.\n\n"
+                        "Something went wrong. Spacetime says: island not found. Try again in a later version "
+                        "of reality.")])
+    S.npc('PortalAcuity', "Snow blows out of this portal, and the cold has a voice. It is thinking about you. "
+          "It knows things.\n\nLAKE ACUITY. The ice on the other side is still being installed.", 'MSGBOX_SIGN')
+    S.npc('PortalValor', "Behind this portal: a calm lake, and a cave in the middle of it, and something in "
+          "the cave that is very brave from a safe distance.\n\nLAKE VALOR. Not open yet.", 'MSGBOX_SIGN')
+    S.npc('PortalVerity', "A lake, warm and still. Someone over there is feeling a lot of feelings, on your "
+          "behalf.\n\nLAKE VERITY. Under construction. The feelings are not.", 'MSGBOX_SIGN')
+    S.npc('PortalCoronet', "The last portal. Behind it, a mountain climbs out of the top of the world.\n\n"
+          "MT. CORONET. You can hear it breathing. It isn't ready for you. Possibly the other way round.",
+          'MSGBOX_SIGN')
+    # meren-kamer: Dialga en Palkia channelen weer
+    S.raw(f'''{P}LakesScene::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, {P}Movement_LakesIn
+	waitmovement 0
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox {T_}LakesPalkia1, MSGBOX_DEFAULT
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox {T_}LakesDialga1, MSGBOX_DEFAULT
+	msgbox {T_}LakesPalkia2, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 4
+	special ShakeCamera
+	waitstate
+	waitmoncry
+	playse SE_M_DETECT
+	fadescreenspeed FADE_TO_WHITE, 2
+	call SpacetimeCave_EventScript_OpenLakes
+	special DrawWholeMapView
+	removeobject LOCALID_SPACETIME_LAKES_DIALGA
+	removeobject LOCALID_SPACETIME_LAKES_PALKIA
+	setflag FLAG_SPACETIME_LAKES_SCENE
+	setvar VAR_TEMP_2, 1
+	delay 20
+	fadescreenspeed FADE_FROM_WHITE, 4
+	playse SE_M_TELEPORT
+	msgbox {T_}LakesOpen, MSGBOX_DEFAULT
+	releaseall
+	end
+
+{P}Movement_LakesIn:
+	walk_down
+	step_end
+''', [('LakesPalkia1', "PALKIA: You again. Good. We were starting to think the island ate you.\n\n"
+                       "It does that. It's very round and very hungry."),
+      ('LakesDialga1', "DIALGA: Listen. Something is coming. Not today. Not in any time I'd call 'soon'. "
+                       "But it is coming, in every dimension at once.\n\nWe cannot stop it. We are space and "
+                       "time. It is the kind of problem that needs a brain, a heart and a spine."),
+      ('LakesPalkia2', "PALKIA: Three of them. KNOWLEDGE, EMOTION, WILLPOWER. They sleep in three lakes.\n\n"
+                       "Go wake them up. Be polite. The last person who wasn't lost their memory, their "
+                       "feelings, and their car keys."),
+      ('LakesOpen', "Three portals tore open: LAKE ACUITY, LAKE VALOR and LAKE VERITY!\n\nDIALGA and PALKIA "
+                    "are gone again. They really do love an exit.")])
+    coords = [{'type': 'trigger', 'x': x, 'y': DEEP_ROOMS['Lakes'][1], 'elevation': 3, 'var': 'VAR_TEMP_2',
+               'var_value': '0', 'script': P + 'LakesScene'} for x in (CX, CX + 1)]
     # bordje en de onderzoeker (telt mee met de quest-poort)
     bgs.append(sign(10, 3, P + 'Plaque'))
     S.npc('Plaque', "SPACETIME CAVE\n\nWhere places that no longer exist, never existed, or are in another "
@@ -328,7 +538,11 @@ def hub(lav_rift_warp, cc_rift_warp):
             obj('OBJ_EVENT_GFX_SPECIES(DIALGA)', HUB_DIALGA[0], HUB_DIALGA[1], '0x0', 'FLAG_SPACETIME_RIFTS_OPENED',
                 move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_DIALGA'),
             obj('OBJ_EVENT_GFX_SPECIES(PALKIA)', HUB_PALKIA[0], HUB_PALKIA[1], '0x0', 'FLAG_SPACETIME_RIFTS_OPENED',
-                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_PALKIA')]
+                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_PALKIA'),
+            obj('OBJ_EVENT_GFX_SPECIES(DIALGA)', LAKES_DIALGA[0], LAKES_DIALGA[1], '0x0', 'FLAG_SPACETIME_LAKES_SCENE',
+                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_LAKES_DIALGA'),
+            obj('OBJ_EVENT_GFX_SPECIES(PALKIA)', LAKES_PALKIA[0], LAKES_PALKIA[1], '0x0', 'FLAG_SPACETIME_LAKES_SCENE',
+                move='MOVEMENT_TYPE_FACE_UP', local_id='LOCALID_SPACETIME_LAKES_PALKIA')]
     S.raw(f'''{P}Researcher::
 	lock
 	faceplayer
@@ -346,27 +560,39 @@ def hub(lav_rift_warp, cc_rift_warp):
 ''', [('Researcher', "Did you SEE that? Two gods, one cave, zero safety briefings.\n\nI study the rifts. "
                      "The far left one leads to a haunted town. The one below it smells like a very angry "
                      "clone.\n\nMy instruments say {STR_VAR_1} of the working rifts still need you before the "
-                     "sealed one in the corner calms down."),
-      ('ResearcherDone', "Every working rift is quiet. You did that.\n\nThe ????? rift has stopped "
-                         "screaming. Now it just hums. I liked the screaming better. You knew where you stood.")])
+                     "passage to the south unfolds."),
+      ('ResearcherDone', "Every working rift is quiet. You did that.\n\nThe passage to the south has "
+                         "unfolded. Something down there is humming. I liked the screaming better. You knew "
+                         "where you stood.")])
     S.write()
-    cells = [c for row in g for c in row]
-    lay = save_layout(HUB, W, H, cells, [T(0x211, True, 0)] * 4, 'gTileset_SpacetimeGeneral', 'gTileset_SpacetimeCave')
-    write_map(HUB, lay, objs, warps, bgs, music='MUS_RG_SEVII_DUNGEON', region_map_section='MAPSEC_SPACETIME_CAVE')
-    return g
+    cells = [c for row in gc for c in row]
+    lay = save_layout(HUB, HUB_W, HUB_H, cells, [T(0x211, True, 0)] * 4, 'gTileset_SpacetimeGeneral',
+                      'gTileset_SpacetimeCave')
+    write_map(HUB, lay, objs, warps, bgs, coords, music='MUS_RG_SEVII_DUNGEON',
+              region_map_section='MAPSEC_SPACETIME_CAVE')
+    return g, gc
 
 
 # ====================================================================== 2. Route 125: eilandje met grotopening
-ROUTE125_DOOR = (46, 28)
+ROUTE125_DOOR = (45, 28)
 ROUTE125_WARP = None
 
 
-ISLE = dict(ring=(40, 22, 51, 31), sand=(41, 23, 50, 30), rock=(43, 24, 48, 28), peaks=((44, 25), (46, 26)))
+ISLE = dict(ring=(39, 22, 51, 31), sand=(40, 23, 50, 30), rock=(42, 25))
+# S2 (Jordi: opening leek bovenaan afgekapt): rotsheuvel met grot exact uit vanilla overgenomen, geen eigen hoeken.
+# Rij 0 = de top van Route 111 (080 081 0a4, ook op zand), rij 1-3 = de rots met grotopening van SkyPillar_Outside
+# (17,13); daar staat rechtsboven een Pacifidlog-tegel (2b8), hier 0a4 zoals in Route 111 (0a4 rechts van 075 en
+# boven 08a). None = zand. De opening (064 boven 0a7) is dicht tot de Hall of Fame: 07c boven 0a9.
+ROCK_HILL = [[None, 0x080, 0x081, 0x081, 0x081, 0x0a4, None],
+             [0x080, 0x073, 0x071, 0x071, 0x071, 0x075, 0x0a4],
+             [0x088, 0x07b, 0x07c, 0x064, 0x07c, 0x07d, 0x08a],
+             [0x090, 0x0a9, 0x0a9, 0x0a7, 0x0a9, 0x0a9, 0x092]]
+ROCK_CLOSED = {(3, 2): 0x07c, (3, 3): 0x0a9}
+ROCK_OPEN = {(3, 2): 0x064, (3, 3): 0x0a7}
 
 
 def route125_island():
-    """S1: groter eiland met een echte rotsheuvel (General-rots op zand, zoals Shoal Cave): ondiepe rand ->
-    strand -> zand -> rots met twee toppen; de grotopening (0x0A7) komt in de onderrand onder de rechtertop."""
+    """Eilandje met rotsheuvel (General-tegels op zand): ondiepe rand -> strand -> zand -> rots met grotopening."""
     p = 'data/layouts/Route125/map.bin'
     W, H = 80, 40
     v = list(struct.unpack('<%dH' % (W * H), open(p, 'rb').read()))
@@ -383,11 +609,13 @@ def route125_island():
                 put(x, y, nine[r][c], col, elev)
     rect(ISLE['ring'], [[0x1ad, 0x1ae, 0x1af], [0x1b5, 0x19e, 0x1b7], [0x1bd, 0x1be, 0x1bf]], elev=1)
     rect(ISLE['sand'], [[0x195, 0x196, 0x197], [0x19d, 0x124, 0x19f], [0x1a5, 0x1a6, 0x1a7]])
-    rect(ISLE['rock'], [[0x080, 0x081, 0x082], [0x088, 0x071, 0x08a], [0x090, 0x091, 0x092]], col=True)
-    for (px, py) in ISLE['peaks']:
-        for dx, dy, m in ((0, 0, 0x093), (1, 0, 0x094), (0, 1, 0x09b), (1, 1, 0x09c)):
-            put(px + dx, py + dy, m, True)
-    assert ROUTE125_DOOR == (46, ISLE['rock'][3])
+    rx, ry = ISLE['rock']
+    for dy, row in enumerate(ROCK_HILL):
+        for dx, m in enumerate(row):
+            if m is not None:
+                m = ROCK_CLOSED.get((dx, dy), m)
+                put(rx + dx, ry + dy, m, True)
+    assert ROUTE125_DOOR == (rx + 3, ry + 3)
     open(p, 'wb').write(struct.pack('<%dH' % len(v), *v))
 
 
@@ -400,7 +628,10 @@ def route125():
     if not any(w['dest_map'] == dm for w in m['warp_events']):
         m['warp_events'].append({'x': ROUTE125_DOOR[0], 'y': ROUTE125_DOOR[1], 'elevation': 3, 'dest_map': dm,
                                  'dest_warp_id': '0'})
-        open(p, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
+    for w in m['warp_events']:
+        if w['dest_map'] == dm:
+            w['x'], w['y'] = ROUTE125_DOOR
+    open(p, 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
     ROUTE125_WARP = [i for i, w in enumerate(m['warp_events']) if w['dest_map'] == dm][0]
     s = open('data/maps/Route125/scripts.inc').read()
     line = '\tcall_if_set FLAG_SYS_GAME_CLEAR, Route125_EventScript_OpenSpacetimeCave\n'
@@ -409,7 +640,10 @@ def route125():
     blk = ('@ --- spacetime_cave (tools/grounded/maptools/spacetime_cave.py) ---\n'
            '@ Project Grounded: na de Hall of Fame een grotopening in het rotsje op het eilandje (Spacetime Cave)\n'
            'Route125_EventScript_OpenSpacetimeCave::\n'
-           '\tsetmetatile %d, %d, 0x0A7, FALSE\n\treturn\n@ --- einde spacetime_cave ---' % ROUTE125_DOOR)
+           + ''.join('\tsetmetatile %d, %d, 0x%03X, %s\n' % (ISLE['rock'][0] + dx, ISLE['rock'][1] + dy, m,
+                                                             'FALSE' if m == 0x0A7 else 'TRUE')
+                     for (dx, dy), m in sorted(ROCK_OPEN.items()))
+           + '\treturn\n@ --- einde spacetime_cave ---')
     s = bd.replace_block(s, '@ --- spacetime_cave', '@ --- einde spacetime_cave ---', blk)
     open('data/maps/Route125/scripts.inc', 'w').write(s.rstrip('\n') + '\n')
 
@@ -547,13 +781,21 @@ def lavender(names):
     for gk, species, lvl, (gx, gy), face, txt in LAV_GHOSTS:
         flag = 'FLAG_HIDE_LAVENDER_GHOST_' + gk
         lid = 'LOCALID_LAVENDER_GHOST_' + gk
-        objs.append(obj('OBJ_EVENT_GFX_SPECIES(%s)' % gk, gx, gy, P + 'Ghost' + gk.title(), flag,
+        # S2: in de overworld het Gen 1-GHOST; zonder Silph Scope ook in het gevecht (src/gen1_ghost.c)
+        objs.append(obj('OBJ_EVENT_GFX_GEN1_GHOST', gx, gy, P + 'Ghost' + gk.title(), flag,
                         move='MOVEMENT_TYPE_FACE_' + face, local_id=lid))
         S.raw(f'''{P}Ghost{gk.title()}::
 	lock
 	faceplayer
 	playmoncry SPECIES_{gk}, CRY_MODE_ENCOUNTER
+	checkitem ITEM_SILPH_SCOPE
+	goto_if_eq VAR_RESULT, FALSE, {P}Ghost{gk.title()}NoScope
 	msgbox {S.T}Ghost{gk.title()}, MSGBOX_DEFAULT
+	goto {P}Ghost{gk.title()}Fight
+
+{P}Ghost{gk.title()}NoScope::
+	msgbox {S.T}GhostNoScope, MSGBOX_DEFAULT
+{P}Ghost{gk.title()}Fight::
 	waitmoncry
 	closemessage
 	setwildbattle SPECIES_{species}, {lvl}
@@ -571,7 +813,9 @@ def lavender(names):
 	end
 ''', [('Ghost' + gk.title(), txt)])
     S.raw('', [('GhostGone', "The shadow dissolved into the fog.\n\nSomewhere, a door creaks shut. "
-                             "Probably for the better.")])
+                             "Probably for the better."),
+               ('GhostNoScope', "A GHOST! A grinning shadow with too many opinions about you.\n\nDarn! "
+                                "The GHOST can't be ID'd. Somebody in this town used to sell SILPH SCOPES.")])
     bgs = [sign(15, 11, P + 'TownSign'), sign(21, 7, P + 'TowerSign'), sign(7, 11, P + 'HouseSign'),
            sign(12, 4, P + 'Notice')]
     S.npc('TownSign', "LAVENDER TOWN\nThe Noble Purple Town\n\n(Population: fluctuating. Please count "
@@ -592,13 +836,13 @@ LAV_CALM = 'LavenderTown_Calm'
 LAV_GRAVES = [(14, 13), (16, 13), (14, 15), (2, 6), (2, 8), (8, 0), (10, 0), (12, 0), (0, 9), (0, 10), (0, 11)]
 LAV_DEADTREES = [(9, 0, 0, True), (11, 0, 1, True), (1, 5, 1, False), (21, 9, 0, False), (13, 13, 1, False),
                  (1, 14, 0, False)]
-LAV_GHOSTS = [  # (soort-/sleutel, gevecht, level, plek, kijkrichting, tekst)
-    ('GENGAR', 'GENGAR', 67, (18, 7), 'DOWN', "A shadow is blocking the TOWER door.\n\nIt looks like a GENGAR, "
-     "but its grin is about three teeth too wide."),
-    ('DUSKNOIR', 'DUSKNOIR', 66, (10, 1), 'DOWN', "The road north is gone. There's only fog, and something "
-     "in the fog that is very interested in you."),
-    ('BANETTE', 'BANETTE', 66, (2, 10), 'RIGHT', "A BANETTE is standing at the edge of town, zipping and "
-     "unzipping its mouth.\n\nIt seems to be waiting for its old trainer. You'll do.")]
+LAV_GHOSTS = [  # (soort-/sleutel, gevecht, level, plek, kijkrichting, tekst met Silph Scope)
+    ('GENGAR', 'GENGAR', 67, (18, 7), 'DOWN', "A GHOST is blocking the TOWER door.\n\nThrough the SILPH SCOPE "
+     "it's a GENGAR, and its grin is about three teeth too wide."),
+    ('DUSKNOIR', 'DUSKNOIR', 66, (10, 1), 'DOWN', "The road north is gone. There's only fog, and a GHOST in the "
+     "fog.\n\nThe SILPH SCOPE says DUSKNOIR. The DUSKNOIR says nothing. It just keeps looking."),
+    ('BANETTE', 'BANETTE', 66, (2, 10), 'RIGHT', "A GHOST at the edge of town. Through the SILPH SCOPE: a "
+     "BANETTE, zipping and unzipping its mouth.\n\nIt seems to be waiting for its old trainer. You'll do.")]
 
 
 # ---------------------------------------------------------------- interieurs (vanilla layouts, Ashfrost als sjabloon)
@@ -639,9 +883,37 @@ def lavender_interiors():
                                     "when you speak to her.\n\nWell. The only one who's alive.",
         # S1: geen Protip Oracle (Hoenn-gag) in een andere dimensie: een Kanto-verkoper van Silph Scopes
         'Text_ProtipMaster': "I used to sell SILPH SCOPES. Lovely things. You look through one and the ghosts "
-                             "stop pretending.\n\nThen the fog came and the ghosts stopped pretending all on "
-                             "their own. Terrible for business.",
+                             "stop pretending.\n\nThen the fog came and nobody bought anything ever again. "
+                             "Here. Last one. Take it before it starts haunting me too.",
     }, lambda o: [dict(x, graphics_id='OBJ_EVENT_GFX_GENTLEMAN') if 'Protip' in x['script'] else x for x in o])
+    # S2: hij geeft je zijn laatste Silph Scope (zonder scope zijn de geesten in Lavender/de toren een Gen 1-GHOST)
+    n = 'LavenderTown_PokemonCenter_1F'
+    p = 'data/maps/%s/scripts.inc' % n
+    sc = open(p).read()
+    old = ('%s_EventScript_Protipmaster::\n\tlock\n\tfaceplayer\n\tmsgbox %s_Text_ProtipMaster, MSGBOX_NPC\n'
+           '\trelease\n\tend\n' % (n, n))
+    assert old in sc
+    sc = sc.replace(old, f'''{n}_EventScript_Protipmaster::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_SILPH_SCOPE, {n}_EventScript_ScopeAfter
+	msgbox {n}_Text_ProtipMaster, MSGBOX_DEFAULT
+	giveitem ITEM_SILPH_SCOPE
+	setflag FLAG_RECEIVED_SILPH_SCOPE
+	msgbox {n}_Text_ScopeGiven, MSGBOX_DEFAULT
+	release
+	end
+
+{n}_EventScript_ScopeAfter::
+	msgbox {n}_Text_ScopeAfter, MSGBOX_DEFAULT
+	release
+	end
+''')
+    sc = sc.rstrip('\n') + '\n\n' + text(n + '_Text_ScopeGiven', "Look at a GHOST through it and you'll see what "
+                                           "it really is.\n\nUsually something with too many teeth. No refunds. "
+                                           "There's no shop left to refund it at.") + '\n' + \
+        text(n + '_Text_ScopeAfter', "How's the SCOPE? Seen anything you can't unsee?\n\nGood. That means it works.")
+    open(p, 'w').write(sc.rstrip('\n') + '\n')
     interior_from('PokemonCenter_2F', 'LavenderTown_PokemonCenter_2F', 0, {})
     interior_from('Mart', 'LavenderTown_Mart', 1, {})
     houses = [('LavenderTown_VolunteerHouse', 3, 'OBJ_EVENT_GFX_OLD_MAN',

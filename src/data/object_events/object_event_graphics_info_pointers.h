@@ -94,6 +94,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -394,6 +395,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RUIN_SEAL] = &gObjectEventGraphicsInfo_RuinSeal, // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+    [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
     [OBJ_EVENT_GFX_GIANT_LOG] = &gObjectEventGraphicsInfo_GiantLog, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)

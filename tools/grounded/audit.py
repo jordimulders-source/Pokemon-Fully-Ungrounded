@@ -16,7 +16,7 @@ trainers.party zelf gelezen.
 
 Een bevinding bewust negeren: zet de sleutel (laatste kolom in -v / AUDIT.md) in IGNORE hieronder.
 """
-import argparse, collections, glob, importlib.util, json, os, re, struct, subprocess, sys
+import argparse, collections, glob, importlib.util, json, os, re, statistics, struct, subprocess, sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 os.chdir(ROOT)
@@ -1319,8 +1319,106 @@ def species_abilities():
     return ab, unknown
 
 
+def level_evolutions():
+    """pre -> [(level, post)] en post -> (level, pre) voor EVO_LEVEL-evoluties (alleen gewone level-evoluties)."""
+    up, down = collections.defaultdict(list), {}
+    for f in glob.glob('src/data/pokemon/species_info/*.h'):
+        cur = None
+        for l in read(f).split('\n'):
+            m = re.match(r'\s*\[(SPECIES_\w+)\]\s*=', l)
+            if m:
+                cur = m.group(1)
+            if cur and '.evolutions' in l:
+                for lv, post in re.findall(r'\{EVO_LEVEL,\s*(\d+),\s*(SPECIES_\w+)\s*\}', l):
+                    up[cur].append((int(lv), post))
+                    down.setdefault(post, (int(lv), cur))
+    return up, down
+
+
+def trainer_maps():
+    """trainer -> set(kaart) uit trainerbattle-commando's in data/maps/*/scripts.inc"""
+    out = collections.defaultdict(set)
+    for f, ls in FILELINES.items():
+        if not f.startswith('data/maps/'):
+            continue
+        n = f.split('/')[2]
+        for l in ls:
+            c, args = cmd_args(l.split('@')[0].strip())
+            if c and c.startswith('trainerbattle'):
+                for a in args:
+                    if re.fullmatch(r'TRAINER_\w+', a) and not a.startswith(('TRAINER_BATTLE_', 'TRAINER_TYPE_')):
+                        out[a].add(n)
+    return out
+
+
+BOSS = re.compile(r'Leader|Elite|Champion|Rival|Boss|Admin|Magma Leader|Aqua Leader|Legend|Stadium|Dave', re.I)
+
+
+def check_trainer_fit(trainers):
+    """Gevechten die niet op hun plek voelen: level ver van de andere trainers op die kaart, en evoluties
+    die niet bij het level passen (meldingen; grap-trainers van Jordi staan in IGNORE of worden zo gemeld)."""
+    up, down = level_evolutions()
+    tmaps = trainer_maps()
+    party_text = read('src/data/trainers.party')
+    cls = dict(re.findall(r'===\s*(TRAINER_\w+)\s*===\s*\n(?:[^\n]*\n)*?Class:\s*([^\n]*)', party_text))
+    permap = collections.defaultdict(list)
+    for tr, ms in trainers.items():
+        lv = [int(m['lvl']) for m in ms if re.fullmatch(r'\d+', m.get('lvl') or '')]
+        if not lv or re.search(r'_\d$', tr):
+            continue
+        for n in tmaps.get(tr, ()):
+            permap[n].append((tr, max(lv)))
+    nchk = 0
+    for n, lst in sorted(permap.items()):
+        if len(lst) < 3:
+            continue
+        med = statistics.median(v for _, v in lst)
+        for tr, v in lst:
+            nchk += 1
+            if BOSS.search(cls.get(tr, '')):
+                continue
+            if v > med + 12 or v < med - 15:
+                add('trainers', 'MELD', 'lvlfit:%s' % tr, '%s op %s: ace lv %d, de andere trainers op die kaart rond lv %d'
+                    % (tr, n, v, med))
+    stats['trainers']['level-vergelijking'] = nchk
+    # mugshot bij belangrijke gevechten (CLAUDE.md: rivalen, gymleiders, Archie, Maxie, Wally, Birch)
+    nmug = 0
+    for blk in re.split(r'^(?====\s*TRAINER_)', party_text, flags=re.M):
+        m = re.match(r'===\s*(TRAINER_\w+)\s*===', blk)
+        if not m or m.group(1).startswith('TRAINER_STADIUM_') or m.group(1) not in tmaps:
+            continue
+        head = blk.split('\n\n')[0]
+        c = re.search(r'^Class:\s*(.*)$', head, re.M)
+        c = c.group(1).strip() if c else ''
+        if c in ('Leader', 'Rival', 'Champion', 'Aqua Leader', 'Magma Leader', 'Professor') or 'WALLY' in m.group(1):
+            nmug += 1
+            if not re.search(r'^Mugshot:', head, re.M):
+                add('trainers', 'MELD', 'mugshot:%s' % m.group(1), '%s (%s, %s) heeft geen Mugshot:'
+                    % (m.group(1), c, ', '.join(sorted(tmaps[m.group(1)]))))
+    stats['trainers']['belangrijke gevechten'] = nmug
+    nevo = 0
+    for tr, ms in sorted(trainers.items()):
+        for i, m in enumerate(ms):
+            sp, lv = m['species'], m.get('lvl')
+            if not lv or not re.fullmatch(r'\d+', lv) or tr.startswith('TRAINER_STADIUM_') or 'Eviolite' in m['raw']:
+                continue    # Stadium: alles lv 50; Eviolite: bewust niet geëvolueerd
+            lv = int(lv)
+            if sp in up:
+                need = min(l for l, _ in up[sp])
+                if lv >= need + 3:
+                    nevo += 1
+                    add('trainers', 'INFO', 'evo:%s:%d' % (tr, i), '%s: %s op lv %d is nog niet geëvolueerd (evolueert op %d)'
+                        % (tr, sp.replace('SPECIES_', ''), lv, need))
+            if sp in down and lv < down[sp][0] - 2:
+                nevo += 1
+                add('trainers', 'INFO', 'evo:%s:%d' % (tr, i), '%s: %s op lv %d, maar %s evolueert pas op %d'
+                    % (tr, sp.replace('SPECIES_', ''), lv, down[sp][1].replace('SPECIES_', ''), down[sp][0]))
+    stats['trainers']['evolutie-meldingen'] = nevo
+
+
 def check_trainers():
     trainers = parse_party()
+    check_trainer_fit(trainers)
     species_h = read('include/constants/species.h')
     species = set(re.findall(r'#define\s+(SPECIES_\w+)', species_h))
     ab, unknown_ab = species_abilities()

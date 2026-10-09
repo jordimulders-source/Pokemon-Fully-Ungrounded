@@ -170,6 +170,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Bos in General/Petalburg:** grote bomen (0x1D4–0x1E7, kruin 0x1CE/0x1CF) op een raster van 2×2-cellen plannen; een open cel boven een boom krijgt de kruin in zijn onderste rij (geen events daar). Hoenn-boompjes 0x0E/0x0F/0x16/0x17 zijn 1 breed. Emulatortests: teksten met B sluiten (extra A opent ze opnieuw en blokkeert het volgende debugscript).
 - **Sombere kaart:** `WEATHER_FOG_*` over een donker eigen palet wordt melkwit; gebruik `WEATHER_SHADE`. Bij `setmaplayoutindex` in `ON_TRANSITION` ook de objectflags daar zetten. Trainers in gangen van 1 breed blokkeren de route voorgoed: zet ze in zijnissen.
 - **Cave-tileset is vol** (511/512 tiles sinds v0.9.179): nieuwe grotdecor in een eigen (getinte) secondary. Vrij palet in een tileset: geen metatile gebruikt `pal<<12` (tel `metatiles.bin >> 12`). Decor op water: metatile met laag COVERED (ondergrond onder, object midden). Quest-teller zonder var: vondst-flags tellen met `call_if_set` + `addvar VAR_TEMP_x`.
+- **Legendary zonder eigen `case`** in `BattleSetup_StartLegendaryBattle` krijgt de Groudon-muurtransitie: altijd een case toevoegen. Onthulling buiten beeld: `special SpawnCameraObject` + `applymovement OBJ_EVENT_ID_CAMERA`. Poorten op één kaart: dichte toestand in map.bin (elevation 3), `setmetatile` in ON_LOAD. Gangen in Cave-kaarten: aansluitingen 20a/208 en 21a/218 (vanilla).
+- **Nieuwe Spacetime-locatie koppelen:** in `spacetime_cave.py` de scheur op `'warp'` in `RIFT_STATE`, bestemming in `RIFTS` + de dict in de warp-lus, klaar-flag in `SIDEQUESTS`; in het locatiescript de terugwarp naar de warp-index van die scheur (zie hub-map.json). Daarna beide scripts draaien.
 
 ## Werkwijzen (herhaalde taken)
 

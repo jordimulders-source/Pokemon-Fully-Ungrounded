@@ -38,7 +38,9 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 11. **Overige legendaries: gepauzeerd** (zie Besloten). Plan per groep klaar in LEGENDARY_PLAN: Kanto-vogels, Swords of Justice + Keldeo, Enamorus, Crown Tundra, Safari-trio (Xerneas/Yveltal/Zeraora), Ultra Space + Necrozma, ruïne-schatten, Zygarde, Diancie, Marshadow, Meloetta, Meltan, Pecharunt.
 13. **Abandoned Ship** met een nachtelijk benedendek (Jordi 9 okt: prima).
 14. **Frontier-rentals** afstemmen op de gewijzigde soorten en moves: zodra de wereld genoeg gevuld is (Jordi 9 okt).
-15. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
+15. **Meltan → Melmetal** als gift (Jordi 9 okt; plek nog kiezen).
+16. **Enamorus** (Jordi 9 okt): zwerft rond zoals de andere Forces. Zodra die allemaal gevangen zijn, hebben bepaalde stadjes kans op Enamorus: overal hartjes en NPC's die avances naar elkaar maken; één van de koppels is **Birch met een hoop stront**.
+17. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
 
 ## 3. Daarna: gevechtsintro's en muziek
 **Jordi 9 okt:** intro's van (nieuwe) legendaries bedenkt hij zelf; thema's nog niet maken: nieuwe legendaries gebruiken `MUS_RG_VS_LEGEND` (Kanto Legendary) tot hij ermee komt.
@@ -67,7 +69,7 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 ## 4. Open vragen voor Jordi
 1. **Mega Forest:** waar komt het roadblock naar Zacian/Zamazenta (hint: roestig zwaard + schild met een boomstam in het midden in het Mini Forest)?
 2. Chargestone (Colress + Zeraora) en Glimwood (Ballonlea-heks i.p.v. Opal, Xerneas/Yveltal): akkoord (9 okt).
-3. **Glastrier** zit al wild in de Shoal Cave Ice Room (lv 50, 1%?) en **Cosmog** wild in Meteor Falls 1F: zo laten, of naar de Calyrex-quest / Ultra Space verplaatsen?
+3. **Nog te bedenken (Jordi 9 okt):** plekken voor Kanto-/Galar-vogels, Swords of Justice + Keldeo, Ultra Space (Cosmog-lijn, Necrozma, Ultra Beasts), Meloetta, Diancie, Marshadow, Pecharunt, Zygarde.
 
 ## 5. Besloten / bewust niet
 - **Geen Grounded-Pokédex:** gewoon de National Dex met alles, vanaf het begin. **Signatures gepauzeerd**; Gen 4+-trainersprites voorlopig niet nodig. (9 okt)

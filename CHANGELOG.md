@@ -17610,3 +17610,6 @@ Volgens Jordi's GBA-instructies per leider:
 ### [v0.9.174] - Beasts of Ruin: één uitgeholde grot per beest, elk op zijn eigen manier geruïneerd
 - Jordi: zoals in Scarlet/Violet, een uitgeholde grot waar ze het beest in hebben geduwd. **Chi-Yu** staat nu in de kamer bovenin Jagged Pass; het lavaveld is onbereikbaar (de kaart blijft bestaan voor oude saves, met één warp terug). De beads-inscriptie staat op een staak in de kamer.
 - Ruïne rond elk beest: **vuur** (verschroeide grond, vertakte gloeiende lavascheuren), **aarde** (gebarsten platen, ringscheur, gebroken terracotta vaten), **mos** (rottende wortels, zwammen, rotte stronken, lianen), **ijs** (bevroren vloer, ijspegels, kristallen, rijp). Per pixel getekend op een kaartcanvas en in metatiles geknipt (`ruin_beasts.py`); stronken/paddenstoelen uit Ekat's Haunted Woods, vazen uit Egypt.
+
+### [v0.9.175] - Glastrier en Cosmog niet meer wild
+- Jordi: Glastrier komt in de Calyrex-quest en Cosmog later bij Ultra Space. Wilde slots vervangen met behoud van zeldzaamheid: Meteor Falls 1F (1%) **Elgyem** lv 18–20, vissen **Staryu** lv 38–40; Shoal Cave Ice Room (1%) **Arctibax** lv 38–40.

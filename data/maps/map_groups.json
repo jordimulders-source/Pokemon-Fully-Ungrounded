@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_Grounded"
+    "gMapGroup_Grounded",
+    "gMapGroup_Spacetime"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -747,5 +748,23 @@
     "DesertUnderpass_RuinShrine",
     "PetalburgWoods_RuinShrine",
     "Route135_RuinShrine"
+  ],
+  "gMapGroup_Spacetime": [
+    "LavenderTown",
+    "LavenderTown_PokemonCenter_1F",
+    "LavenderTown_PokemonCenter_2F",
+    "LavenderTown_Mart",
+    "LavenderTown_VolunteerHouse",
+    "LavenderTown_House1",
+    "LavenderTown_House2",
+    "PokemonTower_1F",
+    "PokemonTower_2F",
+    "PokemonTower_3F",
+    "PokemonTower_4F",
+    "PokemonTower_5F",
+    "CeruleanCave_1F",
+    "CeruleanCave_2F",
+    "CeruleanCave_B1F",
+    "SpacetimeCave"
   ]
 }

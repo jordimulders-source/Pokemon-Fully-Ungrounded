@@ -5471,6 +5471,106 @@
       "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/Route126_SilentCrater/border.bin",
       "blockdata_filepath": "data/layouts/Route126_SilentCrater/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAVENDER_TOWN",
+      "name": "LavenderTown_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LavenderTown",
+      "border_filepath": "data/layouts/LavenderTown/border.bin",
+      "blockdata_filepath": "data/layouts/LavenderTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPACETIME_CAVE",
+      "name": "SpacetimeCave_Layout",
+      "width": 27,
+      "height": 20,
+      "primary_tileset": "gTileset_SpacetimeGeneral",
+      "secondary_tileset": "gTileset_SpacetimeCave",
+      "border_filepath": "data/layouts/SpacetimeCave/border.bin",
+      "blockdata_filepath": "data/layouts/SpacetimeCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_1F",
+      "name": "PokemonTower_1F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_1F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_2F",
+      "name": "PokemonTower_2F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_2F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_3F",
+      "name": "PokemonTower_3F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_3F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_4F",
+      "name": "PokemonTower_4F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_4F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_5F",
+      "name": "PokemonTower_5F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_5F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_1F",
+      "name": "CeruleanCave_1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_2F",
+      "name": "CeruleanCave_2F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_2F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_B1F",
+      "name": "CeruleanCave_B1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_B1F/map.bin"
     }
   ]
 }

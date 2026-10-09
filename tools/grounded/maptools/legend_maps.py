@@ -172,6 +172,8 @@ add_to_groups(VAULT, 'MeteorSpace')
 add_include(VAULT, 'MeteorSpace')
 
 # ====================================================================== Mewtwo: verborgen grot achter Meteor Falls
+# (Mewtwo staat sinds v0.9.171 in de echte Cerulean Cave achter de Spacetime Cave: draai na dit script ook
+#  tools/grounded/maptools/spacetime_cave.py, dat Mewtwo hier weghaalt en een kras in de rots zet.)
 C1, C1_C = 'MeteorFalls_UnknownCave_1F', 'METEOR_FALLS_UNKNOWN_CAVE_1F'
 C2, C2_C = 'MeteorFalls_UnknownCave_B1F', 'METEOR_FALLS_UNKNOWN_CAVE_B1F'
 g1 = load('AlteringCave')

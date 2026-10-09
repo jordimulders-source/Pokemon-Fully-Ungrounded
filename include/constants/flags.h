@@ -1648,7 +1648,23 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620+ vrij.
+// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; FLAG_GROUNDED 560-619)
+#define FLAG_ITEM_POKEMON_TOWER_3F_MAX_REVIVE            FLAG_GROUNDED(560) // Project Grounded: Pokemon Tower 3F: Max Revive
+#define FLAG_ITEM_POKEMON_TOWER_4F_MAX_ELIXIR            FLAG_GROUNDED(561) // Project Grounded: Pokemon Tower 4F: Max Elixir
+#define FLAG_ITEM_POKEMON_TOWER_4F_DUSK_STONE            FLAG_GROUNDED(562) // Project Grounded: Pokemon Tower 4F: Dusk Stone
+#define FLAG_ITEM_POKEMON_TOWER_4F_DUSK_BALL             FLAG_GROUNDED(563) // Project Grounded: Pokemon Tower 4F: Dusk Ball
+#define FLAG_RECEIVED_POKEMON_TOWER_LIFE_ORB             FLAG_GROUNDED(564) // Project Grounded: Pokemon Tower 5F: Life Orb van de conciërge
+#define FLAG_ITEM_CERULEAN_CAVE_1F_BIG_NUGGET            FLAG_GROUNDED(565) // Project Grounded: Cerulean Cave 1F: Big Nugget
+#define FLAG_ITEM_CERULEAN_CAVE_1F_FULL_RESTORE          FLAG_GROUNDED(566) // Project Grounded: Cerulean Cave 1F: Full Restore
+#define FLAG_ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR            FLAG_GROUNDED(567) // Project Grounded: Cerulean Cave 1F: Max Elixir
+#define FLAG_HIDDEN_ITEM_CERULEAN_CAVE_1F_PP_MAX         FLAG_GROUNDED(568) // Project Grounded: Cerulean Cave 1F: verborgen PP Max
+#define FLAG_ITEM_CERULEAN_CAVE_2F_PP_UP                 FLAG_GROUNDED(569) // Project Grounded: Cerulean Cave 2F: PP Up
+#define FLAG_ITEM_CERULEAN_CAVE_2F_RARE_CANDY            FLAG_GROUNDED(570) // Project Grounded: Cerulean Cave 2F: Rare Candy
+#define FLAG_ITEM_CERULEAN_CAVE_2F_FULL_RESTORE          FLAG_GROUNDED(571) // Project Grounded: Cerulean Cave 2F: Full Restore
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL           FLAG_GROUNDED(572) // Project Grounded: Cerulean Cave B1F: Ultra Ball
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE           FLAG_GROUNDED(573) // Project Grounded: Cerulean Cave B1F: Max Revive
+// }
 // ruin_beasts { (tools/grounded/maptools/ruin_beasts.py; FLAG_GROUNDED 530-559)
 #define FLAG_RUIN_SEAL_CHI_YU                            FLAG_GROUNDED(530) // Project Grounded: Chi-Yu-schrijn (Jagged Pass) bezocht
 #define FLAG_RUIN_SEAL_TING_LU                           FLAG_GROUNDED(531) // Project Grounded: Ting-Lu-schrijn (Desert Underpass) bezocht

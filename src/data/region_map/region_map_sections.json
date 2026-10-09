@@ -1418,6 +1418,14 @@
       "y": 10,
       "width": 2,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_SPACETIME_CAVE",
+      "name": "SPACETIME CAVE",
+      "x": 26,
+      "y": 4,
+      "width": 1,
+      "height": 1
     }
   ]
 }

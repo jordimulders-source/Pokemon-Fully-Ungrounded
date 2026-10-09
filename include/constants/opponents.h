@@ -1198,6 +1198,19 @@
 #define TRAINER_AROMA_LADY_FENNA            1076 // Project Grounded: kluizenaarskrater: kwam voor de stilte, nam een speaker mee
 // }
 
+// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1168)
+#define TRAINER_TOWER_MAYA                  1159 // Project Grounded: Pokemon Tower (Spacetime Cave), MAYA
+#define TRAINER_TOWER_PATRICIA              1160 // Project Grounded: Pokemon Tower (Spacetime Cave), PATRICIA
+#define TRAINER_TOWER_CARLY                 1161 // Project Grounded: Pokemon Tower (Spacetime Cave), CARLY
+#define TRAINER_TOWER_HOPE                  1162 // Project Grounded: Pokemon Tower (Spacetime Cave), HOPE
+#define TRAINER_TOWER_LAUREL                1163 // Project Grounded: Pokemon Tower (Spacetime Cave), LAUREL
+#define TRAINER_TOWER_JODY                  1164 // Project Grounded: Pokemon Tower (Spacetime Cave), JODY
+#define TRAINER_TOWER_PAULA                 1165 // Project Grounded: Pokemon Tower (Spacetime Cave), PAULA
+#define TRAINER_TOWER_RUTH                  1166 // Project Grounded: Pokemon Tower (Spacetime Cave), RUTH
+#define TRAINER_TOWER_TAMMY                 1167 // Project Grounded: Pokemon Tower (Spacetime Cave), TAMMY
+#define TRAINER_TOWER_KARINA                1168 // Project Grounded: Pokemon Tower (Spacetime Cave), KARINA
+// }
+
 #define TRAINERS_COUNT                      1195
 #define MAX_TRAINERS_COUNT                  1200
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)

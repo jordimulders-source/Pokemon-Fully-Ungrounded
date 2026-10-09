@@ -2201,3 +2201,120 @@ const u16 gTilesetPalettes_RuinIce[][16] =
     INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/secondary/ruin_ice/palettes/15.gbapal"),
 };
+
+// Project Grounded: Spacetime Cave: General getint (paletten)
+const u16 gTilesetPalettes_SpacetimeGeneral[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/spacetime_general/palettes/15.gbapal"),
+};
+
+// Project Grounded: Spacetime Cave: Cave + scheuren (spacetime_tiles.py)
+const u32 gTilesetTiles_SpacetimeCave[] = INCBIN_U32("data/tilesets/secondary/spacetime_cave/tiles.4bpp.fastSmol");
+
+// Project Grounded: Spacetime Cave: Cave + scheuren (paletten)
+const u16 gTilesetPalettes_SpacetimeCave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/spacetime_cave/palettes/15.gbapal"),
+};
+
+// Project Grounded: Pokemon Tower (FRLG + Ekat Revamp) (spacetime_tiles.py)
+const u32 gTilesetTiles_PokemonTower[] = INCBIN_U32("data/tilesets/secondary/pokemon_tower/tiles.4bpp.fastSmol");
+
+// Project Grounded: Pokemon Tower (FRLG + Ekat Revamp) (paletten)
+const u16 gTilesetPalettes_PokemonTower[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_tower/palettes/15.gbapal"),
+};
+
+// Project Grounded: Cerulean Cave (FRLG + Emerald Cave) (spacetime_tiles.py)
+const u32 gTilesetTiles_CeruleanCave[] = INCBIN_U32("data/tilesets/secondary/cerulean_cave/tiles.4bpp.fastSmol");
+
+// Project Grounded: Cerulean Cave (FRLG + Emerald Cave) (paletten)
+const u16 gTilesetPalettes_CeruleanCave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cerulean_cave/palettes/15.gbapal"),
+};
+
+// Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren) (spacetime_tiles.py)
+const u32 gTilesetTiles_LavenderTown[] = INCBIN_U32("data/tilesets/secondary/lavender_town/tiles.4bpp.fastSmol");
+
+// Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren) (paletten)
+const u16 gTilesetPalettes_LavenderTown[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lavender_town/palettes/15.gbapal"),
+};

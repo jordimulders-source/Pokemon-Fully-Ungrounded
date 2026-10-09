@@ -169,6 +169,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Sfeereffecten per pixel** (ruïnes, `ruin_beasts.py`): teken een canvas van de hele kaart en knip het in metatiles (`emit()` ontdubbelt); geditherde maskers met laagfrequente ruis geven grillige randen zonder halve tegels. Floats clippen vóór `uint8`, seeds met `zlib.crc32` (niet `hash()`), geen scipy in de container.
 - **Bos in General/Petalburg:** grote bomen (0x1D4–0x1E7, kruin 0x1CE/0x1CF) op een raster van 2×2-cellen plannen; een open cel boven een boom krijgt de kruin in zijn onderste rij (geen events daar). Hoenn-boompjes 0x0E/0x0F/0x16/0x17 zijn 1 breed. Emulatortests: teksten met B sluiten (extra A opent ze opnieuw en blokkeert het volgende debugscript).
 - **Sombere kaart:** `WEATHER_FOG_*` over een donker eigen palet wordt melkwit; gebruik `WEATHER_SHADE`. Bij `setmaplayoutindex` in `ON_TRANSITION` ook de objectflags daar zetten. Trainers in gangen van 1 breed blokkeren de route voorgoed: zet ze in zijnissen.
+- **Cave-tileset is vol** (511/512 tiles sinds v0.9.179): nieuwe grotdecor in een eigen (getinte) secondary. Vrij palet in een tileset: geen metatile gebruikt `pal<<12` (tel `metatiles.bin >> 12`). Decor op water: metatile met laag COVERED (ondergrond onder, object midden). Quest-teller zonder var: vondst-flags tellen met `call_if_set` + `addvar VAR_TEMP_x`.
 
 ## Werkwijzen (herhaalde taken)
 

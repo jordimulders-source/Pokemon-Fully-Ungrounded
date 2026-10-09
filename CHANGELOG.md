@@ -17630,3 +17630,8 @@ Volgens Jordi's GBA-instructies per leider:
 - **Channelers:** alle 10 teams herzien (Ghost, Dark, Psychic en mysterieus; geen dubbelen), bezeten teksten.
 - **Cerulean Cave:** vier Rocket-grunts (lv 66–70) en **Giovanni** (ace Nidoking lv 75, mugshot) vlak vóór Mewtwo. Daarna vertrekt hij, **healt Mewtwo je team** en vecht (nu lv 75).
 - Flags `FLAG_GROUNDED(574–579)`; trainers 1169, 1195–1199.
+
+### [v0.9.179] - Koraalkathedraal (Route 126) en de Sea Shard-quest
+- **Koraalkathedraal:** zwemgat in Underwater Route 126 (64,18, noordoosthoek); je duikt op in een hoge zaal met meer, terrassen en een lagune vol rode en paarse koraalbomen (Ekat's Coral Tiles). Swimmer Corinne en Fisherman Dorian (lv 48–49), Luminous Moss, Shell Bell, Pearl String, verborgen Big Pearl; 12 unieke landsoorten lv 46–52 (Cursola 1%), surf en vissen (Bruxish, Clawitzer).
+- **Sea Shards** (Key Item, oud Fame Checker-slot 725): 8 stuks in de duikplekken (Koraalkathedraal, luchtbel-grot 128, Shipwreck Shoals, Silent Crater, Wellspring Grotto, de diepzeetrog, de zeetempel, Underwater Route 136). De **Diving Treasure Hunter** (Route 124) neemt ze in: 2 → 10 Dive Balls, 4 → Heavy-Duty Boots, 6 → Gold Bottle Cap, 8 → **Master Ball**.
+- Script `tools/grounded/maptools/coral_cathedral.py` (zet ook de shards in kaarten van andere scripts: na het opnieuw draaien van zo'n script dit script ook draaien). Flags `FLAG_GROUNDED(660–671, 680–684)`, trainers 1080–1081. De Cave-tileset zit nu op 511/512 tiles.

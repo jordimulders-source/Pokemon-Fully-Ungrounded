@@ -14,6 +14,9 @@ Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, M
 
 ~~Beasts of Ruin bijwerken~~ (v0.9.174).
 
+**Feedback Jordi 9 okt (volgende agents):**
+- **National Park verbrand:** echt vuur in plaats van wat nu op bloemen lijkt (geanimeerd als het kan: Ekat Volcano/Fireplace-autotile, Fiery Path/lava). **Ilex Forest:** een echt schrijn (zoals in GSC/HGSS) i.p.v. het Celebi-beeld, en het hele bos mooier met meer assets.
+- **Virizion:** eigen kamer in Mangrove Mire (nu een open plek). **Uncharted Isle:** wilder maken, met echte draaikolken (geanimeerde objecten of stromingstegels) en niet alleen stenen.
 **Feedback Jordi 9 okt (in uitvoering):**
 - **Trog Route 127:** het rotsblok onderin voelt als een tease zonder resultaat: weghalen, er een zigzaggebied van maken met meer items die nog niet te krijgen waren, en de trog aan twee kanten enterbaar maken (onderwatersnelweg).
 - **Chargestone Cave:** te steriel, leeg en rechthoekig: meer hoogteverschillen, andere vormen, meer decor.

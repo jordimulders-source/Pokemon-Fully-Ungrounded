@@ -17654,3 +17654,6 @@ Volgens Jordi's GBA-instructies per leider:
 - **Keldeo:** na het derde zwaard belt **Mr. Briney** via de PokéNav (hij ziet iets geks in het water). Praat met hem (huis, Dewford of Route 109): fade, surfgeluid, en je staat op het **Uncharted Isle** ("???", niet op de kaart): een zandplaat in een ring van draaikolken met Keldeo (lv 70). Briney brengt je terug.
 - **Meltan:** Rivet de lasser in Sterns scheepswerf (Slateport) geeft Meltan lv 12; Meltan evolueert in **Melmetal** door te levelen met een **Metal Coat** (te koop in Lilycove 2F; wordt verbruikt).
 - Script `tools/grounded/maptools/swords_keldeo.py`; flags `FLAG_GROUNDED(800–809)`.
+
+### [v0.9.183] - Ability-popup bij binnenkomst verdwijnt netjes
+- Jordi zag in het multi battle met Calyrex een halve ability-melding links naast Arceus bij het actiemenu. Dat was de Unnerve-popup die nog aan het wegschuiven was. Na de melding van een switch-in-ability (o.a. Unnerve, As One) wordt de popup nu meteen weggehaald (zoals eerder bij de weer-abilities). Getest in de emulator.

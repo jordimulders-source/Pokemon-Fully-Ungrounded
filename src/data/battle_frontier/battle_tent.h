@@ -755,14 +755,14 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
 {
     [SLATEPORT_TENT_MON_ZIGZAGOON_1] = {
         .species = SPECIES_ZIGZAGOON,
-        .moves = {MOVE_TACKLE, MOVE_CHARM, MOVE_ODOR_SLEUTH, MOVE_PIN_MISSILE},
+        .moves = {MOVE_TACKLE, MOVE_CHARM, MOVE_TOXIC, MOVE_SKITTER_SMACK},
         .heldItem = ITEM_CHOICE_BAND,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
     },
     [SLATEPORT_TENT_MON_ZIGZAGOON_2] = {
         .species = SPECIES_ZIGZAGOON,
-        .moves = {MOVE_DIG, MOVE_MUD_SPORT, MOVE_TAIL_WHIP, MOVE_REST},
+        .moves = {MOVE_DIG, MOVE_TOXIC, MOVE_TAIL_WHIP, MOVE_REST},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
@@ -804,7 +804,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_WINGULL_1] = {
         .species = SPECIES_WINGULL,
-        .moves = {MOVE_SUPERSONIC, MOVE_GROWL, MOVE_WING_ATTACK, MOVE_STEEL_WING},
+        .moves = {MOVE_SUPERSONIC, MOVE_GROWL, MOVE_WING_ATTACK, MOVE_FACADE},
         .heldItem = ITEM_METAL_COAT,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
         .nature = NATURE_NAIVE
@@ -867,7 +867,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_GRAVELER] = {
         .species = SPECIES_GRAVELER,
-        .moves = {MOVE_MUD_SPORT, MOVE_BLOCK, MOVE_ROCK_TOMB, MOVE_MAGNITUDE},
+        .moves = {MOVE_TOXIC, MOVE_BLOCK, MOVE_SMACK_DOWN, MOVE_MAGNITUDE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
         .nature = NATURE_BRAVE
@@ -881,14 +881,14 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_MIGHTYENA_1] = {
         .species = SPECIES_MIGHTYENA,
-        .moves = {MOVE_BITE, MOVE_ROAR, MOVE_SWAGGER, MOVE_TACKLE},
+        .moves = {MOVE_BITE, MOVE_TOXIC, MOVE_SWAGGER, MOVE_TACKLE},
         .heldItem = ITEM_BLACK_GLASSES,
-        .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
-        .nature = NATURE_CALM
+        .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
+        .nature = NATURE_CAREFUL
     },
     [SLATEPORT_TENT_MON_MIGHTYENA_2] = {
         .species = SPECIES_MIGHTYENA,
-        .moves = {MOVE_ODOR_SLEUTH, MOVE_HOWL, MOVE_SAND_ATTACK, MOVE_POISON_FANG},
+        .moves = {MOVE_TOXIC, MOVE_HOWL, MOVE_SAND_ATTACK, MOVE_POISON_FANG},
         .heldItem = ITEM_SHELL_BELL,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_LONELY
@@ -902,21 +902,21 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_GOLDEEN] = {
         .species = SPECIES_GOLDEEN,
-        .moves = {MOVE_WATER_SPORT, MOVE_HORN_ATTACK, MOVE_WATERFALL, MOVE_SUPERSONIC},
+        .moves = {MOVE_HAZE, MOVE_HORN_ATTACK, MOVE_WATERFALL, MOVE_SUPERSONIC},
         .heldItem = ITEM_SCOPE_LENS,
-        .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
-        .nature = NATURE_CALM
+        .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
+        .nature = NATURE_CAREFUL
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_1] = {
         .species = SPECIES_ELECTRIKE,
-        .moves = {MOVE_BITE, MOVE_SPARK, MOVE_ROAR, MOVE_FLASH},
+        .moves = {MOVE_BITE, MOVE_THUNDER_FANG, MOVE_ROAR, MOVE_FLASH},
         .heldItem = ITEM_MAGNET,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 170, 0, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_VOLTORB] = {
         .species = SPECIES_VOLTORB,
-        .moves = {MOVE_SPARK, MOVE_ROLLOUT, MOVE_CHARGE, MOVE_SCREECH},
+        .moves = {MOVE_ELECTRO_BALL, MOVE_ROLLOUT, MOVE_CHARGE, MOVE_SCREECH},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 252, 252),
         .nature = NATURE_MILD
@@ -944,21 +944,21 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_CACNEA_2] = {
         .species = SPECIES_CACNEA,
-        .moves = {MOVE_INGRAIN, MOVE_SANDSTORM, MOVE_POISON_STING, MOVE_DESTINY_BOND},
+        .moves = {MOVE_INGRAIN, MOVE_SANDSTORM, MOVE_POISON_STING, MOVE_PROTECT},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
         .nature = NATURE_TIMID
     },
     [SLATEPORT_TENT_MON_TAILLOW] = {
         .species = SPECIES_TAILLOW,
-        .moves = {MOVE_GROWL, MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_ENDEAVOR},
+        .moves = {MOVE_GROWL, MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_FACADE},
         .heldItem = ITEM_SHARP_BEAK,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_SWELLOW] = {
         .species = SPECIES_SWELLOW,
-        .moves = {MOVE_SUPERSONIC, MOVE_GROWL, MOVE_FOCUS_ENERGY, MOVE_PECK},
+        .moves = {MOVE_SUPERSONIC, MOVE_GROWL, MOVE_PROTECT, MOVE_PECK},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
         .nature = NATURE_IMPISH
@@ -972,14 +972,14 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_LOUDRED] = {
         .species = SPECIES_LOUDRED,
-        .moves = {MOVE_ASTONISH, MOVE_SCREECH, MOVE_UPROAR, MOVE_SUPERSONIC},
+        .moves = {MOVE_ASTONISH, MOVE_SCREECH, MOVE_UPROAR, MOVE_SWAGGER},
         .heldItem = ITEM_NONE,
-        .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
+        .nature = NATURE_MODEST
     },
     [SLATEPORT_TENT_MON_SPINDA] = {
         .species = SPECIES_SPINDA,
-        .moves = {MOVE_DIZZY_PUNCH, MOVE_FEINT_ATTACK, MOVE_HYPNOSIS, MOVE_REST},
+        .moves = {MOVE_FACADE, MOVE_SUCKER_PUNCH, MOVE_TOXIC, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
         .nature = NATURE_ADAMANT
@@ -1007,28 +1007,28 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_NUMEL_1] = {
         .species = SPECIES_NUMEL,
-        .moves = {MOVE_EMBER, MOVE_TAKE_DOWN, MOVE_GROWL, MOVE_FOCUS_ENERGY},
+        .moves = {MOVE_EMBER, MOVE_BODY_SLAM, MOVE_GROWL, MOVE_FOCUS_ENERGY},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_BARBOACH] = {
         .species = SPECIES_BARBOACH,
-        .moves = {MOVE_MAGNITUDE, MOVE_MUD_SPORT, MOVE_WATER_SPORT, MOVE_WATER_GUN},
+        .moves = {MOVE_BULLDOZE, MOVE_TOXIC, MOVE_PROTECT, MOVE_WHIRLPOOL},
         .heldItem = ITEM_SEA_INCENSE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_JOLLY
     },
     [SLATEPORT_TENT_MON_TENTACOOL] = {
         .species = SPECIES_TENTACOOL,
-        .moves = {MOVE_SCREECH, MOVE_BUBBLE_BEAM, MOVE_ACID, MOVE_BARRIER},
+        .moves = {MOVE_TOXIC, MOVE_BUBBLE_BEAM, MOVE_ACID, MOVE_BARRIER},
         .heldItem = ITEM_POISON_BARB,
-        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .nature = NATURE_MODEST
     },
     [SLATEPORT_TENT_MON_VIGOROTH] = {
         .species = SPECIES_VIGOROTH,
-        .moves = {MOVE_FOCUS_ENERGY, MOVE_FURY_SWIPES, MOVE_ENDURE, MOVE_YAWN},
+        .moves = {MOVE_PROTECT, MOVE_FURY_SWIPES, MOVE_ENDURE, MOVE_YAWN},
         .heldItem = ITEM_AGUAV_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
@@ -1049,21 +1049,21 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_SOLROCK] = {
         .species = SPECIES_SOLROCK,
-        .moves = {MOVE_ROCK_THROW, MOVE_HARDEN, MOVE_PSYWAVE, MOVE_TACKLE},
+        .moves = {MOVE_ROCK_THROW, MOVE_HARDEN, MOVE_LASER_BEAM, MOVE_TACKLE},
         .heldItem = ITEM_HARD_STONE,
-        .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_ADAMANT
+        .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
+        .nature = NATURE_MODEST
     },
     [SLATEPORT_TENT_MON_KECLEON_1] = {
         .species = SPECIES_KECLEON,
-        .moves = {MOVE_PSYBEAM, MOVE_SUBSTITUTE, MOVE_THIEF, MOVE_TAIL_WHIP},
+        .moves = {MOVE_PSYBEAM, MOVE_SUBSTITUTE, MOVE_KNOCK_OFF, MOVE_TAIL_WHIP},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
         .nature = NATURE_MODEST
     },
     [SLATEPORT_TENT_MON_KECLEON_2] = {
         .species = SPECIES_KECLEON,
-        .moves = {MOVE_FEINT_ATTACK, MOVE_ASTONISH, MOVE_LICK, MOVE_SCREECH},
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_ROLLOUT, MOVE_LICK, MOVE_SCREECH},
         .heldItem = ITEM_IAPAPA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
         .nature = NATURE_CALM
@@ -1098,7 +1098,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_TRAPINCH_2] = {
         .species = SPECIES_TRAPINCH,
-        .moves = {MOVE_FEINT_ATTACK, MOVE_DIG, MOVE_BITE, MOVE_QUICK_ATTACK},
+        .moves = {MOVE_BUG_BITE, MOVE_DIG, MOVE_BITE, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
         .nature = NATURE_BRAVE
@@ -1140,24 +1140,24 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_GOLBAT_2] = {
         .species = SPECIES_GOLBAT,
-        .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_POISON_FANG},
+        .moves = {MOVE_BITE, MOVE_TAUNT, MOVE_SCREECH, MOVE_POISON_FANG},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
-        .nature = NATURE_HARDY
+        .nature = NATURE_BASHFUL
     },
     [SLATEPORT_TENT_MON_RALTS] = {
         .species = SPECIES_RALTS,
-        .moves = {MOVE_HYPNOSIS, MOVE_IMPRISON, MOVE_PSYCHIC, MOVE_DREAM_EATER},
+        .moves = {MOVE_HYPNOSIS, MOVE_GRUDGE, MOVE_PSYCHIC, MOVE_DREAM_EATER},
         .heldItem = ITEM_MAGO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_TIMID
     },
     [SLATEPORT_TENT_MON_SANDSHREW] = {
         .species = SPECIES_SANDSHREW,
-        .moves = {MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_SAND_TOMB, MOVE_DEFENSE_CURL},
+        .moves = {MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_BULLDOZE, MOVE_DEFENSE_CURL},
         .heldItem = ITEM_SOFT_SAND,
         .ev = NULL,
-        .nature = NATURE_HARDY
+        .nature = NATURE_BASHFUL
     },
     [SLATEPORT_TENT_MON_SWALOT] = {
         .species = SPECIES_SWALOT,
@@ -1182,7 +1182,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_KADABRA] = {
         .species = SPECIES_KADABRA,
-        .moves = {MOVE_DISABLE, MOVE_CONFUSION, MOVE_REFLECT, MOVE_RECOVER},
+        .moves = {MOVE_ENCORE, MOVE_CONFUSION, MOVE_REFLECT, MOVE_RECOVER},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_QUIRKY
@@ -1203,24 +1203,24 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_PLUSLE_1] = {
         .species = SPECIES_PLUSLE,
-        .moves = {MOVE_SPARK, MOVE_ENCORE, MOVE_THUNDER_WAVE, MOVE_GROWL},
+        .moves = {MOVE_DISCHARGE, MOVE_ENCORE, MOVE_THUNDER_WAVE, MOVE_PLAY_NICE},
         .heldItem = ITEM_LIECHI_BERRY,
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_LONELY
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .nature = NATURE_MILD
     },
     [SLATEPORT_TENT_MON_PLUSLE_2] = {
         .species = SPECIES_PLUSLE,
-        .moves = {MOVE_SPARK, MOVE_FAKE_TEARS, MOVE_SUBSTITUTE, MOVE_QUICK_ATTACK},
+        .moves = {MOVE_DISCHARGE, MOVE_FAKE_TEARS, MOVE_SUBSTITUTE, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_PECHA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_MILD
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_2] = {
         .species = SPECIES_ELECTRIKE,
-        .moves = {MOVE_SPARK, MOVE_CHARGE, MOVE_ROAR, MOVE_THUNDER_WAVE},
+        .moves = {MOVE_THUNDER_FANG, MOVE_CHARGE, MOVE_ROAR, MOVE_THUNDER_WAVE},
         .heldItem = ITEM_APICOT_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
-        .nature = NATURE_TIMID
+        .nature = NATURE_JOLLY
     },
     [SLATEPORT_TENT_MON_SWABLU] = {
         .species = SPECIES_SWABLU,
@@ -1231,17 +1231,17 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_MACHOP] = {
         .species = SPECIES_MACHOP,
-        .moves = {MOVE_FOCUS_ENERGY, MOVE_VITAL_THROW, MOVE_SEISMIC_TOSS, MOVE_FORESIGHT},
+        .moves = {MOVE_FOCUS_ENERGY, MOVE_VITAL_THROW, MOVE_SEISMIC_TOSS, MOVE_TOXIC},
         .heldItem = ITEM_BLACK_BELT,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_MACHOKE] = {
         .species = SPECIES_MACHOKE,
-        .moves = {MOVE_FOCUS_ENERGY, MOVE_LEER, MOVE_KARATE_CHOP, MOVE_FORESIGHT},
+        .moves = {MOVE_FOCUS_ENERGY, MOVE_LEER, MOVE_REVENGE, MOVE_TOXIC},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_MODEST
+        .nature = NATURE_ADAMANT
     }
 };
 
@@ -1808,14 +1808,14 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
 {
     [VERDANTURF_TENT_MON_POOCHYENA] = {
         .species = SPECIES_POOCHYENA,
-        .moves = {MOVE_ROAR, MOVE_THIEF, MOVE_BITE, MOVE_HOWL},
+        .moves = {MOVE_TOXIC, MOVE_THIEF, MOVE_BITE, MOVE_HOWL},
         .heldItem = ITEM_BLACK_GLASSES,
         .ev = TRAINER_PARTY_EVS(102, 102, 102, 102, 0, 102),
         .nature = NATURE_NAUGHTY
     },
     [VERDANTURF_TENT_MON_ZIGZAGOON] = {
         .species = SPECIES_ZIGZAGOON,
-        .moves = {MOVE_COVET, MOVE_GROWL, MOVE_PIN_MISSILE, MOVE_MUD_SPORT},
+        .moves = {MOVE_COVET, MOVE_GROWL, MOVE_SKITTER_SMACK, MOVE_TOXIC},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
@@ -1857,7 +1857,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_BARBOACH] = {
         .species = SPECIES_BARBOACH,
-        .moves = {MOVE_MUD_SLAP, MOVE_WATER_GUN, MOVE_RAIN_DANCE, MOVE_SPARK},
+        .moves = {MOVE_MUD_SLAP, MOVE_WHIRLPOOL, MOVE_RAIN_DANCE, MOVE_SPARK},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
         .nature = NATURE_HASTY
@@ -1892,7 +1892,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_KECLEON] = {
         .species = SPECIES_KECLEON,
-        .moves = {MOVE_SUBSTITUTE, MOVE_FEINT_ATTACK, MOVE_DOUBLE_TEAM, MOVE_BIND},
+        .moves = {MOVE_SUBSTITUTE, MOVE_SUCKER_PUNCH, MOVE_DOUBLE_TEAM, MOVE_BIND},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_QUIET
@@ -1913,7 +1913,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_MAKUHITA] = {
         .species = SPECIES_MAKUHITA,
-        .moves = {MOVE_BULK_UP, MOVE_ARM_THRUST, MOVE_SMELLING_SALTS, MOVE_SAND_ATTACK},
+        .moves = {MOVE_DOUBLE_TEAM, MOVE_ARM_THRUST, MOVE_SMELLING_SALTS, MOVE_SAND_ATTACK},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
         .nature = NATURE_NAUGHTY
@@ -1941,7 +1941,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_NUMEL_2] = {
         .species = SPECIES_NUMEL,
-        .moves = {MOVE_MAGNITUDE, MOVE_EMBER, MOVE_GROWL, MOVE_DEFENSE_CURL},
+        .moves = {MOVE_BULLDOZE, MOVE_EMBER, MOVE_GROWL, MOVE_DEFENSE_CURL},
         .heldItem = ITEM_CHARCOAL,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
         .nature = NATURE_RELAXED
@@ -1962,10 +1962,10 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_SKARMORY] = {
         .species = SPECIES_SKARMORY,
-        .moves = {MOVE_AIR_CUTTER, MOVE_SANDSTORM, MOVE_LEER, MOVE_AGILITY},
+        .moves = {MOVE_SWIFT, MOVE_SANDSTORM, MOVE_LEER, MOVE_AGILITY},
         .heldItem = ITEM_MACHO_BRACE,
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
-        .nature = NATURE_BASHFUL
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 252, 252),
+        .nature = NATURE_HARDY
     },
     [VERDANTURF_TENT_MON_SWELLOW] = {
         .species = SPECIES_SWELLOW,
@@ -1976,9 +1976,9 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_GOLDEEN_2] = {
         .species = SPECIES_GOLDEEN,
-        .moves = {MOVE_PECK, MOVE_SUPERSONIC, MOVE_PSYBEAM, MOVE_RAIN_DANCE},
+        .moves = {MOVE_PECK, MOVE_SUPERSONIC, MOVE_HORN_ATTACK, MOVE_RAIN_DANCE},
         .heldItem = ITEM_KINGS_ROCK,
-        .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
         .nature = NATURE_GENTLE
     },
     [VERDANTURF_TENT_MON_ELECTRIKE] = {
@@ -1990,7 +1990,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_NUZLEAF] = {
         .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_SUNNY_DAY, MOVE_TORMENT, MOVE_FAKE_OUT, MOVE_THIEF},
+        .moves = {MOVE_SUNNY_DAY, MOVE_TOXIC, MOVE_FAKE_OUT, MOVE_FOUL_PLAY},
         .heldItem = ITEM_BLACK_GLASSES,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 0, 128, 128),
         .nature = NATURE_BOLD
@@ -2004,17 +2004,17 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_MIGHTYENA] = {
         .species = SPECIES_MIGHTYENA,
-        .moves = {MOVE_HOWL, MOVE_TAKE_DOWN, MOVE_ODOR_SLEUTH, MOVE_SAND_ATTACK},
+        .moves = {MOVE_HOWL, MOVE_BODY_SLAM, MOVE_TOXIC, MOVE_SAND_ATTACK},
         .heldItem = ITEM_KINGS_ROCK,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
         .nature = NATURE_QUIRKY
     },
     [VERDANTURF_TENT_MON_SOLROCK] = {
         .species = SPECIES_SOLROCK,
-        .moves = {MOVE_HARDEN, MOVE_FIRE_SPIN, MOVE_MIMIC, MOVE_PSYWAVE},
+        .moves = {MOVE_HARDEN, MOVE_FIRE_SPIN, MOVE_MIMIC, MOVE_LASER_BEAM},
         .heldItem = ITEM_TWISTED_SPOON,
         .ev = TRAINER_PARTY_EVS(0, 128, 128, 0, 128, 128),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_MODEST
     },
     [VERDANTURF_TENT_MON_GRAVELER] = {
         .species = SPECIES_GRAVELER,
@@ -2025,21 +2025,21 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_KADABRA] = {
         .species = SPECIES_KADABRA,
-        .moves = {MOVE_ENCORE, MOVE_PSYBEAM, MOVE_DISABLE, MOVE_KINESIS},
+        .moves = {MOVE_ENCORE, MOVE_PSYBEAM, MOVE_TAUNT, MOVE_KINESIS},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
         .nature = NATURE_QUIET
     },
     [VERDANTURF_TENT_MON_VOLTORB] = {
         .species = SPECIES_VOLTORB,
-        .moves = {MOVE_PROTECT, MOVE_SELF_DESTRUCT, MOVE_SPARK, MOVE_SCREECH},
+        .moves = {MOVE_PROTECT, MOVE_SELF_DESTRUCT, MOVE_ELECTRO_BALL, MOVE_SCREECH},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_BASHFUL
     },
     [VERDANTURF_TENT_MON_MAGNEMITE] = {
         .species = SPECIES_MAGNEMITE,
-        .moves = {MOVE_METAL_SOUND, MOVE_SUPERSONIC, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE},
+        .moves = {MOVE_METAL_SOUND, MOVE_SUPERSONIC, MOVE_THUNDER_WAVE, MOVE_ELECTRO_BALL},
         .heldItem = ITEM_MAGNET,
         .ev = TRAINER_PARTY_EVS(84, 84, 84, 84, 84, 84),
         .nature = NATURE_SERIOUS
@@ -2067,14 +2067,14 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_TRAPINCH] = {
         .species = SPECIES_TRAPINCH,
-        .moves = {MOVE_DIG, MOVE_ROCK_TOMB, MOVE_SANDSTORM, MOVE_FEINT_ATTACK},
+        .moves = {MOVE_DIG, MOVE_ROCK_SLIDE, MOVE_SANDSTORM, MOVE_BITE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
         .nature = NATURE_NAUGHTY
     },
     [VERDANTURF_TENT_MON_TENTACOOL] = {
         .species = SPECIES_TENTACOOL,
-        .moves = {MOVE_SCREECH, MOVE_CONFUSE_RAY, MOVE_WRAP, MOVE_ATTRACT},
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_WRAP, MOVE_ATTRACT},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_RELAXED
@@ -2095,28 +2095,28 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_ILLUMISE] = {
         .species = SPECIES_ILLUMISE,
-        .moves = {MOVE_TACKLE, MOVE_SWEET_SCENT, MOVE_WISH, MOVE_ENCORE},
+        .moves = {MOVE_TACKLE, MOVE_STRING_SHOT, MOVE_MOONLIGHT, MOVE_ENCORE},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
         .nature = NATURE_QUIRKY
     },
     [VERDANTURF_TENT_MON_MACHOKE] = {
         .species = SPECIES_MACHOKE,
-        .moves = {MOVE_LEER, MOVE_KARATE_CHOP, MOVE_BULK_UP, MOVE_REST},
+        .moves = {MOVE_LEER, MOVE_REVENGE, MOVE_BULK_UP, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_CALM
+        .nature = NATURE_CAREFUL
     },
     [VERDANTURF_TENT_MON_WHISMUR] = {
         .species = SPECIES_WHISMUR,
-        .moves = {MOVE_SECRET_POWER, MOVE_SUPERSONIC, MOVE_STOMP, MOVE_ROAR},
+        .moves = {MOVE_SECRET_POWER, MOVE_SWAGGER, MOVE_STOMP, MOVE_ROAR},
         .heldItem = ITEM_RAWST_BERRY,
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_QUIRKY
     },
     [VERDANTURF_TENT_MON_CACNEA] = {
         .species = SPECIES_CACNEA,
-        .moves = {MOVE_INGRAIN, MOVE_LEECH_SEED, MOVE_NEEDLE_ARM, MOVE_GROWTH},
+        .moves = {MOVE_INGRAIN, MOVE_LEECH_SEED, MOVE_NEEDLE_ARM, MOVE_DOUBLE_TEAM},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
         .nature = NATURE_SERIOUS
@@ -2696,28 +2696,28 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_LINOONE_1] = {
         .species = SPECIES_LINOONE,
-        .moves = {MOVE_ODOR_SLEUTH, MOVE_COVET, MOVE_ROCK_SMASH, MOVE_CHARM},
+        .moves = {MOVE_TOXIC, MOVE_COVET, MOVE_ROCK_SMASH, MOVE_CHARM},
         .heldItem = ITEM_SILK_SCARF,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
         .nature = NATURE_SASSY
     },
     [FALLARBOR_TENT_MON_PLUSLE] = {
         .species = SPECIES_PLUSLE,
-        .moves = {MOVE_SPARK, MOVE_GROWL, MOVE_QUICK_ATTACK, MOVE_FAKE_TEARS},
+        .moves = {MOVE_DISCHARGE, MOVE_PLAY_NICE, MOVE_QUICK_ATTACK, MOVE_FAKE_TEARS},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_MODEST
     },
     [FALLARBOR_TENT_MON_POOCHYENA] = {
         .species = SPECIES_POOCHYENA,
-        .moves = {MOVE_YAWN, MOVE_ODOR_SLEUTH, MOVE_HOWL, MOVE_FRUSTRATION},
+        .moves = {MOVE_YAWN, MOVE_TOXIC, MOVE_HOWL, MOVE_FRUSTRATION},
         .heldItem = ITEM_LEPPA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_NAUGHTY
     },
     [FALLARBOR_TENT_MON_KECLEON] = {
         .species = SPECIES_KECLEON,
-        .moves = {MOVE_LICK, MOVE_SLASH, MOVE_FEINT_ATTACK, MOVE_PSYBEAM},
+        .moves = {MOVE_LICK, MOVE_SLASH, MOVE_SUCKER_PUNCH, MOVE_PSYBEAM},
         .heldItem = ITEM_WIKI_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
         .nature = NATURE_MODEST
@@ -2731,7 +2731,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_SOLROCK] = {
         .species = SPECIES_SOLROCK,
-        .moves = {MOVE_ROCK_THROW, MOVE_FLASH, MOVE_SANDSTORM, MOVE_PSYWAVE},
+        .moves = {MOVE_ROCK_THROW, MOVE_FLASH, MOVE_SANDSTORM, MOVE_LASER_BEAM},
         .heldItem = ITEM_HARD_STONE,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
         .nature = NATURE_SASSY
@@ -2752,7 +2752,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_NINCADA] = {
         .species = SPECIES_NINCADA,
-        .moves = {MOVE_FURY_SWIPES, MOVE_ENDURE, MOVE_MUD_SLAP, MOVE_DIG},
+        .moves = {MOVE_SCRATCH, MOVE_ENDURE, MOVE_MUD_SLAP, MOVE_DIG},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_SERIOUS
@@ -2773,17 +2773,17 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_ILLUMISE] = {
         .species = SPECIES_ILLUMISE,
-        .moves = {MOVE_METRONOME, MOVE_FLATTER, MOVE_WISH, MOVE_ATTRACT},
+        .moves = {MOVE_METRONOME, MOVE_CONFUSE_RAY, MOVE_MOONLIGHT, MOVE_ATTRACT},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
     [FALLARBOR_TENT_MON_VOLBEAT] = {
         .species = SPECIES_VOLBEAT,
-        .moves = {MOVE_TACKLE, MOVE_MOONLIGHT, MOVE_SIGNAL_BEAM, MOVE_TAIL_GLOW},
+        .moves = {MOVE_TACKLE, MOVE_MOONLIGHT, MOVE_BUG_BUZZ, MOVE_TAIL_GLOW},
         .heldItem = ITEM_LEPPA_BERRY,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_ADAMANT
+        .ev = TRAINER_PARTY_EVS(170, 0, 0, 0, 170, 170),
+        .nature = NATURE_MODEST
     },
     [FALLARBOR_TENT_MON_NINJASK_1] = {
         .species = SPECIES_NINJASK,
@@ -2801,7 +2801,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_ARON_1] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_METAL_CLAW, MOVE_PROTECT, MOVE_SHOCK_WAVE, MOVE_METAL_SOUND},
+        .moves = {MOVE_METAL_CLAW, MOVE_PROTECT, MOVE_ROCK_TOMB, MOVE_METAL_SOUND},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
         .nature = NATURE_LONELY
@@ -2829,7 +2829,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_VOLTORB] = {
         .species = SPECIES_VOLTORB,
-        .moves = {MOVE_CHARGE, MOVE_SPARK, MOVE_SCREECH, MOVE_SONIC_BOOM},
+        .moves = {MOVE_CHARGE, MOVE_ELECTRO_BALL, MOVE_SCREECH, MOVE_HIDDEN_POWER},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_MODEST
@@ -2850,7 +2850,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_LINOONE_2] = {
         .species = SPECIES_LINOONE,
-        .moves = {MOVE_FURY_SWIPES, MOVE_SAND_ATTACK, MOVE_SHOCK_WAVE, MOVE_GROWL},
+        .moves = {MOVE_FURY_SWIPES, MOVE_CHARM, MOVE_TRAILBLAZE, MOVE_GROWL},
         .heldItem = ITEM_MAGNET,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_MODEST
@@ -2871,10 +2871,10 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_SKARMORY] = {
         .species = SPECIES_SKARMORY,
-        .moves = {MOVE_AGILITY, MOVE_STEEL_WING, MOVE_SAND_ATTACK, MOVE_TORMENT},
+        .moves = {MOVE_AGILITY, MOVE_STEEL_WING, MOVE_SAND_ATTACK, MOVE_TAUNT},
         .heldItem = ITEM_METAL_COAT,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_BOLD
+        .nature = NATURE_IMPISH
     },
     [FALLARBOR_TENT_MON_GOLBAT] = {
         .species = SPECIES_GOLBAT,
@@ -2899,10 +2899,10 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_BARBOACH] = {
         .species = SPECIES_BARBOACH,
-        .moves = {MOVE_SPARK, MOVE_WATER_GUN, MOVE_EARTHQUAKE, MOVE_WATER_SPORT},
+        .moves = {MOVE_SPARK, MOVE_WHIRLPOOL, MOVE_EARTHQUAKE, MOVE_TOXIC},
         .heldItem = ITEM_LIECHI_BERRY,
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
+        .nature = NATURE_ADAMANT
     },
     [FALLARBOR_TENT_MON_WAILMER] = {
         .species = SPECIES_WAILMER,
@@ -2948,14 +2948,14 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_GRAVELER] = {
         .species = SPECIES_GRAVELER,
-        .moves = {MOVE_ROCK_BLAST, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_MUD_SPORT},
+        .moves = {MOVE_ROCK_SLIDE, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_TOXIC},
         .heldItem = ITEM_HARD_STONE,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
         .nature = NATURE_ADAMANT
     },
     [FALLARBOR_TENT_MON_SANDSHREW] = {
         .species = SPECIES_SANDSHREW,
-        .moves = {MOVE_SAND_TOMB, MOVE_SANDSTORM, MOVE_DOUBLE_TEAM, MOVE_FOCUS_PUNCH},
+        .moves = {MOVE_BULLDOZE, MOVE_SANDSTORM, MOVE_DOUBLE_TEAM, MOVE_FOCUS_PUNCH},
         .heldItem = ITEM_SOFT_SAND,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
@@ -2990,7 +2990,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_NUZLEAF] = {
         .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_NATURE_POWER, MOVE_TORMENT, MOVE_SWAGGER, MOVE_REST},
+        .moves = {MOVE_NATURE_POWER, MOVE_TOXIC, MOVE_SWAGGER, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT

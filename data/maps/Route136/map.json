@@ -173,6 +173,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE136_GROTTO",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 45,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_CROWN_TUNDRA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

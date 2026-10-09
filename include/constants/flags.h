@@ -1696,6 +1696,14 @@
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW         FLAG_GROUNDED(1048) // Project Grounded: Yoshi's Island fort: Grip Claw
 #define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR   FLAG_GROUNDED(1049) // Project Grounded: Yoshi's Island fort: Malicious Armor
 // }
+// calyrex { (tools/grounded/maptools/calyrex_quest.py; FLAG_GROUNDED 1280-1319: 1280-1285 quest, 1300-1309 nieuwe items (nieuwe_items.py), 1286-1299 en 1310-1319 nog vrij)
+#define FLAG_CROWN_QUEST_STARTED                         FLAG_GROUNDED(1280) // Project Grounded: Crown Tundra: Calyrex heeft gevraagd zijn paard terug te halen (paarden verschijnen)
+#define FLAG_CROWN_CHOSE_GLASTRIER                       FLAG_GROUNDED(1281) // Project Grounded: Crown Tundra: gekozen voor GLASTRIER (Spectrier is voorgoed weg)
+#define FLAG_CROWN_CHOSE_SPECTRIER                       FLAG_GROUNDED(1282) // Project Grounded: Crown Tundra: gekozen voor SPECTRIER (Glastrier is voorgoed weg)
+#define FLAG_CROWN_STEED_DONE                            FLAG_GROUNDED(1283) // Project Grounded: Crown Tundra: het gekozen paard is gevangen
+#define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
+#define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
+// }
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
@@ -1823,6 +1831,9 @@
 #define FLAG_ITEM_MT_CORONET_5F_IRON_BALL                FLAG_GROUNDED(1183) // Project Grounded: Mt. Coronet 5F: Iron Ball
 #define FLAG_ITEM_SPEAR_PILLAR_ADAMANT_ORB               FLAG_GROUNDED(1184) // Project Grounded: Spear Pillar: Adamant Orb (bij het altaar van Dialga)
 #define FLAG_ITEM_SPEAR_PILLAR_LUSTROUS_ORB              FLAG_GROUNDED(1185) // Project Grounded: Spear Pillar: Lustrous Orb (bij het altaar van Palkia)
+#define FLAG_ITEM_CROWN_TUNDRA_ICE_GEM                   FLAG_GROUNDED(1300) // Project Grounded: Crown Tundra: Ice Gem (ijsveld van Glastrier)
+#define FLAG_ITEM_CROWN_TUNDRA_GHOST_GEM                 FLAG_GROUNDED(1301) // Project Grounded: Crown Tundra: Ghost Gem (bos van Spectrier)
+#define FLAG_HIDDEN_ITEM_CROWN_TUNDRA_ICE_MEMORY         FLAG_GROUNDED(1302) // Project Grounded: Crown Tundra: verborgen Ice Memory
 // }
 // chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
 #define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)

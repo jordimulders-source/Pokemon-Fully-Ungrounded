@@ -78,9 +78,13 @@ ITEMS = [
     (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
     (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
     (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
+    # Crown Tundra, Calyrex-quest (calyrex_quest.py; flags uit het eigen blok FLAG_GROUNDED 1280-1319)
+    (1300, 'CrownTundra', 'ITEM_ICE_GEM', 1, False, 'Crown Tundra: Ice Gem (ijsveld van Glastrier)'),
+    (1301, 'CrownTundra', 'ITEM_GHOST_GEM', 1, False, 'Crown Tundra: Ghost Gem (bos van Spectrier)'),
+    (1302, 'CrownTundra', 'ITEM_ICE_MEMORY', 1, True, 'Crown Tundra: verborgen Ice Memory'),
 ]
 FIRST, LAST = 840, 879
-EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219)]   # Area Zero, de meren en Mt. Coronet gebruiken flags uit hun eigen blok
+EXTRA_RANGES = [(920, 999), (1140, 1159), (1160, 1219), (1300, 1309)]   # Area Zero, de meren, Mt. Coronet en de Calyrex-quest gebruiken flags uit hun eigen blok
 
 
 def flag_name(n, mp, it, hid):

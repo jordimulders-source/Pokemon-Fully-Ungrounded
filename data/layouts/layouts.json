@@ -5961,6 +5961,16 @@
       "secondary_tileset": "gTileset_CoronetSnow",
       "border_filepath": "data/layouts/SpearPillar/border.bin",
       "blockdata_filepath": "data/layouts/SpearPillar/map.bin"
+    },
+    {
+      "id": "LAYOUT_CROWN_TUNDRA",
+      "name": "CrownTundra_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snow",
+      "border_filepath": "data/layouts/CrownTundra/border.bin",
+      "blockdata_filepath": "data/layouts/CrownTundra/map.bin"
     }
   ]
 }

@@ -1482,6 +1482,10 @@
     {
       "id": "MAPSEC_SPEAR_PILLAR",
       "name": "SPEAR PILLAR"
+    },
+    {
+      "id": "MAPSEC_CROWN_TUNDRA",
+      "name": "CROWN TUNDRA"
     }
   ]
 }

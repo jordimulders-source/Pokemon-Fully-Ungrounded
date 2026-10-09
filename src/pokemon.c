@@ -6372,6 +6372,8 @@ u16 GetBattleBGM(void)
     {
     if (IsMagikarpOnlyWildBattle())
         return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
+    if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)
+        return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }

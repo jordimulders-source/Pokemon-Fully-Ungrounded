@@ -278,3 +278,5 @@
 .include "sound/voicegroups/grounded_forces.inc"
 .include "sound/voicegroups/grounded_lugia.inc"
 .include "sound/voicegroups/grounded_hoopa.inc"
+.include "sound/voicegroups/drumsets/yi.inc"
+.include "sound/voicegroups/grounded_yi.inc"

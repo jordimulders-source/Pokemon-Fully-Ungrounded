@@ -7323,3 +7323,110 @@ DirectSoundWaveData_mitch6b_brass_68::
 	.align 2
 DirectSoundWaveData_mitch6b_brass_72::
 	.incbin "sound/direct_sound_samples/grounded/mitch6b_brass_72.bin"
+
+@ yi_samples { (tools/grounded/spc/spc2gba.py)
+	.align 2
+DirectSoundWaveData_yi_m88ac58b4::
+	.incbin "sound/direct_sound_samples/grounded/yi_m88ac58b4.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m39b1d92b::
+	.incbin "sound/direct_sound_samples/grounded/yi_m39b1d92b.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m20fbd656::
+	.incbin "sound/direct_sound_samples/grounded/yi_m20fbd656.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m6722e044::
+	.incbin "sound/direct_sound_samples/grounded/yi_m6722e044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m9c7726bb::
+	.incbin "sound/direct_sound_samples/grounded/yi_m9c7726bb.bin"
+
+	.align 2
+DirectSoundWaveData_yi_mf50ad3de::
+	.incbin "sound/direct_sound_samples/grounded/yi_mf50ad3de.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m81e158f6::
+	.incbin "sound/direct_sound_samples/grounded/yi_m81e158f6.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m3b55e06a::
+	.incbin "sound/direct_sound_samples/grounded/yi_m3b55e06a.bin"
+
+	.align 2
+DirectSoundWaveData_yi_mb3ebf3bb::
+	.incbin "sound/direct_sound_samples/grounded/yi_mb3ebf3bb.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m88221d6a::
+	.incbin "sound/direct_sound_samples/grounded/yi_m88221d6a.bin"
+
+	.align 2
+DirectSoundWaveData_yi_md3d45d85::
+	.incbin "sound/direct_sound_samples/grounded/yi_md3d45d85.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m10dcb6ad::
+	.incbin "sound/direct_sound_samples/grounded/yi_m10dcb6ad.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m28089580::
+	.incbin "sound/direct_sound_samples/grounded/yi_m28089580.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d31d9aad8_1989::
+	.incbin "sound/direct_sound_samples/grounded/yi_d31d9aad8_1989.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d55eeb0c7_2022::
+	.incbin "sound/direct_sound_samples/grounded/yi_d55eeb0c7_2022.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2044::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2296::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2296.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2580::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2580.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d47803877_2044::
+	.incbin "sound/direct_sound_samples/grounded/yi_d47803877_2044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_4601::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_4601.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_1623::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_1623.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_1929::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_1929.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d40f10563_4877::
+	.incbin "sound/direct_sound_samples/grounded/yi_d40f10563_4877.bin"
+
+	.align 2
+DirectSoundWaveData_yi_de7bd4dd3_2231::
+	.incbin "sound/direct_sound_samples/grounded/yi_de7bd4dd3_2231.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_4601::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_4601.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_6140::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_6140.bin"
+
+@ } yi_samples

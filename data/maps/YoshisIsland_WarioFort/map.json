@@ -2,7 +2,7 @@
   "id": "MAP_YOSHIS_ISLAND_WARIO_FORT",
   "name": "YoshisIsland_WarioFort",
   "layout": "LAYOUT_YOSHIS_ISLAND_WARIO_FORT",
-  "music": "MUS_RG_ROCKET_HIDEOUT",
+  "music": "MUS_GROUNDED_YI_CASTLE",
   "region_map_section": "MAPSEC_YOSHIS_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

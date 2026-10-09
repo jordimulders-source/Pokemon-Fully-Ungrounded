@@ -670,6 +670,16 @@ gSongTable::
 	song mus_grounded_vs_landorus, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_hoopa, MUSIC_PLAYER_BGM, 0
 
+	song mus_grounded_yi_flower_garden, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_athletic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_overworld, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_fuzzy, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

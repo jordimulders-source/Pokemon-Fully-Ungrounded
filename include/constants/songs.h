@@ -599,6 +599,11 @@
 #define MUS_GROUNDED_VS_LANDORUS    661 // Project Grounded: Battle! Landorus (Forces of Nature, aarde), eigen compositie (tools/grounded/forces_theme.py)
 #define MUS_GROUNDED_VS_HOOPA       662 // Project Grounded: Battle! Hoopa, eigen compositie: hijaz, darbuka, oud/mizmar; Confined speels -> Unbound dreigend (tools/grounded/hoopa_theme.py)
 
+#define MUS_GROUNDED_YI_FLOWER_GARDEN 663 // Project Grounded: Flower Garden (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_YI_ATHLETIC    664 // Project Grounded: Athletic (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_YI_OVERWORLD   665 // Project Grounded: Overworld (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_YI_FUZZY       666 // Project Grounded: Overworld (Fuzzy), Touch Fuzzy Get Dizzy, SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

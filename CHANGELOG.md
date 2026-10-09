@@ -17967,3 +17967,27 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 - Toxtricity-, Urshifu- en Alcremie-Gmax hebben geen enkelvoudige basisnaam en blijven zoals ze waren.
 - Terugzetten: de regel met `Project Grounded: ... weg` / `vorm niet in de game` terugdraaien. Nodig als een nieuwe Spire-baas een andere Mega krijgt.
 - Audit 0 FOUT, dex 1082/1082. Vrij: **±3,46 MB**.
+
+### [v0.9.235] - Yoshi's Island: de echte SNES-muziek (SPC-rip)
+- Jordi (10 okt) uploadde de SPC-set van *Super Mario World 2: Yoshi's Island* (`Yoshi Island.rsn` op master). Super Mario Advance 3 heeft een eigen muziekengine (geen MP2K), dus deze nummers komen uit de SNES-versie.
+- Nieuw: `tools/grounded/spc/`.
+  - `spclog.cpp`: blargg's snes_spc met een haak op elke DSP-schrijfactie. De bron van game-music-emu wordt naar `build/gme` gekloond.
+  - `spclib.py`: BRR-decoder en notenlog.
+  - `spc2gba.py`: per SNES-stem één spoor, met de noten (KON/KOFF), toonhoogte en vibrato als pitchbend, het instrument (SRCN) en volume en pan. De originele BRR-samples zijn de instrumenten: melodisch met gemeten grondtoon en loop, drums per toonhoogte.
+  - Timing: 1 tick = 1 GBA-frame (150 BPM). De loop wordt automatisch gevonden, en de SNES-ADSR is omgerekend naar de MP2K-envelope.
+- Vijf nummers, samen **99 KB** (13 samples + 13 drumtoetsen, gedeeld in `voicegroup_grounded_yi` / `yi_drumset`):
+
+| Nummer | Waar in de game |
+|---|---|
+| Flower Garden | Flowers, Beach, Yoshi-huis |
+| Athletic | Hills, Jungle |
+| Castle & Fortress | Wario Fort |
+| Overworld | wilde gevechten op heel Yoshi's Island (`MAPSEC_YOSHIS_ISLAND` in `GetBattleBGM`) |
+| Overworld (Fuzzy) | Touch Fuzzy Get Dizzy; nog niet gekoppeld |
+
+- Controle:
+  - toonhoogtes, chroma-vergelijking met het SNES-origineel: 0,78;
+  - klankverdeling per band binnen een paar procent;
+  - batchrec: geen pieken of clipping;
+  - in de emulator: na de warp speelt Flower Garden, een wild gevecht speelt Overworld.
+- `music_lint.py`: Athletic mag 11 noten (8 SNES-stemmen + uitklinkstaartjes op 5 momenten).

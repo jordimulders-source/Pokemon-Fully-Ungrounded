@@ -2,7 +2,7 @@
   "id": "MAP_YOSHIS_ISLAND_BEACH",
   "name": "YoshisIsland_Beach",
   "layout": "LAYOUT_YOSHIS_ISLAND_BEACH",
-  "music": "MUS_RG_BERRY_PICK",
+  "music": "MUS_GROUNDED_YI_FLOWER_GARDEN",
   "region_map_section": "MAPSEC_YOSHIS_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

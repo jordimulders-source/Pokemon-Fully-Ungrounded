@@ -606,7 +606,7 @@
 #define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_MKSC_BOWSER_CASTLE 668 // Project Grounded: Mario Kart: Super Circuit, Bowser Castle, 1-op-1 uit mksc (song 22, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_MKSC_BROKEN_PIER 669 // Project Grounded: Mario Kart: Super Circuit, Boo Lake & Broken Pier, 1-op-1 (song 27); kaartmuziek van het Boo-huis (v0.9.244)
-// 670 vrij: Sunset Wilds (MKSC song 26) speelt op MUS_GROUNDED_VS_SUNSET_WILDS (620)
+#define MUS_GROUNDED_VS_LEGENDARY   670 // Project Grounded: Battle! Legendary Pokémon, eigen compositie in Hoenn-stijl voor alle legendaries zonder eigen thema (tools/grounded/legendary_theme.py); was vrij (Sunset Wilds speelt op 620)
 #define MUS_GROUNDED_MKSC_LAKESIDE_PARK 671 // Project Grounded: Mario Kart: Super Circuit, Lakeside Park, 1-op-1 uit mksc (song 32, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_MKSC_RAINBOW_ROAD 672 // Project Grounded: Mario Kart: Super Circuit, Rainbow Road, 1-op-1 uit mksc (song 28, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_AREA_ZERO      681 // Project Grounded: Area Zero (Scarlet/Violet), nagebouwd in GBA-stijl (tools/grounded/areazero_theme.py); 668-680 = ander werk

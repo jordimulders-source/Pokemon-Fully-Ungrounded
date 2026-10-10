@@ -681,7 +681,7 @@ gSongTable::
 	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_bowser_castle, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_broken_pier, MUSIC_PLAYER_BGM, 0
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 670: vrij (Sunset Wilds speelt op MUS_GROUNDED_VS_SUNSET_WILDS)
+	song mus_grounded_vs_legendary, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_lakeside_park, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_rainbow_road, MUSIC_PLAYER_BGM, 0
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 673 (ander werk, wordt bij het samenvoegen vervangen)

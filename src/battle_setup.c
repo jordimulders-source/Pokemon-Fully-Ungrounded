@@ -561,7 +561,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_MANAPHY: // Project Grounded: zeetempel (Route 128), rimpelingen + legendary-thema
     case SPECIES_PHIONE:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
@@ -665,18 +665,18 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_BLACEPHALON:
         CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_VS_REGI);
         break;
-    case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (placeholder: Deoxys-thema)
+    case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (Battle! Legendary Pokémon)
     case SPECIES_NECROZMA_DUSK_MANE:
     case SPECIES_NECROZMA_DAWN_WINGS:
     case SPECIES_NECROZMA_ULTRA:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (placeholder-muziek: Jordi bedenkt een richting, v0.9.244)
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (muziek: Battle! Legendary Pokémon)
     case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (placeholder-muziek, zie Xerneas)
-        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_RG_VS_LEGEND);
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (Battle! Legendary Pokémon)
+        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths; het beeld vriest dicht (muziek: placeholder)
         CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
@@ -698,15 +698,15 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_MELOETTA_ARIA: // Project Grounded (legends2): Route 123, na de Poke Flute (placeholder, golvend als muziek)
     case SPECIES_MELOETTA_PIROUETTE:
-        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_ZYGARDE_50: // Project Grounded (legends2): Desert Underpass, de cellen (placeholder, rasters)
     case SPECIES_ZYGARDE_10_AURA_BREAK:
     case SPECIES_ZYGARDE_COMPLETE:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (placeholder: Kanto-legendary-thema, bestaande transitie)
-        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_RG_VS_LEGEND);
+    case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (Battle! Legendary Pokémon, bestaande transitie)
+        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_DIALGA: // Project Grounded: Spear Pillar (placeholder: Kanto-legendary-thema, de klok draait rond)
     case SPECIES_DIALGA_ORIGIN:
@@ -719,37 +719,37 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (placeholder: Kanto-legendary-thema, het licht valt in banen)
         CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (placeholder: Kanto-legendary-thema, bestaande transitie)
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
+    case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (Battle! Legendary Pokémon, bestaande transitie)
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+    case SPECIES_CELEBI: // Project Grounded: Ilex Forest (Battle! Legendary Pokémon, bestaande transitie)
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), placeholder-muziek (Jordi: valt onder een generieker thema, v0.9.244)
+    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), Battle! Legendary Pokémon (Jordi: generieker thema)
     case SPECIES_MESPRIT:
     case SPECIES_AZELF:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ETERNATUS: // Project Grounded: National Park (Battle! Legendary Pokémon, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_GLASTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (placeholder: Kanto-legendary-thema, ijs dat splijt)
-        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_RG_VS_LEGEND);
+    case SPECIES_GLASTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (Battle! Legendary Pokémon, ijs dat splijt)
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_SPECTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (placeholder: Kanto-legendary-thema, zwart gat)
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+    case SPECIES_SPECTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (Battle! Legendary Pokémon, zwart gat)
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_CALYREX: // Project Grounded: Crown Tundra, de koning zelf (placeholder: Kanto-legendary-thema)
+    case SPECIES_CALYREX: // Project Grounded: Crown Tundra, de koning zelf (Battle! Legendary Pokémon)
     case SPECIES_CALYREX_ICE:
     case SPECIES_CALYREX_SHADOW:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_MEET, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_MEET, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
-        CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; golvend als een droom
-        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_WAVE, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
         CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_GROUNDED_VS_JIRACHI);
@@ -764,7 +764,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_OKIDOGI: // Project Grounded: Ogerpon-quest, de Loyal Three: hun paarse Poison Chain
     case SPECIES_MUNKIDORI:
     case SPECIES_FEZANDIPITI:
-        CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_TAPU_KOKO: // Project Grounded: de Tapu's, gesloten schild dat op de drumslag opengaat
     case SPECIES_TAPU_LELE:
@@ -777,7 +777,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_OGERPON_HEARTHFLAME:
     case SPECIES_OGERPON_CORNERSTONE:
         // Project Grounded: maskerkraam op een nachtfestival, het Teal-masker kijkt terug (was het regenwoud)
-        CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_HOOPA_CONFINED: // Project Grounded: ringportaal, er valt van alles uit, de hand grijpt de camera
     case SPECIES_HOOPA_UNBOUND:
@@ -795,33 +795,33 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_LANDORUS_THERIAN:
         CreateBattleStartTask(B_TRANSITION_FORCES, MUS_GROUNDED_VS_LANDORUS);
         break;
-    case SPECIES_ENAMORUS_INCARNATE: // Project Grounded: liefdesdag in een stadje (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ENAMORUS_INCARNATE: // Project Grounded: liefdesdag in een stadje (Battle! Legendary Pokémon, bestaande transitie)
     case SPECIES_ENAMORUS_THERIAN:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    // Project Grounded: Swords of Justice + Keldeo (swords_keldeo.py). Placeholders: bestaande transities +
-    // Kanto-legendary-muziek; Jordi bedenkt de eigen intro's nog.
+    // Project Grounded: Swords of Justice + Keldeo (swords_keldeo.py). Placeholders: bestaande transities;
+    // muziek: Battle! Legendary Pokémon; Jordi bedenkt de eigen intro's nog.
     case SPECIES_COBALION:
     case SPECIES_TERRAKION:
     case SPECIES_VIRIZION:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_KELDEO_ORDINARY:
     case SPECIES_KELDEO_RESOLUTE:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities + Kanto-legendary-muziek;
+    // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities; muziek: Battle! Legendary Pokémon;
     // Jordi bedenkt de eigen intro's nog.
     case SPECIES_RESHIRAM: // witte vlam: de steekvlam van Entei
-        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_ZEKROM: // zwarte bliksem: de bliksems van Raikou
-        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_KYUREM: // ijs: het noorderlicht van Suicune
     case SPECIES_KYUREM_WHITE:
     case SPECIES_KYUREM_BLACK:
-        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_GROUNDED_VS_LEGENDARY);
         break;
     }
 

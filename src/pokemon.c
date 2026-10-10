@@ -6353,6 +6353,60 @@ u16 GetBattleBGM(void)
     case SPECIES_HOOPA_CONFINED: // Project Grounded: eigen thema, hijaz/darbuka (tools/grounded/hoopa_theme.py)
     case SPECIES_HOOPA_UNBOUND:
         return MUS_GROUNDED_VS_HOOPA;
+    // Project Grounded: Battle! Legendary Pokémon (tools/grounded/legendary_theme.py), het generieke thema voor
+    // legendaries zonder eigen thema. Latias/Latios (Southern Island) komen hier via BattleSetup_StartLatiBattle;
+    // de rest staat ook expliciet in BattleSetup_StartLegendaryBattle.
+    case SPECIES_LATIAS:
+    case SPECIES_LATIOS:
+    case SPECIES_MANAPHY:
+    case SPECIES_PHIONE:
+    case SPECIES_NECROZMA:
+    case SPECIES_NECROZMA_DUSK_MANE:
+    case SPECIES_NECROZMA_DAWN_WINGS:
+    case SPECIES_NECROZMA_ULTRA:
+    case SPECIES_XERNEAS:
+    case SPECIES_XERNEAS_ACTIVE:
+    case SPECIES_YVELTAL:
+    case SPECIES_MELOETTA_ARIA:
+    case SPECIES_MELOETTA_PIROUETTE:
+    case SPECIES_ZYGARDE_50:
+    case SPECIES_ZYGARDE_10_AURA_BREAK:
+    case SPECIES_ZYGARDE_COMPLETE:
+    case SPECIES_PECHARUNT:
+    case SPECIES_ZERAORA:
+    case SPECIES_CELEBI:
+    case SPECIES_UXIE:
+    case SPECIES_MESPRIT:
+    case SPECIES_AZELF:
+    case SPECIES_ETERNATUS:
+    case SPECIES_ETERNATUS_ETERNAMAX:
+    case SPECIES_GLASTRIER:
+    case SPECIES_SPECTRIER:
+    case SPECIES_CALYREX:
+    case SPECIES_CALYREX_ICE:
+    case SPECIES_CALYREX_SHADOW:
+    case SPECIES_VOLCANION:
+    case SPECIES_CRESSELIA:
+    case SPECIES_OKIDOGI:
+    case SPECIES_MUNKIDORI:
+    case SPECIES_FEZANDIPITI:
+    case SPECIES_OGERPON_TEAL:
+    case SPECIES_OGERPON_WELLSPRING:
+    case SPECIES_OGERPON_HEARTHFLAME:
+    case SPECIES_OGERPON_CORNERSTONE:
+    case SPECIES_ENAMORUS_INCARNATE:
+    case SPECIES_ENAMORUS_THERIAN:
+    case SPECIES_COBALION:
+    case SPECIES_TERRAKION:
+    case SPECIES_VIRIZION:
+    case SPECIES_KELDEO_ORDINARY:
+    case SPECIES_KELDEO_RESOLUTE:
+    case SPECIES_RESHIRAM:
+    case SPECIES_ZEKROM:
+    case SPECIES_KYUREM:
+    case SPECIES_KYUREM_WHITE:
+    case SPECIES_KYUREM_BLACK:
+        return MUS_GROUNDED_VS_LEGENDARY;
     default:
         return MUS_RG_VS_LEGEND;
     }

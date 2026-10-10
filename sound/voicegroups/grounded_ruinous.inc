@@ -49,7 +49,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_strf, 80, 0, 255, 180  @ 48
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
@@ -91,16 +91,16 @@ voice_group grounded_ruinous
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_call, 120, 0, 255, 170  @ 87
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide14, 255, 0, 255, 140  @ 88
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide18, 255, 0, 255, 140  @ 89
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 96
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 97
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 98
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 99
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec40, 255, 0, 255, 140  @ 90
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec41, 255, 0, 255, 140  @ 91
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec42, 255, 0, 255, 140  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec43, 255, 0, 255, 140  @ 93
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec64, 255, 0, 255, 140  @ 94
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec72, 255, 0, 255, 140  @ 95
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec90, 255, 0, 255, 140  @ 96
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec92, 255, 0, 255, 140  @ 97
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec97, 255, 0, 255, 140  @ 98
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec99, 255, 0, 255, 140  @ 99
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 100
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 101
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 102

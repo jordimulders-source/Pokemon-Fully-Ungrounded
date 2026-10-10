@@ -7994,9 +7994,45 @@ DirectSoundWaveData_ruinous_call::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_call.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_strf::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_strf.bin"
-
-	.align 2
 DirectSoundWaveData_az_bells_5::
 	.incbin "sound/direct_sound_samples/grounded/az_bells_5.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec40::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec40.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec41::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec41.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec42::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec42.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec43::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec43.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec64::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec64.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec72::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec72.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec90::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec90.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec92::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec92.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec97::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec97.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_sec99::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_sec99.bin"

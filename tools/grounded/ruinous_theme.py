@@ -151,48 +151,24 @@ CALL_ENV = [-107, -105, -47, -37, -37, -37, -35, -34, -33, -34, -39, -40, -43, -
             -30, -26, -27, -30, -28, -30, -31, -32, -33, -31, -34, -32, -30, -33, -33, -32, -32, -33, -31, -31]
 CALL_V = 64                           # CC7 bij het luidste punt (-26 dB)
 WIDE_V = 100                          # pad-spoor in maat 13-20 (brede knipsels)
-STR_VOL = 127                          # strijker: CC7 per maat = STR_VOL + STR_BAR_DB (gemeten niveau van de maat in de stem)
-STR_BAR_DB = {24: -8, 28: -12, 32: -9, 34: -5, 35: -5, 37: -12, 38: -12, 39: -12, 41: -10, 42: -12, 43: -12, 44: -11,
-              48: -5}   # v6: maat 37-44 is de lijn in het origineel een zachte laag; slotnoten 24/28/32 sterven weg
-PAD_OWN = {b: 110 + i for i, b in enumerate((36, 37, 38, 39) + tuple(range(52, 65)))}   # maat -> programma (eigen pad)
-STR_NOTES = {   # maat: stap:lengte:noot:velocity - de strijker vanaf maat 21 (stem 'other' 560-4000 Hz, salience per 16e
-                # boven C#5; v6 legato: herhaalde aanslagen van dezelfde toon (lekkage van het 16e-ostinato) samengevoegd,
-                # elke noot doorgetrokken tot de volgende zolang het niveau blijft; Jordi over v5: 'qua maten de hele tijd off');
-                # velocity per noot naar het gemeten niveau van die toon in de stem (A/B met de GBA-solo), noten die
-                # daar > 9 dB te zwak liggen eruit (maat 37-44: de strijker zwijgt daar grotendeels)
-    21: '0:2:F#5:127 2:1:G5:127 3:9:F#5:88 12:2:D#5:127 14:2:E5:88',
-    22: '0:1:E5:127 1:3:B5:88 4:4:A#5:100 8:1:G5:127 9:1:G#5:127 10:4:G5:88 14:1:A#5:127 15:1:G5:127',
-    23: '0:1:D#5:127 1:1:E5:127 2:2:F#5:127 4:2:G5:107 6:10:F#5:88',
-    24: '0:4:F#5:120 4:2:D#5:127 6:2:E5:127 8:1:G5:127 9:4:F#5:107 13:3:C#6:127',
-    25: '0:3:D#5:88 3:1:A#5:127 4:8:F#5:88 12:2:D#5:127 14:1:E5:127 15:1:D#5:127',
-    26: '0:1:A#5:127 1:3:B5:88 4:4:C#6:88 8:1:G5:127 9:1:G#5:127 10:4:G5:88 14:1:A#5:127 15:1:G5:127',
-    27: '0:1:D#5:127 1:1:E5:127 2:2:D#5:91 4:2:G5:105 6:9:F#5:88',
-    28: '1:3:D#5:92 4:3:B5:102 12:1:D#5:127',
-    29: '0:1:D5:127 1:1:G5:127 2:4:B5:100 6:1:A#5:127 7:1:G5:127 8:2:F#5:127 10:2:E5:94 12:2:F#5:108 14:2:A5:88',
-    30: '0:2:D5:122 2:2:E5:100 4:2:D5:88 6:2:E5:127 8:1:D5:127 9:1:A5:127 10:2:G5:127 12:2:F5:88 14:2:A#5:127',
-    31: '0:7:F#5:88 7:1:G5:127 8:7:F#5:88 15:1:G5:127',
-    32: '0:11:D5:88 11:5:F#5:127',
-    33: '0:2:D5:88 2:1:B5:127 3:1:G5:127 4:2:B5:125 6:1:A#5:127 7:1:G5:127 8:2:F#5:127 10:2:E5:110 12:1:G5:127 13:3:F#5:88',
-    34: '0:2:D5:127 2:2:E5:127 4:1:G5:127 5:1:D5:127 6:4:E5:88 10:3:G5:127 13:4:B5:88',
-    35: '1:5:F#5:110 6:1:A5:127 7:1:G5:127 8:2:F#5:88 13:2:C#6:127 15:2:D5:101',
-    36: '1:1:G5:127 2:2:A5:91 4:2:B5:88 6:2:G5:105 8:1:F#5:127 9:1:G5:127 10:1:A5:127 11:1:B5:127 12:1:C#6:127 13:1:F#5:127 14:1:E5:127 15:1:A5:127',
-    37: '0:3:B5:127 3:4:F#5:102',
-    38: '1:11:G5:127 12:2:G5:127 14:11:F#5:127',
-    39: '9:6:F#5:127',
-    40: '0:1:B5:127 1:3:F#5:88 4:3:D#5:88 8:2:F#5:123 10:1:E5:127 11:1:F#5:127 12:1:D#5:98 14:1:E5:88',
-    41: '0:9:F#5:127 9:4:F#5:122 13:1:F#5:127 14:12:E5:88',
-    42: '10:7:F#5:113',
-    43: '1:6:F#5:127 11:5:F#5:127',
-    44: '0:3:F#5:127 3:2:F#5:127 9:6:F#5:108',
-    45: '1:1:G5:127 2:1:G5:127 3:1:B5:127 4:2:G5:127 6:1:A#5:127 7:1:G5:127 8:1:F#5:127 9:1:G5:127 10:1:E5:127 11:1:D5:127 12:1:G5:127 13:3:F#5:88',
-    46: '0:2:D5:127 2:2:E5:106 4:1:G5:127 5:1:F#5:127 6:2:E5:91 8:1:D5:127 9:1:F#5:127 10:2:G5:127 12:1:D5:127 13:1:G5:127 14:1:A#5:127 15:1:F#5:127',
-    47: '0:1:D5:127 1:6:F#5:91 7:1:D#5:127 8:1:D5:127 9:6:F#5:127 15:1:D#5:127',
-    48: '0:4:D5:120 4:1:F#5:127 5:3:D5:127 8:8:F#5:127',
-    49: '0:2:D5:88 2:1:G5:127 3:3:B5:123 6:1:A#5:127 7:1:G5:127 8:3:F#5:94 11:1:G5:127 12:2:F#5:115 14:2:A5:88',
-    50: '0:2:D5:122 2:1:E5:127 3:1:G5:127 4:1:D5:127 5:2:F#5:126 7:1:B5:127 8:1:D5:127 9:1:F#5:127 10:3:G5:101 13:1:B5:127 14:2:A#5:127',
-    51: '0:2:F#5:127 2:5:F#5:127 7:1:D5:127 8:3:F#5:92 11:4:F#5:127 15:1:D5:127',
-    52: '0:4:F#5:88 4:1:B5:127 5:1:F#5:127 6:2:C#6:121 8:1:A5:127 9:1:B5:127 10:1:A5:127 11:1:D5:127 12:1:C#6:127 13:1:D5:127 14:1:E5:127 15:1:F#5:88',
+# v7 strijkerssectie (maat 21-52): per halve maat (2 x (maat-1) + 0/1) de bron-halve maat uit het origineel en de
+# niveaucorrectie doel - bron (dB, 450-5000 Hz); gelijkenis per paar in halfmap (chroma per 8e 0,7 + spectrum 0,3)
+SEC_PROG = {40: 90, 41: 91, 42: 92, 43: 93, 64: 94, 72: 95, 90: 96, 92: 97, 97: 98, 99: 99}
+SEC_MAP = {   # doel: (bron, dB)
+    40: (40, 0.0), 41: (41, 0.0), 42: (42, 0.0), 43: (43, 0.0), 44: (99, -2.1), 45: (40, -2.5),
+    46: (41, 0.7), 47: (97, -2.7), 48: (72, 2.5), 49: (41, 0.9), 50: (42, -1.0), 51: (43, -0.4),
+    52: (42, -1.7), 53: (40, -2.5), 54: (72, 0.5), 55: (41, -2.1), 56: (64, -0.4), 57: (97, -1.0),
+    58: (90, -1.8), 59: (99, -1.6), 60: (92, -0.3), 61: (92, -0.3), 62: (64, -3.7), 63: (92, -0.3),
+    64: (64, 0.0), 65: (97, 0.6), 66: (90, -1.0), 67: (99, -4.9), 68: (92, -2.5), 69: (92, -5.8),
+    70: (64, -2.5), 71: (64, -0.6), 72: (72, 0.0), 73: (72, 0.2), 74: (72, 0.8), 75: (43, -6.1),
+    76: (72, 2.0), 77: (72, -1.6), 78: (41, -1.9), 79: (41, -0.8), 80: (72, 3.7), 81: (41, -2.7),
+    82: (72, 1.2), 83: (64, -5.8), 84: (40, -2.9), 85: (72, -0.1), 86: (72, -0.5), 87: (72, -0.6),
+    88: (64, 0.4), 89: (97, 0.1), 90: (90, 0.0), 91: (99, -1.0), 92: (92, 0.0), 93: (92, 2.1),
+    94: (92, -2.2), 95: (92, 1.4), 96: (64, 0.6), 97: (97, 0.0), 98: (90, -0.5), 99: (99, 0.0),
+    100: (92, 1.7), 101: (92, 1.2), 102: (97, 0.7), 103: (92, 1.1),
 }
+PAD_OWN = {b: 110 + i for i, b in enumerate((36, 37, 38, 39) + tuple(range(52, 65)))}   # maat -> programma (eigen pad)
+STR_VOL = 100                          # sectie: niveau t.o.v. pad/drums (gemeten in de mix)
 BASS_NOTES = {   # maat: stap:lengte:noot:velocity (pyin per 16e op de basstem, maat 5-69; v4)
     5: '0:1:D#2:80 1:1:D#2:87 2:7:E2:99 9:1:F2:80 10:1:E2:82 11:2:D#2:81 14:1:E2:80',
     13: '0:2:F2:80',
@@ -305,10 +281,13 @@ def compose():
                     add(P, 'pad', t0, h, ln, 60 + SHIFT[root], 120)
                     CC['pad'].append((t0 + h * S, 'prog', PADP))
         # ------------------------------------------------------------------ strijker (vanaf maat 21, Jordi: 'vanaf 32 s mis ik de strijker')
-        if b in STR_NOTES:
-            CC['str'].append((t0, 7, round(STR_VOL * 10 ** (STR_BAR_DB.get(b, 0) / 20))))
-            for st, ln, n, v in pat4(STR_NOTES[b]):
-                add(P, 'str', t0, st, ln, n, v)
+        for hh in (0, 1):           # v7: strijkerssectie, halve maten uit het origineel
+            h = 2 * (b - 1) + hh
+            if h in SEC_MAP:
+                src, db = SEC_MAP[h]
+                add(P, 'str', t0, 8 * hh, 8, 60, 120)
+                CC['str'].append((t0 + 8 * hh * S, 'prog', SEC_PROG[src]))
+                CC['str'].append((t0 + 8 * hh * S, 7, max(1, min(127, round(STR_VOL * 10 ** (db / 20))))))
         # ------------------------------------------------------------------ bas (noot voor noot uit de stem)
         if b in BASS_NOTES:
             for st, ln, n, v in pat4(BASS_NOTES[b]):
@@ -437,11 +416,12 @@ VOICES = {
     PADG: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_g, 255, 0, 255, 140',
     BASS: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_bass, 255, 0, 255, 100',
     DRUMS: 'voice_keysplit_all voicegroup_ruinous_drumset',
-    STR: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_strf, 80, 0, 255, 180',   # aanzet ~50 ms (geen koperstoot)
     CALL: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_call, 120, 0, 255, 170',
     WIDE14: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide14, 255, 0, 255, 140',
     WIDE18: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide18, 255, 0, 255, 140',
 }
+for _h, _p in SEC_PROG.items():
+    VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec%d, 255, 0, 255, 140' % _h
 for _b, _p in PAD_OWN.items():
     VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m%d, 255, 0, 255, 140' % _b
 
@@ -479,7 +459,7 @@ TRACKS = [   # (naam, programma, volume, pan)
     ('fx', DRUMS, 110, 64), ('fx2', DRUMS, 80, 58),
     ('bass', BASS, 78, 64), ('ost', OSTP, 84, 60), ('pad', PADP, 100, 64), ('lo', LO, 30, 64),   # balans gemeten t.o.v. de drums (stems)
     ('intro', INTROP, 49, 64),
-    ('str', STR, 113, 70),
+    ('str', 90, 100, 66),
     ('call', CALL, 1, 58),   # even luid als het pad (gemeten in de stem 'other')   # het origineel ligt in maat 1-4 15,5 dB onder de grooves (gemeten)
 ]
 PSG = set()
@@ -539,7 +519,7 @@ def build(render_dir=None):
     tail = {}
     for k, pr in progs.items():
         tail[k] = 0 if (k in PSG or pr == DRUMS) else release_ticks(rel.get(pr, 200), TPB, BPM) + 2
-    for k in ('lo', 'str'):
+    for k in ('lo',):
         if k in parts:
             parts[k] = detach(parts[k], tail[k])
     for k in ('bass',):

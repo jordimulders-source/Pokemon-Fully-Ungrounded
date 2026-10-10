@@ -132,7 +132,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v6 wacht op Jordi (v4: intro goed maar 70 KB; v6: roep maat 5-12, hoge lijn 13-20, eigen strijkerknipsel legato; 367 KB samples) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v7 wacht op Jordi (v6 tot 32 s goed; v7: strijkerssectie maat 21-52 als halve maten uit het origineel; 403 KB samples) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
@@ -812,3 +812,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   toon, gat <= 2) + doortrekken tot de volgende noot zolang het niveau < 6 dB zakt. Velocity per noot uit het
   gemeten niveau van die toon (stem vs. GBA-solo, h1+h2), maatniveau als CC7. Onset-xcorr per maat is onbruikbaar
   bij een legato lijn boven een periodieke figuur (springt +-2 16en); vergelijk de toon per 16e (`pitchlag.py`).
+- Ruinous v7 (Jordi over v6: 'tot 32 s helemaal goed; je probeert strijkers met blazers na te maken, totaal anders'):
+  **kijk vóór het naspelen of het één lijn is**: spectrumpieken van een aangehouden moment (maat 21: F#5 + D#6 + F#6 +
+  A#6, geen veelvouden van elkaar = akkoord) en de vibrato van een deeltoon (sd 8 ct, onregelmatig 3,5 Hz, D#6 schuift
+  in = sectie, geen solist). Een sectie in akkoorden noot voor noot naspelen met één sample klinkt als een solo-
+  blazer, hoe goed het sample ook is. Nu halve maten uit de stem (450-5000 Hz, 6 kHz, 5,2 KB per stuk), 10 bronnen voor
+  64 halve maten: gekozen met een gretige dekking op gelijkenis (chroma per 8e 0,7 + CQT-spectrum 0,3; log-mel alleen
+  scheidt niet: alle paren 0,90), zonder transpositie (sneller afspelen verschuift het 16e-ritme), de eerste twee
+  maten (21-22) verplicht echt; niveau per halve maat = doel - bron. Mix-gelijkenis maat 21-52 0,62 -> 0,74 (maat
+  13-20, goedgekeurd: 0,77). Netto +36 KB (strijkerknipsel weg).

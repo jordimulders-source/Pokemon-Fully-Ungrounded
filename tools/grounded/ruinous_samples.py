@@ -221,9 +221,17 @@ CUTS['ruinous_wide18'] = ('other', at(18, 0), at(19, 0) + 0.08, 60, (160, 5000),
 #  F#5 uit maat 21 (16e 3-11), harmonisch gemaskerd (de ostinato-lekkage -12 dB, strijkruis blijft), i.p.v. de
 #  stock-strijkers (aanzet 255 = koperachtig; 1-4 kHz +4..+7 dB te helder gemeten).
 CUTS['ruinous_call'] = ('vocals', at(10, 4), at(10, 12), 78, (300, 5500), 'held')
-CUTS['ruinous_strf'] = ('other', at(21, 3), at(21, 11), 78, (560, 4000), 'held')
-SHELF = {'ruinous_strf': 5.0}   # dB
-WHOLE = ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
+#  v7 (Jordi over v6: 'je probeert strijkers met blazers na te maken; totaal anders'): vanaf maat 21 speelt een
+#  strijkerssectie in akkoorden (F#5 + D#6 + F#6 + A#6 tegelijk, geen samenhangend vibrato: ensemble), geen solo-
+#  lijn. Dus geen noten meer maar halve maten uit de stem 'other' (450-5000 Hz, 6 kHz), hergebruikt waar het
+#  origineel zich herhaalt (keuze: ruinous_theme.SEC_MAP, gemeten met chroma per 8e + spectrum).
+SEC_SRC = [40, 41, 42, 43, 64, 72, 90, 92, 97, 99]   # halve maten: 2 x (maat - 1) + 0/1
+for _h in SEC_SRC:
+    CUTS['ruinous_sec%d' % _h] = ('other', at(_h // 2 + 1, 8 * (_h % 2)), at(_h // 2 + 1, 8 * (_h % 2) + 8) + 0.08, 60,
+                                  (450, 5000), None)
+    RATES['ruinous_sec%d' % _h] = 6000
+SHELF = {}   # dB (v6: strijkerknipsel)
+WHOLE = tuple('ruinous_sec%d' % _h for _h in SEC_SRC) + ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
     'ruinous_pad_m%d' % _b for _b in PAD_OWN)   # niet hertonen
 
 

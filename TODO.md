@@ -67,7 +67,7 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **Wario** krijgt een eigen Wario-thema (Jordi 10 okt). **Ultra Beasts**: eigen thema bouwen (Rainbow Road is te euforisch). Rainbow Road en Bowser Castle (MKSC, in de ROM): nog een functie zoeken.
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)
 - Na de beta: Ho-Oh helderder, minder stotterende percussie. (6 okt)
-- **HQ-mixer (v0.9.245, ingebouwd op proef):** Jordi beoordeelt de A/B. Daarna eventueel een hogere mixerfrequentie (26.758/31.536 Hz) proberen: de HQ-mixer is sneller dan de oude, en meer Hz verdeelt de resterende 8-bit-ruis over een bredere band. Uitzetten: `M4A_HQ_MIXER 0` in `include/config/m4a_mixer.h`.
+- **HQ-mixer (v0.9.245): goedgekeurd** (Jordi 10 okt: lost de YI-overload op). Eventueel nog een hogere mixerfrequentie (26.758/31.536 Hz) proberen: de HQ-mixer is sneller dan de oude, en meer Hz verdeelt de resterende 8-bit-ruis over een bredere band. Uitzetten: `M4A_HQ_MIXER 0` in `include/config/m4a_mixer.h`.
 
 ## Antwoorden Jordi 9 okt (verwerkt)
 - **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). **Ghetsis** moet nog ergens in de wereld komen: hij geeft de **DNA Splicers**.

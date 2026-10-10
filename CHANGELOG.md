@@ -18300,3 +18300,6 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Drie nieuwe lead-kandidaten (`mitch7a/b/c_*`: A supersaw-stab, B screech/hoover = standaard, C vocal chop): gestapelde stemmen in één sample op 16 kHz (`KEEP_16K` in `resample_wav.py`), plus nieuwe `mitch7_pluck` en `mitch7_reese_raw`. Kiezen met `python3 tools/grounded/mitch_theme.py [a|b|c]`.
 - Noten, ritme en drums zijn gelijk aan v6; alleen de roffelslagen op/na een kick in de build-ups gaan naar ×0,5. Daardoor kan het niveau van -V066 naar -V092 (piek 98, geen overflows).
 - Opgeruimd: `mitch6a/6b_brass_*`, `mitch3_pluck`, `mitch5_reese_raw`.
+
+### [v0.9.258] - HQ-mixer definitief
+- De HQ-mixer (v0.9.245) blijft aan: hij lost de overload in de Yoshi's Island-nummers op (Jordi). Hij staat niet meer op proef.

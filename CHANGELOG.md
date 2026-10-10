@@ -18114,3 +18114,15 @@ Bij Castle zijn de lage partijen nog wat te zacht.
   - **Zacian:** drie witte zwaardsneden, het beeld splijt. **Zamazenta:** het schild glanst, dan Behemoth Bash met schokgolven (Mega Forest).
   - **Xerneas:** grauw Glimwood, de kleur stroomt vanuit de heksenkring terug. **Yveltal:** een schaduw landt, de kleur trekt weg, Oblivion Wing kleurt rood en dan zwart.
   - Samen ±36,5 KB, elk 1,5–2,1 s. De muziek blijft voorlopig de placeholder, behalve waar hieronder een eigen thema komt.
+
+### [v0.9.242] - Drie eigen legendary-thema's
+Gemaakt door een agent (`legends3_theme.py`). Alleen stock-samples, samen ±16 KB. Alle drie gemeten: 0 overlopen, piek 97–111.
+- **Battle! Zacian & Zamazenta** (`MUS_GROUNDED_VS_ZACIAN`), 152 bpm, B-klein.
+  - Een zwaardmotief (trompet, slag omhoog) en een schildmotief (hoorns, dalende halve noten in D-groot) met galopperende strijkers.
+  - Een duel als vraag en antwoord, daarna "Crowned": een hele toon hoger.
+- **Battle! Xerneas & Yveltal** (`MUS_GROUNDED_VS_XERNEAS`), 168 bpm.
+  - Eén melodie in twee gedaanten: leven in E-groot (strijkers, glockenspiel, harp) en dood in E-klein (distortiongitaar, hoorns, buisklok, half-time, vleugelslagen op PSG-ruis).
+  - Op het eind wisselen ze per twee maten.
+- **Battle! Uxie, Mesprit & Azelf** (`MUS_GROUNDED_VS_LAKE_TRIO`), 144 bpm, F#-klein.
+  - Drie motieven op één akkoordschema: kennis (kristallen 3+3+2 op glockenspiel + PSG), emotie (hobo met zuchten) en wilskracht (klimmende fanfare). Daarna klinken ze samen.
+- Volgens de nieuwe lessen: geen zachte DirectSound-noten (velocity ≥ 76), sub-bas op het PSG-golfkanaal, drums als gewone voice (niet `no_resample`).

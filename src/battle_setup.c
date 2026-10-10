@@ -611,30 +611,30 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
-    case SPECIES_SCREAM_TAIL: // Project Grounded: Area Zero, de eerste paradoxen (placeholder: Kanto-legendary-thema)
+    case SPECIES_SCREAM_TAIL: // Project Grounded: Area Zero, de eerste paradoxen (Battle! Area Zero, remix)
     case SPECIES_IRON_HANDS:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_IRON_LEAVES: // Project Grounded: Area Zero, toekomst (placeholder: Kanto-legendary-thema)
+    case SPECIES_IRON_LEAVES: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
     case SPECIES_IRON_BOULDER:
     case SPECIES_IRON_CROWN:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_WALKING_WAKE: // Project Grounded: Area Zero, verleden (placeholder: Kanto-legendary-thema)
+    case SPECIES_WALKING_WAKE: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
     case SPECIES_GOUGING_FIRE:
     case SPECIES_RAGING_BOLT:
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_MIRAIDON: // Project Grounded: Area Zero, toekomst (placeholder: Kanto-legendary-thema)
-        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_RG_VS_LEGEND);
+    case SPECIES_MIRAIDON: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_KORAIDON: // Project Grounded: Area Zero, verleden (placeholder: Kanto-legendary-thema)
-        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_RG_VS_LEGEND);
+    case SPECIES_KORAIDON: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
+        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_TERAPAGOS_NORMAL: // Project Grounded: Area Zero, Tera-grot (placeholder: Kanto-legendary-thema)
+    case SPECIES_TERAPAGOS_NORMAL: // Project Grounded: Area Zero, Tera-grot (Battle! Area Zero, remix)
     case SPECIES_TERAPAGOS_TERASTAL:
     case SPECIES_TERAPAGOS_STELLAR:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_NIHILEGO: // Project Grounded: Ultra Space (placeholder: Regi-thema; eigen intro's en thema's volgen)
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_VS_REGI);

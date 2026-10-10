@@ -679,6 +679,21 @@ gSongTable::
 	song mus_grounded_yi_fuzzy, MUSIC_PLAYER_BGM, 0
 
 	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 668: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 669: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 670: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 671: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 672: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 673: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 674: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 675: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 676: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 677: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 678: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 679: plaatshouder (ander werk)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0   @ 680: plaatshouder (ander werk)
+	song mus_grounded_area_zero, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_area_zero, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

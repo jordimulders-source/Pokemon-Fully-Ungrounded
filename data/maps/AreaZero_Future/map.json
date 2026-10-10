@@ -2,7 +2,7 @@
   "id": "MAP_AREA_ZERO_FUTURE",
   "name": "AreaZero_Future",
   "layout": "LAYOUT_AREA_ZERO_FUTURE",
-  "music": "MUS_RG_SEVII_DUNGEON",
+  "music": "MUS_GROUNDED_AREA_ZERO",
   "region_map_section": "MAPSEC_AREA_ZERO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

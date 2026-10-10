@@ -280,3 +280,6 @@
 .include "sound/voicegroups/grounded_hoopa.inc"
 .include "sound/voicegroups/drumsets/yi.inc"
 .include "sound/voicegroups/grounded_yi.inc"
+.include "sound/voicegroups/drumsets/area_zero.inc"
+.include "sound/voicegroups/keysplits/area_zero_strings.inc"
+.include "sound/voicegroups/grounded_area_zero.inc"

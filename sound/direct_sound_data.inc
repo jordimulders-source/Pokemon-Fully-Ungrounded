@@ -7430,3 +7430,7 @@ DirectSoundWaveData_yi_dcb99354f_6140::
 	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_6140.bin"
 
 @ } yi_samples
+
+	.align 2
+DirectSoundWaveData_az_crystal::
+	.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"

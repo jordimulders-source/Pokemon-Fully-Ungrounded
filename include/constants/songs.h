@@ -604,6 +604,8 @@
 #define MUS_GROUNDED_YI_OVERWORLD   665 // Project Grounded: Overworld (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_FUZZY       666 // Project Grounded: Overworld (Fuzzy), Touch Fuzzy Get Dizzy, SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_AREA_ZERO      681 // Project Grounded: Area Zero (Scarlet/Violet), nagebouwd in GBA-stijl (tools/grounded/areazero_theme.py); 668-680 = ander werk
+#define MUS_GROUNDED_VS_AREA_ZERO   682 // Project Grounded: Battle! Area Zero, remix van Area Zero voor paradoxen/Koraidon/Miraidon/Terapagos en wilde gevechten daar (tools/grounded/areazero_theme.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

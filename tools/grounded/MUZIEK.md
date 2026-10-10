@@ -118,6 +118,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -627,3 +628,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   v5 -10..-15 dB, v6 -27..-31 dB. **E4-hoorns** (vs_elite_four) = sc88pro-trompet = hetzelfde spectrum als FluidR3
   56 (vlak tot h8, zwaartepunt ±1,4 kHz op C4), gespeeld rond D5-Bb5: B = trompet een octaaf boven de geschreven noot
   + body op de noot. Kanalen/stemverdeler ongewijzigd. B: -V066, 0 overlopen, piek 72/127, RMS 2616.
+- Area Zero v1 (`areazero_theme.py`, 681 + remix 682): **transcriberen uit een dichte mix = per laag een ander gereedschap**:
+  kristal-arpeggio's met onset-per-halve-toon (`onsets.py`), de 'stem' met harmonische som + zwaartepunt per 16e
+  (`seg.py`: noten met hun afwijking), akkoorden met chroma per halve maat, drums per band; daarna **chroma-correlatie per
+  maat render vs. origineel** (0,70 -> 0,83): lage maten wezen precies de foute grondtoon aan (Ab-bas was Eb-orgelpunt,
+  bas-stem toonde boventonen). De lead zingt systematisch ±0,4 halve toon te hoog met brede vibrato (= het 'uncanny');
+  nagebootst met pitch bend per noot + MOD. 8-bit-covers zijn niet noot-voor-noot (andere timing): alleen ter controle.
+  Stock-glockenspiel/unknown_bell klinken een kwarttoon vals op toets 60 (1361/1227 Hz): kristalbel zelf gesynthetiseerd.

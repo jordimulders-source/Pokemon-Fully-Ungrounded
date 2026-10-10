@@ -7898,3 +7898,11 @@ DirectSoundWaveData_mitch7_pluck::
 	.align 2
 DirectSoundWaveData_mitch7_reese_raw::
 	.incbin "sound/direct_sound_samples/grounded/mitch7_reese_raw.bin"
+
+	.align 2
+DirectSoundWaveData_ub_glass::
+	.incbin "sound/direct_sound_samples/grounded/ub_glass.bin"
+
+	.align 2
+DirectSoundWaveData_ub_swell::
+	.incbin "sound/direct_sound_samples/grounded/ub_swell.bin"

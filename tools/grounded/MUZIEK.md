@@ -137,6 +137,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
+| Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -723,3 +724,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   een GM-drumspoor (41/45 toms, 52/57 bekkens op tel 3 en 3-en), geen melodische taiko: eigen kit. Bekkens die een
   achtste later terugkomen eerder los (anders 2 kanalen). Loop = maat 10-50 (maat 41.3-49 herhaalt de intro-gebaren).
   Batchrec: 0 overlopen, piek 111/127, RMS 556-3590 (strijkerssecties het luidst), max -4,9 dB; ±3,6 KB ROM.
+- Ultra Beast v1 (`ub_theme.py`, 677, 168 bpm, octatonisch C, B heeltoons in 7/8): **'andere dimensie' zonder horror of
+  euforie** = een ladder zonder grondtoonfunctie (octatonisch: het thema een kleine terts omlaag/omhoog geeft dezelfde
+  tonen) + microtonale details (kwarttoon-scoops/-wiebels op de lead via BENDR 2, PSG-echo 0,3 halve toon te hoog,
+  twee koorstemmen die tegengesteld een kwarttoon wegbuigen). Glazen lead = FM met een niet-harmonische modulator
+  (x1,41) en exacte loop (gehele perioden van alle oscillatoren in 2760 samples, 11 kHz). Omgekeerde zwelling =
+  FM-klok achterstevoren, 1,15 s eindigend op de downbeat (2 kanalen). Batchrec -V090: 0 overlopen, piek 95/127,
+  RMS 3000-3450, max -5,6 dB; audiocheck 45-62 Hz = rnd-kick + C2-pedaal (stijgt pas als de drums invallen). ±25 KB.

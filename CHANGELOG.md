@@ -18257,3 +18257,10 @@ Gekozen door Jordi:
 - **Battle! Area Zero v2**, naar de Area Zero wild battle uit Scarlet/Violet (aangeleverd door Jordi).
   - 148 bpm. De lead speelt de aria op battle-tempo, met de stem uit het origineel. Koorakkoorden op Eb/B, de groove van 681, een pauze met belletjes, en een loop van ±48,6 s.
   - Geen nieuwe samples. Gemeten: max. 11 kanalen, 0 afgekapt, piek 89.
+
+### [v0.9.253] - Battle! Area Zero v2 geschrapt
+- Jordi: "Die vs area zero mag je schrappen … we maken eerst de main theme af".
+  - `MUS_GROUNDED_VS_AREA_ZERO` speelt weer de placeholder (Kanto-legendary).
+  - De paradoxen, Koraidon, Miraidon en Terapagos houden de koppeling, zodat het nieuwe thema daar straks vanzelf klinkt.
+  - Wilde gevechten in Area Zero volgen weer de gekozen WILD MUSIC.
+  - Het Zero Lab krijgt weer zijn oude placeholders (Frontier Brain, het alarm Kanto-legendary).

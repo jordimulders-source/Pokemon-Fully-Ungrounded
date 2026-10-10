@@ -693,7 +693,7 @@ gSongTable::
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 679 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 680 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_grounded_area_zero, MUSIC_PLAYER_BGM, 0
-	song mus_grounded_vs_area_zero, MUSIC_PLAYER_BGM, 0
+	song mus_rg_vs_legend, MUSIC_PLAYER_BGM, 0 @ 682: placeholder (Battle! Area Zero v2 geschrapt; wordt opnieuw gebouwd op het originele battle theme)
 	song mus_grounded_vs_ruinous, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zacian, MUSIC_PLAYER_BGM, 0
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 685: Xerneas/Yveltal-thema uit (Jordi: "veel te vrolijk"; MIDI bewaard)

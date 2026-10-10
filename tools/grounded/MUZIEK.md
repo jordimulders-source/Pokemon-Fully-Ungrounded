@@ -135,6 +135,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
+| Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -706,3 +707,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
   via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
 
+
+- Legendary v1 (`legendary_theme.py`, 670, generiek legendary-thema, E-klein 176 bpm, alleen stock-samples): **de
+  Weather Trio-'percussie' is vooral de pauk** (mus_vs_kyogre_groudon: 235 paukennoten, achtsten laag-hoog-laag-laag-
+  hoog-laag-laag-hoog op kwint/grondtoon; drums alleen bekkens). Pauk-ostinato op release 170 + roffels op een aparte
+  pauk met release 90 houdt het op max. 11 kanalen zonder weggevallen noten. E4-koper = stock trumpet/horn-keysplits,
+  hoorns harmoniseren automatisch (hoogste akkoordtoon >= 3 halve tonen onder de trompet). -V090: 0 overlopen, piek
+  100/127, RMS 3140; audiocheck 71-90 Hz = grondtonen D2-F#2 van bas/pauk. ±6 KB (song 4,7 KB + voicegroup).

@@ -18244,3 +18244,16 @@ Gekozen door Jordi:
   2. Een grote gele W met paarse rand dreunt erin als een ground pound.
   3. Wario stempelt er in drie poses in: grijns, dubbele biceps en opzij. Dit is de echte GBA-art op 3×.
   4. De W komt terug en groeit tot hij het hele beeld vult, wit, gevecht.
+
+### [v0.9.252] - Area Zero v4 en Battle! Area Zero v2
+- **Area Zero v4** (Jordi: het koor "loopt de hele tijd", de aria "hapert en laat los", de piepjes missen noten, en "vanaf 1:07 een ander nummer").
+  - **Kanaalroof was het niet.** Gemeten met een kanaallog per frame: maximaal 9 kanalen, 0 afgekapte noten. De oorzaken zaten in het arrangement.
+  - **Koor:** geknipt tot 2 s uit het origineel met een loop van ±1 s en een gelijk-vermogen-crossfade (was 0,25–0,42 s, hoorbare herhaling). De roepen sluiten nu aan, zonder stilte ertussen.
+  - **Aria:** langere stukken uit het origineel (F5 uit m34, Bb4 uit m30), loops 1,06 en 1,42 s, en geen loslaten meer vóór de volgende noot.
+  - **Stem en koor op 16 kHz** (niet meer dof); uitgezonderd in `resample_wav.py --all`.
+  - **Belletjes** klinken door zoals in het origineel (±0,8 s); de PSG-echo is weg.
+  - **Geraden lagen weg:** de "piano"-arpeggio's (m24–39) en het blokgolf-ostinato vanaf m40 (het "andere nummer").
+  - Gemeten: piek 64. Chroma tegen het origineel: koor 0,97, aria 0,86. Samples ±570 KB.
+- **Battle! Area Zero v2**, naar de Area Zero wild battle uit Scarlet/Violet (aangeleverd door Jordi).
+  - 148 bpm. De lead speelt de aria op battle-tempo, met de stem uit het origineel. Koorakkoorden op Eb/B, de groove van 681, een pauze met belletjes, en een loop van ±48,6 s.
+  - Geen nieuwe samples. Gemeten: max. 11 kanalen, 0 afgekapt, piek 89.

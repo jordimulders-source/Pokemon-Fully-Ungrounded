@@ -18313,3 +18313,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Nieuwe gevechtsintro `B_TRANSITION_BOO` voor Commander Boo (Yoshi's Island) en de Stadium-Boo, op de maat van Battle! Boo.
 - Het verloop: vijf Boos voor het Yoshi's Island-spookhuis houden hun handen voor hun ogen (één gluurt even) → Kamek scheurt op zijn bezem voorbij en schiet zonder om te kijken zijn spreuk (cirkel, driehoek, vierkant) op de middelste → witte flits en de Boo zwelt op → poef: hij draait zich papierdun om als Commander Boo, tong uit → de rest slaat de handen weer voor de ogen en gluurt toch → het gevecht begint.
 - Art uit Super Mario Advance 3 (`tools/grounded/sma3_boo_rip.py`, `boo_intro.py`, code in `src/data/boo_intro.h`). Kost ±10,5 KB.
+
+### [v0.9.261] - Shy Guy-intro
+- Nieuwe gevechtsintro `B_TRANSITION_SHY_GUY` voor de Shy Squad (Yoshi's Island), de vier Stadium-Shy Guys en de woestijn-Shy Guy, op de maat van Sunset Wilds.
+- Het verloop: zeven Shy Guys (Stilt Guy, Fat Guy, Spear Guy, rood, een struik, geel, Fly Guy) staan in level 1-1 droog op de maat te wiebelen → op tel 3 staan ze stokstijf stil → de rode draait zich om en krijgt het trainer-"!" boven zijn hoofd → de rest kijkt hem één voor één aan (er gluurt een Shy Guy uit de struik) → close-up onder een spotlight, trillend → een Yoshi's Island-hintbord valt in beeld: "Wait. / It's my turn." → witte flits op de inzet van de melodie, het gevecht begint.
+- Art uit Super Mario Advance 3 (`tools/grounded/yi_shyguy_rip.py`, `shyguy_intro.py`, code in `src/data/shyguy_intro.h`). Kost ±14 KB; de intro gebruikt ±600 van de 1024 sprite-tiles.

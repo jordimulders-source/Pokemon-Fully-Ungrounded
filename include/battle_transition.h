@@ -148,6 +148,17 @@ enum BattleTransition
     B_TRANSITION_WARIO, // Project Grounded: Wario, knoflook wordt opgegeten, de W dreunt erin, poses, de W neemt het beeld over
     B_TRANSITION_BOO, // Project Grounded: Boos (spookhuis uit Yoshi's Island), Kamek tovert er een tot Commander Boo
     B_TRANSITION_SHY_GUY, // Project Grounded: Shy Guys op Sunset Wilds, staan in 1-1, eentje beseft dat hij moet vechten
+    B_TRANSITION_LEGEND_CROWN, // Project Grounded (src/data/legend_intros_cheap2.h): Calyrex/Glastrier/Spectrier, hoefafdrukken
+    B_TRANSITION_LEGEND_CELEBI, // Project Grounded: Celebi, GBC-groen, GS-flikkeren, bladeren, GS-spiraal
+    B_TRANSITION_LEGEND_LAKE, // Project Grounded: Uxie/Mesprit/Azelf, meer in de mist, kleurt naar de edelsteen
+    B_TRANSITION_LEGEND_MELOETTA, // Project Grounded: Meloetta, het beeld loopt vol noten
+    B_TRANSITION_LEGEND_ZERAORA, // Project Grounded: Zeraora, elektrische klauwhalen en een poot op de camera
+    B_TRANSITION_LEGEND_ZYGARDE, // Project Grounded: Zygarde, een groene Z als Zorro en het beeld splijt
+    B_TRANSITION_LEGEND_EON, // Project Grounded: Latias/Latios, eonlicht en een dromerige kleurwas
+    B_TRANSITION_LEGEND_CRESSELIA, // Project Grounded: Cresselia, de maan rijst en wast vol, maanmist
+    B_TRANSITION_LEGEND_NECROZMA, // Project Grounded: Necrozma, een zwart prisma zuigt het licht op
+    B_TRANSITION_LEGEND_GALAR_ZAPDOS, // Project Grounded: Galar-Zapdos, sprint en trap
+    B_TRANSITION_LEGEND_GALAR_MOLTRES, // Project Grounded: Galar-Moltres, zwarte vlammen en een duistere aura
     B_TRANSITION_COUNT
 };
 

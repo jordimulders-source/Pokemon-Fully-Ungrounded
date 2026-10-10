@@ -195,6 +195,7 @@ static void Task_LegendZacian(u8);
 static void Task_LegendZamazenta(u8);
 static void Task_LegendXerneas(u8);
 static void Task_LegendYveltal(u8);
+static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -706,6 +707,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZAMAZENTA] = Task_LegendZamazenta,
     [B_TRANSITION_XERNEAS] = Task_LegendXerneas,
     [B_TRANSITION_YVELTAL] = Task_LegendYveltal,
+    [B_TRANSITION_WARIO] = Task_Wario, // Project Grounded (src/data/wario_intro.h)
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -10451,3 +10453,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 // Project Grounded: legendary-intro's (Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature)
 #include "data/legend_intros.h"
 #include "data/legend_intros2.h"
+#include "data/wario_intro.h"

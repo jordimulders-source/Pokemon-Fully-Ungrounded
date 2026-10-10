@@ -129,6 +129,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 | Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v1 wacht op opname (SV-thema nagebouwd op het gemeten raster; ostinato elektronisch, koto vanaf maat 21) | "Ruinous" |
+| Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -643,3 +644,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   en lag een 16e verschoven: 'kick op de laatste 16e' was in werkelijkheid één grote slag op elke tel, alle banden).
   **Een tijdstip uit Jordi's feedback hoort bij het fragment dat hij hoorde**: de ostinato-clip begon op 25,0 s
   (kruiscorrelatie met de stem), dus zijn '7 s' = maat 21, waar een tokkellijn in B4-C6 begint (16e-heraanslagen).
+- Legends3 v1 (`legends3_theme.py`, 684-686, alleen stock-samples, één voicegroup `grounded_legends3` + kit `drumsets/legends3`):
+  **twee/drie motieven op hetzelfde akkoordschema schrijven** (meren: F#m-D-E-C#m-Bm-D-G-C#) zodat ze in de slotsectie
+  zonder aanpassing samen kunnen klinken; Xerneas/Yveltal = één melodie met `to_death()` (G#/C#/D# een halve toon
+  omlaag, behalve D# op de dominant), gecontroleerd met de duur per toonklasse per sectie (groot: 0 G/C/D, klein: 0 G#/C#).
+  **8-bit-fuzz vermijden**: DS-velocities >= 76 (assert in het script), geen fluit, sub op de PSG-golf, DS-bas >= C2,
+  zuivere lichte figuren (Uxie, waterrimpelingen) op PSG. **Kit met `voice_directsound <toets>`** i.p.v. _no_resample
+  (speelt op de sample-rate, niet op 21 kHz). Harp/spiccato in 16en: release <= 100-110, anders bezet elke 16e 2 kanalen
+  (detach houdt min. 6 ticks); koper eigen keysplits met release 112/120 voor 16en-opmaten. Tomfills laten eindigen
+  vóór de tel waarop de crash valt, en geen hihat op een crash: scheelt 2 kanalen op de zwaarste tel.

@@ -610,6 +610,9 @@
 #define MUS_GROUNDED_MKSC_LAKESIDE_PARK 671 // Project Grounded: Mario Kart: Super Circuit, Lakeside Park, 1-op-1 uit mksc (song 32, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_MKSC_RAINBOW_ROAD 672 // Project Grounded: Mario Kart: Super Circuit, Rainbow Road, 1-op-1 uit mksc (song 28, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_VS_RUINOUS     683 // Project Grounded: Battle! Treasures of Ruin (Wo-Chien, Chien-Pao, Ting-Lu, Chi-Yu), SV-thema in GBA-stijl (tools/grounded/ruinous_theme.py); 668-682 bezet door ander werk
+#define MUS_GROUNDED_VS_ZACIAN      684 // Project Grounded: Battle! Zacian & Zamazenta, eigen compositie: zwaard en schild, Galar-ridders (tools/grounded/legends3_theme.py)
+#define MUS_GROUNDED_VS_XERNEAS     685 // Project Grounded: Battle! Xerneas & Yveltal, eigen compositie: leven (groot) en dood (klein), één melodie (tools/grounded/legends3_theme.py)
+#define MUS_GROUNDED_VS_LAKE_TRIO   686 // Project Grounded: Battle! Uxie, Mesprit & Azelf, eigen compositie: kennis, emotie, wilskracht (tools/grounded/legends3_theme.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

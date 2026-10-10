@@ -581,13 +581,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CHI_YU:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_RUINOUS);
         break;
-    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest, drie zwaardhalen en het beeld splijt (muziek: placeholder, Kanto-legendary-thema)
+    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest, drie zwaardhalen en het beeld splijt eigen thema (zwaard en schild)
     case SPECIES_ZACIAN_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_ZACIAN, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_ZACIAN, MUS_GROUNDED_VS_ZACIAN);
         break;
-    case SPECIES_ZAMAZENTA_HERO: // Project Grounded: Mega Forest, ademen en Behemoth Bash (muziek: placeholder)
+    case SPECIES_ZAMAZENTA_HERO: // Project Grounded: Mega Forest, ademen en Behemoth Bash, eigen thema (zelfde als Zacian)
     case SPECIES_ZAMAZENTA_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_ZAMAZENTA, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_ZAMAZENTA, MUS_GROUNDED_VS_ZACIAN);
         break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
@@ -671,12 +671,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_NECROZMA_ULTRA:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (muziek: placeholder, Kanto-legendary-thema)
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos eigen thema (leven en dood)
     case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_GROUNDED_VS_XERNEAS);
         break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (muziek: placeholder)
-        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_RG_VS_LEGEND);
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing zelfde thema als Xerneas
+        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_GROUNDED_VS_XERNEAS);
         break;
     case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths; het beeld vriest dicht (muziek: placeholder)
         CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
@@ -725,10 +725,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (placeholder: Kanto-legendary-thema, rimpelingen)
+    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), eigen thema (drie motieven)
     case SPECIES_MESPRIT:
     case SPECIES_AZELF:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LAKE_TRIO);
         break;
     case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:

@@ -695,6 +695,9 @@ gSongTable::
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 681 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 682 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_grounded_vs_ruinous, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_zacian, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_xerneas, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_lake_trio, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

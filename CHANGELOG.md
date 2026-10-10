@@ -18401,3 +18401,13 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Aria en koor zijn ongewijzigd. Kost samen ±560 KB extra; er is nog **1,31 MB** ROM vrij.
 - **Ultra Beast v4:** de glazen lead pauzeert nu ook in de eerste helft van B. Hij zwijgt nu ±28% van de loop (was ±20%). Goedgekeurd: "dan zijn we er".
 - Goedgekeurd: de Shy Guy-varianten en Mew v3.
+
+### [v0.9.272] - Treasures of Ruin v4–v6
+- Jordi: "gaat helemaal goed, tot aan 32 sec". Alle lagen zijn nu uit het origineel geknipt.
+  - **Intro (maat 1–4):** het origineel zelf, 70 KB, goedgekeurd.
+  - **lo en ostinato:** als frase uit de stems, met de diepe bourdon-strijker.
+  - **Pad:** een liggend akkoord per maat (geen "vastslaande cd" meer).
+  - **Bas:** noot voor noot uit de basstem.
+  - **Melodie:** de ontbrekende aangehouden roep (maat 5–12) en de hoge ostinatolijn (maat 13–20) zijn erbij. Daardoor zit maat 5–20 tot 4 kHz binnen ±3 dB van het origineel.
+  - **Strijker vanaf 32 s:** klopt nog niet; Jordi hoort blazers. Volgt in v7.
+- Samples voor dit nummer samen ±367 KB. Er is nog **1,08 MB** ROM vrij.

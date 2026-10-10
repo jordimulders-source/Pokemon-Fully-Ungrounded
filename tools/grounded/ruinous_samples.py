@@ -181,28 +181,92 @@ def fade_in_out(x, a=0.004, b=0.04):
     return x
 
 
-CUTS = {}     # naam: (stem, t0, t1, toets, band, loop (s vanaf begin) of None)
-#  lo_e2: het lage Aziatische instrument van de intro, E2 (maat 1, 16e 1-7: alleen E2 met zijn eigen boventonen)
-CUTS['ruinous_lo_e2'] = ('piano', at(1, 1) - 0.01, at(1, 8), 40, None, None)
-#  lo_b3: hetzelfde instrument, B3 aangehouden (maat 5, de hele maat; de stem 'piano' heeft daar niets anders)
-CUTS['ruinous_lo_b3'] = ('piano', at(5, 0) + 0.02, at(6, 0) - 0.02, 59, None, (0.45, 1.45))
-#  ostbar: het ostinato (B3 + F#4 aangehouden, de frygische C4 op 16e 6), een halve maat uit de rustige maat 67
-CUTS['ruinous_ostbar'] = ('other', at(67, 0), at(67, 8), 59, (90, 2600), None)
-#  oth_*: de hele stem 'other' (pad B3+F#4, de 16e-figuur B4+F#5-E-C#, de hogere lijn) als halve maat per akkoord,
-#  geknipt waar dat akkoord in het origineel klinkt; 30 ms langer dan een halve maat (overlap met de volgende aanslag)
-OTH = {'B': (18, 0), 'E': (22, 0), 'G': (29, 0), 'Gm': (46, 8), 'Bm': (31, 0), 'Fs': (35, 0), 'DA': (36, 0),
-       'Em': (38, 0), 'A': (52, 0)}
-for _t, (_b, _k) in OTH.items():
-    CUTS['ruinous_oth_' + _t] = ('other', at(_b, _k), at(_b, _k + 8) + 0.03, 60, (160, 5000), None)  # >160 Hz: geen baslek
-#  bass: één basnoot E2 (maat 22, 16e 3-5: alleen E2 + boventonen; de B1 van maat 17 had een D2 erdoor) met zijn
-#  natuurlijke uitklank
-CUTS['ruinous_bass'] = ('bass', at(22, 3) - 0.005, at(22, 6) - 0.01, 40, (30, 3000), None)
-WHOLE = ('ruinous_ostbar',) + tuple('ruinous_oth_' + t for t in OTH)      # meerdere tonen in één sample: niet hertonen, lengte = halve maat
+CUTS = {}     # naam: (stem(men), t0, t1, toets, band, loop (s vanaf begin) of None)
+RATES = {}    # afwijkende samplerate per knipsel (Hz)
+# v4 (Jordi over v3: 'lo klopt alleen de eerste toon', 'oth loopt een noot en verdwijnt', 'oth2 als een vastslaande
+# cd-speler', 'bas een rare remix'): geen geraden noten en geen herhaalde halve maten meer waar het origineel doorloopt.
+#  intro: maat 1-4 van het origineel zelf, alle stems samen (= de mix), als één sample; de drums van de intro zitten erin
+CUTS['ruinous_intro'] = (('other', 'piano', 'vocals', 'bass', 'drums'), at(1, 0), at(5, 0), 60, None, None)
+#  lo58: het lage instrument (stem 'piano') in maat 5-8 als één frase; inhoud < 2 kHz, dus 8 kHz
+CUTS['ruinous_lo58'] = ('piano', at(5, 0), at(9, 0), 60, None, None)
+RATES['ruinous_lo58'] = 8000
+#  ostbar: het ostinato met de diepe strijker-bourdon B2 ('bijna keelzang', Jordi) - hele maat 8 van de stem 'other'
+CUTS['ruinous_ostbar'] = ('other', at(8, 0), at(9, 0) + 0.08, 60, (55, 5000), None)   # v6: tot 5 kHz (was 2,6: 'muffled')
+#  ostbar2: maat 66-69 hebben die bourdon niet: hele maat 67
+CUTS['ruinous_ostbar2'] = ('other', at(67, 0), at(68, 0) + 0.08, 60, (55, 2600), None)
+#  pad: het aangehouden B3+F#4 van de grooves (stem 'other' < 450 Hz, zonder de lijn erboven), hele maat 19;
+#  per maat aangeslagen en naar de grondtoon getransponeerd, net als het ostinato
+CUTS['ruinous_pad'] = ('other', at(19, 0), at(20, 0) + 0.08, 60, (160, 450), None)
+#  pad_g: in de G-maten ligt het pad in octaven (G3 + G4, gemeten maat 26-50): eigen knipsel uit maat 33
+CUTS['ruinous_pad_g'] = ('other', at(33, 0), at(34, 0) + 0.08, 60, (160, 450), None)
+#  pad_mNN: maten waar het pad van het origineel anders ligt (in de A/B chroma < 0,75 met het getransponeerde B/G-pad:
+#  de D/A-Bm-Em-maten 36-39 en de roffels/opbouw 52-64): het eigen stuk van die maat (< 450 Hz)
+PAD_OWN = (36, 37, 38, 39) + tuple(range(52, 65))
+for _b in PAD_OWN:
+    CUTS['ruinous_pad_m%d' % _b] = ('other', at(_b, 0), at(_b + 1, 0) + 0.08, 60, (160, 450), None)
+#  het pad bevat alleen < 450 Hz: 4 kHz is genoeg (6,4 KB per maat i.p.v. 17,6 KB)
+for _n in ['ruinous_pad', 'ruinous_pad_g'] + ['ruinous_pad_m%d' % _b for _b in PAD_OWN]:
+    RATES[_n] = 4000
+#  bass: één B1 uit de basstem (maat 19, 16e 11-13: alleen B1 + boventonen, 0,3 s) met zijn natuurlijke uitklank;
+#  de noten zelf komen noot voor noot uit de basstem (pyin per 16e)
+CUTS['ruinous_bass'] = ('bass', at(19, 11) - 0.005, at(19, 14), 35, (30, 3000), None)
+#  v6 (Jordi over v5: 'vanaf 6 s is de hoofdmelodie te weggedrukt, te muffled, vanaf 19-20 s ook'; 'het instrument
+#  vanaf 31 s is te veel blazer en te weinig strijker'):
+#  wide14/wide18: maat 13-20 hadden alleen het pad (< 450 Hz); de hoge ostinatolijn (B5-C6, maat 13-16) en de B4-lijn
+#  (17-20) uit de stem 'other' ontbraken (gemeten -10 tot -20 dB boven 500 Hz). Hele maat 14 / 18, 160-5000 Hz.
+CUTS['ruinous_wide14'] = ('other', at(14, 0), at(15, 0) + 0.08, 60, (160, 5000), None)
+CUTS['ruinous_wide18'] = ('other', at(18, 0), at(19, 0) + 0.08, 60, (160, 5000), None)
+#  call: de aangehouden roep F5 -> F#5 van maat 5-12 (stem 'vocals', 300-5500 Hz) ontbrak; één F#5 uit maat 10
+#  (16e 4-12), harmonisch gemaskerd, ping-pong-loop.  str: de strijker vanaf maat 21 (stem 'other', 560-4000 Hz):
+#  F#5 uit maat 21 (16e 3-11), harmonisch gemaskerd (de ostinato-lekkage -12 dB, strijkruis blijft), i.p.v. de
+#  stock-strijkers (aanzet 255 = koperachtig; 1-4 kHz +4..+7 dB te helder gemeten).
+CUTS['ruinous_call'] = ('vocals', at(10, 4), at(10, 12), 78, (300, 5500), 'held')
+CUTS['ruinous_strf'] = ('other', at(21, 3), at(21, 11), 78, (560, 4000), 'held')
+SHELF = {'ruinous_strf': 5.0}   # dB
+WHOLE = ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
+    'ruinous_pad_m%d' % _b for _b in PAD_OWN)   # niet hertonen
+
+
+def make_held(name):
+    """aangehouden noot uit een stem: gestemd, harmonisch masker (deeltonen +-35 ct, de rest -12 dB: lekkage van
+    andere partijen weg, strijkruis blijft zwak), aanzet 0,12 s + ping-pong-loop van het aangehouden deel."""
+    stem, t0, t1, key, bnd, _ = CUTS[name]
+    x = band(read_stem(stem, t0 - 0.005, t1), *bnd)
+    x, cents = tune(x - np.mean(x), key)
+    nom = 440.0 * 2 ** ((key - 69) / 12)
+    nf, hop = 4096, 256
+    win = np.hanning(nf)
+    pad = np.concatenate([np.zeros(nf), x, np.zeros(nf)])
+    fq = np.fft.rfftfreq(nf, 1 / SR)
+    m = np.full(len(fq), 10 ** (-12 / 20))
+    for h in range(1, 12):
+        c = nom * h
+        m[(fq > c * 2 ** (-0.35 / 12) - 6) & (fq < c * 2 ** (0.35 / 12) + 6)] = 1.0
+    y = np.zeros(len(pad)); wsum = np.zeros(len(pad))
+    for i in range(0, len(pad) - nf, hop):
+        y[i:i + nf] += np.fft.irfft(np.fft.rfft(pad[i:i + nf] * win) * m, nf) * win
+        wsum[i:i + nf] += win ** 2
+    x = (y / np.maximum(wsum, 1e-6))[nf:nf + len(x)]
+    if name in SHELF:                  # hoge plank boven 1,2 kHz (zwaartepunt gelijk aan de stem)
+        X = np.fft.rfft(x); fq2 = np.fft.rfftfreq(len(x), 1 / SR)
+        X *= 1 + (10 ** (SHELF[name] / 20) - 1) / (1 + (1200 / np.maximum(fq2, 1)) ** 2)
+        x = np.fft.irfft(X, len(x))
+    att, xf = int(0.12 * SR), int(0.08 * SR)
+    sus = x[att:]
+    w = np.linspace(0, np.pi / 2, xf)
+    body = np.concatenate([sus[:-xf], sus[-xf:] * np.cos(w) + sus[::-1][:xf] * np.sin(w), sus[::-1][xf:]])
+    x = np.concatenate([x[:att], body])
+    x[-xf:] = x[-xf:] * np.cos(w) + x[att - xf:att] * np.sin(w)
+    x = fade_in_out(x, 0.003, 0.0001)
+    return norm(x), (att, len(x)), cents
 
 
 def make_cut(name):
     stem, t0, t1, key, bnd, lp = CUTS[name]
-    x = read_stem(stem, t0, t1)
+    if lp == 'held':
+        return make_held(name)
+    stems = stem if isinstance(stem, tuple) else (stem,)
+    x = sum(read_stem(s, t0, t1) for s in stems)
     if bnd:
         x = band(x, *bnd)
     x = x - np.mean(x)
@@ -210,7 +274,9 @@ def make_cut(name):
         cents = 0.0
     else:
         x, cents = tune(x, key)
-    x = fade_in_out(x, 0.003, 0.025 if (lp or name in WHOLE) else 0.05)
+    # maatknipsels lopen 80 ms door: de laatste 60 ms vloeien uit over de aanzet van de volgende maat (geen dip)
+    x = fade_in_out(x, 0.003, 0.06 if name in WHOLE and name not in ('ruinous_intro', 'ruinous_lo58') else
+                    (0.025 if lp else 0.05))
     loop = None
     if lp:
         a, z = int(lp[0] * SR), int(min(lp[1] * SR, len(x)))
@@ -237,24 +303,27 @@ def main(only=None):
             RNG = np.random.default_rng(683 + sum(name.encode()))     # vaste seed per sample: los of samen = identiek
             fn, key = SAMPLES[name]
             a, lp, info = norm(resample(fn(), SR, RATE)), None, ''
+            rate = RATE
         else:
-            if not os.path.exists(STEMS + CUTS[name][0] + '.wav'):
+            src = CUTS[name][0]
+            if not all(os.path.exists(STEMS + st + '.wav') for st in (src if isinstance(src, tuple) else (src,))):
                 print('%s: stem ontbreekt, bestaande wav blijft' % name)
                 continue
             x, lpx, cents = make_cut(name)
             key = CUTS[name][3]
-            a = norm(resample(x, SR, RATE))
-            lp = (int(lpx[0] * RATE / SR), int(lpx[1] * RATE / SR)) if lpx else None
-            info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / RATE, lp[1] / RATE) if lp else '')
-        write_wav(OUT + name + '.wav', a, RATE, key, lp)
+            rate = RATES.get(name, RATE)
+            a = norm(resample(x, SR, rate))
+            lp = (int(lpx[0] * rate / SR), int(lpx[1] * rate / SR)) if lpx else None
+            info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / rate, lp[1] / rate) if lp else '')
+        write_wav(OUT + name + '.wav', a, rate, key, lp)
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (
                 label, name)
         total += len(a) + 16
-        sp = np.abs(np.fft.rfft(a)) ** 2; fr = np.fft.rfftfreq(len(a), 1 / RATE)
+        sp = np.abs(np.fft.rfft(a)) ** 2; fr = np.fft.rfftfreq(len(a), 1 / rate)
         print('%-16s %5d samples (%.2f s), < 60 Hz %4.1f%%, < 150 Hz %4.1f%%, > 2k %4.1f%%%s' % (
-            name, len(a), len(a) / RATE, 100 * sp[fr < 60].sum() / sp.sum(), 100 * sp[fr < 150].sum() / sp.sum(),
+            name, len(a), len(a) / rate, 100 * sp[fr < 60].sum() / sp.sum(), 100 * sp[fr < 150].sum() / sp.sum(),
             100 * sp[fr > 2000].sum() / sp.sum(), info))
     open(DATA, 'w').write(inc)
     print('totaal %.1f KB' % (total / 1024))
